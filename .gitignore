@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+.venv/
+__pycache__/
+*.pyc
+
+# Build output
+dist/
+build/
+.turbo/
+coverage/
+playwright-report/
+test-results/
+
+# Geo pipeline: raw downloads and generated tiles never go to git
+pipeline/.cache/
+pipeline/out/
+*.pmtiles
+*.mbtiles
+*.tif
+*.zip
+
+# Secrets and local env (secrets live in 1Password, see AGENTS.md)
+.env
+.env.*
+!.env.example
+
+# OS / editors
+.DS_Store
+.idea/
+*.swp
