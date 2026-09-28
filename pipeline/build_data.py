@@ -15,6 +15,8 @@ import json
 import math
 import pathlib
 import re
+import time
+import urllib.error
 import urllib.request
 import zipfile
 
@@ -45,6 +47,18 @@ SOURCES = {
         "credit": "Wikidata, CC0",
         "generated": True,
     },
+    "natural_earth_ocean": {
+        "file": "ne_50m_ocean.geojson",
+        "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_ocean.geojson",
+        "license": "PD",
+        "credit": "Made with Natural Earth",
+    },
+    "natural_earth_lakes": {
+        "file": "ne_50m_lakes.geojson",
+        "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_lakes.geojson",
+        "license": "PD",
+        "credit": "Made with Natural Earth",
+    },
     "natural_earth_land": {
         "file": "ne_50m_land.geojson",
         "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_land.geojson",
@@ -57,6 +71,9 @@ SOURCES = {
 BBOX = (5.0, 12.0, 70.0, 48.0)
 YEAR_MIN, YEAR_MAX = -2000, 200
 
+# Tagged as lakes by Natural Earth, but created in the 20th century.
+MODERN_LAKES = {"Lake Tharthar", "Razzaza Lake"}
+
 TAG_RE = re.compile(r"<[^>]+>")
 
 NT_BOOKS = {
@@ -64,6 +81,23 @@ NT_BOOKS = {
     "Col", "1Thess", "2Thess", "1Tim", "2Tim", "Titus", "Phlm", "Heb", "Jas", "1Pet",
     "2Pet", "1John", "2John", "3John", "Jude", "Rev",
 }
+
+
+def wikidata_get(url: str) -> dict:
+    """GET from the Wikidata API politely: identify ourselves, pause, back off on 429."""
+    req = urllib.request.Request(url, headers={"User-Agent": "history-globe-pipeline/0.1 (github.com/ArVaViT)"})
+    for attempt in range(6):
+        try:
+            with urllib.request.urlopen(req) as resp:
+                time.sleep(1.0)
+                return json.load(resp)
+        except urllib.error.HTTPError as e:
+            if e.code != 429 or attempt == 5:
+                raise
+            wait = float(e.headers.get("Retry-After") or 5 * (attempt + 1))
+            print(f"wikidata: 429, waiting {wait:.0f} s")
+            time.sleep(wait)
+    raise RuntimeError("unreachable")
 
 
 def wikidata_coords(qids: list[str]) -> dict[str, list[float]]:
@@ -77,9 +111,7 @@ def wikidata_coords(qids: list[str]) -> dict[str, list[float]]:
             "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=claims&ids="
             + "|".join(batch)
         )
-        req = urllib.request.Request(url, headers={"User-Agent": "history-globe-pipeline/0.1 (github.com/ArVaViT)"})
-        with urllib.request.urlopen(req) as resp:
-            entities = json.load(resp).get("entities", {})
+        entities = wikidata_get(url).get("entities", {})
         for q in batch:
             claims = entities.get(q, {}).get("claims", {}).get("P625", [])
             value = claims[0]["mainsnak"].get("datavalue", {}).get("value") if claims else None
@@ -87,6 +119,25 @@ def wikidata_coords(qids: list[str]) -> dict[str, list[float]]:
     CACHE.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(cache, indent=0, sort_keys=True))
     return {q: c for q, c in cache.items() if c}
+
+
+def wikidata_labels(qids: list[str], lang: str) -> dict[str, str]:
+    """Labels of Wikidata items in one language, cached. CC0 (ADR 0008)."""
+    path = CACHE / f"wikidata-labels-{lang}.json"
+    cache: dict[str, str | None] = json.loads(path.read_text()) if path.exists() else {}
+    missing = [q for q in qids if q not in cache]
+    for i in range(0, len(missing), 50):
+        batch = missing[i : i + 50]
+        url = (
+            "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=labels"
+            f"&languages={lang}&ids=" + "|".join(batch)
+        )
+        entities = wikidata_get(url).get("entities", {})
+        for q in batch:
+            cache[q] = entities.get(q, {}).get("labels", {}).get(lang, {}).get("value")
+        path.write_text(json.dumps(cache, ensure_ascii=False, indent=0, sort_keys=True))
+    path.write_text(json.dumps(cache, ensure_ascii=False, indent=0, sort_keys=True))
+    return {q: v for q, v in cache.items() if v}
 
 
 def qid(record: dict) -> str | None:
@@ -149,6 +200,7 @@ def build_places() -> tuple[dict, dict]:
         if res is not None and osm_derived(res) and qid(r):
             osm_qids.append(qid(r))
     replacements = wikidata_coords([q for q in osm_qids if q])
+    ru_labels = wikidata_labels([q for q in (qid(r) for r in records) if q], "ru")
     feats, excluded_osm, replaced, no_point = [], 0, 0, 0
     for r in records:
         ids = r.get("identifications") or []
@@ -189,6 +241,9 @@ def build_places() -> tuple[dict, dict]:
                 "where": TAG_RE.sub("", ids[0].get("description", "")),
                 "osis": [v["osis"] for v in verses[:12]],
                 "coord": coord_source,
+                # Russian label from Wikidata: a fallback, not checked against the Synodal
+                # text. Verified Synodal names come from content/ and take precedence.
+                **({"name_ru_wd": ru_labels[q]} if (q := qid(r)) and q in ru_labels else {}),
             },
         })
     stats = {
@@ -225,6 +280,44 @@ def ring_area_centroid(ring: list[list[float]]) -> tuple[float, float, float]:
     return abs(a) / 2, cx / (3 * a), cy / (3 * a)
 
 
+def point_in_ring(x: float, y: float, ring: list[list[float]]) -> bool:
+    inside = False
+    for (x0, y0), (x1, y1) in zip(ring, ring[1:]):
+        if (y0 > y) != (y1 > y) and x < (x1 - x0) * (y - y0) / (y1 - y0) + x0:
+            inside = not inside
+    return inside
+
+
+def point_in_polygon(x: float, y: float, poly: list[list[list[float]]]) -> bool:
+    return point_in_ring(x, y, poly[0]) and not any(point_in_ring(x, y, h) for h in poly[1:])
+
+
+LABEL_GRID_DEG = 8.0
+
+
+def label_anchors(parts: list[list[list[list[float]]]]) -> list[tuple[float, float, float]]:
+    """Several label points inside a polity, so a large empire is named wherever the
+    reader looks, not only at its centroid. Returns (lon, lat, area of its part)."""
+    anchors = []
+    for poly in parts:
+        area, cx, cy = ring_area_centroid(poly[0])
+        if area < 0.05:
+            continue
+        if point_in_polygon(cx, cy, poly):
+            anchors.append((cx, cy, area))
+        xs = [p[0] for p in poly[0]]
+        ys = [p[1] for p in poly[0]]
+        gx = math.floor(min(xs) / LABEL_GRID_DEG) * LABEL_GRID_DEG + LABEL_GRID_DEG / 2
+        while gx < max(xs):
+            gy = math.floor(min(ys) / LABEL_GRID_DEG) * LABEL_GRID_DEG + LABEL_GRID_DEG / 2
+            while gy < max(ys):
+                if point_in_polygon(gx, gy, poly) and BBOX[0] <= gx <= BBOX[2] and BBOX[1] <= gy <= BBOX[3]:
+                    anchors.append((gx, gy, area))
+                gy += LABEL_GRID_DEG
+            gx += LABEL_GRID_DEG
+    return anchors
+
+
 def build_polities() -> tuple[dict, dict, dict]:
     clio = json.loads(fetch("cliopatria").read_text(encoding="utf-8"))
     polys, labels = [], []
@@ -255,13 +348,14 @@ def build_polities() -> tuple[dict, dict, dict]:
         }
         polys.append({"type": "Feature", "geometry": {"type": "MultiPolygon", "coordinates": kept}, "properties": props})
         if not is_relation:
-            area, lx, ly = max(ring_area_centroid(k[0]) for k in kept)
-            labels.append({
-                "type": "Feature",
-                "geometry": {"type": "Point", "coordinates": [round(lx, 3), round(ly, 3)]},
-                # Bigger polities get labels earlier and larger.
-                "properties": {**props, "size": round(math.log10(max(area, 0.01)) + 2, 2)},
-            })
+            total = sum(ring_area_centroid(k[0])[0] for k in kept)
+            for lx, ly, _part in label_anchors(kept):
+                labels.append({
+                    "type": "Feature",
+                    "geometry": {"type": "Point", "coordinates": [round(lx, 3), round(ly, 3)]},
+                    # Bigger polities get labels earlier and larger.
+                    "properties": {**props, "size": round(math.log10(max(total, 0.01)) + 2, 2)},
+                })
     stats = {"polity_shapes": len(polys), "polity_names": len(names)}
     return (
         {"type": "FeatureCollection", "features": polys},
@@ -274,16 +368,19 @@ def build_polities() -> tuple[dict, dict, dict]:
 
 
 def build_land_water() -> tuple[dict, dict]:
+    """Land and water from Natural Earth. Water is the ocean polygon plus natural lakes:
+    a "world minus land" polygon triangulates badly on the globe, and modern reservoirs
+    (Kakhovka, Tharthar, Nasser…) do not belong on a map of antiquity."""
     land = json.loads(fetch("natural_earth_land").read_text(encoding="utf-8"))
-    holes = []
-    for f in land["features"]:
-        g = f["geometry"]
-        for poly in g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]:
-            if min(p[1] for p in poly[0]) > -84:
-                holes.append(poly[0])
-    world = [[-180, -85], [180, -85], [180, 85], [-180, 85], [-180, -85]]
-    water = {"type": "Feature", "properties": {}, "geometry": {"type": "Polygon", "coordinates": [world, *holes]}}
-    return land, {"type": "FeatureCollection", "features": [water]}
+    ocean = json.loads(fetch("natural_earth_ocean").read_text(encoding="utf-8"))
+    lakes = json.loads(fetch("natural_earth_lakes").read_text(encoding="utf-8"))
+    natural = [
+        f
+        for f in lakes["features"]
+        if f["properties"].get("featurecla") != "Reservoir" and f["properties"].get("name") not in MODERN_LAKES
+    ]
+    water = {"type": "FeatureCollection", "features": [*ocean["features"], *natural]}
+    return land, water
 
 
 def main() -> None:

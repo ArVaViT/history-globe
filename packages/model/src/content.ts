@@ -33,6 +33,10 @@ export const PlaceNamesFile = z.object({
   ),
 });
 
+export const PolityNamesFile = z.object({
+  polities: z.record(z.string().min(1), z.string().min(1)),
+});
+
 export const TourFile = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
   title: localized,

@@ -57,7 +57,7 @@ export class MapLibreRenderer implements Renderer {
 
     this.map.on("load", () => {
       void (this.map.getSource("places") as GeoJSONSource).setData(o.places);
-      this.map.setTerrain({ source: "dem", exaggeration: 1.5 });
+      this.map.setTerrain({ source: "dem-terrain", exaggeration: 1.5 });
       this.loaded = true;
       for (const run of this.pending) run();
       this.pending = [];
@@ -103,11 +103,16 @@ export class MapLibreRenderer implements Renderer {
   }
 
   setYear(year: number): void {
-    this.map.setGlobalStateProperty("year", year);
+    // Before the style loads, the value from style.state is used; set it again after.
+    this.whenLoaded(() => {
+      this.map.setGlobalStateProperty("year", year);
+    });
   }
 
   setLocale(locale: Locale): void {
-    this.map.setGlobalStateProperty("locale", locale);
+    this.whenLoaded(() => {
+      this.map.setGlobalStateProperty("locale", locale);
+    });
   }
 
   setLayers(layers: LayerVisibility): void {
@@ -117,7 +122,7 @@ export class MapLibreRenderer implements Renderer {
         for (const id of ids)
           this.map.setLayoutProperty(id, "visibility", visible ? "visible" : "none");
       }
-      if (layers.relief) this.map.setTerrain({ source: "dem", exaggeration: 1.5 });
+      if (layers.relief) this.map.setTerrain({ source: "dem-terrain", exaggeration: 1.5 });
       else this.map.setTerrain(null);
     });
   }

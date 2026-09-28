@@ -113,7 +113,10 @@ export function App() {
 
   return (
     <div className="fixed inset-0 overflow-hidden bg-night font-sans">
-      <div ref={container} className="absolute inset-0" />
+      {/* MapLibre sets position: relative on its container, so it needs a sized parent. */}
+      <div className="absolute inset-0">
+        <div ref={container} className="h-full w-full" />
+      </div>
 
       {error && (
         <Panel className="absolute top-1/2 left-1/2 -translate-1/2 px-6 py-4 text-ink">
@@ -176,12 +179,12 @@ export function App() {
               locale={state.locale}
               playing={playing}
               onYear={engine.setYear}
+              hints={t("hints")}
               onPlay={() => {
                 if (!playing && state.year >= 100) engine.setYear(-2000);
                 setPlaying((p) => !p);
               }}
             />
-            <div className="text-[11px] text-paper/80 drop-shadow">{t("hints")}</div>
           </div>
         </>
       )}

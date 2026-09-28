@@ -19,8 +19,8 @@ const BAND_COLORS = [
   "#a0a276",
   "#b6a472",
 ];
-/** Tick marks as astronomical years: 2000 BC, 1500 BC, 1000 BC, 500 BC, the BC/AD turn, AD 100. */
-const TICKS = [-1999, -1499, -999, -499, 1, 100];
+/** Labelled ticks as astronomical years: 2000, 1500, 1000 and 500 BC, and AD 100. */
+const TICKS = [-1999, -1499, -999, -499, 100];
 
 function pct(year: number): number {
   return ((year - YEAR_MIN) / SPAN) * 100;
@@ -30,12 +30,14 @@ export function Timeline({
   year,
   locale,
   playing,
+  hints,
   onYear,
   onPlay,
 }: {
   year: number;
   locale: Locale;
   playing: boolean;
+  hints: string;
   onYear: (year: number) => void;
   onPlay: () => void;
 }) {
@@ -111,16 +113,23 @@ export function Timeline({
           aria-valuetext={formatYear(year, locale)}
           className="timeline-range absolute inset-x-0 top-0 h-5 w-full"
         />
-        {TICKS.map((y) => (
+        {TICKS.map((y, i) => (
           <span
             key={y}
             style={{ left: `${pct(y)}%` }}
-            className="absolute top-6 -translate-x-1/2 text-[11px] whitespace-nowrap text-ink-soft first:translate-x-0 last:-translate-x-full"
+            className={`absolute top-6 text-[11px] whitespace-nowrap text-ink-soft ${i === 0 ? "" : i === TICKS.length - 1 ? "-translate-x-full" : "-translate-x-1/2"}`}
           >
-            {y === 1 ? (ru ? "Р. Х." : "BC | AD") : formatYear(y, locale)}
+            {formatYear(y, locale)}
           </span>
         ))}
+        {/* The turn of the era, marked but not labelled: its label would collide with AD 100. */}
+        <span
+          style={{ left: `${pct(1)}%` }}
+          title={ru ? "Рождество Христово" : "BC | AD"}
+          className="absolute top-0 h-5 w-px -translate-x-1/2 bg-ink/50"
+        />
       </div>
+      <div className="mt-1 text-right text-[10.5px] text-ink-soft/80">{hints}</div>
     </Panel>
   );
 }

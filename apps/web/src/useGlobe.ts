@@ -52,6 +52,10 @@ export function useGlobe(
         ...(init.place === undefined ? {} : { selectedPlace: init.place }),
       },
     });
+    if (import.meta.env.DEV) {
+      // Handle for local debugging and screenshot scripts; never in production builds.
+      (window as unknown as { __hgMap?: unknown }).__hgMap = renderer.map;
+    }
     setGlobe({ engine, renderer });
     return () => {
       engine.destroy();

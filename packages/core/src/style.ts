@@ -61,8 +61,9 @@ export const ERA_FILTER: ExpressionSpecification = [
 
 /** Localised name with fallback to the English one. */
 export const NAME: ExpressionSpecification = [
-  "coalesce",
-  ["case", ["==", LOCALE, "ru"], ["get", "name_ru"], ["get", "name"]],
+  "case",
+  ["==", LOCALE, "ru"],
+  ["coalesce", ["get", "name_ru"], ["get", "name"]],
   ["get", "name"],
 ];
 
@@ -249,37 +250,6 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       paint: { "line-color": T.accent, "line-width": 3.2, "line-dasharray": [2, 1.4] },
     },
     {
-      id: "polity-label",
-      type: "symbol",
-      source: "polity-labels",
-      filter: ERA_FILTER,
-      metadata: { group: "borders" },
-      minzoom: 2.5,
-      layout: {
-        "text-field": ["upcase", ["get", "name"]],
-        "text-font": [MAP_FONT],
-        "text-size": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          3,
-          ["*", ["get", "size"], 2.6],
-          7,
-          ["*", ["get", "size"], 4],
-        ],
-        "text-letter-spacing": 0.28,
-        "text-max-width": 7,
-        "symbol-sort-key": ["-", 0, ["get", "size"]],
-        "text-padding": 12,
-      },
-      paint: {
-        "text-color": T.inkSoft,
-        "text-opacity": 0.78,
-        "text-halo-color": T.halo,
-        "text-halo-width": 1.2,
-      },
-    },
-    {
       id: "place-dot",
       type: "circle",
       source: "places",
@@ -311,14 +281,16 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       metadata: { group: "places" },
       filter: ["all", isArea, visibleAtZoom],
       layout: {
-        "text-field": ["upcase", NAME],
-        "text-font": [MAP_FONT],
-        "text-size": ["match", ["get", "rank"], 0, 13, 1, 11.5, 10.5],
-        "text-letter-spacing": 0.18,
+        // Biblical regions are not states: italic and sentence case, so they never read
+        // as the polity labels (upper case) of the chosen year.
+        "text-field": NAME,
+        "text-font": [MAP_FONT_ITALIC],
+        "text-size": ["match", ["get", "rank"], 0, 14, 1, 12.5, 11.5],
+        "text-letter-spacing": 0.04,
         "text-max-width": 8,
         "symbol-sort-key": ["get", "rank"],
       },
-      paint: { "text-color": "#6b5a42", "text-halo-color": T.halo, "text-halo-width": 1.4 },
+      paint: { "text-color": "#7a5a33", "text-halo-color": T.halo, "text-halo-width": 1.4 },
     },
     {
       id: "place-label-water",
@@ -357,6 +329,51 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-halo-width": 1.6,
       },
     },
+    {
+      id: "polity-label",
+      type: "symbol",
+      source: "polity-labels",
+      filter: ERA_FILTER,
+      metadata: { group: "borders" },
+      minzoom: 2.5,
+      layout: {
+        "text-field": ["upcase", NAME],
+        "text-font": [MAP_FONT],
+        "text-size": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          3,
+          ["*", ["get", "size"], 2.6],
+          7,
+          ["*", ["get", "size"], 4],
+        ],
+        "text-letter-spacing": 0.28,
+        "text-max-width": 7,
+        "symbol-sort-key": ["-", 0, ["get", "size"]],
+        "text-padding": 12,
+        "text-allow-overlap": false,
+      },
+      paint: {
+        "text-color": "#4a3b28",
+        "text-opacity": 0.82,
+        "text-halo-color": T.halo,
+        "text-halo-width": 1.2,
+      },
+    },
+    {
+      id: "route-stop",
+      type: "circle",
+      source: "route",
+      metadata: { group: "routes" },
+      filter: ["==", ["geometry-type"], "Point"],
+      paint: {
+        "circle-radius": ["case", ["get", "current"], 8, 5],
+        "circle-color": ["case", ["get", "current"], T.gold, T.accent],
+        "circle-stroke-color": T.halo,
+        "circle-stroke-width": 2.5,
+      },
+    },
   ];
 
   return {
@@ -369,7 +386,11 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
     "font-faces": Object.fromEntries(
       Object.entries(o.fonts).map(([family, files]) => [
         family,
-        files.map((f) => ({ url: f.url, "unicode-range": [f.unicodeRange] })),
+        files.map((f) => ({
+          url: f.url,
+          // CSS-style "U+0000-00FF, U+0131" → ["U+0000-00FF", "U+0131"], as MapLibre expects.
+          "unicode-range": f.unicodeRange.split(",").map((r) => r.trim()),
+        })),
       ]),
     ),
     sky: {
@@ -386,6 +407,15 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         tileSize: 512,
         maxzoom: 12,
         attribution: o.terrainAttribution,
+      },
+      // A second source of the same tiles for 3D terrain: MapLibre renders better when
+      // shading layers and terrain do not share one source.
+      "dem-terrain": {
+        type: "raster-dem",
+        tiles: [o.terrainTiles],
+        encoding: "terrarium",
+        tileSize: 512,
+        maxzoom: 12,
       },
       land: { type: "geojson", data: `${o.dataUrl}/land.geojson`, attribution: "Natural Earth" },
       water: { type: "geojson", data: `${o.dataUrl}/water.geojson` },

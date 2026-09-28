@@ -6,7 +6,9 @@ const style = buildStyle({
   dataUrl: "/data",
   terrainTiles: "https://example.test/{z}/{x}/{y}.webp",
   terrainAttribution: "test",
-  fonts: { "Map Serif": [{ url: "/fonts/a.woff2", unicodeRange: "U+0000-00FF" }] },
+  fonts: {
+    "Map Serif": [{ url: "/fonts/a.woff2", unicodeRange: "U+0000-00FF, U+0131, U+2000-206F" }],
+  },
   initialYear: 30,
   initialLocale: "ru",
 });

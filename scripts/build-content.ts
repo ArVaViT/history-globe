@@ -8,7 +8,12 @@
 import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { parse } from "yaml";
-import { PlaceNamesFile, TourFile, type ContentRelease } from "../packages/model/src/index.ts";
+import {
+  PlaceNamesFile,
+  PolityNamesFile,
+  TourFile,
+  type ContentRelease,
+} from "../packages/model/src/index.ts";
 
 const root = join(import.meta.dirname, "..");
 const out = join(root, "apps/web/public/data");
@@ -41,6 +46,21 @@ for (const file of readdirSync(join(root, "content/tours")).filter((f) => f.ends
   }
   tours.push(result.data);
 }
+
+// Polity labels get their Russian name; every label on the map must have one.
+const polityNames = PolityNamesFile.parse(load("content/polity-names.yaml")).polities;
+const labelsPath = join(out, "polity-labels.geojson");
+const labels = JSON.parse(readFileSync(labelsPath, "utf8")) as {
+  features: { properties: { name: string; name_ru?: string } }[];
+};
+const missing = new Set<string>();
+for (const f of labels.features) {
+  const ru = polityNames[f.properties.name];
+  if (ru) f.properties.name_ru = ru;
+  else missing.add(f.properties.name);
+}
+for (const name of missing) errors.push(`polity-names: no Russian name for "${name}"`);
+writeFileSync(labelsPath, JSON.stringify(labels));
 
 if (errors.length > 0) {
   console.error(errors.join("\n"));
