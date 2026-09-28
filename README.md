@@ -4,13 +4,13 @@ Working name. A 3D globe of biblical and ancient history: move the time slider a
 the map changes — borders, cities, routes; hover a city to read what it was in that
 century; every place links to the Scripture that mentions it.
 
-Private and proprietary (see `LICENSE`). First host: Equip (equipbible.com);
-later licensed to other platforms.
+Source-available, not open source: the code is public to read, but all rights are
+reserved (see `LICENSE`). First host: Equip (equipbible.com); later licensed to
+other platforms.
 
 ## Status
 
-Pre-code. The stack is being decided in `docs/adr/`. A throwaway prototype and the
-full research live outside this repo (`~/Desktop/history-globe-research/`).
+Pre-code. The stack is being decided in `docs/adr/`.
 
 ## Principles
 
