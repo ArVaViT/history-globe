@@ -242,3 +242,5585 @@ places:
   - id: a0f4ea8
     en: "Arabia 2"
     ru: "Аравия"
+
+  # Added 2026-09-28: Synodal form read from the verse text (high confidence only).
+  - id: aa0b1d6
+    en: "Moab"
+    ru: "Моав"
+    evidence:
+      osis: Gen.36.35
+      excerpt: "Бедадов, который поразил Мадианитян на поле Моава; имя городу его"
+  - id: ae73b90
+    en: "Gilead"
+    ru: "Галаад"
+    evidence:
+      osis: Gen.31.21
+      excerpt: "было; и, встав, перешел реку и направился к горе Галаад."
+  - id: aa7a40a
+    en: "Bashan"
+    ru: "Васан"
+    evidence:
+      osis: Num.21.33
+      excerpt: "И поворотили и пошли к Васану. И выступил против них"
+  - id: a62dec4
+    en: "Euphrates"
+    ru: "Евфрат"
+    evidence:
+      osis: Gen.2.14
+      excerpt: "реки Хиддекель [Тигр]: она протекает пред Ассириею. Четвертая река Евфрат."
+  - id: aa805fb
+    en: "Great Sea"
+    ru: "Великое море"
+    evidence:
+      osis: Num.34.6
+      excerpt: "границею западною будет у вас великое море: это будет у"
+  - id: ab95484
+    en: "Amalek"
+    ru: "Амалик"
+    evidence:
+      osis: Exod.17.8
+      excerpt: "И пришли Амаликитяне и воевали с Израильтянами в Рефидиме."
+  - id: ad2f6c2
+    en: "Beersheba"
+    ru: "Вирсавия"
+    evidence:
+      osis: Josh.15.28
+      excerpt: "Хацар-Шуал, Вирсавия и Визиофея [и села их и предместья их,]"
+  - id: abed304
+    en: "Salt Sea"
+    ru: "Соленое море"
+    evidence:
+      osis: Gen.14.3
+      excerpt: "Все сии соединились в долине Сиддим, где ныне море Соленое."
+  - id: a9bba61
+    en: "Kiriath-jearim"
+    ru: "Кириаф-Иарим"
+    evidence:
+      osis: Josh.9.17
+      excerpt: "день; города же их [были]: Гаваон, Кефира, Беероф и Кириаф-Иарим."
+  - id: a9bb03e
+    en: "Mount Horeb"
+    ru: "Гора Хорив"
+    evidence:
+      osis: Exod.3.1
+      excerpt: "стадо далеко в пустыню и пришел к горе Божией, Хориву."
+  - id: a341fe8
+    en: "Mount Hermon"
+    ru: "Гора Ермон"
+    evidence:
+      osis: Deut.3.8
+      excerpt: "эту сторону Иордана, от потока Арнона до горы Ермона, —"
+  - id: a264254
+    en: "Geba"
+    ru: "Гева"
+    evidence:
+      osis: Josh.21.17
+      excerpt: "колена Вениаминова: Гаваон и предместья его, Геву и предместья ее,"
+  - id: a095b6e
+    en: "Jazer"
+    ru: "Иазер"
+    evidence:
+      osis: Num.21.32
+      excerpt: "И послал Моисей высмотреть Иазер, и взяли [его и] селения,"
+  - id: ac87d4c
+    en: "Ashkelon"
+    ru: "Аскалон"
+    evidence:
+      osis: Josh.13.3
+      excerpt: "Ханаанскими пять владельцев Филистимских: Газский, Азотский, Аскалонский, Гефский, Екронский и"
+  - id: a37c8e6
+    en: "Valley of Hinnom"
+    ru: "Долина Еннома"
+    evidence:
+      osis: Josh.18.16
+      excerpt: "Рефаимов, к северу, и нисходит долиною Еннома к южной стороне"
+  - id: ad2fadf
+    en: "Media"
+    ru: "Мидия"
+    evidence:
+      osis: Ezra.6.2
+      excerpt: "Екбатане во дворце, который в области Мидии, один свиток, и"
+  - id: a0d784a
+    en: "Dibon"
+    ru: "Дивон"
+    evidence:
+      osis: Num.21.30
+      excerpt: "поразили их стрелами; погиб Есевон до Дивона, мы опустошили их"
+  - id: a046454
+    en: "Beeroth"
+    ru: "Беероф"
+    evidence:
+      osis: Josh.9.17
+      excerpt: "день; города же их [были]: Гаваон, Кефира, Беероф и Кириаф-Иарим."
+  - id: acd63ee
+    en: "Mount Tabor"
+    ru: "Гора Фавор"
+    evidence:
+      osis: Josh.19.22
+      excerpt: "и примыкает предел к Фавору и Шагациме и Вефсамису, и"
+  - id: a871210
+    en: "Bozrah"
+    ru: "Восор"
+    evidence:
+      osis: Gen.36.33
+      excerpt: "Бела, и воцарился по нем Иовав, сын Зераха, из Восоры."
+  - id: abf8e4e
+    en: "Makkedah"
+    ru: "Македа"
+    evidence:
+      osis: Josh.10.10
+      excerpt: "возвышенности Вефорона, и поражали их до Азека и до Македа."
+  - id: af2ca0c
+    en: "Azekah"
+    ru: "Азека"
+    evidence:
+      osis: Josh.10.10
+      excerpt: "возвышенности Вефорона, и поражали их до Азека и до Македа."
+  - id: a8e53d5
+    en: "Ezion-geber"
+    ru: "Ецион-Гавер"
+    evidence:
+      osis: Num.33.36
+      excerpt: "И отправились из Ецион-Гавера и расположились станом в пустыне Син."
+  - id: afdda14
+    en: "Nob"
+    ru: "Номва"
+    evidence:
+      osis: 1Sam.21.1
+      excerpt: "И пришел Давид в Номву к Ахимелеху священнику, и смутился"
+  - id: a173c40
+    en: "Arpad"
+    ru: "Арпад"
+    evidence:
+      osis: 2Kgs.18.34
+      excerpt: "Где боги Емафа и Арпада? Где боги Сепарваима, Ены и"
+  - id: a1b6474
+    en: "Hazeroth"
+    ru: "Асироф"
+    evidence:
+      osis: Num.11.35
+      excerpt: "От Киброт-Гаттаавы двинулся народ в Асироф, и остановился в Асирофе."
+  - id: ac644e9
+    en: "Jezreel"
+    ru: "Изреель"
+    evidence:
+      osis: 1Sam.25.43
+      excerpt: "И Ахиноаму из Изрееля взял Давид, и обе они были"
+  - id: ae1c9ea
+    en: "Naioth"
+    ru: "Наваф"
+    evidence:
+      osis: 1Sam.19.18
+      excerpt: "он с Самуилом, и остановились они в Навафе [в Раме]."
+  - id: aa10f27
+    en: "Sibmah"
+    ru: "Сивма"
+    evidence:
+      osis: Josh.13.19
+      excerpt: "Кириафаим, Сивма и Цереф-Шахар на горе Емек,"
+  - id: a68aa8f
+    en: "Corner Gate"
+    ru: "Угольные ворота"
+    evidence:
+      osis: 2Kgs.14.13
+      excerpt: "Иерусалимскую от ворот Ефремовых до ворот угольных на четыреста локтей."
+  - id: af4f21c
+    en: "Medeba"
+    ru: "Медева"
+    evidence:
+      osis: Num.21.30
+      excerpt: "до Дивона, мы опустошили их до Нофы, которая близ Медевы."
+  - id: abd637f
+    en: "Ophrah"
+    ru: "Офра"
+    evidence:
+      osis: Judg.6.11
+      excerpt: "пришел Ангел Господень и сел в Офре под дубом, принадлежащим"
+  - id: aaaaead
+    en: "Tubal"
+    ru: "Фувал"
+    evidence:
+      osis: Ezek.27.13
+      excerpt: "Иаван, Фувал и Мешех торговали с тобою, выменивая товары твои"
+  - id: a9b852f
+    en: "Ziph"
+    ru: "Зиф"
+    evidence:
+      osis: Josh.15.55
+      excerpt: "Маон, Кармил, Зиф и Юта,"
+  - id: a76f7b7
+    en: "Baal-meon"
+    ru: "Ваал-Меон"
+    evidence:
+      osis: Num.32.38
+      excerpt: "и Нево, и Ваал-Меон, которых имена переменены, и Сивму, и"
+  - id: addba2a
+    en: "Beth-zur"
+    ru: "Беф-Цур"
+    evidence:
+      osis: Josh.15.58
+      excerpt: "Халхул, Беф-Цур и Гедор,"
+  - id: a4e8401
+    en: "East Gate"
+    ru: "Восточные ворота"
+    evidence:
+      osis: Neh.3.29
+      excerpt: "а за ним чинил Шемаия, сын Шехании, сторож восточных ворот."
+  - id: ab05a42
+    en: "Gaash"
+    ru: "Гора Гааш"
+    evidence:
+      osis: Josh.24.30
+      excerpt: "горе Ефремовой, на север от горы Гааша. [И положили там"
+  - id: a321cb8
+    en: "Kedesh"
+    ru: "Кедес"
+    evidence:
+      osis: Josh.12.22
+      excerpt: "один царь Кедеса, один царь Иокнеама при Кармиле,"
+  - id: a8e843f
+    en: "Mount Esau"
+    ru: "Гора Исава"
+    evidence:
+      osis: Obad.1.8
+      excerpt: "Я истреблю мудрых в Едоме и благоразумных на горе Исава?"
+  - id: ab71288
+    en: "Rehob"
+    ru: "Рехов"
+    evidence:
+      osis: Josh.19.30
+      excerpt: "далее: Умма, Афек и Рехов: двадцать два города с селами"
+  - id: ad27e17
+    en: "Senir"
+    ru: "Сенир"
+    evidence:
+      osis: Deut.3.9
+      excerpt: "Сидоняне Ермон называют Сирионом, а Аморреи называют его Сениром, —"
+  - id: af58391
+    en: "Tower of Hananel"
+    ru: "Башня Хананела"
+    evidence:
+      osis: Neh.3.1
+      excerpt: "их, и от башни Меа освятили их до башни Хананела."
+  - id: a5a1bdd
+    en: "Abel-meholah"
+    ru: "Абел-Мехола"
+    evidence:
+      osis: 1Kgs.4.12
+      excerpt: "Цартана ниже Иезрееля, от Беф-Сана до Абел-Мехола, и даже за"
+  - id: a8754c4
+    en: "Ariel"
+    ru: "Ариил"
+    evidence:
+      osis: Isa.29.1
+      excerpt: "Горе Ариилу, Ариилу, городу, в котором жил Давид! приложите год"
+  - id: a70e842
+    en: "Beer-lahai-roi"
+    ru: "Беэр-лахай-рои"
+    evidence:
+      osis: Gen.16.14
+      excerpt: "Посему источник тот называется: Беэр—лахай—рои. Он находится между Кадесом и"
+  - id: a529e92
+    en: "City of Palms"
+    ru: "Город Пальм"
+    evidence:
+      osis: Deut.34.3
+      excerpt: "полуденную страну и равнину долины Иерихона, город Пальм, до Сигора."
+  - id: af4e985
+    en: "Ephrath"
+    ru: "Ефрафа"
+    evidence:
+      osis: Gen.35.16
+      excerpt: "еще оставалось некоторое расстояние земли до Ефрафы, Рахиль родила, и"
+  - id: a6df20a
+    en: "Giloh"
+    ru: "Гило"
+    evidence:
+      osis: Josh.15.51
+      excerpt: "Гошен, Холон и Гило: одиннадцать городов с их селами."
+  - id: a8819e0
+    en: "Holon"
+    ru: "Холон"
+    evidence:
+      osis: Josh.15.51
+      excerpt: "Гошен, Холон и Гило: одиннадцать городов с их селами."
+  - id: acc7184
+    en: "Juttah"
+    ru: "Юта"
+    evidence:
+      osis: Josh.15.55
+      excerpt: "Маон, Кармил, Зиф и Юта,"
+  - id: a65db0f
+    en: "Meribah"
+    ru: "Мерива"
+    evidence:
+      osis: Exod.17.7
+      excerpt: "нарек месту тому имя: Масса и Мерива, по причине укорения"
+  - id: ac69561
+    en: "Nahalal"
+    ru: "Нагалал"
+    evidence:
+      osis: Josh.19.15
+      excerpt: "далее: Каттаф, Нагалал, Шимрон, Идеала и Вифлеем: двенадцать городов с"
+  - id: acd48d6
+    en: "Tema"
+    ru: "Фема"
+    evidence:
+      osis: Jer.25.23
+      excerpt: "Дедана, и Фему, и Буза, и всех, стригущих волосы на"
+  - id: a324c4d
+    en: "Uz"
+    ru: "Уц"
+    evidence:
+      osis: Job.1.1
+      excerpt: "Был человек в земле Уц, имя его Иов; и был"
+  - id: af536fb
+    en: "Arumah"
+    ru: "Арума"
+    evidence:
+      osis: Judg.9.41
+      excerpt: "И остался Авимелех в Аруме, а Гаала и братьев его"
+  - id: ac744c1
+    en: "Attalia"
+    ru: "Атталия"
+    evidence:
+      osis: Acts.14.25
+      excerpt: "и, проповедав слово Господне в Пергии, сошли в Атталию;"
+  - id: ab8fdbc
+    en: "Babel"
+    ru: "Вавилон"
+    evidence:
+      osis: Gen.10.10
+      excerpt: "Царство его вначале составляли: Вавилон, Эрех, Аккад и Халне в"
+  - id: a7abec7
+    en: "Beth-eked"
+    ru: "Беф-Екед"
+    evidence:
+      osis: 2Kgs.10.12
+      excerpt: "и пришел в Самарию. Находясь на пути при Беф-Екеде пастушеском,"
+  - id: af66b89
+    en: "Beth-nimrah"
+    ru: "Беф-Нимра"
+    evidence:
+      osis: Josh.13.27
+      excerpt: "и на долине Беф-Гарам и Беф-Нимра и Сокхоф и Цафон,"
+  - id: a5c0cb0
+    en: "Bithynia"
+    ru: "Вифиния"
+    evidence:
+      osis: Acts.16.7
+      excerpt: "Дойдя до Мисии, предпринимали идти в Вифинию; но Дух не"
+  - id: a7be664
+    en: "Calneh"
+    ru: "Калне"
+    evidence:
+      osis: Amos.6.2
+      excerpt: "Пройдите в Калне и посмотрите, оттуда перейдите в Емаф великий"
+  - id: ae28fc7
+    en: "Dinhabah"
+    ru: "Дингава"
+    evidence:
+      osis: Gen.36.32
+      excerpt: "в Едоме Бела, сын Веоров, а имя городу его Дингава."
+  - id: a3c4559
+    en: "Eltekeh"
+    ru: "Елтеке"
+    evidence:
+      osis: Josh.19.44
+      excerpt: "Елтеке, Гиввефон и Ваалаф,"
+  - id: a5db1a6
+    en: "Erech"
+    ru: "Эрех"
+    evidence:
+      osis: Gen.10.10
+      excerpt: "Царство его вначале составляли: Вавилон, Эрех, Аккад и Халне в"
+  - id: ad3e63c
+    en: "Goshen"
+    ru: "Гошен"
+    evidence:
+      osis: Josh.10.41
+      excerpt: "Кадес-Варни до Газы, и всю землю Гошен даже до Гаваона;"
+  - id: a0e8903
+    en: "Hauran"
+    ru: "Авран"
+    evidence:
+      osis: Ezek.47.16
+      excerpt: "между Дамасскою и Емафскою областями Гацар-Тихон, который на границе Аврана."
+  - id: a1ab517
+    en: "Hethlon"
+    ru: "Хетлон"
+    evidence:
+      osis: Ezek.47.15
+      excerpt: "конце, начиная от великого моря, через Хетлон, по дороге в"
+  - id: acf6e00
+    en: "Jogbehah"
+    ru: "Иогбега"
+    evidence:
+      osis: Num.32.35
+      excerpt: "и Атароф-Шофан, и Иазер, и Иогбегу,"
+  - id: a4f650b
+    en: "Kenath"
+    ru: "Кенаф"
+    evidence:
+      osis: Num.32.42
+      excerpt: "И Новах пошел и взял Кенаф и зависящие от него"
+  - id: a38776a
+    en: "Lud"
+    ru: "Луд"
+    evidence:
+      osis: Isa.66.19
+      excerpt: "народам: в Фарсис, к Пулу и Луду, к натягивающим лук,"
+  - id: aa6d1bd
+    en: "Migdol"
+    ru: "Магдол"
+    evidence:
+      osis: Jer.44.1
+      excerpt: "живущих в земле Египетской, поселившихся в Магдоле и Тафнисе, и"
+  - id: a62fa2d
+    en: "Mount Hor"
+    ru: "Гора Ор"
+    evidence:
+      osis: Num.34.7
+      excerpt: "вас граница: от великого моря проведите ее к горе Ор,"
+  - id: accdd09
+    en: "Nebo"
+    ru: "Нево"
+    evidence:
+      osis: Ezra.2.29
+      excerpt: "уроженцев Нево пятьдесят два;"
+  - id: aa32a17
+    en: "Pelusium"
+    ru: "Син"
+    evidence:
+      osis: Ezek.30.15
+      excerpt: "И изолью ярость Мою на Син, крепость Египта, и истреблю"
+  - id: a9ecc26
+    en: "Punon"
+    ru: "Пунон"
+    evidence:
+      osis: Num.33.42
+      excerpt: "И отправились из Салмона и расположились станом в Пуноне."
+  - id: af04ad9
+    en: "Rissah"
+    ru: "Рисса"
+    evidence:
+      osis: Num.33.21
+      excerpt: "И отправились из Ливны и расположились станом в Риссе."
+  - id: af8ce6a
+    en: "Sela"
+    ru: "Села"
+    evidence:
+      osis: 2Kgs.14.7
+      excerpt: "Идумеян на долине Соляной, и взял Селу войною, и дал"
+  - id: a072bae
+    en: "Shimron"
+    ru: "Шимрон"
+    evidence:
+      osis: Josh.11.1
+      excerpt: "Иоваву, царю Мадонскому, и к царю Шимронскому, и к царю"
+  - id: a0e11c1
+    en: "Telassar"
+    ru: "Фалассар"
+    evidence:
+      osis: 2Kgs.19.12
+      excerpt: "и Харан, и Рецеф, и сынов Едена, что в Фалассаре?"
+  - id: a7cdf52
+    en: "Tibhath"
+    ru: "Тивхава"
+    evidence:
+      osis: 1Chr.18.8
+      excerpt: "А из Тивхавы и Куна, городов Адраазаровых, взял Давид весьма"
+  - id: ac2192b
+    en: "Valley of Lebanon"
+    ru: "Долина Ливанская"
+    evidence:
+      osis: Josh.11.17
+      excerpt: "к Сеиру, до Ваал-Гада в долине Ливанской, подле горы Ермона,"
+  - id: aab92ca
+    en: "Zedad"
+    ru: "Цедад"
+    evidence:
+      osis: Num.34.8
+      excerpt: "Ор проведите к Емафу, и будут выступы границы к Цедаду;"
+  - id: abf4481
+    en: "Adadah"
+    ru: "Адада"
+    evidence:
+      osis: Josh.15.22
+      excerpt: "Кина, Димона, Адада,"
+  - id: ae16cf5
+    en: "Adoraim"
+    ru: "Адораим"
+    evidence:
+      osis: 2Chr.11.9
+      excerpt: "и Адораим, и Лахис, и Азеку,"
+  - id: a2a145b
+    en: "Aner"
+    ru: "Анер"
+    evidence:
+      osis: 1Chr.6.70
+      excerpt: "от половины колена Манассиина — Анер и предместья его, Билеам"
+  - id: ab20df9
+    en: "Apollonia"
+    ru: "Аполлония"
+    evidence:
+      osis: Acts.17.1
+      excerpt: "Пройдя через Амфиполь и Аполлонию, они пришли в Фессалонику, где"
+  - id: a919ab0
+    en: "Ataroth"
+    ru: "Атароф"
+    evidence:
+      osis: Josh.16.2
+      excerpt: "предел к Лузу и переходит к пределу Архи до Атарофа,"
+  - id: af3ccdf
+    en: "Aven"
+    ru: "Авен"
+    evidence:
+      osis: Hos.10.8
+      excerpt: "И истреблены будут высоты Авена, грех Израиля; терние и волчцы"
+  - id: abc1b7c
+    en: "Baalath"
+    ru: "Ваалаф"
+    evidence:
+      osis: Josh.19.44
+      excerpt: "Елтеке, Гиввефон и Ваалаф,"
+  - id: a66136c
+    en: "Baal-tamar"
+    ru: "Ваал-Фамар"
+    evidence:
+      osis: Judg.20.33
+      excerpt: "с своего места и выстроились в Ваал-Фамаре. И засада Израилева"
+  - id: a520374
+    en: "Beer"
+    ru: "Беэр"
+    evidence:
+      osis: Judg.9.21
+      excerpt: "Иофам, и убежал и пошел в Беэр, и жил там,"
+  - id: a14b9f1
+    en: "Berothah"
+    ru: "Берот"
+    evidence:
+      osis: Ezek.47.16
+      excerpt: "Емаф, Берот, Сивраим, находящийся между Дамасскою и Емафскою областями Гацар-Тихон,"
+  - id: a367677
+    en: "Beth-gamul"
+    ru: "Бет-Гамул"
+    evidence:
+      osis: Jer.48.23
+      excerpt: "и на Кариафаим и на Бет-Гамул, и на Бет-Маон,"
+  - id: a78580c
+    en: "Beth-meon"
+    ru: "Бет-Маон"
+    evidence:
+      osis: Jer.48.23
+      excerpt: "и на Кариафаим и на Бет-Гамул, и на Бет-Маон,"
+  - id: a92de65
+    en: "Bethul"
+    ru: "Вефул"
+    evidence:
+      osis: Josh.19.4
+      excerpt: "Елтолад, Вефул и Хорма,"
+  - id: abde10e
+    en: "Bozez"
+    ru: "Боцец"
+    evidence:
+      osis: 1Sam.14.4
+      excerpt: "острая скала с другой: имя одной Боцец, а имя другой"
+  - id: aee80af
+    en: "Calneh"
+    ru: "Халне"
+    evidence:
+      osis: Gen.10.10
+      excerpt: "вначале составляли: Вавилон, Эрех, Аккад и Халне в земле Сеннаар."
+  - id: acf2fac
+    en: "Chesil"
+    ru: "Кесил"
+    evidence:
+      osis: Josh.15.30
+      excerpt: "Елфолад, Кесил и Хорма,"
+  - id: a0ff819
+    en: "Chitlish"
+    ru: "Хифлис"
+    evidence:
+      osis: Josh.15.40
+      excerpt: "Хаббон, Лахмас и Хифлис,"
+  - id: a398e5d
+    en: "Cos"
+    ru: "Кос"
+    evidence:
+      osis: Acts.21.1
+      excerpt: "ними, отплыли, то прямо пришли в Кос, на другой день"
+  - id: ae8badb
+    en: "Dibon"
+    ru: "Димон"
+    evidence:
+      osis: Isa.15.9
+      excerpt: "потому что воды Димона наполнились кровью, и Я наведу на"
+  - id: ab9580e
+    en: "Dragon Spring"
+    ru: "Источник Драконов"
+    evidence:
+      osis: Neh.2.13
+      excerpt: "ночью через ворота Долины перед источником Драконовым к воротам Навозным,"
+  - id: acd9b19
+    en: "Ebez"
+    ru: "Авец"
+    evidence:
+      osis: Josh.19.20
+      excerpt: "Раввиф, Кишион и Авец,"
+  - id: aacbcf0
+    en: "Eglaim"
+    ru: "Эглаим"
+    evidence:
+      osis: Isa.15.8
+      excerpt: "вопль по всем пределам Моава, до Эглаима плач его и"
+  - id: a0e33a3
+    en: "En-hakkore"
+    ru: "Источник взывающего"
+    evidence:
+      osis: Judg.15.19
+      excerpt: 'и наречено имя месту сему: "Источник взывающего", который в Лехе'
+  - id: aa24ad4
+    en: "Ephraim"
+    ru: "Лес Ефремов"
+    evidence:
+      osis: 2Sam.18.6
+      excerpt: "в поле навстречу Израильтянам, и было сражение в лесу Ефремовом."
+  - id: aa21f26
+    en: "Etam"
+    ru: "Ефам"
+    evidence:
+      osis: 2Chr.11.6
+      excerpt: "Он укрепил Вифлеем и Ефам, и Фекою,"
+  - id: ab33b54
+    en: "Gath-rimmon"
+    ru: "Гаф-Риммон"
+    evidence:
+      osis: Josh.21.25
+      excerpt: "колена Манассиина: Фаанах и предместья его, Гаф-Риммон и предместья его:"
+  - id: a52e310
+    en: "Gederah"
+    ru: "Гедера"
+    evidence:
+      osis: 1Chr.12.4
+      excerpt: "начальствовавший над тридцатью; Иеремия, Иахазиил, Иоханан и Иозавад из Гедеры."
+  - id: a1c28f1
+    en: "Geruth Chimham"
+    ru: "Селение Химам"
+    evidence:
+      osis: Jer.41.17
+      excerpt: "и пошли, и остановились в селении Химам, близ Вифлеема, чтобы"
+  - id: ae87a54
+    en: "Gidom"
+    ru: "Гидом"
+    evidence:
+      osis: Judg.20.45
+      excerpt: "человек; и гнались за ними до Гидома и еще убили"
+  - id: a858723
+    en: "Gog"
+    ru: "Гог"
+    evidence:
+      osis: Rev.20.7
+      excerpt: "народы, находящиеся на четырех углах земли, Гога и Магога, и"
+  - id: a785680
+    en: "Hadashah"
+    ru: "Хадаша"
+    evidence:
+      osis: Josh.15.37
+      excerpt: "Ценан, Хадаша, Мигдал-Гад,"
+  - id: a62236c
+    en: "Hammon"
+    ru: "Хаммон"
+    evidence:
+      osis: 1Chr.6.76
+      excerpt: "в Галилее и предместья его, и Хаммон и предместья его,"
+  - id: a887a2d
+    en: "Hazazon-tamar"
+    ru: "Хацацон-Фамар"
+    evidence:
+      osis: 2Chr.20.2
+      excerpt: "от Сирии, и вот они в Хацацон-Фамаре, то есть в"
+  - id: a3cb036
+    en: "Helbah"
+    ru: "Хелва"
+    evidence:
+      osis: Judg.1.31
+      excerpt: "и жителей Сидона и Ахлава, Ахзива, Хелвы, Афека и Рехова."
+  - id: ad5c4a1
+    en: "Hezron"
+    ru: "Хецрон"
+    evidence:
+      osis: Josh.15.3
+      excerpt: "с южной стороны к Кадес-Варне, проходит Хецрон и, восходя до"
+  - id: a2feddf
+    en: "Hosah"
+    ru: "Хосса"
+    evidence:
+      osis: Josh.19.29
+      excerpt: "города Тира, и поворачивает предел к Хоссе, и оканчивается у"
+  - id: ad161d1
+    en: "Iim"
+    ru: "Иим"
+    evidence:
+      osis: Josh.15.29
+      excerpt: "Ваала, Иим и Ацем,"
+  - id: ad6cc26
+    en: "Ir-shemesh"
+    ru: "Ир-Шемеш"
+    evidence:
+      osis: Josh.19.41
+      excerpt: "пределом удела их были: Цора, Ештаол и Ир-Шемеш,"
+  - id: abff89f
+    en: "Jabneel"
+    ru: "Иавнеил"
+    evidence:
+      osis: Josh.19.33
+      excerpt: "что в Цананниме, к Адами-Некеву и Иавнеилу, до Лаккума, и"
+  - id: aa0ef78
+    en: "Jehud"
+    ru: "Игуд"
+    evidence:
+      osis: Josh.19.45
+      excerpt: "Игуд, Бене-Верак и Гаф-Риммон,"
+  - id: ab2e402
+    en: "Jokmeam"
+    ru: "Иокмеам"
+    evidence:
+      osis: 1Kgs.4.12
+      excerpt: "ниже Иезрееля, от Беф-Сана до Абел-Мехола, и даже за Иокмеам;"
+  - id: a804aeb
+    en: "Kamon"
+    ru: "Камон"
+    evidence:
+      osis: Judg.10.5
+      excerpt: "И умер Иаир и погребен в Камоне."
+  - id: a6536c9
+    en: "Kattath"
+    ru: "Каттаф"
+    evidence:
+      osis: Josh.19.15
+      excerpt: "далее: Каттаф, Нагалал, Шимрон, Идеала и Вифлеем: двенадцать городов с"
+  - id: ae8f9cf
+    en: "Kinah"
+    ru: "Кина"
+    evidence:
+      osis: Josh.15.22
+      excerpt: "Кина, Димона, Адада,"
+  - id: a62aa3a
+    en: "Lahmam"
+    ru: "Лахмас"
+    evidence:
+      osis: Josh.15.40
+      excerpt: "Хаббон, Лахмас и Хифлис,"
+  - id: ac3ac4e
+    en: "Lebaoth"
+    ru: "Леваоф"
+    evidence:
+      osis: Josh.15.32
+      excerpt: "Леваоф, Шелихим, Аин и Риммон: всех двадцать девять городов с"
+  - id: ae60c0c
+    en: "Maarath"
+    ru: "Маараф"
+    evidence:
+      osis: Josh.15.59
+      excerpt: "Маараф, Беф-Аноф и Елтекон: шесть городов с их селами. [Феко,"
+  - id: ac041e2
+    en: "Magbish"
+    ru: "Магбиш"
+    evidence:
+      osis: Ezra.2.30
+      excerpt: "уроженцев Магбиша сто пятьдесят шесть;"
+  - id: a6e2c95
+    en: "Manahath"
+    ru: "Манахаф"
+    evidence:
+      osis: 1Chr.8.6
+      excerpt: "были главами родов, живших в Геве и переселенных в Манахаф:"
+  - id: a8bc4e3
+    en: "Meroz"
+    ru: "Мероз"
+    evidence:
+      osis: Judg.5.23
+      excerpt: "Прокляните Мероз, говорит Ангел Господень, прокляните, прокляните жителей его за"
+  - id: a571ca0
+    en: "Migdal-gad"
+    ru: "Мигдал-Гад"
+    evidence:
+      osis: Josh.15.37
+      excerpt: "Ценан, Хадаша, Мигдал-Гад,"
+  - id: afc2466
+    en: "Mizpeh"
+    ru: "Мицфе"
+    evidence:
+      osis: Josh.18.26
+      excerpt: "Мицфе, Кефира и Моца,"
+  - id: ac2b4ef
+    en: "Mount Baalah"
+    ru: "Гора Ваал"
+    evidence:
+      osis: Josh.15.11
+      excerpt: "поворачивает предел к Шикарону, проходит чрез гору [земли] Ваал и"
+  - id: a3587ba
+    en: "Mount Jearim"
+    ru: "Гора Иеарим"
+    evidence:
+      osis: Josh.15.10
+      excerpt: "Сеиру, и идет северною стороною горы Иеарим, которая есть Кесалон,"
+  - id: a884255
+    en: "Mount Zalmon"
+    ru: "Гора Селмон"
+    evidence:
+      osis: Judg.9.48
+      excerpt: "И пошел Авимелех на гору Селмон, сам и весь народ,"
+  - id: a179865
+    en: "Naarah"
+    ru: "Наарафа"
+    evidence:
+      osis: Josh.16.7
+      excerpt: "от Ианоха, нисходя к Атарофу и Наарафу, примыкает к Иерихону"
+  - id: ab571de
+    en: "Neiel"
+    ru: "Неиел"
+    evidence:
+      osis: Josh.19.27
+      excerpt: "в пределы Асафы] в Беф-Емек и Неиел, и идет у"
+  - id: a8518f1
+    en: "Nimrod"
+    ru: "Немврод"
+    evidence:
+      osis: Mic.5.6
+      excerpt: "пасти землю Ассура мечом и землю Немврода в самых воротах"
+  - id: a1f2174
+    en: "Ophni"
+    ru: "Афни"
+    evidence:
+      osis: Josh.18.24
+      excerpt: "Кефар-Аммонай, Афни и Гева: двенадцать городов с их селами."
+  - id: a6f94a6
+    en: "People’s Gate"
+    ru: "Ворота сынов народа"
+    evidence:
+      osis: Jer.17.19
+      excerpt: "пойди и стань в воротах сынов народа, которыми входят цари"
+  - id: abc2af0
+    en: "Ptolemais"
+    ru: "Птолемаида"
+    evidence:
+      osis: Acts.21.7
+      excerpt: "совершив плавание, прибыли из Тира в Птолемаиду, где, приветствовав братьев,"
+  - id: a204528
+    en: "Rakkath"
+    ru: "Раккаф"
+    evidence:
+      osis: Josh.19.35
+      excerpt: "Города укрепленные: Циддим, Цер, Хамаф, Раккаф и Хиннереф,"
+  - id: ab049cf
+    en: "Ramoth"
+    ru: "Рамоф"
+    evidence:
+      osis: 1Sam.30.27
+      excerpt: "тем, которые в Вефиле, и в Рамофе южном, и в"
+  - id: ae259d9
+    en: "Remeth"
+    ru: "Ремеф"
+    evidence:
+      osis: Josh.19.21
+      excerpt: "Ремеф, Ен-Ганним, Ен-Хадда и Беф-Пацец;"
+  - id: a0009b3
+    en: "Rumah"
+    ru: "Рума"
+    evidence:
+      osis: 2Kgs.23.36
+      excerpt: "в Иерусалиме; имя матери его Зебудда, дочь Федаии, из Румы."
+  - id: a68750d
+    en: "Samothrace"
+    ru: "Самофракия"
+    evidence:
+      osis: Acts.16.11
+      excerpt: "из Троады, мы прямо прибыли в Самофракию, а на другой"
+  - id: a6d306d
+    en: "Seleucia"
+    ru: "Селевкия"
+    evidence:
+      osis: Acts.13.4
+      excerpt: "быв посланы Духом Святым, пришли в Селевкию, а оттуда отплыли"
+  - id: a488856
+    en: "Shaaraim"
+    ru: "Шаараим"
+    evidence:
+      osis: 1Chr.4.31
+      excerpt: "в Хацарсусиме, в Беф-Биреи и в Шаариме. Вот города их"
+  - id: aa4e69f
+    en: "Sharon"
+    ru: "Сарон"
+    evidence:
+      osis: 1Chr.5.16
+      excerpt: "него городах и во всех окрестностях Сарона, до исхода их."
+  - id: a78f72b
+    en: "Shen"
+    ru: "Сен"
+    evidence:
+      osis: 1Sam.7.12
+      excerpt: "и поставил между Массифою и между Сеном, и назвал его"
+  - id: ae20466
+    en: "Shimron-meron"
+    ru: "Шимрон-Мерон"
+    evidence:
+      osis: Josh.12.20
+      excerpt: "один царь Шимрон-Мерона, один царь Ахсафа,"
+  - id: a077262
+    en: "Siphmoth"
+    ru: "Шифмоф"
+    evidence:
+      osis: 1Sam.30.28
+      excerpt: "Ароере, [и в Аммаде,] и в Шифмофе, и в Естемоа,"
+  - id: ad797fe
+    en: "Tadmor"
+    ru: "Фадмор"
+    evidence:
+      osis: 2Chr.8.4
+      excerpt: "И построил он Фадмор в пустыне, и все города для"
+  - id: a559399
+    en: "The Lord Will Provide"
+    ru: "Иегова-ире"
+    evidence:
+      osis: Gen.22.14
+      excerpt: "И нарек Авраам имя месту тому: Иегова—ире. Посему и ныне"
+  - id: a23a2e6
+    en: "Tochen"
+    ru: "Фокен"
+    evidence:
+      osis: 1Chr.4.32
+      excerpt: "с селами их: Етам, Аин, Риммон, Фокен и Ашан, —"
+  - id: a57ea5f
+    en: "Uzzen-sheerah"
+    ru: "Уззен-Шеера"
+    evidence:
+      osis: 1Chr.7.24
+      excerpt: "была Шеера. Она построила Беф-Орон нижний и верхний и Уззен-Шееру."
+  - id: a375f5a
+    en: "Valley of Hebron"
+    ru: "Долина Хевронская"
+    evidence:
+      osis: Gen.37.14
+      excerpt: "ответ. И послал его из долины Хевронской; и он пришел"
+  - id: adec54b
+    en: "Waheb"
+    ru: "Вагеб"
+    evidence:
+      osis: Num.21.15
+      excerpt: "Вагеб в Суфе и потоки Арнона, и верховье потоков, которое"
+  - id: a5e1150
+    en: "Zenan"
+    ru: "Ценан"
+    evidence:
+      osis: Josh.15.37
+      excerpt: "Ценан, Хадаша, Мигдал-Гад,"
+  - id: a31a510
+    en: "Zereth-shahar"
+    ru: "Цереф-Шахар"
+    evidence:
+      osis: Josh.13.19
+      excerpt: "Кириафаим, Сивма и Цереф-Шахар на горе Емек,"
+  - id: a041bb3
+    en: "Samaria"
+    ru: "Самария"
+    evidence:
+      osis: 1Kgs.16.28
+      excerpt: "своими и погребен в Самарии. И воцарился Ахав, сын его,"
+  - id: a64f355
+    en: "Bethel"
+    ru: "Вефиль"
+    evidence:
+      osis: Gen.12.8
+      excerpt: "горе, на восток от Вефиля; и поставил шатер свой так,"
+  - id: a84f426
+    en: "City of David"
+    ru: "Город Давидов"
+    evidence:
+      osis: 2Sam.5.7
+      excerpt: "крепость Сион: это — город Давидов."
+  - id: aede336
+    en: "Gibeon"
+    ru: "Гаваон"
+    evidence:
+      osis: Josh.9.3
+      excerpt: "Но жители Гаваона, услышав, что Иисус сделал с Иерихоном и"
+  - id: ab94aea
+    en: "Gilgal"
+    ru: "Галгал"
+    evidence:
+      osis: Josh.4.19
+      excerpt: "и поставил стан в Галгале, на восточной стороне Иерихона."
+  - id: a3cc590
+    en: "Lachish"
+    ru: "Лахис"
+    evidence:
+      osis: Josh.10.31
+      excerpt: "Израильтяне с ним к Лахису и расположился подле него станом"
+  - id: af92088
+    en: "Jabesh-gilead"
+    ru: "Иавис Галаадский"
+    evidence:
+      osis: Judg.21.8
+      excerpt: "И оказалось, что из Иависа Галаадского никто не приходил пред"
+  - id: ab34789
+    en: "Anathoth"
+    ru: "Анафоф"
+    evidence:
+      osis: Josh.21.18
+      excerpt: "Анафоф и предместья его, Алмон и предместья его: четыре города."
+  - id: a5f43dd
+    en: "Tarshish"
+    ru: "Фарсис"
+    evidence:
+      osis: 2Chr.9.21
+      excerpt: "корабли царя ходили в Фарсис с слугами Хирама, и в"
+  - id: a553110
+    en: "Kidron"
+    ru: "Кедрон"
+    evidence:
+      osis: 2Sam.15.23
+      excerpt: "и царь перешел поток Кедрон; и пошел весь народ [и"
+  - id: a80d317
+    en: "Tirzah"
+    ru: "Фирца"
+    evidence:
+      osis: Josh.12.24
+      excerpt: "один царь Фирцы. Всех царей тридцать один."
+  - id: ad2048e
+    en: "Debir"
+    ru: "Давир"
+    evidence:
+      osis: Josh.10.38
+      excerpt: "Израиль с ним к Давиру и воевал против него;"
+  - id: a8ec7ba
+    en: "Paddan-aram"
+    ru: "Месопотамия"
+    evidence:
+      osis: Gen.25.20
+      excerpt: "дочь Вафуила Арамеянина из Месопотамии, сестру Лавана Арамеянина."
+  - id: ada25df
+    en: "Hormah"
+    ru: "Хорма"
+    evidence:
+      osis: Num.14.45
+      excerpt: "и гнали их до Хормы, [и возвратились в стан.]"
+  - id: a21f909
+    en: "Timnah"
+    ru: "Фимна"
+    evidence:
+      osis: Josh.15.10
+      excerpt: "к Вефсамису, проходит чрез Фимну;"
+  - id: a244d8f
+    en: "Eglon"
+    ru: "Еглон"
+    evidence:
+      osis: Josh.10.34
+      excerpt: "ним из Лахиса к Еглону и расположились подле него станом"
+  - id: a7559e6
+    en: "Valley of Rephaim"
+    ru: "Долина Рефаимов"
+    evidence:
+      osis: Josh.15.8
+      excerpt: "Енномовой, которая на краю долины Рефаимов к северу;"
+  - id: a75b45e
+    en: "Beth-horon"
+    ru: "Беф-Орон"
+    evidence:
+      osis: Josh.18.14
+      excerpt: "которая на юге пред Беф-Ороном, и оканчивается у Кириаф-Ваала, иначе"
+  - id: a403c45
+    en: "Jebus"
+    ru: "Иевус"
+    evidence:
+      osis: Josh.15.8
+      excerpt: "Енномова с южной стороны Иевуса, который есть Иерусалим, и восходит"
+  - id: adb008c
+    en: "Tahpanhes"
+    ru: "Тафнис"
+    evidence:
+      osis: Jer.43.7
+      excerpt: "Господня, и дошли до Тафниса."
+  - id: a51df0e
+    en: "Engedi"
+    ru: "Ен-Геди"
+    evidence:
+      osis: Josh.15.62
+      excerpt: "Нившан, Ир-Мелах и Ен-Геди: шесть городов с их селами."
+  - id: ae00861
+    en: "Machpelah"
+    ru: "Махпела"
+    evidence:
+      osis: Gen.23.9
+      excerpt: "он отдал мне пещеру Махпелу, которая у него на конце"
+  - id: a9674fc
+    en: "Thebes"
+    ru: "Но"
+    evidence:
+      osis: Jer.46.25
+      excerpt: "Я посещу Аммона, который в Но, и фараона и Египет,"
+  - id: a6f048c
+    en: "Gibbethon"
+    ru: "Гиввефон"
+    evidence:
+      osis: Josh.19.44
+      excerpt: "Елтеке, Гиввефон и Ваалаф,"
+  - id: a5a6458
+    en: "Kishon"
+    ru: "Киссон"
+    evidence:
+      osis: Judg.4.7
+      excerpt: "к тебе, к потоку Киссону, Сисару, военачальника Иавинова, и колесницы"
+  - id: aa5cc66
+    en: "Mount Ebal"
+    ru: "Гевал"
+    evidence:
+      osis: Deut.11.29
+      excerpt: "а проклятие на горе Гевал:"
+  - id: a40647c
+    en: "Pirathon"
+    ru: "Пирафон"
+    evidence:
+      osis: Judg.12.15
+      excerpt: "Пирафонянин, и погребен в Пирафоне в земле Ефремовой, на горе"
+  - id: aa516c2
+    en: "Valley of Jezreel"
+    ru: "Долина Изреельская"
+    evidence:
+      osis: Josh.17.16
+      excerpt: "у тех, которые на долине Изреельской."
+  - id: a3f8916
+    en: "Beth-arabah"
+    ru: "Беф-Арава"
+    evidence:
+      osis: Josh.15.6
+      excerpt: "с северной стороны к Беф-Араве, и идет предел вверх до"
+  - id: a2e5054
+    en: "Chephirah"
+    ru: "Кефира"
+    evidence:
+      osis: Josh.9.17
+      excerpt: "же их [были]: Гаваон, Кефира, Беероф и Кириаф-Иарим."
+  - id: a7b6270
+    en: "Ephraim Gate"
+    ru: "Ворота Ефремовы"
+    evidence:
+      osis: 2Kgs.14.13
+      excerpt: "разрушил стену Иерусалимскую от ворот Ефремовых до ворот угольных на"
+  - id: abf176f
+    en: "Halah"
+    ru: "Халах"
+    evidence:
+      osis: 2Kgs.17.6
+      excerpt: "и поселил их в Халахе и в Хаворе, при реке"
+  - id: a878d66
+    en: "Ibleam"
+    ru: "Ивлеам"
+    evidence:
+      osis: Josh.17.11
+      excerpt: "зависящие от него места, Ивлеам и зависящие от него места,"
+  - id: ad05040
+    en: "Naphoth-dor"
+    ru: "Нафаф-Дор"
+    evidence:
+      osis: Josh.12.23
+      excerpt: "один царь Дора при Нафаф-Доре, один царь Гоима в Галгале,"
+  - id: a8da370
+    en: "Rimmon"
+    ru: "Риммон"
+    evidence:
+      osis: Josh.15.32
+      excerpt: "Леваоф, Шелихим, Аин и Риммон: всех двадцать девять городов с"
+  - id: a0f54e4
+    en: "Sin"
+    ru: "Син"
+    evidence:
+      osis: Exod.16.1
+      excerpt: "сынов Израилевых в пустыню Син, что между Елимом и между"
+  - id: a81b7b1
+    en: "Valley Gate"
+    ru: "Ворота Долины"
+    evidence:
+      osis: Neh.2.13
+      excerpt: "проехал я ночью через ворота Долины перед источником Драконовым к"
+  - id: a6c3859
+    en: "Ahava"
+    ru: "Агава"
+    evidence:
+      osis: Ezra.8.15
+      excerpt: "у реки, втекающей в Агаву, и мы простояли там три"
+  - id: a8f6a28
+    en: "Azmon"
+    ru: "Ацмон"
+    evidence:
+      osis: Num.34.4
+      excerpt: "Гацар-Аддару и пройдет чрез Ацмон;"
+  - id: a696a95
+    en: "Beth-aven"
+    ru: "Беф-Авен"
+    evidence:
+      osis: Hos.4.15
+      excerpt: "и не восходите в Беф-Авен, и не клянитесь: «жив Господь!»"
+  - id: a7409b9
+    en: "Eden"
+    ru: "Еден"
+    evidence:
+      osis: 2Kgs.19.12
+      excerpt: "и Рецеф, и сынов Едена, что в Фалассаре?"
+  - id: a2fc4c4
+    en: "Fountain Gate"
+    ru: "Ворота Источника"
+    evidence:
+      osis: Neh.2.14
+      excerpt: "И подъехал я к воротам Источника и к царскому водоему,"
+  - id: a28a7df
+    en: "Hachilah"
+    ru: "Гахила"
+    evidence:
+      osis: 1Sam.23.19
+      excerpt: "в лесу, на холме Гахила, что направо от Иесимона;"
+  - id: a2d84de
+    en: "Kerioth"
+    ru: "Кериоф"
+    evidence:
+      osis: Jer.48.24
+      excerpt: "и на Кериоф и на Восор, и на все города"
+  - id: a694ea2
+    en: "Mizpah"
+    ru: "Мицпа"
+    evidence:
+      osis: Gen.31.49
+      excerpt: "также: Мицпа, оттого, что Лаван сказал: да надзирает Господь надо"
+  - id: a9ba60c
+    en: "Shepham"
+    ru: "Шефам"
+    evidence:
+      osis: Num.34.10
+      excerpt: "себе от Гацар-Енана к Шефаму,"
+  - id: a6e6528
+    en: "Timnath-heres"
+    ru: "Фамнаф-Сараи"
+    evidence:
+      osis: Josh.19.50
+      excerpt: "Господню дали ему город Фамнаф-Сараи, которого он просил, на горе"
+  - id: a4a5cce
+    en: "Valley of Siddim"
+    ru: "Сиддим"
+    evidence:
+      osis: Gen.14.3
+      excerpt: "сии соединились в долине Сиддим, где ныне море Соленое."
+  - id: a72a1ff
+    en: "Abdon"
+    ru: "Авдон"
+    evidence:
+      osis: Josh.21.30
+      excerpt: "Мишал и предместья его, Авдон и предместья его,"
+  - id: aeb052c
+    en: "Almon-diblathaim"
+    ru: "Алмон-Дивлафаим"
+    evidence:
+      osis: Num.33.46
+      excerpt: "и расположились станом в Алмон-Дивлафаиме."
+  - id: a0a2ca7
+    en: "Assos"
+    ru: "Асс"
+    evidence:
+      osis: Acts.20.13
+      excerpt: "корабль и поплыли в Асс, чтобы взять оттуда Павла; ибо"
+  - id: a99875b
+    en: "Baalath"
+    ru: "Ваалаф"
+    evidence:
+      osis: 1Kgs.9.18
+      excerpt: "и Ваалаф и Фадмор в пустыне,"
+  - id: a577c27
+    en: "Bamoth-baal"
+    ru: "Вамоф-Ваал"
+    evidence:
+      osis: Josh.13.17
+      excerpt: "на равнине, и Дивон, Вамоф-Ваал и Беф-Ваал-Меон,"
+  - id: a30f9a0
+    en: "Beth-haccherem"
+    ru: "Бефкарем"
+    evidence:
+      osis: Jer.6.1
+      excerpt: "дайте знать огнем в Бефкареме, ибо от севера появляется беда"
+  - id: ad44b24
+    en: "Beth-rehob"
+    ru: "Беф-Рехов"
+    evidence:
+      osis: Judg.18.28
+      excerpt: "в долине, что близ Беф-Рехова. И построили снова город и"
+  - id: a58252b
+    en: "Bozkath"
+    ru: "Воцкаф"
+    evidence:
+      osis: Josh.15.39
+      excerpt: "Лахис, Воцкаф и Еглон,"
+  - id: ab635e4
+    en: "Dothan"
+    ru: "Дофан"
+    evidence:
+      osis: Gen.37.17
+      excerpt: "они говорили: пойдем в Дофан. И пошел Иосиф за братьями"
+  - id: a8eae19
+    en: "En-gannim"
+    ru: "Ен-Ганним"
+    evidence:
+      osis: Josh.19.21
+      excerpt: "Ремеф, Ен-Ганним, Ен-Хадда и Беф-Пацец;"
+  - id: aae626a
+    en: "Fair Havens"
+    ru: "Хорошие Пристани"
+    evidence:
+      osis: Acts.27.8
+      excerpt: "к одному месту, называемому Хорошие Пристани, близ которого был город"
+  - id: a33cfcc
+    en: "Geba"
+    ru: "Гева"
+    evidence:
+      osis: 2Kgs.23.8
+      excerpt: "совершали курения жрецы, от Гевы до Вирсавии, и разрушил высоты"
+  - id: a2f0f05
+    en: "Gibeah"
+    ru: "Гива"
+    evidence:
+      osis: Josh.15.57
+      excerpt: "Каин, Гива и Фимна: десять городов с их селами."
+  - id: aa9c505
+    en: "Hamath"
+    ru: "Емаф"
+    evidence:
+      osis: 2Kgs.17.24
+      excerpt: "из Аввы, и из Емафа, и из Сепарваима, и поселил"
+  - id: aeb09c0
+    en: "Helam"
+    ru: "Елам"
+    evidence:
+      osis: 2Sam.10.16
+      excerpt: "и пришли они к Еламу; а Совак, военачальник Адраазаров, предводительствовал"
+  - id: a878481
+    en: "India"
+    ru: "Индия"
+    evidence:
+      osis: Esth.8.9
+      excerpt: "и правителям областей от Индии до Ефиопии, ста двадцати семи"
+  - id: a765bd8
+    en: "Kain"
+    ru: "Каин"
+    evidence:
+      osis: Num.24.22
+      excerpt: "но разорен будет Каин, и недолго до того, что Ассур"
+  - id: ac9f98d
+    en: "King’s Valley"
+    ru: "Долина царская"
+    evidence:
+      osis: Gen.14.17
+      excerpt: "долину Шаве, что ныне долина царская;"
+  - id: a91d516
+    en: "Luhith"
+    ru: "Лухит"
+    evidence:
+      osis: Isa.15.5
+      excerpt: "третьей Эглы; восходят на Лухит с плачем; по дороге Хоронаимской"
+  - id: a033373
+    en: "Mattanah"
+    ru: "Матанна"
+    evidence:
+      osis: Num.21.18
+      excerpt: "Из пустыни [отправились] в Матанну,"
+  - id: af693b8
+    en: "Mount Paran"
+    ru: "Фаран"
+    evidence:
+      osis: Deut.33.2
+      excerpt: "Сеира, воссиял от горы Фарана и шел со тьмами святых;"
+  - id: aa85961
+    en: "New Gate"
+    ru: "Новые ворота"
+    evidence:
+      osis: Jer.26.10
+      excerpt: "сели у входа в новые ворота дома Господня."
+  - id: a75d2c1
+    en: "Pergamum"
+    ru: "Пергам"
+    evidence:
+      osis: Rev.1.11
+      excerpt: "в Смирну, и в Пергам, и в Фиатиру, и в"
+  - id: ae4cd38
+    en: "Rehob"
+    ru: "Рехов"
+    evidence:
+      osis: Num.13.22
+      excerpt: "пустыни Син даже до Рехова, близ Емафа;"
+  - id: a7d0e71
+    en: "Rogelim"
+    ru: "Роглим"
+    evidence:
+      osis: 2Sam.17.27
+      excerpt: "и Верзеллий Галаадитянин из Роглима,"
+  - id: a28da66
+    en: "Shaaraim"
+    ru: "Шаараим"
+    evidence:
+      osis: Josh.15.36
+      excerpt: "Шаараим, Адифаим, Гедера или Гедерофаим: четырнадцать городов с их селами."
+  - id: a50eea4
+    en: "Tower of the Hundred"
+    ru: "Башня Меа"
+    evidence:
+      osis: Neh.3.1
+      excerpt: "двери их, и от башни Меа освятили их до башни"
+  - id: a816ed9
+    en: "Valley of Gerar"
+    ru: "Долина Герарская"
+    evidence:
+      osis: Gen.26.17
+      excerpt: "и расположился шатрами в долине Герарской, и поселился там."
+  - id: a6ee047
+    en: "Waters of Merom"
+    ru: "Воды Меромские"
+    evidence:
+      osis: Josh.11.5
+      excerpt: "расположились станом вместе при водах Меромских, чтобы сразиться с Израилем."
+  - id: ab5161f
+    en: "Zered"
+    ru: "Заред"
+    evidence:
+      osis: Deut.2.13
+      excerpt: "встаньте и пройдите долину Заред. И прошли мы долину Заред."
+  - id: a549c0f
+    en: "Abiezer"
+    ru: "Авиезер"
+    evidence:
+      osis: Judg.8.2
+      excerpt: "Ефрем добирал виноград, нежели Авиезер обирал?"
+  - id: afe1143
+    en: "Adamah"
+    ru: "Адама"
+    evidence:
+      osis: Josh.19.36
+      excerpt: "Адама, Рама и Асор,"
+  - id: adc77fb
+    en: "Adriatic Sea"
+    ru: "Адриатическое море"
+    evidence:
+      osis: Acts.27.27
+      excerpt: "мы носимы были в Адриатическом море, около полуночи корабельщики стали"
+  - id: a89511f
+    en: "Ain"
+    ru: "Аин"
+    evidence:
+      osis: Num.34.11
+      excerpt: "Рибле, с восточной стороны Аина, потом пойдет граница и коснется"
+  - id: ada3369
+    en: "Almon"
+    ru: "Алмон"
+    evidence:
+      osis: Josh.21.18
+      excerpt: "Анафоф и предместья его, Алмон и предместья его: четыре города."
+  - id: a4bdea7
+    en: "Amphipolis"
+    ru: "Амфиполь"
+    evidence:
+      osis: Acts.17.1
+      excerpt: "Пройдя через Амфиполь и Аполлонию, они пришли в Фессалонику, где"
+  - id: ac4f712
+    en: "Aphek"
+    ru: "Афек"
+    evidence:
+      osis: Josh.19.30
+      excerpt: "далее: Умма, Афек и Рехов: двадцать два города с селами"
+  - id: a4cea2a
+    en: "Arad"
+    ru: "Арад"
+    evidence:
+      osis: Judg.1.16
+      excerpt: "которая на юг от Арада, и пришли и поселились среди"
+  - id: a0e21ff
+    en: "Athach"
+    ru: "Атах"
+    evidence:
+      osis: 1Sam.30.30
+      excerpt: "в Хорашане, и в Атахе,"
+  - id: a6d7a41
+    en: "Avvim"
+    ru: "Аввим"
+    evidence:
+      osis: Josh.18.23
+      excerpt: "Аввим, Фара и Офра,"
+  - id: a304bb7
+    en: "Baal-hamon"
+    ru: "Ваал-Гамон"
+    evidence:
+      osis: Song.8.11
+      excerpt: "был у Соломона в Ваал-Гамоне; он отдал этот виноградник сторожам;"
+  - id: a8ac29f
+    en: "Balah"
+    ru: "Вала"
+    evidence:
+      osis: Josh.19.3
+      excerpt: "Хацар-Шуал, Вала и Ацем,"
+  - id: a293fbf
+    en: "Beeshterah"
+    ru: "Беештера"
+    evidence:
+      osis: Josh.21.27
+      excerpt: "и предместья его, и Беештеру и предместья ее: два города;"
+  - id: aafc721
+    en: "Beten"
+    ru: "Ветен"
+    evidence:
+      osis: Josh.19.25
+      excerpt: "их были: Хелкаф, Хали, Ветен и Ахсаф,"
+  - id: a5f4608
+    en: "Beth-car"
+    ru: "Вефхор"
+    evidence:
+      osis: 1Sam.7.11
+      excerpt: "их до места под Вефхором."
+  - id: a587ea0
+    en: "Beth-emek"
+    ru: "Беф-Емек"
+    evidence:
+      osis: Josh.19.27
+      excerpt: "в пределы Асафы] в Беф-Емек и Неиел, и идет у"
+  - id: a3bb26d
+    en: "Beth-shemesh"
+    ru: "Вефсамис"
+    evidence:
+      osis: Josh.19.22
+      excerpt: "Фавору и Шагациме и Вефсамису, и оканчивается предел их у"
+  - id: a206291
+    en: "Bezek"
+    ru: "Везек"
+    evidence:
+      osis: 1Sam.11.8
+      excerpt: "Саул осмотрел их в Везеке, и нашлось сынов Израилевых триста"
+  - id: ab41e6b
+    en: "Chezib"
+    ru: "Хезив"
+    evidence:
+      osis: Gen.38.5
+      excerpt: "Шела. Иуда был в Хезиве, когда она родила его."
+  - id: ac4ff01
+    en: "City of Palms"
+    ru: "Город Пальм"
+    evidence:
+      osis: Judg.1.16
+      excerpt: "тестя Моисеева, пошли из города Пальм с сынами Иудиными в"
+  - id: a65c305
+    en: "Dannah"
+    ru: "Данна"
+    evidence:
+      osis: Josh.15.49
+      excerpt: "Данна, Кириаф-Санна, иначе Давир,"
+  - id: a0a6365
+    en: "Dumah"
+    ru: "Дума"
+    evidence:
+      osis: Isa.21.11
+      excerpt: "Пророчество о Думе. — Кричат мне с Сеира: сторож! сколько"
+  - id: a71d65f
+    en: "Elishah"
+    ru: "Елиса"
+    evidence:
+      osis: Ezek.27.7
+      excerpt: "цвета ткани с островов Елисы были покрывалом твоим."
+  - id: a774e50
+    en: "Emek-keziz"
+    ru: "Емек-Кециц"
+    evidence:
+      osis: Josh.18.21
+      excerpt: "сии: Иерихон, Беф-Хогла и Емек-Кециц,"
+  - id: ab28e2e
+    en: "En-rimmon"
+    ru: "Ен-Риммон"
+    evidence:
+      osis: Neh.11.29
+      excerpt: "в Ен-Риммоне, в Цоре и в Иармуфе,"
+  - id: a1230e5
+    en: "Ephron"
+    ru: "Ефрон"
+    evidence:
+      osis: 2Chr.13.19
+      excerpt: "от нее города, и Ефрон и зависящие от него города."
+  - id: a16596e
+    en: "Ether"
+    ru: "Ефер"
+    evidence:
+      osis: Josh.19.7
+      excerpt: "Аин, Риммон, Ефер и Ашан: четыре города с селами их,"
+  - id: ae14b1d
+    en: "Geba"
+    ru: "Гева"
+    evidence:
+      osis: Josh.18.24
+      excerpt: "Кефар-Аммонай, Афни и Гева: двенадцать городов с их селами."
+  - id: ac36af4
+    en: "Gederothaim"
+    ru: "Гедерофаим"
+    evidence:
+      osis: Josh.15.36
+      excerpt: "Шаараим, Адифаим, Гедера или Гедерофаим: четырнадцать городов с их селами."
+  - id: aed8df9
+    en: "Gilgal"
+    ru: "Галгал"
+    evidence:
+      osis: Josh.15.7
+      excerpt: "на севере поворачивает к Галгалу, который против возвышенности Адуммима, лежащего"
+  - id: a80bf37
+    en: "Gomer"
+    ru: "Гомер"
+    evidence:
+      osis: Ezek.38.6
+      excerpt: "Гомера со всеми отрядами его, дом Фогарма, от пределов севера,"
+  - id: ae1d208
+    en: "Haeleph"
+    ru: "Елеф"
+    evidence:
+      osis: Josh.18.28
+      excerpt: "Цела, Елеф и Иевус, иначе Иерусалим, Гивеаф и Кириаф: четырнадцать"
+  - id: a5e2c12
+    en: "Hall of the Throne"
+    ru: "Притвор с престолом"
+    evidence:
+      osis: 1Kgs.7.7
+      excerpt: "Еще притвор с престолом, с которого он судил, притвор для"
+  - id: a154d7b
+    en: "Hamonah"
+    ru: "Гамона"
+    evidence:
+      osis: Ezek.39.16
+      excerpt: "И будет имя городу: Гамона [полчище]. И так очистят они"
+  - id: ad7e819
+    en: "Havilah"
+    ru: "Хавила"
+    evidence:
+      osis: Gen.2.11
+      excerpt: "она обтекает всю землю Хавила, ту, где золото;"
+  - id: ae5657c
+    en: "Hazor"
+    ru: "Асор"
+    evidence:
+      osis: Josh.15.23
+      excerpt: "Кедес, Асор и Ифнан,"
+  - id: a6779cd
+    en: "Hobah"
+    ru: "Хова"
+    evidence:
+      osis: Gen.14.15
+      excerpt: "и преследовал их до Ховы, что по левую сторону Дамаска;"
+  - id: a5c4318
+    en: "Hukok"
+    ru: "Хукок"
+    evidence:
+      osis: 1Chr.6.75
+      excerpt: "и Хукок и предместья его, и Рехов и предместья его;"
+  - id: a67bd13
+    en: "Iphtah"
+    ru: "Иффах"
+    evidence:
+      osis: Josh.15.43
+      excerpt: "Иффах, Ашна и Нецив,"
+  - id: ac333a2
+    en: "Ithnan"
+    ru: "Ифнан"
+    evidence:
+      osis: Josh.15.23
+      excerpt: "Кедес, Асор и Ифнан,"
+  - id: a175f4b
+    en: "Janim"
+    ru: "Ианум"
+    evidence:
+      osis: Josh.15.53
+      excerpt: "Ианум, Беф-Таппуах и Афека,"
+  - id: a5f5b06
+    en: "Jeshanah"
+    ru: "Иешана"
+    evidence:
+      osis: 2Chr.13.19
+      excerpt: "от него города, и Иешану и зависящие от нее города,"
+  - id: a45dd20
+    en: "Joktheel"
+    ru: "Иокфеил"
+    evidence:
+      osis: Josh.15.38
+      excerpt: "Дилеан, Мицфе и Иокфеил,"
+  - id: adb5ae4
+    en: "Kedesh"
+    ru: "Кедес"
+    evidence:
+      osis: 1Chr.6.72
+      excerpt: "От колена Иссахарова — Кедес и предместья его, Давраф и"
+  - id: a8f428d
+    en: "Kiriathaim"
+    ru: "Кириафаим"
+    evidence:
+      osis: 1Chr.6.76
+      excerpt: "и предместья его, и Кириафаим и предместья его."
+  - id: abe5dde
+    en: "Lakkum"
+    ru: "Лаккум"
+    evidence:
+      osis: Josh.19.33
+      excerpt: "Адами-Некеву и Иавнеилу, до Лаккума, и оканчивался у Иордана;"
+  - id: ab6bb68
+    en: "Lebonah"
+    ru: "Левона"
+    evidence:
+      osis: Judg.21.19
+      excerpt: "и на юг от Левоны."
+  - id: ab3fd96
+    en: "Mahaneh-dan"
+    ru: "Стан Данов"
+    evidence:
+      osis: Judg.13.25
+      excerpt: "действовать в нем в стане Дановом, между Цорою и Естаолом."
+  - id: a0a52ec
+    en: "Metheg-ammah"
+    ru: "Мефег-Гаамма"
+    evidence:
+      osis: 2Sam.8.1
+      excerpt: "их, и взял Давид Мефег-Гаамма из рук Филистимлян."
+  - id: ade6a96
+    en: "Migron"
+    ru: "Мигрон"
+    evidence:
+      osis: Isa.10.28
+      excerpt: "идет на Аиаф, проходит Мигрон, в Михмасе складывает свои запасы."
+  - id: ac702f1
+    en: "Mizpeh"
+    ru: "Массифа"
+    evidence:
+      osis: 1Sam.22.3
+      excerpt: "Оттуда пошел Давид в Массифу Моавитскую и сказал царю Моавитскому:"
+  - id: aac759d
+    en: "Mount Bashan"
+    ru: "Гора Васанская"
+    evidence:
+      osis: Ps.67.16
+      excerpt: "Гора Божия — гора Васанская! гора высокая — гора Васанская!"
+  - id: a597123
+    en: "Mount Mizar"
+    ru: "Гора Цоар"
+    evidence:
+      osis: Ps.41.7
+      excerpt: "Иорданской, с Ермона, с горы Цоар."
+  - id: af35635
+    en: "Mozah"
+    ru: "Моца"
+    evidence:
+      osis: Josh.18.26
+      excerpt: "Мицфе, Кефира и Моца,"
+  - id: aff43ac
+    en: "Nahor"
+    ru: "Нахор"
+    evidence:
+      osis: Gen.24.10
+      excerpt: "в Месопотамию, в город Нахора,"
+  - id: aafe3bd
+    en: "Nezib"
+    ru: "Нецив"
+    evidence:
+      osis: Josh.15.43
+      excerpt: "Иффах, Ашна и Нецив,"
+  - id: a9ee958
+    en: "Phoenix"
+    ru: "Финик"
+    evidence:
+      osis: Acts.27.12
+      excerpt: "если можно, дойти до Финика, пристани Критской, лежащей против юго-западного"
+  - id: a664d03
+    en: "Ramah"
+    ru: "Рама"
+    evidence:
+      osis: Josh.19.29
+      excerpt: "потом предел возвращается к Раме до укрепленного города Тира, и"
+  - id: a54ef72
+    en: "Ramathaim-zophim"
+    ru: "Рамафаим-Цофим"
+    evidence:
+      osis: 1Sam.1.1
+      excerpt: "Был один человек из Рамафаим-Цофима, с горы Ефремовой, имя ему"
+  - id: aaf5fef
+    en: "Rehob"
+    ru: "Рехов"
+    evidence:
+      osis: Josh.19.28
+      excerpt: "далее: Еврон, Рехов, Хаммон и Кана, до Сидона великого;"
+  - id: a4218ee
+    en: "Rhodes"
+    ru: "Родос"
+    evidence:
+      osis: Acts.21.1
+      excerpt: "на другой день в Родос и оттуда в Патару,"
+  - id: afa863b
+    en: "Salamis"
+    ru: "Саламин"
+    evidence:
+      osis: Acts.13.5
+      excerpt: "и, быв в Саламине, проповедывали слово Божие в синагогах Иудейских;"
+  - id: a3cae2c
+    en: "Sephar"
+    ru: "Сефар"
+    evidence:
+      osis: Gen.10.30
+      excerpt: "были от Меши до Сефара, горы восточной."
+  - id: a25f8e2
+    en: "Shalishah"
+    ru: "Шалиша"
+    evidence:
+      osis: 1Sam.9.4
+      excerpt: "Ефремову и прошел землю Шалишу, но не нашли; и прошли"
+  - id: a86d49f
+    en: "Shaveh-kiriathaim"
+    ru: "Шаве-Кириафаим"
+    evidence:
+      osis: Gen.14.5
+      excerpt: "в Гаме, Эмимов в Шаве-Кириафаиме,"
+  - id: ac6b338
+    en: "Shihor-libnath"
+    ru: "Шихор-Ливнаф"
+    evidence:
+      osis: Josh.19.26
+      excerpt: "западной стороны и к Шихор-Ливнафу;"
+  - id: aa3bc1e
+    en: "Shoa"
+    ru: "Шоа"
+    evidence:
+      osis: Ezek.23.23
+      excerpt: "Халдеев, из Пехода, из Шоа и Коа, и с ними"
+  - id: aa454f7
+    en: "Sitnah"
+    ru: "Ситна"
+    evidence:
+      osis: Gen.26.21
+      excerpt: "он нарек ему имя: Ситна."
+  - id: a2e9e40
+    en: "Tappuah"
+    ru: "Таппуах"
+    evidence:
+      osis: Josh.15.34
+      excerpt: "Заноах, Ен-Ганним, Таппуах и Гаенам,"
+  - id: ac9adc9
+    en: "Tiberias"
+    ru: "Тивериада"
+    evidence:
+      osis: John.6.23
+      excerpt: "Между тем пришли из Тивериады другие лодки близко к тому"
+  - id: a85a60a
+    en: "Trachonitis"
+    ru: "Трахонитская область"
+    evidence:
+      osis: Luke.3.1
+      excerpt: "четвертовластником в Итурее и Трахонитской области, а Лисаний четвертовластником в"
+  - id: a0c71dc
+    en: "Valley of Aven"
+    ru: "Авен"
+    evidence:
+      osis: Amos.1.5
+      excerpt: "и истреблю жителей долины Авен и держащего скипетр — из"
+  - id: ae32196
+    en: "Valley of Mizpeh"
+    ru: "Мицфа"
+    evidence:
+      osis: Josh.11.8
+      excerpt: "Мисрефоф-Маима, и до долины Мицфы к востоку, и перебили их,"
+  - id: a207807
+    en: "Way of Holiness"
+    ru: "Путь святой"
+    evidence:
+      osis: Isa.35.8
+      excerpt: "путь по ней назовется путем святым: нечистый не будет ходить"
+  - id: a93ed69
+    en: "Zalmon"
+    ru: "Селмон"
+    evidence:
+      osis: Ps.67.15
+      excerpt: "забелела, как снег на Селмоне."
+  - id: a061538
+    en: "Zer"
+    ru: "Цер"
+    evidence:
+      osis: Josh.19.35
+      excerpt: "Города укрепленные: Циддим, Цер, Хамаф, Раккаф и Хиннереф,"
+  - id: a2735ff
+    en: "Edom"
+    ru: "Едом"
+    evidence:
+      osis: Gen.32.3
+      excerpt: "землю Сеир, в область Едом,"
+  - id: a231f80
+    en: "Jericho"
+    ru: "Иерихон"
+    evidence:
+      osis: Num.22.1
+      excerpt: "Моава, при Иордане, против Иерихона."
+  - id: ac24f5f
+    en: "Gibeah"
+    ru: "Гива"
+    evidence:
+      osis: Judg.19.12
+      excerpt: "Израилевых, но дойдем до Гивы."
+  - id: a18873f
+    en: "Gath"
+    ru: "Геф"
+    evidence:
+      osis: Josh.11.22
+      excerpt: "только в Газе, в Гефе и в Азоте."
+  - id: a7e13e1
+    en: "Ai"
+    ru: "Гай"
+    evidence:
+      osis: Gen.12.8
+      excerpt: "был на запад, а Гай на восток; и создал там"
+  - id: a513646
+    en: "Dan"
+    ru: "Дан"
+    evidence:
+      osis: Gen.14.14
+      excerpt: "и преследовал неприятелей до Дана;"
+  - id: ac71e65
+    en: "Philistia"
+    ru: "Земля Филистимская"
+    evidence:
+      osis: 1Sam.31.9
+      excerpt: "и послали по всей земле Филистимской, чтобы возвестить о сем"
+  - id: a2fe63c
+    en: "Ramoth-gilead"
+    ru: "Рамоф Галаадский"
+    evidence:
+      osis: 1Kgs.22.3
+      excerpt: "своим: знаете ли, что Рамоф Галаадский наш? А мы так"
+  - id: a3e21c6
+    en: "Mount Carmel"
+    ru: "Кармил"
+    evidence:
+      osis: Josh.12.22
+      excerpt: "один царь Иокнеама при Кармиле,"
+  - id: a7e3a59
+    en: "Elam"
+    ru: "Елам"
+    evidence:
+      osis: Isa.11.11
+      excerpt: "у Хуса, и у Елама, и в Сеннааре, и в"
+  - id: a8394b8
+    en: "Babylonia"
+    ru: "Вавилон"
+    evidence:
+      osis: Ezra.1.11
+      excerpt: "при отправлении переселенцев из Вавилона в Иерусалим."
+  - id: a2e3aa0
+    en: "Tekoa"
+    ru: "Фекоя"
+    evidence:
+      osis: 2Sam.14.2
+      excerpt: "И послал Иоав в Фекою, и взял оттуда умную женщину"
+  - id: ae50cf1
+    en: "Wilderness of Sinai"
+    ru: "Пустыня Синайская"
+    evidence:
+      osis: Exod.19.1
+      excerpt: "новолуния, пришли они в пустыню Синайскую."
+  - id: a8554e3
+    en: "Megiddo"
+    ru: "Мегиддон"
+    evidence:
+      osis: Josh.12.21
+      excerpt: "царь Фаанаха, один царь Мегиддона,"
+  - id: af6c325
+    en: "Geshur"
+    ru: "Гессур"
+    evidence:
+      osis: Josh.13.13
+      excerpt: "Израилевы не выгнали жителей Гессура и Маахи [и Хананеев], и"
+  - id: ab2bde8
+    en: "Riblah"
+    ru: "Ривла"
+    evidence:
+      osis: 2Kgs.23.33
+      excerpt: "его фараон Нехао в Ривле, в земле Емафской, чтобы он"
+  - id: a104820
+    en: "Ophir"
+    ru: "Офир"
+    evidence:
+      osis: 1Kgs.9.28
+      excerpt: "и отправились они в Офир, и взяли оттуда золота четыреста"
+  - id: ad9b1cd
+    en: "Jahaz"
+    ru: "Иааца"
+    evidence:
+      osis: Num.21.23
+      excerpt: "пустыню, и дошел до Иаацы, и сразился с Израилем."
+  - id: aacfcda
+    en: "Zoar"
+    ru: "Сигор"
+    evidence:
+      osis: Gen.13.10
+      excerpt: "и Гоморру, вся до Сигора орошалась водою, как сад Господень,"
+  - id: a355b6e
+    en: "Eshtaol"
+    ru: "Ештаол"
+    evidence:
+      osis: Josh.15.33
+      excerpt: "На низменных местах: Ештаол, Цора и Ашна,"
+  - id: a0b5c50
+    en: "Zin"
+    ru: "Син"
+    evidence:
+      osis: Num.20.1
+      excerpt: "Израилевы, все общество, в пустыню Син в первый месяц, и"
+  - id: a3a2a75
+    en: "Dedan"
+    ru: "Дедан"
+    evidence:
+      osis: Jer.25.23
+      excerpt: "Дедана, и Фему, и Буза, и всех, стригущих волосы на"
+  - id: a5f9092
+    en: "Meshech"
+    ru: "Мешех"
+    evidence:
+      osis: Ezek.27.13
+      excerpt: "Иаван, Фувал и Мешех торговали с тобою, выменивая товары твои"
+  - id: ac31fee
+    en: "Zoan"
+    ru: "Цоан"
+    evidence:
+      osis: Ps.77.12
+      excerpt: "земле Египетской, на поле Цоан:"
+  - id: af9cfc9
+    en: "En-rogel"
+    ru: "Ен-Рогел"
+    evidence:
+      osis: Josh.15.7
+      excerpt: "Ен-Шемеша и оканчивается у Ен-Рогела;"
+  - id: a539e01
+    en: "Jarmuth"
+    ru: "Иармуф"
+    evidence:
+      osis: Josh.12.11
+      excerpt: "один царь Иармуфа, один царь Лахиса,"
+  - id: aeb9e97
+    en: "Mamre"
+    ru: "Мамре"
+    evidence:
+      osis: Gen.23.17
+      excerpt: "которое при Махпеле, против Мамре, поле и пещера, которая на"
+  - id: a282c15
+    en: "Sepharvaim"
+    ru: "Сепарваим"
+    evidence:
+      osis: 2Kgs.17.24
+      excerpt: "из Емафа, и из Сепарваима, и поселил их в городах"
+  - id: aa8275b
+    en: "Abarim"
+    ru: "Аварим"
+    evidence:
+      osis: Num.27.12
+      excerpt: "взойди на сию гору Аварим, [которая по эту сторону Иордана,"
+  - id: a924b16
+    en: "Gozan"
+    ru: "Гозан"
+    evidence:
+      osis: 2Kgs.17.6
+      excerpt: "в Хаворе, при реке Гозан, и в городах Мидийских."
+  - id: a094036
+    en: "Lower Beth-horon"
+    ru: "Нижний Беф-Орон"
+    evidence:
+      osis: Josh.16.3
+      excerpt: "пределу Иафлета, до предела нижнего Беф-Орона и до Газера, и"
+  - id: a30e967
+    en: "Mount Gerizim"
+    ru: "Гаризим"
+    evidence:
+      osis: Deut.11.29
+      excerpt: "произнеси благословение на горе Гаризим, а проклятие на горе Гевал:"
+  - id: a079b21
+    en: "Rameses"
+    ru: "Раамсес"
+    evidence:
+      osis: Gen.47.11
+      excerpt: "части земли, в земле Раамсес, как повелел фараон."
+  - id: af936bd
+    en: "Valley of Salt"
+    ru: "Долина Соляная"
+    evidence:
+      osis: 2Kgs.14.7
+      excerpt: "десять тысяч Идумеян на долине Соляной, и взял Селу войною,"
+  - id: a42a5b2
+    en: "Argob"
+    ru: "Аргов"
+    evidence:
+      osis: Deut.3.4
+      excerpt: "шестьдесят городов, всю область Аргов, царство Ога Васанского;"
+  - id: a03cb21
+    en: "Beth-aven"
+    ru: "Беф-Авен"
+    evidence:
+      osis: Josh.7.2
+      excerpt: "в Гай, что близ Беф-Авена, с восточной стороны Вефиля, и"
+  - id: a2bb265
+    en: "Chinnereth"
+    ru: "Киннереф"
+    evidence:
+      osis: Deut.3.17
+      excerpt: "есть и предел, от Киннерефа до моря равнины, моря Соленого,"
+  - id: ad68510
+    en: "Eshtemoa"
+    ru: "Ештемо"
+    evidence:
+      osis: Josh.15.50
+      excerpt: "Анаф, Ештемо и Аним,"
+  - id: a2f3001
+    en: "Ham"
+    ru: "Земля Хамова"
+    evidence:
+      osis: Ps.77.51
+      excerpt: "начатки сил в шатрах Хамовых;"
+  - id: a5c92e1
+    en: "Jokneam"
+    ru: "Иокнеам"
+    evidence:
+      osis: Josh.12.22
+      excerpt: "царь Кедеса, один царь Иокнеама при Кармиле,"
+  - id: a376eed
+    en: "Lo-debar"
+    ru: "Лодевар"
+    evidence:
+      osis: 2Sam.9.4
+      excerpt: "Махира, сына Аммиэлова, в Лодеваре."
+  - id: a0ef1e1
+    en: "Oboth"
+    ru: "Овоф"
+    evidence:
+      osis: Num.21.10
+      excerpt: "Израилевы и остановились в Овофе;"
+  - id: ac3bc41
+    en: "Salecah"
+    ru: "Салха"
+    evidence:
+      osis: Deut.3.10
+      excerpt: "и весь Васан до Салхи и Едреи, города царства Ога"
+  - id: a39a6b9
+    en: "Socoh"
+    ru: "Сохо"
+    evidence:
+      osis: Josh.15.35
+      excerpt: "Иармуф, Одоллам, [Немра,] Сохо и Азека,"
+  - id: a38ecff
+    en: "Valley of Eshcol"
+    ru: "Есхол"
+    evidence:
+      osis: Num.13.24
+      excerpt: "и пришли к долине Есхол, [и осмотрели ее,] и срезали"
+  - id: afb265c
+    en: "Ain"
+    ru: "Аин"
+    evidence:
+      osis: Josh.15.32
+      excerpt: "Леваоф, Шелихим, Аин и Риммон: всех двадцать девять городов с"
+  - id: aabd0ba
+    en: "Beth-hoglah"
+    ru: "Беф-Хогла"
+    evidence:
+      osis: Josh.15.6
+      excerpt: "отсюда предел восходит к Беф-Хогле и проходит с северной стороны"
+  - id: a5709da
+    en: "Eltolad"
+    ru: "Елтолад"
+    evidence:
+      osis: Josh.19.4
+      excerpt: "Елтолад, Вефул и Хорма,"
+  - id: a046c70
+    en: "Gath-rimmon"
+    ru: "Гаф-Риммон"
+    evidence:
+      osis: Josh.19.45
+      excerpt: "Игуд, Бене-Верак и Гаф-Риммон,"
+  - id: a044272
+    en: "Hadid"
+    ru: "Хадид"
+    evidence:
+      osis: Ezra.2.33
+      excerpt: "уроженцев Лидды, Хадида и Оно семьсот двадцать пять;"
+  - id: ac12af9
+    en: "Libya"
+    ru: "Ливия"
+    evidence:
+      osis: Ezek.30.5
+      excerpt: "Ефиопия и Ливия, и Лидия, и весь смешанный народ, и"
+  - id: a6ac675
+    en: "Moresheth-gath"
+    ru: "Морешеф-Геф"
+    evidence:
+      osis: Mic.1.14
+      excerpt: "посылать будешь дары в Морешеф-Геф; но селения Ахзива будут обманом"
+  - id: a939939
+    en: "Tower of Shechem"
+    ru: "Башня Сихемская"
+    evidence:
+      osis: Judg.9.46
+      excerpt: "этом, все бывшие в башне Сихемской ушли в башню капища"
+  - id: a84c559
+    en: "Washer’s Field"
+    ru: "Поле белильничье"
+    evidence:
+      osis: Isa.36.2
+      excerpt: "верхнего пруда на дороге поля белильничьего."
+  - id: a32397f
+    en: "Alush"
+    ru: "Алуш"
+    evidence:
+      osis: Num.33.13
+      excerpt: "и расположились станом в Алуше."
+  - id: a2f186d
+    en: "Atad"
+    ru: "Горен-гаатад"
+    evidence:
+      osis: Gen.50.10
+      excerpt: "И дошли они до Горен-гаатада при Иордане и плакали там"
+  - id: a03cc2d
+    en: "Baalath-beer"
+    ru: "Ваалаф-Беер"
+    evidence:
+      osis: Josh.19.8
+      excerpt: "городов сих даже до Ваалаф-Беера, или южной Рамы. Вот удел"
+  - id: a5c37fd
+    en: "Beautiful Gate"
+    ru: "Двери Красные"
+    evidence:
+      osis: Acts.3.2
+      excerpt: "при дверях храма, называемых Красными, просить милостыни у входящих в"
+  - id: a4590cd
+    en: "Beth-haram"
+    ru: "Беф-Гарам"
+    evidence:
+      osis: Josh.13.27
+      excerpt: "и на долине Беф-Гарам и Беф-Нимра и Сокхоф и Цафон,"
+  - id: a85cbab
+    en: "Beth-shemesh"
+    ru: "Вефсамис"
+    evidence:
+      osis: Josh.19.38
+      excerpt: "Мигдал-Ел, Хорем, Беф-Анаф и Вефсамис: девятнадцать городов с их селами."
+  - id: ab0d85b
+    en: "Broad Wall"
+    ru: "Стена широкая"
+    evidence:
+      osis: Neh.3.8
+      excerpt: "И восстановили Иерусалим до стены широкой."
+  - id: abfdefc
+    en: "Ebenezer"
+    ru: "Авен-Езер"
+    evidence:
+      osis: 1Sam.4.1
+      excerpt: "и расположились станом при Авен-Езере, а Филистимляне расположились при Афеке."
+  - id: a34e870
+    en: "En-shemesh"
+    ru: "Ен-Шемеш"
+    evidence:
+      osis: Josh.15.7
+      excerpt: "предел проходит к водам Ен-Шемеша и оканчивается у Ен-Рогела;"
+  - id: ac10bcf
+    en: "Gallim"
+    ru: "Галлим"
+    evidence:
+      osis: 1Sam.25.44
+      excerpt: "сыну Лаиша, что из Галлима."
+  - id: a55d681
+    en: "Geder"
+    ru: "Гадер"
+    evidence:
+      osis: Josh.12.13
+      excerpt: "царь Давира, один царь Гадера,"
+  - id: a6399b3
+    en: "Gilgal"
+    ru: "Галгал"
+    evidence:
+      osis: 2Kgs.2.1
+      excerpt: "Илия с Елисеем из Галгала."
+  - id: ab6a417
+    en: "Hamath-zobah"
+    ru: "Емаф-Сува"
+    evidence:
+      osis: 2Chr.8.3
+      excerpt: "И пошел Соломон на Емаф-Сува и взял его."
+  - id: a8687ff
+    en: "Heleph"
+    ru: "Хелеф"
+    evidence:
+      osis: Josh.19.33
+      excerpt: "предел их шел от Хелефа [и] от дубравы, что в"
+  - id: a7adb01
+    en: "Jabneel"
+    ru: "Иавнеил"
+    evidence:
+      osis: Josh.15.11
+      excerpt: "Ваал и доходит до Иавнеила, и оканчивается предел у моря."
+  - id: ac0f6e7
+    en: "Kartah"
+    ru: "Карфа"
+    evidence:
+      osis: Josh.21.34
+      excerpt: "Иокнеам и предместья его, Карфу и предместья ее,"
+  - id: a20364a
+    en: "Kishion"
+    ru: "Кишион"
+    evidence:
+      osis: Josh.19.20
+      excerpt: "Раввиф, Кишион и Авец,"
+  - id: aa5f658
+    en: "Mithkah"
+    ru: "Мифка"
+    evidence:
+      osis: Num.33.28
+      excerpt: "и расположились станом в Мифке."
+  - id: a39fe14
+    en: "Mount Shepher"
+    ru: "Гора Шафер"
+    evidence:
+      osis: Num.33.23
+      excerpt: "расположились станом на горе Шафер."
+  - id: a53b82d
+    en: "Ophrah"
+    ru: "Офра"
+    evidence:
+      osis: Josh.18.23
+      excerpt: "Аввим, Фара и Офра,"
+  - id: aa9e754
+    en: "Pethor"
+    ru: "Пефор"
+    evidence:
+      osis: Num.22.5
+      excerpt: "Валааму, сыну Веорову, в Пефор, который на реке Евфрате, в"
+  - id: a17e154
+    en: "Rehoboth"
+    ru: "Реховоф"
+    evidence:
+      osis: Gen.36.37
+      excerpt: "по нем Саул из Реховофа, что при реке."
+  - id: ab5b542
+    en: "Sarid"
+    ru: "Сарид"
+    evidence:
+      osis: Josh.19.10
+      excerpt: "предел удела их до Сарида;"
+  - id: af6476f
+    en: "Shamir"
+    ru: "Шамир"
+    evidence:
+      osis: Judg.10.1
+      excerpt: "Иссахарова. Он жил в Шамире на горе Ефремовой."
+  - id: a3f0f69
+    en: "Spain"
+    ru: "Испания"
+    evidence:
+      osis: Rom.15.24
+      excerpt: "только предприму путь в Испанию, приду к вам. Ибо надеюсь,"
+  - id: a2b5ee9
+    en: "Tel-melah"
+    ru: "Тел-Мелах"
+    evidence:
+      osis: Ezra.2.59
+      excerpt: "И вот вышедшие из Тел-Мелаха, Тел-Харши, Херуб-Аддан-Иммера, которые не могли"
+  - id: a721f7f
+    en: "Tower of the Ovens"
+    ru: "Башня Печная"
+    evidence:
+      osis: Neh.3.11
+      excerpt: "они же чинили и башню Печную."
+  - id: a2109c3
+    en: "Valley of Hamon-gog"
+    ru: "Долина полчища Гогова"
+    evidence:
+      osis: Ezek.39.15
+      excerpt: "не похоронят ее в долине полчища Гогова."
+  - id: ae11a0d
+    en: "Wilderness of Maon"
+    ru: "Маон"
+    evidence:
+      osis: 1Sam.23.24
+      excerpt: "его были в пустыне Маон, на равнине, направо от Иесимона."
+  - id: a190097
+    en: "Zin"
+    ru: "Син"
+    evidence:
+      osis: Num.34.4
+      excerpt: "Акравима и пойдет чрез Син, и будут выступы ее на"
+  - id: a112fe3
+    en: "Aenon"
+    ru: "Енон"
+    evidence:
+      osis: John.3.23
+      excerpt: "Иоанн также крестил в Еноне, близ Салима, потому что там"
+  - id: adbc931
+    en: "Ain"
+    ru: "Аин"
+    evidence:
+      osis: Josh.21.16
+      excerpt: "Аин и предместья его, Ютту и предместья ее, Беф-Шемеш и"
+  - id: a2f1fa1
+    en: "Amad"
+    ru: "Амад"
+    evidence:
+      osis: Josh.19.26
+      excerpt: "Аламелех, Амад и Мишал; и примыкает предел к Кармилу с"
+  - id: ac07206
+    en: "Anaharath"
+    ru: "Анахараф"
+    evidence:
+      osis: Josh.19.19
+      excerpt: "Хафараим, Шион и Анахараф,"
+  - id: a4cf129
+    en: "Aphek"
+    ru: "Афек"
+    evidence:
+      osis: Josh.13.4
+      excerpt: "от Меары Сидонской до Афека, до пределов Аморрейских,"
+  - id: a3c7b44
+    en: "Aram-naharaim"
+    ru: "Сирия Месопотамская"
+    evidence:
+      osis: Ps.59.2
+      excerpt: "когда он воевал с Сириею Месопотамскою и с Сириею Цованскою,"
+  - id: a1e3eff
+    en: "Ashnah"
+    ru: "Ашна"
+    evidence:
+      osis: Josh.15.33
+      excerpt: "местах: Ештаол, Цора и Ашна,"
+  - id: a366989
+    en: "Baal-hazor"
+    ru: "Ваал-Гацор"
+    evidence:
+      osis: 2Sam.13.23
+      excerpt: "овец у Авессалома в Ваал-Гацоре, что у Ефрема, и позвал"
+  - id: ae83378
+    en: "Bene-berak"
+    ru: "Бене-Верак"
+    evidence:
+      osis: Josh.19.45
+      excerpt: "Игуд, Бене-Верак и Гаф-Риммон,"
+  - id: aa2fea1
+    en: "Beth-anoth"
+    ru: "Беф-Аноф"
+    evidence:
+      osis: Josh.15.59
+      excerpt: "Маараф, Беф-Аноф и Елтекон: шесть городов с их селами. [Феко,"
+  - id: a561af4
+    en: "Beth-dagon"
+    ru: "Беф-Дагон"
+    evidence:
+      osis: Josh.15.41
+      excerpt: "Гедероф, Беф-Дагон, Наема и Макед: шестнадцать городов с их селами."
+  - id: a0aa8cf
+    en: "Bethesda"
+    ru: "Вифезда"
+    evidence:
+      osis: John.5.2
+      excerpt: "ворот купальня, называемая по-еврейски Вифезда , при которой было пять"
+  - id: a95a37b
+    en: "Beth-le-aphrah"
+    ru: "Офра"
+    evidence:
+      osis: Mic.1.10
+      excerpt: "там громко; но в селении Офра покрой себя пеплом."
+  - id: ac959b2
+    en: "Bileam"
+    ru: "Билеам"
+    evidence:
+      osis: 1Chr.6.70
+      excerpt: "Анер и предместья его, Билеам и предместья его. Это поколению"
+  - id: a7ed00e
+    en: "Cabbon"
+    ru: "Хаббон"
+    evidence:
+      osis: Josh.15.40
+      excerpt: "Хаббон, Лахмас и Хифлис,"
+  - id: aca2b0a
+    en: "Cauda"
+    ru: "Клавда"
+    evidence:
+      osis: Acts.27.16
+      excerpt: "на один островок, называемый Кла́вдой, мы едва могли удержать лодку."
+  - id: a961693
+    en: "Chilmad"
+    ru: "Хилмад"
+    evidence:
+      osis: Ezek.27.23
+      excerpt: "купцы Савейские, Ассур и Хилмад торговали с тобою."
+  - id: acc1702
+    en: "City of Salt"
+    ru: "Ир-Мелах"
+    evidence:
+      osis: Josh.15.62
+      excerpt: "Нившан, Ир-Мелах и Ен-Геди: шесть городов с их селами."
+  - id: a74ee0d
+    en: "Cush"
+    ru: "Куш"
+    evidence:
+      osis: Gen.2.13
+      excerpt: "она обтекает всю землю Куш."
+  - id: ad334c4
+    en: "Debir"
+    ru: "Давир"
+    evidence:
+      osis: Josh.15.7
+      excerpt: "потом восходит предел к Давиру от долины Ахор и на"
+  - id: ac17675
+    en: "Dimonah"
+    ru: "Димона"
+    evidence:
+      osis: Josh.15.22
+      excerpt: "Кина, Димона, Адада,"
+  - id: ab80fa1
+    en: "Eder"
+    ru: "Башня Гадер"
+    evidence:
+      osis: Gen.35.21
+      excerpt: "раскинул шатер свой за башнею Гадер."
+  - id: ad44943
+    en: "Eneglaim"
+    ru: "Эглаим"
+    evidence:
+      osis: Ezek.47.10
+      excerpt: "рыболовы от Ен-Гадди до Эглаима, будут закидывать сети. Рыба будет"
+  - id: a43608b
+    en: "Esek"
+    ru: "Есек"
+    evidence:
+      osis: Gen.26.20
+      excerpt: "он нарек колодезю имя: Есек, потому что спорили с ним."
+  - id: a2ca712
+    en: "Eth-kazin"
+    ru: "Итту-Кацин"
+    evidence:
+      osis: Josh.19.13
+      excerpt: "востоку в Геф-Хефер, в Итту-Кацин, и идет к Риммону, Мифоару"
+  - id: a59b2e2
+    en: "Gebal"
+    ru: "Гевал"
+    evidence:
+      osis: Ps.82.8
+      excerpt: "Гевал и Аммон и Амалик, Филистимляне с жителями Тира."
+  - id: ac25f34
+    en: "Gibeah"
+    ru: "Гивеаф"
+    evidence:
+      osis: Josh.18.28
+      excerpt: "и Иевус, иначе Иерусалим, Гивеаф и Кириаф: четырнадцать городов с"
+  - id: a84a509
+    en: "Gilgal"
+    ru: "Галгал"
+    evidence:
+      osis: Deut.11.30
+      excerpt: "живущих на равнине, против Галгала, близ дубравы Море́."
+  - id: a81a10a
+    en: "Goshen"
+    ru: "Гошен"
+    evidence:
+      osis: Josh.15.51
+      excerpt: "Гошен, Холон и Гило: одиннадцать городов с их селами."
+  - id: a7a5f29
+    en: "Ham"
+    ru: "Гам"
+    evidence:
+      osis: Gen.14.5
+      excerpt: "в Аштероф-Карнаиме, Зузимов в Гаме, Эмимов в Шаве-Кириафаиме,"
+  - id: abf97ba
+    en: "Hanes"
+    ru: "Ханес"
+    evidence:
+      osis: Isa.30.4
+      excerpt: "послы его дошли до Ханеса."
+  - id: a3f301c
+    en: "Hazar-addar"
+    ru: "Гацар-Аддар"
+    evidence:
+      osis: Num.34.4
+      excerpt: "Кадес-Варни, оттуда пойдет к Гацар-Аддару и пройдет чрез Ацмон;"
+  - id: a4d3e40
+    en: "Hazor"
+    ru: "Гацор"
+    evidence:
+      osis: Josh.15.25
+      excerpt: "Гацор-Хадафа, Кириаф, Хецрон, иначе Гацор,"
+  - id: ac722b9
+    en: "Helkath-hazzurim"
+    ru: "Хелкаф-Хаццурим"
+    evidence:
+      osis: 2Sam.2.16
+      excerpt: "было названо это место Хелкаф-Хаццурим, что в Гаваоне."
+  - id: a2a444a
+    en: "Holon"
+    ru: "Халон"
+    evidence:
+      osis: Jer.48.21
+      excerpt: "пришел на равнины, на Халон и на Иаацу, и на"
+  - id: a5a846f
+    en: "Humtah"
+    ru: "Хумта"
+    evidence:
+      osis: Josh.15.54
+      excerpt: "Хумта, Кириаф-Арбы, иначе Хеврон, и Цигор: девять городов с их"
+  - id: a6c0a5f
+    en: "Ir-moab"
+    ru: "Город Моавитский"
+    evidence:
+      osis: Num.22.36
+      excerpt: "вышел навстречу ему в город Моавитский, который на границе при"
+  - id: aa9e265
+    en: "Ituraea"
+    ru: "Итурея"
+    evidence:
+      osis: Luke.3.1
+      excerpt: "брат его, четвертовластником в Итурее и Трахонитской области, а Лисаний"
+  - id: a4f2291
+    en: "Janoah"
+    ru: "Ианох"
+    evidence:
+      osis: 2Kgs.15.29
+      excerpt: "взял Ион, Авел-Беф-Мааху, и Ианох, и Кедес, и Асор, и"
+  - id: ab8473d
+    en: "Jeshua"
+    ru: "Иешуа"
+    evidence:
+      osis: Neh.11.26
+      excerpt: "в Иешуе, в Моладе и в Беф-Палете,"
+  - id: a0415e8
+    en: "Karkor"
+    ru: "Каркор"
+    evidence:
+      osis: Judg.8.10
+      excerpt: "и Салман были в Каркоре и с ними их ополчение"
+  - id: a48191b
+    en: "Kedesh-naphtali"
+    ru: "Кедес Неффалимов"
+    evidence:
+      osis: Judg.4.6
+      excerpt: "Варака, сына Авиноамова, из Кедеса Неффалимова, и сказала ему: повелевает"
+  - id: aeb19d6
+    en: "Kiriath-huzoth"
+    ru: "Кириаф-Хуцоф"
+    evidence:
+      osis: Num.22.39
+      excerpt: "Валаком, и пришли в Кириаф-Хуцоф."
+  - id: a56788c
+    en: "Lasea"
+    ru: "Ласея"
+    evidence:
+      osis: Acts.27.8
+      excerpt: "близ которого был город Ласея."
+  - id: a1ae20f
+    en: "Lower Pool"
+    ru: "Нижний пруд"
+    evidence:
+      osis: Isa.22.9
+      excerpt: "и собираете во́ды в нижнем пруду́;"
+  - id: a73a74f
+    en: "Madmen"
+    ru: "Мадмена"
+    evidence:
+      osis: Jer.48.2
+      excerpt: "числа народов». И ты, Мадмена, погибнешь; меч следует за тобою."
+  - id: a67325d
+    en: "Mahaneh-dan"
+    ru: "Стан Данов"
+    evidence:
+      osis: Judg.18.12
+      excerpt: "и называют то место станом Дановым до сего дня. Он"
+  - id: aec139c
+    en: "Middin"
+    ru: "Миддин"
+    evidence:
+      osis: Josh.15.61
+      excerpt: "В пустыне: Беф-Арава, Миддин и Секаха,"
+  - id: a772880
+    en: "Moreh"
+    ru: "Холм Море"
+    evidence:
+      osis: Judg.7.1
+      excerpt: "него к северу у холма Море́ в долине."
+  - id: a75aff4
+    en: "Mount Ephron"
+    ru: "Гора Ефрон"
+    evidence:
+      osis: Josh.15.9
+      excerpt: "идет к городам горы Ефрона, и поворачивает предел к Ваалу,"
+  - id: aac1fcf
+    en: "Mount Moriah"
+    ru: "Мориа"
+    evidence:
+      osis: 2Chr.3.1
+      excerpt: "в Иерусалиме на горе Мориа, которая указана была Давиду, отцу"
+  - id: aa9e65f
+    en: "Muster Gate"
+    ru: "Ворота Гаммифкад"
+    evidence:
+      osis: Neh.3.31
+      excerpt: "нефинеев и торговцев, против ворот Гаммифкад и до уго́льного жилья."
+  - id: aee679c
+    en: "Nain"
+    ru: "Наин"
+    evidence:
+      osis: Luke.7.11
+      excerpt: "пошел в город, называемый Наин; и с Ним шли многие"
+  - id: ad96dd4
+    en: "Nibshan"
+    ru: "Нившан"
+    evidence:
+      osis: Josh.15.62
+      excerpt: "Нившан, Ир-Мелах и Ен-Геди: шесть городов с их селами."
+  - id: aed6b0e
+    en: "Nophah"
+    ru: "Нофа"
+    evidence:
+      osis: Num.21.30
+      excerpt: "мы опустошили их до Нофы, которая близ Медевы."
+  - id: a28d652
+    en: "Rabbah"
+    ru: "Аравва"
+    evidence:
+      osis: Josh.15.60
+      excerpt: "Кириаф-Ваал, иначе Кириаф-Иарим, и Аравва: два города с их селами"
+  - id: a010244
+    en: "Ramah"
+    ru: "Рам"
+    evidence:
+      osis: Josh.19.36
+      excerpt: "Адама, Рама и Асор,"
+  - id: a601121
+    en: "Ramath-lehi"
+    ru: "Рамаф-Лехи"
+    evidence:
+      osis: Judg.15.17
+      excerpt: "и назвал то место: Рамаф-Лехи ."
+  - id: ab1d954
+    en: "Rehoboth"
+    ru: "Реховоф"
+    evidence:
+      osis: Gen.26.22
+      excerpt: "и нарек ему имя: Реховоф, ибо, сказал он, теперь Господь"
+  - id: a86e0b0
+    en: "Salim"
+    ru: "Салим"
+    evidence:
+      osis: John.3.23
+      excerpt: "крестил в Еноне, близ Салима, потому что там было много"
+  - id: af74b9f
+    en: "Secacah"
+    ru: "Секаха"
+    evidence:
+      osis: Josh.15.61
+      excerpt: "пустыне: Беф-Арава, Миддин и Секаха,"
+  - id: a0a98de
+    en: "Sepharad"
+    ru: "Сефарад"
+    evidence:
+      osis: Obad.1.20
+      excerpt: "из Иерусалима, находящиеся в Сефараде, получат во владение города южные."
+  - id: a5d4629
+    en: "Shallecheth"
+    ru: "Ворота Шаллехет"
+    evidence:
+      osis: 1Chr.26.16
+      excerpt: "Хосе на запад, у ворот Шаллехет, где дорога поднимается и"
+  - id: ae44746
+    en: "Sheba"
+    ru: "Шева"
+    evidence:
+      osis: Josh.19.2
+      excerpt: "их были: Вирсавия или Шева, Молада,"
+  - id: afd2396
+    en: "Shikkeron"
+    ru: "Шикарон"
+    evidence:
+      osis: Josh.15.11
+      excerpt: "и поворачивает предел к Шикарону, проходит чрез гору [земли] Ваал"
+  - id: ad16b1e
+    en: "Shual"
+    ru: "Суаль"
+    evidence:
+      osis: 1Sam.13.17
+      excerpt: "к Офре, в округ Суаль,"
+  - id: ac9c090
+    en: "Socoh"
+    ru: "Сохо"
+    evidence:
+      osis: Josh.15.48
+      excerpt: "горах: Шамир, Иаттир и Сохо,"
+  - id: aadfb8f
+    en: "Sur"
+    ru: "Сур"
+    evidence:
+      osis: 2Kgs.11.6
+      excerpt: "третья часть у ворот Сур, и третья часть у ворот"
+  - id: acfcf28
+    en: "Taralah"
+    ru: "Фарала"
+    evidence:
+      osis: Josh.18.27
+      excerpt: "Рекем, Ирфеил и Фарала,"
+  - id: ae3f164
+    en: "Timnah"
+    ru: "Фимна"
+    evidence:
+      osis: Josh.15.57
+      excerpt: "Каин, Гива и Фимна: десять городов с их селами."
+  - id: a71f834
+    en: "Valley of Beracah"
+    ru: "Долина благословения"
+    evidence:
+      osis: 2Chr.20.26
+      excerpt: "четвертый день собрались на долину благословения, так как там они"
+  - id: a402ee4
+    en: "Valley of Shaveh"
+    ru: "Долина Шаве"
+    evidence:
+      osis: Gen.14.17
+      excerpt: "вышел ему навстречу в долину Шаве, что ныне долина царская;"
+  - id: afe28fe
+    en: "Zanoah"
+    ru: "Заноах"
+    evidence:
+      osis: Josh.15.56
+      excerpt: "Изреель, Иокдам и Заноах,"
+  - id: ac2907d
+    en: "Zior"
+    ru: "Цигор"
+    evidence:
+      osis: Josh.15.54
+      excerpt: "Кириаф-Арбы, иначе Хеврон, и Цигор: девять городов с их селами."
+  - id: a6046fa
+    en: "Ammon"
+    ru: "Аммон"
+    evidence:
+      osis: Deut.2.19
+      excerpt: "ничего от земли сынов Аммоновых во владение, потому что Я"
+  - id: a85151a
+    en: "Hebron"
+    ru: "Хеврон"
+    evidence:
+      osis: Gen.13.18
+      excerpt: "дубравы Мамре, что в Хевроне; и создал там жертвенник Господу."
+  - id: abf2fc1
+    en: "Heshbon"
+    ru: "Есевон"
+    evidence:
+      osis: Num.21.25
+      excerpt: "всех городах Аморрейских, в Есевоне и во всех зависящих от"
+  - id: a736f6c
+    en: "Mizpah"
+    ru: "Массифа"
+    evidence:
+      osis: Judg.20.1
+      excerpt: "Дана до Вирсавии, и земля Галаадская пред Господа в Массифу."
+  - id: abd9596
+    en: "Mount Zion"
+    ru: "Гора Сион"
+    evidence:
+      osis: Ps.48.2
+      excerpt: "возвышенность, радость всей земли гора Сион; на северной стороне ее"
+  - id: a30c937
+    en: "Ashdod"
+    ru: "Азот"
+    evidence:
+      osis: Josh.11.22
+      excerpt: "Израилевых, остались только в Газе, в Гефе и в Азоте."
+  - id: a033b84
+    en: "Susa"
+    ru: "Сузы"
+    evidence:
+      osis: Neh.1.1
+      excerpt: "Кислеве, в двадцатом году, я находился в Сузах, престольном городе."
+  - id: a97b595
+    en: "Libnah"
+    ru: "Ливна"
+    evidence:
+      osis: Josh.10.29
+      excerpt: "с ним из Македа к Ливне и воевал против Ливны;"
+  - id: ad9df93
+    en: "Keilah"
+    ru: "Кеила"
+    evidence:
+      osis: Josh.15.44
+      excerpt: "Кеила, Ахзив и Мареша [и Едом]: девять городов с их"
+  - id: a0ed7ff
+    en: "Ziklag"
+    ru: "Циклаг"
+    evidence:
+      osis: Josh.15.31
+      excerpt: "Циклаг, Мадмана и Сансана,"
+  - id: aca767b
+    en: "Moab"
+    ru: "Моав"
+    evidence:
+      osis: Num.22.1
+      excerpt: "Израилевы, и остановились на равнинах Моава, при Иордане, против Иерихона."
+  - id: a60f092
+    en: "Goshen"
+    ru: "Гесем"
+    evidence:
+      osis: Gen.45.10
+      excerpt: "будешь жить в земле Гесем; и будешь близ меня, ты,"
+  - id: a08174b
+    en: "Zorah"
+    ru: "Цора"
+    evidence:
+      osis: Josh.15.33
+      excerpt: "На низменных местах: Ештаол, Цора и Ашна,"
+  - id: a0905b5
+    en: "Succoth"
+    ru: "Сокхоф"
+    evidence:
+      osis: Gen.33.17
+      excerpt: "А Иаков двинулся в Сокхоф, и построил себе дом, и"
+  - id: a68d1a9
+    en: "Kedar"
+    ru: "Кидар"
+    evidence:
+      osis: Isa.21.16
+      excerpt: "луков у храбрых сынов Кидара останется немного: так сказал Господь,"
+  - id: a1c600b
+    en: "Aijalon"
+    ru: "Аиалон"
+    evidence:
+      osis: Josh.19.42
+      excerpt: "Шаалаввин, Аиалон и Ифла,"
+  - id: aa54aa4
+    en: "Jordan Valley"
+    ru: "Окрестность Иорданская"
+    evidence:
+      osis: Gen.13.10
+      excerpt: "свои и увидел всю окрестность Иорданскую, что она, прежде нежели"
+  - id: aa6b19b
+    en: "Paran"
+    ru: "Фаран"
+    evidence:
+      osis: Gen.21.21
+      excerpt: "Он жил в пустыне Фаран; и мать его взяла ему"
+  - id: a38ad07
+    en: "Ar"
+    ru: "Ар"
+    evidence:
+      osis: Num.21.15
+      excerpt: "в Суфе и потоки Арнона, и верховье потоков, которое склоняется"
+  - id: aaa6f7a
+    en: "Edrei"
+    ru: "Едреи"
+    evidence:
+      osis: Num.21.33
+      excerpt: "Васанский, сам и весь народ его, на сражение к Едреи."
+  - id: a43f60f
+    en: "Mesopotamia"
+    ru: "Месопотамия"
+    evidence:
+      osis: Gen.24.10
+      excerpt: "его. Он встал и пошел в Месопотамию, в город Нахора,"
+  - id: abffcaa
+    en: "Abel-beth-maacah"
+    ru: "Авел-Беф-Мааха"
+    evidence:
+      osis: 1Kgs.15.20
+      excerpt: "Аин и Дан и Авел-Беф-Мааху и весь Киннероф, по всей"
+  - id: a2a303c
+    en: "Gihon"
+    ru: "Гион"
+    evidence:
+      osis: 1Kgs.1.33
+      excerpt: "сына моего, на мула моего, и сведите его к Гиону,"
+  - id: ad6eb0b
+    en: "Jattir"
+    ru: "Иаттир"
+    evidence:
+      osis: Josh.15.48
+      excerpt: "На горах: Шамир, Иаттир и Сохо,"
+  - id: a5cda86
+    en: "Mareshah"
+    ru: "Мареша"
+    evidence:
+      osis: Josh.15.44
+      excerpt: "Кеила, Ахзив и Мареша [и Едом]: девять городов с их"
+  - id: a83fd43
+    en: "Sharon"
+    ru: "Сарон"
+    evidence:
+      osis: Song.2.1
+      excerpt: "Я нарцисс Саронский, лилия долин!"
+  - id: a41a054
+    en: "Admah"
+    ru: "Адма"
+    evidence:
+      osis: Gen.14.2
+      excerpt: "царя Гоморрского, Шинава, царя Адмы, Шемевера, царя Севоимского, и против"
+  - id: ad3970d
+    en: "Marah"
+    ru: "Мерра"
+    evidence:
+      osis: Exod.15.23
+      excerpt: "она была горька, почему и наречено тому [месту] имя: Мерра."
+  - id: ae6bfe2
+    en: "Ono"
+    ru: "Оно"
+    evidence:
+      osis: 1Chr.8.12
+      excerpt: "и Шемер, который построил Оно и Лод и зависящие от"
+  - id: a05ebb7
+    en: "Rephidim"
+    ru: "Рефидим"
+    evidence:
+      osis: Exod.17.1
+      excerpt: "и расположилось станом в Рефидиме, и не было воды пить"
+  - id: a0293ff
+    en: "Water Gate"
+    ru: "Водяные ворота"
+    evidence:
+      osis: Neh.3.26
+      excerpt: "в Офеле, починили напротив Водяных ворот к востоку и до"
+  - id: ab5175f
+    en: "Ashan"
+    ru: "Ашан"
+    evidence:
+      osis: Josh.15.42
+      excerpt: "Ливна, Ефер и Ашан,"
+  - id: a30f37b
+    en: "Beth-jeshimoth"
+    ru: "Беф-Иешимоф"
+    evidence:
+      osis: Num.33.49
+      excerpt: "станом у Иордана от Беф-Иешимофа до Аве— Ситтима на равнинах"
+  - id: a70c56b
+    en: "Dor"
+    ru: "Дор"
+    evidence:
+      osis: Josh.12.23
+      excerpt: "один царь Дора при Нафаф-Доре, один царь Гоима в Галгале,"
+  - id: a27d0e0
+    en: "Etham"
+    ru: "Ефам"
+    evidence:
+      osis: Exod.13.20
+      excerpt: "из Сокхофа и расположились станом в Ефаме, в конце пустыни."
+  - id: a1ce1b7
+    en: "Hazar-enan"
+    ru: "Гацар-Енан"
+    evidence:
+      osis: Num.34.9
+      excerpt: "границу восточную проведите себе от Гацар-Енана к Шефаму,"
+  - id: a2715db
+    en: "Kabzeel"
+    ru: "Кавцеил"
+    evidence:
+      osis: Josh.15.21
+      excerpt: "смежности с Идумеею на юге были: Кавцеил, Едер и Иагур,"
+  - id: a97cb23
+    en: "Mephaath"
+    ru: "Мефааф"
+    evidence:
+      osis: Josh.13.18
+      excerpt: "Иааца, Кедемоф и Мефааф,"
+  - id: ababfd2
+    en: "Pi-hahiroth"
+    ru: "Пи-Гахироф"
+    evidence:
+      osis: Exod.14.2
+      excerpt: "и расположились станом пред Пи-Гахирофом, между Мигдолом и между морем,"
+  - id: aad7e4e
+    en: "Salem"
+    ru: "Салим"
+    evidence:
+      osis: Heb.7.1
+      excerpt: "Ибо Мелхиседек, царь Салима, священник Бога Всевышнего, тот, который встретил"
+  - id: aa28709
+    en: "Succoth"
+    ru: "Сокхоф"
+    evidence:
+      osis: Exod.12.37
+      excerpt: "Израилевы из Раамсеса в Сокхоф до шестисот тысяч пеших мужчин,"
+  - id: a6fc60d
+    en: "Aphek"
+    ru: "Афек"
+    evidence:
+      osis: 1Kgs.20.26
+      excerpt: "собрал Сириян и выступил к Афеку, чтобы сразиться с Израилем."
+  - id: ae12e43
+    en: "Baal-gad"
+    ru: "Ваал-Гад"
+    evidence:
+      osis: Josh.11.17
+      excerpt: "простирающейся к Сеиру, до Ваал-Гада в долине Ливанской, подле горы"
+  - id: a53f299
+    en: "Beth-millo"
+    ru: "Дом Милло"
+    evidence:
+      osis: Judg.9.6
+      excerpt: "жители Сихемские и весь дом Милло, и пошли и поставили"
+  - id: aca444b
+    en: "En-dor"
+    ru: "Ен-Дор"
+    evidence:
+      osis: Josh.17.11
+      excerpt: "от него места, жители Ен-Дора и зависящие от него места,"
+  - id: a9a2541
+    en: "Gebal"
+    ru: "Гевал"
+    evidence:
+      osis: Ezek.27.9
+      excerpt: "Старшие из Гевала и знатоки его были у тебя, чтобы"
+  - id: a3088c2
+    en: "Hazor"
+    ru: "Асор"
+    evidence:
+      osis: Jer.49.28
+      excerpt: "Кидаре и о царствах Асорских, которые поразил Навуходоносор, царь Вавилонский,"
+  - id: ae3d487
+    en: "Magog"
+    ru: "Магог"
+    evidence:
+      osis: Ezek.38.2
+      excerpt: "к Гогу в земле Магог, князю Роша, Мешеха и Фувала,"
+  - id: ab682e6
+    en: "Upper Beth-horon"
+    ru: "Беф-Орон верхний"
+    evidence:
+      osis: Josh.16.5
+      excerpt: "пределом удела их был Атароф-Адар до Беф-Орона верхнего [и Газары];"
+  - id: a50057d
+    en: "Wilderness of Ziph"
+    ru: "Пустыня Зиф"
+    evidence:
+      osis: 1Sam.23.14
+      excerpt: "потом на горе в пустыне Зиф. Саул искал его всякий"
+  - id: a2270e4
+    en: "Achzib"
+    ru: "Ахзив"
+    evidence:
+      osis: Josh.15.44
+      excerpt: "Кеила, Ахзив и Мареша [и Едом]: девять городов с их"
+  - id: a234727
+    en: "Anab"
+    ru: "Анаф"
+    evidence:
+      osis: Josh.15.50
+      excerpt: "Анаф, Ештемо и Аним,"
+  - id: abc9a1d
+    en: "Ataroth"
+    ru: "Атароф"
+    evidence:
+      osis: Num.32.3
+      excerpt: "Атароф и Дивон, и Иазер, и Нимра, и Есевон, и"
+  - id: a3d6e81
+    en: "Baal-peor"
+    ru: "Ваал-Фегор"
+    evidence:
+      osis: Hos.9.10
+      excerpt: "но они пошли к Ваал-Фегору и предались постыдному, и сами"
+  - id: ab1a343
+    en: "Bethlehem"
+    ru: "Вифлеем"
+    evidence:
+      osis: Judg.12.8
+      excerpt: "После него был судьею Израиля Есевон из Вифлеема."
+  - id: a263e60
+    en: "Beth-togarmah"
+    ru: "Фогарма"
+    evidence:
+      osis: Ezek.27.14
+      excerpt: "Из дома Фогарма за товары твои доставляли тебе лошадей и"
+  - id: ab7bf48
+    en: "Caesarea Philippi"
+    ru: "Кесария Филиппова"
+    evidence:
+      osis: Matt.16.13
+      excerpt: "Придя же в страны Кесарии Филипповой, Иисус спрашивал учеников Своих:"
+  - id: a593a48
+    en: "Chorazin"
+    ru: "Хоразин"
+    evidence:
+      osis: Matt.11.21
+      excerpt: "горе тебе, Хоразин! горе тебе, Вифсаида! ибо если бы в"
+  - id: ad6b2b7
+    en: "En-tappuah"
+    ru: "Ен-Таппуах"
+    evidence:
+      osis: Josh.17.7
+      excerpt: "который против Сихема; отсюда предел идет направо к жителям Ен-Таппуаха."
+  - id: a2fa712
+    en: "Gate of Yeshanah"
+    ru: "Старые ворота"
+    evidence:
+      osis: Neh.3.6
+      excerpt: "Старые ворота чинили Иоиада, сын Пасеаха, и Мешуллам, сын Бесодии:"
+  - id: a728f1b
+    en: "Gederoth"
+    ru: "Гедероф"
+    evidence:
+      osis: Josh.15.41
+      excerpt: "Гедероф, Беф-Дагон, Наема и Макед: шестнадцать городов с их селами."
+  - id: ab98f8c
+    en: "Gittaim"
+    ru: "Гиффаим"
+    evidence:
+      osis: 2Sam.4.3
+      excerpt: "И убежали Беерофяне в Гиффаим и остались там пришельцами до"
+  - id: a1d1918
+    en: "Helkath"
+    ru: "Хелкаф"
+    evidence:
+      osis: Josh.19.25
+      excerpt: "пределом их были: Хелкаф, Хали, Ветен и Ахсаф,"
+  - id: a662eed
+    en: "Kedesh"
+    ru: "Кедес"
+    evidence:
+      osis: Josh.19.37
+      excerpt: "Кедес, Едрея и Ен-Гацор,"
+  - id: a8661e2
+    en: "Madmannah"
+    ru: "Мадмана"
+    evidence:
+      osis: Josh.15.31
+      excerpt: "Циклаг, Мадмана и Сансана,"
+  - id: a2f0a70
+    en: "Michmethath"
+    ru: "Михмефаф"
+    evidence:
+      osis: Josh.17.7
+      excerpt: "идет от Асира к Михмефафу, который против Сихема; отсюда предел"
+  - id: a38ad9f
+    en: "Moreh"
+    ru: "Море"
+    evidence:
+      osis: Gen.12.6
+      excerpt: "места Сихема, до дубравы Море. В этой земле тогда [жили]"
+  - id: a2d9bc8
+    en: "Mysia"
+    ru: "Мисия"
+    evidence:
+      osis: Acts.16.7
+      excerpt: "Миновав же Мисию, сошли они в Троаду."
+  - id: a1c7cc1
+    en: "Philadelphia"
+    ru: "Филадельфия"
+    evidence:
+      osis: Rev.1.11
+      excerpt: "Фиатиру, и в Сардис, и в Филадельфию, и в Лаодикию."
+  - id: aefdac1
+    en: "Rezeph"
+    ru: "Рецеф"
+    evidence:
+      osis: 2Kgs.19.12
+      excerpt: "Гозан, и Харан, и Рецеф, и сынов Едена, что в"
+  - id: a1aff30
+    en: "Seirah"
+    ru: "Сеираф"
+    evidence:
+      osis: Judg.3.26
+      excerpt: "нем не думал,] прошел мимо истуканов и спасся в Сеираф."
+  - id: ab58876
+    en: "Sheshach"
+    ru: "Сесах"
+    evidence:
+      osis: Jer.25.26
+      excerpt: "которые на лице земли, а царь Сесаха выпьет после них."
+  - id: a028191
+    en: "Taberah"
+    ru: "Тавера"
+    evidence:
+      osis: Num.11.3
+      excerpt: "нарекли имя месту сему: Тавера, потому что возгорелся у них"
+  - id: a3e0180
+    en: "Valley of Iphtahel"
+    ru: "Долина Ифтах-Ел"
+    evidence:
+      osis: Josh.19.14
+      excerpt: "поворачивает предел от севера к Ханнафону и оканчивается долиною Ифтах-Ел;"
+  - id: aea17b7
+    en: "Abana"
+    ru: "Авана"
+    evidence:
+      osis: 2Kgs.5.12
+      excerpt: "разве Авана и Фарфар, реки Дамасские, не лучше всех вод"
+  - id: a8b7a6b
+    en: "Accad"
+    ru: "Аккад"
+    evidence:
+      osis: Gen.10.10
+      excerpt: "вначале составляли: Вавилон, Эрех, Аккад и Халне в земле Сеннаар."
+  - id: aaee94d
+    en: "Addar"
+    ru: "Аддар"
+    evidence:
+      osis: Josh.15.3
+      excerpt: "Хецрон и, восходя до Аддара, [идет на западной стороне Кадеса,]"
+  - id: ad4ad26
+    en: "Alemeth"
+    ru: "Аллемеф"
+    evidence:
+      osis: 1Chr.6.60
+      excerpt: "и предместья ее, и Аллемеф и предместья его, и Анафоф"
+  - id: a3e2b20
+    en: "Amam"
+    ru: "Амам"
+    evidence:
+      osis: Josh.15.26
+      excerpt: "Амам, Шема и Молада,"
+  - id: ae46bcd
+    en: "Aphekah"
+    ru: "Афека"
+    evidence:
+      osis: Josh.15.53
+      excerpt: "Ианум, Беф-Таппуах и Афека,"
+  - id: a105543
+    en: "Armageddon"
+    ru: "Армагеддон"
+    evidence:
+      osis: Rev.16.16
+      excerpt: "И он собрал их на место, называемое по-еврейски Армагеддон."
+  - id: a9a57b7
+    en: "Ashnah"
+    ru: "Ашна"
+    evidence:
+      osis: Josh.15.43
+      excerpt: "Иффах, Ашна и Нецив,"
+  - id: a979444
+    en: "Baal-hermon"
+    ru: "Ваал-Ермон"
+    evidence:
+      osis: 1Chr.5.23
+      excerpt: "земле, от Васана до Ваал-Ермона и Сенира и до горы"
+  - id: a14325e
+    en: "Bealoth"
+    ru: "Валоф"
+    evidence:
+      osis: Josh.15.24
+      excerpt: "Зиф, Телем и Валоф,"
+  - id: a882ef5
+    en: "Beon"
+    ru: "Веон"
+    evidence:
+      osis: Num.32.3
+      excerpt: "и Есевон, и Елеале, и Севам, и Нево, и Веон,"
+  - id: a0cc925
+    en: "Beth-dagon"
+    ru: "Беф-Дагон"
+    evidence:
+      osis: Josh.19.27
+      excerpt: "к востоку солнца в Беф-Дагон, и примыкает к Завулону и"
+  - id: a0a178b
+    en: "Beth-ezel"
+    ru: "Ецель"
+    evidence:
+      osis: Mic.1.11
+      excerpt: "в Цаане; плач в селении Ецель не даст вам остановиться"
+  - id: a289a5b
+    en: "Beth-lebaoth"
+    ru: "Беф-Леваоф"
+    evidence:
+      osis: Josh.19.6
+      excerpt: "Беф-Леваоф и Шарухен: тринадцать городов с их селами."
+  - id: adac973
+    en: "Beth-tappuah"
+    ru: "Беф-Таппуах"
+    evidence:
+      osis: Josh.15.53
+      excerpt: "Ианум, Беф-Таппуах и Афека,"
+  - id: a978a24
+    en: "Cabul"
+    ru: "Кавул"
+    evidence:
+      osis: Josh.19.27
+      excerpt: "Беф-Емек и Неиел, и идет у Кавула, с левой стороны;"
+  - id: a2cb16b
+    en: "Chephar-ammoni"
+    ru: "Кефар-Аммонай"
+    evidence:
+      osis: Josh.18.24
+      excerpt: "Кефар-Аммонай, Афни и Гева: двенадцать городов с их селами."
+  - id: a4c2c75
+    en: "Chios"
+    ru: "Хиос"
+    evidence:
+      osis: Acts.20.15
+      excerpt: "день мы остановились против Хиоса, а на другой пристали к"
+  - id: ab793ce
+    en: "Cnidus"
+    ru: "Книд"
+    evidence:
+      osis: Acts.27.7
+      excerpt: "и едва поровнявшись с Книдом, по причине неблагоприятного нам ветра,"
+  - id: ac6416d
+    en: "Debir"
+    ru: "Давир"
+    evidence:
+      osis: Josh.13.26
+      excerpt: "до Рамаф-Мицфы и Ветонима и от Маханаима до пределов Давира,"
+  - id: a0dc90b
+    en: "Diviners’ Oak"
+    ru: "Дуб Меонним"
+    evidence:
+      osis: Judg.9.37
+      excerpt: "спускается с возвышенности, и один отряд идет от дуба Меонним."
+  - id: a6bb890
+    en: "East Square"
+    ru: "Площадь восточная"
+    evidence:
+      osis: 2Chr.29.4
+      excerpt: "прийти священникам и левитам, и собрал их на площади восточной,"
+  - id: a1b30e1
+    en: "Eder"
+    ru: "Едер"
+    evidence:
+      osis: Josh.15.21
+      excerpt: "смежности с Идумеею на юге были: Кавцеил, Едер и Иагур,"
+  - id: ae180d8
+    en: "Elon"
+    ru: "Елон"
+    evidence:
+      osis: Josh.19.43
+      excerpt: "Елон, Фимнафа и Екрон,"
+  - id: abe5f95
+    en: "En-gannim"
+    ru: "Ен-Ганним"
+    evidence:
+      osis: Josh.15.34
+      excerpt: "Заноах, Ен-Ганним, Таппуах и Гаенам,"
+  - id: a507da9
+    en: "Ephraim"
+    ru: "Ефрем"
+    evidence:
+      osis: 2Sam.13.23
+      excerpt: "Ваал— Гацоре, что у Ефрема, и позвал Авессалом всех сыновей"
+  - id: acd9498
+    en: "Eshan"
+    ru: "Ешан"
+    evidence:
+      osis: Josh.15.52
+      excerpt: "Арав, Дума и Ешан,"
+  - id: a121d5e
+    en: "Forum of Appius"
+    ru: "Аппиева площадь"
+    evidence:
+      osis: Acts.28.15
+      excerpt: "вышли нам навстречу до Аппиевой площади и трех гостиниц. Увидев"
+  - id: a753c3b
+    en: "Gate of the Foundation"
+    ru: "Ворота Иесод"
+    evidence:
+      osis: 2Chr.23.5
+      excerpt: "царском, и треть у ворот Иесод, а весь народ на"
+  - id: aa9be2b
+    en: "Gedor"
+    ru: "Гедор"
+    evidence:
+      osis: 1Chr.4.18
+      excerpt: "Иудия родила Иереда, отца Гедора, и Хевера, отца Сохо, и"
+  - id: a45b692
+    en: "Gibeath-elohim"
+    ru: "Холм Божий"
+    evidence:
+      osis: 1Sam.10.5
+      excerpt: "того ты придешь на холм Божий, где охранный отряд Филистимский;"
+  - id: a5dd9e3
+    en: "Gimzo"
+    ru: "Гимзо"
+    evidence:
+      osis: 2Chr.28.18
+      excerpt: "от нее города, и Гимзо и зависящие от него города,"
+  - id: a878fea
+    en: "Gur"
+    ru: "Гур"
+    evidence:
+      osis: 2Kgs.9.27
+      excerpt: "Это было на возвышенности Гур, что при Ивлеаме. И побежал"
+  - id: afca9ce
+    en: "Halhul"
+    ru: "Халхул"
+    evidence:
+      osis: Josh.15.58
+      excerpt: "Халхул, Беф-Цур и Гедор,"
+  - id: a2d6bfc
+    en: "Hammath"
+    ru: "Хамаф"
+    evidence:
+      osis: Josh.19.35
+      excerpt: "Города укрепленные: Циддим, Цер, Хамаф, Раккаф и Хиннереф,"
+  - id: a412c43
+    en: "Hannathon"
+    ru: "Ханнафон"
+    evidence:
+      osis: Josh.19.14
+      excerpt: "поворачивает предел от севера к Ханнафону и оканчивается долиною Ифтах-Ел;"
+  - id: a7672d8
+    en: "Hazar-gaddah"
+    ru: "Хацар-Гадда"
+    evidence:
+      osis: Josh.15.27
+      excerpt: "Хацар-Гадда, Хешмон и Веф-Палет,"
+  - id: ae9b9bc
+    en: "Hazor"
+    ru: "Гацор"
+    evidence:
+      osis: Neh.11.33
+      excerpt: "Гацоре, Раме, Гиффаиме,"
+  - id: a7df136
+    en: "Hereth"
+    ru: "Лес Херет"
+    evidence:
+      osis: 1Sam.22.5
+      excerpt: "землю Иудину. И пошел Давид и пришел в лес Херет."
+  - id: a9cdd53
+    en: "Horem"
+    ru: "Хорем"
+    evidence:
+      osis: Josh.19.38
+      excerpt: "Иреон, Мигдал-Ел, Хорем, Беф-Анаф и Вефсамис: девятнадцать городов с их"
+  - id: ae8fac6
+    en: "Idalah"
+    ru: "Идеала"
+    evidence:
+      osis: Josh.19.15
+      excerpt: "далее: Каттаф, Нагалал, Шимрон, Идеала и Вифлеем: двенадцать городов с"
+  - id: ad94cc9
+    en: "Jezreel"
+    ru: "Изреель"
+    evidence:
+      osis: Josh.15.56
+      excerpt: "Изреель, Иокдам и Заноах,"
+  - id: ae5cc46
+    en: "Kitron"
+    ru: "Китрон"
+    evidence:
+      osis: Judg.1.30
+      excerpt: "Завулон не изгнал жителей Китрона и жителей Наглола, и жили"
+  - id: a422a1f
+    en: "Luz"
+    ru: "Луз"
+    evidence:
+      osis: Judg.1.26
+      excerpt: "и нарек имя ему Луз. Это имя его до сего"
+  - id: a67297a
+    en: "Madmenah"
+    ru: "Мадмена"
+    evidence:
+      osis: Isa.10.31
+      excerpt: "Мадмена разбежалась, жители Гевима спешат уходить."
+  - id: abee1b4
+    en: "Middle Gate"
+    ru: "Средние ворота"
+    evidence:
+      osis: Jer.39.3
+      excerpt: "Вавилонского, и расположились в средних воротах, Нергал-Шарецер, Самгар-Нево, Сарсехим, начальник"
+  - id: a33910d
+    en: "Mitylene"
+    ru: "Митилина"
+    evidence:
+      osis: Acts.20.14
+      excerpt: "нами в Ассе, то, взяв его, мы прибыли в Митилину."
+  - id: adaf385
+    en: "Moriah"
+    ru: "Мориа"
+    evidence:
+      osis: Gen.22.2
+      excerpt: "и пойди в землю Мориа и там принеси его во"
+  - id: a954735
+    en: "Mount Gilead"
+    ru: "Гора Галаад"
+    evidence:
+      osis: Judg.7.3
+      excerpt: 'и пойдет назад с горы Галаада". И возвратилось народа двадцать'
+  - id: a991067
+    en: "Mount Perazim"
+    ru: "Гора Перацим"
+    evidence:
+      osis: Isa.28.21
+      excerpt: "восстанет Господь, как на горе Перациме; разгневается, как на долине"
+  - id: aa4b3e2
+    en: "Myra"
+    ru: "Миры Ликийские"
+    evidence:
+      osis: Acts.27.5
+      excerpt: "переплыв море против Киликии и Памфилии, прибыли в Миры Ликийские."
+  - id: a6a7150
+    en: "Neapolis"
+    ru: "Неаполь"
+    evidence:
+      osis: Acts.16.11
+      excerpt: "прямо прибыли в Самофракию, а на другой день в Неаполь,"
+  - id: af43cde
+    en: "Nicopolis"
+    ru: "Никополь"
+    evidence:
+      osis: Titus.3.12
+      excerpt: "придти ко мне в Никополь, ибо я положил там провести"
+  - id: ade301b
+    en: "Patara"
+    ru: "Патара"
+    evidence:
+      osis: Acts.21.1
+      excerpt: "Кос, на другой день в Родос и оттуда в Патару,"
+  - id: a3870fe
+    en: "Pithom"
+    ru: "Пифом"
+    evidence:
+      osis: Exod.1.11
+      excerpt: "И он построил фараону Пифом и Раамсес, города для запасов,"
+  - id: a13ffd4
+    en: "Rabbith"
+    ru: "Раввиф"
+    evidence:
+      osis: Josh.19.20
+      excerpt: "Раввиф, Кишион и Авец,"
+  - id: aaa4c6e
+    en: "Ramah"
+    ru: "Рама"
+    evidence:
+      osis: Josh.19.8
+      excerpt: "до Ваалаф-Беера, или южной Рамы. Вот удел колена сынов Симеоновых,"
+  - id: a63c954
+    en: "Ramath-mizpeh"
+    ru: "Рамаф-Мицфа"
+    evidence:
+      osis: Josh.13.26
+      excerpt: "земли от Есевона до Рамаф-Мицфы и Ветонима и от Маханаима"
+  - id: a260ff1
+    en: "Rehoboth-Ir"
+    ru: "Реховоф-ир"
+    evidence:
+      osis: Gen.10.11
+      excerpt: "Из сей земли вышел Ассур и построил Ниневию, Реховоф—ир, Калах"
+  - id: a813f22
+    en: "Rimmon"
+    ru: "Риммон"
+    evidence:
+      osis: Josh.19.13
+      excerpt: "Геф-Хефер, в Итту-Кацин, и идет к Риммону, Мифоару и Нее;"
+  - id: a1c44ea
+    en: "Salmone"
+    ru: "Салмона"
+    evidence:
+      osis: Acts.27.7
+      excerpt: "причине неблагоприятного нам ветра, мы подплыли к Криту при Салмоне."
+  - id: a8bb3d8
+    en: "Serpent’s Stone"
+    ru: "Камень Зохелет"
+    evidence:
+      osis: 1Kgs.1.9
+      excerpt: "волов и тельцов у камня Зохелет, что у источника Рогель,"
+  - id: a846a2a
+    en: "Shamir"
+    ru: "Шамир"
+    evidence:
+      osis: Josh.15.48
+      excerpt: "На горах: Шамир, Иаттир и Сохо,"
+  - id: ac53696
+    en: "Shebarim"
+    ru: "Севарим"
+    evidence:
+      osis: Josh.7.5
+      excerpt: "их от ворот до Севарим и разбили их на спуске"
+  - id: a8fe47a
+    en: "Shilhim"
+    ru: "Шелихим"
+    evidence:
+      osis: Josh.15.32
+      excerpt: "Леваоф, Шелихим, Аин и Риммон: всех двадцать девять городов с"
+  - id: ab5d319
+    en: "Sibraim"
+    ru: "Сивраим"
+    evidence:
+      osis: Ezek.47.16
+      excerpt: "Емаф, Берот, Сивраим, находящийся между Дамасскою и Емафскою областями Гацар-Тихон,"
+  - id: a64ff72
+    en: "Socoh"
+    ru: "Соко"
+    evidence:
+      osis: 1Kgs.4.10
+      excerpt: "в Арюбофе; ему же принадлежал Соко и вся земля Хефер;"
+  - id: a27b472
+    en: "Sychar"
+    ru: "Сихарь"
+    evidence:
+      osis: John.4.5
+      excerpt: "в город Самарийский, называемый Сихарь, близ участка земли, данного Иаковом"
+  - id: af614df
+    en: "Tabor"
+    ru: "Фавор"
+    evidence:
+      osis: 1Chr.6.77
+      excerpt: "колена Завулонова Риммон и предместья его, Фавор и предместья его."
+  - id: a10147d
+    en: "Tel-abib"
+    ru: "Тел-Авив"
+    evidence:
+      osis: Ezek.3.15
+      excerpt: "я к переселенным в Тел-Авив, живущим при реке Ховаре, и"
+  - id: aab8f2d
+    en: "Tiphsah"
+    ru: "Типсах"
+    evidence:
+      osis: 1Kgs.4.24
+      excerpt: "эту сторону реки, от Типсаха до Газы, над всеми царями"
+  - id: afa792e
+    en: "Ummah"
+    ru: "Умма"
+    evidence:
+      osis: Josh.19.30
+      excerpt: "далее: Умма, Афек и Рехов: двадцать два города с селами"
+  - id: a49037e
+    en: "Valley of Decision"
+    ru: "Долина суда"
+    evidence:
+      osis: Joel.3.14
+      excerpt: "Толпы, толпы в долине суда! ибо близок день Господень к"
+  - id: a339971
+    en: "Valley of Sorek"
+    ru: "Долина Сорек"
+    evidence:
+      osis: Judg.16.4
+      excerpt: "он одну женщину, жившую на долине Сорек; имя ей Далида."
+  - id: a6dc035
+    en: "Zeredah"
+    ru: "Цереда"
+    evidence:
+      osis: 2Chr.4.17
+      excerpt: "выливал их царь, в глинистой земле, между Сокхофом и Цередою."
+  - id: aab3ff0
+    en: "Ziph"
+    ru: "Зиф"
+    evidence:
+      osis: Josh.15.24
+      excerpt: "Зиф, Телем и Валоф,"
+  - id: a730058
+    en: "Lebanon"
+    ru: "Ливан"
+    evidence:
+      osis: Deut.1.7
+      excerpt: "землю Ханаанскую и к Ливану, даже до реки великой, реки"
+  - id: adf74d4
+    en: "Shechem"
+    ru: "Сихем"
+    evidence:
+      osis: Gen.12.6
+      excerpt: "длине ее] до места Сихема, до дубравы Море. В этой"
+  - id: aa4680a
+    en: "Shiloh"
+    ru: "Силом"
+    evidence:
+      osis: Josh.18.1
+      excerpt: "сынов Израилевых собралось в Силом, и поставили там скинию собрания,"
+  - id: ae0bf4a
+    en: "Jezreel"
+    ru: "Изреель"
+    evidence:
+      osis: Josh.19.18
+      excerpt: "пределом их был: Изреель, Кесуллоф и Сунем,"
+  - id: ac2cef0
+    en: "Kadesh-barnea"
+    ru: "Кадес"
+    evidence:
+      osis: Gen.14.7
+      excerpt: "источнику Мишпат, который есть Кадес, и поразили всю страну Амаликитян,"
+  - id: ac62cbc
+    en: "Hamath"
+    ru: "Емаф"
+    evidence:
+      osis: 2Kgs.14.28
+      excerpt: "возвратил Израилю Дамаск и Емаф, принадлежавших Иуде, написано в летописи"
+  - id: ac5a1ec
+    en: "Cush"
+    ru: "Ефиопия"
+    evidence:
+      osis: Ps.87.4
+      excerpt: 'Филистимляне и Тир с Ефиопиею, - скажут: "такой-то родился там".'
+  - id: a3b5b53
+    en: "Beth-shemesh"
+    ru: "Вефсамис"
+    evidence:
+      osis: Josh.15.10
+      excerpt: "которая есть Кесалон, и, нисходя к Вефсамису, проходит чрез Фимну;"
+  - id: ae5bfe9
+    en: "Mahanaim"
+    ru: "Маханаим"
+    evidence:
+      osis: Gen.32.2
+      excerpt: "сказал: это ополчение Божие. И нарек имя месту тому: Маханаим."
+  - id: a053f15
+    en: "Carmel"
+    ru: "Кармил"
+    evidence:
+      osis: Josh.15.55
+      excerpt: "Маон, Кармил, Зиф и Юта,"
+  - id: ae46f2e
+    en: "Aroer"
+    ru: "Ароер"
+    evidence:
+      osis: Num.32.34
+      excerpt: "И построили сыны Гадовы Дивон и Атароф, и Ароер,"
+  - id: a4cc324
+    en: "Arnon"
+    ru: "Арнон"
+    evidence:
+      osis: Num.21.13
+      excerpt: "остановились у той части Арнона в пустыне, которая течет вне"
+  - id: a6f33c5
+    en: "Hazor"
+    ru: "Асор"
+    evidence:
+      osis: Josh.11.1
+      excerpt: "Услышав сие, Иавин, царь Асорский, послал к Иоваву, царю Мадонскому,"
+  - id: a075d61
+    en: "Beersheba"
+    ru: "Вирсавия"
+    evidence:
+      osis: Gen.21.31
+      excerpt: "назвал он сие место: Вирсавия, ибо тут оба они клялись"
+  - id: af82614
+    en: "Adullam"
+    ru: "Одоллам"
+    evidence:
+      osis: Gen.38.1
+      excerpt: "братьев своих и поселился близ одного Одолламитянина, которому имя: Хира."
+  - id: a505743
+    en: "Meribah"
+    ru: "Мерива"
+    evidence:
+      osis: Num.20.13
+      excerpt: "Это вода Меривы, у которой вошли в распрю сыны Израилевы"
+  - id: a2a8df0
+    en: "Beth-shan"
+    ru: "Беф-Сан"
+    evidence:
+      osis: Josh.17.11
+      excerpt: "и Асира принадлежат Манассии Беф-Сан и зависящие от него места,"
+  - id: acae7cb
+    en: "Maacah"
+    ru: "Мааха"
+    evidence:
+      osis: Josh.13.11
+      excerpt: "и живет Гессур и Мааха среди Израиля до сего дня."
+  - id: a9ef72b
+    en: "Peor"
+    ru: "Фегор"
+    evidence:
+      osis: Num.23.28
+      excerpt: "И взял Валак Валаама на верх Фегора, обращенного к пустыне."
+  - id: a6fea11
+    en: "Ashtaroth"
+    ru: "Аштероф"
+    evidence:
+      osis: Deut.1.4
+      excerpt: "и Ога, царя Васанского, который жил в Аштерофе в Едреи,"
+  - id: ab45bd3
+    en: "Ethiopia"
+    ru: "Ефиопия"
+    evidence:
+      osis: Esth.1.1
+      excerpt: "ста двадцатью семью областями от Индии и до Ефиопии, —"
+  - id: ab5bd29
+    en: "Nebo"
+    ru: "Нево"
+    evidence:
+      osis: Num.32.3
+      excerpt: "и Есевон, и Елеале, и Севам, и Нево, и Веон,"
+  - id: a59f6f5
+    en: "Arabia"
+    ru: "Аравия"
+    evidence:
+      osis: Isa.21.13
+      excerpt: "Пророчество об Аравии. - В лесу Аравийском ночуйте, караваны Деданские!"
+  - id: a26c8f2
+    en: "Havvoth-jair"
+    ru: "Селения Иаировы"
+    evidence:
+      osis: Num.32.41
+      excerpt: "пошел и взял селения их, и назвал их: селения Иаировы."
+  - id: a734b66
+    en: "Millo"
+    ru: "Милло"
+    evidence:
+      osis: 2Sam.5.9
+      excerpt: "ее городом Давидовым, и обстроил кругом от Милло и внутри."
+  - id: acdbce0
+    en: "Shur"
+    ru: "Сур"
+    evidence:
+      osis: Gen.16.7
+      excerpt: "источника воды в пустыне, у источника на дороге к Суру."
+  - id: ae7836a
+    en: "Kibroth-hattaavah"
+    ru: "Киброт-Гаттаава"
+    evidence:
+      osis: Num.11.34
+      excerpt: "нарекли имя месту сему: Киброт-Гаттаава, ибо там похоронили прихотливый народ."
+  - id: a296e06
+    en: "Massah"
+    ru: "Масса"
+    evidence:
+      osis: Exod.17.7
+      excerpt: "нарек месту тому имя: Масса и Мерива, по причине укорения"
+  - id: af96edd
+    en: "Ophel"
+    ru: "Офел"
+    evidence:
+      osis: 2Chr.27.3
+      excerpt: "верхние ворота дома Господня, и многое построил на стене Офела;"
+  - id: af64fb3
+    en: "Shittim"
+    ru: "Ситтим"
+    evidence:
+      osis: Josh.2.1
+      excerpt: "Иисус, сын Навин, из Ситтима двух соглядатаев тайно и сказал:"
+  - id: abfbfb9
+    en: "Zeboiim"
+    ru: "Цевоим"
+    evidence:
+      osis: Gen.10.19
+      excerpt: "Газы, отсюда к Содому, Гоморре, Адме и Цевоиму до Лаши."
+  - id: a874951
+    en: "Asshur"
+    ru: "Ассур"
+    evidence:
+      osis: Num.24.22
+      excerpt: "и недолго до того, что Ассур уведет тебя в плен."
+  - id: af3ce34
+    en: "Beth-peor"
+    ru: "Беф-Фегор"
+    evidence:
+      osis: Josh.13.20
+      excerpt: "Беф-Фегор и места при подошве Фасги и Беф-Иешимоф,"
+  - id: a1611b6
+    en: "Dung Gate"
+    ru: "Навозные ворота"
+    evidence:
+      osis: Neh.3.13
+      excerpt: "А ворота Навозные чинил Малхия, сын Рехава, начальник Бефкаремского округа:"
+  - id: a6057f5
+    en: "Fish Gate"
+    ru: "Рыбные ворота"
+    evidence:
+      osis: Neh.3.3
+      excerpt: "Ворота Рыбные строили уроженцы Сенаи: они покрыли их, и вставили"
+  - id: a89005a
+    en: "Hazar-shual"
+    ru: "Хацар-Шуал"
+    evidence:
+      osis: Josh.15.28
+      excerpt: "Хацар-Шуал, Вирсавия и Визиофея [и села их и предместья их,]"
+  - id: a416b43
+    en: "Kedemoth"
+    ru: "Кедемоф"
+    evidence:
+      osis: Deut.2.26
+      excerpt: "я послов из пустыни Кедемоф к Сигону, царю Есевонскому, с"
+  - id: a03a5d0
+    en: "Moladah"
+    ru: "Молада"
+    evidence:
+      osis: Josh.15.26
+      excerpt: "Амам, Шема и Молада,"
+  - id: a95147f
+    en: "Ramoth"
+    ru: "Рамоф"
+    evidence:
+      osis: Deut.4.43
+      excerpt: "в колене Рувимовом, и Рамоф в Галааде в колене Гадовом,"
+  - id: a5ab519
+    en: "Second Quarter"
+    ru: "Вторая часть"
+    evidence:
+      osis: 2Kgs.22.14
+      excerpt: "она в Иерусалиме, во второй части, — и говорили с"
+  - id: aaff3e1
+    en: "Tob"
+    ru: "Тов"
+    evidence:
+      osis: Judg.11.3
+      excerpt: "и жил в земле Тов; и собрались к Иеффаю праздные"
+  - id: a6fa2d3
+    en: "Zarephath"
+    ru: "Сарепта"
+    evidence:
+      osis: 1Kgs.17.9
+      excerpt: "встань и пойди в Сарепту Сидонскую, и оставайся там; Я"
+  - id: abc358b
+    en: "Arad"
+    ru: "Арад"
+    evidence:
+      osis: Num.21.1
+      excerpt: "Ханаанский царь Арада, живущий к югу, услышав, что Израиль идет"
+  - id: a22663b
+    en: "Baal-zephon"
+    ru: "Ваал-Цефон"
+    evidence:
+      osis: Exod.14.2
+      excerpt: "и между морем, пред Ваал-Цефоном; напротив его поставьте стан у"
+  - id: af6c730
+    en: "Carchemish"
+    ru: "Кархемис"
+    evidence:
+      osis: 2Chr.35.20
+      excerpt: "Египетский, на войну к Кархемису на Евфрате; и Иосия вышел"
+  - id: aafd7c4
+    en: "Ephes-dammim"
+    ru: "Ефес-Даммим"
+    evidence:
+      osis: 1Sam.17.1
+      excerpt: "Иудее, и расположились станом между Сокхофом и Азеком в Ефес-Даммиме."
+  - id: a0c9a06
+    en: "Geliloth"
+    ru: "Гелилоф"
+    evidence:
+      osis: Josh.18.17
+      excerpt: "Ен-Шемешу, и идет к Гелилофу, который против возвышенности Адуммима, и"
+  - id: a7384d7
+    en: "Jotbathah"
+    ru: "Иотвафа"
+    evidence:
+      osis: Deut.10.7
+      excerpt: "Гудгод, из Гудгода в Иотвафу, в землю, где потоки вод."
+  - id: a6845b1
+    en: "Maon"
+    ru: "Маон"
+    evidence:
+      osis: Josh.15.55
+      excerpt: "Маон, Кармил, Зиф и Юта,"
+  - id: ac0d1a5
+    en: "Mount Ephraim"
+    ru: "Гора Ефремова"
+    evidence:
+      osis: Jer.4.15
+      excerpt: "несется голос от Дана и гибельная весть с горы Ефремовой:"
+  - id: a03be2e
+    en: "Tappuah"
+    ru: "Таппуах"
+    evidence:
+      osis: Josh.12.17
+      excerpt: "один царь Таппуаха, один царь Хефера."
+  - id: a532b99
+    en: "Upper Pool"
+    ru: "Верхний пруд"
+    evidence:
+      osis: 2Kgs.18.17
+      excerpt: "и стали у водопровода верхнего пруда, который на дороге поля"
+  - id: a28f432
+    en: "Zanoah"
+    ru: "Заноах"
+    evidence:
+      osis: Josh.15.34
+      excerpt: "Заноах, Ен-Ганним, Таппуах и Гаенам,"
+  - id: ad0d82f
+    en: "Achzib"
+    ru: "Ахзив"
+    evidence:
+      osis: Josh.19.29
+      excerpt: "предел к Хоссе, и оканчивается у моря, в местечке Ахзиве;"
+  - id: af74969
+    en: "Aroer"
+    ru: "Ароер"
+    evidence:
+      osis: Josh.13.25
+      excerpt: "и половина земли сынов Аммоновых до Ароера, что пред Раввою,"
+  - id: a2bf0f8
+    en: "Ataroth-addar"
+    ru: "Атароф-Адар"
+    evidence:
+      osis: Josh.16.5
+      excerpt: "пределом удела их был Атароф-Адар до Беф-Орона верхнего [и Газары];"
+  - id: a6bf059
+    en: "Baal-perazim"
+    ru: "Ваал-Перацим"
+    evidence:
+      osis: 2Sam.5.20
+      excerpt: "И пошел Давид в Ваал-Перацим и поразил их там, и"
+  - id: ae6cef8
+    en: "Beth-anath"
+    ru: "Беф-Анаф"
+    evidence:
+      osis: Josh.19.38
+      excerpt: "Иреон, Мигдал-Ел, Хорем, Беф-Анаф и Вефсамис: девятнадцать городов с их"
+  - id: a87f8f5
+    en: "Beth-marcaboth"
+    ru: "Беф-Маркавоф"
+    evidence:
+      osis: Josh.19.5
+      excerpt: "Циклаг, Беф-Маркавоф и Хацар-Суса,"
+  - id: ae1f807
+    en: "Calah"
+    ru: "Калах"
+    evidence:
+      osis: Gen.10.11
+      excerpt: "Из сей земли вышел Ассур и построил Ниневию, Реховоф—ир, Калах"
+  - id: af6c09e
+    en: "Ephrathah"
+    ru: "Ефрафа"
+    evidence:
+      osis: Ruth.4.11
+      excerpt: "Израилев; приобретай богатство в Ефрафе, и да славится имя твое"
+  - id: a2e1bc0
+    en: "Gath"
+    ru: "Геф"
+    evidence:
+      osis: 1Chr.7.21
+      excerpt: "И убили их жители Гефа, уроженцы той земли, за то,"
+  - id: af054ba
+    en: "Gedor"
+    ru: "Гедор"
+    evidence:
+      osis: Josh.15.58
+      excerpt: "Халхул, Беф-Цур и Гедор,"
+  - id: a2ebe1c
+    en: "Hepher"
+    ru: "Хефер"
+    evidence:
+      osis: Josh.12.17
+      excerpt: "один царь Таппуаха, один царь Хефера."
+  - id: a116c5c
+    en: "Javan"
+    ru: "Иаван"
+    evidence:
+      osis: Ezek.27.13
+      excerpt: "Иаван, Фувал и Мешех торговали с тобою, выменивая товары твои"
+  - id: aacc081
+    en: "Lower Gulloth"
+    ru: "Источники нижние"
+    evidence:
+      osis: Josh.15.19
+      excerpt: "вод. И дал он ей источники верхние и источники нижние."
+  - id: a6c2936
+    en: "Madon"
+    ru: "Мадон"
+    evidence:
+      osis: Josh.12.19
+      excerpt: "один царь Мадона, один царь Асора,"
+  - id: a411283
+    en: "Migdol"
+    ru: "Мигдол"
+    evidence:
+      osis: Exod.14.2
+      excerpt: "станом пред Пи-Гахирофом, между Мигдолом и между морем, пред Ваал-Цефоном;"
+  - id: a11fadd
+    en: "Mount Halak"
+    ru: "Гора Халак"
+    evidence:
+      osis: Josh.11.17
+      excerpt: "от горы Халак, простирающейся к Сеиру, до Ваал-Гада в долине"
+  - id: a55aded
+    en: "Pisidia"
+    ru: "Писидия"
+    evidence:
+      osis: Acts.14.24
+      excerpt: "Потом, пройдя через Писидию, пришли в Памфилию,"
+  - id: a305f43
+    en: "Shihor"
+    ru: "Сихор"
+    evidence:
+      osis: Josh.13.3
+      excerpt: "От Сихора, что пред Египтом, до пределов Екрона к северу,"
+  - id: a5d1690
+    en: "Thebez"
+    ru: "Тевец"
+    evidence:
+      osis: Judg.9.50
+      excerpt: "Потом пошел Авимелех в Тевец и осадил Тевец и взял"
+  - id: a324282
+    en: "Valley of Jehoshaphat"
+    ru: "Долина Иосафата"
+    evidence:
+      osis: Joel.3.2
+      excerpt: "и приведу их в долину Иосафата, и там произведу над"
+  - id: ab49753
+    en: "Zaphon"
+    ru: "Цафон"
+    evidence:
+      osis: Josh.13.27
+      excerpt: "Беф-Нимра и Сокхоф и Цафон, остаток царства Сигона, царя Есевонского;"
+  - id: a957c5b
+    en: "Abel-keramim"
+    ru: "Авель-Керамим"
+    evidence:
+      osis: Judg.11.33
+      excerpt: "двадцать городов, и до Авель-Керамима, и смирились Аммонитяне пред сынами"
+  - id: a5f4dfc
+    en: "Acco"
+    ru: "Акко"
+    evidence:
+      osis: Judg.1.31
+      excerpt: "Асир не изгнал жителей Акко [которые платили ему дань, и"
+  - id: a845493
+    en: "Adithaim"
+    ru: "Адифаим"
+    evidence:
+      osis: Josh.15.36
+      excerpt: "Шаараим, Адифаим, Гедера или Гедерофаим: четырнадцать городов с их селами."
+  - id: ad053dd
+    en: "Aiath"
+    ru: "Аиаф"
+    evidence:
+      osis: Isa.10.28
+      excerpt: "Он идет на Аиаф, проходит Мигрон, в Михмасе складывает свои"
+  - id: a84cafa
+    en: "Allammelech"
+    ru: "Аламелех"
+    evidence:
+      osis: Josh.19.26
+      excerpt: "Аламелех, Амад и Мишал; и примыкает предел к Кармилу с"
+  - id: ad13f27
+    en: "Anem"
+    ru: "Анем"
+    evidence:
+      osis: 1Chr.6.73
+      excerpt: "и Рамоф и предместья его, и Анем и предместья его;"
+  - id: a012133
+    en: "Aphik"
+    ru: "Афек"
+    evidence:
+      osis: Judg.1.31
+      excerpt: "и жителей Сидона и Ахлава, Ахзива, Хелвы, Афека и Рехова."
+  - id: a1b9ca6
+    en: "Aroer"
+    ru: "Ароер"
+    evidence:
+      osis: 1Sam.30.28
+      excerpt: "и в Ароере, [и в Аммаде,] и в Шифмофе, и"
+  - id: afe4be0
+    en: "Ashteroth-karnaim"
+    ru: "Аштероф-Карнаим"
+    evidence:
+      osis: Gen.14.5
+      excerpt: "и поразили Рефаимов в Аштероф—Карнаиме, Зузимов в Гаме, Эмимов в"
+  - id: afdb74b
+    en: "Atroth-shophan"
+    ru: "Атароф-Шофан"
+    evidence:
+      osis: Num.32.35
+      excerpt: "и Атароф-Шофан, и Иазер, и Иогбегу,"
+  - id: a9fd165
+    en: "Aznoth-tabor"
+    ru: "Азноф-Фавор"
+    evidence:
+      osis: Josh.19.34
+      excerpt: "предел на запад к Азноф-Фавору и идет оттуда к Хуккоку,"
+  - id: aa3ff18
+    en: "Bered"
+    ru: "Баред"
+    evidence:
+      osis: Gen.16.14
+      excerpt: "тот называется: Беэр—лахай—рои. Он находится между Кадесом и между Баредом."
+  - id: a2da675
+    en: "Beth-arbel"
+    ru: "Бет-Арбел"
+    evidence:
+      osis: Hos.10.14
+      excerpt: "разрушены, как Салман разрушил Бет-Арбел в день брани: мать была"
+  - id: ac99af3
+    en: "Beth-diblathaim"
+    ru: "Бет-Дивлафаим"
+    evidence:
+      osis: Jer.48.22
+      excerpt: "и на Дивон и на Нево, и на Бет-Дивлафаим,"
+  - id: a308715
+    en: "Bethlehem"
+    ru: "Вифлеем"
+    evidence:
+      osis: Josh.19.15
+      excerpt: "Нагалал, Шимрон, Идеала и Вифлеем: двенадцать городов с их селами."
+  - id: a08144e
+    en: "Cabul"
+    ru: "Кавул"
+    evidence:
+      osis: 1Kgs.9.13
+      excerpt: "И назвал их землею Кавул, как называются они до сего"
+  - id: a42c452
+    en: "Chesalon"
+    ru: "Кесалон"
+    evidence:
+      osis: Josh.15.10
+      excerpt: "горы Иеарим, которая есть Кесалон, и, нисходя к Вефсамису, проходит"
+  - id: a898f06
+    en: "Chisloth-tabor"
+    ru: "Кислоф-Фавор"
+    evidence:
+      osis: Josh.19.12
+      excerpt: "востоку солнца, до предела Кислоф-Фавора; отсюда идет к Даврафу и"
+  - id: a4e5a69
+    en: "Colossae"
+    ru: "Колоссы"
+    evidence:
+      osis: Col.1.2
+      excerpt: "находящимся в Колоссах святым и верным братиям во Христе Иисусе:"
+  - id: a411151
+    en: "Dabbesheth"
+    ru: "Дабешеф"
+    evidence:
+      osis: Josh.19.11
+      excerpt: "Марале и примыкает к Дабешефу и примыкает к потоку, который"
+  - id: a3d1c99
+    en: "Dibon"
+    ru: "Дивон"
+    evidence:
+      osis: Neh.11.25
+      excerpt: "от нее городах, в Дивоне и зависящих от него городах,"
+  - id: afcb77d
+    en: "Dizahab"
+    ru: "Дизагав"
+    evidence:
+      osis: Deut.1.1
+      excerpt: "между Фараном и Тофелом, и Лаваном, и Асирофом, и Дизагавом,"
+  - id: aadaf09
+    en: "Ebenezer"
+    ru: "Авен-Езер"
+    evidence:
+      osis: 1Sam.7.12
+      excerpt: "Сеном, и назвал его Авен-Езер, сказав: до сего места помог"
+  - id: a85eb38
+    en: "Edrei"
+    ru: "Едрея"
+    evidence:
+      osis: Josh.19.37
+      excerpt: "Кедес, Едрея и Ен-Гацор,"
+  - id: a009e7d
+    en: "En-haddah"
+    ru: "Ен-Хадда"
+    evidence:
+      osis: Josh.19.21
+      excerpt: "Ремеф, Ен-Ганним, Ен-Хадда и Беф-Пацец;"
+  - id: ad14500
+    en: "Ephraim"
+    ru: "Ефраим"
+    evidence:
+      osis: John.11.54
+      excerpt: "пустыни, в город, называемый Ефраим, и там оставался с учениками"
+  - id: a47f86c
+    en: "Etam"
+    ru: "Етам"
+    evidence:
+      osis: 1Chr.4.32
+      excerpt: "с селами их: Етам, Аин, Риммон, Фокен и Ашан, —"
+  - id: aec23b1
+    en: "Gabbatha"
+    ru: "Гаввафа"
+    evidence:
+      osis: John.19.13
+      excerpt: "сел на судилище, на месте, называемом Лифостротон, а по-еврейски Гаввафа."
+  - id: a4eb961
+    en: "Gate of the Guard"
+    ru: "Ворота Темничные"
+    evidence:
+      osis: Neh.12.39
+      excerpt: "башни Меа, к Овечьим воротам, и остановились у ворот Темничных."
+  - id: a12012d
+    en: "Gederah"
+    ru: "Гедера"
+    evidence:
+      osis: Josh.15.36
+      excerpt: "Шаараим, Адифаим, Гедера или Гедерофаим: четырнадцать городов с их селами."
+  - id: a47678a
+    en: "Gedor"
+    ru: "Гедор"
+    evidence:
+      osis: 1Chr.12.7
+      excerpt: "и Иоела и Зевадия, сыновья Иерохама, из Гедора."
+  - id: a97126d
+    en: "Gibeath-haaraloth"
+    ru: "Холм обрезания"
+    evidence:
+      osis: Josh.5.3
+      excerpt: "ножи и обрезал сынов Израилевых на [месте, названном]: Холм обрезания."
+  - id: a5627a3
+    en: "Goah"
+    ru: "Гоаф"
+    evidence:
+      osis: Jer.31.39
+      excerpt: "вервь пойдет далее прямо до холма Гарива и обойдет Гоаф."
+  - id: a79d6a5
+    en: "Hali"
+    ru: "Хали"
+    evidence:
+      osis: Josh.19.25
+      excerpt: "пределом их были: Хелкаф, Хали, Ветен и Ахсаф,"
+  - id: a9d4f8e
+    en: "Hammon"
+    ru: "Хаммон"
+    evidence:
+      osis: Josh.19.28
+      excerpt: "далее: Еврон, Рехов, Хаммон и Кана, до Сидона великого;"
+  - id: a6309c7
+    en: "Hapharaim"
+    ru: "Хафараим"
+    evidence:
+      osis: Josh.19.19
+      excerpt: "Хафараим, Шион и Анахараф,"
+  - id: a4d6a38
+    en: "Hazazon-tamar"
+    ru: "Хацацон-Фамар"
+    evidence:
+      osis: Gen.14.7
+      excerpt: "поразили всю страну Амаликитян, и также Аморреев, живущих в Хацацон—Фамаре."
+  - id: acce8c8
+    en: "Hazor-hadattah"
+    ru: "Гацор-Хадафа"
+    evidence:
+      osis: Josh.15.25
+      excerpt: "Гацор-Хадафа, Кириаф, Хецрон, иначе Гацор,"
+  - id: ad2d29f
+    en: "Heshmon"
+    ru: "Хешмон"
+    evidence:
+      osis: Josh.15.27
+      excerpt: "Хацар-Гадда, Хешмон и Веф-Палет,"
+  - id: a2517a0
+    en: "Idumea"
+    ru: "Идумея"
+    evidence:
+      osis: Mark.3.8
+      excerpt: "Иерусалима, Идумеи и из-за Иордана. И живущие в окрестностях Тира"
+  - id: a21b934
+    en: "Irpeel"
+    ru: "Ирфеил"
+    evidence:
+      osis: Josh.18.27
+      excerpt: "Рекем, Ирфеил и Фарала,"
+  - id: a1eb300
+    en: "Jarmuth"
+    ru: "Иармуф"
+    evidence:
+      osis: Josh.21.29
+      excerpt: "Иармуф и предместья его, Ен-Ганним и предместья его: четыре города;"
+  - id: a56cad5
+    en: "Jokdeam"
+    ru: "Иокдам"
+    evidence:
+      osis: Josh.15.56
+      excerpt: "Изреель, Иокдам и Заноах,"
+  - id: a4959d5
+    en: "Kartan"
+    ru: "Карфан"
+    evidence:
+      osis: Josh.21.32
+      excerpt: "Хамоф-Дор и предместья его, Карфан и предместья его: три города."
+  - id: a5187a4
+    en: "Kibzaim"
+    ru: "Кивцаим"
+    evidence:
+      osis: Josh.21.22
+      excerpt: "Кивцаим и предместья его, Беф-Орон и предместья его: четыре города;"
+  - id: afe6972
+    en: "Koa"
+    ru: "Коа"
+    evidence:
+      osis: Ezek.23.23
+      excerpt: "Пехода, из Шоа и Коа, и с ними всех сынов"
+  - id: a57835d
+    en: "Malta"
+    ru: "Мелит"
+    evidence:
+      osis: Acts.28.1
+      excerpt: "Спасшись же, бывшие с Павлом узнали, что остров называется Мелит."
+  - id: a5f0bc3
+    en: "Migdal-el"
+    ru: "Мигдал-Ел"
+    evidence:
+      osis: Josh.19.38
+      excerpt: "Иреон, Мигдал-Ел, Хорем, Беф-Анаф и Вефсамис: девятнадцать городов с их"
+  - id: aad0fa0
+    en: "Mizpah"
+    ru: "Массифа"
+    evidence:
+      osis: Josh.11.3
+      excerpt: "горе, и к Евеям, жившим подле Ермона в земле Массифе."
+  - id: aeea26d
+    en: "Mount Heres"
+    ru: "Гора Херес"
+    evidence:
+      osis: Judg.1.35
+      excerpt: "Аморреи жить на горе Херес [где медведи и лисицы], в"
+  - id: a36c283
+    en: "Mount Seir"
+    ru: "Гора Сеир"
+    evidence:
+      osis: Josh.15.10
+      excerpt: "[и идет] к горе Сеиру, и идет северною стороною горы"
+  - id: ae7bd8b
+    en: "Naamah"
+    ru: "Наема"
+    evidence:
+      osis: Josh.15.41
+      excerpt: "Гедероф, Беф-Дагон, Наема и Макед: шестнадцать городов с их селами."
+  - id: a314731
+    en: "Nimrah"
+    ru: "Нимра"
+    evidence:
+      osis: Num.32.3
+      excerpt: "Дивон, и Иазер, и Нимра, и Есевон, и Елеале, и"
+  - id: a51e3b0
+    en: "Old Pool"
+    ru: "Старый пруд"
+    evidence:
+      osis: Isa.22.11
+      excerpt: "стенами хранилище для вод старого пруда. А на Того, Кто"
+  - id: a8f60f3
+    en: "Patmos"
+    ru: "Патмос"
+    evidence:
+      osis: Rev.1.9
+      excerpt: "был на острове, называемом Патмос, за слово Божие и за"
+  - id: a70e895
+    en: "Potsherd Gate"
+    ru: "Ворота Харшиф"
+    evidence:
+      osis: Jer.19.2
+      excerpt: "сыновей Енномовых, которая у ворот Харшиф, и провозгласи там слова,"
+  - id: a75be6f
+    en: "Ramah"
+    ru: "Рама"
+    evidence:
+      osis: Neh.11.33
+      excerpt: "Гацоре, Раме, Гиффаиме,"
+  - id: ada2a0b
+    en: "Ramoth"
+    ru: "Рамоф"
+    evidence:
+      osis: 1Chr.6.73
+      excerpt: "и Рамоф и предместья его, и Анем и предместья его;"
+  - id: a1b5486
+    en: "Rekem"
+    ru: "Рекем"
+    evidence:
+      osis: Josh.18.27
+      excerpt: "Рекем, Ирфеил и Фарала,"
+  - id: a655b28
+    en: "Rimmono"
+    ru: "Риммон"
+    evidence:
+      osis: 1Chr.6.77
+      excerpt: "— от колена Завулонова Риммон и предместья его, Фавор и"
+  - id: acf6ec0
+    en: "Samos"
+    ru: "Самос"
+    evidence:
+      osis: Acts.20.15
+      excerpt: "на другой пристали к Самосу и, побывав в Трогиллии, в"
+  - id: ab6f1f0
+    en: "Shaalim"
+    ru: "Шаалим"
+    evidence:
+      osis: 1Sam.9.4
+      excerpt: "нашли; и прошли землю Шаалим, и там их нет; и"
+  - id: a55136c
+    en: "Shema"
+    ru: "Шема"
+    evidence:
+      osis: Josh.15.26
+      excerpt: "Амам, Шема и Молада,"
+  - id: ae71673
+    en: "Shiloah"
+    ru: "Силоам"
+    evidence:
+      osis: Isa.8.6
+      excerpt: "этот народ пренебрегает водами Силоама, текущими тихо, и восхищается Рецином"
+  - id: a2d4170
+    en: "South"
+    ru: "Южная страна"
+    evidence:
+      osis: Zech.7.7
+      excerpt: "и города вокруг него, южная страна и низменность, были населены?"
+  - id: a1e3697
+    en: "Syracuse"
+    ru: "Сиракузы"
+    evidence:
+      osis: Acts.28.12
+      excerpt: "и, приплыв в Сиракузы, пробыли там три дня."
+  - id: a8530e9
+    en: "Tabor"
+    ru: "Дубрава Фаворская"
+    evidence:
+      osis: 1Sam.10.3
+      excerpt: "далее и придешь к дубраве Фаворской, и встретят тебя там"
+  - id: a012194
+    en: "The Lord Is There"
+    ru: "Господь там"
+    evidence:
+      osis: Ezek.48.35
+      excerpt: 'тысяч. А имя городу с того дня будет: "Господь там".'
+  - id: abf2443
+    en: "Tiphsah"
+    ru: "Типсах"
+    evidence:
+      osis: 2Kgs.15.16
+      excerpt: "И поразил Менаим Типсах и всех, которые были в нем"
+  - id: a8c579d
+    en: "Valley of Gibeon"
+    ru: "Долина Гаваонская"
+    evidence:
+      osis: Isa.28.21
+      excerpt: "Перациме; разгневается, как на долине Гаваонской, чтобы сделать дело Свое,"
+  - id: aaa2177
+    en: "Valley of Zered"
+    ru: "Долина Заред"
+    evidence:
+      osis: Num.21.12
+      excerpt: "оттуда отправились, и остановились на долине Заред;"
+  - id: a78b87e
+    en: "Yiron"
+    ru: "Иреон"
+    evidence:
+      osis: Josh.19.38
+      excerpt: "Иреон, Мигдал-Ел, Хорем, Беф-Анаф и Вефсамис: девятнадцать городов с их"
+  - id: a811a10
+    en: "Zemaraim"
+    ru: "Цемараим"
+    evidence:
+      osis: Josh.18.22
+      excerpt: "Беф-Арава, Цемараим и Вефиль,"
+  - id: adf05b8
+    en: "Ziphron"
+    ru: "Цифрон"
+    evidence:
+      osis: Num.34.9
+      excerpt: "оттуда пойдет граница к Цифрону, и выступы ее будут к"
+  - id: a3d1321
+    en: "Assyria"
+    ru: "Ассирия"
+    evidence:
+      osis: Gen.2.14
+      excerpt: "реки Хиддекель [Тигр]: она протекает пред Ассириею. Четвертая река Евфрат."
+  - id: ae981db
+    en: "Mount Seir"
+    ru: "Гора Сеир"
+    evidence:
+      osis: Gen.14.6
+      excerpt: "и Хорреев в горе их Сеире, до Эл—Фарана, что при"
+  - id: aa8edd2
+    en: "Gaza"
+    ru: "Газа"
+    evidence:
+      osis: Gen.10.19
+      excerpt: "Хананеев от Сидона к Герару до Газы, отсюда к Содому,"
+  - id: a3fc47a
+    en: "Ekron"
+    ru: "Екрон"
+    evidence:
+      osis: Josh.13.3
+      excerpt: "Сихора, что пред Египтом, до пределов Екрона к северу, считаются"
+  - id: ae067b5
+    en: "Rabbah"
+    ru: "Равва"
+    evidence:
+      osis: Deut.3.11
+      excerpt: "его, одр железный, и теперь в Равве, у сынов Аммоновых:"
+  - id: a6d57ed
+    en: "Ramah"
+    ru: "Рама"
+    evidence:
+      osis: Josh.18.25
+      excerpt: "Гаваон, Рама и Бероф,"
+  - id: aed6538
+    en: "Gezer"
+    ru: "Газер"
+    evidence:
+      osis: Josh.10.33
+      excerpt: "пришел на помощь Лахису Горам, царь Газерский; но Иисус поразил"
+  - id: a90f6e1
+    en: "Ramah"
+    ru: "Рама"
+    evidence:
+      osis: 1Sam.1.19
+      excerpt: "и пришли в дом свой в Раму. И познал Елкана"
+  - id: a6d9af3
+    en: "Haran"
+    ru: "Харран"
+    evidence:
+      osis: Gen.11.31
+      excerpt: "в землю Ханаанскую; но, дойдя до Харрана, они остановились там."
+  - id: adea06c
+    en: "Michmash"
+    ru: "Михмас"
+    evidence:
+      osis: 1Sam.13.2
+      excerpt: "две тысячи были с Саулом в Михмасе и на горе"
+  - id: ad8027f
+    en: "Mount Hor"
+    ru: "Гора Ор"
+    evidence:
+      osis: Num.20.22
+      excerpt: "Израилевы из Кадеса, и пришло все общество к горе Ор."
+  - id: a3f5814
+    en: "Gerar"
+    ru: "Герар"
+    evidence:
+      osis: Gen.10.19
+      excerpt: "были пределы Хананеев от Сидона к Герару до Газы, отсюда"
+  - id: ac86af5
+    en: "Shunem"
+    ru: "Сунем"
+    evidence:
+      osis: Josh.19.18
+      excerpt: "пределом их был: Изреель, Кесуллоф и Сунем,"
+  - id: a3d2f0a
+    en: "Chebar"
+    ru: "Река Ховар"
+    evidence:
+      osis: Ezek.1.1
+      excerpt: "я находился среди переселенцев при реке Ховаре, отверзлись небеса, и"
+  - id: a8ec269
+    en: "Memphis"
+    ru: "Мемфис"
+    evidence:
+      osis: Isa.19.13
+      excerpt: "Обезумели князья Цоанские; обманулись князья Мемфисские, и совратил Египет с"
+  - id: af725b1
+    en: "Shinar"
+    ru: "Сеннаар"
+    evidence:
+      osis: Gen.10.10
+      excerpt: "вначале составляли: Вавилон, Эрех, Аккад и Халне в земле Сеннаар."
+  - id: a9ed5a4
+    en: "Bahurim"
+    ru: "Бахурим"
+    evidence:
+      osis: 2Sam.3.16
+      excerpt: "и с плачем провожал ее до Бахурима; но Авенир сказал"
+  - id: aca7bd9
+    en: "Jabbok"
+    ru: "Иавок"
+    evidence:
+      osis: Gen.32.22
+      excerpt: "рабынь своих, и одиннадцать сынов своих, перешел через Иавок вброд;"
+  - id: a6f05f6
+    en: "Taanach"
+    ru: "Фаанах"
+    evidence:
+      osis: Josh.12.21
+      excerpt: "один царь Фаанаха, один царь Мегиддона,"
+  - id: af0ac29
+    en: "Elath"
+    ru: "Елаф"
+    evidence:
+      osis: Deut.2.8
+      excerpt: "живущих на Сеире, путем равнины, от Елафа и Ецион—Гавера, и"
+  - id: a397042
+    en: "Luz"
+    ru: "Луз"
+    evidence:
+      osis: Gen.28.19
+      excerpt: "месту тому: Вефиль, а прежнее имя того города было: Луз."
+  - id: a8a9ff9
+    en: "Penuel"
+    ru: "Пенуэл"
+    evidence:
+      osis: Gen.32.30
+      excerpt: "И нарек Иаков имя месту тому: Пенуэл; ибо, говорил он,"
+  - id: a831506
+    en: "Teman"
+    ru: "Феман"
+    evidence:
+      osis: Jer.49.7
+      excerpt: "Саваоф: разве нет более мудрости в Фемане? разве не стало"
+  - id: a5ccd34
+    en: "Elealeh"
+    ru: "Елеале"
+    evidence:
+      osis: Num.32.3
+      excerpt: "Иазер, и Нимра, и Есевон, и Елеале, и Севам, и"
+  - id: ad54201
+    en: "Kiriathaim"
+    ru: "Кириафаим"
+    evidence:
+      osis: Num.32.37
+      excerpt: "И сыны Рувимовы построили Есевон, Елеале, Кириафаим,"
+  - id: a0f8af9
+    en: "Mizpah"
+    ru: "Массифа"
+    evidence:
+      osis: Judg.10.17
+      excerpt: "Галааде; собрались также сыны Израилевы и стали станом в Массифе."
+  - id: aab30ec
+    en: "Pathros"
+    ru: "Пафрос"
+    evidence:
+      osis: Jer.44.1
+      excerpt: "Магдоле и Тафнисе, и в Нофе, и в земле Пафрос:"
+  - id: a31492f
+    en: "Valley of Achor"
+    ru: "Долина Ахор"
+    evidence:
+      osis: Josh.7.24
+      excerpt: "него было, и вывели их [со всем] на долину Ахор."
+  - id: a7b2e63
+    en: "Aphek"
+    ru: "Афек"
+    evidence:
+      osis: Josh.12.18
+      excerpt: "Один царь Афека, один царь Шарона,"
+  - id: ae04aa8
+    en: "Benjamin Gate"
+    ru: "Ворота Вениаминовы"
+    evidence:
+      osis: Jer.20.2
+      excerpt: "колоду, которая была у верхних ворот Вениаминовых при доме Господнем."
+  - id: a0cd098
+    en: "Bezer"
+    ru: "Бецер"
+    evidence:
+      osis: Deut.4.43
+      excerpt: "Бецер в пустыне, на равнине в колене Рувимовом, и Рамоф"
+  - id: a2410c1
+    en: "Elim"
+    ru: "Елим"
+    evidence:
+      osis: Exod.15.27
+      excerpt: "И пришли в Елим; там было двенадцать источников воды и"
+  - id: abb5c1e
+    en: "Golan"
+    ru: "Голан"
+    evidence:
+      osis: Deut.4.43
+      excerpt: "в Галааде в колене Гадовом, и Голан в Васане в"
+  - id: a9dd823
+    en: "Horonaim"
+    ru: "Оронаим"
+    evidence:
+      osis: Jer.48.3
+      excerpt: "Слышен вопль от Оронаима, опустошение и разрушение великое."
+  - id: ab92800
+    en: "Kir"
+    ru: "Кир"
+    evidence:
+      osis: 2Kgs.16.9
+      excerpt: "его, и переселил жителей его в Кир, а Рецина умертвил."
+  - id: a45acc3
+    en: "Rimmon"
+    ru: "Риммон"
+    evidence:
+      osis: Judg.20.45
+      excerpt: "и побежали к пустыне, к скале Риммону, и побили еще"
+  - id: aa3d425
+    en: "Sheep Gate"
+    ru: "Овечьи ворота"
+    evidence:
+      osis: Neh.3.1
+      excerpt: "братья его священники и построили Овечьи ворота: они освятили их"
+  - id: a6cf75c
+    en: "Ur"
+    ru: "Ур"
+    evidence:
+      osis: Gen.11.28
+      excerpt: "Фарре, отце своем, в земле рождения своего, в Уре Халдейском."
+  - id: a8ce5c4
+    en: "Achshaph"
+    ru: "Ахсаф"
+    evidence:
+      osis: Josh.11.1
+      excerpt: "царю Мадонскому, и к царю Шимронскому, и к царю Ахсафскому,"
+  - id: a3d7871
+    en: "Azmaveth"
+    ru: "Азмавеф"
+    evidence:
+      osis: Ezra.2.24
+      excerpt: "уроженцев Азмавефа сорок два;"
+  - id: a57df09
+    en: "Besor"
+    ru: "Поток Восор"
+    evidence:
+      osis: 1Sam.30.9
+      excerpt: "с ним; и пришли к потоку Восор и усталые остановились"
+  - id: a6a5e97
+    en: "Daberath"
+    ru: "Давраф"
+    evidence:
+      osis: Josh.19.12
+      excerpt: "до предела Кислоф-Фавора; отсюда идет к Даврафу и восходит к"
+  - id: a573b95
+    en: "Ezem"
+    ru: "Ецем"
+    evidence:
+      osis: 1Chr.4.29
+      excerpt: "в Билге, в Ецеме, в Фоладе,"
+  - id: af19252
+    en: "Habor"
+    ru: "Хавор"
+    evidence:
+      osis: 2Kgs.17.6
+      excerpt: "поселил их в Халахе и в Хаворе, при реке Гозан,"
+  - id: af8b51e
+    en: "Horse Gate"
+    ru: "Конские ворота"
+    evidence:
+      osis: 2Chr.23.15
+      excerpt: "и когда она пришла ко входу конских ворот царского дома,"
+  - id: ad74690
+    en: "Kedesh"
+    ru: "Кедес"
+    evidence:
+      osis: Judg.4.9
+      excerpt: "Сисару. И встала Девора и пошла с Вараком в Кедес."
+  - id: a93f8b6
+    en: "Mishal"
+    ru: "Мишал"
+    evidence:
+      osis: Josh.19.26
+      excerpt: "Аламелех, Амад и Мишал; и примыкает предел к Кармилу с"
+  - id: ae89331
+    en: "Shaalbim"
+    ru: "Шаалвим"
+    evidence:
+      osis: Judg.1.35
+      excerpt: "медведи и лисицы], в Аиалоне и Шаалвиме; но рука сынов"
+  - id: a17c178
+    en: "Timnah"
+    ru: "Фамна"
+    evidence:
+      osis: Gen.38.12
+      excerpt: "жена Иудина. Иуда, утешившись, пошел в Фамну к стригущим скот"
+  - id: ab183f8
+    en: "Valley of Elah"
+    ru: "Долина дуба"
+    evidence:
+      osis: 1Sam.17.2
+      excerpt: "собрались и расположились станом в долине дуба и приготовились к"
+  - id: afa84ca
+    en: "Zarethan"
+    ru: "Цартан"
+    evidence:
+      osis: Josh.3.16
+      excerpt: "расстояние, до города Адама, который подле Цартана; а текущая в"
+  - id: afbf1b5
+    en: "Arvad"
+    ru: "Арвад"
+    evidence:
+      osis: Ezek.27.8
+      excerpt: "Жители Сидона и Арвада были у тебя гребцами; свои знатоки"
+  - id: aae8a95
+    en: "Avith"
+    ru: "Авиф"
+    evidence:
+      osis: Gen.36.35
+      excerpt: "который поразил Мадианитян на поле Моава; имя городу его Авиф."
+  - id: a1db553
+    en: "Bamoth"
+    ru: "Вамоф"
+    evidence:
+      osis: Num.21.19
+      excerpt: "из Матанны в Нагалиил, из Нагалиила в Вамоф,"
+  - id: abcc0cf
+    en: "Bethel"
+    ru: "Вефиль"
+    evidence:
+      osis: Zech.7.2
+      excerpt: "когда Вефиль послал Сарецера и Регем-Мелеха и спутников его помолиться"
+  - id: ac4b767
+    en: "Beth-pelet"
+    ru: "Веф-Палет"
+    evidence:
+      osis: Josh.15.27
+      excerpt: "Хацар-Гадда, Хешмон и Веф-Палет,"
+  - id: a859268
+    en: "Bochim"
+    ru: "Бохим"
+    evidence:
+      osis: Judg.2.1
+      excerpt: "пришел Ангел Господень из Галгала в Бохим [и в Вефиль"
+  - id: a33fbde
+    en: "Cappadocia"
+    ru: "Каппадокия"
+    evidence:
+      osis: Acts.2.9
+      excerpt: "Еламиты, и жители Месопотамии, Иудеи и Каппадокии, Понта и Асии,"
+  - id: a070c7b
+    en: "Dophkah"
+    ru: "Дофка"
+    evidence:
+      osis: Num.33.12
+      excerpt: "И отправились из пустыни Син и расположились станом в Дофке."
+  - id: a59fdf2
+    en: "Enaim"
+    ru: "Енаим"
+    evidence:
+      osis: Gen.38.14
+      excerpt: "покрывалом и, закрывшись, села у ворот Енаима, что на дороге"
+  - id: ae05348
+    en: "Etam"
+    ru: "Етам"
+    evidence:
+      osis: Judg.15.8
+      excerpt: "и бедра, и пошел и засел в ущелье скалы Етама."
+  - id: ac51cec
+    en: "Gath-hepher"
+    ru: "Гафхефер"
+    evidence:
+      osis: 2Kgs.14.25
+      excerpt: "изрек чрез раба Своего Иону, сына Амафиина, пророка из Гафхефера,"
+  - id: a42418f
+    en: "Gethsemane"
+    ru: "Гефсимания"
+    evidence:
+      osis: Matt.26.36
+      excerpt: "с ними Иисус на место, называемое Гефсимания, и говорит ученикам:"
+  - id: ab270f6
+    en: "Hazar-susah"
+    ru: "Хацар-Суса"
+    evidence:
+      osis: Josh.19.5
+      excerpt: "Циклаг, Беф-Маркавоф и Хацар-Суса,"
+  - id: ae4d198
+    en: "Immer"
+    ru: "Иммер"
+    evidence:
+      osis: Ezra.2.59
+      excerpt: "И вот вышедшие из Тел-Мелаха, Тел-Харши, Херуб-Аддан-Иммера, которые не могли"
+  - id: ab86a69
+    en: "Judea"
+    ru: "Иудея"
+    evidence:
+      osis: Ezra.9.9
+      excerpt: "его, и дали нам ограждение в Иудее и в Иерусалиме."
+  - id: a057d59
+    en: "King’s Highway"
+    ru: "Дорога царская"
+    evidence:
+      osis: Num.20.17
+      excerpt: "из колодезей [твоих]; но пойдем дорогою царскою, не своротим ни"
+  - id: a359997
+    en: "Lud"
+    ru: "Лидия"
+    evidence:
+      osis: Ezek.30.5
+      excerpt: "Ефиопия и Ливия, и Лидия, и весь смешанный народ, и"
+  - id: a57e0a0
+    en: "Masrekah"
+    ru: "Масрека"
+    evidence:
+      osis: Gen.36.36
+      excerpt: "И умер Гадад, и воцарился по нем Самла из Масреки."
+  - id: a15973c
+    en: "Migdol"
+    ru: "Мигдол"
+    evidence:
+      osis: Ezek.29.10
+      excerpt: "землю Египетскую пустынею из пустынь от Мигдола до Сиены, до"
+  - id: aefaa2d
+    en: "Mount Nebo"
+    ru: "Гора Нево"
+    evidence:
+      osis: Deut.32.49
+      excerpt: "на сию гору Аварим, на гору Нево, которая в земле"
+  - id: ac1fef1
+    en: "Nephtoah"
+    ru: "Нефтоах"
+    evidence:
+      osis: Josh.15.9
+      excerpt: "горы предел поворачивает к источнику вод Нефтоах и идет к"
+  - id: ae67841
+    en: "Perez-uzzah"
+    ru: "Поражение Озы"
+    evidence:
+      osis: 2Sam.6.8
+      excerpt: 'Господь поразил Озу. Место сие и доныне называется: "поражение Озы".'
+  - id: ad27541
+    en: "Ramah"
+    ru: "Рама"
+    evidence:
+      osis: 2Chr.22.6
+      excerpt: "от ран, которые причинили ему в Раме, когда он воевал"
+  - id: a2e73ba
+    en: "Rithmah"
+    ru: "Рифма"
+    evidence:
+      osis: Num.33.18
+      excerpt: "И отправились из Асирофа и расположились станом в Рифме."
+  - id: a2e65fb
+    en: "Smyrna"
+    ru: "Смирна"
+    evidence:
+      osis: Rev.1.11
+      excerpt: "в Асии: в Ефес, и в Смирну, и в Пергам,"
+  - id: a6ef6a9
+    en: "Telem"
+    ru: "Телем"
+    evidence:
+      osis: Josh.15.24
+      excerpt: "Зиф, Телем и Валоф,"
+  - id: a38ebfd
+    en: "Tigris"
+    ru: "Тигр"
+    evidence:
+      osis: Gen.2.14
+      excerpt: "Имя третьей реки Хиддекель [Тигр]: она протекает пред Ассириею. Четвертая"
+  - id: adfab55
+    en: "Uzza"
+    ru: "Узза"
+    evidence:
+      osis: 2Kgs.21.18
+      excerpt: "саду при доме его, в саду Уззы. И воцарился Аммон,"
+  - id: aa24fbf
+    en: "Valley of Succoth"
+    ru: "Долина Сокхоф"
+    evidence:
+      osis: Ps.59.8
+      excerpt: "разделю Сихем и долину Сокхоф размерю"
+  - id: a597dd0
+    en: "Zela"
+    ru: "Цела"
+    evidence:
+      osis: Josh.18.28
+      excerpt: "Цела, Елеф и Иевус, иначе Иерусалим, Гивеаф и Кириаф: четырнадцать"
+  - id: adc31c7
+    en: "Adam"
+    ru: "Адам"
+    evidence:
+      osis: Josh.3.16
+      excerpt: "на весьма большое расстояние, до города Адама, который подле Цартана;"
+  - id: a2e7975
+    en: "Aijalon"
+    ru: "Аиалон"
+    evidence:
+      osis: Judg.12.12
+      excerpt: "умер Елон Завулонянин и погребен в Аиалоне, в земле Завулоновой."
+  - id: a8e4a15
+    en: "Ammah"
+    ru: "Амма"
+    evidence:
+      osis: 2Sam.2.24
+      excerpt: "зашло, когда они пришли к холму Амма, что против Гиаха,"
+  - id: ac22b90
+    en: "Anim"
+    ru: "Аним"
+    evidence:
+      osis: Josh.15.50
+      excerpt: "Анаф, Ештемо и Аним,"
+  - id: adbc03e
+    en: "Arab"
+    ru: "Арав"
+    evidence:
+      osis: Josh.15.52
+      excerpt: "Арав, Дума и Ешан,"
+  - id: a30e7ea
+    en: "Arubboth"
+    ru: "Арюбоф"
+    evidence:
+      osis: 1Kgs.4.10
+      excerpt: "Бен-Хесед — в Арюбофе; ему же принадлежал Соко и вся"
+  - id: aaf998e
+    en: "Ataroth"
+    ru: "Атароф"
+    evidence:
+      osis: Josh.16.7
+      excerpt: "от Ианоха, нисходя к Атарофу и Наарафу, примыкает к Иерихону"
+  - id: a4b500d
+    en: "Avva"
+    ru: "Авва"
+    evidence:
+      osis: 2Kgs.17.24
+      excerpt: "Вавилона, и из Куты, и из Аввы, и из Емафа,"
+  - id: ae5ede9
+    en: "Babylon"
+    ru: "Вавилон"
+    evidence:
+      osis: 1Pet.5.13
+      excerpt: "вас избранная, подобно вам, церковь в Вавилоне и Марк, сын"
+  - id: a280f83
+    en: "Beeroth Bene-jaakan"
+    ru: "Беероф-Бене-Яакан"
+    evidence:
+      osis: Deut.10.6
+      excerpt: "И сыны Израилевы отправились из Беероф—Бене—Яакана в Мозер; там умер"
+  - id: a942d07
+    en: "Berothai"
+    ru: "Бероф"
+    evidence:
+      osis: 2Sam.8.8
+      excerpt: "А в Бефе и Берофе, городах Адраазаровых, взял царь Давид"
+  - id: af623fd
+    en: "Beth-biri"
+    ru: "Беф-Биреи"
+    evidence:
+      osis: 1Chr.4.31
+      excerpt: "в Беф-Маркавофе, в Хацарсусиме, в Беф-Биреи и в Шаариме. Вот"
+  - id: aeb5f24
+    en: "Bethel"
+    ru: "Вефиль"
+    evidence:
+      osis: 1Sam.30.27
+      excerpt: "тем, которые в Вефиле, и в Рамофе южном, и в"
+  - id: aea5552
+    en: "Beth-gilgal"
+    ru: "Беф-Гаггилгал"
+    evidence:
+      osis: Neh.12.29
+      excerpt: "и из Беф-Гаггилгала, и с полей Гевы и Азмавета, потому"
+  - id: ac814fb
+    en: "Beth-pazzez"
+    ru: "Беф-Пацец"
+    evidence:
+      osis: Josh.19.21
+      excerpt: "Ремеф, Ен-Ганним, Ен-Хадда и Беф-Пацец;"
+  - id: a079478
+    en: "Betonim"
+    ru: "Ветоним"
+    evidence:
+      osis: Josh.13.26
+      excerpt: "земли от Есевона до Рамаф-Мицфы и Ветонима и от Маханаима"
+  - id: a8adc43
+    en: "Bozrah"
+    ru: "Восор"
+    evidence:
+      osis: Jer.48.24
+      excerpt: "и на Кериоф, и на Восор, и на все города"
+  - id: ae83efa
+    en: "Canneh"
+    ru: "Хане"
+    evidence:
+      osis: Ezek.27.23
+      excerpt: "Харан и Хане и Еден, купцы Савейские, Ассур и Хилмад"
+  - id: ac3d92d
+    en: "Chesulloth"
+    ru: "Кесуллоф"
+    evidence:
+      osis: Josh.19.18
+      excerpt: "пределом их был: Изреель, Кесуллоф и Сунем,"
+  - id: adca4b1
+    en: "City of Destruction"
+    ru: "Город солнца"
+    evidence:
+      osis: Isa.19.18
+      excerpt: "языком Ханаанским и клясться Господом Саваофом; один назовется городом солнца."
+  - id: a44cac9
+    en: "Cozeba"
+    ru: "Хозева"
+    evidence:
+      osis: 1Chr.4.22
+      excerpt: "и Иоким, и жители Хозевы, и Иоаш и Сараф, которые"
+  - id: ae86cd7
+    en: "Dalmatia"
+    ru: "Далматия"
+    evidence:
+      osis: 2Tim.4.10
+      excerpt: "Фессалонику, Крискент в Галатию, Тит в Далматию; один Лука со"
+  - id: aecc492
+    en: "Dilean"
+    ru: "Дилеан"
+    evidence:
+      osis: Josh.15.38
+      excerpt: "Дилеан, Мицфе и Иокфеил,"
+  - id: a75d2ab
+    en: "Dumah"
+    ru: "Дума"
+    evidence:
+      osis: Josh.15.52
+      excerpt: "Арав, Дума и Ешан,"
+  - id: a728e07
+    en: "Ebron"
+    ru: "Еврон"
+    evidence:
+      osis: Josh.19.28
+      excerpt: "далее: Еврон, Рехов, Хаммон и Кана, до Сидона великого;"
+  - id: a26cd81
+    en: "Eltekon"
+    ru: "Елтекон"
+    evidence:
+      osis: Josh.15.59
+      excerpt: "Маараф, Беф-Аноф и Елтекон: шесть городов с их селами. [Феко,"
+  - id: a156070
+    en: "En-hazor"
+    ru: "Ен-Гацор"
+    evidence:
+      osis: Josh.19.37
+      excerpt: "Кедес, Едрея и Ен-Гацор,"
+  - id: a82f7b4
+    en: "Ether"
+    ru: "Ефер"
+    evidence:
+      osis: Josh.15.42
+      excerpt: "Ливна, Ефер и Ашан,"
+  - id: ac66d7a
+    en: "Giah"
+    ru: "Гиах"
+    evidence:
+      osis: 2Sam.2.24
+      excerpt: "пришли к холму Амма, что против Гиаха, на дороге к"
+  - id: a19ec8c
+    en: "Gilead"
+    ru: "Галаад"
+    evidence:
+      osis: Hos.6.8
+      excerpt: "Галаад - город нечестивцев, запятнанный кровью."
+  - id: a3cefc6
+    en: "Goiim"
+    ru: "Гоим"
+    evidence:
+      osis: Josh.12.23
+      excerpt: "один царь Дора при Нафаф-Доре, один царь Гоима в Галгале,"
+  - id: a3e8d63
+    en: "Hadrach"
+    ru: "Хадрах"
+    evidence:
+      osis: Zech.9.1
+      excerpt: "Пророческое слово Господа на землю Хадрах, и на Дамаске оно"
+  - id: a493f37
+    en: "Hall of Pillars"
+    ru: "Притвор из столбов"
+    evidence:
+      osis: 1Kgs.7.6
+      excerpt: "И притвор из столбов сделал он длиною в пятьдесят локтей,"
+  - id: a7d3e84
+    en: "Hammoth-dor"
+    ru: "Хамоф-Дор"
+    evidence:
+      osis: Josh.21.32
+      excerpt: "Кедес в Галилее и предместья его, Хамоф-Дор и предместья его,"
+  - id: ae3cace
+    en: "Harod"
+    ru: "Харод"
+    evidence:
+      osis: Judg.7.1
+      excerpt: "ним, и расположились станом у источника Харода; Мадиамский же стан"
+  - id: aae18d7
+    en: "Hazer-hatticon"
+    ru: "Гацар-Тихон"
+    evidence:
+      osis: Ezek.47.16
+      excerpt: "находящийся между Дамасскою и Емафскою областями Гацар-Тихон, который на границе"
+  - id: a901903
+    en: "Hukkok"
+    ru: "Хуккок"
+    evidence:
+      osis: Josh.19.34
+      excerpt: "к Азноф-Фавору и идет оттуда к Хуккоку, и примыкает к"
+  - id: ac405c0
+    en: "Illyricum"
+    ru: "Иллирик"
+    evidence:
+      osis: Rom.15.19
+      excerpt: "благовествование Христово распространено мною от Иерусалима и окрестности до Иллирика."
+  - id: abf8060
+    en: "Ithlah"
+    ru: "Ифла"
+    evidence:
+      osis: Josh.19.42
+      excerpt: "Шаалаввин, Аиалон и Ифла,"
+  - id: a907232
+    en: "Jagur"
+    ru: "Иагур"
+    evidence:
+      osis: Josh.15.21
+      excerpt: "смежности с Идумеею на юге были: Кавцеил, Едер и Иагур,"
+  - id: a8ccbf2
+    en: "Jeruel"
+    ru: "Пустыня Иеруил"
+    evidence:
+      osis: 2Chr.20.16
+      excerpt: "и вы найдете их на конце долины, пред пустынею Иеруилом."
+  - id: aaa8b2e
+    en: "Jokmeam"
+    ru: "Иокмеам"
+    evidence:
+      osis: 1Chr.6.68
+      excerpt: "и Иокмеам и предместья его, и Беф-Орон и предместья его,"
+  - id: ac3233c
+    en: "Kanah"
+    ru: "Кана"
+    evidence:
+      osis: Josh.19.28
+      excerpt: "далее: Еврон, Рехов, Хаммон и Кана, до Сидона великого;"
+  - id: a4fa255
+    en: "Kedesh"
+    ru: "Кедес"
+    evidence:
+      osis: Josh.15.23
+      excerpt: "Кедес, Асор и Ифнан,"
+  - id: a1a57d0
+    en: "Kir"
+    ru: "Кир-Моав"
+    evidence:
+      osis: Isa.15.1
+      excerpt: "Ар-Моав и уничтожен; так! ночью будет разорен Кир-Моав и уничтожен!"
+  - id: a7e39d2
+    en: "Laishah"
+    ru: "Лаис"
+    evidence:
+      osis: Isa.10.30
+      excerpt: "голосом твоим, дочь Галима; пусть услышит тебя Лаис, бедный Анафоф!"
+  - id: a6b4fb2
+    en: "Mesha"
+    ru: "Меша"
+    evidence:
+      osis: Gen.10.30
+      excerpt: "Поселения их были от Меши до Сефара, горы восточной."
+  - id: a4335ba
+    en: "Migron"
+    ru: "Мигрон"
+    evidence:
+      osis: 1Sam.14.2
+      excerpt: "Гивы, под гранатовым деревом, что в Мигроне. С ним было"
+  - id: a67990c
+    en: "Mizpeh"
+    ru: "Мицфе"
+    evidence:
+      osis: Josh.15.38
+      excerpt: "Дилеан, Мицфе и Иокфеил,"
+  - id: ac8955e
+    en: "Mount Baal-hermon"
+    ru: "Гора Ваал-Ермон"
+    evidence:
+      osis: Judg.3.3
+      excerpt: "живущие на горе Ливане, от горы Ваал-Ермона до входа в"
+  - id: ac54760
+    en: "Mount Lebanon"
+    ru: "Гора Ливан"
+    evidence:
+      osis: Judg.3.3
+      excerpt: "Сидоняне и Евеи, живущие на горе Ливане, от горы Ваал-Ермона"
+  - id: a5a92d1
+    en: "Mount Zemaraim"
+    ru: "Гора Цемараимская"
+    evidence:
+      osis: 2Chr.13.4
+      excerpt: "И стал Авия на вершине горы Цемараимской, одной из гор"
+  - id: a9f5289
+    en: "Naaran"
+    ru: "Нааран"
+    evidence:
+      osis: 1Chr.7.28
+      excerpt: "зависящие от него города; к востоку Нааран, к западу Гезер"
+  - id: aa23a3e
+    en: "Nobah"
+    ru: "Новах"
+    evidence:
+      osis: Num.32.42
+      excerpt: "И Новах пошел и взял Кенаф и зависящие от него"
+  - id: a2ec6b7
+    en: "Parah"
+    ru: "Фара"
+    evidence:
+      osis: Josh.18.23
+      excerpt: "Аввим, Фара и Офра,"
+  - id: a8d054a
+    en: "Pharpar"
+    ru: "Фарфар"
+    evidence:
+      osis: 2Kgs.5.12
+      excerpt: "разве Авана и Фарфар, реки Дамасские, не лучше всех вод"
+  - id: aa3e5ae
+    en: "Rakkon"
+    ru: "Ракон"
+    evidence:
+      osis: Josh.19.46
+      excerpt: "Ме-Иаркон и Ракон с пределом близ Иоппии. И вышел предел"
+  - id: ad42cdc
+    en: "Ramah"
+    ru: "Рама"
+    evidence:
+      osis: 1Chr.27.27
+      excerpt: "над виноградниками — Шимей из Рамы, а над запасами вина"
+  - id: a53c3ce
+    en: "Recah"
+    ru: "Реха"
+    evidence:
+      osis: 1Chr.4.12
+      excerpt: "города Нааса [брата Селома Кенезиина и Ахазова]; это жители Рехи."
+  - id: a63bb26
+    en: "Rhegium"
+    ru: "Ригия"
+    evidence:
+      osis: Acts.28.13
+      excerpt: "Оттуда отплыв, прибыли в Ригию; и как через день подул"
+  - id: aeedde4
+    en: "Sansannah"
+    ru: "Сансана"
+    evidence:
+      osis: Josh.15.31
+      excerpt: "Циклаг, Мадмана и Сансана,"
+  - id: a311f80
+    en: "Seneh"
+    ru: "Сене"
+    evidence:
+      osis: 1Sam.14.4
+      excerpt: "скала с другой: имя одной Боцец, а имя другой Сене;"
+  - id: a887d36
+    en: "Sharuhen"
+    ru: "Шарухен"
+    evidence:
+      osis: Josh.19.6
+      excerpt: "Беф-Леваоф и Шарухен: тринадцать городов с их селами."
+  - id: a475518
+    en: "Shihor"
+    ru: "Сихор"
+    evidence:
+      osis: Isa.23.3
+      excerpt: "великим водам привозились в него семена Сихора, жатва большой реки,"
+  - id: a03f6cf
+    en: "Shion"
+    ru: "Шион"
+    evidence:
+      osis: Josh.19.19
+      excerpt: "Хафараим, Шион и Анахараф,"
+  - id: a63b8c7
+    en: "Sirah"
+    ru: "Сира"
+    evidence:
+      osis: 2Sam.3.26
+      excerpt: "и возвратили они его от колодезя Сира, без ведома Давида."
+  - id: af23dbb
+    en: "Straight Street"
+    ru: "Улица Прямая"
+    evidence:
+      osis: Acts.9.11
+      excerpt: "и пойди на улицу, так называемую Прямую, и спроси в"
+  - id: afef438
+    en: "Three Taverns"
+    ru: "Три гостиницы"
+    evidence:
+      osis: Acts.28.15
+      excerpt: "навстречу до Аппиевой площади и трех гостиниц. Увидев их, Павел"
+  - id: a7ecf6c
+    en: "Tophel"
+    ru: "Тофел"
+    evidence:
+      osis: Deut.1.1
+      excerpt: "равнине против Суфа, между Фараном и Тофелом, и Лаваном, и"
+  - id: a2e6de9
+    en: "Valley of Aijalon"
+    ru: "Долина Аиалонская"
+    evidence:
+      osis: Josh.10.12
+      excerpt: "Израильтянами: стой, солнце, над Гаваоном, и луна, над долиною Аиалонскою!"
+  - id: ac9a77c
+    en: "Valley of Jericho"
+    ru: "Долина Иерихона"
+    evidence:
+      osis: Deut.34.3
+      excerpt: "и полуденную страну и равнину долины Иерихона, город Пальм, до"
+  - id: a70e38b
+    en: "Waters of Jericho"
+    ru: "Воды Иерихонские"
+    evidence:
+      osis: Josh.16.1
+      excerpt: "от Иордана подле Иерихона, у вод Иерихонских на восток, пустыня,"
+  - id: a74c453
+    en: "Zair"
+    ru: "Цаир"
+    evidence:
+      osis: 2Kgs.8.21
+      excerpt: "И пошел Иорам в Цаир, и все колесницы с ним;"
+  - id: a6163e0
+    en: "Zephath"
+    ru: "Цефаф"
+    evidence:
+      osis: Judg.1.17
+      excerpt: "своим, и поразили Хананеев, живших в Цефафе, и предали его"
+  - id: a8248e0
+    en: "Ziddim"
+    ru: "Циддим"
+    evidence:
+      osis: Josh.19.35
+      excerpt: "Города укрепленные: Циддим, Цер, Хамаф, Раккаф и Хиннереф,"
+  - id: a4d0250
+    en: "Zuph"
+    ru: "Земля Цуф"
+    evidence:
+      osis: 1Sam.9.5
+      excerpt: "Когда они пришли в землю Цуф, Саул сказал слуге своему,"
