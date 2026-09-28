@@ -24,5 +24,17 @@ Pre-code. The stack is being decided in `docs/adr/`.
 
 ## Where to start
 
-- `docs/adr/` — architecture decisions.
+- `AGENTS.md` — rules for AI coding agents (and humans).
+- `docs/adr/` — architecture decisions:
+  - [0001. Record architecture decisions](docs/adr/0001-record-architecture-decisions.md)
+  - [0002. Monorepo and toolchain](docs/adr/0002-monorepo-and-toolchain.md)
+  - [0003. Time model](docs/adr/0003-time-model.md)
+  - [0004. Map engine](docs/adr/0004-map-engine.md)
+  - [0005. Tiles and terrain pipeline](docs/adr/0005-tiles-and-terrain.md)
+  - [0006. Frontend and embedding](docs/adr/0006-frontend-and-embedding.md)
+  - [0007. Content as code](docs/adr/0007-content-as-code.md)
+  - [0008. Data licensing policy](docs/adr/0008-data-licensing-policy.md)
+  - [0009. Backend, in phases](docs/adr/0009-backend-phasing.md)
+  - [0010. Quality gates](docs/adr/0010-quality-gates.md)
+- `docs/embed-protocol.md` — the iframe contract with host platforms.
 - `docs/ATTRIBUTIONS.md` — third-party data and credits.
