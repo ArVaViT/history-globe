@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #2b2418;
+  --color-ink-soft: #6b5d48;
+  --color-paper: #f6efe1;
+  --color-paper-2: #ece2cc;
+  --color-line: rgb(43 36 24 / 0.14);
+  --color-accent: #9a3b1f;
+  --color-gold: #b88a2e;
+  --color-night: #0c1520;
+  --font-sans: "Golos Text Variable", system-ui, sans-serif;
+  --font-serif: "Literata Variable", Georgia, serif;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--color-night);
+}
+
+/* The slider sits on the era bands: transparent track, clear thumb. */
+.timeline-range {
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+.timeline-range::-webkit-slider-runnable-track {
+  height: 20px;
+  background: transparent;
+}
+.timeline-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 3px solid var(--color-paper);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.35);
+}
+.timeline-range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 3px solid var(--color-paper);
+}
+.timeline-range:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.maplibregl-ctrl-group {
+  border-radius: 12px !important;
+  overflow: hidden;
+}

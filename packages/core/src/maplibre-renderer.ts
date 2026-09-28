@@ -1,0 +1,193 @@
+import type { Locale } from "@hg/model";
+import type { Feature, FeatureCollection } from "geojson";
+import * as maplibregl from "maplibre-gl";
+import type { GeoJSONSource, Map as MLMap, MapLayerMouseEvent } from "maplibre-gl";
+import type { Camera, LonLat, Renderer, RendererEvents } from "./renderer.ts";
+import type { LayerVisibility } from "./state.ts";
+import { buildStyle, layersInGroup, type StyleOptions } from "./style.ts";
+
+const PLACE_LAYERS = ["place-dot", "place-label", "place-label-area", "place-label-water"];
+
+export interface MapLibreRendererOptions extends StyleOptions {
+  readonly container: HTMLElement;
+  readonly camera: Camera;
+  /** Place features with a numeric top-level `id` (feature-state) and `properties.id`. */
+  readonly places: FeatureCollection;
+}
+
+export class MapLibreRenderer implements Renderer {
+  readonly map: MLMap;
+  private readonly featureIdByPlace = new Map<string, number>();
+  private readonly groups: Record<string, string[]>;
+  private selected: number | null = null;
+  private hovered: number | null = null;
+  private readonly handlers: { [E in keyof RendererEvents]: Set<RendererEvents[E]> } = {
+    pick: new Set(),
+    hover: new Set(),
+    cameraChanged: new Set(),
+  };
+  private pending: (() => void)[] = [];
+  private loaded = false;
+
+  constructor(o: MapLibreRendererOptions) {
+    const style = buildStyle(o);
+    this.groups = {
+      borders: layersInGroup(style, "borders"),
+      places: layersInGroup(style, "places"),
+      relief: layersInGroup(style, "relief"),
+      routes: layersInGroup(style, "routes"),
+    };
+    for (const f of o.places.features) {
+      const pid = (f.properties as { id?: string } | null)?.id;
+      if (pid !== undefined && typeof f.id === "number") this.featureIdByPlace.set(pid, f.id);
+    }
+    this.map = new maplibregl.Map({
+      container: o.container,
+      style,
+      center: [...o.camera.center],
+      zoom: o.camera.zoom,
+      pitch: o.camera.pitch,
+      bearing: o.camera.bearing,
+      maxPitch: 80,
+      attributionControl: { compact: true },
+      canvasContextAttributes: { antialias: true },
+    });
+    this.map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-right");
+    this.map.addControl(new maplibregl.ScaleControl({ unit: "metric" }), "bottom-left");
+
+    this.map.on("load", () => {
+      void (this.map.getSource("places") as GeoJSONSource).setData(o.places);
+      this.map.setTerrain({ source: "dem", exaggeration: 1.5 });
+      this.loaded = true;
+      for (const run of this.pending) run();
+      this.pending = [];
+    });
+
+    for (const layer of PLACE_LAYERS) {
+      this.map.on("click", layer, (e: MapLayerMouseEvent) => {
+        const id = (e.features?.[0]?.properties as { id?: string } | undefined)?.id;
+        if (id) for (const h of this.handlers.pick) h(id);
+      });
+      this.map.on("mousemove", layer, (e: MapLayerMouseEvent) => {
+        this.map.getCanvas().style.cursor = "pointer";
+        const f = e.features?.[0];
+        const fid = typeof f?.id === "number" ? f.id : null;
+        if (fid !== this.hovered) {
+          this.setHoverState(fid);
+          const pid = (f?.properties as { id?: string } | undefined)?.id ?? null;
+          for (const h of this.handlers.hover) h(pid);
+        }
+      });
+      this.map.on("mouseleave", layer, () => {
+        this.map.getCanvas().style.cursor = "";
+        this.setHoverState(null);
+        for (const h of this.handlers.hover) h(null);
+      });
+    }
+    this.map.on("moveend", () => {
+      const cam = this.getCamera();
+      for (const h of this.handlers.cameraChanged) h(cam);
+    });
+  }
+
+  private whenLoaded(run: () => void): void {
+    if (this.loaded) run();
+    else this.pending.push(run);
+  }
+
+  private setHoverState(fid: number | null): void {
+    if (this.hovered !== null)
+      this.map.setFeatureState({ source: "places", id: this.hovered }, { hover: false });
+    this.hovered = fid;
+    if (fid !== null) this.map.setFeatureState({ source: "places", id: fid }, { hover: true });
+  }
+
+  setYear(year: number): void {
+    this.map.setGlobalStateProperty("year", year);
+  }
+
+  setLocale(locale: Locale): void {
+    this.map.setGlobalStateProperty("locale", locale);
+  }
+
+  setLayers(layers: LayerVisibility): void {
+    this.whenLoaded(() => {
+      for (const [group, ids] of Object.entries(this.groups)) {
+        const visible = layers[group as keyof LayerVisibility];
+        for (const id of ids)
+          this.map.setLayoutProperty(id, "visibility", visible ? "visible" : "none");
+      }
+      if (layers.relief) this.map.setTerrain({ source: "dem", exaggeration: 1.5 });
+      else this.map.setTerrain(null);
+    });
+  }
+
+  setSelected(placeId: string | null): void {
+    this.whenLoaded(() => {
+      if (this.selected !== null) {
+        this.map.setFeatureState({ source: "places", id: this.selected }, { selected: false });
+      }
+      this.selected = placeId ? (this.featureIdByPlace.get(placeId) ?? null) : null;
+      if (this.selected !== null) {
+        this.map.setFeatureState({ source: "places", id: this.selected }, { selected: true });
+      }
+    });
+  }
+
+  flyTo(target: Partial<Camera> & { readonly center: LonLat }, durationMs = 2200): void {
+    this.map.flyTo({
+      center: [...target.center],
+      ...(target.zoom === undefined ? {} : { zoom: target.zoom }),
+      ...(target.pitch === undefined ? {} : { pitch: target.pitch }),
+      ...(target.bearing === undefined ? {} : { bearing: target.bearing }),
+      duration: durationMs,
+      curve: 1.6,
+      essential: true,
+    });
+  }
+
+  setRoute(coordinates: readonly LonLat[], currentIndex: number): void {
+    this.whenLoaded(() => {
+      const features: Feature[] = [];
+      if (coordinates.length > 1) {
+        features.push({
+          type: "Feature",
+          properties: {},
+          geometry: { type: "LineString", coordinates: coordinates.map((c) => [...c]) },
+        });
+      }
+      coordinates.forEach((c, i) => {
+        features.push({
+          type: "Feature",
+          properties: { current: i === currentIndex },
+          geometry: { type: "Point", coordinates: [...c] },
+        });
+      });
+      void (this.map.getSource("route") as GeoJSONSource).setData({
+        type: "FeatureCollection",
+        features,
+      });
+    });
+  }
+
+  getCamera(): Camera {
+    const c = this.map.getCenter();
+    return {
+      center: [c.lng, c.lat],
+      zoom: this.map.getZoom(),
+      pitch: this.map.getPitch(),
+      bearing: this.map.getBearing(),
+    };
+  }
+
+  on<E extends keyof RendererEvents>(event: E, handler: RendererEvents[E]): () => void {
+    const set = this.handlers[event] as Set<RendererEvents[E]>;
+    set.add(handler);
+    return () => set.delete(handler);
+  }
+
+  destroy(): void {
+    for (const set of Object.values(this.handlers)) set.clear();
+    this.map.remove();
+  }
+}

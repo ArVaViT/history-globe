@@ -29,31 +29,31 @@ MapLibre, but hides uncertainty.
 
 Shared by every implementation and test. "Label" is how a historian writes it.
 
-| Label | Astronomical | Note |
-|---|---|---|
-| AD 1 | 1 | |
-| 1 BC | 0 | there is no year zero in labels |
-| 2 BC | −1 | |
-| 4 BC | −3 | death of Herod the Great (common dating) |
-| 37 BC | −36 | Herod takes Jerusalem |
-| 63 BC | −62 | Pompey in Jerusalem |
-| 332 BC | −331 | Alexander in the Levant |
-| 539 BC | −538 | Cyrus takes Babylon |
-| 586 BC | −585 | fall of Jerusalem (one of two datings, with 587 BC → −586) |
-| 722 BC | −721 | fall of Samaria |
-| 1000 BC | −999 | |
-| 1446 BC | −1445 | early Exodus dating |
-| 2000 BC | −1999 | |
-| AD 30 | 30 | |
-| AD 70 | 70 | |
+| Label   | Astronomical | Note                                                       |
+| ------- | ------------ | ---------------------------------------------------------- |
+| AD 1    | 1            |                                                            |
+| 1 BC    | 0            | there is no year zero in labels                            |
+| 2 BC    | −1           |                                                            |
+| 4 BC    | −3           | death of Herod the Great (common dating)                   |
+| 37 BC   | −36          | Herod takes Jerusalem                                      |
+| 63 BC   | −62          | Pompey in Jerusalem                                        |
+| 332 BC  | −331         | Alexander in the Levant                                    |
+| 539 BC  | −538         | Cyrus takes Babylon                                        |
+| 586 BC  | −585         | fall of Jerusalem (one of two datings, with 587 BC → −586) |
+| 722 BC  | −721         | fall of Samaria                                            |
+| 1000 BC | −999         |                                                            |
+| 1446 BC | −1445        | early Exodus dating                                        |
+| 2000 BC | −1999        |                                                            |
+| AD 30   | 30           |                                                            |
+| AD 70   | 70           |                                                            |
 
-| Interval as written | Half-open, astronomical |
-|---|---|
-| 1st century AD (AD 1–100) | `[1, 101)` |
-| 1st century BC (100–1 BC) | `[-99, 1)` |
-| 10th century BC (1000–901 BC) | `[-999, -899)` |
-| Herod's reign 37–4 BC, both years included | `[-36, -2)` |
-| 4 BC – AD 6, both years included | `[-3, 7)` |
+| Interval as written                        | Half-open, astronomical |
+| ------------------------------------------ | ----------------------- |
+| 1st century AD (AD 1–100)                  | `[1, 101)`              |
+| 1st century BC (100–1 BC)                  | `[-99, 1)`              |
+| 10th century BC (1000–901 BC)              | `[-999, -899)`          |
+| Herod's reign 37–4 BC, both years included | `[-36, -2)`             |
+| 4 BC – AD 6, both years included           | `[-3, 7)`               |
 
 ## Alternatives considered
 

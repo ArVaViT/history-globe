@@ -19,7 +19,7 @@ product with partners — and too much for an MVP inside Equip.
     `schema_version` and the attribution list;
   - one mutable pointer, `stable.json`, naming the current release — rollback is
     rewriting one small file.
-  Equip's existing auth decides who sees the page that holds the iframe.
+    Equip's existing auth decides who sees the page that holds the iframe.
 - **Phase 2 (first external partner or paid tier)**: Hono on Cloudflare Workers
   (+ Hyperdrive) in front of Supabase Postgres 17 + PostGIS in a separate Supabase
   organisation; SQL migrations with the Supabase CLI; postgres.js without an ORM;

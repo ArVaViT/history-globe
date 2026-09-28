@@ -24,7 +24,7 @@ second-pass loop converges (95 of 95 evidence snippets confirmed in their source
   - a **site** is a candidate location for it (`emmaus~emmaus-nicopolis`,
     `emmaus~qubeibeh`), with its own confidence and proponents;
   - an **article** is `<place>@<century>` (`capernaum@c+01`, `jerusalem@c-10`).
-  Renames happen through an alias table, never by editing an id.
+    Renames happen through an alias table, never by editing an id.
 - **Place names are data**: one record per place × language × period (Hebrew, Greek,
   Latin, en, ru — Synodal spelling stored separately from the modern one —, uk, de).
   Tiles carry only the id and the name in each shipped locale.

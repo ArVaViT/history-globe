@@ -1,0 +1,244 @@
+# Russian place names, Synodal spelling.
+# Checked against the Synodal text (bible.by) on 2026-09-28 for the 80 places most
+# mentioned in the New Testament (OpenBible ids). Source list: research note 16.
+places:
+  - id: a15257a
+    en: "Jerusalem"
+    ru: "Иерусалим"
+  - id: a9cf1e8
+    en: "Galilee 1"
+    ru: "Галилея"
+  - id: a149f13
+    en: "Judea 1"
+    ru: "Иудея"
+  - id: af5884f
+    en: "Nazareth"
+    ru: "Назарет"
+  - id: af301ca
+    en: "Egypt"
+    ru: "Египет"
+  - id: a69e1b8
+    en: "Macedonia"
+    ru: "Македония"
+  - id: a197f19
+    en: "Asia"
+    ru: "Асия"
+  - id: a5feb15
+    en: "Ephesus"
+    ru: "Ефес"
+  - id: ae41ab4
+    en: "Antioch 1"
+    ru: "Антиохия (Сирийская)"
+  - id: a58735e
+    en: "Caesarea"
+    ru: "Кесария"
+  - id: af2161c
+    en: "Capernaum"
+    ru: "Капернаум"
+  - id: a69c1d4
+    en: "Damascus"
+    ru: "Дамаск"
+  - id: ae686c9
+    en: "Jordan"
+    ru: "Иордан"
+  - id: afc8e7a
+    en: "Rome"
+    ru: "Рим"
+  - id: a282dce
+    en: "Samaria 2"
+    ru: "Самария"
+  - id: a4f35bc
+    en: "Bethany 1"
+    ru: "Вифания"
+  - id: ac2c4c5
+    en: "Mount of Olives"
+    ru: "гора Елеонская"
+  - id: a98e4d7
+    en: "Sidon"
+    ru: "Сидон"
+  - id: a160272
+    en: "Tyre"
+    ru: "Тир"
+  - id: a6f437a
+    en: "Corinth"
+    ru: "Коринф"
+  - id: a0aa664
+    en: "Sodom"
+    ru: "Содом"
+  - id: aef4242
+    en: "Achaia"
+    ru: "Ахаия"
+  - id: a112427
+    en: "Bethlehem 1"
+    ru: "Вифлеем"
+  - id: ae023a9
+    en: "Joppa"
+    ru: "Иоппия"
+  - id: ab60a74
+    en: "Holy Place 2"
+    ru: "храм, святилище («святое место»)"
+  - id: afa9d8e
+    en: "Thessalonica"
+    ru: "Фессалоника"
+  - id: ad63819
+    en: "Cilicia"
+    ru: "Киликия"
+  - id: a26aa94
+    en: "Crete"
+    ru: "Крит"
+  - id: a2e7601
+    en: "Cyprus"
+    ru: "Кипр"
+  - id: a890adf
+    en: "Syria 2"
+    ru: "Сирия"
+  - id: a81cdb5
+    en: "Cyrene"
+    ru: "Киринея"
+  - id: a562fcc
+    en: "Sea of Galilee"
+    ru: "море Галилейское (озеро Геннисаретское, море Тивериадское)"
+  - id: a1fe6e7
+    en: "Athens"
+    ru: "Афины"
+  - id: a3f0756
+    en: "Babylon 3"
+    ru: "Вавилон (Откровение)"
+  - id: a62fe31
+    en: "Berea"
+    ru: "Верия"
+  - id: a0f440a
+    en: "Galatia"
+    ru: "Галатия"
+  - id: ae425aa
+    en: "Iconium"
+    ru: "Икония"
+  - id: a83fb1e
+    en: "Laodicea"
+    ru: "Лаодикия"
+  - id: af0719d
+    en: "Lystra"
+    ru: "Листра"
+  - id: abfba2a
+    en: "Mount Sinai"
+    ru: "гора Синай"
+  - id: a91c509
+    en: "Troas"
+    ru: "Троада"
+  - id: aa401a9
+    en: "Derbe"
+    ru: "Дервия"
+  - id: aa572e2
+    en: "Gomorrah"
+    ru: "Гоморра"
+  - id: aaf03fa
+    en: "Jericho 2"
+    ru: "Иерихон"
+  - id: aa95188
+    en: "Pamphylia"
+    ru: "Памфилия"
+  - id: a666ea0
+    en: "Tarsus"
+    ru: "Тарс"
+  - id: af20c46
+    en: "Zion"
+    ru: "Сион"
+  - id: aee7248
+    en: "Alexandria"
+    ru: "Александрия"
+  - id: a6c704a
+    en: "Antioch 2"
+    ru: "Антиохия Писидийская"
+  - id: af3d9fc
+    en: "Arimathea"
+    ru: "Аримафея"
+  - id: a217d18
+    en: "Babylon 1"
+    ru: "Вавилон"
+  - id: a91b732
+    en: "Bethsaida 1"
+    ru: "Вифсаида"
+  - id: a031bda
+    en: "Cana"
+    ru: "Кана Галилейская"
+  - id: ab0b2dd
+    en: "East"
+    ru: "восток"
+  - id: a631d35
+    en: "Golgotha"
+    ru: "Голгофа"
+  - id: a7184a7
+    en: "Italy"
+    ru: "Италия"
+  - id: a9acaaf
+    en: "Most Holy Place 2"
+    ru: "Святое Святых *"
+  - id: a49e1d0
+    en: "Philippi"
+    ru: "Филиппы"
+  - id: a33d53e
+    en: "Phoenicia"
+    ru: "Финикия"
+  - id: a94b661
+    en: "Thyatira"
+    ru: "Фиатира"
+  - id: a815d89
+    en: "Areopagus"
+    ru: "ареопаг"
+  - id: abff59d
+    en: "Bethphage"
+    ru: "Виффагия"
+  - id: a9fc13a
+    en: "Bethsaida 2"
+    ru: "Вифсаида"
+  - id: a581f0c
+    en: "Canaan"
+    ru: "Ханаан (земля Ханаанская)"
+  - id: ae733a2
+    en: "Decapolis"
+    ru: "Десятиградие"
+  - id: ae7274b
+    en: "Emmaus"
+    ru: "Эммаус"
+  - id: a7de69e
+    en: "Gennesaret"
+    ru: "Геннисарет"
+  - id: ada6b64
+    en: "Gerasa"
+    ru: "страна Гадаринская / Гергесинская"
+  - id: a4492a0
+    en: "Greece"
+    ru: "Еллада"
+  - id: a2c5cc7
+    en: "Lod"
+    ru: "Лидда"
+  - id: a55027d
+    en: "Miletus"
+    ru: "Милит"
+  - id: a70fd5d
+    en: "Nineveh"
+    ru: "Ниневия"
+  - id: aff04b8
+    en: "Perga"
+    ru: "Пергия"
+  - id: ab8ae56
+    en: "Phrygia"
+    ru: "Фригия"
+  - id: a83a43e
+    en: "Pontus"
+    ru: "Понт"
+  - id: aab4a5f
+    en: "Sardis"
+    ru: "Сардис"
+  - id: a294859
+    en: "Siloam"
+    ru: "Силоам (купальня)"
+  - id: a47c817
+    en: "Solomon’s Portico"
+    ru: "притвор Соломонов"
+  - id: a040ba5
+    en: "Akeldama"
+    ru: "Акелдама"
+  - id: a0f4ea8
+    en: "Arabia 2"
+    ru: "Аравия"

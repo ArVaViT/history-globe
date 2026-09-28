@@ -1,0 +1,89 @@
+import { describe, expect, it } from "vitest";
+import { createEngine, YEAR_MAX, YEAR_MIN, type PlaceInfo, type Tour } from "./engine.ts";
+import { FakeRenderer } from "./fake-renderer.ts";
+
+const places = new Map<string, PlaceInfo>([
+  ["capernaum", { id: "capernaum", at: [35.575, 32.881], kind: "settlement" }],
+  ["galilee", { id: "galilee", at: [35.4, 32.8], kind: "region" }],
+  ["antioch", { id: "antioch", at: [36.17, 36.23], kind: "settlement" }],
+]);
+
+const tour: Tour = {
+  id: "paul-1",
+  year: 47,
+  stops: [
+    { placeId: "antioch", at: [36.17, 36.23], ref: "Acts.13.1-Acts.13.3", note: {} },
+    { placeId: "missing", at: [35.92, 36.12], ref: "Acts.13.4", note: {} },
+  ],
+};
+
+function setup() {
+  const renderer = new FakeRenderer();
+  const engine = createEngine({ renderer, places, tours: [tour] });
+  return { renderer, engine };
+}
+
+describe("engine", () => {
+  it("pushes the initial state to the renderer once", () => {
+    const { renderer } = setup();
+    expect(renderer.calls.map((c) => c.op)).toEqual([
+      "year",
+      "locale",
+      "layers",
+      "selected",
+      "route",
+    ]);
+  });
+
+  it("clamps and rounds years", () => {
+    const { engine, renderer } = setup();
+    engine.setYear(-99999);
+    expect(renderer.last("year")?.year).toBe(YEAR_MIN);
+    engine.setYear(1e6);
+    expect(renderer.last("year")?.year).toBe(YEAR_MAX);
+    engine.setYear(-585.4);
+    expect(engine.store.get().year).toBe(-585);
+  });
+
+  it("does not re-send unchanged state", () => {
+    const { engine, renderer } = setup();
+    const before = renderer.calls.length;
+    engine.setYear(engine.store.get().year);
+    expect(renderer.calls.length).toBe(before);
+  });
+
+  it("selects a known place and flies closer for a town than for a region", () => {
+    const { engine, renderer } = setup();
+    engine.selectPlace("galilee");
+    const regionZoom = renderer.last("flyTo")?.zoom ?? 0;
+    engine.selectPlace("capernaum");
+    expect(renderer.last("selected")?.placeId).toBe("capernaum");
+    expect(renderer.last("flyTo")?.zoom).toBeGreaterThan(regionZoom);
+  });
+
+  it("ignores unknown places", () => {
+    const { engine } = setup();
+    engine.selectPlace("atlantis");
+    expect(engine.store.get().selectedPlace).toBeNull();
+  });
+
+  it("selects without flying when the user clicks the map", () => {
+    const { renderer } = setup();
+    const flights = renderer.calls.filter((c) => c.op === "flyTo").length;
+    renderer.emitPick("capernaum");
+    expect(renderer.last("selected")?.placeId).toBe("capernaum");
+    expect(renderer.calls.filter((c) => c.op === "flyTo").length).toBe(flights);
+  });
+
+  it("runs a tour: sets its year, draws the route so far, selects known stops only", () => {
+    const { engine, renderer } = setup();
+    engine.startTour("paul-1");
+    expect(engine.store.get().year).toBe(47);
+    expect(renderer.last("route")).toEqual({ op: "route", points: 1, current: 0 });
+    engine.goToStop(1);
+    expect(renderer.last("route")).toEqual({ op: "route", points: 2, current: 1 });
+    expect(engine.store.get().selectedPlace).toBeNull();
+    engine.stopTour();
+    expect(renderer.last("route")).toEqual({ op: "route", points: 0, current: -1 });
+  });
+});

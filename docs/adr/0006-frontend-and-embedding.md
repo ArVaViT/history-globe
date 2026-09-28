@@ -35,12 +35,12 @@ data is public anyway, so the package buys no auth advantage.
 
 ## Deferred, with triggers
 
-| Item | Add when |
-|---|---|
-| React package for hosts | a partner needs deeper integration than an iframe allows |
-| TanStack Router / Query | the app grows beyond the globe plus a few panels |
-| Astro public SEO pages | content is valuable enough to market, and the repository question (public/private) is settled |
-| Motion, three.js accents | a concrete design needs them |
+| Item                     | Add when                                                                                      |
+| ------------------------ | --------------------------------------------------------------------------------------------- |
+| React package for hosts  | a partner needs deeper integration than an iframe allows                                      |
+| TanStack Router / Query  | the app grows beyond the globe plus a few panels                                              |
+| Astro public SEO pages   | content is valuable enough to market, and the repository question (public/private) is settled |
+| Motion, three.js accents | a concrete design needs them                                                                  |
 
 ## Alternatives considered
 

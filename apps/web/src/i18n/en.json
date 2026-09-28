@@ -1,0 +1,46 @@
+{
+  "search": { "placeholder": "Find a place…", "empty": "Nothing found" },
+  "layers": {
+    "title": "Layers",
+    "relief": "Relief",
+    "borders": "Borders of states",
+    "places": "Biblical places",
+    "routes": "Routes"
+  },
+  "tours": {
+    "title": "Tours",
+    "stop": "Stop {{n}} of {{total}}",
+    "prev": "Back",
+    "next": "Next",
+    "close": "Finish"
+  },
+  "place": {
+    "today": "Today",
+    "sites_one": "Disputed: {{count}} candidate site",
+    "sites_other": "Disputed: {{count}} candidate sites",
+    "single_site": "Location generally agreed",
+    "mentions": "Mentions in the Bible",
+    "nt": "NT",
+    "ot": "OT",
+    "verses": "Verses",
+    "more": "{{count}} more",
+    "coords_wikidata": "Coordinates: Wikidata",
+    "article_soon": "An article on {{name}} in this era will appear here.",
+    "close": "Close"
+  },
+  "time": {
+    "play": "Play",
+    "pause": "Pause",
+    "back": "Back {{n}} years",
+    "forward": "Forward {{n}} years"
+  },
+  "hints": "[ ] year ±10 · Shift ±100 · Space play · / search · N north up",
+  "kind": {
+    "settlement": "town or village",
+    "region": "region",
+    "water": "body of water",
+    "river": "river",
+    "mountain": "mountain",
+    "island": "island"
+  }
+}
