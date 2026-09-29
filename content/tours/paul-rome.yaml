@@ -8,10 +8,11 @@ title:
 year: "AD 60"
 stops:
   - place: a58735e
-    ref: Acts.27.1-Acts.27.2
+    # Caesarea is named in 25:13-24, where Paul is held; 27:1-2 sails from there.
+    ref: Acts.25.13-Acts.27.2
     note:
-      en: "Paul sails as a prisoner."
-      ru: "Павел отплывает под стражей."
+      en: "Held at Caesarea, Paul sails for Rome as a prisoner."
+      ru: "Из Кесарии, где его держали под стражей, Павел отплывает в Рим."
   - place: a98e4d7
     ref: Acts.27.3
     note:

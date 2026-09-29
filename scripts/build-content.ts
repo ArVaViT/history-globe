@@ -46,6 +46,23 @@ if (existsSync(openbible)) {
     versesOf.set(r.id, new Set((r.verses ?? []).map((v) => v.osis)));
   }
 }
+/** Whether an OSIS verse or range ("Acts.13.1-Acts.13.3") contains one of `verses`. */
+function refCovers(ref: string, verses: ReadonlySet<string>): boolean {
+  const at = (osis: string) => {
+    const [book = "", c = "0", v] = osis.split(".");
+    return { book, n: Number(c) * 1000 + (v === undefined ? 0 : Number(v)) };
+  };
+  const [first = "", last = first] = ref.split("-");
+  const lo = at(first);
+  const hiRef = at(last);
+  // A whole-chapter end ("Acts.13") runs to the end of that chapter.
+  const hi = last.split(".").length === 2 ? hiRef.n + 999 : hiRef.n;
+  return [...verses].some((v) => {
+    const p = at(v);
+    return p.book === lo.book && p.n >= lo.n && p.n <= hi;
+  });
+}
+
 /** Evidence read where the Synodal text has words the English one lacks. */
 const SYNODAL_ONLY = new Set([
   // Exod 1:11 adds "и Он, иначе Илиополь" from the Septuagint.
@@ -125,6 +142,10 @@ for (const file of readdirSync(join(root, "content/tours")).filter((f) => f.ends
   if (tours.some((t) => t.id === result.data.id))
     errors.push(`tours/${file}: id "${result.data.id}" is taken`);
   result.data.stops.forEach((s, i) => {
+    // The stop's passage must name its place: some verse in the range is tagged for it.
+    const tagged = versesOf.get(s.place);
+    if (tagged && !refCovers(s.ref, tagged))
+      errors.push(`tours/${file}: stop ${i + 1} (${s.place}) ${s.ref} does not name the place`);
     if (!known.has(s.place)) errors.push(`tours/${file}: stop ${s.place} is not in the data build`);
     if (i > 0 && result.data.stops[i - 1]?.place === s.place) {
       errors.push(`tours/${file}: stop ${i + 1} repeats the previous place ${s.place}`);
