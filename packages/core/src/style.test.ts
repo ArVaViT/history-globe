@@ -179,6 +179,10 @@ describe("place labels on the Russian map", () => {
     expect(labelled("en", { kind: "settlement", name: "Gob" })).toBe(true);
   });
 
+  it("print a name once where two records share a point", () => {
+    expect(labelled("en", { kind: "settlement", name: "Bethel", dup: true })).toBe(false);
+  });
+
   it("keep the English name for a region, which has no dot to fall back on", () => {
     expect(labelled("ru", { kind: "region", name: "Negeb" })).toBe(true);
     expect(labelled("ru", { kind: "body of water", name: "Great Sea" })).toBe(true);

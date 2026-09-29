@@ -301,8 +301,20 @@ def build_places(
                 **({"line": True} if r["id"] in river_places else {}),
             },
         })
+    # OpenBible splits one location into several records by referent (Bethel 1 and 2 on one
+    # point). On the map they would print the same name twice: only the most mentioned of
+    # each name at a point keeps its label; the others are marked `dup` and keep their dot.
+    groups: dict[tuple, list[dict]] = {}
+    for f in feats:
+        groups.setdefault((*f["geometry"]["coordinates"], f["properties"]["name"]), []).append(f)
+    duplicates = 0
+    for group in groups.values():
+        for f in sorted(group, key=lambda f: -f["properties"]["verses"])[1:]:
+            f["properties"]["dup"] = True
+            duplicates += 1
     stats = {
         "places": len(feats),
+        "same_name_same_point_unlabelled": duplicates,
         "banned_points_replaced_from_wikidata": replaced,
         "excluded_banned_coordinates": len(excluded),
         "without_point": no_point,

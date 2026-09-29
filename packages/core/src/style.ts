@@ -147,6 +147,9 @@ const LANDMARK_INK = "#5b4630";
 /** First year of the New Testament narrative (6 BC, astronomical -5). */
 export const NT_FROM = -5;
 
+/** A second record of the same name on the same point (pipeline `dup`): dot, no label. */
+const NOT_DUP: ExpressionSpecification = ["!", ["has", "dup"]];
+
 /**
  * Label placement order: most mentioned first, and places faded before the New
  * Testament last, so a faded Capernaum never takes the room of a town of its time.
@@ -378,7 +381,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isArea, visibleAtZoom],
+      filter: ["all", isArea, visibleAtZoom, NOT_DUP],
       layout: {
         // Biblical regions are not states: italic and sentence case, so they never read
         // as the polity labels (upper case) of the chosen year.
@@ -401,7 +404,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isWater, visibleAtZoom],
+      filter: ["all", isWater, visibleAtZoom, NOT_DUP],
       layout: {
         "text-field": NAME,
         "text-font": [MAP_FONT_ITALIC],
@@ -421,7 +424,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isLandmark, visibleAtZoom, HAS_LOCAL_NAME],
+      filter: ["all", isLandmark, visibleAtZoom, HAS_LOCAL_NAME, NOT_DUP],
       layout: {
         "text-field": NAME,
         "text-font": [MAP_FONT_ITALIC],
@@ -486,7 +489,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isSettlement, visibleAtZoom, HAS_LOCAL_NAME],
+      filter: ["all", isSettlement, visibleAtZoom, HAS_LOCAL_NAME, NOT_DUP],
       layout: {
         "text-field": NAME,
         "text-font": [MAP_FONT],
