@@ -91,7 +91,8 @@ describe("labels and ids", () => {
 
   it.each([
     ["586 BC", BC(586)],
-    ["c. 1000 BC", BC(1000)],
+    ["c. 1000 BC", { ...BC(1000), approximate: true }],
+    ["c. AD 47", { ...AD(47), approximate: true }],
     ["AD 30", AD(30)],
     ["30 AD", AD(30)],
     ["30 CE", AD(30)],

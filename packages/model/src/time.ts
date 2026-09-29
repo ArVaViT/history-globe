@@ -10,6 +10,8 @@ export interface YearLabel {
   /** Positive year number as a historian writes it. */
   readonly year: number;
   readonly era: Era;
+  /** "c. 586 BC": the source gives the year as approximate. */
+  readonly approximate?: true;
 }
 
 /** Half-open interval of astronomical years. */
@@ -66,15 +68,20 @@ export function centuryId(n: number, era: Era): string {
   return `c${era === "AD" ? "+" : "-"}${String(n).padStart(2, "0")}`;
 }
 
-const LABEL_RE = /^\s*(?:c\.\s*)?(\d{1,5})\s*(BC|BCE|AD|CE)\s*$|^\s*(?:AD|CE)\s*(\d{1,5})\s*$/i;
+const LABEL_RE =
+  /^\s*(c\.\s*)?(\d{1,5})\s*(BC|BCE|AD|CE)\s*$|^\s*(c\.\s*)?(?:AD|CE)\s*(\d{1,5})\s*$/i;
 
-/** Parses "1000 BC", "c. 586 BC", "AD 30", "30 AD", "30 CE". Rejects bare numbers. */
+/**
+ * Parses "1000 BC", "c. 586 BC", "AD 30", "c. AD 30", "30 AD", "30 CE". Rejects bare
+ * numbers. "c." is kept as `approximate`, never dropped.
+ */
 export function parseLabel(text: string): YearLabel {
   const m = LABEL_RE.exec(text);
   if (!m) throw new SyntaxError(`not a year label: "${text}" (write e.g. "586 BC" or "AD 30")`);
-  if (m[3] !== undefined) return { year: Number(m[3]), era: "AD" };
-  const era: Era = /^(BC|BCE)$/i.test(m[2] ?? "") ? "BC" : "AD";
-  return { year: Number(m[1]), era };
+  const approx = m[1] !== undefined || m[4] !== undefined ? { approximate: true as const } : {};
+  if (m[5] !== undefined) return { year: Number(m[5]), era: "AD", ...approx };
+  const era: Era = /^(BC|BCE)$/i.test(m[3] ?? "") ? "BC" : "AD";
+  return { year: Number(m[2]), era, ...approx };
 }
 
 export type Locale = "en" | "ru" | "uk" | "de";

@@ -54,7 +54,10 @@ for (const p of nameEntries) {
   // last word, which survive Russian case endings (Вифлеем → в Вифлееме).
   if (p.evidence) {
     const stem = (p.ru.split(/\s+/).at(-1) ?? "").slice(0, 3).toLocaleLowerCase("ru");
-    if (!p.evidence.excerpt.toLocaleLowerCase("ru").includes(stem)) {
+    // At the start of a word: a short name ("Ор") would otherwise match inside any word.
+    const escaped = stem.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const atWordStart = new RegExp(`(^|[^\\p{L}])${escaped}`, "u");
+    if (!atWordStart.test(p.evidence.excerpt.toLocaleLowerCase("ru"))) {
       errors.push(
         `place-names: ${p.id} "${p.ru}" is not found in its evidence "${p.evidence.excerpt}"`,
       );
@@ -89,6 +92,11 @@ for (const file of readdirSync(join(root, "content/tours")).filter((f) => f.ends
     errors.push(`tours/${file}: ${result.error.message}`);
     continue;
   }
+  // The id is the tour's address in links: one file, one id, the same name.
+  if (`${result.data.id}.yaml` !== file)
+    errors.push(`tours/${file}: id "${result.data.id}" ≠ file name`);
+  if (tours.some((t) => t.id === result.data.id))
+    errors.push(`tours/${file}: id "${result.data.id}" is taken`);
   result.data.stops.forEach((s, i) => {
     if (!known.has(s.place)) errors.push(`tours/${file}: stop ${s.place} is not in the data build`);
     if (i > 0 && result.data.stops[i - 1]?.place === s.place) {

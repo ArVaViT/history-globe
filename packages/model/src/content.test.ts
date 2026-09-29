@@ -29,16 +29,27 @@ describe("PlaceNamesFile", () => {
 });
 
 describe("TourFile", () => {
+  const tour = {
+    id: "t",
+    title: { en: "T", ru: "Т" },
+    year: "AD 47",
+    stops: [
+      { place: "ae41ab4", ref: "Acts.13.1", note: { en: "a", ru: "а" } },
+      { place: "a6d306d", ref: "Acts.13.4", note: { en: "b", ru: "б" } },
+    ],
+  };
+
   it("converts the year label to an astronomical year", () => {
-    const tour = TourFile.parse({
-      id: "t",
-      title: { en: "T", ru: "Т" },
-      year: "AD 47",
-      stops: [
-        { place: "ae41ab4", ref: "Acts.13.1", note: { en: "a", ru: "а" } },
-        { place: "a6d306d", ref: "Acts.13.4", note: { en: "b", ru: "б" } },
-      ],
-    });
-    expect(tour.year).toBe(47);
+    expect(TourFile.parse(tour).year).toBe(47);
+  });
+
+  it("refuses an approximate year instead of rounding it silently", () => {
+    expect(() => TourFile.parse({ ...tour, year: "c. 47 AD" })).toThrow();
+  });
+
+  it("rejects misspelt fields in the tour and in its stops", () => {
+    expect(() => TourFile.parse({ ...tour, yaer: "AD 47" })).toThrow();
+    const [first, second] = tour.stops;
+    expect(() => TourFile.parse({ ...tour, stops: [{ ...first, nte: "x" }, second] })).toThrow();
   });
 });
