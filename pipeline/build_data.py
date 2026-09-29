@@ -73,12 +73,6 @@ SOURCES = {
         "license": "PD",
         "credit": "Made with Natural Earth",
     },
-    "natural_earth_land": {
-        "file": "ne_50m_land.geojson",
-        "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_land.geojson",
-        "license": "PD",
-        "credit": "Made with Natural Earth",
-    },
 }
 
 # Region and period of the MVP (ADR 0005). West, south, east, north.
@@ -479,14 +473,13 @@ def build_polities() -> tuple[dict, dict, dict]:
     )
 
 
-# --- land and water ----------------------------------------------------------------
+# --- water ------------------------------------------------------------------------
 
 
-def build_land_water() -> tuple[dict, dict]:
-    """Land and water from Natural Earth. Water is the ocean polygon plus natural lakes:
-    a "world minus land" polygon triangulates badly on the globe, and modern reservoirs
-    (Kakhovka, Tharthar, Nasser…) do not belong on a map of antiquity."""
-    land = json.loads(fetch("natural_earth_land").read_text(encoding="utf-8"))
+def build_water() -> dict:
+    """Water from Natural Earth: the ocean polygon plus natural lakes, drawn over a
+    land-coloured globe (no land polygon needed). Modern reservoirs (Kakhovka, Tharthar,
+    Nasser…) do not belong on a map of antiquity."""
     ocean = json.loads(fetch("natural_earth_ocean").read_text(encoding="utf-8"))
     lakes = json.loads(fetch("natural_earth_lakes").read_text(encoding="utf-8"))
     natural = [
@@ -495,7 +488,7 @@ def build_land_water() -> tuple[dict, dict]:
         if f["properties"].get("featurecla") != "Reservoir" and f["properties"].get("name") not in MODERN_LAKES
     ]
     water = {"type": "FeatureCollection", "features": [*ocean["features"], *natural]}
-    return round_collection(land), round_collection(water)
+    return round_collection(water)
 
 
 COORD_DECIMALS = 3  # ≈ 100 m: far below what a 1:50m source can show
@@ -696,7 +689,7 @@ def main() -> None:
     places, place_stats, excluded_places = build_places(records, modern, sites_per_place, river_places)
     assert_no_banned_points({"places.geojson": places, "sites.geojson": sites}, modern)
     polities, polity_labels, polity_stats = build_polities()
-    land, water = build_land_water()
+    water = build_water()
     outputs = {
         "places.geojson": places,
         "sites.geojson": sites,
@@ -704,7 +697,6 @@ def main() -> None:
         "river-labels.geojson": river_labels,
         "polities.geojson": polities,
         "polity-labels.geojson": polity_labels,
-        "land.geojson": land,
         "water.geojson": water,
     }
     for name, data in outputs.items():

@@ -188,8 +188,9 @@ const visibleAtZoom: ExpressionSpecification = [">=", ["zoom"], minZoomByRank];
 
 export function buildStyle(o: StyleOptions): StyleSpecification {
   const layers: LayerSpecification[] = [
-    { id: "ocean", type: "background", paint: { "background-color": T.ocean } },
-    { id: "land", type: "fill", source: "land", paint: { "fill-color": T.land } },
+    // The globe is land; the water layer paints seas and lakes over it. A separate land
+    // polygon (a fifth of the data download) would only be covered again.
+    { id: "land", type: "background", paint: { "background-color": T.land } },
     {
       id: "relief",
       type: "color-relief",
@@ -244,7 +245,8 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
     {
       id: "coast",
       type: "line",
-      source: "land",
+      // The outline of the water is the coast (and the shore of each lake).
+      source: "water",
       paint: {
         "line-color": T.coast,
         "line-opacity": 0.55,
@@ -604,8 +606,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         tileSize: 512,
         maxzoom: 12,
       },
-      land: { type: "geojson", data: `${o.dataUrl}/land.geojson`, attribution: "Natural Earth" },
-      water: { type: "geojson", data: `${o.dataUrl}/water.geojson` },
+      water: { type: "geojson", data: `${o.dataUrl}/water.geojson`, attribution: "Natural Earth" },
       polities: {
         type: "geojson",
         data: `${o.dataUrl}/polities.geojson`,
