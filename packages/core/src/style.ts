@@ -386,6 +386,20 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "circle-stroke-opacity": fadeBeforeNT(0.3),
       },
     },
+    // Tour stops lie under the labels: an island named at its centre (Melita) stays readable.
+    {
+      id: "route-stop",
+      type: "circle",
+      source: "route",
+      metadata: { group: "routes" },
+      filter: ["==", ["geometry-type"], "Point"],
+      paint: {
+        "circle-radius": ["case", ["get", "current"], 8, 5],
+        "circle-color": ["case", ["get", "current"], T.gold, T.accent],
+        "circle-stroke-color": T.halo,
+        "circle-stroke-width": 2.5,
+      },
+    },
     {
       id: "place-label-area",
       type: "symbol",
@@ -537,19 +551,6 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-max-angle": 55,
       },
       paint: { "text-color": T.water, "text-halo-color": T.halo, "text-halo-width": 1.4 },
-    },
-    {
-      id: "route-stop",
-      type: "circle",
-      source: "route",
-      metadata: { group: "routes" },
-      filter: ["==", ["geometry-type"], "Point"],
-      paint: {
-        "circle-radius": ["case", ["get", "current"], 8, 5],
-        "circle-color": ["case", ["get", "current"], T.gold, T.accent],
-        "circle-stroke-color": T.halo,
-        "circle-stroke-width": 2.5,
-      },
     },
     // Candidate locations of the selected place, when its location is disputed.
     {
