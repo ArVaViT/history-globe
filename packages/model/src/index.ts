@@ -4,3 +4,4 @@ export * from "./scripture.ts";
 // Build scripts import them from "@hg/model/content".
 export type { ContentRelease, TourFile } from "./content.ts";
 export * from "./periods.ts";
+export * from "./sites.ts";

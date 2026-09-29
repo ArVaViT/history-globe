@@ -2,7 +2,7 @@
 
 import unittest
 
-from build_data import banned_lonlats, coord_banned, rank_of
+from build_data import banned_lonlats, coord_banned, rank_of, site_label
 
 MODERN = {
     "m_osm": {"lonlat": "35.1,31.1", "coordinates_source": {"type": "osm", "geometry_credit": "osm"}},
@@ -41,6 +41,21 @@ class CoordBanned(unittest.TestCase):
 class Rank(unittest.TestCase):
     def test_thresholds(self) -> None:
         self.assertEqual([rank_of(n) for n in (40, 39, 10, 9, 3, 2)], [0, 1, 1, 2, 2, 3])
+
+
+class SiteLabel(unittest.TestCase):
+    def test_another_name(self) -> None:
+        got = site_label('another name for <ancient id="a818a40">Abila</ancient>')
+        self.assertEqual(got, {"label": "same place as Abila", "tpl": "same", "ref": "a818a40", "ref_text": "Abila"})
+
+    def test_distance_drops_the_disambiguator(self) -> None:
+        got = site_label('within 250 km of <ancient id="a217d18">Babylon 1</ancient>')
+        self.assertEqual(got["label"], "within 250 km of Babylon")
+        self.assertEqual((got["tpl"], got["n"], got["unit"], got["ref_text"]), ("within", "250", "km", "Babylon"))
+
+    def test_free_text_stays_as_it_is(self) -> None:
+        got = site_label('in the region <modern id="m56a09d">north of the Dead Sea</modern>')
+        self.assertEqual(got, {"label": "in the region north of the Dead Sea"})
 
 
 if __name__ == "__main__":

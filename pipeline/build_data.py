@@ -601,6 +601,39 @@ def build_rivers() -> tuple[dict, dict, dict]:
 
 MAX_SITES = 6
 
+_REF = r'<(?P<kind>ancient|modern) id="(?P<ref>[^"]+)">(?P<text>[^<]*)</(?P=kind)>'
+# OpenBible writes a candidate site as a modern name or one of a few English templates.
+# Keeping the template and the referenced id lets the content build write a Russian label
+# with the Synodal name of the referenced place.
+SITE_TEMPLATES = [
+    ("same", re.compile(rf"^another name for (?:the )?{_REF}$")),
+    ("within", re.compile(rf"^within (?P<n>[\d.]+) (?P<unit>km|m) of (?:the )?{_REF}$")),
+    ("around", re.compile(rf"^about (?P<n>[\d.]+) (?P<unit>km|m) around (?:the )?{_REF}$")),
+    ("region", re.compile(rf"^region around (?:the )?{_REF}$")),
+    ("along", re.compile(rf"^along (?:the )?{_REF}$")),
+    ("at", re.compile(rf"^(?:in|on) (?:the )?{_REF}$")),
+    ("name", re.compile(rf"^{_REF}$")),
+]
+NUMBER_SUFFIX = re.compile(r" \d+$")  # "Babylon 1" -> "Babylon": OpenBible's disambiguator
+
+
+def site_label(description: str) -> dict:
+    """`label` in English plus, for a known template, `tpl`, `ref`, `ref_text`, `n`, `unit`."""
+    for key, pattern in SITE_TEMPLATES:
+        m = pattern.match(description)
+        if not m:
+            continue
+        g = m.groupdict()
+        ref_text = NUMBER_SUFFIX.sub("", g["text"])
+        out = {"tpl": key, "ref": g["ref"], "ref_text": ref_text}
+        if g.get("n"):
+            out |= {"n": g["n"], "unit": g["unit"]}
+        label = NUMBER_SUFFIX.sub("", TAG_RE.sub("", description))
+        if key == "same":
+            label = f"same place as {ref_text}"
+        return {"label": label, **out}
+    return {"label": TAG_RE.sub("", description)}
+
 
 def build_sites(records: list[dict], modern: dict[str, dict]) -> tuple[dict, dict[str, int], dict]:
     """Candidate locations of disputed places (ADR 0007: a place ≠ a site).
@@ -622,7 +655,7 @@ def build_sites(records: list[dict], modern: dict[str, dict]) -> tuple[dict, dic
                 continue
             lon, lat = (float(v) for v in res["lonlat"].split(","))
             score = float((ident.get("score") or {}).get("time_total") or 0)
-            cands.append({"i": i, "lon": lon, "lat": lat, "score": score, "label": TAG_RE.sub("", ident.get("description", ""))})
+            cands.append({"i": i, "lon": lon, "lat": lat, "score": score, **site_label(ident.get("description", ""))})
         cands = cands[:MAX_SITES]
         if len(cands) < 2:
             continue
@@ -636,6 +669,7 @@ def build_sites(records: list[dict], modern: dict[str, dict]) -> tuple[dict, dic
                     "place": r["id"],
                     "rank": c["i"],
                     "label": c["label"],
+                    **{k: c[k] for k in ("tpl", "ref", "ref_text", "n", "unit") if k in c},
                     **({"share": round(100 * max(c["score"], 0) / total)} if total > 0 else {}),
                 },
             })

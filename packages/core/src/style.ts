@@ -67,6 +67,14 @@ export const SITES_OF_SELECTED: ExpressionSpecification = [
   ["global-state", "selected"],
 ];
 
+/** A candidate site's label, in Russian where the content build could write one. */
+const SITE_LABEL: ExpressionSpecification = [
+  "case",
+  ["==", LOCALE, "ru"],
+  ["coalesce", ["get", "label_ru"], ["get", "label"]],
+  ["get", "label"],
+];
+
 /** OpenBible's share for a candidate site; 0 where the candidates are unrated. */
 const SHARE: ExpressionSpecification = ["to-number", ["get", "share"], 0];
 
@@ -540,8 +548,8 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-field": [
           "case",
           ["has", "share"],
-          ["concat", ["get", "label"], " · ", ["to-string", SHARE], "%"],
-          ["get", "label"],
+          ["concat", SITE_LABEL, " · ", ["to-string", SHARE], "%"],
+          SITE_LABEL,
         ],
         "text-font": [MAP_FONT_ITALIC],
         "text-size": 12,

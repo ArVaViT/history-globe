@@ -94,7 +94,9 @@ export function PlaceCard({
                   }}
                   className="flex w-full items-center gap-2 rounded-md px-1 py-0.5 text-left hover:bg-paper-2"
                 >
-                  <span className="min-w-0 flex-1 truncate text-[13.5px] text-ink">{s.label}</span>
+                  <span className="min-w-0 flex-1 truncate text-[13.5px] text-ink">
+                    {ru ? (s.labelRu ?? s.label) : s.label}
+                  </span>
                   {s.share !== null && (
                     <>
                       <span className="h-1.5 w-16 shrink-0 overflow-hidden rounded-full bg-paper-2">

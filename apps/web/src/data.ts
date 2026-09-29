@@ -22,6 +22,8 @@ export interface PlaceProps {
 /** A candidate location of a disputed place, with OpenBible's assessment in percent. */
 export interface Site {
   readonly label: string;
+  /** Russian label where the content build could write one ("то же место, что Авила"). */
+  readonly labelRu?: string;
   /** null when OpenBible has rated none of the candidates. */
   readonly share: number | null;
   readonly at: readonly [number, number];
@@ -42,14 +44,20 @@ export interface LoadedData {
 
 export const DATA_URL = "/data";
 
-type SiteProps = { place: string; label: string; share?: number };
+type SiteProps = { place: string; label: string; label_ru?: string; share?: number };
 
 export function groupSites(fc: FeatureCollection<Point, SiteProps>): Map<string, Site[]> {
   const sites = new Map<string, Site[]>();
   for (const f of fc.features) {
     const [lon = 0, lat = 0] = f.geometry.coordinates;
     const list = sites.get(f.properties.place) ?? [];
-    list.push({ label: f.properties.label, share: f.properties.share ?? null, at: [lon, lat] });
+    const { label, label_ru: labelRu } = f.properties;
+    list.push({
+      label,
+      ...(labelRu ? { labelRu } : {}),
+      share: f.properties.share ?? null,
+      at: [lon, lat],
+    });
     sites.set(f.properties.place, list);
   }
   // Stable sort: unrated candidates keep OpenBible's order.

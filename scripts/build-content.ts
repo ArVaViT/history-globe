@@ -15,6 +15,7 @@ import {
   TourFile,
   type ContentRelease,
 } from "../packages/model/src/content.ts";
+import { siteLabelRu, type SiteLabelParts } from "../packages/model/src/sites.ts";
 
 const root = join(import.meta.dirname, "..");
 const out = join(root, "apps/web/public/data");
@@ -225,6 +226,23 @@ for (const f of polities.features as { properties: { name: string; name_ru?: str
 writes.push([polityPath, JSON.stringify(polities)]);
 writes.push([labelsPath, JSON.stringify(labels)]);
 
+// Candidate sites get a Russian label where their English one refers to a place with a
+// Synodal name ("same place as Abila" -> "то же место, что Авила").
+const sitesPath = join(out, "sites.geojson");
+const sites = JSON.parse(readFileSync(sitesPath, "utf8")) as {
+  features: { properties: SiteLabelParts & { label_ru?: string } }[];
+};
+let sitesInRussian = 0;
+for (const f of sites.features) {
+  delete f.properties.label_ru;
+  const ru = siteLabelRu(f.properties, (id) => names[id]?.ru);
+  if (ru) {
+    f.properties.label_ru = ru;
+    sitesInRussian += 1;
+  }
+}
+writes.push([sitesPath, JSON.stringify(sites)]);
+
 // Biblical rivers get the verified Russian name of their place (Иордан, Евфрат, …).
 for (const file of ["rivers.geojson", "river-labels.geojson"]) {
   const path = join(out, file);
@@ -247,4 +265,7 @@ if (errors.length > 0) {
 const release: ContentRelease = { schema_version: 1, names, tours };
 for (const [path, text] of writes) writeFileSync(path, text);
 writeFileSync(join(out, "content.json"), JSON.stringify(release));
-console.log(`content: ${Object.keys(names).length} names, ${tours.length} tours`);
+console.log(
+  `content: ${String(Object.keys(names).length)} names, ${String(tours.length)} tours, ` +
+    `${String(sitesInRussian)} of ${String(sites.features.length)} site labels in Russian`,
+);
