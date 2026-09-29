@@ -5,243 +5,483 @@ places:
   - id: a15257a
     en: "Jerusalem"
     ru: "Иерусалим"
+    evidence:
+      osis: Josh.10.1
+      excerpt: "Когда Адониседек, царь Иерусалимский, услышал, что Иисус взял"
   - id: a9cf1e8
     en: "Galilee 1"
     ru: "Галилея"
+    evidence:
+      osis: Josh.20.7
+      excerpt: "И отделили Кедес в Галилее на горе Неффалимовой, Сихем"
   - id: a149f13
     en: "Judea 1"
     ru: "Иудея"
+    evidence:
+      osis: Matt.2.1
+      excerpt: "же Иисус родился в Вифлееме Иудейском во дни царя Ирода"
   - id: af5884f
     en: "Nazareth"
     ru: "Назарет"
+    evidence:
+      osis: Matt.2.23
+      excerpt: "и, придя, поселился в городе, называемом Назарет, да сбудется реченное"
   - id: af301ca
     en: "Egypt"
     ru: "Египет"
+    evidence:
+      osis: Gen.12.10
+      excerpt: "земле. И сошел Аврам в Египет, пожить там, потому что"
   - id: a69e1b8
     en: "Macedonia"
     ru: "Македония"
+    evidence:
+      osis: Acts.16.9
+      excerpt: "видение Павлу: предстал некий муж, Македонянин, прося его и говоря"
   - id: a197f19
     en: "Asia"
     ru: "Асия"
+    evidence:
+      osis: Acts.2.9
+      excerpt: "Иудеи и Каппадокии, Понта и Асии"
   - id: a5feb15
     en: "Ephesus"
     ru: "Ефес"
+    evidence:
+      osis: Acts.18.19
+      excerpt: "Достигнув Ефеса, оставил их там, а"
   - id: ae41ab4
     en: "Antioch 1"
     ru: "Антиохия"
+    evidence:
+      osis: Acts.6.5
+      excerpt: "Тимона, и Пармена, и Николая Антиохийца, обращенного из язычников"
   - id: a58735e
     en: "Caesarea"
     ru: "Кесария"
+    evidence:
+      osis: Acts.8.40
+      excerpt: "всем городам, пока пришел в Кесарию."
   - id: af2161c
     en: "Capernaum"
     ru: "Капернаум"
+    evidence:
+      osis: Matt.4.13
+      excerpt: "Назарет, пришел и поселился в Капернауме приморском, в пределах Завулоновых"
   - id: a69c1d4
     en: "Damascus"
     ru: "Дамаск"
+    evidence:
+      osis: Gen.14.15
+      excerpt: "Ховы, что по левую сторону Дамаска"
   - id: ae686c9
     en: "Jordan"
     ru: "Иордан"
+    evidence:
+      osis: Gen.32.10
+      excerpt: "с посохом моим перешел этот Иордан, а теперь у меня"
   - id: afc8e7a
     en: "Rome"
     ru: "Рим"
+    evidence:
+      osis: Acts.2.10
+      excerpt: "к Киринее, и пришедшие из Рима, Иудеи и прозелиты"
   - id: a282dce
     en: "Samaria 2"
     ru: "Самария"
+    evidence:
+      osis: Luke.17.11
+      excerpt: "в Иерусалим, Он проходил между Самариею и Галилеею."
   - id: a4f35bc
     en: "Bethany 1"
     ru: "Вифания"
+    evidence:
+      osis: Matt.21.17
+      excerpt: "вышел вон из города в Вифанию и провел там ночь."
   - id: ac2c4c5
     en: "Mount of Olives"
     ru: "гора Елеонская"
+    evidence:
+      osis: 2Sam.15.30
+      excerpt: "А Давид пошел на гору Елеонскую, шел и плакал; голова"
   - id: a98e4d7
     en: "Sidon"
     ru: "Сидон"
+    evidence:
+      osis: Gen.10.19
+      excerpt: "и были пределы Хананеев от Сидона к Герару до Газы"
   - id: a160272
     en: "Tyre"
     ru: "Тир"
+    evidence:
+      osis: Josh.19.29
+      excerpt: "к Раме до укрепленного города Тира, и поворачивает предел к"
   - id: a6f437a
     en: "Corinth"
     ru: "Коринф"
+    evidence:
+      osis: Acts.18.1
+      excerpt: "Павел, оставив Афины, пришел в Коринф"
   - id: a0aa664
     en: "Sodom"
     ru: "Содом"
+    evidence:
+      osis: Gen.10.19
+      excerpt: "Герару до Газы, отсюда к Содому, Гоморре, Адме и Цевоиму"
   - id: aef4242
     en: "Achaia"
     ru: "Ахаия"
+    evidence:
+      osis: Acts.18.12
+      excerpt: "во время проконсульства Галлиона в Ахаии, напали Иудеи единодушно на"
   - id: a112427
     en: "Bethlehem 1"
     ru: "Вифлеем"
+    evidence:
+      osis: Gen.35.19
+      excerpt: "дороге в Ефрафу, то есть Вифлеем."
   - id: ae023a9
     en: "Joppa"
     ru: "Иоппия"
+    evidence:
+      osis: Josh.19.46
+      excerpt: "и Ракон с пределом близ Иоппии. И вышел предел сынов"
   - id: ab60a74
     en: "Holy Place 2"
     ru: "Святилище"
+    evidence:
+      osis: 1Kgs.8.8
+      excerpt: "головки шестов видны были из святилища пред давиром, но не"
   - id: afa9d8e
     en: "Thessalonica"
     ru: "Фессалоника"
+    evidence:
+      osis: Acts.17.1
+      excerpt: "и Аполлонию, они пришли в Фессалонику, где была Иудейская синагога."
   - id: ad63819
     en: "Cilicia"
     ru: "Киликия"
+    evidence:
+      osis: Acts.6.9
+      excerpt: "и Александрийцев и некоторые из Киликии и Асии вступили в"
   - id: a26aa94
     en: "Crete"
     ru: "Крит"
+    evidence:
+      osis: Zeph.2.5
+      excerpt: "Горе жителям приморской страны, народу Критскому! Слово Господне на вас"
   - id: a2e7601
     en: "Cyprus"
     ru: "Кипр"
+    evidence:
+      osis: Acts.4.36
+      excerpt: "значит сын утешения, левит, родом Кипрянин"
   - id: a890adf
     en: "Syria 2"
     ru: "Сирия"
+    evidence:
+      osis: Matt.4.24
+      excerpt: "о Нем слух по всей Сирии; и приводили к Нему"
   - id: a81cdb5
     en: "Cyrene"
     ru: "Киринея"
+    evidence:
+      osis: Matt.27.32
+      excerpt: "Выходя, они встретили одного Киринеянина, по имени Симона; сего"
   - id: a562fcc
     en: "Sea of Galilee"
     ru: "море Галилейское"
+    evidence:
+      osis: Matt.4.18
+      excerpt: "Проходя же близ моря Галилейского, Он увидел двух братьев"
   - id: a1fe6e7
     en: "Athens"
     ru: "Афины"
+    evidence:
+      osis: Acts.17.15
+      excerpt: "Сопровождавшие Павла проводили его до Афин и, получив приказание к"
   - id: a3f0756
     en: "Babylon 3"
     ru: "Вавилон"
+    evidence:
+      osis: Rev.14.8
+      excerpt: "за ним, говоря: пал, пал Вавилон, город великий, потому что"
   - id: a62fe31
     en: "Berea"
     ru: "Верия"
+    evidence:
+      osis: Acts.17.10
+      excerpt: "отправили Павла и Силу в Верию, куда они прибыв, пошли"
   - id: a0f440a
     en: "Galatia"
     ru: "Галатия"
+    evidence:
+      osis: Acts.16.6
+      excerpt: "Пройдя через Фригию и Галатийскую страну, они не были"
   - id: ae425aa
     en: "Iconium"
     ru: "Икония"
+    evidence:
+      osis: Acts.13.51
+      excerpt: "от ног своих, пошли в Иконию."
   - id: a83fb1e
     en: "Laodicea"
     ru: "Лаодикия"
+    evidence:
+      osis: Col.2.1
+      excerpt: "и ради тех, которые в Лаодикии и Иераполе, и ради"
   - id: af0719d
     en: "Lystra"
     ru: "Листра"
+    evidence:
+      osis: Acts.14.6
+      excerpt: "сем, удалились в Ликаонские города Листру и Дервию и в"
   - id: abfba2a
     en: "Mount Sinai"
     ru: "гора Синай"
+    evidence:
+      osis: Exod.16.1
+      excerpt: "общество сынов Израилевых в пустыню Син, что между Елимом и"
   - id: a91c509
     en: "Troas"
     ru: "Троада"
+    evidence:
+      osis: Acts.16.8
+      excerpt: "же Мисию, сошли они в Троаду."
   - id: aa401a9
     en: "Derbe"
     ru: "Дервия"
+    evidence:
+      osis: Acts.14.6
+      excerpt: "в Ликаонские города Листру и Дервию и в окрестности их"
   - id: aa572e2
     en: "Gomorrah"
     ru: "Гоморра"
+    evidence:
+      osis: Gen.10.19
+      excerpt: "до Газы, отсюда к Содому, Гоморре, Адме и Цевоиму до"
   - id: aaf03fa
     en: "Jericho 2"
     ru: "Иерихон"
+    evidence:
+      osis: Matt.20.29
+      excerpt: "И когда выходили они из Иерихона, за Ним следовало множество"
   - id: aa95188
     en: "Pamphylia"
     ru: "Памфилия"
+    evidence:
+      osis: Acts.2.10
+      excerpt: "Фригии и Памфилии, Египта и частей Ливии"
   - id: a666ea0
     en: "Tarsus"
     ru: "Тарс"
+    evidence:
+      osis: Acts.9.11
+      excerpt: "и спроси в Иудином доме Тарсянина, по имени Савла; он"
   - id: af20c46
     en: "Zion"
     ru: "Сион"
+    evidence:
+      osis: 2Sam.5.7
+      excerpt: "Но Давид взял крепость Сион: это - город Давидов."
   - id: aee7248
     en: "Alexandria"
     ru: "Александрия"
+    evidence:
+      osis: Acts.6.9
+      excerpt: "синагоги Либертинцев и Киринейцев и Александрийцев и некоторые из Киликии"
   - id: a6c704a
     en: "Antioch 2"
     ru: "Антиохия Писидийская"
+    evidence:
+      osis: Acts.13.14
+      excerpt: "от Пергии, прибыли в Антиохию Писидийскую и, войдя в синагогу"
   - id: af3d9fc
     en: "Arimathea"
     ru: "Аримафея"
+    evidence:
+      osis: Matt.27.57
+      excerpt: "вечер, пришел богатый человек из Аримафеи, именем Иосиф, который также"
   - id: a217d18
     en: "Babylon 1"
     ru: "Вавилон"
+    evidence:
+      osis: 2Kgs.17.24
+      excerpt: "перевел царь Ассирийский людей из Вавилона, и из Куты, и"
   - id: a91b732
     en: "Bethsaida 1"
     ru: "Вифсаида"
+    evidence:
+      osis: Matt.11.21
+      excerpt: "горе тебе, Хоразин! горе тебе, Вифсаида! ибо если бы в"
   - id: a031bda
     en: "Cana"
     ru: "Кана Галилейская"
+    evidence:
+      osis: John.2.1
+      excerpt: "день был брак в Кане Галилейской, и Матерь Иисуса была"
   - id: ab0b2dd
     en: "East"
     ru: "восток"
+    evidence:
+      osis: Gen.25.6
+      excerpt: "еще при жизни своей, на восток, в землю восточную."
   - id: a631d35
     en: "Golgotha"
     ru: "Голгофа"
+    evidence:
+      osis: Matt.27.33
+      excerpt: "И, придя на место, называемое Голгофа, что значит Лобное место"
   - id: a7184a7
     en: "Italy"
     ru: "Италия"
+    evidence:
+      osis: Acts.18.2
+      excerpt: "родом Понтянина, недавно пришедшего из Италии, и Прискиллу, жену его"
   - id: a9acaaf
     en: "Most Holy Place 2"
     ru: "Святое Святых"
+    evidence:
+      osis: 1Kgs.6.16
+      excerpt: "досками, и устроил давир для Святаго-святых."
   - id: a49e1d0
     en: "Philippi"
     ru: "Филиппы"
+    evidence:
+      osis: Acts.16.12
+      excerpt: "оттуда же в Филиппы: это первый город в"
   - id: a33d53e
     en: "Phoenicia"
     ru: "Финикия"
+    evidence:
+      osis: Acts.11.19
+      excerpt: "бывшего после Стефана, прошли до Финикии, и Кипра, и Антиохии"
   - id: a94b661
     en: "Thyatira"
     ru: "Фиатира"
+    evidence:
+      osis: Acts.16.14
+      excerpt: "И одна женщина из города Фиатир, именем Лидия, торговавшая багряницею"
   - id: a815d89
     en: "Areopagus"
     ru: "ареопаг"
+    evidence:
+      osis: Acts.17.19
+      excerpt: "И, взяв его, привели в ареопаг и говорили: можем ли"
   - id: abff59d
     en: "Bethphage"
     ru: "Виффагия"
+    evidence:
+      osis: Matt.21.1
+      excerpt: "к Иерусалиму и пришли в Виффагию к горе Елеонской, тогда"
   - id: a9fc13a
     en: "Bethsaida 2"
     ru: "Вифсаида"
+    evidence:
+      osis: Mark.6.45
+      excerpt: "вперед на другую сторону к Вифсаиде, пока Он отпустит народ."
   - id: a581f0c
     en: "Canaan"
     ru: "Ханаан"
+    evidence:
+      osis: Gen.10.19
+      excerpt: "и были пределы Хананеев от Сидона к Герару"
   - id: ae733a2
     en: "Decapolis"
     ru: "Десятиградие"
+    evidence:
+      osis: Matt.4.25
+      excerpt: "множество народа из Галилеи и Десятиградия, и Иерусалима, и Иудеи"
   - id: ae7274b
     en: "Emmaus"
     ru: "Эммаус"
+    evidence:
+      osis: Luke.24.13
+      excerpt: "на шестьдесят от Иерусалима, называемое Эммаус"
   - id: a7de69e
     en: "Gennesaret"
     ru: "Геннисарет"
+    evidence:
+      osis: Matt.14.34
+      excerpt: "И, переправившись, прибыли в землю Геннисаретскую."
   - id: ada6b64
     en: "Gerasa"
-    ru: "страна Гадаринская / Гергесинская"
+    ru: "страна Гадаринская"
+    evidence:
+      osis: Mark.5.1
+      excerpt: "И пришли на другой берег моря, в страну Гадаринскую"
   - id: a4492a0
     en: "Greece"
     ru: "Еллада"
+    evidence:
+      osis: Acts.20.2
+      excerpt: "верующим обильные наставления, пришел в Елладу."
   - id: a2c5cc7
     en: "Lod"
     ru: "Лидда"
+    evidence:
+      osis: Ezra.2.33
+      excerpt: "уроженцев Лидды, Хадида и Оно семьсот"
   - id: a55027d
     en: "Miletus"
     ru: "Милит"
+    evidence:
+      osis: Acts.20.15
+      excerpt: "в следующий день прибыли в Милит"
   - id: a70fd5d
     en: "Nineveh"
     ru: "Ниневия"
+    evidence:
+      osis: Gen.10.11
+      excerpt: "земли вышел Ассур и построил Ниневию, Реховоф-ир, Калах"
   - id: aff04b8
     en: "Perga"
     ru: "Пергия"
+    evidence:
+      osis: Acts.13.13
+      excerpt: "бывшие при нем прибыли в Пергию, в Памфилии. Но Иоанн"
   - id: ab8ae56
     en: "Phrygia"
     ru: "Фригия"
+    evidence:
+      osis: Acts.2.10
+      excerpt: "Фригии и Памфилии, Египта и"
   - id: a83a43e
     en: "Pontus"
     ru: "Понт"
+    evidence:
+      osis: Acts.2.9
+      excerpt: "жители Месопотамии, Иудеи и Каппадокии, Понта и Асии"
   - id: aab4a5f
     en: "Sardis"
     ru: "Сардис"
+    evidence:
+      osis: Rev.1.11
+      excerpt: "и в Фиатиру, и в Сардис, и в Филадельфию, и"
   - id: a294859
     en: "Siloam"
     ru: "Силоам"
+    evidence:
+      osis: Luke.13.4
+      excerpt: "человек, на которых упала башня Силоамская и побила их, виновнее"
   - id: a47c817
     en: "Solomon’s Portico"
     ru: "притвор Соломонов"
+    evidence:
+      osis: John.10.23
+      excerpt: "Иисус в храме, в притворе Соломоновом."
   - id: a040ba5
     en: "Akeldama"
     ru: "Акелдама"
+    evidence:
+      osis: Acts.1.19
+      excerpt: "на отечественном их наречии названа Акелдама, то есть земля крови."
   - id: a0f4ea8
     en: "Arabia 2"
     ru: "Аравия"
+    evidence:
+      osis: Gal.1.17
+      excerpt: "мне Апостолам, а пошел в Аравию и опять возвратился в"
 
   # Added 2026-09-28: Synodal form read from the verse text (high confidence only).
   - id: aa0b1d6
