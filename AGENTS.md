@@ -5,7 +5,7 @@ before changing anything.
 
 ## Before you change anything
 
-1. Read `docs/adr/`. Decisions there are binding. If your change contradicts one, stop
+1. Read `docs/adr/` and `docs/data-checks.md`. Decisions there are binding. If your change contradicts one, stop
    and propose a new ADR that supersedes it — do not silently diverge.
 2. Work on a branch and open a PR. Direct pushes to `main` are rejected by a ruleset
    with no bypass. Squash merge only; the PR title is a Conventional Commit.
