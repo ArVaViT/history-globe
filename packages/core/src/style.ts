@@ -125,6 +125,22 @@ function focusMask(): FeatureCollection {
 
 const LANDMARK_INK = "#5b4630";
 
+/** First year of the New Testament narrative (6 BC, astronomical -5). */
+export const NT_FROM = -5;
+/**
+ * Places named only in the New Testament fade before its events: Caesarea or
+ * Capernaum must not read as towns of the Exodus. Seas and rivers do not fade;
+ * the selected place never does.
+ */
+const fadeBeforeNT = (faded: number): ExpressionSpecification => [
+  "case",
+  ["boolean", ["feature-state", "selected"], false],
+  1,
+  ["all", ["==", ["get", "ot"], 0], ["<", YEAR, NT_FROM]],
+  faded,
+  1,
+];
+
 const kindIn = (kinds: readonly string[]): ExpressionSpecification => [
   "match",
   ["get", "kind"],
@@ -300,6 +316,8 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         ],
         "circle-stroke-color": T.halo,
         "circle-stroke-width": ["case", ["boolean", ["feature-state", "hover"], false], 2.6, 1.2],
+        "circle-opacity": fadeBeforeNT(0.3),
+        "circle-stroke-opacity": fadeBeforeNT(0.3),
       },
     },
     {
@@ -325,6 +343,8 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         ],
         "circle-stroke-color": T.halo,
         "circle-stroke-width": ["case", ["boolean", ["feature-state", "hover"], false], 3, 1.6],
+        "circle-opacity": fadeBeforeNT(0.3),
+        "circle-stroke-opacity": fadeBeforeNT(0.3),
       },
     },
     {
@@ -343,7 +363,12 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-max-width": 8,
         "symbol-sort-key": ["-", 0, ["get", "verses"]],
       },
-      paint: { "text-color": "#7a5a33", "text-halo-color": T.halo, "text-halo-width": 1.4 },
+      paint: {
+        "text-color": "#7a5a33",
+        "text-halo-color": T.halo,
+        "text-halo-width": 1.4,
+        "text-opacity": fadeBeforeNT(0.4),
+      },
     },
     {
       id: "place-label-water",
@@ -390,6 +415,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         ],
         "text-halo-color": T.halo,
         "text-halo-width": 1.5,
+        "text-opacity": fadeBeforeNT(0.45),
       },
     },
     {
@@ -445,6 +471,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-color": ["case", ["boolean", ["feature-state", "selected"], false], T.accent, T.ink],
         "text-halo-color": T.halo,
         "text-halo-width": 1.6,
+        "text-opacity": fadeBeforeNT(0.45),
       },
     },
     {

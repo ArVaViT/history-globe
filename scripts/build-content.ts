@@ -63,6 +63,12 @@ function refCovers(ref: string, verses: ReadonlySet<string>): boolean {
   });
 }
 
+/** Tour stops whose passage leaves the place to the preceding chapters. */
+const NAMED_BY_CONTEXT = new Set([
+  // Acts 27:1 sails from Caesarea, named in 25:13-24 where Paul is held.
+  "paul-rome a58735e",
+]);
+
 /** Evidence read where the Synodal text has words the English one lacks. */
 const SYNODAL_ONLY = new Set([
   // Exod 1:11 adds "и Он, иначе Илиополь" from the Septuagint.
@@ -144,7 +150,11 @@ for (const file of readdirSync(join(root, "content/tours")).filter((f) => f.ends
   result.data.stops.forEach((s, i) => {
     // The stop's passage must name its place: some verse in the range is tagged for it.
     const tagged = versesOf.get(s.place);
-    if (tagged && !refCovers(s.ref, tagged))
+    if (
+      tagged &&
+      !refCovers(s.ref, tagged) &&
+      !NAMED_BY_CONTEXT.has(`${result.data.id} ${s.place}`)
+    )
       errors.push(`tours/${file}: stop ${i + 1} (${s.place}) ${s.ref} does not name the place`);
     if (!known.has(s.place)) errors.push(`tours/${file}: stop ${s.place} is not in the data build`);
     if (i > 0 && result.data.stops[i - 1]?.place === s.place) {

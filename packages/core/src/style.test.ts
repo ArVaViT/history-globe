@@ -1,6 +1,6 @@
-import { featureFilter, validateStyleMin } from "@maplibre/maplibre-gl-style-spec";
+import { expression, featureFilter, validateStyleMin } from "@maplibre/maplibre-gl-style-spec";
 import { describe, expect, it } from "vitest";
-import { buildStyle, ERA_FILTER, layersInGroup, SITES_OF_SELECTED } from "./style.ts";
+import { buildStyle, ERA_FILTER, layersInGroup, NT_FROM, SITES_OF_SELECTED } from "./style.ts";
 
 const style = buildStyle({
   dataUrl: "/data",
@@ -131,5 +131,32 @@ describe("every place kind is drawn", () => {
 
   it("leaves a river drawn as a line to its line label", () => {
     expect(drawnBy({ kind: "river", line: true })).toEqual([]);
+  });
+});
+
+describe("places named only in the New Testament", () => {
+  const index = style.layers.findIndex((l) => l.id === "place-label");
+  const layer = style.layers[index];
+  const opacity =
+    layer && "paint" in layer ? (layer.paint as Record<string, unknown>)["text-opacity"] : null;
+  function at(year: number, ot: number, selected = false): number {
+    const rootKey = `layers[${String(index)}].paint.text-opacity`;
+    const compiled = expression.createExpression(opacity, rootKey, null, { year });
+    if (compiled.result !== "success") throw new Error("text-opacity does not compile");
+    return compiled.value.evaluate(
+      { zoom: 8 },
+      { type: 1, properties: { ot }, geometry: [] } as never,
+      { selected },
+    ) as number;
+  }
+
+  it("fade before the New Testament, and only they", () => {
+    expect(at(-1200, 0)).toBeLessThan(1);
+    expect(at(-1200, 5)).toBe(1);
+    expect(at(NT_FROM, 0)).toBe(1);
+  });
+
+  it("never fade when selected", () => {
+    expect(at(-1200, 0, true)).toBe(1);
   });
 });
