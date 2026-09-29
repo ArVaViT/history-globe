@@ -15,6 +15,8 @@ export interface PlaceProps {
   readonly ot: number;
   readonly rank: number;
   readonly where: string;
+  /** Russian "where it is today", when it names another place ("Вавилон, в радиусе 250 км"). */
+  readonly where_ru?: string;
   readonly osis: readonly string[];
   readonly coord: "openbible" | "wikidata";
 }
@@ -77,9 +79,12 @@ export async function loadData(): Promise<LoadedData> {
   const byId = new Map<string, { props: PlaceProps; info: PlaceInfo }>();
   for (const f of places.features) {
     const entry = content.names[f.properties.id];
-    const props: PlaceProps = entry
-      ? { ...f.properties, name_ru: entry.ru, ...(entry.osis ? { name_ru_osis: entry.osis } : {}) }
-      : f.properties;
+    const whereRu = content.where_ru?.[f.properties.id];
+    const props: PlaceProps = {
+      ...f.properties,
+      ...(entry ? { name_ru: entry.ru, ...(entry.osis ? { name_ru_osis: entry.osis } : {}) } : {}),
+      ...(whereRu ? { where_ru: whereRu } : {}),
+    };
     f.properties = props;
     const [lon = 0, lat = 0] = f.geometry.coordinates;
     byId.set(props.id, { props, info: { id: props.id, at: [lon, lat], kind: props.kind } });

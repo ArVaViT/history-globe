@@ -126,7 +126,8 @@ export function PlaceCard({
       {place.where && place.where !== place.name && (
         <div className="flex items-center gap-1.5 px-5 pt-3 text-[14px] text-ink">
           <MapPin className="size-4 text-accent" aria-hidden />
-          <span className="text-ink-soft">{t("place.today")}:</span> {place.where}
+          <span className="text-ink-soft">{t("place.today")}:</span>{" "}
+          {ru ? (place.where_ru ?? place.where) : place.where}
         </div>
       )}
 

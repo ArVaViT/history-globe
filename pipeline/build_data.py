@@ -235,6 +235,13 @@ def assert_no_banned_points(collections: dict[str, dict], modern: dict[str, dict
         raise SystemExit("points copied from OSM or Google (ADR 0008):\n" + "\n".join(hits[:20]))
 
 
+def where_props(label: dict) -> dict:
+    if label.get("tpl") == "same":
+        return {"where": ""}
+    extra = {f"where_{k}": label[k] for k in ("tpl", "ref", "ref_text", "n", "unit") if k in label}
+    return {"where": label["label"], **extra}
+
+
 def rank_of(weighted_mentions: int) -> int:
     return 0 if weighted_mentions >= 40 else 1 if weighted_mentions >= 10 else 2 if weighted_mentions >= 3 else 3
 
@@ -290,7 +297,9 @@ def build_places(
                 # Testament is about a third of the Old: its mentions weigh three times, so
                 # Athens or Philippi are not ranked below a village named in two lists.
                 "rank": rank_of(len(verses) - nt + 3 * nt),
-                "where": TAG_RE.sub("", ids[0].get("description", "")),
+                # Where it is today, as the best identification words it. "Same place as X"
+                # says nothing a reader can use there: the card lists the candidates.
+                **where_props(site_label(ids[0].get("description", ""))),
                 "osis": [v["osis"] for v in verses[:12]],
                 "coord": coord_source,
                 # Drawn as a river line with its own label: no second label at the point.

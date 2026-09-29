@@ -31,7 +31,17 @@ if (!existsSync(join(out, "places.geojson"))) {
 const places = JSON.parse(readFileSync(join(out, "places.geojson"), "utf8")) as {
   features: {
     geometry: { coordinates: number[] };
-    properties: { id: string; name: string; rank: number };
+    properties: {
+      id: string;
+      name: string;
+      rank: number;
+      where: string;
+      where_tpl?: SiteLabelParts["tpl"];
+      where_ref?: string;
+      where_ref_text?: string;
+      where_n?: string;
+      where_unit?: "km" | "m";
+    };
   }[];
 };
 const known = new Set(places.features.map((f) => f.properties.id));
@@ -226,6 +236,26 @@ for (const f of polities.features as { properties: { name: string; name_ru?: str
 writes.push([polityPath, JSON.stringify(polities)]);
 writes.push([labelsPath, JSON.stringify(labels)]);
 
+// The same for a place's "where it is today" line ("Вавилон, в радиусе 250 км").
+const whereRu: Record<string, string> = {};
+for (const f of places.features) {
+  const p = f.properties;
+  const tpl = p.where_tpl;
+  if (!tpl) continue;
+  const ru = siteLabelRu(
+    {
+      label: p.where,
+      tpl,
+      ...(p.where_ref ? { ref: p.where_ref } : {}),
+      ...(p.where_ref_text !== undefined ? { ref_text: p.where_ref_text } : {}),
+      ...(p.where_n ? { n: p.where_n } : {}),
+      ...(p.where_unit ? { unit: p.where_unit } : {}),
+    },
+    (id) => names[id]?.ru,
+  );
+  if (ru) whereRu[p.id] = ru;
+}
+
 // Candidate sites get a Russian label where their English one refers to a place with a
 // Synodal name ("same place as Abila" -> "то же место, что Авила").
 const sitesPath = join(out, "sites.geojson");
@@ -262,7 +292,7 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-const release: ContentRelease = { schema_version: 1, names, tours };
+const release: ContentRelease = { schema_version: 1, names, tours, where_ru: whereRu };
 for (const [path, text] of writes) writeFileSync(path, text);
 writeFileSync(join(out, "content.json"), JSON.stringify(release));
 console.log(

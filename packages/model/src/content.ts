@@ -81,4 +81,6 @@ export interface ContentRelease {
   /** Russian names; `osis` is the verse where the Synodal form was read, if recorded. */
   readonly names: Readonly<Record<string, { readonly ru: string; readonly osis?: string }>>;
   readonly tours: readonly TourFile[];
+  /** Russian "where it is today" for places whose English one names another place. */
+  readonly where_ru?: Readonly<Record<string, string>>;
 }
