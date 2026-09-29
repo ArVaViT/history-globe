@@ -32,7 +32,7 @@ const known = new Set(places.features.map((f) => f.properties.id));
 
 const errors: string[] = [];
 const warnings: string[] = [];
-const names: Record<string, { ru: string }> = {};
+const names: Record<string, { ru: string; osis?: string }> = {};
 const nameEntries = PlaceNamesFile.parse(load("content/place-names.yaml")).places;
 const seenIds = new Set<string>();
 for (const p of nameEntries) {
@@ -49,7 +49,7 @@ for (const p of nameEntries) {
       );
     }
   }
-  names[p.id] = { ru: p.ru };
+  names[p.id] = p.evidence ? { ru: p.ru, osis: p.evidence.osis } : { ru: p.ru };
 }
 
 // Sanity of the data build itself.

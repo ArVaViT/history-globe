@@ -57,6 +57,7 @@ export type TourFile = z.output<typeof TourFile>;
 /** What the app loads: content.json in a data release. */
 export interface ContentRelease {
   readonly schema_version: 1;
-  readonly names: Readonly<Record<string, { readonly ru: string }>>;
+  /** Russian names; `osis` is the verse where the Synodal form was read, if recorded. */
+  readonly names: Readonly<Record<string, { readonly ru: string; readonly osis?: string }>>;
   readonly tours: readonly TourFile[];
 }

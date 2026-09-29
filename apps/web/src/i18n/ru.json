@@ -1,6 +1,9 @@
 {
   "loading": "Загружаем карту…",
-  "search": { "placeholder": "Найти место…", "empty": "Ничего не найдено" },
+  "search": {
+    "placeholder": "Найти место…",
+    "empty": "Ничего не найдено"
+  },
   "layers": {
     "title": "Слои",
     "relief": "Рельеф",
@@ -28,7 +31,9 @@
     "more": "ещё {{count}}",
     "coords_wikidata": "Координаты: Wikidata",
     "article_soon": "Статья «{{name}} в эту эпоху» появится здесь.",
-    "close": "Закрыть"
+    "close": "Закрыть",
+    "zoom": "Приблизить",
+    "synodal_from": "Синодальный перевод, {{ref}}"
   },
   "time": {
     "play": "Проиграть",

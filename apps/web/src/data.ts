@@ -6,6 +6,8 @@ export interface PlaceProps {
   readonly id: string;
   readonly name: string;
   readonly name_ru?: string;
+  /** Verse where the Synodal Russian name was read. */
+  readonly name_ru_osis?: string;
   readonly kind: string;
   readonly sites: number;
   readonly verses: number;
@@ -32,8 +34,10 @@ export async function loadData(): Promise<LoadedData> {
   ]);
   const byId = new Map<string, { props: PlaceProps; info: PlaceInfo }>();
   for (const f of places.features) {
-    const ru = content.names[f.properties.id]?.ru;
-    const props: PlaceProps = ru ? { ...f.properties, name_ru: ru } : f.properties;
+    const entry = content.names[f.properties.id];
+    const props: PlaceProps = entry
+      ? { ...f.properties, name_ru: entry.ru, ...(entry.osis ? { name_ru_osis: entry.osis } : {}) }
+      : f.properties;
     f.properties = props;
     const [lon = 0, lat = 0] = f.geometry.coordinates;
     byId.set(props.id, { props, info: { id: props.id, at: [lon, lat], kind: props.kind } });

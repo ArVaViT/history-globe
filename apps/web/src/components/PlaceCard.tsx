@@ -1,5 +1,5 @@
 import { formatRef, type Locale } from "@hg/model";
-import { MapPin, X } from "lucide-react";
+import { MapPin, X, ZoomIn } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import type { PlaceProps } from "../data";
 import { Panel } from "./Panel";
@@ -18,10 +18,12 @@ export function PlaceCard({
   place,
   locale,
   onClose,
+  onZoom,
 }: {
   place: PlaceProps;
   locale: Locale;
   onClose: () => void;
+  onZoom: () => void;
 }) {
   const { t } = useTranslation();
   const ru = locale === "ru";
@@ -36,6 +38,11 @@ export function PlaceCard({
           <h2 className="font-serif text-[26px] leading-tight font-semibold text-ink">{title}</h2>
           {ru && place.name_ru && (
             <div className="font-serif text-[15px] text-ink-soft italic">{place.name}</div>
+          )}
+          {ru && place.name_ru_osis && (
+            <div className="mt-0.5 text-[11px] text-ink-soft">
+              {t("place.synodal_from", { ref: safeRef(place.name_ru_osis, locale) })}
+            </div>
           )}
         </div>
         <button
@@ -56,6 +63,15 @@ export function PlaceCard({
         >
           {place.sites > 1 ? t("place.sites", { count: place.sites }) : t("place.single_site")}
         </span>
+      </div>
+
+      <div className="px-5 pt-3">
+        <button
+          onClick={onZoom}
+          className="flex items-center gap-1.5 rounded-full bg-accent px-3.5 py-1.5 text-sm text-paper hover:brightness-110"
+        >
+          <ZoomIn className="size-4" aria-hidden /> {t("place.zoom")}
+        </button>
       </div>
 
       {place.where && place.where !== place.name && (

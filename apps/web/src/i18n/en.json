@@ -1,6 +1,9 @@
 {
   "loading": "Loading the map…",
-  "search": { "placeholder": "Find a place…", "empty": "Nothing found" },
+  "search": {
+    "placeholder": "Find a place…",
+    "empty": "Nothing found"
+  },
   "layers": {
     "title": "Layers",
     "relief": "Relief",
@@ -27,7 +30,9 @@
     "more": "{{count}} more",
     "coords_wikidata": "Coordinates: Wikidata",
     "article_soon": "An article on {{name}} in this era will appear here.",
-    "close": "Close"
+    "close": "Close",
+    "zoom": "Zoom in",
+    "synodal_from": "Synodal Russian form: {{ref}}"
   },
   "time": {
     "play": "Play",

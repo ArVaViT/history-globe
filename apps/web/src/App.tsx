@@ -197,6 +197,9 @@ export function App() {
                   onClose={() => {
                     engine.selectPlace(null);
                   }}
+                  onZoom={() => {
+                    engine.selectPlace(selected.id, { fly: true });
+                  }}
                 />
               )
             )}
