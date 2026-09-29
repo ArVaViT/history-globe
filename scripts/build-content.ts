@@ -11,6 +11,7 @@ import { parse } from "yaml";
 import {
   PlaceNamesFile,
   PolityNamesFile,
+  PolityOverridesFile,
   TourFile,
   type ContentRelease,
 } from "../packages/model/src/content.ts";
@@ -168,12 +169,48 @@ for (const file of readdirSync(join(root, "content/tours")).filter((f) => f.ends
   tours.push(result.data);
 }
 
+// Our corrections to Cliopatria (content/polity-overrides.yaml): a polity's last shape and
+// labels are copied forward to its real end. Idempotent: earlier copies are dropped first.
+type PolityFeature = {
+  geometry: unknown;
+  properties: { name: string; y0: number; y1: number; rel?: boolean; src?: string };
+};
+const polityPath = join(out, "polities.geojson");
+const polities = JSON.parse(readFileSync(polityPath, "utf8")) as { features: PolityFeature[] };
+const polityLabels = JSON.parse(readFileSync(join(out, "polity-labels.geojson"), "utf8")) as {
+  features: PolityFeature[];
+};
+polities.features = polities.features.filter((f) => f.properties.src !== "override");
+polityLabels.features = polityLabels.features.filter((f) => f.properties.src !== "override");
+for (const o of PolityOverridesFile.parse(load("content/polity-overrides.yaml")).overrides) {
+  const own = polities.features.filter((f) => f.properties.name === o.polity && !f.properties.rel);
+  if (own.length === 0) {
+    errors.push(`polity-overrides: "${o.polity}" is not in the data build`);
+    continue;
+  }
+  const end = Math.max(...own.map((f) => f.properties.y1));
+  const until = o.last_year + 1; // half-open, ADR 0003
+  if (until <= end) {
+    errors.push(`polity-overrides: "${o.polity}" already lasts to ${String(end - 1)}`);
+    continue;
+  }
+  const extend = (f: PolityFeature): PolityFeature => ({
+    ...f,
+    properties: { ...f.properties, y0: end, y1: until, src: "override" },
+  });
+  polities.features.push(...own.filter((f) => f.properties.y1 === end).map(extend));
+  polityLabels.features.push(
+    ...polityLabels.features
+      .filter((f) => f.properties.name === o.polity && f.properties.y1 === end)
+      .map(extend),
+  );
+}
+writes.push([polityPath, JSON.stringify(polities)]);
+
 // Polity labels get their Russian name; every label on the map must have one.
 const polityNames = PolityNamesFile.parse(load("content/polity-names.yaml")).polities;
 const labelsPath = join(out, "polity-labels.geojson");
-const labels = JSON.parse(readFileSync(labelsPath, "utf8")) as {
-  features: { properties: { name: string; name_ru?: string } }[];
-};
+const labels = polityLabels as { features: { properties: { name: string; name_ru?: string } }[] };
 const missing = new Set<string>();
 for (const f of labels.features) {
   const ru = polityNames[f.properties.name];

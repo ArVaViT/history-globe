@@ -49,6 +49,19 @@ export const PolityNamesFile = z.strictObject({
   polities: z.record(z.string().min(1), z.string().min(1)),
 });
 
+/** Our corrections on top of Cliopatria: keep a polity on the map for more years. */
+export const PolityOverridesFile = z.strictObject({
+  overrides: z.array(
+    z.strictObject({
+      polity: z.string().min(1),
+      /** Last year the polity is drawn, inclusive. */
+      last_year: yearLabel,
+      reason: z.string().min(1),
+      sources: z.array(z.string().min(1)).min(1),
+    }),
+  ),
+});
+
 export const TourFile = z.strictObject({
   id: z.string().regex(/^[a-z0-9-]+$/),
   title: localized,

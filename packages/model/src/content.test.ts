@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { PlaceNamesFile, TourFile } from "./content.ts";
+import { PlaceNamesFile, PolityOverridesFile, TourFile } from "./content.ts";
 
 describe("PlaceNamesFile", () => {
   const entry = {
@@ -51,5 +51,22 @@ describe("TourFile", () => {
     expect(() => TourFile.parse({ ...tour, yaer: "AD 47" })).toThrow();
     const [first, second] = tour.stops;
     expect(() => TourFile.parse({ ...tour, stops: [{ ...first, nte: "x" }, second] })).toThrow();
+  });
+});
+
+describe("PolityOverridesFile", () => {
+  const entry = {
+    polity: "Kingdom of Judah",
+    last_year: "586 BC",
+    reason: "Judah lasted until Jerusalem fell.",
+    sources: ["2 Kgs 25"],
+  };
+
+  it("reads the last year as an astronomical year", () => {
+    expect(PolityOverridesFile.parse({ overrides: [entry] }).overrides[0]?.last_year).toBe(-585);
+  });
+
+  it("requires a source", () => {
+    expect(() => PolityOverridesFile.parse({ overrides: [{ ...entry, sources: [] }] })).toThrow();
   });
 });
