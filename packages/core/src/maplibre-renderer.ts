@@ -148,6 +148,8 @@ export class MapLibreRenderer implements Renderer {
       if (this.selected !== null) {
         this.map.setFeatureState({ source: "places", id: this.selected }, { selected: true });
       }
+      // Drives the "sites of the selected place" layers (disputed locations).
+      this.map.setGlobalStateProperty("selected", placeId ?? "");
     });
   }
 

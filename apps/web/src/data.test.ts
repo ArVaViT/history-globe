@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { searchPlaces, type LoadedData, type PlaceProps } from "./data";
+import { groupSites, searchPlaces, type LoadedData, type PlaceProps } from "./data";
 
 function place(
   id: string,
@@ -48,5 +48,34 @@ describe("searchPlaces", () => {
 
   it("also matches inside a name, after prefix matches", () => {
     expect(searchPlaces(data, "лее").map((r) => r.props.id)).toEqual(["a4"]);
+  });
+});
+
+describe("groupSites", () => {
+  it("groups candidates by place, most supported first", () => {
+    const fc = {
+      type: "FeatureCollection" as const,
+      features: [
+        {
+          type: "Feature" as const,
+          geometry: { type: "Point" as const, coordinates: [1, 1] },
+          properties: { place: "p", label: "B", share: 38 },
+        },
+        {
+          type: "Feature" as const,
+          geometry: { type: "Point" as const, coordinates: [2, 2] },
+          properties: { place: "p", label: "A", share: 53 },
+        },
+        {
+          type: "Feature" as const,
+          geometry: { type: "Point" as const, coordinates: [3, 3] },
+          properties: { place: "q", label: "C", share: 100 },
+        },
+      ],
+    };
+    const g = groupSites(fc);
+    expect(g.get("p")?.map((s) => s.label)).toEqual(["A", "B"]);
+    expect(g.get("p")?.[0]?.at).toEqual([2, 2]);
+    expect(g.get("q")?.length).toBe(1);
   });
 });

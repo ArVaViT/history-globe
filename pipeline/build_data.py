@@ -383,13 +383,55 @@ def build_land_water() -> tuple[dict, dict]:
     return land, water
 
 
+def build_sites() -> tuple[dict, dict]:
+    """Candidate locations of disputed places (ADR 0007: a place ≠ a site).
+
+    OpenBible scores each identification (`score.time_total`, weighted towards recent
+    scholarship). We keep candidates with a usable, non-OSM-derived point and turn the
+    positive scores into a share, labelled in the UI as "OpenBible's assessment", not as
+    a scholarly consensus.
+    """
+    records = [json.loads(line) for line in fetch("openbible").open(encoding="utf-8")]
+    feats, places_with_sites = [], 0
+    for r in records:
+        ids = r.get("identifications") or []
+        if len(ids) < 2:
+            continue
+        cands = []
+        for i, ident in enumerate(ids):
+            res = next((x for x in ident.get("resolutions", []) if x.get("lonlat")), None)
+            if res is None or osm_derived(res):
+                continue
+            lon, lat = (float(v) for v in res["lonlat"].split(","))
+            score = float((ident.get("score") or {}).get("time_total") or 0)
+            cands.append({"i": i, "lon": lon, "lat": lat, "score": score, "label": TAG_RE.sub("", ident.get("description", ""))})
+        if len(cands) < 2:
+            continue
+        total = sum(max(c["score"], 0) for c in cands) or 1
+        places_with_sites += 1
+        for c in cands[:6]:
+            feats.append({
+                "type": "Feature",
+                "geometry": {"type": "Point", "coordinates": [round(c["lon"], 5), round(c["lat"], 5)]},
+                "properties": {
+                    "place": r["id"],
+                    "rank": c["i"],
+                    "label": c["label"],
+                    "share": round(100 * max(c["score"], 0) / total),
+                },
+            })
+    return {"type": "FeatureCollection", "features": feats}, {"places_with_sites": places_with_sites, "sites": len(feats)}
+
+
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     places, place_stats = build_places()
+    sites, site_stats = build_sites()
     polities, polity_labels, polity_stats = build_polities()
     land, water = build_land_water()
     outputs = {
         "places.geojson": places,
+        "sites.geojson": sites,
         "polities.geojson": polities,
         "polity-labels.geojson": polity_labels,
         "land.geojson": land,
@@ -410,7 +452,7 @@ def main() -> None:
             }
             for k, v in SOURCES.items()
         },
-        "stats": {**place_stats, **polity_stats},
+        "stats": {**place_stats, **site_stats, **polity_stats},
         "files": {name: (OUT / name).stat().st_size for name in outputs},
     }
     (OUT / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")

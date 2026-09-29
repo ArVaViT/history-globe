@@ -59,6 +59,13 @@ export const ERA_FILTER: ExpressionSpecification = [
   [">", ["get", "y1"], YEAR],
 ];
 
+/** Sites (candidate locations) belonging to the currently selected place. */
+export const SITES_OF_SELECTED: ExpressionSpecification = [
+  "==",
+  ["get", "place"],
+  ["global-state", "selected"],
+];
+
 /** Localised name with fallback to the English one. */
 export const NAME: ExpressionSpecification = [
   "case",
@@ -376,6 +383,35 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "circle-stroke-width": 2.5,
       },
     },
+    // Candidate locations of the selected place, when its location is disputed.
+    {
+      id: "site-alt",
+      type: "circle",
+      source: "sites",
+      filter: SITES_OF_SELECTED,
+      paint: {
+        "circle-radius": ["interpolate", ["linear"], ["get", "share"], 0, 6, 100, 13],
+        "circle-color": "rgba(0,0,0,0)",
+        "circle-stroke-color": T.accent,
+        "circle-stroke-width": 2,
+        "circle-stroke-opacity": ["interpolate", ["linear"], ["get", "share"], 0, 0.45, 50, 1],
+      },
+    },
+    {
+      id: "site-label",
+      type: "symbol",
+      source: "sites",
+      filter: ["all", SITES_OF_SELECTED, [">", ["get", "share"], 0]],
+      layout: {
+        "text-field": ["concat", ["get", "label"], " · ", ["to-string", ["get", "share"]], "%"],
+        "text-font": [MAP_FONT_ITALIC],
+        "text-size": 12,
+        "text-variable-anchor": ["left", "right", "top", "bottom"],
+        "text-radial-offset": 1.3,
+        "text-allow-overlap": true,
+      },
+      paint: { "text-color": T.accent, "text-halo-color": T.halo, "text-halo-width": 1.6 },
+    },
   ];
 
   return {
@@ -384,6 +420,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
     state: {
       year: { default: o.initialYear },
       locale: { default: o.initialLocale },
+      selected: { default: "" },
     },
     "font-faces": Object.fromEntries(
       Object.entries(o.fonts).map(([family, files]) => [
@@ -433,6 +470,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         attribution: "OpenBible.info (CC BY 4.0)",
       },
       mask: { type: "geojson", data: focusMask() },
+      sites: { type: "geojson", data: `${o.dataUrl}/sites.geojson` },
       route: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
     },
     layers,

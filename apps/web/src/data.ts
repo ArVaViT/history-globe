@@ -19,19 +19,46 @@ export interface PlaceProps {
   readonly coord: "openbible" | "wikidata";
 }
 
+/** A candidate location of a disputed place, with OpenBible's assessment in percent. */
+export interface Site {
+  readonly label: string;
+  readonly share: number;
+  readonly at: readonly [number, number];
+}
+
 export interface LoadedData {
   readonly places: FeatureCollection<Point, PlaceProps>;
   readonly byId: ReadonlyMap<string, { readonly props: PlaceProps; readonly info: PlaceInfo }>;
   readonly tours: readonly (Tour & { readonly title: Readonly<Record<string, string>> })[];
+  /** Candidate locations per place id, most supported first. */
+  readonly sites: ReadonlyMap<string, readonly Site[]>;
 }
 
 export const DATA_URL = "/data";
 
+type SiteProps = { place: string; label: string; share: number };
+
+export function groupSites(fc: FeatureCollection<Point, SiteProps>): Map<string, Site[]> {
+  const sites = new Map<string, Site[]>();
+  for (const f of fc.features) {
+    const [lon = 0, lat = 0] = f.geometry.coordinates;
+    const list = sites.get(f.properties.place) ?? [];
+    list.push({ label: f.properties.label, share: f.properties.share, at: [lon, lat] });
+    sites.set(f.properties.place, list);
+  }
+  for (const list of sites.values()) list.sort((a, b) => b.share - a.share);
+  return sites;
+}
+
 export async function loadData(): Promise<LoadedData> {
-  const [places, content] = await Promise.all([
+  const [places, content, siteFc] = await Promise.all([
     fetch(`${DATA_URL}/places.geojson`).then((r) => r.json() as Promise<LoadedData["places"]>),
     fetch(`${DATA_URL}/content.json`).then((r) => r.json() as Promise<ContentRelease>),
+    fetch(`${DATA_URL}/sites.geojson`).then(
+      (r) => r.json() as Promise<FeatureCollection<Point, SiteProps>>,
+    ),
   ]);
+  const sites = groupSites(siteFc);
   const byId = new Map<string, { props: PlaceProps; info: PlaceInfo }>();
   for (const f of places.features) {
     const entry = content.names[f.properties.id];
@@ -53,7 +80,7 @@ export async function loadData(): Promise<LoadedData> {
       note: s.note,
     })),
   }));
-  return { places, byId, tours };
+  return { places, byId, tours, sites };
 }
 
 /** Search by English or Russian name; exact prefix first, then by importance. */

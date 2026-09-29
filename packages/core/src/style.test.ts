@@ -1,6 +1,6 @@
 import { featureFilter, validateStyleMin } from "@maplibre/maplibre-gl-style-spec";
 import { describe, expect, it } from "vitest";
-import { buildStyle, ERA_FILTER, layersInGroup } from "./style.ts";
+import { buildStyle, ERA_FILTER, layersInGroup, SITES_OF_SELECTED } from "./style.ts";
 
 const style = buildStyle({
   dataUrl: "/data",
@@ -38,5 +38,21 @@ describe("era filter (half-open, ADR 0003)", () => {
     [-2, false],
   ])("year %i → visible %s", (year, visible) => {
     expect(visibleIn(year, -36, -2)).toBe(visible);
+  });
+});
+
+describe("sites of the selected place", () => {
+  function shown(selected: string, place: string): boolean {
+    const f = featureFilter(SITES_OF_SELECTED, "filter", { selected });
+    return f.filter({ zoom: 8 }, { type: 1, properties: { place }, geometry: [] } as never);
+  }
+
+  it("shows only the candidates of the selected place", () => {
+    expect(shown("ae7274b", "ae7274b")).toBe(true);
+    expect(shown("ae7274b", "a15257a")).toBe(false);
+  });
+
+  it("shows nothing when nothing is selected", () => {
+    expect(shown("", "ae7274b")).toBe(false);
   });
 });

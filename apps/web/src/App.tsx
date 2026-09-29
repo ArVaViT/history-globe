@@ -210,12 +210,16 @@ export function App() {
               selected && (
                 <PlaceCard
                   place={selected}
+                  sites={data.sites.get(selected.id) ?? []}
                   locale={state.locale}
                   onClose={() => {
                     engine.selectPlace(null);
                   }}
                   onZoom={() => {
                     engine.selectPlace(selected.id, { fly: true });
+                  }}
+                  onFlyTo={(at) => {
+                    globe.renderer.flyTo({ center: at, zoom: 11, pitch: 50 }, 1600);
                   }}
                 />
               )

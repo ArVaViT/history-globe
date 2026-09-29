@@ -1,7 +1,7 @@
 import { formatRef, type Locale } from "@hg/model";
 import { MapPin, X, ZoomIn } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import type { PlaceProps } from "../data";
+import type { PlaceProps, Site } from "../data";
 import { Panel } from "./Panel";
 
 const VERSES_SHOWN = 10;
@@ -16,14 +16,18 @@ function safeRef(osis: string, locale: Locale): string {
 
 export function PlaceCard({
   place,
+  sites,
   locale,
   onClose,
   onZoom,
+  onFlyTo,
 }: {
   place: PlaceProps;
+  sites: readonly Site[];
   locale: Locale;
   onClose: () => void;
   onZoom: () => void;
+  onFlyTo: (at: readonly [number, number]) => void;
 }) {
   const { t } = useTranslation();
   const ru = locale === "ru";
@@ -73,6 +77,37 @@ export function PlaceCard({
           <ZoomIn className="size-4" aria-hidden /> {t("place.zoom")}
         </button>
       </div>
+
+      {sites.length > 1 && (
+        <div className="mx-5 mt-4 rounded-xl border border-[#e0b98f] bg-[#fbf1e4] px-3 py-2.5">
+          <div className="text-[11px] font-medium tracking-[0.12em] text-[#7a4a1d] uppercase">
+            {t("place.sites_title")}
+          </div>
+          <ul className="mt-1.5 space-y-1">
+            {sites.map((s) => (
+              <li key={`${s.label}-${s.at.join(",")}`}>
+                <button
+                  onClick={() => {
+                    onFlyTo(s.at);
+                  }}
+                  className="flex w-full items-center gap-2 rounded-md px-1 py-0.5 text-left hover:bg-paper-2"
+                >
+                  <span className="min-w-0 flex-1 truncate text-[13.5px] text-ink">{s.label}</span>
+                  <span className="h-1.5 w-16 shrink-0 overflow-hidden rounded-full bg-paper-2">
+                    <span className="block h-full bg-accent" style={{ width: `${s.share}%` }} />
+                  </span>
+                  <span className="w-9 shrink-0 text-right text-[12px] text-ink-soft tabular-nums">
+                    {s.share}%
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-1.5 text-[10.5px] leading-snug text-ink-soft">
+            {t("place.sites_note")}
+          </div>
+        </div>
+      )}
 
       {place.where && place.where !== place.name && (
         <div className="flex items-center gap-1.5 px-5 pt-3 text-[14px] text-ink">
