@@ -2,7 +2,7 @@
 
 import unittest
 
-from build_data import banned_lonlats, coord_banned, rank_of, site_label
+from build_data import COAST_BBOX, banned_lonlats, build_coast, coord_banned, rank_of, site_label
 
 MODERN = {
     "m_osm": {"lonlat": "35.1,31.1", "coordinates_source": {"type": "osm", "geometry_credit": "osm"}},
@@ -64,6 +64,17 @@ class SiteLabel(unittest.TestCase):
     def test_free_text_stays_as_it_is(self) -> None:
         got = site_label('in the region <modern id="m56a09d">north of the Dead Sea</modern>')
         self.assertEqual(got, {"label": "in the region north of the Dead Sea"})
+
+
+class Coast(unittest.TestCase):
+    def test_keeps_shores_in_the_region_and_drops_the_antimeridian_cut(self) -> None:
+        sea = [[35.0, 30.0], [36.0, 30.0], [36.0, 31.0], [35.0, 30.0]]
+        cut = [[180.0, -60.0], [180.0, 60.0], [179.0, 60.0], [180.0, -60.0]]
+        water = {"features": [{"geometry": {"type": "MultiPolygon", "coordinates": [[sea], [cut]]}}]}
+        lines = build_coast(water)["features"][0]["geometry"]["coordinates"]
+        self.assertEqual(lines, [sea])
+        x0, y0, x1, y1 = COAST_BBOX
+        self.assertTrue(all(x0 <= x <= x1 and y0 <= y <= y1 for line in lines for x, y in line))
 
 
 if __name__ == "__main__":
