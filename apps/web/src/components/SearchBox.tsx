@@ -57,7 +57,8 @@ export function SearchBox({
           )}
           {results.map(({ props }, i) => {
             const primary = ru ? (props.name_ru ?? props.name) : props.name;
-            const secondary = ru && props.name_ru ? props.name : props.where;
+            const secondary =
+              ru && props.name_ru ? props.name : ru ? (props.where_ru ?? props.where) : props.where;
             return (
               <li
                 key={props.id}

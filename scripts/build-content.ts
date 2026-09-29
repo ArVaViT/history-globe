@@ -260,6 +260,7 @@ for (const f of places.features) {
       ...(p.where_unit ? { unit: p.where_unit } : {}),
     },
     (id) => names[id]?.ru,
+    names[p.id]?.ru,
   );
   if (ru) whereRu[p.id] = ru;
 }
@@ -268,12 +269,12 @@ for (const f of places.features) {
 // Synodal name ("same place as Abila" -> "то же место, что Авила").
 const sitesPath = join(out, "sites.geojson");
 const sites = JSON.parse(readFileSync(sitesPath, "utf8")) as {
-  features: { properties: SiteLabelParts & { label_ru?: string } }[];
+  features: { properties: SiteLabelParts & { place: string; label_ru?: string } }[];
 };
 let sitesInRussian = 0;
 for (const f of sites.features) {
   delete f.properties.label_ru;
-  const ru = siteLabelRu(f.properties, (id) => names[id]?.ru);
+  const ru = siteLabelRu(f.properties, (id) => names[id]?.ru, names[f.properties.place]?.ru);
   if (ru) {
     f.properties.label_ru = ru;
     sitesInRussian += 1;

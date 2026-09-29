@@ -53,6 +53,14 @@ class SiteLabel(unittest.TestCase):
         self.assertEqual(got["label"], "within 250 km of Babylon")
         self.assertEqual((got["tpl"], got["n"], got["unit"], got["ref_text"]), ("within", "250", "km", "Babylon"))
 
+    def test_own_name_elsewhere(self) -> None:
+        got = site_label('another name for <ancient id="a1">Ai 1</ancient>', "Ai")
+        self.assertEqual((got["tpl"], got["label"]), ("same_name", "same place as Ai in other verses"))
+
+    def test_modern_numbers_are_kept(self) -> None:
+        got = site_label('along <modern id="m1">Nahal Yattir 205</modern>')
+        self.assertEqual(got["label"], "along Nahal Yattir 205")
+
     def test_free_text_stays_as_it_is(self) -> None:
         got = site_label('in the region <modern id="m56a09d">north of the Dead Sea</modern>')
         self.assertEqual(got, {"label": "in the region north of the Dead Sea"})

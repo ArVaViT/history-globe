@@ -16,7 +16,13 @@ export function HoverTip({
   const ru = locale === "ru";
   const primary = ru ? (place.name_ru ?? place.name) : place.name;
   const secondary =
-    ru && place.name_ru ? place.name : place.where !== place.name ? place.where : "";
+    ru && place.name_ru
+      ? place.name
+      : place.where !== place.name
+        ? ru
+          ? (place.where_ru ?? place.where)
+          : place.where
+        : "";
   return (
     <div
       className="pointer-events-none absolute z-10 -translate-y-full rounded-lg bg-ink/90 px-2.5 py-1.5 text-paper shadow-lg"

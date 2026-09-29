@@ -259,8 +259,9 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
     {
       id: "coast",
       type: "line",
-      // The outline of the water is the coast (and the shore of each lake).
-      source: "water",
+      // Sea and lake shores around the map's region (not the water polygon's outline,
+      // which is cut along the antimeridian).
+      source: "coast",
       paint: {
         "line-color": T.coast,
         "line-opacity": 0.55,
@@ -621,6 +622,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         maxzoom: 12,
       },
       water: { type: "geojson", data: `${o.dataUrl}/water.geojson`, attribution: "Natural Earth" },
+      coast: { type: "geojson", data: `${o.dataUrl}/coast.geojson` },
       polities: {
         type: "geojson",
         data: `${o.dataUrl}/polities.geojson`,

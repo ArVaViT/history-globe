@@ -230,8 +230,6 @@ def assert_no_banned_points(collections: dict[str, dict], modern: dict[str, dict
 
 
 def where_props(label: dict) -> dict:
-    if label.get("tpl") == "same":
-        return {"where": ""}
     extra = {f"where_{k}": label[k] for k in ("tpl", "ref", "ref_text", "n", "unit") if k in label}
     return {"where": label["label"], **extra}
 
@@ -282,7 +280,7 @@ def build_places(
                 "id": r["id"],
                 "name": base,
                 "kind": (r.get("types") or ["place"])[0],
-                # Candidate sites actually shipped in sites.geojson: 0 when not disputed.
+                # Candidate sites shipped in sites.geojson: 0 when fewer than two.
                 "sites": sites_per_place.get(r["id"], (0, False))[0],
                 "disputed": sites_per_place.get(r["id"], (0, False))[1],
                 "verses": len(verses),
@@ -294,7 +292,7 @@ def build_places(
                 "rank": rank_of(len(verses) - nt + 3 * nt),
                 # Where it is today, as the best identification words it. "Same place as X"
                 # says nothing a reader can use there: the card lists the candidates.
-                **where_props(site_label(ids[0].get("description", ""))),
+                **where_props(site_label(ids[0].get("description", ""), base)),
                 "osis": [v["osis"] for v in verses[:12]],
                 "coord": coord_source,
                 # Drawn as a river line with its own label: no second label at the point.
@@ -504,6 +502,34 @@ def build_water() -> dict:
     return round_collection(water)
 
 
+# Coastlines are drawn only around the region of the map. Using the outline of the water
+# polygon everywhere drew its cut along the antimeridian as a line across the Pacific.
+COAST_BBOX = (-30.0, -5.0, 90.0, 65.0)
+
+
+def build_coast(water: dict) -> dict:
+    """Outlines of the sea and the lakes inside COAST_BBOX, as lines."""
+    x0, y0, x1, y1 = COAST_BBOX
+    inside = lambda p: x0 <= p[0] <= x1 and y0 <= p[1] <= y1  # noqa: E731
+    lines = []
+    for f in water["features"]:
+        g = f["geometry"]
+        polys = g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]
+        for poly in polys:
+            for ring in poly:
+                run: list = []
+                for pt in ring:
+                    if inside(pt):
+                        run.append(pt)
+                    else:
+                        if len(run) > 1:
+                            lines.append(run)
+                        run = []
+                if len(run) > 1:
+                    lines.append(run)
+    return {"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {}, "geometry": {"type": "MultiLineString", "coordinates": lines}}]}
+
+
 COORD_DECIMALS = 3  # ≈ 100 m: far below what a 1:50m source can show
 
 
@@ -636,20 +662,32 @@ SITE_TEMPLATES = [
 NUMBER_SUFFIX = re.compile(r" \d+$")  # "Babylon 1" -> "Babylon": OpenBible's disambiguator
 
 
-def site_label(description: str) -> dict:
-    """`label` in English plus, for a known template, `tpl`, `ref`, `ref_text`, `n`, `unit`."""
+def site_label(description: str, own_name: str = "") -> dict:
+    """`label` in English plus, for a known template, `tpl`, `ref`, `ref_text`, `n`, `unit`.
+
+    Only an ancient reference loses OpenBible's disambiguating number ("Babylon 1"); a
+    number in a modern name is part of it ("Nahal Yattir 205"). "Another name for" the
+    place's own name elsewhere in the Bible becomes `same_name`, so no card reads
+    "Ai: same place as Ai".
+    """
     for key, pattern in SITE_TEMPLATES:
         m = pattern.match(description)
         if not m:
             continue
         g = m.groupdict()
-        ref_text = NUMBER_SUFFIX.sub("", g["text"])
+        ancient = g["kind"] == "ancient"
+        ref_text = NUMBER_SUFFIX.sub("", g["text"]) if ancient else g["text"]
+        label = TAG_RE.sub("", description)
+        if ancient:
+            label = label[: len(label) - len(g["text"])] + ref_text if label.endswith(g["text"]) else label
+        if key == "same":
+            if ref_text == own_name:
+                key, label = "same_name", f"same place as {ref_text} in other verses"
+            else:
+                label = f"same place as {ref_text}"
         out = {"tpl": key, "ref": g["ref"], "ref_text": ref_text}
         if g.get("n"):
             out |= {"n": g["n"], "unit": g["unit"]}
-        label = NUMBER_SUFFIX.sub("", TAG_RE.sub("", description))
-        if key == "same":
-            label = f"same place as {ref_text}"
         return {"label": label, **out}
     return {"label": TAG_RE.sub("", description)}
 
@@ -674,7 +712,8 @@ def build_sites(records: list[dict], modern: dict[str, dict]) -> tuple[dict, dic
                 continue
             lon, lat = (float(v) for v in res["lonlat"].split(","))
             score = float((ident.get("score") or {}).get("time_total") or 0)
-            cands.append({"i": i, "lon": lon, "lat": lat, "score": score, **site_label(ident.get("description", ""))})
+            base = NUMBER_SUFFIX.sub("", r["friendly_id"])
+            cands.append({"i": i, "lon": lon, "lat": lat, "score": score, **site_label(ident.get("description", ""), base)})
         cands = cands[:MAX_SITES]
         if len(cands) < 2:
             continue
@@ -706,9 +745,14 @@ def main() -> None:
     rivers, river_labels, river_stats = build_rivers()
     river_places = {f["properties"]["place"] for f in rivers["features"] if "place" in f["properties"]}
     places, place_stats, excluded_places = build_places(records, modern, sites_per_place, river_places)
+    # Candidates of a place left out (licence) would be sites of nothing.
+    shipped = {f["properties"]["id"] for f in places["features"]}
+    sites["features"] = [f for f in sites["features"] if f["properties"]["place"] in shipped]
+    site_stats["sites"] = len(sites["features"])
     assert_no_banned_points({"places.geojson": places, "sites.geojson": sites}, modern)
     polities, polity_labels, polity_stats = build_polities()
     water = build_water()
+    coast = build_coast(water)
     outputs = {
         "places.geojson": places,
         "sites.geojson": sites,
@@ -717,6 +761,7 @@ def main() -> None:
         "polities.geojson": polities,
         "polity-labels.geojson": polity_labels,
         "water.geojson": water,
+        "coast.geojson": coast,
     }
     for name, data in outputs.items():
         (OUT / name).write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

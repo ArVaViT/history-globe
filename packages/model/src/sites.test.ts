@@ -33,7 +33,7 @@ describe("siteLabelRu", () => {
     expect(siteLabelRu({ label: "in the region north of the Dead Sea" }, ru)).toBeUndefined();
   });
 
-  it("leaves modern site names as they are", () => {
+  it("leaves labels that name a modern place wholly in English", () => {
     expect(
       siteLabelRu({ label: "Tell Hum", tpl: "name", ref: "m123456", ref_text: "Tell Hum" }, ru),
     ).toBeUndefined();
@@ -42,6 +42,20 @@ describe("siteLabelRu", () => {
         { label: "along Wadi el Esh", tpl: "along", ref: "m6dddbb", ref_text: "Wadi el Esh" },
         ru,
       ),
-    ).toBe("Wadi el Esh, вдоль");
+    ).toBeUndefined();
+  });
+
+  it("says where a place's own name points to its other verses", () => {
+    expect(
+      siteLabelRu(
+        {
+          label: "same place as Abila in other verses",
+          tpl: "same_name",
+          ref: "a818a40",
+          ref_text: "Abila",
+        },
+        ru,
+      ),
+    ).toBe("там же, где Авила в других стихах");
   });
 });
