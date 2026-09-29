@@ -1,5 +1,5 @@
 import { createEngine, DEFAULT_STATE, type Camera, type Engine, type GlobeState } from "@hg/core";
-import { MapLibreRenderer } from "@hg/core/maplibre";
+import type { MapLibreRenderer } from "@hg/core/maplibre";
 import { useEffect, useRef, useState, useSyncExternalStore, type RefObject } from "react";
 import type { LoadedData } from "./data";
 import { DATA_URL } from "./data";
@@ -13,6 +13,10 @@ const TERRAIN = {
   tiles: "https://tiles.mapterhorn.com/{z}/{x}/{y}.webp",
   attribution: "Terrain: Mapterhorn (Copernicus DEM and others)",
 };
+
+// MapLibre is most of the JavaScript. It is a separate chunk that starts downloading at
+// once, in parallel with the data, while the panels render without waiting for it.
+const rendererModule = import("@hg/core/maplibre");
 
 export interface Globe {
   readonly engine: Engine;
@@ -31,39 +35,55 @@ export function useGlobe(
     const el = container.current;
     if (!el || !data) return;
     const init = initialRef.current;
-    const renderer = new MapLibreRenderer({
-      container: el,
-      camera: init.camera ?? DEFAULT_CAMERA,
-      places: data.places,
-      dataUrl: DATA_URL,
-      terrainTiles: TERRAIN.tiles,
-      terrainAttribution: TERRAIN.attribution,
-      fonts: MAP_FONTS,
-      initialYear: init.year ?? DEFAULT_STATE.year,
-      initialLocale: init.locale ?? DEFAULT_STATE.locale,
+    let cancelled = false;
+    let created: Globe | null = null;
+    void rendererModule.then(({ MapLibreRenderer }) => {
+      if (cancelled) return;
+      created = createGlobe(MapLibreRenderer, el, data, init);
+      setGlobe(created);
     });
-    const engine = createEngine({
-      renderer,
-      places: new Map([...data.byId].map(([id, p]) => [id, p.info])),
-      tours: data.tours,
-      initial: {
-        ...(init.year === undefined ? {} : { year: init.year }),
-        ...(init.locale === undefined ? {} : { locale: init.locale }),
-        ...(init.place === undefined ? {} : { selectedPlace: init.place }),
-      },
-    });
-    if (import.meta.env.DEV) {
-      // Handle for local debugging and screenshot scripts; never in production builds.
-      (window as unknown as { __hgMap?: unknown }).__hgMap = renderer.map;
-    }
-    setGlobe({ engine, renderer });
     return () => {
-      engine.destroy();
+      cancelled = true;
+      created?.engine.destroy();
       setGlobe(null);
     };
   }, [container, data]);
 
   return globe;
+}
+
+function createGlobe(
+  Renderer: typeof MapLibreRenderer,
+  el: HTMLDivElement,
+  data: LoadedData,
+  init: UrlView,
+): Globe {
+  const renderer = new Renderer({
+    container: el,
+    camera: init.camera ?? DEFAULT_CAMERA,
+    places: data.places,
+    dataUrl: DATA_URL,
+    terrainTiles: TERRAIN.tiles,
+    terrainAttribution: TERRAIN.attribution,
+    fonts: MAP_FONTS,
+    initialYear: init.year ?? DEFAULT_STATE.year,
+    initialLocale: init.locale ?? DEFAULT_STATE.locale,
+  });
+  const engine = createEngine({
+    renderer,
+    places: new Map([...data.byId].map(([id, p]) => [id, p.info])),
+    tours: data.tours,
+    initial: {
+      ...(init.year === undefined ? {} : { year: init.year }),
+      ...(init.locale === undefined ? {} : { locale: init.locale }),
+      ...(init.place === undefined ? {} : { selectedPlace: init.place }),
+    },
+  });
+  if (import.meta.env.DEV) {
+    // Handle for local debugging and screenshot scripts; never in production builds.
+    (window as unknown as { __hgMap?: unknown }).__hgMap = renderer.map;
+  }
+  return { engine, renderer };
 }
 
 const noop = () => () => undefined;

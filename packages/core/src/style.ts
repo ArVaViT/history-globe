@@ -390,7 +390,8 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       // first); a line label takes little room. A smoothed copy of the course: MapLibre drops line labels on sharp bends.
       source: "river-labels",
       // Only rivers that are biblical places carry a label: no modern local names.
-      filter: ["has", "place"],
+      // In Russian, only rivers with a verified Synodal name (no Latin fallback on the map).
+      filter: ["all", ["has", "place"], ["any", ["!=", LOCALE, "ru"], ["has", "name_ru"]]],
       minzoom: 4.5,
       layout: {
         "symbol-placement": "line",
