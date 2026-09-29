@@ -151,13 +151,22 @@ export const NT_FROM = -5;
 const NOT_DUP: ExpressionSpecification = ["!", ["has", "dup"]];
 
 /**
- * Label placement order: most mentioned first, and places faded before the New
- * Testament last, so a faded Capernaum never takes the room of a town of its time.
+ * Label placement order: the selected place, then most mentioned first, and places
+ * faded before the New Testament last, so a faded Capernaum never takes the room of a
+ * town of its time.
  */
 const PLACE_ORDER: ExpressionSpecification = [
   "+",
   ["-", 0, ["get", "verses"]],
-  ["case", ["all", ["==", ["get", "ot"], 0], ["<", YEAR, NT_FROM]], 100000, 0],
+  [
+    "case",
+    // The selected place is placed first, whatever its year.
+    ["==", ["get", "id"], ["global-state", "selected"]],
+    -1000000,
+    ["all", ["==", ["get", "ot"], 0], ["<", YEAR, NT_FROM]],
+    100000,
+    0,
+  ],
 ];
 
 /**
