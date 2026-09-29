@@ -78,6 +78,16 @@ export const NAME: ExpressionSpecification = [
   ["get", "name"],
 ];
 
+/**
+ * The Russian map shows only verified Russian names: a place without one keeps its dot
+ * but gets no Latin label (as with rivers). Search and lists still show the English name.
+ */
+export const HAS_LOCAL_NAME: ExpressionSpecification = [
+  "any",
+  ["!=", LOCALE, "ru"],
+  ["has", "name_ru"],
+];
+
 const polityColor: ExpressionSpecification = [
   "match",
   ["get", "c"],
@@ -158,18 +168,12 @@ const isLandmark: ExpressionSpecification = [
   kindIn([...SETTLEMENT_KINDS, ...AREA_KINDS, ...WATER_KINDS]),
 ];
 
-/** A place appears only from the zoom its importance deserves. */
-const minZoomByRank: ExpressionSpecification = [
-  "match",
-  ["get", "rank"],
-  0,
-  3.2,
-  1,
-  5.2,
-  2,
-  6.8,
-  8.2,
-];
+/**
+ * A place appears only from the zoom its importance deserves. Whole numbers on purpose:
+ * a filter sees the zoom of its tile, an integer, so 5.2 would behave as 6 and a
+ * mid-rank place (Corinth, Ephesus) would stay hidden at zoom 5.9.
+ */
+const minZoomByRank: ExpressionSpecification = ["match", ["get", "rank"], 0, 3, 1, 5, 2, 6, 8];
 
 const visibleAtZoom: ExpressionSpecification = [">=", ["zoom"], minZoomByRank];
 
@@ -352,7 +356,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isArea, visibleAtZoom],
+      filter: ["all", isArea, visibleAtZoom, HAS_LOCAL_NAME],
       layout: {
         // Biblical regions are not states: italic and sentence case, so they never read
         // as the polity labels (upper case) of the chosen year.
@@ -375,7 +379,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isWater, visibleAtZoom],
+      filter: ["all", isWater, visibleAtZoom, HAS_LOCAL_NAME],
       layout: {
         "text-field": NAME,
         "text-font": [MAP_FONT_ITALIC],
@@ -395,7 +399,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isLandmark, visibleAtZoom],
+      filter: ["all", isLandmark, visibleAtZoom, HAS_LOCAL_NAME],
       layout: {
         "text-field": NAME,
         "text-font": [MAP_FONT_ITALIC],
@@ -456,7 +460,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isSettlement, visibleAtZoom],
+      filter: ["all", isSettlement, visibleAtZoom, HAS_LOCAL_NAME],
       layout: {
         "text-field": NAME,
         "text-font": [MAP_FONT],

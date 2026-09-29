@@ -337,16 +337,20 @@ def point_in_polygon(x: float, y: float, poly: list[list[list[float]]]) -> bool:
     return point_in_ring(x, y, poly[0]) and not any(point_in_ring(x, y, h) for h in poly[1:])
 
 
-LABEL_GRID_DEG = 8.0
+LABEL_GRID_DEG = 6.0
 
 
 def label_anchors(parts: list[list[list[list[float]]]]) -> list[tuple[float, float, float]]:
     """Several label points inside a polity, so a large empire is named wherever the
     reader looks, not only at its centroid. Returns (lon, lat, area of its part)."""
     anchors = []
+    areas = [ring_area_centroid(poly[0])[0] for poly in parts]
+    # Islands and scraps of a big empire get no label of their own: "Roman Empire" on
+    # Crete, Cyprus and every Aegean island read as seven different states.
+    floor = max(0.05, 0.1 * max(areas, default=0))
     for poly in parts:
         area, cx, cy = ring_area_centroid(poly[0])
-        if area < 0.05:
+        if area < floor:
             continue
         if point_in_polygon(cx, cy, poly):
             anchors.append((cx, cy, area))

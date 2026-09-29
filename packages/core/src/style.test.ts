@@ -160,3 +160,22 @@ describe("places named only in the New Testament", () => {
     expect(at(-1200, 0, true)).toBe(1);
   });
 });
+
+describe("place labels on the Russian map", () => {
+  function labelled(locale: string, props: Record<string, unknown>): boolean {
+    return style.layers
+      .filter((l) => l.id.startsWith("place-label") && "filter" in l)
+      .some((l) =>
+        featureFilter("filter" in l ? l.filter : undefined, "filter", { locale }).filter(
+          { zoom: 10 },
+          { type: 1, properties: { rank: 0, kind: "region", ...props }, geometry: [] } as never,
+        ),
+      );
+  }
+
+  it("need a Russian name in Russian, any name in English", () => {
+    expect(labelled("ru", { name: "Negeb" })).toBe(false);
+    expect(labelled("ru", { name: "Galilee", name_ru: "Галилея" })).toBe(true);
+    expect(labelled("en", { name: "Negeb" })).toBe(true);
+  });
+});
