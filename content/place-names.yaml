@@ -5896,3 +5896,863 @@ places:
     evidence:
       osis: Isa.7.5
       excerpt: "Сирия, Ефрем и сын Ремалиин умышляют против тебя зло"
+  # 2026-09-29: read in the Synodal text (eBible.org "russyn", public domain) at a
+  # verse OpenBible tags for the place; the build checks the tag and the name stem.
+  - id: acc6d8e
+    en: "Midian"
+    ru: "Мадиам"
+    evidence:
+      osis: Exod.2.15
+      excerpt: "остановился в земле Мадиамской"
+  - id: ab9696f
+    en: "Persia"
+    ru: "Персия"
+    evidence:
+      osis: 2Chr.36.22
+      excerpt: "в первый год Кира, царя Персидского"
+  - id: a3d18b2
+    en: "Red Sea 1"
+    ru: "Чермное море"
+    evidence:
+      osis: Exod.15.22
+      excerpt: "повел Моисей Израильтян от Чермного моря"
+  - id: ad64d75
+    en: "Red Sea 2"
+    ru: "Чермное море"
+    evidence:
+      osis: Judg.11.16
+      excerpt: "пошел в пустыню к Чермному морю"
+  - id: a3ba698
+    en: "Red Sea 3"
+    ru: "Чермное море"
+    evidence:
+      osis: Num.33.10
+      excerpt: "расположились станом у Чермного моря"
+  - id: a4aa78a
+    en: "Zobah"
+    ru: "Сува"
+    evidence:
+      osis: 2Sam.8.3
+      excerpt: "Адраазара, сына Реховова, царя Сувского"
+  - id: a5eb047
+    en: "Lebo-hamath"
+    ru: "Вход в Емаф"
+    evidence:
+      osis: Josh.13.5
+      excerpt: "до входа в Емаф"
+  - id: af4c2cd
+    en: "Valley of the Arnon"
+    ru: "поток Арнон"
+    evidence:
+      osis: Deut.2.24
+      excerpt: "перейдите поток Арнон"
+  - id: a7a59b4
+    en: "Brook of Egypt"
+    ru: "поток Египетский"
+    evidence:
+      osis: Josh.15.4
+      excerpt: "идет к потоку Египетскому"
+  - id: ad81b79
+    en: "Topheth"
+    ru: "Тофет"
+    evidence:
+      osis: 2Kgs.23.10
+      excerpt: "И осквернил он Тофет"
+  - id: acf57c5
+    en: "Mount Gilboa"
+    ru: "Гора Гелвуй"
+    evidence:
+      osis: 1Sam.31.1
+      excerpt: "пали пораженные на горе Гелвуе"
+  - id: a9ad5ae
+    en: "Netophah"
+    ru: "Нетофа"
+    evidence:
+      osis: Ezra.2.22
+      excerpt: "жителей Нетофы пятьдесят шесть"
+  - id: afd9259
+    en: "Pisgah"
+    ru: "Фасга"
+    evidence:
+      osis: Num.23.14
+      excerpt: "на вершину горы Фасги"
+  - id: a966bdf
+    en: "House of the Forest of Lebanon"
+    ru: "Дом из Ливанского дерева"
+    evidence:
+      osis: 1Kgs.10.17
+      excerpt: "в доме из Ливанского дерева"
+  - id: a54fdd6
+    en: "Hushah"
+    ru: "Хуша"
+    evidence:
+      osis: 1Chr.4.4
+      excerpt: "и Езер, отец Хуша"
+  - id: ad41f6e
+    en: "Jeshimon"
+    ru: "Иесимон"
+    evidence:
+      osis: 1Sam.23.19
+      excerpt: "что направо от Иесимона"
+  - id: a329990
+    en: "Caphtor"
+    ru: "Кафтор"
+    evidence:
+      osis: Deut.2.23
+      excerpt: "Кафторимы, исшедшие из Кафтора"
+  - id: ab55371
+    en: "Kir-hareseth"
+    ru: "Кирхарешет"
+    evidence:
+      osis: Isa.16.11
+      excerpt: "и сердце мое - о Кирхарешете"
+  - id: ab89be9
+    en: "Ararat"
+    ru: "Арарат"
+    evidence:
+      osis: Gen.8.4
+      excerpt: "на горах Араратских"
+  - id: aeeaca0
+    en: "Lehi"
+    ru: "Лехи"
+    evidence:
+      osis: Judg.15.9
+      excerpt: "и протянулись до Лехи"
+  - id: a39267b
+    en: "Akrabbim"
+    ru: "Акравим"
+    evidence:
+      osis: Judg.1.36
+      excerpt: "от возвышенности Акравим"
+  - id: aab9a5e
+    en: "Hena"
+    ru: "Ена"
+    evidence:
+      osis: 2Kgs.19.13
+      excerpt: "царь города Сепарваима, Ены и Иввы"
+  - id: a9ac5f9
+    en: "Ivvah"
+    ru: "Ивва"
+    evidence:
+      osis: 2Kgs.19.13
+      excerpt: "царь города Сепарваима, Ены и Иввы"
+  - id: a5e36e6
+    en: "Hor-haggidgad"
+    ru: "Хор-Агидгад"
+    evidence:
+      osis: Num.33.33
+      excerpt: "И отправились из Хор-Агидгада"
+  - id: a062b95
+    en: "Ijon"
+    ru: "Ион"
+    evidence:
+      osis: 2Kgs.15.29
+      excerpt: "и взял Ион, Авел-Беф-Мааху"
+  - id: a0574da
+    en: "Iye-abarim"
+    ru: "Ийе-Аварим"
+    evidence:
+      osis: Num.21.11
+      excerpt: "и остановились в Ийе-Авариме"
+  - id: a88331e
+    en: "Moseroth"
+    ru: "Мосероф"
+    evidence:
+      osis: Num.33.31
+      excerpt: "И отправились из Мосерофа"
+  - id: a8a6a5b
+    en: "Syene"
+    ru: "Сиена"
+    evidence:
+      osis: Ezek.29.10
+      excerpt: "от Мигдола до Сиены"
+  - id: a7560c2
+    en: "Abronah"
+    ru: "Аврон"
+    evidence:
+      osis: Num.33.35
+      excerpt: "И отправились из Аврона"
+  - id: acf8790
+    en: "Adummim"
+    ru: "Адуммим"
+    evidence:
+      osis: Josh.18.17
+      excerpt: "против возвышенности Адуммима"
+  - id: a0fe2be
+    en: "Bene-jaakan"
+    ru: "Бене-Яакан"
+    evidence:
+      osis: Num.33.32
+      excerpt: "И отправились из Бене-Яакана"
+  - id: af48fdd
+    en: "Bezek 1"
+    ru: "Везек"
+    evidence:
+      osis: Judg.1.5
+      excerpt: "В Везеке встретились они"
+  - id: aa31dd3
+    en: "Cenchreae"
+    ru: "Кенхреи"
+    evidence:
+      osis: Acts.18.18
+      excerpt: "остригши голову в Кенхреях"
+  - id: aa7bee8
+    en: "Cherith"
+    ru: "поток Хораф"
+    evidence:
+      osis: 1Kgs.17.5
+      excerpt: "остался у потока Хорафа"
+  - id: a538831
+    en: "Cuth"
+    ru: "Кута"
+    evidence:
+      osis: 2Kgs.17.24
+      excerpt: "и из Куты, и из Аввы"
+  - id: a6f4a6d
+    en: "Ellasar"
+    ru: "Елласар"
+    evidence:
+      osis: Gen.14.1
+      excerpt: "Ариоха, царя Елласарского"
+  - id: aea4530
+    en: "Gob"
+    ru: "Гоб"
+    evidence:
+      osis: 2Sam.21.18
+      excerpt: "война с Филистимлянами в Гобе"
+  - id: a73af5f
+    en: "Haradah"
+    ru: "Харада"
+    evidence:
+      osis: Num.33.24
+      excerpt: "расположились станом в Хараде"
+  - id: aaa8a88
+    en: "Hashmonah"
+    ru: "Хашмона"
+    evidence:
+      osis: Num.33.30
+      excerpt: "И отправились из Хашмоны"
+  - id: a373106
+    en: "Kanah 1"
+    ru: "поток Кана"
+    evidence:
+      osis: Josh.16.8
+      excerpt: "к потоку Кане"
+  - id: aeb46a8
+    en: "Kittim"
+    ru: "Киттим"
+    evidence:
+      osis: Num.24.24
+      excerpt: "придут корабли от Киттима"
+  - id: af133c0
+    en: "Kue"
+    ru: "Кува"
+    evidence:
+      osis: 1Kgs.10.28
+      excerpt: "из Египта и из Кувы"
+  - id: a3e94bd
+    en: "Libnah 2"
+    ru: "Ливна"
+    evidence:
+      osis: Num.33.20
+      excerpt: "расположились станом в Ливне"
+  - id: a3668b6
+    en: "Lycaonia"
+    ru: "Ликаония"
+    evidence:
+      osis: Acts.14.6
+      excerpt: "удалились в Ликаонские города"
+  - id: ac1fbba
+    en: "Makheloth"
+    ru: "Макелоф"
+    evidence:
+      osis: Num.33.25
+      excerpt: "расположились станом в Макелофе"
+  - id: a222545
+    en: "Minnith"
+    ru: "Миниф"
+    evidence:
+      osis: Judg.11.33
+      excerpt: "от Ароера до Минифа"
+  - id: a5bf0bd
+    en: "Misrephoth-maim"
+    ru: "Мисрефоф-Маим"
+    evidence:
+      osis: Josh.11.8
+      excerpt: "до Мисрефоф-Маима"
+  - id: a2a77d2
+    en: "Neah"
+    ru: "Нея"
+    evidence:
+      osis: Josh.19.13
+      excerpt: "Мифоару и Нее"
+  - id: ace3edc
+    en: "Nimrim"
+    ru: "Нимрим"
+    evidence:
+      osis: Isa.15.6
+      excerpt: "воды Нимрима иссякли"
+  - id: a314765
+    en: "Paphos"
+    ru: "Паф"
+    evidence:
+      osis: Acts.13.6
+      excerpt: "Пройдя весь остров до Пафа"
+  - id: a880de2
+    en: "Pau"
+    ru: "Пау"
+    evidence:
+      osis: Gen.36.39
+      excerpt: "имя городу его Пау"
+  - id: ac79b33
+    en: "Rimmon-perez"
+    ru: "Римнон-Фарец"
+    evidence:
+      osis: Num.33.19
+      excerpt: "расположились станом в Римнон-Фареце"
+  - id: a98b02e
+    en: "Sela 1"
+    ru: "Села"
+    evidence:
+      osis: Judg.1.36
+      excerpt: "и от Селы простирались"
+  - id: abe40d1
+    en: "Tahath"
+    ru: "Тахаф"
+    evidence:
+      osis: Num.33.26
+      excerpt: "расположились станом в Тахафе"
+  - id: a0c97c0
+    en: "Tel-harsha"
+    ru: "Тел-Харша"
+    evidence:
+      osis: Ezra.2.59
+      excerpt: "из Тел-Мелаха, Тел-Харши"
+  - id: a944b90
+    en: "Terah"
+    ru: "Тарах"
+    evidence:
+      osis: Num.33.27
+      excerpt: "расположились станом в Тарахе"
+  - id: af55829
+    en: "Uphaz"
+    ru: "Уфаз"
+    evidence:
+      osis: Jer.10.9
+      excerpt: "золото - из Уфаза"
+  - id: a0c4f5e
+    en: "Zaanannim"
+    ru: "Цананним"
+    evidence:
+      osis: Josh.19.33
+      excerpt: "от дубравы, что в Цананниме"
+  - id: a1c6a50
+    en: "Zalmonah"
+    ru: "Салмона"
+    evidence:
+      osis: Num.33.41
+      excerpt: "расположились станом в Салмоне"
+  - id: a51d1fa
+    en: "Abel-shittim"
+    ru: "Аве-Ситтим"
+    evidence:
+      osis: Num.33.49
+      excerpt: "до Аве-Ситтима"
+  - id: a2c780b
+    en: "Adami-nekeb"
+    ru: "Адами-Некев"
+    evidence:
+      osis: Josh.19.33
+      excerpt: "к Адами-Некеву"
+  - id: a36348c
+    en: "Ahlab"
+    ru: "Ахлав"
+    evidence:
+      osis: Judg.1.31
+      excerpt: "Сидона и Ахлава"
+  - id: af9a894
+    en: "Allon-bacuth"
+    ru: "Дуб плача"
+    evidence:
+      osis: Gen.35.8
+      excerpt: "назвал Иаков дубом плача"
+  - id: a70ac98
+    en: "Abel-mizraim"
+    ru: "Плач Египтян"
+    evidence:
+      osis: Gen.50.11
+      excerpt: "наречено имя месту тому: плач Египтян"
+  - id: abf0690
+    en: "Ge-harashim"
+    ru: "Долина плотников"
+    evidence:
+      osis: 1Chr.4.14
+      excerpt: "родоначальника долины плотников"
+  - id: af7eb92
+    en: "Eglath-shelishiyah"
+    ru: "Третья Эгла"
+    evidence:
+      osis: Isa.15.5
+      excerpt: "до третьей Эглы"
+  - id: ab428de
+    en: "Amana"
+    ru: "Амана"
+    evidence:
+      osis: Song.4.8
+      excerpt: "спеши с вершины Аманы"
+  - id: a79606b
+    en: "Ananiah"
+    ru: "Анания"
+    evidence:
+      osis: Neh.11.32
+      excerpt: "в Анафофе, Нове, Анании"
+  - id: aec9225
+    en: "Ashkenaz"
+    ru: "Аскеназ"
+    evidence:
+      osis: Jer.51.27
+      excerpt: "Араратские, Мидийские и Аскеназские"
+  - id: a2c34ce
+    en: "Atharim"
+    ru: "Афарим"
+    evidence:
+      osis: Num.21.1
+      excerpt: "идет дорогою от Афарима"
+  - id: ad041dd
+    en: "Azal"
+    ru: "Асил"
+    evidence:
+      osis: Zech.14.5
+      excerpt: "будет простираться до Асила"
+  - id: a66f19c
+    en: "Baale-judah"
+    ru: "Ваал Иудин"
+    evidence:
+      osis: 2Sam.6.2
+      excerpt: "из Ваала Иудина"
+  - id: ad3d9fc
+    en: "Baal-shalishah"
+    ru: "Ваал-Шалиша"
+    evidence:
+      osis: 2Kgs.4.42
+      excerpt: "Пришел некто из Ваал-Шалиши"
+  - id: a800159
+    en: "Bealoth 2"
+    ru: "Баалоф"
+    evidence:
+      osis: 1Kgs.4.16
+      excerpt: "в земле Асировой и в Баалофе"
+  - id: a656cb6
+    en: "Beer 1"
+    ru: "Беэр"
+    evidence:
+      osis: Num.21.16
+      excerpt: "Отсюда отправились к Беэр"
+  - id: ac401ea
+    en: "Beer-elim"
+    ru: "Беэр-Елим"
+    evidence:
+      osis: Isa.15.8
+      excerpt: "до Беэр-Елима плач его"
+  - id: a6e060d
+    en: "Bethany 2"
+    ru: "Вифавара"
+    evidence:
+      osis: John.1.28
+      excerpt: "Это происходило в Вифаваре при Иордане"
+  - id: a0d1977
+    en: "Beth-barah"
+    ru: "Бефвара"
+    evidence:
+      osis: Judg.7.24
+      excerpt: "до Бефвары и Иордан"
+  - id: a83d789
+    en: "Beth-shittah"
+    ru: "Бефшитта"
+    evidence:
+      osis: Judg.7.22
+      excerpt: "бежало ополчение до Бефшитты"
+  - id: a55cec0
+    en: "Bethuel"
+    ru: "Вефуил"
+    evidence:
+      osis: 1Chr.4.30
+      excerpt: "в Вефуиле, в Хорме"
+  - id: ab624f3
+    en: "Bor-ashan"
+    ru: "Хорашан"
+    evidence:
+      osis: 1Sam.30.30
+      excerpt: "и в Хорашане"
+  - id: a087a14
+    en: "Buz"
+    ru: "Буз"
+    evidence:
+      osis: Jer.25.23
+      excerpt: "и Фему, и Буза"
+  - id: addb84c
+    en: "Casiphia"
+    ru: "Касифья"
+    evidence:
+      osis: Ezra.8.17
+      excerpt: "главному в местности Касифье"
+  - id: a70f9d3
+    en: "Cun"
+    ru: "Кун"
+    evidence:
+      osis: 1Chr.18.8
+      excerpt: "из Тивхавы и Куна"
+  - id: ae8d09d
+    en: "Dalmanutha"
+    ru: "Далмануфа"
+    evidence:
+      osis: Mark.8.10
+      excerpt: "прибыл в пределы Далмануфские"
+  - id: a971a54
+    en: "Dimnah"
+    ru: "Димна"
+    evidence:
+      osis: Josh.21.35
+      excerpt: "Димну и предместья ее"
+  - id: a3bcd66
+    en: "Dura"
+    ru: "Деир"
+    evidence:
+      osis: Dan.3.1
+      excerpt: "поставил его на поле Деире"
+  - id: a212ef7
+    en: "Ecbatana"
+    ru: "Екбатана"
+    evidence:
+      osis: Ezra.6.2
+      excerpt: "И найден в Екбатане во дворце"
+  - id: a30b045
+    en: "El-bethel"
+    ru: "Эл-Вефиль"
+    evidence:
+      osis: Gen.35.7
+      excerpt: "назвал сие место: Эл-Вефиль"
+  - id: a738bf1
+    en: "El-paran"
+    ru: "Эл-Фаран"
+    evidence:
+      osis: Gen.14.6
+      excerpt: "до Эл-Фарана, что при пустыне"
+  - id: ac25afc
+    en: "Ephah"
+    ru: "Ефа"
+    evidence:
+      osis: Isa.60.6
+      excerpt: "дромадеры из Мадиама и Ефы"
+  - id: ad4607c
+    en: "Gareb"
+    ru: "Холм Гарив"
+    evidence:
+      osis: Jer.31.39
+      excerpt: "до холма Гарива"
+  - id: a58df35
+    en: "Gebim"
+    ru: "Гевим"
+    evidence:
+      osis: Isa.10.31
+      excerpt: "жители Гевима спешат уходить"
+  - id: a71d79b
+    en: "Gihon 1"
+    ru: "Гихон"
+    evidence:
+      osis: Gen.2.13
+      excerpt: "Имя второй реки Гихон"
+  - id: a763368
+    en: "Gurbaal"
+    ru: "Гур-Ваал"
+    evidence:
+      osis: 2Chr.26.7
+      excerpt: "живущих в Гур-Ваале"
+  - id: ac5e5c4
+    en: "Havilah 2"
+    ru: "Хавила"
+    evidence:
+      osis: Gen.25.18
+      excerpt: "Они жили от Хавилы до Сура"
+  - id: a1d9047
+    en: "Havilah 3"
+    ru: "Хавила"
+    evidence:
+      osis: 1Sam.15.7
+      excerpt: "поразил Саул Амалика от Хавилы"
+  - id: a8a8e54
+    en: "Helbon"
+    ru: "Хелбон"
+    evidence:
+      osis: Ezek.27.18
+      excerpt: "торговал с тобою вином Хелбонским"
+  - id: a11bbbe
+    en: "Hierapolis"
+    ru: "Иераполь"
+    evidence:
+      osis: Col.4.13
+      excerpt: "находящихся в Лаодикии и Иераполе"
+  - id: aedf531
+    en: "Jabez"
+    ru: "Иабец"
+    evidence:
+      osis: 1Chr.2.55
+      excerpt: "живших в Иабеце"
+  - id: ab15bb3
+    en: "Japhia"
+    ru: "Иафия"
+    evidence:
+      osis: Josh.19.12
+      excerpt: "и восходит к Иафии"
+  - id: adbbb54
+    en: "Jotbah"
+    ru: "Ятба"
+    evidence:
+      osis: 2Kgs.21.19
+      excerpt: "дочь Харуца, из Ятбы"
+  - id: ad763b1
+    en: "Laban"
+    ru: "Лаван"
+    evidence:
+      osis: Deut.1.1
+      excerpt: "и Лаваном, и Асирофом"
+  - id: adaef13
+    en: "Lasha"
+    ru: "Лаша"
+    evidence:
+      osis: Gen.10.19
+      excerpt: "Адме и Цевоиму до Лаши"
+  - id: a19fd03
+    en: "Lycia"
+    ru: "Ликия"
+    evidence:
+      osis: Acts.27.5
+      excerpt: "прибыли в Миры Ликийские"
+  - id: a3b7885
+    en: "Machbenah"
+    ru: "Махбена"
+    evidence:
+      osis: 1Chr.2.49
+      excerpt: "Шеву, отца Махбены"
+  - id: ac2bb0c
+    en: "Makaz"
+    ru: "Макац"
+    evidence:
+      osis: 1Kgs.4.9
+      excerpt: "в Макаце и в Шаалбиме"
+  - id: ad04336
+    en: "Mareal"
+    ru: "Марала"
+    evidence:
+      osis: Josh.19.11
+      excerpt: "к морю и Марале"
+  - id: a1ba491
+    en: "Maroth"
+    ru: "Марофа"
+    evidence:
+      osis: Mic.1.12
+      excerpt: "жительница Марофы"
+  - id: a8c3105
+    en: "Mearah"
+    ru: "Меара"
+    evidence:
+      osis: Josh.13.4
+      excerpt: "от Меары Сидонской"
+  - id: aa87ef6
+    en: "Meconah"
+    ru: "Мехона"
+    evidence:
+      osis: Neh.11.28
+      excerpt: "в Секелаге, в Мехоне"
+  - id: a7d1972
+    en: "Me-jarkon"
+    ru: "Ме-Иаркон"
+    evidence:
+      osis: Josh.19.46
+      excerpt: "Ме-Иаркон и Ракон"
+  - id: a8dafd6
+    en: "Nahaliel"
+    ru: "Нагалиил"
+    evidence:
+      osis: Num.21.19
+      excerpt: "из Матанны в Нагалиил"
+  - id: acd682e
+    en: "Neballat"
+    ru: "Неваллат"
+    evidence:
+      osis: Neh.11.34
+      excerpt: "Хадиде, Цевоиме, Неваллате"
+  - id: a9bf50d
+    en: "Nobah 2"
+    ru: "Нова"
+    evidence:
+      osis: Judg.8.11
+      excerpt: "на восток от Новы и Иогбеги"
+  - id: a938779
+    en: "Parvaim"
+    ru: "Парваим"
+    evidence:
+      osis: 2Chr.3.6
+      excerpt: "золото Парваимское"
+  - id: a2cd991
+    en: "Pi-beseth"
+    ru: "Бубаст"
+    evidence:
+      osis: Ezek.30.17
+      excerpt: "Молодые люди Она и Бубаста"
+  - id: a19b076
+    en: "Pishon"
+    ru: "Фисон"
+    evidence:
+      osis: Gen.2.11
+      excerpt: "Имя одной Фисон"
+  - id: a4488e9
+    en: "Puteoli"
+    ru: "Путеол"
+    evidence:
+      osis: Acts.28.13
+      excerpt: "прибыли на второй день в Путеол"
+  - id: a57bb2e
+    en: "Raamah"
+    ru: "Раема"
+    evidence:
+      osis: Ezek.27.22
+      excerpt: "Купцы из Савы и Раемы"
+  - id: a446973
+    en: "Racal"
+    ru: "Рахал"
+    evidence:
+      osis: 1Sam.30.29
+      excerpt: "и в Рахале"
+  - id: ac95bd8
+    en: "Riblah 2"
+    ru: "Рибла"
+    evidence:
+      osis: Num.34.11
+      excerpt: "пойдет граница к Рибле"
+  - id: a897bdb
+    en: "Rock of Escape"
+    ru: "Села-Гаммахлекоф"
+    evidence:
+      osis: 1Sam.23.28
+      excerpt: "назвали это место: Села-Гаммахлекоф"
+  - id: a702ab6
+    en: "Sea of Egypt"
+    ru: "море Египетское"
+    evidence:
+      osis: Isa.11.15
+      excerpt: "залив моря Египетского"
+  - id: ad259d1
+    en: "Sea of Jazer"
+    ru: "озеро Иазер"
+    evidence:
+      osis: Jer.48.32
+      excerpt: "достигали до озера Иазера"
+  - id: a6343cc
+    en: "Sela 3"
+    ru: "Села"
+    evidence:
+      osis: Isa.16.1
+      excerpt: "из Селы в пустыне"
+  - id: a5b01f4
+    en: "Shahazumah"
+    ru: "Шагацима"
+    evidence:
+      osis: Josh.19.22
+      excerpt: "к Фавору и Шагациме"
+  - id: a7b3f5d
+    en: "Shaphir"
+    ru: "Шафир"
+    evidence:
+      osis: Mic.1.11
+      excerpt: "жительницы Шафира"
+  - id: ab56451
+    en: "Silla"
+    ru: "Силла"
+    evidence:
+      osis: 2Kgs.12.20
+      excerpt: "на дороге к Силле"
+  - id: af725bb
+    en: "Suph"
+    ru: "Суф"
+    evidence:
+      osis: Deut.1.1
+      excerpt: "на равнине против Суфа"
+  - id: a5d37f9
+    en: "Taanath-shiloh"
+    ru: "Фаанаф-Силом"
+    evidence:
+      osis: Josh.16.6
+      excerpt: "к восточной стороне Фаанаф-Силома"
+  - id: ab066d7
+    en: "Tamar 1"
+    ru: "Фадмор"
+    evidence:
+      osis: 1Kgs.9.18
+      excerpt: "и Ваалаф и Фадмор в пустыне"
+  - id: a6f61d3
+    en: "Trogyllium"
+    ru: "Трогиллий"
+    evidence:
+      osis: Acts.20.15
+      excerpt: "побывав в Трогиллии"
+  - id: a217cc5
+    en: "Uzal"
+    ru: "Узал"
+    evidence:
+      osis: Ezek.27.19
+      excerpt: "Дан и Иаван из Узала"
+  - id: a7c5927
+    en: "Valley of Zeboim"
+    ru: "долина Цевоим"
+    evidence:
+      osis: 1Sam.13.18
+      excerpt: "к границе долины Цевоим"
+  - id: a6bf8d4
+    en: "Valley of Zephathah"
+    ru: "долина Цефата"
+    evidence:
+      osis: 2Chr.14.10
+      excerpt: "на долине Цефата у Мареши"
+  - id: a07ae2d
+    en: "Zeredah 1"
+    ru: "Цареда"
+    evidence:
+      osis: 1Kgs.11.26
+      excerpt: "Ефремлянин из Цареды"
+  - id: a0bccbd
+    en: "Zererah"
+    ru: "Царера"
+    evidence:
+      osis: Judg.7.22
+      excerpt: "к Царере"
+  - id: a5bbf9c
+    en: "Zimri"
+    ru: "Зимврия"
+    evidence:
+      osis: Jer.25.25
+      excerpt: "всех царей Зимврии"
+  - id: a4446f1
+    en: "Ziz"
+    ru: "Циц"
+    evidence:
+      osis: 2Chr.20.16
+      excerpt: "всходят на возвышенность Циц"
+  - id: a0f88fb
+    en: "Brook of the Willows"
+    ru: "река Аравийская"
+    evidence:
+      osis: Isa.15.7
+      excerpt: "за реку Аравийскую"
+  - id: a3bba31
+    en: "Gibeah 3"
+    ru: "Холм Финееса"
+    evidence:
+      osis: Josh.24.33
+      excerpt: "на холме Финееса"
+  - id: a26921e
+    en: "Enam"
+    ru: "Гаенам"
+    evidence:
+      osis: Josh.15.34
+      excerpt: "Таппуах и Гаенам"
