@@ -29,7 +29,13 @@ const localized = z.object({ en: z.string().min(1), ru: z.string().min(1) }).cat
 
 export const PlaceNamesFile = z.object({
   places: z.array(
-    z.object({ id: z.string().regex(/^a[0-9a-f]{6}$/), en: z.string(), ru: z.string().min(1) }),
+    z.strictObject({
+      id: z.string().regex(/^a[0-9a-f]{6}$/),
+      en: z.string(),
+      ru: z.string().min(1),
+      /** Where the Synodal form was read: a verse and a verbatim excerpt (≤ 10 words). */
+      evidence: z.strictObject({ osis, excerpt: z.string().min(1).max(160) }).optional(),
+    }),
   ),
 });
 
