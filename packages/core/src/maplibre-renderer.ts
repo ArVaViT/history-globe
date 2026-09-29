@@ -25,7 +25,9 @@ export class MapLibreRenderer implements Renderer {
     pick: new Set(),
     hover: new Set(),
     cameraChanged: new Set(),
+    ready: new Set(),
   };
+  private pendingYear: number | null = null;
   private pending: (() => void)[] = [];
   private loaded = false;
 
@@ -62,6 +64,9 @@ export class MapLibreRenderer implements Renderer {
       for (const run of this.pending) run();
       this.pending = [];
     });
+    this.map.once("idle", () => {
+      for (const h of this.handlers.ready) h();
+    });
 
     for (const layer of PLACE_LAYERS) {
       this.map.on("click", layer, (e: MapLayerMouseEvent) => {
@@ -72,16 +77,14 @@ export class MapLibreRenderer implements Renderer {
         this.map.getCanvas().style.cursor = "pointer";
         const f = e.features?.[0];
         const fid = typeof f?.id === "number" ? f.id : null;
-        if (fid !== this.hovered) {
-          this.setHoverState(fid);
-          const pid = (f?.properties as { id?: string } | undefined)?.id ?? null;
-          for (const h of this.handlers.hover) h(pid);
-        }
+        if (fid !== this.hovered) this.setHoverState(fid);
+        const pid = (f?.properties as { id?: string } | undefined)?.id ?? null;
+        for (const h of this.handlers.hover) h(pid, { x: e.point.x, y: e.point.y });
       });
       this.map.on("mouseleave", layer, () => {
         this.map.getCanvas().style.cursor = "";
         this.setHoverState(null);
-        for (const h of this.handlers.hover) h(null);
+        for (const h of this.handlers.hover) h(null, null);
       });
     }
     this.map.on("moveend", () => {
@@ -103,9 +106,18 @@ export class MapLibreRenderer implements Renderer {
   }
 
   setYear(year: number): void {
-    // Before the style loads, the value from style.state is used; set it again after.
-    this.whenLoaded(() => {
-      this.map.setGlobalStateProperty("year", year);
+    // Dragging the slider fires many input events per frame; apply at most one year per
+    // animation frame so the map re-filters once, not dozens of times.
+    const schedule = this.pendingYear === null;
+    this.pendingYear = year;
+    if (!schedule) return;
+    requestAnimationFrame(() => {
+      const y = this.pendingYear;
+      this.pendingYear = null;
+      if (y === null) return;
+      this.whenLoaded(() => {
+        this.map.setGlobalStateProperty("year", y);
+      });
     });
   }
 

@@ -1,6 +1,7 @@
 import type { Locale } from "@hg/model";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { HoverTip } from "./components/HoverTip";
 import { LayersPanel } from "./components/LayersPanel";
 import { Panel } from "./components/Panel";
 import { PlaceCard } from "./components/PlaceCard";
@@ -23,6 +24,8 @@ export function App() {
   const [data, setData] = useState<LoadedData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [playing, setPlaying] = useState(false);
+  const [ready, setReady] = useState(false);
+  const [hover, setHover] = useState<{ id: string; at: { x: number; y: number } } | null>(null);
   const globe = useGlobe(container, data, INITIAL);
   const engine = globe?.engine;
   const state = useGlobeState(engine);
@@ -60,6 +63,20 @@ export function App() {
       offCam();
       offState();
       window.clearTimeout(timer);
+    };
+  }, [globe]);
+
+  useEffect(() => {
+    if (!globe) return;
+    const offReady = globe.renderer.on("ready", () => {
+      setReady(true);
+    });
+    const offHover = globe.renderer.on("hover", (id, at) => {
+      setHover(id && at ? { id, at } : null);
+    });
+    return () => {
+      offReady();
+      offHover();
     };
   }, [globe]);
 
@@ -107,6 +124,7 @@ export function App() {
     };
   }, [globe]);
 
+  const hoverPlace = hover ? data?.byId.get(hover.id)?.props : undefined;
   const selected = state.selectedPlace ? data?.byId.get(state.selectedPlace)?.props : undefined;
   const tour = state.tour ? data?.tours.find((x) => x.id === state.tour?.id) : undefined;
   const tourStop = tour && state.tour ? tour.stops[state.tour.step] : undefined;
@@ -117,6 +135,17 @@ export function App() {
       <div className="absolute inset-0">
         <div ref={container} className="h-full w-full" />
       </div>
+
+      {!ready && !error && (
+        <div className="pointer-events-none absolute inset-0 grid place-items-center">
+          <div className="flex items-center gap-3 rounded-full bg-paper/90 px-5 py-2.5 text-[14px] text-ink shadow-lg">
+            <span className="size-3 animate-ping rounded-full bg-accent" aria-hidden />
+            {t("loading")}
+          </div>
+        </div>
+      )}
+
+      {hoverPlace && hover && <HoverTip place={hoverPlace} at={hover.at} locale={state.locale} />}
 
       {error && (
         <Panel className="absolute top-1/2 left-1/2 -translate-1/2 px-6 py-4 text-ink">

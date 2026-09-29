@@ -18,6 +18,7 @@ export class FakeRenderer implements Renderer {
     pick: new Set(),
     hover: new Set(),
     cameraChanged: new Set(),
+    ready: new Set(),
   };
 
   setYear(year: number): void {
