@@ -106,12 +106,17 @@ interface Ref {
   readonly verse: number | null;
 }
 
+const OSIS_ONE = /^([1-3]?[A-Z][A-Za-z]+)\.([1-9]\d*)(?:\.([1-9]\d*))?$/;
+
 function parseOne(osis: string): Ref {
-  const [book = "", chapter, verse] = osis.split(".");
-  if (!(book in BOOKS) || chapter === undefined)
-    throw new SyntaxError(`not an OSIS reference: "${osis}"`);
+  const m = OSIS_ONE.exec(osis);
+  const [, book = "", chapter = "", verse] = m ?? [];
+  if (!m || !(book in BOOKS)) throw new SyntaxError(`not an OSIS reference: "${osis}"`);
   return { book, chapter: Number(chapter), verse: verse === undefined ? null : Number(verse) };
 }
+
+/** Chapter.verse as one comparable number (no chapter has 1000 verses). */
+const position = (r: Ref) => r.chapter * 1000 + (r.verse ?? 0);
 
 /**
  * "Acts.13.4" → "Деян 13:4"; "Acts.13.4-Acts.14.26" → "Деян 13:4–14:26".
@@ -119,7 +124,9 @@ function parseOne(osis: string): Ref {
  * is converted elsewhere, never silently.
  */
 export function formatRef(osis: string, locale: Locale): string {
-  const [startText, endText] = osis.split("-");
+  const parts = osis.split("-");
+  if (parts.length > 2) throw new SyntaxError(`not an OSIS reference: "${osis}"`);
+  const [startText, endText] = parts;
   const start = parseOne(startText ?? "");
   const books = BOOKS[start.book];
   if (!books) throw new SyntaxError(`unknown book in "${osis}"`);
@@ -128,6 +135,9 @@ export function formatRef(osis: string, locale: Locale): string {
   if (endText === undefined) return head;
   const end = parseOne(endText);
   if (end.book !== start.book) throw new SyntaxError(`cross-book range: "${osis}"`);
+  // Both ends name verses, or both name whole chapters; the range runs forwards.
+  if ((start.verse === null) !== (end.verse === null) || position(end) <= position(start))
+    throw new SyntaxError(`not a forward range: "${osis}"`);
   const tail =
     end.chapter === start.chapter
       ? `${end.verse ?? ""}`

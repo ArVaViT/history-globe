@@ -18,6 +18,27 @@ describe("formatRef", () => {
     expect(() => formatRef("Matt.1.1-Mark.1.1", "ru")).toThrow(SyntaxError);
   });
 
+  it.each([
+    "Acts.x",
+    "Acts.",
+    "Acts.0.1",
+    "Acts.13.0",
+    "Acts.0.99999",
+    "Acts.13.4.9",
+    "Acts.13.4-Acts.13.2",
+    "Acts.13.4-Acts.13.4",
+    "Acts.13.4-Acts.13",
+    "Acts.13-Acts.13.9",
+    "Acts.13.1-Acts.13.2-Acts.13.3",
+    "acts.13.4",
+  ])("rejects %s", (osis) => {
+    expect(() => formatRef(osis, "en")).toThrow(SyntaxError);
+  });
+
+  it("accepts whole-chapter ranges", () => {
+    expect(formatRef("Acts.13-Acts.14", "en")).toBe("Acts 13–14");
+  });
+
   it("knows all 27 New Testament books", () => {
     expect(NT_BOOKS.size).toBe(27);
   });
