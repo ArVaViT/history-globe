@@ -1,4 +1,4 @@
-import type { PlaceInfo, Tour } from "@hg/core";
+import { NT_FROM, type PlaceInfo, type Tour } from "@hg/core";
 import type { ContentRelease } from "@hg/model";
 import type { FeatureCollection, Point } from "geojson";
 
@@ -25,6 +25,11 @@ export interface Site {
   /** null when OpenBible has rated none of the candidates. */
   readonly share: number | null;
   readonly at: readonly [number, number];
+}
+
+/** Named only in the New Testament, and the year is before its events: shown faded. */
+export function beforeItsTime(place: Pick<PlaceProps, "ot">, year: number): boolean {
+  return place.ot === 0 && year < NT_FROM;
 }
 
 export interface LoadedData {

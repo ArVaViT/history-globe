@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { groupSites, searchPlaces, type LoadedData, type PlaceProps } from "./data";
+import { beforeItsTime, groupSites, searchPlaces, type LoadedData, type PlaceProps } from "./data";
 
 function place(
   id: string,
@@ -91,5 +91,13 @@ describe("groupSites", () => {
       ["Y", null],
       ["Z", null],
     ]);
+  });
+});
+
+describe("beforeItsTime", () => {
+  it("fades New Testament-only places before 6 BC, and nothing else", () => {
+    expect(beforeItsTime({ ot: 0 }, -1200)).toBe(true);
+    expect(beforeItsTime({ ot: 0 }, 30)).toBe(false);
+    expect(beforeItsTime({ ot: 3 }, -1200)).toBe(false);
   });
 });

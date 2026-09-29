@@ -1,7 +1,7 @@
 import { formatRef, type Locale } from "@hg/model";
 import { MapPin, X, ZoomIn } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import type { PlaceProps, Site } from "../data";
+import { beforeItsTime, type PlaceProps, type Site } from "../data";
 import { Panel } from "./Panel";
 
 const VERSES_SHOWN = 10;
@@ -18,6 +18,7 @@ export function PlaceCard({
   place,
   sites,
   locale,
+  year,
   onClose,
   onZoom,
   onFlyTo,
@@ -25,6 +26,7 @@ export function PlaceCard({
   place: PlaceProps;
   sites: readonly Site[];
   locale: Locale;
+  year: number;
   onClose: () => void;
   onZoom: () => void;
   onFlyTo: (at: readonly [number, number]) => void;
@@ -110,6 +112,12 @@ export function PlaceCard({
           <div className="mt-1.5 text-[10.5px] leading-snug text-ink-soft">
             {t("place.sites_note")}
           </div>
+        </div>
+      )}
+
+      {beforeItsTime(place, year) && (
+        <div className="mx-5 mt-3 text-[12.5px] leading-snug text-ink-soft italic">
+          {t("place.nt_only")}
         </div>
       )}
 

@@ -217,6 +217,7 @@ export function App() {
               ids={inView}
               data={data}
               locale={state.locale}
+              year={state.year}
               selected={state.selectedPlace}
               onSelect={(id) => {
                 engine.selectPlace(id);
@@ -240,6 +241,7 @@ export function App() {
                   place={selected}
                   sites={data.sites.get(selected.id) ?? []}
                   locale={state.locale}
+                  year={state.year}
                   onClose={() => {
                     engine.selectPlace(null);
                   }}

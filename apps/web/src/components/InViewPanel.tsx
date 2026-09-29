@@ -1,6 +1,6 @@
 import type { Locale } from "@hg/model";
 import { useTranslation } from "react-i18next";
-import type { LoadedData } from "../data";
+import { beforeItsTime, type LoadedData } from "../data";
 import { Panel, PanelTitle } from "./Panel";
 
 const SHOWN = 10;
@@ -13,12 +13,14 @@ export function InViewPanel({
   ids,
   data,
   locale,
+  year,
   selected,
   onSelect,
 }: {
   ids: readonly string[];
   data: LoadedData;
   locale: Locale;
+  year: number;
   selected: string | null;
   onSelect: (id: string) => void;
 }) {
@@ -26,7 +28,11 @@ export function InViewPanel({
   const places = ids
     .map((id) => data.byId.get(id)?.props)
     .filter((p) => p !== undefined)
-    .sort((a, b) => b.verses - a.verses)
+    // Faded places (named only in the New Testament, before its events) go last.
+    .sort(
+      (a, b) =>
+        Number(beforeItsTime(a, year)) - Number(beforeItsTime(b, year)) || b.verses - a.verses,
+    )
     .slice(0, SHOWN);
   if (places.length === 0) return null;
 
@@ -41,7 +47,7 @@ export function InViewPanel({
                 onSelect(p.id);
               }}
               aria-current={p.id === selected}
-              className={`flex w-full items-baseline justify-between gap-3 px-4 py-1 text-left hover:bg-paper-2 focus-visible:bg-paper-2 focus-visible:outline-none ${p.id === selected ? "text-accent" : "text-ink"}`}
+              className={`flex w-full items-baseline justify-between gap-3 px-4 py-1 text-left hover:bg-paper-2 focus-visible:bg-paper-2 focus-visible:outline-none ${p.id === selected ? "text-accent" : "text-ink"} ${beforeItsTime(p, year) ? "opacity-50" : ""}`}
             >
               <span className="truncate font-serif text-[14.5px]">
                 {locale === "ru" ? (p.name_ru ?? p.name) : p.name}
