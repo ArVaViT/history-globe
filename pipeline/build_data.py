@@ -235,6 +235,10 @@ def assert_no_banned_points(collections: dict[str, dict], modern: dict[str, dict
         raise SystemExit("points copied from OSM or Google (ADR 0008):\n" + "\n".join(hits[:20]))
 
 
+def rank_of(weighted_mentions: int) -> int:
+    return 0 if weighted_mentions >= 40 else 1 if weighted_mentions >= 10 else 2 if weighted_mentions >= 3 else 3
+
+
 def build_places(
     records: list[dict], modern: dict[str, dict], sites_per_place: dict[str, int], river_places: set[str]
 ) -> tuple[dict, dict, list[str]]:
@@ -282,8 +286,10 @@ def build_places(
                 "verses": len(verses),
                 "nt": nt,
                 "ot": len(verses) - nt,
-                # 0 = most important. Used for label priority and zoom thresholds.
-                "rank": 0 if len(verses) >= 40 else 1 if len(verses) >= 10 else 2 if len(verses) >= 3 else 3,
+                # 0 = most important. Used for label priority and zoom thresholds. The New
+                # Testament is about a third of the Old: its mentions weigh three times, so
+                # Athens or Philippi are not ranked below a village named in two lists.
+                "rank": rank_of(len(verses) - nt + 3 * nt),
                 "where": TAG_RE.sub("", ids[0].get("description", "")),
                 "osis": [v["osis"] for v in verses[:12]],
                 "coord": coord_source,

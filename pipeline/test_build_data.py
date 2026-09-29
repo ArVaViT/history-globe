@@ -2,7 +2,7 @@
 
 import unittest
 
-from build_data import banned_lonlats, coord_banned
+from build_data import banned_lonlats, coord_banned, rank_of
 
 MODERN = {
     "m_osm": {"lonlat": "35.1,31.1", "coordinates_source": {"type": "osm", "geometry_credit": "osm"}},
@@ -36,6 +36,11 @@ class CoordBanned(unittest.TestCase):
 
     def test_wikidata_point_is_fine(self) -> None:
         self.assertFalse(coord_banned(res("m_wd", "35.3,31.3"), MODERN, BANNED))
+
+
+class Rank(unittest.TestCase):
+    def test_thresholds(self) -> None:
+        self.assertEqual([rank_of(n) for n in (40, 39, 10, 9, 3, 2)], [0, 1, 1, 2, 2, 3])
 
 
 if __name__ == "__main__":
