@@ -197,6 +197,16 @@ export class MapLibreRenderer implements Renderer {
     };
   }
 
+  visiblePlaces(): string[] {
+    if (!this.loaded) return [];
+    const ids = new Set<string>();
+    for (const f of this.map.queryRenderedFeatures({ layers: PLACE_LAYERS })) {
+      const id = (f.properties as { id?: string } | null)?.id;
+      if (id) ids.add(id);
+    }
+    return [...ids];
+  }
+
   on<E extends keyof RendererEvents>(event: E, handler: RendererEvents[E]): () => void {
     const set = this.handlers[event] as Set<RendererEvents[E]>;
     set.add(handler);

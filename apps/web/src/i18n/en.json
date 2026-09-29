@@ -48,5 +48,10 @@
     "river": "river",
     "mountain": "mountain",
     "island": "island"
+  },
+  "inview": {
+    "title": "In view",
+    "verses_one": "{{count}} verse",
+    "verses_other": "{{count}} verses"
   }
 }

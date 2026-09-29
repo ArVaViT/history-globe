@@ -33,6 +33,8 @@ export interface Renderer {
   flyTo(target: Partial<Camera> & { readonly center: LonLat }, durationMs?: number): void;
   setRoute(coordinates: readonly LonLat[], currentIndex: number): void;
   getCamera(): Camera;
+  /** Ids of places currently drawn on screen (for the accessible "in view" list). */
+  visiblePlaces(): string[];
   on<E extends keyof RendererEvents>(event: E, handler: RendererEvents[E]): () => void;
   destroy(): void;
 }

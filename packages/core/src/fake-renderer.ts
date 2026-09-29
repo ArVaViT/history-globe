@@ -43,6 +43,11 @@ export class FakeRenderer implements Renderer {
   getCamera(): Camera {
     return this.camera;
   }
+  /** Tests set this to simulate what is on screen. */
+  onScreen: string[] = [];
+  visiblePlaces(): string[] {
+    return this.onScreen;
+  }
   on<E extends keyof RendererEvents>(event: E, handler: RendererEvents[E]): () => void {
     const set = this.handlers[event] as Set<RendererEvents[E]>;
     set.add(handler);

@@ -49,5 +49,11 @@
     "river": "река",
     "mountain": "гора",
     "island": "остров"
+  },
+  "inview": {
+    "title": "В кадре",
+    "verses_one": "{{count}} стих",
+    "verses_few": "{{count}} стиха",
+    "verses_many": "{{count}} стихов"
   }
 }

@@ -2,6 +2,7 @@ import type { Locale } from "@hg/model";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { HoverTip } from "./components/HoverTip";
+import { InViewPanel } from "./components/InViewPanel";
 import { LayersPanel } from "./components/LayersPanel";
 import { Panel } from "./components/Panel";
 import { PlaceCard } from "./components/PlaceCard";
@@ -26,6 +27,7 @@ export function App() {
   const [playing, setPlaying] = useState(false);
   const [ready, setReady] = useState(false);
   const [hover, setHover] = useState<{ id: string; at: { x: number; y: number } } | null>(null);
+  const [inView, setInView] = useState<string[]>([]);
   const globe = useGlobe(container, data, INITIAL);
   const engine = globe?.engine;
   const state = useGlobeState(engine);
@@ -68,14 +70,20 @@ export function App() {
 
   useEffect(() => {
     if (!globe) return;
+    const refreshInView = () => {
+      setInView(globe.renderer.visiblePlaces());
+    };
     const offReady = globe.renderer.on("ready", () => {
       setReady(true);
+      refreshInView();
     });
+    const offCamera = globe.renderer.on("cameraChanged", refreshInView);
     const offHover = globe.renderer.on("hover", (id, at) => {
       setHover(id && at ? { id, at } : null);
     });
     return () => {
       offReady();
+      offCamera();
       offHover();
     };
   }, [globe]);
@@ -175,6 +183,15 @@ export function App() {
               onStart={(id) => {
                 setPlaying(false);
                 engine.startTour(id);
+              }}
+            />
+            <InViewPanel
+              ids={inView}
+              data={data}
+              locale={state.locale}
+              selected={state.selectedPlace}
+              onSelect={(id) => {
+                engine.selectPlace(id);
               }}
             />
           </div>
