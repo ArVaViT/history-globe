@@ -150,3 +150,20 @@ export function formatRef(osis: string, locale: Locale): string {
       : `${end.chapter}${end.verse === null ? "" : `:${end.verse}`}`;
   return `${head}–${tail}`;
 }
+
+/** Whether an OSIS verse or range ("Acts.13.1-Acts.13.3") contains one of `verses`. */
+export function refCovers(ref: string, verses: ReadonlySet<string>): boolean {
+  const at = (osis: string) => {
+    const [book = "", c = "0", v] = osis.split(".");
+    return { book, n: Number(c) * 1000 + (v === undefined ? 0 : Number(v)) };
+  };
+  const [first = "", last = first] = ref.split("-");
+  const lo = at(first);
+  const hiRef = at(last);
+  // A whole-chapter end ("Acts.13") runs to the end of that chapter.
+  const hi = last.split(".").length === 2 ? hiRef.n + 999 : hiRef.n;
+  return [...verses].some((v) => {
+    const p = at(v);
+    return p.book === lo.book && p.n >= lo.n && p.n <= hi;
+  });
+}

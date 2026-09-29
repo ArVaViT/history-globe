@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { formatRef, NT_BOOKS } from "./scripture.ts";
+import { formatRef, NT_BOOKS, refCovers } from "./scripture.ts";
 
 describe("formatRef", () => {
   it.each([
@@ -52,5 +52,25 @@ describe("formatRef", () => {
 
   it("knows all 27 New Testament books", () => {
     expect(NT_BOOKS.size).toBe(27);
+  });
+});
+
+describe("refCovers", () => {
+  const caesarea = new Set(["Acts.21.8", "Acts.25.13", "Acts.25.24"]);
+
+  it("finds a tagged verse inside a range, within or across chapters", () => {
+    expect(refCovers("Acts.21.8-Acts.21.14", caesarea)).toBe(true);
+    expect(refCovers("Acts.24.1-Acts.25.13", caesarea)).toBe(true);
+    expect(refCovers("Acts.25.24", caesarea)).toBe(true);
+  });
+
+  it("finds nothing outside the range or in another book", () => {
+    expect(refCovers("Acts.27.1-Acts.27.2", caesarea)).toBe(false);
+    expect(refCovers("Rom.25.13", caesarea)).toBe(false);
+  });
+
+  it("reads a whole-chapter end as the end of that chapter", () => {
+    expect(refCovers("Acts.25", caesarea)).toBe(true);
+    expect(refCovers("Acts.24-Acts.25", caesarea)).toBe(true);
   });
 });
