@@ -1,5 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { beforeItsTime, groupSites, searchPlaces, type LoadedData, type PlaceProps } from "./data";
+import {
+  alsoHere,
+  markRussianDuplicates,
+  beforeItsTime,
+  groupSites,
+  searchPlaces,
+  type LoadedData,
+  type PlaceProps,
+} from "./data";
 
 function place(
   id: string,
@@ -110,5 +118,50 @@ describe("beforeItsTime", () => {
     expect(beforeItsTime({ ot: 0 }, -1200)).toBe(true);
     expect(beforeItsTime({ ot: 0 }, 30)).toBe(false);
     expect(beforeItsTime({ ot: 3 }, -1200)).toBe(false);
+  });
+});
+
+describe("alsoHere", () => {
+  it("lists the other names on the same point, not the same name twice", () => {
+    const at = (props: PlaceProps, coordinates: number[]) => ({
+      geometry: { type: "Point" as const, coordinates },
+      properties: props,
+    });
+    const got = alsoHere([
+      at(place("b1", "Babylon", "Вавилон", 0, 296), [44.4, 32.5]),
+      at(place("b2", "Babylonia", "Вавилония", 1, 15), [44.4, 32.5]),
+      at(place("b3", "Babylon", "Вавилон", 3, 2), [44.4, 32.5]),
+      at(place("j1", "Jerusalem", "Иерусалим", 0, 800), [35.2, 31.8]),
+    ]);
+    expect(got.get("b1")).toEqual(["b2"]);
+    expect(got.get("b2")).toEqual(["b1"]);
+    expect(got.has("j1")).toBe(false);
+    // Babel is "Вавилон" in Russian too: not listed on Babylon.
+    const babel = alsoHere([
+      at(place("b1", "Babylon", "Вавилон", 0, 296), [1, 1]),
+      at(place("b4", "Babel", "Вавилон", 3, 2), [1, 1]),
+    ]);
+    expect(babel.has("b1")).toBe(false);
+  });
+});
+
+describe("markRussianDuplicates", () => {
+  it("keeps the most mentioned of one Russian name on one point", () => {
+    const features = [
+      {
+        geometry: { type: "Point" as const, coordinates: [1, 1] },
+        properties: place("b4", "Babel", "Вавилон", 3, 2),
+      },
+      {
+        geometry: { type: "Point" as const, coordinates: [1, 1] },
+        properties: place("b1", "Babylon", "Вавилон", 0, 296),
+      },
+      {
+        geometry: { type: "Point" as const, coordinates: [2, 2] },
+        properties: place("b9", "Babel", "Вавилон", 3, 1),
+      },
+    ];
+    expect([...markRussianDuplicates(features)]).toEqual(["b4"]);
+    expect(features.map((f) => Boolean(f.properties.dup_ru))).toEqual([true, false, false]);
   });
 });

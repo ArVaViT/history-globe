@@ -28,7 +28,7 @@ export function InViewPanel({
   const places = ids
     .map((id) => data.byId.get(id)?.props)
     .filter((p) => p !== undefined)
-    .filter((p) => !p.dup)
+    .filter((p) => !p.dup && !(locale === "ru" && p.dup_ru))
     // Faded places (named only in the New Testament, before its events) go last.
     .sort(
       (a, b) =>

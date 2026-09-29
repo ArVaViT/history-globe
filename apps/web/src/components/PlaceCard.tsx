@@ -17,15 +17,20 @@ function safeRef(osis: string, locale: Locale): string {
 export function PlaceCard({
   place,
   sites,
+  alsoHere,
   locale,
   year,
   onClose,
+  onSelect,
   onZoom,
   onFlyTo,
 }: {
   place: PlaceProps;
   sites: readonly Site[];
+  /** Other records on the same point under another name. */
+  alsoHere: readonly PlaceProps[];
   locale: Locale;
+  onSelect: (placeId: string) => void;
   year: number;
   onClose: () => void;
   onZoom: () => void;
@@ -128,6 +133,25 @@ export function PlaceCard({
           <MapPin className="size-4 text-accent" aria-hidden />
           <span className="text-ink-soft">{t("place.today")}:</span>{" "}
           {ru ? (place.where_ru ?? place.where) : place.where}
+        </div>
+      )}
+
+      {alsoHere.length > 0 && (
+        <div className="px-5 pt-2 text-[13px] leading-snug text-ink">
+          <span className="text-ink-soft">{t("place.also_here")}:</span>{" "}
+          {alsoHere.slice(0, 5).map((p, i) => (
+            <span key={p.id}>
+              {i > 0 && ", "}
+              <button
+                onClick={() => {
+                  onSelect(p.id);
+                }}
+                className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
+              >
+                {ru ? (p.name_ru ?? p.name) : p.name}
+              </button>
+            </span>
+          ))}
         </div>
       )}
 

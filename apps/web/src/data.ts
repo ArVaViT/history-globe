@@ -14,6 +14,8 @@ export interface PlaceProps {
   readonly disputed: boolean;
   /** A second record of the same name on the same point: dot only, not listed twice. */
   readonly dup?: boolean;
+  /** The same in Russian: another record on this point has the same Russian name. */
+  readonly dup_ru?: boolean;
   readonly verses: number;
   readonly nt: number;
   readonly ot: number;
@@ -46,6 +48,8 @@ export interface LoadedData {
   readonly tours: readonly (Tour & { readonly title: Readonly<Record<string, string>> })[];
   /** Candidate locations per place id, most supported first. */
   readonly sites: ReadonlyMap<string, readonly Site[]>;
+  /** Other records on the same point under another name (Babylon: Babylonia, Babel). */
+  readonly alsoHere: ReadonlyMap<string, readonly string[]>;
 }
 
 export const DATA_URL = "/data";
@@ -69,6 +73,70 @@ export function groupSites(fc: FeatureCollection<Point, SiteProps>): Map<string,
   // Stable sort: unrated candidates keep OpenBible's order.
   for (const list of sites.values()) list.sort((a, b) => (b.share ?? 0) - (a.share ?? 0));
   return sites;
+}
+
+/**
+ * OpenBible keeps one location under several records: another name (Babel for Babylon),
+ * the region around a city, a namesake. For each place, the others on its exact point
+ * with a different name, most mentioned first.
+ */
+export function alsoHere(
+  features: readonly { geometry: Point; properties: PlaceProps }[],
+): Map<string, string[]> {
+  const byPoint = new Map<string, PlaceProps[]>();
+  for (const f of features) {
+    const key = f.geometry.coordinates.join(",");
+    byPoint.set(key, [...(byPoint.get(key) ?? []), f.properties]);
+  }
+  const out = new Map<string, string[]>();
+  for (const group of byPoint.values()) {
+    if (group.length < 2) continue;
+    const sorted = [...group].sort((a, b) => b.verses - a.verses);
+    for (const p of group) {
+      // Neither the place's own name nor a name already listed, in either language.
+      const seen = new Set([p.name, p.name_ru]);
+      const others = sorted
+        .filter((o) => {
+          if (seen.has(o.name) || (o.name_ru !== undefined && seen.has(o.name_ru))) return false;
+          seen.add(o.name).add(o.name_ru);
+          return true;
+        })
+        .map((o) => o.id);
+      if (others.length > 0) out.set(p.id, others);
+    }
+  }
+  return out;
+}
+
+/**
+ * Babylon, Babylonia and Babel share a point and the Russian name "Вавилон": only the most
+ * mentioned keeps its label on the Russian map (`dup_ru`), as the pipeline does for
+ * repeated English names (`dup`).
+ */
+export function markRussianDuplicates(
+  features: { geometry: Point; properties: PlaceProps }[],
+): Set<string> {
+  const marked = new Set<string>();
+  const best = new Map<string, PlaceProps>();
+  for (const f of features) {
+    const { name_ru: ru } = f.properties;
+    if (!ru) continue;
+    const key = `${f.geometry.coordinates.join(",")}|${ru}`;
+    const kept = best.get(key);
+    if (!kept) {
+      best.set(key, f.properties);
+      continue;
+    }
+    const [winner, loser] =
+      kept.verses >= f.properties.verses ? [kept, f.properties] : [f.properties, kept];
+    best.set(key, winner);
+    const target = features.find((g) => g.properties === loser);
+    if (target) {
+      target.properties = { ...loser, dup_ru: true };
+      marked.add(loser.id);
+    }
+  }
+  return marked;
 }
 
 export async function loadData(): Promise<LoadedData> {
@@ -104,7 +172,13 @@ export async function loadData(): Promise<LoadedData> {
       note: s.note,
     })),
   }));
-  return { places, byId, tours, sites };
+  const marked = markRussianDuplicates(places.features);
+  for (const f of places.features) {
+    const entry = byId.get(f.properties.id);
+    if (entry && marked.has(f.properties.id))
+      byId.set(f.properties.id, { ...entry, props: f.properties });
+  }
+  return { places, byId, tours, sites, alsoHere: alsoHere(places.features) };
 }
 
 /** Search by English or Russian name; exact prefix first, then by importance. */

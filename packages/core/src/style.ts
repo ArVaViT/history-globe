@@ -148,7 +148,10 @@ const LANDMARK_INK = "#5b4630";
 export const NT_FROM = -5;
 
 /** A second record of the same name on the same point (pipeline `dup`): dot, no label. */
-const NOT_DUP: ExpressionSpecification = ["!", ["has", "dup"]];
+const NOT_DUP: ExpressionSpecification = [
+  "!",
+  ["any", ["has", "dup"], ["all", ["==", LOCALE, "ru"], ["has", "dup_ru"]]],
+];
 
 /**
  * Label placement order: the selected place, then most mentioned first, and places
