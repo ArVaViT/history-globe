@@ -1,6 +1,6 @@
 /**
  * JS budget (ADR 0010): everything needed before the first map frame, the entry chunk
- * and the MapLibre chunk it loads at once, at most 400 KB gzip.
+ * and the MapLibre chunk it loads at once, at most 400 kB gzip (1 kB = 1000 bytes).
  *
  * Usage: node scripts/check-budget.ts  (after `pnpm build`)
  */
@@ -15,12 +15,12 @@ if (js.length === 0) throw new Error("no built JS: run `pnpm build` first");
 
 let total = 0;
 for (const f of js) {
-  const kb = gzipSync(readFileSync(join(assets, f))).length / 1024;
+  const kb = gzipSync(readFileSync(join(assets, f))).length / 1000;
   total += kb;
-  console.log(`${f.padEnd(40)} ${kb.toFixed(1)} KB gzip`);
+  console.log(`${f.padEnd(40)} ${kb.toFixed(1)} kB gzip`);
 }
-console.log(`total ${total.toFixed(1)} KB gzip, budget ${String(BUDGET_KB)} KB`);
+console.log(`total ${total.toFixed(1)} kB gzip, budget ${String(BUDGET_KB)} kB`);
 if (total > BUDGET_KB) {
-  console.error(`over the JS budget by ${(total - BUDGET_KB).toFixed(1)} KB (ADR 0010)`);
+  console.error(`over the JS budget by ${(total - BUDGET_KB).toFixed(1)} kB (ADR 0010)`);
   process.exit(1);
 }
