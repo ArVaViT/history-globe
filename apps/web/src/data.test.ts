@@ -50,6 +50,16 @@ describe("searchPlaces", () => {
   it("also matches inside a name, after prefix matches", () => {
     expect(searchPlaces(data, "лее").map((r) => r.props.id)).toEqual(["a4"]);
   });
+
+  it("finds a place by its modern name, after its own names", () => {
+    const capernaum = { ...place("a5", "Capernaum", "Капернаум", 1, 18), where: "Tell Hum" };
+    const withToday = {
+      byId: new Map([
+        ["a5", { props: capernaum, info: { id: "a5", at: [0, 0], kind: "settlement" } }],
+      ]),
+    } as unknown as LoadedData;
+    expect(searchPlaces(withToday, "tell hum").map((r) => r.props.id)).toEqual(["a5"]);
+  });
 });
 
 describe("groupSites", () => {

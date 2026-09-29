@@ -120,7 +120,10 @@ export function searchPlaces(
     const names = [props.name, props.name_ru ?? ""].map((n) => n.toLocaleLowerCase("ru"));
     const prefix = names.some((n) => n.startsWith(q));
     const inside = !prefix && names.some((n) => n.includes(q));
-    if (prefix || inside) scored.push({ props, score: (prefix ? 0 : 10) + props.rank });
+    // The modern name ("Tell Hum" for Capernaum) also finds a place, after its own names.
+    const today = !prefix && !inside && props.where.toLocaleLowerCase("ru").includes(q);
+    if (prefix || inside || today)
+      scored.push({ props, score: (prefix ? 0 : inside ? 10 : 20) + props.rank });
   }
   return scored
     .sort((a, b) => a.score - b.score || b.props.verses - a.props.verses)
