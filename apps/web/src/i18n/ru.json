@@ -89,5 +89,7 @@
     "verses_one": "{{count}} стих",
     "verses_few": "{{count}} стиха",
     "verses_many": "{{count}} стихов"
-  }
+  },
+  "error_data": "Не удалось загрузить данные: {{msg}}",
+  "error_map": "Карта не запустилась: {{msg}}"
 }

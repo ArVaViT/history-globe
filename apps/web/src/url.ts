@@ -1,4 +1,4 @@
-import type { Camera } from "@hg/core";
+import { YEAR_MAX, YEAR_MIN, type Camera } from "@hg/core";
 import type { Locale } from "@hg/model";
 
 /** The shareable view (ADR 0006): everything needed to reopen the same scene. */
@@ -9,19 +9,32 @@ export interface UrlView {
   readonly locale?: Locale;
 }
 
-const LOCALES: readonly Locale[] = ["ru", "en", "uk", "de"];
+/** Only languages with a UI dictionary; uk and de join when theirs exist. */
+const LOCALES: readonly Locale[] = ["ru", "en"];
+
+const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
+/** Into [-180, 180): the same meridian however many turns the link adds. */
+const wrap180 = (v: number) => (v >= -180 && v < 180 ? v : ((((v + 180) % 360) + 360) % 360) - 180);
 
 export function readUrl(search = window.location.search): UrlView {
   const p = new URLSearchParams(search);
   const view: { -readonly [K in keyof UrlView]: UrlView[K] } = {};
-  const year = Number(p.get("year"));
-  if (p.has("year") && Number.isInteger(year)) view.year = year;
+  const yearText = p.get("year")?.trim() ?? "";
+  const year = Number(yearText);
+  if (yearText !== "" && Number.isInteger(year)) view.year = clamp(year, YEAR_MIN, YEAR_MAX);
   const place = p.get("place");
   if (place && /^a[0-9a-f]{6}$/.test(place)) view.place = place;
   const cam = p.get("camera")?.split(",").map(Number);
   if (cam?.length === 5 && cam.every(Number.isFinite)) {
     const [lon = 0, lat = 0, zoom = 0, pitch = 0, bearing = 0] = cam;
-    view.camera = { center: [lon, lat], zoom, pitch, bearing };
+    // Links can come from anywhere, embeds included: out-of-range values would make
+    // MapLibre throw before the first frame, so they are brought into range here.
+    view.camera = {
+      center: [wrap180(lon), clamp(lat, -85, 85)],
+      zoom: clamp(zoom, 0, 22),
+      pitch: clamp(pitch, 0, 80),
+      bearing: wrap180(bearing),
+    };
   }
   const locale = p.get("locale") as Locale | null;
   if (locale && LOCALES.includes(locale)) view.locale = locale;

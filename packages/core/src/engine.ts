@@ -9,7 +9,8 @@ import {
   type Store,
 } from "./state.ts";
 
-export const YEAR_MIN = -2000;
+/** 2000 BC in astronomical years (ADR 0003): the first era begins here. */
+export const YEAR_MIN = -1999;
 export const YEAR_MAX = 100;
 
 export interface PlaceInfo {
@@ -46,6 +47,7 @@ export interface Engine {
 }
 
 export function clampYear(year: number): number {
+  if (!Number.isFinite(year)) return DEFAULT_STATE.year;
   return Math.min(YEAR_MAX, Math.max(YEAR_MIN, Math.round(year)));
 }
 
@@ -57,7 +59,16 @@ export function createEngine(options: {
 }): Engine {
   const { renderer, places } = options;
   const tours = new Map((options.tours ?? []).map((t) => [t.id, t]));
-  const store = createStore({ ...DEFAULT_STATE, ...options.initial });
+  // The initial state may come from a link: keep only what the data can show.
+  const initial = { ...DEFAULT_STATE, ...options.initial };
+  const store = createStore({
+    ...initial,
+    year: clampYear(initial.year),
+    selectedPlace:
+      initial.selectedPlace !== null && places.has(initial.selectedPlace)
+        ? initial.selectedPlace
+        : null,
+  });
 
   const sync = (s: GlobeState, prev: GlobeState | null): void => {
     if (!prev || s.year !== prev.year) renderer.setYear(s.year);

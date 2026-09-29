@@ -87,5 +87,7 @@
     "title": "In view",
     "verses_one": "{{count}} verse",
     "verses_other": "{{count}} verses"
-  }
+  },
+  "error_data": "Could not load the data: {{msg}}",
+  "error_map": "The map could not start: {{msg}}"
 }

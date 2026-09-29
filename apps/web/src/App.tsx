@@ -1,3 +1,4 @@
+import { YEAR_MAX, YEAR_MIN } from "@hg/core";
 import type { Locale } from "@hg/model";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -23,18 +24,24 @@ export function App() {
   const container = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
   const [data, setData] = useState<LoadedData | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const [dataError, setDataError] = useState<string | null>(null);
   const [playing, setPlaying] = useState(false);
   const [ready, setReady] = useState(false);
   const [hover, setHover] = useState<{ id: string; at: { x: number; y: number } } | null>(null);
   const [inView, setInView] = useState<string[]>([]);
-  const globe = useGlobe(container, data, INITIAL);
+  const { globe, error: mapError } = useGlobe(container, data, INITIAL);
+  const error =
+    dataError !== null
+      ? t("error_data", { msg: dataError })
+      : mapError !== null
+        ? t("error_map", { msg: mapError })
+        : null;
   const engine = globe?.engine;
   const state = useGlobeState(engine);
 
   useEffect(() => {
     loadData().then(setData, (e: unknown) => {
-      setError(String(e));
+      setDataError(String(e));
     });
   }, []);
 
@@ -97,7 +104,7 @@ export function App() {
     if (!playing || !engine) return;
     const id = window.setInterval(() => {
       const y = engine.store.get().year;
-      if (y >= 100) setPlaying(false);
+      if (y >= YEAR_MAX) setPlaying(false);
       else engine.setYear(y + PLAY_STEP);
     }, PLAY_INTERVAL_MS);
     return () => {
@@ -109,7 +116,12 @@ export function App() {
     if (!globe) return;
     const { engine, renderer } = globe;
     const onKey = (e: KeyboardEvent) => {
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      // Keys belong to the focused control: Space presses a button, letters go into a
+      // field. Only the time slider shares its keys with the map; Escape always closes.
       const target = e.target as HTMLElement | null;
+      if (e.key !== "Escape" && target?.closest("button, a, select, textarea, [contenteditable]"))
+        return;
       if (target?.tagName === "INPUT" && (target as HTMLInputElement).type !== "range") return;
       const big = e.shiftKey ? 100 : 10;
       if (e.key === "[" || e.key === "{") engine.stepYear(-big);
@@ -157,7 +169,7 @@ export function App() {
 
       {error && (
         <Panel className="absolute top-1/2 left-1/2 -translate-1/2 px-6 py-4 text-ink">
-          Не удалось загрузить данные: {error}
+          {error}
         </Panel>
       )}
 
@@ -234,7 +246,7 @@ export function App() {
               onYear={engine.setYear}
               hints={t("hints")}
               onPlay={() => {
-                if (!playing && state.year >= 100) engine.setYear(-2000);
+                if (!playing && state.year >= YEAR_MAX) engine.setYear(YEAR_MIN);
                 setPlaying((p) => !p);
               }}
             />

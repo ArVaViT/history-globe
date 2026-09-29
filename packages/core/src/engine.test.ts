@@ -45,6 +45,19 @@ describe("engine", () => {
     expect(engine.store.get().year).toBe(-585);
   });
 
+  it("keeps only what the data can show from a link's initial state", () => {
+    const renderer = new FakeRenderer();
+    const engine = createEngine({
+      renderer,
+      places,
+      initial: { year: Number.NaN, selectedPlace: "a000000" },
+    });
+    expect(Number.isFinite(engine.store.get().year)).toBe(true);
+    expect(engine.store.get().selectedPlace).toBeNull();
+    const far = createEngine({ renderer: new FakeRenderer(), places, initial: { year: 5000 } });
+    expect(far.store.get().year).toBe(YEAR_MAX);
+  });
+
   it("does not re-send unchanged state", () => {
     const { engine, renderer } = setup();
     const before = renderer.calls.length;

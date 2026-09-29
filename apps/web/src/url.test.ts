@@ -18,4 +18,23 @@ describe("readUrl", () => {
   it("keeps year zero (1 BC) — it is a real astronomical year", () => {
     expect(readUrl("?year=0").year).toBe(0);
   });
+
+  it("does not read an empty year as year zero", () => {
+    expect(readUrl("?year=").year).toBeUndefined();
+  });
+
+  it("brings years and cameras from foreign links into range", () => {
+    expect(readUrl("?year=5000").year).toBe(100);
+    expect(readUrl("?year=-9000").year).toBe(-1999);
+    expect(readUrl("?camera=395,95,40,120,540").camera).toEqual({
+      center: [35, 85],
+      zoom: 22,
+      pitch: 80,
+      bearing: -180,
+    });
+  });
+
+  it("accepts only languages the interface speaks", () => {
+    expect(readUrl("?locale=uk").locale).toBeUndefined();
+  });
 });

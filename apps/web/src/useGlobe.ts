@@ -27,8 +27,9 @@ export function useGlobe(
   container: RefObject<HTMLDivElement | null>,
   data: LoadedData | null,
   initial: UrlView,
-): Globe | null {
+): { globe: Globe | null; error: string | null } {
   const [globe, setGlobe] = useState<Globe | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const initialRef = useRef(initial);
 
   useEffect(() => {
@@ -37,11 +38,17 @@ export function useGlobe(
     const init = initialRef.current;
     let cancelled = false;
     let created: Globe | null = null;
-    void rendererModule.then(({ MapLibreRenderer }) => {
-      if (cancelled) return;
-      created = createGlobe(MapLibreRenderer, el, data, init);
-      setGlobe(created);
-    });
+    // A failed chunk download or a missing WebGL context must surface as an error,
+    // not leave the loading overlay up for ever.
+    rendererModule
+      .then(({ MapLibreRenderer }) => {
+        if (cancelled) return;
+        created = createGlobe(MapLibreRenderer, el, data, init);
+        setGlobe(created);
+      })
+      .catch((e: unknown) => {
+        if (!cancelled) setError(String(e));
+      });
     return () => {
       cancelled = true;
       created?.engine.destroy();
@@ -49,7 +56,7 @@ export function useGlobe(
     };
   }, [container, data]);
 
-  return globe;
+  return { globe, error };
 }
 
 function createGlobe(

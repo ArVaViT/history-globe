@@ -6,6 +6,8 @@ import type { Camera, LonLat, Renderer, RendererEvents } from "./renderer.ts";
 import type { LayerVisibility } from "./state.ts";
 import { buildStyle, layersInGroup, type StyleOptions } from "./style.ts";
 
+const READY_FALLBACK_MS = 6000;
+
 const PLACE_LAYERS = [
   "place-dot",
   "landmark-dot",
@@ -37,6 +39,8 @@ export class MapLibreRenderer implements Renderer {
   private pendingYear: number | null = null;
   private pending: (() => void)[] = [];
   private loaded = false;
+  private destroyed = false;
+  private readyTimer: ReturnType<typeof setTimeout> | undefined;
 
   constructor(o: MapLibreRendererOptions) {
     const style = buildStyle(o);
@@ -71,8 +75,17 @@ export class MapLibreRenderer implements Renderer {
       for (const run of this.pending) run();
       this.pending = [];
     });
-    this.map.once("idle", () => {
+    // Ready at the first idle frame. Some views never go idle (a camera over the pole
+    // keeps re-rendering), so the loading state also ends a few seconds after load.
+    let readyFired = false;
+    const fireReady = () => {
+      if (readyFired) return;
+      readyFired = true;
       for (const h of this.handlers.ready) h();
+    };
+    this.map.once("idle", fireReady);
+    this.map.once("load", () => {
+      this.readyTimer = setTimeout(fireReady, READY_FALLBACK_MS);
     });
 
     for (const layer of PLACE_LAYERS) {
@@ -101,6 +114,7 @@ export class MapLibreRenderer implements Renderer {
   }
 
   private whenLoaded(run: () => void): void {
+    if (this.destroyed) return;
     if (this.loaded) run();
     else this.pending.push(run);
   }
@@ -121,7 +135,7 @@ export class MapLibreRenderer implements Renderer {
     requestAnimationFrame(() => {
       const y = this.pendingYear;
       this.pendingYear = null;
-      if (y === null) return;
+      if (y === null || this.destroyed) return;
       this.whenLoaded(() => {
         this.map.setGlobalStateProperty("year", y);
       });
@@ -225,6 +239,9 @@ export class MapLibreRenderer implements Renderer {
   }
 
   destroy(): void {
+    this.destroyed = true;
+    clearTimeout(this.readyTimer);
+    this.pending = [];
     for (const set of Object.values(this.handlers)) set.clear();
     this.map.remove();
   }
