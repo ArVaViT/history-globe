@@ -210,6 +210,19 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       },
     },
     {
+      id: "river",
+      type: "line",
+      source: "rivers",
+      // Big rivers from the globe view, small ones only closer in.
+      filter: [">=", ["zoom"], ["-", ["get", "rank"], 2]],
+      layout: { "line-cap": "round", "line-join": "round" },
+      paint: {
+        "line-color": T.oceanShallow,
+        "line-opacity": 0.85,
+        "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.6, 7, 1.4, 11, 2.6],
+      },
+    },
+    {
       id: "polity-fill",
       type: "fill",
       source: "polities",
@@ -371,6 +384,26 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       },
     },
     {
+      id: "river-label",
+      type: "symbol",
+      // Placed before towns and states compete for space (higher in the stack = placed
+      // first); a line label takes little room. A smoothed copy of the course: MapLibre drops line labels on sharp bends.
+      source: "river-labels",
+      // Only rivers that are biblical places carry a label: no modern local names.
+      filter: ["has", "place"],
+      minzoom: 4.5,
+      layout: {
+        "symbol-placement": "line",
+        "text-field": NAME,
+        "text-font": [MAP_FONT_ITALIC],
+        "text-size": ["interpolate", ["linear"], ["zoom"], 5, 11.5, 10, 14],
+        "text-letter-spacing": 0.12,
+        "symbol-spacing": 280,
+        "text-max-angle": 55,
+      },
+      paint: { "text-color": T.water, "text-halo-color": T.halo, "text-halo-width": 1.4 },
+    },
+    {
       id: "route-stop",
       type: "circle",
       source: "route",
@@ -464,6 +497,12 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         attribution: "Cliopatria / Seshat (CC BY 4.0)",
       },
       "polity-labels": { type: "geojson", data: `${o.dataUrl}/polity-labels.geojson` },
+      rivers: {
+        type: "geojson",
+        data: `${o.dataUrl}/rivers.geojson`,
+        attribution: "Natural Earth",
+      },
+      "river-labels": { type: "geojson", data: `${o.dataUrl}/river-labels.geojson` },
       places: {
         type: "geojson",
         data: { type: "FeatureCollection", features: [] },

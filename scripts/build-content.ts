@@ -102,6 +102,19 @@ for (const f of labels.features) {
 for (const name of missing) errors.push(`polity-names: no Russian name for "${name}"`);
 writeFileSync(labelsPath, JSON.stringify(labels));
 
+// Biblical rivers get the verified Russian name of their place (Иордан, Евфрат, …).
+for (const file of ["rivers.geojson", "river-labels.geojson"]) {
+  const path = join(out, file);
+  const rivers = JSON.parse(readFileSync(path, "utf8")) as {
+    features: { properties: { place?: string; name_ru?: string } }[];
+  };
+  for (const f of rivers.features) {
+    const ru = f.properties.place ? names[f.properties.place]?.ru : undefined;
+    if (ru) f.properties.name_ru = ru;
+  }
+  writeFileSync(path, JSON.stringify(rivers));
+}
+
 for (const w of warnings) console.warn(`warning: ${w}`);
 if (errors.length > 0) {
   console.error(errors.join("\n"));

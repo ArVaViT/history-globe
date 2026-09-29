@@ -59,6 +59,12 @@ SOURCES = {
         "license": "PD",
         "credit": "Made with Natural Earth",
     },
+    "natural_earth_rivers": {
+        "file": "ne_10m_rivers.geojson",
+        "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_rivers_lake_centerlines.geojson",
+        "license": "PD",
+        "credit": "Made with Natural Earth",
+    },
     "natural_earth_land": {
         "file": "ne_50m_land.geojson",
         "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_land.geojson",
@@ -386,6 +392,88 @@ def build_land_water() -> tuple[dict, dict]:
     return land, water
 
 
+# Rivers that are biblical places: the OpenBible id carries the verified Russian name.
+RIVER_PLACES = {
+    "Jordan": "ae686c9",
+    "Euphrates": "a62dec4",
+    "Al Furat": "a62dec4",  # Arabic name of the Euphrates in Natural Earth
+    "Firat": "a62dec4",  # Turkish
+    "Tigris": "a38ebfd",
+    "Dicle": "a38ebfd",  # Turkish
+    "Nile": "a012705",
+}
+RIVER_NAMES_EN = {"ae686c9": "Jordan", "a62dec4": "Euphrates", "a38ebfd": "Tigris", "a012705": "Nile"}
+# Modern canals are not rivers of antiquity.
+MODERN_WATERWAYS = re.compile(r"canal|csatorna|kanal", re.IGNORECASE)
+
+
+def simplify_line(points: list[list[float]], tolerance: float) -> list[list[float]]:
+    """Douglas–Peucker. Used for label paths: MapLibre rejects line labels on sharp
+    bends, and real river courses meander, so labels follow a smoothed copy."""
+    if len(points) < 3:
+        return points
+    (x0, y0), (x1, y1) = points[0], points[-1]
+    dx, dy = x1 - x0, y1 - y0
+    norm = math.hypot(dx, dy) or 1e-12
+    far, idx = 0.0, 0
+    for i, (x, y) in enumerate(points[1:-1], start=1):
+        d = abs(dy * x - dx * y + x1 * y0 - y1 * x0) / norm
+        if d > far:
+            far, idx = d, i
+    if far <= tolerance:
+        return [points[0], points[-1]]
+    left = simplify_line(points[: idx + 1], tolerance)
+    return left[:-1] + simplify_line(points[idx:], tolerance)
+
+
+def build_rivers() -> tuple[dict, dict, dict]:
+    """River centrelines (Natural Earth, PD) in the region, as lines for labels along
+    the course. Modern courses: the lower Euphrates and Tigris moved since antiquity."""
+    src = json.loads(fetch("natural_earth_rivers").read_text(encoding="utf-8"))
+    feats = []
+    for f in src["features"]:
+        p = f["properties"]
+        g = f.get("geometry")
+        # "Lake Centerline" runs through lakes (the Dead Sea): drawn or labelled, it misleads.
+        if not g or p.get("featurecla") != "River":
+            continue
+        lines = g["coordinates"] if g["type"] == "MultiLineString" else [g["coordinates"]]
+        xs = [pt[0] for line in lines for pt in line]
+        ys = [pt[1] for line in lines for pt in line]
+        if not xs or not in_bbox(xs, ys):  # a few source features have empty geometry
+            continue
+        name = p.get("name") or ""
+        if MODERN_WATERWAYS.search(name):
+            continue
+        place = RIVER_PLACES.get(name)
+        feats.append({
+            "type": "Feature",
+            "geometry": {"type": "MultiLineString", "coordinates": [[[round(x, 4), round(y, 4)] for x, y in line] for line in lines]},
+            "properties": {
+                # One English name per biblical river, whatever the local spelling in the source.
+                "name": RIVER_NAMES_EN[place] if place else name,
+                "rank": int(p.get("scalerank") or 9),
+                **({"place": RIVER_PLACES[name]} if name in RIVER_PLACES else {}),
+            },
+        })
+    labels = [
+        {
+            "type": "Feature",
+            "geometry": {"type": "LineString", "coordinates": simplify_line(line, 0.15)},
+            "properties": f["properties"],
+        }
+        for f in feats
+        if "place" in f["properties"]
+        for line in f["geometry"]["coordinates"]
+        if len(line) > 1
+    ]
+    return (
+        {"type": "FeatureCollection", "features": feats},
+        {"type": "FeatureCollection", "features": labels},
+        {"river_lines": len(feats), "river_label_paths": len(labels)},
+    )
+
+
 def build_sites() -> tuple[dict, dict]:
     """Candidate locations of disputed places (ADR 0007: a place ≠ a site).
 
@@ -430,11 +518,14 @@ def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     places, place_stats = build_places()
     sites, site_stats = build_sites()
+    rivers, river_labels, river_stats = build_rivers()
     polities, polity_labels, polity_stats = build_polities()
     land, water = build_land_water()
     outputs = {
         "places.geojson": places,
         "sites.geojson": sites,
+        "rivers.geojson": rivers,
+        "river-labels.geojson": river_labels,
         "polities.geojson": polities,
         "polity-labels.geojson": polity_labels,
         "land.geojson": land,
@@ -455,7 +546,7 @@ def main() -> None:
             }
             for k, v in SOURCES.items()
         },
-        "stats": {**place_stats, **site_stats, **polity_stats},
+        "stats": {**place_stats, **site_stats, **river_stats, **polity_stats},
         "files": {name: (OUT / name).stat().st_size for name in outputs},
     }
     (OUT / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
