@@ -92,8 +92,9 @@ function focusMask(): FeatureCollection {
     [-180, 85],
     [-180, -85],
   ];
-  const inner = ellipse(35, 31.5, 17, 11.5);
-  const outer = ellipse(35, 31.5, 20, 13.5);
+  // The world of the Bible and Acts: from Mesopotamia to Rome (Paul's voyage, Acts 27–28).
+  const inner = ellipse(29, 34, 24, 12.5);
+  const outer = ellipse(29, 34, 27.5, 14.5);
   return {
     type: "FeatureCollection",
     features: [
