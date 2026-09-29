@@ -7044,3 +7044,35 @@ places:
     evidence:
       osis: 1Chr.4.12
       excerpt: "отца города Нааса"
+  - id: a4b9865
+    en: "Pekod"
+    ru: "Пеход"
+    evidence:
+      osis: Ezek.23.23
+      excerpt: "всех Халдеев, из Пехода, из Шоа и Коа"
+  - id: a498faa
+    en: "Abilene"
+    ru: "Авилинея"
+    evidence:
+      osis: Luke.3.1
+      excerpt: "а Лисаний четвертовластником в Авилинее"
+  # Regions of the historical setting that the Bible does not name (no verses): the usual
+  # Russian name from historical geography, not a Synodal form, so no evidence.
+  - id: a5eafe1
+    en: "Etruria"
+    ru: "Этрурия"
+  - id: a2d7b73
+    en: "Lydia"
+    ru: "Лидия"
+  - id: a8d18cf
+    en: "Scythia"
+    ru: "Скифия"
+  - id: a249453
+    en: "Batanea"
+    ru: "Батанея"
+  - id: a737810
+    en: "Punt"
+    ru: "Пунт"
+  - id: a4b8b4d
+    en: "Hatti"
+    ru: "Хатти"
