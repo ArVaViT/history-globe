@@ -111,7 +111,7 @@ export function createEngine(options: {
       tour: { id: tour.id, step },
       selectedPlace: places.has(stop.placeId) ? stop.placeId : null,
     });
-    renderer.flyTo({ center: stop.at, zoom: 7.6, pitch: 55, bearing: -20 + step * 3 }, 2600);
+    renderer.flyTo({ center: stop.at, zoom: 7.6, pitch: 55, bearing: -20 + step * 3 });
   };
 
   const offPick = renderer.on("pick", (id) => {

@@ -219,7 +219,7 @@ export function App() {
                     engine.selectPlace(selected.id, { fly: true });
                   }}
                   onFlyTo={(at) => {
-                    globe.renderer.flyTo({ center: at, zoom: 11, pitch: 50 }, 1600);
+                    globe.renderer.flyTo({ center: at, zoom: 11, pitch: 50 });
                   }}
                 />
               )

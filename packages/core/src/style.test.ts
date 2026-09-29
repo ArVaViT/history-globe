@@ -56,3 +56,25 @@ describe("sites of the selected place", () => {
     expect(shown("", "ae7274b")).toBe(false);
   });
 });
+
+describe("river labels", () => {
+  const layer = style.layers.find((l) => l.id === "river-label");
+  function labelled(locale: string, props: Record<string, string>): boolean {
+    if (!layer || !("filter" in layer)) throw new Error("no river-label filter");
+    const f = featureFilter(layer.filter, "filter", { locale });
+    return f.filter({ zoom: 6 }, { type: 2, properties: props, geometry: [] } as never);
+  }
+
+  it("labels a biblical river with a verified Russian name in Russian", () => {
+    expect(labelled("ru", { place: "ae686c9", name: "Jordan", name_ru: "Иордан" })).toBe(true);
+  });
+
+  it("does not show a Latin name on the Russian map", () => {
+    expect(labelled("ru", { place: "a012705", name: "Nile" })).toBe(false);
+    expect(labelled("en", { place: "a012705", name: "Nile" })).toBe(true);
+  });
+
+  it("never labels rivers that are not biblical places", () => {
+    expect(labelled("en", { name: "Danube" })).toBe(false);
+  });
+});

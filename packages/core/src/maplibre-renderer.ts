@@ -153,13 +153,15 @@ export class MapLibreRenderer implements Renderer {
     });
   }
 
-  flyTo(target: Partial<Camera> & { readonly center: LonLat }, durationMs = 2200): void {
+  flyTo(target: Partial<Camera> & { readonly center: LonLat }, durationMs?: number): void {
     this.map.flyTo({
       center: [...target.center],
       ...(target.zoom === undefined ? {} : { zoom: target.zoom }),
       ...(target.pitch === undefined ? {} : { pitch: target.pitch }),
       ...(target.bearing === undefined ? {} : { bearing: target.bearing }),
-      duration: durationMs,
+      // Without an explicit duration the flight takes as long as the distance needs:
+      // a hop to the next village is quick, Jerusalem → Rome is not rushed.
+      ...(durationMs === undefined ? { speed: 1.1, maxDuration: 4500 } : { duration: durationMs }),
       curve: 1.6,
       essential: true,
     });
