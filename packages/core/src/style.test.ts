@@ -166,10 +166,14 @@ describe("place labels on the Russian map", () => {
     return style.layers
       .filter((l) => l.id.startsWith("place-label") && "filter" in l)
       .some((l) =>
-        featureFilter("filter" in l ? l.filter : undefined, "filter", { locale }).filter(
-          { zoom: 10 },
-          { type: 1, properties: { rank: 0, kind: "region", ...props }, geometry: [] } as never,
-        ),
+        featureFilter("filter" in l ? l.filter : undefined, "filter", {
+          locale,
+          selected: "",
+        }).filter({ zoom: 10 }, {
+          type: 1,
+          properties: { id: "a000001", rank: 0, kind: "region", ...props },
+          geometry: [],
+        } as never),
       );
   }
 
@@ -181,6 +185,12 @@ describe("place labels on the Russian map", () => {
 
   it("print a name once where two records share a point", () => {
     expect(labelled("en", { kind: "settlement", name: "Bethel", dup: true })).toBe(false);
+    expect(
+      labelled("ru", { kind: "settlement", name: "Babel", name_ru: "Вавилон", dup_ru: true }),
+    ).toBe(false);
+    expect(
+      labelled("en", { kind: "settlement", name: "Babel", name_ru: "Вавилон", dup_ru: true }),
+    ).toBe(true);
   });
 
   it("keep the English name for a region, which has no dot to fall back on", () => {

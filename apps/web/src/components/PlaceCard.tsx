@@ -14,6 +14,9 @@ function safeRef(osis: string, locale: Locale): string {
   }
 }
 
+/** Other records on the same point shown before "and N more". */
+const ALSO_SHOWN = 5;
+
 export function PlaceCard({
   place,
   sites,
@@ -139,7 +142,7 @@ export function PlaceCard({
       {alsoHere.length > 0 && (
         <div className="px-5 pt-2 text-[13px] leading-snug text-ink">
           <span className="text-ink-soft">{t("place.also_here")}:</span>{" "}
-          {alsoHere.slice(0, 5).map((p, i) => (
+          {alsoHere.slice(0, ALSO_SHOWN).map((p, i) => (
             <span key={p.id}>
               {i > 0 && ", "}
               <button
@@ -152,6 +155,12 @@ export function PlaceCard({
               </button>
             </span>
           ))}
+          {alsoHere.length > ALSO_SHOWN && (
+            <span className="text-ink-soft">
+              {" · "}
+              {t("place.more", { count: alsoHere.length - ALSO_SHOWN })}
+            </span>
+          )}
         </div>
       )}
 

@@ -149,8 +149,10 @@ export const NT_FROM = -5;
 
 /** A second record of the same name on the same point (pipeline `dup`): dot, no label. */
 const NOT_DUP: ExpressionSpecification = [
-  "!",
-  ["any", ["has", "dup"], ["all", ["==", LOCALE, "ru"], ["has", "dup_ru"]]],
+  "any",
+  // The selected record keeps its label even when it is a duplicate.
+  ["==", ["get", "id"], ["global-state", "selected"]],
+  ["!", ["any", ["has", "dup"], ["all", ["==", LOCALE, "ru"], ["has", "dup_ru"]]]],
 ];
 
 /**

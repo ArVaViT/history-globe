@@ -127,21 +127,25 @@ describe("alsoHere", () => {
       geometry: { type: "Point" as const, coordinates },
       properties: props,
     });
-    const got = alsoHere([
-      at(place("b1", "Babylon", "Вавилон", 0, 296), [44.4, 32.5]),
-      at(place("b2", "Babylonia", "Вавилония", 1, 15), [44.4, 32.5]),
-      at(place("b3", "Babylon", "Вавилон", 3, 2), [44.4, 32.5]),
-      at(place("j1", "Jerusalem", "Иерусалим", 0, 800), [35.2, 31.8]),
-    ]);
+    const got = alsoHere(
+      [
+        at(place("b1", "Babylon", "Вавилон", 0, 296), [44.4, 32.5]),
+        at(place("b2", "Babylonia", "Вавилония", 1, 15), [44.4, 32.5]),
+        at(place("b3", "Babylon", "Вавилон", 3, 2), [44.4, 32.5]),
+        at(place("j1", "Jerusalem", "Иерусалим", 0, 800), [35.2, 31.8]),
+      ],
+      "ru",
+    );
     expect(got.get("b1")).toEqual(["b2"]);
     expect(got.get("b2")).toEqual(["b1"]);
     expect(got.has("j1")).toBe(false);
-    // Babel is "Вавилон" in Russian too: not listed on Babylon.
-    const babel = alsoHere([
+    // Babel is "Вавилон" in Russian too: listed on Babylon in English only.
+    const pair = [
       at(place("b1", "Babylon", "Вавилон", 0, 296), [1, 1]),
       at(place("b4", "Babel", "Вавилон", 3, 2), [1, 1]),
-    ]);
-    expect(babel.has("b1")).toBe(false);
+    ];
+    expect(alsoHere(pair, "ru").has("b1")).toBe(false);
+    expect(alsoHere(pair, "en").get("b1")).toEqual(["b4"]);
   });
 });
 
@@ -162,6 +166,18 @@ describe("markRussianDuplicates", () => {
       },
     ];
     expect([...markRussianDuplicates(features)]).toEqual(["b4"]);
+    // A record already hidden as an English duplicate never keeps the Russian label.
+    const lydia = [
+      {
+        geometry: { type: "Point" as const, coordinates: [3, 3] },
+        properties: { ...place("l1", "Lud", "Лидия", 3, 2), dup: true },
+      },
+      {
+        geometry: { type: "Point" as const, coordinates: [3, 3] },
+        properties: place("l2", "Lydia", "Лидия", 3, 0),
+      },
+    ];
+    expect([...markRussianDuplicates(lydia)]).toEqual([]);
     expect(features.map((f) => Boolean(f.properties.dup_ru))).toEqual([true, false, false]);
   });
 });

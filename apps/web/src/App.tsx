@@ -248,7 +248,7 @@ export function App() {
                 <PlaceCard
                   place={selected}
                   sites={data.sites.get(selected.id) ?? []}
-                  alsoHere={(data.alsoHere.get(selected.id) ?? []).flatMap((id) => {
+                  alsoHere={(data.alsoHere[state.locale].get(selected.id) ?? []).flatMap((id) => {
                     const p = data.byId.get(id)?.props;
                     return p ? [p] : [];
                   })}

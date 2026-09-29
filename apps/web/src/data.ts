@@ -1,5 +1,5 @@
 import { NT_FROM, type PlaceInfo, type Tour } from "@hg/core";
-import type { ContentRelease } from "@hg/model";
+import type { ContentRelease, Locale } from "@hg/model";
 import type { FeatureCollection, Point } from "geojson";
 
 export interface PlaceProps {
@@ -23,6 +23,8 @@ export interface PlaceProps {
   readonly where: string;
   /** Russian "where it is today", when it names another place ("Вавилон, в радиусе 250 км"). */
   readonly where_ru?: string;
+  /** Set when `where` is a template ("within 5 km of X"), not a modern name. */
+  readonly where_tpl?: string;
   readonly osis: readonly string[];
   readonly coord: "openbible" | "wikidata";
 }
@@ -49,7 +51,7 @@ export interface LoadedData {
   /** Candidate locations per place id, most supported first. */
   readonly sites: ReadonlyMap<string, readonly Site[]>;
   /** Other records on the same point under another name (Babylon: Babylonia, Babel). */
-  readonly alsoHere: ReadonlyMap<string, readonly string[]>;
+  readonly alsoHere: Readonly<Record<Locale, ReadonlyMap<string, readonly string[]>>>;
 }
 
 export const DATA_URL = "/data";
@@ -76,13 +78,16 @@ export function groupSites(fc: FeatureCollection<Point, SiteProps>): Map<string,
 }
 
 /**
- * OpenBible keeps one location under several records: another name (Babel for Babylon),
+ * OpenBible keeps one location under several records: another name (Shinar for Babylon),
  * the region around a city, a namesake. For each place, the others on its exact point
- * with a different name, most mentioned first.
+ * whose name, in the given language, differs from its own and from those already listed,
+ * most mentioned first.
  */
 export function alsoHere(
   features: readonly { geometry: Point; properties: PlaceProps }[],
+  locale: Locale,
 ): Map<string, string[]> {
+  const shown = (p: PlaceProps) => (locale === "ru" ? (p.name_ru ?? p.name) : p.name);
   const byPoint = new Map<string, PlaceProps[]>();
   for (const f of features) {
     const key = f.geometry.coordinates.join(",");
@@ -93,12 +98,11 @@ export function alsoHere(
     if (group.length < 2) continue;
     const sorted = [...group].sort((a, b) => b.verses - a.verses);
     for (const p of group) {
-      // Neither the place's own name nor a name already listed, in either language.
-      const seen = new Set([p.name, p.name_ru]);
+      const seen = new Set([shown(p)]);
       const others = sorted
         .filter((o) => {
-          if (seen.has(o.name) || (o.name_ru !== undefined && seen.has(o.name_ru))) return false;
-          seen.add(o.name).add(o.name_ru);
+          if (seen.has(shown(o))) return false;
+          seen.add(shown(o));
           return true;
         })
         .map((o) => o.id);
@@ -120,7 +124,8 @@ export function markRussianDuplicates(
   const best = new Map<string, PlaceProps>();
   for (const f of features) {
     const { name_ru: ru } = f.properties;
-    if (!ru) continue;
+    // A record already hidden as an English duplicate never keeps the Russian label.
+    if (!ru || f.properties.dup) continue;
     const key = `${f.geometry.coordinates.join(",")}|${ru}`;
     const kept = best.get(key);
     if (!kept) {
@@ -178,7 +183,13 @@ export async function loadData(): Promise<LoadedData> {
     if (entry && marked.has(f.properties.id))
       byId.set(f.properties.id, { ...entry, props: f.properties });
   }
-  return { places, byId, tours, sites, alsoHere: alsoHere(places.features) };
+  const here = {
+    ru: alsoHere(places.features, "ru"),
+    en: alsoHere(places.features, "en"),
+    uk: alsoHere(places.features, "ru"),
+    de: alsoHere(places.features, "en"),
+  };
+  return { places, byId, tours, sites, alsoHere: here };
 }
 
 /** Search by English or Russian name; exact prefix first, then by importance. */
@@ -195,7 +206,11 @@ export function searchPlaces(
     const prefix = names.some((n) => n.startsWith(q));
     const inside = !prefix && names.some((n) => n.includes(q));
     // The modern name ("Tell Hum" for Capernaum) also finds a place, after its own names.
-    const today = !prefix && !inside && props.where.toLocaleLowerCase("ru").includes(q);
+    const today =
+      !prefix &&
+      !inside &&
+      props.where_tpl === undefined &&
+      props.where.toLocaleLowerCase("ru").includes(q);
     if (prefix || inside || today)
       scored.push({ props, score: (prefix ? 0 : inside ? 10 : 20) + props.rank });
   }
