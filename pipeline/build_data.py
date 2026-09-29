@@ -339,6 +339,9 @@ def build_polities() -> tuple[dict, dict, dict]:
         name = p["Name"].strip("()")
         is_relation = p.get("Type") != "POLITY"
         color = names.setdefault(name, len(names) % 10)
+        # Cliopatria's years are already astronomical (ISO 8601): the data uses year 0
+        # (e.g. Roman Empire ... 0 → 1 ...), so no BC/AD conversion is needed. Checked
+        # 2026-09-29 against the 2026-05 release; its sampling is decades, not years.
         props = {
             "name": name,
             "y0": p["FromYear"],
