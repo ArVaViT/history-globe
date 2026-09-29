@@ -129,7 +129,7 @@ export function App() {
 
   useEffect(() => {
     if (!globe) return;
-    const { engine, renderer } = globe;
+    const { engine } = globe;
     const onKey = (e: KeyboardEvent) => {
       if (e.ctrlKey || e.metaKey || e.altKey) return;
       // Keys belong to the focused control: Space presses a button, letters go into a
@@ -150,7 +150,7 @@ export function App() {
       } else if (e.key === "Escape") {
         engine.selectPlace(null);
         engine.stopTour();
-      } else if (e.key.toLowerCase() === "n") renderer.map.easeTo({ bearing: 0, duration: 600 });
+      } else if (e.key.toLowerCase() === "n") engine.northUp();
       else return;
     };
     window.addEventListener("keydown", onKey);
@@ -247,7 +247,7 @@ export function App() {
                     engine.selectPlace(selected.id, { fly: true });
                   }}
                   onFlyTo={(at) => {
-                    globe.renderer.flyTo({ center: at, zoom: 11, pitch: 50 });
+                    engine.lookAt(at);
                   }}
                 />
               )

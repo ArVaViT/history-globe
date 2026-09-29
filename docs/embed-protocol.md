@@ -6,18 +6,18 @@ The contract between the globe (`/embed/v1`) and a host page such as Equip
 ## URL
 
 ```text
-https://<globe-host>/embed/v1?year=30&place=capernaum&locale=ru&theme=dark
+https://<globe-host>/embed/v1?year=30&place=af2161c&locale=ru&theme=dark
 ```
 
-| Parameter | Type                             | Meaning                                  |
-| --------- | -------------------------------- | ---------------------------------------- |
-| `year`    | integer, astronomical (ADR 0003) | initial year                             |
-| `place`   | place id                         | place to focus and open                  |
-| `camera`  | `lon,lat,zoom,pitch,bearing`     | overrides the default camera for `place` |
-| `layers`  | comma list                       | e.g. `borders,places,routes`             |
-| `tour`    | tour id                          | start a guided tour                      |
-| `locale`  | `en` \| `ru` \| `uk` \| `de`     | UI and names                             |
-| `theme`   | `light` \| `dark`                | colour scheme                            |
+| Parameter | Type                              | Meaning                                        |
+| --------- | --------------------------------- | ---------------------------------------------- |
+| `year`    | integer, astronomical (ADR 0003)  | initial year                                   |
+| `place`   | place id (`a` + 6 hex, OpenBible) | place to focus and open (Capernaum: `af2161c`) |
+| `camera`  | `lon,lat,zoom,pitch,bearing`      | overrides the default camera for `place`       |
+| `layers`  | comma list                        | e.g. `borders,places,routes`                   |
+| `tour`    | tour id                           | start a guided tour                            |
+| `locale`  | `en` \| `ru` (`uk`, `de` later)   | UI and names                                   |
+| `theme`   | `light` \| `dark`                 | colour scheme                                  |
 
 ## Messages
 

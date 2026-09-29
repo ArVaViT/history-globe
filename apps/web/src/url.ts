@@ -44,9 +44,19 @@ export function readUrl(search = window.location.search): UrlView {
 export function writeUrl(
   view: Required<Pick<UrlView, "year" | "camera" | "locale">> & Pick<UrlView, "place">,
 ): void {
-  const p = new URLSearchParams();
+  window.history.replaceState(null, "", `?${viewSearch(view, window.location.search)}`);
+}
+
+/** The query string for a view. Parameters this app does not own (layers, tour, theme
+ * from an embedding host, docs/embed-protocol.md) are kept, not wiped. */
+export function viewSearch(
+  view: Required<Pick<UrlView, "year" | "camera" | "locale">> & Pick<UrlView, "place">,
+  current = "",
+): string {
+  const p = new URLSearchParams(current);
   p.set("year", String(view.year));
   if (view.place) p.set("place", view.place);
+  else p.delete("place");
   const c = view.camera;
   p.set(
     "camera",
@@ -59,5 +69,5 @@ export function writeUrl(
     ].join(","),
   );
   p.set("locale", view.locale);
-  window.history.replaceState(null, "", `?${p.toString()}`);
+  return p.toString();
 }

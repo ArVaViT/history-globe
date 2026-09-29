@@ -100,3 +100,12 @@ describe("engine", () => {
     expect(renderer.last("route")).toEqual({ op: "route", points: 0, current: -1 });
   });
 });
+
+describe("camera commands", () => {
+  it("turns north up without moving away", () => {
+    const { engine, renderer } = setup();
+    engine.lookAt([35.2, 31.7]);
+    engine.northUp();
+    expect(renderer.getCamera()).toMatchObject({ center: [35.2, 31.7], bearing: 0 });
+  });
+});

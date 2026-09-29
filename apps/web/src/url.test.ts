@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { readUrl } from "./url";
+import { readUrl, viewSearch } from "./url";
 
 describe("readUrl", () => {
   it("reads a full view", () => {
@@ -36,5 +36,28 @@ describe("readUrl", () => {
 
   it("accepts only languages the interface speaks", () => {
     expect(readUrl("?locale=uk").locale).toBeUndefined();
+  });
+});
+
+describe("viewSearch", () => {
+  const view = {
+    year: 30,
+    camera: { center: [35.2, 31.7] as const, zoom: 9, pitch: 45, bearing: -10 },
+    locale: "ru" as const,
+  };
+
+  it("keeps parameters it does not own and drops a closed place", () => {
+    const q = new URLSearchParams(viewSearch(view, "?theme=dark&place=a15257a&year=1"));
+    expect(q.get("theme")).toBe("dark");
+    expect(q.get("year")).toBe("30");
+    expect(q.has("place")).toBe(false);
+  });
+
+  it("round-trips through readUrl", () => {
+    expect(readUrl(`?${viewSearch({ ...view, place: "a15257a" })}`)).toEqual({
+      ...view,
+      place: "a15257a",
+      camera: { ...view.camera, center: [35.2, 31.7] },
+    });
   });
 });
