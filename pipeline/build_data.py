@@ -241,7 +241,7 @@ def rank_of(weighted_mentions: int) -> int:
 
 
 def build_places(
-    records: list[dict], modern: dict[str, dict], sites_per_place: dict[str, int], river_places: set[str]
+    records: list[dict], modern: dict[str, dict], sites_per_place: dict[str, tuple[int, bool]], river_places: set[str]
 ) -> tuple[dict, dict, list[str]]:
     def top_point(r: dict) -> dict | None:
         ids = r.get("identifications") or []
@@ -283,7 +283,8 @@ def build_places(
                 "name": base,
                 "kind": (r.get("types") or ["place"])[0],
                 # Candidate sites actually shipped in sites.geojson: 0 when not disputed.
-                "sites": sites_per_place.get(r["id"], 0),
+                "sites": sites_per_place.get(r["id"], (0, False))[0],
+                "disputed": sites_per_place.get(r["id"], (0, False))[1],
                 "verses": len(verses),
                 "nt": nt,
                 "ot": len(verses) - nt,
@@ -602,6 +603,10 @@ def build_rivers() -> tuple[dict, dict, dict]:
 
 
 MAX_SITES = 6
+# A place is disputed when the runner-up candidate has at least this share of OpenBible's
+# assessment (or nothing is rated). Capernaum, Tell Hum 100 % against Khirbet Minyeh 0 %,
+# is not: its card says "generally agreed" and still lists the minority proposal.
+DISPUTED_MIN_SHARE = 10
 
 _REF = r'<(?P<kind>ancient|modern) id="(?P<ref>[^"]+)">(?P<text>[^<]*)</(?P=kind)>'
 # OpenBible writes a candidate site as a modern name or one of a few English templates.
@@ -637,7 +642,7 @@ def site_label(description: str) -> dict:
     return {"label": TAG_RE.sub("", description)}
 
 
-def build_sites(records: list[dict], modern: dict[str, dict]) -> tuple[dict, dict[str, int], dict]:
+def build_sites(records: list[dict], modern: dict[str, dict]) -> tuple[dict, dict[str, tuple[int, bool]], dict]:
     """Candidate locations of disputed places (ADR 0007: a place ≠ a site).
 
     OpenBible scores each identification (`score.time_total`, weighted towards recent
@@ -662,7 +667,9 @@ def build_sites(records: list[dict], modern: dict[str, dict]) -> tuple[dict, dic
         if len(cands) < 2:
             continue
         total = sum(max(c["score"], 0) for c in cands)
-        per_place[r["id"]] = len(cands)
+        shares = sorted((100 * max(c["score"], 0) / total for c in cands), reverse=True) if total > 0 else []
+        disputed = not shares or round(shares[1]) >= DISPUTED_MIN_SHARE
+        per_place[r["id"]] = (len(cands), disputed)
         for c in cands:
             feats.append({
                 "type": "Feature",

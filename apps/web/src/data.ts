@@ -10,6 +10,8 @@ export interface PlaceProps {
   readonly name_ru_osis?: string;
   readonly kind: string;
   readonly sites: number;
+  /** The runner-up candidate site has at least 10 % of OpenBible's assessment. */
+  readonly disputed: boolean;
   readonly verses: number;
   readonly nt: number;
   readonly ot: number;

@@ -352,7 +352,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
           "case",
           ["boolean", ["feature-state", "selected"], false],
           T.gold,
-          [">", ["get", "sites"], 1],
+          ["boolean", ["get", "disputed"], false],
           "#a6805c",
           T.accent,
         ],

@@ -14,6 +14,7 @@ function place(
     ...(name_ru ? { name_ru } : {}),
     kind: "settlement",
     sites: 1,
+    disputed: false,
     verses,
     nt: 0,
     ot: verses,
