@@ -1,3 +1,4 @@
+import { formatRef, type Locale } from "@hg/model";
 import { Route } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Panel, PanelTitle } from "./Panel";
@@ -9,7 +10,7 @@ export function ToursPanel({
   tours: readonly {
     id: string;
     title: Readonly<Record<string, string>>;
-    stops: readonly unknown[];
+    stops: readonly { readonly ref: string }[];
   }[];
   onStart: (id: string) => void;
 }) {
@@ -33,11 +34,23 @@ export function ToursPanel({
               {tour.title[i18n.language] ?? tour.title.en}
             </span>
             <span className="block text-xs text-ink-soft">
-              {i18n.language === "ru" ? "Деян 13–14" : "Acts 13–14"} · {tour.stops.length}
+              {tourSpan(tour.stops, i18n.language === "ru" ? "ru" : "en")} · {tour.stops.length}
             </span>
           </span>
         </button>
       ))}
     </Panel>
   );
+}
+
+/** "Деян 13:1–14:28": from the first stop's first verse to the last stop's last verse. */
+export function tourSpan(stops: readonly { readonly ref: string }[], locale: Locale): string {
+  const first = stops[0]?.ref.split("-")[0];
+  const last = stops.at(-1)?.ref.split("-").at(-1);
+  if (!first || !last) return "";
+  try {
+    return formatRef(first === last ? first : `${first}-${last}`, locale);
+  } catch {
+    return "";
+  }
 }
