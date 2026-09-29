@@ -328,9 +328,30 @@ def build_polities() -> tuple[dict, dict, dict]:
     clio = json.loads(fetch("cliopatria").read_text(encoding="utf-8"))
     polys, labels = [], []
     names: dict[str, int] = {}
+
+    # Cliopatria sometimes carries two polities with the same shape and years
+    # ("Phoenicia" / "Phoenician Empire"): drawn twice, they double the fill and the
+    # labels. Keep one per shape and interval, preferring the shorter (base) name.
+    def shape_key(f: dict) -> tuple[str, int, int]:
+        geom = json.dumps(f["geometry"], sort_keys=True).encode()
+        return hashlib.sha1(geom).hexdigest(), f["properties"]["FromYear"], f["properties"]["ToYear"]
+
+    preferred: dict[tuple[str, int, int], str] = {}
+    for f in clio["features"]:
+        p = f["properties"]
+        if p.get("Type") != "POLITY" or not f.get("geometry"):
+            continue
+        key, name = shape_key(f), p["Name"]
+        if key not in preferred or (len(name), name) < (len(preferred[key]), preferred[key]):
+            preferred[key] = name
+    duplicates = 0
+
     for f in clio["features"]:
         p = f["properties"]
         if p["ToYear"] < YEAR_MIN or p["FromYear"] > YEAR_MAX or not f.get("geometry"):
+            continue
+        if p.get("Type") == "POLITY" and preferred.get(shape_key(f)) != p["Name"]:
+            duplicates += 1
             continue
         g = f["geometry"]
         parts = g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]
@@ -365,7 +386,7 @@ def build_polities() -> tuple[dict, dict, dict]:
                     # Bigger polities get labels earlier and larger.
                     "properties": {**props, "size": round(math.log10(max(total, 0.01)) + 2, 2)},
                 })
-    stats = {"polity_shapes": len(polys), "polity_names": len(names)}
+    stats = {"polity_shapes": len(polys), "polity_names": len(names), "polity_duplicates_dropped": duplicates}
     return (
         {"type": "FeatureCollection", "features": polys},
         {"type": "FeatureCollection", "features": labels},
