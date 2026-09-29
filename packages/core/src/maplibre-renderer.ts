@@ -1,7 +1,7 @@
 import type { Locale } from "@hg/model";
 import type { Feature, FeatureCollection } from "geojson";
 import * as maplibregl from "maplibre-gl";
-import type { GeoJSONSource, Map as MLMap, MapLayerMouseEvent } from "maplibre-gl";
+import type { GeoJSONSource, Map as MLMap, MapMouseEvent } from "maplibre-gl";
 import type { Camera, LonLat, Renderer, RendererEvents } from "./renderer.ts";
 import type { LayerVisibility } from "./state.ts";
 import { buildStyle, layersInGroup, type StyleOptions } from "./style.ts";
@@ -30,6 +30,7 @@ export class MapLibreRenderer implements Renderer {
   private readonly groups: Record<string, string[]>;
   private selected: number | null = null;
   private hovered: number | null = null;
+  private hoveredPlace: string | null = null;
   private readonly handlers: { [E in keyof RendererEvents]: Set<RendererEvents[E]> } = {
     pick: new Set(),
     hover: new Set(),
@@ -88,25 +89,32 @@ export class MapLibreRenderer implements Renderer {
       this.readyTimer = setTimeout(fireReady, READY_FALLBACK_MS);
     });
 
-    for (const layer of PLACE_LAYERS) {
-      this.map.on("click", layer, (e: MapLayerMouseEvent) => {
-        const id = (e.features?.[0]?.properties as { id?: string } | undefined)?.id;
-        if (id) for (const h of this.handlers.pick) h(id);
-      });
-      this.map.on("mousemove", layer, (e: MapLayerMouseEvent) => {
-        this.map.getCanvas().style.cursor = "pointer";
-        const f = e.features?.[0];
-        const fid = typeof f?.id === "number" ? f.id : null;
-        if (fid !== this.hovered) this.setHoverState(fid);
-        const pid = (f?.properties as { id?: string } | undefined)?.id ?? null;
-        for (const h of this.handlers.hover) h(pid, { x: e.point.x, y: e.point.y });
-      });
-      this.map.on("mouseleave", layer, () => {
-        this.map.getCanvas().style.cursor = "";
-        this.setHoverState(null);
-        for (const h of this.handlers.hover) h(null, null);
-      });
-    }
+    // One handler over all place layers: per-layer mouseleave fired after the next
+    // layer's mousemove, so moving from a label to its own dot dropped the hover.
+    const placeAt = (e: MapMouseEvent) =>
+      this.loaded
+        ? this.map.queryRenderedFeatures(e.point, { layers: PLACE_LAYERS })[0]
+        : undefined;
+    this.map.on("click", (e: MapMouseEvent) => {
+      const id = (placeAt(e)?.properties as { id?: string } | undefined)?.id;
+      if (id) for (const h of this.handlers.pick) h(id);
+    });
+    this.map.on("mousemove", (e: MapMouseEvent) => {
+      const f = placeAt(e);
+      const fid = typeof f?.id === "number" ? f.id : null;
+      this.map.getCanvas().style.cursor = f ? "pointer" : "";
+      if (fid !== this.hovered) this.setHoverState(fid);
+      const pid = (f?.properties as { id?: string } | undefined)?.id ?? null;
+      if (pid === this.hoveredPlace && pid === null) return;
+      this.hoveredPlace = pid;
+      for (const h of this.handlers.hover) h(pid, pid ? { x: e.point.x, y: e.point.y } : null);
+    });
+    this.map.getCanvasContainer().addEventListener("mouseleave", () => {
+      this.map.getCanvas().style.cursor = "";
+      this.setHoverState(null);
+      this.hoveredPlace = null;
+      for (const h of this.handlers.hover) h(null, null);
+    });
     this.map.on("moveend", () => {
       const cam = this.getCamera();
       for (const h of this.handlers.cameraChanged) h(cam);

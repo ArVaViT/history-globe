@@ -95,6 +95,21 @@ export function App() {
     };
   }, [globe]);
 
+  // Toggling the places layer changes what is in view without moving the camera.
+  const placesShown = state.layers.places;
+  useEffect(() => {
+    if (!globe) return;
+    const map = globe.renderer.map;
+    const refresh = () => {
+      setInView(globe.renderer.visiblePlaces());
+    };
+    map.once("idle", refresh);
+    map.triggerRepaint();
+    return () => {
+      map.off("idle", refresh);
+    };
+  }, [globe, placesShown]);
+
   // Fly to the place from the URL once the globe exists.
   useEffect(() => {
     if (engine && INITIAL.place && !INITIAL.camera) engine.selectPlace(INITIAL.place);
