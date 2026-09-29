@@ -84,6 +84,7 @@ function createGlobe(
       ...(init.year === undefined ? {} : { year: init.year }),
       ...(init.locale === undefined ? {} : { locale: init.locale }),
       ...(init.place === undefined ? {} : { selectedPlace: init.place }),
+      ...(init.layers === undefined ? {} : { layers: init.layers }),
     },
   });
   if (import.meta.env.DEV) {

@@ -61,3 +61,37 @@ describe("viewSearch", () => {
     });
   });
 });
+
+describe("layers and tour in the link", () => {
+  const view = {
+    year: 47,
+    camera: { center: [35.2, 31.7] as const, zoom: 6, pitch: 30, bearing: 0 },
+    locale: "ru" as const,
+  };
+
+  it("reads the listed layers as on and the others as off", () => {
+    expect(readUrl("?layers=borders,places").layers).toEqual({
+      borders: true,
+      places: true,
+      relief: false,
+      routes: false,
+    });
+    expect(readUrl("?layers=nonsense").layers).toBeUndefined();
+  });
+
+  it("reads a tour id and rejects anything else", () => {
+    expect(readUrl("?tour=paul-1").tour).toBe("paul-1");
+    expect(readUrl("?tour=<x>").tour).toBeUndefined();
+  });
+
+  it("writes layers only when some are off, and the running tour", () => {
+    const all = { borders: true, places: true, relief: true, routes: true };
+    expect(new URLSearchParams(viewSearch({ ...view, layers: all })).has("layers")).toBe(false);
+    const q = new URLSearchParams(
+      viewSearch({ ...view, layers: { ...all, relief: false }, tour: "paul-1" }, "?layers=x"),
+    );
+    expect(q.get("layers")).toBe("borders,places,routes");
+    expect(q.get("tour")).toBe("paul-1");
+    expect(new URLSearchParams(viewSearch(view, "?tour=paul-1")).has("tour")).toBe(false);
+  });
+});

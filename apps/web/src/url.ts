@@ -1,4 +1,4 @@
-import { YEAR_MAX, YEAR_MIN, type Camera } from "@hg/core";
+import { YEAR_MAX, YEAR_MIN, type Camera, type LayerVisibility } from "@hg/core";
 import type { Locale } from "@hg/model";
 
 /** The shareable view (ADR 0006): everything needed to reopen the same scene. */
@@ -7,7 +7,13 @@ export interface UrlView {
   readonly place?: string;
   readonly camera?: Camera;
   readonly locale?: Locale;
+  /** `layers=borders,places`: the listed layers on, the others off. */
+  readonly layers?: LayerVisibility;
+  /** A tour to start (its id is checked against the loaded tours). */
+  readonly tour?: string;
 }
+
+const LAYERS = ["borders", "places", "relief", "routes"] as const;
 
 /** Only languages with a UI dictionary; uk and de join when theirs exist. */
 const LOCALES: readonly Locale[] = ["ru", "en"];
@@ -38,21 +44,30 @@ export function readUrl(search = window.location.search): UrlView {
   }
   const locale = p.get("locale") as Locale | null;
   if (locale && LOCALES.includes(locale)) view.locale = locale;
+  const listed = p.get("layers")?.split(",");
+  if (listed?.some((l) => (LAYERS as readonly string[]).includes(l))) {
+    view.layers = {
+      borders: listed.includes("borders"),
+      places: listed.includes("places"),
+      relief: listed.includes("relief"),
+      routes: listed.includes("routes"),
+    };
+  }
+  const tour = p.get("tour");
+  if (tour && /^[a-z0-9-]{1,40}$/.test(tour)) view.tour = tour;
   return view;
 }
 
-export function writeUrl(
-  view: Required<Pick<UrlView, "year" | "camera" | "locale">> & Pick<UrlView, "place">,
-): void {
+type WritableView = Required<Pick<UrlView, "year" | "camera" | "locale">> &
+  Pick<UrlView, "place" | "layers" | "tour">;
+
+export function writeUrl(view: WritableView): void {
   window.history.replaceState(null, "", `?${viewSearch(view, window.location.search)}`);
 }
 
-/** The query string for a view. Parameters this app does not own (layers, tour, theme
- * from an embedding host, docs/embed-protocol.md) are kept, not wiped. */
-export function viewSearch(
-  view: Required<Pick<UrlView, "year" | "camera" | "locale">> & Pick<UrlView, "place">,
-  current = "",
-): string {
+/** The query string for a view. Parameters this app does not own (theme from an
+ * embedding host, docs/embed-protocol.md) are kept, not wiped. */
+export function viewSearch(view: WritableView, current = ""): string {
   const p = new URLSearchParams(current);
   p.set("year", String(view.year));
   if (view.place) p.set("place", view.place);
@@ -69,5 +84,11 @@ export function viewSearch(
     ].join(","),
   );
   p.set("locale", view.locale);
+  // Layers are written only when some are off: the default view keeps a short link.
+  const on = view.layers ? LAYERS.filter((l) => view.layers?.[l]) : LAYERS;
+  if (on.length < LAYERS.length) p.set("layers", on.join(","));
+  else p.delete("layers");
+  if (view.tour) p.set("tour", view.tour);
+  else p.delete("tour");
   return p.toString();
 }

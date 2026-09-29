@@ -64,6 +64,8 @@ export function App() {
           camera: s.camera,
           locale: s.locale,
           ...(s.selectedPlace ? { place: s.selectedPlace } : {}),
+          layers: s.layers,
+          ...(s.tour ? { tour: s.tour.id } : {}),
         });
       }, 300);
     };
@@ -109,10 +111,15 @@ export function App() {
     };
   }, [globe, placesShown]);
 
-  // Fly to the place from the URL once the globe exists.
+  // Fly to the place from the URL once the globe exists, or start its tour.
   useEffect(() => {
-    if (engine && INITIAL.place && !INITIAL.camera) engine.selectPlace(INITIAL.place);
-  }, [engine]);
+    if (!engine) return;
+    if (INITIAL.tour && data?.tours.some((t) => t.id === INITIAL.tour)) {
+      engine.startTour(INITIAL.tour);
+      return;
+    }
+    if (INITIAL.place && !INITIAL.camera) engine.selectPlace(INITIAL.place);
+  }, [engine, data]);
 
   useEffect(() => {
     if (!playing || !engine) return;
