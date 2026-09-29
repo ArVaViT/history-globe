@@ -269,7 +269,7 @@ def thin(ring: list[list[float]], eps: float = 0.02) -> list[list[float]] | None
     for x, y in ring[1:-1]:
         px, py = out[-1]
         if abs(x - px) > eps or abs(y - py) > eps:
-            out.append([round(x, 4), round(y, 4)])
+            out.append([round(x, COORD_DECIMALS), round(y, COORD_DECIMALS)])
     out.append(ring[-1])
     return out if len(out) >= 4 else None
 
@@ -410,7 +410,35 @@ def build_land_water() -> tuple[dict, dict]:
         if f["properties"].get("featurecla") != "Reservoir" and f["properties"].get("name") not in MODERN_LAKES
     ]
     water = {"type": "FeatureCollection", "features": [*ocean["features"], *natural]}
-    return land, water
+    return round_collection(land), round_collection(water)
+
+
+COORD_DECIMALS = 3  # ≈ 100 m: far below what a 1:50m source can show
+
+
+def round_coords(value: object) -> object:
+    """Round every number in a nested coordinate array (drops centimetre noise)."""
+    if isinstance(value, list):
+        return [round_coords(v) for v in value]
+    if isinstance(value, float):
+        return round(value, COORD_DECIMALS)
+    return value
+
+
+def round_collection(fc: dict) -> dict:
+    """Keep only geometry and properties, with coordinates rounded to COORD_DECIMALS."""
+    return {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "properties": {},
+                "geometry": {"type": f["geometry"]["type"], "coordinates": round_coords(f["geometry"]["coordinates"])},
+            }
+            for f in fc["features"]
+            if f.get("geometry")
+        ],
+    }
 
 
 # Rivers that are biblical places: the OpenBible id carries the verified Russian name.
@@ -469,7 +497,7 @@ def build_rivers() -> tuple[dict, dict, dict]:
         place = RIVER_PLACES.get(name)
         feats.append({
             "type": "Feature",
-            "geometry": {"type": "MultiLineString", "coordinates": [[[round(x, 4), round(y, 4)] for x, y in line] for line in lines]},
+            "geometry": {"type": "MultiLineString", "coordinates": [[[round(x, COORD_DECIMALS), round(y, COORD_DECIMALS)] for x, y in line] for line in lines]},
             "properties": {
                 # One English name per biblical river, whatever the local spelling in the source.
                 "name": RIVER_NAMES_EN[place] if place else name,
