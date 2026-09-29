@@ -12,6 +12,8 @@ export interface PlaceProps {
   readonly sites: number;
   /** The runner-up candidate site has at least 10 % of OpenBible's assessment. */
   readonly disputed: boolean;
+  /** A second record of the same name on the same point: dot only, not listed twice. */
+  readonly dup?: boolean;
   readonly verses: number;
   readonly nt: number;
   readonly ot: number;
