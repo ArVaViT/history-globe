@@ -100,7 +100,7 @@ places:
       excerpt: "вышел вон из города в Вифанию и провел там ночь."
   - id: ac2c4c5
     en: "Mount of Olives"
-    ru: "гора Елеонская"
+    ru: "Гора Елеонская"
     evidence:
       osis: 2Sam.15.30
       excerpt: "А Давид пошел на гору Елеонскую, шел и плакал; голова"
@@ -190,7 +190,7 @@ places:
       excerpt: "Выходя, они встретили одного Киринеянина, по имени Симона; сего"
   - id: a562fcc
     en: "Sea of Galilee"
-    ru: "море Галилейское"
+    ru: "Море Галилейское"
     evidence:
       osis: Matt.4.18
       excerpt: "Проходя же близ моря Галилейского, Он увидел двух братьев"
@@ -238,7 +238,7 @@ places:
       excerpt: "сем, удалились в Ликаонские города Листру и Дервию и в"
   - id: abfba2a
     en: "Mount Sinai"
-    ru: "гора Синай"
+    ru: "Гора Синай"
     evidence:
       osis: Exod.16.1
       excerpt: "общество сынов Израилевых в пустыню Син, что между Елимом и"
@@ -322,7 +322,7 @@ places:
       excerpt: "день был брак в Кане Галилейской, и Матерь Иисуса была"
   - id: ab0b2dd
     en: "East"
-    ru: "восток"
+    ru: "Восток"
     evidence:
       osis: Gen.25.6
       excerpt: "еще при жизни своей, на восток, в землю восточную."
@@ -364,7 +364,7 @@ places:
       excerpt: "И одна женщина из города Фиатир, именем Лидия, торговавшая багряницею"
   - id: a815d89
     en: "Areopagus"
-    ru: "ареопаг"
+    ru: "Ареопаг"
     evidence:
       osis: Acts.17.19
       excerpt: "И, взяв его, привели в ареопаг и говорили: можем ли"
@@ -406,7 +406,7 @@ places:
       excerpt: "И, переправившись, прибыли в землю Геннисаретскую."
   - id: ada6b64
     en: "Gerasa"
-    ru: "страна Гадаринская"
+    ru: "Страна Гадаринская"
     evidence:
       osis: Mark.5.1
       excerpt: "И пришли на другой берег моря, в страну Гадаринскую"
@@ -466,7 +466,7 @@ places:
       excerpt: "человек, на которых упала башня Силоамская и побила их, виновнее"
   - id: a47c817
     en: "Solomon’s Portico"
-    ru: "притвор Соломонов"
+    ru: "Притвор Соломонов"
     evidence:
       osis: John.10.23
       excerpt: "Иисус в храме, в притворе Соломоновом."
@@ -6182,13 +6182,13 @@ places:
       excerpt: "до входа в Емаф"
   - id: af4c2cd
     en: "Valley of the Arnon"
-    ru: "поток Арнон"
+    ru: "Поток Арнон"
     evidence:
       osis: Deut.2.24
       excerpt: "перейдите поток Арнон"
   - id: a7a59b4
     en: "Brook of Egypt"
-    ru: "поток Египетский"
+    ru: "Поток Египетский"
     evidence:
       osis: Josh.15.4
       excerpt: "идет к потоку Египетскому"
@@ -6222,12 +6222,6 @@ places:
     evidence:
       osis: 1Kgs.10.17
       excerpt: "в доме из Ливанского дерева"
-  - id: a54fdd6
-    en: "Hushah"
-    ru: "Хуша"
-    evidence:
-      osis: 1Chr.4.4
-      excerpt: "и Езер, отец Хуша"
   - id: ad41f6e
     en: "Jeshimon"
     ru: "Иесимон"
@@ -6338,7 +6332,7 @@ places:
       excerpt: "остригши голову в Кенхреях"
   - id: aa7bee8
     en: "Cherith"
-    ru: "поток Хораф"
+    ru: "Поток Хораф"
     evidence:
       osis: 1Kgs.17.5
       excerpt: "остался у потока Хорафа"
@@ -6374,7 +6368,7 @@ places:
       excerpt: "И отправились из Хашмоны"
   - id: a373106
     en: "Kanah 1"
-    ru: "поток Кана"
+    ru: "Поток Кана"
     evidence:
       osis: Josh.16.8
       excerpt: "к потоку Кане"
@@ -6488,10 +6482,10 @@ places:
       excerpt: "от дубравы, что в Цананниме"
   - id: a1c6a50
     en: "Zalmonah"
-    ru: "Салмона"
+    ru: "Салмон"
     evidence:
-      osis: Num.33.41
-      excerpt: "расположились станом в Салмоне"
+      osis: Num.33.42
+      excerpt: "И отправились из Салмона"
   - id: a51d1fa
     en: "Abel-shittim"
     ru: "Аве-Ситтим"
@@ -6878,13 +6872,13 @@ places:
       excerpt: "назвали это место: Села-Гаммахлекоф"
   - id: a702ab6
     en: "Sea of Egypt"
-    ru: "море Египетское"
+    ru: "Море Египетское"
     evidence:
       osis: Isa.11.15
       excerpt: "залив моря Египетского"
   - id: ad259d1
     en: "Sea of Jazer"
-    ru: "озеро Иазер"
+    ru: "Озеро Иазер"
     evidence:
       osis: Jer.48.32
       excerpt: "достигали до озера Иазера"
@@ -6924,12 +6918,6 @@ places:
     evidence:
       osis: Josh.16.6
       excerpt: "к восточной стороне Фаанаф-Силома"
-  - id: ab066d7
-    en: "Tamar 1"
-    ru: "Фадмор"
-    evidence:
-      osis: 1Kgs.9.18
-      excerpt: "и Ваалаф и Фадмор в пустыне"
   - id: a6f61d3
     en: "Trogyllium"
     ru: "Трогиллий"
@@ -6944,13 +6932,13 @@ places:
       excerpt: "Дан и Иаван из Узала"
   - id: a7c5927
     en: "Valley of Zeboim"
-    ru: "долина Цевоим"
+    ru: "Долина Цевоим"
     evidence:
       osis: 1Sam.13.18
       excerpt: "к границе долины Цевоим"
   - id: a6bf8d4
     en: "Valley of Zephathah"
-    ru: "долина Цефата"
+    ru: "Долина Цефата"
     evidence:
       osis: 2Chr.14.10
       excerpt: "на долине Цефата у Мареши"
@@ -6980,7 +6968,7 @@ places:
       excerpt: "всходят на возвышенность Циц"
   - id: a0f88fb
     en: "Brook of the Willows"
-    ru: "река Аравийская"
+    ru: "Река Аравийская"
     evidence:
       osis: Isa.15.7
       excerpt: "за реку Аравийскую"

@@ -87,8 +87,9 @@ export const NAME: ExpressionSpecification = [
 ];
 
 /**
- * The Russian map shows only verified Russian names: a place without one keeps its dot
- * but gets no Latin label (as with rivers). Search and lists still show the English name.
+ * Towns and landmarks on the Russian map are labelled only with a verified Russian name:
+ * without one they keep their dot, which can still be clicked. Regions and waters have no
+ * dot, their label is all there is, so they keep the English name as a fallback.
  */
 export const HAS_LOCAL_NAME: ExpressionSpecification = [
   "any",
@@ -364,7 +365,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isArea, visibleAtZoom, HAS_LOCAL_NAME],
+      filter: ["all", isArea, visibleAtZoom],
       layout: {
         // Biblical regions are not states: italic and sentence case, so they never read
         // as the polity labels (upper case) of the chosen year.
@@ -387,7 +388,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isWater, visibleAtZoom, HAS_LOCAL_NAME],
+      filter: ["all", isWater, visibleAtZoom],
       layout: {
         "text-field": NAME,
         "text-font": [MAP_FONT_ITALIC],

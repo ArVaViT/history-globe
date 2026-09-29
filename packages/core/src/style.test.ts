@@ -173,9 +173,14 @@ describe("place labels on the Russian map", () => {
       );
   }
 
-  it("need a Russian name in Russian, any name in English", () => {
-    expect(labelled("ru", { name: "Negeb" })).toBe(false);
-    expect(labelled("ru", { name: "Galilee", name_ru: "Галилея" })).toBe(true);
-    expect(labelled("en", { name: "Negeb" })).toBe(true);
+  it("need a Russian name for a town, any name in English", () => {
+    expect(labelled("ru", { kind: "settlement", name: "Gob" })).toBe(false);
+    expect(labelled("ru", { kind: "settlement", name: "Gob", name_ru: "Гоб" })).toBe(true);
+    expect(labelled("en", { kind: "settlement", name: "Gob" })).toBe(true);
+  });
+
+  it("keep the English name for a region, which has no dot to fall back on", () => {
+    expect(labelled("ru", { kind: "region", name: "Negeb" })).toBe(true);
+    expect(labelled("ru", { kind: "body of water", name: "Great Sea" })).toBe(true);
   });
 });

@@ -1,4 +1,4 @@
-import { YEAR_MAX, YEAR_MIN, type PolityName } from "@hg/core";
+import { YEAR_MAX, YEAR_MIN } from "@hg/core";
 import type { Locale } from "@hg/model";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -28,10 +28,6 @@ export function App() {
   const [playing, setPlaying] = useState(false);
   const [ready, setReady] = useState(false);
   const [hover, setHover] = useState<{ id: string; at: { x: number; y: number } } | null>(null);
-  const [polityHover, setPolityHover] = useState<{
-    polities: readonly PolityName[];
-    at: { x: number; y: number };
-  } | null>(null);
   const [inView, setInView] = useState<string[]>([]);
   const { globe, error: mapError } = useGlobe(container, data, INITIAL);
   const error =
@@ -91,14 +87,10 @@ export function App() {
     const offHover = globe.renderer.on("hover", (id, at) => {
       setHover(id && at ? { id, at } : null);
     });
-    const offPolity = globe.renderer.on("hoverPolity", (polities, at) => {
-      setPolityHover(polities && at ? { polities, at } : null);
-    });
     return () => {
       offReady();
       offCamera();
       offHover();
-      offPolity();
     };
   }, [globe]);
 
@@ -142,8 +134,9 @@ export function App() {
       // Keys belong to the focused control: Space presses a button, letters go into a
       // field. Only the time slider shares its keys with the map; Escape always closes.
       const target = e.target as HTMLElement | null;
-      if (e.key !== "Escape" && target?.closest("button, a, select, textarea, [contenteditable]"))
-        return;
+      if (target?.closest("select, textarea, [contenteditable]") && e.key !== "Escape") return;
+      // A focused button or link keeps Space and Enter; the map's other keys still work.
+      if (target?.closest("button, a") && (e.key === " " || e.key === "Enter")) return;
       if (target?.tagName === "INPUT" && (target as HTMLInputElement).type !== "range") return;
       const big = e.shiftKey ? 100 : 10;
       if (e.key === "[" || e.key === "{") engine.stepYear(-big);
@@ -188,9 +181,7 @@ export function App() {
       )}
 
       {hoverPlace && hover && <HoverTip place={hoverPlace} at={hover.at} locale={state.locale} />}
-      {!hoverPlace && polityHover && (
-        <PolityTip polities={polityHover.polities} at={polityHover.at} locale={state.locale} />
-      )}
+      {globe && <PolityTip renderer={globe.renderer} locale={state.locale} />}
 
       {error && (
         <Panel className="absolute top-1/2 left-1/2 -translate-1/2 px-6 py-4 text-ink">

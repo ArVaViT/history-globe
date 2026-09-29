@@ -31,6 +31,7 @@ export class MapLibreRenderer implements Renderer {
   private selected: number | null = null;
   private hovered: number | null = null;
   private hoveredPlace: string | null = null;
+  private polityShown = false;
   private readonly handlers: { [E in keyof RendererEvents]: Set<RendererEvents[E]> } = {
     pick: new Set(),
     hover: new Set(),
@@ -110,7 +111,11 @@ export class MapLibreRenderer implements Renderer {
       // Over no place, name the states under the pointer: their labels often give way
       // to town names.
       const states = pid ? null : this.politiesAt(e);
-      for (const h of this.handlers.hoverPolity) h(states, states ? at : null);
+      // Nothing to say twice: "no state here" is sent once, not on every mouse move.
+      if (states || this.polityShown) {
+        this.polityShown = states !== null;
+        for (const h of this.handlers.hoverPolity) h(states, states ? at : null);
+      }
       if (pid === this.hoveredPlace && pid === null) return;
       this.hoveredPlace = pid;
       for (const h of this.handlers.hover) h(pid, pid ? at : null);
@@ -120,6 +125,7 @@ export class MapLibreRenderer implements Renderer {
       this.setHoverState(null);
       this.hoveredPlace = null;
       for (const h of this.handlers.hover) h(null, null);
+      this.polityShown = false;
       for (const h of this.handlers.hoverPolity) h(null, null);
     });
     this.map.on("moveend", () => {

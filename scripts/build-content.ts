@@ -51,11 +51,20 @@ const manifest = JSON.parse(readFileSync(join(out, "manifest.json"), "utf8")) as
 };
 const parked = new Set(manifest.excluded_places ?? []);
 
+const errors: string[] = [];
+const warnings: string[] = [];
+// Nothing is written until every check has passed: a failed run leaves the data untouched.
+const writes: [path: string, text: string][] = [];
+
 // The verses OpenBible tags for each place (English numbering). Evidence must come from
 // one of them: this catches Synodal verse numbers and verses about a namesake.
 const openbible = join(root, "pipeline/.cache/openbible-ancient.jsonl");
 const versesOf = new Map<string, Set<string>>();
-if (existsSync(openbible)) {
+if (!existsSync(openbible)) {
+  warnings.push(
+    "no OpenBible cache (pipeline/.cache): evidence and tour stops are not checked against its tags",
+  );
+} else {
   for (const line of readFileSync(openbible, "utf8").split("\n")) {
     if (!line) continue;
     const r = JSON.parse(line) as { id: string; verses?: { osis: string }[] };
@@ -91,10 +100,6 @@ const SYNODAL_ONLY = new Set([
   "acd9137 Exod.1.11",
 ]);
 
-const errors: string[] = [];
-const warnings: string[] = [];
-// Nothing is written until every check has passed: a failed run leaves the data untouched.
-const writes: [path: string, text: string][] = [];
 const names: Record<string, { ru: string; osis?: string }> = {};
 const nameEntries = PlaceNamesFile.parse(load("content/place-names.yaml")).places;
 const seenIds = new Set<string>();
@@ -106,6 +111,9 @@ for (const p of nameEntries) {
   else if (!known.has(p.id)) errors.push(`place-names: ${p.id} (${p.en}) is not in the data build`);
   // A map label, not a note: no glosses in brackets, no markers.
   if (/[()*[\]/]/.test(p.ru)) errors.push(`place-names: ${p.id} "${p.ru}" is not a plain name`);
+  // One rule for generic words: a label starts with a capital ("Гора Сион", "Поток Арнон").
+  if (p.ru.charAt(0) !== p.ru.charAt(0).toLocaleUpperCase("ru"))
+    errors.push(`place-names: ${p.id} "${p.ru}" must start with a capital letter`);
   // The evidence must actually contain the name: compare the first three letters of the
   // last word, which survive Russian case endings (Вифлеем → в Вифлееме).
   if (p.evidence) {

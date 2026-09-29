@@ -34,6 +34,7 @@ describe("formatRef", () => {
     "Acts.29.1",
     "Acts.28.32",
     "Jude.2.1",
+    "Rom.14.24",
   ])("rejects %s", (osis) => {
     expect(() => formatRef(osis, "en")).toThrow(SyntaxError);
   });
@@ -41,6 +42,8 @@ describe("formatRef", () => {
   it("accepts the last verse of a book", () => {
     expect(formatRef("Acts.28.31", "en")).toBe("Acts 28:31");
     expect(formatRef("Ps.119.176", "en")).toBe("Ps 119:176");
+    // The English numbering keeps the doxology of Romans at 16:25-27.
+    expect(formatRef("Rom.16.27", "en")).toBe("Rom 16:27");
   });
 
   it("accepts whole-chapter ranges", () => {
