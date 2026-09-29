@@ -40,7 +40,9 @@
     "play": "Play",
     "pause": "Pause",
     "back": "Back {{n}} years",
-    "forward": "Forward {{n}} years"
+    "forward": "Forward {{n}} years",
+    "year": "Year",
+    "timeline": "Timeline"
   },
   "hints": "[ ] year ±10 · Shift ±100 · Space play · / search · N north up",
   "kind": {
