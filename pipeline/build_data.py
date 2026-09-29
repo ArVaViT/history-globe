@@ -385,12 +385,34 @@ def build_polities() -> tuple[dict, dict, dict]:
             preferred[key] = name
     duplicates = 0
 
+    # A composite polity ("(Phoenician Empire)" = Phoenicia + Phoenician Colonies) is
+    # drawn over its own parts: double fill, two labels. Where a part is on the map in
+    # the same years, draw the parts and leave the composite out.
+    spans: dict[str, list[tuple[int, int]]] = {}
+    for f in clio["features"]:
+        p = f["properties"]
+        if p.get("Type") == "POLITY" and f.get("geometry"):
+            spans.setdefault(p["Name"], []).append((p["FromYear"], p["ToYear"]))
+
+    def parts_on_map(p: dict) -> bool:
+        return any(
+            a <= p["ToYear"] and p["FromYear"] <= b
+            for part in (p.get("Components") or "").split(";")
+            if part
+            for a, b in spans.get(part, [])
+        )
+
+    composites = 0
+
     for f in clio["features"]:
         p = f["properties"]
         if p["ToYear"] < YEAR_MIN or p["FromYear"] > YEAR_MAX or not f.get("geometry"):
             continue
         if p.get("Type") == "POLITY" and preferred.get(shape_key(f)) != p["Name"]:
             duplicates += 1
+            continue
+        if p.get("Type") == "POLITY" and parts_on_map(p):
+            composites += 1
             continue
         g = f["geometry"]
         parts = g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]
@@ -425,7 +447,12 @@ def build_polities() -> tuple[dict, dict, dict]:
                     # Bigger polities get labels earlier and larger.
                     "properties": {**props, "size": round(math.log10(max(total, 0.01)) + 2, 2)},
                 })
-    stats = {"polity_shapes": len(polys), "polity_names": len(names), "polity_duplicates_dropped": duplicates}
+    stats = {
+        "polity_shapes": len(polys),
+        "polity_names": len(names),
+        "polity_duplicates_dropped": duplicates,
+        "polity_composites_dropped": composites,
+    }
     return (
         {"type": "FeatureCollection", "features": polys},
         {"type": "FeatureCollection", "features": labels},
