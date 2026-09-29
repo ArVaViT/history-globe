@@ -15,7 +15,8 @@
     "format:check": "prettier --check .",
     "test": "vitest run",
     "data": "python3 pipeline/build_data.py && node scripts/build-content.ts",
-    "gate": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm test:pipeline && pnpm build",
+    "gate": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm test:pipeline && pnpm content && pnpm build && node scripts/check-budget.ts",
+    "gate:full": "pnpm data && pnpm gate",
     "test:pipeline": "python3 -m unittest discover -s pipeline -q",
     "content": "node scripts/build-content.ts"
   },

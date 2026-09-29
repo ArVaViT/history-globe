@@ -13,7 +13,7 @@ import {
   PolityNamesFile,
   TourFile,
   type ContentRelease,
-} from "../packages/model/src/index.ts";
+} from "../packages/model/src/content.ts";
 
 const root = join(import.meta.dirname, "..");
 const out = join(root, "apps/web/public/data");
@@ -22,6 +22,10 @@ function load(path: string): unknown {
   return parse(readFileSync(join(root, path), "utf8"));
 }
 
+if (!existsSync(join(out, "places.geojson"))) {
+  console.error("content: no data build in apps/web/public/data; run `pnpm data` first");
+  process.exit(1);
+}
 const places = JSON.parse(readFileSync(join(out, "places.geojson"), "utf8")) as {
   features: {
     geometry: { coordinates: number[] };
