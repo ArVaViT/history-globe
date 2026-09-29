@@ -444,8 +444,12 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-letter-spacing": 0.28,
         "text-max-width": 7,
         "symbol-sort-key": ["-", 0, ["get", "size"]],
-        // Wide padding: an empire's repeated anchors never crowd one view.
-        "text-padding": 48,
+        // Some padding keeps an empire's anchors from crowding one view; 48 px made the
+        // box so large that a river label nearby left the Neo-Babylonian Empire unnamed.
+        "text-padding": 16,
+        // Room to move off a river or a town instead of disappearing.
+        "text-variable-anchor": ["center", "top", "bottom"],
+        "text-radial-offset": 1.2,
         "text-allow-overlap": false,
       },
       paint: {
