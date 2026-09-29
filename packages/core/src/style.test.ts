@@ -78,3 +78,22 @@ describe("river labels", () => {
     expect(labelled("en", { name: "Danube" })).toBe(false);
   });
 });
+
+describe("site labels", () => {
+  const layer = style.layers.find((l) => l.id === "site-label");
+  function labelled(props: Record<string, unknown>): boolean {
+    if (!layer || !("filter" in layer)) throw new Error("no site-label filter");
+    const f = featureFilter(layer.filter, "filter", { selected: "p" });
+    return f.filter({ zoom: 8 }, {
+      type: 1,
+      properties: { place: "p", label: "X", ...props },
+      geometry: [],
+    } as never);
+  }
+
+  it("labels rated candidates above 0 % and unrated ones", () => {
+    expect(labelled({ share: 38 })).toBe(true);
+    expect(labelled({ share: 0 })).toBe(false);
+    expect(labelled({})).toBe(true);
+  });
+});

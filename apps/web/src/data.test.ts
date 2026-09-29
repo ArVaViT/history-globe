@@ -78,4 +78,18 @@ describe("groupSites", () => {
     expect(g.get("p")?.[0]?.at).toEqual([2, 2]);
     expect(g.get("q")?.length).toBe(1);
   });
+
+  it("keeps unrated candidates in source order, with no share", () => {
+    const pt = (label: string) => ({
+      type: "Feature" as const,
+      geometry: { type: "Point" as const, coordinates: [0, 0] },
+      properties: { place: "u", label },
+    });
+    const g = groupSites({ type: "FeatureCollection", features: [pt("X"), pt("Y"), pt("Z")] });
+    expect(g.get("u")?.map((s) => [s.label, s.share])).toEqual([
+      ["X", null],
+      ["Y", null],
+      ["Z", null],
+    ]);
+  });
 });

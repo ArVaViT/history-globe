@@ -33,6 +33,14 @@ SOURCES = {
         "license": "CC-BY-4.0",
         "credit": "OpenBible.info Bible Geocoding Data, CC BY 4.0",
     },
+    # Modern locations behind each ancient point: read only to learn where a coordinate
+    # came from, so that points copied from OSM or Google can be dropped (ADR 0008).
+    "openbible_modern": {
+        "file": "openbible-modern.jsonl",
+        "url": "https://raw.githubusercontent.com/openbibleinfo/Bible-Geocoding-Data/main/data/modern.jsonl",
+        "license": "CC-BY-4.0",
+        "credit": "OpenBible.info Bible Geocoding Data, CC BY 4.0",
+    },
     "cliopatria": {
         "file": "cliopatria_polities_only.geojson",
         "url": "https://github.com/Seshat-Global-History-Databank/cliopatria/raw/main/cliopatria.geojson.zip",
@@ -127,25 +135,6 @@ def wikidata_coords(qids: list[str]) -> dict[str, list[float]]:
     return {q: c for q, c in cache.items() if c}
 
 
-def wikidata_labels(qids: list[str], lang: str) -> dict[str, str]:
-    """Labels of Wikidata items in one language, cached. CC0 (ADR 0008)."""
-    path = CACHE / f"wikidata-labels-{lang}.json"
-    cache: dict[str, str | None] = json.loads(path.read_text()) if path.exists() else {}
-    missing = [q for q in qids if q not in cache]
-    for i in range(0, len(missing), 50):
-        batch = missing[i : i + 50]
-        url = (
-            "https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&props=labels"
-            f"&languages={lang}&ids=" + "|".join(batch)
-        )
-        entities = wikidata_get(url).get("entities", {})
-        for q in batch:
-            cache[q] = entities.get(q, {}).get("labels", {}).get(lang, {}).get("value")
-        path.write_text(json.dumps(cache, ensure_ascii=False, indent=0, sort_keys=True))
-    path.write_text(json.dumps(cache, ensure_ascii=False, indent=0, sort_keys=True))
-    return {q: v for q, v in cache.items() if v}
-
-
 def qid(record: dict) -> str | None:
     for v in (record.get("linked_data") or {}).values():
         if isinstance(v, dict) and str(v.get("id", "")).startswith("Q"):
@@ -189,40 +178,88 @@ def in_bbox(xs: list[float], ys: list[float]) -> bool:
 # --- places ------------------------------------------------------------------------
 
 
-def osm_derived(resolution: dict) -> bool:
-    """A point computed from an OSM polygon is ODbL-derived: excluded (ADR 0008)."""
-    if resolution.get("lonlat_type") != "representative point":
-        return False
+# Coordinate origins we may not redistribute: OSM is ODbL, Google forbids extraction.
+BANNED_COORD_SOURCES = {"osm", "osm_group", "google_maps", "google_books", "google_earth_community"}
+
+
+def load_modern() -> dict[str, dict]:
+    return {m["id"]: m for m in map(json.loads, fetch("openbible_modern").open(encoding="utf-8"))}
+
+
+def lonlat_key(lonlat: str) -> tuple[float, ...]:
+    return tuple(round(float(v), 5) for v in lonlat.split(","))
+
+
+def source_banned(m: dict) -> bool:
+    cs = m.get("coordinates_source") or {}
+    return cs.get("type") in BANNED_COORD_SOURCES or cs.get("geometry_credit") == "osm"
+
+
+def banned_lonlats(modern: dict[str, dict]) -> set[tuple[float, ...]]:
+    """Coordinates OpenBible took from OSM or Google. Some locations without a source of
+    their own repeat such a coordinate digit for digit: they are copies and banned too."""
+    return {lonlat_key(m["lonlat"]) for m in modern.values() if m.get("lonlat") and source_banned(m)}
+
+
+def coord_banned(resolution: dict, modern: dict[str, dict], banned: set[tuple[float, ...]]) -> bool:
+    """True when the point is copied from, or computed from, OSM or Google (ADR 0008).
+
+    Three ways in: the modern location's own coordinates were taken from OSM or Google;
+    the point repeats such a coordinate exactly; or the point was computed (not copied from that location) while an OSM geometry
+    is attached, i.e. it is a representative point or centre of an OSM polygon. An OSM
+    outline next to a point that came from elsewhere does not taint the point.
+    """
+    basis = modern.get(resolution.get("modern_basis_id", "")) or {}
+    if source_banned(basis) or lonlat_key(resolution["lonlat"]) in banned:
+        return True
     roles = resolution.get("geojson_roles", {})
-    return any(isinstance(v, dict) and v.get("geometry_credit") == "osm" for v in roles.values())
+    osm_geometry = any(isinstance(v, dict) and v.get("geometry_credit") == "osm" for v in roles.values())
+    return osm_geometry and resolution.get("lonlat") != basis.get("lonlat")
 
 
-def build_places() -> tuple[dict, dict]:
-    records = [json.loads(line) for line in fetch("openbible").open(encoding="utf-8")]
-    osm_qids = []
+def first_point(ident: dict) -> dict | None:
+    return next((x for x in ident.get("resolutions", []) if x.get("lonlat")), None)
+
+
+def assert_no_banned_points(collections: dict[str, dict], modern: dict[str, dict]) -> None:
+    """Independent licence lock (ADR 0008): no shipped point sits on a coordinate that
+    OpenBible took from OSM or Google, whatever path the filters above let it through."""
+    banned = banned_lonlats(modern)
+    hits = [
+        f"{name}: {f['properties'].get('id') or f['properties'].get('place')} at {f['geometry']['coordinates']}"
+        for name, fc in collections.items()
+        for f in fc["features"]
+        if tuple(f["geometry"]["coordinates"]) in banned
+    ]
+    if hits:
+        raise SystemExit("points copied from OSM or Google (ADR 0008):\n" + "\n".join(hits[:20]))
+
+
+def build_places(records: list[dict], modern: dict[str, dict], sites_per_place: dict[str, int]) -> tuple[dict, dict, list[str]]:
+    def top_point(r: dict) -> dict | None:
+        ids = r.get("identifications") or []
+        return first_point(ids[0]) if ids else None
+
+    banned = banned_lonlats(modern)
+    banned_qids = [q for r in records if (res := top_point(r)) and coord_banned(res, modern, banned) and (q := qid(r))]
+    replacements = wikidata_coords(banned_qids)
+    feats, excluded, replaced, no_point = [], [], 0, 0
     for r in records:
         ids = r.get("identifications") or []
-        res = next((x for x in (ids[0].get("resolutions", []) if ids else []) if x.get("lonlat")), None)
-        if res is not None and osm_derived(res) and qid(r):
-            osm_qids.append(qid(r))
-    replacements = wikidata_coords([q for q in osm_qids if q])
-    ru_labels = wikidata_labels([q for q in (qid(r) for r in records) if q], "ru")
-    feats, excluded_osm, replaced, no_point = [], 0, 0, 0
-    for r in records:
-        ids = r.get("identifications") or []
-        res = next((x for x in (ids[0].get("resolutions", []) if ids else []) if x.get("lonlat")), None)
+        res = top_point(r)
         if res is None:
             no_point += 1
             continue
         coord_source = "openbible"
-        if osm_derived(res):
+        if coord_banned(res, modern, banned):
             q = qid(r)
-            if q and q in replacements:
+            # A Wikidata coordinate identical to the banned one was copied from it: drop too.
+            if q and q in replacements and tuple(replacements[q]) not in banned:
                 lon, lat = replacements[q]
                 coord_source = "wikidata"
                 replaced += 1
             else:
-                excluded_osm += 1
+                excluded.append(r["id"])
                 continue
         else:
             lon, lat = (float(v) for v in res["lonlat"].split(","))
@@ -238,7 +275,8 @@ def build_places() -> tuple[dict, dict]:
                 "id": r["id"],
                 "name": base,
                 "kind": (r.get("types") or ["place"])[0],
-                "sites": len(ids),
+                # Candidate sites actually shipped in sites.geojson: 0 when not disputed.
+                "sites": sites_per_place.get(r["id"], 0),
                 "verses": len(verses),
                 "nt": nt,
                 "ot": len(verses) - nt,
@@ -247,18 +285,15 @@ def build_places() -> tuple[dict, dict]:
                 "where": TAG_RE.sub("", ids[0].get("description", "")),
                 "osis": [v["osis"] for v in verses[:12]],
                 "coord": coord_source,
-                # Russian label from Wikidata: a fallback, not checked against the Synodal
-                # text. Verified Synodal names come from content/ and take precedence.
-                **({"name_ru_wd": ru_labels[q]} if (q := qid(r)) and q in ru_labels else {}),
             },
         })
     stats = {
         "places": len(feats),
-        "osm_points_replaced_from_wikidata": replaced,
-        "excluded_osm_derived": excluded_osm,
+        "banned_points_replaced_from_wikidata": replaced,
+        "excluded_banned_coordinates": len(excluded),
         "without_point": no_point,
     }
-    return {"type": "FeatureCollection", "features": feats}, stats
+    return {"type": "FeatureCollection", "features": feats}, stats, excluded
 
 
 # --- polities ----------------------------------------------------------------------
@@ -523,33 +558,36 @@ def build_rivers() -> tuple[dict, dict, dict]:
     )
 
 
-def build_sites() -> tuple[dict, dict]:
+MAX_SITES = 6
+
+
+def build_sites(records: list[dict], modern: dict[str, dict]) -> tuple[dict, dict[str, int], dict]:
     """Candidate locations of disputed places (ADR 0007: a place ≠ a site).
 
     OpenBible scores each identification (`score.time_total`, weighted towards recent
-    scholarship). We keep candidates with a usable, non-OSM-derived point and turn the
-    positive scores into a share, labelled in the UI as "OpenBible's assessment", not as
-    a scholarly consensus.
+    scholarship). We keep candidates with a point we may redistribute, show the best
+    MAX_SITES, and turn their positive scores into shares of what is shown, labelled in
+    the UI as "OpenBible's assessment", not as a scholarly consensus. When no shown
+    candidate has a positive score, `share` is omitted: "not assessed", not "0 %".
     """
-    records = [json.loads(line) for line in fetch("openbible").open(encoding="utf-8")]
-    feats, places_with_sites = [], 0
+    banned = banned_lonlats(modern)
+    feats, per_place = [], {}
     for r in records:
         ids = r.get("identifications") or []
-        if len(ids) < 2:
-            continue
         cands = []
         for i, ident in enumerate(ids):
-            res = next((x for x in ident.get("resolutions", []) if x.get("lonlat")), None)
-            if res is None or osm_derived(res):
+            res = first_point(ident)
+            if res is None or coord_banned(res, modern, banned):
                 continue
             lon, lat = (float(v) for v in res["lonlat"].split(","))
             score = float((ident.get("score") or {}).get("time_total") or 0)
             cands.append({"i": i, "lon": lon, "lat": lat, "score": score, "label": TAG_RE.sub("", ident.get("description", ""))})
+        cands = cands[:MAX_SITES]
         if len(cands) < 2:
             continue
-        total = sum(max(c["score"], 0) for c in cands) or 1
-        places_with_sites += 1
-        for c in cands[:6]:
+        total = sum(max(c["score"], 0) for c in cands)
+        per_place[r["id"]] = len(cands)
+        for c in cands:
             feats.append({
                 "type": "Feature",
                 "geometry": {"type": "Point", "coordinates": [round(c["lon"], 5), round(c["lat"], 5)]},
@@ -557,16 +595,20 @@ def build_sites() -> tuple[dict, dict]:
                     "place": r["id"],
                     "rank": c["i"],
                     "label": c["label"],
-                    "share": round(100 * max(c["score"], 0) / total),
+                    **({"share": round(100 * max(c["score"], 0) / total)} if total > 0 else {}),
                 },
             })
-    return {"type": "FeatureCollection", "features": feats}, {"places_with_sites": places_with_sites, "sites": len(feats)}
+    stats = {"places_with_sites": len(per_place), "sites": len(feats)}
+    return {"type": "FeatureCollection", "features": feats}, per_place, stats
 
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    places, place_stats = build_places()
-    sites, site_stats = build_sites()
+    records = [json.loads(line) for line in fetch("openbible").open(encoding="utf-8")]
+    modern = load_modern()
+    sites, sites_per_place, site_stats = build_sites(records, modern)
+    places, place_stats, excluded_places = build_places(records, modern, sites_per_place)
+    assert_no_banned_points({"places.geojson": places, "sites.geojson": sites}, modern)
     rivers, river_labels, river_stats = build_rivers()
     polities, polity_labels, polity_stats = build_polities()
     land, water = build_land_water()
@@ -595,6 +637,9 @@ def main() -> None:
             }
             for k, v in SOURCES.items()
         },
+        # Places left out because their only point may not be redistributed (ADR 0008).
+        # Content may keep verified names for them; they return with a licensed point.
+        "excluded_places": sorted(excluded_places),
         "stats": {**place_stats, **site_stats, **river_stats, **polity_stats},
         "files": {name: (OUT / name).stat().st_size for name in outputs},
     }

@@ -66,6 +66,9 @@ export const SITES_OF_SELECTED: ExpressionSpecification = [
   ["global-state", "selected"],
 ];
 
+/** OpenBible's share for a candidate site; 0 where the candidates are unrated. */
+const SHARE: ExpressionSpecification = ["to-number", ["get", "share"], 0];
+
 /** Localised name with fallback to the English one. */
 export const NAME: ExpressionSpecification = [
   "case",
@@ -424,20 +427,26 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       source: "sites",
       filter: SITES_OF_SELECTED,
       paint: {
-        "circle-radius": ["interpolate", ["linear"], ["get", "share"], 0, 6, 100, 13],
+        "circle-radius": ["interpolate", ["linear"], SHARE, 0, 6, 100, 13],
         "circle-color": "rgba(0,0,0,0)",
         "circle-stroke-color": T.accent,
         "circle-stroke-width": 2,
-        "circle-stroke-opacity": ["interpolate", ["linear"], ["get", "share"], 0, 0.45, 50, 1],
+        "circle-stroke-opacity": ["interpolate", ["linear"], SHARE, 0, 0.45, 50, 1],
       },
     },
     {
       id: "site-label",
       type: "symbol",
       source: "sites",
-      filter: ["all", SITES_OF_SELECTED, [">", ["get", "share"], 0]],
+      // Candidates rated 0 % stay unlabelled; unrated ones (no `share`) keep their name.
+      filter: ["all", SITES_OF_SELECTED, ["any", ["!", ["has", "share"]], [">", SHARE, 0]]],
       layout: {
-        "text-field": ["concat", ["get", "label"], " · ", ["to-string", ["get", "share"]], "%"],
+        "text-field": [
+          "case",
+          ["has", "share"],
+          ["concat", ["get", "label"], " · ", ["to-string", SHARE], "%"],
+          ["get", "label"],
+        ],
         "text-font": [MAP_FONT_ITALIC],
         "text-size": 12,
         "text-variable-anchor": ["left", "right", "top", "bottom"],

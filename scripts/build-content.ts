@@ -29,16 +29,25 @@ const places = JSON.parse(readFileSync(join(out, "places.geojson"), "utf8")) as 
   }[];
 };
 const known = new Set(places.features.map((f) => f.properties.id));
+// Places the pipeline left out for licence reasons (ADR 0008): their names stay parked.
+const manifest = JSON.parse(readFileSync(join(out, "manifest.json"), "utf8")) as {
+  excluded_places?: string[];
+};
+const parked = new Set(manifest.excluded_places ?? []);
 
 const errors: string[] = [];
 const warnings: string[] = [];
+// Nothing is written until every check has passed: a failed run leaves the data untouched.
+const writes: [path: string, text: string][] = [];
 const names: Record<string, { ru: string; osis?: string }> = {};
 const nameEntries = PlaceNamesFile.parse(load("content/place-names.yaml")).places;
 const seenIds = new Set<string>();
 for (const p of nameEntries) {
   if (seenIds.has(p.id)) errors.push(`place-names: ${p.id} (${p.en}) is listed twice`);
   seenIds.add(p.id);
-  if (!known.has(p.id)) errors.push(`place-names: ${p.id} (${p.en}) is not in the data build`);
+  if (parked.has(p.id))
+    warnings.push(`place-names: ${p.id} (${p.en}) is parked: no licensed point`);
+  else if (!known.has(p.id)) errors.push(`place-names: ${p.id} (${p.en}) is not in the data build`);
   // The evidence must actually contain the name: compare the first three letters of the
   // last word, which survive Russian case endings (Вифлеем → в Вифлееме).
   if (p.evidence) {
@@ -100,7 +109,7 @@ for (const f of labels.features) {
   else missing.add(f.properties.name);
 }
 for (const name of missing) errors.push(`polity-names: no Russian name for "${name}"`);
-writeFileSync(labelsPath, JSON.stringify(labels));
+writes.push([labelsPath, JSON.stringify(labels)]);
 
 // Biblical rivers get the verified Russian name of their place (Иордан, Евфрат, …).
 for (const file of ["rivers.geojson", "river-labels.geojson"]) {
@@ -112,7 +121,7 @@ for (const file of ["rivers.geojson", "river-labels.geojson"]) {
     const ru = f.properties.place ? names[f.properties.place]?.ru : undefined;
     if (ru) f.properties.name_ru = ru;
   }
-  writeFileSync(path, JSON.stringify(rivers));
+  writes.push([path, JSON.stringify(rivers)]);
 }
 
 for (const w of warnings) console.warn(`warning: ${w}`);
@@ -122,5 +131,6 @@ if (errors.length > 0) {
 }
 
 const release: ContentRelease = { schema_version: 1, names, tours };
+for (const [path, text] of writes) writeFileSync(path, text);
 writeFileSync(join(out, "content.json"), JSON.stringify(release));
 console.log(`content: ${Object.keys(names).length} names, ${tours.length} tours`);

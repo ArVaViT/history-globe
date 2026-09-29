@@ -17,11 +17,19 @@ first.
 - **Never imported**: CC BY-SA, ODbL, GPL data, any non-commercial licence. Known cases:
   Theographic, DARE, Chronas data, historical-basemaps, AWMC shapefiles, OpenStreetMap
   geometries inside OpenBible, dictionary texts from CCEL.
+- **OpenBible points are checked one by one** (added 2026-09-29): a point is dropped when
+  its modern location took its coordinates from OSM or Google (`coordinates_source` in
+  `modern.jsonl`), when it repeats such a coordinate digit for digit, or when it was
+  computed from an OSM polygon. A dropped place falls back to Wikidata (CC0) unless that
+  coordinate is the same copy; otherwise it is left out and listed in the manifest.
 - **Provenance on every record**: dataset, licence, snapshot date, and a stored copy of
   the licence and README at import time.
 - **Enforced in code, three locks**: the allowlist in the importer, exports only through
   views that exclude non-allowlisted provenance, and a test that fails the build if any
-  such record reaches tiles or releases.
+  such record reaches tiles or releases. Today: `ALLOWED_LICENSES` in
+  `pipeline/build_data.py`, the per-point filter above, and `assert_no_banned_points`,
+  which fails the build if a shipped point sits on a banned coordinate
+  (`pipeline/test_build_data.py` covers the rules).
 - `docs/ATTRIBUTIONS.md` is generated from provenance for every release.
 
 ## Consequences
