@@ -146,6 +146,17 @@ const LANDMARK_INK = "#5b4630";
 
 /** First year of the New Testament narrative (6 BC, astronomical -5). */
 export const NT_FROM = -5;
+
+/**
+ * Label placement order: most mentioned first, and places faded before the New
+ * Testament last, so a faded Capernaum never takes the room of a town of its time.
+ */
+const PLACE_ORDER: ExpressionSpecification = [
+  "+",
+  ["-", 0, ["get", "verses"]],
+  ["case", ["all", ["==", ["get", "ot"], 0], ["<", YEAR, NT_FROM]], 100000, 0],
+];
+
 /**
  * Places named only in the New Testament fade before its events: Caesarea or
  * Capernaum must not read as towns of the Exodus. Seas and rivers do not fade;
@@ -376,7 +387,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-size": ["match", ["get", "rank"], 0, 14, 1, 12.5, 11.5],
         "text-letter-spacing": 0.04,
         "text-max-width": 8,
-        "symbol-sort-key": ["-", 0, ["get", "verses"]],
+        "symbol-sort-key": PLACE_ORDER,
       },
       paint: {
         "text-color": "#7a5a33",
@@ -396,7 +407,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-font": [MAP_FONT_ITALIC],
         "text-size": ["match", ["get", "rank"], 0, 14, 1, 12.5, 11.5],
         "text-letter-spacing": 0.06,
-        "symbol-sort-key": ["-", 0, ["get", "verses"]],
+        "symbol-sort-key": PLACE_ORDER,
       },
       // Seas are labelled on the dark sea; rivers, wadis and canals on land.
       paint: {
@@ -418,7 +429,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-variable-anchor": ["top", "bottom", "right", "left"],
         "text-radial-offset": 0.7,
         "text-justify": "auto",
-        "symbol-sort-key": ["-", 0, ["get", "verses"]],
+        "symbol-sort-key": PLACE_ORDER,
         "text-padding": 3,
       },
       paint: {
@@ -483,7 +494,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-variable-anchor": ["top", "bottom", "right", "left"],
         "text-radial-offset": 0.8,
         "text-justify": "auto",
-        "symbol-sort-key": ["-", 0, ["get", "verses"]],
+        "symbol-sort-key": PLACE_ORDER,
         "text-padding": 3,
       },
       paint: {
