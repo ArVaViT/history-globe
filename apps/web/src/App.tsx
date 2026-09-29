@@ -58,18 +58,17 @@ export function App() {
       window.clearTimeout(timer);
       timer = window.setTimeout(() => {
         const s = globe.engine.store.get();
+        if (!s.camera) return;
         writeUrl({
           year: s.year,
-          camera: globe.renderer.getCamera(),
+          camera: s.camera,
           locale: s.locale,
           ...(s.selectedPlace ? { place: s.selectedPlace } : {}),
         });
       }, 300);
     };
-    const offCam = globe.renderer.on("cameraChanged", save);
     const offState = globe.engine.store.subscribe(save);
     return () => {
-      offCam();
       offState();
       window.clearTimeout(timer);
     };

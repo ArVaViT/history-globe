@@ -36,6 +36,8 @@ export class FakeRenderer implements Renderer {
   flyTo(target: Partial<Camera> & { readonly center: LonLat }): void {
     this.camera = { ...this.camera, ...target };
     this.calls.push({ op: "flyTo", center: target.center, zoom: target.zoom });
+    // A real flight ends with a settled camera; the fake settles at once.
+    for (const h of this.handlers.cameraChanged) h(this.camera);
   }
   setRoute(coordinates: readonly LonLat[], currentIndex: number): void {
     this.calls.push({ op: "route", points: coordinates.length, current: currentIndex });

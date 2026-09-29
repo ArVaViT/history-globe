@@ -109,3 +109,12 @@ describe("camera commands", () => {
     expect(renderer.getCamera()).toMatchObject({ center: [35.2, 31.7], bearing: 0 });
   });
 });
+
+describe("camera in the store", () => {
+  it("holds the settled view the renderer reports", () => {
+    const { engine } = setup();
+    expect(engine.store.get().camera).not.toBeNull();
+    engine.lookAt([23.7, 37.97]);
+    expect(engine.store.get().camera?.center).toEqual([23.7, 37.97]);
+  });
+});

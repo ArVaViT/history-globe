@@ -116,6 +116,10 @@ export function createEngine(options: {
     renderer.flyTo({ center: stop.at, zoom: 7.6, pitch: 55, bearing: -20 + step * 3 });
   };
 
+  store.set({ camera: renderer.getCamera() });
+  const offCamera = renderer.on("cameraChanged", (camera) => {
+    store.set({ camera });
+  });
   const offPick = renderer.on("pick", (id) => {
     selectPlace(id, { fly: false });
   });
@@ -154,6 +158,7 @@ export function createEngine(options: {
     destroy: () => {
       unsubscribe();
       offPick();
+      offCamera();
       renderer.destroy();
     },
   };

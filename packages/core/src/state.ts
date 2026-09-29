@@ -1,4 +1,5 @@
 import type { Locale } from "@hg/model";
+import type { Camera } from "./renderer.ts";
 
 export interface LayerVisibility {
   readonly borders: boolean;
@@ -19,6 +20,11 @@ export interface GlobeState {
   readonly locale: Locale;
   readonly layers: LayerVisibility;
   readonly tour: TourState | null;
+  /**
+   * The settled view, as the renderer reports it after each move. It flows one way,
+   * renderer → store: the camera is moved by commands (selectPlace, lookAt, tours).
+   */
+  readonly camera: Camera | null;
 }
 
 export const DEFAULT_STATE: GlobeState = {
@@ -27,6 +33,7 @@ export const DEFAULT_STATE: GlobeState = {
   locale: "ru",
   layers: { borders: true, places: true, relief: true, routes: true },
   tour: null,
+  camera: null,
 };
 
 export type Listener = (state: GlobeState, previous: GlobeState) => void;
