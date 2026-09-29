@@ -191,12 +191,13 @@ export function App() {
       {data && engine && (
         <>
           <div className="absolute top-4 bottom-12 left-4 flex flex-col gap-3 overflow-y-auto pr-1 [scrollbar-width:thin] *:shrink-0">
-            <div className="flex items-center justify-between px-1">
-              <div className="font-serif text-[20px] font-semibold tracking-tight text-paper drop-shadow">
+            {/* On a panel, not on the map: state labels run under the corner. */}
+            <Panel className="flex w-[340px] items-center justify-between px-4 py-2">
+              <h1 className="font-serif text-[20px] font-semibold tracking-tight text-ink">
                 History Globe
-              </div>
+              </h1>
               <LocaleSwitch value={state.locale} onChange={engine.setLocale} />
-            </div>
+            </Panel>
             <SearchBox
               data={data}
               inputRef={searchRef}
