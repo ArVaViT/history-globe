@@ -5,7 +5,7 @@
  *
  * Usage: node scripts/build-content.ts  (after `python3 pipeline/build_data.py`)
  */
-import { readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { parse } from "yaml";
 import {
@@ -35,6 +35,23 @@ const manifest = JSON.parse(readFileSync(join(out, "manifest.json"), "utf8")) as
 };
 const parked = new Set(manifest.excluded_places ?? []);
 
+// The verses OpenBible tags for each place (English numbering). Evidence must come from
+// one of them: this catches Synodal verse numbers and verses about a namesake.
+const openbible = join(root, "pipeline/.cache/openbible-ancient.jsonl");
+const versesOf = new Map<string, Set<string>>();
+if (existsSync(openbible)) {
+  for (const line of readFileSync(openbible, "utf8").split("\n")) {
+    if (!line) continue;
+    const r = JSON.parse(line) as { id: string; verses?: { osis: string }[] };
+    versesOf.set(r.id, new Set((r.verses ?? []).map((v) => v.osis)));
+  }
+}
+/** Evidence read where the Synodal text has words the English one lacks. */
+const SYNODAL_ONLY = new Set([
+  // Exod 1:11 adds "и Он, иначе Илиополь" from the Septuagint.
+  "acd9137 Exod.1.11",
+]);
+
 const errors: string[] = [];
 const warnings: string[] = [];
 // Nothing is written until every check has passed: a failed run leaves the data untouched.
@@ -53,7 +70,9 @@ for (const p of nameEntries) {
   // The evidence must actually contain the name: compare the first three letters of the
   // last word, which survive Russian case endings (Вифлеем → в Вифлееме).
   if (p.evidence) {
-    const stem = (p.ru.split(/\s+/).at(-1) ?? "").slice(0, 3).toLocaleLowerCase("ru");
+    const word = p.ru.split(/\s+/).at(-1) ?? "";
+    // Three letters, fewer for short names: "Гай" must match "Гае".
+    const stem = word.slice(0, Math.min(3, Math.max(2, word.length - 1))).toLocaleLowerCase("ru");
     // At the start of a word: a short name ("Ор") would otherwise match inside any word.
     const escaped = stem.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const atWordStart = new RegExp(`(^|[^\\p{L}])${escaped}`, "u");
@@ -62,6 +81,14 @@ for (const p of nameEntries) {
         `place-names: ${p.id} "${p.ru}" is not found in its evidence "${p.evidence.excerpt}"`,
       );
     }
+  }
+  const tagged = versesOf.get(p.id);
+  if (p.evidence && tagged && !SYNODAL_ONLY.has(`${p.id} ${p.evidence.osis}`)) {
+    const { osis } = p.evidence;
+    // A whole-chapter reference (a psalm title) counts if any verse of it is tagged.
+    const ok = tagged.has(osis) || [...tagged].some((v) => v.startsWith(`${osis}.`));
+    if (!ok)
+      errors.push(`place-names: ${p.id} (${p.en}) evidence ${osis} is not a verse of this place`);
   }
   names[p.id] = p.evidence ? { ru: p.ru, osis: p.evidence.osis } : { ru: p.ru };
 }

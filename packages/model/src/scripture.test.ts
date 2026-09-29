@@ -31,8 +31,16 @@ describe("formatRef", () => {
     "Acts.13-Acts.13.9",
     "Acts.13.1-Acts.13.2-Acts.13.3",
     "acts.13.4",
+    "Acts.29.1",
+    "Acts.28.32",
+    "Jude.2.1",
   ])("rejects %s", (osis) => {
     expect(() => formatRef(osis, "en")).toThrow(SyntaxError);
+  });
+
+  it("accepts the last verse of a book", () => {
+    expect(formatRef("Acts.28.31", "en")).toBe("Acts 28:31");
+    expect(formatRef("Ps.119.176", "en")).toBe("Ps 119:176");
   });
 
   it("accepts whole-chapter ranges", () => {
