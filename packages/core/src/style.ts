@@ -1,5 +1,6 @@
 import type { FeatureCollection } from "geojson";
 import type { ExpressionSpecification, LayerSpecification, StyleSpecification } from "maplibre-gl";
+import { AREA_KINDS, SETTLEMENT_KINDS, WATER_KINDS } from "./kinds.ts";
 
 /**
  * The map style, written as code (ADR 0004). Year and locale are global-state properties,
@@ -122,14 +123,23 @@ function focusMask(): FeatureCollection {
   };
 }
 
-const isSettlement: ExpressionSpecification = ["==", ["get", "kind"], "settlement"];
-const isWater: ExpressionSpecification = ["==", ["get", "kind"], "water"];
-const isArea: ExpressionSpecification = [
+const LANDMARK_INK = "#5b4630";
+
+const kindIn = (kinds: readonly string[]): ExpressionSpecification => [
   "match",
   ["get", "kind"],
-  ["region", "people group", "island", "mountain range"],
+  [...kinds],
   true,
   false,
+];
+const isSettlement = kindIn(SETTLEMENT_KINDS);
+const isArea = kindIn(AREA_KINDS);
+// Rivers drawn as lines carry their label along the course (river-label), not at a point.
+const isWater: ExpressionSpecification = ["all", kindIn(WATER_KINDS), ["!", ["has", "line"]]];
+/** Everything else: mountains, valleys, springs, gates, … (see kinds.ts). */
+const isLandmark: ExpressionSpecification = [
+  "!",
+  kindIn([...SETTLEMENT_KINDS, ...AREA_KINDS, ...WATER_KINDS]),
 ];
 
 /** A place appears only from the zoom its importance deserves. */
@@ -274,6 +284,25 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       paint: { "line-color": T.accent, "line-width": 3.2, "line-dasharray": [2, 1.4] },
     },
     {
+      // Mountains, springs, gates…: a small dark mark under the towns.
+      id: "landmark-dot",
+      type: "circle",
+      source: "places",
+      metadata: { group: "places" },
+      filter: ["all", isLandmark, visibleAtZoom],
+      paint: {
+        "circle-radius": ["case", ["boolean", ["feature-state", "selected"], false], 6, 2.6],
+        "circle-color": [
+          "case",
+          ["boolean", ["feature-state", "selected"], false],
+          T.gold,
+          LANDMARK_INK,
+        ],
+        "circle-stroke-color": T.halo,
+        "circle-stroke-width": ["case", ["boolean", ["feature-state", "hover"], false], 2.6, 1.2],
+      },
+    },
+    {
       id: "place-dot",
       type: "circle",
       source: "places",
@@ -329,7 +358,39 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-letter-spacing": 0.06,
         "symbol-sort-key": ["-", 0, ["get", "verses"]],
       },
-      paint: { "text-color": "#d7e7f2", "text-halo-color": "#1d4a66", "text-halo-width": 1.2 },
+      // Seas are labelled on the dark sea; rivers, wadis and canals on land.
+      paint: {
+        "text-color": ["match", ["get", "kind"], "body of water", "#d7e7f2", T.water],
+        "text-halo-color": ["match", ["get", "kind"], "body of water", "#1d4a66", T.halo],
+        "text-halo-width": 1.3,
+      },
+    },
+    {
+      id: "place-label-landmark",
+      type: "symbol",
+      source: "places",
+      metadata: { group: "places" },
+      filter: ["all", isLandmark, visibleAtZoom],
+      layout: {
+        "text-field": NAME,
+        "text-font": [MAP_FONT_ITALIC],
+        "text-size": ["match", ["get", "rank"], 0, 13.5, 1, 12.5, 11.5],
+        "text-variable-anchor": ["top", "bottom", "right", "left"],
+        "text-radial-offset": 0.7,
+        "text-justify": "auto",
+        "symbol-sort-key": ["-", 0, ["get", "verses"]],
+        "text-padding": 3,
+      },
+      paint: {
+        "text-color": [
+          "case",
+          ["boolean", ["feature-state", "selected"], false],
+          T.accent,
+          LANDMARK_INK,
+        ],
+        "text-halo-color": T.halo,
+        "text-halo-width": 1.5,
+      },
     },
     {
       id: "polity-label",

@@ -235,7 +235,9 @@ def assert_no_banned_points(collections: dict[str, dict], modern: dict[str, dict
         raise SystemExit("points copied from OSM or Google (ADR 0008):\n" + "\n".join(hits[:20]))
 
 
-def build_places(records: list[dict], modern: dict[str, dict], sites_per_place: dict[str, int]) -> tuple[dict, dict, list[str]]:
+def build_places(
+    records: list[dict], modern: dict[str, dict], sites_per_place: dict[str, int], river_places: set[str]
+) -> tuple[dict, dict, list[str]]:
     def top_point(r: dict) -> dict | None:
         ids = r.get("identifications") or []
         return first_point(ids[0]) if ids else None
@@ -285,6 +287,8 @@ def build_places(records: list[dict], modern: dict[str, dict], sites_per_place: 
                 "where": TAG_RE.sub("", ids[0].get("description", "")),
                 "osis": [v["osis"] for v in verses[:12]],
                 "coord": coord_source,
+                # Drawn as a river line with its own label: no second label at the point.
+                **({"line": True} if r["id"] in river_places else {}),
             },
         })
     stats = {
@@ -607,9 +611,10 @@ def main() -> None:
     records = [json.loads(line) for line in fetch("openbible").open(encoding="utf-8")]
     modern = load_modern()
     sites, sites_per_place, site_stats = build_sites(records, modern)
-    places, place_stats, excluded_places = build_places(records, modern, sites_per_place)
-    assert_no_banned_points({"places.geojson": places, "sites.geojson": sites}, modern)
     rivers, river_labels, river_stats = build_rivers()
+    river_places = {f["properties"]["place"] for f in rivers["features"] if "place" in f["properties"]}
+    places, place_stats, excluded_places = build_places(records, modern, sites_per_place, river_places)
+    assert_no_banned_points({"places.geojson": places, "sites.geojson": sites}, modern)
     polities, polity_labels, polity_stats = build_polities()
     land, water = build_land_water()
     outputs = {

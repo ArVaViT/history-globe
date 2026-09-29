@@ -6,7 +6,14 @@ import type { Camera, LonLat, Renderer, RendererEvents } from "./renderer.ts";
 import type { LayerVisibility } from "./state.ts";
 import { buildStyle, layersInGroup, type StyleOptions } from "./style.ts";
 
-const PLACE_LAYERS = ["place-dot", "place-label", "place-label-area", "place-label-water"];
+const PLACE_LAYERS = [
+  "place-dot",
+  "landmark-dot",
+  "place-label",
+  "place-label-area",
+  "place-label-water",
+  "place-label-landmark",
+];
 
 export interface MapLibreRendererOptions extends StyleOptions {
   readonly container: HTMLElement;

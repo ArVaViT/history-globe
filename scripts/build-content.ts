@@ -48,6 +48,8 @@ for (const p of nameEntries) {
   if (parked.has(p.id))
     warnings.push(`place-names: ${p.id} (${p.en}) is parked: no licensed point`);
   else if (!known.has(p.id)) errors.push(`place-names: ${p.id} (${p.en}) is not in the data build`);
+  // A map label, not a note: no glosses in brackets, no markers.
+  if (/[()*[\]]/.test(p.ru)) errors.push(`place-names: ${p.id} "${p.ru}" is not a plain name`);
   // The evidence must actually contain the name: compare the first three letters of the
   // last word, which survive Russian case endings (Вифлеем → в Вифлееме).
   if (p.evidence) {

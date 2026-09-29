@@ -97,3 +97,39 @@ describe("site labels", () => {
     expect(labelled({})).toBe(true);
   });
 });
+
+describe("every place kind is drawn", () => {
+  const placeLayers = style.layers.filter(
+    (l) => "source" in l && l.source === "places" && "filter" in l && l.filter,
+  );
+  function drawnBy(props: Record<string, unknown>): string[] {
+    return placeLayers
+      .filter((l) =>
+        featureFilter("filter" in l ? l.filter : undefined, "filter", {}).filter({ zoom: 10 }, {
+          type: 1,
+          properties: { rank: 0, ...props },
+          geometry: [],
+        } as never),
+      )
+      .map((l) => l.id);
+  }
+
+  it.each([
+    "settlement",
+    "campsite",
+    "region",
+    "people group",
+    "body of water",
+    "river",
+    "mountain",
+    "valley",
+    "gate",
+    "a kind nobody has seen yet",
+  ])("%s", (kind) => {
+    expect(drawnBy({ kind })).not.toEqual([]);
+  });
+
+  it("leaves a river drawn as a line to its line label", () => {
+    expect(drawnBy({ kind: "river", line: true })).toEqual([]);
+  });
+});

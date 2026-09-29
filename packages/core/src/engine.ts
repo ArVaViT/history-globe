@@ -1,4 +1,5 @@
 import type { Locale } from "@hg/model";
+import { zoomForKind } from "./kinds.ts";
 import type { LonLat, Renderer } from "./renderer.ts";
 import {
   createStore,
@@ -14,7 +15,7 @@ export const YEAR_MAX = 100;
 export interface PlaceInfo {
   readonly id: string;
   readonly at: LonLat;
-  /** OpenBible type: settlement, region, water, mountain, … */
+  /** OpenBible type: settlement, region, body of water, mountain, … (kinds.ts) */
   readonly kind: string;
 }
 
@@ -42,20 +43,6 @@ export interface Engine {
   readonly goToStop: (step: number) => void;
   readonly stopTour: () => void;
   readonly destroy: () => void;
-}
-
-/** Zoom that frames a place of this kind: regions need more room than towns. */
-export function zoomForKind(kind: string): number {
-  switch (kind) {
-    case "region":
-    case "people group":
-      return 6.2;
-    case "water":
-    case "mountain range":
-      return 7.6;
-    default:
-      return 9.4;
-  }
 }
 
 export function clampYear(year: number): number {

@@ -1,4 +1,5 @@
 export * from "./engine.ts";
+export * from "./kinds.ts";
 export * from "./renderer.ts";
 export * from "./state.ts";
 export { FakeRenderer } from "./fake-renderer.ts";
