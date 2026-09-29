@@ -2,7 +2,7 @@ import type { Locale } from "@hg/model";
 import type { Feature, FeatureCollection } from "geojson";
 import * as maplibregl from "maplibre-gl";
 import type { GeoJSONSource, Map as MLMap, MapMouseEvent } from "maplibre-gl";
-import type { Camera, LonLat, Renderer, RendererEvents } from "./renderer.ts";
+import type { Camera, LonLat, PolityName, Renderer, RendererEvents } from "./renderer.ts";
 import type { LayerVisibility } from "./state.ts";
 import { buildStyle, layersInGroup, type StyleOptions } from "./style.ts";
 
@@ -34,6 +34,7 @@ export class MapLibreRenderer implements Renderer {
   private readonly handlers: { [E in keyof RendererEvents]: Set<RendererEvents[E]> } = {
     pick: new Set(),
     hover: new Set(),
+    hoverPolity: new Set(),
     cameraChanged: new Set(),
     ready: new Set(),
   };
@@ -105,20 +106,40 @@ export class MapLibreRenderer implements Renderer {
       this.map.getCanvas().style.cursor = f ? "pointer" : "";
       if (fid !== this.hovered) this.setHoverState(fid);
       const pid = (f?.properties as { id?: string } | undefined)?.id ?? null;
+      const at = { x: e.point.x, y: e.point.y };
+      // Over no place, name the states under the pointer: their labels often give way
+      // to town names.
+      const states = pid ? null : this.politiesAt(e);
+      for (const h of this.handlers.hoverPolity) h(states, states ? at : null);
       if (pid === this.hoveredPlace && pid === null) return;
       this.hoveredPlace = pid;
-      for (const h of this.handlers.hover) h(pid, pid ? { x: e.point.x, y: e.point.y } : null);
+      for (const h of this.handlers.hover) h(pid, pid ? at : null);
     });
     this.map.getCanvasContainer().addEventListener("mouseleave", () => {
       this.map.getCanvas().style.cursor = "";
       this.setHoverState(null);
       this.hoveredPlace = null;
       for (const h of this.handlers.hover) h(null, null);
+      for (const h of this.handlers.hoverPolity) h(null, null);
     });
     this.map.on("moveend", () => {
       const cam = this.getCamera();
       for (const h of this.handlers.cameraChanged) h(cam);
     });
+  }
+
+  private politiesAt(e: MapMouseEvent): PolityName[] | null {
+    if (!this.loaded || this.map.getLayoutProperty("polity-fill", "visibility") === "none")
+      return null;
+    const seen = new Set<string>();
+    const out: PolityName[] = [];
+    for (const f of this.map.queryRenderedFeatures(e.point, { layers: ["polity-fill"] })) {
+      const p = f.properties as { name?: string; name_ru?: string };
+      if (!p.name || seen.has(p.name)) continue;
+      seen.add(p.name);
+      out.push(p.name_ru ? { name: p.name, nameRu: p.name_ru } : { name: p.name });
+    }
+    return out.length > 0 ? out : null;
   }
 
   private whenLoaded(run: () => void): void {

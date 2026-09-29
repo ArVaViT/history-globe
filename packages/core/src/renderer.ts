@@ -10,11 +10,21 @@ export interface Camera {
   readonly bearing: number;
 }
 
+export interface PolityName {
+  readonly name: string;
+  readonly nameRu?: string;
+}
+
 export interface RendererEvents {
   /** A place was clicked on the map. */
   pick: (placeId: string) => void;
   /** Hover changed; null when the pointer leaves all places. `at` is in screen pixels. */
   hover: (placeId: string | null, at: { readonly x: number; readonly y: number } | null) => void;
+  /** The states under the pointer when it is over no place (topmost first), or null. */
+  hoverPolity: (
+    polities: readonly PolityName[] | null,
+    at: { readonly x: number; readonly y: number } | null,
+  ) => void;
   /** The map finished its first full load and is interactive. */
   ready: () => void;
   /** Camera settled after user interaction or a flight. */

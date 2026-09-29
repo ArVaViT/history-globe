@@ -205,7 +205,6 @@ for (const o of PolityOverridesFile.parse(load("content/polity-overrides.yaml"))
       .map(extend),
   );
 }
-writes.push([polityPath, JSON.stringify(polities)]);
 
 // Polity labels get their Russian name; every label on the map must have one.
 const polityNames = PolityNamesFile.parse(load("content/polity-names.yaml")).polities;
@@ -218,6 +217,12 @@ for (const f of labels.features) {
   else missing.add(f.properties.name);
 }
 for (const name of missing) errors.push(`polity-names: no Russian name for "${name}"`);
+// The shapes carry the name too: the map names a territory under the pointer.
+for (const f of polities.features as { properties: { name: string; name_ru?: string } }[]) {
+  const ru = polityNames[f.properties.name];
+  if (ru) f.properties.name_ru = ru;
+}
+writes.push([polityPath, JSON.stringify(polities)]);
 writes.push([labelsPath, JSON.stringify(labels)]);
 
 // Biblical rivers get the verified Russian name of their place (Иордан, Евфрат, …).

@@ -1,8 +1,8 @@
-import { YEAR_MAX, YEAR_MIN } from "@hg/core";
+import { YEAR_MAX, YEAR_MIN, type PolityName } from "@hg/core";
 import type { Locale } from "@hg/model";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { HoverTip } from "./components/HoverTip";
+import { HoverTip, PolityTip } from "./components/HoverTip";
 import { InViewPanel } from "./components/InViewPanel";
 import { LayersPanel } from "./components/LayersPanel";
 import { Panel } from "./components/Panel";
@@ -28,6 +28,10 @@ export function App() {
   const [playing, setPlaying] = useState(false);
   const [ready, setReady] = useState(false);
   const [hover, setHover] = useState<{ id: string; at: { x: number; y: number } } | null>(null);
+  const [polityHover, setPolityHover] = useState<{
+    polities: readonly PolityName[];
+    at: { x: number; y: number };
+  } | null>(null);
   const [inView, setInView] = useState<string[]>([]);
   const { globe, error: mapError } = useGlobe(container, data, INITIAL);
   const error =
@@ -87,10 +91,14 @@ export function App() {
     const offHover = globe.renderer.on("hover", (id, at) => {
       setHover(id && at ? { id, at } : null);
     });
+    const offPolity = globe.renderer.on("hoverPolity", (polities, at) => {
+      setPolityHover(polities && at ? { polities, at } : null);
+    });
     return () => {
       offReady();
       offCamera();
       offHover();
+      offPolity();
     };
   }, [globe]);
 
@@ -180,6 +188,9 @@ export function App() {
       )}
 
       {hoverPlace && hover && <HoverTip place={hoverPlace} at={hover.at} locale={state.locale} />}
+      {!hoverPlace && polityHover && (
+        <PolityTip polities={polityHover.polities} at={polityHover.at} locale={state.locale} />
+      )}
 
       {error && (
         <Panel className="absolute top-1/2 left-1/2 -translate-1/2 px-6 py-4 text-ink">

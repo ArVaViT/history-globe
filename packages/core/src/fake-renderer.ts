@@ -17,6 +17,7 @@ export class FakeRenderer implements Renderer {
   private readonly handlers: { [E in keyof RendererEvents]: Set<RendererEvents[E]> } = {
     pick: new Set(),
     hover: new Set(),
+    hoverPolity: new Set(),
     cameraChanged: new Set(),
     ready: new Set(),
   };
