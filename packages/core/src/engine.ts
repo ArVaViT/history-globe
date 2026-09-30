@@ -92,7 +92,12 @@ export function createEngine(options: {
 
   const selectPlace: Engine["selectPlace"] = (placeId, opts) => {
     if (placeId !== null && !places.has(placeId)) return;
-    store.set({ selectedPlace: placeId });
+    // Picking another place (map, search, list) during a tour leaves the tour: its card
+    // would otherwise stay over the place's and the pick would show nothing.
+    const running = store.get().tour;
+    const stop = running ? tours.get(running.id)?.stops[running.step] : undefined;
+    const leave = running !== null && placeId !== null && placeId !== stop?.placeId;
+    store.set(leave ? { selectedPlace: placeId, tour: null } : { selectedPlace: placeId });
     const place = placeId ? places.get(placeId) : undefined;
     if (place && (opts?.fly ?? true)) {
       const camera = renderer.getCamera();

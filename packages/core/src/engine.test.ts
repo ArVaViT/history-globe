@@ -99,6 +99,16 @@ describe("engine", () => {
     engine.stopTour();
     expect(renderer.last("route")).toEqual({ op: "route", points: 0, current: -1 });
   });
+
+  it("leaves a tour when another place is picked, not the stop's own", () => {
+    const { engine, renderer } = setup();
+    engine.startTour("paul-1");
+    engine.selectPlace("antioch");
+    expect(engine.store.get().tour).not.toBeNull();
+    renderer.emitPick("capernaum");
+    expect(engine.store.get().tour).toBeNull();
+    expect(engine.store.get().selectedPlace).toBe("capernaum");
+  });
 });
 
 describe("camera commands", () => {
