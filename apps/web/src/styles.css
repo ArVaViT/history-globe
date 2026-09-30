@@ -84,3 +84,13 @@ body {
     visibility: hidden;
   }
 }
+
+/* A short screen wider than a phone (a phone on its side): the card at the top right would
+   run under the timeline, so it keeps above it and scrolls. */
+@media (min-width: 768px) and (max-height: 560px) {
+  .hg-card {
+    max-height: calc(100dvh - var(--hg-timeline-h, 124px) - 44px);
+    overflow-y: auto;
+    border-radius: 16px;
+  }
+}

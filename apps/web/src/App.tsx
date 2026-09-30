@@ -230,7 +230,7 @@ export function App() {
 
           <section
             aria-label={t("details_label")}
-            className="absolute top-4 right-4 max-md:top-auto max-md:right-3 max-md:bottom-[calc(var(--hg-timeline-h,124px)+20px)] max-md:left-3"
+            className="hg-card absolute top-4 right-4 max-md:top-auto max-md:right-3 max-md:bottom-[calc(var(--hg-timeline-h,124px)+20px)] max-md:left-3"
           >
             {tour && state.tour ? (
               <TourStopCard
