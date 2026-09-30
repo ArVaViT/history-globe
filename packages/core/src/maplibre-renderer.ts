@@ -5,6 +5,7 @@ import type { GeoJSONSource, Map as MLMap, MapMouseEvent } from "maplibre-gl";
 import type { Camera, LonLat, PolityName, Renderer, RendererEvents } from "./renderer.ts";
 import type { LayerVisibility } from "./state.ts";
 import { buildStyle, layersInGroup, type StyleOptions } from "./style.ts";
+import { drawIcon } from "./icons.ts";
 import { wheelIntent } from "./wheel.ts";
 
 const READY_FALLBACK_MS = 6000;
@@ -12,6 +13,7 @@ const READY_FALLBACK_MS = 6000;
 const PLACE_LAYERS = [
   "place-dot",
   "landmark-dot",
+  "landmark-icon",
   "place-label",
   "place-label-area",
   "place-label-water",
@@ -71,6 +73,12 @@ export class MapLibreRenderer implements Renderer {
       canvasContextAttributes: { antialias: true },
       // Wheel handled below: two fingers pan, a pinch or a mouse wheel zooms.
       scrollZoom: false,
+    });
+    // Place icons are drawn when the style first asks for them.
+    this.map.setMissingStyleImageResolver((id) => {
+      if (this.map.hasImage(id)) return;
+      const img = drawIcon(id);
+      if (img) this.map.addImage(id, img, { sdf: true, pixelRatio: 2 });
     });
     this.map.getCanvasContainer().addEventListener(
       "wheel",

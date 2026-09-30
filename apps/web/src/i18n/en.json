@@ -97,5 +97,18 @@
   "panels": {
     "hide": "Hide panels",
     "show": "Show panels"
+  },
+  "legend": {
+    "title": "Map key",
+    "town": "town or village",
+    "disputed": "location disputed",
+    "mountain": "mountain, hill",
+    "spring": "spring, well, pool",
+    "tree": "garden, tree, field",
+    "building": "gate, building",
+    "altar": "altar, cairn",
+    "tent": "camp of the Exodus",
+    "valley": "valley",
+    "road": "road"
   }
 }

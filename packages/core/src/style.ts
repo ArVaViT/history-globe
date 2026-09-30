@@ -1,5 +1,6 @@
 import type { FeatureCollection } from "geojson";
 import type { ExpressionSpecification, LayerSpecification, StyleSpecification } from "maplibre-gl";
+import { KIND_ICON } from "./icons.ts";
 import { AREA_KINDS, SETTLEMENT_KINDS, WATER_KINDS } from "./kinds.ts";
 
 /**
@@ -143,6 +144,21 @@ function focusMask(): FeatureCollection {
 }
 
 const LANDMARK_INK = "#5b4630";
+
+/** Kinds drawn with an icon (icons.ts), and which one. */
+const hasIcon: ExpressionSpecification = [
+  "match",
+  ["get", "kind"],
+  Object.keys(KIND_ICON),
+  true,
+  false,
+];
+const ICON_OF_KIND: ExpressionSpecification = [
+  "match",
+  ["get", "kind"],
+  ...Object.entries(KIND_ICON).flat(),
+  "",
+] as unknown as ExpressionSpecification;
 
 /** First year of the New Testament narrative (6 BC, astronomical -5). */
 export const NT_FROM = -5;
@@ -349,7 +365,8 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "circle",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isLandmark, visibleAtZoom],
+      // Landmarks without an icon of their own keep a small dot.
+      filter: ["all", isLandmark, ["!", hasIcon], visibleAtZoom],
       paint: {
         "circle-radius": ["case", ["boolean", ["feature-state", "selected"], false], 6, 2.6],
         "circle-color": [
@@ -362,6 +379,31 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "circle-stroke-width": ["case", ["boolean", ["feature-state", "hover"], false], 2.6, 1.2],
         "circle-opacity": fadeBeforeNT(0.3),
         "circle-stroke-opacity": fadeBeforeNT(0.3),
+      },
+    },
+    {
+      // A mountain, a spring, a gate: an icon that says what the place is.
+      id: "landmark-icon",
+      type: "symbol",
+      source: "places",
+      metadata: { group: "places" },
+      filter: ["all", isLandmark, hasIcon, visibleAtZoom],
+      layout: {
+        "icon-image": ICON_OF_KIND,
+        "icon-size": ["match", ["get", "rank"], 0, 1.35, 1, 1.2, 1],
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true,
+      },
+      paint: {
+        "icon-color": [
+          "case",
+          ["boolean", ["feature-state", "selected"], false],
+          T.gold,
+          LANDMARK_INK,
+        ],
+        "icon-halo-color": T.halo,
+        "icon-halo-width": ["case", ["boolean", ["feature-state", "hover"], false], 3, 1.6],
+        "icon-opacity": fadeBeforeNT(0.3),
       },
     },
     {
@@ -459,7 +501,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-font": [MAP_FONT_ITALIC],
         "text-size": ["match", ["get", "rank"], 0, 13.5, 1, 12.5, 11.5],
         "text-variable-anchor": ["top", "bottom", "right", "left"],
-        "text-radial-offset": 0.7,
+        "text-radial-offset": 1,
         "text-justify": "auto",
         "symbol-sort-key": PLACE_ORDER,
         "text-padding": 3,

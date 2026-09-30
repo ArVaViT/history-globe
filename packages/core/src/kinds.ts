@@ -6,8 +6,8 @@ export type PlaceClass = "settlement" | "area" | "water" | "landmark";
 
 export const AREA_KINDS = ["region", "people group", "island", "mountain range", "natural area"];
 export const WATER_KINDS = ["body of water", "river", "canal", "wadi"];
-/** Settlements in the wide sense: towns, villages and the camps of the Exodus. */
-export const SETTLEMENT_KINDS = ["settlement", "campsite"];
+/** Towns and villages. The camps of the Exodus are landmarks with a tent icon. */
+export const SETTLEMENT_KINDS = ["settlement"];
 /** Built places inside a town: framed close up. */
 const STRUCTURE_KINDS = [
   "gate",
