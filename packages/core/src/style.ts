@@ -565,11 +565,12 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       id: "polity-label",
       type: "symbol",
       source: "polity-labels",
-      // The fine grid of an empire's label points only when zoomed in (build_data.py).
+      // The fine grid of an empire's label points only when zoomed in (build_data.py). A
+      // filter sees the tile's whole zoom, so this is from zoom 6.
       filter: [
         "all",
         ERA_FILTER,
-        ["any", ["<", ["coalesce", ["get", "tier"], 0], 2], [">=", ["zoom"], 5.5]],
+        ["any", ["<", ["coalesce", ["get", "tier"], 0], 2], [">=", ["zoom"], 6]],
       ],
       metadata: { group: "borders" },
       minzoom: 2.5,

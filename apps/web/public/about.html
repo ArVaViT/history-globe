@@ -66,7 +66,7 @@
   </head>
   <body>
     <main>
-      <p class="note"><a href="./">← К глобусу</a> · <a href="#en">English</a></p>
+      <p class="note"><a href="./" class="back">← К глобусу</a> · <a href="#en">English</a></p>
       <h1>О проекте</h1>
       <p>
         History Globe — глобус библейской истории: места, упомянутые в Библии, границы государств и
@@ -90,9 +90,10 @@
           показывает версии и их доли по оценке OpenBible — это не научный консенсус.
         </li>
         <li>
-          <b>Названия и ссылки</b> — по Синодальному переводу: у каждого русского названия есть
-          стих, где оно прочитано. Номера стихов в русском интерфейсе синодальные (Пс 22, а не 23);
-          ссылки ведут на BibleGateway.
+          <b>Названия и ссылки</b> — по Синодальному переводу: почти у каждого русского названия
+          указан стих, где оно прочитано (кроме немногих мест, которых нет в тексте, — Этрурии,
+          Пунта). Номера стихов в русском интерфейсе синодальные (Пс 22, а не 23); ссылки ведут на
+          BibleGateway.
         </li>
         <li>
           <b>Писание говорит само за себя.</b> Даты и названия не втягивают текст Библии в научные
@@ -160,6 +161,10 @@
             estimate, not a scholarly consensus.
           </li>
           <li>
+            <b>Names and references</b> in Russian follow the Synodal translation, and verse numbers
+            are shown in its numbering there (Ps 22 for Ps 23); links go to BibleGateway.
+          </li>
+          <li>
             <b>Scripture speaks for itself:</b> dates and names keep it out of scholarly disputes.
           </li>
         </ul>
@@ -168,14 +173,24 @@
           OpenBible.info Bible Geocoding Data (CC BY 4.0, modified; points copied from OpenStreetMap
           or Google replaced from Wikidata, CC0, or left out); Cliopatria, Seshat Global History
           Databank, v0.2.0 (CC BY 4.0, modified); Natural Earth (public domain); terrain by
-          Mapterhorn with Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space
-          GmbH 2014-2018 and other sources; the Russian Synodal translation and the World English
-          Bible (public domain). Software: MapLibre GL JS (BSD-3-Clause), Lucide (ISC) and Feather
-          (MIT) icons, Golos Text and Literata (OFL), React (MIT). No endorsement by any of them is
-          implied.
+          <a href="https://mapterhorn.com/attribution">Mapterhorn</a> with Copernicus WorldDEM-30 ©
+          DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 and other sources; the
+          Russian Synodal translation and the World English Bible (public domain). Software:
+          MapLibre GL JS (BSD-3-Clause), Lucide (ISC) and Feather (MIT) icons, Golos Text and
+          Literata (OFL), React (MIT). No endorsement by any of them is implied.
         </p>
-        <p class="note"><a href="./?locale=en">← Back to the globe</a></p>
+        <p class="note"><a href="./?locale=en" class="back">← Back to the globe</a></p>
       </section>
     </main>
+    <script>
+      // Back to the same view of the map (year, place, tour) when we came from it.
+      for (const a of document.querySelectorAll("a.back"))
+        a.addEventListener("click", (e) => {
+          if (document.referrer.startsWith(location.origin) && history.length > 1) {
+            e.preventDefault();
+            history.back();
+          }
+        });
+    </script>
   </body>
 </html>

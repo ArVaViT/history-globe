@@ -365,7 +365,7 @@ def label_anchors(parts: list[list[list[list[float]]]]) -> list[tuple[float, flo
     """Several label points inside a polity, so a large empire is named wherever the
     reader looks, not only at its centroid. Returns (lon, lat, area of its part, tier):
     tier 0 is a part's centroid, 1 a point of a coarse 12-degree grid, 2 the points of
-    the 6-degree grid between them. The style shows tier 2 only when zoomed in: at a
+    the 6-degree grid between them. The style shows tier 2 only from zoom 6: at a
     whole-region view it named the Achaemenid Empire seven times."""
     anchors = []
     areas = [ring_area_centroid(poly[0])[0] for poly in parts]
@@ -392,6 +392,21 @@ def label_anchors(parts: list[list[list[list[float]]]]) -> list[tuple[float, flo
                 gy += LABEL_GRID_DEG
             gx += LABEL_GRID_DEG
     return anchors
+
+
+def ensure_low_tier(
+    anchors: list[tuple[float, float, float, int]], parts: list[list[list[list[float]]]]
+) -> list[tuple[float, float, float, int]]:
+    """A polity must keep a label at a region view: when its centroids fall outside its
+    shape (a crescent, a coast) and none of its points is on the coarse grid, the point
+    nearest the centroid of its largest part is raised to tier 1 (the Neo-Babylonian
+    Empire in 550-531 BC went unnamed below zoom 6)."""
+    if not anchors or any(a[3] < 2 for a in anchors):
+        return anchors
+    largest = max(parts, key=lambda poly: ring_area_centroid(poly[0])[0])
+    _, cx, cy = ring_area_centroid(largest[0])
+    nearest = min(range(len(anchors)), key=lambda i: (anchors[i][0] - cx) ** 2 + (anchors[i][1] - cy) ** 2)
+    return [(a[0], a[1], a[2], 1) if i == nearest else a for i, a in enumerate(anchors)]
 
 
 def build_polities() -> tuple[dict, dict, dict]:
@@ -471,7 +486,7 @@ def build_polities() -> tuple[dict, dict, dict]:
         polys.append({"type": "Feature", "geometry": {"type": "MultiPolygon", "coordinates": kept}, "properties": props})
         if not is_relation:
             total = sum(ring_area_centroid(k[0])[0] for k in kept)
-            for lx, ly, _part, tier in label_anchors(kept):
+            for lx, ly, _part, tier in ensure_low_tier(label_anchors(kept), kept):
                 labels.append({
                     "type": "Feature",
                     "geometry": {"type": "Point", "coordinates": [round(lx, 3), round(ly, 3)]},

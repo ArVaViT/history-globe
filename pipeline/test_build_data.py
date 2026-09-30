@@ -2,7 +2,16 @@
 
 import unittest
 
-from build_data import COAST_BBOX, banned_lonlats, build_coast, coord_banned, label_anchors, rank_of, site_label
+from build_data import (
+    COAST_BBOX,
+    banned_lonlats,
+    build_coast,
+    coord_banned,
+    ensure_low_tier,
+    label_anchors,
+    rank_of,
+    site_label,
+)
 
 MODERN = {
     "m_osm": {"lonlat": "35.1,31.1", "coordinates_source": {"type": "osm", "geometry_credit": "osm"}},
@@ -99,3 +108,11 @@ class LabelTiers(unittest.TestCase):
             self.assertEqual(round((x - 3) / 6) % 2, 0)
             self.assertEqual(round((y - 3) / 6) % 2, 0)
         self.assertGreater(len(fine), len(coarse))
+
+    def test_a_polity_without_coarse_points_gets_one(self) -> None:
+        square = [[[30.0, 20.0], [36.0, 20.0], [36.0, 26.0], [30.0, 26.0], [30.0, 20.0]]]
+        fine_only = [(33.0, 21.0, 36.0, 2), (33.0, 25.0, 36.0, 2)]
+        raised = ensure_low_tier(fine_only, [square])
+        self.assertEqual(sorted(a[3] for a in raised), [1, 2])
+        kept = [(33.0, 23.0, 36.0, 0), (33.0, 25.0, 36.0, 2)]
+        self.assertEqual(ensure_low_tier(kept, [square]), kept)
