@@ -20,7 +20,7 @@ import {
   type ContentRelease,
 } from "../packages/model/src/content.ts";
 import { inheritLife } from "../packages/model/src/place-life-links.ts";
-import { refCovers } from "../packages/model/src/scripture.ts";
+import { canonicalPosition, refCovers } from "../packages/model/src/scripture.ts";
 import { siteLabelRu, type SiteLabelParts } from "../packages/model/src/sites.ts";
 
 const root = join(import.meta.dirname, "..");
@@ -372,8 +372,10 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-// Tours in the order of history, not of their file names.
-tours.sort((a, b) => a.year - b.year || a.id.localeCompare(b.id));
+// Tours in the order of history, not of their file names; tours set at the same
+// conventional year (the judges) in the order of the Bible.
+const firstRef = (t: TourFile) => canonicalPosition(t.stops[0]?.ref ?? "Gen.1.1");
+tours.sort((a, b) => a.year - b.year || firstRef(a) - firstRef(b) || a.id.localeCompare(b.id));
 const release: ContentRelease = {
   schema_version: 1,
   names,

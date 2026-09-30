@@ -124,6 +124,14 @@ export function parseOne(osis: string): Ref {
 /** Chapter.verse as one comparable number (no chapter has 1000 verses). */
 const position = (r: Ref) => r.chapter * 1000 + (r.verse ?? 0);
 
+const BOOK_ORDER = Object.keys(BOOKS);
+
+/** Where a reference starts in the order of the Bible, as one comparable number. */
+export function canonicalPosition(osis: string): number {
+  const r = parseOne(osis.split("-")[0] ?? "");
+  return BOOK_ORDER.indexOf(r.book) * 1_000_000 + position(r);
+}
+
 /**
  * "Acts.13.4" → "Деян 13:4"; "Acts.13.4-Acts.14.26" → "Деян 13:4–14:26".
  * In Russian the numbers are the Synodal ones ("Ps.68.15" → "Пс 67:16", synodal.ts);

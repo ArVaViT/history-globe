@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { checkRef } from "./verses.ts";
-import { formatRef, NT_BOOKS, refCovers } from "./scripture.ts";
+import { canonicalPosition, formatRef, NT_BOOKS, refCovers } from "./scripture.ts";
 
 describe("formatRef", () => {
   it.each([
@@ -75,5 +75,18 @@ describe("refCovers", () => {
   it("reads a whole-chapter end as the end of that chapter", () => {
     expect(refCovers("Acts.25", caesarea)).toBe(true);
     expect(refCovers("Acts.24-Acts.25", caesarea)).toBe(true);
+  });
+});
+
+describe("canonicalPosition", () => {
+  it("orders references as the Bible does, by book, chapter and verse", () => {
+    const refs = ["Judg.18.1-Judg.18.2", "Judg.3.12", "Ruth.1.1", "Judg.4.4-Judg.4.5", "Gen.12.1"];
+    expect([...refs].sort((a, b) => canonicalPosition(a) - canonicalPosition(b))).toEqual([
+      "Gen.12.1",
+      "Judg.3.12",
+      "Judg.4.4-Judg.4.5",
+      "Judg.18.1-Judg.18.2",
+      "Ruth.1.1",
+    ]);
   });
 });
