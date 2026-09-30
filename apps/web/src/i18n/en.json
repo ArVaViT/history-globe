@@ -31,7 +31,6 @@
     "verses": "Verses",
     "more": "{{count}} more",
     "coords_wikidata": "Coordinates: Wikidata",
-    "article_soon": "An article on {{name}} in this era will appear here.",
     "close": "Close",
     "zoom": "Zoom in",
     "synodal_from": "Synodal Russian form: {{ref}}",
@@ -48,7 +47,9 @@
     "no_longer": "No longer standing in this year: shown faded.",
     "life_until_only": "Standing until {{year}}",
     "life_gap": "In ruins {{from}} – {{until}}",
-    "in_ruins": "In ruins in this year: shown faded."
+    "in_ruins": "In ruins in this year: shown faded.",
+    "verse_count_one": "{{count}} verse",
+    "verse_count_other": "{{count}} verses"
   },
   "time": {
     "play": "Play",

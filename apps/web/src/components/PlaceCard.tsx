@@ -98,7 +98,7 @@ export function PlaceCard({
         </button>
       </div>
 
-      <div className="flex flex-wrap gap-1.5 px-5 pt-3">
+      <div className="flex flex-wrap items-center gap-1.5 px-5 pt-3">
         <span className="rounded-full border border-line bg-paper-2 px-2.5 py-0.5 text-xs text-ink-soft">
           {kind}
         </span>
@@ -107,14 +107,11 @@ export function PlaceCard({
         >
           {place.disputed ? t("place.sites", { count: place.sites }) : t("place.single_site")}
         </span>
-      </div>
-
-      <div className="px-5 pt-3">
         <button
           onClick={onZoom}
-          className="flex items-center gap-1.5 rounded-full bg-accent px-3.5 py-1.5 text-sm text-paper hover:brightness-110"
+          className="ml-auto flex items-center gap-1.5 rounded-full bg-accent px-3 py-1 text-[13px] text-paper hover:brightness-110"
         >
-          <ZoomIn className="size-4" aria-hidden /> {t("place.zoom")}
+          <ZoomIn className="size-3.5" aria-hidden /> {t("place.zoom")}
         </button>
       </div>
 
@@ -240,14 +237,14 @@ export function PlaceCard({
         </div>
       )}
 
-      <div className="mx-5 mt-4 grid grid-cols-3 gap-2 rounded-xl border border-line bg-paper-2/70 p-3 text-center">
-        <Stat value={place.verses} label={t("place.mentions")} />
-        <Stat value={place.ot} label={t("place.ot")} />
-        <Stat value={place.nt} label={t("place.nt")} />
-      </div>
-
-      <div className="px-5 pt-4 text-[11px] font-medium tracking-[0.12em] text-ink-soft uppercase">
-        {t("place.verses")}
+      <div className="mx-5 mt-4 flex items-baseline justify-between border-t border-line pt-3">
+        <span className="text-[11px] font-medium tracking-[0.12em] text-ink-soft uppercase">
+          {t("place.verses")}
+        </span>
+        <span className="text-[12px] text-ink-soft tabular-nums">
+          {t("place.verse_count", { count: place.verses })} · {t("place.ot")} {place.ot} ·{" "}
+          {t("place.nt")} {place.nt}
+        </span>
       </div>
       <div ref={versesRef} className="flex flex-wrap gap-1.5 px-5 pt-2">
         {place.osis.slice(0, versesShown).map((o) => (
@@ -276,23 +273,10 @@ export function PlaceCard({
         )}
       </div>
 
-      <p className="mx-5 mt-4 rounded-xl border border-dashed border-line px-3 py-2.5 font-serif text-[14px] leading-relaxed text-ink-soft italic">
-        {t("place.article_soon", { name: title })}
-      </p>
-
       <div className="px-5 pt-3 pb-4 text-[11px] text-ink-soft">
         OpenBible.info (CC BY 4.0)
         {place.coord === "wikidata" ? ` · ${t("place.coords_wikidata")}` : ""}
       </div>
     </Panel>
-  );
-}
-
-function Stat({ value, label }: { value: number; label: string }) {
-  return (
-    <div>
-      <div className="font-serif text-[22px] font-semibold text-ink">{value}</div>
-      <div className="text-[11px] leading-tight text-ink-soft">{label}</div>
-    </div>
   );
 }
