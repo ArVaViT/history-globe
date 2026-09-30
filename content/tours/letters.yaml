@@ -1,0 +1,51 @@
+# The cities Paul wrote to, in the order of the letters in the Bible (not the order they
+# were written, which is disputed). Each stop cites the verse that names the church and
+# quotes a line the letter is known by. The tour's year (AD 55) is a point for the map:
+# the letters date from c. AD 49 to the 60s.
+id: letters
+title:
+  en: "Where Paul's letters went"
+  ru: "Куда шли послания Павла"
+year: "AD 55"
+approximate: true
+stops:
+  - place: afc8e7a # Rome
+    ref: Rom.1.7
+    note:
+      en: 'To the saints in Rome: "I am not ashamed of the gospel of Christ" (1:16).'
+      ru: "Святым в Риме: «я не стыжусь благовествования Христова» (1:16)."
+  - place: a6f437a # Corinth
+    ref: 1Cor.1.2
+    note:
+      en: 'To the church of God at Corinth: "faith, hope, love, but the greatest of these is love" (13:13).'
+      ru: "Церкви Божией в Коринфе: «пребывают сии три: вера, надежда, любовь; но любовь из них больше» (13:13)."
+  - place: a0f440a # Galatia
+    ref: Gal.1.2
+    note:
+      en: 'To the churches of Galatia: "stand fast in the liberty wherewith Christ has made us free" (5:1).'
+      ru: "Церквам Галатийским: «стойте в свободе, которую даровал нам Христос» (5:1)."
+  - place: a5feb15 # Ephesus
+    ref: Eph.1.1
+    note:
+      en: 'To the saints in Ephesus: "by grace you have been saved through faith" (2:8).'
+      ru: "Святым в Ефесе: «благодатью вы спасены через веру» (2:8)."
+  - place: a49e1d0 # Philippi
+    ref: Phil.1.1
+    note:
+      en: 'To the saints in Philippi: "Rejoice in the Lord always" (4:4).'
+      ru: "Святым в Филиппах: «Радуйтесь всегда в Господе» (4:4)."
+  - place: a4e5a69 # Colossae
+    ref: Col.1.2
+    note:
+      en: 'To the brothers in Colossae: "whatever you do, in word or deed, do all in the name of the Lord Jesus" (3:17).'
+      ru: "Братиям в Колоссах: «все, что вы делаете, словом или делом, все делайте во имя Господа Иисуса Христа» (3:17)."
+  - place: afa9d8e # Thessalonica
+    ref: 1Thess.1.1
+    note:
+      en: 'To the church of the Thessalonians: "Pray without ceasing" (5:17).'
+      ru: "Церкви Фессалоникской: «Непрестанно молитесь» (5:17)."
+  - place: a26aa94 # Crete
+    ref: Titus.1.5
+    note:
+      en: "To Titus, left in Crete to set things in order and appoint elders in every town."
+      ru: "Титу, оставленному на Крите, чтобы довершить недоконченное и поставить по всем городам пресвитеров."

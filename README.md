@@ -13,8 +13,8 @@ other platforms.
 A working prototype (PR #2): the globe with relief, state borders by year, 1288 biblical
 places (1182 with Synodal Russian names; references shown in the Synodal numbering in
 Russian), disputed locations, the years towns stood and fell, 17 dated turning points on
-the time slider, and seventeen tours (Abraham, Joseph, the Exodus, the conquest, David, Elijah, the fall of Jerusalem, the
-return, the life of Jesus, the conversion of Saul, Peter, Philip, Paul's journeys, the seven churches of Revelation). Desktop first, with a phone and tablet
+the time slider, and eighteen tours (Abraham, Joseph, the Exodus, the conquest, David, Elijah, the fall of Jerusalem, the
+return, the life of Jesus, the conversion of Saul, Peter, Philip, Paul's journeys and letters, the seven churches of Revelation). Desktop first, with a phone and tablet
 layout; a link reopens the same view, tour stop included. No production hosting yet.
 
 Keys: `[` `]` move the year by 10 (with Shift by 100), Space plays, `/` searches,
