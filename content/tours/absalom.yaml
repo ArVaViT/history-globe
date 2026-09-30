@@ -1,0 +1,51 @@
+# Absalom's revolt, 2 Samuel 15-19, in the order of the text. The tour's year (980 BC) is a
+# conventional point late in David's reign (c. 1010-970 BC), for the map only; the text
+# does not date the revolt. The David tour holds Mahanaim's welcome (17:24-29); this one
+# stops there for the news of Absalom's death.
+id: absalom
+title:
+  en: "Absalom's revolt"
+  ru: "Восстание Авессалома"
+year: "980 BC"
+approximate: true
+stops:
+  - place: a85151a # Hebron
+    ref: 2Sam.15.7-2Sam.15.12
+    note:
+      en: 'Absalom goes to Hebron as if to pay a vow, and his spies cry through the tribes: "Absalom reigneth in Hebron."'
+      ru: "Авессалом уходит в Хеврон будто бы исполнить обет, и его лазутчики разносят по коленам: «Авессалом воцарился в Хевроне»."
+  - place: a553110 # Kidron
+    ref: 2Sam.15.13-2Sam.15.23
+    note:
+      en: "David flees Jerusalem, and the king and all the people pass over the brook Kidron toward the wilderness, all the country weeping."
+      ru: "Давид уходит из Иерусалима, и царь и весь народ переходят поток Кедрон по дороге к пустыне, и плачет вся земля."
+  - place: ac2c4c5 # Mount of Olives
+    ref: 2Sam.15.30-2Sam.15.37
+    note:
+      en: "He goes up the Mount of Olives weeping, barefoot and with his head covered, and sends Hushai back to Jerusalem."
+      ru: "Он восходит на гору Елеонскую, плача, босой, с покрытой головой, и отправляет Хусия назад в Иерусалим."
+  - place: a9ed5a4 # Bahurim
+    ref: 2Sam.16.5-2Sam.16.14
+    note:
+      en: 'At Bahurim Shimei of the house of Saul curses him and throws stones; David will not have him killed: "let him curse."'
+      ru: "В Бахуриме Семей из дома Саулова злословит его и бросает камнями; Давид не даёт убить его: «пусть он злословит»."
+  - place: a15257a # Jerusalem
+    ref: 2Sam.16.15-2Sam.16.23
+    note:
+      en: "Absalom enters Jerusalem and follows the counsel of Ahithophel."
+      ru: "Авессалом входит в Иерусалим и следует совету Ахитофела."
+  - place: aa24ad4 # Wood of Ephraim
+    ref: 2Sam.18.6-2Sam.18.17
+    note:
+      en: "In the wood of Ephraim Absalom's army is beaten; his head caught in an oak, he hangs there until Joab thrusts three darts into his heart."
+      ru: "В лесу Ефремовом войско Авессалома разбито; запутавшись волосами в ветвях дуба, он висит, пока Иоав не вонзает три стрелы в его сердце."
+  - place: ae5bfe9 # Mahanaim
+    ref: 2Sam.18.19-2Sam.18.33
+    note:
+      en: 'At Mahanaim, sitting between the two gates, David hears the news and weeps: "O my son Absalom, my son, my son Absalom!"'
+      ru: "В Маханаиме, сидя между двумя воротами, Давид получает весть и плачет: «сын мой Авессалом! сын мой, сын мой Авессалом!»"
+  - place: ab94aea # Gilgal
+    ref: 2Sam.19.15-2Sam.19.40
+    note:
+      en: "The men of Judah come to Gilgal to bring the king back over the Jordan."
+      ru: "Иудеи приходят в Галгал встретить царя и перевезти его через Иордан."
