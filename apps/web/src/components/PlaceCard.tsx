@@ -1,5 +1,5 @@
 import { formatRef, type Locale } from "@hg/model";
-import { ExternalLink, Link2, MapPin, X, ZoomIn } from "lucide-react";
+import { ExternalLink, MapPin, X, ZoomIn } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { beforeItsTime, type PlaceProps, type Site } from "../data";
@@ -23,7 +23,6 @@ export function PlaceCard({
   place,
   sites,
   at,
-  linkHere,
   alsoHere,
   locale,
   year,
@@ -34,8 +33,6 @@ export function PlaceCard({
 }: {
   place: PlaceProps;
   sites: readonly Site[];
-  /** A link that opens this place, this year and this view. */
-  linkHere: () => string;
   /** The place's point, [lon, lat]: where it is today on Google Maps. */
   at: readonly [number, number];
   /** Other records on the same point under another name. */
@@ -59,14 +56,6 @@ export function PlaceCard({
     versesRef.current?.querySelectorAll("a")[focusVerse.current]?.focus();
     focusVerse.current = null;
   }, [versesShown]);
-  const [copied, setCopied] = useState<"copied" | "failed" | null>(null);
-  const copiedTimer = useRef(0);
-  useEffect(
-    () => () => {
-      window.clearTimeout(copiedTimer.current);
-    },
-    [],
-  );
   const [allAlso, setAllAlso] = useState(false);
   const { t } = useTranslation();
   const ru = locale === "ru";
@@ -108,46 +97,12 @@ export function PlaceCard({
         </span>
       </div>
 
-      <div className="flex items-center gap-2 px-5 pt-3">
+      <div className="px-5 pt-3">
         <button
           onClick={onZoom}
           className="flex items-center gap-1.5 rounded-full bg-accent px-3.5 py-1.5 text-sm text-paper hover:brightness-110"
         >
           <ZoomIn className="size-4" aria-hidden /> {t("place.zoom")}
-        </button>
-        <button
-          onClick={() => {
-            const done = (ok: boolean) => {
-              setCopied(ok ? "copied" : "failed");
-              window.clearTimeout(copiedTimer.current);
-              copiedTimer.current = window.setTimeout(() => {
-                setCopied(null);
-              }, 2000);
-            };
-            try {
-              navigator.clipboard.writeText(linkHere()).then(
-                () => {
-                  done(true);
-                },
-                () => {
-                  done(false);
-                },
-              );
-            } catch {
-              // No clipboard (plain http on a LAN address, or an iframe without permission).
-              done(false);
-            }
-          }}
-          className="flex items-center gap-1.5 rounded-full border border-line px-3 py-1.5 text-sm text-ink-soft hover:bg-paper-2 hover:text-ink"
-        >
-          <Link2 className="size-4" aria-hidden />
-          <span aria-live="polite">
-            {copied === "copied"
-              ? t("place.copied")
-              : copied === "failed"
-                ? t("place.copy_failed")
-                : t("place.copy_link")}
-          </span>
         </button>
       </div>
 
