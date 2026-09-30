@@ -112,10 +112,11 @@ export function Timeline({
           }}
         >
           {hovered && hover && (
+            // Above the whole panel: inside it the tip covered the year and the era name.
             <div
               role="tooltip"
               style={{ left: `${hover.x}%` }}
-              className={`pointer-events-none absolute bottom-full mb-2 rounded-lg bg-ink px-2.5 py-1.5 text-[12px] leading-tight whitespace-nowrap text-paper shadow-lg ${hover.x < 15 ? "" : hover.x > 85 ? "-translate-x-full" : "-translate-x-1/2"}`}
+              className={`pointer-events-none absolute bottom-full mb-[76px] rounded-lg bg-ink px-2.5 py-1.5 text-[12px] leading-tight whitespace-nowrap text-paper shadow-lg ${hover.x < 15 ? "" : hover.x > 85 ? "-translate-x-full" : "-translate-x-1/2"}`}
             >
               <div className="font-medium">{ru ? hovered.name.ru : hovered.name.en}</div>
               <div className="text-paper/75 tabular-nums">
