@@ -27,6 +27,11 @@ const SEAMS: readonly (readonly [string, number, number, number, number])[] = [
   ["Dan", 4, 1, 3, 31],
   ["Hos", 13, 16, 14, 1],
   ["Jonah", 1, 17, 2, 1], // "большому киту"
+  ["1Sam", 23, 29, 24, 1], // "жил в безопасных местах Ен-Гадди"
+  ["1Sam", 24, 1, 24, 2],
+  ["2Cor", 11, 33, 11, 32], // "в корзине был спущен"
+  ["2Cor", 13, 14, 13, 13], // "Благодать Господа нашего"
+  ["Acts", 19, 41, 19, 40], // "Сказав это, он распустил собрание"
 ];
 
 describe("toSynodal", () => {
@@ -36,7 +41,8 @@ describe("toSynodal", () => {
 
   it("leaves books with the same numbering alone", () => {
     expect(toSynodal("Gen", 12, 6)).toEqual({ chapter: 12, verse: 6 });
-    expect(toSynodal("Acts", 19, 41)).toEqual({ chapter: 19, verse: 41 });
+    expect(toSynodal("Acts", 19, 40)).toEqual({ chapter: 19, verse: 40 });
+    expect(toSynodal("1Kgs", 6, 1)).toEqual({ chapter: 6, verse: 1 });
   });
 
   it("maps every verse of a shifted run inside the Synodal chapters", () => {

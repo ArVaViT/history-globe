@@ -6,10 +6,10 @@
  *
  * Derived from the chapter lengths of the Synodal text (eBible.org "russyn", public
  * domain) against versification.ts, and checked verse by verse at every seam
- * (synodal.test.ts). Only differences that are certain are converted: the Psalms and
- * chapter boundaries that moved. Chapters where the Synodal text merges or adds verses
- * inside a chapter (Lev 14, Josh 24, Prov 4 and 13, Song 1, Isa 3, Acts 19, Rom 14-16,
- * Rev 12) keep the English numbers.
+ * (synodal.test.ts). Only differences that are certain are converted: the Psalms,
+ * chapter boundaries that moved, and two verses joined into one at the end of a
+ * chapter. Chapters where the Synodal text merges or adds verses elsewhere (Lev 14,
+ * Josh 24, Prov 4 and 13, Song 1, Isa 3, Rom 14-16, Rev 12) keep the English numbers.
  */
 import { VERSES } from "./versification.ts";
 
@@ -30,6 +30,7 @@ const PSALM_TITLE_VERSES =
  * the chapters in each run; the English lengths are in versification.ts.
  */
 const SHIFTED: Readonly<Record<string, readonly (readonly [number, readonly number[]])[]>> = {
+  "1Sam": [[23, [28, 23]]], // 1 Sam 23:29 (Engedi) is Synodal 24:1
   Num: [
     [12, [15, 34]], // Num 12:16 is Synodal 13:1
     [29, [39, 17]], // Num 29:40 is Synodal 30:1
@@ -41,6 +42,12 @@ const SHIFTED: Readonly<Record<string, readonly (readonly [number, readonly numb
   Dan: [[3, [33, 34]]], // Dan 4:1 is Synodal 3:31
   Hos: [[13, [15, 10]]], // Hos 13:16 is Synodal 14:1
   Jonah: [[1, [16, 11]]], // Jonah 1:17 is Synodal 2:1
+};
+
+/** From this English verse on, the chapter counts one less: two verses are one. */
+const JOINED: Readonly<Record<string, Readonly<Record<number, number>>>> = {
+  Acts: { 19: 41 }, // Acts 19:40-41 is Synodal 19:40
+  "2Cor": { 11: 33, 13: 13 }, // 2 Cor 11:32-33 is 11:32; 13:12-13 is 13:12
 };
 
 function psalm(chapter: number, verse: number | null): ChapterVerse {
@@ -74,5 +81,7 @@ export function toSynodal(book: string, chapter: number, verse: number | null): 
       index -= length;
     }
   }
+  const joined = JOINED[book]?.[chapter];
+  if (joined !== undefined && verse >= joined) return { chapter, verse: verse - 1 };
   return { chapter, verse };
 }
