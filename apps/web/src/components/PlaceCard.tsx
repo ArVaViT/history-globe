@@ -72,6 +72,9 @@ export function PlaceCard({
   const { t } = useTranslation();
   const ru = locale === "ru";
   const title = ru ? (place.name_ru ?? place.name) : place.name;
+  // A version OpenBible rates at 0 % (Khirbet Minyeh for Capernaum) is noise beside a
+  // settled site: listed only while it has a share.
+  const versions = sites.filter((s) => s.share !== 0);
   const kindKey = `kind.${place.kind}`;
   const kind = t(kindKey) === kindKey ? place.kind : t(kindKey);
 
@@ -89,13 +92,24 @@ export function PlaceCard({
             </div>
           )}
         </div>
-        <button
-          onClick={onClose}
-          aria-label={t("place.close")}
-          className="-mr-1 rounded-full p-1.5 text-ink-soft hover:bg-paper-2 hover:text-ink"
-        >
-          <X className="size-5" />
-        </button>
+        <div className="-mr-1 flex shrink-0 items-center gap-0.5">
+          <button
+            onClick={onZoom}
+            aria-label={t("place.zoom")}
+            title={t("place.zoom")}
+            className="rounded-full p-1.5 text-accent hover:bg-paper-2"
+          >
+            <ZoomIn className="size-5" aria-hidden />
+          </button>
+          <button
+            onClick={onClose}
+            aria-label={t("place.close")}
+            title={t("place.close")}
+            className="rounded-full p-1.5 text-ink-soft hover:bg-paper-2 hover:text-ink"
+          >
+            <X className="size-5" aria-hidden />
+          </button>
+        </div>
       </div>
 
       <div className="flex flex-wrap items-center gap-1.5 px-5 pt-3">
@@ -107,21 +121,15 @@ export function PlaceCard({
         >
           {place.disputed ? t("place.sites", { count: place.sites }) : t("place.single_site")}
         </span>
-        <button
-          onClick={onZoom}
-          className="ml-auto flex items-center gap-1.5 rounded-full bg-accent px-3 py-1 text-[13px] text-paper hover:brightness-110"
-        >
-          <ZoomIn className="size-3.5" aria-hidden /> {t("place.zoom")}
-        </button>
       </div>
 
-      {sites.length > 1 && (
+      {versions.length > 1 && (
         <div className="mx-5 mt-4 rounded-xl border border-[#e0b98f] bg-[#fbf1e4] px-3 py-2.5">
           <div className="text-[11px] font-medium tracking-[0.12em] text-[#7a4a1d] uppercase">
             {t("place.sites_title")}
           </div>
           <ul className="mt-1.5 space-y-1">
-            {sites.map((s) => (
+            {versions.map((s) => (
               <li key={`${s.label}-${s.at.join(",")}`}>
                 <button
                   onClick={() => {
