@@ -698,7 +698,8 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         IS_SELECTED,
         ["!", isSettlement],
         ["!", ["has", "line"]],
-        visibleAtZoom,
+        // Its own threshold: a small place is labelled once a tour or a search flies to it.
+        [">=", ["zoom"], 5],
         ["any", ["!", isLandmark], HAS_LOCAL_NAME],
       ],
       layout: {
