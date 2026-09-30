@@ -1,0 +1,43 @@
+# The childhood of Jesus, Luke 1-2, in Luke's order only (Matthew's account is in the tour
+# of His life). The census of Luke 2:1-3 is not cited, so that no stop ties the birth to a
+# disputed date. The tour's year (5 BC) is the conventional point of the birth (c. 6-4 BC);
+# the visit at twelve years old carries AD 8, counted from it.
+id: childhood
+title:
+  en: "The childhood of Jesus, after Luke"
+  ru: "Детство Иисуса, по Луке"
+year: "5 BC"
+approximate: true
+stops:
+  - place: af5884f # Nazareth
+    ref: Luke.1.26-Luke.1.38
+    note:
+      en: 'In Nazareth the angel Gabriel is sent to Mary, and she answers: "Behold the handmaid of the Lord; be it unto me according to thy word."'
+      ru: "В Назарет послан Ангел Гавриил к Марии, и Она отвечает: «се, Раба Господня; да будет Мне по слову твоему»."
+  - place: a112427 # Bethlehem
+    ref: Luke.2.4-Luke.2.20
+    note:
+      en: 'In Bethlehem, the city of David, Mary lays her firstborn in a manger, and the angels sing to the shepherds: "Glory to God in the highest, and on earth peace, good will toward men."'
+      ru: "В Вифлееме, городе Давидовом, Мария полагает Первенца в ясли, и Ангелы возвещают пастухам: «слава в вышних Богу, и на земле мир, в человеках благоволение!»"
+  - place: a15257a # Jerusalem
+    ref: Luke.2.22-Luke.2.38
+    note:
+      en: 'In the Temple at Jerusalem Simeon takes the child in his arms: "Lord, now lettest thou thy servant depart in peace"; Anna speaks of Him to all who look for redemption.'
+      ru: "В храме в Иерусалиме Симеон берёт Младенца на руки: «ныне отпускаешь раба Твоего, Владыко, по слову Твоему, с миром»; Анна говорит о Нём всем, ожидавшим избавления."
+  - place: af5884f # Nazareth
+    ref: Luke.2.39-Luke.2.40
+    note:
+      en: "They return to Galilee, to their own city Nazareth, and the child grows, filled with wisdom."
+      ru: "Они возвращаются в Галилею, в свой город Назарет, и Младенец возрастает, исполняясь премудрости."
+  - place: a15257a # Jerusalem
+    ref: Luke.2.41-Luke.2.50
+    year: "AD 8"
+    note:
+      en: 'At twelve He stays behind at the Passover and is found in the Temple among the teachers: "wist ye not that I must be about my Father''s business?"'
+      ru: "В двенадцать лет Он остаётся в Иерусалиме после Пасхи, и Его находят в храме посреди учителей: «или вы не знали, что Мне должно быть в том, что принадлежит Отцу Моему?»"
+  - place: af5884f # Nazareth
+    ref: Luke.2.51-Luke.2.52
+    year: "AD 8"
+    note:
+      en: "He goes down with them to Nazareth and is subject unto them, and increases in wisdom and stature, and in favour with God and man."
+      ru: "Он приходит с ними в Назарет и находится в повиновении у них, преуспевая в премудрости и возрасте и в любви у Бога и человеков."
