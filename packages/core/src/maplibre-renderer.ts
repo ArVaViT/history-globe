@@ -25,6 +25,8 @@ export interface MapLibreRendererOptions extends StyleOptions {
   readonly camera: Camera;
   /** Place features with a numeric top-level `id` (feature-state) and `properties.id`. */
   readonly places: FeatureCollection;
+  /** Screen edges covered by the interface, so a flight puts its target where it shows. */
+  readonly viewPadding?: () => { top: number; bottom: number; left: number; right: number };
 }
 
 export class MapLibreRenderer implements Renderer {
@@ -48,8 +50,10 @@ export class MapLibreRenderer implements Renderer {
   private destroyed = false;
   private readyTimer: ReturnType<typeof setTimeout> | undefined;
   private settleTimer: ReturnType<typeof setTimeout> | undefined;
+  private readonly viewPadding: MapLibreRendererOptions["viewPadding"];
 
   constructor(o: MapLibreRendererOptions) {
+    this.viewPadding = o.viewPadding;
     const style = buildStyle(o);
     this.groups = {
       borders: layersInGroup(style, "borders"),
@@ -276,6 +280,7 @@ export class MapLibreRenderer implements Renderer {
       // Without an explicit duration the flight takes as long as the distance needs:
       // a hop to the next village is quick, Jerusalem → Rome is not rushed.
       ...(durationMs === undefined ? { speed: 1.1, maxDuration: 4500 } : { duration: durationMs }),
+      ...(this.viewPadding ? { padding: this.viewPadding() } : {}),
       curve: 1.6,
       essential: true,
     });
