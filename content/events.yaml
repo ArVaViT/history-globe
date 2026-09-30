@@ -1,6 +1,7 @@
 # Dated events of biblical history, marked on the time slider. Only events with a
 # year that mainstream scholarship states, each with its sources; "c." kept as
-# approximate. Disputed early dates (the Exodus, the conquest) are left out.
+# approximate. Disputed early dates (the Exodus, the conquest) are left out, and no
+# title ties a verse to a disputed date (Luke 2:2 is not named with AD 6).
 events:
   - id: temple-built
     year: "c. 966 BC"
@@ -143,3 +144,77 @@ events:
     place: a15257a
     sources:
       - "Josephus, Jewish War 6.249-266"
+  - id: qarqar
+    year: "853 BC"
+    title:
+      en: "Battle of Qarqar: Ahab among the kings against Assyria"
+      ru: "Битва при Каркаре: Ахав среди царей против Ассирии"
+    sources:
+      - "Kurkh Monolith of Shalmaneser III (his sixth year)"
+  - id: jehu-tribute
+    year: "841 BC"
+    title:
+      en: "Jehu pays tribute to Shalmaneser III"
+      ru: "Ииуй платит дань Салманассару III"
+    sources:
+      - "Black Obelisk of Shalmaneser III (his eighteenth year)"
+  - id: josiah-dies
+    year: "609 BC"
+    title:
+      en: "Josiah falls at Megiddo before Pharaoh Necho"
+      ru: "Иосия погибает при Мегиддоне в битве с фараоном Нехао"
+    place: a8554e3
+    sources:
+      - "2 Kgs 23:29-30; 2 Chr 35:20-24"
+      - "Babylonian Chronicle, ABC 3 (Necho's march, 609 BC)"
+  - id: carchemish
+    year: "605 BC"
+    title:
+      en: "Nebuchadnezzar defeats Egypt at Carchemish"
+      ru: "Навуходоносор разбивает египтян при Кархемисе"
+    place: af6c730
+    sources:
+      - "Jer 46:2"
+      - "Babylonian Chronicle, ABC 5"
+  - id: jehoiachin-exiled
+    year: "597 BC"
+    title:
+      en: "Jerusalem surrenders; Jehoiachin is taken to Babylon"
+      ru: "Иерусалим сдаётся; Иехония уведён в Вавилон"
+    place: a15257a
+    sources:
+      - "2 Kgs 24:10-17"
+      - "Babylonian Chronicle, ABC 5 (2 Adar, 597 BC)"
+  - id: temple-desecrated
+    year: "167 BC"
+    title:
+      en: "Antiochus IV defiles the Temple; the Maccabean revolt"
+      ru: "Антиох IV оскверняет Храм; восстание Маккавеев"
+    place: a15257a
+    sources:
+      - "1 Macc 1:54 (15 Kislev, year 145 of the Seleucids)"
+      - "Josephus, Antiquities 12.248-256"
+  - id: herod-dies
+    year: "c. 4 BC"
+    title:
+      en: "Death of Herod the Great"
+      ru: "Смерть Ирода Великого"
+    place: a15257a
+    sources:
+      - "Josephus, Antiquities 17.167, 17.191 (after the lunar eclipse, before Passover)"
+  - id: judea-province
+    year: "AD 6"
+    title:
+      en: "Judea becomes a Roman province"
+      ru: "Иудея становится римской провинцией"
+    place: a15257a
+    sources:
+      - "Josephus, Antiquities 17.355; 18.1-2"
+  - id: fire-of-rome
+    year: "AD 64"
+    title:
+      en: "The fire of Rome; Nero persecutes the Christians"
+      ru: "Пожар Рима; Нерон преследует христиан"
+    place: afc8e7a
+    sources:
+      - "Tacitus, Annals 15.38-44"
