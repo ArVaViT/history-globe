@@ -60,15 +60,15 @@ events:
     place: a217d18
     sources:
       - "Ezra 1:1-4"
-      - "Cyrus Cylinder"
+      - "Cyrus Cylinder (his general policy of return)"
   - id: second-temple
-    year: "516 BC"
+    year: "c. 516 BC"
     title:
-      en: "The Second Temple completed"
-      ru: "Освящение Второго Храма"
+      en: "The Second Temple completed and dedicated"
+      ru: "Второй Храм достроен и освящён"
     place: a15257a
     sources:
-      - "Ezra 6:15 (the sixth year of Darius)"
+      - "Ezra 6:15-18 (3 Adar of the sixth year of Darius: 516 or 515 BC)"
   - id: nehemiah-walls
     year: "c. 445 BC"
     title:
@@ -117,7 +117,7 @@ events:
       ru: "Рождество Христово"
     place: a112427
     sources:
-      - "Matt 2:1; Luke 2:1-7 (before Herod's death, 4 BC)"
+      - "Matt 2:1; Luke 1:5 (in the days of Herod, who died in 4 BC)"
   - id: crucifixion
     year: "c. AD 30"
     title:
@@ -125,7 +125,8 @@ events:
       ru: "Распятие и Воскресение"
     place: a631d35
     sources:
-      - "Matt 27-28; Luke 3:1 (the fifteenth year of Tiberius)"
+      - "Matt 27-28"
+      - "Luke 3:1 (John's ministry begins in the 15th year of Tiberius, AD 28/29); Pilate's prefecture AD 26-36"
   - id: council
     year: "c. AD 49"
     title:

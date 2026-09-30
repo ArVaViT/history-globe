@@ -9,10 +9,11 @@ import { LayersPanel, LegendPanel } from "./components/LayersPanel";
 import { Panel } from "./components/Panel";
 import { PlaceCard } from "./components/PlaceCard";
 import { SearchBox } from "./components/SearchBox";
-import { Timeline, type TimelineEvent } from "./components/Timeline";
+import { Timeline } from "./components/Timeline";
 import { ToursPanel } from "./components/ToursPanel";
 import { TourStopCard } from "./components/TourStopCard";
 import { loadData, type LoadedData } from "./data";
+import { timelineEventsOf } from "./timeline-events";
 import { readUrl, writeUrl } from "./url";
 import { useGlobe, useGlobeState } from "./useGlobe";
 
@@ -189,43 +190,11 @@ export function App() {
   }, [globe]);
 
   const hoverPlace = hover ? data?.byId.get(hover.id)?.props : undefined;
-  // Founding, destruction and ruin of places (place-life.yaml), marked on the slider.
-  const timelineEvents = useMemo(() => {
-    if (!data) return [];
-    const out: TimelineEvent[] = [];
-    for (const [id, life] of Object.entries(data.life)) {
-      const p = data.byId.get(id)?.props;
-      // Another name of a place (Zion for Jerusalem) and places inside it (its gates) share
-      // its years: mark them once.
-      if (!p || p.where_tpl === "same" || p.where_tpl === "at") continue;
-      const name = state.locale === "ru" ? (p.name_ru ?? p.name) : p.name;
-      // A turning point already on the slider (the fall of Jerusalem) is not repeated.
-      const covered = (year: number) =>
-        data.events.some((e) => e.place === id && Math.abs(e.year - year) <= 2);
-      const add = (y: { year: number; approximate: boolean } | undefined, key: string) => {
-        if (y && !covered(y.year))
-          out.push({ year: y.year, label: t(key, { name }), approximate: y.approximate });
-      };
-      add(life.from, "events.founded");
-      add(life.until, "events.destroyed");
-      add(life.gap?.from, "events.destroyed");
-      // The gap's `until` is its last year in ruins: rebuilt the year after.
-      const back = life.gap?.until;
-      add(back && { ...back, year: back.year + 1 }, "events.rebuilt");
-    }
-    for (const e of data.events) {
-      out.push({
-        year: e.year,
-        label: e.title[state.locale] ?? e.title.en ?? "",
-        approximate: e.approximate,
-        major: true,
-      });
-    }
-    // Turning points first in the tip, then the rest by year.
-    return out.sort(
-      (a, b) => Number(b.major ?? false) - Number(a.major ?? false) || a.year - b.year,
-    );
-  }, [data, state.locale, t]);
+  // Founding, destruction and ruin of places, and the turning points of the history.
+  const timelineEvents = useMemo(
+    () => (data ? timelineEventsOf(data, state.locale, t) : []),
+    [data, state.locale, t],
+  );
   const selected = state.selectedPlace ? data?.byId.get(state.selectedPlace)?.props : undefined;
   const tour = state.tour ? data?.tours.find((x) => x.id === state.tour?.id) : undefined;
   const tourStop = tour && state.tour ? tour.stops[state.tour.step] : undefined;
