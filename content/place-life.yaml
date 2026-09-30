@@ -156,3 +156,68 @@ places:
       ru: "Город основан Антигоном как Антигония и переименован Лисимахом в Александрию Троадскую."
     sources:
       - "Strabo, Geography 13.1.26"
+  - id: ae1f807
+    en: Calah
+    until: "c. 612 BC"
+    note:
+      en: "Kalhu (Nimrud), long a royal city of Assyria, was sacked by the Medes and Babylonians in the fall of the empire (614-612 BC); only a village later stood on the ruins."
+      ru: "Калах (Нимруд), долгое время царский город Ассирии, был разграблен мидянами и вавилонянами при падении царства (614–612 гг. до н. э.); позже на развалинах стояло лишь селение."
+    sources:
+      - "D. Oates and J. Oates, Nimrud: An Assyrian Imperial City Revealed (2001)"
+      - "Xenophon, Anabasis 3.4.7 (the deserted city of Larisa)"
+  - id: adf74d4
+    en: Shechem
+    until: "c. 107 BC"
+    note:
+      en: "The city at Tell Balata was destroyed by John Hyrcanus and never rebuilt; Flavia Neapolis was founded 2 km to the west in AD 72."
+      ru: "Город на Телль-Балате разрушен Иоанном Гирканом и больше не отстраивался; в 72 г. н. э. в 2 км к западу основан Флавия Неаполь."
+    sources:
+      - "Josephus, Antiquities 13.255-256; Jewish War 1.63"
+      - "Shechem excavations of G. E. Wright and E. F. Campbell (NEAEHL, 'Shechem')"
+  - id: a5cda86
+    en: Mareshah
+    until: "40 BC"
+    note:
+      en: "Destroyed by the Parthians in 40 BC during the war between Antigonus and Herod; the tell was never resettled."
+      ru: "Разрушена парфянами в 40 г. до н. э. во время войны Антигона с Иродом; на холме больше не селились."
+    sources:
+      - "Josephus, Antiquities 14.364; Jewish War 1.269"
+      - "A. Kloner, Maresha Excavations Final Report I (IAA Reports 17, 2003)"
+  - id: ab7bf48
+    en: Caesarea Philippi
+    from: "c. 3 BC"
+    note:
+      en: "Founded by Philip the Tetrarch at the sanctuary of Pan (Panias) as his capital and named after Caesar."
+      ru: "Основана четвертовластником Филиппом у святилища Пана (Паниады) как его столица и названа в честь кесаря."
+    sources:
+      - "Josephus, Antiquities 18.28; Jewish War 2.168"
+      - "Banias excavations of V. Tzaferis (NEAEHL, 'Banias')"
+  - id: af43cde
+    en: Nicopolis
+    from: "c. 30 BC"
+    note:
+      en: "Founded by Octavian (Augustus) in Epirus beside the battlefield of Actium, as the City of Victory."
+      ru: "Основан Октавианом (Августом) в Эпире близ места битвы при Акциуме как «Город Победы»."
+    sources:
+      - "Cassius Dio, Roman History 51.1.3"
+      - "Strabo, Geography 7.7.6"
+  - id: a314765
+    en: Paphos
+    from: "c. 320 BC"
+    note:
+      en: "New Paphos, the harbour city of Acts, was founded by Nicocles, the last king of Old Paphos, in the late 4th century BC."
+      ru: "Новый Паф, приморский город из книги Деяний, основан Никоклом, последним царём Старого Пафа, в конце IV в. до н. э."
+    sources:
+      - "J. Młynarczyk, Nea Paphos III: Nea Paphos in the Hellenistic Period (1990)"
+      - "Nea Paphos, Temple of Artemis Agrotera dedication of Nicocles"
+  - id: a55027d
+    en: Miletus
+    gap:
+      from: "494 BC"
+      until: "c. 480 BC"
+    note:
+      en: "Taken by the Persians after the battle of Lade in 494 BC: the men were killed, the women and children enslaved, the city emptied; it was rebuilt on a new plan after the Greek victory at Mycale in 479 BC."
+      ru: "Взят персами после битвы при Ладе в 494 г. до н. э.: мужчины перебиты, женщины и дети уведены в рабство, город опустел; отстроен по новому плану после победы греков при Микале в 479 г. до н. э."
+    sources:
+      - "Herodotus 6.18-22; 9.104"
+      - "Miletus excavations (German Archaeological Institute), Hippodamian plan after 479 BC"
