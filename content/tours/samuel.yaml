@@ -1,0 +1,55 @@
+# Samuel and the ark, 1 Samuel 1-11 and 25, in the order of the text. The tour's year
+# (1070 BC) is a conventional point for the map before Saul's kingship (c. 1050 BC);
+# the chronology of the judges' last years is uncertain.
+id: samuel
+title:
+  en: "Samuel and the ark"
+  ru: "Самуил и ковчег"
+year: "1070 BC"
+approximate: true
+stops:
+  - place: a90f6e1 # Ramah
+    ref: 1Sam.1.19-1Sam.1.20
+    note:
+      en: "At Ramah Hannah bears a son and names him Samuel: asked of the Lord."
+      ru: "В Раме Анна рождает сына и нарекает ему имя Самуил: у Господа испросила его."
+  - place: aa4680a # Shiloh
+    ref: 1Sam.1.24-1Sam.3.21
+    note:
+      en: 'Brought to the house of the Lord at Shiloh, the boy answers: "Speak, for your servant hears."'
+      ru: "Приведённый в дом Господень в Силоме, отрок отвечает: «говори, Господи, ибо слышит раб Твой»."
+  - place: abfdefc # Ebenezer
+    ref: 1Sam.4.1-1Sam.4.11
+    note:
+      en: "At Ebenezer the Philistines take the ark of God; Hophni and Phinehas die."
+      ru: "У Авен-Езера Филистимляне берут ковчег Божий; Офни и Финеес умирают."
+  - place: a30c937 # Ashdod
+    ref: 1Sam.5.1-1Sam.5.7
+    note:
+      en: "In the temple of Dagon at Ashdod the idol falls on its face before the ark."
+      ru: "В храме Дагона в Азоте идол падает лицом к земле пред ковчегом Господним."
+  - place: a3b5b53 # Beth-shemesh
+    ref: 1Sam.6.12-1Sam.6.20
+    note:
+      en: "Two cows carry the ark straight along the road to Beth-shemesh."
+      ru: "Две коровы везут ковчег прямо по дороге к Вефсамису."
+  - place: a9bba61 # Kiriath-jearim
+    ref: 1Sam.7.1-1Sam.7.2
+    note:
+      en: "The men of Kiriath-jearim keep the ark in the house of Abinadab for twenty years."
+      ru: "Жители Кириаф-Иарима хранят ковчег в доме Аминадава двадцать лет."
+  - place: a736f6c # Mizpah
+    ref: 1Sam.7.5-1Sam.7.12
+    note:
+      en: 'At Mizpah Samuel prays, Israel prevails, and he sets up a stone: "Hitherto the Lord has helped us."'
+      ru: "В Массифе Самуил молится, Израиль побеждает, и он ставит камень: «до сего места помог нам Господь»."
+  - place: ab94aea # Gilgal
+    ref: 1Sam.11.14-1Sam.11.15
+    note:
+      en: "At Gilgal the people make Saul king before the Lord."
+      ru: "В Галгале народ поставляет Саула царём пред Господом."
+  - place: a90f6e1 # Ramah
+    ref: 1Sam.25.1
+    note:
+      en: "Samuel dies, and all Israel mourns him and buries him at his house in Ramah."
+      ru: "Самуил умирает; весь Израиль плачет о нём и погребает его в доме его, в Раме."
