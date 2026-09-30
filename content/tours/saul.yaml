@@ -14,7 +14,7 @@ stops:
     ref: Acts.22.3
     note:
       en: "Saul is born in Tarsus of Cilicia and brought up in Jerusalem at the feet of Gamaliel."
-      ru: "Савл родился в Тарсе Киликийском и воспитан в Иерусалиме при ногах Гамалиила."
+      ru: "Савл, уроженец Тарса Киликийского, воспитывается в Иерусалиме при ногах Гамалиила."
   - place: a15257a # Jerusalem
     ref: Acts.7.58-Acts.8.3
     note:
@@ -23,13 +23,13 @@ stops:
   - place: a69c1d4 # Damascus
     ref: Acts.9.1-Acts.9.20
     note:
-      en: "Near Damascus a light from heaven; in the street called Straight Ananias lays hands on him, and he is baptised."
+      en: "Near Damascus a light from heaven; in the street called Straight, Ananias lays hands on him, and he is baptised."
       ru: "У Дамаска его осиявает свет с неба; на улице, называемой Прямой, Анания возлагает на него руки, и он крестится."
   - place: a0f4ea8 # Arabia
     ref: Gal.1.17
     note:
-      en: "He goes away into Arabia, and returns again to Damascus."
-      ru: "Он уходит в Аравию и опять возвращается в Дамаск."
+      en: "He goes away into Arabia, and then returns to Damascus."
+      ru: "Он уходит в Аравию и затем возвращается в Дамаск."
   - place: a69c1d4 # Damascus
     ref: Acts.9.22-Acts.9.25
     note:
@@ -44,7 +44,7 @@ stops:
     ref: Acts.9.30
     note:
       en: "The brothers bring him down to Caesarea and send him off to Tarsus."
-      ru: "Братия отправляют его в Кесарию и препровождают в Тарс."
+      ru: "Братья отводят его в Кесарию и отправляют в Тарс."
   - place: a666ea0 # Tarsus
     ref: Acts.11.25
     note:
@@ -54,4 +54,4 @@ stops:
     ref: Acts.11.26
     note:
       en: "A whole year they teach in Antioch, where the disciples are first called Christians."
-      ru: "Целый год они учат в Антиохии, где ученики впервые стали называться христианами."
+      ru: "Целый год они учат в Антиохии, где учеников впервые начинают называть христианами."
