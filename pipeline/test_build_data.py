@@ -2,7 +2,7 @@
 
 import unittest
 
-from build_data import COAST_BBOX, banned_lonlats, build_coast, coord_banned, rank_of, site_label
+from build_data import COAST_BBOX, banned_lonlats, build_coast, coord_banned, label_anchors, rank_of, site_label
 
 MODERN = {
     "m_osm": {"lonlat": "35.1,31.1", "coordinates_source": {"type": "osm", "geometry_credit": "osm"}},
@@ -79,3 +79,23 @@ class Coast(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class LabelTiers(unittest.TestCase):
+    def test_centroid_coarse_and_fine_grid(self) -> None:
+        # A 24 x 24 degree square inside the region: its centroid, and a 6-degree grid of
+        # which every other point on both axes is the coarse 12-degree grid.
+        square = [[[30.0, 20.0], [54.0, 20.0], [54.0, 44.0], [30.0, 44.0], [30.0, 20.0]]]
+        anchors = label_anchors([square])
+        tiers = [a[3] for a in anchors]
+        self.assertEqual(tiers.count(0), 1)
+        centroid = next(a for a in anchors if a[3] == 0)
+        self.assertAlmostEqual(centroid[0], 42.0, places=6)
+        self.assertAlmostEqual(centroid[1], 32.0, places=6)
+        coarse = [(a[0], a[1]) for a in anchors if a[3] == 1]
+        fine = [(a[0], a[1]) for a in anchors if a[3] == 2]
+        self.assertTrue(coarse and fine)
+        for x, y in coarse:
+            self.assertEqual(round((x - 3) / 6) % 2, 0)
+            self.assertEqual(round((y - 3) / 6) % 2, 0)
+        self.assertGreater(len(fine), len(coarse))
