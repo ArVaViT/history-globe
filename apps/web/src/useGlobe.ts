@@ -68,7 +68,7 @@ function createGlobe(
   const renderer = new Renderer({
     container: el,
     camera: init.camera ?? DEFAULT_CAMERA,
-    places: data.places,
+    places: forMap(data.places),
     dataUrl: DATA_URL,
     terrainTiles: TERRAIN.tiles,
     terrainAttribution: TERRAIN.attribution,
@@ -101,4 +101,17 @@ export function useGlobeState(engine: Engine | undefined): GlobeState {
     engine ? engine.store.subscribe : noop,
     engine ? engine.store.get : () => DEFAULT_STATE,
   );
+}
+
+/**
+ * What the map needs of a place: the card keeps the verse list and the "where" lines, the
+ * map would only carry them through every tile (Jerusalem alone has 955 verses).
+ */
+function forMap(places: LoadedData["places"]): LoadedData["places"] {
+  return {
+    ...places,
+    features: places.features.map((f) => {
+      return { ...f, properties: { ...f.properties, osis: [], where: "" } };
+    }),
+  };
 }

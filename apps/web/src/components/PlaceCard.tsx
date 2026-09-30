@@ -46,7 +46,8 @@ export function PlaceCard({
 }) {
   // Opened lists stay open for this place; the card is keyed by place, so a new place
   // starts folded again.
-  const [allVerses, setAllVerses] = useState(false);
+  // Verses open fifty at a time: Jerusalem has 955.
+  const [versesShown, setVersesShown] = useState(VERSES_SHOWN);
   const [allAlso, setAllAlso] = useState(false);
   const { t } = useTranslation();
   const ru = locale === "ru";
@@ -201,7 +202,7 @@ export function PlaceCard({
         {t("place.verses")}
       </div>
       <div className="flex flex-wrap gap-1.5 px-5 pt-2">
-        {place.osis.slice(0, allVerses ? undefined : VERSES_SHOWN).map((o) => (
+        {place.osis.slice(0, versesShown).map((o) => (
           <a
             key={o}
             href={verseUrl(o, locale)}
@@ -213,14 +214,14 @@ export function PlaceCard({
             {safeRef(o, locale)}
           </a>
         ))}
-        {!allVerses && place.osis.length > VERSES_SHOWN && (
+        {place.osis.length > versesShown && (
           <button
             onClick={() => {
-              setAllVerses(true);
+              setVersesShown(versesShown + 50);
             }}
             className="rounded-full px-2 py-0.5 text-[13px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
           >
-            {t("place.more", { count: place.osis.length - VERSES_SHOWN })}
+            {t("place.more", { count: place.osis.length - versesShown })}
           </button>
         )}
       </div>
