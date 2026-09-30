@@ -144,6 +144,14 @@ events:
     place: a15257a
     sources:
       - "Josephus, Jewish War 6.249-266"
+  - id: shishak
+    year: "c. 925 BC"
+    title:
+      en: "Shishak of Egypt campaigns in Judah and Israel"
+      ru: "Поход Сусакима, царя Египетского, на Иудею и Израиль"
+    sources:
+      - "1 Kgs 14:25-26 (the fifth year of Rehoboam); Thiele's chronology"
+      - "Shoshenq I's list of towns at Karnak (the Bubastite Portal)"
   - id: qarqar
     year: "853 BC"
     title:
