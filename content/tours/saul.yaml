@@ -1,0 +1,56 @@
+# From Saul the persecutor to the church at Antioch: Acts 7-11 and Gal 1:17, in the
+# order of the story. The tour's year (AD 34) is a conventional point for the
+# conversion, usually dated c. AD 33-36. Arabia (Gal 1:17), which Acts does not
+# mention, is placed between the first preaching in Damascus and the escape from it.
+id: saul
+title:
+  en: "The conversion of Saul"
+  ru: "Обращение Савла"
+year: "AD 34"
+approximate: true
+stops:
+  - place: a666ea0 # Tarsus
+    ref: Acts.22.3
+    note:
+      en: "Saul is born in Tarsus of Cilicia and brought up in Jerusalem at the feet of Gamaliel."
+      ru: "Савл родился в Тарсе Киликийском и воспитан в Иерусалиме при ногах Гамалиила."
+  - place: a15257a # Jerusalem
+    ref: Acts.7.58-Acts.8.3
+    note:
+      en: "The witnesses who stone Stephen lay their clothes at Saul's feet; he approves, and persecutes the church."
+      ru: "Побивающие Стефана кладут одежды у ног Савла; он одобряет убиение и гонит церковь."
+  - place: a69c1d4 # Damascus
+    ref: Acts.9.1-Acts.9.20
+    note:
+      en: "Near Damascus a light from heaven; in the street called Straight Ananias lays hands on him, and he is baptised."
+      ru: "У Дамаска его осиявает свет с неба; на улице, называемой Прямой, Анания возлагает на него руки, и он крестится."
+  - place: a0f4ea8 # Arabia
+    ref: Gal.1.17
+    note:
+      en: "He goes away into Arabia, and returns again to Damascus."
+      ru: "Он уходит в Аравию и опять возвращается в Дамаск."
+  - place: a69c1d4 # Damascus
+    ref: Acts.9.22-Acts.9.25
+    note:
+      en: "When the Jews plot to kill him, the disciples let him down over the wall in a basket."
+      ru: "Когда иудеи сговариваются убить его, ученики спускают его по стене в корзине."
+  - place: a15257a # Jerusalem
+    ref: Acts.9.26-Acts.9.29
+    note:
+      en: "In Jerusalem the disciples fear him until Barnabas brings him to the apostles."
+      ru: "В Иерусалиме ученики боятся его, пока Варнава не приводит его к Апостолам."
+  - place: a58735e # Caesarea
+    ref: Acts.9.30
+    note:
+      en: "The brothers bring him down to Caesarea and send him off to Tarsus."
+      ru: "Братия отправляют его в Кесарию и препровождают в Тарс."
+  - place: a666ea0 # Tarsus
+    ref: Acts.11.25
+    note:
+      en: "Years later Barnabas goes to Tarsus to look for Saul."
+      ru: "Спустя годы Варнава идёт в Тарс искать Савла."
+  - place: ae41ab4 # Antioch
+    ref: Acts.11.26
+    note:
+      en: "A whole year they teach in Antioch, where the disciples are first called Christians."
+      ru: "Целый год они учат в Антиохии, где ученики впервые стали называться христианами."
