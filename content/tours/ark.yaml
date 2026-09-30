@@ -1,0 +1,48 @@
+# The ark of the covenant from Shiloh to the City of David, 1 Samuel 4-7 and 2 Samuel 6, in
+# the order of the text. The tour's year (1050 BC) is a conventional point for the battle at
+# Ebenezer in the days of Eli and Samuel, a point for the map rather than a date; the text
+# gives some twenty years at Kiriath-jearim (1 Sam 7:2) and David's bringing it up after
+# he takes Jerusalem, about half a century later. Ekron is left out: in 1 Sam 5:10 the
+# Synodal text follows the Septuagint and reads Ascalon.
+id: ark
+title:
+  en: "The journey of the ark"
+  ru: "Путь ковчега завета"
+year: "1050 BC"
+approximate: true
+stops:
+  - place: abfdefc # Ebenezer
+    ref: 1Sam.4.1-1Sam.4.11
+    note:
+      en: "Beaten by the Philistines at Ebenezer, Israel fetches the ark from Shiloh; in the second battle the ark of God is taken, and Hophni and Phinehas die."
+      ru: "Разбитые Филистимлянами при Авен-Езере, Израильтяне приносят ковчег из Силома; во второй битве ковчег Божий взят, Офни и Финеес погибают."
+  - place: aa4680a # Shiloh
+    ref: 1Sam.4.12-1Sam.4.22
+    note:
+      en: 'A man of Benjamin brings the news to Shiloh; Eli falls from his seat and dies, and his son''s wife names her child Ichabod: "The glory is departed from Israel."'
+      ru: "Вениамитянин приносит весть в Силом; Илий падает с седалища и умирает, а невестка его называет младенца Ихавод: «отошла слава от Израиля»."
+  - place: a30c937 # Ashdod
+    ref: 1Sam.5.1-1Sam.5.7
+    note:
+      en: 'In Ashdod the Philistines set the ark beside Dagon in his house, and at morning "Dagon was fallen upon his face to the earth before the ark of the LORD."'
+      ru: "В Азоте Филистимляне ставят ковчег в храме Дагона, и наутро Дагон лежит лицем своим к земле пред ковчегом Господним."
+  - place: a18873f # Gath
+    ref: 1Sam.5.8-1Sam.5.9
+    note:
+      en: "The lords of the Philistines send it on to Gath, and the hand of the Lord is against that city too."
+      ru: "Владетели Филистимские отправляют его в Геф, и рука Господа поражает и этот город."
+  - place: a3b5b53 # Beth-shemesh
+    ref: 1Sam.6.12-1Sam.6.15
+    note:
+      en: "Two kine draw the ark back on a cart straight to Beth-shemesh, where the people reaping their wheat harvest see the ark and rejoice."
+      ru: "Коровы везут ковчег назад на колеснице прямо к Вефсамису; жители, жавшие пшеницу, видят его и радуются."
+  - place: a9bba61 # Kiriath-jearim
+    ref: 1Sam.7.1-1Sam.7.2
+    note:
+      en: "The men of Kiriath-jearim bring it into the house of Abinadab on the hill; it stays there a long time, some twenty years."
+      ru: "Жители Кириаф-Иарима приносят его в дом Аминадава на холме; он остаётся там долгое время, лет двадцать."
+  - place: a84f426 # City of David
+    ref: 2Sam.6.12-2Sam.6.17
+    note:
+      en: "David brings the ark up from the house of Obed-edom into the City of David with gladness, dancing before the Lord with all his might."
+      ru: "Давид с торжеством переносит ковчег из дома Аведдара в город Давидов и скачет из всей силы пред Господом."
