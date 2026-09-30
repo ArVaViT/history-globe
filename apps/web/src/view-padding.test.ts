@@ -11,9 +11,10 @@ describe("viewPadding", () => {
     expect(viewPadding(1024, 768)).toEqual({ top: 360, bottom: 140, left: 356, right: 0 });
   });
 
-  it("shrinks to leave some map on a phone on its side", () => {
+  it("puts the place beside the card on a phone on its side, clear of the timeline", () => {
     const p = viewPadding(844, 390);
-    expect(p.top + p.bottom).toBeLessThanOrEqual(390 - 80);
-    expect(p.left + p.right).toBeLessThanOrEqual(844 - 80);
+    expect(p).toEqual({ top: 0, bottom: 140, left: 356, right: 396 });
+    // The open strip between the panels and the card.
+    expect(p.left + (844 - p.left - p.right) / 2).toBe(402);
   });
 });

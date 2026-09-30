@@ -84,8 +84,13 @@ export class MapLibreRenderer implements Renderer {
     const pad = o.viewPadding;
     if (pad) {
       this.map.setPadding(pad());
-      this.map.on("resize", () => {
+      // setPadding stops a flight: during one, wait for it to end.
+      const apply = () => {
         this.map.setPadding(pad());
+      };
+      this.map.on("resize", () => {
+        if (this.map.isMoving()) this.map.once("moveend", apply);
+        else apply();
       });
     }
     // Place icons are drawn when the style first asks for them.
