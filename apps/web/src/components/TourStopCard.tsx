@@ -42,7 +42,8 @@ export function TourStopCard({
       <div className="flex items-center justify-between">
         <div className="text-[12px] text-ink-soft">
           {tour.title[locale] ?? tour.title.en} ·{" "}
-          {t("tours.stop", { n: step + 1, total: tour.stops.length })}
+          {/* Screen readers hear it in the live region below. */}
+          <span aria-hidden>{t("tours.stop", { n: step + 1, total: tour.stops.length })}</span>
         </div>
         <button
           onClick={onClose}
@@ -52,10 +53,16 @@ export function TourStopCard({
           <X className="size-4" />
         </button>
       </div>
-      <h2 className="mt-1 font-serif text-[26px] leading-tight font-semibold text-ink">{name}</h2>
-      <p className="mt-2 font-serif text-[16px] leading-relaxed text-ink">
-        {stop.note[locale] ?? stop.note.en}
-      </p>
+      {/* Read out when the stop changes, by the buttons, the dots or the arrow keys. */}
+      <div aria-live="polite" aria-atomic="true">
+        <span className="sr-only">
+          {t("tours.stop", { n: step + 1, total: tour.stops.length })}.{" "}
+        </span>
+        <h2 className="mt-1 font-serif text-[26px] leading-tight font-semibold text-ink">{name}</h2>
+        <p className="mt-2 font-serif text-[16px] leading-relaxed text-ink">
+          {stop.note[locale] ?? stop.note.en}
+        </p>
+      </div>
       <div className="mt-3 flex items-center gap-2">
         <a
           href={verseUrl(stop.ref, locale)}
