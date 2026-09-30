@@ -30,14 +30,16 @@ places:
       - "Nahum 2-3"
   - id: a15257a
     en: Jerusalem
+    until: "AD 70"
     gap:
       from: "c. 586 BC"
       until: "c. 539 BC"
     note:
-      en: "Burnt by Nebuchadnezzar's army (587 or 586 BC, the year is disputed); the exiles returned under Cyrus in 538 BC."
-      ru: "Сожжён войском Навуходоносора (587 или 586 г. до н. э., год спорный); изгнанники вернулись при Кире в 538 г. до н. э."
+      en: "Burnt by Nebuchadnezzar's army (587 or 586 BC, the year is disputed); the exiles returned under Cyrus in 538 BC. In AD 70 Titus's army destroyed the city and the Temple."
+      ru: "Сожжён войском Навуходоносора (587 или 586 г. до н. э., год спорный); изгнанники вернулись при Кире в 538 г. до н. э. В 70 г. н. э. город и Храм разрушены войском Тита."
     sources:
       - "2 Kgs 25:8-10; Jer 52:12-14"
+      - "Josephus, Jewish War 6.249-266; 7.1-4"
       - "Ezra 1:1-4"
       - "Babylonian Chronicle, ABC 5 (597 BC capture)"
   - id: a041bb3
