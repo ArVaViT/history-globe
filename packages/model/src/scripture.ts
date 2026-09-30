@@ -124,12 +124,13 @@ export function parseOne(osis: string): Ref {
 /** Chapter.verse as one comparable number (no chapter has 1000 verses). */
 const position = (r: Ref) => r.chapter * 1000 + (r.verse ?? 0);
 
-const BOOK_ORDER = Object.keys(BOOKS);
-
-/** Where a reference starts in the order of the Bible, as one comparable number. */
+/**
+ * Where a reference starts in the order of the Bible, as one comparable number. For the
+ * build only; the book order is taken inside, so nothing is left in the browser bundle.
+ */
 export function canonicalPosition(osis: string): number {
   const r = parseOne(osis.split("-")[0] ?? "");
-  return BOOK_ORDER.indexOf(r.book) * 1_000_000 + position(r);
+  return Object.keys(BOOKS).indexOf(r.book) * 1_000_000 + position(r);
 }
 
 /**
