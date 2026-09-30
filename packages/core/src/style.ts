@@ -191,11 +191,13 @@ const OUT_OF_TIME: ExpressionSpecification = [
   ],
 ];
 
+const IS_SELECTED: ExpressionSpecification = ["==", ["get", "id"], ["global-state", "selected"]];
+
 /** A second record of the same name on the same point (pipeline `dup`): dot, no label. */
 const NOT_DUP: ExpressionSpecification = [
   "any",
   // The selected record keeps its label even when it is a duplicate.
-  ["==", ["get", "id"], ["global-state", "selected"]],
+  IS_SELECTED,
   ["!", ["any", ["has", "dup"], ["all", ["==", LOCALE, "ru"], ["has", "dup_ru"]]]],
 ];
 
@@ -210,7 +212,7 @@ const PLACE_ORDER: ExpressionSpecification = [
   [
     "case",
     // The selected place is placed first, whatever its year.
-    ["==", ["get", "id"], ["global-state", "selected"]],
+    IS_SELECTED,
     -1000000,
     OUT_OF_TIME,
     100000,
@@ -538,7 +540,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isLandmark, visibleAtZoom, HAS_LOCAL_NAME, NOT_DUP],
+      filter: ["all", isLandmark, visibleAtZoom, HAS_LOCAL_NAME, NOT_DUP, ["!", IS_SELECTED]],
       layout: {
         "text-field": NAME,
         "text-font": [MAP_FONT_ITALIC],
@@ -682,6 +684,23 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-allow-overlap": true,
       },
       paint: { "text-color": T.accent, "text-halo-color": T.halo, "text-halo-width": 1.6 },
+    },
+    {
+      // The selected mountain, spring or valley: landmarks are placed after towns, so its
+      // own layer, placed first, keeps a town beside it from taking its label's room.
+      id: "place-label-selected",
+      type: "symbol",
+      source: "places",
+      metadata: { group: "places" },
+      filter: ["all", isLandmark, HAS_LOCAL_NAME, IS_SELECTED],
+      layout: {
+        "text-field": NAME,
+        "text-font": [MAP_FONT_ITALIC],
+        "text-size": 13.5,
+        "text-variable-anchor": ["top", "bottom", "right", "left"],
+        "text-radial-offset": 1,
+      },
+      paint: { "text-color": T.accent, "text-halo-color": T.halo, "text-halo-width": 1.5 },
     },
   ];
 

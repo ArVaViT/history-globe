@@ -75,12 +75,13 @@ function createGlobe(
     fonts: MAP_FONTS,
     initialYear: init.year ?? DEFAULT_STATE.year,
     initialLocale: init.locale ?? DEFAULT_STATE.locale,
-    // Below lg the card and the timeline cover the lower half of the screen and the header
-    // its top: a flight puts its place in the strip left between them.
+    // A flight puts its place where the interface leaves the map open. On a phone the card
+    // and the timeline cover the lower half and the header the top; wider, the panels
+    // cover the left side and the timeline the bottom, and the card sits top right.
     viewPadding: () =>
-      innerWidth < 1024
+      innerWidth < 768
         ? { top: 64, bottom: Math.round(innerHeight * 0.55), left: 0, right: 0 }
-        : { top: 0, bottom: 0, left: 0, right: 0 },
+        : { top: 0, bottom: 140, left: 356, right: 0 },
   });
   const engine = createEngine({
     renderer,
