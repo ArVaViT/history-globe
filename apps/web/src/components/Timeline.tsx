@@ -195,7 +195,7 @@ export function Timeline({
               key={y}
               aria-hidden
               style={{ left: `${pct(y)}%` }}
-              className={`absolute top-6 text-[11px] whitespace-nowrap text-ink-soft ${i === 0 ? "" : i === TICKS.length - 1 ? "-translate-x-full" : "-translate-x-1/2"} ${i % 2 === 1 ? "max-xl:hidden" : ""}`}
+              className={`absolute top-6 text-[11px] whitespace-nowrap text-ink-soft ${i === 0 ? "" : i === TICKS.length - 1 ? "-translate-x-full" : "-translate-x-1/2"} ${i % 2 === 1 ? "max-[1400px]:hidden" : ""}`}
             >
               {formatYear(y, locale)}
             </span>
