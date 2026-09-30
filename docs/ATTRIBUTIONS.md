@@ -90,8 +90,10 @@ Software
   see third-party-licenses.
   The MapLibre files are shipped unchanged, with their LICENSE.txt, under
   vendor/maplibre-gl-<version>/ in the build.
-  Lucide icons — Copyright (c) 2026 Lucide Icons and Contributors, ISC; fifteen
-  icons copied as SVG with the notice (apps/web/src/components/icons.tsx).
+  Lucide icons — Copyright (c) 2026 Lucide Icons and Contributors, ISC; nine of
+  the fifteen icons derive from Feather, Copyright (c) 2013-present Cole Bemis, MIT.
+  Copied as SVG (apps/web/src/components/icons.tsx); both licences ship in
+  licenses/lucide-icons.txt.
   maplibre-gl-dates — OpenHistoricalMap, CC0 1.0.
   PMTiles — Protomaps, BSD-3-Clause.
 

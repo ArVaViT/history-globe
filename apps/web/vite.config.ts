@@ -1,6 +1,6 @@
 import { copyFileSync, mkdirSync, readFileSync } from "node:fs";
 import { createRequire } from "node:module";
-import { dirname, join } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig, type Plugin } from "vite";
@@ -24,13 +24,16 @@ function maplibreVendor(): Plugin {
     name: "maplibre-vendor",
     apply: "build",
     configResolved(config) {
-      outDir = config.build.outDir;
+      // outDir is relative to the project root, not to where vite was started.
+      outDir = resolve(config.root, config.build.outDir);
     },
     writeBundle() {
       const to = join(outDir, VENDOR);
       mkdirSync(to, { recursive: true });
-      for (const f of [...FILES, "../LICENSE.txt"])
-        copyFileSync(join(maplibreDist, f), join(to, f.replace("../", "")));
+      // The source maps too: each file ends with a sourceMappingURL.
+      for (const f of [...FILES, ...FILES.map((name) => `${name}.map`)])
+        copyFileSync(join(maplibreDist, f), join(to, f));
+      copyFileSync(join(maplibreDist, "../LICENSE.txt"), join(to, "LICENSE.txt"));
     },
   };
 }

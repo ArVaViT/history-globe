@@ -7,9 +7,9 @@
  * Derived from the chapter lengths of the Synodal text (eBible.org "russyn", public
  * domain) against versification.ts, and checked verse by verse at every seam
  * (synodal.test.ts). Only differences that are certain are converted: the Psalms,
- * chapter boundaries that moved, and two verses joined into one at the end of a
- * chapter. Chapters where the Synodal text merges or adds verses elsewhere (Lev 14,
- * Josh 24, Prov 4 and 13, Song 1, Isa 3, Rom 14-16, Rev 12) keep the English numbers.
+ * chapter boundaries that moved, and two verses joined into one. Chapters where the
+ * Synodal text merges or adds verses elsewhere (Lev 14, Josh 24, Prov 4 and 13, Rom
+ * 14-16, Rev 12) keep the English numbers.
  */
 export interface ChapterVerse {
   readonly chapter: number;
@@ -47,6 +47,18 @@ const SHIFTED: Readonly<Record<string, readonly Run[]>> = {
 const JOINED: Readonly<Record<string, Readonly<Record<number, number>>>> = {
   Acts: { 19: 41 }, // Acts 19:40-41 is Synodal 19:40
   "2Cor": { 11: 33, 13: 13 }, // 2 Cor 11:32-33 is 11:32; 13:12-13 is 13:12
+  Song: { 1: 2 }, // the title, Song 1:1, is not a Synodal verse: 1:14 (Engedi) is 1:13
+  Isa: { 3: 24 }, // Isa 3:24 is Synodal 3:23 (the list of finery is one verse shorter)
+};
+
+/**
+ * Psalms whose Synodal title is a verse of its own and two verses are joined further
+ * on, so the count is the same but the numbers are not (English verse → Synodal).
+ */
+const PSALM_TITLE_AND_JOIN: Readonly<Record<number, (verse: number) => number>> = {
+  13: (v) => (v <= 4 ? v + 1 : 6), // 13:5-6 are Synodal 12:6
+  87: (v) => (v === 1 ? 2 : v), // 87:1-2 are Synodal 86:2
+  90: (v) => (v <= 4 ? v + 1 : v <= 6 ? 6 : v), // 90:5-6 are Synodal 89:6
 };
 
 function psalm(chapter: number, verse: number | null): ChapterVerse {
@@ -62,6 +74,8 @@ function psalm(chapter: number, verse: number | null): ChapterVerse {
       ? { chapter: 147, verse: verse - 11 }
       : { chapter: 146, verse };
   const synodal = chapter <= 9 || chapter >= 148 ? chapter : chapter - 1;
+  const joined = PSALM_TITLE_AND_JOIN[chapter];
+  if (joined) return { chapter: synodal, verse: verse === null ? null : joined(verse) };
   const added = Number(PSALM_TITLE_VERSES[chapter - 1] ?? "0");
   return { chapter: synodal, verse: verse === null ? null : verse + added };
 }

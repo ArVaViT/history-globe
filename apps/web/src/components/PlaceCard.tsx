@@ -119,7 +119,7 @@ export function PlaceCard({
         <span
           className={`rounded-full border px-2.5 py-0.5 text-xs ${place.disputed ? "border-[#e0b98f] bg-[#f4dfc9] text-[#7a4a1d]" : "border-line bg-paper-2 text-ink-soft"}`}
         >
-          {place.disputed ? t("place.sites", { count: place.sites }) : t("place.single_site")}
+          {place.disputed ? t("place.sites", { count: versions.length }) : t("place.single_site")}
         </span>
       </div>
 

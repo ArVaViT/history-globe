@@ -1,16 +1,11 @@
 /**
- * The UI icons, drawn from Lucide (https://lucide.dev), ISC licence:
+ * The UI icons, copied as plain SVG from Lucide (https://lucide.dev, ISC); nine of them
+ * derive from Feather (MIT). Both notices ship with the app in
+ * public/licenses/lucide-icons.txt.
  *
- *   Copyright (c) 2026 Lucide Icons and Contributors
- *
- *   Permission to use, copy, modify, and/or distribute this software for any purpose
- *   with or without fee is hereby granted, provided that the above copyright notice and
- *   this permission notice appear in all copies. THE SOFTWARE IS PROVIDED "AS IS" AND
- *   THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE.
- *
- * Fifteen icons copied as plain SVG rather than through lucide-react, whose runtime
- * cost more than the icons before the first frame (ADR 0010). Decorative by default:
- * the control around an icon carries its name.
+ * Plain SVG rather than lucide-react, whose runtime cost more than the icons before the
+ * first frame (ADR 0010). Decorative by default: the control around an icon carries
+ * its name.
  */
 import type { ReactNode, SVGProps } from "react";
 

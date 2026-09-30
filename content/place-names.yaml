@@ -1586,7 +1586,8 @@ places:
       excerpt: "Господня, и дошли до Тафниса."
   - id: a51df0e
     en: "Engedi"
-    # "Ен-Геди" once (Josh 15:62); "Ен-Гадди" in 1 Sam 24 and Ezek 47:10.
+    # "Ен-Геди" once (Josh 15:62), "Енгедди" (2 Chr 20:2) and "Енгедских" (Song 1:14);
+    # "Ен-Гадди" in 1 Sam 24 and Ezek 47:10.
     ru: "Ен-Гадди"
     evidence:
       osis: Ezek.47.10
@@ -3395,8 +3396,8 @@ places:
       excerpt: "Кеила, Ахзив и Мареша [и Едом]: девять городов с их"
   - id: a0ed7ff
     en: "Ziklag"
-    # The Synodal text has "Циклаг" once (Josh 15:31) and "Секелаг" for David's town
-    # everywhere else (1 Sam 27-30, 2 Sam 1 and 4, 1 Chr 12).
+    # "Циклаг" in the town lists (Josh 15:31, 19:5, 1 Chr 4:30); "Секелаг" for David's
+    # town (1 Sam 27-30, 2 Sam 1 and 4, 1 Chr 12, Neh 11:28).
     ru: "Секелаг"
     evidence:
       osis: 1Sam.27.6

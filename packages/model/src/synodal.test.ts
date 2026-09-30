@@ -32,6 +32,16 @@ const SEAMS: readonly (readonly [string, number, number, number, number])[] = [
   ["2Cor", 11, 33, 11, 32], // "в корзине был спущен"
   ["2Cor", 13, 14, 13, 13], // "Благодать Господа нашего"
   ["Acts", 19, 41, 19, 40], // "Сказав это, он распустил собрание"
+  ["Song", 1, 14, 1, 13], // "в виноградниках Енгедских"
+  ["Song", 1, 5, 1, 4],
+  ["Isa", 3, 26, 3, 25], // "будут воздыхать и плакать ворота"
+  ["Ps", 13, 1, 12, 2], // "Доколе, Господи, будешь забывать меня"
+  ["Ps", 13, 6, 12, 6],
+  ["Ps", 87, 1, 86, 2], // "Основание его на горах святых"
+  ["Ps", 87, 3, 86, 3],
+  ["Ps", 90, 1, 89, 2], // "Господи! Ты нам прибежище"
+  ["Ps", 90, 6, 89, 6],
+  ["Ps", 90, 7, 89, 7], // "мы исчезаем от гнева Твоего"
 ];
 
 describe("toSynodal", () => {
@@ -79,13 +89,13 @@ describe("toSynodal", () => {
     }
   });
 
-  it("numbers every psalm verse within 1-151 chapters and forward", () => {
+  it("numbers the psalm verses in order (joined verses share a number)", () => {
     let last = { chapter: 0, verse: 0 };
     for (let c = 1; c <= 150; c++) {
       for (let v = 1; v <= (VERSES.Ps?.[c - 1] ?? 0); v++) {
         const s = toSynodal("Ps", c, v);
         const after =
-          s.chapter > last.chapter || (s.chapter === last.chapter && (s.verse ?? 0) > last.verse);
+          s.chapter > last.chapter || (s.chapter === last.chapter && (s.verse ?? 0) >= last.verse);
         expect(after).toBe(true);
         last = { chapter: s.chapter, verse: s.verse ?? 0 };
       }
@@ -100,5 +110,8 @@ describe("formatRef in Russian", () => {
     expect(formatRef("Num.13.26-Num.14.34", "ru")).toBe("Чис 13:27–14:34");
     expect(formatRef("Josh.6.1-Josh.6.20", "ru")).toBe("Нав 5:16–6:19");
     expect(formatRef("Jonah.1.17-Jonah.2.2", "ru")).toBe("Ион 2:1–3");
+    // Two English psalms that are one Synodal psalm are shown once.
+    expect(formatRef("Ps.9-Ps.10", "ru")).toBe("Пс 9");
+    expect(formatRef("Ps.114-Ps.115", "ru")).toBe("Пс 113");
   });
 });

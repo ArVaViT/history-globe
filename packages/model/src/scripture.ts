@@ -147,6 +147,8 @@ export function formatRef(osis: string, locale: Locale): string {
   if ((start.verse === null) !== (end.verse === null) || position(end) <= position(start))
     throw new SyntaxError(`not a forward range: "${osis}"`);
   const to = shown(end);
+  // Two English psalms that are one Synodal psalm (9-10, 114-115).
+  if (to.chapter === from.chapter && to.verse === from.verse) return head;
   const tail =
     to.chapter === from.chapter
       ? `${to.verse ?? ""}`

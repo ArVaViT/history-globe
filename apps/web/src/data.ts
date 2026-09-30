@@ -88,7 +88,8 @@ export interface LoadedData {
   readonly events: readonly HistoryEvent[];
 }
 
-export const DATA_URL = "/data";
+// Under the app's base path, so it also works when served from a sub-path.
+export const DATA_URL = `${import.meta.env.BASE_URL}data`;
 
 type SiteProps = { place: string; label: string; label_ru?: string; share?: number };
 
