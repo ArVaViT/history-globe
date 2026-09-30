@@ -2,7 +2,7 @@
 # under Ezra and Nehemiah's walls are in the tour of the return. The tour's year (538 BC) is
 # Cyrus's first year over Babylon (see the dated events). Stops the book dates carry their
 # own year: the second year after the return (536 BC, 3:8; 537 BC is also held), the second
-# year of Darius (520 BC, 4:24) and the Temple finished in his sixth (516 BC, 6:15; 515 BC
+# year of Darius (520 BC, 4:24; the search of 6:1-12 is not dated) and the Temple finished in his sixth (516 BC, 6:15; 515 BC
 # is also held). Chapter 4:6-23 tells of later kings and is left out.
 id: second-temple
 title:
@@ -31,8 +31,8 @@ stops:
     ref: Ezra.4.24-Ezra.6.12
     year: "520 BC"
     note:
-      en: "In the second year of Darius the prophets Haggai and Zechariah stir up the builders again; asked by the governor, Darius has the archives searched, a scroll with Cyrus's decree is found at Ecbatana in Media, and he orders the work to go on."
-      ru: "Во второй год Дария пророки Аггей и Захария подкрепляют строителей; по запросу правителя Дарий велит искать в книгохранилище; в Екбатане, в области Мидии, находят свиток с повелением Кира о доме Божием, и Дарий велит продолжать работу."
+      en: "In the second year of Darius the prophets Haggai and Zechariah stir up the builders to begin again; asked by the governor, Darius has the archives searched, a scroll with Cyrus's decree is found at Ecbatana in Media, and he orders the work to go on."
+      ru: "Во второй год Дария пророки Аггей и Захария подкрепляют строителей; по донесению заречного областеначальника Дарий велит искать в книгохранилище; в Екбатане, в области Мидии, находят свиток с повелением Кира о доме Божием, и Дарий велит продолжать работу."
   - place: a15257a # Jerusalem
     ref: Ezra.6.15-Ezra.6.22
     year: "516 BC"
