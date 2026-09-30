@@ -86,8 +86,6 @@ class Coast(unittest.TestCase):
         self.assertTrue(all(x0 <= x <= x1 and y0 <= y <= y1 for line in lines for x, y in line))
 
 
-if __name__ == "__main__":
-    unittest.main()
 
 
 class LabelTiers(unittest.TestCase):
@@ -116,3 +114,14 @@ class LabelTiers(unittest.TestCase):
         self.assertEqual(sorted(a[3] for a in raised), [1, 2])
         kept = [(33.0, 23.0, 36.0, 0), (33.0, 25.0, 36.0, 2)]
         self.assertEqual(ensure_low_tier(kept, [square]), kept)
+
+    def test_a_polity_without_any_point_gets_one_inside(self) -> None:
+        # An L-shaped part whose centroid falls outside it, too small for the grid.
+        ell = [[[30.0, 20.0], [31.0, 20.0], [31.0, 20.2], [30.2, 20.2], [30.2, 21.0], [30.0, 21.0], [30.0, 20.0]]]
+        [(x, y, _, tier)] = ensure_low_tier([], [ell])
+        self.assertEqual(tier, 1)
+        self.assertTrue(30.0 <= x <= 31.0 and 20.0 <= y <= 21.0)
+
+
+if __name__ == "__main__":
+    unittest.main()

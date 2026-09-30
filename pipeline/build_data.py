@@ -394,6 +394,26 @@ def label_anchors(parts: list[list[list[list[float]]]]) -> list[tuple[float, flo
     return anchors
 
 
+def inside_point(poly: list[list[list[float]]]) -> tuple[float, float] | None:
+    """A point inside a polygon: its centroid if inside, else the first of a 0.25-degree
+    grid over its box that is."""
+    _, cx, cy = ring_area_centroid(poly[0])
+    if point_in_polygon(cx, cy, poly):
+        return (cx, cy)
+    xs = [p[0] for p in poly[0]]
+    ys = [p[1] for p in poly[0]]
+    step = 0.25
+    y = min(ys) + step / 2
+    while y < max(ys):
+        x = min(xs) + step / 2
+        while x < max(xs):
+            if point_in_polygon(x, y, poly):
+                return (x, y)
+            x += step
+        y += step
+    return None
+
+
 def ensure_low_tier(
     anchors: list[tuple[float, float, float, int]], parts: list[list[list[list[float]]]]
 ) -> list[tuple[float, float, float, int]]:
@@ -401,10 +421,15 @@ def ensure_low_tier(
     shape (a crescent, a coast) and none of its points is on the coarse grid, the point
     nearest the centroid of its largest part is raised to tier 1 (the Neo-Babylonian
     Empire in 550-531 BC went unnamed below zoom 6)."""
-    if not anchors or any(a[3] < 2 for a in anchors):
+    if any(a[3] < 2 for a in anchors):
         return anchors
     largest = max(parts, key=lambda poly: ring_area_centroid(poly[0])[0])
-    _, cx, cy = ring_area_centroid(largest[0])
+    area, cx, cy = ring_area_centroid(largest[0])
+    if not anchors:
+        # No point at all (a small or thin shape off the grid, its centroid outside):
+        # the first point of a fine search inside the largest part, or none.
+        inside = inside_point(largest)
+        return [(inside[0], inside[1], area, 1)] if inside else []
     nearest = min(range(len(anchors)), key=lambda i: (anchors[i][0] - cx) ** 2 + (anchors[i][1] - cy) ** 2)
     return [(a[0], a[1], a[2], 1) if i == nearest else a for i, a in enumerate(anchors)]
 

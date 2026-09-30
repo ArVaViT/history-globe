@@ -272,29 +272,39 @@ for (const p of PlaceLifeFile.parse(load("content/place-life.yaml")).places) {
 // "in X" (a gate, a pool of Jerusalem) shares X's ruin and end, not its founding, and the
 // note says whose years they are.
 const englishName = new Map(places.features.map((f) => [f.properties.id, f.properties.name]));
+const placeProps = new Map(places.features.map((f) => [f.properties.id, f.properties]));
+// Only the entries of place-life.yaml: links resolve to a town with its own years, so a
+// gate of Millo of Jerusalem reads "Иерусалим: …" once, whatever the order of the data.
+const ownLife: Readonly<Record<string, PlaceLife>> = { ...life };
+function townOf(id: string): { id: string; same: boolean } | undefined {
+  let at = placeProps.get(id);
+  let same = true;
+  for (let hops = 0; at?.where_ref && hops < 5; hops++) {
+    if (at.where_tpl !== "same" && at.where_tpl !== "at") return undefined;
+    same &&= at.where_tpl === "same";
+    if (ownLife[at.where_ref]) return { id: at.where_ref, same };
+    at = placeProps.get(at.where_ref);
+  }
+  return undefined;
+}
 for (const f of places.features) {
   const p = f.properties;
-  if (life[p.id] || !p.where_ref) continue;
-  const of = life[p.where_ref];
-  if (!of) continue;
-  const ruName = names[p.where_ref]?.ru ?? englishName.get(p.where_ref) ?? "";
-  const enName = englishName.get(p.where_ref) ?? "";
-  // Another name of the place: its years, and the note says whose they are when the
-  // name differs ("Вавилон" of 1 Pet 5:13 is Rome: "Рим: …").
-  if (p.where_tpl === "same") {
-    const own = names[p.id]?.ru ?? p.name;
-    life[p.id] =
-      own === ruName
-        ? of
-        : {
-            ...of,
-            note: { en: `${enName}: ${of.note.en ?? ""}`, ru: `${ruName}: ${of.note.ru ?? ""}` },
-          };
-  } else if (p.where_tpl === "at" && (of.gap ?? of.until)) {
+  if (ownLife[p.id]) continue;
+  const town = townOf(p.id);
+  const of = town ? ownLife[town.id] : undefined;
+  if (!town || !of) continue;
+  const ruName = names[town.id]?.ru ?? englishName.get(town.id) ?? "";
+  const enName = englishName.get(town.id) ?? "";
+  const withTown = { en: `${enName}: ${of.note.en ?? ""}`, ru: `${ruName}: ${of.note.ru ?? ""}` };
+  // Another name of the town: its years, and the note says whose they are when the name
+  // differs ("Вавилон" of 1 Pet 5:13 is Rome: "Рим: …").
+  if (town.same) {
+    life[p.id] = (names[p.id]?.ru ?? p.name) === ruName ? of : { ...of, note: withTown };
+  } else if (of.gap ?? of.until) {
     life[p.id] = {
       ...(of.until ? { until: of.until } : {}),
       ...(of.gap ? { gap: of.gap } : {}),
-      note: { en: `${enName}: ${of.note.en ?? ""}`, ru: `${ruName}: ${of.note.ru ?? ""}` },
+      note: withTown,
       sources: of.sources,
       inherited: true,
     };
