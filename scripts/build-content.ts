@@ -337,6 +337,27 @@ for (const e of EventsFile.parse(load("content/events.yaml")).events) {
 }
 events.sort((a, b) => a.year - b.year);
 
+// A tour stop the map draws faded in the tour's year (not yet built, in ruins, gone) is
+// almost always a wrong year. Warned, not refused: a stop at a ruin can be meant.
+for (const t of tours) {
+  for (const [i, s] of t.stops.entries()) {
+    const l = life[s.place];
+    if (!l) continue;
+    const state =
+      l.gap && t.year >= l.gap.from.year && t.year <= l.gap.until.year
+        ? "in ruins"
+        : l.until && t.year > l.until.year
+          ? "gone"
+          : l.from && t.year < l.from.year
+            ? "not yet built"
+            : null;
+    if (state)
+      warnings.push(
+        `tours/${t.id}: stop ${String(i + 1)} (${s.place}) is ${state} in the tour's year`,
+      );
+  }
+}
+
 for (const w of warnings) console.warn(`warning: ${w}`);
 if (errors.length > 0) {
   console.error(errors.join("\n"));

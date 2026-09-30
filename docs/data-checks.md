@@ -35,7 +35,8 @@ the data first (`pnpm data`).
   last word, at the start of a word). Names of places left out for licence reasons are
   parked with a warning.
 - **Tours**: the id matches the file name; each stop's passage must name its place, except
-  stops listed in `NAMED_BY_CONTEXT` with the reason.
+  stops listed in `NAMED_BY_CONTEXT` with the reason. A stop whose place the map draws
+  faded in the tour's year (not yet built, in ruins, gone) is warned about.
 - **When places stood** (`content/place-life.yaml`): `from` (first year), `until` (last
   year) and `gap` (first and last year in ruins); at least one, the gap inside the years
   the place stood, "c." kept as approximate, at least one source each. Another name of a
