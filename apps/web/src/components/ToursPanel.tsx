@@ -48,6 +48,9 @@ export function tourSpan(stops: readonly { readonly ref: string }[], locale: Loc
   const last = stops.at(-1)?.ref.split("-").at(-1);
   if (!first || !last) return "";
   try {
+    // Across books ("Мф 2:1 – Лк 24:53") the two ends are written in full.
+    if (first.split(".")[0] !== last.split(".")[0])
+      return `${formatRef(first, locale)} – ${formatRef(last, locale)}`;
     return formatRef(first === last ? first : `${first}-${last}`, locale);
   } catch {
     return "";

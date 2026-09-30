@@ -1,0 +1,95 @@
+# The earthly life of Jesus in the order of the Gospels, from Bethlehem to the Ascension.
+# One stop per place and event; the order of the Galilean ministry follows the Synoptics,
+# with John for Bethany beyond the Jordan, Cana and Sychar. The tour's year (AD 30) is a
+# conventional point for the map: the birth was c. 6-4 BC, the ministry c. AD 28-30.
+id: jesus
+title:
+  en: "The life of Jesus"
+  ru: "Земная жизнь Иисуса"
+year: "AD 30"
+stops:
+  - place: a112427 # Bethlehem
+    ref: Matt.2.1
+    note:
+      en: "Jesus is born in Bethlehem of Judea in the days of Herod."
+      ru: "Иисус родился в Вифлееме Иудейском во дни царя Ирода."
+  - place: af301ca # Egypt
+    ref: Matt.2.13-Matt.2.15
+    note:
+      en: "Joseph takes the child and his mother to Egypt."
+      ru: "Иосиф уводит Младенца и Матерь Его в Египет."
+  - place: af5884f # Nazareth
+    ref: Matt.2.23
+    note:
+      en: "The family settles in Nazareth."
+      ru: "Семья поселяется в Назарете."
+  - place: a6e060d # Bethany beyond the Jordan
+    ref: John.1.28
+    note:
+      en: "John baptizes at Bethany beyond the Jordan."
+      ru: "Иоанн крестит в Вифаваре при Иордане."
+  - place: a031bda # Cana
+    ref: John.2.1-John.2.11
+    note:
+      en: "The wedding at Cana: water becomes wine."
+      ru: "Брак в Кане Галилейской: вода становится вином."
+  - place: a27b472 # Sychar
+    ref: John.4.5-John.4.42
+    note:
+      en: "At Jacob's well he speaks with the Samaritan woman."
+      ru: "У колодца Иакова — беседа с самарянкой."
+  - place: af2161c # Capernaum
+    ref: Matt.4.13
+    note:
+      en: "He leaves Nazareth and makes his home in Capernaum."
+      ru: "Оставив Назарет, Он поселяется в Капернауме."
+  - place: aee679c # Nain
+    ref: Luke.7.11-Luke.7.17
+    note:
+      en: "He raises the widow's son at Nain."
+      ru: "В Наине воскрешает сына вдовы."
+  - place: a9fc13a # Bethsaida
+    ref: Mark.8.22-Mark.8.26
+    note:
+      en: "He heals a blind man at Bethsaida."
+      ru: "В Вифсаиде исцеляет слепого."
+  - place: ab7bf48 # Caesarea Philippi
+    ref: Matt.16.13-Matt.16.20
+    note:
+      en: 'Peter confesses: "You are the Christ."'
+      ru: "Исповедание Петра: «Ты — Христос»."
+  - place: aaf03fa # Jericho
+    ref: Luke.19.1-Luke.19.10
+    note:
+      en: "On the way to Jerusalem, Zacchaeus at Jericho."
+      ru: "По пути в Иерусалим — Закхей в Иерихоне."
+  - place: a4f35bc # Bethany
+    ref: John.12.1-John.12.8
+    note:
+      en: "Six days before the Passover, a supper at Bethany."
+      ru: "За шесть дней до Пасхи — вечеря в Вифании."
+  - place: a15257a # Jerusalem
+    ref: Matt.21.1-Matt.21.11
+    note:
+      en: "The entry into Jerusalem."
+      ru: "Вход Господень в Иерусалим."
+  - place: a42418f # Gethsemane
+    ref: Matt.26.36-Matt.26.56
+    note:
+      en: "Prayer and arrest in Gethsemane."
+      ru: "Молитва и взятие под стражу в Гефсимании."
+  - place: a631d35 # Golgotha
+    ref: Matt.27.33-Matt.27.56
+    note:
+      en: "The crucifixion at Golgotha."
+      ru: "Распятие на Голгофе."
+  - place: ae7274b # Emmaus
+    ref: Luke.24.13-Luke.24.35
+    note:
+      en: "The risen Lord on the road to Emmaus."
+      ru: "Воскресший Господь на пути в Эммаус."
+  - place: a4f35bc # Bethany
+    ref: Luke.24.50-Luke.24.53
+    note:
+      en: "The Ascension, near Bethany."
+      ru: "Вознесение близ Вифании."
