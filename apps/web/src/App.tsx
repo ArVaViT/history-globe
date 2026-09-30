@@ -1,7 +1,7 @@
 import { YEAR_MAX, YEAR_MIN } from "@hg/core";
 import type { Locale } from "@hg/model";
 import { Menu, PanelLeftClose } from "lucide-react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { HoverTip, PolityTip } from "./components/HoverTip";
 import { InViewPanel } from "./components/InViewPanel";
@@ -14,14 +14,12 @@ import { ToursPanel } from "./components/ToursPanel";
 import { EventsPanel } from "./components/EventsPanel";
 import { TourStopCard } from "./components/TourStopCard";
 import { loadData, type LoadedData } from "./data";
-import { focusOf, keyAction } from "./keys";
+import { useKeys, useMapFeed, usePanelsOpen, usePlayback, useUrlSync } from "./app-hooks";
 import { timelineEventsOf } from "./timeline-events";
-import { readUrl, writeUrl } from "./url";
+import { readUrl } from "./url";
 import { useGlobe, useGlobeState } from "./useGlobe";
 
 const INITIAL = readUrl();
-const PLAY_STEP = 5;
-const PLAY_INTERVAL_MS = 80;
 
 export function App() {
   const { i18n, t } = useTranslation();
@@ -29,29 +27,7 @@ export function App() {
   const searchRef = useRef<HTMLInputElement>(null);
   const [data, setData] = useState<LoadedData | null>(null);
   const [dataError, setDataError] = useState<string | null>(null);
-  const [playing, setPlaying] = useState(false);
-  // The whole left column hides at once (burger in the header), remembered in this browser.
-  // On a phone the column would cover the map: it starts hidden unless opened before.
-  const [panelsOpen, setPanelsOpen] = useState(() => {
-    const narrow = window.matchMedia("(max-width: 767px)").matches;
-    try {
-      const saved = localStorage.getItem("hg:panels-hidden");
-      return saved === null ? !narrow : saved === "0";
-    } catch {
-      return !narrow;
-    }
-  });
-  const togglePanels = (open: boolean) => {
-    setPanelsOpen(open);
-    try {
-      localStorage.setItem("hg:panels-hidden", open ? "0" : "1");
-    } catch {
-      // Storage refused: the column still toggles, it just forgets.
-    }
-  };
-  const [ready, setReady] = useState(false);
-  const [hover, setHover] = useState<{ id: string; at: { x: number; y: number } } | null>(null);
-  const [inView, setInView] = useState<string[]>([]);
+  const [panelsOpen, togglePanels] = usePanelsOpen();
   const { globe, error: mapError } = useGlobe(container, data, INITIAL);
   const error =
     dataError !== null
@@ -73,66 +49,20 @@ export function App() {
     document.documentElement.lang = state.locale;
   }, [i18n, state.locale]);
 
-  // Keep the URL shareable: year, place, camera, locale (ADR 0006).
-  useEffect(() => {
-    if (!globe) return;
-    let timer = 0;
-    const save = () => {
-      window.clearTimeout(timer);
-      timer = window.setTimeout(() => {
-        const s = globe.engine.store.get();
-        if (!s.camera) return;
-        writeUrl({
-          year: s.year,
-          camera: s.camera,
-          locale: s.locale,
-          ...(s.selectedPlace ? { place: s.selectedPlace } : {}),
-          layers: s.layers,
-          ...(s.tour ? { tour: s.tour.id } : {}),
-        });
-      }, 300);
-    };
-    const offState = globe.engine.store.subscribe(save);
-    return () => {
-      offState();
-      window.clearTimeout(timer);
-    };
-  }, [globe]);
-
-  useEffect(() => {
-    if (!globe) return;
-    const refreshInView = () => {
-      setInView(globe.renderer.visiblePlaces());
-    };
-    const offReady = globe.renderer.on("ready", () => {
-      setReady(true);
-      refreshInView();
+  useUrlSync(globe);
+  const { ready, hover, inView } = useMapFeed(globe, state.layers.places);
+  const [playing, setPlaying] = usePlayback(engine);
+  const togglePlay = useCallback(() => {
+    setPlaying((p) => !p);
+  }, [setPlaying]);
+  // The search may be hidden with the panels: show them, then focus it.
+  const focusSearch = useCallback(() => {
+    togglePanels(true);
+    requestAnimationFrame(() => {
+      searchRef.current?.focus();
     });
-    const offCamera = globe.renderer.on("cameraChanged", refreshInView);
-    const offHover = globe.renderer.on("hover", (id, at) => {
-      setHover(id && at ? { id, at } : null);
-    });
-    return () => {
-      offReady();
-      offCamera();
-      offHover();
-    };
-  }, [globe]);
-
-  // Toggling the places layer changes what is in view without moving the camera.
-  const placesShown = state.layers.places;
-  useEffect(() => {
-    if (!globe) return;
-    const map = globe.renderer.map;
-    const refresh = () => {
-      setInView(globe.renderer.visiblePlaces());
-    };
-    map.once("idle", refresh);
-    map.triggerRepaint();
-    return () => {
-      map.off("idle", refresh);
-    };
-  }, [globe, placesShown]);
+  }, [togglePanels]);
+  useKeys(globe, { togglePlay, focusSearch });
 
   // Fly to the place from the URL once the globe exists, or start its tour.
   useEffect(() => {
@@ -143,53 +73,6 @@ export function App() {
     }
     if (INITIAL.place && !INITIAL.camera) engine.selectPlace(INITIAL.place);
   }, [engine, data]);
-
-  useEffect(() => {
-    if (!playing || !engine) return;
-    const id = window.setInterval(() => {
-      const y = engine.store.get().year;
-      if (y >= YEAR_MAX) setPlaying(false);
-      else engine.setYear(y + PLAY_STEP);
-    }, PLAY_INTERVAL_MS);
-    return () => {
-      window.clearInterval(id);
-    };
-  }, [playing, engine]);
-
-  useEffect(() => {
-    if (!globe) return;
-    const { engine } = globe;
-    const onKey = (e: KeyboardEvent) => {
-      const action = keyAction({
-        key: e.key,
-        shiftKey: e.shiftKey,
-        ctrlKey: e.ctrlKey,
-        metaKey: e.metaKey,
-        altKey: e.altKey,
-        focus: focusOf(e.target),
-      });
-      if (!action) return;
-      if (action.kind === "year") engine.stepYear(action.delta);
-      else if (action.kind === "play") {
-        e.preventDefault();
-        setPlaying((p) => !p);
-      } else if (action.kind === "search") {
-        e.preventDefault();
-        // The search may be hidden with the panels: show them, then focus it.
-        togglePanels(true);
-        requestAnimationFrame(() => {
-          searchRef.current?.focus();
-        });
-      } else if (action.kind === "close") {
-        engine.selectPlace(null);
-        engine.stopTour();
-      } else engine.northUp();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => {
-      window.removeEventListener("keydown", onKey);
-    };
-  }, [globe]);
 
   const hoverPlace = hover ? data?.byId.get(hover.id)?.props : undefined;
   // Founding, destruction and ruin of places, and the turning points of the history.
