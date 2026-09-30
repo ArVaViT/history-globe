@@ -26,7 +26,9 @@ the data first (`pnpm data`).
 - **References exist**: OSIS book, chapter and verse are checked against
   `packages/model/src/versification.ts` (generated from the public-domain World English
   Bible by `pipeline/build_versification.py`; English numbering, not Synodal: Synodal
-  Ps 67:16 is OSIS Ps.68.15).
+  Ps 67:16 is OSIS Ps.68.15). In Russian the references are shown in the Synodal
+  numbering (`packages/model/src/synodal.ts`: the Psalms and chapter boundaries that
+  moved, each seam checked against the text); links keep the English numbering.
 - **Place names** (`content/place-names.yaml`): a plain name starting with a capital, no
   brackets, slashes or markers. Evidence, when given, must be a verse that OpenBible tags
   for that very place, and its excerpt must contain the name (the first letters of the

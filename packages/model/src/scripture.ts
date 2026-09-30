@@ -1,4 +1,5 @@
 import type { Locale } from "./time.ts";
+import { toSynodal } from "./synodal.ts";
 import { VERSES } from "./versification.ts";
 
 /** OSIS book id → [Russian Synodal abbreviation, English abbreviation]. */
@@ -126,8 +127,8 @@ const position = (r: Ref) => r.chapter * 1000 + (r.verse ?? 0);
 
 /**
  * "Acts.13.4" → "Деян 13:4"; "Acts.13.4-Acts.14.26" → "Деян 13:4–14:26".
- * Psalm numbers stay in the Hebrew (OSIS) numbering; the Synodal numbering differs and
- * is converted elsewhere, never silently.
+ * In Russian the numbers are the Synodal ones ("Ps.68.15" → "Пс 67:16", synodal.ts);
+ * the OSIS reference itself keeps the English numbering.
  */
 export function formatRef(osis: string, locale: Locale): string {
   const parts = osis.split("-");
@@ -137,17 +138,20 @@ export function formatRef(osis: string, locale: Locale): string {
   const books = BOOKS[start.book];
   if (!books) throw new SyntaxError(`unknown book in "${osis}"`);
   const name = locale === "ru" || locale === "uk" ? books[0] : books[1];
-  const head = `${name} ${start.chapter}${start.verse === null ? "" : `:${start.verse}`}`;
+  const shown = (r: Ref) => (locale === "ru" ? toSynodal(r.book, r.chapter, r.verse) : r);
+  const from = shown(start);
+  const head = `${name} ${from.chapter}${from.verse === null ? "" : `:${from.verse}`}`;
   if (endText === undefined) return head;
   const end = parseOne(endText);
   if (end.book !== start.book) throw new SyntaxError(`cross-book range: "${osis}"`);
   // Both ends name verses, or both name whole chapters; the range runs forwards.
   if ((start.verse === null) !== (end.verse === null) || position(end) <= position(start))
     throw new SyntaxError(`not a forward range: "${osis}"`);
+  const to = shown(end);
   const tail =
-    end.chapter === start.chapter
-      ? `${end.verse ?? ""}`
-      : `${end.chapter}${end.verse === null ? "" : `:${end.verse}`}`;
+    to.chapter === from.chapter
+      ? `${to.verse ?? ""}`
+      : `${to.chapter}${to.verse === null ? "" : `:${to.verse}`}`;
   return `${head}–${tail}`;
 }
 
