@@ -35,6 +35,11 @@ in `data-checks.md`; this is what it cannot check.
   verbatim Synodal; in English, in straight double quotes.
 - Avoid two stops citing the same verse; where the text moves on within a verse, cite
   the next verses instead.
+- A tour across several Gospels follows the order usually given and says where the
+  Gospels do not fix it; no stop's range settles a question of harmonisation (Luke
+  24:44-49 is left out of the resurrection tour for that reason).
+- The note names a place as its card does, even where the verse uses another form
+  ("Sea of Galilee", not "sea of Tiberias").
 - Before a tour lands, an independent fact check against the Synodal text: reference,
   wording, facts, place id, order, year. Every tour so far needed at least one fix.
 
