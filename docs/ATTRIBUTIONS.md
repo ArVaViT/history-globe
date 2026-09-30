@@ -88,6 +88,10 @@ Software
   includes code from mapbox-gl-js v1.13 and earlier (Copyright (c) 2020,
   Mapbox, BSD-3-Clause), glfx.js (MIT) and d3-color. Full license text:
   see third-party-licenses.
+  The MapLibre files are shipped unchanged, with their LICENSE.txt, under
+  vendor/maplibre-gl-<version>/ in the build.
+  Lucide icons — Copyright (c) 2026 Lucide Icons and Contributors, ISC; fifteen
+  icons copied as SVG with the notice (apps/web/src/components/icons.tsx).
   maplibre-gl-dates — OpenHistoricalMap, CC0 1.0.
   PMTiles — Protomaps, BSD-3-Clause.
 

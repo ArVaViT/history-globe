@@ -10,9 +10,15 @@ other platforms.
 
 ## Status
 
-A working desktop prototype (PR #2): the globe with relief, state borders by year,
-1288 biblical places (1182 with Synodal Russian names), disputed locations, four tours of
-Paul and a shareable link. No mobile layout and no production hosting yet.
+A working prototype (PR #2): the globe with relief, state borders by year, 1288 biblical
+places (1182 with Synodal Russian names; references shown in the Synodal numbering in
+Russian), disputed locations, the years towns stood and fell, 17 dated turning points on
+the time slider, and ten tours (Abraham, the Exodus, David, the fall of Jerusalem, the
+return, the life of Jesus, Paul's journeys). Desktop first, with a phone and tablet
+layout; a link reopens the same view, tour stop included. No production hosting yet.
+
+Keys: `[` `]` move the year by 10 (with Shift by 100), Space plays, `/` searches,
+`←` `→` step through a tour, `N` turns north up, Esc closes.
 
 ## Run it locally
 
