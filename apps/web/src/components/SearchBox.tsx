@@ -1,7 +1,7 @@
 import { Search } from "lucide-react";
 import { useMemo, useState, type RefObject } from "react";
 import { useTranslation } from "react-i18next";
-import { searchPlaces, type LoadedData } from "../data";
+import { searchPlaces, type LoadedData, type PlaceProps } from "../data";
 import { Panel } from "./Panel";
 
 export function SearchBox({
@@ -18,6 +18,8 @@ export function SearchBox({
   const [active, setActive] = useState(0);
   const results = useMemo(() => searchPlaces(data, query), [data, query]);
   const ru = i18n.language === "ru";
+  const open = query.trim().length >= 2;
+  const nameOf = (p: PlaceProps) => (ru ? (p.name_ru ?? p.name) : p.name);
 
   const choose = (id: string) => {
     onSelect(id);
@@ -47,21 +49,42 @@ export function SearchBox({
           }}
           placeholder={t("search.placeholder")}
           aria-label={t("search.placeholder")}
+          role="combobox"
+          aria-autocomplete="list"
+          aria-expanded={open}
+          aria-controls="search-results"
+          aria-activedescendant={
+            open && results[active] ? `search-${results[active].props.id}` : undefined
+          }
           className="w-full bg-transparent text-[15px] text-ink outline-none placeholder:text-ink-soft/70"
         />
       </label>
-      {query.trim().length >= 2 && (
-        <ul className="max-h-80 overflow-auto border-t border-line py-1" role="listbox">
+      {open && (
+        <ul
+          id="search-results"
+          className="max-h-80 overflow-auto border-t border-line py-1"
+          role="listbox"
+          aria-label={t("search.placeholder")}
+        >
           {results.length === 0 && (
             <li className="px-4 py-2 text-sm text-ink-soft">{t("search.empty")}</li>
           )}
           {results.map(({ props }, i) => {
-            const primary = ru ? (props.name_ru ?? props.name) : props.name;
+            const primary = nameOf(props);
+            // Namesakes (three Beth-shemeshes) are told apart by where they are.
+            const namesake = results.some(
+              (r) => r.props.id !== props.id && nameOf(r.props) === primary,
+            );
             const secondary =
-              ru && props.name_ru ? props.name : ru ? (props.where_ru ?? props.where) : props.where;
+              ru && props.name_ru && !namesake
+                ? props.name
+                : ru
+                  ? (props.where_ru ?? props.where)
+                  : props.where;
             return (
               <li
                 key={props.id}
+                id={`search-${props.id}`}
                 role="option"
                 aria-selected={i === active}
                 onMouseEnter={() => {

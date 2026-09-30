@@ -4,6 +4,7 @@ import {
   markRussianDuplicates,
   beforeItsTime,
   groupSites,
+  foldName,
   searchPlaces,
   type LoadedData,
   type PlaceProps,
@@ -57,6 +58,15 @@ describe("searchPlaces", () => {
 
   it("also matches inside a name, after prefix matches", () => {
     expect(searchPlaces(data, "лее").map((r) => r.props.id)).toEqual(["a4"]);
+  });
+
+  it("ignores ё, accents, hyphens and spaces", () => {
+    expect(foldName("Беф-Шемеш")).toBe(foldName("беф шемеш"));
+    expect(foldName("Самарянка")).toBe("самарянка");
+    expect(foldName("Ёмкость")).toBe("емкость");
+    expect(foldName("Tell Ḥum")).toBe("tellhum");
+    expect(foldName("Beʼer Sheva")).toBe("beersheva");
+    expect(searchPlaces(data, "иер ус").map((r) => r.props.id)).toEqual(["a1"]);
   });
 
   it("finds a place by its modern name, after its own names", () => {

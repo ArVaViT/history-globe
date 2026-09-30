@@ -240,25 +240,37 @@ export async function loadData(): Promise<LoadedData> {
   };
 }
 
+/**
+ * A name as the search compares it: lower case, "ё" as "е", no accents ("Ḥ", "é"), and
+ * no hyphens, apostrophes or spaces, so "беф шемеш" finds "Беф-Шемеш".
+ */
+export function foldName(s: string): string {
+  return s
+    .toLocaleLowerCase("ru")
+    .replaceAll("ё", "е")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .normalize("NFC")
+    .replace(/[\s\-\u2010-\u2015'\u2019\u02bc]+/g, "");
+}
+
 /** Search by English or Russian name; exact prefix first, then by importance. */
 export function searchPlaces(
   data: LoadedData,
   query: string,
   limit = 8,
 ): { readonly props: PlaceProps }[] {
-  const q = query.trim().toLocaleLowerCase("ru");
-  if (q.length < 2) return [];
+  if (query.trim().length < 2) return [];
+  const q = foldName(query);
+  if (q.length === 0) return [];
   const scored: { props: PlaceProps; score: number }[] = [];
   for (const { props } of data.byId.values()) {
-    const names = [props.name, props.name_ru ?? ""].map((n) => n.toLocaleLowerCase("ru"));
+    const names = [props.name, props.name_ru ?? ""].map(foldName);
     const prefix = names.some((n) => n.startsWith(q));
     const inside = !prefix && names.some((n) => n.includes(q));
     // The modern name ("Tell Hum" for Capernaum) also finds a place, after its own names.
     const today =
-      !prefix &&
-      !inside &&
-      props.where_tpl === undefined &&
-      props.where.toLocaleLowerCase("ru").includes(q);
+      !prefix && !inside && props.where_tpl === undefined && foldName(props.where).includes(q);
     if (prefix || inside || today)
       scored.push({ props, score: (prefix ? 0 : inside ? 10 : 20) + props.rank });
   }
