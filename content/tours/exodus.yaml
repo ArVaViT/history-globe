@@ -1,0 +1,98 @@
+# The Exodus, from Rameses to Jericho (Exodus 12 - Joshua 6), in the order of the text.
+# The tour's year (1446 BC) follows 1 Kgs 6:1, 480 years before the Temple was begun; a
+# later date, c. 1260 BC under Ramesses II, is also widely held, so it is a point for the
+# map, not a date. Most stations are located only tentatively (the Red Sea and Mount
+# Sinai have several proposed sites): the map shows OpenBible's most likely one, and the
+# place card lists the others.
+id: exodus
+title:
+  en: "The Exodus"
+  ru: "Исход из Египта"
+year: "1446 BC"
+approximate: true
+stops:
+  - place: a079b21 # Rameses
+    ref: Exod.12.37
+    note:
+      en: "The Israelites set out from Rameses, about six hundred thousand men on foot."
+      ru: "Сыны Израилевы отправляются из Раамсеса — до шестисот тысяч пеших мужчин."
+  - place: aa28709 # Succoth (in Egypt)
+    ref: Num.33.5
+    note:
+      en: "Their first camp is at Succoth."
+      ru: "Первый стан — в Сокхофе."
+  - place: a27d0e0 # Etham
+    ref: Exod.13.20
+    note:
+      en: "They camp at Etham, on the edge of the wilderness; the Lord goes before them in a pillar of cloud and of fire."
+      ru: "Стан в Ефаме, в конце пустыни; Господь идёт перед ними в столпе облачном и огненном."
+  - place: ababfd2 # Pi-hahiroth
+    ref: Exod.14.2
+    note:
+      en: "They turn back and camp before Pi-hahiroth, between Migdol and the sea."
+      ru: "Они поворачивают и становятся станом пред Пи-Гахирофом, между Мигдолом и морем."
+  - place: a3d18b2 # Red Sea
+    ref: Exod.14.21-Exod.15.4
+    note:
+      en: "The waters part and Israel crosses on dry ground; Pharaoh's army is drowned in the Red Sea."
+      ru: "Воды расступаются, и Израиль идёт по суше; войско фараона тонет в Чермном море."
+  - place: ad3970d # Marah
+    ref: Exod.15.23-Exod.15.25
+    note:
+      en: "At Marah the water is bitter, and a tree thrown into it makes it sweet."
+      ru: "В Мерре вода горька; брошенное в неё дерево делает её сладкой."
+  - place: a2410c1 # Elim
+    ref: Exod.15.27
+    note:
+      en: "At Elim there are twelve springs of water and seventy palm trees."
+      ru: "В Елиме — двенадцать источников воды и семьдесят финиковых дерев."
+  - place: a05ebb7 # Rephidim
+    ref: Exod.17.1-Exod.17.13
+    note:
+      en: "Water from the rock, and the battle with Amalek while Moses holds up his hands."
+      ru: "Вода из скалы и битва с Амаликом, пока Моисей держит поднятыми руки."
+  - place: abfba2a # Mount Sinai
+    ref: Exod.19.16-Exod.19.20
+    note:
+      en: "The Lord comes down on Mount Sinai and calls Moses to the top: the giving of the Law."
+      ru: "Господь сходит на гору Синай и призывает Моисея на вершину: дарование Закона."
+  - place: ae7836a # Kibroth-hattaavah
+    ref: Num.11.31-Num.11.34
+    note:
+      en: "The quail, and the graves of those who craved: Kibroth-hattaavah."
+      ru: "Перепела и гробы прихотливых: Киброт-Гаттаава."
+  - place: ac2cef0 # Kadesh-barnea
+    ref: Num.13.26-Num.14.34
+    note:
+      en: "The spies return to Kadesh; the people refuse to go up, and are sentenced to forty years in the wilderness."
+      ru: "Соглядатаи возвращаются в Кадес; народ отказывается идти, и ему назначено сорок лет в пустыне."
+  - place: ad8027f # Mount Hor
+    ref: Num.20.22-Num.20.29
+    note:
+      en: "Aaron dies on the top of Mount Hor; Eleazar his son takes his garments."
+      ru: "Аарон умирает на вершине горы Ор; его одежды переходят к Елеазару, сыну его."
+  - place: abf2fc1 # Heshbon
+    ref: Num.21.21-Num.21.26
+    note:
+      en: "Sihon king of the Amorites is defeated, and Israel takes Heshbon."
+      ru: "Сигон, царь Аморрейский, разбит, и Израиль берёт Есевон."
+  - place: aefaa2d # Mount Nebo
+    ref: Deut.34.1-Deut.34.5
+    note:
+      en: "From Mount Nebo the Lord shows Moses the whole land; Moses dies there, in the land of Moab."
+      ru: "С горы Нево Господь показывает Моисею всю землю; там Моисей умирает, в земле Моавитской."
+  - place: af64fb3 # Shittim
+    ref: Josh.3.1
+    note:
+      en: "Joshua and the people leave Shittim and come to the Jordan."
+      ru: "Иисус Навин и народ выходят из Ситтима и подходят к Иордану."
+  - place: ab94aea # Gilgal
+    ref: Josh.4.19
+    note:
+      en: "Across the Jordan, the first camp in the land is at Gilgal, east of Jericho."
+      ru: "Перейдя Иордан, народ ставит первый стан в земле — в Галгале, к востоку от Иерихона."
+  - place: a231f80 # Jericho
+    ref: Josh.6.1-Josh.6.20
+    note:
+      en: "Seven days around Jericho, and its wall falls down."
+      ru: "Семь дней вокруг Иерихона — и стена его обрушивается."
