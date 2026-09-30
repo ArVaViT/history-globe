@@ -115,6 +115,8 @@ export const TourFile = z.strictObject({
   id: z.string().regex(/^[a-z0-9-]+$/),
   title: localized,
   year: yearLabel,
+  /** The year is a conventional point for the map (the chronology is debated): "ок.". */
+  approximate: z.boolean().optional(),
   stops: z
     .array(
       z.strictObject({ place: z.string().regex(/^a[0-9a-f]{6}$/), ref: osis, note: localized }),

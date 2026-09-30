@@ -16,7 +16,10 @@
     "stop": "Остановка {{n}} из {{total}}",
     "prev": "Назад",
     "next": "Дальше",
-    "close": "Закончить"
+    "close": "Закончить",
+    "stops_one": "{{count}} остановка",
+    "stops_few": "{{count}} остановки",
+    "stops_many": "{{count}} остановок"
   },
   "place": {
     "today": "Сегодня",

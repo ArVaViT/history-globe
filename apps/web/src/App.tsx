@@ -5,7 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { HoverTip, PolityTip } from "./components/HoverTip";
 import { InViewPanel } from "./components/InViewPanel";
-import { LayersPanel } from "./components/LayersPanel";
+import { LayersPanel, LegendPanel } from "./components/LayersPanel";
 import { Panel } from "./components/Panel";
 import { PlaceCard } from "./components/PlaceCard";
 import { SearchBox } from "./components/SearchBox";
@@ -276,6 +276,7 @@ export function App() {
                   }}
                 />
                 <LayersPanel layers={state.layers} onToggle={engine.setLayer} />
+                <LegendPanel />
                 <ToursPanel
                   tours={data.tours}
                   onStart={(id) => {

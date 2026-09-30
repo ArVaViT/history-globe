@@ -11,18 +11,20 @@ export function Panel({ children, className = "" }: { children: ReactNode; class
   );
 }
 
-function readOpen(id: string): boolean {
+function readOpen(id: string, byDefault: boolean): boolean {
   try {
-    return localStorage.getItem(`hg:closed:${id}`) === null;
+    const v =
+      localStorage.getItem(`hg:panel:${id}`) ?? (localStorage.getItem(`hg:closed:${id}`) && "0");
+    return v === null ? byDefault : v === "1";
   } catch {
-    return true;
+    return byDefault;
   }
 }
 
 function writeOpen(id: string, open: boolean): void {
   try {
-    if (open) localStorage.removeItem(`hg:closed:${id}`);
-    else localStorage.setItem(`hg:closed:${id}`, "1");
+    localStorage.setItem(`hg:panel:${id}`, open ? "1" : "0");
+    localStorage.removeItem(`hg:closed:${id}`);
   } catch {
     // Private windows may refuse storage: the panel still toggles, it just forgets.
   }
@@ -33,14 +35,17 @@ export function Section({
   id,
   title,
   className = "",
+  defaultOpen = true,
   children,
 }: {
   id: string;
   title: ReactNode;
   className?: string;
+  /** Open until the reader folds it; false for panels one opens on purpose (the key). */
+  defaultOpen?: boolean;
   children: ReactNode;
 }) {
-  const [open, setOpen] = useState(() => readOpen(id));
+  const [open, setOpen] = useState(() => readOpen(id, defaultOpen));
   return (
     <Panel className={open ? className : `${className} !pb-0`}>
       <button

@@ -45,48 +45,47 @@ export function LayersPanel({
           />
         </label>
       ))}
-      <Legend />
     </Section>
   );
 }
 
-function Legend() {
+/** The map key: a panel of its own, folded until the reader opens it. */
+export function LegendPanel() {
   const { t } = useTranslation();
   const icons = useMemo(() => LEGEND.map((name) => [name, iconDataUrl(name, INK)] as const), []);
   return (
-    <div className="mx-4 mt-2 border-t border-line pt-2">
-      <div className="pb-1 text-[11px] font-medium tracking-[0.12em] text-ink-soft uppercase">
-        {t("legend.title")}
-      </div>
-      <ul className="grid grid-cols-2 gap-x-3 gap-y-1 text-[12.5px] text-ink">
-        <li className="flex items-center gap-2">
-          <span className="grid size-4 place-items-center" aria-hidden>
-            <span className="size-2.5 rounded-full border border-paper bg-accent" />
-          </span>
-          {t("legend.town")}
-        </li>
-        <li className="flex items-center gap-2">
-          <span
-            className="grid size-4 place-items-center rounded-full border-[1.5px] border-accent"
-            aria-hidden
-          >
-            <span className="size-2 rounded-full bg-accent" />
-          </span>
-          {t("legend.major")}
-        </li>
-        <li className="flex items-center gap-2">
-          <span className="grid size-4 place-items-center" aria-hidden>
-            <span className="size-2.5 rounded-full border border-paper bg-[#a6805c]" />
-          </span>
-          {t("legend.disputed")}
-        </li>
-        {icons.map(([name, url]) => (
-          <li key={name} className="flex items-center gap-2">
-            {url && <img src={url} alt="" className="size-4" />}
-            {t(`legend.${name.slice(3)}`)}
+    <Section id="legend" title={t("legend.title")} className="w-[340px] pb-3" defaultOpen={false}>
+      <div className="px-4 pt-1">
+        <ul className="grid grid-cols-2 gap-x-3 gap-y-1 text-[12.5px] text-ink">
+          <li className="flex items-center gap-2">
+            <span className="grid size-4 place-items-center" aria-hidden>
+              <span className="size-2.5 rounded-full border border-paper bg-accent" />
+            </span>
+            {t("legend.town")}
           </li>
-        ))}
-      </ul>
-    </div>
+          <li className="flex items-center gap-2">
+            <span
+              className="grid size-4 place-items-center rounded-full border-[1.5px] border-accent"
+              aria-hidden
+            >
+              <span className="size-2 rounded-full bg-accent" />
+            </span>
+            {t("legend.major")}
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="grid size-4 place-items-center" aria-hidden>
+              <span className="size-2.5 rounded-full border border-paper bg-[#a6805c]" />
+            </span>
+            {t("legend.disputed")}
+          </li>
+          {icons.map(([name, url]) => (
+            <li key={name} className="flex items-center gap-2">
+              {url && <img src={url} alt="" className="size-4" />}
+              {t(`legend.${name.slice(3)}`)}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Section>
   );
 }

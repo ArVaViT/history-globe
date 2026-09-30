@@ -16,7 +16,9 @@
     "stop": "Stop {{n}} of {{total}}",
     "prev": "Back",
     "next": "Next",
-    "close": "Finish"
+    "close": "Finish",
+    "stops_one": "{{count}} stop",
+    "stops_other": "{{count}} stops"
   },
   "place": {
     "today": "Today",

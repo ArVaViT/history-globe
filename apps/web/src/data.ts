@@ -73,7 +73,11 @@ export function beforeItsTime(
 export interface LoadedData {
   readonly places: FeatureCollection<Point, PlaceProps>;
   readonly byId: ReadonlyMap<string, { readonly props: PlaceProps; readonly info: PlaceInfo }>;
-  readonly tours: readonly (Tour & { readonly title: Readonly<Record<string, string>> })[];
+  readonly tours: readonly (Tour & {
+    readonly title: Readonly<Record<string, string>>;
+    /** The year is a conventional point (debated chronology). */
+    readonly approximate?: boolean;
+  })[];
   /** Candidate locations per place id, most supported first. */
   readonly sites: ReadonlyMap<string, readonly Site[]>;
   /** Other records on the same point under another name (Babylon: Babylonia, Babel). */
@@ -202,6 +206,7 @@ export async function loadData(): Promise<LoadedData> {
   const tours = content.tours.map((t) => ({
     id: t.id,
     year: t.year,
+    ...(t.approximate ? { approximate: true } : {}),
     title: t.title,
     stops: t.stops.map((s) => ({
       placeId: s.place,

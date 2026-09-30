@@ -1,4 +1,4 @@
-import { formatRef, type Locale } from "@hg/model";
+import { formatRef, formatYear, type Locale } from "@hg/model";
 import { Route } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Section } from "./Panel";
@@ -9,12 +9,15 @@ export function ToursPanel({
 }: {
   tours: readonly {
     id: string;
+    year: number;
+    approximate?: boolean | undefined;
     title: Readonly<Record<string, string>>;
     stops: readonly { readonly ref: string }[];
   }[];
   onStart: (id: string) => void;
 }) {
   const { t, i18n } = useTranslation();
+  const locale: Locale = i18n.language === "ru" ? "ru" : "en";
   return (
     <Section id="tours" title={t("tours.title")} className="w-[340px] pb-3">
       {tours.map((tour) => (
@@ -23,17 +26,19 @@ export function ToursPanel({
           onClick={() => {
             onStart(tour.id);
           }}
-          className="mx-3 mt-1 flex w-[calc(100%-24px)] items-center gap-3 rounded-xl border border-line bg-paper-2/60 px-3 py-2.5 text-left hover:bg-paper-2"
+          className="group mx-2 flex w-[calc(100%-16px)] items-center gap-3 rounded-xl px-2 py-1.5 text-left hover:bg-paper-2"
         >
-          <span className="grid size-9 place-items-center rounded-full bg-accent text-paper">
-            <Route className="size-4" />
+          <span className="grid size-7 shrink-0 place-items-center rounded-full bg-accent/90 text-paper group-hover:bg-accent">
+            <Route className="size-3.5" aria-hidden />
           </span>
-          <span>
-            <span className="block font-serif text-[15px] text-ink">
+          <span className="min-w-0 flex-1">
+            <span className="block truncate font-serif text-[14.5px] leading-snug text-ink">
               {tour.title[i18n.language] ?? tour.title.en}
             </span>
-            <span className="block text-xs text-ink-soft">
-              {tourSpan(tour.stops, i18n.language === "ru" ? "ru" : "en")} · {tour.stops.length}
+            <span className="block truncate text-[11.5px] text-ink-soft">
+              {tour.approximate ? `${t("place.circa")} ` : ""}
+              {formatYear(tour.year, locale)} · {tourSpan(tour.stops, locale)} ·{" "}
+              {t("tours.stops", { count: tour.stops.length })}
             </span>
           </span>
         </button>
