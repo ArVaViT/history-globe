@@ -361,9 +361,12 @@ def point_in_polygon(x: float, y: float, poly: list[list[list[float]]]) -> bool:
 LABEL_GRID_DEG = 6.0
 
 
-def label_anchors(parts: list[list[list[list[float]]]]) -> list[tuple[float, float, float]]:
+def label_anchors(parts: list[list[list[list[float]]]]) -> list[tuple[float, float, float, int]]:
     """Several label points inside a polity, so a large empire is named wherever the
-    reader looks, not only at its centroid. Returns (lon, lat, area of its part)."""
+    reader looks, not only at its centroid. Returns (lon, lat, area of its part, tier):
+    tier 0 is a part's centroid, 1 a point of a coarse 12-degree grid, 2 the points of
+    the 6-degree grid between them. The style shows tier 2 only when zoomed in: at a
+    whole-region view it named the Achaemenid Empire seven times."""
     anchors = []
     areas = [ring_area_centroid(poly[0])[0] for poly in parts]
     # Islands and scraps of a big empire get no label of their own: "Roman Empire" on
@@ -374,7 +377,7 @@ def label_anchors(parts: list[list[list[list[float]]]]) -> list[tuple[float, flo
         if area < floor:
             continue
         if point_in_polygon(cx, cy, poly):
-            anchors.append((cx, cy, area))
+            anchors.append((cx, cy, area, 0))
         xs = [p[0] for p in poly[0]]
         ys = [p[1] for p in poly[0]]
         gx = math.floor(min(xs) / LABEL_GRID_DEG) * LABEL_GRID_DEG + LABEL_GRID_DEG / 2
@@ -382,7 +385,10 @@ def label_anchors(parts: list[list[list[list[float]]]]) -> list[tuple[float, flo
             gy = math.floor(min(ys) / LABEL_GRID_DEG) * LABEL_GRID_DEG + LABEL_GRID_DEG / 2
             while gy < max(ys):
                 if point_in_polygon(gx, gy, poly) and BBOX[0] <= gx <= BBOX[2] and BBOX[1] <= gy <= BBOX[3]:
-                    anchors.append((gx, gy, area))
+                    coarse = round((gx - LABEL_GRID_DEG / 2) / LABEL_GRID_DEG) % 2 == 0 and round(
+                        (gy - LABEL_GRID_DEG / 2) / LABEL_GRID_DEG
+                    ) % 2 == 0
+                    anchors.append((gx, gy, area, 1 if coarse else 2))
                 gy += LABEL_GRID_DEG
             gx += LABEL_GRID_DEG
     return anchors
@@ -465,12 +471,12 @@ def build_polities() -> tuple[dict, dict, dict]:
         polys.append({"type": "Feature", "geometry": {"type": "MultiPolygon", "coordinates": kept}, "properties": props})
         if not is_relation:
             total = sum(ring_area_centroid(k[0])[0] for k in kept)
-            for lx, ly, _part in label_anchors(kept):
+            for lx, ly, _part, tier in label_anchors(kept):
                 labels.append({
                     "type": "Feature",
                     "geometry": {"type": "Point", "coordinates": [round(lx, 3), round(ly, 3)]},
                     # Bigger polities get labels earlier and larger.
-                    "properties": {**props, "size": round(math.log10(max(total, 0.01)) + 2, 2)},
+                    "properties": {**props, "size": round(math.log10(max(total, 0.01)) + 2, 2), "tier": tier},
                 })
     stats = {
         "polity_shapes": len(polys),
