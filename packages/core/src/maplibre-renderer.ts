@@ -8,7 +8,7 @@ import { buildStyle, layersInGroup, type StyleOptions } from "./style.ts";
 import { drawIcon } from "./icons.ts";
 import { WheelClassifier } from "./wheel.ts";
 
-const READY_FALLBACK_MS = 6000;
+const READY_FALLBACK_MS = 8000;
 
 const PLACE_LAYERS = [
   "place-dot",
@@ -107,7 +107,9 @@ export class MapLibreRenderer implements Renderer {
     this.map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-right");
     this.map.addControl(new maplibregl.ScaleControl({ unit: "metric" }), "bottom-left");
 
-    this.map.on("load", () => {
+    // The style is enough to set data and run queued work. "load" also waits for the
+    // tiles in view, and in some views (zoom 22 over a pole) it never comes.
+    this.map.once("style.load", () => {
       void (this.map.getSource("places") as GeoJSONSource).setData(o.places);
       this.map.setTerrain({ source: "dem-terrain", exaggeration: 1.5 });
       this.loaded = true;
@@ -115,7 +117,7 @@ export class MapLibreRenderer implements Renderer {
       this.pending = [];
     });
     // Ready at the first idle frame. Some views never go idle (a camera over the pole
-    // keeps re-rendering), so the loading state also ends a few seconds after load.
+    // keeps re-rendering), so the loading state also ends a few seconds after creation.
     let readyFired = false;
     const fireReady = () => {
       if (readyFired) return;
@@ -123,9 +125,7 @@ export class MapLibreRenderer implements Renderer {
       for (const h of this.handlers.ready) h();
     };
     this.map.once("idle", fireReady);
-    this.map.once("load", () => {
-      this.readyTimer = setTimeout(fireReady, READY_FALLBACK_MS);
-    });
+    this.readyTimer = setTimeout(fireReady, READY_FALLBACK_MS);
 
     // One handler over all place layers: per-layer mouseleave fired after the next
     // layer's mousemove, so moving from a label to its own dot dropped the hover.
