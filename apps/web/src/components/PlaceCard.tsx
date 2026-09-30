@@ -157,6 +157,7 @@ export function PlaceCard({
         >
           {t("place.google_maps")}
           <ExternalLink className="size-3.5" aria-hidden />
+          <span className="sr-only"> ({t("new_tab")})</span>
         </a>
       </div>
 
@@ -212,6 +213,7 @@ export function PlaceCard({
             className="rounded-full border border-line bg-white/70 px-2.5 py-0.5 font-serif text-[13px] text-ink hover:border-accent hover:text-accent"
           >
             {safeRef(o, locale)}
+            <span className="sr-only"> ({t("new_tab")})</span>
           </a>
         ))}
         {place.osis.length > versesShown && (

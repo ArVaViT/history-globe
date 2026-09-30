@@ -58,6 +58,7 @@ export function TourStopCard({
           className="rounded-full border border-line bg-white/70 px-2.5 py-0.5 font-serif text-[13px] text-ink hover:border-accent hover:text-accent"
         >
           {formatRef(stop.ref, locale)}
+          <span className="sr-only"> ({t("new_tab")})</span>
         </a>
       </div>
       <div className="mt-4 h-1 overflow-hidden rounded-full bg-paper-2">
