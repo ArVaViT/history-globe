@@ -258,7 +258,12 @@ const isLandmark: ExpressionSpecification = [
  */
 const minZoomByRank: ExpressionSpecification = ["match", ["get", "rank"], 0, 3, 1, 5, 2, 6, 8];
 
-const visibleAtZoom: ExpressionSpecification = [">=", ["zoom"], minZoomByRank];
+/** A small place is drawn once a tour or a search flies to it, whatever its rank. */
+const visibleAtZoom: ExpressionSpecification = [
+  "any",
+  [">=", ["zoom"], minZoomByRank],
+  ["all", IS_SELECTED, [">=", ["zoom"], 5]],
+];
 
 export function buildStyle(o: StyleOptions): StyleSpecification {
   const layers: LayerSpecification[] = [
@@ -698,8 +703,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         IS_SELECTED,
         ["!", isSettlement],
         ["!", ["has", "line"]],
-        // Its own threshold: a small place is labelled once a tour or a search flies to it.
-        [">=", ["zoom"], 5],
+        visibleAtZoom,
         ["any", ["!", isLandmark], HAS_LOCAL_NAME],
       ],
       layout: {
