@@ -36,6 +36,8 @@ export function formatPeriodRange(range: { from: number; to: number }, locale: L
 export interface TimelineEvent {
   readonly year: number;
   readonly label: string;
+  /** "c." in the source: shown as such. */
+  readonly approximate?: boolean;
 }
 
 export function Timeline({
@@ -81,8 +83,11 @@ export function Timeline({
           </div>
           {near.map((e) => (
             <div key={`${String(e.year)}${e.label}`} className="mt-1 text-paper">
-              <span className="tabular-nums text-gold">{formatYear(e.year, locale)}</span> ·{" "}
-              {e.label}
+              <span className="text-gold tabular-nums">
+                {e.approximate ? `${t("place.circa")} ` : ""}
+                {formatYear(e.year, locale)}
+              </span>{" "}
+              · {e.label}
             </div>
           ))}
         </div>

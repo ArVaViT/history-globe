@@ -197,8 +197,8 @@ export function App() {
       const p = data.byId.get(id)?.props;
       if (!p) continue;
       const name = state.locale === "ru" ? (p.name_ru ?? p.name) : p.name;
-      const add = (y: { year: number } | undefined, key: string) => {
-        if (y) out.push({ year: y.year, label: t(key, { name }) });
+      const add = (y: { year: number; approximate: boolean } | undefined, key: string) => {
+        if (y) out.push({ year: y.year, label: t(key, { name }), approximate: y.approximate });
       };
       add(life.from, "events.founded");
       add(life.until, "events.destroyed");
