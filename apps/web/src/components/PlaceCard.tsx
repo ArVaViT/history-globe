@@ -1,5 +1,5 @@
 import { formatRef, type Locale } from "@hg/model";
-import { ExternalLink, MapPin, X, ZoomIn } from "lucide-react";
+import { ExternalLink, Link2, MapPin, X, ZoomIn } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { beforeItsTime, type PlaceProps, type Site } from "../data";
@@ -48,6 +48,7 @@ export function PlaceCard({
   // starts folded again.
   // Verses open fifty at a time: Jerusalem has 955.
   const [versesShown, setVersesShown] = useState(VERSES_SHOWN);
+  const [copied, setCopied] = useState(false);
   const [allAlso, setAllAlso] = useState(false);
   const { t } = useTranslation();
   const ru = locale === "ru";
@@ -89,12 +90,27 @@ export function PlaceCard({
         </span>
       </div>
 
-      <div className="px-5 pt-3">
+      <div className="flex items-center gap-2 px-5 pt-3">
         <button
           onClick={onZoom}
           className="flex items-center gap-1.5 rounded-full bg-accent px-3.5 py-1.5 text-sm text-paper hover:brightness-110"
         >
           <ZoomIn className="size-4" aria-hidden /> {t("place.zoom")}
+        </button>
+        <button
+          onClick={() => {
+            // The address already holds the place, the year and the camera.
+            void navigator.clipboard.writeText(window.location.href).then(
+              () => {
+                setCopied(true);
+              },
+              () => undefined,
+            );
+          }}
+          className="flex items-center gap-1.5 rounded-full border border-line px-3 py-1.5 text-sm text-ink-soft hover:bg-paper-2 hover:text-ink"
+        >
+          <Link2 className="size-4" aria-hidden />
+          <span aria-live="polite">{copied ? t("place.copied") : t("place.copy_link")}</span>
         </button>
       </div>
 
