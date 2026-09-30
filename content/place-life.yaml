@@ -97,3 +97,62 @@ places:
     sources:
       - "Pausanias, Description of Greece 2.1.2"
       - "Strabo, Geography 8.6.23"
+  - id: a49e1d0
+    en: Philippi
+    from: "c. 360 BC"
+    note:
+      en: "Settled by Thasos as Krenides and refounded by Philip II of Macedon, who named it after himself (356 BC)."
+      ru: "Основан фасосцами как Крениды и заново основан Филиппом II Македонским, давшим городу своё имя (356 г. до н. э.)."
+    sources:
+      - "Diodorus Siculus 16.3.7; 16.8.6"
+      - "Appian, Civil Wars 4.105"
+  - id: afa9d8e
+    en: Thessalonica
+    from: "c. 315 BC"
+    note:
+      en: "Founded by Cassander, who joined the towns of the Thermaic Gulf and named the city after his wife Thessalonike."
+      ru: "Основана Кассандром, объединившим городки Фермейского залива и назвавшим город в честь жены Фессалоники."
+    sources:
+      - "Strabo, Geography 7, fr. 21"
+  - id: aee7248
+    en: Alexandria
+    from: "331 BC"
+    note:
+      en: "Founded by Alexander the Great on the western edge of the Nile delta."
+      ru: "Основана Александром Македонским на западном краю дельты Нила."
+    sources:
+      - "Arrian, Anabasis 3.1.5-3.2.2"
+      - "Plutarch, Alexander 26"
+  - id: a6d306d
+    en: Seleucia
+    from: "300 BC"
+    note:
+      en: "Founded by Seleucus I as the seaport of Antioch."
+      ru: "Основана Селевком I как морская гавань Антиохии."
+    sources:
+      - "Strabo, Geography 16.2.4"
+  - id: a83fb1e
+    en: Laodicea
+    from: "c. 260 BC"
+    note:
+      en: "Founded by the Seleucid king Antiochus II and named after his wife Laodice."
+      ru: "Основана селевкидским царём Антиохом II и названа в честь его жены Лаодики."
+    sources:
+      - "Pliny, Natural History 5.105"
+      - "Stephanus of Byzantium, Ethnica, s.v. Laodikeia"
+  - id: a4bdea7
+    en: Amphipolis
+    from: "437 BC"
+    note:
+      en: "Founded by Athenian colonists under Hagnon on the Strymon, at the place called Nine Ways."
+      ru: "Основан афинскими колонистами во главе с Гагноном на Стримоне, в месте, называвшемся Девять Путей."
+    sources:
+      - "Thucydides 4.102"
+  - id: a91c509
+    en: Troas
+    from: "c. 310 BC"
+    note:
+      en: "Founded by Antigonus as Antigonia and renamed Alexandria Troas by Lysimachus."
+      ru: "Основан Антигоном как Антигония и переименован Лисимахом в Александрию Троадскую."
+    sources:
+      - "Strabo, Geography 13.1.26"
