@@ -13,8 +13,8 @@ stops:
     # without naming it (listed in build-content as a stop named by its context).
     ref: Acts.27.1-Acts.27.2
     note:
-      en: "Held at Caesarea, Paul sails for Rome as a prisoner."
-      ru: "Из Кесарии, где его держали под стражей, Павел отплывает в Рим."
+      en: "Held at Caesarea, Paul sails for Italy as a prisoner."
+      ru: "Из Кесарии, где его держали под стражей, Павел отплывает в Италию."
   - place: a98e4d7
     ref: Acts.27.3
     note:
@@ -34,12 +34,12 @@ stops:
     ref: Acts.27.7
     note:
       en: "Under the lee of Crete at Salmone."
-      ru: "Под Критом у Салмона."
+      ru: "Под Критом у Салмоны."
   - place: aae626a
     ref: Acts.27.8-Acts.27.12
     note:
-      en: "Fair Havens; Paul advises wintering there."
-      ru: "Хорошие Пристани; Павел советует зимовать."
+      en: "Fair Havens; Paul warns that the voyage will bring loss."
+      ru: "Хорошие Пристани; Павел предупреждает об опасности плавания."
   - place: aca2b0a
     ref: Acts.27.14-Acts.27.17
     note:
