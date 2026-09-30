@@ -81,6 +81,9 @@ if (!existsSync(openbible)) {
 const NAMED_BY_CONTEXT = new Set([
   // Acts 27:1 sails from Caesarea, named in 25:13-24 where Paul is held.
   "paul-rome a58735e",
+  // The tomb is in the garden "at the place where He was crucified" (John 19:41),
+  // Golgotha, named in 19:17.
+  "resurrection a631d35",
 ]);
 
 /** Evidence read where the Synodal text has words the English one lacks. */
