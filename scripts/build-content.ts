@@ -265,6 +265,14 @@ for (const p of PlaceLifeFile.parse(load("content/place-life.yaml")).places) {
   };
 }
 
+// "Same place as X" (Zion for Jerusalem) shares X's years unless it has its own.
+for (const f of places.features) {
+  const p = f.properties;
+  const own = life[p.id];
+  const shared = p.where_tpl === "same" && p.where_ref ? life[p.where_ref] : undefined;
+  if (!own && shared) life[p.id] = shared;
+}
+
 // Candidate sites get a Russian label where their English one refers to a place with a
 // Synodal name ("same place as Abila" -> "то же место, что Авила").
 const sitesPath = join(out, "sites.geojson");
