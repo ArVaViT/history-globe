@@ -31,6 +31,10 @@ export const KIND_ICON: Readonly<Record<string, string>> = {
   campsite: "hg-tent",
   valley: "hg-valley",
   road: "hg-road",
+  // Rivers drawn as lines keep only their line label; the others get this mark.
+  river: "hg-river",
+  wadi: "hg-river",
+  canal: "hg-river",
 };
 
 const SIZE = 32; // pixels at pixelRatio 2: 16 css px on the map
@@ -107,6 +111,17 @@ const DRAW: Readonly<Record<string, Draw>> = {
     c.lineTo(16, 26);
     c.lineTo(29, 7);
     c.stroke();
+  },
+  "hg-river": (c) => {
+    c.lineWidth = 4;
+    c.lineCap = "round";
+    for (const y of [11, 21]) {
+      c.beginPath();
+      c.moveTo(3, y);
+      c.bezierCurveTo(9, y - 6, 13, y + 6, 18, y);
+      c.bezierCurveTo(22, y - 5, 26, y + 4, 29, y);
+      c.stroke();
+    }
   },
   "hg-road": (c) => {
     c.lineWidth = 4;

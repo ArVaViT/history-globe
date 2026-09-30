@@ -418,7 +418,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isLandmark, hasIcon, visibleAtZoom],
+      filter: ["all", ["any", isLandmark, isWater], hasIcon, visibleAtZoom],
       layout: {
         "icon-image": ICON_OF_KIND,
         "icon-size": ["match", ["get", "rank"], 0, 1.35, 1, 1.2, 1],
@@ -430,7 +430,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
           "case",
           ["boolean", ["feature-state", "selected"], false],
           T.gold,
-          LANDMARK_INK,
+          ["match", ["get", "kind"], ["river", "wadi", "canal"], T.water, LANDMARK_INK],
         ],
         "icon-halo-color": T.halo,
         "icon-halo-width": ["case", ["boolean", ["feature-state", "hover"], false], 3, 1.6],

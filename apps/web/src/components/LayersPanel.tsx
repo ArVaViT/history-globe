@@ -15,6 +15,7 @@ const LEGEND = [
   "hg-tent",
   "hg-valley",
   "hg-road",
+  "hg-river",
 ] as const;
 const INK = "#5b4630";
 
