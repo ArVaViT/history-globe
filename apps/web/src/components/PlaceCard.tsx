@@ -1,6 +1,6 @@
 import { formatRef, type Locale } from "@hg/model";
 import { ExternalLink, Link2, MapPin, X, ZoomIn } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { beforeItsTime, type PlaceProps, type Site } from "../data";
 import { mapsUrl, verseUrl } from "../links";
@@ -51,6 +51,14 @@ export function PlaceCard({
   // starts folded again.
   // Verses open fifty at a time: Jerusalem has 955.
   const [versesShown, setVersesShown] = useState(VERSES_SHOWN);
+  // After "ещё N", keyboard focus moves to the first verse that appeared.
+  const versesRef = useRef<HTMLDivElement>(null);
+  const focusVerse = useRef<number | null>(null);
+  useEffect(() => {
+    if (focusVerse.current === null) return;
+    versesRef.current?.querySelectorAll("a")[focusVerse.current]?.focus();
+    focusVerse.current = null;
+  }, [versesShown]);
   const [copied, setCopied] = useState<"copied" | "failed" | null>(null);
   const [allAlso, setAllAlso] = useState(false);
   const { t } = useTranslation();
@@ -239,7 +247,7 @@ export function PlaceCard({
       <div className="px-5 pt-4 text-[11px] font-medium tracking-[0.12em] text-ink-soft uppercase">
         {t("place.verses")}
       </div>
-      <div className="flex flex-wrap gap-1.5 px-5 pt-2">
+      <div ref={versesRef} className="flex flex-wrap gap-1.5 px-5 pt-2">
         {place.osis.slice(0, versesShown).map((o) => (
           <a
             key={o}
@@ -256,6 +264,7 @@ export function PlaceCard({
         {place.osis.length > versesShown && (
           <button
             onClick={() => {
+              focusVerse.current = versesShown;
               setVersesShown(versesShown + 50);
             }}
             className="rounded-full px-2 py-0.5 text-[13px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
