@@ -59,6 +59,31 @@ export function useGlobe(
   return { globe, error };
 }
 
+/**
+ * Where the interface leaves the map open, for a flight to put its place there. On a phone
+ * the header covers the top and the card and the timeline the lower half; wider, the
+ * panels cover the left, the timeline the bottom and the card the top right: beside the
+ * card when there is room, below it when not. Shrunk to fit a small screen (a phone on
+ * its side), which MapLibre would otherwise clamp.
+ */
+function viewPadding() {
+  const w = innerWidth;
+  const h = innerHeight;
+  const p =
+    w < 768
+      ? { top: 64, bottom: h * 0.55, left: 0, right: 0 }
+      : w - 356 - 396 >= 400
+        ? { top: 0, bottom: 140, left: 356, right: 396 }
+        : { top: 360, bottom: 140, left: 356, right: 0 };
+  const k = Math.min(1, (w - 80) / (p.left + p.right || 1), (h - 80) / (p.top + p.bottom));
+  return {
+    top: Math.round(p.top * k),
+    bottom: Math.round(p.bottom * k),
+    left: Math.round(p.left * k),
+    right: Math.round(p.right * k),
+  };
+}
+
 function createGlobe(
   Renderer: typeof MapLibreRenderer,
   el: HTMLDivElement,
@@ -75,13 +100,7 @@ function createGlobe(
     fonts: MAP_FONTS,
     initialYear: init.year ?? DEFAULT_STATE.year,
     initialLocale: init.locale ?? DEFAULT_STATE.locale,
-    // A flight puts its place where the interface leaves the map open. On a phone the card
-    // and the timeline cover the lower half and the header the top; wider, the panels
-    // cover the left side and the timeline the bottom, and the card sits top right.
-    viewPadding: () =>
-      innerWidth < 768
-        ? { top: 64, bottom: Math.round(innerHeight * 0.55), left: 0, right: 0 }
-        : { top: 0, bottom: 140, left: 356, right: 0 },
+    viewPadding,
   });
   const engine = createEngine({
     renderer,

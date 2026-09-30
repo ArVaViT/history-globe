@@ -497,7 +497,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isArea, visibleAtZoom, NOT_DUP],
+      filter: ["all", isArea, visibleAtZoom, NOT_DUP, ["!", IS_SELECTED]],
       layout: {
         // Biblical regions are not states: italic and sentence case, so they never read
         // as the polity labels (upper case) of the chosen year.
@@ -520,7 +520,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isWater, visibleAtZoom, NOT_DUP],
+      filter: ["all", isWater, visibleAtZoom, NOT_DUP, ["!", IS_SELECTED]],
       layout: {
         "text-field": NAME,
         "text-font": [MAP_FONT_ITALIC],
@@ -686,19 +686,28 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       paint: { "text-color": T.accent, "text-halo-color": T.halo, "text-halo-width": 1.6 },
     },
     {
-      // The selected mountain, spring or valley: landmarks are placed after towns, so its
-      // own layer, placed first, keeps a town beside it from taking its label's room.
+      // The selected region, sea, mountain or spring: their layers are placed after towns,
+      // so its own layer, placed first, keeps a town beside it from taking its label's room.
+      // A river drawn as a line keeps its line label.
       id: "place-label-selected",
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isLandmark, HAS_LOCAL_NAME, IS_SELECTED],
+      filter: [
+        "all",
+        IS_SELECTED,
+        ["!", isSettlement],
+        ["!", ["has", "line"]],
+        visibleAtZoom,
+        ["any", ["!", isLandmark], HAS_LOCAL_NAME],
+      ],
       layout: {
         "text-field": NAME,
         "text-font": [MAP_FONT_ITALIC],
         "text-size": 13.5,
         "text-variable-anchor": ["top", "bottom", "right", "left"],
         "text-radial-offset": 1,
+        "text-justify": "auto",
       },
       paint: { "text-color": T.accent, "text-halo-color": T.halo, "text-halo-width": 1.5 },
     },

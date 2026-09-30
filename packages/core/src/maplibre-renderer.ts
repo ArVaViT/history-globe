@@ -18,6 +18,7 @@ const PLACE_LAYERS = [
   "place-label-area",
   "place-label-water",
   "place-label-landmark",
+  "place-label-selected",
 ];
 
 export interface MapLibreRendererOptions extends StyleOptions {
@@ -78,6 +79,15 @@ export class MapLibreRenderer implements Renderer {
       // Wheel handled below: two fingers pan, a pinch or a mouse wheel zooms.
       scrollZoom: false,
     });
+    // The padding a flight uses stays with the map (the centre is the open part of the
+    // screen): set it from the start, so a link opens as a flight would, and on resize.
+    const pad = o.viewPadding;
+    if (pad) {
+      this.map.setPadding(pad());
+      this.map.on("resize", () => {
+        this.map.setPadding(pad());
+      });
+    }
     // Place icons are drawn when the style first asks for them.
     this.map.setMissingStyleImageResolver((id) => {
       if (this.map.hasImage(id)) return;
