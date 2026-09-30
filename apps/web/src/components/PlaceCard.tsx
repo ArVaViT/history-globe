@@ -60,6 +60,13 @@ export function PlaceCard({
     focusVerse.current = null;
   }, [versesShown]);
   const [copied, setCopied] = useState<"copied" | "failed" | null>(null);
+  const copiedTimer = useRef(0);
+  useEffect(
+    () => () => {
+      window.clearTimeout(copiedTimer.current);
+    },
+    [],
+  );
   const [allAlso, setAllAlso] = useState(false);
   const { t } = useTranslation();
   const ru = locale === "ru";
@@ -112,7 +119,8 @@ export function PlaceCard({
           onClick={() => {
             const done = (ok: boolean) => {
               setCopied(ok ? "copied" : "failed");
-              window.setTimeout(() => {
+              window.clearTimeout(copiedTimer.current);
+              copiedTimer.current = window.setTimeout(() => {
                 setCopied(null);
               }, 2000);
             };

@@ -258,7 +258,6 @@ export function App() {
                         locale: s.locale,
                         place: selected.id,
                         layers: s.layers,
-                        ...(s.tour ? { tour: s.tour.id } : {}),
                       },
                       window.location.search,
                     );
