@@ -1,0 +1,52 @@
+# Two judges east and west of the Jordan: Ehud (Judges 3:12-30) and Jephthah (Judges
+# 11:1-12:6), in the order of the text. The chronology of the judges is uncertain and Ehud
+# comes long before Jephthah; the tour's year (1150 BC) is the point of the Judges tour,
+# for the map only. At 12:1 the Synodal text reads a town (Севина) where the KJV reads
+# "northward" (Zaphon), so that stop stands at the fords of the Jordan, which both name.
+id: ehud-jephthah
+title:
+  en: "Ehud and Jephthah"
+  ru: "Аод и Иеффай"
+year: "1150 BC"
+approximate: true
+stops:
+  - place: a529e92 # City of Palms
+    ref: Judg.3.12-Judg.3.14
+    note:
+      en: "Eglon king of Moab, with Ammon and Amalek, smites Israel and takes the city of palm trees; Israel serves him eighteen years."
+      ru: "Еглон, царь Моавитский, с Аммонитянами и Амаликитянами поражает Израиль и овладевает Городом Пальм; Израиль служит ему восемнадцать лет."
+  - place: ab94aea # Gilgal
+    ref: Judg.3.15-Judg.3.25
+    note:
+      en: "Ehud the left-handed brings Israel's present, turns back from the quarries by Gilgal with a secret errand, and thrusts his dagger into Eglon."
+      ru: "Левша Аод приносит дары Израиля, возвращается от истуканов, которые в Галгале, с тайным словом к царю и вонзает меч в чрево Еглона."
+  - place: a1aff30 # Seirah
+    ref: Judg.3.26-Judg.3.30
+    note:
+      en: "He escapes to Seirath, blows a trumpet in mount Ephraim, and Israel takes the fords of the Jordan toward Moab; the land has rest eighty years."
+      ru: "Он спасается в Сеираф, трубит на горе Ефремовой, и Израиль перехватывает переправу через Иордан к Моаву; земля покоится восемьдесят лет."
+  - place: aaff3e1 # Tob
+    ref: Judg.11.1-Judg.11.3
+    note:
+      en: "Jephthah the Gileadite, driven out by his brothers, flees to the land of Tob, where vain men gather to him."
+      ru: "Иеффай Галаадитянин, изгнанный братьями, убегает в землю Тов, и к нему собираются праздные люди."
+  - place: a0f8af9 # Mizpah
+    ref: Judg.11.4-Judg.11.11
+    note:
+      en: "When Ammon makes war, the elders of Gilead fetch him, and at Mizpeh he is made head and captain before the Lord."
+      ru: "Когда Аммонитяне начинают войну, старейшины Галаада призывают его, и в Массифе народ ставит его начальником и вождём пред лицом Господа."
+  - place: af74969 # Aroer
+    ref: Judg.11.29-Judg.11.33
+    note:
+      en: "He vows that whatever comes out of his doors to meet him shall be the Lord's, and smites Ammon from Aroer to Minnith, twenty cities."
+      ru: "Он даёт обет: что выйдет из ворот дома его навстречу ему, будет Господу, и поражает Аммонитян от Ароера до Минифа, двадцать городов."
+  - place: a0f8af9 # Mizpah
+    ref: Judg.11.34-Judg.11.40
+    note:
+      en: 'At Mizpeh his only daughter comes out to meet him with timbrels and dances: "Alas, my daughter! thou hast brought me very low."'
+      ru: "В Массифе навстречу ему выходит с тимпанами и ликами его единственная дочь: «ах, дочь моя! ты сразила меня»."
+  - place: ae686c9 # Jordan
+    ref: Judg.12.1-Judg.12.6
+    note:
+      en: 'At the fords of the Jordan the men of Gilead know the men of Ephraim by one word: "Say now Shibboleth."'
+      ru: "У переправы через Иордан Галаадитяне узнают Ефремлян по одному слову: «скажи: шибболет»."
