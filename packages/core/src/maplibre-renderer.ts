@@ -5,6 +5,7 @@ import type { GeoJSONSource, Map as MLMap, MapMouseEvent } from "maplibre-gl";
 import type { Camera, LonLat, PolityName, Renderer, RendererEvents } from "./renderer.ts";
 import type { LayerVisibility } from "./state.ts";
 import { buildStyle, layersInGroup, type StyleOptions } from "./style.ts";
+import { wheelIntent } from "./wheel.ts";
 
 const READY_FALLBACK_MS = 6000;
 
@@ -44,6 +45,7 @@ export class MapLibreRenderer implements Renderer {
   private loaded = false;
   private destroyed = false;
   private readyTimer: ReturnType<typeof setTimeout> | undefined;
+  private settleTimer: ReturnType<typeof setTimeout> | undefined;
 
   constructor(o: MapLibreRendererOptions) {
     const style = buildStyle(o);
@@ -67,7 +69,24 @@ export class MapLibreRenderer implements Renderer {
       maxPitch: 80,
       attributionControl: { compact: true },
       canvasContextAttributes: { antialias: true },
+      // Wheel handled below: two fingers pan, a pinch or a mouse wheel zooms.
+      scrollZoom: false,
     });
+    this.map.getCanvasContainer().addEventListener(
+      "wheel",
+      (e) => {
+        e.preventDefault();
+        const intent = wheelIntent(e);
+        if (intent.kind === "pan") {
+          this.map.panBy([intent.dx, intent.dy], { animate: false });
+        } else {
+          const rect = this.map.getCanvasContainer().getBoundingClientRect();
+          const around = this.map.unproject([e.clientX - rect.left, e.clientY - rect.top]);
+          this.map.zoomTo(this.map.getZoom() + intent.dz, { around, animate: false });
+        }
+      },
+      { passive: false },
+    );
     this.map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-right");
     this.map.addControl(new maplibregl.ScaleControl({ unit: "metric" }), "bottom-left");
 
@@ -128,9 +147,14 @@ export class MapLibreRenderer implements Renderer {
       this.polityShown = false;
       for (const h of this.handlers.hoverPolity) h(null, null);
     });
+    // A trackpad sends dozens of small moves a second: report the camera once it rests.
     this.map.on("moveend", () => {
-      const cam = this.getCamera();
-      for (const h of this.handlers.cameraChanged) h(cam);
+      clearTimeout(this.settleTimer);
+      this.settleTimer = setTimeout(() => {
+        if (this.destroyed) return;
+        const cam = this.getCamera();
+        for (const h of this.handlers.cameraChanged) h(cam);
+      }, 150);
     });
   }
 
@@ -276,6 +300,7 @@ export class MapLibreRenderer implements Renderer {
   destroy(): void {
     this.destroyed = true;
     clearTimeout(this.readyTimer);
+    clearTimeout(this.settleTimer);
     this.pending = [];
     for (const set of Object.values(this.handlers)) set.clear();
     this.map.remove();
