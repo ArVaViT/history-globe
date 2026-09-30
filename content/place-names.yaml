@@ -3390,10 +3390,12 @@ places:
       excerpt: "Кеила, Ахзив и Мареша [и Едом]: девять городов с их"
   - id: a0ed7ff
     en: "Ziklag"
-    ru: "Циклаг"
+    # The Synodal text has "Циклаг" once (Josh 15:31) and "Секелаг" for David's town
+    # everywhere else (1 Sam 27-30, 2 Sam 1 and 4, 1 Chr 12).
+    ru: "Секелаг"
     evidence:
-      osis: Josh.15.31
-      excerpt: "Циклаг, Мадмана и Сансана,"
+      osis: 1Sam.27.6
+      excerpt: "дал ему Анхус Секелаг, посему Секелаг и остался"
   - id: aca767b
     en: "Moab"
     ru: "Моав"
