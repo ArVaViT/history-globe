@@ -1,5 +1,6 @@
 import { YEAR_MAX, YEAR_MIN } from "@hg/core";
 import type { Locale } from "@hg/model";
+import { Menu, PanelLeftClose } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { HoverTip, PolityTip } from "./components/HoverTip";
@@ -26,6 +27,23 @@ export function App() {
   const [data, setData] = useState<LoadedData | null>(null);
   const [dataError, setDataError] = useState<string | null>(null);
   const [playing, setPlaying] = useState(false);
+  // The whole left column hides at once (burger in the header), remembered in this browser.
+  const [panelsOpen, setPanelsOpen] = useState(() => {
+    try {
+      return localStorage.getItem("hg:panels-hidden") === null;
+    } catch {
+      return true;
+    }
+  });
+  const togglePanels = (open: boolean) => {
+    setPanelsOpen(open);
+    try {
+      if (open) localStorage.removeItem("hg:panels-hidden");
+      else localStorage.setItem("hg:panels-hidden", "1");
+    } catch {
+      // Storage refused: the column still toggles, it just forgets.
+    }
+  };
   const [ready, setReady] = useState(false);
   const [hover, setHover] = useState<{ id: string; at: { x: number; y: number } } | null>(null);
   const [inView, setInView] = useState<string[]>([]);
@@ -153,7 +171,11 @@ export function App() {
         setPlaying((p) => !p);
       } else if (e.key === "/") {
         e.preventDefault();
-        searchRef.current?.focus();
+        // The search may be hidden with the panels: show them, then focus it.
+        setPanelsOpen(true);
+        requestAnimationFrame(() => {
+          searchRef.current?.focus();
+        });
       } else if (e.key === "Escape") {
         engine.selectPlace(null);
         engine.stopTour();
@@ -200,37 +222,57 @@ export function App() {
         <>
           <div className="absolute top-4 bottom-12 left-4 flex flex-col gap-3 overflow-y-auto pr-1 [scrollbar-width:thin] *:shrink-0">
             {/* On a panel, not on the map: state labels run under the corner. */}
-            <Panel className="flex w-[340px] items-center justify-between px-4 py-2">
-              <h1 className="font-serif text-[20px] font-semibold tracking-tight text-ink">
+            <Panel className="flex w-[340px] items-center justify-between gap-2 px-2 py-2">
+              <button
+                onClick={() => {
+                  togglePanels(!panelsOpen);
+                }}
+                aria-expanded={panelsOpen}
+                aria-controls="side-panels"
+                aria-label={panelsOpen ? t("panels.hide") : t("panels.show")}
+                title={panelsOpen ? t("panels.hide") : t("panels.show")}
+                className="grid size-9 place-items-center rounded-full text-ink-soft hover:bg-paper-2 hover:text-ink"
+              >
+                {panelsOpen ? (
+                  <PanelLeftClose className="size-5" aria-hidden />
+                ) : (
+                  <Menu className="size-5" aria-hidden />
+                )}
+              </button>
+              <h1 className="flex-1 font-serif text-[20px] font-semibold tracking-tight text-ink">
                 History Globe
               </h1>
               <LocaleSwitch value={state.locale} onChange={engine.setLocale} />
             </Panel>
-            <SearchBox
-              data={data}
-              inputRef={searchRef}
-              onSelect={(id) => {
-                engine.selectPlace(id);
-              }}
-            />
-            <LayersPanel layers={state.layers} onToggle={engine.setLayer} />
-            <ToursPanel
-              tours={data.tours}
-              onStart={(id) => {
-                setPlaying(false);
-                engine.startTour(id);
-              }}
-            />
-            <InViewPanel
-              ids={inView}
-              data={data}
-              locale={state.locale}
-              year={state.year}
-              selected={state.selectedPlace}
-              onSelect={(id) => {
-                engine.selectPlace(id);
-              }}
-            />
+            {panelsOpen && (
+              <div id="side-panels" className="flex flex-col gap-3 *:shrink-0">
+                <SearchBox
+                  data={data}
+                  inputRef={searchRef}
+                  onSelect={(id) => {
+                    engine.selectPlace(id);
+                  }}
+                />
+                <LayersPanel layers={state.layers} onToggle={engine.setLayer} />
+                <ToursPanel
+                  tours={data.tours}
+                  onStart={(id) => {
+                    setPlaying(false);
+                    engine.startTour(id);
+                  }}
+                />
+                <InViewPanel
+                  ids={inView}
+                  data={data}
+                  locale={state.locale}
+                  year={state.year}
+                  selected={state.selectedPlace}
+                  onSelect={(id) => {
+                    engine.selectPlace(id);
+                  }}
+                />
+              </div>
+            )}
           </div>
 
           <div className="absolute top-4 right-4">

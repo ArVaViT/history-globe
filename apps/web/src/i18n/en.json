@@ -93,5 +93,9 @@
   },
   "error_data": "Could not load the data: {{msg}}",
   "error_map": "The map could not start: {{msg}}",
-  "new_tab": "opens in a new tab"
+  "new_tab": "opens in a new tab",
+  "panels": {
+    "hide": "Hide panels",
+    "show": "Show panels"
+  }
 }
