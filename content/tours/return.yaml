@@ -1,6 +1,7 @@
 # The return from exile under Ezra (Ezra 7-8, the seventh year of Artaxerxes I, c. 458 BC)
 # and Nehemiah (Neh 1-12, his twentieth year, c. 445 BC). The tour's year is Ezra's;
-# Nehemiah's stops show 445 BC, the dedication of the wall (Neh 12:27, not dated) with
+# Nehemiah's stops show 445 BC: the wall finished in Elul (6:15), the law read in the
+# seventh month after it (Neh 8), and the dedication of the wall (12:27, not dated) with
 # them. The first return under Cyrus (Ezra 1-6) is its own tour.
 id: return
 title:
@@ -43,11 +44,11 @@ stops:
     ref: Neh.8.1-Neh.8.8
     year: "445 BC"
     note:
-      en: "In the seventh month all the people gather before the Water Gate, and Ezra reads the book of the law from morning until midday, giving the sense."
-      ru: "В седьмой месяц весь народ собирается на площади перед Водяными воротами, и Ездра читает книгу закона от рассвета до полудня, и народ понимает прочитанное."
+      en: "In the seventh month all the people gather before the Water Gate; Ezra reads the book of the law from morning until midday, and the Levites give the sense."
+      ru: "В седьмой месяц весь народ собирается на площади перед Водяными воротами, Ездра читает книгу закона от рассвета до полудня, левиты поясняют, и народ понимает прочитанное."
   - place: a15257a # Jerusalem
     ref: Neh.12.27-Neh.12.43
     year: "445 BC"
     note:
-      en: 'Two great choirs go round the wall at its dedication, "so that the joy of Jerusalem was heard even afar off."'
-      ru: "При освящении стены два больших хора идут по ней, «и веселие Иерусалима далеко было слышно»."
+      en: 'At the dedication of the wall two great choirs go along it in opposite directions, "so that the joy of Jerusalem was heard even afar off."'
+      ru: "При освящении стены два больших хора идут по ней в разные стороны, «и веселие Иерусалима далеко было слышно»."
