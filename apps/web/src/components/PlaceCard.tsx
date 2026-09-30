@@ -1,4 +1,4 @@
-import { formatRef, type Locale } from "@hg/model";
+import { formatRef, formatYear, type Locale, type PlaceLife } from "@hg/model";
 import { ExternalLink, MapPin, X, ZoomIn } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -7,6 +7,15 @@ import { mapsUrl, verseUrl } from "../links";
 import { Panel } from "./Panel";
 
 const VERSES_SHOWN = 10;
+
+/** "ок. 20 г. н. э." for an approximate year. */
+function lifeYear(
+  y: { year: number; approximate: boolean },
+  locale: Locale,
+  t: (key: string) => string,
+): string {
+  return `${y.approximate ? `${t("place.circa")} ` : ""}${formatYear(y.year, locale)}`;
+}
 
 function safeRef(osis: string, locale: Locale): string {
   try {
@@ -22,6 +31,7 @@ const ALSO_SHOWN = 5;
 export function PlaceCard({
   place,
   sites,
+  life,
   at,
   alsoHere,
   locale,
@@ -33,6 +43,8 @@ export function PlaceCard({
 }: {
   place: PlaceProps;
   sites: readonly Site[];
+  /** When the place existed, if known (content/place-life.yaml). */
+  life?: PlaceLife | undefined;
   /** The place's point, [lon, lat]: where it is today on Google Maps. */
   at: readonly [number, number];
   /** Other records on the same point under another name. */
@@ -143,9 +155,26 @@ export function PlaceCard({
         </div>
       )}
 
+      {life && (
+        <div className="mx-5 mt-3 rounded-xl border border-line bg-paper-2/60 px-3 py-2 text-[13px] leading-snug text-ink">
+          <div className="font-medium">
+            {life.from && t("place.life_from", { year: lifeYear(life.from, locale, t) })}
+            {life.from && life.until && " · "}
+            {life.until &&
+              t(life.from ? "place.life_until" : "place.life_until_only", {
+                year: lifeYear(life.until, locale, t),
+              })}
+          </div>
+          <div className="mt-0.5">{life.note[locale] ?? life.note.en}</div>
+          <div className="mt-1 text-[11px] text-ink-soft">{life.sources.join("; ")}</div>
+        </div>
+      )}
+
       {beforeItsTime(place, year) && (
         <div className="mx-5 mt-3 text-[12.5px] leading-snug text-ink-soft italic">
-          {t("place.nt_only")}
+          {life
+            ? t(year < (place.life_from ?? -Infinity) ? "place.not_yet" : "place.no_longer")
+            : t("place.nt_only")}
         </div>
       )}
 

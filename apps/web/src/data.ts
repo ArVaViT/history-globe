@@ -1,5 +1,5 @@
 import { NT_FROM, type PlaceInfo, type Tour } from "@hg/core";
-import type { ContentRelease, Locale } from "@hg/model";
+import type { ContentRelease, Locale, PlaceLife } from "@hg/model";
 import type { FeatureCollection, Point } from "geojson";
 
 export interface PlaceProps {
@@ -16,6 +16,10 @@ export interface PlaceProps {
   readonly dup?: boolean;
   /** The same in Russian: another record on this point has the same Russian name. */
   readonly dup_ru?: boolean;
+  /** First year the place stood, astronomical (content/place-life.yaml). */
+  readonly life_from?: number;
+  /** First year it no longer stood (half-open end). */
+  readonly life_until?: number;
   readonly verses: number;
   readonly nt: number;
   readonly ot: number;
@@ -40,7 +44,13 @@ export interface Site {
 }
 
 /** Named only in the New Testament, and the year is before its events: shown faded. */
-export function beforeItsTime(place: Pick<PlaceProps, "ot">, year: number): boolean {
+export function beforeItsTime(
+  place: Pick<PlaceProps, "ot" | "life_from" | "life_until">,
+  year: number,
+): boolean {
+  // Known years of the place win; otherwise, named only in the New Testament → before 6 BC.
+  if (place.life_from !== undefined || place.life_until !== undefined)
+    return year < (place.life_from ?? -Infinity) || year >= (place.life_until ?? Infinity);
   return place.ot === 0 && year < NT_FROM;
 }
 
@@ -52,6 +62,8 @@ export interface LoadedData {
   readonly sites: ReadonlyMap<string, readonly Site[]>;
   /** Other records on the same point under another name (Babylon: Babylonia, Babel). */
   readonly alsoHere: Readonly<Record<Locale, ReadonlyMap<string, readonly string[]>>>;
+  /** When places existed, with the note and sources (content/place-life.yaml). */
+  readonly life: Readonly<Record<string, PlaceLife>>;
 }
 
 export const DATA_URL = "/data";
@@ -157,10 +169,13 @@ export async function loadData(): Promise<LoadedData> {
   for (const f of places.features) {
     const entry = content.names[f.properties.id];
     const whereRu = content.where_ru?.[f.properties.id];
+    const life = content.life?.[f.properties.id];
     const props: PlaceProps = {
       ...f.properties,
       ...(entry ? { name_ru: entry.ru, ...(entry.osis ? { name_ru_osis: entry.osis } : {}) } : {}),
       ...(whereRu ? { where_ru: whereRu } : {}),
+      ...(life?.from ? { life_from: life.from.year } : {}),
+      ...(life?.until ? { life_until: life.until.year + 1 } : {}),
     };
     f.properties = props;
     const [lon = 0, lat = 0] = f.geometry.coordinates;
@@ -189,7 +204,7 @@ export async function loadData(): Promise<LoadedData> {
     uk: alsoHere(places.features, "ru"),
     de: alsoHere(places.features, "en"),
   };
-  return { places, byId, tours, sites, alsoHere: here };
+  return { places, byId, tours, sites, alsoHere: here, life: content.life ?? {} };
 }
 
 /** Search by English or Russian name; exact prefix first, then by importance. */

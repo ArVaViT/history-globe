@@ -198,3 +198,26 @@ describe("place labels on the Russian map", () => {
     expect(labelled("ru", { kind: "body of water", name: "Great Sea" })).toBe(true);
   });
 });
+
+describe("places outside their known years", () => {
+  const index = style.layers.findIndex((l) => l.id === "place-label");
+  const layer = style.layers[index];
+  const opacity =
+    layer && "paint" in layer ? (layer.paint as Record<string, unknown>)["text-opacity"] : null;
+  function at(year: number, props: Record<string, unknown>): number {
+    const rootKey = `layers[${String(index)}].paint.text-opacity`;
+    const compiled = expression.createExpression(opacity, rootKey, null, { year });
+    if (compiled.result !== "success") throw new Error("text-opacity does not compile");
+    return compiled.value.evaluate(
+      { zoom: 8 },
+      { type: 1, properties: props, geometry: [] } as never,
+      { selected: false },
+    ) as number;
+  }
+
+  it("fade after destruction and before founding, whatever the testament", () => {
+    expect(at(-700, { ot: 27, life_until: -610 })).toBe(1);
+    expect(at(-600, { ot: 27, life_until: -610 })).toBeLessThan(1);
+    expect(at(-10, { ot: 0, life_from: -21 })).toBe(1);
+  });
+});

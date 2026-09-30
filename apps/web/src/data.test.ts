@@ -119,6 +119,15 @@ describe("beforeItsTime", () => {
     expect(beforeItsTime({ ot: 0 }, 30)).toBe(false);
     expect(beforeItsTime({ ot: 3 }, -1200)).toBe(false);
   });
+
+  it("uses the known years of a place instead", () => {
+    // Nineveh (OT) destroyed in 612 BC = -611, last year inclusive -> life_until -610.
+    expect(beforeItsTime({ ot: 27, life_until: -610 }, -700)).toBe(false);
+    expect(beforeItsTime({ ot: 27, life_until: -610 }, -600)).toBe(true);
+    // Caesarea (NT only) from 22 BC = -21: shown from then, not only from 6 BC.
+    expect(beforeItsTime({ ot: 0, life_from: -21 }, -10)).toBe(false);
+    expect(beforeItsTime({ ot: 0, life_from: -21 }, -30)).toBe(true);
+  });
 });
 
 describe("alsoHere", () => {

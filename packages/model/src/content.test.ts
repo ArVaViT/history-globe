@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { PlaceNamesFile, PolityOverridesFile, TourFile } from "./content.ts";
+import { PlaceLifeFile, PlaceNamesFile, PolityOverridesFile, TourFile } from "./content.ts";
 
 describe("PlaceNamesFile", () => {
   const entry = {
@@ -68,5 +68,29 @@ describe("PolityOverridesFile", () => {
 
   it("requires a source", () => {
     expect(() => PolityOverridesFile.parse({ overrides: [{ ...entry, sources: [] }] })).toThrow();
+  });
+});
+
+describe("PlaceLifeFile", () => {
+  const entry = {
+    id: "ac9adc9",
+    en: "Tiberias",
+    note: { en: "a", ru: "а" },
+    sources: ["Josephus"],
+  };
+
+  it("keeps an approximate year as approximate", () => {
+    const got = PlaceLifeFile.parse({ places: [{ ...entry, from: "c. AD 20" }] }).places[0];
+    expect(got?.from).toEqual({ year: 20, approximate: true });
+  });
+
+  it("needs a year and a source, and a from before its until", () => {
+    expect(() => PlaceLifeFile.parse({ places: [entry] })).toThrow();
+    expect(() =>
+      PlaceLifeFile.parse({ places: [{ ...entry, from: "AD 20", sources: [] }] }),
+    ).toThrow();
+    expect(() =>
+      PlaceLifeFile.parse({ places: [{ ...entry, from: "AD 20", until: "10 BC" }] }),
+    ).toThrow();
   });
 });

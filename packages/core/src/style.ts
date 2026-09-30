@@ -163,6 +163,23 @@ const ICON_OF_KIND: ExpressionSpecification = [
 /** First year of the New Testament narrative (6 BC, astronomical -5). */
 export const NT_FROM = -5;
 
+/**
+ * The place did not stand in the chosen year. (coalesce, not to-number: to-number turns
+ * a missing value into 0, which would read as "founded in 1 BC".) Its known years (content/place-life.yaml,
+ * `life_from`/`life_until`, half-open) win; without them, a place named only in the New
+ * Testament is out of its time before 6 BC.
+ */
+const OUT_OF_TIME: ExpressionSpecification = [
+  "case",
+  ["any", ["has", "life_from"], ["has", "life_until"]],
+  [
+    "any",
+    ["<", YEAR, ["number", ["coalesce", ["get", "life_from"], -100000]]],
+    [">=", YEAR, ["number", ["coalesce", ["get", "life_until"], 100000]]],
+  ],
+  ["all", ["==", ["get", "ot"], 0], ["<", YEAR, NT_FROM]],
+];
+
 /** A second record of the same name on the same point (pipeline `dup`): dot, no label. */
 const NOT_DUP: ExpressionSpecification = [
   "any",
@@ -184,7 +201,7 @@ const PLACE_ORDER: ExpressionSpecification = [
     // The selected place is placed first, whatever its year.
     ["==", ["get", "id"], ["global-state", "selected"]],
     -1000000,
-    ["all", ["==", ["get", "ot"], 0], ["<", YEAR, NT_FROM]],
+    OUT_OF_TIME,
     100000,
     0,
   ],
@@ -199,7 +216,7 @@ const fadeBeforeNT = (faded: number): ExpressionSpecification => [
   "case",
   ["boolean", ["feature-state", "selected"], false],
   1,
-  ["all", ["==", ["get", "ot"], 0], ["<", YEAR, NT_FROM]],
+  OUT_OF_TIME,
   faded,
   1,
 ];

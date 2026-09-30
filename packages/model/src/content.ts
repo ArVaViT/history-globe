@@ -31,6 +31,17 @@ const yearLabel = z.string().transform((s, ctx) => {
   }
 });
 
+/** A year that may be approximate ("c. AD 20"): the flag is kept, never dropped. */
+const approxYear = z.string().transform((s, ctx) => {
+  try {
+    const label = parseLabel(s);
+    return { year: toAstronomical(label), approximate: label.approximate === true };
+  } catch (e) {
+    ctx.addIssue({ code: "custom", message: (e as Error).message });
+    return z.NEVER;
+  }
+});
+
 const localized = z.object({ en: z.string().min(1), ru: z.string().min(1) }).catchall(z.string());
 
 export const PlaceNamesFile = z.strictObject({
@@ -62,6 +73,32 @@ export const PolityOverridesFile = z.strictObject({
   ),
 });
 
+/**
+ * When a place existed as a town (content/place-life.yaml): founded, destroyed or
+ * abandoned. Outside these years the map shows it faded. Each entry names its sources.
+ */
+export const PlaceLifeFile = z.strictObject({
+  places: z.array(
+    z
+      .strictObject({
+        id: z.string().regex(/^a[0-9a-f]{6}$/),
+        en: z.string().min(1),
+        /** First year it stood (founded, built, first settled). */
+        from: approxYear.optional(),
+        /** Last year it stood (destroyed, abandoned), inclusive. */
+        until: approxYear.optional(),
+        note: localized,
+        sources: z.array(z.string().min(1)).min(1),
+      })
+      .refine((p) => p.from !== undefined || p.until !== undefined, {
+        message: "give from, until or both",
+      })
+      .refine((p) => !p.from || !p.until || p.from.year <= p.until.year, {
+        message: "from must not be after until",
+      }),
+  ),
+});
+
 export const TourFile = z.strictObject({
   id: z.string().regex(/^[a-z0-9-]+$/),
   title: localized,
@@ -83,4 +120,13 @@ export interface ContentRelease {
   readonly tours: readonly TourFile[];
   /** Russian "where it is today" for places whose English one names another place. */
   readonly where_ru?: Readonly<Record<string, string>>;
+  /** When places existed (content/place-life.yaml); `until` is the last year, inclusive. */
+  readonly life?: Readonly<Record<string, PlaceLife>>;
+}
+
+export interface PlaceLife {
+  readonly from?: { readonly year: number; readonly approximate: boolean };
+  readonly until?: { readonly year: number; readonly approximate: boolean };
+  readonly note: Readonly<Record<string, string>>;
+  readonly sources: readonly string[];
 }

@@ -292,6 +292,7 @@ export function App() {
                   place={selected}
                   at={data.byId.get(selected.id)?.info.at ?? [0, 0]}
                   sites={data.sites.get(selected.id) ?? []}
+                  life={data.life[selected.id]}
                   alsoHere={(data.alsoHere[state.locale].get(selected.id) ?? []).flatMap((id) => {
                     const p = data.byId.get(id)?.props;
                     return p ? [p] : [];

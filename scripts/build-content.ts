@@ -12,6 +12,8 @@ import {
   PlaceNamesFile,
   PolityNamesFile,
   PolityOverridesFile,
+  PlaceLifeFile,
+  type PlaceLife,
   TourFile,
   type ContentRelease,
 } from "../packages/model/src/content.ts";
@@ -249,6 +251,19 @@ for (const f of places.features) {
   if (ru) whereRu[p.id] = ru;
 }
 
+// When places existed (content/place-life.yaml).
+const life: Record<string, PlaceLife> = {};
+for (const p of PlaceLifeFile.parse(load("content/place-life.yaml")).places) {
+  if (!known.has(p.id)) errors.push(`place-life: ${p.id} (${p.en}) is not in the data build`);
+  if (p.id in life) errors.push(`place-life: ${p.id} (${p.en}) is listed twice`);
+  life[p.id] = {
+    ...(p.from ? { from: p.from } : {}),
+    ...(p.until ? { until: p.until } : {}),
+    note: p.note,
+    sources: p.sources,
+  };
+}
+
 // Candidate sites get a Russian label where their English one refers to a place with a
 // Synodal name ("same place as Abila" -> "то же место, что Авила").
 const sitesPath = join(out, "sites.geojson");
@@ -285,7 +300,7 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-const release: ContentRelease = { schema_version: 1, names, tours, where_ru: whereRu };
+const release: ContentRelease = { schema_version: 1, names, tours, where_ru: whereRu, life };
 for (const [path, text] of writes) writeFileSync(path, text);
 writeFileSync(join(out, "content.json"), JSON.stringify(release));
 console.log(

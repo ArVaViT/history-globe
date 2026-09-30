@@ -1,0 +1,30 @@
+# When places existed as towns (ADR 0003 years; "c." marks an approximate year and is
+# kept). Outside [from, until] the map shows the place faded, whatever the testament.
+# Every entry cites its sources. Dated records for ten New Testament cities are drafted
+# and reviewed (research sessions, 29.09) and go here next.
+places:
+  - id: ac9adc9
+    en: Tiberias
+    from: "c. AD 20"
+    note:
+      en: "Founded by Herod Antipas on the Sea of Galilee and named after Tiberius."
+      ru: "Основан Иродом Антипой на берегу Галилейского моря и назван в честь Тиберия."
+    sources:
+      - "Josephus, Antiquities 18.36-38"
+  - id: a58735e
+    en: Caesarea
+    from: "22 BC"
+    note:
+      en: "Built by Herod the Great from 22 BC on the site of Strato's Tower."
+      ru: "Построена Иродом Великим с 22 г. до н. э. на месте Башни Стратона."
+    sources:
+      - "Josephus, Antiquities 15.331-341; 16.136"
+  - id: a70fd5d
+    en: Nineveh
+    until: "612 BC"
+    note:
+      en: "Taken and destroyed by the Babylonians and the Medes in 612 BC."
+      ru: "Взята и разрушена вавилонянами и мидянами в 612 г. до н. э."
+    sources:
+      - "Babylonian Chronicle, ABC 3 (Fall of Nineveh Chronicle)"
+      - "Nahum 2-3"
