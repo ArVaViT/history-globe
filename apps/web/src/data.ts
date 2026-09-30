@@ -219,6 +219,7 @@ export async function loadData(): Promise<LoadedData> {
       at: byId.get(s.place)?.info.at ?? [0, 0],
       ref: s.ref,
       note: s.note,
+      ...(s.year !== undefined ? { year: s.year } : {}),
     })),
   }));
   const marked = markRussianDuplicates(places.features);

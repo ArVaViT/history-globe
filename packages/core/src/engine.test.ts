@@ -13,7 +13,7 @@ const tour: Tour = {
   year: 47,
   stops: [
     { placeId: "antioch", at: [36.17, 36.23], ref: "Acts.13.1-Acts.13.3", note: {} },
-    { placeId: "missing", at: [35.92, 36.12], ref: "Acts.13.4", note: {} },
+    { placeId: "missing", at: [35.92, 36.12], ref: "Acts.13.4", note: {}, year: 48 },
   ],
 };
 
@@ -96,6 +96,11 @@ describe("engine", () => {
     engine.goToStop(1);
     expect(renderer.last("route")).toEqual({ op: "route", points: 2, current: 1 });
     expect(engine.store.get().selectedPlace).toBeNull();
+    // A stop with its own year moves the slider; back at a stop without one, the tour's.
+    expect(engine.store.get().year).toBe(48);
+    engine.goToStop(0);
+    expect(engine.store.get().year).toBe(47);
+    engine.goToStop(1);
     engine.stopTour();
     expect(renderer.last("route")).toEqual({ op: "route", points: 0, current: -1 });
   });

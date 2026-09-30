@@ -25,6 +25,8 @@ export interface TourStop {
   readonly at: LonLat;
   readonly ref: string;
   readonly note: Readonly<Record<string, string>>;
+  /** The map's year at this stop; the tour's year otherwise. */
+  readonly year?: number;
 }
 
 export interface Tour {
@@ -117,6 +119,7 @@ export function createEngine(options: {
     store.set({
       tour: { id: tour.id, step },
       selectedPlace: places.has(stop.placeId) ? stop.placeId : null,
+      year: clampYear(stop.year ?? tour.year),
     });
     renderer.flyTo({ center: stop.at, zoom: 7.6, pitch: 55, bearing: -20 + step * 3 });
   };

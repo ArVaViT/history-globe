@@ -136,7 +136,13 @@ export const TourFile = z.strictObject({
   approximate: z.boolean().optional(),
   stops: z
     .array(
-      z.strictObject({ place: z.string().regex(/^a[0-9a-f]{6}$/), ref: osis, note: localized }),
+      z.strictObject({
+        place: z.string().regex(/^a[0-9a-f]{6}$/),
+        ref: osis,
+        note: localized,
+        /** The map's year at this stop, where the text dates it apart from the tour's. */
+        year: yearLabel.optional(),
+      }),
     )
     .min(2),
 });

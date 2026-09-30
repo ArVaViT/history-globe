@@ -11,16 +11,19 @@ approximate: true
 stops:
   - place: a112427 # Bethlehem
     ref: Matt.2.1
+    year: "5 BC"
     note:
       en: "Jesus is born in Bethlehem of Judea in the days of Herod."
       ru: "Иисус родился в Вифлееме Иудейском во дни царя Ирода."
   - place: af301ca # Egypt
     ref: Matt.2.13-Matt.2.15
+    year: "5 BC"
     note:
       en: "Joseph takes the child and his mother to Egypt."
       ru: "Иосиф уводит Младенца и Матерь Его в Египет."
   - place: af5884f # Nazareth
     ref: Matt.2.23
+    year: "4 BC"
     note:
       en: "The family settles in Nazareth."
       ru: "Семья поселяется в Назарете."

@@ -345,20 +345,21 @@ const NT_FROM = -5; // 6 BC, as in apps/web/src/data.ts
 const otVerses = new Map(places.features.map((f) => [f.properties.id, f.properties.ot]));
 for (const t of tours) {
   for (const [i, s] of t.stops.entries()) {
+    const year = s.year ?? t.year;
     const l = life[s.place];
     if (!l) {
-      if (otVerses.get(s.place) === 0 && t.year < NT_FROM)
+      if (otVerses.get(s.place) === 0 && year < NT_FROM)
         warnings.push(
           `tours/${t.id}: stop ${String(i + 1)} (${s.place}) is named only in the New Testament, before its events`,
         );
       continue;
     }
     const state =
-      l.gap && t.year >= l.gap.from.year && t.year <= l.gap.until.year
+      l.gap && year >= l.gap.from.year && year <= l.gap.until.year
         ? "in ruins"
-        : l.until && t.year > l.until.year
+        : l.until && year > l.until.year
           ? "gone"
-          : l.from && t.year < l.from.year
+          : l.from && year < l.from.year
             ? "not yet built"
             : null;
     if (state)

@@ -10,6 +10,7 @@ approximate: true
 stops:
   - place: a15257a # Jerusalem
     ref: Acts.2.14-Acts.2.41
+    year: "AD 30"
     note:
       en: "At Pentecost Peter stands with the eleven and speaks; about three thousand are baptised."
       ru: "В день Пятидесятницы Пётр, став с одиннадцатью, говорит народу; крестятся около трёх тысяч."
@@ -40,6 +41,7 @@ stops:
       ru: "Вернувшись в Иерусалим, он рассказывает церкви о Корнилии; заключённого Иродом, его выводит из темницы Ангел."
   - place: a58735e # Caesarea
     ref: Acts.12.19-Acts.12.23
+    year: "AD 44"
     note:
       en: "In Caesarea Herod, who gave not God the glory, is struck by the angel of the Lord and dies."
       ru: "В Кесарии Ирода, не воздавшего славы Богу, поражает Ангел Господень, и он умирает."

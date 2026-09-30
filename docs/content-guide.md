@@ -27,8 +27,10 @@ in `data-checks.md`; this is what it cannot check.
 - **The year is a point for the map**, marked `approximate: true` unless the whole tour
   happened in one known year. The header comment says what the year stands for and what
   else is held (the Exodus: 1446 BC after 1 Kgs 6:1, c. 1260 BC also held; the
-  patriarchs: a conventional point). The build warns if a stop's place is drawn faded in
-  that year (not yet built, in ruins, gone).
+  patriarchs: a conventional point). A stop may carry its own `year` where the text dates
+  it apart (Nehemiah's twentieth year, 445 BC, in a tour set at Ezra's 458; the fortieth
+  year of the Exodus at Mount Hor); the slider moves to it. The build warns if a stop's
+  place is drawn faded in its year (not yet built, in ruins, gone).
 - Notes are one or two sentences: where, who, what happened. Quotations in «» are
   verbatim Synodal; in English, in straight double quotes.
 - Avoid two stops citing the same verse; where the text moves on within a verse, cite
