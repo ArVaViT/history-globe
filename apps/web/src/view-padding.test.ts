@@ -16,5 +16,10 @@ describe("viewPadding", () => {
     expect(p).toEqual({ top: 0, bottom: 140, left: 356, right: 396 });
     // The open strip between the panels and the card.
     expect(p.left + (844 - p.left - p.right) / 2).toBe(402);
+    // Narrower still, the strip shrinks but stays between the column and the card.
+    const q = viewPadding(780, 480);
+    const x = q.left + (780 - q.left - q.right) / 2;
+    expect(x).toBeGreaterThan(356);
+    expect(x).toBeLessThan(780 - 396);
   });
 });

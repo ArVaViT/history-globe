@@ -88,9 +88,17 @@ export class MapLibreRenderer implements Renderer {
       const apply = () => {
         this.map.setPadding(pad());
       };
+      let waiting = false;
       this.map.on("resize", () => {
-        if (this.map.isMoving()) this.map.once("moveend", apply);
-        else apply();
+        if (!this.map.isMoving()) {
+          apply();
+        } else if (!waiting) {
+          waiting = true;
+          this.map.once("moveend", () => {
+            waiting = false;
+            apply();
+          });
+        }
       });
     }
     // Place icons are drawn when the style first asks for them.

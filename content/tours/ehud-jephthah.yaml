@@ -2,7 +2,7 @@
 # 11:1-12:6), in the order of the text. The chronology of the judges is uncertain and Ehud
 # comes long before Jephthah; the tour's year (1150 BC) is the point of the Judges tour,
 # for the map only. At 12:1 the Synodal text reads a town (Севина) where the KJV reads
-# "northward" (Zaphon), so that stop stands at the fords of the Jordan, which both name.
+# "northward" (Zaphon), so that stop stands at the crossing of the Jordan, which both name.
 id: ehud-jephthah
 title:
   en: "Ehud and Jephthah"
@@ -23,7 +23,7 @@ stops:
   - place: a1aff30 # Seirah
     ref: Judg.3.26-Judg.3.30
     note:
-      en: "He escapes to Seirath, blows a trumpet in mount Ephraim, and Israel takes the fords of the Jordan toward Moab; the land has rest eighty years."
+      en: "He escapes to Seirah, blows a trumpet in mount Ephraim, and Israel takes the fords of the Jordan toward Moab; the land has rest eighty years."
       ru: "Он спасается в Сеираф, трубит на горе Ефремовой, и Израиль перехватывает переправу через Иордан к Моаву; земля покоится восемьдесят лет."
   - place: aaff3e1 # Tob
     ref: Judg.11.1-Judg.11.3
@@ -33,8 +33,8 @@ stops:
   - place: a0f8af9 # Mizpah
     ref: Judg.11.4-Judg.11.11
     note:
-      en: "When Ammon makes war, the elders of Gilead fetch him, and at Mizpeh he is made head and captain before the Lord."
-      ru: "Когда Аммонитяне начинают войну, старейшины Галаада призывают его, и в Массифе народ ставит его начальником и вождём пред лицом Господа."
+      en: "When Ammon makes war, the elders of Gilead fetch him; the people make him head and captain, and he utters all his words before the Lord in Mizpeh."
+      ru: "Когда Аммонитяне начинают войну, старейшины Галаада призывают его; народ ставит его начальником и вождём, и в Массифе он произносит все слова свои пред лицом Господа."
   - place: af74969 # Aroer
     ref: Judg.11.29-Judg.11.33
     note:
@@ -48,5 +48,5 @@ stops:
   - place: ae686c9 # Jordan
     ref: Judg.12.1-Judg.12.6
     note:
-      en: 'At the fords of the Jordan the men of Gilead know the men of Ephraim by one word: "Say now Shibboleth."'
+      en: 'At the passages of Jordan the men of Gilead know the men of Ephraim by one word: "Say now Shibboleth."'
       ru: "У переправы через Иордан Галаадитяне узнают Ефремлян по одному слову: «скажи: шибболет»."

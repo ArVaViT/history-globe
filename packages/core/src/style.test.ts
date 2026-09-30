@@ -211,7 +211,7 @@ describe("place labels on the Russian map", () => {
     expect(style.layers.at(-1)?.id).toBe("place-label-selected");
   });
 
-  it("label a selected region or sea in the same layer, a town and a river line in their own", () => {
+  it("label a selected region or sea in the same layer, a town in its own and a river line in none of them", () => {
     const layersFor = (props: Record<string, unknown>) =>
       style.layers
         .filter((l) => l.id.startsWith("place-label") && "filter" in l)
