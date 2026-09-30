@@ -1,0 +1,26 @@
+# Jonah: 2 Kings 14:25 and the book of Jonah, in the order of the text. The tour's year
+# (780 BC) falls in the reign of Jeroboam II (c. 793-753 BC), when 2 Kings places Jonah's
+# word; a point for the map. Tarshish, where he meant to flee, is not reached and its
+# location is disputed, so it is not a stop.
+id: jonah
+title:
+  en: "Jonah"
+  ru: "Пророк Иона"
+year: "780 BC"
+approximate: true
+stops:
+  - place: ac51cec # Gath-hepher
+    ref: 2Kgs.14.25
+    note:
+      en: "Jonah son of Amittai, the prophet from Gath-hepher."
+      ru: "Иона, сын Амафиин, пророк из Гафхефера."
+  - place: ae023a9 # Joppa
+    ref: Jonah.1.3
+    note:
+      en: "Fleeing from the presence of the Lord, he goes down to Joppa and finds a ship bound for Tarshish."
+      ru: "Убегая от лица Господня, он приходит в Иоппию и находит корабль, отправлявшийся в Фарсис."
+  - place: a70fd5d # Nineveh
+    ref: Jonah.3.3-Jonah.4.11
+    note:
+      en: "He preaches in Nineveh, the people turn from their evil way, and God spares the great city."
+      ru: "Он проповедует в Ниневии, жители обращаются от злого пути, и Бог щадит великий город."
