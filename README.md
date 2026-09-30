@@ -55,6 +55,7 @@ What the data and content checks refuse, and why: `docs/data-checks.md`.
   - [0008. Data licensing policy](docs/adr/0008-data-licensing-policy.md)
   - [0009. Backend, in phases](docs/adr/0009-backend-phasing.md)
   - [0010. Quality gates](docs/adr/0010-quality-gates.md)
+  - [0011. MapLibre unbundled; the JS budget counts its worker](docs/adr/0011-maplibre-unbundled-and-the-js-budget.md)
 - `docs/data-checks.md` — what the build refuses, and why.
 - `docs/content-guide.md` — how tours, events and the years of towns are written.
 - `docs/embed-protocol.md` — the iframe contract with host platforms.
