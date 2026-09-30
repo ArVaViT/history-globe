@@ -1584,10 +1584,11 @@ places:
       excerpt: "Господня, и дошли до Тафниса."
   - id: a51df0e
     en: "Engedi"
-    ru: "Ен-Геди"
+    # "Ен-Геди" once (Josh 15:62); "Ен-Гадди" in 1 Sam 24 and Ezek 47:10.
+    ru: "Ен-Гадди"
     evidence:
-      osis: Josh.15.62
-      excerpt: "Нившан, Ир-Мелах и Ен-Геди: шесть городов с их селами."
+      osis: Ezek.47.10
+      excerpt: "рыболовы от Ен-Гадди до Эглаима"
   - id: ae00861
     en: "Machpelah"
     ru: "Махпела"
@@ -1602,10 +1603,11 @@ places:
       excerpt: "Я посещу Аммона, который в Но, и фараона и Египет,"
   - id: a6f048c
     en: "Gibbethon"
-    ru: "Гиввефон"
+    # "Гиввефон" in the lists of Joshua (2), "Гавафон" in the story of 1 Kgs 15-16 (3).
+    ru: "Гавафон"
     evidence:
-      osis: Josh.19.44
-      excerpt: "Елтеке, Гиввефон и Ваалаф,"
+      osis: 1Kgs.15.27
+      excerpt: "убил его Вааса при Гавафоне Филистимском"
   - id: a5a6458
     en: "Kishon"
     ru: "Киссон"
@@ -2502,10 +2504,11 @@ places:
       excerpt: "и Гоморру, вся до Сигора орошалась водою, как сад Господень,"
   - id: a355b6e
     en: "Eshtaol"
-    ru: "Ештаол"
+    # "Ештаол" in the lists of Joshua (2), "Естаол" in Judges (5).
+    ru: "Естаол"
     evidence:
-      osis: Josh.15.33
-      excerpt: "На низменных местах: Ештаол, Цора и Ашна,"
+      osis: Judg.13.25
+      excerpt: "в стане Дановом, между Цорою и Естаолом."
   - id: a0b5c50
     en: "Zin"
     ru: "Син"
@@ -4353,10 +4356,11 @@ places:
       excerpt: "И взял Валак Валаама на верх Фегора, обращенного к пустыне."
   - id: a6fea11
     en: "Ashtaroth"
-    ru: "Аштероф"
+    # "Аштероф" for the town only in Deut 1:4; "Астароф" five times in Joshua.
+    ru: "Астароф"
     evidence:
-      osis: Deut.1.4
-      excerpt: "и Ога, царя Васанского, который жил в Аштерофе в Едреи,"
+      osis: Josh.12.4
+      excerpt: "последний из Рефаимов, живший в Астарофе и в Едреи,"
   - id: ab45bd3
     en: "Ethiopia"
     ru: "Ефиопия"
@@ -4419,10 +4423,12 @@ places:
       excerpt: "Иисус, сын Навин, из Ситтима двух соглядатаев тайно и сказал:"
   - id: abfbfb9
     en: "Zeboiim"
-    ru: "Цевоим"
+    # "Цевоим" once (Gen 10:19); "Севоим" in Gen 14, Deut 29 and Hos 11. The other
+    # "Цевоим" (1 Sam 13:18, Neh 11:34) are other places.
+    ru: "Севоим"
     evidence:
-      osis: Gen.10.19
-      excerpt: "Газы, отсюда к Содому, Гоморре, Адме и Цевоиму до Лаши."
+      osis: Deut.29.23
+      excerpt: "по истреблении Содома, Гоморры, Адмы и Севоима,"
   - id: a874951
     en: "Asshur"
     ru: "Ассур"
@@ -5199,10 +5205,11 @@ places:
       excerpt: "были пределы Хананеев от Сидона к Герару до Газы, отсюда"
   - id: ac86af5
     en: "Shunem"
-    ru: "Сунем"
+    # "Сунем" once (Josh 19:18); the town is "Сонам" in 1 Sam 28 and 2 Kgs 4.
+    ru: "Сонам"
     evidence:
-      osis: Josh.19.18
-      excerpt: "пределом их был: Изреель, Кесуллоф и Сунем,"
+      osis: 2Kgs.4.8
+      excerpt: "В один день пришел Елисей в Сонам."
   - id: a3d2f0a
     en: "Chebar"
     ru: "Река Ховар"
@@ -5379,10 +5386,11 @@ places:
       excerpt: "до предела Кислоф-Фавора; отсюда идет к Даврафу и восходит к"
   - id: a573b95
     en: "Ezem"
-    ru: "Ецем"
+    # "Ецем" once (1 Chr 4:29), "Ацем" in Josh 15:29 and 19:3.
+    ru: "Ацем"
     evidence:
-      osis: 1Chr.4.29
-      excerpt: "в Билге, в Ецеме, в Фоладе,"
+      osis: Josh.15.29
+      excerpt: "Ваала, Иим и Ацем,"
   - id: af19252
     en: "Habor"
     ru: "Хавор"
