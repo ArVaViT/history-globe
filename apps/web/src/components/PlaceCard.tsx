@@ -1,4 +1,4 @@
-import { formatRef, formatYear, type Locale, type PlaceLife } from "@hg/model";
+import { formatRef, formatYear, type HistoryEvent, type Locale, type PlaceLife } from "@hg/model";
 import { ExternalLink, MapPin, X, ZoomIn } from "./icons";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "../i18n";
@@ -7,6 +7,7 @@ import { mapsUrl, verseUrl } from "../links";
 import { Panel } from "./Panel";
 
 const VERSES_SHOWN = 10;
+const EVENTS_SHOWN = 5;
 
 /** "ок. 20 г. н. э." for an approximate year. */
 function lifeYear(
@@ -32,6 +33,7 @@ export function PlaceCard({
   place,
   sites,
   life,
+  events = [],
   at,
   alsoHere,
   locale,
@@ -45,6 +47,8 @@ export function PlaceCard({
   sites: readonly Site[];
   /** When the place existed, if known (content/place-life.yaml). */
   life?: PlaceLife | undefined;
+  /** The turning points that happened here (events.yaml), in order. */
+  events?: readonly HistoryEvent[];
   /** The place's point, [lon, lat]: where it is today on Google Maps. */
   at: readonly [number, number];
   /** Other records on the same point under another name. */
@@ -69,6 +73,7 @@ export function PlaceCard({
     focusVerse.current = null;
   }, [versesShown]);
   const [allAlso, setAllAlso] = useState(false);
+  const [allEvents, setAllEvents] = useState(false);
   const { t } = useTranslation();
   const ru = locale === "ru";
   const title = ru ? (place.name_ru ?? place.name) : place.name;
@@ -179,6 +184,35 @@ export function PlaceCard({
           </div>
           <div className="mt-0.5">{life.note[locale] ?? life.note.en}</div>
           <div className="mt-1 text-[11px] text-ink-soft">{life.sources.join("; ")}</div>
+        </div>
+      )}
+
+      {/* The gold marks of the slider that belong to this place. */}
+      {events.length > 0 && (
+        <div className="mx-5 mt-3 border-l-2 border-gold pl-3 text-[13px] leading-snug text-ink">
+          <ul className="space-y-0.5">
+            {(allEvents ? events : events.slice(0, EVENTS_SHOWN)).map((e) => (
+              <li key={e.id} className="flex gap-2">
+                <span
+                  className={`${ru ? "w-[104px]" : "w-[72px]"} shrink-0 text-right text-[12px] whitespace-nowrap text-ink-soft tabular-nums`}
+                >
+                  {e.approximate ? `${t("place.circa")} ` : ""}
+                  {formatYear(e.year, locale)}
+                </span>
+                <span>{e.title[locale] ?? e.title.en}</span>
+              </li>
+            ))}
+          </ul>
+          {!allEvents && events.length > EVENTS_SHOWN && (
+            <button
+              onClick={() => {
+                setAllEvents(true);
+              }}
+              className="mt-0.5 text-[12.5px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
+            >
+              {t("place.more", { count: events.length - EVENTS_SHOWN })}
+            </button>
+          )}
         </div>
       )}
 
