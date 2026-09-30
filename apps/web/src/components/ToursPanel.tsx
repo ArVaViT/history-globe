@@ -61,7 +61,7 @@ export function ToursPanel({
  */
 export function tourSpan(stops: readonly { readonly ref: string }[], locale: Locale): string {
   let first = stops[0]?.ref.split("-")[0];
-  let last = stops.at(-1)?.ref.split("-").at(-1);
+  const last = stops.at(-1)?.ref.split("-").at(-1);
   if (!first || !last) return "";
   const book = (osis: string) => osis.split(".")[0];
   const at = (osis: string) => {
