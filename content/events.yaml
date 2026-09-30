@@ -219,6 +219,15 @@ events:
     place: a15257a
     sources:
       - "Josephus, Antiquities 17.355; 18.1-2"
+  - id: pilate
+    year: "c. AD 26"
+    title:
+      en: "Pontius Pilate becomes prefect of Judea"
+      ru: "Понтий Пилат становится префектом Иудеи"
+    place: a58735e
+    sources:
+      - "Josephus, Antiquities 18.35 (after Gratus's eleven years), 18.89 (ten years in office)"
+      - "The Pilate stone from the theatre at Caesarea"
   - id: agrippa-dies
     year: "AD 44"
     title:
