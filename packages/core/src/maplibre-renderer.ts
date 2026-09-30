@@ -6,7 +6,7 @@ import type { Camera, LonLat, PolityName, Renderer, RendererEvents } from "./ren
 import type { LayerVisibility } from "./state.ts";
 import { buildStyle, layersInGroup, type StyleOptions } from "./style.ts";
 import { drawIcon } from "./icons.ts";
-import { wheelIntent } from "./wheel.ts";
+import { WheelClassifier } from "./wheel.ts";
 
 const READY_FALLBACK_MS = 6000;
 
@@ -80,17 +80,26 @@ export class MapLibreRenderer implements Renderer {
       const img = drawIcon(id);
       if (img) this.map.addImage(id, img, { sdf: true, pixelRatio: 2 });
     });
+    const wheel = new WheelClassifier();
     this.map.getCanvasContainer().addEventListener(
       "wheel",
       (e) => {
         e.preventDefault();
-        const intent = wheelIntent(e);
+        const intent = wheel.classify(e, e.timeStamp);
         if (intent.kind === "pan") {
           this.map.panBy([intent.dx, intent.dy], { animate: false });
-        } else {
-          const rect = this.map.getCanvasContainer().getBoundingClientRect();
-          const around = this.map.unproject([e.clientX - rect.left, e.clientY - rect.top]);
-          this.map.zoomTo(this.map.getZoom() + intent.dz, { around, animate: false });
+          return;
+        }
+        // Zoom around the pointer. On the globe MapLibre ignores `around`, so keep the
+        // point under the pointer by hand: zoom, then move it back under the pointer.
+        const rect = this.map.getCanvasContainer().getBoundingClientRect();
+        const point: [number, number] = [e.clientX - rect.left, e.clientY - rect.top];
+        const anchor = this.map.unproject(point);
+        this.map.jumpTo({ zoom: this.map.getZoom() + intent.dz });
+        // Two passes: on a sphere one screen-space shift does not land exactly.
+        for (let pass = 0; pass < 2; pass++) {
+          const moved = this.map.project(anchor);
+          this.map.panBy([moved.x - point[0], moved.y - point[1]], { animate: false });
         }
       },
       { passive: false },

@@ -152,17 +152,51 @@ export function iconDataUrl(name: string, color: string): string | null {
   return canvas.toDataURL();
 }
 
-/** The icon's pixels, or null for a name we do not draw. Needs a DOM canvas. */
+const PAD = 5; // pixels of room around the shape for the halo
+const SDF_RADIUS = 8; // MapLibre's SDF scale: 8 px of distance over the alpha range
+
+/**
+ * The icon as a signed distance field, as MapLibre expects for `sdf: true`: alpha 0.75 on
+ * the outline, rising inside and falling outside by 1/8 per pixel. A hard-edged bitmap
+ * would leave the halo a sub-pixel ring. Needs a DOM canvas.
+ */
 export function drawIcon(name: string): ImageData | null {
   const draw = DRAW[name];
   if (!draw) return null;
+  const size = SIZE + 2 * PAD;
   const canvas = document.createElement("canvas");
-  canvas.width = SIZE;
-  canvas.height = SIZE;
+  canvas.width = size;
+  canvas.height = size;
   const c = canvas.getContext("2d");
   if (!c) return null;
   c.fillStyle = "#000";
   c.strokeStyle = "#000";
+  c.translate(PAD, PAD);
   draw(c);
-  return c.getImageData(0, 0, SIZE, SIZE);
+  const img = c.getImageData(0, 0, size, size);
+  const inside = new Uint8Array(size * size);
+  for (let k = 0; k < size * size; k++) inside[k] = (img.data[k * 4 + 3] ?? 0) > 127 ? 1 : 0;
+  const out = new ImageData(size, size);
+  const reach = SDF_RADIUS;
+  for (let y = 0; y < size; y++) {
+    for (let x = 0; x < size; x++) {
+      const me = inside[y * size + x];
+      // Distance to the nearest pixel on the other side of the outline (brute force: tiny images).
+      let best = reach * reach;
+      for (let dy = -reach; dy <= reach; dy++) {
+        const yy = y + dy;
+        if (yy < 0 || yy >= size) continue;
+        for (let dx = -reach; dx <= reach; dx++) {
+          const xx = x + dx;
+          if (xx < 0 || xx >= size || inside[yy * size + xx] === me) continue;
+          const d = dx * dx + dy * dy;
+          if (d < best) best = d;
+        }
+      }
+      const dist = (Math.sqrt(best) - 0.5) * (me ? -1 : 1);
+      const a = Math.min(1, Math.max(0, 1 - (dist / SDF_RADIUS + 0.25)));
+      out.data[(y * size + x) * 4 + 3] = Math.round(a * 255);
+    }
+  }
+  return out;
 }
