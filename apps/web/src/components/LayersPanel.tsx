@@ -83,12 +83,22 @@ export function LegendPanel() {
             </span>
             {t("legend.disputed")}
           </li>
+          <li className="flex items-center gap-2">
+            <span className="grid size-4 place-items-center" aria-hidden>
+              <span className="size-2.5 rounded-full bg-accent opacity-35" />
+            </span>
+            {t("legend.faded")}
+          </li>
           {icons.map(([name, url]) => (
             <li key={name} className="flex items-center gap-2">
               {url && <img src={url} alt="" className="size-4" />}
               {t(`legend.${name.slice(3)}`)}
             </li>
           ))}
+          <li className="flex items-center gap-2">
+            <span className="w-4 border-t-2 border-dashed border-accent" aria-hidden />
+            {t("legend.route")}
+          </li>
         </ul>
       </div>
     </Section>
