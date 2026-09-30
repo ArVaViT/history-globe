@@ -1,10 +1,12 @@
 # The fall of Jerusalem and the exile, 2 Kings 25 and Jeremiah 39-43, in the order of
-# the text. Year: 587 or 586 BC (disputed), marked approximate.
+# the text. Year: 587 or 586 BC (disputed), marked approximate. The map shows 587 BC,
+# the year before the ruins begin in place-life.yaml, so Jerusalem still stands at the
+# siege.
 id: exile
 title:
   en: "The fall of Jerusalem and the exile"
   ru: "Падение Иерусалима и плен"
-year: "586 BC"
+year: "587 BC"
 approximate: true
 stops:
   - place: a15257a # Jerusalem
