@@ -95,11 +95,11 @@ export function Timeline({
         </div>
       )}
       <div role="group" aria-label={t("time.timeline")}>
-        <div className="flex items-center gap-4">
-          <div className="min-w-[210px] font-serif text-[28px] leading-none font-semibold text-ink tabular-nums max-md:min-w-0 max-md:text-[19px]">
+        <div className="flex items-center gap-4 max-lg:flex-wrap max-lg:gap-x-3 max-lg:gap-y-1">
+          <div className="min-w-[210px] font-serif text-[28px] leading-none font-semibold whitespace-nowrap text-ink tabular-nums max-xl:min-w-0 max-lg:flex-1 max-lg:text-[21px] max-md:text-[19px]">
             {formatYear(year, locale)}
           </div>
-          <div className="flex-1 text-[13px] leading-snug text-ink-soft max-md:text-[11.5px]">
+          <div className="flex-1 text-[13px] leading-snug text-ink-soft max-lg:order-last max-lg:basis-full max-md:text-[11.5px]">
             {periodName}
             {period?.disputed && (
               <span className="ml-2 rounded-full bg-[#f4dfc9] px-2 py-0.5 text-[11px] text-[#7a4a1d]">

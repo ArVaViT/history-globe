@@ -50,7 +50,7 @@ export function InViewPanel({
                 onSelect(p.id);
               }}
               aria-current={p.id === selected}
-              className={`flex w-full items-baseline justify-between gap-3 px-4 py-1 text-left hover:bg-paper-2 focus-visible:bg-paper-2 focus-visible:outline-none ${p.id === selected ? "text-accent" : "text-ink"} ${beforeItsTime(p, year) ? "opacity-50" : ""}`}
+              className={`flex w-full items-baseline justify-between gap-3 px-4 py-1 text-left hover:bg-paper-2 focus-visible:bg-paper-2 focus-visible:outline-none ${p.id === selected ? "text-accent" : "text-ink"} ${beforeItsTime(p, year) ? "opacity-65" : ""}`}
             >
               <span className="truncate font-serif text-[14.5px]">
                 {locale === "ru" ? (p.name_ru ?? p.name) : p.name}

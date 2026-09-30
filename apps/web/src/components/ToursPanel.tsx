@@ -24,7 +24,7 @@ export function ToursPanel({
         <div key={tour.id}>
           {/* Old Testament tours before the New; tours come sorted by year. */}
           {i === 0 || (tours[i - 1]?.year ?? 0) < 0 !== tour.year < 0 ? (
-            <div className="px-4 pt-2 pb-0.5 text-[10.5px] tracking-[0.08em] text-ink-soft/80 uppercase">
+            <div className="px-4 pt-2 pb-0.5 text-[10.5px] tracking-[0.08em] text-ink-soft uppercase">
               {tour.year < 0 ? t("tours.ot") : t("tours.nt")}
             </div>
           ) : null}

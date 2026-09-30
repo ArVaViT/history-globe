@@ -1,5 +1,12 @@
 import { YEAR_MAX, type Engine } from "@hg/core";
-import { useCallback, useEffect, useState, type Dispatch, type SetStateAction } from "react";
+import {
+  useCallback,
+  useEffect,
+  useState,
+  useSyncExternalStore,
+  type Dispatch,
+  type SetStateAction,
+} from "react";
 import { focusOf, keyAction } from "./keys";
 import { writeUrl } from "./url";
 import type { Globe } from "./useGlobe";
@@ -7,6 +14,7 @@ import type { Globe } from "./useGlobe";
 const PLAY_STEP = 5;
 const PLAY_INTERVAL_MS = 80;
 const PANELS_KEY = "hg:panels-hidden";
+const NARROW = "(max-width: 767px)";
 
 /**
  * Whether the left column is shown (the burger hides it all at once), remembered in
@@ -15,7 +23,7 @@ const PANELS_KEY = "hg:panels-hidden";
  */
 export function usePanelsOpen(): [boolean, (open: boolean) => void] {
   const [open, setOpen] = useState(() => {
-    const narrow = window.matchMedia("(max-width: 767px)").matches;
+    const narrow = window.matchMedia(NARROW).matches;
     try {
       const saved = localStorage.getItem(PANELS_KEY);
       return saved === null ? !narrow : saved === "0";
@@ -172,4 +180,41 @@ export function useKeys(
       window.removeEventListener("keydown", onKey);
     };
   }, [globe, togglePlay, focusSearch]);
+}
+
+/** A phone-wide screen, following rotation and window resizes. */
+export function useNarrow(): boolean {
+  return useSyncExternalStore(
+    (onChange) => {
+      const q = window.matchMedia(NARROW);
+      q.addEventListener("change", onChange);
+      return () => {
+        q.removeEventListener("change", onChange);
+      };
+    },
+    () => window.matchMedia(NARROW).matches,
+  );
+}
+
+/**
+ * The height of an element as a CSS variable on the document, so another box can sit
+ * right above it (the phone card above the slider, whatever the slider's height).
+ * Returns a callback ref.
+ */
+export function useHeightVar(name: string): (el: HTMLElement | null) => (() => void) | undefined {
+  return useCallback(
+    (el: HTMLElement | null) => {
+      if (!el) return undefined;
+      const root = document.documentElement;
+      const obs = new ResizeObserver(() => {
+        root.style.setProperty(name, `${String(el.offsetHeight)}px`);
+      });
+      obs.observe(el);
+      return () => {
+        obs.disconnect();
+        root.style.removeProperty(name);
+      };
+    },
+    [name],
+  );
 }

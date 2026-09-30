@@ -8,6 +8,8 @@
   --color-line: rgb(43 36 24 / 0.14);
   --color-accent: #9a3b1f;
   --color-gold: #b88a2e;
+  /* The keyboard focus ring: gold dark enough for 3:1 on paper and on the map (WCAG 1.4.11). */
+  --color-focus: #946e20;
   --color-night: #0c1520;
   --font-sans: "Golos Text Variable", system-ui, sans-serif;
   --font-serif: "Literata Variable", Georgia, serif;
@@ -48,7 +50,7 @@ body {
   border: 3px solid var(--color-paper);
 }
 .timeline-range:focus-visible::-webkit-slider-thumb {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 
@@ -61,7 +63,7 @@ body {
    layer, so a control's own rounding (rounded-full) and ring utilities still win. */
 @layer base {
   :where(button, a, input, [tabindex]):focus-visible {
-    outline: 2px solid var(--color-gold);
+    outline: 2px solid var(--color-focus);
     outline-offset: 2px;
   }
 }
@@ -76,5 +78,9 @@ body {
   .maplibregl-ctrl-bottom-right {
     top: 72px;
     bottom: auto;
+  }
+  /* Under the open column the (i) can't be seen: keep it out of the Tab order too. */
+  [data-panels="open"] .maplibregl-ctrl-attrib {
+    visibility: hidden;
   }
 }

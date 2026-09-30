@@ -14,7 +14,15 @@ import { ToursPanel } from "./components/ToursPanel";
 import { EventsPanel } from "./components/EventsPanel";
 import { TourStopCard } from "./components/TourStopCard";
 import { loadData, type LoadedData } from "./data";
-import { useKeys, useMapFeed, usePanelsOpen, usePlayback, useUrlSync } from "./app-hooks";
+import {
+  useHeightVar,
+  useKeys,
+  useMapFeed,
+  useNarrow,
+  usePanelsOpen,
+  usePlayback,
+  useUrlSync,
+} from "./app-hooks";
 import { timelineEventsOf } from "./timeline-events";
 import { readUrl } from "./url";
 import { useGlobe, useGlobeState } from "./useGlobe";
@@ -28,6 +36,8 @@ export function App() {
   const [data, setData] = useState<LoadedData | null>(null);
   const [dataError, setDataError] = useState<string | null>(null);
   const [panelsOpen, togglePanels] = usePanelsOpen();
+  const narrow = useNarrow();
+  const timelineBox = useHeightVar("--hg-timeline-h");
   const { globe, error: mapError } = useGlobe(container, data, INITIAL);
   const error =
     dataError !== null
@@ -85,9 +95,13 @@ export function App() {
   const tourStop = tour && state.tour ? tour.stops[state.tour.step] : undefined;
   // On a phone an open card takes the lower half: the column folds to its header.
   const cardOpen = Boolean((tour && state.tour) || selected);
+  const columnShown = panelsOpen && !(narrow && cardOpen);
 
   return (
-    <div className="fixed inset-0 overflow-hidden bg-night font-sans">
+    <div
+      className="fixed inset-0 overflow-hidden bg-night font-sans"
+      data-panels={panelsOpen && !(narrow && cardOpen) ? "open" : "closed"}
+    >
       {/* MapLibre sets position: relative on its container, so it needs a sized parent. */}
       <div className="absolute inset-0">
         <div ref={container} className="h-full w-full" />
@@ -118,15 +132,21 @@ export function App() {
             <Panel className="flex w-[340px] max-md:w-full items-center justify-between gap-2 px-2 py-2">
               <button
                 onClick={() => {
-                  togglePanels(!panelsOpen);
+                  // On a phone an open card hides the column: the burger closes the card
+                  // and shows the column, rather than toggling what cannot be seen.
+                  if (narrow && cardOpen) {
+                    engine.selectPlace(null);
+                    engine.stopTour();
+                    togglePanels(true);
+                  } else togglePanels(!columnShown);
                 }}
-                aria-expanded={panelsOpen}
-                aria-controls={panelsOpen ? "side-panels" : undefined}
-                aria-label={panelsOpen ? t("panels.hide") : t("panels.show")}
-                title={panelsOpen ? t("panels.hide") : t("panels.show")}
+                aria-expanded={columnShown}
+                aria-controls={columnShown ? "side-panels" : undefined}
+                aria-label={columnShown ? t("panels.hide") : t("panels.show")}
+                title={columnShown ? t("panels.hide") : t("panels.show")}
                 className="grid size-9 place-items-center rounded-full text-ink-soft hover:bg-paper-2 hover:text-ink"
               >
-                {panelsOpen ? (
+                {columnShown ? (
                   <PanelLeftClose className="size-5" aria-hidden />
                 ) : (
                   <Menu className="size-5" aria-hidden />
@@ -164,6 +184,7 @@ export function App() {
                   locale={state.locale}
                   onPick={(e) => {
                     setPlaying(false);
+                    engine.stopTour();
                     engine.setYear(e.year);
                     if (e.place) engine.selectPlace(e.place, { fly: true });
                   }}
@@ -182,7 +203,7 @@ export function App() {
             )}
           </div>
 
-          <div className="absolute top-4 right-4 max-md:top-auto max-md:right-3 max-md:bottom-[136px] max-md:left-3">
+          <div className="absolute top-4 right-4 max-md:top-auto max-md:right-3 max-md:bottom-[calc(var(--hg-timeline-h,124px)+20px)] max-md:left-3">
             {tour && state.tour ? (
               <TourStopCard
                 tour={tour}
@@ -231,7 +252,10 @@ export function App() {
             )}
           </div>
 
-          <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 max-xl:right-[64px] max-xl:left-[372px] max-xl:translate-x-0 max-md:inset-x-3 max-md:bottom-3 max-md:translate-x-0">
+          <div
+            ref={timelineBox}
+            className={`absolute bottom-5 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 max-xl:right-[64px] max-xl:translate-x-0 ${panelsOpen ? "max-xl:left-[372px]" : "max-xl:left-4"} max-md:inset-x-3 max-md:bottom-3 max-md:translate-x-0`}
+          >
             <Timeline
               year={state.year}
               locale={state.locale}
