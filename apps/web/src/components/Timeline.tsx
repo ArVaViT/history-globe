@@ -70,7 +70,7 @@ export function Timeline({
   const periodName = period ? (ru ? period.name.ru : period.name.en) : "";
 
   return (
-    <Panel className="relative w-[min(920px,calc(100vw-760px))] min-w-[560px] px-5 pt-3 pb-3 max-md:w-full max-md:min-w-0 max-md:px-3 max-md:pt-2">
+    <Panel className="relative w-[min(920px,calc(100vw-760px))] min-w-[560px] px-5 pt-3 pb-3 max-xl:w-full max-xl:min-w-0 max-md:px-3 max-md:pt-2">
       {hovered && hover && (
         // Above the whole panel: inside it the tip covered the year and the era name.
         // Positioned on the panel, so it holds however tall the header grows.
@@ -195,7 +195,7 @@ export function Timeline({
               key={y}
               aria-hidden
               style={{ left: `${pct(y)}%` }}
-              className={`absolute top-6 text-[11px] whitespace-nowrap text-ink-soft ${i === 0 ? "" : i === TICKS.length - 1 ? "-translate-x-full" : "-translate-x-1/2"} ${i % 2 === 1 ? "max-md:hidden" : ""}`}
+              className={`absolute top-6 text-[11px] whitespace-nowrap text-ink-soft ${i === 0 ? "" : i === TICKS.length - 1 ? "-translate-x-full" : "-translate-x-1/2"} ${i % 2 === 1 ? "max-xl:hidden" : ""}`}
             >
               {formatYear(y, locale)}
             </span>

@@ -348,7 +348,7 @@ export function App() {
             )}
           </div>
 
-          <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 max-md:inset-x-3 max-md:bottom-3 max-md:translate-x-0">
+          <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 max-xl:right-[64px] max-xl:left-[372px] max-xl:translate-x-0 max-md:inset-x-3 max-md:bottom-3 max-md:translate-x-0">
             <Timeline
               year={state.year}
               locale={state.locale}

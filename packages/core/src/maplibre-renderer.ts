@@ -107,8 +107,9 @@ export class MapLibreRenderer implements Renderer {
     this.map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-right");
     this.map.addControl(new maplibregl.ScaleControl({ unit: "metric" }), "bottom-left");
     // The compact attribution opens expanded (MapLibre sets it after the first frames);
-    // on a narrow screen that covers a third of the map, so it starts folded to its (i).
-    if (o.container.clientWidth < 768) {
+    // below 1280 px it runs under the slider, on a phone over a third of the map; it starts
+    // folded to its (i).
+    if (o.container.clientWidth < 1280) {
       this.map.once("idle", () => {
         o.container
           .querySelector(".maplibregl-ctrl-attrib")
