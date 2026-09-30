@@ -1,7 +1,7 @@
 import { formatRef, type Locale } from "@hg/model";
 import { Route } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { Panel, PanelTitle } from "./Panel";
+import { Section } from "./Panel";
 
 export function ToursPanel({
   tours,
@@ -16,8 +16,7 @@ export function ToursPanel({
 }) {
   const { t, i18n } = useTranslation();
   return (
-    <Panel className="w-[340px] pb-3">
-      <PanelTitle>{t("tours.title")}</PanelTitle>
+    <Section id="tours" title={t("tours.title")} className="w-[340px] pb-3">
       {tours.map((tour) => (
         <button
           key={tour.id}
@@ -39,7 +38,7 @@ export function ToursPanel({
           </span>
         </button>
       ))}
-    </Panel>
+    </Section>
   );
 }
 

@@ -1,7 +1,7 @@
 import type { Locale } from "@hg/model";
 import { useTranslation } from "react-i18next";
 import { beforeItsTime, type LoadedData } from "../data";
-import { Panel, PanelTitle } from "./Panel";
+import { Section } from "./Panel";
 
 const SHOWN = 10;
 
@@ -38,8 +38,7 @@ export function InViewPanel({
   if (places.length === 0) return null;
 
   return (
-    <Panel className="w-[340px] pb-2">
-      <PanelTitle>{t("inview.title")}</PanelTitle>
+    <Section id="inview" title={t("inview.title")} className="w-[340px] pb-2">
       <ul aria-label={t("inview.title")}>
         {places.map((p) => (
           <li key={p.id}>
@@ -60,6 +59,6 @@ export function InViewPanel({
           </li>
         ))}
       </ul>
-    </Panel>
+    </Section>
   );
 }

@@ -36,14 +36,12 @@ export function Timeline({
   year,
   locale,
   playing,
-  hints,
   onYear,
   onPlay,
 }: {
   year: number;
   locale: Locale;
   playing: boolean;
-  hints: string;
   onYear: (year: number) => void;
   onPlay: () => void;
 }) {
@@ -172,7 +170,6 @@ export function Timeline({
             className="absolute top-0 h-5 w-px -translate-x-1/2 bg-ink/50"
           />
         </div>
-        <div className="mt-1 text-right text-[10.5px] text-ink-soft/80">{hints}</div>
       </div>
     </Panel>
   );

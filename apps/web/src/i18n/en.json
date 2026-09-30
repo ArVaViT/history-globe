@@ -36,7 +36,8 @@
     "sites_title": "Where was it: candidate sites",
     "sites_note": "Shares are OpenBible's assessment of published scholarship, not a consensus. Candidates are circled on the map.",
     "nt_only": "Named only in the New Testament: faded on the map before its events.",
-    "also_here": "Also here"
+    "also_here": "Also here",
+    "google_maps": "Google Maps"
   },
   "time": {
     "play": "Play",
@@ -46,7 +47,6 @@
     "year": "Year",
     "timeline": "Timeline"
   },
-  "hints": "[ ] year ±10 · Shift ±100 · Space play · / search · N north up",
   "kind": {
     "settlement": "town or village",
     "region": "region",

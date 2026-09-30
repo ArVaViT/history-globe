@@ -246,7 +246,9 @@ export function App() {
             ) : (
               selected && (
                 <PlaceCard
+                  key={selected.id}
                   place={selected}
+                  at={data.byId.get(selected.id)?.info.at ?? [0, 0]}
                   sites={data.sites.get(selected.id) ?? []}
                   alsoHere={(data.alsoHere[state.locale].get(selected.id) ?? []).flatMap((id) => {
                     const p = data.byId.get(id)?.props;
@@ -277,7 +279,6 @@ export function App() {
               locale={state.locale}
               playing={playing}
               onYear={engine.setYear}
-              hints={t("hints")}
               onPlay={() => {
                 if (!playing && state.year >= YEAR_MAX) engine.setYear(YEAR_MIN);
                 setPlaying((p) => !p);

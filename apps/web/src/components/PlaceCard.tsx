@@ -1,5 +1,6 @@
 import { formatRef, type Locale } from "@hg/model";
-import { MapPin, X, ZoomIn } from "lucide-react";
+import { ExternalLink, MapPin, X, ZoomIn } from "lucide-react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { beforeItsTime, type PlaceProps, type Site } from "../data";
 import { Panel } from "./Panel";
@@ -20,6 +21,7 @@ const ALSO_SHOWN = 5;
 export function PlaceCard({
   place,
   sites,
+  at,
   alsoHere,
   locale,
   year,
@@ -30,6 +32,8 @@ export function PlaceCard({
 }: {
   place: PlaceProps;
   sites: readonly Site[];
+  /** The place's point, [lon, lat]: where it is today on Google Maps. */
+  at: readonly [number, number];
   /** Other records on the same point under another name. */
   alsoHere: readonly PlaceProps[];
   locale: Locale;
@@ -39,6 +43,10 @@ export function PlaceCard({
   onZoom: () => void;
   onFlyTo: (at: readonly [number, number]) => void;
 }) {
+  // Opened lists stay open for this place; the card is keyed by place, so a new place
+  // starts folded again.
+  const [allVerses, setAllVerses] = useState(false);
+  const [allAlso, setAllAlso] = useState(false);
   const { t } = useTranslation();
   const ru = locale === "ru";
   const title = ru ? (place.name_ru ?? place.name) : place.name;
@@ -131,18 +139,29 @@ export function PlaceCard({
         </div>
       )}
 
-      {place.where && place.where !== place.name && (
-        <div className="flex items-center gap-1.5 px-5 pt-3 text-[14px] text-ink">
-          <MapPin className="size-4 text-accent" aria-hidden />
-          <span className="text-ink-soft">{t("place.today")}:</span>{" "}
-          {ru ? (place.where_ru ?? place.where) : place.where}
-        </div>
-      )}
+      <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 px-5 pt-3 text-[14px] text-ink">
+        <MapPin className="size-4 shrink-0 text-accent" aria-hidden />
+        {place.where && place.where !== place.name && (
+          <>
+            <span className="text-ink-soft">{t("place.today")}:</span>
+            <span>{ru ? (place.where_ru ?? place.where) : place.where}</span>
+          </>
+        )}
+        <a
+          href={`https://www.google.com/maps/search/?api=1&query=${String(at[1])},${String(at[0])}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-[13px] text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
+        >
+          {t("place.google_maps")}
+          <ExternalLink className="size-3.5" aria-hidden />
+        </a>
+      </div>
 
       {alsoHere.length > 0 && (
         <div className="px-5 pt-2 text-[13px] leading-snug text-ink">
           <span className="text-ink-soft">{t("place.also_here")}:</span>{" "}
-          {alsoHere.slice(0, ALSO_SHOWN).map((p, i) => (
+          {alsoHere.slice(0, allAlso ? undefined : ALSO_SHOWN).map((p, i) => (
             <span key={p.id}>
               {i > 0 && ", "}
               <button
@@ -155,11 +174,18 @@ export function PlaceCard({
               </button>
             </span>
           ))}
-          {alsoHere.length > ALSO_SHOWN && (
-            <span className="text-ink-soft">
+          {!allAlso && alsoHere.length > ALSO_SHOWN && (
+            <>
               {" · "}
-              {t("place.more", { count: alsoHere.length - ALSO_SHOWN })}
-            </span>
+              <button
+                onClick={() => {
+                  setAllAlso(true);
+                }}
+                className="text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
+              >
+                {t("place.more", { count: alsoHere.length - ALSO_SHOWN })}
+              </button>
+            </>
           )}
         </div>
       )}
@@ -174,7 +200,7 @@ export function PlaceCard({
         {t("place.verses")}
       </div>
       <div className="flex flex-wrap gap-1.5 px-5 pt-2">
-        {place.osis.slice(0, VERSES_SHOWN).map((o) => (
+        {place.osis.slice(0, allVerses ? undefined : VERSES_SHOWN).map((o) => (
           <span
             key={o}
             className="rounded-full border border-line bg-white/70 px-2.5 py-0.5 font-serif text-[13px] text-ink"
@@ -182,10 +208,15 @@ export function PlaceCard({
             {safeRef(o, locale)}
           </span>
         ))}
-        {place.verses > VERSES_SHOWN && (
-          <span className="rounded-full px-2 py-0.5 text-[13px] text-ink-soft">
-            {t("place.more", { count: place.verses - VERSES_SHOWN })}
-          </span>
+        {!allVerses && place.osis.length > VERSES_SHOWN && (
+          <button
+            onClick={() => {
+              setAllVerses(true);
+            }}
+            className="rounded-full px-2 py-0.5 text-[13px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
+          >
+            {t("place.more", { count: place.osis.length - VERSES_SHOWN })}
+          </button>
         )}
       </div>
 

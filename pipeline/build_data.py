@@ -293,7 +293,8 @@ def build_places(
                 # Where it is today, as the best identification words it. "Same place as X"
                 # says nothing a reader can use there: the card lists the candidates.
                 **where_props(site_label(ids[0].get("description", ""), base)),
-                "osis": [v["osis"] for v in verses[:12]],
+                # Every verse: the card opens the full list on demand ("ещё N").
+                "osis": [v["osis"] for v in verses],
                 "coord": coord_source,
                 # Drawn as a river line with its own label: no second label at the point.
                 **({"line": True} if r["id"] in river_places else {}),

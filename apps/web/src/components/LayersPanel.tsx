@@ -1,6 +1,6 @@
 import type { LayerVisibility } from "@hg/core";
 import { useTranslation } from "react-i18next";
-import { Panel, PanelTitle } from "./Panel";
+import { Section } from "./Panel";
 
 const ORDER: (keyof LayerVisibility)[] = ["relief", "borders", "places", "routes"];
 
@@ -13,8 +13,7 @@ export function LayersPanel({
 }) {
   const { t } = useTranslation();
   return (
-    <Panel className="w-[340px] pb-2">
-      <PanelTitle>{t("layers.title")}</PanelTitle>
+    <Section id="layers" title={t("layers.title")} className="w-[340px] pb-2">
       {ORDER.map((layer) => (
         <label
           key={layer}
@@ -31,6 +30,6 @@ export function LayersPanel({
           />
         </label>
       ))}
-    </Panel>
+    </Section>
   );
 }
