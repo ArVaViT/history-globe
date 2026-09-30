@@ -10,7 +10,20 @@ other platforms.
 
 ## Status
 
-Pre-code. The stack is being decided in `docs/adr/`.
+A working desktop prototype (PR #2): the globe with relief, state borders by year,
+1288 biblical places with Synodal Russian names, disputed locations, four tours of
+Paul and a shareable link. No mobile layout and no production hosting yet.
+
+## Run it locally
+
+```sh
+pnpm install
+pnpm data        # download the open data sets and build apps/web/public/data (Python 3.11+)
+pnpm dev         # http://localhost:5173
+pnpm gate        # everything that must pass before a push
+```
+
+What the data and content checks refuse, and why: `docs/data-checks.md`.
 
 ## Principles
 
@@ -36,5 +49,6 @@ Pre-code. The stack is being decided in `docs/adr/`.
   - [0008. Data licensing policy](docs/adr/0008-data-licensing-policy.md)
   - [0009. Backend, in phases](docs/adr/0009-backend-phasing.md)
   - [0010. Quality gates](docs/adr/0010-quality-gates.md)
+- `docs/data-checks.md` — what the build refuses, and why.
 - `docs/embed-protocol.md` — the iframe contract with host platforms.
 - `docs/ATTRIBUTIONS.md` — third-party data and credits.
