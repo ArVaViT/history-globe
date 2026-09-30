@@ -18,26 +18,31 @@ stops:
     ref: Gen.25.8-Gen.25.10
     note:
       en: "Isaac and Ishmael bury their father Abraham in the cave of Machpelah, beside Sarah."
-      ru: "Исаак и Измаил погребают отца своего Авраама в пещере Махпеле, рядом с Саррой."
+      ru: "Исаак и Измаил погребают отца своего Авраама в пещере Махпела, рядом с Саррой."
   - place: a3f5814 # Gerar
     ref: Gen.26.1-Gen.26.14
     note:
       en: "In a famine Isaac goes to Abimelech king of the Philistines at Gerar, calls Rebekah his sister, and reaps a hundredfold."
       ru: "Во время голода Исаак идёт к Авимелеху, царю Филистимскому, в Герар, называет Ревекку сестрой и получает урожай во сто крат."
   - place: a816ed9 # Valley of Gerar
-    ref: Gen.26.17-Gen.26.19
+    ref: Gen.26.15-Gen.26.19
     note:
       en: "Sent away, he camps in the Valley of Gerar and digs again the wells of his father Abraham, which the Philistines had stopped."
       ru: "Удалившись, он располагается в Долине Герарской и вновь выкапывает колодцы отца своего Авраама, заваленные Филистимлянами."
   - place: a43608b # Esek
-    ref: Gen.26.20-Gen.26.21
+    ref: Gen.26.20
     note:
-      en: "The herdmen of Gerar strive with his over the water; he calls the well Esek, contention, and the next Sitnah, hatred."
-      ru: "Пастухи Герарские спорят с его пастухами о воде; он называет колодец Есек, а следующий, о котором тоже спорят, — Ситна."
+      en: "The herdmen of Gerar strive with his over the water, and he calls the well Esek, contention."
+      ru: "Пастухи Герарские спорят с его пастухами о воде, и он называет колодец Есек."
+  - place: aa454f7 # Sitnah
+    ref: Gen.26.21
+    note:
+      en: "They strive over the next well too, and he calls it Sitnah, hatred."
+      ru: "О следующем колодце тоже спорят, и он называет его Ситна."
   - place: ab1d954 # Rehoboth
     ref: Gen.26.22
     note:
-      en: 'Over a third well no one strives, and he names it Rehoboth: "For now the LORD hath made room for us."'
+      en: 'Over a third well no one strives, and he names it Rehoboth: "For now the LORD hath made room for us".'
       ru: "О третьем колодце уже не спорят, и он называет его Реховоф: «теперь Господь дал нам пространное место»."
   - place: a075d61 # Beersheba
     ref: Gen.26.23-Gen.26.33
