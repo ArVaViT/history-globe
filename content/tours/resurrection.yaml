@@ -1,9 +1,11 @@
 # The resurrection and the appearances, from the empty tomb to the Ascension: John 19-21,
-# Luke 24, Matthew 28 and Acts 1, in the order of the events as the Gospels give them.
-# The year (AD 30) is the same conventional point as the life of Jesus tour.
+# Luke 24, Matthew 28 and Acts 1, in the order usually followed; the Gospels do not fix
+# the order of the two appearances in Galilee (John 21, Matt 28:16-20), and Luke 24:44-49
+# is left out as its time is read either way. The year (AD 30) is the same conventional
+# point as the life of Jesus tour; AD 33 is also held.
 id: resurrection
 title:
-  en: "The resurrection"
+  en: "The resurrection and the appearances"
   ru: "Воскресение и явления"
 year: "AD 30"
 approximate: true
@@ -19,15 +21,15 @@ stops:
       en: "On the road to Emmaus two disciples know Him in the breaking of bread."
       ru: "На пути в Эммаус двое учеников узнают Его при преломлении хлеба."
   - place: a15257a # Jerusalem
-    ref: Luke.24.33-Luke.24.49
+    ref: Luke.24.33-Luke.24.43
     note:
       en: 'In Jerusalem Jesus stands among the disciples: "Peace be unto you."'
       ru: "В Иерусалиме Иисус становится посреди учеников: «мир вам»."
   - place: a562fcc # Sea of Galilee
     ref: John.21.1-John.21.17
     note:
-      en: 'By the sea of Tiberias He asks Peter three times: "lovest thou me?"'
-      ru: "При море Тивериадском Он трижды спрашивает Петра: «любишь ли ты Меня?»"
+      en: 'By the Sea of Galilee He asks Peter three times: "lovest thou me?"'
+      ru: "При море Галилейском Он трижды спрашивает Петра: «любишь ли ты Меня?»"
   - place: a9cf1e8 # Galilee
     ref: Matt.28.16-Matt.28.20
     note:
@@ -36,5 +38,5 @@ stops:
   - place: ac2c4c5 # Mount of Olives
     ref: Acts.1.6-Acts.1.12
     note:
-      en: 'From the mount called Olivet He is taken up: "ye shall be witnesses unto me."'
-      ru: "С горы, называемой Елеон, Он возносится: «будете Мне свидетелями»."
+      en: 'From the Mount of Olives He is taken up: "ye shall be witnesses unto me."'
+      ru: "С горы Елеонской Он возносится: «будете Мне свидетелями»."
