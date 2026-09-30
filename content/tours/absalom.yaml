@@ -1,7 +1,8 @@
-# Absalom's revolt, 2 Samuel 15-19, in the order of the text. The tour's year (980 BC) is a
-# conventional point late in David's reign (c. 1010-970 BC), for the map only; the text
-# does not date the revolt. The David tour holds Mahanaim's welcome (17:24-29); this one
-# stops there for the news of Absalom's death.
+# Absalom's revolt, 2 Samuel 15-19, in the order of the text. 15:7 dates it "after forty
+# years" (so the KJV and the Synodal text), which other ancient witnesses read as four; the
+# tour's year (980 BC) is a conventional point late in David's reign (c. 1010-970 BC), for
+# the map only. The David tour holds Mahanaim's welcome (17:24-29); this one stops there
+# for the news of Absalom's death.
 id: absalom
 title:
   en: "Absalom's revolt"
@@ -12,8 +13,8 @@ stops:
   - place: a85151a # Hebron
     ref: 2Sam.15.7-2Sam.15.12
     note:
-      en: 'Absalom goes to Hebron as if to pay a vow, and his spies cry through the tribes: "Absalom reigneth in Hebron."'
-      ru: "Авессалом уходит в Хеврон будто бы исполнить обет, и его лазутчики разносят по коленам: «Авессалом воцарился в Хевроне»."
+      en: 'Absalom goes to Hebron as if to pay a vow, and sends spies through the tribes: at the sound of the trumpet they are to say, "Absalom reigneth in Hebron."'
+      ru: "Авессалом уходит в Хеврон будто бы исполнить обет, и рассылает по коленам лазутчиков: по звуку трубы говорить «Авессалом воцарился в Хевроне»."
   - place: a553110 # Kidron
     ref: 2Sam.15.13-2Sam.15.23
     note:
@@ -32,13 +33,13 @@ stops:
   - place: a15257a # Jerusalem
     ref: 2Sam.16.15-2Sam.16.23
     note:
-      en: "Absalom enters Jerusalem and follows the counsel of Ahithophel."
-      ru: "Авессалом входит в Иерусалим и следует совету Ахитофела."
+      en: "Absalom enters Jerusalem and, on Ahithophel's counsel, goes in to his father's concubines before all Israel."
+      ru: "Авессалом входит в Иерусалим и по совету Ахитофела входит к наложницам отца пред глазами всего Израиля."
   - place: aa24ad4 # Wood of Ephraim
     ref: 2Sam.18.6-2Sam.18.17
     note:
-      en: "In the wood of Ephraim Absalom's army is beaten; his head caught in an oak, he hangs there until Joab thrusts three darts into his heart."
-      ru: "В лесу Ефремовом войско Авессалома разбито; запутавшись волосами в ветвях дуба, он висит, пока Иоав не вонзает три стрелы в его сердце."
+      en: "In the wood of Ephraim Absalom's army is beaten; his head caught in an oak, he hangs there, and Joab thrusts three darts into his heart while he is yet alive; Joab's young men slay him."
+      ru: "В лесу Ефремовом войско Авессалома разбито; запутавшись волосами в ветвях дуба, он висит, ещё живой, когда Иоав вонзает три стрелы в его сердце, и оруженосцы Иоава добивают его."
   - place: ae5bfe9 # Mahanaim
     ref: 2Sam.18.19-2Sam.18.33
     note:

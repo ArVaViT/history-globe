@@ -85,6 +85,8 @@ const NAMED_BY_CONTEXT = new Set([
   // The tomb is in the garden "in the place where He was crucified" (John 19:41),
   // Golgotha, named in 19:17.
   "resurrection a631d35",
+  // David waits at Mahanaim (2 Sam 17:24, 27) for the news of the battle (18:19-33).
+  "absalom ae5bfe9",
 ]);
 
 /** Tour stops drawn faded in their year on purpose, with the reason. */
