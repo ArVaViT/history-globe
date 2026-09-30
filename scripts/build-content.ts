@@ -90,7 +90,7 @@ const NAMED_BY_CONTEXT = new Set([
 /** Tour stops drawn faded in their year on purpose, with the reason. */
 const FADED_ON_PURPOSE = new Set([
   // Word of Jerusalem's fall reaches Ezekiel (Ezek 33:21): the city lies in ruins.
-  "ezekiel a15257a",
+  "ezekiel a15257a Ezek.33.21-Ezek.33.22",
 ]);
 
 /** Evidence read where the Synodal text has words the English one lacks. */
@@ -361,7 +361,7 @@ for (const t of tours) {
           : l.from && year < l.from.year
             ? "not yet built"
             : null;
-    if (state && !FADED_ON_PURPOSE.has(`${t.id} ${s.place}`))
+    if (state && !FADED_ON_PURPOSE.has(`${t.id} ${s.place} ${s.ref}`))
       warnings.push(`tours/${t.id}: stop ${String(i + 1)} (${s.place}) is ${state} in its year`);
   }
 }

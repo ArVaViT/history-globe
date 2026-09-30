@@ -33,10 +33,20 @@ const places: LinkedPlace[] = [
   { id: "a", name: "A", where_tpl: "same", where_ref: "b" },
   { id: "b", name: "B", where_tpl: "same", where_ref: "a" },
   { id: "near", name: "Near", where_tpl: "within", where_ref: "jer" },
+  { id: "jerAt", name: "Jerusalem", where_tpl: "at", where_ref: "jer" },
+  { id: "lost", name: "Lost", where_tpl: "same", where_ref: "nowhere" },
+  // Six links to Jerusalem: one more than is followed.
+  { id: "h1", name: "H1", where_tpl: "at", where_ref: "h2" },
+  { id: "h2", name: "H2", where_tpl: "at", where_ref: "h3" },
+  { id: "h3", name: "H3", where_tpl: "at", where_ref: "h4" },
+  { id: "h4", name: "H4", where_tpl: "at", where_ref: "h5" },
+  { id: "h5", name: "H5", where_tpl: "at", where_ref: "h6" },
+  { id: "h6", name: "H6", where_tpl: "at", where_ref: "jer" },
 ];
 const ru: Record<string, string> = {
   jer: "Иерусалим",
   jer2: "Иерусалим",
+  jerAt: "Иерусалим",
   zion: "Сион",
   millo: "Милло",
   silla: "Силла",
@@ -53,6 +63,8 @@ describe("inheritLife", () => {
     expect(life.silla?.note.ru).toBe("Иерусалим: Сожжён.");
     expect(life.silla?.note.en).toBe("Jerusalem: Burnt.");
     expect(life.jer2?.note.ru).toBe("Сожжён.");
+    expect(life.jerAt?.note.ru).toBe("Сожжён.");
+    expect(life.h2?.note.ru).toBe("Иерусалим: Сожжён.");
   });
 
   it("carries over the ruin and the end, never the founding", () => {
@@ -67,5 +79,10 @@ describe("inheritLife", () => {
     expect(life.a).toBeUndefined();
     expect(life.near).toBeUndefined();
     expect(life.jer).toBeUndefined();
+  });
+
+  it("gives nothing for a link to a missing place or a chain longer than it follows", () => {
+    expect(life.lost).toBeUndefined();
+    expect(life.h1).toBeUndefined();
   });
 });
