@@ -396,7 +396,7 @@ def label_anchors(parts: list[list[list[list[float]]]]) -> list[tuple[float, flo
 
 def inside_point(poly: list[list[list[float]]]) -> tuple[float, float] | None:
     """A point inside a polygon: its centroid if inside, else the first of a 0.25-degree
-    grid over its box that is."""
+    grid over its box that is, else its first vertex."""
     _, cx, cy = ring_area_centroid(poly[0])
     if point_in_polygon(cx, cy, poly):
         return (cx, cy)
@@ -411,7 +411,8 @@ def inside_point(poly: list[list[list[float]]]) -> tuple[float, float] | None:
                 return (x, y)
             x += step
         y += step
-    return None
+    # Thinner than the search: its first vertex, on the edge but still on the shape.
+    return (poly[0][0][0], poly[0][0][1])
 
 
 def ensure_low_tier(

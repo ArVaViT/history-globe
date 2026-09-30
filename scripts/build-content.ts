@@ -81,7 +81,7 @@ if (!existsSync(openbible)) {
 const NAMED_BY_CONTEXT = new Set([
   // Acts 27:1 sails from Caesarea, named in 25:13-24 where Paul is held.
   "paul-rome a58735e",
-  // The tomb is in the garden "at the place where He was crucified" (John 19:41),
+  // The tomb is in the garden "in the place where He was crucified" (John 19:41),
   // Golgotha, named in 19:17.
   "resurrection a631d35",
 ]);
@@ -299,10 +299,18 @@ for (const f of places.features) {
   const ruName = names[town.id]?.ru ?? englishName.get(town.id) ?? "";
   const enName = englishName.get(town.id) ?? "";
   const withTown = { en: `${enName}: ${of.note.en ?? ""}`, ru: `${ruName}: ${of.note.ru ?? ""}` };
-  // Another name of the town: its years, and the note says whose they are when the name
-  // differs ("Вавилон" of 1 Pet 5:13 is Rome: "Рим: …").
+  // Another name of the town: its ruin and end, not its founding (Shamir of Judg 10:1,
+  // which OpenBible places at Samaria, stood before Omri built Samaria), and the note
+  // says whose years they are when the name differs ("Вавилон" of 1 Pet 5:13 is Rome).
   if (town.same) {
-    life[p.id] = (names[p.id]?.ru ?? p.name) === ruName ? of : { ...of, note: withTown };
+    if (!of.gap && !of.until) continue;
+    life[p.id] = {
+      ...(of.until ? { until: of.until } : {}),
+      ...(of.gap ? { gap: of.gap } : {}),
+      note: (names[p.id]?.ru ?? p.name) === ruName ? of.note : withTown,
+      sources: of.sources,
+      inherited: true,
+    };
   } else if (of.gap ?? of.until) {
     life[p.id] = {
       ...(of.until ? { until: of.until } : {}),
@@ -361,7 +369,7 @@ for (const e of EventsFile.parse(load("content/events.yaml")).events) {
 }
 events.sort((a, b) => a.year - b.year);
 
-// A tour stop the map draws faded in the tour's year (not yet built, in ruins, gone, or
+// A tour stop the map draws faded in its year (not yet built, in ruins, gone, or
 // named only in the New Testament before its events: apps/web/src/data.ts beforeItsTime)
 // is almost always a wrong year. Warned, not refused: a stop at a ruin can be meant.
 const NT_FROM = -5; // 6 BC, as in apps/web/src/data.ts
@@ -370,12 +378,12 @@ for (const t of tours) {
   for (const [i, s] of t.stops.entries()) {
     const year = s.year ?? t.year;
     const l = life[s.place];
-    if (!l) {
+    if (!l || (l.inherited && !l.from)) {
       if (otVerses.get(s.place) === 0 && year < NT_FROM)
         warnings.push(
           `tours/${t.id}: stop ${String(i + 1)} (${s.place}) is named only in the New Testament, before its events`,
         );
-      continue;
+      if (!l) continue;
     }
     const state =
       l.gap && year >= l.gap.from.year && year <= l.gap.until.year
@@ -386,9 +394,7 @@ for (const t of tours) {
             ? "not yet built"
             : null;
     if (state)
-      warnings.push(
-        `tours/${t.id}: stop ${String(i + 1)} (${s.place}) is ${state} in the tour's year`,
-      );
+      warnings.push(`tours/${t.id}: stop ${String(i + 1)} (${s.place}) is ${state} in its year`);
   }
 }
 

@@ -17,7 +17,9 @@ in `data-checks.md`; this is what it cannot check.
   wording, and its spelling in quotations (no "ё": «ты мертв»). Names come from
   `content/place-names.yaml`; if the card shows a name, the note uses the same one.
   References are shown in the Synodal numbering automatically (`synodal.ts`).
-- **English** follows the sense of the KJV and ESV.
+- **English** follows the sense of the KJV; quotations are word for word from the KJV,
+  which is in the public domain (ATTRIBUTIONS). Modern versions under copyright (ESV,
+  NIV, NKJV) are not quoted.
 
 ## Tours (`content/tours/*.yaml`)
 
@@ -32,7 +34,7 @@ in `data-checks.md`; this is what it cannot check.
   year of the Exodus at Mount Hor); the slider moves to it. The build warns if a stop's
   place is drawn faded in its year (not yet built, in ruins, gone).
 - Notes are one or two sentences: where, who, what happened. Quotations in «» are
-  verbatim Synodal; in English, in straight double quotes.
+  verbatim Synodal; in English, verbatim KJV in straight double quotes.
 - Avoid two stops citing the same verse; where the text moves on within a verse, cite
   the next verses instead.
 - A tour across several Gospels follows the order usually given and says where the
