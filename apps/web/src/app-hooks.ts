@@ -58,7 +58,7 @@ export function useUrlSync(globe: Globe | null): void {
           locale: s.locale,
           ...(s.selectedPlace ? { place: s.selectedPlace } : {}),
           layers: s.layers,
-          ...(s.tour ? { tour: s.tour.id } : {}),
+          ...(s.tour ? { tour: s.tour.id, stop: s.tour.step + 1 } : {}),
         });
       }, 300);
     };

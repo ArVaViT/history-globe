@@ -16,6 +16,7 @@ https://<globe-host>/embed/v1?year=30&place=af2161c&locale=ru&theme=dark
 | `camera`  | `lon,lat,zoom,pitch,bearing`      | overrides the default camera for `place`                 |
 | `layers`  | comma list                        | listed layers on, the rest off (`borders,places,routes`) |
 | `tour`    | tour id                           | start a guided tour                                      |
+| `stop`    | 2, 3, … (with `tour`)             | open the tour at that stop                               |
 | `locale`  | `en` \| `ru` (`uk`, `de` later)   | UI and names                                             |
 | `theme`   | `light` \| `dark`                 | colour scheme                                            |
 

@@ -11,6 +11,8 @@ export interface UrlView {
   readonly layers?: LayerVisibility;
   /** A tour to start (its id is checked against the loaded tours). */
   readonly tour?: string;
+  /** The tour's stop, counted from 1 as the card shows it. */
+  readonly stop?: number;
 }
 
 const LAYERS = ["borders", "places", "relief", "routes"] as const;
@@ -54,12 +56,16 @@ export function readUrl(search = window.location.search): UrlView {
     };
   }
   const tour = p.get("tour");
-  if (tour && /^[a-z0-9-]{1,40}$/.test(tour)) view.tour = tour;
+  if (tour && /^[a-z0-9-]{1,40}$/.test(tour)) {
+    view.tour = tour;
+    const stop = Number(p.get("stop"));
+    if (Number.isInteger(stop) && stop >= 1 && stop <= 500) view.stop = stop;
+  }
   return view;
 }
 
 type WritableView = Required<Pick<UrlView, "year" | "camera" | "locale">> &
-  Pick<UrlView, "place" | "layers" | "tour">;
+  Pick<UrlView, "place" | "layers" | "tour" | "stop">;
 
 export function writeUrl(view: WritableView): void {
   window.history.replaceState(null, "", `?${viewSearch(view, window.location.search)}`);
@@ -90,5 +96,8 @@ export function viewSearch(view: WritableView, current = ""): string {
   else p.delete("layers");
   if (view.tour) p.set("tour", view.tour);
   else p.delete("tour");
+  // The first stop is where a tour starts anyway: only later ones are written.
+  if (view.tour && view.stop !== undefined && view.stop > 1) p.set("stop", String(view.stop));
+  else p.delete("stop");
   return p.toString();
 }

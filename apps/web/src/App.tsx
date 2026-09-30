@@ -79,6 +79,7 @@ export function App() {
     if (!engine) return;
     if (INITIAL.tour && data?.tours.some((t) => t.id === INITIAL.tour)) {
       engine.startTour(INITIAL.tour);
+      if (INITIAL.stop !== undefined && INITIAL.stop > 1) engine.goToStop(INITIAL.stop - 1);
       return;
     }
     if (INITIAL.place && !INITIAL.camera) engine.selectPlace(INITIAL.place);

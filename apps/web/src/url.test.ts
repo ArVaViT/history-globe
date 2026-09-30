@@ -94,4 +94,16 @@ describe("layers and tour in the link", () => {
     expect(q.get("tour")).toBe("paul-1");
     expect(new URLSearchParams(viewSearch(view, "?tour=paul-1")).has("tour")).toBe(false);
   });
+
+  it("keeps the tour's stop, from the second on, and only with a tour", () => {
+    expect(readUrl("?tour=exodus&stop=9").stop).toBe(9);
+    expect(readUrl("?tour=exodus&stop=0").stop).toBeUndefined();
+    expect(readUrl("?tour=exodus&stop=2.5").stop).toBeUndefined();
+    expect(readUrl("?stop=9").stop).toBeUndefined();
+    const at = (stop: number) =>
+      new URLSearchParams(viewSearch({ ...view, tour: "exodus", stop }, "?stop=4"));
+    expect(at(9).get("stop")).toBe("9");
+    expect(at(1).has("stop")).toBe(false);
+    expect(new URLSearchParams(viewSearch(view, "?tour=exodus&stop=4")).has("stop")).toBe(false);
+  });
 });
