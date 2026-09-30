@@ -20,36 +20,40 @@ export function ToursPanel({
   const locale: Locale = i18n.language === "ru" ? "ru" : "en";
   return (
     <Section id="tours" title={t("tours.title")} className="w-[340px] max-md:w-full pb-3">
-      {tours.map((tour, i) => (
-        <div key={tour.id}>
-          {/* Old Testament tours before the New; tours come sorted by year. */}
-          {i === 0 || (tours[i - 1]?.year ?? 0) < 0 !== tour.year < 0 ? (
-            <div className="px-4 pt-2 pb-0.5 text-[10.5px] tracking-[0.08em] text-ink-soft uppercase">
-              {tour.year < 0 ? t("tours.ot") : t("tours.nt")}
-            </div>
-          ) : null}
-          <button
-            title={t("tours.stops", { count: tour.stops.length })}
-            onClick={() => {
-              onStart(tour.id);
-            }}
-            className="group mx-2 flex w-[calc(100%-16px)] items-center gap-3 rounded-xl px-2 py-1.5 text-left hover:bg-paper-2"
-          >
-            <span className="grid size-7 shrink-0 place-items-center rounded-full bg-accent/90 text-paper group-hover:bg-accent">
-              <Route className="size-3.5" aria-hidden />
-            </span>
-            <span className="min-w-0 flex-1">
-              <span className="block truncate font-serif text-[14.5px] leading-snug text-ink">
-                {tour.title[i18n.language] ?? tour.title.en}
+      {/* Seventeen tours would fill the column: the list scrolls on its own, and each
+          testament's heading stays in view while its tours pass under it. */}
+      <div className="max-h-[min(420px,50vh)] overflow-y-auto [scrollbar-width:thin]">
+        {tours.map((tour, i) => (
+          <div key={tour.id}>
+            {/* Old Testament tours before the New; tours come sorted by year. */}
+            {i === 0 || (tours[i - 1]?.year ?? 0) < 0 !== tour.year < 0 ? (
+              <div className="sticky top-0 z-[1] bg-paper px-4 pt-2 pb-0.5 text-[10.5px] tracking-[0.08em] text-ink-soft uppercase">
+                {tour.year < 0 ? t("tours.ot") : t("tours.nt")}
+              </div>
+            ) : null}
+            <button
+              title={t("tours.stops", { count: tour.stops.length })}
+              onClick={() => {
+                onStart(tour.id);
+              }}
+              className="group mx-2 flex w-[calc(100%-16px)] items-center gap-3 rounded-xl px-2 py-1.5 text-left hover:bg-paper-2"
+            >
+              <span className="grid size-7 shrink-0 place-items-center rounded-full bg-accent/90 text-paper group-hover:bg-accent">
+                <Route className="size-3.5" aria-hidden />
               </span>
-              <span className="block truncate text-[11.5px] text-ink-soft">
-                {tour.approximate ? `${t("place.circa")} ` : ""}
-                {formatYear(tour.year, locale)} · {tourSpan(tour.stops, locale)}
+              <span className="min-w-0 flex-1">
+                <span className="block truncate font-serif text-[14.5px] leading-snug text-ink">
+                  {tour.title[i18n.language] ?? tour.title.en}
+                </span>
+                <span className="block truncate text-[11.5px] text-ink-soft">
+                  {tour.approximate ? `${t("place.circa")} ` : ""}
+                  {formatYear(tour.year, locale)} · {tourSpan(tour.stops, locale)}
+                </span>
               </span>
-            </span>
-          </button>
-        </div>
-      ))}
+            </button>
+          </div>
+        ))}
+      </div>
     </Section>
   );
 }
