@@ -172,6 +172,14 @@ export function App() {
               <h1 className="flex-1 font-serif text-[20px] font-semibold tracking-tight text-ink">
                 History Globe
               </h1>
+              <a
+                href={`${import.meta.env.BASE_URL}about.html${state.locale === "en" ? "#en" : ""}`}
+                aria-label={t("about")}
+                title={t("about")}
+                className="grid size-7 place-items-center rounded-full text-[13px] font-semibold text-ink-soft ring-1 ring-line hover:bg-paper-2 hover:text-ink"
+              >
+                ?
+              </a>
               <LocaleSwitch value={state.locale} onChange={engine.setLocale} />
             </Panel>
             {panelsOpen && (
