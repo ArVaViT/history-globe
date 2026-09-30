@@ -1,7 +1,7 @@
 # The kingdom divides, 1 Kings 11:29-14:26, in the order of the text, from where the
 # Solomon tour ends. The tour's year (931 BC) is the usual date of the division (930 BC is
-# also held). Shishak's campaign, in Rehoboam's fifth year (14:25), is dated c. 925 BC from
-# his relief at Karnak; that stop carries it.
+# also held). Shishak's campaign, in Rehoboam's fifth year (14:25), is put at c. 925 BC on
+# that reckoning; his relief at Karnak records it. That stop carries it.
 id: divided-kingdom
 title:
   en: "The kingdom divides"
@@ -22,8 +22,8 @@ stops:
   - place: adf74d4 # Shechem
     ref: 1Kgs.12.1-1Kgs.12.20
     note:
-      en: 'At Shechem Rehoboam will not lighten the yoke, and Israel answers: "To your tents, O Israel: now see to thine own house, David." Only Judah stays with him.'
-      ru: "В Сихеме Ровоам не облегчает иго, и Израиль отвечает: «по шатрам своим, Израиль! теперь знай свой дом, Давид!» С ним остаётся только колено Иудино."
+      en: 'At Shechem Rehoboam will not lighten the yoke, and Israel answers: "to your tents, O Israel: now see to thine own house, David." Rehoboam reigns only over those who dwell in the cities of Judah.'
+      ru: "В Сихеме Ровоам не облегчает иго, и Израиль отвечает: «по шатрам своим, Израиль! теперь знай свой дом, Давид!» Ровоам царствует лишь над жившими в городах Иудиных."
   - place: a8a9ff9 # Penuel
     ref: 1Kgs.12.25
     note:
