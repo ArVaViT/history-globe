@@ -277,10 +277,20 @@ for (const f of places.features) {
   if (life[p.id] || !p.where_ref) continue;
   const of = life[p.where_ref];
   if (!of) continue;
-  if (p.where_tpl === "same") life[p.id] = of;
-  else if (p.where_tpl === "at" && (of.gap ?? of.until)) {
-    const ruName = names[p.where_ref]?.ru ?? englishName.get(p.where_ref) ?? "";
-    const enName = englishName.get(p.where_ref) ?? "";
+  const ruName = names[p.where_ref]?.ru ?? englishName.get(p.where_ref) ?? "";
+  const enName = englishName.get(p.where_ref) ?? "";
+  // Another name of the place: its years, and the note says whose they are when the
+  // name differs ("Вавилон" of 1 Pet 5:13 is Rome: "Рим: …").
+  if (p.where_tpl === "same") {
+    const own = names[p.id]?.ru ?? p.name;
+    life[p.id] =
+      own === ruName
+        ? of
+        : {
+            ...of,
+            note: { en: `${enName}: ${of.note.en ?? ""}`, ru: `${ruName}: ${of.note.ru ?? ""}` },
+          };
+  } else if (p.where_tpl === "at" && (of.gap ?? of.until)) {
     life[p.id] = {
       ...(of.until ? { until: of.until } : {}),
       ...(of.gap ? { gap: of.gap } : {}),
