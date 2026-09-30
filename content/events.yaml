@@ -219,3 +219,30 @@ events:
     place: afc8e7a
     sources:
       - "Tacitus, Annals 15.38-44"
+  - id: agrippa-dies
+    year: "AD 44"
+    title:
+      en: "Herod Agrippa I dies at Caesarea"
+      ru: "Смерть Ирода Агриппы I в Кесарии"
+    place: a58735e
+    sources:
+      - "Acts 12:20-23"
+      - "Josephus, Antiquities 19.343-350"
+  - id: claudius-expels
+    year: "c. AD 49"
+    title:
+      en: "Claudius expels the Jews from Rome"
+      ru: "Клавдий изгоняет иудеев из Рима"
+    place: afc8e7a
+    sources:
+      - "Acts 18:2"
+      - "Suetonius, Claudius 25.4; Orosius, History 7.6.15 (the ninth year of Claudius)"
+  - id: gallio
+    year: "c. AD 51"
+    title:
+      en: "Gallio, proconsul of Achaia, at Corinth"
+      ru: "Галлион — проконсул Ахаии, в Коринфе"
+    place: a6f437a
+    sources:
+      - "Acts 18:12-17"
+      - "The Gallio inscription at Delphi (SIG³ 801), dating his year of office to 51-52"
