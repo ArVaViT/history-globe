@@ -246,3 +246,30 @@ events:
     place: afc8e7a
     sources:
       - "Tacitus, Annals 15.38-44"
+  - id: damascus-falls
+    year: "732 BC"
+    title:
+      en: "Tiglath-pileser III takes Damascus"
+      ru: "Феглаффелласар (Тиглатпаласар III) берёт Дамаск"
+    place: a69c1d4
+    sources:
+      - "2 Kgs 16:9"
+      - "Eponym Chronicle for 733-732 BC (campaigns against Damascus)"
+  - id: babylon-taken
+    year: "539 BC"
+    title:
+      en: "Cyrus takes Babylon"
+      ru: "Кир берёт Вавилон"
+    place: a217d18
+    sources:
+      - "Nabonidus Chronicle (ABC 7) iii 12-16"
+      - "Cyrus Cylinder"
+  - id: panium
+    year: "200 BC"
+    title:
+      en: "Battle of Panium: Judea passes from the Ptolemies to the Seleucids"
+      ru: "Битва при Панионе: Иудея переходит от Птолемеев к Селевкидам"
+    place: ab7bf48
+    sources:
+      - "Polybius 16.18-19"
+      - "Josephus, Antiquities 12.132-133"
