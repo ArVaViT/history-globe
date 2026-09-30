@@ -94,6 +94,9 @@ export function useMapFeed(globe: Globe | null, placesShown: boolean): MapFeed {
       setReady(true);
       refreshInView();
     });
+    // Ready can come before the labels are placed: list what is in view again once
+    // the map has settled.
+    globe.renderer.map.once("idle", refreshInView);
     const offCamera = globe.renderer.on("cameraChanged", refreshInView);
     const offHover = globe.renderer.on("hover", (id, at) => {
       setHover(id && at ? { id, at } : null);
@@ -102,6 +105,7 @@ export function useMapFeed(globe: Globe | null, placesShown: boolean): MapFeed {
       offReady();
       offCamera();
       offHover();
+      globe.renderer.map.off("idle", refreshInView);
     };
   }, [globe]);
 

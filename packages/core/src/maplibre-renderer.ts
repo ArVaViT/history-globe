@@ -124,14 +124,23 @@ export class MapLibreRenderer implements Renderer {
       for (const run of this.pending) run();
       this.pending = [];
     });
-    // Ready at the first idle frame. Some views never go idle (a camera over the pole
-    // keeps re-rendering), so the loading state also ends a few seconds after creation.
+    // Ready at the first frame that shows the places, or at the first idle frame if that
+    // comes sooner. Waiting for idle alone kept the loading state up until every relief
+    // tile had arrived: some 7 s on a 4G line, with the map long in view. Some views
+    // never go idle (a camera over the pole keeps re-rendering), so the loading state
+    // also ends a few seconds after creation.
     let readyFired = false;
     const fireReady = () => {
       if (readyFired) return;
       readyFired = true;
+      this.map.off("sourcedata", onPlaces);
       for (const h of this.handlers.ready) h();
     };
+    const onPlaces = (e: maplibregl.MapSourceDataEvent) => {
+      if (e.sourceId === "places" && this.map.isSourceLoaded("places"))
+        this.map.once("render", fireReady);
+    };
+    this.map.on("sourcedata", onPlaces);
     this.map.once("idle", fireReady);
     this.readyTimer = setTimeout(fireReady, READY_FALLBACK_MS);
 
