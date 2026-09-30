@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import en from "./en.json";
+import { translate } from "./index";
 import ru from "./ru.json";
 
 function keys(obj: object, prefix = ""): string[] {
@@ -30,5 +31,20 @@ describe("i18n dictionaries", () => {
     ]) {
       expect(keys(ru)).toContain(key);
     }
+  });
+
+  it("chooses the plural form by language and fills the placeholders", () => {
+    expect(translate("ru", "tours.stops", { count: 1 })).toBe("1 остановка");
+    expect(translate("ru", "tours.stops", { count: 3 })).toBe("3 остановки");
+    expect(translate("ru", "tours.stops", { count: 12 })).toBe("12 остановок");
+    expect(translate("ru", "tours.stops", { count: 21 })).toBe("21 остановка");
+    expect(translate("en", "tours.stops", { count: 1 })).toMatch(/^1 stop$/);
+    expect(translate("en", "tours.stops", { count: 5 })).toMatch(/^5 stops$/);
+    expect(translate("ru", "tours.stop", { n: 2, total: 9 })).toBe("Остановка 2 из 9");
+  });
+
+  it("falls back to English, then to the key", () => {
+    expect(translate("de", "place.zoom")).toBe(translate("en", "place.zoom"));
+    expect(translate("ru", "kind.no such kind")).toBe("kind.no such kind");
   });
 });

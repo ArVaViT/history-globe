@@ -1,7 +1,7 @@
 import { formatRef, formatYear, type Locale, type PlaceLife } from "@hg/model";
-import { ExternalLink, MapPin, X, ZoomIn } from "lucide-react";
+import { ExternalLink, MapPin, X, ZoomIn } from "./icons";
 import { useEffect, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../i18n";
 import { beforeItsTime, type PlaceProps, type Site } from "../data";
 import { mapsUrl, verseUrl } from "../links";
 import { Panel } from "./Panel";

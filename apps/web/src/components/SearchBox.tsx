@@ -1,6 +1,6 @@
-import { Search } from "lucide-react";
+import { Search } from "./icons";
 import { useMemo, useState, type RefObject } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../i18n";
 import { searchPlaces, type LoadedData, type PlaceProps } from "../data";
 import { Panel } from "./Panel";
 

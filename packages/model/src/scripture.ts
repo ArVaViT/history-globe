@@ -1,6 +1,5 @@
 import type { Locale } from "./time.ts";
 import { toSynodal } from "./synodal.ts";
-import { VERSES } from "./versification.ts";
 
 /** OSIS book id → [Russian Synodal abbreviation, English abbreviation]. */
 const BOOKS: Readonly<Record<string, readonly [string, string]>> = {
@@ -102,7 +101,7 @@ export const NT_BOOKS: ReadonlySet<string> = new Set([
   "Rev",
 ]);
 
-interface Ref {
+export interface Ref {
   readonly book: string;
   readonly chapter: number;
   readonly verse: number | null;
@@ -110,16 +109,16 @@ interface Ref {
 
 const OSIS_ONE = /^([1-3]?[A-Z][A-Za-z]+)\.([1-9]\d*)(?:\.([1-9]\d*))?$/;
 
-function parseOne(osis: string): Ref {
+/**
+ * One OSIS verse or chapter ("Acts.13.4", "Ps.23"). Only the form is checked here;
+ * whether the verse exists is checkRef's job (verses.ts), at build time, so the verse
+ * table stays out of the browser (ADR 0010).
+ */
+export function parseOne(osis: string): Ref {
   const m = OSIS_ONE.exec(osis);
   const [, book = "", chapter = "", verse] = m ?? [];
   if (!m || !(book in BOOKS)) throw new SyntaxError(`not an OSIS reference: "${osis}"`);
-  const ref = { book, chapter: Number(chapter), verse: verse === undefined ? null : Number(verse) };
-  // Every chapter and verse must exist (ADR 0007), in the English versification.
-  const inChapter = VERSES[book]?.[ref.chapter - 1];
-  if (inChapter === undefined || (ref.verse !== null && ref.verse > inChapter))
-    throw new SyntaxError(`no such verse: "${osis}"`);
-  return ref;
+  return { book, chapter: Number(chapter), verse: verse === undefined ? null : Number(verse) };
 }
 
 /** Chapter.verse as one comparable number (no chapter has 1000 verses). */

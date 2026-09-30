@@ -1,7 +1,7 @@
 import type { Tour } from "@hg/core";
 import { formatRef, type Locale } from "@hg/model";
-import { ArrowLeft, ArrowRight, X } from "lucide-react";
-import { useTranslation } from "react-i18next";
+import { ArrowLeft, ArrowRight, X } from "./icons";
+import { useTranslation } from "../i18n";
 import type { PlaceProps } from "../data";
 import { Panel } from "./Panel";
 import { verseUrl } from "../links";

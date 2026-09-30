@@ -2,7 +2,7 @@ import type { Locale } from "@hg/model";
 import type { TimelineEvent } from "./components/Timeline";
 import type { LoadedData } from "./data";
 
-/** i18next's `t`, reduced to what is used here. */
+/** The UI `t` (i18n/index.ts), reduced to what is used here. */
 type T = (key: string, options: { name: string }) => string;
 
 /**

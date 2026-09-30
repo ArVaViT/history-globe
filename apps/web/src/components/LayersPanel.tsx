@@ -1,6 +1,6 @@
 import { iconDataUrl, type LayerVisibility } from "@hg/core";
 import { useMemo } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../i18n";
 import { Section } from "./Panel";
 
 const ORDER: (keyof LayerVisibility)[] = ["relief", "borders", "places", "routes"];

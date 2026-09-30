@@ -1,8 +1,8 @@
 import { YEAR_MAX, YEAR_MIN } from "@hg/core";
 import type { Locale } from "@hg/model";
-import { Menu, PanelLeftClose } from "lucide-react";
+import { Menu, PanelLeftClose } from "./components/icons";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "./i18n";
 import { HoverTip, PolityTip } from "./components/HoverTip";
 import { InViewPanel } from "./components/InViewPanel";
 import { LayersPanel, LegendPanel } from "./components/LayersPanel";

@@ -1,8 +1,8 @@
 import { YEAR_MAX, YEAR_MIN } from "@hg/core";
 import { formatYear, PERIODS, periodAt, type Locale } from "@hg/model";
-import { ChevronsLeft, ChevronsRight, Pause, Play } from "lucide-react";
+import { ChevronsLeft, ChevronsRight, Pause, Play } from "./icons";
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../i18n";
 import { Panel } from "./Panel";
 
 const SPAN = YEAR_MAX - YEAR_MIN;

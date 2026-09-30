@@ -1,5 +1,5 @@
 import { formatYear, type HistoryEvent, type Locale } from "@hg/model";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../i18n";
 import { Section } from "./Panel";
 
 /**

@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { checkRef } from "./verses.ts";
 import { formatRef, NT_BOOKS, refCovers } from "./scripture.ts";
 
 describe("formatRef", () => {
@@ -36,7 +37,9 @@ describe("formatRef", () => {
     "Jude.2.1",
     "Rom.14.24",
   ])("rejects %s", (osis) => {
-    expect(() => formatRef(osis, "en")).toThrow(SyntaxError);
+    expect(() => {
+      checkRef(osis);
+    }).toThrow(SyntaxError);
   });
 
   it("accepts the last verse of a book", () => {

@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown } from "./icons";
 import { useState, type ReactNode } from "react";
 
 export function Panel({ children, className = "" }: { children: ReactNode; className?: string }) {

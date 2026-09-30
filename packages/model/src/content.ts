@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { formatRef } from "./scripture.ts";
+import { checkRef } from "./verses.ts";
 import { parseLabel, toAstronomical } from "./time.ts";
 
 /** The single content schema (ADR 0007). Validation here is shape + meaning. */
@@ -7,7 +7,7 @@ import { parseLabel, toAstronomical } from "./time.ts";
 const osis = z.string().refine(
   (s) => {
     try {
-      formatRef(s, "en");
+      checkRef(s);
       return true;
     } catch {
       return false;

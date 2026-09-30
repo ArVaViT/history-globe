@@ -1,7 +1,7 @@
 import type { PolityName, Renderer } from "@hg/core";
 import { useEffect, useState } from "react";
 import type { Locale } from "@hg/model";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../i18n";
 import type { PlaceProps } from "../data";
 
 /** Small label that follows the pointer over a place: name, its kind, and the other-language name. */

@@ -1,6 +1,6 @@
 import { formatRef, formatYear, type Locale } from "@hg/model";
-import { Route } from "lucide-react";
-import { useTranslation } from "react-i18next";
+import { Route } from "./icons";
+import { useTranslation } from "../i18n";
 import { Section } from "./Panel";
 
 export function ToursPanel({

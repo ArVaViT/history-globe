@@ -1,6 +1,6 @@
 import type { Locale } from "@hg/model";
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "../i18n";
 import { beforeItsTime, type LoadedData } from "../data";
 import { Section } from "./Panel";
 
