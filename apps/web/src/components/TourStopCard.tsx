@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import type { PlaceProps } from "../data";
 import { Panel } from "./Panel";
+import { verseUrl } from "../links";
 
 export function TourStopCard({
   tour,
@@ -50,9 +51,14 @@ export function TourStopCard({
         {stop.note[locale] ?? stop.note.en}
       </p>
       <div className="mt-3">
-        <span className="rounded-full border border-line bg-white/70 px-2.5 py-0.5 font-serif text-[13px] text-ink">
+        <a
+          href={verseUrl(stop.ref, locale)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full border border-line bg-white/70 px-2.5 py-0.5 font-serif text-[13px] text-ink hover:border-accent hover:text-accent"
+        >
           {formatRef(stop.ref, locale)}
-        </span>
+        </a>
       </div>
       <div className="mt-4 h-1 overflow-hidden rounded-full bg-paper-2">
         <div

@@ -3,6 +3,7 @@ import { ExternalLink, MapPin, X, ZoomIn } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { beforeItsTime, type PlaceProps, type Site } from "../data";
+import { mapsUrl, verseUrl } from "../links";
 import { Panel } from "./Panel";
 
 const VERSES_SHOWN = 10;
@@ -148,7 +149,7 @@ export function PlaceCard({
           </>
         )}
         <a
-          href={`https://www.google.com/maps/search/?api=1&query=${String(at[1])},${String(at[0])}`}
+          href={mapsUrl(at)}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1 text-[13px] text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
@@ -201,12 +202,16 @@ export function PlaceCard({
       </div>
       <div className="flex flex-wrap gap-1.5 px-5 pt-2">
         {place.osis.slice(0, allVerses ? undefined : VERSES_SHOWN).map((o) => (
-          <span
+          <a
             key={o}
-            className="rounded-full border border-line bg-white/70 px-2.5 py-0.5 font-serif text-[13px] text-ink"
+            href={verseUrl(o, locale)}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={t("place.read_verse")}
+            className="rounded-full border border-line bg-white/70 px-2.5 py-0.5 font-serif text-[13px] text-ink hover:border-accent hover:text-accent"
           >
             {safeRef(o, locale)}
-          </span>
+          </a>
         ))}
         {!allVerses && place.osis.length > VERSES_SHOWN && (
           <button
