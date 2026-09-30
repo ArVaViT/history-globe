@@ -1,0 +1,41 @@
+# Jehu, 2 Kings 9-10, in the order of the text, after the Elisha tour. The tour's year
+# (841 BC) is the usual date of his accession: in 841 BC he paid tribute to Shalmaneser III
+# (the Black Obelisk; see the dated events), and 842 BC is also held. The last stop, Hazael's
+# conquests "in those days", falls some years later.
+id: jehu
+title:
+  en: "Jehu"
+  ru: "Ииуй"
+year: "841 BC"
+approximate: true
+stops:
+  - place: a2fe63c # Ramoth-gilead
+    ref: 2Kgs.9.1-2Kgs.9.13
+    note:
+      en: 'Sent by Elisha, one of the sons of the prophets anoints Jehu king over Israel at Ramoth-gilead, and the captains blow the trumpet: "Jehu is king."'
+      ru: "Посланный Елисеем сын пророческий помазывает Ииуя в царя над Израилем в Рамофе Галаадском, и военачальники трубят: «воцарился Ииуй!»"
+  - place: ae0bf4a # Jezreel
+    ref: 2Kgs.9.16-2Kgs.9.26
+    note:
+      en: 'He drives to Jezreel, "for he driveth furiously", and in the portion of Naboth shoots Joram king of Israel through the heart.'
+      ru: "Он едет в Изреель, «потому что он идет стремительно», и на поле Навуфея поражает стрелой Иорама, царя Израильского."
+  - place: a8554e3 # Megiddo
+    ref: 2Kgs.9.27-2Kgs.9.28
+    note:
+      en: "Ahaziah king of Judah flees, is smitten on the way and dies at Megiddo; his servants bury him in Jerusalem."
+      ru: "Охозия, царь Иудейский, бежит, ранен в пути и умирает в Мегиддоне; слуги хоронят его в Иерусалиме."
+  - place: ae0bf4a # Jezreel
+    ref: 2Kgs.9.30-2Kgs.9.37
+    note:
+      en: "At Jezreel Jezebel, painted, looks out of a window; she is thrown down, and the dogs eat her, as Elijah had said."
+      ru: "В Изрееле Иезавель, нарумянив лицо, глядит в окно; её выбрасывают, и псы съедают её тело, по слову Илии."
+  - place: a041bb3 # Samaria
+    ref: 2Kgs.10.1-2Kgs.10.28
+    note:
+      en: "The seventy sons of Ahab in Samaria are slain; in Samaria Jehu destroys what remains of Ahab's house and destroys Baal out of Israel."
+      ru: "Семьдесят сыновей Ахава в Самарии убиты; в Самарии Ииуй истребляет остаток дома Ахавова и истребляет Ваала с земли Израильской."
+  - place: ae73b90 # Gilead
+    ref: 2Kgs.10.32-2Kgs.10.33
+    note:
+      en: "In those days Hazael of Syria smites Israel east of the Jordan, all the land of Gilead, from Aroer by the river Arnon to Bashan."
+      ru: "В те дни Азаил Сирийский поражает Израиль на восток от Иордана, всю землю Галаад, от Ароера при потоке Арноне до Васана."
