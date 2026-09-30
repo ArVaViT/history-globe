@@ -154,18 +154,19 @@ export function PlaceCard({
 
       {life && (
         <div className="mx-5 mt-3 rounded-xl border border-line bg-paper-2/60 px-3 py-2 text-[13px] leading-snug text-ink">
+          {/* When it stood first, then the years in ruins between its two lives. */}
           <div className="font-medium">
-            {life.gap &&
-              t("place.life_gap", {
-                from: lifeYear(life.gap.from, locale, t),
-                until: lifeYear(life.gap.until, locale, t),
-              })}
-            {life.gap && (life.from ?? life.until) && " · "}
             {life.from && t("place.life_from", { year: lifeYear(life.from, locale, t) })}
             {life.from && life.until && " · "}
             {life.until &&
               t(life.from ? "place.life_until" : "place.life_until_only", {
                 year: lifeYear(life.until, locale, t),
+              })}
+            {life.gap && (life.from ?? life.until) && " · "}
+            {life.gap &&
+              t("place.life_gap", {
+                from: lifeYear(life.gap.from, locale, t),
+                until: lifeYear(life.gap.until, locale, t),
               })}
           </div>
           <div className="mt-0.5">{life.note[locale] ?? life.note.en}</div>
