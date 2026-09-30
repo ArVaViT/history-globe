@@ -23,6 +23,7 @@ export function PlaceCard({
   place,
   sites,
   at,
+  linkHere,
   alsoHere,
   locale,
   year,
@@ -33,6 +34,8 @@ export function PlaceCard({
 }: {
   place: PlaceProps;
   sites: readonly Site[];
+  /** A link that opens this place, this year and this view. */
+  linkHere: () => string;
   /** The place's point, [lon, lat]: where it is today on Google Maps. */
   at: readonly [number, number];
   /** Other records on the same point under another name. */
@@ -48,7 +51,7 @@ export function PlaceCard({
   // starts folded again.
   // Verses open fifty at a time: Jerusalem has 955.
   const [versesShown, setVersesShown] = useState(VERSES_SHOWN);
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState<"copied" | "failed" | null>(null);
   const [allAlso, setAllAlso] = useState(false);
   const { t } = useTranslation();
   const ru = locale === "ru";
@@ -99,18 +102,36 @@ export function PlaceCard({
         </button>
         <button
           onClick={() => {
-            // The address already holds the place, the year and the camera.
-            void navigator.clipboard.writeText(window.location.href).then(
-              () => {
-                setCopied(true);
-              },
-              () => undefined,
-            );
+            const done = (ok: boolean) => {
+              setCopied(ok ? "copied" : "failed");
+              window.setTimeout(() => {
+                setCopied(null);
+              }, 2000);
+            };
+            try {
+              navigator.clipboard.writeText(linkHere()).then(
+                () => {
+                  done(true);
+                },
+                () => {
+                  done(false);
+                },
+              );
+            } catch {
+              // No clipboard (plain http on a LAN address, or an iframe without permission).
+              done(false);
+            }
           }}
           className="flex items-center gap-1.5 rounded-full border border-line px-3 py-1.5 text-sm text-ink-soft hover:bg-paper-2 hover:text-ink"
         >
           <Link2 className="size-4" aria-hidden />
-          <span aria-live="polite">{copied ? t("place.copied") : t("place.copy_link")}</span>
+          <span aria-live="polite">
+            {copied === "copied"
+              ? t("place.copied")
+              : copied === "failed"
+                ? t("place.copy_failed")
+                : t("place.copy_link")}
+          </span>
         </button>
       </div>
 

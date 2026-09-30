@@ -12,7 +12,7 @@ import { Timeline } from "./components/Timeline";
 import { ToursPanel } from "./components/ToursPanel";
 import { TourStopCard } from "./components/TourStopCard";
 import { loadData, type LoadedData } from "./data";
-import { readUrl, writeUrl } from "./url";
+import { readUrl, viewSearch, writeUrl } from "./url";
 import { useGlobe, useGlobeState } from "./useGlobe";
 
 const INITIAL = readUrl();
@@ -247,6 +247,23 @@ export function App() {
               selected && (
                 <PlaceCard
                   key={selected.id}
+                  linkHere={() => {
+                    // Built now, not read from the address bar: the address is written
+                    // 300 ms after the camera settles and lags behind during a flight.
+                    const s = engine.store.get();
+                    const search = viewSearch(
+                      {
+                        year: s.year,
+                        camera: globe.renderer.getCamera(),
+                        locale: s.locale,
+                        place: selected.id,
+                        layers: s.layers,
+                        ...(s.tour ? { tour: s.tour.id } : {}),
+                      },
+                      window.location.search,
+                    );
+                    return `${window.location.origin}${window.location.pathname}?${search}`;
+                  }}
                   place={selected}
                   at={data.byId.get(selected.id)?.info.at ?? [0, 0]}
                   sites={data.sites.get(selected.id) ?? []}

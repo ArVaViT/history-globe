@@ -11,7 +11,7 @@ other platforms.
 ## Status
 
 A working desktop prototype (PR #2): the globe with relief, state borders by year,
-1288 biblical places with Synodal Russian names, disputed locations, four tours of
+1288 biblical places (1182 with Synodal Russian names), disputed locations, four tours of
 Paul and a shareable link. No mobile layout and no production hosting yet.
 
 ## Run it locally
