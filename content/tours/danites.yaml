@@ -1,7 +1,8 @@
 # The tribe of Dan moves north, Judges 18, in the order of the text. The chapter is not
 # dated ("in those days there was no king in Israel"); the tour's year (1150 BC) is the
 # point of the Judges tour, for the map only. Micah's house on mount Ephraim has no place
-# of its own on the map, so its part of the story is told at Dan.
+# of its own on the map, so its part of the story is told at Dan. The migration is usually
+# set early in the period (its priest is a grandson of Gershom, 18:30; cf. Josh 19:47).
 id: danites
 title:
   en: "The tribe of Dan moves north"
@@ -12,20 +13,20 @@ stops:
   - place: a08174b # Zorah
     ref: Judg.18.1-Judg.18.2
     note:
-      en: "Having no inheritance to dwell in, the Danites send five men from Zorah and Eshtaol to spy out the land."
+      en: "Their inheritance not yet having fallen to them, the Danites send five men from Zorah and Eshtaol to spy out the land."
       ru: "Не получив полного удела, сыны Дановы посылают из Цоры и Естаола пять человек осмотреть землю."
   - place: a513646 # Dan
     ref: Judg.18.7-Judg.18.10
     note:
-      en: "They come to Laish, later Dan, and find a people quiet and secure, far from the Sidonians and with no one to help them."
-      ru: "Они приходят в Лаис, будущий Дан, и видят народ, живущий покойно и беспечно, далеко от Сидонян и без чьей-либо защиты."
+      en: "They come to Laish, later Dan, and find a people quiet and secure, far from the Sidonians and having no business with any man."
+      ru: "Они приходят в Лаис, будущий Дан, и видят народ, живущий покойно и беспечно, далеко от Сидонян и ни с кем не имеющий дела."
   - place: a67325d # Mahaneh-dan
     ref: Judg.18.11-Judg.18.12
     note:
-      en: "Six hundred armed men set out and camp behind Kiriath-jearim in Judah; the place is called Mahaneh-dan, the camp of Dan."
-      ru: "Шестьсот вооружённых мужей выступают и становятся станом в Кириаф-Иариме, в Иудее; то место называют станом Дановым."
+      en: "Six hundred armed men set out and camp at Kiriath-jearim in Judah; the place behind it is called Mahaneh-dan, the camp of Dan."
+      ru: "Шестьсот вооружённых мужей выступают и становятся станом в Кириаф-Иариме, в Иудее; место позади него называют Станом Дановым."
   - place: a513646 # Dan
     ref: Judg.18.13-Judg.18.31
     note:
-      en: "Taking Micah's graven image and his priest on the way, they smite Laish, burn it, build the city again and call it Dan, after their father."
+      en: "Taking Micah's graven image and his priest on the way, they smite Laish, burn it, build a city there and call it Dan, after their father."
       ru: "Забрав по пути истукан Михи и его священника, они поражают Лаис, сжигают его, строят город снова и нарекают ему имя Дан, по имени отца своего."
