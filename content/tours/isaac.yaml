@@ -1,0 +1,46 @@
+# Isaac, Genesis 24:62-26:33, in the order of the text, between the Abraham tour and the
+# Jacob tour (his death at Mamre, 35:27-29, closes the Jacob tour). The tour's year
+# (1850 BC) is a conventional point for the map between those two tours, not a date: the
+# age of the patriarchs is disputed.
+id: isaac
+title:
+  en: "Isaac and the wells"
+  ru: "Исаак и колодцы"
+year: "1850 BC"
+approximate: true
+stops:
+  - place: a70e842 # Beer-lahai-roi
+    ref: Gen.24.62-Gen.24.67
+    note:
+      en: "Coming from Beer-lahai-roi, Isaac meets Rebekah in the field at evening and takes her into his mother Sarah's tent."
+      ru: "Придя из Беэр-лахай-рои, Исаак вечером в поле встречает Ревекку и вводит её в шатёр Сарры, матери своей."
+  - place: ae00861 # Machpelah
+    ref: Gen.25.8-Gen.25.10
+    note:
+      en: "Isaac and Ishmael bury their father Abraham in the cave of Machpelah, beside Sarah."
+      ru: "Исаак и Измаил погребают отца своего Авраама в пещере Махпеле, рядом с Саррой."
+  - place: a3f5814 # Gerar
+    ref: Gen.26.1-Gen.26.14
+    note:
+      en: "In a famine Isaac goes to Abimelech king of the Philistines at Gerar, calls Rebekah his sister, and reaps a hundredfold."
+      ru: "Во время голода Исаак идёт к Авимелеху, царю Филистимскому, в Герар, называет Ревекку сестрой и получает урожай во сто крат."
+  - place: a816ed9 # Valley of Gerar
+    ref: Gen.26.17-Gen.26.19
+    note:
+      en: "Sent away, he camps in the Valley of Gerar and digs again the wells of his father Abraham, which the Philistines had stopped."
+      ru: "Удалившись, он располагается в Долине Герарской и вновь выкапывает колодцы отца своего Авраама, заваленные Филистимлянами."
+  - place: a43608b # Esek
+    ref: Gen.26.20-Gen.26.21
+    note:
+      en: "The herdmen of Gerar strive with his over the water; he calls the well Esek, contention, and the next Sitnah, hatred."
+      ru: "Пастухи Герарские спорят с его пастухами о воде; он называет колодец Есек, а следующий, о котором тоже спорят, — Ситна."
+  - place: ab1d954 # Rehoboth
+    ref: Gen.26.22
+    note:
+      en: 'Over a third well no one strives, and he names it Rehoboth: "For now the LORD hath made room for us."'
+      ru: "О третьем колодце уже не спорят, и он называет его Реховоф: «теперь Господь дал нам пространное место»."
+  - place: a075d61 # Beersheba
+    ref: Gen.26.23-Gen.26.33
+    note:
+      en: 'At Beersheba the Lord appears to him by night: "fear not, for I am with thee"; he builds an altar, makes peace with Abimelech, and his servants find water.'
+      ru: "В Вирсавии ночью ему является Господь: «не бойся, ибо Я с тобою»; он устраивает жертвенник, заключает мир с Авимелехом, и рабы его находят воду."
