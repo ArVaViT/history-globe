@@ -54,7 +54,21 @@ export function Timeline({
   const periodName = period ? (ru ? period.name.ru : period.name.en) : "";
 
   return (
-    <Panel className="w-[min(920px,calc(100vw-760px))] min-w-[560px] px-5 pt-3 pb-3">
+    <Panel className="relative w-[min(920px,calc(100vw-760px))] min-w-[560px] px-5 pt-3 pb-3">
+      {hovered && hover && (
+        // Above the whole panel: inside it the tip covered the year and the era name.
+        // Positioned on the panel, so it holds however tall the header grows.
+        <div
+          role="tooltip"
+          style={{ left: `calc(1.25rem + (100% - 2.5rem) * ${String(hover.x / 100)})` }}
+          className={`pointer-events-none absolute bottom-full mb-2 rounded-lg bg-ink px-2.5 py-1.5 text-[12px] leading-tight whitespace-nowrap text-paper shadow-lg ${hover.x < 15 ? "" : hover.x > 85 ? "-translate-x-full" : "-translate-x-1/2"}`}
+        >
+          <div className="font-medium">{ru ? hovered.name.ru : hovered.name.en}</div>
+          <div className="text-paper/75 tabular-nums">
+            {formatPeriodRange(hovered.range, locale)}
+          </div>
+        </div>
+      )}
       <div role="group" aria-label={t("time.timeline")}>
         <div className="flex items-center gap-4">
           <div className="min-w-[210px] font-serif text-[28px] leading-none font-semibold text-ink tabular-nums">
@@ -111,19 +125,6 @@ export function Timeline({
             setHover(null);
           }}
         >
-          {hovered && hover && (
-            // Above the whole panel: inside it the tip covered the year and the era name.
-            <div
-              role="tooltip"
-              style={{ left: `${hover.x}%` }}
-              className={`pointer-events-none absolute bottom-full mb-[76px] rounded-lg bg-ink px-2.5 py-1.5 text-[12px] leading-tight whitespace-nowrap text-paper shadow-lg ${hover.x < 15 ? "" : hover.x > 85 ? "-translate-x-full" : "-translate-x-1/2"}`}
-            >
-              <div className="font-medium">{ru ? hovered.name.ru : hovered.name.en}</div>
-              <div className="text-paper/75 tabular-nums">
-                {formatPeriodRange(hovered.range, locale)}
-              </div>
-            </div>
-          )}
           <div
             aria-hidden
             className="absolute inset-x-0 top-1 flex h-3 overflow-hidden rounded-full"
