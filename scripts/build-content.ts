@@ -19,6 +19,7 @@ import {
   TourFile,
   type ContentRelease,
 } from "../packages/model/src/content.ts";
+import { inheritLife } from "../packages/model/src/place-life-links.ts";
 import { refCovers } from "../packages/model/src/scripture.ts";
 import { siteLabelRu, type SiteLabelParts } from "../packages/model/src/sites.ts";
 
@@ -274,53 +275,14 @@ for (const p of PlaceLifeFile.parse(load("content/place-life.yaml")).places) {
 // "Same place as X" (Zion for Jerusalem) shares X's years unless it has its own. A place
 // "in X" (a gate, a pool of Jerusalem) shares X's ruin and end, not its founding, and the
 // note says whose years they are.
-const englishName = new Map(places.features.map((f) => [f.properties.id, f.properties.name]));
-const placeProps = new Map(places.features.map((f) => [f.properties.id, f.properties]));
-// Only the entries of place-life.yaml: links resolve to a town with its own years, so a
-// gate of Millo of Jerusalem reads "Иерусалим: …" once, whatever the order of the data.
-const ownLife: Readonly<Record<string, PlaceLife>> = { ...life };
-function townOf(id: string): { id: string; same: boolean } | undefined {
-  let at = placeProps.get(id);
-  let same = true;
-  for (let hops = 0; at?.where_ref && hops < 5; hops++) {
-    if (at.where_tpl !== "same" && at.where_tpl !== "at") return undefined;
-    same &&= at.where_tpl === "same";
-    if (ownLife[at.where_ref]) return { id: at.where_ref, same };
-    at = placeProps.get(at.where_ref);
-  }
-  return undefined;
-}
-for (const f of places.features) {
-  const p = f.properties;
-  if (ownLife[p.id]) continue;
-  const town = townOf(p.id);
-  const of = town ? ownLife[town.id] : undefined;
-  if (!town || !of) continue;
-  const ruName = names[town.id]?.ru ?? englishName.get(town.id) ?? "";
-  const enName = englishName.get(town.id) ?? "";
-  const withTown = { en: `${enName}: ${of.note.en ?? ""}`, ru: `${ruName}: ${of.note.ru ?? ""}` };
-  // Another name of the town: its ruin and end, not its founding (Shamir of Judg 10:1,
-  // which OpenBible places at Samaria, stood before Omri built Samaria), and the note
-  // says whose years they are when the name differs ("Вавилон" of 1 Pet 5:13 is Rome).
-  if (town.same) {
-    if (!of.gap && !of.until) continue;
-    life[p.id] = {
-      ...(of.until ? { until: of.until } : {}),
-      ...(of.gap ? { gap: of.gap } : {}),
-      note: (names[p.id]?.ru ?? p.name) === ruName ? of.note : withTown,
-      sources: of.sources,
-      inherited: true,
-    };
-  } else if (of.gap ?? of.until) {
-    life[p.id] = {
-      ...(of.until ? { until: of.until } : {}),
-      ...(of.gap ? { gap: of.gap } : {}),
-      note: withTown,
-      sources: of.sources,
-      inherited: true,
-    };
-  }
-}
+Object.assign(
+  life,
+  inheritLife(
+    places.features.map((f) => f.properties),
+    { ...life },
+    (id) => names[id]?.ru,
+  ),
+);
 
 // Candidate sites get a Russian label where their English one refers to a place with a
 // Synodal name ("same place as Abila" -> "то же место, что Авила").
