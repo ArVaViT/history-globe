@@ -13,7 +13,7 @@ other platforms.
 A working prototype (PR #2): the globe with relief, state borders by year, 1288 biblical
 places (Synodal Russian names for 1168 of them on the map, 1183 in all; references shown in
 the Synodal numbering in Russian), disputed locations, the years 27 towns stood and fell,
-32 dated turning points on the time slider, and twenty-six tours from Abraham to the
+32 dated turning points on the time slider, and twenty-seven tours from Abraham to the
 seven churches of Revelation. Desktop first, with a phone and tablet layout; a link
 reopens the same view, tour stop included. No production hosting yet.
 
