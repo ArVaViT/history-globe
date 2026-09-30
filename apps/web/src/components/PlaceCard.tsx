@@ -158,6 +158,12 @@ export function PlaceCard({
       {life && (
         <div className="mx-5 mt-3 rounded-xl border border-line bg-paper-2/60 px-3 py-2 text-[13px] leading-snug text-ink">
           <div className="font-medium">
+            {life.gap &&
+              t("place.life_gap", {
+                from: lifeYear(life.gap.from, locale, t),
+                until: lifeYear(life.gap.until, locale, t),
+              })}
+            {life.gap && (life.from ?? life.until) && " · "}
             {life.from && t("place.life_from", { year: lifeYear(life.from, locale, t) })}
             {life.from && life.until && " · "}
             {life.until &&
@@ -172,9 +178,13 @@ export function PlaceCard({
 
       {beforeItsTime(place, year) && (
         <div className="mx-5 mt-3 text-[12.5px] leading-snug text-ink-soft italic">
-          {life
-            ? t(year < (place.life_from ?? -Infinity) ? "place.not_yet" : "place.no_longer")
-            : t("place.nt_only")}
+          {!life
+            ? t("place.nt_only")
+            : place.gap_from !== undefined &&
+                year >= place.gap_from &&
+                year < (place.gap_until ?? Infinity)
+              ? t("place.in_ruins")
+              : t(year < (place.life_from ?? -Infinity) ? "place.not_yet" : "place.no_longer")}
         </div>
       )}
 

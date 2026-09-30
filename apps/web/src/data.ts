@@ -20,6 +20,9 @@ export interface PlaceProps {
   readonly life_from?: number;
   /** First year it no longer stood (half-open end). */
   readonly life_until?: number;
+  /** Years in ruins between two lives, half-open [gap_from, gap_until). */
+  readonly gap_from?: number;
+  readonly gap_until?: number;
   readonly verses: number;
   readonly nt: number;
   readonly ot: number;
@@ -45,12 +48,19 @@ export interface Site {
 
 /** Named only in the New Testament, and the year is before its events: shown faded. */
 export function beforeItsTime(
-  place: Pick<PlaceProps, "ot" | "life_from" | "life_until">,
+  place: Pick<PlaceProps, "ot" | "life_from" | "life_until" | "gap_from" | "gap_until">,
   year: number,
 ): boolean {
+  if (
+    place.gap_from !== undefined &&
+    year >= place.gap_from &&
+    year < (place.gap_until ?? Infinity)
+  )
+    return true;
   // Known years of the place win; otherwise, named only in the New Testament → before 6 BC.
   if (place.life_from !== undefined || place.life_until !== undefined)
     return year < (place.life_from ?? -Infinity) || year >= (place.life_until ?? Infinity);
+  if (place.gap_from !== undefined) return false;
   return place.ot === 0 && year < NT_FROM;
 }
 
@@ -176,6 +186,7 @@ export async function loadData(): Promise<LoadedData> {
       ...(whereRu ? { where_ru: whereRu } : {}),
       ...(life?.from ? { life_from: life.from.year } : {}),
       ...(life?.until ? { life_until: life.until.year + 1 } : {}),
+      ...(life?.gap ? { gap_from: life.gap.from.year, gap_until: life.gap.until.year + 1 } : {}),
     };
     f.properties = props;
     const [lon = 0, lat = 0] = f.geometry.coordinates;

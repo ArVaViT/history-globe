@@ -219,5 +219,8 @@ describe("places outside their known years", () => {
     expect(at(-700, { ot: 27, life_until: -610 })).toBe(1);
     expect(at(-600, { ot: 27, life_until: -610 })).toBeLessThan(1);
     expect(at(-10, { ot: 0, life_from: -21 })).toBe(1);
+    // In ruins between two lives (Jerusalem, 586-539 BC).
+    expect(at(-560, { ot: 800, gap_from: -585, gap_until: -538 })).toBeLessThan(1);
+    expect(at(-500, { ot: 800, gap_from: -585, gap_until: -538 })).toBe(1);
   });
 });

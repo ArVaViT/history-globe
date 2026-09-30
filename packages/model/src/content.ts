@@ -87,11 +87,16 @@ export const PlaceLifeFile = z.strictObject({
         from: approxYear.optional(),
         /** Last year it stood (destroyed, abandoned), inclusive. */
         until: approxYear.optional(),
+        /** Years it lay in ruins between two lives: first and last year of the gap. */
+        gap: z.strictObject({ from: approxYear, until: approxYear }).optional(),
         note: localized,
         sources: z.array(z.string().min(1)).min(1),
       })
-      .refine((p) => p.from !== undefined || p.until !== undefined, {
-        message: "give from, until or both",
+      .refine((p) => p.from !== undefined || p.until !== undefined || p.gap !== undefined, {
+        message: "give from, until, gap or a combination",
+      })
+      .refine((p) => !p.gap || p.gap.from.year <= p.gap.until.year, {
+        message: "the gap must not end before it starts",
       })
       .refine((p) => !p.from || !p.until || p.from.year <= p.until.year, {
         message: "from must not be after until",
@@ -127,6 +132,10 @@ export interface ContentRelease {
 export interface PlaceLife {
   readonly from?: { readonly year: number; readonly approximate: boolean };
   readonly until?: { readonly year: number; readonly approximate: boolean };
+  readonly gap?: {
+    readonly from: { readonly year: number; readonly approximate: boolean };
+    readonly until: { readonly year: number; readonly approximate: boolean };
+  };
   readonly note: Readonly<Record<string, string>>;
   readonly sources: readonly string[];
 }

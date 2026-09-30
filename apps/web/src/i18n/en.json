@@ -44,7 +44,9 @@
     "circa": "c.",
     "not_yet": "Not yet built in this year: shown faded.",
     "no_longer": "No longer standing in this year: shown faded.",
-    "life_until_only": "Standing until {{year}}"
+    "life_until_only": "Standing until {{year}}",
+    "life_gap": "In ruins {{from}} – {{until}}",
+    "in_ruins": "In ruins in this year: shown faded."
   },
   "time": {
     "play": "Play",

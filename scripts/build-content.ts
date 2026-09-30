@@ -259,6 +259,7 @@ for (const p of PlaceLifeFile.parse(load("content/place-life.yaml")).places) {
   life[p.id] = {
     ...(p.from ? { from: p.from } : {}),
     ...(p.until ? { until: p.until } : {}),
+    ...(p.gap ? { gap: p.gap } : {}),
     note: p.note,
     sources: p.sources,
   };

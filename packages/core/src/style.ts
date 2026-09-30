@@ -171,6 +171,20 @@ export const NT_FROM = -5;
  */
 const OUT_OF_TIME: ExpressionSpecification = [
   "case",
+  // In ruins between two lives (gap_from/gap_until).
+  [
+    "all",
+    ["has", "gap_from"],
+    [">=", YEAR, ["number", ["coalesce", ["get", "gap_from"], 100000]]],
+    ["<", YEAR, ["number", ["coalesce", ["get", "gap_until"], 100000]]],
+  ],
+  true,
+  ["has", "gap_from"],
+  [
+    "any",
+    ["<", YEAR, ["number", ["coalesce", ["get", "life_from"], -100000]]],
+    [">=", YEAR, ["number", ["coalesce", ["get", "life_until"], 100000]]],
+  ],
   ["any", ["has", "life_from"], ["has", "life_until"]],
   [
     "any",
