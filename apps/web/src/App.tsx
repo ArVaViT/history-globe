@@ -231,7 +231,11 @@ export function App() {
                 place={tourStop ? data.byId.get(tourStop.placeId)?.props : undefined}
                 locale={state.locale}
                 onStep={engine.goToStop}
-                onClose={engine.stopTour}
+                onClose={() => {
+                  // "Закончить" closes the tour as Esc does, not onto its last stop's card.
+                  engine.stopTour();
+                  engine.selectPlace(null);
+                }}
                 onOpenPlace={(id) => {
                   engine.stopTour();
                   engine.selectPlace(id);
