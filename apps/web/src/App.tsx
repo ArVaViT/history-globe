@@ -11,6 +11,7 @@ import { PlaceCard } from "./components/PlaceCard";
 import { SearchBox } from "./components/SearchBox";
 import { Timeline } from "./components/Timeline";
 import { ToursPanel } from "./components/ToursPanel";
+import { EventsPanel } from "./components/EventsPanel";
 import { TourStopCard } from "./components/TourStopCard";
 import { loadData, type LoadedData } from "./data";
 import { focusOf, keyAction } from "./keys";
@@ -265,6 +266,16 @@ export function App() {
                   onStart={(id) => {
                     setPlaying(false);
                     engine.startTour(id);
+                  }}
+                />
+                <EventsPanel
+                  events={data.events}
+                  year={state.year}
+                  locale={state.locale}
+                  onPick={(e) => {
+                    setPlaying(false);
+                    engine.setYear(e.year);
+                    if (e.place) engine.selectPlace(e.place, { fly: true });
                   }}
                 />
                 <InViewPanel
