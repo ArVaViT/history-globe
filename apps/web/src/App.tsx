@@ -13,6 +13,7 @@ import { Timeline } from "./components/Timeline";
 import { ToursPanel } from "./components/ToursPanel";
 import { TourStopCard } from "./components/TourStopCard";
 import { loadData, type LoadedData } from "./data";
+import { focusOf, keyAction } from "./keys";
 import { timelineEventsOf } from "./timeline-events";
 import { readUrl, writeUrl } from "./url";
 import { useGlobe, useGlobeState } from "./useGlobe";
@@ -156,32 +157,30 @@ export function App() {
     if (!globe) return;
     const { engine } = globe;
     const onKey = (e: KeyboardEvent) => {
-      if (e.ctrlKey || e.metaKey || e.altKey) return;
-      // Keys belong to the focused control: Space presses a button, letters go into a
-      // field. Only the time slider shares its keys with the map; Escape always closes.
-      const target = e.target as HTMLElement | null;
-      if (target?.closest("select, textarea, [contenteditable]") && e.key !== "Escape") return;
-      // A focused button or link keeps Space and Enter; the map's other keys still work.
-      if (target?.closest("button, a") && (e.key === " " || e.key === "Enter")) return;
-      if (target?.tagName === "INPUT" && (target as HTMLInputElement).type !== "range") return;
-      const big = e.shiftKey ? 100 : 10;
-      if (e.key === "[" || e.key === "{") engine.stepYear(-big);
-      else if (e.key === "]" || e.key === "}") engine.stepYear(big);
-      else if (e.key === " ") {
+      const action = keyAction({
+        key: e.key,
+        shiftKey: e.shiftKey,
+        ctrlKey: e.ctrlKey,
+        metaKey: e.metaKey,
+        altKey: e.altKey,
+        focus: focusOf(e.target),
+      });
+      if (!action) return;
+      if (action.kind === "year") engine.stepYear(action.delta);
+      else if (action.kind === "play") {
         e.preventDefault();
         setPlaying((p) => !p);
-      } else if (e.key === "/") {
+      } else if (action.kind === "search") {
         e.preventDefault();
         // The search may be hidden with the panels: show them, then focus it.
         togglePanels(true);
         requestAnimationFrame(() => {
           searchRef.current?.focus();
         });
-      } else if (e.key === "Escape") {
+      } else if (action.kind === "close") {
         engine.selectPlace(null);
         engine.stopTour();
-      } else if (e.key.toLowerCase() === "n") engine.northUp();
-      else return;
+      } else engine.northUp();
     };
     window.addEventListener("keydown", onKey);
     return () => {
