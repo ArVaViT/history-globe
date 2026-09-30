@@ -1550,10 +1550,12 @@ places:
       excerpt: "и гнали их до Хормы, [и возвратились в стан.]"
   - id: a21f909
     en: "Timnah"
-    ru: "Фимна"
+    # "Фимна" twice (Josh 15:10, 2 Chr 28:18); "Фимнафа" in Josh 19:43 and Samson's
+    # story (Judg 14-15).
+    ru: "Фимнафа"
     evidence:
-      osis: Josh.15.10
-      excerpt: "к Вефсамису, проходит чрез Фимну;"
+      osis: Josh.19.43
+      excerpt: "Елон, Фимнафа и Екрон,"
   - id: a244d8f
     en: "Eglon"
     ru: "Еглон"
