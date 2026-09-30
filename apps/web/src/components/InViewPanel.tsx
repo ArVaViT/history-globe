@@ -1,4 +1,5 @@
 import type { Locale } from "@hg/model";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { beforeItsTime, type LoadedData } from "../data";
 import { Section } from "./Panel";
@@ -25,6 +26,8 @@ export function InViewPanel({
   onSelect: (id: string) => void;
 }) {
   const { t } = useTranslation();
+  // Ten at first; "ещё N" opens ten more.
+  const [shown, setShown] = useState(SHOWN);
   const places = ids
     .map((id) => data.byId.get(id)?.props)
     .filter((p) => p !== undefined)
@@ -33,14 +36,14 @@ export function InViewPanel({
     .sort(
       (a, b) =>
         Number(beforeItsTime(a, year)) - Number(beforeItsTime(b, year)) || b.verses - a.verses,
-    )
-    .slice(0, SHOWN);
+    );
+  const visible = places.slice(0, shown);
   if (places.length === 0) return null;
 
   return (
     <Section id="inview" title={t("inview.title")} className="w-[340px] pb-2">
       <ul aria-label={t("inview.title")}>
-        {places.map((p) => (
+        {visible.map((p) => (
           <li key={p.id}>
             <button
               onClick={() => {
@@ -59,6 +62,16 @@ export function InViewPanel({
           </li>
         ))}
       </ul>
+      {places.length > shown && (
+        <button
+          onClick={() => {
+            setShown(shown + SHOWN);
+          }}
+          className="px-4 pt-1 text-[12.5px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
+        >
+          {t("place.more", { count: places.length - shown })}
+        </button>
+      )}
     </Section>
   );
 }
