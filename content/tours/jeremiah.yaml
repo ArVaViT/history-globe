@@ -1,0 +1,58 @@
+# Jeremiah, in the order of the book. The tour's year (627 BC) is the thirteenth year of
+# Josiah, when the word of the Lord first came to him (Jer 1:2; 626 BC is also held). Stops
+# the book dates carry their own year: the beginning of Jehoiakim's reign (609 BC, 26:1), the
+# tenth year of Zedekiah (588 BC, 32:1) and the taking of Jerusalem, 587 BC as in the tour of
+# its fall (586 BC is also held), which the later stops follow.
+id: jeremiah
+title:
+  en: "Jeremiah the prophet"
+  ru: "Пророк Иеремия"
+year: "627 BC"
+approximate: true
+stops:
+  - place: ab34789 # Anathoth
+    ref: Jer.1.1-Jer.1.10
+    note:
+      en: 'Jeremiah, of the priests in Anathoth, is called a prophet to the nations and answers, "I cannot speak: for I am a child."'
+      ru: "Иеремия, из священников в Анафофе, поставлен пророком для народов и отвечает: «я не умею говорить, ибо я еще молод»."
+  - place: a37c8e6 # Valley of Hinnom
+    ref: Jer.19.1-Jer.19.11
+    note:
+      en: "In the Valley of Hinnom he breaks a potter's earthen bottle before the elders: so the Lord will break this people and this city."
+      ru: "В долине Еннома он разбивает перед старейшинами глиняный кувшин: так Господь сокрушит народ сей и город сей."
+  - place: a15257a # Jerusalem
+    ref: Jer.26.1-Jer.26.19
+    year: "609 BC"
+    note:
+      en: 'For his words in the court of the Temple the priests would have him die; the elders recall Micah: "Jerusalem shall become heaps."'
+      ru: "За слова во дворе храма священники требуют его смерти; старейшины вспоминают пророчество Михея: «Иерусалим сделается грудою развалин»."
+  - place: ab34789 # Anathoth
+    ref: Jer.32.6-Jer.32.15
+    year: "588 BC"
+    note:
+      en: "With the Babylonians at the walls, he buys his cousin's field in Anathoth: houses and fields shall be bought again in this land."
+      ru: "Когда Вавилоняне осаждают город, он покупает поле двоюродного брата в Анафофе: домы и поля будут снова покупаемы в земле сей."
+  - place: a15257a # Jerusalem
+    ref: Jer.38.6-Jer.38.28
+    year: "587 BC"
+    note:
+      en: "Thrown into a dungeon in the court of the prison, he sinks in the mire; Ebed-melech the Ethiopian draws him out with cords, and he stays in the court of the prison until the day Jerusalem is taken."
+      ru: "Брошенный в яму во дворе стражи, он погружается в грязь; Авдемелех Ефиоплянин вытаскивает его на верёвках, и он остаётся во дворе стражи до того дня, когда взят Иерусалим."
+  - place: a6d57ed # Ramah
+    ref: Jer.40.1-Jer.40.5
+    year: "587 BC"
+    note:
+      en: "At Ramah, among the captives in chains bound for Babylon, Nebuzar-adan sets him free to go where he will."
+      ru: "В Раме, среди скованных пленников, которых ведут в Вавилон, Навузардан освобождает его: куда угодно, туда и иди."
+  - place: a736f6c # Mizpah
+    ref: Jer.40.6
+    year: "587 BC"
+    note:
+      en: "He stays with Gedaliah at Mizpah, among the people left in the land."
+      ru: "Он остаётся с Годолией в Массифе, среди народа, оставшегося в стране."
+  - place: adb008c # Tahpanhes
+    ref: Jer.43.8-Jer.43.13
+    year: "587 BC"
+    note:
+      en: "Taken down to Egypt against his word, at Tahpanhes he hides great stones at the entry of Pharaoh's house: Nebuchadnezzar will set his throne upon them."
+      ru: "Уведённый в Египет вопреки его слову, в Тафнисе он скрывает большие камни при входе в дом фараона: на них Навуходоносор поставит свой престол."
