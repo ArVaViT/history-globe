@@ -37,7 +37,8 @@ the data first (`pnpm data`).
 - **Tours**: the id matches the file name; each stop's passage must name its place, except
   stops listed in `NAMED_BY_CONTEXT` with the reason. A stop whose place the map draws
   faded in its year (the stop's own `year` or the tour's: not yet built, in ruins, gone,
-  or named only in the New Testament before its events) is warned about.
+  or named only in the New Testament before its events) is warned about, unless it is
+  listed in `FADED_ON_PURPOSE` with the reason (word of Jerusalem's fall reaching Ezekiel).
 - **When places stood** (`content/place-life.yaml`): `from` (first year), `until` (last
   year) and `gap` (first and last year in ruins); at least one, the gap inside the years
   the place stood, "c." kept as approximate, at least one source each. Another name of a
