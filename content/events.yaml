@@ -1,0 +1,144 @@
+# Dated events of biblical history, marked on the time slider. Only events with a
+# year that mainstream scholarship states, each with its sources; "c." kept as
+# approximate. Disputed early dates (the Exodus, the conquest) are left out.
+events:
+  - id: temple-built
+    year: "c. 966 BC"
+    title:
+      en: "Solomon begins the Temple"
+      ru: "Соломон начинает строить Храм"
+    place: a15257a
+    sources:
+      - "1 Kgs 6:1 (the fourth year of Solomon); Thiele's chronology"
+  - id: kingdom-divided
+    year: "c. 931 BC"
+    title:
+      en: "The kingdom divides: Israel and Judah"
+      ru: "Разделение царства на Израиль и Иудею"
+    place: adf74d4
+    sources:
+      - "1 Kgs 12:1-20; Thiele's chronology"
+  - id: samaria-falls
+    year: "722 BC"
+    title:
+      en: "Samaria falls to Assyria"
+      ru: "Падение Самарии, конец Израильского царства"
+    place: a041bb3
+    sources:
+      - "2 Kgs 17:5-6"
+      - "Babylonian Chronicle, ABC 1 i 28 (Shalmaneser V)"
+  - id: sennacherib
+    year: "701 BC"
+    title:
+      en: "Sennacherib besieges Lachish and Jerusalem"
+      ru: "Сеннахирим осаждает Лахис и Иерусалим"
+    place: a3cc590
+    sources:
+      - "2 Kgs 18:13-19:37"
+      - "Sennacherib's Annals (Taylor Prism)"
+  - id: nineveh-falls
+    year: "612 BC"
+    title:
+      en: "Nineveh falls"
+      ru: "Падение Ниневии"
+    place: a70fd5d
+    sources:
+      - "Babylonian Chronicle, ABC 3"
+  - id: jerusalem-falls
+    year: "c. 586 BC"
+    title:
+      en: "Jerusalem and the Temple destroyed; exile to Babylon"
+      ru: "Разрушение Иерусалима и Храма; вавилонский плен"
+    place: a15257a
+    sources:
+      - "2 Kgs 25:1-21; Jer 52"
+  - id: cyrus-edict
+    year: "538 BC"
+    title:
+      en: "Cyrus lets the exiles return"
+      ru: "Указ Кира: изгнанники возвращаются"
+    place: a217d18
+    sources:
+      - "Ezra 1:1-4"
+      - "Cyrus Cylinder"
+  - id: second-temple
+    year: "516 BC"
+    title:
+      en: "The Second Temple completed"
+      ru: "Освящение Второго Храма"
+    place: a15257a
+    sources:
+      - "Ezra 6:15 (the sixth year of Darius)"
+  - id: nehemiah-walls
+    year: "c. 445 BC"
+    title:
+      en: "Nehemiah rebuilds the walls of Jerusalem"
+      ru: "Неемия восстанавливает стены Иерусалима"
+    place: a15257a
+    sources:
+      - "Neh 2:1-6:15 (the twentieth year of Artaxerxes I)"
+  - id: alexander
+    year: "332 BC"
+    title:
+      en: "Alexander takes Tyre and Gaza"
+      ru: "Александр берёт Тир и Газу"
+    place: a160272
+    sources:
+      - "Arrian, Anabasis 2.24; 2.27"
+  - id: temple-rededicated
+    year: "164 BC"
+    title:
+      en: "Judas Maccabeus rededicates the Temple"
+      ru: "Иуда Маккавей вновь освящает Храм"
+    place: a15257a
+    sources:
+      - "1 Macc 4:36-59"
+      - "Josephus, Antiquities 12.316-325"
+  - id: pompey
+    year: "63 BC"
+    title:
+      en: "Pompey takes Jerusalem: Roman rule begins"
+      ru: "Помпей берёт Иерусалим: начало власти Рима"
+    place: a15257a
+    sources:
+      - "Josephus, Antiquities 14.54-79"
+  - id: herod
+    year: "37 BC"
+    title:
+      en: "Herod the Great takes Jerusalem"
+      ru: "Ирод Великий берёт Иерусалим"
+    place: a15257a
+    sources:
+      - "Josephus, Antiquities 14.465-491"
+  - id: jesus-born
+    year: "c. 5 BC"
+    title:
+      en: "Birth of Jesus"
+      ru: "Рождество Христово"
+    place: a112427
+    sources:
+      - "Matt 2:1; Luke 2:1-7 (before Herod's death, 4 BC)"
+  - id: crucifixion
+    year: "c. AD 30"
+    title:
+      en: "Crucifixion and Resurrection"
+      ru: "Распятие и Воскресение"
+    place: a631d35
+    sources:
+      - "Matt 27-28; Luke 3:1 (the fifteenth year of Tiberius)"
+  - id: council
+    year: "c. AD 49"
+    title:
+      en: "The council of Jerusalem"
+      ru: "Иерусалимский собор"
+    place: a15257a
+    sources:
+      - "Acts 15"
+  - id: temple-destroyed
+    year: "AD 70"
+    title:
+      en: "Titus destroys Jerusalem and the Temple"
+      ru: "Тит разрушает Иерусалим и Храм"
+    place: a15257a
+    sources:
+      - "Josephus, Jewish War 6.249-266"

@@ -77,6 +77,23 @@ export const PolityOverridesFile = z.strictObject({
  * When a place existed as a town (content/place-life.yaml): founded, destroyed or
  * abandoned. Outside these years the map shows it faded. Each entry names its sources.
  */
+/** Dated events of the history the map tells (content/events.yaml), marked on the slider. */
+export const EventsFile = z.strictObject({
+  events: z.array(
+    z.strictObject({
+      id: z.string().regex(/^[a-z0-9-]+$/),
+      year: approxYear,
+      title: localized,
+      /** Where it happened: the slider's tip names it and a click flies there. */
+      place: z
+        .string()
+        .regex(/^a[0-9a-f]{6}$/)
+        .optional(),
+      sources: z.array(z.string().min(1)).min(1),
+    }),
+  ),
+});
+
 export const PlaceLifeFile = z.strictObject({
   places: z.array(
     z
@@ -136,6 +153,16 @@ export interface ContentRelease {
   readonly where_ru?: Readonly<Record<string, string>>;
   /** When places existed (content/place-life.yaml); `until` is the last year, inclusive. */
   readonly life?: Readonly<Record<string, PlaceLife>>;
+  readonly events?: readonly HistoryEvent[];
+}
+
+export interface HistoryEvent {
+  readonly id: string;
+  readonly year: number;
+  readonly approximate: boolean;
+  readonly title: Readonly<Record<string, string>>;
+  readonly place?: string;
+  readonly sources: readonly string[];
 }
 
 export interface PlaceLife {

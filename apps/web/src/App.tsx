@@ -199,8 +199,12 @@ export function App() {
       // its years: mark them once.
       if (!p || p.where_tpl === "same" || p.where_tpl === "at") continue;
       const name = state.locale === "ru" ? (p.name_ru ?? p.name) : p.name;
+      // A turning point already on the slider (the fall of Jerusalem) is not repeated.
+      const covered = (year: number) =>
+        data.events.some((e) => e.place === id && Math.abs(e.year - year) <= 2);
       const add = (y: { year: number; approximate: boolean } | undefined, key: string) => {
-        if (y) out.push({ year: y.year, label: t(key, { name }), approximate: y.approximate });
+        if (y && !covered(y.year))
+          out.push({ year: y.year, label: t(key, { name }), approximate: y.approximate });
       };
       add(life.from, "events.founded");
       add(life.until, "events.destroyed");
@@ -209,7 +213,18 @@ export function App() {
       const back = life.gap?.until;
       add(back && { ...back, year: back.year + 1 }, "events.rebuilt");
     }
-    return out.sort((a, b) => a.year - b.year);
+    for (const e of data.events) {
+      out.push({
+        year: e.year,
+        label: e.title[state.locale] ?? e.title.en ?? "",
+        approximate: e.approximate,
+        major: true,
+      });
+    }
+    // Turning points first in the tip, then the rest by year.
+    return out.sort(
+      (a, b) => Number(b.major ?? false) - Number(a.major ?? false) || a.year - b.year,
+    );
   }, [data, state.locale, t]);
   const selected = state.selectedPlace ? data?.byId.get(state.selectedPlace)?.props : undefined;
   const tour = state.tour ? data?.tours.find((x) => x.id === state.tour?.id) : undefined;

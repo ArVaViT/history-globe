@@ -1,5 +1,5 @@
 import { NT_FROM, type PlaceInfo, type Tour } from "@hg/core";
-import type { ContentRelease, Locale, PlaceLife } from "@hg/model";
+import type { ContentRelease, HistoryEvent, Locale, PlaceLife } from "@hg/model";
 import type { FeatureCollection, Point } from "geojson";
 
 export interface PlaceProps {
@@ -84,6 +84,8 @@ export interface LoadedData {
   readonly alsoHere: Readonly<Record<Locale, ReadonlyMap<string, readonly string[]>>>;
   /** When places existed, with the note and sources (content/place-life.yaml). */
   readonly life: Readonly<Record<string, PlaceLife>>;
+  /** Dated events of the history (content/events.yaml), in order. */
+  readonly events: readonly HistoryEvent[];
 }
 
 export const DATA_URL = "/data";
@@ -227,7 +229,15 @@ export async function loadData(): Promise<LoadedData> {
     uk: alsoHere(places.features, "ru"),
     de: alsoHere(places.features, "en"),
   };
-  return { places, byId, tours, sites, alsoHere: here, life: content.life ?? {} };
+  return {
+    places,
+    byId,
+    tours,
+    sites,
+    alsoHere: here,
+    life: content.life ?? {},
+    events: content.events ?? [],
+  };
 }
 
 /** Search by English or Russian name; exact prefix first, then by importance. */

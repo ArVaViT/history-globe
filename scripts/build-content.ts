@@ -13,6 +13,8 @@ import {
   PolityNamesFile,
   PolityOverridesFile,
   PlaceLifeFile,
+  EventsFile,
+  type HistoryEvent,
   type PlaceLife,
   TourFile,
   type ContentRelease,
@@ -324,9 +326,33 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
+// Dated events on the slider (content/events.yaml).
+const events: HistoryEvent[] = [];
+for (const e of EventsFile.parse(load("content/events.yaml")).events) {
+  if (e.place && !known.has(e.place))
+    errors.push(`events: ${e.id} points at ${e.place}, not in the data build`);
+  if (events.some((x) => x.id === e.id)) errors.push(`events: ${e.id} is listed twice`);
+  events.push({
+    id: e.id,
+    year: e.year.year,
+    approximate: e.year.approximate,
+    title: e.title,
+    ...(e.place ? { place: e.place } : {}),
+    sources: e.sources,
+  });
+}
+events.sort((a, b) => a.year - b.year);
+
 // Tours in the order of history, not of their file names.
 tours.sort((a, b) => a.year - b.year || a.id.localeCompare(b.id));
-const release: ContentRelease = { schema_version: 1, names, tours, where_ru: whereRu, life };
+const release: ContentRelease = {
+  schema_version: 1,
+  names,
+  tours,
+  where_ru: whereRu,
+  life,
+  events,
+};
 for (const [path, text] of writes) writeFileSync(path, text);
 writeFileSync(join(out, "content.json"), JSON.stringify(release));
 console.log(
