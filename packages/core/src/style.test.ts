@@ -225,6 +225,9 @@ describe("places outside their known years", () => {
     expect(at(-500, jerusalem)).toBe(1);
     expect(at(80, jerusalem)).toBeLessThan(1);
     // A gap alone does not fade a New Testament place before 6 BC (Corinth).
-    expect(at(-300, { ot: 0, gap_from: -145, gap_until: -43 })).toBe(1);
+    // Corinth: a curated record with a gap only; it stood before, so no NT rule.
+    expect(at(-300, { ot: 0, gap_from: -145, gap_until: -43, life_own: true })).toBe(1);
+    // A New Testament gate that only inherits its city's ruin keeps the NT rule.
+    expect(at(-300, { ot: 0, gap_from: -585, gap_until: -537, life_until: 71 })).toBeLessThan(1);
   });
 });

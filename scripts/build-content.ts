@@ -283,6 +283,7 @@ for (const f of places.features) {
       ...(of.gap ? { gap: of.gap } : {}),
       note: { en: `${enName}: ${of.note.en ?? ""}`, ru: `${ruName}: ${of.note.ru ?? ""}` },
       sources: of.sources,
+      inherited: true,
     };
   }
 }

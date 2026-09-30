@@ -127,11 +127,20 @@ describe("beforeItsTime", () => {
     // Caesarea (NT only) from 22 BC = -21: shown from then, not only from 6 BC.
     expect(beforeItsTime({ ot: 0, life_from: -21 }, -10)).toBe(false);
     expect(beforeItsTime({ ot: 0, life_from: -21 }, -30)).toBe(true);
+    // Corinth: own record with a gap only, standing before and after it.
+    expect(beforeItsTime({ ot: 0, gap_from: -145, gap_until: -43, life_own: true }, -300)).toBe(
+      false,
+    );
     // In ruins between two lives: Jerusalem 586-539 BC, last year inclusive -> [-585, -537).
-    const jerusalem = { ot: 800, gap_from: -585, gap_until: -537 };
+    const jerusalem = { ot: 800, gap_from: -585, gap_until: -537, life_own: true };
     expect(beforeItsTime(jerusalem, -600)).toBe(false);
     expect(beforeItsTime(jerusalem, -560)).toBe(true);
     expect(beforeItsTime(jerusalem, 30)).toBe(false);
+    // A New Testament gate inside Jerusalem shares its ruin but stays faded before 6 BC.
+    const gate = { ot: 0, gap_from: -585, gap_until: -537, life_until: 71 };
+    expect(beforeItsTime(gate, -1000)).toBe(true);
+    expect(beforeItsTime(gate, 30)).toBe(false);
+    expect(beforeItsTime(gate, 80)).toBe(true);
   });
 });
 

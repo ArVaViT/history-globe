@@ -170,7 +170,7 @@ export const NT_FROM = -5;
  * Testament is out of its time before 6 BC.
  */
 const OUT_OF_TIME: ExpressionSpecification = [
-  "case",
+  "any",
   // In ruins between two lives (gap_from/gap_until).
   [
     "all",
@@ -178,20 +178,17 @@ const OUT_OF_TIME: ExpressionSpecification = [
     [">=", YEAR, ["number", ["coalesce", ["get", "gap_from"], 100000]]],
     ["<", YEAR, ["number", ["coalesce", ["get", "gap_until"], 100000]]],
   ],
-  true,
-  ["has", "gap_from"],
+  // No longer standing.
+  [">=", YEAR, ["number", ["coalesce", ["get", "life_until"], 100000]]],
+  // Not yet standing: its founding year, or, without one, the New Testament rule.
   [
-    "any",
+    "case",
+    ["has", "life_from"],
     ["<", YEAR, ["number", ["coalesce", ["get", "life_from"], -100000]]],
-    [">=", YEAR, ["number", ["coalesce", ["get", "life_until"], 100000]]],
+    ["has", "life_own"],
+    false,
+    ["all", ["==", ["get", "ot"], 0], ["<", YEAR, NT_FROM]],
   ],
-  ["any", ["has", "life_from"], ["has", "life_until"]],
-  [
-    "any",
-    ["<", YEAR, ["number", ["coalesce", ["get", "life_from"], -100000]]],
-    [">=", YEAR, ["number", ["coalesce", ["get", "life_until"], 100000]]],
-  ],
-  ["all", ["==", ["get", "ot"], 0], ["<", YEAR, NT_FROM]],
 ];
 
 /** A second record of the same name on the same point (pipeline `dup`): dot, no label. */

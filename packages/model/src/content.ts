@@ -145,4 +145,6 @@ export interface PlaceLife {
   };
   readonly note: Readonly<Record<string, string>>;
   readonly sources: readonly string[];
+  /** Taken over from the city it lies in: says nothing of when the place itself began. */
+  readonly inherited?: true;
 }
