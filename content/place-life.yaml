@@ -1,7 +1,8 @@
-# When places existed as towns (ADR 0003 years; "c." marks an approximate year and is
-# kept). Outside [from, until] the map shows the place faded, whatever the testament.
-# Every entry cites its sources. Dated records for ten New Testament cities are drafted
-# and reviewed (research sessions, 29.09) and go here next.
+# When places stood as towns (ADR 0003 years; "c." marks an approximate year and is
+# kept). `from` is the first year it stood, `until` the last; `gap` gives the first and
+# last years it lay in ruins between two lives. Outside those years the map shows the
+# place faded, whatever the testament. Every entry cites its sources. Places whose dates
+# are disputed (Jericho, Ai, Hazor, Gath) are left out rather than guessed.
 places:
   - id: ac9adc9
     en: Tiberias
@@ -23,11 +24,10 @@ places:
     en: Nineveh
     until: "612 BC"
     note:
-      en: "Taken and destroyed by the Babylonians and the Medes in 612 BC."
-      ru: "Взята и разрушена вавилонянами и мидянами в 612 г. до н. э."
+      en: "Taken and destroyed by the Babylonians and the Medes in 612 BC; only a small settlement lived on at the site."
+      ru: "Взята и разрушена вавилонянами и мидянами в 612 г. до н. э.; на месте города осталось лишь небольшое поселение."
     sources:
       - "Babylonian Chronicle, ABC 3 (Fall of Nineveh Chronicle)"
-      - "Nahum 2-3"
   - id: a15257a
     en: Jerusalem
     until: "AD 70"
@@ -35,25 +35,24 @@ places:
       from: "c. 586 BC"
       until: "c. 539 BC"
     note:
-      en: "Burnt by Nebuchadnezzar's army (587 or 586 BC, the year is disputed); the exiles returned under Cyrus in 538 BC. In AD 70 Titus's army destroyed the city and the Temple."
-      ru: "Сожжён войском Навуходоносора (587 или 586 г. до н. э., год спорный); изгнанники вернулись при Кире в 538 г. до н. э. В 70 г. н. э. город и Храм разрушены войском Тита."
+      en: "Burnt by Nebuchadnezzar's army (587 or 586 BC, the year is disputed); the exiles returned under Cyrus in 538 BC. In AD 70 Titus's army destroyed the city and the Temple; a Roman legion camped in the ruins until Aelia Capitolina was built c. AD 130."
+      ru: "Сожжён войском Навуходоносора (587 или 586 г. до н. э., год спорный); изгнанники вернулись при Кире в 538 г. до н. э. В 70 г. н. э. город и Храм разрушены войском Тита; в руинах стоял римский легион, пока ок. 130 г. не построили Элию Капитолину."
     sources:
       - "2 Kgs 25:8-10; Jer 52:12-14"
       - "Josephus, Jewish War 6.249-266; 7.1-4"
       - "Ezra 1:1-4"
-      - "Babylonian Chronicle, ABC 5 (597 BC capture)"
   - id: a041bb3
     en: Samaria
     from: "c. 880 BC"
     gap:
       from: "c. 108 BC"
-      until: "58 BC"
+      until: "c. 64 BC"
     note:
-      en: "Built by King Omri on the hill of Shemer; destroyed by John Hyrcanus and rebuilt by Gabinius in 57 BC, later Herod's Sebaste."
-      ru: "Построена царём Амврием на горе Семира; разрушена Иоанном Гирканом и восстановлена Габинием в 57 г. до н. э., позже — Севаста Ирода."
+      en: "Built by King Omri on the hill he bought from Shemer; destroyed by John Hyrcanus, given back to its people by Pompey in 63 BC and rebuilt by Gabinius, later Herod's Sebaste."
+      ru: "Построена царём Амврием на горе, купленной у Семира; разрушена Иоанном Гирканом, возвращена жителям Помпеем в 63 г. до н. э. и отстроена Габинием, позже — Севаста Ирода."
     sources:
       - "1 Kgs 16:23-24"
-      - "Josephus, Antiquities 13.275-281; 14.88"
+      - "Josephus, Antiquities 13.275-281; 14.75; 14.88"
   - id: ae41ab4
     en: Antioch
     from: "300 BC"
@@ -66,11 +65,11 @@ places:
     en: Rome
     from: "c. 753 BC"
     note:
-      en: "The traditional date of the founding of Rome; settlement on the Palatine is somewhat older, so the year is conventional."
-      ru: "Традиционная дата основания Рима; поселение на Палатине несколько старше, так что год условный."
+      en: "Varro's traditional date of the founding of Rome; the Palatine was settled from the 10th-9th centuries BC, so the year is conventional."
+      ru: "Традиционная дата основания Рима по Варрону; Палатин был заселён с X–IX вв. до н. э., так что год условный."
     sources:
-      - "Livy, Ab Urbe Condita 1.7"
-      - "Dionysius of Halicarnassus, Roman Antiquities 1.74"
+      - "Varronian era, as in Plutarch, Romulus 12, and Censorinus, De die natali 21"
+      - "Dionysius of Halicarnassus, Roman Antiquities 1.74 (gives 752/751 BC)"
   - id: af2161c
     en: Capernaum
     from: "c. 150 BC"

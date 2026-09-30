@@ -127,7 +127,7 @@ describe("beforeItsTime", () => {
     // Caesarea (NT only) from 22 BC = -21: shown from then, not only from 6 BC.
     expect(beforeItsTime({ ot: 0, life_from: -21 }, -10)).toBe(false);
     expect(beforeItsTime({ ot: 0, life_from: -21 }, -30)).toBe(true);
-    // In ruins between two lives: Jerusalem 586-538 BC -> [-585, -537).
+    // In ruins between two lives: Jerusalem 586-539 BC, last year inclusive -> [-585, -537).
     const jerusalem = { ot: 800, gap_from: -585, gap_until: -537 };
     expect(beforeItsTime(jerusalem, -600)).toBe(false);
     expect(beforeItsTime(jerusalem, -560)).toBe(true);

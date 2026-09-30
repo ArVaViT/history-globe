@@ -98,6 +98,13 @@ export const PlaceLifeFile = z.strictObject({
       .refine((p) => !p.gap || p.gap.from.year <= p.gap.until.year, {
         message: "the gap must not end before it starts",
       })
+      .refine(
+        (p) =>
+          !p.gap ||
+          ((!p.from || p.from.year < p.gap.from.year) &&
+            (!p.until || p.gap.until.year < p.until.year)),
+        { message: "the gap must lie inside the years the place stood" },
+      )
       .refine((p) => !p.from || !p.until || p.from.year <= p.until.year, {
         message: "from must not be after until",
       }),

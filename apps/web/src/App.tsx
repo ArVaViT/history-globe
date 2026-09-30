@@ -172,7 +172,7 @@ export function App() {
       } else if (e.key === "/") {
         e.preventDefault();
         // The search may be hidden with the panels: show them, then focus it.
-        setPanelsOpen(true);
+        togglePanels(true);
         requestAnimationFrame(() => {
           searchRef.current?.focus();
         });
@@ -204,7 +204,9 @@ export function App() {
       add(life.from, "events.founded");
       add(life.until, "events.destroyed");
       add(life.gap?.from, "events.destroyed");
-      add(life.gap?.until, "events.rebuilt");
+      // The gap's `until` is its last year in ruins: rebuilt the year after.
+      const back = life.gap?.until;
+      add(back && { ...back, year: back.year + 1 }, "events.rebuilt");
     }
     return out.sort((a, b) => a.year - b.year);
   }, [data, state.locale, t]);
@@ -247,7 +249,7 @@ export function App() {
                   togglePanels(!panelsOpen);
                 }}
                 aria-expanded={panelsOpen}
-                aria-controls="side-panels"
+                aria-controls={panelsOpen ? "side-panels" : undefined}
                 aria-label={panelsOpen ? t("panels.hide") : t("panels.show")}
                 title={panelsOpen ? t("panels.hide") : t("panels.show")}
                 className="grid size-9 place-items-center rounded-full text-ink-soft hover:bg-paper-2 hover:text-ink"
