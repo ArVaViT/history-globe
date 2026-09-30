@@ -1,0 +1,50 @@
+# Jesus in Jerusalem as the Gospel of John tells it, in the order of the text: John names
+# places in the city that the other Gospels do not. The year (AD 30) is the same
+# conventional point as the life of Jesus tour; John's feasts span some three years.
+id: john-jerusalem
+title:
+  en: "Jesus in Jerusalem, after John"
+  ru: "Иисус в Иерусалиме по Иоанну"
+year: "AD 30"
+approximate: true
+stops:
+  - place: a15257a # Jerusalem
+    ref: John.2.13-John.2.22
+    note:
+      en: 'At the Passover He drives the traders from the Temple: "make not my Father''s house an house of merchandise."'
+      ru: "На Пасху Он изгоняет торгующих из Храма: «дома Отца Моего не делайте домом торговли»."
+  - place: a0aa8cf # Bethesda
+    ref: John.5.2-John.5.9
+    note:
+      en: 'At the pool of Bethesda by the sheep gate He heals a man lame for thirty-eight years: "Rise, take up thy bed, and walk."'
+      ru: "У купальни Вифезда при Овечьих воротах Он исцеляет больного тридцать восемь лет: «встань, возьми постель твою и ходи»."
+  - place: a294859 # Siloam
+    ref: John.9.1-John.9.25
+    note:
+      en: 'A man born blind washes in the pool of Siloam and comes back seeing: "whereas I was blind, now I see."'
+      ru: "Слепорождённый умывается в купальне Силоам и приходит зрячим: «я был слеп, а теперь вижу»."
+  - place: a47c817 # Solomon's Portico
+    ref: John.10.22-John.10.30
+    note:
+      en: 'At the feast of dedication, in Solomon''s porch: "I and my Father are one."'
+      ru: "В праздник обновления, в притворе Соломоновом: «Я и Отец — одно»."
+  - place: a4f35bc # Bethany
+    ref: John.11.1-John.11.44
+    note:
+      en: 'At Bethany, near Jerusalem, He raises Lazarus: "I am the resurrection, and the life."'
+      ru: "В Вифании, близ Иерусалима, Он воскрешает Лазаря: «Я есмь воскресение и жизнь»."
+  - place: a553110 # Kidron
+    ref: John.18.1-John.18.12
+    note:
+      en: "Across the brook Kidron, in the garden, He is arrested."
+      ru: "За потоком Кедрон, в саду, Его берут под стражу."
+  - place: aec23b1 # Gabbatha
+    ref: John.19.13-John.19.16
+    note:
+      en: "Pilate sits in the judgement seat at the place called the Pavement, in Hebrew Gabbatha."
+      ru: "Пилат садится на судилище, на месте, называемом Лифостротон, а по-еврейски Гаввафа."
+  - place: a631d35 # Golgotha
+    ref: John.19.17-John.19.30
+    note:
+      en: 'At Golgotha He is crucified: "It is finished."'
+      ru: "На Голгофе Его распинают: «совершилось!»"
