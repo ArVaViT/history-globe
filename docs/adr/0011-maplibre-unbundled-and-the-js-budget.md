@@ -30,7 +30,7 @@ MapLibre's own three files, 417 kB.
   (`apps/web/src/i18n/index.ts`); the verse table leaves the browser (`checkRef` in
   `packages/model/src/verses.ts`, used by the schemas and the build); lucide-react gives
   way to the fifteen icons as inline SVG, their ISC and MIT notices in
-  `public/licenses/`. The total is 399.6 kB.
+  `public/licenses/`. The total was 399.6 kB; by the end of that day, with the flight padding and the selected-place label, 399.9 kB.
 - Before any deploy, the built app is loaded (`vite preview`) and the in-view list must
   fill: it does only when the worker runs.
 
