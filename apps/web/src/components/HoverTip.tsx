@@ -1,9 +1,10 @@
 import type { PolityName, Renderer } from "@hg/core";
 import { useEffect, useState } from "react";
 import type { Locale } from "@hg/model";
+import { useTranslation } from "react-i18next";
 import type { PlaceProps } from "../data";
 
-/** Small label that follows the pointer over a place: name, and the other-language name. */
+/** Small label that follows the pointer over a place: name, its kind, and the other-language name. */
 export function HoverTip({
   place,
   at,
@@ -13,7 +14,10 @@ export function HoverTip({
   at: { x: number; y: number };
   locale: Locale;
 }) {
+  const { t } = useTranslation();
   const ru = locale === "ru";
+  const kindKey = `kind.${place.kind}`;
+  const kind = t(kindKey) === kindKey ? "" : t(kindKey);
   const primary = ru ? (place.name_ru ?? place.name) : place.name;
   const secondary =
     ru && place.name_ru
@@ -28,7 +32,10 @@ export function HoverTip({
       className="pointer-events-none absolute z-10 -translate-y-full rounded-lg bg-ink/90 px-2.5 py-1.5 text-paper shadow-lg"
       style={{ left: at.x + 14, top: at.y - 10 }}
     >
-      <div className="font-serif text-[14px] leading-tight">{primary}</div>
+      <div className="font-serif text-[14px] leading-tight">
+        {primary}
+        {kind && <span className="ml-1.5 font-sans text-[11px] text-paper/60">{kind}</span>}
+      </div>
       {secondary && <div className="text-[11px] text-paper/70">{secondary}</div>}
     </div>
   );
