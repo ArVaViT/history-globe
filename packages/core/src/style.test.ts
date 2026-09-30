@@ -211,6 +211,29 @@ describe("place labels on the Russian map", () => {
     expect(style.layers.at(-1)?.id).toBe("place-label-selected");
   });
 
+  it("label a selected region or sea in the same layer, a town and a river line in their own", () => {
+    const layersFor = (props: Record<string, unknown>) =>
+      style.layers
+        .filter((l) => l.id.startsWith("place-label") && "filter" in l)
+        .filter((l) =>
+          featureFilter("filter" in l ? l.filter : undefined, "filter", {
+            locale: "en",
+            selected: "a0",
+          }).filter({ zoom: 10 }, {
+            type: 1,
+            properties: { id: "a0", rank: 0, ...props },
+            geometry: [],
+          } as never),
+        )
+        .map((l) => l.id);
+    expect(layersFor({ kind: "region", name: "Egypt" })).toEqual(["place-label-selected"]);
+    expect(layersFor({ kind: "body of water", name: "Great Sea" })).toEqual([
+      "place-label-selected",
+    ]);
+    expect(layersFor({ kind: "settlement", name: "Samaria" })).toEqual(["place-label"]);
+    expect(layersFor({ kind: "river", name: "Jordan", line: true })).toEqual([]);
+  });
+
   it("keep the English name for a region, which has no dot to fall back on", () => {
     expect(labelled("ru", { kind: "region", name: "Negeb" })).toBe(true);
     expect(labelled("ru", { kind: "body of water", name: "Great Sea" })).toBe(true);
