@@ -193,6 +193,24 @@ describe("place labels on the Russian map", () => {
     ).toBe(true);
   });
 
+  it("label a selected mountain once, in its own layer placed before the towns", () => {
+    const mountain = { id: "a3e21c6", rank: 1, kind: "mountain", name: "Mount Carmel" };
+    const labelling = (selected: string) =>
+      style.layers
+        .filter((l) => l.id.startsWith("place-label") && "filter" in l)
+        .filter((l) =>
+          featureFilter("filter" in l ? l.filter : undefined, "filter", {
+            locale: "en",
+            selected,
+          }).filter({ zoom: 10 }, { type: 1, properties: mountain, geometry: [] } as never),
+        )
+        .map((l) => l.id);
+    expect(labelling("a3e21c6")).toEqual(["place-label-selected"]);
+    expect(labelling("")).toEqual(["place-label-landmark"]);
+    // Higher in the stack is placed first.
+    expect(style.layers.at(-1)?.id).toBe("place-label-selected");
+  });
+
   it("keep the English name for a region, which has no dot to fall back on", () => {
     expect(labelled("ru", { kind: "region", name: "Negeb" })).toBe(true);
     expect(labelled("ru", { kind: "body of water", name: "Great Sea" })).toBe(true);
