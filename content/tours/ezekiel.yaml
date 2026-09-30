@@ -1,7 +1,7 @@
 # Ezekiel among the exiles, in the order of the book. Its own dates give the stops'
 # years, counted from King Jehoiachin's exile in 597 BC: the fifth year (593 BC, Ezek 1:2),
 # the sixth (592 BC, 8:1) and the twelfth, when word of Jerusalem's fall arrives
-# (585 BC, 33:21).
+# (585 BC, 33:21; some reckon 586 BC).
 id: ezekiel
 title:
   en: "Ezekiel among the exiles"
@@ -23,7 +23,7 @@ stops:
     ref: Ezek.8.1-Ezek.8.4
     year: "592 BC"
     note:
-      en: "In the sixth year the Spirit lifts him up and brings him in visions of God to Jerusalem, to the gate of the Temple."
+      en: "In the sixth year the Spirit lifts him up and brings him in visions of God to Jerusalem, to the door of the inner gate."
       ru: "В шестом году дух поднимает его и приносит в видениях Божиих в Иерусалим, ко входу внутренних ворот."
   - place: a32a4f8 # Chaldea
     ref: Ezek.11.24-Ezek.11.25
