@@ -1,0 +1,47 @@
+# Josiah's reform, 2 Kings 22-23, in the order of the text. The book of the law is found and
+# the Passover kept in his eighteenth year (22:3, 23:23), 622 BC in the usual reckoning
+# (621 BC is also held); that is the tour's year. His death at Megiddo in 609 BC is dated by
+# the Babylonian Chronicle's account of that year's campaign (see the dated events).
+id: josiah
+title:
+  en: "Josiah's reform"
+  ru: "Реформа Иосии"
+year: "622 BC"
+approximate: true
+stops:
+  - place: a15257a # Jerusalem
+    ref: 2Kgs.22.3-2Kgs.22.20
+    note:
+      en: "In Josiah's eighteenth year Hilkiah finds the book of the law in the house of the Lord; the king rends his clothes, and Huldah the prophetess, who dwelt in Jerusalem, is asked of it."
+      ru: "В восемнадцатый год Иосии Хелкия находит книгу закона в доме Господнем; царь раздирает одежды свои, и о книге вопрошают Олдаму пророчицу, жившую в Иерусалиме."
+  - place: a553110 # Kidron
+    ref: 2Kgs.23.4-2Kgs.23.7
+    note:
+      en: "The vessels made for Baal and the grove are brought out of the Temple and burnt by the brook Kidron."
+      ru: "Вещи, сделанные для Ваала и Астарты, выносят из храма и сжигают у потока Кедрона."
+  - place: ad81b79 # Topheth
+    ref: 2Kgs.23.10
+    note:
+      en: "He defiles Topheth in the Valley of Hinnom, that no man might make his son or his daughter pass through the fire to Molech."
+      ru: "Он оскверняет Тофет в долине Еннома, чтобы никто не проводил сына своего и дочери своей чрез огонь Молоху."
+  - place: a64f355 # Bethel
+    ref: 2Kgs.23.15-2Kgs.23.18
+    note:
+      en: "At Bethel he breaks down Jeroboam's altar and burns bones on it, as the man of God from Judah had foretold, and spares that man's grave."
+      ru: "В Вефиле он разрушает жертвенник Иеровоама и сжигает на нём кости, как предрёк человек Божий из Иудеи, а его могилу оставляет нетронутой."
+  - place: a041bb3 # Samaria
+    ref: 2Kgs.23.19-2Kgs.23.20
+    note:
+      en: "He takes away the houses of the high places in the cities of Samaria, as he had done in Bethel."
+      ru: "Он разрушает капища высот в городах Самарийских, как сделал в Вефиле."
+  - place: a15257a # Jerusalem
+    ref: 2Kgs.23.21-2Kgs.23.23
+    note:
+      en: "In Jerusalem the Passover is kept as it is written in the book of the covenant: none like it since the days of the judges."
+      ru: "В Иерусалиме совершают пасху, как написано в книге завета: такой не было от дней судей."
+  - place: a8554e3 # Megiddo
+    ref: 2Kgs.23.29-2Kgs.23.30
+    year: "609 BC"
+    note:
+      en: "Pharaoh Necho goes up against the king of Assyria to the Euphrates; Josiah goes against him, and Necho slays him at Megiddo when he has seen him."
+      ru: "Фараон Нехао идёт против царя Ассирийского к Евфрату; Иосия выходит навстречу ему, и тот умерщвляет его в Мегиддоне, когда увидел его."
