@@ -7,16 +7,13 @@ title:
 year: "458 BC"
 approximate: true
 stops:
-  - place: a8394b8 # Babylonia
-    ref: Ezra.7.9
-    note:
-      en: "Ezra sets out from Babylonia on the first day of the first month."
-      ru: "Ездра выходит из Вавилона в первый день первого месяца."
+  # Ahava is only known to be near Babylon; OpenBible puts it on Babylon itself, so the
+  # setting out from Babylon (Ezra 7:9) is told here rather than as a stop in the same spot.
   - place: a6c3859 # Ahava
-    ref: Ezra.8.15-Ezra.8.23
+    ref: Ezra.8.15-Ezra.8.31
     note:
-      en: "By the river that runs to Ahava they gather, fast and pray for a safe journey."
-      ru: "У реки, втекающей в Агаву, собираются, постятся и молятся о благополучном пути."
+      en: "Leaving Babylon, they gather by the river that runs to Ahava, fast and pray for a safe journey."
+      ru: "Выйдя из Вавилона, собираются у реки, втекающей в Агаву, постятся и молятся о благополучном пути."
   - place: a15257a # Jerusalem
     ref: Ezra.8.31-Ezra.8.32
     note:

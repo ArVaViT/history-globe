@@ -57,9 +57,11 @@ body {
   overflow: hidden;
 }
 
-/* One visible focus ring for the keyboard, on every control (WCAG 2.4.7). */
-:where(button, a, input, [tabindex]):focus-visible {
-  outline: 2px solid var(--color-gold);
-  outline-offset: 2px;
-  border-radius: 6px;
+/* One visible focus ring for the keyboard, on every control (WCAG 2.4.7). In the base
+   layer, so a control's own rounding (rounded-full) and ring utilities still win. */
+@layer base {
+  :where(button, a, input, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
 }

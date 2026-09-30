@@ -320,12 +320,6 @@ for (const file of ["rivers.geojson", "river-labels.geojson"]) {
   writes.push([path, JSON.stringify(rivers)]);
 }
 
-for (const w of warnings) console.warn(`warning: ${w}`);
-if (errors.length > 0) {
-  console.error(errors.join("\n"));
-  process.exit(1);
-}
-
 // Dated events on the slider (content/events.yaml).
 const events: HistoryEvent[] = [];
 for (const e of EventsFile.parse(load("content/events.yaml")).events) {
@@ -342,6 +336,12 @@ for (const e of EventsFile.parse(load("content/events.yaml")).events) {
   });
 }
 events.sort((a, b) => a.year - b.year);
+
+for (const w of warnings) console.warn(`warning: ${w}`);
+if (errors.length > 0) {
+  console.error(errors.join("\n"));
+  process.exit(1);
+}
 
 // Tours in the order of history, not of their file names.
 tours.sort((a, b) => a.year - b.year || a.id.localeCompare(b.id));

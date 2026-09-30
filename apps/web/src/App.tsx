@@ -290,6 +290,14 @@ export function App() {
                 locale={state.locale}
                 onStep={engine.goToStop}
                 onClose={engine.stopTour}
+                onOpenPlace={(id) => {
+                  engine.stopTour();
+                  engine.selectPlace(id);
+                }}
+                stopName={(id) => {
+                  const p = data.byId.get(id)?.props;
+                  return p ? (state.locale === "ru" ? (p.name_ru ?? p.name) : p.name) : id;
+                }}
               />
             ) : (
               selected && (

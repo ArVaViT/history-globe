@@ -180,14 +180,16 @@ export function Timeline({
             }
             className="timeline-range absolute inset-x-0 top-0 h-5 w-full"
           />
-          {events.map((e) => (
-            <span
-              key={`${String(e.year)}${e.label}`}
-              aria-hidden
-              style={{ left: `${pct(e.year)}%` }}
-              className={`pointer-events-none absolute w-[2px] -translate-x-1/2 rounded-full ${e.major ? "top-[-1px] h-[22px] bg-gold" : "top-[3px] h-[14px] bg-ink/60"}`}
-            />
-          ))}
+          {[...events]
+            .sort((a, b) => Number(a.major ?? false) - Number(b.major ?? false))
+            .map((e) => (
+              <span
+                key={`${String(e.year)}${e.label}`}
+                aria-hidden
+                style={{ left: `${pct(e.year)}%` }}
+                className={`pointer-events-none absolute w-[2px] -translate-x-1/2 rounded-full ${e.major ? "top-[-1px] h-[22px] bg-gold" : "top-[3px] h-[14px] bg-ink/60"}`}
+              />
+            ))}
           {TICKS.map((y, i) => (
             <span
               key={y}

@@ -13,6 +13,8 @@ export function TourStopCard({
   locale,
   onStep,
   onClose,
+  onOpenPlace,
+  stopName,
 }: {
   tour: Tour & { title: Readonly<Record<string, string>> };
   step: number;
@@ -20,6 +22,10 @@ export function TourStopCard({
   locale: Locale;
   onStep: (step: number) => void;
   onClose: () => void;
+  /** Leave the tour and open the full card of this stop's place. */
+  onOpenPlace: (placeId: string) => void;
+  /** The name of the place of any stop, for the step dots. */
+  stopName: (placeId: string) => string;
 }) {
   const { t } = useTranslation();
   const stop = tour.stops[step];
@@ -50,7 +56,7 @@ export function TourStopCard({
       <p className="mt-2 font-serif text-[16px] leading-relaxed text-ink">
         {stop.note[locale] ?? stop.note.en}
       </p>
-      <div className="mt-3">
+      <div className="mt-3 flex items-center gap-2">
         <a
           href={verseUrl(stop.ref, locale)}
           target="_blank"
@@ -60,13 +66,31 @@ export function TourStopCard({
           {formatRef(stop.ref, locale)}
           <span className="sr-only"> ({t("new_tab")})</span>
         </a>
+        <button
+          onClick={() => {
+            onOpenPlace(stop.placeId);
+          }}
+          className="ml-auto text-[13px] text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
+        >
+          {t("tours.about_place")}
+        </button>
       </div>
-      <div className="mt-4 h-1 overflow-hidden rounded-full bg-paper-2">
-        <div
-          className="h-full bg-accent transition-all"
-          style={{ width: `${((step + 1) / tour.stops.length) * 100}%` }}
-        />
-      </div>
+      {/* One dot per stop: where we are, and a jump to any stop. */}
+      <ol className="mt-4 flex flex-wrap items-center gap-1" aria-label={t("tours.stops_list")}>
+        {tour.stops.map((s, i) => (
+          <li key={`${s.placeId}-${String(i)}`}>
+            <button
+              onClick={() => {
+                onStep(i);
+              }}
+              aria-current={i === step ? "step" : undefined}
+              aria-label={`${String(i + 1)}. ${stopName(s.placeId)}`}
+              title={`${String(i + 1)}. ${stopName(s.placeId)}`}
+              className={`block rounded-full transition-all ${i === step ? "h-2.5 w-6 bg-accent" : i < step ? "size-2.5 bg-accent/55 hover:bg-accent" : "size-2.5 bg-paper-2 ring-1 ring-line hover:bg-accent/40"}`}
+            />
+          </li>
+        ))}
+      </ol>
       <div className="mt-3 flex justify-between">
         <button
           disabled={step === 0}
