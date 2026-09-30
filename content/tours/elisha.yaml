@@ -1,6 +1,7 @@
 # Elisha, 2 Kings 2 - 8, in the order of the text, from where the Elijah tour ends. The
-# tour's year (850 BC) falls in the reign of Jehoram of Israel (c. 852-841 BC), in whose
-# days most of these stories are told; a point for the map rather than a date.
+# tour's year (850 BC) falls in the reign of Jehoram of Israel (c. 852-841 BC); the text
+# sets 2 Kgs 3:1-8:15 in his reign, though chapters 4-7 do not name the king. A point for
+# the map rather than a date.
 id: elisha
 title:
   en: "Elisha the prophet"
@@ -16,7 +17,7 @@ stops:
   - place: a64f355 # Bethel
     ref: 2Kgs.2.23-2Kgs.2.24
     note:
-      en: "On the road to Bethel boys mock him, and two she-bears come out of the wood."
+      en: 'On the road to Bethel little children mock him, "Go up, thou bald head", and two she bears come out of the wood.'
       ru: "По дороге в Вефиль дети насмехаются над ним: «иди, плешивый!», и из леса выходят две медведицы."
   - place: ac86af5 # Shunem
     ref: 2Kgs.4.8-2Kgs.4.17
@@ -24,10 +25,10 @@ stops:
       en: "In Shunem a woman makes him a small room on the wall, and he tells her she will have a son."
       ru: "В Сонаме женщина устраивает для него горницу над стеною, и он предсказывает ей рождение сына."
   - place: a3e21c6 # Mount Carmel
-    ref: 2Kgs.4.25-2Kgs.4.37
+    ref: 2Kgs.4.18-2Kgs.4.37
     note:
-      en: "When the boy dies, his mother rides to Elisha at Mount Carmel and will not leave him; he goes back with her and raises her son."
-      ru: "Когда мальчик умирает, мать едет к Елисею на гору Кармил: «не отстану от тебя»; он идёт с нею и воскрешает её сына."
+      en: "When the boy dies, his mother rides to Elisha at Mount Carmel and will not leave him; he goes back with her to Shunem and raises the boy."
+      ru: "Когда мальчик умирает, мать едет к Елисею на гору Кармил: «не отстану от тебя»; он идёт с нею в Сонам и воскрешает ребёнка."
   - place: a6399b3 # Gilgal
     ref: 2Kgs.4.38-2Kgs.4.41
     note:
@@ -36,7 +37,7 @@ stops:
   - place: ae686c9 # Jordan
     ref: 2Kgs.5.9-2Kgs.5.14
     note:
-      en: "Naaman, captain of the king of Syria, dips himself seven times in the Jordan at Elisha's word and is cleansed of his leprosy."
+      en: "Naaman, captain of the host of the king of Syria, dips himself seven times in the Jordan at Elisha's word and is cleansed of his leprosy."
       ru: "Нееман, военачальник царя Сирийского, по слову Елисея семь раз окунается в Иордане и очищается от проказы."
   - place: ab635e4 # Dothan
     ref: 2Kgs.6.13-2Kgs.6.18
@@ -46,8 +47,8 @@ stops:
   - place: a041bb3 # Samaria
     ref: 2Kgs.6.24-2Kgs.7.1
     note:
-      en: "Ben-hadad besieges Samaria and the city starves; Elisha says that tomorrow flour will be sold for a shekel at its gate."
-      ru: "Венадад осаждает Самарию, в городе голод; Елисей говорит, что завтра мера муки будет по сиклю у ворот Самарии."
+      en: "Ben-hadad besieges Samaria and the city starves; Elisha says that tomorrow a measure of fine flour will be sold for a shekel at its gate."
+      ru: "Венадад осаждает Самарию, в городе голод; Елисей говорит, что завтра мера лучшей муки будет по сиклю у ворот Самарии."
   - place: a69c1d4 # Damascus
     ref: 2Kgs.8.7-2Kgs.8.15
     note:

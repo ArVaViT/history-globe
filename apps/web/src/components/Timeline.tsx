@@ -99,10 +99,10 @@ export function Timeline({
           <div className="min-w-[210px] font-serif text-[28px] leading-none font-semibold whitespace-nowrap text-ink tabular-nums max-xl:min-w-0 max-lg:flex-1 max-lg:text-[21px] max-md:text-[19px]">
             {formatYear(year, locale)}
           </div>
-          <div className="flex-1 text-[13px] leading-snug text-ink-soft max-lg:order-last max-lg:basis-full max-md:text-[11.5px]">
-            {periodName}
+          <div className="flex flex-1 flex-wrap items-center gap-x-2 gap-y-1 text-[13px] leading-snug text-ink-soft max-lg:order-last max-lg:basis-full max-md:text-[11.5px]">
+            <span>{periodName}</span>
             {period?.disputed && (
-              <span className="ml-2 rounded-full bg-[#f4dfc9] px-2 py-0.5 text-[11px] text-[#7a4a1d]">
+              <span className="rounded-full whitespace-nowrap bg-[#f4dfc9] px-2 py-0.5 text-[11px] text-[#7a4a1d]">
                 {ru ? period.disputed.ru : period.disputed.en}
               </span>
             )}
