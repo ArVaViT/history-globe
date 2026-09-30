@@ -1,0 +1,41 @@
+# The first return and the second Temple, Ezra 1-6, in the order of the text; the return
+# under Ezra and Nehemiah's walls are in the tour of the return. The tour's year (538 BC) is
+# Cyrus's first year over Babylon (see the dated events). Stops the book dates carry their
+# own year: the second year after the return (536 BC, 3:8; 537 BC is also held), the second
+# year of Darius (520 BC, 4:24) and the Temple finished in his sixth (516 BC, 6:15; 515 BC
+# is also held). Chapter 4:6-23 tells of later kings and is left out.
+id: second-temple
+title:
+  en: "The return and the second Temple"
+  ru: "Возвращение и второй Храм"
+year: "538 BC"
+approximate: true
+stops:
+  - place: a217d18 # Babylon
+    ref: Ezra.1.1-Ezra.2.1
+    note:
+      en: 'Cyrus king of Persia proclaims: "he hath charged me to build him an house at Jerusalem"; he gives back the vessels of the Temple, and the exiles go up from Babylon.'
+      ru: "Кир, царь Персидский, объявляет: «Он повелел мне построить Ему дом в Иерусалиме»; он возвращает сосуды дома Господня, и переселенцы выходят из Вавилона."
+  - place: ae023a9 # Joppa
+    ref: Ezra.3.7
+    note:
+      en: "Cedar is brought from Lebanon by sea to Joppa for the house of God, by leave of Cyrus."
+      ru: "Кедровый лес с Ливана доставляют по морю в Иоппию для дома Божия, с дозволения Кира."
+  - place: a15257a # Jerusalem
+    ref: Ezra.3.8-Ezra.3.13
+    year: "536 BC"
+    note:
+      en: 'The foundation of the Temple is laid with trumpets and song, "for his mercy endureth for ever toward Israel"; old men who had seen the first house weep aloud.'
+      ru: "Основание храма полагают с трубами и пением: «ибо вовек милость Его к Израилю»; старики, видевшие прежний храм, громко плачут."
+  - place: a212ef7 # Ecbatana
+    ref: Ezra.4.24-Ezra.6.12
+    year: "520 BC"
+    note:
+      en: "In the second year of Darius the prophets Haggai and Zechariah stir up the builders again; asked by the governor, Darius has the archives searched, a scroll with Cyrus's decree is found at Ecbatana in Media, and he orders the work to go on."
+      ru: "Во второй год Дария пророки Аггей и Захария подкрепляют строителей; по запросу правителя Дарий велит искать в книгохранилище; в Екбатане, в области Мидии, находят свиток с повелением Кира о доме Божием, и Дарий велит продолжать работу."
+  - place: a15257a # Jerusalem
+    ref: Ezra.6.15-Ezra.6.22
+    year: "516 BC"
+    note:
+      en: "The house is finished in the sixth year of Darius and dedicated with joy, and those come again out of the captivity keep the Passover."
+      ru: "Дом окончен в шестой год Дария и освящён с радостью, и возвратившиеся из плена совершают пасху."
