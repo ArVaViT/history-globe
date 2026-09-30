@@ -111,7 +111,8 @@
   "new_tab": "opens in a new tab",
   "panels": {
     "hide": "Hide panels",
-    "show": "Show panels"
+    "show": "Show panels",
+    "label": "Panels"
   },
   "legend": {
     "title": "Map key",
@@ -133,5 +134,7 @@
     "destroyed": "{{name}} destroyed",
     "rebuilt": "{{name}} rebuilt",
     "title": "Events"
-  }
+  },
+  "map_label": "Map",
+  "details_label": "Details"
 }

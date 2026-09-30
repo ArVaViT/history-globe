@@ -101,34 +101,38 @@ export function App() {
   return (
     <div
       className="fixed inset-0 overflow-hidden bg-night font-sans"
-      data-panels={panelsOpen && !(narrow && cardOpen) ? "open" : "closed"}
+      data-panels={columnShown ? "open" : "closed"}
     >
-      {/* MapLibre sets position: relative on its container, so it needs a sized parent. */}
-      <div className="absolute inset-0">
+      {/* Landmarks (WCAG 1.3.1): the map, the column, the card and the slider.
+          MapLibre sets position: relative on its container, so it needs a sized parent. */}
+      <main className="absolute inset-0" aria-label={t("map_label")}>
         <div ref={container} className="h-full w-full" />
-      </div>
 
-      {!ready && !error && (
-        <div className="pointer-events-none absolute inset-0 grid place-items-center">
-          <div className="flex items-center gap-3 rounded-full bg-paper/90 px-5 py-2.5 text-[14px] text-ink shadow-lg">
-            <span className="size-3 animate-ping rounded-full bg-accent" aria-hidden />
-            {t("loading")}
+        {!ready && !error && (
+          <div className="pointer-events-none absolute inset-0 grid place-items-center">
+            <div className="flex items-center gap-3 rounded-full bg-paper/90 px-5 py-2.5 text-[14px] text-ink shadow-lg">
+              <span className="size-3 animate-ping rounded-full bg-accent" aria-hidden />
+              {t("loading")}
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {hoverPlace && hover && <HoverTip place={hoverPlace} at={hover.at} locale={state.locale} />}
-      {globe && <PolityTip renderer={globe.renderer} locale={state.locale} />}
+        {hoverPlace && hover && <HoverTip place={hoverPlace} at={hover.at} locale={state.locale} />}
+        {globe && <PolityTip renderer={globe.renderer} locale={state.locale} />}
 
-      {error && (
-        <Panel className="absolute top-1/2 left-1/2 -translate-1/2 px-6 py-4 text-ink">
-          {error}
-        </Panel>
-      )}
+        {error && (
+          <Panel className="absolute top-1/2 left-1/2 -translate-1/2 px-6 py-4 text-ink">
+            {error}
+          </Panel>
+        )}
+      </main>
 
       {data && engine && (
         <>
-          <div className="absolute top-4 bottom-12 left-4 flex flex-col gap-3 overflow-y-auto pr-1 [scrollbar-width:thin] *:shrink-0 max-md:inset-x-3 max-md:top-3 max-md:bottom-auto max-md:z-10 max-md:max-h-[calc(100dvh-150px)] max-md:pr-0">
+          <aside
+            aria-label={t("panels.label")}
+            className="absolute top-4 bottom-12 left-4 flex flex-col gap-3 overflow-y-auto pr-1 [scrollbar-width:thin] *:shrink-0 max-md:inset-x-3 max-md:top-3 max-md:bottom-auto max-md:z-10 max-md:max-h-[calc(100dvh-150px)] max-md:pr-0"
+          >
             {/* On a panel, not on the map: state labels run under the corner. */}
             <Panel className="flex w-[340px] max-md:w-full items-center justify-between gap-2 px-2 py-2">
               <button
@@ -202,9 +206,12 @@ export function App() {
                 />
               </div>
             )}
-          </div>
+          </aside>
 
-          <div className="absolute top-4 right-4 max-md:top-auto max-md:right-3 max-md:bottom-[calc(var(--hg-timeline-h,124px)+20px)] max-md:left-3">
+          <section
+            aria-label={t("details_label")}
+            className="absolute top-4 right-4 max-md:top-auto max-md:right-3 max-md:bottom-[calc(var(--hg-timeline-h,124px)+20px)] max-md:left-3"
+          >
             {tour && state.tour ? (
               <TourStopCard
                 tour={tour}
@@ -251,9 +258,10 @@ export function App() {
                 />
               )
             )}
-          </div>
+          </section>
 
-          <div
+          <section
+            aria-label={t("time.timeline")}
             ref={timelineBox}
             className={`absolute bottom-5 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 max-xl:right-[64px] max-xl:translate-x-0 ${panelsOpen ? "max-xl:left-[372px]" : "max-xl:left-4"} max-md:inset-x-3 max-md:bottom-3 max-md:translate-x-0`}
           >
@@ -268,7 +276,7 @@ export function App() {
                 setPlaying((p) => !p);
               }}
             />
-          </div>
+          </section>
         </>
       )}
     </div>
