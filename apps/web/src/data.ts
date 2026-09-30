@@ -135,6 +135,9 @@ export function alsoHere(
       const seen = new Set([shown(p)]);
       const others = sorted
         .filter((o) => {
+          // In Russian, as on the map, a record without a Russian name is not listed:
+          // an English "Beyond the River" among Сион and Иевус.
+          if (locale === "ru" && o.name_ru === undefined) return false;
           if (seen.has(shown(o))) return false;
           seen.add(shown(o));
           return true;

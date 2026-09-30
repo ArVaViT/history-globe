@@ -180,6 +180,20 @@ describe("alsoHere", () => {
     expect(alsoHere(pair, "ru").has("b1")).toBe(false);
     expect(alsoHere(pair, "en").get("b1")).toEqual(["b4"]);
   });
+
+  it("lists in Russian only the records with a Russian name", () => {
+    const at = (props: PlaceProps) => ({
+      geometry: { type: "Point" as const, coordinates: [35.2, 31.8] },
+      properties: props,
+    });
+    const group = [
+      at(place("j1", "Jerusalem", "Иерусалим", 0, 800)),
+      at(place("z1", "Zion", "Сион", 1, 150)),
+      at(place("r1", "Beyond the River", undefined, 3, 20)),
+    ];
+    expect(alsoHere(group, "ru").get("j1")).toEqual(["z1"]);
+    expect(alsoHere(group, "en").get("j1")).toEqual(["z1", "r1"]);
+  });
 });
 
 describe("markRussianDuplicates", () => {
