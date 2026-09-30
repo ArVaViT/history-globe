@@ -19,7 +19,7 @@ export function ToursPanel({
   const { t, i18n } = useTranslation();
   const locale: Locale = i18n.language === "ru" ? "ru" : "en";
   return (
-    <Section id="tours" title={t("tours.title")} className="w-[340px] pb-3">
+    <Section id="tours" title={t("tours.title")} className="w-[340px] max-md:w-full pb-3">
       {tours.map((tour, i) => (
         <div key={tour.id}>
           {/* Old Testament tours before the New; tours come sorted by year. */}

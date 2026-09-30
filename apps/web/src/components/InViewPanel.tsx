@@ -41,7 +41,7 @@ export function InViewPanel({
   if (places.length === 0) return null;
 
   return (
-    <Section id="inview" title={t("inview.title")} className="w-[340px] pb-2">
+    <Section id="inview" title={t("inview.title")} className="w-[340px] max-md:w-full pb-2">
       <ul aria-label={t("inview.title")}>
         {visible.map((p) => (
           <li key={p.id}>

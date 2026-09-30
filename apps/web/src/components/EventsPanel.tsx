@@ -21,7 +21,12 @@ export function EventsPanel({
   const { t } = useTranslation();
   if (events.length === 0) return null;
   return (
-    <Section id="events" title={t("events.title")} defaultOpen={false} className="w-[340px] pb-3">
+    <Section
+      id="events"
+      title={t("events.title")}
+      defaultOpen={false}
+      className="w-[340px] max-md:w-full pb-3"
+    >
       <ol className="max-h-[260px] overflow-y-auto">
         {events.map((e) => (
           <li key={e.id}>

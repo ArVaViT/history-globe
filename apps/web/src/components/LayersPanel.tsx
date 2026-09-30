@@ -28,7 +28,7 @@ export function LayersPanel({
 }) {
   const { t } = useTranslation();
   return (
-    <Section id="layers" title={t("layers.title")} className="w-[340px] pb-2">
+    <Section id="layers" title={t("layers.title")} className="w-[340px] max-md:w-full pb-2">
       {ORDER.map((layer) => (
         <label
           key={layer}
@@ -54,7 +54,12 @@ export function LegendPanel() {
   const { t } = useTranslation();
   const icons = useMemo(() => LEGEND.map((name) => [name, iconDataUrl(name, INK)] as const), []);
   return (
-    <Section id="legend" title={t("legend.title")} className="w-[340px] pb-3" defaultOpen={false}>
+    <Section
+      id="legend"
+      title={t("legend.title")}
+      className="w-[340px] max-md:w-full pb-3"
+      defaultOpen={false}
+    >
       <div className="px-4 pt-1">
         <ul className="grid grid-cols-2 gap-x-3 gap-y-1 text-[12.5px] text-ink">
           <li className="flex items-center gap-2">

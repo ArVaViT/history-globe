@@ -65,3 +65,16 @@ body {
     outline-offset: 2px;
   }
 }
+
+/* A phone: pinch zooms and the compass is two fingers away, so the buttons and the
+   scale go; the attribution folds into its (i) under the header, clear of the slider. */
+@media (max-width: 767px) {
+  .maplibregl-ctrl-bottom-right .maplibregl-ctrl-group,
+  .maplibregl-ctrl-scale {
+    display: none;
+  }
+  .maplibregl-ctrl-bottom-right {
+    top: 72px;
+    bottom: auto;
+  }
+}

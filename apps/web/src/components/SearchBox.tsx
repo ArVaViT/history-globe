@@ -26,7 +26,7 @@ export function SearchBox({
   };
 
   return (
-    <Panel className="w-[340px] overflow-hidden">
+    <Panel className="w-[340px] max-md:w-full overflow-hidden">
       <label className="flex items-center gap-2 px-4 py-3">
         <Search className="size-4 text-ink-soft" aria-hidden />
         <input

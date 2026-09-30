@@ -76,7 +76,7 @@ export function PlaceCard({
   const kind = t(kindKey) === kindKey ? place.kind : t(kindKey);
 
   return (
-    <Panel className="w-[380px] max-h-[calc(100vh-200px)] overflow-auto">
+    <Panel className="w-[380px] max-md:w-full max-h-[calc(100vh-200px)] max-md:max-h-[48dvh] overflow-auto">
       <div className="flex items-start justify-between gap-3 px-5 pt-4">
         <div>
           <h2 className="font-serif text-[26px] leading-tight font-semibold text-ink">{title}</h2>

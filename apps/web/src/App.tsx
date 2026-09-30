@@ -31,18 +31,20 @@ export function App() {
   const [dataError, setDataError] = useState<string | null>(null);
   const [playing, setPlaying] = useState(false);
   // The whole left column hides at once (burger in the header), remembered in this browser.
+  // On a phone the column would cover the map: it starts hidden unless opened before.
   const [panelsOpen, setPanelsOpen] = useState(() => {
+    const narrow = window.matchMedia("(max-width: 767px)").matches;
     try {
-      return localStorage.getItem("hg:panels-hidden") === null;
+      const saved = localStorage.getItem("hg:panels-hidden");
+      return saved === null ? !narrow : saved === "0";
     } catch {
-      return true;
+      return !narrow;
     }
   });
   const togglePanels = (open: boolean) => {
     setPanelsOpen(open);
     try {
-      if (open) localStorage.removeItem("hg:panels-hidden");
-      else localStorage.setItem("hg:panels-hidden", "1");
+      localStorage.setItem("hg:panels-hidden", open ? "0" : "1");
     } catch {
       // Storage refused: the column still toggles, it just forgets.
     }
@@ -198,6 +200,8 @@ export function App() {
   const selected = state.selectedPlace ? data?.byId.get(state.selectedPlace)?.props : undefined;
   const tour = state.tour ? data?.tours.find((x) => x.id === state.tour?.id) : undefined;
   const tourStop = tour && state.tour ? tour.stops[state.tour.step] : undefined;
+  // On a phone an open card takes the lower half: the column folds to its header.
+  const cardOpen = Boolean((tour && state.tour) || selected);
 
   return (
     <div className="fixed inset-0 overflow-hidden bg-night font-sans">
@@ -226,9 +230,9 @@ export function App() {
 
       {data && engine && (
         <>
-          <div className="absolute top-4 bottom-12 left-4 flex flex-col gap-3 overflow-y-auto pr-1 [scrollbar-width:thin] *:shrink-0">
+          <div className="absolute top-4 bottom-12 left-4 flex flex-col gap-3 overflow-y-auto pr-1 [scrollbar-width:thin] *:shrink-0 max-md:inset-x-3 max-md:top-3 max-md:bottom-auto max-md:z-10 max-md:max-h-[calc(100dvh-150px)] max-md:pr-0">
             {/* On a panel, not on the map: state labels run under the corner. */}
-            <Panel className="flex w-[340px] items-center justify-between gap-2 px-2 py-2">
+            <Panel className="flex w-[340px] max-md:w-full items-center justify-between gap-2 px-2 py-2">
               <button
                 onClick={() => {
                   togglePanels(!panelsOpen);
@@ -251,7 +255,10 @@ export function App() {
               <LocaleSwitch value={state.locale} onChange={engine.setLocale} />
             </Panel>
             {panelsOpen && (
-              <div id="side-panels" className="flex flex-col gap-3 *:shrink-0">
+              <div
+                id="side-panels"
+                className={`flex flex-col gap-3 *:shrink-0 ${cardOpen ? "max-md:hidden" : ""}`}
+              >
                 <SearchBox
                   data={data}
                   inputRef={searchRef}
@@ -292,7 +299,7 @@ export function App() {
             )}
           </div>
 
-          <div className="absolute top-4 right-4">
+          <div className="absolute top-4 right-4 max-md:top-auto max-md:right-3 max-md:bottom-[136px] max-md:left-3">
             {tour && state.tour ? (
               <TourStopCard
                 tour={tour}
@@ -341,7 +348,7 @@ export function App() {
             )}
           </div>
 
-          <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2">
+          <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 max-md:inset-x-3 max-md:bottom-3 max-md:translate-x-0">
             <Timeline
               year={state.year}
               locale={state.locale}

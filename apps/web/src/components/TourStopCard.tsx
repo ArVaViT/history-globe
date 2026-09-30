@@ -38,7 +38,7 @@ export function TourStopCard({
   const last = tour.stops.length - 1;
 
   return (
-    <Panel className="w-[380px] px-5 pt-4 pb-4">
+    <Panel className="w-[380px] max-md:w-full px-5 pt-4 pb-4">
       <div className="flex items-center justify-between">
         <div className="text-[12px] text-ink-soft">
           {tour.title[locale] ?? tour.title.en} ·{" "}

@@ -70,7 +70,7 @@ export function Timeline({
   const periodName = period ? (ru ? period.name.ru : period.name.en) : "";
 
   return (
-    <Panel className="relative w-[min(920px,calc(100vw-760px))] min-w-[560px] px-5 pt-3 pb-3">
+    <Panel className="relative w-[min(920px,calc(100vw-760px))] min-w-[560px] px-5 pt-3 pb-3 max-md:w-full max-md:min-w-0 max-md:px-3 max-md:pt-2">
       {hovered && hover && (
         // Above the whole panel: inside it the tip covered the year and the era name.
         // Positioned on the panel, so it holds however tall the header grows.
@@ -96,10 +96,10 @@ export function Timeline({
       )}
       <div role="group" aria-label={t("time.timeline")}>
         <div className="flex items-center gap-4">
-          <div className="min-w-[210px] font-serif text-[28px] leading-none font-semibold text-ink tabular-nums">
+          <div className="min-w-[210px] font-serif text-[28px] leading-none font-semibold text-ink tabular-nums max-md:min-w-0 max-md:text-[19px]">
             {formatYear(year, locale)}
           </div>
-          <div className="flex-1 text-[13px] leading-snug text-ink-soft">
+          <div className="flex-1 text-[13px] leading-snug text-ink-soft max-md:text-[11.5px]">
             {periodName}
             {period?.disputed && (
               <span className="ml-2 rounded-full bg-[#f4dfc9] px-2 py-0.5 text-[11px] text-[#7a4a1d]">
@@ -195,7 +195,7 @@ export function Timeline({
               key={y}
               aria-hidden
               style={{ left: `${pct(y)}%` }}
-              className={`absolute top-6 text-[11px] whitespace-nowrap text-ink-soft ${i === 0 ? "" : i === TICKS.length - 1 ? "-translate-x-full" : "-translate-x-1/2"}`}
+              className={`absolute top-6 text-[11px] whitespace-nowrap text-ink-soft ${i === 0 ? "" : i === TICKS.length - 1 ? "-translate-x-full" : "-translate-x-1/2"} ${i % 2 === 1 ? "max-md:hidden" : ""}`}
             >
               {formatYear(y, locale)}
             </span>
