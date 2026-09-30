@@ -118,5 +118,10 @@
     "tent": "camp of the Exodus",
     "valley": "valley",
     "road": "road"
+  },
+  "events": {
+    "founded": "{{name}} founded",
+    "destroyed": "{{name}} destroyed",
+    "rebuilt": "{{name}} rebuilt"
   }
 }

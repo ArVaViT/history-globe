@@ -40,3 +40,59 @@ places:
       - "2 Kgs 25:8-10; Jer 52:12-14"
       - "Ezra 1:1-4"
       - "Babylonian Chronicle, ABC 5 (597 BC capture)"
+  - id: a041bb3
+    en: Samaria
+    from: "c. 880 BC"
+    gap:
+      from: "c. 108 BC"
+      until: "58 BC"
+    note:
+      en: "Built by King Omri on the hill of Shemer; destroyed by John Hyrcanus and rebuilt by Gabinius in 57 BC, later Herod's Sebaste."
+      ru: "Построена царём Амврием на горе Семира; разрушена Иоанном Гирканом и восстановлена Габинием в 57 г. до н. э., позже — Севаста Ирода."
+    sources:
+      - "1 Kgs 16:23-24"
+      - "Josephus, Antiquities 13.275-281; 14.88"
+  - id: ae41ab4
+    en: Antioch
+    from: "300 BC"
+    note:
+      en: "Founded by Seleucus I Nicator on the Orontes and named after his father Antiochus."
+      ru: "Основана Селевком I Никатором на Оронте и названа в честь его отца Антиоха."
+    sources:
+      - "Strabo, Geography 16.2.4"
+  - id: afc8e7a
+    en: Rome
+    from: "c. 753 BC"
+    note:
+      en: "The traditional date of the founding of Rome; settlement on the Palatine is somewhat older, so the year is conventional."
+      ru: "Традиционная дата основания Рима; поселение на Палатине несколько старше, так что год условный."
+    sources:
+      - "Livy, Ab Urbe Condita 1.7"
+      - "Dionysius of Halicarnassus, Roman Antiquities 1.74"
+  - id: af2161c
+    en: Capernaum
+    from: "c. 150 BC"
+    note:
+      en: "The fishing village was founded in the Hasmonean period, in the 2nd century BC."
+      ru: "Рыбацкое селение возникло в хасмонейский период, во II веке до н. э."
+    sources:
+      - "Excavations of V. Corbo, S. Loffreda and V. Tzaferis at Capernaum (NEAEHL, 'Capernaum')"
+  - id: a3fc47a
+    en: Ekron
+    until: "c. 604 BC"
+    note:
+      en: "The city at Tel Miqne burnt in Nebuchadnezzar II's campaign on the Philistine coast and was not rebuilt as a city."
+      ru: "Город на Тель-Микне сгорел во время похода Навуходоносора II на филистимское побережье и больше не был отстроен как город."
+    sources:
+      - "Tel Miqne-Ekron excavations, S. Gitin and T. Dothan (NEAEHL, 'Tel Miqne-Ekron')"
+  - id: a6f437a
+    en: Corinth
+    gap:
+      from: "146 BC"
+      until: "45 BC"
+    note:
+      en: "Sacked by Lucius Mummius in 146 BC and left desolate until Julius Caesar founded a Roman colony there in 44 BC."
+      ru: "Разграблен Луцием Муммием в 146 г. до н. э. и лежал в запустении, пока Юлий Цезарь не основал там римскую колонию в 44 г. до н. э."
+    sources:
+      - "Pausanias, Description of Greece 2.1.2"
+      - "Strabo, Geography 8.6.23"

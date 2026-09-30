@@ -32,16 +32,24 @@ export function formatPeriodRange(range: { from: number; to: number }, locale: L
   return `${formatYear(range.from, locale)} – ${formatYear(range.to - 1, locale)}`;
 }
 
+/** A dated event on the slider: a town founded, destroyed, rebuilt. */
+export interface TimelineEvent {
+  readonly year: number;
+  readonly label: string;
+}
+
 export function Timeline({
   year,
   locale,
   playing,
+  events = [],
   onYear,
   onPlay,
 }: {
   year: number;
   locale: Locale;
   playing: boolean;
+  events?: readonly TimelineEvent[];
   onYear: (year: number) => void;
   onPlay: () => void;
 }) {
@@ -51,6 +59,10 @@ export function Timeline({
   // The era band under the pointer: the slider covers the bands, so native titles never show.
   const [hover, setHover] = useState<{ x: number; year: number } | null>(null);
   const hovered = hover ? periodAt(hover.year) : undefined;
+  // Events within about 1 % of the slider of the pointer (20 years) are named in the tip.
+  const near = hover
+    ? events.filter((e) => Math.abs(e.year - hover.year) <= SPAN / 100).slice(0, 3)
+    : [];
   const periodName = period ? (ru ? period.name.ru : period.name.en) : "";
 
   return (
@@ -67,6 +79,12 @@ export function Timeline({
           <div className="text-paper/75 tabular-nums">
             {formatPeriodRange(hovered.range, locale)}
           </div>
+          {near.map((e) => (
+            <div key={`${String(e.year)}${e.label}`} className="mt-1 text-paper">
+              <span className="tabular-nums text-gold">{formatYear(e.year, locale)}</span> ·{" "}
+              {e.label}
+            </div>
+          ))}
         </div>
       )}
       <div role="group" aria-label={t("time.timeline")}>
@@ -155,6 +173,14 @@ export function Timeline({
             }
             className="timeline-range absolute inset-x-0 top-0 h-5 w-full"
           />
+          {events.map((e) => (
+            <span
+              key={`${String(e.year)}${e.label}`}
+              aria-hidden
+              style={{ left: `${pct(e.year)}%` }}
+              className="pointer-events-none absolute top-[3px] h-[14px] w-[2px] -translate-x-1/2 rounded-full bg-ink/60"
+            />
+          ))}
           {TICKS.map((y, i) => (
             <span
               key={y}

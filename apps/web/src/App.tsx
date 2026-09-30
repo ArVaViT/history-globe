@@ -1,7 +1,7 @@
 import { YEAR_MAX, YEAR_MIN } from "@hg/core";
 import type { Locale } from "@hg/model";
 import { Menu, PanelLeftClose } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { HoverTip, PolityTip } from "./components/HoverTip";
 import { InViewPanel } from "./components/InViewPanel";
@@ -9,7 +9,7 @@ import { LayersPanel } from "./components/LayersPanel";
 import { Panel } from "./components/Panel";
 import { PlaceCard } from "./components/PlaceCard";
 import { SearchBox } from "./components/SearchBox";
-import { Timeline } from "./components/Timeline";
+import { Timeline, type TimelineEvent } from "./components/Timeline";
 import { ToursPanel } from "./components/ToursPanel";
 import { TourStopCard } from "./components/TourStopCard";
 import { loadData, type LoadedData } from "./data";
@@ -189,6 +189,24 @@ export function App() {
   }, [globe]);
 
   const hoverPlace = hover ? data?.byId.get(hover.id)?.props : undefined;
+  // Founding, destruction and ruin of places (place-life.yaml), marked on the slider.
+  const timelineEvents = useMemo(() => {
+    if (!data) return [];
+    const out: TimelineEvent[] = [];
+    for (const [id, life] of Object.entries(data.life)) {
+      const p = data.byId.get(id)?.props;
+      if (!p) continue;
+      const name = state.locale === "ru" ? (p.name_ru ?? p.name) : p.name;
+      const add = (y: { year: number } | undefined, key: string) => {
+        if (y) out.push({ year: y.year, label: t(key, { name }) });
+      };
+      add(life.from, "events.founded");
+      add(life.until, "events.destroyed");
+      add(life.gap?.from, "events.destroyed");
+      add(life.gap?.until, "events.rebuilt");
+    }
+    return out.sort((a, b) => a.year - b.year);
+  }, [data, state.locale, t]);
   const selected = state.selectedPlace ? data?.byId.get(state.selectedPlace)?.props : undefined;
   const tour = state.tour ? data?.tours.find((x) => x.id === state.tour?.id) : undefined;
   const tourStop = tour && state.tour ? tour.stops[state.tour.step] : undefined;
@@ -321,6 +339,7 @@ export function App() {
               year={state.year}
               locale={state.locale}
               playing={playing}
+              events={timelineEvents}
               onYear={engine.setYear}
               onPlay={() => {
                 if (!playing && state.year >= YEAR_MAX) engine.setYear(YEAR_MIN);
