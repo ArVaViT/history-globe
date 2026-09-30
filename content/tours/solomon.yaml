@@ -1,0 +1,52 @@
+# Solomon, 1 Kings 1-11, in the order of the text. The tour's year (970 BC) is the
+# conventional start of his reign (c. 970-931 BC, Thiele); the Temple stop shows his
+# fourth year (1 Kgs 6:1), the last his death. Points for the map.
+id: solomon
+title:
+  en: "Solomon"
+  ru: "Царь Соломон"
+year: "970 BC"
+approximate: true
+stops:
+  - place: a2a303c # Gihon
+    ref: 1Kgs.1.38-1Kgs.1.39
+    note:
+      en: 'At Gihon Zadok anoints Solomon, and all the people shout: "God save king Solomon!"'
+      ru: "У Гиона Садок помазывает Соломона, и весь народ восклицает: «да живет царь Соломон!»"
+  - place: aede336 # Gibeon
+    ref: 1Kgs.3.4-1Kgs.3.15
+    note:
+      en: "At Gibeon the Lord appears to him in a dream, and he asks for an understanding heart."
+      ru: "В Гаваоне Господь является ему во сне, и он просит сердце разумное."
+  - place: a160272 # Tyre
+    ref: 1Kgs.5.1-1Kgs.5.12
+    note:
+      en: "Hiram king of Tyre sends cedar for the Temple, and the two make a treaty."
+      ru: "Хирам, царь Тирский, даёт кедры для Храма, и они заключают союз."
+  - place: a15257a # Jerusalem
+    ref: 1Kgs.6.1-1Kgs.8.11
+    year: "966 BC"
+    note:
+      en: "In his fourth year he begins the Temple; at its dedication the cloud fills the house of the Lord."
+      ru: "В четвертый год царствования он начинает строить Храм; при освящении облако наполняет дом Господень."
+  - place: a8554e3 # Megiddo
+    ref: 1Kgs.9.15
+    note:
+      en: "With forced labour he builds the wall of Jerusalem, Hazor, Megiddo and Gezer."
+      ru: "Податью он строит стену Иерусалима, Асор, Мегиддон и Газер."
+  - place: a8e53d5 # Ezion-geber
+    ref: 1Kgs.9.26-1Kgs.9.28
+    note:
+      en: "At Ezion-geber on the Red Sea he builds ships, and Hiram's sailors bring gold from Ophir."
+      ru: "В Ецион-Гавере на берегу Чермного моря он строит корабли, и моряки Хирама привозят золото из Офира."
+  - place: a81ab85 # Sheba
+    ref: 1Kgs.10.1-1Kgs.10.13
+    note:
+      en: "The queen of Sheba hears of his fame and comes to test him with hard questions."
+      ru: "Царица Савская, услышав о славе Соломона, приходит испытать его загадками."
+  - place: a15257a # Jerusalem
+    ref: 1Kgs.11.42-1Kgs.11.43
+    year: "931 BC"
+    note:
+      en: "After forty years' reign in Jerusalem Solomon dies and is buried in the city of David."
+      ru: "Процарствовав в Иерусалиме сорок лет, Соломон почил и погребен в городе Давида."
