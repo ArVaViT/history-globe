@@ -37,7 +37,9 @@ export function EventsPanel({
               aria-current={e.year === year ? "true" : undefined}
               className={`mx-2 flex w-[calc(100%-16px)] items-baseline gap-3 rounded-xl px-2 py-1 text-left hover:bg-paper-2 ${e.year === year ? "bg-paper-2" : ""}`}
             >
-              <span className="w-[104px] shrink-0 text-right text-[11px] whitespace-nowrap text-ink-soft tabular-nums">
+              <span
+                className={`${locale === "ru" ? "w-[104px]" : "w-[72px]"} shrink-0 text-right text-[11px] whitespace-nowrap text-ink-soft tabular-nums`}
+              >
                 {e.approximate ? `${t("place.circa")} ` : ""}
                 {formatYear(e.year, locale)}
               </span>

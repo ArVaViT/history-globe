@@ -4,7 +4,9 @@ export type KeyAction =
   | { readonly kind: "play" }
   | { readonly kind: "search" }
   | { readonly kind: "close" }
-  | { readonly kind: "north" };
+  | { readonly kind: "north" }
+  /** The previous or next stop of a running tour; the arrows pan the map otherwise. */
+  | { readonly kind: "stop"; readonly delta: -1 | 1 };
 
 export interface KeyInput {
   readonly key: string;
@@ -30,6 +32,9 @@ export function keyAction(e: KeyInput): KeyAction | null {
   if (e.key === "/") return { kind: "search" };
   if (e.key === "Escape") return { kind: "close" };
   if (e.key.toLowerCase() === "n") return { kind: "north" };
+  // On the slider the arrows move the year.
+  if (e.focus !== "slider" && e.key === "ArrowLeft") return { kind: "stop", delta: -1 };
+  if (e.focus !== "slider" && e.key === "ArrowRight") return { kind: "stop", delta: 1 };
   return null;
 }
 

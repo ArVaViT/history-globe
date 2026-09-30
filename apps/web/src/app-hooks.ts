@@ -170,6 +170,12 @@ export function useKeys(
       } else if (action.kind === "search") {
         e.preventDefault();
         focusSearch();
+      } else if (action.kind === "stop") {
+        // Only during a tour; otherwise the arrows are MapLibre's, panning the map.
+        const tour = engine.store.get().tour;
+        if (!tour) return;
+        e.preventDefault();
+        engine.goToStop(tour.step + action.delta);
       } else if (action.kind === "close") {
         engine.selectPlace(null);
         engine.stopTour();

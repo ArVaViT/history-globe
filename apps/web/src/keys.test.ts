@@ -32,4 +32,11 @@ describe("keyAction", () => {
     expect(keyAction(k(" ", { focus: "slider" }))).toEqual({ kind: "play" });
     expect(keyAction(k("n", { metaKey: true }))).toBeNull();
   });
+
+  it("gives the arrows to tour stops, except on the slider", () => {
+    expect(keyAction(k("ArrowRight"))).toEqual({ kind: "stop", delta: 1 });
+    expect(keyAction(k("ArrowLeft", { focus: "button" }))).toEqual({ kind: "stop", delta: -1 });
+    expect(keyAction(k("ArrowRight", { focus: "slider" }))).toBeNull();
+    expect(keyAction(k("ArrowLeft", { focus: "text" }))).toBeNull();
+  });
 });
