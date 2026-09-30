@@ -195,8 +195,9 @@ export function App() {
     const out: TimelineEvent[] = [];
     for (const [id, life] of Object.entries(data.life)) {
       const p = data.byId.get(id)?.props;
-      // Another name of a place (Zion for Jerusalem) shares its years: mark them once.
-      if (!p || p.where_tpl === "same") continue;
+      // Another name of a place (Zion for Jerusalem) and places inside it (its gates) share
+      // its years: mark them once.
+      if (!p || p.where_tpl === "same" || p.where_tpl === "at") continue;
       const name = state.locale === "ru" ? (p.name_ru ?? p.name) : p.name;
       const add = (y: { year: number; approximate: boolean } | undefined, key: string) => {
         if (y) out.push({ year: y.year, label: t(key, { name }), approximate: y.approximate });

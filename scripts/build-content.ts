@@ -265,12 +265,26 @@ for (const p of PlaceLifeFile.parse(load("content/place-life.yaml")).places) {
   };
 }
 
-// "Same place as X" (Zion for Jerusalem) shares X's years unless it has its own.
+// "Same place as X" (Zion for Jerusalem) shares X's years unless it has its own. A place
+// "in X" (a gate, a pool of Jerusalem) shares X's ruin and end, not its founding, and the
+// note says whose years they are.
+const englishName = new Map(places.features.map((f) => [f.properties.id, f.properties.name]));
 for (const f of places.features) {
   const p = f.properties;
-  const own = life[p.id];
-  const shared = p.where_tpl === "same" && p.where_ref ? life[p.where_ref] : undefined;
-  if (!own && shared) life[p.id] = shared;
+  if (life[p.id] || !p.where_ref) continue;
+  const of = life[p.where_ref];
+  if (!of) continue;
+  if (p.where_tpl === "same") life[p.id] = of;
+  else if (p.where_tpl === "at" && (of.gap ?? of.until)) {
+    const ruName = names[p.where_ref]?.ru ?? englishName.get(p.where_ref) ?? "";
+    const enName = englishName.get(p.where_ref) ?? "";
+    life[p.id] = {
+      ...(of.until ? { until: of.until } : {}),
+      ...(of.gap ? { gap: of.gap } : {}),
+      note: { en: `${enName}: ${of.note.en ?? ""}`, ru: `${ruName}: ${of.note.ru ?? ""}` },
+      sources: of.sources,
+    };
+  }
 }
 
 // Candidate sites get a Russian label where their English one refers to a place with a
