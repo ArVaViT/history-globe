@@ -1,6 +1,7 @@
 # The return from exile under Ezra (Ezra 7-8, the seventh year of Artaxerxes I, c. 458 BC)
-# and Nehemiah (Neh 1-2, his twentieth year, c. 445 BC). The tour's year is Ezra's;
-# Nehemiah's stops show 445 BC. The first return under Cyrus (Ezra 1-6) is its own tour.
+# and Nehemiah (Neh 1-12, his twentieth year, c. 445 BC). The tour's year is Ezra's;
+# Nehemiah's stops show 445 BC, the dedication of the wall (Neh 12:27, not dated) with
+# them. The first return under Cyrus (Ezra 1-6) is its own tour.
 id: return
 title:
   en: "The return: Ezra and Nehemiah"
@@ -32,3 +33,21 @@ stops:
     note:
       en: "Nehemiah inspects the walls by night and the rebuilding begins."
       ru: "Неемия ночью осматривает стены, и начинается восстановление."
+  - place: ae6bfe2 # Ono
+    ref: Neh.6.1-Neh.6.4
+    year: "445 BC"
+    note:
+      en: 'Sanballat and Geshem call him to meet them in the plain of Ono, meaning him harm; he answers: "I am doing a great work, so that I cannot come down."'
+      ru: "Санаваллат и Гешем зовут его встретиться на равнине Оно, замышляя зло; он отвечает: «я занят большим делом, не могу сойти»."
+  - place: a0293ff # Water Gate
+    ref: Neh.8.1-Neh.8.8
+    year: "445 BC"
+    note:
+      en: "In the seventh month all the people gather before the Water Gate, and Ezra reads the book of the law from morning until midday, giving the sense."
+      ru: "В седьмой месяц весь народ собирается на площади перед Водяными воротами, и Ездра читает книгу закона от рассвета до полудня, и народ понимает прочитанное."
+  - place: a15257a # Jerusalem
+    ref: Neh.12.27-Neh.12.43
+    year: "445 BC"
+    note:
+      en: 'Two great choirs go round the wall at its dedication, "so that the joy of Jerusalem was heard even afar off."'
+      ru: "При освящении стены два больших хора идут по ней, «и веселие Иерусалима далеко было слышно»."
