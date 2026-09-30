@@ -1,0 +1,34 @@
+# Philip the evangelist, one of the seven: Acts 6, 8 and 21, in the order of the text.
+# The tour's year (AD 34) is a conventional point, as for the conversion of Saul.
+id: philip
+title:
+  en: "Philip the evangelist"
+  ru: "Филипп благовестник"
+year: "AD 34"
+approximate: true
+stops:
+  - place: a15257a # Jerusalem
+    ref: Acts.6.1-Acts.6.7
+    note:
+      en: "In Jerusalem Philip is chosen with Stephen among the seven to serve the tables."
+      ru: "В Иерусалиме Филипп избран вместе со Стефаном в число семи для служения."
+  - place: a282dce # Samaria (region)
+    ref: Acts.8.5-Acts.8.13
+    note:
+      en: "He goes down to a city of Samaria and preaches Christ, and the people heed him."
+      ru: "Он приходит в город Самарийский и проповедует Христа, и народ единодушно внимает ему."
+  - place: aa8edd2 # Gaza
+    ref: Acts.8.26-Acts.8.39
+    note:
+      en: "On the desert road from Jerusalem to Gaza he baptises the Ethiopian eunuch."
+      ru: "На пустой дороге из Иерусалима в Газу он крестит евнуха-ефиоплянина."
+  - place: a30c937 # Ashdod (Azotus)
+    ref: Acts.8.40
+    note:
+      en: "Philip is found at Azotus and preaches in all the towns on the way to Caesarea."
+      ru: "Филипп оказывается в Азоте и благовествует всем городам на пути в Кесарию."
+  - place: a58735e # Caesarea
+    ref: Acts.21.8-Acts.21.9
+    note:
+      en: "Years later Paul stays in Caesarea at the house of Philip, who has four daughters who prophesy."
+      ru: "Спустя годы Павел останавливается в Кесарии в доме Филиппа, у которого четыре дочери пророчествуют."
