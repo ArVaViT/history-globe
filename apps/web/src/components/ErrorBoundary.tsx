@@ -3,17 +3,14 @@ import { translate, i18n } from "../i18n";
 
 /**
  * A failure while rendering shows a short message and a reload button instead of a
- * blank page. Outside the language hook on purpose: it must render when hooks can't.
+ * blank page; React has already logged the error. Outside the language hook on
+ * purpose: it must render when hooks can't.
  */
 export class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
   override state: { error: Error | null } = { error: null };
 
   static getDerivedStateFromError(error: Error) {
     return { error };
-  }
-
-  override componentDidCatch(error: Error) {
-    console.error(error);
   }
 
   override render() {
@@ -23,7 +20,6 @@ export class ErrorBoundary extends Component<{ children: ReactNode }, { error: E
       <div role="alert" className="fixed inset-0 grid place-items-center bg-night p-6">
         <div className="max-w-sm rounded-2xl bg-paper px-6 py-5 text-ink shadow-lg">
           <p className="font-serif text-[18px]">{t("crash.title")}</p>
-          <p className="mt-1 text-[13px] text-ink-soft">{this.state.error.message}</p>
           <button
             onClick={() => {
               window.location.reload();

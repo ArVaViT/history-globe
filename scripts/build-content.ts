@@ -40,6 +40,7 @@ const places = JSON.parse(readFileSync(join(out, "places.geojson"), "utf8")) as 
       id: string;
       name: string;
       rank: number;
+      ot: number;
       where: string;
       where_tpl?: SiteLabelParts["tpl"];
       where_ref?: string;
@@ -337,12 +338,21 @@ for (const e of EventsFile.parse(load("content/events.yaml")).events) {
 }
 events.sort((a, b) => a.year - b.year);
 
-// A tour stop the map draws faded in the tour's year (not yet built, in ruins, gone) is
-// almost always a wrong year. Warned, not refused: a stop at a ruin can be meant.
+// A tour stop the map draws faded in the tour's year (not yet built, in ruins, gone, or
+// named only in the New Testament before its events: apps/web/src/data.ts beforeItsTime)
+// is almost always a wrong year. Warned, not refused: a stop at a ruin can be meant.
+const NT_FROM = -5; // 6 BC, as in apps/web/src/data.ts
+const otVerses = new Map(places.features.map((f) => [f.properties.id, f.properties.ot]));
 for (const t of tours) {
   for (const [i, s] of t.stops.entries()) {
     const l = life[s.place];
-    if (!l) continue;
+    if (!l) {
+      if (otVerses.get(s.place) === 0 && t.year < NT_FROM)
+        warnings.push(
+          `tours/${t.id}: stop ${String(i + 1)} (${s.place}) is named only in the New Testament, before its events`,
+        );
+      continue;
+    }
     const state =
       l.gap && t.year >= l.gap.from.year && t.year <= l.gap.until.year
         ? "in ruins"

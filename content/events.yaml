@@ -162,8 +162,8 @@ events:
   - id: josiah-dies
     year: "609 BC"
     title:
-      en: "Josiah falls at Megiddo before Pharaoh Necho"
-      ru: "Иосия гибнет при Мегиддоне от фараона Нехао"
+      en: "Josiah is mortally wounded at Megiddo by Pharaoh Necho"
+      ru: "Иосия смертельно ранен при Мегиддоне фараоном Нехао"
     place: a8554e3
     sources:
       - "2 Kgs 23:29-30; 2 Chr 35:20-24"
@@ -211,14 +211,6 @@ events:
     place: a15257a
     sources:
       - "Josephus, Antiquities 17.355; 18.1-2"
-  - id: fire-of-rome
-    year: "AD 64"
-    title:
-      en: "The fire of Rome; Nero persecutes the Christians"
-      ru: "Пожар Рима; Нерон преследует христиан"
-    place: afc8e7a
-    sources:
-      - "Tacitus, Annals 15.38-44"
   - id: agrippa-dies
     year: "AD 44"
     title:
@@ -246,3 +238,11 @@ events:
     sources:
       - "Acts 18:12-17"
       - "The Gallio inscription at Delphi (SIG³ 801), dating his year of office to 51-52"
+  - id: fire-of-rome
+    year: "AD 64"
+    title:
+      en: "The fire of Rome; Nero persecutes the Christians"
+      ru: "Пожар Рима; Нерон преследует христиан"
+    place: afc8e7a
+    sources:
+      - "Tacitus, Annals 15.38-44"
