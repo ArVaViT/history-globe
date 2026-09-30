@@ -34,6 +34,10 @@ the data first (`pnpm data`).
   parked with a warning.
 - **Tours**: the id matches the file name; each stop's passage must name its place, except
   stops listed in `NAMED_BY_CONTEXT` with the reason.
+- **When places stood** (`content/place-life.yaml`): `from` (first year), `until` (last
+  year) and `gap` (first and last year in ruins); at least one, the gap inside the years
+  the place stood, "c." kept as approximate, at least one source each. Another name of a
+  place (Zion for Jerusalem) shares its years. Disputed dates are left out, not guessed.
 - **Polity overrides** (`content/polity-overrides.yaml`): our corrections to Cliopatria,
   each with a reason and sources; copies are marked `src: "override"` and replaced on
   every run.
