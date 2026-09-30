@@ -86,6 +86,7 @@ const NAMED_BY_CONTEXT = new Set([
   // Golgotha, named in 19:17.
   "resurrection a631d35",
   // David waits at Mahanaim (2 Sam 17:24, 27) for the news of the battle (18:19-33).
+  // OpenBible's tag on 18:23 passes the check today, but the verse does not name it.
   "absalom ae5bfe9",
 ]);
 

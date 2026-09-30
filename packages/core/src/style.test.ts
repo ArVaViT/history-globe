@@ -272,3 +272,27 @@ describe("places outside their known years", () => {
     expect(at(-300, { ot: 0, gap_from: -585, gap_until: -537, life_until: 71 })).toBeLessThan(1);
   });
 });
+
+describe("a small place (rank 3)", () => {
+  function drawn(layer: string, selected: string, zoom: number, kind: string): boolean {
+    const l = style.layers.find((x) => x.id === layer);
+    if (!l || !("filter" in l)) return false;
+    return featureFilter(l.filter, "filter", { locale: "en", selected }).filter({ zoom }, {
+      type: 1,
+      properties: { id: "a0", rank: 3, kind, name: "Dothan" },
+      geometry: [],
+    } as never);
+  }
+
+  it("is drawn from zoom 5 when selected, as a tour flies to zoom 7.6", () => {
+    expect(drawn("place-label", "a0", 5, "settlement")).toBe(true);
+    expect(drawn("place-label", "a0", 7, "settlement")).toBe(true);
+    expect(drawn("place-label-selected", "a0", 7, "well")).toBe(true);
+  });
+
+  it("waits for zoom 8 otherwise, and stays hidden at zoom 4 even when selected", () => {
+    expect(drawn("place-label", "", 7, "settlement")).toBe(false);
+    expect(drawn("place-label", "", 8, "settlement")).toBe(true);
+    expect(drawn("place-label", "a0", 4, "settlement")).toBe(false);
+  });
+});
