@@ -136,5 +136,9 @@
     "title": "Events"
   },
   "map_label": "Map",
-  "details_label": "Details"
+  "details_label": "Details",
+  "crash": {
+    "title": "Something went wrong.",
+    "reload": "Reload"
+  }
 }
