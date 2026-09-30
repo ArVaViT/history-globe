@@ -98,6 +98,18 @@ export function App() {
   const cardOpen = Boolean((tour && state.tour) || selected);
   const columnShown = panelsOpen && !(narrow && cardOpen);
 
+  // The tab names what is open: a shared link or a history entry says where it leads.
+  const openName = selected
+    ? state.locale === "ru"
+      ? (selected.name_ru ?? selected.name)
+      : selected.name
+    : tour
+      ? (tour.title[state.locale] ?? tour.title.en)
+      : undefined;
+  useEffect(() => {
+    document.title = openName ? `${openName} — History Globe` : "History Globe";
+  }, [openName]);
+
   return (
     <div
       className="fixed inset-0 overflow-hidden bg-night font-sans"
