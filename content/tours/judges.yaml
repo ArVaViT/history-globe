@@ -1,0 +1,55 @@
+# Three judges: Deborah, Gideon and Samson, Judges 4-16, in the order of the text. The
+# tour's year (1150 BC) is a conventional point for the map: the period of the judges
+# cannot be dated stop by stop, and its chronology is disputed.
+id: judges
+title:
+  en: "Deborah, Gideon, Samson"
+  ru: "Девора, Гедеон, Самсон"
+year: "1150 BC"
+approximate: true
+stops:
+  - place: a6d57ed # Ramah
+    ref: Judg.4.4-Judg.4.5
+    note:
+      en: "Deborah judges Israel under her palm tree between Ramah and Bethel."
+      ru: "Девора судит Израиль под пальмою Девориною между Рамою и Вефилем."
+  - place: acd63ee # Mount Tabor
+    ref: Judg.4.12-Judg.4.16
+    note:
+      en: "Barak comes down from Mount Tabor with ten thousand men, and Sisera's chariots are routed."
+      ru: "Варак сходит с горы Фавора с десятью тысячами, и колесницы Сисары обращены в бегство."
+  - place: a5a6458 # Kishon
+    ref: Judg.5.19-Judg.5.21
+    note:
+      en: 'Deborah''s song: "The river Kishon swept them away."'
+      ru: "Песнь Деворы: «Поток Киссон увлек их»."
+  - place: abd637f # Ophrah
+    ref: Judg.6.11-Judg.6.24
+    note:
+      en: "At Ophrah the angel of the Lord finds Gideon threshing wheat in the winepress."
+      ru: "В Офре Ангел Господень находит Гедеона, выколачивающего пшеницу в точиле."
+  - place: ae3cace # Harod
+    ref: Judg.7.1-Judg.7.22
+    note:
+      en: "Camped by the spring of Harod, Gideon keeps three hundred men who lapped the water, and Midian is routed."
+      ru: "Став у источника Харода, Гедеон оставляет триста лакавших воду, и Мадиам разбит."
+  - place: a08174b # Zorah
+    ref: Judg.13.2-Judg.13.25
+    note:
+      en: "In Zorah the angel of the Lord announces Samson's birth to Manoah's wife."
+      ru: "В Цоре Ангел Господень возвещает жене Маноя о рождении Самсона."
+  - place: a21f909 # Timnah
+    ref: Judg.14.1-Judg.14.6
+    note:
+      en: "On the way to Timnah the Spirit of the Lord comes upon Samson and he tears a young lion apart."
+      ru: "На пути в Фимнафу на Самсона сходит Дух Господень, и он растерзывает молодого льва."
+  - place: a339971 # Valley of Sorek
+    ref: Judg.16.4-Judg.16.20
+    note:
+      en: "In the valley of Sorek he loves Delilah, who betrays the secret of his strength."
+      ru: "В долине Сорек он любит Далиду, и та выдаёт тайну его силы."
+  - place: aa8edd2 # Gaza
+    ref: Judg.16.21-Judg.16.30
+    note:
+      en: "Blinded and bound in Gaza, he brings down the house on the lords of the Philistines."
+      ru: "Ослеплённый и скованный в Газе, он обрушивает дом на владельцев Филистимских."
