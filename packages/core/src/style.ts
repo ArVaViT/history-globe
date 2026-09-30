@@ -438,6 +438,21 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       },
     },
     {
+      // Major towns (most mentioned) get a ring around their dot, as on a printed atlas.
+      id: "place-ring",
+      type: "circle",
+      source: "places",
+      metadata: { group: "places" },
+      filter: ["all", isSettlement, ["==", ["get", "rank"], 0], visibleAtZoom],
+      paint: {
+        "circle-radius": 8.5,
+        "circle-color": "rgba(0,0,0,0)",
+        "circle-stroke-color": T.accent,
+        "circle-stroke-width": 1.5,
+        "circle-stroke-opacity": fadeBeforeNT(0.3),
+      },
+    },
+    {
       id: "place-dot",
       type: "circle",
       source: "places",

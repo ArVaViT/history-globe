@@ -66,6 +66,15 @@ function Legend() {
           {t("legend.town")}
         </li>
         <li className="flex items-center gap-2">
+          <span
+            className="grid size-4 place-items-center rounded-full border-[1.5px] border-accent"
+            aria-hidden
+          >
+            <span className="size-2 rounded-full bg-accent" />
+          </span>
+          {t("legend.major")}
+        </li>
+        <li className="flex items-center gap-2">
           <span className="grid size-4 place-items-center" aria-hidden>
             <span className="size-2.5 rounded-full border border-paper bg-[#a6805c]" />
           </span>
