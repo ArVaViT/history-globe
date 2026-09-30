@@ -23,6 +23,9 @@ in `data-checks.md`; this is what it cannot check.
 
 ## Tours (`content/tours/*.yaml`)
 
+- Before writing one, search `content/tours/` for its passages: a tour that repeats most
+  of another's stops is not added (a tour of the ark was dropped, as "Samuel and the ark"
+  already follows it). A tour taking up where another ends says so in its header.
 - Stops in the order of the text. Each stop's passage must name its place (the build
   checks it against OpenBible's tags); a stop named only by context goes into
   `NAMED_BY_CONTEXT` with the reason.
