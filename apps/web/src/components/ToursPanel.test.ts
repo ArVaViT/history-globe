@@ -11,4 +11,14 @@ describe("tourSpan", () => {
       "Мф 2:1 – Лк 24:53",
     );
   });
+
+  it("starts from the book's earliest verse when the tour opens with a later one", () => {
+    const saul = [
+      { ref: "Acts.22.3" },
+      { ref: "Acts.7.58-Acts.8.3" },
+      { ref: "Gal.1.17" },
+      { ref: "Acts.11.26" },
+    ];
+    expect(tourSpan(saul, "ru")).toBe("Деян 7:58–11:26");
+  });
 });

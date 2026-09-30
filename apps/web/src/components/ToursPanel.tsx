@@ -54,15 +54,30 @@ export function ToursPanel({
   );
 }
 
-/** "Деян 13:1–14:28": from the first stop's first verse to the last stop's last verse. */
+/**
+ * "Деян 13:1–14:28": from the first stop's first verse to the last stop's last verse.
+ * When a tour opens with a later verse of the same book (Saul: born in Tarsus, Acts
+ * 22:3, then Acts 7-11), it starts from that book's earliest verse instead.
+ */
 export function tourSpan(stops: readonly { readonly ref: string }[], locale: Locale): string {
-  const first = stops[0]?.ref.split("-")[0];
-  const last = stops.at(-1)?.ref.split("-").at(-1);
+  let first = stops[0]?.ref.split("-")[0];
+  let last = stops.at(-1)?.ref.split("-").at(-1);
   if (!first || !last) return "";
+  const book = (osis: string) => osis.split(".")[0];
+  const at = (osis: string) => {
+    const [, c = "0", v = "0"] = osis.split(".");
+    return Number(c) * 1000 + Number(v);
+  };
   try {
     // Across books ("Мф 2:1 – Лк 24:53") the two ends are written in full.
-    if (first.split(".")[0] !== last.split(".")[0])
+    if (book(first) !== book(last))
       return `${formatRef(first, locale)} – ${formatRef(last, locale)}`;
+    if (at(last) < at(first)) {
+      const ends = stops
+        .flatMap((s) => s.ref.split("-"))
+        .filter((r) => book(r) === book(first ?? ""));
+      first = ends.reduce((a, b) => (at(b) < at(a) ? b : a));
+    }
     return formatRef(first === last ? first : `${first}-${last}`, locale);
   } catch {
     return "";
