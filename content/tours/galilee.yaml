@@ -1,0 +1,50 @@
+# Jesus in Galilee and around it, Mark 1-9, in Mark's order only, so that no stop settles
+# how the Gospels are harmonised. The tour's year (AD 29) is a conventional point for the
+# map within the ministry (c. AD 28-30), not a date.
+id: galilee
+title:
+  en: "Jesus in Galilee, after Mark"
+  ru: "Иисус в Галилее, по Марку"
+year: "AD 29"
+approximate: true
+stops:
+  - place: a562fcc # Sea of Galilee
+    ref: Mark.1.16-Mark.1.20
+    note:
+      en: 'By the Sea of Galilee He calls Simon and Andrew, James and John: "I will make you to become fishers of men."'
+      ru: "У моря Галилейского Он призывает Симона и Андрея, Иакова и Иоанна: «Я сделаю, что вы будете ловцами человеков»."
+  - place: af2161c # Capernaum
+    ref: Mark.1.21-Mark.1.34
+    note:
+      en: "In Capernaum He teaches in the synagogue as one that had authority, casts out an unclean spirit and heals Simon's wife's mother."
+      ru: "В Капернауме Он учит в синагоге, как власть имеющий, изгоняет нечистого духа и исцеляет тёщу Симона."
+  - place: af5884f # Nazareth
+    ref: Mark.6.1-Mark.6.6
+    note:
+      en: 'In His own country, Nazareth, they are offended at Him: "A prophet is not without honour, but in his own country."'
+      ru: "В Своём отечестве, Назарете, соблазняются о Нём: «не бывает пророк без чести, разве только в отечестве своем»."
+  - place: a9fc13a # Bethsaida
+    ref: Mark.6.45-Mark.6.52
+    note:
+      en: 'He sends the disciples ahead by boat toward Bethsaida and comes to them walking on the sea: "Be of good cheer: it is I; be not afraid."'
+      ru: "Он отправляет учеников в лодке к Вифсаиде и приходит к ним, идя по морю: «ободритесь; это Я, не бойтесь»."
+  - place: a7de69e # Gennesaret
+    ref: Mark.6.53-Mark.6.56
+    note:
+      en: "At Gennesaret the sick are laid in the streets, and as many as touch the border of His garment are made whole."
+      ru: "В Геннисарете больных кладут на открытых местах, и прикоснувшиеся к краю Его одежды исцеляются."
+  - place: a160272 # Tyre
+    ref: Mark.7.24-Mark.7.30
+    note:
+      en: 'In the borders of Tyre and Sidon a Syrophenician woman answers Him: "yet the dogs under the table eat of the children''s crumbs," and her daughter is healed.'
+      ru: "В пределах Тирских и Сидонских сирофиникиянка отвечает Ему: «но и псы под столом едят крохи у детей», и дочь её исцелена."
+  - place: ae733a2 # Decapolis
+    ref: Mark.7.31-Mark.7.37
+    note:
+      en: 'Through the Decapolis He comes back to the sea and opens the ears of a deaf man: "Ephphatha, that is, Be opened."'
+      ru: "Через Десятиградие Он возвращается к морю и отверзает слух глухому: «еффафа», то есть: отверзись."
+  - place: af2161c # Capernaum
+    ref: Mark.9.33-Mark.9.37
+    note:
+      en: 'Back in Capernaum He sets a child among the twelve: "If any man desire to be first, the same shall be last of all, and servant of all."'
+      ru: "Вернувшись в Капернаум, Он ставит посреди двенадцати дитя: «кто хочет быть первым, будь из всех последним и всем слугою»."
