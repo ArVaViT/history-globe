@@ -60,6 +60,11 @@ export function ticksFor(v: TimeView): number[] {
     const written = y <= 0 ? 1 - y : y;
     if (written % step === 0) out.push(y);
   }
+  // The end of the range (AD 100) is labelled when shown and clear of the last tick.
+  const last = out.at(-1);
+  if (v.to >= YEAR_MAX && (last === undefined || YEAR_MAX - last > span * 0.12)) {
+    out.push(YEAR_MAX);
+  }
   return out;
 }
 

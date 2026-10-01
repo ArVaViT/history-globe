@@ -17,7 +17,7 @@ describe("the timeline window", () => {
   });
 
   it("labels round years as written, at most six of them", () => {
-    expect(ticksFor(FULL_VIEW)).toEqual([-1999, -1499, -999, -499]);
+    expect(ticksFor(FULL_VIEW)).toEqual([-1999, -1499, -999, -499, 100]);
     const near = ticksFor({ from: -969, to: -930 });
     expect(near.length).toBeLessThanOrEqual(6);
     // 970, 960, 950, 940 BC as written: astronomical -969, -959, -949, -939.
