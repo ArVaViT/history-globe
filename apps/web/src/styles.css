@@ -133,3 +133,15 @@ summary {
 .timeline-range[data-away]::-moz-range-thumb {
   opacity: 0.35;
 }
+
+/* The lights that run along a tour's route (maplibre-renderer.ts runPulses). */
+.hg-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff7e8;
+  box-shadow:
+    0 0 0 2px rgb(154 59 31 / 0.85),
+    0 0 10px 3px rgb(255 214 150 / 0.75);
+  pointer-events: none;
+}

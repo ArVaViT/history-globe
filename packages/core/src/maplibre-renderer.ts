@@ -52,6 +52,7 @@ export class MapLibreRenderer implements Renderer {
   private readyTimer: ReturnType<typeof setTimeout> | undefined;
   private settleTimer: ReturnType<typeof setTimeout> | undefined;
   private readonly viewPadding: MapLibreRendererOptions["viewPadding"];
+  private pulse: { frame: number; markers: maplibregl.Marker[] } | null = null;
 
   constructor(o: MapLibreRendererOptions) {
     this.viewPadding = o.viewPadding;
@@ -339,7 +340,39 @@ export class MapLibreRenderer implements Renderer {
         type: "FeatureCollection",
         features,
       });
+      this.runPulses(coordinates);
     });
+  }
+
+  /**
+   * Small lights run along the last leg of the route, from the previous stop to the
+   * current one, so the reader sees which way the tour went. DOM markers, not style changes: the map stays idle.
+   * Off with no route, and for readers who ask the system for less motion.
+   */
+  private runPulses(coordinates: readonly LonLat[]): void {
+    if (this.pulse) {
+      cancelAnimationFrame(this.pulse.frame);
+      for (const m of this.pulse.markers) m.remove();
+      this.pulse = null;
+    }
+    if (coordinates.length < 2 || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const along = routeWalker(coordinates.slice(-2));
+    const markers = [0, 1, 2].map(() => {
+      const el = document.createElement("div");
+      el.className = "hg-pulse";
+      el.setAttribute("aria-hidden", "true");
+      return new maplibregl.Marker({ element: el }).setLngLat(along(0)).addTo(this.map);
+    });
+    // About 2.4 s along the leg, the three lights a third of it apart.
+    const tick = (now: number) => {
+      markers.forEach((m, k) => {
+        const t = (now / 2400 + k / 3) % 1;
+        m.setLngLat(along(t));
+        m.getElement().style.opacity = String(Math.sin(Math.PI * t) ** 0.5);
+      });
+      if (this.pulse) this.pulse.frame = requestAnimationFrame(tick);
+    };
+    this.pulse = { frame: requestAnimationFrame(tick), markers };
   }
 
   getCamera(): Camera {
@@ -370,10 +403,43 @@ export class MapLibreRenderer implements Renderer {
 
   destroy(): void {
     this.destroyed = true;
+    if (this.pulse) cancelAnimationFrame(this.pulse.frame);
     clearTimeout(this.readyTimer);
     clearTimeout(this.settleTimer);
     this.pending = [];
     for (const set of Object.values(this.handlers)) set.clear();
     this.map.remove();
   }
+}
+
+/**
+ * A point at a fraction of a polyline's length, measured on the map (longitude shrunk by
+ * the cosine of the latitude): t = 0 is the first point, t = 1 the last.
+ */
+export function routeWalker(points: readonly LonLat[]): (t: number) => [number, number] {
+  const seg: number[] = [];
+  let total = 0;
+  for (let i = 1; i < points.length; i++) {
+    const [ax, ay] = points[i - 1] ?? [0, 0];
+    const [bx, by] = points[i] ?? [0, 0];
+    const k = Math.cos((((ay + by) / 2) * Math.PI) / 180);
+    const d = Math.hypot((bx - ax) * k, by - ay);
+    seg.push(d);
+    total += d;
+  }
+  return (t) => {
+    let left = Math.min(Math.max(t, 0), 1) * total;
+    for (let i = 0; i < seg.length; i++) {
+      const d = seg[i] ?? 0;
+      if (left <= d || i === seg.length - 1) {
+        const [ax, ay] = points[i] ?? [0, 0];
+        const [bx, by] = points[i + 1] ?? [ax, ay];
+        const f = d > 0 ? Math.min(left / d, 1) : 0;
+        return [ax + (bx - ax) * f, ay + (by - ay) * f];
+      }
+      left -= d;
+    }
+    const last = points[points.length - 1] ?? [0, 0];
+    return [last[0], last[1]];
+  };
 }

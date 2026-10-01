@@ -206,6 +206,7 @@ const OFF_TOUR: ExpressionSpecification = [
   ["!", ["in", ["get", "id"], TOUR_PLACES]],
 ];
 const IN_TOUR: ExpressionSpecification = ["in", ["get", "id"], TOUR_PLACES];
+const NOT_TOURING: ExpressionSpecification = ["==", ["length", TOUR_PLACES], 0];
 
 /** A second record of the same name on the same point (pipeline `dup`): dot, no label. */
 const NOT_DUP: ExpressionSpecification = [
@@ -685,7 +686,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       id: "site-alt",
       type: "circle",
       source: "sites",
-      filter: SITES_OF_SELECTED,
+      filter: ["all", SITES_OF_SELECTED, NOT_TOURING],
       paint: {
         "circle-radius": ["interpolate", ["linear"], SHARE, 0, 6, 100, 13],
         "circle-color": "rgba(0,0,0,0)",
@@ -699,7 +700,14 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "sites",
       // Candidates rated 0 % stay unlabelled; unrated ones (no `share`) keep their name.
-      filter: ["all", SITES_OF_SELECTED, ["any", ["!", ["has", "share"]], [">", SHARE, 0]]],
+      // During a tour the candidates of a disputed stop would crowd the route: the card
+      // shows them when the place is opened.
+      filter: [
+        "all",
+        SITES_OF_SELECTED,
+        NOT_TOURING,
+        ["any", ["!", ["has", "share"]], [">", SHARE, 0]],
+      ],
       layout: {
         "text-field": [
           "case",
@@ -711,7 +719,8 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-size": 12,
         "text-variable-anchor": ["left", "right", "top", "bottom"],
         "text-radial-offset": 1.3,
-        "text-allow-overlap": true,
+        // Candidates close together keep apart rather than print over each other.
+        "text-padding": 2,
       },
       paint: { "text-color": T.accent, "text-halo-color": T.halo, "text-halo-width": 1.6 },
     },
