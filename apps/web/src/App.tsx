@@ -1,5 +1,5 @@
 import { YEAR_MAX, YEAR_MIN } from "@hg/core";
-import { ChevronDown, Menu, PanelLeftClose, Settings } from "./components/icons";
+import { Menu, PanelLeftClose, Search, Settings } from "./components/icons";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "./i18n";
 import { HoverTip, PolityTip } from "./components/HoverTip";
@@ -37,6 +37,14 @@ export function App() {
   const [panelsOpen, togglePanels] = usePanelsOpen();
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(readMore);
+  // The search is a magnifier until pressed: one field less on the map.
+  const [searchOpen, setSearchOpen] = useState(false);
+  // "About the place" leaves a tour for the stop's card; this is the way back to the stop.
+  const [backToTour, setBackToTour] = useState<{
+    id: string;
+    step: number;
+    place: string;
+  } | null>(null);
   const narrow = useNarrow();
   const timelineBox = useHeightVar("--hg-timeline-h");
   const { globe, error: mapError } = useGlobe(container, data, INITIAL);
@@ -71,6 +79,7 @@ export function App() {
   // The search may be hidden with the panels: show them, then focus it.
   const focusSearch = useCallback(() => {
     togglePanels(true);
+    setSearchOpen(true);
     requestAnimationFrame(() => {
       searchRef.current?.focus();
     });
@@ -174,23 +183,53 @@ export function App() {
                   <Menu className="size-5" aria-hidden />
                 )}
               </button>
-              {/* The burger folds the title away too: closed, only the two buttons stay. */}
+              {/* Closed, the burger is all there is: the title and the buttons fold with it. */}
               <h1
                 className={`flex-1 pl-1 font-serif text-[19px] font-semibold tracking-tight text-ink ${columnShown ? "" : "sr-only"}`}
               >
                 History Globe
               </h1>
-              <button
-                onClick={() => {
-                  setSettingsOpen(true);
-                }}
-                aria-haspopup="dialog"
-                aria-label={t("settings.title")}
-                title={t("settings.title")}
-                className="grid size-9 place-items-center rounded-full text-ink-soft hover:bg-paper-2 hover:text-ink"
-              >
-                <Settings className="size-5" aria-hidden />
-              </button>
+              {columnShown && (
+                <>
+                  <button
+                    onClick={() => {
+                      setMoreOpen(!moreOpen);
+                      writeMore(!moreOpen);
+                    }}
+                    aria-expanded={moreOpen}
+                    aria-controls={moreOpen ? "more-panels" : undefined}
+                    aria-label={t("more")}
+                    title={t("more")}
+                    className={`rounded-full px-2 py-1 text-[13px] underline decoration-1 underline-offset-[3px] hover:text-ink ${moreOpen ? "text-accent" : "text-ink-soft"}`}
+                  >
+                    {t("more_short")}
+                  </button>
+                  <button
+                    onClick={() => {
+                      const next = !searchOpen;
+                      setSearchOpen(next);
+                      if (next) requestAnimationFrame(() => searchRef.current?.focus());
+                    }}
+                    aria-expanded={searchOpen}
+                    aria-label={t("search.open")}
+                    title={t("search.open")}
+                    className={`grid size-9 place-items-center rounded-full hover:bg-paper-2 hover:text-ink ${searchOpen ? "text-accent" : "text-ink-soft"}`}
+                  >
+                    <Search className="size-[18px]" aria-hidden />
+                  </button>
+                  <button
+                    onClick={() => {
+                      setSettingsOpen(true);
+                    }}
+                    aria-haspopup="dialog"
+                    aria-label={t("settings.title")}
+                    title={t("settings.title")}
+                    className="grid size-9 place-items-center rounded-full text-ink-soft hover:bg-paper-2 hover:text-ink"
+                  >
+                    <Settings className="size-5" aria-hidden />
+                  </button>
+                </>
+              )}
             </Panel>
             <SettingsDialog
               open={settingsOpen}
@@ -207,30 +246,15 @@ export function App() {
                 id="side-panels"
                 className={`flex flex-col gap-3 *:shrink-0 ${cardOpen ? "max-md:hidden" : ""}`}
               >
-                <SearchBox
-                  data={data}
-                  inputRef={searchRef}
-                  onSelect={(id) => {
-                    engine.selectPlace(id);
-                  }}
-                />
-                <Panel className="w-[340px] max-md:w-full">
-                  <button
-                    onClick={() => {
-                      setMoreOpen(!moreOpen);
-                      writeMore(!moreOpen);
+                {searchOpen && (
+                  <SearchBox
+                    data={data}
+                    inputRef={searchRef}
+                    onSelect={(id) => {
+                      engine.selectPlace(id);
                     }}
-                    aria-expanded={moreOpen}
-                    aria-controls={moreOpen ? "more-panels" : undefined}
-                    className="flex w-full items-center justify-between px-4 py-3 text-[13px] font-medium text-ink-soft hover:text-ink"
-                  >
-                    {t("more")}
-                    <ChevronDown
-                      className={`size-4 transition-transform ${moreOpen ? "" : "-rotate-90"}`}
-                      aria-hidden
-                    />
-                  </button>
-                </Panel>
+                  />
+                )}
                 {moreOpen && (
                   <div id="more-panels" className="flex flex-col gap-3 *:shrink-0">
                     <ToursPanel
@@ -284,6 +308,7 @@ export function App() {
                   engine.selectPlace(null);
                 }}
                 onOpenPlace={(id) => {
+                  if (state.tour) setBackToTour({ ...state.tour, place: id });
                   engine.stopTour();
                   engine.selectPlace(id);
                 }}
@@ -319,6 +344,23 @@ export function App() {
                   onFlyTo={(at) => {
                     engine.lookAt(at);
                   }}
+                  back={
+                    backToTour && backToTour.place === selected.id
+                      ? {
+                          label: t("tours.back_to", {
+                            title:
+                              data.tours.find((x) => x.id === backToTour.id)?.title[state.locale] ??
+                              "",
+                          }),
+                          onBack: () => {
+                            setPlaying(false);
+                            engine.startTour(backToTour.id);
+                            engine.goToStop(backToTour.step);
+                            setBackToTour(null);
+                          },
+                        }
+                      : undefined
+                  }
                 />
               )
             )}

@@ -2,7 +2,8 @@
   "loading": "Loading the map…",
   "search": {
     "placeholder": "Find a place…",
-    "empty": "Nothing found"
+    "empty": "Nothing found",
+    "open": "Find a place"
   },
   "layers": {
     "title": "Layers",
@@ -22,7 +23,8 @@
     "ot": "Old Testament",
     "nt": "New Testament",
     "about_place": "About the place",
-    "stops_list": "Stops"
+    "stops_list": "Stops",
+    "back_to": "Back to the tour “{{title}}”"
   },
   "place": {
     "today": "Today",
@@ -152,5 +154,6 @@
     "help": "Help and sources"
   },
   "more": "Tours, events, in view",
-  "close": "Close"
+  "close": "Close",
+  "more_short": "more"
 }

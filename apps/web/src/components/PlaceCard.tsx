@@ -1,5 +1,5 @@
 import { formatRef, formatYear, type HistoryEvent, type Locale, type PlaceLife } from "@hg/model";
-import { ExternalLink, MapPin, X, ZoomIn } from "./icons";
+import { ArrowLeft, MapPin, X, ZoomIn } from "./icons";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "../i18n";
 import { beforeItsTime, type PlaceProps, type Site } from "../data";
@@ -42,6 +42,7 @@ export function PlaceCard({
   onSelect,
   onZoom,
   onFlyTo,
+  back,
 }: {
   place: PlaceProps;
   sites: readonly Site[];
@@ -59,6 +60,8 @@ export function PlaceCard({
   onClose: () => void;
   onZoom: () => void;
   onFlyTo: (at: readonly [number, number]) => void;
+  /** Opened from a tour stop: the way back to that stop. */
+  back?: { label: string; onBack: () => void } | undefined;
 }) {
   // Opened lists stay open for this place; the card is keyed by place, so a new place
   // starts folded again.
@@ -85,6 +88,15 @@ export function PlaceCard({
 
   return (
     <Panel className="w-[380px] max-md:w-full max-h-[calc(100vh-200px)] max-md:max-h-[48dvh] overflow-auto">
+      {back && (
+        <button
+          onClick={back.onBack}
+          className="mx-3 mt-3 flex items-center gap-1.5 rounded-full px-2 py-1 text-[13px] text-accent hover:bg-paper-2"
+        >
+          <ArrowLeft className="size-4" aria-hidden />
+          {back.label}
+        </button>
+      )}
       <div className="flex items-start justify-between gap-3 px-5 pt-4">
         <div>
           <h2 className="font-serif text-[26px] leading-tight font-semibold text-ink">{title}</h2>
@@ -228,21 +240,28 @@ export function PlaceCard({
 
       <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 px-5 pt-3 text-[14px] text-ink">
         <MapPin className="size-4 shrink-0 text-accent" aria-hidden />
+        {/* The name of the place today opens it on Google Maps: no separate link to read. */}
         {place.where && place.where !== place.name && (
-          <>
-            <span className="text-ink-soft">{t("place.today")}:</span>
-            <span>{ru ? (place.where_ru ?? place.where) : place.where}</span>
-          </>
+          <span className="text-ink-soft">{t("place.today")}:</span>
         )}
         <a
           href={mapsUrl(at)}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-[13px] text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
+          title={t("place.google_maps")}
+          className="inline-flex items-center gap-1 text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
         >
-          {t("place.google_maps")}
-          <ExternalLink className="size-3.5" aria-hidden />
-          <span className="sr-only"> ({t("new_tab")})</span>
+          {place.where && place.where !== place.name
+            ? ru
+              ? (place.where_ru ?? place.where)
+              : place.where
+            : ru
+              ? (place.name_ru ?? place.name)
+              : place.name}
+          <span className="sr-only">
+            {" "}
+            ({t("place.google_maps")}, {t("new_tab")})
+          </span>
         </a>
       </div>
 
