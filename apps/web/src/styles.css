@@ -100,3 +100,11 @@ body {
   background: rgb(20 14 8 / 0.35);
   backdrop-filter: blur(2px);
 }
+
+/* The timeline zoomed away from the current year: the thumb at the edge is only a pointer. */
+.timeline-range[data-away]::-webkit-slider-thumb {
+  opacity: 0.35;
+}
+.timeline-range[data-away]::-moz-range-thumb {
+  opacity: 0.35;
+}

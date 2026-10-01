@@ -129,6 +129,7 @@ export function useMapFeed(globe: Globe | null, placesShown: boolean): MapFeed {
 /** Play: the year runs forward five years a tick and stops at the end. */
 export function usePlayback(
   engine: Engine | undefined,
+  speed = 1,
 ): [boolean, Dispatch<SetStateAction<boolean>>] {
   const [playing, setPlaying] = useState(false);
   useEffect(() => {
@@ -137,11 +138,11 @@ export function usePlayback(
       const y = engine.store.get().year;
       if (y >= YEAR_MAX) setPlaying(false);
       else engine.setYear(y + PLAY_STEP);
-    }, PLAY_INTERVAL_MS);
+    }, PLAY_INTERVAL_MS / speed);
     return () => {
       window.clearInterval(id);
     };
-  }, [playing, engine]);
+  }, [playing, engine, speed]);
   return [playing, setPlaying];
 }
 

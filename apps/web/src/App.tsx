@@ -62,7 +62,9 @@ export function App() {
 
   useUrlSync(globe);
   const { ready, hover, inView } = useMapFeed(globe, state.layers.places);
-  const [playing, setPlaying] = usePlayback(engine);
+  // Playback speed, cycled by the button in the player: 1×, 2×, 4×, ½×.
+  const [speed, setSpeed] = useState(1);
+  const [playing, setPlaying] = usePlayback(engine, speed);
   const togglePlay = useCallback(() => {
     setPlaying((p) => !p);
   }, [setPlaying]);
@@ -331,6 +333,10 @@ export function App() {
               year={state.year}
               locale={state.locale}
               playing={playing}
+              speed={speed}
+              onSpeed={() => {
+                setSpeed((s) => (s === 1 ? 2 : s === 2 ? 4 : s === 4 ? 0.5 : 1));
+              }}
               events={timelineEvents}
               onYear={engine.setYear}
               onPlay={() => {
