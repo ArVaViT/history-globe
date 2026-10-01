@@ -1,0 +1,70 @@
+# Jacob, Genesis 28-46, in the order of the text. The tour's year (1800 BC) is a
+# conventional point for the map between the Abraham and Joseph tours: the age of the
+# patriarchs is disputed, and the slider says so for the Middle Bronze Age.
+id: jacob
+title:
+  en: "Jacob"
+  ru: "Иаков"
+year: "1800 BC"
+approximate: true
+stops:
+  - place: a075d61 # Beersheba
+    ref: Gen.28.10
+    note:
+      en: "Jacob leaves Beersheba and sets out for Haran."
+      ru: "Иаков выходит из Вирсавии и идёт в Харран."
+  - place: a64f355 # Bethel
+    ref: Gen.28.11-Gen.28.19
+    note:
+      en: 'He dreams of a ladder reaching to heaven: "Surely the LORD is in this place; and I knew it not."'
+      ru: "Ему снится лестница до неба: «истинно Господь присутствует на месте сем; а я не знал!»"
+  - place: a6d9af3 # Haran
+    ref: Gen.29.4-Gen.29.30
+    note:
+      en: "In Haran he serves seven years for Rachel, and they seem to him but a few days."
+      ru: "В Харране он служит за Рахиль семь лет, и они кажутся ему за несколько дней."
+  - place: ae5bfe9 # Mahanaim
+    ref: Gen.32.1-Gen.32.2
+    note:
+      en: 'The angels of God meet him: "This is God''s host."'
+      ru: "Его встречают Ангелы Божии: «это ополчение Божие»."
+  - place: a8a9ff9 # Penuel
+    ref: Gen.32.24-Gen.32.31
+    note:
+      en: 'He wrestles until daybreak, is named Israel, and calls the place Penuel: "I have seen God face to face."'
+      ru: "Он борется до зари, получает имя Израиль и называет место Пенуэл: «я видел Бога лицем к лицу»."
+  - place: a0905b5 # Succoth
+    ref: Gen.33.17
+    note:
+      en: "At Succoth he builds a house and booths for his cattle."
+      ru: "В Сокхофе он строит себе дом и шалаши для скота."
+  - place: adf74d4 # Shechem
+    ref: Gen.33.18-Gen.33.20
+    note:
+      en: "He comes safely to Shechem in the land of Canaan and sets up an altar."
+      ru: "Он благополучно приходит в Сихем в земле Ханаанской и ставит там жертвенник."
+  - place: a64f355 # Bethel
+    ref: Gen.35.6-Gen.35.15
+    note:
+      en: "Back at Bethel God appears to him again and confirms the name Israel."
+      ru: "В Вефиле Бог снова является ему и подтверждает имя Израиль."
+  - place: a112427 # Bethlehem
+    ref: Gen.35.16-Gen.35.20
+    note:
+      en: "On the way to Ephrath, that is Bethlehem, Rachel dies giving birth, and Jacob sets a pillar on her grave."
+      ru: "На дороге в Ефрафу, то есть Вифлеем, умирает Рахиль, родив сына, и Иаков ставит памятник над её гробом."
+  - place: a85151a # Hebron
+    ref: Gen.35.27-Gen.35.29
+    note:
+      en: "He comes to his father Isaac at Mamre, which is Hebron; Isaac dies, and Esau and Jacob bury him."
+      ru: "Он приходит к отцу своему Исааку в Мамре, то есть Хеврон; Исаак умирает, и Исав с Иаковом погребают его."
+  - place: a075d61 # Beersheba
+    ref: Gen.46.1-Gen.46.4
+    note:
+      en: 'At Beersheba God speaks to him: "Fear not to go down into Egypt."'
+      ru: "В Вирсавии Бог говорит ему: «не бойся идти в Египет»."
+  - place: af301ca # Egypt
+    ref: Gen.46.5-Gen.46.7
+    note:
+      en: "Jacob and all his family come into Egypt."
+      ru: "Иаков и весь род его приходят в Египет."

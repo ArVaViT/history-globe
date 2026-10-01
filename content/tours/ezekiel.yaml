@@ -1,0 +1,39 @@
+# Ezekiel among the exiles, in the order of the book. Its own dates give the stops'
+# years, counted from King Jehoiachin's exile in 597 BC: the fifth year (593 BC, Ezek 1:2),
+# the sixth (592 BC, 8:1) and the twelfth, when word of Jerusalem's fall arrives
+# (585 BC, 33:21; some reckon 586 BC).
+id: ezekiel
+title:
+  en: "Ezekiel among the exiles"
+  ru: "Иезекииль в плену"
+year: "593 BC"
+approximate: true
+stops:
+  - place: a3d2f0a # Chebar
+    ref: Ezek.1.1-Ezek.1.3
+    note:
+      en: "Among the captives by the river Chebar the heavens open, and Ezekiel sees visions of God."
+      ru: "Среди переселенцев при реке Ховаре отверзаются небеса, и Иезекииль видит видения Божии."
+  - place: a10147d # Tel-abib
+    ref: Ezek.3.15
+    note:
+      en: "He comes to the exiles at Tel-abib and sits among them seven days, astonished."
+      ru: "Он приходит к переселенцам в Тел-Авив и семь дней проводит среди них в изумлении."
+  - place: a15257a # Jerusalem
+    ref: Ezek.8.1-Ezek.8.4
+    year: "592 BC"
+    note:
+      en: "In the sixth year the Spirit lifts him up and brings him in visions of God to Jerusalem, to the door of the inner gate."
+      ru: "В шестом году дух поднимает его и приносит в видениях Божиих в Иерусалим, ко входу внутренних ворот."
+  - place: a32a4f8 # Chaldea
+    ref: Ezek.11.24-Ezek.11.25
+    year: "592 BC"
+    note:
+      en: "The Spirit brings him back to the captives in Chaldea, and he tells them all the Lord has shown him."
+      ru: "Дух приносит его обратно в Халдею к переселенцам, и он пересказывает им всё, что показал ему Господь."
+  - place: a15257a # Jerusalem
+    ref: Ezek.33.21-Ezek.33.22
+    year: "585 BC"
+    note:
+      en: 'In the twelfth year of the captivity one who escaped from Jerusalem comes to him: "The city is smitten."'
+      ru: "В двенадцатом году переселения к нему приходит спасшийся из Иерусалима: «разрушен город!»"

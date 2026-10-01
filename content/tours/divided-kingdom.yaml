@@ -1,0 +1,58 @@
+# The kingdom divides, 1 Kings 11:29-14:26, in the order of the text, from Ahijah's word
+# to Jeroboam late in Solomon's reign (the Solomon tour ends with his death, 11:42-43).
+# The tour's year (931 BC) is the usual date of the division (930 BC is also held).
+# Shishak's campaign, in Rehoboam's fifth year (14:25), is put at c. 925 BC on that
+# reckoning; his relief at Karnak records it. That stop carries it.
+id: divided-kingdom
+title:
+  en: "The kingdom divides"
+  ru: "Разделение царства"
+year: "931 BC"
+approximate: true
+stops:
+  - place: a15257a # Jerusalem
+    ref: 1Kgs.11.29-1Kgs.11.31
+    note:
+      en: "As Jeroboam goes out of Jerusalem, the prophet Ahijah the Shilonite tears his new garment into twelve pieces and gives him ten: ten tribes will be his."
+      ru: "Когда Иеровоам выходит из Иерусалима, пророк Ахия Силомлянин раздирает свою новую одежду на двенадцать частей и даёт ему десять: десять колен будут его."
+  - place: af301ca # Egypt
+    ref: 1Kgs.11.40
+    note:
+      en: "Solomon seeks to kill him, and Jeroboam flees to Shishak king of Egypt until Solomon's death."
+      ru: "Соломон хочет умертвить его, и Иеровоам убегает в Египет к Сусакиму, царю Египетскому, до смерти Соломоновой."
+  - place: adf74d4 # Shechem
+    ref: 1Kgs.12.1-1Kgs.12.20
+    note:
+      en: 'At Shechem Rehoboam will not lighten the yoke, and Israel answers: "to your tents, O Israel: now see to thine own house, David." Rehoboam reigns only over those who dwell in the cities of Judah.'
+      ru: "В Сихеме Ровоам не облегчает иго, и Израиль отвечает: «по шатрам своим, Израиль! теперь знай свой дом, Давид!» Ровоам царствует лишь над жившими в городах Иудиных."
+  - place: a8a9ff9 # Penuel
+    ref: 1Kgs.12.25
+    note:
+      en: "Jeroboam builds Shechem in mount Ephraim and dwells there, and from there goes out and builds Penuel."
+      ru: "Иеровоам обстраивает Сихем на горе Ефремовой и живёт в нём, а оттуда идёт и строит Пенуэл."
+  - place: a513646 # Dan
+    ref: 1Kgs.12.28-1Kgs.12.30
+    note:
+      en: 'So that the people need not go up to Jerusalem, he makes two calves of gold, one for Bethel and one for Dan: "behold thy gods, O Israel."'
+      ru: "Чтобы народ не ходил в Иерусалим, он делает двух золотых тельцов и ставит одного в Вефиле, а другого в Дане: «вот боги твои, Израиль»."
+  - place: a64f355 # Bethel
+    ref: 1Kgs.13.1-1Kgs.13.5
+    note:
+      en: 'At Bethel a man of God from Judah cries against the altar, "O altar, altar," foretells Josiah, and the altar is rent.'
+      ru: "В Вефиле человек Божий из Иудеи взывает к жертвеннику: «жертвенник, жертвенник!», предрекает Иосию, и жертвенник распадается."
+  - place: aa4680a # Shiloh
+    ref: 1Kgs.14.1-1Kgs.14.16
+    note:
+      en: "Disguised, Jeroboam's wife goes to Shiloh to ask the blind Ahijah about her sick son; he knows her at the door and foretells the end of Jeroboam's house."
+      ru: "Переодевшись, жена Иеровоама идёт в Силом спросить слепого Ахию о больном сыне; он узнаёт её у двери и предрекает конец дома Иеровоамова."
+  - place: a80d317 # Tirzah
+    ref: 1Kgs.14.17-1Kgs.14.18
+    note:
+      en: "As she comes to Tirzah and crosses the threshold, the child dies."
+      ru: "Она приходит в Фирцу, и едва переступает порог дома, дитя умирает."
+  - place: a15257a # Jerusalem
+    ref: 1Kgs.14.25-1Kgs.14.26
+    year: "925 BC"
+    note:
+      en: "In Rehoboam's fifth year Shishak king of Egypt comes up against Jerusalem and takes the treasures of the house of the Lord and the golden shields of Solomon."
+      ru: "На пятом году Ровоама Сусаким, царь Египетский, выходит против Иерусалима и забирает сокровища дома Господня и золотые щиты Соломона."

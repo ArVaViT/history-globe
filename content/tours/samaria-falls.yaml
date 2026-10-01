@@ -1,0 +1,41 @@
+# The fall of the kingdom of Israel, 2 Kings 15-17, in the order of the text. The tour's
+# year (732 BC) is Tiglath-pileser III's taking of Damascus, fixed by the Assyrian Eponym
+# Chronicle (see the dated events); his campaign in Galilee and the siege of Jerusalem by
+# Rezin and Pekah came a year or two before it. The siege of Samaria begins in Hoshea's
+# seventh year, c. 725 BC (18:9), and the city falls in his ninth, 722 BC (17:6; the
+# Babylonian Chronicle); Sargon II claims deportations of about 720 BC, and the note does
+# not tie the verse to them. The Hezekiah tour tells the fall again (18:9-12).
+id: samaria-falls
+title:
+  en: "The fall of Israel"
+  ru: "Падение Израильского царства"
+year: "732 BC"
+approximate: true
+stops:
+  - place: a6f33c5 # Hazor
+    ref: 2Kgs.15.29
+    note:
+      en: "In the days of Pekah, Tiglath-pileser king of Assyria takes Ijon, Abel-beth-maachah, Janoah, Kedesh, Hazor, Gilead and Galilee, all the land of Naphtali, and carries the people captive to Assyria."
+      ru: "Во дни Факея Феглаффелласар, царь Ассирийский, берёт Ион, Авел-Беф-Мааху, Ианох, Кедес, Асор, Галаад и Галилею, всю землю Неффалимову, и переселяет жителей в Ассирию."
+  - place: a15257a # Jerusalem
+    ref: 2Kgs.16.5-2Kgs.16.8
+    note:
+      en: 'Rezin of Syria and Pekah of Israel besiege Ahaz in Jerusalem; Ahaz sends the silver and gold of the Temple and of the king''s house to the king of Assyria: "I am thy servant and thy son."'
+      ru: "Рецин Сирийский и Факей Израильский осаждают Ахаза в Иерусалиме; Ахаз посылает царю Ассирийскому серебро и золото из дома Господня и из сокровищниц царских: «раб твой и сын твой я»."
+  - place: a69c1d4 # Damascus
+    ref: 2Kgs.16.9-2Kgs.16.11
+    note:
+      en: "The king of Assyria takes Damascus, carries its people to Kir and slays Rezin; Ahaz meets him there and sends home the pattern of its altar."
+      ru: "Царь Ассирийский берёт Дамаск, переселяет его жителей в Кир и умерщвляет Рецина; Ахаз встречает его там и посылает домой чертёж тамошнего жертвенника."
+  - place: a041bb3 # Samaria
+    ref: 2Kgs.17.3-2Kgs.17.5
+    year: "725 BC"
+    note:
+      en: "Hoshea withholds tribute and sends to So king of Egypt; Shalmaneser king of Assyria shuts him up in prison and besieges Samaria three years."
+      ru: "Осия перестаёт платить дань и посылает к Сигору, царю Египетскому; Салманассар, царь Ассирийский, заключает его в темницу и три года осаждает Самарию."
+  - place: abf176f # Halah
+    ref: 2Kgs.17.6
+    year: "722 BC"
+    note:
+      en: "In Hoshea's ninth year Samaria is taken, and Israel is carried away into Assyria and placed in Halah and in Habor by the river of Gozan, and in the cities of the Medes."
+      ru: "В девятый год Осии Самария взята, и Израильтян переселяют в Ассирию и поселяют в Халахе и в Хаворе, при реке Гозан, и в городах Мидийских."

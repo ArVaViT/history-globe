@@ -30,3 +30,6 @@ pipeline/out/
 .DS_Store
 .idea/
 *.swp
+
+# Generated map data (rebuilt by `pnpm data`)
+apps/web/public/data/

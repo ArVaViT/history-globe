@@ -1,0 +1,292 @@
+# Dated events of biblical history, marked on the time slider. Only events with a
+# year that mainstream scholarship states, each with its sources; "c." kept as
+# approximate. Disputed early dates (the Exodus, the conquest) are left out, and no
+# title ties a verse to a disputed date (Luke 2:2 is not named with AD 6).
+events:
+  - id: temple-built
+    year: "c. 966 BC"
+    title:
+      en: "Solomon begins building the Temple"
+      ru: "Соломон начинает строить Храм"
+    place: a15257a
+    sources:
+      - "1 Kgs 6:1 (the fourth year of Solomon); Thiele's chronology"
+  - id: kingdom-divided
+    year: "c. 931 BC"
+    title:
+      en: "The kingdom divides: Israel and Judah"
+      ru: "Разделение царства на Израиль и Иудею"
+    place: adf74d4
+    sources:
+      - "1 Kgs 12:1-20; Thiele's chronology"
+  - id: samaria-falls
+    year: "722 BC"
+    title:
+      en: "Samaria falls to Assyria"
+      ru: "Падение Самарии, конец Израильского царства"
+    place: a041bb3
+    sources:
+      - "2 Kgs 17:5-6"
+      - "Babylonian Chronicle, ABC 1 i 28 (Shalmaneser V)"
+  - id: sennacherib
+    year: "701 BC"
+    title:
+      en: "Sennacherib besieges Lachish and Jerusalem"
+      ru: "Сеннахирим осаждает Лахис и Иерусалим"
+    place: a3cc590
+    sources:
+      - "2 Kgs 18:13-19:37"
+      - "Sennacherib's Annals (Taylor Prism)"
+  - id: nineveh-falls
+    year: "612 BC"
+    title:
+      en: "Nineveh falls"
+      ru: "Падение Ниневии"
+    place: a70fd5d
+    sources:
+      - "Babylonian Chronicle, ABC 3"
+  - id: jerusalem-falls
+    year: "c. 586 BC"
+    title:
+      en: "Jerusalem and the Temple destroyed; exile to Babylon"
+      ru: "Разрушение Иерусалима и Храма; вавилонский плен"
+    place: a15257a
+    sources:
+      - "2 Kgs 25:1-21; Jer 52"
+  - id: cyrus-edict
+    year: "538 BC"
+    title:
+      en: "Cyrus lets the exiles return"
+      ru: "Указ Кира: изгнанники возвращаются"
+    place: a217d18
+    sources:
+      - "Ezra 1:1-4"
+      - "Cyrus Cylinder (his general policy of return)"
+  - id: second-temple
+    year: "c. 516 BC"
+    title:
+      en: "The Second Temple completed and dedicated"
+      ru: "Второй Храм достроен и освящён"
+    place: a15257a
+    sources:
+      - "Ezra 6:15-18 (3 Adar of the sixth year of Darius: 516 or 515 BC)"
+  - id: nehemiah-walls
+    year: "c. 445 BC"
+    title:
+      en: "Nehemiah rebuilds the walls of Jerusalem"
+      ru: "Неемия восстанавливает стены Иерусалима"
+    place: a15257a
+    sources:
+      - "Neh 2:1-6:15 (the twentieth year of Artaxerxes I)"
+  - id: alexander
+    year: "332 BC"
+    title:
+      en: "Alexander takes Tyre and Gaza"
+      ru: "Александр берёт Тир и Газу"
+    place: a160272
+    sources:
+      - "Arrian, Anabasis 2.24; 2.27"
+  - id: temple-rededicated
+    year: "164 BC"
+    title:
+      en: "Judas Maccabeus rededicates the Temple"
+      ru: "Иуда Маккавей вновь освящает Храм"
+    place: a15257a
+    sources:
+      - "1 Macc 4:36-59"
+      - "Josephus, Antiquities 12.316-325"
+  - id: pompey
+    year: "63 BC"
+    title:
+      en: "Pompey takes Jerusalem: Roman rule begins"
+      ru: "Помпей берёт Иерусалим: начало власти Рима"
+    place: a15257a
+    sources:
+      - "Josephus, Antiquities 14.54-79"
+  - id: herod
+    year: "37 BC"
+    title:
+      en: "Herod the Great takes Jerusalem"
+      ru: "Ирод Великий берёт Иерусалим"
+    place: a15257a
+    sources:
+      - "Josephus, Antiquities 14.465-491"
+  - id: jesus-born
+    year: "c. 5 BC"
+    title:
+      en: "Birth of Jesus"
+      ru: "Рождество Христово"
+    place: a112427
+    sources:
+      - "Matt 2:1; Luke 1:5 (in the days of Herod, who died in 4 BC)"
+  - id: crucifixion
+    year: "c. AD 30"
+    title:
+      en: "Crucifixion and Resurrection"
+      ru: "Распятие и Воскресение"
+    place: a631d35
+    sources:
+      - "Matt 27-28"
+      - "Luke 3:1 (John's ministry begins in the 15th year of Tiberius, AD 28/29); Pilate's prefecture AD 26-36"
+  - id: council
+    year: "c. AD 49"
+    title:
+      en: "The Council of Jerusalem"
+      ru: "Иерусалимский собор"
+    place: a15257a
+    sources:
+      - "Acts 15"
+  - id: temple-destroyed
+    year: "AD 70"
+    title:
+      en: "Titus destroys Jerusalem and the Temple"
+      ru: "Тит разрушает Иерусалим и Храм"
+    place: a15257a
+    sources:
+      - "Josephus, Jewish War 6.249-266"
+  - id: shishak
+    year: "c. 925 BC"
+    title:
+      en: "Shishak of Egypt campaigns in Judah and Israel"
+      ru: "Поход Сусакима, царя Египетского, на Иудею и Израиль"
+    sources:
+      - "1 Kgs 14:25-26 (the fifth year of Rehoboam); Thiele's chronology"
+      - "Shoshenq I's list of towns at Karnak (the Bubastite Portal)"
+  - id: qarqar
+    year: "853 BC"
+    title:
+      en: "Battle of Qarqar: Ahab among the kings against Assyria"
+      ru: "Битва при Каркаре: Ахав среди царей против Ассирии"
+    sources:
+      - "Kurkh Monolith of Shalmaneser III (his sixth year)"
+  - id: jehu-tribute
+    year: "841 BC"
+    title:
+      en: "Jehu pays tribute to Shalmaneser III"
+      ru: "Ииуй платит дань Салманассару III"
+    sources:
+      - "Black Obelisk of Shalmaneser III (the Jehu panel)"
+      - "Annals of Shalmaneser III for his eighteenth year (RIMA 3 A.0.102.8, .10)"
+  - id: josiah-dies
+    year: "609 BC"
+    title:
+      en: "Josiah is mortally wounded at Megiddo by Pharaoh Necho"
+      ru: "Иосия смертельно ранен при Мегиддоне фараоном Нехао"
+    place: a8554e3
+    sources:
+      - "2 Kgs 23:29-30; 2 Chr 35:20-24"
+      - "Babylonian Chronicle, ABC 3 (the Egyptian army's march, 609 BC)"
+  - id: carchemish
+    year: "605 BC"
+    title:
+      en: "Nebuchadnezzar defeats Egypt at Carchemish"
+      ru: "Навуходоносор разбивает египтян при Кархемисе"
+    place: af6c730
+    sources:
+      - "Jer 46:2"
+      - "Babylonian Chronicle, ABC 5"
+  - id: jehoiachin-exiled
+    year: "597 BC"
+    title:
+      en: "Jerusalem surrenders; Jehoiachin is taken to Babylon"
+      ru: "Иерусалим сдаётся; Иехония уведён в Вавилон"
+    place: a15257a
+    sources:
+      - "2 Kgs 24:10-17"
+      - "Babylonian Chronicle, ABC 5 (2 Adar, 597 BC)"
+  - id: temple-desecrated
+    year: "167 BC"
+    title:
+      en: "Antiochus IV defiles the Temple"
+      ru: "Антиох IV оскверняет Храм"
+    place: a15257a
+    sources:
+      - "1 Macc 1:54 (15 Kislev, year 145 of the Seleucids)"
+      - "Josephus, Antiquities 12.248-256"
+  - id: herod-dies
+    year: "c. 4 BC"
+    title:
+      en: "Herod the Great dies at Jericho"
+      ru: "Смерть Ирода Великого в Иерихоне"
+    place: aaf03fa
+    sources:
+      - "Josephus, Antiquities 17.167-191 (after the lunar eclipse, before Passover); Jewish War 1.659-666"
+  - id: judea-province
+    year: "AD 6"
+    title:
+      en: "Judea becomes a Roman province"
+      ru: "Иудея становится римской провинцией"
+    place: a15257a
+    sources:
+      - "Josephus, Antiquities 17.355; 18.1-2"
+  - id: pilate
+    year: "c. AD 26"
+    title:
+      en: "Pontius Pilate becomes prefect of Judea"
+      ru: "Понтий Пилат становится префектом Иудеи"
+    place: a58735e
+    sources:
+      - "Josephus, Antiquities 18.35 (after Gratus's eleven years), 18.89 (ten years in office)"
+      - "The Pilate stone from the theatre at Caesarea"
+  - id: agrippa-dies
+    year: "AD 44"
+    title:
+      en: "Herod Agrippa I dies at Caesarea"
+      ru: "Смерть Ирода Агриппы I в Кесарии"
+    place: a58735e
+    sources:
+      - "Acts 12:20-23"
+      - "Josephus, Antiquities 19.343-350"
+  - id: claudius-expels
+    year: "c. AD 49"
+    title:
+      en: "Claudius expels the Jews from Rome"
+      ru: "Клавдий изгоняет иудеев из Рима"
+    place: afc8e7a
+    sources:
+      - "Acts 18:2"
+      - "Suetonius, Claudius 25.4; Orosius, History 7.6.15 (the ninth year of Claudius)"
+  - id: gallio
+    year: "c. AD 51"
+    title:
+      en: "Gallio, proconsul of Achaia, at Corinth"
+      ru: "Галлион, проконсул Ахаии, в Коринфе"
+    place: a6f437a
+    sources:
+      - "Acts 18:12-17"
+      - "The Gallio inscription at Delphi (SIG³ 801), dating his year of office to 51-52"
+  - id: fire-of-rome
+    year: "AD 64"
+    title:
+      en: "The fire of Rome; Nero persecutes the Christians"
+      ru: "Пожар Рима; Нерон преследует христиан"
+    place: afc8e7a
+    sources:
+      - "Tacitus, Annals 15.38-44"
+  - id: damascus-falls
+    year: "732 BC"
+    title:
+      en: "Tiglath-pileser III takes Damascus"
+      ru: "Феглаффелласар (Тиглатпаласар III) берёт Дамаск"
+    place: a69c1d4
+    sources:
+      - "2 Kgs 16:9"
+      - "Eponym Chronicle for 733-732 BC (campaigns against Damascus)"
+  - id: babylon-taken
+    year: "539 BC"
+    title:
+      en: "Cyrus takes Babylon"
+      ru: "Кир берёт Вавилон"
+    place: a217d18
+    sources:
+      - "Nabonidus Chronicle (ABC 7) iii 12-16"
+      - "Cyrus Cylinder"
+  - id: panium
+    year: "200 BC"
+    title:
+      en: "Battle of Panium: Judea passes from the Ptolemies to the Seleucids"
+      ru: "Битва при Панионе: Иудея переходит от Птолемеев к Селевкидам"
+    place: ab7bf48
+    sources:
+      - "Polybius 16.18-19"
+      - "Josephus, Antiquities 12.132-133"

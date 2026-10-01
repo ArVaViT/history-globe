@@ -1,0 +1,56 @@
+# Saul, the first king, 1 Samuel 9-31, in the order of the text. The tour's year (1050 BC)
+# is the conventional start of his reign (c. 1050-1010 BC), a point for the map rather than
+# a date. The Samuel tour holds the assembly at Gilgal (11:14-15); the David tour holds
+# the battle on Mount Gilboa (31:1-6), so this one takes up the story after it.
+id: saul-king
+title:
+  en: "Saul, the first king"
+  ru: "Саул, первый царь"
+year: "1050 BC"
+approximate: true
+stops:
+  - place: a4d0250 # Land of Zuph
+    ref: 1Sam.9.3-1Sam.10.1
+    note:
+      en: "Looking for his father's lost asses, Saul comes to the land of Zuph, and there Samuel anoints him captain over the Lord's inheritance."
+      ru: "Разыскивая пропавших ослиц отца, Саул приходит в землю Цуф, и там Самуил помазывает его в правителя наследия Господня."
+  - place: a736f6c # Mizpah
+    ref: 1Sam.10.17-1Sam.10.24
+    note:
+      en: 'At Mizpah the lot falls on Saul, hidden among the stuff, and the people shout: "God save the king."'
+      ru: "В Массифе жребий указывает на Саула, скрывшегося в обозе, и народ восклицает: «да живет царь!»"
+  - place: af92088 # Jabesh-gilead
+    ref: 1Sam.11.1-1Sam.11.11
+    note:
+      en: "Nahash the Ammonite besieges Jabesh-gilead; Saul gathers Israel, breaks into their camp in the morning watch and smites the Ammonites."
+      ru: "Наас Аммонитянин осаждает Иавис Галаадский; Саул собирает Израиль, в утреннюю стражу врывается в их стан и поражает Аммонитян."
+  - place: ab94aea # Gilgal
+    ref: 1Sam.13.8-1Sam.13.14
+    note:
+      en: "At Gilgal, tired of waiting seven days for Samuel, Saul offers the burnt offering himself; Samuel tells him his kingdom shall not continue."
+      ru: "В Галгале, не дождавшись Самуила за семь дней, Саул сам возносит всесожжение; Самуил говорит ему: «не устоять царствованию твоему»."
+  - place: adea06c # Michmash
+    ref: 1Sam.13.23-1Sam.14.15
+    note:
+      en: "At the passage of Michmash Jonathan and his armourbearer climb up to the Philistine garrison, and there is a very great trembling in their camp."
+      ru: "У переправы Михмасской Ионафан с оруженосцем взбирается к отряду Филистимлян, и в их стане поднимается ужас великий от Господа."
+  - place: ab94aea # Gilgal
+    ref: 1Sam.15.12-1Sam.15.33
+    note:
+      en: 'Back in Gilgal from the war with Amalek, Saul has spared what he was told to destroy: "to obey is better than sacrifice," and the kingdom is torn from him.'
+      ru: "Вернувшись в Галгал с войны с Амаликом, Саул пощадил то, что велено было истребить: «послушание лучше жертвы», и царство отторгнуто от него."
+  - place: aca444b # En-dor
+    ref: 1Sam.28.7-1Sam.28.25
+    note:
+      en: "Before the last battle, disguised, he goes by night to a woman with a familiar spirit at En-dor and hears that tomorrow he and his sons will be with Samuel."
+      ru: "Перед последней битвой он, переодевшись, идёт ночью к волшебнице в Ен-Дор и слышит, что завтра он и сыновья его будут с Самуилом."
+  - place: a2a8df0 # Beth-shan
+    ref: 1Sam.31.8-1Sam.31.10
+    note:
+      en: "The day after the battle the Philistines find Saul and his three sons fallen on Mount Gilboa and fasten his body to the wall of Beth-shan."
+      ru: "На другой день после битвы Филистимляне находят Саула и трёх его сыновей, павших на горе Гелвуе, и вешают его тело на стене Беф-Сана."
+  - place: af92088 # Jabesh-gilead
+    ref: 1Sam.31.11-1Sam.31.13
+    note:
+      en: "The valiant men of Jabesh-gilead, whom he once saved, go all night, take the bodies from the wall, and bury their bones under a tree at Jabesh."
+      ru: "Сильные люди из Иависа Галаадского, которых он некогда спас, идут всю ночь, снимают тела со стены и погребают кости под дубом в Иависе."

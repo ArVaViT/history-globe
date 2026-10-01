@@ -1,0 +1,101 @@
+# Paul's second missionary journey, Acts 15:36–18:22. Named towns only, in the order of the
+# text; regions crossed "in passing" (Syria and Cilicia, Phrygia and Galatia, Mysia) are left
+# out rather than drawn as guessed stops. Year approximate: Pauline chronology is debated.
+# Source for the stop list: research note 16, section 4.2.
+id: paul-2
+title:
+  en: "Paul's second journey"
+  ru: "Второе путешествие Павла"
+year: "AD 50"
+approximate: true
+stops:
+  - place: ae41ab4
+    ref: Acts.15.35-Acts.15.40
+    note:
+      en: "Paul and Silas set out from Antioch."
+      ru: "Павел и Сила выходят из Антиохии."
+  - place: aa401a9
+    ref: Acts.16.1
+    note:
+      en: "Derbe again."
+      ru: "Снова Дервия."
+  - place: af0719d
+    ref: Acts.16.2-Acts.16.3
+    note:
+      en: "Timothy joins them."
+      ru: "К ним присоединяется Тимофей."
+  - place: a91c509
+    ref: Acts.16.8-Acts.16.10
+    note:
+      en: "The vision of the man of Macedonia."
+      ru: "Видение мужа Македонянина."
+  - place: a68750d
+    ref: Acts.16.11
+    note:
+      en: "A straight course to Samothrace."
+      ru: "Прямым путём к Самофракии."
+  - place: a6a7150
+    ref: Acts.16.11
+    note:
+      en: "Landing at Neapolis."
+      ru: "Высадка в Неаполе."
+  - place: a49e1d0
+    ref: Acts.16.12-Acts.16.40
+    note:
+      en: "Lydia; Paul and Silas in prison."
+      ru: "Лидия; Павел и Сила в темнице."
+  - place: a4bdea7
+    ref: Acts.17.1
+    note:
+      en: "Through Amphipolis."
+      ru: "Через Амфиполь."
+  - place: ab20df9
+    ref: Acts.17.1
+    note:
+      en: "Through Apollonia."
+      ru: "Через Аполлонию."
+  - place: afa9d8e
+    ref: Acts.17.1-Acts.17.9
+    note:
+      en: "Preaching in the synagogue; the uproar."
+      ru: "Проповедь в синагоге; волнение в городе."
+  - place: a62fe31
+    ref: Acts.17.10-Acts.17.14
+    note:
+      en: "The Bereans search the Scriptures daily."
+      ru: "Верийцы ежедневно разбирают Писания."
+  - place: a1fe6e7
+    ref: Acts.17.15-Acts.17.34
+    note:
+      en: "Paul at the Areopagus."
+      ru: "Павел в Ареопаге."
+  - place: a6f437a
+    ref: Acts.18.1-Acts.18.17
+    note:
+      en: "Aquila and Priscilla; a year and six months."
+      ru: "Акила и Прискилла; год и шесть месяцев."
+  - place: aa31dd3
+    ref: Acts.18.18
+    note:
+      en: "Cenchreae, the port of Corinth."
+      ru: "Кенхреи, порт Коринфа."
+  - place: a5feb15
+    ref: Acts.18.19-Acts.18.21
+    note:
+      en: "A short stay in Ephesus."
+      ru: "Недолгое пребывание в Ефесе."
+  - place: a58735e
+    ref: Acts.18.22
+    note:
+      en: "Landing at Caesarea."
+      ru: "Высадка в Кесарии."
+  - place: a15257a
+    ref: Acts.18.22
+    note:
+      en: "Paul greets the church."
+      ru: "Павел приветствует церковь."
+  - place: ae41ab4
+    ref: Acts.18.22
+    note:
+      en: "Back to Antioch."
+      ru: "Возвращение в Антиохию."

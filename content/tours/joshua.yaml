@@ -1,0 +1,66 @@
+# The conquest under Joshua, Joshua 6-24, in the order of the text. The tour's year
+# (1406 BC) follows the Exodus tour's reckoning (1 Kgs 6:1, then forty years in the
+# wilderness); the later date, c. 1220 BC, is also held, and the archaeology of Jericho
+# and Ai is disputed (place-life.yaml leaves them undated). A point for the map.
+id: joshua
+title:
+  en: "The conquest of Canaan"
+  ru: "Завоевание Ханаана"
+year: "1406 BC"
+approximate: true
+stops:
+  - place: a231f80 # Jericho
+    ref: Josh.6.1-Josh.6.21
+    note:
+      en: "The people shout, the trumpets sound, and the wall of Jericho falls down."
+      ru: "Народ восклицает, трубят трубы, и стена Иерихона обрушивается."
+  - place: a7e13e1 # Ai
+    ref: Josh.8.1-Josh.8.29
+    note:
+      en: "Ai is taken by ambush and burnt, and left a heap of ruins for ever."
+      ru: "Гай взят засадой и сожжён, обращён в вечные развалины."
+  - place: aa5cc66 # Mount Ebal
+    ref: Josh.8.30-Josh.8.35
+    note:
+      en: "On Mount Ebal Joshua builds an altar and writes a copy of the law of Moses on the stones."
+      ru: "На горе Гевал Иисус устраивает жертвенник и пишет на камнях список с закона Моисеева."
+  - place: aede336 # Gibeon
+    ref: Josh.9.3-Josh.9.27
+    note:
+      en: "The men of Gibeon, pretending to come from far away, obtain a treaty."
+      ru: "Жители Гаваона, выдав себя за пришедших издалека, добиваются мира."
+  - place: a75b45e # Beth-horon
+    ref: Josh.10.10-Josh.10.11
+    note:
+      en: "As the Amorites flee down the descent of Beth-horon, the Lord casts great hailstones on them."
+      ru: "Когда Аморреи бегут по спуску от Беф-Орона, Господь бросает на них с небес большие камни града."
+  - place: a2e6de9 # Valley of Aijalon
+    ref: Josh.10.12-Josh.10.14
+    note:
+      en: '"Sun, stand thou still upon Gibeon; and thou, Moon, in the valley of Ajalon."'
+      ru: "«Стой, солнце, над Гаваоном, и луна, над долиною Аиалонскою!»"
+  - place: abf8e4e # Makkedah
+    ref: Josh.10.16-Josh.10.27
+    note:
+      en: "The five kings hide in the cave at Makkedah and are brought out."
+      ru: "Пять царей скрываются в пещере в Македе, и их выводят оттуда."
+  - place: a3cc590 # Lachish
+    ref: Josh.10.31-Josh.10.32
+    note:
+      en: "Lachish is taken on the second day."
+      ru: "Лахис взят на другой день."
+  - place: a6f33c5 # Hazor
+    ref: Josh.11.10-Josh.11.11
+    note:
+      en: "Hazor, once the head of all those kingdoms, is taken and burnt with fire."
+      ru: "Асор, прежде бывший главою всех этих царств, взят и сожжён огнём."
+  - place: aa4680a # Shiloh
+    ref: Josh.18.1
+    note:
+      en: "The whole congregation gathers at Shiloh and sets up the tabernacle there."
+      ru: "Всё общество собирается в Силом и ставит там скинию собрания."
+  - place: adf74d4 # Shechem
+    ref: Josh.24.1-Josh.24.28
+    note:
+      en: 'At Shechem Joshua renews the covenant: "choose you this day whom ye will serve."'
+      ru: "В Сихеме Иисус возобновляет завет: «изберите себе ныне, кому служить»."
