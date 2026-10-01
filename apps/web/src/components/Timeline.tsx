@@ -136,6 +136,8 @@ export function Timeline({
       // Lines (Firefox's mouse wheel) count as 16 px.
       const k = e.deltaMode === 1 ? 16 : 1;
       const frac = Math.min(Math.max((e.clientX - box.left) / box.width, 0), 1);
+      // The tip named the year under the pointer before the move: it waits for the next.
+      setHover(null);
       setView((v) => {
         const s = v.to - v.from;
         if (e.ctrlKey) return zoomView(v, Math.exp(e.deltaY * k * 0.01), v.from + frac * s);
