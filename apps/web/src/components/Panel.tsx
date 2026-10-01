@@ -4,7 +4,7 @@ import { useState, type ReactNode } from "react";
 export function Panel({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <div
-      className={`rounded-[20px] border border-white/45 bg-paper/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.55),0_14px_40px_-10px_rgba(20,14,8,0.45)] backdrop-blur-xl backdrop-saturate-150 ${className}`}
+      className={`rounded-[20px] border border-white/45 bg-paper/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.55),0_8px_24px_-12px_rgba(20,14,8,0.55)] backdrop-blur-xl backdrop-saturate-150 ${className}`}
     >
       {children}
     </div>

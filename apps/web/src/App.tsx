@@ -146,7 +146,7 @@ export function App() {
         <>
           <aside
             aria-label={t("panels.label")}
-            className="absolute top-4 bottom-12 left-4 flex flex-col gap-3 overflow-y-auto pr-1 [scrollbar-width:thin] *:shrink-0 max-md:inset-x-3 max-md:top-3 max-md:bottom-auto max-md:z-10 max-md:max-h-[calc(100dvh-var(--hg-timeline-h,124px)-32px)] max-md:pr-0"
+            className="absolute top-4 bottom-12 left-4 -m-4 flex flex-col gap-3 overflow-y-auto p-4 pr-5 [scrollbar-width:thin] *:shrink-0 max-md:inset-x-3 max-md:top-3 max-md:bottom-auto max-md:z-10 max-md:max-h-[calc(100dvh-var(--hg-timeline-h,124px)-32px)] max-md:pr-4"
           >
             {/* On a panel, not on the map: state labels run under the corner. */}
             <Panel
