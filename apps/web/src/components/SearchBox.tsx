@@ -17,7 +17,8 @@ export function SearchBox({
   data: LoadedData;
   inputRef: RefObject<HTMLInputElement | null>;
   onSelect: (placeId: string) => void;
-  onClose: () => void;
+  /** `focusBack`: Esc or a choice hands the focus back to the magnifier; a click away does not. */
+  onClose: (focusBack: boolean) => void;
 }) {
   const { t, i18n } = useTranslation();
   const [query, setQuery] = useState("");
@@ -30,11 +31,19 @@ export function SearchBox({
   const choose = (id: string) => {
     onSelect(id);
     setQuery("");
-    onClose();
+    onClose(true);
   };
 
   return (
-    <div className="min-w-0 flex-1">
+    <div
+      className="min-w-0 flex-1"
+      // A click away (the map, the column) closes the search; a press inside the header
+      // (its own cross) does not, and the results keep the focus with preventDefault.
+      onBlur={(e) => {
+        const header = e.currentTarget.parentElement;
+        if (!header?.contains(e.relatedTarget)) onClose(false);
+      }}
+    >
       <label className="flex items-center gap-2 rounded-full bg-paper-2/70 px-3 py-1.5 focus-within:ring-2 focus-within:ring-focus">
         <Search className="size-4 shrink-0 text-ink-soft" aria-hidden />
         <input
@@ -50,7 +59,7 @@ export function SearchBox({
             else if (e.key === "Enter" && results[active]) choose(results[active].props.id);
             else if (e.key === "Escape") {
               setQuery("");
-              onClose();
+              onClose(true);
             }
           }}
           placeholder={t("search.placeholder")}
@@ -58,7 +67,7 @@ export function SearchBox({
           role="combobox"
           aria-autocomplete="list"
           aria-expanded={open}
-          aria-controls="search-results"
+          aria-controls={open ? "search-results" : undefined}
           aria-activedescendant={
             open && results[active] ? `search-${results[active].props.id}` : undefined
           }

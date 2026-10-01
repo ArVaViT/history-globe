@@ -80,13 +80,22 @@ export function App() {
     setPlaying((p) => !p);
   }, [setPlaying]);
   // The search may be hidden with the panels: show them, then focus it.
+  const searchButton = useRef<HTMLButtonElement>(null);
   const focusSearch = useCallback(() => {
+    // On a phone an open card hides the column: close it first, as the burger does.
+    if (engine && innerWidth < 768) {
+      const s = engine.store.get();
+      if (s.selectedPlace || s.tour) {
+        engine.selectPlace(null);
+        engine.stopTour();
+      }
+    }
     togglePanels(true);
     setSearchOpen(true);
     requestAnimationFrame(() => {
       searchRef.current?.focus();
     });
-  }, [togglePanels]);
+  }, [togglePanels, engine]);
   useKeys(globe, { togglePlay, focusSearch });
 
   // Fly to the place from the URL once the globe exists, or start its tour.
@@ -111,6 +120,8 @@ export function App() {
   // On a phone an open card takes the lower half: the column folds to its header.
   const cardOpen = Boolean((tour && state.tour) || selected);
   const columnShown = panelsOpen && !(narrow && cardOpen);
+  // On a phone the search results drop over the column: the shared panel waits.
+  const moreShown = moreOpen && !(narrow && searchOpen);
 
   // The tab names what is open: a shared link or a history entry says where it leads.
   const placeName = selected
@@ -173,7 +184,10 @@ export function App() {
                     engine.selectPlace(null);
                     engine.stopTour();
                     togglePanels(true);
-                  } else togglePanels(!columnShown);
+                  } else {
+                    if (columnShown) setSearchOpen(false);
+                    togglePanels(!columnShown);
+                  }
                 }}
                 aria-expanded={columnShown}
                 aria-controls={columnShown ? "side-panels" : undefined}
@@ -201,12 +215,14 @@ export function App() {
                       onSelect={(id) => {
                         engine.selectPlace(id);
                       }}
-                      onClose={() => {
+                      onClose={(focusBack) => {
                         setSearchOpen(false);
+                        if (focusBack) requestAnimationFrame(() => searchButton.current?.focus());
                       }}
                     />
                   )}
                   <HeaderButton
+                    buttonRef={searchButton}
                     label={searchOpen ? t("search.close") : t("search.open")}
                     active={searchOpen}
                     onClick={() => {
@@ -223,9 +239,9 @@ export function App() {
                   </HeaderButton>
                   <HeaderButton
                     label={t("more")}
-                    active={moreOpen}
-                    expanded={moreOpen}
-                    controls={moreOpen ? "more-panels" : undefined}
+                    active={moreShown}
+                    expanded={moreShown}
+                    controls={moreShown ? "more-panels" : undefined}
                     onClick={() => {
                       setMoreOpen(!moreOpen);
                       writeMore(!moreOpen);
@@ -263,8 +279,7 @@ export function App() {
                 id="side-panels"
                 className={`flex flex-col gap-3 *:shrink-0 ${cardOpen ? "max-md:hidden" : ""}`}
               >
-                {/* On a phone the results drop over the column: the shared panel waits. */}
-                {moreOpen && !(narrow && searchOpen) && (
+                {moreShown && (
                   <Panel className="w-[340px] max-md:w-full">
                     <div id="more-panels">
                       <InGroup.Provider value={true}>
@@ -424,6 +439,7 @@ function writeMore(open: boolean): void {
 
 /** A round icon button in the header; `active` marks what it has opened. */
 function HeaderButton({
+  buttonRef,
   label,
   active = false,
   expanded,
@@ -432,6 +448,7 @@ function HeaderButton({
   onClick,
   children,
 }: {
+  buttonRef?: React.Ref<HTMLButtonElement>;
   label: string;
   active?: boolean;
   expanded?: boolean;
@@ -442,6 +459,7 @@ function HeaderButton({
 }) {
   return (
     <button
+      ref={buttonRef}
       onClick={onClick}
       aria-label={label}
       title={label}
