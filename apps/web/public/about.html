@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0c1520" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <title>О проекте — History Globe</title>
+    <style>
+      :root {
+        --ink: #2b2418;
+        --ink-soft: #6b5d48;
+        --paper: #f6efe1;
+        --paper-2: #ece2cc;
+        --accent: #9a3b1f;
+        --night: #0c1520;
+      }
+      html {
+        background: var(--night);
+      }
+      body {
+        margin: 0 auto;
+        max-width: 720px;
+        padding: 32px 20px 64px;
+        background: var(--paper);
+        color: var(--ink);
+        font:
+          16px/1.6 Georgia,
+          "Times New Roman",
+          serif;
+      }
+      h1 {
+        font-size: 30px;
+        margin: 0 0 4px;
+      }
+      h2 {
+        font-size: 20px;
+        margin: 32px 0 8px;
+      }
+      p,
+      li {
+        margin: 6px 0;
+      }
+      small,
+      .note {
+        color: var(--ink-soft);
+        font-family: system-ui, sans-serif;
+        font-size: 14px;
+      }
+      a {
+        color: var(--accent);
+      }
+      a:focus-visible {
+        outline: 2px solid #946e20;
+        outline-offset: 2px;
+      }
+      hr {
+        border: 0;
+        border-top: 1px solid var(--paper-2);
+        margin: 40px 0;
+      }
+      ul {
+        padding-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="note"><a href="./" class="back">← К глобусу</a> · <a href="#en">English</a></p>
+      <h1>О проекте</h1>
+      <p>
+        History Globe — глобус библейской истории: места, упомянутые в Библии, границы государств и
+        маршруты по годам от 2000 г. до н. э. до 100 г. н. э., со ссылками на стихи. Рабочий
+        прототип.
+      </p>
+
+      <h2>Как читать карту</h2>
+      <ul>
+        <li>
+          <b>Годы.</b> «ок.» — год приблизительный. Где датировка спорна (Исход, эпоха патриархов),
+          год экскурсии — условная точка для карты и тоже помечен «ок.».
+        </li>
+        <li>
+          <b>Бледное место</b> в выбранном году: город ещё не основан, лежит в руинах или уже исчез
+          — даты и источники в карточке. Места, названные только в Новом Завете, бледны до его
+          событий.
+        </li>
+        <li>
+          <b>Спорная локализация.</b> Если исследователи предлагают несколько мест, карточка
+          показывает версии и их доли по оценке OpenBible — это не научный консенсус.
+        </li>
+        <li>
+          <b>Названия и ссылки</b> — по Синодальному переводу: почти у каждого русского названия
+          указан стих, где оно прочитано (кроме немногих мест, которых нет в тексте, — Этрурии,
+          Пунта). Номера стихов в русском интерфейсе синодальные (Пс 22, а не 23); ссылки ведут на
+          BibleGateway. Цитаты в экскурсиях — дословно по Синодальному переводу, в английской версии
+          — по Библии короля Якова (KJV).
+        </li>
+        <li>
+          <b>Писание говорит само за себя.</b> Даты и названия не втягивают текст Библии в научные
+          споры.
+        </li>
+      </ul>
+
+      <h2>Откуда данные</h2>
+      <ul>
+        <li>
+          Библейские места и стихи: OpenBible.info Bible Geocoding Data, лицензия
+          <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, с изменениями.
+          Точки, скопированные в OpenBible из OpenStreetMap или Google, заменены координатами
+          Wikidata (CC0) или исключены.
+        </li>
+        <li>
+          Границы государств: Cliopatria, Seshat Global History Databank (Chalstrey, Bennett и др.,
+          v0.2.0), лицензия CC BY 4.0, с нашими поправками.
+        </li>
+        <li>Береговая линия, реки и озёра: Natural Earth (общественное достояние).</li>
+        <li>
+          Рельеф: Mapterhorn (Copernicus WorldDEM-30 © DLR e.V. 2010–2014 и © Airbus Defence and
+          Space GmbH 2014–2018, предоставлено по программе Copernicus ЕС и ЕКА; и другие источники:
+          <a href="https://mapterhorn.com/attribution">mapterhorn.com/attribution</a>).
+        </li>
+        <li>
+          Синодальный перевод (1876) и World English Bible — общественное достояние; по ним
+          проверены названия и существование стихов. Английские цитаты в экскурсиях — по King James
+          Version, тоже общественное достояние.
+        </li>
+        <li>
+          Даты жизни городов и события — по античным авторам, хроникам и надписям; источник указан у
+          каждой записи.
+        </li>
+      </ul>
+
+      <h2>Программы</h2>
+      <p class="note">
+        MapLibre GL JS (BSD-3-Clause, файлы и лицензия — в vendor/), значки Lucide (ISC) и Feather
+        (MIT) — <a href="licenses/lucide-icons.txt">лицензии</a>, шрифты Golos Text и Literata (SIL
+        Open Font License), React (MIT).
+      </p>
+      <p class="note">Упоминание источников не означает их одобрения.</p>
+
+      <hr />
+
+      <section id="en" lang="en">
+        <h1>About</h1>
+        <p>
+          History Globe is a globe of biblical history: the places the Bible names, state borders
+          and routes year by year from 2000 BC to AD 100, linked to the verses. A working prototype.
+        </p>
+        <h2>Reading the map</h2>
+        <ul>
+          <li>
+            <b>Years.</b> "c." marks an approximate year. Where the date is disputed (the Exodus,
+            the patriarchs), a tour's year is a point for the map and is marked "c." too.
+          </li>
+          <li>
+            <b>A faded place</b> in the chosen year was not yet built, lay in ruins or was gone —
+            the card gives the dates and sources. Places named only in the New Testament fade before
+            its events.
+          </li>
+          <li>
+            <b>Disputed locations</b> show the proposed sites with OpenBible's shares, which are an
+            estimate, not a scholarly consensus.
+          </li>
+          <li>
+            <b>Names and references</b> in Russian follow the Synodal translation, and verse numbers
+            are shown in its numbering there (Ps 22 for Ps 23); links go to BibleGateway. Quotations
+            in the tours are word for word from the King James Version.
+          </li>
+          <li>
+            <b>Scripture speaks for itself:</b> dates and names keep it out of scholarly disputes.
+          </li>
+        </ul>
+        <h2>Sources</h2>
+        <p class="note">
+          OpenBible.info Bible Geocoding Data (CC BY 4.0, modified; points copied from OpenStreetMap
+          or Google replaced from Wikidata, CC0, or left out); Cliopatria, Seshat Global History
+          Databank, v0.2.0 (CC BY 4.0, modified); Natural Earth (public domain); terrain by
+          <a href="https://mapterhorn.com/attribution">Mapterhorn</a> with Copernicus WorldDEM-30 ©
+          DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 and other sources; the
+          Russian Synodal translation, the World English Bible and the King James Version, quoted in
+          the tours (public domain). Software: MapLibre GL JS (BSD-3-Clause), Lucide (ISC) and
+          Feather (MIT) icons, Golos Text and Literata (OFL), React (MIT). No endorsement by any of
+          them is implied.
+        </p>
+        <p class="note"><a href="./?locale=en" class="back">← Back to the globe</a></p>
+      </section>
+    </main>
+    <script>
+      // Back to the same view of the map (year, place, tour) when we came from it.
+      for (const a of document.querySelectorAll("a.back"))
+        a.addEventListener("click", (e) => {
+          if (document.referrer.startsWith(location.origin) && history.length > 1) {
+            e.preventDefault();
+            history.back();
+          }
+        });
+    </script>
+  </body>
+</html>

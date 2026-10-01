@@ -1,0 +1,51 @@
+# Joseph, Genesis 37-50, in the order of the text. The tour's year (1700 BC) is a
+# conventional point for the map, like Abraham's: the age of the patriarchs is disputed,
+# and the slider says so for the Middle Bronze Age. With the Exodus at 1446 BC it fits a
+# short stay in Egypt; the 430 years of Exod 12:40 would put Joseph near 1900 BC.
+id: joseph
+title:
+  en: "Joseph in Egypt"
+  ru: "Иосиф в Египте"
+year: "1700 BC"
+approximate: true
+stops:
+  - place: a375f5a # Valley of Hebron
+    ref: Gen.37.14
+    note:
+      en: "Israel sends Joseph from the valley of Hebron to see how his brothers are."
+      ru: "Израиль посылает Иосифа из долины Хевронской узнать, здоровы ли братья."
+  - place: adf74d4 # Shechem
+    ref: Gen.37.14-Gen.37.16
+    note:
+      en: "He comes to Shechem and wanders in the field looking for them."
+      ru: "Он приходит в Сихем и блуждает в поле, ища их."
+  - place: ab635e4 # Dothan
+    ref: Gen.37.17-Gen.37.28
+    note:
+      en: "At Dothan his brothers throw him into a pit and sell him to the Ishmaelites for twenty pieces of silver."
+      ru: "В Дофане братья бросают его в ров и продают Измаильтянам за двадцать сребренников."
+  - place: af301ca # Egypt
+    ref: Gen.39.1-Gen.39.6
+    note:
+      en: "In Egypt Potiphar, the captain of Pharaoh's guard, buys him, and the Lord is with Joseph."
+      ru: "В Египте его покупает Потифар, начальник телохранителей фараона, и Господь с Иосифом."
+  - place: acd9137 # Heliopolis (On)
+    ref: Gen.41.41-Gen.41.45
+    note:
+      en: "Set over all the land of Egypt, he is given Asenath, daughter of Potiphera, priest of On."
+      ru: "Поставленный над всею землёю Египетскою, он получает в жёны Асенефу, дочь Потифера, жреца Илиопольского."
+  - place: a60f092 # Goshen
+    ref: Gen.46.28-Gen.46.30
+    note:
+      en: "In Goshen he meets his father Israel, falls on his neck and weeps a long while."
+      ru: "В Гесеме он встречает отца своего Израиля, падает ему на шею и долго плачет."
+  - place: a2f186d # Atad
+    ref: Gen.50.10-Gen.50.11
+    note:
+      en: "At the threshing floor of Atad beyond the Jordan they mourn Jacob seven days."
+      ru: "У Горен-гаатада при Иордане семь дней плачут по Иакову."
+  - place: ae00861 # Machpelah
+    ref: Gen.50.12-Gen.50.13
+    note:
+      en: "Jacob is buried in the cave of the field of Machpelah, which Abraham bought."
+      ru: "Иакова погребают в пещере на поле Махпела, которую купил Авраам."

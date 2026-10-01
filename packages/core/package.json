@@ -1,0 +1,19 @@
+{
+  "name": "@hg/core",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./maplibre": "./src/maplibre-renderer.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p ../../tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@hg/model": "workspace:*",
+    "maplibre-gl": "6.11.2"
+  },
+  "devDependencies": {
+    "@maplibre/maplibre-gl-style-spec": "26.4.4"
+  }
+}

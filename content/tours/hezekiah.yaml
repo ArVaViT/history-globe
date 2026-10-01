@@ -1,0 +1,49 @@
+# Hezekiah and Isaiah, 2 Kings 18-19, in the order of the text. The tour's year (701 BC)
+# is Sennacherib's campaign, fixed by his annals; the fall of Samaria, which the text
+# dates by Hezekiah's sixth year, shows 722 BC. The start of Hezekiah's reign is disputed
+# (c. 729 or 715 BC), so his reform carries no year of its own. Sennacherib's death
+# (2 Kgs 19:37) came twenty years later, in 681 BC (Babylonian Chronicle); the last stop
+# stays at 701, when he went home.
+id: hezekiah
+title:
+  en: "Hezekiah and Isaiah"
+  ru: "Езекия и Исаия"
+year: "701 BC"
+approximate: true
+stops:
+  - place: a15257a # Jerusalem
+    ref: 2Kgs.18.1-2Kgs.18.8
+    note:
+      en: "Hezekiah removes the high places and breaks the bronze serpent Nehushtan; he trusts in the Lord."
+      ru: "Езекия отменяет высоты и истребляет медного змея Нехуштан; он уповает на Господа."
+  - place: a041bb3 # Samaria
+    ref: 2Kgs.18.9-2Kgs.18.12
+    year: "722 BC"
+    note:
+      en: "In Hezekiah's sixth year Samaria is taken by the king of Assyria and Israel is carried away."
+      ru: "В шестой год Езекии Самария взята царём Ассирийским, и Израиль переселён."
+  - place: a3cc590 # Lachish
+    ref: 2Kgs.18.13-2Kgs.18.16
+    note:
+      en: "Sennacherib takes the fortified cities of Judah; Hezekiah sends word to him at Lachish and pays the tribute laid on him."
+      ru: "Сеннахирим берёт укреплённые города Иуды; Езекия посылает к нему в Лахис с повинной и платит наложенную дань."
+  - place: a15257a # Jerusalem
+    ref: 2Kgs.18.17-2Kgs.19.7
+    note:
+      en: 'At the upper pool the Rabshakeh mocks Hezekiah and the Lord before the people on the wall; Isaiah answers: "Be not afraid of the words which thou hast heard."'
+      ru: "У верхнего пруда Рабсак поносит Бога и Езекию перед народом на стене; Исаия отвечает: «не бойся слов, которые ты слышал»."
+  - place: a97b595 # Libnah
+    ref: 2Kgs.19.8
+    note:
+      en: "The Rabshakeh finds the king of Assyria warring against Libnah."
+      ru: "Рабсак находит царя Ассирийского воюющим против Ливны."
+  - place: a15257a # Jerusalem
+    ref: 2Kgs.19.14-2Kgs.19.34
+    note:
+      en: 'Hezekiah spreads the letter before the Lord and prays; Isaiah brings the answer: "I will defend this city."'
+      ru: "Езекия развертывает письмо пред Господом и молится; Исаия передаёт ответ: «Я буду охранять город сей»."
+  - place: a70fd5d # Nineveh
+    ref: 2Kgs.19.35-2Kgs.19.37
+    note:
+      en: "After the angel of the Lord strikes the Assyrian camp, Sennacherib goes home and dwells at Nineveh, where his sons later kill him."
+      ru: "Когда Ангел Господень поражает стан Ассирийский, Сеннахирим возвращается и живёт в Ниневии; там его позже убивают сыновья."

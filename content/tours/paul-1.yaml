@@ -1,0 +1,85 @@
+# Paul's first missionary journey, Acts 13–14.
+# Stops follow the order of the text; the return leg is stated in Acts 14:21–26.
+# Year: c. AD 46–48 (approximate; Pauline chronology is debated).
+id: paul-1
+title:
+  en: "Paul's first journey"
+  ru: "Первое путешествие Павла"
+year: "AD 47"
+approximate: true
+stops:
+  - place: ae41ab4 # Antioch in Syria
+    ref: Acts.13.1-Acts.13.3
+    note:
+      en: The church sets Barnabas and Saul apart for the work.
+      ru: Церковь отделяет Варнаву и Савла на служение.
+  - place: a6d306d # Seleucia Pieria
+    ref: Acts.13.4
+    note:
+      en: The port of Antioch; they sail for Cyprus.
+      ru: Порт Антиохии, отплытие на Кипр.
+  - place: afa863b # Salamis
+    ref: Acts.13.5
+    note:
+      en: They proclaim the word in the synagogues of the Jews.
+      ru: Проповедь в синагогах иудейских.
+  - place: a314765 # Paphos
+    ref: Acts.13.6-Acts.13.12
+    note:
+      en: The proconsul Sergius Paulus believes.
+      ru: Проконсул Сергий Павел приходит к вере.
+  - place: aff04b8 # Perga
+    ref: Acts.13.13
+    note:
+      en: John Mark returns to Jerusalem.
+      ru: Иоанн Марк возвращается в Иерусалим.
+  - place: a6c704a # Antioch in Pisidia
+    ref: Acts.13.14-Acts.13.50
+    note:
+      en: Preaching in the synagogue; turning to the Gentiles.
+      ru: Проповедь в синагоге; обращение к язычникам.
+  - place: ae425aa # Iconium
+    ref: Acts.14.1-Acts.14.5
+    note:
+      en: Many believe; a plot to stone them.
+      ru: Многие приходят к вере; замысел побить их камнями.
+  - place: af0719d # Lystra
+    ref: Acts.14.8-Acts.14.19
+    note:
+      en: A lame man is healed; Paul is stoned.
+      ru: Исцеление хромого; Павла побивают камнями.
+  - place: aa401a9 # Derbe
+    ref: Acts.14.20-Acts.14.21
+    note:
+      en: They make many disciples.
+      ru: Приобретают много учеников.
+  - place: af0719d # Lystra
+    ref: Acts.14.21-Acts.14.22
+    note:
+      en: "Return leg: strengthening the disciples."
+      ru: "Обратный путь: утверждают души учеников."
+  - place: ae425aa # Iconium
+    ref: Acts.14.21
+    note:
+      en: Return leg.
+      ru: Обратный путь.
+  - place: a6c704a # Antioch in Pisidia
+    ref: Acts.14.21-Acts.14.23
+    note:
+      en: Elders appointed in every church.
+      ru: Рукополагают пресвитеров к каждой церкви.
+  - place: aff04b8 # Perga
+    ref: Acts.14.25
+    note:
+      en: They speak the word in Perga.
+      ru: Проповедуют слово в Пергии.
+  - place: ac744c1 # Attalia
+    ref: Acts.14.26
+    note:
+      en: They sail back to Antioch.
+      ru: Отплывают в Антиохию.
+  - place: ae41ab4 # Antioch in Syria
+    ref: Acts.14.27-Acts.14.28
+    note:
+      en: They report how God has opened a door of faith to the Gentiles.
+      ru: Рассказывают, как Бог отверз дверь веры язычникам.
