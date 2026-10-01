@@ -29,7 +29,12 @@ export function Modal({
     <dialog
       ref={ref}
       aria-label={title}
-      onClose={onClose}
+      // Only what the reader does closes it (Esc, the cross, the backdrop): a programmatic
+      // close, when the map key replaces the settings, must not close the settings too.
+      onCancel={(e) => {
+        e.preventDefault();
+        onClose();
+      }}
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}

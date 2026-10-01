@@ -290,7 +290,7 @@ export function Timeline({
                 key={y}
                 aria-hidden
                 style={{ left: `${String(x)}%` }}
-                className={`absolute top-6 text-[11px] whitespace-nowrap text-ink-soft ${x < 6 ? "" : x > 94 ? "-translate-x-full" : "-translate-x-1/2"} ${ticks.length > 5 && i % 2 === 1 ? "max-[1400px]:hidden" : ""}`}
+                className={`absolute top-6 text-[11px] whitespace-nowrap text-ink-soft ${x < 6 ? "" : x > 94 ? "-translate-x-full" : "-translate-x-1/2"} ${ticks.length > 3 && i % 2 === 1 ? "max-[1400px]:hidden" : ""}`}
               >
                 {formatYear(y, locale)}
               </span>
