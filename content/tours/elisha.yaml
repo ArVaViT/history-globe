@@ -1,0 +1,56 @@
+# Elisha, 2 Kings 2 - 8, in the order of the text, from where the Elijah tour ends. The
+# tour's year (850 BC) falls in the reign of Jehoram of Israel (c. 852-841 BC); the text
+# sets 2 Kgs 3:1-8:15 in his reign, though chapters 4-7 do not name the king. A point for
+# the map rather than a date.
+id: elisha
+title:
+  en: "Elisha the prophet"
+  ru: "Пророк Елисей"
+year: "850 BC"
+approximate: true
+stops:
+  - place: a231f80 # Jericho
+    ref: 2Kgs.2.15-2Kgs.2.22
+    note:
+      en: "At Jericho the sons of the prophets see that the spirit of Elijah rests on Elisha; he throws salt into the spring and heals its water."
+      ru: "В Иерихоне сыны пророков видят, что дух Илии почиет на Елисее; он бросает соль в источник, и вода становится здоровою."
+  - place: a64f355 # Bethel
+    ref: 2Kgs.2.23-2Kgs.2.24
+    note:
+      en: 'On the road to Bethel little children mock him, "Go up, thou bald head", and two she bears come out of the wood.'
+      ru: "По дороге в Вефиль дети насмехаются над ним: «иди, плешивый!», и из леса выходят две медведицы."
+  - place: ac86af5 # Shunem
+    ref: 2Kgs.4.8-2Kgs.4.17
+    note:
+      en: "In Shunem a woman makes him a small room on the wall, and he tells her she will have a son."
+      ru: "В Сонаме женщина устраивает для него горницу над стеною, и он предсказывает ей рождение сына."
+  - place: a3e21c6 # Mount Carmel
+    ref: 2Kgs.4.18-2Kgs.4.37
+    note:
+      en: "When the boy dies, his mother rides to Elisha at Mount Carmel and will not leave him; he goes back with her to Shunem and raises the boy."
+      ru: "Когда мальчик умирает, мать едет к Елисею на гору Кармил: «не отстану от тебя»; он идёт с нею в Сонам и воскрешает ребёнка."
+  - place: a6399b3 # Gilgal
+    ref: 2Kgs.4.38-2Kgs.4.41
+    note:
+      en: 'At Gilgal, in a famine, the sons of the prophets cry out, "there is death in the pot"; he throws in meal and it is harmless.'
+      ru: "В Галгале, во время голода, сыны пророков кричат: «смерть в котле, человек Божий!»; он всыпает муку, и вреда больше нет."
+  - place: ae686c9 # Jordan
+    ref: 2Kgs.5.1-2Kgs.5.14
+    note:
+      en: "Naaman, captain of the host of the king of Syria, dips himself seven times in the Jordan at Elisha's word and is cleansed of his leprosy."
+      ru: "Нееман, военачальник царя Сирийского, по слову Елисея семь раз окунается в Иордане и очищается от проказы."
+  - place: ab635e4 # Dothan
+    ref: 2Kgs.6.13-2Kgs.6.18
+    note:
+      en: "At Dothan the Syrians surround the city; Elisha's servant sees the mountain full of horses and chariots of fire."
+      ru: "В Дофане Сирияне окружают город; слуга Елисея видит, что гора полна коней и колесниц огненных."
+  - place: a041bb3 # Samaria
+    ref: 2Kgs.6.24-2Kgs.7.1
+    note:
+      en: "Ben-hadad besieges Samaria and the city starves; Elisha says that tomorrow a measure of fine flour will be sold for a shekel at its gate."
+      ru: "Венадад осаждает Самарию, в городе голод; Елисей говорит, что завтра мера лучшей муки будет по сиклю у ворот Самарии."
+  - place: a69c1d4 # Damascus
+    ref: 2Kgs.8.7-2Kgs.8.15
+    note:
+      en: "In Damascus, where Ben-hadad lies sick, Elisha weeps before Hazael, who will be king of Syria."
+      ru: "В Дамаске, где болен Венадад, Елисей плачет перед Азаилом, которому быть царём Сирии."

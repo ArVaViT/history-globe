@@ -1,0 +1,51 @@
+# The fall of Jerusalem and the exile, 2 Kings 25 and Jeremiah 39-43, in the order of
+# the text. Year: 587 or 586 BC (disputed), marked approximate. The map shows 587 BC,
+# the year before the ruins begin in place-life.yaml, so Jerusalem still stands at the
+# siege.
+id: exile
+title:
+  en: "The fall of Jerusalem and the exile"
+  ru: "Падение Иерусалима и плен"
+year: "587 BC"
+approximate: true
+stops:
+  - place: a15257a # Jerusalem
+    ref: 2Kgs.25.1-2Kgs.25.3
+    note:
+      en: "Nebuchadnezzar besieges Jerusalem until famine breaks the city."
+      ru: "Навуходоносор осаждает Иерусалим, пока в городе не наступает голод."
+  - place: a231f80 # Jericho
+    ref: 2Kgs.25.4-2Kgs.25.5
+    note:
+      en: "King Zedekiah flees and is caught on the plains of Jericho."
+      ru: "Царь Седекия бежит и схвачен на равнинах Иерихонских."
+  - place: ab2bde8 # Riblah
+    ref: 2Kgs.25.6-2Kgs.25.7
+    note:
+      en: "Judgement at Riblah: Zedekiah's sons are killed and he is blinded."
+      ru: "Суд в Ривле: сыновья Седекии убиты, сам он ослеплён."
+  - place: a15257a # Jerusalem
+    ref: 2Kgs.25.8-2Kgs.25.10
+    note:
+      en: "Nebuzar-adan burns the Temple, the palace and the city and pulls down the walls."
+      ru: "Навузардан сжигает Храм, царский дом и город и разрушает стены."
+  - place: a217d18 # Babylon
+    ref: 2Kgs.25.11
+    note:
+      en: "The people are carried into exile to Babylon."
+      ru: "Народ уведён в плен в Вавилон."
+  - place: a6d57ed # Ramah
+    ref: Jer.40.1
+    note:
+      en: "At Ramah Jeremiah is set free from among the captives."
+      ru: "В Раме Иеремия освобождён из числа пленников."
+  - place: a736f6c # Mizpah
+    ref: Jer.40.6
+    note:
+      en: "He stays with Gedaliah, the governor, at Mizpah."
+      ru: "Он остаётся у правителя Годолии в Массифе."
+  - place: adb008c # Tahpanhes
+    ref: Jer.43.7
+    note:
+      en: "After Gedaliah's murder the remnant flees to Egypt, to Tahpanhes."
+      ru: "После убийства Годолии остаток народа бежит в Египет, в Тафнис."

@@ -1,0 +1,13 @@
+# Corrections on top of Cliopatria for the biblical Levant (borders audit, 2026-09-29).
+# An entry keeps a polity on the map for more years, reusing Cliopatria's last shape of
+# it. The shape is approximate: Judah's borders moved under Hezekiah and Josiah.
+overrides:
+  - polity: Kingdom of Judah
+    last_year: "586 BC"
+    reason: >-
+      Cliopatria ends Judah in 702 BC, after Sennacherib's campaign. Judah remained a
+      kingdom, vassal in turn to Assyria, Egypt and Babylon, until Jerusalem fell in 587
+      or 586 BC.
+    sources:
+      - "2 Kgs 18-25"
+      - "Jer 39:1-10; 52:4-16"

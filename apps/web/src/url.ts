@@ -1,0 +1,103 @@
+import { YEAR_MAX, YEAR_MIN, type Camera, type LayerVisibility } from "@hg/core";
+import type { Locale } from "@hg/model";
+
+/** The shareable view (ADR 0006): everything needed to reopen the same scene. */
+export interface UrlView {
+  readonly year?: number;
+  readonly place?: string;
+  readonly camera?: Camera;
+  readonly locale?: Locale;
+  /** `layers=borders,places`: the listed layers on, the others off. */
+  readonly layers?: LayerVisibility;
+  /** A tour to start (its id is checked against the loaded tours). */
+  readonly tour?: string;
+  /** The tour's stop, counted from 1 as the card shows it. */
+  readonly stop?: number;
+}
+
+const LAYERS = ["borders", "places", "relief", "routes"] as const;
+
+/** Only languages with a UI dictionary; uk and de join when theirs exist. */
+const LOCALES: readonly Locale[] = ["ru", "en"];
+
+const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
+/** Into [-180, 180): the same meridian however many turns the link adds. */
+const wrap180 = (v: number) => (v >= -180 && v < 180 ? v : ((((v + 180) % 360) + 360) % 360) - 180);
+
+export function readUrl(search = window.location.search): UrlView {
+  const p = new URLSearchParams(search);
+  const view: { -readonly [K in keyof UrlView]: UrlView[K] } = {};
+  const yearText = p.get("year")?.trim() ?? "";
+  const year = Number(yearText);
+  if (yearText !== "" && Number.isInteger(year)) view.year = clamp(year, YEAR_MIN, YEAR_MAX);
+  const place = p.get("place");
+  if (place && /^a[0-9a-f]{6}$/.test(place)) view.place = place;
+  const cam = p.get("camera")?.split(",").map(Number);
+  if (cam?.length === 5 && cam.every(Number.isFinite)) {
+    const [lon = 0, lat = 0, zoom = 0, pitch = 0, bearing = 0] = cam;
+    // Links can come from anywhere, embeds included: out-of-range values would make
+    // MapLibre throw before the first frame, so they are brought into range here.
+    view.camera = {
+      center: [wrap180(lon), clamp(lat, -85, 85)],
+      zoom: clamp(zoom, 0, 22),
+      pitch: clamp(pitch, 0, 80),
+      bearing: wrap180(bearing),
+    };
+  }
+  const locale = p.get("locale") as Locale | null;
+  if (locale && LOCALES.includes(locale)) view.locale = locale;
+  const listed = p.get("layers")?.split(",");
+  if (listed?.some((l) => (LAYERS as readonly string[]).includes(l))) {
+    view.layers = {
+      borders: listed.includes("borders"),
+      places: listed.includes("places"),
+      relief: listed.includes("relief"),
+      routes: listed.includes("routes"),
+    };
+  }
+  const tour = p.get("tour");
+  if (tour && /^[a-z0-9-]{1,40}$/.test(tour)) {
+    view.tour = tour;
+    const stop = Number(p.get("stop"));
+    if (Number.isInteger(stop) && stop >= 1 && stop <= 500) view.stop = stop;
+  }
+  return view;
+}
+
+type WritableView = Required<Pick<UrlView, "year" | "camera" | "locale">> &
+  Pick<UrlView, "place" | "layers" | "tour" | "stop">;
+
+export function writeUrl(view: WritableView): void {
+  window.history.replaceState(null, "", `?${viewSearch(view, window.location.search)}`);
+}
+
+/** The query string for a view. Parameters this app does not own (theme from an
+ * embedding host, docs/embed-protocol.md) are kept, not wiped. */
+export function viewSearch(view: WritableView, current = ""): string {
+  const p = new URLSearchParams(current);
+  p.set("year", String(view.year));
+  if (view.place) p.set("place", view.place);
+  else p.delete("place");
+  const c = view.camera;
+  p.set(
+    "camera",
+    [
+      c.center[0].toFixed(4),
+      c.center[1].toFixed(4),
+      c.zoom.toFixed(2),
+      c.pitch.toFixed(0),
+      c.bearing.toFixed(0),
+    ].join(","),
+  );
+  p.set("locale", view.locale);
+  // Layers are written only when some are off: the default view keeps a short link.
+  const on = view.layers ? LAYERS.filter((l) => view.layers?.[l]) : LAYERS;
+  if (on.length < LAYERS.length) p.set("layers", on.join(","));
+  else p.delete("layers");
+  if (view.tour) p.set("tour", view.tour);
+  else p.delete("tour");
+  // The first stop is where a tour starts anyway: only later ones are written.
+  if (view.tour && view.stop !== undefined && view.stop > 1) p.set("stop", String(view.stop));
+  else p.delete("stop");
+  return p.toString();
+}

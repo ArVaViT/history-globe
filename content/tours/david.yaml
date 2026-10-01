@@ -1,0 +1,76 @@
+# The life of David, 1 Samuel 16 - 1 Kings 2, in the order of the text. The tour's
+# year (1010 BC) is the conventional start of his reign (c. 1010-970 BC), a point for the
+# map rather than a date.
+id: david
+title:
+  en: "The life of David"
+  ru: "Жизнь Давида"
+year: "1010 BC"
+approximate: true
+stops:
+  - place: a112427 # Bethlehem
+    ref: 1Sam.16.1-1Sam.16.13
+    note:
+      en: "In Bethlehem Samuel anoints the youngest son of Jesse, and the Spirit of the Lord comes upon David."
+      ru: "В Вифлееме Самуил помазывает младшего сына Иессея, и Дух Господень почиет на Давиде."
+  - place: ab183f8 # Valley of Elah
+    ref: 1Sam.17.2-1Sam.17.51
+    note:
+      en: "In the Valley of Elah David kills Goliath with a sling and a stone."
+      ru: "В долине дуба Давид поражает Голиафа пращею и камнем."
+  - place: ae1c9ea # Naioth
+    ref: 1Sam.19.18-1Sam.19.24
+    note:
+      en: "Fleeing Saul, David comes to Samuel and stays with him at Naioth in Ramah."
+      ru: "Спасаясь от Саула, Давид приходит к Самуилу и остаётся с ним в Навафе в Раме."
+  - place: afdda14 # Nob
+    ref: 1Sam.21.1-1Sam.21.9
+    note:
+      en: "At Nob the priest Ahimelech gives him the holy bread and the sword of Goliath."
+      ru: "В Номве священник Ахимелех даёт ему священный хлеб и меч Голиафа."
+  - place: a18873f # Gath
+    ref: 1Sam.21.10-1Sam.21.15
+    note:
+      en: "Before Achish king of Gath he pretends to be mad."
+      ru: "Перед Анхусом, царём Гефским, он притворяется безумным."
+  - place: af82614 # Adullam
+    ref: 1Sam.22.1-1Sam.22.2
+    note:
+      en: "In the cave of Adullam his family and some four hundred men gather around him."
+      ru: "В пещеру Одолламскую к нему приходят родные и около четырёхсот человек."
+  - place: a51df0e # Engedi
+    ref: 1Sam.24.1-1Sam.24.22
+    note:
+      en: "In the wilderness of Engedi he spares Saul in the cave, cutting off only the edge of his robe."
+      ru: "В пустыне Ен-Гадди он щадит Саула в пещере и отрезает лишь край его одежды."
+  - place: a0ed7ff # Ziklag
+    ref: 1Sam.27.5-1Sam.27.7
+    note:
+      en: "Achish gives him Ziklag, where he lives among the Philistines."
+      ru: "Анхус даёт ему Секелаг, и он живёт среди Филистимлян."
+  - place: acf57c5 # Mount Gilboa
+    ref: 1Sam.31.1-1Sam.31.6
+    note:
+      en: "On Mount Gilboa Saul and his three sons fall in battle with the Philistines."
+      ru: "На горе Гелвуе в битве с Филистимлянами гибнут Саул и три его сына."
+  - place: a85151a # Hebron
+    ref: 2Sam.2.1-2Sam.2.4
+    note:
+      en: "In Hebron the men of Judah anoint David king over the house of Judah."
+      ru: "В Хевроне мужи Иудины помазывают Давида на царство над домом Иудиным."
+  - place: a15257a # Jerusalem
+    ref: 2Sam.5.6-2Sam.5.9
+    note:
+      en: "He takes the stronghold of Zion and names it the City of David."
+      ru: "Он берёт крепость Сион и называет её городом Давидовым."
+  - place: ae5bfe9 # Mahanaim
+    ref: 2Sam.17.24-2Sam.17.29
+    note:
+      en: "Fleeing Absalom, he crosses the Jordan to Mahanaim."
+      ru: "Спасаясь от Авессалома, он уходит за Иордан, в Маханаим."
+  - place: a15257a # Jerusalem
+    ref: 1Kgs.2.10-1Kgs.2.11
+    year: "970 BC"
+    note:
+      en: "David dies and is buried in the City of David, after forty years as king: seven in Hebron, thirty-three in Jerusalem."
+      ru: "Давид умирает и погребён в городе Давидовом; он царствовал сорок лет: семь — в Хевроне и тридцать три — в Иерусалиме."

@@ -1,0 +1,33 @@
+# Paul's arrest and trials, Acts 21:27-26:32, in the order of the text, between the third
+# journey and the voyage to Rome. The tour's year (AD 57) is the usual date of the arrest,
+# a point for the map; Festus succeeds Felix "after two years" (24:27), c. AD 59, and the
+# stops from then carry that year. Antipatris (23:31) has no point on the map.
+id: paul-trials
+title:
+  en: "Paul's arrest and trials"
+  ru: "Арест и суды Павла"
+year: "AD 57"
+approximate: true
+stops:
+  - place: a15257a # Jerusalem
+    ref: Acts.21.27-Acts.23.11
+    note:
+      en: 'Seized in the Temple and bound with two chains, Paul speaks to the people and before the council; by night the Lord stands by him: "so must thou bear witness also at Rome."'
+      ru: "Схваченный в храме и скованный двумя цепями, Павел говорит к народу и перед синедрионом; ночью Господь говорит ему: «как ты свидетельствовал о Мне в Иерусалиме, так надлежит тебе свидетельствовать и в Риме»."
+  - place: a58735e # Caesarea
+    ref: Acts.23.23-Acts.24.27
+    note:
+      en: "Led out by night under guard by way of Antipatris to Caesarea, he answers before the governor Felix, who trembles as he reasons of righteousness and judgment to come, and keeps him bound two years."
+      ru: "Ночью под стражей его уводят через Антипатриду в Кесарию; он отвечает перед правителем Феликсом, который приходит в страх от слов о правде и будущем суде и два года держит его в узах."
+  - place: a15257a # Jerusalem
+    ref: Acts.25.1-Acts.25.5
+    year: "AD 59"
+    note:
+      en: "Festus, the new governor, goes up to Jerusalem, where the high priest and the chief of the Jews ask for Paul to be brought there, laying wait to kill him on the way."
+      ru: "Новый правитель Фест приходит в Иерусалим, и первосвященник со знатнейшими из Иудеев просят вызвать Павла туда, злоумышляя убить его на дороге."
+  - place: a58735e # Caesarea
+    ref: Acts.25.6-Acts.26.32
+    year: "AD 59"
+    note:
+      en: 'Back in Caesarea Paul appeals to Caesar, and before Agrippa tells of his conversion; Agrippa answers: "Almost thou persuadest me to be a Christian."'
+      ru: "В Кесарии Павел требует суда кесарева и перед Агриппой рассказывает о своём обращении; Агриппа отвечает: «ты немного не убеждаешь меня сделаться Христианином»."

@@ -1,0 +1,34 @@
+# Daniel, in the order of the book. Its own dates give the stops' years: the third year
+# of Jehoiakim (605 BC, Dan 1:1), the night Babylon fell (539 BC, Dan 5:30), the third
+# year of Belshazzar (c. 550 BC, Dan 8:1) and the third year of Cyrus (536 BC, Dan 10:1).
+# The book is told out of order: the vision at Susa comes before the fall of Babylon.
+id: daniel
+title:
+  en: "Daniel"
+  ru: "Пророк Даниил"
+year: "605 BC"
+approximate: true
+stops:
+  - place: a15257a # Jerusalem
+    ref: Dan.1.1-Dan.1.2
+    note:
+      en: "In the third year of Jehoiakim Nebuchadnezzar besieges Jerusalem and carries off some of the vessels of the house of God."
+      ru: "В третий год Иоакима Навуходоносор осаждает Иерусалим и уносит часть сосудов дома Божия."
+  - place: a217d18 # Babylon
+    ref: Dan.1.3-Dan.6.28
+    year: "539 BC"
+    note:
+      en: 'In Babylon: the king''s dream, the fiery furnace, the writing on the wall ("MENE, MENE, TEKEL, UPHARSIN"), the lions'' den.'
+      ru: "В Вавилоне: сон царя, печь огненная, надпись на стене («мене, мене, текел, упарсин»), ров львиный."
+  - place: a033b84 # Susa
+    ref: Dan.8.1-Dan.8.27
+    year: "550 BC"
+    note:
+      en: "In the third year of Belshazzar Daniel sees in a vision that he is at Susa, by the river Ulai."
+      ru: "В третий год Валтасара Даниил видит себя в видении в Сузах, у реки Улая."
+  - place: a38ebfd # Tigris
+    ref: Dan.10.1-Dan.10.21
+    year: "536 BC"
+    note:
+      en: "In the third year of Cyrus, on the bank of the great river Tigris, a man clothed in linen appears to him."
+      ru: "В третий год Кира на берегу большой реки Тигра ему является муж, облечённый в льняную одежду."

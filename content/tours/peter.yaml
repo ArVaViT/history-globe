@@ -1,0 +1,47 @@
+# The apostle Peter in Acts 2-12, from Pentecost to the death of Herod Agrippa I, in the
+# order of the text. The tour's year (AD 40) is a point for the map between Pentecost
+# (c. AD 30) and Herod's death in AD 44 (Josephus, Antiquities 19.343-350).
+id: peter
+title:
+  en: "The apostle Peter"
+  ru: "Апостол Пётр"
+year: "AD 40"
+approximate: true
+stops:
+  - place: a15257a # Jerusalem
+    ref: Acts.2.14-Acts.2.41
+    year: "AD 30"
+    note:
+      en: "At Pentecost Peter stands with the eleven and speaks; about three thousand are baptised."
+      ru: "В день Пятидесятницы Пётр, став с одиннадцатью, говорит народу; крестятся около трёх тысяч."
+  - place: a282dce # Samaria (region)
+    ref: Acts.8.14-Acts.8.25
+    note:
+      en: "Sent with John to Samaria, he rebukes Simon, who wanted to buy the gift of God with money."
+      ru: "Посланный с Иоанном в Самарию, он обличает Симона, помыслившего получить дар Божий за деньги."
+  - place: a2c5cc7 # Lydda
+    ref: Acts.9.32-Acts.9.35
+    note:
+      en: "In Lydda he heals Aeneas, bedridden for eight years."
+      ru: "В Лидде он исцеляет Энея, восемь лет лежавшего в постели."
+  - place: ae023a9 # Joppa
+    ref: Acts.9.36-Acts.10.23
+    note:
+      en: "In Joppa he raises Tabitha, and on the housetop sees the vision of the sheet."
+      ru: "В Иоппии он воскрешает Тавифу и на кровле дома ему является видение полотна."
+  - place: a58735e # Caesarea
+    ref: Acts.10.24-Acts.10.48
+    note:
+      en: "In Caesarea the Holy Spirit falls on the centurion Cornelius and his household."
+      ru: "В Кесарии Дух Святой сходит на сотника Корнилия и его домашних."
+  - place: a15257a # Jerusalem
+    ref: Acts.11.2-Acts.12.17
+    note:
+      en: "Back in Jerusalem he tells the church about Cornelius; imprisoned by Herod, he is led out by an angel."
+      ru: "Вернувшись в Иерусалим, он рассказывает церкви о Корнилии; заключённого Иродом, его выводит из темницы Ангел."
+  - place: a58735e # Caesarea
+    ref: Acts.12.19-Acts.12.23
+    year: "AD 44"
+    note:
+      en: "In Caesarea Herod, who did not give God the glory, is struck by the angel of the Lord and dies."
+      ru: "В Кесарии Ирода, не воздавшего славы Богу, поражает Ангел Господень, и он умирает."

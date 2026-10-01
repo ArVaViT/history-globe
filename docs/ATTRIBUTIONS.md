@@ -15,6 +15,11 @@ Bible places
   Data (https://github.com/openbibleinfo/Bible-Geocoding-Data), licensed under
   CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Modified.
 
+Verse counts for reference checking
+  Chapter and verse counts derived from the World English Bible
+  (https://ebible.org/engwebp), public domain. "World English Bible" is a
+  trademark of eBible.org. Not shipped as text; used to check references.
+
 Proper names, people and places
   STEP Bible (www.STEPBible.org), TIPNR – Translators Individualised Proper
   Names with all References, based on work at Tyndale House Cambridge,
@@ -83,6 +88,12 @@ Software
   includes code from mapbox-gl-js v1.13 and earlier (Copyright (c) 2020,
   Mapbox, BSD-3-Clause), glfx.js (MIT) and d3-color. Full license text:
   see third-party-licenses.
+  The MapLibre files are shipped unchanged, with their LICENSE.txt, under
+  vendor/maplibre-gl-<version>/ in the build.
+  Lucide icons — Copyright (c) 2026 Lucide Icons and Contributors, ISC; nine of
+  the fifteen icons derive from Feather, Copyright (c) 2013-present Cole Bemis, MIT.
+  Copied as SVG (apps/web/src/components/icons.tsx); both licences ship in
+  licenses/lucide-icons.txt.
   maplibre-gl-dates — OpenHistoricalMap, CC0 1.0.
   PMTiles — Protomaps, BSD-3-Clause.
 

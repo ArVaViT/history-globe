@@ -1,0 +1,251 @@
+# When places stood as towns (ADR 0003 years; "c." marks an approximate year and is
+# kept). `from` is the first year it stood, `until` the last; `gap` gives the first and
+# last years it lay in ruins between two lives. Outside those years the map shows the
+# place faded, whatever the testament. Every entry cites its sources. Places whose dates
+# are disputed (Jericho, Ai, Hazor, Gath) are left out rather than guessed.
+places:
+  - id: ac9adc9
+    en: Tiberias
+    from: "c. AD 20"
+    note:
+      en: "Founded by Herod Antipas on the Sea of Galilee and named after Tiberius."
+      ru: "Основан Иродом Антипой на берегу Галилейского моря и назван в честь Тиберия."
+    sources:
+      - "Josephus, Antiquities 18.36-38"
+  - id: a58735e
+    en: Caesarea
+    from: "22 BC"
+    note:
+      en: "Built by Herod the Great from 22 BC on the site of Strato's Tower."
+      ru: "Построена Иродом Великим с 22 г. до н. э. на месте Башни Стратона."
+    sources:
+      - "Josephus, Antiquities 15.331-341; 16.136"
+  - id: a70fd5d
+    en: Nineveh
+    until: "612 BC"
+    note:
+      en: "Taken and destroyed by the Babylonians and the Medes in 612 BC; only a small settlement lived on at the site."
+      ru: "Взята и разрушена вавилонянами и мидянами в 612 г. до н. э.; на месте города осталось лишь небольшое поселение."
+    sources:
+      - "Babylonian Chronicle, ABC 3 (Fall of Nineveh Chronicle)"
+  - id: a15257a
+    en: Jerusalem
+    until: "AD 70"
+    gap:
+      from: "c. 586 BC"
+      until: "c. 539 BC"
+    note:
+      en: "Burnt by Nebuchadnezzar's army (587 or 586 BC, the year is disputed); the exiles returned under Cyrus in 538 BC. In AD 70 Titus's army destroyed the city and the Temple; a Roman legion camped in the ruins until Aelia Capitolina was built c. AD 130."
+      ru: "Сожжён войском Навуходоносора (587 или 586 г. до н. э., год спорный); изгнанники вернулись при Кире в 538 г. до н. э. В 70 г. н. э. город и Храм разрушены войском Тита; в руинах стоял римский легион, пока ок. 130 г. н. э. не построили Элию Капитолину."
+    sources:
+      - "2 Kgs 25:8-10; Jer 52:12-14"
+      - "Josephus, Jewish War 6.249-266; 7.1-4"
+      - "Ezra 1:1-4"
+  - id: a041bb3
+    en: Samaria
+    from: "c. 880 BC"
+    gap:
+      from: "c. 108 BC"
+      until: "c. 64 BC"
+    note:
+      en: "Built by King Omri on the hill he bought from Shemer; destroyed by John Hyrcanus, given back to its people by Pompey in 63 BC, rebuilt by Gabinius, and later became Herod's Sebaste."
+      ru: "Построена царём Амврием на горе, купленной у Семира; разрушена Иоанном Гирканом, возвращена жителям Помпеем в 63 г. до н. э. и отстроена Габинием, а позже стала Севастой Ирода."
+    sources:
+      - "1 Kgs 16:23-24"
+      - "Josephus, Antiquities 13.275-281; 14.75; 14.88"
+  - id: ae41ab4
+    en: Antioch
+    from: "300 BC"
+    note:
+      en: "Founded by Seleucus I Nicator on the Orontes and named after his father Antiochus."
+      ru: "Основана Селевком I Никатором на Оронте и названа в честь его отца Антиоха."
+    sources:
+      - "Strabo, Geography 16.2.4"
+  - id: afc8e7a
+    en: Rome
+    from: "c. 753 BC"
+    note:
+      en: "Varro's traditional date of the founding of Rome; the Palatine was settled from the 10th–9th centuries BC, so the year is conventional."
+      ru: "Традиционная дата основания Рима по Варрону; Палатин был заселён с X–IX вв. до н. э., так что год условный."
+    sources:
+      - "Varronian era, as in Plutarch, Romulus 12, and Censorinus, De die natali 21"
+      - "Dionysius of Halicarnassus, Roman Antiquities 1.74 (gives 752/751 BC)"
+  - id: af2161c
+    en: Capernaum
+    from: "c. 150 BC"
+    note:
+      en: "The fishing village was founded in the Hasmonean period, in the 2nd century BC."
+      ru: "Рыбацкое селение возникло в хасмонейский период, во II в. до н. э."
+    sources:
+      - "Excavations of V. Corbo, S. Loffreda and V. Tzaferis at Capernaum (NEAEHL, 'Capernaum')"
+  - id: a3fc47a
+    en: Ekron
+    until: "c. 604 BC"
+    note:
+      en: "The city at Tel Miqne burnt in Nebuchadnezzar II's campaign on the Philistine coast and was not rebuilt as a city."
+      ru: "Город на Тель-Микне сгорел во время похода Навуходоносора II на филистимское побережье и больше не был отстроен как город."
+    sources:
+      - "Tel Miqne-Ekron excavations, S. Gitin and T. Dothan (NEAEHL, 'Tel Miqne-Ekron')"
+  - id: a6f437a
+    en: Corinth
+    gap:
+      from: "146 BC"
+      until: "45 BC"
+    note:
+      en: "Sacked by Lucius Mummius in 146 BC and left desolate until Julius Caesar founded a Roman colony there in 44 BC."
+      ru: "Разграблен Луцием Муммием в 146 г. до н. э. и лежал в запустении, пока Юлий Цезарь не основал там римскую колонию в 44 г. до н. э."
+    sources:
+      - "Pausanias, Description of Greece 2.1.2"
+      - "Strabo, Geography 8.6.23"
+  - id: a49e1d0
+    en: Philippi
+    from: "c. 360 BC"
+    note:
+      en: "Settled by Thasos as Krenides and refounded by Philip II of Macedon, who named it after himself (356 BC)."
+      ru: "Основаны фасосцами под названием Крениды; Филипп II Македонский основал их заново и дал им своё имя (356 г. до н. э.)."
+    sources:
+      - "Diodorus Siculus 16.3.7; 16.8.6"
+      - "Appian, Civil Wars 4.105"
+  - id: afa9d8e
+    en: Thessalonica
+    from: "c. 315 BC"
+    note:
+      en: "Founded by Cassander, who joined the towns of Crusis and the Thermaic Gulf and named the city after his wife Thessalonike."
+      ru: "Основана Кассандром, объединившим городки Крусиды и Фермейского залива и назвавшим город в честь своей жены Фессалоники."
+    sources:
+      - "Strabo, Geography 7, fr. 21"
+  - id: aee7248
+    en: Alexandria
+    from: "331 BC"
+    note:
+      en: "Founded by Alexander the Great on the western edge of the Nile delta."
+      ru: "Основана Александром Македонским на западном краю дельты Нила."
+    sources:
+      - "Arrian, Anabasis 3.1.5-3.2.2"
+      - "Plutarch, Alexander 26"
+  - id: a6d306d
+    en: Seleucia
+    from: "300 BC"
+    note:
+      en: "Founded by Seleucus I as the seaport of Antioch."
+      ru: "Основана Селевком I как морская гавань Антиохии."
+    sources:
+      - "Strabo, Geography 16.2.4"
+  - id: a83fb1e
+    en: Laodicea
+    from: "c. 260 BC"
+    note:
+      en: "Founded by the Seleucid king Antiochus II and named after his wife Laodice."
+      ru: "Основана селевкидским царём Антиохом II и названа в честь его жены Лаодики."
+    sources:
+      - "Pliny, Natural History 5.105"
+      - "Stephanus of Byzantium, Ethnica, s.v. Laodikeia"
+  - id: a4bdea7
+    en: Amphipolis
+    from: "437 BC"
+    note:
+      en: "Founded by Athenian colonists under Hagnon on the Strymon, at the place called Nine Ways."
+      ru: "Основан афинскими колонистами во главе с Гагноном на Стримоне, в месте, называвшемся Девять Путей."
+    sources:
+      - "Thucydides 4.102"
+  - id: a91c509
+    en: Troas
+    from: "c. 310 BC"
+    note:
+      en: "Founded by Antigonus as Antigonia and renamed Alexandria Troas by Lysimachus."
+      ru: "Город основан Антигоном как Антигония и переименован Лисимахом в Александрию Троадскую."
+    sources:
+      - "Strabo, Geography 13.1.26"
+  - id: ae1f807
+    en: Calah
+    until: "c. 612 BC"
+    note:
+      en: "Kalhu (Nimrud), long a royal city of Assyria, was sacked by the Medes and Babylonians in the fall of the empire (614–612 BC); only a village later stood on the ruins."
+      ru: "Калах (Нимруд), долгое время царский город Ассирии, был разграблен мидянами и вавилонянами при падении царства (614–612 гг. до н. э.); позже на развалинах стояло лишь селение."
+    sources:
+      - "D. Oates and J. Oates, Nimrud: An Assyrian Imperial City Revealed (2001)"
+      - "Xenophon, Anabasis 3.4.7 (the deserted city of Larisa)"
+  - id: adf74d4
+    en: Shechem
+    until: "c. 107 BC"
+    note:
+      en: "The city at Tell Balata was destroyed by John Hyrcanus and never rebuilt; Flavia Neapolis was founded 2 km to the west in AD 72."
+      ru: "Город на Телль-Балате разрушен Иоанном Гирканом и больше не отстраивался; в 72 г. н. э. в 2 км к западу основан город Флавия Неаполис."
+    sources:
+      - "Josephus, Antiquities 13.255-256; Jewish War 1.63"
+      - "Shechem excavations of G. E. Wright and E. F. Campbell (NEAEHL, 'Shechem')"
+  - id: a5cda86
+    en: Mareshah
+    until: "40 BC"
+    note:
+      en: "Destroyed by the Parthians in 40 BC during the war between Antigonus and Herod; the tell was never resettled."
+      ru: "Разрушена парфянами в 40 г. до н. э. во время войны Антигона с Иродом; на холме больше не селились."
+    sources:
+      - "Josephus, Antiquities 14.364; Jewish War 1.269"
+      - "A. Kloner, Maresha Excavations Final Report I (IAA Reports 17, 2003)"
+  - id: ab7bf48
+    en: Caesarea Philippi
+    from: "c. 3 BC"
+    note:
+      en: "Founded by Philip the Tetrarch at the sanctuary of Pan (Panias) as his capital and named after Caesar."
+      ru: "Основана четвертовластником Филиппом у святилища Пана (Паниады), стала его столицей и названа в честь кесаря."
+    sources:
+      - "Josephus, Antiquities 18.28; Jewish War 2.168"
+      - "Banias excavations of V. Tzaferis (NEAEHL, 'Banias')"
+  - id: af43cde
+    en: Nicopolis
+    from: "c. 30 BC"
+    note:
+      en: "Founded by Octavian (Augustus) in Epirus beside the battlefield of Actium, as the City of Victory."
+      ru: "Основан Октавианом (Августом) в Эпире близ места битвы при Акциуме как «Город Победы»."
+    sources:
+      - "Cassius Dio, Roman History 51.1.3"
+      - "Strabo, Geography 7.7.6"
+  - id: a314765
+    en: Paphos
+    from: "c. 320 BC"
+    note:
+      en: "New Paphos, the harbour city of Acts, was founded by Nicocles, the last king of Old Paphos, in the late 4th century BC."
+      ru: "Новый Паф, приморский город из книги Деяний, основан Никоклом, последним царём Старого Пафа, в конце IV в. до н. э."
+    sources:
+      - "J. Młynarczyk, Nea Paphos III: Nea Paphos in the Hellenistic Period (1990)"
+      - "Nea Paphos, Temple of Artemis Agrotera dedication of Nicocles"
+  - id: a55027d
+    en: Miletus
+    gap:
+      from: "494 BC"
+      until: "c. 480 BC"
+    note:
+      en: "Taken by the Persians after the battle of Lade in 494 BC: the men were killed, the women and children enslaved, the city emptied; it was rebuilt on a new plan after the Greek victory at Mycale in 479 BC."
+      ru: "Взят персами после битвы при Ладе в 494 г. до н. э.: мужчины перебиты, женщины и дети уведены в рабство, город опустел; отстроен по новому плану после победы греков при Микале в 479 г. до н. э."
+    sources:
+      - "Herodotus 6.18-22; 9.104"
+      - "Miletus excavations (German Archaeological Institute), Hippodamian plan after 479 BC"
+  - id: a2e65fb
+    en: Smyrna
+    from: "c. 300 BC"
+    note:
+      en: "The Smyrna of Revelation was built anew on the slopes of Mount Pagos about 300 BC, begun by Antigonus and finished by Lysimachus; the older city had stood across the bay at Bayrakli."
+      ru: "Смирна из Откровения была заново построена на склонах горы Пагос около 300 г. до н. э.: начал Антигон, закончил Лисимах; прежний город стоял на другой стороне залива, у Байраклы."
+    sources:
+      - "Strabo, Geography 14.1.37"
+      - "Pausanias, Description of Greece 7.5.1-3 (ascribes the refoundation to Alexander)"
+      - "J. M. Cook, 'Old Smyrna, 1948-1951', Annual of the British School at Athens 53-54 (1958-59)"
+  - id: a1e3697
+    en: Syracuse
+    from: "c. 733 BC"
+    note:
+      en: "Founded by Corinthian colonists under Archias on the island of Ortygia, after they drove out the Sicels living there; 733 BC is the traditional year."
+      ru: "Основаны коринфскими колонистами во главе с Архием на острове Ортигия, откуда они прогнали живших там сикулов; 733 г. до н. э. — традиционный год."
+    sources:
+      - "Thucydides 6.3.2"
+      - "Eusebius, Chronicle (Jerome's version), Olympiad 11"
+  - id: a81cdb5
+    en: Cyrene
+    from: "c. 631 BC"
+    note:
+      en: "Founded by settlers from Thera under Battus, who first camped on the island of Platea and at Aziris before moving to the spring of Apollo; the traditional year is 631 BC."
+      ru: "Основана поселенцами с Феры во главе с Баттом, которые сперва жили на острове Платея и в Азирисе, а потом перешли к источнику Аполлона; традиционная дата — 631 г. до н. э."
+    sources:
+      - "Herodotus 4.150-159"
+      - "Supplementum Epigraphicum Graecum 9.3 (the 'Oath of the Settlers' inscription from Cyrene)"

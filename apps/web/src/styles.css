@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #2b2418;
+  --color-ink-soft: #6b5d48;
+  --color-paper: #f6efe1;
+  --color-paper-2: #ece2cc;
+  --color-line: rgb(43 36 24 / 0.14);
+  --color-accent: #9a3b1f;
+  --color-gold: #b88a2e;
+  /* The keyboard focus ring: gold dark enough for 3:1 on paper and on the map (WCAG 1.4.11). */
+  --color-focus: #946e20;
+  --color-night: #0c1520;
+  --font-sans: "Golos Text Variable", system-ui, sans-serif;
+  --font-serif: "Literata Variable", Georgia, serif;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--color-night);
+}
+
+/* The slider sits on the era bands: transparent track, clear thumb. */
+.timeline-range {
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+.timeline-range::-webkit-slider-runnable-track {
+  height: 20px;
+  background: transparent;
+}
+.timeline-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 0;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 3px solid #fff;
+  box-shadow:
+    0 0 0 1px rgb(43 36 24 / 0.18),
+    0 2px 8px rgb(0 0 0 / 0.3);
+  transition: transform 0.15s;
+}
+.timeline-range:active::-webkit-slider-thumb {
+  transform: scale(1.12);
+}
+.timeline-range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 3px solid var(--color-paper);
+}
+.timeline-range:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Map controls in the panels' glass: the zoom buttons, the compass and the (i). */
+.maplibregl-ctrl-group {
+  border-radius: 16px !important;
+  overflow: hidden;
+  background: rgb(246 239 225 / 0.9) !important;
+  border: 1px solid rgb(255 255 255 / 0.45);
+  box-shadow: 0 10px 30px -10px rgb(20 14 8 / 0.45) !important;
+  backdrop-filter: blur(16px) saturate(1.5);
+}
+.maplibregl-ctrl-attrib.maplibregl-compact {
+  background: rgb(246 239 225 / 0.92);
+  box-shadow: 0 6px 20px -8px rgb(20 14 8 / 0.45);
+}
+
+/* Hover and press feel immediate but not abrupt. */
+button,
+a,
+summary {
+  transition:
+    background-color 0.15s,
+    color 0.15s,
+    box-shadow 0.15s;
+}
+
+/* One visible focus ring for the keyboard, on every control (WCAG 2.4.7). In the base
+   layer, so a control's own rounding (rounded-full) and ring utilities still win. */
+@layer base {
+  :where(button, a, input, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+}
+
+/* A phone: pinch zooms and the compass is two fingers away, so the buttons and the
+   scale go; the attribution folds into its (i) under the header, clear of the slider. */
+@media (max-width: 767px) {
+  .maplibregl-ctrl-bottom-right .maplibregl-ctrl-group,
+  .maplibregl-ctrl-scale {
+    display: none;
+  }
+  .maplibregl-ctrl-bottom-right {
+    top: 72px;
+    bottom: auto;
+  }
+  /* Under the open column the (i) can't be seen: keep it out of the Tab order too. */
+  [data-panels="open"] .maplibregl-ctrl-attrib {
+    visibility: hidden;
+  }
+}
+
+/* A short screen wider than a phone (a phone on its side): the card at the top right would
+   run under the timeline, so it keeps above it and scrolls. */
+@media (min-width: 768px) and (max-height: 560px) {
+  .hg-card {
+    max-height: calc(100dvh - var(--hg-timeline-h, 124px) - 44px);
+    overflow-y: auto;
+    border-radius: 16px;
+  }
+}
+
+/* A modal window dims and softens the map behind it. */
+.hg-modal::backdrop {
+  background: rgb(20 14 8 / 0.35);
+  backdrop-filter: blur(2px);
+}
+
+/* The timeline zoomed away from the current year: the thumb at the edge is only a pointer. */
+.timeline-range[data-away]::-webkit-slider-thumb {
+  opacity: 0.35;
+}
+.timeline-range[data-away]::-moz-range-thumb {
+  opacity: 0.35;
+}
+
+/* The lights that run along a tour's route (maplibre-renderer.ts runPulses). */
+.hg-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff7e8;
+  box-shadow:
+    0 0 0 2px rgb(154 59 31 / 0.85),
+    0 0 10px 3px rgb(255 214 150 / 0.75);
+  pointer-events: none;
+}
+.hg-no-routes .hg-pulse {
+  display: none;
+}

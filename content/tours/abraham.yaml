@@ -1,0 +1,72 @@
+# Abraham's journey, Genesis 11:31-23:19, in the order of the text; his burial
+# (25:8-10) opens the Isaac tour.
+# The tour's year (1900 BC) is a conventional point for the map, not a date: the age of
+# the patriarchs is disputed (the slider says so for the Middle Bronze Age), with
+# proposals from c. 2100 to c. 1500 BC and later.
+id: abraham
+title:
+  en: "Abraham's journey"
+  ru: "Путь Авраама"
+year: "1900 BC"
+approximate: true
+stops:
+  - place: a6cf75c # Ur
+    ref: Gen.11.31
+    note:
+      en: "Terah takes Abram and his family out of Ur of the Chaldeans."
+      ru: "Фарра выводит Аврама и семью из Ура Халдейского."
+  - place: a6d9af3 # Haran
+    ref: Gen.11.31-Gen.11.32
+    note:
+      en: "They settle in Haran, where Terah dies."
+      ru: "Они поселяются в Харране; там умирает Фарра."
+  - place: adf74d4 # Shechem
+    ref: Gen.12.6-Gen.12.7
+    note:
+      en: "In Canaan the Lord appears to Abram at Shechem."
+      ru: "В Ханаане Господь является Авраму у Сихема."
+  - place: a64f355 # Bethel
+    ref: Gen.12.8
+    note:
+      en: "He pitches his tent between Bethel and Ai and builds an altar."
+      ru: "Ставит шатёр между Вефилем и Гаем и строит жертвенник."
+  - place: af301ca # Egypt
+    ref: Gen.12.10
+    note:
+      en: "Famine drives him down to Egypt."
+      ru: "Голод уводит его в Египет."
+  - place: a85151a # Hebron
+    ref: Gen.13.18
+    note:
+      en: "He settles by the oaks of Mamre at Hebron."
+      ru: "Поселяется у дубравы Мамре, что в Хевроне."
+  - place: a513646 # Dan
+    ref: Gen.14.14
+    note:
+      en: "He pursues the kings who took Lot as far as Dan."
+      ru: "Преследует царей, пленивших Лота, до Дана."
+  - place: aad7e4e # Salem
+    ref: Gen.14.18
+    note:
+      en: "Melchizedek, king of Salem, brings out bread and wine."
+      ru: "Мелхиседек, царь Салимский, выносит хлеб и вино."
+  - place: a3f5814 # Gerar
+    ref: Gen.20.1
+    note:
+      en: "He stays for a time in Gerar."
+      ru: "Живёт в Гераре."
+  - place: a075d61 # Beersheba
+    ref: Gen.21.31
+    note:
+      en: 'The oath at Beersheba, "the well of the oath".'
+      ru: "Клятва в Вирсавии — «колодце клятвы»."
+  - place: adaf385 # Moriah
+    ref: Gen.22.2
+    note:
+      en: "The binding of Isaac on a mountain in the land of Moriah."
+      ru: "Жертвоприношение Исаака на горе в земле Мориа."
+  - place: ae00861 # Machpelah
+    ref: Gen.23.19
+    note:
+      en: "Sarah is buried in the cave of Machpelah; later Abraham too (Gen 25:9)."
+      ru: "Сарра погребена в пещере Махпела; позже там же — Авраам (Быт 25:9)."

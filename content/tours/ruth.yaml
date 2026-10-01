@@ -1,0 +1,24 @@
+# The book of Ruth, in the order of the text. The tour's year (1100 BC) is a point for
+# the map "in the days when the judges ruled" (Ruth 1:1), whose chronology is disputed.
+id: ruth
+title:
+  en: "Ruth"
+  ru: "Руфь"
+year: "1100 BC"
+approximate: true
+stops:
+  - place: a112427 # Bethlehem
+    ref: Ruth.1.1
+    note:
+      en: "In a famine a man of Bethlehem-judah goes with his wife and two sons to live in the fields of Moab."
+      ru: "Во время голода человек из Вифлеема Иудейского уходит с женой и двумя сыновьями жить на полях Моавитских."
+  - place: aa0b1d6 # Moab
+    ref: Ruth.1.2-Ruth.1.18
+    note:
+      en: 'Widowed in Moab, Ruth will not leave Naomi: "whither thou goest, I will go."'
+      ru: "Овдовев в Моаве, Руфь не оставляет Ноемини: «куда ты пойдешь, туда и я пойду»."
+  - place: a112427 # Bethlehem
+    ref: Ruth.1.19-Ruth.4.17
+    note:
+      en: "In Bethlehem she gleans in the field of Boaz and becomes his wife; her son Obed is the grandfather of David."
+      ru: "В Вифлееме она подбирает колосья на поле Вооза и становится его женой; её сын Овид — дед Давида."

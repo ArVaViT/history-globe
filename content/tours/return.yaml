@@ -1,0 +1,54 @@
+# The return from exile under Ezra (Ezra 7-8, the seventh year of Artaxerxes I, c. 458 BC)
+# and Nehemiah (Neh 1-12, his twentieth year, c. 445 BC). The tour's year is Ezra's;
+# Nehemiah's stops show 445 BC: the wall finished in Elul (6:15), the law read in the
+# seventh month after it (Neh 8), and the dedication of the wall (12:27, not dated) with
+# them. The first return under Cyrus (Ezra 1-6) is its own tour.
+id: return
+title:
+  en: "The return: Ezra and Nehemiah"
+  ru: "Возвращение: Ездра и Неемия"
+year: "458 BC"
+approximate: true
+stops:
+  # Ahava is only known to be near Babylon; OpenBible puts it on Babylon itself, so the
+  # setting out from Babylon (Ezra 7:9) is told here rather than as a stop in the same spot.
+  - place: a6c3859 # Ahava
+    ref: Ezra.8.15-Ezra.8.30
+    note:
+      en: "Leaving Babylon, Ezra and the exiles gather by the river that runs to Ahava, fast and pray for a safe journey."
+      ru: "Выйдя из Вавилона, Ездра и возвращающиеся изгнанники собираются у реки, втекающей в Агаву, постятся и молятся о благополучном пути."
+  - place: a15257a # Jerusalem
+    ref: Ezra.8.31-Ezra.8.32
+    note:
+      en: "They reach Jerusalem and rest three days."
+      ru: "Приходят в Иерусалим и отдыхают три дня."
+  - place: a033b84 # Susa
+    ref: Neh.1.1-Neh.1.4
+    year: "445 BC"
+    note:
+      en: "At Susa Nehemiah hears that the walls of Jerusalem lie broken."
+      ru: "В Сузах Неемия слышит, что стены Иерусалима разрушены."
+  - place: a15257a # Jerusalem
+    ref: Neh.2.11-Neh.2.18
+    year: "445 BC"
+    note:
+      en: "Nehemiah inspects the walls by night and the rebuilding begins."
+      ru: "Неемия ночью осматривает стены, и начинается восстановление."
+  - place: ae6bfe2 # Ono
+    ref: Neh.6.1-Neh.6.4
+    year: "445 BC"
+    note:
+      en: 'Sanballat and Geshem call him to meet them in the plain of Ono, meaning him harm; he answers: "I am doing a great work, so that I cannot come down."'
+      ru: "Санаваллат и Гешем зовут его встретиться на равнине Оно, замышляя зло; он отвечает: «я занят большим делом, не могу сойти»."
+  - place: a0293ff # Water Gate
+    ref: Neh.8.1-Neh.8.8
+    year: "445 BC"
+    note:
+      en: "In the seventh month all the people gather before the Water Gate; Ezra reads the book of the law from morning until midday, and the Levites give the sense."
+      ru: "В седьмой месяц весь народ собирается на площади перед Водяными воротами, Ездра читает книгу закона от рассвета до полудня, левиты поясняют, и народ понимает прочитанное."
+  - place: a15257a # Jerusalem
+    ref: Neh.12.27-Neh.12.43
+    year: "445 BC"
+    note:
+      en: 'At the dedication of the wall two great choirs go along it in opposite directions, "so that the joy of Jerusalem was heard even afar off."'
+      ru: "При освящении стены два больших хора идут по ней в разные стороны, «и веселие Иерусалима далеко было слышно»."
