@@ -29,9 +29,7 @@ export function LayerToggles({
   const { t } = useTranslation();
   return (
     <fieldset>
-      <legend className="pb-1 text-[11px] font-medium tracking-[0.12em] text-ink-soft uppercase">
-        {t("layers.title")}
-      </legend>
+      <legend className="pb-1 text-[13px] font-semibold text-ink">{t("layers.title")}</legend>
       {ORDER.map((layer) => (
         <label
           key={layer}

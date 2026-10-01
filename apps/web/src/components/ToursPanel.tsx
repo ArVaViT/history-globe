@@ -30,7 +30,7 @@ export function ToursPanel({
           if (group.length === 0) return null;
           return (
             <section key={testament} aria-label={t(`tours.${testament}`)}>
-              <div className="sticky top-0 z-[1] bg-paper px-4 pt-2 pb-0.5 text-[10.5px] tracking-[0.08em] text-ink-soft uppercase">
+              <div className="sticky top-0 z-[1] bg-paper px-4 pt-2 pb-0.5 text-[11.5px] font-medium text-ink-soft">
                 {t(`tours.${testament}`)}
               </div>
               {group.map((tour) => (

@@ -30,9 +30,7 @@ export function SettingsDialog({
       <Modal open={open && !legend} title={t("settings.title")} onClose={onClose}>
         <div className="flex flex-col gap-5">
           <div className="flex items-center justify-between">
-            <span className="text-[11px] font-medium tracking-[0.12em] text-ink-soft uppercase">
-              {t("settings.language")}
-            </span>
+            <span className="text-[13px] font-semibold text-ink">{t("settings.language")}</span>
             <div className="flex overflow-hidden rounded-full ring-1 ring-line">
               {(["ru", "en"] as const).map((l) => (
                 <button

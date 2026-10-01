@@ -130,9 +130,7 @@ export function PlaceCard({
 
       {versions.length > 1 && (
         <div className="mx-5 mt-4 rounded-xl border border-[#e0b98f] bg-[#fbf1e4] px-3 py-2.5">
-          <div className="text-[11px] font-medium tracking-[0.12em] text-[#7a4a1d] uppercase">
-            {t("place.sites_title")}
-          </div>
+          <div className="text-[12.5px] font-semibold text-[#7a4a1d]">{t("place.sites_title")}</div>
           <ul className="mt-1.5 space-y-1">
             {versions.map((s) => (
               <li key={`${s.label}-${s.at.join(",")}`}>
@@ -281,9 +279,7 @@ export function PlaceCard({
       )}
 
       <div className="mx-5 mt-4 flex items-baseline justify-between border-t border-line pt-3">
-        <span className="text-[11px] font-medium tracking-[0.12em] text-ink-soft uppercase">
-          {t("place.verses")}
-        </span>
+        <span className="text-[13px] font-semibold text-ink">{t("place.verses")}</span>
         <span className="text-[12px] text-ink-soft tabular-nums">
           {t("place.verse_count", { count: place.verses })} · {t("place.ot")} {place.ot} ·{" "}
           {t("place.nt")} {place.nt}

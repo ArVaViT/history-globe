@@ -34,13 +34,19 @@ body {
 }
 .timeline-range::-webkit-slider-thumb {
   appearance: none;
-  width: 18px;
-  height: 18px;
-  margin-top: 1px;
+  width: 20px;
+  height: 20px;
+  margin-top: 0;
   border-radius: 50%;
   background: var(--color-accent);
-  border: 3px solid var(--color-paper);
-  box-shadow: 0 1px 4px rgb(0 0 0 / 0.35);
+  border: 3px solid #fff;
+  box-shadow:
+    0 0 0 1px rgb(43 36 24 / 0.18),
+    0 2px 8px rgb(0 0 0 / 0.3);
+  transition: transform 0.15s;
+}
+.timeline-range:active::-webkit-slider-thumb {
+  transform: scale(1.12);
 }
 .timeline-range::-moz-range-thumb {
   width: 14px;
@@ -54,9 +60,28 @@ body {
   outline-offset: 2px;
 }
 
+/* Map controls in the panels' glass: the zoom buttons, the compass and the (i). */
 .maplibregl-ctrl-group {
-  border-radius: 12px !important;
+  border-radius: 16px !important;
   overflow: hidden;
+  background: rgb(246 239 225 / 0.9) !important;
+  border: 1px solid rgb(255 255 255 / 0.45);
+  box-shadow: 0 10px 30px -10px rgb(20 14 8 / 0.45) !important;
+  backdrop-filter: blur(16px) saturate(1.5);
+}
+.maplibregl-ctrl-attrib.maplibregl-compact {
+  background: rgb(246 239 225 / 0.92);
+  box-shadow: 0 6px 20px -8px rgb(20 14 8 / 0.45);
+}
+
+/* Hover and press feel immediate but not abrupt. */
+button,
+a,
+summary {
+  transition:
+    background-color 0.15s,
+    color 0.15s,
+    box-shadow 0.15s;
 }
 
 /* One visible focus ring for the keyboard, on every control (WCAG 2.4.7). In the base
