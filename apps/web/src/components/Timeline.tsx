@@ -279,6 +279,14 @@ export function Timeline({
             onChange={(e) => {
               onYear(Number(e.target.value));
             }}
+            // From the keyboard, + and − zoom around the year, as a pinch does.
+            onKeyDown={(e) => {
+              const f = e.key === "+" || e.key === "=" ? 0.5 : e.key === "-" ? 2 : 0;
+              if (!f) return;
+              e.preventDefault();
+              setView((v) => zoomView(v, f, year));
+            }}
+            aria-keyshortcuts="+ -"
             aria-label={t("time.year")}
             aria-valuetext={
               periodName ? `${formatYear(year, locale)}, ${periodName}` : formatYear(year, locale)
