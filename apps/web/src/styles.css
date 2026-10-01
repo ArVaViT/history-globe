@@ -94,3 +94,9 @@ body {
     border-radius: 16px;
   }
 }
+
+/* A modal window dims and softens the map behind it. */
+.hg-modal::backdrop {
+  background: rgb(20 14 8 / 0.35);
+  backdrop-filter: blur(2px);
+}

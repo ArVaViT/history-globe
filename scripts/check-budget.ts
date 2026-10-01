@@ -1,7 +1,8 @@
 /**
  * JS budget (ADR 0010): everything needed before the first map frame, the entry chunk,
  * the renderer chunk it loads at once and MapLibre's own files under vendor/ (library,
- * worker and the module they share), at most 400 kB gzip (1 kB = 1000 bytes).
+ * worker and the module they share), at most 420 kB gzip (1 kB = 1000 bytes); raised from
+ * 400 for the settings window and the timeline zoom (ADR 0011).
  *
  * Usage: node scripts/check-budget.ts  (after `pnpm build`)
  */
@@ -9,7 +10,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
 import { gzipSync } from "node:zlib";
 
-const BUDGET_KB = 400;
+const BUDGET_KB = 420;
 const dist = join(import.meta.dirname, "../apps/web/dist");
 const js = readdirSync(dist, { recursive: true, encoding: "utf8" })
   .filter((f) => /^(assets|vendor)\//.test(f) && /\.m?js$/.test(f))

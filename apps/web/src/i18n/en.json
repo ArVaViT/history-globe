@@ -143,5 +143,12 @@
     "title": "Something went wrong.",
     "reload": "Reload"
   },
-  "about": "About"
+  "about": "About",
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "help": "Help and sources"
+  },
+  "more": "Tours, events, in view",
+  "close": "Close"
 }

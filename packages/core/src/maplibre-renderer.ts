@@ -101,6 +101,17 @@ export class MapLibreRenderer implements Renderer {
         }
       });
     }
+    // MapLibre unfolds the compact attribution once by itself, when it first fills: fold
+    // it back, so the (i) only opens when someone presses it.
+    const attrib = this.map.getContainer().querySelector(".maplibregl-ctrl-attrib");
+    if (attrib) {
+      const fold = new MutationObserver(() => {
+        if (!attrib.classList.contains("maplibregl-compact-show")) return;
+        attrib.classList.remove("maplibregl-compact-show");
+        fold.disconnect();
+      });
+      fold.observe(attrib, { attributes: true, attributeFilter: ["class"] });
+    }
     // Place icons are drawn when the style first asks for them.
     this.map.setMissingStyleImageResolver((id) => {
       if (this.map.hasImage(id)) return;

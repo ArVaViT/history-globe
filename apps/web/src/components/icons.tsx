@@ -113,6 +113,14 @@ export const Search = icon(
     <circle cx="11" cy="11" r="8" />
   </>,
 );
+export const Settings = icon(
+  <>
+    <path d="M20 7h-9" />
+    <path d="M14 17H5" />
+    <circle cx="17" cy="17" r="3" />
+    <circle cx="7" cy="7" r="3" />
+  </>,
+);
 export const X = icon(
   <>
     <path d="M18 6 6 18" />

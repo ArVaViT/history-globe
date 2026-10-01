@@ -1,12 +1,11 @@
 import { YEAR_MAX, YEAR_MIN } from "@hg/core";
-import type { Locale } from "@hg/model";
-import { Menu, PanelLeftClose } from "./components/icons";
+import { ChevronDown, Menu, PanelLeftClose, Settings } from "./components/icons";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "./i18n";
 import { HoverTip, PolityTip } from "./components/HoverTip";
 import { InViewPanel } from "./components/InViewPanel";
-import { LayersPanel, LegendPanel } from "./components/LayersPanel";
 import { Panel } from "./components/Panel";
+import { SettingsDialog } from "./components/Settings";
 import { PlaceCard } from "./components/PlaceCard";
 import { SearchBox } from "./components/SearchBox";
 import { Timeline } from "./components/Timeline";
@@ -36,6 +35,8 @@ export function App() {
   const [data, setData] = useState<LoadedData | null>(null);
   const [dataError, setDataError] = useState<string | null>(null);
   const [panelsOpen, togglePanels] = usePanelsOpen();
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(readMore);
   const narrow = useNarrow();
   const timelineBox = useHeightVar("--hg-timeline-h");
   const { globe, error: mapError } = useGlobe(container, data, INITIAL);
@@ -146,7 +147,9 @@ export function App() {
             className="absolute top-4 bottom-12 left-4 flex flex-col gap-3 overflow-y-auto pr-1 [scrollbar-width:thin] *:shrink-0 max-md:inset-x-3 max-md:top-3 max-md:bottom-auto max-md:z-10 max-md:max-h-[calc(100dvh-var(--hg-timeline-h,124px)-32px)] max-md:pr-0"
           >
             {/* On a panel, not on the map: state labels run under the corner. */}
-            <Panel className="flex w-[340px] max-md:w-full items-center justify-between gap-2 px-2 py-2">
+            <Panel
+              className={`flex items-center gap-1 px-1.5 py-1.5 ${columnShown ? "w-[340px] max-md:w-full" : "w-fit"}`}
+            >
               <button
                 onClick={() => {
                   // On a phone an open card hides the column: the burger closes the card
@@ -169,19 +172,34 @@ export function App() {
                   <Menu className="size-5" aria-hidden />
                 )}
               </button>
-              <h1 className="flex-1 font-serif text-[20px] font-semibold tracking-tight text-ink">
+              {/* The burger folds the title away too: closed, only the two buttons stay. */}
+              <h1
+                className={`flex-1 pl-1 font-serif text-[19px] font-semibold tracking-tight text-ink ${columnShown ? "" : "sr-only"}`}
+              >
                 History Globe
               </h1>
-              <a
-                href={`${import.meta.env.BASE_URL}about.html${state.locale === "en" ? "#en" : ""}`}
-                aria-label={t("about")}
-                title={t("about")}
-                className="grid size-7 place-items-center rounded-full text-[13px] font-semibold text-ink-soft ring-1 ring-line hover:bg-paper-2 hover:text-ink"
+              <button
+                onClick={() => {
+                  setSettingsOpen(true);
+                }}
+                aria-haspopup="dialog"
+                aria-label={t("settings.title")}
+                title={t("settings.title")}
+                className="grid size-9 place-items-center rounded-full text-ink-soft hover:bg-paper-2 hover:text-ink"
               >
-                ?
-              </a>
-              <LocaleSwitch value={state.locale} onChange={engine.setLocale} />
+                <Settings className="size-5" aria-hidden />
+              </button>
             </Panel>
+            <SettingsDialog
+              open={settingsOpen}
+              onClose={() => {
+                setSettingsOpen(false);
+              }}
+              locale={state.locale}
+              onLocale={engine.setLocale}
+              layers={state.layers}
+              onLayer={engine.setLayer}
+            />
             {panelsOpen && (
               <div
                 id="side-panels"
@@ -194,36 +212,55 @@ export function App() {
                     engine.selectPlace(id);
                   }}
                 />
-                <LayersPanel layers={state.layers} onToggle={engine.setLayer} />
-                <LegendPanel />
-                <ToursPanel
-                  tours={data.tours}
-                  onStart={(id) => {
-                    setPlaying(false);
-                    engine.startTour(id);
-                  }}
-                />
-                <EventsPanel
-                  events={data.events}
-                  year={state.year}
-                  locale={state.locale}
-                  onPick={(e) => {
-                    setPlaying(false);
-                    engine.stopTour();
-                    engine.setYear(e.year);
-                    if (e.place) engine.selectPlace(e.place, { fly: true });
-                  }}
-                />
-                <InViewPanel
-                  ids={inView}
-                  data={data}
-                  locale={state.locale}
-                  year={state.year}
-                  selected={state.selectedPlace}
-                  onSelect={(id) => {
-                    engine.selectPlace(id);
-                  }}
-                />
+                <Panel className="w-[340px] max-md:w-full">
+                  <button
+                    onClick={() => {
+                      setMoreOpen(!moreOpen);
+                      writeMore(!moreOpen);
+                    }}
+                    aria-expanded={moreOpen}
+                    aria-controls={moreOpen ? "more-panels" : undefined}
+                    className="flex w-full items-center justify-between px-4 py-3 text-[13px] font-medium text-ink-soft hover:text-ink"
+                  >
+                    {t("more")}
+                    <ChevronDown
+                      className={`size-4 transition-transform ${moreOpen ? "" : "-rotate-90"}`}
+                      aria-hidden
+                    />
+                  </button>
+                </Panel>
+                {moreOpen && (
+                  <div id="more-panels" className="flex flex-col gap-3 *:shrink-0">
+                    <ToursPanel
+                      tours={data.tours}
+                      onStart={(id) => {
+                        setPlaying(false);
+                        engine.startTour(id);
+                      }}
+                    />
+                    <EventsPanel
+                      events={data.events}
+                      year={state.year}
+                      locale={state.locale}
+                      onPick={(e) => {
+                        setPlaying(false);
+                        engine.stopTour();
+                        engine.setYear(e.year);
+                        if (e.place) engine.selectPlace(e.place, { fly: true });
+                      }}
+                    />
+                    <InViewPanel
+                      ids={inView}
+                      data={data}
+                      locale={state.locale}
+                      year={state.year}
+                      selected={state.selectedPlace}
+                      onSelect={(id) => {
+                        engine.selectPlace(id);
+                      }}
+                    />
+                  </div>
+                )}
               </div>
             )}
           </aside>
@@ -308,21 +345,19 @@ export function App() {
   );
 }
 
-function LocaleSwitch({ value, onChange }: { value: Locale; onChange: (l: Locale) => void }) {
-  return (
-    <div className="flex overflow-hidden rounded-full border border-line bg-paper/90 text-xs">
-      {(["ru", "en"] as const).map((l) => (
-        <button
-          key={l}
-          onClick={() => {
-            onChange(l);
-          }}
-          aria-pressed={value === l}
-          className={`px-2.5 py-1 uppercase ${value === l ? "bg-accent text-paper" : "text-ink-soft hover:bg-paper-2"}`}
-        >
-          {l}
-        </button>
-      ))}
-    </div>
-  );
+/** Tours, events and the in-view list fold behind one button; the choice is remembered. */
+function readMore(): boolean {
+  try {
+    return localStorage.getItem("hg:more") === "1";
+  } catch {
+    return false;
+  }
+}
+
+function writeMore(open: boolean): void {
+  try {
+    localStorage.setItem("hg:more", open ? "1" : "0");
+  } catch {
+    // Private windows may refuse storage: the button still works, it just forgets.
+  }
 }
