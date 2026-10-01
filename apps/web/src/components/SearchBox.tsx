@@ -56,7 +56,7 @@ export function SearchBox({
           aria-activedescendant={
             open && results[active] ? `search-${results[active].props.id}` : undefined
           }
-          className="w-full bg-transparent text-[15px] text-ink outline-none placeholder:text-ink-soft"
+          className="w-full bg-transparent text-[15px] text-ink outline-hidden placeholder:text-ink-soft"
         />
       </label>
       {open && (

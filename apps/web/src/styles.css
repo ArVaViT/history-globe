@@ -145,3 +145,6 @@ summary {
     0 0 10px 3px rgb(255 214 150 / 0.75);
   pointer-events: none;
 }
+.hg-no-routes .hg-pulse {
+  display: none;
+}

@@ -720,7 +720,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-variable-anchor": ["left", "right", "top", "bottom"],
         "text-radial-offset": 1.3,
         // Candidates close together keep apart rather than print over each other.
-        "text-padding": 2,
+        "text-padding": 6,
       },
       paint: { "text-color": T.accent, "text-halo-color": T.halo, "text-halo-width": 1.6 },
     },

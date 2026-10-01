@@ -113,6 +113,17 @@ describe("engine", () => {
     expect(renderer.last("route")).toEqual({ op: "route", points: 0, current: -1 });
   });
 
+  it("starts a tour at a given stop and tells the renderer its places", () => {
+    const { engine, renderer } = setup();
+    engine.startTour("paul-1", 1);
+    expect(engine.store.get().tour).toEqual({ id: "paul-1", step: 1 });
+    expect(renderer.last("tourPlaces")).toEqual({ op: "tourPlaces", count: 2 });
+    engine.startTour("paul-1", 9);
+    expect(engine.store.get().tour?.step).toBe(1);
+    engine.stopTour();
+    expect(renderer.last("tourPlaces")).toEqual({ op: "tourPlaces", count: 0 });
+  });
+
   it("leaves a tour when another place is picked, not the stop's own", () => {
     const { engine, renderer } = setup();
     engine.startTour("paul-1");

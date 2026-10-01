@@ -56,6 +56,9 @@ export function App() {
         : null;
   const engine = globe?.engine;
   const state = useGlobeState(engine);
+  // The way back holds only while the stop's place stays open: another place, or the
+  // card closed, and it goes (adjusted during render, as React recommends).
+  if (backToTour && state.selectedPlace !== backToTour.place && !state.tour) setBackToTour(null);
 
   useEffect(() => {
     loadData().then(setData, (e: unknown) => {
@@ -90,8 +93,7 @@ export function App() {
   useEffect(() => {
     if (!engine) return;
     if (INITIAL.tour && data?.tours.some((t) => t.id === INITIAL.tour)) {
-      engine.startTour(INITIAL.tour);
-      if (INITIAL.stop !== undefined && INITIAL.stop > 1) engine.goToStop(INITIAL.stop - 1);
+      engine.startTour(INITIAL.tour, (INITIAL.stop ?? 1) - 1);
       return;
     }
     if (INITIAL.place && !INITIAL.camera) engine.selectPlace(INITIAL.place);
@@ -198,11 +200,12 @@ export function App() {
                     }}
                     aria-expanded={moreOpen}
                     aria-controls={moreOpen ? "more-panels" : undefined}
-                    aria-label={t("more")}
                     title={t("more")}
                     className={`rounded-full px-2 py-1 text-[13px] underline decoration-1 underline-offset-[3px] hover:text-ink ${moreOpen ? "text-accent" : "text-ink-soft"}`}
                   >
                     {t("more_short")}
+                    {/* The visible word stays in the name (WCAG 2.5.3); this says what it opens. */}
+                    <span className="sr-only">: {t("more")}</span>
                   </button>
                   <button
                     onClick={() => {
@@ -211,6 +214,7 @@ export function App() {
                       if (next) requestAnimationFrame(() => searchRef.current?.focus());
                     }}
                     aria-expanded={searchOpen}
+                    aria-controls={searchOpen ? "search-box" : undefined}
                     aria-label={t("search.open")}
                     title={t("search.open")}
                     className={`grid size-9 place-items-center rounded-full hover:bg-paper-2 hover:text-ink ${searchOpen ? "text-accent" : "text-ink-soft"}`}
@@ -247,13 +251,15 @@ export function App() {
                 className={`flex flex-col gap-3 *:shrink-0 ${cardOpen ? "max-md:hidden" : ""}`}
               >
                 {searchOpen && (
-                  <SearchBox
-                    data={data}
-                    inputRef={searchRef}
-                    onSelect={(id) => {
-                      engine.selectPlace(id);
-                    }}
-                  />
+                  <div id="search-box" className="contents">
+                    <SearchBox
+                      data={data}
+                      inputRef={searchRef}
+                      onSelect={(id) => {
+                        engine.selectPlace(id);
+                      }}
+                    />
+                  </div>
                 )}
                 {moreOpen && (
                   <div id="more-panels" className="flex flex-col gap-3 *:shrink-0">
@@ -354,8 +360,7 @@ export function App() {
                           }),
                           onBack: () => {
                             setPlaying(false);
-                            engine.startTour(backToTour.id);
-                            engine.goToStop(backToTour.step);
+                            engine.startTour(backToTour.id, backToTour.step);
                             setBackToTour(null);
                           },
                         }

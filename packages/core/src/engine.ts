@@ -42,7 +42,8 @@ export interface Engine {
   readonly selectPlace: (placeId: string | null, options?: { readonly fly?: boolean }) => void;
   readonly setLocale: (locale: Locale) => void;
   readonly setLayer: (layer: keyof LayerVisibility, visible: boolean) => void;
-  readonly startTour: (tourId: string) => void;
+  /** Start a tour, at its first stop or at `step` (back from a stop's place card). */
+  readonly startTour: (tourId: string, step?: number) => void;
   readonly goToStop: (step: number) => void;
   readonly stopTour: () => void;
   /** Show a point up close, e.g. one candidate site of a disputed place. */
@@ -161,11 +162,12 @@ export function createEngine(options: {
     setLayer: (layer, visible) => {
       store.set({ layers: { ...store.get().layers, [layer]: visible } });
     },
-    startTour: (tourId) => {
+    startTour: (tourId, step = 0) => {
       const tour = tours.get(tourId);
       if (!tour) return;
-      store.set({ tour: { id: tourId, step: 0 }, year: clampYear(tour.year) });
-      goToStop(0);
+      const at = Math.min(Math.max(Math.trunc(step), 0), tour.stops.length - 1);
+      store.set({ tour: { id: tourId, step: at }, year: clampYear(tour.year) });
+      goToStop(at);
     },
     goToStop,
     stopTour: () => {
