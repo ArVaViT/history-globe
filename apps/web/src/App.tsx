@@ -1,10 +1,10 @@
 import { YEAR_MAX, YEAR_MIN } from "@hg/core";
-import { Menu, PanelLeftClose, Search, Settings } from "./components/icons";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { ChevronDown, Menu, PanelLeftClose, Search, Settings, X } from "./components/icons";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { useTranslation } from "./i18n";
 import { HoverTip, PolityTip } from "./components/HoverTip";
 import { InViewPanel } from "./components/InViewPanel";
-import { Panel } from "./components/Panel";
+import { InGroup, Panel } from "./components/Panel";
 import { SettingsDialog } from "./components/Settings";
 import { PlaceCard } from "./components/PlaceCard";
 import { SearchBox } from "./components/SearchBox";
@@ -157,11 +157,13 @@ export function App() {
         <>
           <aside
             aria-label={t("panels.label")}
-            className="absolute top-4 bottom-12 left-4 -m-4 flex flex-col gap-3 overflow-y-auto p-4 pr-5 [scrollbar-width:thin] *:shrink-0 max-md:inset-x-3 max-md:top-3 max-md:bottom-auto max-md:z-10 max-md:max-h-[calc(100dvh-var(--hg-timeline-h,124px)-32px)] max-md:pr-4"
+            className={`absolute top-4 bottom-12 left-4 -m-4 flex flex-col gap-3 overflow-y-auto p-4 pr-5 [scrollbar-width:thin] *:shrink-0 max-md:inset-x-3 max-md:top-3 max-md:bottom-auto max-md:z-10 max-md:max-h-[calc(100dvh-var(--hg-timeline-h,124px)-32px)] max-md:pr-4 ${searchOpen ? "max-md:overflow-visible" : ""}`}
           >
-            {/* On a panel, not on the map: state labels run under the corner. */}
+            {/* On a panel, not on the map: state labels run under the corner. Closed, the
+                burger alone; open: the title (or the search in its place), the magnifier,
+                one chevron for tours, events and the in-view list, and the settings. */}
             <Panel
-              className={`flex items-center gap-1 px-1.5 py-1.5 ${columnShown ? "w-[340px] max-md:w-full" : "w-fit"}`}
+              className={`relative z-10 flex items-center gap-0.5 px-1.5 py-1.5 ${columnShown ? "w-[340px] max-md:w-full" : "w-fit"}`}
             >
               <button
                 onClick={() => {
@@ -177,7 +179,7 @@ export function App() {
                 aria-controls={columnShown ? "side-panels" : undefined}
                 aria-label={columnShown ? t("panels.hide") : t("panels.show")}
                 title={columnShown ? t("panels.hide") : t("panels.show")}
-                className="grid size-9 place-items-center rounded-full text-ink-soft hover:bg-paper-2 hover:text-ink"
+                className="grid size-9 shrink-0 place-items-center rounded-full text-ink-soft hover:bg-paper-2 hover:text-ink"
               >
                 {columnShown ? (
                   <PanelLeftClose className="size-5" aria-hidden />
@@ -185,53 +187,64 @@ export function App() {
                   <Menu className="size-5" aria-hidden />
                 )}
               </button>
-              {/* Closed, the burger is all there is: the title and the buttons fold with it. */}
               <h1
-                className={`flex-1 pl-1 font-serif text-[19px] font-semibold tracking-tight text-ink ${columnShown ? "" : "sr-only"}`}
+                className={`flex-1 pl-1 font-serif text-[19px] font-semibold tracking-tight text-ink ${columnShown && !searchOpen ? "" : "sr-only"}`}
               >
                 History Globe
               </h1>
               {columnShown && (
                 <>
-                  <button
-                    onClick={() => {
-                      setMoreOpen(!moreOpen);
-                      writeMore(!moreOpen);
-                    }}
-                    aria-expanded={moreOpen}
-                    aria-controls={moreOpen ? "more-panels" : undefined}
-                    title={t("more")}
-                    className={`rounded-full px-2 py-1 text-[13px] underline decoration-1 underline-offset-[3px] hover:text-ink ${moreOpen ? "text-accent" : "text-ink-soft"}`}
-                  >
-                    {t("more_short")}
-                    {/* The visible word stays in the name (WCAG 2.5.3); this says what it opens. */}
-                    <span className="sr-only">: {t("more")}</span>
-                  </button>
-                  <button
+                  {searchOpen && (
+                    <SearchBox
+                      data={data}
+                      inputRef={searchRef}
+                      onSelect={(id) => {
+                        engine.selectPlace(id);
+                      }}
+                      onClose={() => {
+                        setSearchOpen(false);
+                      }}
+                    />
+                  )}
+                  <HeaderButton
+                    label={searchOpen ? t("search.close") : t("search.open")}
+                    active={searchOpen}
                     onClick={() => {
                       const next = !searchOpen;
                       setSearchOpen(next);
                       if (next) requestAnimationFrame(() => searchRef.current?.focus());
                     }}
-                    aria-expanded={searchOpen}
-                    aria-controls={searchOpen ? "search-box" : undefined}
-                    aria-label={t("search.open")}
-                    title={t("search.open")}
-                    className={`grid size-9 place-items-center rounded-full hover:bg-paper-2 hover:text-ink ${searchOpen ? "text-accent" : "text-ink-soft"}`}
                   >
-                    <Search className="size-[18px]" aria-hidden />
-                  </button>
-                  <button
+                    {searchOpen ? (
+                      <X className="size-[18px]" aria-hidden />
+                    ) : (
+                      <Search className="size-[18px]" aria-hidden />
+                    )}
+                  </HeaderButton>
+                  <HeaderButton
+                    label={t("more")}
+                    active={moreOpen}
+                    expanded={moreOpen}
+                    controls={moreOpen ? "more-panels" : undefined}
+                    onClick={() => {
+                      setMoreOpen(!moreOpen);
+                      writeMore(!moreOpen);
+                    }}
+                  >
+                    <ChevronDown
+                      className={`size-5 transition-transform ${moreOpen ? "rotate-180" : ""}`}
+                      aria-hidden
+                    />
+                  </HeaderButton>
+                  <HeaderButton
+                    label={t("settings.title")}
+                    dialog
                     onClick={() => {
                       setSettingsOpen(true);
                     }}
-                    aria-haspopup="dialog"
-                    aria-label={t("settings.title")}
-                    title={t("settings.title")}
-                    className="grid size-9 place-items-center rounded-full text-ink-soft hover:bg-paper-2 hover:text-ink"
                   >
                     <Settings className="size-5" aria-hidden />
-                  </button>
+                  </HeaderButton>
                 </>
               )}
             </Panel>
@@ -250,48 +263,42 @@ export function App() {
                 id="side-panels"
                 className={`flex flex-col gap-3 *:shrink-0 ${cardOpen ? "max-md:hidden" : ""}`}
               >
-                {searchOpen && (
-                  <div id="search-box" className="contents">
-                    <SearchBox
-                      data={data}
-                      inputRef={searchRef}
-                      onSelect={(id) => {
-                        engine.selectPlace(id);
-                      }}
-                    />
-                  </div>
-                )}
-                {moreOpen && (
-                  <div id="more-panels" className="flex flex-col gap-3 *:shrink-0">
-                    <ToursPanel
-                      tours={data.tours}
-                      onStart={(id) => {
-                        setPlaying(false);
-                        engine.startTour(id);
-                      }}
-                    />
-                    <EventsPanel
-                      events={data.events}
-                      year={state.year}
-                      locale={state.locale}
-                      onPick={(e) => {
-                        setPlaying(false);
-                        engine.stopTour();
-                        engine.setYear(e.year);
-                        if (e.place) engine.selectPlace(e.place, { fly: true });
-                      }}
-                    />
-                    <InViewPanel
-                      ids={inView}
-                      data={data}
-                      locale={state.locale}
-                      year={state.year}
-                      selected={state.selectedPlace}
-                      onSelect={(id) => {
-                        engine.selectPlace(id);
-                      }}
-                    />
-                  </div>
+                {/* On a phone the results drop over the column: the shared panel waits. */}
+                {moreOpen && !(narrow && searchOpen) && (
+                  <Panel className="w-[340px] max-md:w-full">
+                    <div id="more-panels">
+                      <InGroup.Provider value={true}>
+                        <ToursPanel
+                          tours={data.tours}
+                          onStart={(id) => {
+                            setPlaying(false);
+                            engine.startTour(id);
+                          }}
+                        />
+                        <EventsPanel
+                          events={data.events}
+                          year={state.year}
+                          locale={state.locale}
+                          onPick={(e) => {
+                            setPlaying(false);
+                            engine.stopTour();
+                            engine.setYear(e.year);
+                            if (e.place) engine.selectPlace(e.place, { fly: true });
+                          }}
+                        />
+                        <InViewPanel
+                          ids={inView}
+                          data={data}
+                          locale={state.locale}
+                          year={state.year}
+                          selected={state.selectedPlace}
+                          onSelect={(id) => {
+                            engine.selectPlace(id);
+                          }}
+                        />
+                      </InGroup.Provider>
+                    </div>
+                  </Panel>
                 )}
               </div>
             )}
@@ -413,4 +420,37 @@ function writeMore(open: boolean): void {
   } catch {
     // Private windows may refuse storage: the button still works, it just forgets.
   }
+}
+
+/** A round icon button in the header; `active` marks what it has opened. */
+function HeaderButton({
+  label,
+  active = false,
+  expanded,
+  controls,
+  dialog = false,
+  onClick,
+  children,
+}: {
+  label: string;
+  active?: boolean;
+  expanded?: boolean;
+  controls?: string | undefined;
+  dialog?: boolean;
+  onClick: () => void;
+  children: ReactNode;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      aria-label={label}
+      title={label}
+      aria-expanded={expanded}
+      aria-controls={controls}
+      aria-haspopup={dialog ? "dialog" : undefined}
+      className={`grid size-9 shrink-0 place-items-center rounded-full hover:bg-paper-2 hover:text-ink ${active ? "bg-paper-2 text-accent" : "text-ink-soft"}`}
+    >
+      {children}
+    </button>
+  );
 }

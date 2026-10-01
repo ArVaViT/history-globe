@@ -3,7 +3,8 @@
   "search": {
     "placeholder": "Find a place…",
     "empty": "Nothing found",
-    "open": "Find a place"
+    "open": "Find a place",
+    "close": "Close the search"
   },
   "layers": {
     "title": "Layers",
@@ -154,6 +155,5 @@
     "help": "Help and sources"
   },
   "more": "Tours, events, in view",
-  "close": "Close",
-  "more_short": "more"
+  "close": "Close"
 }
