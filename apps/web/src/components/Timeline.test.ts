@@ -4,7 +4,7 @@ import { clampView, FULL_VIEW, ticksFor, zoomView } from "./Timeline";
 describe("the timeline window", () => {
   it("zooms around the pointer and keeps inside the range", () => {
     const v = zoomView(FULL_VIEW, 0.1, -999);
-    expect(v.to - v.from).toBe(210);
+    expect(v.to - v.from).toBeCloseTo(209.9, 5);
     expect(v.from).toBeLessThan(-999);
     expect(v.to).toBeGreaterThan(-999);
     expect(zoomView(FULL_VIEW, 2, 0)).toEqual(FULL_VIEW);

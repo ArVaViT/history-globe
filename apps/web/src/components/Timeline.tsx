@@ -35,8 +35,9 @@ export const FULL_VIEW: TimeView = { from: YEAR_MIN, to: YEAR_MAX };
 /** A window of `span` years around `at`, kept inside the slider's range. */
 export function clampView(from: number, span: number): TimeView {
   const s = Math.min(Math.max(span, MIN_SPAN), SPAN);
+  // Fractional: slow pans and gentle pinches add up instead of rounding away.
   const f = Math.min(Math.max(from, YEAR_MIN), YEAR_MAX - s);
-  return { from: Math.round(f), to: Math.round(f + s) };
+  return { from: f, to: f + s };
 }
 
 /** Zoom by `factor` (below 1 zooms in) keeping the year `at` under the pointer. */
@@ -55,7 +56,7 @@ export function ticksFor(v: TimeView): number[] {
   const span = v.to - v.from;
   const step = STEPS.find((s) => span / s <= 6) ?? 500;
   const out: number[] = [];
-  for (let y = v.from; y <= v.to; y++) {
+  for (let y = Math.ceil(v.from); y <= v.to; y++) {
     const written = y <= 0 ? 1 - y : y;
     if (written % step === 0) out.push(y);
   }
@@ -112,6 +113,8 @@ export function Timeline({
     : [];
   const periodName = period ? (ru ? period.name.ru : period.name.en) : "";
   const track = useRef<HTMLDivElement>(null);
+  const group = useRef<HTMLDivElement>(null);
+  const range = useRef<HTMLInputElement>(null);
 
   // The year leaves the window (playback, the buttons, a tour): the window follows it,
   // adjusted during render when the year changes, as React recommends over an effect.
@@ -125,15 +128,18 @@ export function Timeline({
   // sideways, or a wheel when zoomed in, move the window. Native and not passive: React's
   // wheel listener cannot stop the page itself from zooming.
   useEffect(() => {
-    const el = track.current;
-    if (!el) return;
+    const el = group.current;
+    const bar = track.current;
+    if (!el || !bar) return;
     const onWheel = (e: WheelEvent) => {
-      const box = el.getBoundingClientRect();
+      const box = bar.getBoundingClientRect();
+      // Lines (Firefox's mouse wheel) count as 16 px.
+      const k = e.deltaMode === 1 ? 16 : 1;
       const frac = Math.min(Math.max((e.clientX - box.left) / box.width, 0), 1);
       setView((v) => {
         const s = v.to - v.from;
-        if (e.ctrlKey) return zoomView(v, Math.exp(e.deltaY * 0.01), v.from + frac * s);
-        const d = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+        if (e.ctrlKey) return zoomView(v, Math.exp(e.deltaY * k * 0.01), v.from + frac * s);
+        const d = (Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY) * k;
         if (s >= SPAN && Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return v;
         return clampView(v.from + (d / box.width) * s, s);
       });
@@ -173,7 +179,7 @@ export function Timeline({
           ))}
         </div>
       )}
-      <div role="group" aria-label={t("time.timeline")}>
+      <div ref={group} role="group" aria-label={t("time.timeline")}>
         <div className="flex items-center gap-4 max-lg:flex-wrap max-lg:gap-x-3 max-lg:gap-y-1">
           <div className="min-w-[210px] font-serif text-[28px] leading-none font-semibold whitespace-nowrap text-ink tabular-nums max-xl:min-w-0 max-lg:flex-1 max-lg:text-[21px] max-md:text-[19px]">
             {formatYear(year, locale)}
@@ -257,9 +263,10 @@ export function Timeline({
             })}
           </div>
           <input
+            ref={range}
             type="range"
-            min={view.from}
-            max={view.to}
+            min={Math.ceil(view.from)}
+            max={Math.floor(view.to)}
             step={1}
             value={Math.min(Math.max(year, view.from), view.to)}
             onChange={(e) => {
@@ -308,8 +315,14 @@ export function Timeline({
         {zoomed && (
           <Overview
             view={view}
+            locale={locale}
             year={year}
             onView={setView}
+            onReset={() => {
+              setView(FULL_VIEW);
+              // The bar and its button go away: the focus moves to the slider, not the page.
+              range.current?.focus();
+            }}
             label={t("time.window")}
             resetLabel={t("time.zoom_out")}
           />
@@ -329,14 +342,18 @@ function speedLabel(speed: number): string {
  */
 function Overview({
   view,
+  locale,
   year,
   onView,
+  onReset,
   label,
   resetLabel,
 }: {
   view: TimeView;
+  locale: Locale;
   year: number;
   onView: (v: TimeView) => void;
+  onReset: () => void;
   label: string;
   resetLabel: string;
 }) {
@@ -354,11 +371,11 @@ function Overview({
         ref={box}
         role="scrollbar"
         aria-label={label}
-        aria-controls={undefined}
         aria-orientation="horizontal"
         aria-valuemin={YEAR_MIN}
         aria-valuemax={YEAR_MAX - span}
-        aria-valuenow={view.from}
+        aria-valuenow={Math.round(view.from)}
+        aria-valuetext={`${formatYear(Math.round(view.from), locale)} – ${formatYear(Math.round(view.to), locale)}`}
         tabIndex={0}
         onKeyDown={(e) => {
           const d = e.key === "ArrowLeft" ? -span / 4 : e.key === "ArrowRight" ? span / 4 : 0;
@@ -367,11 +384,12 @@ function Overview({
           onView(clampView(view.from + d, span));
         }}
         onPointerDown={(e) => {
+          if (e.button !== 0) return;
           const y = yearAt(e.clientX);
           const inside = y >= view.from && y <= view.to;
           const from = inside ? view.from : y - span / 2;
           if (!inside) onView(clampView(from, span));
-          drag.current = { x: e.clientX, from: inside ? view.from : from };
+          drag.current = { x: e.clientX, from: inside ? view.from : clampView(from, span).from };
           e.currentTarget.setPointerCapture(e.pointerId);
         }}
         onPointerMove={(e) => {
@@ -381,6 +399,9 @@ function Overview({
           onView(clampView(d.from + ((e.clientX - d.x) / r.width) * SPAN, span));
         }}
         onPointerUp={() => {
+          drag.current = null;
+        }}
+        onPointerCancel={() => {
           drag.current = null;
         }}
         className="relative h-3 flex-1 cursor-grab touch-none rounded-full bg-ink/10 active:cursor-grabbing"
@@ -397,9 +418,7 @@ function Overview({
         />
       </div>
       <button
-        onClick={() => {
-          onView(FULL_VIEW);
-        }}
+        onClick={onReset}
         className="rounded-full px-2 text-[11.5px] text-ink-soft hover:bg-paper-2 hover:text-ink"
       >
         {resetLabel}

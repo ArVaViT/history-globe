@@ -159,6 +159,8 @@ export function useKeys(
     if (!globe) return;
     const { engine } = globe;
     const onKey = (e: KeyboardEvent) => {
+      // A control that used the key (the overview bar), or an open window: not the map's.
+      if (e.defaultPrevented || document.querySelector("dialog[open]")) return;
       const action = keyAction({
         key: e.key,
         shiftKey: e.shiftKey,

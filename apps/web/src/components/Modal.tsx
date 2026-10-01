@@ -19,6 +19,8 @@ export function Modal({
 }) {
   const { t } = useTranslation();
   const ref = useRef<HTMLDialogElement>(null);
+  // A press that starts inside (selecting text) and ends on the backdrop does not close.
+  const downOnBackdrop = useRef(false);
   useEffect(() => {
     const d = ref.current;
     if (!d) return;
@@ -35,8 +37,11 @@ export function Modal({
         e.preventDefault();
         onClose();
       }}
+      onPointerDown={(e) => {
+        downOnBackdrop.current = e.target === e.currentTarget;
+      }}
       onClick={(e) => {
-        if (e.target === e.currentTarget) onClose();
+        if (e.target === e.currentTarget && downOnBackdrop.current) onClose();
       }}
       className="hg-modal m-auto w-[min(420px,calc(100vw-24px))] rounded-3xl border border-line bg-paper p-0 text-ink shadow-[0_24px_60px_rgba(0,0,0,0.35)]"
     >
