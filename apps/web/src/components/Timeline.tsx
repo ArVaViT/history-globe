@@ -187,11 +187,11 @@ export function Timeline({
         </div>
       )}
       <div ref={group} role="group" aria-label={t("time.timeline")}>
-        <div className="flex items-center gap-4 max-lg:flex-wrap max-lg:gap-x-3 max-lg:gap-y-1">
-          <div className="min-w-[210px] font-serif text-[28px] leading-none font-semibold whitespace-nowrap text-ink tabular-nums max-xl:min-w-0 max-lg:flex-1 max-lg:text-[21px] max-md:text-[19px]">
+        <div className="flex items-center gap-4 max-xl:flex-wrap max-xl:gap-x-3 max-xl:gap-y-1">
+          <div className="min-w-[210px] font-serif text-[28px] leading-none font-semibold whitespace-nowrap text-ink tabular-nums max-xl:min-w-0 max-xl:flex-1 max-lg:text-[21px] max-md:text-[19px]">
             {formatYear(year, locale)}
           </div>
-          <div className="flex flex-1 flex-wrap items-center gap-x-2 gap-y-1 text-[13px] leading-snug text-ink-soft max-lg:order-last max-lg:basis-full max-md:text-[11.5px]">
+          <div className="flex flex-1 flex-wrap items-center gap-x-2 gap-y-1 text-[13px] leading-snug text-ink-soft max-xl:order-last max-xl:basis-full max-md:text-[11.5px]">
             <span>{periodName}</span>
             {period?.disputed && (
               <span className="rounded-full whitespace-nowrap bg-[#f4dfc9] px-2 py-0.5 text-[11px] text-[#7a4a1d]">
@@ -281,12 +281,14 @@ export function Timeline({
             }}
             // From the keyboard, + and − zoom around the year, as a pinch does.
             onKeyDown={(e) => {
+              // Cmd/Ctrl with + or − is the browser's own zoom: left to it.
+              if (e.ctrlKey || e.metaKey || e.altKey) return;
               const f = e.key === "+" || e.key === "=" ? 0.5 : e.key === "-" ? 2 : 0;
               if (!f) return;
               e.preventDefault();
               setView((v) => zoomView(v, f, year));
             }}
-            aria-keyshortcuts="+ -"
+            aria-keyshortcuts="Plus = -"
             aria-label={t("time.year")}
             aria-valuetext={
               periodName ? `${formatYear(year, locale)}, ${periodName}` : formatYear(year, locale)
@@ -312,7 +314,7 @@ export function Timeline({
                 key={y}
                 aria-hidden
                 style={{ left: `${String(x)}%` }}
-                className={`absolute top-6 text-[11px] whitespace-nowrap text-ink-soft ${x < 6 ? "" : x > 94 ? "-translate-x-full" : "-translate-x-1/2"} ${ticks.length > 3 && i % 2 === 1 ? "max-[1400px]:hidden" : ""}`}
+                className={`absolute top-6 text-[11px] whitespace-nowrap text-ink-soft ${x < 6 ? "" : x > 94 ? "-translate-x-full" : "-translate-x-1/2"} ${ticks.length > 3 && i % 2 === 1 && i < ticks.length - 1 ? "max-[1400px]:hidden" : ""}`}
               >
                 {formatYear(y, locale)}
               </span>
