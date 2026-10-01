@@ -312,6 +312,12 @@ export class MapLibreRenderer implements Renderer {
     });
   }
 
+  setTourPlaces(placeIds: readonly string[]): void {
+    this.whenLoaded(() => {
+      this.map.setGlobalStateProperty("tourPlaces", [...placeIds]);
+    });
+  }
+
   setRoute(coordinates: readonly LonLat[], currentIndex: number): void {
     this.whenLoaded(() => {
       const features: Feature[] = [];

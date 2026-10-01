@@ -193,6 +193,20 @@ const OUT_OF_TIME: ExpressionSpecification = [
 
 const IS_SELECTED: ExpressionSpecification = ["==", ["get", "id"], ["global-state", "selected"]];
 
+/** The stops of the running tour; empty when none runs (or the state is not set). */
+const TOUR_PLACES: ExpressionSpecification = [
+  "coalesce",
+  ["global-state", "tourPlaces"],
+  ["literal", []],
+];
+/** A tour is running and this place is not one of its stops: it steps back. */
+const OFF_TOUR: ExpressionSpecification = [
+  "all",
+  [">", ["length", TOUR_PLACES], 0],
+  ["!", ["in", ["get", "id"], TOUR_PLACES]],
+];
+const IN_TOUR: ExpressionSpecification = ["in", ["get", "id"], TOUR_PLACES];
+
 /** A second record of the same name on the same point (pipeline `dup`): dot, no label. */
 const NOT_DUP: ExpressionSpecification = [
   "any",
@@ -229,6 +243,9 @@ const fadeBeforeNT = (faded: number): ExpressionSpecification => [
   "case",
   ["boolean", ["feature-state", "selected"], false],
   1,
+  // During a tour the places off its route fade, so the stops stand out of a crowd.
+  OFF_TOUR,
+  0.22,
   OUT_OF_TIME,
   faded,
   1,
@@ -262,7 +279,7 @@ const minZoomByRank: ExpressionSpecification = ["match", ["get", "rank"], 0, 3, 
 const visibleAtZoom: ExpressionSpecification = [
   "any",
   [">=", ["zoom"], minZoomByRank],
-  ["all", IS_SELECTED, [">=", ["zoom"], 5]],
+  ["all", ["any", IS_SELECTED, IN_TOUR], [">=", ["zoom"], 5]],
 ];
 
 export function buildStyle(o: StyleOptions): StyleSpecification {
@@ -502,7 +519,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isArea, visibleAtZoom, NOT_DUP, ["!", IS_SELECTED]],
+      filter: ["all", isArea, visibleAtZoom, NOT_DUP, ["!", IS_SELECTED], ["!", OFF_TOUR]],
       layout: {
         // Biblical regions are not states: italic and sentence case, so they never read
         // as the polity labels (upper case) of the chosen year.
@@ -525,7 +542,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isWater, visibleAtZoom, NOT_DUP, ["!", IS_SELECTED]],
+      filter: ["all", isWater, visibleAtZoom, NOT_DUP, ["!", IS_SELECTED], ["!", OFF_TOUR]],
       layout: {
         "text-field": NAME,
         "text-font": [MAP_FONT_ITALIC],
@@ -545,7 +562,15 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isLandmark, visibleAtZoom, HAS_LOCAL_NAME, NOT_DUP, ["!", IS_SELECTED]],
+      filter: [
+        "all",
+        isLandmark,
+        visibleAtZoom,
+        HAS_LOCAL_NAME,
+        NOT_DUP,
+        ["!", IS_SELECTED],
+        ["!", OFF_TOUR],
+      ],
       layout: {
         "text-field": NAME,
         "text-font": [MAP_FONT_ITALIC],
@@ -616,7 +641,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isSettlement, visibleAtZoom, HAS_LOCAL_NAME, NOT_DUP],
+      filter: ["all", isSettlement, visibleAtZoom, HAS_LOCAL_NAME, NOT_DUP, ["!", OFF_TOUR]],
       layout: {
         "text-field": NAME,
         "text-font": [MAP_FONT],
@@ -725,6 +750,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       year: { default: o.initialYear },
       locale: { default: o.initialLocale },
       selected: { default: "" },
+      tourPlaces: { default: [] },
     },
     "font-faces": Object.fromEntries(
       Object.entries(o.fonts).map(([family, files]) => [

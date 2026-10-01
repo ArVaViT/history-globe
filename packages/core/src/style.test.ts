@@ -296,3 +296,27 @@ describe("a small place (rank 3)", () => {
     expect(drawn("place-label", "a0", 4, "settlement")).toBe(false);
   });
 });
+
+describe("during a tour", () => {
+  function labelled(tourPlaces: string[], id: string, selected = ""): boolean {
+    const l = style.layers.find((x) => x.id === "place-label");
+    if (!l || !("filter" in l)) return false;
+    return featureFilter(l.filter, "filter", { locale: "en", selected, tourPlaces }).filter(
+      { zoom: 8 },
+      {
+        type: 1,
+        properties: { id, rank: 2, kind: "settlement", name: "Town" },
+        geometry: [],
+      } as never,
+    );
+  }
+
+  it("labels only the tour's stops", () => {
+    expect(labelled(["a1", "a2"], "a1")).toBe(true);
+    expect(labelled(["a1", "a2"], "a9")).toBe(false);
+  });
+
+  it("labels everything when no tour runs", () => {
+    expect(labelled([], "a9")).toBe(true);
+  });
+});

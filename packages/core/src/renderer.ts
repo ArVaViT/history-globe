@@ -42,6 +42,8 @@ export interface Renderer {
   setSelected(placeId: string | null): void;
   flyTo(target: Partial<Camera> & { readonly center: LonLat }, durationMs?: number): void;
   setRoute(coordinates: readonly LonLat[], currentIndex: number): void;
+  /** The places of the running tour (empty when none): the rest of the map steps back. */
+  setTourPlaces(placeIds: readonly string[]): void;
   getCamera(): Camera;
   /** Ids of places currently drawn on screen (for the accessible "in view" list). */
   visiblePlaces(): string[];

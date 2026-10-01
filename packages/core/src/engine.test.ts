@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { createEngine, YEAR_MAX, YEAR_MIN, type PlaceInfo, type Tour } from "./engine.ts";
+import {
+  createEngine,
+  YEAR_MAX,
+  YEAR_MIN,
+  zoomForSpread,
+  type PlaceInfo,
+  type Tour,
+} from "./engine.ts";
 import { FakeRenderer } from "./fake-renderer.ts";
 
 const places = new Map<string, PlaceInfo>([
@@ -31,6 +38,7 @@ describe("engine", () => {
       "locale",
       "layers",
       "selected",
+      "tourPlaces",
       "route",
     ]);
   });
@@ -131,5 +139,24 @@ describe("camera in the store", () => {
     expect(engine.store.get().camera).not.toBeNull();
     engine.lookAt([23.7, 37.97]);
     expect(engine.store.get().camera?.center).toEqual([23.7, 37.97]);
+  });
+});
+
+describe("zoomForSpread", () => {
+  it("keeps 7.6 for a long journey and comes closer for a walk through a city", () => {
+    expect(
+      zoomForSpread([
+        [35.2, 31.8],
+        [12.5, 41.9],
+      ]),
+    ).toBe(7.6);
+    expect(
+      zoomForSpread([
+        [35.23, 31.78],
+        [35.24, 31.77],
+        [35.235, 31.775],
+      ]),
+    ).toBeGreaterThan(12);
+    expect(zoomForSpread([])).toBe(7.6);
   });
 });

@@ -65,6 +65,11 @@ export function createEngine(options: {
 }): Engine {
   const { renderer, places } = options;
   const tours = new Map((options.tours ?? []).map((t) => [t.id, t]));
+  // A tour flies as close as its spread allows: Paul's journeys at 7.6, a walk through
+  // Jerusalem much closer, so its stops do not pile into one point.
+  const tourZoom = new Map(
+    [...tours].map(([id, t]) => [id, zoomForSpread(t.stops.map((st) => st.at))]),
+  );
   // The initial state may come from a link: keep only what the data can show.
   const initial = { ...DEFAULT_STATE, ...options.initial };
   const store = createStore({
@@ -81,6 +86,10 @@ export function createEngine(options: {
     if (!prev || s.locale !== prev.locale) renderer.setLocale(s.locale);
     if (!prev || s.layers !== prev.layers) renderer.setLayers(s.layers);
     if (!prev || s.selectedPlace !== prev.selectedPlace) renderer.setSelected(s.selectedPlace);
+    if (!prev || s.tour?.id !== prev.tour?.id) {
+      const tour = s.tour ? tours.get(s.tour.id) : undefined;
+      renderer.setTourPlaces(tour ? tour.stops.map((st) => st.placeId) : []);
+    }
     if (!prev || s.tour !== prev.tour) {
       const tour = s.tour ? tours.get(s.tour.id) : undefined;
       renderer.setRoute(
@@ -121,7 +130,12 @@ export function createEngine(options: {
       selectedPlace: places.has(stop.placeId) ? stop.placeId : null,
       year: clampYear(stop.year ?? tour.year),
     });
-    renderer.flyTo({ center: stop.at, zoom: 7.6, pitch: 55, bearing: -20 + step * 3 });
+    renderer.flyTo({
+      center: stop.at,
+      zoom: tourZoom.get(tour.id) ?? 7.6,
+      pitch: 55,
+      bearing: -20 + step * 3,
+    });
   };
 
   store.set({ camera: renderer.getCamera() });
@@ -170,4 +184,19 @@ export function createEngine(options: {
       renderer.destroy();
     },
   };
+}
+
+/**
+ * The zoom for a tour from how far its stops spread: 7.6 for 150 km and more, one step
+ * closer for each halving, at most 13 (a city's streets).
+ */
+export function zoomForSpread(points: readonly (readonly [number, number])[]): number {
+  if (points.length === 0) return 7.6;
+  const lons = points.map((p) => p[0]);
+  const lats = points.map((p) => p[1]);
+  const midLat = ((Math.min(...lats) + Math.max(...lats)) / 2) * (Math.PI / 180);
+  const dx = (Math.max(...lons) - Math.min(...lons)) * 111 * Math.cos(midLat);
+  const dy = (Math.max(...lats) - Math.min(...lats)) * 111;
+  const km = Math.hypot(dx, dy);
+  return Math.min(13, Math.max(7.6, 7.6 + Math.log2(150 / Math.max(km, 1))));
 }

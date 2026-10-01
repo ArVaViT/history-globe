@@ -8,7 +8,8 @@ type Call =
   | { readonly op: "layers"; readonly layers: LayerVisibility }
   | { readonly op: "selected"; readonly placeId: string | null }
   | { readonly op: "flyTo"; readonly center: LonLat; readonly zoom: number | undefined }
-  | { readonly op: "route"; readonly points: number; readonly current: number };
+  | { readonly op: "route"; readonly points: number; readonly current: number }
+  | { readonly op: "tourPlaces"; readonly count: number };
 
 /** Records every call so engine behaviour can be tested without WebGL. */
 export class FakeRenderer implements Renderer {
@@ -42,6 +43,9 @@ export class FakeRenderer implements Renderer {
   }
   setRoute(coordinates: readonly LonLat[], currentIndex: number): void {
     this.calls.push({ op: "route", points: coordinates.length, current: currentIndex });
+  }
+  setTourPlaces(placeIds: readonly string[]): void {
+    this.calls.push({ op: "tourPlaces", count: placeIds.length });
   }
   getCamera(): Camera {
     return this.camera;
