@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; Magdala is taken as Josephus' Taricheae, as usual, and the identification is named as not certain.
+id: magdala
+place: ad14067 # Magadan record: carries Matt 15:39 (KJV "Magdala", Synodal "Магдалинские"); af75e9e has no verses
+title:
+  en: "Magdala"
+  ru: "Магдала"
+body:
+  en:
+    - 'Magdala, from the Aramaic for "tower", lay on the western shore of the Sea of Galilee about 5 km north of Tiberias, below the cliffs of Mount Arbel, where the village of al-Majdal stood until 1948. It is usually identified with Taricheae, a town named in Greek for its salted fish, though Pliny places Taricheae at the south end of the lake. Excavations show a town founded in the Hellenistic period that reached its height in the early Roman period; the excavators hold that it was the only town on the western shore until Tiberias was built. After Crassus'' defeat in 53 BC, Josephus tells, the Roman commander Cassius took Taricheae and carried about 30,000 Jews into slavery.'
+    - "In the Gospels Mary called Magdalene, usually taken as Mary of Magdala, was one of the women healed by Jesus: out of her, Luke says, went seven devils, and she was among those who ministered to him of their substance. She stood by the cross, and the risen Lord appeared first to her. After feeding the four thousand Jesus came, in the King James text, into the coasts of Magdala; other manuscripts read Magadan, and Mark names the place Dalmanutha, which has not been located."
+    - "Nero gave Taricheae to King Agrippa II. In the revolt of AD 66 Josephus fortified it, and in 67 Titus rode into it along the lakeshore. Those who fled by boat were destroyed on the lake by Vespasian's ships, and 6,500 died in the town and on the water. Of the prisoners, Vespasian had 1,200 killed, sent 6,000 young men to Nero to dig the canal through the Isthmus of Corinth, and sold 30,400 as slaves."
+    - "From 2009 the Israel Antiquities Authority, under Dina Avshalom-Gorni and Arfan Najar, uncovered a synagogue of the first century AD with frescoed walls and a mosaic floor. In it stood a carved stone block bearing a seven-branched menorah, one of the earliest known reliefs of it. The quarter was abandoned at the time of the revolt, and the excavators tie its end to the Roman conquest. Franciscan excavations led by Stefano De Luca from 2007 uncovered more of the Roman town, which went on as a smaller settlement after the revolt."
+  ru:
+    - "Магдала, от арамейского слова «башня», лежала на западном берегу моря Галилейского, примерно в 5 км к северу от Тивериады, под скалами горы Арбел, где до 1948 г. стояло селение аль-Мадждаль. Её обычно отождествляют с Тарихеей, городом, получившим греческое имя от солёной рыбы, хотя Плиний помещает Тарихею у южного края озера. Раскопки показывают город, основанный в эллинистический период и достигший расцвета в раннеримское время; по мнению раскопщиков, до постройки Тивериады он был единственным городом на западном берегу. После поражения Красса в 53 г. до н. э., как рассказывает Иосиф Флавий, римский военачальник Кассий взял Тарихею и увёл в рабство около 30 000 иудеев."
+    - "В Евангелиях Мария, называемая Магдалиною, которую обычно понимают как Марию из Магдалы, была одной из исцелённых Иисусом женщин: из неё, по словам Луки, вышли семь бесов, и она была среди тех, кто служил Ему имением своим. Она стояла при кресте, и воскресший Господь явился сперва ей. После насыщения четырёх тысяч Иисус прибыл, по Синодальному тексту, в пределы Магдалинские; в других рукописях стоит Магадан, а Марк называет это место Далмануфой, которую не удалось найти."
+    - "Нерон отдал Тарихею царю Агриппе II. Во время восстания 66 г. н. э. Иосиф Флавий укрепил её, а в 67 г. Тит ворвался в неё верхом вдоль берега озера. Бежавших на лодках истребили на озере корабли Веспасиана; в городе и на воде погибли 6500 человек. Из пленных Веспасиан велел убить 1200, отправил 6000 юношей к Нерону копать канал через Коринфский перешеек, а 30 400 продал в рабство."
+    - "С 2009 г. Управление древностей Израиля под руководством Дины Авшалом-Горни и Арфана Наджара раскопало синагогу I века н. э. с расписными стенами и мозаичным полом. В ней стоял резной каменный блок с семисвечником, одно из самых ранних известных его рельефных изображений. Квартал был оставлен во время восстания, и раскопщики связывают его конец с римским завоеванием. Францисканские раскопки под руководством Стефано Де Луки с 2007 г. открыли и другие части римского города, который после восстания продолжал жить меньшим поселением."
+scripture:
+  - Luke.8.1-Luke.8.3
+  - Mark.15.40
+  - John.19.25
+  - Mark.16.9
+  - John.20.1-John.20.18
+  - Matt.15.39
+  - Mark.8.10
+sources:
+  - "Josephus, Jewish War 1.180 and Antiquities 14.120 (Cassius at Taricheae); Antiquities 20.159 and Jewish War 2.252 (given to Agrippa II); Jewish War 2.573 (fortified by Josephus); Jewish War 3.462-542 (the fall of Taricheae in 67)"
+  - "Strabo, Geography 16.2.45; Pliny the Elder, Natural History 5.71"
+  - "D. Avshalom-Gorni and A. Najar, 'Migdal', Hadashot Arkheologiyot - Excavations and Surveys in Israel 125 (2013)"
+  - "S. De Luca, 'La città ellenistico-romana di Magdala/Taricheae: gli scavi del Magdala Project 2007 e 2008', Liber Annuus 59 (2009) 343-562"
+  - "R. Bauckham and S. De Luca, 'Magdala As We Now Know It', Early Christianity 6 (2015) 91-118"
+  - "R. Bauckham (ed.), Magdala of Galilee: A Jewish City in the Hellenistic and Roman Period (2018)"
+status: checked

@@ -1,0 +1,27 @@
+# Overview article (ADR 0007). Mainstream facts only; Seleucid dates follow the usual reckoning (foundation c. 300 BC, Ptolemaic capture 246 BC, recovery 219 BC).
+id: seleucia
+place: a6d306d
+title:
+  en: "Seleucia"
+  ru: "Селевкия"
+body:
+  en:
+    - "Seleucia in Pieria, or Seleucia by the Sea, lay on the coast of northern Syria a little north of the mouth of the Orontes, on the lower slopes of Mount Coryphaeus; its ruins are at Çevlik, near Samandağ in Turkey. Seleucus I founded it about 300 BC and named it after himself. Strabo counts it among the four sister cities of the Syrian Tetrapolis, with Antioch, Apamea and Laodicea, and calls it a fortress too strong to be taken by force. It was the port of Antioch, 120 stadia away up the Orontes."
+    - "After Seleucus was murdered in 281 BC, his son Antiochus I laid his ashes at Seleucia in a sacred precinct called the Nicatoreum. In 246 BC Ptolemy III of Egypt seized the city, and it kept an Egyptian garrison until Antiochus III took it back in 219 BC; in Polybius a royal adviser calls it the capital seat and almost the sacred hearth of the empire. Pompey, after shutting Tigranes of Armenia off from it, declared Seleucia a free city."
+    - 'In the church at Antioch the Holy Ghost said to set apart Barnabas and Saul for the work to which he had called them. Being sent forth, they "departed unto Seleucia; and from thence they sailed to Cyprus", and so began Paul''s first journey. Acts names no port when they sailed back from Attalia to Antioch, but as Antioch''s harbour Seleucia is the likely place where they landed.'
+    - "Under Rome the harbour served the imperial fleet, but silt from the rivers kept threatening it. Under Vespasian and Titus soldiers began to cut a channel through the rock, partly as a tunnel, to carry floodwater around the town; the work went on into the second century. A bishop of Seleucia attended the Council of Nicaea in 325. In the fifth century the struggle against the silt was given up, and the port declined. Excavations by Princeton University in 1937–1939 uncovered houses with mosaics and a large church."
+  ru:
+    - "Селевкия Пиерийская, или Селевкия Приморская, лежала на побережье северной Сирии чуть севернее устья Оронта, на нижних склонах горы Корифей; её развалины находятся у Чевлика, близ Самандага в Турции. Селевк I основал её около 300 г. до н. э. и назвал своим именем. Страбон причисляет её к четырём городам-сёстрам Сирийского Четырёхградия — вместе с Антиохией, Апамеей и Лаодикией — и называет крепостью, которую невозможно взять силой. Это была гавань Антиохии, лежавшей в 120 стадиях от неё вверх по Оронту."
+    - "Когда в 281 г. до н. э. Селевка убили, его сын Антиох I положил его прах в Селевкии, в священной ограде, названной Никаторейоном. В 246 г. до н. э. город захватил египетский царь Птолемей III, и египетский гарнизон стоял в нём, пока Антиох III не вернул его в 219 г. до н. э.; у Полибия царский советник называет её столицей и едва ли не священным очагом державы. Помпей, отрезав от неё армянского царя Тиграна, объявил Селевкию свободным городом."
+    - "В Антиохийской церкви Дух Святый сказал отделить Варнаву и Савла на дело, к которому Он призвал их. Быв посланы, они «пришли в Селевкию, а оттуда отплыли в Кипр», и так началось первое путешествие Павла. Когда они плыли обратно из Атталии в Антиохию, книга Деяний не называет гавани, но, скорее всего, они пристали здесь, в гавани Антиохии."
+    - "При римлянах гавань служила императорскому флоту, но речной ил постоянно угрожал ей. При Веспасиане и Тите воины начали прорубать в скале канал, частью в виде туннеля, чтобы отводить паводковые воды в обход города; работы продолжались и во II веке. Епископ Селевкии участвовал в Никейском соборе 325 г. В V веке борьбу с илом прекратили, и гавань пришла в упадок. Раскопки Принстонского университета в 1937–1939 гг. открыли дома с мозаиками и большую церковь."
+scripture:
+  - Acts.13.1-Acts.13.4
+  - Acts.14.26
+sources:
+  - "Strabo, Geography 16.2.4 (the Tetrapolis); 16.2.7 (Seleucia forty stadia from the Orontes mouth and 120 from Antioch); 16.2.8 (a strong fortress, made free by Pompey)"
+  - "Appian, Syrian Wars 63 (Seleucus' ashes laid in the Nicatoreum at Seleucia)"
+  - "Polybius, Histories 5.58-61 (Ptolemaic occupation since Ptolemy Euergetes; recovery by Antiochus III; the city described)"
+  - "R. Stillwell (ed.), Antioch-on-the-Orontes III: The Excavations, 1937-1939 (1941)"
+  - "G. Downey, A History of Antioch in Syria from Seleucus to the Arab Conquest (1961)"
+status: checked

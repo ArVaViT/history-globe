@@ -1,0 +1,41 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such.
+# The place is the Old Testament Jericho at Tell es-Sultan; Herodian Jericho at Tulul Abu
+# el-Alayiq is a separate place on the map (aaf03fa) and is only mentioned here.
+id: jericho
+place: a231f80
+title:
+  en: "Jericho"
+  ru: "Иерихон"
+body:
+  en:
+    - "Jericho lies in the Jordan Valley about 250 m below sea level, north of the Dead Sea, beside a strong perennial spring, today Ein es-Sultan. The spring made it an oasis of palms, and people settled at the mound of Tell es-Sultan before 9000 BC; the Neolithic stone tower found there is among the oldest known buildings. Within the map's period the mound carried a walled town in the Early Bronze Age and a larger fortified city with a sloping rampart in the Middle Bronze Age."
+    - "That Middle Bronze city was destroyed by fire in the sixteenth century BC. In the Bible, Joshua sends spies to Rahab, and the walls of Jericho fall before Israel. How the account relates to the ruins is disputed: John Garstang dated a fallen wall to about 1400 BC, Kathleen Kenyon showed it was far older and found little of a Late Bronze town, and the date of the conquest itself remains debated."
+    - "The Bible says that Hiel of Bethel rebuilt Jericho in Ahab's days, and Elisha healed its spring. Excavation shows an Iron Age town that grew in the seventh century BC and was ruined in the Babylonian conquest early in the sixth; Zedekiah was overtaken in the plains of Jericho, and 345 men of Jericho are listed among those who returned from exile. After a small Persian-period settlement the mound was abandoned."
+    - "Life moved south to the mouth of Wadi Qelt, now Tulul Abu el-Alayiq, where the Hasmoneans built winter palaces among balsam and date groves; there the young high priest Aristobulus III was drowned in 35 BC. Herod added palaces and died at Jericho in about 4 BC. This is the Jericho of the Gospels, where Jesus healed blind Bartimaeus and stayed with Zacchaeus. By the fourth century a Byzantine town stood further east, and in 333 the Pilgrim of Bordeaux was shown Elisha's spring and the house of Rahab."
+  ru:
+    - "Иерихон лежит в Иорданской долине, примерно в 250 м ниже уровня моря, к северу от Мёртвого моря, у сильного неиссякающего источника, ныне Эйн эс-Султан. Источник сделал это место пальмовым оазисом, и люди поселились на холме Телль-эс-Султан ещё до 9000 г. до н. э.; найденная там неолитическая каменная башня — одна из древнейших известных построек. В пределах эпохи карты на холме стоял обнесённый стеной город раннего бронзового века, а затем больший укреплённый город среднего бронзового века с наклонным валом."
+    - "Этот город среднего бронзового века погиб в огне в XVI веке до н. э. По Библии, Иисус Навин посылает соглядатаев к Раав, и стены Иерихона падают перед Израилем. Как этот рассказ соотносится с развалинами, спорно: Джон Гарстанг датировал обрушенную стену примерно 1400 г. до н. э., Кэтлин Кеньон показала, что она гораздо древнее, и почти не нашла города позднего бронзового века, а дата самого завоевания по-прежнему обсуждается."
+    - "Библия говорит, что во дни Ахава Иерихон отстроил Ахиил Вефилянин, а Елисей исцелил его источник. Раскопки показывают город железного века, который разросся в VII веке до н. э. и был разорён при вавилонском завоевании в начале VI века; на равнинах Иерихонских был настигнут Седекия, а среди вернувшихся из плена названы триста сорок пять уроженцев Иерихона. После небольшого поселения персидского времени холм опустел."
+    - "Жизнь переместилась к югу, к выходу ущелья Вади Кельт, ныне Тулуль Абу эль-Алайик, где Хасмонеи построили зимние дворцы среди бальзамовых и финиковых рощ; там в 35 г. до н. э. утопили юного первосвященника Аристовула III. Ирод пристроил свои дворцы и около 4 г. до н. э. умер в Иерихоне. Это Иерихон Евангелий, где Иисус исцелил слепого Вартимея и остановился у Закхея. К IV веку восточнее стоял византийский город, и в 333 г. паломнику из Бордо показывали источник Елисея и дом Раав."
+scripture:
+  - Deut.34.3
+  - Josh.2.1
+  - Josh.6.1-Josh.6.27
+  - 1Kgs.16.34
+  - 2Kgs.2.19-2Kgs.2.22
+  - 2Kgs.25.5
+  - Ezra.2.34
+  - Mark.10.46-Mark.10.52
+  - Luke.19.1-Luke.19.10
+sources:
+  - "Strabo, Geography 16.2.41"
+  - "Josephus, Antiquities 15.50-56 (Aristobulus III); 15.96 (the balsam groves); 17.173-191 (Herod's death); Jewish War 1.659-666; 4.451-475 (the plain and the spring of Elisha)"
+  - "Pilgrim of Bordeaux, Itinerarium Burdigalense (AD 333), the route from Jerusalem to Jericho and the Jordan"
+  - "Eusebius, Onomasticon, s.v. Jericho"
+  - "E. Sellin and C. Watzinger, Jericho: Die Ergebnisse der Ausgrabungen (1913)"
+  - "J. Garstang and J. B. E. Garstang, The Story of Jericho (1940)"
+  - "K. M. Kenyon, Digging Up Jericho (1957)"
+  - "P. Bienkowski, Jericho in the Late Bronze Age (1986)"
+  - "E. Netzer, Hasmonean and Herodian Palaces at Jericho: Final Reports of the 1973-1987 Excavations, vol. 1 (2001)"
+  - "L. Nigro and N. Marchetti, Italian-Palestinian Expedition to Tell es-Sultan, excavation reports (1997-)"
+status: checked

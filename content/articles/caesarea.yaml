@@ -1,0 +1,40 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such.
+# The place is Caesarea Maritima, not Caesarea Philippi.
+id: caesarea
+place: a58735e
+title:
+  en: "Caesarea"
+  ru: "Кесария"
+body:
+  en:
+    - "Caesarea lies on the Mediterranean coast of the Sharon plain, on a stretch of shore with no natural harbour. In the Persian period a small Phoenician anchorage stood here, Strato's Tower, perhaps named after Straton, a king of Sidon; the Zenon papyri mention it in 259 BC. Alexander Jannaeus added it to the Hasmonean kingdom, Pompey made it a free town in 63 BC, and in 30 BC Augustus gave it to Herod the Great."
+    - "From 22 BC Herod built a new city on the site and named it Caesarea after the emperor. Its harbour, Sebastos, was made with breakwaters of hydraulic concrete laid in the open sea; above it stood a temple of Roma and Augustus, with a theatre, a palace on a promontory and an aqueduct. The city was dedicated with games in about 10 BC. When Judea became a province in AD 6, Caesarea became the seat of its Roman governors; a stone found in the theatre in 1961 names Pontius Pilate as prefect of Judea."
+    - "In Acts, Philip the evangelist settled in Caesarea, and at Peter's word the centurion Cornelius and his household were baptised there, gentiles received into the church. Herod Agrippa I died at Caesarea in AD 44, as both Acts and Josephus relate. Paul passed through the port several times and was held there for two years under the governors Felix and Festus before he spoke before Agrippa II and sailed for Rome."
+    - "Strife between the city's Greeks and Jews helped spark the revolt of AD 66. Vespasian made Caesarea a Roman colony, and after 135 it remained the capital of the province, now called Syria Palaestina. Origen settled there in the 230s, and the library gathered by him and Pamphilus served Eusebius, bishop of Caesarea from about 313, who recorded the martyrs who died in the city under Diocletian. Rabbis also taught there. In 333 the Pilgrim of Bordeaux was shown the bath of Cornelius, and about 390 Caesarea became the metropolis of Palaestina Prima."
+  ru:
+    - "Кесария стоит на средиземноморском берегу равнины Сарон, где нет естественной гавани. В персидское время здесь была небольшая финикийская стоянка, Башня Стратона, названная, возможно, по имени сидонского царя Стратона; в 259 г. до н. э. её упоминают папирусы Зенона. Александр Яннай присоединил её к Хасмонейскому царству, Помпей в 63 г. до н. э. сделал её свободным городом, а в 30 г. до н. э. Август отдал её Ироду Великому."
+    - "С 22 г. до н. э. Ирод строил на этом месте новый город и назвал его Кесарией в честь императора. Его гавань, Себастос, была сооружена из волнорезов, отлитых из гидравлического бетона прямо в открытом море; над ней стоял храм Ромы и Августа, а рядом театр, дворец на мысу и водопровод. Город был освящён играми около 10 г. до н. э. Когда Иудея в 6 г. н. э. стала провинцией, Кесария сделалась резиденцией римских наместников; камень, найденный в театре в 1961 г., называет Понтия Пилата префектом Иудеи."
+    - "По книге Деяний, в Кесарии поселился Филипп благовестник, а по слову Петра там крестились сотник Корнилий и дом его — язычники, принятые в церковь. В 44 г. н. э. в Кесарии умер Ирод Агриппа I, о чём рассказывают и Деяния, и Иосиф Флавий. Павел не раз проходил через этот порт, а затем два года провёл здесь в узах при правителях Феликсе и Фесте, пока не говорил перед Агриппой II и не отплыл в Рим."
+    - "Вражда между греками и иудеями города стала одним из поводов к восстанию 66 г. н. э. Веспасиан сделал Кесарию римской колонией, а после 135 г. она осталась столицей провинции, теперь называвшейся Сирией Палестинской. В 230-е годы здесь поселился Ориген, и собранная им и Памфилом библиотека служила Евсевию, епископу Кесарии примерно с 313 г., который описал мучеников, погибших в городе при Диоклетиане. Учили здесь и раввины. В 333 г. паломнику из Бордо показывали баню Корнилия, а около 390 г. Кесария стала митрополией Первой Палестины."
+scripture:
+  - Acts.8.40
+  - Acts.21.8
+  - Acts.10.1-Acts.10.48
+  - Acts.12.19-Acts.12.23
+  - Acts.9.30
+  - Acts.18.22
+  - Acts.23.23-Acts.23.35
+  - Acts.24.27
+  - Acts.25.1-Acts.25.27
+  - Acts.26.32-Acts.27.2
+sources:
+  - "Zenon papyri, P. Cair. Zen. I 59004 (Strato's Tower, 259 BC); D. W. Roller and R. L. Hohlfelder, 'The Problem of the Location of Straton's Tower', BASOR 252 (1983)"
+  - "Josephus, Antiquities 13.324; 13.395; 14.76; 15.217; 15.331-341; 16.136-141; 19.343-350; 20.173-184; Jewish War 1.408-415; 2.266-270; 2.284-292"
+  - "The Pilate stone from the theatre at Caesarea (found 1961)"
+  - "Pliny the Elder, Natural History 5.69"
+  - "Eusebius, Ecclesiastical History 6.26; Martyrs of Palestine"
+  - "Pilgrim of Bordeaux, Itinerarium Burdigalense (AD 333), the entry on Caesarea"
+  - "K. G. Holum, R. L. Hohlfelder, R. J. Bull and A. Raban, King Herod's Dream: Caesarea on the Sea (1988)"
+  - "L. I. Levine, Caesarea under Roman Rule (1975)"
+  - "'Caesarea', in E. Stern (ed.), The New Encyclopedia of Archaeological Excavations in the Holy Land, vol. 1 (1993)"
+status: checked

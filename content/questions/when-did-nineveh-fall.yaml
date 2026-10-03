@@ -1,0 +1,24 @@
+id: when-did-nineveh-fall
+question:
+  en: "When did Nineveh fall?"
+  ru: "Когда пала Ниневия?"
+answer:
+  en:
+    - "Nineveh fell in 612 BC to the Babylonians under Nabopolassar and the Medes under Cyaxares, after a siege of about three months, as the Babylonian Chronicle records."
+    - 'Assyria had ruled the Near East for a century and a half, taking Samaria in 722 BC and besieging Jerusalem in 701. After Ashurbanipal''s death its power broke: Nabopolassar made Babylon independent in 626 BC and in alliance with the Medes marched on the Assyrian cities. The Chronicle tells that in the fourteenth year of Nabopolassar the kings came to Nineveh, fought from the month of Simanu to Abu, took the city and turned it into a mound of ruins. The prophets Nahum and Zephaniah had foretold it: "Nineveh is laid waste: who will bemoan her?"'
+    - "The last Assyrian king, Ashur-uballit II, held out at Harran, which fell in 610 BC; the Egyptian army that marched north to help him in 609 killed King Josiah of Judah at Megiddo on the way, and Egypt's own defeat at Carchemish in 605 BC left the west to Babylon. Nineveh was never rebuilt as a city; only a small settlement lived on at the site, opposite today's Mosul."
+  ru:
+    - "Ниневия пала в 612 г. до н. э. под натиском вавилонян во главе с Набопаласаром и мидян во главе с Киаксаром после примерно трёхмесячной осады, как сообщает Вавилонская хроника."
+    - "Ассирия полтора века правила Ближним Востоком: взяла Самарию в 722 г. до н. э., осаждала Иерусалим в 701-м. После смерти Ашшурбанапала её сила надломилась: Набопаласар в 626 г. до н. э. сделал Вавилон независимым и в союзе с мидянами двинулся на ассирийские города. Хроника говорит, что в четырнадцатый год Набопаласара цари подошли к Ниневии, сражались с месяца симану до месяца абу, взяли город и обратили его в груду развалин. Пророки Наум и Софония предрекли это: «разорена Ниневия! Кто пожалеет о ней?»"
+    - "Последний ассирийский царь, Ашшур-убаллит II, держался в Харране, который пал в 610 г. до н. э.; египетское войско, шедшее ему на помощь в 609-м, по пути убило при Мегиддоне царя Иосию, а поражение самого Египта при Кархемисе в 605 г. до н. э. отдало запад Вавилону. Ниневию уже не отстроили как город; на её месте, напротив нынешнего Мосула, осталось лишь небольшое поселение."
+map:
+  place: a70fd5d
+  year: "612 BC"
+  ref: Nah.3.7
+scripture: [Nah.1.1, Nah.3.7, Zeph.2.13-Zeph.2.15, 2Kgs.23.29]
+sources:
+  - "Babylonian Chronicle ABC 3 (Fall of Nineveh Chronicle), years 14, 16 and 17 of Nabopolassar; A. K. Grayson, Assyrian and Babylonian Chronicles (1975)"
+  - "Babylonian Chronicle ABC 2 (Nabopolassar's accession, 626 BC); ABC 5 (Carchemish, 605 BC)"
+  - "History Globe dated events (nineveh-falls, josiah-dies, carchemish) and History Globe place dates (Nineveh, until 612 BC)"
+  - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016)"
+status: checked

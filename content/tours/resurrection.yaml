@@ -8,6 +8,7 @@ title:
   en: "The resurrection and the appearances"
   ru: "Воскресение и явления"
 year: "AD 30"
+people: ["Jesus@Isa.7.14-Rev"]
 approximate: true
 stops:
   - place: a631d35 # Golgotha
@@ -18,8 +19,8 @@ stops:
   - place: ae7274b # Emmaus
     ref: Luke.24.13-Luke.24.32
     note:
-      en: "On the road to Emmaus two disciples know Him in the breaking of bread."
-      ru: "На пути в Эммаус двое учеников узнают Его при преломлении хлеба."
+      en: "On the way to Emmaus two disciples walk with Him without knowing Him; at the table they know Him in the breaking of bread."
+      ru: "По пути в Эммаус двое учеников идут с Ним, не узнавая Его; за трапезой они узнают Его при преломлении хлеба."
   - place: a15257a # Jerusalem
     ref: Luke.24.33-Luke.24.43
     note:

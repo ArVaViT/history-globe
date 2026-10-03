@@ -1,0 +1,34 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed things are said to be disputed.
+id: joppa
+place: ae023a9
+title:
+  en: "Joppa"
+  ru: "Иоппия"
+body:
+  en:
+    - "Joppa, today Jaffa in Tel Aviv-Yafo, stands on a rocky headland with a small natural harbour, the chief port of the central coast. It came under Egypt in the fifteenth century BC, when Thutmose III listed it among his conquests; an Egyptian tale on Papyrus Harris 500, the Taking of Joppa, tells how his general Djehuty brought soldiers into the town hidden in sacks. In the Amarna age it held Egyptian royal granaries, and excavators have uncovered the gateway of the Egyptian fortress, known as the Ramesses Gate."
+    - "Joshua names Joppa at the border of the lot of Dan. Cedar from Lebanon was floated in rafts to Joppa for Solomon's temple and again for the temple rebuilt after the exile, and Jonah went down to Joppa to find a ship for Tarshish. In 701 BC Sennacherib of Assyria took Joppa, then a town of Sidqa, king of Ashkelon. In the Persian period the sarcophagus of Eshmunazar II of Sidon records that the Persian king gave Dor and Joppa to the Sidonians."
+    - "In the Maccabean wars Judas burned Joppa's harbour after its people had drowned the Jews living among them; Jonathan took the city, and Simon garrisoned it and made it the Jews' port. Pompey freed Joppa in 63 BC, Julius Caesar returned it to the Jews under Hyrcanus II, and Augustus gave it to Herod. In AD 66 Cestius Gallus took Joppa, killed its people and burned it; when refugees made it a base for piracy, Vespasian's troops took it again in 67. Josephus mentions the rocks there where, by legend, Andromeda had been chained."
+    - "In Acts the disciple Tabitha, also called Dorcas, died at Joppa, and Peter, called from nearby Lydda, raised her to life. He stayed many days with Simon a tanner, whose house was by the sea; on its roof he saw the vision of the sheet let down from heaven, and from here he went with the messengers of Cornelius to Caesarea. Describing Paula's pilgrimage in the 380s, Jerome mentions Joppa, close to her road at Lydda, as the port of Jonah's flight, and by the fifth century the town had its own bishop."
+  ru:
+    - "Иоппия, ныне Яффа в Тель-Авиве-Яффо, стоит на скалистом мысу с небольшой естественной гаванью — главным портом средней части побережья. В XV веке до н. э. она перешла под власть Египта: Тутмос III включил её в список своих завоеваний, а египетская повесть на папирусе Харрис 500, «Взятие Иоппии», рассказывает, как его военачальник Джехути ввёл в город воинов, спрятанных в мешках. В амарнскую эпоху здесь были царские житницы Египта, а раскопки открыли ворота египетской крепости, известные как ворота Рамсеса."
+    - "Книга Иисуса Навина называет Иоппию на границе удела Дана. Кедры с Ливана сплавляли плотами в Иоппию для храма Соломона и снова для храма, отстроенного после плена, а Иона пришёл в Иоппию, чтобы найти корабль в Фарсис. В 701 г. до н. э. ассирийский царь Сеннахирим взял Иоппию, принадлежавшую тогда Цидке, царю Аскалона. В персидский период надпись на саркофаге сидонского царя Эшмуназара II сообщает, что персидский царь отдал сидонянам Дор и Иоппию."
+    - "В Маккавейских войнах Иуда сжёг гавань Иоппии после того, как её жители утопили живших среди них иудеев; Ионафан взял город, а Симон поставил в нём гарнизон и сделал его иудейским портом. В 63 г. до н. э. Помпей освободил Иоппию, Юлий Цезарь вернул её иудеям при Гиркане II, а Август отдал её Ироду. В 66 г. н. э. Цестий Галл взял Иоппию, перебил жителей и сжёг город; когда беглецы сделали его гнездом морского разбоя, войска Веспасиана в 67 г. взяли его снова. Иосиф Флавий упоминает здешние скалы, к которым, по преданию, была прикована Андромеда."
+    - "В Деяниях ученица Тавифа, она же Серна, умерла в Иоппии, и Пётр, позванный из соседней Лидды, воскресил её. Он долго жил у Симона кожевника, дом которого был при море; на его кровле Пётр увидел видение спущенного с неба полотна и отсюда пошёл с посланными Корнилия в Кесарию. Описывая паломничество Павлы в 380-х гг., Иероним упоминает лежащую неподалёку от Лидды Иоппию как пристань, откуда бежал Иона, а к V веку в городе был свой епископ."
+scripture:
+  - Josh.19.46
+  - 2Chr.2.16
+  - Ezra.3.7
+  - Jonah.1.3
+  - Acts.9.36-Acts.9.43
+  - Acts.10.5-Acts.10.23
+  - Acts.11.5-Acts.11.11
+sources:
+  - "The Taking of Joppa (Papyrus Harris 500, verso)"
+  - "Sennacherib, Chicago (Oriental Institute) Prism, RINAP 3, Sennacherib 22, ii 68b-72"
+  - "Sarcophagus of Eshmunazar II (KAI 14)"
+  - "1 Maccabees 10.75-76; 12.33-34; 13.11; 14.5; 2 Maccabees 12.3-7"
+  - "Josephus, Antiquities 14.69-76; 14.202-210; 15.213-217; Jewish War 2.507-509; 3.414-431"
+  - "Jerome, Letter 108.8"
+  - "M. Peilstöcker and A. A. Burke (eds.), The History and Archaeology of Jaffa 1 (2011)"
+status: checked

@@ -1,0 +1,35 @@
+# Overview article (ADR 0007). Aroer on the Arnon at Ara'ir, not Tel Aroer in the Negev. Mainstream facts only; the Mesha Stele is dated by its usual mid-ninth-century reckoning (c. 840 BC).
+id: aroer
+place: ae46f2e
+title:
+  en: "Aroer"
+  ru: "Ароер"
+body:
+  en:
+    - "Aroer stood on the northern rim of the Arnon gorge, today's Wadi Mujib, beside the village of Ara'ir in Jordan, about 5 km south-east of Dhiban, the biblical Dibon. In the 1960s a Spanish expedition led by Emilio Olávarri made soundings and then excavations at the site. Below the site an ancient built road, in places 4 to 6 m wide, with kerbstones and retaining walls, climbs out of the gorge; it is dated to the Iron Age by its link with Aroer."
+    - 'In Deuteronomy, Aroer, "which is by the brink of the river of Arnon", marks the southern end of the land that Israel took from Sihon, king of the Amorites. The children of Gad built Aroer, and Joshua makes it the border of Reuben. Jephthah, answering the king of Ammon, recalls that Israel had dwelt in Heshbon and Aroer and their towns for three hundred years. David''s census began at Aroer, and in the days of Jehu, Hazael of Damascus smote the land of Israel east of the Jordan "from Aroer, which is by the river Arnon, even Gilead and Bashan".'
+    - 'About 840 BC, by the usual reckoning, Mesha, king of Moab, wrote on his stele from Dibon: "I built Aroer, and I made the highway at the Arnon". The road below the site has been identified with this highway. In Jeremiah''s oracle against Moab, Aroer is a Moabite town again: "O inhabitant of Aroer, stand by the way, and espy; ask him that fleeth".'
+    - "In AD 106 the land passed into the new Roman province of Arabia, and Trajan's new road, the Via Nova Traiana, crossed the Arnon by the ascent from Dhiban rather than at Aroer. Early in the fourth century Eusebius wrote that Aroer was still pointed out, perched on the brow of the mountain above the gorge where the torrent runs down to the Dead Sea."
+  ru:
+    - "Ароер стоял на северном краю ущелья Арнона, нынешнего Вади Муджиб, у деревни Араир в Иордании, примерно в 5 км к юго-востоку от Дибана, библейского Дивона. В 1960-х годах испанская экспедиция под руководством Эмилио Олаварри провела здесь сначала разведочные, а затем основные раскопки. Ниже городища из ущелья поднимается древняя мощёная дорога шириной местами от 4 до 6 м, с бордюрными камнями и подпорными стенами; её относят к железному веку по связи с Ароером."
+    - "Во Второзаконии Ароер, «который на берегу потока Арнона», отмечает южный предел земли, которую Израиль взял у Сигона, царя Аморрейского. Сыны Гадовы построили Ароер, а книга Иисуса Навина делает его пределом Рувима. Иеффай, отвечая царю Аммонитскому, напоминает, что Израиль уже триста лет живёт в Есевоне и Ароере и зависящих от них городах. Перепись Давида началась от Ароера, а во дни Ииуя Азаил Дамасский поражал земли Израиля на восток от Иордана, «начиная от Ароера, который при потоке Арноне, и Галаад и Васан»."
+    - "Около 840 г. до н. э., по обычной датировке, Меса, царь Моавитский, написал на своей стеле из Дивона: «Я построил Ароер и проложил дорогу у Арнона». Дорогу ниже городища отождествляют с этой дорогой. В пророчестве Иеремии о Моаве Ароер снова моавитский город: «Стань у дороги и смотри, обитательница Ароера, спрашивай бегущего»."
+    - "В 106 г. н. э. эта земля вошла в новую римскую провинцию Аравия, и Новая Траянова дорога пересекала Арнон по подъёму у Дибана, а не у Ароера. В начале IV века Евсевий писал, что Ароер всё ещё показывают на гребне горы над ущельем, где поток сбегает к Мёртвому морю."
+scripture:
+  - Deut.2.36
+  - Deut.3.12
+  - Num.32.34
+  - Josh.13.15-Josh.13.16
+  - Judg.11.26
+  - 2Sam.24.5
+  - 2Kgs.10.32-2Kgs.10.33
+  - Jer.48.19
+sources:
+  - "The Mesha Stele (KAI 181), line 26 ('I built Aroer, and I made the highway at the Arnon')"
+  - "Eusebius, Onomasticon, s.v. Aroer"
+  - "Cassius Dio, Roman History 68.14 (Palma annexes the Arabia of Petra)"
+  - "E. Olávarri, 'Sondages à 'Arô'er sur l'Arnon', Revue Biblique 72 (1965) 77-94; 'Fouilles à 'Arô'er sur l'Arnon', Revue Biblique 76 (1969) 230-259"
+  - "A. Kloner and C. Ben-David, 'Mesillot on the Arnon: An Iron Age (Pre-Roman) Road in Moab', BASOR 330 (2003) 65-81"
+  - "M. Marciak et al., 'In search of ancient pre-Roman imperial roads', Archaeological and Anthropological Sciences 15 (2023) 118"
+  - "B. Routledge, Moab in the Iron Age: Hegemony, Polity, Archaeology (2004)"
+status: checked

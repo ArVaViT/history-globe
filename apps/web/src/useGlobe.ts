@@ -6,13 +6,21 @@ import { DATA_URL } from "./data";
 import { MAP_FONTS } from "./fonts";
 import type { UrlView } from "./url";
 import { viewPadding } from "./view-padding.ts";
+import { TERRAIN_TILES } from "./offline";
 
 const DEFAULT_CAMERA: Camera = { center: [35.3, 32.0], zoom: 5.4, pitch: 40, bearing: -10 };
+// On a phone the view is pushed up for the card below, so the Holy Land would sit at the
+// top over half a screen of desert: aimed further north, it is in the middle, Paul's
+// Asia Minor above it.
+const PHONE_CAMERA: Camera = { center: [36.0, 35.6], zoom: 5.0, pitch: 40, bearing: -10 };
 
 const TERRAIN = {
   // Development source. Production serves its own extract from R2 (ADR 0005).
-  tiles: "https://tiles.mapterhorn.com/{z}/{x}/{y}.webp",
-  attribution: "Terrain: Mapterhorn (Copernicus DEM and others)",
+  tiles: TERRAIN_TILES,
+  // The licences ask for this line where the map is shown (Copernicus 6(a)); the rest of
+  // the sources, with the Copernicus disclaimer, are on the About page the link opens.
+  attribution:
+    'Terrain: <a href="https://mapterhorn.com/attribution">Mapterhorn</a>, Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the EU and ESA · <a href="docs/sources.html">Sources</a>',
 };
 
 // MapLibre is most of the JavaScript. It is a separate chunk that starts downloading at
@@ -60,23 +68,46 @@ export function useGlobe(
   return { globe, error };
 }
 
+/**
+ * Whether a person's card is open (App.tsx): their places come with it, and the camera's
+ * padding keeps its room. The engine's state knows the places, not the card.
+ */
+let personCard = false;
+/** A compact frame on another site (App.tsx): no column, the chip above, the year below. */
+let compactFrame = false;
+export function setCompactFrame(on: boolean): void {
+  compactFrame = on;
+}
+export function setPersonCardOpen(open: boolean): void {
+  personCard = open;
+}
+
 function createGlobe(
   Renderer: typeof MapLibreRenderer,
   el: HTMLDivElement,
   data: LoadedData,
   init: UrlView,
 ): Globe {
+  // The padding asks whether a card is open; the engine comes after the renderer.
+  let cardOpen = () => true;
+  // The chapter's chip under the header (not in a frame, where it sits in the top bar).
+  let chipShown = () => false;
   const renderer = new Renderer({
     container: el,
-    camera: init.camera ?? DEFAULT_CAMERA,
+    camera: init.camera ?? (innerWidth < 768 ? PHONE_CAMERA : DEFAULT_CAMERA),
     places: forMap(data.places),
     dataUrl: DATA_URL,
     terrainTiles: TERRAIN.tiles,
-    terrainAttribution: TERRAIN.attribution,
+    // The credits' "Sources" link opens the docs in the language the map opened in.
+    terrainAttribution:
+      init.locale === "ru"
+        ? TERRAIN.attribution.replace('href="docs/sources.html"', 'href="docs/ru/sources.html"')
+        : TERRAIN.attribution,
     fonts: MAP_FONTS,
     initialYear: init.year ?? DEFAULT_STATE.year,
     initialLocale: init.locale ?? DEFAULT_STATE.locale,
-    viewPadding,
+    viewPadding: () =>
+      viewPadding(innerWidth, innerHeight, compactFrame, timelineHeight(), cardOpen(), chipShown()),
   });
   const engine = createEngine({
     renderer,
@@ -89,6 +120,11 @@ function createGlobe(
       ...(init.layers === undefined ? {} : { layers: init.layers }),
     },
   });
+  chipShown = () => !compactFrame && engine.store.get().focus !== null;
+  cardOpen = () => {
+    const s = engine.store.get();
+    return s.selectedPlace !== null || s.tour !== null || personCard;
+  };
   if (import.meta.env.DEV) {
     // Handle for local debugging and screenshot scripts; never in production builds.
     (window as unknown as { __hgMap?: unknown }).__hgMap = renderer.map;
@@ -116,4 +152,12 @@ function forMap(places: LoadedData["places"]): LoadedData["places"] {
       return { ...f, properties: { ...f.properties, osis: [], where: "" } };
     }),
   };
+}
+
+/** The timeline's height as the app measures it (--hg-timeline-h), for the phone's padding. */
+function timelineHeight(): number {
+  const v = parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue("--hg-timeline-h"),
+  );
+  return Number.isFinite(v) ? v : 124;
 }

@@ -1,0 +1,27 @@
+# Overview article (ADR 0007). Mainstream facts only; classical dates follow Thucydides and Diodorus, the date of the Lion monument is disputed and is given only as the fourth century BC.
+id: amphipolis
+place: a4bdea7
+title:
+  en: "Amphipolis"
+  ru: "Амфиполь"
+body:
+  en:
+    - "Amphipolis stood on a hill on the east bank of the Strymon in Macedonia, a few kilometres above the river mouth and its port Eion, near the timber and the gold and silver mines of Mount Pangaeus. The place was first called Ennea Hodoi, the Nine Ways. Herodotus says that when Xerxes' army crossed the Strymon there in 480 BC, the Persians buried alive nine boys and nine girls of the local people. About 465 BC an Athenian colony was sent there, but the settlers were cut off by the Thracians at Drabescus."
+    - "In 437/436 BC the Athenian Hagnon founded the city and named it Amphipolis because the Strymon flows round it on two sides. In the winter of 424 BC the Spartan Brasidas took it; the historian Thucydides, then an Athenian general at Thasos, came too late to save it and spent twenty years in exile. In 422 BC Brasidas and the Athenian Cleon both fell in a battle before the city, and the Amphipolitans buried Brasidas in the city and honoured him as their founder in place of Hagnon. Philip II of Macedon took Amphipolis in 357 BC. After Alexander's death, Cassander kept Alexander's widow Roxane and her young son in its citadel, and about 310 BC he had them killed."
+    - 'After Rome defeated Perseus, the last king of Macedon, in 168 BC, Aemilius Paullus announced the settlement of Macedonia at Amphipolis: the country was divided into four regions, and Amphipolis became the capital of the first. The city lay on the Via Egnatia, and Paul and Silas, going on from Philippi, "passed through Amphipolis and Apollonia" to Thessalonica. Acts says nothing of a stay there.'
+    - "In late antiquity the inhabited city shrank to the walled acropolis, where several basilicas with mosaic floors and a church with a hexagonal plan were built in the fifth and sixth centuries. Greek excavations, led for many years by Dimitrios Lazaridis, uncovered the walls, the gymnasium and these churches. Near the river stands the colossal marble Lion of Amphipolis, a funerary monument usually dated to the fourth century BC."
+  ru:
+    - "Амфиполь стоял на холме на восточном берегу Стримона в Македонии, в нескольких километрах выше устья реки и гавани Эион, рядом с лесами и золотыми и серебряными рудниками горы Пангей. Это место сначала называлось Девять Путей. Геродот рассказывает, что когда войско Ксеркса переправлялось здесь через Стримон в 480 г. до н. э., персы закопали заживо девять мальчиков и девять девушек из местных жителей. Около 465 г. до н. э. сюда отправили афинских поселенцев, но фракийцы истребили их у Драбеска."
+    - "В 437/436 г. до н. э. афинянин Гагнон основал город и назвал его Амфиполем, потому что Стримон обтекает его с двух сторон. Зимой 424 г. до н. э. его взял спартанец Брасид; историк Фукидид, тогда афинский стратег на Фасосе, опоздал на помощь и провёл двадцать лет в изгнании. В 422 г. до н. э. Брасид и афинянин Клеон оба погибли в битве под городом, и амфипольцы похоронили Брасида в городе и стали чтить его как основателя вместо Гагнона. Филипп II Македонский взял Амфиполь в 357 г. до н. э. После смерти Александра Кассандр держал в здешней крепости его вдову Роксану и её малолетнего сына, а около 310 г. до н. э. велел их убить."
+    - "После того как в 168 г. до н. э. Рим разбил Персея, последнего царя Македонии, Эмилий Павел объявил в Амфиполе устройство Македонии: страну разделили на четыре области, и Амфиполь стал главным городом первой. Город лежал на Эгнатиевой дороге, и Павел с Силой, идя дальше из Филипп, «прошедши через Амфиполь и Аполлонию», пришли в Фессалонику. О том, останавливались ли они здесь, Деяния ничего не говорят."
+    - "В поздней античности жилой город сжался до обнесённого стеной акрополя, где в V–VI веках построили несколько базилик с мозаичными полами и церковь шестиугольного плана. Греческие раскопки, которыми много лет руководил Димитриос Лазаридис, открыли стены, гимнасий и эти церкви. У реки стоит огромный мраморный Амфипольский лев — надгробный памятник, который обычно датируют IV веком до н. э."
+scripture:
+  - Acts.17.1
+sources:
+  - "Herodotus, Histories 7.114"
+  - "Thucydides, History 1.100.3; 4.102-106; 5.10-11; 5.26.5"
+  - "Diodorus Siculus, Library 16.8.2; 19.52.4; 19.105.2"
+  - "Livy, History of Rome 45.29"
+  - "M. H. Hansen and T. H. Nielsen (eds.), An Inventory of Archaic and Classical Poleis (2004), s.v. Amphipolis"
+  - "N. G. L. Hammond and G. T. Griffith, A History of Macedonia, vol. 2 (1979)"
+status: checked

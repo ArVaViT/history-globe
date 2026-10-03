@@ -1,0 +1,36 @@
+# Overview article (ADR 0007). Mainstream facts only; the Mesha Stele is dated by its usual mid-ninth-century reckoning (c. 840 BC).
+id: dibon
+place: a0d784a
+title:
+  en: "Dibon"
+  ru: "Дивон"
+body:
+  en:
+    - "Dibon lay in Moab, east of the Dead Sea and a few kilometres north of the Arnon gorge, on a mound beside the modern town of Dhiban in Jordan, where the King's Highway passed. Excavations by the American Schools of Oriental Research in the 1950s and, since 2004, by the Dhiban Excavation and Development Project have found traces of settlement in the Early Bronze Age, in the third millennium BC, and a sizeable town of the Iron Age."
+    - 'In Numbers, the old song about Heshbon, the city of Sihon, king of the Amorites, says that "Heshbon is perished even unto Dibon"; Israel then took the land, the children of Gad built Dibon, and on the way through the wilderness Israel camped at Dibon-gad. Joshua assigns Dibon to Reuben. In Isaiah and Jeremiah it is again a town of Moab, mourning in the oracles against that land.'
+    - "In August 1868 the missionary F. A. Klein was shown a basalt stele lying among the ruins of Dhiban. Before it could be taken away, local Bedouin broke it to pieces, but a paper squeeze made for Charles Clermont-Ganneau allowed the text to be restored, and the stone is now in the Louvre. In it Mesha, king of Moab, the Dibonite, says that Omri, king of Israel, and his son had oppressed Moab, that he took back the land, captured Ataroth and Nebo, and in Qarhoh, usually taken to be the royal quarter of Dibon, built walls, gates, towers, a palace and reservoirs, with Israelite prisoners put to the digging. 2 Kings tells how Mesha rebelled against Israel after the death of Ahab."
+    - "Little is known of Dibon in the Persian and Hellenistic periods. From the middle of the first century BC it belonged to the Nabataeans, who built a temple there, and in AD 106 it passed with the rest of the Nabataean kingdom into the Roman province of Arabia. Early in the fourth century Eusebius knew Dibon as a very large village near the Arnon. Excavations have uncovered a bath house and two churches of the late Roman and Byzantine periods."
+  ru:
+    - "Дивон находился в Моаве, к востоку от Мёртвого моря и в нескольких километрах к северу от ущелья Арнона, на холме рядом с современным городком Дибан в Иордании, у которого проходила Царская дорога. Раскопки Американских школ восточных исследований в 1950-х годах и, с 2004 года, Дибанского проекта раскопок и развития обнаружили следы поселения раннего бронзового века, III тысячелетия до н. э., и значительный город железного века."
+    - "В книге Чисел древняя песнь о Есевоне, городе Сигона, царя Аморрейского, говорит: «погиб Есевон до Дивона»; затем этой землёй овладел Израиль, сыны Гадовы построили Дивон, а на пути через пустыню Израиль стоял станом в Дивон-Гаде. Книга Иисуса Навина отдаёт Дивон Рувиму. У Исаии и Иеремии он снова город Моава, оплакивающий себя в пророчествах против этой земли."
+    - "В августе 1868 года миссионеру Ф. А. Клейну показали базальтовую стелу, лежавшую среди развалин Дибана. Прежде чем её успели увезти, местные бедуины разбили её на куски, но бумажный оттиск, снятый для Шарля Клермон-Ганно, позволил восстановить текст, и камень теперь хранится в Лувре. В надписи Меса, царь Моавитский, дивонитянин, говорит, что Амврий, царь Израильский, и его сын угнетали Моав, что он вернул землю, взял Атароф и Нево, а в Кархо, которое обычно считают царским кварталом Дивона, построил стены, ворота, башни, дворец и водоёмы, а копать заставил израильских пленников. Четвёртая книга Царств рассказывает, как Меса отложился от Израиля после смерти Ахава."
+    - "О Дивоне в персидское и эллинистическое время известно мало. С середины I века до н. э. он принадлежал набатеям, построившим здесь храм, а в 106 г. н. э. он вместе со всем Набатейским царством вошёл в римскую провинцию Аравия. В начале IV века Евсевий знал Дивон как очень большое селение близ Арнона. Раскопки открыли баню и две церкви позднеримского и византийского времени."
+scripture:
+  - Num.21.26-Num.21.30
+  - Num.32.34
+  - Num.33.45-Num.33.46
+  - Josh.13.9
+  - Josh.13.15-Josh.13.17
+  - Isa.15.2
+  - Jer.48.18
+  - Jer.48.22
+  - 2Kgs.3.4-2Kgs.3.5
+sources:
+  - "The Mesha Stele (KAI 181), lines 1-9 (Mesha the Dibonite; Omri and his son), 10-21 (Ataroth, Nebo), 21-28 (building at Qarhoh)"
+  - "F. A. Klein, letter of 23 March 1870 on the discovery of the stele, Pall Mall Gazette, 19 April 1870"
+  - "Eusebius, Onomasticon, s.v. Daibon (Dibon)"
+  - "F. V. Winnett, 'Excavations at Dibon in Moab, 1950-51', BASOR 125 (1952) 7-20; A. D. Tushingham, 'Excavations at Dibon in Moab, 1952-53', BASOR 133 (1954) 6-26"
+  - "B. Porter, B. Routledge, D. Steen and F. al-Kawamlha, 'The Power of Place: The Dhiban Community through the Ages', in T. E. Levy et al. (eds.), Crossing Jordan: North American Contributions to the Archaeology of Jordan (London, 2016) 315-322"
+  - "J. A. Dearman (ed.), Studies in the Mesha Inscription and Moab (1989)"
+  - "B. Routledge, Moab in the Iron Age: Hegemony, Polity, Archaeology (2004)"
+status: checked

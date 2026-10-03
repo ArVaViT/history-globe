@@ -1,0 +1,84 @@
+# The great capitals whose powers shaped the Bible's story, from Ur to Rome. Unlike every
+# other tour, it runs in historical order across books, not in the order of one text: each
+# stop is a capital at the height of its power, and the passage is where the Bible meets
+# that city. Each stop carries its own year, so the slider and the borders change from stop
+# to stop; the years are points for the map, marked approximate:
+#   Ur, 2100 BC: the Third Dynasty (c. 2112-2004 BC, middle chronology). It also stands for
+#     Terah's departure, though the age of the patriarchs is disputed (the Abraham tour
+#     uses a conventional 1900 BC).
+#   Babel, 1760 BC: Hammurabi (1792-1750 BC) after he united southern Mesopotamia.
+#     Genesis 10:10 is not dated; Babel is OpenBible's record for Babylon in Genesis 10-11.
+#   Thebes, 1450 BC: Thutmose III (from 1479 BC; Megiddo c. 1457 BC). Nahum 3:8-10 looks
+#     back on the city's sack by the Assyrians, c. 663 BC (events.yaml; 664 or 663 BC).
+#   Nineveh, 701 BC: Sennacherib's campaign against Judah, as in the Hezekiah tour.
+#   Babylon, 580 BC: Nebuchadnezzar (605-562 BC), after the fall of Jerusalem; Daniel 4
+#     is not dated.
+#   Susa, 483 BC: the third year of Ahasuerus (Esth 1:3), usually taken for Xerxes I
+#     (486-465 BC).
+#   Alexandria, 250 BC: the Ptolemies and the Septuagint (events.yaml). The Bible names the
+#     city only in Acts, three centuries later; the note says so.
+#   Antioch, AD 43: Barnabas and Saul's year there, before the famine under Claudius
+#     (Acts 11:28) and Herod Agrippa's death in AD 44 (Acts 12).
+#   Rome, AD 60: Paul's arrival, as in the voyage to Rome.
+id: empires
+title:
+  en: "Empires of the biblical world"
+  ru: "Империи библейского мира"
+year: "2100 BC"
+# Capitals in the order of history, not a way travelled: no time on foot.
+walked: false
+approximate: true
+stops:
+  - place: a6cf75c # Ur
+    ref: Gen.11.31
+    note:
+      en: 'Around 2100 BC Ur on the lower Euphrates is the capital of the Third Dynasty, which rules Sumer and Akkad. Genesis begins Abram''s road here, by the usual identification of Ur of the Chaldees: Terah takes his family "from Ur of the Chaldees, to go into the land of Canaan".'
+      ru: "Около 2100 г. до н. э. Ур на нижнем Евфрате — столица III династии, правящей Шумером и Аккадом. Здесь, по обычному отождествлению Ура Халдейского, в книге Бытия начинается путь Аврама: Фарра выходит с семьёй «из Ура Халдейского, чтобы идти в землю Ханаанскую»."
+  - place: ab8fdbc # Babel
+    ref: Gen.10.10
+    year: "1760 BC"
+    note:
+      en: 'Under Hammurabi, Babel (Babylon) becomes the capital of a kingdom uniting southern Mesopotamia. Genesis names it first among the cities of Nimrod: "the beginning of his kingdom was Babel".'
+      ru: "При Хаммурапи Вавилон становится столицей царства, объединившего юг Месопотамии. Книга Бытия называет его первым среди городов Нимрода: «Царство его вначале составляли: Вавилон, Эрех, Аккад и Халне»."
+  - place: a9674fc # Thebes
+    ref: Nah.3.8-Nah.3.10
+    year: "1450 BC"
+    note:
+      en: 'Under Thutmose III Thebes, the city of Amon, is the heart of the New Kingdom, whose rule reaches the Euphrates. The Bible knows it as No: Nahum recalls its sack by the Assyrians about 663 BC, "populous No, that was situate among the rivers".'
+      ru: "При Тутмосе III Но (египетские Фивы), город бога Амона, — сердце Нового царства, власть которого доходит до Евфрата. Наум вспоминает его разорение ассирийцами около 663 г. до н. э.: «Разве ты лучше Но-Аммона, находящегося между реками»."
+  - place: a70fd5d # Nineveh
+    ref: 2Kgs.19.36
+    year: "701 BC"
+    note:
+      en: 'Sennacherib has made Nineveh the capital of Assyria, the power that took Samaria and now wars against Judah. After his campaign he "departed, and went and returned, and dwelt at Nineveh."'
+      ru: "Сеннахирим сделал Ниневию столицей Ассирии — державы, взявшей Самарию и теперь воюющей с Иудеей. После похода «отправился, и пошел, и возвратился Сеннахирим, царь Ассирийский, и жил в Ниневии»."
+  - place: a217d18 # Babylon
+    ref: Dan.4.30
+    year: "580 BC"
+    note:
+      en: 'Nebuchadnezzar has made Babylon the capital of an empire from the Persian Gulf to the border of Egypt, with the exiles of Judah in it. In Daniel he boasts: "Is not this great Babylon, that I have built for the house of the kingdom by the might of my power".'
+      ru: "Навуходоносор сделал Вавилон столицей державы от Персидского залива до границ Египта; здесь живут изгнанники из Иудеи. В книге Даниила царь говорит: «это ли не величественный Вавилон, который построил я в дом царства силою моего могущества»."
+  - place: a033b84 # Susa
+    ref: Esth.1.1-Esth.1.3
+    year: "483 BC"
+    note:
+      en: 'Susa is a royal seat of the Persian king, who reigns "from India even unto Ethiopia" from his throne in "Shushan the palace". In the third year of his reign Ahasuerus, usually identified with Xerxes I, holds a great feast here.'
+      ru: "Сузы — резиденция персидского царя, который царствует «от Индии и до Ефиопии». В третий год своего царствования он устраивает здесь пир; книга Есфирь называет его Артаксерксом, обычно его отождествляют с Ксерксом I."
+  - place: aee7248 # Alexandria
+    ref: Acts.18.24
+    year: "250 BC"
+    note:
+      en: 'Alexandria is the capital of Ptolemaic Egypt, where the Torah is being translated into Greek (the Septuagint). The Bible names the city only three centuries later, in Acts: Apollos is "born at Alexandria, an eloquent man, and mighty in the scriptures".'
+      ru: "Александрия — столица Египта Птолемеев; здесь Пятикнижие переводят на греческий (Септуагинта). Библия называет город лишь три века спустя, в Деяниях: Аполлос — «родом из Александрии, муж красноречивый и сведущий в Писаниях»."
+  - place: ae41ab4 # Antioch
+    ref: Acts.11.26
+    year: "AD 43"
+    note:
+      en: 'Once the Seleucid capital, Antioch is now the seat of the Roman governor of Syria and one of the largest cities of the empire. Barnabas and Saul teach here a whole year, "and the disciples were called Christians first in Antioch."'
+      ru: "Бывшая столица Селевкидов, Антиохия теперь — резиденция римского наместника Сирии и один из крупнейших городов империи. Варнава и Савл целый год учат здесь, «и ученики в Антиохии в первый раз стали называться Христианами»."
+  - place: afc8e7a # Rome
+    ref: Acts.28.16
+    year: "AD 60"
+    note:
+      en: 'Rome under Nero rules the whole Mediterranean, Judea with it. Paul arrives as a prisoner: "when we came to Rome, the centurion delivered the prisoners to the captain of the guard".'
+      ru: "Рим при Нероне владеет всем Средиземноморьем, и Иудеей тоже. Павел приходит сюда узником: «Когда же пришли мы в Рим, то сотник передал узников военачальнику»."

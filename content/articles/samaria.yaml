@@ -1,0 +1,37 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such.
+id: samaria
+place: a041bb3
+title:
+  en: "Samaria"
+  ru: "Самария"
+body:
+  en:
+    - "Samaria stands on a lone hill in the central highlands, about 10 km northwest of Shechem, above the road from the hills to the coastal plain. In the Bible, Omri, king of Israel, bought the hill from Shemer for two talents of silver and about 880 BC built a city on it, calling it Samaria after Shemer, the owner of the hill; it replaced Tirzah as the capital of the northern kingdom. Assyrian inscriptions afterwards called Israel the house of Omri."
+    - "Omri and Ahab built a royal acropolis of finely dressed stone. In the palace area excavators found carved ivory inlays of the ninth and eighth centuries BC, recalling the ivory house of Ahab and the luxury denounced by Amos, and the Samaria ostraca, eighth-century notes of deliveries of wine and oil. The Assyrians besieged the city for three years; it fell in 722 BC, and Sargon II claims to have deported its people and settled others in their place. Samaria became the seat of an Assyrian province."
+    - "Under the Persians it remained a seat of governors: Sanballat opposed Nehemiah, and an Elephantine papyrus of 407 BC names him governor of Samaria. After the Samaritans burned alive Andromachus, Alexander's governor of Syria, Alexander came to avenge him and the culprits were handed over; Samaria then became a Macedonian settlement, fortified with round towers. John Hyrcanus took it after a long siege and razed it in about 108 BC; Pompey gave it back to its people in 63 BC and Gabinius rebuilt it."
+    - "Augustus gave Samaria to Herod the Great in 30 BC. Herod rebuilt it with a temple of Augustus and new walls and renamed it Sebaste, from the Greek for Augustus. Acts tells of Philip preaching the gospel in Samaria, the land that took its name from the city. About AD 200 Septimius Severus made Sebaste a Roman colony. By the late fourth century Christians venerated the tomb of John the Baptist there, and Paula prayed there on her pilgrimage."
+  ru:
+    - "Самария стоит на отдельном холме в центральном нагорье, примерно в 10 км к северо-западу от Сихема, над дорогой с гор к приморской равнине. По Библии, израильский царь Амврий купил эту гору у Семира за два таланта серебра и около 880 г. до н. э. построил на ней город, назвав его Самарией по имени Семира, владельца горы; Самария сменила Фирцу как столица Северного царства. Ассирийские надписи и позже называли Израиль домом Амврия."
+    - "Амврий и Ахав построили на вершине царский акрополь из тщательно отёсанного камня. В дворцовом квартале археологи нашли резные инкрустации из слоновой кости IX–VIII веков до н. э., напоминающие о доме из слоновой кости Ахава и о роскоши, которую обличал Амос, а также самарийские остраки, записи VIII века о поставках вина и масла. Ассирийцы осаждали город три года; в 722 г. до н. э. он пал, и Саргон II пишет, что угнал его жителей и поселил на их место других. Самария стала центром ассирийской провинции."
+    - "При персах здесь по-прежнему сидели наместники: Санаваллат противился Неемии, а папирус с Элефантины 407 г. до н. э. называет его правителем Самарии. Когда самаряне заживо сожгли Андромаха, поставленного Александром над Сирией, Александр пришёл отомстить за него, и виновных выдали ему; после этого Самария стала македонским поселением с круглыми башнями. Иоанн Гиркан после долгой осады взял его и около 108 г. до н. э. сровнял с землёй; Помпей в 63 г. до н. э. вернул город жителям, и Габиний отстроил его."
+    - "В 30 г. до н. э. Август отдал Самарию Ироду Великому. Ирод перестроил её, возвёл храм Августа и новые стены и назвал город Севастией, от греческого имени Августа. Книга Деяний рассказывает, как Филипп проповедовал в Самарии, земле, получившей имя от города. Около 200 г. н. э. Септимий Север сделал Севастию римской колонией. К концу IV века христиане почитали здесь гробницу Иоанна Крестителя, и Павла молилась у неё во время своего паломничества."
+scripture:
+  - 1Kgs.16.23-1Kgs.16.24
+  - 1Kgs.22.39
+  - Amos.6.1-Amos.6.4
+  - 2Kgs.17.5-2Kgs.17.6
+  - 2Kgs.17.24
+  - 2Kgs.18.9-2Kgs.18.10
+  - Neh.4.1-Neh.4.2
+  - Acts.8.5
+  - Acts.8.14
+sources:
+  - "Black Obelisk of Shalmaneser III (Jehu 'son of Omri'); the Babylonian Chronicle, ABC 1 i 28; Sargon II's annals and the Nimrud Prism"
+  - "Elephantine papyrus of 407 BC, petition to Bagavahya (TAD A4.7)"
+  - "Curtius Rufus, History of Alexander 4.8.9-11"
+  - "Josephus, Antiquities 13.275-281; 14.75; 14.88; 15.217; 15.292-298; Jewish War 1.403"
+  - "Ulpian, Digest 50.15.1.7 (Severus' colony at Sebaste)"
+  - "Jerome, Letter 108.13"
+  - "G. A. Reisner, C. S. Fisher and D. G. Lyon, Harvard Excavations at Samaria 1908-1910 (1924)"
+  - "J. W. Crowfoot, K. M. Kenyon and E. L. Sukenik, The Buildings at Samaria (1942); J. W. and G. M. Crowfoot, Early Ivories from Samaria (1938)"
+status: checked

@@ -1,0 +1,35 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such.
+id: nazareth
+place: af5884f
+title:
+  en: "Nazareth"
+  ru: "Назарет"
+body:
+  en:
+    - "Nazareth lies in a basin high in the hills of Lower Galilee, above the Jezreel Valley, about 6 km from the city of Sepphoris. Tombs and pottery show people here in the Middle Bronze Age, and silos and grinding stones in the Iron Age. The village of the Gospels was settled again in the late Hellenistic period, when Jews moved into Galilee under the Hasmoneans, and it stayed small: the estimates of scholars run to a few hundred people living from farming in houses partly cut into the rock."
+    - "Nazareth is not named in the Old Testament, in Josephus or in the Mishnah. In the Gospels it is the town of Mary and Joseph, where the angel Gabriel came to Mary, and where Jesus grew up after the family returned from Egypt; he is called Jesus of Nazareth. Luke tells how he read from Isaiah in its synagogue and how the townspeople drove him out to the brow of the hill, and Nathanael asked whether any good thing could come out of Nazareth."
+    - "Excavations by Bellarmino Bagatti from 1955 under the Church of the Annunciation found rock-cut houses, cisterns and storage pits of the Roman village. In 2009 Yardenna Alexandre excavated a house of the early Roman period nearby, and Ken Dark has studied another under the convent of the Sisters of Nazareth. A Hebrew inscription from Caesarea, found in 1962 and dated to the third or fourth century AD, lists Nazareth as the seat of one of the priestly courses, a list usually taken to show where they settled after the revolts against Rome."
+    - "In the early third century Julius Africanus wrote that relatives of Jesus, the desposynoi, came from Nazareth and Kokhaba. Epiphanius says that under Constantine Joseph of Tiberias had leave to build churches in Jewish towns, Nazareth among them. In the fifth century a church was built over the venerated cave of the Annunciation; Bagatti thought an earlier sanctuary lay beneath it, a reading other scholars dispute. The town itself remained largely Jewish through late antiquity."
+  ru:
+    - "Назарет лежит в котловине высоко в горах Нижней Галилеи, над Изреельской долиной, примерно в 6 км от города Сепфорис. Гробницы и керамика говорят о людях здесь в среднем бронзовом веке, а зернохранилища и жернова — в железном. Селение евангельских времён возникло заново в позднеэллинистический период, когда при Хасмонеях иудеи переселялись в Галилею, и оставалось небольшим: по оценкам учёных, несколько сот человек жили земледелием в домах, отчасти вырубленных в скале."
+    - "Назарет не упоминается ни в Ветхом Завете, ни у Иосифа Флавия, ни в Мишне. В Евангелиях это город Марии и Иосифа, куда ангел Гавриил пришёл к Марии и где Иисус вырос после возвращения семьи из Египта; Его называют Иисусом из Назарета. Лука рассказывает, как Он читал Исаию в здешней синагоге и как жители вывели Его на вершину горы, чтобы свергнуть, а Нафанаил спрашивал, может ли что доброе быть из Назарета."
+    - "Раскопки Беллармино Багатти под храмом Благовещения, начатые в 1955 г., открыли вырубленные в скале жилища, цистерны и хозяйственные ямы римского селения. В 2009 г. Ярдена Александр раскопала неподалёку дом раннеримского времени, а Кен Дарк исследовал другой дом под монастырём сестёр Назарета. Еврейская надпись из Кесарии, найденная в 1962 г. и датируемая III или IV веком н. э., называет Назарет местом одной из священнических черед; обычно считают, что этот список показывает, где череды поселились после восстаний против Рима."
+    - "В начале III века Юлий Африкан писал, что родственники Иисуса, деспосины, происходили из Назарета и Кохавы. Епифаний пишет, что при Константине Иосиф Тивериадский получил позволение строить церкви в иудейских городах, и среди них в Назарете. В V веке над почитаемой пещерой Благовещения построили церковь; Багатти считал, что под ней было более раннее святилище, но с этим толкованием спорят другие учёные. Сам город в поздней античности оставался в основном иудейским."
+scripture:
+  - Luke.1.26-Luke.1.27
+  - Matt.2.19-Matt.2.23
+  - Luke.2.39
+  - Luke.2.51
+  - Mark.1.9
+  - Luke.4.16-Luke.4.30
+  - John.1.45-John.1.46
+sources:
+  - "Inscription of the priestly courses from Caesarea; M. Avi-Yonah, 'A List of Priestly Courses from Caesarea', Israel Exploration Journal 12 (1962)"
+  - "Julius Africanus, Letter to Aristides, in Eusebius, Ecclesiastical History 1.7.14"
+  - "Epiphanius, Panarion 30.11-12"
+  - "B. Bagatti, Excavations in Nazareth, vol. 1: From the Beginning till the XII Century (1969)"
+  - "J. E. Taylor, Christians and the Holy Places: The Myth of Jewish-Christian Origins (1993)"
+  - "Y. Alexandre, Mary's Well, Nazareth: The Late Hellenistic to the Ottoman Periods (IAA Reports 49, 2012)"
+  - "Y. Alexandre, 'The Settlement History of Nazareth in the Iron Age and Early Roman Period', 'Atiqot 98 (2020)"
+  - "K. Dark, Roman-Period and Byzantine Nazareth and its Hinterland (2020)"
+status: checked

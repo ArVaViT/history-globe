@@ -1,0 +1,940 @@
+# Battles and sieges of biblical history (drafted 2026-10-03, then checked against the
+# KJV and Synodal text and the tours by a second, independent pass).
+#
+# Scope: (a) battles the Bible narrates, with the OSIS ref (KJV numbering) of the
+# shortest passage that tells the fight; (b) a few battles outside the text that
+# decided the fate of Israel and that the map's events or tours touch, with no ref
+# and at least one ancient or scholarly source. Nothing after AD 135.
+#
+# Years follow the tours and events.yaml: the Exodus at 1446 BC (1 Kgs 6:1), the
+# conquest from 1406 BC, the judges at the Judges tour's conventional point (1150 BC),
+# Saul c. 1050, David c. 1010 (Hebron) and Thiele's chronology for the kings. "c." marks
+# every conventional or approximate point; years fixed by Assyrian or Babylonian records
+# stand without it. Where a tour sets a story at its own conventional point (Elah in the
+# David tour at 1010 BC, all three judges at 1150 BC) the battle keeps that point, and the
+# comment says so; a checker may prefer a different one.
+#
+# Place ids are from apps/web/public/data/places.geojson; the Russian names follow
+# content/place-names.yaml (Synodal). Left-out battles are listed at the end.
+battles:
+  # ---- Patriarchs (conventional point of the Abraham tour: 1900 BC) ----
+  - id: siddim
+    year: "c. 1900 BC"
+    title:
+      en: "The battle of the kings in the Vale of Siddim"
+      ru: "Битва царей в долине Сиддим"
+    place: a4a5cce # Valley of Siddim
+    ref: Gen.14.8-Gen.14.12
+    sides:
+      en: "Chedorlaomer and three kings of the east against the five kings of Sodom, Gomorrah, Admah, Zeboiim and Bela"
+      ru: "Кедорлаомер с тремя царями востока против пяти царей Содома, Гоморры, Адмы, Севоима и Белы"
+    outcome:
+      en: "The kings of Sodom and Gomorrah flee; the goods of the cities and Lot are carried off"
+      ru: "Цари Содома и Гоморры бегут; имущество городов захвачено, Лот уведён в плен"
+    sources:
+      - "Gen 14:1-12"
+  - id: dan-abram
+    year: "c. 1900 BC"
+    title:
+      en: "Abram rescues Lot at Dan"
+      ru: "Аврам отбивает Лота у Дана"
+    place: a513646 # Dan
+    ref: Gen.14.14-Gen.14.16
+    sides:
+      en: "Abram with 318 trained servants against the four kings"
+      ru: "Аврам с 318 рабами, рождёнными в его доме, против четырёх царей"
+    outcome:
+      en: "A night attack at Dan; the enemy is pursued to Hobah and Lot and the goods are brought back"
+      ru: "Ночное нападение у Дана; неприятель преследуем до Ховы, Лот и имущество возвращены"
+    sources:
+      - "Gen 14:13-16"
+
+  # ---- Wilderness and conquest (Exodus 1446 BC; the Exodus tour's station years) ----
+  - id: rephidim
+    year: "c. 1446 BC"
+    title:
+      en: "Amalek attacks Israel at Rephidim"
+      ru: "Амаликитяне нападают на Израиль в Рефидиме"
+    place: a05ebb7 # Rephidim
+    ref: Exod.17.8-Exod.17.13
+    sides:
+      en: "Israel under Joshua, with Moses' hands held up on the hill, against Amalek"
+      ru: "Израиль во главе с Иисусом, при Моисее с поднятыми руками на холме, против Амаликитян"
+    outcome:
+      en: "Joshua defeats Amalek with the edge of the sword"
+      ru: "Иисус низлагает Амалика остриём меча"
+    sources:
+      - "Exod 17:8-16"
+  - id: hormah-repulse
+    year: "c. 1445 BC"
+    title:
+      en: "Israel repulsed at Hormah"
+      ru: "Израиль отброшен у Хормы"
+    place: ada25df # Hormah
+    ref: Num.14.40-Num.14.45
+    sides:
+      en: "Israel, going up against Moses' word, against the Amalekites and Canaanites of the hill country"
+      ru: "Израиль, пошедший вопреки слову Моисея, против Амаликитян и Хананеев, живущих на горе"
+    outcome:
+      en: "The Amalekites and Canaanites come down, smite them and chase them to Hormah"
+      ru: "Амаликитяне и Хананеи сходят, разбивают их и гонят до Хормы"
+    sources:
+      - "Num 14:39-45; Deut 1:41-44"
+  - id: hormah
+    year: "c. 1407 BC"
+    title:
+      en: "Israel defeats the king of Arad at Hormah"
+      ru: "Израиль побеждает царя Арада у Хормы"
+    place: ada25df # Hormah
+    ref: Num.21.1-Num.21.3
+    sides:
+      en: "Israel against the Canaanite king of Arad"
+      ru: "Израиль против Ханаанского царя Арада"
+    outcome:
+      en: "The Canaanites and their cities are utterly destroyed; the place is named Hormah"
+      ru: "Хананеи и их города преданы заклятию; место названо Хорма"
+    sources:
+      - "Num 21:1-3"
+  - id: jahaz
+    year: "c. 1407 BC"
+    title:
+      en: "Sihon defeated at Jahaz"
+      ru: "Сигон разбит при Иааце"
+    place: ad9b1cd # Jahaz
+    ref: Num.21.21-Num.21.25
+    sides:
+      en: "Israel against Sihon king of the Amorites"
+      ru: "Израиль против Сигона, царя Аморрейского"
+    outcome:
+      en: "Sihon is slain and Israel takes his land from the Arnon to the Jabbok"
+      ru: "Сигон поражён, Израиль берёт его землю от Арнона до Иавока"
+    sources:
+      - "Num 21:21-31; Deut 2:26-37"
+  - id: edrei
+    year: "c. 1407 BC"
+    title:
+      en: "Og of Bashan defeated at Edrei"
+      ru: "Ог, царь Васанский, разбит при Едреи"
+    place: aaa6f7a # Edrei
+    ref: Num.21.33-Num.21.35
+    sides:
+      en: "Israel against Og king of Bashan"
+      ru: "Израиль против Ога, царя Васанского"
+    outcome:
+      en: "Og, his sons and all his people are smitten and Israel possesses his land"
+      ru: "Ог, его сыновья и весь его народ поражены; Израиль овладевает его землёй"
+    sources:
+      - "Num 21:33-35; Deut 3:1-11"
+  - id: jericho
+    year: "c. 1406 BC"
+    title:
+      en: "The fall of Jericho"
+      ru: "Падение Иерихона"
+    place: a231f80 # Jericho
+    ref: Josh.6.1-Josh.6.25
+    sides:
+      en: "Israel under Joshua against Jericho"
+      ru: "Израиль во главе с Иисусом Навином против Иерихона"
+    outcome:
+      en: "The wall falls down flat; the city is taken and devoted to destruction, Rahab's house spared"
+      ru: "Стена обрушивается; город взят и предан заклятию, дом Раав пощажён"
+    sources:
+      - "Josh 6:1-27"
+  - id: ai-repulse
+    year: "c. 1406 BC"
+    title:
+      en: "Israel repulsed at Ai"
+      ru: "Израиль отброшен у Гая"
+    place: a7e13e1 # Ai
+    ref: Josh.7.2-Josh.7.5
+    sides:
+      en: "About three thousand of Israel against the men of Ai"
+      ru: "Около трёх тысяч Израильтян против жителей Гая"
+    outcome:
+      en: "Israel flees; about thirty-six men are killed in the pursuit to Shebarim"
+      ru: "Израильтяне бегут; около тридцати шести человек убиты при преследовании до Севарим"
+    sources:
+      - "Josh 7:2-5"
+  - id: ai
+    year: "c. 1406 BC"
+    title:
+      en: "Joshua takes Ai"
+      ru: "Иисус Навин берёт Гай"
+    place: a7e13e1 # Ai
+    ref: Josh.8.1-Josh.8.29
+    sides:
+      en: "Israel under Joshua, with an ambush behind the city, against the men of Ai"
+      ru: "Израиль во главе с Иисусом Навином, с засадой позади города, против жителей Гая"
+    outcome:
+      en: "Ai is burned and its king hanged"
+      ru: "Гай сожжён, его царь повешен"
+    sources:
+      - "Josh 8:1-29"
+  - id: gibeon
+    year: "c. 1406 BC"
+    title:
+      en: "The battle of Gibeon and the descent of Beth-horon"
+      ru: "Битва при Гаваоне и бегство по скату горы Вефоронской"
+    place: aede336 # Gibeon
+    ref: Josh.10.6-Josh.10.14
+    sides:
+      en: "Israel under Joshua, come up by night from Gilgal, against the five Amorite kings besieging Gibeon"
+      ru: "Израиль во главе с Иисусом Навином, пришедший ночью из Галгала, против пяти Аморрейских царей, осаждающих Гаваон"
+    outcome:
+      en: "The kings' armies flee down the descent of Beth-horon under hailstones; the sun stands still over Gibeon"
+      ru: "Войска царей бегут по скату горы Вефоронской под градом камней; солнце останавливается над Гаваоном"
+    sources:
+      - "Josh 10:1-15"
+  - id: lachish-joshua
+    year: "c. 1406 BC"
+    title:
+      en: "Joshua takes Lachish"
+      ru: "Иисус Навин берёт Лахис"
+    place: a3cc590 # Lachish
+    ref: Josh.10.31-Josh.10.33
+    sides:
+      en: "Israel under Joshua against Lachish, and Horam king of Gezer who comes to help it"
+      ru: "Израиль во главе с Иисусом Навином против Лахиса и Горама, царя Газерского, пришедшего ему на помощь"
+    outcome:
+      en: "Lachish is taken on the second day and its people put to the sword"
+      ru: "Лахис взят на другой день, его жители поражены мечом"
+    sources:
+      - "Josh 10:31-33"
+  - id: merom
+    year: "c. 1406 BC"
+    title:
+      en: "The battle at the waters of Merom; Hazor burned"
+      ru: "Битва при водах Меромских; сожжение Асора"
+    place: a6ee047 # Waters of Merom
+    ref: Josh.11.1-Josh.11.11
+    sides:
+      en: "Israel under Joshua against Jabin king of Hazor and the kings of the north"
+      ru: "Израиль во главе с Иисусом Навином против Иавина, царя Асорского, и северных царей"
+    outcome:
+      en: "The kings are routed and chased to Sidon; their horses houghed, their chariots burned; Hazor is taken and burned"
+      ru: "Цари разбиты и преследуемы до Сидона; коням перерезаны жилы, колесницы сожжены; Асор взят и сожжён"
+    sources:
+      - "Josh 11:1-15"
+
+  # ---- Judges (the Judges tour's conventional point, 1150 BC, for all three stories;
+  #      the period cannot be dated stop by stop) ----
+  - id: kishon
+    year: "c. 1150 BC"
+    title:
+      en: "Deborah and Barak defeat Sisera at the Kishon"
+      ru: "Девора и Варак разбивают Сисару у Киссона"
+    place: a5a6458 # Kishon
+    ref: Judg.4.12-Judg.4.21
+    sides:
+      en: "Barak's ten thousand from Mount Tabor against Sisera's nine hundred chariots of iron"
+      ru: "Десять тысяч Варака с горы Фавор против девятисот железных колесниц Сисары"
+    outcome:
+      en: "Sisera's host is destroyed to the last man; Sisera flees on foot and dies in Jael's tent"
+      ru: "Войско Сисары истреблено до последнего человека; Сисара бежит пешим и гибнет в шатре Иаили"
+    sources:
+      - "Judg 4:4-24; 5:19-21"
+  - id: moreh
+    year: "c. 1150 BC"
+    title:
+      en: "Gideon's three hundred rout Midian by the hill of Moreh"
+      ru: "Триста воинов Гедеона обращают в бегство Мадианитян у холма Море"
+    place: a772880 # Moreh
+    ref: Judg.7.16-Judg.7.22
+    sides:
+      en: "Gideon's three hundred against the camp of Midian, Amalek and the children of the east"
+      ru: "Триста воинов Гедеона против стана Мадианитян, Амаликитян и сынов востока"
+    outcome:
+      en: "At the trumpets and broken pitchers the host turns its swords on itself and flees toward the Jordan"
+      ru: "Под звук труб и треск разбитых кувшинов войско обращает мечи друг на друга и бежит к Иордану"
+    sources:
+      - "Judg 7:1-25"
+  - id: shechem-abimelech
+    year: "c. 1150 BC"
+    title:
+      en: "Abimelech destroys Shechem"
+      ru: "Авимелех разрушает Сихем"
+    place: adf74d4 # Shechem
+    ref: Judg.9.42-Judg.9.45
+    sides:
+      en: "Abimelech against the men of Shechem who had risen against him"
+      ru: "Авимелех против жителей Сихема, восставших против него"
+    outcome:
+      en: "The city is taken, its people slain, and the site sown with salt"
+      ru: "Город взят, жители перебиты, место засеяно солью"
+    sources:
+      - "Judg 9:22-49"
+  - id: thebez
+    year: "c. 1150 BC"
+    title:
+      en: "Abimelech killed at the tower of Thebez"
+      ru: "Гибель Авимелеха у башни Тевеца"
+    place: a5d1690 # Thebez
+    ref: Judg.9.50-Judg.9.55
+    sides:
+      en: "Abimelech against the people of Thebez shut up in the tower"
+      ru: "Авимелех против жителей Тевеца, запершихся в башне"
+    outcome:
+      en: "A woman drops a millstone on Abimelech's head; his armourbearer runs him through, and the army disperses"
+      ru: "Женщина бросает на голову Авимелеха обломок жернова; оруженосец добивает его, войско расходится"
+    sources:
+      - "Judg 9:50-57"
+  - id: aroer-jephthah
+    year: "c. 1150 BC"
+    title:
+      en: "Jephthah defeats the Ammonites from Aroer to Minnith"
+      ru: "Иеффай разбивает Аммонитян от Ароера до Минифа"
+    place: af74969 # Aroer (Judg 11:33)
+    ref: Judg.11.32-Judg.11.33
+    sides:
+      en: "Jephthah and Gilead against the children of Ammon"
+      ru: "Иеффай с Галаадом против Аммонитян"
+    outcome:
+      en: "Twenty cities are smitten with a very great slaughter; Ammon is subdued"
+      ru: "Поражены двадцать городов, поражение весьма великое; Аммонитяне смирились"
+    sources:
+      - "Judg 11:29-33"
+
+  # ---- Samuel and Saul (Samuel tour 1070 BC; Saul's reign c. 1050-1010 BC) ----
+  - id: ebenezer
+    year: "c. 1070 BC"
+    title:
+      en: "The Philistines take the ark at Ebenezer"
+      ru: "Филистимляне захватывают ковчег при Авен-Езере"
+    place: abfdefc # Ebenezer (1 Sam 4:1)
+    ref: 1Sam.4.1-1Sam.4.11
+    sides:
+      en: "Israel, camped at Ebenezer with the ark, against the Philistines at Aphek"
+      ru: "Израиль, ставший станом при Авен-Езере с ковчегом, против Филистимлян при Афеке"
+    outcome:
+      en: "Israel is beaten twice; thirty thousand fall, the ark is taken, Hophni and Phinehas are slain"
+      ru: "Израиль разбит дважды; тридцать тысяч пали, ковчег взят, Офни и Финеес убиты"
+    sources:
+      - "1 Sam 4:1-11"
+  - id: mizpah
+    year: "c. 1070 BC"
+    title:
+      en: "The Philistines routed at Mizpah; the stone Ebenezer"
+      ru: "Филистимляне разбиты при Массифе; камень Авен-Езер"
+    place: a736f6c # Mizpah
+    ref: 1Sam.7.7-1Sam.7.12
+    sides:
+      en: "Israel gathered at Mizpah under Samuel against the lords of the Philistines"
+      ru: "Израиль, собранный в Массифе при Самуиле, против владетелей Филистимских"
+    outcome:
+      en: "The Lord thunders on the Philistines; Israel pursues them below Beth-car, and Samuel sets up the stone Ebenezer"
+      ru: "Господь гремит на Филистимлян; Израиль гонит их до Вефхора, Самуил ставит камень Авен-Езер"
+    sources:
+      - "1 Sam 7:3-14"
+  - id: jabesh-gilead
+    year: "c. 1050 BC"
+    title:
+      en: "Saul relieves Jabesh-gilead"
+      ru: "Саул освобождает Иавис Галаадский"
+    place: af92088 # Jabesh-gilead
+    ref: 1Sam.11.1-1Sam.11.11
+    sides:
+      en: "Saul with the levy of Israel and Judah against Nahash the Ammonite besieging Jabesh"
+      ru: "Саул с ополчением Израиля и Иуды против Нааса Аммонитянина, осаждающего Иавис"
+    outcome:
+      en: "Three companies strike the camp in the morning watch; the Ammonites are scattered, no two left together"
+      ru: "Три отряда врываются в стан в утреннюю стражу; Аммонитяне рассеяны, не остаётся и двух вместе"
+    sources:
+      - "1 Sam 11:1-15"
+  - id: michmash
+    year: "c. 1050 BC"
+    title:
+      en: "Jonathan's exploit at Michmash"
+      ru: "Подвиг Ионафана при Михмасе"
+    place: adea06c # Michmash
+    ref: 1Sam.14.1-1Sam.14.23
+    sides:
+      en: "Jonathan and his armourbearer, then Saul's six hundred, against the Philistine garrison at Michmash"
+      ru: "Ионафан с оруженосцем, затем шестьсот человек Саула, против Филистимского отряда при Михмасе"
+    outcome:
+      en: "Panic and an earthquake in the Philistine camp; they fall on each other, and the battle passes over to Beth-aven"
+      ru: "Смятение и землетрясение в стане Филистимлян; они обращают мечи друг на друга, сражение доходит до Беф-Авена"
+    sources:
+      - "1 Sam 13:5-7; 14:1-23"
+  - id: elah
+    # The David tour holds the Valley of Elah at its conventional point (1010 BC); the
+    # fight itself falls in Saul's reign, some years before David's accession.
+    year: "c. 1010 BC"
+    title:
+      en: "David and Goliath in the Valley of Elah"
+      ru: "Давид и Голиаф в долине дуба"
+    place: ab183f8 # Valley of Elah
+    ref: 1Sam.17.38-1Sam.17.54
+    sides:
+      en: "Saul's army with David against the Philistines and their champion Goliath of Gath"
+      ru: "Войско Саула с Давидом против Филистимлян и их единоборца Голиафа из Гефа"
+    outcome:
+      en: "Goliath falls to a sling-stone and is beheaded; the Philistines are chased to Gath and Ekron"
+      ru: "Голиаф сражён камнем из пращи и обезглавлен; Филистимлян гонят до Гефа и Аккарона"
+    sources:
+      - "1 Sam 17:1-54"
+  - id: ziklag
+    year: "c. 1010 BC"
+    title:
+      en: "David recovers all from the Amalekites who burned Ziklag"
+      ru: "Давид отбивает всё у Амаликитян, сжёгших Секелаг"
+    place: a0ed7ff # Ziklag
+    ref: 1Sam.30.16-1Sam.30.20
+    sides:
+      en: "David with four hundred men against the Amalekite raiders"
+      ru: "Давид с четырьмястами воинов против Амаликитян"
+    outcome:
+      en: "The raiders are cut down from twilight to the next evening; four hundred escape on camels; every captive and all the spoil are recovered"
+      ru: "Нападавшие истреблены от сумерек до вечера следующего дня; четыреста спаслись на верблюдах; все пленные и вся добыча возвращены"
+    sources:
+      - "1 Sam 30:1-20"
+  - id: gilboa
+    year: "c. 1010 BC"
+    title:
+      en: "Saul falls on Mount Gilboa"
+      ru: "Гибель Саула на горе Гелвуй"
+    place: acf57c5 # Mount Gilboa
+    ref: 1Sam.31.1-1Sam.31.7
+    sides:
+      en: "Saul's Israel against the Philistines gathered at Aphek and Shunem"
+      ru: "Израиль при Сауле против Филистимлян, собравшихся у Афека и Сонама"
+    outcome:
+      en: "Israel flees; Jonathan, Abinadab and Malchi-shua are slain, Saul falls on his sword, and the Philistines occupy the cities"
+      ru: "Израильтяне бегут; Ионафан, Аминадав и Малхисуа убиты, Саул бросается на меч, Филистимляне занимают города"
+    sources:
+      - "1 Sam 28:4; 29:1; 31:1-13; 1 Chr 10:1-12"
+
+  # ---- David (Hebron c. 1010 BC; Jerusalem after seven and a half years, 2 Sam 5:5) ----
+  - id: gibeon-pool
+    year: "c. 1010 BC"
+    title:
+      en: "Abner and Joab at the pool of Gibeon"
+      ru: "Авенир и Иоав у Гаваонского пруда"
+    place: aede336 # Gibeon
+    ref: 2Sam.2.12-2Sam.2.17
+    sides:
+      en: "Abner with the servants of Ish-bosheth against Joab with the servants of David"
+      ru: "Авенир со слугами Иевосфея против Иоава со слугами Давида"
+    outcome:
+      en: "Twelve against twelve fall together; Abner is beaten in a very sore battle and Asahel dies in the pursuit"
+      ru: "Двенадцать против двенадцати падают разом; Авенир разбит в жесточайшем сражении, Асаил гибнет при преследовании"
+    sources:
+      - "2 Sam 2:12-32"
+  - id: jebus
+    # 2 Sam 5:5: seven years and six months at Hebron, so c. 1003 BC on the tours'
+    # reckoning (David's accession c. 1010 BC).
+    year: "c. 1003 BC"
+    title:
+      en: "David takes the stronghold of Zion"
+      ru: "Давид берёт крепость Сион"
+    place: a15257a # Jerusalem
+    ref: 2Sam.5.6-2Sam.5.9
+    sides:
+      en: "David and his men against the Jebusites of Jerusalem"
+      ru: "Давид с людьми своими против Иевусеев Иерусалима"
+    outcome:
+      en: "The stronghold is taken and becomes the city of David"
+      ru: "Крепость взята и становится городом Давидовым"
+    sources:
+      - "2 Sam 5:6-10; 1 Chr 11:4-9"
+  - id: baal-perazim
+    year: "c. 1000 BC"
+    title:
+      en: "David breaks the Philistines at Baal-perazim"
+      ru: "Давид разбивает Филистимлян при Ваал-Перациме"
+    place: a6bf059 # Baal-perazim
+    ref: 2Sam.5.17-2Sam.5.25
+    sides:
+      en: "David, newly anointed king over Israel, against the Philistines spread in the valley of Rephaim"
+      ru: "Давид, только что помазанный на царство над Израилем, против Филистимлян, расположившихся в долине Рефаим"
+    outcome:
+      en: "The Philistines are smitten at Baal-perazim and leave their images; a second time they are driven from Geba to Gezer"
+      ru: "Филистимляне поражены при Ваал-Перациме и бросают своих истуканов; во второй раз их гонят от Гаваи до Газера"
+    sources:
+      - "2 Sam 5:17-25; 1 Chr 14:8-17"
+  - id: helam
+    # The Ammonite-Aramean war of 2 Sam 10-12 is not dated; a point in the middle of
+    # David's reign, before Solomon's birth (12:24) and Absalom's revolt (c. 980 BC).
+    year: "c. 990 BC"
+    title:
+      en: "David defeats the Syrians of Hadadezer at Helam"
+      ru: "Давид разбивает Сирийцев Адраазара при Еламе"
+    place: aeb09c0 # Helam
+    ref: 2Sam.10.15-2Sam.10.19
+    sides:
+      en: "David with all Israel against the Syrians from beyond the river under Shobach"
+      ru: "Давид со всем Израилем против Сирийцев из-за реки под началом Совака"
+    outcome:
+      en: "The Syrians flee, Shobach is killed, and Hadadezer's vassal kings make peace with Israel"
+      ru: "Сирийцы бегут, Совак убит, цари, подвластные Адраазару, заключают мир с Израилем"
+    sources:
+      - "2 Sam 10:6-19; 1 Chr 19:6-19"
+  - id: rabbah
+    year: "c. 990 BC"
+    title:
+      en: "Joab and David take Rabbah of the Ammonites"
+      ru: "Иоав и Давид берут Равву Аммонитскую"
+    place: ae067b5 # Rabbah
+    ref: 2Sam.12.26-2Sam.12.31
+    sides:
+      en: "Joab's army, then David with all the people, against Rabbah"
+      ru: "Войско Иоава, затем Давид со всем народом, против Раввы"
+    outcome:
+      en: "The royal city falls; the king's crown is set on David's head and great spoil is carried out"
+      ru: "Царственный город взят; венец царя возложен на голову Давида, добычи вынесено очень много"
+    sources:
+      - "2 Sam 11:1; 12:26-31; 1 Chr 20:1-3"
+  - id: wood-of-ephraim
+    year: "c. 980 BC"
+    title:
+      en: "Absalom's army defeated in the wood of Ephraim"
+      ru: "Войско Авессалома разбито в лесу Ефремовом"
+    place: aa24ad4 # Wood of Ephraim
+    ref: 2Sam.18.6-2Sam.18.17
+    sides:
+      en: "David's men under Joab, Abishai and Ittai against Israel under Absalom"
+      ru: "Люди Давида под началом Иоава, Авессы и Еффея против Израиля под началом Авессалома"
+    outcome:
+      en: "Twenty thousand fall and the wood devours more than the sword; Absalom, caught in an oak, is killed by Joab"
+      ru: "Пали двадцать тысяч, лес погубил больше, чем меч; Авессалома, застрявшего в дубе, убивает Иоав"
+    sources:
+      - "2 Sam 18:1-17"
+
+  # ---- The divided kingdom (Thiele's chronology) ----
+  - id: zemaraim
+    # Abijah reigned c. 913-911 BC (Thiele).
+    year: "c. 912 BC"
+    title:
+      en: "Abijah defeats Jeroboam at Mount Zemaraim"
+      ru: "Авия разбивает Иеровоама у горы Цемараимской"
+    place: a5a92d1 # Mount Zemaraim
+    ref: 2Chr.13.13-2Chr.13.20
+    sides:
+      en: "Abijah of Judah against Jeroboam of Israel, who sets an ambush behind Judah"
+      ru: "Авия, царь Иудейский, против Иеровоама, царя Израильского, поставившего засаду позади Иудеев"
+    outcome:
+      en: "Israel flees before Judah; Abijah takes Bethel, Jeshanah and Ephrain"
+      ru: "Израильтяне бегут от Иудеев; Авия берёт Вефиль, Иешану и Ефрон"
+    sources:
+      - "2 Chr 13:1-20; cf. 1 Kgs 15:6-7"
+  - id: mareshah
+    # Early in Asa's reign (c. 911-870 BC), before his fifteenth year (2 Chr 15:10).
+    year: "c. 900 BC"
+    title:
+      en: "Asa defeats Zerah the Ethiopian at Mareshah"
+      ru: "Аса разбивает Зарая Ефиоплянина при Мареше"
+    place: a5cda86 # Mareshah
+    ref: 2Chr.14.9-2Chr.14.15
+    sides:
+      en: "Asa of Judah against Zerah the Ethiopian in the valley of Zephathah"
+      ru: "Аса, царь Иудейский, против Зарая Ефиоплянина в долине Цефата"
+    outcome:
+      en: "The Ethiopians flee and are pursued to Gerar; the cities around it are spoiled"
+      ru: "Ефиопляне бегут, их преследуют до Герара; окрестные города разграблены"
+    sources:
+      - "2 Chr 14:9-15"
+  - id: tirzah
+    # The twenty-seventh year of Asa (1 Kgs 16:15), 885 BC in Thiele's chronology.
+    year: "c. 885 BC"
+    title:
+      en: "Omri besieges Tirzah; Zimri burns the palace over himself"
+      ru: "Амврий осаждает Фирцу; Замврий сжигает над собой дворец"
+    place: a80d317 # Tirzah
+    ref: 1Kgs.16.15-1Kgs.16.18
+    sides:
+      en: "Omri with all Israel, come up from Gibbethon, against Zimri in Tirzah"
+      ru: "Амврий со всем Израилем, отступившим от Гавафона, против Замврия в Фирце"
+    outcome:
+      en: "The city is taken; Zimri dies in the burning palace after seven days as king"
+      ru: "Город взят; Замврий гибнет в горящем дворце после семи дней царствования"
+    sources:
+      - "1 Kgs 16:15-22"
+  - id: samaria-ben-hadad
+    # 1 Kgs 20 falls late in Ahab's reign (c. 874-853 BC), the year before Aphek.
+    year: "c. 856 BC"
+    title:
+      en: "Ben-hadad's siege of Samaria broken"
+      ru: "Разгром Венадада под Самарией"
+    place: a041bb3 # Samaria
+    ref: 1Kgs.20.13-1Kgs.20.21
+    sides:
+      en: "Ahab with the young men of the princes of the provinces against Ben-hadad of Syria and thirty-two kings"
+      ru: "Ахав со слугами областных начальников против Венадада, царя Сирийского, и тридцати двух царей"
+    outcome:
+      en: "The Syrians flee and are slaughtered; Ben-hadad escapes on a horse"
+      ru: "Сирияне бегут и разбиты; Венадад спасается на коне"
+    sources:
+      - "1 Kgs 20:1-21"
+  - id: aphek-ahab
+    year: "c. 855 BC"
+    title:
+      en: "Ahab defeats Ben-hadad at Aphek"
+      ru: "Ахав разбивает Венадада при Афеке"
+    place: a6fc60d # Aphek (1 Kgs 20:26)
+    ref: 1Kgs.20.26-1Kgs.20.34
+    sides:
+      en: "Israel, like two little flocks of kids, against the Syrians who say the Lord is a god of the hills"
+      ru: "Израиль, подобный двум малым стадам коз, против Сириян, говорящих, что Господь есть Бог гор"
+    outcome:
+      en: "A hundred thousand Syrians fall on the seventh day; a wall falls on the rest in Aphek, and Ben-hadad surrenders"
+      ru: "На седьмой день пали сто тысяч Сириян; на остальных в Афеке рушится стена, Венадад сдаётся"
+    sources:
+      - "1 Kgs 20:22-34"
+  - id: ramoth-gilead-ahab
+    # Ahab's last year, 853 BC in Thiele's chronology (the year of Qarqar).
+    year: "c. 853 BC"
+    title:
+      en: "Ahab falls at Ramoth-gilead"
+      ru: "Гибель Ахава при Рамофе Галаадском"
+    place: a2fe63c # Ramoth-gilead
+    ref: 1Kgs.22.29-1Kgs.22.37
+    sides:
+      en: "Ahab of Israel and Jehoshaphat of Judah against the Syrians"
+      ru: "Ахав, царь Израильский, и Иосафат, царь Иудейский, против Сириян"
+    outcome:
+      en: "Ahab, disguised, is struck by a chance arrow and dies at evening; the army disperses"
+      ru: "Переодетый Ахав ранен случайной стрелой и умирает к вечеру; войско расходится"
+    sources:
+      - "1 Kgs 22:1-40; 2 Chr 18"
+  - id: tekoa
+    # Not dated by the text; in Jehoshaphat's reign (c. 873-848 BC), set at the Elisha
+    # tour's point. The site, the wilderness of Tekoa and the valley of Berachah, lies
+    # near the town.
+    year: "c. 850 BC"
+    title:
+      en: "Jehoshaphat's enemies destroy one another in the wilderness of Tekoa"
+      ru: "Враги Иосафата истребляют друг друга в пустыне Фекойской"
+    place: a2e3aa0 # Tekoa
+    ref: 2Chr.20.20-2Chr.20.26
+    sides:
+      en: "Judah under Jehoshaphat, singers before the army, against Moab, Ammon and Mount Seir"
+      ru: "Иудеи при Иосафате, с певцами впереди войска, против Моавитян, Аммонитян и обитателей горы Сеира"
+    outcome:
+      en: "The invaders turn on each other and none escapes; Judah gathers the spoil for three days"
+      ru: "Пришедшие обращают оружие друг на друга, никто не спасается; Иудеи три дня собирают добычу"
+    sources:
+      - "2 Chr 20:1-30"
+  - id: kir-hareseth
+    # In the reign of Jehoram of Israel (c. 852-841 BC), the Elisha tour's point; the
+    # Synodal text spells the town Кир-Харешет (2 Kgs 3:25), place-names.yaml Кирхарешет.
+    year: "c. 850 BC"
+    title:
+      en: "The three kings besiege Mesha in Kir-hareseth"
+      ru: "Три царя осаждают Месу в Кир-Харешете"
+    place: ab55371 # Kir-hareseth
+    ref: 2Kgs.3.21-2Kgs.3.27
+    sides:
+      en: "Jehoram of Israel, Jehoshaphat of Judah and the king of Edom against Mesha king of Moab"
+      ru: "Иорам, царь Израильский, Иосафат, царь Иудейский, и царь Едомский против Месы, царя Моавитского"
+    outcome:
+      en: "Moab's land is laid waste; Mesha offers his eldest son on the wall and the kings withdraw"
+      ru: "Земля Моава опустошена; Меса приносит на стене в жертву своего первенца, и цари отступают"
+    sources:
+      - "2 Kgs 3:4-27"
+      - "The Mesha Stele (Moab's side of the war; c. 840 BC)"
+  - id: samaria-elisha
+    # Not dated by the text; chapters 4-7 do not name the king. The Elisha tour's point.
+    year: "c. 850 BC"
+    title:
+      en: "The famine siege of Samaria lifted overnight"
+      ru: "Голодная осада Самарии снята за одну ночь"
+    place: a041bb3 # Samaria
+    ref: 2Kgs.6.24-2Kgs.7.16
+    sides:
+      en: "Ben-hadad of Syria besieging Samaria, where Elisha promises plenty by the morrow"
+      ru: "Венадад, царь Сирийский, осаждающий Самарию, где Елисей обещает изобилие к утру"
+    outcome:
+      en: "The Syrians hear a noise of a great host and flee at twilight, leaving their camp; four lepers find it empty"
+      ru: "Сирийцы слышат шум большого войска и бегут в сумерки, бросив стан; четверо прокажённых находят его пустым"
+    sources:
+      - "2 Kgs 6:24-7:20"
+  - id: ramoth-gilead-joram
+    year: "841 BC"
+    title:
+      en: "Joram wounded at Ramoth-gilead; Jehu anointed there"
+      ru: "Иорам ранен при Рамофе Галаадском; там же помазан Ииуй"
+    place: a2fe63c # Ramoth-gilead
+    ref: 2Kgs.8.28-2Kgs.9.6
+    sides:
+      en: "Joram of Israel and Ahaziah of Judah against Hazael of Syria"
+      ru: "Иорам, царь Израильский, и Охозия, царь Иудейский, против Азаила, царя Сирийского"
+    outcome:
+      en: "Joram is wounded and goes back to Jezreel to be healed; Jehu is anointed at Ramoth-gilead and rides to Jezreel"
+      ru: "Иорам ранен и возвращается лечиться в Изреель; Ииуй помазан в Рамофе и едет в Изреель"
+    sources:
+      - "2 Kgs 8:28-9:16"
+      - "Black Obelisk of Shalmaneser III (Jehu's tribute, 841 BC)"
+  - id: beth-shemesh
+    # Amaziah reigned c. 796-767 BC (Thiele); the battle follows his victory over Edom.
+    year: "c. 790 BC"
+    title:
+      en: "Jehoash of Israel defeats Amaziah at Beth-shemesh"
+      ru: "Иоас, царь Израильский, разбивает Амасию при Вефсамисе"
+    place: a3b5b53 # Beth-shemesh
+    ref: 2Kgs.14.11-2Kgs.14.14
+    sides:
+      en: "Jehoash of Israel against Amaziah of Judah"
+      ru: "Иоас, царь Израильский, против Амасии, царя Иудейского"
+    outcome:
+      en: "Judah flees, Amaziah is taken, and Jehoash breaks down four hundred cubits of Jerusalem's wall and takes the Temple's gold"
+      ru: "Иудеи бегут, Амасия взят в плен, Иоас разрушает четыреста локтей стены Иерусалима и забирает золото Храма"
+    sources:
+      - "2 Kgs 14:8-14; 2 Chr 25:17-24"
+  - id: jerusalem-rezin-pekah
+    # The Syro-Ephraimite war, a year or two before Tiglath-pileser III took Damascus (732 BC).
+    year: "c. 734 BC"
+    title:
+      en: "Rezin and Pekah besiege Ahaz in Jerusalem"
+      ru: "Рецин и Факей осаждают Ахаза в Иерусалиме"
+    place: a15257a # Jerusalem
+    ref: 2Kgs.16.5
+    sides:
+      en: "Rezin of Syria and Pekah of Israel against Ahaz of Judah"
+      ru: "Рецин, царь Сирийский, и Факей, царь Израильский, против Ахаза, царя Иудейского"
+    outcome:
+      en: "They cannot overcome him; Ahaz buys the help of Tiglath-pileser, who takes Damascus"
+      ru: "Одолеть его не могут; Ахаз покупает помощь Феглаффелласара, который берёт Дамаск"
+    sources:
+      - "2 Kgs 16:5-9; Isa 7:1-9; 2 Chr 28:5-8"
+      - "Tiglath-pileser III, Summary Inscription 7 (Ahaz's tribute); Eponym Chronicle 733-732 BC"
+  - id: samaria-722
+    year: "722 BC"
+    title:
+      en: "Samaria falls after a three-year siege"
+      ru: "Падение Самарии после трёхлетней осады"
+    place: a041bb3 # Samaria
+    ref: 2Kgs.17.5-2Kgs.17.6
+    sides:
+      en: "Shalmaneser V of Assyria against Hoshea in Samaria"
+      ru: "Салманассар, царь Ассирийский, против Осии в Самарии"
+    outcome:
+      en: "The city is taken in Hoshea's ninth year and Israel is carried to Halah, Habor and the cities of the Medes"
+      ru: "Город взят в девятый год Осии; Израиль переселён в Халах, Хавор и города Мидийские"
+    sources:
+      - "2 Kgs 17:3-6; 18:9-11"
+      - "Babylonian Chronicle, ABC 1 i 28 (Shalmaneser V)"
+  - id: lachish-701
+    year: "701 BC"
+    title:
+      en: "Sennacherib takes Lachish"
+      ru: "Сеннахирим берёт Лахис"
+    place: a3cc590 # Lachish
+    ref: 2Kgs.18.13-2Kgs.18.14
+    sides:
+      en: "Sennacherib of Assyria, with his camp before Lachish, against the fortified cities of Judah"
+      ru: "Сеннахирим, царь Ассирийский, ставший станом у Лахиса, против укреплённых городов Иудеи"
+    outcome:
+      en: "The fortified cities are taken; from Lachish Sennacherib receives Hezekiah's tribute and sends his army to Jerusalem"
+      ru: "Укреплённые города взяты; у Лахиса Сеннахирим принимает дань Езекии и посылает войско к Иерусалиму"
+    sources:
+      - "2 Kgs 18:13-17; 2 Chr 32:9"
+      - "The Lachish reliefs from Sennacherib's palace at Nineveh (British Museum)"
+      - "Sennacherib's Annals, Chicago and Taylor prisms (RINAP 3, Sennacherib 22 iii 18-49)"
+  - id: jerusalem-701
+    year: "701 BC"
+    title:
+      en: "Sennacherib's army before Jerusalem"
+      ru: "Войско Сеннахирима у Иерусалима"
+    place: a15257a # Jerusalem
+    ref: 2Kgs.19.32-2Kgs.19.36
+    sides:
+      en: "The Assyrian host under Tartan, Rabsaris and Rab-shakeh against Hezekiah in Jerusalem"
+      ru: "Ассирийское войско под началом Тартана, Рабсариса и Рабсака против Езекии в Иерусалиме"
+    outcome:
+      en: "The angel of the Lord smites 185,000 in the camp; Sennacherib goes home to Nineveh"
+      ru: "Ангел Господень поражает в стане 185 000; Сеннахирим уходит в Ниневию"
+    sources:
+      - "2 Kgs 18:17-19:37; Isa 36-37; 2 Chr 32:1-23"
+      - "Sennacherib's Annals (Hezekiah shut up in Jerusalem 'like a bird in a cage'; no capture claimed)"
+  - id: megiddo-609
+    year: "609 BC"
+    title:
+      en: "Josiah killed at Megiddo by Pharaoh Necho"
+      ru: "Иосия убит при Мегиддоне фараоном Нехао"
+    place: a8554e3 # Megiddo
+    ref: 2Kgs.23.29-2Kgs.23.30
+    sides:
+      en: "Josiah of Judah against Pharaoh Necho marching to the Euphrates"
+      ru: "Иосия, царь Иудейский, против фараона Нехао, идущего к Евфрату"
+    outcome:
+      en: "Josiah is slain; his servants carry him dead in a chariot to Jerusalem"
+      ru: "Иосия убит; слуги везут его тело на колеснице в Иерусалим"
+    sources:
+      - "2 Kgs 23:29-30; 2 Chr 35:20-24"
+      - "Babylonian Chronicle, ABC 3 (the seventeenth year of Nabopolassar, 609 BC)"
+  - id: carchemish
+    year: "605 BC"
+    title:
+      en: "Nebuchadnezzar defeats Egypt at Carchemish"
+      ru: "Навуходоносор разбивает Египтян при Кархемисе"
+    place: af6c730 # Carchemish
+    ref: Jer.46.2
+    sides:
+      en: "Nebuchadnezzar, crown prince of Babylon, against the army of Pharaoh Necho"
+      ru: "Навуходоносор, наследник Вавилонского престола, против войска фараона Нехао"
+    outcome:
+      en: "The Egyptian army is smitten in the fourth year of Jehoiakim; Babylon takes the west"
+      ru: "Египетское войско разбито в четвёртый год Иоакима; запад переходит к Вавилону"
+    sources:
+      - "Jer 46:2-12; 2 Kgs 24:7"
+      - "Babylonian Chronicle, ABC 5 obv. 1-8"
+  - id: jerusalem-597
+    year: "597 BC"
+    title:
+      en: "Jerusalem surrenders to Nebuchadnezzar; Jehoiachin exiled"
+      ru: "Иерусалим сдаётся Навуходоносору; Иехония уведён в плен"
+    place: a15257a # Jerusalem
+    ref: 2Kgs.24.10-2Kgs.24.17
+    sides:
+      en: "Nebuchadnezzar's servants, then the king himself, against Jehoiachin in Jerusalem"
+      ru: "Рабы Навуходоносора, затем сам царь, против Иехонии в Иерусалиме"
+    outcome:
+      en: "Jehoiachin goes out to the king of Babylon; the treasures and ten thousand captives are carried away, and Zedekiah is made king"
+      ru: "Иехония выходит к царю Вавилонскому; сокровища и десять тысяч пленных уведены, царём поставлен Седекия"
+    sources:
+      - "2 Kgs 24:10-17; 2 Chr 36:9-10"
+      - "Babylonian Chronicle, ABC 5 rev. 11-13 (2 Adar, 597 BC)"
+  - id: lachish-588
+    year: "c. 588 BC"
+    title:
+      en: "Nebuchadnezzar's army besieges Lachish and Azekah"
+      ru: "Войско Навуходоносора осаждает Лахис и Азеку"
+    place: a3cc590 # Lachish
+    ref: Jer.34.7
+    sides:
+      en: "The army of the king of Babylon against the last fortified cities of Judah"
+      ru: "Войско царя Вавилонского против последних укреплённых городов Иудеи"
+    outcome:
+      en: "Lachish and Azekah are the only fortified cities of Judah still holding out"
+      ru: "Лахис и Азека — последние уцелевшие укреплённые города Иудеи"
+    sources:
+      - "Jer 34:6-7"
+      - "Lachish Letter 4 (ostracon: 'we can no longer see the signals of Azekah')"
+  - id: jerusalem-586
+    # events.yaml dates the fall c. 586 BC; the exile and Jeremiah tours show 587 BC.
+    year: "c. 586 BC"
+    title:
+      en: "Nebuchadnezzar takes and burns Jerusalem"
+      ru: "Навуходоносор берёт и сжигает Иерусалим"
+    place: a15257a # Jerusalem
+    ref: 2Kgs.25.1-2Kgs.25.10
+    sides:
+      en: "Nebuchadnezzar and all his host against Zedekiah in Jerusalem"
+      ru: "Навуходоносор со всем войском своим против Седекии в Иерусалиме"
+    outcome:
+      en: "After eighteen months the wall is breached; Zedekiah is caught near Jericho and blinded, the Temple and city are burned, the walls broken down"
+      ru: "Через полтора года стена проломлена; Седекия схвачен у Иерихона и ослеплён, Храм и город сожжены, стены разрушены"
+    sources:
+      - "2 Kgs 25:1-21; Jer 39:1-10; 52:4-30"
+
+  # ---- Outside the text: battles the map's events touch (no ref) ----
+  - id: tyre-332
+    year: "332 BC"
+    title:
+      en: "Alexander's siege of Tyre"
+      ru: "Осада Тира Александром"
+    place: a160272 # Tyre
+    sides:
+      en: "Alexander the Great, building a mole from the mainland, against the island city of Tyre"
+      ru: "Александр Македонский, насыпающий дамбу с материка, против островного Тира"
+    outcome:
+      en: "After seven months the city is stormed; Alexander goes on to Gaza and Egypt"
+      ru: "Через семь месяцев город взят штурмом; Александр идёт на Газу и в Египет"
+    sources:
+      - "Arrian, Anabasis 2.16-24"
+      - "Diodorus Siculus 17.40-46"
+  - id: panium
+    year: "200 BC"
+    title:
+      en: "Battle of Panium: Judea passes to the Seleucids"
+      ru: "Битва при Панионе: Иудея переходит к Селевкидам"
+    place: ab7bf48 # Caesarea Philippi (Panias)
+    sides:
+      en: "Antiochus III against the Ptolemaic army under Scopas"
+      ru: "Антиох III против войска Птолемеев под началом Скопаса"
+    outcome:
+      en: "Scopas is defeated; Coele-Syria and Judea pass from the Ptolemies to the Seleucids"
+      ru: "Скопас разбит; Келесирия и Иудея переходят от Птолемеев к Селевкидам"
+    sources:
+      - "Polybius 16.18-19"
+      - "Josephus, Antiquities 12.132-133"
+  - id: beth-horon-166
+    year: "c. 166 BC"
+    title:
+      en: "Judas Maccabeus defeats Seron at Beth-horon"
+      ru: "Иуда Маккавей разбивает Сирона при Беф-Ороне"
+    place: a75b45e # Beth-horon
+    sides:
+      en: "Judas Maccabeus with a small band against Seron, commander of the Syrian army"
+      ru: "Иуда Маккавей с малым отрядом против Сирона, начальника Сирийского войска"
+    outcome:
+      en: "Seron's army is broken on the ascent of Beth-horon and chased to the plain; about eight hundred fall"
+      ru: "Войско Сирона разбито на подъёме Беф-Орона и гонимо на равнину; пало около восьмисот"
+    ref: 1Macc.3.13-1Macc.3.24
+    sources:
+      - "1 Macc 3:13-24"
+      - "Josephus, Antiquities 12.288-292"
+  - id: adasa
+    year: "161 BC"
+    title:
+      en: "Nicanor falls at Adasa"
+      ru: "Гибель Никанора при Адасе"
+    place: a6e831d # Adasa
+    sides:
+      en: "Judas Maccabeus against Nicanor, the Seleucid governor who had threatened the Temple"
+      ru: "Иуда Маккавей против Никанора, Селевкидского наместника, грозившего Храму"
+    outcome:
+      en: "Nicanor is the first to fall and his army flees to Gazara; the day, 13 Adar, is kept as a feast"
+      ru: "Никанор падает первым, войско его бежит к Газару; день 13 адара установлен праздником"
+    ref: 1Macc.7.39-1Macc.7.50
+    sources:
+      - "1 Macc 7:39-50; 2 Macc 15:20-36"
+      - "Josephus, Antiquities 12.408-412"
+  - id: jerusalem-63
+    year: "63 BC"
+    title:
+      en: "Pompey takes the Temple mount"
+      ru: "Помпей берёт Храмовую гору"
+    place: a15257a # Jerusalem
+    sides:
+      en: "Pompey's legions, admitted to the city by Hyrcanus's party, against Aristobulus's men holding the Temple"
+      ru: "Легионы Помпея, впущенные в город сторонниками Гиркана, против людей Аристовула, засевших в Храме"
+    outcome:
+      en: "After three months the Temple is stormed on a fast day; Pompey enters the Holy of Holies, and Judea comes under Rome"
+      ru: "Через три месяца Храм взят штурмом в день поста; Помпей входит во Святое святых, Иудея попадает под власть Рима"
+    sources:
+      - "Josephus, Antiquities 14.58-73; Jewish War 1.141-154"
+      - "Cassius Dio, Roman History 37.15-17"
+  - id: jerusalem-70
+    year: "AD 70"
+    title:
+      en: "Titus takes Jerusalem; the Temple burns"
+      ru: "Тит берёт Иерусалим; Храм горит"
+    place: a15257a # Jerusalem
+    sides:
+      en: "Four Roman legions under Titus against the Jewish factions of John of Gischala and Simon bar Giora"
+      ru: "Четыре римских легиона под началом Тита против иудейских отрядов Иоанна Гисхальского и Симона бар Гиоры"
+    outcome:
+      en: "After a siege from spring to late summer the Temple burns on 10 Loos (Av) and the Upper City falls a month later; the city is razed"
+      ru: "После осады с весны до конца лета Храм сгорает 10 лооса (ава), Верхний город падает месяцем позже; город разрушен"
+    sources:
+      - "Josephus, Jewish War 5.39-6.434 (the siege), 6.249-266 (the Temple burned), 6.392-434 (the Upper City)"
+      - "Cassius Dio, Roman History 66.4-7"
+
+# Left out (no fitting place on the map, or doubtful):
+#   - Qarqar, 853 BC (Kurkh Monolith; Ahab among the twelve kings): no Qarqar on the map;
+#     Hamath (ac62cbc) is some 40 km off. A place at Tell Qarqur (c. 36.33 E, 35.74 N)
+#     would carry it; events.yaml already has the event without a place.
+#   - Issus, 333 BC: no place on the map.
+#   - Judas at Emmaus, 165 BC (1 Macc 3:40-4:25): fought at Emmaus-Nicopolis ('Amwas), in
+#     the plain; the map's Emmaus is Luke's, in the hills near Jerusalem.
+#   - Masada, c. AD 73-74: events.yaml says "Masada is not on the map" (it carries a site id).
+#   - Gaugamela, 331 BC; Raphia, 217 BC; Beth-zechariah, 162 BC; Elasa, 160 BC; Jotapata
+#     and Gamala, AD 67: no place.
+#   - The Benjamite war at Gibeah (Judg 20): Gibeah (ac24f5f) exists, but the story carries
+#     no tour date and Phinehas son of Eleazar (20:28) puts it a generation after Joshua,
+#     not at the Judges tour's 1150 BC; left for a dating decision.
+#   - Ehud's victory at the fords of the Jordan (Judg 3:26-30) and Jephthah's fight with
+#     Ephraim at the fords (Judg 12:1-6): no point place, only the river.
+#   - Saul's war on Amalek (1 Sam 15), Israel's war on Midian (Num 31): no place named.
+#   - Herod takes Jerusalem (37 BC) and Nebuchadnezzar's siege of Tyre (c. 585 BC):
+#     already dated events; left out to keep this list to battles the text tells.

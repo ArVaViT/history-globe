@@ -1,0 +1,37 @@
+# Overview article (ADR 0007). Mainstream facts only; follows how the name Zion moved between Jerusalem's hills, without restating the Jerusalem article.
+id: zion
+place: af20c46
+title:
+  en: "Zion"
+  ru: "Сион"
+body:
+  en:
+    - 'Zion is a name rather than a single hill: in Jerusalem it has been attached in turn to three different heights. The Bible first uses it for "the strong hold of Zion", the fortified town of the Jebusites on the narrow eastern ridge above the Gihon spring, which David took and called the City of David. The meaning of the name is uncertain, and it is probably older than Israel.'
+    - 'When Solomon brought the ark up "out of the city of David, which is Zion" into the new Temple, the name went up with it. In the Psalms and the prophets Zion is the holy hill where the Lord dwells, that is, the Temple Mount, and by extension the whole city and its people: "out of Zion shall go forth the law". The exiles in Babylon wept when they remembered Zion. 1 Maccabees still calls the Temple hill mount Sion when Judas Maccabeus cleansed the sanctuary in 164 BC, and in the New Testament mount Sion stands for the heavenly Jerusalem.'
+    - "The last move was to the higher western hill. Josephus, writing after AD 70, took the hill of the upper city to be the stronghold of David, though he never calls it Zion. By the fourth century Christians gave the name to this hill. The pilgrim from Bordeaux, in 333, climbed Sion past the house of Caiaphas and was shown the place of David's palace and the one synagogue left of seven. Eusebius' Onomasticon places Golgotha north of Mount Zion."
+    - "Here Christian tradition put the upper room. About 350 Cyril of Jerusalem spoke of the Upper Church of the Apostles, where the Spirit came down at Pentecost; Epiphanius, late in the century, tells of a small church on Zion that had survived since Hadrian's day; Egeria, in the 380s, describes the Pentecost services held in Sion. In the fifth century a new wall, which the Piacenza pilgrim credits to the Empress Eudocia, took Zion back inside the city, and by the sixth the church was hailed as holy Sion, mother of all churches. The western hill keeps the name Mount Zion today."
+  ru:
+    - "Сион — скорее имя, чем один холм: в Иерусалиме оно по очереди закреплялось за тремя разными высотами. Впервые Библия называет так «крепость Сион» — укреплённый город иевусеев на узком восточном гребне над источником Гион, который Давид взял и назвал городом Давидовым. Значение имени неясно, и, вероятно, оно древнее Израиля."
+    - "Когда Соломон перенёс ковчег «из города Давидова, то есть Сиона» в новый Храм, имя поднялось вместе с ним. В Псалтири и у пророков Сион — святая гора, где обитает Господь, то есть Храмовая гора, а в расширенном смысле весь город и его народ: «от Сиона выйдет закон». Изгнанники в Вавилоне плакали, вспоминая Сион. Первая книга Маккавейская ещё называет храмовый холм горой Сион, когда Иуда Маккавей очистил святилище в 164 г. до н. э., а в Новом Завете гора Сион означает небесный Иерусалим."
+    - "Последний переход был на более высокий западный холм. Иосиф Флавий, писавший после 70 г. н. э., считал холм Верхнего города крепостью Давида, хотя ни разу не называет его Сионом. К IV веку христиане перенесли имя на этот холм. Паломник из Бордо в 333 г. поднялся на Сион мимо дома Каиафы, и ему показали место дворца Давида и одну синагогу, оставшуюся из семи. «Ономастикон» Евсевия помещает Голгофу к северу от горы Сион."
+    - "Здесь христианское предание поместило горницу. Около 350 г. Кирилл Иерусалимский говорил о Горней церкви апостолов, где в Пятидесятницу сошёл Дух; Епифаний в конце того же века рассказывает о малой церкви на Сионе, уцелевшей со времён Адриана; Эгерия в 380-х гг. описывает богослужения Пятидесятницы на Сионе. В V веке новая стена, которую паломник из Пьяченцы приписывает императрице Евдокии, вернула Сион в черту города, а к VI веку церковь называли святым Сионом, матерью всех церквей. Западный холм и сегодня носит имя горы Сион."
+scripture:
+  - 2Sam.5.7
+  - 1Kgs.8.1
+  - Ps.2.6
+  - Isa.2.3
+  - Ps.137.1
+  - Heb.12.22
+  - Acts.2.1-Acts.2.4
+sources:
+  - "1 Maccabees 4.36-60 (mount Sion and the cleansing of the Temple)"
+  - "Josephus, Jewish War 5.137 (the upper city called the Citadel by David)"
+  - "Bordeaux Pilgrim, Itinerarium Burdigalense 592 (Sion, AD 333)"
+  - "Eusebius, Onomasticon, s.v. Golgotha (no. 365 in C. U. Wolf's translation, 1971)"
+  - "Cyril of Jerusalem, Catechetical Lectures 16.4"
+  - "Epiphanius, On Weights and Measures 14"
+  - "Egeria, Itinerarium 43 (Pentecost in Sion)"
+  - "Eucherius, De situ Hierosolimae (the wall now takes in Mount Sion); Theodosius, De situ terrae sanctae (holy Sion, mother of all churches); Piacenza Pilgrim, Itinerarium 25 (Eudocia's wall): in P. Geyer, Itinera Hierosolymitana (CSEL 39, 1898), pp. 125, 141, 176"
+  - "J. Wilkinson, Jerusalem Pilgrims before the Crusades (2nd ed., 2002)"
+  - "'Jerusalem', in E. Stern (ed.), The New Encyclopedia of Archaeological Excavations in the Holy Land, vol. 2 (1993)"
+status: checked

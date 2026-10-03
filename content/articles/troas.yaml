@@ -1,0 +1,30 @@
+# Overview article (ADR 0007). Mainstream facts only; the founding and renaming dates are approximate, and Ignatius' letters follow the usual dating.
+id: troas
+place: a91c509
+title:
+  en: "Troas"
+  ru: "Троада"
+body:
+  en:
+    - "Troas, in full Alexandria Troas, lay on the Aegean coast of the Troad in north-west Asia Minor, opposite the island of Tenedos and about 25 km south of Troy. Antigonus founded it late in the fourth century BC as Antigonia, on a site called Sigia, and brought in the people of nearby towns such as Neandria and Cebren. Lysimachus, who held the region after 301 BC, renamed it Alexandria in honour of Alexander. Strabo says it endured and grew, received a colony of Romans and was one of the notable cities of the world."
+    - "Under Augustus the city became a Roman colony, and it was the chief harbour for the crossing from Asia to Macedonia. The circuit of its walls, the remains of baths and a theatre, and the silted basins of its harbour can still be traced."
+    - 'On his second journey Paul, passing by Mysia, came down to Troas. There in the night he saw a man of Macedonia praying him, "Come over into Macedonia, and help us", and the company sailed straight to Samothracia and Neapolis; here Acts begins to speak of "we". Later Paul came to Troas to preach the gospel and found a door opened, but went on to Macedonia because Titus was not there. On his last journey to Jerusalem he stayed seven days: on the first day of the week, when the disciples came together to break bread, he spoke until midnight, and the young man Eutychus fell from the third loft and was taken up dead, but was brought alive. The Second Letter to Timothy, written in Paul''s name, asks for the cloak left at Troas with Carpus.'
+    - "Early in the second century, by the usual dating, Ignatius of Antioch, taken under guard to Rome, wrote from Troas his letters to the Philadelphians, to the Smyrnaeans and to Polycarp, and sailed from there to Neapolis. Under Hadrian, Philostratus tells, Herodes Atticus, then in charge of the free cities of Asia, gave the city a costly water supply. Zosimus says that Constantine first began to build his new capital between Troas and old Ilium, then left the work unfinished and chose Byzantium."
+  ru:
+    - "Троада, полностью Александрия Троадская, лежала на эгейском берегу Троады на северо-западе Малой Азии, напротив острова Тенедос и примерно в 25 км к югу от Трои. Антигон основал её в конце IV века до н. э. как Антигонию на месте, называвшемся Сигия, и переселил туда жителей соседних городов, таких как Неандрия и Кебрена. Лисимах, владевший краем после 301 г. до н. э., переименовал её в Александрию в честь Александра. Страбон пишет, что город устоял и вырос, принял колонию римлян и стал одним из примечательных городов мира."
+    - "При Августе город стал римской колонией и был главной гаванью для переправы из Азии в Македонию. До сих пор прослеживаются кольцо его стен, остатки бань и театра и занесённые песком бассейны гавани."
+    - "Во втором путешествии Павел, миновав Мисию, сошёл в Троаду. Там ночью ему явился некий муж, Македонянин, прося его: «приди в Македонию и помоги нам», и спутники прямо прибыли в Самофракию и Неаполь; с этого места Деяния начинают говорить «мы». Позже Павел пришёл в Троаду для благовествования и нашёл отверстую дверь, но ушёл в Македонию, потому что не нашёл там Тита. На последнем пути в Иерусалим он пробыл здесь семь дней: в первый день недели, когда ученики собрались для преломления хлеба, он беседовал до полуночи, и юноша Евтих упал с третьего жилья и был поднят мёртвым, но его привели живого. Второе послание к Тимофею, написанное от имени Павла, просит принести фелонь, оставленный в Троаде у Карпа."
+    - "В начале II века, по обычной датировке, Игнатий Антиохийский, которого под стражей везли в Рим, написал из Троады послания к филадельфийцам, к смирнянам и к Поликарпу и оттуда отплыл в Неаполь. При Адриане, как рассказывает Филострат, Ирод Аттик, ведавший тогда свободными городами Асии, дал городу дорогой водопровод. Зосим пишет, что Константин сначала начал строить новую столицу между Троадой и древним Илионом, но оставил работу незаконченной и избрал Византий."
+scripture:
+  - Acts.16.8-Acts.16.11
+  - 2Cor.2.12-2Cor.2.13
+  - Acts.20.5-Acts.20.12
+  - 2Tim.4.13
+sources:
+  - "Strabo, Geography 13.1.26 (Antigonia renamed Alexandreia; the Roman colony); 13.1.47 (Sigia; Neandria and Cebren incorporated)"
+  - "Ignatius, Letters to the Philadelphians 11.2, to the Smyrnaeans 12.1 and to Polycarp 8.1"
+  - "Philostratus, Lives of the Sophists 2.1 (548)"
+  - "Zosimus, New History 2.30.1"
+  - "J. M. Cook, The Troad: An Archaeological and Topographical Study (1973)"
+  - "S. Feuser, Der Hafen von Alexandria Troas (Asia Minor Studien 63, 2009)"
+status: checked

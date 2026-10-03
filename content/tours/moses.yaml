@@ -9,13 +9,14 @@ title:
   en: "Moses before the Exodus"
   ru: "Моисей до Исхода"
 year: "1526 BC"
+people: ["Moses@Exo.2.10-Rev"]
 approximate: true
 stops:
   - place: a079b21 # Rameses
     ref: Exod.1.11-Exod.2.10
     note:
       en: "Israel is set to build the store cities Pithom and Rameses; a Hebrew boy drawn out of the water is named Moses."
-      ru: "Израиля заставляют строить Пифом и Раамсес; еврейского младенца, вынутого из воды, нарекают Моисеем."
+      ru: "Израиля заставляют строить города для запасов Пифом и Раамсес; еврейского младенца, вынутого из воды, нарекают Моисеем."
   - place: acc6d8e # Midian
     ref: Exod.2.11-Exod.2.22
     year: "1486 BC"

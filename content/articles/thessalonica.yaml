@@ -1,0 +1,37 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed points (the authorship of 2 Thessalonians) are named as such.
+id: thessalonica
+place: afa9d8e
+title:
+  en: "Thessalonica"
+  ru: "Фессалоника"
+body:
+  en:
+    - "Thessalonica, today's Thessaloniki, stands at the head of the Thermaic Gulf in Macedonia, where the routes from the Balkan interior reach the sea. About 315 BC Cassander, king of Macedonia, founded it by gathering into one city the people of some twenty-six small towns around the gulf, and named it after his wife Thessalonike, a daughter of Philip II. Strabo says the place had earlier been called Therma."
+    - 'After Rome defeated the last Macedonian king, Perseus, in 168 BC and made Macedonia a province in 146 BC, Thessalonica became the seat of its governors and a station on the Via Egnatia, the Roman road across the Balkans. Pliny calls it a free city. It kept its own magistrates, whom inscriptions call politarchs, the title Acts gives to the "rulers of the city".'
+    - 'Paul and Silas came here from Philippi and for three sabbaths reasoned in the synagogue; some Jews, a great multitude of God-fearing Greeks and not a few leading women believed. Their opponents gathered a crowd, attacked the house of Jason, and dragged him before the rulers, crying that those who "have turned the world upside down are come hither also"; the brethren sent Paul and Silas away by night to Berea, where Jews of Thessalonica followed to stir up the people. While Paul was in the city, the church at Philippi sent him help more than once. From Athens Paul sent Timothy back to strengthen the church, and he wrote to it; First Thessalonians is usually held to be the earliest of his letters, while the authorship of Second Thessalonians is disputed. Aristarchus and Secundus of Thessalonica later travelled with Paul, and Demas left him to go there.'
+    - "About AD 300 the emperor Galerius made Thessalonica his residence and built a palace, a triumphal arch and the great round hall later known as the Rotunda. Tradition honours Demetrius as a martyr of this time, and a large church was later built in his name. In 380 Theodosius I was baptised here during an illness and from here issued the law that bound his subjects to the Nicene faith. In 390, after a riot in which the commander Butheric was killed, the emperor's troops massacred the townspeople; Theodoret reports that seven thousand died, and Ambrose of Milan made Theodosius do public penance."
+  ru:
+    - "Фессалоника, нынешние Салоники, стоит в глубине Фермейского залива в Македонии, там, где пути из глубин Балкан выходят к морю. Около 315 г. до н. э. её основал македонский царь Кассандр: он собрал в один город жителей примерно двадцати шести городков вокруг залива и назвал его в честь своей жены Фессалоники, дочери Филиппа II. Страбон сообщает, что прежде это место называлось Ферма."
+    - "После того как Рим в 168 г. до н. э. разбил последнего македонского царя Персея, а в 146 г. до н. э. сделал Македонию провинцией, Фессалоника стала резиденцией её наместников и станцией на Эгнатиевой дороге, римском пути через Балканы. Плиний называет её свободным городом. В ней правили свои должностные лица; надписи называют их политархами — тем же словом Деяния называют «городских начальников»."
+    - "Павел и Сила пришли сюда из Филипп и три субботы говорили в синагоге из Писаний; уверовали некоторые из Иудеев, великое множество чтущих Бога Еллинов и немало знатных женщин. Противники собрали толпу, приступили к дому Иасона и повлекли его к городским начальникам, крича, что «эти всесветные возмутители пришли и сюда»; братия ночью отправили Павла и Силу в Верию, но Фессалоникийские Иудеи пришли и туда возмущать народ. Пока Павел был в городе, церковь в Филиппах не раз посылала ему помощь. Из Афин Павел послал Тимофея утвердить церковь и писал ей; Первое послание к Фессалоникийцам обычно считают самым ранним из его посланий, а авторство Второго оспаривается. Позже Аристарх и Секунд из Фессалоники сопровождали Павла, а Димас оставил его и ушёл туда."
+    - "Около 300 г. н. э. император Галерий сделал Фессалонику своей резиденцией и построил дворец, триумфальную арку и большой круглый зал, позднее известный как Ротонда. Предание чтит Димитрия как мученика того времени; позднее в его честь была построена большая церковь. В 380 г. Феодосий I крестился здесь во время болезни и отсюда издал закон, обязавший его подданных держаться никейской веры. В 390 г., после мятежа, в котором был убит военачальник Бутерих, войска императора устроили в городе резню; по словам Феодорита, погибло семь тысяч человек, и Амвросий Медиоланский заставил Феодосия принести публичное покаяние."
+scripture:
+  - Acts.17.1-Acts.17.4
+  - Acts.17.5-Acts.17.10
+  - Acts.17.13
+  - 1Thess.1.1
+  - 1Thess.3.1-1Thess.3.2
+  - 2Thess.1.1
+  - Acts.20.4
+  - Acts.27.2
+  - Phil.4.16
+  - 2Tim.4.10
+sources:
+  - "Strabo, Geography 7 fr. 21; 7 fr. 24"
+  - "Pliny the Elder, Natural History 4.36"
+  - "Inscriptions naming the politarchs: Inscriptiones Graecae X 2,1 (Thessalonica, ed. C. Edson, 1972)"
+  - "Sozomen, Church History 7.4 (baptism of Theodosius and the law issued at Thessalonica); 7.25 (the massacre)"
+  - "Theodoret, Church History 5.17"
+  - "C. vom Brocke, Thessaloniki – Stadt des Kassander und Gemeinde des Paulus (2001)"
+  - "L. Nasrallah, C. Bakirtzis and S. J. Friesen (eds.), From Roman to Early Christian Thessalonikē (2010)"
+status: checked

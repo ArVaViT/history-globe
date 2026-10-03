@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; Assyrian dates follow the standard chronology. The place is Ptolemais of Acts 21:7 (the Hellenistic and Roman city on the peninsula of Acre); the older town on Tel Akko, the Acco of Judges 1:31, is a separate record (a5f4dfc) and is covered here.
+id: ptolemais
+place: abc2af0
+title:
+  en: "Ptolemais"
+  ru: "Птолемаида"
+body:
+  en:
+    - "Ptolemais, the Acco of the Old Testament, lies at the northern end of the bay that Mount Carmel closes on the south, on the coast road between Tyre and Caesarea. The Bronze and Iron Age town stood on the mound of Tel Akko, a little inland; in the Hellenistic age the city spread onto the small peninsula where the old city of Acre stands today. In the Amarna letters of the fourteenth century BC its ruler Satatna writes to the pharaoh, and a king of Babylon complains that men sent by Satatna and another ruler had killed Babylonian merchants in Canaan."
+    - "Judges counts Accho among the towns whose inhabitants the tribe of Asher did not drive out. In 701 BC Sennacherib of Assyria lists Acco among the fortified cities of Luli, king of Sidon, that bowed at his feet. Under the Persians it was a base against Egypt: in the 370s BC, Diodorus says, the army sent to reconquer Egypt gathered at Ace. In the third century BC, under Ptolemy II, the city was renamed Ptolemais. In 219 BC its Ptolemaic commander handed it to Antiochus III, and from about 200 BC it stayed with the Seleucids. According to 1 Maccabees, about 150 BC Alexander Balas married Cleopatra, daughter of Ptolemy, at Ptolemais, and later, when Jonathan Maccabeus came into Ptolemais, its people shut the gates, seized him and put his men to the sword."
+    - 'At the end of Paul''s third journey he and his companions sailed from Tyre to Ptolemais, "and saluted the brethren, and abode with them one day", then went on to Caesarea. Under Claudius the city became a Roman colony; Pliny calls it a colony of Claudius Caesar, once called Acce, and, like Josephus, tells of the river Belus nearby, whose sand was used for glass. In AD 67 Vespasian came to Ptolemais at the start of the war in Galilee, and the people of Sepphoris, who sided with Rome, met him there.'
+    - "A church at Ptolemais is attested again about AD 190: Eusebius names Clarus of Ptolemais, with Narcissus of Jerusalem, Theophilus of Caesarea and Cassius of Tyre, among the bishops who wrote on the keeping of Easter. The city remained an important port under Roman and Byzantine rule until the Arab conquest in the seventh century, when its old name, as Akka, came back into use."
+  ru:
+    - "Птолемаида, ветхозаветный Акко, лежит у северного края залива, который с юга замыкает гора Кармил, на прибрежной дороге между Тиром и Кесарией. Город бронзового и железного веков стоял на холме Тель-Акко, немного в глубине суши; в эллинистическую эпоху город распространился на небольшой полуостров, где сегодня стоит старый город Акко. В амарнских письмах XIV века до н. э. его правитель Сататна пишет фараону, а царь Вавилона жалуется, что люди, посланные Сататной и ещё одним правителем, убили вавилонских купцов в Ханаане."
+    - "Книга Судей называет Акко среди городов, жителей которых колено Асирово не изгнало. В 701 г. до н. э. ассирийский царь Сеннахирим перечисляет Акко среди укреплённых городов Лули, царя Сидона, которые склонились к его ногам. При персах город служил опорой против Египта: в 370-х гг. до н. э., по словам Диодора, войско, посланное отвоевать Египет, собралось у города Аке. В III веке до н. э., при Птолемее II, город переименовали в Птолемаиду. В 219 г. до н. э. птолемеевский военачальник сдал его Антиоху III, а примерно с 200 г. до н. э. он остался за Селевкидами. По Первой книге Маккавейской, около 150 г. до н. э. Александр Балас женился в Птолемаиде на Клеопатре, дочери Птолемея, а позже, когда в Птолемаиду вошёл Ионафан Маккавей, её жители заперли ворота, схватили его и перебили бывших с ним."
+    - "В конце третьего путешествия Павел и его спутники приплыли из Тира в Птолемаиду и, «приветствовав братьев, пробыли у них один день», а затем отправились в Кесарию. При Клавдии город стал римской колонией; Плиний называет его колонией Клавдия Цезаря, прежде называвшейся Акке, и, как и Иосиф Флавий, рассказывает о соседней речке Бел, песок которой шёл на стекло. В 67 г. н. э. Веспасиан пришёл в Птолемаиду в начале войны в Галилее, и жители Сепфориса, державшие сторону Рима, встретили его там."
+    - "Церковь в Птолемаиде вновь засвидетельствована около 190 г. н. э.: Евсевий называет Клара Птолемаидского вместе с Наркиссом Иерусалимским, Феофилом Кесарийским и Кассием Тирским среди епископов, писавших о праздновании Пасхи. Город оставался важным портом при римлянах и византийцах вплоть до арабского завоевания в VII веке, когда в обиход вернулось его старое имя — Акка."
+scripture:
+  - Judg.1.31
+  - Acts.21.7-Acts.21.8
+sources:
+  - "Amarna letters EA 8; EA 233-235 (W. L. Moran, The Amarna Letters, 1992)"
+  - "Sennacherib's annals, Chicago Prism (RINAP 3, Sennacherib 22) ii 37-45"
+  - "Diodorus Siculus, Library 15.41.3"
+  - "Strabo, Geography 16.2.25"
+  - "Polybius, Histories 5.61-62"
+  - "1 Maccabees 10:57-58; 12:45-48"
+  - "Pliny, Natural History 5.75"
+  - "Josephus, Jewish War 2.188-191; 3.29-30"
+  - "Eusebius, Church History 5.23.3; 5.25"
+  - "M. Dothan, 'Acco', in E. Stern (ed.), The New Encyclopedia of Archaeological Excavations in the Holy Land, vol. 1 (1993)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+status: checked

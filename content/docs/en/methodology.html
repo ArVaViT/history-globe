@@ -1,0 +1,177 @@
+---
+title: Data and methodology
+description: Where every place, border, date and person on History Globe comes from, how it was checked, and what is still uncertain.
+---
+
+<p class="lede">
+  The globe is built from open scholarly datasets, corrected and extended by hand, and checked
+  automatically on every build. This page explains where each layer comes from, what we changed and
+  what we do not know.
+</p>
+
+<h2>Places of the Bible</h2>
+<p>
+  The {{places}} places and their verses come from
+  <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
+    >OpenBible.info’s Bible Geocoding Data</a
+  >, which weighs the identifications proposed in the literature for each place. We keep its
+  preferred identification and its estimate of how likely each candidate site is.
+</p>
+<ul>
+  <li>
+    <b>Certainty in words.</b> When no serious second site is proposed, OpenBible’s score (0–1000)
+    indicates how secure the identification is: at 800 or above it is treated as settled and the
+    card says nothing; below that, the card says <i>most likely</i> (600 or above) or
+    <i>tentative</i>. A place is <i>disputed</i> when the second candidate has a significant share;
+    all candidate sites are then shown with their shares.
+  </li>
+  <li>
+    <b>No coordinates from OpenStreetMap or Google.</b> OpenBible records where each coordinate came
+    from. Points it took from OpenStreetMap or Google are replaced by Wikidata’s coordinates (CC0),
+    or the place is left out ({{excluded}} places). A separate check fails the build if any such
+    point remains.
+  </li>
+  <li>
+    <b>Names from the text.</b> Russian names follow the Synodal translation of 1876: for nearly
+    every name the build keeps a verse in which it occurs and checks that the name is in that verse.
+  </li>
+</ul>
+
+<h2>When places stood</h2>
+<p>
+  A city on the map is drawn in full only in the years it stood. For {{life}} places of the Bible
+  the years of founding, destruction and abandonment are recorded by hand, each with its sources
+  (ancient authors, chronicles, inscriptions, excavation reports). A date that is disputed is left
+  out rather than guessed.
+</p>
+<p>
+  The {{ancient}} cities of the ancient world that the Bible does not name — capitals, ports and
+  sanctuaries such as Ugarit, Hattusa, Mari or Delphi — were chosen and dated one by one, each
+  checked against two sources, with an identifier in
+  <a href="https://pleiades.stoa.org">Pleiades</a> or Wikidata and a point on the ancient site
+  rather than on the modern town.
+</p>
+
+<h2>Borders</h2>
+<p>
+  States and their borders year by year come from
+  <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatria</a> (Seshat Global History Databank,
+  v0.2.0), an open dataset of the world’s polities from 3400 BC onwards. It is drawn from historical
+  atlases and is approximate, especially before the first millennium BC.
+</p>
+<p>
+  For the lands of the Bible we correct it where the sources disagree with it: {{overrides}}
+  corrections at present, each with its reason and its sources. Judah stays on the map until 586 BC,
+  Israel begins with David’s reign in 1010 BC rather than 1000 BC, Philistia is kept to the coastal
+  plain of its five cities, and a dynasty ends when it loses its last seat of power. The Levant and
+  Egypt, Mesopotamia, Anatolia and Iran, the Greco-Roman world of the New Testament and the Near
+  East to AD 1300 have been checked year by year, among them Assyria’s decline and recovery in the
+  eighth century BC, Babylon under Merodach-baladan, Pergamon left to Rome in 133 BC, Macedonia
+  after Pydna and Thrace annexed in AD 46. Each batch of corrections is first tested against the
+  shapes, then checked again, independently, by a second reviewer against the sources.
+</p>
+<p>
+  A kingdom that paid tribute to an empire, or ruled as its client, is drawn in a lighter shade of
+  the empire’s colour, with “under Assyria” or “under Rome” beneath its name: Judah under Assyria,
+  Egypt and Babylon; Israel and Philistia under Assyria; Hasmonean and Herodian Judea under Rome
+  (and, for three years, Parthia); and the Nabataeans and Commagene under Rome. These {{vassals}}
+  periods were drafted from the Assyrian royal inscriptions, the Babylonian Chronicles, the Bible,
+  Josephus and modern histories, and checked again in a separate review pass; a year known only to
+  within a decade is marked “c.” in the data. After Samaria fell in 722 BC, the land of Israel is
+  drawn as the Assyrian province it became.
+</p>
+
+<h2>People</h2>
+<p>
+  The {{people}} people of the Bible and their family links come from STEP Bible’s TIPNR (Tyndale
+  House, Cambridge). We did not take the links on trust:
+</p>
+<ul>
+  <li>
+    the family links of the 1,200 people the text names most often, and the genealogies of 1
+    Chronicles, were read against the verses; 153 links the text does not state were removed — the
+    brothers of Jesus as sons of Joseph and Mary, Jezebel as the mother of Ahaziah — and the missing
+    links of the genealogy of Jesus were added from the text;
+  </li>
+  <li>
+    all 1,136 links between a person and a place where they play a central or supporting role were
+    read verse by verse; 344 were removed (Moses “in Canaan”, Abraham “in Sodom”, a son’s places
+    given to his father) and 94 were given a better verse;
+  </li>
+  <li>
+    namesakes are told apart as the text tells them apart: “John the Baptist”, “John son of
+    Zebedee”, “Ahaziah, king of Judah”.
+  </li>
+</ul>
+
+<h2>Events, tours and articles</h2>
+<p>
+  The {{events}} events, {{tours}} tours and {{articles}} articles are drafted with the help of AI
+  under the author’s direction and then checked in separate review passes against the sources: the
+  biblical text for what it says, ancient authors, chronicles and inscriptions for dates, and the
+  scholarly literature for sites. Every claim cites its source. Quotations come only from the
+  Synodal translation and the King James Version. No tour has passed its first review unchanged;
+  each was corrected and checked again. These reviews are made by AI working from the sources, not
+  by scholars; an article a historian has read carries the historian’s name.
+</p>
+<p>
+  The distance to a stop is given in a straight line. From 312 BC, when the Roman roads begin, the
+  way along the Itiner-e roads is given beside it: the shortest through their network, unless it is
+  more than two and a half times the straight line; a leg sailed is not counted by road. Time on
+  foot is reckoned at 30 km a day, the usual estimate of a day’s journey in antiquity, with no
+  allowance for weather, rests or loads. At sea no speed is assumed: a voyage gives its days only
+  where the text does (Acts 20:6, “in five days”), with that verse, and as roughly as the text gives
+  them. Where the text crosses whole regions without the way (Acts 20:1–3, Ephesus through Macedonia
+  and Greece to Philippi), the leg says so and gives no time. A leg’s relief is read from the
+  Copernicus elevation data (through Mapterhorn) along that same road, or without one along the
+  straight line; the caption under the profile says which.
+</p>
+
+<p>
+  The battles and sieges ({{battles}}) are those the Bible tells, and a few outside it that decided
+  Israel’s fate. Each stands at the place it was fought and shows on the map in its years. The
+  Bible’s are dated as the tours date the same stories; the others carry no verse but an ancient or
+  scholarly source. A second, independent pass checked the draft against the Synodal text and the
+  King James Version: of 58 entries 16 were corrected, and one was dropped, as the map has no point
+  for its site.
+</p>
+
+<p>
+  The Maccabean events and battles cite 1–2 Maccabees, which the Synodal Bible carries and the
+  Protestant canon does not: every such citation is marked “deuterocanonical”, and its link opens a
+  text that has the book.
+</p>
+
+<h2>Checks on every build</h2>
+<p>Nothing is published unless every check passes:</p>
+<ul>
+  <li>every source carries an allowed licence (no share-alike, no non-commercial data);</li>
+  <li>every reference points to a real book, chapter and verse;</li>
+  <li>every Russian name is found in the verse given for it;</li>
+  <li>every tour stop is named in its passage, or the exception is documented with its reason;</li>
+  <li>every correction to the borders and every date of a city has a source;</li>
+  <li>the content schemas are strict: an unknown or misspelt field stops the build.</li>
+</ul>
+
+<h2>What is uncertain</h2>
+<ul>
+  <li>
+    Dates before the first millennium BC are approximate, and some are disputed; the map marks them
+    “c.”.
+  </li>
+  <li>OpenBible’s shares between candidate sites are an estimate, not a scholarly consensus.</li>
+  <li>Ancient borders are drawn from modern atlases and simplify a reality of shifting control.</li>
+  <li>
+    Many minor places still have no recorded years; they are drawn as standing throughout (or, for
+    places named only in the New Testament, from New Testament times onwards).
+  </li>
+</ul>
+
+<h2 id="report">Report an error</h2>
+<p>
+  Every place card has a <i>Found a mistake?</i> link. It opens an issue in the public repository
+  with the place already filled in; you need a GitHub account. You can also open one directly:
+  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+    >github.com/ArVaViT/history-globe/issues</a
+  >.
+</p>

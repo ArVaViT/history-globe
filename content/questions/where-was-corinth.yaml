@@ -1,0 +1,28 @@
+id: where-was-corinth
+question:
+  en: "Where was Corinth?"
+  ru: "Где находился Коринф?"
+answer:
+  en:
+    - "Corinth stands in Greece at the isthmus that joins the Peloponnese to the mainland, below the rock of Acrocorinth, about 75 km west of Athens in a straight line (88 km by the road on the map) and about 1,315 km from Jerusalem. It had a harbour on each sea, Lechaeum on the Gulf of Corinth and Cenchreae on the Saronic Gulf, and ships were hauled across the isthmus on a paved way."
+    - '"After these things Paul departed from Athens, and came to Corinth", where he lodged with Aquila and Priscilla, tentmakers lately expelled from Rome by Claudius. "And he continued there a year and six months, teaching the word of God among them." The Jews brought him before the proconsul Gallio, who refused to judge the case; an inscription at Delphi dates Gallio''s year of office to 51–52, one of the firmest dates in Paul''s life. Paul wrote two letters to the church, and Romans was probably written from Corinth: it commends Phoebe of Cenchreae.'
+    - "Corinth was a rich trading city from the seventh century BC. In 146 BC the Romans under Mummius sacked it, put most of those found there to the sword and sold the women and children, and the site lay desolate until Julius Caesar founded a Roman colony there in 44 BC, settled largely with freedmen; it became the seat of the proconsul of Achaia. Nero began a canal through the isthmus in AD 67, but the work was abandoned. About AD 96 the church of Rome wrote to the Corinthians the letter known as 1 Clement."
+  ru:
+    - "Коринф стоит в Греции у перешейка, соединяющего Пелопоннес с материком, под скалой Акрокоринфа, примерно в 75 км к западу от Афин по прямой (88 км по дороге на карте) и примерно в 1315 км от Иерусалима. У него было по гавани на каждом море — Лехей на Коринфском заливе и Кенхреи на Сароническом, а корабли перетаскивали через перешеек по мощёному волоку."
+    - "«После сего Павел, оставив Афины, пришел в Коринф», где поселился у Акилы и Прискиллы, делателей палаток, недавно изгнанных из Рима Клавдием. «И он оставался там год и шесть месяцев, поучая их слову Божию». Иудеи привели его на суд к проконсулу Галлиону, но тот отказался судить; надпись в Дельфах датирует год проконсульства Галлиона 51–52 гг., и это одна из самых твёрдых дат в жизни Павла. Павел написал церкви два послания, а Послание к Римлянам, вероятно, написано в Коринфе: в нём он представляет Фиву из Кенхрей."
+    - "Коринф был богатым торговым городом с VII века до н. э. В 146 г. до н. э. римляне под началом Муммия разграбили его, большую часть застигнутых в городе предали мечу, а женщин и детей продали в рабство, и место лежало в запустении, пока Юлий Цезарь не основал здесь в 44 г. до н. э. римскую колонию, заселённую в основном вольноотпущенниками; Коринф стал резиденцией проконсула Ахаии. В 67 г. н. э. Нерон начал прорывать канал через перешеек, но работу бросили. Около 96 г. н. э. римская церковь написала коринфянам послание, известное как Первое послание Климента."
+map:
+  place: a6f437a
+  year: "AD 51"
+  ref: Acts.18.1
+scripture: [Acts.18.1-Acts.18.3, Acts.18.11-Acts.18.17, 1Cor.1.2, 2Cor.1.1, Rom.16.1]
+sources:
+  - "Strabo, Geography 8.6.20-23"
+  - "Pausanias, Description of Greece 2.1.2; 7.16.7-10"
+  - "The Gallio inscription at Delphi (SIG³ 801), dating his year of office to 51-52"
+  - "Suetonius, Nero 19; 1 Clement 1; 44-47"
+  - "J. Murphy-O'Connor, St. Paul's Corinth: Texts and Archaeology (3rd ed., 2002)"
+  - "History Globe article “Corinth”, History Globe dated events (corinth-destroyed 146 BC; claudius-expels c. AD 49; gallio c. AD 51) and History Globe tour “Paul's second journey”"
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Length along the Roman roads: Itiner-e (de Soto, Pažout, Brughmans et al. 2025), Athens to Corinth (88 km)"
+status: checked

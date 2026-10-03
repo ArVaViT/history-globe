@@ -6,12 +6,15 @@ title:
   en: "Solomon"
   ru: "Царь Соломон"
 year: "970 BC"
+# Solomon's deeds where they were done, not a journey: no time on foot.
+walked: false
+people: ["Solomon@2Sa.5.14-Act"]
 approximate: true
 stops:
   - place: a2a303c # Gihon
     ref: 1Kgs.1.38-1Kgs.1.39
     note:
-      en: 'At Gihon Zadok anoints Solomon, and all the people shout: "God save king Solomon!"'
+      en: 'At Gihon Zadok anoints Solomon, and all the people say: "God save king Solomon."'
       ru: "У Гиона Садок помазывает Соломона, и весь народ восклицает: «да живет царь Соломон!»"
   - place: aede336 # Gibeon
     ref: 1Kgs.3.4-1Kgs.3.15
@@ -32,13 +35,13 @@ stops:
   - place: a8554e3 # Megiddo
     ref: 1Kgs.9.15
     note:
-      en: "With forced labour he builds the wall of Jerusalem, Hazor, Megiddo and Gezer."
-      ru: "Наложив подать, он строит стену Иерусалима, Асор, Мегиддон и Газер."
+      en: "With the levy he raises he builds the wall of Jerusalem, Hazor, Megiddo and Gezer."
+      ru: "Наложив подать, он строит стену Иерусалимскую, Гацор, Мегиддо и Газер."
   - place: a8e53d5 # Ezion-geber
     ref: 1Kgs.9.26-1Kgs.9.28
     note:
-      en: "At Ezion-geber on the Red Sea he builds ships, and Hiram's sailors bring gold from Ophir."
-      ru: "В Ецион-Гавере на берегу Чермного моря он строит корабль, и моряки Хирама привозят золото из Офира."
+      en: "At Ezion-geber on the Red Sea he builds ships, and his servants and Hiram's sailors bring gold from Ophir."
+      ru: "В Ецион-Гавере на берегу Чермного моря он строит корабль, и его подданные вместе с моряками Хирама привозят золото из Офира."
   - place: a81ab85 # Sheba
     ref: 1Kgs.10.1-1Kgs.10.13
     note:

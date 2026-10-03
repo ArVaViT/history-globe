@@ -1,0 +1,22 @@
+id: how-far-nazareth-to-bethlehem
+question:
+  en: "How far is Nazareth from Bethlehem?"
+  ru: "Как далеко от Назарета до Вифлеема?"
+answer:
+  en:
+    - "Nazareth is about 110 km from Bethlehem in a straight line, about 4 days on foot at 30 km a day; by the Roman roads on the map the way measures about 156 km, roughly five days."
+    - 'Luke says: "And Joseph also went up from Galilee, out of the city of Nazareth, into Judaea, unto the city of David, which is called Bethlehem." Nazareth lies in a basin in the hills of Lower Galilee; Bethlehem on a ridge in the hills of Judah, about 10 km south of Jerusalem by road. The Gospel does not say which road the family took or how long the journey lasted; travellers from Galilee went either down through the Jordan valley by Jericho or along the ridge through Samaria, and Jerusalem lay on both routes before the last short stage to Bethlehem.'
+    - 'The journey from Galilee to Judea was a familiar one: Luke adds that Jesus'' parents "went to Jerusalem every year at the feast of the passover", and Nazareth to Jerusalem is about 103 km in a straight line, 146 km by the roads on the map.'
+  ru:
+    - "От Назарета до Вифлеема около 110 км по прямой — примерно 4 дня пешего пути по 30 км в день; по римским дорогам на карте путь составляет около 156 км, примерно пять дней."
+    - "Лука пишет: «Пошел также и Иосиф из Галилеи, из города Назарета, в Иудею, в город Давидов, называемый Вифлеем». Назарет лежит в котловине среди холмов Нижней Галилеи, Вифлеем — на гребне в горах Иудеи, примерно в 10 км к югу от Иерусалима по дороге. Евангелие не говорит, какой дорогой шла семья и сколько длился путь; из Галилеи шли либо вниз по долине Иордана через Иерихон, либо по хребту через Самарию, и Иерусалим лежал на обоих путях перед последним коротким переходом до Вифлеема."
+    - "Путь из Галилеи в Иудею был привычным: Лука добавляет, что родители Иисуса «каждый год… ходили в Иерусалим на праздник Пасхи», а от Назарета до Иерусалима около 103 км по прямой и 146 км по дорогам на карте."
+map:
+  year: "5 BC"
+  ref: Luke.2.4
+scripture: [Luke.2.4-Luke.2.7, Luke.2.41, Matt.2.1, Mic.5.2]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Length along the Roman roads: Itiner-e (de Soto, Pažout, Brughmans et al. 2025), (Nazareth to Bethlehem 156 km, Nazareth to Jerusalem 146 km, Jerusalem to Bethlehem 10 km)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008), s.v. Bethlehem, Nazareth"
+status: checked

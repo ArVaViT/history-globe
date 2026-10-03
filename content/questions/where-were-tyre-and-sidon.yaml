@@ -1,0 +1,38 @@
+id: where-were-tyre-and-sidon
+question:
+  en: "Where were Tyre and Sidon?"
+  ru: "Где находились Тир и Сидон?"
+answer:
+  en:
+    - "Tyre and Sidon were the two chief cities of Phoenicia, on the coast of today's Lebanon. Sidon, now Saida, lies about 40 km south of Beirut; Tyre, now Sour, about 35 km further south in a straight line. Tyre is about 55 km north-west of Capernaum and 165 km north of Jerusalem; Sidon is about 200 km from Jerusalem. Tyre was built on an island just off the shore, Sidon on a headland sheltered by islets that made two harbours."
+    - 'In the Gospels the two names go together: Jesus "departed into the coasts of Tyre and Sidon", where a Syrophoenician woman begged him to heal her daughter, and people from around the two cities came to hear him. He held them up against the towns of Galilee: "if the mighty works, which were done in you, had been done in Tyre and Sidon, they would have repented long ago in sackcloth and ashes." Earlier, Hiram king of Tyre sent cedar and craftsmen for Solomon''s Temple, since "there is not among us any that can skill to hew timber like unto the Sidonians", and Elijah lodged with a widow at Zarephath, a town of Sidon. Paul spent seven days with the disciples at Tyre on his last journey to Jerusalem and was allowed to visit friends at Sidon on his way to Rome.'
+    - "Herodotus was told that Tyre was founded about 2750 BC, and both cities appear in the Amarna letters of the fourteenth century BC. Tyrians founded Carthage, by tradition in 814 BC. Tyre paid tribute to Assyria but kept its island; Nebuchadnezzar besieged it for thirteen years, usually dated to the 580s and 570s BC, and in 332 BC Alexander took it after seven months by building a causeway from the mainland, so that Tyre has been joined to the shore ever since. Sidon was destroyed by Esarhaddon in 677 BC, became the leading Phoenician city under the Persians, and opened its gates to Alexander in 333 BC. Under Rome both minted their own coins and were known for glass and purple dye."
+  ru:
+    - "Тир и Сидон были двумя главными городами Финикии на побережье нынешнего Ливана. Сидон, ныне Сайда, лежит примерно в 40 км к югу от Бейрута; Тир, ныне Сур, — ещё в 35 км южнее по прямой. От Капернаума до Тира около 55 км на северо-запад, от Иерусалима — 165 км на север; от Иерусалима до Сидона — около 200 км. Тир был построен на острове у самого берега, Сидон — на мысу, прикрытом островками, которые образовали две гавани."
+    - "В Евангелиях эти имена стоят рядом: Иисус «удалился в страны Тирские и Сидонские», где сирофиникиянка просила Его исцелить дочь, и люди из окрестностей обоих городов приходили слушать Его. Он ставил их в укор городам Галилеи: «если бы в Тире и Сидоне явлены были силы, явленные в вас, то давно бы они во вретище и пепле покаялись». Прежде Хирам, царь Тирский, присылал кедры и мастеров для храма Соломона, ибо «у нас нет людей, которые умели бы рубить дерева так, как Сидоняне», а Илия жил у вдовы в Сарепте Сидонской. Павел провёл семь дней с учениками в Тире в последнем пути в Иерусалим, и ему позволили навестить друзей в Сидоне по дороге в Рим."
+    - "Геродоту говорили, что Тир основан около 2750 г. до н. э., и оба города упомянуты в Амарнских письмах XIV века до н. э. Тиряне основали Карфаген — по преданию, в 814 г. до н. э. Тир платил дань Ассирии, но сохранял свой остров; Навуходоносор осаждал его тринадцать лет, обычно это 580-е и 570-е годы до н. э., а в 332 г. до н. э. Александр взял его за семь месяцев, насыпав дамбу от материка, и с тех пор Тир соединён с берегом. Сидон разрушил Асардан в 677 г. до н. э.; при персах он стал первым городом Финикии, а в 333 г. до н. э. открыл ворота Александру. Под властью Рима оба города чеканили свою монету и славились стеклом и пурпуром."
+map:
+  place: a160272
+  year: "AD 30"
+  ref: Matt.15.21
+scripture:
+  [
+    Matt.15.21-Matt.15.28,
+    Mark.7.24-Mark.7.26,
+    Mark.3.8,
+    Matt.11.21-Matt.11.22,
+    1Kgs.5.1-1Kgs.5.6,
+    1Kgs.17.9,
+    Acts.21.3-Acts.21.4,
+    Acts.27.3,
+  ]
+sources:
+  - "Herodotus, Histories 2.44"
+  - "Amarna letters EA 144 (Zimredda of Sidon) and EA 146-155 (Abimilku of Tyre)"
+  - "Josephus, Against Apion 1.156 (the thirteen-year siege); Antiquities 10.228"
+  - "Arrian, Anabasis 2.15-24; Diodorus Siculus 17.40-46 (Alexander at Sidon and Tyre)"
+  - "Esarhaddon's Prism (Nineveh A); the Babylonian Chronicle (ABC 1), years 4-5 of Esarhaddon"
+  - "M. E. Aubet, The Phoenicians and the West (2nd ed., 2001)"
+  - "N. Jidejian, Sidon through the Ages (1971)"
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

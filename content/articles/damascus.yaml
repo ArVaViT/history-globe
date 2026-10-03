@@ -1,0 +1,41 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed things are said to be disputed.
+id: damascus
+place: a69c1d4
+title:
+  en: "Damascus"
+  ru: "Дамаск"
+body:
+  en:
+    - "Damascus lies on a plateau east of the Anti-Lebanon mountains, where the Barada river spreads out into the Ghouta, a broad oasis at the edge of the Syrian desert. Farmers lived nearby at Tell Ramad by the seventh millennium BC. The city's name appears in the lists of Thutmose III in the fifteenth century BC, and in the Amarna letters of the fourteenth century its land was held for Pharaoh by Biryawaza. Genesis already knows it: Abram pursues the kings as far as Hobah near Damascus, and his steward Eliezer is of Damascus."
+    - "From about the tenth century BC Damascus was the capital of the Aramean kingdom of Aram. The Bible tells of David's garrisons there, of Rezon who seized it in Solomon's day, of the kings Ben-hadad and Hazael who fought Israel, and of Naaman the commander, healed by Elisha, who praised Abana and Pharpar, the rivers of Damascus. Assyrian inscriptions name Hadadezer of Damascus among the kings who fought Shalmaneser III at Qarqar in 853 BC, and in 841 BC Shalmaneser besieged Hazael in the city without taking it."
+    - "Rezin of Damascus joined Israel against Judah; Ahaz called in Tiglath-pileser III, who took Damascus in 732 BC, killed Rezin and deported its people, as 2 Kings tells and the Assyrian Eponym Chronicle confirms with its campaigns against Damascus. Isaiah and Amos had foretold its fall. The city lived on as a provincial centre under the Assyrians, Babylonians and Persians, and after Alexander it was contested by the Ptolemies and the Seleucids. The Nabataean king Aretas III held it about 85 BC, and in 64 BC Pompey brought it under Rome."
+    - "On the road to Damascus Saul of Tarsus was converted; in the city, at the street called Straight, Ananias baptised him, and he later escaped over the wall in a basket while the governor under King Aretas guarded the city. Roman Damascus was laid out on a grid around a vast temple of Jupiter, which at the end of the fourth century, under Theodosius I, became a church, later known as the church of John the Baptist. Damascus remained a leading city of Byzantine Syria until the Arab conquest of 634."
+  ru:
+    - "Дамаск лежит на плато к востоку от хребта Антиливан, там, где река Барада растекается по Гуте — широкому оазису на краю Сирийской пустыни. Земледельцы жили поблизости, в Телль-Рамаде, уже в VII тысячелетии до н. э. Имя города встречается в списках Тутмоса III в XV веке до н. э., а в Амарнских письмах XIV века его землёй правил от имени фараона Бирьяваза. Знает его и книга Бытия: Аврам преследует царей до Ховы, что по левую сторону Дамаска, а его домоправитель Елиезер — из Дамаска."
+    - "Примерно с X века до н. э. Дамаск был столицей арамейского царства Арам. Библия рассказывает о гарнизонах Давида в нём, о Разоне, захватившем город во дни Соломона, о царях Венададе и Азаиле, воевавших с Израилем, и о военачальнике Неемане, исцелённом Елисеем, который хвалил Авану и Фарфар, реки Дамасские. Ассирийские надписи называют Хададезера Дамасского среди царей, сражавшихся с Салманасаром III при Каркаре в 853 г. до н. э., а в 841 г. до н. э. Салманасар осаждал Азаила в городе, но не взял его."
+    - "Рецин, царь Дамасский, выступил вместе с Израилем против Иудеи; Ахаз призвал Феглафелласара (Тиглатпаласара III), который в 732 г. до н. э. взял Дамаск, убил Рецина и выселил жителей, как рассказывает 4-я книга Царств и подтверждает ассирийская Хроника эпонимов, отмечающая походы на Дамаск. Исаия и Амос предсказывали его падение. Город продолжал жить как центр провинции при ассирийцах, вавилонянах и персах, а после Александра за него спорили Птолемеи и Селевкиды. Набатейский царь Арета III владел им около 85 г. до н. э., а в 64 г. до н. э. Помпей подчинил его Риму."
+    - "На пути в Дамаск обратился Савл из Тарса; в городе, на улице, называемой Прямою, его крестил Анания, а позже он спасся, спущенный в корзине по стене, когда областной правитель царя Ареты стерёг город. Римский Дамаск был распланирован сеткой улиц вокруг огромного храма Юпитера, который в конце IV века, при Феодосии I, стал церковью, позже известной как церковь Иоанна Крестителя. Дамаск оставался одним из главных городов византийской Сирии до арабского завоевания 634 г."
+scripture:
+  - Gen.14.15
+  - Gen.15.2
+  - 2Sam.8.5-2Sam.8.6
+  - 1Kgs.11.23-1Kgs.11.24
+  - 1Kgs.15.18-1Kgs.15.20
+  - 1Kgs.20.1
+  - 2Kgs.5.1-2Kgs.5.14
+  - 2Kgs.8.7-2Kgs.8.15
+  - 2Kgs.13.3
+  - 2Kgs.16.5-2Kgs.16.9
+  - Isa.17.1
+  - Amos.1.3-Amos.1.5
+  - Acts.9.1-Acts.9.25
+  - 2Cor.11.32-2Cor.11.33
+sources:
+  - "Topographical list of Thutmose III at Karnak"
+  - "Amarna letters EA 194-197 (Biryawaza)"
+  - "Kurkh Monolith of Shalmaneser III (Qarqar, 853 BC); Shalmaneser III's annals for 841 BC (Hazael)"
+  - "Eponym Chronicle for 733–732 BC (campaigns against Damascus)"
+  - "Josephus, Antiquities 13.392 (Aretas III)"
+  - "W. T. Pitard, Ancient Damascus (1987)"
+  - "R. Burns, Damascus: A History (2005)"
+status: checked

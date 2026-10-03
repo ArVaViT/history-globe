@@ -25,7 +25,12 @@ export function timelineEventsOf(
       data.events.some((e) => e.place === id && Math.abs(e.year - year) <= 2);
     const add = (y: { year: number; approximate: boolean } | undefined, key: string) => {
       if (y && !covered(y.year))
-        out.push({ year: y.year, label: t(key, { name }), approximate: y.approximate });
+        out.push({
+          year: y.year,
+          label: t(key, { name }),
+          approximate: y.approximate,
+          place: id,
+        });
     };
     add(life.from, "events.founded");
     add(life.until, "events.destroyed");
@@ -40,6 +45,8 @@ export function timelineEventsOf(
       label: e.title[locale] ?? e.title.en ?? "",
       approximate: e.approximate,
       major: true,
+      ...(e.place ? { place: e.place } : {}),
+      ...(e.site ? { site: e.site } : {}),
     });
   }
   // Turning points first in the tip, then the rest by year.

@@ -7,17 +7,18 @@ title:
   en: "Paul's arrest and trials"
   ru: "Арест и суды Павла"
 year: "AD 57"
+people: ["Paul@Act.7.58-2Pe"]
 approximate: true
 stops:
   - place: a15257a # Jerusalem
     ref: Acts.21.27-Acts.23.11
     note:
-      en: 'Seized in the Temple and bound with two chains, Paul speaks to the people and before the council; by night the Lord stands by him: "so must thou bear witness also at Rome."'
-      ru: "Схваченный в храме и скованный двумя цепями, Павел говорит к народу и перед синедрионом; ночью Господь говорит ему: «как ты свидетельствовал о Мне в Иерусалиме, так надлежит тебе свидетельствовать и в Риме»."
+      en: 'Seized in the Temple and bound with two chains, Paul speaks to the people and before the council; by night the Lord stands by him: "as thou hast testified of me in Jerusalem, so must thou bear witness also at Rome."'
+      ru: "Схваченный в храме и скованный двумя цепями, Павел говорит к народу и перед синедрионом; ночью Господь, явившись ему, говорит: «как ты свидетельствовал о Мне в Иерусалиме, так надлежит тебе свидетельствовать и в Риме»."
   - place: a58735e # Caesarea
     ref: Acts.23.23-Acts.24.27
     note:
-      en: "Led out by night under guard by way of Antipatris to Caesarea, he answers before the governor Felix, who trembles as he reasons of righteousness and judgment to come, and keeps him bound two years."
+      en: "Led out by night under guard by way of Antipatris to Caesarea, he answers before the governor Felix, who trembles as Paul reasons of righteousness and judgment to come, and keeps him bound two years."
       ru: "Ночью под стражей его уводят через Антипатриду в Кесарию; он отвечает перед правителем Феликсом, который приходит в страх от слов о правде и будущем суде и два года держит его в узах."
   - place: a15257a # Jerusalem
     ref: Acts.25.1-Acts.25.5

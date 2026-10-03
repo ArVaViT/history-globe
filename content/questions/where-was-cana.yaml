@@ -1,0 +1,27 @@
+id: where-was-cana
+question:
+  en: "Where was Cana?"
+  ru: "Где находилась Кана Галилейская?"
+answer:
+  en:
+    - "The site of Cana is disputed. Two places in Lower Galilee are the main candidates: Kafr Kanna, on the road from Nazareth towards the Sea of Galilee, where visitors are shown the place of the wedding today, and Khirbet Qana (Horbat Qana), a ruined village on the northern edge of the Beit Netofa valley about 13 km north of Nazareth, where the map point stands."
+    - "John calls the place “Cana of Galilee”: “And the third day there was a marriage in Cana of Galilee; and the mother of Jesus was there.” It was the home of Nathanael, and Jesus was there again when he healed the son of the official from Capernaum, about 26 km away in a straight line. Josephus says that he himself lived for a while at a village of Galilee called Cana. Eusebius, in the fourth century, put the miracle at the Cana of the tribe of Asher, which he placed near Sidon; that is usually taken for today's Qana in Lebanon, about 43 km north of the map point, and few scholars follow him."
+    - "Khirbet Qana has the stronger case from the sources: a Jewish village of the Hellenistic and Roman periods with a cave complex venerated by pilgrims, excavated from 1998; in the twelfth century Cana was generally placed there, and Josephus scholars find that his Cana fits it. Kafr Kanna has the living tradition and a Franciscan church dedicated in 1881, but how far back its claim goes is disputed: Pringle notes pilgrims mentioning a church there from the eighth century, while McCollough finds no real pilgrim link before modern times. Yardenna Alexandre, who excavated a Roman-period Jewish village at Karm er-Ras beside Kafr Kanna, argues that this was the ancient Cana. The map shows Khirbet Qana and lists the other sites on the place card."
+  ru:
+    - "Местоположение Каны спорно. Два места в Нижней Галилее — главные кандидаты: Кафр-Канна, на дороге из Назарета к Галилейскому морю, где сегодня показывают место брачного пира, и Хирбет-Кана (Хорват-Кана), развалины селения на северном краю долины Бейт-Нетофа примерно в 13 км к северу от Назарета, где стоит точка на карте."
+    - "Иоанн зовёт это место Каной Галилейской: «На третий день был брак в Кане Галилейской, и Матерь Иисуса была там». Отсюда был родом Нафанаил, и здесь же Иисус исцелил сына царедворца из Капернаума, до которого по прямой около 26 км. Иосиф Флавий пишет, что сам одно время жил в галилейском селении под названием Кана. Евсевий в IV веке связал чудо с Каной в уделе Асира, которую помещал близ Сидона; её обычно понимают как нынешнюю Кану в Ливане, примерно в 43 км к северу от точки на карте, и за ним идут немногие."
+    - "У Хирбет-Каны источники сильнее: это иудейское селение эллинистического и римского времени с пещерным комплексом, который почитали паломники; раскопки идут с 1998 года. В XII веке Кану обычно помещали именно здесь, и знатоки Иосифа Флавия находят, что его Кана подходит к этому месту. У Кафр-Канны — живая традиция и францисканская церковь, освящённая в 1881 году, но насколько древни её права, спорят: Прингл отмечает упоминания паломников о церкви здесь с VIII века, а Маккалоу не находит настоящей паломнической связи до Нового времени. Ярденна Александр, раскопавшая иудейское селение римского времени в Карм-эр-Рас рядом с Кафр-Канной, считает его древней Каной. Карта показывает Хирбет-Кану, остальные места перечислены в карточке."
+map:
+  place: a031bda
+  year: "AD 28"
+  ref: John.2.1
+scripture: [John.2.1-John.2.2, John.2.11, John.4.46, John.21.2, Josh.19.28]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Josephus, Life 86 (his stay at Cana)"
+  - "Eusebius, Onomasticon, s.v. Kana (tribe of Asher, near Sidon)"
+  - "D. R. Edwards (ed.), Khirbet Qana, a Galilean Village in Regional Perspective: Survey and Excavation 1997-2004 (University of Puget Sound, 2011)"
+  - "T. McCollough, 'Searching for Cana: Where Jesus Turned Water into Wine', Biblical Archaeology Review 41/6 (2015)"
+  - "D. Pringle, The Churches of the Crusader Kingdom of Jerusalem, vol. 1 (1993), s.v. Kafr Kanna"
+  - "Y. Alexandre, 'The Archaeological Evidence of the Great Revolt at Karm er-Ras (Kafr Kanna) in the Lower Galilee', in O. Guri-Rimon (ed.), The Great Revolt in the Galilee (2008), and her reports on Kafr Kanna in Hadashot Arkheologiyot 121-125"
+status: checked

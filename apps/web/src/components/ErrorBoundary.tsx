@@ -6,7 +6,12 @@ import { translate, i18n } from "../i18n";
  * blank page; React has already logged the error. Outside the language hook on
  * purpose: it must render when hooks can't.
  */
-export class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
+export class ErrorBoundary extends Component<
+  // `fallback`: a part that fails (a lazy panel whose code did not load) shows this instead
+  // of taking the whole page down.
+  { children: ReactNode; fallback?: ReactNode },
+  { error: Error | null }
+> {
   override state: { error: Error | null } = { error: null };
 
   static getDerivedStateFromError(error: Error) {
@@ -15,9 +20,10 @@ export class ErrorBoundary extends Component<{ children: ReactNode }, { error: E
 
   override render() {
     if (!this.state.error) return this.props.children;
+    if (this.props.fallback !== undefined) return this.props.fallback;
     const t = (key: string) => translate(i18n.language, key);
     return (
-      <div role="alert" className="fixed inset-0 grid place-items-center bg-night p-6">
+      <div role="alert" className="fixed inset-0 grid place-items-center bg-paper-2 p-6">
         <div className="max-w-sm rounded-2xl bg-paper px-6 py-5 text-ink shadow-lg">
           <p className="font-serif text-[18px]">{t("crash.title")}</p>
           <button

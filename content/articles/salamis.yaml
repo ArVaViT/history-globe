@@ -1,0 +1,32 @@
+# Overview article (ADR 0007). Mainstream facts only; dates of the Cypriot kings and of Epiphanius are approximate; the martyrdom of Barnabas is given as later legend.
+id: salamis
+place: afa863b
+title:
+  en: "Salamis"
+  ru: "Саламин"
+body:
+  en:
+    - "Salamis lay on the east coast of Cyprus at the mouth of the Pediaeus river, about 6 km north of modern Famagusta. Greek legend made Teucer, son of Telamon, its founder after the Trojan War; archaeology traces the town to the eleventh century BC, when it took over from the older harbour town at nearby Enkomi. Its cemetery holds the so-called royal tombs of the eighth and seventh centuries BC, with chariots, sacrificed horses and rich goods from Egypt and Syria. About 673 BC the Assyrian king Esarhaddon named Kisu, king of Salamis, among ten kings of Cyprus whom he summoned for his building work at Nineveh, in the same list as Manasseh, king of Judah."
+    - "Under Persian rule Salamis was the leading Greek kingdom of the island; its king Evagoras I, praised by Isocrates, reigned from about 411 to 374 BC and waged a long war against Persia. In 306 BC Demetrius, son of Antigonus, besieged the city and destroyed the fleet of Ptolemy I off its shore. Under the later Ptolemies and under Rome the seat of government passed to Paphos, but Salamis remained the island's largest city, with a theatre, a gymnasium and a temple of Zeus."
+    - "Barnabas, one of the leaders of the church at Antioch, was a Levite of Cyprus. Sent out with Saul, he sailed from Seleucia to the island, and at Salamis, the first stop of the journey, they preached the word of God in the synagogues of the Jews, with John Mark to help them. After parting from Paul, Barnabas took Mark and sailed again to Cyprus. A later legend, the Acts of Barnabas, tells that he was martyred at Salamis."
+    - "In the Jewish revolt of 116–117 under Trajan the Jews of Cyprus rose under Artemion; Jerome's Chronicle says they overthrew Salamis after killing its gentile inhabitants, and Cassius Dio reports that afterwards no Jew might set foot on the island. In the fourth century earthquakes ruined the city, and Constantius II rebuilt it as Constantia, which became the capital of Cyprus. Its bishop Epiphanius, from about 367 to 403, wrote a great work against all heresies."
+  ru:
+    - "Саламин лежал на восточном берегу Кипра, в устье реки Педиеос, примерно в 6 км к северу от нынешней Фамагусты. Греческое предание называло его основателем Тевкра, сына Теламона, после Троянской войны; археология возводит город к XI веку до н. э., когда он сменил более древнюю гавань у соседней Энкоми. На его кладбище находятся так называемые царские гробницы VIII–VII веков до н. э., с колесницами, принесёнными в жертву конями и богатыми вещами из Египта и Сирии. Около 673 г. до н. э. ассирийский царь Асардан назвал Кису, царя Саламина, среди десяти царей Кипра, которых он призвал на свои стройки в Ниневии, в одном списке с Манассией, царём Иудейским."
+    - "Под властью персов Саламин был главным греческим царством острова; его царь Евагор I, которого восхвалял Исократ, правил примерно с 411 по 374 г. до н. э. и вёл долгую войну с Персией. В 306 г. до н. э. Деметрий, сын Антигона, осадил город и уничтожил у его берегов флот Птолемея I. При поздних Птолемеях и при Риме управление островом перешло в Паф, но Саламин оставался крупнейшим городом Кипра, с театром, гимнасием и храмом Зевса."
+    - "Варнава, один из руководителей церкви в Антиохии, был левитом родом с Кипра. Посланный вместе с Савлом, он отплыл из Селевкии на остров, и в Саламине, первой остановке пути, они проповедовали слово Божие в синагогах Иудейских, а Иоанн Марк помогал им. Разлучившись с Павлом, Варнава взял Марка и снова отплыл в Кипр. Позднейшее сказание, Деяния Варнавы, говорит, что он принял мученическую смерть в Саламине."
+    - "Во время иудейского восстания 116–117 гг. при Траяне иудеи Кипра поднялись во главе с Артемионом; Хроника Иеронима сообщает, что они разрушили Саламин, перебив жителей-язычников, а Дион Кассий пишет, что после этого ни одному иудею не позволялось ступить на остров. В IV веке землетрясения разрушили город, и Констанций II отстроил его под именем Констанция; он стал столицей Кипра. Его епископ Епифаний, примерно с 367 по 403 г., написал большой труд против всех ересей."
+scripture:
+  - Acts.4.36
+  - Acts.13.1-Acts.13.5
+  - Acts.15.39
+sources:
+  - "Strabo, Geography 14.6.3 (Teucer as founder)"
+  - "Esarhaddon, Nineveh prism A (RINAP 4, Esarhaddon 1) v 54-72: the ten kings of Cyprus"
+  - "Isocrates, Evagoras (Oration 9)"
+  - "Diodorus Siculus, Library 20.47-53 (siege of Salamis and the sea battle of 306 BC)"
+  - "Cassius Dio, Roman History 68.32; Jerome, Chronicle (entry on the destruction of Salamis, c. AD 117)"
+  - "Acts of Barnabas (fifth-century legend of his martyrdom at Salamis)"
+  - "Jerome, On Illustrious Men 114 (Epiphanius, bishop of Salamis)"
+  - "V. Karageorghis, Salamis in Cyprus: Homeric, Hellenistic and Roman (1969)"
+  - "T. B. Mitford, 'Roman Cyprus', ANRW II.7.2 (1980)"
+status: checked

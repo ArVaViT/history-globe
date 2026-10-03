@@ -1,0 +1,24 @@
+id: where-is-mount-sinai
+question:
+  en: "Where is Mount Sinai?"
+  ru: "Где находится гора Синай?"
+answer:
+  en:
+    - 'The site of Mount Sinai is disputed: the traditional mountain is Jebel Musa ("Mount of Moses") in the south of the Sinai Peninsula, Egypt, and that is where the map places it, but the Bible gives no location that can be fixed, and several other mountains have been proposed.'
+    - 'Exodus says that Israel reached the mountain in the third month after leaving Egypt: they "were come to the desert of Sinai, and had pitched in the wilderness; and there Israel camped before the mount." The same mountain is called Horeb, the mountain of God, where Moses saw the burning bush, and Deuteronomy counts "eleven days'' journey from Horeb by the way of mount Seir unto Kadesh-barnea". From Jebel Musa to the usual site of Kadesh-barnea is about 240 km in a straight line, about 8 days on foot at 30 km a day.'
+    - "The candidates on the map, beside Jebel Musa, are its neighbouring peaks Ras es-Safsafeh and Jebel Katherina, Jebel Serbal about 35 km to the west, Jebel Sin Bishar in the west of the peninsula, and Har Karkom in the Negev, about 210 km to the north-north-east; some writers also look for the mountain in north-western Arabia. Christian monks settled below Jebel Musa by the fourth century, and the monastery of St Catherine still stands at its foot. None of the proposals has been proved, so the map shows the traditional site and lists the others on the place card."
+  ru:
+    - "Местоположение горы Синай спорно: традиционная гора — Джебель-Муса («гора Моисея») на юге Синайского полуострова, в Египте, и там её показывает карта; но Библия не даёт привязки, которую можно установить точно, и предлагались другие горы."
+    - "Книга Исход говорит, что Израиль пришёл к горе в третий месяц после выхода из Египта: «пришли в пустыню Синайскую, и расположились там станом в пустыне; и расположился там Израиль станом против горы». Та же гора зовётся Хоривом, горой Божией, где Моисей видел неопалимую купину, а Второзаконие указывает: «в расстоянии одиннадцати дней пути от Хорива, по дороге от горы Сеир к Кадес-Варни». От Джебель-Мусы до обычно принимаемого места Кадеса около 240 км по прямой, примерно 8 дней пешего пути по 30 км в день."
+    - "Другие кандидаты на карте, кроме Джебель-Мусы, — соседние вершины Рас-эс-Сафсафе и гора Святой Екатерины, Джебель-Сербал в 35 км западнее, Джебель-Син-Бишар на западе полуострова и Хар-Карком в Негеве, примерно в 210 км к северо-северо-востоку; некоторые ищут гору и на северо-западе Аравии. Христианские монахи жили под Джебель-Мусой уже в IV веке, и у подножия до сих пор стоит монастырь Святой Екатерины. Ни одно из предложений не доказано, поэтому карта показывает традиционное место, а остальные перечисляет в карточке."
+map:
+  place: abfba2a
+  year: "1446 BC"
+  ref: Exod.19.2
+scripture: [Exod.3.1, Exod.19.1-Exod.19.2, Deut.1.2, Gal.4.25]
+sources:
+  - "Egeria, Itinerarium 1-5 (the ascent of Sinai, c. 383)"
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "OpenBible.info, candidate sites for Mount Sinai"
+  - "History Globe tour “The Exodus” (the map's note on the Red Sea and Mount Sinai having several proposed sites)"
+status: checked

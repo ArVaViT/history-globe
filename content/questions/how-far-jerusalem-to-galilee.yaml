@@ -1,0 +1,32 @@
+id: how-far-jerusalem-to-galilee
+question:
+  en: "How far is it from Jerusalem to Galilee?"
+  ru: "Как далеко от Иерусалима до Галилеи?"
+answer:
+  en:
+    - "Nazareth, in the hills of Lower Galilee, is about 105 km north of Jerusalem in a straight line and 146 km by the road on the map; Capernaum on the Sea of Galilee is about 125 km away in a straight line, and the lake itself about 120 km. On foot the way took several days: at 30 km a day the road to Nazareth is five days, and Josephus says that the journey from Galilee to Jerusalem through Samaria took three days for those who hurried."
+    - 'The Gospels have the family of Jesus walk it every year: "Now his parents went to Jerusalem every year at the feast of the passover", and on the way home from the feast when he was twelve they "went a day''s journey" before they missed him. Two roads were used. The direct road ran along the hills through Samaria: "And he must needs go through Samaria", John says of Jesus'' return to Galilee, and Luke tells of a Samaritan village that would not receive him "because his face was as though he would go to Jerusalem". The other road went down the Jordan valley and climbed from Jericho, which is the way the Gospels describe for his last journey; on the map it measures 22 km from Jericho to Bethany and 4 km more to Jerusalem.'
+    - "In the time of Jesus the two lands were ruled separately: Judea had been a Roman province under a prefect since AD 6, while Galilee belonged to Herod Antipas, the tetrarch, which is why Pilate sent Jesus to Herod when he heard that he was a Galilean. Within Galilee the distances are small: Nazareth to Capernaum is about 33 km in a straight line and 50 km by the road on the map, and Capernaum to Bethsaida about 6 km, wherever exactly Bethsaida stood."
+  ru:
+    - "Назарет в горах Нижней Галилеи лежит примерно в 105 км к северу от Иерусалима по прямой и в 146 км по дороге на карте; до Капернаума на Галилейском море около 125 км по прямой, до самого озера — около 120 км. Пешком путь занимал несколько дней: при 30 км в день дорога до Назарета — пять дней, а Иосиф Флавий пишет, что путь из Галилеи в Иерусалим через Самарию у торопившихся занимал три дня."
+    - "В Евангелиях семья Иисуса проходит этот путь каждый год: «Каждый год родители Его ходили в Иерусалим на праздник Пасхи», а на обратном пути с праздника, когда Ему было двенадцать лет, они, «пройдя же дневной путь», хватились Его. Дорог было две. Прямая шла по горам через Самарию: «Надлежало же Ему проходить через Самарию», говорит Иоанн о возвращении Иисуса в Галилею, а Лука рассказывает о самарянском селении, где Его не приняли, «потому что Он имел вид путешествующего в Иерусалим». Другая дорога спускалась в долину Иордана и поднималась от Иерихона; так Евангелия описывают Его последний путь; на карте от Иерихона до Вифании 22 км и ещё 4 км до Иерусалима."
+    - "Во времена Иисуса этими землями правили порознь: Иудея с 6 г. н. э. была римской провинцией под началом префекта, а Галилея принадлежала четвертовластнику Ироду Антипе; потому Пилат и послал Иисуса к Ироду, услышав, что Он Галилеянин. Внутри Галилеи расстояния малы: от Назарета до Капернаума около 33 км по прямой и 50 км по дороге на карте, от Капернаума до Вифсаиды — около 6 км, где бы именно ни стояла Вифсаида."
+map:
+  year: "AD 30"
+  ref: Luke.2.41
+scripture:
+  [
+    Luke.2.41-Luke.2.44,
+    John.4.3-John.4.4,
+    Luke.9.51-Luke.9.53,
+    Luke.18.31,
+    Luke.19.1,
+    Luke.23.6-Luke.23.7,
+  ]
+sources:
+  - "Josephus, Life 269 (ch. 52; three days from Galilee to Jerusalem through Samaria)"
+  - "Josephus, Antiquities 17.355; 18.1-2 (Judea a province, AD 6); History Globe dated events (Judea a province, AD 6)"
+  - "History Globe tours “The childhood of Jesus, after Luke” and “The life of Jesus”, and the article on Nazareth"
+  - "Straight-line distances computed from the map's place coordinates (OpenBible.info Bible Geocoding Data)"
+  - "Road lengths along the Roman road network of Itiner-e (de Soto, Pažout, Brughmans et al. 2025): Jerusalem to Nazareth (146 km), Nazareth to Capernaum (50 km), Jericho to Bethany (22 km), Bethany to Jerusalem (4 km)"
+status: checked

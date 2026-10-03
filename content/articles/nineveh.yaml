@@ -1,0 +1,36 @@
+# Overview article (ADR 0007). Mainstream facts only; Mesopotamian dates follow the middle chronology.
+id: nineveh
+place: a70fd5d
+title:
+  en: "Nineveh"
+  ru: "Ниневия"
+body:
+  en:
+    - "Nineveh stood on the east bank of the Tigris, opposite modern Mosul, where the small Khosr river joins it; its ruins are the two mounds of Kuyunjik and Nebi Yunus. People lived there from about 6000 BC, and by the third millennium it was a town known for its temple of Ishtar. In the fourteenth century BC the king of Mitanni sent the statue of Ishtar of Nineveh to Egypt, as one of the Amarna letters records. Genesis lists Nineveh among the first cities of Mesopotamia."
+    - "Nineveh was long one of Assyria's royal cities, but its great age began when Sennacherib (705–681 BC) made it his capital about 700 BC. He built a vast palace, a wall about 12 km long and canals bringing water from the hills; reliefs from that palace show his siege of Lachish in 701 BC. The Bible says he returned from Judah to Nineveh and was killed there by his sons, and the Babylonian Chronicle also records his murder in 681 BC. Ashurbanipal later gathered a library of more than twenty thousand tablets and fragments in the city."
+    - "The Book of Jonah tells of the prophet sent to the great city and of its repentance, and Jesus held up the men of Nineveh as an example. Nahum and Zephaniah foretold its ruin. In 612 BC the Babylonians under Nabopolassar and the Medes under Cyaxares took and destroyed Nineveh after a siege of about three months, as the Babylonian Chronicle records, and Assyria never recovered."
+    - "Only a small settlement lived on at the site under the Persians, the Seleucids and the Parthians, while the town that became Mosul grew on the opposite bank. Tradition placed the tomb of Jonah on the Nebi Yunus mound. From the 1840s Botta, Layard and their successors uncovered the palaces, the reliefs and Ashurbanipal's library."
+  ru:
+    - "Ниневия стояла на восточном берегу Тигра, напротив нынешнего Мосула, там, где в него впадает речка Хоср; её руины — два холма, Куюнджик и Неби-Юнус. Люди жили здесь примерно с 6000 г. до н. э., а в III тысячелетии до н. э. это был город, известный храмом Иштар. В XIV веке до н. э. царь Митанни посылал статую Иштар Ниневийской в Египет, о чём сообщает одно из Амарнских писем. Книга Бытия называет Ниневию среди первых городов Месопотамии."
+    - "Ниневия издавна была одним из царских городов Ассирии, но её великая пора началась, когда Сеннахирим (705–681 гг. до н. э.) около 700 г. до н. э. сделал её столицей. Он построил огромный дворец, стену длиной около 12 км и каналы, подводившие воду с гор; рельефы этого дворца изображают его осаду Лахиса в 701 г. до н. э. Библия говорит, что он вернулся из Иудеи в Ниневию и был убит там своими сыновьями, и Вавилонская хроника тоже сообщает о его убийстве в 681 г. до н. э. Позже Ашшурбанапал собрал здесь библиотеку из более чем двадцати тысяч табличек и их обломков."
+    - "Книга Ионы рассказывает о пророке, посланном в этот великий город, и о покаянии ниневитян, а Иисус ставил жителей Ниневии в пример. Наум и Софония предрекали её гибель. В 612 г. до н. э. вавилоняне во главе с Набопаласаром и мидяне во главе с Киаксаром после примерно трёхмесячной осады взяли и разрушили Ниневию, как сообщает Вавилонская хроника, и Ассирия уже не поднялась."
+    - "При персах, Селевкидах и парфянах на месте города сохранялось лишь небольшое поселение, а на противоположном берегу рос город, ставший Мосулом. Предание помещало гробницу Ионы на холме Неби-Юнус. С 1840-х годов Ботта, Лэйярд и их преемники раскопали дворцы, рельефы и библиотеку Ашшурбанапала."
+scripture:
+  - Gen.10.11
+  - 2Kgs.19.36-2Kgs.19.37
+  - Jonah.1.2
+  - Jonah.3.3-Jonah.3.10
+  - Nah.1.1
+  - Nah.3.7
+  - Zeph.2.13
+  - Matt.12.41
+  - Luke.11.30-Luke.11.32
+sources:
+  - "Amarna letter EA 23 (Tushratta of Mitanni sends Ishtar of Nineveh to Egypt)"
+  - "Sennacherib's annals and building inscriptions; the Lachish reliefs from his palace at Nineveh"
+  - "Babylonian Chronicle ABC 1 iii 34-35 (murder of Sennacherib, 681 BC)"
+  - "Babylonian Chronicle ABC 3 (Fall of Nineveh Chronicle)"
+  - "A. K. Grayson, Assyrian and Babylonian Chronicles (1975)"
+  - "A. H. Layard, Nineveh and Its Remains (1849)"
+  - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016) (middle chronology)"
+status: checked

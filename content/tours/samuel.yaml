@@ -6,6 +6,7 @@ title:
   en: "Samuel and the ark"
   ru: "Самуил и ковчег"
 year: "1070 BC"
+people: ["Samuel@1Sa.1.20-Heb"]
 approximate: true
 stops:
   - place: a90f6e1 # Ramah
@@ -17,7 +18,7 @@ stops:
     ref: 1Sam.1.24-1Sam.3.21
     note:
       en: 'Brought to the house of the Lord at Shiloh, the boy answers: "Speak; for thy servant heareth."'
-      ru: "Приведённый в дом Господень в Силоме, отрок отвечает: «говори, Господи, ибо слышит раб Твой»."
+      ru: "Приведённый в дом Господень в Силоме, отрок отвечает: «говори, ибо слышит раб Твой»."
   - place: abfdefc # Ebenezer
     ref: 1Sam.4.1-1Sam.4.11
     note:
@@ -26,7 +27,7 @@ stops:
   - place: a30c937 # Ashdod
     ref: 1Sam.5.1-1Sam.5.7
     note:
-      en: "In the temple of Dagon at Ashdod the idol falls on its face before the ark."
+      en: "In the temple of Dagon at Ashdod the idol falls on its face before the ark of the Lord."
       ru: "В храме Дагона в Азоте идол падает лицом к земле пред ковчегом Господним."
   - place: a3b5b53 # Beth-shemesh
     ref: 1Sam.6.12-1Sam.6.20
@@ -36,20 +37,22 @@ stops:
   - place: a9bba61 # Kiriath-jearim
     ref: 1Sam.7.1-1Sam.7.2
     note:
-      en: "The men of Kiriath-jearim keep the ark in the house of Abinadab for twenty years."
-      ru: "Жители Кириаф-Иарима хранят ковчег в доме Аминадава двадцать лет."
+      en: "The men of Kiriath-jearim bring the ark into the house of Abinadab; twenty years pass, and all Israel laments after the Lord."
+      ru: "Жители Кириаф-Иарима вносят ковчег в дом Аминадава; проходит лет двадцать, и весь дом Израилев обращается к Господу."
   - place: a736f6c # Mizpah
     ref: 1Sam.7.5-1Sam.7.12
     note:
-      en: 'At Mizpah Samuel prays, Israel prevails, and Samuel sets up a stone: "Hitherto hath the LORD helped us."'
-      ru: "В Массифе Самуил молится, Израиль побеждает, и Самуил ставит камень: «до сего места помог нам Господь»."
+      en: 'At Mizpah Samuel prays and Israel prevails; between Mizpah and Shen Samuel sets up a stone: "Hitherto hath the LORD helped us."'
+      ru: "В Массифе Самуил молится, и Израиль побеждает; между Массифою и Сеном Самуил ставит камень: «до сего места помог нам Господь»."
   - place: ab94aea # Gilgal
     ref: 1Sam.11.14-1Sam.11.15
+    year: "1050 BC"
     note:
       en: "At Gilgal the people make Saul king before the Lord."
       ru: "В Галгале народ поставляет Саула царём пред Господом."
   - place: a90f6e1 # Ramah
     ref: 1Sam.25.1
+    year: "1015 BC"
     note:
       en: "Samuel dies, and all Israel mourns him and buries him at his house in Ramah."
       ru: "Самуил умирает; весь Израиль плачет о нём и погребает его в доме его, в Раме."

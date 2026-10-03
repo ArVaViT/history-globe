@@ -1,0 +1,37 @@
+# Overview article (ADR 0007). Mainstream facts only; Egyptian dates follow I. Shaw (ed.), The Oxford History of Ancient Egypt.
+id: memphis
+place: a8ec269
+title:
+  en: "Memphis"
+  ru: "Мемфис"
+body:
+  en:
+    - "Memphis lay on the west bank of the Nile about 20 km south of modern Cairo, near the point where the river opens into the delta; its ruins are at the village of Mit Rahina. Herodotus heard that Min, the first king of Egypt, founded it after damming the Nile and built there the temple of Ptah, whom the Greeks called Hephaestus. Memphis was the capital of the united kingdom from about 3000 BC, and the kings of the Old Kingdom were buried on the desert edge nearby, in the pyramids of Saqqara, among them Djoser's step pyramid, and of Giza and Dahshur."
+    - "Even when the kings of later ages ruled from Thebes, Memphis remained a royal residence and the chief city of Lower Egypt. In 671 BC the Assyrian king Esarhaddon took it from the Kushite king Taharqa, the Tirhakah of the Bible, within half a day by Esarhaddon's own account, and Ashurbanipal recovered it a few years later. In 525 BC Cambyses of Persia besieged and took the city after his victory at Pelusium."
+    - "In the Hebrew Bible the city is called Noph, and in Hosea Moph, which the KJV renders Memphis. Isaiah says that the princes of Noph are deceived, and Hosea that Memphis shall bury the Israelites who flee to Egypt. Jeremiah lists Noph among the places where Jews lived in Egypt after the fall of Jerusalem and foretold that Noph shall be waste and desolate; Ezekiel, that God would cause the images to cease out of Noph."
+    - "Alexander the Great came to Memphis in 332 BC and sacrificed to Apis, the sacred bull kept there. The Ptolemies made Alexandria their capital, but Ptolemy V was crowned at Memphis, and the Rosetta Stone carries a decree issued there by the assembled priests in 196 BC. Strabo still found Memphis large and populous, second only to Alexandria, though its palaces lay in ruins. In the Roman and Christian centuries the city declined, and much of its stone was later carried off to build medieval Cairo."
+  ru:
+    - "Мемфис лежал на западном берегу Нила примерно в 20 км к югу от нынешнего Каира, там, где река расходится в дельту; его руины находятся у деревни Мит-Рахина. Геродот слышал, что его основал Мин, первый царь Египта, перегородив Нил плотиной, и построил там храм Птаха, которого греки называли Гефестом. С ок. 3000 г. до н. э. Мемфис был столицей объединённого царства, а цари Древнего царства погребены рядом, на краю пустыни, в пирамидах Саккары, среди них ступенчатая пирамида Джосера, а также Гизы и Дахшура."
+    - "Даже когда цари позднейших эпох правили из Фив, Мемфис оставался царской резиденцией и главным городом Нижнего Египта. В 671 г. до н. э. ассирийский царь Асардан отнял его у кушитского царя Тиргака, которого упоминает и Библия, — по собственным словам Асардана, за полдня, — а через несколько лет его снова взял Ашшурбанапал. В 525 г. до н. э. персидский царь Камбис после победы при Пелусии осадил и взял город."
+    - "В еврейском тексте Библии город называется Ноф, а у Осии — Моф; Синодальный перевод передаёт это имя то как Ноф, то как Мемфис. Исаия говорит, что обманулись князья Мемфисские, а Осия — что Мемфис похоронит израильтян, бежавших в Египет. Иеремия называет Ноф среди мест, где после падения Иерусалима жили Иудеи в Египте, и предрекает, что Ноф будет опустошен, разорен; Иезекииль — что Бог уничтожит лжебогов в Мемфисе."
+    - "Александр Македонский пришёл в Мемфис в 332 г. до н. э. и принёс жертву Апису, священному быку, которого здесь содержали. Птолемеи сделали столицей Александрию, но Птолемей V короновался в Мемфисе, а Розеттский камень несёт декрет, изданный здесь собранием жрецов в 196 г. до н. э. Страбон ещё застал Мемфис большим и многолюдным, вторым после Александрии, хотя его дворцы лежали в развалинах. В римские и христианские века город пришёл в упадок, а позже его камни растащили на постройки средневекового Каира."
+scripture:
+  - Isa.19.13
+  - Jer.2.16
+  - Jer.44.1
+  - Jer.46.14
+  - Jer.46.19
+  - Ezek.30.13
+  - Ezek.30.16
+  - Hos.9.6
+  - 2Kgs.19.9
+sources:
+  - "Herodotus, Histories 2.99 (Min and the founding); 3.13 (Cambyses)"
+  - "Esarhaddon's stele from Zinjirli (RINAP 4, Esarhaddon 98), rev. 37-43; Esarhaddon Chronicle (ABC 14) 28-29 (the year 671 BC)"
+  - "Ashurbanipal's Rassam Cylinder (RINAP 5, Ashurbanipal 11) i 52-90; ii 22-31"
+  - "Arrian, Anabasis 3.1.4"
+  - "The Rosetta Stone (Memphis decree of 27 March 196 BC, after the coronation of Ptolemy V)"
+  - "Strabo, Geography 17.1.31-32"
+  - "D. J. Thompson, Memphis under the Ptolemies (2nd ed., 2012)"
+  - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000)"
+status: checked

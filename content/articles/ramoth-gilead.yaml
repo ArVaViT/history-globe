@@ -1,0 +1,37 @@
+# Overview article (ADR 0007). Mainstream facts only; the site is disputed (Tell er-Rumeith, ar-Ramtha, Tell el-Hisn) and is named as such; kings are dated by the usual reckoning only where needed.
+id: ramoth-gilead
+place: a2fe63c # Ramoth-gilead record, drawn at Tell er-Rumeith (lon/lat checked); 20 verses; a95147f "Ramoth" at the same point carries the city-of-refuge verses
+title:
+  en: "Ramoth-gilead"
+  ru: "Рамоф Галаадский"
+body:
+  en:
+    - 'Ramoth-gilead, "the heights of Gilead", was a town in northern Gilead, east of the Jordan, near the border between Israel and the Aramaeans of Damascus. Its site is disputed. The name survives at ar-Ramtha, near today''s border between Jordan and Syria, a town built on a large Iron Age mound. Others prefer Tell el-Hisn, about 15 km to the southwest, at the edge of the Gilead hills. A long-favoured candidate, where the map point stands, is Tell er-Rumeith, a small mound a few kilometres south of Ramtha. In the fourth century AD Eusebius placed Ramoth fifteen miles west of Philadelphia (Amman), which fits none of these sites; Jerome''s Latin version of his book says east.'
+    - "Paul Lapp excavated Tell er-Rumeith in 1962 and 1967 and found a small Iron Age fort. Its date is debated: some scholars hold that it cannot be older than the early eighth century BC, after the time of Ahab, and that so small a post cannot have been the biblical city."
+    - "In the Bible Ramoth in Gilead is a city of refuge for the tribe of Gad, given to the Levites, and the seat of the son of Geber, Solomon's officer over the towns of Jair and the region of Argob in Bashan. Ahab, king of Israel, wished to take it back from the king of Syria and went up against it with Jehoshaphat, king of Judah; struck by an arrow drawn at a venture, he died at evening in his chariot. His son Joram fought there against Hazael of Syria and went back wounded to Jezreel. Then Elisha sent one of the sons of the prophets to Ramoth-gilead to anoint Jehu, captain of the host, king over Israel, and from there Jehu set out on the revolt that ended the house of Ahab. Josephus retells these wars and says that Joram had taken the city by force and left his army there under Jehu."
+    - "In the days of Pekah, Tiglath-pileser III of Assyria took Gilead and carried its people captive, about 733–732 BC, and Ramoth-gilead does not appear again in the biblical story. In the fourth century AD Eusebius still knew Ramoth as a village."
+  ru:
+    - "Рамоф Галаадский, «высоты Галаада», был городом северного Галаада за Иорданом, у границы Израиля с арамеями Дамаска. Его местоположение спорно. Имя сохранилось в городе эр-Рамта у нынешней границы Иордании и Сирии, стоящем на большом холме железного века. Другие предпочитают Телль-эль-Хисн, примерно в 15 км к юго-западу, на краю Галаадских гор. Давний кандидат, где стоит точка на карте, — Телль-эр-Румейт, небольшой холм в нескольких километрах к югу от Рамты. Евсевий в IV веке н. э. помещал Рамоф в пятнадцати милях к западу от Филадельфии (Аммана), что не подходит ни к одному из этих мест; в латинском переводе его книги у Иеронима сказано «к востоку»."
+    - "Пол Лапп раскапывал Телль-эр-Румейт в 1962 и 1967 гг. и нашёл небольшую крепость железного века. Её датировка спорна: часть учёных считает, что она не старше начала VIII века до н. э., то есть позже времени Ахава, и что столь малый пост не мог быть библейским городом."
+    - "В Библии Рамоф в Галааде — город убежища от колена Гадова, отданный левитам, и место пребывания Бен-Гевера, Соломонова начальника над селениями Иаира и областью Аргов в Васане. Ахав, царь Израильский, хотел отнять его у царя Сирийского и пошёл на него вместе с Иосафатом, царём Иудейским; раненный стрелой, пущенной наудачу, он к вечеру умер в колеснице. Его сын Иорам воевал здесь с Азаилом, царём Сирийским, и раненым вернулся в Изреель. Тогда Елисей послал одного из сынов пророческих в Рамоф Галаадский помазать военачальника Ииуя в царя над Израилем, и отсюда Ииуй начал восстание, положившее конец дому Ахава. Иосиф Флавий пересказывает эти войны и сообщает, что Иорам взял город силой и оставил там войско под началом Ииуя."
+    - "Во дни Факея ассирийский царь Феглаффелласар III взял Галаад и переселил его жителей, около 733–732 гг. до н. э., и больше Рамоф Галаадский в библейском повествовании не появляется. В IV веке н. э. Евсевий ещё знал Рамоф как селение."
+scripture:
+  - Deut.4.43
+  - Josh.20.8
+  - Josh.21.38
+  - 1Kgs.4.13
+  - 1Kgs.22.3-1Kgs.22.4
+  - 1Kgs.22.29
+  - 1Kgs.22.34-1Kgs.22.37
+  - 2Kgs.8.28-2Kgs.8.29
+  - 2Kgs.9.1-2Kgs.9.6
+  - 2Kgs.9.14
+  - 2Kgs.10.11
+  - 2Kgs.15.29
+sources:
+  - "Josephus, Antiquities 8.398-399 (Ahab and Ramoth); 9.105-106 (Joram takes the city; Jehu anointed)"
+  - "Eusebius, Onomasticon, s.v. Ramoth (C. U. Wolf's translation, no. 772)"
+  - "N. L. Lapp (ed.), Tell er-Rumeith: the final report of Paul W. Lapp's excavations of 1962 and 1967 (ASOR, 2015)"
+  - "E. A. Knauf, 'Ramot-Gilead', WiBiLex (2009), and 'The Mists of Ramthalon, or: How Ramoth-Gilead Disappeared from the Archaeological Record', Biblische Notizen 110 (2001) 33-36"
+  - "P. M. Arnold, 'Ramoth-Gilead', Anchor Bible Dictionary 5 (1992) 620-621"
+status: checked

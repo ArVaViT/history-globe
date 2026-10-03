@@ -1,0 +1,43 @@
+# Overview article (ADR 0007). Mainstream facts only; the site is unidentified and named as such.
+# The place is Joshua's Gilgal near Jericho; the Gilgal of 2 Kings 2:1 (a6399b3) is only mentioned.
+id: gilgal
+place: ab94aea
+title:
+  en: "Gilgal"
+  ru: "Галгал"
+body:
+  en:
+    - 'Gilgal was the first camp of Israel west of the Jordan, set by the Book of Joshua "in the east border of Jericho". The name is usually taken to mean a circle, perhaps of stones. Its site has not been found. Proposals in the plain between Jericho and the Jordan include Khirbet el-Mefjir, where the map places it, and Khirbet en-Nitla, dug in 1950; neither has settled the question. Other places in the Bible bear the same name, and the Gilgal from which Elijah and Elisha set out is often sought in the hills near Bethel.'
+    - 'Here, according to Joshua, the people set up twelve stones taken from the bed of the Jordan, the men born in the wilderness were circumcised, and the LORD said, "This day have I rolled away the reproach of Egypt from off you"; the Bible links the name to this rolling away. Israel kept the Passover at Gilgal, and the manna ceased. The camp remained there during the conquest: the Gibeonites came to it to make a league, and Caleb asked Joshua there for his inheritance. Josephus explains the name as "liberty".'
+    - 'In the time of the judges the angel of the LORD came up from Gilgal to Bochim, and Ehud turned back "from the quarries that were by Gilgal" before he killed Eglon. Samuel went in circuit to Bethel, Gilgal and Mizpeh to judge Israel. At Gilgal the people made Saul king before the LORD; there Saul offered the burnt offering without waiting for Samuel, and there Samuel hewed Agag in pieces. Judah came to Gilgal to bring David back over the Jordan after Absalom''s revolt.'
+    - 'In the eighth century BC Hosea and Amos condemned the sacrifices of Gilgal: "All their wickedness is in Gilgal". The place was still remembered in Roman times. Josephus puts Israel''s first camp fifty furlongs on from the Jordan and ten from Jericho. In the early fourth century Eusebius knew it as a deserted place held sacred by the people of the region, and wrote that the stones brought up from the Jordan were shown at the second mile from Jericho.'
+  ru:
+    - "Галгал — первый стан Израиля на западном берегу Иордана; книга Иисуса Навина помещает его «на восточной стороне Иерихона». Имя обычно понимают как «круг», возможно, из камней. Место его не найдено. На равнине между Иерихоном и Иорданом предлагали Хирбет эль-Мефджир, где его помещает карта, и Хирбет эн-Нитлу, где копали в 1950 г.; ни то ни другое не решило вопроса. В Библии есть и другие места с тем же именем, а Галгал, из которого вышли Илия и Елисей, часто ищут в горах близ Вефиля."
+    - "По книге Иисуса Навина, здесь народ поставил двенадцать камней, взятых со дна Иордана, родившиеся в пустыне были обрезаны, и Господь сказал: «ныне Я снял с вас посрамление Египетское»; Библия связывает имя места с этим снятием. В Галгале Израиль совершил Пасху, и манна перестала падать. Стан оставался здесь во время завоевания: сюда пришли гаваонитяне заключить союз, и здесь Халев просил у Иисуса своего удела. Иосиф Флавий толкует имя как «свобода»."
+    - "Во времена судей Ангел Господень пришёл из Галгала в Бохим, а Аод возвратился «от истуканов, которые в Галгале», прежде чем убить Еглона. Самуил обходил Вефиль, Галгал и Массифу и судил Израиля. В Галгале народ поставил Саула царём пред Господом; здесь Саул принёс всесожжение, не дождавшись Самуила, и здесь Самуил разрубил Агага. Иудеи пришли в Галгал, чтобы перевезти Давида через Иордан после восстания Авессалома."
+    - "В VIII веке до н. э. Осия и Амос обличали жертвы Галгала: «Все зло их в Галгале». Место помнили и в римское время. Иосиф Флавий помещает первый стан Израиля в пятидесяти стадиях от Иордана и в десяти от Иерихона. В начале IV века Евсевий знал его как пустое место, почитаемое жителями округи как святое, и писал, что камни, вынесенные из Иордана, показывают у второй мили от Иерихона."
+scripture:
+  - Josh.4.19-Josh.4.20
+  - Josh.5.2-Josh.5.12
+  - Josh.9.6
+  - Josh.10.6
+  - Josh.14.6
+  - Judg.2.1
+  - Judg.3.19
+  - 1Sam.7.16
+  - 1Sam.11.14-1Sam.11.15
+  - 1Sam.13.8-1Sam.13.14
+  - 1Sam.15.33
+  - 2Sam.19.15
+  - 2Kgs.2.1
+  - Hos.4.15
+  - Hos.9.15
+  - Hos.12.11
+  - Amos.4.4
+  - Amos.5.5
+sources:
+  - "Josephus, Antiquities 5.20 (the camp fifty furlongs from the Jordan, ten from Jericho); 5.34 (Gilgal means liberty)"
+  - "Eusebius, Onomasticon, s.v. Bounos and Galgala (C. U. Wolf's translation, nos. 211 and 311)"
+  - "J. Muilenburg, 'The Site of Ancient Gilgal', BASOR 140 (1955) 11-27"
+  - "J. L. Kelso, 'Excavations at Khirbet en-Nitla near Jericho', BASOR 121 (1951) 6-8"
+status: checked

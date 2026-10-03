@@ -20,5 +20,14 @@ export default tseslint.config(
     },
   },
   { files: ["*.js"], ...tseslint.configs.disableTypeChecked },
+  // The browser checks: plain JavaScript run by Node, the page's code inside `evaluate`.
+  {
+    files: ["e2e/**/*.mjs"],
+    ...tseslint.configs.disableTypeChecked,
+    languageOptions: {
+      globals: { ...globals.node, ...globals.browser },
+      parserOptions: { projectService: false, project: null },
+    },
+  },
   prettier,
 );

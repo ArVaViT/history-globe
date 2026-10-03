@@ -1,10 +1,26 @@
-Copyright (c) 2026 Vadym Arnaut. All rights reserved.
+Copyright (c) 2026 Vadym Arnaut.
 
-This repository and everything in it (source code, data, curated content,
-documentation and design) is proprietary. Being able to read it publicly does
-not grant any right to use it. No license is
-granted to use, copy, modify, distribute, or create derivative works of any
-part of it without prior written permission from the copyright holder.
+This repository has two parts under two licences.
 
-Third-party data and software included or referenced here remain under their
-own licenses; see docs/ATTRIBUTIONS.md.
+1. The data: CC BY 4.0
+
+   The curated content in content/ (place names, tours, events, battles, articles,
+   questions, ancient-author notes and the rest) and the data the build makes from it
+   (apps/web/public/data/ and the open API in apps/web/public/api/) are licensed under
+   the Creative Commons Attribution 4.0 International licence:
+   https://creativecommons.org/licenses/by/4.0/
+
+   Credit: "History Globe (Vadym Arnaut), CC BY 4.0", with a link to the source where
+   the medium allows.
+
+2. Everything else: all rights reserved
+
+   The source code (apps/, packages/, scripts/, pipeline/, e2e/), the documentation,
+   and the design are proprietary. Being able to read them publicly does not grant any
+   right to use them. No licence is granted to use, copy, modify, distribute, or create
+   derivative works of them without prior written permission from the copyright holder.
+
+Third-party data, images and software included or referenced here remain under their
+own licences (OpenBible.info, Cliopatria, Pleiades, Itiner-e, Natural Earth, Wikimedia
+Commons photos and others); see docs/ATTRIBUTIONS.md. Those are not relicensed by the
+above: the CC BY 4.0 grant covers this project's own contribution.

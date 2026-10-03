@@ -8,28 +8,45 @@
  */
 import { useCallback, useSyncExternalStore } from "react";
 import en from "./en.json";
-import ru from "./ru.json";
 
 type Dict = { readonly [key: string]: string | Dict };
 type Vars = Readonly<Record<string, string | number>>;
 export type TFunction = (key: string, vars?: Vars) => string;
 
-const DICTS: Readonly<Record<string, Dict>> = { ru, en };
+// English ships with the page: it is the fallback for any missing key. Every other
+// language is its own small file, fetched when first asked for, so a language added is
+// not a cost for the readers of the others.
+const LAZY = import.meta.glob<{ default: Dict }>(["./*.json", "!./en.json"]);
+const DICTS: Record<string, Dict> = { en };
 
-let language = "ru";
+let language = "en";
+/** The language asked for last: a slower dictionary that arrives later does not win. */
+let wanted = "en";
 const listeners = new Set<() => void>();
+
+/** Fetches a language's dictionary once; false for a language without one. */
+export async function loadLanguage(lng: string): Promise<boolean> {
+  if (lng in DICTS) return true;
+  const load = LAZY[`./${lng}.json`];
+  if (!load) return false;
+  DICTS[lng] = (await load()).default;
+  return true;
+}
 
 export const i18n = {
   get language(): string {
     return language;
   },
-  /** Switches the UI language; unknown languages are ignored. */
-  changeLanguage(lng: string): Promise<void> {
-    if (lng !== language && lng in DICTS) {
-      language = lng;
-      for (const l of listeners) l();
-    }
-    return Promise.resolve();
+  /**
+   * Switches the UI language once its dictionary is in; unknown languages are ignored,
+   * and a dictionary that fails to load leaves the language as it was.
+   */
+  async changeLanguage(lng: string): Promise<void> {
+    wanted = lng;
+    const ok = await loadLanguage(lng).catch(() => false);
+    if (!ok || lng !== wanted || lng === language) return;
+    language = lng;
+    for (const l of listeners) l();
   },
 };
 

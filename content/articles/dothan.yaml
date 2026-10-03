@@ -1,0 +1,27 @@
+# Overview article (ADR 0007). Mainstream facts only; no disputed dating is pressed.
+id: dothan
+place: ab635e4
+title:
+  en: "Dothan"
+  ru: "Дофан"
+body:
+  en:
+    - "Dothan is Tell Dothan, a large mound south-west of Jenin and about 22 km north of Shechem. It stands in a broad valley through which a road passed between the coastal plain and the plain of Jezreel. Eusebius placed Dothaim about twelve miles north of Sebaste, the old Samaria. Joseph P. Free of Wheaton College excavated the mound from 1953 to 1964. The earliest remains go back to the Neolithic and Chalcolithic; in the Early Bronze Age it was a walled town, and it was settled again in the Middle and Late Bronze Ages."
+    - 'In Genesis Jacob sent Joseph from the vale of Hebron to see whether it was well with his brothers at Shechem. A man told him they had said, "Let us go to Dothan", and Joseph found them in Dothan. They cast him into an empty pit, and when a company of Ishmeelites came from Gilead with camels bearing spicery, balm and myrrh down to Egypt, they sold him for twenty pieces of silver. The story follows the trade road that ran through the valley.'
+    - 'In the days of the kings of Israel the prophet Elisha was at Dothan when the king of Syria, whose plans he kept revealing to the king of Israel, sent horses, chariots and a great host, and they compassed the city by night. To his frightened servant Elisha said, "Fear not: for they that be with us are more than they that be with them"; the LORD opened the young man''s eyes, and he saw that "the mountain was full of horses and chariots of fire round about Elisha". The Syrians were smitten with blindness, and Elisha led them to Samaria. Josephus, retelling the story, names the king Benhadad. In the Iron Age Dothan was a town of the kingdom of Israel.'
+    - "In the early fourth century Eusebius still pointed out Dothaim as the place where Joseph found his brothers. The name lived on: in 1851 the Dutch traveller C. W. M. van de Velde heard the local people call the mound Dothan."
+  ru:
+    - "Дофан — это Телль-Дотан, большой холм к юго-западу от Дженина и примерно в 22 км к северу от Сихема. Он стоит в широкой долине, через которую шла дорога между приморской равниной и Изреельской равниной. Евсевий помещал Дофаим примерно в двенадцати милях к северу от Севастии, древней Самарии. Джозеф П. Фри из Уитонского колледжа копал холм с 1953 по 1964 г. Древнейшие находки относятся к неолиту и энеолиту; в раннем бронзовом веке здесь был обнесённый стеной город, а в среднем и позднем бронзовом веке место снова было заселено."
+    - "В книге Бытия Иаков послал Иосифа из долины Хевронской посмотреть, здоровы ли братья его в Сихеме. Один человек сказал ему, что они говорили: «пойдем в Дофан», и Иосиф нашёл их в Дофане. Они бросили его в пустой ров, а когда из Галаада шёл караван Измаильтян, и верблюды их несли стираксу, бальзам и ладан в Египет, продали его за двадцать сребренников. Рассказ идёт по торговой дороге, проходившей через долину."
+    - "Во дни царей Израильских пророк Елисей был в Дофане, когда царь Сирийский, чьи замыслы он постоянно открывал царю Израильскому, послал туда коней, колесницы и много войска, и они ночью окружили город. Испуганному слуге Елисей сказал: «не бойся, потому что тех, которые с нами, больше, нежели тех, которые с ними»; Господь открыл глаза слуге, и он увидел, что «вся гора наполнена конями и колесницами огненными кругом Елисея». Сириян поразила слепота, и Елисей привёл их в Самарию. Иосиф Флавий, пересказывая эту историю, называет царя Венададом. В железном веке Дофан был городом Израильского царства."
+    - "В начале IV века Евсевий ещё указывал Дофаим как место, где Иосиф нашёл своих братьев. Имя сохранилось: в 1851 г. голландский путешественник Ч. В. М. ван де Велде слышал, как местные жители называют холм Дотаном."
+scripture:
+  - Gen.37.13-Gen.37.17
+  - Gen.37.23-Gen.37.28
+  - 2Kgs.6.8-2Kgs.6.20
+sources:
+  - "Josephus, Antiquities 9.51-55 (Benhadad sends an army to Dothan to take Elisha)"
+  - "Eusebius, Onomasticon, s.v. Dothaeim (C. U. Wolf's translation, no. 371)"
+  - "C. W. M. van de Velde, Narrative of a Journey through Syria and Palestine in 1851 and 1852 (1854) (the name Dothan heard at the mound)"
+  - "D. M. Master, J. M. Monson, E. H. E. Lass and G. A. Pierce (eds.), Dothan I: Remains from the Tell (1953-1964) (2005)"
+status: checked

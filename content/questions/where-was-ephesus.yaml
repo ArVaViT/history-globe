@@ -1,0 +1,37 @@
+id: where-was-ephesus
+question:
+  en: "Where was Ephesus?"
+  ru: "Где находился Ефес?"
+answer:
+  en:
+    - "Ephesus lay on the west coast of Asia Minor near the mouth of the river Cayster, beside the town of Selçuk in Turkey, south of Izmir (ancient Smyrna, 55 km away in a straight line). It is about 995 km from Jerusalem in a straight line and 1,035 km from Antioch by the roads on the map; the island of Patmos lies about 100 km to the south-west. The harbour silted up over the centuries, and the ruins now lie some way from the sea."
+    - 'On his second journey Paul stopped briefly and left Aquila and Priscilla there. Returning, "Paul having passed through the upper coasts came to Ephesus", argued three months in the synagogue and then two years in the school of Tyrannus, "so that all they which dwelt in Asia heard the word of the Lord Jesus". The silversmith Demetrius raised a riot in the theatre over the shrines of Artemis. From Ephesus Paul wrote to the Corinthians, Timothy stayed in the city, and Revelation opens its letters "unto the angel of the church of Ephesus".'
+    - "Greek tradition held that Ionians under Androclus founded the city beside an older shrine. Its fame was the temple of Artemis, burned by Herostratus in 356 BC and rebuilt as one of the Seven Wonders. About 290 BC Lysimachus moved the people to a new site between the hills, and from 133 BC the city belonged to the Roman province of Asia, whose proconsul resided there. Early tradition holds that the apostle John lived and was buried at Ephesus, and in 431 a council met there and condemned Nestorius."
+  ru:
+    - "Ефес лежал на западном побережье Малой Азии у устья реки Каистр, рядом с городком Сельчук в Турции, к югу от Измира (древней Смирны, в 55 км по прямой). От Иерусалима до него около 995 км по прямой, от Антиохии — 1035 км по дорогам на карте; остров Патмос лежит примерно в 100 км к юго-западу. Гавань за века заилилась, и руины теперь стоят в стороне от моря."
+    - "Во втором путешествии Павел остановился здесь ненадолго и оставил Акилу и Прискиллу. Вернувшись, «Павел, пройдя верхние страны, прибыл в Ефес», три месяца проповедовал в синагоге, а потом два года в училище Тиранна, «так что все жители Асии слышали проповедь о Господе Иисусе». Серебряник Димитрий поднял в театре бунт из-за храмов Артемиды. Из Ефеса Павел писал коринфянам, в городе остался Тимофей, а Откровение начинает свои послания словами «Ангелу Ефесской церкви напиши»."
+    - "Греческое предание говорило, что город основали ионийцы во главе с Андроклом рядом с более древним святилищем. Славу ему принёс храм Артемиды, сожжённый Геростратом в 356 г. до н. э. и отстроенный как одно из семи чудес света. Около 290 г. до н. э. Лисимах переселил жителей на новое место между холмами, а с 133 г. до н. э. город входил в римскую провинцию Асия, проконсул которой жил здесь. Раннее предание говорит, что апостол Иоанн жил и был погребён в Ефесе, а в 431 году здесь собрался собор, осудивший Нестория."
+map:
+  place: a5feb15
+  year: "AD 54"
+  ref: Acts.19.1
+scripture:
+  [
+    Acts.18.19-Acts.18.21,
+    Acts.19.1,
+    Acts.19.8-Acts.19.10,
+    Acts.19.23-Acts.19.41,
+    1Cor.16.8,
+    1Tim.1.3,
+    Rev.2.1,
+  ]
+sources:
+  - "Strabo, Geography 14.1.21-24"
+  - "Pausanias, Description of Greece 7.2.6-9; Pliny, Natural History 36.95-97"
+  - "Irenaeus, Against Heresies 3.1.1; Eusebius, Church History 3.23"
+  - "H. Koester (ed.), Ephesos, Metropolis of Asia (1995)"
+  - "P. Trebilco, The Early Christians in Ephesus from Paul to Ignatius (2004)"
+  - "History Globe article “Ephesus”, History Globe dated events (council-ephesus AD 431) and History Globe tour “Paul's third journey”"
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Length along the Roman roads: Itiner-e (de Soto, Pažout, Brughmans et al. 2025), Antioch to Ephesus (1035 km)"
+status: checked

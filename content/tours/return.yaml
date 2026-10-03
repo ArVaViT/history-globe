@@ -8,6 +8,7 @@ title:
   en: "The return: Ezra and Nehemiah"
   ru: "Возвращение: Ездра и Неемия"
 year: "458 BC"
+people: ["Ezra@Ezr.7.1-Neh", "Nehemiah@Neh.1.1-"]
 approximate: true
 stops:
   # Ahava is only known to be near Babylon; OpenBible puts it on Babylon itself, so the
@@ -44,7 +45,7 @@ stops:
     ref: Neh.8.1-Neh.8.8
     year: "445 BC"
     note:
-      en: "In the seventh month all the people gather before the Water Gate; Ezra reads the book of the law from morning until midday, and the Levites give the sense."
+      en: "In the seventh month all the people gather in the street before the Water Gate; Ezra reads the book of the law from morning until midday, the Levites give the sense, and the people understand the reading."
       ru: "В седьмой месяц весь народ собирается на площади перед Водяными воротами, Ездра читает книгу закона от рассвета до полудня, левиты поясняют, и народ понимает прочитанное."
   - place: a15257a # Jerusalem
     ref: Neh.12.27-Neh.12.43

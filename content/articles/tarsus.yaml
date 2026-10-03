@@ -1,0 +1,35 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed points are named as such.
+id: tarsus
+place: a666ea0
+title:
+  en: "Tarsus"
+  ru: "Тарс"
+body:
+  en:
+    - "Tarsus lies in the plain of Cilicia in southern Turkey, about 20 km inland from the Mediterranean. In antiquity the cold, swift river Cydnus flowed through the middle of the city and into a lagoon near the coast that served as its harbour. The mound of Gözlükule, excavated by Hetty Goldman in the 1930s and 1940s, shows settlement from the Neolithic onward, and Hittite texts of the second millennium BC name the town Tarsa. In 401 BC Xenophon found it a large and prosperous city, the seat of the Cilician king Syennesis, who ruled under the Persians."
+    - "Alexander the Great reached Tarsus in 333 BC and fell gravely ill there, by one account after bathing in the Cydnus. After the battle of Philippi, Mark Antony made Tarsus a free city exempt from taxes, and in 41 BC Cleopatra sailed up the Cydnus to meet him in her gilded barge. Strabo, writing under Augustus, says its people surpassed even Athens and Alexandria in their zeal for philosophy and learning; the Stoic Athenodorus, teacher of Augustus, governed the city on his return home."
+    - 'Paul was born in Tarsus. He called himself "a Jew of Tarsus, a city in Cilicia, a citizen of no mean city", and said he was brought up in Jerusalem at the feet of Gamaliel. In Damascus the Lord sent Ananias to seek "Saul, of Tarsus". After his conversion the brethren sent Paul away to Tarsus, and he went into the regions of Syria and Cilicia until Barnabas came to Tarsus to seek him and brought him to Antioch. On a later journey Paul went through Syria and Cilicia, confirming the churches.'
+    - "Under the empire Tarsus remained the leading city of Cilicia. When the emperor Julian died on his Persian campaign in 363, he was buried, as he had directed, in a suburb of Tarsus beside the road to the passes of the Taurus. Diodorus, its bishop from 378, who earlier at Antioch had guided John Chrysostom and Theodore of Mopsuestia in the ascetic life, upheld the Nicene faith at the Council of Constantinople in 381."
+  ru:
+    - "Тарс лежит на Киликийской равнине на юге Турции, примерно в 20 км от Средиземного моря. В древности холодная и быстрая река Кидн текла через середину города и впадала у побережья в лагуну, служившую ему гаванью. Холм Гёзлюкуле, который раскапывала Хетти Голдман в 1930–1940-х гг., хранит следы поселения начиная с неолита, а хеттские тексты II тысячелетия до н. э. называют город Тарса. В 401 г. до н. э. Ксенофонт застал его большим и процветающим городом, резиденцией киликийского царя Сиеннесия, правившего под властью персов."
+    - "Александр Македонский дошёл до Тарса в 333 г. до н. э. и тяжело заболел здесь — по одному из рассказов, искупавшись в Кидне. После битвы при Филиппах Марк Антоний сделал Тарс свободным городом, освобождённым от податей, а в 41 г. до н. э. Клеопатра поднялась по Кидну на своей позолоченной ладье, чтобы встретиться с ним. Страбон, писавший при Августе, говорит, что жители Тарса в любви к философии и учёности превзошли даже Афины и Александрию; стоик Афинодор, учитель Августа, вернувшись на родину, управлял городом."
+    - "Павел родился в Тарсе. Он называл себя «Иудеянин, Тарсянин, гражданин небезызвестного Киликийского города» и говорил, что воспитан в Иерусалиме при ногах Гамалиила. В Дамаске Господь послал Ананию спросить «Тарсянина, по имени Савла». После обращения братия препроводили Павла в Тарс, и он отошёл в страны Сирии и Киликии, пока Варнава не пришёл в Тарс искать его и не привёл в Антиохию. В одном из последующих путешествий Павел проходил Сирию и Киликию, утверждая церкви."
+    - "При императорах Тарс оставался главным городом Киликии. Когда в 363 г. император Юлиан погиб в персидском походе, его, как он и велел, похоронили в предместье Тарса у дороги к проходам Тавра. Диодор, епископ Тарса с 378 г., который ещё в Антиохии наставлял в подвижнической жизни Иоанна Златоуста и Феодора Мопсуестийского, отстаивал никейскую веру на Константинопольском соборе 381 г."
+scripture:
+  - Acts.9.11
+  - Acts.9.30
+  - Gal.1.21
+  - Acts.11.25-Acts.11.26
+  - Acts.15.41
+  - Acts.21.39
+  - Acts.22.3
+sources:
+  - "Xenophon, Anabasis 1.2.23-26"
+  - "Arrian, Anabasis 2.4.5-8"
+  - "Appian, Civil Wars 5.7-8; Plutarch, Antony 25-26"
+  - "Strabo, Geography 14.5.10-15"
+  - "Ammianus Marcellinus 23.2.5; 25.9.12-13; 25.10.5"
+  - "Socrates, Church History 6.3; Sozomen, Church History 7.7"
+  - "H. Goldman, Excavations at Gözlü Kule, Tarsus I-III (1950-1963)"
+  - "W. M. Ramsay, The Cities of St. Paul (1907)"
+status: checked

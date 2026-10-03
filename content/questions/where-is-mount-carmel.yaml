@@ -1,0 +1,35 @@
+id: where-is-mount-carmel
+question:
+  en: "Where is Mount Carmel?"
+  ru: "Где находится гора Кармил?"
+answer:
+  en:
+    - "Mount Carmel is the wooded ridge in the north of today's Israel that runs south-east from the Mediterranean at Haifa, where its headland drops into the sea, towards the plain of Jezreel; the map point stands on the ridge, about 31 km from Jezreel and 102 km from Jerusalem in a straight line."
+    - "Elijah's contest with the prophets of Baal took place here: “send, and gather to me all Israel unto mount Carmel, and the prophets of Baal four hundred and fifty”, Elijah told Ahab, and after the fire fell “Elijah went up to the top of Carmel” to pray for rain. The traditional place is el-Muhraqa, “the place of burning”, at the south-eastern end of the ridge above the Kishon, the brook where the prophets of Baal were killed; a Carmelite monastery stands there. Elisha stayed on Carmel too, and the Shunammite woman went to find him there."
+    - "Carmel was a holy mountain long before and after Elijah. A fourth-century BC Greek sailing guide calls it a mountain sacred to Zeus; Tacitus says that the god there was also called Carmel and had an altar but no temple or image, and that in AD 69 Vespasian sacrificed on the mountain and the priest Basilides foretold him greatness; Iamblichus writes that Pythagoras lived for a time in solitude at its sanctuary, which sailors held the holiest of mountains. The Carmelite order took its name from the hermits who lived on the mountain in the twelfth century. The name itself means garden land, and the prophets use the mountain's green as an image of plenty and its withering as an image of judgement."
+  ru:
+    - "Кармил — лесистая гряда на севере нынешнего Израиля, идущая от Средиземного моря у Хайфы, где её мыс обрывается в воду, на юго-восток к Изреельской долине; точка на карте стоит на гряде, примерно в 31 км от Изрееля и в 102 км от Иерусалима по прямой."
+    - "Здесь было состязание Илии с пророками Ваала: «пошли и собери ко мне всего Израиля на гору Кармил, и четыреста пятьдесят пророков Вааловых», — сказал Илия Ахаву, а когда сошёл огонь, «Илия взошел на верх Кармила» молиться о дожде. Традиционное место — Эль-Мухрака, «место сожжения», на юго-восточном конце гряды над Киссоном, потоком, у которого убили пророков Ваала; там стоит монастырь кармелитов. На Кармиле бывал и Елисей, и сонамитянка отправилась искать его туда."
+    - "Кармил был святой горой задолго до Илии и долго после него. Греческий перипл IV века до н. э. называет его горой, посвящённой Зевсу; Тацит пишет, что бог горы тоже звался Кармилом и имел жертвенник, но ни храма, ни изображения, а в 69 году Веспасиан принёс там жертву, и жрец Василид предсказал ему величие; Ямвлих сообщает, что Пифагор одно время жил в уединении при её святилище, а моряки считали эту гору священнее всех прочих. Орден кармелитов получил имя от отшельников, живших на горе в XII веке. Само название значит «сад, плодородная земля», и пророки берут зелень горы как образ изобилия, а её увядание — как образ суда."
+map:
+  place: a3e21c6
+  year: "c. 860 BC"
+  ref: 1Kgs.18.19
+scripture:
+  [
+    1Kgs.18.19-1Kgs.18.20,
+    1Kgs.18.40-1Kgs.18.42,
+    2Kgs.2.25,
+    2Kgs.4.25,
+    Josh.19.26,
+    Amos.1.2,
+    Isa.35.2,
+  ]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Pseudo-Scylax, Periplus 104 (Carmel, a mountain sacred to Zeus)"
+  - "Tacitus, Histories 2.78 (Vespasian's sacrifice to the god Carmel)"
+  - "Iamblichus, On the Pythagorean Life 3.14-15 (Pythagoras on Carmel)"
+  - "M. Avi-Yonah, 'Mount Carmel and the God of Baalbek', Israel Exploration Journal 2 (1952)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008)"
+status: checked

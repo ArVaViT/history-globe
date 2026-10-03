@@ -1,0 +1,35 @@
+id: where-was-hebron
+question:
+  en: "Where was Hebron?"
+  ru: "Где находился Хеврон?"
+answer:
+  en:
+    - "Hebron lies high in the hills of Judah, about 30 km south of Jerusalem in a straight line and 40 km north-east of Beersheba, in today's West Bank. The ancient town stood on the hill of Tel Rumeida; the cave of Machpelah lies under the great stone enclosure in the modern city, and Mamre, where Abraham camped, is usually placed a few kilometres to the north at Ramat el-Khalil."
+    - 'In Genesis Abraham buys the cave from Ephron the Hittite: "Abraham buried Sarah his wife in the cave of the field of Machpelah before Mamre: the same is Hebron in the land of Canaan"; Isaac and Jacob were buried there too. After the conquest Hebron was given to Caleb. David was anointed king at Hebron: "In Hebron he reigned over Judah seven years and six months: and in Jerusalem he reigned thirty and three years over all Israel and Judah." Absalom began his revolt from the city.'
+    - "Hebron was fortified in the Early Bronze Age and rebuilt with massive walls in the Middle Bronze Age. Royal jar handles of the late eighth century BC bear its name, a sign of a centre of the kingdom's administration. After the fall of Judah in 587 or 586 BC the south of the hills passed to Edomite settlers, the later Idumea; Judas Maccabeus took and burned the town, and John Hyrcanus brought it under Hasmonean rule. The enclosure over Machpelah is usually attributed to Herod the Great. Constantine ordered a basilica built at Mamre, and in the fifth century Sozomen still describes a yearly fair there that drew Christians, Jews and pagans alike."
+  ru:
+    - "Хеврон лежит высоко в горах Иудеи, примерно в 30 км к югу от Иерусалима по прямой и в 40 км к северо-востоку от Вирсавии, на нынешнем Западном берегу. Древний город стоял на холме Тель-Румейда; пещера Махпела находится под большой каменной оградой в современном городе, а Мамре, где стоял шатёр Авраама, обычно помещают в нескольких километрах к северу, в Рамат-эль-Халиле."
+    - "В Книге Бытия Авраам покупает пещеру у Ефрона Хеттеянина: «Авраам похоронил Сарру, жену свою, в пещере поля в Махпеле, против Мамре, что ныне Хеврон, в земле Ханаанской»; там же погребены Исаак и Иаков. После завоевания Хеврон достался Халеву. В Хевроне Давид был помазан на царство: «В Хевроне царствовал над Иудою семь лет и шесть месяцев, и в Иерусалиме царствовал тридцать три года над всем Израилем и Иудою». Отсюда начал свой мятеж Авессалом."
+    - "Хеврон был укреплён в раннем бронзовом веке и заново обнесён мощными стенами в среднем. На ручках кувшинов с царским клеймом конца VIII века до н. э. стоит его имя — знак центра царского управления. После падения Иудеи в 587 или 586 г. до н. э. юг нагорья заселили едомитяне, и край стал Идумеей; Иуда Маккавей взял и сжёг город, а Иоанн Гиркан подчинил его Хасмонеям. Ограду над Махпелой обычно приписывают Ироду Великому. Константин велел построить в Мамре базилику, а в V веке Созомен ещё описывает там ежегодную ярмарку, куда сходились христиане, иудеи и язычники."
+map:
+  place: a85151a
+  year: "1010 BC"
+  ref: 2Sam.5.5
+scripture:
+  [
+    Gen.13.18,
+    Gen.23.17-Gen.23.20,
+    Gen.50.13,
+    Josh.14.13-Josh.14.14,
+    2Sam.2.11,
+    2Sam.5.3-2Sam.5.5,
+    2Sam.15.10,
+  ]
+sources:
+  - "1 Maccabees 5:65; Josephus, Antiquities 12.353; 13.257-258"
+  - "Eusebius, Life of Constantine 3.51-53; Sozomen, Ecclesiastical History 2.4"
+  - "The royal (lmlk) jar-handle stamps naming Hebron, Ziph, Socoh and mmšt"
+  - "'Hebron', in E. Stern (ed.), The New Encyclopedia of Archaeological Excavations in the Holy Land (1993)"
+  - "History Globe article “Hebron” and History Globe tour “The life of David”"
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

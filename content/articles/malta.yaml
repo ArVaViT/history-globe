@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; Melita is identified with Malta as in the usual view, and the alternatives are named.
+id: malta
+place: a57835d
+title:
+  en: "Malta"
+  ru: "Мелит"
+body:
+  en:
+    - "Melita is the island of Malta, in the open sea less than a hundred kilometres south of Sicily. Farmers came over from Sicily in the Neolithic age, and between about 3600 and 2500 BC their descendants raised the great stone temples of Ġgantija, Ħaġar Qim, Mnajdra and Tarxien. Phoenicians later settled the island; Diodorus calls it a Phoenician colony with many harbours and weavers of fine linen. It came under Carthage, and two marble pillars of the second century BC, dedicated to Melqart of Tyre in Phoenician and Greek, later gave scholars the key to the Phoenician alphabet."
+    - "In 218 BC, at the start of the Second Punic War, the Carthaginian garrison surrendered the island to the Roman consul Tiberius Sempronius, and Malta was joined to the province of Sicily. Its main town, also called Melita, stood where Mdina and Rabat stand today. Cicero accuses the governor Verres of stripping its ancient temple of Juno, which pirates and enemy fleets had always spared."
+    - 'Paul, sailing to Rome as a prisoner, was caught off Crete by the wind Euroclydon and "driven up and down in Adria" for fourteen nights before the ship ran aground and broke up; all on board reached land. The islanders "shewed us no little kindness", and a viper fastened on Paul''s hand without harming him. Publius, "the chief man of the island", lodged them for three days, and Paul healed his father and other sick people. After three months they sailed on in a ship of Alexandria that had wintered there. Greek and Latin inscriptions from Malta give the same title, the "first" of the Melitans.'
+    - "That Melita is Malta is the usual view. Adria then meant the open sea between Greece, Italy and Africa, not only today's Adriatic; a ship driven west from Crete by a north-easterly gale would reach Malta in about two weeks, as James Smith reckoned in 1848; and an Alexandrian ship would winter there on its way to Syracuse and Italy. Since Constantine Porphyrogenitus in the tenth century some have placed the wreck on Mljet, another Melite, in the Adriatic, and other islands have been proposed. Tradition places it at St Paul's Bay. By the fourth century Christians were buried in catacombs outside the walls of Melita."
+  ru:
+    - "Мелит — это остров Мальта в открытом море, менее чем в ста километрах к югу от Сицилии. Земледельцы переселились сюда с Сицилии в эпоху неолита, и около 3600–2500 гг. до н. э. их потомки возвели большие каменные храмы Джгантия, Хаджар-Ким, Мнайдра и Таршиен. Позже остров заселили финикийцы; Диодор называет его финикийской колонией со множеством гаваней и ткачами тонкого полотна. Остров перешёл под власть Карфагена, а две мраморные колонны II века до н. э., посвящённые Мелькарту Тирскому, с надписью по-финикийски и по-гречески, позднее дали учёным ключ к финикийскому алфавиту."
+    - "В 218 г. до н. э., в начале Второй Пунической войны, карфагенский гарнизон сдал остров римскому консулу Тиберию Семпронию, и Мальту присоединили к провинции Сицилия. Её главный город, тоже называвшийся Мелитой, стоял там, где сегодня Мдина и Рабат. Цицерон обвиняет наместника Верреса в том, что тот ограбил здешний древний храм Юноны, который всегда щадили и пираты, и вражеские флоты."
+    - "Павел, которого везли узником в Рим, у Крита попал в бурю от ветра эвроклидона; четырнадцать ночей, как сказано в Деяниях, «мы носимы были в Адриатическом море», а затем корабль сел на мель и разбился; все спаслись на землю. Иноплеменники «оказали нам немалое человеколюбие», а ехидна повисла на руке Павла, не причинив ему вреда. Начальник острова Публий три дня принимал их у себя, и Павел исцелил его отца и других больных. Через три месяца они отплыли на александрийском корабле, зимовавшем на острове. Греческие и латинские надписи с Мальты дают тот же титул — «первый» среди мелитян."
+    - "Что Мелит — это Мальта, обычная точка зрения. Адриатическим морем тогда называли всё открытое море между Грецией, Италией и Африкой, а не только нынешнюю Адриатику; корабль, гонимый от Крита на запад северо-восточной бурей, дошёл бы до Мальты примерно за две недели, как рассчитал в 1848 г. Джеймс Смит; и александрийский корабль вполне мог зимовать здесь по пути в Сиракузы и Италию. Со времён Константина Багрянородного, с X века, некоторые помещают кораблекрушение на Млет, другой остров Мелита в Адриатике, предлагались и другие острова. Предание указывает на залив Святого Павла. К IV веку христиан хоронили в катакомбах за стенами Мелиты."
+scripture:
+  - Acts.27.13-Acts.27.20
+  - Acts.27.27
+  - Acts.27.39-Acts.27.44
+  - Acts.28.1-Acts.28.10
+  - Acts.28.11-Acts.28.12
+sources:
+  - "Diodorus Siculus, Library 5.12.2-3"
+  - "Livy 21.51.1-2 (the surrender of 218 BC)"
+  - "Cicero, Against Verres 2.4.103-104 (the temple of Juno)"
+  - "The bilingual cippi dedicated to Melqart (2nd century BC), Phoenician text read by J.-J. Barthélemy in 1758"
+  - "Greek and Latin inscriptions from Malta naming the 'first' of the Melitans, as cited in The Expositor's Greek Testament on Acts 28:7; W. M. Ramsay, St. Paul the Traveller and the Roman Citizen, p. 343 ('it has inscriptional authority')"
+  - "Josephus, Life 15 ('the Adriatic Sea' in a voyage from Judea to Italy)"
+  - "J. Smith, The Voyage and Shipwreck of St. Paul (1848; 4th ed. 1880)"
+  - "A. Bonanno, Malta: Phoenician, Punic and Roman (2005)"
+status: checked

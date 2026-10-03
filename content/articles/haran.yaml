@@ -1,0 +1,37 @@
+# Overview article (ADR 0007). Mainstream facts only; dates of the fall of Assyria follow the Babylonian Chronicle.
+id: haran
+place: a6d9af3
+title:
+  en: "Haran"
+  ru: "Харран"
+body:
+  en:
+    - 'Haran lay in upper Mesopotamia on the Balikh, a tributary of the Euphrates, at the site of Harran in south-eastern Turkey, about 40 km south-east of Urfa. Its name means "road" in Akkadian, fitting a town where the routes from Mesopotamia to Syria and Anatolia crossed. It was famed as the city of the moon god Sin, whose temple was called Ehulhul. Under the Assyrian empire it was a provincial centre.'
+    - "Genesis tells that Terah came to Haran with Abram, Sarai and Lot on the way from Ur of the Chaldees to Canaan, and died there. Abram was seventy and five years old when he departed out of Haran. Later Jacob fled to his uncle Laban in Haran and served him for his wives. Sennacherib's envoys to Hezekiah named Haran among the lands their kings had destroyed, Ezekiel lists its merchants among those who traded with Tyre, and Stephen recalled Abraham's stay in Charran."
+    - "After Nineveh fell in 612 BC, Ashur-uballit II took the throne in Harran as the last king of Assyria. In 610 BC the Babylonians and the Medes marched on the city; the Assyrians and their Egyptian allies abandoned it, and it was taken. A year later Ashur-uballit and an Egyptian army tried in vain to retake it, as the Babylonian Chronicle records. Nabonidus, the last king of Babylon, rebuilt the temple of Sin."
+    - "The Greeks and Romans called the town Carrhae. Near it in 53 BC the Parthians routed the army of Crassus, who was killed soon after. In AD 217 the emperor Caracalla was murdered on the road from Edessa to Carrhae, and in 363 Julian stopped there on his way to Persia to sacrifice to the moon. The pilgrim Egeria, about 384, was shown a church outside the walls on the site of Abraham's house, but found scarcely a Christian in the city apart from clergy and monks: Harran long kept its old worship."
+  ru:
+    - "Харран лежал в северной Месопотамии на реке Белих, притоке Евфрата, там, где теперь Харран на юго-востоке Турции, примерно в 40 км к юго-востоку от Урфы. Его имя по-аккадски означает «дорога»: здесь сходились пути из Месопотамии в Сирию и Анатолию. Он славился как город бога луны Сина, чей храм назывался Эхульхуль. В Ассирийской державе Харран был центром провинции."
+    - "Книга Бытия рассказывает, что Фарра пришёл в Харран с Аврамом, Сарой и Лотом по пути из Ура Халдейского в землю Ханаанскую и умер там. Аврам был семидесяти пяти лет, когда вышел из Харрана. Позже Иаков бежал в Харран к своему дяде Лавану и служил ему за своих жён. Послы Сеннахирима к Езекии называли Харран среди земель, разорённых их царями, Иезекииль упоминает его купцов среди торговавших с Тиром, а Стефан вспоминал о пребывании Авраама в Харране."
+    - "После падения Ниневии в 612 г. до н. э. в Харране воцарился последний царь Ассирии Ашшур-убаллит II. В 610 г. до н. э. вавилоняне и мидяне двинулись на город; ассирийцы и их египетские союзники оставили его, и он был взят. Через год Ашшур-убаллит с египетским войском тщетно пытался отвоевать его, как сообщает Вавилонская хроника. Набонид, последний царь Вавилона, отстроил храм Сина."
+    - "Греки и римляне называли город Карры. Близ него в 53 г. до н. э. парфяне разгромили войско Красса, который вскоре был убит. В 217 г. н. э. по дороге из Эдессы в Карры был убит император Каракалла, а в 363 г. Юлиан по пути в Персию остановился здесь, чтобы принести жертву луне. Паломнице Эгерии около 384 г. показали церковь за городом, на месте дома Авраама, но кроме клириков и монахов она не нашла в городе почти ни одного христианина: Харран долго хранил старую веру."
+scripture:
+  - Gen.11.31-Gen.11.32
+  - Gen.12.4-Gen.12.5
+  - Gen.27.43
+  - Gen.28.10
+  - Gen.29.4-Gen.29.5
+  - Gen.29.18-Gen.29.28
+  - 2Kgs.19.12
+  - Isa.37.12
+  - Ezek.27.23
+  - Acts.7.2-Acts.7.4
+sources:
+  - "Fall of Nineveh Chronicle (ABC 3), years 14, 16 and 17 of Nabopolassar"
+  - "Nabonidus Cylinder from Sippar, col. i-ii (the rebuilding of Ehulhul)"
+  - "Plutarch, Crassus 23-31"
+  - "Cassius Dio, Roman History 79.5 (Loeb numbering)"
+  - "Ammianus Marcellinus 23.3.1-2"
+  - "Egeria, Itinerary 20.3, 20.8"
+  - "T. M. Green, The City of the Moon God: Religious Traditions of Harran (1992)"
+status: checked

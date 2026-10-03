@@ -1,0 +1,28 @@
+id: where-was-bethany
+question:
+  en: "Where was Bethany?"
+  ru: "Где находилась Вифания?"
+answer:
+  en:
+    - "Bethany was a village on the eastern slope of the Mount of Olives, just outside Jerusalem: John puts it fifteen furlongs (stadia) from the city, about 3 km, and by the road on the map it is 4 km. It is the town now called al-Eizariya, east of Jerusalem in the West Bank; the Arabic name comes from Lazarus."
+    - 'In the Gospels it is the town of Lazarus and his sisters Mary and Martha: "Now Bethany was nigh unto Jerusalem, about fifteen furlongs off." Jesus raised Lazarus there when he had already lain four days in the grave, supped there six days before the Passover, when Mary anointed his feet, and lodged there during his last week in Jerusalem. The road from Jerusalem to Jericho passed through the village. Luke ends his Gospel there: "And he led them out as far as to Bethany, and he lifted up his hands, and blessed them."'
+    - "In the early fourth century Eusebius described Bethany as a village two miles from Jerusalem where the place of Lazarus was still shown, and in the 380s the pilgrim Egeria called it the Lazarium. Franciscan excavations in 1949–1953 uncovered remains of the village and of successive churches beside the cave venerated as the tomb of Lazarus, the first of them a basilica of the late fourth century. This Bethany is not the Bethany beyond the Jordan where John baptised (Bethabara in the KJV); the map's point for that place, on the east bank near the Dead Sea, is marked as disputed."
+  ru:
+    - "Вифания была селением на восточном склоне горы Елеонской, совсем рядом с Иерусалимом: Иоанн помещает её в пятнадцати стадиях от города, около 3 км, а по дороге на карте до неё 4 км. Это городок, который ныне называется Эль-Эйзария, к востоку от Иерусалима на Западном берегу; арабское имя происходит от Лазаря."
+    - "В Евангелиях это селение Лазаря и его сестёр Марии и Марфы: «Вифания же была близ Иерусалима, стадиях в пятнадцати». Здесь Иисус воскресил Лазаря, уже четыре дня лежавшего во гробе, здесь за шесть дней до Пасхи была вечеря, на которой Мария помазала Ему ноги, и здесь Он ночевал в последнюю неделю в Иерусалиме. Через селение шла дорога из Иерусалима в Иерихон. Лука завершает здесь своё Евангелие: «И вывел их вон из города до Вифании и, подняв руки Свои, благословил их»."
+    - "В начале IV века Евсевий описывал Вифанию как селение в двух милях от Иерусалима, где ещё показывали место Лазаря, а в 380-х годах паломница Эгерия называла его Лазарием. Францисканские раскопки 1949–1953 годов открыли остатки селения и нескольких сменявших друг друга церквей рядом с пещерой, почитаемой как гроб Лазаря; первая из них — базилика конца IV века. Эта Вифания — не та Вифавара (Вифания) при Иордане, где крестил Иоанн; точка карты для того места, на восточном берегу близ Мёртвого моря, помечена как спорная."
+map:
+  place: a4f35bc
+  year: "AD 30"
+  ref: John.11.18
+scripture:
+  [John.11.1, John.11.18, John.12.1-John.12.3, Matt.21.17, Luke.24.50-Luke.24.51, John.1.28]
+sources:
+  - "Eusebius, Onomasticon, s.v. Bethania, with Jerome's Latin additions (tr. C. U. Wolf)"
+  - "Egeria, Itinerarium 29.3-6"
+  - "S. J. Saller, Excavations at Bethany (1949-1953) (1957)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008)"
+  - "History Globe article “Bethany”"
+  - "The places' points (Bethany at al-Eizariya; Bethany beyond the Jordan, disputed): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Length along the Roman roads: Itiner-e (de Soto, Pažout, Brughmans et al. 2025), Jerusalem to Bethany (4 km)"
+status: checked

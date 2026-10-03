@@ -1,13 +1,18 @@
 # The cities Paul wrote to, in the order of the letters in the Bible (not the order they
 # were written, which is disputed). Each stop cites the verse that names the church and
 # quotes a line the letter is known by. The tour's year (AD 55) is a point for the map:
-# the letters date from c. AD 49 to the 60s.
+# the letters date from c. AD 49 to the 60s. "At Ephesus" (Eph 1:1) is missing from some
+# early manuscripts, and whether Paul wrote Ephesians, Colossians and Titus is debated;
+# the stops follow the text as it stands.
 id: letters
 title:
   en: "Where Paul's letters went"
   ru: "Куда шли послания Павла"
 year: "AD 55"
+people: ["Paul@Act.7.58-2Pe"]
 approximate: true
+# Where the letters went, not a road walked: no time on foot between the stops.
+walked: false
 stops:
   - place: afc8e7a # Rome
     ref: Rom.1.7

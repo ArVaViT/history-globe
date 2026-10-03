@@ -1,0 +1,671 @@
+# Photos of places (shown in the place card), from Wikimedia Commons. Only public domain,
+# CC0 and CC BY (no share-alike, ADR 0008), checked against the file's Commons metadata;
+# the image is the place's Wikidata image (P18) where it shows the ancient site or its
+# landscape. `pnpm data` downloads them (scripts/build-photos.ts); the card credits the
+# author and the licence with a link to the file page. Chosen 2026-10-01.
+photos:
+  - place: a91b732 # bethsaida
+    file: "Ruins of Bethsaida village in summer 2011 (7).JPG"
+    author: "Chmee2"
+    license: "CC BY 3.0"
+    license_url: "https://creativecommons.org/licenses/by/3.0"
+    site: m1ec77e
+  - place: af2161c # capernaum
+    file: "Kafarnaum BW 7.JPG"
+    author: "Berthold Werner"
+    license: "Public domain"
+  - place: a513646 # dan
+    file: "Tel Dan - Israelite Gate.jpg"
+    author: "Adrianlw"
+    license: "Public domain"
+  - place: a0d784a # dibon
+    file: "Dhiban.jpg"
+    author: "Bporter615 at English Wikipedia"
+    license: "Public domain"
+  - place: a18873f # gath
+    file: "Tel-Tsafit-206.jpg"
+    author: "Bukvoed"
+    license: "CC BY 3.0"
+    license_url: "https://creativecommons.org/licenses/by/3.0"
+  - place: a6f33c5 # hazor
+    file: "Tel hatzor.JPG"
+    license: "Public domain"
+  - place: a8ec269 # memphis
+    file: "Memphis, Ramses II, Ancient Egypt.jpg"
+    author: "Vyacheslav Argenberg"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: af5884f # nazareth
+    file: "Habsora from selezian.jpg"
+    author: "Almog"
+    license: "Public domain"
+  - place: a1c7cc1 # philadelphia
+    file: "Biblical Philadelphia, Alaşehir, Turkey (“Seven Churches of Revelation”) (51966166907).jpg"
+    author: "Sharon Hahn Darlin"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: a041bb3 # samaria
+    file: "Ruins of Samaria.jpg"
+    license: "Public domain"
+  - place: aa4680a # shiloh
+    file: "Flickr - RonAlmog - תל שילה (6).jpg"
+    author: "RonAlmog from Israel (ישראל)"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: a2e65fb # smyrna
+    file: "Izmir016.jpg"
+    author: "Georges Jansoone JoJan"
+    license: "Public domain"
+  - place: a94b661 # thyatira
+    file: "Columns of Thiatira.jpg"
+    author: "Pragdon"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  - place: a217d18 # babylon
+    file: "Babylon, 1932.jpg"
+    author: "American Colony (Jerusalem), Photo Dept."
+    license: "Public domain"
+  - place: a4f35bc # bethany
+    file: "8 phot. de Jérusalem et de Béthanie, par Zangaki. Enregistré en 1932 - btv1b53228907p (01 of 16).jpg"
+    author: "Zangaki. Photographe"
+    license: "Public domain"
+  - place: a64f355 # bethel
+    file: "Bethel, 72.Holy land photographed. Daniel B. Shepp. 1894-1.jpg"
+    author: "Daniel B. Shepp"
+    license: "Public domain"
+    site: me58522
+  - place: a58735e # caesarea
+    file: "124996 caesarea national park PikiWiki Israel.jpg"
+    author: "מיכל פריימן"
+    license: "CC BY 2.5"
+    license_url: "https://creativecommons.org/licenses/by/2.5"
+  - place: ab7bf48 # caesarea-philippi
+    file: "145946 archaeological site in banias PikiWiki Israel.jpg"
+    author: "רוני קניגסברג"
+    license: "CC BY 2.5"
+    license_url: "https://creativecommons.org/licenses/by/2.5"
+  - place: a6f437a # corinth
+    file: "Akrokorintos - panoramio - Tomek Grabarczyk (4).jpg"
+    author: "Tomek Grabarczyk"
+    license: "CC BY 3.0"
+    license_url: "https://creativecommons.org/licenses/by/3.0"
+  - place: a69c1d4 # damascus
+    file: "Damascus, Syria LCCN2005679860.jpg"
+    author: "Miscellaneous Items in High Demand, PPOC, Library of Congress"
+    license: "Public domain"
+  - place: ada6b64 # gerasa
+    file: "Back to the Future (25771089880).jpg"
+    author: "Rob Oo from NL"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: aed6538 # gezer
+    file: "General landscape from atop Tel Gezer.jpg"
+    author: "Davidbena"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  - place: a6d9af3 # haran
+    file: "Harran (26572304288).jpg"
+    author: "Herbert Frank from Wien (Vienna), AT"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: a8554e3 # megiddo
+    file: "20191028 115924 Tel Megiddo Israel anagoria.jpg"
+    author: "Anagoria"
+    license: "CC BY 3.0"
+    license_url: "https://creativecommons.org/licenses/by/3.0"
+  - place: a55027d # miletus
+    file: "Miletus 3 (7899678838).jpg"
+    author: "Carl Campbell from Santiago de Querétaro, México"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: a314765 # paphos
+    file: "Cipro-Paphos04.jpg"
+    author: "dolanh"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: a8f60f3 # patmos
+    file: "Blick-auf-skala-2024.jpg"
+    author: "Kaethe17"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: aff04b8 # perga
+    file: "2007 0215TurkeyThursdayA0034 (3281734687).jpg"
+    author: "Paul VanDerWerf from Brunswick, Maine, USA"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: a75d2c1 # pergamum
+    file: "Pergamon 201409291153.jpg"
+    author: "Atriplex82"
+    license: "Public domain"
+  - place: a49e1d0 # philippi
+    file: "BASA-3K-7-531-56.JPG"
+    license: "Public domain"
+  - place: afc8e7a # rome
+    file: "10 - am Marcellustheater.jpg"
+    author: "Rudolfo Kithera"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  - place: aab4a5f # sardis
+    file: "Sardis. 2011 (1).jpg"
+    author: "Inga Tomane"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  - place: a033b84 # susa
+    file: "Rediscovering mudbrick architecture in Susa (Iran). View of the Donjon mound being excavated using a Decauville railway.jpg"
+    author: "Musée du Louvre, Department of Near Eastern Antiquities"
+    license: "Public domain"
+  - place: a91c509 # troas
+    file: "Herodes Atticus Bath near Alexandria Troas.jpg"
+    author: "Raicem"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: a112427 # bethlehem
+    file: "Church of the Nativity (7703592746).jpg"
+    author: "Neil Ward"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: a231f80 # jericho
+    file: "Jericho BW 1.jpg"
+    author: "Berthold Werner"
+    license: "Public domain"
+  - place: a1fe6e7 # athens
+    file: "View of the Acropolis of Athens from the Panathenaic Stadium, 20240601 1007 0049.jpg"
+    author: "Jakub Hałun"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: a6cf75c # ur
+    file: "Ancient ziggurat at Ali Air Base Iraq 2005.jpg"
+    author: "Hardnfast"
+    license: "CC BY 3.0"
+    license_url: "https://creativecommons.org/licenses/by/3.0"
+  - place: a9674fc # thebes
+    file: "Luxor, Egypt, Karnak.jpg"
+    author: "Vyacheslav Argenberg"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: ae41ab4 # antioch
+    file: "Antioch Saint Pierre Church Front.JPG"
+    author: "Volkan Hatem"
+    license: "CC BY 2.5"
+    license_url: "https://creativecommons.org/licenses/by/2.5"
+  - place: a160272 # tyre
+    file: "Roman Hippodrome, Tyre, Lebanon.jpg"
+    author: "Vyacheslav Argenberg"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: a98e4d7 # sidon
+    file: "Sidon Sea Castle, Mediterranean Sea, Sidon, Lebanon.jpg"
+    author: "Vyacheslav Argenberg"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: ae0bf4a # jezreel
+    file: "Tel-Yizrael-550.jpg"
+    author: "Bukvoed"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: a666ea0 # tarsus
+    file: "Cleopatra Gate in Tarsus.JPG"
+    author: "U.S. Air Force photo by Senior Airman Daniel Phelps"
+    license: "Public domain"
+  - place: ac2c4c5 # Mount of Olives
+    file: "Jerusalem-Mount-of-Olives-KTM-1169.jpg"
+    author: "Bukvoed"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: a562fcc # Sea of Galilee
+    file: "Kinnereth-Panorama-01s.jpg"
+    author: "Zachi Evenor and MathKnight"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: abed304 # Salt Sea
+    file: "Shore of the Dead Sea (53258647442).jpg"
+    author: "Mustang Joe"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  - place: a3e21c6 # Mount Carmel
+    file: "Caiobadner - mount carmel.JPG"
+    author: "Chadner"
+    license: "Public domain"
+  - place: a341fe8 # Mount Hermon
+    file: "PikiWiki Israel 56987 golan and hermon snow.jpg"
+    author: "עוזי פז"
+    license: "CC BY 2.5"
+    license_url: "https://creativecommons.org/licenses/by/2.5"
+  - place: acd63ee # Mount Tabor
+    file: "COLOR PHOTO OF MOUNT TABOR TAKEN IN THE LATE 19TH CENTURY BY FRENCH PHOTOGRAPHER, BONFILS. צילום צבע מסוף המאה ה19 של הצלם הצרפתי בונפיס אשר תעד במצלמD311-041.jpg"
+    author: "Félix Bonfils"
+    license: "Public domain"
+  - place: a730058 # Lebanon
+    file: "Cedar of Lebanon (Cedar of God), Lebanon.jpg"
+    author: "Vyacheslav Argenberg"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: a84f426 # City of David
+    file: "City of David, Southern Wall Temple Mount Kidron Valley Ophel and Siloam.jpg"
+    author: "Matson Collection"
+    license: "Public domain"
+  - place: a012705 # Nile
+    file: "Felucca at Kom Ombo on the River Nile - panoramio.jpg"
+    author: "David Broad"
+    license: "CC BY 3.0"
+    license_url: "https://creativecommons.org/licenses/by/3.0"
+  - place: a62dec4 # Euphrates
+    file: "Euphrates river - panoramio.jpg"
+    author: "Alen Ištoković"
+    license: "CC BY 3.0"
+    license_url: "https://creativecommons.org/licenses/by/3.0"
+  - place: abf2fc1 # Heshbon
+    file: "East of Jordan and the Dead Sea. Site of Heshbon LOC matpc.06957.jpg"
+    author: "Matson Collection"
+    license: "Public domain"
+    site: m12c75e
+  - place: a736f6c # Mizpah
+    file: "Excavations at Tell el-Nasbeh, 'Mizpah?' Tell el-Nasbeh, 'Mizpah?' LOC matpc.05505.jpg"
+    author: "Matson Collection"
+    license: "Public domain"
+  - place: ac24f5f # Gibeah
+    file: "Tell el-Ful battlefield etc. Tell el-Ful LOC matpc.05995.tif"
+    author: "Matson Collection"
+    license: "Public domain"
+    site: m88819c
+  - place: ac87d4c # ashkelon
+    file: "PikiWiki Israel 14163 Ashkelon National Park.JPG"
+    author: 'ד"ר אבישי טייכר'
+    license: "CC BY 2.5"
+    license_url: "https://creativecommons.org/licenses/by/2.5"
+  - place: a2a8df0 # beth-shan
+    file: "Beit She'an National Scythopolis ark (6238789776).jpg"
+    author: "benito roveran from verona, Italia"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: ac62cbc # hamath
+    file: "Norias of Hama, Orontes River, Hama, Syria.jpg"
+    author: "Vyacheslav Argenberg"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: a3cc590 # lachish
+    file: "Lachish gate.jpg"
+    author: "Juha Pakkala"
+    license: "Public domain"
+  - place: a83fb1e # laodicea
+    file: "Laodikeia - Denizli - panoramio (1).jpg"
+    author: "HALUK COMERTEL"
+    license: "CC BY 3.0"
+    license_url: "https://creativecommons.org/licenses/by/3.0"
+  - place: a4488e9 # puteoli
+    file: "Ruïne van de Tempel van Serapis in Pozzuoli Pouzol temple de Serapis existait au sixième siècle de Rôme, decouvert en 1750. (titel op object), RP-F-F01087-U.jpg"
+    author: "Rijksmuseum"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  - place: afa863b # salamis
+    file: "Salamis Ruins.jpg"
+    author: "George Groutas"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: a593a48 # chorazin
+    file: "107188 korzim the ancient synagogue PikiWiki Israel.jpg"
+    author: "שלמה רודד"
+    license: "CC BY 2.5"
+    license_url: "https://creativecommons.org/licenses/by/2.5"
+  - place: ab635e4 # dothan
+    file: "Dothan, where Joseph was sold by his brethren American Colony, Jerusalem.jpg"
+    author: "American Colony (Jerusalem), Photo Dept."
+    license: "Public domain"
+  - place: aa4b3e2 # myra
+    file: "Lycian city of the dead carved into the hillside of Myra in Southern Turkey, complete with startlingly human touches.jpg"
+    author: "Rab Lawrence"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: aee679c # nain
+    file: "En Galilée, le village de Naïm, ou Naïn, lieu traditionnel du miracle de la résurrection du fils de la veuve (saint Luc) - btv1b101011856.jpg"
+    license: "Public domain"
+  - place: ac744c1 # Attalia
+    file: "Hadrian’s Gate, Antalya, Turkey, and Two Towers.jpg"
+    author: "Sharon Hahn Darlin"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: abc2af0 # Ptolemais
+    file: "Akko-V4-Tel-Akko-726.jpg"
+    author: "Bukvoed"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: ae7274b # Emmaus
+    file: "Emmaus Nicopolis Church Lateran Avney Moreshet d735a69d.jpg"
+    author: "Peace be with you (איתם שלום)"
+    license: "CC BY 2.5"
+    license_url: "https://creativecommons.org/licenses/by/2.5"
+    site: m77574e
+  - place: a3b5b53 # Beth-shemesh
+    file: "Tel-Beit-Shemesh-V3-192.jpg"
+    author: "Bukvoed"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: ac31fee # Zoan
+    file: "Ruins of Tanis.jpg"
+    author: "Markh"
+    license: "Public domain"
+  - place: acd9137 # Heliopolis (On)
+    file: "De obelisk in Heliopolis, bezocht door verschillende mensen, gekomen per paard en wagen, Egypte Obelisk te Heliopolis, RP-F-1999-139-1-66.jpg"
+    author: "Rijksmuseum"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  - place: ae067b5 # rabbah
+    file: "Citadal Hill of Amman.jpg"
+    author: "Sura ah83"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  - place: a7e13e1 # ai
+    file: "Deir-Dibwan-715.jpg"
+    author: "Bukvoed"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+    site: m902bcf
+  - place: ae5bfe9 # mahanaim
+    file: "Tulul adh-Dhahab ramparts.jpg"
+    author: "E. Rehfeld"
+    license: "Public domain"
+  - place: a6d57ed # ramah
+    file: "Northern views. Rama of Benjamin (Er-Ram) LOC matpc.00039.jpg"
+    author: "Matson Collection"
+    license: "Public domain"
+  - place: adea06c # michmash
+    file: "Area near Jerusalem. Michmash village. I Sam. 13-5 LOC matpc.22845.jpg"
+    author: "Matson Collection"
+    license: "Public domain"
+    site: m41fa55
+  - place: a3f5814 # gerar
+    file: "תל הרור1.jpg"
+    author: "Aaadir"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  - place: a08174b # zorah
+    file: "Tel-Tzora-1917.jpg"
+    author: "Bukvoed"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: af82614 # adullam
+    file: "Tel-Adulam-301.jpg"
+    author: "Bukvoed"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: a053f15 # carmel
+    file: "Southern Palestine. Carmel. South of Hebron LOC matpc.00087.jpg"
+    author: "Matson Collection"
+    license: "Public domain"
+  - place: a0ed7ff # ziklag
+    file: "צקלג1.jpg"
+    author: "Aaadir"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    site: m489f67
+  - place: ac2cef0 # kadesh-barnea
+    file: "Sinai. Ain Gedeirat, Kadesh Barnea. Num. 20-1 LOC matpc.23028.jpg"
+    author: "Matson Collection"
+    license: "Public domain"
+  - place: a26aa94 # crete
+    file: "Gortys Odeon Crete.jpg"
+    author: "Jebulon"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  - place: a21f909 # timnah
+    file: "Tel batash.JPG"
+    author: "Haggibar at Hebrew Wikipedia"
+    license: "Public domain"
+  - place: afd9259 # pisgah
+    file: "Mount Nebo. 'Jebel Nebba'. Nebo, Byzantine basilica. Excavated in summer of 1933 by the Franciscan fathers LOC matpc.02730.jpg"
+    author: "Matson Collection"
+    license: "Public domain"
+  - place: acf57c5 # mount gilboa
+    file: "הר גלבוע מבט מצפון4.jpg"
+    author: "Aaadir"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  - place: a97b595 # libnah
+    file: "Aerial view of Tel Burna.jpg"
+    author: "Joeuziel"
+    license: "Public domain"
+    site: ma54af7
+  - place: a046454 # beeroth
+    file: "Ramot-Khirbet-el-Burj-348.jpg"
+    author: "Bukvoed"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+    site: m8d753d
+  - place: af2ca0c # Azekah
+    file: "Tel-Azeka-64735.jpg"
+    author: "Bukvoed"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: a244d8f # Eglon
+    file: "Tel-Eton-474.jpg"
+    author: "Bukvoed"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: a1c600b # Aijalon
+    file: "תל אילון.jpg"
+    author: "Aaadir"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    site: m574ccc
+  - place: aaa6f7a # Edrei
+    file: "Derʻâh 123 km von Damaskus, 529 m ü. M. In der Mitte der Kerak (Burgberg). LCCN2014648727.jpg"
+    author: "Bernhard Moritz"
+    license: "Public domain"
+  - place: a8e53d5 # Ezion-geber
+    file: "Pharaon Island (997008872599305171.jpg"
+    author: "Moshe Marlin Levin"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+    site: mb1c0e5
+  - place: af0ac29 # Elath
+    file: "Ayla01.JPG"
+    author: "Bel Adone"
+    license: "Public domain"
+    site: med32df
+  - place: a81cdb5 # Cyrene
+    file: "CireneTermeTraiano.jpg"
+    author: "MM"
+    license: "Public domain"
+  - place: a75b45e # Beth-horon
+    file: "Beit Ur al-Tahta2.jpg"
+    author: "American Colony (Jerusalem), Photo Dept."
+    license: "Public domain"
+  - place: a3a2a75 # Dedan
+    file: "Ancient site of Dadan at al-Ula, 1st millenium BCE, Saudi Arabia 20.jpg"
+    author: "Prof. Mortel"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: a2c5cc7 # Lod
+    file: "Lydda circa 1910.jpg"
+    author: "G.E. Franklin"
+    license: "Public domain"
+  - place: ae00861 # Machpelah
+    file: "À Hébron, au cœur de la vieille ville, le grand sanctuaire du Tombeau des Patriarches, ou Harâm el-Khalîl - Père Raphaël Savignac - btv1b101011354.jpg"
+    author: "Raphaël Savignac"
+    license: "Public domain"
+  - place: ad6eb0b # Jattir
+    file: "122131 the ruin of yatir PikiWiki Israel.jpg"
+    author: "זאב שטיין"
+    license: "CC BY 2.5"
+    license_url: "https://creativecommons.org/licenses/by/2.5"
+  - place: af9cfc9 # En-rogel
+    file: "Jerusalem. Joab's Well, En Rogel, I Kings 1-9 LOC matpc.22747.jpg"
+    author: "Matson Collection"
+    license: "Public domain"
+  - place: a5cda86 # mareshah
+    file: "Tel Maresha 032116.jpg"
+    author: "Wilson44691"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  - place: a539e01 # jarmuth
+    file: "Yarmuth Gateway.jpg"
+    author: "Owenglyndur"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: a2a303c # gihon
+    file: "Entrance to Siloam Tunnel at Virgin's Fountain.jpg"
+    author: "American Colony (Jerusalem). Photo Dept."
+    license: "Public domain"
+  - place: af96edd # ophel
+    file: "Jerusalem Old city (30293280452).jpg"
+    author: "DYKT Mohigan"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: af4f21c # medeba
+    file: "Roman Street Madaba-Jordan3.jpg"
+    author: "Mohammad hajeer"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: ab55371 # kir-hareseth
+    file: "Kerak BW 1.JPG"
+    author: "Berthold Werner"
+    license: "CC BY 3.0"
+    license_url: "https://creativecommons.org/licenses/by/3.0"
+  - place: aa5cc66 # mount ebal
+    file: "Mount-Eival-30976.jpg"
+    author: "Bukvoed"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: a6f048c # gibbethon
+    file: "99859 tel malot PikiWiki Israel.jpg"
+    author: "יואל פיקסלר"
+    license: "CC BY 2.5"
+    license_url: "https://creativecommons.org/licenses/by/2.5"
+    site: m40394a
+  - place: ae686c9 # Jordan
+    file: "Jordan river (2007-05-808) (1331026190).jpg"
+    author: "Vyacheslav Argenberg"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: a85151a # hebron
+    file: "Hebron136.JPG"
+    author: "eman"
+    license: "Public domain"
+  - place: afed46a # gadara
+    file: "Decumanus Maximus, Umm Qais, Jordan (5072004867).jpg"
+    author: "Kok Leng Yeo (yeowatzup)"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: aede336 # gibeon
+    file: "Francis Bedford - Gibeon, El Jib, Palestine - B2016.11.17 - Yale Center for British Art.jpg"
+    author: "Francis Bedford"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  - place: a15257a # jerusalem
+    file: "Jerusalem Old City from the Mount of Olives, Israel (16036381940).jpg"
+    author: "Kok Leng Yeo (yeowatzup)"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: afa9d8e # thessalonica
+    file: "The Roman forum.jpg"
+    author: "Leandro Neumann Ciuffo"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: ad14067 # magdala
+    file: "Magdala-505.jpg"
+    author: "Bukvoed"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: a4bdea7 # amphipolis
+    file: "Περίκεντρος Ναός (Ροτόντα) Παλαιοχριστιανική Αμφίπολη.jpg"
+    author: "Aurilios"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  - place: ae023a9 # joppa
+    file: "Blick vom Strand auf Jaffa - panoramio.jpg"
+    author: "Martin Furtschegger"
+    license: "CC BY 3.0"
+    license_url: "https://creativecommons.org/licenses/by/3.0"
+  - place: ac9adc9 # tiberias
+    file: "PikiWiki Israel 84009 the roman theater in ancient tiberias.jpg"
+    author: "נחום סיון וצביקה סחייק"
+    license: "CC BY 2.5"
+    license_url: "https://creativecommons.org/licenses/by/2.5"
+  - place: a5feb15 # ephesus
+    file: "Ephesus (5632150680).jpg"
+    author: "rob Stoeltje"
+    license: "CC BY 2.0"
+    license_url: "https://creativecommons.org/licenses/by/2.0"
+  - place: aa31dd3 # cenchreae
+    file: "The port of ancient Kechries with the guarding tower on January 10, 2020.jpg"
+    author: "George E. Koronaios"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  - place: a2e7601 # cyprus
+    file: "Ancient Kourion, Episkopi, Cyprus - panoramio (3).jpg"
+    author: "Ray Ok"
+    license: "CC BY 3.0"
+    license_url: "https://creativecommons.org/licenses/by/3.0"
+  - place: a4218ee # Rhodes
+    file: "Temple Apollon Rhodes.jpg"
+    author: "Jebulon"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+    site: mfc8ad3
+  - place: a57835d # malta
+    file: "Il-gzira l-kbira ta' San Pawl - panoramio.jpg"
+    author: "pudina"
+    license: "CC BY 3.0"
+    license_url: "https://creativecommons.org/licenses/by/3.0"
+  - place: ad2f6c2 # beersheba
+    file: "PikiWiki Israel 71724 tel sheva national park.jpg"
+    author: "Zeev Stein"
+    license: "CC BY 2.5"
+    license_url: "https://creativecommons.org/licenses/by/2.5"
+  # Added 2026-10-03: places that had none; the same checks (licence from the Commons API,
+  # 1200 px or wider, each looked at).
+  - place: adf74d4 # Shechem
+    file: "Northern views. Ancient Shechem. Excavated mound of pre-Israelitish site LOC matpc.15326.jpg"
+    author: "Matson Collection"
+    license: "Public domain"
+  - place: abd9596 # Mount Zion
+    file: "MtZion from Abu Tor.jpg"
+    author: "Eman"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  - place: a70fd5d # Nineveh
+    file: "Views of the archaeological site of Nineveh in modern-day Mosul, currently occupied by squatters 04.jpg"
+    author: "Levi Clancy"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  - place: aa8edd2 # Gaza
+    file: "Southern Palestine, Hebron, Beersheba and Gaza area. Gaza, central section LOC matpc.22887 (cropped).jpg"
+    author: "Matson Collection"
+    license: "Public domain"
+  - place: a30c937 # Ashdod
+    file: "112058 tel ashdod PikiWiki Israel.jpg"
+    author: "סתיו קונשטיק"
+    license: "CC BY 2.5"
+    license_url: "https://creativecommons.org/licenses/by/2.5"
+  - place: a3fc47a # Ekron
+    file: "Tel-Mikne-112545.jpg"
+    author: "Bukvoed"
+    license: "CC BY 4.0"
+    license_url: "https://creativecommons.org/licenses/by/4.0"
+  - place: a553110 # Kidron
+    file: "Kidron Valley and Surrounding Landscape East of Jerusalem.jpg"
+    author: "Ywpark2003 Prof. Yong Woo Park"
+    license: "CC0"
+    license_url: "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  - place: a4cc324 # Arnon
+    file: "Wadi Mujib BW 1.JPG"
+    author: "Berthold Werner"
+    license: "CC BY 3.0"
+    license_url: "https://creativecommons.org/licenses/by/3.0"
+  - place: ac86af5 # Shunem
+    file: "Northern views. Shunem (Sulem) and Mts. (i.e., mountains) of Gilboa LOC matpc.06987.jpg"
+    author: "Matson Collection"
+    license: "Public domain"
+  - place: aca7bd9 # Jabbok
+    file: "Air views of Palestine. Flying south over the Jordan Rift. The Damieh district. Jordan united with the Jabbok LOC matpc.22086.jpg"
+    author: "Matson Collection"
+    license: "Public domain"
+  - place: abfba2a # Mount Sinai
+    file: "Mount Sinai Egypt.jpg"
+    author: "Tamerlan at Polish Wikipedia"
+    license: "Public domain"
+    site: mb374b4
+  - place: a9bb03e # Mount Horeb
+    file: "Sinai. Southern precipice of Jebel Mousa. LOC matpc.07267.jpg"
+    author: "Matson Collection"
+    license: "Public domain"

@@ -1,0 +1,35 @@
+# Overview article (ADR 0007). Mainstream facts only; the site of Gomorrah is unknown, and the candidate sites are named as disputed. Companion to the Sodom article, which covers the shared candidates and the Tall el-Hammam proposal.
+id: gomorrah
+place: aa572e2
+title:
+  en: "Gomorrah"
+  ru: "Гоморра"
+body:
+  en:
+    - 'Gomorrah is almost never named without Sodom. Genesis lists it at the edge of Canaan, "unto Sodom, and Gomorrah, and Admah, and Zeboim", and gives its king a name, Birsha, who joined the four other kings of the plain against Chedorlaomer; when they were beaten in the vale of Siddim, the kings of Sodom and Gomorrah fell into its slime pits. Like Sodom, Gomorrah has never been located, and this map marks it at the same point, at the south end of the Dead Sea.'
+    - "Among the Early Bronze Age sites east of the southern Dead Sea, the one most often proposed for Gomorrah is Numeira, a small walled town on the Wadi en-Numeira that the Expedition to the Dead Sea Plain of Walter Rast and Thomas Schaub excavated between 1977 and 1983. It was lived in only during the Early Bronze III period, a matter of a few centuries at most, and ended in fire, never to be resettled. Those who pair it with Bab edh-Dhra as Gomorrah and Sodom point to the burning; others object that it was a village, not a city, and that its end, in the third millennium BC, is hard to fit with the patriarchal stories. Others link the name of the wadi with the waters of Nimrim in Isaiah's oracle on Moab."
+    - 'In Genesis the Lord rains brimstone and fire on Sodom and Gomorrah, and in the morning Abraham sees the smoke of the land go up "as the smoke of a furnace". After that Gomorrah lives on as a word for judgement: Deuteronomy pictures a land of brimstone and salt like the overthrow of the four cities; Isaiah says that without a remnant Judah would have been like unto Gomorrah, a verse Paul quotes in Romans; Jeremiah likens the inhabitants of Jerusalem to Gomorrah; Amos and the Gospel of Matthew name it beside Sodom.'
+    - "Ancient writers still looked for the five cities by the Dead Sea. Josephus said traces of them could be seen; in the fourth century Eusebius' Onomasticon calls Gomorra one of the five cities of Sodom, destroyed together with the rest, and names Zoar as the only one that survived."
+  ru:
+    - "Гоморра почти никогда не называется без Содома. Книга Бытия упоминает её на краю Ханаана, «к Содому, Гоморре, Адме и Цевоиму», и называет её царя по имени — Бирша, который вместе с четырьмя другими царями окрестности выступил против Кедорлаомера; когда они были разбиты в долине Сиддим, цари Содомский и Гоморрский упали в её смоляные ямы. Как и Содом, Гоморра так и не найдена, и на этой карте она отмечена в той же точке, у южного края Мёртвого моря."
+    - "Из поселений раннего бронзового века к востоку от южной части Мёртвого моря на роль Гоморры чаще всего предлагают Нумейру — небольшой обнесённый стеной город у Вади эн-Нумейра, который экспедиция Уолтера Раста и Томаса Шауба раскапывала в 1977–1983 гг. Он был населён только в период раннего бронзового века III, не дольше нескольких веков, и погиб в огне, после чего больше не заселялся. Те, кто видит в нём и Баб-эд-Дра Гоморру и Содом, указывают на пожар; другие возражают, что это было селение, а не город, и что его гибель в III тысячелетии до н. э. трудно согласовать с рассказами о патриархах. Другие связывают название вади с водами Нимрима из пророчества Исаии о Моаве."
+    - "В Книге Бытия Господь проливает на Содом и Гоморру серу и огонь, а утром Авраам видит дым, поднимающийся с земли, «как дым из печи». После этого Гоморра живёт как слово о суде: Второзаконие описывает землю серы и соли, как по истреблении четырёх городов; Исаия говорит, что без остатка Иудея уподобилась бы Гоморре, и эти слова приводит Павел в Послании к Римлянам; Иеремия сравнивает жителей Иерусалима с Гоморрой; Амос и Евангелие от Матфея называют её рядом с Содомом."
+    - "Древние авторы по-прежнему искали пять городов у Мёртвого моря. Иосиф Флавий писал, что их следы видны; в IV веке «Ономастикон» Евсевия называет Гоморру одним из пяти городов Содома, истреблённым вместе с остальными, а Сигор — единственным уцелевшим."
+scripture:
+  - Gen.10.19
+  - Gen.14.2
+  - Gen.14.10
+  - Gen.19.24-Gen.19.28
+  - Deut.29.23
+  - Isa.1.9
+  - Rom.9.29
+  - Jer.23.14
+  - Amos.4.11
+  - Matt.10.15
+  - Isa.15.6
+sources:
+  - "Josephus, Jewish War 4.483-485"
+  - "Eusebius, Onomasticon, s.v. Gomorra, Bala (nos. 293, 193 in C. U. Wolf's translation, 1971)"
+  - "M. S. Chesson, R. T. Schaub and W. E. Rast, Numayra: Excavations at the Early Bronze Age Townsite in Jordan, 1977-1983 (2020)"
+  - "W. E. Rast, 'Bab edh-Dhra', Anchor Bible Dictionary, vol. 1 (1992)"
+status: checked

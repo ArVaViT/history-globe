@@ -94,13 +94,28 @@ describe("engine", () => {
     renderer.emitPick("capernaum");
     expect(renderer.last("selected")?.placeId).toBe("capernaum");
     expect(renderer.calls.filter((c) => c.op === "flyTo").length).toBe(flights);
+    // Only brought out from under the card, at the zoom it was picked at.
+    expect(renderer.last("reveal")).toBeDefined();
   });
 
-  it("runs a tour: sets its year, draws the route so far, selects known stops only", () => {
+  it("opens a tour on its whole route, then flies stop by stop", () => {
+    const { engine, renderer } = setup();
+    engine.startTour("paul-1");
+    expect(renderer.calls.at(-1)).toEqual({ op: "fitTo", count: 2 });
+    const flights = renderer.calls.filter((c) => c.op === "flyTo").length;
+    engine.goToStop(1);
+    engine.goToStop(0);
+    expect(renderer.calls.filter((c) => c.op === "flyTo").length).toBe(flights + 2);
+    // Started at a later stop (a shared link), it goes straight there.
+    engine.startTour("paul-1", 1);
+    expect(renderer.calls.at(-1)?.op).toBe("flyTo");
+  });
+
+  it("runs a tour: sets its year, draws the whole route with the current stop, selects known stops only", () => {
     const { engine, renderer } = setup();
     engine.startTour("paul-1");
     expect(engine.store.get().year).toBe(47);
-    expect(renderer.last("route")).toEqual({ op: "route", points: 1, current: 0 });
+    expect(renderer.last("route")).toEqual({ op: "route", points: 2, current: 0 });
     engine.goToStop(1);
     expect(renderer.last("route")).toEqual({ op: "route", points: 2, current: 1 });
     expect(engine.store.get().selectedPlace).toBeNull();
@@ -111,6 +126,27 @@ describe("engine", () => {
     engine.goToStop(1);
     engine.stopTour();
     expect(renderer.last("route")).toEqual({ op: "route", points: 0, current: -1 });
+  });
+
+  it("focuses a chapter's known places, at its year, and a tour clears it", () => {
+    const { engine, renderer } = setup();
+    engine.focusPlaces({ ref: "Acts.13", places: ["antioch", "missing", "galilee"], year: 47 });
+    expect(engine.store.get().focus).toEqual({ ref: "Acts.13", places: ["antioch", "galilee"] });
+    expect(engine.store.get().year).toBe(47);
+    expect(renderer.last("tourPlaces")).toEqual({ op: "tourPlaces", count: 2 });
+    expect(renderer.last("fitTo")).toEqual({ op: "fitTo", count: 2 });
+    // Nothing on the map: no focus, no flight.
+    const flights = renderer.calls.filter((c) => c.op === "fitTo").length;
+    engine.focusPlaces({ ref: "Obad.1", places: ["missing"] });
+    expect(engine.store.get().focus).toBeNull();
+    expect(renderer.calls.filter((c) => c.op === "fitTo").length).toBe(flights);
+    // A shared link keeps its camera: no flight.
+    const before = renderer.calls.filter((c) => c.op === "fitTo").length;
+    engine.focusPlaces({ ref: "Acts.13", places: ["antioch"] }, false);
+    expect(renderer.calls.filter((c) => c.op === "fitTo").length).toBe(before);
+    expect(engine.store.get().focus?.ref).toBe("Acts.13");
+    engine.startTour("paul-1");
+    expect(engine.store.get().focus).toBeNull();
   });
 
   it("starts a tour at a given stop and tells the renderer its places", () => {

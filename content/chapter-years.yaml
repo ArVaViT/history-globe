@@ -1,0 +1,792 @@
+# basis: the project's own points first (content/tours/*.yaml, content/events.yaml): patriarchs at the
+#   tours' conventional years (Abraham 1900, Isaac 1850, Jacob 1800, Joseph 1700 BC), the early Exodus
+#   (1446 BC, 1 Kgs 6:1), judges 1150 BC, David 1010, Solomon 970, Temple 966, division 931;
+#   kings of Israel and Judah by Thiele; fall of Jerusalem 587 BC as in the exile and Jeremiah tours;
+#   NT: birth c. 5 BC, ministry AD 28-30, crucifixion AD 30, Acts by the Paul tours.
+# Years are astronomical (1 BC = 0, 587 BC = -586; ADR 0003). One year per chapter range: the start of
+# the reign or the dated event the range turns on. Undatable books and ranges are left out (see NOTES.txt).
+books:
+  Gen:
+    - chapters: "12-23"
+      year: -1899
+      approx: true
+      note: "Abraham, from his call to Sarah's burial (tour: 1900 BC, conventional)"
+    - chapters: "24-27"
+      year: -1849
+      approx: true
+      note: "Isaac (tour: 1850 BC, conventional)"
+    - chapters: "28-36"
+      year: -1799
+      approx: true
+      note: "Jacob (tour: 1800 BC, conventional)"
+    - chapters: "37-50"
+      year: -1699
+      approx: true
+      note: "Joseph (tour: 1700 BC, conventional)"
+  Exod:
+    - chapters: "1-2"
+      year: -1525
+      approx: true
+      note: "Moses' birth, 1526 BC (80 years before the Exodus, Exod 7:7)"
+    - chapters: "3-11"
+      year: -1445
+      approx: true
+      note: "Burning bush and the plagues, 1446 BC"
+    - chapters: "12-18"
+      year: -1445
+      approx: true
+      note: "The Exodus to Sinai, 1446 BC (1 Kgs 6:1)"
+    - chapters: "19-39"
+      year: -1445
+      approx: true
+      note: "At Sinai: the covenant and the tabernacle plans"
+    - chapters: "40"
+      year: -1444
+      approx: true
+      note: "Tabernacle set up, first month of the second year (40:17)"
+  Lev:
+    - chapters: "1-27"
+      year: -1444
+      approx: true
+      note: "At Sinai, the second year after the Exodus"
+  Num:
+    - chapters: "1-14"
+      year: -1444
+      approx: true
+      note: "Census, departure from Sinai, Kadesh rebellion (second year)"
+    - chapters: "15-19"
+      year: -1444
+      approx: true
+      note: "Wilderness years, undated (placed after Kadesh)"
+    - chapters: "20-36"
+      year: -1406
+      approx: true
+      note: "Fortieth year: Aaron's death to the plains of Moab"
+  Deut:
+    - chapters: "1-34"
+      year: -1405
+      approx: true
+      note: "Moses' speeches in Moab and his death (tour: 1406 BC)"
+  Josh:
+    - chapters: "1-12"
+      year: -1405
+      approx: true
+      note: "Crossing the Jordan and the conquest (tour: 1406 BC)"
+    - chapters: "13-24"
+      year: -1399
+      approx: true
+      note: "Land divided (Caleb at 85, 14:10) and Joshua's farewell"
+  Judg:
+    - chapters: "1-21"
+      year: -1149
+      approx: true
+      note: "Period of the judges (tours: 1150 BC, conventional)"
+  Ruth:
+    - chapters: "1-4"
+      year: -1099
+      approx: true
+      note: "In the days of the judges (tour: 1100 BC)"
+  1Sam:
+    - chapters: "1-7"
+      year: -1069
+      approx: true
+      note: "Samuel and the ark (tour: 1070 BC)"
+    - chapters: "8-15"
+      year: -1049
+      approx: true
+      note: "Saul made king, c. 1050 BC"
+    - chapters: "16-31"
+      year: -1009
+      approx: true
+      note: "David's rise under Saul to Gilboa (David tour: 1010 BC)"
+  2Sam:
+    - chapters: "1-4"
+      year: -1009
+      approx: true
+      note: "David king at Hebron, 1010 BC"
+    - chapters: "5-12"
+      year: -1002
+      approx: true
+      note: "David king over all Israel, takes Jerusalem, 1003 BC"
+    - chapters: "13-14"
+      year: -989
+      approx: true
+      note: "Amnon and Absalom, years before the revolt"
+    - chapters: "15-20"
+      year: -979
+      approx: true
+      note: "Absalom's and Sheba's revolts (tour: 980 BC)"
+    - chapters: "21-24"
+      year: -974
+      approx: true
+      note: "Appendix; the census late in David's reign"
+  1Kgs:
+    - chapters: "1-5"
+      year: -969
+      approx: true
+      note: "Solomon succeeds David, 970 BC"
+    - chapters: "6-8"
+      year: -965
+      approx: true
+      note: "Temple built and dedicated, from 966 BC (6:1)"
+    - chapters: "9-10"
+      year: -945
+      approx: true
+      note: "Solomon's height, after twenty years of building (9:10)"
+    - chapters: "11-13"
+      year: -930
+      approx: true
+      note: "Solomon's death and the division, 931 BC"
+    - chapters: "14"
+      year: -924
+      approx: true
+      note: "Shishak's campaign, Rehoboam's fifth year (14:25)"
+    - chapters: "15"
+      year: -912
+      approx: true
+      note: "Abijam and Asa; Nadab and Baasha (from 913 BC)"
+    - chapters: "16"
+      year: -884
+      approx: true
+      note: "Zimri and Omri, 885 BC; Samaria founded"
+    - chapters: "17-21"
+      year: -859
+      approx: true
+      note: "Elijah and Ahab (tour: 860 BC)"
+    - chapters: "22"
+      year: -852
+      approx: false
+      note: "Ahab dies at Ramoth-gilead, 853 BC"
+  2Kgs:
+    - chapters: "1"
+      year: -852
+      approx: true
+      note: "Ahaziah of Israel, 853-852 BC"
+    - chapters: "2-8"
+      year: -849
+      approx: true
+      note: "Elisha under Joram (tour: 850 BC)"
+    - chapters: "9-10"
+      year: -840
+      approx: false
+      note: "Jehu's coup, 841 BC"
+    - chapters: "11-12"
+      year: -834
+      approx: true
+      note: "Athaliah overthrown, Joash king, 835 BC"
+    - chapters: "13"
+      year: -813
+      approx: true
+      note: "Jehoahaz and Jehoash of Israel; Elisha's death"
+    - chapters: "14"
+      year: -795
+      approx: true
+      note: "Amaziah, 796 BC; Jeroboam II"
+    - chapters: "15"
+      year: -744
+      approx: true
+      note: "Azariah to Pekah; Tiglath-pileser III from 745 BC"
+    - chapters: "16"
+      year: -731
+      approx: true
+      note: "Ahaz and the Syro-Ephraimite war, 732 BC"
+    - chapters: "17"
+      year: -721
+      approx: false
+      note: "Samaria falls, 722 BC"
+    - chapters: "18-20"
+      year: -700
+      approx: true
+      note: "Hezekiah; Sennacherib's siege, 701 BC"
+    - chapters: "21"
+      year: -685
+      approx: true
+      note: "Manasseh (sole reign from 686 BC) and Amon"
+    - chapters: "22-23"
+      year: -621
+      approx: true
+      note: "Josiah's reform, 622 BC (tour)"
+    - chapters: "24"
+      year: -596
+      approx: false
+      note: "Jehoiachin exiled, 597 BC"
+    - chapters: "25"
+      year: -586
+      approx: true
+      note: "Jerusalem and the Temple destroyed (tour: 587 BC)"
+  1Chr:
+    - chapters: "10"
+      year: -1009
+      approx: true
+      note: "Saul's death, 1010 BC"
+    - chapters: "11-20"
+      year: -1002
+      approx: true
+      note: "David king over all Israel; the ark to Jerusalem"
+    - chapters: "21"
+      year: -974
+      approx: true
+      note: "The census, late in David's reign"
+    - chapters: "22-29"
+      year: -969
+      approx: true
+      note: "David's last charges; Solomon made king, 970 BC"
+  2Chr:
+    - chapters: "1"
+      year: -969
+      approx: true
+      note: "Solomon's accession, 970 BC"
+    - chapters: "2-7"
+      year: -965
+      approx: true
+      note: "Temple built and dedicated, from 966 BC (3:2)"
+    - chapters: "8-9"
+      year: -945
+      approx: true
+      note: "Solomon's later reign, after twenty years (8:1)"
+    - chapters: "10-11"
+      year: -930
+      approx: true
+      note: "The division under Rehoboam, 931 BC"
+    - chapters: "12"
+      year: -924
+      approx: true
+      note: "Shishak's campaign, 925 BC (12:2)"
+    - chapters: "13"
+      year: -912
+      approx: true
+      note: "Abijah, 913 BC"
+    - chapters: "14-16"
+      year: -910
+      approx: true
+      note: "Asa, from 911 BC"
+    - chapters: "17"
+      year: -869
+      approx: true
+      note: "Jehoshaphat, sole reign from 870 BC"
+    - chapters: "18-20"
+      year: -852
+      approx: true
+      note: "Jehoshaphat after Ramoth-gilead, 853 BC"
+    - chapters: "21"
+      year: -847
+      approx: true
+      note: "Jehoram of Judah, 848 BC"
+    - chapters: "22"
+      year: -840
+      approx: false
+      note: "Ahaziah killed by Jehu, 841 BC; Athaliah"
+    - chapters: "23-24"
+      year: -834
+      approx: true
+      note: "Joash made king, 835 BC"
+    - chapters: "25"
+      year: -795
+      approx: true
+      note: "Amaziah, 796 BC"
+    - chapters: "26"
+      year: -791
+      approx: true
+      note: "Uzziah, from 792 BC"
+    - chapters: "27"
+      year: -749
+      approx: true
+      note: "Jotham, from 750 BC"
+    - chapters: "28"
+      year: -731
+      approx: true
+      note: "Ahaz and the Syro-Ephraimite war, 732 BC"
+    - chapters: "29-31"
+      year: -714
+      approx: true
+      note: "Hezekiah's reform in his first year, 715 BC"
+    - chapters: "32"
+      year: -700
+      approx: false
+      note: "Sennacherib's invasion, 701 BC"
+    - chapters: "33"
+      year: -685
+      approx: true
+      note: "Manasseh (sole reign from 686 BC) and Amon"
+    - chapters: "34-35"
+      year: -621
+      approx: true
+      note: "Josiah's reform and Passover, 622 BC"
+    - chapters: "36"
+      year: -586
+      approx: true
+      note: "Last kings and the fall of Jerusalem (587 BC)"
+  Ezra:
+    - chapters: "1-2"
+      year: -537
+      approx: false
+      note: "Cyrus' decree and the first return, 538 BC"
+    - chapters: "3-4"
+      year: -535
+      approx: true
+      note: "Temple foundation laid, 536 BC; opposition (4:6-23 is a later aside)"
+    - chapters: "5"
+      year: -519
+      approx: false
+      note: "Building resumed, second year of Darius, 520 BC"
+    - chapters: "6"
+      year: -515
+      approx: true
+      note: "Darius' decree; Temple dedicated, 516 BC"
+    - chapters: "7-10"
+      year: -457
+      approx: true
+      note: "Ezra's return, seventh year of Artaxerxes I, 458 BC"
+  Neh:
+    - chapters: "1-12"
+      year: -444
+      approx: true
+      note: "Nehemiah rebuilds the walls, 445 BC"
+    - chapters: "13"
+      year: -432
+      approx: true
+      note: "Nehemiah's second term, after 433 BC (13:6)"
+  Esth:
+    - chapters: "1"
+      year: -482
+      approx: true
+      note: "Xerxes' feast, his third year, 483 BC (tour)"
+    - chapters: "2"
+      year: -478
+      approx: true
+      note: "Esther made queen, his seventh year (2:16)"
+    - chapters: "3-10"
+      year: -473
+      approx: true
+      note: "Haman's plot and Purim, his twelfth year (3:7)"
+  Isa:
+    - chapters: "1-6"
+      year: -739
+      approx: true
+      note: "Isaiah's call, the year Uzziah died, 740 BC (6:1)"
+    - chapters: "7-12"
+      year: -733
+      approx: true
+      note: "Ahaz and the Syro-Ephraimite crisis, 734 BC"
+    - chapters: "13-23"
+      year: -710
+      approx: true
+      note: "Oracles against the nations; Ashdod taken, 711 BC (20:1)"
+    - chapters: "24-35"
+      year: -700
+      approx: true
+      note: "Oracles of Hezekiah's reign, undated"
+    - chapters: "36-39"
+      year: -700
+      approx: false
+      note: "Sennacherib's siege and Hezekiah, 701 BC"
+    - chapters: "40-66"
+      year: -685
+      approx: true
+      note: "Isaiah's later years (conservative); the setting is the exile"
+  Jer:
+    - chapters: "1-6"
+      year: -626
+      approx: true
+      note: "Call in Josiah's thirteenth year, 627 BC (1:2)"
+    - chapters: "7-20"
+      year: -608
+      approx: true
+      note: "Temple sermon and early Jehoiakim, mostly undated"
+    - chapters: "21"
+      year: -587
+      approx: true
+      note: "Zedekiah during the siege, 588 BC"
+    - chapters: "22-23"
+      year: -608
+      approx: true
+      note: "Oracles on the last kings, from 609 BC"
+    - chapters: "24"
+      year: -596
+      approx: true
+      note: "The two baskets of figs, after 597 BC"
+    - chapters: "25"
+      year: -604
+      approx: true
+      note: "Fourth year of Jehoiakim, 605 BC"
+    - chapters: "26"
+      year: -608
+      approx: true
+      note: "Beginning of Jehoiakim's reign, 609 BC (tour)"
+    - chapters: "27-29"
+      year: -593
+      approx: true
+      note: "Zedekiah's fourth year, 594 BC (28:1); letter to the exiles"
+    - chapters: "30-34"
+      year: -587
+      approx: true
+      note: "Book of consolation; the field at Anathoth, 588 BC (32:1, tour)"
+    - chapters: "35"
+      year: -598
+      approx: true
+      note: "The Rechabites under Jehoiakim, c. 599 BC"
+    - chapters: "36"
+      year: -604
+      approx: true
+      note: "The scroll, fourth and fifth years of Jehoiakim, 605-604 BC"
+    - chapters: "37"
+      year: -587
+      approx: true
+      note: "The siege lifted for a time, 588 BC"
+    - chapters: "38-44"
+      year: -586
+      approx: true
+      note: "The fall and its aftermath, flight to Egypt (tour: 587 BC)"
+    - chapters: "45-49"
+      year: -604
+      approx: true
+      note: "Baruch; oracles on the nations, Carchemish 605 BC (46:2)"
+    - chapters: "50-51"
+      year: -593
+      approx: true
+      note: "Oracle on Babylon, Zedekiah's fourth year (51:59)"
+    - chapters: "52"
+      year: -586
+      approx: true
+      note: "Fall of Jerusalem (tour: 587 BC)"
+  Lam:
+    - chapters: "1-5"
+      year: -586
+      approx: true
+      note: "Laments over fallen Jerusalem, 587 BC"
+  Ezek:
+    - chapters: "1-7"
+      year: -592
+      approx: false
+      note: "Call by the Chebar, fifth year of exile, 593 BC (tour)"
+    - chapters: "8-19"
+      year: -591
+      approx: false
+      note: "Temple vision, sixth year, 592 BC (tour)"
+    - chapters: "20-23"
+      year: -590
+      approx: true
+      note: "Seventh year, 591 BC (20:1)"
+    - chapters: "24"
+      year: -587
+      approx: true
+      note: "The siege begins, ninth year, 588 BC (24:1)"
+    - chapters: "25-32"
+      year: -586
+      approx: true
+      note: "Oracles on the nations, tenth to twelfth years"
+    - chapters: "33-39"
+      year: -584
+      approx: true
+      note: "News of the fall reaches the exiles (tour: 585 BC)"
+    - chapters: "40-48"
+      year: -572
+      approx: false
+      note: "Vision of the new temple, twenty-fifth year, 573 BC"
+  Dan:
+    - chapters: "1"
+      year: -604
+      approx: false
+      note: "Taken to Babylon, third year of Jehoiakim, 605 BC (tour)"
+    - chapters: "2"
+      year: -602
+      approx: true
+      note: "Nebuchadnezzar's dream, his second year, 603 BC"
+    - chapters: "3-4"
+      year: -579
+      approx: true
+      note: "Nebuchadnezzar's reign, undated (empires tour: 580 BC)"
+    - chapters: "5-6"
+      year: -538
+      approx: false
+      note: "Fall of Babylon; Darius the Mede, 539 BC (tour)"
+    - chapters: "7"
+      year: -551
+      approx: true
+      note: "First year of Belshazzar, c. 552 BC"
+    - chapters: "8"
+      year: -549
+      approx: true
+      note: "Third year of Belshazzar, c. 550 BC (tour)"
+    - chapters: "9"
+      year: -538
+      approx: true
+      note: "First year of Darius the Mede, 539 BC"
+    - chapters: "10-12"
+      year: -535
+      approx: true
+      note: "Third year of Cyrus, 536 BC (tour)"
+  Hos:
+    - chapters: "1-3"
+      year: -754
+      approx: true
+      note: "Under Jeroboam II, before Jehu's house fell (1:4)"
+    - chapters: "4-14"
+      year: -739
+      approx: true
+      note: "Later oracles, to the Assyrian crisis"
+  Amos:
+    - chapters: "1-9"
+      year: -759
+      approx: true
+      note: "Under Uzziah and Jeroboam II, two years before the earthquake"
+  Jonah:
+    - chapters: "1-4"
+      year: -779
+      approx: true
+      note: "Under Jeroboam II (tour: 780 BC)"
+  Mic:
+    - chapters: "1-7"
+      year: -734
+      approx: true
+      note: "Under Jotham, Ahaz and Hezekiah, before Samaria fell"
+  Nah:
+    - chapters: "1-3"
+      year: -649
+      approx: true
+      note: "Between the sack of Thebes (663) and Nineveh's fall (612)"
+  Hab:
+    - chapters: "1-3"
+      year: -606
+      approx: true
+      note: "The Chaldeans rising, just before 605 BC"
+  Zeph:
+    - chapters: "1-3"
+      year: -629
+      approx: true
+      note: "Under Josiah, before the reform of 622 BC"
+  Hag:
+    - chapters: "1-2"
+      year: -519
+      approx: false
+      note: "Second year of Darius, 520 BC"
+  Zech:
+    - chapters: "1-6"
+      year: -519
+      approx: false
+      note: "Night visions, second year of Darius, 520-519 BC"
+    - chapters: "7-8"
+      year: -517
+      approx: false
+      note: "Fourth year of Darius, 518 BC (7:1)"
+  Mal:
+    - chapters: "1-4"
+      year: -432
+      approx: true
+      note: "In Nehemiah's time, c. 433 BC"
+  Matt:
+    - chapters: "1-2"
+      year: -4
+      approx: true
+      note: "Birth of Jesus and the flight to Egypt, c. 5 BC"
+    - chapters: "3-4"
+      year: 28
+      approx: true
+      note: "Baptism and temptation; ministry begins"
+    - chapters: "5-18"
+      year: 29
+      approx: true
+      note: "Ministry in Galilee (tour: AD 29)"
+    - chapters: "19-28"
+      year: 30
+      approx: true
+      note: "To Jerusalem; Passion and resurrection, AD 30"
+  Mark:
+    - chapters: "1"
+      year: 28
+      approx: true
+      note: "John the Baptist; the ministry begins"
+    - chapters: "2-9"
+      year: 29
+      approx: true
+      note: "Ministry in Galilee (tour: AD 29)"
+    - chapters: "10-16"
+      year: 30
+      approx: true
+      note: "To Jerusalem; Passion and resurrection, AD 30"
+  Luke:
+    - chapters: "1-2"
+      year: -4
+      approx: true
+      note: "Births of John and Jesus, c. 5 BC (2:41-52 is AD 8)"
+    - chapters: "3-4"
+      year: 28
+      approx: true
+      note: "Fifteenth year of Tiberius (3:1); ministry begins"
+    - chapters: "5-18"
+      year: 29
+      approx: true
+      note: "Galilee and the journey to Jerusalem"
+    - chapters: "19-24"
+      year: 30
+      approx: true
+      note: "Entry to Jerusalem; Passion and resurrection, AD 30"
+  John:
+    - chapters: "1-4"
+      year: 28
+      approx: true
+      note: "First disciples, Cana, first Passover (2:13)"
+    - chapters: "5-10"
+      year: 29
+      approx: true
+      note: "Second Passover (6:4) to the feast of Dedication"
+    - chapters: "11-21"
+      year: 30
+      approx: true
+      note: "Lazarus; last Passover, Passion and resurrection"
+  Acts:
+    - chapters: "1-2"
+      year: 30
+      approx: true
+      note: "Ascension and Pentecost (tour: AD 30)"
+    - chapters: "3-5"
+      year: 31
+      approx: true
+      note: "The church in Jerusalem, undated (c. AD 30-33)"
+    - chapters: "6-8"
+      year: 34
+      approx: true
+      note: "Stephen and Philip (tours: AD 34)"
+    - chapters: "9"
+      year: 34
+      approx: true
+      note: "Saul's conversion (tour: AD 34)"
+    - chapters: "10"
+      year: 40
+      approx: true
+      note: "Peter and Cornelius (tour: AD 40)"
+    - chapters: "11"
+      year: 43
+      approx: true
+      note: "The church at Antioch (empires tour: AD 43)"
+    - chapters: "12"
+      year: 44
+      approx: false
+      note: "Peter's escape; Herod Agrippa dies, AD 44"
+    - chapters: "13-14"
+      year: 47
+      approx: true
+      note: "Paul's first journey (tour: AD 47)"
+    - chapters: "15"
+      year: 49
+      approx: true
+      note: "Council of Jerusalem, c. AD 49"
+    - chapters: "16-17"
+      year: 50
+      approx: true
+      note: "Second journey: Philippi, Thessalonica, Athens (tour: AD 50)"
+    - chapters: "18"
+      year: 51
+      approx: true
+      note: "Corinth; Gallio proconsul, AD 51-52"
+    - chapters: "19"
+      year: 54
+      approx: true
+      note: "Third journey: Ephesus (tour: AD 54)"
+    - chapters: "20-24"
+      year: 57
+      approx: true
+      note: "To Jerusalem, arrest, Caesarea (trials tour: AD 57)"
+    - chapters: "25-26"
+      year: 59
+      approx: true
+      note: "Before Festus and Agrippa II (tour: AD 59)"
+    - chapters: "27-28"
+      year: 60
+      approx: true
+      note: "Voyage to Rome (tour: AD 60)"
+  Rom:
+    - chapters: "1-16"
+      year: 57
+      approx: true
+      note: "Written from Corinth, c. AD 57"
+  1Cor:
+    - chapters: "1-16"
+      year: 55
+      approx: true
+      note: "Written from Ephesus, c. AD 55"
+  2Cor:
+    - chapters: "1-13"
+      year: 56
+      approx: true
+      note: "Written from Macedonia, c. AD 56"
+  Gal:
+    - chapters: "1-6"
+      year: 48
+      approx: true
+      note: "Before the council, c. AD 48 (south Galatian view)"
+  Eph:
+    - chapters: "1-6"
+      year: 61
+      approx: true
+      note: "From prison in Rome, c. AD 60-62"
+  Phil:
+    - chapters: "1-4"
+      year: 62
+      approx: true
+      note: "From prison in Rome, c. AD 62"
+  Col:
+    - chapters: "1-4"
+      year: 61
+      approx: true
+      note: "From prison in Rome, c. AD 60-62"
+  1Thess:
+    - chapters: "1-5"
+      year: 50
+      approx: true
+      note: "From Corinth, soon after Thessalonica, c. AD 50"
+  2Thess:
+    - chapters: "1-3"
+      year: 51
+      approx: true
+      note: "From Corinth, c. AD 51"
+  1Tim:
+    - chapters: "1-6"
+      year: 63
+      approx: true
+      note: "After release from Rome, c. AD 62-64"
+  2Tim:
+    - chapters: "1-4"
+      year: 64
+      approx: true
+      note: "Last imprisonment in Rome, c. AD 64-67"
+  Titus:
+    - chapters: "1-3"
+      year: 63
+      approx: true
+      note: "After release from Rome, c. AD 62-64"
+  Phlm:
+    - chapters: "1"
+      year: 61
+      approx: true
+      note: "From prison in Rome, with Colossians"
+  1Pet:
+    - chapters: "1-5"
+      year: 63
+      approx: true
+      note: "From Rome ('Babylon'), before Nero's persecution"
+  2Pet:
+    - chapters: "1-3"
+      year: 65
+      approx: true
+      note: "Shortly before Peter's death under Nero"
+  1John:
+    - chapters: "1-5"
+      year: 90
+      approx: true
+      note: "Ephesus, c. AD 85-95 (traditional)"
+  2John:
+    - chapters: "1"
+      year: 90
+      approx: true
+      note: "Ephesus, c. AD 85-95 (traditional)"
+  3John:
+    - chapters: "1"
+      year: 90
+      approx: true
+      note: "Ephesus, c. AD 85-95 (traditional)"
+  Rev:
+    - chapters: "1-22"
+      year: 95
+      approx: true
+      note: "Patmos under Domitian, AD 95 (tour; an earlier date, c. 68, is held)"

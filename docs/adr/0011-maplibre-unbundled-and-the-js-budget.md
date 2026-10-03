@@ -58,3 +58,28 @@ The product owner asked for a settings window, a speed control in the player and
 timeline that zooms with a trackpad. With 0.1 kB left they could not fit, so the budget is
 raised to 420 kB (`scripts/check-budget.ts`). The Preact move stays open as the way back
 under 400.
+
+## Update, 03.10.2026 night (proposed, for the product owner)
+
+At 419.94 of 420 kB (about 60 bytes left) the first frame has no room for another interface
+feature. Every feature of that night that could wait was put in a chunk loaded on demand
+(hover tips, the menu panel, the embed protocol, the lesson, the search, the leg relief in
+the tour card); what remains in the first frame is MapLibre (303 kB), react-dom and the
+app's own entry (`index`, 82.6 kB, most of it `App.tsx`).
+
+Options, in the order recommended:
+
+1. **Raise the budget to 440 kB now** (one line in `scripts/check-budget.ts`): room for a
+   few more features while the next two are weighed. The first frame on a slow 4G link
+   grows by about a tenth of a second.
+2. **Split `App.tsx`** when it is next worked on: the left column's wiring, the embed bar
+   and the print and picture handlers can load after the first frame; an estimated
+   10–15 kB back, without a framework change.
+3. **Preact** (about 55 kB less, see above): the largest gain and the largest change, a
+   decision of its own.
+
+## Decision, 03.10.2026 morning
+
+The product owner chose option 1: the budget is 440 kB (`scripts/check-budget.ts`), to finish
+the remaining features (a Bible-only setting, battles, an open verse-to-places API) before
+launch. Splitting `App.tsx` and Preact stay the ways back down.

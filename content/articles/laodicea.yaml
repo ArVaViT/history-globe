@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings and readings are named as such. The place is Laodicea on the Lycus in Phrygia, not Laodicea in Syria.
+id: laodicea
+place: a83fb1e
+title:
+  en: "Laodicea"
+  ru: "Лаодикия"
+body:
+  en:
+    - "Laodicea lay in the valley of the Lycus in south-western Phrygia, near today's Denizli, on the main road from Ephesus to the east. Hierapolis faced it across the valley about 10 km to the north, and Colossae stood a little farther up the Lycus. Pliny says the place was called first Diospolis and then Rhoas; the Seleucid king Antiochus II refounded it in the mid-third century BC and named it after his wife Laodice."
+    - "Strabo says that Laodicea, once small, grew large in his own and his fathers' time, although it had suffered a siege in the war of Mithridates; its fertile land and rich citizens made it wealthy, and its sheep gave soft wool of a raven-black colour. Between Laodicea and Carura stood a temple of Men Carus with a noted school of physicians. Cicero records that in 62 BC the governor Flaccus seized at Laodicea a little over twenty pounds of gold collected by the Jews for Jerusalem. In AD 60 an earthquake laid the city in ruins, and, Tacitus notes, it recovered by its own resources without help from Rome."
+    - 'Epaphras laboured for the believers of Laodicea and Hierapolis, and Paul greeted "the brethren which are in Laodicea, and Nymphas, and the church which is in his house". He asked the Colossians to have his letter read in Laodicea and to read "the epistle from Laodicea", which has not survived; what it was is disputed. In Revelation, the last of the letters to the seven churches rebukes Laodicea as "lukewarm, and neither cold nor hot", proud that it is rich and has need of nothing, and counsels it to buy gold tried in the fire, white raiment and eyesalve. Many link the image of lukewarm water to the city''s water supply; others take it as a plain figure. The letter ends: "Behold, I stand at the door, and knock".'
+    - "Melito of Sardis wrote that at the time when Sagaris suffered martyrdom, under the proconsul Servilius Paulus, a great dispute about the Passover arose at Laodicea; Polycrates of Ephesus names Sagaris as a bishop and martyr who rests at Laodicea. In the fourth century a church council met at Laodicea, usually dated about 363, though some place it anywhere between 343 and 381. The city was then the metropolis of the province of Phrygia Pacatiana."
+  ru:
+    - "Лаодикия лежала в долине Лика на юго-западе Фригии, у нынешнего Денизли, на главной дороге из Ефеса на восток. Иераполь стоял напротив, по другую сторону долины, примерно в 10 км к северу, а Колоссы — немного выше по Лику. Плиний сообщает, что сначала это место называлось Диосполем, а затем Роасом; селевкидский царь Антиох II в середине III века до н. э. основал город заново и назвал его в честь своей жены Лаодики."
+    - "Страбон пишет, что Лаодикия, прежде небольшая, выросла при нём и при его отцах, хотя и пострадала от осады во время войны с Митридатом; плодородная земля и богатые граждане сделали её состоятельной, а её овцы давали мягкую шерсть цвета воронова крыла. Между Лаодикией и Карурой стоял храм Мена Кару со знаменитой врачебной школой. Цицерон сообщает, что в 62 г. до н. э. наместник Флакк забрал в Лаодикии немногим более двадцати фунтов золота, собранного иудеями для Иерусалима. В 60 г. н. э. землетрясение разрушило город, и он, как замечает Тацит, оправился своими силами, без помощи Рима."
+    - "Епафрас трудился ради верующих Лаодикии и Иераполя, а Павел писал: «Приветствуйте братьев в Лаодикии, и Нимфана, и домашнюю церковь его». Он просил колоссян прочитать его послание в Лаодикии, а то, «которое из Лаодикии», прочитать и им; оно не сохранилось, и что это было, — спорно. В Откровении последнее из посланий семи церквам обличает Лаодикию: «ты тепл, а не горяч и не холоден»; она гордится, что богата и ни в чём не имеет нужды, и ей дан совет купить золото, огнём очищенное, белую одежду и глазную мазь. Многие связывают образ тёплой воды с водоснабжением города; другие видят в нём простое иносказание. Послание кончается словами: «Се, стою у двери и стучу»."
+    - "Мелитон Сардийский писал, что в то время, когда принял мученичество Сагарис, при проконсуле Сервилии Павле, в Лаодикии возник великий спор о Пасхе; Поликрат Эфесский называет Сагариса епископом и мучеником, который покоится в Лаодикии. В IV веке в Лаодикии собрался церковный собор, который обычно датируют около 363 г., хотя иные относят его к любому году между 343 и 381. Город был тогда митрополией провинции Фригия Пакатиана."
+scripture:
+  - Rev.1.11
+  - Rev.3.14-Rev.3.22
+  - Col.2.1
+  - Col.4.12-Col.4.13
+  - Col.4.15-Col.4.16
+sources:
+  - "Pliny the Elder, Natural History 5.105"
+  - "Strabo, Geography 12.8.16; 12.8.20"
+  - "Cicero, For Flaccus 67-68"
+  - "Tacitus, Annals 14.27"
+  - "Eusebius, Church History 4.26.3; 5.24.5"
+  - "Canons of the Synod of Laodicea, with the introductory note on its date (after Hefele) in Nicene and Post-Nicene Fathers, 2nd series, vol. 14 (1900)"
+  - "G. E. Bean, Turkey beyond the Maeander (1971)"
+  - "C. J. Hemer, The Letters to the Seven Churches of Asia in Their Local Setting (1986)"
+status: checked

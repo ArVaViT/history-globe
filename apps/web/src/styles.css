@@ -29,13 +29,13 @@ body {
   cursor: pointer;
 }
 .timeline-range::-webkit-slider-runnable-track {
-  height: 20px;
+  height: 24px;
   background: transparent;
 }
 .timeline-range::-webkit-slider-thumb {
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   margin-top: 0;
   border-radius: 50%;
   background: var(--color-accent);
@@ -49,8 +49,8 @@ body {
   transform: scale(1.12);
 }
 .timeline-range::-moz-range-thumb {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: var(--color-accent);
   border: 3px solid var(--color-paper);
@@ -58,6 +58,88 @@ body {
 .timeline-range:focus-visible::-webkit-slider-thumb {
   outline: 2px solid var(--color-focus);
   outline-offset: 2px;
+}
+
+/* The map's corners sit above the full-width time slider; the overview and settings
+   buttons are a group of their own in the bottom-right corner, above the zoom buttons. */
+.maplibregl-ctrl-bottom-right,
+.maplibregl-ctrl-bottom-left {
+  bottom: calc(var(--hg-timeline-h, 124px) + 16px);
+}
+
+/* The map's controls in the player, dressed as its own buttons: no frames, the same round
+   hover, icons in the soft ink of « » and ⋯ rather than MapLibre's black. */
+.hg-map-slot .maplibregl-ctrl {
+  margin: 0 !important;
+  float: none;
+}
+.hg-map-slot .maplibregl-ctrl-scale {
+  /* The player's own paper: unseen at the usual opacity, still readable when the player
+     is set see-through. */
+  background: rgb(246 239 225 / 0.9);
+  border: 1.5px solid var(--color-ink-soft);
+  border-top: 0;
+  padding: 0 4px 1px;
+  color: var(--color-ink-soft);
+  font-size: 11px;
+  line-height: 1.2;
+  text-align: center;
+}
+.hg-map-slot .maplibregl-ctrl-group {
+  display: flex;
+  gap: 2px;
+  border: 0;
+  border-radius: 0 !important;
+  overflow: visible;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none;
+}
+.hg-map-slot .maplibregl-ctrl-group button,
+.hg-map-slot .maplibregl-ctrl-attrib-button {
+  width: 32px;
+  height: 32px;
+  border: 0 !important;
+  border-radius: 9999px;
+  background-color: transparent !important;
+}
+.hg-map-slot .maplibregl-ctrl-group button:hover,
+.hg-map-slot .maplibregl-ctrl-attrib-button:hover {
+  background-color: var(--color-paper-2) !important;
+}
+
+.hg-map-slot .maplibregl-ctrl-attrib {
+  position: relative;
+  min-height: 32px;
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.hg-map-slot .maplibregl-ctrl-attrib-button {
+  position: static;
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.hg-map-slot button:focus {
+  box-shadow: none !important;
+}
+.hg-map-slot button:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 1px;
+  box-shadow: none !important;
+}
+.hg-map-slot .maplibregl-ctrl-attrib.maplibregl-compact-show .maplibregl-ctrl-attrib-inner {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 8px);
+  width: min(420px, 80vw);
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: var(--color-paper);
+  box-shadow: 0 10px 30px -10px rgb(20 14 8 / 0.45);
+  font-size: 11.5px;
+  line-height: 1.4;
 }
 
 /* Map controls in the panels' glass: the zoom buttons, the compass and the (i). */
@@ -94,19 +176,12 @@ summary {
 }
 
 /* A phone: pinch zooms and the compass is two fingers away, so the buttons and the
-   scale go; the attribution folds into its (i) under the header, clear of the slider. */
+   scale go; the (i) stays in the player. */
 @media (max-width: 767px) {
-  .maplibregl-ctrl-bottom-right .maplibregl-ctrl-group,
-  .maplibregl-ctrl-scale {
+  /* Zoom and compass are under the fingers, the scale is noise on a small screen. */
+  .hg-map-slot .maplibregl-ctrl-group,
+  .hg-map-slot .maplibregl-ctrl-scale {
     display: none;
-  }
-  .maplibregl-ctrl-bottom-right {
-    top: 72px;
-    bottom: auto;
-  }
-  /* Under the open column the (i) can't be seen: keep it out of the Tab order too. */
-  [data-panels="open"] .maplibregl-ctrl-attrib {
-    visibility: hidden;
   }
 }
 
@@ -135,16 +210,420 @@ summary {
 }
 
 /* The lights that run along a tour's route (maplibre-renderer.ts runPulses). */
+/* A light, not a disc: a hollow ring with a red edge is how a stop ahead is drawn, and a
+   light caught still read as one more stop. */
 .hg-pulse {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #fff7e8;
   box-shadow:
-    0 0 0 2px rgb(154 59 31 / 0.85),
-    0 0 10px 3px rgb(255 214 150 / 0.75);
+    0 0 6px 2px rgb(255 200 120 / 0.9),
+    0 0 14px 5px rgb(255 214 150 / 0.55);
   pointer-events: none;
 }
 .hg-no-routes .hg-pulse {
   display: none;
+}
+
+/* Small motions: a thing appears from where it was asked for. Nothing moves for those who
+   asked the system for less motion. */
+@keyframes hg-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(4px);
+  }
+}
+@keyframes hg-slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+}
+@keyframes hg-slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+}
+@keyframes hg-grow {
+  from {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0 round 999px);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0 round 999px);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hg-pop {
+    animation: hg-pop 160ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .hg-slide-left {
+    animation: hg-slide-left 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .hg-card {
+    animation: hg-slide-right 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .hg-grow {
+    animation: hg-grow 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+}
+
+/* A list that scrolls fades out at its lower edge instead of cutting a line in half: a
+   strip in the panel's colour that sticks to the bottom while there is more below and
+   comes to rest after the last line. (A mask would fade the text itself, which contrast
+   checkers then read against the map behind the panel.) */
+/* A focused line scrolled into view stops above the strip. */
+.hg-fade {
+  scroll-padding-bottom: 24px;
+}
+.hg-fade::after {
+  content: "";
+  position: sticky;
+  bottom: 0;
+  display: block;
+  grid-column: 1 / -1;
+  height: 24px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, var(--color-paper));
+}
+
+/* The sheet for a class (print.ts): hidden on screen; printed alone, on its own A4 page
+   size, while the app is hidden. A named page, so no other @page can override it. */
+@page hg-sheet {
+  size: A4 portrait;
+  margin: 12mm;
+}
+.hg-sheet {
+  display: none;
+}
+@media print {
+  html:has(#hg-print),
+  html:has(#hg-print) body {
+    height: auto;
+    background: #fff;
+  }
+  body:has(#hg-print) > :not(#hg-print) {
+    display: none !important;
+  }
+  .hg-sheet {
+    display: block;
+    page: hg-sheet;
+    color: #1f1a12;
+    font: 10pt/1.4 var(--font-sans);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .hg-sheet-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8mm;
+    margin-bottom: 4mm;
+  }
+  .hg-sheet h1 {
+    margin: 0;
+    font: 600 20pt/1.15 var(--font-serif);
+  }
+  .hg-sheet-when {
+    margin: 1mm 0 0;
+    color: #5b4f3c;
+    font-size: 11pt;
+  }
+  .hg-sheet-brand {
+    margin: 0;
+    color: #9a3b1f;
+    font: 11pt var(--font-serif);
+    white-space: nowrap;
+  }
+  /* As wide as the sheet, up to 240 mm (a landscape page): drawn whole, so the scale bar
+     under it, a share of the same width, stays true. */
+  .hg-sheet-map,
+  .hg-sheet-scale {
+    max-width: 240mm;
+  }
+  .hg-sheet-map {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 2mm;
+  }
+  /* The map's scale: a bar a round length long, under its left corner. */
+  .hg-sheet-scale {
+    display: flex;
+    align-items: center;
+    gap: 2mm;
+    margin-top: 1.5mm;
+    color: #5b4f3c;
+    font-size: 8pt;
+  }
+  .hg-sheet-north {
+    margin-left: auto;
+  }
+  .hg-sheet-scale span:first-child {
+    height: 1.6mm;
+    border: 0.3mm solid #5b4f3c;
+    border-top: 0;
+  }
+  .hg-sheet-list {
+    columns: 2;
+    column-gap: 8mm;
+    margin: 5mm 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .hg-sheet-list.notes {
+    columns: 1;
+  }
+  .hg-sheet-list.notes.many {
+    columns: 2;
+  }
+  .hg-sheet-list li {
+    display: flex;
+    gap: 2.5mm;
+    break-inside: avoid;
+    margin: 0 0 1.6mm;
+  }
+  .hg-sheet-n {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 5mm;
+    height: 5mm;
+    border-radius: 50%;
+    background: #9a3b1f;
+    color: #fff;
+    font-size: 7.5pt;
+    font-weight: 600;
+  }
+  .hg-sheet-place {
+    margin: 0;
+  }
+  .hg-sheet-place b {
+    font: 600 10.5pt var(--font-serif);
+  }
+  .hg-sheet-ref {
+    margin-left: 2mm;
+    color: #5b4f3c;
+  }
+  /* An outline map: a line to write the name on. */
+  .hg-sheet-blank {
+    display: inline-block;
+    width: 48mm;
+    height: 5mm;
+    border-bottom: 0.3mm solid #5b4f3c;
+    vertical-align: bottom;
+  }
+  /* An outline map: a frame round the white map, the passage kept on its line, and
+     lines for notes below. */
+  .hg-sheet.blank .hg-sheet-map {
+    border: 0.3mm solid #cfc4ad;
+  }
+  .hg-sheet.blank .hg-sheet-ref {
+    white-space: nowrap;
+  }
+  .hg-sheet.blank .hg-sheet-list li {
+    align-items: flex-end;
+    margin-bottom: 3mm;
+  }
+  /* A quiz: numbered questions, four choices each, the answers small at the foot. */
+  .hg-quiz {
+    margin: 5mm 0 0;
+    padding: 0;
+    list-style: none;
+    font: 10.5pt/1.45 var(--font-serif);
+  }
+  .hg-quiz li {
+    break-inside: avoid;
+    margin: 0 0 3.5mm;
+  }
+  .hg-quiz-q {
+    margin: 0;
+  }
+  .hg-quiz-n {
+    margin-right: 1.5mm;
+  }
+  .hg-quiz-o {
+    padding-left: 5mm;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1mm 7mm;
+    margin: 1mm 0 0;
+    font-family: var(--font-sans);
+    font-size: 10pt;
+  }
+  .hg-quiz-key {
+    transform: rotate(180deg);
+    text-align: right;
+  }
+  .hg-sheet-lines {
+    margin-top: 6mm;
+  }
+  .hg-sheet-lines p {
+    margin: 0 0 1mm;
+    color: #5b4f3c;
+    font-weight: 600;
+  }
+  .hg-sheet-lines span {
+    display: block;
+    height: 8mm;
+    border-bottom: 0.3mm solid #cfc4ad;
+  }
+  .hg-sheet-note {
+    margin: 0.4mm 0 0;
+    color: #3a3226;
+    font: 9.5pt/1.4 var(--font-serif);
+  }
+  .hg-sheet-foot {
+    margin-top: 5mm;
+    padding-top: 2mm;
+    border-top: 0.3mm solid #d8ccb2;
+    color: #5b4f3c;
+    font-size: 7.5pt;
+  }
+  .hg-sheet-foot p {
+    margin: 0 0 0.8mm;
+  }
+  /* A lesson's link is long (its places, its name): it breaks anywhere rather than
+     widening the page, which the browser would then shrink to fit. */
+  .hg-sheet-url {
+    color: #9a3b1f;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Inside another site (App.tsx): no scale bar; in a narrow column no zoom buttons either,
+   where they covered the names and gestures zoom (the compass stays). The (i) stays: the licences need it. */
+.hg-embed .maplibregl-ctrl-scale {
+  display: none;
+}
+@media (max-width: 639px) {
+  .hg-embed .maplibregl-ctrl-zoom-in,
+  .hg-embed .maplibregl-ctrl-zoom-out {
+    display: none;
+  }
+  .hg-embed .maplibregl-ctrl-compass {
+    border-top: 0;
+  }
+}
+/* A short frame: its compact card would cover the zoom buttons; gestures zoom. */
+@media (max-height: 519px) {
+  .hg-embed .maplibregl-ctrl-zoom-in,
+  .hg-embed .maplibregl-ctrl-zoom-out {
+    display: none;
+  }
+  .hg-embed .maplibregl-ctrl-compass {
+    border-top: 0;
+  }
+}
+
+/* The map's own buttons drawn with the player's pen: MapLibre's bitmap glyphs (a bold
+   plus, a two-tone compass, a filled (i)) beside Lucide's 2 px lines read as two sets of
+   controls. Masks keep MapLibre's behaviour, the compass's turn with the bearing too. */
+.maplibregl-ctrl-icon,
+.maplibregl-ctrl-attrib-button::before {
+  background-image: none !important;
+  background-color: var(--color-ink-soft) !important;
+  -webkit-mask: var(--hg-icon) center / 18px no-repeat;
+  mask: var(--hg-icon) center / 18px no-repeat;
+  opacity: 1;
+}
+/* The (i) is drawn inside the button, not as a mask over it: the button keeps its own
+   round background on hover, and the credits it opens (the licences ask for them) are
+   never behind an invisible button. */
+.maplibregl-ctrl-attrib-button {
+  background-image: none !important;
+}
+.maplibregl-ctrl-attrib-button::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.maplibregl-ctrl-zoom-in .maplibregl-ctrl-icon {
+  --hg-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='M12 5v14'/%3E%3C/svg%3E");
+}
+.maplibregl-ctrl-zoom-out .maplibregl-ctrl-icon {
+  --hg-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E");
+}
+.maplibregl-ctrl-compass .maplibregl-ctrl-icon {
+  --hg-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12 3 6 18-6-4-6 4z'/%3E%3C/svg%3E");
+}
+.maplibregl-ctrl-attrib-button {
+  --hg-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 16v-4'/%3E%3Cpath d='M12 8h.01'/%3E%3C/svg%3E");
+}
+.maplibregl-ctrl-group button:hover .maplibregl-ctrl-icon,
+.maplibregl-ctrl-attrib-button:hover::before {
+  background-color: var(--color-ink) !important;
+}
+.maplibregl-ctrl-group button:disabled .maplibregl-ctrl-icon {
+  opacity: 0.35;
+}
+/* The scale as a hairline with end ticks under its figure, not a box. */
+.hg-map-slot .maplibregl-ctrl-scale {
+  background: transparent;
+  border: 0;
+  border-bottom: 1.5px solid var(--color-ink-soft);
+  position: relative;
+  padding: 0 2px 2px;
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+}
+.hg-map-slot .maplibregl-ctrl-scale::before,
+.hg-map-slot .maplibregl-ctrl-scale::after {
+  content: "";
+  position: absolute;
+  bottom: -1.5px;
+  width: 1.5px;
+  height: 5px;
+  background: var(--color-ink-soft);
+}
+.hg-map-slot .maplibregl-ctrl-scale::before {
+  left: 0;
+}
+.hg-map-slot .maplibregl-ctrl-scale::after {
+  right: 0;
+}
+
+/* A switch for the layers: a track and a knob, not the browser's check box. */
+.hg-switch {
+  appearance: none;
+  position: relative;
+  flex: none;
+  width: 36px;
+  height: 20px;
+  border-radius: 9999px;
+  background: rgb(43 36 24 / 0.18);
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+.hg-switch::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: #fffdf8;
+  box-shadow: 0 1px 2px rgb(20 14 8 / 0.3);
+  transition: transform 160ms ease;
+}
+.hg-switch:checked {
+  background: var(--color-accent);
+}
+.hg-switch:checked::before {
+  transform: translateX(16px);
+}
+.hg-switch:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hg-switch,
+  .hg-switch::before {
+    transition: none;
+  }
 }

@@ -9,6 +9,9 @@ title:
   en: "Hezekiah and Isaiah"
   ru: "Езекия и Исаия"
 year: "701 BC"
+# Where the story happens, told of several people: no time on foot.
+walked: false
+people: ["Hezekiah@2Ki.16.20-Mat"]
 approximate: true
 stops:
   - place: a15257a # Jerusalem
@@ -25,8 +28,8 @@ stops:
   - place: a3cc590 # Lachish
     ref: 2Kgs.18.13-2Kgs.18.16
     note:
-      en: "Sennacherib takes the fortified cities of Judah; Hezekiah sends word to him at Lachish and pays the tribute laid on him."
-      ru: "Сеннахирим берёт укреплённые города Иуды; Езекия посылает к нему в Лахис с повинной и платит наложенную дань."
+      en: 'Sennacherib takes the fortified cities of Judah; Hezekiah sends to him at Lachish, "I have offended", and pays the tribute laid on him.'
+      ru: "Сеннахирим берёт укреплённые города Иуды; Езекия посылает к нему в Лахис: «виновен я», и платит наложенную дань."
   - place: a15257a # Jerusalem
     ref: 2Kgs.18.17-2Kgs.19.7
     note:
@@ -40,10 +43,10 @@ stops:
   - place: a15257a # Jerusalem
     ref: 2Kgs.19.14-2Kgs.19.34
     note:
-      en: 'Hezekiah spreads the letter before the Lord and prays; Isaiah brings the answer: "I will defend this city."'
-      ru: "Езекия развертывает письмо пред Господом и молится; Исаия передаёт ответ: «Я буду охранять город сей»."
+      en: 'Hezekiah spreads the letter before the Lord and prays; Isaiah sends him the answer: "I will defend this city."'
+      ru: "Езекия развертывает письмо пред Господом и молится; Исаия посылает ему ответ: «Я буду охранять город сей»."
   - place: a70fd5d # Nineveh
     ref: 2Kgs.19.35-2Kgs.19.37
     note:
-      en: "After the angel of the Lord strikes the Assyrian camp, Sennacherib goes home and dwells at Nineveh, where his sons later kill him."
-      ru: "Когда Ангел Господень поражает стан Ассирийский, Сеннахирим возвращается и живёт в Ниневии; там его позже убивают сыновья."
+      en: "After the angel of the Lord strikes the Assyrian camp, Sennacherib goes home and dwells at Nineveh; later his sons slay him as he worships in the house of Nisroch his god."
+      ru: "Когда Ангел Господень поражает стан Ассирийский, Сеннахирим возвращается и живёт в Ниневии; позже сыновья убивают его, когда он поклоняется в доме Нисроха, бога своего."

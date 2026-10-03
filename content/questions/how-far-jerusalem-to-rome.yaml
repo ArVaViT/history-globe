@@ -1,0 +1,33 @@
+id: how-far-jerusalem-to-rome
+question:
+  en: "How far is it from Jerusalem to Rome?"
+  ru: "Как далеко от Иерусалима до Рима?"
+answer:
+  en:
+    - "Rome is about 2,305 km north-west of Jerusalem in a straight line, and about 2,235 km from Caesarea, the port from which Paul sailed. By his actual route on the map, from Caesarea by Sidon, Myra and Crete to the shipwreck on Malta (Melita) and on by Sicily to Puteoli and the Appian Way, the journey measures about 2,995 km stop to stop; it began in the autumn of AD 59 and, after three months' wintering on the island, ended in the spring of 60 on the usual chronology."
+    - 'Paul had long wished to see Rome: "oftentimes I purposed to come unto you", he wrote to the Romans, hoping to pass through on his way to Spain. In Jerusalem the Lord told him, "as thou hast testified of me in Jerusalem, so must thou bear witness also at Rome." He arrived as a prisoner. At Puteoli, the port in the Bay of Naples, "we found brethren, and were desired to tarry with them seven days: and so we went toward Rome"; believers came out to meet him "as far as Appii forum, and The three taverns", and in Rome he "was suffered to dwell by himself with a soldier that kept him". The last stage, from Puteoli to Rome by the Appian Way, is about 205 km on the map.'
+    - "Rome lies on the Tiber about 25 km from the sea. Its Jewish community grew largely from captives whom Pompey brought to Italy after taking Jerusalem in 63 BC; about AD 49 Claudius expelled the Jews from the city, which is how Aquila and Priscilla came to Corinth. Paul lived two whole years in his own hired house, preaching; after the fire of AD 64 Nero blamed the Christians, and early tradition holds that Peter and Paul were put to death in Rome under him. Ten years after Paul's arrival, in AD 70, an army from Rome destroyed Jerusalem and its Temple."
+  ru:
+    - "Рим лежит примерно в 2305 км к северо-западу от Иерусалима по прямой и в 2235 км от Кесарии — гавани, из которой отплыл Павел. По его действительному маршруту на карте — из Кесарии мимо Сидона, Мир и Крита до кораблекрушения у Мелита (Мальты) и дальше мимо Сицилии в Путеол и по Аппиевой дороге — путь составляет около 2995 км от остановки к остановке; он начался осенью 59 г. н. э. и после трёхмесячной зимовки на Мелите закончился весной 60 г. по обычной хронологии."
+    - "Павел давно хотел увидеть Рим: «я многократно намеревался придти к вам», писал он римлянам, надеясь пройти через Рим по пути в Испанию. В Иерусалиме Господь сказал ему: «как ты свидетельствовал о Мне в Иерусалиме, так надлежит тебе свидетельствовать и в Риме». Он прибыл узником. В Путеоле, гавани в Неаполитанском заливе, «нашли братьев, и были упрошены пробыть у них семь дней, а потом пошли в Рим»; верующие вышли навстречу «до Аппиевой площади и трех гостиниц», а в Риме «Павлу позволено жить особо с воином, стерегущим его». Последний отрезок, от Путеола до Рима по Аппиевой дороге, — около 205 км на карте."
+    - "Рим стоит на Тибре примерно в 25 км от моря. Его иудейская община выросла главным образом из пленников, которых Помпей привёл в Италию после взятия Иерусалима в 63 г. до н. э.; около 49 г. н. э. Клавдий изгнал иудеев из города, и так Акила и Прискилла оказались в Коринфе. Павел целых два года жил на своём иждивении, проповедуя; после пожара 64 г. Нерон обвинил христиан, и раннее предание говорит, что Пётр и Павел приняли при нём смерть в Риме. Через десять лет после прибытия Павла, в 70 г. н. э., войско из Рима разрушило Иерусалим и Храм."
+map:
+  year: "AD 60"
+  ref: Acts.28.16
+scripture:
+  [
+    Rom.1.13-Rom.1.15,
+    Rom.15.24,
+    Acts.23.11,
+    Acts.27.1-Acts.27.2,
+    Acts.28.13-Acts.28.16,
+    Acts.28.30-Acts.28.31,
+  ]
+sources:
+  - "History Globe tour “Paul's voyage to Rome” (the stops and the dating of the voyage) and the article on Rome"
+  - "Straight-line distances computed from the map's place coordinates (OpenBible.info Bible Geocoding Data); the route summed stop to stop along the tour"
+  - "Road lengths along the Roman road network of Itiner-e (de Soto, Pažout, Brughmans et al. 2025): Puteoli to Forum of Appius (142 km) and Forum of Appius to Rome (65 km)"
+  - "Tacitus, Histories 5.9 (Pompey in Jerusalem); Philo, Embassy to Gaius 155 (the Jews of Rome descended from captives)"
+  - "Suetonius, Claudius 25.4; Tacitus, Annals 15.38-44; 1 Clement 5; Eusebius, Church History 2.25.5-8"
+  - "History Globe dated events (Pompey takes Jerusalem 63 BC; Claudius expels the Jews c. AD 49; the fire of Rome AD 64; the Temple destroyed AD 70)"
+status: checked

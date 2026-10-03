@@ -16,16 +16,39 @@ const ad = (year: number) => ({ year, era: "AD" as const });
 
 export const PERIODS: readonly Period[] = [
   {
+    id: "eb1",
+    range: inclusiveRange(bc(3500), bc(3051)),
+    name: { en: "Early Bronze I", ru: "Ранняя бронза I" },
+  },
+  {
+    id: "eb2",
+    range: inclusiveRange(bc(3050), bc(2701)),
+    name: { en: "Early Bronze II", ru: "Ранняя бронза II" },
+  },
+  {
+    id: "eb3",
+    range: inclusiveRange(bc(2700), bc(2301)),
+    name: { en: "Early Bronze III", ru: "Ранняя бронза III" },
+  },
+  {
+    id: "eb4",
+    range: inclusiveRange(bc(2300), bc(2001)),
+    name: { en: "Early Bronze IV", ru: "Ранняя бронза IV" },
+  },
+  {
     id: "mb2",
     range: inclusiveRange(bc(2000), bc(1551)),
     name: { en: "Middle Bronze II", ru: "Средняя бронза II" },
-    disputed: { en: "dating of the patriarchs", ru: "датировка патриархов" },
+    disputed: { en: "The patriarchs' dates are disputed", ru: "Время патриархов спорно" },
   },
   {
     id: "lb",
     range: inclusiveRange(bc(1550), bc(1201)),
     name: { en: "Late Bronze", ru: "Поздняя бронза" },
-    disputed: { en: "early or late Exodus", ru: "ранний или поздний Исход" },
+    disputed: {
+      en: "Exodus: c. 1446 or c. 1270 BC",
+      ru: "Исход: ок. 1446 или ок. 1270 г. до н. э.",
+    },
   },
   {
     id: "iron1",
@@ -36,7 +59,7 @@ export const PERIODS: readonly Period[] = [
     id: "iron2a",
     range: inclusiveRange(bc(1000), bc(831)),
     name: { en: "Iron IIA", ru: "Железный век IIA" },
-    disputed: { en: "high or low chronology", ru: "высокая или низкая хронология" },
+    disputed: { en: "Its archaeological dates are disputed", ru: "Археологи спорят о датах" },
   },
   {
     id: "iron2b",
@@ -75,8 +98,33 @@ export const PERIODS: readonly Period[] = [
   },
   {
     id: "roman",
-    range: inclusiveRange(ad(71), ad(100)),
+    range: inclusiveRange(ad(71), ad(135)),
     name: { en: "Roman", ru: "Римский период" },
+  },
+  {
+    id: "late-roman",
+    range: inclusiveRange(ad(136), ad(324)),
+    name: { en: "Late Roman", ru: "Позднеримский период" },
+  },
+  {
+    id: "byzantine",
+    range: inclusiveRange(ad(325), ad(637)),
+    name: { en: "Byzantine", ru: "Византийский период" },
+  },
+  {
+    id: "early-islamic",
+    range: inclusiveRange(ad(638), ad(1098)),
+    name: { en: "Early Islamic", ru: "Раннеисламский период" },
+  },
+  {
+    id: "crusader",
+    range: inclusiveRange(ad(1099), ad(1291)),
+    name: { en: "Crusader", ru: "Период крестоносцев" },
+  },
+  {
+    id: "mamluk",
+    range: inclusiveRange(ad(1292), ad(1300)),
+    name: { en: "Mamluk", ru: "Мамлюкский период" },
   },
 ];
 

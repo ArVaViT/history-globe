@@ -1,0 +1,39 @@
+# Overview article (ADR 0007). Mainstream facts only; Mesopotamian dates follow the middle chronology.
+id: babylon
+place: a217d18
+title:
+  en: "Babylon"
+  ru: "Вавилон"
+body:
+  en:
+    - "Babylon lay on the Euphrates in southern Mesopotamia, about 85 km south of modern Baghdad, beside today's Hillah. It first appears as a small town on a tablet of the Akkadian king Shar-kali-sharri in the twenty-third century BC. Its rise came with the First Dynasty of Babylon: Hammurabi (1792–1750 BC in the middle chronology) united southern Mesopotamia and made the city its capital. In 1595 BC the Hittite king Mursili I sacked it, and Kassite kings then ruled Babylonia for about four centuries."
+    - "In Genesis, Babel is among the first cities of Nimrod's kingdom and the place of the tower whose builders were scattered. Under Assyrian rule Babylon often rebelled; its king Merodach-baladan sent envoys to Hezekiah, and in 689 BC Sennacherib destroyed the city. Nabopolassar, who became king there in 626 BC, founded the Neo-Babylonian kingdom, and his son Nebuchadnezzar (605–562 BC) rebuilt Babylon with double walls, palaces, the Ishtar Gate and the ziggurat Etemenanki. Exiles from Judah were brought here in 597 and in 587 or 586 BC; tablets from the royal palace list rations for Jehoiachin, king of Judah, whom the Bible also places at the Babylonian court."
+    - "In 539 BC Cyrus of Persia took Babylon, as the Nabonidus Chronicle and the Cyrus Cylinder record, and the Book of Ezra opens with his decree letting the exiles return. The Book of Daniel sets the feast of Belshazzar in the city. Babylon remained a royal residence of the Persian kings. Alexander the Great entered it in 331 BC and died in Nebuchadnezzar's palace in 323 BC."
+    - "After Seleucus founded Seleucia on the Tigris about 305 BC, people and trade drained away from Babylon, though its temple scholars went on writing astronomical texts in cuneiform into the first century AD. When Trajan came in AD 116, he found mostly mounds and ruins. In Revelation, Babylon became the name of the proud world power that falls. By late antiquity the once great city was a minor place."
+  ru:
+    - "Вавилон стоял на Евфрате в южной Месопотамии, примерно в 85 км к югу от нынешнего Багдада, рядом с современной Хиллой. Впервые он упоминается как небольшой город на табличке аккадского царя Шар-кали-шарри в XXIII веке до н. э. Возвышение пришло с I Вавилонской династией: Хаммурапи (1792–1750 гг. до н. э. по средней хронологии) объединил юг Месопотамии и сделал город своей столицей. В 1595 г. до н. э. его разграбил хеттский царь Мурсили I, а затем около четырёх веков Вавилонией правили касситские цари."
+    - "В книге Бытия Вавилон — один из первых городов царства Нимрода и место башни, строители которой были рассеяны. Под властью Ассирии Вавилон не раз восставал; его царь Беродах Баладан отправил послов к Езекии, а в 689 г. до н. э. Сеннахирим разрушил город. Набопаласар, воцарившийся здесь в 626 г. до н. э., основал Нововавилонское царство, а его сын Навуходоносор (605–562 гг. до н. э.) отстроил Вавилон заново: двойные стены, дворцы, ворота Иштар и зиккурат Этеменанки. Изгнанников из Иудеи привели сюда в 597 и в 587 или 586 г. до н. э.; таблички из царского дворца перечисляют пайки Иехонии, царя Иудейского, которого и Библия помещает при вавилонском дворе."
+    - "В 539 г. до н. э. Вавилон взял персидский царь Кир, о чём сообщают Хроника Набонида и Цилиндр Кира, а книга Ездры начинается с его указа, позволившего изгнанникам вернуться. Книга Даниила помещает в этот город пир Валтасара. Вавилон оставался одной из резиденций персидских царей. Александр Македонский вступил в него в 331 г. до н. э. и умер во дворце Навуходоносора в 323 г. до н. э."
+    - "После того как Селевк около 305 г. до н. э. основал Селевкию на Тигре, люди и торговля стали уходить из Вавилона, хотя храмовые учёные продолжали писать клинописью астрономические тексты до I века н. э. Траян, придя сюда в 116 г. н. э., застал в основном холмы и развалины. В Откровении Вавилон стал именем гордой мировой державы, которая падает. К поздней античности некогда великий город превратился в малозначимое место."
+scripture:
+  - Gen.10.10
+  - Gen.11.1-Gen.11.9
+  - 2Kgs.20.12-2Kgs.20.13
+  - 2Kgs.24.10-2Kgs.24.16
+  - 2Kgs.25.8-2Kgs.25.11
+  - 2Kgs.25.27-2Kgs.25.30
+  - Ezra.1.1-Ezra.1.4
+  - Dan.5.1-Dan.5.30
+  - Rev.18.1-Rev.18.24
+sources:
+  - "Nabonidus Chronicle (ABC 7) iii 12-16; the Cyrus Cylinder"
+  - "Babylonian Chronicle ABC 2 (Nabopolassar's accession, 626 BC)"
+  - "Sennacherib's Bavian inscription (destruction of Babylon, 689 BC)"
+  - "Nebuchadnezzar II's building inscriptions (the East India House Inscription)"
+  - "Jehoiachin ration tablets from Babylon (E. F. Weidner, 1939)"
+  - "Arrian, Anabasis 3.16 (entry, 331 BC); 7.24-28 (death, 323 BC); Plutarch, Alexander 75-76"
+  - "Cassius Dio, Roman History 68.30"
+  - "A. J. Sachs, 'The Latest Datable Cuneiform Tablets', in Kramer Anniversary Volume (AOAT 25, 1976)"
+  - "J. Oates, Babylon (rev. ed., 1986)"
+  - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016) (middle chronology)"
+status: checked

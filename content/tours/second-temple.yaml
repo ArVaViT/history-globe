@@ -10,6 +10,8 @@ title:
   en: "The first return and the second Temple"
   ru: "Первое возвращение и второй Храм"
 year: "538 BC"
+# Where the work and the letters were, not a journey: no time on foot.
+walked: false
 approximate: true
 stops:
   - place: a217d18 # Babylon
@@ -21,7 +23,7 @@ stops:
     ref: Ezra.3.7
     note:
       en: "Cedar is brought from Lebanon by sea to Joppa for the house of God, by leave of Cyrus."
-      ru: "Кедровый лес с Ливана доставляют по морю в Иоппию для дома Божия, с дозволения Кира."
+      ru: "Кедровый лес с Ливана доставляют по морю в Яфу (Иоппию) для дома Божия, с дозволения Кира."
   - place: a15257a # Jerusalem
     ref: Ezra.3.8-Ezra.3.13
     year: "536 BC"
@@ -32,8 +34,8 @@ stops:
     ref: Ezra.4.24-Ezra.6.12
     year: "520 BC"
     note:
-      en: "In the second year of Darius the prophets Haggai and Zechariah stir up the builders to begin again; asked by the governor, Darius has the archives searched, a scroll with Cyrus's decree is found at Ecbatana in Media, and he orders the work to go on."
-      ru: "Во второй год Дария пророки Аггей и Захария подкрепляют строителей; по донесению заречного областеначальника Дарий велит искать в книгохранилище; в Екбатане, в области Мидии, находят свиток с повелением Кира о доме Божием, и Дарий велит продолжать работу."
+      en: "In the second year of Darius the builders begin again, with the prophets Haggai and Zechariah helping them; asked by the governor, Darius has the archives searched, a scroll with Cyrus's decree is found at Ecbatana in Media, and he orders the work to go on."
+      ru: "Во второй год Дария строители снова начинают работу, и пророки Аггей и Захария подкрепляют их; по донесению заречного областеначальника Дарий велит искать в книгохранилище; в Екбатане, в области Мидии, находят свиток с повелением Кира о доме Божием, и Дарий велит продолжать работу."
   - place: a15257a # Jerusalem
     ref: Ezra.6.15-Ezra.6.22
     year: "516 BC"

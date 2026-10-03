@@ -1,5 +1,6 @@
 # Paul's third missionary journey, Acts 18:23–21:17. Named towns only, in the order of the
-# text; regions crossed in passing (Galatia and Phrygia, Macedonia, Greece) are left out.
+# text; regions crossed in passing (Galatia and Phrygia, Macedonia, Greece) are left out, and
+# the leg to Philippi, months through them, is marked untold: no walking time is guessed.
 # Trogyllium (Acts 20:15) is omitted: it is absent from part of the manuscript tradition.
 # Year approximate. Source for the stop list: research note 16, section 4.3.
 id: paul-3
@@ -7,6 +8,7 @@ title:
   en: "Paul's third journey"
   ru: "Третье путешествие Павла"
 year: "AD 54"
+people: ["Paul@Act.7.58-2Pe"]
 approximate: true
 stops:
   - place: ae41ab4
@@ -20,12 +22,15 @@ stops:
       en: "About three years in Ephesus; the riot of Demetrius."
       ru: "Около трёх лет в Ефесе; мятеж Димитрия."
   - place: a49e1d0
-    ref: Acts.20.6
+    ref: Acts.20.1-Acts.20.6
+    by: untold
     note:
-      en: "After the days of unleavened bread they sail from Philippi."
-      ru: "После дней опресночных отплывают из Филипп."
+      en: "Through Macedonia to Greece for three months, and back; after the days of unleavened bread they sail from Philippi."
+      ru: "Через Македонию в Грецию на три месяца и обратно; после дней опресночных отплывают из Филипп."
   - place: a91c509
     ref: Acts.20.6-Acts.20.12
+    by: sea
+    sailed: { days: 5, about: true, ref: Acts.20.6 }
     note:
       en: "Seven days in Troas; Eutychus."
       ru: "Семь дней в Троаде; Евтих."
@@ -36,51 +41,65 @@ stops:
       ru: "Павел идёт в Асс пешком."
   - place: a33910d
     ref: Acts.20.14
+    by: sea
     note:
       en: "They come to Mitylene."
       ru: "Прибывают в Митилину."
   - place: a4c2c75
     ref: Acts.20.15
+    by: sea
+    sailed: { days: 1, ref: Acts.20.15 }
     note:
       en: "Opposite Chios."
       ru: "Против Хиоса."
   - place: acf6ec0
     ref: Acts.20.15
+    by: sea
+    sailed: { days: 1, ref: Acts.20.15 }
     note:
       en: "They touch at Samos."
       ru: "Приплывают в Самос."
   - place: a55027d
     ref: Acts.20.17-Acts.20.38
+    by: sea
+    sailed: { days: 1, ref: Acts.20.15 }
     note:
       en: "Farewell to the elders of Ephesus."
       ru: "Прощание с пресвитерами Ефесской церкви."
   - place: a398e5d
     ref: Acts.21.1
+    by: sea
     note:
       en: "A straight course to Cos."
       ru: "Прямым путём в Кос."
   - place: a4218ee
     ref: Acts.21.1
+    by: sea
+    sailed: { days: 1, ref: Acts.21.1 }
     note:
       en: "Rhodes."
       ru: "Родос."
   - place: ade301b
     ref: Acts.21.1-Acts.21.2
+    by: sea
     note:
       en: "At Patara they find a ship to Phoenicia."
       ru: "В Патаре находят корабль в Финикию."
   - place: a160272
     ref: Acts.21.3-Acts.21.6
+    by: sea
     note:
       en: "Seven days with the disciples at Tyre."
       ru: "Семь дней у учеников в Тире."
   - place: abc2af0
     ref: Acts.21.7
+    by: sea
     note:
       en: "One day with the brothers at Ptolemais."
       ru: "Один день у братьев в Птолемаиде."
   - place: a58735e
     ref: Acts.21.8-Acts.21.14
+    by: sea
     note:
       en: "In the house of Philip; the prophecy of Agabus."
       ru: "В доме Филиппа; пророчество Агава."

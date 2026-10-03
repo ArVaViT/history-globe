@@ -1,0 +1,34 @@
+id: when-was-the-second-temple-built
+question:
+  en: "When was the second Temple built?"
+  ru: "Когда был построен второй Храм?"
+answer:
+  en:
+    - "The second Temple was finished in the sixth year of Darius I, in the spring of 515 BC, about twenty years after the first exiles returned from Babylon and some seventy years after the Babylonians burned Solomon's Temple in 587 or 586 BC; the map rounds this to c. 516 BC, as many handbooks do, since that year of Darius began in the spring of 516."
+    - "Ezra tells the story in stages. In 538 BC, “in the first year of Cyrus king of Persia”, the king decreed: “let him go up to Jerusalem, which is in Judah, and build the house of the LORD God of Israel.” In the second year after the return the foundation was laid, and the old men “that had seen the first house” wept at the sight. Then the work stopped, “unto the second year of the reign of Darius king of Persia”, 520 BC, when Haggai and Zechariah stirred Zerubbabel and the high priest Joshua to build again; Haggai dates his first oracle to the first day of the sixth month of that year. “And this house was finished on the third day of the month Adar, which was in the sixth year of the reign of Darius the king”, a date that the Babylonian calendar tables put in March 515 BC."
+    - "Herod the Great rebuilt this Temple from the ground up in the last decades of the first century BC, beginning, Josephus says, in the eighteenth year of his reign, about 20 BC; the sanctuary itself was finished quickly, but the courts and porticoes were still being built in Jesus' day, which is why the Jews told him “Forty and six years was this temple in building”, and Josephus says the work ended only in the 60s AD, a few years before the Romans destroyed it in AD 70. Because the sacrifices never ceased, it counts as the same second Temple."
+  ru:
+    - "Второй Храм был окончен в шестой год Дария I, весной 515 г. до н. э., примерно через двадцать лет после возвращения первых изгнанников из Вавилона и примерно через семьдесят лет после того, как вавилоняне сожгли Храм Соломона в 587 или 586 г. до н. э.; карта, как и многие справочники, округляет это до 516 г. до н. э., поскольку тот год Дария начался весной 516-го."
+    - "Книга Ездры рассказывает это по ступеням. «В первый год Кира, царя Персидского», в 538 г. до н. э., царь повелел: «пусть он идет в Иерусалим, что в Иудее, и строит дом Господа Бога Израилева». На второй год после возвращения положили основание, и старики, «которые видели прежний храм», плакали при этом. Затем работа остановилась «до второго года царствования Дария, царя Персидского», 520 г. до н. э., когда Аггей и Захария подняли Зоровавеля и первосвященника Иисуса строить снова; Аггей датирует своё первое слово первым днём шестого месяца того года. «И окончен дом сей к третьему дню месяца Адара, в шестой год царствования царя Дария» — дата, которую таблицы вавилонского календаря относят к марту 515 г. до н. э."
+    - "Ирод Великий перестроил этот Храм с основания в последние десятилетия I века до н. э., начав, по словам Иосифа Флавия, в восемнадцатый год своего царствования, около 20 г. до н. э.; само святилище закончили быстро, но дворы и портики ещё строились во дни Иисуса, потому иудеи и сказали Ему: «сей храм строился сорок шесть лет», а Иосиф Флавий говорит, что работы завершились лишь в 60-х годах н. э., за несколько лет до того, как римляне разрушили Храм в 70 году. Поскольку жертвы не прекращались, это считается тем же вторым Храмом."
+map:
+  place: a15257a
+  year: "c. 516 BC"
+  ref: Ezra.6.15
+scripture:
+  [
+    Ezra.1.1-Ezra.1.3,
+    Ezra.3.8-Ezra.3.12,
+    Ezra.4.24,
+    Ezra.5.1-Ezra.5.2,
+    Hag.1.1,
+    Ezra.6.15-Ezra.6.16,
+    John.2.20,
+  ]
+sources:
+  - "Josephus, Antiquities 11.1-107 (from Cyrus to the dedication); 15.380-425 (Herod's rebuilding, from his eighteenth year); 20.219 (the work finished under Albinus)"
+  - "R. A. Parker and W. H. Dubberstein, Babylonian Chronology 626 B.C.-A.D. 75 (1956), the tables for the reign of Darius I"
+  - "The Cyrus Cylinder (British Museum 90920), on the return of peoples and gods to their homes"
+  - "H. G. M. Williamson, Ezra, Nehemiah (Word Biblical Commentary 16, 1985), on Ezra 6:15"
+  - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. G. Vermes and F. Millar, vol. 1 (1973), on Herod's Temple"
+status: checked

@@ -98,12 +98,30 @@ export const HAS_LOCAL_NAME: ExpressionSpecification = [
   ["has", "name_ru"],
 ];
 
+/** The location is uncertain: disputed, or tentative: scored under 600 by OpenBible (sites.ts). */
+const UNCERTAIN_SITE: ExpressionSpecification = [
+  "any",
+  ["boolean", ["get", "disputed"], false],
+  ["<", ["to-number", ["coalesce", ["get", "confidence"], 1000]], 600],
+];
+
+/** The two browns (0, 8) are near the desert's own colour: their fill is laid on thicker. */
+const WARM: ExpressionSpecification = ["match", ["get", "c"], [0, 8], 1.6, 1];
+
 const polityColor: ExpressionSpecification = [
   "match",
   ["get", "c"],
   ...POLITY_COLORS.flatMap((color, i) => [i, color]),
   POLITY_COLORS[0],
 ] as unknown as ExpressionSpecification;
+
+/** The outer ring of the focus mask, in degrees: what lies beyond is greyed out. */
+export const FOCUS = { cx: 28, cy: 32, rx: 40.5, ry: 19.5 } as const;
+
+/** Whether a point is inside the focus mask's outer ring (scripts/build-content.ts). */
+export function inFocus(lon: number, lat: number): boolean {
+  return ((lon - FOCUS.cx) / FOCUS.rx) ** 2 + ((lat - FOCUS.cy) / FOCUS.ry) ** 2 <= 1;
+}
 
 /** Soft "coming soon" mask: two rings around the Levant, stronger outside. */
 function ellipse(cx: number, cy: number, rx: number, ry: number, n = 128): [number, number][] {
@@ -123,9 +141,10 @@ function focusMask(): FeatureCollection {
     [-180, 85],
     [-180, -85],
   ];
-  // The world of the Bible and Acts: from Mesopotamia to Rome (Paul's voyage, Acts 27–28).
-  const inner = ellipse(29, 34, 24, 12.5);
-  const outer = ellipse(29, 34, 27.5, 14.5);
+  // The world of the Bible and Acts: from Spain (Tarshish, Rom 15:24) to Persia, from the
+  // Black Sea to the Red Sea and Arabia. Widened on 2.10.2026.
+  const inner = ellipse(28, 32, 36, 17);
+  const outer = ellipse(FOCUS.cx, FOCUS.cy, FOCUS.rx, FOCUS.ry);
   return {
     type: "FeatureCollection",
     features: [
@@ -206,6 +225,25 @@ const OFF_TOUR: ExpressionSpecification = [
   ["!", ["in", ["get", "id"], TOUR_PLACES]],
 ];
 const IN_TOUR: ExpressionSpecification = ["in", ["get", "id"], TOUR_PLACES];
+/** Names kept off the map for a while: a quiz's answers until they are given. */
+const NOT_HIDDEN: ExpressionSpecification = [
+  "!",
+  ["in", ["get", "id"], ["global-state", "hiddenNames"]],
+];
+
+/**
+ * A place's name out of its time (a town not yet built, or in ruins) only from a region's
+ * view in: far out the pale names of Iconium and Lystra crowded 1800 BC, with no halo to read
+ * them by. Up close they still say the town is not there yet (place-label-past).
+ */
+// A tour's stop or the picked place keeps its name, whenever it stood (it is the one asked for).
+const LABEL_IN_TIME: ExpressionSpecification = [
+  "any",
+  ["!", OUT_OF_TIME],
+  IN_TOUR,
+  IS_SELECTED,
+  [">=", ["zoom"], 7],
+];
 const NOT_TOURING: ExpressionSpecification = ["==", ["length", TOUR_PLACES], 0];
 
 /** A second record of the same name on the same point (pipeline `dup`): dot, no label. */
@@ -274,14 +312,52 @@ const isLandmark: ExpressionSpecification = [
  * a filter sees the zoom of its tile, an integer, so 5.2 would behave as 6 and a
  * mid-rank place (Corinth, Ephesus) would stay hidden at zoom 5.9.
  */
-const minZoomByRank: ExpressionSpecification = ["match", ["get", "rank"], 0, 3, 1, 5, 2, 6, 8];
+const minZoomByRank: ExpressionSpecification = ["match", ["get", "rank"], 0, 3, 1, 5, 2, 6, 9];
 
-/** A small place is drawn once a tour or a search flies to it, whatever its rank. */
+/**
+ * A small place is drawn once a search flies to it, whatever its rank; the places of a
+ * tour or a chapter from zoom 3, so a chapter framed whole (Acts 16, from Derbe to
+ * Philippi) shows its places even on a phone. Their labels still give way to each other.
+ */
 const visibleAtZoom: ExpressionSpecification = [
   "any",
   [">=", ["zoom"], minZoomByRank],
-  ["all", ["any", IS_SELECTED, IN_TOUR], [">=", ["zoom"], 5]],
+  ["all", IN_TOUR, [">=", ["zoom"], 3]],
+  ["all", IS_SELECTED, [">=", ["zoom"], 5]],
 ];
+
+/**
+ * The least-named places get a dot from zoom 9 (minZoomByRank) but a name only from 10,
+ * unless picked or in a tour: at 8-9 their names filled the hills around Jerusalem
+ * (150 labels), and their dots alone still crowded zoom 8.
+ */
+const labelledAtZoom: ExpressionSpecification = [
+  "any",
+  ["<", ["get", "rank"], 3],
+  [">=", ["zoom"], 10],
+  IS_SELECTED,
+  IN_TOUR,
+];
+
+/** Labels keep more room around them at a region's zoom than up close. */
+const LABEL_PADDING: ExpressionSpecification = ["interpolate", ["linear"], ["zoom"], 6, 8, 11, 3];
+
+/**
+ * The ancient world around the Bible (content/ancient-sites.json): cities, capitals and
+ * sanctuaries the Bible does not name, while they stood, quieter than its own places and
+ * giving way to them. The greatest from zoom 4, regional ones from 6, the rest from 8.
+ */
+const ANCIENT_NOW: ExpressionSpecification = [
+  "all",
+  ["<=", ["get", "from"], YEAR],
+  [">=", ["get", "to"], YEAR],
+  [">=", ["zoom"], ["match", ["get", "rank"], 0, 4, 1, 6, 8]],
+];
+// Battles: a deep red, apart from the route's accent and the places' browns.
+const BATTLE_INK = "#8e2a22";
+// A cool grey against the warm browns of the Bible's places, faded ones included: the
+// ancient world reads as another layer, not as a place out of its time.
+const ANCIENT_INK = "#5d6570";
 
 export function buildStyle(o: StyleOptions): StyleSpecification {
   const layers: LayerSpecification[] = [
@@ -331,6 +407,41 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "hillshade-exaggeration": ["interpolate", ["linear"], ["zoom"], 3, 0.35, 8, 0.55, 12, 0.7],
       },
     },
+    // States are drawn under the sea: Cliopatria's shapes are coarse offshore (square boxes
+    // around islands), and a border at sea means nothing on this map.
+    {
+      id: "polity-fill",
+      type: "fill",
+      source: "polities",
+      filter: ["all", ERA_FILTER, ["!", ["get", "rel"]]],
+      metadata: { group: "borders" },
+      paint: {
+        "fill-color": polityColor,
+        // A vassal (build-content.ts) wears its overlord's colour at half the strength.
+        "fill-opacity": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          3,
+          ["*", WARM, ["case", ["has", "vin"], 0, ["has", "v"], 0.12, 0.24]],
+          8,
+          ["*", WARM, ["case", ["has", "vin"], 0, ["has", "v"], 0.06, 0.12]],
+        ],
+      },
+    },
+    {
+      id: "polity-line",
+      type: "line",
+      source: "polities",
+      filter: ["all", ERA_FILTER, ["!", ["get", "rel"]]],
+      metadata: { group: "borders" },
+      paint: {
+        "line-color": polityColor,
+        "line-opacity": 0.85,
+        "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.8, 8, 2],
+        "line-dasharray": [4, 2],
+      },
+    },
     {
       id: "water",
       type: "fill",
@@ -364,53 +475,143 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.6, 7, 1.4, 11, 2.6],
       },
     },
-    {
-      id: "polity-fill",
-      type: "fill",
-      source: "polities",
-      filter: ["all", ERA_FILTER, ["!", ["get", "rel"]]],
-      metadata: { group: "borders" },
-      paint: {
-        "fill-color": polityColor,
-        "fill-opacity": ["interpolate", ["linear"], ["zoom"], 3, 0.24, 8, 0.12],
-      },
-    },
-    {
-      id: "polity-line",
+    // Roman roads (Itiner-e, CC BY 4.0): thin and quiet, from the Via Appia (312 BC) on;
+    // main roads from zoom 5, the others from 7. Conjectured stretches are fainter.
+    ...(["major", "minor"] as const).map((kind): LayerSpecification => ({
+      id: `road-${kind}`,
       type: "line",
-      source: "polities",
-      filter: ["all", ERA_FILTER, ["!", ["get", "rel"]]],
-      metadata: { group: "borders" },
+      source: `roads-${kind}`,
+      metadata: { group: "roads" },
+      minzoom: kind === "major" ? 5 : 7,
+      filter: [">=", YEAR, -311],
+      layout: { "line-cap": "round", "line-join": "round" },
       paint: {
-        "line-color": polityColor,
-        "line-opacity": 0.85,
-        "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.8, 8, 2],
-        "line-dasharray": [4, 2],
+        // Warm brown, so a road is not read as a river or a border.
+        "line-color": "#7a5228",
+        // Fades in over its first zoom level; zoom must be the outer expression.
+        "line-opacity": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          kind === "major" ? 5 : 7,
+          0,
+          kind === "major" ? 6 : 8,
+          ["match", ["get", "cert"], "certain", 0.85, 0.55],
+        ],
+        "line-width": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          5,
+          kind === "major" ? 1.4 : 1,
+          10,
+          kind === "major" ? 2.4 : 1.6,
+        ],
+        "line-dasharray": [2.5, 1.2],
       },
-    },
+    })),
     {
       id: "mask",
       type: "fill",
       source: "mask",
       paint: { "fill-color": T.mask, "fill-opacity": ["get", "o"] },
     },
+    // "Distance from here": a dashed straight line of its own, not a route (no lights, and
+    // it shows whatever the routes switch says).
+    {
+      id: "measure-halo",
+      type: "line",
+      source: "measure",
+      layout: { "line-cap": "round" },
+      paint: { "line-color": T.halo, "line-width": 5, "line-opacity": 0.8 },
+    },
+    {
+      id: "measure",
+      type: "line",
+      source: "measure",
+      layout: { "line-cap": "round" },
+      paint: { "line-color": T.accent, "line-width": 2, "line-dasharray": [1.5, 1.5] },
+    },
+    {
+      // An outline laid over the map to compare sizes (Jerusalem's walls over Babylon):
+      // a pale fill and a dashed edge, under the route and the places.
+      id: "outline-fill",
+      type: "fill",
+      source: "outline",
+      paint: { "fill-color": T.accent, "fill-opacity": 0.12 },
+    },
+    {
+      id: "outline-line",
+      type: "line",
+      source: "outline",
+      layout: { "line-join": "round" },
+      paint: { "line-color": T.accent, "line-width": 2.2, "line-dasharray": [2, 1.4] },
+    },
+    {
+      // The rest of a tour's way, faint: where it goes is seen from the first stop.
+      id: "route-ahead",
+      type: "line",
+      source: "route",
+      metadata: { group: "routes" },
+      filter: [
+        "all",
+        ["==", ["geometry-type"], "LineString"],
+        ["boolean", ["get", "ahead"], false],
+      ],
+      layout: { "line-cap": "round", "line-join": "round" },
+      // Faint, but read on the relief's browns: at 0.4 and 2 px it was lost there.
+      paint: {
+        "line-color": T.accent,
+        "line-width": 2.4,
+        "line-opacity": 0.6,
+        "line-dasharray": [1.4, 1.2],
+      },
+    },
     {
       id: "route-halo",
       type: "line",
       source: "route",
       metadata: { group: "routes" },
-      filter: ["==", ["geometry-type"], "LineString"],
+      filter: [
+        "all",
+        ["==", ["geometry-type"], "LineString"],
+        ["!", ["boolean", ["get", "ahead"], false]],
+      ],
       layout: { "line-cap": "round", "line-join": "round" },
-      paint: { "line-color": T.halo, "line-width": 7, "line-opacity": 0.85 },
+      paint: { "line-color": T.halo, "line-width": 8, "line-opacity": 0.9 },
     },
     {
       id: "route",
       type: "line",
       source: "route",
       metadata: { group: "routes" },
-      filter: ["==", ["geometry-type"], "LineString"],
+      filter: [
+        "all",
+        ["==", ["geometry-type"], "LineString"],
+        ["!", ["boolean", ["get", "ahead"], false]],
+      ],
       layout: { "line-cap": "round", "line-join": "round" },
-      paint: { "line-color": T.accent, "line-width": 3.2, "line-dasharray": [2, 1.4] },
+      // The way walked: dashed still (straight lines between the stops, not the roads),
+      // with short gaps, so it reads as a line on the relief and on a printed sheet.
+      paint: { "line-color": T.accent, "line-width": 4, "line-dasharray": [2.6, 1] },
+    },
+    {
+      id: "ancient-dot",
+      type: "circle",
+      source: "ancient",
+      metadata: { group: "ancient" },
+      filter: ANCIENT_NOW,
+      paint: {
+        // A hollow ring, as in the key: no fill to read as a white dot.
+        "circle-radius": ["match", ["get", "rank"], 0, 3.8, 1, 3.3, 2.8],
+        "circle-color": T.halo,
+        "circle-opacity": 0,
+        "circle-stroke-color": ANCIENT_INK,
+        "circle-stroke-width": 1.5,
+        // A tour, a person or a chapter in focus: the ancient world steps back with the
+        // places off it.
+        "circle-stroke-opacity": ["case", NOT_TOURING, 0.9, 0.35],
+      },
     },
     {
       // Mountains, springs, gates…: a small dark mark under the towns.
@@ -460,12 +661,14 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       },
     },
     {
-      // Major towns (most mentioned) get a ring around their dot, as on a printed atlas.
+      // Major towns (most mentioned) get a ring around their dot, as on a printed atlas;
+      // not while a chapter, a tour or a person's places are picked out, where Jerusalem,
+      // named once in Acts 16, outweighed Philippi, where the chapter happens.
       id: "place-ring",
       type: "circle",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isSettlement, ["==", ["get", "rank"], 0], visibleAtZoom],
+      filter: ["all", isSettlement, ["==", ["get", "rank"], 0], visibleAtZoom, NOT_TOURING],
       paint: {
         "circle-radius": 8.5,
         "circle-color": "rgba(0,0,0,0)",
@@ -485,18 +688,38 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
           "case",
           ["boolean", ["feature-state", "selected"], false],
           8,
+          // The places picked out (a chapter's, a person's) are one size: the passage
+          // decides what matters, not how often the Bible names the town.
+          IN_TOUR,
+          4.5,
           ["match", ["get", "rank"], 0, 5, 1, 4, 2, 3.2, 2.6],
         ],
+        // Where the place stood is uncertain (disputed, or tentative under 600):
+        // a hollow dot, so the map itself says how sure it is, not only the card.
         "circle-color": [
           "case",
           ["boolean", ["feature-state", "selected"], false],
           T.gold,
-          ["boolean", ["get", "disputed"], false],
-          "#a6805c",
+          UNCERTAIN_SITE,
+          T.halo,
           T.accent,
         ],
-        "circle-stroke-color": T.halo,
-        "circle-stroke-width": ["case", ["boolean", ["feature-state", "hover"], false], 3, 1.6],
+        "circle-stroke-color": [
+          "case",
+          ["boolean", ["feature-state", "selected"], false],
+          T.halo,
+          UNCERTAIN_SITE,
+          T.accent,
+          T.halo,
+        ],
+        "circle-stroke-width": [
+          "case",
+          ["boolean", ["feature-state", "hover"], false],
+          3,
+          ["all", UNCERTAIN_SITE, ["!", ["boolean", ["feature-state", "selected"], false]]],
+          1.8,
+          1.6,
+        ],
         "circle-opacity": fadeBeforeNT(0.3),
         "circle-stroke-opacity": fadeBeforeNT(0.3),
       },
@@ -508,11 +731,128 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       source: "route",
       metadata: { group: "routes" },
       filter: ["==", ["geometry-type"], "Point"],
+      // Big enough to hold the stop's number; the stops ahead are hollow.
       paint: {
-        "circle-radius": ["case", ["get", "current"], 8, 5],
-        "circle-color": ["case", ["get", "current"], T.gold, T.accent],
-        "circle-stroke-color": T.halo,
-        "circle-stroke-width": 2.5,
+        "circle-radius": ["case", ["get", "current"], 9.5, 7.5],
+        "circle-color": [
+          "case",
+          ["get", "current"],
+          T.gold,
+          ["boolean", ["get", "ahead"], false],
+          T.halo,
+          T.accent,
+        ],
+        "circle-stroke-color": ["case", ["boolean", ["get", "ahead"], false], T.accent, T.halo],
+        "circle-stroke-width": ["case", ["boolean", ["get", "ahead"], false], 1.5, 2],
+      },
+    },
+    {
+      id: "route-num",
+      type: "symbol",
+      source: "route",
+      metadata: { group: "routes" },
+      filter: ["==", ["geometry-type"], "Point"],
+      layout: {
+        "text-field": ["to-string", ["get", "n"]],
+        "text-font": [MAP_FONT],
+        "text-size": ["case", ["get", "current"], 11.5, 10],
+        "text-allow-overlap": true,
+        "text-ignore-placement": true,
+      },
+      paint: {
+        "text-color": [
+          "case",
+          ["get", "current"],
+          T.ink,
+          ["boolean", ["get", "ahead"], false],
+          T.accent,
+          T.halo,
+        ],
+      },
+    },
+    {
+      // The other stops at a place the tour comes back to, beside its disc.
+      id: "route-also",
+      type: "symbol",
+      source: "route",
+      metadata: { group: "routes" },
+      filter: ["all", ["==", ["geometry-type"], "Point"], ["has", "also"]],
+      layout: {
+        "text-field": ["get", "also"],
+        "text-font": [MAP_FONT],
+        "text-size": 10,
+        "text-anchor": "left",
+        "text-offset": [1.4, 0],
+        "text-allow-overlap": true,
+        "text-ignore-placement": true,
+      },
+      paint: { "text-color": T.accent, "text-halo-color": T.halo, "text-halo-width": 1.5 },
+    },
+    {
+      // Battles and sieges in their years (a few either side: a slider step is five), above
+      // the places; their names from zoom 6. Under "the Bible alone", only those it tells.
+      id: "battle-icon",
+      type: "symbol",
+      source: "battles",
+      metadata: { group: "battles" },
+      filter: [
+        "all",
+        [">=", YEAR, ["-", ["get", "year"], 5]],
+        ["<=", YEAR, ["+", ["get", "year"], 5]],
+        ["any", ["!", ["boolean", ["global-state", "bibleOnly"], false]], ["has", "ref"]],
+      ],
+      layout: {
+        "icon-image": "hg-battle",
+        "icon-size": 1.45,
+        "icon-allow-overlap": true,
+        "icon-ignore-placement": true,
+        "icon-offset": [14, -14],
+        "text-field": [
+          "step",
+          ["zoom"],
+          "",
+          6,
+          ["case", ["==", LOCALE, "ru"], ["get", "ru"], ["get", "en"]],
+        ],
+        "text-font": [MAP_FONT],
+        "text-size": 11,
+        "text-anchor": "left",
+        "text-offset": [2.6, -1.2],
+        "text-optional": true,
+        "text-padding": LABEL_PADDING,
+      },
+      paint: {
+        "icon-color": BATTLE_INK,
+        "icon-halo-color": T.halo,
+        "icon-halo-width": 1.6,
+        "text-color": BATTLE_INK,
+        "text-halo-color": T.halo,
+        "text-halo-width": 1.4,
+      },
+    },
+    {
+      id: "ancient-label",
+      type: "symbol",
+      source: "ancient",
+      metadata: { group: "ancient" },
+      filter: ANCIENT_NOW,
+      layout: {
+        "text-field": ["case", ["==", LOCALE, "ru"], ["get", "ru"], ["get", "en"]],
+        "text-font": [MAP_FONT],
+        "text-size": ["match", ["get", "rank"], 0, 12.5, 1, 11.5, 11],
+        "text-variable-anchor": ["top", "bottom", "right", "left"],
+        "text-radial-offset": 0.7,
+        "text-justify": "auto",
+        "symbol-sort-key": ["get", "rank"],
+        "text-padding": LABEL_PADDING,
+      },
+      paint: {
+        "text-color": ANCIENT_INK,
+        "text-halo-color": T.halo,
+        // Faded during a tour or a chapter, a light halo on the dark sea read as a smudge
+        // (Knossos in Acts 16): no halo then.
+        "text-halo-width": ["case", NOT_TOURING, 1.4, 0],
+        "text-opacity": ["case", NOT_TOURING, 1, 0.4],
       },
     },
     {
@@ -520,7 +860,16 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isArea, visibleAtZoom, NOT_DUP, ["!", IS_SELECTED], ["!", OFF_TOUR]],
+      filter: [
+        "all",
+        isArea,
+        visibleAtZoom,
+        LABEL_IN_TIME,
+        NOT_HIDDEN,
+        NOT_DUP,
+        ["!", IS_SELECTED],
+        ["!", OFF_TOUR],
+      ],
       layout: {
         // Biblical regions are not states: italic and sentence case, so they never read
         // as the polity labels (upper case) of the chosen year.
@@ -534,7 +883,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       paint: {
         "text-color": "#7a5a33",
         "text-halo-color": T.halo,
-        "text-halo-width": 1.4,
+        "text-halo-width": ["case", OUT_OF_TIME, 0, 1.4],
         "text-opacity": fadeBeforeNT(0.4),
       },
     },
@@ -543,13 +892,24 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isWater, visibleAtZoom, NOT_DUP, ["!", IS_SELECTED], ["!", OFF_TOUR]],
+      filter: [
+        "all",
+        isWater,
+        NOT_HIDDEN,
+        ["!=", ["get", "kind"], "body of water"],
+        visibleAtZoom,
+        NOT_DUP,
+        ["!", IS_SELECTED],
+        ["!", OFF_TOUR],
+      ],
       layout: {
         "text-field": NAME,
         "text-font": [MAP_FONT_ITALIC],
         "text-size": ["match", ["get", "rank"], 0, 14, 1, 12.5, 11.5],
         "text-letter-spacing": 0.06,
         "symbol-sort-key": PLACE_ORDER,
+        // A sea's name on two short lines rather than one long one across the coast.
+        "text-max-width": 5,
       },
       // Seas are labelled on the dark sea; rivers, wadis and canals on land.
       paint: {
@@ -567,6 +927,9 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "all",
         isLandmark,
         visibleAtZoom,
+        labelledAtZoom,
+        LABEL_IN_TIME,
+        NOT_HIDDEN,
         HAS_LOCAL_NAME,
         NOT_DUP,
         ["!", IS_SELECTED],
@@ -580,7 +943,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-radial-offset": 1,
         "text-justify": "auto",
         "symbol-sort-key": PLACE_ORDER,
-        "text-padding": 3,
+        "text-padding": LABEL_PADDING,
       },
       paint: {
         "text-color": [
@@ -590,7 +953,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
           LANDMARK_INK,
         ],
         "text-halo-color": T.halo,
-        "text-halo-width": 1.5,
+        "text-halo-width": ["case", OUT_OF_TIME, 0, 1.5],
         "text-opacity": fadeBeforeNT(0.45),
       },
     },
@@ -604,20 +967,46 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "all",
         ERA_FILTER,
         ["any", ["<", ["coalesce", ["get", "tier"], 0], 2], [">=", ["zoom"], 6]],
+        // A pinned name (its own layer) takes over from zoom 6.
+        ["any", ["!", ["has", "pin"]], ["<", ["zoom"], 6]],
       ],
       metadata: { group: "borders" },
       minzoom: 2.5,
       layout: {
-        "text-field": ["upcase", NAME],
+        // A vassal's second line, smaller: "JUDAH / under Assyria".
+        "text-field": [
+          "case",
+          ["has", "v"],
+          [
+            "format",
+            ["upcase", NAME],
+            {},
+            "\n",
+            {},
+            [
+              "case",
+              ["==", LOCALE, "ru"],
+              ["coalesce", ["get", "v_ru"], ["get", "v"]],
+              ["get", "v"],
+            ],
+            { "font-scale": 0.9 },
+          ],
+          ["upcase", NAME],
+        ],
         "text-font": [MAP_FONT],
+        // The size follows the state's area; zoomed in, never below a readable size: Judah,
+        // Israel and Philistia came out at 6 px at a region's view, and went unnoticed.
         "text-size": [
           "interpolate",
           ["linear"],
           ["zoom"],
           3,
-          ["*", ["get", "size"], 2.6],
-          7,
-          ["*", ["get", "size"], 4],
+          // Far out, a small state's name came out at 6 px: no smaller than 9.
+          ["max", 9, ["*", ["get", "size"], 2.6]],
+          6,
+          ["max", 11, ["*", ["get", "size"], 3.7]],
+          8,
+          ["max", 13, ["*", ["get", "size"], 4.4]],
         ],
         "text-letter-spacing": 0.28,
         "text-max-width": 7,
@@ -642,22 +1031,158 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: ["all", isSettlement, visibleAtZoom, HAS_LOCAL_NAME, NOT_DUP, ["!", OFF_TOUR]],
+      filter: [
+        "all",
+        isSettlement,
+        visibleAtZoom,
+        labelledAtZoom,
+        LABEL_IN_TIME,
+        NOT_HIDDEN,
+        HAS_LOCAL_NAME,
+        NOT_DUP,
+        ["!", OFF_TOUR],
+        // Another name of a place on the same point (Zion for Jerusalem) is named only up
+        // close, unless it is the one picked: at a region's zoom it crowded out its city.
+        ["any", ["!=", ["get", "where_tpl"], "same"], [">=", ["zoom"], 11], IS_SELECTED, IN_TOUR],
+      ],
       layout: {
         "text-field": NAME,
         "text-font": [MAP_FONT],
-        "text-size": ["match", ["get", "rank"], 0, 15, 1, 13.5, 2, 12.5, 11.5],
+        // A chapter's or a tour's places, picked out, in one size, as their marks are.
+        // The great cities grow from zoom 9 in: at zoom 10 Jerusalem stood at the villages'
+        // size among 150 names. Not before: the tiles lay names out at the size one zoom in,
+        // and growing from 8 already cost Bethlehem its name at 8.
+        "text-size": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          9,
+          ["case", IN_TOUR, 13.5, ["match", ["get", "rank"], 0, 15, 1, 13.5, 2, 12.5, 11.5]],
+          11,
+          ["case", IN_TOUR, 13.5, ["match", ["get", "rank"], 0, 17, 1, 14.5, 2, 12.5, 11]],
+        ],
         "text-variable-anchor": ["top", "bottom", "right", "left"],
         "text-radial-offset": 0.8,
         "text-justify": "auto",
         "symbol-sort-key": PLACE_ORDER,
-        "text-padding": 3,
+        "text-padding": LABEL_PADDING,
       },
       paint: {
         "text-color": ["case", ["boolean", ["feature-state", "selected"], false], T.accent, T.ink],
         "text-halo-color": T.halo,
-        "text-halo-width": 1.6,
+        // A faded name has no halo: on the dark sea a light one read as a smudge.
+        "text-halo-width": ["case", OUT_OF_TIME, 0, 1.6],
         "text-opacity": fadeBeforeNT(0.45),
+      },
+    },
+    // Seas and lakes above the towns' names, so placed before them: the Salt Sea and the Sea
+    // of Galilee lost to Capernaum and Jericho and went unnamed at zoom 8. Rivers and wadis
+    // stay below (place-label-water): placed first, Ahava took Babylon's room.
+    {
+      id: "place-label-sea",
+      type: "symbol",
+      source: "sea-labels",
+      metadata: { group: "places" },
+      filter: [
+        "all",
+        isWater,
+        NOT_HIDDEN,
+        ["==", ["get", "kind"], "body of water"],
+        visibleAtZoom,
+        NOT_DUP,
+        ["!", IS_SELECTED],
+        ["!", OFF_TOUR],
+      ],
+      layout: {
+        "text-field": NAME,
+        "text-font": [MAP_FONT_ITALIC],
+        "text-size": ["match", ["get", "rank"], 0, 14, 1, 12.5, 11.5],
+        "text-letter-spacing": 0.06,
+        "symbol-sort-key": PLACE_ORDER,
+        // A sea's name on two short lines rather than one long one across the coast.
+        "text-max-width": 5,
+      },
+      // Seas are labelled on the dark sea; rivers, wadis and canals on land.
+      paint: {
+        "text-color": ["match", ["get", "kind"], "body of water", "#d7e7f2", T.water],
+        "text-halo-color": ["match", ["get", "kind"], "body of water", "#1d4a66", T.halo],
+        "text-halo-width": 1.3,
+      },
+    },
+    {
+      id: "polity-label-pin",
+      type: "symbol",
+      source: "polity-labels",
+      // The fine grid of an empire's label points only when zoomed in (build_data.py). A
+      // filter sees the tile's whole zoom, so this is from zoom 6.
+      filter: [
+        "all",
+        ERA_FILTER,
+        ["any", ["<", ["coalesce", ["get", "tier"], 0], 2], [">=", ["zoom"], 6]],
+        ["has", "pin"],
+      ],
+      metadata: { group: "borders" },
+      // The small states among the Bible's towns (Judah, Israel, Philistia), their label
+      // moved by build-content.ts to the emptiest point of its shape near the middle, from
+      // zoom 6. Placed before the towns' names (this layer sits above them): its point is
+      // the one farthest from any town named at that zoom, so it rarely costs one, and
+      // placed after them it never found room. Never drawn across a name.
+      minzoom: 6,
+      layout: {
+        // A vassal's second line, smaller: "JUDAH / under Assyria".
+        "text-field": [
+          "case",
+          ["has", "v"],
+          [
+            "format",
+            ["upcase", NAME],
+            {},
+            "\n",
+            {},
+            [
+              "case",
+              ["==", LOCALE, "ru"],
+              ["coalesce", ["get", "v_ru"], ["get", "v"]],
+              ["get", "v"],
+            ],
+            { "font-scale": 0.9 },
+          ],
+          ["upcase", NAME],
+        ],
+        "text-font": [MAP_FONT],
+        // The size follows the state's area; zoomed in, never below a readable size: Judah,
+        // Israel and Philistia came out at 6 px at a region's view, and went unnoticed.
+        "text-size": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          3,
+          // Far out, a small state's name came out at 6 px: no smaller than 9.
+          ["max", 9, ["*", ["get", "size"], 2.6]],
+          6,
+          ["max", 11, ["*", ["get", "size"], 3.7]],
+          8,
+          ["max", 13, ["*", ["get", "size"], 4.4]],
+        ],
+        "text-letter-spacing": 0.28,
+        "text-max-width": 7,
+        "symbol-sort-key": ["-", 0, ["get", "size"]],
+        // Some padding keeps an empire's anchors from crowding one view; 48 px made the
+        // box so large that a river label nearby left the Neo-Babylonian Empire unnamed.
+        "text-padding": 16,
+        // Room to move off a river or a town instead of disappearing.
+        "text-variable-anchor": ["center", "top", "bottom"],
+        "text-radial-offset": 1.2,
+        "text-allow-overlap": false,
+      },
+      paint: {
+        "text-color": "#4a3b28",
+        // Drawn over the thick of the towns (Judah's middle is Jerusalem's hills): a full
+        // halo, so the letters read over the dots rather than among them.
+        "text-opacity": 0.88,
+        "text-halo-color": T.halo,
+        "text-halo-width": 2.4,
+        "text-halo-blur": 0.6,
       },
     },
     {
@@ -676,7 +1201,8 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-font": [MAP_FONT_ITALIC],
         "text-size": ["interpolate", ["linear"], ["zoom"], 5, 11.5, 10, 14],
         "text-letter-spacing": 0.12,
-        "symbol-spacing": 280,
+        // Once or twice a screen: at 280 px the Euphrates was named four times in one view.
+        "symbol-spacing": ["interpolate", ["linear"], ["zoom"], 5, 700, 10, 450],
         "text-max-angle": 55,
       },
       paint: { "text-color": T.water, "text-halo-color": T.halo, "text-halo-width": 1.4 },
@@ -711,7 +1237,8 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       layout: {
         "text-field": [
           "case",
-          ["has", "share"],
+          // A sole candidate (Capernaum at Tell Hum) is the place: no “100 %” beside it.
+          ["all", ["has", "share"], ["<", SHARE, 100]],
           ["concat", SITE_LABEL, " · ", ["to-string", SHARE], "%"],
           SITE_LABEL,
         ],
@@ -735,6 +1262,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       filter: [
         "all",
         IS_SELECTED,
+        NOT_HIDDEN,
         ["!", isSettlement],
         ["!", ["has", "line"]],
         visibleAtZoom,
@@ -752,6 +1280,19 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
     },
   ];
 
+  // A town not standing in the year (Antioch in 1300 BC) is named faded, and below the
+  // ancient world's sites that do stand then: Ugarit's name wins the room over it.
+  const label = layers.find((l) => l.id === "place-label");
+  const ancient = layers.findIndex((l) => l.id === "ancient-label");
+  if (label?.type === "symbol" && label.filter && ancient >= 0) {
+    const shown: ExpressionSpecification = ["any", ["!", OUT_OF_TIME], IS_SELECTED, IN_TOUR];
+    const base = label.filter as ExpressionSpecification;
+    const past: ExpressionSpecification = ["all", base, ["!", shown]];
+    const now: ExpressionSpecification = ["all", base, shown];
+    layers.splice(ancient, 0, { ...label, id: "place-label-past", filter: past });
+    label.filter = now;
+  }
+
   return {
     version: 8,
     projection: { type: "globe" },
@@ -760,6 +1301,8 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       locale: { default: o.initialLocale },
       selected: { default: "" },
       tourPlaces: { default: [] },
+      bibleOnly: { default: false },
+      hiddenNames: { default: [] },
     },
     "font-faces": Object.fromEntries(
       Object.entries(o.fonts).map(([family, files]) => [
@@ -800,7 +1343,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       polities: {
         type: "geojson",
         data: `${o.dataUrl}/polities.geojson`,
-        attribution: "Cliopatria / Seshat (CC BY 4.0)",
+        attribution: "Cliopatria / Seshat (CC BY 4.0, modified)",
       },
       "polity-labels": { type: "geojson", data: `${o.dataUrl}/polity-labels.geojson` },
       rivers: {
@@ -812,11 +1355,33 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       places: {
         type: "geojson",
         data: { type: "FeatureCollection", features: [] },
-        attribution: "OpenBible.info (CC BY 4.0)",
+        attribution: "OpenBible.info (CC BY 4.0, modified)",
       },
+      // The seas' and lakes' names at their own points (seaLabels): filled with the places.
+      "sea-labels": { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       mask: { type: "geojson", data: focusMask() },
       sites: { type: "geojson", data: `${o.dataUrl}/sites.geojson` },
       route: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
+      measure: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
+      // Filled on demand (MapLibreRenderer.loadRoads): 1.3 MB the first frame does not need.
+      "roads-major": {
+        type: "geojson",
+        data: { type: "FeatureCollection", features: [] },
+        attribution:
+          'Roman roads: <a href="https://doi.org/10.5281/zenodo.17122148">Itiner-e</a> (de Soto, Pažout, Brughmans et al. 2025), CC BY 4.0',
+      },
+      "roads-minor": { type: "geojson", data: { type: "FeatureCollection", features: [] } },
+      // Filled once the map has loaded (MapLibreRenderer.loadBattles).
+      battles: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
+      // An outline to compare sizes (MapLibreRenderer.setOutline): empty until asked for.
+      outline: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
+      // Filled once the map has loaded (MapLibreRenderer.loadAncient).
+      ancient: {
+        type: "geojson",
+        data: { type: "FeatureCollection", features: [] },
+        attribution:
+          'Ancient sites: <a href="https://pleiades.stoa.org">Pleiades</a> (CC BY 3.0), <a href="https://www.wikidata.org">Wikidata</a> (CC0)',
+      },
     },
     layers,
   };
@@ -827,4 +1392,28 @@ export function layersInGroup(style: StyleSpecification, group: string): string[
   return style.layers
     .filter((l) => (l.metadata as { group?: string } | undefined)?.group === group)
     .map((l) => l.id);
+}
+
+/**
+ * Where a sea's name is written, when its point is not a good place for it: OpenBible puts
+ * the Great Sea just off Ashdod, where its name lay over the coast's towns. A cartographer's
+ * choice, not the place's location (the point itself is unchanged).
+ */
+const SEA_LABEL_AT: Readonly<Record<string, readonly [number, number]>> = {
+  aa805fb: [33.3, 33.0], // the Great Sea: open water between Cyprus and the Levant
+};
+
+/** The seas and lakes among the places, each at the point its name is written. */
+export function seaLabels<F extends { properties: unknown; geometry: unknown }>(places: {
+  readonly features: readonly F[];
+}): { type: "FeatureCollection"; features: F[] } {
+  return {
+    type: "FeatureCollection",
+    features: places.features
+      .filter((f) => (f.properties as { kind?: string } | null)?.kind === "body of water")
+      .map((f) => {
+        const at = SEA_LABEL_AT[(f.properties as { id?: string }).id ?? ""];
+        return at ? { ...f, geometry: { type: "Point", coordinates: [...at] } } : f;
+      }),
+  };
 }

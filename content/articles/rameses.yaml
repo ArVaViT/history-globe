@@ -1,0 +1,31 @@
+# Overview article (ADR 0007). Mainstream facts only; Egyptian dates follow I. Shaw (ed.), The Oxford History of Ancient Egypt.
+# The identification with Pi-Ramesses is the usual one and is named as such; the date of the Exodus is disputed and is not given.
+id: rameses
+place: a079b21
+title:
+  en: "Rameses"
+  ru: "Раамсес"
+body:
+  en:
+    - "Pi-Ramesses, the House of Ramesses, lay at Qantir in the north-eastern Nile delta, on the Pelusiac branch of the river, about 30 km south of Tanis. It grew beside the ruins of Avaris at Tell el-Dab'a, the capital of the Hyksos, the foreign kings of northern Egypt, whom Ahmose I drove out in the mid-sixteenth century BC; the soldier Ahmose son of Ebana tells in his tomb at Elkab how he fought at the siege and capture of Avaris."
+    - "Seti I seems to have had a palace here, and his son Ramesses II (1279–1213 BC) made Pi-Ramesses his chief residence, close to the roads leading to Egypt's provinces in Asia. When the Pelusiac branch silted up, the kings of the Twenty-first Dynasty moved to Tanis and carried many of its monuments there, so that Tanis was long taken for Pi-Ramesses. Labib Habachi placed the city at Qantir in 1954, and from the 1960s Manfred Bietak, mapping the old branches of the Nile, confirmed it; excavations at Tell el-Dab'a and at Qantir have since uncovered both cities."
+    - "Joseph settled his father and his brethren in the land of Rameses, in the best of the land. The oppressed Israelites built for Pharaoh treasure cities, Pithom and Raamses, and on the fifteenth day of the first month, on the morrow after the passover, they journeyed from Rameses to Succoth. Biblical Rameses is usually identified with Pi-Ramesses, while the date of the Exodus remains disputed."
+    - "In the 380s, by the usual dating, the pilgrim Egeria passed through a place shown to her as Rameses, four miles from the town of Arabia. She found it a bare field without a single dwelling, though its fallen ruins were endless; only one huge Theban stone stood there, carved with two great statues said to be Moses and Aaron, and an old sycamore said to have been planted by the patriarchs."
+  ru:
+    - "Пи-Рамсес, «Дом Рамсеса», лежал у Кантира на северо-востоке дельты Нила, на Пелусийском рукаве реки, примерно в 30 км к югу от Таниса. Он вырос рядом с развалинами Авариса у Телль-эд-Дабы — столицы гиксосов, чужеземных царей Северного Египта, которых в середине XVI века до н. э. изгнал Яхмос I; воин Яхмос, сын Абаны, рассказывает в своей гробнице в Эль-Кабе, как сражался при осаде и взятии Авариса."
+    - "У Сети I здесь, по-видимому, был дворец, а его сын Рамсес II (1279–1213 гг. до н. э.) сделал Пи-Рамсес своей главной резиденцией, поближе к дорогам в азиатские владения Египта. Когда Пелусийский рукав занесло илом, цари XXI династии перебрались в Танис и перевезли туда многие его памятники, так что Танис долго принимали за Пи-Рамсес. Лабиб Хабаши в 1954 г. поместил город у Кантира, а с 1960-х годов Манфред Битак, нанеся на карту древние русла Нила, подтвердил это; раскопки в Телль-эд-Дабе и в Кантире с тех пор открыли оба города."
+    - "Иосиф поселил отца своего и братьев своих в земле Раамсес, в лучшей части земли. Угнетённые израильтяне построили фараону Пифом и Раамсес, города для запасов, а в пятнадцатый день первого месяца, на другой день Пасхи, отправились из Раамсеса в Сокхоф. Библейский Раамсес обычно отождествляют с Пи-Рамсесом, а дата Исхода остаётся спорной."
+    - "В 380-х годах, по обычной датировке, паломница Эгерия проходила через место, которое ей показали как Раамсес, в четырёх милях от города Аравия. Она нашла там голое поле без единого жилья, хотя обрушенным развалинам не было конца; стоял лишь один огромный фиванский камень с двумя высеченными большими статуями, которые называли Моисеем и Аароном, да старая сикомора, посаженная, как говорили, патриархами."
+scripture:
+  - Gen.47.11
+  - Exod.1.11
+  - Exod.12.37
+  - Num.33.3
+  - Num.33.5
+sources:
+  - "Autobiography of Ahmose son of Ebana, tomb at Elkab; tr. J. H. Breasted, Ancient Records of Egypt II (1906) §§8-12 (the siege and capture of Avaris)"
+  - "Egeria, Itinerarium 8.1-3"
+  - "M. Bietak, Avaris: The Capital of the Hyksos. Recent Excavations at Tell el-Dab'a (1996)"
+  - "J. K. Hoffmeier, Israel in Egypt: The Evidence for the Authenticity of the Exodus Tradition (1997)"
+  - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000)"
+status: checked

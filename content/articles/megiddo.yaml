@@ -1,0 +1,36 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such; Egyptian reigns are given by century only.
+id: megiddo
+place: a8554e3
+title:
+  en: "Megiddo"
+  ru: "Мегиддон"
+body:
+  en:
+    - "Megiddo stands on a mound at the western edge of the Jezreel Valley, where the pass of Wadi Ara comes through the Carmel ridge, and it guarded the main road between Egypt and Syria. About 3000 BC a monumental temple already stood here. In the fifteenth century BC Thutmose III of Egypt routed a coalition of Canaanite kings before its walls and took the city after a siege; his annals at Karnak call its capture the capture of a thousand cities. In the Amarna letters of the fourteenth century BC its ruler Biridiya asks Pharaoh for troops, as Labayu means to take Megiddo."
+    - 'Joshua lists the king of Megiddo among the kings Israel defeated, yet Manasseh did not drive out the Canaanites of the town. The Song of Deborah tells of the kings of Canaan fighting in Taanach "by the waters of Megiddo". Megiddo belonged to one of Solomon''s districts, and 1 Kings names it with Hazor and Gezer among the cities he built. Ahaziah, king of Judah, fled from Jehu to Megiddo and died there; Pharaoh Necho slew King Josiah at Megiddo in 609 BC. Zechariah speaks of mourning in the valley of Megiddon, and the Armageddon of Revelation is usually explained as "mount of Megiddo".'
+    - "Iron Age Megiddo had palaces, a six-chambered gate, long pillared buildings once taken for Solomon's stables, and a shaft and tunnel to its spring. Whether the gate and palaces belong to Solomon's tenth century or to the ninth century of Ahab's dynasty is one of the main disputes of biblical archaeology. A fragment of a victory stela of Pharaoh Shishak was found on the mound. After 732 BC Megiddo was the seat of an Assyrian province; later the town dwindled, and the mound was abandoned about the fourth century BC."
+    - "In the second century AD the Roman Sixth Legion, Ferrata, set up its camp south of the mound, at a place called Legio beside the village of Kefar Othnay; Eusebius measures distances in the Great Plain from Legio. In the village a Christian prayer hall with mosaic inscriptions was found, dated by its excavators to the third century AD and by others to the early fourth. In the fourth and fifth centuries a city named Maximianopolis stood nearby; its exact site is debated."
+  ru:
+    - "Мегиддон стоит на холме у западного края Изреельской долины, там, где проход Вади-Ара пересекает хребет Кармил, и охранял главную дорогу между Египтом и Сирией. Уже около 3000 г. до н. э. здесь стоял монументальный храм. В XV веке до н. э. египетский фараон Тутмос III разбил под его стенами союз ханаанских царей и после осады взял город; в его анналах в Карнаке взятие Мегиддона названо взятием тысячи городов. В амарнских письмах XIV века до н. э. его правитель Биридия просит у фараона войско, потому что Лабайу хочет захватить Мегиддон."
+    - "Книга Иисуса Навина называет царя Мегиддона среди побеждённых Израилем царей, но Манассия не выгнал хананеев из этого города. Песнь Деворы говорит, что цари Ханаанские сразились в Фаанахе «у вод Мегиддонских». Мегиддон входил в один из округов Соломона, и Третья книга Царств называет его вместе с Асором и Газером среди городов, которые он построил. Охозия, царь Иудейский, бежал от Ииуя в Мегиддон и умер там; в 609 г. до н. э. фараон Нехао умертвил в Мегиддоне царя Иосию. Захария говорит о плаче в долине Мегиддонской, а Армагеддон из Откровения обычно объясняют как «гора Мегиддо»."
+    - "В Мегиддоне железного века были дворцы, шестикамерные ворота, длинные здания с колоннами, которые прежде считали конюшнями Соломона, а также шахта и туннель к источнику. Относятся ли ворота и дворцы к X веку Соломона или к IX веку династии Ахава — один из главных споров библейской археологии. На холме нашли обломок победной стелы фараона Сусакима. После 732 г. до н. э. Мегиддон был центром ассирийской провинции; позже город пришёл в упадок, и около IV века до н. э. холм опустел."
+    - "Во II веке н. э. римский Шестой легион Железный поставил свой лагерь к югу от холма, в месте, называемом Легион, рядом с селением Кфар-Отнай; Евсевий отмеряет от Легиона расстояния на Великой равнине. В селении нашли христианский молитвенный зал с мозаичными надписями: раскопщики датируют его III веком н. э., другие — началом IV века. В IV–V веках рядом стоял город Максимианополь; где именно, спорят."
+scripture:
+  - Josh.12.21
+  - Judg.1.27
+  - Judg.5.19
+  - 1Kgs.4.12
+  - 1Kgs.9.15
+  - 2Kgs.9.27
+  - 2Kgs.23.29-2Kgs.23.30
+  - Zech.12.11
+  - Rev.16.16
+sources:
+  - "Annals of Thutmose III at Karnak, first campaign, tr. J. H. Breasted, Ancient Records of Egypt II (1906) §§408-443 (the battle §430; 'the capture of a thousand cities' §432)"
+  - "Amarna letters EA 242-246 (Biridiya of Megiddo); EA 244 (Labayu's threat to Megiddo)"
+  - "C. S. Fisher, The Excavation of Armageddon (Oriental Institute Communications 4, 1929) (the Shishak stela fragment)"
+  - "Eusebius, Onomasticon, s.v. Baithakath, Kamon, Ianoun (distances from Legeon)"
+  - "M. J. Adams, I. Finkelstein and D. Ussishkin, 'The Great Temple of Early Bronze I Megiddo', American Journal of Archaeology 118 (2014) 285-305"
+  - "Y. Tepper, A Christian Prayer Hall of the Third Century CE at Kefar 'Othnay (Legio) (Israel Antiquities Authority, 2006)"
+  - "E. H. Cline, The Battles of Armageddon: Megiddo and the Jezreel Valley from the Bronze Age to the Nuclear Age (2000)"
+status: checked

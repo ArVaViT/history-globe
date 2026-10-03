@@ -1,0 +1,27 @@
+id: where-was-caesarea-philippi
+question:
+  en: "Where was Caesarea Philippi?"
+  ru: "Где находилась Кесария Филиппова?"
+answer:
+  en:
+    - "Caesarea Philippi lay at the southern foot of Mount Hermon, where one of the main springs of the Jordan flows out from below a cliff and a large cave; the site is today's Banias in the Golan Heights. It is about 40 km north of Capernaum and Bethsaida in a straight line (40 km by the road on the map from Bethsaida) and about 170 km north of Jerusalem; with the district of Tyre and Sidon it is the farthest north that Jesus' journeys reach on the map. It is a different place from Caesarea on the coast, the seat of the Roman governors."
+    - '"When Jesus came into the coasts of Caesarea Philippi, he asked his disciples, saying, Whom do men say that I the Son of man am?" Peter answered: "Thou art the Christ, the Son of the living God." In Matthew, Jesus then says to him, "thou art Peter, and upon this rock I will build my church"; Mark places the same exchange on the way to the towns of Caesarea Philippi.'
+    - "In the Hellenistic age the cave was sacred to Pan, and the place was called the Panium or Paneas; about 200 BC Antiochus III defeated the Ptolemaic army there. In 20 BC Augustus gave the district to Herod the Great, who built a temple of white stone to the emperor near the cave; where it stood is disputed, in front of the cave or at Omrit a few kilometres away. About 3 BC Herod's son Philip the tetrarch built his capital at the springs and named it Caesarea, called Caesarea Philippi to tell it from the other. Agrippa II later renamed it Neronias, and in AD 70 Titus held games there after the fall of Jerusalem."
+  ru:
+    - "Кесария Филиппова лежала у южного подножия горы Ермон, там, где из-под скалы и большой пещеры выходит один из главных истоков Иордана; сегодня это Баниас на Голанских высотах. От Капернаума и Вифсаиды до неё около 40 км на север по прямой (40 км по дороге на карте от Вифсаиды), от Иерусалима — около 170 км; вместе с пределами Тира и Сидона это самый дальний север, куда доходят пути Иисуса на карте. Это не та Кесария, что на побережье, где жили римские наместники."
+    - "«Придя же в страны Кесарии Филипповой, Иисус спрашивал учеников Своих: за кого люди почитают Меня, Сына Человеческого?» Петр ответил: «Ты — Христос, Сын Бога Живаго». У Матфея Иисус затем говорит ему: «ты — Петр, и на сем камне Я создам Церковь мою»; Марк передаёт тот же разговор по дороге в селения Кесарии Филипповой."
+    - "В эллинистическую эпоху пещера была посвящена Пану, а место называлось Панион, или Панеада; около 200 г. до н. э. Антиох III разбил здесь войско Птолемеев. В 20 г. до н. э. Август отдал эту область Ироду Великому, и тот построил у пещеры храм императору из белого камня; где он стоял, спорят — перед пещерой или в Омрите в нескольких километрах оттуда. Около 3 г. до н. э. сын Ирода, четвертовластник Филипп, построил у истоков свою столицу и назвал её Кесарией; её звали Кесарией Филипповой, чтобы отличать от другой. Агриппа II позже переименовал её в Нерониаду, а в 70 г. н. э. Тит устроил здесь зрелища после падения Иерусалима."
+map:
+  place: ab7bf48
+  year: "AD 30"
+  ref: Matt.16.13
+scripture: [Matt.16.13-Matt.16.20, Mark.8.27-Mark.8.30]
+sources:
+  - "Polybius, Histories 16.18 (the battle at the Panium)"
+  - "Josephus, Antiquities 15.360; 15.363-364; 18.28; 20.211; Jewish War 7.23-24"
+  - "J. F. Wilson, Caesarea Philippi: Banias, the Lost City of Pan (2004)"
+  - "Z. U. Ma'oz, V. Tzaferis and M. Hartal, 'Banias', in The New Encyclopedia of Archaeological Excavations in the Holy Land 1 (1993) and 5 (2008)"
+  - "History Globe article “Caesarea Philippi” and History Globe tour “The life of Jesus”"
+  - "Straight-line distances between the places' points (Jerusalem, Caesarea Philippi at Banias, Capernaum, Bethsaida): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Length along the Roman roads: Itiner-e (de Soto, Pažout, Brughmans et al. 2025), Bethsaida to Caesarea Philippi (40 km)"
+status: checked

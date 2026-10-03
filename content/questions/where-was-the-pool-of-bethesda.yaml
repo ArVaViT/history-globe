@@ -1,0 +1,26 @@
+id: where-was-the-pool-of-bethesda
+question:
+  en: "Where was the Pool of Bethesda?"
+  ru: "Где находилась купальня Вифезда?"
+answer:
+  en:
+    - "The Pool of Bethesda lay just north of the Temple in Jerusalem, inside today's Old City near St Stephen's Gate, in the grounds of the Crusader church of St Anne; its two great basins, cut into the rock and partly filled in, were excavated from the late nineteenth century onwards and can be visited. The map point stands there, just north of the Temple Mount."
+    - "John says: “Now there is at Jerusalem by the sheep market a pool, which is called in the Hebrew tongue Bethesda, having five porches”, and that a man who had been ill for thirty-eight years was healed there on the sabbath. The Sheep Gate of Nehemiah stood in the northern wall near the Temple, and the name of the pool varies in the manuscripts, Bethesda, Bethzatha or Bethsaida; the Copper Scroll from Qumran seems to call the place Beth Eshdatayin, “house of the twin outflows”, in the dual, which fits a double pool."
+    - "The excavations found two rectangular reservoirs side by side, separated by a rock dam; on the usual reconstruction a portico on each of the four sides and one across the dam make the five porches. The northern basin began as a reservoir behind the dam, perhaps as early as the eighth century BC, and the southern one was added around 200 BC; small baths east of them became a healing shrine, which in the second century AD, when Jerusalem had become Aelia Capitolina, was a sanctuary of Asclepius and Serapis, and in the fifth century a Byzantine church was raised over the dam to mark the miracle. In 333 the pilgrim of Bordeaux was shown “twin pools with five porticoes”, and Eusebius wrote that one of them was filled by the rains and the other had water strangely reddened."
+  ru:
+    - "Купальня Вифезда лежала сразу к северу от Храма в Иерусалиме, внутри нынешнего Старого города у Львиных ворот, на участке крестоносной церкви святой Анны; два её больших водоёма, вырубленных в скале и частично засыпанных, раскапывают с конца XIX века, и их можно осмотреть. Точка на карте стоит там, сразу к северу от Храмовой горы."
+    - "Иоанн говорит: «Есть же в Иерусалиме у Овечьих ворот купальня, называемая по-еврейски Вифезда, при которой было пять крытых ходов», и рассказывает, что там в субботу был исцелён человек, болевший тридцать восемь лет. Овечьи ворота у Неемии стояли в северной стене близ Храма, а имя купальни в рукописях разнится: Вифезда, Вифзафа или Вифсаида; Медный свиток из Кумрана, по-видимому, называет это место Бет-Эшдатаин, «дом двух истоков», в двойственном числе, что подходит двойному водоёму."
+    - "Раскопки нашли два прямоугольных водохранилища рядом, разделённых скальной перемычкой; по обычной реконструкции портик с каждой из четырёх сторон и ещё один поперёк перемычки и дают пять крытых ходов. Северный водоём возник как водохранилище за плотиной, возможно, ещё в VIII веке до н. э., а южный добавили около 200 г. до н. э.; малые купели к востоку от них стали целебным святилищем, которое во II веке н. э., когда Иерусалим стал Элией Капитолиной, было храмом Асклепия и Сераписа, а в V веке над перемычкой поставили византийскую церковь в память о чуде. В 333 году Бордоскому паломнику показывали «двойные купели с пятью портиками», а Евсевий писал, что одну из них наполняют дожди, а в другой вода странно красна."
+map:
+  place: a0aa8cf
+  year: "AD 29"
+  ref: John.5.2
+scripture: [John.5.1-John.5.9, Neh.3.1, Neh.12.39]
+sources:
+  - "Eusebius, Onomasticon, s.v. Bezatha"
+  - "Pilgrim of Bordeaux, Itinerarium Burdigalense (AD 333), the twin pools in Jerusalem"
+  - "The Copper Scroll (3Q15), column 11 (Beth Eshdatayin)"
+  - "J. Jeremias, The Rediscovery of Bethesda: John 5:2 (1966)"
+  - "S. Gibson, 'The Pool of Bethesda in Jerusalem and Jewish Purification Practices of the Second Temple Period', Proche-Orient Chrétien 55 (2005)"
+  - "B. M. Metzger, A Textual Commentary on the Greek New Testament (1971), on John 5:2 (Bethesda, Bethzatha, Bethsaida)"
+status: checked

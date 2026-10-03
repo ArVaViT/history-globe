@@ -1,0 +1,29 @@
+# Overview article (ADR 0007). Mainstream facts only; the founder of New Paphos is named as probable, not certain.
+id: paphos
+place: a314765
+title:
+  en: "Paphos"
+  ru: "Паф"
+body:
+  en:
+    - "The Paphos of Acts is New Paphos, the harbour city on the south-west coast of Cyprus, at modern Kato Paphos. Strabo puts Old Paphos, now Kouklia, sixty stadia away by land; there stood the ancient sanctuary of the Paphian Aphrodite, whose image, Tacitus notes, was not a human figure but a rounded cone of stone. Old Paphos was the seat of one of the island's kingdoms: about 673 BC the Assyrian king Esarhaddon listed Ituandar, king of Paphos, among the ten kings of Cyprus."
+    - "New Paphos was founded near the end of the fourth century BC, probably by Nicocles, the last king of Paphos; Strabo gives the legendary Agapenor as its founder. Under the later Ptolemies it became the seat of government of Cyprus, and it kept that role after Rome annexed the island in 58 BC. Each year men and women from the other cities walked in procession along the road to the old sanctuary. After an earthquake in 15 BC Augustus gave the Paphians money and allowed them to call their city Augusta."
+    - 'Barnabas and Saul crossed the island from Salamis to Paphos. There the proconsul Sergius Paulus, whom Acts calls "a prudent man", called for them and wished to hear the word of God, but the sorcerer Bar-jesus, called Elymas, tried to turn him away from the faith. Saul, "who also is called Paul", declared that the hand of the Lord was upon him, and he was blind for a season; the proconsul believed. From here on Acts calls the apostle Paul, and from Paphos the company sailed to Perga in Pamphylia.'
+    - "In AD 69 Titus, on his way back to his father's army in the east, turned aside to see the temple of the Paphian Venus, and Tacitus describes its rites. The great houses of Roman Paphos, among them the Houses of Dionysus, Theseus and Aion, have mosaic floors of the late second to fifth centuries that are among the finest in the eastern Mediterranean. In the fourth century, after earthquakes, the capital passed to Salamis, rebuilt as Constantia."
+  ru:
+    - "Паф Деяний — это Новый Паф, гавань на юго-западном берегу Кипра, на месте нынешнего Като-Пафоса. Старый Паф, нынешнюю Куклию, Страбон помещает в шестидесяти стадиях по суше; там стояло древнее святилище Афродиты Пафосской, чей образ, как отмечает Тацит, был не человеческой фигурой, а округлым каменным конусом. Старый Паф был столицей одного из царств острова: около 673 г. до н. э. ассирийский царь Асардан назвал Итуандара, царя Пафа, среди десяти царей Кипра."
+    - "Новый Паф был основан в конце IV века до н. э., вероятно, Никоклом, последним царём Пафа; Страбон называет его основателем легендарного Агапенора. При поздних Птолемеях он стал средоточием управления Кипром и сохранил эту роль после того, как Рим в 58 г. до н. э. присоединил остров. Каждый год мужчины и женщины из других городов шли по дороге к старому святилищу торжественным шествием. После землетрясения 15 г. до н. э. Август дал пафосцам денег и позволил им называть свой город Августой."
+    - "Варнава и Савл прошли весь остров от Саламина до Пафа. Там проконсул Сергий Павел, которого Деяния называют «мужем разумным», призвал их и пожелал услышать слово Божие, но волхв Вариисус, называемый Елимой, старался отвратить его от веры. Савл, «он же и Павел», объявил ему, что рука Господня на нём, и тот ослеп до времени; проконсул уверовал. Отсюда Деяния называют апостола Павлом, и из Пафа спутники отплыли в Пергию Памфилийскую."
+    - "В 69 г. н. э. Тит, возвращаясь к войску своего отца на Востоке, завернул посмотреть храм Венеры Пафосской, и Тацит описывает его обряды. Большие дома римского Пафа, среди них дома Диониса, Тесея и Эона, сохранили мозаичные полы конца II–V веков, одни из лучших в Восточном Средиземноморье. В IV веке, после землетрясений, столица перешла в Саламин, отстроенный под именем Констанция."
+scripture:
+  - Acts.13.4-Acts.13.6
+  - Acts.13.7-Acts.13.12
+  - Acts.13.13
+sources:
+  - "Strabo, Geography 14.6.3 (Old and New Paphos, Agapenor, the annual procession)"
+  - "Esarhaddon, Nineveh prism A (RINAP 4, Esarhaddon 1) v 66: Ituandar, king of Paphos"
+  - "Cassius Dio, Roman History 54.23.7 (earthquake; the name Augusta)"
+  - "Tacitus, Histories 2.2-3 (Titus at the temple of the Paphian Venus)"
+  - "F. G. Maier and V. Karageorghis, Paphos: History and Archaeology (1984)"
+  - "T. B. Mitford, 'Roman Cyprus', ANRW II.7.2 (1980)"
+status: checked

@@ -1,0 +1,26 @@
+id: where-was-sodom
+question:
+  en: "Where was Sodom?"
+  ru: "Где находился Содом?"
+answer:
+  en:
+    - "The site of Sodom is unknown. Genesis puts it among the cities of the plain by the Dead Sea, and three answers are given today: beneath or beside the shallow southern basin of the sea, at the Early Bronze Age towns on its south-eastern shore, or at Tall el-Hammam in the Jordan valley north of the sea. The map point stands in the valley of Siddim south of the Lisan peninsula, with the other cities of the plain beside it."
+    - "The southern view is the old one. Genesis says the kings fought “in the vale of Siddim, which is the salt sea”, and Zoar, to which Lot fled, was a known town in Roman and Byzantine times at the south-eastern corner of the sea, today's es-Safi. The salt ridge on the south-western shore is still called Jebel Usdum, Mount Sodom; Josephus and Strabo both say that traces of the burnt cities could be seen by the sea. The excavations of Bab edh-Dhra and Numeira on the south-eastern shore, Early Bronze Age towns destroyed by fire in the third millennium BC, gave this view material, but they are much older than the conventional date of Abraham."
+    - "The northern view rests on Genesis 13: Lot, standing near Bethel, “beheld all the plain of Jordan, that it was well watered every where”, and the word for the plain, kikkar, is used elsewhere of the Jordan valley around Jericho. Its advocates point to Tall el-Hammam, a large Middle Bronze city east of the Jordan which its excavators date to destruction around 1650 BC; a 2021 paper in Scientific Reports claiming that a cosmic airburst destroyed it was retracted by the journal in April 2025. Deuteronomy remembers only that the land of Sodom, Gomorrah, Admah and Zeboiim became “brimstone, and salt, and burning”, and none of the sites can be called certain."
+  ru:
+    - "Местоположение Содома неизвестно. Бытие ставит его среди городов окрестности у Мёртвого моря, и сегодня дают три ответа: под мелководной южной частью моря или рядом с ней, в городах ранней бронзы на его юго-восточном берегу, или в Талль-эль-Хаммаме в долине Иордана к северу от моря. Точка на карте стоит в долине Сиддим к югу от полуострова Лисан, рядом с другими городами окрестности."
+    - "Южный ответ — старый. Бытие говорит, что цари сошлись «в долине Сиддим, где ныне море Соленое», а Сигор, куда бежал Лот, был известным городком римского и византийского времени на юго-восточном углу моря — нынешний Эс-Сафи. Соляная гряда на юго-западном берегу до сих пор зовётся Джебель-Усдум, гора Содом; Иосиф Флавий и Страбон оба пишут, что следы сожжённых городов видны у моря. Раскопки Баб-эд-Дра и Нумейры на юго-восточном берегу — городов ранней бронзы, погибших в огне в третьем тысячелетии до н. э., — дали этому взгляду вещественную опору, но они много старше условной даты Авраама."
+    - "Северный ответ опирается на Бытие 13: Лот, стоя близ Вефиля, «увидел всю окрестность Иорданскую», а слово киккар («окрестность») в других местах означает долину Иордана у Иерихона. Его сторонники указывают на Талль-эль-Хаммам, большой город средней бронзы к востоку от Иордана, гибель которого раскопщики относят примерно к 1650 г. до н. э.; статья 2021 года в Scientific Reports о том, что его уничтожил воздушный взрыв космического тела, была отозвана журналом в апреле 2025 года. Второзаконие помнит лишь, что земля Содома, Гоморры, Адмы и Севоима стала «сера и соль, пожарище», и ни одно из мест нельзя назвать достоверным."
+map:
+  place: a0aa664
+  year: "c. 1900 BC"
+  ref: Gen.19.24
+scripture: [Gen.13.10-Gen.13.13, Gen.14.3, Gen.19.22-Gen.19.28, Deut.29.23]
+sources:
+  - "Josephus, Jewish War 4.483-485 (the land of Sodom beside the lake); Strabo, Geography 16.2.44"
+  - "W. E. Rast and R. T. Schaub, Bab edh-Dhra: Excavations at the Town Site (1975-1981) (2003)"
+  - "S. Collins and L. C. Scott, Discovering the City of Sodom (2013)"
+  - "The Madaba mosaic map (sixth century), Zoar (Balak, also Segor) at the south-east of the Dead Sea"
+  - "T. E. Bunch et al., 'A Tunguska sized airburst destroyed Tall el-Hammam a Middle Bronze Age city in the Jordan Valley near the Dead Sea', Scientific Reports 11 (2021), retracted 24 April 2025"
+  - "G. J. Wenham, Genesis 1-15 (Word Biblical Commentary 1, 1987), on Genesis 13:10 and 19:24-29"
+status: checked

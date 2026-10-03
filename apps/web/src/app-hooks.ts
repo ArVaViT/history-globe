@@ -7,8 +7,10 @@ import {
   type Dispatch,
   type SetStateAction,
 } from "react";
+import { chapterFocus } from "./chapter";
+import type { LoadedData } from "./data";
 import { focusOf, keyAction } from "./keys";
-import { writeUrl } from "./url";
+import { readUrl, writeUrl } from "./url";
 import type { Globe } from "./useGlobe";
 
 const PLAY_STEP = 5;
@@ -42,32 +44,119 @@ export function usePanelsOpen(): [boolean, (open: boolean) => void] {
   return [open, toggle];
 }
 
-/** Keep the URL shareable: year, place, camera, locale, layers, tour (ADR 0006). */
-export function useUrlSync(globe: Globe | null): void {
+/**
+ * The tour or chapter a link opens on (started once the map is up) is that link's entry,
+ * not a step after it: that first change replaces. A link's place is there from the start,
+ * and on any other link the first choice is a step.
+ */
+let opened = ((v) => Boolean(v.tour ?? v.ref))(readUrl());
+
+const BIBLE_ONLY_KEY = "hg:bible-only";
+/**
+ * The Bible alone (a setting, remembered in this browser, not in links): the events the
+ * Bible tells and its places, without the ancient world around them.
+ */
+export function useBibleOnly(): [boolean, (on: boolean) => void] {
+  const [on, setOn] = useState(() => {
+    try {
+      return localStorage.getItem(BIBLE_ONLY_KEY) === "1";
+    } catch {
+      return false;
+    }
+  });
+  const set = useCallback((next: boolean) => {
+    setOn(next);
+    try {
+      if (next) localStorage.setItem(BIBLE_ONLY_KEY, "1");
+      else localStorage.removeItem(BIBLE_ONLY_KEY);
+    } catch {
+      // Storage refused: the setting holds for this visit.
+    }
+  }, []);
+  return [on, set];
+}
+
+/** Keep the URL shareable: year, place, camera, locale, layers, tour, chapter (ADR 0006). */
+export function useUrlSync(globe: Globe | null, data: LoadedData | null): void {
   useEffect(() => {
     if (!globe) return;
     let timer = 0;
+    // A link's tour or chapter that is not there opens nothing: the first choice is a step.
+    const v = readUrl();
+    if (
+      !(v.tour && data?.tours.some((t) => t.id === v.tour)) &&
+      !(v.ref && data && chapterFocus(data, v.ref))
+    )
+      opened = false;
+    // A chapter on the map, as the link has it: a person's places are not one.
+    const chapterRef = () => {
+      const ref = globe.engine.store.get().focus?.ref;
+      return ref && !ref.startsWith("person:") ? ref : "";
+    };
+    // What the reader is looking at: a change of it is a step in the browser's history.
+    const subject = () => {
+      const s = globe.engine.store.get();
+      return [s.selectedPlace ?? "", s.tour?.id ?? "", s.tour?.step ?? "", chapterRef()].join("|");
+    };
+    let last = subject();
+    // Inside another site's frame the steps would fill that page's Back button: none there.
+    const framed = window.self !== window.top;
     const save = () => {
       window.clearTimeout(timer);
       timer = window.setTimeout(() => {
         const s = globe.engine.store.get();
         if (!s.camera) return;
-        writeUrl({
-          year: s.year,
-          camera: s.camera,
-          locale: s.locale,
-          ...(s.selectedPlace ? { place: s.selectedPlace } : {}),
-          layers: s.layers,
-          ...(s.tour ? { tour: s.tour.id, stop: s.tour.step + 1 } : {}),
-        });
+        const now = subject();
+        const push = now !== last && !opened && !framed;
+        // Spent on the link's own view, not on the camera settling before it opens.
+        if (now !== last) opened = false;
+        last = now;
+        writeUrl(
+          {
+            year: s.year,
+            camera: s.camera,
+            locale: s.locale,
+            ...(s.selectedPlace ? { place: s.selectedPlace } : {}),
+            layers: s.layers,
+            ...(s.tour ? { tour: s.tour.id, stop: s.tour.step + 1 } : {}),
+            // A person's places are not a chapter: they stay out of the link.
+            ...(s.focus && !s.focus.ref.startsWith("person:") ? { ref: s.focus.ref } : {}),
+          },
+          push,
+        );
       }, 300);
     };
+    // Back and Forward: the place and the tour of that step come back (the camera follows).
+    const onPop = () => {
+      const view = readUrl();
+      const e = globe.engine;
+      const s = e.store.get();
+      // A tour the data has (a link may name one that is not there).
+      if (view.tour && data?.tours.some((t) => t.id === view.tour)) {
+        const step = (view.stop ?? 1) - 1;
+        if (s.tour?.id !== view.tour || s.tour.step !== step) e.startTour(view.tour, step);
+      } else {
+        if (s.tour) e.stopTour();
+        if ((view.place ?? null) !== s.selectedPlace)
+          e.selectPlace(view.place ?? null, { fly: !view.camera });
+        // The chapter of that step, or none.
+        if ((view.ref ?? "") !== chapterRef()) {
+          const focus = view.ref && data ? chapterFocus(data, view.ref) : null;
+          e.focusPlaces(focus, !view.place && !view.camera);
+        }
+        // And the view as that step left it.
+        if (view.camera) globe.renderer.flyTo(view.camera);
+      }
+      last = subject();
+    };
     const offState = globe.engine.store.subscribe(save);
+    window.addEventListener("popstate", onPop);
     return () => {
       offState();
       window.clearTimeout(timer);
+      window.removeEventListener("popstate", onPop);
     };
-  }, [globe]);
+  }, [globe, data]);
 }
 
 export interface MapFeed {
@@ -152,9 +241,11 @@ export function useKeys(
   on: {
     readonly togglePlay: () => void;
     readonly focusSearch: () => void;
+    /** Esc with a card the engine does not know of (a person's): true when it closed one. */
+    readonly closeOwn?: () => boolean;
   },
 ): void {
-  const { togglePlay, focusSearch } = on;
+  const { togglePlay, focusSearch, closeOwn } = on;
   useEffect(() => {
     if (!globe) return;
     const { engine } = globe;
@@ -184,6 +275,7 @@ export function useKeys(
         e.preventDefault();
         engine.goToStop(tour.step + action.delta);
       } else if (action.kind === "close") {
+        if (closeOwn?.()) return;
         engine.selectPlace(null);
         engine.stopTour();
       } else engine.northUp();
@@ -192,20 +284,25 @@ export function useKeys(
     return () => {
       window.removeEventListener("keydown", onKey);
     };
-  }, [globe, togglePlay, focusSearch]);
+  }, [globe, togglePlay, focusSearch, closeOwn]);
 }
 
 /** A phone-wide screen, following rotation and window resizes. */
 export function useNarrow(): boolean {
+  return useMedia(NARROW);
+}
+
+/** A media query's answer, following rotation, resizes and a host resizing its frame. */
+export function useMedia(query: string): boolean {
   return useSyncExternalStore(
     (onChange) => {
-      const q = window.matchMedia(NARROW);
+      const q = window.matchMedia(query);
       q.addEventListener("change", onChange);
       return () => {
         q.removeEventListener("change", onChange);
       };
     },
-    () => window.matchMedia(NARROW).matches,
+    () => window.matchMedia(query).matches,
   );
 }
 

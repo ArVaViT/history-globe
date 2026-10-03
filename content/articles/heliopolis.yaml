@@ -1,0 +1,35 @@
+# Overview article (ADR 0007). Mainstream facts only; Egyptian dates follow I. Shaw (ed.), The Oxford History of Ancient Egypt.
+# The card is named «Илиополь» (Synodal, Gen 41:45); the title adds the Hebrew name On, which the Synodal text keeps in Exod 1:11 and Ezek 30:17.
+id: heliopolis
+place: acd9137
+title:
+  en: "Heliopolis (On)"
+  ru: "Илиополь (Он)"
+body:
+  en:
+    - "Heliopolis, the On of the Bible, lay at the south-eastern edge of the Nile delta, where the Cairo districts of Matariya and Ain Shams are today. The Egyptians called it Iunu, and the Greeks the City of the Sun. It was the chief seat of the sun god Ra and of Atum, and its priests taught of the nine gods, the Ennead, at whose head stood the creator. Of its great temple little remains above ground, but the obelisk that Senusret I set up there in the twentieth century BC still stands where it was raised."
+    - "Pharaoh gave Joseph to wife Asenath, the daughter of Poti-pherah priest of On, and she bore him Manasseh and Ephraim. The Greek Septuagint adds On, that is Heliopolis, to Pithom and Raamses among the cities built by the Israelites in Egypt, and the Russian Synodal text keeps this addition. Jeremiah foretold that Nebuchadrezzar would break the images of Beth-shemesh, the house of the sun, that is in the land of Egypt, a name usually taken to mean Heliopolis; Ezekiel calls the city Aven and says that its young men shall fall by the sword."
+    - "Herodotus went to Heliopolis to question its priests, for its people were said to be the most learned of the Egyptians in records, and he heard there the tale of the phoenix. Strabo found the city on its mound entirely deserted, though the temple of the sun and the sacred bull Mnevis were still kept; he was shown the large houses of the priests, where Plato and Eudoxus were said to have stayed. Augustus carried two of its obelisks to Rome and set them up in the Circus Maximus and the Campus Martius."
+    - "In the mid-second century BC Onias, of the high-priestly family, who had fled to Egypt, built a Jewish temple with leave from Ptolemy VI at Leontopolis in the district of Heliopolis, appealing to Isaiah's word of an altar to the Lord in the midst of the land of Egypt. After the Jewish War Vespasian had it shut, about AD 73. In the Middle Ages the ruins of Heliopolis were quarried for the building of Cairo."
+  ru:
+    - "Илиополь, библейский Он, лежал на юго-восточном краю дельты Нила, там, где теперь каирские районы Матария и Айн-Шамс. Египтяне называли его Иуну, а греки — Городом Солнца. Это было главное святилище бога солнца Ра и бога Атума; здешние жрецы учили о девяти богах, Эннеаде, во главе которой стоял творец. От великого храма над землёй мало что осталось, но обелиск, который Сенусерт I поставил здесь в XX веке до н. э., и теперь стоит на прежнем месте."
+    - "Фараон дал Иосифу в жену Асенефу, дочь Потифера, жреца Илиопольского, и она родила ему Манассию и Ефрема. Греческая Септуагинта прибавляет к Пифому и Раамсесу, городам, которые строили израильтяне в Египте, ещё и Он, то есть Илиополь; это прибавление сохраняет и русский Синодальный перевод. Иеремия предрекал, что Навуходоносор сокрушит статуи в Бефсамисе, что в земле Египетской, — это имя значит «дом солнца», и обычно его понимают как Илиополь; Иезекииль называет город Он и говорит, что молодые люди его падут от меча."
+    - "Геродот приходил в Илиополь расспрашивать жрецов, ибо здешние жители слыли самыми сведущими из египтян в преданиях старины, и слышал здесь рассказ о птице фениксе. Страбон застал город на его холме совсем опустевшим, хотя храм Солнца ещё стоял и в нём содержали священного быка Мневиса; ему показывали большие дома жрецов, у которых, по преданию, жили Платон и Евдокс. Август увёз в Рим два здешних обелиска и поставил их в Большом цирке и на Марсовом поле."
+    - "В середине II века до н. э. Ония из первосвященнического рода, бежавший в Египет, с позволения Птолемея VI построил иудейский храм в Леонтополе, в округе Илиополя, ссылаясь на слово Исаии о жертвеннике Господу посреди земли Египетской. После Иудейской войны, около 73 г. н. э., Веспасиан велел закрыть его. В Средние века развалины Илиополя разбирали на камень для постройки Каира."
+scripture:
+  - Gen.41.45
+  - Gen.41.50
+  - Gen.46.20
+  - Exod.1.11
+  - Jer.43.13
+  - Ezek.30.17
+  - Isa.19.19
+sources:
+  - "Septuagint, Exodus 1:11 (On, which is Heliopolis)"
+  - "Herodotus, Histories 2.3 (the learned men of Heliopolis); 2.73 (the phoenix)"
+  - "Strabo, Geography 17.1.27-29"
+  - "Ammianus Marcellinus 17.4.12 (Augustus' two obelisks from Heliopolis)"
+  - "Josephus, Antiquities 13.62-73; Jewish War 7.420-436 (the temple of Onias in the district of Heliopolis)"
+  - "S. Quirke, The Cult of Ra: Sun-Worship in Ancient Egypt (2001)"
+  - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000)"
+status: checked

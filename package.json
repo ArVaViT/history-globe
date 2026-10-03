@@ -14,11 +14,16 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "vitest run",
-    "data": "python3 pipeline/build_data.py && node scripts/build-content.ts",
-    "gate": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm test:pipeline && pnpm content && pnpm build && node scripts/check-budget.ts",
+    "data": "python3 pipeline/build_data.py && pnpm people && pnpm roads && node scripts/build-content.ts && node scripts/build-verses.ts && node scripts/build-photos.ts",
+    "gate": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm test:pipeline && pnpm content && node scripts/check-links.ts && pnpm build && node scripts/check-budget.ts",
     "gate:full": "pnpm data && pnpm gate",
+    "roads": "python3 pipeline/roads/fetch.py && python3 pipeline/roads/build_roads.py pipeline/.cache/itinere_roads.geojson --outdir apps/web/public/data > /dev/null",
+    "people": "python3 pipeline/people/parse_tipnr.py && python3 pipeline/people/build.py > /dev/null && python3 pipeline/people/package.py",
     "test:pipeline": "python3 -m unittest discover -s pipeline -q",
-    "content": "node scripts/build-content.ts"
+    "content": "node scripts/build-content.ts && node scripts/build-road-legs.ts && node scripts/build-text-places.ts && node scripts/build-pages.ts && node scripts/build-api.ts && node scripts/build-docs.ts",
+    "e2e": "node e2e/flows.mjs",
+    "e2e:a11y": "node e2e/a11y.mjs",
+    "sources": "node scripts/sources.ts"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",

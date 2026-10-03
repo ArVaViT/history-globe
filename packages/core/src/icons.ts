@@ -123,6 +123,30 @@ const DRAW: Readonly<Record<string, Draw>> = {
       c.stroke();
     }
   },
+  // Two swords crossed: a battle or a siege (content/battles.yaml).
+  "hg-battle": (c) => {
+    c.lineCap = "round";
+    for (const flip of [1, -1]) {
+      c.save();
+      c.translate(16, 16);
+      c.scale(flip, 1);
+      c.rotate(-Math.PI / 4);
+      // Blade, then the guard across it and the grip.
+      c.lineWidth = 3.6;
+      c.beginPath();
+      c.moveTo(0, -14);
+      c.lineTo(0, 7);
+      c.stroke();
+      c.lineWidth = 3;
+      c.beginPath();
+      c.moveTo(-5, 7);
+      c.lineTo(5, 7);
+      c.moveTo(0, 7);
+      c.lineTo(0, 13);
+      c.stroke();
+      c.restore();
+    }
+  },
   "hg-road": (c) => {
     c.lineWidth = 4;
     c.lineCap = "round";

@@ -8,6 +8,7 @@ title:
   en: "Ehud and Jephthah"
   ru: "Аод и Иеффай"
 year: "1150 BC"
+people: ["Ehud@Jdg.3.15-1Ch", "Jephthah@Jdg.11.1-Heb"]
 approximate: true
 stops:
   - place: a529e92 # City of Palms
@@ -18,7 +19,7 @@ stops:
   - place: ab94aea # Gilgal
     ref: Judg.3.15-Judg.3.25
     note:
-      en: "Ehud the left-handed brings Israel's present, turns back from the quarries by Gilgal with a secret errand, and thrusts his dagger into Eglon."
+      en: "Ehud the left-handed brings Israel's present, turns back from the quarries by Gilgal with a secret errand for the king, and thrusts his dagger into Eglon's belly."
       ru: "Левша Аод приносит дары Израиля, возвращается от истуканов, которые в Галгале, с тайным словом к царю и вонзает меч в чрево Еглона."
   - place: a1aff30 # Seirah
     ref: Judg.3.26-Judg.3.30

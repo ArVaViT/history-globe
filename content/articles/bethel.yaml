@@ -1,0 +1,36 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such.
+id: bethel
+place: a64f355
+title:
+  en: "Bethel"
+  ru: "Вефиль"
+body:
+  en:
+    - "Bethel stood on the watershed road through the hills, about 18 km north of Jerusalem, near the border between the lands of Benjamin and Ephraim. Most scholars identify it with the village of Beitin, though other sites have been proposed. W. F. Albright and J. L. Kelso excavated there between 1927 and 1960 and found a walled town of the Middle Bronze Age and a burned Late Bronze Age town; the dating of several of its layers has been questioned since."
+    - "In Genesis Abraham pitches his tent between Bethel and Ai and builds an altar. Jacob dreams there of a ladder reaching to heaven and calls the place, earlier named Luz, Bethel, the house of God; returning from Haran, he builds an altar there again. In the time of the judges Israel sought the Lord at the house of God (Bethel in Hebrew), where the ark then stood, and Samuel judged the people there on his yearly circuit."
+    - "When the kingdom divided, Jeroboam set up a golden calf at Bethel and another at Dan, and Bethel became the royal sanctuary of Israel. Amos prophesied there against the house of Jeroboam II, and the priest Amaziah told him to flee to Judah and prophesy no more at Bethel. After the fall of Samaria an exiled priest was sent back to Bethel to teach the new settlers, and Josiah later tore down its altar. Men of Bethel are counted among those who returned from Babylon."
+    - "In the second century BC the Seleucid general Bacchides fortified Bethel against Jonathan Maccabeus. During the war against Rome Vespasian took it in AD 69. In the fourth century Eusebius knew it as a village twelve Roman miles from Jerusalem on the road to Neapolis, and Christian pilgrims came to see the place of Jacob's dream."
+  ru:
+    - "Вефиль стоял на дороге, идущей по водоразделу через горы, примерно в 18 км к северу от Иерусалима, у границы земель Вениамина и Ефрема. Большинство учёных отождествляют его с деревней Бейтин, хотя предлагались и другие места. У. Ф. Олбрайт и Дж. Л. Келсо вели здесь раскопки с 1927 по 1960 г. и нашли обнесённый стеной город среднего бронзового века и сгоревший город позднего бронзового века; датировки нескольких слоёв с тех пор оспариваются."
+    - "В Книге Бытия Авраам ставит шатёр между Вефилем и Гаем и строит жертвенник. Иаков видит здесь во сне лестницу до неба и называет это место, прежде звавшееся Луз, Вефилем, домом Божиим; вернувшись из Харрана, он вновь ставит здесь жертвенник. Во времена судей израильтяне вопрошали Господа в доме Божием (по-еврейски Вефиль), где тогда находился ковчег, а Самуил, обходя каждый год свои города, судил здесь народ."
+    - "При разделении царства Иеровоам поставил одного золотого тельца в Вефиле, а другого в Дане, и Вефиль стал царским святилищем Израиля. Здесь пророчествовал Амос против дома Иеровоама II, и священник Амасия велел ему удалиться в землю Иудину и больше не пророчествовать в Вефиле. После падения Самарии одного из уведённых священников вернули в Вефиль учить новых поселенцев, а позднее Иосия разрушил здешний жертвенник. Уроженцы Вефиля упомянуты среди вернувшихся из Вавилона."
+    - "Во II веке до н. э. селевкидский полководец Вакхид укрепил Вефиль против Ионафана Маккавея. В войне с Римом город взял Веспасиан в 69 г. н. э. В IV веке Евсевий знал его как селение в двенадцати римских милях от Иерусалима по дороге на Неаполис, и христианские паломники приходили посмотреть на место сна Иакова."
+scripture:
+  - Gen.12.8
+  - Gen.28.10-Gen.28.19
+  - Gen.35.1-Gen.35.7
+  - Judg.20.26-Judg.20.27
+  - 1Sam.7.16
+  - 1Kgs.12.28-1Kgs.12.33
+  - Amos.7.10-Amos.7.13
+  - 2Kgs.17.27-2Kgs.17.28
+  - 2Kgs.23.15
+  - Ezra.2.28
+sources:
+  - "1 Maccabees 9:50"
+  - "Josephus, Jewish War 4.551"
+  - "Eusebius, Onomasticon, s.v. Aggai (Ai)"
+  - "Itinerary of the Bordeaux Pilgrim (AD 333); Jerome, Letter 108.13"
+  - "J. L. Kelso, The Excavation of Bethel (1934-1960), AASOR 39 (1968)"
+  - "I. Finkelstein and L. Singer-Avitz, 'Reevaluating Bethel', Zeitschrift des Deutschen Palästina-Vereins 125 (2009)"
+status: checked

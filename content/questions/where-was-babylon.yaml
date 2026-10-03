@@ -1,0 +1,25 @@
+id: where-was-babylon
+question:
+  en: "Where was Babylon?"
+  ru: "Где находился Вавилон?"
+answer:
+  en:
+    - "Babylon lay on the Euphrates in southern Mesopotamia, beside the modern town of Hillah in Iraq, about 85 km south of Baghdad; its ruins and partly rebuilt walls are still there."
+    - "The city rose under Hammurabi in the eighteenth century BC and reached its height under Nebuchadnezzar II (605–562 BC), who rebuilt it with double walls, palaces, the Ishtar Gate and the ziggurat Etemenanki. It was to this Babylon that the exiles from Judah were brought in 597 and in 586 BC (587 is also held); tablets from the royal palace list rations for Jehoiachin, king of Judah, whom 2 Kings also places at the Babylonian court."
+    - "In 539 BC Cyrus of Persia took the city, as the Nabonidus Chronicle and the Cyrus Cylinder record; the Book of Daniel sets the feast of Belshazzar on the night of its fall, and Ezra opens with Cyrus's decree letting the exiles return. Alexander the Great died in Nebuchadnezzar's palace in 323 BC. After Seleucia was founded on the Tigris the people drained away, and when Trajan came in AD 116 he found mostly mounds."
+  ru:
+    - "Вавилон стоял на Евфрате в южной Месопотамии, рядом с нынешним городом Хилла в Ираке, примерно в 85 км к югу от Багдада; руины и частично восстановленные стены стоят там и сегодня."
+    - "Город возвысился при Хаммурапи в XVIII веке до н. э., а расцвета достиг при Навуходоносоре II (605–562 гг. до н. э.), который отстроил его с двойными стенами, дворцами, воротами Иштар и зиккуратом Этеменанки. В этот Вавилон уводили переселенцев из Иудеи в 597 и в 586 г. до н. э. (называют и 587-й); таблички из царского дворца перечисляют выдачи Иехонии, царю Иудейскому, которого и 4-я книга Царств помещает при вавилонском дворе."
+    - "В 539 г. до н. э. город взял Кир Персидский, о чём сообщают Хроника Набонида и Цилиндр Кира; книга Даниила относит пир Валтасара к ночи его падения, а книга Ездры начинается с указа Кира, разрешившего переселенцам вернуться. Александр Македонский умер во дворце Навуходоносора в 323 г. до н. э. После основания Селевкии на Тигре жители разошлись, и Траян в 116 г. н. э. застал здесь в основном холмы."
+map:
+  place: a217d18
+  year: "539 BC"
+  ref: Dan.5.30
+scripture: [2Kgs.24.12, 2Kgs.25.11, Dan.5.30-Dan.5.31, Ezra.1.2-Ezra.1.3]
+sources:
+  - "Nabonidus Chronicle (ABC 7) iii 12-16; the Cyrus Cylinder, l. 17"
+  - "Jehoiachin ration tablets from Babylon (E. F. Weidner, 1939)"
+  - "Arrian, Anabasis 7.24-28 (death of Alexander); Cassius Dio, Roman History 68.30 (Trajan)"
+  - "J. Oates, Babylon (rev. ed., 1986)"
+  - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016)"
+status: checked

@@ -1,0 +1,23 @@
+id: where-was-the-garden-of-eden
+question:
+  en: "Where was the Garden of Eden?"
+  ru: "Где находился Едемский сад?"
+answer:
+  en:
+    - "Nobody knows, and the map does not place it. Genesis gives only one clue: a river flowed out of Eden and divided into four, the Pishon, the Gihon, the Hiddekel, which is the Tigris, and the Euphrates. Two of the four are real rivers of Mesopotamia; the other two have never been identified with certainty, so every proposal rests on how they are read."
+    - "Genesis says: “And the LORD God planted a garden eastward in Eden”, and: “And a river went out of Eden to water the garden; and from thence it was parted, and became into four heads.” The Pishon “compasseth the whole land of Havilah, where there is gold”, and the Gihon “compasseth the whole land of Ethiopia”, in Hebrew Cush. Josephus took the Pishon for the Ganges and the Gihon for the Nile, and so did many after him; others have looked for Havilah and Cush in Arabia or in Babylonia, which gives very different maps."
+    - "Two regions are most often proposed. One is the head of the Persian Gulf, where the Tigris and Euphrates meet: here E. A. Speiser read the four heads as rivers converging on one, and later writers took the Pishon for a dried-up river bed running from the Hijaz across Arabia to Kuwait and the Gihon for the Karun from Iran. The other is the highlands of Armenia in eastern Turkey, where the Tigris and Euphrates rise, reading the four heads as sources. Many scholars hold that the story describes a sacred geography that was never meant to be surveyed, and the map lists the Pishon and Gihon among its disputed places."
+  ru:
+    - "Этого никто не знает, и карта его не показывает. Книга Бытия даёт лишь одну подсказку: из Едема выходила река и разделялась на четыре — Фисон, Гихон, Хиддекель, то есть Тигр, и Евфрат. Две из четырёх — настоящие реки Месопотамии, а две другие так и не отождествлены достоверно, поэтому всякое предположение зависит от того, как их прочесть."
+    - "Бытие говорит: «И насадил Господь Бог рай в Едеме на востоке», и далее: «Из Едема выходила река для орошения рая; и потом разделялась на четыре реки». Фисон «обтекает всю землю Хавила, ту, где золото», а Гихон «обтекает всю землю Куш». Иосиф Флавий принимал Фисон за Ганг, а Гихон за Нил, и многие после него тоже; другие искали Хавилу и Куш в Аравии или в Вавилонии, а это даёт совсем разные карты."
+    - "Чаще всего предлагают две области. Первая — устье Тигра и Евфрата у Персидского залива: здесь Э. Спайзер прочёл четыре «начала» как реки, сходящиеся в одну, а позднейшие авторы приняли за Фисон высохшее русло, идущее из Хиджаза через Аравию к Кувейту, а за Гихон — Карун из Ирана. Вторая — Армянское нагорье на востоке Турции, где Тигр и Евфрат берут начало, если читать четыре «начала» как истоки. Многие учёные считают, что рассказ описывает священную географию, которую не предполагалось наносить на карту; Фисон и Гихон карта относит к спорным местам."
+map:
+  ref: Gen.2.10
+scripture: [Gen.2.8-Gen.2.14, Gen.3.23-Gen.3.24, Ezek.28.13, Ezek.31.8-Ezek.31.9]
+sources:
+  - "Josephus, Antiquities 1.37-39 (the four rivers)"
+  - "E. A. Speiser, 'The Rivers of Paradise', in Festschrift Johannes Friedrich (1959)"
+  - "J. A. Sauer, 'The River Runs Dry: Creation Story Preserves Historical Memory', Biblical Archaeology Review 22/4 (1996)"
+  - "F. Delitzsch, Wo lag das Paradies? (1881)"
+  - "G. J. Wenham, Genesis 1-15 (Word Biblical Commentary 1, 1987), on Genesis 2:10-14"
+status: checked

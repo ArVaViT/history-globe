@@ -99,3 +99,52 @@ export function formatYear(year: number, locale: Locale): string {
       return era === "AD" ? `AD ${y}` : `${y} BC`;
   }
 }
+
+const ROMAN: readonly (readonly [number, string])[] = [
+  [10, "X"],
+  [9, "IX"],
+  [5, "V"],
+  [4, "IV"],
+  [1, "I"],
+];
+const roman = (n: number): string => {
+  let out = "";
+  let rest = n;
+  for (const [v, r] of ROMAN)
+    while (rest >= v) {
+      out += r;
+      rest -= v;
+    }
+  return out;
+};
+const ordinal = (n: number): string => {
+  const tens = n % 100;
+  const suffix = tens >= 11 && tens <= 13 ? "th" : (["th", "st", "nd", "rd"][n % 10] ?? "th");
+  return `${String(n)}${suffix}`;
+};
+
+/** The century a year falls in: "XI в. до н. э.", "11th century BC", "I в. н. э.". */
+export function formatCentury(year: number, locale: Locale): string {
+  const { n, era } = centuryOf(year);
+  if (locale === "en") return `${ordinal(n)} century${era === "BC" ? " BC" : " AD"}`;
+  return `${roman(n)} в.${era === "BC" ? " до н. э." : " н. э."}`;
+}
+
+/**
+ * A span of years, the era said once when both ends share it: "2000–1180 г. до н. э.",
+ * "2000–1180 BC", "AD 30–70"; across the eras each end keeps its own.
+ */
+export function formatYearRange(from: number, to: number, locale: Locale): string {
+  const a = toLabel(from);
+  const b = toLabel(to);
+  if (a.era !== b.era) return `${formatYear(from, locale)} – ${formatYear(to, locale)}`;
+  const tail = formatYear(to, locale);
+  if (locale === "en" && a.era === "AD") return `AD ${String(a.year)}–${String(b.year)}`;
+  return `${String(a.year)}–${tail}`;
+}
+
+/**
+ * The states of the first frame end here (AD 500); the later ones ship apart and load
+ * when the slider first passes it (scripts/build-content.ts, MapLibreRenderer).
+ */
+export const POLITY_SPLIT_YEAR = 500;

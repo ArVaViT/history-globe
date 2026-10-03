@@ -1,0 +1,36 @@
+id: where-was-antioch
+question:
+  en: "Where was Antioch? (both Antiochs of Acts)"
+  ru: "Где находилась Антиохия? (обе Антиохии книги Деяний)"
+answer:
+  en:
+    - "Acts names two Antiochs. Antioch on the Orontes, the capital of Syria, lay about 25 km from the sea between the river and Mount Silpius; today it is Antakya in southern Turkey, about 500 km north of Jerusalem in a straight line and 611 km by the roads on the map, with Seleucia as its port. Antioch of Pisidia stood on a hill near modern Yalvaç in central Turkey, about 500 km north-west of the Syrian city in a straight line and about 815 km from Jerusalem, also in a straight line."
+    - 'Seleucus I founded the Syrian Antioch in 300 BC, and Josephus counts it the third city of the Roman world after Rome and Alexandria. There believers scattered after Stephen''s death preached to Greeks, Barnabas brought Saul from Tarsus, and "the disciples were called Christians first in Antioch". Its church sent relief to Judea in the famine and, at the word of the Holy Spirit, set apart Barnabas and Saul; all three of Paul''s journeys on the map set out from it, and he withstood Peter there.'
+    - 'Antioch of Pisidia was a Seleucid foundation that Augustus made a Roman colony after 25 BC; William Ramsay found fragments of a Latin copy of Augustus'' Res Gestae there in 1914. On the first journey Paul and Barnabas "came to Antioch in Pisidia, and went into the synagogue on the sabbath day, and sat down", and there Paul gave the first of his sermons that Acts reports at length; when the Jews opposed them they turned to the Gentiles and were expelled, and went on to Iconium. Many scholars think the Letter to the Galatians was written to these churches of the south of the province; others hold that it went to the north.'
+  ru:
+    - "Деяния называют две Антиохии. Антиохия на Оронте, столица Сирии, стояла примерно в 25 км от моря между рекой и горой Сильпий; сегодня это Антакья на юге Турции, около 500 км к северу от Иерусалима по прямой и 611 км по дорогам на карте; гаванью ей служила Селевкия. Антиохия Писидийская стояла на холме близ нынешнего Ялвача в центральной Турции, примерно в 500 км к северо-западу от сирийской по прямой и примерно в 815 км от Иерусалима, тоже по прямой."
+    - "Сирийскую Антиохию основал Селевк I в 300 г. до н. э., и Иосиф Флавий называет её третьим городом римского мира после Рима и Александрии. Здесь верующие, рассеянные после гибели Стефана, проповедовали Еллинам, Варнава привёл из Тарса Савла, и «ученики в Антиохии в первый раз стали называться Христианами». Её церковь послала помощь в Иудею во время голода и по слову Духа Святого отделила Варнаву и Савла; все три путешествия Павла на карте начинаются отсюда, и здесь он противостал Петру."
+    - "Антиохия Писидийская была основана Селевкидами, а после 25 г. до н. э. Август сделал её римской колонией; в 1914 году Уильям Рамзай нашёл здесь фрагменты латинской копии «Деяний Августа». В первом путешествии Павел и Варнава «прибыли в Антиохию Писидийскую и, войдя в синагогу в день субботний, сели»; здесь Павел произнёс первую из своих проповедей, которые Деяния передают подробно, а когда Иудеи воспротивились, апостолы обратились к язычникам, были изгнаны и пошли в Иконию. Многие учёные считают, что Послание к Галатам написано этим церквам юга провинции; другие относят его к северу."
+map:
+  place: ae41ab4
+  year: "AD 47"
+  ref: Acts.11.26
+scripture:
+  [
+    Acts.11.19-Acts.11.26,
+    Acts.13.1-Acts.13.3,
+    Acts.13.14,
+    Acts.13.46-Acts.13.51,
+    Gal.2.11,
+    2Tim.3.11,
+  ]
+sources:
+  - "Josephus, Jewish War 3.29"
+  - "Strabo, Geography 12.8.14; 16.2.4-6"
+  - "W. M. Ramsay, 'Colonia Caesarea (Pisidian Antioch) in the Augustan Age', Journal of Roman Studies 6 (1916)"
+  - "G. Downey, A History of Antioch in Syria from Seleucus to the Arab Conquest (1961)"
+  - "S. Mitchell and M. Waelkens, Pisidian Antioch: The Site and its Monuments (1998)"
+  - "History Globe articles “Antioch” and “Antioch of Pisidia”, History Globe dated events (antioch-founded, c. 300 BC) and History Globe tours “Paul's first journey”, “Paul's second journey” and “Paul's third journey”"
+  - "Straight-line distances between the places' points (Jerusalem, Antioch on the Orontes, Antioch in Pisidia): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Length along the Roman roads: Itiner-e (de Soto, Pažout, Brughmans et al. 2025), Jerusalem to Antioch (611 km)"
+status: checked

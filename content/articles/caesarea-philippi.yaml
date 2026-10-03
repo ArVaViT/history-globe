@@ -1,0 +1,29 @@
+# Overview article (ADR 0007). Mainstream facts only; the founding is dated about 3 BC as in place-life.yaml, and the disputed site of Herod's temple to Augustus is named as such.
+id: caesarea-philippi
+place: ab7bf48
+title:
+  en: "Caesarea Philippi"
+  ru: "Кесария Филиппова"
+body:
+  en:
+    - "Caesarea Philippi lay at the southern foot of Mount Hermon, where one of the main springs of the Jordan flows out from below a cliff and a large cave; the site is today's Banias in the Golan Heights. In the Hellenistic age the cave was sacred to the Greek god Pan, and the place was called the Panium or Paneas. About 200 BC Antiochus III defeated the Ptolemaic general Scopas near the Panium, and the land passed from the Ptolemies to the Seleucids."
+    - "In 20 BC Augustus gave Herod the Great the territory of Zenodorus, which included Paneas, and Herod built a temple of white stone to Augustus near the Panium. Where it stood is disputed: some place it in front of the cave, others at Omrit, a few kilometres to the south-west. Around 3 BC Herod's son Philip the tetrarch built a city at the springs as his capital and named it Caesarea; it was called Caesarea Philippi to tell it from Caesarea on the coast."
+    - 'When Jesus came "into the coasts of Caesarea Philippi", he asked his disciples whom men said that he was, and Peter answered, "Thou art the Christ, the Son of the living God." In Matthew, Jesus then says to him, "thou art Peter, and upon this rock I will build my church", and promises him the keys of the kingdom of heaven. Mark tells the same exchange on the way to the towns of Caesarea Philippi.'
+    - "King Agrippa II enlarged the city and renamed it Neronias in honour of Nero. In AD 67 Vespasian rested his army there for twenty days as Agrippa's guest, and in 70, after the fall of Jerusalem, Titus held games there in which many Jewish captives were killed. The city later went by the name of Paneas again. Eusebius saw there a bronze statue said to show the woman healed of an issue of blood kneeling before Jesus; Sozomen reports that under Julian it was pulled down and replaced by a statue of the emperor."
+  ru:
+    - "Кесария Филиппова лежала у южного подножия горы Ермон, там, где из-под скалы и большой пещеры выходит один из главных истоков Иордана; сегодня это Баниас на Голанских высотах. В эллинистическую эпоху пещера была посвящена греческому богу Пану, а место называлось Панион, или Панеада. Около 200 г. до н. э. Антиох III разбил у Паниона птолемеевского полководца Скопаса, и эта земля перешла от Птолемеев к Селевкидам."
+    - "В 20 г. до н. э. Август отдал Ироду Великому владения Зенодора, включавшие Панеаду, и Ирод построил у Паниона храм Августу из белого камня. Где он стоял, спорят: одни помещают его перед пещерой, другие — в Омрите, в нескольких километрах к юго-западу. Около 3 г. до н. э. сын Ирода, четвертовластник Филипп, построил у источников город, сделал его своей столицей и назвал Кесарией; её называли Кесарией Филипповой, чтобы отличать от Кесарии на побережье."
+    - "Придя «в страны Кесарии Филипповой», Иисус спросил учеников, за кого почитают Его люди, и Петр ответил: «Ты — Христос, Сын Бога Живаго». У Матфея Иисус затем говорит ему: «ты — Петр, и на сем камне Я создам Церковь мою», и обещает ему ключи Царства Небесного. Марк передаёт тот же разговор по дороге в селения Кесарии Филипповой."
+    - "Царь Агриппа II расширил город и в честь Нерона переименовал его в Нерониаду. В 67 г. н. э. Веспасиан двадцать дней давал здесь отдых своему войску как гость Агриппы, а в 70 г., после падения Иерусалима, Тит устроил здесь зрелища, на которых погибло множество пленных иудеев. Позднее город снова стал называться Панеадой. Евсевий видел здесь бронзовую статую, которая, как говорили, изображала исцелённую от кровотечения женщину, преклонившую колени перед Иисусом; Созомен сообщает, что при Юлиане её сбросили и поставили на её место статую императора."
+scripture:
+  - Matt.16.13-Matt.16.20
+  - Mark.8.27-Mark.8.30
+  - Matt.9.20-Matt.9.22
+sources:
+  - "Polybius, Histories 16.18 (the battle at the Panium)"
+  - "Josephus, Antiquities 15.360; 15.363-364; 18.28; 20.211; Jewish War 1.404-406; 2.168; 3.443-444; 3.509-513; 7.23-24"
+  - "Eusebius, Ecclesiastical History 7.17-18"
+  - "Sozomen, Church History 5.21"
+  - "Z. U. Ma'oz, V. Tzaferis and M. Hartal, 'Banias', in The New Encyclopedia of Archaeological Excavations in the Holy Land 1 (1993) and 5 (2008)"
+  - "J. F. Wilson, Caesarea Philippi: Banias, the Lost City of Pan (2004)"
+status: checked

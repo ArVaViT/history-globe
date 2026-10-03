@@ -1,0 +1,24 @@
+id: when-did-babylon-destroy-jerusalem
+question:
+  en: "When did Babylon destroy Jerusalem?"
+  ru: "Когда Вавилон разрушил Иерусалим?"
+answer:
+  en:
+    - "Nebuchadnezzar's army burned Jerusalem and the Temple in 587 or 586 BC, in the nineteenth year of his reign; the year is disputed, and the map's tour of the exile shows 587 BC."
+    - 'The siege began in the ninth year of Zedekiah, the last king of Judah, in the tenth month, and lasted about eighteen months; when famine broke the city the wall was breached, Zedekiah fled and was caught in the plains of Jericho, and he was blinded at Riblah after his sons were killed before him. A month later Nebuzaradan, captain of the guard, came to Jerusalem: "And he burnt the house of the LORD, and the king''s house, and all the houses of Jerusalem", and the Chaldean army broke down the walls. The people were carried to Babylon, and only the poorest were left to work the land.'
+    - "This was the second fall of the city. In 597 BC Jehoiachin had surrendered and been taken to Babylon with the craftsmen and the treasures of the Temple, as 2 Kings and the Babylonian Chronicle both record; Nebuchadnezzar set Zedekiah on the throne, and his revolt brought the end. The year of the final fall turns on how the regnal years of Nebuchadnezzar and Zedekiah are counted; the Babylonian Chronicle breaks off before it. The exile lasted until Cyrus let the people return in 538 BC."
+  ru:
+    - "Войско Навуходоносора сожгло Иерусалим и Храм в 587 или 586 г. до н. э., в девятнадцатый год его царствования; год спорен, тур пленения на карте показывает 587 г."
+    - "Осада началась в девятый год Седекии, последнего царя Иудеи, в десятый месяц, и длилась около полутора лет; когда голод сломил город, стена была проломлена, Седекия бежал и был схвачен на равнинах Иерихонских, а в Ривле его ослепили, убив перед ним сыновей. Месяц спустя в Иерусалим пришёл Навузардан, начальник телохранителей: «и сжег дом Господень и дом царя, и все домы в Иерусалиме», а войско Халдейское разрушило стены. Народ увели в Вавилон, оставив лишь бедных обрабатывать землю."
+    - "Это было второе падение города. В 597 г. до н. э. Иехония сдался и был уведён в Вавилон вместе с ремесленниками и сокровищами Храма, о чём сообщают и 4-я книга Царств, и Вавилонская хроника; Навуходоносор посадил на престол Седекию, и его мятеж привёл к концу. Год окончательного падения зависит от того, как считать годы царствования Навуходоносора и Седекии; Вавилонская хроника обрывается раньше. Плен длился до 538 г. до н. э., когда Кир разрешил народу вернуться."
+map:
+  place: a15257a
+  year: "c. 586 BC"
+  ref: 2Kgs.25.8
+scripture: [2Kgs.25.1-2Kgs.25.12, Jer.52.12-Jer.52.15, 2Chr.36.17-2Chr.36.20, 2Kgs.24.10-2Kgs.24.17]
+sources:
+  - "Babylonian Chronicle, ABC 5 rev. 11-13 (2 Adar 597 BC: the city of Judah taken, its king captured); the chronicle breaks off after 594 BC"
+  - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings (3rd ed., 1983) (586 BC)"
+  - "History Globe dated events (jerusalem-falls, c. 586 BC) and History Globe tour “The fall of Jerusalem and the exile” (587 BC, disputed)"
+  - "'Jerusalem', in E. Stern (ed.), The New Encyclopedia of Archaeological Excavations in the Holy Land, vol. 2 (1993)"
+status: checked

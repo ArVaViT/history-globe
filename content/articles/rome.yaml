@@ -1,0 +1,39 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such.
+id: rome
+place: afc8e7a
+title:
+  en: "Rome"
+  ru: "Рим"
+body:
+  en:
+    - "Rome lies on the Tiber, about 25 km from the sea, where low hills overlook a crossing of the river. Huts stood on the Palatine from the tenth and ninth centuries BC; Roman tradition put the founding by Romulus in 753 BC, a conventional year. Kings ruled until, traditionally, 509 BC, when the Romans drove out Tarquin and set up a republic. Early in the fourth century BC the Gauls sacked the city."
+    - "The republic united Italy and then, in wars with Carthage and the Hellenistic kings, the Mediterranean; in 146 BC it destroyed both Carthage and Corinth. Pompey took Jerusalem in 63 BC; Jews brought to Italy as captives and later freed made up much of Rome's Jewish community. After the civil wars Augustus became the first emperor in 27 BC and rebuilt the city in marble. Rome now held hundreds of thousands of people, perhaps a million; the figure is disputed."
+    - "Visitors from Rome heard Peter at Pentecost. About AD 49 Claudius expelled the Jews from Rome, and Aquila and Priscilla came to Corinth. Paul wrote to the Romans, a church he had not yet seen, and arrived as a prisoner about AD 60; he lived two whole years in his own hired house, preaching. After the fire of AD 64 Nero blamed the Christians and put many to death, as Tacitus records. Early tradition holds that Peter and Paul were martyred in Rome under Nero, and their tombs were shown on the Vatican hill and the road to Ostia."
+    - "After centuries of intermittent persecution Constantine defeated Maxentius at the Milvian Bridge in 312 and founded the Lateran basilica and St Peter's. In 330 he made Constantinople the new capital. About 382 Bishop Damasus asked Jerome to revise the Latin Gospels. Alaric's Visigoths sacked Rome in 410 and the Vandals in 455; Pope Leo I led the church from 440 to 461. In 476 Odoacer deposed Romulus Augustulus, the last emperor in the West."
+  ru:
+    - "Рим стоит на Тибре, примерно в 25 км от моря, там, где невысокие холмы поднимаются над речной переправой. Хижины на Палатине появились в X–IX веках до н. э.; римское предание относило основание города Ромулом к 753 г. до н. э., и этот год условный. Цари правили до 509 г. до н. э., когда, по преданию, римляне изгнали Тарквиния и установили республику. В начале IV века до н. э. город разграбили галлы."
+    - "Республика объединила Италию, а затем в войнах с Карфагеном и эллинистическими царями подчинила Средиземноморье; в 146 г. до н. э. она разрушила и Карфаген, и Коринф. Помпей взял Иерусалим в 63 г. до н. э.; иудеи, приведённые в Италию пленниками и позже отпущенные на волю, составили большую часть римской иудейской общины. После гражданских войн Август в 27 г. до н. э. стал первым императором и перестроил город в мраморе. В Риме жили сотни тысяч людей, возможно миллион; эта цифра спорна."
+    - "Пришельцы из Рима слышали Петра в день Пятидесятницы. Около 49 г. н. э. Клавдий изгнал иудеев из Рима, и Акила и Прискилла пришли в Коринф. Павел написал Послание к Римлянам церкви, которой ещё не видел, а около 60 г. н. э. прибыл туда узником и целых два года жил на своём иждивении, проповедуя. После пожара 64 г. н. э. Нерон обвинил христиан и многих казнил, как пишет Тацит. Раннее предание говорит, что Пётр и Павел приняли мученическую смерть в Риме при Нероне; их гробницы показывали на Ватиканском холме и на Остийской дороге."
+    - "После веков то затихавших, то вспыхивавших гонений Константин в 312 г. разбил Максенция у Мульвиева моста и заложил Латеранскую базилику и храм святого Петра. В 330 г. он сделал новой столицей Константинополь. Около 382 г. епископ Дамас поручил Иерониму исправить латинский текст Евангелий. В 410 г. Рим разграбили вестготы Алариха, в 455 г. вандалы; с 440 по 461 г. церковь возглавлял папа Лев I. В 476 г. Одоакр низложил Ромула Августула, последнего императора Запада."
+scripture:
+  - Acts.2.10
+  - Acts.2.14
+  - Acts.18.2
+  - Rom.1.7
+  - Rom.1.13
+  - Acts.28.14-Acts.28.16
+  - Acts.28.30-Acts.28.31
+sources:
+  - "Varronian era, as in Plutarch, Romulus 12, and Censorinus, De die natali 21"
+  - "Livy, History of Rome 1.57-60 (the end of the kings); 5.38-49 (the Gallic sack)"
+  - "Polybius, Histories 38.19-22 (Carthage); Pausanias, Description of Greece 7.16.7-10 (Corinth)"
+  - "Tacitus, Histories 5.9 (Pompey in Jerusalem); Philo, Embassy to Gaius 155 (the Jews of Rome descended from captives); Suetonius, Augustus 28.3"
+  - "Suetonius, Claudius 25.4; Orosius, History against the Pagans 7.6.15"
+  - "Tacitus, Annals 15.38-44"
+  - "1 Clement 5; Eusebius, Church History 2.25.5-8 (Gaius on the tombs of the apostles)"
+  - "Eusebius, Life of Constantine 1.37-38; Jerome, Letter to Damasus (preface to the Gospels)"
+  - "Orosius, History against the Pagans 7.39-40; Augustine, The City of God 1.1-7; Procopius, Vandal War 1.5"
+  - "R. Krautheimer, Rome: Profile of a City, 312-1308 (1980)"
+  - "M. Beard, SPQR: A History of Ancient Rome (2015)"
+  - "P. Lampe, From Paul to Valentinus: Christians at Rome in the First Two Centuries (2003)"
+status: checked

@@ -1,0 +1,36 @@
+# Overview article (ADR 0007). Mainstream facts only; the disputed authorship of Colossians is named as such.
+id: colossae
+place: a4e5a69
+title:
+  en: "Colossae"
+  ru: "Колоссы"
+body:
+  en:
+    - "Colossae lay in the valley of the Lycus in south-western Phrygia, at the foot of Mount Cadmus near today's Honaz in Turkey, about 15 km up the valley from Laodicea and 20 km from Hierapolis. Its mound has never been fully excavated; survey work there began only in 2021. Herodotus says that Xerxes, marching against Greece in 481 BC, came to Colossae, a great Phrygian city at the place where the Lycus disappears into a chasm and flows underground. In 401 BC the younger Cyrus halted at Colossae for seven days, and Xenophon calls it an inhabited city, prosperous and large."
+    - "In the Hellenistic and Roman periods the nearby cities of Laodicea and Hierapolis grew and overshadowed it. Strabo counts Colossae among the small towns around Laodicea and Apameia, though it was known for its wool and for a dye named after the city."
+    - "The church at Colossae was founded not by Paul but by Epaphras, a Colossian, from whom the believers had learned the gospel; many of them had not seen Paul's face. The Letter to the Colossians, sent in Paul's name from prison (many scholars hold that a disciple wrote it), speaks of the believers of Laodicea and Hierapolis, sends greetings to Laodicea and asks that it be read there too. It calls Onesimus one of them and sends a message to Archippus, and since the letter to Philemon greets Archippus as well, the house church of Philemon, to whom Paul sent the slave Onesimus back, is usually placed at Colossae."
+    - "Tacitus records that an earthquake laid Laodicea in ruins in AD 60, and the fifth-century historian Orosius says that under Nero an earthquake overthrew the three cities of Laodicea, Hierapolis and Colossae. Colossae lived on as a small town; in the Byzantine period its people moved up the slope to Chonae, the modern Honaz."
+  ru:
+    - "Колоссы лежали в долине Лика на юго-западе Фригии, у подножия горы Кадм близ нынешнего турецкого Хоназа, примерно в 15 км выше по долине от Лаодикии и в 20 км от Иераполя. Их холм так и не был полностью раскопан; разведочные работы начались там лишь в 2021 г. Геродот пишет, что Ксеркс, идя на Грецию в 481 г. до н. э., пришёл в Колоссы, большой фригийский город на том месте, где Лик уходит в расселину и течёт под землёй. В 401 г. до н. э. Кир Младший простоял в Колоссах семь дней, и Ксенофонт называет их населённым городом, богатым и большим."
+    - "В эллинистическую и римскую эпохи соседние Лаодикия и Иераполь выросли и затмили их. Страбон относит Колоссы к небольшим городкам вокруг Лаодикии и Апамеи, хотя они славились шерстью и краской, названной по имени города."
+    - "Церковь в Колоссах основал не Павел, а Епафрас, сам колоссянин, от которого верующие научились Евангелию; многие из них не видели лица Павла. Послание к Колоссянам, отправленное от имени Павла из уз (многие учёные считают, что его написал ученик), упоминает верующих Лаодикии и Иераполя, передаёт приветствие Лаодикии и просит прочитать его и там. Оно называет Онисима одним из них и передаёт слово Архиппу, а так как послание к Филимону тоже приветствует Архиппа, домашнюю церковь Филимона, к которому Павел отослал раба Онисима, обычно помещают в Колоссах."
+    - "Тацит сообщает, что в 60 г. н. э. землетрясение разрушило Лаодикию, а историк V века Орозий пишет, что при Нероне землетрясение повергло три города — Лаодикию, Иераполь и Колоссы. Колоссы продолжали существовать как небольшой город; в византийскую эпоху их жители переселились выше по склону, в Хоны, нынешний Хоназ."
+scripture:
+  - Col.1.2
+  - Col.1.7
+  - Col.2.1
+  - Col.4.9
+  - Col.4.12-Col.4.13
+  - Col.4.15-Col.4.17
+  - Col.4.18
+  - Phlm.1.1-Phlm.1.2
+  - Phlm.1.10-Phlm.1.16
+sources:
+  - "Herodotus, Histories 7.30"
+  - "Xenophon, Anabasis 1.2.6"
+  - "Strabo, Geography 12.8.13; 12.8.16"
+  - "Tacitus, Annals 14.27"
+  - "Orosius, Histories against the Pagans 7.7.12"
+  - "A. H. Cadwallader and M. Trainor (eds.), Colossae in Space and Time (2011)"
+  - "U. Huttner, Early Christianity in the Lycus Valley (2013)"
+status: checked

@@ -1,0 +1,50 @@
+# Overview article (ADR 0007). Mainstream facts only; the varying extent of Judea in different periods is noted; the dates of the governors are the usual ones.
+id: judea
+place: a149f13
+title:
+  en: "Judea"
+  ru: "Иудея"
+body:
+  en:
+    - 'Judea is the Greek and Latin form of Judah, the name of the southern kingdom and then of the province around Jerusalem. Its core is the hill country from Bethel south to Hebron and Beersheba, about 1,000 m high at Hebron, with the wilderness of Judea falling east to the Dead Sea and the Shephelah sloping west to the Philistine plain; Luke speaks of the hill country of Judea. Under the Persians it was the small province of Yehud, "the province of Judea" of Ezra, with its own governors and coins; after the Maccabees it grew into the Hasmonean kingdom, and the Romans used the name both for the Jewish heartland and for the whole land they governed from Caesarea.'
+    - 'Pompey took Jerusalem in 63 BC. Herod the Great, in whose days Jesus was born "in Bethlehem of Judaea", ruled from 37 to 4 BC; his son Archelaus "did reign in Judaea in the room of his father Herod", so Joseph turned aside into Galilee. In AD 6 Augustus deposed Archelaus and made Judea a Roman province under prefects, among them Pontius Pilate (26–36), whose name was found on a stone at Caesarea in 1961. Agrippa I was king from 41 to 44; after him procurators ruled until the revolt of 66, which ended with the destruction of Jerusalem in 70 and the fall of Masada.'
+    - 'John the Baptist preached "in the wilderness of Judaea", and all the land of Judea went out to him. Jesus taught in Judea as in Galilee, though for a time "he would not walk in Jewry, because the Jews sought to kill him", and his disciples feared his return there. He was crucified under Pilate, and his last command sent witnesses to Jerusalem, to all Judea and Samaria, and to the uttermost part of the earth. After Stephen''s death the believers were scattered throughout the regions of Judea and Samaria; Paul was unknown by face to the churches of Judea, and Antioch sent them relief in a famine.'
+    - "After the revolt of Bar Kokhba (132–135) Hadrian renamed the province Syria Palaestina and rebuilt Jerusalem as Aelia Capitolina. The Judean desert kept the caves where the Dead Sea Scrolls were hidden, found from 1947. Today the Judean hills are mostly in the West Bank, with Bethlehem and most of Hebron under Palestinian administration and Israeli military control, while the western slopes and the Judean lowland lie in Israel; Israel calls the area Judea and Samaria."
+  ru:
+    - "Иудея — греческая и латинская форма имени Иуды, название южного царства, а затем области вокруг Иерусалима. Её ядро — нагорье от Вефиля на юг до Хеврона и Вирсавии, у Хеврона около 1000 м высотой, с пустыней Иудейской, спускающейся на восток к Мёртвому морю, и Шефелой, сходящей на запад к Филистимской равнине; Лука говорит о «нагорной стране Иудейской». При Персах это была малая провинция Йехуд, Иудейская область книги Ездры, со своими правителями и монетами; после Маккавеев она выросла в Хасмонейское царство, а римляне называли Иудеей и собственно иудейский край, и всю землю, которой правили из Кесарии."
+    - "Помпей взял Иерусалим в 63 г. до н. э. Ирод Великий, во дни которого Иисус родился «в Вифлееме Иудейском», правил с 37 по 4 г. до н. э.; его сын «Архелай царствует в Иудее вместо Ирода, отца своего», и потому Иосиф пошёл в пределы Галилейские. В 6 г. н. э. Август низложил Архелая и сделал Иудею римской провинцией под началом префектов, среди которых был Понтий Пилат (26–36 гг.); его имя нашли на камне в Кесарии в 1961 году. Агриппа I был царём с 41 по 44 г.; после него правили прокураторы вплоть до восстания 66 г., кончившегося разрушением Иерусалима в 70 г. и падением Масады."
+    - "Иоанн Креститель проповедовал «в пустыне Иудейской», и к нему выходила «вся страна Иудейская». Иисус учил в Иудее, как и в Галилее, хотя одно время «по Иудее не хотел ходить, потому что Иудеи искали убить Его», и ученики боялись Его возвращения туда. Он был распят при Пилате, а последнее Его повеление послало свидетелей «в Иерусалиме, и во всей Иудее, и Самарии». После смерти Стефана верующие «рассеялись по разным местам Иудеи и Самарии»; Павел не был известен лично церквам Иудеи, а Антиохия послала им пособие в голод."
+    - "После восстания Бар-Кохбы (132–135 гг.) Адриан переименовал провинцию в Сирию Палестинскую и отстроил Иерусалим как Элию Капитолину. Иудейская пустыня сохранила пещеры, где были спрятаны свитки Мёртвого моря, находимые с 1947 года. Сегодня Иудейские горы по большей части лежат на Западном берегу: Вифлеем и бо́льшая часть Хеврона — под палестинским управлением и израильским военным контролем, а западные склоны и Иудейская низменность — в Израиле; Израиль называет эту область Иудеей и Самарией."
+scripture:
+  - Ezra.5.8
+  - Neh.11.3
+  - Matt.2.1
+  - Matt.2.5-Matt.2.6
+  - Matt.2.22
+  - Matt.3.1
+  - Matt.24.16
+  - Mark.1.5
+  - Luke.1.5
+  - Luke.1.65
+  - Luke.3.1
+  - Luke.23.5
+  - John.3.22
+  - John.7.1
+  - John.11.7-John.11.8
+  - Acts.1.8
+  - Acts.8.1
+  - Acts.9.31
+  - Acts.11.29
+  - Acts.12.19
+  - Gal.1.22
+  - 1Thess.2.14
+sources:
+  - "Josephus, Antiquities 14.54-79 (Pompey takes Jerusalem); 17.342-355 (the deposition of Archelaus); 18.1-2 (Judea a province); Jewish War 7.252-406 (Masada)"
+  - "Tacitus, Histories 5.9 (Judea under Rome); Annals 15.44 (Pilate)"
+  - "A. Frova, 'L'iscrizione di Ponzio Pilato a Cesarea', Rendiconti dell'Istituto Lombardo 95 (1961)"
+  - "Cassius Dio, Roman History 69.12-14 (the Bar Kokhba revolt)"
+  - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. G. Vermes and F. Millar, vol. 1 (1973)"
+  - "Y. Meshorer, A Treasury of Jewish Coins (2001) (the Yehud coins)"
+  - "O. Lipschits, The Fall and Rise of Jerusalem: Judah under Babylonian Rule (2005)"
+  - "F. Millar, The Roman Near East, 31 BC - AD 337 (1993)"
+status: checked

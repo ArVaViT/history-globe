@@ -1,0 +1,45 @@
+# Overview article (ADR 0007). Mainstream facts only; Egyptian dates follow I. Shaw (ed.), The Oxford History of Ancient Egypt; the date of the exodus is given as disputed.
+id: egypt
+place: af301ca
+title:
+  en: "Egypt"
+  ru: "Египет"
+body:
+  en:
+    - "Egypt is the land of the lower Nile: a strip of watered valley and the wide Delta, shut in by desert, from the First Cataract at Syene (Aswan) to the Mediterranean. The Bible calls it Mizraim. Upper and Lower Egypt were united about 3000 BC, and the pyramids of Giza rose in the Old Kingdom, in the twenty-sixth and twenty-fifth centuries BC. In the New Kingdom (c. 1550–1069 BC) the pharaohs held Canaan as a province, and the stele of Merneptah, about 1208 BC, carries the oldest known mention of Israel outside the Bible."
+    - 'Abram went down into Egypt in a famine, Joseph was sold there and rose to govern it, and Jacob''s family settled in the land of Goshen. Exodus tells how a new king enslaved the Israelites and how God brought them "out of the land of Egypt, out of the house of bondage". The date of the exodus is disputed: the figures of 1 Kings point to about 1446 BC, many scholars prefer the thirteenth century, the age of Rameses II, and others hold that the story cannot be dated. Egypt remained the great power to the south: Solomon married a pharaoh''s daughter, Shishak (Shoshenq I) marched on Jerusalem in the fifth year of Rehoboam, about 925 BC, and Isaiah cried, "Woe to them that go down to Egypt for help".'
+    - "Pharaoh Necho killed Josiah at Megiddo in 609 BC and was routed at Carchemish in 605. After the fall of Jerusalem Judeans fleeing the Babylonians carried Jeremiah to Egypt, where he prophesied to the Jews of Migdol, Tahpanhes and Noph. Papyri from Elephantine show a Jewish garrison with a temple of its own on the Nile under Persian rule, which began with Cambyses in 525 BC. Alexander founded Alexandria in 331 BC; the Ptolemies ruled Egypt until 30 BC, and under them the Law was translated into Greek for the Jews of Alexandria, the beginning of the Septuagint."
+    - 'Matthew tells how Joseph took the child and his mother by night into Egypt until the death of Herod, "that it might be fulfilled which was spoken of the Lord by the prophet, saying, Out of Egypt have I called my son", the words of Hosea. Jews from Egypt heard the apostles at Pentecost, and Apollos, "born at Alexandria", was "mighty in the scriptures". Isaiah''s oracle on Egypt ends with a blessing: "Blessed be Egypt my people". Eusebius records the tradition that Mark founded the church of Alexandria; the Copts, Egypt''s Christians, still count their years from the reign of Diocletian. The Arab Republic of Egypt, with its capital at Cairo, has more than a hundred million people, nearly all of them along the Nile.'
+  ru:
+    - "Египет — страна нижнего Нила: полоса орошаемой долины и широкая Дельта, зажатые пустыней, от первого порога у Сиены (Асуана) до Средиземного моря. В Библии он зовётся Мицраим. Верхний и Нижний Египет объединились около 3000 г. до н. э., а пирамиды Гизы поднялись в Древнем царстве, в XXVI–XXV веках до н. э. В Новом царстве (ок. 1550–1069 гг. до н. э.) фараоны держали Ханаан как провинцию, а стела Мернептаха, около 1208 г. до н. э., несёт древнейшее известное упоминание Израиля вне Библии."
+    - "Аврам сошёл в Египет во время голода, Иосиф был продан туда и возвысился до правителя страны, а семья Иакова поселилась в земле Гесем. Книга Исход рассказывает, как новый царь поработил Израильтян и как Бог вывел их «из земли Египетской, из дома рабства». Дата исхода спорна: по числам Третьей книги Царств он приходится примерно на 1446 г. до н. э., многие учёные предпочитают XIII век, время Рамсеса II, а иные считают, что рассказ вообще нельзя датировать. Египет оставался великой державой на юге: Соломон женился на дочери фараона, Сусаким (Шешонк I) вышел против Иерусалима на пятом году Ровоама, около 925 г. до н. э., а Исаия восклицал: «Горе тем, которые идут в Египет за помощью»."
+    - "Фараон Нехао убил Иосию при Мегиддоне в 609 г. до н. э. и был разбит при Кархемисе в 605 г. После падения Иерусалима Иудеи, бежавшие от Вавилонян, увели в Египет Иеремию, и он пророчествовал там Иудеям Магдола, Тафниса и Нофа. Папирусы с Элефантины показывают иудейский гарнизон с собственным храмом на Ниле под властью Персии, которая началась с Камбиза в 525 г. до н. э. Александр основал Александрию в 331 г. до н. э.; Птолемеи правили Египтом до 30 г. до н. э., и при них Закон был переведён на греческий для александрийских Иудеев — так началась Септуагинта."
+    - "Матфей рассказывает, как Иосиф ночью взял Младенца и Матерь Его в Египет и был там до смерти Ирода, «да сбудется реченное Господом через пророка, который говорит: из Египта воззвал Я Сына Моего», — слова Осии. Иудеи из Египта слышали апостолов в день Пятидесятницы, а Аполлос, «родом из Александрии», был «сведущий в Писаниях». Пророчество Исаии о Египте кончается благословением: «благословен народ Мой — Египтяне». Евсевий передаёт предание, что церковь в Александрии основал Марк; копты, христиане Египта, до сих пор ведут счёт лет от воцарения Диоклетиана. В Арабской Республике Египет со столицей в Каире живёт более ста миллионов человек, почти все — вдоль Нила."
+scripture:
+  - Gen.12.10
+  - Gen.47.27
+  - Exod.1.8-Exod.1.14
+  - Exod.20.2
+  - 1Kgs.3.1
+  - 1Kgs.14.25-1Kgs.14.26
+  - 2Kgs.23.29
+  - Isa.19.23-Isa.19.25
+  - Isa.31.1
+  - Jer.43.5-Jer.43.7
+  - Jer.44.1
+  - Hos.11.1
+  - Matt.2.13-Matt.2.15
+  - Acts.2.10
+  - Acts.18.24
+sources:
+  - "The Merneptah Stele (Egyptian Museum, Cairo, JE 31408), the victory hymn of Merneptah's fifth year"
+  - "Shoshenq I, the Bubastite Portal reliefs at Karnak (the list of conquered towns)"
+  - "Babylonian Chronicle ABC 5 (the battle of Carchemish, 605 BC)"
+  - "B. Porten, The Elephantine Papyri in English (1996)"
+  - "Letter of Aristeas (the translation of the Law under Ptolemy II)"
+  - "Herodotus, Histories 3.1-16 (Cambyses in Egypt)"
+  - "Eusebius, Church History 2.16 (Mark at Alexandria)"
+  - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000)"
+  - "J. K. Hoffmeier, Israel in Egypt (1996); K. A. Kitchen, On the Reliability of the Old Testament (2003) (a thirteenth-century exodus)"
+  - "W. G. Dever, Who Were the Early Israelites and Where Did They Come From? (2003)"
+status: checked

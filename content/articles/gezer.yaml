@@ -1,0 +1,32 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such.
+id: gezer
+place: aed6538
+title:
+  en: "Gezer"
+  ru: "Газер"
+body:
+  en:
+    - "Gezer stands on a ridge at the edge of the Shephelah, where the road from Jerusalem down the valley of Aijalon meets the coastal highway. People first lived here in caves in the fourth millennium BC. In the Middle Bronze Age Gezer became a large walled city, with a row of tall standing stones that its first excavator called the High Place. In the Amarna letters of the fourteenth century BC its kings, among them Milkilu and Yapahu, write to Pharaoh, and late in the thirteenth century BC Pharaoh Merneptah boasted on his victory stela that Gezer had been seized."
+    - "Joshua defeated Horam, king of Gezer, who came to help Lachish, but Ephraim did not drive out the Canaanites who lived in Gezer, and they paid tribute. The town was later given to the Levites. 1 Kings tells that a pharaoh took Gezer, burned it and gave it as a dowry to his daughter, Solomon's wife, and that Solomon rebuilt it. Its six-chambered gate, like those of Megiddo and Hazor, is dated by some to Solomon's tenth century and by others later. A small limestone tablet listing the months of the farming year, the Gezer Calendar, was found here and is commonly dated to the tenth century BC."
+    - 'In the Hellenistic age the town, then called Gazara, was a Seleucid stronghold. About 142 BC Simon the Maccabee took it, put out its people, settled there men who kept the law, fortified it and made it the seat of his son John, captain of the army. Inscriptions cut in the rocks around the mound read "boundary of Gezer" in Hebrew letters and "of Alkios" in Greek; they date from the Hasmonean or the Herodian period and confirm the site''s identity.'
+    - "In Roman times Gezer shrank to a village. Eusebius calls it Gazara, a village four miles north of Nicopolis, the former Emmaus, and in Byzantine times the old site was only thinly inhabited."
+  ru:
+    - "Газер стоит на гряде у края Шефелы, там, где дорога из Иерусалима по долине Аиалонской выходит к приморскому пути. Первые жители селились здесь в пещерах в IV тысячелетии до н. э. В среднем бронзовом веке Газер стал большим укреплённым городом с рядом высоких каменных столбов, который его первый раскопщик назвал «высотой». В амарнских письмах XIV века до н. э. его цари, среди них Милкилу и Япаху, пишут фараону, а в конце XIII века до н. э. фараон Мернептах похвалялся на победной стеле, что Газер захвачен."
+    - "Иисус Навин поразил Горама, царя Газерского, пришедшего на помощь Лахису, но Ефрем не изгнал хананеев, живших в Газере, и они платили дань. Позже город отдали левитам. Третья книга Царств рассказывает, что фараон взял Газер, сжёг его и отдал в приданое своей дочери, жене Соломона, а Соломон отстроил его. Его шестикамерные ворота, подобные воротам Мегиддона и Асора, одни датируют X веком Соломона, другие — более поздним временем. Здесь же нашли небольшую известняковую табличку с перечнем месяцев земледельческого года — Газерский календарь, который обычно датируют X веком до н. э."
+    - "В эллинистическую эпоху город, называвшийся тогда Газарой, был опорной крепостью Селевкидов. Около 142 г. до н. э. Симон Маккавей взял его, выселил жителей, поселил людей, соблюдавших закон, укрепил город и сделал его местопребыванием своего сына Иоанна, начальника войска. Надписи, высеченные на скалах вокруг холма, гласят «граница Газера» еврейскими буквами и «Алкиоса» по-гречески; они относятся к хасмонейскому или к иродову времени и подтверждают, что это то самое место."
+    - "В римское время Газер сократился до селения. Евсевий называет его Газарой, селением в четырёх милях к северу от Никополя, прежнего Эммауса, а в византийское время старое место было заселено лишь редко."
+scripture:
+  - Josh.10.33
+  - Josh.16.10
+  - Judg.1.29
+  - Josh.21.21
+  - 1Kgs.9.15-1Kgs.9.17
+sources:
+  - "Amarna letters EA 267-271 (Milkilu); EA 297-300 (Yapahu of Gezer)"
+  - "Merneptah's victory stela ('Seized upon is Gezer'), tr. J. H. Breasted, Ancient Records of Egypt III (1906) §617"
+  - "1 Maccabees 9.52; 13.43-53 (13.43 reads Gaza in the Greek manuscripts and KJV; most scholars read Gazara, as Josephus does); 14.34; Josephus, Antiquities 13.215 (Gazara)"
+  - "Eusebius, Onomasticon, s.v. Gazer"
+  - "R. A. S. Macalister, The Excavation of Gezer 1902-1905 and 1907-1909 (1912), I 37 (boundary inscriptions); II 24-28 (the calendar tablet)"
+  - "W. G. Dever et al., Gezer I: Preliminary Report of the 1964-66 Seasons (1970)"
+  - "E. Stern (ed.), The New Encyclopedia of Archaeological Excavations in the Holy Land (1993), s.v. Gezer"
+status: checked

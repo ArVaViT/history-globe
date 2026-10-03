@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such.
+id: jerusalem
+place: a15257a
+title:
+  en: "Jerusalem"
+  ru: "Иерусалим"
+body:
+  en:
+    - "Jerusalem lies in the hills of Judah, on the watershed between the Mediterranean and the Dead Sea. People lived beside its spring, the Gihon, from the Early Bronze Age, and Egyptian texts of the second millennium BC already name the city; in the fourteenth century BC its ruler Abdi-Heba wrote to Pharaoh in the Amarna letters. In the Bible it is the city of the Jebusites that David takes and makes his capital, the City of David."
+    - "Solomon built the Temple on the hill to the north. Under the kings of Judah the city grew westward. Before Sennacherib's campaign of 701 BC, which both the Assyrian annals and the Bible record, Hezekiah, the Bible says, brought the water of the Gihon into the city through a tunnel, and Jerusalem was not taken. In 587 or 586 BC (the year is disputed) Nebuchadnezzar's army burned the city and the Temple."
+    - "Exiles returned under Cyrus in 538 BC; the Second Temple was finished about 516 BC and Nehemiah rebuilt the walls in 445 BC. After Alexander the city passed to the Ptolemies and then the Seleucids, and the Maccabees rededicated the Temple in 164 BC. Herod the Great rebuilt the Temple on a vast platform: this is the Jerusalem of the Gospels and of the first church in Acts."
+    - "In AD 70 the army of Titus destroyed the city and the Temple. Hadrian refounded it as the Roman colony of Aelia Capitolina; Cassius Dio makes the foundation a cause of Bar Kokhba's revolt (132-135), while Eusebius places it after the revolt, so the order is disputed. Under Constantine it became a Christian city of pilgrimage, and the Church of the Holy Sepulchre was dedicated in 335."
+  ru:
+    - "Иерусалим стоит в горах Иудеи, на водоразделе между Средиземным и Мёртвым морем. У его источника Гиона люди жили уже в раннем бронзовом веке, а египетские тексты II тысячелетия до н. э. называют город по имени; в XIV веке до н. э. его правитель Абди-Хеба писал фараону в Амарнских письмах. В Библии это город иевусеев, который Давид берёт и делает своей столицей, городом Давидовым."
+    - "Соломон построил Храм на холме к северу. При царях Иудеи город разросся на запад. Перед походом Сеннахирима 701 г. до н. э., о котором рассказывают и ассирийские анналы, и Библия, Езекия, по Библии, провёл воду Гиона в город по тоннелю, и Иерусалим не был взят. В 587 или 586 г. до н. э. (год спорный) войско Навуходоносора сожгло город и Храм."
+    - "Изгнанники вернулись при Кире в 538 г. до н. э.; Второй храм был закончен около 516 г. до н. э., а Неемия восстановил стены в 445 г. до н. э. После Александра город перешёл к Птолемеям, затем к Селевкидам, а Маккавеи вновь освятили Храм в 164 г. до н. э. Ирод Великий перестроил Храм на огромной платформе: это Иерусалим Евангелий и первой церкви в Деяниях."
+    - "В 70 г. н. э. войско Тита разрушило город и Храм. Адриан основал на его месте римскую колонию Элию Капитолину; по Диону Кассию, это основание стало одной из причин восстания Бар-Кохбы (132–135), а Евсевий относит его ко времени после восстания, так что порядок событий спорен. При Константине Иерусалим стал христианским городом паломничества, а в 335 г. был освящён храм Гроба Господня."
+scripture:
+  - 2Sam.5.6-2Sam.5.9
+  - 1Kgs.6.1
+  - 2Kgs.20.20
+  - 2Kgs.25.8-2Kgs.25.10
+  - Ezra.6.15
+  - Neh.6.15
+  - Acts.2.1-Acts.2.5
+sources:
+  - "Amarna letters EA 285-290 (Abdi-Heba of Jerusalem)"
+  - "Sennacherib's Annals (the Taylor Prism); the Siloam Inscription"
+  - "Josephus, Jewish War 5.136-247; 6.249-266"
+  - "Cassius Dio, Roman History 69.12-14"
+  - "Eusebius, Church History 4.6; Life of Constantine 3.25-40; 4.43-47"
+  - "'Jerusalem', in E. Stern (ed.), The New Encyclopedia of Archaeological Excavations in the Holy Land, vol. 2 (1993)"
+status: checked

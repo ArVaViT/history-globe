@@ -1,0 +1,316 @@
+---
+title: Embedding
+description: Put the globe on your own site with one line — the map of a chapter, a place, a year or a tour — and control it from your page.
+---
+
+<p class="lede">
+  The globe runs inside any page as an <code>iframe</code>. One line shows the map of a chapter next
+  to the passage on your page; a few messages keep the two in step.
+</p>
+
+<h2>Quick start</h2>
+<pre><code>&lt;iframe
+  src="{{site}}/embed/v1?ref=Acts.16&amp;locale=en"
+  title="Map of Acts 16"
+  style="width: 100%; height: 480px; border: 0; border-radius: 12px"
+  allow="fullscreen"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</code></pre>
+<p>
+  The map opens on the places of Acts 16 in the year of its events, and the map fills the frame. At
+  the top is the chapter: select it to list its places in the order the text names them, and select
+  a place to open its card. At the bottom is the year: select it to open the time slider. A link
+  opens the same view in the full globe in a new tab. Credits are shown on the map itself, as the
+  data licences require. The frame works at widths down to a phone screen; a height of 480 px is
+  enough.
+</p>
+
+<h2>A chapter or a passage</h2>
+<p>
+  <code>ref</code> takes an OSIS reference with English book abbreviations and English verse
+  numbering:
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Value</th>
+        <th>Shows</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Acts.16</code></td>
+        <td>a chapter</td>
+      </tr>
+      <tr>
+        <td><code>Gen.12-Gen.13</code></td>
+        <td>up to three chapters</td>
+      </tr>
+      <tr>
+        <td><code>Acts.16.11-Acts.16.15</code></td>
+        <td>a passage</td>
+      </tr>
+      <tr>
+        <td><code>Ruth</code></td>
+        <td>a whole book</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  The map moves to the year of the passage: the recorded year of its chapters (chapters of
+  {{chapter_books}} books are dated), or else the year of the tour that covers it; a whole book
+  takes the year of the tour with the most stops in it. A passage with neither keeps the map’s
+  current year.
+</p>
+
+<h2>Parameters</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Example</th>
+        <th>Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ref</code></td>
+        <td><code>Acts.16</code></td>
+        <td>chapter, passage or book (above)</td>
+      </tr>
+      <tr>
+        <td><code>year</code></td>
+        <td><code>-999</code></td>
+        <td>
+          year, in astronomical numbering: 1 BC is <code>0</code>, 1000 BC is <code>-999</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>place</code></td>
+        <td><code>af2161c</code></td>
+        <td>open a place (here, Capernaum); IDs are OpenBible’s</td>
+      </tr>
+      <tr>
+        <td><code>tour</code></td>
+        <td><code>paul-1</code></td>
+        <td>start a guided tour</td>
+      </tr>
+      <tr>
+        <td><code>stop</code></td>
+        <td><code>3</code></td>
+        <td>with <code>tour</code>: open it at that stop</td>
+      </tr>
+      <tr>
+        <td><code>lesson</code></td>
+        <td><code>a15257a~30.a112427~30</code></td>
+        <td>
+          your own lesson, with <code>tour=lesson</code>: place IDs in order, each with the year to
+          show it at (<code>~-585</code> for 586 BC: as <code>year</code>, 1 BC is 0); every stop
+          gets the place’s verse nearest that year, the distance, the time on foot and the relief.
+          The “Add to a lesson” button on a place card builds the same links
+        </td>
+      </tr>
+      <tr>
+        <td><code>title</code></td>
+        <td><code>Paul%20in%20Galatia</code></td>
+        <td>
+          with <code>lesson</code>: the lesson’s name, up to 80 characters, at the head of its tour
+          and its printed sheet
+        </td>
+      </tr>
+      <tr>
+        <td><code>locale</code></td>
+        <td><code>en</code></td>
+        <td>language: <code>en</code> or <code>ru</code></td>
+      </tr>
+      <tr>
+        <td><code>camera</code></td>
+        <td><code>35.2,31.8,7,30,0</code></td>
+        <td>longitude, latitude, zoom, pitch, bearing</td>
+      </tr>
+      <tr>
+        <td><code>hide</code></td>
+        <td><code>relief,ancient</code></td>
+        <td>
+          layers to turn off: <code>borders</code>, <code>places</code>, <code>relief</code>,
+          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="note">
+  The easiest way to build a view is to set it up on the full globe and copy the URL: the same
+  parameters work after <code>/embed/v1</code>.
+</p>
+
+<h2>Messages</h2>
+<p>
+  The globe and your page communicate through <code>postMessage</code>. Every message is an object
+  with <code>type</code> and <code>v: 1</code>. The globe sends only what happens on the map and
+  never anything that identifies the reader; it accepts messages only from the page that holds the
+  frame.
+</p>
+<h3>From the globe</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Payload</th>
+        <th>When</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:ready</code></td>
+        <td><code>{ view }</code></td>
+        <td>the map is drawn</td>
+      </tr>
+      <tr>
+        <td><code>hg:view-changed</code></td>
+        <td><code>{ view }</code></td>
+        <td>the year, place, tour or camera has changed and settled</td>
+      </tr>
+      <tr>
+        <td><code>hg:verse-clicked</code></td>
+        <td><code>{ osis }</code></td>
+        <td>the reader clicked a verse, e.g. <code>"Acts.16.12"</code></td>
+      </tr>
+      <tr>
+        <td><code>hg:error</code></td>
+        <td><code>{ code, message }</code></td>
+        <td>the map or its data could not load</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <code>view</code> holds <code>year</code>, <code>locale</code> and <code>layers</code> and, when
+  set, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> and
+  <code>camera</code>.
+</p>
+<h3>To the globe</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Payload</th>
+        <th>Effect</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:set-view</code></td>
+        <td><code>{ view }</code></td>
+        <td>
+          set the year, chapter (<code>ref</code>), place, layers or camera; with
+          <code>tour</code> (and <code>stop</code>), the tour starts and the other fields are
+          ignored; the language changes only with <code>hg:set-locale</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:set-locale</code></td>
+        <td><code>{ locale }</code></td>
+        <td>switch the language</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Example: the map follows your reader</h2>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+
+// When your reader opens a chapter, show it on the map.
+function showChapter(osis) {
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+}
+
+// When a verse is clicked on the map, open it in your reader.
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
+});</code></pre>
+
+<h2 id="places">Places in any text</h2>
+<p>
+  One more line links the Bible places that your own text names (an article, a sermon, a reading
+  plan) to the globe. Point at a name, or tap it on a phone, and a card shows what the place is,
+  where it is today, how many verses name it and where it lies on the map; the card leads to the
+  globe.
+</p>
+<figure class="sample">
+  <div class="hgp-demo">
+    <p>
+      Paul sailed from Caesarea to Cyprus, preached in Ephesus and Corinth, and wrote to Rome. Long
+      before, Abraham had come to Shechem and Hebron; Jesus was born in Bethlehem and grew up in
+      Nazareth, and John saw his visions on Patmos.
+    </p>
+  </div>
+  <figcaption>A live example: these names were linked by the script on this page.</figcaption>
+</figure>
+<pre><code>&lt;script src="{{site}}/hg-places.js" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>What it does</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>data-scope</code></td>
+        <td>where to look, as a CSS selector; the whole page by default</td>
+      </tr>
+      <tr>
+        <td><code>data-locale</code></td>
+        <td>
+          <code>en</code> or <code>ru</code>: the language of the text; by default the page's
+          <code>lang</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>data-every</code></td>
+        <td>link every mention, not only the first of each place</td>
+      </tr>
+      <tr>
+        <td><code>data-theme</code></td>
+        <td>
+          <code>light</code> or <code>dark</code> for the card; by default it follows the reader's
+          system
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Only names that point to one place are linked. A name shared by two places (Antioch, of Syria and
+  of Pisidia), by a place and a person (Judah), or by a place and an ordinary word stays plain text,
+  and so does a name the Bible’s own verses mostly use for something else (“Kadesh” there is
+  Kadesh-barnea, not the Kadesh of the database). A place’s name that is also a first name (Jordan,
+  Sharon) is left alone next to another capitalised word: Jordan Smith is a person, not the river.
+  Russian names are found in all their cases: «в Египте», «из Антиохии Писидийской». Links, code,
+  form fields, buttons and headings are left alone.
+</p>
+<p class="note">
+  The script has no dependencies and sets no cookies. It reads one file of names from the globe
+  (about 25 KB in English and 35 KB in Russian over the network, plus 7 KB of script), without your
+  page's address as referrer, and changes only the names it links. It works under a strict Content
+  Security Policy that allows the globe's address in <code>script-src</code> and
+  <code>connect-src</code>. For text your page adds later, call
+  <code>HistoryGlobePlaces.scan(element)</code> once the text is rendered: the script splits text
+  nodes, so in a React or Vue page run it on content the framework no longer re-renders.
+</p>
+<script src="../hg-places.js" data-scope=".hgp-demo" defer></script>
+
+<h2>Stability</h2>
+<p>
+  <code>/embed/v1</code> is a contract: within v1, parameters and messages are only added, never
+  changed or removed. A breaking change will ship as <code>/embed/v2</code>, and v1 will keep
+  working.
+</p>

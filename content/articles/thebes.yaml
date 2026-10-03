@@ -1,0 +1,31 @@
+# Overview article (ADR 0007). Mainstream facts only; Egyptian dates follow I. Shaw (ed.), The Oxford History of Ancient Egypt.
+# The card is named «Но» (Synodal); the article is titled with the usual name «Фивы», and its first sentence ties the two.
+id: thebes
+place: a9674fc
+title:
+  en: "Thebes"
+  ru: "Фивы"
+body:
+  en:
+    - "Thebes stood on both banks of the Nile in Upper Egypt, about 500 km south of Cairo, where Luxor is today. The Egyptians called it Waset, the Greeks Thebes, and the Hebrew Bible No or No-Amon, the city of Amun. It was a provincial town until its princes of the Eleventh Dynasty reunited Egypt under Mentuhotep II in the twenty-first century BC. From then on Amun of Thebes rose to be the chief god of the land, and king after king enlarged his temple at Karnak for some two thousand years."
+    - "In the New Kingdom (c. 1550–1070 BC) Thebes was the religious capital of an empire. Its kings built the temples of Karnak and Luxor on the east bank and their mortuary temples on the west, among them Hatshepsut's at Deir el-Bahari, and were buried in the Valley of the Kings, where Howard Carter found the tomb of Tutankhamun in 1922. Homer speaks of Egyptian Thebes as the richest city in the world, with a hundred gates."
+    - 'In 664 or 663 BC the Assyrian king Ashurbanipal pursued the Kushite king Tanutamon to Thebes, took the city and carried off its treasures, among them two obelisks. Nahum reminds Nineveh of that fall: "Art thou better than populous No ... Yet was she carried away, she went into captivity." Jeremiah foretold that God would punish the multitude of No together with Pharaoh, and Ezekiel that he would execute judgments in No.'
+    - "Under the Ptolemies Thebes rebelled more than once; in the 80s BC Ptolemy IX put down a revolt so harshly, Pausanias says, that no trace of its old prosperity was left. Strabo found only a group of villages. An earthquake, usually dated 27 BC, had broken one of the two colossi of Amenhotep III; the broken statue was said to give out a sound once a day, and Roman visitors came to hear it and carved their names and verses on it; the emperor Hadrian came in AD 130. In late antiquity Christian monks settled in the old tombs and temples."
+  ru:
+    - "Фивы, библейский Но, стояли на обоих берегах Нила в Верхнем Египте, примерно в 500 км к югу от Каира, там, где теперь Луксор. Египтяне называли город Уасет, греки — Фивами, а еврейская Библия — Но или Но-Аммон, то есть город Амона. Это был провинциальный город, пока его правители из XI династии не объединили Египет вновь при Ментухотепе II в XXI веке до н. э. С тех пор Амон Фиванский стал главным богом страны, а его храм в Карнаке цари расширяли около двух тысяч лет."
+    - "В эпоху Нового царства (ок. 1550–1070 гг. до н. э.) Фивы были религиозной столицей державы. Цари строили храмы Карнака и Луксора на восточном берегу, а на западном — свои поминальные храмы, среди них храм Хатшепсут в Дейр-эль-Бахри, и погребались в Долине царей, где в 1922 г. Говард Картер нашёл гробницу Тутанхамона. Гомер говорит о египетских Фивах как о богатейшем городе мира со ста воротами."
+    - "В 664 или 663 г. до н. э. ассирийский царь Ашшурбанапал преследовал кушитского царя Тануатамона до Фив, взял город и увёз его сокровища, среди них два обелиска. Наум напоминает Ниневии об этом падении: «Разве ты лучше Но-Аммона... Но и он переселен, пошел в плен». Иеремия предрекал, что Бог посетит Аммона, который в Но, вместе с фараоном, а Иезекииль — что Он произведёт суд над Но."
+    - "При Птолемеях Фивы не раз восставали; в 80-х годах до н. э. Птолемей IX подавил восстание так жестоко, говорит Павсаний, что от былого процветания не осталось и следа. Страбон застал здесь лишь несколько деревень. Землетрясение, которое обычно датируют 27 г. до н. э., повредило один из двух колоссов Аменхотепа III; о повреждённой статуе говорили, что раз в день она издаёт звук, и римские путешественники приходили его послушать и вырезали на ней свои имена и стихи; в 130 г. н. э. сюда приезжал император Адриан. В поздней античности в старых гробницах и храмах поселились христианские монахи."
+scripture:
+  - Jer.46.25
+  - Ezek.30.14-Ezek.30.16
+  - Nah.3.8-Nah.3.10
+sources:
+  - "Homer, Iliad 9.381-384"
+  - "Ashurbanipal's Rassam Cylinder (RINAP 5, Ashurbanipal 11) ii 22-48"
+  - "Pausanias, Description of Greece 1.9.3"
+  - "Strabo, Geography 17.1.46 (Thebes in villages; the colossus)"
+  - "A. and É. Bernand, Les inscriptions grecques et latines du Colosse de Memnon (1960)"
+  - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000)"
+  - "N. Strudwick and H. Strudwick, Thebes in Egypt (1999)"
+status: checked

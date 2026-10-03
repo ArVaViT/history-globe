@@ -1,0 +1,26 @@
+id: where-was-the-transfiguration
+question:
+  en: "Where was the Transfiguration?"
+  ru: "Где было Преображение?"
+answer:
+  en:
+    - "The Gospels do not name the mountain. Two have been proposed: Mount Tabor, the rounded hill that rises alone from the plain of Jezreel about 9 km east of Nazareth, the traditional site, named by Origen in the third century and by Cyril of Jerusalem and Jerome in the fourth, and the one the map shows, and Mount Hermon, the great snow-capped mountain north of Galilee, which many modern scholars prefer; Mount Meron in Upper Galilee has also been suggested."
+    - "Matthew says that “after six days Jesus taketh Peter, James, and John his brother, and bringeth them up into an high mountain apart”, and there he “was transfigured before them”. The six days follow the confession of Peter “into the coasts of Caesarea Philippi”, at the foot of Hermon: the Hermon point on the map is about 22 km from Caesarea Philippi, Tabor about 68 km. Hermon's advocates add that it is by far the higher and best answers to “an high mountain”. Second Peter speaks only of “the holy mount”."
+    - "Tabor's case is tradition. Origen is the first known to name it; Cyril of Jerusalem and Jerome follow in the fourth century, and Byzantine churches were built on the summit; Jerome's friend Paula climbed it. Against it, Josephus says that in the first century people lived on the summit and that he himself walled it against the Romans, which some find hard to square with a retreat “apart”, and no first-century witness ties the Transfiguration to any mountain by name. Neither mountain can be called certain, so the map shows the traditional one and notes the other."
+  ru:
+    - "Евангелия не называют гору. Предлагают две: Фавор, округлый холм, одиноко встающий над Изреельской долиной примерно в 9 км к востоку от Назарета, — традиционное место: его называют Ориген в III веке, Кирилл Иерусалимский и Иероним в IV, и карта показывает его; и Ермон, большую снежную гору к северу от Галилеи, которую предпочитают многие современные учёные; называют и Мерон в Верхней Галилее."
+    - "Матфей говорит: «По прошествии дней шести взял Иисус Петра, Иакова и Иоанна, брата его, и возвел их на гору высокую одних», и там Он «преобразился пред ними». Шесть дней отсчитываются от исповедания Петра по приходе «в страны Кесарии Филипповой», у подножия Ермона: точка Ермона на карте отстоит от Кесарии Филипповой примерно на 22 км, Фавор — на 68 км. Сторонники Ермона добавляют, что он намного выше и лучше отвечает словам «гора высокая». Второе послание Петра говорит лишь о «святой горе»."
+    - "За Фавор — предание. Первым его называет Ориген; в IV веке — Кирилл Иерусалимский и Иероним, и на вершине построили византийские церкви; на него поднималась Павла, подруга Иеронима. Против — Иосиф Флавий: в I веке на вершине жили люди, и он сам обнёс её стеной против римлян, что некоторым трудно совместить с уединением «одних»; а ни одно свидетельство I века не называет гору Преображения по имени. Ни одну из гор нельзя назвать достоверной, поэтому карта показывает традиционную и упоминает другую."
+map:
+  place: acd63ee
+  year: "AD 29"
+  ref: Matt.17.1
+scripture: [Matt.16.13, Matt.17.1-Matt.17.2, Mark.9.2, Luke.9.28, 2Pet.1.18]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Cyril of Jerusalem, Catechetical Lectures 12.16; Jerome, Letter 46.13 and Letter 108.13 (Tabor)"
+  - "Josephus, Jewish War 4.54-61 (the walled summit of Tabor); Life 188"
+  - "Catholic Encyclopedia (1912), s.v. Transfiguration (Origen as the first to name Tabor)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008), s.v. Mount Tabor"
+  - "R. T. France, The Gospel of Matthew (NICNT, 2007), on Matthew 17:1"
+status: checked

@@ -1,0 +1,34 @@
+id: where-was-philippi
+question:
+  en: "Where was Philippi?"
+  ru: "Где находились Филиппы?"
+answer:
+  en:
+    - "Philippi lay in eastern Macedonia, in today's northern Greece, on the Via Egnatia at the edge of a marshy plain about 14 km inland from its port Neapolis, modern Kavala, in a straight line. The ruins are an archaeological park near the village of Krinides and were inscribed as a World Heritage site in 2016."
+    - "Philip II of Macedon, Alexander's father, founded the city in 356 BC on the site of the Thasian colony Krenides, to hold the gold mines of Mount Pangaion, and gave it his name. In 42 BC the plain outside the walls saw the battle in which Antony and Octavian defeated Brutus and Cassius, the murderers of Caesar; the victors settled veterans there, and after Actium Octavian refounded it as a Roman colony, which is why Luke calls it “the chief city of that part of Macedonia, and a colony”, and why its magistrates and crowd speak as Romans."
+    - "Paul came in about AD 50, landing at Neapolis and walking up to the city; on the sabbath he went “out of the city by a river side, where prayer was wont to be made” and met Lydia, and after the earthquake in the prison he left for Thessalonica. The church he founded was the first in Europe and the one that supported him; Philippians is addressed to it. Excavations since 1914 have uncovered the forum, the theatre, the Via Egnatia running through the city and the great Byzantine basilicas; a Roman cistern beside the forum is shown as the prison of Paul, without proof."
+  ru:
+    - "Филиппы лежали в восточной Македонии, на севере нынешней Греции, на Эгнатиевой дороге у края болотистой равнины, примерно в 14 км от своей гавани Неаполя, нынешней Кавалы, по прямой. Руины — археологический парк у деревни Кринидес; в 2016 году они внесены в список Всемирного наследия."
+    - "Филипп II Македонский, отец Александра, основал город в 356 г. до н. э. на месте фасосской колонии Крениды, чтобы держать золотые рудники горы Пангей, и дал ему своё имя. В 42 г. до н. э. на равнине у стен произошла битва, в которой Антоний и Октавиан разбили Брута и Кассия, убийц Цезаря; победители поселили здесь ветеранов, а после Акция Октавиан заново основал город как римскую колонию. Потому Лука и называет его «первый город в той части Македонии, колония», а его воеводы и толпа говорят как римляне."
+    - "Павел пришёл сюда около 50 г. н. э., высадившись в Неаполе и поднявшись в город; в субботу он вышел «за город к реке, где, по обыкновению, был молитвенный дом», и встретил Лидию, а после землетрясения в темнице ушёл в Фессалонику. Основанная им церковь — первая в Европе и та, что поддерживала его; к ней обращено Послание к Филиппийцам. Раскопки с 1914 года открыли форум, театр, Эгнатиеву дорогу, проходящую через город, и большие византийские базилики; римскую цистерну у форума показывают как темницу Павла — без доказательств."
+map:
+  place: a49e1d0
+  year: "AD 50"
+  ref: Acts.16.12
+scripture:
+  [
+    Acts.16.11-Acts.16.15,
+    Acts.16.20-Acts.16.24,
+    Acts.20.6,
+    Phil.1.1,
+    Phil.4.15-Phil.4.16,
+    1Thess.2.2,
+  ]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Diodorus Siculus, Library 16.3.7 and 16.8.6 (Krenides and the founding of Philippi)"
+  - "Appian, Civil Wars 4.105 (the site and names of Philippi)"
+  - "P. Collart, Philippes, ville de Macédoine, depuis ses origines jusqu'à la fin de l'époque romaine (1937)"
+  - "P. Pilhofer, Philippi, Band I: Die erste christliche Gemeinde Europas (1995)"
+  - "UNESCO World Heritage List, Archaeological Site of Philippi, inscribed 2016"
+status: checked

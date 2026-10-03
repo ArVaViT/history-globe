@@ -1,0 +1,36 @@
+# Overview article (ADR 0007). Mainstream facts only; Assyrian and Babylonian dates follow the standard chronology, disputed things are said to be disputed.
+id: ashkelon
+place: ac87d4c
+title:
+  en: "Ashkelon"
+  ru: "Аскалон"
+body:
+  en:
+    - "Ashkelon lay on the Mediterranean shore north of Gaza; its mound, Tel Ashkelon, is now a national park within the modern city. The town is named in Egyptian execration texts of the nineteenth and eighteenth centuries BC. In the Middle Bronze Age great earthen ramparts were raised around it, and a mudbrick gate with a vaulted passage, built in the first half of the second millennium BC, is among the oldest arches known. In the fourteenth century BC its ruler Yidya wrote to Pharaoh in the Amarna letters, and about 1208 BC Merneptah's stela names Ashkelon among the places he subdued in Canaan."
+    - 'In the twelfth century BC, about 1170 BC by the excavators'' dating, the Philistines settled here, and Ashkelon became one of their five cities. Samson went down to Ashkelon and killed thirty of its men, and David''s lament for Saul says: "publish it not in the streets of Askelon". In 701 BC Sennacherib of Assyria deported its king Sidqa with his family and took Joppa and other towns that belonged to him. Amos, Zephaniah and Jeremiah foretold Ashkelon''s ruin.'
+    - "In the month of Kislev 604 BC Nebuchadnezzar captured the city, carried off its king and plundered it; the Babylonian Chronicle says he turned it into a mound and heaps of ruins, and excavators found the burnt destruction layer. Ashkelon was rebuilt in the Persian period as a Phoenician town. Herodotus tells how Scythian raiders plundered its temple of Heavenly Aphrodite, which he calls the oldest temple of that goddess."
+    - "Under the Hellenistic kings and Rome Ashkelon was a prosperous Greek city, independent of the Hasmoneans and of Herod, though Herod built baths, costly fountains and colonnades there. When the Jewish revolt broke out in AD 66, Jewish rebels attacked Ashkelon, and soon after two of their assaults on the walled city failed. By the fourth century Ashkelon had a bishop, and it remained a busy port into Byzantine times."
+  ru:
+    - "Аскалон стоял на берегу Средиземного моря к северу от Газы; его холм, Тель-Ашкелон, ныне — национальный парк в черте современного города. Город упомянут в египетских текстах проклятий XIX–XVIII веков до н. э. В среднем бронзовом веке его окружили огромные земляные валы, а глинобитные ворота со сводчатым проходом, построенные в первой половине II тысячелетия до н. э., — одна из древнейших известных арок. В XIV веке до н. э. его правитель Идия писал фараону в Амарнских письмах, а около 1208 г. до н. э. стела Мернептаха называет Аскалон среди покорённых им мест в Ханаане."
+    - "В XII веке до н. э., по датировке раскопщиков около 1170 г. до н. э., здесь поселились филистимляне, и Аскалон стал одним из пяти их городов. Самсон ходил в Аскалон и убил там тридцать человек, а в плаче Давида о Сауле сказано: «не возвещайте на улицах Аскалона». В 701 г. до н. э. ассирийский царь Сеннахирим увёл в плен его царя Цидку с семьёй и взял Иоппию и другие принадлежавшие ему города. Амос, Софония и Иеремия предрекали Аскалону гибель."
+    - "В месяце Кислеве 604 г. до н. э. Навуходоносор взял город, увёл его царя и разграбил его; Вавилонская хроника говорит, что он превратил его в холм и груды развалин, и раскопки нашли выжженный слой разрушения. В персидский период Аскалон отстроили как финикийский город. Геродот рассказывает, как скифы разграбили здесь храм Афродиты Небесной, который он называет древнейшим храмом этой богини."
+    - "При эллинистических царях и Риме Аскалон был процветающим греческим городом, независимым и от Хасмонеев, и от Ирода, хотя Ирод построил здесь бани, дорогие фонтаны и колоннады. Когда в 66 г. н. э. вспыхнуло Иудейское восстание, иудейские повстанцы напали на Аскалон, а вскоре два их приступа на укреплённый город провалились. К IV веку в Аскалоне был епископ, и он оставался оживлённым портом и в византийское время."
+scripture:
+  - Josh.13.3
+  - Judg.14.19
+  - 1Sam.6.17
+  - 2Sam.1.20
+  - Amos.1.8
+  - Zeph.2.4
+  - Zeph.2.7
+  - Jer.47.5-Jer.47.7
+sources:
+  - "Amarna letters EA 320-326 (Yidya of Ashkelon)"
+  - "Merneptah Stela (Cairo, Egyptian Museum), the closing lines on Canaan"
+  - "Sennacherib, Chicago (Oriental Institute) Prism, RINAP 3, Sennacherib 22, ii 60b-72"
+  - "Babylonian Chronicle ABC 5 (Jerusalem Chronicle), obv. 15-20"
+  - "Herodotus, Histories 1.105"
+  - "Josephus, Jewish War 1.422-425; 2.457-460; 3.9-28"
+  - "L. E. Stager, J. D. Schloen and R. J. Voss, Ashkelon 6: The Middle Bronze Age Ramparts and Gates of the North Slope and Later Fortifications (2018)"
+  - "L. E. Stager, D. M. Master and J. D. Schloen, Ashkelon 3: The Seventh Century B.C. (2011)"
+status: checked

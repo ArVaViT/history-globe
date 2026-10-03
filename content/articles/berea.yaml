@@ -1,0 +1,29 @@
+# Overview article (ADR 0007). Mainstream facts only; the disputed reading of Thucydides 1.61.4 is named as such.
+id: berea
+place: a62fe31
+title:
+  en: "Berea"
+  ru: "Верия"
+body:
+  en:
+    - "Berea, ancient Beroea and today's Veria, lies on the eastern slope of Mount Bermion in Macedonia, above the plain west of Thessalonica, where a road over the mountain to upper Macedonia meets the road along the edge of the plain. The oldest graves found in the town date from the Early Iron Age. Thucydides tells of an Athenian army going to Beroea in 432 BC, though whether he meant this town is disputed. In 288 BC Pyrrhus of Epirus took Beroea, and the Macedonians of King Demetrius deserted to him there."
+    - "Beroea was one of the chief towns of the Macedonian kingdom. After Rome defeated King Perseus at Pydna in 168 BC, it was the first city to surrender, and when the Romans divided Macedonia into four districts it was placed in the third. Under the emperors it became the seat of the Koinon, the league of the Macedonian cities that kept the cult of the emperors; third-century inscriptions call it a metropolis and temple-warden, neokoros, of the imperial cult."
+    - 'Paul and Silas were sent here by night from Thessalonica and went into the synagogue. Acts says the Jews of Berea "were more noble than those in Thessalonica", because they received the word readily and "searched the scriptures daily, whether those things were so". Many of them believed, with Greek women of standing and not a few men. When Jews from Thessalonica came to stir up the people, the brethren sent Paul away toward the sea and on to Athens, while Silas and Timothy stayed behind. Later Sopater of Berea went with Paul to Asia.'
+    - "In the third century AD part of the town wall was rebuilt in haste with reused altars, statues and inscribed stones, probably against the Goths or Heruli who were raiding the Balkans. Paved Roman streets of the age of the Tetrarchy, about AD 300, have been found under the modern town, whose main roads still follow the ancient lines. Through the whole history of Macedonia, Beroea ranked second only to its leading city, which was in turn Aegae, Pella and Thessalonica."
+  ru:
+    - "Верия (греч. Βέροια), сегодня одноимённый греческий город, лежит на восточном склоне горы Вермион в Македонии, над равниной к западу от Фессалоники, там, где дорога через гору в Верхнюю Македонию встречается с дорогой по краю равнины. Древнейшие погребения, найденные в городе, относятся к раннему железному веку. Фукидид рассказывает о походе афинского войска к Верии в 432 г. до н. э., но этот ли город он имел в виду, оспаривается. В 288 г. до н. э. Пирр Эпирский взял Верию, и македоняне царя Деметрия перешли здесь на его сторону."
+    - "Верия была одним из главных городов Македонского царства. После того как Рим в 168 г. до н. э. разбил царя Персея при Пидне, она первой из городов сдалась, а когда римляне разделили Македонию на четыре округа, её отнесли к третьему. При императорах она стала местом собраний Койнона — союза македонских городов, совершавшего культ императоров; надписи III века называют её митрополией и неокором, хранительницей храма императорского культа."
+    - "Павла и Силу ночью отправили сюда из Фессалоники, и они пошли в синагогу. Книга Деяний говорит, что здешние иудеи «были благомысленнее Фессалоникских», потому что приняли слово со всем усердием, «ежедневно разбирая Писания, точно ли это так». Многие из них уверовали, а также немало знатных еллинских женщин и мужчин. Когда Фессалоникийские Иудеи пришли возмущать народ, братия отпустили Павла к морю, и его проводили до Афин, а Сила и Тимофей остались здесь. Позже Сосипатр из Верии сопровождал Павла до Асии."
+    - "В III веке н. э. часть городской стены поспешно перестроили, вкладывая в неё алтари, статуи и камни с надписями, вероятно, против готов или герулов, разорявших Балканы. Под современным городом найдены мощёные римские улицы эпохи тетрархии, около 300 г. н. э., и главные улицы города до сих пор идут по древним линиям. На протяжении всей истории Македонии Верия уступала лишь её главному городу, которым были поочерёдно Эги, Пелла и Фессалоника."
+scripture:
+  - Acts.17.10-Acts.17.15
+  - Acts.20.4
+sources:
+  - "Thucydides, History 1.61.4"
+  - "Plutarch, Pyrrhus 11"
+  - "Livy 44.45.5 (the surrender after Pydna); 45.29.8 (the third district)"
+  - "Ph. M. Petsas, 'Beroia', in R. Stillwell (ed.), The Princeton Encyclopedia of Classical Sites (1976)"
+  - "L. Gounaropoulou and M. B. Hatzopoulos, Epigraphes Katō Makedonias I: Epigraphes Beroias (1998)"
+  - "M. Andronikos, Vergina: The Royal Tombs and the Ancient City (1984) (Aegae at Vergina; older works, Petsas among them, put it at Edessa)"
+  - "F. Papazoglou, Les villes de Macédoine à l'époque romaine (BCH Suppl. 16, 1988)"
+status: checked

@@ -1,0 +1,38 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such.
+id: bethlehem
+place: a112427
+title:
+  en: "Bethlehem"
+  ru: "Вифлеем"
+body:
+  en:
+    - "Bethlehem lies on a ridge in the hills of Judah, about 9 km south of Jerusalem, where the farmland of the hills gives way to the desert to the east. A town called Bit-Lahmi in one of the Amarna letters of the fourteenth century BC may be Bethlehem, but the reading is uncertain. Genesis also knows the place as Ephrath, on the road where Rachel died and was buried."
+    - "In the Bible Bethlehem is the town of Boaz and Ruth and of their descendant Jesse, and there Samuel anointed Jesse's youngest son, David. Rehoboam fortified it, and Micah foretold a ruler in Israel coming out of Bethlehem Ephratah. A seal impression of the eighth or seventh century BC found in Jerusalem in 2012 bears the town's name, apparently from a shipment sent to the king. Men of Bethlehem were among those who returned from Babylon."
+    - "Matthew and Luke tell that Jesus was born in Bethlehem in the days of Herod the Great, whose death is usually dated to 4 BC, and Matthew tells of Herod's killing of the town's young children. In the second century Justin Martyr and later Origen speak of a cave near Bethlehem shown as the place of the birth. Jerome writes that a grove of Adonis once overshadowed the spot and that Adonis was mourned in the very cave of the birth."
+    - "When Constantine's mother Helena visited the Holy Land in about 326, a basilica was founded over the cave: the first Church of the Nativity. In 386 Jerome settled in Bethlehem with Paula, who founded monasteries there; in the town he completed his Latin translation of the Bible in about 405, and he died there in 420."
+  ru:
+    - "Вифлеем стоит на гребне в горах Иудеи, примерно в 9 км к югу от Иерусалима, там, где пашни нагорья сменяются пустыней на востоке. Город Бит-Лахми в одном из Амарнских писем XIV века до н. э., возможно, и есть Вифлеем, но это прочтение спорно. Книга Бытия знает это место и под именем Ефрафа: на дороге к нему умерла и была погребена Рахиль."
+    - "В Библии Вифлеем — город Вооза и Руфи и их потомка Иессея; здесь Самуил помазал младшего сына Иессея, Давида. Ровоам укрепил город, а Михей предсказал, что из Вифлеема-Ефрафы произойдёт Владыка в Израиле. Оттиск печати VIII или VII века до н. э., найденный в Иерусалиме в 2012 г., несёт имя города: по-видимому, он скреплял поставку царю. Среди вернувшихся из Вавилона были и уроженцы Вифлеема."
+    - "Матфей и Лука рассказывают, что Иисус родился в Вифлееме во дни Ирода Великого, смерть которого обычно относят к 4 г. до н. э., а Матфей — о том, как Ирод избил младенцев города. Во II веке Иустин Мученик, а позже Ориген говорят о пещере близ Вифлеема, которую показывали как место Рождества. Иероним пишет, что некогда это место осеняла роща Адониса и в самой пещере Рождества оплакивали Адониса."
+    - "Когда мать Константина Елена около 326 г. посетила Святую землю, над пещерой была заложена базилика — первый храм Рождества Христова. В 386 г. в Вифлееме поселился Иероним вместе с Павлой, основавшей здесь монастыри; в этом городе он около 405 г. завершил латинский перевод Библии и здесь же умер в 420 г."
+scripture:
+  - Gen.35.19
+  - Ruth.1.1-Ruth.1.2
+  - Ruth.4.11-Ruth.4.17
+  - 1Sam.16.1-1Sam.16.13
+  - 2Chr.11.5-2Chr.11.6
+  - Mic.5.2
+  - Ezra.2.21
+  - Matt.2.1
+  - Matt.2.16
+  - Luke.2.4-Luke.2.7
+sources:
+  - "Amarna letter EA 290 (Abdi-Heba: Bit-Lahmi)"
+  - "Bulla naming Bethlehem from the City of David excavations, announced by the Israel Antiquities Authority (2012)"
+  - "Josephus, Antiquities 17.191 (Herod's death)"
+  - "Justin Martyr, Dialogue with Trypho 78; Origen, Against Celsus 1.51"
+  - "Jerome, Letter 58.3; Letter 108; De viris illustribus 135"
+  - "Eusebius, Life of Constantine 3.41-43"
+  - "J. N. D. Kelly, Jerome: His Life, Writings, and Controversies (1975)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008)"
+status: checked

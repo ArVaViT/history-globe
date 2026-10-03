@@ -1,0 +1,30 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed identifications are named as such.
+id: susa
+place: a033b84
+title:
+  en: "Susa"
+  ru: "Сузы"
+body:
+  en:
+    - "Susa lay in the plain of Khuzestan in south-western Iran, between the Karkheh and Dez rivers, at the modern town of Shush. It was founded by about 4000 BC on a mound later called the Acropolis, and for much of the next three thousand years it was one of the chief cities of Elam, though at times under Mesopotamian rule. The Elamite king Shutruk-Nahhunte carried Mesopotamian monuments home to it as booty in the twelfth century BC, and the mission of Jacques de Morgan found among them, in 1901–1902, the stele bearing the laws of Hammurabi."
+    - "About 646 BC the Assyrian king Ashurbanipal took Susa, plundered its treasuries, destroyed its ziggurat and carried off its gods and the bones of the kings of Elam. The city rose again under the Persians: Darius I (522–486 BC) made it a royal residence and built a palace there, recording that cedar was brought from Lebanon, gold from Sardis and Bactria and ivory from Kush and India."
+    - "In the Bible Susa is Shushan the palace. In a vision Daniel saw himself in Shushan by the river Ulai, the Eulaeus of the Greeks, and there saw the ram and the he-goat. Nehemiah was in Shushan in the twentieth year of Artaxerxes when he heard of the ruin of Jerusalem's walls, and there he served the king wine. The Book of Esther is set at the court of Ahasuerus in Shushan; he is usually identified with Xerxes I."
+    - "In 331 BC Susa surrendered to Alexander the Great, who found in it fifty thousand talents, and in 324 BC he held there the mass wedding of his officers to Persian and Median noblewomen. Under the Seleucids it became a Greek city, Seleucia on the Eulaeus. It lived on under the Parthian and Sasanian kings, though it never regained its old place."
+  ru:
+    - "Сузы лежали на равнине Хузестана на юго-западе Ирана, между реками Керхе и Дез, там, где теперь город Шуш. Город возник не позднее ок. 4000 г. до н. э. на холме, позже названном Акрополем, и большую часть следующих трёх тысячелетий был одним из главных городов Елама, хотя временами попадал под власть Месопотамии. В XII веке до н. э. еламский царь Шутрук-Наххунте привёз сюда из Месопотамии памятники как военную добычу, и среди них экспедиция Жака де Моргана нашла в 1901–1902 гг. стелу с законами Хаммурапи."
+    - "Около 646 г. до н. э. ассирийский царь Ашшурбанапал взял Сузы, разграбил сокровищницы, разрушил зиккурат и увёз в Ассирию богов города и кости еламских царей. При персах город поднялся вновь: Дарий I (522–486 гг. до н. э.) сделал его царской резиденцией и построил здесь дворец, записав, что кедр привезли с Ливана, золото — из Сард и Бактрии, а слоновую кость — из Куша и Индии."
+    - "В Библии Сузы названы престольным городом. В видении Даниил увидел себя в Сузах у реки Улая, которую греки называли Эвлеем, и там увидел овна и козла. Неемия находился в Сузах в двадцатый год Артаксеркса, когда услышал о разрушенных стенах Иерусалима, и здесь подавал царю вино. Действие Книги Есфири происходит в Сузах при дворе царя, которого Синодальный перевод называет Артаксерксом, а еврейский текст — Ахашверошем; обычно его отождествляют с Ксерксом I."
+    - "В 331 г. до н. э. Сузы сдались Александру Македонскому, который нашёл здесь пятьдесят тысяч талантов, а в 324 г. до н. э. устроил здесь массовую свадьбу своих приближённых со знатными персиянками и мидянками. При Селевкидах город стал греческим полисом — Селевкией-на-Эвлее. Он жил и при парфянских и сасанидских царях, хотя прежнего значения уже не вернул."
+scripture:
+  - Dan.8.1-Dan.8.5
+  - Neh.1.1-Neh.1.3
+  - Neh.2.1
+  - Esth.1.1-Esth.1.2
+sources:
+  - "Ashurbanipal's Rassam Cylinder (RINAP 5, Ashurbanipal 11) v 126 - vi 100"
+  - "Darius I, foundation charter from Susa (DSf)"
+  - "Arrian, Anabasis 3.16.6-8; 7.4.4-8"
+  - "Louvre, Code of Hammurabi (Sb 8), excavated at Susa by J. de Morgan's mission, 1901-1902"
+  - "D. T. Potts, The Archaeology of Elam (2nd ed., 2016)"
+  - "J. Perrot (ed.), The Palace of Darius at Susa (2013)"
+status: checked

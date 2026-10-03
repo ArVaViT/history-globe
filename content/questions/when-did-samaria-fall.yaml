@@ -1,0 +1,25 @@
+id: when-did-samaria-fall
+question:
+  en: "When did Samaria fall to Assyria?"
+  ru: "Когда Самария пала под натиском Ассирии?"
+answer:
+  en:
+    - "Samaria, the capital of the northern kingdom of Israel, fell to Assyria in 722 BC, after a siege of three years; with it the kingdom of Israel ended."
+    - '2 Kings says that Hoshea, the last king of Israel, stopped paying tribute and sought help from Egypt, so "the king of Assyria came up throughout all the land, and went up to Samaria, and besieged it three years. In the ninth year of Hoshea the king of Assyria took Samaria, and carried Israel away into Assyria." The siege began about 725 BC under Shalmaneser V, whom the Bible names; the Babylonian Chronicle credits him with breaking Samaria, and his successor Sargon II, who came to the throne in 722, claims the capture and the deportation in his own inscriptions, so both kings are tied to the fall.'
+    - "The Israelites were settled in Halah, on the Habor and in the cities of the Medes, and the king of Assyria brought in people from Babylon, Cuthah, Hamath and elsewhere to the cities of Samaria; Jewish tradition later traced the Samaritans to this mixed settlement, calling them Cutheans, while the Samaritans themselves claim descent from the northern tribes. Samaria became the seat of an Assyrian province. The kingdom had lasted about two centuries since the division under Rehoboam, about 931 BC. Judah survived for another 135 or 136 years, until Babylon took Jerusalem."
+  ru:
+    - "Самария, столица северного царства Израиль, пала под натиском Ассирии в 722 г. до н. э. после трёхлетней осады; с ней кончилось и Израильское царство."
+    - "4-я книга Царств говорит, что Осия, последний царь Израиля, перестал платить дань и искал помощи у Египта, и тогда «пошел царь Ассирийский на всю землю, и приступил к Самарии, и держал ее в осаде три года. В девятый год Осии взял царь Ассирийский Самарию, и переселил Израильтян в Ассирию». Осада началась около 725 г. до н. э. при Салманассаре V, которого называет Библия; Вавилонская хроника приписывает взятие Самарии ему, а его преемник Саргон II, взошедший на престол в 722 г., в своих надписях приписывает захват и переселение себе, так что с падением связаны оба царя."
+    - "Израильтян поселили в Халахе, на Хаворе и в городах Мидийских, а царь Ассирийский перевёл в города Самарийские людей из Вавилона, Куты, Емафа и других мест; иудейское предание позднее выводило самарян от этих переселенцев, называя их кутеями, сами же самаряне считают себя потомками северных колен. Самария стала центром ассирийской провинции. Царство просуществовало около двух веков после разделения при Ровоаме, около 931 г. до н. э. Иудея продержалась ещё 135–136 лет, пока Вавилон не взял Иерусалим."
+map:
+  place: a041bb3
+  year: "722 BC"
+  ref: 2Kgs.17.6
+scripture: [2Kgs.17.3-2Kgs.17.6, 2Kgs.17.24, 2Kgs.18.9-2Kgs.18.11, Hos.13.16, Mic.1.6]
+sources:
+  - "Babylonian Chronicle, ABC 1 i 28 (Shalmaneser V broke Samaria)"
+  - "Sargon II, Annals and the Nimrud Prism (the capture of Samaria and the deportation of its people)"
+  - "History Globe dated events (samaria-falls, 722 BC) and History Globe tour “The fall of Israel”"
+  - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings (3rd ed., 1983) (the division c. 931 BC)"
+  - "J. W. Crowfoot, K. M. Kenyon and E. L. Sukenik, The Buildings at Samaria (1942)"
+status: checked

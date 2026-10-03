@@ -1,5 +1,5 @@
 # Isaac, Genesis 24:62-26:33, in the order of the text, between the Abraham tour and the
-# Jacob tour (his death at Mamre, 35:27-29, closes the Jacob tour). The tour's year
+# Jacob tour (his death at Mamre, 35:27-29, is a stop of the Jacob tour). The tour's year
 # (1850 BC) is a conventional point for the map between those two tours, not a date: the
 # age of the patriarchs is disputed.
 id: isaac
@@ -7,6 +7,7 @@ title:
   en: "Isaac and the wells"
   ru: "Исаак и колодцы"
 year: "1850 BC"
+people: ["Isaac@Gen.17.19-Jas"]
 approximate: true
 stops:
   - place: a70e842 # Beer-lahai-roi
@@ -33,12 +34,12 @@ stops:
     ref: Gen.26.20
     note:
       en: "The herdmen of Gerar strive with his over the water, and he calls the well Esek, contention."
-      ru: "Пастухи Герарские спорят с его пастухами о воде, и он называет колодец Есек."
+      ru: "Пастухи Герарские спорят с его пастухами о воде, и он называет колодец Есек (спор)."
   - place: aa454f7 # Sitnah
     ref: Gen.26.21
     note:
       en: "They strive over the next well too, and he calls it Sitnah, hatred."
-      ru: "О следующем колодце тоже спорят, и он называет его Ситна."
+      ru: "О следующем колодце тоже спорят, и он называет его Ситна (вражда)."
   - place: ab1d954 # Rehoboth
     ref: Gen.26.22
     note:

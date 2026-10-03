@@ -1,0 +1,35 @@
+# Overview article (ADR 0007). Mainstream facts only; Egyptian dates follow I. Shaw (ed.), The Oxford History of Ancient Egypt.
+# The card is named «Цоан» (Synodal); the title adds the Greek name Tanis, by which the site is usually known.
+id: zoan
+place: ac31fee
+title:
+  en: "Zoan (Tanis)"
+  ru: "Цоан (Танис)"
+body:
+  en:
+    - "Zoan, called Djanet by the Egyptians and Tanis by the Greeks, lies at San el-Hagar in the north-eastern Nile delta, on the Tanitic branch of the river, which has since silted up. Its great temple of Amun was built largely of older monuments, obelisks, statues and blocks of Ramesses II, brought from Pi-Ramesses, the earlier capital about 30 km to the south. For that reason Tanis was long mistaken for Pi-Ramesses itself."
+    - "About 1069 BC Smendes founded the Twenty-first Dynasty, and Tanis was the royal city of the Twenty-first and Twenty-second Dynasties. In the Report of Wenamun the envoy of Amun's temple at Thebes calls on Smendes at Tanis on his way to Byblos. Auguste Mariette and Flinders Petrie dug here in the nineteenth century, and in 1939–1940 Pierre Montet found the royal tombs within the temple enclosure, among them the unplundered burials of Psusennes I, Amenemope and Shoshenq II."
+    - 'Numbers notes that Hebron was built seven years before Zoan in Egypt. A psalm recalls the wonders God wrought in Egypt "in the field of Zoan". Isaiah mocks Pharaoh''s counsellors: "the princes of Zoan are fools"; rebuking those who go down to Egypt to seek Pharaoh''s strength, he says: "his princes were at Zoan". Ezekiel foretold that God would set fire in Zoan.'
+    - "A copy of the Canopus decree of the priests in honour of Ptolemy III (238 BC) was found at Tanis by Richard Lepsius in 1866. Strabo knew Tanis as a large city, while Josephus calls it a small town, where Titus spent a night on his march from Alexandria to Jerusalem in AD 70. In the 380s, by the usual dating, the pilgrim Egeria came to Tathnis, usually taken to be Tanis, which, she writes, had once been Pharaoh's capital and was the city where Moses was born."
+  ru:
+    - "Цоан, у египтян Джанет, а у греков Танис, лежит у селения Сан-эль-Хагар на северо-востоке дельты Нила, на Танисском рукаве реки, который с тех пор занесло илом. Его великий храм Амона был построен во многом из более древних памятников — обелисков, статуй и блоков Рамсеса II, привезённых из Пи-Рамсеса, прежней столицы примерно в 30 км к югу. Поэтому Танис долго ошибочно принимали за сам Пи-Рамсес."
+    - "Около 1069 г. до н. э. Смендес основал XXI династию, и Танис был царским городом XXI и XXII династий. В «Путешествии Ун-Амона» посланец фиванского храма Амона по пути в Библ заходит в Танис к Смендесу. В XIX веке здесь копали Огюст Мариетт и Флиндерс Питри, а в 1939–1940 гг. Пьер Монте нашёл в ограде храма царские гробницы, среди них неразграбленные погребения Псусеннеса I, Аменемопе и Шешонка II."
+    - "Книга Чисел замечает, что Хеврон построен был семью годами прежде Цоана, города Египетского. Псалом вспоминает чудеса, сотворённые Богом в Египте «на поле Цоан». Исаия насмехается над советниками фараона: «обезумели князья Цоанские»; а обличая тех, кто идёт в Египет искать силы фараона, говорит: «князья его уже в Цоане». Иезекииль предрекал, что Бог пошлёт огонь на Цоан."
+    - "Копию Канопского декрета жрецов в честь Птолемея III (238 г. до н. э.) нашёл в Танисе Рихард Лепсиус в 1866 г. Страбон знал Танис как большой город, а Иосиф Флавий называет его маленьким городком, где Тит заночевал в 70 г. н. э. по пути из Александрии к Иерусалиму. В 380-х годах, по обычной датировке, паломница Эгерия пришла в Татнис, который обычно считают Танисом; по её словам, некогда это была столица фараона и здесь родился Моисей."
+scripture:
+  - Num.13.22
+  - Ps.78.12
+  - Ps.78.43
+  - Isa.19.11
+  - Isa.19.13
+  - Isa.30.1-Isa.30.4
+  - Ezek.30.14
+sources:
+  - "The Report of Wenamun (Papyrus Pushkin 120), opening section; tr. J. H. Breasted, Ancient Records of Egypt IV (1906) §§557-591"
+  - "W. M. F. Petrie, Tanis I (1885); Tanis II (1888)"
+  - "Strabo, Geography 17.1.20"
+  - "Josephus, Jewish War 4.659-660"
+  - "Egeria, Itinerarium 9.5"
+  - "K. A. Kitchen, The Third Intermediate Period in Egypt (1100-650 BC) (2nd ed., 1986)"
+  - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000)"
+status: checked

@@ -1,0 +1,36 @@
+# Overview article (ADR 0007). Mainstream facts only; the site of Sodom is unknown, and the candidate sites and their dates are named as disputed.
+id: sodom
+place: a0aa664
+title:
+  en: "Sodom"
+  ru: "Содом"
+body:
+  en:
+    - 'Sodom was the chief of the five cities of the plain of the Jordan, with Gomorrah, Admah, Zeboiim and Bela, which is Zoar. Genesis describes the plain as well watered, like the garden of the Lord, before its destruction, and places the battle of the four kings with the five in the vale of Siddim, "which is the salt sea". Where Sodom stood is unknown. Ancient writers looked for it at the south end of the Dead Sea, near Zoar, and this map marks it in the south.'
+    - "The southern candidates are Early Bronze Age towns on the plain east of the Dead Sea's southern basin. Bab edh-Dhra, found by W. F. Albright's survey in 1924, had a walled town and a vast cemetery; Paul Lapp excavated the cemetery in 1965–1967, and after Walter Rast and Thomas Schaub surveyed nearby Numeira, Safi, Feifa and Khanazir in 1973, these sites were compared with the cities of the plain. Others object that they are too small, too early and in the wrong place, and the dates of their ends are themselves disputed. A different proposal, made by Steven Collins, who has dug there since the mid-2000s, puts Sodom at Tall el-Hammam, north-east of the Dead Sea. In 2021 a paper claimed that an airburst destroyed that city about 1650 BC; it was corrected twice and retracted by its journal in 2025 after critics found errors in its methods and in its reading of the data."
+    - 'In Genesis, Lot settles near Sodom, whose people are "wicked and sinners before the Lord exceedingly"; Abraham pleads for the city, and the Lord rains brimstone and fire on Sodom and Gomorrah, while Lot escapes to Zoar. Later the prophets and Jesus himself name Sodom as the byword for judgement: Isaiah calls the rulers of Jerusalem rulers of Sodom, Ezekiel names her sin as pride, fulness of bread, idleness and neglect of the poor, and Jude and 2 Peter hold it up as an example.'
+    - "Strabo, about the turn of the era, heard from local people that thirteen cities had once stood near Masada, with Sodom as their capital, and that earthquakes, fire and hot waters full of asphalt and sulphur had destroyed them. Josephus wrote that the land of Sodom beside the lake was burnt up and that traces of five cities could still be seen. In the fourth century Eusebius placed Sodom near the Dead Sea and noted that Zoar, the one city spared, was still inhabited, with a Roman garrison."
+  ru:
+    - "Содом был главным из пяти городов окрестности Иорданской, вместе с Гоморрой, Адмой, Севоимом и Белой, которая есть Сигор. Книга Бытия описывает окрестность до истребления как орошаемую, «как сад Господень», и помещает битву четырёх царей с пятью в долине Сиддим, «где ныне море Соленое». Где стоял Содом, неизвестно. Древние авторы искали его у южного края Мёртвого моря, около Сигора, и на этой карте он отмечен на юге."
+    - "Южные кандидаты — города раннего бронзового века на равнине к востоку от южной части Мёртвого моря. Баб-эд-Дра, найденный разведкой У. Ф. Олбрайта в 1924 г., имел обнесённый стеной город и огромный некрополь; Пол Лапп раскапывал некрополь в 1965–1967 гг., а после того как Уолтер Раст и Томас Шауб в 1973 г. обследовали соседние Нумейру, Эс-Сафи, Фейфу и Ханазир, эти поселения стали сравнивать с городами окрестности. Другие возражают, что они слишком малы, слишком ранние и лежат не там, а даты их гибели сами спорны. Другое предложение, выдвинутое Стивеном Коллинзом, который копает там с середины 2000-х гг., помещает Содом в Телль-эль-Хаммам к северо-востоку от Мёртвого моря. В 2021 г. вышла статья о том, что этот город около 1650 г. до н. э. уничтожил воздушный взрыв; её дважды исправляли, а в 2025 г. журнал отозвал её после того, как критики нашли ошибки в методике и толковании данных."
+    - "В Книге Бытия Лот селится у Содома, жители которого «были злы и весьма грешны пред Господом»; Авраам молит за город, и Господь проливает на Содом и Гоморру серу и огонь, а Лот спасается в Сигоре. Позже пророки и сам Иисус называют Содом образцом суда: Исаия называет правителей Иерусалима князьями Содомскими, Иезекииль видит грех Содома в гордости, пресыщении, праздности и в том, что она не поддерживала руки бедного, а Иуда и Второе послание Петра ставят его в пример."
+    - "Страбон на рубеже эр слышал от местных жителей, что близ Масады стояли когда-то тринадцать городов со столицей Содомом и что их погубили землетрясения, огонь и горячие воды с асфальтом и серой. Иосиф Флавий писал, что Содомская земля у озера выжжена и что следы пяти городов видны до сих пор. В IV веке Евсевий помещал Содом у Мёртвого моря и отмечал, что Сигор, единственный уцелевший город, всё ещё населён и в нём стоит римский гарнизон."
+scripture:
+  - Gen.13.10-Gen.13.13
+  - Gen.14.1-Gen.14.12
+  - Gen.18.20-Gen.18.33
+  - Gen.19.1-Gen.19.29
+  - Isa.1.10
+  - Ezek.16.49
+  - Matt.10.15
+  - 2Pet.2.6
+  - Jude.1.7
+sources:
+  - "Strabo, Geography 16.2.44"
+  - "Josephus, Jewish War 4.483-485"
+  - "Eusebius, Onomasticon, s.v. Bala, Sodoma (nos. 193, 809 in C. U. Wolf's translation, 1971)"
+  - "R. T. Schaub and W. E. Rast, Bab edh-Dhra: Excavations in the Cemetery Directed by Paul W. Lapp (1965-67) (1989); W. E. Rast, 'Bab edh-Dhra', Anchor Bible Dictionary, vol. 1 (1992)"
+  - "S. Collins and L. C. Scott, Discovering the City of Sodom (2013)"
+  - "T. E. Bunch et al., 'A Tunguska Sized Airburst Destroyed Tall el-Hammam', Scientific Reports 11 (2021) 18632; corrections 2022 and 2023; Retraction Note, Scientific Reports 15 (2025) 14291"
+  - "S. J. Jaret and R. S. Harris, 'No Mineralogic or Geochemical Evidence of Impact at Tall el-Hammam', Scientific Reports 12 (2022) 5189"
+status: checked

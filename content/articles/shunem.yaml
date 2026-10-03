@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed readings are named as such.
+id: shunem
+place: ac86af5
+title:
+  en: "Shunem"
+  ru: "Сонам"
+body:
+  en:
+    - "Shunem is identified with the village of Sulam, at the foot of the hill now called Givat HaMoreh on the north side of the Jezreel Valley, about 5 km north of Jezreel and facing Mount Gilboa across the plain. In the fourteenth century BC Biridiya, ruler of Megiddo, wrote to Pharaoh in one of the Amarna letters that he alone was cultivating at Shunama and furnishing men for the corvée; another letter recalls that Lab'ayu of Shechem had attacked Shunama. The town also appears in the lists of conquered places of Thutmose III and of Shishak at Karnak."
+    - 'In the Book of Joshua Shunem lies on the border of Issachar. Before Saul''s last battle the Philistines "came and pitched in Shunem", while Saul gathered all Israel in Gilboa; Josephus places their camp near the city Shunem, in the plain. When King David was old, his servants sought a fair damsel throughout all Israel and found Abishag the Shunammite to minister to him. After David''s death Adonijah asked for Abishag to wife, and Solomon took the request as a claim to the kingdom and had him put to death.'
+    - "Elisha, passing through, often ate at the house of a great woman of Shunem; she and her husband made him a little chamber on the wall with a bed, a table, a stool and a candlestick. Elisha promised her a son, and she bore one; when the child died, she rode to the prophet at Mount Carmel, and he came and raised him to life. Later, at Elisha's word, she sojourned seven years in the land of the Philistines during a famine, and on her return the king restored her house and her land. Some link the Shulamite of the Song of Solomon with Shunem, but this is uncertain."
+    - "In the early fourth century Eusebius knew a village called Soulem five miles south of Mount Tabor. Small excavations in the village of Sulam have found pottery of the Bronze and Iron Ages and remains of the Roman and Byzantine periods."
+  ru:
+    - "Сонам отождествляют с селением Сулам у подножия холма, который сегодня называют Гиват-ха-Море, на северной стороне Изреельской долины, примерно в 5 км к северу от Изрееля, напротив горы Гелвуй по ту сторону равнины. В XIV веке до н. э. Биридия, правитель Мегиддо, писал фараону в одном из амарнских писем, что только он возделывает землю в Шунаме и поставляет людей на повинность; в другом письме вспоминается, что Лабайю из Сихема нападал на Шунаму. Город назван и в списках покорённых мест Тутмоса III и Сусакима в Карнаке."
+    - "В книге Иисуса Навина Сонам лежит на границе Иссахара. Перед последней битвой Саула Филистимляне «пошли и стали станом в Сонаме», а Саул собрал весь народ Израильский на Гелвуе; Иосиф Флавий помещает их стан у города Сонама, на равнине. Когда царь Давид состарился, слуги искали красивой девицы во всех пределах Израильских и нашли Ависагу Сунамитянку, чтобы она прислуживала ему. После смерти Давида Адония просил Ависагу себе в жену, и Соломон счёл эту просьбу притязанием на царство и предал его смерти."
+    - "Елисей, проходя мимо, часто ел хлеб в доме одной богатой женщины в Сонаме; она с мужем сделала ему небольшую горницу над стеною и поставила там постель, стол, седалище и светильник. Елисей обещал ей сына, и она родила его; когда ребёнок умер, она отправилась к пророку на гору Кармил, и он пришёл и воскресил его. Позже, по слову Елисея, она во время голода семь лет жила в земле Филистимской, а когда вернулась, царь возвратил ей дом и поле. Некоторые связывают Суламиту из Песни песней с Сонамом, но это не доказано."
+    - "В начале IV века Евсевий знал селение Сулем в пяти милях к югу от горы Фавор. Небольшие раскопки в селении Сулам дали керамику бронзового и железного веков и остатки римского и византийского времени."
+scripture:
+  - Josh.19.18
+  - 1Sam.28.4
+  - 1Sam.31.1
+  - 1Kgs.1.1-1Kgs.1.4
+  - 1Kgs.2.13-1Kgs.2.25
+  - 2Kgs.4.8-2Kgs.4.37
+  - 2Kgs.8.1-2Kgs.8.6
+  - Song.6.13
+sources:
+  - "Amarna letter EA 365 (Biridiya of Megiddo: cultivating at Shunama and furnishing corvée workers), ANET 485; EA 250 (the sons of Lab'ayu recall his attack on Shunama), ANET 485-486"
+  - "Thutmose III's list of Canaanite towns at Karnak, no. 38, and Sheshonk I's list, no. 15 (J. Simons' numbering), ANET 242-243"
+  - "Josephus, Antiquities 6.325; 6.327 (the Philistine camp near Shunem)"
+  - "Eusebius, Onomasticon, s.v. Sounem (C. U. Wolf's translation, no. 858)"
+  - "W. L. Moran, The Amarna Letters (1992)"
+status: checked

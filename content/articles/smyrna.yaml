@@ -1,0 +1,31 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such. The place is the Hellenistic and Roman city on Mount Pagus (New Smyrna).
+id: smyrna
+place: a2e65fb
+title:
+  en: "Smyrna"
+  ru: "Смирна"
+body:
+  en:
+    - "Smyrna, today's İzmir, lies at the head of a long gulf on the Aegean coast of Asia Minor. The older city stood across the bay at Bayraklı, a mound settled since the third millennium BC and excavated by J. M. Cook after 1948. Herodotus says that Smyrna was first Aeolian until exiles from Colophon seized it, making it Ionian, and that the Lydian king Alyattes took it, about 600 BC. For some four hundred years afterwards, Strabo says, its people lived in villages."
+    - "The new city rose about 300 BC on the slopes of Mount Pagus: Strabo credits Antigonus and Lysimachus, while Pausanias tells that Alexander was bidden in a dream to found it. Strabo praises its straight paved streets, its porticoes, its library and its shrine of Homer, whom the Smyrnaeans claimed as their own. A loyal ally of Rome, Smyrna built a temple to the City of Rome in 195 BC, the first, as its envoys later told the Senate; in AD 26 the Senate chose it over ten rivals as the site of a temple of Tiberius."
+    - 'Revelation names Smyrna second among the seven churches of Asia. Its letter speaks of tribulation and poverty, of slander from those who say they are Jews and are not, "but are the synagogue of Satan", and of prison to come, and it promises: "be thou faithful unto death, and I will give thee a crown of life." Early in the second century, by the usual dating, Ignatius of Antioch, taken under guard to Rome, stopped at Smyrna and later wrote to its church and to its bishop Polycarp, who, Irenaeus says, had been appointed by apostles.'
+    - "Polycarp was burned in the stadium of Smyrna; asked to revile Christ, he answered that he had served him eighty-six years. The letter of the church of Smyrna telling of his death is generally held to be the oldest Christian account of a martyrdom after the New Testament; his death is dated by some to about 155–156 and by others to later years. About 178 an earthquake destroyed much of the city, and Marcus Aurelius gave money and appointed a senator to rebuild it."
+  ru:
+    - "Смирна, нынешний Измир, лежит в глубине длинного залива на эгейском побережье Малой Азии. Прежний город стоял на другой стороне залива, у Байраклы, на холме, заселённом с III тысячелетия до н. э.; его раскапывал Дж. М. Кук после 1948 г. Геродот сообщает, что Смирна сначала была эолийской, пока её не захватили изгнанники из Колофона и она не стала ионийской, и что её взял лидийский царь Алиатт — около 600 г. до н. э. После этого, по словам Страбона, около четырёхсот лет её жители жили в деревнях."
+    - "Новый город вырос около 300 г. до н. э. на склонах горы Пагос: Страбон приписывает его основание Антигону и Лисимаху, а Павсаний рассказывает, что Александру во сне было велено основать его. Страбон хвалит его прямые мощёные улицы, портики, библиотеку и святилище Гомера, которого смирнцы считали своим земляком. Верная союзница Рима, Смирна в 195 г. до н. э. построила храм городу Риму — первой, как позже напомнили сенату её послы; в 26 г. н. э. сенат предпочёл её десяти соперницам как место для храма Тиберия."
+    - "Откровение называет Смирну второй из семи церквей Асии. Послание к ней говорит о скорби и нищете, о злословии от тех, кто говорит о себе, что они Иудеи, а они не таковы, «но сборище сатанинское», и о грядущей темнице, и обещает: «Будь верен до смерти, и дам тебе венец жизни». В начале II века, по обычной датировке, Игнатий Антиохийский, которого под стражей везли в Рим, остановился в Смирне, а позже писал её церкви и её епископу Поликарпу, который, по словам Иринея, был поставлен апостолами."
+    - "Поликарпа сожгли на стадионе Смирны; когда от него потребовали хулить Христа, он ответил, что служит Ему восемьдесят шесть лет. Послание смирнской церкви о его кончине обычно считают древнейшим христианским рассказом о мученичестве после Нового Завета; одни датируют его смерть около 155–156 гг., другие — более поздними годами. Около 178 г. землетрясение разрушило большую часть города, и Марк Аврелий дал денег и поручил одному из сенаторов отстроить его."
+scripture:
+  - Rev.1.11
+  - Rev.2.8-Rev.2.11
+sources:
+  - "Herodotus, Histories 1.16; 1.149-150"
+  - "Strabo, Geography 14.1.37"
+  - "Pausanias, Description of Greece 7.5.1-3"
+  - "Tacitus, Annals 4.55-56"
+  - "Ignatius, Letters to the Smyrnaeans and to Polycarp; Irenaeus, Against Heresies 3.3.4"
+  - "Martyrdom of Polycarp 9-16"
+  - "Cassius Dio, Roman History 72(71).32.3"
+  - "J. M. Cook, 'Old Smyrna, 1948-1951', Annual of the British School at Athens 53-54 (1958-59)"
+  - "C. J. Cadoux, Ancient Smyrna (1938)"
+status: checked

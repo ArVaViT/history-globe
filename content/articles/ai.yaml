@@ -1,0 +1,32 @@
+# Overview article (ADR 0007). Mainstream facts only; Bronze Age dates are approximate.
+# The identification is disputed: et-Tell (most scholars) or Khirbet el-Maqatir (B. Wood).
+id: ai
+place: a7e13e1
+title:
+  en: "Ai"
+  ru: "Гай"
+body:
+  en:
+    - "Ai is usually identified with et-Tell, a large mound beside the village of Deir Dibwan, about 3 km east of Beitin, ancient Bethel, on a plateau overlooking the Jordan Valley. Both the Hebrew name, ha-Ai, and the Arabic et-Tell mean a heap of ruins. Excavations by Judith Marquet-Krause in 1933–1935 and by Joseph Callaway from 1964 uncovered a walled city of the Early Bronze Age, built about 3100 BC, with a temple-palace on its acropolis. It was destroyed more than once and finally about 2400 BC."
+    - 'The mound then lay empty for more than a thousand years. About 1200 BC a small unwalled village of farmers and herders, with cisterns cut in the rock, was built on part of it; it was abandoned about 1050 BC without destruction. In Genesis Abram pitches his tent between Bethel and Ai and builds an altar there. In the Book of Joshua Israel''s first attack on Ai fails because Achan has taken from the spoil of Jericho; then an ambush laid between Bethel and Ai takes the city, and Joshua "burnt Ai, and made it an heap for ever".'
+    - "As et-Tell had no town in the Late Bronze Age, how the story relates to the site is disputed. Many scholars read it as an explanation of an ancient ruin; W. F. Albright suggested that a memory of the capture of nearby Bethel was transferred to Ai; others look for Joshua's Ai elsewhere. In 1995–2000 and 2009–2016 the Associates for Biblical Research dug at Khirbet el-Maqatir, about 1 km west of et-Tell, where Bryant Wood identifies a small fortress burned in the fifteenth century BC as Ai. Most scholars still place Ai at et-Tell."
+    - "Men of Bethel and Ai are listed among the exiles who returned from Babylon. Josephus calls Ai a city above Jericho. In the early fourth century Eusebius placed Ai near Bethel and wrote that it was then deserted. At Khirbet el-Maqatir a church was built in the fourth century, enlarged into a basilica with three apses about 400 and joined by a monastery in the later fifth century."
+  ru:
+    - "Гай обычно отождествляют с эт-Теллем — большим холмом у деревни Дейр-Дибван, примерно в 3 км к востоку от Бейтина, древнего Вефиля, на плато над Иорданской долиной. И еврейское имя ха-Ай, и арабское эт-Телль значат «груда развалин». Раскопки Жюдит Марке-Краузе в 1933–1935 гг. и Джозефа Каллауэя с 1964 г. открыли обнесённый стеной город раннего бронзового века, построенный около 3100 г. до н. э., с храмом-дворцом на акрополе. Он не раз разрушался и окончательно погиб около 2400 г. до н. э."
+    - "Затем холм больше тысячи лет пустовал. Около 1200 г. до н. э. на части его выросло небольшое неукреплённое селение земледельцев и пастухов с высеченными в скале водоёмами; около 1050 г. до н. э. его оставили без разрушения. В книге Бытия Аврам ставит шатёр между Вефилем и Гаем и строит там жертвенник. В книге Иисуса Навина первый приступ Израиля к Гаю не удаётся, потому что Ахан взял из заклятой добычи Иерихона; затем засада между Вефилем и Гаем берёт город, и Иисус сжёг Гай и «обратил его в вечные развалины»."
+    - "Поскольку в позднем бронзовом веке города на эт-Телле не было, связь рассказа с этим местом спорна. Многие учёные видят в нём объяснение древних развалин; Уильям Олбрайт предполагал, что память о взятии соседнего Вефиля перенесли на Гай; другие ищут Гай Иисуса Навина в ином месте. В 1995–2000 и 2009–2016 гг. Ассоциация библейских исследований вела раскопки на Хирбет эль-Макатире, примерно в 1 км к западу от эт-Телля, где Брайант Вуд считает Гаем небольшую крепость, сгоревшую в XV веке до н. э. Большинство учёных по-прежнему помещают Гай на эт-Телле."
+    - "Жители Вефиля и Гая названы среди вернувшихся из вавилонского плена. Иосиф Флавий называет Гай городом выше Иерихона. В начале IV века Евсевий помещал Гай близ Вефиля и писал, что он тогда был пуст. На Хирбет эль-Макатире в IV веке построили церковь, которую около 400 г. расширили в трёхапсидную базилику, а во второй половине V века к ней пристроили монастырь."
+scripture:
+  - Gen.12.8
+  - Gen.13.3
+  - Josh.7.1-Josh.7.26
+  - Josh.8.1-Josh.8.29
+  - Ezra.2.28
+  - Neh.7.32
+sources:
+  - "Josephus, Antiquities 5.35 (Ai, a city above Jericho)"
+  - "Eusebius, Onomasticon, s.v. Aggai and Gai (C. U. Wolf's translation, nos. 3 and 312)"
+  - "J. Marquet-Krause, Les fouilles de 'Ay (et-Tell), 1933-1935"
+  - "J. A. Callaway, 'New Evidence on the Conquest of Ai', JBL 87 (1968)"
+  - "S. Stripling and M. Hassler (eds.), The Excavations at Khirbet el-Maqatir: 1995-2001 and 2009-2016 (2023)"
+status: checked

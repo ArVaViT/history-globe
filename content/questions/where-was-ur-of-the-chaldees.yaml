@@ -1,0 +1,24 @@
+id: where-was-ur-of-the-chaldees
+question:
+  en: "Where was Ur of the Chaldees?"
+  ru: "Где находился Ур Халдейский?"
+answer:
+  en:
+    - "Ur of the Chaldees, the city Abraham's family left for Canaan, is usually identified with Tell el-Muqayyar in the far south of Iraq, 16 km south-west of Nasiriyah, where the lower stages of the ziggurat of Ur-Nammu still stand; the identification is debated."
+    - 'Genesis says: "And Terah took Abram his son … and they went forth with them from Ur of the Chaldees, to go into the land of Canaan; and they came unto Haran, and dwelt there." In antiquity Ur stood on the Euphrates near the head of the Gulf; the river and the coast have since moved away. It was one of the great Sumerian cities, sacred to the moon god, and the seat of the Third Dynasty of Ur (c. 2112–2004 BC in the middle chronology). Leonard Woolley''s excavations of 1922–1934 uncovered its Royal Cemetery and the ziggurat.'
+    - "Most scholars take this southern Ur to be the biblical one, but an old tradition points to Urfa (Şanlıurfa) in south-eastern Turkey, and some scholars have argued for an Ur in northern Mesopotamia, nearer Haran. The map shows the southern site. From there to Haran is about 925 km in a straight line."
+  ru:
+    - "Ур Халдейский, из которого семья Авраама вышла в Ханаан, обычно отождествляют с Телль-эль-Мукайяром на крайнем юге Ирака, в 16 км к юго-западу от Насирии, где до сих пор стоят нижние ярусы зиккурата Ур-Намму; отождествление оспаривается."
+    - "Книга Бытия говорит: «И взял Фарра Аврама, сына своего… и вышел с ними из Ура Халдейского, чтобы идти в землю Ханаанскую; но, дойдя до Харрана, они остановились там». В древности Ур стоял на Евфрате недалеко от Персидского залива; с тех пор и река, и берег отодвинулись. Это был один из великих шумерских городов, посвящённый богу луны, столица III династии Ура (ок. 2112–2004 гг. до н. э. по средней хронологии). Раскопки Леонарда Вулли 1922–1934 годов открыли Царское кладбище и зиккурат."
+    - "Большинство учёных считают библейским именно этот южный Ур, но старинное предание указывает на Урфу (Шанлыурфа) на юго-востоке Турции, а некоторые исследователи помещают Ур на севере Месопотамии, ближе к Харрану. Карта показывает южный Ур. Оттуда до Харрана около 925 км по прямой."
+map:
+  place: a6cf75c
+  year: "1900 BC"
+  ref: Gen.11.31
+scripture: [Gen.11.28, Gen.11.31, Neh.9.7, Acts.7.2-Acts.7.4]
+sources:
+  - "C. L. Woolley, Ur Excavations II: The Royal Cemetery (1934)"
+  - "C. L. Woolley and P. R. S. Moorey, Ur 'of the Chaldees' (1982)"
+  - "C. H. Gordon, 'Abraham and the Merchants of Ura', Journal of Near Eastern Studies 17 (1958) (the northern Ur)"
+  - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016), ch. 5 (middle chronology)"
+status: checked

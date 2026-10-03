@@ -45,10 +45,36 @@ the data first (`pnpm data`).
   place (Zion for Jerusalem) shares its years. Disputed dates are left out, not guessed.
 - **Polity overrides** (`content/polity-overrides.yaml`): our corrections to Cliopatria,
   each with a reason and sources; copies are marked `src: "override"` and replaced on
-  every run.
+  every run, cut years kept in `cut` and restored. Kinds: `overrides` (last year),
+  `starts` (first year), `clips` (cut to an area), `absent` (years it did not exist),
+  `bridges` (years the data leaves it off), `annexed` (its last shape drawn as the empire
+  that took it), `vassals` (overlord's colour and a second label line; `vc` keeps the
+  own colour). A name missing from the data, an overlord absent in those years, or
+  overlapping vassal years stop the build. Then the colours are assigned as a map
+  (neighbours shape by shape) and the labels of small Levant states pinned (`pin`): both
+  deterministic, so a rerun writes the same files.
 - Nothing is written until every check passes.
+
+## Places in any text (`scripts/build-text-places.ts`)
+
+The index behind `hg-places.js`, the verse links in place cards and the links in the static
+pages' verses. It drops rather than guesses. A form goes to a place only when the place's name
+holds it against its namesakes (five times the verses, with a longer name counting for its
+shorter one: Mount Carmel against Carmel) and against people (three times). It must also not be
+an ordinary word: the KJV and the Synodal text write it capitalised more often than small, a
+phrase not all in small letters. At least half of the cited verses that use it must be the
+place's own (or another record's on the same point). A short hand-checked list drops
+modern meanings. A dropped name of several words still blocks its first word, so «Антиохию
+Писидийскую» never becomes Antioch of Syria. Russian names are declined by
+`scripts/russian-forms.ts` (tested).
+
+## Links
+
+`scripts/check-links.ts`: every link and image in the documentation and the static place and
+tour pages leads to a file that is there (links to the app itself and out of the site aside).
 
 ## Budget
 
 `scripts/check-budget.ts`: the JavaScript needed before the first map frame stays within
-400 kB gzip (ADR 0010).
+420 kB gzip (ADR 0010; raised from 400 by ADR 0011). All the JavaScript, loaded
+later too, stays under 560 kB.

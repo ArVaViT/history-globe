@@ -1,7 +1,10 @@
-import { formatRef, formatYear, type Locale } from "@hg/model";
-import { Route } from "./icons";
+import { formatRef, formatYear, NT_BOOKS, type Locale } from "@hg/model";
 import { useTranslation } from "../i18n";
 import { Section } from "./Panel";
+import { readUrl } from "../url";
+import { lessonSearch } from "../lesson";
+import { readPicked, readTitle } from "./LessonRow";
+import { useState } from "react";
 
 export function ToursPanel({
   tours,
@@ -18,15 +21,20 @@ export function ToursPanel({
 }) {
   const { t, i18n } = useTranslation();
   const locale: Locale = i18n.language === "ru" ? "ru" : "en";
+  const [lesson] = useState(readPicked);
   return (
     <Section id="tours" title={t("tours.title")} className="w-[340px] max-md:w-full pb-3">
-      {/* Eighteen tours would fill the column: the list scrolls on its own (not on a
-          phone, where the column itself scrolls), each testament's heading stays in view
-          over its own tours, and a focused tour is kept clear of it. */}
-      <div className="max-h-[min(420px,50vh)] scroll-pt-7 overflow-y-auto [scrollbar-width:thin] max-md:max-h-none">
-        {(["ot", "nt"] as const).map((testament) => {
-          // Tours come sorted by year: the Old Testament ones are before the era.
-          const group = tours.filter((tour) => tour.year < 0 === (testament === "ot"));
+      {/* Forty-six tours would fill the column: the list scrolls on its own, on a phone too
+          (the panel then fits above the timeline and fades out instead of being cut), each
+          testament's heading stays in view over its own tours, and a focused tour is kept
+          clear of it. */}
+      <div className="hg-fade max-h-[min(460px,52vh)] max-md:max-h-[calc(100dvh-var(--hg-timeline-h,124px)-200px)] scroll-pt-7 overflow-y-auto [scrollbar-width:thin]">
+        {(["whole", "ot", "nt"] as const).map((testament) => {
+          // Tours come sorted by year: the Old Testament ones are before the era. One that
+          // runs through both (the empires, Genesis to Acts) stands above them.
+          // By the books the stops are read in, not the year: the childhood of Jesus is
+          // before AD 1 and in the New Testament.
+          const group = tours.filter((tour) => testamentOf(tour.stops) === testament);
           if (group.length === 0) return null;
           return (
             <section key={testament} aria-label={t(`tours.${testament}`)}>
@@ -40,11 +48,8 @@ export function ToursPanel({
                   onClick={() => {
                     onStart(tour.id);
                   }}
-                  className="group mx-2 flex w-[calc(100%-16px)] items-center gap-3 rounded-xl px-2 py-1.5 text-left hover:bg-paper-2"
+                  className="mx-2 flex w-[calc(100%-16px)] rounded-xl px-2 py-1.5 text-left hover:bg-paper-2"
                 >
-                  <span className="grid size-7 shrink-0 place-items-center rounded-full bg-accent/90 text-paper group-hover:bg-accent">
-                    <Route className="size-3.5" aria-hidden />
-                  </span>
                   <span className="min-w-0 flex-1">
                     <span className="block truncate font-serif text-[14.5px] leading-snug text-ink">
                       {tour.title[i18n.language] ?? tour.title.en}
@@ -60,6 +65,27 @@ export function ToursPanel({
           );
         })}
       </div>
+      {/* The way to a route of one's own: the lesson button on a place's card (lesson.ts). */}
+      {/* Not in a frame on another site, where the cards have no lesson button. */}
+      {!readUrl().embed &&
+        (lesson.length >= 2 ? (
+          // A lesson being built, here too: where the tours are, it starts like one.
+          <p className="mx-4 mt-2 flex flex-wrap items-baseline gap-x-3 border-t border-line pt-2 text-[13px]">
+            <span className="font-medium text-ink">
+              {t("lesson.count", { count: lesson.length })}
+            </span>
+            <a
+              href={lessonSearch(lesson, locale, readTitle())}
+              className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
+            >
+              {t("lesson.start")}
+            </a>
+          </p>
+        ) : (
+          <p className="mx-4 mt-2 border-t border-line pt-2 text-[12px] leading-snug text-ink-soft">
+            {t("lesson.hint")}
+          </p>
+        ))}
     </Section>
   );
 }
@@ -92,4 +118,10 @@ export function tourSpan(stops: readonly { readonly ref: string }[], locale: Loc
   } catch {
     return "";
   }
+}
+
+/** Whether a tour's stops read from both testaments. */
+function testamentOf(stops: readonly { readonly ref: string }[]): "whole" | "ot" | "nt" {
+  const nt = stops.map((s) => NT_BOOKS.has(s.ref.split(".")[0] ?? ""));
+  return nt.includes(true) && nt.includes(false) ? "whole" : nt.includes(true) ? "nt" : "ot";
 }

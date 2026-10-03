@@ -6,6 +6,7 @@ title:
   en: "Jacob"
   ru: "Иаков"
 year: "1800 BC"
+people: ["Israel@Gen.25.26-Rev"]
 approximate: true
 stops:
   - place: a075d61 # Beersheba
@@ -60,11 +61,13 @@ stops:
       ru: "Он приходит к отцу своему Исааку в Мамре, то есть Хеврон; Исаак умирает, и Исав с Иаковом погребают его."
   - place: a075d61 # Beersheba
     ref: Gen.46.1-Gen.46.4
+    year: "1700 BC"
     note:
       en: 'At Beersheba God speaks to him: "Fear not to go down into Egypt."'
       ru: "В Вирсавии Бог говорит ему: «не бойся идти в Египет»."
   - place: af301ca # Egypt
     ref: Gen.46.5-Gen.46.7
+    year: "1700 BC"
     note:
       en: "Jacob and all his family come into Egypt."
       ru: "Иаков и весь род его приходят в Египет."

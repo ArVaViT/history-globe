@@ -1,12 +1,14 @@
 # The earthly life of Jesus in the order of the Gospels, from Bethlehem to the Ascension.
 # One stop per place and event; the order of the Galilean ministry follows the Synoptics,
-# with John for Bethany beyond the Jordan, Cana and Sychar. The tour's year (AD 30) is a
-# conventional point for the map: the birth was c. 6-4 BC, the ministry c. AD 28-30.
+# with John for Bethany beyond the Jordan, Cana, Sychar and the supper at Bethany. The
+# tour's year (AD 30) is a conventional point for the map: the birth was c. 6-4 BC, the
+# ministry c. AD 28-30.
 id: jesus
 title:
   en: "The life of Jesus"
   ru: "Земная жизнь Иисуса"
 year: "AD 30"
+people: ["Jesus@Isa.7.14-Rev"]
 approximate: true
 stops:
   - place: a112427 # Bethlehem
@@ -30,7 +32,7 @@ stops:
   - place: a6e060d # Bethany beyond the Jordan
     ref: John.1.28
     note:
-      en: "John baptises at Bethany beyond the Jordan."
+      en: "John baptises at Bethabara (Bethany) beyond the Jordan."
       ru: "Иоанн крестит в Вифаваре при Иордане."
   - place: a031bda # Cana
     ref: John.2.1-John.2.11

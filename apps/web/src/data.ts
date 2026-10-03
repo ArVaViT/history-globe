@@ -1,5 +1,15 @@
 import { NT_FROM, type PlaceInfo, type Tour } from "@hg/core";
-import type { ContentRelease, HistoryEvent, Locale, PlaceLife } from "@hg/model";
+import type {
+  ChapterYears,
+  ContentRelease,
+  HistoryBattle,
+  HistoryEvent,
+  Locale,
+  PlaceLife,
+  PlacePhoto,
+  PleiadesLink,
+} from "@hg/model";
+export { siteCertainty } from "@hg/model";
 import type { FeatureCollection, Point } from "geojson";
 
 export interface PlaceProps {
@@ -12,6 +22,8 @@ export interface PlaceProps {
   readonly sites: number;
   /** The runner-up candidate site has at least 10 % of OpenBible's assessment. */
   readonly disputed: boolean;
+  /** OpenBible's score of the shown identification, 0–1000. */
+  readonly confidence?: number;
   /** A second record of the same name on the same point: dot only, not listed twice. */
   readonly dup?: boolean;
   /** The same in Russian: another record on this point has the same Russian name. */
@@ -34,6 +46,8 @@ export interface PlaceProps {
   readonly where_ru?: string;
   /** Set when `where` is a template ("within 5 km of X"), not a modern name. */
   readonly where_tpl?: string;
+  /** The source's own short name of the site ("Antioch in Pisidia"), before any rewording. */
+  readonly where_ref_text?: string;
   readonly osis: readonly string[];
   readonly coord: "openbible" | "wikidata";
 }
@@ -77,6 +91,8 @@ export interface LoadedData {
     readonly title: Readonly<Record<string, string>>;
     /** The year is a conventional point (debated chronology). */
     readonly approximate?: boolean;
+    /** Whose way it is (person ids): their card offers the tour. */
+    readonly people?: readonly string[];
   })[];
   /** Candidate locations per place id, most supported first. */
   readonly sites: ReadonlyMap<string, readonly Site[]>;
@@ -86,6 +102,18 @@ export interface LoadedData {
   readonly life: Readonly<Record<string, PlaceLife>>;
   /** Dated events of the history (content/events.yaml), in order. */
   readonly events: readonly HistoryEvent[];
+  /** Battles and sieges (content/battles.yaml), in order of year. */
+  readonly battles: readonly HistoryBattle[];
+  /** Places with an article (place id → article id); the texts load on demand. */
+  readonly articles: Readonly<Record<string, string>>;
+  /** Questions answered with a place on the map: place id → their ids and wording. */
+  readonly questions: NonNullable<ContentRelease["questions"]>;
+  /** Photos by place id (content/photos.yaml); the image is data/photos/<id>.jpg. */
+  readonly photos: Readonly<Record<string, PlacePhoto>>;
+  /** Pleiades record and attested span by place id (content/pleiades.json). */
+  readonly pleiades: Readonly<Record<string, PleiadesLink>>;
+  /** When the chapters happen: the map's year for a chapter or a person. */
+  readonly chapterYears: ChapterYears;
 }
 
 // Under the app's base path, so it also works when served from a sub-path.
@@ -200,6 +228,7 @@ export async function loadData(): Promise<LoadedData> {
       ...f.properties,
       ...(entry ? { name_ru: entry.ru, ...(entry.osis ? { name_ru_osis: entry.osis } : {}) } : {}),
       ...(whereRu ? { where_ru: whereRu } : {}),
+      ...(content.where_en?.[f.properties.id] ? { where: content.where_en[f.properties.id] } : {}),
       ...(life?.from ? { life_from: life.from.year } : {}),
       ...(life?.until ? { life_until: life.until.year + 1 } : {}),
       ...(life?.gap ? { gap_from: life.gap.from.year, gap_until: life.gap.until.year + 1 } : {}),
@@ -213,6 +242,8 @@ export async function loadData(): Promise<LoadedData> {
     id: t.id,
     year: t.year,
     ...(t.approximate ? { approximate: true } : {}),
+    ...(t.walked === false ? { walked: false } : {}),
+    ...(t.people ? { people: t.people } : {}),
     title: t.title,
     stops: t.stops.map((s) => ({
       placeId: s.place,
@@ -220,8 +251,17 @@ export async function loadData(): Promise<LoadedData> {
       ref: s.ref,
       note: s.note,
       ...(s.year !== undefined ? { year: s.year } : {}),
+      ...(s.by === "sea" ? { sea: true } : {}),
+      ...(s.by === "untold" ? { untold: true } : {}),
+      ...(s.sailed ? { sailed: s.sailed } : {}),
     })),
   }));
+  // A lesson in the address (lesson.ts): its code loads only then.
+  if (typeof window !== "undefined" && /[?&]lesson=/.test(window.location.search)) {
+    const { lessonTour } = await import("./lesson-tour");
+    const lesson = lessonTour(window.location.search, byId, content.chapter_years ?? {});
+    if (lesson) tours.unshift(lesson);
+  }
   const marked = markRussianDuplicates(places.features);
   for (const f of places.features) {
     const entry = byId.get(f.properties.id);
@@ -242,6 +282,12 @@ export async function loadData(): Promise<LoadedData> {
     alsoHere: here,
     life: content.life ?? {},
     events: content.events ?? [],
+    battles: content.battles ?? [],
+    articles: content.articles ?? {},
+    questions: content.questions ?? {},
+    photos: content.photos ?? {},
+    pleiades: content.pleiades ?? {},
+    chapterYears: content.chapter_years ?? {},
   };
 }
 
@@ -259,6 +305,60 @@ export function foldName(s: string): string {
     .replace(/[\s\-\u2010-\u2015'\u2019\u02bc]+/g, "");
 }
 
+/** Prepositions a Russian query may start with: «в Вифлееме», «из Дамаска». */
+const RU_PREPOSITIONS = new Set([
+  "в",
+  "во",
+  "из",
+  "изо",
+  "к",
+  "ко",
+  "у",
+  "до",
+  "от",
+  "на",
+  "под",
+  "при",
+  "около",
+  "близ",
+  "через",
+]);
+/** Case endings, longest first: what is left is compared with the start of a name. */
+const RU_ENDINGS = [
+  "ами",
+  "ями",
+  "ом",
+  "ем",
+  "ой",
+  "ей",
+  "ою",
+  "ах",
+  "ях",
+  "ам",
+  "ям",
+  "е",
+  "а",
+  "у",
+  "ю",
+  "ы",
+  "и",
+  "я",
+];
+
+/**
+ * A Russian query in another case («в Вифлееме», «из Дамаска»): its stem without the
+ * preposition and the ending, or null. Only names at most two letters longer than the
+ * stem match it, so a short stem does not catch half the map.
+ */
+export function russianStem(query: string): string | null {
+  const words = query.toLocaleLowerCase("ru").trim().split(/\s+/);
+  if (words.length > 1 && RU_PREPOSITIONS.has(words[0] ?? "")) words.shift();
+  const q = foldName(words.join(" "));
+  if (!/^[а-я]+$/.test(q)) return null;
+  const ending = RU_ENDINGS.find((e) => q.endsWith(e) && q.length - e.length >= 3);
+  return ending ? q.slice(0, -ending.length) : null;
+}
+
 /** Search by English or Russian name; exact prefix first, then by importance. */
 export function searchPlaces(
   data: LoadedData,
@@ -268,14 +368,31 @@ export function searchPlaces(
   if (query.trim().length < 2) return [];
   const q = foldName(query);
   if (q.length === 0) return [];
+  const stem = russianStem(query);
+  // A vowel that drops in other cases comes back: «в Египте» → «египт» → «египет».
+  const stems =
+    stem === null
+      ? []
+      : [stem, `${stem.slice(0, -1)}е${stem.slice(-1)}`, `${stem.slice(0, -1)}о${stem.slice(-1)}`];
   const scored: { props: PlaceProps; score: number }[] = [];
-  for (const { props } of data.byId.values()) {
+  // A second record of a name on the same point is found by its first (not listed twice),
+  // unless its Russian name is its own (Димон beside Дивон, Мицпа beside Массифа).
+  const first = new Set<string>();
+  for (const { props, info } of data.byId.values())
+    if (!props.dup) first.add(`${info.at.join()}|${props.name_ru ?? props.name}`);
+  for (const { props, info } of data.byId.values()) {
+    if (props.dup && first.has(`${info.at.join()}|${props.name_ru ?? props.name}`)) continue;
     const names = [props.name, props.name_ru ?? ""].map(foldName);
-    const prefix = names.some((n) => n.startsWith(q));
+    const prefix =
+      names.some((n) => n.startsWith(q)) ||
+      stems.some((st) => names.some((n) => n.startsWith(st) && n.length - st.length <= 2));
     const inside = !prefix && names.some((n) => n.includes(q));
-    // The modern name ("Tell Hum" for Capernaum) also finds a place, after its own names.
+    // The modern name finds its place too, after its own names, in English ("Tell Hum"
+    // for Capernaum) or in Russian («Телль-эс-Султан»): only where the today line is a
+    // name, not a description ("south of Hebron" must not answer "Hebron").
+    const modern = props.where_tpl === "name" ? [props.where, props.where_ru] : [];
     const today =
-      !prefix && !inside && props.where_tpl === undefined && foldName(props.where).includes(q);
+      !prefix && !inside && modern.some((m) => m !== undefined && foldName(m).includes(q));
     if (prefix || inside || today)
       scored.push({ props, score: (prefix ? 0 : inside ? 10 : 20) + props.rank });
   }

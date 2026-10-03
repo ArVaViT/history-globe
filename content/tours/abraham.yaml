@@ -8,6 +8,7 @@ title:
   en: "Abraham's journey"
   ru: "Путь Авраама"
 year: "1900 BC"
+people: ["Abraham@Gen.11.26-1Pe"]
 approximate: true
 stops:
   - place: a6cf75c # Ur
@@ -54,14 +55,14 @@ stops:
     ref: Gen.20.1
     note:
       en: "He stays for a time in Gerar."
-      ru: "Живёт в Гераре."
+      ru: "Какое-то время живёт в Гераре."
   - place: a075d61 # Beersheba
     ref: Gen.21.31
     note:
-      en: 'The oath at Beersheba, "the well of the oath".'
-      ru: "Клятва в Вирсавии — «колодце клятвы»."
+      en: "Abraham and Abimelech swear an oath, and the place is called Beersheba."
+      ru: "Авраам и Авимелех клянутся друг другу, и место названо Вирсавией."
   - place: adaf385 # Moriah
-    ref: Gen.22.2
+    ref: Gen.22.2-Gen.22.13
     note:
       en: "The binding of Isaac on a mountain in the land of Moriah."
       ru: "Жертвоприношение Исаака на горе в земле Мориа."

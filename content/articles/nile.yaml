@@ -1,0 +1,46 @@
+# Overview article (ADR 0007). Mainstream facts only; the length of the Nile and the identifications of Shihor and the river of Egypt are given as the usual ones.
+id: nile
+place: a012705
+title:
+  en: "Nile"
+  ru: "Нил"
+body:
+  en:
+    - "The Nile flows some 6,650 km from the lakes of East Africa to the Mediterranean and is usually counted the longest river in the world. The White Nile comes from Lake Victoria, the Blue Nile from Lake Tana in Ethiopia, and the two join at Khartoum; it is the Blue Nile and the Atbara, fed by the Ethiopian summer rains, that brought the yearly flood. Between Aswan, the ancient Syene at the First Cataract, and Cairo the river runs through a narrow valley, and then spreads into the Delta, whose seven mouths the ancients counted and Isaiah seems to recall. Herodotus called Egypt the gift of the river."
+    - 'Egypt lived by the inundation: from July to October the river covered the fields and left its silt, and the height of the flood, read on nilometers, foretold plenty or famine; Pharaoh''s dream of seven fat and seven lean kine coming "up out of the river" belongs to this world. The Hebrew word for the Nile, ye''or, is borrowed from Egyptian; the King James Version renders it simply "the river". The Bible also knows Shihor, usually taken for the easternmost branch of the Delta, and "the river of Egypt" at the border of the promised land, which most identify with the Wadi el-Arish rather than the Nile.'
+    - 'Pharaoh ordered every Hebrew son cast "into the river", and Moses was laid in an ark of bulrushes "in the flags by the river''s brink", where Pharaoh''s daughter found him. The first plague turned the waters of the river to blood so that "the fish that was in the river died", and the second brought frogs out of it. Isaiah foretells that "the river shall be wasted and dried up" and the fishers mourn; Jeremiah pictures Egypt rising "like a flood"; Ezekiel''s Pharaoh is "the great dragon that lieth in the midst of his rivers" and boasts, "My river is mine own"; Amos likens the trembling earth to the flood of Egypt; Nahum recalls Thebes "situate among the rivers".'
+    - "The Nile remained Egypt's road and lifeline through the Greek, Roman and Arab periods, and Alexandria near its western mouth was one of the greatest ports of the ancient world. The Aswan Low Dam of 1902 and the High Dam, completed in 1970, ended the annual flood and created Lake Nasser; the Grand Ethiopian Renaissance Dam on the Blue Nile, built from 2011 and inaugurated in 2025, has set Ethiopia, Sudan and Egypt at odds over the river's water. The valley and the Delta hold nearly all of Egypt's more than a hundred million people."
+  ru:
+    - "Нил течёт около 6650 км от озёр Восточной Африки до Средиземного моря и обычно считается самой длинной рекой мира. Белый Нил выходит из озера Виктория, Голубой — из озера Тана в Эфиопии, и они сливаются у Хартума; именно Голубой Нил и Атбара, питаемые летними дождями Эфиопии, приносили ежегодный разлив. Между Асуаном, древней Сиеной у первого порога, и Каиром река идёт узкой долиной, а затем расходится Дельтой, семь рукавов которой считали древние и, по-видимому, вспоминает Исаия. Геродот назвал Египет даром реки."
+    - "Египет жил разливом: с июля по октябрь река покрывала поля и оставляла ил, а высота воды, читаемая по ниломерам, предвещала изобилие или голод; сон фараона о семи тучных и семи тощих коровах, вышедших «из реки», принадлежит этому миру. Еврейское слово для Нила, «йеор», заимствовано из египетского; Синодальный перевод чаще всего передаёт его просто как «река». Библия знает и Сихор, который обычно принимают за восточный рукав Дельты, и поток Египетский на границе обетованной земли — «от реки Египетской до великой реки, реки Евфрата», — который большинство отождествляет не с Нилом, а с Вади-эль-Ариш."
+    - "Фараон велел бросать всякого новорождённого у Евреев сына «в реку», а Моисея положили в корзинку из тростника «в тростнике у берега реки», где его нашла дочь фараона. Первая казнь обратила воду в реке в кровь, так что «рыба в реке вымерла», а вторая вывела из неё жаб. Исаия предрекает, что «река иссякнет и высохнет» и восплачут рыбаки; Иеремия изображает Египет, который «поднимается, как река»; фараон у Иезекииля — «большой крокодил, который, лежа среди рек своих», хвалится: «моя река, и я создал ее для себя»; Амос уподобляет колеблющуюся землю реке Египетской; Наум вспоминает Но-Аммон, «находящегося между реками»."
+    - "Нил оставался дорогой и жизненной жилой Египта в греческое, римское и арабское время, а Александрия близ его западного устья была одним из величайших портов древнего мира. Старая Асуанская плотина 1902 года и Высотная, законченная в 1970-м, прекратили ежегодный разлив и создали озеро Насер; плотина «Возрождение» на Голубом Ниле, строившаяся в Эфиопии с 2011 года и открытая в 2025-м, поссорила Эфиопию, Судан и Египет из-за воды реки. В долине и Дельте живут почти все из более чем ста миллионов жителей Египта."
+scripture:
+  - Gen.15.18
+  - Gen.41.1-Gen.41.3
+  - Exod.1.22
+  - Exod.2.3-Exod.2.5
+  - Exod.7.17-Exod.7.21
+  - Exod.8.3
+  - Josh.13.3
+  - Isa.11.15
+  - Isa.19.5-Isa.19.8
+  - Isa.23.3
+  - Jer.2.18
+  - Jer.46.7-Jer.46.8
+  - Ezek.29.3
+  - Ezek.29.9-Ezek.29.10
+  - Amos.8.8
+  - Amos.9.5
+  - Nah.3.8
+  - Zech.10.11
+sources:
+  - "Herodotus, Histories 2.5 (Egypt the gift of the river); 2.17 (the mouths of the Nile); 2.19-27 (the inundation)"
+  - "Strabo, Geography 17.1.3-5 (the Nile and the Delta)"
+  - "Pliny the Elder, Natural History 5.51-59 (the Nile)"
+  - "D. Bonneau, La crue du Nil, divinité égyptienne, à travers mille ans d'histoire (1964)"
+  - "R. Said, The River Nile: Geology, Hydrology and Utilization (1993)"
+  - "N. Na'aman, 'The Brook of Egypt and Assyrian Policy on the Border of Egypt', Tel Aviv 6 (1979)"
+  - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000)"
+  - "T. Tvedt, The Nile: History's Greatest River (2021)"
+status: checked

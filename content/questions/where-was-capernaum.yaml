@@ -1,0 +1,24 @@
+id: where-was-capernaum
+question:
+  en: "Where was Capernaum?"
+  ru: "Где находился Капернаум?"
+answer:
+  en:
+    - "Capernaum lay on the northern shore of the Sea of Galilee, in today's Israel, at the site called Tell Hum, west of the point where the Jordan enters the lake; the ruins are an archaeological park with a Franciscan church over the house venerated as Peter's."
+    - 'The village was founded in the second century BC, in the Hasmonean period, and lived from fishing, farming and the road that passed nearby. In the Gospels it is the base of Jesus'' ministry in Galilee, "his own city": "And leaving Nazareth, he came and dwelt in Capernaum, which is upon the sea coast, in the borders of Zabulon and Nephthalim." He taught in its synagogue, which Luke says the centurion had built, and healed Peter''s mother-in-law and the paralysed man let down through a roof.'
+    - "Excavations from 1968 uncovered houses of black basalt around shared courtyards. Beneath the white limestone synagogue, dated by coins to the late fourth or fifth century, lie basalt foundations that may belong to a first-century synagogue. Nearby, one room of a first-century house became a meeting place and in the fifth century was enclosed in an octagonal church; it was long venerated as the house of Peter. From Nazareth it is about 33 km in a straight line, about 50 km by the roads on the map."
+  ru:
+    - "Капернаум стоял на северном берегу Галилейского моря, в нынешнем Израиле, на месте, называемом Телль-Хум, к западу от впадения Иордана в озеро; руины — археологический парк с францисканской церковью над домом, почитаемым как дом Петра."
+    - "Селение основано во II веке до н. э., при Хасмонеях, и жило рыбной ловлей, земледелием и проходившей рядом дорогой. В Евангелиях это опора служения Иисуса в Галилее, «Свой город»: «и, оставив Назарет, пришел и поселился в Капернауме приморском, в пределах Завулоновых и Неффалимовых». Он учил в здешней синагоге, которую, по словам Луки, построил сотник, исцелил тёщу Петра и расслабленного, спущенного через кровлю."
+    - "Раскопки с 1968 года открыли дома из чёрного базальта вокруг общих дворов. Под синагогой из белого известняка, датированной по монетам концом IV — V веком, лежат базальтовые основания, которые могут принадлежать синагоге I века. Рядом одна комната дома I века стала местом собраний, а в V веке её заключили в восьмиугольную церковь; её издавна почитали как дом Петра. От Назарета сюда около 33 км по прямой и около 50 км по дорогам на карте."
+map:
+  place: af2161c
+  year: "AD 30"
+  ref: Matt.4.13
+scripture: [Matt.4.13, Matt.9.1, Mark.2.1-Mark.2.4, Luke.7.5, John.6.59]
+sources:
+  - "V. C. Corbo, Cafarnao I: Gli edifici della città (1975); S. Loffreda, Recovering Capharnaum (1985)"
+  - "V. Tzaferis, Excavations at Capernaum I: 1978-1982 (1989)"
+  - "'Capernaum', in E. Stern (ed.), The New Encyclopedia of Archaeological Excavations in the Holy Land, vol. 1 (1993)"
+  - "Length along the Roman roads: Itiner-e (de Soto, Pažout, Brughmans et al. 2025), Nazareth to Capernaum (50 km)"
+status: checked

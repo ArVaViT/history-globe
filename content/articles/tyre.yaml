@@ -1,0 +1,39 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed things are said to be disputed.
+id: tyre
+place: a160272
+title:
+  en: "Tyre"
+  ru: "Тир"
+body:
+  en:
+    - "Tyre was built on a rocky island just off the coast of southern Phoenicia, with a town on the mainland opposite, Ushu, later called Old Tyre, that gave it water and farmland. Herodotus was told by its priests that the city had been founded about 2,300 years before his visit, that is about 2750 BC, and soundings on the island have reached levels of the Early Bronze Age. In the fourteenth century BC its ruler Abimilku wrote to Pharaoh in the Amarna letters. Joshua names it as the fortified city on the border of Asher."
+    - "Under Hiram I in the tenth century BC Tyre led Phoenician seafaring. The Bible tells how Hiram sent cedar and craftsmen for David's house and Solomon's Temple, and Josephus, citing the Tyrian annals as given by Menander, describes his reign. Tyrians founded colonies across the Mediterranean, Carthage by tradition in 814 BC, and grew rich on trade and purple dye. Jezebel, wife of Ahab, was the daughter of Ethbaal, whom the Bible calls king of the Sidonians and Josephus king of the Tyrians and Sidonians."
+    - "Tyre paid tribute to the Assyrian kings but kept its island. Isaiah and Ezekiel foretold its fall, and Ezekiel says that Nebuchadnezzar's army wore itself out against Tyre without reward. Josephus, citing Phoenician records, says the Babylonian siege lasted thirteen years; it is usually dated to the 580s and 570s BC. In 332 BC Alexander the Great took the island after a siege of about seven months by building a causeway from the mainland; silt gathered along it, and Tyre has been joined to the shore ever since."
+    - "Tyre won its independence from the Seleucids in 126 BC and kept a privileged status under Rome after 64 BC. Jesus went into the region of Tyre and Sidon, and Paul stayed a week with the disciples there on his way to Jerusalem. About AD 198 Septimius Severus made Tyre a Roman colony and the capital of the province of Syria Phoenice. Origen died and was buried there, Eusebius spoke at the dedication of Bishop Paulinus's great church about 315, and a church council met at Tyre in 335."
+  ru:
+    - "Тир был построен на скалистом острове у берега южной Финикии, а напротив, на материке, стоял город Ушу, позже названный Старым Тиром, который давал острову воду и пашни. Жрецы Тира говорили Геродоту, что город основан примерно за 2300 лет до его посещения, то есть около 2750 г. до н. э., а раскопки на острове дошли до слоёв раннего бронзового века. В XIV веке до н. э. его правитель Абимилку писал фараону в Амарнских письмах. Книга Иисуса Навина называет его укреплённым городом на границе удела Асира."
+    - "При Хираме I в X веке до н. э. Тир возглавил финикийское мореплавание. Библия рассказывает, как Хирам присылал кедры и мастеров для дома Давида и для Храма Соломона, а Иосиф Флавий, ссылаясь на тирские летописи в передаче Менандра, описывает его царствование. Тиряне основывали колонии по всему Средиземноморью, Карфаген — по преданию, в 814 г. до н. э., и богатели на торговле и пурпурной краске. Иезавель, жена Ахава, была дочерью Ефваала, которого Библия называет царём Сидонским, а Иосиф Флавий — царём тирян и сидонян."
+    - "Тир платил дань ассирийским царям, но сохранял свой остров. Исаия и Иезекииль предсказывали его падение, и Иезекииль говорит, что войско Навуходоносора изнурилось у Тира без вознаграждения. Иосиф Флавий, ссылаясь на финикийские записи, сообщает, что вавилонская осада длилась тринадцать лет; обычно её относят к 580-м и 570-м гг. до н. э. В 332 г. до н. э. Александр Македонский взял остров после примерно семимесячной осады, насыпав дамбу от материка; вдоль неё нанесло песок, и с тех пор Тир соединён с берегом."
+    - "В 126 г. до н. э. Тир добился независимости от Селевкидов и сохранил особое положение под властью Рима после 64 г. до н. э. Иисус приходил в пределы Тирские и Сидонские, а Павел по пути в Иерусалим провёл там семь дней с учениками. Около 198 г. н. э. Септимий Север сделал Тир римской колонией и столицей провинции Сирия Финикийская. Здесь умер и был погребён Ориген, Евсевий произнёс речь при освящении великого храма епископа Павлина около 315 г., а в 335 г. в Тире собрался церковный собор."
+scripture:
+  - Josh.19.29
+  - 2Sam.5.11
+  - 1Kgs.5.1-1Kgs.5.12
+  - 1Kgs.7.13-1Kgs.7.14
+  - 1Kgs.16.31
+  - Isa.23.1-Isa.23.18
+  - Ezek.26.1-Ezek.26.21
+  - Ezek.29.18
+  - Matt.15.21
+  - Mark.7.24
+  - Acts.21.3-Acts.21.7
+sources:
+  - "Herodotus, Histories 2.44"
+  - "Amarna letters EA 146-155 (Abimilku of Tyre)"
+  - "Josephus, Against Apion 1.106-127 (Hiram, after Menander); 1.156 (the thirteen-year siege); Antiquities 8.317 (Ethbaal); 10.228 (the siege, after Philostratus)"
+  - "Arrian, Anabasis 2.15-24; Diodorus Siculus 17.40-46"
+  - "Ulpian, Digest 50.15.1 (Tyre a colony given Italian rights by Severus)"
+  - "Eusebius, Church History 10.4; Jerome, On Illustrious Men 54 (Origen); Eusebius, Life of Constantine 4.41-42 (council of Tyre)"
+  - "P. M. Bikai, The Pottery of Tyre (1978)"
+  - "M. E. Aubet, The Phoenicians and the West (2nd ed., 2001)"
+status: checked

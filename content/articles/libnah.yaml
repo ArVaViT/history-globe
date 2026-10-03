@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; the site of Libnah is disputed and the candidates are named; the map point stands on Tel Burna; the kings of Judah are dated by century only.
+id: libnah
+place: a97b595
+title:
+  en: "Libnah"
+  ru: "Ливна"
+body:
+  en:
+    - "Libnah was a town of the Shephelah, the low hills between the Judaean highlands and the coastal plain. Its site is disputed. The point on the map marks Tel Burna (Tell Bornat), a fortified mound between Lachish and Gath that W. F. Albright and Yohanan Aharoni proposed for Libnah; Itzhaq Shai, who has excavated it since 2010, holds the same view. The excavators of Tel Zayit, a few kilometres to the west, have suggested their site instead, and Tell ej-Judeideh (Tel Goded) has also been proposed. No inscription has yet settled the question."
+    - "Tel Burna was settled from the Early Bronze Age. In the thirteenth century BC a large Canaanite cult enclosure with a courtyard stood on a terrace below the summit. In the later Iron Age a casemate wall with a gate ringed the summit, and among the finds are jar handles stamped with the royal seal of Judah, the lmlk stamp."
+    - 'In the Book of Joshua Israel came from Makkedah to Libnah, took it and smote its king, and went on to Lachish. Libnah is listed among the towns of the lowland of Judah and was given with its suburbs to the children of Aaron. In the ninth century BC, under Jehoram king of Judah, when Edom broke away, "Libnah revolted at the same time". In 701 BC Rab-shakeh, coming back from Jerusalem, found Sennacherib "warring against Libnah", for he had departed from Lachish. Hamutal, "the daughter of Jeremiah of Libnah", was the mother of two of the last kings of Judah, Jehoahaz and Zedekiah.'
+    - "Josephus retells the revolt of Libnah under Jehoram. In the early fourth century AD Eusebius knew a village called Lobana in the district of Eleutheropolis (Beth Guvrin), a priestly city of the tribe of Judah taken by Joshua."
+  ru:
+    - "Ливна — город Шефелы, низких холмов между Иудейскими горами и приморской равниной. Где именно она стояла, спорят. Точка на карте отмечает Тель-Бурну (Телль-Борнат), укреплённый холм между Лахисом и Гефом, который предлагали считать Ливной У. Ф. Олбрайт и Йоханан Аарони; того же мнения держится Ицхак Шай, ведущий здесь раскопки с 2010 г. Руководители раскопок Тель-Зайита, в нескольких километрах к западу, предлагают свой холм, а ещё одна кандидатура — Телль-эль-Джудейда (Тель-Годед). Ни одна надпись пока не решила вопрос."
+    - "На Тель-Бурне жили с раннего бронзового века. В XIII веке до н. э. на террасе ниже вершины стояло большое ханаанское святилище с двором. В позднем железном веке вершину окружала казематная стена с воротами; среди находок — ручки кувшинов с царской печатью Иудеи, оттиском lmlk."
+    - "В книге Иисуса Навина Израиль пришёл из Македы к Ливне, взял её, поразил её царя и пошёл дальше к Лахису. Ливна названа среди городов низменности Иуды и с предместьями отдана сынам Аарона. В IX веке до н. э., при Иораме, царе Иудейском, когда отложился Едом, «в то же время выступила и Ливна». В 701 г. до н. э. Рабсак, вернувшись из Иерусалима, нашёл Сеннахирима «воюющим против Ливны», ибо тот отошёл от Лахиса. Хамуталь, «дочь Иеремии, из Ливны», была матерью двух из последних царей Иудеи — Иоахаза и Седекии."
+    - "Иосиф Флавий пересказывает отпадение Ливны при Иораме. В начале IV века н. э. Евсевий знал селение Лобана в округе Елевферополя (Бейт-Гуврина) — священнический город колена Иудина, взятый Иисусом Навином."
+scripture:
+  - Josh.10.29-Josh.10.32
+  - Josh.12.15
+  - Josh.15.42
+  - Josh.21.13
+  - 2Kgs.8.20-2Kgs.8.22
+  - 2Kgs.19.8
+  - 2Kgs.23.31
+  - 2Kgs.24.18
+sources:
+  - "Josephus, Antiquities 9.5.1 (the revolt of Libnah under Jehoram)"
+  - "Eusebius, Onomasticon, s.v. Lebna (C. U. Wolf's translation, no. 632)"
+  - "I. Shai, 'Tel Burna: A Judahite Fortified Town in the Shephelah', in O. Lipschits and A. M. Maeir (eds), The Shephelah during the Iron Age: Recent Archaeological Studies (2017), pp. 45-60"
+  - "M. J. Suriano, I. Shai and J. Uziel, 'In Search of Libnah', Journal of the Ancient Near Eastern Society 35 (2021), pp. 151-181"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+status: checked

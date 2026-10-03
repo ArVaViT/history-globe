@@ -1,0 +1,41 @@
+# Overview article (ADR 0007). Mainstream facts only; Alashiya is given as the usual identification of Bronze Age Cyprus; Assyrian dates are approximate.
+id: cyprus
+place: a2e7601
+title:
+  en: "Cyprus"
+  ru: "Кипр"
+body:
+  en:
+    - "Cyprus, the third largest island of the Mediterranean after Sicily and Sardinia, lies about 75 km south of Asia Minor and about 100 km west of the Syrian coast. Its wealth was copper, mined in the foothills of the Troodos mountains; Pliny the Elder writes that copper was first discovered on Cyprus. In the Late Bronze Age the island is usually identified with Alashiya: in the Amarna letters of the fourteenth century BC its king writes to the pharaoh as a brother, mostly about copper, and analysis of the clay of these tablets points to southern Cyprus."
+    - 'In Genesis, Kittim is one of the sons of Javan. Josephus explains that Kittim held the island now called Cyprus, where the city of Citium, the Phoenician Kition at modern Larnaca, still kept the name, and that the Hebrews came to call all islands and most sea coasts Kittim. In Isaiah the fall of Tyre is made known "from the land of Chittim", and in Ezekiel the ship of Tyre has benches of ivory "brought out of the isles of Chittim". A stele of the Assyrian king Sargon II found at Kition records gifts from seven kings of Ya'', a district of Yadnana, as the Assyrians called Cyprus, and about 673 BC Esarhaddon listed ten kings of the island.'
+    - 'Philo counts Cyprus among the islands full of Jewish settlements. Barnabas was "a Levite, and of the country of Cyprus". After the persecution that followed the death of Stephen, believers were scattered as far as Cyprus, and at Antioch men of Cyprus and Cyrene preached the Lord Jesus to Greeks as well as to Jews. Barnabas and Saul sailed from Seleucia to Cyprus and crossed it from Salamis to Paphos, where the proconsul Sergius Paulus believed. Later Barnabas took Mark and sailed to Cyprus again; Paul lodged with Mnason of Cyprus, "an old disciple", and on the voyage to Rome his ship "sailed under Cyprus, because the winds were contrary".'
+    - "Rome annexed Cyprus in 58 BC, when Cato was sent to take over the kingdom of its Ptolemaic king and his treasure. In 22 BC Augustus handed the island to the senate, and from then on it was governed by proconsuls. In the Jewish revolt of 116–117 the Jews of Cyprus rose under Artemion, and Cassius Dio writes that afterwards no Jew might set foot on the island. In the fourth century, after earthquakes, Salamis was rebuilt as Constantia and became the capital. In 431 the Council of Ephesus upheld the right of the bishops of Cyprus to ordain their own bishops against the claims of the bishop of Antioch."
+  ru:
+    - "Кипр, третий по величине остров Средиземного моря после Сицилии и Сардинии, лежит примерно в 75 км к югу от Малой Азии и примерно в 100 км к западу от сирийского берега. Его богатством была медь, которую добывали в предгорьях Троодоса; Плиний Старший пишет, что медь впервые была открыта на Кипре. В позднем бронзовом веке остров обычно отождествляют с Аласией: в амарнских письмах XIV века до н. э. её царь пишет фараону как брату, больше всего о меди, а анализ глины этих табличек указывает на южный Кипр."
+    - "В книге Бытия Киттим — один из сынов Иавана. Иосиф Флавий объясняет, что Киттим владел островом, который теперь называется Кипром, где город Китий, финикийский Китион на месте нынешней Ларнаки, сохранил это имя, и что евреи стали называть Киттимом все острова и большую часть морских побережий. У Исаии о падении Тира возвещено «из земли Киттийской», а у Иезекииля скамьи тирского корабля сделаны «с оправою из слоновой кости с островов Киттимских». Стела ассирийского царя Саргона II, найденная в Китионе, сообщает о дарах семи царей Йа, области страны Яднана, как ассирийцы называли Кипр, а около 673 г. до н. э. Асардан перечислил десять царей острова."
+    - "Филон называет Кипр среди островов, полных иудейских поселений. Варнава был «левит, родом Кипрянин». После гонения, начавшегося со смерти Стефана, рассеявшиеся верующие дошли до Кипра, и в Антиохии Кипряне и Киринейцы благовествовали Господа Иисуса не только Иудеям, но и Еллинам. Варнава и Савл отплыли из Селевкии на Кипр и прошли его от Саламина до Пафа, где уверовал проконсул Сергий Павел. Позже Варнава, взяв Марка, снова отплыл на Кипр; Павел остановился у давнего ученика Мнасона Кипрянина, а на пути в Рим его корабль из-за противных ветров шёл у Кипра."
+    - "Рим присоединил Кипр в 58 г. до н. э., когда Катона послали принять царство местного царя из династии Птолемеев вместе с его сокровищами. В 22 г. до н. э. Август передал остров сенату, и с тех пор им управляли проконсулы. Во время иудейского восстания 116–117 гг. иудеи Кипра поднялись во главе с Артемионом, и Дион Кассий пишет, что после этого ни одному иудею не позволялось ступить на остров. В IV веке, после землетрясений, Саламин был отстроен под именем Констанция и стал столицей. В 431 г. Ефесский собор подтвердил право епископов Кипра самим поставлять своих епископов вопреки притязаниям епископа Антиохийского."
+scripture:
+  - Gen.10.4
+  - Isa.23.1
+  - Ezek.27.6
+  - Acts.4.36-Acts.4.37
+  - Acts.11.19-Acts.11.20
+  - Acts.13.4-Acts.13.12
+  - Acts.15.39
+  - Acts.21.16
+  - Acts.27.4
+sources:
+  - "Pliny the Elder, Natural History 34.2 ('in Cypro, ubi prima aeris inventio')"
+  - "Amarna letters EA 33-40 (letters of the king of Alashiya)"
+  - "Josephus, Antiquities 1.6.1 (1.128): Kittim, Cyprus and Citium"
+  - "Sargon II, the Cyprus Stele from Kition (RINAP 2, Sargon II 103) iv 28-42: seven kings of Ya' in Yadnana"
+  - "Esarhaddon, Nineveh prism A (RINAP 4, Esarhaddon 1) v 63-72: ten kings of Yadnana"
+  - "Philo, Embassy to Gaius 282"
+  - "Plutarch, Cato the Younger 34-36; Cassius Dio, Roman History 53.12.7; 54.4.1"
+  - "Cassius Dio, Roman History 68.32"
+  - "Council of Ephesus (431), canon 8"
+  - "Y. Goren, S. Bunimovitz, I. Finkelstein and N. Na'aman, 'The Location of Alashiya: New Evidence from Petrographic Investigation of Alashiyan Tablets from El-Amarna and Ugarit', AJA 107 (2003) 233-255"
+  - "V. Karageorghis, Cyprus from the Stone Age to the Romans (1982)"
+  - "T. B. Mitford, 'Roman Cyprus', ANRW II.7.2 (1980)"
+status: checked

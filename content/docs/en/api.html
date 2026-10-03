@@ -1,0 +1,103 @@
+---
+title: Open data
+description: The places, the verses that name them, the events and the tours as JSON files anyone may use under CC BY 4.0 — no key, no sign-up.
+---
+
+<p class="lede">
+  Everything the globe knows about places and verses is open: plain JSON files, free to use in
+  another site or app under CC BY 4.0. No key, no sign-up, no limits beyond ordinary caching.
+</p>
+
+<h2>Which places does a verse name</h2>
+<p>One file per book of the Bible: each verse that names a place, with the ids of those places.</p>
+<pre><code>GET {{site}}/api/v1/verses/Acts.json
+
+{ "Acts.16.11": ["a6a7150", "a68750d", "a91c509"], "Acts.16.12": ["a69e1b8", "a49e1d0"], … }</code></pre>
+<p>
+  The places themselves, with names in English and Russian, kind and point, are in
+  <code>places.json</code>; join on <code>id</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/places.json
+
+[{ "id": "a49e1d0", "name": "Philippi", "name_ru": "Филиппы", "kind": "settlement",
+   "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "page": { "en": "/en/place/philippi/", "ru": "/ru/place/philippi/" } }, …]</code></pre>
+
+<h2>All the files</h2>
+<table>
+  <thead>
+    <tr>
+      <th>File</th>
+      <th>What it holds</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>/api/v1/index.json</code></td>
+      <td>the list of files and books, the licence and the credits, the build date</td>
+    </tr>
+    <tr>
+      <td><code>/api/v1/places.json</code></td>
+      <td>
+        every place: id, names, kind, point, how many verses name it, its page (for a place some
+        verse names)
+      </td>
+    </tr>
+    <tr>
+      <td><code>/api/v1/verses/{Book}.json</code></td>
+      <td>
+        a verse → the places it names, one file a book (<code>Gen</code>, <code>1Kgs</code>,
+        <code>Acts</code>…)
+      </td>
+    </tr>
+    <tr>
+      <td><code>/api/v1/events.json</code></td>
+      <td>the dated events, with <code>ref</code> where the Bible tells the event</td>
+    </tr>
+    <tr>
+      <td><code>/api/v1/battles.json</code></td>
+      <td>
+        battles and sieges: place, year, sides and outcome, with <code>ref</code> where the Bible
+        tells the battle
+      </td>
+    </tr>
+    <tr>
+      <td><code>/api/v1/questions.json</code></td>
+      <td>
+        questions people ask, answered in both languages, with the view of the map and the sources
+      </td>
+    </tr>
+    <tr>
+      <td><code>/api/v1/tours.json</code></td>
+      <td>
+        the tours: their stops in order, each with its passage and note; <code>by: "sea"</code> for
+        a leg sailed, and <code>sailed</code> (days and verse) where the text says how long
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Conventions</h2>
+<ul>
+  <li>
+    References are OSIS with English book abbreviations and King James numbering:
+    <code>Gen.12.6</code>, <code>Acts.16.12-Acts.16.15</code>.
+  </li>
+  <li>Years are astronomical: 1 BC is 0, 586 BC is −585.</li>
+  <li>
+    A place listed twice under one name in the source data carries <code>"duplicate": true</code>; a
+    place whose site is disputed, <code>"disputed": true</code>.
+  </li>
+  <li>
+    The files are rebuilt with every release of the data; <code>index.json</code> gives its date.
+  </li>
+</ul>
+
+<h2>Licence and credit</h2>
+<p>
+  The data is under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Use it,
+  change it, sell what you build with it; name the sources where you show it, as
+  <code>index.json</code> lists them: History Globe by Vadym Arnaut, and OpenBible.info for the
+  places, the verse tags and the points. The Russian names were read from the Synodal translation,
+  which is in the public domain.
+</p>

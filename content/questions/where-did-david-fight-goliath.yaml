@@ -1,0 +1,25 @@
+id: where-did-david-fight-goliath
+question:
+  en: "Where did David fight Goliath?"
+  ru: "Где Давид сразился с Голиафом?"
+answer:
+  en:
+    - "In the valley of Elah, the broad valley of Wadi es-Sant in the foothills of Judah, about 25 km south-west of Jerusalem and 20 km west of Bethlehem in a straight line, on the way down from the hill country to the Philistine plain. The map point stands in the valley between the two towns the story names."
+    - "First Samuel says the Philistines “pitched between Shochoh and Azekah, in Ephes-dammim”, while “Saul and the men of Israel were gathered together, and pitched by the valley of Elah”; “the Philistines stood on a mountain on the one side, and Israel stood on a mountain on the other side: and there was a valley between them.” Socoh, Khirbet Shuweikeh, stands on the southern side of the valley, and Azekah, Tell Zakariyeh, about 4 km to the west-north-west at its western bend; the brook in the valley bed is where David chose his stones. The name Elah means terebinth."
+    - "The valley was the border between Judah and the Philistines: Gath, Goliath's city, lies about 15 km down the valley to the west, and the routed Philistines fled “by the way to Shaaraim, even unto Gath, and unto Ekron”. On the northern ridge opposite Socoh stands Khirbet Qeiyafa, a fortified town of about 1000 BC with two gates, excavated from 2007, which its excavators take for the Shaaraim of the story, a name meaning two gates; others doubt the identification. The map shows the valley, Socoh, Azekah, Ephes-dammim and Gath."
+  ru:
+    - "В долине дуба — широкой долине Вади-эс-Сант в предгорьях Иудеи, примерно в 25 км к юго-западу от Иерусалима и в 20 км к западу от Вифлеема по прямой, на спуске из нагорья к Филистимской равнине. Точка на карте стоит в долине между двумя городками, которые называет рассказ."
+    - "Первая книга Царств говорит, что филистимляне «расположились станом между Сокхофом и Азеком в Ефес-Даммиме», а «Саул и Израильтяне собрались и расположились станом в долине дуба»; «И стали Филистимляне на горе с одной стороны, и Израильтяне на горе с другой стороны, а между ними была долина». Сокхоф, Хирбет-Шувейке, стоит на южной стороне долины, а Азек, Телль-Закария, — примерно в 4 км к западо-северо-западу, у западного изгиба долины; в русле потока на дне долины Давид и выбрал камни. Еврейское название долины, Эла, значит «теревинф»."
+    - "Долина была границей между Иудеей и филистимлянами: Геф, город Голиафа, лежит примерно в 15 км ниже по долине к западу, и разбитые филистимляне бежали «по дороге Шааримской до Гефа и до Аккарона». На северной гряде напротив Сокхофа стоит Хирбет-Кейафа — укреплённый городок около 1000 г. до н. э. с двумя воротами, раскапываемый с 2007 года; его исследователи видят в нём Шаараим из рассказа, имя которого значит «двое ворот», другие в этом сомневаются. Карта показывает долину, Сокхоф, Азек, Ефес-Даммим и Геф."
+map:
+  place: ab183f8
+  year: "c. 1010 BC"
+  ref: 1Sam.17.2
+scripture: [1Sam.17.1-1Sam.17.3, 1Sam.17.19, 1Sam.17.40, 1Sam.17.49-1Sam.17.52, 1Sam.21.9]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+  - "Y. Garfinkel, S. Ganor and M. G. Hasel, In the Footsteps of King David: Revelations from an Ancient Biblical City (2018)"
+  - "A. M. Maeir (ed.), Tell es-Safi/Gath I: The 1996-2005 Seasons (2012)"
+  - "N. Na'aman, 'In Search of the Ancient Name of Khirbet Qeiyafa', Journal of Hebrew Scriptures 8 (2008)"
+status: checked

@@ -1,0 +1,32 @@
+# Overview article (ADR 0007). Mainstream facts only; Paul's first journey follows the usual dating to the late 40s AD. The site (Kerti Hüyük) rests on inscriptions and is named as not fully settled.
+id: derbe
+place: aa401a9
+title:
+  en: "Derbe"
+  ru: "Дервия"
+body:
+  en:
+    - "Derbe lay in south-eastern Lycaonia, towards Isauria and Cappadocia. Its site is fixed by inscriptions. In 1956 Michael Ballance found at the mound of Kerti Hüyük, about 22 km north-east of Karaman (ancient Laranda), a dedication to the emperor Antoninus Pius set up in 157 by the council and people of Derbe. Because he saw no trace of Byzantine settlement on the mound, Ballance himself later looked for an alternative site close by; Derbe is placed at Kerti Hüyük or in its immediate neighbourhood."
+    - "In the first century BC Derbe was the seat of a local ruler, Antipater of Derbe, who also held Laranda; Cicero called him his guest-friend and close friend. Strabo says that Amyntas of Galatia attacked and killed Antipater and took Derbe. After Amyntas' death in 25 BC it became part of the Roman province of Galatia. Probably under Claudius the town took the name Claudio-Derbe, which appears on its coins of the second century."
+    - "After Paul was stoned at Lystra, he left the next day with Barnabas for Derbe, the farthest point of their journey. There they preached the gospel and taught many, and then turned back through Lystra, Iconium and Antioch, strengthening the disciples. Acts tells of no persecution at Derbe, and the Second Letter to Timothy, recalling Paul's sufferings, names Antioch, Iconium and Lystra but not Derbe."
+    - "Paul came to Derbe and Lystra again on his second journey, and there he found Timothy. One of the men who later went with Paul to Asia was Gaius of Derbe. The town remained small. It had bishops of its own; William Ramsay argued that later records name the see after Possala, a nearby village that outgrew Derbe."
+  ru:
+    - "Дервия лежала на юго-востоке Ликаонии, в сторону Исаврии и Каппадокии. Её место установлено по надписям. В 1956 г. Майкл Балланс нашёл на холме Керти-Хююк, примерно в 22 км к северо-востоку от Карамана (древней Ларанды), посвящение императору Антонину Пию, поставленное в 157 г. советом и народом Дервии. Не найдя на холме следов византийского поселения, сам Балланс позже искал другое место поблизости; Дервию помещают на Керти-Хююке или в его ближайших окрестностях."
+    - "В I веке до н. э. Дервия была резиденцией местного правителя Антипатра Дервийского, владевшего и Ларандой; Цицерон называл его своим гостеприимцем и близким другом. Страбон пишет, что галатский царь Аминта напал на Антипатра, убил его и взял Дервию. После смерти Аминты в 25 г. до н. э. она вошла в римскую провинцию Галатию. Вероятно, при Клавдии город получил имя Клавдио-Дервия, которое стоит на его монетах II века."
+    - "После того как Павла побили камнями в Листре, он на другой день ушёл с Варнавою в Дервию — самую дальнюю точку их пути. Здесь они проповедали Евангелие и приобрели довольно учеников, а затем повернули обратно через Листру, Иконию и Антиохию, утверждая учеников. Книга Деяний не говорит о гонениях в Дервии, и Второе послание к Тимофею, вспоминая страдания Павла, называет Антиохию, Иконию и Листру, но не Дервию."
+    - "Во втором путешествии Павел снова дошёл до Дервии и Листры и там нашёл Тимофея. Среди тех, кто позже сопровождал Павла в Асию, был Гаий Дервянин. Город остался небольшим. У него были свои епископы; по мнению Уильяма Рамзая, позднейшие записи называют кафедру по Поссале — соседнему селению, которое переросло Дервию."
+scripture:
+  - Acts.14.6
+  - Acts.14.19-Acts.14.22
+  - Acts.16.1
+  - Acts.20.4
+  - 2Tim.3.11
+sources:
+  - "Dedication of the council and people of Derbe to Antoninus Pius, AD 157 (SEG 29.1522): M. Ballance, 'The Site of Derbe: A New Inscription', Anatolian Studies 7 (1957), 147-151"
+  - "M. Ballance, 'Derbe and Faustinopolis', Anatolian Studies 14 (1964), 139-145"
+  - "Strabo, Geography 12.6.3"
+  - "Cicero, Letters to Friends 13.73"
+  - "Cassius Dio, Roman History 49.32.3; 53.26.3"
+  - "B. V. Head, Historia Numorum (2nd ed., 1911), Lycaonia: Derbe (coins of Claudio-Derbe)"
+  - "W. M. Ramsay, The Cities of St. Paul (1907), part V: Derbe"
+status: checked

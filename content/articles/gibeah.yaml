@@ -1,0 +1,43 @@
+# Overview article (ADR 0007). Mainstream facts only; the identification of Gibeah with Tell el-Ful and the date of its fortress are named as disputed; no absolute dates are given for Saul.
+id: gibeah
+place: ac24f5f
+title:
+  en: "Gibeah"
+  ru: "Гива"
+body:
+  en:
+    - 'Gibeah, whose name means "hill", was a town of Benjamin, also called Gibeah of Benjamin and Gibeah of Saul. It is usually identified with Tell el-Ful, a hill on the ridge road about 5 km north of ancient Jerusalem; Josephus puts "the Hill of Saul" about thirty furlongs from the city. The identification is not certain: Edward Robinson looked for Gibeah at Jaba, the site of Geba, and Israel Finkelstein has rejected Tell el-Ful. W. F. Albright began excavating the hill in 1922, and Paul Lapp dug a third campaign there in 1964.'
+    - 'Albright found a fortified tower and ascribed its first phase to Saul; Finkelstein dates its building to the period of Assyrian rule and sees it as a watchtower on the northern approach to Jerusalem, so the date of the fortress remains disputed. In Judges, a Levite and his concubine lodged at Gibeah on their way home; men of the town abused the woman until she died. All Israel went up against Gibeah, Benjamin defended it, and after two defeats the tribes took the town by ambush and set it on fire. Hosea later recalled it in the words "as in the days of Gibeah".'
+    - "Gibeah was the home of Saul, the first king of Israel. After he was chosen king, Saul went home to Gibeah, and there messengers came from besieged Jabesh-gilead to ask for help. During his war with the Philistines, Saul and his men held Gibeah of Benjamin while the enemy camped at Michmash, and after his break with Samuel, Saul went to his house at Gibeah of Saul. Later the Gibeonites asked for seven of Saul's descendants to hang them in Gibeah of Saul. Isaiah, describing an army marching on Jerusalem from the north, says that Gibeah of Saul has fled, and Hosea calls for the horn to be blown in Gibeah and Ramah."
+    - "A fort stood on Tell el-Ful again in Hellenistic times. In AD 70 Titus, marching on Jerusalem, camped in the Valley of Thorns near a village that Josephus calls Gabaothsaul, the Hill of Saul. In his letter of AD 404 on the death of Paula, Jerome describes her pilgrimage and says that she stopped at Gibeah, now a complete ruin, and recalled the story of the concubine."
+  ru:
+    - "Гива, чьё имя означает «холм», — город Вениаминов, называемый также Гивой Вениаминовой и Гивой Сауловой. Обычно её отождествляют с Телль-эль-Фулем — холмом у дороги по хребту примерно в 5 км к северу от древнего Иерусалима; Иосиф Флавий помещает «холм Саула» примерно в тридцати стадиях от города. Отождествление не бесспорно: Эдвард Робинсон искал Гиву в Джабе, на месте Гевы, а Израиль Финкельштейн отверг Телль-эль-Фуль. Уильям Олбрайт начал раскопки холма в 1922 г., а Пол Лапп провёл здесь третий сезон в 1964 г."
+    - "Олбрайт нашёл укреплённую башню и приписал её первый этап Саулу; Финкельштейн относит её постройку ко времени ассирийского владычества и видит в ней сторожевую башню на северном подступе к Иерусалиму, так что время постройки крепости остаётся спорным. В Книге Судей левит с наложницей остановились на ночлег в Гиве по пути домой; жители города надругались над женщиной, и она умерла. Весь Израиль пошёл на Гиву, Вениамин защищал её, и после двух поражений колена взяли город из засады и сожгли. Позже Осия вспоминал об этом словами «как во дни Гивы»."
+    - "В Гиве был дом Саула, первого царя Израиля. После избрания Саул пошёл в свой дом в Гиву, и туда пришли послы из осаждённого Иависа Галаадского просить о помощи. Во время войны с филистимлянами Саул и его люди держали Гиву Вениаминову, а враги стояли станом в Михмасе; после разрыва с Самуилом Саул пошёл в свой дом, в Гиву Саулову. Позднее гаваонитяне потребовали семерых потомков Саула, чтобы повесить их в Гиве Саула. Исаия, описывая войско, идущее на Иерусалим с севера, говорит, что Гива Саулова разбежалась, а Осия призывает трубить рогом в Гиве и трубою в Раме."
+    - "В эллинистическое время на Телль-эль-Фуле снова стояло укрепление. В 70 г. н. э. Тит, идя на Иерусалим, разбил лагерь в Долине терний близ селения, которое Иосиф Флавий называет «холмом Саула». В письме 404 г. н. э. о кончине Павлы Иероним описывает её паломничество и рассказывает, что она остановилась в Гиве, которая тогда лежала в полных развалинах, и вспомнила историю наложницы."
+scripture:
+  - Judg.19.12-Judg.19.15
+  - Judg.19.22-Judg.19.28
+  - Judg.20.4-Judg.20.5
+  - Judg.20.8-Judg.20.13
+  - Judg.20.19-Judg.20.25
+  - Judg.20.29-Judg.20.40
+  - Hos.9.9
+  - Hos.10.9
+  - 1Sam.10.26
+  - 1Sam.11.4
+  - 1Sam.13.15-1Sam.13.16
+  - 1Sam.14.16
+  - 1Sam.15.34
+  - 2Sam.21.6
+  - Isa.10.29
+  - Hos.5.8
+sources:
+  - "Josephus, Jewish War 5.51 (Gabaothsaul, about thirty furlongs from Jerusalem); Antiquities 5.140-142; 6.156"
+  - "Jerome, Letter 108 (Epitaph of Paula) 8"
+  - "W. F. Albright, 'Excavations and Results at Tell el-Fûl (Gibeah of Saul)', AASOR 4 (1922-1923)"
+  - "N. L. Lapp (ed.), The Third Campaign at Tell el-Fûl: The Excavations of 1964 (AASOR 45)"
+  - "I. Finkelstein, 'Tell el-Ful Revisited: The Assyrian and Hellenistic Periods (with a New Identification)', PEQ 143 (2011) 106-118"
+  - "P. M. Arnold, Gibeah: The Search for a Biblical City (1990)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+status: checked

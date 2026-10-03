@@ -1,0 +1,41 @@
+# Overview article (ADR 0007). Mainstream facts only; whether Samuel's Ramah is this town is named as disputed; the fall of Jerusalem follows the usual date of 587 or 586 BC.
+id: ramah
+place: a6d57ed
+title:
+  en: "Ramah"
+  ru: "Рама"
+body:
+  en:
+    - 'Ramah of Benjamin, whose name means "height", is commonly identified with the village of er-Ram, on a hill by the ridge road about 8 km north of Jerusalem, between Gibeah to the south and Geba to the east. Josephus puts it forty furlongs from Jerusalem, and Eusebius six or seven miles to the north, opposite Bethel (the Greek and Latin texts of his Onomasticon differ). Little archaeological work has been done there; the one modern survey of the site found much pottery of the Iron Age, little of the Persian period and more again of Hellenistic times.'
+    - "Ramah is listed among the cities of Benjamin. The prophetess Deborah judged Israel under her palm tree between Ramah and Bethel, and the Levite of Judges, on his way home, thought of lodging in Gibeah or in Ramah. The books of Samuel name Ramah as the home of Samuel, where he judged Israel and was buried; 1 Samuel opens in Ramathaim-zophim. Whether this was the same town is disputed: some place Samuel's Ramah here, others elsewhere, for example at Nebi Samwil or farther north-west at Rentis."
+    - "Ramah lay on the border between the two kingdoms. Baasha of Israel began to build it so that no one could go out or come in to Asa of Judah; Asa bribed Ben-hadad of Damascus to attack Israel, and when Baasha stopped, Asa carried off its stones and timber and built Geba and Mizpah with them. Isaiah, describing an army marching on Jerusalem from the north, says that Ramah is afraid. After Jerusalem fell in 587 or 586 BC, Nebuzar-adan released Jeremiah at Ramah, where he had been taken in chains among the captives bound for Babylon."
+    - 'In Jeremiah, Rachel weeps for her children: "A voice was heard in Ramah". Matthew applies these words to the children killed at Bethlehem under Herod. After the exile the men of Ramah and Geba, 621 in all, returned from Babylon, and Ramah is named among the places where the Benjamites lived in Nehemiah''s day. In the fourth century Eusebius still knew Rama of Benjamin as the city of Saul, north of Jerusalem.'
+  ru:
+    - "Рама Вениаминова, чьё имя означает «высота», обычно отождествляется с деревней Ар-Рам на холме у дороги по хребту примерно в 8 км к северу от Иерусалима, между Гивой на юге и Гевой на востоке. Иосиф Флавий помещает её в сорока стадиях от Иерусалима, а Евсевий — в шести или семи милях к северу, напротив Вефиля (греческий и латинский тексты его «Ономастикона» расходятся). Археологи здесь почти не работали; единственное современное обследование местности обнаружило много керамики железного века, мало — персидского времени и снова больше — эллинистического."
+    - "Рама названа среди городов Вениаминовых. Пророчица Девора судила Израиль под своей пальмой между Рамою и Вефилем, а левит из Книги Судей на пути домой думал заночевать в Гиве или в Раме. Книги Царств называют Раму домом Самуила: там он судил Израиля и там был погребён; Первая книга Царств начинается в Рамафаим-Цофиме. Был ли это тот же город — вопрос спорный: одни помещают Раму Самуила здесь, другие в иных местах, например в Неби-Самуиле или дальше к северо-западу, в Рентисе."
+    - "Рама лежала на границе двух царств. Вааса, царь Израильский, начал строить её, чтобы никто не выходил и не приходил к Асе, царю Иудейскому; Аса подкупил Венадада Дамасского, чтобы тот напал на Израиль, и когда Вааса прекратил стройку, Аса вывез из Рамы камни и дерева и выстроил из них Геву и Массифу. Исаия, описывая войско, идущее на Иерусалим с севера, говорит, что Рама трясётся. После падения Иерусалима в 587 или 586 г. до н. э. Навузардан отпустил Иеремию в Раме, куда того привели скованного цепями среди пленных, переселяемых в Вавилон."
+    - "У Иеремии Рахиль плачет о детях своих: «голос слышен в Раме». Матфей относит эти слова к младенцам, убитым в Вифлееме при Ироде. После плена уроженцы Рамы и Гевы, шестьсот двадцать один человек, вернулись из Вавилона, а во дни Неемии Рама названа среди мест, где жили вениамитяне. В IV веке Евсевий всё ещё знал Раму Вениаминову как город Саула к северу от Иерусалима."
+scripture:
+  - Josh.18.25
+  - Judg.4.5
+  - Judg.19.13-Judg.19.14
+  - 1Sam.1.1
+  - 1Sam.1.19
+  - 1Sam.7.17
+  - 1Sam.25.1
+  - 1Kgs.15.17-1Kgs.15.22
+  - 2Chr.16.1-2Chr.16.6
+  - Isa.10.29
+  - Jer.40.1
+  - Jer.31.15
+  - Matt.2.16-Matt.2.18
+  - Ezra.2.26
+  - Neh.7.30
+  - Neh.11.31-Neh.11.33
+sources:
+  - "Josephus, Antiquities 8.303-306"
+  - "Eusebius, Onomasticon, s.v. Rama (Wolf no. 776)"
+  - "I. Finkelstein, 'Archaeology and the List of Returnees in the Books of Ezra and Nehemiah', PEQ 140 (2008) 7-16 (the survey of er-Ram)"
+  - "N. Na'aman, 'Reconsidering the Ancient Name of Nebi Samwil', PEQ 151 (2019) 202-217 (Ramathaim at Rentis; Ramah at Nebi Samwil)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+status: checked

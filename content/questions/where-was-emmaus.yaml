@@ -1,0 +1,26 @@
+id: where-was-emmaus
+question:
+  en: "Where was Emmaus?"
+  ru: "Где находился Эммаус?"
+answer:
+  en:
+    - 'The site of Emmaus is disputed. Luke places it "about threescore furlongs" (sixty stadia, about 11 km) from Jerusalem, and four places are most often named: Emmaus-Nicopolis (Imwas) near Latrun, Abu Ghosh, el-Qubeibeh and Motza (Qalunya), where the map point stands.'
+    - "Most manuscripts of Luke give sixty stadia; some, among them Codex Sinaiticus, give 160, about 30 km. Emmaus-Nicopolis, about 25 km west of Jerusalem in a straight line, was the Emmaus of the Maccabean and Roman wars and the Emmaus of the ancient church: Eusebius took it for the home of Cleopas, and the remains of a Byzantine church still stand there, but it fits only the longer reading. Abu Ghosh, about 12 km west on the road to the coast, was held to be Emmaus from the twelfth century, and el-Qubeibeh, about 12 km north-west, from the later Middle Ages."
+    - "Motza, west of Jerusalem, is about 8 km away by the Roman road on the map. Josephus says that after the war Vespasian settled 800 veterans at a place called Ammaus, thirty stadia from Jerusalem in the standard text (some manuscripts read sixty); many identify it with Motza, the Mozah of Joshua's list, whose later name Qalunya is thought to recall the Latin colonia. The map point stands at Motza, and the place card lists the other sites; none can be called certain."
+  ru:
+    - "Местоположение Эммауса спорно. Лука помещает его «стадий на шестьдесят от Иерусалима» (около 11 км), и чаще всего называют четыре места: Эммаус-Никополь (Имвас) близ Латруна, Абу-Гош, Эль-Кубейбу и Моцу (Калунию), где стоит точка на карте."
+    - "В большинстве рукописей Луки — шестьдесят стадий; в некоторых, в том числе в Синайском кодексе, — сто шестьдесят, около 30 км. Эммаус-Никополь, примерно в 25 км к западу от Иерусалима по прямой, был Эммаусом Маккавейских и римских войн и Эммаусом древней Церкви: Евсевий считал его родиной Клеопы, и там до сих пор стоят остатки византийской церкви; но он подходит лишь при длинном чтении. Абу-Гош, примерно в 12 км к западу, на дороге к побережью, считали Эммаусом с XII века, а Эль-Кубейбу, примерно в 12 км к северо-западу, — с позднего Средневековья."
+    - "До Моцы к западу от Иерусалима около 8 км по римской дороге на карте. Иосиф Флавий пишет, что после войны Веспасиан поселил 800 ветеранов в месте, называемом Аммаус, в тридцати стадиях от Иерусалима по стандартному тексту (в некоторых рукописях — шестьдесят); многие отождествляют его с Моцой из списка книги Иисуса Навина, чьё позднейшее имя Калуния, как полагают, хранит латинское colonia. Точка на карте стоит у Моцы, остальные места перечислены в карточке; ни одно нельзя назвать достоверным."
+map:
+  place: ae7274b
+  year: "AD 30"
+  ref: Luke.24.13
+scripture: [Luke.24.13-Luke.24.16, Luke.24.28-Luke.24.31, Luke.24.33]
+sources:
+  - "B. M. Metzger, A Textual Commentary on the Greek New Testament (1971), on Luke 24:13 (60 and 160 stadia)"
+  - "Josephus, Jewish War 7.217 (Ammaus, 30 stadia in Niese's text, 60 in other manuscripts)"
+  - "Eusebius, Onomasticon, s.v. Emmaous; Jerome, Letter 108.8"
+  - "D. Pringle, The Churches of the Crusader Kingdom of Jerusalem, vol. 1 (1993), nos. 1 (Abu Ghosh) and 10 ('Amwas)"
+  - "L.-H. Vincent and F.-M. Abel, Emmaüs, sa basilique et son histoire (1932)"
+  - "Length along the Roman roads: Itiner-e (de Soto, Pažout, Brughmans et al. 2025), Jerusalem to Emmaus (8 km)"
+status: checked
