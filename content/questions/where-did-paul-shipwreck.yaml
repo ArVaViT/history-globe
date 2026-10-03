@@ -1,0 +1,26 @@
+id: where-did-paul-shipwreck
+question:
+  en: "Where was Paul shipwrecked?"
+  ru: "Где потерпел кораблекрушение Павел?"
+answer:
+  en:
+    - "Paul's ship ran aground on Melita, which is usually identified with Malta, the island in the open sea south of Sicily; the exact bay is not known, and tradition places the wreck at St Paul's Bay on the north coast."
+    - 'Acts tells that the ship, sailing from Fair Havens in Crete, was caught by the wind Euroclydon and "driven up and down in Adria" for fourteen nights before it ran aground and broke up; all on board reached land, and "when they were escaped, then they knew that the island was called Melita." The islanders showed them kindness, a viper fastened on Paul''s hand without harming him, and Publius, "the chief man of the island", lodged them. After three months they sailed on in an Alexandrian ship that had wintered there, by Syracuse and Rhegium to Puteoli.'
+    - 'That Melita is Malta is the usual view: Adria then meant the open sea between Greece, Italy and Africa, not only today''s Adriatic; a ship driven west from Crete by a north-easterly gale would reach Malta in about two weeks, as James Smith reckoned in 1848; an Alexandrian ship would winter there on its way to Italy; and inscriptions from Malta give the title "first" of the Melitans that Acts uses of Publius. Since the tenth century some have placed the wreck on Mljet, another Melite, in the Adriatic, and other islands have been proposed. The voyage is dated to the autumn of AD 59 and the winter that followed on the usual chronology.'
+  ru:
+    - "Корабль Павла сел на мель у Мелита, который обычно отождествляют с Мальтой — островом в открытом море к югу от Сицилии; точная бухта неизвестна, предание помещает крушение в бухту Святого Павла на северном берегу."
+    - "Деяния рассказывают, что корабль, вышедший из Хороших Пристаней на Крите, подхватил ветер эвроклидон, четырнадцать ночей корабль носило по морю — «в Адриатическом море», как сказано в Деяниях, — пока он не сел на мель и не разбился; все добрались до берега, и «спасшись же, бывшие с Павлом узнали, что остров называется Мелит». Жители приняли их с человеколюбием, ехидна повисла на руке Павла, не причинив вреда, а Публий, «начальник острова», дал им приют. Через три месяца они отплыли на александрийском корабле, зимовавшем там, через Сиракузы и Ригию в Путеол."
+    - "Что Мелит — это Мальта, общепринятое мнение: «Адрия» тогда означала открытое море между Грецией, Италией и Африкой, а не только нынешнюю Адриатику; корабль, гонимый северо-восточным штормом от Крита на запад, дошёл бы до Мальты примерно за две недели, как подсчитал Джеймс Смит в 1848 году; александрийский корабль зимовал бы там на пути в Италию; а надписи с Мальты дают титул «первого» среди мелитян, который Деяния прилагают к Публию. С X века некоторые помещают крушение на Млет, другой Мелит, в Адриатике; предлагались и иные острова. По обычной хронологии плавание относят к осени 59 г. н. э. и следующей за ней зиме."
+map:
+  place: a57835d
+  year: "AD 60"
+  ref: Acts.28.1
+scripture:
+  [Acts.27.14-Acts.27.15, Acts.27.27, Acts.28.1-Acts.28.2, Acts.28.7, Acts.28.11-Acts.28.13]
+sources:
+  - "J. Smith, The Voyage and Shipwreck of St. Paul (1848; 4th ed. 1880)"
+  - "W. M. Ramsay, St. Paul the Traveller and the Roman Citizen (1895), p. 343 (the title of Publius)"
+  - "Josephus, Life 15 ('the Adriatic Sea' in a voyage from Judea to Italy)"
+  - "Constantine Porphyrogenitus, De administrando imperio 36 (Melite in the Adriatic)"
+  - "A. Bonanno, Malta: Phoenician, Punic and Roman (2005)"
+status: checked

@@ -1,6 +1,6 @@
 # Corrections on top of Cliopatria for the biblical Levant (borders audit, 2026-09-29).
 # An entry keeps a polity on the map for more years, reusing Cliopatria's last shape of
-# it. The shape is approximate: Judah's borders moved under Hezekiah and Josiah.
+# it, or ends it sooner when Cliopatria keeps it too long. The shape is approximate: Judah's borders moved under Hezekiah and Josiah.
 overrides:
   - polity: Kingdom of Judah
     last_year: "586 BC"
@@ -11,3 +11,1977 @@ overrides:
     sources:
       - "2 Kgs 18-25"
       - "Jer 39:1-10; 52:4-16"
+  - polity: Hamdanid Emirates
+    last_year: "AD 1004"
+    reason: >-
+      Cliopatria draws the Hamdanids over Syria and the Jazira until 1259. The dynasty
+      lost Mosul by 979 and Aleppo, its last seat, in 1004; Syria then passed to the
+      Mirdasids, the Fatimids and from the 1070s the Seljuks, which the map shows.
+    sources:
+      - "M. Canard, Hamdanids, Encyclopaedia of Islam, 2nd ed., vol. 3 (1971)"
+      - "H. Kennedy, The Prophet and the Age of the Caliphates, 3rd ed. (2016), ch. 9"
+  - polity: Lakhmid Kingdom
+    last_year: "AD 602"
+    reason: >-
+      Cliopatria draws the Lakhmid kingdom over al-Hira again in 629-633. The dynasty
+      ended when Khosrow II deposed al-Nu'man III in 602; al-Hira was then held by Iyas
+      ibn Qabisa of Tayyi' and a Persian governor until Khalid ibn al-Walid took it in 633.
+    sources:
+      - "I. Shahîd, Lakhmids, Encyclopaedia of Islam, 2nd ed., vol. 5 (1986)"
+      - "G. Fisher, Between Empires: Arabs, Romans, and Sasanians in Late Antiquity (2011)"
+  - polity: Ziyadid dynasty
+    last_year: "AD 1018"
+    reason: >-
+      Cliopatria keeps the Ziyadids of Zabid until 1138. The last Ziyadid was murdered in
+      1018 and power passed to his slave regents Nafis and Najah, whose Najahid line held
+      the Tihama from 1022; Cliopatria's later Ziyadid shapes belong to the Najahids and
+      Sulayhids.
+    sources:
+      - "C. E. Bosworth, The New Islamic Dynasties (1996), s.v. Ziyadids"
+      - "G. R. Smith, Ziyadids, Encyclopaedia of Islam, 2nd ed., vol. 11 (2002)"
+  - polity: Caliphate of Córdoba
+    last_year: "AD 1031"
+    reason: >-
+      Cliopatria draws the Caliphate of Córdoba around Córdoba until 1071. The caliphate
+      was abolished in 1031; Córdoba then became a taifa under the Banu Jahwar, which
+      al-Mu'tamid of Seville annexed in 1070.
+    sources:
+      - "H. Kennedy, Muslim Spain and Portugal: A Political History of al-Andalus (1996)"
+      - "C. E. Bosworth, The New Islamic Dynasties (1996), s.v. Spanish Umayyads"
+  - polity: Latin Empire
+    last_year: "AD 1261"
+    reason: >-
+      Cliopatria keeps the Latin Empire in Constantinople until 1278. Michael VIII's
+      general Alexios Strategopoulos retook the city on 25 July 1261 and the Byzantine
+      Empire was restored there.
+    sources:
+      - "R. L. Wolff, The Latin Empire of Constantinople, 1204-1261, in K. M. Setton (ed.), A History of the Crusades, vol. 2 (1969)"
+      - "D. M. Nicol, The Last Centuries of Byzantium, 1261-1453, 2nd ed. (1993)"
+  - polity: Almohad Caliphate
+    last_year: "AD 1269"
+    reason: >-
+      Cliopatria draws the Almohads over all of Morocco until 1343. By 1248 the Marinids
+      held Fez, and in 1269 they took Marrakesh, where the last Almohad caliph, Idris
+      al-Wathiq, was killed.
+    sources:
+      - "A. K. Bennison, The Almoravid and Almohad Empires (2016)"
+      - "C. E. Bosworth, The New Islamic Dynasties (1996), s.v. Almohads"
+  - polity: Assyrian Egypt
+    last_year: "652 BC"
+    reason: >-
+      Cliopatria draws "Assyrian Egypt" for 650-615 BC over the whole Assyrian realm, from
+      Egypt to Iran, on top of the Neo-Assyrian Empire, which already includes Egypt in
+      those years: every land was tinted twice and named twice. Assyrian rule in Egypt
+      had ended by 656 BC, when Psamtik I reunited the country; the duplicate is dropped.
+    sources:
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 13"
+      - "A. K. Grayson, Assyrian Rule of Conquered Territory in Ancient Western Asia, in J. M. Sasson (ed.), Civilizations of the Ancient Near East (1995)"
+  - polity: Hyksos
+    last_year: "1550 BC"
+    reason: >-
+      Cliopatria draws the Hyksos over Canaan and Syria until 1400 BC. Their rule ended
+      when Ahmose I took Avaris and then Sharuhen, about 1550 BC; the Levant after it was
+      a land of Canaanite city-states under Egyptian overlordship, which Cliopatria does
+      not draw, so it is left without a state rather than given the wrong one.
+    sources:
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 8 (J. Bourriau)"
+      - "D. B. Redford, Egypt, Canaan, and Israel in Ancient Times (1992), ch. 5"
+  - polity: Kingdom of Israel
+    last_year: "722 BC"
+    reason: >-
+      Samaria fell after a three-year siege by Shalmaneser V; the Babylonian
+      Chronicle says he "ravaged Samaria" in his short reign (727-722 BC),
+      and 2 Kings dates the capture to Hoshea's ninth year. Sargon II later
+      claimed the conquest and in 720 BC put down a revolt in which Samaria
+      took part, which is why some scholars write c. 720; 722 BC is the
+      usual textbook year for the end of the kingdom.
+    sources:
+      - "2 Kgs 17:5-6"
+      - "2 Kgs 18:9-10"
+      - "Babylonian Chronicle ABC 1, i 27-28 (livius.org)"
+      - "Wikipedia, Shalmaneser V; Sargon II; Hoshea"
+  - polity: Kingdom of Commagene
+    last_year: "AD 72"
+    reason: >-
+      Cliopatria draws Commagene until AD 77. Vespasian deposed Antiochus IV
+      and annexed the kingdom for good in AD 72.
+    sources:
+      - "Wikipedia, Commagene; Antiochus IV of Commagene"
+
+  - polity: Neo-Assyrian Empire
+    last_year: "609 BC"
+    reason: >-
+      Nineveh fell to the Medes and Babylonians in 612 BC; the last king, Ashur-uballit II,
+      held out at Harran until 610-609 BC. Cliopatria draws the empire until 601 BC; its
+      heartland after 609 is left without a state rather than given the wrong one.
+    sources:
+      - "Babylonian Chronicle ABC 3 (Fall of Nineveh Chronicle)"
+      - "Wikipedia, Ashur-uballit II; Fall of Nineveh"
+  - polity: Kingdom of Pontus
+    last_year: "AD 62"
+    reason: >-
+      Cliopatria draws the kingdom of Pontus until AD 67. Nero made Polemon II abdicate in
+      AD 62 and Pontus became part of a Roman province.
+    sources:
+      - "Wikipedia, Polemon II of Pontus; Kingdom of Pontus"
+  - polity: Kingdom of Cappadocia
+    last_year: "AD 17"
+    reason: >-
+      Cliopatria draws the kingdom of Cappadocia until AD 22. Archelaus died in Rome in
+      AD 17 and Tiberius made Cappadocia a province.
+    sources:
+      - "Wikipedia, Cappadocia (Roman province); Archelaus of Cappadocia"
+  - polity: Mauretania
+    last_year: "AD 40"
+    reason: >-
+      Cliopatria draws the kingdom of Mauretania until AD 42. Caligula had its last king,
+      Ptolemy, executed in AD 40 and Rome annexed the kingdom.
+    sources:
+      - "Wikipedia, Ptolemy of Mauretania"
+  - polity: Hittites
+    last_year: "1180 BC"
+    reason: >-
+      Cliopatria draws the Hittite kingdom until 1151 BC. It ended about 1180 BC in the
+      collapse at the end of the Bronze Age, when Hattusa was burnt and abandoned; the
+      Neo-Hittite states of Syria and southern Anatolia took its place.
+    sources:
+      - "Wikipedia, Hittites (Hattusa burnt around 1180 BC; New Kingdom 1500-1180 BC)"
+      - "Wikipedia, Hattusa (destroyed with the Hittite state around 1200 BC)"
+  - polity: Neo-Hittite states
+    last_year: "741 BC"
+    reason: >-
+      Cliopatria ends the Neo-Hittite (Syro-Hittite) states in 801 BC and gives their lands
+      to Assyria from then. They remained kingdoms, at times tributary to Assyria, until
+      Tiglath-pileser III and Sargon II took them one by one: Arpad in 740, Unqi in 738,
+      Carchemish in 717, Melid in 712, Gurgum in 711 and Kummuh in 708 BC. Drawn on to 741
+      BC, the year before the first annexation; the shape cannot be split by state.
+    sources:
+      - "Wikipedia, Tiglath-Pileser III (Arpad taken in 740 BC; provinces south of Arpad in 738 BC)"
+      - "Wikipedia, Carchemish (taken by Sargon II in 717 BC, the last ruler of the House of Astiruwa)"
+      - "Wikipedia, Sargon II (Melid 712, Gurgum 711, Kummuh 708 BC)"
+      - "Wikipedia, Kummuh (a tributary state allied with Assyria from the 9th to the mid-8th century BC)"
+  - polity: Neo-Babylonian Empire
+    last_year: "539 BC"
+    reason: >-
+      Cliopatria draws the Neo-Babylonian Empire until 532 BC. After the battle of Opis
+      the army of Cyrus entered Babylon without a battle in October 539 BC and Nabonidus
+      was captured; the empire ended.
+    sources:
+      - "Nabonidus Chronicle (ABC 7) iii 12-16 (livius.org)"
+      - "Wikipedia, Fall of Babylon (Persian forces entered Babylon on 12 October 539 BC)"
+  - polity: Achaemenid Empire
+    last_year: "330 BC"
+    reason: >-
+      Cliopatria draws the Achaemenid Empire over Mesopotamia and Iran until 328 BC.
+      Alexander won at Gaugamela on 1 October 331 BC and took Babylon, Susa and Persepolis;
+      Darius III was killed by Bessus in 330 BC.
+    sources:
+      - "Wikipedia, Darius III (reigned 336 BC to his death in 330 BC)"
+      - "Wikipedia, Battle of Gaugamela (1 October 331 BC)"
+  - polity: Kingdom of Bithynia
+    last_year: "74 BC"
+    reason: >-
+      Cliopatria draws Bithynia until 68 BC. Nicomedes IV bequeathed the kingdom to Rome
+      in 74 BC, one of his last acts as king, and it became a Roman province.
+    sources:
+      - "Wikipedia, Nicomedes IV of Bithynia (bequeathed the kingdom to Rome in 74 BC)"
+      - "Wikipedia, Bithynia (bequeathed to the Roman Republic in 74 BC)"
+  - polity: Parthian Empire
+    last_year: "AD 224"
+    reason: >-
+      Cliopatria draws the Parthian Empire over Mesopotamia and Media until AD 237.
+      Artabanus IV was defeated and killed by Ardashir I at Hormozdgan on 28 April 224,
+      the end of the Arsacid era; Ardashir was crowned at Ctesiphon, probably in 226.
+    sources:
+      - "Wikipedia, Battle of Hormozdgan (28 April 224)"
+      - "Wikipedia, Ardashir I (coronation at Ctesiphon in 226 according to Wiesehöfer)"
+  - polity: Kingdom of Pergamon
+    last_year: "133 BC"
+    reason: >-
+      Cliopatria draws the Attalid kingdom until 128 BC. Attalus III died in 133 BC and
+      left his kingdom to the Roman people. Aristonicus, who claimed the throne as Eumenes
+      III, fought Rome for it until the consul Perperna took his surrender in 130 BC; the
+      revolt was over by 129 BC, and the land became the province of Asia.
+    sources:
+      - "Strabo, Geography 13.4.2 (Attalus Philometor reigned five years and left the Romans his heirs; they made the country a province, Asia) (LacusCurtius)"
+      - "Livy, Periochae 58-59 (livius.org)"
+      - "Wikipedia, Attalus III (138-133 BC; the uprising of Aristonicus put down in 129 BC)"
+  - polity: Antigonid Macedonia
+    last_year: "168 BC"
+    reason: >-
+      Cliopatria draws the Antigonid kingdom until 166 BC. Aemilius Paullus defeated
+      Perseus at Pydna in 168 BC; the monarchy was abolished and Macedonia was divided into
+      four tribute-paying republics (merides). Cliopatria draws them as Greek city-states
+      from 165 BC.
+    sources:
+      - "Livy 44.40-42 (Pydna); 45.18 (the Senate's decision: Macedonia free, in four regions, paying half the old tribute); 45.29-30 (the four regions) (Perseus)"
+      - "Wikipedia, Battle of Pydna (168 BC; the kingdom dissolved and replaced with four republics)"
+      - "Wikipedia, Macedonia (Roman province) (four client republics, merides; province from 148/146 BC)"
+  - polity: Cyrenaica
+    last_year: "96 BC"
+    reason: >-
+      Cliopatria draws the kingdom of Ptolemy Apion until 93 BC. Apion died in 96 BC and
+      left Cyrenaica to the Roman people; the Senate declared its cities free and made it a
+      province only in 74 BC, but the kingdom ended in 96.
+    sources:
+      - "Livy, Periochae 70.5 (Ptolemy Apion of Cyrene makes the Roman people his heir; the Senate frees the towns) (livius.org)"
+      - "Wikipedia, Ptolemy Apion (died 96 BC); Crete and Cyrenaica (Cyrenaica annexed as a province in 74 BC)"
+  - polity: Ptolemaic Kingdom
+    last_year: "30 BC"
+    reason: >-
+      Cliopatria draws the Ptolemaic kingdom in Egypt until 29 BC. Octavian took
+      Alexandria in 30 BC, Cleopatra VII died, and Egypt was made a tributary province
+      under Cornelius Gallus.
+    sources:
+      - "Cassius Dio 51.9-17 (51.17.1: he made Egypt tributary and gave it in charge of Cornelius Gallus) (LacusCurtius)"
+      - "Wikipedia, Ptolemaic Kingdom (ended with the death of Cleopatra VII in 30 BC)"
+  - polity: Thracian Kingdom
+    last_year: "AD 46"
+    reason: >-
+      Cliopatria draws the Thracian (Sapaean) kingdom until AD 50. Its last king,
+      Rhoemetalces III, was murdered (in AD 44 or 46; the accounts differ), and Claudius
+      annexed the kingdom as the province of Thracia in AD 46.
+    sources:
+      - "Wikipedia, Thracia (Claudius annexed the kingdom as a province in AD 46)"
+      - "Wikipedia, Sapaean kingdom (Roman client state until AD 46); Rhoemetalces III (murdered in AD 44)"
+  - polity: Ankhwennefer
+    last_year: "186 BC"
+    reason: >-
+      Cliopatria draws the Theban kingdom of Ankhwennefer (Chaonnophris) until 172 BC. The
+      Ptolemaic army retook Thebes in 191 BC, and on 27 August 186 BC Komanos defeated his
+      Egyptian and Nubian army south of Aswan, ending the Great Revolt of the Thebaid; Upper
+      Egypt was Ptolemaic again.
+    sources:
+      - "Wikipedia, Ankhwennefer (pharaoh) (rule c. 201/200 to 187/186 BC; Thebes captured in 191; defeated c. 186 BC)"
+      - "Wikipedia, Great Theban Revolt (Komanos defeated Chaonnophris south of Aswan on 27 August 186 BC)"
+      - "W. Clarysse, The Great Revolt of the Egyptians (205-186 BC)"
+  - polity: Rashidun Caliphate
+    last_year: "AD 661"
+    reason: >-
+      Cliopatria draws the Rashidun Caliphate over Iraq, Iran and Arabia until 665, beside
+      the Umayyads in Syria and Egypt. Ali was murdered in January 661; his son al-Hasan
+      made peace with Mu'awiya and abdicated in the summer of 661, and Mu'awiya entered
+      Kufa and was recognised as caliph. The lands are drawn as the Umayyads' from 662
+      (annexed).
+    sources:
+      - "W. Madelung, The Succession to Muhammad (1997), ch. 7"
+      - "Wikipedia, Hasan ibn Ali (caliph January-August 661); Mu'awiya I (entered Kufa in July or September 661 and was recognised as caliph)"
+  - polity: Tulunids
+    last_year: "AD 905"
+    reason: >-
+      Cliopatria draws the Tulunids over Egypt and Syria until 910. The Abbasid army of
+      Muhammad ibn Sulayman al-Katib took Damascus in 904 and came before Fustat in January
+      905; the last Tulunid, Shayban, surrendered, and Egypt and Syria were ruled by the
+      caliph's governors again (annexed).
+    sources:
+      - "T. Bianquis, Autonomous Egypt from Ibn Tulun to Kafur, 868-969, in C. F. Petry (ed.), The Cambridge History of Egypt, vol. 1 (1998)"
+      - "C. E. Bosworth, The New Islamic Dynasties (1996), s.v. Tulunids (868-905)"
+      - "Wikipedia, Tulunids (autonomous from 868 until 905); Muhammad ibn Sulayman al-Katib"
+  - polity: County of Edessa
+    last_year: "AD 1150"
+    reason: >-
+      Cliopatria draws the county until 1151. Joscelin II was taken prisoner by Nur
+      ad-Din's men in 1150, and his wife Beatrice sold Turbessel and what was left of the
+      county to the emperor Manuel I; Nur ad-Din and the Sultan of Rum took those lands
+      within a year.
+    sources:
+      - "S. Runciman, A History of the Crusades, vol. 2 (1952)"
+      - "Wikipedia, County of Edessa; Joscelin II, Count of Edessa"
+  - polity: Abbasid Caliphate
+    last_year: "AD 1258"
+    reason: >-
+      Cliopatria draws the Abbasid Caliphate over Iraq until 1259. Hulagu took Baghdad,
+      where the caliph al-Musta'sim surrendered on 10 February 1258 and was put to death;
+      Iraq passed to the Mongols (annexed). The caliphs later kept at Cairo by the Mamluks
+      held no land.
+    sources:
+      - "S. Runciman, A History of the Crusades, vol. 3 (1954), the fall of Baghdad"
+      - "J. A. Boyle, Dynastic and Political History of the Il-Khans, in The Cambridge History of Iran, vol. 5 (1968)"
+      - "Wikipedia, Siege of Baghdad (1258)"
+  - polity: Principality of Antioch
+    last_year: "AD 1268"
+    reason: >-
+      Cliopatria draws the principality until 1271. Baybars took Antioch by storm on 18
+      May 1268; Bohemond VI kept only the title and the county of Tripoli, and the city
+      and its land were the Mamluks' from then (annexed).
+    sources:
+      - "S. Runciman, A History of the Crusades, vol. 3 (1954), pp. 324-7"
+      - "Wikipedia, Siege of Antioch (1268)"
+  - polity: County of Tripoli
+    last_year: "AD 1289"
+    reason: >-
+      Cliopatria draws the county until 1293. Qalawun took Tripoli by assault on 26 April
+      1289 and had it razed; the county ended and its land was the Mamluks' (annexed).
+    sources:
+      - "S. Runciman, A History of the Crusades, vol. 3 (1954), the fall of Tripoli"
+      - "Wikipedia, Fall of Tripoli (1289)"
+  - polity: Kingdom of Jerusalem
+    last_year: "AD 1291"
+    reason: >-
+      Cliopatria draws the coastal kingdom until 1293. Al-Ashraf Khalil took Acre on 18 May
+      1291; Tyre, Sidon, Beirut and Haifa were given up in the following weeks and Atlit,
+      the last castle, on 14 August, and nothing of the kingdom was left on the mainland
+      (annexed).
+    sources:
+      - "S. Runciman, A History of the Crusades, vol. 3 (1954), the fall of Acre"
+      - "Wikipedia, Siege of Acre (1291)"
+starts:
+  - polity: Kingdom of Israel
+    first_year: "1010 BC"
+    reason: >-
+      Cliopatria begins the kingdom of Israel in 1000 BC, so the years of David's reign
+      before it showed the hills of Judah and Israel without a state. David reigned forty
+      years, seven in Hebron and thirty-three in Jerusalem, and Solomon's reign begins
+      about 970 BC: David's begins about 1010 BC.
+    sources:
+      - "2 Sam 5:4-5; 1 Kgs 2:11"
+      - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings (1983), ch. 2"
+  - polity: Hyksos
+    first_year: "1650 BC"
+    reason: >-
+      Cliopatria draws the Hyksos over Canaan from 1800 BC. Their rule, the Fifteenth
+      Dynasty in Lower Egypt, began about 1650 BC; before it Canaan was a land of
+      city-states, which Cliopatria does not draw.
+    sources:
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 8 (J. Bourriau)"
+      - "K. S. B. Ryholt, The Political Situation in Egypt during the Second Intermediate Period (1997)"
+  - polity: Twenty-sixth Dynasty of Egypt
+    first_year: "656 BC"
+    reason: >-
+      Psamtik I, founder of the Twenty-sixth Dynasty, was king from 664 BC under Assyria; by
+      656 BC, when his daughter Nitocris was adopted as God's Wife of Amun at Thebes, he held
+      all Egypt and had thrown off Assyrian rule. Cliopatria draws the dynasty only from
+      615 BC and Assyria over Egypt until then.
+    sources:
+      - "Wikipedia, Psamtik I (Thebes in 656 BC; all Egypt by 654 BC)"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 13 (A. B. Lloyd, The Late Period)"
+  - polity: Hittites
+    first_year: "1650 BC"
+    reason: >-
+      Cliopatria begins the Hittite kingdom in 1600 BC. Labarna, who took the name
+      Hattusili I, made Hattusa the capital about 1650 BC (middle chronology); his
+      successor Mursili I sacked Babylon in 1595 BC.
+    sources:
+      - "Wikipedia, Hittites (capital at Hattusa around 1650 BC; Babylon sacked 1595 BC, middle chronology)"
+      - "Wikipedia, Hattusili I (1650-1620 BC, middle chronology)"
+  - polity: Kingdom of Urartu
+    first_year: "860 BC"
+    reason: >-
+      Cliopatria begins Urartu in 800 BC. The Nairi lands were united into one kingdom
+      under Arame (about 860-843 BC), whose capitals Shalmaneser III captured; Sarduri I
+      (about 832-820 BC) moved the capital to Tushpa. The shape drawn back to 860 is
+      Cliopatria's first one, of 800 BC; the kingdom of the 850s was probably smaller.
+    sources:
+      - "Wikipedia, Urartu (Arame c. 860-843 BC; Sarduri I c. 832-820 BC, capital moved to Tushpa)"
+      - "Wikipedia, Arame of Urartu (fought Shalmaneser III, r. 859-824 BC)"
+clips:
+  - polity: Philistia
+    # The coastal plain from Nahal Besor to the Yarkon, east to the edge of the Shephelah:
+    # Gaza, Ashkelon, Ashdod, Ekron and Gath, the five cities of Josh 13:3.
+    within:
+      - [34.2, 31.2]
+      - [34.6, 31.15]
+      - [34.95, 31.45]
+      - [35.0, 31.85]
+      - [34.85, 32.15]
+      - [34.7, 32.15]
+    reason: >-
+      Cliopatria draws Philistia to the Jordan and into Galilee until 1000 BC, and over
+      Samaria after it, so the map put David's Bethlehem and Saul's Gibeah in Philistia.
+      The Philistines held the coastal plain and pressed into the hills (1 Sam 13); the
+      land of their five cities is the plain.
+    sources:
+      - "Josh 13:2-3; 1 Sam 6:17"
+      - "T. Dothan, The Philistines and Their Material Culture (1982)"
+  - polity: Neo-Assyrian Empire
+    # East of a line from the sea off western Cyprus to Raphia and down the Arabah:
+    # Egypt and Sinai out, the Levant and Cyprus in.
+    within:
+      - [31.0, 37.0]
+      - [34.2, 31.3]
+      - [35.0, 29.5]
+      - [36.5, 24.0]
+      - [70.0, 10.0]
+      - [70.0, 50.0]
+      - [31.0, 50.0]
+    first_year: "656 BC"
+    last_year: "616 BC"
+    reason: >-
+      Assyrian rule in Egypt had ended by 656 BC, when Psamtik I held all Egypt; Cliopatria
+      draws the Neo-Assyrian Empire over Egypt until 616 BC.
+    sources:
+      - "Wikipedia, Psamtik I"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 13"
+  # Neo-Assyrian Empire, 801-730 BC: three clips with years, one per stage of the advance
+  # west of the Euphrates (Babylonia is drawn on its own in these years, bridges).
+  # Tributary kingdoms are not provinces, so they stay out until annexed where the shape
+  # allows it.
+  - polity: Neo-Assyrian Empire
+    # East of a line from the Euphrates bend to above Edessa (Til Barsip and Harran in;
+    # Carchemish, Kummuh/Samosata, Arpad and Melid out), north of Babylonia.
+    within:
+      - [37.33, 35.84]
+      - [42.0, 33.6]
+      - [46.0, 35.0]
+      - [48.0, 37.0]
+      - [40.0, 38.6]
+      - [39.48, 38.6]
+    first_year: "801 BC"
+    last_year: "741 BC"
+    reason: >-
+      Cliopatria draws from 801 BC the empire that Tiglath-pileser III and Sargon II built
+      after 745 BC: Babylon, Carchemish, Kummuh, Arpad, Hamath and Damascus are Assyrian
+      from 801. The reigns before Tiglath-pileser were "the low point of Assyrian royal
+      power"; in 743 Sarduri II of Urartu reached "the Euphrates river border of
+      Assyria". The kingdoms west of the river paid tribute at most; Arpad was annexed in
+      740 BC, Damascus in 732, Carchemish in 717.
+    sources:
+      - "Wikipedia, Tiglath-Pileser III (low point of royal power before him; Euphrates border in 743; Arpad 740, Damascus 732 BC)"
+      - "Wikipedia, Carchemish; Sargon II"
+  - polity: Neo-Assyrian Empire
+    # Arpad and the north Syrian kingdoms in; Hamath, Damascus and the coast to the south
+    # out; north of Babylonia.
+    within:
+      - [35.8, 36.08]
+      - [42.0, 33.6]
+      - [46.0, 35.0]
+      - [48.0, 37.0]
+      - [40.0, 40.0]
+      - [35.8, 40.0]
+    first_year: "740 BC"
+    last_year: "733 BC"
+    reason: >-
+      Arpad was taken in 740 BC after a three-year siege and made two provinces; Unqi and
+      the lands south of Arpad followed in 738. Damascus stood until 732 and Hamath kept its
+      own king until 720 BC, so the land south of about 35.6 degrees N stays out of Assyria
+      in these years. Carchemish and Kummuh, tributaries until 717 and 708 BC, cannot be
+      cut out of this shape and are drawn as Assyrian.
+    sources:
+      - "Wikipedia, Tiglath-Pileser III (Arpad 740, provinces of Kullania, Hatarikka and Simirra 738, Damascus 732 BC)"
+      - "Wikipedia, Sargon II (Hamath's revolt under Yahu-Bihdi, 720 BC)"
+  - polity: Neo-Assyrian Empire
+    # Only Babylonia out.
+    within:
+      - [30.0, 28.0]
+      - [35.0, 28.0]
+      - [46.0, 35.0]
+      - [48.0, 37.0]
+      - [40.0, 40.0]
+      - [30.0, 40.0]
+    first_year: "732 BC"
+    last_year: "730 BC"
+    reason: >-
+      Damascus fell in 732 BC and Tiglath-pileser annexed Aram-Damascus; Babylon kept its
+      own kings until he took its throne in 729 BC, and Babylonia is drawn on its own until
+      then (bridges).
+    sources:
+      - "Wikipedia, Tiglath-Pileser III (Damascus 732, Babylon 729 BC)"
+      - "Wikipedia, Aram-Damascus (to 732 BC)"
+  - polity: Neo-Assyrian Empire
+    # South of a line from the Taurus above Melid to the Zagros south of Lake Urmia: Lake
+    # Van and the Ararat plain out.
+    within:
+      - [25.0, 15.0]
+      - [60.0, 15.0]
+      - [60.0, 33.0]
+      - [48.0, 36.9]
+      - [36.0, 38.9]
+      - [25.0, 39.5]
+    reason: >-
+      Cliopatria draws Assyria over Tushpa (Van), Urartu's capital, from 801 BC to the end,
+      and from 700 BC over the whole Urartian highland with Erebuni and the Ararat plain.
+      Assyria never held Tushpa: Tiglath-pileser III defeated Sarduri II in 743 BC and
+      Sargon II sacked Musasir in 714, but Urartu stood until the Medes took Van about
+      590 BC.
+    sources:
+      - "Wikipedia, Urartu (capital Tushpa; the Medes took Van in 590 BC)"
+      - "Wikipedia, Tiglath-Pileser III; Sargon II (714 BC campaign, Musasir)"
+  - polity: Babylonia
+    # South of 35 degrees N: Ashur and the Assyrian heartland out.
+    within:
+      - [38.0, 25.0]
+      - [52.0, 25.0]
+      - [52.0, 35.0]
+      - [38.0, 35.0]
+    first_year: "1401 BC"
+    last_year: "1301 BC"
+    reason: >-
+      Cliopatria draws Kassite Babylonia over Ashur from 1401 to 1301 BC. Ashur was the
+      capital of Assyria, under Mitanni influence until Eriba-Adad I and Ashur-uballit I
+      (about 1363-1328 BC); Ashur-uballit put Kurigalzu II on the throne of Babylon and
+      stopped a Babylonian army at Sugagu, south of Ashur.
+    sources:
+      - "Wikipedia, Ashur-uballit I"
+  - polity: Assyria
+    # East of 33 degrees E.
+    within:
+      - [33.0, 20.0]
+      - [60.0, 20.0]
+      - [60.0, 50.0]
+      - [33.0, 50.0]
+    reason: >-
+      Cliopatria's Assyria of 1800-1501 BC carries two specks on the Sea of Marmara, 1,500
+      km from Ashur. In the Old Assyrian period Ashur was a city-state whose merchants kept
+      trading colonies in Anatolia, such as Kanesh (Kultepe); it held no land in
+      north-western Anatolia.
+    sources:
+      - "Wikipedia, Old Assyrian period (Assur a minor city-state; trading colonies such as Kultepe)"
+  - polity: Elam
+    # East of the border of Cliopatria's Babylonia of 900-802 BC in the Khuzestan lowland.
+    within:
+      - [47.6, 40.0]
+      - [47.6, 33.5]
+      - [47.86, 32.56]
+      - [48.25, 31.46]
+      - [49.29, 30.63]
+      - [52.0, 28.47]
+      - [60.0, 25.0]
+      - [60.0, 40.0]
+    first_year: "801 BC"
+    last_year: "730 BC"
+    reason: >-
+      Babylonia is drawn through 801-730 BC with Cliopatria's shape of 900-802 BC
+      (bridges), and Cliopatria's Elam of 800-702 BC reaches into it on the lowland west
+      of Susa. In those years Elam is drawn to the border the two shapes share before
+      801 BC, so the land is not tinted twice.
+    sources:
+      - "Wikipedia, Elam; Nabonassar"
+  - polity: Kingdom of Urartu
+    # East of 38.8 degrees E: Melid and the Euphrates valley out.
+    within:
+      - [38.8, 30.0]
+      - [55.0, 30.0]
+      - [55.0, 45.0]
+      - [38.8, 45.0]
+    first_year: "742 BC"
+    reason: >-
+      Sarduri II took Melid and Kummuh about 750 BC, but Tiglath-pileser III beat him in
+      743 and forced the Urartians back across the Euphrates; Melid became tributary to
+      Assyria and Sargon II sacked it in 712 BC. From 742 BC Urartu is drawn east of the
+      river, which also keeps it off Assyrian Melid in the years bridged below.
+    sources:
+      - "Wikipedia, Sarduri II (Melid and Kummuh conquered; defeat of 743 BC, forced back across the Euphrates)"
+      - "Wikipedia, Arslantepe (Melid sacked by Sargon II in 712 BC)"
+  - polity: Sumerian City-States
+    # West of 47.7 degrees E: Susa out.
+    within:
+      - [40.0, 25.0]
+      - [47.7, 25.0]
+      - [47.7, 38.0]
+      - [40.0, 38.0]
+    first_year: "2701 BC"
+    last_year: "2302 BC"
+    reason: >-
+      Cliopatria draws the Sumerian city-states over Susa in 2701-2302 BC. Susa belonged
+      to Elam: the Old Elamite period begins about 2700 BC, the kings of Awan fought Kish
+      and Lagash, and Sargon of Akkad and Rimush defeated Elam (which the map shows as
+      Akkadian from 2301 BC). Elam is drawn there in those years (bridges).
+    sources:
+      - "Wikipedia, Elam (Old Elamite period from c. 2700 BC)"
+      - "Wikipedia, Awan dynasty (incursions against Kish and Lagash; defeated by Sargon and Rimush)"
+  - polity: Seleucid Empire
+    # West of 41 degrees E: Mesopotamia and Iran out, Syria and Dura kept.
+    within:
+      - [20.0, 20.0]
+      - [41.0, 20.0]
+      - [41.0, 45.0]
+      - [20.0, 45.0]
+    first_year: "141 BC"
+    last_year: "131 BC"
+    reason: >-
+      Cliopatria draws the Seleucids over Assyria and Media until 128 BC (and the Parthians
+      over Babylonia from 145 BC). Mithridates I of Parthia took Media in 148 or 147 BC and
+      Babylonia in 141 BC; Antiochus VII won Mesopotamia, Babylonia and Media back only in
+      130 BC and was killed near Ecbatana in 129.
+    sources:
+      - "Wikipedia, Mithridates I of Parthia (Media and Atropatene 148/7 BC; Babylonia 141 BC)"
+      - "Wikipedia, Antiochus VII Sidetes; Seleucid Empire (campaign of 130-129 BC)"
+  - polity: Seleucid Empire
+    # West of 46.5 degrees E: Media out.
+    within:
+      - [20.0, 20.0]
+      - [46.5, 20.0]
+      - [46.5, 45.0]
+      - [20.0, 45.0]
+    first_year: "147 BC"
+    last_year: "142 BC"
+    reason: >-
+      Mithridates I of Parthia occupied Ecbatana and Media in 148 or 147 BC; Cliopatria
+      keeps them Seleucid.
+    sources:
+      - "Wikipedia, Mithridates I of Parthia"
+  - polity: Ptolemaic Kingdom
+    # West of a line from the Palmyrene desert to the Gulf of Issus: Coele-Syria, Cilicia,
+    # the Aegean and Thrace kept; northern Syria, Commagene and Edessa out.
+    within:
+      - [0.0, 10.0]
+      - [49.0, 10.0]
+      - [29.0, 50.0]
+      - [0.0, 50.0]
+    first_year: "308 BC"
+    last_year: "248 BC"
+    reason: >-
+      Cliopatria draws the Ptolemies over Commagene with Samosata in 308-258 BC and over
+      northern Syria and Edessa in 308-303 BC. Antigonus held Syria until 301 BC; after it
+      the Ptolemies held Coele-Syria in the south, while Commagene was Seleucid (perhaps
+      Orontid Armenian at first) until its satrap broke away about 163 BC.
+    sources:
+      - "Wikipedia, Commagene (part of the Seleucid Empire, perhaps of Orontid Armenia earlier; independent c. 163 BC)"
+      - "Wikipedia, Ptolemaic Kingdom; Syrian Wars"
+  - polity: Roman Empire
+    # West of a line from the Hijaz past Dura to the upper Euphrates: Armenia, Mesopotamia
+    # and Assyria out.
+    within:
+      - [-20.0, 10.0]
+      - [33.0, 10.0]
+      - [39.0, 30.0]
+      - [41.9, 42.6]
+      - [41.9, 60.0]
+      - [-20.0, 60.0]
+    first_year: "AD 118"
+    last_year: "AD 126"
+    reason: >-
+      Cliopatria keeps Trajan's conquests (Armenia, Mesopotamia, Assyria, down to the Gulf
+      and over Susa) Roman until AD 126. Hadrian, on his accession in 117, relinquished all
+      the conquests east of the Euphrates and the Tigris and recognised Vologases as client
+      king of Armenia. Cliopatria's Parthian shape of these years does not cover the land,
+      so Mesopotamia is left blank.
+    sources:
+      - "Historia Augusta, Hadrian 5.3 (LacusCurtius)"
+      - "Wikipedia, Mesopotamia (Roman province) (Hadrian relinquished the conquests east of the Euphrates)"
+      - "Wikipedia, Vologases I of Armenia (Hadrian recognised him as king of all Greater Armenia)"
+  - polity: Parthian Empire
+    # South of a line from Amida to Ardabil: Armenia out.
+    within:
+      - [30.0, 10.0]
+      - [75.0, 10.0]
+      - [75.0, 45.7]
+      - [30.0, 35.1]
+    first_year: "AD 127"
+    last_year: "AD 153"
+    reason: >-
+      Cliopatria draws the Parthian Empire over Armenia in AD 127-153. Armenia was a
+      kingdom and a Roman client under Vologases I (117-c. 140/144) and then Sohaemus
+      (144-161); it is drawn in those years (bridges).
+    sources:
+      - "Wikipedia, Vologases I of Armenia"
+      - "Wikipedia, Sohaemus of Armenia (first reign 144-161)"
+  - polity: Sasanian Empire
+    within:
+      - [30.0, 10.0]
+      - [75.0, 10.0]
+      - [75.0, 45.7]
+      - [30.0, 35.1]
+    first_year: "AD 371"
+    last_year: "AD 386"
+    reason: >-
+      Cliopatria draws the Sasanian Empire over Armenia in AD 371-386. Pap was restored as
+      king with Roman help in 370 and Armenia and Rome beat Shapur II at Bagavan early in
+      his reign; Varazdat (374-378) and Arshak III reigned until the partition of 387. The
+      kingdom is drawn in those years (bridges).
+    sources:
+      - "Wikipedia, Pap of Armenia (370-374/375; restored with Roman help; Bagavan)"
+      - "Wikipedia, Varazdat (374-378)"
+  - polity: Kingdom of Pontus
+    # North of a line from Tieion to the upper Euphrates (Cliopatria's Pontus of 78 BC, with
+    # Armenia Minor, Colchis and the Bosporus); Galatia, Cappadocia, Bithynia, Asia and
+    # Greece out.
+    within:
+      - [29.0, 48.0]
+      - [32.6, 40.45]
+      - [35.0, 39.9]
+      - [39.0, 39.2]
+      - [45.0, 38.9]
+      - [45.0, 48.0]
+    first_year: "84 BC"
+    last_year: "79 BC"
+    reason: >-
+      Cliopatria draws Mithridates VI's conquests of 88 BC, from Attica and the islands to
+      Asia, Bithynia, Cappadocia and Galatia, until 79 BC. Sulla took Athens in 86 BC, and
+      under the Treaty of Dardanus in 85 BC Mithridates gave up Asia and Paphlagonia,
+      restored Bithynia and Cappadocia and went back to his ancestral kingdom of Pontus.
+      From 84 BC Pontus is drawn with Cliopatria's shape of 78 BC, which keeps inland
+      Paphlagonia; the restored kings are drawn again (bridges) and Asia as Roman
+      (annexed). Attica, Lesbos and Caria are left blank in 84-79 BC: no shape of these
+      years reaches them.
+    sources:
+      - "Plutarch, Sulla 14 (Athens taken on the Calends of March); 22-24 (terms of Dardanus) (LacusCurtius)"
+      - "Appian, Mithridatic Wars 55; 58 (he went back to his paternal kingdom of Pontus as his sole possession) (livius.org)"
+      - "Wikipedia, Treaty of Dardanos (85 BC: Greece, Bithynia, Phrygia, Paphlagonia and Cappadocia surrendered)"
+  - polity: Greek City-States
+    # North of 37.3 degrees N: Crete and Rough Cilicia out.
+    within:
+      - [0.0, 37.3]
+      - [45.0, 37.3]
+      - [45.0, 50.0]
+      - [0.0, 50.0]
+    first_year: "67 BC"
+    last_year: "65 BC"
+    reason: >-
+      Cliopatria draws Crete and Rough Cilicia both as Greek city-states and as Roman in
+      67-65 BC. Q. Metellus subdued Crete in a three-year war (from 69 BC) and gave the
+      island laws, and in 67 BC Pompey, under the lex Gabinia, cleared the sea of pirates
+      and carried the war to Cilicia.
+    sources:
+      - "Velleius Paterculus 2.34.1 (LacusCurtius)"
+      - "Livy, Periochae 98-100 (livius.org)"
+      - "Wikipedia, Crete and Cyrenaica (Metellus's campaign from 69 BC; Crete and Cyrenaica one province from 67 BC)"
+  - polity: Ptolemaic Kingdom
+    # South of 33 degrees N: Cyprus out, Egypt kept.
+    within:
+      - [15.0, 15.0]
+      - [40.0, 15.0]
+      - [40.0, 33.0]
+      - [15.0, 33.0]
+    first_year: "57 BC"
+    last_year: "48 BC"
+    reason: >-
+      Cliopatria keeps Cyprus Ptolemaic until 52 BC and Roman as well from 51. Rome annexed
+      Cyprus in 58 BC under a law of Clodius; its king Ptolemy took poison and Cato
+      governed the island. Caesar granted it back to Arsinoe and the younger Ptolemy at
+      Alexandria only at the end of 48 BC. In 57-52 BC the island is left blank: Rome's
+      shape of those years does not reach it.
+    sources:
+      - "Cassius Dio 39.22 (Ptolemy of Cyprus takes poison; the Cypriots receive Cato); 42.35.5 (Caesar grants Cyprus to Arsinoe and Ptolemy the Younger) (LacusCurtius)"
+      - "Wikipedia, Roman Cyprus (annexed 58 BC; restored to the Ptolemies; Roman again after Actium)"
+  - polity: Seleucid Empire
+    # East of a line from the sea off western Cyprus to Raphia and down the Arabah: Egypt
+    # out.
+    within:
+      - [31.0, 37.0]
+      - [34.2, 31.3]
+      - [35.0, 29.5]
+      - [36.5, 24.0]
+      - [70.0, 10.0]
+      - [70.0, 50.0]
+      - [31.0, 50.0]
+    first_year: "167 BC"
+    last_year: "166 BC"
+    reason: >-
+      Cliopatria draws Antiochus IV's Egypt, Alexandria included, until 166 BC. He besieged
+      Alexandria but never took it, and in 168 BC the Roman envoy Popillius Laenas met him
+      at Eleusis, four miles from the city, and made him end the war and lead his army back
+      to Syria. The Ptolemaic shape of these years does not reach Egypt, so it is left blank
+      in 167-166 BC.
+    sources:
+      - "Polybius 29.27 (LacusCurtius)"
+      - "Livy 45.12 (Eleusis, four miles from Alexandria) (Perseus)"
+      - "Wikipedia, Sixth Syrian War (Antiochus besieged Alexandria but withdrew; the Day of Eleusis, 168 BC)"
+  - polity: Neo-Assyrian Empire
+    # Only Babylonia out, as in the clip of 732-730 BC.
+    within:
+      - [30.0, 28.0]
+      - [35.0, 28.0]
+      - [46.0, 35.0]
+      - [48.0, 37.0]
+      - [40.0, 40.0]
+      - [30.0, 40.0]
+    first_year: "721 BC"
+    last_year: "710 BC"
+    reason: >-
+      Cliopatria draws Babylon as Assyrian from 729 BC on. Marduk-apla-iddina II
+      (Merodach-baladan) took the throne of Babylon in Nisan 721 BC, after the death of
+      Shalmaneser V; Elam beat Sargon II at Der in 720, and the chronicle gives
+      Marduk-apla-iddina twelve years, until Sargon drove him out to Elam in 710 BC and took
+      the throne himself. Babylonia is drawn on its own in those years (bridges).
+    sources:
+      - "Babylonian Chronicle ABC 1, i 29-43; ii 1-5 (livius.org)"
+      - "2 Kgs 20:12; Isa 39:1"
+      - "Wikipedia, Marduk-apla-iddina II"
+  - polity: Elam
+    # East of the border of Cliopatria's Babylonia of 900-802 BC, as in the clip of 801-730.
+    within:
+      - [47.6, 40.0]
+      - [47.6, 33.5]
+      - [47.86, 32.56]
+      - [48.25, 31.46]
+      - [49.29, 30.63]
+      - [52.0, 28.47]
+      - [60.0, 25.0]
+      - [60.0, 40.0]
+    first_year: "721 BC"
+    last_year: "710 BC"
+    reason: >-
+      Babylonia is drawn in 721-710 BC with the shape bridged from 730 BC, and Cliopatria's
+      Elam of these years reaches into it on the lowland west of Susa; Elam is cut to the
+      border the two shapes share, so the land is not tinted twice.
+    sources:
+      - "Wikipedia, Elam; Marduk-apla-iddina II"
+  - polity: Parthian Empire
+    # South of a line from Amida to Ardabil: Armenia out, as in the clip of AD 127-153.
+    within:
+      - [30.0, 10.0]
+      - [75.0, 10.0]
+      - [75.0, 45.7]
+      - [30.0, 35.1]
+    first_year: "AD 161"
+    last_year: "AD 164"
+    reason: >-
+      Cliopatria draws Armenia as Parthian in AD 161-164. Vologases IV invaded it in 161,
+      drove out Sohaemus and set up Pacorus (Bakur) as king; Statius Priscus took Armenia
+      in 163, and Sohaemus was restored in 163 or 164. The kingdom is drawn in those years
+      (bridges).
+    sources:
+      - "Wikipedia, Pacorus of Armenia (Parthian invasion of 161; Statius Priscus in 163)"
+      - "Wikipedia, Sohaemus of Armenia (reinstalled by Lucius Verus in 163 or 164)"
+  - polity: County of Edessa
+    within:
+      - [30.0, 30.0]
+      - [45.0, 30.0]
+      - [45.0, 38.05]
+      - [30.0, 38.05]
+    reason: >-
+      From 1111 Cliopatria draws the county north into the plain of Melitene (Malatya).
+      Melitene was never Frankish: its Armenian lord Gabriel held it until the
+      Danishmendids took it in 1103, and it stayed in Turkish hands. The shape is cut
+      south of Melitene.
+    sources:
+      - "S. Runciman, A History of the Crusades, vol. 2 (1952)"
+      - "Wikipedia, Gabriel of Melitene; Danishmendids (Malatya taken in 1103)"
+  - polity: County of Edessa
+    within:
+      - [30.0, 30.0]
+      - [37.95, 36.3]
+      - [38.9, 38.0]
+      - [38.9, 45.0]
+      - [30.0, 45.0]
+    first_year: "AD 1145"
+    last_year: "AD 1146"
+    reason: >-
+      Cliopatria draws Edessa itself as the county's until 1146. Zengi took the city on 24
+      December 1144 and Saruj after it; Joscelin II kept his lands west of the Euphrates,
+      and his return to Edessa after Zengi's death in 1146 lasted only weeks, from October
+      to early November. The land east of the river is left without a state in 1145-1146;
+      Cliopatria gives it to the Zengids from 1147.
+    sources:
+      - "S. Runciman, A History of the Crusades, vol. 2 (1952)"
+      - "Wikipedia, Siege of Edessa (1144); County of Edessa; Joscelin II, Count of Edessa"
+  - polity: Kingdom of Axum
+    within:
+      - [20.0, 0.0]
+      - [51.0, 0.0]
+      - [43.3, 12.7]
+      - [33.0, 28.0]
+      - [20.0, 28.0]
+    first_year: "AD 578"
+    last_year: "AD 601"
+    reason: >-
+      Cliopatria draws Axum over Yemen until 601. Aksumite rule in South Arabia ended with
+      the Persian expeditions of 570-578: the second, after Sayf ibn Dhi Yazan's murder,
+      retook Yemen by 578, and Aksum held nothing outside Africa again. The shape is cut to
+      Africa from 578.
+    sources:
+      - "C. E. Bosworth, Iran and the Arabs before Islam, in The Cambridge History of Iran, vol. 3(1) (1983)"
+      - "Wikipedia, Aksumite-Persian wars (Yemen retaken by 578, ending Aksumite rule outside Africa)"
+# A polity the data names by one era for longer than it lasted (build-content.ts): a new
+# name from the year given.
+renamed:
+  - polity: New Kingdom of Egypt
+    first_year: "c. 1070 BC"
+    name: Egypt of the Third Intermediate Period
+    reason: >-
+      The New Kingdom ended with the death of Ramesses XI (1077 BC in some chronologies,
+      1069 BC in others); Egypt was then divided between the kings at Tanis and the high
+      priests of Amun at Thebes, the Third Intermediate Period. Cliopatria calls it the New
+      Kingdom until 801 BC.
+    sources:
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 10 (J. van Dijk, The Amarna Period and the Later New Kingdom, c. 1352-1069 BC) and ch. 12 (J. Taylor, The Third Intermediate Period, 1069-664 BC)"
+      - "Wikipedia, Third Intermediate Period of Egypt; New Kingdom of Egypt"
+  # Cliopatria puts the two dynasties' names on each other's lands in 800-701 BC: its
+  # "Twenty-third" holds the Delta with Tanis, Bubastis and Memphis, the seats of the
+  # Twenty-second. Swapped in three steps through a name used for nothing else.
+  - polity: Twenty-second Dynasty of Egypt
+    first_year: "800 BC"
+    name: Egypt (dynasty swap)
+    reason: >-
+      Step 1 of 3 of swapping the two dynasties' names (see the comment above).
+    sources:
+      - "Wikipedia, Twenty-second Dynasty of Egypt (Bubastis, Tanis); Twenty-third Dynasty of Egypt"
+  - polity: Twenty-third Dynasty of Egypt
+    first_year: "800 BC"
+    name: Twenty-second Dynasty of Egypt
+    reason: >-
+      The Twenty-second (Libyan) Dynasty ruled from Bubastis and Tanis and held Memphis:
+      the Delta shape Cliopatria names the Twenty-third is theirs.
+    sources:
+      - "Wikipedia, Twenty-second Dynasty of Egypt; Twenty-third Dynasty of Egypt"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 12 (J. Taylor)"
+  - polity: Egypt (dynasty swap)
+    first_year: "800 BC"
+    name: Twenty-third Dynasty of Egypt
+    reason: >-
+      The Twenty-third Dynasty is placed at Leontopolis by the older view and in Upper Egypt
+      (Thebes, Heracleopolis) by the newer; either way not at Tanis, so it takes the other
+      shape.
+    sources:
+      - "Wikipedia, Twenty-third Dynasty of Egypt"
+  - polity: Twenty-third Dynasty of Egypt
+    first_year: "c. 732 BC"
+    name: Kingdom of Kush
+    reason: >-
+      Kush already held Upper Egypt as far as Thebes (Kashta had made his daughter
+      Amenirdis heir to the God's Wife of Amun there) when Piye, in his twentieth year,
+      marched north, took Hermopolis and received the submission of the kings of Middle
+      Egypt and the Delta. The campaign is put around 732 BC in one reckoning; with Piye's
+      reign dated 744-714 BC it would fall about 725 BC. After it his authority reached
+      from Thebes to Herakleopolis, where the local king ruled as his vassal; this shape,
+      the Nile valley south of Memphis, was Kushite at the latest from then.
+    sources:
+      - "Wikipedia, Third Intermediate Period of Egypt (Kashta and Amenirdis at Thebes; Piye's Year 20 campaign, around 732 BC)"
+      - "Wikipedia, Piye (ruled Egypt 744-714 BC; ruler of Nubia and Upper Egypt; authority from Thebes to Herakleopolis after the campaign)"
+  - polity: Twenty-second Dynasty of Egypt
+    first_year: "c. 712 BC"
+    name: Kingdom of Kush
+    reason: >-
+      Piye's campaign left the Delta kings, Tefnakht of Sais above all, in practice free
+      of Kushite control. Kush took the Delta when Bakenranef of Sais (c. 718-713 BC) was
+      defeated and, by tradition, burnt alive. Older chronology credits Shabaka with the
+      conquest, newer work (after Sargon II's Tang-i Var inscription, c. 707/706 BC)
+      credits Shebitku, around 712 BC; either way Kush held all Egypt from about then.
+    sources:
+      - "Wikipedia, Twenty-fifth Dynasty of Egypt (Shabaka and Shebitku chronology dispute; Shebitku conquered the entire Nile Valley around 712 BC)"
+      - "Wikipedia, Bakenranef (ruled Lower Egypt from Sais c. 718-713 BC)"
+      - "Wikipedia, Piye (the Delta kings left free after the campaign; Shebitku defeated Bakenranef at Sais)"
+      - "Wikipedia, Shebitku; Shabaka (Tang-i Var: Shebitku king of Egypt by 707/706 BC)"
+  - polity: Gutian Dynasty
+    first_year: "c. 2112 BC"
+    name: Third Dynasty of Ur
+    reason: >-
+      Cliopatria's only shape of the Gutians covers Sumer, Akkad and Susa in 2101-2001 BC:
+      the years and lands of the Third Dynasty of Ur (2112/0-2004/3 BC in the middle
+      chronology; the absolute dates are uncertain). Utu-hengal of Uruk ended Gutian rule
+      by defeating Tirigan (c. 2119 BC); Ur-Namma founded the Ur III state, which fell to
+      an Elamite army about 2004 BC.
+    sources:
+      - "Wikipedia, Third Dynasty of Ur (2112/0-2004/3 BC, middle chronology)"
+      - "Wikipedia, Gutian rule in Mesopotamia (ended by Utu-hengal, c. 2119-2112 BC)"
+  # Cliopatria names Alexander's empire "Ptolemaic Kingdom" in 332-325 BC, from Egypt to
+  # the Indus. Renamed in three steps through a name used for nothing else, so that the
+  # real Ptolemaic Kingdom from 308 BC keeps its name.
+  - polity: Ptolemaic Kingdom
+    first_year: "332 BC"
+    name: Ptolemaic Kingdom (rename step)
+    reason: >-
+      Step 1 of 3 (see the comment above).
+    sources:
+      - "Wikipedia, Ptolemaic Kingdom (Ptolemy satrap from 323 BC, king from 305 BC)"
+  - polity: Ptolemaic Kingdom (rename step)
+    first_year: "323 BC"
+    name: Ptolemaic Kingdom
+    reason: >-
+      Step 2 of 3: the shapes from 308 BC on are the Ptolemies' own.
+    sources:
+      - "Wikipedia, Ptolemaic Kingdom"
+  - polity: Ptolemaic Kingdom (rename step)
+    first_year: "332 BC"
+    name: Macedonian Empire
+    reason: >-
+      Step 3 of 3: the shapes of 332-325 BC are Alexander's conquests, from Egypt and Asia
+      Minor to the Indus. Ptolemy became satrap of Egypt only after Alexander's death in
+      323 BC and took the title of king in 305 BC.
+    sources:
+      - "Wikipedia, Ptolemaic Kingdom (satrap 323, king 305 BC)"
+      - "Wikipedia, Ptolemy I Soter"
+  - polity: Kingdom of Armenia
+    first_year: "AD 638"
+    name: Principality of Armenia
+    reason: >-
+      There was no kingdom of Armenia in AD 638-646: the Sasanians abolished it in 428.
+      Byzantine Armenia was led by a native "prince of Armenia" (ishkhan), David Saharuni
+      and, from 638 or 640, Theodore Rshtuni, between Byzantium and the Arabs.
+    sources:
+      - "Wikipedia, Theodore Rshtuni (leading prince of Byzantine Armenia under the title Prince of Armenia from 638 or 640)"
+  - polity: Roman Kingdom
+    first_year: "509 BC"
+    name: Roman Republic
+    reason: >-
+      Cliopatria draws the Roman Kingdom over Rome until 482 BC and the Republic beside it
+      from 501. By the Roman tradition the last king, Tarquinius Superbus, was expelled and
+      the first consuls elected in 509 BC.
+    sources:
+      - "Livy 1.57-60; 2.1"
+      - "Wikipedia, Roman Kingdom (753-509 BC); Roman Republic (from 509 BC)"
+  # Cliopatria's first Mamluk shape, 1241-1249, is Syria from Gaza to the Euphrates: the
+  # Ayyubid princes' lands, years before the Mamluks took power in Egypt. Renamed in three
+  # steps through a name used for nothing else, so the Mamluk shapes from 1250 keep theirs.
+  - polity: Mamluk Sultanate
+    first_year: "AD 1241"
+    name: Mamluk Sultanate (rename step)
+    reason: >-
+      Step 1 of 3 (see the comment above).
+    sources:
+      - "Wikipedia, Mamluk Sultanate (1250-1517)"
+  - polity: Mamluk Sultanate (rename step)
+    first_year: "AD 1250"
+    name: Mamluk Sultanate
+    reason: >-
+      Step 2 of 3: the Mamluks took power in Egypt in 1250, when the sultan Turanshah was
+      murdered; the shapes from 1250 keep their name.
+    sources:
+      - "S. Runciman, A History of the Crusades, vol. 3 (1954), pp. 272-3"
+  - polity: Mamluk Sultanate (rename step)
+    first_year: "AD 1241"
+    name: Ayyubid Sultanate
+    reason: >-
+      Step 3 of 3: in 1241-1249 Damascus, Aleppo, Hama, Homs and Kerak were ruled by
+      Ayyubid princes, under or against as-Salih Ayyub of Egypt, who took Damascus in
+      October 1245; the Mamluk Sultanate began only in 1250.
+    sources:
+      - "R. S. Humphreys, From Saladin to the Mongols (1977), ch. 8"
+      - "S. Runciman, A History of the Crusades, vol. 3 (1954) (the siege of Damascus, April-October 1245)"
+
+# Years a polity is drawn but did not exist (build-content.ts): cut out of the map.
+absent:
+  - polity: Kingdom of Commagene
+    first_year: "AD 17"
+    last_year: "AD 37"
+    reason: >-
+      When Antiochus III died in AD 17, Rome took Commagene over: in AD 18 Germanicus put it
+      under a Roman governor of praetorian rank, Quintus Servaeus, and modern accounts treat
+      it as joined to the province of Syria. Caligula gave the kingdom back to Antiochus IV
+      in AD 38 (Dio tells it with the events of AD 37). Cliopatria draws it until AD 22.
+    sources:
+      - "Tacitus, Annals 2.42 (death of Antiochus, AD 17); 2.56 (Servaeus, AD 18)"
+      - "Cassius Dio 59.8.2"
+      - "Wikipedia, Commagene; Antiochus IV of Commagene (client king AD 38-72)"
+  - polity: Kingdom of Armenia
+    first_year: "AD 429"
+    last_year: "AD 489"
+    reason: >-
+      Cliopatria draws the Kingdom of Armenia until AD 489. In 428 Bahram V deposed
+      Artaxias IV at the nobles' request, abolished the kingdom and appointed a marzban.
+    sources:
+      - "Wikipedia, Sasanian Armenia (kingdom abolished 428; Marzpanate period)"
+      - "Wikipedia, Arsacid dynasty of Armenia (12-428)"
+# Years the data leaves a polity off the map although it existed (build-content.ts): its
+# shape from just before is drawn on through them.
+bridges:
+  - polity: Nabataeans
+    first_year: "26 BC"
+    last_year: "21 BC"
+    reason: >-
+      Cliopatria leaves the Nabataeans off the map in these years, but Obodas III reigned
+      from 30 to 9 BC, and a thousand Nabataeans under his minister Syllaeus marched with
+      Aelius Gallus into Arabia (c. 26-24 BC; usually dated 25 BC).
+    sources:
+      - "Strabo, Geography 16.4.23-24"
+      - "Cassius Dio 53.29"
+      - "Wikipedia, List of Nabataean kings (Obodas III, 30-9 BC); Aelius Gallus"
+  - polity: Kingdom of Commagene
+    first_year: "AD 38"
+    last_year: "AD 42"
+    reason: >-
+      Caligula restored the kingdom to Antiochus IV in AD 38; he deposed him again at an
+      unknown date, and Claudius restored him in AD 41. Cliopatria draws it again only from
+      AD 43.
+    sources:
+      - "Wikipedia, Antiochus IV of Commagene (client king AD 38-72)"
+  - polity: Elam
+    first_year: "2701 BC"
+    last_year: "2302 BC"
+    reason: >-
+      Cliopatria leaves Elam off the map between its Proto-Elamite shape around Susa (to
+      2701 BC) and 2201 BC. The Old Elamite period begins about 2700 BC; the Awan dynasty
+      ruled until the kings of Akkad defeated it.
+    sources:
+      - "Wikipedia, Elam (Proto-Elamite c. 3200-2700 BC; Old Elamite from c. 2700 BC)"
+      - "Wikipedia, Awan dynasty"
+  - polity: Kingdom of Urartu
+    first_year: "701 BC"
+    last_year: "617 BC"
+    reason: >-
+      Cliopatria leaves Urartu off the map in 701-617 BC and draws Assyria over it. The
+      kingdom stood throughout: Rusa II (about 680-639 BC) built Teishebaini (Karmir Blur),
+      and Sarduri III, who called Ashurbanipal his "father", and Rusa III followed him.
+    sources:
+      - "Wikipedia, Urartu (Sarduri III, Rusa III; the Medes took Van in 590 BC)"
+      - "Wikipedia, Rusa II (c. 680-639 BC)"
+  - polity: Babylonia
+    first_year: "801 BC"
+    last_year: "730 BC"
+    reason: >-
+      Cliopatria gives Babylonia to Assyria from 801 BC. Babylon had its own kings, among
+      them Nabonassar (747-734 BC) and the usurper Nabu-mukin-zeri (731-729 BC), until
+      Tiglath-pileser III took the throne in 729 BC.
+    sources:
+      - "Wikipedia, Nabonassar; Nabu-mukin-zeri"
+      - "Wikipedia, Tiglath-Pileser III (king of Babylon from 729 BC)"
+  - polity: Kingdom of Armenia
+    first_year: "AD 118"
+    last_year: "AD 153"
+    reason: >-
+      Cliopatria leaves Armenia off the map in AD 118-153 (Roman, then Parthian). Hadrian
+      recognised Vologases I as king of all Greater Armenia, a Roman client; after his death
+      Antoninus Pius gave the throne to Sohaemus (144).
+    sources:
+      - "Wikipedia, Vologases I of Armenia (117-c. 140/144)"
+      - "Wikipedia, Sohaemus of Armenia"
+  - polity: Kingdom of Armenia
+    first_year: "AD 371"
+    last_year: "AD 386"
+    reason: >-
+      Cliopatria leaves Armenia off the map in AD 371-386 and draws the Sasanians over it.
+      Pap (370-374/375), Varazdat (374-378) and Arshak III reigned, with Roman support,
+      until the partition of 387.
+    sources:
+      - "Wikipedia, Pap of Armenia; Varazdat"
+  - polity: Kingdom of Bithynia
+    first_year: "84 BC"
+    last_year: "79 BC"
+    reason: >-
+      Cliopatria leaves Bithynia off the map in 88-79 BC. Mithridates VI drove out
+      Nicomedes IV in 88 BC, but under the Treaty of Dardanus (85) Sulla sent Curio to
+      restore him (84 BC); he reigned until his death in 74 BC.
+    sources:
+      - "Appian, Mithridatic Wars 58; 60 (livius.org)"
+      - "Wikipedia, Nicomedes IV of Bithynia (restored in 84 BC)"
+  - polity: Kingdom of Cappadocia
+    first_year: "84 BC"
+    last_year: "79 BC"
+    reason: >-
+      Cliopatria leaves Cappadocia off the map in 88-79 BC. Ariobarzanes I, driven out by
+      Mithridates in 89/88 BC, was restored under the Treaty of Dardanus (85) and reigned
+      until 63/62 BC, though Mithridates held on to part of the country until Sulla
+      ordered him to give it up.
+    sources:
+      - "Appian, Mithridatic Wars 58; 60; 64; 66 (livius.org)"
+      - "Wikipedia, Ariobarzanes I of Cappadocia (95 to 63/62 BC)"
+  - polity: Galatia
+    first_year: "84 BC"
+    last_year: "79 BC"
+    reason: >-
+      Mithridates VI held Galatia from 88 BC and had its tetrarchs killed in 86, all but
+      three; the three who escaped raised an army and drove his satrap and garrisons out of
+      Galatia. Cliopatria draws Galatia again only from 78 BC; its earlier shape is drawn
+      through 84-79 BC.
+    sources:
+      - "Appian, Mithridatic Wars 46; 58 (livius.org)"
+  - polity: Babylonia
+    first_year: "721 BC"
+    last_year: "710 BC"
+    reason: >-
+      Babylon under Marduk-apla-iddina II (Merodach-baladan), who reigned from Nisan 721 BC
+      until Sargon II drove him out in 710 BC; Cliopatria draws Assyria over it.
+    sources:
+      - "Babylonian Chronicle ABC 1, i 29-43; ii 1-5 (livius.org)"
+      - "Wikipedia, Marduk-apla-iddina II"
+  - polity: Kingdom of Armenia
+    first_year: "AD 161"
+    last_year: "AD 164"
+    reason: >-
+      Cliopatria leaves Armenia off the map in AD 161-164 and draws Parthia over it. It
+      remained a kingdom: Pacorus (Bakur), set up by Vologases IV, reigned in 161-163 and
+      Sohaemus was restored by the Romans in 163 or 164.
+    sources:
+      - "Wikipedia, Pacorus of Armenia; Sohaemus of Armenia"
+
+# Lands an empire took over when a polity ended (build-content.ts): the polity's last shape
+# drawn as the empire's for those years, where the empire's own shape does not reach yet.
+annexed:
+  - polity: Kingdom of Israel
+    by: Neo-Assyrian Empire
+    first_year: "721 BC"
+    last_year: "702 BC"
+    reason: >-
+      After Samaria fell in 722 BC the northern kingdom became Samerina, a province of the
+      Neo-Assyrian Empire; Sargon II, who put down a revolt in which Samaria took part in
+      720 BC, organised it under a governor, deported part of its people and settled others
+      in its towns. Cliopatria's Assyrian shape reaches the land only from 701 BC, so
+      without this the land of Israel was left without a state for twenty years.
+    sources:
+      - "2 Kgs 17:6, 24"
+      - "Wikipedia, Samerina (province established after the conquest of Samaria, c. 722 BC); Sargon II"
+  - polity: Kingdom of Commagene
+    by: Roman Empire
+    first_year: "AD 17"
+    last_year: "AD 37"
+    reason: >-
+      Between the death of Antiochus III (AD 17) and the restoration under Caligula (AD 38),
+      Commagene was under direct Roman rule: Tacitus says it was put under a Roman governor
+      of praetorian rank in AD 18, and modern accounts treat it as part of the province of
+      Syria.
+    sources:
+      - "Tacitus, Annals 2.42; 2.56"
+      - "Wikipedia, Commagene; Antiochus III of Commagene"
+  - polity: Kingdom of Pontus
+    by: Roman Empire
+    first_year: "AD 63"
+    last_year: "AD 67"
+    reason: >-
+      After Polemon II's abdication in AD 62 Pontus was under direct Roman rule; the
+      data's Roman shape reaches it only from AD 68.
+    sources:
+      - "Wikipedia, Polemon II of Pontus; Cappadocia (Roman province) (Pontus added to the province)"
+  - polity: Kingdom of Cappadocia
+    by: Roman Empire
+    first_year: "AD 18"
+    last_year: "AD 22"
+    reason: >-
+      Cappadocia was a Roman province from AD 17; the data's Roman shape reaches it only
+      from AD 23.
+    sources:
+      - "Wikipedia, Cappadocia (Roman province)"
+  - polity: Mauretania
+    by: Roman Empire
+    first_year: "AD 41"
+    last_year: "AD 42"
+    reason: >-
+      Rome annexed Mauretania on Ptolemy's death in AD 40, though it had to put down the
+      revolt of Aedemon and a second rising in AD 42 before Claudius organised the two
+      provinces; the data's Roman shape reaches it only from AD 43.
+    sources:
+      - "Wikipedia, Ptolemy of Mauretania (section Annexation of Mauretania)"
+  - polity: Neo-Babylonian Empire
+    by: Achaemenid Empire
+    first_year: "538 BC"
+    last_year: "532 BC"
+    reason: >-
+      Babylonia was Persian from Cyrus's entry in October 539 BC; Cliopatria's Achaemenid
+      shape reaches it only from 531 BC.
+    sources:
+      - "Nabonidus Chronicle (ABC 7) iii 12-16 (livius.org)"
+      - "Wikipedia, Fall of Babylon"
+  - polity: Achaemenid Empire
+    by: Macedonian Empire
+    first_year: "329 BC"
+    last_year: "328 BC"
+    reason: >-
+      After Gaugamela (331 BC) and Darius's death (330 BC) the Persian lands were
+      Alexander's; Cliopatria's shape of his empire reaches Mesopotamia and Iran only from
+      327 BC.
+    sources:
+      - "Wikipedia, Darius III"
+  - polity: Kingdom of Bithynia
+    by: Roman Republic
+    first_year: "73 BC"
+    last_year: "68 BC"
+    reason: >-
+      Bithynia was Roman from the bequest of Nicomedes IV in 74 BC (overrun by
+      Mithridates VI at the start of the Third Mithridatic War and won back by Rome);
+      Cliopatria's Roman shape reaches it only from 67 BC.
+    sources:
+      - "Wikipedia, Nicomedes IV of Bithynia (the bequest led directly to the Third Mithridatic War)"
+  - polity: Parthian Empire
+    by: Sasanian Empire
+    first_year: "AD 225"
+    last_year: "AD 237"
+    reason: >-
+      After Hormozdgan (224) Ardashir I took the Parthian lands and was crowned at
+      Ctesiphon, probably in 226; Cliopatria's Sasanian shape reaches Mesopotamia and
+      Media only from AD 238.
+    sources:
+      - "Wikipedia, Ardashir I"
+  # Armenia under a marzban: split around AD 439-450, where Cliopatria's own Sasanian
+  # shape already covers it.
+  - polity: Kingdom of Armenia
+    by: Sasanian Empire
+    first_year: "AD 429"
+    last_year: "AD 438"
+    reason: >-
+      From 428 Persian Armenia was a Sasanian province governed by a marzban (the
+      Marzpanate period); Cliopatria draws the kingdom on, and its Sasanian shape takes the
+      land only in 439-450 and from 490.
+    sources:
+      - "Wikipedia, Sasanian Armenia (Marzpanate period from 428)"
+  - polity: Kingdom of Armenia
+    by: Sasanian Empire
+    first_year: "AD 451"
+    last_year: "AD 489"
+    reason: >-
+      As above: a Sasanian province under a marzban from 428; Cliopatria's Sasanian shape
+      takes the land again only from 490.
+    sources:
+      - "Wikipedia, Sasanian Armenia (Marzpanate period from 428)"
+  - polity: Kingdom of Pergamon
+    by: Roman Republic
+    first_year: "132 BC"
+    last_year: "128 BC"
+    reason: >-
+      The kingdom passed to Rome by Attalus III's will in 133 BC; Rome fought Aristonicus
+      for it until 130-129 BC and organised the province of Asia. Cliopatria's Roman shape
+      reaches it only from 127 BC.
+    sources:
+      - "Strabo, Geography 13.4.2"
+      - "Livy, Periochae 58-59"
+      - "Wikipedia, Attalus III"
+  - polity: Kingdom of Pergamon
+    by: Roman Republic
+    first_year: "84 BC"
+    last_year: "79 BC"
+    reason: >-
+      Under the Treaty of Dardanus (85 BC) Mithridates gave up the province of Asia, which
+      Sulla settled and fined in the winter of 85/84 BC; Cliopatria's Roman shape reaches
+      it again only from 78 BC. The lands of the old Attalid kingdom are drawn as Roman in
+      those years.
+    sources:
+      - "Appian, Mithridatic Wars 58; 61-63 (Sulla's settlement of Asia) (livius.org)"
+      - "Wikipedia, Treaty of Dardanos"
+  - polity: Antigonid Macedonia
+    by: Greek City-States
+    first_year: "167 BC"
+    last_year: "166 BC"
+    reason: >-
+      After Pydna (168 BC) Macedonia was divided into four tribute-paying republics, which
+      Cliopatria draws as Greek city-states from 165 BC; the same is drawn from 167 BC.
+    sources:
+      - "Livy 45.18; 45.29-30"
+      - "Wikipedia, Macedonia (Roman province) (four client republics, merides)"
+  - polity: Cyrenaica
+    by: Roman Republic
+    first_year: "95 BC"
+    last_year: "93 BC"
+    reason: >-
+      Rome inherited Cyrenaica by Ptolemy Apion's will in 96 BC; Cliopatria's Roman shape
+      reaches it only from 92 BC.
+    sources:
+      - "Livy, Periochae 70.5"
+      - "Wikipedia, Ptolemy Apion"
+  - polity: Ptolemaic Kingdom
+    by: Roman Empire
+    first_year: "29 BC"
+    last_year: "29 BC"
+    reason: >-
+      Egypt was a Roman province from 30 BC; Cliopatria's Roman shape reaches it only from
+      28 BC.
+    sources:
+      - "Cassius Dio 51.17.1"
+      - "Wikipedia, Egypt (Roman province) (province from 30 BC)"
+  - polity: Thracian Kingdom
+    by: Roman Empire
+    first_year: "AD 47"
+    last_year: "AD 50"
+    reason: >-
+      Thrace was a Roman province from AD 46; Cliopatria's Roman shape reaches it only from
+      AD 51.
+    sources:
+      - "Wikipedia, Thracia"
+  - polity: Ankhwennefer
+    by: Ptolemaic Kingdom
+    first_year: "185 BC"
+    last_year: "172 BC"
+    reason: >-
+      Upper Egypt with Thebes was Ptolemaic again after Ankhwennefer's defeat in 186 BC;
+      Cliopatria's Ptolemaic shape leaves it to Ankhwennefer until 172 BC.
+    sources:
+      - "Wikipedia, Ankhwennefer (pharaoh); Great Theban Revolt"
+  - polity: Rashidun Caliphate
+    by: Umayyad Caliphate
+    first_year: "AD 662"
+    last_year: "AD 665"
+    reason: >-
+      After al-Hasan's abdication in 661 Mu'awiya's rule was acknowledged throughout the
+      caliphate; Cliopatria's Umayyad shape takes in Iraq, Iran and Arabia only from 666.
+    sources:
+      - "Wikipedia, Mu'awiya I (Hasan abdicated and Mu'awiya's suzerainty was acknowledged throughout the Caliphate)"
+  - polity: Tulunids
+    by: Abbasid Caliphate
+    first_year: "AD 906"
+    last_year: "AD 910"
+    reason: >-
+      Egypt and Syria were Abbasid provinces again after 905; Cliopatria's Abbasid shape
+      takes them in only from 911.
+    sources:
+      - "T. Bianquis, Autonomous Egypt from Ibn Tulun to Kafur, in The Cambridge History of Egypt, vol. 1 (1998)"
+      - "Wikipedia, Tulunids"
+  - polity: Abbasid Caliphate
+    by: Mongol Empire
+    first_year: "AD 1259"
+    last_year: "AD 1259"
+    reason: >-
+      Iraq was Hulagu's from 1258; Cliopatria's Mongol shape takes it in only from 1260.
+    sources:
+      - "J. A. Boyle, Dynastic and Political History of the Il-Khans, in The Cambridge History of Iran, vol. 5 (1968)"
+  - polity: Principality of Antioch
+    by: Mamluk Sultanate
+    first_year: "AD 1269"
+    last_year: "AD 1271"
+    reason: >-
+      Antioch was Baybars' from 1268; Cliopatria's Mamluk shape takes it in only from 1272.
+    sources:
+      - "S. Runciman, A History of the Crusades, vol. 3 (1954), pp. 324-7"
+  - polity: County of Tripoli
+    by: Mamluk Sultanate
+    first_year: "AD 1290"
+    last_year: "AD 1293"
+    reason: >-
+      Tripoli was Qalawun's from 1289; Cliopatria's Mamluk shape takes it in only from 1294.
+    sources:
+      - "S. Runciman, A History of the Crusades, vol. 3 (1954), the fall of Tripoli"
+  - polity: Kingdom of Jerusalem
+    by: Mamluk Sultanate
+    first_year: "AD 1292"
+    last_year: "AD 1293"
+    reason: >-
+      The coast from Acre to Atlit was the Mamluks' from 1291; Cliopatria's Mamluk shape
+      takes it in only from 1294.
+    sources:
+      - "S. Runciman, A History of the Crusades, vol. 3 (1954), the fall of Acre"
+
+# Years a polity was a vassal or client (build-content.ts): drawn in the overlord's colour,
+# lighter, with the label as a second line. Checked against the sources in two passes
+# (draft and review, 2026-10-02).
+vassals:
+  - polity: Kingdom of Judah
+    of: Neo-Assyrian Empire
+    first_year: "c. 734 BC"
+    last_year: "705 BC"
+    label:
+      en: "under Assyria"
+      ru: "под Ассирией"
+    reason: >-
+      Threatened by Israel and Aram-Damascus, Ahaz declared himself the
+      servant of Tiglath-pileser III and sent him silver and gold; Assyrian
+      lists put "Jehoahaz (Ahaz) of the land Judah" among the western
+      rulers who paid tribute, a group the RINAP editors date to 734 BC.
+      Judah stayed tributary until Hezekiah joined the rebellion that broke
+      out after Sargon II died in 705 BC.
+    sources:
+      - "2 Kgs 16:7-8"
+      - "2 Kgs 18:7"
+      - "RINAP 1, Tiglath-pileser III 47 (Nimrud tablet K 3751), rev. 10'-12' and editors' note 21 (oracc.museum.upenn.edu/rinap/rinap1/Q003460)"
+      - "Wikipedia, Sennacherib's campaign in the Levant (rebellion after Sargon II's death in 705 BC)"
+
+  - polity: Kingdom of Judah
+    of: Neo-Assyrian Empire
+    first_year: "701 BC"
+    last_year: "c. 630 BC"
+    label:
+      en: "under Assyria"
+      ru: "под Ассирией"
+    reason: >-
+      After Sennacherib's 701 BC campaign Hezekiah submitted, paid a heavy
+      tribute and kept his throne as a reduced vassal; his son Manasseh is
+      named among the western kings who served Esarhaddon (hauling building
+      materials to Nineveh) and Ashurbanipal (bringing gifts and troops for
+      his campaign against Egypt).
+      Assyrian control of the west faded as the empire declined in the 630s,
+      so the end date is approximate.
+    sources:
+      - "2 Kgs 18:13-16"
+      - "RINAP 3, Sennacherib 22 (Chicago/Taylor prism) ii 73 - iii 49 (oracc.museum.upenn.edu/rinap/rinap3/Q003496)"
+      - "RINAP 4, Esarhaddon 1 (Nineveh prism) v 54 - vi 1: Manasseh, king of Judah, among the kings ordered to supply building materials (oracc.museum.upenn.edu/rinap/rinap4/Q003230)"
+      - "RINAP 5, Ashurbanipal 6, ii 25'-52': Manasseh, king of the land Judah, among the 22 kings called servants who belonged to him (oracc.museum.upenn.edu/rinap/rinap5/Q003705)"
+      - "Wikipedia, History of ancient Israel and Judah (Judah a vassal of Assyria; Assyrian power collapsed in the 630s)"
+
+  - polity: Kingdom of Judah
+    of: Twenty-sixth Dynasty of Egypt
+    first_year: "609 BC"
+    last_year: "605 BC"
+    label:
+      en: "under Egypt"
+      ru: "под Египтом"
+    reason: >-
+      After Josiah fell at Megiddo, Pharaoh Necho II deposed Jehoahaz,
+      made Jehoiakim king and imposed a tribute of silver and gold on Judah.
+      Egyptian overlordship ended when Nebuchadnezzar defeated the Egyptians
+      at Carchemish in 605 BC; Jehoiakim then submitted to Babylon.
+    sources:
+      - "2 Kgs 23:33-35"
+      - "Wikipedia, Jehoiakim (vassal of Egypt 609 BC until Carchemish, 605 BC)"
+      - "Wikipedia, Josiah (king c. 640-609 BC, killed at Megiddo)"
+
+  - polity: Kingdom of Judah
+    of: Babylonia
+    first_year: "604 BC"
+    last_year: "602 BC"
+    label:
+      en: "under Babylon"
+      ru: "под Вавилоном"
+    reason: >-
+      In 604 BC Nebuchadnezzar marched through the west and "all the kings of the
+      Hatti-land came before him" with their tribute; Jehoiakim "became his servant three
+      years" and then rebelled, after Babylon's failed march on Egypt late in 601 BC. The
+      data names Babylon "Babylonia" until 602 BC.
+    sources:
+      - "2 Kgs 24:1"
+      - "Babylonian Chronicle ABC 5 (Jerusalem Chronicle), obv. 15-17 (livius.org)"
+
+  - polity: Kingdom of Judah
+    of: Neo-Babylonian Empire
+    first_year: "597 BC"
+    last_year: "c. 589 BC"
+    label:
+      en: "under Babylon"
+      ru: "под Вавилоном"
+    reason: >-
+      Nebuchadnezzar took Jerusalem on 2 Adar (16 March) 597 BC, deported
+      Jehoiachin and installed Zedekiah as a tribute-paying king of his own
+      choice. Zedekiah rebelled with Egyptian backing, and the Babylonian
+      siege that ended the kingdom began in his ninth year (589 or 588 BC,
+      depending on the chronology).
+    sources:
+      - "2 Kgs 24:10-17"
+      - "2 Kgs 24:20 - 25:1"
+      - "Babylonian Chronicle ABC 5 (Jerusalem Chronicle), rev. 11'-13' (livius.org)"
+      - "Wikipedia, Siege of Jerusalem (597 BC); Siege of Jerusalem (587 BC)"
+
+  - polity: Kingdom of Israel
+    of: Neo-Assyrian Empire
+    first_year: "738 BC"
+    last_year: "c. 735 BC"
+    label:
+      en: "under Assyria"
+      ru: "под Ассирией"
+    reason: >-
+      Menahem of Samaria paid Tiglath-pileser III a thousand talents of
+      silver and appears in the Assyrian tribute lists of 738 BC. The tie
+      lapsed when Pekah took the throne and joined Aram-Damascus against
+      Assyria (the Syro-Ephraimite war, c. 734 BC); the end year is soft.
+    sources:
+      - "2 Kgs 15:19-20"
+      - "RINAP 1, Tiglath-pileser III 14, line 10 (Menahem of Samaria) (oracc.museum.upenn.edu/rinap/rinap1/Q003427); dated 738 BC in note 21 to Tiglath-pileser III 47"
+      - "Wikipedia, Pekah (anti-Assyrian alliance with Rezin)"
+
+  - polity: Kingdom of Israel
+    of: Neo-Assyrian Empire
+    first_year: "732 BC"
+    last_year: "c. 725 BC"
+    label:
+      en: "under Assyria"
+      ru: "под Ассирией"
+    reason: >-
+      After the 733-732 BC campaign Tiglath-pileser III reports that Pekah
+      was killed and that he himself placed Hoshea on the throne, taking
+      tribute. Hoshea stopped paying under Shalmaneser V and sought help
+      from Egypt, which brought on the siege of Samaria (c. 725/724 BC).
+    sources:
+      - "2 Kgs 17:3-4"
+      - "RINAP 1, Tiglath-pileser III 42, lines 17'-18' (oracc.museum.upenn.edu/rinap/rinap1/Q003455)"
+      - "Wikipedia, Hoshea; Shalmaneser V (siege begun 725 or 724 BC)"
+
+  - polity: Philistia
+    of: Neo-Assyrian Empire
+    first_year: "734 BC"
+    last_year: "701 BC"
+    label:
+      en: "under Assyria"
+      ru: "под Ассирией"
+    reason: >-
+      Tiglath-pileser III's 734 BC campaign took Gaza and put the Philistine
+      cities under tribute; Hanunu of Gaza and Mitinti of Ashkelon appear in
+      his tribute lists. Single cities revolted (Gaza 720, Ashdod c. 713,
+      Ashkelon and Ekron 705-701 BC) but each revolt was put down, and in
+      701 BC Sennacherib gave Judah's lost towns to his vassal kings of
+      Ashdod, Ekron and Gaza.
+    sources:
+      - "RINAP 1, Tiglath-pileser III 48, lines 14'-17' (Gaza) (oracc.museum.upenn.edu/rinap/rinap1/Q003461)"
+      - "RINAP 1, Tiglath-pileser III 47, rev. 10'-12' (Mitinti of Ashkelon, Hanunu of Gaza)"
+      - "RINAP 3, Sennacherib 22, iii 27b-37a"
+      - "Wikipedia, Hanunu; Sargon II (Gaza revolt 720 BC, Ashdod revolt 713 BC); Philistines"
+
+  - polity: Nabataeans
+    of: Roman Republic
+    first_year: "62 BC"
+    last_year: "33 BC"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+    reason: >-
+      In 62 BC Pompey's legate Scaurus marched on Petra; Aretas III bought
+      peace for 300 talents, and modern accounts add that he recognized
+      Roman supremacy.
+      The kingdom kept its formal independence but is described as a Roman
+      client kingdom from then on.
+    sources:
+      - "Josephus, Ant. 14.80-81 (Perseus, Whiston translation)"
+      - "Wikipedia, Nabataean Kingdom; Aretas III"
+
+  - polity: Nabataeans
+    of: Roman Empire
+    first_year: "32 BC"
+    last_year: "AD 106"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+    reason: >-
+      The Nabataean kings remained Roman clients under the emperors until
+      Trajan annexed the kingdom as the province of Arabia Petraea in AD 106,
+      after the death of Rabbel II.
+    sources:
+      - "Wikipedia, Nabataean Kingdom (client kingdom; annexation AD 106)"
+
+  - polity: Kingdom of Commagene
+    of: Roman Empire
+    first_year: "AD 38"
+    last_year: "AD 72"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+    reason: >-
+      After twenty years as part of the province of Syria, Commagene was
+      given back to Antiochus IV by Caligula in AD 38, and he ruled it as a
+      Roman client king (briefly deposed by Caligula, restored by Claudius
+      in AD 41). Vespasian deposed him and annexed the kingdom for good in
+      AD 72.
+    sources:
+      - "Wikipedia, Antiochus IV of Commagene"
+      - "Wikipedia, Commagene"
+  - polity: Judea
+    of: Roman Republic
+    first_year: "63 BC"
+    last_year: "41 BC"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+    reason: >-
+      Pompey took Jerusalem in 63 BC, made the country tributary to Rome and put it under
+      the oversight of the governor of Syria; Hyrcanus II was restored as high priest but
+      not as king (Caesar made him ethnarch in 47 BC). Roman control lapsed when the
+      Parthians overran Syria and Judea in 40 BC.
+    sources:
+      - "Josephus, Antiquities 14.4.3-4 (Pompey takes Jerusalem; tribute); Jewish War 1.7.6-7"
+      - "Wikipedia, Hasmonean dynasty (tribute; under the governor of Syria from 63 BC)"
+  - polity: Judea
+    of: Parthian Empire
+    first_year: "40 BC"
+    last_year: "38 BC"
+    label:
+      en: "under Parthia"
+      ru: "под Парфией"
+    reason: >-
+      In 40 BC the Parthians, overrunning Syria, put Antigonus II Mattathias on the throne
+      in Jerusalem as an anti-Roman king. Ventidius drove them out of Syria in 39-38 BC
+      (Pacorus fell at Gindarus in 38); Antigonus held Jerusalem without them until Herod,
+      made king by the Roman Senate in 40 BC, took the city with Roman troops in 37 BC.
+    sources:
+      - "Josephus, Antiquities 14.13 (the Parthians make Antigonus king); 14.15 (Ventidius); 14.16 (Herod takes Jerusalem, consuls of 37 BC)"
+      - "Wikipedia, Antigonus II Mattathias (Parthian support, reign 40-37 BC); Battle of Mount Gindarus"
+  - polity: Judea
+    of: Roman Republic
+    first_year: "37 BC"
+    last_year: "33 BC"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+    reason: >-
+      Herod the Great ruled from 37 BC as a client king of Rome, having been made king of
+      Judea by the Senate in 40 BC. The data draws the Roman Republic to 33 BC and the
+      Empire from 32 BC.
+    sources:
+      - "Josephus, Antiquities 14.14-16"
+      - "Wikipedia, Herodian kingdom (client state of Rome, 37-4 BC)"
+  - polity: Judea
+    of: Roman Empire
+    first_year: "32 BC"
+    last_year: "AD 5"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+    reason: >-
+      Herod remained Rome's client king until his death (usually dated 4 BC); his son
+      Archelaus ruled Judea as ethnarch until Augustus deposed him in AD 6 and made it a
+      Roman province.
+    sources:
+      - "Josephus, Antiquities 17.13; 18.1"
+      - "Wikipedia, Herodian kingdom (client state of Rome, 37-4 BC; then the Herodian tetrarchy)"
+  - polity: Kingdom of Pontus
+    of: Roman Republic
+    first_year: "37 BC"
+    last_year: "33 BC"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+    reason: >-
+      Mark Antony set up client kings in Anatolia on condition that they paid tribute,
+      Darius son of Pharnaces II in Pontus among them (37 BC, according to Appian); Polemon I
+      followed him. The data draws the Roman Republic to 33 BC and the Empire from 32 BC.
+    sources:
+      - "Wikipedia, Darius of Pontus; Polemon I of Pontus"
+  - polity: Kingdom of Pontus
+    of: Roman Empire
+    first_year: "32 BC"
+    last_year: "AD 62"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+    reason: >-
+      Polemon I, his widow Pythodorida and their son Polemon II ruled Pontus as Roman
+      client kings; Cassius Dio says Polemon I was enrolled among the friends and allies
+      of the Roman people in 26 BC. Nero made Polemon II abdicate in AD 62 and Pontus became part of
+      a Roman province.
+    sources:
+      - "Wikipedia, Polemon I of Pontus; Polemon II of Pontus (abdication AD 62)"
+      - "Wikipedia, Kingdom of Pontus (client kingdom until Polemon II's abdication in AD 62)"
+
+  - polity: Kingdom of Cappadocia
+    of: Roman Republic
+    first_year: "63 BC"
+    last_year: "33 BC"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+    reason: >-
+      Cappadocia had been a Roman client kingdom since Sulla installed Ariobarzanes I in
+      95 BC, though Mithridates VI and Tigranes drove him out more than once. Pompey
+      restored him, and after his abdication (63/62 BC) his son and grandson,
+      Ariobarzanes II and III, and then Ariarathes X reigned as Rome's client kings, until
+      in 36 BC Antony put Archelaus on the throne.
+    sources:
+      - "Wikipedia, Cappadocia (Roman province), section Roman client kingdom (95 BC - 14 AD)"
+      - "Wikipedia, Ariobarzanes I of Cappadocia; Archelaus of Cappadocia"
+  - polity: Kingdom of Cappadocia
+    of: Roman Empire
+    first_year: "32 BC"
+    last_year: "AD 17"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+    reason: >-
+      Archelaus ruled Cappadocia as Rome's client king for some fifty years. Tiberius
+      summoned him to Rome in AD 17; he died there and Cappadocia was made a province.
+    sources:
+      - "Wikipedia, Archelaus of Cappadocia; Cappadocia (Roman province) (province established AD 17)"
+
+  - polity: Galatia
+    of: Roman Republic
+    first_year: "c. 63 BC"
+    last_year: "33 BC"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+    reason: >-
+      Pompey, settling Asia after the Mithridatic war (between 65 and 60 BC), rewarded his
+      ally Deiotarus, tetrarch of the Tolistobogii, with the title of king, and the Senate
+      granted him most of Galatia. Deiotarus, surnamed Philoromaios ("friend of the
+      Romans"), kept his kingdom through the civil wars until his death (42-40 BC);
+      Amyntas, made king by Antony in 37/36 BC, ruled Galatia after him as Rome's client.
+    sources:
+      - "Wikipedia, Deiotarus (king from Pompey's settlement; Senate grants most of Galatia; died 42, 41 or 40 BC)"
+      - "Wikipedia, Amyntas of Galatia (king 36-25 BC, client ruler of Antony)"
+  - polity: Galatia
+    of: Roman Empire
+    first_year: "32 BC"
+    last_year: "25 BC"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+    reason: >-
+      Amyntas deserted Antony for Octavian before Actium and kept his kingdom; when he was
+      killed in 25 BC, Galatia became a Roman province.
+    sources:
+      - "Wikipedia, Amyntas of Galatia (king 36-25 BC; on his death Galatia became a province)"
+
+  - polity: Mauretania
+    of: Roman Empire
+    first_year: "25 BC"
+    last_year: "AD 40"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+    reason: >-
+      Augustus gave Mauretania to Juba II in 25 BC; he and his son Ptolemy ruled it as
+      Roman client kings until Caligula had Ptolemy executed in AD 40 and Rome annexed the
+      kingdom.
+    sources:
+      - "Wikipedia, Juba II (client king of Mauretania 25 BC - AD 23)"
+      - "Wikipedia, Ptolemy of Mauretania (client kingdom; executed AD 40)"
+
+  - polity: Kingdom of Armenia
+    of: Roman Republic
+    first_year: "66 BC"
+    last_year: "c. 54 BC"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+    reason: >-
+      Tigranes the Great surrendered to Pompey in 66 BC and kept his kingdom, shorn of its
+      conquests, as a client king of Rome until his death in 55/54 BC. His son Artavasdes
+      II was still Rome's ally when Crassus prepared to invade Parthia, but in 53 BC Orodes
+      II invaded Armenia and bound him to Parthia by a marriage alliance.
+    sources:
+      - "Wikipedia, Tigranes the Great (client king of Rome after 66 BC; died 55/54 BC)"
+      - "Wikipedia, Kingdom of Armenia (antiquity) (Roman client kingdom from 66 BC)"
+      - "Wikipedia, Artavasdes II of Armenia"
+  - polity: Kingdom of Armenia
+    of: Sasanian Empire
+    first_year: "AD 387"
+    last_year: "AD 428"
+    label:
+      en: "under Persia"
+      ru: "под Персией"
+    reason: >-
+      By the partition of Armenia (384, again 387) the Sasanians took the larger, eastern
+      part, where Arsacid kings went on reigning under them; in 428 Bahram V deposed
+      Artaxias IV, abolished the kingdom and appointed a marzban. The data's shape for
+      these years is eastern Armenia.
+    sources:
+      - "Wikipedia, Peace of Acilisene"
+      - "Wikipedia, Sasanian Armenia (kingdom abolished 428)"
+      - "Wikipedia, Kingdom of Armenia (antiquity)"
+
+  - polity: Kingdom of Osroene
+    of: Roman Empire
+    first_year: "AD 123"
+    last_year: "AD 162"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+    reason: >-
+      After Lusius Quietus sacked Edessa in 116, Hadrian restored the Abgarid dynasty in 123
+      with Ma'nu VII and Osroene was established as a Roman client kingdom. In 163 the
+      Parthians installed Wa'el in Edessa.
+    sources:
+      - "Wikipedia, Osroene (client kingdom from 123; list of kings: Wa'el 163-165, installed by the Parthians)"
+  - polity: Kingdom of Osroene
+    of: Roman Empire
+    first_year: "AD 165"
+    last_year: "AD 214"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+    reason: >-
+      Ma'nu VIII was restored in 165, during Lucius Verus's Parthian war, and Abgar VIII
+      kept his kingdom under Septimius Severus. Caracalla had Abgar IX deposed and killed,
+      probably in 213, and the kingdom was made part of the Roman province (the same
+      article also gives 214).
+    sources:
+      - "Wikipedia, Osroene (list of kings: Ma'nu VIII second tenure 165-177; deposition probably in 213; province in 214)"
+      - "Wikipedia, Abgar IX"
+
+  - polity: Kingdom of Adiabene
+    of: Parthian Empire
+    first_year: "c. 64 BC"
+    last_year: "AD 115"
+    label:
+      en: "under Parthia"
+      ru: "под Парфией"
+    reason: >-
+      Adiabene was conquered by Mithridates I of Parthia between 145 and 141 BC. In 69 BC
+      its king fought for Tigranes of Armenia, who was then nominally its overlord, but
+      Tigranes lost his conquests on his surrender to Pompey in 66 BC. Adiabene was one of
+      the client kingdoms of the Parthian Empire under Monobaz I and his successors; the
+      last king of independent Adiabene, Meharaspes, fought Trajan, who invaded Adiabene
+      in 115 and made it part of the province of Assyria.
+    sources:
+      - "Wikipedia, Adiabene (Parthian conquest 145-141 BC; ally of Tigranes in 69 BC; Parthian client kingdom; Trajan's invasion, 115)"
+      - "Wikipedia, Tigranes the Great (kept his kingdom shorn of his conquests, 66 BC)"
+  - polity: Kingdom of Adiabene
+    of: Sasanian Empire
+    first_year: "c. AD 240"
+    last_year: "c. AD 379"
+    label:
+      en: "under Persia"
+      ru: "под Персией"
+    reason: >-
+      By the reign of Shapur I (240-270) the Sasanians had established their rule over
+      Adiabene. The last recorded king of Adiabene, Ardashir, brother of Shapur II, ruled
+      it as a vassal king until he himself became King of Kings (Ardashir II) in 379; after
+      him Adiabene seems to have become a province under a governor.
+    sources:
+      - "Wikipedia, Adiabene (Sasanian rule by Shapur I's time; Ardashir II the last recorded king, province after c. 379)"
+      - "Wikipedia, Ardashir II (vassal king of Adiabene under Shapur II; King of Kings 379-383)"
+
+  - polity: Lazica
+    of: Eastern Roman Empire
+    first_year: "c. AD 522"
+    last_year: "AD 540"
+    label:
+      en: "under Byzantium"
+      ru: "под Византией"
+    reason: >-
+      On his accession in 521 or 522 Tzath I rejected Persian overlordship, was baptized in
+      Constantinople and received his royal insignia from Justin I; the Romans defended
+      Lazica against Persia in 527-528. In 541 Gubazes II called in Khosrow I, who took
+      Petra.
+    sources:
+      - "Wikipedia, Tzath I"
+      - "Wikipedia, Lazica (Persian occupation of Petra, 541)"
+
+  - polity: Ghassanids
+    of: Eastern Roman Empire
+    first_year: "c. AD 528"
+    last_year: "c. AD 582"
+    label:
+      en: "under Byzantium"
+      ru: "под Византией"
+    reason: >-
+      Al-Harith ibn Jabalah became phylarch probably in 528 and about 529 was raised by
+      Justinian "to the dignity of king", fighting for the Romans in their Persian wars;
+      his son al-Mundhir followed him. After Maurice's accession the phylarch al-Nu'man was
+      arrested and the Romans declared the Ghassanid phylarchate ended (582-585).
+    sources:
+      - "Wikipedia, Al-Harith ibn Jabalah (Procopius on the title of king)"
+      - "Wikipedia, Ghassanids (clients of the Roman Empire; dissolution under Maurice, 582-585)"
+
+  - polity: Lakhmid Kingdom
+    of: Sasanian Empire
+    first_year: "c. AD 400"
+    last_year: "AD 602"
+    label:
+      en: "under Persia"
+      ru: "под Персией"
+    reason: >-
+      The Lakhmids of al-Hira were the Sasanians' Arab client kings. Al-Nu'man I (c. 390-418)
+      built the Khawarnaq for his overlord Yazdegerd I (399-420), whose son Bahram V was
+      raised at al-Hira; Khosrow II deposed the last king, al-Nu'man III, in 602. An
+      earlier Lakhmid king appears among Narseh's vassals in the Paikuli inscription
+      (293), but the allegiance of Imru' al-Qays in the 4th century is disputed, so the
+      start is put about 400.
+    sources:
+      - "Wikipedia, Lakhmids (client state of the Sasanian Empire; dissolved 602)"
+      - "Wikipedia, Al-Nu'man I ibn Imru' al-Qays; Bahram V"
+
+  - polity: Babylonia
+    of: Neo-Assyrian Empire
+    first_year: "745 BC"
+    last_year: "c. 732 BC"
+    label:
+      en: "under Assyria"
+      ru: "под Ассирией"
+    reason: >-
+      Tiglath-pileser III campaigned in Babylonia in his first year (745 BC) and
+      Nabonassar became his vassal; his son Nabu-nadin-zeri succeeded him in 734. The
+      usurper Nabu-mukin-zeri then held Babylon against Assyria (731-729 BC) until
+      Tiglath-pileser drove him out and took the throne himself.
+    sources:
+      - "Wikipedia, Nabonassar (became a vassal of Tiglath-Pileser III; the 745 BC campaign; succeeded by his son)"
+      - "Wikipedia, Nabu-mukin-zeri (king 731-729 BC, driven out by Tiglath-Pileser III)"
+  - polity: Thracian Kingdom
+    of: Roman Empire
+    first_year: "c. 12 BC"
+    last_year: "AD 46"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+    reason: >-
+      Rhoemetalces I, whom Rome had already backed against the Bessi, fled the revolt of
+      Vologaesus, which L. Calpurnius Piso put down; Augustus gave the kingdom back to his
+      family, and he ruled all Thrace as Augustus's ally from 12 BC until AD 12. Augustus
+      then divided the kingdom between his son Cotys and his brother Rhescuporis, Tiberius
+      divided it again, and the kings ruled as Roman clients until Claudius annexed the
+      kingdom in AD 46.
+    sources:
+      - "Cassius Dio 54.20.3; 54.34.5-7 (LacusCurtius)"
+      - "Tacitus, Annals 2.64; 2.67 (LacusCurtius)"
+      - "Wikipedia, Rhoemetalces I (king of all Thrace from 12 BC, ally of Augustus); Sapaean kingdom (Roman client state until AD 46)"
+  - polity: Kingdom of Armenia
+    of: Parthian Empire
+    first_year: "AD 161"
+    last_year: "AD 163"
+    label:
+      en: "under Parthia"
+      ru: "под Парфией"
+    reason: >-
+      Vologases IV began the war in 161 by destroying the Roman legion at Elegeia in
+      Armenia, expelled the Roman client Sohaemus and made Pacorus (Bakur) king; Pacorus
+      cooperated closely with Parthia until the Romans conquered Armenia in 163.
+    sources:
+      - "Cassius Dio 71.2.1 (Elegeia) (LacusCurtius)"
+      - "Wikipedia, Pacorus of Armenia; Sohaemus of Armenia"
+  - polity: Himyarite Kingdom
+    of: Sasanian Empire
+    first_year: "AD 578"
+    last_year: "AD 601"
+    label:
+      en: "under Persia"
+      ru: "под Персией"
+    reason: >-
+      Cliopatria draws a free Himyarite kingdom over Yemen in 577-601. Sayf ibn Dhi Yazan,
+      set up as Persia's vassal after Wahriz's expedition (between 570 and 575), was
+      murdered between 575 and 578; a second Persian invasion retook Yemen by 578, and
+      from then it was ruled for Persia, by Wahriz and his successors as governors (in
+      some accounts with Sayf's son Ma'dikarib as king), until the Muslim conquest.
+      Cliopatria draws it as Persian from 602.
+    sources:
+      - "C. E. Bosworth, Iran and the Arabs before Islam, in The Cambridge History of Iran, vol. 3(1) (1983)"
+      - "Wikipedia, Aksumite-Persian wars (two Persian invasions between 570 and 580; Yemen retaken by 578); Sasanian Yemen (Ma'di Karib installed as king, Wahriz as governor)"

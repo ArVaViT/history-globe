@@ -9,10 +9,20 @@
     />
     <meta name="theme-color" content="#0c1520" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <title>History Globe</title>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <p>
+        History Globe — карта библейской истории. Без JavaScript карта не откроется, но все места и
+        экскурсии есть списком: <a href="ru/places/">места</a>, <a href="ru/tours/">экскурсии</a>;
+        in English: <a href="en/places/">places</a>, <a href="en/tours/">tours</a>.
+        <a href="docs/ru/">О проекте</a> · <a href="docs/">About</a>.
+      </p>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

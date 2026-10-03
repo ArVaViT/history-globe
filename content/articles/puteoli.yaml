@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; the differing ancient accounts of the Greek founding are named as such.
+id: puteoli
+place: a4488e9
+title:
+  en: "Puteoli"
+  ru: "Путеол"
+body:
+  en:
+    - "Puteoli, today's Pozzuoli, lies on the Bay of Naples in Campania, in the volcanic country of hot springs and sulphur west of Naples. It began as the Greek town of Dicaearchia: Strabo calls it the port of Cumae, while Eusebius and Stephanus of Byzantium say settlers from Samos founded it in the later sixth century BC. Strabo derives the Latin name Puteoli from its wells, or from the smell of its waters. In 215 BC the Romans fortified and garrisoned it against Hannibal, and in 194 BC they settled a colony of Roman citizens there."
+    - "Its harbour, built with the local volcanic sand that sets hard even under water, made Puteoli the chief port of Rome in the late Republic and early Empire. Grain ships from Alexandria unloaded here, and Seneca describes the crowds on the mole watching for the first of them. Merchants from the East settled in the town, among them Jews: Josephus tells how the impostor who passed himself off as Herod's son Alexander was received by the Jews of Dicaearchia. Caligula bridged the bay from Baiae to the mole of Puteoli with a double line of ships."
+    - 'Paul, a prisoner bound for Rome, came here from Rhegium in an Alexandrian ship: "we came the next day to Puteoli: Where we found brethren, and were desired to tarry with them seven days". From there he went on by road toward Rome, and brethren came out to meet him as far as Appii Forum and the Three Taverns. A few years later Josephus, after a shipwreck in the Adriatic Sea, also landed at Puteoli; there he met a Jewish actor favoured by Nero, through whom he reached the empress Poppaea.'
+    - "In AD 60 Nero gave the old town the rights and title of a colony. Under the Flavian emperors it built a great amphitheatre, and the ruins of its market hall, long misnamed the Temple of Serapis, still stand. Hadrian, who died at nearby Baiae in 138, was first buried at Puteoli on an estate that had once belonged to Cicero. After Claudius built a harbour at Ostia, later enlarged by Trajan, much of the trade of Rome moved there, and Puteoli slowly lost its place, though it remained a town of some note into late antiquity."
+  ru:
+    - "Путеол, ныне Поццуоли, лежит на берегу Неаполитанского залива в Кампании, в вулканическом краю горячих источников и серы к западу от Неаполя. Он возник как греческий город Дикеархия: Страбон называет его гаванью Кум, а Евсевий и Стефан Византийский пишут, что его основали переселенцы с Самоса во второй половине VI века до н. э. Латинское имя Путеолы Страбон выводит от здешних колодцев или от запаха здешних вод. В 215 г. до н. э. римляне укрепили город и поставили в нём гарнизон против Ганнибала, а в 194 г. до н. э. вывели сюда колонию римских граждан."
+    - "Гавань, построенная из местного вулканического песка, который твердеет даже под водой, сделала Путеол главным портом Рима в конце Республики и в начале Империи. Сюда приходили корабли с зерном из Александрии, и Сенека описывает толпы на моле, высматривающие первые из них. В городе селились купцы с Востока, среди них иудеи: Иосиф Флавий рассказывает, как самозванца, выдававшего себя за Александра, сына Ирода, принимали иудеи Дикеархии. Калигула перекрыл залив от Бай до мола Путеола мостом из двойного ряда кораблей."
+    - "Павел, которого везли узником в Рим, прибыл сюда из Ригии на александрийском корабле: «прибыли на второй день в Путеол, где нашли братьев, и были упрошены пробыть у них семь дней». Отсюда он пошёл дальше по суше в Рим, и братья вышли ему навстречу до Аппиевой площади и Трёх гостиниц. Через несколько лет и Иосиф Флавий после кораблекрушения в Адриатическом море высадился в Путеоле; здесь он познакомился с актёром-иудеем, любимцем Нерона, и через него добился встречи с императрицей Поппеей."
+    - "В 60 г. н. э. Нерон дал старому городу права и звание колонии. При Флавиях здесь построили большой амфитеатр, а руины рынка, долго ошибочно называвшегося храмом Сераписа, стоят до сих пор. Адриан, умерший в соседних Байях в 138 г., был сначала похоронен в Путеоле, в имении, принадлежавшем некогда Цицерону. После того как Клавдий построил гавань в Остии, позднее расширенную Траяном, большая часть римской торговли перешла туда, и Путеол постепенно утратил своё значение, хотя оставался заметным городом и в поздней античности."
+scripture:
+  - Acts.28.11-Acts.28.13
+  - Acts.28.14-Acts.28.15
+sources:
+  - "Strabo, Geography 5.4.6"
+  - "Jerome, Chronicle, 531 BC (the Samians found Dicaearchia, now Puteoli)"
+  - "Stephanus of Byzantium, Ethnica, s.v. Potioloi"
+  - "Livy 24.7.10 (fortified in 215 BC); 34.45.1 (the colony of 194 BC)"
+  - "Seneca, Moral Letters 77.1-2"
+  - "Josephus, Antiquities 17.328; Jewish War 2.104; Life 15-16"
+  - "Suetonius, Caligula 19; Claudius 20"
+  - "Tacitus, Annals 14.27"
+  - "Historia Augusta, Hadrian 25.7"
+  - "J. H. D'Arms, Romans on the Bay of Naples (1970)"
+  - "R. Meiggs, Roman Ostia (2nd ed., 1973)"
+status: checked

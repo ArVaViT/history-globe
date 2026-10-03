@@ -1,0 +1,28 @@
+# Overview article (ADR 0007). Mainstream facts only; the identification with Khirbet Qila is the accepted one; Amarna dates follow the usual fourteenth-century placing; Russian uses the card name Кеила (the Synodal text of 1 Samuel has Кеиль).
+id: keilah
+place: ad9df93
+title:
+  en: "Keilah"
+  ru: "Кеила"
+body:
+  en:
+    - "Keilah is Khirbet Qila, a terraced hill in the eastern Shephelah, about 11 km east of Beth Guvrin, above the Wadi es-Sur, an arm of the Valley of Elah. The Arab village of Qila beside it keeps the old name, and nineteenth-century explorers, among them Victor Guérin and the Survey of Western Palestine, identified the site from it. Adullam lies about 4 km to the north."
+    - "Keilah already appears in the Amarna letters of the fourteenth century BC as Qiltu, a town fought over by Abdi-Heba, ruler of Jerusalem, and Shuwardata, a ruler in the lowland. Shuwardata complains that Abdi-Heba wrote to the men of Qiltu, offering them silver to follow him; Abdi-Heba writes in turn that Milkilu and Tagi brought troops into Qiltu against him."
+    - 'In the Book of Joshua Keilah is one of the towns of the lowland of Judah. When the Philistines were robbing its threshingfloors, David asked the LORD, went down with his men and "saved the inhabitants of Keilah"; Abiathar the priest joined him there with the ephod. Saul said that David was "shut in, by entering into a town that hath gates and bars", and called out the people to besiege it. David asked the LORD whether the men of Keilah would hand him over, was answered "They will deliver thee up", and left with about six hundred men. After the exile Hashabiah and Bavai, each the ruler of half the district of Keilah, repaired the wall of Jerusalem under Nehemiah.'
+    - "Josephus retells David's rescue of Keilah. In the early fourth century AD Eusebius knew Keilah as a village called Kela about eight miles east of Eleutheropolis on the road to Hebron, where the tomb of the prophet Habakkuk was shown."
+  ru:
+    - "Кеила — это Хирбет-Кила, холм с террасами на востоке Шефелы, примерно в 11 км к востоку от Бейт-Гуврина, над Вади-эс-Сур, ответвлением долины дуба (Эла). Соседнее арабское селение Кила сохраняет древнее имя, и по нему исследователи XIX века, среди них Виктор Герен и Съёмка Западной Палестины, отождествили это место. Одоллам лежит примерно в 4 км к северу."
+    - "Кеила упоминается уже в амарнских письмах XIV века до н. э. как Кильту — город, за который спорили Абди-Хеба, правитель Иерусалима, и Шувардата, правитель в низменности. Шувардата жалуется, что Абди-Хеба писал жителям Кильту, обещая им серебро, если они пойдут за ним; Абди-Хеба, в свою очередь, пишет, что Милкилу и Таги ввели войска в Кильту против него."
+    - "В книге Иисуса Навина Кеила — один из городов низменности Иуды. Когда филистимляне расхищали её гумна, Давид вопросил Господа, пошёл со своими людьми и «спас Давид жителей Кеиля»; туда же пришёл к нему священник Авиафар с ефодом. Саул сказал, что Давид «запер себя, войдя в город с воротами и запорами», и созвал народ, чтобы осадить его. Давид вопросил Господа, предадут ли его жители Кеилы, получил ответ «предадут» и ушёл с людьми, которых было около шестисот. После плена Хашавия и Баввай, каждый — начальник полуокруга Кеильского, при Неемии чинили стену Иерусалима."
+    - "Иосиф Флавий пересказывает, как Давид спас Кеилу. В начале IV века н. э. Евсевий знал Кеилу как селение Кела примерно в восьми милях к востоку от Елевферополя по дороге в Хеврон, где показывали гробницу пророка Аввакума."
+scripture:
+  - Josh.15.44
+  - 1Sam.23.1-1Sam.23.6
+  - 1Sam.23.7-1Sam.23.13
+  - Neh.3.17-Neh.3.18
+sources:
+  - "Amarna letters EA 280 (Shuwardata on the men of Qiltu) and EA 287 (Abdi-Heba: Milkilu and Tagi bring troops into Qiltu), tr. W. L. Moran, The Amarna Letters (1992)"
+  - "Josephus, Antiquities 6.13.1 (David at Keilah)"
+  - "Eusebius, Onomasticon, s.v. Keeila (C. U. Wolf's translation, no. 593)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

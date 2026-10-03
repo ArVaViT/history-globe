@@ -1,0 +1,30 @@
+# Overview article (ADR 0007). Mainstream facts only; the site is disputed (Khirbet Qana or Kafr Kanna) and is named as such.
+id: cana
+place: a031bda
+title:
+  en: "Cana of Galilee"
+  ru: "Кана Галилейская"
+body:
+  en:
+    - "Cana of Galilee was a village in the hills of Lower Galilee, and its site is disputed. Two places have the strongest claims. Khirbet Qana is a ruined hill on the northern edge of the Beit Netofa Valley, about 13 km north of Nazareth. Kafr Kanna is a town about 7 km north-east of Nazareth on the road to Tiberias, where the churches of the wedding stand today. A third claimant, Qana in southern Lebanon, follows an early tradition that placed Cana near Sidon."
+    - "Both sites have been excavated. At Khirbet Qana, Douglas Edwards and C. Thomas McCollough uncovered a Jewish village that grew from the Hellenistic period into the Byzantine, with ritual baths and a public building that may have been a synagogue. At Karm er-Ras, on the western edge of Kafr Kanna, Yardenna Alexandre excavated from 1999 to 2011 a Jewish village of the early Roman period that later declined."
+    - "Cana is named only in the Gospel of John. At a marriage there, where the mother of Jesus was and to which Jesus and his disciples were called, he turned water into wine, and John calls it the beginning of his miracles. When he came to Cana again, a nobleman whose son lay sick at Capernaum begged him to come down; Jesus told him that his son lived, and the boy recovered at that hour. Nathanael, one of the disciples, was of Cana."
+    - "In the war of AD 66-67 Josephus, then commanding in Galilee, lodged in a village of Galilee named Cana and from there marched all night to Tiberias. Christian writers disagreed about where Cana was. Eusebius, in the early fourth century, identified it with the Kanah of Joshua in the lot of Asher near Sidon. In 386 Paula and Eustochium wrote from Bethlehem that from Nazareth Cana could be seen not far off, and Jerome tells that Paula passed through Cana on her journey through Galilee. At Khirbet Qana the excavators found a cave complex later adapted for Christian veneration; which site the pilgrims of late antiquity saw remains a matter of debate."
+  ru:
+    - "Кана Галилейская была селением в горах Нижней Галилеи, и её место спорно. Сильнее всего притязания двух мест. Хирбет-Кана — холм с развалинами на северном краю долины Бейт-Нетофа, примерно в 13 км к северу от Назарета. Кафр-Канна — городок примерно в 7 км к северо-востоку от Назарета на дороге в Тивериаду, где сегодня стоят церкви в память брака. Третий претендент, Кана на юге Ливана, следует раннему преданию, помещавшему Кану близ Сидона."
+    - "Оба места раскопаны. На Хирбет-Кане Дуглас Эдвардс и К. Томас Маккалоу открыли иудейское селение, существовавшее с эллинистического периода до византийского, с миквами и общественным зданием, которое, возможно, было синагогой. В Карм-эр-Расе, на западной окраине Кафр-Канны, Ярдена Александр в 1999–2011 гг. раскопала иудейское селение раннеримского времени, позже пришедшее в упадок."
+    - "Кана названа только в Евангелии от Иоанна. На браке там, где была Матерь Иисуса и куда были званы Иисус и Его ученики, Он претворил воду в вино, и Иоанн называет это началом чудес. Когда Он снова пришёл в Кану, царедворец, у которого сын лежал больным в Капернауме, просил Его прийти; Иисус сказал ему, что сын его здоров, и мальчику стало легче в тот самый час. Из Каны был и Нафанаил, один из учеников."
+    - "Во время войны 66–67 гг. н. э. Иосиф Флавий, тогда начальствовавший в Галилее, жил в галилейском селении, называемом Кана, и оттуда всю ночь шёл в Тивериаду. Христианские писатели расходились в том, где была Кана. Евсевий в начале IV века отождествлял её с Каной из книги Иисуса Навина, в уделе колена Асирова близ Сидона. В 386 г. Павла и Евстохия писали из Вифлеема, что от Назарета неподалёку видна Кана, а Иероним рассказывает, что Павла прошла через Кану в своём странствии по Галилее. На Хирбет-Кане раскопщики нашли пещерный комплекс, позже приспособленный для христианского почитания; какое из мест видели паломники поздней античности, остаётся предметом спора."
+scripture:
+  - John.2.1-John.2.11
+  - John.4.46-John.4.54
+  - John.21.2
+sources:
+  - "Josephus, Life 86-90 (his quarters at Cana and night march to Tiberias)"
+  - "Eusebius, Onomasticon, s.v. Kana (Josh 19:28) (C. U. Wolf's translation, no. 602)"
+  - "Paula and Eustochium to Marcella, in Jerome, Letter 46.13 (386); Jerome, Letter 108.13"
+  - "P. Richardson, 'Khirbet Qana (and Other Villages) as a Context for Jesus', in Building Jewish in the Roman East (2004)"
+  - "D. R. Edwards, 'Walking the Roman Landscape in Lower Galilee: Sepphoris, Jotapata, and Khirbet Qana', in A Wandering Galilean: Essays in Honour of Sean Freyne (2009)"
+  - "C. T. McCollough, 'The Synagogue at Khirbet Qana in Its Village Context', in The Synagogue in Ancient Palestine (2020)"
+  - "Y. Alexandre, Cana of Galilee: Excavations at Karm er-Ras 1999-2011 (Israel Antiquities Authority, 2025)"
+status: checked

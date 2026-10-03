@@ -5,7 +5,9 @@ import {
   beforeItsTime,
   groupSites,
   foldName,
+  russianStem,
   searchPlaces,
+  siteCertainty,
   type LoadedData,
   type PlaceProps,
 } from "./data";
@@ -39,6 +41,7 @@ const list = [
   place("a2", "Jericho", "Иерихон", 1, 60),
   place("a3", "Jeruel", undefined, 3, 1),
   place("a4", "Bethlehem", "Вифлеем", 0, 40),
+  place("a6", "Egypt", "Египет", 0, 600),
 ];
 const data = {
   byId: new Map(
@@ -69,14 +72,56 @@ describe("searchPlaces", () => {
     expect(searchPlaces(data, "иер ус").map((r) => r.props.id)).toEqual(["a1"]);
   });
 
+  it("finds a Russian name in another case, after a preposition", () => {
+    expect(searchPlaces(data, "в Иерусалиме").map((r) => r.props.id)).toEqual(["a1"]);
+    expect(searchPlaces(data, "из Иерусалима").map((r) => r.props.id)).toEqual(["a1"]);
+    expect(russianStem("в Вифлееме")).toBe("вифлеем");
+    expect(russianStem("Дамаска")).toBe("дамаск");
+    expect(searchPlaces(data, "в Египте").map((r) => r.props.id)).toEqual(["a6"]);
+    // Too short to strip, or not Russian: the query is used as typed.
+    expect(russianStem("Ура")).toBeNull();
+    expect(russianStem("Jerusalem")).toBeNull();
+  });
+
+  it("finds a place by the Russian form of its modern name", () => {
+    const jericho = {
+      ...place("a7", "Jericho", "Иерихон", 1, 60),
+      where: "Tell es Sultan",
+      where_tpl: "name",
+      where_ru: "Телль-эс-Султан",
+    };
+    const withRu = {
+      ...data,
+      byId: new Map([
+        [
+          jericho.id,
+          { props: jericho, info: { id: "a7", at: [0, 0] as const, kind: "settlement" } },
+        ],
+      ]),
+    } as unknown as typeof data;
+    expect(searchPlaces(withRu, "султан").map((r) => r.props.id)).toEqual(["a7"]);
+  });
+
   it("finds a place by its modern name, after its own names", () => {
-    const capernaum = { ...place("a5", "Capernaum", "Капернаум", 1, 18), where: "Tell Hum" };
+    const capernaum = {
+      ...place("a5", "Capernaum", "Капернаум", 1, 18),
+      where: "Tell Hum",
+      where_tpl: "name",
+    };
     const withToday = {
       byId: new Map([
         ["a5", { props: capernaum, info: { id: "a5", at: [0, 0], kind: "settlement" } }],
       ]),
     } as unknown as LoadedData;
     expect(searchPlaces(withToday, "tell hum").map((r) => r.props.id)).toEqual(["a5"]);
+    // A description is not a name: "south of Hebron" does not answer "Hebron".
+    const described = { ...capernaum, where: "south of Hebron", where_tpl: undefined };
+    const withDescription = {
+      byId: new Map([
+        ["a5", { props: described, info: { id: "a5", at: [0, 0], kind: "settlement" } }],
+      ]),
+    } as unknown as LoadedData;
+    expect(searchPlaces(withDescription, "hebron")).toEqual([]);
   });
 });
 
@@ -226,5 +271,17 @@ describe("markRussianDuplicates", () => {
     ];
     expect([...markRussianDuplicates(lydia)]).toEqual([]);
     expect(features.map((f) => Boolean(f.properties.dup_ru))).toEqual([true, false, false]);
+  });
+});
+
+describe("siteCertainty", () => {
+  it("says agreed only when OpenBible is sure, and nothing without a score", () => {
+    expect(siteCertainty({ disputed: true, confidence: 1000 })).toBe("disputed");
+    expect(siteCertainty({ disputed: false })).toBe("unknown");
+    expect(siteCertainty({ disputed: false, confidence: 800 })).toBe("agreed");
+    expect(siteCertainty({ disputed: false, confidence: 799 })).toBe("likely");
+    expect(siteCertainty({ disputed: false, confidence: 600 })).toBe("likely");
+    expect(siteCertainty({ disputed: false, confidence: 599 })).toBe("tentative");
+    expect(siteCertainty({ disputed: false, confidence: 0 })).toBe("tentative");
   });
 });

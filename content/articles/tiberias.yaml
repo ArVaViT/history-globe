@@ -1,0 +1,29 @@
+# Overview article (ADR 0007). Mainstream facts only; the founding is given as about AD 20, as usual.
+id: tiberias
+place: ac9adc9
+title:
+  en: "Tiberias"
+  ru: "Тивериада"
+body:
+  en:
+    - "Tiberias lies on the western shore of the Sea of Galilee, below steep hills, with hot springs at Hammath just to the south. Herod Antipas, tetrarch of Galilee, founded it about AD 20 and named it after the emperor Tiberius. Josephus says the site was cleared of tombs, so that observant Jews held it unclean; Antipas settled it with Galileans, newcomers, poor people and freed slaves, compelling some to come and giving others houses and land. Tiberias replaced Sepphoris as the leading city of Galilee."
+    - "In the New Testament the city appears only in John: boats from Tiberias came near the place where the multitude had eaten bread, and John calls the lake the sea of Tiberias. The Gospels do not say that Jesus ever entered it."
+    - "Nero gave Tiberias to King Agrippa II. When the revolt broke out in AD 66, a party led by Jesus son of Sapphias burned Antipas' palace, which was adorned with figures of living creatures. Josephus walled the city, but in 67 its elders went out to Vespasian, the gates were opened, and the Romans broke down part of the south wall to march in. After the war Tiberias became a centre of Jewish learning. The Talmud names it as the last seat of the Sanhedrin, and the Jerusalem Talmud took shape largely in its schools by about AD 400."
+    - "At Hammath, excavations by Moshe Dothan in 1961–1963 uncovered a synagogue whose mosaic floor, usually dated to the fourth century, shows the zodiac around the sun god Helios, beside a Torah shrine and menorahs. Epiphanius tells of Joseph of Tiberias, a Jew of the city who became a Christian and received leave from Constantine to build churches in Jewish towns, and who tried to turn an unfinished temple of Hadrian in Tiberias into a church. Excavations led by Yizhar Hirschfeld from 1989 have uncovered parts of the Roman and Byzantine city."
+  ru:
+    - "Тивериада лежит на западном берегу моря Галилейского, под крутыми холмами; сразу к югу от неё — горячие источники Хаммата. Ирод Антипа, четвертовластник Галилеи, основал её около 20 г. н. э. и назвал в честь императора Тиверия. Иосиф Флавий пишет, что для города пришлось убрать гробницы, и потому благочестивые иудеи считали его нечистым; Антипа заселил его галилеянами, пришельцами, бедняками и вольноотпущенниками, одних принуждая переселиться, другим давая дома и землю. Тивериада сменила Сепфорис как главный город Галилеи."
+    - "В Новом Завете город упоминается только у Иоанна: из Тивериады пришли лодки близко к тому месту, где народ ел хлеб, и Иоанн называет озеро морем Тивериадским. Евангелия не говорят, что Иисус когда-либо входил в него."
+    - "Нерон отдал Тивериаду царю Агриппе II. Когда в 66 г. н. э. вспыхнуло восстание, сторонники Иисуса, сына Сапфии, сожгли дворец Антипы, украшенный изображениями живых существ. Иосиф Флавий обнёс город стеной, но в 67 г. его старейшины вышли к Веспасиану, ворота открыли, и римляне разрушили часть южной стены, чтобы войти. После войны Тивериада стала средоточием иудейской учёности. Талмуд называет её последним местопребыванием синедриона, а Иерусалимский Талмуд сложился в основном в её школах к 400 г. н. э."
+    - "В Хаммате раскопки Моше Дотана в 1961–1963 гг. открыли синагогу, мозаичный пол которой, обычно датируемый IV веком, изображает зодиак вокруг бога солнца Гелиоса, рядом с ковчегом Торы и семисвечниками. Епифаний рассказывает об Иосифе Тивериадском, иудее этого города, который стал христианином, получил от Константина позволение строить церкви в иудейских городах и пытался обратить в церковь недостроенный храм Адриана в Тивериаде. Раскопки под руководством Ицхара Хиршфельда с 1989 г. открыли части римского и византийского города."
+scripture:
+  - John.6.1
+  - John.6.23
+  - John.21.1
+sources:
+  - "Josephus, Antiquities 18.36-38 (the founding); Life 37-38 (Tiberias and Sepphoris); Life 64-67 (the palace burned); Jewish War 2.573 (the walls); Antiquities 20.159 and Jewish War 2.252 (given to Agrippa II); Jewish War 3.445-461 (the surrender to Vespasian)"
+  - "Babylonian Talmud, Rosh Hashanah 31a-b (the wanderings of the Sanhedrin)"
+  - "Epiphanius, Panarion 30.4-12 (Joseph of Tiberias)"
+  - "M. Dothan, Hammath Tiberias: Early Synagogues and the Hellenistic and Roman Remains (1983)"
+  - "Y. Hirschfeld, Excavations at Tiberias, 1989-1994 (IAA Reports 22, 2004)"
+  - "G. Stemberger, Introduction to the Talmud and Midrash (2nd ed., 1996) (the Jerusalem Talmud)"
+status: checked

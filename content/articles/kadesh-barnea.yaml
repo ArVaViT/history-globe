@@ -1,0 +1,41 @@
+# Overview article (ADR 0007). Mainstream facts only; Kadesh is placed at Tell el-Qudeirat, as usual, and the identification is named as not certain; no date is given for the wilderness years (the fifteenth and the thirteenth century BC are both held), and the gap between them and the Iron Age remains is named neutrally.
+id: kadesh-barnea
+place: ac2cef0 # Kadesh-barnea record at Tell el-Qudeirat (lon/lat checked); 24 verses
+title:
+  en: "Kadesh-barnea"
+  ru: "Кадес"
+body:
+  en:
+    - "Kadesh, also called Kadesh-barnea, was an oasis on the southern edge of Canaan, where the Negev meets the Sinai desert. Most scholars identify it with Ain el-Qudeirat, the richest spring of northern Sinai, and the mound beside it, Tell el-Qudeirat, in today's Egypt, about 75 km south-southwest of Beersheba. The identification is not certain: nineteenth-century explorers had pointed to another spring, Ain Qedeis, which keeps the old name; Qudeirat won favour in the twentieth century, after Leonard Woolley and T. E. Lawrence surveyed the area in 1914."
+    - "Genesis calls it En-mishpat, the spring of judgment, where the kings who came with Chedorlaomer smote the Amalekites, and says that Abraham dwelt between Kadesh and Shur. In Numbers and Deuteronomy it is Israel's chief station in the wilderness. From Kadesh Moses sent the spies to search the land, Caleb among them; here Miriam died and was buried; here the people strove for water, and the water was called Meribah; and from here Moses sent messengers to the king of Edom before moving on to Mount Hor. Deuteronomy counts thirty-eight years from Kadesh-barnea to the brook Zered. Numbers and Joshua make Kadesh-barnea a point on the southern border of the land and of Judah."
+    - "Moshe Dothan dug at the tell in 1956 and Rudolph Cohen in 1976–1982. They found Iron Age remains: in Cohen's reading an oval fortress of the tenth century BC and rectangular forts of the eighth to early sixth, with Hebrew ostraca; others see first an open settlement and then a single fort built in the later eighth century and destroyed about 600 BC. No remains older than about the twelfth century BC have been found at the tell, and nothing from the fifteenth or the thirteenth century BC, the dates usually given for the wilderness years. Some take this as a problem for the identification or for the narrative; others answer that a camp in the desert would leave no trace, or that Kadesh meant the whole group of springs."
+    - "After the fort fell, people lived at the site in the Persian period, probably until the fourth century BC. Ancient tradition looked for Kadesh elsewhere. Josephus says that Miriam was buried on a mountain called Sin before Israel came near Petra, and in the fourth century AD Eusebius placed Kadesh-barnea in the desert that reaches to Petra, where the tomb of Miriam was still shown."
+  ru:
+    - "Кадес, или Кадес-Варни, был оазисом на южном краю Ханаана, там, где Негев переходит в Синайскую пустыню. Большинство учёных отождествляют его с Айн-эль-Кудейрат, самым обильным источником северного Синая, и холмом рядом с ним — Телль-эль-Кудейрат, на территории нынешнего Египта, примерно в 75 км к юго-юго-западу от Вирсавии. Отождествление не бесспорно: исследователи XIX века указывали на другой источник, Айн-Кдейс, сохранивший древнее имя; предпочтение Кудейрату стали отдавать в XX веке, после того как в 1914 г. эти места обследовали Леонард Вулли и Т. Э. Лоуренс."
+    - "Книга Бытия называет его источником Мишпат, где цари, пришедшие с Кедорлаомером, поразили Амаликитян, и говорит, что Авраам жил между Кадесом и Суром. В книгах Чисел и Второзакония это главная стоянка Израиля в пустыне. Из Кадеса Моисей посылал соглядатаев осмотреть землю, и среди них Халева; здесь умерла и была погребена Мариам; здесь народ вошёл в распрю из-за воды, и вода названа водой Меривы; отсюда Моисей отправил послов к царю Едомскому, прежде чем двинуться к горе Ор. Второзаконие насчитывает тридцать восемь лет от Кадес-Варни до долины Заред. Книги Чисел и Иисуса Навина делают Кадес-Варни точкой южной границы земли и удела Иудина."
+    - "Моше Дотан копал на холме в 1956 г., Рудольф Коэн — в 1976–1982 гг. Они нашли остатки железного века: по толкованию Коэна, овальную крепость X века до н. э. и прямоугольные крепости VIII — начала VI века, а также древнееврейские остраконы; другие видят сначала открытое поселение, а затем одну крепость, построенную во второй половине VIII века и разрушенную около 600 г. до н. э. Остатков древнее примерно XII века до н. э. на холме не найдено, в том числе ничего от XV или XIII века до н. э., к которым обычно относят странствие в пустыне. Одни видят в этом трудность для отождествления или для повествования, другие отвечают, что стан в пустыне не оставил бы следов или что Кадесом называлась вся группа источников."
+    - "После падения крепости здесь жили в персидское время, вероятно, до IV века до н. э. Древнее предание искало Кадес в другом месте. Иосиф Флавий пишет, что Мариам погребли на горе, называемой Син, прежде чем Израиль подошёл к Петре, а Евсевий в IV веке н. э. помещал Кадес-Варни в пустыне, простирающейся до Петры, где ещё показывали гробницу Мариам."
+scripture:
+  - Gen.14.5-Gen.14.7
+  - Gen.20.1
+  - Num.13.26
+  - Num.32.8
+  - Josh.14.6-Josh.14.7
+  - Num.20.1
+  - Num.20.13
+  - Num.27.14
+  - Num.20.14-Num.20.16
+  - Num.20.22
+  - Deut.1.46
+  - Deut.2.14
+  - Num.34.4
+  - Josh.15.3
+sources:
+  - "Josephus, Antiquities 4.78 (Miriam buried on the mountain Sin); 4.82 (Petra)"
+  - "Eusebius, Onomasticon, s.v. Kades and Kadês Barnê (C. U. Wolf's translation, nos. 579, 580)"
+  - "C. L. Woolley and T. E. Lawrence, The Wilderness of Zin (Palestine Exploration Fund Annual 3, 1914-1915)"
+  - "M. Dothan, 'The Fortress at Kadesh-Barnea', Israel Exploration Journal 15 (1965) 134-150"
+  - "A. Lemaire and P. Vernus, 'Les ostraca paléo-hébreux de Qadesh-Barnéa', Orientalia 49 (1980) 341-345"
+  - "R. Cohen and H. Bernick-Greenberg, Excavations at Kadesh Barnea (Tell el-Qudeirat) 1976-1982 (IAA Reports 34, 2007)"
+  - "I. Finkelstein, 'Kadesh Barnea: A Reevaluation of Its Archaeology and History', Tel Aviv 37 (2010) 111-125"
+status: checked

@@ -1,0 +1,24 @@
+id: when-was-jesus-born
+question:
+  en: "When was Jesus born, and who ruled then?"
+  ru: "Когда родился Иисус и кто тогда правил?"
+answer:
+  en:
+    - "Jesus was born a few years before the start of the Christian era: most scholars place the birth between about 6 and 4 BC, in the last years of Herod the Great, king of Judea under the emperor Augustus; a minority, dating Herod's death to 1 BC, place it in 3–2 BC; the map uses 5 BC as a conventional point."
+    - 'Matthew says: "Now when Jesus was born in Bethlehem of Judaea in the days of Herod the king, behold, there came wise men from the east to Jerusalem", and Luke also opens "in the days of Herod, the king of Judaea". Herod had taken Jerusalem in 37 BC and died after a lunar eclipse and before Passover, as Josephus says; this is usually dated to 4 BC, by some to 1 BC. The birth therefore falls before Herod''s death. Luke adds that John the Baptist began to preach in the fifteenth year of Tiberius, AD 28/29, and that Jesus was then about thirty years old, which fits roughly. The Christian era itself was fixed centuries later and set the birth a few years too late.'
+    - "Rome's emperor was Augustus (27 BC–AD 14), and Judea was a client kingdom of Rome. After Herod's death his sons divided the land: Archelaus took Judea, and Matthew says that Joseph, afraid of Archelaus, settled in Galilee, which Herod Antipas ruled. Luke's census under Quirinius is a known difficulty: Josephus dates Quirinius's census to AD 6, when Judea became a Roman province, and how this fits the reign of Herod is debated, so the map does not tie the birth to it."
+  ru:
+    - "Иисус родился за несколько лет до начала нашей эры: большинство учёных относят рождение примерно к 6–4 гг. до н. э., к последним годам Ирода Великого, царя Иудеи при императоре Августе; меньшинство, датируя смерть Ирода 1 г. до н. э., — к 3–2 гг. до н. э.; карта показывает условный 5 г. до н. э."
+    - "Матфей пишет: «Когда же Иисус родился в Вифлееме Иудейском во дни царя Ирода, пришли в Иерусалим волхвы с востока», и Лука тоже начинает «во дни Ирода, царя Иудейского». Ирод взял Иерусалим в 37 г. до н. э. и умер, по Иосифу Флавию, после лунного затмения и перед Пасхой; обычно это 4 г. до н. э., по мнению некоторых — 1 г. до н. э. Значит, рождение было раньше смерти Ирода. Лука добавляет, что Иоанн Креститель начал проповедь в пятнадцатый год Тиверия, 28/29 г. н. э., и что Иисусу было тогда лет тридцать, — это приблизительно согласуется с этими датами. Сама христианская эра была установлена столетия спустя и сдвинула рождение на несколько лет позже."
+    - "Императором в Риме был Август (27 г. до н. э. — 14 г. н. э.), а Иудея была зависимым от Рима царством. После смерти Ирода землю разделили его сыновья: Иудею получил Архелай, и Матфей говорит, что Иосиф, убоявшись Архелая, поселился в Галилее, которой правил Ирод Антипа. Перепись при Квиринии у Луки — известная трудность: Иосиф Флавий относит перепись Квириния к 6 г. н. э., когда Иудея стала римской провинцией, и как это согласовать с царствованием Ирода, спорно, поэтому карта не привязывает рождение к ней."
+map:
+  place: a112427
+  year: "c. 5 BC"
+  ref: Matt.2.1
+scripture: [Matt.2.1, Luke.1.5, Luke.2.1-Luke.2.7, Matt.2.22, Luke.3.1, Luke.3.23]
+sources:
+  - "Josephus, Antiquities 17.167-191 (Herod's death after the eclipse, before Passover); 17.355 and 18.1-2 (Quirinius and the census, AD 6)"
+  - "History Globe dated events (jesus-born c. 5 BC; herod 37 BC; herod-dies c. 4 BC; judea-province AD 6) and History Globe tour “The childhood of Jesus, after Luke”"
+  - "R. E. Brown, The Birth of the Messiah (2nd ed., 1993), appendix on the census, and the discussion of the date"
+  - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. G. Vermes and F. Millar, vol. 1 (1973), on Herod, his sons and the census of Quirinius"
+status: checked

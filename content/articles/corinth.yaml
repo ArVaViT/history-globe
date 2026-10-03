@@ -1,0 +1,38 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such.
+id: corinth
+place: a6f437a
+title:
+  en: "Corinth"
+  ru: "Коринф"
+body:
+  en:
+    - "Corinth stands at the isthmus joining the Peloponnese to mainland Greece, below the citadel of Acrocorinth, with one harbour on each sea: Lechaeum on the Gulf of Corinth and Cenchreae on the Saronic Gulf. Under the tyrants Cypselus and Periander, in the seventh and early sixth centuries BC, it became a rich trading city; ships were hauled across the isthmus on a paved way, the diolkos, and the temple of Apollo was built in the sixth century BC."
+    - "In the classical age Corinth was Athens' rival and Sparta's ally; in 337 BC Philip II gathered the Greeks there in the League of Corinth. As a leading city of the Achaean League it fought Rome, and in 146 BC Lucius Mummius sacked it, put most of those found there to the sword and sold the women and children. The site lay desolate until Julius Caesar founded a Roman colony there in 44 BC, settled largely with freedmen. Corinth became the seat of the proconsul of Achaia."
+    - "Paul came from Athens and lodged with Aquila and Priscilla, tentmakers lately expelled from Rome. When the synagogue turned against him he taught next door in the house of Justus; Crispus, the ruler of the synagogue, believed, and Paul stayed eighteen months. The Jews brought him before the proconsul Gallio, who refused to judge the case. An inscription at Delphi dates Gallio's year in office to 51–52, which makes this one of the firmest dates in Paul's life. Apollos later worked here. Paul wrote two letters to the church, and Romans was probably written from Corinth: it commends Phoebe of Cenchreae and sends greetings from Erastus, the city treasurer."
+    - "Nero began to cut a canal through the isthmus in AD 67, but the work was abandoned. About AD 96, by the usual dating, the church of Rome wrote to the Corinthians the letter known as 1 Clement. Earthquakes shook the Peloponnese in the later fourth century, and when Alaric's Goths overran Greece in 395–396 they took Corinth without a fight."
+  ru:
+    - "Коринф стоит у перешейка, соединяющего Пелопоннес с материковой Грецией, под крепостью Акрокоринф; у него было по гавани на каждом море: Лехей на Коринфском заливе и Кенхреи на Сароническом. При тиранах Кипселе и Периандре, в VII и начале VI века до н. э., он стал богатым торговым городом; корабли перетаскивали через перешеек по мощёному волоку — диолку, а в VI веке до н. э. был построен храм Аполлона."
+    - "В классическую эпоху Коринф соперничал с Афинами и был союзником Спарты; в 337 г. до н. э. Филипп II собрал здесь греков в Коринфский союз. Как один из главных городов Ахейского союза Коринф воевал с Римом, и в 146 г. до н. э. Луций Муммий разграбил его, большую часть застигнутых в городе предал мечу, а женщин и детей продал в рабство. Место лежало в запустении, пока Юлий Цезарь не основал здесь в 44 г. до н. э. римскую колонию, заселённую в основном вольноотпущенниками. Коринф стал резиденцией проконсула Ахаии."
+    - "Павел пришёл из Афин и поселился у Акилы и Прискиллы, делателей палаток, недавно изгнанных из Рима. Когда синагога восстала на него, он стал учить в соседнем доме Иуста; уверовал и Крисп, начальник синагоги, и Павел пробыл здесь полтора года. Иудеи привели его на суд к проконсулу Галлиону, но тот отказался судить. Надпись в Дельфах датирует год проконсульства Галлиона 51–52 гг., и это одна из самых твёрдых дат в жизни Павла. Позже здесь трудился Аполлос. Павел написал церкви два послания, а Послание к Римлянам, вероятно, написано в Коринфе: в нём он представляет Фиву из Кенхрей и передаёт приветствие от Ераста, городского казнохранителя."
+    - "В 67 г. н. э. Нерон начал прорывать канал через перешеек, но работу бросили. Около 96 г. н. э., по обычной датировке, римская церковь написала коринфянам послание, известное как Первое послание Климента. Во второй половине IV века Пелопоннес сотрясали землетрясения, а когда в 395–396 гг. готы Алариха прошли по Греции, они взяли Коринф без боя."
+scripture:
+  - Acts.18.1-Acts.18.11
+  - Acts.18.12-Acts.18.17
+  - Acts.18.18
+  - Acts.18.27-Acts.19.1
+  - 1Cor.1.2
+  - 2Cor.1.1
+  - Rom.16.1
+  - Rom.16.23
+sources:
+  - "Herodotus, Histories 5.92; Thucydides, History 1.13"
+  - "Strabo, Geography 8.6.20-23"
+  - "Pausanias, Description of Greece 2.1.2; 7.16.7-10"
+  - "Diodorus Siculus, Library 16.89 (the League of Corinth)"
+  - "The Gallio inscription at Delphi (SIG³ 801), dating his year of office to 51-52"
+  - "Suetonius, Nero 19"
+  - "1 Clement 1; 44-47"
+  - "Zosimus, New History 4.18; 5.6"
+  - "J. Murphy-O'Connor, St. Paul's Corinth: Texts and Archaeology (3rd ed., 2002)"
+  - "D. Engels, Roman Corinth: An Alternative Model for the Classical City (1990)"
+status: checked

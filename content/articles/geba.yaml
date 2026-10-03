@@ -1,0 +1,37 @@
+# Overview article (ADR 0007). Mainstream facts only; the confusion of Geba with Gibeah in the text is named as such; the fall of Jerusalem follows the usual date of 587 or 586 BC.
+id: geba
+place: a264254
+title:
+  en: "Geba"
+  ru: "Гева"
+body:
+  en:
+    - 'Geba, whose name means "hill", was a town of Benjamin about 9 km north-north-east of Jerusalem. It is identified with the village of Jaba, which keeps the name and stands on the south side of the deep Wadi es-Suweinit, facing Michmash across the gorge. Geba, Gibeah and Gibeon all come from the same Hebrew word for "hill", and the biblical text and its translations sometimes confuse them; some scholars hold that several passages about Gibeah of Saul really mean Geba.'
+    - "Joshua lists Geba among the cities of Benjamin and among the towns given to the priests, the sons of Aaron. At the start of Saul's war with the Philistines, Jonathan struck the Philistine garrison in Geba (some translations, among them the Russian Synodal, read Gibeah here). The Philistines then camped at Michmash on the other side of the gorge, and in the gorge between the two towns lay the crags that Jonathan and his armourbearer climbed. In Isaiah's picture of an army marching on Jerusalem from the north, the enemy crosses the pass and lodges for the night at Geba."
+    - 'When Baasha of Israel fortified Ramah, Asa of Judah carried off its stones and timber and built Geba and Mizpah with them; Josephus calls them two strong cities. Geba came to mark the northern edge of Judah: Josiah defiled the high places of his kingdom "from Geba to Beer-sheba".'
+    - "After the exile the men of Ramah and Geba, 621 in all, returned from Babylon. In Nehemiah's day the Benjamites lived from Geba onwards, and among the singers gathered for the dedication of the walls of Jerusalem were men from the fields of Geba. In the fourth century Eusebius's Onomasticon lists Gaba in the lot of Benjamin."
+  ru:
+    - "Гева, чьё имя означает «холм», — город Вениаминов примерно в 9 км к северо-северо-востоку от Иерусалима. Её отождествляют с деревней Джаба, сохранившей имя: она стоит на южной стороне глубокого вади эс-Сувейнит, напротив Михмаса за ущельем. Гева, Гива и Гаваон происходят от одного еврейского слова «холм», и библейский текст и его переводы порой их смешивают; некоторые учёные считают, что ряд мест о Гиве Сауловой на самом деле говорит о Геве."
+    - "Книга Иисуса Навина называет Геву среди городов Вениаминовых и среди городов, отданных священникам, сынам Аарона. В начале войны Саула с филистимлянами Ионафан разбил филистимский охранный отряд в Геве (в некоторых переводах, в том числе в Синодальном, здесь — в Гиве). Тогда филистимляне стали станом в Михмасе по другую сторону ущелья, и в ущелье между двумя городами лежали скалы, на которые взобрались Ионафан и его оруженосец. В картине Исаии, где войско идёт на Иерусалим с севера, враг проходит теснины и ночует в Геве."
+    - "Когда Вааса, царь Израильский, укрепил Раму, Аса, царь Иудейский, вывез её камни и дерева и выстроил из них Геву и Массифу; Иосиф Флавий называет их двумя сильными городами. Со временем Гева стала обозначать северный край Иудеи: Иосия осквернил высоты своего царства «от Гевы до Вирсавии»."
+    - "После плена уроженцы Рамы и Гевы, шестьсот двадцать один человек, вернулись из Вавилона. Во дни Неемии вениамитяне жили, начиная от Гевы, а среди певцов, собравшихся к освящению стен Иерусалима, были люди с полей Гевы. В IV веке «Ономастикон» Евсевия называет Гаву в уделе Вениамина."
+scripture:
+  - Josh.18.24
+  - Josh.21.17
+  - 1Sam.13.3
+  - 1Sam.13.16
+  - 1Sam.14.4-1Sam.14.5
+  - Isa.10.28-Isa.10.29
+  - 1Kgs.15.22
+  - 2Chr.16.6
+  - 2Kgs.23.8
+  - Ezra.2.26
+  - Neh.7.30
+  - Neh.11.31
+  - Neh.12.27-Neh.12.29
+sources:
+  - "Josephus, Antiquities 8.306"
+  - "Eusebius, Onomasticon, s.v. Gaba (Wolf no. 314)"
+  - "J. M. Miller, 'Geba/Gibeah of Benjamin', Vetus Testamentum 25 (1975) 145-166"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+status: checked

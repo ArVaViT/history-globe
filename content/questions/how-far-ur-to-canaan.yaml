@@ -1,0 +1,24 @@
+id: how-far-ur-to-canaan
+question:
+  en: "How far did Abraham travel from Ur to Canaan?"
+  ru: "Сколько прошёл Авраам от Ура до Ханаана?"
+answer:
+  en:
+    - "From Ur to Haran is about 925 km in a straight line and from Haran to Shechem, Abram's first stop in Canaan, about 620 km: some 1,545 km in all, about 52 days on foot at 30 km a day, and the real route along the Euphrates and down through Syria was longer."
+    - 'Genesis tells the journey in two stages. Terah "went forth with them from Ur of the Chaldees, to go into the land of Canaan; and they came unto Haran, and dwelt there." After Terah''s death Abram, seventy-five years old, took Sarai and Lot "and the souls that they had gotten in Haran; and they went forth to go into the land of Canaan; and into the land of Canaan they came", passing through to the place of Shechem. The map''s Abraham tour shows the stages at the conventional year 1900 BC; the age of the patriarchs is disputed.'
+    - "The figures assume that Ur is Tell el-Muqayyar in southern Iraq, the usual identification; if, as some scholars hold, Ur of the Chaldees lay in northern Mesopotamia near Haran, the first stage was far shorter. Haran is Harran in south-eastern Turkey, on the Balikh, where the routes from Mesopotamia to Syria crossed; Shechem is Tell Balatah by Nablus."
+  ru:
+    - "От Ура до Харрана около 925 км по прямой, а от Харрана до Сихема, первой остановки Аврама в Ханаане, около 620 км: всего примерно 1545 км — около 52 дней пешего пути по 30 км в день, а настоящий путь вдоль Евфрата и вниз через Сирию был длиннее."
+    - "Книга Бытия рассказывает о пути в два этапа. Фарра «вышел с ними из Ура Халдейского, чтобы идти в землю Ханаанскую; но, дойдя до Харрана, они остановились там». После смерти Фарры Аврам, семидесяти пяти лет, взял Сару и Лота «и всех людей, которых они имели в Харране; и вышли, чтобы идти в землю Ханаанскую; и пришли в землю Ханаанскую», дойдя до места Сихема. Тур Авраама на карте показывает эти этапы в условном 1900 г. до н. э.; эпоха патриархов спорна."
+    - "Расчёт исходит из того, что Ур — это Телль-эль-Мукайяр на юге Ирака, как обычно принимают; если же, как считают некоторые учёные, Ур Халдейский лежал на севере Месопотамии близ Харрана, первый этап был много короче. Харран — это Харран на юго-востоке Турции, на реке Балих, где скрещивались пути из Месопотамии в Сирию; Сихем — Телль-Балата у Наблуса."
+map:
+  year: "1900 BC"
+  ref: Gen.12.5
+scripture: [Gen.11.31, Gen.12.4-Gen.12.6, Acts.7.2-Acts.7.4, Heb.11.8]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe tour “Abraham's journey” (the conventional year and the disputed age of the patriarchs)"
+  - "C. L. Woolley and P. R. S. Moorey, Ur 'of the Chaldees' (1982)"
+  - "C. H. Gordon, 'Abraham and the Merchants of Ura', Journal of Near Eastern Studies 17 (1958) (the northern Ur)"
+  - "T. M. Green, The City of the Moon God: Religious Traditions of Harran (1992)"
+status: checked

@@ -1,0 +1,37 @@
+# Overview article (ADR 0007). Mainstream facts only; Bethany near Jerusalem, at al-Eizariya, not Bethany beyond Jordan.
+id: bethany
+place: a4f35bc
+title:
+  en: "Bethany"
+  ru: "Вифания"
+body:
+  en:
+    - "Bethany was a village on the eastern slope of the Mount of Olives; John puts it about fifteen furlongs, some 3 km, from the city. It is the town now called al-Eizariya, a name that comes from Lazarus. Little is known of the village before the Gospels. Some scholars have identified it with Ananiah, a town of Benjamin resettled after the exile, while others place Ananiah at Beit Hanina, north of Jerusalem."
+    - "In the Gospels Bethany is the town of Lazarus and his sisters Mary and Martha. After Lazarus died, Jesus came when he had already lain in the grave four days, and raised him. Six days before the Passover he supped there, and Mary anointed his feet; Matthew and Mark tell of an anointing in the house of Simon the leper in Bethany. During his last week in Jerusalem Jesus lodged in Bethany, and he came to the city from Bethphage and Bethany at the Mount of Olives. After the resurrection, Luke says, he led the disciples out as far as to Bethany, blessed them and was parted from them."
+    - "In the early fourth century Eusebius describes Bethany as a village two miles from Jerusalem, where the place of Lazarus was still shown; Jerome's Latin version of about 390 adds that a church had been built there. In the 380s the pilgrim Egeria calls it the Lazarium and tells how, on the Saturday before Palm Sunday, the people of Jerusalem went out to it, stopping at a church on the road where Mary had met the Lord, until the crowds filled the fields around. Jerome writes that Paula visited the tomb of Lazarus and the house of Mary and Martha."
+    - "Franciscan excavations led by Sylvester Saller in 1949–1953 uncovered remains of the village and of successive churches beside the tomb. The first, a basilica of the late fourth century, was later destroyed and replaced by a larger church, and the cave venerated as the tomb of Lazarus has remained a place of pilgrimage. The Arabic name of the town keeps the memory of the Lazarium."
+  ru:
+    - "Вифания была селением на восточном склоне горы Елеонской; Иоанн говорит, что она была стадиях в пятнадцати, около 3 км, от города. Это городок, который ныне называется Эль-Эйзария, по имени Лазаря. О селении до евангельских времён известно мало. Некоторые учёные отождествляли его с Ананией, городом колена Вениаминова, заселённым вновь после плена, тогда как другие помещают Ананию в Бейт-Ханине к северу от Иерусалима."
+    - "В Евангелиях Вифания — селение Лазаря и его сестёр Марии и Марфы. После смерти Лазаря Иисус пришёл, когда тот уже четыре дня был во гробе, и воскресил его. За шесть дней до Пасхи Ему приготовили там вечерю, и Мария помазала Ему ноги; Матфей и Марк рассказывают о помазании в доме Симона прокаженного в Вифании. В последнюю неделю в Иерусалиме Иисус ночевал в Вифании и шёл в город от Виффагии и Вифании, у горы Елеонской. После воскресения, по словам Луки, Он вывел учеников до Вифании, благословил их и стал отдаляться от них."
+    - "В начале IV века Евсевий описывает Вифанию как селение в двух милях от Иерусалима, где ещё показывали место Лазаря; латинский перевод Иеронима около 390 г. добавляет, что там построена церковь. В 380-х годах паломница Эгерия называет это место Лазарием и рассказывает, как в субботу перед Вербным воскресеньем жители Иерусалима выходили туда, останавливаясь у церкви на дороге, там, где Мария встретила Господа, и как толпа заполняла все поля вокруг. Иероним пишет, что Павла посетила гроб Лазаря и дом Марии и Марфы."
+    - "Францисканские раскопки Сильвестра Саллера в 1949–1953 гг. открыли остатки селения и нескольких сменявших друг друга церквей рядом с гробницей. Первая, базилика конца IV века, позже была разрушена, и на её месте построили более просторную церковь, а пещера, почитаемая как гроб Лазаря, осталась местом паломничества. Арабское имя городка хранит память о Лазарии."
+scripture:
+  - John.11.1
+  - John.11.17-John.11.18
+  - John.11.38-John.11.44
+  - John.12.1-John.12.8
+  - Matt.26.6-Matt.26.13
+  - Mark.14.3-Mark.14.9
+  - Matt.21.17
+  - Mark.11.1
+  - Mark.11.11-Mark.11.12
+  - Luke.19.29
+  - Luke.24.50-Luke.24.51
+  - Neh.11.32
+sources:
+  - "Eusebius, Onomasticon, s.v. Bethania, with Jerome's Latin additions (C. U. Wolf's translation, no. 289)"
+  - "Egeria, Itinerarium 29.3-6"
+  - "Jerome, Letter 108.12"
+  - "S. J. Saller, Excavations at Bethany (1949-1953) (1957)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008)"
+status: checked

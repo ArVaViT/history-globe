@@ -1,0 +1,38 @@
+id: from-dan-to-beersheba
+question:
+  en: "How far is it from Dan to Beersheba?"
+  ru: "Как далеко от Дана до Вирсавии?"
+answer:
+  en:
+    - "About 236 km in a straight line, from the sources of the Jordan at the foot of Mount Hermon to the edge of the Negev desert. The phrase “from Dan even to Beer-sheba” is the Bible's way of saying all Israel, from its northern end to its southern, and in this order it is used seven times, from the time of the judges to the reign of Solomon; Chronicles twice has it the other way round."
+    - "Judges says that “all the children of Israel went out, and the congregation was gathered together as one man, from Dan even to Beer-sheba”; Samuel was known as a prophet “from Dan even to Beer-sheba”; David told Joab, “Go now through all the tribes of Israel, from Dan even to Beer-sheba, and number ye the people”; and under Solomon “Judah and Israel dwelt safely, every man under his vine and under his fig tree, from Dan even to Beer-sheba”. Chronicles, written from Judah, turns it round: “from Beer-sheba even to Dan”."
+    - "Dan, formerly Laish, is Tel Dan in the far north of today's Israel, about 25 km from the Hermon point on the map and 168 km from Jerusalem; the Danites took it in the days of the judges, and Jeroboam set up one of his golden calves there. Its gate of the Middle Bronze Age and the Aramaic stele naming the “house of David”, found in 1993, are its best-known finds. Beersheba, where Abraham dug his well and swore his oath, is Tel Beer Sheva east of the modern city, about 70 km south-west of Jerusalem, a planned town of the kingdom of Judah with a great well outside its gate, inscribed as a World Heritage site in 2005."
+  ru:
+    - "Около 236 км по прямой — от истоков Иордана у подножия Ермона до края пустыни Негев. Выражение «от Дана до Вирсавии» — библейский способ сказать «весь Израиль», от северного края до южного; в таком порядке оно встречается семь раз, от времени судей до царствования Соломона; в Паралипоменон оно дважды стоит наоборот."
+    - "Книга Судей говорит: «вышли все сыны Израилевы, и собралось все общество, как один человек, от Дана до Вирсавии»; Самуила знали как пророка «от Дана до Вирсавии»; Давид велел Иоаву: «пройди по всем коленам Израилевым и Иудиным от Дана до Вирсавии, и исчислите народ»; а при Соломоне «жили Иуда и Израиль спокойно, каждый под виноградником своим и под смоковницею своею, от Дана до Вирсавии». Книга Паралипоменон, написанная в Иудее, переворачивает порядок: «от Вирсавии до Дана»."
+    - "Дан, прежде Лаис, — это Тель-Дан на крайнем севере нынешнего Израиля, примерно в 25 км от точки Ермона на карте и в 168 км от Иерусалима; данитяне взяли его во дни судей, а Иеровоам поставил там одного из своих золотых тельцов. Его ворота средней бронзы и арамейская стела с упоминанием «дома Давида», найденная в 1993 году, — самые известные находки. Вирсавия, где Авраам выкопал колодец и принёс клятву, — это Тель-Беэр-Шева к востоку от нынешнего города, примерно в 70 км к юго-западу от Иерусалима, спланированный город Иудейского царства с большим колодцем у ворот; в 2005 году он внесён в список Всемирного наследия."
+map:
+  year: "c. 975 BC"
+  ref: 2Sam.24.2
+scripture:
+  [
+    Judg.20.1,
+    1Sam.3.20,
+    2Sam.3.10,
+    2Sam.17.11,
+    2Sam.24.2,
+    2Sam.24.15,
+    1Kgs.4.25,
+    1Chr.21.2,
+    2Chr.30.5,
+    Judg.18.29,
+    Gen.21.31,
+  ]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "A. Biran, Biblical Dan (1994)"
+  - "A. Biran and J. Naveh, 'An Aramaic Stele Fragment from Tel Dan', Israel Exploration Journal 43 (1993)"
+  - "Y. Aharoni (ed.), Beer-Sheba I: Excavations at Tel Beer-Sheba, 1969-1971 Seasons (1973)"
+  - "Z. Herzog, Beer-Sheba II: The Early Iron Age Settlements (1984)"
+  - "UNESCO World Heritage List, Biblical Tels: Megiddo, Hazor, Beer Sheba, inscribed 2005"
+status: checked

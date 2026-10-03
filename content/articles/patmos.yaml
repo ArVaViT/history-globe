@@ -1,0 +1,27 @@
+# Overview article (ADR 0007). Mainstream facts only; the date of Revelation and the reason for John's stay are named as disputed. Ancient sources for the island itself are scant.
+id: patmos
+place: a8f60f3
+title:
+  en: "Patmos"
+  ru: "Патмос"
+body:
+  en:
+    - "Patmos is a small, rocky island of about 34 square kilometres in the south-eastern Aegean, south of Samos and west of the coast of Asia Minor, among the islands now called the Dodecanese. Ancient writers rarely mention it. Thucydides tells that in 427 BC the Athenian commander Paches chased a Peloponnesian fleet as far as Patmos and then turned back, and Strabo places Patmos and the nearby Corassiae to the west of Icaria."
+    - 'Patmos is named once in the Bible. At the opening of Revelation the seer writes: "I John, who also am your brother, and companion in tribulation, and in the kingdom and patience of Jesus Christ, was in the isle that is called Patmos, for the word of God, and for the testimony of Jesus Christ." There, "in the Spirit on the Lord''s day", he heard a voice telling him to write what he saw and send it to the seven churches of Asia, from Ephesus to Laodicea.'
+    - "Early Christian writers took John's stay as banishment. Irenaeus says that the vision was seen toward the end of Domitian's reign, usually taken as about AD 95, and Eusebius says that John was condemned to live on Patmos in Domitian's persecution and returned to Ephesus when, under Nerva, those whom Domitian had banished were allowed home; Clement of Alexandria also tells of John's return from Patmos to Ephesus after the tyrant's death. Most scholars accept a date under Domitian, while some place Revelation in the years after Nero. Island exile was a common Roman penalty: Eusebius records that Flavia Domitilla, a niece of the consul Flavius Clemens, was banished to Pontia for her witness to Christ."
+  ru:
+    - "Патмос — небольшой скалистый остров площадью около 34 квадратных километров на юго-востоке Эгейского моря, к югу от Самоса и к западу от побережья Малой Азии, среди островов, которые ныне называют Додеканесом. Древние писатели упоминают его редко. Фукидид рассказывает, что в 427 г. до н. э. афинский военачальник Пахет преследовал пелопоннесский флот до самого Патмоса и затем повернул назад, а Страбон помещает Патмос и соседние Корассии к западу от Икарии."
+    - "В Библии Патмос назван один раз. В начале Откровения тайнозритель пишет: «Я, Иоанн, брат ваш и соучастник в скорби и в царствии и в терпении Иисуса Христа, был на острове, называемом Патмос, за слово Божие и за свидетельство Иисуса Христа». Там, «в духе в день воскресный», он услышал голос, повелевший ему написать то, что он видит, и послать семи церквам в Асии, от Ефеса до Лаодикии."
+    - "Раннехристианские писатели считали пребывание Иоанна на острове ссылкой. Ириней говорит, что видение было в конце правления Домициана, что обычно понимают как около 95 г. н. э., а Евсевий — что Иоанн во время гонения при Домициане был осуждён жить на Патмосе и вернулся в Ефес, когда при Нерве изгнанным Домицианом позволили вернуться; Климент Александрийский тоже рассказывает о возвращении Иоанна с Патмоса в Ефес после смерти тирана. Большинство учёных принимает датировку временем Домициана, а некоторые относят Откровение к годам после Нерона. Ссылка на остров была обычным римским наказанием: Евсевий сообщает, что Флавия Домицилла, племянница консула Флавия Климента, была сослана на Понтию за свидетельство о Христе."
+scripture:
+  - Rev.1.9-Rev.1.11
+sources:
+  - "Thucydides, History of the Peloponnesian War 3.33"
+  - "Strabo, Geography 10.5.13"
+  - "Irenaeus, Against Heresies 5.30.3"
+  - "Clement of Alexandria, Who Is the Rich Man That Shall Be Saved? 42"
+  - "Eusebius, Church History 3.18.1-5; 3.20.10-11; 3.23.6"
+  - "Tertullian, Prescription against Heretics 36"
+  - "D. E. Aune, Revelation 1-5 (Word Biblical Commentary 52A, 1997)"
+  - "C. J. Hemer, The Letters to the Seven Churches of Asia in Their Local Setting (1986)"
+status: checked

@@ -1,0 +1,24 @@
+id: how-far-jerusalem-to-damascus
+question:
+  en: "How far is Damascus from Jerusalem?"
+  ru: "Как далеко от Иерусалима до Дамаска?"
+answer:
+  en:
+    - "Damascus lies about 217 km north-north-east of Jerusalem in a straight line, about 7 days on foot at 30 km a day; by the Roman road on the map the way measures about 251 km, roughly eight days."
+    - 'This is the road of Saul''s conversion: "And as he journeyed, he came near Damascus: and suddenly there shined round about him a light from heaven." In his own account the light came "about noon". The road ran north through Samaria and Galilee, past the Sea of Galilee and across the Jordan, then north-east over the plateau to the oasis of Damascus at the edge of the Syrian desert. In the city, in "the street which is called Straight", Ananias baptised him, and later he escaped over the wall in a basket.'
+    - "Damascus is the capital of Syria today and one of the oldest continuously inhabited cities of the world: its name appears in Egyptian lists of the fifteenth century BC, it was the capital of the Aramean kingdom that fought Israel in the days of Ahab and Elisha, it fell to Tiglath-pileser III of Assyria in 732 BC, and Pompey brought it under Rome in 64 BC. The map's tour of Saul uses AD 34 as a conventional year for the conversion, usually dated c. AD 33–36."
+  ru:
+    - "Дамаск лежит примерно в 217 км к северо-северо-востоку от Иерусалима по прямой — около 7 дней пешего пути по 30 км в день; по римской дороге на карте путь составляет около 251 км, примерно восемь дней."
+    - "Это дорога обращения Савла: «Когда же он шел и приближался к Дамаску, внезапно осиял его свет с неба». По его собственному рассказу свет явился «около полудня». Дорога шла на север через Самарию и Галилею, мимо Галилейского моря и через Иордан, затем на северо-восток по плоскогорью к оазису Дамаска на краю Сирийской пустыни. В городе, на «улице, называемой Прямою», Анания крестил его, а позже он бежал через стену в корзине."
+    - "Сегодня Дамаск — столица Сирии и один из древнейших непрерывно населённых городов мира: его имя есть в египетских списках XV века до н. э., он был столицей арамейского царства, воевавшего с Израилем во дни Ахава и Елисея, в 732 г. до н. э. его взял Феглаффелласар (Тиглатпаласар III) Ассирийский, а в 64 г. до н. э. Помпей подчинил его Риму. Тур Савла на карте показывает обращение в условном 34 г. н. э.; обычно его датируют ок. 33–36 гг."
+map:
+  year: "AD 34"
+  ref: Acts.9.3
+scripture: [Acts.9.1-Acts.9.3, Acts.9.10-Acts.9.11, Acts.9.23-Acts.9.25, Acts.22.6, 2Kgs.16.9]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Length along the Roman roads: Itiner-e (de Soto, Pažout, Brughmans et al. 2025), Jerusalem to Damascus (251 km)"
+  - "History Globe tour “The conversion of Saul” (the conventional year AD 34; c. AD 33-36)"
+  - "Eponym Chronicle for 733-732 BC (campaigns against Damascus)"
+  - "R. Burns, Damascus: A History (2005)"
+status: checked

@@ -1,0 +1,35 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed points (where Philippians was written) are named as such.
+id: philippi
+place: a49e1d0
+title:
+  en: "Philippi"
+  ru: "Филиппы"
+body:
+  en:
+    - 'Philippi lies in eastern Macedonia, about 15 km inland from its port Neapolis (modern Kavala), on a hill above a fertile plain rich in springs and near gold mines. About 360 BC settlers from the island of Thasos founded a town here called Crenides, "the springs". Philip II of Macedon soon took it, enlarged it, named it after himself and worked its gold mines so well that, Diodorus says, they brought him more than a thousand talents.'
+    - "In 42 BC the plain beside the city saw the battles in which Antony and Octavian defeated Brutus and Cassius, the murderers of Julius Caesar; both took their own lives. Philippi then became a Roman colony on the Via Egnatia, the road across the Balkans, and after his victory at Actium Octavian settled here Italians whose land he had given to his veterans. Most of its public inscriptions were written in Latin."
+    - 'Paul, Silas and their companions sailed from Troas to Neapolis and came to Philippi, which Acts calls "the chief city of that part of Macedonia, and a colony". On the sabbath they went out to a place of prayer by a river, where Lydia, a seller of purple from Thyatira, believed and was baptised with her household. When Paul drove a spirit of divination out of a slave girl, her masters dragged him and Silas before the magistrates, who had them beaten and imprisoned. At midnight an earthquake opened the prison; the jailer was baptised, and in the morning the magistrates, hearing that the two were Roman citizens, came and asked them to leave. The church at Philippi sent Paul gifts more than once. His letter to it, written from prison (in Rome, Ephesus or Caesarea; this is disputed), greets its bishops and deacons.'
+    - "Paul passed through Philippi again on his last journey to Jerusalem. In the first half of the second century, most probably, Polycarp of Smyrna wrote to the Philippians, reminding them that Paul had taught among them and written to them. In the fourth century the Christians of Philippi built a church dedicated to Paul, and about AD 500 a large basilica rose on the terrace above the forum."
+  ru:
+    - "Филиппы лежат в восточной Македонии, примерно в 15 км от своей гавани Неаполя (нынешней Кавалы), на холме над плодородной равниной, богатой источниками, неподалёку от золотых рудников. Около 360 г. до н. э. переселенцы с острова Фасос основали здесь городок Крениды, то есть «источники». Вскоре его взял Филипп II Македонский: он расширил город, назвал его своим именем и так наладил работу золотых рудников, что они, по словам Диодора, приносили ему более тысячи талантов."
+    - "В 42 г. до н. э. на равнине у города произошли сражения, в которых Антоний и Октавиан разбили Брута и Кассия, убийц Юлия Цезаря; оба покончили с собой. Затем Филиппы стали римской колонией на Эгнатиевой дороге, пересекавшей Балканы, а после победы при Акции Октавиан поселил здесь италийцев, чьи земли отдал своим ветеранам. Большая часть надписей города была на латыни."
+    - "Павел, Сила и их спутники отплыли из Троады в Неаполь и пришли в Филиппы — по словам Деяний, «первый город в той части Македонии, колония». В субботу они вышли к реке, где был молитвенный дом, и там уверовала и крестилась со своими домашними Лидия, торговавшая багряницею, из Фиатиры. Когда Павел изгнал дух прорицательный из одной служанки, её господа повлекли его и Силу к воеводам, и те велели бить их палками и бросить в темницу. Около полуночи землетрясение отворило двери темницы; темничный страж крестился, а утром воеводы, услышав, что оба — римские граждане, пришли и попросили их удалиться из города. Церковь в Филиппах не раз посылала Павлу помощь. Его послание к ней, написанное в узах (в Риме, Ефесе или Кесарии — это спорно), обращено и к её епископам и диаконам."
+    - "Павел ещё раз прошёл через Филиппы на последнем пути в Иерусалим. Скорее всего, в первой половине II века Поликарп Смирнский написал филиппийцам послание, напоминая, что Павел учил у них и писал им. В IV веке христиане Филипп построили церковь во имя Павла, а около 500 г. н. э. на террасе над форумом поднялась большая базилика."
+scripture:
+  - Acts.16.11-Acts.16.15
+  - Acts.16.16-Acts.16.24
+  - Acts.16.25-Acts.16.40
+  - Acts.20.6
+  - 1Thess.2.2
+  - Phil.1.1
+  - Phil.1.13
+  - Phil.4.15-Phil.4.18
+sources:
+  - "Diodorus Siculus, Library 16.3.7; 16.8.6-7"
+  - "Appian, Civil Wars 4.105-131"
+  - "Cassius Dio, Roman History 51.4.6"
+  - "Polycarp, Letter to the Philippians 3.2"
+  - "P. Lemerle, Philippes et la Macédoine orientale à l'époque chrétienne et byzantine (1945)"
+  - "P. Pilhofer, Philippi I: Die erste christliche Gemeinde Europas (1995)"
+  - "C. Bakirtzis and H. Koester (eds.), Philippi at the Time of Paul and after His Death (1998)"
+status: checked

@@ -1,0 +1,37 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such.
+id: hebron
+place: a85151a
+title:
+  en: "Hebron"
+  ru: "Хеврон"
+body:
+  en:
+    - "Hebron lies high in the hills of Judah, about 30 km south of Jerusalem, among springs and vineyards. The ancient town stood on the hill of Tel Rumeida: it was fortified in the Early Bronze Age, and in the Middle Bronze Age it was rebuilt as a city girded with massive walls. The Bible calls it Kiriath-arba in earlier times and says it was built seven years before Zoan in Egypt."
+    - "In Genesis Abraham settles by the oaks of Mamre near Hebron and buys the cave of Machpelah from Ephron the Hittite to bury Sarah; Isaac and Jacob are later buried there too. After the conquest Hebron is given to Caleb. David was anointed king over Judah at Hebron and reigned there seven and a half years before he moved to Jerusalem, and Absalom began his revolt from it."
+    - "Rehoboam counted Hebron among the fortified cities of Judah. Jar handles stamped for the king in the late eighth century BC bear its name as one of four places, a sign that it was a centre of royal administration. After the fall of Judah in 587 or 586 BC the south of the hills passed to Edomite settlers, the later Idumea, though Nehemiah's lists still place Judahites in Kiriath-arba. Judas Maccabeus took Hebron, pulled down its fortifications and burned its towers, and John Hyrcanus' conquest of Idumea in the late second century BC brought it under Hasmonean rule."
+    - "The great stone enclosure that still stands over the cave of Machpelah is usually attributed to Herod the Great. In the war against Rome Simon bar Giora seized Hebron, and the Roman commander Cerialis then burned the town. Constantine ordered a basilica built at Mamre to end the pagan cult there, yet Sozomen, writing in the fifth century, describes a yearly fair there that drew Christians, Jews and pagans alike."
+  ru:
+    - "Хеврон лежит высоко в горах Иудеи, примерно в 30 км к югу от Иерусалима, среди источников и виноградников. Древний город стоял на холме Тель-Румейда: он был укреплён уже в раннем бронзовом веке, а в среднем бронзовом веке был отстроен заново и обнесён мощными стенами. Библия говорит, что прежде он назывался Кириаф-Арбы и был построен семью годами прежде египетского Цоана."
+    - "В Книге Бытия Авраам селится у дубравы Мамре близ Хеврона и покупает у Ефрона Хеттеянина пещеру Махпелу, чтобы похоронить Сарру; позже там же погребены Исаак и Иаков. После завоевания Ханаана Хеврон получает Халев. В Хевроне Давид был помазан на царство над Иудой и царствовал здесь семь с половиной лет, прежде чем перейти в Иерусалим; отсюда же начал свой мятеж Авессалом."
+    - "Ровоам включил Хеврон в число укреплённых городов Иудеи. На ручках кувшинов с царским клеймом конца VIII века до н. э. его имя стоит среди четырёх городов: здесь был центр царского управления. После падения Иудеи в 587 или 586 г. до н. э. юг нагорья заселили едомитяне, и край стал позднейшей Идумеей, хотя по спискам Неемии иудеи по-прежнему жили в Кириаф-Арбе. Иуда Маккавей взял Хеврон, срыл его укрепления и сжёг башни, а когда Иоанн Гиркан в конце II века до н. э. покорил Идумею, город перешёл под власть Хасмонеев."
+    - "Огромную каменную ограду, которая и сейчас стоит над пещерой Махпелой, обычно приписывают Ироду Великому. В войне с Римом Хеврон захватил Симон бар Гиора, а затем римский военачальник Цериал сжёг город. Константин велел построить в Мамре базилику, чтобы положить конец языческому культу, но Созомен, писавший в V веке, рассказывает о ежегодной ярмарке у Мамре, куда сходились и христиане, и иудеи, и язычники."
+scripture:
+  - Gen.13.18
+  - Gen.23.2-Gen.23.20
+  - Gen.49.29-Gen.49.31
+  - Gen.50.13
+  - Num.13.22
+  - Josh.14.13-Josh.14.15
+  - 2Sam.2.1-2Sam.2.4
+  - 2Sam.5.3-2Sam.5.5
+  - 2Sam.15.10
+  - 2Chr.11.5-2Chr.11.10
+  - Neh.11.25
+sources:
+  - "1 Maccabees 5:65; Josephus, Antiquities 12.353; 13.257-258"
+  - "Josephus, Jewish War 4.529-534; 4.554"
+  - "Eusebius, Life of Constantine 3.51-53; Sozomen, Ecclesiastical History 2.4"
+  - "The royal (lmlk) jar-handle stamps naming Hebron, Ziph, Socoh and mmšt"
+  - "'Hebron', in E. Stern (ed.), The New Encyclopedia of Archaeological Excavations in the Holy Land (1993)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008)"
+status: checked

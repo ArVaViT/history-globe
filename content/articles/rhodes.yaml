@@ -1,0 +1,32 @@
+# Overview article (ADR 0007). Mainstream facts only; Hellenistic and Roman dates follow the usual reckoning (synoecism 408/407 BC, siege 305-304 BC).
+id: rhodes
+place: a4218ee
+title:
+  en: "Rhodes"
+  ru: "Родос"
+body:
+  en:
+    - "Rhodes is the largest island of the Dodecanese, off the south-west corner of Asia Minor; its city of the same name stands at the island's northern tip. In the Iliad the Rhodians come to Troy from three towns, Lindus, Ialysus and Camirus. In 408/407 BC the people of these three towns joined to found one new city, Rhodes, with several harbours; Strabo says it was laid out by the same architect as the Piraeus."
+    - "In 305–304 BC Demetrius Poliorcetes besieged the city for a year with huge siege engines, but failed and made peace, leaving it free and ungarrisoned. With the money raised from the engines he left behind, the Rhodians set up the bronze Colossus of Helios, about seventy cubits high, the work of Chares of Lindus and one of the Seven Wonders; an earthquake threw it down about 226 BC. Rhodes was a leading naval and trading power and a friend of Rome, but after Rome made Delos a free port in 166 BC, Rhodian envoys complained that their harbour dues had fallen from a million drachmas to 150,000."
+    - 'Returning to Jerusalem at the end of his third journey, Paul sailed from Miletus by way of Coos and came "the day following unto Rhodes, and from thence unto Patara", where his company found a ship sailing over to Phoenicia. This is the only time the island is named in the New Testament.'
+    - "In 43 or 42 BC Cassius took the city, put about fifty citizens to death and seized the gold and silver of its temples and treasury. The future emperor Tiberius lived on Rhodes in retirement from 6 BC. Rome took away the city's freedom more than once: Claudius gave it back, but Vespasian made Rhodes part of a province. A violent earthquake under Antoninus Pius overthrew Rhodes, and the emperor paid to rebuild it. In late antiquity Rhodes was the capital of the province of the Islands and the seat of a metropolitan bishop."
+  ru:
+    - "Родос — крупнейший остров Додеканеса, у юго-западной оконечности Малой Азии; одноимённый город стоит на северной оконечности острова. В «Илиаде» родосцы приходят под Трою из трёх городов — Линда, Иалиса и Камира. В 408/407 г. до н. э. жители этих трёх городов объединились и основали один новый город, Родос, с несколькими гаванями; Страбон пишет, что его спланировал тот же зодчий, что и Пирей."
+    - "В 305–304 гг. до н. э. Деметрий Полиоркет целый год осаждал город огромными осадными машинами, но не взял его и заключил мир, оставив город свободным и без гарнизона. На деньги, вырученные от брошенных им машин, родосцы поставили бронзовый Колосс Гелиоса высотой около семидесяти локтей, работу Хареса из Линда, одно из семи чудес света; около 226 г. до н. э. его повалило землетрясение. Родос был ведущей морской и торговой державой и другом Рима, но после того как Рим в 166 г. до н. э. сделал Делос свободным портом, родосские послы жаловались, что их портовые пошлины упали с миллиона драхм до 150 000."
+    - "Возвращаясь в Иерусалим в конце третьего путешествия, Павел отплыл из Милита через Кос и пришёл «на другой день в Родос и оттуда в Патару», где его спутники нашли корабль, идущий в Финикию. Это единственное упоминание острова в Новом Завете."
+    - "В 43 или 42 г. до н. э. Кассий взял город, казнил около пятидесяти граждан и забрал золото и серебро из его храмов и казны. Будущий император Тиберий с 6 г. до н. э. жил на Родосе в уединении. Рим не раз отнимал у города свободу: Клавдий вернул её, но Веспасиан включил Родос в провинцию. При Антонине Пии сильное землетрясение разрушило Родос, и император дал средства на его восстановление. В поздней античности Родос был столицей провинции Острова и кафедрой митрополита."
+scripture:
+  - Acts.20.15
+  - Acts.21.1-Acts.21.2
+sources:
+  - "Homer, Iliad 2.653-656 (Lindus, Ialysus, Camirus)"
+  - "Diodorus Siculus, Library 13.75.1 (the synoecism, archonship of Euctemon, 408/407 BC); 20.81-88, 91-100 (the siege of Demetrius)"
+  - "Strabo, Geography 14.2.5 (the Colossus, the work of Chares of Lindus, thrown down by an earthquake); 14.2.6 (the three towns); 14.2.9 (the city's architect)"
+  - "Pliny the Elder, Natural History 34.41 (seventy cubits, twelve years, paid for from Demetrius' engines, fell fifty-six years after it was set up)"
+  - "Polybius, Histories 5.88-90 (the earthquake); 30.31.10-12 (harbour dues after Delos was made a free port)"
+  - "Appian, Civil Wars 4.65-74 (Cassius takes Rhodes)"
+  - "Suetonius, Tiberius 11-13; Claudius 25.3; Vespasian 8.4"
+  - "Pausanias, Description of Greece 8.43.4 (the earthquake under Antoninus Pius)"
+  - "R. M. Berthold, Rhodes in the Hellenistic Age (1984)"
+  - "A. P. Kazhdan (ed.), The Oxford Dictionary of Byzantium (1991), s.v. Rhodes"
+status: checked

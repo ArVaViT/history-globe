@@ -7,6 +7,7 @@ title:
   en: "Daniel"
   ru: "Пророк Даниил"
 year: "605 BC"
+people: ["Daniel@Ezk.14.14-Mrk"]
 approximate: true
 stops:
   - place: a15257a # Jerusalem
@@ -22,12 +23,14 @@ stops:
       ru: "В Вавилоне: сон царя, печь огненная, надпись на стене («мене, мене, текел, упарсин»), ров львиный."
   - place: a033b84 # Susa
     ref: Dan.8.1-Dan.8.27
+    by: untold
     year: "550 BC"
     note:
       en: "In the third year of Belshazzar Daniel sees in a vision that he is at Susa, by the river Ulai."
       ru: "В третий год Валтасара Даниил видит себя в видении в Сузах, у реки Улая."
   - place: a38ebfd # Tigris
     ref: Dan.10.1-Dan.10.21
+    by: untold
     year: "536 BC"
     note:
       en: "In the third year of Cyrus, on the bank of the great river Tigris, a man clothed in linen appears to him."

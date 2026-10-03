@@ -1,0 +1,35 @@
+# Overview article (ADR 0007). Mainstream facts only; Paul's first journey follows the usual dating to the late 40s AD.
+id: iconium
+place: ae425aa
+title:
+  en: "Iconium"
+  ru: "Икония"
+body:
+  en:
+    - "Iconium is the modern city of Konya, on the edge of the central Anatolian plateau, and the ancient town lies beneath it. In 401 BC Xenophon, marching east with the younger Cyrus, calls it the last city of Phrygia; the army rested there three days before crossing into Lycaonia. Later writers count it as a city of Lycaonia. Its coins of the first century BC show Perseus, for the Greeks explained its name from the image, eikon, of the Gorgon's head."
+    - "Strabo describes Iconium as a well-settled town with a richer territory than the dry Lycaonian plain around it; the town had once been held by King Polemon. Mark Antony gave Lycaonia to Amyntas of Galatia, and on Amyntas' death in 25 BC it passed to the new Roman province of Galatia. Under Claudius the city took the name Claudiconium, and Hadrian made it a Roman colony. Pliny calls it a most famous city."
+    - 'Paul and Barnabas came here after being driven out of Antioch of Pisidia. They spoke in the synagogue, and "a great multitude both of the Jews and also of the Greeks believed." They stayed a long time, but the city was divided; when Gentiles and Jews with their rulers set out to stone them, they fled to Lystra and Derbe. The Second Letter to Timothy recalls the persecutions Paul endured at Iconium. Jews from Iconium later helped turn the people of Lystra against Paul. On the way back the apostles passed through Iconium again, and later the brethren there spoke well of Timothy.'
+    - "The Acts of Paul, written in Asia in the second century, set the story of Thecla, a young woman of Iconium who left her betrothed to follow Paul, in this city. In the third century bishops from Galatia, Cilicia and neighbouring lands met at Iconium and ruled that baptism given outside the church was not valid, as Firmilian of Caesarea told Cyprian. In the later fourth century Amphilochius, bishop of Iconium, was a leading figure at the Council of Constantinople in 381."
+  ru:
+    - "Икония — нынешний город Конья на краю Центрально-Анатолийского плато; древний город лежит под современным. В 401 г. до н. э. Ксенофонт, шедший на восток с Киром Младшим, называет его последним городом Фригии; войско отдыхало здесь три дня, прежде чем вступить в Ликаонию. Позднейшие авторы относят Иконию к Ликаонии. На её монетах I века до н. э. изображён Персей: греки объясняли имя города от изображения (эйкон) головы Горгоны."
+    - "Страбон описывает Иконию как хорошо населённый город с более плодородной округой, чем окружающая его сухая Ликаонская равнина; прежде городом владел царь Полемон. Марк Антоний отдал Ликаонию галатскому царю Аминте, а после смерти Аминты в 25 г. до н. э. она отошла к новой римской провинции Галатии. При Клавдии город получил имя Клавдикония, а Адриан сделал его римской колонией. Плиний называет его знаменитейшим городом."
+    - "Павел и Варнава пришли сюда, изгнанные из Антиохии Писидийской. Они говорили в синагоге, и «уверовало великое множество Иудеев и Еллинов». Они пробыли здесь долго, но народ в городе разделился; когда язычники и Иудеи с начальниками своими задумали побить их камнями, апостолы удалились в Листру и Дервию. Второе послание к Тимофею вспоминает гонения, перенесённые Павлом в Иконии. Позже иудеи из Иконии помогли настроить жителей Листры против Павла. На обратном пути апостолы снова прошли через Иконию, а впоследствии братия здесь свидетельствовали о Тимофее."
+    - "Деяния Павла, написанные в Асии во II веке, помещают в этот город историю Феклы — девушки из Иконии, которая оставила жениха, чтобы следовать за Павлом. В III веке епископы из Галатии, Киликии и соседних земель собрались в Иконии и постановили, что крещение вне Церкви недействительно, как писал Киприану Фирмилиан Кесарийский. Во второй половине IV века Амфилохий, епископ Иконийский, был одним из видных участников Константинопольского собора 381 г."
+scripture:
+  - Acts.13.50-Acts.13.51
+  - Acts.14.1-Acts.14.6
+  - Acts.14.19
+  - Acts.14.21
+  - Acts.16.1-Acts.16.2
+  - 2Tim.3.11
+sources:
+  - "Xenophon, Anabasis 1.2.19"
+  - "Strabo, Geography 12.6.1"
+  - "Cassius Dio, Roman History 49.32.3; 53.26.3"
+  - "Pliny the Elder, Natural History 5.95"
+  - "Acts of Paul and Thecla 1-8; Tertullian, On Baptism 17"
+  - "Firmilian to Cyprian (Cyprian, Letter 74.7; 74.19 in the ANF numbering, 75 in Hartel)"
+  - "Theodoret, Church History 5.8; 5.16"
+  - "B. V. Head, Historia Numorum (2nd ed., 1911), p. 714 (coins of Iconium)"
+  - "S. Mitchell, Anatolia: Land, Men, and Gods in Asia Minor (2 vols., 1993)"
+status: checked

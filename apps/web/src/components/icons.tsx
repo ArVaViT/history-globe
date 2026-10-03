@@ -1,5 +1,5 @@
 /**
- * The UI icons, copied as plain SVG from Lucide (https://lucide.dev, ISC); nine of them
+ * The UI icons, copied as plain SVG from Lucide (https://lucide.dev, ISC); many of them
  * derive from Feather (MIT). Both notices ship with the app in
  * public/licenses/lucide-icons.txt.
  *
@@ -133,5 +133,66 @@ export const ZoomIn = icon(
     <line x1="21" x2="16.65" y1="21" y2="16.65" />
     <line x1="11" x2="11" y1="8" y2="14" />
     <line x1="8" x2="14" y1="11" y2="11" />
+  </>,
+);
+export const BookOpen = icon(
+  <>
+    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+  </>,
+);
+export const Camera = icon(
+  <>
+    <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+    <circle cx="12" cy="13" r="3" />
+  </>,
+);
+export const Printer = icon(
+  <>
+    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+    <path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6" />
+    <rect x="6" y="14" width="12" height="8" rx="1" />
+  </>,
+);
+export const Ellipsis = icon(
+  <>
+    <circle cx="12" cy="12" r="1" />
+    <circle cx="19" cy="12" r="1" />
+    <circle cx="5" cy="12" r="1" />
+  </>,
+);
+export const Gauge = icon(
+  <>
+    <path d="m12 14 4-4" />
+    <path d="M3.34 19a10 10 0 1 1 17.32 0" />
+  </>,
+);
+export const Maximize = icon(
+  <>
+    <path d="M8 3H5a2 2 0 0 0-2 2v3" />
+    <path d="M21 8V5a2 2 0 0 0-2-2h-3" />
+    <path d="M3 16v3a2 2 0 0 0 2 2h3" />
+    <path d="M16 21h3a2 2 0 0 0 2-2v-3" />
+  </>,
+);
+export const Castle = icon(
+  <>
+    <path d="M10 5V3" />
+    <path d="M14 5V3" />
+    <path d="M15 21v-3a3 3 0 0 0-6 0v3" />
+    <path d="M18 3v8" />
+    <path d="M18 5H6" />
+    <path d="M22 11H2" />
+    <path d="M22 9v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9" />
+    <path d="M6 3v8" />
+  </>,
+);
+export const Ruler = icon(
+  <>
+    <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z" />
+    <path d="m14.5 12.5 2-2" />
+    <path d="m11.5 9.5 2-2" />
+    <path d="m8.5 6.5 2-2" />
+    <path d="m17.5 15.5 2-2" />
   </>,
 );

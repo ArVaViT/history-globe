@@ -6,6 +6,8 @@ import {
   centuryRange,
   contains,
   formatYear,
+  formatCentury,
+  formatYearRange,
   inclusiveRange,
   parseLabel,
   toAstronomical,
@@ -113,5 +115,28 @@ describe("labels and ids", () => {
     expect(formatYear(30, "en")).toBe("AD 30");
     expect(formatYear(-3, "uk")).toBe("4 р. до н. е.");
     expect(formatYear(70, "de")).toBe("70 n. Chr.");
+  });
+});
+
+describe("formatYearRange", () => {
+  it("says a shared era once", () => {
+    expect(formatYearRange(-1999, -1179, "ru")).toBe("2000–1180 г. до н. э.");
+    expect(formatYearRange(-1999, -1179, "en")).toBe("2000–1180 BC");
+    expect(formatYearRange(30, 70, "en")).toBe("AD 30–70");
+    expect(formatYearRange(30, 70, "ru")).toBe("30–70 г. н. э.");
+  });
+  it("keeps both eras across the turn of the era", () => {
+    expect(formatYearRange(-3, 30, "ru")).toBe("4 г. до н. э. – 30 г. н. э.");
+  });
+});
+
+describe("formatCentury", () => {
+  it("names the century in Roman numerals in Russian, as an ordinal in English", () => {
+    expect(formatCentury(-1002, "ru")).toBe("XI в. до н. э.");
+    expect(formatCentury(50, "ru")).toBe("I в. н. э.");
+    expect(formatCentury(-1002, "en")).toBe("11th century BC");
+    expect(formatCentury(1250, "en")).toBe("13th century AD");
+    expect(formatCentury(-1899, "ru")).toBe("XIX в. до н. э.");
+    expect(formatCentury(250, "en")).toBe("3rd century AD");
   });
 });

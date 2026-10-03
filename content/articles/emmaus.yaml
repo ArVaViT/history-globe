@@ -1,0 +1,31 @@
+# Overview article (ADR 0007). Mainstream facts only; the site is disputed (Emmaus-Nicopolis, el-Qubeibeh, Abu Ghosh, Motza) and the textual variant of 60 or 160 stadia is named without taking a side; the Maccabean battle is dated by the usual reckoning.
+id: emmaus
+place: ae7274b # the only Emmaus record, drawn at Qalunya/Motza (lon/lat checked); 3 verses
+title:
+  en: "Emmaus"
+  ru: "Эммаус"
+body:
+  en:
+    - 'Emmaus is the village to which two disciples walked on the day of the resurrection, "a village called Emmaus, which was from Jerusalem about threescore furlongs". Its site is disputed. Most manuscripts of Luke give sixty stadia, about 11 km; some, among them Codex Sinaiticus, give 160, about 30 km. Four places are most often named: Emmaus-Nicopolis (Imwas) near Latrun, the Emmaus of the ancient church; Abu Ghosh on the road west to the coast, held to be Emmaus from the twelfth century; el-Qubeibeh to the north-west, so held from the later Middle Ages; and Motza, west of Jerusalem, where the map point stands.'
+    - "Emmaus-Nicopolis lay where the road from the coastal plain begins to climb towards Jerusalem, and it was the Emmaus of the Maccabean and Roman wars. About 165 BC Judas Maccabeus defeated a Seleucid army camped there. In 43 BC Cassius sold its people into slavery when the levy he demanded was slow to come in, and in 4 BC the Roman governor Varus burned the town after its inhabitants had fled."
+    - 'In Luke''s account one of the two travellers is named Cleopas. Jesus joined them on the road unrecognised and opened the Scriptures to them. At the village they urged him to stay, "for it is toward evening, and the day is far spent"; as he blessed and broke the bread "their eyes were opened, and they knew him; and he vanished out of their sight". The same hour they returned to Jerusalem and found the eleven.'
+    - "In AD 68 Vespasian camped at Emmaus and left the Fifth Legion there. After the war, Josephus says, he gave land to 800 discharged soldiers at a place called Ammaus, 30 stadia from Jerusalem in the standard Greek text (some manuscripts read 60); many identify it with Motza, the Mozah of Joshua's list, whose later name Qalunya is thought to recall the Latin colonia. About 221 Emmaus-Nicopolis became a city named Nicopolis after an embassy led by Julius Africanus. Eusebius took it for the home of Cleopas, and Jerome, telling of Paula's visit in the 380s, writes that the Lord, known there in the breaking of bread, made the house of Cleopas a church. Remains of a Byzantine church still stand at Imwas."
+  ru:
+    - "Эммаус — селение, в которое в день воскресения шли двое учеников: «в селение, отстоящее стадий на шестьдесят от Иерусалима, называемое Эммаус». Его местоположение спорно. Большинство рукописей Евангелия от Луки дают шестьдесят стадий, около 11 км; некоторые, в том числе Синайский кодекс, — 160, около 30 км. Чаще всего называют четыре места: Эммаус-Никополь (Имвас) у Латруна — Эммаус древней Церкви; Абу-Гош на дороге к побережью, который считали Эммаусом с XII века; эль-Кубейбу к северо-западу, которую так называли с позднего Средневековья; и Моцу к западу от Иерусалима, где стоит точка на карте."
+    - "Эммаус-Никополь лежал там, где дорога с прибрежной равнины начинает подниматься к Иерусалиму, и именно он был Эммаусом Маккавейских и римских войн. Около 165 г. до н. э. Иуда Маккавей разбил стоявшее здесь селевкидское войско. В 43 г. до н. э. Кассий продал его жителей в рабство, когда требуемая им подать поступала слишком медленно, а в 4 г. до н. э. римский наместник Вар сжёг город, жители которого бежали."
+    - "По рассказу Луки, одного из двух путников звали Клеопа. Иисус, не узнанный ими, присоединился к ним в дороге и изъяснял им Писание. У селения они упросили Его остаться, «потому что день уже склонился к вечеру»; когда Он благословил и преломил хлеб, «открылись у них глаза, и они узнали Его. Но Он стал невидим для них». В тот же час они возвратились в Иерусалим и нашли вместе одиннадцать апостолов."
+    - "В 68 г. н. э. Веспасиан стал лагерем у Эммауса и оставил там Пятый легион. После войны, по словам Иосифа Флавия, он дал землю 800 отпущенным воинам в месте под названием Аммаус, в 30 стадиях от Иерусалима по принятому греческому тексту (в некоторых рукописях — 60); многие отождествляют его с Моцой из списка книги Иисуса Навина, позднее название которой, Калуния, по-видимому, восходит к латинскому colonia. Около 221 г. Эммаус-Никополь стал городом Никополем после посольства во главе с Юлием Африканом. Евсевий считал его родиной Клеопы, а Иероним, рассказывая о том, как Павла пришла сюда в 380-х гг., пишет, что Господь, узнанный здесь в преломлении хлеба, освятил дом Клеопы как церковь. Развалины византийской церкви и сейчас стоят в Имвасе."
+scripture:
+  - Luke.24.13-Luke.24.18
+  - Luke.24.28-Luke.24.31
+  - Luke.24.33-Luke.24.35
+  - Josh.18.26
+sources:
+  - "Codex Sinaiticus and other witnesses for 160 stadia at Luke 24:13 (B. M. Metzger, A Textual Commentary on the Greek New Testament, 1971, on Luke 24:13)"
+  - "Josephus, Antiquities 12.298-312 (Judas and Gorgias at Emmaus); 14.275 and Jewish War 1.222 (Cassius); Antiquities 17.291 and Jewish War 2.71 (Varus)"
+  - "Josephus, Jewish War 4.444-445 (Vespasian and the Fifth Legion); 7.217 (Ammaus, 30 stadia in Niese's text, 60 in other manuscripts)"
+  - "Jerome, Chronicle (Nicopolis founded, Julius Africanus' embassy, c. AD 221); Letter 108.8"
+  - "Eusebius, Onomasticon, s.v. Emmaous (C. U. Wolf's translation, no. 457)"
+  - "D. Pringle, The Churches of the Crusader Kingdom of Jerusalem, vol. 1 (1993), nos. 1 (Abu Ghosh) and 10 ('Amwas)"
+  - "L.-H. Vincent and F.-M. Abel, Emmaüs, sa basilique et son histoire (1932)"
+status: checked

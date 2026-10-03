@@ -7092,3 +7092,573 @@ places:
     evidence:
       osis: Joel.3.18
       excerpt: "выйдет источник и будет напоять долину Ситтим"
+  # Matthew's Magadan (KJV "Magdala"); the Synodal text has only the adjective, «пределы
+  # Магдалинские», and the town is Магдала in Russian usage (added 2026-10-01 with its article).
+  - id: ad14067
+    en: "Magadan"
+    ru: "Магдала"
+    evidence:
+      osis: Matt.15.39
+      excerpt: "Он вошел в лодку и прибыл в пределы Магдалинские"
+  # The Synodal text names the Nile once, «воду из Нила» (Jer 2:18); elsewhere it says «река».
+  - id: a012705
+    en: "Nile"
+    ru: "Нил"
+    evidence:
+      osis: Jer.2.18
+      excerpt: "чтобы пить воду из Нила"
+  # The Synodal text renders the Negeb as a direction, «к югу», «южная сторона»; the region
+  # is Негев in Russian geography and reference works (added 2026-10-01).
+  - id: a1cb244
+    en: "Negeb"
+    ru: "Негев"
+  # Places with no Synodal name of their own, named 2026-10-01 and reviewed: the Synodal
+  # form where a verse has it, otherwise the form of Russian reference works.
+  # The Synodal text renders the Arabah as «равнина» («море равнины»); the valley is Арава
+  # in Russian geography (ru.wikipedia «Вади-эль-Араба», redirect «Арава»), as in Беф-Арава.
+  - id: a2bb5ef
+    en: "Arabah"
+    ru: "Арава"
+  # The Synodal text says «низменные места», «низкие места»; the region is Шефела (also
+  # Шфела) in Russian geography of Israel.
+  - id: af084cf
+    en: "Shephelah"
+    ru: "Шефела"
+  # Ezra and Nehemiah have «за рекою»; the province is Заречье in Russian scholarship
+  # (ru.wikipedia «Заречье (сатрапия)», Akkadian Эбер-Нари).
+  - id: a88310a
+    en: "Beyond the River"
+    ru: "Заречье"
+  # The Synodal text reads «север», «край севера»; the mountain (Jebel Aqra) is гора Цафон
+  # in Russian literature (ru.wikipedia «Джебели-Акра»).
+  - id: a78e845
+    en: "Zaphon"
+    ru: "Гора Цафон"
+  # The Synodal text has only the gentilic, «Хародитянин»; the town of Shammah, not the spring
+  # of Judg 7:1 («источника Харода», id ae3cace), which shares the name.
+  - id: afd8b40
+    en: "Harod"
+    ru: "Харод"
+    evidence:
+      osis: 2Sam.23.25
+      excerpt: "Шамма Хародитянин, Елика Хародитянин"
+  # Matt 8:28 reads «в страну Гергесинскую» in the Synodal text; the city itself (Umm Qais)
+  # is Гадара in Russian reference works (ru.wikipedia «Гадара»).
+  - id: afed46a
+    en: "Gadara"
+    ru: "Гадара"
+  # Jer 51:27 has no Minni in the Synodal text; the kingdom by Lake Urmia is Манна, also
+  # Маннея, in Russian scholarship (ru.wikipedia «Манна (государство)»: «Манна (также
+  # Маннея, Мана)»). Маннея on the map, so the label is not read as manna.
+  - id: ae1054e
+    en: "Minni"
+    ru: "Маннея"
+  # Amos 6:13 has no name in the Synodal text; the Synodal 1 Macc 5:26, 43-44 calls the town
+  # «Карнаин» (Gen 14:5 has «Аштероф-Карнаим»).
+  - id: adf5c7b
+    en: "Karnaim"
+    ru: "Карнаин"
+  # The Synodal text of 2 Sam 24:6 reads «Тахтим-Ходши»; the city on the Orontes is Кадеш
+  # in Russian historiography (ru.wikipedia «Кадеш»).
+  - id: adc9b5a
+    en: "Kadesh"
+    ru: "Кадеш"
+  # Acts 27:17 says only «сесть на мель»; the Greek Σύρτις is the gulf known in Russian as
+  # Большой Сирт (ru.wikipedia «Сидра», «Большой Сирт»).
+  - id: ad36371
+    en: "Syrtis"
+    ru: "Большой Сирт"
+  - id: abaa030
+    en: "Bath-rabbim"
+    ru: "Ворота Батраббима"
+    evidence:
+      osis: Song.7.4
+      excerpt: "озерки Есевонские, что у ворот Батраббима"
+  - id: a8fe6a4
+    en: "Jaar"
+    ru: "Иарим"
+    evidence:
+      osis: Ps.132.6
+      excerpt: "нашли его на полях Иарима"
+  - id: a2b389a
+    en: "Jorkeam"
+    ru: "Иоркеам"
+    evidence:
+      osis: 1Chr.2.44
+      excerpt: "Шема родил Рахама, отца Иоркеамова"
+  # The Synodal text has only the gentilic, «Наума Елкосеянина»; the town is Елкош in
+  # Russian usage (ru.wikipedia «Наум (пророк)»: «родом из Елкоша»).
+  - id: a221d82
+    en: "Elkosh"
+    ru: "Елкош"
+    evidence:
+      osis: Nah.1.1
+      excerpt: "книга видений Наума Елкосеянина"
+  # The Synodal text has only the adjective, «Адрамитский корабль»; the city is Адрамиттий
+  # in Russian usage (ru.wikipedia «Адрамитион (Адрамиттий)»).
+  - id: a184f3a
+    en: "Adramyttium"
+    ru: "Адрамиттий"
+    evidence:
+      osis: Acts.27.2
+      excerpt: "Мы взошли на Адрамитский корабль"
+  # No verse is tagged here; the Magadan point already carries Магдала. This is the town
+  # itself at Majdal, Магдала in Russian usage (ru.wikipedia «Магдала»).
+  - id: af75e9e
+    en: "Magdala"
+    ru: "Магдала"
+  # Median town taken by Sargon II; Хархар in Russian literature (ru.wikipedia «Саргон II»).
+  - id: adeff6d
+    en: "Harhar"
+    ru: "Хархар"
+  # Egyptian residence in the Amarna letters; Кумиди in Тураев, «История Древнего Востока»,
+  # and Брэстед in Викентьев's translation.
+  - id: adb1dcf
+    en: "Kumidi"
+    ru: "Кумиди"
+  # Neo-Hittite Cilician kingdom; Хилакку in Russian literature (ru.wikipedia «Киццуватна»,
+  # «Сиро-хеттские царства»).
+  - id: ad1c917
+    en: "Hilakku"
+    ru: "Хилакку"
+  # Hittite Tegarama, Hebrew Togarmah; Тегарама in ru.wikipedia («Фогарма», «Арслантепе»).
+  - id: acfe0a6
+    en: "Tegarama"
+    ru: "Тегарама"
+  # No verse is tagged; the Synodal text has only «воды Меромские» (Josh 11:5). The town is
+  # Мером in Russian usage.
+  - id: acea44c
+    en: "Merom"
+    ru: "Мером"
+  # The Karkheh; Укну in ru.wikipedia («Навуходоносор I»).
+  - id: abb1e21
+    en: "Uqnu"
+    ru: "Укну"
+  # Red Sea port of Aksum; ru.wikipedia «Адулис».
+  - id: ab7c40f
+    en: "Adulis"
+    ru: "Адулис"
+  # Syrian land of the Amarna age; ru.wikipedia «Нухашше», Тураев.
+  - id: ab66f81
+    en: "Nuhashe"
+    ru: "Нухашше"
+  # City of the Amarna letters by the coast; ru.wikipedia «Город-государство».
+  - id: ab56b36
+    en: "Gath-padalla"
+    ru: "Гат-Падалла"
+  # Tobit's home town, «взят был в плен из Фисвы» in the Synodal Tobit 1:2; Фисва in the Brockhaus
+  # Bible encyclopedia (art. «Фесвитянин»).
+  - id: aac5280
+    en: "Thisbe"
+    ru: "Фисва"
+  # No verse is tagged; Mark and Luke's «страна Гадаринская», Matthew's «Гергесинская».
+  # The site at Kursi is Гергеса in Russian usage (ru.wikipedia «Гергеса»).
+  - id: aabf84a
+    en: "Gergesa"
+    ru: "Гергеса"
+  # Egyptian border fortress; Чару in ru.wikipedia («Тутмос III», «Города Древнего Египта»).
+  - id: aab527c
+    en: "Tjaru"
+    ru: "Чару"
+  # Not a biblical name; the usual Russian form.
+  - id: aa56bd1
+    en: "Carthage"
+    ru: "Карфаген"
+  # Tiphsah on the Euphrates, Greek Θάψακος; ru.wikipedia «Тапсак» (also Фапсак).
+  - id: aa4fca2
+    en: "Thapsacus"
+    ru: "Тапсак"
+  # Kingdom of Hamath's northern half, Zakkur's Lu'ash; Луаш in ru.wikipedia («Заккур»,
+  # «Нухашше»).
+  - id: a8778a3
+    en: "Laash"
+    ru: "Луаш"
+  # Not a biblical name; ru.wikipedia «Тартесс».
+  - id: a86d7c7
+    en: "Tartessos"
+    ru: "Тартесс"
+  # Not a biblical name in the Synodal canon; the usual Russian form.
+  - id: a7aafda
+    en: "Sparta"
+    ru: "Спарта"
+  # No verse is tagged; the usual Russian name.
+  - id: a72ca28
+    en: "Herod’s palace"
+    ru: "Дворец Ирода"
+  # Akkadian term for northern peoples; ru.wikipedia «Умман-манда».
+  - id: a72819f
+    en: "Umman Manda"
+    ru: "Умман-манда"
+  # Judas's victory over Nicanor; «при Адасе», «от Адаса» in the Synodal 1 Macc 7:40, 45;
+  # ru.wikipedia «Список библейских имён на букву А» lists it as Адаса.
+  - id: a6e831d
+    en: "Adasa"
+    ru: "Адаса"
+  # Bar Kokhba's fortress; ru.wikipedia «Бейтар (город)», «Осада Бейтара».
+  - id: a6c8205
+    en: "Bether"
+    ru: "Бейтар"
+  # Ptolemaic port at Suez; Арсиноя in ru.wikipedia («Птолемей II Филадельф», «Канал фараонов»).
+  - id: a6bd641
+    en: "Arsinoe"
+    ru: "Арсиноя"
+  # Mountain land east of the Tigris; Гутиум in Тураев and ru.wikipedia («Кир II Великий»).
+  - id: a654e6d
+    en: "Gutium"
+    ru: "Гутиум"
+  # Assyrian Pitru, the Pethor of Num 22:5; Питру in ru.wikipedia («Ашшур-раби II»).
+  - id: a63c21e
+    en: "Pitru"
+    ru: "Питру"
+  # Capital of the 20th nome; ru.wikipedia «Гераклеополь».
+  - id: a542fc2
+    en: "Heracleopolis Magna"
+    ru: "Гераклеополь"
+  # Ituraean Chalcis under Lebanon, at Anjar; Халкида in ru.wikipedia («Анджар (Ливан)»,
+  # «Халкида (Сирия)»).
+  - id: a527d04
+    en: "Chalcis"
+    ru: "Халкида"
+  # Sumerian city; ru.wikipedia «Эриду».
+  - id: a4c6f72
+    en: "Eridu"
+    ru: "Эриду"
+  # Roman Dalmatia; ru.wikipedia «Салона».
+  - id: a49cd82
+    en: "Salona"
+    ru: "Салона"
+
+  # Added 2026-10-02 for the places that had no Russian name. Without evidence: the
+  # Synodal text translates the word (dictionary form), the label is generic, or the place
+  # has no verse (an identification site, scholarly form).
+  # scholarly: Отождествление для Авел-Керамима (Суд 11:33).
+  - id: a818a40
+    en: "Abila"
+    ru: "Абила"
+  # scholarly: Столица Авилинеи (Лк 3:1).
+  - id: a276d01
+    en: "Abila Lysaniou"
+    ru: "Абила Лисаниева"
+  # synodal: Синодальный сливает «Херув-Аддон»; в Езд 2:59 «Херуб-Аддан-Иммер».
+  - id: a95b373
+    en: "Addon"
+    ru: "Аддон"
+    evidence:
+      osis: Neh.7.61
+      excerpt: "вот вышедшие из Тел-Мелаха, Тел-Харши, Херув-Аддона и Иммера; но они не могли показать о"
+  # dictionary: Синодальный переводит: «от дубравы, что в Цананниме».
+  - id: a00de1e
+    en: "Allon"
+    ru: "Аллон"
+  # scholarly: Отождествление для Аввы/Иввы (4 Цар 17:24; 18:34).
+  - id: a8527ba
+    en: "Ama"
+    ru: "Ама"
+  # scholarly: Арамейское племя на р. Укну; отождествление для Емафа (4 Цар 17:24).
+  - id: adc3294
+    en: "Amate"
+    ru: "Амату"
+  # dictionary: Синодальный переводит (как KJV): «в земле сынов народа его».
+  - id: ac5cab3
+    en: "Amaw"
+    ru: "Амав"
+  # scholarly: Отождествление для Бет-Арбела (Ос 10:14).
+  - id: a576db3
+    en: "Arbela"
+    ru: "Арбела"
+  # dictionary: Синодальный переводит: «венец дома Иоавова». Транслитерация по образцу «Атароф-Шофан» (Чис 32:35).
+  - id: a03afe1
+    en: "Atroth-beth-joab"
+    ru: "Атроф-Беф-Иоав"
+  # dictionary: Синодальный (как KJV) читает «до Газы»; Айя — чтение еврейских рукописей.
+  - id: aba3717
+    en: "Ayyah"
+    ru: "Аия"
+  # synodal: Синодальный склоняет как мужской род: «к Ваалу», «от Ваала» (15:10), «из Ваала Иудина» (2 Цар 6:2).
+  - id: ac2f5ea
+    en: "Baalah"
+    ru: "Ваал"
+    evidence:
+      osis: Josh.15.9
+      excerpt: "горы Ефрона, и поворачивает предел к Ваалу, который есть Кириаф-Иарим;"
+  # scholarly: Отождествление для Ваал-Гамона (Песн 8:11); в синодальной Иудифи 8:3 «Валамон» (не сверено, в кэше нет неканонических книг).
+  - id: a2b2564
+    en: "Belamon"
+    ru: "Валамон"
+  # synodal: По образцу «Дом Милло»: синодальный переводит «Беф-» как «дом».
+  - id: ac0254c
+    en: "Beth-ashbea"
+    ru: "Дом Ашбеи"
+    evidence:
+      osis: 1Chr.4.21
+      excerpt: "и семейства выделывавших виссон, из дома Ашбеи,"
+  # dictionary: Синодальный: «из дома Еденова». Форма «Еден» — 2 Цар 19:12, Иез 27:23.
+  - id: a84c5a4
+    en: "Beth-eden"
+    ru: "Беф-Еден"
+  # dictionary: Синодальный переводит: «к дому, что в саду».
+  - id: aaa2f54
+    en: "Beth-haggan"
+    ru: "Беф-Гаган"
+  # dictionary: Синодальный: «до потока в пустыне». «Арава» — как у места Arabah (a2bb5ef).
+  - id: a5983ec
+    en: "Brook of the Arabah"
+    ru: "Поток Аравы"
+  # scholarly: Отождествление для Хилмада (Иез 27:23); форма — по русскому переводу «Анабасиса».
+  - id: a08d4af
+    en: "Charmande"
+    ru: "Харманда"
+  # synodal: Синодальный сливает «Херув-Аддон»; в Езд 2:59 «Херуб».
+  - id: ab3ad14
+    en: "Cherub"
+    ru: "Херув"
+    evidence:
+      osis: Neh.7.61
+      excerpt: "вот вышедшие из Тел-Мелаха, Тел-Харши, Херув-Аддона и Иммера; но они не могли показать о"
+  # dictionary: Синодальный передаёт как «шатры Ефиопские».
+  - id: a567e0e
+    en: "Cushan"
+    ru: "Кушан"
+  # synodal: Синодальный делит на два: «в Елоне и в Беф-Ханане»; название собрано из этих форм.
+  - id: a8e6824
+    en: "Elonbeth-hanan"
+    ru: "Елон-Беф-Ханан"
+    evidence:
+      osis: 1Kgs.4.9
+      excerpt: "— в Макаце и в Шаалбиме, в Вефсамисе и в Елоне и в Беф-Ханане;"
+  # synodal: В стихе места (Нав 18:15) синодальный читает «к морю»; форма взята из Нав 15:9 и совпадает с Ефрон (a1230e5).
+  - id: a9a6f72
+    en: "Ephron"
+    ru: "Ефрон"
+  # dictionary: В тексте только народ «Гамадимы»; название места выведено.
+  - id: a764256
+    en: "Gamad"
+    ru: "Гамад"
+  # synodal: Выведено из «Гефянин»; форма «Геф» — 1 Цар 27:4 и др.
+  - id: a0ac467
+    en: "Gath"
+    ru: "Геф"
+    evidence:
+      osis: 2Sam.6.10
+      excerpt: "в город Давидов, а обратил его в дом Аведдара Гефянина."
+  # dictionary: Синодальный переводит: «в огородах». Форма «Гедера» — Нав 15:36 (как у a12012d).
+  - id: a0a5b78
+    en: "Gederah"
+    ru: "Гедера"
+  # synodal: В стихе места (1 Пар 4:39) синодальный читает «до Герары» (по LXX); форма «Гедор» — Нав 15:58.
+  - id: a2fc530
+    en: "Gedor"
+    ru: "Гедор"
+  # dictionary: Синодальный переводит: «в одном из сел».
+  - id: a607415
+    en: "Hakkephirim"
+    ru: "Кефирим"
+  # scholarly: Отождествление для Халаха (4 Цар 17:6).
+  - id: a1d5a28
+    en: "Halahha"
+    ru: "Халахха"
+  # dictionary: Синодальный переводит иначе: «бросите все убранство чертогов».
+  - id: a553fe6
+    en: "Harmon"
+    ru: "Гармон"
+  # dictionary: Синодальный переводит: «с собственным твоим войском».
+  - id: ab5f357
+    en: "Helech"
+    ru: "Хелех"
+  # scholarly: Отождествление для Ханеса (Ис 30:4).
+  - id: acd64ca
+    en: "Heracleopolis Parva"
+    ru: "Гераклеополь Малый"
+  # dictionary: Синодальный переводит: «в лесу» (23:15, 16, 18, 19).
+  - id: a23db8d
+    en: "Horesh"
+    ru: "Хореш"
+  # synodal: В тексте прилагательное «Оронской» (в скобках, по LXX); именительный — как у Оронаима моавского (Иер 48:3).
+  - id: a159029
+    en: "Horonaim"
+    ru: "Оронаим"
+    evidence:
+      osis: 2Sam.13.34
+      excerpt: "царю, и сказал: я видел людей на дороге Оронской на скате горы.]"
+  # synodal: «Езер, отец Хуша» — родительный падеж; производное «Хушатянин» (2 Цар 21:18 и др.).
+  - id: a54fdd6
+    en: "Hushah"
+    ru: "Хуша"
+    evidence:
+      osis: 1Chr.4.4
+      excerpt: "Пенуел, отец Гедора, и Езер, отец Хуша. Вот сыновья Хура, первенца Ефрафы,"
+  # scholarly: Отождествление для Яноаха (4 Цар 15:29), «Ономастикон» Евсевия.
+  - id: adb6f6b
+    en: "Janua"
+    ru: "Януа"
+  # synodal: Синодальный делит на два: «Кириаф, Хецрон»; название собрано из этих форм.
+  - id: af66926
+    en: "Kerioth-hezron"
+    ru: "Кириаф-Хецрон"
+    evidence:
+      osis: Josh.15.25
+      excerpt: "Гацор-Хадафа, Кириаф, Хецрон, иначе Гацор,"
+  # synodal: Еврейское «Лашарон»; синодальный — «царь Шарона».
+  - id: a8bbf2b
+    en: "Lasharon"
+    ru: "Шарон"
+    evidence:
+      osis: Josh.12.18
+      excerpt: "Один царь Афека, один царь Шарона,"
+  # dictionary: Синодальный переводит: «живущих среди него противников Моих».
+  - id: a9de8b7
+    en: "Leb-kamai"
+    ru: "Лев-Камай"
+  # dictionary: Синодальный читает «с западной стороны Гивы».
+  - id: a5e9c87
+    en: "Maareh-geba"
+    ru: "Мааре-Гева"
+  # scholarly: Отождествление для Мадиама (Исх 2:15), у Птолемея.
+  - id: abf5daf
+    en: "Madiama"
+    ru: "Мадиама"
+  # scholarly: Отождествление для Сенаи (Езд 2:35), «Ономастикон».
+  - id: a0d1a62
+    en: "Magdalsenna"
+    ru: "Магдалсенна"
+  # scholarly: Отождествление для Мигдола (Иез 29:10); «Магдол» — как в Иер 44:1 (aa6d1bd).
+  - id: ad876c2
+    en: "Magdolum"
+    ru: "Магдол"
+  # dictionary: Синодальный переводит: «на землю возмутительную».
+  - id: a8eaad5
+    en: "Merathaim"
+    ru: "Мерафаим"
+  # dictionary: Синодальный переводит: «нижней части города».
+  - id: abcd5f2
+    en: "Mortar"
+    ru: "Мактеш"
+  # scholarly: Отождествление для города Нахора (Быт 24:10).
+  - id: ac6cefa
+    en: "Nahuru"
+    ru: "Нахуру"
+  # dictionary: Синодальный переводит: «при садах».
+  - id: aaa0f54
+    en: "Netaim"
+    ru: "Нетаим"
+  # descriptive: Описательное название.
+  - id: aa4589b
+    en: "North Gate"
+    ru: "Северные ворота"
+  # dictionary: Синодальный переводит: «у притвора»; ср. «в Фаруриме» (4 Цар 23:11).
+  - id: ab1d701
+    en: "Parbar"
+    ru: "Парвар"
+  # scholarly: Отождествление для Раамы (Иез 27:22).
+  - id: a9664ba
+    en: "Ragmat"
+    ru: "Рагмат"
+  # synodal: В Иез 27:15 синодальный (по еврейскому тексту) — «Сыны Дедана»; Родос — чтение LXX. Форма — Деян 21:1.
+  - id: a8c207b
+    en: "Rhodes"
+    ru: "Родос"
+  # synodal: Синодальный прямо называет реку.
+  - id: a669096
+    en: "River"
+    ru: "Евфрат"
+    evidence:
+      osis: Num.22.5
+      excerpt: "сыну Веорову, в Пефор, который на реке Евфрате, в земле сынов народа его, чтобы"
+  # dictionary: Синодальный (как KJV) переводит: «белою шерстью».
+  - id: af9e903
+    en: "Sahar"
+    ru: "Цахар"
+  # scholarly: Отождествление для Сефарада (Авд 1:20).
+  - id: acf15b3
+    en: "Saparda"
+    ru: "Сапарда"
+  # scholarly: Отождествление для Сепарваима (4 Цар 17:24).
+  - id: a9042c4
+    en: "Saparre"
+    ru: "Сапарре"
+  # synodal: «в Сефе» допускает и «Сеф», и «Сефа».
+  - id: a4052df
+    en: "Secu"
+    ru: "Сеф"
+    evidence:
+      osis: 1Sam.19.22
+      excerpt: "в Раму, и дошел до большого источника, что в Сефе, и спросил, говоря: где Самуил и"
+  # synodal: Выведено из «Шаалбонянин».
+  - id: a1303a4
+    en: "Shaalbon"
+    ru: "Шаалбон"
+    evidence:
+      osis: 2Sam.23.32
+      excerpt: "Елияхба Шаалбонянин; из сыновей Яшена — Ионафан,"
+  # descriptive: Описательное название; «южные ворота» — Иез 40:27.
+  - id: a092025
+    en: "South Gate"
+    ru: "Южные ворота"
+  # synodal: Синодальный переносит «Вагеб в Суфе» в 21:15 (KJV 21:14 «в Чермном море»).
+  - id: a88bcb2
+    en: "Suphah"
+    ru: "Суфа"
+  # scholarly: Народ; отождествление для Шоа (Иез 23:23).
+  - id: abef753
+    en: "Sutu"
+    ru: "Суту"
+  # dictionary: Синодальный переводит: «с возвышенности» (букв. «пуп земли»).
+  - id: a5948b2
+    en: "Tabbur-erez"
+    ru: "Таббур-Гаарец"
+  # dictionary: Синодальный читает «Фадмор» (кере); «Тамара» — как у a5947d7 (Иез 47:19 «от Тамары»).
+  - id: ab066d7
+    en: "Tamar"
+    ru: "Тамара"
+  # scholarly: Отождествление для Тел-Мелаха (Езд 2:59).
+  - id: a2ebfdf
+    en: "Thelme"
+    ru: "Тельме"
+  # scholarly: Область вокруг Дамаска (амарнские письма); отождествление для Ховы (Быт 14:15).
+  - id: ade3503
+    en: "Upu"
+    ru: "Упу"
+  # synodal: Шумерский город; та же форма, что у Ура Халдейского (a6cf75c).
+  - id: aa01373
+    en: "Ur"
+    ru: "Ур"
+  # scholarly: Город в Урарту; альтернативное отождествление для Ура (Быт 11:28).
+  - id: a78592e
+    en: "Ura"
+    ru: "Ура"
+  # dictionary: в 1 Пар 26:16 «ворота Шаллехет».
+  - id: a61d405
+    en: "West Gate"
+    ru: "Ворота Шаллехет"
+  # descriptive: Синодальный описывает: «по горам, где живут серны».
+  - id: adea7b0
+    en: "Wildgoats’ Rocks"
+    ru: "Горы серн"
+  # synodal: «в Цаане» допускает и «Цаан», и «Цаана»; еврейское «Цаанан».
+  - id: a4e7fa8
+    en: "Zaanan"
+    ru: "Цаан"
+    evidence:
+      osis: Mic.1.11
+      excerpt: "Шафира, срамно обнаженные; не убежит и живущая в Цаане; плач в селении Ецель не даст вам"
+  # dictionary: Синодальный переводит: «на место стражей».
+  - id: ae7f7b5
+    en: "Zophim"
+    ru: "Цофим"
+
+  # Daniel 11's "king of the north" and "king of the south": a bare «Север» read on the
+  # map as a point of the compass, so the realm is named.
+  - id: a244929
+    en: "North"
+    ru: "Царство северное"
+  - id: a1c0469
+    en: "South"
+    ru: "Царство южное"
+  # descriptive: «царица южная» (Мф 12:42), то же место, что Сава.
+  - id: a422f1c
+    en: "South"
+    ru: "Юг"
+  # descriptive: «при реке» (Быт 36:37), то же место, что поток Зеред.
+  - id: a3bb384
+    en: "River"
+    ru: "Река"

@@ -1,0 +1,24 @@
+id: when-did-the-jews-return-from-babylon
+question:
+  en: "When did the Jews return from Babylon?"
+  ru: "Когда иудеи вернулись из Вавилона?"
+answer:
+  en:
+    - "The first return began in 538 BC, when Cyrus of Persia, in his first year as ruler of Babylon, let the exiles go back to Jerusalem; later companies followed under Ezra about 458 BC and Nehemiah in 445 BC."
+    - 'Cyrus took Babylon in 539 BC, as the Nabonidus Chronicle records, and the Book of Ezra opens with his decree: "Who is there among you of all his people? his God be with him, and let him go up to Jerusalem, which is in Judah, and build the house of the LORD God of Israel." The Cyrus Cylinder shows the same policy toward other peoples whose gods and populations he restored to their places. The first company, led by Sheshbazzar and Zerubbabel, numbered some 42,000 according to Ezra''s list; they rebuilt the altar, laid the foundation of the Temple in their second year, and after a long interruption finished the Second Temple in the sixth year of Darius, 516 BC (515 is also held).'
+    - "Not all returned; a large community stayed in Babylonia for centuries. Ezra came with a further company in the seventh year of Artaxerxes I, about 458 BC, a journey of four months, and Nehemiah followed in the king's twentieth year, about 445 BC, and rebuilt the walls of Jerusalem in fifty-two days. Jeremiah's seventy years of captivity are reckoned in different ways, from the first deportation of 605 BC to the first return, or from the fall of the Temple in 587 or 586 to its completion in 516."
+  ru:
+    - "Первое возвращение началось в 538 г. до н. э., когда Кир Персидский в первый год своего правления над Вавилоном разрешил переселенцам вернуться в Иерусалим; позже за ними последовали группы под началом Ездры около 458 г. и Неемии в 445 г. до н. э."
+    - "Кир взял Вавилон в 539 г. до н. э., как сообщает Хроника Набонида, и книга Ездры начинается с его указа: «Кто есть из вас, из всего народа Его, — да будет Бог его с ним, — и пусть он идет в Иерусалим, что в Иудее, и строит дом Господа Бога Израилева». Цилиндр Кира показывает ту же политику по отношению к другим народам, чьих богов и жителей он вернул на их места. Первая группа во главе с Шешбацаром и Зоровавелем насчитывала около 42 000 человек по списку Ездры; они восстановили жертвенник, во второй год заложили основание Храма и после долгого перерыва завершили Второй Храм в шестой год Дария, в 516 г. до н. э. (называют и 515-й)."
+    - "Вернулись не все: большая община осталась в Вавилонии на столетия. Ездра привёл новую группу в седьмой год Артаксеркса I, около 458 г. до н. э., — путь занял четыре месяца; Неемия пришёл в двадцатый год того же царя, около 445 г., и за пятьдесят два дня восстановил стены Иерусалима. Семьдесят лет плена у Иеремии считают по-разному: от первого переселения в 605 г. до н. э. до первого возвращения или от гибели Храма в 587 или 586 г. до его завершения в 516-м."
+map:
+  place: a217d18
+  year: "538 BC"
+  ref: Ezra.1.3
+scripture: [Ezra.1.1-Ezra.1.4, Ezra.2.64, Ezra.6.15, Ezra.7.8-Ezra.7.9, Neh.6.15, Jer.29.10]
+sources:
+  - "Nabonidus Chronicle (ABC 7) iii 12-16; Cyrus Cylinder, ll. 30-32 (gods and peoples restored to their places)"
+  - "History Globe dated events (babylon-taken 539 BC; cyrus-edict 538 BC; second-temple c. 516 BC; nehemiah-walls c. 445 BC)"
+  - "History Globe tour “The first return and the second Temple” and History Globe tour “The return: Ezra and Nehemiah” (the years of the stops and the alternatives held)"
+  - "H. G. M. Williamson, Ezra, Nehemiah (Word Biblical Commentary 16, 1985)"
+status: checked

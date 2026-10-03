@@ -1,0 +1,32 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such.
+id: athens
+place: a1fe6e7
+title:
+  en: "Athens"
+  ru: "Афины"
+body:
+  en:
+    - "Athens lies in the plain of Attica around the rock of the Acropolis, about 8 km from its harbour at Piraeus. The Acropolis was lived on from the Neolithic, and in the thirteenth century BC it was a Mycenaean stronghold. Solon reformed the laws in 594 BC, and the reforms of Cleisthenes in 508–507 BC laid the foundation of the Athenian democracy."
+    - "Athens helped defeat Persia at Marathon in 490 BC; ten years later the Persians burned the Acropolis, and the Greek fleet won at Salamis. Under Pericles the Parthenon was built between 447 and 432 BC. Athens lost the Peloponnesian War to Sparta in 404 BC, and in 399 BC it put Socrates to death. Plato's Academy, Aristotle's Lyceum and the schools of the Stoics and Epicureans made it the home of philosophy. Sulla stormed the city in 86 BC, yet under Rome it remained a centre of learning, and Hadrian completed the temple of Olympian Zeus."
+    - "Paul came to Athens from Beroea and waited there for Silas and Timothy. Stirred by the city full of idols, he argued in the synagogue and daily in the agora. Epicurean and Stoic philosophers brought him to the Areopagus, where he spoke of an altar to an unknown god. A few believed, among them Dionysius the Areopagite and a woman named Damaris; a later bishop of Corinth names Dionysius the first bishop of Athens. Eusebius writes that Quadratus and Aristides, whom Jerome calls an Athenian philosopher, addressed defences of the Christian faith to Hadrian."
+    - "In AD 267 the Heruli sacked the city, and a smaller wall was then built around its centre. In the fourth century Basil the Great and Gregory of Nazianzus studied there, as did the future emperor Julian. Alaric's Goths overran Greece in 395–396; what befell Athens is told differently by ancient writers. Through the fifth century a Neoplatonist school still taught there, led by Proclus until his death in 485."
+  ru:
+    - "Афины лежат на Аттической равнине вокруг скалы Акрополя, примерно в 8 км от своей гавани Пирея. На Акрополе жили уже в эпоху неолита, а в XIII веке до н. э. здесь стояла микенская крепость. Солон преобразовал законы в 594 г. до н. э., а реформы Клисфена 508–507 гг. до н. э. положили начало афинской демократии."
+    - "Афины помогли разбить персов при Марафоне в 490 г. до н. э.; через десять лет персы сожгли Акрополь, а греческий флот победил при Саламине. При Перикле в 447–432 гг. до н. э. был построен Парфенон. В 404 г. до н. э. Афины проиграли Спарте Пелопоннесскую войну, а в 399 г. до н. э. казнили Сократа. Академия Платона, Ликей Аристотеля, школы стоиков и эпикурейцев сделали город родиной философии. В 86 г. до н. э. Афины взял штурмом Сулла, но и под властью Рима они остались средоточием учёности, а Адриан достроил храм Зевса Олимпийского."
+    - "Павел пришёл в Афины из Верии и ждал здесь Силу и Тимофея. Возмущённый тем, что город полон идолов, он рассуждал в синагоге и каждый день на площади. Эпикурейские и стоические философы привели его в Ареопаг, где он говорил о жертвеннике неведомому Богу. Уверовали немногие, и среди них Дионисий Ареопагит и женщина, именем Дамарь; позднейший епископ Коринфа называет Дионисия первым епископом Афин. Евсевий пишет, что Кодрат и Аристид, которого Иероним называет афинским философом, обратились к Адриану с апологиями христианской веры."
+    - "В 267 г. н. э. город разграбили герулы, и после этого центр обнесли меньшей стеной. В IV веке здесь учились Василий Великий и Григорий Богослов, а также будущий император Юлиан. В 395–396 гг. готы Алариха прошли по Греции; о том, что постигло Афины, древние писатели рассказывают по-разному. Весь V век здесь ещё учила неоплатоническая школа, которую до своей смерти в 485 г. возглавлял Прокл."
+scripture:
+  - Acts.17.15-Acts.17.34
+  - 1Thess.3.1
+sources:
+  - "Aristotle, Constitution of the Athenians 5-12; 20-22"
+  - "Herodotus, Histories 6.102-117; 8.53; 8.83-96"
+  - "Plutarch, Pericles 12-13; Plutarch, Sulla 12-14"
+  - "Thucydides, History 5.26; Xenophon, Hellenica 2.2.20-23; Plato, Apology"
+  - "Pausanias, Description of Greece 1.18.6-9"
+  - "Eusebius, Church History 3.4.10-11; 4.3; 4.23.3; Jerome, On Illustrious Men 20"
+  - "Historia Augusta, Gallienus 13.8; Zosimus, New History 5.5-6; Eunapius, Lives of the Sophists"
+  - "Gregory of Nazianzus, Oration 43.14-24; Ammianus Marcellinus 15.2.8 (Julian); Marinus, Life of Proclus"
+  - "J. M. Camp, The Archaeology of Athens (2001)"
+  - "A. Frantz, The Athenian Agora XXIV: Late Antiquity, A.D. 267-700 (1988)"
+status: checked

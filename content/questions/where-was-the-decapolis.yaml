@@ -1,0 +1,26 @@
+id: where-was-the-decapolis
+question:
+  en: "Where was the Decapolis?"
+  ru: "Где находилось Десятиградие?"
+answer:
+  en:
+    - "The Decapolis, the “ten cities”, was a group of Greek cities east and south-east of the Sea of Galilee, most of them beyond the Jordan in today's Jordan and Syria, with one, Scythopolis, west of the river in Israel. It was a region rather than a single place: the map's point for it stands about 23 km east-south-east of the middle of the lake, a little north-east of Gadara. The cities came under Rome in 63 BC, when Pompey freed them from Hasmonean rule."
+    - 'Great multitudes followed Jesus "from Galilee, and from Decapolis, and from Jerusalem, and from Judaea, and from beyond Jordan". The man freed from a legion of devils on the far shore of the lake "began to publish in Decapolis how great things Jesus had done for him", and returning from Tyre and Sidon Jesus "came unto the sea of Galilee, through the midst of the coasts of Decapolis". The manuscripts name the country of the swine differently, Gadarenes, Gergesenes or Gerasenes: the KJV and the Synodal text read Gergesenes in Matthew and Gadarenes in Mark and Luke.'
+    - "Pliny the Elder lists ten cities, though he notes that not all writers give the same ones: Damascus, Philadelphia (Rabbah, today's Amman), Raphana, Scythopolis (Beth-shan, which Josephus calls the largest), Gadara (Umm Qais, about 10 km south-east of the lake), Hippos, Dion, Pella, Gerasa (Jerash, more than 50 km from the lake) and Canatha. Gerasa, with its oval plaza and colonnaded streets, is now one of the best preserved Roman cities of the Near East. When the revolt of AD 66 broke out, Jewish bands attacked Gadara, Philadelphia and other cities, and the Greeks of Scythopolis killed the Jews of their own town."
+  ru:
+    - "Десятиградие, «десять городов», — это группа греческих городов к востоку и юго-востоку от Галилейского моря, большей частью за Иорданом на территории нынешних Иордании и Сирии, и один, Скифополь, к западу от реки в Израиле. Это скорее область, чем одно место: точка карты для него стоит примерно в 23 км к востоко-юго-востоку от середины озера, немного к северо-востоку от Гадары. Города перешли под власть Рима в 63 г. до н. э., когда Помпей освободил их от Хасмонеев."
+    - "За Иисусом следовало «множество народа из Галилеи и Десятиградия, и Иерусалима, и Иудеи, и из-за Иордана». Человек, освобождённый от легиона бесов на дальнем берегу озера, «пошел и начал проповедывать в Десятиградии, что сотворил с ним Иисус», а возвращаясь из пределов Тира и Сидона, Иисус «пошел к морю Галилейскому через пределы Десятиградия». Рукописи по-разному называют страну, где паслись свиньи: Гадаринская, Гергесинская или Герасинская; Синодальный перевод, как и KJV, читает у Матфея «Гергесинская», у Марка и Луки — «Гадаринская»."
+    - "Плиний Старший перечисляет десять городов, оговаривая, что не все авторы называют одни и те же: Дамаск, Филадельфия (Равва, нынешний Амман), Рафана, Скифополь (Беф-Сан, который Иосиф Флавий называет самым большим), Гадара (Умм-Кайс, около 10 км к юго-востоку от озера), Иппос, Дион, Пелла, Гераса (Джераш, более чем в 50 км от озера) и Каната. Гераса с её овальной площадью и улицами с колоннадами — сегодня один из лучше всего сохранившихся римских городов Ближнего Востока. Когда в 66 г. н. э. вспыхнуло восстание, иудейские отряды напали на Гадару, Филадельфию и другие города, а греки Скифополя перебили иудеев собственного города."
+map:
+  place: ae733a2
+  year: "AD 30"
+  ref: Mark.5.20
+scripture: [Matt.4.25, Mark.5.1, Mark.5.20, Mark.7.31, Matt.8.28, Luke.8.26]
+sources:
+  - "Pliny the Elder, Natural History 5.74 (the cities of the Decapolis)"
+  - "Josephus, Antiquities 14.75 and Jewish War 1.155 (Pompey and the cities); Jewish War 2.458-468 (the attacks of AD 66 and the Jews of Scythopolis); 3.446 (Scythopolis the largest of the Decapolis)"
+  - "B. M. Metzger, A Textual Commentary on the Greek New Testament (2nd ed., 1994), on Matt 8:28, Mark 5:1, Luke 8:26"
+  - "C. H. Kraeling (ed.), Gerasa: City of the Decapolis (1938)"
+  - "Th. M. Weber, Gadara Decapolitana (Gadara-Umm Qes I, 2002)"
+  - "Region point and straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

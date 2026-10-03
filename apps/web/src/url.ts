@@ -7,15 +7,31 @@ export interface UrlView {
   readonly place?: string;
   readonly camera?: Camera;
   readonly locale?: Locale;
-  /** `layers=borders,places`: the listed layers on, the others off. */
+  /** `hide=relief,ancient`: the listed layers off (older links: `layers=`, the listed on). */
   readonly layers?: LayerVisibility;
   /** A tour to start (its id is checked against the loaded tours). */
   readonly tour?: string;
   /** The tour's stop, counted from 1 as the card shows it. */
   readonly stop?: number;
+  /** A chapter shown on the map (OSIS, English numbering): `ref=Acts.16`. */
+  readonly ref?: string;
+  /** Inside another site's page (`embed=1`, docs/embed-protocol.md): the map alone. */
+  readonly embed?: boolean;
 }
 
-const LAYERS = ["borders", "places", "relief", "routes"] as const;
+const LAYERS = ["borders", "places", "relief", "routes", "roads", "ancient", "battles"] as const;
+/** The layers an older `layers=` link could list: a layer added since stays on in it. */
+const LISTED_LAYERS: readonly string[] = ["borders", "places", "relief", "routes", "roads"];
+
+const layersWhere = (on: (layer: (typeof LAYERS)[number]) => boolean): LayerVisibility => ({
+  borders: on("borders"),
+  places: on("places"),
+  relief: on("relief"),
+  routes: on("routes"),
+  roads: on("roads"),
+  ancient: on("ancient"),
+  battles: on("battles"),
+});
 
 /** Only languages with a UI dictionary; uk and de join when theirs exist. */
 const LOCALES: readonly Locale[] = ["ru", "en"];
@@ -24,7 +40,10 @@ const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v
 /** Into [-180, 180): the same meridian however many turns the link adds. */
 const wrap180 = (v: number) => (v >= -180 && v < 180 ? v : ((((v + 180) % 360) + 360) % 360) - 180);
 
-export function readUrl(search = window.location.search): UrlView {
+export function readUrl(
+  search = window.location.search,
+  path = typeof window === "undefined" ? "/" : window.location.pathname,
+): UrlView {
   const p = new URLSearchParams(search);
   const view: { -readonly [K in keyof UrlView]: UrlView[K] } = {};
   const yearText = p.get("year")?.trim() ?? "";
@@ -46,14 +65,12 @@ export function readUrl(search = window.location.search): UrlView {
   }
   const locale = p.get("locale") as Locale | null;
   if (locale && LOCALES.includes(locale)) view.locale = locale;
+  const hidden = p.get("hide")?.split(",");
   const listed = p.get("layers")?.split(",");
-  if (listed?.some((l) => (LAYERS as readonly string[]).includes(l))) {
-    view.layers = {
-      borders: listed.includes("borders"),
-      places: listed.includes("places"),
-      relief: listed.includes("relief"),
-      routes: listed.includes("routes"),
-    };
+  if (hidden?.some((l) => (LAYERS as readonly string[]).includes(l))) {
+    view.layers = layersWhere((l) => !hidden.includes(l));
+  } else if (listed?.some((l) => (LAYERS as readonly string[]).includes(l))) {
+    view.layers = layersWhere((l) => listed.includes(l) || !LISTED_LAYERS.includes(l));
   }
   const tour = p.get("tour");
   if (tour && /^[a-z0-9-]{1,40}$/.test(tour)) {
@@ -61,14 +78,24 @@ export function readUrl(search = window.location.search): UrlView {
     const stop = Number(p.get("stop"));
     if (Number.isInteger(stop) && stop >= 1 && stop <= 500) view.stop = stop;
   }
+  // The embed address itself, served as the app by hosts that skip the redirect page.
+  if (p.get("embed") === "1" || /\/embed\/v1\/?$/.test(path)) view.embed = true;
+  const ref = p.get("ref");
+  const part = "[1-4]?[A-Za-z]{2,6}\\.\\d{1,3}(?:\\.\\d{1,3})?";
+  // A chapter, a range, or a whole book (`ref=Acts`).
+  if (ref && (new RegExp(`^${part}(?:-${part})?$`).test(ref) || /^[1-4]?[A-Za-z]{2,6}$/.test(ref)))
+    view.ref = ref;
   return view;
 }
 
 type WritableView = Required<Pick<UrlView, "year" | "camera" | "locale">> &
-  Pick<UrlView, "place" | "layers" | "tour" | "stop">;
+  Pick<UrlView, "place" | "layers" | "tour" | "stop" | "ref">;
 
-export function writeUrl(view: WritableView): void {
-  window.history.replaceState(null, "", `?${viewSearch(view, window.location.search)}`);
+export function writeUrl(view: WritableView, push = false): void {
+  const url = `?${viewSearch(view, window.location.search)}`;
+  // A new place, tour or chapter is a step Back returns from; the camera and the year are not.
+  if (push) window.history.pushState(null, "", url);
+  else window.history.replaceState(null, "", url);
 }
 
 /** The query string for a view. Parameters this app does not own (theme from an
@@ -91,13 +118,22 @@ export function viewSearch(view: WritableView, current = ""): string {
   );
   p.set("locale", view.locale);
   // Layers are written only when some are off: the default view keeps a short link.
-  const on = view.layers ? LAYERS.filter((l) => view.layers?.[l]) : LAYERS;
-  if (on.length < LAYERS.length) p.set("layers", on.join(","));
-  else p.delete("layers");
+  const off = view.layers ? LAYERS.filter((l) => !view.layers?.[l]) : [];
+  p.delete("layers");
+  if (off.length > 0) p.set("hide", off.join(","));
+  else p.delete("hide");
   if (view.tour) p.set("tour", view.tour);
   else p.delete("tour");
+  // A lesson's places and name stay in the link while one of its places is open (a
+  // reload or a copied link keeps the lesson); another tour takes them out.
+  if (view.tour && view.tour !== "lesson") {
+    p.delete("lesson");
+    p.delete("title");
+  }
   // The first stop is where a tour starts anyway: only later ones are written.
   if (view.tour && view.stop !== undefined && view.stop > 1) p.set("stop", String(view.stop));
   else p.delete("stop");
+  if (view.ref) p.set("ref", view.ref);
+  else p.delete("ref");
   return p.toString();
 }

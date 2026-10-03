@@ -1,0 +1,37 @@
+id: where-was-golgotha
+question:
+  en: "Where was Golgotha, and where is Gethsemane?"
+  ru: "Где находилась Голгофа и где Гефсимания?"
+answer:
+  en:
+    - "The site of Golgotha is not known for certain. The map puts it at the Church of the Holy Sepulchre in the Old City of Jerusalem, the place venerated since the fourth century and the one most scholars accept; since the nineteenth century others have proposed Gordon's Calvary, a skull-shaped cliff with the Garden Tomb beside it, north of the Damascus Gate. The place card lists three candidates: the church, a spot just south of it, and Gordon's Calvary. Gethsemane lay across the Kidron valley at the foot of the Mount of Olives, about a kilometre east of the traditional Golgotha."
+    - 'The Gospels say little about the place: Jesus "went forth into a place called the place of a skull, which is called in the Hebrew Golgotha"; it "was nigh to the city", and "in the place where he was crucified there was a garden; and in the garden a new sepulchre". Hebrews adds that he "suffered without the gate". No Gospel calls Golgotha a hill. Eusebius, in the early fourth century, placed Golgotha north of Mount Zion, and in 335 the church that Constantine built over the rock and the tomb was dedicated; Eusebius says the tomb was found when a pagan temple on the spot was pulled down. Excavations inside the church have shown that the site was a disused quarry with rock-cut tombs, which lay outside the city wall of Jesus'' day.'
+    - 'The skull-shaped hill was first proposed by Otto Thenius in 1842 and made famous by General Charles Gordon in 1883; against it, Gabriel Barkay dated the Garden Tomb to the eighth or seventh century BC, centuries before Jesus, while its defenders still hold to the site. Gethsemane is firmer in its general position though not in its exact spot: Jesus "went forth with his disciples over the brook Cedron, where was a garden", and Matthew names it "a place called Gethsemane"; the gardens shown today lie beside the road up the Mount of Olives, and the traditions differ as to which is the place.'
+  ru:
+    - "Место Голгофы точно неизвестно. Карта помещает её в храме Гроба Господня в Старом городе Иерусалима — там, где её почитают с IV века; это место принимает большинство учёных, а с XIX века другие предлагают «Голгофу Гордона», похожую на череп скалу с Садовой гробницей рядом, к северу от Дамасских ворот. В карточке места три кандидата: храм, место чуть южнее него и «Голгофа Гордона». Гефсимания лежала за долиной Кедрона у подножия горы Елеонской, примерно в километре к востоку от традиционной Голгофы."
+    - "Евангелия говорят о месте немного: Иисус «вышел на место, называемое Лобное, по-еврейски Голгофа»; оно «было недалеко от города», и «на том месте, где Он распят, был сад, и в саду гроб новый». Послание к Евреям добавляет, что Он «пострадал вне врат». Ни одно Евангелие не называет Голгофу горой. Евсевий в начале IV века помещал Голгофу к северу от горы Сион, а в 335 году был освящён храм, который Константин построил над скалой и гробницей; Евсевий пишет, что гробницу нашли, когда снесли стоявший на этом месте языческий храм. Раскопки внутри храма показали, что здесь была заброшенная каменоломня с высеченными в скале гробницами, лежавшая вне городской стены времён Иисуса."
+    - "Холм, похожий на череп, первым предложил Отто Тениус в 1842 году, а прославил генерал Чарльз Гордон в 1883 году; против этого места говорит то, что Габриэль Баркай датировал Садовую гробницу VIII или VII веком до н. э., за столетия до Иисуса, хотя его сторонники держатся своего мнения. С Гефсиманией яснее в общем положении, но не в точном месте: Иисус «вышел с учениками Своими за поток Кедрон, где был сад», а Матфей называет его «место, называемое Гефсимания»; сады, которые показывают сегодня, лежат у дороги на гору Елеонскую, и предания расходятся в том, какой из них и есть то место."
+map:
+  place: a631d35
+  year: "c. AD 30"
+  ref: John.19.17
+scripture:
+  [
+    Matt.27.33,
+    John.19.17,
+    John.19.20,
+    John.19.41-John.19.42,
+    Heb.13.12,
+    John.18.1,
+    Matt.26.36,
+    Mark.14.32,
+  ]
+sources:
+  - "Eusebius, Onomasticon, s.v. Golgotha"
+  - "Eusebius, Life of Constantine 3.25-40 (the temple removed, the tomb found, the church built)"
+  - "V. C. Corbo, Il Santo Sepolcro di Gerusalemme, 3 vols. (1981-1982)"
+  - "G. Barkay, 'The Garden Tomb: Was Jesus Buried Here?', Biblical Archaeology Review 12.2 (1986)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008)"
+  - "History Globe articles “Zion” and “Jerusalem”, History Globe dated events (crucifixion c. AD 30) and History Globe tour “Jesus in Jerusalem, after John”"
+  - "Candidate sites and straight-line distance: OpenBible.info Bible Geocoding Data (CC BY 4.0) (Golgotha: Church of the Holy Sepulchre, “Taylor Golgotha”, Gordon's Calvary)"
+status: checked

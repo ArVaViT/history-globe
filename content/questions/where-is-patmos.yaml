@@ -1,0 +1,24 @@
+id: where-is-patmos
+question:
+  en: "Where is Patmos?"
+  ru: "Где находится Патмос?"
+answer:
+  en:
+    - "Patmos is a small, rocky Greek island of about 34 square kilometres in the south-eastern Aegean, among the Dodecanese, south of Samos and off the coast of Turkey; Ephesus lies about 100 km to the north-east in a straight line."
+    - 'It is named once in the Bible, at the opening of Revelation: "I John, who also am your brother, and companion in tribulation … was in the isle that is called Patmos, for the word of God, and for the testimony of Jesus Christ." There he was told to write what he saw and send it to the seven churches of Asia, from Ephesus to Laodicea. Ancient writers rarely mention the island; Thucydides and Strabo name it in passing.'
+    - "Early Christian writers took John's stay as banishment. Irenaeus says the vision was seen toward the end of Domitian's reign, usually taken as about AD 95, and Eusebius says John returned to Ephesus under Nerva, when those whom Domitian had banished were allowed home. Most scholars accept a date under Domitian; some place Revelation in the years after Nero, about AD 68. The map's tour of the seven churches uses AD 95."
+  ru:
+    - "Патмос — небольшой скалистый греческий остров площадью около 34 кв. км на юго-востоке Эгейского моря, в архипелаге Додеканес, южнее Самоса, у побережья Турции; Ефес лежит примерно в 100 км к северо-востоку по прямой."
+    - "В Библии он назван один раз, в начале Откровения: «Я, Иоанн, брат ваш и соучастник в скорби… был на острове, называемом Патмос, за слово Божие и за свидетельство Иисуса Христа». Здесь ему велено записать увиденное и послать семи церквам Асии, от Ефеса до Лаодикии. Древние авторы упоминают остров редко: Фукидид и Страбон называют его мимоходом."
+    - "Ранние христианские писатели считали пребывание Иоанна на острове ссылкой. Ириней говорит, что видение было в конце правления Домициана, то есть около 95 г. н. э., а Евсевий — что Иоанн вернулся в Ефес при Нерве, когда сосланным Домицианом разрешили вернуться. Большинство учёных принимают дату при Домициане; некоторые относят Откровение к годам после Нерона, около 68 г. Тур по семи церквам на карте показывает 95 г."
+map:
+  place: a8f60f3
+  year: "AD 95"
+  ref: Rev.1.9
+scripture: [Rev.1.9, Rev.1.11]
+sources:
+  - "Irenaeus, Against Heresies 5.30.3"
+  - "Eusebius, Church History 3.18.1-5; 3.20.10-11; 3.23.6"
+  - "Thucydides 3.33; Strabo, Geography 10.5.13"
+  - "D. E. Aune, Revelation 1-5 (Word Biblical Commentary 52A, 1997), introduction on the date"
+status: checked

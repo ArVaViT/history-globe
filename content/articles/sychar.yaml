@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; the site is disputed (Askar or Shechem at Tell Balata) and both are named; the date for Shechem's end follows the Shechem article.
+id: sychar
+place: a27b472 # the only Sychar record, drawn at Askar (lon/lat checked); 1 verse
+title:
+  en: "Sychar"
+  ru: "Сихарь"
+body:
+  en:
+    - 'Sychar is the "city of Samaria" of John''s Gospel, "near to the parcel of ground that Jacob gave to his son Joseph", where Jacob''s well was. The well is still shown at the eastern foot of Mount Gerizim, where the pass between Gerizim and Ebal opens onto the plain, east of Nablus. Which town John meant is disputed. Many identify Sychar with the village of Askar on the lower slope of Mount Ebal, about a kilometre north of the well, where the map point stands; others hold that it is Shechem itself, the mound of Tell Balata, a few hundred metres from the well.'
+    - "The case for Askar rests on early witnesses that keep the two places apart. Eusebius lists Sychar separately from Shechem, placing it before Neapolis by the field Jacob gave to Joseph. The Pilgrim of Bordeaux in 333 was shown Sichem at the foot of Gerizim, with the tomb of Joseph, and a mile from it a place called Sechar, from which the Samaritan woman came down to the well. The Mishnah names a valley of Ein Sokher, which some link with the same name. The case for Shechem rests on its nearness to the well and on Jerome, who held that the name should be read Shechem, not Sychar as many read it; against it, the old city at Tell Balata had been destroyed by John Hyrcanus about 107 BC."
+    - 'In John''s account Jesus, wearied with the journey from Judaea to Galilee through Samaria, sat on the well about the sixth hour and asked a Samaritan woman for a drink. They spoke of living water and of worship; she said "Our fathers worshipped in this mountain", meaning Gerizim, where the Samaritan temple had stood. She went into the city, many Samaritans of that city believed, and at their request Jesus abode there two days.'
+    - "In AD 72 Vespasian founded the city of Flavia Neapolis, today Nablus, a little to the west; Josephus says the local people called the place Mabartha. Eusebius notes that the place of Sychar was still shown. In 333 the Pilgrim of Bordeaux saw plane trees said to have been planted by Jacob and a bath fed from the well, and by the 380s a church had been built around the well on the side of Gerizim, where Paula stopped on her pilgrimage. That church was probably destroyed in one of the Samaritan revolts, of 484 or 529."
+  ru:
+    - "Сихарь — «город Самарийский» из Евангелия от Иоанна, «близ участка земли, данного Иаковом сыну своему Иосифу», где был колодезь Иаковлев. Колодец и теперь показывают у восточного подножия горы Гаризим, там, где проход между Гаризимом и Гевалом выходит на равнину, к востоку от Наблуса. О том, какой город имел в виду Иоанн, спорят. Многие отождествляют Сихарь с селением Аскар на нижнем склоне горы Гевал, примерно в километре к северу от колодца, — там стоит точка на карте; другие считают, что это сам Сихем, холм Телль-Балата в нескольких сотнях метров от колодца."
+    - "В пользу Аскара говорят ранние свидетели, различающие эти два места. Евсевий называет Сихарь отдельно от Сихема и помещает его перед Неаполем, у поля, данного Иаковом Иосифу. Бордоскому паломнику в 333 г. показали Сихем у подножия Гаризима с гробницей Иосифа, а в миле от него — место под названием Сехар, откуда самарянка спускалась к колодцу. Мишна упоминает долину Эйн-Сохер, которую некоторые связывают с тем же именем. В пользу Сихема говорят его близость к колодцу и мнение Иеронима, считавшего, что читать надо «Сихем», а не «Сихарь», как читают многие; против — то, что старый город на Телль-Балате был разрушен Иоанном Гирканом около 107 г. до н. э."
+    - "По рассказу Иоанна, Иисус, утомлённый дорогой из Иудеи в Галилею через Самарию, сел у колодезя около шестого часа и попросил у самарянки пить. Они говорили о воде живой и о поклонении; она сказала: «Отцы наши поклонялись на этой горе», имея в виду Гаризим, где прежде стоял храм самарян. Она пошла в город, многие самаряне из того города уверовали, и по их просьбе Иисус пробыл там два дня."
+    - "В 72 г. н. э. Веспасиан основал немного к западу город Флавия Неаполь, нынешний Наблус; по словам Иосифа Флавия, местные жители называли это место Мабарта. Евсевий отмечает, что место Сихаря всё ещё показывают. В 333 г. Бордоский паломник видел платаны, будто бы посаженные Иаковом, и купальню, питаемую из колодца, а к 380-м гг. вокруг колодца на склоне Гаризима была построена церковь, где останавливалась в своём паломничестве Павла. Вероятно, эта церковь погибла во время одного из восстаний самарян — 484 или 529 г."
+scripture:
+  - John.4.3-John.4.9
+  - John.4.20
+  - John.4.28-John.4.30
+  - John.4.39-John.4.42
+  - Gen.33.18-Gen.33.19
+  - Josh.24.32
+sources:
+  - "Eusebius, Onomasticon, s.v. Suchar and Suchem (C. U. Wolf's translation, nos. 902, 807)"
+  - "Itinerary of the Bordeaux Pilgrim (AD 333), tr. A. Stewart (Palestine Pilgrims' Text Society, vol. 1, 1896)"
+  - "Jerome, Letter 108.13"
+  - "Mishnah, Menahot 10.2 (the valley of Ein Sokher)"
+  - "Josephus, Jewish War 4.449 (Neapolis, called Mabartha by the local people); Flavia Neapolis founded AD 72/73 (era of its coins)"
+  - "E. F. Campbell, Shechem III: The Stratigraphy and Architecture of Shechem/Tell Balatah (2002)"
+  - "D. Pringle, The Churches of the Crusader Kingdom of Jerusalem, vol. 1 (1993), no. 108 (Jacob's Well)"
+status: checked

@@ -1,0 +1,32 @@
+# Overview article (ADR 0007). Mainstream facts only; Mesopotamian dates follow the middle chronology.
+# The identification of Abraham's Ur with Tell el-Muqayyar is the usual one but debated; said so.
+id: ur
+place: a6cf75c
+title:
+  en: "Ur"
+  ru: "Ур"
+body:
+  en:
+    - "Ur lay in the far south of Mesopotamia, at the mound of Tell el-Muqayyar, 16 km south-west of modern Nasiriyah. In antiquity it stood on the Euphrates near the head of the Gulf; the river and the coast have since moved away. It was settled already in the Ubaid period, the prehistoric age of southern Mesopotamia, and became one of the great Sumerian cities, sacred to the moon god Nanna. Leonard Woolley's excavations of 1922–1934 uncovered the Royal Cemetery of the mid-third millennium BC, with its gold, lyres and the so-called Standard of Ur."
+    - "Its height was the Third Dynasty of Ur (c. 2112–2004 BC in the middle chronology). Ur-Nammu and his son Shulgi ruled Sumer and Akkad from here, and Ur-Nammu built the ziggurat whose lower stages still stand. About 2004 BC the Elamites took the city and carried off its last king, Ibbi-Sin, a disaster mourned in the Lament for Sumer and Ur. Ur recovered and lived on as a temple city under later Babylonian kings."
+    - "Genesis says that Terah set out with Abram from Ur of the Chaldees to go to Canaan and settled at Haran; Nehemiah and Stephen's speech in Acts recall the departure. Most scholars identify this Ur with Tell el-Muqayyar, but the identification is debated: an old tradition points to Urfa in northern Mesopotamia, and some scholars have argued for an Ur in the north, nearer Haran."
+    - "In the sixth century BC Nebuchadnezzar and Nabonidus rebuilt Ur's temples. Nabonidus restored the ziggurat and made his daughter high priestess of the moon god, and his inscribed cylinders from the ziggurat name his son Belshazzar. After the Persian conquest the city declined, perhaps as the Euphrates shifted its course, and it was abandoned in the Persian period, long before the end of antiquity."
+  ru:
+    - "Ур лежал на крайнем юге Месопотамии, на холме Телль-эль-Мукайяр, в 16 км к юго-западу от нынешней Насирии. В древности он стоял на Евфрате, недалеко от вершины Персидского залива; с тех пор и река, и берег отступили. Здесь жили уже в убейдский период, доисторическую эпоху юга Месопотамии, а затем Ур стал одним из великих шумерских городов, городом бога луны Нанны. Раскопки Леонарда Вулли в 1922–1934 гг. открыли Царское кладбище середины III тысячелетия до н. э. с его золотом, лирами и так называемым Штандартом из Ура."
+    - "Вершиной его истории стала III династия Ура (ок. 2112–2004 гг. до н. э. по средней хронологии). Ур-Намму и его сын Шульги правили отсюда Шумером и Аккадом, а Ур-Намму построил зиккурат, нижние ярусы которого стоят до сих пор. Около 2004 г. до н. э. эламиты взяли город и увели его последнего царя Ибби-Сина; об этой беде скорбит «Плач о гибели Шумера и Ура». Ур оправился и продолжал жить как храмовый город при позднейших вавилонских царях."
+    - "Книга Бытия говорит, что Фарра вышел с Аврамом из Ура Халдейского, чтобы идти в землю Ханаанскую, и поселился в Харране; об этом исходе вспоминают Неемия и речь Стефана в Деяниях. Большинство учёных отождествляют этот Ур с Телль-эль-Мукайяром, но отождествление спорно: давнее предание указывает на Урфу в северной Месопотамии, а некоторые исследователи предлагали искать Ур на севере, ближе к Харрану."
+    - "В VI веке до н. э. Навуходоносор и Набонид отстроили храмы Ура. Набонид восстановил зиккурат и поставил свою дочь верховной жрицей бога луны, а его надписи на цилиндрах из зиккурата называют его сына Валтасара. После персидского завоевания город пришёл в упадок, возможно, потому, что Евфрат изменил русло, и ещё в персидское время был покинут — задолго до конца античности."
+scripture:
+  - Gen.11.28
+  - Gen.11.31
+  - Gen.15.7
+  - Neh.9.7
+  - Acts.7.2-Acts.7.4
+sources:
+  - "Sumerian King List; Lament for Sumer and Ur"
+  - "Nabonidus Cylinders from the ziggurat of Ur"
+  - "C. L. Woolley, Ur Excavations II: The Royal Cemetery (1934)"
+  - "C. L. Woolley and P. R. S. Moorey, Ur 'of the Chaldees' (1982)"
+  - "C. H. Gordon, 'Abraham and the Merchants of Ura', Journal of Near Eastern Studies 17 (1958)"
+  - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016), ch. 5 (middle chronology)"
+status: checked

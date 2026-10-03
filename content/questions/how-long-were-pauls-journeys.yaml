@@ -1,0 +1,34 @@
+id: how-long-were-pauls-journeys
+question:
+  en: "How long were Paul's missionary journeys?"
+  ru: "Какой длины были миссионерские путешествия Павла?"
+answer:
+  en:
+    - "Measured from stop to stop in straight lines along the routes of the four tours on the map, Paul's first journey comes to about 1,980 km, the second about 3,650 km, the third about 2,850 km and the voyage to Rome about 2,995 km: more than 11,000 km in all. At a walker's 30 km a day those lengths would take 66, 122, 95 and 100 days on the road, but each journey was partly by sea, real roads are longer than straight lines, and Paul stayed for months or years in some cities, so the figures are a yardstick, not a timetable."
+    - 'The first journey (c. AD 47 on the map; Acts 13–14) went from Antioch down to its port Seleucia, "and from thence they sailed to Cyprus", then from Perga up into the hills to Antioch of Pisidia, Iconium, Lystra and Derbe, and back the same way to the coast; the legs on land measure about 1,255 km by the roads on the map. The second (c. AD 50; Acts 15:36–18:22) began with the words "Let us go again and visit our brethren in every city where we have preached the word of the Lord": overland through Derbe and Lystra to Troas, by sea to Macedonia, then Philippi, Thessalonica, Berea, Athens and Corinth, where Paul stayed a year and six months, and home by sea through Ephesus and Caesarea; its land legs, about 2,825 km, are the longest of the four.'
+    - "The third (c. AD 54; Acts 18:23–21:17) took Paul over all the country of Galatia and Phrygia to Ephesus, 1,035 km from Antioch by the roads on the map, where he spent about three years, then through Macedonia to Troas and down the coast of Asia by Miletus, Rhodes and Patara to Tyre, Caesarea and Jerusalem; about 1,935 km of it on land. The voyage to Rome (AD 59–60) ran from Caesarea by Sidon, Myra and Crete to the wreck on Malta (Melita), then by Syracuse and Rhegium to Puteoli, from where the Appian Way led about 205 km to Rome; only that last stretch was on foot. The years are conventional points, since Paul's chronology is debated; Gallio's year of office at Corinth, 51–52, is its firmest anchor."
+  ru:
+    - "Если мерить от остановки к остановке по прямой вдоль маршрутов четырёх туров на карте, первое путешествие Павла составляет около 1980 км, второе — около 3650 км, третье — около 2850 км, а путь в Рим — около 2995 км: всего более 11 000 км. Пешеходу при 30 км в день на эти расстояния понадобилось бы 66, 122, 95 и 100 дней в дороге, но каждое путешествие отчасти шло морем, настоящие дороги длиннее прямых, а в некоторых городах Павел жил месяцами и годами, так что эти цифры — мерка, а не расписание."
+    - "Первое путешествие (на карте — около 47 г. н. э.; Деян. 13–14) шло из Антиохии к её гавани Селевкии, «а оттуда отплыли в Кипр», затем от Пергии в горы к Антиохии Писидийской, Иконии, Листре и Дервии и той же дорогой обратно к побережью; сухопутные отрезки по дорогам на карте составляют около 1255 км. Второе (около 50 г.; Деян. 15:36–18:22) началось словами «пойдем опять, посетим братьев наших по всем городам, в которых мы проповедали слово Господне»: по суше через Дервию и Листру до Троады, морем в Македонию, затем Филиппы, Фессалоника, Верия, Афины и Коринф, где Павел прожил год и шесть месяцев, и домой морем через Ефес и Кесарию; его сухопутные отрезки, около 2825 км, самые длинные из четырёх."
+    - "Третье (около 54 г.; Деян. 18:23–21:17) провело Павла через страну Галатийскую и Фригию в Ефес, 1035 км от Антиохии по дорогам на карте, где он провёл около трёх лет, потом через Македонию в Троаду и вдоль берега Асии мимо Милита, Родоса и Патары в Тир, Кесарию и Иерусалим; на суше из него около 1935 км. Путь в Рим (59–60 гг.) шёл из Кесарии мимо Сидона, Мир и Крита до крушения у Мелита (Мальты), затем через Сиракузы и Ригию в Путеол, откуда Аппиева дорога вела около 205 км до Рима; пешком был только этот последний участок. Годы условны, поскольку хронология Павла спорна; самая твёрдая её опора — год проконсульства Галлиона в Коринфе, 51–52."
+map:
+  year: "AD 50"
+  ref: Acts.13.4
+scripture:
+  [
+    Acts.13.4,
+    Acts.14.26,
+    Acts.15.36,
+    Acts.18.11,
+    Acts.18.22-Acts.18.23,
+    Acts.21.15-Acts.21.17,
+    Acts.27.1-Acts.27.2,
+    Acts.28.13-Acts.28.16,
+  ]
+sources:
+  - "History Globe tours of Paul's three journeys and of his voyage to Rome (the stops and the conventional years)"
+  - "Straight-line lengths summed stop to stop from the map's place coordinates (OpenBible.info Bible Geocoding Data)"
+  - "Land legs summed along the Roman road network of Itiner-e (de Soto, Pažout, Brughmans et al. 2025) (paul-1: 1257 km; paul-2: 2827 km; paul-3: 1933 km; paul-rome: Puteoli to Forum of Appius 142 km and Forum of Appius to Rome 65 km)"
+  - "The Gallio inscription at Delphi (SIG³ 801), dating his year of office to 51-52; History Globe dated events (Gallio, c. AD 51)"
+  - "W. M. Ramsay, St. Paul the Traveller and the Roman Citizen (1895)"
+status: checked

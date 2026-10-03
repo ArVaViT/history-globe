@@ -1,0 +1,24 @@
+id: where-was-megiddo
+question:
+  en: "Where was Megiddo, the Armageddon of Revelation?"
+  ru: "Где находился Мегиддон — Армагеддон Откровения?"
+answer:
+  en:
+    - "Megiddo is the mound of Tel Megiddo in northern Israel, at the western edge of the Jezreel Valley, where the pass of Wadi Ara comes through the Carmel ridge; it is about 90 km north of Jerusalem in a straight line."
+    - 'The mound guarded the main road between Egypt and Syria, and armies met here for three thousand years: Thutmose III of Egypt routed a coalition of Canaanite kings before its walls in the fifteenth century BC, the Song of Deborah tells of the kings of Canaan fighting "by the waters of Megiddo", and in 609 BC Pharaoh Necho slew King Josiah at Megiddo. Iron Age Megiddo had palaces, a six-chambered gate and a tunnel to its spring; whether these belong to Solomon''s tenth century or to the ninth century of Ahab''s dynasty is one of the main disputes of biblical archaeology. The mound was abandoned about the fourth century BC.'
+    - 'Revelation names the place where the kings are gathered "in the Hebrew tongue Armageddon", and the name is usually explained as "mount of Megiddo", though the mound is low and the reading is not certain; the place card on the map lists the other proposals, among them Mount Carmel and the Jezreel Valley itself.'
+  ru:
+    - "Мегиддон — это холм Тель-Мегиддо на севере Израиля, на западном краю Изреельской долины, там, где проход Вади-Ара прорезает Кармильский хребет; от Иерусалима сюда около 90 км по прямой."
+    - "Холм сторожил главную дорогу из Египта в Сирию, и войска сходились здесь три тысячи лет: Тутмос III в XV веке до н. э. разбил под его стенами союз ханаанских царей, песнь Деворы говорит о царях ханаанских, сражавшихся «у вод Мегиддонских», а в 609 г. до н. э. фараон Нехао поразил при Мегиддоне царя Иосию. В Мегиддоне железного века были дворцы, шестикамерные ворота и туннель к источнику; принадлежат ли они X веку Соломона или IX веку династии Ахава — один из главных споров библейской археологии. Около IV века до н. э. холм был покинут."
+    - "Откровение называет место, куда собраны цари, «по-еврейски Армагеддон»; имя обычно объясняют как «гора Мегиддо», хотя холм невысок и чтение не бесспорно; карточка места на карте перечисляет другие предложения, среди них гору Кармил и саму Изреельскую долину."
+map:
+  place: a8554e3
+  year: "609 BC"
+  ref: 2Kgs.23.29
+scripture: [Judg.5.19, 2Kgs.23.29-2Kgs.23.30, Zech.12.11, Rev.16.16]
+sources:
+  - "Annals of Thutmose III at Karnak, first campaign, tr. J. H. Breasted, Ancient Records of Egypt II (1906) §§408-443"
+  - "Babylonian Chronicle, ABC 3, the seventeenth year of Nabopolassar (609 BC)"
+  - "E. H. Cline, The Battles of Armageddon: Megiddo and the Jezreel Valley from the Bronze Age to the Nuclear Age (2000)"
+  - "OpenBible.info, candidate sites for Armageddon"
+status: checked

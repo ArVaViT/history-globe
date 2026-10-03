@@ -9,6 +9,7 @@ title:
   en: "The Exodus"
   ru: "Исход из Египта"
 year: "1446 BC"
+people: ["Moses@Exo.2.10-Rev"]
 approximate: true
 stops:
   - place: a079b21 # Rameses
@@ -72,7 +73,7 @@ stops:
     ref: Num.20.22-Num.20.29
     year: "1407 BC"
     note:
-      en: "Aaron dies on the top of Mount Hor; Eleazar his son takes his garments."
+      en: "Aaron dies on the top of Mount Hor; his garments are put upon Eleazar his son."
       ru: "Аарон умирает на вершине горы Ор; его одежды переходят к Елеазару, сыну его."
   - place: abf2fc1 # Heshbon
     ref: Num.21.21-Num.21.26

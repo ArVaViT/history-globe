@@ -1,0 +1,35 @@
+id: where-was-shiloh
+question:
+  en: "Where was Shiloh?"
+  ru: "Где находился Силом?"
+answer:
+  en:
+    - "Shiloh lay in the hill country of Ephraim at Khirbet Seilun, in today's West Bank, about 30 km north of Jerusalem in a straight line, 15 km north of Bethel and about 18 km south of Shechem. The identification is secure: Judges places Shiloh north of Bethel, east of the highway from Bethel to Shechem and south of Lebonah, and the ruin fits."
+    - 'After the conquest "the whole congregation of the children of Israel assembled together at Shiloh, and set up the tabernacle of the congregation there", and Joshua cast lots there for the remaining tribes. Elkanah and Hannah came up to worship when Eli and his sons were priests, Hannah brought the child Samuel to the house of the LORD, and "the LORD appeared again in Shiloh: for the LORD revealed himself to Samuel in Shiloh". The ark was carried from Shiloh into battle against the Philistines and captured, and Eli died at the news. Jeremiah later warned Jerusalem with its fate: "go ye now unto my place which was in Shiloh".'
+    - "A Danish expedition dug here in 1926–1932 and Israel Finkelstein in 1981–1984. In the Middle Bronze Age Shiloh was a walled town; a dump of offering vessels from the Late Bronze Age suggests a sanctuary before Israel's time. Israelite pillared buildings with storage jars were burnt in a destruction that radiocarbon dates to the second half of the eleventh century BC; many link it to the Philistine victory, but the Bible does not describe Shiloh's fall. Eusebius placed the village twelve miles from Neapolis, and Byzantine churches with mosaic floors have been uncovered there."
+  ru:
+    - "Силом стоял на горе Ефремовой, на месте Хирбет-Сейлун на нынешнем Западном берегу, примерно в 30 км к северу от Иерусалима по прямой, в 15 км к северу от Вефиля и примерно в 18 км к югу от Сихема. Отождествление надёжно: Книга Судей помещает Силом на север от Вефиля, на восток от дороги из Вефиля в Сихем и на юг от Левоны, и городище этому соответствует."
+    - "После завоевания «все общество сынов Израилевых собралось в Силом, и поставили там скинию собрания», и Иисус Навин бросил здесь жребий для остальных колен. Сюда приходили поклониться Елкана и Анна, когда священниками были Илий и его сыновья; Анна привела отрока Самуила в дом Господень, и «продолжал Господь являться в Силоме после того, как открыл Себя Самуилу в Силоме». Ковчег взяли из Силома на битву с филистимлянами, и он был захвачен, а Илий, услышав об этом, умер. Позже Иеремия предостерегал Иерусалим его участью: «Пойдите же на место Мое в Силом»."
+    - "В 1926–1932 годах здесь копала датская экспедиция, в 1981–1984 годах — Израэль Финкельштейн. В среднем бронзовом веке Силом был городом со стеной; свалка жертвенной посуды позднего бронзового века говорит о святилище ещё до Израиля. Израильские здания со столбами и сосудами для запасов сгорели при разрушении, которое радиоуглерод датирует второй половиной XI века до н. э.; многие связывают его с победой филистимлян, но Библия не описывает падения Силома. Евсевий помещал селение в двенадцати милях от Неаполя, и там открыты византийские церкви с мозаичными полами."
+map:
+  place: aa4680a
+  year: "1070 BC"
+  ref: 1Sam.3.21
+scripture:
+  [
+    Judg.21.19,
+    Josh.18.1,
+    1Sam.1.3,
+    1Sam.1.24,
+    1Sam.3.21,
+    1Sam.4.3-1Sam.4.4,
+    1Sam.4.10-1Sam.4.11,
+    Jer.7.12,
+  ]
+sources:
+  - "Eusebius, Onomasticon, s.v. Selo"
+  - "I. Finkelstein (ed.), Shiloh: The Archaeology of a Biblical Site (1993)"
+  - "I. Finkelstein, The Archaeology of the Israelite Settlement (1988)"
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe tour “Samuel and the ark”"
+status: checked

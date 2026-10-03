@@ -1,0 +1,31 @@
+# Overview article (ADR 0007). Mainstream facts only; the site of Debir is debated (Khirbet Rabud, now preferred, against Albright's Tell Beit Mirsim); the map point stands on Khirbet Rabud; no date is given for the conquest.
+id: debir
+place: ad2048e
+title:
+  en: "Debir"
+  ru: "Давир"
+body:
+  en:
+    - "Debir, earlier called Kiriath-sepher, was a town in the hills of Judah south-west of Hebron, and its site has long been debated. W. F. Albright proposed Tell Beit Mirsim in 1924 and excavated it in 1926–1932; it stands where the hills meet the Shephelah. In 1968, while surveying the hills south of Hebron, Moshe Kochavi of Tel Aviv University proposed Khirbet Rabud, about 13 km south-west of Hebron, and dug there. Most scholars now prefer Khirbet Rabud, which lies in the hill country where the Book of Joshua lists Debir; the point on the map marks it."
+    - "Khirbet Rabud was settled in the Bronze Age and in the Iron Age became a town of Judah. In the ninth century BC it was surrounded by a thick wall enclosing about 5 ha. The town was destroyed in the late eighth century, probably in Sennacherib's campaign of 701 BC; it was rebuilt in the seventh century and spread beyond its walls, and it was destroyed again when the Babylonians conquered Judah in 587 or 586 BC. Tell Beit Mirsim, for its part, gave archaeology a long and carefully recorded sequence of pottery from the Bronze and Iron Ages."
+    - 'Joshua took Debir and its king, and "cut off the Anakims from the mountains, from Hebron, from Debir". The Books of Joshua and Judges also tell how Caleb promised his daughter Achsah to the man who took Kiriath-sepher; Othniel the son of Kenaz took it, and Achsah asked her father for springs of water: "he gave her the upper springs, and the nether springs". Debir is listed among the towns in the mountains of Judah, and it was given with its suburbs to the children of Aaron.'
+    - "In the early fourth century AD Eusebius gives Dabeir only its biblical description, a town of Judah called the city of letters, taken by Othniel and given to the priests, and does not say where it lay."
+  ru:
+    - "Давир, прежде называвшийся Кириаф-Сефер, был городом в горах Иудеи к юго-западу от Хеврона; где он стоял, давно спорят. У. Ф. Олбрайт в 1924 г. предложил Телль-Бейт-Мирсим и раскапывал его в 1926–1932 гг.; этот холм стоит там, где горы переходят в Шефелу. В 1968 г., обследуя горы к югу от Хеврона, Моше Кохави из Тель-Авивского университета предложил Хирбет-Рабуд, примерно в 13 км к юго-западу от Хеврона, и копал там. Сейчас большинство исследователей предпочитает Хирбет-Рабуд, лежащий в горной стране, где книга Иисуса Навина называет Давир; его и отмечает точка на карте."
+    - "Хирбет-Рабуд был заселён в бронзовом веке, а в железном веке стал городом Иудеи. В IX веке до н. э. его окружили толстой стеной, охватившей около 5 га. В конце VIII века город был разрушен, вероятно, в походе Сеннахирима 701 г. до н. э.; в VII веке его отстроили, и он разросся за пределы стен, а когда вавилоняне в 587 или 586 г. до н. э. завоевали Иудею, он был разрушен снова. Телль-Бейт-Мирсим, со своей стороны, дал археологии длинную и тщательно записанную последовательность керамики бронзового и железного веков."
+    - "Иисус взял Давир и его царя и «поразил всех Енакимов на горе, в Хевроне, в Давире». Книги Иисуса Навина и Судей рассказывают также, как Халев обещал дочь свою Ахсу тому, кто возьмёт Кириаф-Сефер; его взял Гофониил, сын Кеназа, и Ахса попросила у отца источники вод: «и дал он ей источники верхние и источники нижние». Давир назван среди городов на горах Иуды и с предместьями отдан сынам Аарона."
+    - "В начале IV века н. э. Евсевий приводит о Давире только библейские сведения — город Иуды, называемый городом письмён, взятый Гофониилом и отданный священникам, — и не говорит, где он лежал."
+scripture:
+  - Josh.10.38-Josh.10.39
+  - Josh.11.21
+  - Josh.12.13
+  - Josh.15.15-Josh.15.19
+  - Judg.1.11-Judg.1.15
+  - Josh.15.48-Josh.15.49
+  - Josh.21.13-Josh.21.15
+  - 1Chr.6.57-1Chr.6.58
+sources:
+  - "Eusebius, Onomasticon, s.v. Dabeir (C. U. Wolf's translation, no. 377)"
+  - "M. Kochavi, 'Khirbet Rabûd = Debir', Tel Aviv 1 (1974), pp. 2-33"
+  - "W. F. Albright, 'The American Excavations at Tell Beit Mirsim', Zeitschrift für die alttestamentliche Wissenschaft 47 (1929), pp. 1-17"
+status: checked

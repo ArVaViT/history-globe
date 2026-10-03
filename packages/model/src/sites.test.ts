@@ -33,7 +33,17 @@ describe("siteLabelRu", () => {
     expect(siteLabelRu({ label: "in the region north of the Dead Sea" }, ru)).toBeUndefined();
   });
 
-  it("leaves labels that name a modern place wholly in English", () => {
+  it("names a modern place in Russian when its form is known", () => {
+    const withModern = (id: string) => ({ m123456: "Телль-Хум" })[id] ?? ru(id);
+    expect(
+      siteLabelRu(
+        { label: "Tell Hum", tpl: "name", ref: "m123456", ref_text: "Tell Hum" },
+        withModern,
+      ),
+    ).toBe("Телль-Хум");
+  });
+
+  it("keeps a label wholly in English when its Russian form is unknown", () => {
     expect(
       siteLabelRu({ label: "Tell Hum", tpl: "name", ref: "m123456", ref_text: "Tell Hum" }, ru),
     ).toBeUndefined();

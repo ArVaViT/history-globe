@@ -1,0 +1,26 @@
+id: where-was-goshen
+question:
+  en: "Where was Goshen?"
+  ru: "Где находилась земля Гесем?"
+answer:
+  en:
+    - "Goshen was the part of the eastern Nile Delta where Jacob's family settled and where Israel lived until the Exodus: the region around today's Faqus and Qantir and the Wadi Tumilat, which runs east from the Delta towards the Bitter Lakes. The map point stands there, about 321 km from Hebron in a straight line."
+    - "Joseph told his brothers: “thou shalt dwell in the land of Goshen, and thou shalt be near unto me”, and when Pharaoh agreed, Joseph gave them “a possession in the land of Egypt, in the best of the land, in the land of Rameses”. So Goshen and the land of Rameses are the same district, and Rameses is the store city of Exodus 1:11, Pi-Ramesses, the Delta capital of Ramesses II at Qantir. The Greek translators of Genesis, who knew Egypt, rendered Goshen as “Gesem of Arabia” and placed Joseph's meeting with Jacob at Heroonpolis, a town in the Wadi Tumilat, now Tell el-Maskhuta."
+    - "The region was grazing land on the edge of the Delta, fit for the shepherds whom Egyptians disliked, and it was separate enough for the plagues of flies and hail to spare it. Excavations at Tell el-Dab'a, beside Qantir, have uncovered Avaris, a city settled by Canaanites from the Middle Kingdom onwards and the capital of the Hyksos kings; whatever the date of Israel's stay, this is the Egypt in which the story is set. In the fourth century the pilgrim Egeria, coming back from Sinai, travelled for two days through the land of Goshen towards Tanis and called it the finest country she had ever seen."
+  ru:
+    - "Гесем — часть восточной дельты Нила, где поселилась семья Иакова и где Израиль жил до Исхода: область вокруг нынешних Факуса и Кантира и Вади-Тумилат, идущая от дельты на восток к Горьким озёрам. Точка на карте стоит там, примерно в 321 км от Хеврона по прямой."
+    - "Иосиф сказал братьям: «ты будешь жить в земле Гесем; и будешь близ меня», а когда фараон согласился, дал им «владение в земле Египетской, в лучшей части земли, в земле Раамсес». Значит, Гесем и земля Раамсес — одна и та же область, а Раамсес — город для запасов из Исхода 1:11, Пер-Рамсес, столица Рамсеса II в дельте, у Кантира. Греческие переводчики Бытия, знавшие Египет, передали Гесем как «Гесем Аравийский» и поместили встречу Иосифа с Иаковом у Героонполя — городка в Вади-Тумилат, нынешнего Телль-эль-Масхуты."
+    - "Это были пастбища на краю дельты, пригодные для пастухов, которых египтяне не любили, и достаточно обособленные, чтобы казни песьих мух и града обошли их стороной. Раскопки Телль-эль-Дабы рядом с Кантиром открыли Аварис — город, заселённый ханаанеями с эпохи Среднего царства и ставший столицей царей-гиксосов; какой бы ни была дата пребывания Израиля, это тот Египет, в котором разворачивается рассказ. В IV веке паломница Эгерия, возвращаясь с Синая, два дня шла через землю Гесем к Танису и писала, что прекраснее края не видела."
+map:
+  place: a60f092
+  year: "c. 1700 BC"
+  ref: Gen.46.28
+scripture: [Gen.45.10, Gen.46.28-Gen.46.34, Gen.47.11, Exod.8.22, Exod.9.26, Exod.12.37]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Septuagint, Genesis 45:10 and 46:28-29 (Gesem of Arabia; Heroonpolis in the land of Ramesses)"
+  - "M. Bietak, Avaris: The Capital of the Hyksos. Recent Excavations at Tell el-Dab'a (1996)"
+  - "E. B. Pusch, 'Qantir/Pi-Ramesses', in K. A. Bard (ed.), Encyclopedia of the Archaeology of Ancient Egypt (1999)"
+  - "J. K. Hoffmeier, Israel in Egypt: The Evidence for the Authenticity of the Exodus Tradition (1996)"
+  - "Egeria, Itinerarium 7-9 (through the land of Goshen, c. 383)"
+status: checked

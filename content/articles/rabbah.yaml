@@ -1,0 +1,38 @@
+# Overview article (ADR 0007). Mainstream facts only; Assyrian dates follow the standard eponym chronology, Hellenistic and Roman dates are conventional.
+id: rabbah
+place: ae067b5
+title:
+  en: "Rabbah"
+  ru: "Равва"
+body:
+  en:
+    - "Rabbah, the chief city of the Ammonites, stood on the hill now called the Citadel in the centre of Amman, the capital of Jordan, above the stream that forms the upper course of the Jabbok. People lived on the hill long before the Iron Age, from the Bronze Age on. In the Iron Age it was the capital of the kingdom of Ammon; an inscription from the Citadel is among the oldest known texts in the Ammonite language. In the 730s BC Sanipu of Ammon is listed among the kings who paid tribute to Tiglath-pileser III of Assyria."
+    - 'Deuteronomy says that the iron bedstead of Og, king of Bashan, was kept in Rabbah of the children of Ammon. After the Ammonite king Hanun shamed David''s envoys, Joab besieged Rabbah, and at David''s order Uriah the Hittite was left to die in the fighting before its wall. Joab took "the city of waters" and called David, who captured the city and took the crown of its king. Later Shobi the son of Nahash, of Rabbah, brought supplies to David at Mahanaim. Amos, Jeremiah and Ezekiel foretold judgement on Rabbah, and Ezekiel pictures the king of Babylon at a parting of the ways, choosing between Rabbah and Jerusalem.'
+    - "In the third century BC the city was renamed Philadelphia after Ptolemy II Philadelphus of Egypt. In 218 BC the Seleucid king Antiochus III besieged it; Polybius relates that it fell only when a prisoner showed the attackers the underground passage by which the defenders went down for water, and the attackers blocked it. In the 130s BC, Josephus says, a certain Zeno Cotylas was tyrant of Philadelphia. Pliny counts it among the cities of the Decapolis, and at the outbreak of the Jewish revolt in AD 66 Jewish bands fell on Philadelphia and other neighbouring cities."
+    - "When the Nabataean kingdom was annexed in AD 106, Philadelphia became part of the Roman province of Arabia. In the second century it was rebuilt with a large theatre, a nymphaeum, colonnaded streets and a great temple on the Citadel, usually called the Temple of Hercules. Early in the fourth century Eusebius wrote that Rabbath, the city of the king of Ammon, was now Philadelphia, a famous city of Arabia. Churches were built there in the Byzantine period, and after the Arab conquest in the seventh century the old name returned as Amman."
+  ru:
+    - "Равва, главный город Аммонитян, стояла на холме, который ныне называют Цитаделью, в центре Аммана, столицы Иордании, над ручьём, образующим верхнее течение Иавока. Люди жили на холме задолго до железного века, ещё с бронзового века. В железном веке город был столицей Аммонитского царства; надпись из Цитадели — один из древнейших известных текстов на аммонитском языке. В 730-х гг. до н. э. Санипу из Аммона назван среди царей, плативших дань ассирийскому царю Феглаффелласару III."
+    - "Второзаконие говорит, что железный одр Ога, царя Васанского, хранился в Равве, у сынов Аммоновых. После того как аммонитский царь Аннон обесчестил послов Давида, Иоав осадил Равву, и по приказу Давида Урию Хеттеянина оставили на смерть в бою у её стены. Иоав, по его словам, «овладел водою города» и позвал Давида, который взял город и венец его царя. Позже Сови, сын Нааса, из Раввы, привёз припасы Давиду в Маханаим. Амос, Иеремия и Иезекииль предрекали Равве суд, а Иезекииль изображает царя Вавилонского на распутье, выбирающим между Раввою и Иерусалимом."
+    - "В III веке до н. э. город переименовали в Филадельфию в честь египетского царя Птолемея II Филадельфа. В 218 г. до н. э. его осадил селевкидский царь Антиох III; Полибий рассказывает, что город пал лишь тогда, когда пленник указал осаждавшим подземный ход, по которому защитники спускались за водой, и те завалили его. В 130-х гг. до н. э., по словам Иосифа Флавия, тираном Филадельфии был некий Зенон Котила. Плиний причисляет её к городам Десятиградия, а в начале Иудейского восстания, в 66 г. н. э., иудейские отряды напали на Филадельфию и другие соседние города."
+    - "Когда в 106 г. н. э. Набатейское царство было присоединено к Риму, Филадельфия вошла в римскую провинцию Аравия. Во II веке её отстроили заново: большой театр, нимфей, улицы с колоннадами и большой храм на Цитадели, который обычно называют храмом Геракла. В начале IV века Евсевий писал, что Равва, город царя Аммонитского, — это нынешняя Филадельфия, знаменитый город Аравии. В византийское время здесь строились церкви, а после арабского завоевания в VII веке вернулось древнее имя — Амман."
+scripture:
+  - Deut.3.11
+  - 2Sam.10.1-2Sam.10.5
+  - 2Sam.11.1
+  - 2Sam.11.14-2Sam.11.17
+  - 2Sam.12.26-2Sam.12.31
+  - 2Sam.17.27-2Sam.17.29
+  - Amos.1.14
+  - Jer.49.2-Jer.49.3
+  - Ezek.21.20-Ezek.21.22
+  - Ezek.25.5
+sources:
+  - "Tiglath-pileser III, Summary Inscription 7 (RINAP 1, Tiglath-pileser III 47) rev. 10'-11' (Sanipu of Bit-Ammon)"
+  - "Polybius, Histories 5.71.4-11 (the siege of Rabbatamana, 218 BC)"
+  - "Josephus, Antiquities 13.235; Jewish War 1.60 (Zeno Cotylas); Jewish War 2.458"
+  - "Pliny the Elder, Natural History 5.74 (Philadelphia in the Decapolis)"
+  - "Cassius Dio, Roman History 68.14.5 (the annexation of Arabia)"
+  - "Eusebius, Onomasticon, s.v. Amman; Ammon; Rabbath"
+  - "B. MacDonald and R. W. Younker (eds.), Ancient Ammon (1999)"
+  - "A. Northedge, Studies on Roman and Islamic 'Amman, vol. 1 (1992)"
+status: checked

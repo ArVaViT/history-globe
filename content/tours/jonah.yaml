@@ -7,6 +7,7 @@ title:
   en: "Jonah"
   ru: "Пророк Иона"
 year: "780 BC"
+people: ["Jonah@2Ki.14.25-Luk"]
 approximate: true
 stops:
   - place: ac51cec # Gath-hepher
@@ -21,6 +22,7 @@ stops:
       ru: "Убегая от лица Господня, он приходит в Иоппию и находит корабль, идущий в Фарсис."
   - place: a70fd5d # Nineveh
     ref: Jonah.3.3-Jonah.4.11
+    by: untold
     note:
       en: "He preaches in Nineveh, the people turn from their evil way, and God spares the great city."
       ru: "Он проповедует в Ниневии, жители обращаются от злого пути, и Бог щадит великий город."

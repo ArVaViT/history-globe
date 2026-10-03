@@ -47,11 +47,13 @@ describe("timelineEventsOf", () => {
       year: -537,
       label: "events.rebuilt:Jerusalem",
       approximate: false,
+      place: "j",
     });
     expect(events).toContainEqual({
       year: -43,
       label: "events.rebuilt:Corinth",
       approximate: false,
+      place: "c",
     });
   });
 

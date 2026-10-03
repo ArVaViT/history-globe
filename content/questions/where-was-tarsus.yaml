@@ -1,0 +1,29 @@
+id: where-was-tarsus
+question:
+  en: "Where was Tarsus, Paul's home town?"
+  ru: "Где находился Тарс, родной город Павла?"
+answer:
+  en:
+    - "Tarsus lies in the plain of Cilicia in southern Turkey, about 20 km inland from the Mediterranean, and is still a city of the same name. It is about 570 km north of Jerusalem in a straight line, about 820 km by the roads on the map, and 135 km west of Antioch in Syria (207 km by road). In antiquity the river Cydnus ran through the city to a lagoon that served as its harbour."
+    - 'Paul was born there: "I am a man which am a Jew of Tarsus, a city in Cilicia, a citizen of no mean city", he told the Roman commander in Jerusalem, and then told the crowd that he had been brought up in Jerusalem at the feet of Gamaliel. In Damascus the Lord sent Ananias to seek "Saul, of Tarsus". After his conversion the brethren "brought him down to Caesarea, and sent him forth to Tarsus", and he stayed in Syria and Cilicia until Barnabas came to Tarsus to find him and brought him to Antioch.'
+    - "The mound of Gözlükule shows settlement from the Neolithic onward, and Hittite texts name the town Tarsa. In 401 BC Xenophon found it a large and prosperous city, Alexander fell ill there in 333 BC, Mark Antony made it a free city, and in 41 BC Cleopatra sailed up the Cydnus to meet him. Strabo, writing under Augustus, says its people surpassed even Athens and Alexandria in their zeal for philosophy and learning. The emperor Julian was buried in a suburb of Tarsus in 363."
+  ru:
+    - "Тарс лежит на Киликийской равнине на юге Турции, примерно в 20 км от Средиземного моря, и до сих пор остаётся городом с тем же именем. От Иерусалима до него около 570 км на север по прямой и около 820 км по дорогам на карте, от Антиохии Сирийской — 135 км на запад (207 км по дороге). В древности через город текла река Кидн, впадавшая в лагуну, служившую гаванью."
+    - "Здесь родился Павел: «я Иудеянин, Тарсянин, гражданин небезызвестного Киликийского города», — сказал он римскому тысяченачальнику в Иерусалиме, а затем сказал народу, что воспитан в Иерусалиме при ногах Гамалиила. В Дамаске Господь послал Ананию спросить «Тарсянина, по имени Савла». После обращения братия «отправили его в Кесарию и препроводили в Тарс», и он оставался в Сирии и Киликии, пока Варнава не пришёл в Тарс искать его и не привёл в Антиохию."
+    - "Холм Гёзлюкуле хранит следы поселения начиная с неолита, а хеттские тексты называют город Тарса. В 401 г. до н. э. Ксенофонт застал его большим и процветающим городом, в 333 г. до н. э. здесь заболел Александр, Марк Антоний сделал Тарс свободным городом, а в 41 г. до н. э. Клеопатра поднялась по Кидну, чтобы встретиться с ним. Страбон, писавший при Августе, говорит, что жители Тарса в любви к философии и учёности превзошли даже Афины и Александрию. В 363 году в предместье Тарса был похоронен император Юлиан."
+map:
+  place: a666ea0
+  year: "AD 34"
+  ref: Acts.9.30
+scripture: [Acts.21.39, Acts.22.3, Acts.9.11, Acts.9.30, Gal.1.21, Acts.11.25-Acts.11.26]
+sources:
+  - "Xenophon, Anabasis 1.2.23-26"
+  - "Arrian, Anabasis 2.4.5-8"
+  - "Appian, Civil Wars 5.7; Plutarch, Antony 25-26"
+  - "Strabo, Geography 14.5.12–15"
+  - "Ammianus Marcellinus 25.10.5"
+  - "W. M. Ramsay, The Cities of St. Paul (1907)"
+  - "History Globe tour “The conversion of Saul”"
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Length along the Roman roads: Itiner-e (de Soto, Pažout, Brughmans et al. 2025), Jerusalem to Tarsus (818 km) and Tarsus to Antioch (207 km)"
+status: checked

@@ -1,0 +1,35 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such.
+id: capernaum
+place: af2161c
+title:
+  en: "Capernaum"
+  ru: "Капернаум"
+body:
+  en:
+    - "Capernaum lay on the northern shore of the Sea of Galilee, west of where the Jordan enters the lake, at the site now called Tell Hum. Excavations show that the fishing village was founded in the Hasmonean period, in the second century BC. It stretched along the shore, its houses built of black basalt around shared courtyards, and it lived from fishing, farming and the road that passed nearby. Josephus mentions a village Kepharnokon, usually taken to be Capernaum, and a spring called by its name."
+    - "In the Gospels Capernaum is the base of Jesus' ministry in Galilee, called his own city. He taught in its synagogue, healed the mother-in-law of Simon Peter, a paralysed man let down through a roof and the servant of a centurion who, Luke says, had built the synagogue. He called Levi from the tax office there, and later reproached the town for not repenting."
+    - "Franciscan excavations led by Virgilio Corbo and Stanislao Loffreda from 1968, and Greek Orthodox excavations under Vassilios Tzaferis on the eastern part of the site, uncovered the village. Beneath the later synagogue lie basalt foundations that may belong to a first-century synagogue. Nearby, one room of a first-century house was plastered and became a meeting place; Christian graffiti were scratched on its walls, and it was long venerated as the house of Peter."
+    - "In the fourth century the room lay at the heart of an enclosed house church, and a pilgrim's account of the 380s, preserved by Peter the Deacon and usually ascribed to Egeria, tells of the house of the apostle made into a church and of a synagogue of dressed stone reached by many steps. Epiphanius says that Joseph of Tiberias had leave from Constantine to build churches in Capernaum and other Jewish towns. In the mid-fifth century an octagonal church replaced the house church. The white limestone synagogue nearby is dated by coins beneath its floor to the late fourth or fifth century, though an earlier date has also been argued."
+  ru:
+    - "Капернаум лежал на северном берегу моря Галилейского, к западу от впадения Иордана в озеро, на месте, которое ныне называется Телль-Хум. Раскопки показывают, что рыбацкое селение возникло в хасмонейский период, во II в. до н. э. Оно тянулось вдоль берега; дома из чёрного базальта стояли вокруг общих дворов, а жили здесь рыбной ловлей, земледелием и проходившей рядом дорогой. Иосиф Флавий упоминает селение Кефарнокон, которое обычно отождествляют с Капернаумом, и источник, называвшийся его именем."
+    - "В Евангелиях Капернаум — средоточие служения Иисуса в Галилее, Его город. Он учил в здешней синагоге, исцелил тёщу Симона Петра, расслабленного, которого спустили через кровлю, и слугу сотника, который, по словам Луки, построил синагогу. Там Он призвал Левия от сбора пошлин, а позже укорял город за то, что тот не покаялся."
+    - "Раскопки францисканцев под руководством Вирджилио Корбо и Станислао Лоффреды с 1968 г. и греческой православной экспедиции Василиоса Цафериса в восточной части селения открыли древнюю деревню. Под поздней синагогой лежат базальтовые основания, которые, возможно, принадлежат синагоге I века. Рядом одну комнату дома I века оштукатурили и стали в ней собираться; на её стенах процарапаны христианские надписи, и её издавна почитали как дом Петра."
+    - "В IV веке эта комната стала средоточием огороженной домовой церкви, а рассказ паломницы 380-х годов, сохранённый Петром Диаконом и обычно приписываемый Эгерии, говорит о доме апостола, обращённом в церковь, и о синагоге из тёсаного камня, к которой вели многие ступени. Епифаний пишет, что Иосиф Тивериадский получил от Константина позволение строить церкви в Капернауме и других иудейских городах. В середине V века на месте домовой церкви построили восьмиугольный храм. Белую известняковую синагогу рядом по монетам под её полом относят к концу IV или к V веку, хотя предлагалась и более ранняя дата."
+scripture:
+  - Matt.4.13
+  - Matt.9.1
+  - Mark.1.21
+  - Mark.1.29-Mark.1.31
+  - Mark.2.1-Mark.2.12
+  - Mark.2.13-Mark.2.14
+  - Luke.7.1-Luke.7.10
+  - Matt.11.23
+sources:
+  - "Josephus, Life 403; Jewish War 3.519"
+  - "Egeria, Itinerarium, as excerpted by Peter the Deacon, De locis sanctis (the Capernaum passage); J. Wilkinson, Egeria's Travels (3rd ed. 1999)"
+  - "Epiphanius, Panarion 30.11-12"
+  - "V. C. Corbo, Cafarnao I: Gli edifici della città (1975)"
+  - "S. Loffreda, Recovering Capharnaum (1985)"
+  - "V. Tzaferis, Excavations at Capernaum I: 1978-1982 (1989)"
+  - "'Capernaum', in E. Stern (ed.), The New Encyclopedia of Archaeological Excavations in the Holy Land, vol. 1 (1993)"
+status: checked

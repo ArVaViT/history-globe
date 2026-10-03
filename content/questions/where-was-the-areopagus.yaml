@@ -1,0 +1,25 @@
+id: where-was-the-areopagus
+question:
+  en: "Where was the Areopagus?"
+  ru: "Где находился ареопаг?"
+answer:
+  en:
+    - "The Areopagus, “hill of Ares”, is the bare rocky outcrop in Athens just north-west of the Acropolis, between it and the ancient Agora; the map point stands on it. The name belonged both to the hill and to the council that once met there, the oldest court of Athens, and that double meaning is behind the question of where exactly Paul spoke."
+    - "Luke says that the philosophers of the Agora “took him, and brought him unto Areopagus”, and that “Paul stood in the midst of Mars' hill” and began: “Ye men of Athens, I perceive that in all things ye are too superstitious.” He had seen “an altar with this inscription, TO THE UNKNOWN GOD”; Pausanias, a century later, saw altars of unknown gods at Phalerum near Athens, and Philostratus says such altars stood in Athens itself. One of the hearers who believed was “Dionysius the Areopagite”, a member of the council."
+    - "In Roman times the council of the Areopagus still oversaw religion and the schools, and some scholars read the scene as a hearing before it; by then it may have met in the Royal Stoa in the Agora rather than on the rock, so Paul's audience may have stood below the hill. Others take Luke's words at face value and put the speech on the rock itself, where a bronze plaque with its text is now fixed. Either way the place is within a few hundred metres, in the heart of classical Athens, in about AD 50."
+  ru:
+    - "Ареопаг, «холм Ареса», — голый скалистый выступ в Афинах чуть северо-западнее Акрополя, между ним и древней Агорой; точка на карте стоит на нём. Имя принадлежало и холму, и совету, который некогда собирался на нём, — древнейшему суду Афин, и в этой двойственности причина вопроса, где именно говорил Павел."
+    - "Лука говорит, что философы с площади, «взяв его, привели в ареопаг», и что, «став Павел среди ареопага, сказал: Афиняне! по всему вижу я, что вы как бы особенно набожны». Он нашёл «жертвенник, на котором написано: “неведомому Богу”»; Павсаний столетие спустя видел жертвенники неведомым богам в Фалере близ Афин, а Филострат пишет, что такие жертвенники стояли и в самих Афинах. Среди уверовавших слушателей был «Дионисий Ареопагит», член совета."
+    - "В римское время совет ареопага по-прежнему ведал религией и школами, и некоторые учёные читают сцену как разбирательство перед ним; к тому времени он мог заседать в Царской стое на Агоре, а не на скале, так что слушатели Павла, возможно, стояли под холмом. Другие понимают слова Луки буквально и помещают речь на саму скалу, где теперь укреплена бронзовая доска с её текстом. В любом случае место — в пределах нескольких сотен метров, в самом сердце классических Афин, около 50 г. н. э."
+map:
+  place: a815d89
+  year: "AD 50"
+  ref: Acts.17.22
+scripture: [Acts.17.16-Acts.17.23, Acts.17.32-Acts.17.34]
+sources:
+  - "Pausanias, Description of Greece 1.1.4 (altars of unknown gods at Phalerum) and 1.28.5 (the Areopagus)"
+  - "Philostratus, Life of Apollonius of Tyana 6.3 (altars of unknown gods at Athens)"
+  - "T. D. Barnes, 'An Apostle on Trial', Journal of Theological Studies 20 (1969)"
+  - "C. K. Barrett, The Acts of the Apostles (ICC), vol. 2 (1998), on Acts 17:19-22"
+  - "J. Travlos, Pictorial Dictionary of Ancient Athens (1971)"
+status: checked
