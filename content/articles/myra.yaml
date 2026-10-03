@@ -1,0 +1,30 @@
+# Overview article (ADR 0007). Mainstream facts only; the Nicaea tradition about Nicholas is named as a later report.
+id: myra
+place: aa4b3e2
+title:
+  en: "Myra"
+  ru: "Миры Ликийские"
+body:
+  en:
+    - "Myra lay in Lycia, on the south coast of Asia Minor, beside modern Demre in Turkey. It stood on the river Myros a little inland, and its harbour was Andriake at the river's mouth; Strabo places the city twenty stadia above the sea on a lofty hill. In the cliffs above the town the Lycians carved tombs shaped like houses and temple fronts, many of them in the fourth century BC. Silt from the river has since buried much of the lower city."
+    - "Myra was one of the six largest cities of the Lycian League, which, Strabo says, cast three votes each in its common council. Under Rome the league kept its own government until Claudius took away the Lycians' freedom because of their feuds and made Lycia a province. Under Hadrian a large granary was built at Andriake."
+    - "Paul, sent to Rome as a prisoner in the charge of a centurion named Julius, sailed along the coast of Asia, crossed the sea of Cilicia and Pamphylia and came to Myra. There the centurion found a ship of Alexandria sailing into Italy and put the prisoners on board. It was this ship, carrying wheat, that was later wrecked on Malta."
+    - "In the reign of Antoninus Pius a violent earthquake overthrew the cities of Lycia, and the emperor paid for their rebuilding; the large theatre at Myra was restored after it. In the fourth century Nicholas was bishop of Myra; little is known of his life for certain, and his presence at the Council of Nicaea in 325 is first reported in later lists. In late antiquity Myra was the chief city of the province of Lycia and the seat of its metropolitan bishop."
+  ru:
+    - "Миры лежали в Ликии, на южном берегу Малой Азии, рядом с нынешним Демре в Турции. Город стоял на реке Мирос, немного в глубине суши, а его гаванью была Андриака в устье реки; Страбон помещает город в двадцати стадиях от моря, на высоком холме. В скалах над городом ликийцы высекали гробницы в виде домов и фасадов храмов, многие из них — в IV веке до н. э. С тех пор речной ил погрёб значительную часть нижнего города."
+    - "Миры были одним из шести крупнейших городов Ликийского союза, которые, по словам Страбона, имели по три голоса в общем совете. Под властью Рима союз сохранял собственное управление, пока Клавдий не отнял у ликийцев свободу из-за их распрей и не сделал Ликию провинцией. При Адриане в Андриаке построили большую житницу."
+    - "Павел, отправленный в Рим узником под надзором сотника по имени Юлий, плыл вдоль берегов Асии, переплыл море против Киликии и Памфилии и прибыл в Миры Ликийские. Там сотник нашёл Александрийский корабль, плывущий в Италию, и посадил узников на него. Этот корабль, везший пшеницу, потом разбился у Мелита."
+    - "При Антонине Пии сильное землетрясение разрушило города Ликии, и император дал средства на их восстановление; большой театр в Мирах после этого отстроили заново. В IV веке епископом Мир был Николай; о его жизни достоверно известно немногое, а его участие в Никейском соборе 325 г. впервые упоминается в более поздних списках. В поздней античности Миры были главным городом провинции Ликия и кафедрой её митрополита."
+scripture:
+  - Acts.27.1-Acts.27.2
+  - Acts.27.5-Acts.27.6
+  - Acts.27.38
+  - Acts.27.41-Acts.27.44
+  - Acts.28.1
+sources:
+  - "Strabo, Geography 14.3.3 (the six largest cities of the Lycian League, three votes each); 14.3.7 (Myra twenty stadia above the sea)"
+  - "Suetonius, Claudius 25.3 (the Lycians deprived of their freedom)"
+  - "Pausanias, Description of Greece 8.43.4 (the earthquake in Lycia under Antoninus Pius)"
+  - "G. E. Bean, Lycian Turkey: An Archaeological Guide (1978)"
+  - "T. R. Bryce, The Lycians in Literary and Epigraphic Sources (1986)"
+status: checked

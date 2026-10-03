@@ -1,0 +1,32 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings and attributions are named as such.
+id: hazor
+place: a6f33c5
+title:
+  en: "Hazor"
+  ru: "Асор"
+body:
+  en:
+    - "Hazor lies in Upper Galilee, north of the Sea of Galilee, beside the road from Egypt to Damascus. Its ruins are the largest Bronze Age city in the land: an upper mound of about 12 hectares and a lower city of about 70. A town stood here in the Early Bronze Age, and in the Middle Bronze Age Hazor became a great city; letters from the palace of Mari on the Euphrates, in the eighteenth century BC, name it and its king. In the Amarna letters of the fourteenth century BC the king of Hazor writes to Pharaoh, and the king of Tyre complains that he has left his city and joined the Habiru."
+    - 'Joshua tells how Jabin, king of Hazor, gathered the kings of the north against Israel. Joshua took the city, "for Hazor beforetime was the head of all those kingdoms", and burned it, the only one of those cities he burned. In Judges another Jabin reigns in Hazor, and his captain Sisera is defeated by Deborah and Barak. Excavators found the Late Bronze city destroyed by a great fire in the thirteenth century BC. Yigael Yadin and Amnon Ben-Tor link the fire with the Israelites; others think of strife within the city, the Sea Peoples or the general collapse at the end of the Bronze Age.'
+    - "1 Kings names Hazor among the cities Solomon built. A six-chambered gate and casemate wall on the upper mound, like those of Megiddo and Gezer, are dated by many to the tenth century BC and by others to the ninth. Later the Israelite town cut a great shaft down to the water table. In the days of Pekah, king of Israel, Tiglath-pileser III of Assyria took Hazor and carried its people captive to Assyria; excavators found the city of that time, 732 BC, burned."
+    - "Afterwards only small forts stood on the mound. In the second century BC Jonathan the Maccabee fought the army of Demetrius in the plain of Hazor, as 1 Maccabees and Josephus tell. Josephus places Hazor above Lake Semechonitis, while Eusebius only assigns it to the lot of Naphtali and recalls that Joshua burned it and the king of Assyria destroyed it. No later town is known on the site."
+  ru:
+    - "Асор лежит в Верхней Галилее, к северу от Галилейского моря, у дороги из Египта в Дамаск. Его развалины — крупнейший город бронзового века в этой земле: верхний холм около 12 га и нижний город площадью около 70 га. Поселение здесь было уже в раннем бронзовом веке, а в среднем бронзовом веке Асор стал большим городом; письма из дворца Мари на Евфрате, XVIII века до н. э., называют его и его царя. В амарнских письмах XIV века до н. э. царь Асора пишет фараону, а царь Тира жалуется, что тот оставил свой город и примкнул к хабиру."
+    - "Книга Иисуса Навина рассказывает, как Иавин, царь Асорский, собрал против Израиля царей севера. Иисус Навин взял город, ибо «Асор же прежде был главою всех царств сих», и сжёг его — единственный из тех городов. В Книге Судей в Асоре царствует другой Иавин, и его военачальника Сисару побеждают Девора и Варак. Археологи нашли город позднего бронзового века уничтоженным сильным пожаром в XIII веке до н. э. Игаэль Ядин и Амнон Бен-Тор связывают пожар с израильтянами; другие думают о смуте внутри города, о «народах моря» или об общем крушении конца бронзового века."
+    - "Третья книга Царств называет Асор среди городов, которые построил Соломон. Шестикамерные ворота и казематную стену на верхнем холме, подобные воротам Мегиддона и Газера, многие датируют X веком до н. э., другие — IX веком. Позже израильский город пробил большую шахту до грунтовых вод. Во дни Факея, царя Израильского, ассирийский царь Феглаффелласар III взял Асор и переселил его жителей в Ассирию; археологи нашли город того времени, 732 г. до н. э., сожжённым."
+    - "После этого на холме стояли лишь небольшие крепости. Во II веке до н. э. Ионафан Маккавей сражался с войском Димитрия на равнине Асора, как рассказывают Первая книга Маккавейская и Иосиф Флавий. Иосиф помещает Асор над озером Семехонитис, а Евсевий лишь относит его к уделу Неффалима и напоминает, что его сжёг Иисус Навин и разрушил царь Ассирийский. Более позднего города на этом месте не известно."
+scripture:
+  - Josh.11.1-Josh.11.5
+  - Josh.11.10-Josh.11.13
+  - Judg.4.2
+  - Judg.4.23-Judg.4.24
+  - 1Kgs.9.15
+  - 2Kgs.15.29
+sources:
+  - "Mari letters of the reign of Zimri-Lim naming Hazor and its king"
+  - "Amarna letters EA 227-228 (the king of Hazor); EA 148 (Abimilki of Tyre on the king of Hazor)"
+  - "1 Maccabees 11.67-74; Josephus, Antiquities 5.199; 13.158-162"
+  - "Eusebius, Onomasticon, s.v. Asor (the city of Jabin; the Asor of Naphtali)"
+  - "Y. Yadin, Hazor: The Rediscovery of a Great Citadel of the Bible (1975)"
+  - "A. Ben-Tor, Hazor: Canaanite Metropolis, Israelite City (2016)"
+status: checked

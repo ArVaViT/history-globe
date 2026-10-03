@@ -1,0 +1,34 @@
+# Overview article (ADR 0007). Mainstream facts only; the dates of the Gihon spring tower, the Siloam tunnel and the Large Stone Structure are named as disputed.
+id: city-of-david
+place: a84f426
+title:
+  en: "City of David"
+  ru: "Город Давидов"
+body:
+  en:
+    - "The City of David is the narrow ridge running south from the Temple Mount, between the Kidron valley and the central valley that Josephus calls the Valley of the Cheesemongers. At its eastern foot rises the Gihon, the only spring of ancient Jerusalem, which is why the oldest town stood here. Pottery shows people here from the Chalcolithic and Early Bronze Age. Radiocarbon dates put the first public buildings early in the nineteenth century BC, and a massive tower was built round the spring; its excavators, Ronny Reich and Eli Shukron, date it to the Middle Bronze Age, while later samples allow a date in the late ninth century BC, so its date is disputed."
+    - "Charles Warren explored the ridge in 1867 and found the vertical shaft beside the spring that bears his name; it was long taken for the Jebusite water shaft and, on one reading of 2 Samuel 5:8, for the way by which David's men got in. Excavations followed under Parker and Vincent, Weill, Macalister and Duncan, Kathleen Kenyon (1961–1967), Yigal Shiloh (1978–1985) and, from 1995, Reich and Shukron, who showed that the shaft is a natural fissure and that the Bronze Age approach to the spring was a fortified passage. Eilat Mazar's Large Stone Structure, uncovered in 2005, was presented as David's palace of the tenth century BC; others date parts of it much later and doubt that it was one building, and the question is disputed."
+    - 'Before the Assyrian threat Hezekiah "stopped the upper watercourse of Gihon, and brought it straight down to the west side of the city of David". The winding tunnel, some 533 m long, carries the spring to the Pool of Siloam. In 1880 an inscription was found in it telling how two teams of hewers, cutting towards each other, heard each other''s voices and met, and how the water then flowed 1,200 cubits to the pool; it is now in the Istanbul Archaeological Museum. Radiometric dating gives an Iron Age date in keeping with the Bible; Reich and Shukron have argued that it was cut earlier, about 800 BC, so the attribution to Hezekiah is disputed.'
+    - 'After the exile Nehemiah''s builders repaired the wall down to "the stairs that go down from the city of David". In the Second Temple period the ridge was part of the Lower City, and Jesus sent the blind man to wash in the pool of Siloam. For centuries after AD 70 Siloam lay outside the city wall. In the fifth century a new wall, credited by the Piacenza pilgrim to the Empress Eudocia, brought it back within the city, and by the sixth century a basilica stood over the pool.'
+  ru:
+    - "Город Давидов — узкий гребень, идущий к югу от Храмовой горы между долиной Кедрон и центральной долиной, которую Иосиф Флавий называет Сыроварной. У его восточного подножия бьёт Гион, единственный источник древнего Иерусалима, поэтому древнейший город стоял здесь. Керамика показывает, что люди жили здесь с энеолита и раннего бронзового века. Радиоуглеродные даты относят первые общественные постройки к началу XIX века до н. э.; вокруг источника была построена мощная башня. Её раскопщики Рони Райх и Эли Шукрон датируют её средним бронзовым веком, а более поздние образцы допускают конец IX века до н. э., так что дата спорна."
+    - "Чарльз Уоррен исследовал гребень в 1867 г. и нашёл у источника вертикальную шахту, носящую его имя; её долго считали иевусейской водяной шахтой и, по одному из толкований 2 Цар 5:8, тем ходом, которым проникли в город люди Давида. Затем здесь копали Паркер и Венсан, Вейль, Макалистер и Дункан, Кэтлин Кеньон (1961–1967), Игаль Шилох (1978–1985) и с 1995 г. Райх и Шукрон, показавшие, что шахта — природная трещина, а к источнику в бронзовом веке вёл укреплённый проход. «Большое каменное сооружение» Эйлат Мазар, открытое в 2005 г., было представлено как дворец Давида X века до н. э.; другие датируют его части гораздо позже и сомневаются, что это одно здание, и вопрос остаётся спорным."
+    - "Перед ассирийской угрозой Езекия «запер верхний проток вод Геона и провел их вниз к западной стороне города Давидова». Извилистый тоннель длиной около 533 м ведёт воду источника к Силоамской купели. В 1880 г. в нём нашли надпись о том, как две бригады каменотёсов, пробивавшиеся навстречу друг другу, услышали голоса друг друга и встретились, и как вода потекла к водоёму на 1200 локтей; сейчас она в Стамбульском археологическом музее. Радиометрические датировки дают железный век в согласии с Библией; Райх и Шукрон доказывали, что его пробили раньше, около 800 г. до н. э., так что связь с Езекией спорна."
+    - "После плена строители Неемии чинили стену до «ступеней, спускающихся из города Давидова». Во времена Второго храма гребень входил в Нижний город, и Иисус послал слепого умыться в купальне Силоам. После 70 г. н. э. Силоам на века оказался за городской стеной. В V веке новая стена, которую паломник из Пьяченцы приписывает императрице Евдокии, вернула его в черту города, а к VI веку над купальней стояла базилика."
+scripture:
+  - 2Sam.5.6-2Sam.5.9
+  - 1Kgs.1.33-1Kgs.1.38
+  - 2Kgs.20.20
+  - 2Chr.32.30
+  - Neh.3.15
+  - John.9.7
+sources:
+  - "Josephus, Jewish War 5.137-145 (the upper and lower city, the Valley of the Cheesemongers, Siloam)"
+  - "The Siloam Inscription (KAI 189)"
+  - "Bordeaux Pilgrim, Itinerarium Burdigalense 592 (Siloam by the wall, AD 333); Piacenza Pilgrim, Itinerarium 24-25 (the basilica at Siloam; Eudocia's wall), in P. Geyer, Itinera Hierosolymitana (CSEL 39, 1898), p. 176"
+  - "C. Warren and C. W. Wilson, The Recovery of Jerusalem (1871)"
+  - "Y. Shiloh, Excavations at the City of David (Qedem 19, 1984)"
+  - "R. Reich and E. Shukron, Excavations in the City of David, Jerusalem (1995-2010) (2021); R. Reich, 'The Date of the Gihon Spring Tower in Jerusalem', Tel Aviv 45 (2018) 114-119; J. Regev et al., 'Absolute Dating of the Gihon Spring Fortifications, Jerusalem', Radiocarbon 59 (2017) 1171-1193; J. Regev et al., 'Middle Bronze Age Jerusalem: Recalculating its Character and Chronology', Radiocarbon 63 (2021) 853-883"
+  - "A. Frumkin, A. Shimron and J. Rosenbaum, 'Radiometric Dating of the Siloam Tunnel, Jerusalem', Nature 425 (2003) 169-171; R. Reich and E. Shukron, 'The Date of the Siloam Tunnel Reconsidered', Tel Aviv 38 (2011) 147-157"
+  - "E. Mazar, Preliminary Report on the City of David Excavations 2005 at the Visitors Center Area (2007); I. Finkelstein, Z. Herzog, L. Singer-Avitz and D. Ussishkin, 'Has King David's Palace in Jerusalem Been Found?', Tel Aviv 34 (2007) 142-164"
+status: checked

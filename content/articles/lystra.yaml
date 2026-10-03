@@ -1,0 +1,31 @@
+# Overview article (ADR 0007). Mainstream facts only; Paul's first journey follows the usual dating to the late 40s AD. The site rests on the Augustan colony inscription found at Hatunsaray.
+id: lystra
+place: af0719d
+title:
+  en: "Lystra"
+  ru: "Листра"
+body:
+  en:
+    - "Lystra lay in Lycaonia, some 30 km south-south-west of Iconium (Konya), on a mound north of the village of Hatunsaray. Its site was long uncertain. The geographer William Leake guessed it in the early nineteenth century, and in the 1880s the American J. R. S. Sterrett found here a Latin inscription, and bought a coin, showing that Lystra had been a Roman colony; with that, the place was fixed."
+    - "Augustus made Lystra a colony, Colonia Iulia Felix Gemina Lustra, one of several veteran colonies in the hills of southern Galatia meant to hold the mountain peoples of Pisidia and Isauria in check. Its coins, from Augustus to the empress Faustina the Younger, show Minerva and the founder ploughing the boundary of the new city. Pliny lists the Lystreni among the peoples of Galatia."
+    - 'Fleeing from Iconium, Paul and Barnabas preached at Lystra. Paul healed a man who had been lame from birth, and the crowd cried out in the speech of Lycaonia, "The gods are come down to us in the likeness of men." They called Barnabas Jupiter and Paul Mercurius, and the priest of Jupiter, whose temple stood before the city, brought oxen and garlands to sacrifice; the apostles tore their clothes and pointed them to the living God who made heaven and earth. Then Jews from Antioch and Iconium won the people over, and Paul was stoned and dragged out of the city for dead. He rose and went back in, and the next day left for Derbe; on the way back he strengthened the disciples here.'
+    - "On his next journey Paul found at Lystra the disciple Timothy, son of a believing Jewish mother and a Greek father, who was well spoken of by the brethren at Lystra and Iconium, and took him along. The Second Letter to Timothy names his grandmother Lois and mother Eunice and recalls Paul's sufferings at Lystra. The town itself remained small, and as late as 1907 William Ramsay wrote that excavation at Lystra was urgently needed."
+  ru:
+    - "Листра лежала в Ликаонии, примерно в 30 км к юго-юго-западу от Иконии (Коньи), на холме к северу от деревни Хатунсарай. Её место долго оставалось неизвестным. Географ Уильям Лик предположил его ещё в начале XIX века, а в 1880-х годах американец Дж. Р. С. Стеррет нашёл здесь латинскую надпись и купил монету, показавшие, что Листра была римской колонией; так место было установлено."
+    - "Август сделал Листру колонией — Colonia Iulia Felix Gemina Lustra, одной из нескольких колоний ветеранов в горах южной Галатии, которые должны были сдерживать горные племена Писидии и Исаврии. На её монетах, от Августа до императрицы Фаустины Младшей, изображены Минерва и основатель, проводящий плугом границу нового города. Плиний называет листрийцев среди народов Галатии."
+    - "Бежав из Иконии, Павел и Варнава проповедовали в Листре. Павел исцелил человека, хромого от рождения, и народ закричал по-ликаонски: «боги в образе человеческом сошли к нам». Варнаву называли Зевсом, а Павла Ермием, и жрец Зевса, храм которого стоял перед городом, привёл волов и принёс венки для жертвоприношения; апостолы разодрали одежды и обратили народ к Богу живому, сотворившему небо и землю. Затем иудеи из Антиохии и Иконии склонили народ на свою сторону, и Павла побили камнями и вытащили за город, почитая умершим. Он встал, вернулся в город, а на другой день ушёл в Дервию; на обратном пути он утверждал здесь учеников."
+    - "В следующем путешествии Павел нашёл в Листре ученика Тимофея, сына уверовавшей Иудеянки и отца-Еллина, о котором хорошо свидетельствовали братия в Листре и Иконии, и взял его с собой. Второе послание к Тимофею называет его бабку Лоиду и мать Евнику и вспоминает гонения, перенесённые Павлом в Листрах. Сам город остался небольшим, и ещё в 1907 г. Уильям Рамзай писал, что раскопки в Листре крайне нужны."
+scripture:
+  - Acts.14.6-Acts.14.10
+  - Acts.14.11-Acts.14.15
+  - Acts.14.19-Acts.14.22
+  - Acts.16.1-Acts.16.3
+  - 2Tim.1.5
+  - 2Tim.3.11
+sources:
+  - "Inscriptions of Colonia Lystra: CIL III 6786; J. R. S. Sterrett, The Wolfe Expedition to Asia Minor (1888), no. 352"
+  - "Pliny the Elder, Natural History 5.147"
+  - "B. V. Head, Historia Numorum (2nd ed., 1911), Lycaonia: Lystra (colonial coins, Augustus to Faustina II)"
+  - "W. M. Ramsay, The Cities of St. Paul (1907), part VI: Lystra"
+  - "B. Levick, Roman Colonies in Southern Asia Minor (1967)"
+status: checked

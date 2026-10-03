@@ -1,0 +1,34 @@
+# Overview article (ADR 0007). Mainstream facts only; the identification with Tel Tzora (the village of Sar'a) is the accepted one; Amarna dates follow the usual fourteenth-century placing; no absolute dates are given for Samson or the Danite migration.
+id: zorah
+place: a08174b
+title:
+  en: "Zorah"
+  ru: "Цора"
+body:
+  en:
+    - "Zorah is Tel Tzora, a high hill on the north side of the Sorek valley, about 23 km west of Jerusalem and some 3 km north of Beth-shemesh, where the hills of Judah meet the Shephelah. The Arab village of Sar'a on the hill kept the ancient name until 1948, and Eshtaol, usually named with Zorah in the Bible, lay close by. Caves, tombs, cisterns and winepresses have been found on and around the hill."
+    - "Zorah probably appears already in the Amarna letters of the fourteenth century BC. A ruler known as the Lady of the Lionesses warned Pharaoh that his land was going over to the Apiru, roving armed bands, and that the Apiru had written to Ayyaluna, that is Aijalon, and to Sarha, which is usually taken to be Zorah."
+    - 'In the Book of Joshua Zorah is counted among the towns of the lowland of Judah and is also listed in the inheritance of Dan. It was the home of Manoah, "a certain man of Zorah, of the family of the Danites", whose son Samson the Spirit of the LORD began to move "in the camp of Dan between Zorah and Eshtaol"; after his death Samson was buried between Zorah and Eshtaol in the burying place of his father. From Zorah and Eshtaol the Danites sent five men to spy out the land and then six hundred armed men, who took Laish in the far north and named it Dan. Rehoboam fortified Zorah with Aijalon, and after the exile men of Judah lived there again, as Nehemiah records.'
+    - "Josephus says that Samson's kindred buried him at Sarasat, his own country. In the early fourth century AD Eusebius knew Saraa as a village in the district of Eleutheropolis, about ten miles to the north on the road to Nicopolis, and pointed it out as the home of Samson."
+  ru:
+    - "Цора — это Тель-Цора, высокий холм на северной стороне долины Сорек, примерно в 23 км к западу от Иерусалима и в 3 км к северу от Вефсамиса, там, где горы Иудеи встречаются с Шефелой. Арабское селение Сараа на холме сохраняло древнее имя до 1948 г., а Естаол, который Библия обычно называет вместе с Цорой, лежал рядом. На холме и вокруг него найдены пещеры, гробницы, водоёмы и винодавильни."
+    - "Цора, по всей видимости, упоминается уже в амарнских письмах XIV века до н. э. Правительница, известная как Владычица львиц, предупреждала фараона, что его земля переходит к апиру — бродячим вооружённым отрядам — и что апиру писали в Айялуну, то есть Аиалон, и в Сарху, которую обычно отождествляют с Цорой."
+    - "В книге Иисуса Навина Цора числится среди городов низменности Иуды и названа также в уделе Дана. Здесь жил Маной, «человек из Цоры, от племени Данова», и в его сыне Самсоне Дух Господень начал действовать «в стане Дановом, между Цорою и Естаолом»; по смерти Самсона похоронили между Цорою и Естаолом во гробе его отца. Из Цоры и Естаола сыны Дановы послали пять человек осмотреть землю, а затем шестьсот вооружённых мужей, которые взяли Лаис на далёком севере и назвали его Даном. Ровоам укрепил Цору вместе с Аиалоном, а после плена сыны Иуды снова жили здесь, как сообщает Неемия."
+    - "Иосиф Флавий пишет, что родные похоронили Самсона в Сарасате, на его родине. В начале IV века н. э. Евсевий знал Саару как селение в округе Елевферополя, примерно в десяти милях к северу по дороге в Никополь, и указывал её как родину Самсона."
+scripture:
+  - Josh.15.33
+  - Josh.19.41
+  - Judg.13.2
+  - Judg.13.24-Judg.13.25
+  - Judg.16.31
+  - Judg.18.2
+  - Judg.18.11
+  - Judg.18.27-Judg.18.29
+  - 2Chr.11.10
+  - Neh.11.29
+sources:
+  - "Amarna letter EA 273 (the Lady of the Lionesses: Ayyaluna and Sarha), tr. W. L. Moran, The Amarna Letters (1992)"
+  - "Josephus, Antiquities 5.8.12 (Samson buried at Sarasat)"
+  - "Eusebius, Onomasticon, s.v. Saraa and Sorech (C. U. Wolf's translation, nos. 842 and 871)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

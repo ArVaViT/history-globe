@@ -1,0 +1,28 @@
+id: where-was-bethsaida
+question:
+  en: "Where was Bethsaida?"
+  ru: "Где находилась Вифсаида?"
+answer:
+  en:
+    - "Bethsaida, “house of fishing”, lay at the north end of the Sea of Galilee near where the Jordan enters the lake, east of the river, about 6 km north-east of Capernaum in a straight line. Its exact site is disputed between two ruins: et-Tell, a mound about 2 km from today's shore, excavated since 1987 under Rami Arav, where the map's point stands, and el-Araj, on the shore by the river mouth, excavated in recent years by Mordechai Aviam and R. Steven Notley. The map marks the point as disputed and lists the candidate sites."
+    - 'Bethsaida was the home town of three apostles: "Now Philip was of Bethsaida, the city of Andrew and Peter." Near it Jesus withdrew with the apostles "into a desert place belonging to the city called Bethsaida", where the crowds followed and were fed; once he sent the disciples ahead by boat "unto Bethsaida"; and there "they bring a blind man unto him", whom he led out of the town and healed in two stages. With Chorazin it was reproached: "Woe unto thee, Chorazin! woe unto thee, Bethsaida!" John calls it "Bethsaida of Galilee", although it lay east of the Jordan in the tetrarchy of Philip, which has led some to suppose two Bethsaidas; the map keeps one site for all the verses.'
+    - "At et-Tell lies a fortified city of the Iron Age with a massive gate, which its excavators take for a capital of the kingdom of Geshur, a widely held but unproven view; it was destroyed in the late eighth century BC, probably by Tiglath-pileser III about 732 BC. Josephus says that Philip the tetrarch raised the village of Bethsaida to a city named Julias and died there about AD 34; Pliny places Julias on the eastern shore, and Eusebius knew Bethsaida as the city of Andrew, Peter and Philip by the lake. At el-Araj the excavators have found Roman remains, which they take for Julias, and a Byzantine basilica whose inscriptions invoke Saint Peter, which they see as the church Byzantine tradition built over the apostles' home."
+  ru:
+    - "Вифсаида, «дом рыбной ловли», лежала у северного конца Галилейского моря близ впадения Иордана в озеро, к востоку от реки, примерно в 6 км к северо-востоку от Капернаума по прямой. Точное место спорно между двумя городищами: Эт-Телль, холм примерно в 2 км от нынешнего берега, где с 1987 года копают под руководством Рами Арава и где стоит точка карты, и Эль-Арадж на берегу у устья реки, который в последние годы раскапывают Мордехай Авиам и Р. Стивен Нотли. Карта помечает точку как спорную и перечисляет предлагаемые места."
+    - "Из Вифсаиды были родом три апостола: «Филипп же был из Вифсаиды, из одного города с Андреем и Петром». Близ неё Иисус удалился с апостолами «в пустое место, близ города, называемого Вифсаидою», куда пришёл народ и был накормлен; однажды Он отправил учеников на лодке вперёд «к Вифсаиде»; и здесь «приводят к Нему слепого», которого Он вывел из селения и исцелил в два приёма. Вместе с Хоразином она услышала укор: «горе тебе, Хоразин! горе тебе, Вифсаида!» Иоанн говорит о Филиппе «из Вифсаиды Галилейской», хотя она лежала к востоку от Иордана, во владениях Филиппа, и это навело некоторых на мысль о двух Вифсаидах; карта держит одно место для всех стихов."
+    - "В Эт-Телле лежит укреплённый город железного века с массивными воротами, в котором раскопщики видят столицу царства Гессур, — мнение распространённое, но не доказанное; город был разрушен в конце VIII века до н. э., вероятно, Тиглатпаласаром III около 732 г. до н. э. Иосиф Флавий пишет, что четвертовластник Филипп возвёл селение Вифсаиду в ранг города, назвав его Юлиадой, и умер там около 34 г. н. э.; Плиний помещает Юлиаду на восточном берегу, а Евсевий знал Вифсаиду как город Андрея, Петра и Филиппа у озера. В Эль-Арадже раскопщики нашли остатки римского времени, которые считают Юлиадой, и византийскую базилику с надписями, призывающими святого Петра, в которой видят церковь, построенную византийским преданием над домом апостолов."
+map:
+  place: a91b732
+  year: "AD 30"
+  ref: John.1.44
+scripture: [John.1.44, John.12.21, Luke.9.10, Mark.6.45, Mark.8.22-Mark.8.26, Matt.11.21]
+sources:
+  - "Josephus, Antiquities 18.28 (Bethsaida made a city and named Julias); 18.106-108 (Philip's death and burial at Julias)"
+  - "Pliny the Elder, Natural History 5.71"
+  - "Eusebius, Onomasticon, s.v. Bethsaida (tr. C. U. Wolf)"
+  - "R. Arav and R. A. Freund (eds.), Bethsaida: A City by the North Shore of the Sea of Galilee, vol. 1 (1995)"
+  - "R. S. Notley, 'Et-Tell Is Not Bethsaida', Near Eastern Archaeology 70 (2007) 220-230; R. Arav, 'Bethsaida: A Response to Steven Notley', Near Eastern Archaeology 74 (2011) 92-100"
+  - "L. Di Segni, J. Ashkenazi, M. Aviam and R. S. Notley, 'The Greek Inscriptions from the Church of St. Peter at Bethsaida (el-Araj)', Liber Annuus 73 (2023) 365-384"
+  - "History Globe article “Bethsaida” and History Globe tour “The life of Jesus”"
+  - "Candidate sites (et-Tell, el-Araj, el-Mesadiyeh) and the straight-line distance to Capernaum: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

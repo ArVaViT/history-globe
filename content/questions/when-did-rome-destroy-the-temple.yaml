@@ -1,0 +1,24 @@
+id: when-did-rome-destroy-the-temple
+question:
+  en: "When did Rome destroy the Temple in Jerusalem?"
+  ru: "Когда Рим разрушил Иерусалимский храм?"
+answer:
+  en:
+    - "The Roman army under Titus burned the Temple and destroyed Jerusalem in AD 70, four years after the Jewish revolt against Rome broke out in AD 66."
+    - "The revolt began in AD 66. Vespasian subdued Galilee and Judea, and when he was proclaimed emperor his son Titus took over the siege of Jerusalem with four legions in the spring of 70, as the city was full of Passover pilgrims. Josephus, who watched from the Roman camp, tells that the Temple was burned in late summer, that the city was taken soon after, and that Caesar ordered the whole city and the Temple razed, leaving only the towers of Herod's palace and part of the western wall as a camp for the garrison. The spoils, among them the lampstand, were carried in the triumph at Rome, shown on the Arch of Titus."
+    - 'The Gospels record Jesus'' words about the Temple: "There shall not be left here one stone upon another, that shall not be thrown down", and of Jerusalem: "thine enemies shall cast a trench about thee, and compass thee round". The Temple was never rebuilt. After Bar Kokhba''s revolt Hadrian''s Aelia Capitolina stood on the site of the city, and Jews were barred from it (AD 135); the emperor Julian''s attempt to rebuild the Temple in 363 failed.'
+  ru:
+    - "Римское войско под началом Тита сожгло Храм и разрушило Иерусалим в 70 г. н. э., через четыре года после начала иудейского восстания против Рима в 66 г."
+    - "Восстание началось в 66 г. Веспасиан покорил Галилею и Иудею, а когда его провозгласили императором, осаду Иерусалима весной 70 г. возглавил его сын Тит с четырьмя легионами; город был полон паломников, пришедших на Пасху. Иосиф Флавий, наблюдавший из римского лагеря, рассказывает, что Храм сгорел в конце лета, город был взят вскоре после этого, а Цезарь приказал срыть весь город и Храм, оставив лишь башни дворца Ирода и часть западной стены для лагеря гарнизона. Добычу, в том числе светильник, пронесли в триумфе в Риме; она изображена на арке Тита."
+    - "Евангелия приводят слова Иисуса о Храме: «не останется здесь камня на камне; все будет разрушено» — и об Иерусалиме: «враги твои обложат тебя окопами и окружат тебя». Храм так и не был восстановлен. После восстания Бар-Кохбы на месте города стояла Элия Капитолина Адриана, и евреям был запрещён вход в неё (135 г.); попытка императора Юлиана восстановить Храм в 363 г. не удалась."
+map:
+  place: a15257a
+  year: "AD 70"
+  ref: Luke.19.43
+scripture: [Matt.24.1-Matt.24.2, Luke.19.43-Luke.19.44, Luke.21.5-Luke.21.6, Mark.13.1-Mark.13.2]
+sources:
+  - "Josephus, Jewish War 5.136-247 (the city and the Temple); 6.249-266 (the Temple burned); 7.1-3 (the city razed); 7.148-152 (the spoils in the triumph)"
+  - "Cassius Dio, Roman History 66.4-7"
+  - "History Globe dated events (temple-destroyed AD 70; aelia-capitolina AD 135; julian-temple AD 363) and History Globe battles (jerusalem-70)"
+  - "Ammianus Marcellinus 23.1.2-3 (Julian's attempt)"
+status: checked

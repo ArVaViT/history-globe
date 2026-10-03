@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; Paul's first journey follows the usual dating to the late 40s AD, and the disputed addressees of Galatians are named as such.
+id: antioch-pisidia
+place: a6c704a
+title:
+  en: "Antioch of Pisidia"
+  ru: "Антиохия Писидийская"
+body:
+  en:
+    - "Antioch of Pisidia stood on a hill on the border of Phrygia and Pisidia, about a kilometre north-east of modern Yalvaç in Turkey. It was founded by one of the Seleucid kings, probably in the third century BC, and Strabo says it was settled by colonists from Magnesia on the Maeander. Near it stood a sanctuary of the moon god Men, whose priesthood held temple slaves and sacred places. When Rome, after defeating Antiochus III, handed Asia Minor this side of the Taurus to Eumenes of Pergamum, it declared Antioch free."
+    - "Mark Antony gave Galatia and Lycaonia to the Galatian king Amyntas, who also held Antioch. When Amyntas was killed in 25 BC, Augustus made his kingdom the Roman province of Galatia, and Antioch became a Roman colony, Colonia Caesarea, settled with veterans; the priesthood of Men was dissolved. In 1914 William Ramsay found here fragments of a Latin copy of Augustus' own record of his deeds, the Res Gestae."
+    - 'Paul and Barnabas came here from Perga on their first journey. On the sabbath Paul spoke in the synagogue, the first of his sermons that Acts gives at length, and on the next sabbath almost the whole city came to hear. When the Jews opposed them, they said: "lo, we turn to the Gentiles." The Jews stirred up the devout and honourable women and the chief men of the city, raised persecution against the apostles and expelled them, and they went on to Iconium; Jews from Antioch later followed Paul to Lystra. The Second Letter to Timothy remembers the persecutions he endured at Antioch. On the way back the apostles strengthened the disciples and ordained elders in every church. Many scholars think Paul''s Letter to the Galatians was written to these churches in the south of the province; others hold that it went to the Galatians of the north.'
+    - "Antioch remained the chief Roman city of the region, and in the later empire it became the capital of the province of Pisidia. Its bishop Optimus attended the Council of Constantinople in 381, and his name appears in a mosaic inscription in the city's great basilica."
+  ru:
+    - "Антиохия Писидийская стояла на холме на границе Фригии и Писидии, примерно в километре к северо-востоку от нынешнего Ялвача в Турции. Её основал один из царей Селевкидов, вероятно, в III веке до н. э., и Страбон пишет, что её заселили выходцы из Магнесии на Меандре. Рядом находилось святилище лунного бога Мена, жречеству которого принадлежали храмовые рабы и священные места. Когда Рим, разбив Антиоха III, передал Пергамскому царю Евмену Малую Азию по эту сторону Тавра, он объявил Антиохию свободной."
+    - "Марк Антоний отдал Галатию и Ликаонию галатскому царю Аминте, которому принадлежала и Антиохия. Когда в 25 г. до н. э. Аминта был убит, Август обратил его царство в римскую провинцию Галатию, а Антиохия стала римской колонией — Колонией Цезарея, заселённой ветеранами; жречество Мена было упразднено. В 1914 г. Уильям Рамзай нашёл здесь фрагменты латинской копии собственного отчёта Августа о его деяниях."
+    - "Павел и Варнава пришли сюда из Пергии в первом путешествии. В субботу Павел говорил в синагоге — это первая из его проповедей, которую книга Деяний приводит подробно, — а в следующую субботу почти весь город собрался слушать. Когда Иудеи воспротивились, апостолы сказали: «вот, мы обращаемся к язычникам». Иудеи подстрекнули набожных и почетных женщин и первых в городе людей, воздвигли гонение на апостолов и изгнали их, а они пошли дальше в Иконию; позже иудеи из Антиохии пришли за Павлом в Листру. Второе послание к Тимофею вспоминает гонения, которые он перенёс в Антиохии. На обратном пути апостолы утверждали учеников и рукоположили пресвитеров в каждой церкви. Многие учёные считают, что Послание к Галатам написано этим церквам на юге провинции; другие полагают, что оно адресовано галатам севера."
+    - "Антиохия оставалась главным римским городом края, а в поздней империи стала столицей провинции Писидии. Её епископ Оптим участвовал в Константинопольском соборе 381 г., и его имя стоит в мозаичной надписи в большой базилике города."
+scripture:
+  - Acts.13.13-Acts.13.16
+  - Acts.13.44-Acts.13.46
+  - Acts.13.50-Acts.13.51
+  - Acts.14.19
+  - Acts.14.21-Acts.14.23
+  - Gal.1.2
+  - 2Tim.3.11
+sources:
+  - "Strabo, Geography 12.6.4; 12.8.14"
+  - "Cassius Dio, Roman History 49.32.3; 53.26.3"
+  - "W. M. Ramsay, 'Colonia Caesarea (Pisidian Antioch) in the Augustan Age', Journal of Roman Studies 6 (1916), on the Res Gestae fragments"
+  - "Theodoret, Church History 5.8 (Optimus at the council of 381)"
+  - "S. Mitchell and M. Waelkens, Pisidian Antioch: The Site and its Monuments (1998)"
+  - "B. Levick, Roman Colonies in Southern Asia Minor (1967)"
+status: checked

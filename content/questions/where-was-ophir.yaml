@@ -1,0 +1,26 @@
+id: where-was-ophir
+question:
+  en: "Where was Ophir?"
+  ru: "Где находился Офир?"
+answer:
+  en:
+    - "Ophir, the land of Solomon's gold, has never been found. Three regions are proposed: south-western Arabia, where the map point stands, about 1,471 km from Ezion-geber in a straight line; the African coast of the Red Sea and the Horn of Africa, the Punt of the Egyptians; and India, the answer of the ancient translators. Each rests on a different clue, and none is proved."
+    - "Kings says that “king Solomon made a navy of ships in Ezion-geber, which is beside Eloth, on the shore of the Red sea”, manned by Hiram's sailors, and “they came to Ophir, and fetched from thence gold, four hundred and twenty talents”; the same fleet brought “great plenty of almug trees, and precious stones”. The gold of Ophir became proverbial, and an ostracon of the eighth century BC from Tell Qasile near Tel Aviv records “gold of Ophir for Beth-horon, thirty shekels”, so the name was a real mark of origin. Genesis 10 lists Ophir among the sons of Joktan beside Sheba and Havilah, the tribes of southern Arabia, which is the ground for the Arabian answer."
+    - "The Septuagint renders Ophir with forms such as Sophira, and Josephus says outright that the land of old called Sopheira, now the land of gold, was in India; the apes and peacocks of Solomon's trade come from that direction, though the text ascribes them to the ships of Tarshish. The African answer rests on Egypt's voyages to Punt for gold and incense, which must have gone the same way down the Red Sea. The nineteenth-century claim that Great Zimbabwe was Ophir has long been abandoned. The map shows Arabia and names the other candidates on the place card."
+  ru:
+    - "Офир, страну Соломонова золота, так и не нашли. Предлагают три области: юго-западную Аравию, где стоит точка на карте, примерно в 1471 км от Ецион-Гавера по прямой; африканский берег Красного моря и Африканский Рог — египетский Пунт; и Индию — ответ древних переводчиков. Каждый опирается на свою зацепку, и ни один не доказан."
+    - "Книга Царств говорит, что Соломон «сделал корабль в Ецион-Гавере, что при Елафе, на берегу Чермного моря», с корабельщиками Хирама, «и отправились они в Офир, и взяли оттуда золота четыреста двадцать талантов»; тот же флот привёз «великое множество красного дерева и драгоценных камней». Золото Офира вошло в пословицу, а черепок VIII века до н. э. из Телль-Касиле близ Тель-Авива записывает «золото Офира для Бет-Хорона, тридцать сиклей» — значит, имя было настоящей отметкой происхождения. Бытие 10 ставит Офира среди сыновей Иоктана рядом с Савой и Хавилой, племенами южной Аравии; на этом стоит аравийский ответ."
+    - "Септуагинта передаёт Офир формами вроде Софира, а Иосиф Флавий прямо пишет, что страна, прежде называвшаяся Софирой, а ныне Золотой землёй, лежит в Индии; обезьяны и павлины Соломоновой торговли идут с той стороны, хотя текст приписывает их фарсисским кораблям. Африканский ответ опирается на плавания египтян в Пунт за золотом и благовониями — тем же путём вниз по Красному морю. Утверждение XIX века, будто Офир — это Большой Зимбабве, давно оставлено. Карта показывает Аравию, а других кандидатов называет в карточке."
+map:
+  place: a104820
+  year: "c. 945 BC"
+  ref: 1Kgs.9.28
+scripture:
+  [1Kgs.9.26-1Kgs.9.28, 1Kgs.10.11, 1Kgs.10.22, 1Kgs.22.48, Gen.10.29, Job.28.16, Isa.13.12]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Josephus, Antiquities 8.164 (Sopheira, the land of gold, in India)"
+  - "B. Maisler (Mazar), 'Two Hebrew Ostraca from Tell Qasîle', Journal of Near Eastern Studies 10 (1951)"
+  - "K. A. Kitchen, 'Sheba and Arabia', in L. K. Handy (ed.), The Age of Solomon: Scholarship at the Turn of the Millennium (1997)"
+  - "G. W. Van Beek, 'Ophir', in The Interpreter's Dictionary of the Bible, vol. 3 (1962)"
+status: checked

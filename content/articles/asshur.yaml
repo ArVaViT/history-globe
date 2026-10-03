@@ -1,0 +1,32 @@
+# Overview article (ADR 0007). Mainstream facts only; dates before the first millennium BC follow the middle chronology.
+# The place record is the city of Ashur (Qal'at Sherqat); in the verses that carry it, "Asshur" mostly means Assyria or its people, and the text says so.
+id: asshur
+place: a874951
+title:
+  en: "Asshur"
+  ru: "Ассур"
+body:
+  en:
+    - "Asshur, the city of Ashur or Assur, stood on a spur of land on the west bank of the Tigris at Qal'at Sherqat in northern Iraq, about 100 km south of Mosul. It was the city of the god Ashur, who shared its name, and the land around it took the same name: Assyria. Remains from the second half of the third millennium BC lie beneath its temple of Ishtar. A German expedition of the Deutsche Orient-Gesellschaft, led mostly by Walter Andrae, excavated its temples, palaces and ziggurat from 1903 to 1914."
+    - "In the early second millennium BC Ashur was a city-state of merchants who traded with Anatolia; thousands of their letters were found at Kültepe, ancient Kanesh. About 1800 BC Shamshi-Adad I made it part of a large kingdom in northern Mesopotamia, and from the fourteenth century it was the capital of a growing Assyrian state. After Ashurnasirpal II moved the court to Calah in the ninth century BC, Ashur remained the religious centre of the empire, and several kings were buried there."
+    - 'In the Bible, Asshur is a son of Shem and the people and land of Assyria named after him; Genesis says that out of the land of Shinar "went forth Asshur, and builded Nineveh". Balaam foretells that Asshur will carry the Kenite away captive and that ships from Chittim will afflict Asshur; a psalm counts Assur among Israel''s enemies, and Ezekiel lists Asshur among the merchants who traded with Tyre. The city itself is not clearly named, though some read the Asshur of Ezekiel, listed among towns, as the city.'
+    - "In 614 BC the Medes took and plundered Ashur, as the Babylonian Chronicle records; Nabopolassar arrived too late for the battle and made an alliance with Cyaxares by the city. The Cyrus Cylinder names Ashur among the sanctuaries to which Cyrus returned their gods. The city revived under the Parthians, when a governor built a new palace and the temple of Ashur was restored, but after the Sasanian Persians took it in the mid-third century AD (dates from about 240 to 257 are given) it was abandoned."
+  ru:
+    - "Ассур, город Ашшур, стоял на мысу у западного берега Тигра, у нынешнего Калъат-Шерката на севере Ирака, примерно в 100 км к югу от Мосула. Это был город бога Ашшура, носившего то же имя, и по ним была названа вся окрестная страна — Ассирия. Под храмом Иштар лежат остатки второй половины III тысячелетия до н. э. Немецкая экспедиция Германского восточного общества, которую большей частью возглавлял Вальтер Андре, в 1903–1914 гг. раскопала его храмы, дворцы и зиккурат."
+    - "В начале II тысячелетия до н. э. Ашшур был городом-государством купцов, торговавших с Анатолией; тысячи их писем найдены в Кюльтепе, древнем Канеше. Около 1800 г. до н. э. Шамши-Адад I включил его в большое царство на севере Месопотамии, а с XIV века до н. э. он был столицей крепнущего Ассирийского государства. После того как Ашшурнацирапал II в IX веке до н. э. перенёс двор в Калах, Ашшур оставался религиозным центром державы, и здесь были погребены несколько царей."
+    - "В Библии Ассур — сын Сима, а также народ и земля Ассирии, названные по нему; книга Бытия говорит, что из земли Сеннаар «вышел Ассур и построил Ниневию». Валаам предрекает, что Ассур уведёт Кенеев в плен и что корабли от Киттима смирят Ассура; в псалме Ассур назван среди врагов Израиля, а Иезекииль называет Ассур среди тех, кто торговал с Тиром. Сам город в Библии ясно не назван, хотя Ассур у Иезекииля, стоящий в ряду городов, некоторые понимают именно как город."
+    - "В 614 г. до н. э. мидяне взяли и разграбили Ашшур, как сообщает Вавилонская хроника; Набопаласар опоздал к битве и заключил у стен города союз с Киаксаром. Цилиндр Кира называет Ашшур среди святилищ, куда Кир вернул их богов. При парфянах город возродился: наместник построил новый дворец, а храм Ашшура был восстановлен; но после того как его в середине III века н. э. взяли персы-Сасаниды (называют даты от ок. 240 до 257 г.), город был покинут."
+scripture:
+  - Gen.10.11
+  - Gen.10.22
+  - Num.24.22
+  - Num.24.24
+  - Ps.83.8
+  - Ezek.27.23
+sources:
+  - "Babylonian Chronicle ABC 3 (Fall of Nineveh Chronicle), years 11-12 (615-614 BC)"
+  - "Cyrus Cylinder, lines 30-32"
+  - "W. Andrae, Das wiedererstandene Assur (1938)"
+  - "K. Radner, Ancient Assyria: A Very Short Introduction (2015)"
+  - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016) (middle chronology)"
+status: checked

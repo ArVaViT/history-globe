@@ -7,6 +7,7 @@ title:
   en: "Paul's second journey"
   ru: "Второе путешествие Павла"
 year: "AD 50"
+people: ["Paul@Act.7.58-2Pe"]
 approximate: true
 stops:
   - place: ae41ab4
@@ -31,11 +32,14 @@ stops:
       ru: "Видение мужа Македонянина."
   - place: a68750d
     ref: Acts.16.11
+    by: sea
     note:
       en: "A straight course to Samothrace."
       ru: "Прямым путём к Самофракии."
   - place: a6a7150
     ref: Acts.16.11
+    by: sea
+    sailed: { days: 1, ref: Acts.16.11 }
     note:
       en: "Landing at Neapolis."
       ru: "Высадка в Неаполе."
@@ -81,11 +85,13 @@ stops:
       ru: "Кенхреи, порт Коринфа."
   - place: a5feb15
     ref: Acts.18.19-Acts.18.21
+    by: sea
     note:
       en: "A short stay in Ephesus."
       ru: "Недолгое пребывание в Ефесе."
   - place: a58735e
     ref: Acts.18.22
+    by: sea
     note:
       en: "Landing at Caesarea."
       ru: "Высадка в Кесарии."

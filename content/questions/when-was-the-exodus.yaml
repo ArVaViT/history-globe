@@ -1,0 +1,26 @@
+id: when-was-the-exodus
+question:
+  en: "When was the Exodus?"
+  ru: "Когда был Исход?"
+answer:
+  en:
+    - "The date is disputed. Two answers are defended: about 1446 BC, in the fifteenth century, which follows the Bible's own arithmetic and is the year the map uses, and the thirteenth century BC, in the reign of Ramesses II, which follows the name of the store city Rameses and the archaeology of Egypt and Canaan. Some scholars hold that the event cannot be dated at all."
+    - "The early date rests on 1 Kings: Solomon began the Temple “in the four hundred and eightieth year after the children of Israel were come out of the land of Egypt, in the fourth year of Solomon's reign”. His fourth year is usually put at 966 BC, which gives 1446 BC; Jephthah's three hundred years of Israel in Transjordan, and the sojourn of “four hundred and thirty years” in Egypt, are read the same way. The late date starts from Exodus 1:11: the Israelites “built for Pharaoh treasure cities, Pithom and Raamses”, and Pi-Ramesses, the Delta capital at Qantir, was built by Ramesses II, who reigned from 1279 to 1213 BC. On this reading the 480 years are twelve generations of forty, a round figure."
+    - "The oldest mention of Israel outside the Bible is the stele of Merneptah, son of Ramesses II, which lists Israel among the peoples defeated in Canaan in about 1208 BC; so Israel was in the land by then on either date. The destruction layers of Canaanite cities, the absence of Egyptian records of the event and the late date of many wilderness sites are argued on both sides. The map keeps 1446 BC as a conventional point and marks it as approximate."
+  ru:
+    - "Дата спорна. Отстаивают два ответа: около 1446 г. до н. э., в XV веке, что следует из собственной арифметики Библии и принято на карте, и XIII век до н. э., царствование Рамсеса II, что следует из имени города для запасов Раамсеса и из археологии Египта и Ханаана. Некоторые учёные считают, что событие вообще нельзя датировать."
+    - "Ранняя дата опирается на 3 Царств: Соломон начал строить храм «В четыреста восьмидесятом году по исшествии сынов Израилевых из земли Египетской, в четвертый год царствования Соломонова». Его четвёртый год обычно относят к 966 г. до н. э., что даёт 1446 г. до н. э.; так же читают триста лет Израиля в Заиорданье у Иеффая и «четыреста тридцать лет» пребывания в Египте. Поздняя дата исходит из Исхода 1:11: израильтяне построили фараону «Пифом и Раамсес, города для запасов», а Пер-Рамсес, столицу в дельте у Кантира, построил Рамсес II, царствовавший с 1279 по 1213 г. до н. э. При таком чтении 480 лет — это двенадцать поколений по сорок, круглое число."
+    - "Древнейшее упоминание Израиля вне Библии — стела Мернептаха, сына Рамсеса II, где Израиль назван среди народов, разбитых в Ханаане около 1208 г. до н. э.; значит, при любой дате Израиль к тому времени уже был в этой земле. Слои разрушений ханаанских городов, молчание египетских источников и поздняя датировка многих стоянок в пустыне идут в ход у обеих сторон. Карта держит 1446 г. до н. э. как условную точку и помечает её как приблизительную."
+map:
+  place: a079b21
+  year: "c. 1446 BC"
+  ref: Exod.12.37
+scripture: [1Kgs.6.1, Exod.1.11, Exod.12.40-Exod.12.41, Judg.11.26, Gen.15.13, Exod.12.37]
+sources:
+  - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings (3rd ed., 1983), on the fourth year of Solomon"
+  - "K. A. Kitchen, On the Reliability of the Old Testament (2003), on the date of the Exodus"
+  - "J. K. Hoffmeier, Israel in Egypt: The Evidence for the Authenticity of the Exodus Tradition (1996)"
+  - "B. G. Wood, 'The Rise and Fall of the 13th-Century Exodus-Conquest Theory', Journal of the Evangelical Theological Society 48 (2005)"
+  - "W. G. Dever, Who Were the Early Israelites and Where Did They Come From? (2003)"
+  - "The Merneptah Stele (Cairo, Egyptian Museum CG 34025), fifth year of Merneptah"
+status: checked

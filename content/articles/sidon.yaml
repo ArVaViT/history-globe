@@ -1,0 +1,41 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such.
+id: sidon
+place: a98e4d7
+title:
+  en: "Sidon"
+  ru: "Сидон"
+body:
+  en:
+    - "Sidon, today Saida in Lebanon, lies on the Phoenician coast about 40 km south of Beirut and 40 km north of Tyre, on a headland sheltered by small offshore islets that made two harbours. People lived here from prehistoric times; excavations at the College Site since 1998 have uncovered the Bronze Age town and its burials, with goods from Egypt. In the fourteenth century BC its ruler Zimredda appears in the Amarna letters."
+    - "In Genesis Sidon is the firstborn of Canaan, and both the Bible and Homer call the Phoenicians Sidonians: Solomon said that none could hew timber like the Sidonians, and Homer praises Sidonian robes and silver. Jezebel was the daughter of Ethbaal, king of the Sidonians, and Elijah lodged with a widow at Zarephath, a town belonging to Sidon. In 701 BC King Luli fled from Sennacherib to Cyprus, in 677 BC Esarhaddon took and destroyed the city, and the next year its king Abdi-Milkutti was beheaded; the prophets spoke against Tyre and Sidon alike."
+    - "Under the Persians Sidon was the leading Phoenician city and furnished the finest ships of Xerxes' fleet. Its kings built a temple of the healing god Eshmun outside the city, and the inscribed sarcophagi of Tabnit and Eshmunazar II come from their tombs. Sidon rebelled against Artaxerxes III under King Tennes and was burned, in the mid-fourth century BC (the exact year is disputed). In 333 BC it opened its gates to Alexander, and the carved Alexander Sarcophagus was found in its royal cemetery."
+    - "Under the Ptolemies, the Seleucids and then Rome, Sidon minted its own coins and was known for glass and purple dye. People from around Tyre and Sidon came to Jesus; he went into the borders of Tyre and Sidon, where a Syrophoenician woman begged him to cast the devil out of her daughter, and he said that Tyre and Sidon would have repented at his works. On his voyage to Rome Paul was allowed to visit friends at Sidon. Eusebius names Zenobius, a presbyter of the church at Sidon, among the martyrs of the Great Persecution."
+  ru:
+    - "Сидон, ныне Сайда в Ливане, стоит на финикийском побережье, примерно в 40 км к югу от Бейрута и в 40 км к северу от Тира, на мысу, прикрытом небольшими островками, которые образовали две гавани. Люди жили здесь с доисторических времён; раскопки на так называемом участке Колледжа, идущие с 1998 г., открыли город бронзового века и его погребения с египетскими вещами. В XIV веке до н. э. его правитель Зимредда упоминается в Амарнских письмах."
+    - "В книге Бытия Сидон — первенец Ханаана, а Библия и Гомер одинаково называют финикиян сидонянами: Соломон говорил, что никто не умеет рубить дерева так, как сидоняне, а Гомер хвалит сидонские ткани и серебро. Иезавель была дочерью Ефваала, царя Сидонского, а Илия жил у вдовы в Сарепте Сидонской. В 701 г. до н. э. царь Лули бежал от Сеннахирима на Кипр, в 677 г. до н. э. Асардан взял и разрушил город, а на следующий год его царь Абди-Милкути был обезглавлен; пророки возвещали суд и Тиру, и Сидону."
+    - "При персах Сидон был первым городом Финикии и дал лучшие корабли флоту Ксеркса. Его цари построили за городом храм бога-целителя Эшмуна, а из их гробниц происходят саркофаги Табнита и Эшмуназара II с надписями. При царе Теннесе Сидон восстал против Артаксеркса III и был сожжён в середине IV века до н. э. (точный год спорный). В 333 г. до н. э. он открыл ворота Александру, а в его царском некрополе был найден резной «саркофаг Александра»."
+    - "При Птолемеях, Селевкидах, а затем при Риме Сидон чеканил свою монету и славился стеклом и пурпуром. Жители окрестностей Тира и Сидона приходили к Иисусу; Он приходил в пределы Тирские и Сидонские, где сирофиникиянка просила Его изгнать беса из её дочери, и сказал, что Тир и Сидон покаялись бы, увидев Его дела. По пути в Рим Павлу позволили навестить в Сидоне друзей. Евсевий называет пресвитера сидонской церкви Зиновия среди мучеников Великого гонения."
+scripture:
+  - Gen.10.15
+  - 1Kgs.5.6
+  - 1Kgs.16.31
+  - 1Kgs.17.9
+  - Ezek.28.21-Ezek.28.22
+  - Jer.47.4
+  - Mark.3.8
+  - Mark.7.24-Mark.7.31
+  - Matt.11.21-Matt.11.22
+  - Acts.27.3
+sources:
+  - "Amarna letters EA 144 (Zimredda of Sidon)"
+  - "Homer, Iliad 6.289-292; 23.740-745"
+  - "Sennacherib's Annals (the Taylor Prism), third campaign; Esarhaddon's Prism (Nineveh A); the Babylonian Chronicle (ABC 1), years 4-5 of Esarhaddon"
+  - "Herodotus, Histories 7.44; 7.96-100"
+  - "Sarcophagus inscriptions of Tabnit and Eshmunazar II (KAI 13-14)"
+  - "Diodorus Siculus, Library 16.41-45"
+  - "Arrian, Anabasis 2.15.6; Curtius Rufus, History of Alexander 4.1.15-26"
+  - "Strabo, Geography 16.2.22-24; Pliny the Elder, Natural History 5.76"
+  - "Eusebius, Ecclesiastical History 8.13.3"
+  - "N. Jidejian, Sidon through the Ages (1971)"
+  - "C. Doumet-Serhal, excavation reports of the British Museum at the College Site, Sidon, in Archaeology and History in Lebanon (1998-)"
+status: checked

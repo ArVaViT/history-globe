@@ -1,0 +1,37 @@
+# Overview article (ADR 0007). Mainstream facts only; Assyrian dates follow the eponym chronology, disputed things are said to be disputed.
+id: gaza
+place: aa8edd2
+title:
+  en: "Gaza"
+  ru: "Газа"
+body:
+  en:
+    - "Gaza lay on the southern coastal plain, a little inland from the sea, the last town on the road from Egypt before the Sinai desert; its old mound lies under the modern city, and its harbour was later called Maiuma. In the fifteenth century BC Thutmose III halted at Gaza on his march to Megiddo, and under the New Kingdom it was a chief seat of Egyptian rule in Canaan. In the twelfth century BC the Philistines settled here, and Gaza became one of their five cities."
+    - "Genesis names Gaza at the edge of the land of Canaan. Samson carried off the doors of its gate; later the Philistines blinded him and set him to grind in the prison house at Gaza, and he pulled down the house where their lords had gathered. Hezekiah struck the Philistines as far as Gaza, and Amos foretold fire on its walls. In 734 BC Tiglath-pileser III of Assyria took the city, and its king Hanunu fled to Egypt; in 720 BC Sargon II defeated Hanunu at Raphia and took him captive."
+    - "In 332 BC Alexander the Great took Gaza by storm after a siege of two months; its defenders fell fighting, and the women and children were sold as slaves. About 96 BC the Hasmonean king Alexander Jannaeus took the city after a year's siege and destroyed it. Pompey freed Gaza from Jewish rule in 63 BC, and Gabinius, the Roman governor of Syria, had it rebuilt about 57 BC. Augustus gave it to Herod, but after Herod's death in 4 BC it was attached to the province of Syria as a Greek city."
+    - 'In Acts an angel sends Philip to "the way that goeth down from Jerusalem unto Gaza, which is desert", where he baptises an Ethiopian eunuch. The monk Hilarion, a founder of monastic life in Palestine, was born in a village south of Gaza. The city long remained pagan, with a great temple of its god Marnas. In 402, by the usual dating, imperial troops sent at the request of Bishop Porphyry destroyed its temples, and a church was built where the Marneion had stood; the story is told in Mark the Deacon''s Life of Porphyry, a work whose authenticity is debated. Around 500 Gaza was known for its school of rhetoric.'
+  ru:
+    - "Газа стояла на южной приморской равнине, немного в стороне от моря, — последний город на дороге из Египта перед Синайской пустыней; её древний холм скрыт под современным городом, а гавань позже называлась Маиума. В XV веке до н. э. Тутмос III остановился в Газе по пути к Мегиддо, и при Новом царстве она была одним из главных центров египетской власти в Ханаане. В XII веке до н. э. здесь поселились филистимляне, и Газа стала одним из пяти их городов."
+    - "Книга Бытия называет Газу на краю земли Ханаанской. Самсон унёс двери её городских ворот; позже филистимляне выкололи ему глаза и заставили молоть в доме узников в Газе, и он обрушил дом, где собрались их владельцы. Езекия поразил филистимлян до Газы, а Амос предрёк огонь на её стены. В 734 г. до н. э. город взял ассирийский царь Феглафелласар III, а царь Газы Хануну бежал в Египет; в 720 г. до н. э. Саргон II разбил Хануну при Рафии и взял его в плен."
+    - "В 332 г. до н. э. Александр Македонский взял Газу приступом после двухмесячной осады; её защитники пали в бою, а женщин и детей продали в рабство. Около 96 г. до н. э. хасмонейский царь Александр Яннай после годичной осады взял город и разрушил его. В 63 г. до н. э. Помпей освободил Газу от иудейской власти, а римский наместник Сирии Габиний около 57 г. до н. э. велел её отстроить. Август отдал её Ироду, но после смерти Ирода в 4 г. до н. э. она как греческий город была присоединена к провинции Сирия."
+    - "В Деяниях Ангел посылает Филиппа «на дорогу, идущую из Иерусалима в Газу, на ту, которая пуста», где он крестит евнуха-ефиоплянина. Монах Иларион, один из основателей монашеской жизни в Палестине, родился в селении к югу от Газы. Город долго оставался языческим, с большим храмом своего бога Марнаса. В 402 г., по обычной датировке, императорские войска, присланные по просьбе епископа Порфирия, разрушили его храмы, и на месте Марнейона построили церковь; об этом рассказывает Житие Порфирия, написанное Марком Диаконом, но подлинность этого сочинения оспаривается. Около 500 г. Газа славилась своей школой риторики."
+scripture:
+  - Gen.10.19
+  - Josh.13.3
+  - Judg.16.1-Judg.16.3
+  - Judg.16.21-Judg.16.30
+  - 1Sam.6.17
+  - 2Kgs.18.8
+  - Amos.1.6-Amos.1.7
+  - Acts.8.26-Acts.8.39
+sources:
+  - "Annals of Thutmose III at Karnak (the campaign to Megiddo)"
+  - "Tiglath-pileser III, Summary Inscriptions RINAP 1, Tiglath-pileser III 42, 8b-10; 48, 14b-15"
+  - "Sargon II, Great Display Inscription from Khorsabad, RINAP 2, Sargon II 7, 25b-26"
+  - "Arrian, Anabasis 2.26-27; Diodorus Siculus, Library 17.48.7"
+  - "Josephus, Antiquities 13.356-364; 14.69-76; 14.86-88; 15.213-217; 17.317-320; Jewish War 2.93-100"
+  - "Jerome, Life of Hilarion 2-3"
+  - "Mark the Deacon, Life of Porphyry 63-76 (tr. G. F. Hill, 1913)"
+  - "C. A. M. Glucker, The City of Gaza in the Roman and Byzantine Periods (BAR International Series 325, 1987)"
+  - "E. Stern (ed.), The New Encyclopedia of Archaeological Excavations in the Holy Land (1993), s.v. Gaza"
+status: checked

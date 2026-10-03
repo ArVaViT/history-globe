@@ -1,0 +1,34 @@
+# Overview article (ADR 0007). Mainstream facts only; Succoth follows the usual but disputed identification with Tell Deir Alla; Iron Age dates follow the excavators' radiocarbon dates.
+id: succoth
+place: a0905b5
+title:
+  en: "Succoth"
+  ru: "Сокхоф"
+body:
+  en:
+    - 'Succoth, whose name means "booths", is usually identified with Tell Deir Alla, a mound in the Jordan Valley about 8 km east of the river and 1 km north of the Jabbok. The Jerusalem Talmud says that Succoth is Tar''ala, a name that seems to live on in Deir Alla, and Nelson Glueck adopted the identification. No inscription found on the site names it, and Henk Franken, who began the excavations, accepted only that the district was the valley of Succoth, not that the mound was the town; the identification is therefore not certain.'
+    - "Leiden University began digging the mound in 1960, later jointly with Jordan's Department of Antiquities and Yarmouk University. The excavated layers run from about 1700 BC. Through the Late Bronze Age a large sanctuary stood on an artificial platform, and Egyptian objects show ties with Egypt down to the days of Queen Tausret, about 1200 BC. In 1967 fragments of plaster written in ink were found in a village destroyed by an earthquake about 800 BC: a text about Balaam son of Beor, a seer of the gods, the same name as the prophet of Numbers. At nearby Tell el-Hammeh iron was already being smelted in the tenth century BC."
+    - 'After parting from Esau, Jacob "journeyed to Succoth, and built him an house, and made booths for his cattle: therefore the name of the place is called Succoth." Joshua lists Succoth in the valley among the towns given to Gad, the rest of the kingdom of Sihon. When Gideon, pursuing the Midianite kings Zebah and Zalmunna, asked the men of Succoth for bread, its princes refused him; on his return he punished its elders with thorns of the wilderness. Solomon''s bronze vessels were cast in the clay ground of the Jordan plain between Succoth and Zarthan, and a psalm says, "I will divide Shechem, and mete out the valley of Succoth."'
+    - "Settlement on the mound went on, with breaks, until about 400 BC, in the Persian period. Josephus wrote that the place where Jacob stopped was still called Tents in his day, and Jerome noted that a city of that name still stood beyond the Jordan in the region of Scythopolis. A Roman and Late Roman settlement, with columns and polished marble, lay about 300 m east of the tell."
+  ru:
+    - "Сокхоф, чьё имя значит «шалаши», обычно отождествляют с Телль-Дейр-Алла — холмом в долине Иордана примерно в 8 км к востоку от реки и в 1 км к северу от Иавока. Иерусалимский Талмуд говорит, что Сокхоф — это Тарала; это имя, по-видимому, сохранилось в названии Дейр-Алла, и Нельсон Глюк принял это отождествление. Ни одна найденная там надпись не называет это место, а Хенк Франкен, начавший раскопки, признавал лишь, что эта округа была долиной Сокхоф, но не что холм был самим городом; поэтому отождествление не бесспорно."
+    - "Лейденский университет начал раскопки холма в 1960 г., позднее вместе с Департаментом древностей Иордании и Ярмукским университетом. Раскопанные слои начинаются около 1700 г. до н. э. На протяжении позднего бронзового века на искусственной платформе стояло большое святилище, а египетские предметы говорят о связях с Египтом вплоть до дней царицы Таусерт, около 1200 г. до н. э. В 1967 г. в селении, разрушенном землетрясением около 800 г. до н. э., нашли обломки штукатурки с надписью чернилами — текст о Валааме, сыне Веоровом, провидце богов; так же звали пророка из книги Чисел. На соседнем Телль-эль-Хамме уже в X веке до н. э. выплавляли железо."
+    - "Расставшись с Исавом, «Иаков двинулся в Сокхоф, и построил себе дом, и для скота своего сделал шалаши. От сего он нарек имя месту: Сокхоф». Книга Иисуса Навина называет Сокхоф на долине среди городов, отданных колену Гадову, — остаток царства Сигона. Когда Гедеон, преследуя царей Мадиамских Зевея и Салмана, попросил у жителей Сокхофа хлеба, князья города отказали ему; возвратившись, он наказал старейшин терновником пустынным. Медные сосуды Соломона выливали в глинистой земле окрестности Иордана между Сокхофом и Цартаном, а псалом говорит: «разделю Сихем и долину Сокхоф размерю»."
+    - "Жизнь на холме с перерывами продолжалась примерно до 400 г. до н. э., уже в персидское время. Иосиф Флавий писал, что место, где остановился Иаков, и в его дни называлось Шатрами, а Иероним отмечал, что город с таким именем всё ещё стоит за Иорданом, в области Скифополя. Римское и позднеримское поселение с колоннами и полированным мрамором лежало примерно в 300 м к востоку от холма."
+scripture:
+  - Gen.33.16-Gen.33.17
+  - Josh.13.24-Josh.13.27
+  - Judg.8.4-Judg.8.9
+  - Judg.8.13-Judg.8.16
+  - 1Kgs.7.45-1Kgs.7.46
+  - 2Chr.4.17
+  - Ps.60.6
+  - Num.22.5
+sources:
+  - "Jerusalem Talmud, Shevi'it 9:2 (Succoth is Tar'ala)"
+  - "Josephus, Antiquities 1.337"
+  - "Jerome, Hebrew Questions on Genesis, on Gen 33:17 (Latin quoted in E. Robinson, Later Biblical Researches, 1856, 311)"
+  - "The Deir Alla plaster text (KAI 312): J. Hoftijzer and G. van der Kooij, Aramaic Texts from Deir 'Alla (1976)"
+  - "H. J. Franken, 'Deir 'Alla Re-visited', and M. M. Ibrahim and G. van der Kooij, 'The Archaeology of Deir 'Alla Phase IX', in J. Hoftijzer and G. van der Kooij (eds.), The Balaam Text from Deir 'Alla Re-evaluated (1991) 3-15, 16-29"
+  - "E. Kaptijn, Life on the Watershed: Reconstructing Subsistence in a Steppe Region Using Archaeological Survey (2009) 25-26, 229-230, 401-402"
+status: checked

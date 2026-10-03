@@ -7,6 +7,9 @@ title:
   en: "Ezekiel among the exiles"
   ru: "Иезекииль в плену"
 year: "593 BC"
+# He is carried “in the visions of God” (8:3, 11:24) and the news comes to him (33:21): no time on foot.
+walked: false
+people: ["Ezekiel@Ezk.1.3-"]
 approximate: true
 stops:
   - place: a3d2f0a # Chebar
@@ -35,5 +38,5 @@ stops:
     ref: Ezek.33.21-Ezek.33.22
     year: "585 BC"
     note:
-      en: 'In the twelfth year of the captivity one who escaped from Jerusalem comes to him: "The city is smitten."'
-      ru: "В двенадцатом году переселения к нему приходит спасшийся из Иерусалима: «разрушен город!»"
+      en: 'Among the exiles, in the twelfth year of the captivity, one who escaped from Jerusalem comes to him: "The city is smitten."'
+      ru: "Среди переселенцев, в двенадцатом году переселения, к нему приходит спасшийся из Иерусалима: «разрушен город!»"

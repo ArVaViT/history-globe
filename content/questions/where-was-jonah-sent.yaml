@@ -1,0 +1,36 @@
+id: where-was-jonah-sent
+question:
+  en: "Where was Jonah sent, and where did he flee?"
+  ru: "Куда был послан Иона и куда он бежал?"
+answer:
+  en:
+    - "Jonah was sent to Nineveh, the great city of Assyria on the Tigris opposite today's Mosul in Iraq, about 820 km north-east of his home town Gath-hepher in Galilee in a straight line. Instead he went down to the port of Joppa, today's Jaffa, and took ship for Tarshish in the opposite direction. Where Tarshish was is disputed: the usual view is Tartessos in south-western Spain, where the map puts its point near Huelva, about 3,825 km west of Joppa; Sardinia, Carthage and Tarsus in Cilicia have also been proposed. The map marks it as disputed, and the Jonah tour leaves it out, since he never arrived."
+    - '2 Kings names "Jonah, the son of Amittai, the prophet, which was of Gath-hepher", in the reign of Jeroboam II of Israel (c. 793–753 BC); the map''s tour is set at 780 BC. The book of Jonah opens with the command "Arise, go to Nineveh, that great city, and cry against it", and the flight: "But Jonah rose up to flee unto Tarshish from the presence of the LORD, and went down to Joppa; and he found a ship going to Tarshish". After the storm and the fish he went to Nineveh, "an exceeding great city of three days'' journey", and its people repented; Jesus held up the Ninevites as an example: "The men of Nineveh shall rise in judgment with this generation, and shall condemn it".'
+    - "Gath-hepher is placed at Tel Gat Hefer, about 5 km from Nazareth. Joppa was the chief port of the central coast, the harbour to which cedar from Lebanon was floated for Solomon's Temple; Jerome, describing Paula's pilgrimage of the 380s, names it as the port of Jonah's flight. Nineveh became the capital of Assyria under Sennacherib about 700 BC, with a wall about 12 km long, and fell to the Babylonians and Medes in 612 BC; later tradition placed the tomb of Jonah on the mound of Nebi Yunus there. Tarshish in the prophets is a far land of silver, iron, tin and lead reached by sea; those who place it in Spain point to the metal-rich coast that Greek writers knew as Tartessos, but the name also stands for distant seafaring in general, as in the ships of Tarshish."
+  ru:
+    - "Иона был послан в Ниневию, великий город Ассирии на Тигре напротив нынешнего Мосула в Ираке, примерно в 820 км к северо-востоку от его родного Гафхефера в Галилее по прямой. Вместо этого он пришёл в гавань Иоппию, нынешнюю Яффу, и сел на корабль в Фарсис, в противоположную сторону. Где был Фарсис, спорно: обычно его отождествляют с Тартессом на юго-западе Испании, где карта ставит точку близ Уэльвы, примерно в 3825 км к западу от Иоппии; предлагались также Сардиния, Карфаген и Тарс в Киликии. Карта помечает его как спорный, а тур об Ионе его не включает, поскольку пророк туда не доплыл."
+    - "4-я книга Царств называет «Иону, сына Амафиина, пророка из Гафхефера» в царствование Иеровоама II Израильского (ок. 793–753 гг. до н. э.); тур на карте поставлен на 780 г. до н. э. Книга Ионы начинается повелением «встань, иди в Ниневию, город великий, и проповедуй в нем» и бегством: «И встал Иона, чтобы бежать в Фарсис от лица Господня, и пришел в Иоппию, и нашел корабль, отправлявшийся в Фарсис». После бури и кита он пошёл в Ниневию — «город великий у Бога, на три дня ходьбы», и её жители покаялись; Иисус ставил ниневитян в пример: «Ниневитяне восстанут на суд с родом сим и осудят его»."
+    - "Гафхефер помещают на Тель-Гат-Хефер, примерно в 5 км от Назарета. Иоппия была главной гаванью средней части побережья, куда сплавляли кедры с Ливана для храма Соломона; Иероним, описывая паломничество Павлы в 380-х годах, называет её пристанью, откуда бежал Иона. Ниневия стала столицей Ассирии при Сеннахириме около 700 г. до н. э., со стеной длиной около 12 км, и пала под натиском вавилонян и мидян в 612 г. до н. э.; позднее предание поместило гробницу Ионы на тамошнем холме Неби-Юнус. Фарсис у пророков — далёкая страна серебра, железа, олова и свинца, куда ходят морем; те, кто помещает его в Испании, указывают на богатое металлами побережье, которое греки знали как Тартесс, но имя означает и дальнее мореплавание вообще, как в выражении «корабли Фарсисские»."
+map:
+  place: a70fd5d
+  year: "780 BC"
+  ref: Jonah.1.2
+scripture:
+  [
+    2Kgs.14.25,
+    Jonah.1.1-Jonah.1.3,
+    Jonah.3.3-Jonah.3.5,
+    Jonah.4.2,
+    Ezek.27.12,
+    Isa.23.1,
+    Matt.12.41,
+  ]
+sources:
+  - "History Globe tour “Jonah” (Gath-hepher, Joppa, Nineveh; Tarshish left out as disputed and never reached)"
+  - "History Globe articles “Nineveh” and “Joppa”"
+  - "Jerome, Letter 108.8 (Joppa, the port of Jonah's flight)"
+  - "Babylonian Chronicle ABC 3 (Fall of Nineveh Chronicle)"
+  - "Herodotus, Histories 1.163; 4.152 (Tartessos beyond the Pillars)"
+  - "M. E. Aubet, The Phoenicians and the West (2nd ed., 2001), on Tartessos and the Tarshish question"
+  - "Candidate sites and straight-line distances: OpenBible.info Bible Geocoding Data (CC BY 4.0) (Tarshish, disputed: Tartessos near Huelva, Sardinia, Carthage, Cádiz, Tarsus, Cyprus)"
+status: checked

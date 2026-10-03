@@ -1,6 +1,13 @@
 import { describe, expect, it } from "vitest";
 import { checkRef } from "./verses.ts";
-import { canonicalPosition, formatRef, NT_BOOKS, refCovers } from "./scripture.ts";
+import {
+  canonicalPosition,
+  formatRef,
+  isDeuterocanon,
+  NT_BOOKS,
+  parseChapter,
+  refCovers,
+} from "./scripture.ts";
 
 describe("formatRef", () => {
   it.each([
@@ -88,5 +95,55 @@ describe("canonicalPosition", () => {
       "Judg.18.1-Judg.18.2",
       "Ruth.1.1",
     ]);
+  });
+});
+
+describe("parseChapter", () => {
+  it("reads Russian and English book names, abbreviations and the Gospels' genitive", () => {
+    expect(parseChapter("Деян 16", "ru")).toEqual({ ref: "Acts.16", label: "Деян 16" });
+    expect(parseChapter("деяния 16", "ru")?.ref).toBe("Acts.16");
+    expect(parseChapter("1 Цар 17", "ru")?.ref).toBe("1Sam.17");
+    expect(parseChapter("3 Цар. 18", "ru")?.ref).toBe("1Kgs.18");
+    expect(parseChapter("Иоанн 4", "ru")?.ref).toBe("John.4");
+    expect(parseChapter("от Иоанна 3", "ru")?.ref).toBe("John.3");
+    expect(parseChapter("Матфея 5", "ru")?.ref).toBe("Matt.5");
+    expect(parseChapter("Луки 2", "ru")?.ref).toBe("Luke.2");
+    // Synodal Josh 6 starts at English 6:2 (Josh 6:1 is Synodal 5:16).
+    expect(parseChapter("Иисус Навин 6", "ru")?.ref).toBe("Josh.6.2-Josh.6.27");
+    expect(parseChapter("Acts 16", "en")).toEqual({ ref: "Acts.16", label: "Acts 16" });
+    expect(parseChapter("1 Sam 17", "en")?.ref).toBe("1Sam.17");
+    expect(parseChapter("Acts 29", "en")).toBeNull();
+  });
+
+  it("maps a Synodal psalm to the English verses it holds", () => {
+    expect(parseChapter("Пс 22", "ru")?.ref).toBe("Ps.23");
+    // Synodal 9 = English 9 and 10; 114 and 115 are halves of English 116; 146 and 147
+    // are halves of English 147.
+    expect(parseChapter("Пс 9", "ru")?.ref).toBe("Ps.9-Ps.10");
+    expect(parseChapter("Пс 114", "ru")?.ref).toBe("Ps.116.1-Ps.116.9");
+    expect(parseChapter("Пс 115", "ru")?.ref).toBe("Ps.116.10-Ps.116.19");
+    expect(parseChapter("Пс 147", "ru")?.ref).toBe("Ps.147.12-Ps.147.20");
+  });
+});
+
+describe("parseChapter: a whole book", () => {
+  it("takes a book typed exactly, not the start of a place's name", () => {
+    expect(parseChapter("Деян", "ru")).toEqual({ ref: "Acts", label: "Деян" });
+    expect(parseChapter("Acts", "en")).toEqual({ ref: "Acts", label: "Acts" });
+    expect(parseChapter("Иерусалим", "ru")).toBeNull();
+  });
+});
+
+describe("books outside the Hebrew canon", () => {
+  it("are cited with a note that says so, in both languages", () => {
+    expect(formatRef("1Macc.4.36-1Macc.4.59", "ru")).toBe("1 Мак 4:36–59 (неканоническая книга)");
+    expect(formatRef("2Macc.4.7", "en")).toBe("2 Macc 4:7 (deuterocanonical)");
+    expect(formatRef("Gen.12.6", "ru")).toBe("Быт 12:6");
+  });
+
+  it("check their verses as the others: 1 Maccabees has 16 chapters", () => {
+    expect(() => formatRef("1Macc.16.24", "en")).not.toThrow();
+    expect(isDeuterocanon("1Macc.16.24")).toBe(true);
+    expect(isDeuterocanon("Mal.4.6")).toBe(false);
   });
 });

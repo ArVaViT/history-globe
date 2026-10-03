@@ -1,0 +1,36 @@
+id: when-did-assyria-besiege-jerusalem
+question:
+  en: "When did Assyria besiege Jerusalem?"
+  ru: "Когда Ассирия осаждала Иерусалим?"
+answer:
+  en:
+    - "In 701 BC, when Sennacherib king of Assyria marched against Hezekiah of Judah, took the fortified cities of the country, besieged Lachish and sent his army against Jerusalem. The city was not taken. The year is fixed by Sennacherib's own annals, which call this his third campaign; the Bible dates it to the fourteenth year of Hezekiah."
+    - '"Now in the fourteenth year of king Hezekiah did Sennacherib king of Assyria come up against all the fenced cities of Judah, and took them." Hezekiah sent to him at Lachish, about 45 km south-west of Jerusalem, confessing "I have offended", and paid three hundred talents of silver and thirty of gold; but the king of Assyria sent Tartan, Rabsaris and Rab-shakeh "from Lachish to king Hezekiah with a great host against Jerusalem", and they stood by the conduit of the upper pool and mocked the city from below its wall. Isaiah promised that the king would not enter the city, and "it came to pass that night, that the angel of the LORD went out, and smote in the camp of the Assyrians an hundred fourscore and five thousand ... So Sennacherib king of Assyria departed, and went and returned, and dwelt at Nineveh."'
+    - 'Sennacherib tells the same campaign from the other side on his prisms: he shut Hezekiah up in Jerusalem "like a bird in a cage", set up blockades against him and took tribute, but claims no capture of the city. At Nineveh he lined a room of his palace with reliefs of the siege of Lachish, and at Lachish excavators have found the burned city and the Assyrian siege ramp, the only Assyrian one yet found. Hezekiah also brought the waters of Gihon into the city by a tunnel, usually dated to the years before the siege; its inscription survives. The start of Hezekiah''s reign is disputed (about 729 or 715 BC), so how his fourteenth year fits 701 is a known difficulty. Sennacherib was murdered in 681 BC, by two of his sons according to 2 Kings and by “his son” according to the Babylonian Chronicle, and Jerusalem stood for about another 115 years until Babylon took it in 587 or 586 BC.'
+  ru:
+    - "В 701 г. до н. э., когда Сеннахирим, царь Ассирийский, пошёл на Езекию, царя Иудейского, взял укреплённые города страны, осадил Лахис и послал войско на Иерусалим. Город взят не был. Год твёрдо установлен по анналам самого Сеннахирима, которые называют этот поход третьим; Библия относит его к четырнадцатому году Езекии."
+    - "«В четырнадцатый год царя Езекии, пошел Сеннахирим, царь Ассирийский, против всех укрепленных городов Иуды и взял их». Езекия послал к нему в Лахис, примерно в 45 км к юго-западу от Иерусалима, со словами «виновен я» и заплатил триста талантов серебра и тридцать золота; но царь Ассирийский послал Тартана, Рабсариса и Рабсака «из Лахиса к царю Езекии с большим войском в Иерусалим», и они стали у водопровода верхнего пруда и поносили город из-под его стены. Исаия обещал, что царь не войдёт в город, и «случилось в ту ночь: пошел Ангел Господень и поразил в стане Ассирийском сто восемьдесят пять тысяч ... И отправился, и пошел, и возвратился Сеннахирим, царь Ассирийский, и жил в Ниневии»."
+    - "Сеннахирим рассказывает о том же походе с другой стороны на своих призмах: он запер Езекию в Иерусалиме, «как птицу в клетке», поставил против него заслоны и взял дань, но не говорит о взятии города. В Ниневии он украсил зал своего дворца рельефами осады Лахиса, а в Лахисе археологи нашли сожжённый город и ассирийскую осадную насыпь — единственную ассирийскую, найденную до сих пор. Езекия также провёл воды Гиона в город по тоннелю, который обычно относят к годам перед осадой; надпись из него сохранилась. Начало царствования Езекии спорно (около 729 или 715 г. до н. э.), и как его четырнадцатый год соотнести с 701 г. — известная трудность. В 681 г. до н. э. Сеннахирим был убит: по 4-й книге Царств — двумя сыновьями, по Вавилонской хронике — «своим сыном», а Иерусалим простоял ещё около 115 лет, пока Вавилон не взял его в 587 или 586 г. до н. э."
+map:
+  place: a15257a
+  year: "701 BC"
+  ref: 2Kgs.18.13
+scripture:
+  [
+    2Kgs.18.13-2Kgs.18.17,
+    2Kgs.19.32-2Kgs.19.37,
+    Isa.36.1-Isa.37.38,
+    2Chr.32.1-2Chr.32.23,
+    2Chr.32.9,
+    2Kgs.20.20,
+  ]
+sources:
+  - "Sennacherib's Annals, Chicago and Taylor prisms (RINAP 3, Sennacherib 22 iii 18-49: Hezekiah shut up in Jerusalem 'like a bird in a cage', blockades set up against him)"
+  - "The Lachish reliefs from Sennacherib's palace at Nineveh (British Museum)"
+  - "The Siloam inscription (Istanbul Archaeology Museums; KAI 189)"
+  - "Babylonian Chronicle, ABC 1 iii 34-38 (Sennacherib killed by his son in a rebellion, 681 BC)"
+  - "History Globe dated events and battles (Sennacherib's campaign and the sieges of Lachish and Jerusalem 701 BC; the Siloam tunnel c. 700 BC; Sennacherib's murder 681 BC) and the tour “Hezekiah and Isaiah” (the disputed start of Hezekiah's reign)"
+  - "History Globe articles on Lachish and Nineveh"
+  - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings (3rd ed., 1983), on the reign of Hezekiah"
+  - "Straight-line distance computed from the map's place coordinates (OpenBible.info Bible Geocoding Data)"
+status: checked

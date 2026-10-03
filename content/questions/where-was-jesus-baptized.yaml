@@ -1,0 +1,26 @@
+id: where-was-jesus-baptized
+question:
+  en: "Where was Jesus baptized?"
+  ru: "Где крестился Иисус?"
+answer:
+  en:
+    - "In the Jordan, but the exact place is disputed. John's Gospel names it “Bethany beyond Jordan” in most manuscripts, “Bethabara” in others; the traditional site is the ford opposite Jericho, about 11 km from the city and 31 km from Jerusalem in a straight line, where the map point stands at al-Maghtas on the Jordanian bank. Qasr al-Yahud on the Israeli bank faces it across the river."
+    - "Mark says that “Jesus came from Nazareth of Galilee, and was baptized of John in Jordan”, and John adds: “These things were done in Bethabara beyond Jordan, where John was baptizing”. Origen, in the third century, found Bethany in almost all the copies but no Bethany by the Jordan, so he preferred Bethabara, which he took to mean “house of preparation”; the name is more often read as “place of the ford”. The pilgrim of Bordeaux in 333 was shown the place of the baptism five miles above the Dead Sea, and the Madaba map of the sixth century marks Bethabara there, on the western bank. Byzantine churches and a monastery of John the Baptist stood on both banks, and the eastern ones, excavated in the late 1990s at Wadi al-Kharrar, were inscribed as a World Heritage site in 2015."
+    - "Other readings put the baptism elsewhere. John also baptized “in Ænon near to Salim, because there was much water there”, in the Jordan valley south of Scythopolis, about 61 km north of the ford; and some scholars read “Bethany beyond Jordan” as Batanaea, the region north-east of the Sea of Galilee, where, in John's account, Jesus gathered his first disciples. Luke dates John's preaching to the fifteenth year of Tiberius, AD 28 or 29, which is the year the map uses."
+  ru:
+    - "В Иордане, но точное место спорно. Евангелие от Иоанна в большинстве рукописей называет его «Вифания за Иорданом», в других — «Вифавара»; традиционное место — брод напротив Иерихона, примерно в 11 км от города и в 31 км от Иерусалима по прямой, где точка на карте стоит у Эль-Магтаса на иорданском берегу. Напротив, на израильском берегу, — Каср-эль-Яхуд."
+    - "Марк говорит, что «пришел Иисус из Назарета Галилейского и крестился от Иоанна в Иордане», а Иоанн добавляет: «Это происходило в Вифаваре при Иордане, где крестил Иоанн». Ориген в III веке видел Вифанию почти во всех списках, но не нашёл никакой Вифании у Иордана и предпочёл Вифавару, имя которой толковал как «дом приготовления»; чаще его понимают как «место брода». Бордоскому паломнику в 333 году показали место крещения в пяти милях выше Мёртвого моря, а Мадабская карта VI века отмечает там Вифавару — на западном берегу. Византийские церкви и монастырь Иоанна Крестителя стояли на обоих берегах; восточные, раскопанные в конце 1990-х годов в Вади-эль-Харрар, в 2015 году внесены в список Всемирного наследия."
+    - "Другие чтения помещают крещение в иное место. Иоанн крестил и «в Еноне, близ Салима, потому что там было много воды», в долине Иордана к югу от Скифополя, примерно в 61 км к северу от брода; а некоторые учёные читают «Вифанию за Иорданом» как Батанею — область к северо-востоку от Галилейского моря, где, по Иоанну, Иисус собрал первых учеников. Лука относит проповедь Иоанна к пятнадцатому году Тиверия, 28 или 29 г. н. э., и этот год показывает карта."
+map:
+  place: a6e060d
+  year: "AD 28"
+  ref: John.1.28
+scripture: [Matt.3.13-Matt.3.17, Mark.1.9, John.1.28, John.3.23, Luke.3.1, Luke.3.21-Luke.3.23]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Origen, Commentary on John, book 6 (Bethabara for Bethany)"
+  - "Pilgrim of Bordeaux, Itinerarium Burdigalense (AD 333), the Jordan five miles above the Dead Sea"
+  - "The Madaba mosaic map (sixth century), Bethabara, the place of St John's baptism"
+  - "R. Riesner, 'Bethany Beyond the Jordan (John 1:28): Topography, Theology and History in the Fourth Gospel', Tyndale Bulletin 38 (1987)"
+  - "UNESCO World Heritage List, Baptism Site “Bethany Beyond the Jordan” (Al-Maghtas), inscribed 2015"
+status: checked

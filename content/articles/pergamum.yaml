@@ -1,0 +1,31 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings and readings are named as such.
+id: pergamum
+place: a75d2c1
+title:
+  en: "Pergamum"
+  ru: "Пергам"
+body:
+  en:
+    - "Pergamum, by modern Bergama, stands on a steep hill above the fertile valley of the Caicus in north-western Asia Minor, some 25 km from the Aegean. Xenophon's Greek army came to it about 400 BC, but its rise came after Alexander. Lysimachus kept a treasure of nine thousand talents in its citadel under the eunuch Philetaerus, who broke with him about 282 BC and kept the city and the treasure; his heirs, the Attalids, made it a kingdom, and Attalus I took the title of king after a great victory over the Galatians."
+    - "The Attalids sided with Rome. Eumenes II (197–159 BC) received from the Romans the lands of Asia Minor taken from Antiochus the Great, and Pergamum was adorned with temples, libraries and the great altar, usually dated to his reign. Pliny, following Varro, tells that parchment was invented here when the king of Egypt, jealous of Pergamum's library, stopped the export of papyrus. In 133 BC Attalus III died and left his kingdom to the Romans, who made it the province of Asia."
+    - 'In 29 BC Augustus allowed the Greeks of Asia to build a temple to himself and Rome at Pergamum. The city was also famed for its sanctuary of Asclepius, the healing god, and the physician Galen was born here about AD 129. Revelation addresses the third of the seven churches to Pergamum, "where Satan''s seat is", and names Antipas, "my faithful martyr, who was slain among you". Whether Satan''s seat means the altar of Zeus, the worship of the emperor or the city''s place as a seat of Roman power is disputed. The letter also rebukes those who hold the teaching of Balaam and of the Nicolaitans.'
+    - "Eusebius records that Carpus, Papylus and a woman named Agathonice were martyred at Pergamum; their death is dated by some to the reign of Marcus Aurelius and by others to that of Decius. In 262, the Historia Augusta says, an earthquake struck the cities of Asia hardest of all, and Gothic raiders then ravaged the province; it does not name Pergamum, but the city never regained its Attalid splendour. The Red Basilica, a huge second-century temple of Egyptian gods in the lower city, later had a church built inside it."
+  ru:
+    - "Пергам, у нынешней Бергамы, стоит на крутом холме над плодородной долиной Каика на северо-западе Малой Азии, примерно в 25 км от Эгейского моря. Греческое войско Ксенофонта приходило сюда около 400 г. до н. э., но возвышение пришло после Александра. Лисимах хранил в его крепости казну в девять тысяч талантов под надзором евнуха Филетера, который около 282 г. до н. э. отложился от него и удержал город и казну; его наследники, Атталиды, сделали Пергам царством, а Аттал I принял царский титул после большой победы над галатами."
+    - "Атталиды держали сторону Рима. Евмен II (197–159 гг. до н. э.) получил от римлян земли Малой Азии, отнятые у Антиоха Великого, а Пергам украсился храмами, библиотеками и большим алтарём, который обычно относят к его царствованию. Плиний вслед за Варроном рассказывает, что пергамент изобрели здесь, когда египетский царь из ревности к пергамской библиотеке запретил вывоз папируса. В 133 г. до н. э. Аттал III умер и завещал своё царство римлянам, которые сделали его провинцией Асия."
+    - "В 29 г. до н. э. Август позволил грекам Асии построить в Пергаме храм ему и Риму. Город славился и святилищем Асклепия, бога врачевания, а около 129 г. н. э. здесь родился врач Гален. Откровение обращает к Пергаму третье из посланий семи церквам: «ты живешь там, где престол сатаны», и напоминает, что у них был умерщвлен «верный свидетель Мой Антипа». Что означает престол сатаны — алтарь Зевса, поклонение императору или роль города как средоточия римской власти, — спорно. Послание обличает и держащихся учения Валаама и учения Николаитов."
+    - "Евсевий сообщает, что в Пергаме приняли мученичество Карп, Папил и женщина по имени Агафоника; одни относят их смерть ко временам Марка Аврелия, другие — ко временам Декия. В 262 г., по словам «Истории Августов», землетрясение сильнее всего ударило по городам Асии, а затем провинцию опустошили готы; Пергам там не назван, но блеска времён Атталидов город уже не вернул. Внутри Красной базилики — огромного храма египетских богов II века в нижнем городе — позднее была построена церковь."
+scripture:
+  - Rev.1.11
+  - Rev.2.12-Rev.2.17
+sources:
+  - "Xenophon, Anabasis 7.8.8"
+  - "Strabo, Geography 13.4.1-2"
+  - "Pliny the Elder, Natural History 13.70 (after Varro)"
+  - "Cassius Dio, Roman History 51.20.6-7; Tacitus, Annals 4.37; 4.55"
+  - "Eusebius, Church History 4.15.48"
+  - "Historia Augusta, The Two Gallieni 5.2-6.2"
+  - "Altertümer von Pergamon (German excavation reports, 1885-)"
+  - "E. V. Hansen, The Attalids of Pergamon (2nd ed., 1971)"
+  - "H. Koester (ed.), Pergamon, Citadel of the Gods (1998)"
+status: checked

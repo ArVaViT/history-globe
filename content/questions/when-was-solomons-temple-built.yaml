@@ -1,0 +1,27 @@
+id: when-was-solomons-temple-built
+question:
+  en: "When was Solomon's Temple built?"
+  ru: "Когда был построен храм Соломона?"
+answer:
+  en:
+    - "Solomon began the Temple in the fourth year of his reign, about 966 BC on the chronology of Thiele that the map follows (Solomon's reign c. 970–931 BC), and finished it seven years later, about 959 BC. It stood on the hill north of the City of David, the Temple Mount, until the Babylonians burned it in 587 or 586 BC (the year is disputed), some 370 to 380 years later."
+    - 'The book of Kings dates it twice over: "in the four hundred and eightieth year after the children of Israel were come out of the land of Egypt, in the fourth year of Solomon''s reign over Israel, in the month Zif, which is the second month, that he began to build the house of the LORD", and "in the eleventh year, in the month Bul, which is the eighth month, was the house finished throughout all the parts thereof ... So was he seven years in building it." Hiram king of Tyre supplied the cedar and the craftsmen, and the Temple was dedicated at the feast in the seventh month, when the ark was brought up from the City of David and the cloud filled the house.'
+    - "The 480 years, taken literally, put the Exodus in 1446 BC, the conventional point of the map's Exodus tour; many scholars take the figure as a round number of twelve generations and date the Exodus later, so the Temple's date rests on the chronology of the kings, not on it, and some chronologies put Solomon's accession a few years after Thiele's. Nothing of Solomon's building has been identified: its site lies under the platform on which Herod the Great rebuilt the Second Temple from about 20 BC. That Second Temple, finished about 516 BC, was itself destroyed by the Romans in AD 70."
+  ru:
+    - "Соломон начал строить Храм в четвёртый год своего царствования, около 966 г. до н. э. по хронологии Тиле, которой следует карта (царствование Соломона — ок. 970–931 гг. до н. э.), и закончил семь лет спустя, около 959 г. до н. э. Храм стоял на холме к северу от города Давидова, на Храмовой горе, пока вавилоняне не сожгли его в 587 или 586 г. до н. э. (год спорный), — примерно через 370–380 лет."
+    - "Книга Царств датирует его дважды: «В четыреста восьмидесятом году по исшествии сынов Израилевых из земли Египетской, в четвертый год царствования Соломонова над Израилем, в месяц Зиф, который есть второй месяц, начал он строить храм Господу», и «на одиннадцатом году, в месяце Буле, — это месяц восьмой, — он окончил храм со всеми принадлежностями его и по всем предначертаниям его; строил его семь лет». Хирам, царь Тирский, дал кедры и мастеров, а освящён Храм был на праздник в седьмой месяц, когда ковчег перенесли из города Давидова и облако наполнило дом."
+    - "Четыреста восемьдесят лет при буквальном счёте относят Исход к 1446 г. до н. э. — условной точке тура об Исходе на карте; многие учёные считают это число круглым, двенадцать поколений, и датируют Исход позднее, так что дата Храма опирается на хронологию царей, а не на него, и некоторые хронологии ставят воцарение Соломона на несколько лет позже, чем Тиле. От постройки Соломона ничего не найдено: её место скрыто под платформой, на которой Ирод Великий примерно с 20 г. до н. э. перестраивал Второй храм. Этот Второй храм, оконченный около 516 г. до н. э., разрушили римляне в 70 г. н. э."
+map:
+  place: a15257a
+  year: "966 BC"
+  ref: 1Kgs.6.1
+scripture:
+  [1Kgs.6.1, 1Kgs.6.37-1Kgs.6.38, 1Kgs.5.1-1Kgs.5.6, 1Kgs.8.1-1Kgs.8.11, 2Kgs.25.8-2Kgs.25.9]
+sources:
+  - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings (3rd ed., 1983) (Solomon c. 970-931 BC; the fourth year 966)"
+  - "History Globe dated events (the Temple begun c. 966 BC; Jerusalem falls c. 586 BC; the Second Temple finished c. 516 BC; Herod's rebuilding from c. 20 BC; the Temple destroyed AD 70)"
+  - "History Globe tours of Solomon (the Temple at 966 BC) and of the Exodus (1446 BC, from 1 Kgs 6:1, as a convention)"
+  - "History Globe articles on Jerusalem and Tyre (Hiram's cedar and craftsmen)"
+  - "Josephus, Antiquities 15.380 (Herod begins the Temple in his eighteenth year)"
+  - "K. A. Kitchen, On the Reliability of the Old Testament (2003), on the 480 years of 1 Kgs 6:1 and the date of the Exodus"
+status: checked

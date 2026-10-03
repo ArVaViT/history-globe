@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such. Founding put in 331 BC after Arrian.
+id: alexandria
+place: aee7248
+title:
+  en: "Alexandria"
+  ru: "Александрия"
+body:
+  en:
+    - "Alexandria lies on the Mediterranean coast of Egypt, west of the Nile delta, on a strip of land between the sea and Lake Mareotis. Alexander the Great founded it in the winter of 332/331 BC, marking out its market place, its temples and the line of its walls himself. A causeway seven stades long, the Heptastadion, joined the city to the island of Pharos and formed two harbours, and the harbour on the lake, fed by canals from the Nile, was richer still. Under the Ptolemies it became the capital of Egypt and the greatest city of the Greek world, with the lighthouse on Pharos built by Sostratus of Cnidus, the Museum and the royal library."
+    - "Rome annexed Egypt in 30 BC, after the death of Cleopatra VII. A large Jewish community lived in the city. According to the Letter of Aristeas, seventy-two elders translated the Law into Greek on Pharos under Ptolemy II; this is the origin story of the Septuagint, and its details are legendary. Philo of Alexandria wrote here in the first century AD and described how, in AD 38, the Jews were driven into one quarter of the city and their synagogues profaned. In the Jewish revolt of 115–117 under Trajan the community was crushed."
+    - "In Acts, Jews of the synagogue of the Alexandrians disputed with Stephen in Jerusalem. Apollos, an eloquent man and mighty in the scriptures, was born at Alexandria. On his voyage to Rome Paul sailed in a ship of Alexandria bound for Italy, and after the wreck on Malta in another that had wintered on the island. Eusebius records the tradition that Mark was the first to preach in Egypt and founded the churches of Alexandria."
+    - "A Christian school of learning flourished here under Pantaenus, Clement and Origen. Arius was a presbyter of Alexandria, and the city's bishop Athanasius (328–373) became his chief opponent. About 391, by order of Theodosius, Bishop Theophilus destroyed the Serapeum, and in 415 a Christian mob murdered the philosopher Hypatia. After the Council of Chalcedon in 451 most of Alexandria's Christians rejected its creed, and the city remained one of the great cities of the eastern empire until the Arab conquest of 641–642."
+  ru:
+    - "Александрия лежит на средиземноморском побережье Египта, к западу от дельты Нила, на полосе земли между морем и озером Мареотида. Александр Македонский основал её зимой 332/331 г. до н. э. и сам наметил, где быть площади, храмам и городской стене. Насыпь длиной в семь стадий, Гептастадий, соединила город с островом Фарос и образовала две гавани, а гавань на озере, куда вели каналы от Нила, была ещё богаче. При Птолемеях Александрия стала столицей Египта и величайшим городом греческого мира, с маяком на Фаросе, построенным Состратом Книдским, Мусейоном и царской библиотекой."
+    - "В 30 г. до н. э., после смерти Клеопатры VII, Рим присоединил Египет. В городе жила большая иудейская община. По Посланию Аристея, семьдесят два старца перевели Закон на греческий язык на Фаросе при Птолемее II; это рассказ о происхождении Септуагинты, и подробности его легендарны. Филон Александрийский писал здесь в I веке н. э. и рассказал, как в 38 г. н. э. иудеев согнали в один квартал города, а их синагоги осквернили. Во время иудейского восстания 115–117 гг. при Траяне община была уничтожена."
+    - "В Деяниях иудеи из синагоги Александрийцев спорили со Стефаном в Иерусалиме. Аполлос, муж красноречивый и сведущий в Писаниях, был родом из Александрии. По пути в Рим Павел плыл на Александрийском корабле, шедшем в Италию, а после кораблекрушения у Мелита — на другом, зимовавшем на том острове. Евсевий передаёт предание, что Марк первым проповедовал в Египте и основал церкви в Александрии."
+    - "Здесь процветала христианская школа, связанная с именами Пантена, Климента и Оригена. Арий был пресвитером Александрии, а её епископ Афанасий (328–373) стал главным его противником. Около 391 г. по приказу Феодосия епископ Феофил разрушил Серапеум, а в 415 г. толпа христиан убила женщину-философа Ипатию. После Халкидонского собора 451 г. большинство христиан Александрии отвергло его вероопределение, а сам город оставался одним из великих городов восточной империи до арабского завоевания 641–642 гг."
+scripture:
+  - Acts.6.9
+  - Acts.18.24-Acts.18.25
+  - Acts.27.6
+  - Acts.28.1
+  - Acts.28.11
+sources:
+  - "Arrian, Anabasis 3.1.5-3.2.1 (the founding)"
+  - "Strabo, Geography 17.1.6-8 (Pharos, the Heptastadion, the lighthouse of Sostratus, the lake harbour, the Museum)"
+  - "Letter of Aristeas 301-307"
+  - "Philo, Against Flaccus 25-56"
+  - "Eusebius, Church History 2.16 (Mark); 4.2 (the revolt under Trajan); 5.10-11 and 6.3 (Pantaenus, Clement, Origen)"
+  - "Socrates Scholasticus, Church History 1.5 (Arius); 5.16 (the Serapeum); 7.15 (Hypatia)"
+  - "P. M. Fraser, Ptolemaic Alexandria (1972)"
+  - "C. Haas, Alexandria in Late Antiquity: Topography and Social Conflict (1997)"
+status: checked

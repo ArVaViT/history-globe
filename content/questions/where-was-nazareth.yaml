@@ -1,0 +1,26 @@
+id: where-was-nazareth
+question:
+  en: "Where was Nazareth?"
+  ru: "Где находился Назарет?"
+answer:
+  en:
+    - "Nazareth lies in the hills of Lower Galilee, in today's Israel, in a basin ringed by ridges about 24 km west-south-west of Tiberias on the Sea of Galilee and about 103 km north of Jerusalem in a straight line; the town has never moved, and the modern city stands over the village of the Gospels."
+    - "The village is not named in the Old Testament, in Josephus or in the early rabbis; the earliest mention outside the Gospels is Julius Africanus, in the early third century, who names Nazara among the villages of the relatives of Jesus, and the first non-Christian one is a fragment of a Hebrew synagogue inscription of about AD 300, found at Caesarea in 1962, listing the priestly courses and the Galilean villages where they settled after the Jewish revolts. Luke writes: “And in the sixth month the angel Gabriel was sent from God unto a city of Galilee, named Nazareth”, and Matthew explains that Joseph “came and dwelt in a city called Nazareth”. Nathanael's question, “Can there any good thing come out of Nazareth?”, shows how little the place was known even in Galilee."
+    - "Excavations under the Church of the Annunciation and nearby from the 1950s have found a small Jewish village of the Roman period: rock-cut houses, storage pits, cisterns, wine and olive presses and tombs. Luke says the crowd led Jesus “unto the brow of the hill whereon their city was built”: the village stood on the slopes above the basin, and several brows are shown to visitors. Sepphoris, the capital of Galilee under Herod Antipas, lay a short walk to the north-west, and Capernaum, where Jesus later settled, is about 33 km to the north-east."
+  ru:
+    - "Назарет лежит среди холмов Нижней Галилеи, в нынешнем Израиле, в котловине, окружённой грядами, примерно в 24 км к западо-юго-западу от Тивериады на Галилейском море и в 103 км к северу от Иерусалима по прямой; город никуда не переносился, и нынешний Назарет стоит над селением Евангелий."
+    - "Это селение не названо ни в Ветхом Завете, ни у Иосифа Флавия, ни у ранних раввинов; самое раннее упоминание вне Евангелий — у Юлия Африкана в начале III века, который называет Назару среди селений, где жили родичи Иисуса, а первое нехристианское — обломок еврейской синагогальной надписи около 300 года, найденный в Кесарии в 1962 году, со списком священнических черёд и галилейских селений, где они осели после иудейских восстаний. Лука пишет: «В шестой же месяц послан был Ангел Гавриил от Бога в город Галилейский, называемый Назарет», а Матфей поясняет, что Иосиф, «придя, поселился в городе, называемом Назарет». Вопрос Нафанаила «из Назарета может ли быть что доброе?» показывает, как мало это место знали даже в Галилее."
+    - "Раскопки под церковью Благовещения и рядом с ней с 1950-х годов открыли небольшое иудейское селение римского времени: вырубленные в скале жилища, ямы-хранилища, цистерны, давильни для вина и масла, гробницы. Лука говорит, что толпа повела Иисуса «на вершину горы, на которой город их был построен»: селение стояло на склонах над котловиной, и паломникам показывают не один такой обрыв. Сепфорис, столица Галилеи при Ироде Антипе, лежал недалеко к северо-западу, а Капернаум, где Иисус поселился позже, — примерно в 33 км к северо-востоку."
+map:
+  place: af5884f
+  year: "AD 28"
+  ref: Luke.4.16
+scripture: [Luke.1.26, Matt.2.23, John.1.46, Luke.4.16, Luke.4.29, Matt.4.13]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "M. Avi-Yonah, 'A List of Priestly Courses from Caesarea', Israel Exploration Journal 12 (1962)"
+  - "Eusebius, Ecclesiastical History 1.7.14 (Julius Africanus on Nazara and Cochaba)"
+  - "B. Bagatti, Excavations in Nazareth, vol. 1: From the Beginning till the XII Century (1969)"
+  - "Y. Alexandre, Mary's Well, Nazareth: The Late Hellenistic to the Ottoman Periods (IAA Reports 49, 2012)"
+  - "K. R. Dark, Roman-Period and Byzantine Nazareth and its Hinterland (2020)"
+status: checked

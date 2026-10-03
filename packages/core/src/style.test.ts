@@ -24,7 +24,12 @@ describe("style", () => {
   });
 
   it("toggles layers by group", () => {
-    expect(layersInGroup(style, "borders")).toEqual(["polity-fill", "polity-line", "polity-label"]);
+    expect(layersInGroup(style, "borders")).toEqual([
+      "polity-fill",
+      "polity-line",
+      "polity-label",
+      "polity-label-pin",
+    ]);
     expect(layersInGroup(style, "places").length).toBeGreaterThan(2);
   });
 });
@@ -61,7 +66,7 @@ describe("river labels", () => {
   const layer = style.layers.find((l) => l.id === "river-label");
   function labelled(locale: string, props: Record<string, string>): boolean {
     if (!layer || !("filter" in layer)) throw new Error("no river-label filter");
-    const f = featureFilter(layer.filter, "filter", { locale });
+    const f = featureFilter(layer.filter, "filter", { locale, year: 30 });
     return f.filter({ zoom: 6 }, { type: 2, properties: props, geometry: [] } as never);
   }
 
@@ -83,7 +88,7 @@ describe("site labels", () => {
   const layer = style.layers.find((l) => l.id === "site-label");
   function labelled(props: Record<string, unknown>): boolean {
     if (!layer || !("filter" in layer)) throw new Error("no site-label filter");
-    const f = featureFilter(layer.filter, "filter", { selected: "p" });
+    const f = featureFilter(layer.filter, "filter", { selected: "p", year: 30 });
     return f.filter({ zoom: 8 }, {
       type: 1,
       properties: { place: "p", label: "X", ...props },
@@ -105,11 +110,14 @@ describe("every place kind is drawn", () => {
   function drawnBy(props: Record<string, unknown>): string[] {
     return placeLayers
       .filter((l) =>
-        featureFilter("filter" in l ? l.filter : undefined, "filter", {}).filter({ zoom: 10 }, {
-          type: 1,
-          properties: { rank: 0, ...props },
-          geometry: [],
-        } as never),
+        featureFilter("filter" in l ? l.filter : undefined, "filter", { year: 30 }).filter(
+          { zoom: 10 },
+          {
+            type: 1,
+            properties: { rank: 0, ...props },
+            geometry: [],
+          } as never,
+        ),
       )
       .map((l) => l.id);
   }
@@ -167,6 +175,7 @@ describe("place labels on the Russian map", () => {
       .filter((l) => l.id.startsWith("place-label") && "filter" in l)
       .some((l) =>
         featureFilter("filter" in l ? l.filter : undefined, "filter", {
+          year: 30,
           locale,
           selected: "",
         }).filter({ zoom: 10 }, {
@@ -200,6 +209,7 @@ describe("place labels on the Russian map", () => {
         .filter((l) => l.id.startsWith("place-label") && "filter" in l)
         .filter((l) =>
           featureFilter("filter" in l ? l.filter : undefined, "filter", {
+            year: 30,
             locale: "en",
             selected,
           }).filter({ zoom: 10 }, { type: 1, properties: mountain, geometry: [] } as never),
@@ -217,6 +227,7 @@ describe("place labels on the Russian map", () => {
         .filter((l) => l.id.startsWith("place-label") && "filter" in l)
         .filter((l) =>
           featureFilter("filter" in l ? l.filter : undefined, "filter", {
+            year: 30,
             locale: "en",
             selected: "a0",
           }).filter({ zoom: 10 }, {
@@ -277,11 +288,14 @@ describe("a small place (rank 3)", () => {
   function drawn(layer: string, selected: string, zoom: number, kind: string): boolean {
     const l = style.layers.find((x) => x.id === layer);
     if (!l || !("filter" in l)) return false;
-    return featureFilter(l.filter, "filter", { locale: "en", selected }).filter({ zoom }, {
-      type: 1,
-      properties: { id: "a0", rank: 3, kind, name: "Dothan" },
-      geometry: [],
-    } as never);
+    return featureFilter(l.filter, "filter", { locale: "en", selected, year: 30 }).filter(
+      { zoom },
+      {
+        type: 1,
+        properties: { id: "a0", rank: 3, kind, name: "Dothan" },
+        geometry: [],
+      } as never,
+    );
   }
 
   it("is drawn from zoom 5 when selected, as a tour flies to zoom 7.6", () => {
@@ -290,9 +304,9 @@ describe("a small place (rank 3)", () => {
     expect(drawn("place-label-selected", "a0", 7, "well")).toBe(true);
   });
 
-  it("waits for zoom 8 otherwise, and stays hidden at zoom 4 even when selected", () => {
-    expect(drawn("place-label", "", 7, "settlement")).toBe(false);
-    expect(drawn("place-label", "", 8, "settlement")).toBe(true);
+  it("is named from zoom 10 otherwise, and stays hidden at zoom 4 even when selected", () => {
+    expect(drawn("place-label", "", 9, "settlement")).toBe(false);
+    expect(drawn("place-label", "", 10, "settlement")).toBe(true);
     expect(drawn("place-label", "a0", 4, "settlement")).toBe(false);
   });
 });
@@ -301,14 +315,16 @@ describe("during a tour", () => {
   function labelled(tourPlaces: string[], id: string, selected = ""): boolean {
     const l = style.layers.find((x) => x.id === "place-label");
     if (!l || !("filter" in l)) return false;
-    return featureFilter(l.filter, "filter", { locale: "en", selected, tourPlaces }).filter(
-      { zoom: 8 },
-      {
-        type: 1,
-        properties: { id, rank: 2, kind: "settlement", name: "Town" },
-        geometry: [],
-      } as never,
-    );
+    return featureFilter(l.filter, "filter", {
+      locale: "en",
+      selected,
+      tourPlaces,
+      year: 30,
+    }).filter({ zoom: 8 }, {
+      type: 1,
+      properties: { id, rank: 2, kind: "settlement", name: "Town" },
+      geometry: [],
+    } as never);
   }
 
   it("labels only the tour's stops", () => {
@@ -318,5 +334,34 @@ describe("during a tour", () => {
 
   it("labels everything when no tour runs", () => {
     expect(labelled([], "a9")).toBe(true);
+  });
+});
+
+describe("a town not standing in the year", () => {
+  const ids = style.layers.map((l) => l.id);
+  it("is named in a layer under the ancient world's sites, the standing towns above them", () => {
+    expect(ids.indexOf("place-label-past")).toBeLessThan(ids.indexOf("ancient-label"));
+    expect(ids.indexOf("ancient-label")).toBeLessThan(ids.indexOf("place-label"));
+  });
+  it("goes to the faded layer before its founding, to the main one after", () => {
+    const named = (layer: string, year: number, zoom = 7) => {
+      const l = style.layers.find((x) => x.id === layer);
+      if (!l || !("filter" in l)) return false;
+      return featureFilter(l.filter, "filter", { locale: "en", selected: "", year }).filter(
+        { zoom },
+        {
+          type: 1,
+          properties: { id: "a1", rank: 0, kind: "settlement", name: "Antioch", life_from: -299 },
+          geometry: [],
+        } as never,
+      );
+    };
+    expect(named("place-label-past", -1300)).toBe(true);
+    expect(named("place-label", -1300)).toBe(false);
+    expect(named("place-label", 50)).toBe(true);
+    expect(named("place-label-past", 50)).toBe(false);
+    // Far out, a name out of its time is left off: it crowded the overview, pale and unhaloed.
+    expect(named("place-label-past", -1300, 5)).toBe(false);
+    expect(named("place-label", 50, 5)).toBe(true);
   });
 });

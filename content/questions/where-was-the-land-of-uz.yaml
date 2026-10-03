@@ -1,0 +1,24 @@
+id: where-was-the-land-of-uz
+question:
+  en: "Where was the land of Uz?"
+  ru: "Где находилась земля Уц?"
+answer:
+  en:
+    - "The land of Uz, Job's home, is not located by the Bible, and two regions compete: Edom and the desert south-east of the Dead Sea, where the map point stands, about 120 km from Jerusalem in a straight line, and the Hauran south of Damascus, on the edge of the Syrian desert, where the tomb of Job was shown in antiquity."
+    - "The book opens: “There was a man in the land of Uz, whose name was Job.” The case for Edom is made by Lamentations, which addresses the “daughter of Edom, that dwellest in the land of Uz”, by the Uz who is a grandson of Seir the Horite in Genesis 36, and by Job's friend Eliphaz, who comes from Teman, a district of Edom. The case for the north is made by the Uz who is a son of Aram in Genesis 10 and a nephew of Abraham in the family of Nahor in Genesis 22, both pointing to the Aramaean country; Josephus says that Uz founded Trachonitis and Damascus."
+    - "Jeremiah lists “all the kings of the land of Uz” between Egypt and the Philistines, which helps little. The raiders of Job's story, Sabeans and Chaldeans, point to Arabia and Mesopotamia and could reach either region. In the late fourth century the pilgrim Egeria visited the tomb of Job at Carneas in the Hauran, usually placed at Sheikh Saad, where a shrine of Job still stands. The map shows Edom, following Lamentations, and lists the other reading on the place card; the book of Job itself gives no date."
+  ru:
+    - "Землю Уц, родину Иова, Библия не привязывает к месту, и за неё спорят две области: Едом и пустыня к юго-востоку от Мёртвого моря, где стоит точка на карте, примерно в 120 км от Иерусалима по прямой, и Хауран к югу от Дамаска, на краю Сирийской пустыни, где в древности показывали гробницу Иова."
+    - "Книга начинается словами: «Был человек в земле Уц, имя его Иов». За Едом говорит Плач Иеремии: «Радуйся и веселись, дочь Едома, обитательница земли Уц!» — а также Уц — внук Сеира Хорреянина в Бытии 36 и друг Иова Елифаз, пришедший из Фемана, области Едома. За север — Уц, сын Арама в Бытии 10, и Уц, племянник Авраама из рода Нахора в Бытии 22; оба указывают на арамейские земли, и Иосиф Флавий пишет, что Уц основал Трахонитиду и Дамаск."
+    - "Иеремия называет «всех царей земли Уца» между Египтом и филистимлянами, и это мало помогает. Грабители из рассказа об Иове, савеяне и халдеи, указывают на Аравию и Месопотамию и могли дойти до любой из двух областей. В конце IV века паломница Эгерия посетила гробницу Иова в Карнеасе в Хауране; его обычно помещают в Шейх-Саад, где святилище Иова стоит до сих пор. Карта показывает Едом, следуя Плачу Иеремии, а другое чтение приводит в карточке; сама книга Иова даты не даёт."
+map:
+  place: a324c4d
+  ref: Job.1.1
+scripture: [Job.1.1, Job.2.11, Lam.4.21, Jer.25.20, Gen.10.23, Gen.22.21, Gen.36.28]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Josephus, Antiquities 1.145 (Uz, founder of Trachonitis and Damascus)"
+  - "Egeria, Itinerarium 13-16 (the tomb of Job at Carneas)"
+  - "M. H. Pope, Job (Anchor Bible 15, 1965), introduction, on the land of Uz"
+  - "D. J. A. Clines, Job 1-20 (Word Biblical Commentary 17, 1989), on Job 1:1"
+status: checked

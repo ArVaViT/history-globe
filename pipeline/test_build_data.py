@@ -3,9 +3,14 @@
 import unittest
 
 from build_data import (
+    identification_confidence,
     COAST_BBOX,
     banned_lonlats,
     build_coast,
+    clip_ring,
+    simplify_shore,
+    OUTSIDE_REGION,
+    BBOX,
     coord_banned,
     ensure_low_tier,
     label_anchors,
@@ -88,6 +93,29 @@ class Coast(unittest.TestCase):
 
 
 
+class Clip(unittest.TestCase):
+    def test_cuts_a_ring_to_a_rectangle_and_drops_what_is_outside(self) -> None:
+        square = [[0.0, 0.0], [10.0, 0.0], [10.0, 10.0], [0.0, 10.0], [0.0, 0.0]]
+        got = clip_ring(square, (5.0, -1.0, 20.0, 20.0))
+        self.assertEqual(sorted(map(tuple, got[:-1])), [(5.0, 0.0), (5.0, 10.0), (10.0, 0.0), (10.0, 10.0)])
+        self.assertEqual(got[0], got[-1])
+        self.assertIsNone(clip_ring(square, (20.0, 20.0, 30.0, 30.0)))
+
+    def test_keeps_the_region_and_the_bands_around_it_apart(self) -> None:
+        # Every band touches the region only along its edge.
+        for x0, y0, x1, y1 in OUTSIDE_REGION:
+            self.assertFalse(x0 < BBOX[2] and x1 > BBOX[0] and y0 < BBOX[3] and y1 > BBOX[1])
+
+
+class Shore(unittest.TestCase):
+    def test_keeps_a_closed_ring_a_ring(self) -> None:
+        island = [[0.0, 0.0], [1.0, 0.0], [1.0, 1.0], [0.0, 1.0], [0.0, 0.0]]
+        got = simplify_shore(island, 0.01)
+        self.assertEqual(got[0], got[-1])
+        self.assertGreaterEqual(len(got), 4)
+        self.assertEqual(simplify_shore([[0.0, 0.0], [1.0, 0.0001], [2.0, 0.0]], 0.01), [[0.0, 0.0], [2.0, 0.0]])
+
+
 class LabelTiers(unittest.TestCase):
     def test_centroid_coarse_and_fine_grid(self) -> None:
         # A 24 x 24 degree square inside the region: its centroid, and a 6-degree grid of
@@ -122,6 +150,15 @@ class LabelTiers(unittest.TestCase):
         self.assertEqual(tier, 1)
         self.assertTrue(30.0 <= x <= 31.0 and 20.0 <= y <= 21.0)
 
+
+
+class IdentificationConfidenceTest(unittest.TestCase):
+    def test_clamped_score(self) -> None:
+        self.assertEqual(identification_confidence({"score": {"time_total": 1104}}), 1000)
+        self.assertEqual(identification_confidence({"score": {"time_total": 426.4}}), 426)
+        self.assertEqual(identification_confidence({"score": {"time_total": -50}}), 0)
+        self.assertIsNone(identification_confidence({}))
+        self.assertIsNone(identification_confidence({"score": {}}))
 
 if __name__ == "__main__":
     unittest.main()

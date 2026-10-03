@@ -1,0 +1,35 @@
+id: where-did-israel-cross-the-red-sea
+question:
+  en: "Where did Israel cross the Red Sea?"
+  ru: "Где Израиль перешёл Чермное море?"
+answer:
+  en:
+    - "The place of the crossing is disputed, and the sea itself is in question: the Hebrew name is yam suph, usually taken to mean “sea of reeds”, and the Old Testament uses it both for the Gulf of Suez and for the Gulf of Aqaba. Four answers are given: the northern end of the Gulf of Suez, where the map point stands; the Bitter Lakes or Lake Timsah on the isthmus, where the Suez Canal now runs; the lagoons of the northern isthmus, Lake Ballah or Lake Menzaleh; and the Gulf of Aqaba."
+    - "Exodus says that Israel left Rameses for Succoth and Etham “in the edge of the wilderness”, then turned back to camp “before Pi-hahiroth, between Migdol and the sea, over against Baal-zephon”; there “the LORD caused the sea to go back by a strong east wind all that night”. Of these camps only Succoth is placed with some confidence, at Tell el-Maskhuta in the Wadi Tumilat, about 37 km from Rameses in a straight line. The map puts Baal-zephon and Migdol at Tell Defenneh and Tell el-Herr in the north-eastern Delta, following one reading of the Egyptian frontier forts, but the names could belong to the lakes region further south."
+    - "The Gulf of Suez is the traditional site: Josephus leads Israel there by way of Letopolis near today's Cairo, and the later pilgrims followed; the lakes of the isthmus suit the wilderness of Shur that follows and the three days to Marah; the northern lagoons rest on the Baal-zephon cult known at the Mediterranean coast, though Exodus says God did not lead the people by the way of the Philistines. The Gulf of Aqaba, reached by a march across the whole Sinai Peninsula, is argued from 1 Kings 9:26, which places Ezion-geber on the yam suph, but few scholars accept it. The map shows the traditional sea and lists the alternatives on the place card."
+  ru:
+    - "Место перехода спорно, и само море под вопросом: по-еврейски оно зовётся «ям суф», что обычно понимают как «море тростника», и Ветхий Завет называет так и Суэцкий залив, и залив Акаба. Дают четыре ответа: северный конец Суэцкого залива, где стоит точка на карте; Горькие озёра или озеро Тимсах на перешейке, где теперь проходит Суэцкий канал; лагуны северного перешейка — озеро Балла или Мензала; и залив Акаба."
+    - "Исход говорит, что Израиль вышел из Раамсеса в Сокхоф и Ефам, «в конце пустыни», а затем повернул и стал станом «пред Пи-Гахирофом, между Мигдолом и между морем, пред Ваал-Цефоном»; там «гнал Господь море сильным восточным ветром всю ночь». Из этих стоянок с некоторой уверенностью привязан только Сокхоф — Телль-эль-Масхута в Вади-Тумилат, примерно в 37 км от Раамсеса по прямой. Карта ставит Ваал-Цефон и Мигдол у Телль-Дефенне и Телль-эль-Херра на северо-востоке дельты, следуя одному из чтений египетских пограничных крепостей, но эти названия могли относиться и к области озёр южнее."
+    - "Суэцкий залив — традиционное место: Иосиф Флавий ведёт туда Израиль через Летополь у нынешнего Каира, и позднейшие паломники шли за ним; озёра перешейка согласуются с пустыней Сур, которая идёт дальше, и с тремя днями пути до Мерры; северные лагуны опираются на культ Ваал-Цефона, известный на средиземноморском берегу, хотя Исход говорит, что Бог не повёл народ дорогой земли Филистимской. Залив Акаба, до которого нужно пройти весь Синайский полуостров, выводят из 3 Царств 9:26, где Ецион-Гавер стоит на «ям суф», но немногие учёные это принимают. Карта показывает традиционное море, а остальные варианты перечисляет в карточке."
+map:
+  place: a3d18b2
+  year: "c. 1446 BC"
+  ref: Exod.14.21
+scripture:
+  [
+    Exod.13.17-Exod.13.18,
+    Exod.13.20,
+    Exod.14.2,
+    Exod.14.21-Exod.14.22,
+    Exod.15.22,
+    Num.33.5-Num.33.8,
+    1Kgs.9.26,
+  ]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Josephus, Antiquities 2.315-349 (the route to the sea and the crossing)"
+  - "J. K. Hoffmeier, Israel in Egypt (1996), and Ancient Israel in Sinai: The Evidence for the Authenticity of the Wilderness Tradition (2005)"
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "B. F. Batto, 'The Reed Sea: Requiescat in Pace', Journal of Biblical Literature 102 (1983)"
+  - "O. Eissfeldt, Baal Zaphon, Zeus Kasios und der Durchzug der Israeliten durchs Meer (1932)"
+status: checked

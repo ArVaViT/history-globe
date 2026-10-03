@@ -1,14 +1,38 @@
 # Dated events of biblical history, marked on the time slider. Only events with a
 # year that mainstream scholarship states, each with its sources; "c." kept as
-# approximate. Disputed early dates (the Exodus, the conquest) are left out, and no
+# approximate. Disputed early dates (the Exodus, the conquest) are left out (the kings
+# from Saul are counted back from Solomon, below), and no
 # title ties a verse to a disputed date (Luke 2:2 is not named with AD 6).
 events:
+  # The united monarchy before Solomon, counted back from Solomon's accession c. 970 BC
+  # (Thiele) by David's forty years (2 Sam 5:4-5): conventional points, marked "c.".
+  # Saul's own years are uncertain (the number in 1 Sam 13:1 is defective in the Hebrew).
+  # Saul's death on Gilboa and David's taking of Zion are in battles.yaml, not again here.
+  - id: saul-king
+    year: "c. 1050 BC"
+    title:
+      en: "Saul is made king at Gilgal"
+      ru: "Саула ставят царём в Галгале"
+    place: ab94aea
+    ref: 1Sam.11.14-1Sam.11.15
+    sources:
+      - "1 Sam 11:14-15; the length of his reign is lost (1 Sam 13:1), so the year is a conventional estimate"
+  - id: david-king-hebron
+    year: "c. 1010 BC"
+    title:
+      en: "David is anointed king over Judah at Hebron"
+      ru: "Давида помазывают на царство над Иудой в Хевроне"
+    place: a85151a
+    ref: 2Sam.2.1-2Sam.2.4
+    sources:
+      - "2 Sam 2:1-4; 2 Sam 5:4-5; Thiele's chronology"
   - id: temple-built
     year: "c. 966 BC"
     title:
       en: "Solomon begins building the Temple"
       ru: "Соломон начинает строить Храм"
     place: a15257a
+    ref: 1Kgs.6.1
     sources:
       - "1 Kgs 6:1 (the fourth year of Solomon); Thiele's chronology"
   - id: kingdom-divided
@@ -17,14 +41,16 @@ events:
       en: "The kingdom divides: Israel and Judah"
       ru: "Разделение царства на Израиль и Иудею"
     place: adf74d4
+    ref: 1Kgs.12.16-1Kgs.12.20
     sources:
       - "1 Kgs 12:1-20; Thiele's chronology"
   - id: samaria-falls
     year: "722 BC"
     title:
       en: "Samaria falls to Assyria"
-      ru: "Падение Самарии, конец Израильского царства"
+      ru: "Ассирия берёт Самарию"
     place: a041bb3
+    ref: 2Kgs.17.5-2Kgs.17.6
     sources:
       - "2 Kgs 17:5-6"
       - "Babylonian Chronicle, ABC 1 i 28 (Shalmaneser V)"
@@ -34,9 +60,10 @@ events:
       en: "Sennacherib besieges Lachish and Jerusalem"
       ru: "Сеннахирим осаждает Лахис и Иерусалим"
     place: a3cc590
+    ref: 2Kgs.18.13-2Kgs.18.17
     sources:
-      - "2 Kgs 18:13-19:37"
-      - "Sennacherib's Annals (Taylor Prism)"
+      - "2 Kgs 18:13-19:37; 2 Chr 32:9 (he himself laid siege against Lachish)"
+      - "Sennacherib's Annals, Chicago and Taylor prisms (RINAP 3, Sennacherib 22 iii 18-49: Hezekiah shut up in Jerusalem 'like a bird in a cage', blockades set up against him)"
   - id: nineveh-falls
     year: "612 BC"
     title:
@@ -49,25 +76,28 @@ events:
     year: "c. 586 BC"
     title:
       en: "Jerusalem and the Temple destroyed; exile to Babylon"
-      ru: "Разрушение Иерусалима и Храма; вавилонский плен"
+      ru: "Разрушение Иерусалима и Храма; переселение в Вавилон"
     place: a15257a
+    ref: 2Kgs.25.8-2Kgs.25.11
     sources:
       - "2 Kgs 25:1-21; Jer 52"
   - id: cyrus-edict
     year: "538 BC"
     title:
       en: "Cyrus lets the exiles return"
-      ru: "Указ Кира: изгнанники возвращаются"
+      ru: "Кир разрешает изгнанникам вернуться"
     place: a217d18
+    ref: Ezra.1.1-Ezra.1.4
     sources:
       - "Ezra 1:1-4"
-      - "Cyrus Cylinder (his general policy of return)"
+      - "Cyrus Cylinder, ll. 30-32 (his general policy of return: gods and peoples restored to their places)"
   - id: second-temple
     year: "c. 516 BC"
     title:
       en: "The Second Temple completed and dedicated"
       ru: "Второй Храм достроен и освящён"
     place: a15257a
+    ref: Ezra.6.15-Ezra.6.16
     sources:
       - "Ezra 6:15-18 (3 Adar of the sixth year of Darius: 516 or 515 BC)"
   - id: nehemiah-walls
@@ -76,6 +106,7 @@ events:
       en: "Nehemiah rebuilds the walls of Jerusalem"
       ru: "Неемия восстанавливает стены Иерусалима"
     place: a15257a
+    ref: Neh.6.15
     sources:
       - "Neh 2:1-6:15 (the twentieth year of Artaxerxes I)"
   - id: alexander
@@ -92,6 +123,7 @@ events:
       en: "Judas Maccabeus rededicates the Temple"
       ru: "Иуда Маккавей вновь освящает Храм"
     place: a15257a
+    ref: 1Macc.4.36-1Macc.4.59
     sources:
       - "1 Macc 4:36-59"
       - "Josephus, Antiquities 12.316-325"
@@ -117,6 +149,7 @@ events:
       en: "Birth of Jesus"
       ru: "Рождество Христово"
     place: a112427
+    ref: Luke.2.1-Luke.2.7
     sources:
       - "Matt 2:1; Luke 1:5 (in the days of Herod, who died in 4 BC)"
   - id: crucifixion
@@ -125,6 +158,7 @@ events:
       en: "Crucifixion and Resurrection"
       ru: "Распятие и Воскресение"
     place: a631d35
+    ref: Luke.23.33
     sources:
       - "Matt 27-28"
       - "Luke 3:1 (John's ministry begins in the 15th year of Tiberius, AD 28/29); Pilate's prefecture AD 26-36"
@@ -134,6 +168,7 @@ events:
       en: "The Council of Jerusalem"
       ru: "Иерусалимский собор"
     place: a15257a
+    ref: Acts.15.6-Acts.15.11
     sources:
       - "Acts 15"
   - id: temple-destroyed
@@ -143,12 +178,13 @@ events:
       ru: "Тит разрушает Иерусалим и Храм"
     place: a15257a
     sources:
-      - "Josephus, Jewish War 6.249-266"
+      - "Josephus, Jewish War 6.249-266 (the Temple burned); 7.1-3 (Caesar orders the whole city and Temple razed)"
   - id: shishak
     year: "c. 925 BC"
     title:
       en: "Shishak of Egypt campaigns in Judah and Israel"
       ru: "Поход Сусакима, царя Египетского, на Иудею и Израиль"
+    ref: 1Kgs.14.25-1Kgs.14.26
     sources:
       - "1 Kgs 14:25-26 (the fifth year of Rehoboam); Thiele's chronology"
       - "Shoshenq I's list of towns at Karnak (the Bubastite Portal)"
@@ -158,14 +194,14 @@ events:
       en: "Battle of Qarqar: Ahab among the kings against Assyria"
       ru: "Битва при Каркаре: Ахав среди царей против Ассирии"
     sources:
-      - "Kurkh Monolith of Shalmaneser III (his sixth year)"
+      - "Kurkh Monolith of Shalmaneser III (RIMA 3 A.0.102.2 ii 78-102: the campaign in the eponymy of Dayyan-Ashur, 853 BC; 'Ahab the Israelite' among the twelve kings at Qarqar, ii 91-92)"
   - id: jehu-tribute
     year: "841 BC"
     title:
       en: "Jehu pays tribute to Shalmaneser III"
       ru: "Ииуй платит дань Салманассару III"
     sources:
-      - "Black Obelisk of Shalmaneser III (the Jehu panel)"
+      - "Black Obelisk of Shalmaneser III (the Jehu panel, RIMA 3 A.0.102.88)"
       - "Annals of Shalmaneser III for his eighteenth year (RIMA 3 A.0.102.8, .10)"
   - id: josiah-dies
     year: "609 BC"
@@ -173,15 +209,17 @@ events:
       en: "Josiah is mortally wounded at Megiddo by Pharaoh Necho"
       ru: "Иосия смертельно ранен при Мегиддоне фараоном Нехао"
     place: a8554e3
+    ref: 2Kgs.23.29-2Kgs.23.30
     sources:
       - "2 Kgs 23:29-30; 2 Chr 35:20-24"
-      - "Babylonian Chronicle, ABC 3 (the Egyptian army's march, 609 BC)"
+      - "Babylonian Chronicle, ABC 3, the seventeenth year of Nabopolassar (609 BC): in Duzu Ashur-uballit with a large army from Egypt crosses the Euphrates against Harran"
   - id: carchemish
     year: "605 BC"
     title:
       en: "Nebuchadnezzar defeats Egypt at Carchemish"
       ru: "Навуходоносор разбивает египтян при Кархемисе"
     place: af6c730
+    ref: Jer.46.2
     sources:
       - "Jer 46:2"
       - "Babylonian Chronicle, ABC 5"
@@ -191,15 +229,17 @@ events:
       en: "Jerusalem surrenders; Jehoiachin is taken to Babylon"
       ru: "Иерусалим сдаётся; Иехония уведён в Вавилон"
     place: a15257a
+    ref: 2Kgs.24.10-2Kgs.24.15
     sources:
       - "2 Kgs 24:10-17"
-      - "Babylonian Chronicle, ABC 5 (2 Adar, 597 BC)"
+      - "Babylonian Chronicle, ABC 5 rev. 11-13 (2 Adar, 597 BC: the city of Judah taken, its king captured)"
   - id: temple-desecrated
     year: "167 BC"
     title:
       en: "Antiochus IV defiles the Temple"
       ru: "Антиох IV оскверняет Храм"
     place: a15257a
+    ref: 1Macc.1.54
     sources:
       - "1 Macc 1:54 (15 Kislev, year 145 of the Seleucids)"
       - "Josephus, Antiquities 12.248-256"
@@ -209,6 +249,7 @@ events:
       en: "Herod the Great dies at Jericho"
       ru: "Смерть Ирода Великого в Иерихоне"
     place: aaf03fa
+    ref: Matt.2.19-Matt.2.20
     sources:
       - "Josephus, Antiquities 17.167-191 (after the lunar eclipse, before Passover); Jewish War 1.659-666"
   - id: judea-province
@@ -234,6 +275,7 @@ events:
       en: "Herod Agrippa I dies at Caesarea"
       ru: "Смерть Ирода Агриппы I в Кесарии"
     place: a58735e
+    ref: Acts.12.21-Acts.12.23
     sources:
       - "Acts 12:20-23"
       - "Josephus, Antiquities 19.343-350"
@@ -243,6 +285,7 @@ events:
       en: "Claudius expels the Jews from Rome"
       ru: "Клавдий изгоняет иудеев из Рима"
     place: afc8e7a
+    ref: Acts.18.2
     sources:
       - "Acts 18:2"
       - "Suetonius, Claudius 25.4; Orosius, History 7.6.15 (the ninth year of Claudius)"
@@ -252,6 +295,7 @@ events:
       en: "Gallio, proconsul of Achaia, at Corinth"
       ru: "Галлион, проконсул Ахаии, в Коринфе"
     place: a6f437a
+    ref: Acts.18.12-Acts.18.17
     sources:
       - "Acts 18:12-17"
       - "The Gallio inscription at Delphi (SIG³ 801), dating his year of office to 51-52"
@@ -269,6 +313,7 @@ events:
       en: "Tiglath-pileser III takes Damascus"
       ru: "Феглаффелласар (Тиглатпаласар III) берёт Дамаск"
     place: a69c1d4
+    ref: 2Kgs.16.9
     sources:
       - "2 Kgs 16:9"
       - "Eponym Chronicle for 733-732 BC (campaigns against Damascus)"
@@ -278,9 +323,10 @@ events:
       en: "Cyrus takes Babylon"
       ru: "Кир берёт Вавилон"
     place: a217d18
+    ref: Dan.5.30-Dan.5.31
     sources:
       - "Nabonidus Chronicle (ABC 7) iii 12-16"
-      - "Cyrus Cylinder"
+      - "Cyrus Cylinder, l. 17 (Marduk made him enter Babylon without fighting or battle)"
   - id: panium
     year: "200 BC"
     title:
@@ -290,3 +336,2848 @@ events:
     sources:
       - "Polybius 16.18-19"
       - "Josephus, Antiquities 12.132-133"
+  # The widened period (3500 BC - AD 500), added 2026-10-01: years in the middle chronology
+  # for Mesopotamia and the conventional dates of Egyptology, all marked "c.".
+  - id: egypt-unified
+    year: "c. 3100 BC"
+    title:
+      en: "Upper and Lower Egypt united under the First Dynasty"
+      ru: "Объединение Верхнего и Нижнего Египта при I династии"
+    place: a8ec269
+    sources:
+      - "The Narmer Palette (Egyptian Museum, Cairo, JE 32169)"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 4 (c. 3000 BC)"
+      - "M. Dee et al., 'An absolute chronology for early Egypt using radiocarbon dating and Bayesian statistical modelling', Proceedings of the Royal Society A 469 (2013)"
+  - id: sargon
+    year: "c. 2334 BC"
+    title:
+      # 2334 is the year of his accession; the unification came later in his 56-year reign.
+      en: "Sargon of Akkad, unifier of Mesopotamia, becomes king"
+      ru: "Саргон Аккадский, объединитель Месопотамии, восходит на престол"
+    sources:
+      - "Sumerian King List (ETCSL 2.1.1, ll. 266-296: 'In Agade, Sargon ... became king ... he ruled for 56 years')"
+      - "CDLI Wiki, 'Rulers of Mesopotamia' (middle chronology: Sargon 2334-2279 BC)"
+      - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016), ch. 4 (middle chronology)"
+  - id: ur-iii
+    year: "c. 2112 BC"
+    title:
+      en: "Ur-Nammu founds the Third Dynasty of Ur"
+      ru: "Ур-Намму основывает III династию Ура"
+    place: a6cf75c
+    sources:
+      - "Sumerian King List (ETCSL 2.1.1, ll. 341-354: in Urim Ur-Namma became king; he ruled for 18 years)"
+      - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016), ch. 4 (middle chronology)"
+  - id: ur-falls
+    year: "c. 2004 BC"
+    title:
+      en: "Elamites take Ur: the end of the Third Dynasty"
+      ru: "Эламиты берут Ур: конец III династии"
+    place: a6cf75c
+    sources:
+      - "Lament for Sumer and Ur"
+      - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016), chs. 4-5 (middle chronology)"
+  - id: aelia-capitolina
+    year: "AD 135"
+    title:
+      # Dio 69.12 has Aelia founded before the revolt (its cause), Eusebius after it;
+      # the title says only what both allow: the revolt ends, Jews are barred.
+      en: "Bar Kokhba's revolt is crushed; Jews are barred from Jerusalem, now Aelia Capitolina"
+      ru: "Восстание Бар-Кохбы подавлено; евреям запрещён вход в Иерусалим, ставший Элией Капитолиной"
+    place: a15257a
+    sources:
+      - "Cassius Dio, Roman History 69.12-14"
+      - "Eusebius, Church History 4.6"
+  - id: holy-sepulchre
+    year: "AD 335"
+    title:
+      en: "The Church of the Holy Sepulchre is dedicated"
+      ru: "Освящение храма Гроба Господня"
+    place: a631d35
+    sources:
+      - "Eusebius, Life of Constantine 3.25-40; 4.40-47"
+  - id: julian-temple
+    year: "AD 363"
+    title:
+      en: "Julian's attempt to rebuild the Temple in Jerusalem fails"
+      ru: "Неудачная попытка Юлиана восстановить Иерусалимский храм"
+    place: a15257a
+    sources:
+      - "Ammianus Marcellinus 23.1.2-3"
+  - id: vulgate
+    year: "c. AD 405"
+    title:
+      # The Old Testament from the Hebrew; of the New he revised only the Gospels.
+      # De viris illustribus 135 (AD 392-393) predates completion, so it is not cited.
+      en: "Jerome completes his Latin translation of the Old Testament from the Hebrew in Bethlehem"
+      ru: "Иероним завершает в Вифлееме перевод Ветхого Завета с еврейского на латынь"
+    place: a112427
+    sources:
+      - "Jerome, Preface to Joshua, Judges and Ruth (after Paula's death in 404; NPNF2 6)"
+      - "J. N. D. Kelly, Jerome: His Life, Writings, and Controversies (1975)"
+  - id: rome-sacked
+    year: "AD 410"
+    title:
+      en: "Alaric's Visigoths sack Rome"
+      ru: "Вестготы Алариха разоряют Рим"
+    place: afc8e7a
+    sources:
+      - "Orosius, History against the Pagans 7.39-40"
+      - "Augustine, The City of God 1.1-7"
+  # Added 2026-10-01 from an independent review: the Hellenistic, Roman and late Roman
+  # periods (c. 331 BC - AD 451).
+  - id: alexandria-founded
+    year: "c. 331 BC"
+    title:
+      # Founded in the winter of 332/331 BC, before Alexander left Egypt in spring 331.
+      en: "Alexander founds Alexandria in Egypt"
+      ru: "Александр основывает Александрию в Египте"
+    place: aee7248
+    sources:
+      - "Arrian, Anabasis 3.1"
+  - id: alexander-dies
+    year: "323 BC"
+    title:
+      en: "Alexander the Great dies at Babylon"
+      ru: "Смерть Александра Македонского в Вавилоне"
+    place: a217d18
+    sources:
+      - "Plutarch, Alexander 75-76 (the Royal Diaries: the 28th of Daesius, 76.9; Aristobulus: the 30th, 75.6)"
+      - "Arrian, Anabasis 7.25-28 (the archonship of Hegesias, 324/323 BC)"
+  - id: seleucid-era
+    year: "c. 312 BC"
+    title:
+      # Diodorus puts the return after Gaza in the archonship of Polemon (312/311);
+      # the Babylonian chronicle has Seleucus in Babylon by spring 311. The era counts
+      # from autumn 312 (Macedonian) or spring 311 (Babylonian); hence "c.".
+      en: "Seleucus I regains Babylon; the Seleucid era begins"
+      ru: "Селевк I возвращает себе Вавилон; начало эры Селевкидов"
+    place: a217d18
+    sources:
+      - "Diodorus Siculus 19.77 (archonship of Polemon), 19.90-92"
+      - "Babylonian Chronicle of the Diadochi (BCHP 3) rev. iv 3'-4'"
+  - id: antioch-founded
+    year: "c. 300 BC"
+    title:
+      en: "Seleucus I founds Antioch on the Orontes"
+      ru: "Селевк I основывает Антиохию на Оронте"
+    place: ae41ab4
+    sources:
+      - "Strabo, Geography 16.2.4"
+      - "G. Downey, A History of Antioch in Syria from Seleucus to the Arab Conquest (1961), ch. 4 (300 BC)"
+  - id: septuagint
+    year: "c. 250 BC"
+    title:
+      # Only the Torah; the date is the scholars' estimate (first half to middle of the
+      # 3rd century). The story of the 72 translators under Ptolemy II is the Letter of
+      # Aristeas' tradition, so the title does not repeat it.
+      en: "The Torah is translated into Greek at Alexandria (the Septuagint)"
+      ru: "Пятикнижие переведено на греческий в Александрии (Септуагинта)"
+    place: aee7248
+    sources:
+      - "Letter of Aristeas 9-11, 46-50 (the tradition)"
+      - "J. M. Dines, The Septuagint (2004), ch. 2"
+  - id: maccabean-revolt
+    year: "c. 167 BC"
+    title:
+      # Modein is not among the map's places. Mattathias dies in year 146 (166 BC).
+      en: "Mattathias raises the revolt at Modein"
+      ru: "Маттафия поднимает восстание в Модине"
+    ref: 1Macc.2.1-1Macc.2.28
+    sources:
+      - "1 Macc 2:1, 2:15-28, 2:70 (year 146 of the Seleucids)"
+      - "Josephus, Antiquities 12.265-271"
+  - id: hasmonean-independence
+    year: "142 BC"
+    title:
+      en: "Under Simon, Judea is freed from Seleucid tribute"
+      ru: "При Симоне Иудея освобождается от дани Селевкидам"
+    place: a15257a
+    ref: 1Macc.13.41-1Macc.13.42
+    sources:
+      - "1 Macc 13:41-42 (year 170 of the Seleucids)"
+      - "Josephus, Antiquities 13.213 (freed from tribute after 170 years of the Seleucid era)"
+  - id: herod-temple
+    year: "c. 20 BC"
+    title:
+      # Antiquities gives the 18th year of Herod (20/19 BC), War the 15th; the
+      # Antiquities date is the one generally followed.
+      en: "Herod begins rebuilding the Temple"
+      ru: "Ирод начинает перестройку Храма"
+    place: a15257a
+    sources:
+      - "Josephus, Antiquities 15.380 (the eighteenth year of his reign); cf. Jewish War 1.401"
+  - id: masada
+    year: "c. AD 73"
+    title:
+      # Josephus gives the day (15 Xanthicus) but not the year; AD 73 and AD 74 are both
+      # held, depending on when Flavius Silva became governor. Masada is not on the map.
+      en: "The Romans take Masada"
+      ru: "Римляне берут Масаду"
+    site: "687968"
+    sources:
+      - "Josephus, Jewish War 7.252-406 (15 Xanthicus, 7.401)"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. G. Vermes and F. Millar, vol. 1 (1973), § 20 (AD 73 or 74)"
+  - id: bar-kokhba-revolt
+    year: "AD 132"
+    title:
+      # Dio names no leader and gives no year; Eusebius names Barcocheba. AD 132 is
+      # the year generally given (Schürer); the revolt's end is the aelia-capitolina event.
+      en: "Bar Kokhba's revolt begins in Judea"
+      ru: "Начало восстания Бар-Кохбы в Иудее"
+    sources:
+      - "Cassius Dio, Roman History 69.12-13"
+      - "Eusebius, Church History 4.6.2 (Barcocheba)"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. G. Vermes and F. Millar, vol. 1 (1973), § 21"
+  - id: origen-caesarea
+    year: "c. AD 232"
+    title:
+      en: "Origen leaves Alexandria for Caesarea"
+      ru: "Ориген переселяется из Александрии в Кесарию"
+    place: a58735e
+    sources:
+      - "Eusebius, Church History 6.26 (the tenth year of Alexander Severus, 231/232)"
+  - id: decius-persecution
+    year: "AD 250"
+    title:
+      en: "Decius orders sacrifice across the empire: the first general persecution"
+      ru: "Деций требует жертвоприношений по всей империи: первое всеобщее гонение"
+    sources:
+      - "Eusebius, Church History 6.39-41"
+      - "J. B. Rives, 'The Decree of Decius and the Religion of Empire', Journal of Roman Studies 89 (1999), 135-154"
+  - id: diocletian-persecution
+    year: "AD 303"
+    title:
+      # Begun at Nicomedia, which is not on the map.
+      en: "Diocletian's edict against the churches: the Great Persecution begins"
+      ru: "Эдикт Диоклетиана против церквей: начало Великого гонения"
+    sources:
+      - "Lactantius, On the Deaths of the Persecutors 12-13 (the Terminalia, in the eighth consulship of Diocletian)"
+      - "Eusebius, Church History 8.2.4 (the nineteenth year of Diocletian, the month Dystrus)"
+  - id: milvian-bridge
+    year: "AD 312"
+    title:
+      en: "Constantine defeats Maxentius at the Milvian Bridge"
+      ru: "Константин побеждает Максенция у Мульвиева моста"
+    place: afc8e7a
+    sources:
+      - "Lactantius, On the Deaths of the Persecutors 44"
+      - "Eusebius, Church History 9.9"
+  - id: edict-of-milan
+    year: "AD 313"
+    title:
+      # Agreed at Milan, published by Licinius at Nicomedia on 13 June 313; no place fits.
+      en: "Constantine and Licinius grant Christians freedom of worship (the Edict of Milan)"
+      ru: "Константин и Лициний даруют христианам свободу вероисповедания (Миланский эдикт)"
+    sources:
+      - "Lactantius, On the Deaths of the Persecutors 48"
+      - "Eusebius, Church History 10.5"
+  - id: nicaea
+    year: "AD 325"
+    title:
+      en: "The First Council of Nicaea"
+      ru: "Первый Никейский собор"
+    site: "511268"
+    sources:
+      - "Eusebius, Life of Constantine 3.6-14"
+      - "Socrates, Church History 1.8; 1.13 (the consulate of Paulinus and Julian, 20 May)"
+  - id: constantinople-founded
+    year: "AD 330"
+    title:
+      # Socrates 1.16 tells of the refounding but gives no year; Jerome's Chronicle puts
+      # the dedication under 330; the day, 11 May, is from the Chronicon Paschale (not
+      # opened) and Dagron.
+      en: "Constantine dedicates Constantinople, the New Rome"
+      ru: "Константин освящает Константинополь — Новый Рим"
+    site: "Q16869"
+    sources:
+      - "Socrates, Church History 1.16"
+      - "Jerome, Chronicle, under AD 330 ('Constantinople is dedicated by denuding nearly every other city')"
+      - "G. Dagron, Naissance d'une capitale: Constantinople et ses institutions de 330 à 451 (1974)"
+  - id: council-constantinople
+    year: "AD 381"
+    title:
+      en: "The First Council of Constantinople"
+      ru: "Первый Константинопольский собор"
+    site: "Q16869"
+    sources:
+      - "Socrates, Church History 5.8 (May, the consulate of Eucharius and Evagrius)"
+      - "Marcellinus Comes, Chronicle, a. 381.1"
+  - id: council-ephesus
+    year: "AD 431"
+    title:
+      en: "The Council of Ephesus deposes Nestorius"
+      ru: "Ефесский собор низлагает Нестория"
+    place: a5feb15
+    sources:
+      - "Socrates, Church History 7.34 (28 June, the consulate of Bassus and Antiochus)"
+  - id: council-chalcedon
+    year: "AD 451"
+    title:
+      en: "The Council of Chalcedon"
+      ru: "Халкидонский собор"
+    site: "520988"
+    sources:
+      - "Evagrius, Church History 2.2-4"
+      - "Marcellinus Comes, Chronicle, a. 451"
+  # Added 2026-10-01 after an independent review: 3500-540 BC (Mesopotamia in the middle
+  # chronology, Egypt as in Shaw's Oxford History, Israel per Thiele).
+  - id: uruk-writing
+    year: "c. 3200 BC"
+    title:
+      # Not "the first writing": Egyptian signs at Abydos (tomb U-j) may be as early.
+      # The Uruk IV tablets are proto-cuneiform (signs drawn, not yet wedges).
+      en: "The earliest known Mesopotamian writing: proto-cuneiform tablets at Uruk"
+      ru: "Древнейшее известное письмо Месопотамии: протоклинописные таблички Эреха (Урука)"
+    place: a5db1a6
+    sources:
+      - "The archaic texts of Uruk IV from the Eanna precinct (H. J. Nissen, P. Damerow, R. K. Englund, Archaic Bookkeeping, 1993)"
+      - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016)"
+  - id: hammurabi
+    year: "c. 1792 BC"
+    title:
+      en: "Hammurabi becomes king of Babylon"
+      ru: "Хаммурапи становится царём Вавилона"
+    place: a217d18
+    sources:
+      - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016) (middle chronology: 1792-1750 BC)"
+      - "The Code of Hammurabi (Louvre, Sb 8)"
+  - id: babylon-sacked-hittites
+    year: "c. 1595 BC"
+    title:
+      # Telepinu's Proclamation names the king, Mursili I; the chronicle says only "the Hittites".
+      en: "The Hittites sack Babylon, ending Hammurabi's dynasty"
+      ru: "Хетты разоряют Вавилон: конец династии Хаммурапи"
+    place: a217d18
+    sources:
+      - "Chronicle of Early Kings (ABC 20) B rev. 11' ('At the time of Samsuditana the Hittites marched against Akkad')"
+      - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016) (middle chronology)"
+  - id: thutmose-megiddo
+    year: "c. 1457 BC"
+    title:
+      en: "Thutmose III defeats the king of Kadesh and his allies at Megiddo"
+      ru: "Тутмос III разбивает царя Кадеша и его союзников при Мегиддоне"
+    place: a8554e3
+    sources:
+      - "Annals of Thutmose III at Karnak, first campaign, year 23 (Breasted, Ancient Records of Egypt II, §§408 ff.; the battle §430)"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Thutmose III from 1479 BC)"
+  - id: amarna-jerusalem
+    year: "c. 1340 BC"
+    title:
+      # The Amarna archive spans c. 1360-1332; Abdi-Heba's letters are to Akhenaten
+      # (1352-1336, Shaw), so the year is a midpoint, marked "c.".
+      en: "Abdi-Heba of Jerusalem writes to Pharaoh (the Amarna letters)"
+      ru: "Абди-Хеба, правитель Иерусалима, пишет фараону (амарнские письма)"
+    place: a15257a
+    sources:
+      - "Amarna letters EA 285-290 (Knudtzon, Die El-Amarna-Tafeln I (1915), nos. 285-290, headed 'Abdihiba von Jerusalem an den König')"
+      - "W. L. Moran, The Amarna Letters (1992)"
+  - id: kadesh
+    year: "c. 1274 BC"
+    title:
+      en: "Ramesses II fights the Hittites at Kadesh"
+      ru: "Рамсес II сражается с хеттами при Кадеше"
+    place: adc9b5a
+    sources:
+      - "The Poem and the Bulletin of the battle of Kadesh, year 5 of Ramesses II (Breasted, Ancient Records of Egypt III, the Poem from §305, year 5 at §307; the Bulletin from §316, dated year 5 at §317)"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Ramesses II from 1279 BC)"
+  - id: merneptah-stele
+    year: "c. 1208 BC"
+    title:
+      # The stele stands at Thebes, but its events are in Canaan at no single point: no place.
+      en: "Merneptah's victory stele names Israel"
+      ru: "Победная стела Мернептаха называет Израиль"
+    sources:
+      - "Merneptah's 'Israel stele', year 5 (Egyptian Museum, Cairo, JE 31408; Breasted, Ancient Records of Egypt III, year 5 at §607; Israel in §617)"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Merneptah from 1213 BC)"
+  - id: sea-peoples
+    year: "c. 1177 BC"
+    title:
+      en: "Ramesses III repels the Sea Peoples"
+      ru: "Рамсес III отражает «народы моря»"
+    sources:
+      - "Medinet Habu, inscription of year 8 of Ramesses III (Breasted, Ancient Records of Egypt IV, §§59-82; the Peleset among the invaders §64)"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Ramesses III from 1184 BC)"
+  - id: mesha-stele
+    year: "c. 840 BC"
+    title:
+      en: "Mesha, king of Moab, sets up his stele at Dibon"
+      ru: "Меса, царь Моавитский, ставит стелу в Дивоне"
+    place: a0d784a
+    sources:
+      - "2 Kgs 3:4-5"
+      - "The Mesha Stele (Louvre, AO 5066; KAI 181, lines 1-3: Mesha, king of Moab, the Dibonite, makes this high place for Kemosh in Qarhoh; lines 4-6: Omri and his son had oppressed Moab)"
+  - id: menahem-tribute
+    year: "c. 738 BC"
+    title:
+      # The annals list Menahem's payment with the events of 738 (some date it 740);
+      # 2 Kings gives no year, so the verse is cited for the payment, not the date.
+      en: "Menahem pays tribute to Pul (Tiglath-pileser III)"
+      ru: "Менаим платит дань Фулу (Тиглатпаласару III)"
+    ref: 2Kgs.15.19-2Kgs.15.20
+    sources:
+      - "2 Kgs 15:19-20"
+      - "Annals of Tiglath-pileser III (RINAP 1, Tiglath-pileser III 14, line 10: 'Menahem of the city Samaria')"
+      - "The Iran stele of Tiglath-pileser III (RINAP 1, Tiglath-pileser III 35 iii 5)"
+  - id: ashdod-taken
+    year: "c. 711 BC"
+    title:
+      # Isaiah has the commander (Tartan) take Ashdod, the annals Sargon himself;
+      # the title names neither. 711 is Sargon's eleventh year; some date it 712.
+      en: "Assyria under Sargon II takes Ashdod"
+      ru: "Ассирия при Саргоне II берёт Азот"
+    place: a30c937
+    ref: Isa.20.1
+    sources:
+      - "Isa 20:1"
+      - "Khorsabad Annals of Sargon II, eleventh regnal year (RINAP 2, Sargon II 1, lines 234b-262a)"
+      - "Great Display Inscription of Sargon II (RINAP 2, Sargon II 7, lines 90-109)"
+  - id: memphis-taken
+    year: "671 BC"
+    title:
+      en: "Esarhaddon takes Memphis"
+      ru: "Асардан берёт Мемфис"
+    place: a8ec269
+    sources:
+      - "Babylonian Chronicle, ABC 1 iv 23-28 (the tenth year of Esarhaddon: 'Memphis, the royal city, was captured')"
+  - id: thebes-sacked
+    year: "c. 663 BC"
+    title:
+      en: "Ashurbanipal sacks Thebes (No-Amon)"
+      ru: "Ашшурбанапал разоряет Фивы (Но-Аммон)"
+    place: a9674fc
+    sources:
+      - "Nah 3:8-10"
+      - "Prism A of Ashurbanipal (RINAP 5, Ashurbanipal 11 ii 22-44)"
+  - id: nabopolassar
+    year: "626 BC"
+    title:
+      en: "Nabopolassar becomes king of Babylon"
+      ru: "Набопаласар становится царём Вавилона"
+    place: a217d18
+    sources:
+      - "Babylonian Chronicle, ABC 2 lines 14-15 (26 Arahsamnu: 23 November 626 BC)"
+  - id: lachish-besieged
+    year: "c. 588 BC"
+    title:
+      en: "Nebuchadnezzar's army besieges Lachish and Azekah"
+      ru: "Войско Навуходоносора осаждает Лахис и Азеку"
+    place: a3cc590
+    ref: Jer.34.7
+    sources:
+      - "Jer 34:7"
+      - "Lachish ostracon 4 (KAI 194: 'we are watching for the signals of Lachish ... for we cannot see Azekah')"
+  - id: tyre-besieged
+    year: "c. 585 BC"
+    title:
+      en: "Nebuchadnezzar begins a thirteen-year siege of Tyre"
+      ru: "Навуходоносор начинает тринадцатилетнюю осаду Тира"
+    place: a160272
+    sources:
+      - "Ezek 29:18"
+      - "Josephus, Against Apion 1.156 (from the Tyrian records: thirteen years, in the days of Ithobal)"
+  - id: jehoiachin-released
+    year: "561 BC"
+    title:
+      en: "Evil-merodach releases Jehoiachin from prison"
+      ru: "Евилмеродах выводит Иехонию из темницы"
+    place: a217d18
+    ref: 2Kgs.25.27-2Kgs.25.30
+    sources:
+      - "2 Kgs 25:27-30; Jer 52:31-34 (the twelfth month of the accession year of Evil-merodach, Amel-Marduk, king from 562 BC: early 561 BC)"
+      - "R. A. Parker and W. H. Dubberstein, Babylonian Chronology 626 B.C.-A.D. 75 (1956)"
+  - id: nabonidus-tema
+    year: "c. 552 BC"
+    title:
+      en: "Nabonidus withdraws to Tema in Arabia"
+      ru: "Набонид удаляется в Фему, в Аравию"
+    place: acd48d6
+    sources:
+      - "Nabonidus Chronicle (ABC 7) ii 5, 10, 19, 23 (the king in Tema in his 7th, 9th, 10th and 11th years)"
+      - "P.-A. Beaulieu, The Reign of Nabonidus, King of Babylon 556-539 B.C. (1989)"
+  - id: astyages-defeated
+    year: "c. 550 BC"
+    title:
+      en: "Cyrus defeats Astyages and takes Ecbatana"
+      ru: "Кир побеждает Астиага и берёт Екбатану"
+    place: a212ef7
+    sources:
+      - "Nabonidus Chronicle (ABC 7) ii 1-4 (the sixth year of Nabonidus, 550/549 BC)"
+  # Added 2026-10-01 after an independent review: the rulers whose reigns frame the
+  # biblical narrative (525 BC - AD 115).
+  - id: cambyses-egypt
+    year: "525 BC"
+    title:
+      # The card shows Pelusium as "Син" (Ezek 30:15-16), so the Russian names both.
+      en: "Cambyses defeats the Egyptians at Pelusium and conquers Egypt"
+      ru: "Камбиз разбивает египтян при Пелусии (Сине) и покоряет Египет"
+    place: aa32a17
+    sources:
+      - "Herodotus 3.10-13 (Psammenitos encamped at the Pelusian mouth of the Nile; the battle; Memphis besieged and surrendered)"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (27th Dynasty: Cambyses 525-522 BC)"
+  - id: darius-accession
+    year: "522 BC"
+    title:
+      # He killed Gaumata at Sikayauvati in Nisaya, Media: no point on the map.
+      en: "Darius I becomes king of Persia"
+      ru: "Дарий I становится царём Персии"
+    sources:
+      - "Behistun inscription, Old Persian text, DB i 53-61, §13b (Gaumata slain on 10 Bagayadi: 29 September 522 BC)"
+      - "Ezra 4:24; Hag 1:1 (the second year of Darius)"
+  - id: xerxes-accession
+    year: "486 BC"
+    title:
+      # The Ahasuerus of Ezra 4:6 and of Esther is usually identified with Xerxes I.
+      # The Synodal Esther calls him Артаксеркс (after the Septuagint), so the title
+      # names neither form.
+      en: "Xerxes I becomes king of Persia"
+      ru: "Ксеркс I становится царём Персии"
+    sources:
+      - "Herodotus 7.4-5 (Darius dies after a reign of 36 years; the royal power passes to Xerxes)"
+      - "R. A. Parker and W. H. Dubberstein, Babylonian Chronology 626 B.C.-A.D. 75 (1956)"
+  - id: artaxerxes-accession
+    year: "465 BC"
+    title:
+      # The king of Neh 2:1 (Nehemiah's twentieth year, see nehemiah-walls). Whether
+      # Ezra 7:7 means Artaxerxes I or II is debated, so Ezra is not cited. He came to
+      # the throne after Artabanus murdered Xerxes; the title keeps one fact.
+      en: "Artaxerxes I becomes king of Persia"
+      ru: "Артаксеркс I становится царём Персии"
+    sources:
+      - "Diodorus 11.69.1-6 (under the archon Lysitheus, 465/464 BC: Artabanus kills Xerxes; Artaxerxes takes the throne)"
+      - "R. A. Parker and W. H. Dubberstein, Babylonian Chronology 626 B.C.-A.D. 75 (1956)"
+  - id: antiochus-iv
+    year: "175 BC"
+    title:
+      # Installed with the help of Eumenes of Pergamum after Seleucus IV was murdered;
+      # no source names the city, so no place.
+      en: "Antiochus IV Epiphanes becomes king of the Seleucid realm"
+      ru: "Антиох IV Епифан становится царём державы Селевкидов"
+    ref: 1Macc.1.10
+    sources:
+      - "1 Macc 1:10 (he reigned in the 137th year of the kingdom of the Greeks)"
+      - "Appian, Syrian Wars 45 (Seleucus IV killed by Heliodorus; Eumenes and Attalus install Antiochus)"
+  - id: egypt-roman
+    year: "30 BC"
+    title:
+      en: "Octavian takes Alexandria; Egypt becomes Roman"
+      ru: "Октавиан берёт Александрию; Египет становится римским"
+    place: aee7248
+    sources:
+      - "Plutarch, Antony 80.1 (Caesar drives into the city), 85-86 (Cleopatra's death)"
+      - "Cassius Dio 51.17.1 (he made Egypt tributary and gave it in charge of Cornelius Gallus)"
+      - "Res Gestae Divi Augusti 27 ('Egypt I added to the empire of the Roman people')"
+  - id: augustus-named
+    year: "27 BC"
+    title:
+      en: "The Senate names Octavian Augustus"
+      ru: "Сенат даёт Октавиану имя Август"
+    place: afc8e7a
+    sources:
+      - "Res Gestae Divi Augusti 34 (in his sixth and seventh consulships; named Augustus by decree of the senate)"
+      - "Cassius Dio 53.16.6-8 (the name Augustus bestowed by the senate and the people)"
+      - "Suetonius, Augustus 7.2 (on the motion of Munatius Plancus)"
+      - "Luke 2:1 (names him Caesar Augustus)"
+  - id: tiberius-accession
+    year: "AD 14"
+    title:
+      # Synodal Luke 3:1 «Тиверия кесаря»: Тиверий, not the historians' Тиберий.
+      en: "Tiberius succeeds Augustus"
+      ru: "Тиверий наследует Августу"
+    place: afc8e7a
+    sources:
+      - "Suetonius, Augustus 100.1 (Augustus dies on 19 August AD 14); Tiberius 24.1"
+      - "Tacitus, Annals 1.7 (at Rome consuls, senators and knights hasten to swear allegiance to Tiberius)"
+      - "Luke 3:1 (names Tiberius Caesar)"
+  - id: claudius-accession
+    year: "AD 41"
+    title:
+      en: "Claudius is proclaimed emperor"
+      ru: "Клавдий провозглашён императором"
+    place: afc8e7a
+    sources:
+      - "Suetonius, Claudius 10.1-4 (after Gaius' murder the soldiers swear allegiance to him)"
+      - "Josephus, Antiquities 19.236 (King Agrippa urges him to take the rule)"
+      - "Acts 11:28 (Claudius Caesar); 18:2 (Claudius)"
+  - id: diaspora-revolt
+    year: "c. AD 115"
+    title:
+      # Egypt, Cyrene and Cyprus, later Mesopotamia: no single point. Eusebius' 18th
+      # year of Trajan is 115; Dio tells it with the events of 116-117, and some date
+      # the outbreak to 116, hence "c.". Cyrene in its Synodal form (Acts 2:10), as on
+      # its card.
+      en: "The Jews of Egypt, Cyrene and Cyprus rise in revolt"
+      ru: "Иудеи Египта, Киринеи и Кипра поднимают восстание"
+    sources:
+      - "Eusebius, Church History 4.2.1-2 (in the eighteenth year of Trajan, in Alexandria, the rest of Egypt and Cyrene)"
+      - "Cassius Dio 68.32.1-3 (Cyrene under Andreas, Egypt, Cyprus under Artemion)"
+  # 3500-1000 BC, added 2026-10-01 after review: Mesopotamia in the middle chronology,
+  # Egypt as in Shaw (ed.), Oxford History of Ancient Egypt (2000).
+  # The year is Khufu's accession in Shaw's table (2589-2566); when the building began is
+  # not dated, so the title names the accession. Giza is about 18 km from the Memphis
+  # point and has no point of its own: no place.
+  - id: great-pyramid
+    year: "c. 2589 BC"
+    title:
+      en: "Khufu (Cheops), builder of the Great Pyramid at Giza, becomes king"
+      ru: "Хуфу (Хеопс), строитель Великой пирамиды в Гизе, восходит на престол"
+    site: "442962448"
+    sources:
+      - "Herodotus 2.124 (Cheops and the building of the pyramid)"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), J. Malek, 'The Old Kingdom (c. 2686-2125 BC)' (Khufu, builder of the Great Pyramid at Giza); chronology (Khufu 2589-2566 BC)"
+  # 2055 BC is Mentuhotep II's accession and Shaw's start of the Middle Kingdom. The
+  # reunification came later: Callender has the last phase of the war with Herakleopolis
+  # break out after some fourteen years of his reign; the name Sematawy ("Uniter of the
+  # Two Lands") is attested by his year 39. So the title names the accession.
+  - id: middle-kingdom
+    year: "c. 2055 BC"
+    title:
+      en: "Mentuhotep II becomes king at Thebes: the start of the Middle Kingdom"
+      ru: "Ментухотеп II воцаряется в Фивах (Но): начало Среднего царства"
+    place: a9674fc
+    sources:
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), G. Callender, 'The Middle Kingdom Renaissance (c. 2055-1650 BC)' (Mentuhotep II, the reunification later in his reign); chronology (Mentuhotep II 2055-2004 BC)"
+  # Year 33 of Hammurabi (from 1792) names the defeat of Mari, i.e. the event of 1761;
+  # year 35 names the destruction of its walls (1759). Zimri-Lim's reign at Mari ends in
+  # 1762 in the same chronology. Mari is not among the map's places.
+  - id: mari-conquered
+    year: "c. 1761 BC"
+    title:
+      en: "Hammurabi of Babylon conquers Mari"
+      ru: "Хаммурапи Вавилонский покоряет Мари"
+    site: "286681704"
+    sources:
+      - "Year names of Hammurabi 33 ('overthrew in battle the army of Mari and Malgium') and 35a ('destroyed the city walls of Mari and Malgium') (RlA 2, 180)"
+      - "CDLI Wiki, 'Rulers of Mesopotamia' (middle chronology: Hammurabi 1792-1750, Zimri-Lim of Mari 1774-1762 BC)"
+      - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016) (middle chronology)"
+  # Shaw (Bourriau) has Avaris taken between Ahmose's years 18 and 20 (1533-1531 from his
+  # accession in 1550), then the siege of Sharuhen. Avaris (Tell el-Dab'a) is not on the
+  # map, and Sharuhen's identification with the map's point (Tell el-Ajjul) is disputed.
+  - id: hyksos-expelled
+    year: "c. 1530 BC"
+    title:
+      en: "Ahmose I takes Avaris and drives the Hyksos from Egypt"
+      ru: "Яхмос I берёт Аварис и изгоняет гиксосов из Египта"
+    sources:
+      - "Biography of Ahmose son of Ebana, El-Kab (Breasted, Ancient Records of Egypt II, the capture of Avaris §12, the siege of Sharuhen §13)"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), J. Bourriau, 'The Second Intermediate Period (c. 1650-1550 BC)' (Avaris taken between Ahmose's years 18 and 20); chronology (Ahmose 1550-1525 BC)"
+  # Van Dijk in Shaw: early in his fifth regnal year (1352 + 4) the king chose the site and
+  # took the name Akhenaten; the earliest boundary stelae (K, X) carry that date. Breasted
+  # (1906) translates the stelae dated year 6. Amarna is not among the map's places.
+  - id: akhetaten-founded
+    year: "c. 1348 BC"
+    title:
+      en: "Akhenaten founds a new capital, Akhetaten (Amarna)"
+      ru: "Эхнатон основывает новую столицу, Ахетатон (Амарну)"
+    site: "149576487"
+    sources:
+      - "The boundary stelae of Akhetaten (Breasted, Ancient Records of Egypt II, §§949-972; the earlier stelae K and X §§952-953; the year-6 date §959)"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), J. van Dijk, 'The Amarna Period and the Later New Kingdom (c. 1352-1069 BC)' (the new city decided at the start of his fifth year); chronology (Akhenaten 1352-1336 BC)"
+  # Year 21 of Ramesses II (from 1279 in Shaw). The tablet was received at Pi-Ramesses,
+  # but the map's point there is the Exodus city "Rameses" (Exod 1:11): left out so the
+  # card does not tie the Exodus to a date.
+  - id: egypt-hittite-treaty
+    year: "c. 1259 BC"
+    title:
+      en: "Ramesses II and the Hittite king Hattusili III make peace by treaty"
+      ru: "Рамсес II и хеттский царь Хаттусили III заключают мирный договор"
+    sources:
+      - "The treaty in the Karnak and Ramesseum copy, dated year 21 (Breasted, Ancient Records of Egypt III, §§367-391; the date §370)"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), J. van Dijk, 'The Amarna Period and the Later New Kingdom' (the treaty in year 21); chronology (Ramesses II from 1279 BC)"
+  # Kashtiliash IV, whom Tukulti-Ninurta captured before taking Babylon, reigned 1232-1225
+  # in the middle chronology (Tukulti-Ninurta I 1244-1208 in the CDLI list).
+  - id: tukulti-ninurta-babylon
+    year: "c. 1225 BC"
+    title:
+      en: "Tukulti-Ninurta I of Assyria takes Babylon and carries off Marduk's statue"
+      ru: "Тукульти-Нинурта I Ассирийский берёт Вавилон и увозит статую Мардука"
+    place: a217d18
+    sources:
+      - "Chronicle P (ABC 22) iv 3'-6' (the wall of Babylon destroyed, the statue of Marduk sent to Assyria)"
+      - "CDLI Wiki, 'Rulers of Mesopotamia' (middle chronology: Kaštiliaš IV 1232-1225 BC)"
+      - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016) (middle chronology)"
+  # Ugarit is not among the map's places. The last letter to its king from the Egyptian
+  # chancellor Bay was written before Bay's death in Siptah's year 5 (c. 1190); the
+  # radiocarbon dates of the destruction layer at nearby Gibala give 1192-1190. Others put
+  # the fall a little later (c. 1185, c. 1175): "c." covers it.
+  - id: ugarit-destroyed
+    year: "c. 1190 BC"
+    title:
+      en: "Ugarit is destroyed"
+      ru: "Угарит разрушен"
+    site: "Q191369"
+    sources:
+      - "D. Kaniewski et al., 'The Sea Peoples, from Cuneiform Tablets to Carbon Dating', PLoS ONE 6.6 (2011), e20232 (abstract and discussion: the destructions in the northern Levant 1192-1190 BC; the letter of Bay, RS 86.2230, the last record of the living kingdom)"
+  # The stele was taken from Sippar in Shutruk-Nahhunte's raid on Babylonia that ended the
+  # reign of Zababa-shuma-iddina (1158 in the middle chronology); Hammurabi's law stele came
+  # to Susa as booty too. The Louvre gives only "12th century".
+  - id: naram-sin-stele-to-susa
+    year: "c. 1158 BC"
+    title:
+      en: "Shutruk-Nahhunte of Elam carries Naram-Sin's stele from Sippar to Susa"
+      ru: "Шутрук-Наххунте, царь Элама, увозит стелу Нарам-Суэна из Сиппара в Сузы"
+    place: a033b84
+    sources:
+      - "The victory stele of Naram-Sin (Louvre, Sb 4): Shutruk-Nahhunte's Middle Elamite inscription on the mountain says he brought it from Sippar; found on the acropolis of Susa"
+      - "CDLI Wiki, 'Rulers of Mesopotamia' (Zababa-šuma-iddina 1158 BC)"
+      - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016) (middle chronology)"
+  # Manetho calls the Twenty-first Dynasty Tanite; Taylor in Shaw has Smendes found the
+  # northern line with its base of power at Tanis.
+  - id: new-kingdom-ends
+    year: "c. 1069 BC"
+    title:
+      en: "The New Kingdom ends: Smendes founds the Tanite Twenty-first Dynasty"
+      ru: "Конец Нового царства: Смендес основывает XXI (Танисскую) династию"
+    place: ac31fee
+    sources:
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), J. Taylor, 'The Third Intermediate Period (1069-664 BC)' (Smendes founds the northern dynasty, based at Tanis); chronology (Smendes 1069-1043 BC)"
+  # Iron Age II and the Old Kingdom, added 2026-10-01 after review: Assyrian years from
+  # the eponym list, Israelite kings per Thiele, Egypt per Shaw.
+  # --- 3000-2000 BC ---
+  # Shaw's chronology: Djoser (Netjerikhet) 2667-2648 BC; the Step Pyramid is his.
+  # No place: Saqqara has no point of its own (great-pyramid leaves Giza out too).
+  - id: step-pyramid
+    year: "c. 2667 BC"
+    title:
+      en: "Djoser, builder of the Step Pyramid at Saqqara, becomes king"
+      ru: "Джосер, строитель Ступенчатой пирамиды в Саккаре, восходит на престол"
+    site: "796289136"
+    sources:
+      - "Manetho, fr. 11 (Africanus, in Syncellus): under Tosorthros lived Imuthes (Imhotep), 'the inventor of the art of building with hewn stone' (Waddell, Loeb 1940, pp. 41-43)"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), J. Malek, 'The Old Kingdom (c. 2686-2125 BC)' (Djoser and the Step Pyramid at Saqqara); chronology (Djoser 2667-2648 BC)"
+  # --- 1000-750 BC ---
+  # Thiele: Omri 885-874 (twelve years from Asa's 27th year), rival to Tibni until 880;
+  # "six years reigned he in Tirzah" (1 Kgs 16:23) = 885-880, so Samaria from c. 880.
+  - id: samaria-built
+    year: "c. 880 BC"
+    title:
+      en: "Omri builds Samaria as the capital of Israel"
+      ru: "Амврий строит Самарию, столицу Израиля"
+    place: a041bb3
+    ref: 1Kgs.16.24
+    sources:
+      - "1 Kgs 16:23-24; Thiele's chronology (Omri 885-874 BC, sole king from 880)"
+  # The year rests on the Annals: the rebuilding of Kalhu is told after the campaign of
+  # 879 (eponym Sha-ilimma-damqa), and from 878 the king sets out "from the city Kalhu".
+  # The feast that consecrated the palace came later (c. 864 per Frahm 2017), so the
+  # title names the move of the capital, not the feast; hence "c.".
+  - id: kalhu-capital
+    year: "c. 879 BC"
+    title:
+      en: "Ashurnasirpal II makes Calah (Kalhu) the capital of Assyria"
+      ru: "Ашшурнацирапал II делает Калах (Кальху) столицей Ассирии"
+    place: ae1f807
+    sources:
+      - "Annals of Ashurnasirpal II (RIMA 2 A.0.101.1 ii 86b-135: the campaign of 879, then 'I reorganized the city Kalhu'; iii 1: in 878 'I moved from the city Kalhu')"
+      - "The Banquet Stele of Ashurnasirpal II (RIMA 2 A.0.101.30, lines 20b-32: the rebuilding of Kalhu and its palace 'as the residence of my royal majesty')"
+      - "Livius.org, 'Kalhu (Nimrud)' (Ashurnasirpal II, r. 883-859, chose Kalhu as his residence; capital until 706 BC)"
+  # Hazael had seized the throne of Damascus shortly before (2 Kgs 8:15; Shalmaneser's
+  # Assur statue: "Hazael, son of a nobody, took the throne").
+  - id: hazael-besieged
+    year: "841 BC"
+    title:
+      en: "Shalmaneser III defeats Hazael and shuts him up in Damascus"
+      ru: "Салманассар III разбивает Азаила и запирает его в Дамаске"
+    place: a69c1d4
+    sources:
+      - "Annals of Shalmaneser III for his eighteenth year (RIMA 3 A.0.102.8, lines 1''-17'': 'I imprisoned him in Damascus, his royal city', l. 16'')"
+      - "Statue of Shalmaneser III from Assur (RIMA 3 A.0.102.40 i 25-35: 'Hazael, son of a nobody, took the throne', pursued as far as Damascus)"
+  # The Rimah stele says "in one year"; most date the tribute to the campaign of 796
+  # (the eponym list: "against Mansuate"), the only date that falls in Joash's reign by
+  # Thiele (798-782). The Saba'a stele (RIMA 3 A.0.104.6, 11b-20) puts a march on
+  # Damascus in his fifth year (806/805), and some date the tribute there; hence "c.".
+  - id: adad-nirari-damascus
+    year: "c. 796 BC"
+    title:
+      en: "Adad-nirari III takes tribute from Damascus and from Joash of Samaria"
+      ru: "Адад-нирари III берёт дань с Дамаска и с Иоаса Самарийского"
+    place: a69c1d4
+    sources:
+      - "The Tell al-Rimah stele of Adad-nirari III (RIMA 3 A.0.104.7, lines 4-8: 'the payment of Joash of the land Samaria')"
+      - "Eponym Chronicle for 796 BC (campaign against Mansuate)"
+      - "The Calah slab of Adad-nirari III (RIMA 3 A.0.104.8, lines 11-14: Bit-Humri (Israel) among the lands made tributary; lines 14-21: the payment of Mari received in his palace at Damascus)"
+  # No place: the eclipse was seen across Assyria; the revolt that year was at Assur.
+  - id: eponym-eclipse
+    year: "763 BC"
+    title:
+      en: "An eclipse of the sun in the year of Bur-Saggile: the anchor of Assyrian dates"
+      ru: "Солнечное затмение в год Бур-Сагале — опора ассирийской хронологии"
+    sources:
+      - "Eponym Chronicle for 763 BC (Bur-Saggile, governor of Guzana: 'in Simanu eclipse of the sun', 15 June 763)"
+      - "NASA Eclipse Web Site (F. Espenak), Besselian elements of the total solar eclipse of -762 June 15 (= 15 June 763 BC)"
+  # The Russian name is the Synodal one (2 Kgs 15:29), as in damascus-falls; the verse
+  # says nothing of the accession and is not cited for it.
+  - id: tiglath-pileser-iii
+    year: "745 BC"
+    title:
+      en: "Tiglath-pileser III becomes king of Assyria"
+      ru: "Феглаффелласар (Тиглатпаласар III) становится царём Ассирии"
+    sources:
+      - "Eponym Chronicle for 745 BC ('in Ajaru, the thirteenth, Tiglath-pileser ascended the throne')"
+      - "Babylonian Chronicle, ABC 1 i 1-2 (the third year of Nabonassar)"
+  # AD 501-1300, added 2026-10-02 with the slider: drafted, then fact-checked against an
+  # opened page for every event (66 events, 15 corrected). The Samaritan revolt has no
+  # point: where it began is disputed (Scythopolis or Samaria).
+  # --- Justinian and the sixth century ---
+  - id: antioch-earthquake-526
+    year: "AD 526"
+    title:
+      en: "An earthquake and fire destroy Antioch"
+      ru: "Землетрясение и пожар разрушают Антиохию"
+    place: ae41ab4
+    sources:
+      - "John Malalas, Chronicle, book 17 (the reign of Justin I; late May, in the seventh year of Justin)"
+      - "Evagrius, Church History 4.5"
+  # The revolt was crushed by 531; it began in Samaria around Neapolis, which is not on
+  # the map (our Neapolis is Kavala), so the region of Samaria is used.
+  - id: samaritan-revolt-529
+    year: "AD 529"
+    title:
+      en: "The Samaritan revolt of Julian ben Sabar"
+      ru: "Самаритянское восстание Юлиана бен Сабара"
+    sources:
+      - "John Malalas, Chronicle, book 18 (the reign of Justinian)"
+      - "Cyril of Scythopolis, Life of Sabas"
+      - "Procopius, Secret History 11.24-30"
+  # Malalas' notice is short and its reach is debated, but the year itself is not.
+  - id: athens-schools-529
+    year: "AD 529"
+    title:
+      en: "Justinian forbids the teaching of philosophy at Athens"
+      ru: "Юстиниан запрещает преподавание философии в Афинах"
+    place: a1fe6e7
+    sources:
+      - "John Malalas, Chronicle, book 18 (the consulship of Decius, 529)"
+      - "A. Cameron, 'The Last Days of the Academy at Athens', Proceedings of the Cambridge Philological Society 195 (1969)"
+  - id: hagia-sophia
+    year: "AD 537"
+    title:
+      en: "Justinian dedicates the new Hagia Sophia in Constantinople"
+      ru: "Юстиниан освящает новую Святую Софию в Константинополе"
+    site: "Q16869"
+    sources:
+      - "Procopius, Buildings 1.1.20-78"
+      - "Theophanes, Chronicle, AM 6030 (27 December)"
+  - id: antioch-sacked-540
+    year: "AD 540"
+    title:
+      en: "Khosrow I of Persia sacks Antioch"
+      ru: "Персидский царь Хосров I разоряет Антиохию"
+    place: ae41ab4
+    sources:
+      - "Procopius, Wars 2.8-9"
+  # First seen at Pelusium, in Constantinople in 542. Pelusium is on the map as aa32a17,
+  # whose card shows the Synodal name Син (Ezek 30:15).
+  - id: justinianic-plague
+    year: "AD 541"
+    title:
+      en: "Plague breaks out at Pelusium in Egypt and spreads across the empire"
+      ru: "Чума вспыхивает в египетском Сине (Пелусии) и охватывает империю"
+    place: aa32a17
+    sources:
+      - "Procopius, Wars 2.22-23 (2.22.6: it started at Pelusium)"
+      - "L. K. Little (ed.), Plague and the End of Antiquity: The Pandemic of 541-750 (2007)"
+  # Dedicated 20 November of the sixth indiction: 542 or 543 in modern works, hence "c.".
+  - id: nea-church
+    year: "c. AD 543"
+    title:
+      en: "Justinian's New Church of the Mother of God (the Nea) is dedicated in Jerusalem"
+      ru: "В Иерусалиме освящена Новая церковь Богородицы (Неа) Юстиниана"
+    place: a15257a
+    sources:
+      - "Procopius, Buildings 5.6"
+      - "Cyril of Scythopolis, Life of Sabas"
+      - "N. Avigad, Discovering Jerusalem (1983) (the Nea and its building inscription)"
+  - id: council-constantinople-553
+    year: "AD 553"
+    title:
+      en: "The Second Council of Constantinople"
+      ru: "Второй Константинопольский собор"
+    site: "Q16869"
+    sources:
+      - "Evagrius, Church History 4.38"
+      - "R. Price (tr.), The Acts of the Council of Constantinople of 553 (2009)"
+  # Dated by what it shows: the Nea (542/543) is on it, nothing built after c. 570 is.
+  # The card shows the Synodal name Медева; the map is known in Russian as Мадабская.
+  - id: madaba-map
+    year: "c. AD 560"
+    title:
+      en: "The mosaic map of the Holy Land is laid in a church at Madaba"
+      ru: "В церкви в Медеве (Мадабе) выложена мозаичная карта Святой земли"
+    place: af4f21c
+    sources:
+      - "H. Donner, The Mosaic Map of Madaba: An Introductory Guide (1992)"
+      - "M. Piccirillo and E. Alliata (eds.), The Madaba Map Centenary 1897-1997 (1999)"
+  # Built between Theodora's death (548; the roof-beam inscriptions name her as late)
+  # and Justinian's (565).
+  - id: sinai-monastery
+    year: "c. AD 560"
+    title:
+      en: "Justinian's fortified monastery is built at the foot of Mount Sinai (St Catherine's)"
+      ru: "У подножия горы Синай построен укреплённый монастырь Юстиниана (монастырь Святой Екатерины)"
+    place: abfba2a
+    sources:
+      - "Procopius, Buildings 5.8"
+      - "G. H. Forsyth and K. Weitzmann, The Monastery of Saint Catherine at Mount Sinai: The Church and Fortress of Justinian (1973)"
+  - id: gregory-the-great
+    year: "AD 590"
+    title:
+      en: "Gregory the Great becomes bishop of Rome"
+      ru: "Григорий Великий становится епископом Рима"
+    place: afc8e7a
+    sources:
+      - "Gregory of Tours, History of the Franks 10.1"
+      - "Liber Pontificalis 66 (Gregory I)"
+
+  # --- Persia, Heraclius and the Arab conquests ---
+  - id: jerusalem-persians-614
+    year: "AD 614"
+    title:
+      en: "The Persians take Jerusalem and carry off the relic of the Cross"
+      ru: "Персы берут Иерусалим и уносят Крестное древо"
+    place: a15257a
+    sources:
+      - "Antiochus Strategos, The Capture of Jerusalem by the Persians in 614"
+      - "Chronicon Paschale, a. 614"
+      - "Sebeos, History (tr. R. W. Thomson, J. Howard-Johnston, 1999)"
+  # Mecca and Medina are not on the map.
+  - id: hijra
+    year: "AD 622"
+    title:
+      en: "Muhammad emigrates from Mecca to Medina (the Hijra), year one of the Islamic calendar"
+      ru: "Переселение Мухаммада из Мекки в Медину (хиджра) — начало исламского летоисчисления"
+    site: "814688"
+    sources:
+      - "Ibn Ishaq, Life of the Messenger of God (tr. A. Guillaume, The Life of Muhammad, 1955)"
+      - "F. M. Donner, Muhammad and the Believers (2010), ch. 2"
+  - id: nineveh-627
+    year: "AD 627"
+    title:
+      en: "Heraclius defeats the Persians near Nineveh"
+      ru: "Ираклий разбивает персов у Ниневии"
+    place: a70fd5d
+    sources:
+      - "Theophanes, Chronicle, AM 6118 (12 December)"
+      - "Chronicon Paschale, a. 628 (Heraclius' dispatch read in Constantinople)"
+  # 21 March 630 in most works; C. Zuckerman argues for 629, hence "c.".
+  - id: cross-restored
+    year: "c. AD 630"
+    title:
+      en: "Heraclius brings the relic of the Cross back to Jerusalem"
+      ru: "Ираклий возвращает Крестное древо в Иерусалим"
+    place: a15257a
+    sources:
+      - "Theophanes, Chronicle, AM 6120"
+      - "Sebeos, History (tr. R. W. Thomson, J. Howard-Johnston, 1999)"
+      - "B. Flusin, Saint Anastase le Perse et l'histoire de la Palestine au début du VIIe siècle (1992), vol. 2"
+  # Fought east of the Wadi al-Ruqqad above the Yarmuk, some 20 km from Gadara; the
+  # battlefield is not on the map.
+  - id: yarmuk
+    year: "AD 636"
+    title:
+      en: "The Arabs defeat the Byzantine army on the Yarmuk"
+      ru: "Арабы разбивают византийское войско на реке Ярмук"
+    sources:
+      - "Theophanes, Chronicle, AM 6126"
+      - "al-Baladhuri, The Conquest of the Lands (Futuh al-buldan), on the Yarmuk"
+      - "F. M. Donner, The Early Islamic Conquests (1981), ch. 3"
+  # Chroniclers give 636, 637 or 638; modern works mostly 638, hence "c.".
+  - id: jerusalem-arabs-638
+    year: "c. AD 638"
+    title:
+      en: "Jerusalem surrenders to the caliph Umar"
+      ru: "Иерусалим сдаётся халифу Умару"
+    place: a15257a
+    sources:
+      - "Theophanes, Chronicle, AM 6127 (Sophronius and Umar)"
+      - "al-Baladhuri, The Conquest of the Lands (Futuh al-buldan), on Jerusalem"
+      - "F. M. Donner, The Early Islamic Conquests (1981), ch. 3"
+  # Surrendered between 639 and 641, hence "c."; Ascalon fell in the same years and Tripoli
+  # later, so it is not called the last stronghold.
+  - id: caesarea-falls-640
+    year: "c. AD 640"
+    title:
+      en: "After a long siege the Arabs take Caesarea, the capital of Byzantine Palestine"
+      ru: "После долгой осады арабы берут Кесарию — столицу византийской Палестины"
+    place: a58735e
+    sources:
+      - "al-Baladhuri, The Conquest of the Lands (Futuh al-buldan), on Caesarea"
+      - "F. M. Donner, The Early Islamic Conquests (1981), ch. 3"
+  # The armistice expired and the last troops sailed on 17 September 642.
+  - id: alexandria-642
+    year: "AD 642"
+    title:
+      en: "The last Byzantine troops leave Alexandria; Egypt passes to the Arabs"
+      ru: "Последние византийские войска покидают Александрию; Египет переходит к арабам"
+    place: aee7248
+    sources:
+      - "John of Nikiu, Chronicle 120.72 (Theodore and his troops sail for Cyprus)"
+      - "A. J. Butler, The Arab Conquest of Egypt (1902; 2nd ed. P. M. Fraser, 1978)"
+  - id: council-constantinople-680
+    year: "AD 680"
+    title:
+      en: "The Third Council of Constantinople opens"
+      ru: "Открывается Третий Константинопольский собор"
+    site: "Q16869"
+    sources:
+      - "Theophanes, Chronicle, AM 6172"
+      - "Acts of the Third Council of Constantinople, ed. R. Riedinger, ACO ser. 2, vol. 2 (1990-1992)"
+
+  # --- Umayyads, Abbasids, iconoclasm ---
+  # The building inscription gives AH 72 (691/692); whether that is the year of
+  # completion is debated, hence "c.".
+  - id: dome-of-the-rock
+    year: "c. AD 691"
+    title:
+      en: "The Dome of the Rock is built on the Temple Mount"
+      ru: "На Храмовой горе построен Купол Скалы"
+    place: a15257a
+    sources:
+      - "The mosaic inscription of the inner octagon (AH 72), in O. Grabar, The Dome of the Rock (2006)"
+      - "K. A. C. Creswell, Early Muslim Architecture, vol. 1 (2nd ed., 1969)"
+  - id: constantinople-siege-717
+    year: "AD 717"
+    title:
+      en: "The Arab siege of Constantinople begins; it is lifted the next year"
+      ru: "Начинается арабская осада Константинополя; на следующий год её снимают"
+    site: "Q16869"
+    sources:
+      - "Theophanes, Chronicle, AM 6209-6210"
+      - "Nikephoros, Short History (ed. and tr. C. Mango, 1990)"
+  # 18 January 749 (Tsafrir and Foerster, from coins in the ruins of Scythopolis);
+  # Theophanes and others give 746-748, and some see a series of quakes, hence "c.".
+  - id: earthquake-749
+    year: "c. AD 749"
+    title:
+      en: "An earthquake ruins Scythopolis (Beth-shan), Pella, Gadara and Tiberias"
+      ru: "Землетрясение разрушает Скифополь (Беф-Сан), Пеллу, Гадару и Тивериаду"
+    place: a2a8df0
+    sources:
+      - "Theophanes, Chronicle, AM 6238"
+      - "Y. Tsafrir and G. Foerster, 'The Dating of the Earthquake of the Sabbatical Year of 749 C.E. in Palestine', BSOAS 55 (1992)"
+  - id: abbasid-revolution
+    year: "AD 750"
+    title:
+      en: "The Abbasids overthrow the Umayyad caliphate"
+      ru: "Аббасиды свергают Омейядский халифат"
+    sources:
+      - "al-Tabari, History, years 132-133 AH"
+      - "H. Kennedy, The Prophet and the Age of the Caliphates (3rd ed., 2016)"
+  - id: baghdad-founded
+    year: "AD 762"
+    title:
+      en: "The caliph al-Mansur founds Baghdad"
+      ru: "Халиф аль-Мансур основывает Багдад"
+    site: "893952"
+    sources:
+      - "al-Tabari, History, year 145 AH"
+      - "J. Lassner, The Topography of Baghdad in the Early Middle Ages (1970)"
+  - id: council-nicaea-787
+    year: "AD 787"
+    title:
+      en: "The Second Council of Nicaea restores the veneration of icons"
+      ru: "Второй Никейский собор восстанавливает почитание икон"
+    site: "511268"
+    sources:
+      - "Theophanes, Chronicle, AM 6280"
+      - "R. Price (tr.), The Acts of the Second Council of Nicaea (787) (2018)"
+  - id: charlemagne-crowned
+    year: "AD 800"
+    title:
+      en: "Pope Leo III crowns Charlemagne emperor in Rome"
+      ru: "Папа Лев III коронует Карла Великого императором в Риме"
+    place: afc8e7a
+    sources:
+      - "Royal Frankish Annals, s.a. 801 (Christmas Day, with which their year begins)"
+      - "Einhard, Life of Charlemagne 28"
+  - id: triumph-of-orthodoxy
+    year: "AD 843"
+    title:
+      en: "A council in Constantinople restores icons for good (the Triumph of Orthodoxy)"
+      ru: "Собор в Константинополе окончательно восстанавливает иконопочитание (Торжество православия)"
+    site: "Q16869"
+    sources:
+      - "Theophanes Continuatus, book 4 (the reign of Michael III)"
+      - "J. Gouillard, 'Le Synodikon de l'Orthodoxie', Travaux et Mémoires 2 (1967)"
+
+  # --- The tenth century: Masoretes, Byzantine and Fatimid advances ---
+  - id: thessalonica-sacked-904
+    year: "AD 904"
+    title:
+      en: "An Arab fleet under Leo of Tripoli sacks Thessalonica"
+      ru: "Арабский флот Льва Триполийского разоряет Фессалонику"
+    place: afa9d8e
+    sources:
+      - "John Kaminiates, The Capture of Thessaloniki"
+      - "Theophanes Continuatus, book 6 (the reign of Leo VI)"
+  # Written by Shlomo ben Buya'a c. 920, then pointed and annotated by Aaron ben Asher;
+  # the colophon is lost with the leaf, known from copies. The year is the writing.
+  - id: aleppo-codex
+    year: "c. AD 920"
+    title:
+      en: "The Aleppo Codex, the model Masoretic Bible, is written in Tiberias"
+      ru: "В Тивериаде написан Алеппский кодекс — образцовая масоретская Библия"
+    place: ac9adc9
+    sources:
+      - "Maimonides, Mishneh Torah, Laws of the Torah Scroll 8.4 (the codex of Ben Asher)"
+      - "M. H. Goshen-Gottstein, 'The Aleppo Codex and the Rise of the Masoretic Bible Text', Biblical Archaeologist 42 (1979)"
+  - id: crete-retaken
+    year: "AD 961"
+    title:
+      en: "Nikephoros Phokas takes Chandax and returns Crete to Byzantium"
+      ru: "Никифор Фока берёт Хандак и возвращает Крит Византии"
+    place: a26aa94
+    sources:
+      - "Leo the Deacon, History, books 1-2"
+      - "Theodosios the Deacon, The Capture of Crete"
+  - id: tarsus-retaken
+    year: "AD 965"
+    title:
+      en: "Tarsus surrenders to Nikephoros II Phokas"
+      ru: "Тарс сдаётся Никифору II Фоке"
+    place: a666ea0
+    sources:
+      - "Leo the Deacon, History (tr. A.-M. Talbot and D. F. Sullivan, 2005)"
+      - "Yahya of Antioch, Chronicle, under 354 AH"
+  - id: fatimids-egypt
+    year: "AD 969"
+    title:
+      en: "The Fatimids take Egypt; Cairo is founded beside Fustat"
+      ru: "Фатимиды завладевают Египтом; рядом с Фустатом основан Каир"
+    place: af301ca
+    sources:
+      - "al-Maqrizi, Itti'az al-hunafa', year 358 AH"
+      - "H. Halm, The Empire of the Mahdi (1996)"
+  - id: antioch-retaken-969
+    year: "AD 969"
+    title:
+      en: "The Byzantines retake Antioch"
+      ru: "Византийцы возвращают Антиохию"
+    place: ae41ab4
+    sources:
+      - "Leo the Deacon, History, book 5"
+      - "Yahya of Antioch, Chronicle, under 358 AH"
+
+  # --- The eleventh century ---
+  # Its colophon gives 1008 in several eras that do not all agree (1008/1009). Written
+  # in Cairo-Fustat, which is not on the map; the point "Egypt" lies by Cairo.
+  - id: leningrad-codex
+    year: "c. AD 1008"
+    title:
+      en: "The Leningrad Codex, the oldest complete Hebrew Bible, is copied in Cairo"
+      ru: "В Каире переписан Ленинградский кодекс — древнейшая полная еврейская Библия"
+    place: af301ca
+    sources:
+      - "The colophon of the codex (National Library of Russia, St Petersburg, Firkovich B 19 A)"
+      - "D. N. Freedman et al. (eds.), The Leningrad Codex: A Facsimile Edition (1998), introduction"
+  - id: holy-sepulchre-destroyed
+    year: "AD 1009"
+    title:
+      en: "The caliph al-Hakim orders the Church of the Holy Sepulchre destroyed"
+      ru: "Халиф аль-Хаким приказывает разрушить храм Гроба Господня"
+    place: a631d35
+    sources:
+      - "Yahya of Antioch, Chronicle, under 400 AH"
+      - "D. Pringle, The Churches of the Crusader Kingdom of Jerusalem, vol. 3 (2007)"
+  - id: holy-sepulchre-rebuilt
+    year: "c. AD 1048"
+    title:
+      en: "The Church of the Holy Sepulchre is rebuilt with the help of Constantine IX"
+      ru: "Храм Гроба Господня восстановлен при помощи Константина IX"
+    place: a631d35
+    sources:
+      - "William of Tyre, Chronicle 1.4-6 (1.6: rebuilt in 1048)"
+      - "D. Pringle, The Churches of the Crusader Kingdom of Jerusalem, vol. 3 (2007)"
+  - id: schism-1054
+    year: "AD 1054"
+    title:
+      en: "Papal legates and the patriarch Michael Cerularius excommunicate each other in Constantinople"
+      ru: "Папские легаты и патриарх Михаил Керуларий взаимно отлучают друг друга в Константинополе"
+    site: "Q16869"
+    sources:
+      - "Humbert of Silva Candida, Brief and Succinct Account (Commemoratio brevis), with the bull of 16 July"
+      - "The synodal edict of Michael Cerularius (July 1054), PG 120"
+  # Malazgirt, north of Lake Van, is not on the map.
+  - id: manzikert
+    year: "AD 1071"
+    title:
+      en: "The Seljuk sultan Alp Arslan defeats and captures Romanos IV at Manzikert"
+      ru: "Сельджукский султан Алп-Арслан разбивает и пленяет Романа IV при Манцикерте"
+    sources:
+      - "Michael Attaleiates, History (the campaign of 1071)"
+      - "Michael Psellos, Chronographia 7"
+      - "C. Hillenbrand, Turkish Myth and Muslim Symbol: The Battle of Manzikert (2007)"
+  - id: antioch-crusade-1098
+    year: "AD 1098"
+    title:
+      en: "The First Crusade takes Antioch after a long siege"
+      ru: "Участники Первого крестового похода берут Антиохию после долгой осады"
+    place: ae41ab4
+    sources:
+      - "Gesta Francorum 8.20"
+      - "Raymond of Aguilers, History of the Franks who took Jerusalem"
+  - id: jerusalem-crusade-1099
+    year: "AD 1099"
+    title:
+      en: "The First Crusade takes Jerusalem"
+      ru: "Участники Первого крестового похода берут Иерусалим"
+    place: a15257a
+    sources:
+      - "Gesta Francorum 10.38"
+      - "Fulcher of Chartres, History of the Expedition to Jerusalem 1.27"
+      - "Ibn al-Athir, The Complete History, year 492 AH"
+  - id: baldwin-crowned
+    year: "AD 1100"
+    title:
+      en: "Baldwin I is crowned the first king of Jerusalem in Bethlehem"
+      ru: "Балдуин I коронован первым королём Иерусалимским в Вифлееме"
+    place: a112427
+    sources:
+      - "Fulcher of Chartres, History of the Expedition to Jerusalem, book 2 (Christmas Day)"
+      - "William of Tyre, Chronicle 10.9 (Christmas Day, Bethlehem)"
+
+  # --- The crusader states ---
+  # Medieval Acre stood on the site of Hellenistic Ptolemais (the point "Ptolemais" is
+  # the old city of Acre); Tel Akko (a5f4dfc) is the Bronze and Iron Age mound.
+  - id: acre-1104
+    year: "AD 1104"
+    title:
+      en: "Baldwin I takes Acre with a Genoese fleet"
+      ru: "Балдуин I с генуэзским флотом берёт Акру (Птолемаиду)"
+    place: abc2af0
+    sources:
+      - "Fulcher of Chartres, History of the Expedition to Jerusalem, book 2"
+      - "Albert of Aachen, History of the Journey to Jerusalem"
+  - id: tyre-1124
+    year: "AD 1124"
+    title:
+      en: "Tyre surrenders to the Kingdom of Jerusalem and the Venetians"
+      ru: "Тир сдаётся Иерусалимскому королевству и венецианцам"
+    place: a160272
+    sources:
+      - "Fulcher of Chartres, History of the Expedition to Jerusalem, book 3"
+      - "William of Tyre, Chronicle 13.6-14"
+  # Edessa (Urfa) is not on the map.
+  - id: edessa-1144
+    year: "AD 1144"
+    title:
+      en: "Zengi takes Edessa, capital of the first crusader state"
+      ru: "Зенги берёт Эдессу — столицу первого государства крестоносцев"
+    site: "658457"
+    sources:
+      - "William of Tyre, Chronicle 16.4-5"
+      - "Ibn al-Athir, The Complete History, year 539 AH"
+  - id: damascus-1148
+    year: "AD 1148"
+    title:
+      en: "The Second Crusade fails before Damascus"
+      ru: "Второй крестовый поход терпит неудачу под Дамаском"
+    place: a69c1d4
+    sources:
+      - "William of Tyre, Chronicle 17.2-7"
+      - "Ibn al-Qalanisi, The Damascus Chronicle of the Crusades (tr. H. A. R. Gibb, 1932)"
+  - id: holy-sepulchre-crusader
+    year: "AD 1149"
+    title:
+      en: "The rebuilt Church of the Holy Sepulchre is consecrated"
+      ru: "Освящён перестроенный храм Гроба Господня"
+    place: a631d35
+    sources:
+      - "D. Pringle, The Churches of the Crusader Kingdom of Jerusalem, vol. 3 (2007) (15 July 1149)"
+  - id: ascalon-1153
+    year: "AD 1153"
+    title:
+      en: "Baldwin III takes Ascalon, the last Fatimid fortress on the coast of Palestine"
+      ru: "Балдуин III берёт Аскалон — последнюю фатимидскую крепость на палестинском побережье"
+    place: ac87d4c
+    sources:
+      - "William of Tyre, Chronicle 17.21-30"
+      - "Ibn al-Qalanisi, The Damascus Chronicle of the Crusades (tr. H. A. R. Gibb, 1932)"
+  - id: fatimids-end
+    year: "AD 1171"
+    title:
+      en: "Saladin ends the Fatimid caliphate in Egypt"
+      ru: "Саладин упраздняет Фатимидский халифат в Египте"
+    place: af301ca
+    sources:
+      - "Ibn al-Athir, The Complete History, year 567 AH"
+      - "M. C. Lyons and D. E. P. Jackson, Saladin: The Politics of the Holy War (1982)"
+  # Compiled 1170-1180 in Egypt (Fustat, not on the map).
+  - id: mishneh-torah
+    year: "c. AD 1180"
+    title:
+      en: "Maimonides completes the Mishneh Torah in Egypt"
+      ru: "Маймонид завершает в Египте «Мишне Тора»"
+    place: af301ca
+    sources:
+      - "I. Twersky, Introduction to the Code of Maimonides (Mishneh Torah) (1980)"
+      - "H. A. Davidson, Moses Maimonides: The Man and His Works (2005)"
+  # The Horns of Hattin, west of Tiberias, are not on the map; Tiberias itself
+  # surrendered after the battle, so it is not used as the point.
+  - id: hattin
+    year: "AD 1187"
+    title:
+      en: "Saladin defeats the army of the Kingdom of Jerusalem at Hattin"
+      ru: "Саладин разбивает войско Иерусалимского королевства при Хаттине"
+    sources:
+      - "Ibn al-Athir, The Complete History, year 583 AH"
+      - "De expugnatione Terrae Sanctae per Saladinum libellus"
+      - "M. C. Lyons and D. E. P. Jackson, Saladin: The Politics of the Holy War (1982)"
+  - id: jerusalem-saladin
+    year: "AD 1187"
+    title:
+      en: "Jerusalem surrenders to Saladin"
+      ru: "Иерусалим сдаётся Саладину"
+    place: a15257a
+    sources:
+      - "Imad al-Din al-Isfahani, The Conquest of Jerusalem (al-Fath al-qussi)"
+      - "Ibn al-Athir, The Complete History, year 583 AH"
+  - id: cyprus-1191
+    year: "AD 1191"
+    title:
+      en: "Richard I of England takes Cyprus on his way to the Holy Land"
+      ru: "Ричард I Английский захватывает Кипр на пути в Святую землю"
+    place: a2e7601
+    sources:
+      - "Itinerarium Peregrinorum et Gesta Regis Ricardi, book 2"
+  - id: acre-1191
+    year: "AD 1191"
+    title:
+      en: "The Third Crusade retakes Acre after a two-year siege"
+      ru: "Участники Третьего крестового похода после двухлетней осады возвращают Акру (Птолемаиду)"
+    place: abc2af0
+    sources:
+      - "Itinerarium Peregrinorum et Gesta Regis Ricardi, book 3"
+      - "Baha al-Din Ibn Shaddad, The Rare and Excellent History of Saladin (tr. D. S. Richards, 2001)"
+  # Concluded 1/2 September 1192; also called the Treaty of Ramla, so the title names the
+  # treaty, not the spot it was sealed. The card shows the Synodal Иоппия.
+  - id: treaty-jaffa-1192
+    year: "AD 1192"
+    title:
+      en: "Richard I and Saladin make a three-year truce (the Treaty of Jaffa); pilgrims may visit Jerusalem"
+      ru: "Ричард I и Саладин заключают трёхлетнее перемирие (Яффский договор); паломникам открыт Иерусалим"
+    place: ae023a9
+    sources:
+      - "Baha al-Din Ibn Shaddad, The Rare and Excellent History of Saladin (tr. D. S. Richards, 2001)"
+      - "Itinerarium Peregrinorum et Gesta Regis Ricardi, book 6"
+
+  # --- The thirteenth century ---
+  - id: constantinople-1204
+    year: "AD 1204"
+    title:
+      en: "The Fourth Crusade takes and sacks Constantinople"
+      ru: "Участники Четвёртого крестового похода берут и разоряют Константинополь"
+    site: "Q16869"
+    sources:
+      - "Niketas Choniates, History (O City of Byzantium, tr. H. J. Magoulias, 1984)"
+      - "Geoffrey of Villehardouin, The Conquest of Constantinople"
+  - id: jerusalem-frederick-1229
+    year: "AD 1229"
+    title:
+      en: "By treaty with al-Kamil, Frederick II recovers Jerusalem without a battle"
+      ru: "По договору с аль-Камилем Фридрих II без боя получает Иерусалим"
+    place: a15257a
+    sources:
+      - "Roger of Wendover, Flowers of History, s.a. 1229 (Frederick's letter)"
+      - "Ibn al-Athir, The Complete History, year 626 AH"
+  - id: jerusalem-khwarazmians-1244
+    year: "AD 1244"
+    title:
+      en: "Khwarazmian troops take and sack Jerusalem"
+      ru: "Хорезмийцы берут и разоряют Иерусалим"
+    place: a15257a
+    sources:
+      - "Matthew Paris, Chronica Majora, s.a. 1244"
+  - id: mamluks-1250
+    year: "AD 1250"
+    title:
+      en: "The Mamluks take power in Egypt"
+      ru: "Мамлюки приходят к власти в Египте"
+    place: af301ca
+    sources:
+      - "Jean de Joinville, Life of Saint Louis"
+      - "P. M. Holt, The Age of the Crusades: The Near East from the Eleventh Century to 1517 (1986)"
+  # Baghdad is not on the map.
+  - id: baghdad-1258
+    year: "AD 1258"
+    title:
+      en: "The Mongols under Hülegü take Baghdad; the Abbasid caliphate ends"
+      ru: "Монголы Хулагу берут Багдад; конец Аббасидского халифата"
+    site: "893952"
+    sources:
+      - "Rashid al-Din, Compendium of Chronicles (Jami' al-tawarikh), the reign of Hülegü"
+      - "R. Amitai-Preiss, Mongols and Mamluks (1995)"
+  # Ayn Jalut, "Goliath's spring", is the spring of Harod (Judg 7:1).
+  - id: ain-jalut
+    year: "AD 1260"
+    title:
+      en: "The Mamluks defeat the Mongols at Ain Jalut (the spring of Harod)"
+      ru: "Мамлюки разбивают монголов при Айн-Джалуте (у источника Харод)"
+    place: ae3cace
+    sources:
+      - "al-Maqrizi, Kitab al-suluk, year 658 AH"
+      - "R. Amitai-Preiss, Mongols and Mamluks (1995)"
+  - id: constantinople-1261
+    year: "AD 1261"
+    title:
+      en: "The Nicaean army of Michael VIII Palaiologos retakes Constantinople"
+      ru: "Никейское войско Михаила VIII Палеолога возвращает Константинополь"
+    site: "Q16869"
+    sources:
+      - "George Akropolites, The History (tr. R. Macrides, 2007), the recovery of 1261"
+  - id: caesarea-1265
+    year: "AD 1265"
+    title:
+      en: "Baybars takes Caesarea and razes it"
+      ru: "Бейбарс берёт Кесарию и сносит её до основания"
+    place: a58735e
+    sources:
+      - "Ibn Abd al-Zahir, Life of Baybars (al-Rawd al-zahir)"
+      - "The Templar of Tyre, Gestes des Chiprois, part 3"
+  - id: nahmanides-jerusalem
+    year: "AD 1267"
+    title:
+      en: "Nahmanides arrives in Jerusalem and restores a synagogue"
+      ru: "Нахманид прибывает в Иерусалим и восстанавливает синагогу"
+    place: a15257a
+    sources:
+      - "Nahmanides, Letter to his son Nahman from Jerusalem"
+  - id: antioch-1268
+    year: "AD 1268"
+    title:
+      en: "Baybars takes Antioch"
+      ru: "Бейбарс берёт Антиохию"
+    place: ae41ab4
+    sources:
+      - "Ibn Abd al-Zahir, Life of Baybars (al-Rawd al-zahir), with Baybars' letter to Bohemond VI"
+      - "The Templar of Tyre, Gestes des Chiprois, part 3"
+  - id: acre-1291
+    year: "AD 1291"
+    title:
+      en: "The Mamluks take Acre, the last great crusader stronghold in the Holy Land"
+      ru: "Мамлюки берут Акру (Птолемаиду) — последний крупный оплот крестоносцев в Святой земле"
+    place: abc2af0
+    sources:
+      - "The Templar of Tyre, Gestes des Chiprois, part 3"
+      - "Abu'l-Fida, Memoirs (al-Mukhtasar), year 690 AH"
+  # The Ancient Near East, 3500-500 BC, added 2026-10-02: Mesopotamia in the middle
+  # chronology (CDLI "Rulers of Mesopotamia", Van De Mieroop), Egypt as in Shaw (ed.),
+  # Oxford History of Ancient Egypt (2000), Assyria after 911 from the eponym list,
+  # Babylon after 626 from the Babylonian Chronicle, Israel and Judah per Thiele.
+  # --- Sumer and Akkad, 3500-2000 BC ---
+  - id: ur-royal-cemetery
+    year: "c. 2600 BC"
+    title:
+      en: "The Royal Cemetery of Ur: Puabi and other rulers are buried with their retinues"
+      ru: "Царское кладбище Ура: Пуаби и другие правители погребены вместе со свитой"
+    place: a6cf75c
+    sources:
+      - "C. L. Woolley, Ur Excavations II: The Royal Cemetery (1934)"
+      - "Encyclopaedia Britannica, 'Ur' (royal tombs, 26th century BC)"
+  - id: stele-of-vultures
+    year: "c. 2450 BC"
+    title:
+      en: "Eannatum of Lagash defeats Umma and sets up the Stele of the Vultures"
+      ru: "Эанатум, правитель Лагаша, побеждает Умму и ставит «Стелу коршунов»"
+    site: "959120263"
+    sources:
+      - "The Stele of the Vultures (Louvre AO 50, AO 16109 and other fragments; RIME 1.9.3.1)"
+      - "CDLI Wiki, 'Rulers of Mesopotamia' (Eannatum c. 2450 BC)"
+      - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016)"
+  - id: uruinimgina-reforms
+    year: "c. 2350 BC"
+    title:
+      en: "Uruinimgina of Lagash proclaims his reforms"
+      ru: "Урукагина (Уруинимгина), правитель Лагаша, провозглашает свои реформы"
+    site: "959120263"
+    sources:
+      - "The reform text of Uruinimgina (RIME 1.9.9.1)"
+      - "CDLI Wiki, 'Rulers of Mesopotamia' (Urukagina c. 2350 BC)"
+      - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016)"
+  - id: naram-sin
+    year: "c. 2254 BC"
+    title:
+      en: "Naram-Sin of Akkad becomes king; he later has himself called a god"
+      ru: "Нарам-Суэн Аккадский восходит на престол; позднее его провозглашают богом"
+    sources:
+      - "The Bassetki statue inscription (RIME 2.1.4.10: the people of Akkade asked for him as god of their city)"
+      - "CDLI Wiki, 'Rulers of Mesopotamia' (middle chronology: Naram-Sin 2254-2218 BC)"
+  - id: akkad-ends
+    year: "c. 2154 BC"
+    title:
+      en: "The dynasty of Akkad ends"
+      ru: "Конец Аккадской династии"
+    sources:
+      - "Sumerian King List (ETCSL 2.1.1: 'Then Agade was defeated and the kingship was taken to Unug')"
+      - "CDLI Wiki, 'Rulers of Mesopotamia' (middle chronology)"
+  # Some ascribe the laws to his son Shulgi (2094-2047); "c." covers both.
+  - id: ur-nammu-laws
+    year: "c. 2100 BC"
+    title:
+      en: "The Laws of Ur-Nammu, the oldest law collection known"
+      ru: "Законы Ур-Намму — древнейший известный свод законов"
+    sources:
+      - "Laws of Ur-Namma (RIME 3/2.1.1.20)"
+      - "M. T. Roth, Law Collections from Mesopotamia and Asia Minor (2nd ed., 1997)"
+  - id: ur-ziggurat
+    year: "c. 2100 BC"
+    title:
+      en: "Ur-Nammu builds the ziggurat of Ur"
+      ru: "Ур-Намму строит зиккурат в Уре"
+    place: a6cf75c
+    sources:
+      - "C. L. Woolley, Ur Excavations V: The Ziggurat and its Surroundings (1939)"
+      - "Ur-Nammu's inscriptions for the E-temen-ni-guru, Nanna's ziggurat (RIME 3/2.1.1.11-12)"
+  # --- Assyria and Babylon, 2000-1500 BC ---
+  - id: kanesh-trade
+    year: "c. 1950 BC"
+    title:
+      en: "Assyrian merchants trade at Kanesh in Anatolia"
+      ru: "Ассирийские купцы ведут торговлю в Канеше, в Анатолии"
+    site: "58129442"
+    sources:
+      - "G. Barjamovic, T. Hertel, M. T. Larsen, Ups and Downs at Kanesh (2012)"
+      - "Encyclopaedia Britannica, 'Kültepe' (the Assyrian merchant colony, c. 20th-18th centuries BC)"
+  - id: babylon-first-dynasty
+    year: "c. 1894 BC"
+    title:
+      en: "Sumu-abum founds the First Dynasty of Babylon"
+      ru: "Суму-абум основывает I Вавилонскую династию"
+    place: a217d18
+    sources:
+      - "Encyclopaedia Britannica, 'Babylon' (kingdom founded 1894 BC by Sumuabum)"
+      - "CDLI Wiki, 'Rulers of Mesopotamia' (middle chronology: Sumu-abum 1894-1881 BC)"
+  - id: shamshi-adad
+    year: "c. 1808 BC"
+    title:
+      en: "Shamshi-Adad I takes Assur and builds a kingdom in Upper Mesopotamia"
+      ru: "Шамши-Адад I захватывает Ассур и создаёт царство в Верхней Месопотамии"
+    place: a874951
+    sources:
+      - "Assyrian King List § 39 (takes Ekallatum, three years later Assur; reigns 33 years)"
+      - "RIAo (Oracc), 'Samsi-Addu I' (c. 1808-1776 BC)"
+  - id: larsa-conquered
+    year: "c. 1763 BC"
+    title:
+      en: "Hammurabi conquers Larsa and defeats Rim-Sin"
+      ru: "Хаммурапи покоряет Ларсу и побеждает Рим-Сина"
+    site: "912897"
+    sources:
+      - "Year name of Hammurabi 31 ('destroyed the troops of Emutbal and subjugated its king Rim-Sin')"
+      - "CDLI Wiki, 'Rulers of Mesopotamia' (Rim-Sin of Larsa 1822-1763 BC)"
+  - id: hammurabi-laws
+    year: "c. 1754 BC"
+    title:
+      en: "Hammurabi has his laws inscribed on a stele"
+      ru: "Хаммурапи велит высечь свои законы на стеле"
+    sources:
+      - "The Code of Hammurabi (Louvre, Sb 8)"
+      - "M. T. Roth, Law Collections from Mesopotamia and Asia Minor (2nd ed., 1997)"
+  # --- Hittites, Mitanni, Assyria and Babylon, 1650-900 BC ---
+  - id: hattusili-i
+    year: "c. 1650 BC"
+    title:
+      en: "Hattusili I makes Hattusa the capital of the Hittite kingdom"
+      ru: "Хаттусили I делает Хаттусу столицей Хеттского царства"
+    site: "283602441"
+    sources:
+      - "T. Bryce, The Kingdom of the Hittites (new ed., 2005), ch. 4"
+  - id: thutmose-euphrates
+    year: "c. 1446 BC"
+    title:
+      en: "Thutmose III crosses the Euphrates against Mitanni"
+      ru: "Тутмос III переходит Евфрат, воюя с Митанни"
+    sources:
+      - "Annals of Thutmose III at Karnak, eighth campaign, year 33 (Breasted, Ancient Records of Egypt II, §§476 ff.)"
+      - "Encyclopaedia Britannica, 'Thutmose III' (reigned 1479-1425 BC)"
+  - id: ashur-uballit
+    year: "c. 1363 BC"
+    title:
+      en: "Ashur-uballit I becomes king: Assyria rises as a great power"
+      ru: "Ашшур-убаллит I становится царём: Ассирия выходит в число великих держав"
+    place: a874951
+    sources:
+      - "Amarna letters EA 15-16 (Ashur-uballit to the king of Egypt)"
+      - "RIAo (Oracc), 'Ashur-uballit I' (1363-1328 BC)"
+  # The literature puts the sack c. 1350-1340; the year is a point, hence "c.".
+  - id: washshukanni-sacked
+    year: "c. 1340 BC"
+    title:
+      en: "Suppiluliuma I sacks Washshukanni, the capital of Mitanni"
+      ru: "Суппилулиума I разоряет Вашшуканни, столицу Митанни"
+    sources:
+      - "Treaty of Suppiluliuma I with Shattiwaza (CTH 51)"
+      - "T. Bryce, The Kingdom of the Hittites (new ed., 2005), ch. 7"
+      - "Encyclopaedia Britannica, 'Suppiluliumas I' (the march around Mitanni and the blow at Washshukanni)"
+  # Bryce dates the fall to the year the widow of a pharaoh wrote to Suppiluliuma; with
+  # Tutankhamun as that pharaoh (Shaw: died 1327) it is c. 1327, with Akhenaten c. 1336-1334.
+  - id: carchemish-hittite
+    year: "c. 1327 BC"
+    title:
+      en: "Suppiluliuma I takes Carchemish"
+      ru: "Суппилулиума I берёт Кархемис"
+    place: af6c730
+    sources:
+      - "The Deeds of Suppiluliuma (CTH 40)"
+      - "T. Bryce, The Kingdom of the Hittites (new ed., 2005), ch. 7"
+  - id: hattusa-abandoned
+    year: "c. 1180 BC"
+    title:
+      en: "Hattusa is abandoned and burned: the end of the Hittite empire"
+      ru: "Хаттуса покинута и сожжена: конец Хеттской державы"
+    site: "283602441"
+    sources:
+      - "T. Bryce, The Kingdom of the Hittites (new ed., 2005), ch. 13"
+      - "Encyclopaedia Britannica, 'Boğazköy' (the city destroyed by fire c. 1190 BC)"
+  - id: nebuchadnezzar-i
+    year: "c. 1126 BC"
+    title:
+      en: "Nebuchadnezzar I, who brought Marduk's statue back from Elam, becomes king of Babylon"
+      ru: "Навуходоносор I, вернувший из Элама статую Мардука, становится царём Вавилона"
+    place: a217d18
+    sources:
+      - "CDLI Wiki, 'Rulers of Mesopotamia' (Nebuchadnezzar I 1126-1105 BC)"
+      - "Encyclopaedia Britannica, 'Nebuchadrezzar I' (the statue of Marduk brought back from Elam)"
+  - id: tiglath-pileser-i
+    year: "c. 1114 BC"
+    title:
+      en: "Tiglath-pileser I, who led Assyria's army to the Mediterranean, becomes king"
+      ru: "Тиглатпаласар I, дошедший с ассирийским войском до Средиземного моря, становится царём"
+    sources:
+      - "Inscriptions of Tiglath-pileser I (RIMA 2 A.0.87.3, line 16: in boats of the people of Arvad, a nahiru killed at sea)"
+      - "CDLI Wiki, 'Rulers of Mesopotamia' (Tiglath-pileser I 1114-1076 BC)"
+  - id: adad-nirari-ii
+    year: "911 BC"
+    title:
+      en: "Adad-nirari II becomes king of Assyria: the Neo-Assyrian period begins"
+      ru: "Адад-нирари II становится царём Ассирии: начало новоассирийского периода"
+    sources:
+      - "A. K. Grayson, RIMA 2 (1991), Adad-nirari II (911-891 BC)"
+      - "Assyrian Eponym List"
+  # --- Egypt, 2400-1650 BC ---
+  - id: pyramid-texts
+    year: "c. 2375 BC"
+    title:
+      en: "Unas, in whose pyramid the Pyramid Texts were first carved, becomes king"
+      ru: "Унас, в пирамиде которого впервые высечены «Тексты пирамид», восходит на престол"
+    sources:
+      - "J. P. Allen, The Ancient Egyptian Pyramid Texts (2005)"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Unas 2375-2345 BC)"
+  - id: old-kingdom-ends
+    year: "c. 2160 BC"
+    title:
+      en: "The Old Kingdom ends: Egypt splits among rival rulers"
+      ru: "Конец Древнего царства: Египет распадается между соперничающими правителями"
+    sources:
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), S. Seidlmayer, 'The First Intermediate Period'; chronology (First Intermediate Period 2160-2055 BC)"
+  - id: amenemhat-i
+    year: "c. 1985 BC"
+    title:
+      en: "Amenemhat I founds the Twelfth Dynasty"
+      ru: "Аменемхет I основывает XII династию"
+    sources:
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Amenemhat I 1985-1956 BC)"
+  # The scene is dated to year 6 of Senusret II (1877 + 5 in Shaw).
+  - id: beni-hasan-asiatics
+    year: "c. 1872 BC"
+    title:
+      en: "Khnumhotep II's tomb at Beni Hasan records the arrival of 37 Asiatics led by Abisha"
+      ru: "Гробница Хнумхотепа II в Бени-Хасане запечатлела прибытие 37 азиатов во главе с Абишей"
+    site: "112509596"
+    sources:
+      - "P. E. Newberry, Beni Hasan I (1893), pls. 28, 30-31 (dated year 6 of Senusret II)"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Senusret II 1877-1870 BC)"
+  # Sethe's Berlin bowls (c. 20th century BC) and Posener's figurines (Senusret III,
+  # late 19th - early 18th century) both name Rushalimum; 1850 is a midpoint, hence "c.".
+  - id: execration-texts-jerusalem
+    year: "c. 1850 BC"
+    title:
+      en: "Egyptian execration texts name Jerusalem (Rushalimum)"
+      ru: "Египетские тексты проклятий называют Иерусалим (Рушалимум)"
+    place: a15257a
+    sources:
+      - "K. Sethe, Die Ächtung feindlicher Fürsten (1926)"
+      - "G. Posener, Princes et pays d'Asie et de Nubie (1940)"
+  - id: hyksos-rule
+    year: "c. 1650 BC"
+    title:
+      en: "The Hyksos take power in Lower Egypt and rule from Avaris"
+      ru: "Гиксосы приходят к власти в Нижнем Египте; их столица — Аварис"
+    sources:
+      - "Manetho, in Josephus, Against Apion 1.75-90"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), J. Bourriau, 'The Second Intermediate Period'; chronology (15th Dynasty 1650-1550 BC)"
+  # --- Egypt, New Kingdom, 1550-1069 BC ---
+  - id: hatshepsut
+    year: "c. 1473 BC"
+    title:
+      en: "Hatshepsut takes the titles of king"
+      ru: "Хатшепсут принимает царский титул"
+    sources:
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Hatshepsut 1473-1458 BC)"
+  - id: amenhotep-iii
+    year: "c. 1390 BC"
+    title:
+      en: "Amenhotep III becomes king of Egypt"
+      ru: "Аменхотеп III восходит на престол Египта"
+    sources:
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Amenhotep III 1390-1352 BC)"
+  # The Restoration Stela is dated year 1 or 4 (damaged), so the title does not put
+  # the restoration at the accession.
+  - id: tutankhamun
+    year: "c. 1336 BC"
+    title:
+      en: "Tutankhamun becomes king; under him the old gods are restored"
+      ru: "Тутанхамон восходит на престол; при нём почитание прежних богов восстановлено"
+    sources:
+      - "The Restoration Stela of Tutankhamun (Egyptian Museum, Cairo, CG 34183)"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Tutankhamun 1336-1327 BC)"
+  - id: seti-beth-shan
+    year: "c. 1294 BC"
+    title:
+      en: "Seti I campaigns in Canaan and sets up a victory stele at Beth-shan"
+      ru: "Сети I совершает поход в Ханаан и ставит победную стелу в Беф-Сане"
+    place: a2a8df0
+    sources:
+      - "The first Beth-shan stele of Seti I, year 1 (Rockefeller Archaeological Museum, Jerusalem, S.884)"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Seti I 1294-1279 BC)"
+  - id: ramesses-ii
+    year: "c. 1279 BC"
+    title:
+      en: "Ramesses II becomes king of Egypt"
+      ru: "Рамсес II восходит на престол Египта"
+    sources:
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Ramesses II 1279-1213 BC)"
+  - id: tomb-workers-strike
+    year: "c. 1156 BC"
+    title:
+      en: "The workmen of the royal tombs at Thebes strike over unpaid rations"
+      ru: "Мастера царских гробниц в Фивах (Но) бастуют из-за невыданного пайка"
+    place: a9674fc
+    sources:
+      - "The Turin Strike Papyrus (Turin, Cat. 1880), year 29 of Ramesses III"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Ramesses III 1184-1153 BC)"
+  # --- Egypt and Kush, 945-570 BC ---
+  - id: shoshenq-dynasty
+    year: "c. 945 BC"
+    title:
+      en: "Shoshenq I (Shishak) founds the Twenty-second Dynasty"
+      ru: "Шешонк I (Сусаким) основывает XXII династию"
+    sources:
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), J. Taylor, 'The Third Intermediate Period'; chronology (Shoshenq I 945-924 BC)"
+  - id: piye-conquest
+    year: "c. 728 BC"
+    title:
+      en: "Piye of Kush conquers Egypt and takes Memphis"
+      ru: "Пианхи (Пийе), царь Куша, покоряет Египет и берёт Мемфис"
+    place: a8ec269
+    sources:
+      - "The victory stela of Piye, dated year 21, recording the campaign of year 20 (Egyptian Museum, Cairo, JE 48862)"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Piye 747-716 BC)"
+  # 2 Kgs 19:9 names Tirhakah in 701, before his accession (a known crux), so the
+  # verse is not cited for the year; the Russian gives the Synodal name with the usual one.
+  - id: taharqa
+    year: "c. 690 BC"
+    title:
+      en: "Taharqa (Tirhakah) becomes king of Egypt and Kush"
+      ru: "Тиргак (Тахарка) становится царём Египта и Куша"
+    sources:
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Taharqo 690-664 BC)"
+  - id: psamtik-i
+    year: "664 BC"
+    title:
+      en: "Psamtik I founds the Twenty-sixth (Saite) Dynasty"
+      ru: "Псамметих I основывает XXVI (Саисскую) династию"
+    sources:
+      - "Herodotus 2.151-157"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Psamtek I 664-610 BC)"
+  - id: necho-ii
+    year: "610 BC"
+    title:
+      en: "Necho II becomes king of Egypt"
+      ru: "Нехао II становится царём Египта"
+    sources:
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Nekau II 610-595 BC)"
+  - id: babylon-egypt-clash
+    year: "601 BC"
+    title:
+      en: "Nebuchadnezzar and the Egyptians fight a bloody battle on Egypt's border"
+      ru: "Навуходоносор и египтяне сходятся в кровопролитной битве у границ Египта"
+    sources:
+      - "Babylonian Chronicle, ABC 5 rev. 5'-7' (the fourth year of Nebuchadnezzar)"
+  - id: apries-overthrown
+    year: "570 BC"
+    title:
+      en: "Amasis overthrows Apries (Hophra)"
+      ru: "Амасис свергает Вафрия (Априя)"
+    sources:
+      - "Herodotus 2.161-169"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Apries 589-570 BC)"
+      - "Jer 44:30 (names Pharaoh Hophra)"
+  # --- Israel, Judah and Aram, 900-580 BC ---
+  # The Tel Dan stele credits an Aramean king with killing Joram and Ahaziah, 2 Kings
+  # credits Jehu: the title says only that Jehu took the throne.
+  - id: jehu-revolt
+    year: "841 BC"
+    title:
+      en: "Jehu seizes the throne of Israel at Jezreel"
+      ru: "Ииуй захватывает престол Израиля в Изрееле"
+    place: ae0bf4a
+    ref: 2Kgs.9.21-2Kgs.9.24
+    sources:
+      - "2 Kgs 9:14-10:17; Thiele's chronology"
+      - "Black Obelisk of Shalmaneser III (Jehu's tribute in 841 BC)"
+  # Usually ascribed to Hazael (c. 842-806), so after 841; some put it c. 796 under
+  # Ben-hadad. The title names neither the king nor whom the stele says he killed.
+  - id: tel-dan-stele
+    year: "c. 840 BC"
+    title:
+      en: "An Aramean king's stele at Dan names the house of David"
+      ru: "Стела арамейского царя в Дане называет «дом Давидов»"
+    place: a513646
+    sources:
+      - "A. Biran and J. Naveh, 'An Aramaic Stele Fragment from Tel Dan', Israel Exploration Journal 43 (1993); 'The Tel Dan Inscription: A New Fragment', IEJ 45 (1995)"
+  - id: ahaz-tribute
+    year: "c. 734 BC"
+    title:
+      en: "Ahaz of Judah pays tribute to Tiglath-pileser III"
+      ru: "Ахаз, царь Иудейский, платит дань Феглаффелласару (Тиглатпаласару III)"
+    ref: 2Kgs.16.7-2Kgs.16.8
+    sources:
+      - "2 Kgs 16:7-8"
+      - "Summary Inscription of Tiglath-pileser III (RINAP 1, Tiglath-pileser III 47 rev. 11': Jehoahaz of Judah)"
+  - id: galilee-deported
+    year: "c. 733 BC"
+    title:
+      en: "Tiglath-pileser III takes Hazor and Galilee and deports their people to Assyria"
+      ru: "Феглаффелласар (Тиглатпаласар III) берёт Асор и Галилею и уводит жителей в Ассирию"
+    place: a6f33c5
+    ref: 2Kgs.15.29
+    sources:
+      - "2 Kgs 15:29"
+      - "Annals of Tiglath-pileser III (RINAP 1, Tiglath-pileser III 21 lines 1'-11'; 22 lines 1'-7': the districts of Bit-Humri; Hazor is named only in 2 Kings)"
+  - id: siloam-tunnel
+    year: "c. 700 BC"
+    title:
+      en: "Hezekiah's tunnel brings the waters of Gihon into the city (the Siloam inscription)"
+      ru: "Тоннель Езекии подводит воды Гиона в город (Силоамская надпись)"
+    place: a2a303c
+    ref: 2Chr.32.30
+    sources:
+      - "2 Kgs 20:20; 2 Chr 32:30"
+      - "The Siloam inscription (Istanbul Archaeology Museums; KAI 189)"
+      - "A. Frumkin, A. Shimron, J. Rosenbaum, 'Radiometric dating of the Siloam Tunnel, Jerusalem', Nature 425 (2003)"
+  - id: jeremiah-called
+    year: "c. 627 BC"
+    title:
+      en: "Jeremiah is called to be a prophet"
+      ru: "Иеремия призван на пророческое служение"
+    ref: Jer.1.4-Jer.1.10
+    sources:
+      - "Jer 1:2 (the thirteenth year of Josiah); Thiele's chronology (Josiah 640-609 BC)"
+  - id: josiah-reform
+    year: "c. 622 BC"
+    title:
+      en: "The book of the law is found in the Temple; Josiah's reform"
+      ru: "В Храме найдена книга закона; преобразования Иосии"
+    place: a15257a
+    ref: 2Kgs.22.8-2Kgs.22.11
+    sources:
+      - "2 Kgs 22:3-23:25 (the eighteenth year of Josiah); Thiele's chronology"
+  - id: ketef-hinnom
+    year: "c. 600 BC"
+    title:
+      en: "Silver amulets from Ketef Hinnom carry the priestly blessing, the oldest known text of the Bible"
+      ru: "На серебряных амулетах из Кетеф-Хинном записано священническое благословение — древнейший известный библейский текст"
+    place: a15257a
+    sources:
+      - "Num 6:24-26"
+      - "G. Barkay et al., 'The Amulets from Ketef Hinnom: A New Edition and Evaluation', BASOR 334 (2004)"
+  - id: ezekiel-called
+    year: "c. 593 BC"
+    title:
+      en: "Ezekiel sees his first vision by the river Chebar"
+      ru: "Иезекииль видит первое видение при реке Ховаре"
+    place: a3d2f0a
+    ref: Ezek.1.1-Ezek.1.3
+    sources:
+      - "Ezek 1:1-3 (the fifth year of King Jehoiachin's captivity)"
+  - id: third-deportation
+    year: "c. 582 BC"
+    title:
+      en: "Nebuzaradan carries 745 more Judeans into exile"
+      ru: "Навузардан уводит в плен ещё 745 иудеев"
+    ref: Jer.52.30
+    sources:
+      - "Jer 52:30 (the twenty-third year of Nebuchadnezzar)"
+  # --- Assyria, 722-610 BC ---
+  - id: sargon-ii
+    year: "722 BC"
+    title:
+      en: "Sargon II becomes king of Assyria"
+      ru: "Саргон II становится царём Ассирии"
+    sources:
+      - "Babylonian Chronicle, ABC 1 i 31"
+      - "Isa 20:1 (names Sargon)"
+  - id: merodach-baladan
+    year: "721 BC"
+    title:
+      en: "Merodach-baladan takes the throne of Babylon"
+      ru: "Меродах Валадан занимает престол Вавилона"
+    place: a217d18
+    sources:
+      - "Babylonian Chronicle, ABC 1 i 32"
+      - "Isa 39:1 (names Merodach-baladan)"
+  - id: raphia
+    year: "720 BC"
+    title:
+      en: "Sargon II defeats Hanunu of Gaza and the Egyptians at Raphia"
+      ru: "Саргон II разбивает Хануну, царя Газы, и египтян при Рафии"
+    sources:
+      - "Khorsabad Annals of Sargon II, second regnal year (RINAP 2, Sargon II 1, lines 53-57)"
+      - "Great Display Inscription of Sargon II (RINAP 2, Sargon II 7, lines 25b-26)"
+  - id: carchemish-annexed
+    year: "717 BC"
+    title:
+      en: "Sargon II annexes Carchemish"
+      ru: "Саргон II присоединяет Кархемис к Ассирии"
+    place: af6c730
+    sources:
+      - "Khorsabad Annals of Sargon II, fifth regnal year (RINAP 2, Sargon II 1, lines 72-76)"
+      - "Isa 10:9"
+  - id: urartu-campaign
+    year: "714 BC"
+    title:
+      en: "Sargon II defeats Rusa of Urartu (Ararat)"
+      ru: "Саргон II побеждает Русу, царя Урарту (Арарата)"
+    sources:
+      - "Sargon's Letter to Ashur, the eighth campaign (RINAP 2, Sargon II 65; TCL 3; line 430: in the eponymy of Ishtar-duri, 714 BC)"
+      - "Eponym Chronicle for 714 BC"
+  - id: sargon-ii-dies
+    year: "705 BC"
+    title:
+      en: "Sargon II falls in battle; Sennacherib becomes king"
+      ru: "Саргон II гибнет в бою; царём становится Сеннахирим"
+    sources:
+      - "Eponym Chronicle for 705 BC"
+  - id: babylon-destroyed-689
+    year: "689 BC"
+    title:
+      en: "Sennacherib destroys Babylon"
+      ru: "Сеннахирим разрушает Вавилон"
+    place: a217d18
+    sources:
+      - "Bavian inscription of Sennacherib (RINAP 3, Sennacherib 223, lines 43-54)"
+      - "Babylonian Chronicle, ABC 1 iii 22-24"
+  # Where he was killed is debated (a temple at Nineveh is usually named), and 2 Kings
+  # names two sons where the chronicle has one: neither place nor killer is named.
+  - id: sennacherib-murdered
+    year: "681 BC"
+    title:
+      en: "Sennacherib is murdered; Esarhaddon becomes king"
+      ru: "Сеннахирим убит; царём становится Асардан"
+    ref: 2Kgs.19.37
+    sources:
+      - "2 Kgs 19:37"
+      - "Babylonian Chronicle, ABC 1 iii 34-38 (20 Tebet: killed by his son in a rebellion; 18 Adar: Esarhaddon ascends the throne)"
+  - id: ashurbanipal
+    year: "669 BC"
+    title:
+      en: "Ashurbanipal becomes king of Assyria"
+      ru: "Ашшурбанапал становится царём Ассирии"
+    sources:
+      - "Babylonian Chronicle, ABC 1 iv 30-33 (Esarhaddon dies on campaign in Arahsamnu)"
+  - id: babylon-648
+    year: "648 BC"
+    title:
+      en: "Ashurbanipal takes Babylon after the revolt of his brother Shamash-shum-ukin"
+      ru: "Ашшурбанапал берёт Вавилон после мятежа своего брата Шамаш-шум-укина"
+    place: a217d18
+    sources:
+      - "Prism A of Ashurbanipal (RINAP 5, Ashurbanipal 11 iii 128-iv 109)"
+  - id: susa-sacked
+    year: "c. 646 BC"
+    title:
+      en: "Ashurbanipal sacks Susa"
+      ru: "Ашшурбанапал разоряет Сузы"
+    place: a033b84
+    sources:
+      - "Prism A of Ashurbanipal (RINAP 5, Ashurbanipal 11 v 126-vi 106)"
+  - id: assur-falls
+    year: "614 BC"
+    title:
+      en: "The Medes take Assur"
+      ru: "Мидяне берут Ассур"
+    place: a874951
+    sources:
+      - "Babylonian Chronicle, ABC 3 lines 24-30 (the twelfth year of Nabopolassar; line numbers as in C. J. Gadd, The Fall of Nineveh, 1923)"
+  - id: harran-falls
+    year: "c. 610 BC"
+    title:
+      en: "The Babylonians and the Medes take Harran from the last Assyrian king"
+      ru: "Вавилоняне и мидяне отнимают Харран у последнего ассирийского царя"
+    place: a6d9af3
+    sources:
+      - "Babylonian Chronicle, ABC 3 lines 58-65 (the sixteenth year of Nabopolassar; line numbers as in C. J. Gadd, The Fall of Nineveh, 1923)"
+  # --- Babylon, Media and Persia, 605-518 BC ---
+  - id: nebuchadnezzar-ii
+    year: "605 BC"
+    title:
+      en: "Nebuchadnezzar II becomes king of Babylon"
+      ru: "Навуходоносор II становится царём Вавилона"
+    place: a217d18
+    sources:
+      - "Babylonian Chronicle, ABC 5 obv. 10-11 (1 Ulul, 605 BC)"
+  - id: ashkelon-destroyed
+    year: "604 BC"
+    title:
+      en: "Nebuchadnezzar takes and destroys Ashkelon"
+      ru: "Навуходоносор берёт и разрушает Аскалон"
+    place: ac87d4c
+    sources:
+      - "Babylonian Chronicle, ABC 5 obv. 18-20 (Kislev of his first year)"
+      - "L. E. Stager, 'The Fury of Babylon: Ashkelon and the Archaeology of Destruction', Biblical Archaeology Review 22.1 (1996)"
+  # c. 575 is the conventional date; an archaeomagnetic study of its bricks gives a best
+  # fit of 569 (Di Chiara et al. 2024), still within "c.".
+  - id: ishtar-gate
+    year: "c. 575 BC"
+    title:
+      en: "Nebuchadnezzar builds the Ishtar Gate of Babylon"
+      ru: "Навуходоносор возводит в Вавилоне ворота Иштар"
+    place: a217d18
+    sources:
+      - "R. Koldewey, Das Ischtar-Tor in Babylon (1918)"
+      - "Staatliche Museen zu Berlin, Pergamonmuseum, the Ishtar Gate"
+      - "A. Di Chiara et al., 'An archaeomagnetic study of the Ishtar Gate, Babylon', PLOS ONE 19(1) (2024), e0293014"
+  - id: halys-eclipse
+    year: "585 BC"
+    title:
+      en: "A solar eclipse halts the battle of the Medes and the Lydians"
+      ru: "Солнечное затмение останавливает битву мидян и лидийцев"
+    sources:
+      - "Herodotus 1.74"
+      - "NASA Eclipse Web Site (F. Espenak): the total solar eclipse of -584 May 28 (= 28 May 585 BC)"
+  - id: nabonidus
+    year: "556 BC"
+    title:
+      en: "Nabonidus becomes king of Babylon"
+      ru: "Набонид становится царём Вавилона"
+    place: a217d18
+    sources:
+      - "R. A. Parker and W. H. Dubberstein, Babylonian Chronology 626 B.C.-A.D. 75 (1956)"
+      - "P.-A. Beaulieu, The Reign of Nabonidus, King of Babylon 556-539 B.C. (1989)"
+  - id: cyrus-anshan
+    year: "559 BC"
+    title:
+      en: "Cyrus II becomes king of Anshan"
+      ru: "Кир II становится царём Аншана"
+    site: "Q569107"
+    sources:
+      - "Herodotus 1.214 (Cyrus reigned twenty-nine years)"
+      - "Cyrus Cylinder, ll. 12, 21 (Cyrus, king of Anshan; son of Cambyses, king of Anshan)"
+      - "Nabonidus Chronicle (ABC 7) ii 1 (Cyrus, king of Anshan)"
+  # 547 rests on reading the damaged land name in ABC 7 ii 16 as Lydia; Oelsner and
+  # Rollinger read Urartu, and 542/541 or a date after 539 is also held: hence "c.".
+  - id: sardis-taken
+    year: "c. 547 BC"
+    title:
+      en: "Cyrus defeats Croesus and takes Sardis"
+      ru: "Кир побеждает Креза и берёт Сардис"
+    place: aab4a5f
+    sources:
+      - "Herodotus 1.76-84"
+      - "Nabonidus Chronicle (ABC 7) ii 15-18 (the ninth year of Nabonidus; the land's name is damaged)"
+  - id: cyrus-dies
+    year: "530 BC"
+    title:
+      en: "Cyrus the Great dies; Cambyses becomes king"
+      ru: "Смерть Кира Великого; царём становится Камбиз"
+    sources:
+      - "Herodotus 1.214"
+      - "R. A. Parker and W. H. Dubberstein, Babylonian Chronology 626 B.C.-A.D. 75 (1956)"
+  - id: temple-work-resumes
+    year: "520 BC"
+    title:
+      en: "Haggai and Zechariah urge the rebuilding of the Temple; the work resumes"
+      ru: "Аггей и Захария призывают отстроить Храм; работы возобновляются"
+    place: a15257a
+    ref: Ezra.5.1-Ezra.5.2
+    sources:
+      - "Hag 1:1, 1:14-15 (the second year of Darius); Zech 1:1; Ezra 5:1-2"
+  - id: behistun
+    year: "c. 520 BC"
+    title:
+      en: "Darius I has his deeds carved on the cliff at Behistun"
+      ru: "Дарий I велит высечь рассказ о своих деяниях на Бехистунской скале"
+    site: "903002"
+    sources:
+      - "R. Schmitt, 'Bisotun iii. Darius's Inscriptions', Encyclopaedia Iranica"
+  - id: persepolis-begun
+    year: "c. 518 BC"
+    title:
+      en: "Darius I begins building Persepolis"
+      ru: "Дарий I начинает строить Персеполь"
+    site: "922695"
+    sources:
+      - "A. Sh. Shahbazi, 'Persepolis', Encyclopaedia Iranica"
+  # 539 BC - AD 500, added 2026-10-02: 78 events that fill the gaps between the ones
+  # already listed (Cyrus, the Second Temple, Alexander's death, the Maccabees, Herod,
+  # the councils). Persian and Greek years after Herodotus, Thucydides and Xenophon as
+  # dated by Livius.org and Encyclopaedia Iranica; Egypt as in Shaw (ed.), Oxford History
+  # of Ancient Egypt (2000); Seleucid-era years of 1 Maccabees counted from spring 311
+  # (Nisan reckoning); Josephus in Niese's section numbers; Roman years consular.
+  # Each event was drafted, then checked against a second, independent opened page
+  # (Livius.org, Iranica, the Catholic Encyclopedia, Encyclopaedia Judaica, LacusCurtius;
+  # Britannica refused automated access). Places are OpenBible points only; a battle
+  # without its own point has none.
+  # --- Persia and the Greeks, 498-338 BC ---
+  - id: ionian-revolt-sardis
+    year: "498 BC"
+    title:
+      en: "The Ionians, with Athenian and Eretrian help, burn Sardis"
+      ru: "Ионийцы с помощью афинян и эретрийцев сжигают Сардис"
+    place: aab4a5f
+    sources:
+      - "Herodotus 5.99-102"
+      - "Encyclopaedia Iranica, 'Ionian Revolt' (the Athenian and Eretrian ships arrive early in 498; the attack on Sardis)"
+  # The card shows the Synodal name Милит (Acts 20:15), so the Russian names both.
+  - id: miletus-falls
+    year: "494 BC"
+    title:
+      en: "The Persians take Miletus: the Ionian revolt is crushed"
+      ru: "Персы берут Милит (Милет): Ионийское восстание подавлено"
+    place: a55027d
+    sources:
+      - "Herodotus 6.6-21"
+      - "Livius.org, 'Lade (494 BCE)' (the Ionian defeat off Lade; Miletus captured soon after)"
+  - id: marathon
+    year: "490 BC"
+    title:
+      en: "The Athenians defeat the Persians at Marathon"
+      ru: "Афиняне разбивают персов при Марафоне"
+    sources:
+      - "Herodotus 6.102-117"
+      - "Livius.org, 'Marathon (490 BCE)'"
+  - id: thermopylae
+    year: "480 BC"
+    title:
+      en: "Leonidas, his Spartans and the Thespians fall at Thermopylae"
+      ru: "Леонид со спартанцами и феспийцами гибнет при Фермопилах"
+    sources:
+      - "Herodotus 7.201-233"
+      - "Livius.org, 'Thermopylae (480 BCE)' (Leonidas, 300 Spartiates and 700 Thespians fell)"
+  - id: athens-burned-480
+    year: "480 BC"
+    title:
+      en: "Xerxes takes Athens and burns the Acropolis"
+      ru: "Ксеркс берёт Афины и сжигает Акрополь"
+    place: a1fe6e7
+    sources:
+      - "Herodotus 8.50-55 (the Acropolis taken and burned, 8.52-53)"
+      - "Livius.org, 'Salamis (480 BCE)' (Xerxes captures Athens in the last days of September 480)"
+  # Not the Salamis of Acts 13:5 (Cyprus, afa863b): the island off Attica, no point.
+  - id: salamis
+    year: "480 BC"
+    title:
+      en: "The Greek fleet defeats Xerxes at Salamis"
+      ru: "Греческий флот разбивает Ксеркса при Саламине"
+    sources:
+      - "Herodotus 8.83-96"
+      - "Aeschylus, The Persians"
+      - "Livius.org, 'Salamis (480 BCE)' (29 September 480)"
+  # 25 November 407 in Porten's conversion; older works give 408. A second appeal: the
+  # letter says an earlier one went unanswered. Bagohi also names the sons of Sanballat
+  # (Neh 2:10) in Samaria. Elephantine faces Syene (a8a6a5b) but has no point of its own.
+  - id: elephantine-petition
+    year: "407 BC"
+    title:
+      en: "The Jews of Elephantine petition Bagohi, governor of Judea, to rebuild their temple"
+      ru: "Иудеи Элефантины просят Багохи, правителя Иудеи, о восстановлении своего храма"
+    sources:
+      - "Elephantine papyri, TAD A4.7 (Cowley 30): 20 Marheshwan, year 17 of Darius II"
+      - "Encyclopaedia Judaica, 'Bagohi' (Jewish Virtual Library) (governor of Judah; the Elephantine Jews ask his help to rebuild their temple)"
+  # Upper Egypt still dated by Artaxerxes II in 401, so the break was gradual: "c.".
+  - id: egypt-revolts-404
+    year: "c. 404 BC"
+    title:
+      en: "Egypt breaks away from Persia under Amyrtaeus"
+      ru: "Египет при Амиртее отпадает от Персии"
+    sources:
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (28th Dynasty: Amyrtaios 404-399 BC)"
+      - "Encyclopaedia Iranica, 'Amyrtaeus' (king of Egypt from 404; Elephantine still dated by Artaxerxes II in 401)"
+  - id: cunaxa
+    year: "401 BC"
+    title:
+      en: "Artaxerxes II defeats his brother Cyrus the Younger at Cunaxa"
+      ru: "Артаксеркс II разбивает своего брата Кира Младшего при Кунаксе"
+    sources:
+      - "Xenophon, Anabasis 1.8-10"
+      - "Plutarch, Artaxerxes 7-13"
+      - "Encyclopaedia Iranica, 'Cunaxa' (3 September 401 BC)"
+  # Diodorus puts the campaign under 351/350; modern works give 343 or 342: "c.".
+  - id: artaxerxes-iii-egypt
+    year: "c. 343 BC"
+    title:
+      en: "Artaxerxes III reconquers Egypt"
+      ru: "Артаксеркс III вновь покоряет Египет"
+    sources:
+      - "Diodorus 16.40-51"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Second Persian Period 343-332 BC)"
+      - "Encyclopaedia Iranica, 'Artaxerxes III' (the reconquest achieved by 343)"
+  - id: chaeronea
+    year: "338 BC"
+    title:
+      en: "Philip II of Macedon defeats Athens and Thebes at Chaeronea"
+      ru: "Филипп II Македонский разбивает афинян и фиванцев при Херонее"
+    sources:
+      - "Diodorus 16.84-88 (the battle 16.85-86)"
+      - "Livius.org, 'Chaeronea (338 BCE)' (August 338)"
+  # --- Alexander, 336-326 BC ---
+  - id: alexander-king
+    year: "336 BC"
+    title:
+      en: "Philip II is murdered; Alexander becomes king of Macedon"
+      ru: "Филипп II убит; Александр становится царём Македонии"
+    sources:
+      - "Diodorus 16.91-95; 17.2"
+      - "Arrian, Anabasis 1.1.1"
+      - "Livius.org, 'Darius III Codomannus' (336, October: murder of Philip; accession of Alexander)"
+  - id: granicus
+    year: "334 BC"
+    title:
+      en: "Alexander defeats the Persians at the river Granicus"
+      ru: "Александр разбивает персов на реке Граник"
+    sources:
+      - "Arrian, Anabasis 1.13-16"
+      - "Livius.org, 'Granicus (334 BCE)'"
+  - id: issus
+    year: "333 BC"
+    title:
+      en: "Alexander defeats Darius III at Issus"
+      ru: "Александр разбивает Дария III при Иссе"
+    sources:
+      - "Arrian, Anabasis 2.6-11"
+      - "Livius.org, 'Issus (333 BCE)' (5 or 6 November 333)"
+  - id: gaugamela
+    year: "331 BC"
+    title:
+      en: "Alexander defeats Darius III at Gaugamela"
+      ru: "Александр разбивает Дария III при Гавгамелах"
+    sources:
+      - "Arrian, Anabasis 3.8-15"
+      - "Babylonian Astronomical Diary AD -330 (the lunar eclipse eleven days before the battle; the battle itself)"
+      - "Livius.org, 'Gaugamela (331 BCE)' (1 October 331)"
+  # Persepolis is not an OpenBible place.
+  - id: persepolis-burned
+    year: "330 BC"
+    title:
+      en: "Alexander burns the palaces of Persepolis"
+      ru: "Александр сжигает дворцы Персеполя"
+    site: "922695"
+    sources:
+      - "Arrian, Anabasis 3.18.10-12"
+      - "Diodorus 17.70-72"
+      - "Livius.org, 'Persepolis' (taken early in 330; palace buildings destroyed in April 330)"
+  # Not "the empire ends": Bessus went on to reign as Artaxerxes V.
+  - id: darius-iii-dies
+    year: "330 BC"
+    title:
+      en: "Bessus murders Darius III as Alexander closes in"
+      ru: "Бесс убивает Дария III, настигаемого Александром"
+    sources:
+      - "Arrian, Anabasis 3.21-22"
+      - "Livius.org, 'Darius III Codomannus' (330, July: death of Darius III; Bessus king)"
+  - id: hydaspes
+    year: "326 BC"
+    title:
+      en: "Alexander defeats Porus at the river Hydaspes"
+      ru: "Александр побеждает Пора на реке Гидасп"
+    sources:
+      - "Arrian, Anabasis 5.8-19"
+      - "Livius.org, 'Hydaspes (326 BCE)' (May 326)"
+  # --- The successors and Rome, 312-133 BC ---
+  - id: gaza-312
+    year: "312 BC"
+    title:
+      en: "Ptolemy and Seleucus defeat Demetrius at Gaza"
+      ru: "Птолемей и Селевк разбивают Деметрия при Газе"
+    place: aa8edd2
+    sources:
+      - "Diodorus 19.80-85"
+      - "Livius.org, 'Seleucus I Nicator' (312: the battle of Gaza)"
+  - id: ipsus
+    year: "301 BC"
+    title:
+      en: "The allied kings defeat Antigonus at Ipsus; Alexander's empire breaks up for good"
+      ru: "Союзные цари разбивают Антигона при Ипсе; держава Александра окончательно распадается"
+    sources:
+      - "Plutarch, Demetrius 28-30"
+      - "Livius.org, 'The battle of Ipsus' (301; Antigonus and Demetrius defeated by Lysimachus, Cassander and Seleucus)"
+  # The crossing is put in 278 or 277; no single place (they crossed at Byzantium and
+  # the Hellespont).
+  - id: galatians-asia
+    year: "c. 278 BC"
+    title:
+      en: "The Galatians (Celts) cross into Asia Minor"
+      ru: "Галаты (кельты) переправляются в Малую Азию"
+    sources:
+      - "Livy 38.16 (Leonnorius and Lutarius)"
+      - "Livius.org, 'Ancyra (Ankara)' (the Galatian tribes had crossed into Asia in the years before 275)"
+  # Raphia is not an OpenBible place.
+  - id: raphia-217
+    year: "217 BC"
+    title:
+      en: "Ptolemy IV defeats Antiochus III at Raphia"
+      ru: "Птолемей IV разбивает Антиоха III при Рафии"
+    sources:
+      - "Polybius 5.79-86"
+      - "Livius.org, 'Antiochus III the Great' (217, June: the Seleucid army defeated at Raphia)"
+  # The decree was passed at Memphis after the coronation; the stone was found at Rosetta.
+  - id: rosetta-decree
+    year: "196 BC"
+    title:
+      en: "The priests at Memphis decree honours for Ptolemy V (the Rosetta Stone)"
+      ru: "Жрецы в Мемфисе издают указ в честь Птолемея V (Розеттский камень)"
+    place: a8ec269
+    sources:
+      - "The Rosetta Stone (British Museum, EA 24; OGIS 90): 4 Xandikos = 18 Mekhir, year 9 of Ptolemy V"
+      - "Livius.org, 'Ptolemy V Epiphanes' (March 196: coronation at Memphis; the priests' decree known from the Rosetta Stone)"
+  # Livy has winter coming on (37.39): December 190 or January 189 in the Julian
+  # calendar, hence "c.".
+  - id: magnesia
+    year: "c. 190 BC"
+    title:
+      en: "The Romans defeat Antiochus III at Magnesia"
+      ru: "Римляне разбивают Антиоха III при Магнесии"
+    sources:
+      - "Livy 37.37-44"
+      - "Appian, Syrian Wars 30-36"
+      - "Livius.org, 'Antiochus III the Great' (190: the battle of Magnesia)"
+  - id: pydna
+    year: "168 BC"
+    title:
+      en: "The Romans defeat Perseus of Macedon at Pydna"
+      ru: "Римляне разбивают Персея Македонского при Пидне"
+    sources:
+      - "Livy 44.36-42"
+      - "1 Macc 8:5 (Perseus, king of the Kittim)"
+      - "Livius.org, 'Pydna (168 BCE)' (22 June 168)"
+  # Carthage is in the data build though no verse names it.
+  - id: carthage-destroyed
+    year: "146 BC"
+    title:
+      en: "The Romans destroy Carthage"
+      ru: "Римляне разрушают Карфаген"
+    place: aa56bd1
+    sources:
+      - "Appian, Punic Wars 127-135"
+      - "Livius.org, 'Punic Carthage' (sacked by the Romans in 146 BCE)"
+  - id: corinth-destroyed
+    year: "146 BC"
+    title:
+      en: "The Romans destroy Corinth"
+      ru: "Римляне разрушают Коринф"
+    place: a6f437a
+    sources:
+      - "Pausanias 7.16.7-10"
+      - "Livius.org, 'Corinth' (146 BCE: the Romans sack Corinth)"
+  - id: pergamum-bequeathed
+    year: "133 BC"
+    title:
+      en: "Attalus III bequeaths the kingdom of Pergamum to Rome"
+      ru: "Аттал III завещает Пергамское царство Риму"
+    place: a75d2c1
+    sources:
+      - "Strabo 13.4.2"
+      - "Livius.org, 'Pergamon' (133: Attalus III bequeaths his realm to Rome)"
+  # --- The Maccabees and the Hasmoneans, 175-54 BC ---
+  # Jason was high priest c. 175-172; 1 Maccabees tells of the gymnasium without his name.
+  - id: jason-gymnasium
+    year: "c. 175 BC"
+    title:
+      en: "The high priest Jason builds a gymnasium in Jerusalem"
+      ru: "Первосвященник Иасон устраивает в Иерусалиме гимнасий"
+    place: a15257a
+    ref: 2Macc.4.7-2Macc.4.15
+    sources:
+      - "2 Macc 4:7-15; cf. 1 Macc 1:11-15"
+  # At Eleusis outside Alexandria, which is not an OpenBible place.
+  - id: eleusis-168
+    year: "168 BC"
+    title:
+      en: "The Roman envoy Popillius Laenas makes Antiochus IV withdraw from Egypt"
+      ru: "Римский посол Попилий Ленат вынуждает Антиоха IV уйти из Египта"
+    sources:
+      - "Polybius 29.27"
+      - "Livy 45.12"
+      - "Livius.org, 'Antiochus IV Epiphanes' (168: Roman pressure forces Antiochus to leave Egypt)"
+  # 1 Macc 6:16 gives year 149 and the Babylonian list Kislev 148: the two count the
+  # Seleucid era from different starts, both giving late 164. He died at Tabae in Persis.
+  - id: antiochus-iv-dies
+    year: "164 BC"
+    title:
+      en: "Antiochus IV Epiphanes dies on campaign in the east"
+      ru: "Антиох IV Епифан умирает в походе на восток"
+    ref: 1Macc.6.1-1Macc.6.16
+    sources:
+      - "1 Macc 6:1-16"
+      - "Babylonian king list of the Hellenistic period (BM 35603): Kislev, year 148 of the Seleucids"
+      - "Livius.org, 'Antiochus IV Epiphanes' (November/December 164: death)"
+  # 1 Maccabees gives no year; told after Nicanor's defeat and before Judas' death.
+  - id: rome-treaty-161
+    year: "c. 161 BC"
+    title:
+      en: "Judas Maccabeus makes a treaty of friendship with Rome"
+      ru: "Иуда Маккавей заключает договор о дружбе с Римом"
+    place: afc8e7a
+    ref: 1Macc.8.17-1Macc.8.32
+    sources:
+      - "1 Macc 8:17-32"
+      - "Josephus, Antiquities 12.414-419 (the first league between the Romans and the Jews)"
+  # At Elasa (1 Macc 9:5), not on the map.
+  - id: judas-dies
+    year: "160 BC"
+    title:
+      en: "Judas Maccabeus falls in battle against Bacchides"
+      ru: "Иуда Маккавей гибнет в битве с Вакхидом"
+    ref: 1Macc.9.3-1Macc.9.18
+    sources:
+      - "1 Macc 9:3-18 (the first month of year 152 of the Seleucids)"
+      - "Josephus, Antiquities 12.420-434"
+  - id: jonathan-high-priest
+    year: "152 BC"
+    title:
+      en: "Jonathan becomes high priest"
+      ru: "Ионафан становится первосвященником"
+    place: a15257a
+    ref: 1Macc.10.18-1Macc.10.21
+    sources:
+      - "1 Macc 10:18-21 (the seventh month of year 160, at the feast of Tabernacles)"
+      - "Josephus, Antiquities 13.43-46"
+  # At Dok near Jericho, not on the map.
+  - id: simon-murdered
+    year: "134 BC"
+    title:
+      en: "Ptolemy son of Abubus murders Simon; John Hyrcanus succeeds him"
+      ru: "Птолемей, сын Авува, убивает Симона; власть переходит к Иоанну Гиркану"
+    ref: 1Macc.16.11-1Macc.16.24
+    sources:
+      - "1 Macc 16:11-24 (Shebat of year 177)"
+      - "Josephus, Antiquities 13.228-235"
+  # Nine years to 67 BC (Antiquities 13.430), counted back from Hyrcanus II.
+  - id: salome-alexandra
+    year: "c. 76 BC"
+    title:
+      en: "Salome Alexandra becomes queen of Judea"
+      ru: "Саломея Александра становится царицей Иудеи"
+    sources:
+      - "Josephus, Antiquities 13.405-432"
+  - id: crassus-temple
+    year: "54 BC"
+    title:
+      en: "Crassus plunders the treasures of the Temple"
+      ru: "Красс расхищает сокровища Храма"
+    place: a15257a
+    sources:
+      - "Josephus, Antiquities 14.105-109; Jewish War 1.179"
+  # --- Rome, Herod and Augustus, 53-10 BC ---
+  # Carrhae is the Haran of Genesis. Crassus was killed some days later at a parley
+  # near Sinnaca, so the title does not put his death at Carrhae.
+  - id: carrhae
+    year: "53 BC"
+    title:
+      en: "The Parthians rout Crassus near Carrhae (Haran); he is killed soon after at a parley"
+      ru: "Парфяне разбивают Красса у Карр (Харрана); вскоре его убивают на переговорах"
+    place: a6d9af3
+    sources:
+      - "Plutarch, Crassus 23-31"
+      - "Livius.org, 'Carrhae (53 BCE)' (defeated by Surena; Crassus killed at a parley)"
+  - id: rubicon
+    year: "49 BC"
+    title:
+      en: "Caesar crosses the Rubicon: the civil war begins"
+      ru: "Цезарь переходит Рубикон: начинается гражданская война"
+    sources:
+      - "Suetonius, Julius 31-33"
+      - "Plutarch, Caesar 32"
+      - "Livius.org, 'Gaius Julius Caesar'"
+  # Stabbed as he stepped ashore at Pelusium; the card shows the Synodal Син (Ezek 30:15).
+  - id: pompey-killed
+    year: "48 BC"
+    title:
+      en: "Defeated at Pharsalus, Pompey is killed at Pelusium"
+      ru: "Разбитый при Фарсале Помпей гибнет у Пелусия (Сина)"
+    place: aa32a17
+    sources:
+      - "Caesar, Civil War 3.88-104"
+      - "Plutarch, Pompey 68-80 (killed stepping ashore, 77-80)"
+  - id: caesar-murdered
+    year: "44 BC"
+    title:
+      en: "Conspirators murder Julius Caesar in Rome"
+      ru: "Заговорщики убивают Юлия Цезаря в Риме"
+    place: afc8e7a
+    sources:
+      - "Suetonius, Julius 80-82"
+      - "Livius.org, 'Gaius Julius Caesar' (died 15 March 44 BCE)"
+  - id: philippi-42
+    year: "42 BC"
+    title:
+      en: "Antony and Octavian defeat Brutus and Cassius at Philippi"
+      ru: "Антоний и Октавиан разбивают Брута и Кассия при Филиппах"
+    place: a49e1d0
+    sources:
+      - "Appian, Civil Wars 4.105-131"
+      - "Plutarch, Brutus 38-52"
+      - "Livius.org, 'Philippi (42 BCE)'"
+  - id: parthians-jerusalem
+    year: "40 BC"
+    title:
+      en: "The Parthians take Jerusalem and make Antigonus king"
+      ru: "Парфяне берут Иерусалим и сажают на престол Антигона"
+    place: a15257a
+    sources:
+      - "Josephus, Antiquities 14.330-369; Jewish War 1.248-273"
+      - "Livius.org, 'Herod the Great' (in 40 Hyrcanus taken prisoner; Antigonus king)"
+  # Josephus' consuls give 40; Appian (Civil Wars 5.75) puts it in 39. Most follow Josephus.
+  - id: herod-made-king
+    year: "40 BC"
+    title:
+      en: "The Roman Senate declares Herod king of Judea"
+      ru: "Римский сенат провозглашает Ирода царём Иудеи"
+    place: afc8e7a
+    sources:
+      - "Josephus, Antiquities 14.381-389 (the consulship of Calvinus and Pollio); Jewish War 1.282-285"
+  # Actium faces Nicopolis (af43cde), founded on Octavian's camp, but the battle has no
+  # point of its own.
+  - id: actium
+    year: "31 BC"
+    title:
+      en: "Octavian defeats Antony and Cleopatra at Actium"
+      ru: "Октавиан разбивает Антония и Клеопатру при Акции"
+    sources:
+      - "Cassius Dio 50.31-35"
+      - "Plutarch, Antony 61-68"
+      - "Livius.org, 'Actium (31 BCE)' (2 September 31)"
+  # Named after Augustus (January 27 at the earliest); 27 or 25 in the literature.
+  - id: sebaste
+    year: "c. 27 BC"
+    title:
+      en: "Herod rebuilds Samaria and names it Sebaste"
+      ru: "Ирод отстраивает Самарию и называет её Себастией"
+    place: a041bb3
+    sources:
+      - "Josephus, Antiquities 15.292-298; Jewish War 1.403"
+      - "Livius.org, 'Samaria' (renamed Sebaste after Octavian became Augustus)"
+  # The 28th year of Herod, the 192nd Olympiad: 10/9 BC.
+  - id: caesarea-dedicated
+    year: "c. 10 BC"
+    title:
+      en: "Herod dedicates Caesarea and its new harbour"
+      ru: "Ирод освящает Кесарию и её новую гавань"
+    place: a58735e
+    sources:
+      - "Josephus, Antiquities 16.136-141 (the twenty-eighth year of his reign)"
+      - "Livius.org, 'Herod the Great' (Caesarea dedicated in 9 BCE)"
+  # --- From Tiberius to Trajan, AD 17-111 ---
+  # Founded between AD 17 and 20; its coins count from 19/20.
+  - id: tiberias-founded
+    year: "c. AD 20"
+    title:
+      en: "Herod Antipas founds Tiberias"
+      ru: "Ирод Антипа основывает Тивериаду"
+    place: ac9adc9
+    sources:
+      - "Josephus, Antiquities 18.36-38"
+      - "Livius.org, 'Tiberias' (founded between 17 and 20 CE by Herod Antipas)"
+  # After the Samaritan affair of 36; Tiberius died (March 37) before Pilate reached Rome.
+  - id: pilate-recalled
+    year: "c. AD 36"
+    title:
+      en: "Vitellius sends Pilate to Rome to answer for his rule"
+      ru: "Вителлий отсылает Пилата в Рим держать ответ"
+    sources:
+      - "Josephus, Antiquities 18.85-89"
+      - "Livius.org, 'Pontius Pilate' (36: Vitellius orders Pilate to Rome)"
+  # Ordered in 39/40, dropped after Agrippa I intervened; Petronius delayed.
+  - id: caligula-statue
+    year: "c. AD 40"
+    title:
+      en: "Caligula orders his statue set up in the Temple at Jerusalem"
+      ru: "Калигула велит поставить свою статую в Иерусалимском храме"
+    sources:
+      - "Philo, Embassy to Gaius 188-348"
+      - "Josephus, Antiquities 18.261-309"
+  # Josephus: "the brother of Jesus who was called Christ"; Hegesippus' account differs.
+  - id: james-stoned
+    year: "AD 62"
+    title:
+      en: "The high priest Ananus has James, the brother of the Lord, stoned"
+      ru: "Первосвященник Анан предаёт Иакова, брата Господня, побиению камнями"
+    place: a15257a
+    sources:
+      - "Josephus, Antiquities 20.197-203 (between the death of Festus and the arrival of Albinus)"
+      - "Gal 1:19 (James the Lord's brother)"
+  # Cestius was ambushed in the pass between Upper and Lower Beth-horon (8 Dios, November 66).
+  - id: jewish-war-begins
+    year: "AD 66"
+    title:
+      en: "The revolt against Rome begins; Cestius Gallus is routed at Beth-horon"
+      ru: "Начинается восстание против Рима; Цестий Галл разбит у Беф-Орона"
+    place: a75b45e
+    sources:
+      - "Josephus, Jewish War 2.284 (Artemisius, the twelfth year of Nero); 2.499-555 (Cestius' retreat, 8 Dios)"
+  # Alexandria on 1 July, Judea on 3 July: no single point.
+  - id: vespasian-emperor
+    year: "AD 69"
+    title:
+      en: "The legions of Egypt and Judea proclaim Vespasian emperor"
+      ru: "Легионы Египта и Иудеи провозглашают Веспасиана императором"
+    sources:
+      - "Tacitus, Histories 2.79-81"
+      - "Suetonius, Vespasian 6"
+      - "Livius.org, 'Vespasian' (69: proclaimed in Alexandria and Judea)"
+  # Dedicated to the deified Titus, so after September 81, under Domitian: "c.".
+  - id: arch-of-titus
+    year: "c. AD 81"
+    title:
+      en: "The Senate raises the Arch of Titus in Rome, showing the spoils of the Temple"
+      ru: "Сенат воздвигает в Риме арку Тита с изображением добычи из Храма"
+    place: afc8e7a
+    sources:
+      - "The inscription of the arch, CIL VI 945 (to the deified Titus)"
+      - "S. B. Platner and T. Ashby, A Topographical Dictionary of Ancient Rome (1929), 'Arcus Titi' (LacusCurtius)"
+  # The thirteenth year of Domitian runs from September 93 to September 94: "c.".
+  - id: josephus-antiquities
+    year: "c. AD 93"
+    title:
+      en: "Josephus completes the Jewish Antiquities in Rome"
+      ru: "Иосиф Флавий завершает в Риме «Иудейские древности»"
+    place: afc8e7a
+    sources:
+      - "Josephus, Antiquities 20.267 (the thirteenth year of Domitian, the fifty-sixth of his life)"
+  # Dio gives no year; 106 is from the era of Bostra and the milestones. No point: the
+  # province's capital, Bostra, is not on the map.
+  - id: arabia-province
+    year: "AD 106"
+    title:
+      en: "Trajan makes the Nabataean kingdom the province of Arabia"
+      ru: "Траян обращает Набатейское царство в провинцию Аравия"
+    sources:
+      - "Cassius Dio 68.14.5"
+      - "Livius.org, 'Petra' (106: the Nabataean kingdom annexed; Bostra capital of Arabia)"
+  # Pliny governed Bithynia-Pontus c. 109-111 (or 110-112); where he wrote is unknown.
+  - id: pliny-christians
+    year: "c. AD 111"
+    title:
+      en: "Pliny the Younger asks Trajan how to deal with the Christians"
+      ru: "Плиний Младший спрашивает Траяна, как поступать с христианами"
+    sources:
+      - "Pliny, Letters 10.96-97"
+      - "Livius.org, 'Pliny the Younger' (governor of Bithynia-Pontus)"
+  # --- The second and third centuries ---
+  # Tertullian's "115 years and six and a half months" after Christ gives 144.
+  - id: marcion
+    year: "c. AD 144"
+    title:
+      en: "Marcion breaks with the church at Rome"
+      ru: "Маркион порывает с Римской церковью"
+    place: afc8e7a
+    sources:
+      - "Tertullian, Against Marcion 1.19"
+      - "Catholic Encyclopedia, 'Marcionites' (New Advent) (the final break with the Roman church in autumn 144)"
+  # Rusticus was prefect of Rome c. 162-168.
+  - id: justin-martyr
+    year: "c. AD 165"
+    title:
+      en: "The prefect Rusticus has Justin Martyr executed in Rome"
+      ru: "Префект Рустик казнит в Риме Иустина Мученика"
+    place: afc8e7a
+    sources:
+      - "The Acts of Justin and his Companions (before Rusticus, prefect of Rome)"
+      - "Catholic Encyclopedia, 'St. Justin Martyr' (New Advent) (condemned by Rusticus about 165)"
+  # The year is the scholars' estimate; Sherira names the redactor but gives no date.
+  - id: mishnah
+    year: "c. AD 200"
+    title:
+      en: "Judah ha-Nasi gives the Mishnah its final form"
+      ru: "Иегуда ха-Наси придаёт Мишне окончательный вид"
+    sources:
+      - "Epistle of Sherira Gaon"
+      - "Encyclopaedia Judaica, 'Mishnah' (Jewish Virtual Library) (redacted by Judah ha-Nasi at the beginning of the third century)"
+  # The battle of Hormozgan; Ardashir took Ctesiphon and was crowned c. 226.
+  - id: sasanians
+    year: "AD 224"
+    title:
+      en: "Ardashir I defeats the last Parthian king: the Sasanian empire begins"
+      ru: "Ардашир I побеждает последнего парфянского царя: начало державы Сасанидов"
+    sources:
+      - "Cassius Dio 80.3.1-2"
+      - "World History Encyclopedia, 'Ardashir I' (224: the battle of Hormozgan, Artabanus IV defeated)"
+  # Year 556 of the Seleucids = 244/245; the paintings were done before the city fell
+  # (256). Dura-Europos is not an OpenBible place.
+  - id: dura-synagogue
+    year: "c. AD 244"
+    title:
+      en: "The synagogue at Dura-Europos is rebuilt; its walls are painted with scenes from Scripture"
+      ru: "В Дура-Европосе перестраивают синагогу и расписывают её стены сценами из Писания"
+    site: "893990"
+    sources:
+      - "The Aramaic building inscription of the synagogue (year 556 of the Seleucids)"
+  - id: cyprian-executed
+    year: "AD 258"
+    title:
+      en: "The proconsul has Cyprian, bishop of Carthage, executed"
+      ru: "Проконсул казнит Киприана, епископа Карфагенского"
+    place: aa56bd1
+    sources:
+      - "The Proconsular Acts of Cyprian (14 September)"
+      - "Pontius, Life of Cyprian"
+      - "Catholic Encyclopedia, 'St. Cyprian of Carthage' (New Advent) (the proconsul Galerius Maximus; beheaded 14 September 258)"
+  # Taken in 272; the city rose again and was sacked in 273 (Zosimus 1.60-61).
+  - id: palmyra-taken
+    year: "AD 272"
+    title:
+      en: "Aurelian defeats Zenobia and takes Palmyra (Tadmor)"
+      ru: "Аврелиан побеждает Зенобию и берёт Пальмиру (Фадмор)"
+    place: ad797fe
+    sources:
+      - "Zosimus 1.50-56"
+      - "Livius.org, 'Zenobia' (taken captive in the summer of 272)"
+  # --- The fourth and fifth centuries ---
+  # Posted at Nicomedia on 30 April 311; Maximinus Daia soon resumed persecution in the
+  # East, so the title does not say it ended.
+  - id: galerius-edict
+    year: "AD 311"
+    title:
+      en: "Galerius issues an edict of toleration for the Christians"
+      ru: "Галерий издаёт эдикт о терпимости к христианам"
+    sources:
+      - "Lactantius, On the Deaths of the Persecutors 34-35"
+      - "Eusebius, Church History 8.17"
+  # Adrianople (3 July) and Chrysopolis (18 September 324). Neither is an OpenBible place.
+  - id: chrysopolis
+    year: "AD 324"
+    title:
+      en: "Constantine defeats Licinius and becomes sole ruler of the empire"
+      ru: "Константин побеждает Лициния и становится единоличным правителем империи"
+    sources:
+      - "Eusebius, Life of Constantine 2.16-18"
+      - "Livius.org, 'Licinius' (abdicated 19 September 324)"
+  # Her journey falls between 326 and 328.
+  - id: helena-churches
+    year: "c. AD 326"
+    title:
+      en: "Helena, Constantine's mother, founds churches at Bethlehem and on the Mount of Olives"
+      ru: "Елена, мать Константина, основывает храмы в Вифлееме и на Елеонской горе"
+    place: a112427
+    sources:
+      - "Eusebius, Life of Constantine 3.41-47"
+      - "Catholic Encyclopedia, 'St. Helena' (New Advent) (the churches at Bethlehem and on the Mount of the Ascension)"
+  - id: athanasius-canon
+    year: "AD 367"
+    title:
+      en: "Athanasius' Easter letter lists the twenty-seven books of the New Testament"
+      ru: "Пасхальное послание Афанасия Великого перечисляет двадцать семь книг Нового Завета"
+    place: aee7248
+    sources:
+      - "Athanasius, Festal Letter 39"
+      - "Catholic Encyclopedia, 'Canon of the Holy Scriptures' (New Advent) (the festal letter of 367)"
+  # Adrianople is not an OpenBible place.
+  - id: adrianople
+    year: "AD 378"
+    title:
+      en: "The Goths defeat the Romans at Adrianople; the emperor Valens is killed"
+      ru: "Готы разбивают римлян при Адрианополе; император Валент гибнет"
+    sources:
+      - "Ammianus Marcellinus 31.12-13"
+      - "Livius.org, 'Valens' (378: killed in battle)"
+  # Addressed to the people of Constantinople, issued at Thessalonica.
+  - id: edict-of-thessalonica
+    year: "AD 380"
+    title:
+      en: "Theodosius I commands all his peoples to hold the Nicene faith (the Edict of Thessalonica)"
+      ru: "Феодосий I велит всем подданным держаться никейской веры (Фессалоникийский эдикт)"
+    place: afa9d8e
+    sources:
+      - "Theodosian Code 16.1.2 (27 February 380, at Thessalonica)"
+  # The law of 391 is addressed to Albinus, prefect of Rome (a like one went to Egypt,
+  # 16.10.11); the empire-wide ban came on 8 November 392 (16.10.12).
+  - id: pagan-sacrifice-banned
+    year: "AD 391"
+    title:
+      en: "Theodosius forbids sacrifices and the visiting of temples in Rome"
+      ru: "Феодосий запрещает жертвоприношения и посещение храмов в Риме"
+    place: afc8e7a
+    sources:
+      - "Theodosian Code 16.10.10 (24 February 391, at Milan, to Albinus, prefect of the city)"
+      - "Theodosian Code 16.10.12 (8 November 392: the ban extended to the whole empire)"
+  # He died at Milan on 17 January 395.
+  - id: empire-divided
+    year: "AD 395"
+    title:
+      en: "Theodosius dies; the empire is divided between Arcadius and Honorius"
+      ru: "Смерть Феодосия: империя делится между Аркадием и Гонорием"
+    sources:
+      - "Socrates, Church History 5.26"
+      - "Zosimus 4.59"
+      - "Livius.org, 'Theodosius I' (died 17 January 395)"
+  # The council of 28 August 397 confirmed the list of Hippo (393); it survives in the
+  # African code of 419 (canon 24), numbered 47 in older editions.
+  - id: council-carthage-397
+    year: "AD 397"
+    title:
+      en: "A council at Carthage confirms the list of the books of Scripture"
+      ru: "Карфагенский собор утверждает перечень книг Писания"
+    place: aa56bd1
+    sources:
+      - "Code of Canons of the African Church, canon 24 (NPNF2 14)"
+      - "Catholic Encyclopedia, 'Canon of the Holy Scriptures' (New Advent) (Hippo 393, Carthage 397 and 419)"
+  # Dated by the last sages it names; where it was redacted is not recorded.
+  - id: jerusalem-talmud
+    year: "c. AD 400"
+    title:
+      en: "The sages of the Land of Israel bring the Jerusalem Talmud to its final form"
+      ru: "Законоучители Земли Израиля придают Иерусалимскому Талмуду окончательный вид"
+    sources:
+      - "Encyclopaedia Judaica, 'Talmud, Jerusalem' (Jewish Virtual Library) (redacted about 400)"
+  # The consuls give 415 (March); counted from Cyril's consecration the "fourth year"
+  # could reach 416. 415 is the date generally given.
+  - id: hypatia
+    year: "AD 415"
+    title:
+      en: "A Christian mob kills Hypatia in Alexandria"
+      ru: "Толпа христиан убивает Гипатию в Александрии"
+    place: aee7248
+    sources:
+      - "Socrates, Church History 7.15 (the tenth consulship of Honorius and the sixth of Theodosius)"
+      - "Catholic Encyclopedia, 'St. Cyril of Alexandria' (New Advent)"
+  # Hippo Regius is not an OpenBible place.
+  - id: augustine-dies
+    year: "AD 430"
+    title:
+      en: "Augustine dies at Hippo, besieged by the Vandals"
+      ru: "Августин умирает в осаждённом вандалами Гиппоне"
+    sources:
+      - "Possidius, Life of Augustine 28-31"
+      - "Catholic Encyclopedia, 'St. Augustine of Hippo' (New Advent) (died in the third month of the siege)"
+  # Procopius (Wars 4.9.5) says the Temple vessels Titus brought to Rome were among the
+  # spoils taken to Carthage; the title does not repeat it.
+  - id: rome-sacked-455
+    year: "AD 455"
+    title:
+      en: "Gaiseric's Vandals sack Rome"
+      ru: "Вандалы Гейзериха разоряют Рим"
+    place: afc8e7a
+    sources:
+      - "Procopius, Wars 3.5.1-5"
+      - "Catholic Encyclopedia, 'Pope St. Leo I' (New Advent) (Rome taken by Genseric in 455 and plundered for two weeks)"
+  # A convention: Julius Nepos was still recognised in the East until 480. Ravenna is
+  # not an OpenBible place.
+  - id: romulus-deposed
+    year: "AD 476"
+    title:
+      en: "Odoacer deposes Romulus Augustulus: the Western Roman Empire ends"
+      ru: "Одоакр низлагает Ромула Августула: конец Западной Римской империи"
+    sources:
+      - "Anonymus Valesianus 8.37-38"
+      - "Marcellinus Comes, Chronicle, a. 476"
+      - "Livius.org, 'Romulus Augustulus' (forced to abdicate, 31 August or 4 September 476)"

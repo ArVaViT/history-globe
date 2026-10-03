@@ -1,0 +1,39 @@
+# Overview article (ADR 0007). Mainstream facts only; Assyrian dates follow the standard chronology. Gath = Tell es-Safi, now widely accepted; the basis is given in the text.
+id: gath
+place: a18873f
+title:
+  en: "Gath"
+  ru: "Геф"
+body:
+  en:
+    - "Gath is identified with Tell es-Safi, a high mound where the Elah valley opens onto the coastal plain, about 9 km south of Ekron. The identification was first proposed in the nineteenth century, and after other sites were tried it is now widely accepted. The site fits the biblical geography, between Ekron and the hills of Judah, with the Philistines fleeing from the Elah valley toward Gath and Ekron; it was the largest Philistine city of the tenth and ninth centuries BC; and it was destroyed in the late ninth century, when Gath fell to Hazael. Excavations led by Aren Maeir of Bar-Ilan University, begun in 1996, show that the mound was settled from prehistoric to modern times."
+    - "Gath was one of the five Philistine cities and the home of Goliath and of other giants whom David and his men killed. The captured ark was carried there from Ashdod, and plague followed it. Fleeing from Saul, David came to Achish, king of Gath; later he served Achish with six hundred men and received Ziklag from him. Ittai the Gittite and six hundred men from Gath stood by David when Absalom rebelled. Chronicles lists Gath among the towns Rehoboam fortified, and says that Uzziah broke down its wall."
+    - "The Philistine city founded in the twelfth century BC grew into the largest city of the region. A potsherd of about the tenth century BC bears two names, alwt and wlt, which recall the name Goliath, though they do not refer to the giant. Late in the ninth century a siege trench was dug around the city and Gath was destroyed; this matches the report that Hazael, king of Syria, fought against Gath and took it. The city never regained its size. Amos points to Gath of the Philistines as a warning, and the cities that Amos, Zephaniah and Jeremiah condemn are Gaza, Ashkelon, Ashdod and Ekron, without Gath."
+    - "Sargon II of Assyria lists Gath with Ashdod and Ashdod-Yam among the cities he took about 711 BC. In the fourth century AD Eusebius knew a village called Geth five miles from Eleutheropolis on the road to Diospolis; whether it stood on the old Philistine city is uncertain."
+  ru:
+    - "Геф отождествляют с Телль-эс-Сафи — высоким холмом там, где Долина дуба выходит на прибрежную равнину, примерно в 9 км к югу от Екрона. Это отождествление предложили ещё в XIX веке, и после того как пробовали другие места, оно получило широкое признание. Место подходит к библейской географии — между Екроном и горами Иудеи, и филистимляне бегут из Долины дуба к Гефу и Екрону; это был крупнейший филистимский город X–IX веков до н. э.; и он был разрушен в конце IX века, когда Геф взял Азаил. Раскопки Арена Маира из Бар-Иланского университета, начатые в 1996 г., показывают, что холм был заселён с доисторических до новых времён."
+    - "Геф был одним из пяти филистимских городов и родиной Голиафа и других исполинов, которых убили Давид и его люди. Сюда из Азота перенесли захваченный ковчег, и вслед за ним пришла болезнь. Спасаясь от Саула, Давид пришёл к Анхусу, царю Гефскому; позднее он служил Анхусу с шестьюстами мужей и получил от него Секелаг. Еффей Гефянин и шестьсот человек из Гефа остались верны Давиду, когда восстал Авессалом. Вторая книга Паралипоменон относит Геф к городам, которые укрепил Ровоам, и говорит, что Озия разрушил его стены."
+    - "Филистимский город, основанный в XII веке до н. э., вырос в крупнейший город края. На черепке около X века до н. э. написаны два имени, alwt и wlt, напоминающие имя Голиаф, хотя к самому исполину они не относятся. В конце IX века город окружили осадным рвом и разрушили; это совпадает с рассказом о том, что Азаил, царь Сирийский, пошёл войною на Геф и взял его. Прежних размеров город больше не достиг. Амос приводит Геф Филистимский в пример как предостережение, а города, которые осуждают Амос, Софония и Иеремия, — Газа, Аскалон, Азот и Екрон, без Гефа."
+    - "Ассирийский царь Саргон II называет Геф вместе с Азотом и Ашдод-Ямом среди городов, взятых им около 711 г. до н. э. В IV веке н. э. Евсевий знал селение Геф в пяти милях от Елевферополя по дороге в Диосполь; стояло ли оно на месте древнего филистимского города, неясно."
+scripture:
+  - Josh.13.3
+  - 1Sam.17.4
+  - 1Sam.17.52
+  - 2Sam.21.18-2Sam.21.22
+  - 1Sam.5.8-1Sam.5.9
+  - 1Sam.21.10-1Sam.21.15
+  - 1Sam.27.2-1Sam.27.6
+  - 2Sam.15.18-2Sam.15.22
+  - 2Chr.11.8
+  - 2Chr.26.6
+  - 2Kgs.12.17
+  - Amos.6.2
+  - Amos.1.6-Amos.1.8
+  - Zeph.2.4
+  - Jer.25.20
+sources:
+  - "Sargon II, Great Display Inscription from Khorsabad, RINAP 2, Sargon II 7, 104-105; Annals, RINAP 2, Sargon II 1, 258-259"
+  - "Eusebius, Onomasticon, s.v. Geth"
+  - "A. M. Maeir (ed.), Tell es-Safi/Gath I: The 1996-2005 Seasons (Ägypten und Altes Testament 69, 2012)"
+  - "A. M. Maeir, S. J. Wimmer, A. Zukerman and A. Demsky, 'A Late Iron Age I/Early Iron Age II Old Canaanite Inscription from Tell es-Safi/Gath', BASOR 351 (2008) 39-71"
+status: checked

@@ -1,0 +1,31 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such; Iron Age dates follow the excavators.
+id: beth-shemesh
+place: a3b5b53
+title:
+  en: "Beth-shemesh"
+  ru: "Вефсамис"
+body:
+  en:
+    - 'Beth-shemesh, "house of the sun", is Tel Beth-Shemesh, a low mound in the Sorek valley about 24 km west of Jerusalem, where the hills of Judah come down to the lowland. The nearby ruin of ''Ain Shems kept the old name, and nineteenth-century explorers identified the site from it. The Palestine Exploration Fund dug here from 1911, Elihu Grant of Haverford College from 1928 to 1933, and Shlomo Bunimovitz and Zvi Lederman from 1990. A walled town stood here in the Middle Bronze Age, and in the Late Bronze Age it was a prosperous Canaanite city.'
+    - 'In the Book of Joshua Beth-shemesh lies on the border of Judah and is given with its suburbs to the priests, the children of Aaron. When the Philistines sent back the ark of the LORD on a new cart, two milch kine "took the straight way to the way of Beth-shemesh". The people were reaping their wheat harvest in the valley and rejoiced to see it; the cart stopped by a great stone in the field of Joshua the Beth-shemite, the Levites set the ark on the stone, and the kine were offered as a burnt offering. Then the LORD smote the men of Beth-shemesh "because they had looked into the ark" (Josephus counts seventy dead), and they sent to Kiriath-jearim to fetch it away.'
+    - "Under Solomon the town belonged to the district of the son of Dekar. At Beth-shemesh Jehoash king of Israel defeated Amaziah king of Judah, took him captive and went on to break down the wall of Jerusalem. The excavators date a destruction of the Judahite town to about 790 BC and tie it to this battle; an archaeomagnetic study of 2022 favoured their date over a later one. In the days of Ahaz the Philistines took Beth-shemesh. The Iron Age town had a large underground water reservoir. According to the excavators, the town was destroyed in the Assyrian campaign of 701 BC; it was settled again in the seventh century, but it never regained its former importance."
+    - "In the early fourth century Eusebius knew Bethsames as a place ten miles from Eleutheropolis on the way to Nicopolis. In the Byzantine period a monastery stood near the mound."
+  ru:
+    - "Вефсамис, «дом солнца», — это Тель-Бет-Шемеш, невысокий холм в долине Сорек примерно в 24 км к западу от Иерусалима, там, где горы Иудеи спускаются к низменности. Соседние развалины Айн-Шемс сохранили древнее имя, и по нему исследователи XIX века отождествили это место. Палестинский фонд исследований копал здесь с 1911 г., Элиху Грант из Хаверфордского колледжа — с 1928 по 1933 г., а Шломо Бунимовиц и Цви Ледерман — с 1990 г. В среднем бронзовом веке здесь стоял обнесённый стеной город, а в позднем бронзовом веке это был процветающий ханаанский город."
+    - "В книге Иисуса Навина Вефсамис стоит на границе Иуды и с предместьями отдан священникам, сынам Аарона. Когда Филистимляне отослали ковчег Господень на новой колеснице, две первородившие коровы «пошли прямо на дорогу к Вефсамису». Жители жали тогда пшеницу в долине и обрадовались, увидев его; колесница остановилась у большого камня на поле Иисуса Вефсамитянина, левиты поставили ковчег на камень, а коров принесли во всесожжение. Тогда Господь поразил жителей Вефсамиса «за то, что они заглядывали в ковчег Господа» (Иосиф Флавий насчитывает семьдесят погибших), и они послали в Кириаф-Иарим, чтобы ковчег забрали."
+    - "При Соломоне город входил в округ Бен-Декера. У Вефсамиса Иоас, царь Израильский, разбил Амасию, царя Иудейского, захватил его в плен и затем разрушил стену Иерусалима. Раскопщики датируют разрушение иудейского города около 790 г. до н. э. и связывают его с этой битвой; археомагнитное исследование 2022 г. поддержало их дату против более поздней. Во дни Ахаза Филистимляне взяли Вефсамис. В городе железного века был большой подземный водоём. По мнению раскопщиков, город был разрушен в ассирийском походе 701 г. до н. э.; в VII веке здесь снова поселились, но прежнего значения город больше не вернул."
+    - "В начале IV века Евсевий знал Вефсамис как место в десяти милях от Елевферополя по дороге в Никополь. В византийское время рядом с холмом стоял монастырь."
+scripture:
+  - Josh.15.10
+  - Josh.21.13-Josh.21.16
+  - 1Sam.6.7-1Sam.6.21
+  - 1Kgs.4.9
+  - 2Kgs.14.11-2Kgs.14.13
+  - 2Chr.25.21-2Chr.25.23
+  - 2Chr.28.18
+sources:
+  - "Josephus, Antiquities 6.14-18 (the ark at Bethshemesh; seventy dead; carried to Kirjathjearim)"
+  - "Eusebius, Onomasticon, s.v. Bethsames (C. U. Wolf's translation, no. 258)"
+  - "Y. Vaknin et al., 'Reconstructing Biblical Military Campaigns Using Geomagnetic Field Data', PNAS 119 (2022) e2209117119 (the destruction of c. 790 BC)"
+  - "S. Bunimovitz and Z. Lederman, Tel Beth-Shemesh: A Border Community in Judah. Renewed Excavations 1990-2000, I: The Iron Age (2016)"
+status: checked

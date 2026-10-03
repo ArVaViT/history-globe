@@ -9,7 +9,9 @@ type Call =
   | { readonly op: "selected"; readonly placeId: string | null }
   | { readonly op: "flyTo"; readonly center: LonLat; readonly zoom: number | undefined }
   | { readonly op: "route"; readonly points: number; readonly current: number }
-  | { readonly op: "tourPlaces"; readonly count: number };
+  | { readonly op: "tourPlaces"; readonly count: number }
+  | { readonly op: "fitTo"; readonly count: number }
+  | { readonly op: "reveal"; readonly at: LonLat };
 
 /** Records every call so engine behaviour can be tested without WebGL. */
 export class FakeRenderer implements Renderer {
@@ -19,6 +21,8 @@ export class FakeRenderer implements Renderer {
     pick: new Set(),
     hover: new Set(),
     hoverPolity: new Set(),
+    hoverAncient: new Set(),
+    hoverBattle: new Set(),
     cameraChanged: new Set(),
     ready: new Set(),
   };
@@ -35,6 +39,10 @@ export class FakeRenderer implements Renderer {
   setSelected(placeId: string | null): void {
     this.calls.push({ op: "selected", placeId });
   }
+  reveal(at: LonLat): void {
+    this.calls.push({ op: "reveal", at });
+  }
+
   flyTo(target: Partial<Camera> & { readonly center: LonLat }): void {
     this.camera = { ...this.camera, ...target };
     this.calls.push({ op: "flyTo", center: target.center, zoom: target.zoom });
@@ -46,6 +54,9 @@ export class FakeRenderer implements Renderer {
   }
   setTourPlaces(placeIds: readonly string[]): void {
     this.calls.push({ op: "tourPlaces", count: placeIds.length });
+  }
+  fitTo(points: readonly LonLat[]): void {
+    this.calls.push({ op: "fitTo", count: points.length });
   }
   getCamera(): Camera {
     return this.camera;

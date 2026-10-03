@@ -1,0 +1,30 @@
+# Overview article (ADR 0007). Mainstream facts only; Egyptian dates follow I. Shaw (ed.), The Oxford History of Ancient Egypt.
+id: tahpanhes
+place: adb008c
+title:
+  en: "Tahpanhes"
+  ru: "Тафнис"
+body:
+  en:
+    - "Tahpanhes, which the Greeks called Daphnae of Pelusium, is the mound of Tell Defenneh on the eastern edge of the Nile delta, close to the modern Suez Canal. It stood on the road from Egypt to Syria and Palestine. Herodotus says that Psammetichus, that is Psamtik I (664–610 BC), stationed a garrison at Daphnae against the Arabians and Assyrians, and that in his own day the Persians still kept an outpost there."
+    - "Flinders Petrie excavated the site in 1886. In the fort he found foundation deposits of Psamtik I, and so much Greek pottery, made by Greeks, that he judged the garrison and much of the town to have been Greek. The Bedouin called the ruin Qasr Bint el-Yehudi, the palace of the Jew's daughter. Petrie took a brick platform before the fort for the place at the entry of Pharaoh's house where Jeremiah was told to hide the stones, a link that cannot be proved."
+    - 'Jeremiah tells Israel that "the children of Noph and Tahapanes have broken the crown of thy head". After Gedaliah was murdered, Johanan the son of Kareah and the captains led the remnant of Judah down to Egypt against Jeremiah''s word, taking the prophet and Baruch with them, and they came to Tahpanhes. There Jeremiah was told to hide great stones in the clay at the entry of Pharaoh''s house and to foretell that Nebuchadrezzar would set his throne upon them. Jews lived at Tahpanhes afterwards, and Ezekiel foretold that there also the day shall be darkened.'
+    - "Josephus says that Nebuchadnezzar later fell upon Egypt and carried the Jews he found there to Babylon. Petrie concluded that Greek wares stopped coming early in the reign of Amasis, who made Naucratis the one port for Greek trade, and that an Egyptian and then a Persian garrison held the fort. In Ptolemaic times only a small settlement remained, and of the Roman period he found little more than scattered glass."
+  ru:
+    - "Тафнис, который греки называли Дафнами Пелусийскими, — это холм Телль-Дефенне на восточном краю дельты Нила, близ нынешнего Суэцкого канала. Он стоял на дороге из Египта в Сирию и Палестину. Геродот пишет, что Псамметих I (664–610 гг. до н. э.) поставил в Дафнах стражу против арабов и ассирийцев и что ещё в его время персы держали там заставу."
+    - "Флиндерс Питри раскопал это место в 1886 г. В крепости он нашёл закладные приношения Псамметиха I и столько греческой керамики, сделанной греками, что счёл гарнизон и большую часть города греческими. Бедуины называли развалины Каср-Бинт-эль-Яхуди — дворец дочери иудея. Площадку из кирпича перед крепостью Питри принял за то место при входе в дом фараона, где Иеремии было велено скрыть камни, но доказать эту связь нельзя."
+    - "Иеремия говорит Израилю: «сыновья Мемфиса и Тафны объели темя твое». После убийства Годолии Иоанан, сын Карея, и военные начальники вопреки слову Иеремии увели остаток Иудеев в Египет, взяв с собой пророка и Варуха, и дошли до Тафниса. Там Иеремии было велено скрыть большие камни в смятой глине при входе в дом фараона и предречь, что Навуходоносор поставит на них свой престол. Иудеи и потом жили в Тафнисе, а Иезекииль предрекал, что и в Тафнисе померкнет день."
+    - "Иосиф Флавий пишет, что позднее Навуходоносор напал на Египет и увёл найденных там иудеев в Вавилон. Питри заключил, что греческая посуда перестала поступать сюда в начале царствования Амасиса, который сделал Навкратис единственной гаванью для греческой торговли, и что крепость держали сначала египетский, а затем персидский гарнизон. В птолемеевское время здесь оставалось лишь небольшое поселение, а от римской эпохи он нашёл немногим больше разрозненных осколков стекла."
+scripture:
+  - Jer.2.16
+  - Jer.41.18
+  - Jer.43.2-Jer.43.7
+  - Jer.43.8-Jer.43.10
+  - Jer.44.1
+  - Ezek.30.18
+sources:
+  - "Herodotus, Histories 2.30 (the garrison at Daphnae of Pelusium); 2.178-179 (Naucratis)"
+  - "W. M. F. Petrie, Tanis II: Nebesheh (Am) and Defenneh (Tahpanhes) (1888), ch. VII, §§44-50"
+  - "Josephus, Antiquities 10.180-182"
+  - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000)"
+status: checked

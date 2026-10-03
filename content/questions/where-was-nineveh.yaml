@@ -1,0 +1,24 @@
+id: where-was-nineveh
+question:
+  en: "Where was Nineveh?"
+  ru: "Где находилась Ниневия?"
+answer:
+  en:
+    - "Nineveh stood on the east bank of the Tigris in northern Iraq, opposite the modern city of Mosul; its ruins are the two mounds of Kuyunjik and Nebi Yunus, now inside the city's built-up area."
+    - 'It was one of the royal cities of Assyria and became its capital about 700 BC, when Sennacherib built his palace, a wall about 12 km long and canals bringing water from the hills. The Bible says that after his campaign against Judah in 701 BC Sennacherib "returned, and dwelt at Nineveh", and that he was killed there by his sons. The Book of Jonah is set in the same city: "Arise, go to Nineveh, that great city, and cry against it."'
+    - "In 612 BC the Babylonians and the Medes took and destroyed Nineveh after a siege of about three months, as the Babylonian Chronicle records, and Assyria never recovered. Only a small settlement lived on at the site; the town that became Mosul grew on the opposite bank. The palaces, the reliefs and the library of Ashurbanipal were uncovered from the 1840s by Botta, Layard and their successors."
+  ru:
+    - "Ниневия стояла на восточном берегу Тигра на севере нынешнего Ирака, напротив Мосула; её руины — два холма, Куюнджик и Неби-Юнус, сегодня внутри городской застройки."
+    - "Это был один из царских городов Ассирии, а около 700 г. до н. э. он стал её столицей: Сеннахирим построил здесь дворец, стену длиной около 12 км и каналы, подводившие воду с гор. Библия говорит, что после похода на Иудею в 701 г. до н. э. Сеннахирим «возвратился… и жил в Ниневии» и что здесь его убили сыновья. В этом же городе происходит действие книги Ионы: «встань, иди в Ниневию, город великий, и проповедуй в нем»."
+    - "В 612 г. до н. э. вавилоняне и мидяне после примерно трёхмесячной осады взяли и разрушили Ниневию, как сообщает Вавилонская хроника, и Ассирия уже не поднялась. На месте города осталось лишь небольшое поселение, а на другом берегу вырос Мосул. Дворцы, рельефы и библиотеку Ашшурбанапала раскопали с 1840-х годов Ботта, Лэйярд и их преемники."
+map:
+  place: a70fd5d
+  year: "700 BC"
+  ref: Jonah.1.2
+scripture: [Jonah.1.2, 2Kgs.19.36, Nah.3.7]
+sources:
+  - "Babylonian Chronicle ABC 3 (Fall of Nineveh Chronicle); A. K. Grayson, Assyrian and Babylonian Chronicles (1975)"
+  - "Sennacherib's annals and building inscriptions; the Lachish reliefs from his palace at Nineveh"
+  - "A. H. Layard, Nineveh and Its Remains (1849)"
+  - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016)"
+status: checked

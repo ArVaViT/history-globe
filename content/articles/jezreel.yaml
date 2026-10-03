@@ -1,0 +1,35 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such.
+id: jezreel
+place: ae0bf4a
+title:
+  en: "Jezreel"
+  ru: "Изреель"
+body:
+  en:
+    - 'Jezreel stood on a low hill at the foot of Mount Gilboa, at the eastern end of the Jezreel Valley, above a spring; the site is Tel Jezreel, by the former village of Zer''in. The earliest finds on the site go back to the fifth millennium BC, and an unwalled village stood here in the Bronze Age. In Joshua, Jezreel lies on the border of Issachar. Before the battle of Gilboa the Israelites pitched "by a fountain which is in Jezreel", and Abner later made Ish-bosheth, Saul''s son, king over Jezreel and all Israel.'
+    - 'Under the house of Omri, Jezreel was a royal residence. Elijah ran before Ahab''s chariot to Jezreel. Next to Ahab''s palace lay the vineyard of Naboth the Jezreelite; when Naboth would not sell it, Jezebel had him stoned on false witness, and Elijah foretold that dogs would eat Jezebel by the wall of Jezreel. Ahab''s son Joram came back here to be healed of wounds from the war with Hazael of Syria. Jehu shot Joram in the field of Naboth, had Jezebel thrown down from a window and received in baskets the heads of Ahab''s seventy sons. Hosea named his son Jezreel, for the LORD said, "I will avenge the blood of Jezreel upon the house of Jehu".'
+    - "Excavations by David Ussishkin and John Woodhead in 1990–1996 uncovered a large rectangular royal enclosure of the Iron Age, with a casemate wall, corner towers, a gate and a moat. The excavators date it to the ninth century BC, the time of the Omride kings, and it was used only for a short time; its dating became part of the wider dispute over the chronology of Iron Age Israel. New excavations at the site began in 2012."
+    - "Later settlement was smaller. In the fourth century AD Eusebius knew Esdraela as a very large village in the Great Plain between Scythopolis and Legio, and the excavators found the remains of a Byzantine village on the mound."
+  ru:
+    - "Изреель стоял на невысоком холме у подножия горы Гелвуй, у восточного края Изреельской долины, над источником; это Тель-Изреель, рядом с бывшей деревней Зерин. Древнейшие находки здесь относятся к V тысячелетию до н. э., а в бронзовом веке тут стояло неукреплённое селение. В книге Иисуса Навина Изреель лежит в пределах Иссахара. Перед битвой на Гелвуе израильтяне расположились станом «у источника, что в Изрееле», а позже Авенир воцарил Иевосфея, сына Саула, над Изреелем и над всем Израилем."
+    - "При доме Амврия Изреель был царской резиденцией. Илия бежал перед колесницей Ахава до самого Изрееля. Подле дворца Ахава был виноградник Навуфея Изреелитянина; когда Навуфей не захотел продать его, Иезавель велела побить его камнями по ложному свидетельству, а Илия предсказал, что псы съедят Иезавель за стеною Изрееля. Сын Ахава Иорам вернулся сюда лечиться от ран, полученных в войне с Азаилом, царём Сирийским. Ииуй поразил Иорама стрелой на поле Навуфея, велел выбросить Иезавель из окна и получил в корзинах головы семидесяти сыновей Ахава. Осия назвал сына Изреелем, ибо Господь сказал: «Я взыщу кровь Изрееля с дома Ииуева»."
+    - "Раскопки Давида Уссишкина и Джона Вудхеда в 1990–1996 гг. открыли большую прямоугольную царскую ограду железного века с казематной стеной, угловыми башнями, воротами и рвом. Раскопщики датируют её IX веком до н. э., временем царей из дома Амврия, и она использовалась лишь недолго; её датировка стала частью более широкого спора о хронологии Израиля железного века. Новые раскопки на этом месте начались в 2012 г."
+    - "Позднее поселение было меньше. В IV веке н. э. Евсевий знал Ездраэлу как очень большое селение на Великой равнине между Скифополем и Легионом, а раскопщики нашли на холме остатки византийского селения."
+scripture:
+  - Josh.19.18
+  - 1Sam.29.1
+  - 2Sam.2.8-2Sam.2.9
+  - 1Kgs.18.45-1Kgs.18.46
+  - 1Kgs.21.1-1Kgs.21.16
+  - 1Kgs.21.23
+  - 2Kgs.8.29
+  - 2Kgs.9.21-2Kgs.9.24
+  - 2Kgs.9.30-2Kgs.9.37
+  - 2Kgs.10.7
+  - Hos.1.4
+sources:
+  - "Eusebius, Onomasticon, s.v. Iezrael (no. 549 in C. U. Wolf's translation)"
+  - "D. Ussishkin and J. Woodhead, 'Excavations at Tel Jezreel 1990-1991: Preliminary Report', Tel Aviv 19 (1992) 3-56; '1992-1993: Second Preliminary Report', Levant 26 (1994) 1-48; '1994-1996: Third Preliminary Report', Tel Aviv 24 (1997) 6-72"
+  - "D. Ussishkin, 'The Credibility of the Tel Jezreel Excavations: A Rejoinder to Amnon Ben-Tor', Tel Aviv 27 (2000) 248-256"
+  - "I. Finkelstein, The Forgotten Kingdom: The Archaeology and History of Northern Israel (2013)"
+status: checked

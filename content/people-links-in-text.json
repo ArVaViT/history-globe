@@ -1,0 +1,35 @@
+{
+  "_about": "Family links the text makes and TIPNR leaves out (it gives an unnamed father where Matthew names him). Each with the verse that names it; added after the links in people-not-in-text.json are dropped.",
+  "links": [
+    {
+      "person": "Jacob@Mat.1.15-",
+      "role": "father",
+      "other": "Matthan@Mat.1.15",
+      "verse": "Matt.1.15"
+    },
+    {
+      "person": "Pedaiah@1Ch.3.18-",
+      "role": "father",
+      "other": "Jehoiachin@2Ki.24.6-Mat",
+      "verse": "1Chr.3.17-1Chr.3.18"
+    },
+    {
+      "person": "Salma@1Ch.2.51-",
+      "role": "father",
+      "other": "Caleb@1Ch.2.9-",
+      "verse": "1Chr.2.50-1Chr.2.51"
+    },
+    {
+      "person": "Ahihud@1Ch.8.7",
+      "role": "father",
+      "other": "Gera@1Ch.8.7",
+      "verse": "1Chr.8.7"
+    },
+    {
+      "person": "Esther@Est.2.7-",
+      "role": "spouse",
+      "other": "Ahasuerus@Ezr.4.6-Dan",
+      "verse": "Esth.2.16-Esth.2.17"
+    }
+  ]
+}

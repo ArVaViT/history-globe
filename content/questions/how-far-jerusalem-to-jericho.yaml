@@ -1,0 +1,24 @@
+id: how-far-jerusalem-to-jericho
+question:
+  en: "How far is it from Jerusalem to Jericho?"
+  ru: "Как далеко от Иерусалима до Иерихона?"
+answer:
+  en:
+    - "Jericho is about 20 km east of Jerusalem in a straight line; by the Roman road on the map, which runs through Bethany, the way measures about 26 km, less than a day on foot."
+    - 'The road is the setting of the parable: "A certain man went down from Jerusalem to Jericho, and fell among thieves." It really does go down: Jerusalem stands on the watershed in the hills of Judah, and Jericho lies in the Jordan Valley about 250 m below sea level, in the deep rift north of the Dead Sea, so the whole descent is steep and passes through the wilderness of Judea.'
+    - "The Jericho of the Gospels, where Jesus healed blind Bartimaeus and stayed with Zacchaeus, was the town that grew around the Hasmonean and Herodian winter palaces at the mouth of Wadi Qelt, now Tulul Abu el-Alayiq; Herod the Great died there about 4 BC. The older mound of Tell es-Sultan, the Jericho of Joshua, lies about 2 km to the north beside the spring of Elisha. In 333 the Pilgrim of Bordeaux was shown the spring and the house of Rahab at Jericho."
+  ru:
+    - "Иерихон лежит примерно в 20 км к востоку от Иерусалима по прямой; по римской дороге на карте, идущей через Вифанию, путь составляет около 26 км — меньше дня пешком."
+    - "Эта дорога — место действия притчи: «некоторый человек шел из Иерусалима в Иерихон и попался разбойникам». Дорога и в самом деле идёт вниз: Иерусалим стоит на водоразделе в горах Иудеи, а Иерихон лежит в долине Иордана примерно на 250 м ниже уровня моря, в глубокой впадине к северу от Мёртвого моря, так что весь спуск крут и проходит через Иудейскую пустыню."
+    - "Иерихон Евангелий, где Иисус исцелил слепого Вартимея и гостил у Закхея, — это город, выросший вокруг зимних дворцов Хасмонеев и Ирода у выхода Вади-Кельт, ныне Тулуль-Абу-эль-Алайик; там около 4 г. до н. э. умер Ирод Великий. Более древний холм Телль-эс-Султан, Иерихон Иисуса Навина, лежит примерно в 2 км севернее, у источника Елисея. В 333 году Бордоскому паломнику показывали в Иерихоне источник и дом Раав."
+map:
+  year: "AD 30"
+  ref: Luke.10.30
+scripture: [Luke.10.30-Luke.10.34, Luke.18.35, Luke.19.1-Luke.19.5, Josh.6.1]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Length along the Roman roads: Itiner-e (de Soto, Pažout, Brughmans et al. 2025), Jerusalem to Bethany (4 km) and Bethany to Jericho (22 km)"
+  - "Josephus, Antiquities 17.173-191 (Herod's death at Jericho); Jewish War 4.451-475 (the plain and the spring)"
+  - "E. Netzer, Hasmonean and Herodian Palaces at Jericho, vol. 1 (2001)"
+  - "Pilgrim of Bordeaux, Itinerarium Burdigalense (AD 333), the route from Jerusalem to Jericho"
+status: checked

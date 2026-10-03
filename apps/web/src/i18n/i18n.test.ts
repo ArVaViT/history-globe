@@ -1,6 +1,6 @@
-import { describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it } from "vitest";
 import en from "./en.json";
-import { translate } from "./index";
+import { loadLanguage, translate } from "./index";
 import ru from "./ru.json";
 
 function keys(obj: object, prefix = ""): string[] {
@@ -15,6 +15,10 @@ function baseKeys(obj: object): string[] {
     ...new Set(keys(obj).map((k) => k.replace(/_(zero|one|two|few|many|other)$/, ""))),
   ].sort();
 }
+
+beforeAll(async () => {
+  await loadLanguage("ru");
+});
 
 describe("i18n dictionaries", () => {
   it("ru and en define the same keys", () => {
@@ -46,5 +50,23 @@ describe("i18n dictionaries", () => {
   it("falls back to English, then to the key", () => {
     expect(translate("de", "place.zoom")).toBe(translate("en", "place.zoom"));
     expect(translate("ru", "kind.no such kind")).toBe("kind.no such kind");
+  });
+});
+
+describe("loading a language", () => {
+  it("fetches a dictionary once and refuses a language without one", async () => {
+    expect(await loadLanguage("ru")).toBe(true);
+    expect(await loadLanguage("xx")).toBe(false);
+    expect(translate("xx", "loading")).toBe(translate("en", "loading"));
+  });
+});
+
+describe("switching quickly", () => {
+  it("ends on the language asked for last, whichever dictionary arrives last", async () => {
+    const { i18n } = await import("./index");
+    const toRu = i18n.changeLanguage("ru");
+    const toEn = i18n.changeLanguage("en");
+    await Promise.all([toRu, toEn]);
+    expect(i18n.language).toBe("en");
   });
 });

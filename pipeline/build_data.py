@@ -13,6 +13,7 @@ import datetime as dt
 import hashlib
 import json
 import math
+import sys
 import pathlib
 import re
 import time
@@ -61,6 +62,12 @@ SOURCES = {
         "license": "PD",
         "credit": "Made with Natural Earth",
     },
+    "natural_earth_ocean_10m": {
+        "file": "ne_10m_ocean.geojson",
+        "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_ocean.geojson",
+        "license": "PD",
+        "credit": "Made with Natural Earth",
+    },
     "natural_earth_lakes": {
         "file": "ne_50m_lakes.geojson",
         "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_lakes.geojson",
@@ -76,8 +83,9 @@ SOURCES = {
 }
 
 # Region and period of the MVP (ADR 0005). West, south, east, north.
-BBOX = (5.0, 12.0, 70.0, 48.0)
-YEAR_MIN, YEAR_MAX = -2000, 200
+# Widened on 2.10.2026 to take in Tarshish and Spain (Rom 15:24) and Punt.
+BBOX = (-12.0, 8.0, 75.0, 50.0)
+YEAR_MIN, YEAR_MAX = -3500, 1300
 
 # Tagged as lakes by Natural Earth, but created in the 20th century.
 MODERN_LAKES = {"Lake Tharthar", "Razzaza Lake"}
@@ -283,6 +291,9 @@ def build_places(
                 # Candidate sites shipped in sites.geojson: 0 when fewer than two.
                 "sites": sites_per_place.get(r["id"], (0, False))[0],
                 "disputed": sites_per_place.get(r["id"], (0, False))[1],
+                # OpenBible's score of the identification shown, 0–1000: how sure the card
+                # may sound about a place that is not disputed.
+                **({"confidence": c} if (c := identification_confidence(ids[0])) is not None else {}),
                 "verses": len(verses),
                 "nt": nt,
                 "ot": len(verses) - nt,
@@ -293,7 +304,7 @@ def build_places(
                 # Where it is today, as the best identification words it. "Same place as X"
                 # says nothing a reader can use there: the card lists the candidates.
                 **where_props(site_label(ids[0].get("description", ""), base)),
-                # Every verse: the card opens the full list on demand ("ещё N").
+                # Every verse: the card opens the full list on demand ("N more").
                 "osis": [v["osis"] for v in verses],
                 "coord": coord_source,
                 # Drawn as a river line with its own label: no second label at the point.
@@ -535,19 +546,94 @@ def build_polities() -> tuple[dict, dict, dict]:
 # --- water ------------------------------------------------------------------------
 
 
-def build_water() -> dict:
-    """Water from Natural Earth: the ocean polygon plus natural lakes, drawn over a
-    land-coloured globe (no land polygon needed). Modern reservoirs (Kakhovka, Tharthar,
-    Nasser…) do not belong on a map of antiquity."""
+def clip_ring(ring: list[list[float]], box: tuple[float, float, float, float]) -> list[list[float]] | None:
+    """A ring cut to a rectangle (Sutherland–Hodgman), closed, or None when nothing is left.
+    A concave ring may come back with edges along the rectangle's side: harmless for a fill."""
+    x0, y0, x1, y1 = box
+
+    def x_at(x: float):
+        return lambda a, b: [x, a[1] + (b[1] - a[1]) * (x - a[0]) / (b[0] - a[0])]
+
+    def y_at(y: float):
+        return lambda a, b: [a[0] + (b[0] - a[0]) * (y - a[1]) / (b[1] - a[1]), y]
+
+    pts = ring[:-1] if ring and ring[0] == ring[-1] else list(ring)
+    for inside, cross in (
+        (lambda p: p[0] >= x0, x_at(x0)),
+        (lambda p: p[0] <= x1, x_at(x1)),
+        (lambda p: p[1] >= y0, y_at(y0)),
+        (lambda p: p[1] <= y1, y_at(y1)),
+    ):
+        out: list[list[float]] = []
+        for i, cur in enumerate(pts):
+            prev = pts[i - 1]
+            if inside(cur):
+                if not inside(prev):
+                    out.append(cross(prev, cur))
+                out.append(cur)
+            elif inside(prev):
+                out.append(cross(prev, cur))
+        pts = out
+        if not pts:
+            return None
+    return pts + [pts[0]] if len(pts) >= 3 else None
+
+
+def clip_polygons(fc: dict, box: tuple[float, float, float, float]) -> list:
+    """The polygons of a collection cut to a rectangle, holes cut with them."""
+    out = []
+    for f in fc["features"]:
+        g = f["geometry"]
+        for poly in g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]:
+            outer = clip_ring(poly[0], box)
+            if outer:
+                out.append([outer, *(r for r in (clip_ring(h, box) for h in poly[1:]) if r)])
+    return out
+
+
+def in_region(p: list[float]) -> bool:
+    return BBOX[0] <= p[0] <= BBOX[2] and BBOX[1] <= p[1] <= BBOX[3]
+
+
+SHORE_TOLERANCE = 0.003  # degrees, ≈ 300 m
+
+# The globe outside the map's region, as four bands around it.
+OUTSIDE_REGION = (
+    (-180.0, -90.0, BBOX[0], 90.0),
+    (BBOX[2], -90.0, 180.0, 90.0),
+    (BBOX[0], -90.0, BBOX[2], BBOX[1]),
+    (BBOX[0], BBOX[3], BBOX[2], 90.0),
+)
+
+
+def build_water() -> tuple[dict, dict]:
+    """Water from Natural Earth, drawn over a land-coloured globe (no land polygon needed):
+    the 1:10m ocean inside the map's region, where tours zoom in on the Aegean islands, and
+    the 1:50m ocean around it, cut along the region's edge, plus natural lakes. Modern
+    reservoirs (Kakhovka, Tharthar, Nasser…) do not belong on a map of antiquity. Also
+    returns the shores to draw, from the uncut rings, so the cut draws no line."""
     ocean = json.loads(fetch("natural_earth_ocean").read_text(encoding="utf-8"))
+    ocean10 = json.loads(fetch("natural_earth_ocean_10m").read_text(encoding="utf-8"))
     lakes = json.loads(fetch("natural_earth_lakes").read_text(encoding="utf-8"))
     natural = [
         f
         for f in lakes["features"]
         if f["properties"].get("featurecla") != "Reservoir" and f["properties"].get("name") not in MODERN_LAKES
     ]
-    water = {"type": "FeatureCollection", "features": [*ocean["features"], *natural]}
-    return round_collection(water)
+    sea = clip_polygons(ocean10, BBOX) + [p for box in OUTSIDE_REGION for p in clip_polygons(ocean, box)]
+    water = {
+        "type": "FeatureCollection",
+        "features": [{"type": "Feature", "properties": {}, "geometry": {"type": "MultiPolygon", "coordinates": sea}}, *natural],
+    }
+    shore_lines = [
+        *build_coast(ocean10, keep=in_region)["features"][0]["geometry"]["coordinates"],
+        *build_coast(ocean, keep=lambda p: not in_region(p))["features"][0]["geometry"]["coordinates"],
+        *build_coast({"features": natural})["features"][0]["geometry"]["coordinates"],
+    ]
+    # A shore is a hairline: drawn simplified to ~300 m it looks the same at a third of the size.
+    shore_lines = [simplify_shore(line, SHORE_TOLERANCE) for line in shore_lines]
+    shores = {"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {}, "geometry": {"type": "MultiLineString", "coordinates": shore_lines}}]}
+    return round_collection(water), round_collection(shores)
 
 
 # Coastlines are drawn only around the region of the map. Using the outline of the water
@@ -555,10 +641,10 @@ def build_water() -> dict:
 COAST_BBOX = (-30.0, -5.0, 90.0, 65.0)
 
 
-def build_coast(water: dict) -> dict:
-    """Outlines of the sea and the lakes inside COAST_BBOX, as lines."""
+def build_coast(water: dict, keep=None) -> dict:
+    """Outlines of the sea and the lakes inside COAST_BBOX (and where `keep` says), as lines."""
     x0, y0, x1, y1 = COAST_BBOX
-    inside = lambda p: x0 <= p[0] <= x1 and y0 <= p[1] <= y1  # noqa: E731
+    inside = lambda p: x0 <= p[0] <= x1 and y0 <= p[1] <= y1 and (keep is None or keep(p))  # noqa: E731
     lines = []
     for f in water["features"]:
         g = f["geometry"]
@@ -617,8 +703,26 @@ RIVER_PLACES = {
     "Nile": "a012705",
 }
 RIVER_NAMES_EN = {"ae686c9": "Jordan", "a62dec4": "Euphrates", "a38ebfd": "Tigris", "a012705": "Nile"}
+# The Dead Sea's north shore, where the Jordan ends (31.77° N).
+JORDAN_MOUTH_LAT = 31.7
 # Modern canals are not rivers of antiquity.
 MODERN_WATERWAYS = re.compile(r"canal|csatorna|kanal", re.IGNORECASE)
+
+
+def simplify_shore(points: list[list[float]], tolerance: float) -> list[list[float]]:
+    """Douglas–Peucker for a shore that may be a closed ring (an island, a lake): a ring's
+    two ends are the same point, which would collapse it, so it is cut at the vertex
+    farthest from its start and the two halves are simplified apart."""
+    if len(points) < 4 or points[0] != points[-1]:
+        return simplify_line(points, tolerance)
+    x0, y0 = points[0]
+    far = max(range(len(points)), key=lambda i: (points[i][0] - x0) ** 2 + (points[i][1] - y0) ** 2)
+    first = simplify_line(points[: far + 1], tolerance)
+    second = simplify_line(points[far:], tolerance)
+    return first[:-1] + second
+
+
+sys.setrecursionlimit(100000)  # Douglas–Peucker recurses along long shores
 
 
 def simplify_line(points: list[list[float]], tolerance: float) -> list[list[float]]:
@@ -660,6 +764,12 @@ def build_rivers() -> tuple[dict, dict, dict]:
         if MODERN_WATERWAYS.search(name):
             continue
         place = RIVER_PLACES.get(name)
+        # The Jordan ends at the Dead Sea's north shore: a piece the source draws across the
+        # Lisan, between the sea's two basins, was drawn and named as the river.
+        if place == "ae686c9":
+            lines = [line for line in lines if max(pt[1] for pt in line) > JORDAN_MOUTH_LAT]
+            if not lines:
+                continue
         feats.append({
             "type": "Feature",
             "geometry": {"type": "MultiLineString", "coordinates": [[[round(x, COORD_DECIMALS), round(y, COORD_DECIMALS)] for x, y in line] for line in lines]},
@@ -740,6 +850,15 @@ def site_label(description: str, own_name: str = "") -> dict:
     return {"label": TAG_RE.sub("", description)}
 
 
+def identification_confidence(ident: dict) -> int | None:
+    """OpenBible's time-weighted score of one identification, clamped to 0–1000; None
+    when OpenBible gives none (no claim either way, not "0 of 1000")."""
+    total = (ident.get("score") or {}).get("time_total")
+    if total is None:
+        return None
+    return max(0, min(1000, round(float(total))))
+
+
 def build_sites(records: list[dict], modern: dict[str, dict]) -> tuple[dict, dict[str, tuple[int, bool]], dict]:
     """Candidate locations of disputed places (ADR 0007: a place ≠ a site).
 
@@ -799,8 +918,7 @@ def main() -> None:
     site_stats["sites"] = len(sites["features"])
     assert_no_banned_points({"places.geojson": places, "sites.geojson": sites}, modern)
     polities, polity_labels, polity_stats = build_polities()
-    water = build_water()
-    coast = build_coast(water)
+    water, coast = build_water()
     outputs = {
         "places.geojson": places,
         "sites.geojson": sites,
@@ -813,6 +931,10 @@ def main() -> None:
     }
     for name, data in outputs.items():
         (OUT / name).write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    # The content build splits the polities at AD 500 (scripts/build-content.ts): the later
+    # half from an earlier run would be counted twice.
+    for late in ("polities-late.geojson", "polity-labels-late.geojson"):
+        (OUT / late).unlink(missing_ok=True)
     manifest = {
         "schema_version": 1,
         "built_at": dt.datetime.now(dt.UTC).isoformat(timespec="seconds"),

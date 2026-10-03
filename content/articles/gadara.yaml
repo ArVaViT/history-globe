@@ -1,0 +1,32 @@
+# Overview article (ADR 0007). Mainstream facts only; the Gadarenes/Gergesenes/Gerasenes readings of the Gospels are named without choosing between them.
+id: gadara
+place: afed46a # Gadara record at Umm Qais (lon/lat checked); carries Matt 8:28 (KJV "Gergesenes", Synodal "Гергесинская"); no Russian card name yet
+title:
+  en: "Gadara"
+  ru: "Гадара"
+body:
+  en:
+    - "Gadara, today's Umm Qais in the far north of Jordan, stood on a ridge above the gorge of the Yarmuk, about 10 km southeast of the Sea of Galilee, with a wide view over the lake and the Golan. The hot springs of Hammat Gader in the valley below lay in its territory. It was a Hellenistic town by the third century BC. In 218 BC the Seleucid king Antiochus III besieged it, the strongest town of the district in Polybius' words, and it soon surrendered. Alexander Jannaeus took it after a siege of ten months, early in the first century BC."
+    - "Gadara was known for its men of letters: Strabo names among its natives Philodemus the Epicurean, the poet Meleager and Menippus the satirist. After the Roman conquest of 63 BC Pompey rebuilt the city, which the Jews had destroyed, to please his freedman Demetrius of Gadara, and it became one of the cities of the Decapolis; Pliny places it on the river Hieromix, the Yarmuk. In 30 BC Augustus gave Gadara to Herod the Great. Its citizens later accused Herod before Augustus in vain, and after Herod's death Augustus separated Gadara, Gaza and Hippos as Greek cities from his kingdom and added them to Syria. In the revolt of AD 66 Jewish bands attacked Gadara, and the Gadarenes killed the boldest of their Jews."
+    - "Matthew tells how Jesus, crossing the lake, met two men possessed with devils, who came out of the tombs; the devils went into a herd of swine, and the whole herd ran down a steep place into the sea. The manuscripts name the place differently. The KJV and the Synodal text read Gergesenes in Matthew and Gadarenes in Mark and Luke, while many modern editions read Gadarenes in Matthew and Gerasenes in Mark and Luke. Origen objected that Gadara had no lake or steep bank by it and preferred Gergesa, a village on the shore."
+    - "Under Rome Gadara grew into a city with two theatres, colonnaded streets and baths. In the fourth century Eusebius described it as a city beyond the Jordan, opposite Scythopolis and Tiberias, with hot baths at the foot of its hills, and Eunapius called the warm baths of Gadara second only to those of Baiae in Italy. In the fifth century the empress Eudocia praised the baths of Hammat Gader in a poem inscribed there."
+  ru:
+    - "Гадара, нынешний Умм-Кайс на крайнем севере Иордании, стояла на хребте над ущельем Ярмука, примерно в 10 км к юго-востоку от Моря Галилейского, откуда широко видны озеро и Голаны. Ей принадлежали горячие источники Хамат-Гадера в долине внизу. Эллинистическим городом она была уже в III веке до н. э. В 218 г. до н. э. её осадил селевкидский царь Антиох III; по словам Полибия, это был сильнейший город в округе, и вскоре он сдался. Александр Яннай взял Гадару после десятимесячной осады в начале I века до н. э."
+    - "Гадара славилась учёными людьми: Страбон называет её уроженцами эпикурейца Филодема, поэта Мелеагра и сатирика Мениппа. После римского завоевания 63 г. до н. э. Помпей отстроил разрушенный иудеями город в угоду своему вольноотпущеннику Деметрию Гадарскому, и он стал одним из городов Десятиградия; Плиний помещает его на реке Гиеромикс, то есть Ярмуке. В 30 г. до н. э. Август отдал Гадару Ироду Великому. Позже её жители напрасно обвиняли Ирода перед Августом, а после смерти Ирода Август отделил Гадару, Газу и Иппос как греческие города от его царства и присоединил их к Сирии. Во время восстания 66 г. н. э. иудейские отряды напали на Гадару, а гадаряне убили самых смелых из своих иудеев."
+    - "Матфей рассказывает, как Иисус, переправившись через озеро, встретил двух бесноватых, вышедших из гробов; бесы вошли в стадо свиней, и всё стадо бросилось с крутизны в море. В рукописях место названо по-разному. Синодальный перевод, как и KJV, читает у Матфея «в страну Гергесинскую», у Марка и Луки — «в страну Гадаринскую», а многие современные издания читают у Матфея «Гадаринская», у Марка и Луки — «Герасинская». Ориген возражал, что у Гадары нет ни озера, ни крутого берега, и предпочитал Гергесу, селение на берегу."
+    - "Под властью Рима Гадара выросла в город с двумя театрами, улицами с колоннадами и банями. В IV веке Евсевий описывал её как город за Иорданом напротив Скифополя и Тивериады, у подножия гор которого есть горячие бани, а Евнапий называл тёплые бани Гадары вторыми после Байев в Италии. В V веке императрица Евдокия воспела бани Хамат-Гадера в стихотворении, высеченном там же."
+scripture:
+  - Matt.8.28-Matt.8.34
+  - Mark.5.1-Mark.5.20
+  - Luke.8.26-Luke.8.39
+sources:
+  - "Polybius, Histories 5.71.3 (Antiochus III takes Gadara, 218 BC)"
+  - "Josephus, Antiquities 13.356 and Jewish War 1.86 (Alexander Jannaeus); Antiquities 14.75 and Jewish War 1.155 (Pompey and Demetrius); Antiquities 15.217 and Jewish War 1.396 (given to Herod); Antiquities 15.354-358 (the Gadarenes accuse Herod); Antiquities 17.320 and Jewish War 2.97 (added to Syria); Jewish War 2.459, 2.478 (the revolt of AD 66)"
+  - "Strabo, Geography 16.2.29 (Philodemus, Meleager, Menippus)"
+  - "Pliny the Elder, Natural History 5.74 (Gadara on the Hieromix)"
+  - "Origen, Commentary on John 6.24 (ANF 10; Gerasa, Gadara and Gergesa)"
+  - "Eusebius, Onomasticon, s.v. Gadara and Gergesa (C. U. Wolf's translation, nos. 362, 363)"
+  - "Eunapius, Lives of the Philosophers, Iamblichus (the baths of Gadara)"
+  - "The poem of the empress Eudocia from the baths of Hammat Gader (J. Green and Y. Tsafrir, Israel Exploration Journal 32, 1982)"
+  - "Th. M. Weber, Gadara Decapolitana (Gadara-Umm Qes I, 2002)"
+status: checked

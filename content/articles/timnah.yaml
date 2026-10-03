@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; Timnah of Samson = Tel Batash in the Sorek valley (not Timnath-serah, nor the Timnah of Gen 38); Sennacherib's campaign dated 701 BC.
+id: timnah
+place: a21f909
+title:
+  en: "Timnah"
+  ru: "Фимнафа"
+body:
+  en:
+    - "Timnah, the Timnath of Samson's story, is identified with Tel Batash, a mound on the flat floor of the Sorek valley between Beth-shemesh and Ekron. The Book of Joshua runs the border of Judah from Beth-shemesh past Timnah to the north side of Ekron, and Tel Batash lies on that line, downstream from Beth-shemesh and a few kilometres from Ekron (Tel Miqne). Amihai Mazar and George L. Kelm excavated the site in 1977–1989. It is a different place from Timnath-serah, Joshua's town in the hills of Ephraim."
+    - "The town was founded in the Middle Bronze Age, about 1750–1550 BC, within earthen ramparts. In the Late Bronze Age a large two-storey house stood there, and a burnt layer of the fourteenth century BC held cylinder seals and scarabs of Amenhotep III and Queen Tiye. In the twelfth and eleventh centuries BC Philistine pottery and seals show a Philistine town. After a gap a stone wall and a gate were built in the eighth century BC; a jar handle stamped lmlk, the royal stamp of Judah, was found, though the household pottery is closer to that of the coast. In the seventh century the town prospered, with a citadel and olive-oil presses. Like Ekron, it was destroyed about 600 BC, probably by the Babylonians, and the mound was abandoned in the Persian period."
+    - 'In the Book of Joshua Timnah stands on the northern border of Judah and is listed among the towns of Dan. "Samson went down to Timnath, and saw a woman in Timnath of the daughters of the Philistines." On the way, at the vineyards of Timnath, he tore apart a young lion, and at the wedding feast he put his riddle to thirty companions. When his wife was given to another man, he set the Philistines'' harvest on fire with foxes, and the Philistines burned her in revenge. Under Ahaz the Philistines took Timnah and its villages from Judah. In 701 BC Sennacherib of Assyria records that he besieged, conquered and plundered Eltekeh and Tamna before he dealt with Ekron.'
+    - "No town rose on the mound again, and the name Timnah seems to have passed to Khirbet Tibna, a few kilometres away. In the early fourth century AD Eusebius refers Samson's Thamnatha to Thamna, which he describes as a very large village in the territory of Diospolis (Lod), halfway to Jerusalem; he gives the Philistine town no site of its own."
+  ru:
+    - "Фимнафу из истории Самсона отождествляют с Тель-Баташем — холмом на ровном дне долины Сорек между Вефсамисом и Екроном. Книга Иисуса Навина ведёт предел Иуды от Вефсамиса через Фимну к северной стороне Екрона, и Тель-Баташ лежит на этой линии — ниже Вефсамиса по долине и в нескольких километрах от Екрона (Тель-Микне). Раскопки здесь в 1977–1989 гг. вели Амихай Мазар и Джордж Л. Келм. Это не Фамнаф-Сараи — город Иисуса Навина на горе Ефремовой."
+    - "Город основали в среднем бронзовом веке, около 1750–1550 гг. до н. э., внутри земляных валов. В позднем бронзовом веке здесь стоял большой двухэтажный дом, а в сгоревшем слое XIV века до н. э. нашли цилиндрические печати и скарабеи Аменхотепа III и царицы Тии. В XII–XI веках до н. э. филистимская керамика и печати показывают филистимский город. После перерыва в VIII веке до н. э. построили каменную стену и ворота; нашли ручку кувшина с оттиском lmlk — царским штампом Иудеи, хотя бытовая керамика ближе к прибрежной. В VII веке город процветал, в нём были цитадель и давильни для оливкового масла. Как и Екрон, он был разрушен около 600 г. до н. э., вероятно, вавилонянами, и в персидский период холм опустел."
+    - "В книге Иисуса Навина Фимна стоит на северном пределе Иуды и названа среди городов Дана. «И пошел Самсон в Фимнафу и увидел в Фимнафе женщину из дочерей Филистимских». По дороге, у виноградников Фимнафских, он растерзал молодого льва, а на свадебном пиру загадал загадку тридцати брачным друзьям. Когда его жену отдали другому, он поджёг лисицами жатву Филистимскую, а филистимляне в отместку сожгли её. При Ахазе филистимляне взяли у Иудеи Фимну и зависящие от неё города. Ассирийский царь Сеннахирим сообщает, что в 701 г. до н. э. он осадил, взял и разграбил Елтеке и Тамну, прежде чем расправиться с Екроном."
+    - "Города на холме больше не было, а имя Фимны, по-видимому, перешло к руинам Хирбет-Тибна в нескольких километрах отсюда. В начале IV века н. э. Евсевий относит Фимнафу Самсона к Фамне, которую описывает как очень большое селение в округе Диосполя (Лидды), на полпути к Иерусалиму; отдельного места для филистимского города он не указывает."
+scripture:
+  - Josh.15.10-Josh.15.11
+  - Josh.19.43
+  - Judg.14.1-Judg.14.2
+  - Judg.14.5-Judg.14.6
+  - Judg.14.10-Judg.14.18
+  - Judg.14.20
+  - Judg.15.1-Judg.15.6
+  - 2Chr.28.18
+sources:
+  - "Sennacherib, annals: RINAP 3, Sennacherib 22 (Chicago prism) iii 6; Sennacherib 4 (Rassam cylinder), line 46 (Eltekeh and Tamna)"
+  - "Eusebius, Onomasticon, s.v. Thamna and Thamnatha (C. U. Wolf's translation, nos. 487 and 507)"
+  - "G. L. Kelm and A. Mazar, 'Three Seasons of Excavations at Tel Batash: Biblical Timnah', BASOR 248 (1982), pp. 1-36"
+  - "A. Mazar, Timnah (Tel Batash) I: Stratigraphy and Architecture (Qedem 37, 1997); A. Mazar and N. Panitz-Cohen, Timnah (Tel Batash) II: The Finds from the First Millennium BCE (Qedem 42, 2001)"
+  - "G. L. Kelm and A. Mazar, Timnah: A Biblical City in the Sorek Valley (1995)"
+status: checked

@@ -1,0 +1,25 @@
+id: where-was-the-tower-of-babel
+question:
+  en: "Where was the Tower of Babel?"
+  ru: "Где была Вавилонская башня?"
+answer:
+  en:
+    - "Genesis places the tower in the land of Shinar, that is Babylonia, and names the city Babel, which is the Hebrew name of Babylon; the map point stands at Babylon on the Euphrates, south of Baghdad in Iraq and about 870 km from Jerusalem in a straight line."
+    - "The story says that the builders, “as they journeyed from the east”, “found a plain in the land of Shinar; and they dwelt there”, and that they used baked brick and bitumen, the materials of Mesopotamian building: “let us build us a city and a tower, whose top may reach unto heaven.” Genesis 10 names Babel first among the cities of Nimrod in Shinar. Babylon's great temple-tower, the ziggurat Etemenanki, “house of the foundation of heaven and earth”, stood beside the temple of Marduk; Herodotus describes it as a tower of eight stages, and Nebuchadnezzar II rebuilt it in the sixth century BC. Most scholars think the story has this ziggurat, or an earlier one on the same site, in view."
+    - "Only the outline of the foundations of Etemenanki survives, a square of about 90 m a side, because Alexander the Great had the ruined stages cleared for a rebuilding that never came. Since the Middle Ages travellers have also been shown the ziggurat of Borsippa, Birs Nimrud, south-west of Babylon, whose vitrified summit looks like a tower struck by fire; in the twelfth century Benjamin of Tudela described a Tower of Babel near Hillah split by fire from heaven, most likely this one. Genesis gives no date, and the map does not fix one."
+  ru:
+    - "Бытие помещает башню в земле Сеннаар, то есть в Вавилонии, и называет город Вавилоном: Бавел — еврейское имя Вавилона; точка на карте стоит у Вавилона на Евфрате, к югу от Багдада в Ираке, примерно в 870 км от Иерусалима по прямой."
+    - "Рассказ говорит о строителях: «Двинувшись с востока, они нашли в земле Сеннаар равнину и поселились там», — и что строили из обожжённого кирпича и земляной смолы — материалов месопотамских построек: «построим себе город и башню, высотою до небес». Бытие 10 называет Вавилон первым среди городов Нимрода в Сеннааре. Великая храмовая башня Вавилона, зиккурат Этеменанки, «дом основания неба и земли», стояла рядом с храмом Мардука; Геродот описывает её как башню в восемь ярусов, а Навуходоносор II отстроил её в VI веке до н. э. Большинство учёных считают, что рассказ имеет в виду этот зиккурат или более ранний на том же месте."
+    - "От Этеменанки уцелел лишь контур основания — квадрат со стороной около 90 м: Александр Македонский велел разобрать обветшавшие ярусы для перестройки, которая так и не состоялась. Со Средних веков путешественникам показывали и зиккурат Борсиппы, Бирс-Нимруд, к юго-западу от Вавилона, чья оплавленная вершина похожа на башню, поражённую огнём; Вениамин Тудельский в XII веке описал близ Хиллы Вавилонскую башню, расколотую огнём с неба, — скорее всего, эту. Бытие не называет даты, и карта её не задаёт."
+map:
+  place: ab8fdbc
+  ref: Gen.11.4
+scripture: [Gen.11.1-Gen.11.9, Gen.10.10, Gen.11.2]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Herodotus, Histories 1.181 (the tower of eight stages)"
+  - "A. R. George, 'The Tower of Babel: Archaeology, History and Cuneiform Texts', Archiv für Orientforschung 51 (2005/2006)"
+  - "H. Schmid, Der Tempelturm Etemenanki in Babylon (1995)"
+  - "Strabo, Geography 16.1.5 (Alexander and the ruined tomb of Belus)"
+  - "Benjamin of Tudela, Itinerary (twelfth century), on the Tower of Babel near Hillah"
+status: checked

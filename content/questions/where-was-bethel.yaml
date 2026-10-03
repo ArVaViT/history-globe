@@ -1,0 +1,25 @@
+id: where-was-bethel
+question:
+  en: "Where was Bethel?"
+  ru: "Где находился Вефиль?"
+answer:
+  en:
+    - "Bethel stood in the hills about 16 km north of Jerusalem in a straight line, on the watershed road that runs along the ridge, near the border between the lands of Benjamin and Ephraim. Most scholars identify it with the village of Beitin, north of Ramallah in the West Bank, where the map's point stands; other sites have been proposed, and the point is marked as disputed."
+    - 'In Genesis Abraham pitches his tent between Bethel and Ai and builds an altar, and Jacob, sleeping there on his way to Haran, dreams of a ladder reaching to heaven: "And he called the name of that place Beth-el: but the name of that city was called Luz at the first." When the kingdom divided, Jeroboam made Bethel the royal sanctuary of Israel: "And he set the one in Beth-el, and the other put he in Dan", the two golden calves. Amos prophesied there against the house of Jeroboam II, and Josiah later tore down its altar.'
+    - "W. F. Albright and J. L. Kelso excavated at Beitin between 1927 and 1960 and found a walled town of the Middle Bronze Age and a burned town of the Late Bronze Age; the dating of several layers has been questioned since. In the fourth century Eusebius knew Bethel as a village twelve Roman miles from Jerusalem, about 18 km, on the road to Neapolis (Shechem). Shiloh, where the tabernacle stood, lies about 15 km further north along the same hills."
+  ru:
+    - "Вефиль стоял в горах примерно в 16 км к северу от Иерусалима по прямой, на дороге, идущей по водоразделу вдоль хребта, у границы земель Вениамина и Ефрема. Большинство учёных отождествляют его с деревней Бейтин к северу от Рамаллы на Западном берегу, где и стоит точка карты; предлагались и другие места, и точка помечена как спорная."
+    - "В Книге Бытия Авраам ставит шатёр между Вефилем и Гаем и строит жертвенник, а Иаков, заночевав здесь по пути в Харран, видит во сне лестницу до неба: «И нарек Иаков имя месту тому: Вефиль, а прежнее имя того города было: Луз». При разделении царства Иеровоам сделал Вефиль царским святилищем Израиля: «И поставил одного в Вефиле, а другого в Дане» — двух золотых тельцов. Здесь пророчествовал Амос против дома Иеровоама II, а позднее Иосия разрушил здешний жертвенник."
+    - "У. Ф. Олбрайт и Дж. Л. Келсо вели в Бейтине раскопки с 1927 по 1960 год и нашли обнесённый стеной город среднего бронзового века и сгоревший город позднего бронзового века; датировки нескольких слоёв с тех пор оспариваются. В IV веке Евсевий знал Вефиль как селение в двенадцати римских милях от Иерусалима, около 18 км, по дороге на Неаполис (Сихем). Силом, где стояла скиния, лежит примерно в 15 км дальше на север по тем же горам."
+map:
+  place: a64f355
+  year: "1800 BC"
+  ref: Gen.28.19
+scripture: [Gen.12.8, Gen.28.10-Gen.28.19, 1Kgs.12.28-1Kgs.12.29, Amos.7.10-Amos.7.13, 2Kgs.23.15]
+sources:
+  - "Eusebius, Onomasticon, s.v. Baithel and Aggai (Ai)"
+  - "J. L. Kelso, The Excavation of Bethel (1934-1960), AASOR 39 (1968)"
+  - "I. Finkelstein and L. Singer-Avitz, 'Reevaluating Bethel', Zeitschrift des Deutschen Palästina-Vereins 125 (2009)"
+  - "History Globe article “Bethel” and History Globe tour “Jacob”"
+  - "Straight-line distances between the places' points (Jerusalem, Bethel at Beitin, Shiloh): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

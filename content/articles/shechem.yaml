@@ -1,0 +1,40 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such.
+id: shechem
+place: adf74d4
+title:
+  en: "Shechem"
+  ru: "Сихем"
+body:
+  en:
+    - "Shechem lay at Tell Balata, in the pass between Mount Ebal and Mount Gerizim, where the roads of the central hills cross. In the Middle Bronze Age it became a great city with massive walls, gates and a fortress temple. An Egyptian stela of the nineteenth century BC records a campaign against Sekmem, probably Shechem, and in the Amarna letters of the fourteenth century BC its ruler Labayu troubles his neighbours."
+    - "In Genesis Abraham stops at the oak of Moreh by Shechem, and Jacob buys a field there; Joseph's bones were later buried in it. Joshua gathered the tribes at Shechem to renew the covenant, and Abimelech, made king there, later destroyed the city. At Shechem the northern tribes rejected Rehoboam, and the kingdom divided in about 931 BC; Jeroboam built up the town as his first seat."
+    - "After a long gap at the end of the Late Bronze Age, the town was rebuilt in the Iron Age and destroyed in the Assyrian conquest of the 720s BC. In the late fourth century BC the Samaritans resettled it and made it their chief city, with their temple on Mount Gerizim. John Hyrcanus destroyed the temple; the date is disputed, soon after 129 BC by Josephus' account or about 111 BC by the coins found on Gerizim. About 107 BC he razed the city, which was never rebuilt."
+    - "The Gospel of John sets Jesus' talk with a Samaritan woman at Jacob's well near Sychar, beside the old site. In AD 72 Flavia Neapolis was founded 2 km to the west; Justin Martyr was born there. In the fourth century pilgrims were shown Jacob's well, where a church was built, and the tomb of Joseph. After a Samaritan revolt, usually dated 484, the emperor Zeno built a church to the Mother of God on Mount Gerizim."
+  ru:
+    - "Сихем стоял на холме Телль-Балата, в проходе между горами Гевал и Гаризим, где сходятся дороги центрального нагорья. В среднем бронзовом веке он стал большим городом с мощными стенами, воротами и храмом-крепостью. Египетская стела XIX века до н. э. упоминает поход на Секмем, вероятно Сихем, а в Амарнских письмах XIV века до н. э. его правитель Лабайю тревожит соседей."
+    - "В Книге Бытия Авраам останавливается у дубравы Море близ Сихема, а Иаков покупает здесь участок поля; позже в нём погребли кости Иосифа. Иисус Навин собрал в Сихеме колена, чтобы обновить завет, а Авимелех, поставленный здесь царём, впоследствии разрушил город. В Сихеме северные колена отвергли Ровоама, и около 931 г. до н. э. царство разделилось; Иеровоам обстроил город и сделал его своей первой резиденцией."
+    - "После долгого перерыва в конце позднего бронзового века город отстроили в железном веке, а в 720-х гг. до н. э. он был разрушен при ассирийском завоевании. В конце IV века до н. э. его вновь заселили самаряне и сделали своим главным городом, а их храм стоял на горе Гаризим. Иоанн Гиркан разрушил этот храм; дата спорна: по Иосифу Флавию, вскоре после 129 г. до н. э., по монетам, найденным на Гаризиме, около 111 г. до н. э. Около 107 г. до н. э. он сровнял с землёй и город, который больше не отстраивался."
+    - "Евангелие от Иоанна относит беседу Иисуса с самарянкой к колодцу Иакова близ Сихаря, рядом со старым городищем. В 72 г. н. э. в 2 км к западу был основан город Флавия Неаполис; здесь родился Иустин Мученик. В IV веке паломникам показывали колодец Иакова, над которым построили церковь, и гробницу Иосифа. После восстания самарян, которое обычно датируют 484 г., император Зенон возвёл на Гаризиме церковь Богородицы."
+scripture:
+  - Gen.12.6-Gen.12.7
+  - Gen.33.18-Gen.33.20
+  - Josh.24.1
+  - Josh.24.25
+  - Josh.24.32
+  - Judg.9.6
+  - Judg.9.45
+  - 1Kgs.12.1
+  - 1Kgs.12.16
+  - 1Kgs.12.25
+  - John.4.5-John.4.7
+sources:
+  - "Stela of Sebek-khu (Manchester Museum), on the campaign of Senusret III"
+  - "Amarna letters EA 252-254 and EA 289 (Labayu)"
+  - "Josephus, Antiquities 11.340-345; 13.255-256; Jewish War 1.63"
+  - "Pliny the Elder, Natural History 5.69; Justin Martyr, First Apology 1"
+  - "Itinerary of the Bordeaux Pilgrim (AD 333); Jerome, Letter 108.13"
+  - "Procopius, Buildings 5.7"
+  - "G. E. Wright, Shechem: The Biography of a Biblical City (1965)"
+  - "E. F. Campbell, Shechem III: The Stratigraphy and Architecture of Shechem/Tell Balâtah (2002)"
+  - "Y. Magen, Mount Gerizim Excavations, vol. II: A Temple City (2008)"
+status: checked

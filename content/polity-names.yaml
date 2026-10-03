@@ -1,87 +1,356 @@
-# Russian names for the Cliopatria polities shown between 2000 BC and AD 100 in the focus
+# Russian names for the Cliopatria polities shown between 3500 BC and AD 500 in the focus
 # region. Established Russian historiographic forms; Synodal forms where the Bible names
 # the place (Вифиния, Галатия). Drafted 2026-09-28, NOT yet reviewed by a historian.
+# The 36 polities of 3500-2000 BC and AD 100-500 added 2026-10-01; checked the same day
+# against standard Russian forms and the Cliopatria shapes (not by a historian). Gothia is
+# "Готы" like its neighbour "Гунны" ("Готия" reads as the Crimean one); the Early Dynastic
+# Period is "Раннее царство" beside the Old and Middle Kingdoms; Alodia stays "Алва".
+# The 337 polities of AD 500-1300 and of the widened region (Spain to Persia) added
+# 2026-10-02 from Cliopatria's own Wikidata links and ru.wikipedia, checked twice (not by
+# a historian); see the session notes for the 29 judgement calls.
 polities:
+  Abbasid Caliphate: Аббасидский халифат
+  Abbasid Caliphate/Buyid Dynasty: Аббасидский халифат при Буидах
   Achaean League: Ахейский союз
   Achaemenid Empire: Держава Ахеменидов
   Aetolian League: Этолийский союз
+  Aghlabid Dynasty: Аглабиды
+  Akkadian Empire: Аккадская держава
+  Alans: Аланы
+  Almohad Caliphate: Альмохадский халифат
+  Almoravid Dynasty: Альморавиды
+  Alodia: Алва
+  Angevin Empire: Анжуйская держава
+  Angevins: Владения графов Анжуйских
   Ankhwennefer: Владения Анхуннефера
   Antigonid Dynasty: Держава Антигонидов
   Antigonid Macedonia: Македония Антигонидов
+  Aquitaine: Аквитания
+  Armenian Kingdom of Cilicia: Киликийская Армения
   Assyria: Ассирия
   Assyrian Egypt: Египет под властью Ассирии
   Athenian Coalition: Афины и союзники
   Atropatene: Атропатена
+  Avar Khaganate: Аварский каганат
+  Ayyubid Sultanate: Государство Айюбидов
   Babylonia: Вавилония
+  Bagratid Armenia: Армянское царство Багратидов
+  Bahrani Dynasty: Бахрейнские династии
+  Balasagan: Баласаган
+  Banate of Bosnia: Боснийский банат
+  Barghawata Conference: Берегваты
+  Bavarians: Бавары
+  Breton Kingdoms: Бретонские королевства
+  Brythons: Бритты
+  Burgundian Kingdom: Королевство бургундов
+  Burgundians: Бургунды
+  Buyid Dynasty: Буиды
+  Byzantine Empire: Византийская империя
+  Caliphate of Córdoba: Кордовский халифат
+  Cao Wei: Царство Вэй
+  Capetian House of Anjou: Владения Анжуйского дома
+  Carantania: Карантания
+  Carolingian Empire: Империя Каролингов
   Carthage: Карфаген
   Caucasian Albania: Кавказская Албания
   Caucasian Iberia: Иберия (Картли)
+  Chagatai Khanate: Чагатайский улус
+  Chalukya Dynasty: Чалукья
+  Chauhan Dynasty: Чауханы
+  Chaulukya Dynasty: Чаулукья
+  Chola Empire: Империя Чола
   Cimmerian Bosporus: Боспорское царство
   Colchis: Колхида
+  Comtat Venaissin: Конта-Венессен
+  Cornwall: Корнуолл
+  County of Ampuria: Графство Ампурьяс
+  County of Anjou: Графство Анжу
+  County of Aragon: Графство Арагон
+  County of Armagnac: Графство Арманьяк
+  County of Auvergne: Графство Овернь
+  County of Barcelona: Барселонское графство
+  County of Berga: Графство Берга
+  County of Besalú: Графство Бесалу
+  County of Blôis: Графство Блуа
+  County of Champagne: Графство Шампань
+  County of Edessa: Эдесское графство
+  County of Flanders: Графство Фландрия
+  County of Foix: Графство Фуа
+  County of Maine: Графство Мэн
+  County of Nevers: Графство Невер
+  County of Osona: Графство Осона
+  County of Pallars: Графство Пальярс
+  County of Pallars Jussà: Графство Пальярс-Жусса
+  County of Pallars Sobirà: Графство Пальярс-Собира
+  County of Poitou: Графство Пуату
+  County of Portugal: Графство Португалия
+  County of Périgord: Графство Перигор
+  County of Ribagorza: Графство Рибагорса
+  County of Rosellón: Графство Руссильон
+  County of Rouergue: Графство Руэрг
+  County of Savoy: Савойское графство
+  County of Toulouse: Тулузское графство
+  County of Touraine: Графство Турень
+  County of Tripoli: Графство Триполи
+  County of Urgell: Графство Урхель
+  County of Vermandois: Графство Вермандуа
+  County of Vexin: Графство Вексен
+  Crown of Aragon: Арагонская корона
+  Crown of Castile: Кастильская корона
+  Cuman-Kipchak Confederation: Половцы (кипчаки)
+  Cyprus Condominium: Кипр (арабо-византийский кондоминиум)
   Cyrenaica: Киренаика
+  Dabuyid Dynasty: Дабуиды
+  Danishmendids: Данишмендиды
+  Dauphiné: Дофине
+  Denmark-England: Англо-датская уния
+  Despotate of Epirus: Эпирский деспотат
+  Domain of Rhodes: Владения Гавалов на Родосе
+  Duchy of Aquitaine: Герцогство Аквитания
+  Duchy of Athens: Афинское герцогство
+  Duchy of Bavaria: Герцогство Бавария
+  Duchy of Benevento: Герцогство Беневенто
+  Duchy of Bohemia: Чешское княжество
+  Duchy of Brittany: Герцогство Бретань
+  Duchy of Burgundy: Бургундское герцогство
+  Duchy of Croatia: Хорватское княжество
+  Duchy of Gascony: Герцогство Гасконь
+  Duchy of Greater Poland: Великопольское княжество
+  Duchy of Masovia: Мазовецкое княжество
+  Duchy of Naples: Герцогство Неаполь
+  Duchy of Normandy: Нормандское герцогство
+  Duchy of Opole: Опольское княжество
+  Duchy of Racibórz: Ратиборское княжество
+  Duchy of Sandomierz: Сандомирское княжество
+  Duchy of Silesia: Силезское княжество
+  Duchy of Spoleto: Сполетское герцогство
+  Duchy of Styria: Герцогство Штирия
+  Duchy of the Archipelago: Наксосское герцогство
+  Duchy of Thuringia: Герцогство Тюрингия
+  Duchy of Tuscia: Герцогство Тусция
+  Duchy of Wrocław: Вроцлавское княжество
+  Dumnonia: Думнония
+  Early Dynastic Period of Egypt: Раннее царство Египта
+  East Franks: Восточно-Франкское королевство
+  Eastern Kara-Khanids: Восточно-Караханидское ханство
+  Eastern Kushans: Восточные Кушаны
+  Eastern Roman Empire: Восточная Римская империя
   Elam: Элам
+  Emirate of Crete: Критский эмират
+  Emirate of Córdoba: Кордовский эмират
+  Emirate of Granada: Гранадский эмират
+  Emirate of Nekor: Эмират Некор
+  Emirate of Sicily: Сицилийский эмират
+  Empire of Kanem: Канем
+  Empire of Thessalonica: Фессалоникская империя
+  Empire of Trebizond: Трапезундская империя
+  Ethiopian Empire: Эфиопская империя
   Etruscans: Этруски
+  Fatimid Caliphate: Фатимидский халифат
   Fifteenth Dynasty of Egypt: XV династия Египта
+  Fihrids: Фихриды
+  First Bulgarian Empire: Первое Болгарское царство
   First Sealand Dynasty: I Приморская династия
+  Frisia Kingdom: Фризское королевство
   Galatia: Галатия
+  Galicia-Volhynia: Галицко-Волынское княжество
+  Gallic Empire: Галльская империя
+  Georgia: Грузия
+  Ghana Empire: Империя Гана
+  Ghassanids: Царство Гассанидов
+  Ghaznavid Empire: Государство Газневидов
+  Ghurid Dynasty: Гуриды
+  Giudicato of Arborea: Юдикат Арборея
+  Giudicato of Cagliari: Юдикат Кальяри
+  Giudicato of Gallura: Юдикат Галлура
+  Giudicato of Logudoro: Юдикат Логудоро
+  Golden Horde: Золотая Орда
+  Gothia: Готы
+  Goths: Готы
+  Grand Duchy of Kraków: Краковское княжество
+  Grand Principality of Serbia: Великое жупанство Рашка
+  Great Moravia: Великая Моравия
+  Great Principality of Duklja: Княжество Дукля
+  Great Seljuk Empire: Государство Сельджукидов
   Great Yuan: Давань
   Greco-Bactrian Kingdom: Греко-Бактрийское царство
   Greek City-States: Греческие полисы
   Greek Colonies: Греческие колонии
   Greek Dark Ages: Греция «тёмных веков»
+  Gupta Empire: Империя Гуптов
+  Gurjara-Pratihara Dynasty: Гурджара-Пратихары
+  Gutian Dynasty: Держава кутиев
+  Göktürk Khaganate: Тюркский каганат
   Hadhramaut: Хадрамаут
+  Hafsid Dynasty: Хафсиды
+  Halych-Volhynia occupation: Половецкая степь
+  Hamdanid Emirates: Эмираты Хамданидов
+  Hammadid Dynasty: Хаммадиды
+  Han Dynasty: Империя Хань
+  Harsha's Empire: Держава Харши
   Himyarite Kingdom: Химьяритское царство
   Hittites: Хеттское царство
+  Holy Roman Empire: Священная Римская империя
+  Holy Roman Empire Minor States: Мелкие владения Священной Римской империи
+  House of Anjou-Sicily: Владения Анжу-Сицилийского дома
+  House of Habsburg: Владения Габсбургов
+  House of Hohenstaufen: Владения Гогенштауфенов
+  House of Luxembourg: Владения Люксембургов
+  House of Wittelsbach: Владения Виттельсбахов
+  Hoysala Kingdom: Хойсалы
+  Hunnic Empire: Держава гуннов
   Huns: Гунны
   Hyksos: Гиксосы
+  Idrisids: Идрисиды
+  Ifat Sultanate: Султанат Ифат
+  Ilkhanate: Государство Хулагуидов
   Illyrian Kingdom: Иллирийское царство
   Indo-Greeks: Индо-греческое царство
   Indo-Parthians: Индо-парфянское царство
+  Indo-Sasanian Empire: Кушано-Сасанидское царство
   Indo-Scythians: Индо-скифское царство
   Indus Valley Civilization: Хараппская цивилизация
   Italian City-States: Италийские союзники
+  Janapada of Gandhāra: Гандхара
+  Janapada of Kamboja: Камбоджа (джанапада)
   Judea: Иудея
+  Kadamba Empire: Кадамбы
+  Kannauj-Varman Dynasty: Варманы Каннауджа
+  Kara-Khanids: Караханидское государство
+  Kara-Khitans: Каракитайское ханство
+  Karkota Dynasty: Каркота
+  Kashmir: Кашмир
+  Khalji Dynasty: Хилджи
+  Kharijites: Хариджиты
+  Khazaria: Хазарский каганат
+  Khwarezmid Dynasty: Хорезмшахи-Ануштегиниды
+  Khwarezmid Empire: Государство Хорезмшахов
+  Kidarites: Кидариты
+  Kievan Rus': Киевская Русь
+  Kimek-Kipchak confederation: Кимакский каганат
   Kingdom of Adiabene: Адиабена
+  Kingdom of Africa: Королевство Африка
+  Kingdom of Alamannia: Королевство алеманнов
+  Kingdom of Aragon: Королевство Арагон
+  Kingdom of Arles: Арелатское королевство
   Kingdom of Armenia: Армянское царство
+  Kingdom of Asturias: Королевство Астурия
   Kingdom of Axum: Аксумское царство
   Kingdom of Bithynia: Вифиния
+  Kingdom of Bohemia: Чешское королевство
+  Kingdom of Brittany: Королевство Бретань
   Kingdom of Cappadocia: Каппадокийское царство
+  Kingdom of Castile: Королевство Кастилия
   Kingdom of Commagene: Коммагена
+  Kingdom of Croatia: Королевство Хорватия
+  Kingdom of Cyprus: Кипрское королевство
+  Kingdom of Duklja: Королевство Дукля
+  Kingdom of England: Королевство Англия
+  Kingdom of France: Королевство Франция
+  Kingdom of Galicia: Королевство Галисия
+  Kingdom of Georgia: Грузинское царство
+  Kingdom of Germany: Королевство Германия
   Kingdom of Gordyene: Гордиена
+  Kingdom of Hungary: Королевство Венгрия
   Kingdom of Israel: Израильское царство
+  Kingdom of Italy: Королевство Италия
+  Kingdom of Jerusalem: Иерусалимское королевство
   Kingdom of Judah: Иудейское царство
+  Kingdom of Khotan: Хотанское царство
   Kingdom of Kush: Царство Куш
+  Kingdom of Lazica: Эгриси (Лазика)
+  Kingdom of León: Королевство Леон
+  Kingdom of Lower Burgundy: Королевство Нижняя Бургундия
   Kingdom of Lysimachus: Царство Лисимаха
+  Kingdom of Majorca: Королевство Мальорка
+  Kingdom of Naples: Неаполитанское королевство
+  Kingdom of Navarre: Королевство Наварра
+  Kingdom of Neustria: Нейстрия
   Kingdom of Numidia: Нумидия
   Kingdom of Osroene: Осроена
+  Kingdom of Pamplona: Королевство Памплона
   Kingdom of Pergamon: Пергамское царство
+  Kingdom of Poland: Королевство Польское
   Kingdom of Pontus: Понтийское царство
+  Kingdom of Portugal: Королевство Португалия
+  Kingdom of Serbia: Сербское королевство
+  Kingdom of Sicily: Сицилийское королевство
+  Kingdom of Sobrarbe: Королевство Собрарбе
+  Kingdom of Soissons: Суассонская область
   Kingdom of Sophene: Софена
+  Kingdom of Syrmia: Сремское королевство
+  Kingdom of the Franks: Королевство франков
+  Kingdom of the Gepids: Королевство гепидов
+  Kingdom of the Iberians: Тао-Кларджети
+  Kingdom of the Suebi: Королевство свевов
+  Kingdom of Thessalonica: Королевство Фессалоники
+  Kingdom of Thuringia: Королевство тюрингов
   Kingdom of Urartu: Урарту
+  Kingdom of Vaspurakan: Васпураканское царство
   Kushan Empire: Кушанское царство
+  Lakhmid Kingdom: Царство Лахмидов
   Laomedon: Владения Лаомедонта
+  Latin Empire: Латинская империя
   Lazica: Лазика
+  Lohara Dynasty: Лохара
+  Lombards: Лангобарды
+  Lower Burgundy: Нижняя Бургундия
+  Lower Egypt: Нижний Египет
   Lydia: Лидия
   Macedonian Empire: Македония
+  Magadha - Shaishunaga dynasty: Магадха при Шайшунагах
+  Magyars: Мадьяры
+  Mahameghavahana Dynasty: Махамегхаваханы
+  Mahdids: Махдиды
+  Maitraka Dynasty: Майтраки
+  Makuria: Мукурра
+  Mali Empire: Империя Мали
   Mamertines: Мамертинцы
-  Maurya Empire: Империя Маурьев
+  Mamluk Dynasty: Мамлюкская династия Дели
+  Mamluk Sultanate: Мамлюкский султанат
+  Marinid Sultanate: Государство Маринидов
   Mauretania: Мавретания
+  Maurya Empire: Империя Маурьев
   Median Kingdom: Мидийское царство
+  Merovingian Empire: Держава Меровингов
+  Middle Franks: Средне-Франкское королевство
   Middle Kingdom of Egypt: Среднее царство Египта
   Minaeans: Минейское царство
   Minoan civilization: Минойская цивилизация
   Mitanni: Митанни
   Molossians: Молоссы
+  Mongol Empire: Монгольская империя
   Mycenaean Greece: Микенская Греция
   Nabataeans: Набатейское царство
+  Nabhani Dynasty: Набханиды
+  Najahid Dynasty: Наджахиды
   Nanda Empire: Империя Нандов
-  Neo-Assyrian Empire: Новоассирийская держава
+  Negroponte: Негропонте
+  Neo-Assyrian Empire: Новоассирийское царство
   Neo-Babylonian Empire: Нововавилонское царство
   Neo-Hittite states: Новохеттские царства
   New Kingdom of Egypt: Новое царство Египта
+  Egypt of the Third Intermediate Period: Египет Третьего переходного периода
+  Nicaean Empire: Никейская империя
+  Nitra: Нитра
+  Nobatia: Нобатия
+  Norman England: Нормандская Англия
+  Norman Italy: Норманнские владения в Южной Италии
+  North Sea Empire: Держава Кнуда Великого
   Odrysian Kingdom: Одрисское царство
+  Oghuz Turks: Государство огузов
+  Old Great Bulgaria: Великая Болгария
+  Old Kingdom of Egypt: Древнее царство Египта
+  Ostrogothic Kingdom: Остготское королевство
+  Ostrogoths: Остготы
+  Pala Empire: Империя Пала
+  Palmyrene Empire: Пальмирское царство
+  Pandya Empire: Империя Пандья
+  Papal States: Папская область
   Paphlagonia: Пафлагония
+  Paramara Dynasty: Парамары
   Parthian Empire: Парфянское царство
+  Patriarchate of Aquileia: Аквилейский патриархат
   Peloponnesian League: Пелопоннесский союз
   Perdiccas: Владения Пердикки
   Philistia: Филистия
@@ -90,26 +359,140 @@ polities:
   Phoenician Empire: Финикийские владения
   Phrygia: Фригия
   Polyperchon: Владения Полиперхона
-  Ptolemaic Kingdom: Египет Птолемеев
+  Principality of Achaea: Ахейское княжество
+  Principality of Antioch: Антиохийское княжество
+  Principality of Capua: Княжество Капуя
+  Principality of Galicia-Volhynia: Галицко-Волынское княжество
+  Principality of Halych: Галицкое княжество
+  Principality of Hungary: Венгерское княжество
+  Principality of Iberia: Иберийское княжество (Картли)
+  Principality of Kiev: Киевское княжество
+  Principality of Nitra: Нитранское княжество
+  Principality of Orange: Княжество Оранж
+  Principality of Peremyshl: Перемышльское княжество
+  Principality of Pereyaslavl: Переяславское княжество
+  Principality of Salerno: Княжество Салерно
+  Principality of Serbia: Сербское княжество
+  Principality of Terebovlia: Теребовльское княжество
+  Protectorate of the Western Regions: Наместничество Сиюй
+  Ptolemaic Kingdom: Царство Птолемеев
+  Qarlugs: Карлукский каганат
+  Qarmatians: Карматы
   Qataban: Катабан
+  Rashidun Caliphate: Праведный халифат
+  Rashtrakuta Dynasty: Раштракуты
+  Rasulid Dynasty: Расулиды
+  Republic of Amalfi: Амальфитанская республика
+  Republic of Florence: Флорентийская республика
+  Republic of Genoa: Генуэзская республика
+  Republic of Pisa: Пизанская республика
+  Republic of Venice: Венецианская республика
   Rhodes: Родос
+  Ripuarian Franks: Рипуарские франки
   Roman Empire: Римская империя
   Roman Kingdom: Римское царство
   Roman Republic: Римская республика
+  Rugiland: Королевство ругов
+  Rustamid dynasty: Рустамиды
   Sabaeans: Сабейское царство
   Sacred Band of Thebes: Фивы
+  Saffarid Dynasty: Саффариды
+  Sajid Dynasty: Саджиды
+  Salian Franks: Салические франки
+  Samanid Empire: Государство Саманидов
+  Samo's Empire: Государство Само
+  Sasanian Empire: Держава Сасанидов
+  Satavahana Dynasty: Сатаваханы
   Scythia: Скифия
   Second Athenian League: Второй Афинский морской союз
+  Second Bulgarian Empire: Второе Болгарское царство
   Seleucid Empire: Держава Селевкидов
+  Seljuk Dynasty: Сельджукиды
   Seventeenth Dynasty of Egypt: XVII династия Египта
+  Shirvan: Ширван
+  Sind-Habbari Dynasty: Хаббариды
   Sixteenth Dynasty of Egypt: XVI династия Египта
+  Sosso Empire: Государство Сосо
+  Sulayhid Dynasty: Сулайхиды
+  Sultanate of Rum: Румский султанат
   Sumerian City-States: Шумерские города-государства
+  Swiss Confederation: Швейцарский союз
   Tabal Kingdom: Табал
+  Taifa of Albarracín: Тайфа Альбаррасин
+  Taifa of Algeciras: Тайфа Альхесирас
+  Taifa of Almería: Тайфа Альмерия
+  Taifa of Alpuente: Тайфа Альпуэнте
+  Taifa of Arcos: Тайфа Аркос
+  Taifa of Badajoz: Тайфа Бадахос
+  Taifa of Carmona: Тайфа Кармона
+  Taifa of Ceuta: Тайфа Сеута
+  Taifa of Córdoba: Тайфа Кордова
+  Taifa of Dénia: Тайфа Дения
+  Taifa of Granada: Тайфа Гранада
+  Taifa of Morón: Тайфа Морон
+  Taifa of Murcia: Тайфа Мурсия
+  Taifa of Niebla: Тайфа Ньебла
+  Taifa of Ronda: Тайфа Ронда
+  Taifa of Saltés and Huelva: Тайфа Сальтес и Уэльва
+  Taifa of Santa Maria do Algarve: Тайфа Санта-Мария-де-Альгарве
+  Taifa of Seville: Тайфа Севилья
+  Taifa of Silves: Тайфа Сильвес
+  Taifa of Tejada: Тайфа Техада
+  Taifa of Toledo: Тайфа Толедо
+  Taifa of Tortosa: Тайфа Тортоса
+  Taifa of Valencia: Тайфа Валенсия
+  Taifa of Zaragoza: Тайфа Сарагоса
+  Takrur: Текрур
+  Tang Dynasty: Империя Тан
   Thebans: Фивы
+  Thessaly: Фессалия
   Thirtieth Dynasty of Egypt: XXX династия Египта
   Thracian Kingdom: Фракийское царство
+  Thuringian states: Тюрингские государства
+  Tibetan Empire: Тибетское царство
+  Tulunids: Тулуниды
+  Turk Shahis: Тюркшахи
+  Turks: Тюрки
   Twenty-second Dynasty of Egypt: XXII династия Египта
   Twenty-sixth Dynasty of Egypt: XXVI династия Египта
   Twenty-third Dynasty of Egypt: XXIII династия Египта
+  Türgesh: Тюргешский каганат
+  Umayyad Caliphate: Омейядский халифат
+  Upper Burgundy: Верхняя Бургундия
+  Upper Burgundy and Italy: Верхняя Бургундия и Италия
+  Upper Egypt: Верхний Египет
+  Utpala Dynasty: Утпалы
+  Uyghur Khaganate: Уйгурский каганат
+  Uyunid Emirate: Эмират Уюнидов
+  Vakataka Kingdom: Вакатаки
+  Vandal Kingdom: Королевство вандалов
+  Vandals: Вандалы
+  Viking settlements: Поселения викингов
+  Visigothic Kingdom: Вестготское королевство
+  Visigoths: Вестготы
+  West Franks: Западно-Франкское королевство
+  Western Chalukya Empire: Западные Чалукья
+  Western Göktürks: Западно-тюркский каганат
+  Western Jin: Западная Цзинь
+  Western Karakhanid Khanate: Западно-Караханидское ханство
+  Western Kushans: Западные Кушаны
+  Western Roman Empire: Западная Римская империя
   Western Satraps: Западные кшатрапы
+  White Huns: Эфталиты
+  Wusun: Усуни
+  Xin Dynasty: Империя Синь
+  Xiongnu: Хунну
+  Xionites: Хиониты
+  Yadava Dynasty: Ядавы
+  Yaudheya Republic: Яудхеи
   Yuezhi: Юэчжи
+  Zagwe dynasty: Загве
+  Zaydi Alid dynasties: Алиды Табаристана
+  Zayyanid dynasty: Абдальвадиды
+  Zengid dynasty: Зангиды
+  Zirid dynasty: Зириды
+  Ziyadid dynasty: Зиядиды
+  Ziyarid dynasty: Зияриды
+  Zurayid dynasty: Зурайиды
+  Third Dynasty of Ur: Третья династия Ура
+  Principality of Armenia: Армянское княжество

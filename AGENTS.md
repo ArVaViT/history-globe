@@ -16,9 +16,10 @@ A change is done only when **all** of these hold:
 
 - `pnpm gate` passes locally, and `pnpm gate:full` for anything touching rendering or
   the embed. Never report success without running it and reading its output.
-  Today `gate` = format, lint, types, unit tests, pipeline tests, content checks, build
-  and the JS budget; `gate:full` adds a fresh data build first. End-to-end and visual
-  tests (ADR 0010) are not written yet.
+  Today `gate` = format, lint, types, unit tests, pipeline tests, content checks, links, build
+  and the JS budget; `gate:full` adds a fresh data build first. The browser checks
+  (`pnpm e2e`, `pnpm e2e:a11y`; see e2e/README.md) run against the running app and are
+  not in the gate yet; visual tests (ADR 0010) are not written.
 - New or changed behaviour has tests. Engine logic is tested with `FakeRenderer`;
   time conversions with property tests; visible-by-year logic with style-expression
   tests.

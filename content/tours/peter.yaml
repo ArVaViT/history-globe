@@ -6,6 +6,7 @@ title:
   en: "The apostle Peter"
   ru: "Апостол Пётр"
 year: "AD 40"
+people: ["Peter@Mat.4.18-2Pe"]
 approximate: true
 stops:
   - place: a15257a # Jerusalem
@@ -22,7 +23,7 @@ stops:
   - place: a2c5cc7 # Lydda
     ref: Acts.9.32-Acts.9.35
     note:
-      en: "In Lydda he heals Aeneas, bedridden for eight years."
+      en: "In Lod (Lydda) he heals Aeneas, bedridden for eight years."
       ru: "В Лидде он исцеляет Энея, восемь лет лежавшего в постели."
   - place: ae023a9 # Joppa
     ref: Acts.9.36-Acts.10.23
@@ -32,8 +33,8 @@ stops:
   - place: a58735e # Caesarea
     ref: Acts.10.24-Acts.10.48
     note:
-      en: "In Caesarea the Holy Spirit falls on the centurion Cornelius and his household."
-      ru: "В Кесарии Дух Святой сходит на сотника Корнилия и его домашних."
+      en: "In Caesarea, as Peter speaks in the house of the centurion Cornelius, the Holy Spirit falls on all who hear the word."
+      ru: "В Кесарии, пока Пётр говорит в доме сотника Корнилия, Дух Святой сходит на всех, слушающих слово."
   - place: a15257a # Jerusalem
     ref: Acts.11.2-Acts.12.17
     note:

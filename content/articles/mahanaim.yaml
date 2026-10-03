@@ -1,0 +1,37 @@
+# Overview article (ADR 0007). Mainstream facts only; the identification of the site is disputed.
+# Sheshonq I's campaign is given at its usual date, c. 925 BC.
+id: mahanaim
+place: ae5bfe9
+title:
+  en: "Mahanaim"
+  ru: "Маханаим"
+body:
+  en:
+    - 'Mahanaim, "two camps", was a town of Gilead east of the Jordan, near the river Jabbok, today''s Zarqa. Its site is uncertain. The most common proposal, where the map places it, is Tell edh-Dhahab el-Gharbi, the western of two hills around which the Jabbok winds; the eastern hill is often taken for Penuel. Since 2005 a team from the University of Dortmund led by Thomas Pola has dug the western hill, finding traces of occupation from the Late Bronze and early Iron Ages and, on the summit, a palace of the late Hellenistic or early Herodian period.'
+    - 'Genesis tells that Jacob, returning from Laban, met the angels of God and said, "This is God''s host", and called the place Mahanaim. In the Book of Joshua the town lies on the border of Gad and the half tribe of Manasseh and is given to the Levites. After Saul fell, Abner, captain of his host, brought Saul''s son Ish-bosheth over to Mahanaim and made him king over Israel; from there Abner went out to Gibeon against David''s servants.'
+    - 'When Absalom rebelled, David crossed the Jordan to Mahanaim. Shobi of Rabbah, Machir of Lo-debar and Barzillai the Gileadite brought beds, vessels and food for him and his people, and Barzillai provided for the king while he stayed there. David sat between the two gates of the city waiting for news of the battle in the wood of Ephraim. Under Solomon, Ahinadab the son of Iddo was his officer at Mahanaim. Josephus calls it a very fine and very strong city and renders its name for Greek readers as "The Camps".'
+    - "About 925 BC the Egyptian king Sheshonq I, the Shishak of the Bible, named Mahanaim among the places of his campaign in Palestine on the Bubastite Portal at Karnak. No later event is recorded there. In the early fourth century Eusebius listed Mahanaim only as a town of Gad given to the Levites in Gilead, without placing it. On Tell edh-Dhahab el-Gharbi the palace was burned in the later first century BC, and its ruins later fell in an earthquake."
+  ru:
+    - "Маханаим, «два стана», был городом Галаада на восточном берегу Иордана, у потока Иавок, ныне Зарка. Место его точно не известно. Чаще всего, и так его помещает карта, предлагают Телль-эз-Захаб-эль-Гарби — западный из двух холмов, которые огибает Иавок; восточный холм нередко считают Пенуэлом. С 2005 г. группа Дортмундского университета под руководством Томаса Полы копает западный холм и нашла следы поселения позднего бронзового и раннего железного веков, а на вершине — дворец позднего эллинистического или раннеиродианского времени."
+    - "Книга Бытия рассказывает, что Иаков, возвращаясь от Лавана, встретил Ангелов Божиих и сказал: «это ополчение Божие», и нарёк месту имя Маханаим. В книге Иисуса Навина город лежит на границе Гада и половины колена Манассиина и отдан левитам. Когда Саул пал, Авенир, начальник его войска, привёл в Маханаим Иевосфея, сына Саулова, и воцарил его над Израилем; отсюда Авенир вышел в Гаваон против слуг Давида."
+    - "Когда восстал Авессалом, Давид перешёл Иордан в Маханаим. Сови из Раввы, Махир из Лодавара и Верзеллий Галаадитянин принесли ему и его людям постели, сосуды и пищу, а Верзеллий продовольствовал царя, пока тот жил здесь. Давид сидел между двумя воротами города, ожидая вестей о сражении в лесу Ефремовом. При Соломоне в Маханаиме был его приставник Ахинадав, сын Гиддо. Иосиф Флавий называет его прекрасным и очень сильным городом и передаёт его имя для греческих читателей как «Станы»."
+    - "Около 925 г. до н. э. египетский царь Шешонк I, библейский Сусаким, назвал Маханаим среди мест своего похода в Палестину на Бубастийском портале в Карнаке. Позднейших событий здесь не записано. В начале IV века Евсевий упоминает Маханаим лишь как город Гада, отданный левитам в Галааде, не указывая, где он. На Телль-эз-Захаб-эль-Гарби дворец сгорел во второй половине I века до н. э., а позже его развалины обрушились при землетрясении."
+scripture:
+  - Gen.32.1-Gen.32.2
+  - Josh.13.26
+  - Josh.13.30
+  - Josh.21.38
+  - 2Sam.2.8-2Sam.2.12
+  - 2Sam.17.24-2Sam.17.29
+  - 2Sam.18.6
+  - 2Sam.18.24
+  - 2Sam.19.32
+  - 1Kgs.4.14
+  - 1Kgs.14.25
+sources:
+  - "Topographical list of Sheshonq I on the Bubastite Portal, Karnak, no. 22 (Mahanaim)"
+  - "Josephus, Antiquities 7.10 (Mahanaim, in Greek 'The Camps'); 7.230-231"
+  - "Eusebius, Onomasticon, s.v. Manaeim (C. U. Wolf's translation, no. 680)"
+  - "T. Pola et al., 'A preliminary report of the Tulul adh-Dhahab (Wadi az-Zarqa) survey and excavation seasons 2005-2011', ADAJ 57 (2013) 81-96"
+  - "K. A. Kitchen, The Third Intermediate Period in Egypt (1100-650 BC)"
+status: checked

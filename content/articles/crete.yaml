@@ -1,0 +1,39 @@
+# Overview article (ADR 0007). Mainstream facts only; Aegean dates follow the conventional chronology; the identification of Caphtor with Crete is given as disputed.
+id: crete
+place: a26aa94
+title:
+  en: "Crete"
+  ru: "Крит"
+body:
+  en:
+    - "Crete, the largest of the Greek islands, stretches some 260 km from east to west and closes the Aegean Sea on the south. In the Bronze Age it was the home of the Minoan civilisation: the first palace at Knossos was built about 1900 BC, and others stood at Phaistos and Malia. Arthur Evans began large-scale excavations at Knossos in 1900. In the last palace period Greek-speaking Mycenaeans kept the accounts in the Linear B script, and the palace of Knossos was destroyed about 1350 BC by the conventional dating, though some scholars put its end later."
+    - 'The Bible names Caphtor as the land from which the Philistines came: Amos says that God brought up "the Philistines from Caphtor", and Jeremiah calls them "the remnant of the country of Caphtor". Caphtor is often linked with the Keftiu of Egyptian texts and the Kaptara of cuneiform ones and identified with Crete, but this is disputed, and Cyprus and Cilicia have also been proposed. Zephaniah''s woe on "the nation of the Cherethites" on the sea coast, in the land of the Philistines, uses a Hebrew name that the Greek Septuagint renders "Cretans".'
+    - 'Cretes were among those who heard the apostles at Pentecost, and Philo counts Crete among the islands full of Jewish settlements. On the voyage to Rome Paul''s ship sailed under Crete off Salmone and reached the Fair Havens near Lasea. Paul advised them to stay, but most were for sailing on to winter at Phenice, "an haven of Crete", until the tempestuous wind Euroclydon drove the ship out to sea. In his letter to Titus, Paul says he left him in Crete to "ordain elders in every city", and quotes a prophet of their own: "The Cretians are alway liars, evil beasts, slow bellies". Clement of Alexandria names the poet as Epimenides.'
+    - "Rome conquered Crete between 69 and 67 BC: Quintus Caecilius Metellus subdued the whole island and took the name Creticus. Under Augustus Crete and Cyrenaica on the African coast formed one senatorial province, with its capital at Gortyn. Eusebius records that Titus was the first to receive the oversight of the churches in Crete. About AD 298 Diocletian made Crete a province of its own, still governed from Gortyn."
+  ru:
+    - "Крит, самый большой из греческих островов, тянется примерно на 260 км с востока на запад и замыкает Эгейское море с юга. В бронзовом веке он был родиной минойской цивилизации: первый дворец в Кноссе построили около 1900 г. до н. э., другие стояли в Фесте и Малии. В 1900 году Артур Эванс начал в Кноссе большие раскопки. В последний дворцовый период грекоязычные микенцы вели счета линейным письмом Б, а дворец Кносса был разрушен около 1350 г. до н. э. по общепринятой датировке, хотя некоторые учёные относят его конец к более позднему времени."
+    - "Библия называет Кафтор землёй, из которой пришли Филистимляне: у Амоса Бог вывел «Филистимлян — из Кафтора», а Иеремия называет их «остаток острова Кафтора». Кафтор часто связывают с Кефтиу египетских текстов и Каптарой клинописных и отождествляют с Критом, но это спорно: предлагались также Кипр и Киликия. Горе, которое Софония возвещает «народу Критскому» на морском берегу, в земле Филистимской, обращено к народу, чьё еврейское имя греческая Септуагинта передаёт как «критяне»."
+    - "Критяне были среди тех, кто слышал апостолов в день Пятидесятницы, а Филон называет Крит среди островов, полных иудейских поселений. На пути в Рим корабль Павла подплыл к Криту при Салмоне и дошёл до Хороших Пристаней близ Ласеи. Павел советовал остаться, но многие хотели плыть дальше, чтобы перезимовать в Финике, «пристани Критской», пока бурный ветер эвроклидон не унёс корабль в море. В послании к Титу Павел пишет, что оставил его в Крите, чтобы он «поставил по всем городам пресвитеров», и приводит слова их же стихотворца: «Критяне всегда лжецы, злые звери, утробы ленивые». Климент Александрийский называет этого поэта Эпименидом."
+    - "Рим завоевал Крит в 69–67 гг. до н. э.: Квинт Цецилий Метелл покорил весь остров и получил прозвище Критский. При Августе Крит и Киренаика на африканском берегу составили одну сенатскую провинцию со столицей в Гортине. Евсевий сообщает, что Тит первым получил попечение о церквах Крита. Около 298 г. н. э. Диоклетиан сделал Крит отдельной провинцией, по-прежнему управлявшейся из Гортины."
+scripture:
+  - Gen.10.14
+  - Deut.2.23
+  - Jer.47.4
+  - Amos.9.7
+  - Zeph.2.5
+  - Acts.2.11
+  - Acts.27.7-Acts.27.8
+  - Acts.27.9-Acts.27.15
+  - Acts.27.21
+  - Titus.1.5
+  - Titus.1.12-Titus.1.13
+sources:
+  - "Philo, Embassy to Gaius 282"
+  - "Septuagint, Zephaniah 2:5 (paroikoi Kreton)"
+  - "Clement of Alexandria, Stromata 1.14 (Epimenides as the prophet of Titus 1:12)"
+  - "Cassius Dio, Roman History 36.17a-19 (Metellus and the Cretan war); 53.12.4 (Crete and Cyrenaica a senatorial province)"
+  - "Eusebius, Church History 3.4.6 (Titus and the churches in Crete)"
+  - "J. Strange, Caphtor/Keftiu: A New Investigation (1980)"
+  - "J. L. Fitton, Minoans (2002)"
+  - "I. F. Sanders, Roman Crete (1982)"
+status: checked

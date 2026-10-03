@@ -1,0 +1,40 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such.
+id: ephesus
+place: a5feb15
+title:
+  en: "Ephesus"
+  ru: "Ефес"
+body:
+  en:
+    - "Ephesus lies on the west coast of Asia Minor, near the mouth of the Cayster, by Selçuk in Turkey. Greek tradition held that Ionians led by Androclus, son of the Athenian king Codrus, founded it beside an older shrine. Its fame was the temple of Artemis: Croesus of Lydia, who took the city in the sixth century BC, gave many of its columns. In 356 BC Herostratus set the temple on fire; it was rebuilt and counted among the Seven Wonders."
+    - "Alexander took the city from the Persians in 334 BC. About 290 BC Lysimachus moved the people to a new site between the hills, nearer the shifting harbour. In 133 BC Attalus III of Pergamum left his kingdom to Rome, and it became the province of Asia. Under the emperors Ephesus was the residence of the proconsul and one of the largest cities of the East, with a theatre on the slope of Mount Pion."
+    - "Paul first stopped here briefly and left Aquila and Priscilla, who taught Apollos. Returning, he argued in the synagogue for three months and then for two years in the school of Tyrannus. The silversmith Demetrius, who made silver shrines of Artemis, stirred up a riot in the theatre until the town clerk calmed the crowd. From Ephesus Paul wrote to the Corinthians; later he called its elders to Miletus. Timothy stayed in the city, the letter to the Ephesians bears its name (some early manuscripts lack the words in Ephesus), and Revelation addresses the first of the seven churches to it."
+    - "Early tradition holds that the apostle John lived and was buried at Ephesus, and Ignatius wrote to its church. In the 260s the Goths plundered the city and burned the temple of Artemis. In 431 a council met in the Church of Mary, condemned Nestorius and confirmed the title Theotokos, Mother of God, for Mary; a second council in 449 was overturned at Chalcedon in 451. The silting of the harbour slowly drained the city's trade."
+  ru:
+    - "Ефес лежит на западном побережье Малой Азии, у устья Каистра, близ турецкого Сельчука. Греческое предание говорит, что его основали ионийцы во главе с Андроклом, сыном афинского царя Кодра, рядом с более древним святилищем. Славу ему принёс храм Артемиды: лидийский царь Крёз, взявший город в VI веке до н. э., пожертвовал многие из его колонн. В 356 г. до н. э. Герострат поджёг храм; его отстроили заново, и он вошёл в число семи чудес света."
+    - "В 334 г. до н. э. Александр отнял город у персов. Около 290 г. до н. э. Лисимах переселил жителей на новое место между холмами, ближе к смещавшейся гавани. В 133 г. до н. э. пергамский царь Аттал III завещал своё царство Риму, и оно стало провинцией Асия. При императорах Ефес был резиденцией проконсула и одним из крупнейших городов Востока, с театром на склоне горы Пион."
+    - "Павел сначала ненадолго остановился здесь и оставил Акилу и Прискиллу, которые наставили Аполлоса. Вернувшись, он три месяца проповедовал в синагоге, а потом два года в училище Тиранна. Серебряник Димитрий, делавший серебряные храмы Артемиды, поднял бунт в театре, пока блюститель порядка не утишил народ. Из Ефеса Павел писал коринфянам, а позже призвал его пресвитеров в Милит. В городе остался Тимофей, Послание к Ефесянам носит его имя (в некоторых ранних рукописях слов «в Ефесе» нет), а Откровение обращает к нему первое из посланий семи церквам."
+    - "Раннее предание говорит, что апостол Иоанн жил и был погребён в Ефесе; Игнатий писал его церкви. В 260-х гг. готы разграбили город и сожгли храм Артемиды. В 431 г. собор в церкви Девы Марии осудил Нестория и утвердил за Марией именование Богородицы; решения второго собора 449 г. были отменены в Халкидоне в 451 г. Заиливание гавани медленно лишало город торговли."
+scripture:
+  - Acts.18.19-Acts.18.21
+  - Acts.18.24-Acts.18.26
+  - Acts.19.1-Acts.19.10
+  - Acts.19.23-Acts.19.41
+  - 1Cor.16.8-1Cor.16.9
+  - Acts.20.17-Acts.20.18
+  - 1Tim.1.3
+  - Eph.1.1
+  - Rev.2.1-Rev.2.7
+sources:
+  - "Strabo, Geography 14.1.3-4; 14.1.21-24"
+  - "Pausanias, Description of Greece 7.2.6-9"
+  - "Herodotus, Histories 1.26; 1.92"
+  - "Plutarch, Alexander 3; Pliny, Natural History 36.95-97"
+  - "Arrian, Anabasis 1.17.10-12"
+  - "Irenaeus, Against Heresies 3.1.1; 3.3.4; Eusebius, Church History 3.23; 3.31.3"
+  - "Ignatius, Letter to the Ephesians"
+  - "Jordanes, Getica 20.107-108; Historia Augusta, Gallienus 6.2"
+  - "Acts of the Council of Ephesus (431); Evagrius, Church History 1.3-5 and 1.10"
+  - "H. Koester (ed.), Ephesos, Metropolis of Asia (1995)"
+  - "P. Trebilco, The Early Christians in Ephesus from Paul to Ignatius (2004)"
+status: checked

@@ -1,0 +1,36 @@
+id: where-was-tarshish
+question:
+  en: "Where was Tarshish?"
+  ru: "Где находился Фарсис?"
+answer:
+  en:
+    - "Tarshish is disputed. The strongest candidate is Tartessos, the land of silver at the mouth of the Guadalquivir in south-western Spain, near today's Huelva and Seville, which the Phoenicians reached by the eighth century BC, perhaps earlier; the map point stands there, about 3,826 km from Joppa in a straight line, at the far end of the Mediterranean. Tarsus in Cilicia, Sardinia and Carthage have also been proposed, and some hold that the word is not a place at all."
+    - "Jonah “rose up to flee unto Tarshish from the presence of the LORD, and went down to Joppa; and he found a ship going to Tarshish”: Tarshish is the opposite end of the world from Nineveh. Ezekiel says that Tarshish traded with Tyre “with silver, iron, tin, and lead”, the metals of Spain, and Isaiah groups it with the far “isles”. Genesis 10 makes Tarshish a son of Javan, the Greeks, which led Josephus to Tarsus; a Phoenician stone of the ninth or eighth century BC found at Nora in Sardinia seems to name Tarshish; and the Greek translators of Isaiah rendered the name as Carthage. An inscription of Esarhaddon of about 670 BC lists Tarsisi among the kings of the lands in the midst of the sea, which suits a place far to the west."
+    - "The phrase “ships of Tarshish” became a term for large sea-going merchantmen: Jehoshaphat built “ships of Tharshish to go to Ophir for gold” at Ezion-geber on the Red Sea, which could never reach a western Tarshish. Herodotus tells how the Phocaeans of Ionia, the first Greeks to make long voyages, discovered Tartessos, whose king Arganthonios ruled for eighty years, and how a Samian ship driven past the Pillars of Heracles came home from there with a profit matched by only one other Greek trader. The map shows Tartessos and lists the other candidates on the place card."
+  ru:
+    - "Фарсис — спорное место. Самый сильный кандидат — Тартесс, страна серебра в устье Гвадалквивира на юго-западе Испании, у нынешних Уэльвы и Севильи, куда финикийцы доходили к VIII веку до н. э., а возможно, и раньше; точка на карте стоит там, примерно в 3826 км от Иоппии по прямой, на дальнем конце Средиземного моря. Предлагали также Тарс в Киликии, Сардинию и Карфаген, а некоторые считают, что это вообще не название места."
+    - "Книга Ионы говорит: «И встал Иона, чтобы бежать в Фарсис от лица Господня, и пришел в Иоппию, и нашел корабль, отправлявшийся в Фарсис»; Фарсис — другой край света по сравнению с Ниневией. Иезекииль говорит, что Фарсис платил Тиру «серебром, железом, свинцом и оловом» — металлами Испании, а Исаия ставит его рядом с дальними «островами». Бытие 10 делает Фарсиса сыном Иавана, то есть греков, что привело Иосифа Флавия к Тарсу; финикийский камень IX или VIII века до н. э., найденный в Норе на Сардинии, по-видимому, называет Фарсис; а греческие переводчики Исаии передали это имя как Карфаген. Надпись Асархаддона около 670 г. до н. э. называет Тарсиси среди царей земель посреди моря, что подходит месту далеко на западе."
+    - "Выражение «корабли Фарсиса» стало названием больших морских торговых судов: Иосафат строил в Ецион-Гавере на Чермном море корабли, чтобы ходить в Офир за золотом, — оттуда до западного Фарсиса не доплыть. Геродот рассказывает, как фокейцы из Ионии, первыми из греков пустившиеся в дальние плавания, открыли Тартесс, где царь Аргантоний правил восемьдесят лет, и как самосский корабль, унесённый за Геракловы столпы, вернулся оттуда с прибылью, с которой мог сравниться лишь один греческий купец. Карта показывает Тартесс, остальных кандидатов перечисляет в карточке."
+map:
+  place: a5f43dd
+  year: "c. 780 BC"
+  ref: Jonah.1.3
+scripture:
+  [
+    Jonah.1.3,
+    1Kgs.10.22,
+    Ezek.27.12,
+    Isa.23.1,
+    Isa.66.19,
+    Gen.10.4,
+    1Kgs.22.48,
+    2Chr.20.36-2Chr.20.37,
+  ]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Herodotus, Histories 1.163 and 4.152 (the Phocaeans and the Samians at Tartessos)"
+  - "Josephus, Antiquities 1.127 (Tharsus for Tarsus)"
+  - "F. M. Cross, 'An Interpretation of the Nora Stone', Bulletin of the American Schools of Oriental Research 208 (1972)"
+  - "A. Lemaire, 'Tarshish-Tarsisi: problème de topographie historique biblique et assyrienne', in G. Galil and M. Weinfeld (eds.), Studies in Historical Geography and Biblical Historiography Presented to Zecharia Kallai (2000)"
+  - "M. Koch, Tarschisch und Hispanien (1984)"
+status: checked

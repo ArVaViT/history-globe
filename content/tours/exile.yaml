@@ -12,8 +12,8 @@ stops:
   - place: a15257a # Jerusalem
     ref: 2Kgs.25.1-2Kgs.25.3
     note:
-      en: "Nebuchadnezzar besieges Jerusalem until famine breaks the city."
-      ru: "Навуходоносор осаждает Иерусалим, пока в городе не наступает голод."
+      en: "Nebuchadnezzar besieges Jerusalem until the famine prevails in the city."
+      ru: "Навуходоносор осаждает Иерусалим, пока в городе не усиливается голод."
   - place: a231f80 # Jericho
     ref: 2Kgs.25.4-2Kgs.25.5
     note:
@@ -27,15 +27,16 @@ stops:
   - place: a15257a # Jerusalem
     ref: 2Kgs.25.8-2Kgs.25.10
     note:
-      en: "Nebuzar-adan burns the Temple, the palace and the city and pulls down the walls."
-      ru: "Навузардан сжигает Храм, царский дом и город и разрушает стены."
+      en: "Nebuzar-adan burns the Temple, the palace and the city, and the army of the Chaldees pulls down the walls."
+      ru: "Навузардан сжигает Храм, царский дом и город, а войско Халдейское разрушает стены."
   - place: a217d18 # Babylon
     ref: 2Kgs.25.11
     note:
-      en: "The people are carried into exile to Babylon."
-      ru: "Народ уведён в плен в Вавилон."
+      en: "The rest of the people left in the city are carried into exile to Babylon."
+      ru: "Народ, остававшийся в городе, уведён в плен в Вавилон."
   - place: a6d57ed # Ramah
     ref: Jer.40.1
+    by: untold
     note:
       en: "At Ramah Jeremiah is set free from among the captives."
       ru: "В Раме Иеремия освобождён из числа пленников."

@@ -9,17 +9,20 @@ places:
     from: "c. AD 20"
     note:
       en: "Founded by Herod Antipas on the Sea of Galilee and named after Tiberius."
-      ru: "Основан Иродом Антипой на берегу Галилейского моря и назван в честь Тиберия."
+      ru: "Основана Иродом Антипой на берегу Галилейского моря и названа в честь Тиберия."
     sources:
       - "Josephus, Antiquities 18.36-38"
   - id: a58735e
     en: Caesarea
     from: "22 BC"
+    until: "AD 1265"
     note:
-      en: "Built by Herod the Great from 22 BC on the site of Strato's Tower."
-      ru: "Построена Иродом Великим с 22 г. до н. э. на месте Башни Стратона."
+      en: "Built by Herod the Great from 22 BC on the site of Strato's Tower. In 1265 the Mamluk sultan Baybars took the Crusader city and razed it so that the Franks could not use it again; the ruins lay empty for six centuries."
+      ru: "Построена Иродом Великим с 22 г. до н. э. на месте Башни Стратона. В 1265 г. мамлюкский султан Бейбарс взял город крестоносцев и сровнял его с землёй, чтобы франки не смогли им снова воспользоваться; руины шесть веков стояли пустыми."
     sources:
       - "Josephus, Antiquities 15.331-341; 16.136"
+      - "Abu'l-Fida, Taqwim al-buldan (1321), in G. Le Strange, Palestine under the Moslems (1890), p. 475"
+      - "Israel Ministry of Foreign Affairs, 'Caesarea' (Archaeology in Israel), on the Jewish Virtual Library"
   - id: a70fd5d
     en: Nineveh
     until: "612 BC"
@@ -30,7 +33,8 @@ places:
       - "Babylonian Chronicle, ABC 3 (Fall of Nineveh Chronicle)"
   - id: a15257a
     en: Jerusalem
-    until: "AD 70"
+    # The city lived on as Aelia Capitolina after AD 70, so it has no end inside the
+    # period; the schema holds one gap, and the exile is the one the map shows.
     gap:
       from: "c. 586 BC"
       until: "c. 539 BC"
@@ -127,10 +131,10 @@ places:
     en: Seleucia
     from: "300 BC"
     note:
-      en: "Founded by Seleucus I as the seaport of Antioch."
-      ru: "Основана Селевком I как морская гавань Антиохии."
+      en: "Founded by Seleucus I and named after himself; it became the seaport of Antioch."
+      ru: "Основана Селевком I и названа его именем; стала морской гаванью Антиохии."
     sources:
-      - "Strabo, Geography 16.2.4"
+      - "Strabo, Geography 16.2.4; 16.2.8"
   - id: a83fb1e
     en: Laodicea
     from: "c. 260 BC"
@@ -138,7 +142,7 @@ places:
       en: "Founded by the Seleucid king Antiochus II and named after his wife Laodice."
       ru: "Основана селевкидским царём Антиохом II и названа в честь его жены Лаодики."
     sources:
-      - "Pliny, Natural History 5.105"
+      - "Pliny, Natural History 5.105 (its earlier names Diospolis and Rhoas only)"
       - "Stephanus of Byzantium, Ethnica, s.v. Laodikeia"
   - id: a4bdea7
     en: Amphipolis
@@ -249,3 +253,336 @@ places:
     sources:
       - "Herodotus 4.150-159"
       - "Supplementum Epigraphicum Graecum 9.3 (the 'Oath of the Settlers' inscription from Cyrene)"
+  - id: ac87d4c
+    en: Ashkelon
+    # Why firm: the start is dated to the month by the Babylonian Chronicle (Kislev of
+    # Nebuchadnezzar's first year, 604 BC), and the Leon Levy Expedition found the burnt
+    # destruction layer sealed by an abandonment. The end is narrow: the Persian-period
+    # rebuilding is dated by its pottery to c. 520-510 BC, i.e. about 80 years of ruin.
+    # This is not "destroyed and quickly rebuilt": the excavators speak of a deserted
+    # mound for two to three generations. The prophecies of Jer 47, Zeph 2 and Amos 1
+    # all fall before 604, so no tour stop should land inside the gap.
+    gap:
+      from: "604 BC"
+      until: "c. 520 BC"
+    until: "AD 1270"
+    note:
+      en: "Taken by Nebuchadnezzar in the month of Kislev 604 BC, plundered and turned into a heap of ruins; the mound lay deserted until a Phoenician town was built there under the Persians, about 520–510 BC. Demolished by Saladin in 1191 and refortified by the Crusaders, it was dismantled by the Mamluk sultan Baybars in 1270, its harbour blocked and its people moved inland to al-Majdal; the site has lain in ruins since."
+      ru: "Взят Навуходоносором в месяце Кислеве 604 г. до н. э., разграблен и превращён в груду развалин; холм стоял пустым, пока при персах, около 520–510 гг. до н. э., на нём не построили финикийский город. Разрушенный Саладином в 1191 г. и вновь укреплённый крестоносцами, город в 1270 г. снёс мамлюкский султан Бейбарс: гавань засыпали, жителей перевели вглубь страны, в аль-Маджаль; с тех пор место лежит в руинах."
+    sources:
+      - "Babylonian Chronicle ABC 5 (Jerusalem Chronicle), obv. 15-20"
+      - "L. E. Stager, D. M. Master and J. D. Schloen, Ashkelon 3: The Seventh Century B.C. (2011)"
+      - "L. E. Stager, 'The Fury of Babylon: Ashkelon and the Archaeology of Destruction', Biblical Archaeology Review 22.1 (1996)"
+      - "Abu'l-Fida, Taqwim al-buldan (1321), and Ibn Battuta (1355), in G. Le Strange, Palestine under the Moslems (1890), 'Askalan'"
+      - "S. Vailhé, 'Ascalon', Catholic Encyclopedia 1 (1907)"
+  - id: aa8edd2
+    en: Gaza
+    # Why firm: Josephus says Jannaeus took Gaza after a year's siege and "utterly
+    # overthrew" it (Ant. 13.364; checked on CCEL, Whiston), and that under Gabinius
+    # Gaza and the other cities "which had been desolate for a long time" were rebuilt
+    # (Ant. 14.88; checked on Wikisource). The fall is usually put in 96 BC (Schürer;
+    # Glucker 1987). This is the same Hasmonean-destruction / Pompey / Gabinius pattern
+    # as Samaria, and the gap end follows the Samaria entry ("c. 64 BC", the year before
+    # Pompey's settlement of 63 BC) so the two read alike. If you prefer the actual
+    # rebuilding by Gabinius, use until "c. 58 BC" instead (Gabinius governed Syria
+    # 57-55 BC). Caveat for the reviewer: Strabo 16.2.30 calls Gaza "deserted", and some
+    # scholars place the Roman city on a new site; Glucker holds that it rose on the old
+    # one, so the point is fine. Alexander's capture in 332 BC is NOT a gap: he settled
+    # the city again at once (Arrian 2.27.7).
+    gap:
+      from: "c. 96 BC"
+      until: "c. 64 BC"
+    note:
+      en: "Alexander Jannaeus took Gaza after a year's siege and overthrew it; Pompey freed it from Jewish rule in 63 BC, and Gabinius, governor of Syria, had the long desolate city rebuilt about 57 BC."
+      ru: "Александр Яннай после годичной осады взял Газу и разрушил её; в 63 г. до н. э. Помпей освободил её от иудейской власти, а наместник Сирии Габиний около 57 г. до н. э. велел отстроить долго лежавший в запустении город."
+    sources:
+      - "Josephus, Antiquities 13.358-364; 14.76; 14.88; Jewish War 1.87; 1.156; 1.166"
+      - "C. A. M. Glucker, The City of Gaza in the Roman and Byzantine Periods (BAR International Series 325, 1987)"
+  # 21 more, added 2026-10-02: drafted for 148 major settlements, then four reviewers opened a
+  # page for each kept entry (most places lived on through the period, or are disputed:
+  # left out). Zoan stays out: Tanis from c. 1070 BC sits ill with Num 13:22.
+  - id: a84f426
+    en: City of David
+    gap:
+      from: "c. 586 BC"
+      until: "c. 539 BC"
+    note:
+      en: "Burnt with the rest of Jerusalem by Nebuchadnezzar's army; the burnt houses were found in Yigal Shiloh's excavations. The exiles returned after the decree of Cyrus in 538 BC."
+      ru: "Сгорел вместе со всем Иерусалимом при взятии города войском Навуходоносора; сгоревшие дома открыты раскопками Игаля Шило. Изгнанники вернулись после указа Кира в 538 г. до н. э."
+    sources:
+      - "2 Kgs 25:8-10; Ezra 1:1-4"
+      - "Y. Shiloh, Excavations at the City of David I, 1978-1982 (Qedem 19, 1984)"
+  - id: a3cc590
+    en: Lachish
+    gap:
+      from: "c. 587 BC"
+      until: "c. 450 BC"
+    until: "c. 150 BC"
+    note:
+      en: "Burnt by the Babylonians shortly before Jerusalem fell; resettled under the Persians, when the Residency was built, and abandoned in the Hellenistic period."
+      ru: "Сожжён вавилонянами незадолго до падения Иерусалима; заново заселён при персах, когда построили «Резиденцию», и оставлен в эллинистический период."
+    sources:
+      - "Jer 34:7; Neh 11:30"
+      - "Y. Aharoni, Investigations at Lachish: The Sanctuary and the Residency (Lachish V, 1975)"
+      - "D. Ussishkin, The Renewed Archaeological Excavations at Lachish (1973-1994) (2004)"
+  - id: a6c8205
+    en: Bether
+    until: "AD 135"
+    note:
+      en: "Betar, the last stronghold of Bar Kokhba, was taken by Hadrian's army in AD 135."
+      ru: "Бейтар, последняя твердыня Бар-Кохбы, взят армией Адриана в 135 г. н. э."
+    sources:
+      - "Eusebius, Ecclesiastical History 4.6.3"
+      - "Mishnah, Ta'anit 4:6"
+  - id: a160272
+    en: Tyre
+    from: "c. 2750 BC"
+    until: "AD 1291"
+    note:
+      en: "The priests of Melqart told Herodotus that the city and its temple had been founded 2,300 years before his day, about 2750 BC; the deepest levels of the sounding on the island belong to the Early Bronze Age. In 1291, after the fall of Acre, the Mamluk sultan al-Ashraf Khalil took the city, which the Franks had left, and laid it in ruins; it was almost deserted until its revival about 1750."
+      ru: "Жрецы Мелькарта сказали Геродоту, что город и храм основаны за 2300 лет до его времени, то есть около 2750 г. до н. э.; самые глубокие слои шурфа на острове относятся к раннему бронзовому веку. В 1291 г., после падения Акры, мамлюкский султан аль-Ашраф Халиль взял оставленный франками город и обратил его в руины; почти пустым он простоял до возрождения около 1750 г."
+    sources:
+      - "Herodotus 2.44"
+      - "P. M. Bikai, The Pottery of Tyre (1978)"
+      - "Abu'l-Fida, Taqwim al-buldan (1321), al-Dimashqi, and Ibn Battuta (1355), in G. Le Strange, Palestine under the Moslems (1890), 'Sur'"
+      - "S. Vailhé, 'Tyre', Catholic Encyclopedia 15 (1912)"
+  - id: a80d317
+    en: Tirzah
+    until: "c. 600 BC"
+    note:
+      en: "Tell el-Far'ah (North), a royal city of the northern kingdom until Omri moved to Samaria; after the Assyrian conquest the town declined and was abandoned about 600 BC."
+      ru: "Телль-эль-Фараа (Северный) — царский город Северного царства, пока Амврий не перенёс столицу в Самарию; после ассирийского завоевания город пришёл в упадок и около 600 г. до н. э. был оставлен."
+    sources:
+      - "1 Kgs 14:17; 15:33; 16:23-24"
+      - "R. de Vaux, excavations at Tell el-Far'ah (North), 1946-1960 (NEAEHL, 'Far'ah, Tell el- (North)')"
+  - id: a8554e3
+    en: Megiddo
+    until: "c. 350 BC"
+    note:
+      en: "The last town on the mound (Stratum I) belonged to the Persian period; after it the tell was abandoned, and the Roman legion later camped at Legio nearby."
+      ru: "Последний город на холме (слой I) относился к персидскому времени; после него холм был оставлен, а позже неподалёку, в Легио, стоял римский легион."
+    sources:
+      - "R. S. Lamon and G. M. Shipton, Megiddo I: Seasons of 1925-34, Strata I-V (1939)"
+      - "Megiddo excavations (NEAEHL, 'Megiddo')"
+  - id: abc2af0
+    en: Ptolemais
+    until: "AD 1291"
+    note:
+      en: "The last Crusader stronghold, taken by the Mamluk sultan al-Ashraf Khalil in 1291 and razed on purpose so that the Franks could not use it again; it lay in ruins until the Ottoman revival of the 18th century."
+      ru: "Последний оплот крестоносцев: в 1291 г. его взял мамлюкский султан аль-Ашраф Халиль и намеренно сровнял с землёй, чтобы франки не смогли им снова воспользоваться; город лежал в руинах до османского возрождения XVIII в."
+    sources:
+      - "Abu'l-Fida, al-Mukhtasar fi akhbar al-bashar, year 690 AH"
+      - "The Templar of Tyre, Gestes des Chiprois, on the fall of Acre"
+  - id: af75e9e
+    en: Magdala
+    from: "c. 100 BC"
+    note:
+      en: "Excavations at Migdal show that the town on the Sea of Galilee was founded in the Hasmonean period, between the 2nd and 1st centuries BC; as Taricheae it was already a town when Cassius took it about 52 BC."
+      ru: "Раскопки в Мигдале показали, что город на берегу Галилейского моря возник в хасмонейский период, между II и I вв. до н. э.; под именем Тарихея он уже был городом, когда его взял Кассий около 52 г. до н. э."
+    sources:
+      - "D. Avshalom-Gorni, 'Migdal', Hadashot Arkheologiyot 121 (2009)"
+      - "Josephus, Antiquities 14.120; Jewish War 1.180"
+  - id: a6d9af3
+    en: Haran
+    until: "AD 1271"
+    note:
+      en: "Harran lived on through the Roman and Islamic periods; in 1271 the Mongol Ilkhanids deported its people to Mardin and Mosul and the city was left in ruins, with only a village by the castle afterwards."
+      ru: "Харран пережил римскую и исламскую эпохи; в 1271 г. монголы-Хулагуиды выселили его жителей в Мардин и Мосул, и город остался в развалинах — позже у крепости была лишь деревня."
+    sources:
+      - "D. S. Rice, 'Medieval Harran: Studies on its Topography and Monuments, I', Anatolian Studies 2 (1952)"
+  - id: a874951
+    en: Asshur
+    # Gap removed: the city was sacked in 614 BC but not emptied (Achaemenid-period
+    # occupation, Cyrus Cylinder); the Parthian town is the last life. The sack is by
+    # Ardashir I, so it cannot be later than his death in 242 (Wikipedia's "c. 257" clashes).
+    until: "c. AD 240"
+    note:
+      en: "Sacked by the Medes in 614 BC, Assur lived on as a small town and flourished again under the Parthians; it was destroyed by the Sasanians about AD 240, and only a scattered village remained."
+      ru: "Разграбленный мидянами в 614 г. до н. э., Ашшур продолжил жить небольшим городом и вновь расцвёл при парфянах; около 240 г. н. э. его разрушили Сасаниды, и от него осталась лишь редкая деревня."
+    sources:
+      - "Babylonian Chronicle ABC 3 (Fall of Nineveh Chronicle)"
+      - "W. Andrae, Das wiedererstandene Assur (1938)"
+  - id: a5db1a6
+    en: Erech
+    until: "c. AD 700"
+    note:
+      en: "Uruk lived on through the Seleucid and Parthian periods and was mostly empty by AD 300; a small community, probably Mandaean, stayed on until it was finally abandoned around the time of the Islamic conquest."
+      ru: "Урук пережил селевкидскую и парфянскую эпохи и к 300 г. н. э. почти опустел; небольшая община, вероятно мандейская, оставалась там до окончательного запустения около времени арабского завоевания."
+    sources:
+      - "Ausgrabungen in Uruk-Warka, Endberichte (German Archaeological Institute)"
+  - id: aa01373
+    en: Ur
+    until: "c. 500 BC"
+    note:
+      en: "Ur was restored by Nabonidus but declined after the Persian conquest and was no longer inhabited by the early 5th century BC, probably as the Euphrates shifted its course."
+      ru: "Ур восстановлен Набонидом, но после персидского завоевания пришёл в упадок и к началу V в. до н. э. опустел — вероятно, из-за того, что Евфрат сменил русло."
+    sources:
+      - "C. L. Woolley, Ur Excavations IX: The Neo-Babylonian and Persian Periods (1962)"
+  - id: a4c6f72
+    en: Eridu
+    until: "c. 600 BC"
+    note:
+      en: "Eridu dwindled after the Old Babylonian period; Nebuchadnezzar II still built there, but the site was abandoned soon after."
+      ru: "Эриду пришёл в упадок после старовавилонского периода; Навуходоносор II ещё строил там, но вскоре место было оставлено."
+    sources:
+      - "F. Safar, M. A. Mustafa and S. Lloyd, Eridu (1981)"
+  - id: a8ec269
+    en: Memphis
+    from: "c. 3100 BC"
+    note:
+      en: "Tradition credits Menes, the first king of united Egypt, with founding the city; the year is conventional."
+      ru: "Предание приписывает основание города Менесу, первому царю объединённого Египта; год условный."
+    sources:
+      - "Herodotus 2.99"
+  - id: adb008c
+    en: Tahpanhes
+    from: "c. 664 BC"
+    note:
+      en: "Daphnae (Tell Defenneh) was a frontier fortress founded under Psamtik I to guard Egypt's eastern border against the Arabians and Assyrians."
+      ru: "Дафны (Телль-Дефенне) — пограничная крепость, основанная при Псамметихе I для защиты восточной границы Египта от арабов и ассирийцев."
+    sources:
+      - "Herodotus 2.30"
+      - "W. M. F. Petrie, Tanis II: Nebesheh and Defenneh (1888)"
+      - "F. Leclère and A. J. Spencer, Tell Dafana Reconsidered: The Archaeology of an Egyptian Frontier Town (British Museum, 2014)"
+  - id: aa56bd1
+    en: Carthage
+    # `until` removed: Arab-period occupation of the town after 698 is attested archaeologically.
+    from: "c. 814 BC"
+    gap:
+      from: "146 BC"
+      until: "45 BC"
+    note:
+      en: "Founded by Tyrians, traditionally in 814 BC; razed by Scipio Aemilianus in 146 BC and refounded as a Roman colony by Julius Caesar, settled under Augustus. Taken by the Arabs in 698, it shrank to a small town beside the new Tunis."
+      ru: "Основан тирийцами, по преданию в 814 г. до н. э.; разрушен Сципионом Эмилианом в 146 г. до н. э. и заново основан как римская колония Юлием Цезарем, а заселён при Августе. Взятый арабами в 698 г., он сжался до небольшого городка рядом с новым Тунисом."
+    sources:
+      - "Timaeus in Dionysius of Halicarnassus, Roman Antiquities 1.74.1"
+      - "Appian, Punic Wars 127-136"
+  - id: a6c704a
+    en: Antioch
+    from: "c. 280 BC"
+    note:
+      en: "Pisidian Antioch was founded by a Seleucid king, most likely Antiochus I, with settlers from Magnesia on the Maeander; Augustus made it a Roman colony."
+      ru: "Антиохия Писидийская основана селевкидским царём, скорее всего Антиохом I, с поселенцами из Магнесии на Меандре; Август сделал её римской колонией."
+    sources:
+      - "Strabo, Geography 12.8.14"
+  - id: a4488e9
+    en: Puteoli
+    from: "c. 531 BC"
+    note:
+      en: "Founded as Dicaearchia, a harbour of Cumae settled by exiles from Samos (Eusebius dates them a few years later, 521 BC); it became the Roman colony of Puteoli in 194 BC."
+      ru: "Основан как Дикеархия, гавань Кум, заселённая изгнанниками с Самоса (Евсевий относит их приход к 521 г. до н. э.); в 194 г. до н. э. стал римской колонией Путеолы."
+    sources:
+      - "Stephanus of Byzantium, Ethnica, s.v. Potioloi"
+      - "Eusebius, Chronicle (Jerome's version)"
+      - "Strabo, Geography 5.4.6"
+      - "Livy 34.45.1"
+  - id: a63bb26
+    en: Rhegium
+    from: "c. 730 BC"
+    note:
+      en: "Founded by colonists from Chalcis, joined by Messenian refugees, on the Strait of Messina; the year is traditional (730 or 743 BC)."
+      ru: "Основан колонистами из Халкиды, к которым присоединились беглецы-мессенцы, на Мессинском проливе; год традиционный (730 или 743 г. до н. э.)."
+    sources:
+      - "Strabo, Geography 6.1.6"
+  - id: afa863b
+    en: Salamis
+    until: "c. AD 650"
+    note:
+      en: "Rebuilt as Constantia after the earthquakes of the 4th century; abandoned after the Arab raids under Mu'awiya in the 7th century, its people moving to Famagusta."
+      ru: "После землетрясений IV в. отстроен как Констанция; оставлен после арабских набегов при Муавии в VII в., жители переселились в Фамагусту."
+    sources:
+      - "V. Karageorghis, Salamis in Cyprus: Homeric, Hellenistic and Roman (1969)"
+  - id: a121d5e
+    en: Forum of Appius
+    from: "c. 312 BC"
+    note:
+      en: "A market town on the Via Appia, named after Appius Claudius Caecus, who built the road in 312 BC and is taken to have founded it."
+      ru: "Торговое местечко на Аппиевой дороге, названное по Аппию Клавдию Цеку, который проложил её в 312 г. до н. э. и, как считается, основал его."
+    sources:
+      - "Livy 9.29.6 (the building of the Via Appia)"
+      - "Horace, Satires 1.5.3-6"
+      - "Acts 28:15"
+  # The cities of the plain, overthrown in Abraham's day (Gen 19:24-29; Deut 29:23). Their
+  # date is the Abraham tour's conventional year, not a date: without an end they stood on
+  # the map into the Roman age. Their sites are disputed (the map says so).
+  - id: a0aa664
+    en: Sodom
+    until: "c. 1900 BC"
+    note:
+      en: "Overthrown with Gomorrah in Abraham's day (Gen 19:24-29). The year is the conventional one the map gives Abraham; the age of the patriarchs is disputed."
+      ru: "Ниспровергнут вместе с Гоморрой во дни Авраама (Быт 19:24–29). Год условный, тот же, что у Авраама на карте; время патриархов спорно."
+    sources:
+      - "Gen 19:24-29"
+      - "Deut 29:23"
+  - id: aa572e2
+    en: Gomorrah
+    until: "c. 1900 BC"
+    note:
+      en: "Overthrown with Sodom in Abraham's day (Gen 19:24-29). The year is the conventional one the map gives Abraham."
+      ru: "Ниспровергнута вместе с Содомом во дни Авраама (Быт 19:24–29). Год условный, тот же, что у Авраама на карте."
+    sources:
+      - "Gen 19:24-29"
+      - "Deut 29:23"
+  - id: a41a054
+    en: Admah
+    until: "c. 1900 BC"
+    note:
+      en: "One of the cities of the plain overthrown with Sodom (Deut 29:23; Hos 11:8). The year is conventional."
+      ru: "Один из городов равнины, ниспровергнутых с Содомом (Втор 29:23; Ос 11:8). Год условный."
+    sources:
+      - "Deut 29:23"
+      - "Hos 11:8"
+  - id: abfbfb9
+    en: Zeboiim
+    until: "c. 1900 BC"
+    note:
+      en: "One of the cities of the plain overthrown with Sodom (Deut 29:23; Hos 11:8). The year is conventional."
+      ru: "Один из городов равнины, ниспровергнутых с Содомом (Втор 29:23; Ос 11:8). Год условный."
+    sources:
+      - "Deut 29:23"
+      - "Hos 11:8"
+  # Daniel 11's "king of the north" and "king of the south": the Seleucid and Ptolemaic
+  # kingdoms, as the chapter is read. Named outside their years, they read as realms of
+  # Ugarit's or Abraham's day.
+  - id: a244929
+    en: North
+    from: "312 BC"
+    until: "63 BC"
+    note:
+      en: "The kingdom of the north of Daniel 11, read as the Seleucid kingdom, from Seleucus I's return to Babylon to Pompey's annexation of Syria."
+      ru: "Царство северное из Дан 11, понимаемое как держава Селевкидов: от возвращения Селевка I в Вавилон до присоединения Сирии Помпеем."
+    sources:
+      - "Dan 11:5-45"
+      - "Babylonian Chronicle of the Diadochi (BM 36313); Appian, Syrian Wars 70"
+  - id: a1c0469
+    en: South
+    from: "305 BC"
+    until: "30 BC"
+    note:
+      en: "The kingdom of the south of Daniel 11, read as the Ptolemaic kingdom of Egypt, from Ptolemy I's taking the title of king to Cleopatra's death."
+      ru: "Царство южное из Дан 11, понимаемое как Египет Птолемеев: от принятия Птолемеем I царского титула до смерти Клеопатры."
+    sources:
+      - "Dan 11:5-45"
+      - "Plutarch, Antony 85-86; Cassius Dio 51.14"
+  - id: a736f6c
+    en: Mizpah
+    gap:
+      from: "c. 3300 BC"
+      until: "c. 1200 BC"
+    note:
+      en: "Tell en-Nasbeh was a small village in the Late Chalcolithic and Early Bronze I periods and then lay empty for some two thousand years, until it was settled again at the start of the Iron Age; the town lived on through the Babylonian and Persian periods, and after the fall of Jerusalem it was the seat of Gedaliah."
+      ru: "В позднем халколите и начале раннего бронзового века на Телль-эн-Насбе стояло небольшое селение; затем холм около двух тысяч лет пустовал, пока его вновь не заселили в начале железного века. Город пережил вавилонский и персидский периоды, а после падения Иерусалима здесь была резиденция Годолии."
+    sources:
+      - "J. R. Zorn, 'Tell en-Nasbeh', in E. Stern (ed.), NEAEHL 3 (1993), pp. 1098-1102"
+      - "Badè Museum of Biblical Archaeology, 'Tell en-Nasbeh' data publication (Open Context), strata 5-1"
+      - "2 Kgs 25:23; Jer 40:6"
+  - id: a30c937
+    en: Ashdod
+    from: "c. 1650 BC"
+    note:
+      en: "Moshe Dothan's excavations found that the first town on Tel Ashdod was a fortified Canaanite city of the 17th century BC; it later became one of the five cities of the Philistines."
+      ru: "Раскопки Моше Дотана показали, что первым городом на Тель-Ашдоде был укреплённый ханаанейский город XVII в. до н. э.; позже он стал одним из пяти филистимских городов."
+    sources:
+      - "M. Dothan, 'Ashdod', Anchor Bible Dictionary 1 (1992), pp. 477-482"
+      - "M. Dothan and D. N. Freedman, Ashdod I: The First Season of Excavations, 1962 ('Atiqot, English Series 7, 1967)"
+      - "Encyclopaedia Judaica, 'Ashdod', on the Jewish Virtual Library"

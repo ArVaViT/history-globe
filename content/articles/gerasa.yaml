@@ -1,0 +1,31 @@
+# Overview article (ADR 0007). Mainstream facts only; the Seleucid founding is given as probable, and the Gerasenes/Gadarenes/Gergesenes readings of the Gospels are named without choosing between them.
+id: gerasa
+place: ada6b64 # Gerasa record at Jerash (lon/lat checked); carries Mark 5:1, Luke 8:26, 8:37 (KJV "Gadarenes", Synodal "Гадаринская")
+title:
+  en: "Gerasa"
+  ru: "Гераса"
+body:
+  en:
+    - 'Gerasa, today''s Jerash in northern Jordan, lies in the hills of Gilead about 48 km north of Amman, on a stream the Greeks called the Chrysorrhoas, "golden river", which runs down to the Jabbok. The city was a Greek foundation. Later tradition in Gerasa named Alexander the Great or his general Perdiccas as its founder, but its official name, Antioch on the Chrysorrhoas, points to a Seleucid king, probably in the second century BC. Josephus says that Alexander Jannaeus took Gerasa in the early first century BC after building a triple wall around it.'
+    - "After the Roman conquest of 63 BC Gerasa came under Rome and was counted among the Greek cities of the Decapolis; Pliny lists it as Galasa. When the revolt of AD 66 broke out, Jewish bands laid waste the villages around it, yet, Josephus says, the Gerasenes did no harm to the Jews who stayed and escorted those who wished to leave as far as their borders. After Trajan annexed the Nabataean kingdom in 106, Gerasa belonged to the new province of Arabia. From the late first century and through the second it was rebuilt on a grand scale, with an oval plaza, a colonnaded main street, temples of Zeus and Artemis, theatres and an arch for Hadrian's visit of 129–130."
+    - "Mark and Luke tell how Jesus crossed the Sea of Galilee and healed a man possessed by a legion of devils, which entered a herd of swine that ran down a steep place into the lake. The manuscripts name the place differently. The KJV and the Synodal text read Gadarenes in Mark and Luke and Gergesenes in Matthew, while many modern editions read Gerasenes in Mark and Luke and Gadarenes in Matthew. Gerasa lies more than 50 km from the lake, and already Origen preferred Gergesa, an old town by the lake with a steep bank above the water; Eusebius knew a village of that name on the hills by the lake. Mark adds that the healed man proclaimed in Decapolis what Jesus had done for him."
+    - "By the fourth century the city had a Christian community. Exeresius, bishop of Gerasa, signed at the Council of Seleucia in 359, and Epiphanius writes that his brethren drank from a stream in the martyrium at Gerasa which, like other springs, was said to turn to wine on the day of the miracle at Cana. A cathedral was built in the fourth century, the first of many churches in the city. Large-scale excavations were carried out from 1928 by Yale University with the British and American schools of archaeology, and Gerasa is now one of the best preserved Roman cities of the Near East."
+  ru:
+    - "Гераса, нынешний Джераш на севере Иордании, лежит в горах Галаада, примерно в 48 км к северу от Аммана, на речке, которую греки называли Хрисороем, «золотой рекой»; она стекает к Иавоку. Город основали греки. Позднейшее предание самой Герасы называло основателем Александра Македонского или его полководца Пердикку, но официальное имя города — Антиохия на Хрисорое — указывает на царя из династии Селевкидов, вероятно, во II веке до н. э. Иосиф Флавий сообщает, что Александр Яннай взял Герасу в начале I века до н. э., окружив её тройной стеной."
+    - "После римского завоевания 63 г. до н. э. Гераса перешла под власть Рима и причислялась к греческим городам Десятиградия; Плиний называет её Галасой. Когда в 66 г. н. э. вспыхнуло восстание, иудейские отряды опустошили селения вокруг неё, но жители Герасы, по словам Иосифа Флавия, не тронули оставшихся у них иудеев, а желавших уйти проводили до своих границ. После того как Траян в 106 г. присоединил Набатейское царство, Гераса вошла в новую провинцию Аравия. С конца I века и во II веке её перестроили с размахом: овальная площадь, главная улица с колоннадой, храмы Зевса и Артемиды, театры и арка в честь посещения Адриана в 129–130 гг."
+    - "Марк и Лука рассказывают, как Иисус переправился через Море Галилейское и исцелил человека, одержимого легионом бесов; бесы вошли в стадо свиней, и оно бросилось с крутизны в озеро. В рукописях место названо по-разному. Синодальный перевод, как и KJV, читает у Марка и Луки «в страну Гадаринскую», у Матфея — «в страну Гергесинскую», а многие современные издания читают у Марка и Луки «Герасинская», у Матфея — «Гадаринская». Гераса лежит более чем в 50 км от озера, и уже Ориген предпочитал Гергесу, древний город у озера с крутым обрывом к воде; Евсевий знал селение с таким именем на горах у озера. Марк добавляет, что исцелённый проповедовал в Десятиградии, что сотворил с ним Иисус."
+    - "К IV веку в городе была христианская община. Епископ Герасы Эксересий подписался на Селевкийском соборе 359 г., а Епифаний пишет, что его братия пила из потока в мартирии Герасы, который, как и другие источники, по преданию превращался в вино в день чуда в Кане. В IV веке был построен собор — первый из многих храмов города. Большие раскопки с 1928 г. вели Йельский университет вместе с Британской и Американской археологическими школами, и сегодня Гераса — один из лучше всего сохранившихся римских городов Ближнего Востока."
+scripture:
+  - Mark.5.1-Mark.5.20
+  - Luke.8.26-Luke.8.39
+  - Matt.8.28-Matt.8.34
+sources:
+  - "Josephus, Jewish War 1.104 (Alexander Jannaeus takes Gerasa); 2.458, 2.480 (the revolt of AD 66)"
+  - "Pliny the Elder, Natural History 5.74 (Galasa among the cities of the Decapolis)"
+  - "Cassius Dio, Roman History 68.14.5 (annexation of Arabia under Trajan)"
+  - "Origen, Commentary on John 6.24 (ANF 10; Gerasa, Gadara and Gergesa)"
+  - "Eusebius, Onomasticon, s.v. Gergasei and Gergesa (C. U. Wolf's translation, nos. 304, 363)"
+  - "Epiphanius, Panarion 51.30.2 (the stream at the martyrium of Gerasa); 73.26 (Exeresius of Gerasa at Seleucia, 359)"
+  - "C. H. Kraeling (ed.), Gerasa: City of the Decapolis (1938), the report of the Yale, British School and ASOR excavations of 1928-1934"
+  - "B. M. Metzger, A Textual Commentary on the Greek New Testament (2nd ed., 1994), on Matt 8:28, Mark 5:1, Luke 8:26"
+status: checked

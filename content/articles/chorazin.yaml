@@ -1,0 +1,25 @@
+# Overview article (ADR 0007). Mainstream facts only; Roman and Byzantine dates follow the excavation reports, and the disputed dating of the synagogue is named as such.
+id: chorazin
+place: a593a48
+title:
+  en: "Chorazin"
+  ru: "Хоразин"
+body:
+  en:
+    - "Chorazin stood on the basalt hills above the northern shore of the Sea of Galilee, about 3 km north of Capernaum, at the ruin called Khirbet Karazeh, where the old name survives. H. Kohl and C. Watzinger studied its synagogue from 1905, and Ze'ev Yeivin excavated the site in 1962–1964 and 1980–1987. The town uncovered belongs mostly to the third and fourth centuries AD: houses, streets, a ritual bath and olive presses, all built of the local black basalt around the synagogue."
+    - 'Chorazin is named in the Gospels only once, in a saying given by both Matthew and Luke. Matthew sets it among the cities "wherein most of his mighty works were done, because they repented not": "Woe unto thee, Chorazin! woe unto thee, Bethsaida!" Had those works been done in Tyre and Sidon, Jesus said, they would have repented long ago in sackcloth and ashes, and it would be more tolerable for Tyre and Sidon at the day of judgment. The Gospels describe no particular event at Chorazin.'
+    - "A teaching in the Babylonian Talmud says that the grain of Kerazayim, usually taken to be Chorazin, would have been brought for the omer offering if the place had been nearer Jerusalem. In the early fourth century Eusebius described Chorazin as a village of Galilee, now deserted, two miles from Capernaum. Its basalt synagogue, decorated with carved reliefs, is dated by its excavator to the late third or early fourth century; it seems to have been damaged in the fourth century and later restored, but its dates remain debated."
+  ru:
+    - "Хоразин стоял на базальтовых холмах над северным берегом Галилейского моря, примерно в 3 км к северу от Капернаума, на развалинах Хирбет-Керазе, где сохранилось древнее имя. Синагогу здесь изучали Г. Коль и К. Ватцингер начиная с 1905 г., а в 1962–1964 и 1980–1987 гг. городище раскапывал Зеэв Йеивин. Открытый город относится в основном к III–IV векам н. э.: дома, улицы, ритуальная купальня и давильни для оливок, всё из местного чёрного базальта, окружали синагогу."
+    - "Хоразин упомянут в Евангелиях лишь однажды — в речении, которое приводят и Матфей, и Лука. Матфей называет его среди городов, «в которых наиболее явлено было сил Его, за то, что они не покаялись»: «горе тебе, Хоразин! горе тебе, Вифсаида!» Если бы в Тире и Сидоне явлены были такие силы, сказал Иисус, они давно покаялись бы во вретище и пепле, и Тиру и Сидону отраднее будет в день суда. Никаких отдельных событий в Хоразине Евангелия не описывают."
+    - "Одно из учений Вавилонского Талмуда говорит, что зерно из Керазаима — его обычно отождествляют с Хоразином — приносили бы для омера, будь это место ближе к Иерусалиму. В начале IV века Евсевий описывал Хоразин как селение Галилеи, ныне запустевшее, в двух милях от Капернаума. Базальтовую синагогу, украшенную резными рельефами, раскопщик датирует концом III или началом IV века; по-видимому, в IV веке она пострадала и позже была восстановлена, но её даты по-прежнему спорны."
+scripture:
+  - Matt.11.20-Matt.11.22
+  - Luke.10.13-Luke.10.14
+sources:
+  - "Eusebius, Onomasticon, s.v. Chorazein (C. U. Wolf's translation, no. 976)"
+  - "Babylonian Talmud, Menahot 85a (the grain of Kerazayim)"
+  - "H. Kohl and C. Watzinger, Antike Synagogen in Galilaea (1916)"
+  - "Z. Yeivin, The Synagogue at Korazim: The 1962-1964, 1980-1987 Excavations (Israel Antiquities Authority Reports, 2000)"
+  - "A. Negev and S. Gibson (eds.), Archaeological Encyclopedia of the Holy Land (2005), s.v. Chorazin"
+status: checked

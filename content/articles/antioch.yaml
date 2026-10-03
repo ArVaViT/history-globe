@@ -1,0 +1,36 @@
+# Overview article (ADR 0007). Mainstream facts only; disputed datings are named as such.
+id: antioch
+place: ae41ab4
+title:
+  en: "Antioch"
+  ru: "Антиохия"
+body:
+  en:
+    - "Antioch lies on the Orontes in northern Syria, about 25 km from the sea, between the river and Mount Silpius; today it is Antakya in Turkey. Seleucus I Nicator founded it in 300 BC and named it after his father Antiochus, with Seleucia Pieria as its port and the grove of Apollo at Daphne as its suburb. It became the capital of the Seleucid kings and grew into a city of four walled quarters."
+    - "When Pompey made Syria a Roman province in 64 BC, Antioch became the seat of its governor. Herod the Great paved its main street and lined it with colonnades. Josephus counts it the third city of the Roman world after Rome and Alexandria, and it had a large Jewish community."
+    - "In Acts, believers scattered after Stephen's death preached to Greeks at Antioch. Jerusalem sent Barnabas, who brought Saul from Tarsus, and here the disciples were first called Christians; when Agabus foretold a famine, the church sent relief to Judea. The church sent Barnabas and Saul on their first journey and received them back. A dispute over circumcision took Paul and Barnabas to Jerusalem, and they returned with the apostles' letter. Paul withstood Peter at Antioch, and from here he set out on his later journeys."
+    - "Its bishop Ignatius was taken to Rome under Trajan and wrote letters to the churches on the way. Trajan was in the city when a great earthquake struck in AD 115. Constantine began the octagonal Great Church, and his son Constantius finished it; it was dedicated in 341 at a council held there. Julian spent the winter of 362–363 in Antioch and quarrelled with its people. Libanius taught rhetoric there, and John Chrysostom preached there from 386 until he became bishop of Constantinople in 398."
+  ru:
+    - "Антиохия стоит на Оронте в Северной Сирии, примерно в 25 км от моря, между рекой и горой Сильпий; сегодня это Антакья в Турции. Селевк I Никатор основал её в 300 г. до н. э. и назвал в честь своего отца Антиоха; гаванью ей служила Селевкия Пиерийская, а предместьем — роща Аполлона в Дафне. Город стал столицей Селевкидов и разросся до четырёх кварталов, каждый со своей стеной."
+    - "Когда Помпей в 64 г. до н. э. сделал Сирию римской провинцией, Антиохия стала резиденцией её наместника. Ирод Великий вымостил её главную улицу и обнёс колоннадами. Иосиф Флавий называет её третьим городом римского мира после Рима и Александрии; в ней жила большая иудейская община."
+    - "По книге Деяний, верующие, рассеянные после гибели Стефана, проповедовали в Антиохии Еллинам. Иерусалим послал туда Варнаву, он привёл из Тарса Савла, и здесь ученики впервые стали называться христианами; когда Агав предсказал голод, церковь послала помощь в Иудею. Отсюда церковь отправила Варнаву и Савла в первое путешествие и приняла их по возвращении. Спор об обрезании привёл Павла и Варнаву в Иерусалим, и они вернулись с посланием апостолов. В Антиохии Павел противостал Петру, и отсюда он отправлялся в следующие путешествия."
+    - "Её епископа Игнатия при Траяне увезли в Рим, и по пути он писал послания церквам. Траян находился в городе, когда в 115 г. н. э. его постигло сильное землетрясение. Константин начал строить восьмигранную Великую церковь, а его сын Констанций достроил её; её освятили в 341 г. на соборе, собравшемся здесь же. Юлиан провёл в Антиохии зиму 362–363 гг. и рассорился с горожанами. Здесь учил риторике Ливаний, а Иоанн Златоуст проповедовал с 386 г., пока в 398 г. не стал епископом Константинополя."
+scripture:
+  - Acts.11.19-Acts.11.30
+  - Acts.13.1-Acts.13.3
+  - Acts.14.26-Acts.14.28
+  - Acts.15.1-Acts.15.2
+  - Acts.15.22-Acts.15.35
+  - Gal.2.11
+  - Acts.15.36-Acts.15.41
+  - Acts.18.22-Acts.18.23
+sources:
+  - "Strabo, Geography 16.2.4-6"
+  - "Josephus, Jewish War 1.425; 3.29; 7.43-45; Antiquities 16.148"
+  - "Eusebius, Church History 3.22; 3.36"
+  - "Cassius Dio, Roman History 68.24-25"
+  - "Eusebius, Life of Constantine 3.50; Socrates Scholasticus, Church History 2.8 and 6.2"
+  - "Julian, Misopogon; Libanius, Oration 11 (Antiochikos)"
+  - "G. Downey, A History of Antioch in Syria from Seleucus to the Arab Conquest (1961)"
+  - "W. A. Meeks and R. L. Wilken, Jews and Christians in Antioch in the First Four Centuries of the Common Era (1978)"
+status: checked

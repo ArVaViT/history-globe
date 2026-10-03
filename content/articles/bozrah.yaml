@@ -1,0 +1,35 @@
+# Overview article (ADR 0007). Mainstream facts only; Bozrah is given as the usual identification of Busayra; the dating of the earliest Iron Age town is named as disputed.
+id: bozrah
+place: a871210
+title:
+  en: "Bozrah"
+  ru: "Восор"
+body:
+  en:
+    - "Bozrah, a chief city of Edom, is usually identified with the ruins at Busayra (Buseira) in southern Jordan, about 10 km south of Tafila and some 50 km north of Petra. Crystal-M. Bennett excavated the site between 1971 and 1980, and Piotr Bienkowski published the final report in 2002. She uncovered large public buildings, among them Building A, a monumental complex of more than 2,300 m² whose courtyard is taken to belong to a temple or a palace."
+    - "The excavated town belongs to the late Iron Age. Its beginnings were first dated to the eighth century BC, while later studies place the main remains no earlier than the seventh. In that age Assyrian records name kings of Edom: about 673 BC Esarhaddon summoned Qaush-gabri, king of Edom, with Manasseh, king of Judah, and other kings of the west to bring building materials for his palace at Nineveh."
+    - 'Genesis names Jobab the son of Zerah of Bozrah among the kings who reigned in Edom before any king reigned over Israel. For the prophets Bozrah stands for Edom itself. Amos foretells a fire "which shall devour the palaces of Bozrah"; Isaiah says that "the LORD hath a sacrifice in Bozrah" and asks, "Who is this that cometh from Edom, with dyed garments from Bozrah?" Jeremiah warns that Bozrah "shall become a desolation" and that the enemy will fly as the eagle and spread his wings over it.'
+    - "The Nabonidus Chronicle, in a damaged line, has the Babylonian king encamp against Edom in his third year, 553/552 BC, and the destruction of part of Building A in the seventh or sixth century may belong to that campaign. In the fifth and fourth centuries BC the western half of the building was rebuilt on the old foundations while the eastern half lay in ruins. Early in the fourth century AD Eusebius distinguished Bosor, the city of Esau in the hills of Idumea of which Isaiah speaks, from Bostra in Arabia."
+  ru:
+    - "Восор, один из главных городов Едома, обычно отождествляют с развалинами у Бусейры на юге Иордании, примерно в 10 км к югу от Эт-Тафилы и примерно в 50 км к северу от Петры. Кристал-М. Беннетт вела здесь раскопки с 1971 по 1980 год, а Пётр Бенковский в 2002 году издал итоговый отчёт. Она открыла большие общественные здания, среди них Здание A — монументальный комплекс площадью более 2300 м², двор которого считают частью храма или дворца."
+    - "Раскопанный город относится к позднему железному веку. Его начало сперва датировали VIII веком до н. э., а более поздние исследования относят основные остатки не ранее чем к VII веку. В это время ассирийские записи называют царей Едома: около 673 г. до н. э. Асардан призвал Кауш-габри, царя Едома, вместе с Манассией, царём Иудейским, и другими царями запада доставить строительные материалы для его дворца в Ниневии."
+    - "Книга Бытия называет Иовава, сына Зераха, из Восора среди царей, царствовавших в Едоме прежде царствования царей у сынов Израилевых. У пророков Восор означает сам Едом. Амос предрекает огонь, который «пожрет чертоги Восора»; Исаия говорит, что «жертва у Господа в Восоре», и спрашивает: «Кто это идет от Едома, в червленых ризах от Восора?» Иеремия предупреждает, что Восор станет «пустынею» и что враг, как орёл, распустит над ним крылья свои."
+    - "Хроника Набонида в повреждённой строке сообщает, что вавилонский царь на третьем году правления, в 553/552 г. до н. э., встал лагерем против Едома, и разрушение части Здания A в VII или VI веке, возможно, связано с этим походом. В V–IV веках до н. э. западную половину здания отстроили на старых основаниях, а восточная лежала в развалинах. В начале IV века н. э. Евсевий отличал Восор, город Исава в горах Идумеи, о котором говорит Исаия, от Бостры в Аравии."
+scripture:
+  - Gen.36.31-Gen.36.33
+  - 1Chr.1.44
+  - Amos.1.12
+  - Isa.34.6
+  - Isa.63.1
+  - Jer.49.13
+  - Jer.49.22
+sources:
+  - "Esarhaddon, Nineveh prism A (RINAP 4, Esarhaddon 1) v 54-56: Qaush-gabri, king of Edom"
+  - "Nabonidus Chronicle (ABC 7) i 17 (encampment against Edom in the third year)"
+  - "Eusebius, Onomasticon, s.v. Bosor"
+  - "C.-M. Bennett, 'Excavations at Buseirah, Southern Jordan', preliminary reports in Levant 5 (1973) 1-11; 6 (1974) 1-24; 7 (1975) 1-19; 9 (1977) 1-10"
+  - "P. Bienkowski (ed.), Busayra: Excavations by Crystal-M. Bennett 1971-1980 (British Academy Monographs in Archaeology 13, 2002)"
+  - "P. Bienkowski, 'Umm el-Biyara, Tawilan and Buseirah in Retrospect', Levant 22 (1990) 91-109"
+  - "B. W. Porter et al., 'The Busayra Cultural Heritage Project's 2025 Season', Archaeology in Jordan 5 (2026) 119-121"
+  - "B. Crowell, 'Nabonidus, as-Sila', and the Beginning of the End of Edom', BASOR 348 (2007) 75-88"
+status: checked

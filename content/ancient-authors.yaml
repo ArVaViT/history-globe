@@ -1,0 +1,715 @@
+# What ancient authors outside the Bible say of places (shown in the place card, the static
+# page and the API). Our own summary of each passage, never a modern translation of it;
+# every passage number checked against the free text the url opens (2026-10-03).
+# What ancient authors outside the Bible say of biblical places.
+# Each passage was checked against the online text at the given url.
+mentions:
+  # ---------- Jerusalem ----------
+  - place: a15257a
+    author: { en: "Tacitus", ru: "Тацит" }
+    work: { en: "Histories", ru: "История" }
+    passage: "5.11-12"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0080:book=5:chapter=11"
+    note:
+      en: "On the eve of Titus's assault: two high hills fenced by angled walls, towers of 60 to 120 feet, the tower Antonia, and a temple like a citadel with its own walls, a spring and cisterns built for a long siege."
+      ru: "Накануне штурма Тита: два высоких холма, обведённые ломаными стенами, башни в 60–120 футов, башня Антония и храм, похожий на крепость, со своими стенами, источником и цистернами на случай долгой осады."
+  - place: a15257a
+    author: { en: "Josephus", ru: "Иосиф Флавий" }
+    work: { en: "Jewish War", ru: "Иудейская война" }
+    passage: "5.136-141"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=5:section=136"
+    note:
+      en: "The city stood on two facing hills divided by a valley and had three walls where ravines did not protect it; the higher hill, the Upper City, David had called the Citadel, the lower was the Acra."
+      ru: "Город стоял на двух холмах, разделённых долиной, и имел три стены там, где его не защищали обрывы; высший холм, Верхний город, Давид звал Крепостью, низший — Акра."
+  - place: a15257a
+    author: { en: "Pliny the Elder", ru: "Плиний Старший" }
+    work: { en: "Natural History", ru: "Естественная история" }
+    passage: "5.70"
+    url: "https://penelope.uchicago.edu/Thayer/L/Roman/Texts/Pliny_the_Elder/5*.html#70"
+    note:
+      en: "Listing the toparchies of Judea, Pliny names Orina, where Jerusalem formerly stood, by far the most famous city not of Judea only but of the whole East."
+      ru: "Перечисляя округа Иудеи, Плиний называет Орину, где прежде стоял Иерусалим — самый знаменитый город не только Иудеи, но и всего Востока."
+
+  # ---------- Babylon ----------
+  - place: a217d18
+    author: { en: "Herodotus", ru: "Геродот" }
+    work: { en: "Histories", ru: "История" }
+    passage: "1.178-183"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0126:book=1:chapter=178"
+    note:
+      en: "Babylon is a square city on a plain, sixty miles around, ringed by a deep moat and a huge wall; in one of its two halves stands the sanctuary of Zeus Belus with a tower of eight stages climbed by an outer spiral path."
+      ru: "Вавилон — квадратный город на равнине, в шестьдесят миль по окружности, обведённый глубоким рвом и громадной стеной; в одной из двух его частей стоит святилище Зевса-Бела с башней в восемь ярусов, на которую ведёт наружная винтовая дорога."
+  - place: a217d18
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "16.1.5"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=16:chapter=1:section=5"
+    note:
+      en: "In Strabo's day Babylon was largely deserted, so that the comic line about Megalopolis, the great city is a great desert, fitted it; for lack of timber, beams and pillars were of palm wood and the houses vaulted."
+      ru: "При Страбоне Вавилон был по большей части пуст, и к нему подходила строка комика о Мегалополе: великий город — великая пустыня; из-за нехватки леса балки и столбы делали из пальмы, а дома — сводчатыми."
+  - place: a217d18
+    author: { en: "Cyrus Cylinder", ru: "Цилиндр Кира" }
+    work: { en: "Akkadian inscription, lines", ru: "аккадская надпись, строки" }
+    passage: "15-18"
+    url: "https://www.livius.org/sources/content/cyrus-cylinder/cyrus-cylinder-translation/"
+    note:
+      en: "Cyrus claims Marduk led him into Babylon without a battle, delivered Nabonidus into his hands, and that all Babylon and the land of Sumer and Akkad kissed his feet and rejoiced at his kingship."
+      ru: "Кир заявляет, что Мардук ввёл его в Вавилон без боя, предал в его руки Набонида и что весь Вавилон, вся земля Шумера и Аккада целовали ему ноги и радовались его царствованию."
+
+  # ---------- Nineveh ----------
+  - place: a70fd5d
+    author: { en: "Xenophon", ru: "Ксенофонт" }
+    work: { en: "Anabasis", ru: "Анабасис" }
+    passage: "3.4.10"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0202:book=3:chapter=4:section=10"
+    note:
+      en: "In 401 BC the Ten Thousand reached a great deserted stronghold called Mespila, once inhabited by the Medes, its wall footing of polished shell-stone fifty feet thick and fifty high; Xenophon does not name Nineveh, but these were its ruins."
+      ru: "В 401 г. до н. э. десять тысяч греков дошли до огромной покинутой крепости Меспилы, где некогда жили мидяне, с цоколем стены из полированного ракушечника в пятьдесят футов толщиной и высотой; Ниневию Ксенофонт не называет, но это были её руины."
+  - place: a70fd5d
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "16.1.3"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=16:chapter=1:section=3"
+    note:
+      en: "Nineveh, much larger than Babylon and lying in the plain of Aturia, was destroyed as soon as the Assyrian empire fell."
+      ru: "Ниневия, намного больше Вавилона, лежавшая на равнине Атурии, была разрушена сразу после падения ассирийской державы."
+  - place: a70fd5d
+    author: { en: "Diodorus Siculus", ru: "Диодор Сицилийский" }
+    work: { en: "Library of History", ru: "Историческая библиотека" }
+    passage: "2.3.2-4"
+    url: "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Diodorus_Siculus/2A*.html#3"
+    note:
+      en: "Ninus founded a rectangular city 480 stades around with walls 100 feet high and wide enough for three chariots abreast, and 1,500 towers of 200 feet; he named it Ninus after himself."
+      ru: "Нин основал прямоугольный город в 480 стадиев по окружности, со стенами в сто футов высотой, где могли разъехаться три колесницы, и 1500 башнями в двести футов; он назвал его своим именем — Нин."
+
+  # ---------- Damascus ----------
+  - place: a69c1d4
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "16.2.20"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=16:chapter=2:section=20"
+    note:
+      en: "Damascus is a considerable city and under the Persian empire was nearly the most distinguished in Syria; above it lie the two Trachones and rugged mountains, one of whose caves could hold four thousand robbers."
+      ru: "Дамаск — значительный город, при персах едва ли не самый знаменитый в Сирии; над ним лежат два Трахона и труднодоступные горы, в одной из пещер которых помещалось четыре тысячи разбойников."
+  - place: a69c1d4
+    author: { en: "Josephus", ru: "Иосиф Флавий" }
+    work: { en: "Jewish Antiquities", ru: "Иудейские древности" }
+    passage: "1.159-160"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0146:book=1:whiston+chapter=7:whiston+section=2"
+    note:
+      en: "Quoting Nicolaus of Damascus, Josephus says Abram came from the land of the Chaldeans and reigned at Damascus as a foreigner before moving on to Canaan; a village there was still called the Habitation of Abram."
+      ru: "Ссылаясь на Николая Дамасского, Иосиф пишет, что Аврам пришёл из земли халдеев и правил в Дамаске как чужеземец, прежде чем уйти в Ханаан; одно селение там всё ещё звали Жилищем Аврама."
+
+  # ---------- Tyre ----------
+  - place: a160272
+    author: { en: "Herodotus", ru: "Геродот" }
+    work: { en: "Histories", ru: "История" }
+    passage: "2.44"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0126:book=2:chapter=44"
+    note:
+      en: "Herodotus sailed to Tyre to see its temple of Heracles, rich in offerings, with pillars of gold and of emerald that shone by night; the priests said it was founded with the city 2,300 years before."
+      ru: "Геродот приплыл в Тир посмотреть храм Геракла, богатый приношениями, с колоннами из золота и из изумруда, светившегося ночью; жрецы сказали, что храм основан вместе с городом 2300 лет назад."
+  - place: a160272
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "16.2.23"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=16:chapter=2:section=23"
+    note:
+      en: "Tyre is wholly an island, joined to the mainland by the mole Alexander raised during his siege; it has two harbours, houses of more storeys than Rome, and recovered its wealth through seafaring and purple dye."
+      ru: "Тир целиком лежит на острове, соединённом с берегом насыпью, которую возвёл Александр при осаде; у него две гавани, дома выше римских, а богатство вернули мореходство и пурпурные ткани."
+  - place: a160272
+    author: { en: "Arrian", ru: "Арриан" }
+    work: { en: "Anabasis of Alexander", ru: "Поход Александра" }
+    passage: "2.18"
+    url: "https://en.wikisource.org/wiki/The_Anabasis_of_Alexander/Book_II/Chapter_XVIII"
+    note:
+      en: "Tyre was an island fortified all round with lofty walls and still strong at sea, so Alexander, encouraged by a dream of Heracles leading him into the city, resolved to build a mole from the mainland."
+      ru: "Тир был островом, обнесённым высокими стенами, и был силён на море, поэтому Александр, ободрённый сном, где Геракл вёл его в город, решил насыпать дамбу с материка."
+
+  # ---------- Sidon ----------
+  - place: a98e4d7
+    author: { en: "Herodotus", ru: "Геродот" }
+    work: { en: "Histories", ru: "История" }
+    passage: "7.96"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0126:book=7:chapter=96"
+    note:
+      en: "In Xerxes' fleet of 480 BC the most seaworthy ships were furnished by the Phoenicians, and among them by the Sidonians."
+      ru: "Во флоте Ксеркса в 480 г. до н. э. лучшие корабли выставили финикийцы, а из них — сидоняне."
+  - place: a98e4d7
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "16.2.22"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=16:chapter=2:section=22"
+    note:
+      en: "Sidon lies on a fine natural harbour on the mainland; it and Tyre rival each other in size, fame and antiquity, and the poets celebrated Sidon more, though which is the capital of Phoenicia is disputed."
+      ru: "Сидон стоит на прекрасной природной гавани на материке; он и Тир соперничают величиной, славой и древностью, поэты воспевали больше Сидон, а какой из них столица Финикии — спор."
+  - place: a98e4d7
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "16.2.24"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=16:chapter=2:section=24"
+    note:
+      en: "The Sidonians excel in the arts and cultivate astronomy and arithmetic, born of commerce and night sailing; Strabo studied Aristotle with the Sidonian philosopher Boethus."
+      ru: "Сидоняне искусны в ремёслах и занимаются астрономией и арифметикой, рождёнными торговлей и ночным мореплаванием; сам Страбон изучал Аристотеля у сидонского философа Боэта."
+
+  # ---------- Samaria ----------
+  - place: a041bb3
+    author: { en: "Josephus", ru: "Иосиф Флавий" }
+    work: { en: "Jewish Antiquities", ru: "Иудейские древности" }
+    passage: "15.292-293"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0146:book=15:section=292"
+    note:
+      en: "Herod made Samaria a fortress against his own people and renamed it Sebaste, a day's journey from Jerusalem, to hold both city and country in awe; he likewise built Caesarea at Strato's Tower."
+      ru: "Ирод превратил Самарию в крепость против собственного народа и назвал её Себастой — в дне пути от Иерусалима, чтобы держать в страхе и столицу, и страну; так же он отстроил Кесарию на месте Стратоновой башни."
+
+  # ---------- Jericho ----------
+  - place: a231f80
+    author: { en: "Josephus", ru: "Иосиф Флавий" }
+    work: { en: "Jewish War", ru: "Иудейская война" }
+    passage: "4.459-464"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=4:section=459"
+    note:
+      en: "By Jericho, near the old city that Joshua took first in Canaan, flows a plentiful spring; once blighting, it was made wholesome and fruitful by the prophet Elisha, who threw salt into it."
+      ru: "Возле Иерихона, у старого города, который Иисус Навин взял первым в Ханаане, бьёт обильный источник; прежде губительный, он стал здоровым и плодоносным по молитве пророка Елисея, бросившего в него соль."
+
+  # ---------- Jericho (Herodian, New Testament) ----------
+  - place: aaf03fa
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "16.2.41"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=16:chapter=2:section=41"
+    note:
+      en: "Jericho is a plain ringed by mountains like a theatre, with a palm grove 100 stades long, well watered and full of dwellings, a palace and the garden of balsam, a costly remedy produced nowhere else."
+      ru: "Иерихон — равнина, окружённая горами наподобие театра, с пальмовой рощей в сто стадиев, обильно орошённой и застроенной, с дворцом и садом бальзама — дорогого снадобья, которого нет больше нигде."
+
+  # ---------- Gaza ----------
+  - place: aa8edd2
+    author: { en: "Arrian", ru: "Арриан" }
+    work: { en: "Anabasis of Alexander", ru: "Поход Александра" }
+    passage: "2.26"
+    url: "https://en.wikisource.org/wiki/The_Anabasis_of_Alexander/Book_II/Chapter_XXVI"
+    note:
+      en: "Gaza, about twenty stades from the sea, was a large city on a lofty mound ringed by a strong wall, the last town before the desert on the way to Egypt; Alexander's engineers doubted its wall could be taken."
+      ru: "Газа, в двадцати стадиях от моря, была большим городом на высоком холме, обнесённым крепкой стеной, последним перед пустыней на пути в Египет; инженеры Александра сомневались, что стену можно взять."
+  - place: aa8edd2
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "16.2.30"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=16:chapter=2:section=30"
+    note:
+      en: "After Ascalon comes the harbour of the Gazaeans; the city itself lies seven stades inland, was once famous, but was razed by Alexander and remains uninhabited."
+      ru: "За Аскалоном — гавань газян; сам город лежит в семи стадиях от моря, был некогда знаменит, но разрушен Александром и остаётся необитаемым."
+
+  # ---------- Ashkelon ----------
+  - place: ac87d4c
+    author: { en: "Herodotus", ru: "Геродот" }
+    work: { en: "Histories", ru: "История" }
+    passage: "1.105"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0126:book=1:chapter=105"
+    note:
+      en: "Scythians returning from Egypt plundered the temple of Heavenly Aphrodite at Ascalon, the oldest of all her temples, from which the sanctuaries in Cyprus and Cythera were founded."
+      ru: "Скифы, возвращаясь из Египта, разграбили в Аскалоне храм Афродиты Небесной — древнейший из всех её храмов, от которого пошли святилища на Кипре и Кифере."
+  - place: ac87d4c
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "16.2.29"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=16:chapter=2:section=29"
+    note:
+      en: "Ascalon is a small town whose country grows excellent onions; the philosopher Antiochus, shortly before Strabo's time, was a native."
+      ru: "Аскалон — небольшой город, чья земля родит отличный лук; незадолго до Страбона отсюда вышел философ Антиох."
+
+  # ---------- Joppa ----------
+  - place: ae023a9
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "16.2.28"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=16:chapter=2:section=28"
+    note:
+      en: "At Joppa the coast bends north; here, some say, Andromeda was exposed to the sea monster. The town stands high and is said to command a view of Jerusalem; the Jews used it as their arsenal when they came down to the sea."
+      ru: "У Иоппии берег поворачивает на север; здесь, по преданию, Андромеду отдали морскому чудовищу. Город стоит высоко, и говорят, что с него виден Иерусалим; иудеи, выходя к морю, держали здесь свою верфь."
+  - place: ae023a9
+    author: { en: "Josephus", ru: "Иосиф Флавий" }
+    work: { en: "Jewish War", ru: "Иудейская война" }
+    passage: "3.414-416"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=3:section=414"
+    note:
+      en: "In AD 67 refugees rebuilt Joppa, which Cestius had left desolate, built many ships and turned pirate along the coasts of Syria, Phoenicia and Egypt until Vespasian sent troops against them."
+      ru: "В 67 г. беглецы отстроили Иоппию, опустошённую Цестием, построили множество кораблей и промышляли пиратством у берегов Сирии, Финикии и Египта, пока Веспасиан не послал на них войска."
+
+  # ---------- Caesarea ----------
+  - place: a58735e
+    author: { en: "Josephus", ru: "Иосиф Флавий" }
+    work: { en: "Jewish War", ru: "Иудейская война" }
+    passage: "1.408-410"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=1:section=408"
+    note:
+      en: "Herod rebuilt the decayed Strato's Tower in white stone with splendid palaces and, since the whole coast between Dora and Joppa had no haven, overcame nature with a harbour larger than Piraeus."
+      ru: "Ирод отстроил пришедшую в упадок Стратонову башню из белого камня с роскошными дворцами и, поскольку на всём побережье от Дора до Иоппии не было пристани, одолел природу гаванью больше Пирея."
+  - place: a58735e
+    author: { en: "Josephus", ru: "Иосиф Флавий" }
+    work: { en: "Jewish Antiquities", ru: "Иудейские древности" }
+    passage: "15.331-333"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0146:book=15:section=331"
+    note:
+      en: "Herod's greatest work at Caesarea was a harbour always free from the waves, as large as Piraeus, built at vast expense from imported materials on a shore exposed to the south wind."
+      ru: "Величайшим делом Ирода в Кесарии стала гавань, всегда защищённая от волн, размером с Пирей, построенная с огромными затратами из привозного камня на берегу, открытом южному ветру."
+  - place: a58735e
+    author: { en: "Tacitus", ru: "Тацит" }
+    work: { en: "Histories", ru: "История" }
+    passage: "2.79"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0080:book=2:chapter=79"
+    note:
+      en: "In AD 69 Mucianus went to Antioch and Vespasian to Caesarea, the capitals of Syria and Judea; the army of Judea swore allegiance to Vespasian in person on 3 July."
+      ru: "В 69 г. Муциан отправился в Антиохию, а Веспасиан в Кесарию — столицы Сирии и Иудеи; 3 июля войско Иудеи присягнуло Веспасиану лично."
+
+  # ---------- Antioch on the Orontes ----------
+  - place: ae41ab4
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "16.2.4-5"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=16:chapter=2:section=4"
+    note:
+      en: "Antioch, founded by Seleucus Nicator and named for his father, is the metropolis of Syria, itself a tetrapolis of four walled quarters, not much inferior in wealth and size to Seleucia on the Tigris or Alexandria."
+      ru: "Антиохия, основанная Селевком Никатором и названная в честь его отца, — столица Сирии, сама состоящая из четырёх обнесённых стенами частей; богатством и величиной она немногим уступает Селевкии на Тигре и Александрии."
+  - place: ae41ab4
+    author: { en: "Josephus", ru: "Иосиф Флавий" }
+    work: { en: "Jewish War", ru: "Иудейская война" }
+    passage: "3.29"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=3:section=29"
+    note:
+      en: "Vespasian set out from Antioch, the metropolis of Syria, which in size and prosperity undisputedly ranks as the third city of the Roman world."
+      ru: "Веспасиан выступил из Антиохии, столицы Сирии, которая по величине и благосостоянию бесспорно занимает третье место среди городов римского мира."
+
+  # ---------- Ephesus ----------
+  - place: a5feb15
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "14.1.22-24"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=14:chapter=1:section=22"
+    note:
+      en: "After Herostratus burned the temple of Artemis the Ephesians built a grander one from the women's jewellery and private gifts; the city has an arsenal and harbour and grows daily, the greatest mart in Asia this side of the Taurus."
+      ru: "После того как Герострат сжёг храм Артемиды, ефесяне возвели ещё более великолепный на украшения женщин и частные дары; у города есть верфь и гавань, он растёт день ото дня — крупнейший рынок Азии по эту сторону Тавра."
+  - place: a5feb15
+    author: { en: "Pliny the Elder", ru: "Плиний Старший" }
+    work: { en: "Natural History", ru: "Естественная история" }
+    passage: "36.95"
+    url: "https://penelope.uchicago.edu/Thayer/L/Roman/Texts/Pliny_the_Elder/36*.html#95"
+    note:
+      en: "The temple of Diana at Ephesus, the true wonder of Greek magnificence, took 120 years and all Asia to build on marshy ground against earthquakes, with 127 columns sixty feet high, each the gift of a king."
+      ru: "Храм Дианы в Ефесе, подлинное чудо греческого великолепия, строила вся Азия 120 лет на болотистой почве — защита от землетрясений; 127 колонн в шестьдесят футов, каждая — дар царя."
+  - place: a5feb15
+    author: { en: "Pausanias", ru: "Павсаний" }
+    work: { en: "Description of Greece", ru: "Описание Эллады" }
+    passage: "4.31.8"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0160:book=4:chapter=31:section=8"
+    note:
+      en: "All cities worship Artemis of Ephesus and individuals honour her above all gods, because of the Amazons, the sanctuary's antiquity, the temple that surpasses every building among men, and the eminence of the city."
+      ru: "Все города чтут Артемиду Ефесскую, а люди ставят её выше всех богов — из-за амазонок, древности святилища, храма, превосходящего все постройки людей, и славы самого города."
+
+  # ---------- Corinth ----------
+  - place: a6f437a
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "8.6.20"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=8:chapter=6:section=20"
+    note:
+      en: "Corinth is called wealthy because of its trade: it sits on the Isthmus and commands two harbours, one towards Asia and one towards Italy, so goods pass easily between the seas while sailors avoid the dangerous Cape Malea."
+      ru: "Коринф зовут богатым из-за торговли: он стоит на Истме и владеет двумя гаванями, одной к Азии, другой к Италии, так что товары легко идут между морями, а моряки минуют опасный мыс Малея."
+  - place: a6f437a
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "8.6.23"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=8:chapter=6:section=23"
+    note:
+      en: "After the Corinthians insulted Roman envoys, Lucius Mummius razed the city in 146 BC; Polybius saw soldiers playing dice on famous paintings thrown on the ground."
+      ru: "После того как коринфяне оскорбили римских послов, Луций Муммий разрушил город в 146 г. до н. э.; Полибий видел, как солдаты играли в кости на брошенных наземь знаменитых картинах."
+  - place: a6f437a
+    author: { en: "Pausanias", ru: "Павсаний" }
+    work: { en: "Description of Greece", ru: "Описание Эллады" }
+    passage: "2.1.2"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0160:book=2:chapter=1:section=2"
+    note:
+      en: "Corinth is no longer inhabited by old Corinthians but by colonists sent by Rome: Mummius laid it waste after the Achaean war, and Caesar refounded it."
+      ru: "В Коринфе живут уже не старые коринфяне, а поселенцы, присланные Римом: Муммий опустошил город после Ахейской войны, а Цезарь основал его заново."
+
+  # ---------- Athens ----------
+  - place: a1fe6e7
+    author: { en: "Pausanias", ru: "Павсаний" }
+    work: { en: "Description of Greece", ru: "Описание Эллады" }
+    passage: "1.1.4"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0160:book=1:chapter=1:section=4"
+    note:
+      en: "At Phalerum, the old harbour of Athens, stand a sanctuary of Demeter, a temple of Athena Sciras, one of Zeus, and altars of the gods named Unknown, of heroes, and of the children of Theseus."
+      ru: "В Фалере, старой гавани Афин, стоят святилище Деметры, храм Афины Скирады, храм Зевса и жертвенники богов, называемых Неведомыми, героев и детей Тесея."
+  - place: a1fe6e7
+    author: { en: "Pausanias", ru: "Павсаний" }
+    work: { en: "Description of Greece", ru: "Описание Эллады" }
+    passage: "1.17.1"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0160:book=1:chapter=17:section=1"
+    note:
+      en: "In the Athenian marketplace is an altar to Mercy, honoured by the Athenians alone among the Greeks; they are conspicuous for their humanity and devotion to religion, with altars even to Shamefastness, Rumour and Effort."
+      ru: "На афинской площади есть жертвенник Милосердию, которое из эллинов чтут одни афиняне; они выделяются человечностью и благочестием — у них есть жертвенники даже Стыдливости, Молве и Усердию."
+  - place: a1fe6e7
+    author: { en: "Pausanias", ru: "Павсаний" }
+    work: { en: "Description of Greece", ru: "Описание Эллады" }
+    passage: "1.24.5"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0160:book=1:chapter=24:section=5"
+    note:
+      en: "Entering the Parthenon, the front pediment shows the birth of Athena and the rear the contest of Athena and Poseidon for the land; the statue of the goddess itself is of ivory and gold."
+      ru: "При входе в Парфенон на переднем фронтоне — рождение Афины, на заднем — спор Афины и Посейдона за страну; сама статуя богини — из слоновой кости и золота."
+
+  # ---------- Rome ----------
+  - place: afc8e7a
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "5.3.8"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=5:chapter=3:section=8"
+    note:
+      en: "The Romans excelled where the Greeks cared little: paved roads, aqueducts and sewers large enough for hay wagons; water flows through the city like rivers and nearly every house has pipes and fountains, thanks largely to Agrippa."
+      ru: "Римляне преуспели там, где греки были небрежны: мощёные дороги, водопроводы и клоаки, где проедет воз сена; вода течёт по городу как реки, и почти в каждом доме трубы и фонтаны — заслуга прежде всего Агриппы."
+  - place: afc8e7a
+    author: { en: "Tacitus", ru: "Тацит" }
+    work: { en: "Annals", ru: "Анналы" }
+    passage: "15.44"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0078:book=15:chapter=44"
+    note:
+      en: "To quash the rumour that he had ordered the fire of AD 64, Nero blamed the Christians, named after Christus who was executed under Tiberius by Pontius Pilate; a vast multitude in Rome was torn by dogs, crucified or burned."
+      ru: "Чтобы заглушить слух, что пожар 64 г. устроен по его приказу, Нерон обвинил христиан, названных по Христу, казнённому при Тиберии Понтием Пилатом; великое множество их в Риме отдали псам, распяли или сожгли."
+  - place: afc8e7a
+    author: { en: "Suetonius", ru: "Светоний" }
+    work: { en: "Life of Claudius", ru: "Жизнь Клавдия" }
+    passage: "25.4"
+    url: "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Suetonius/12Caesars/Claudius*.html#25"
+    note:
+      en: "Since the Jews constantly made disturbances at the instigation of Chrestus, Claudius expelled them from Rome; Acts 18:2 tells of the same decree, which brought Aquila and Priscilla to Corinth."
+      ru: "За то, что иудеи постоянно волновались, подстрекаемые Хрестом, Клавдий изгнал их из Рима; о том же указе говорит Деян. 18:2 — из-за него Акила и Прискилла оказались в Коринфе."
+
+  # ---------- Alexandria ----------
+  - place: aee7248
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "17.1.6"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=17:chapter=1:section=6"
+    note:
+      en: "The island of Pharos shuts in the bay of Alexandria and makes a harbour with a double entrance; on its rocky eastern tip stands the tower of the same name, admirably built of white marble in several storeys."
+      ru: "Остров Фарос запирает залив Александрии и образует гавань с двумя входами; на его скалистой восточной оконечности стоит одноимённая башня из белого мрамора в несколько ярусов."
+  - place: aee7248
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "17.1.8"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=17:chapter=1:section=8"
+    note:
+      en: "The Museum is part of the royal palaces, with a covered walk, seats and a great hall where its scholars dine together under a priest now appointed by Caesar; nearby the Sema holds the tombs of the kings and of Alexander."
+      ru: "Мусейон — часть царских дворцов, с крытой галереей, скамьями и большим залом, где учёные обедают вместе под началом жреца, которого теперь назначает Цезарь; рядом Сема с гробницами царей и Александра."
+  - place: aee7248
+    author: { en: "Diodorus Siculus", ru: "Диодор Сицилийский" }
+    work: { en: "Library of History", ru: "Историческая библиотека" }
+    passage: "17.52.1-3"
+    url: "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Diodorus_Siculus/17C*.html#52"
+    note:
+      en: "Alexander laid out the city between the marsh and the sea, aligning its streets to catch the cooling etesian winds; shaped like a cloak, it is bisected by an avenue forty furlongs long lined with houses and temples."
+      ru: "Александр заложил город между болотом и морем, направив улицы так, чтобы их продували прохладные этесии; по форме он похож на плащ и рассечён проспектом в сорок стадиев, застроенным домами и храмами."
+
+  # ---------- Tarsus ----------
+  - place: a666ea0
+    author: { en: "Xenophon", ru: "Ксенофонт" }
+    work: { en: "Anabasis", ru: "Анабасис" }
+    passage: "1.2.23"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0202:book=1:chapter=2:section=23"
+    note:
+      en: "In 401 BC Cyrus the Younger reached Tarsus, a large and prosperous city of Cilicia with the palace of King Syennesis; the river Cydnus, two plethra wide, flows through its middle."
+      ru: "В 401 г. до н. э. Кир Младший дошёл до Тарса, большого и богатого города Киликии с дворцом царя Сиеннесия; через его середину течёт река Кидн шириной в два плетра."
+  - place: a666ea0
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "14.5.12-13"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=14:chapter=5:section=12"
+    note:
+      en: "Tarsus lies in a plain, with the cold swift Cydnus flowing past its gymnasium; its people pursue philosophy and the whole round of learning so eagerly that they surpass Athens and Alexandria, though the students are all natives."
+      ru: "Тарс лежит на равнине, холодный быстрый Кидн течёт мимо гимнасия; жители так усердно занимаются философией и всеми науками, что превосходят Афины и Александрию, хотя учатся там одни местные."
+  - place: a666ea0
+    author: { en: "Plutarch", ru: "Плутарх" }
+    work: { en: "Life of Antony", ru: "Жизнеописание Антония" }
+    passage: "26.1-3"
+    url: "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Antony*.html#26"
+    note:
+      en: "Cleopatra sailed up the Cydnus to Tarsus in a gilded barge with purple sails and silver oars, dressed as Venus; the whole town streamed to the riverbank until Antony sat alone in the marketplace."
+      ru: "Клеопатра поднялась по Кидну в Тарс на золочёной барке с пурпурными парусами и серебряными вёслами в облике Венеры; весь город сбежался к реке, и Антоний остался на площади один."
+
+  # ---------- Philippi ----------
+  - place: a49e1d0
+    author: { en: "Diodorus Siculus", ru: "Диодор Сицилийский" }
+    work: { en: "Library of History", ru: "Историческая библиотека" }
+    passage: "16.8.6"
+    url: "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Diodorus_Siculus/16A*.html#8"
+    note:
+      en: "Philip came to Crenides, enlarged it with many settlers and renamed it Philippi after himself; he so improved its meagre gold mines that they brought him over a thousand talents a year."
+      ru: "Филипп пришёл в Крениды, умножил их население и назвал город своим именем — Филиппы; скудные золотые рудники рядом он наладил так, что они давали ему больше тысячи талантов в год."
+  - place: a49e1d0
+    author: { en: "Appian", ru: "Аппиан" }
+    work: { en: "Civil Wars", ru: "Гражданские войны" }
+    passage: "4.105-106"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0232:book=4:chapter=13:section=105"
+    note:
+      en: "Philippi, formerly Datus and before that Crenides for its many springs, was fortified by Philip against the Thracians; it sits on a steep hill with woods to the north, a marsh to the south and a fertile plain to the Strymon."
+      ru: "Филиппы, прежде Дат, а ещё раньше Крениды — по множеству источников, укрепил Филипп против фракийцев; город стоит на крутом холме, к северу леса, к югу болото, а к западу плодородная равнина до Стримона."
+
+  # ---------- Thessalonica ----------
+  - place: afa9d8e
+    author: { en: "Pliny the Elder", ru: "Плиний Старший" }
+    work: { en: "Natural History", ru: "Естественная история" }
+    passage: "4.36"
+    url: "https://penelope.uchicago.edu/Thayer/L/Roman/Texts/Pliny_the_Elder/4*.html#36"
+    note:
+      en: "On the Macedonian coast, at the middle of the bend of the shore, lies Thessalonica, a free city, 245 miles from Dyrrhachium."
+      ru: "На македонском берегу, посередине изгиба побережья, лежит Фессалоника — свободный город в 245 милях от Диррахия."
+
+  # ---------- Susa ----------
+  - place: a033b84
+    author: { en: "Herodotus", ru: "Геродот" }
+    work: { en: "Histories", ru: "История" }
+    passage: "5.52-54"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0126:book=5:chapter=52"
+    note:
+      en: "The Royal Road from Sardis ends at Susa, the city called Memnonian, on the navigable river Choaspes: 111 stages and about three months of walking."
+      ru: "Царская дорога из Сардиса заканчивается в Сузах, городе, называемом Мемноновым, на судоходной реке Хоасп: 111 станций и около трёх месяцев пути."
+  - place: a033b84
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "15.3.2"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=15:chapter=3:section=2"
+    note:
+      en: "Cyrus and the Persians made Susa the royal seat because it lay nearer Babylon and the heart of the empire; the oblong city was 120 stades around, its citadel the Memnonium, said to be founded by Tithonus, father of Memnon."
+      ru: "Кир и персы сделали Сузы царской резиденцией, потому что город лежал ближе к Вавилону и сердцу державы; вытянутый город имел 120 стадиев в окружности, его крепость звалась Мемноний, а основателем считали Тифона, отца Мемнона."
+
+  # ---------- Ecbatana ----------
+  - place: a212ef7
+    author: { en: "Herodotus", ru: "Геродот" }
+    work: { en: "Histories", ru: "История" }
+    passage: "1.98"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0126:book=1:chapter=98"
+    note:
+      en: "Deioces the Mede made his people build Ecbatana: seven concentric walls on a hill, each rising above the next, their battlements white, black, purple, blue and orange, the innermost two plated with silver and gold."
+      ru: "Мидиец Дейок велел построить Екбатану: семь концентрических стен на холме, каждая выше следующей, с зубцами белыми, чёрными, пурпурными, синими и оранжевыми, а две внутренние обиты серебром и золотом."
+  - place: a212ef7
+    author: { en: "Polybius", ru: "Полибий" }
+    work: { en: "Histories", ru: "Всеобщая история" }
+    passage: "10.27.5-10"
+    url: "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Polybius/10*.html#27"
+    note:
+      en: "Ecbatana, always the royal seat of the Medes and said to surpass all cities in wealth and splendour, has no wall but a citadel of wonderful strength; beneath it stands a palace seven stades around, its timbers once plated with silver and gold."
+      ru: "Екбатана, исконная резиденция мидийских царей, будто бы превосходившая все города богатством и великолепием, не имеет стены, но у неё крепость удивительной прочности; под ней дворец в семь стадиев по окружности, чьё дерево некогда было обшито серебром и золотом."
+
+  # ---------- Ur ----------
+  - place: a6cf75c
+    author: { en: "Eusebius (quoting Eupolemus)", ru: "Евсевий (по Евполему)" }
+    work: { en: "Preparation for the Gospel", ru: "Приготовление к Евангелию" }
+    passage: "9.17"
+    url: "https://www.tertullian.org/fathers/eusebius_pe_09_book9.htm"
+    note:
+      en: "Quoting Alexander Polyhistor, Eusebius cites Eupolemus: Abraham was born in Camarina, a city of Babylonia which some call Uria, meaning the city of the Chaldees, and he excelled all men in nobility and wisdom."
+      ru: "Евсевий приводит по Александру Полигистору слова Евполема: Авраам родился в Камарине, городе Вавилонии, который иные зовут Урией, то есть городом халдеев, и превосходил всех людей знатностью и мудростью."
+
+  # ---------- Memphis ----------
+  - place: a8ec269
+    author: { en: "Herodotus", ru: "Геродот" }
+    work: { en: "Histories", ru: "История" }
+    passage: "2.99"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0126:book=2:chapter=99"
+    note:
+      en: "The priests told Herodotus that Min, the first king of Egypt, dammed the Nile and diverted it to found Memphis on the reclaimed land; the Persians still guard that dyke every year, for if it broke Memphis would flood."
+      ru: "Жрецы рассказали Геродоту, что Мин, первый царь Египта, перегородил Нил и отвёл его, чтобы основать Мемфис на осушенной земле; персы до сих пор ежегодно укрепляют ту дамбу — прорвись она, Мемфис затопит."
+  - place: a8ec269
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "17.1.31"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=17:chapter=1:section=31"
+    note:
+      en: "Memphis, the residence of the kings of Egypt, lies three schoeni from the Delta and holds many temples, among them that of Apis, where the sacred bull is kept in a sanctuary and held to be a god."
+      ru: "Мемфис, резиденция египетских царей, лежит в трёх схенах от Дельты и полон храмов, среди них храм Аписа, где священного быка держат в святилище и почитают богом."
+
+  # ---------- Thebes (No-Amon) ----------
+  - place: a9674fc
+    author: { en: "Homer", ru: "Гомер" }
+    work: { en: "Iliad", ru: "Илиада" }
+    passage: "9.381-384"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0134:book=9:card=374"
+    note:
+      en: "Achilles cites the wealth of Egyptian Thebes, where the greatest treasures lie stored in men's houses, a city of a hundred gates through each of which two hundred warriors sally forth with horses and chariots."
+      ru: "Ахилл поминает богатство египетских Фив (Но), где в домах хранятся величайшие сокровища, — города ста ворот, из каждых выходят двести воинов с конями и колесницами."
+  - place: a9674fc
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "17.1.46"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=17:chapter=1:section=46"
+    note:
+      en: "Thebes, now called Diospolis, is Homer's city of a hundred gates and great wealth, and other writers call it the metropolis of Egypt; vestiges of its size still stretch 80 stades, and villages now occupy the site."
+      ru: "Фивы (Но), ныне Диосполь, — гомеровский город ста ворот и великих богатств, а другие писатели зовут его столицей Египта; следы его величины тянутся на 80 стадиев, а на месте города теперь сёла."
+  - place: a9674fc
+    author: { en: "Tacitus", ru: "Тацит" }
+    work: { en: "Annals", ru: "Анналы" }
+    passage: "2.60"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0078:book=2:chapter=60"
+    note:
+      en: "In AD 19 Germanicus visited the vast ruins of ancient Thebes; an aged priest read him the hieroglyphs recording 700,000 men of military age, King Rhamses' conquests, and tributes as magnificent as Parthia or Rome now exact."
+      ru: "В 19 г. Германик посетил громадные руины древних Фив (Но); старый жрец прочёл ему надписи о 700 000 воинов, некогда живших в городе, о завоеваниях царя Рамсеса и о данях, столь же великих, какие ныне берут Парфия или Рим."
+
+  # ---------- Salamis (Cyprus) ----------
+  - place: afa863b
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "14.6.3"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=14:chapter=6:section=3"
+    note:
+      en: "On the beach of the Achaeans Teucer, banished by his father Telamon, first landed and founded Salamis in Cyprus; Salamis was the birthplace of the historian Aristus."
+      ru: "На Ахейском берегу высадился Тевкр, изгнанный отцом Теламоном, и основал Саламин на Кипре; Саламин — родина историка Ариста."
+  - place: afa863b
+    author: { en: "Diodorus Siculus", ru: "Диодор Сицилийский" }
+    work: { en: "Library of History", ru: "Историческая библиотека" }
+    passage: "20.47.2-3"
+    url: "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Diodorus_Siculus/20C*.html#47"
+    note:
+      en: "In 306 BC Demetrius landed in Cyprus and marched on Salamis; Ptolemy's general Menelaus met him forty stades out with 12,000 foot and 800 horse, was routed and driven back into the city, losing some 3,000 prisoners."
+      ru: "В 306 г. до н. э. Деметрий высадился на Кипре и двинулся на Саламин; полководец Птолемея Менелай вышел навстречу с 12 000 пехоты и 800 всадниками, был разбит и загнан в город, потеряв около 3000 пленными."
+
+  # ---------- Crete ----------
+  - place: a26aa94
+    author: { en: "Homer", ru: "Гомер" }
+    work: { en: "Odyssey", ru: "Одиссея" }
+    passage: "19.172-179"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0136:book=19:card=164"
+    note:
+      en: "Crete is a fair rich land in the wine-dark sea with countless people and ninety cities of mixed tongues, Achaeans, Cretans, Cydonians, Dorians and Pelasgians; among them the great city Knossos, where Minos reigned."
+      ru: "Крит — прекрасная богатая земля посреди винно-тёмного моря, с бесчисленным народом и девяноста городами разных наречий: ахейцы, критяне, кидоны, дорийцы, пеласги; среди них великий Кносс, где царствовал Минос."
+  - place: a26aa94
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "10.4.7"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=10:chapter=4:section=7"
+    note:
+      en: "Crete has many cities, the greatest being Knossos, Gortyn and Cydonia; Knossos, celebrated by Homer as the palace of Minos, long held first place, lost it to Gortyn and Lyctus, then regained its rank as capital."
+      ru: "На Крите много городов, величайшие — Кносс, Гортина и Кидония; Кносс, воспетый Гомером как дворец Миноса, долго держал первенство, уступил его Гортине и Ликту, но вернул себе звание столицы."
+
+  # ---------- Smyrna ----------
+  - place: a2e65fb
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "14.1.37"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=14:chapter=1:section=37"
+    note:
+      en: "After the Lydians razed old Smyrna its people lived in villages for 400 years; restored by Antigonus and Lysimachus, it is now the most beautiful city in Ionia, partly on a hill, mostly on the plain by the harbour."
+      ru: "После того как лидийцы разрушили старую Смирну, её жители 400 лет жили по сёлам; восстановленная Антигоном и Лисимахом, теперь это красивейший город Ионии — частью на холме, больше на равнине у гавани."
+  - place: a2e65fb
+    author: { en: "Pausanias", ru: "Павсаний" }
+    work: { en: "Description of Greece", ru: "Описание Эллады" }
+    passage: "7.5.1"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0160:book=7:chapter=5:section=1"
+    note:
+      en: "Smyrna was one of the twelve Aeolian cities until Ionians from Colophon seized it; the modern city was founded by Alexander the son of Philip in accordance with a vision in a dream."
+      ru: "Смирна была одним из двенадцати эолийских городов, пока её не захватили ионийцы из Колофона; нынешний город основал Александр, сын Филиппа, по видению во сне."
+  - place: a2e65fb
+    author: { en: "Eusebius", ru: "Евсевий Кесарийский" }
+    work: { en: "Church History", ru: "Церковная история" }
+    passage: "4.15"
+    url: "https://www.newadvent.org/fathers/250104.htm"
+    note:
+      en: "Eusebius copies the letter of the church of Smyrna: the aged bishop Polycarp refused to swear by the genius of Caesar; in the stadium the crowd of Smyrna cried that he was the teacher of Asia, and when the fire would not consume him he was stabbed."
+      ru: "Евсевий приводит письмо Смирнской церкви: старый епископ Поликарп отказался клясться гением кесаря; на стадионе толпа Смирны кричала, что он учитель Асии, а когда огонь его не тронул, его закололи мечом."
+
+  # ---------- Pergamum ----------
+  - place: a75d2c1
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "13.4.1-2"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=13:chapter=4:section=1"
+    note:
+      en: "Pergamum, a city of note that flourished long under the Attalid kings, was embellished by Eumenes with the grove and offerings of the Nicephorium and a library; the last Attalus left the kingdom to the Romans."
+      ru: "Пергам, знатный город, долго процветавший при царях Атталидах, Евмен украсил рощей и приношениями Никефория и библиотекой; последний Аттал завещал царство римлянам."
+  - place: a75d2c1
+    author: { en: "Pliny the Elder", ru: "Плиний Старший" }
+    work: { en: "Natural History", ru: "Естественная история" }
+    passage: "13.70"
+    url: "https://penelope.uchicago.edu/Thayer/L/Roman/Texts/Pliny_the_Elder/13*.html#70"
+    note:
+      en: "When King Ptolemy, rivalling King Eumenes over their libraries, banned the export of papyrus, parchment was invented at Pergamum, as Varro relates."
+      ru: "Когда царь Птолемей, соперничая с царём Евменом из-за библиотек, запретил вывоз папируса, в Пергаме, по словам Варрона, изобрели пергамен."
+
+  # ---------- Sardis ----------
+  - place: aab4a5f
+    author: { en: "Herodotus", ru: "Геродот" }
+    work: { en: "Histories", ru: "История" }
+    passage: "1.84"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0126:book=1:chapter=84"
+    note:
+      en: "After a fourteen-day siege Cyrus took Sardis when a Mardian soldier climbed the sheer, unguarded side of the acropolis, the one stretch King Meles had never carried his lion around."
+      ru: "После четырнадцатидневной осады Кир взял Сардис: мардиец взобрался по отвесному неохраняемому склону акрополя — единственному месту, вокруг которого царь Мелес не пронёс своего льва."
+  - place: aab4a5f
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "13.4.5"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=13:chapter=4:section=5"
+    note:
+      en: "Sardis, the ancient royal seat of the Lydians, has a strong citadel; above it rises Tmolus, from which flows the Pactolus, once rich in gold dust that made the wealth of Croesus proverbial, though no gold is found there now."
+      ru: "Сардис, древняя столица лидийцев, имеет крепкий акрополь; над ним гора Тмол, откуда течёт Пактол, некогда богатый золотым песком — от него, говорят, пошло вошедшее в пословицу богатство Креза; теперь золота там нет."
+  - place: aab4a5f
+    author: { en: "Tacitus", ru: "Тацит" }
+    work: { en: "Annals", ru: "Анналы" }
+    passage: "2.47"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0078:book=2:chapter=47"
+    note:
+      en: "In AD 17 a night earthquake destroyed twelve famous cities of Asia; Sardis suffered worst, and Tiberius promised it ten million sesterces and remitted its taxes for five years."
+      ru: "В 17 г. ночное землетрясение разрушило двенадцать городов Асии; тяжелее всех пострадал Сардис, и Тиберий обещал ему десять миллионов сестерциев и освободил от податей на пять лет."
+
+  # ---------- Laodicea ----------
+  - place: a83fb1e
+    author: { en: "Strabo", ru: "Страбон" }
+    work: { en: "Geography", ru: "География" }
+    passage: "12.8.16"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0239:book=12:chapter=8:section=16"
+    note:
+      en: "Laodicea, formerly a small town, has grown great in Strabo's time despite the siege by Mithridates, thanks to the fertility of its land and the wealth of some of its citizens."
+      ru: "Лаодикия, прежде городок, при Страбоне сильно выросла, несмотря на осаду Митридата, благодаря плодородию земли и богатству некоторых граждан."
+  - place: a83fb1e
+    author: { en: "Tacitus", ru: "Тацит" }
+    work: { en: "Annals", ru: "Анналы" }
+    passage: "14.27"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0078:book=14:chapter=27"
+    note:
+      en: "In AD 60 Laodicea, one of the famous cities of Asia, was overthrown by an earthquake and, without any relief from Rome, recovered by its own resources."
+      ru: "В 60 г. Лаодикия, один из славных городов Асии, была разрушена землетрясением и без всякой помощи Рима восстановилась на собственные средства."
+
+  # ---------- Hebron ----------
+  - place: a85151a
+    author: { en: "Josephus", ru: "Иосиф Флавий" }
+    work: { en: "Jewish War", ru: "Иудейская война" }
+    passage: "4.529-532"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=4:section=529"
+    note:
+      en: "The people say Hebron is older than any city in the land, older even than Memphis, 2,300 years old; it was Abraham's home, his family's tombs of fine marble are shown there, and six stades off stands a huge terebinth said to be as old as creation."
+      ru: "Местные говорят, что Хеврон старше всех городов страны и даже Мемфиса — ему 2300 лет; здесь жил Авраам, здесь показывают гробницы его рода из прекрасного мрамора, а в шести стадиях стоит огромный теревинф, будто бы ровесник творения."
+
+  # ---------- Salt Sea ----------
+  - place: abed304
+    author: { en: "Pliny the Elder", ru: "Плиний Старший" }
+    work: { en: "Natural History", ru: "Естественная история" }
+    passage: "5.71-73"
+    url: "https://penelope.uchicago.edu/Thayer/L/Roman/Texts/Pliny_the_Elder/5*.html#71"
+    note:
+      en: "The Jordan is swallowed by Asphaltites, a gloomy lake over 100 miles long where the bodies of bulls and camels float; Machaerus overlooks it from the south, and to the west live the Essenes, a people without women or money."
+      ru: "Иордан поглощает Асфальтовое озеро, мрачное, длиной более ста миль, где не тонут даже туши быков и верблюдов; с юга на него смотрит Махерон, а к западу живут ессеи — народ без женщин и без денег."
+  - place: abed304
+    author: { en: "Josephus", ru: "Иосиф Флавий" }
+    work: { en: "Jewish War", ru: "Иудейская война" }
+    passage: "4.476-477"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=4:section=476"
+    note:
+      en: "Lake Asphaltitis is bitter and barren and bears up the heaviest things thrown into it; Vespasian tested this by having non-swimmers thrown in with their hands tied, and they all floated."
+      ru: "Асфальтовое озеро горько и бесплодно и держит на поверхности самые тяжёлые предметы; Веспасиан проверил это, велев бросить в воду связанных людей, не умевших плавать, — все всплыли."
+  - place: abed304
+    author: { en: "Tacitus", ru: "Тацит" }
+    work: { en: "Histories", ru: "История" }
+    passage: "5.6"
+    url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0080:book=5:chapter=6"
+    note:
+      en: "The Jordan is lost in a vast lake like a sea but nauseous to taste, that no wind can stir and no fish or water-bird inhabits; it bears up whatever is thrown on it, and at a certain season throws up bitumen."
+      ru: "Иордан теряется в огромном озере, похожем на море, но мерзком на вкус, которое не волнует ветер и где не живут ни рыбы, ни птицы; оно держит всё, что на него бросят, а в известное время года выносит битум."

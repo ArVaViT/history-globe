@@ -1,0 +1,40 @@
+# Overview article (ADR 0007). Mainstream facts only; the site of Ziklag is disputed and the candidates are named; the map point stands on Tell esh-Sharia; no date is given for David.
+id: ziklag
+place: a0ed7ff
+title:
+  en: "Ziklag"
+  ru: "Секелаг"
+body:
+  en:
+    - "Ziklag was a town in the Negev, the dry south of Judah, and its site is disputed. The point on the map marks Tell esh-Sharia (Tel Sera'), a mound on the north bank of Nahal Gerar about 20 km north-west of Beersheba, which many scholars take for Ziklag; Eliezer Oren of Ben-Gurion University excavated it in 1972–1979. Tel Halif (Tell Khuweilifeh), north-east of Beersheba, was proposed earlier. In 2019 Yosef Garfinkel and Saar Ganor, who excavate Khirbet a-Ra'i near Lachish, proposed their site; Aren Maeir and Israel Finkelstein objected, Finkelstein noting that the Bible places Ziklag in the Negev, not in the Shephelah."
+    - "Tell esh-Sharia has remains from the Chalcolithic period to Byzantine times. In its early Iron Age level Philistine pottery appears, but no destruction there has been tied to the Amalekite raid. At Khirbet a-Ra'i the excavators found massive buildings of the twelfth and eleventh centuries BC with Philistine pottery and, above them, a village of the early tenth century BC whose rooms were suddenly destroyed. They see in this sequence the Philistine town that was given to David, but the identification has not been generally accepted."
+    - 'The Book of Joshua lists Ziklag among the southern towns of Judah and again among those of Simeon. Fleeing from Saul, David asked Achish, king of Gath, for "a place in some town in the country", and Achish gave him Ziklag, "wherefore Ziklag pertaineth unto the kings of Judah unto this day". David lived in the country of the Philistines a full year and four months and from Ziklag raided the Amalekites and other peoples of the south. While he was away with the Philistine army, the Amalekites burned the town and carried off the women and children; David pursued them, recovered everything and sent part of the spoil to the elders of Judah. At Ziklag he heard of the death of Saul, and from there he went up to Hebron. Men of Benjamin and of Manasseh came over to him at Ziklag.'
+    - "After the exile, Nehemiah lists Ziklag among the places where the people of Judah lived. In the early fourth century AD Eusebius recalls that Achish gave Sikelag to David and assigns it to Judah or Simeon in the Daroma, the southern district of Palestine, but he names no village of his own day on the spot."
+  ru:
+    - "Секелаг — город в Негеве, засушливом юге Иудеи; где он стоял, спорят. Точка на карте отмечает холм Телль-эш-Шариа (Тель-Сера) на северном берегу ручья Нахаль-Герар, примерно в 20 км к северо-западу от Вирсавии; многие исследователи считают его Секелагом; в 1972–1979 гг. его раскапывал Элиэзер Орен из Университета имени Бен-Гуриона. Раньше предлагали Тель-Халиф (Телль-эль-Хувейлифе) к северо-востоку от Вирсавии. В 2019 г. Йосеф Гарфинкель и Саар Ганор, ведущие раскопки на Хирбет-ар-Раи близ Лахиса, предложили свой холм; Арен Маир и Исраэль Финкельштейн возразили, и Финкельштейн указал, что Библия помещает Секелаг в Негеве, а не в Шефеле."
+    - "На холме Телль-эш-Шариа есть остатки от энеолита до византийского времени. В слое раннего железного века там появляется филистимская керамика, но никакое разрушение на этом холме не связано с набегом Амаликитян. На Хирбет-ар-Раи раскопщики нашли массивные постройки XII–XI веков до н. э. с филистимской керамикой, а над ними — селение начала X века до н. э., комнаты которого были внезапно разрушены. В этой последовательности они видят филистимский город, отданный Давиду, но их отождествление не получило общего признания."
+    - "Книга Иисуса Навина называет этот город, в форме «Циклаг», среди южных городов Иуды и ещё раз — среди городов Симеона. Спасаясь от Саула, Давид попросил у Анхуса, царя Гефского, «место в одном из малых городов», и Анхус дал ему Секелаг, «посему Секелаг и остался за царями Иудейскими доныне». Давид прожил в стране Филистимской год и четыре месяца и из Секелага нападал на Амаликитян и другие народы юга. Пока он был в походе с филистимским войском, Амаликитяне сожгли город и увели в плен женщин и детей; Давид догнал их, отнял всё и послал часть добычи старейшинам Иудиным. В Секелаге он узнал о смерти Саула, а оттуда пошёл в Хеврон. В Секелаг к нему перешли люди из колен Вениамина и Манассии."
+    - "После плена Неемия называет Секелаг среди мест, где жили сыновья Иуды. В начале IV века н. э. Евсевий напоминает, что Анхус отдал Секелаг Давиду, и относит его к Иуде или Симеону в Дароме — южной области Палестины, но не называет на этом месте никакого селения своего времени."
+scripture:
+  - Josh.15.31
+  - Josh.19.5
+  - 1Sam.27.5-1Sam.27.7
+  - 1Sam.27.8-1Sam.27.9
+  - 1Sam.29.11
+  - 1Sam.30.1-1Sam.30.3
+  - 1Sam.30.17-1Sam.30.19
+  - 1Sam.30.26
+  - 2Sam.1.1-2Sam.1.4
+  - 2Sam.2.1-2Sam.2.3
+  - 1Chr.12.1-1Chr.12.2
+  - 1Chr.12.20
+  - Neh.11.25
+  - Neh.11.28
+sources:
+  - "Eusebius, Onomasticon, s.v. Sikelag (C. U. Wolf's translation, no. 839)"
+  - "E. D. Oren, 'Ziglag: A Biblical City on the Edge of the Negev', Biblical Archaeologist 45 (1982), pp. 155-166"
+  - "Y. Garfinkel and S. Ganor, 'Khirbat er-Ra'i: Preliminary Report', Hadashot Arkheologiyot 129 (2017)"
+  - "Z. Thomas, K. H. Keimer and Y. Garfinkel, 'The Early Iron Age IIA Ceramic Assemblage from Khirbet al-Ra'i', Jerusalem Journal of Archaeology 1 (2021), pp. 375-449"
+  - "K. H. Keimer, 'Biblical Ziklag: The Case for Khirbet er-Ra'i', Palestine Exploration Quarterly 155 (2023), pp. 115-134"
+  - "A. Borschel-Dan, 'As archaeologists say they've found King David's city of refuge, a debate begins', The Times of Israel, 8 July 2019 (the objections of A. Maeir and I. Finkelstein)"
+status: checked

@@ -2,9 +2,9 @@ import { describe, expect, it } from "vitest";
 import { PERIODS, periodAt } from "./periods.ts";
 
 describe("periods", () => {
-  it("are contiguous, without gaps or overlaps, from 2000 BC to AD 100", () => {
-    expect(PERIODS[0]?.range.from).toBe(-1999);
-    expect(PERIODS.at(-1)?.range.to).toBe(101);
+  it("are contiguous, without gaps or overlaps, from 3500 BC to AD 1300", () => {
+    expect(PERIODS[0]?.range.from).toBe(-3499);
+    expect(PERIODS.at(-1)?.range.to).toBe(1301);
     for (let i = 1; i < PERIODS.length; i++) {
       expect(PERIODS[i]?.range.from).toBe(PERIODS[i - 1]?.range.to);
     }
@@ -17,6 +17,12 @@ describe("periods", () => {
     [30, "early-roman"],
     [70, "early-roman"],
     [71, "roman"],
+    [-2999, "eb2"], // 3000 BC
+    [135, "roman"], // Bar Kokhba's revolt ends
+    [325, "byzantine"], // Council of Nicaea
+    [638, "early-islamic"], // Jerusalem surrenders to Umar
+    [1099, "crusader"], // the First Crusade takes Jerusalem
+    [1291, "crusader"], // Acre falls
   ])("year %i is in %s", (year, id) => {
     expect(periodAt(year)?.id).toBe(id);
   });

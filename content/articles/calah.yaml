@@ -1,0 +1,29 @@
+# Overview article (ADR 0007). Mainstream facts only; Assyrian dates follow the eponym lists, earlier ones the middle chronology.
+id: calah
+place: ae1f807
+title:
+  en: "Calah"
+  ru: "Калах"
+body:
+  en:
+    - "Calah, the Assyrian Kalhu, is the mound of Nimrud on the east bank of the Tigris, about 30 km south of Mosul and some 10 km above the point where the Great Zab flows in. Ashurnasirpal II records that Shalmaneser I, king of Assyria in the thirteenth century BC, had built the city and that it had fallen into ruin. Ashurnasirpal II (883–859 BC) rebuilt it as his capital, with temples, a wall and the great North-West Palace; at its dedication, his Banquet Stele says, he fed 69,574 guests for ten days, among them envoys from Tyre and Sidon."
+    - "Genesis names Calah among the cities built in Assyria, alongside Nineveh, Rehoboth and Resen; it is the only place where the Bible mentions it. The city also touches the history of Israel and Judah. Here stood the Black Obelisk of Shalmaneser III, found by Layard in 1846: one of its reliefs shows the tribute of Jehu of Israel, whom the caption calls son of Omri, in 841 BC; the man bowing before the Assyrian king is either Jehu himself or his envoy. Tiglath-pileser III, who carried off the people of Galilee and to whom Ahaz of Judah sent silver and gold, also built a palace here."
+    - "Calah remained the main royal city until Sargon II moved the court to his new capital Dur-Sharrukin about 706 BC. It was sacked when the Medes and Babylonians destroyed Assyria at the end of the seventh century BC. In 401 BC Xenophon's Greeks passed a great deserted city on the Tigris which he called Larissa, usually identified with Nimrud. Layard dug here from 1845, and British expeditions under Max Mallowan and David Oates from 1949 uncovered palaces, archives of letters and a great hoard of carved ivories."
+  ru:
+    - "Калах, по-ассирийски Кальху, — это холм Нимруд на восточном берегу Тигра, примерно в 30 км к югу от Мосула и в 10 км выше впадения в Тигр Большого Заба. Ашшурнацирапал II пишет, что город построил Салманасар I, царь Ассирии в XIII веке до н. э., и что он лежал в развалинах. Ашшурнацирапал II (883–859 гг. до н. э.) отстроил его как свою столицу — с храмами, стеной и большим Северо-Западным дворцом; на его освящении, по словам «Пиршественной стелы», царь десять дней кормил 69 574 гостя, среди них послов Тира и Сидона."
+    - "Книга Бытия называет Калах среди городов, построенных в Ассирии, вместе с Ниневией, Реховоф-иром и Ресеном; больше Библия о нём не упоминает. Но город связан и с историей Израиля и Иудеи. Здесь стоял Чёрный обелиск Салманасара III, найденный Лэйярдом в 1846 г.: на одном из его рельефов изображена дань Ииуя, царя Израильского, которого надпись называет сыном Амврия, в 841 г. до н. э.; кланяющийся ассирийскому царю человек — сам Ииуй или его посланец. Феглаффелласар, переселивший в Ассирию жителей Галилеи, которому Ахаз, царь Иудейский, послал серебро и золото, тоже построил здесь дворец."
+    - "Калах оставался главным царским городом, пока Саргон II около 706 г. до н. э. не перенёс двор в свою новую столицу Дур-Шаррукин. Город был разграблен, когда мидяне и вавилоняне сокрушили Ассирию в конце VII века до н. э. В 401 г. до н. э. греки Ксенофонта прошли мимо большого покинутого города на Тигре, который он назвал Ларисой; его обычно отождествляют с Нимрудом. Лэйярд копал здесь с 1845 г., а британские экспедиции Макса Мэллоуэна и Дэвида Оутса с 1949 г. открыли дворцы, архивы писем и большое собрание резной слоновой кости."
+scripture:
+  - Gen.10.11-Gen.10.12
+  - 2Kgs.9.1-2Kgs.9.13
+  - 2Kgs.15.29
+  - 2Kgs.16.7-2Kgs.16.8
+sources:
+  - "Ashurnasirpal II, Standard Inscription (RIMA 2, A.0.101.23; Shalmaneser I as the builder of Kalhu)"
+  - "Ashurnasirpal II, Banquet Stele (RIMA 2, A.0.101.30) lines 140b-150"
+  - "Black Obelisk of Shalmaneser III (British Museum), epigraph on Jehu's tribute"
+  - "Xenophon, Anabasis 3.4.7-9 (Larissa)"
+  - "A. H. Layard, Nineveh and Its Remains (1849)"
+  - "M. E. L. Mallowan, Nimrud and Its Remains (1966)"
+  - "J. Oates and D. Oates, Nimrud: An Assyrian Imperial City Revealed (2001)"
+status: checked

@@ -9,9 +9,14 @@ import {
   type Store,
 } from "./state.ts";
 
-/** 2000 BC in astronomical years (ADR 0003): the first era begins here. */
-export const YEAR_MIN = -1999;
-export const YEAR_MAX = 100;
+/**
+ * 3500 BC to AD 1300 in astronomical years (ADR 0003): from the Early Bronze Age, the first
+ * towns of Canaan and Mesopotamia, through the Byzantine and early Islamic centuries to the
+ * end of the Crusader states (Acre, 1291). Widened on 1.10.2026 from 2000 BC – AD 100 and
+ * on 2.10.2026 from AD 500; it stops before modern borders.
+ */
+export const YEAR_MIN = -3499;
+export const YEAR_MAX = 1300;
 
 export interface PlaceInfo {
   readonly id: string;
@@ -27,11 +32,23 @@ export interface TourStop {
   readonly note: Readonly<Record<string, string>>;
   /** The map's year at this stop; the tour's year otherwise. */
   readonly year?: number;
+  /** The leg to this stop was sailed. */
+  readonly sea?: boolean;
+  /** The text does not trace the leg to this stop (regions crossed): no time on foot. */
+  readonly untold?: boolean;
+  /** How many days the voyage took, and the verse that says so. */
+  readonly sailed?: {
+    readonly days: number;
+    readonly about?: true | undefined;
+    readonly ref: string;
+  };
 }
 
 export interface Tour {
   readonly id: string;
   readonly year: number;
+  /** False when the stops are not a way travelled: no time on foot. */
+  readonly walked?: boolean;
   readonly stops: readonly TourStop[];
 }
 
@@ -46,6 +63,12 @@ export interface Engine {
   readonly startTour: (tourId: string, step?: number) => void;
   readonly goToStop: (step: number) => void;
   readonly stopTour: () => void;
+  /** Show these places alone (a chapter's), at the year given if any; null shows all. */
+  readonly focusPlaces: (
+    focus: { ref: string; places: readonly string[]; year?: number } | null,
+    /** Fly to frame them; false keeps the camera (a shared link brings its own). */
+    frame?: boolean,
+  ) => void;
   /** Show a point up close, e.g. one candidate site of a disputed place. */
   readonly lookAt: (at: LonLat) => void;
   /** Turn the map so that north is up, keeping the view. */
@@ -87,14 +110,15 @@ export function createEngine(options: {
     if (!prev || s.locale !== prev.locale) renderer.setLocale(s.locale);
     if (!prev || s.layers !== prev.layers) renderer.setLayers(s.layers);
     if (!prev || s.selectedPlace !== prev.selectedPlace) renderer.setSelected(s.selectedPlace);
-    if (!prev || s.tour?.id !== prev.tour?.id) {
+    if (!prev || s.tour?.id !== prev.tour?.id || s.focus !== prev.focus) {
       const tour = s.tour ? tours.get(s.tour.id) : undefined;
-      renderer.setTourPlaces(tour ? tour.stops.map((st) => st.placeId) : []);
+      renderer.setTourPlaces(tour ? tour.stops.map((st) => st.placeId) : (s.focus?.places ?? []));
     }
     if (!prev || s.tour !== prev.tour) {
       const tour = s.tour ? tours.get(s.tour.id) : undefined;
       renderer.setRoute(
-        tour && s.tour ? tour.stops.slice(0, s.tour.step + 1).map((st) => st.at) : [],
+        // The whole route: the stops ahead are drawn faint, so the way is seen from the start.
+        tour && s.tour ? tour.stops.map((st) => st.at) : [],
         s.tour?.step ?? -1,
       );
     }
@@ -121,7 +145,7 @@ export function createEngine(options: {
     }
   };
 
-  const goToStop: Engine["goToStop"] = (step) => {
+  const goToStop = (step: number, whole = false) => {
     const current = store.get().tour;
     const tour = current ? tours.get(current.id) : undefined;
     const stop = tour?.stops[step];
@@ -131,6 +155,12 @@ export function createEngine(options: {
       selectedPlace: places.has(stop.placeId) ? stop.placeId : null,
       year: clampYear(stop.year ?? tour.year),
     });
+    // A tour opens on its whole route, as a teacher shows a class the journey first; each
+    // later stop is flown to.
+    if (whole && tour.stops.length > 1) {
+      renderer.fitTo(tour.stops.map((st) => st.at));
+      return;
+    }
     renderer.flyTo({
       center: stop.at,
       zoom: tourZoom.get(tour.id) ?? 7.6,
@@ -145,6 +175,9 @@ export function createEngine(options: {
   });
   const offPick = renderer.on("pick", (id) => {
     selectPlace(id, { fly: false });
+    // A place tapped where its card then opens (a phone's lower half) is brought out.
+    const at = places.get(id)?.at;
+    if (at) renderer.reveal?.(at);
   });
 
   return {
@@ -166,10 +199,21 @@ export function createEngine(options: {
       const tour = tours.get(tourId);
       if (!tour) return;
       const at = Math.min(Math.max(Math.trunc(step), 0), tour.stops.length - 1);
-      store.set({ tour: { id: tourId, step: at }, year: clampYear(tour.year) });
-      goToStop(at);
+      store.set({ tour: { id: tourId, step: at }, year: clampYear(tour.year), focus: null });
+      goToStop(at, at === 0);
     },
-    goToStop,
+    goToStop: (step) => {
+      goToStop(step);
+    },
+    focusPlaces: (focus, frame = true) => {
+      const known = focus ? focus.places.filter((id) => places.has(id)) : [];
+      store.set({
+        focus: focus && known.length > 0 ? { ref: focus.ref, places: known } : null,
+        ...(focus?.year === undefined ? {} : { year: clampYear(focus.year) }),
+      });
+      if (frame && known.length > 0)
+        renderer.fitTo(known.map((id) => places.get(id)?.at ?? [0, 0]));
+    },
     stopTour: () => {
       store.set({ tour: null });
     },
