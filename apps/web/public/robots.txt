@@ -1,3 +1,5 @@
 # History Globe: a free educational site. Every crawler is welcome (docs/launch-readiness.md, section 4).
 User-agent: *
 Allow: /
+
+Sitemap: https://historyglobe.app/sitemap.xml
