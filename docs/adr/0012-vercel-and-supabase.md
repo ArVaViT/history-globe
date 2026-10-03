@@ -32,7 +32,7 @@ in the repository and off third-party hosts as the product grows ("избавл�
 - The Cloudflare-specific parts of ADR 0009 (R2 releases, Workers) are on hold, not
   rejected.
 
-## Deploying on Vercel (prepared 2026-10-02, not yet done)
+## Deploying on Vercel (first deploy 2026-10-03, historyglobe.app)
 
 - Project root `apps/web`; `apps/web/vercel.json` sets the Vite output and the headers:
   hashed assets and the versioned MapLibre files cached for a year, the data files
@@ -47,5 +47,8 @@ in the repository and off third-party hosts as the product grows ("избавл�
   headers from `vercel.json`) and `vercel deploy --prebuilt` of that output, with the
   Vercel token kept in 1Password and passed with `op run`. Moving the release to Supabase Storage or R2 later
   changes only `DATA_URL`.
-- Before the first deploy: the production smoke check (`vite preview` + the map draws and
+- The build runs with `SITE_URL=https://historyglobe.app`, so the static pages carry
+  canonical links and a sitemap. The offline worker (`sw.js`) and its list (`offline.json`)
+  are served with `no-cache`, so a deploy reaches readers who saved the globe.
+- Before every deploy: the production smoke check (`vite preview` + the map draws and
   "In view" fills, ADR 0011) on the very build that is deployed.

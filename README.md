@@ -1,27 +1,24 @@
-# history-globe
+# History Globe
 
-Working name. A 3D globe of biblical and ancient history: move the time slider and
-the map changes — borders, cities, routes; hover a city to read what it was in that
-century; every place links to the Scripture that mentions it.
+A 3D globe of biblical and ancient history: move the time slider and the map changes —
+borders, cities, roads, journeys; open a place to read what it was in that century;
+every place links to the Scripture that names it. **[historyglobe.app](https://historyglobe.app)**
 
 The data is open: the curated content and the data built from it, served as an open
 API, are under CC BY 4.0. The code is source-available, not open source: public to read,
-all rights reserved. See `LICENSE`. First host: Equip (equipbible.com).
+all rights reserved. See `LICENSE` and ADR 0014.
 
 ## Status
 
-A working prototype, not yet hosted. The globe with relief and the sea at 1:10m in the
-map's region, from Spain to Persia; state borders by year from 3500 BC to AD 1300 (with
-corrections where Cliopatria keeps a state too long); 1288 biblical places (1302 Russian
-names, Synodal where the text gives one; references in the Synodal numbering in
-Russian), disputed locations with their candidate sites and, for the rest, how sure the
-identification is; where each place is today, also in Russian; the years towns stood and
-fell; 327 dated events on the time slider; 2153 people of the Bible with their families
-(STEP Bible TIPNR; every family link read against the text and every tie to a place read
-against the text, and what the text does not say dropped); 553 sites of the ancient world outside the Bible, each shown while it
-stood; Roman roads; 46 tours from Abraham to the seven churches of Revelation, with the
-distance between stops; overview articles on 130+ cities and photos of 110+ places, each
-checked against its sources by an independent pass. Russian and English.
+Live at historyglobe.app, in Russian and English. The globe with relief from Spain to
+Persia; state borders by year from 3500 BC to AD 1300; 1288 biblical places with their
+Russian (Synodal) names, disputed locations with their candidate sites, where each is
+today and the years it stood; 329 dated events and 57 battles; 2153 people of the Bible
+with their families (STEP Bible TIPNR, every tie read against the text); 553 sites of the
+ancient world around it; Roman roads (Itiner-e). 46 tours with walking days along the
+roads and the relief of each leg; 155 place articles, 62 question pages and 80
+ancient-author notes, 140 photos — each checked against its sources by an independent
+pass.
 
 - **People:** search a name ("Давид"), or Overview → People: their family, the line of
   their fathers, the places they lived and acted in lit on the map, which goes to their
@@ -34,8 +31,11 @@ checked against its sources by an independent pass. Russian and English.
 - **Verses in the card:** the text of each verse a place cites, Synodal or KJV.
 - **Pages for search engines:** a plain page for every place and tour
   (`scripts/build-pages.ts`), with a sitemap when built with `SITE_URL`.
-- **For a class or a sermon:** save the map as a picture with its caption and credits;
-  full screen for a projector.
+- **For a class:** lessons built from place cards and shared by a link; A4 sheets, an
+  outline map, quizzes on paper and on screen; the map as a picture with its credits; full
+  screen for a projector; works offline once saved (Settings).
+- **Open data:** static JSON under `/api/v1/` — the places a verse names, places, events,
+  battles, tours, questions (`content/docs/en/api.html`).
 - **Embedding:** `/embed/v1` in another site's page (`docs/embed-protocol.md`).
 - Desktop first, with a phone and tablet layout; a link reopens the same view.
 

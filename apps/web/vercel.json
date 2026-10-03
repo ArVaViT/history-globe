@@ -43,6 +43,15 @@
       ]
     },
     {
+      "source": "/(sw.js|offline.json)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, no-cache"
+        }
+      ]
+    },
+    {
       "source": "/api/(.*)",
       "headers": [
         {
