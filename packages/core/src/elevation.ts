@@ -74,11 +74,6 @@ export function elevationReader(
     );
 }
 
-/** `n` points evenly along the straight line from `a` to `b`, both ends included. */
-export function pointsAlong(a: LonLat, b: LonLat, n: number): LonLat[] {
-  return pointsAlongPath([a, b], n);
-}
-
 /**
  * `n` points evenly along a line of several parts (a way by road), both ends included:
  * spaced by length, a degree of longitude counted shorter away from the equator.

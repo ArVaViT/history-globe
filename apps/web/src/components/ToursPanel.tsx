@@ -1,4 +1,4 @@
-import { formatRef, formatYear, NT_BOOKS, type Locale } from "@hg/model";
+import { formatRef, formatYear, isLocale, NT_BOOKS, type Locale } from "@hg/model";
 import { useTranslation } from "../i18n";
 import { Section } from "./Panel";
 import { readUrl } from "../url";
@@ -20,10 +20,10 @@ export function ToursPanel({
   onStart: (id: string) => void;
 }) {
   const { t, i18n } = useTranslation();
-  const locale: Locale = i18n.language === "ru" ? "ru" : "en";
+  const locale: Locale = isLocale(i18n.language) ? i18n.language : "en";
   const [lesson] = useState(readPicked);
   return (
-    <Section id="tours" title={t("tours.title")} className="w-[340px] max-md:w-full pb-3">
+    <Section>
       {/* Forty-six tours would fill the column: the list scrolls on its own, on a phone too
           (the panel then fits above the timeline and fades out instead of being cut), each
           testament's heading stays in view over its own tours, and a focused tour is kept

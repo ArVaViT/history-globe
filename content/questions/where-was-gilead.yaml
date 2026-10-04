@@ -1,0 +1,25 @@
+id: where-was-gilead
+question:
+  en: "Where was Gilead?"
+  ru: "Где находился Галаад?"
+answer:
+  en:
+    - "Gilead was the hill country east of the Jordan, in today's north-western Jordan, between the Yarmuk in the north and the plateau of Moab in the south, cut in two by the gorge of the Jabbok. The map point stands in its middle, on the Jabbok at Penuel, one of the twin mounds of Tell edh-Dhahab, with Mahanaim on the other, about 63 km north-east of Jerusalem in a straight line. The name could mean the hills on either side of the Jabbok or all of Israel's land beyond the river, as in “From Jordan eastward, all the land of Gilead”."
+    - "It was a land of woods, pasture and spices. Reuben and Gad saw that “the place was a place for cattle” and asked for it, and Moses gave “half mount Gilead” to them and “the rest of Gilead” to the half-tribe of Manasseh; Ramoth-gilead, about 46 km north-east of the map point, was its border fortress against Damascus. The caravan that bought Joseph came “from Gilead with their camels bearing spicery and balm and myrrh”, and Jeremiah asks, “Is there no balm in Gilead; is there no physician there?” Elijah the Tishbite was “of the inhabitants of Gilead”."
+    - "In 733–732 BC Tiglath-pileser III took Gilead and carried its people to Assyria. In New Testament times its north held the Decapolis cities of Gerasa, Pella and Gadara, and its south was Perea, the land of Herod Antipas beyond the Jordan. Today the hills round Ajloun, Jerash and Salt are still wooded with oak and pine."
+  ru:
+    - "Галаад — нагорье к востоку от Иордана, на северо-западе нынешней Иордании, между Ярмуком на севере и плато Моава на юге, рассечённое надвое ущельем Иавока. Точка карты стоит в его середине, на Иавоке у Пенуэла, одного из двух холмов-близнецов Телль-эд-Дахаб, на другом из которых стоял Маханаим, примерно в 63 км к северо-востоку от Иерусалима по прямой. Имя могло означать горы по обе стороны Иавока или всю землю Израиля за рекой, как в словах «на восток от Иордана, всю землю Галаад»."
+    - "Это была страна лесов, пастбищ и благовоний. Рувим и Гад увидели, что земля Галаад «есть место годное для стад», и попросили её, и Моисей отдал им «половину горы Галаада», а «остаток Галаада» — половине колена Манассиина; Рамоф Галаадский, примерно в 46 км к северо-востоку от точки карты, был его пограничной крепостью против Дамаска. Караван, купивший Иосифа, шёл «из Галаада», и «верблюды их несут стираксу, бальзам и ладан», а Иеремия спрашивает: «Разве нет бальзама в Галааде? разве нет там врача?» Илия Фесвитянин был «из жителей Галаадских»."
+    - "В 733–732 гг. до н. э. Феглаффелласар III взял Галаад и переселил его жителей в Ассирию. Во времена Нового Завета на севере Галаада стояли города Десятиградия — Гераса, Пелла и Гадара, а юг был Переей, землёй Ирода Антипы за Иорданом. Сегодня горы вокруг Аджлуна, Джераша и Эс-Салта по-прежнему покрыты дубом и сосной."
+map:
+  place: ae73b90
+  year: "c. 1406 BC"
+  ref: Num.32.1
+scripture: [Gen.37.25, Num.32.1, Deut.3.12-Deut.3.13, 1Kgs.17.1, 2Kgs.10.33, 2Kgs.15.29, Jer.8.22]
+sources:
+  - "Region point and straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Tiglath-pileser III, Summary Inscription 4 (RINAP 1, Tiglath-pileser III 42) (Gilead and Abel-shittim annexed, 733-732 BC)"
+  - "M. Ottosson, Gilead: Tradition and History (1969)"
+  - "B. MacDonald, 'East of the Jordan': Territories and Sites of the Hebrew Scriptures (2000)"
+  - "D. Baly, The Geography of the Bible (rev. ed., 1974)"
+status: checked

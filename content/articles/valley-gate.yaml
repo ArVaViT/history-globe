@@ -1,0 +1,27 @@
+# Overview article (ADR 0007). Mainstream facts only; Crowfoot's gate is given as the usual but not certain identification, and the date of his find as disputed.
+id: valley-gate
+place: a81b7b1
+title:
+  en: "Valley Gate"
+  ru: "Ворота Долины"
+body:
+  en:
+    - "The Valley Gate was a gate in the west wall of Jerusalem, named for the valley it opened on, whether the central valley that the Greeks called the Tyropoeon or the Hinnom beyond it. Nehemiah's account fixes its position relative to the Dung Gate, “a thousand cubits”, about 450 m, further along the wall to the south, and so near the south-west of the City of David. In 1927 J. W. Crowfoot cleared a massive gateway in the wall on the western slope of that hill above the Tyropoeon, which he and many since have taken for the Valley Gate, though the date of what he found, Jebusite or Hellenistic, and even whether it was a gate, are still argued. Those who think that Nehemiah's city still took in the western hill put the gate instead near today's Jaffa Gate, the second and less likely site on the map."
+    - "Uzziah “built towers in Jerusalem at the corner gate, and at the valley gate, and at the turning of the wall, and fortified them”. By this gate Nehemiah rode out on his secret inspection: “I went out by night by the gate of the valley, even before the dragon well, and to the dung port, and viewed the walls of Jerusalem, which were broken down”, then up the brook Kidron, where his beast could no longer pass, “and turned back, and entered by the gate of the valley, and so returned”."
+    - "In the repair that followed, “the valley gate repaired Hanun, and the inhabitants of Zanoah; they built it, and set up the doors thereof, the locks thereof, and the bars thereof, and a thousand cubits on the wall unto the dung gate”, the one stretch of the circuit with a measured length. Crowfoot's gate lies today within the City of David archaeological park in Silwan, on the slope above the road through the Tyropoeon, a short walk below the Dung Gate of the Ottoman wall, which keeps the old name a few hundred metres north of the ancient one."
+  ru:
+    - "Ворота Долины — ворота в западной стене Иерусалима, названные по долине, в которую они выходили: по центральной, которую греки звали Тиропеон, или по Енномовой за ней. Рассказ Неемии закрепляет их место относительно Навозных ворот — «тысячу локтей», около 450 м, дальше по стене к югу, то есть у юго-западной части города Давида. В 1927 году Дж. У. Кроуфут расчистил массивные ворота в стене на западном склоне этого холма над Тиропеоном, которые он и многие после него приняли за ворота Долины, хотя о времени найденного — иевусейском или эллинистическом — и даже о том, были ли это ворота, спорят до сих пор. Те, кто считает, что город Неемии ещё охватывал западный холм, помещают ворота у нынешних Яффских ворот — второе и менее вероятное место на карте."
+    - "«Построил Озия башни в Иерусалиме над воротами угольными и над воротами долины и на углу, и укрепил их». Этими воротами Неемия выехал на тайный осмотр: «проехал я ночью через ворота Долины перед источником Драконовым к воротам Навозным, и осмотрел я стены Иерусалима разрушенные», затем поднялся по лощине Кедрона, где животному уже не было прохода, «и проехав опять воротами Долины, возвратился»."
+    - "В последовавшей починке «Ворота Долины чинил Ханун и жители Заноаха: они построили их, и вставили двери их, замки их и засовы их, и еще чинили они тысячу локтей стены до ворот Навозных» — единственный участок обхода с измеренной длиной. Ворота Кроуфута лежат сегодня в археологическом парке «Город Давида» в Сильване, на склоне над дорогой через Тиропеон, недалеко вниз от Навозных ворот османской стены, которые сохранили старое имя в нескольких сотнях метров к северу от древних."
+scripture:
+  - 2Chr.26.9
+  - Neh.2.13-Neh.2.15
+  - Neh.3.13
+sources:
+  - "J. W. Crowfoot and G. M. Fitzgerald, Excavations in the Tyropoeon Valley, Jerusalem, 1927 (Palestine Exploration Fund Annual 5, 1929)"
+  - "J. Simons, Jerusalem in the Old Testament: Researches and Theories (1952)"
+  - "N. Avigad, Discovering Jerusalem (1983)"
+  - "H. G. M. Williamson, Ezra, Nehemiah (Word Biblical Commentary 16, 1985)"
+  - "D. Bahat, The Illustrated Atlas of Jerusalem (1990)"
+  - "R. Reich, Excavating the City of David: Where Jerusalem's History Began (2011)"
+status: checked

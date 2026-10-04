@@ -1,0 +1,25 @@
+# Overview article (ADR 0007). Mainstream facts only; the camp is unlocated and tied to Mount Hor, whose article is not restated; the two accounts of Aaron's death are set side by side without a verdict.
+id: moseroth
+place: a88331e
+title:
+  en: "Moseroth"
+  ru: "Мосероф"
+body:
+  en:
+    - "Moseroth, in Deuteronomy Moserah, was a camp of Israel in the wilderness, known from two notices that do not easily agree. The list of stations in Numbers names it between Hashmonah and Bene-jaakan: “And they departed from Hashmonah, and encamped at Moseroth. And they departed from Moseroth, and pitched in Bene-jaakan.” Deuteronomy gives the two in the other order and adds what Numbers says of Mount Hor: “And the children of Israel took their journey from Beeroth of the children of Jaakan to Mosera: there Aaron died, and there he was buried; and Eleazar his son ministered in the priest's office in his stead.” The name means “bonds” or “chastisements”, and no event is attached to it."
+    - "How the two notices fit is an old question. Numbers puts Aaron's death on Mount Hor, seven stations after Moseroth, in the fortieth year; Deuteronomy puts it at Moserah, before Bene-jaakan. Readers have answered that Moserah was the camp at the mountain's foot and the itinerary lists the mountain by its own name; that Israel passed these stations twice, going down to Ezion-geber and coming back; or that Deuteronomy preserves a different tradition of the route and of Aaron's grave. None of this can be tested on the ground, since neither Moseroth nor Bene-jaakan has been found and the site of Mount Hor is itself disputed."
+    - "The camp is therefore sought wherever Mount Hor is sought: near Petra on the edge of Edom, if Jebel Harun is the mountain, or on the border of the wilderness of Zin and the Negev highlands, if it is looked for nearer Kadesh. No tradition marked it in antiquity. The map places it within reach of Mount Hor without a point of its own, in what is today the Negev of Israel toward the Arabah and the Jordanian border."
+  ru:
+    - "Мосероф, во Второзаконии Мозер, был станом Израиля в пустыне, известным по двум известиям, которые нелегко согласовать. Перечень станов в книге Чисел называет его между Хашмоной и Бене-Яаканом: «И отправились из Хашмоны и расположились станом в Мосерофе. И отправились из Мосерофа и расположились станом в Бене-Яакане». Второзаконие даёт эти два стана в обратном порядке и прибавляет то, что книга Чисел говорит о горе Ор: «И сыны Израилевы отправились из Беероф-Бене-Яакана в Мозер; там умер Аарон и погребен там, и стал священником вместо него сын его Елеазар». Имя значит «узы» или «наказания», и никакого события с ним не связано."
+    - "Как согласовать эти два известия — старый вопрос. Книга Чисел помещает смерть Аарона на горе Ор, через семь станов после Мосерофа, в сороковой год; Второзаконие — в Мозере, перед Бене-Яаканом. Читатели отвечали, что Мозер был станом у подножия горы, а перечень называет гору её собственным именем; что Израиль проходил эти станы дважды, спускаясь к Ецион-Гаверу и возвращаясь; или что Второзаконие хранит иное предание о пути и о могиле Аарона. Ничего из этого нельзя проверить на местности: ни Мосероф, ни Бене-Яакан не найдены, а место горы Ор само спорно."
+    - "Поэтому стан ищут там же, где ищут гору Ор: у Петры на краю Едома, если гора — Джебель-Харун, или на границе пустыни Син и Негевского нагорья, если её ищут ближе к Кадесу. В древности его не отмечало никакое предание. На карте он помещён в пределах досягаемости от горы Ор без собственной точки, в нынешнем Негеве Израиля, в сторону Аравы и иорданской границы."
+scripture:
+  - Num.33.30-Num.33.31
+  - Num.33.37-Num.33.39
+  - Deut.10.6-Deut.10.7
+sources:
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "J. Milgrom, Numbers (JPS Torah Commentary, 1990)"
+  - "B. A. Levine, Numbers 21-36 (Anchor Bible, 2000)"
+  - "M. Weinfeld, Deuteronomy 1-11 (Anchor Bible, 1991)"
+status: checked

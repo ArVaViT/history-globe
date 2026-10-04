@@ -16,17 +16,18 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import type { ContentRelease, PlaceLife } from "../packages/model/src/content.ts";
-import { formatRef, NT_BOOKS } from "../packages/model/src/scripture.ts";
+import { formatRef, formatRefOr, NT_BOOKS } from "../packages/model/src/scripture.ts";
 import { sourcesOf } from "../packages/model/src/citation.ts";
-import { formatYear } from "../packages/model/src/time.ts";
+import { formatYear, LOCALE_NAMES, LOCALES, type SiteLocale } from "../packages/model/src/time.ts";
+import { esc, headMeta } from "./page-shell.ts";
+import { commonsPage, DOC_PAGES, docsPath } from "../packages/model/src/site.ts";
+import { LANDING, T } from "./page-words.ts";
 import { siteCertainty } from "../packages/model/src/sites.ts";
 import { placeSlugs } from "./slugs.ts";
 import { distanceKm, roundKm } from "../apps/web/src/distance.ts";
 import { splitPlaces, textPlacesFrom, type TextPlaces } from "../apps/web/src/text-places-core.ts";
 
 const root = join(import.meta.dirname, "..");
-
-const RU_DAYS: Partial<Record<Intl.LDMLPluralRule, string>> = { one: "день", few: "дня" };
 
 /** Whether a tour's stops read from both testaments (as ToursPanel.tsx groups them). */
 const testamentOf = (stops: readonly { readonly ref: string }[]): "whole" | "ot" | "nt" => {
@@ -37,8 +38,8 @@ const pub = join(root, "apps/web/public");
 const data = join(pub, "data");
 const site = process.env.SITE_URL?.replace(/\/+$/, "") ?? "";
 
-type Lang = "ru" | "en";
-const LANGS: readonly Lang[] = ["ru", "en"];
+type Lang = SiteLocale;
+const LANGS: readonly Lang[] = LOCALES;
 
 interface Props {
   id: string;
@@ -135,135 +136,8 @@ function certaintyNote(p: Props, l: Lang): string {
 const clip = (s: string, n = 200) =>
   s.length <= n ? s : `${s.slice(0, s.lastIndexOf(" ", n - 1)).replace(/[,;:.\s]+$/, "")}…`;
 
-const esc = (s: string) =>
-  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-
 const nameOf = (p: Props, l: Lang) => (l === "ru" ? (content.names[p.id]?.ru ?? p.name) : p.name);
-const refOf = (osis: string, l: Lang) => {
-  try {
-    return formatRef(osis, l);
-  } catch {
-    return osis;
-  }
-};
-
-const T = {
-  ru: {
-    site: "History Globe — карта библейской истории",
-    open: "Открыть на карте",
-    tour_open: "Пройти экскурсию на карте",
-    // The sea as the stop says it: «, по морю» or «, по морю, 5 дней (Деян 20:6)».
-    leg: (km: string, road: string | null, sea: string) =>
-      `≈\u00a0${km}\u00a0км по прямой${road ? `, ≈\u00a0${road}\u00a0км по\u00a0римским\u00a0дорогам` : ""}${sea}`,
-    sea: (days?: number, ref?: string, about?: boolean) =>
-      days
-        ? `, по морю, ${about ? "≈\u00a0" : ""}${String(days)}\u00a0${RU_DAYS[new Intl.PluralRules("ru").select(days)] ?? "дней"} (${ref ?? ""})`
-        : ", по морю",
-    today: "Где сегодня",
-    english: "По-английски",
-    ancient: "У древних авторов",
-    untold: ", путь в тексте не прослежен",
-    life: "Время существования",
-    ruins: "В руинах",
-    events: "События",
-    battles: "Битвы и осады",
-    article: "История",
-    scripture: "Писание",
-    sources: "Источники",
-    checked: "Статья сверена с источниками; историк её ещё не читал.",
-    reviewed: "Статью прочитал историк",
-    verses: (n: number) => `Стихи (${String(n)})`,
-    more: (n: number) => `ещё ${String(n)} — на карте`,
-    tours: "Экскурсии через это место",
-    places: "Все места",
-    skip: "К содержанию",
-    sections: "Разделы",
-    tour: "Экскурсия",
-    toursAll: "Все экскурсии",
-    placesTitle: "Места библейской истории",
-    articlesTitle: "Статьи о городах",
-    disputed: "Место спорное",
-    photoShows: (site: string) => `На снимке ${site} — одна из версий.`,
-    allPlaces: "Все места",
-    toursTitle: "Экскурсии по библейской истории",
-    questions: "Вопросы",
-    questionsTitle: "Вопросы о местах и истории Библии",
-    question: "Вопрос",
-    showMap: "Показать на карте",
-    checkedQ: "Ответ сверен с источниками; историк его ещё не читал.",
-    testament: { whole: "Вся Библия", ot: "Ветхий Завет", nt: "Новый Завет" },
-    asks: { where: "Где", when: "Когда", how: "Как далеко и как долго", who: "Кто" },
-    stop: "Остановка",
-    translation: "Синодальный перевод",
-    circa: "ок.",
-    title: (n: string) => `${n} — где это было, история, стихи Библии`,
-    desc: (n: string, k: string, v: number) =>
-      `${n} (${k}) на карте библейской истории: где это место сегодня, его история и упоминания в Библии (${String(v)}).`,
-    about: "О проекте",
-    privacy: "Конфиденциальность",
-    allSources: "все источники",
-    photo: "Фото",
-    pd: "общественное достояние",
-    other: "English",
-  },
-  en: {
-    site: "History Globe — a map of biblical history",
-    open: "Open on the map",
-    tour_open: "Take the tour on the map",
-    leg: (km: string, road: string | null, sea: string) =>
-      `≈\u00a0${km}\u00a0km in a straight line${road ? `, ≈\u00a0${road}\u00a0km by\u00a0Roman\u00a0roads` : ""}${sea}`,
-    sea: (days?: number, ref?: string, about?: boolean) =>
-      days
-        ? `, by sea, ${about ? "≈\u00a0" : ""}${String(days)}\u00a0day${days === 1 ? "" : "s"} (${ref ?? ""})`
-        : ", by sea",
-    today: "Today",
-    english: "In English",
-    ancient: "In ancient writers",
-    untold: ", the way is not told",
-    life: "Lifetime",
-    ruins: "In ruins",
-    events: "Events",
-    battles: "Battles and sieges",
-    article: "History",
-    scripture: "Scripture",
-    sources: "Sources",
-    checked: "Checked against its sources; not yet read by a historian.",
-    reviewed: "Read by a historian",
-    verses: (n: number) => `Verses (${String(n)})`,
-    more: (n: number) => `${String(n)} more on the map`,
-    tours: "Tours through this place",
-    places: "All places",
-    skip: "Skip to content",
-    sections: "Sections",
-    tour: "Tour",
-    toursAll: "All tours",
-    placesTitle: "Places of biblical history",
-    articlesTitle: "City articles",
-    disputed: "Location disputed",
-    photoShows: (site: string) => `Shown: ${site}, one of the proposed sites.`,
-    allPlaces: "All places",
-    toursTitle: "Tours of biblical history",
-    questions: "Questions",
-    questionsTitle: "Questions about the places and history of the Bible",
-    question: "Question",
-    showMap: "Show on the map",
-    checkedQ: "Checked against its sources; not yet read by a historian.",
-    testament: { whole: "The whole Bible", ot: "Old Testament", nt: "New Testament" },
-    asks: { where: "Where", when: "When", how: "How far and how long", who: "Who" },
-    stop: "Stop",
-    translation: "King James Version",
-    circa: "c.",
-    title: (n: string) => `${n} — where it is, its history, Bible verses`,
-    desc: (n: string, k: string, v: number) =>
-      `${n} (${k}) on the map of biblical history: where it is today, its history and the Bible verses that name it (${String(v)}).`,
-    about: "About",
-    privacy: "Privacy",
-    allSources: "all sources",
-    photo: "Photo",
-    pd: "public domain",
-    other: "Русский",
-  },
-} as const;
+const refOf = (osis: string, l: Lang) => formatRefOr(osis, l);
 
 const verseTexts = new Map<string, Record<string, string>>();
 function verseText(osis: string, l: Lang): string | undefined {
@@ -294,13 +168,13 @@ function lifeLine(life: PlaceLife | undefined, l: Lang): string {
   return `<div class="callout"><p><b>${esc(parts.join(" · "))}</b></p>${note ? `<p>${esc(note)}</p>` : ""}</div>`;
 }
 
-/** The page shell: the same look as about.html, light and without a script. */
+/** The page shell: the same look as the docs pages, light and without a script. */
 function page(o: {
   l: Lang;
   title: string;
   desc: string;
+  /** From the site root, starting with the language: "ru/place/jerusalem/". */
   path: string;
-  other: string;
   body: string;
   depth: number;
   ld?: object;
@@ -308,23 +182,24 @@ function page(o: {
   image?: string;
 }): string {
   const up = "../".repeat(o.depth);
-  const abs = (p: string) => `${site}/${p}`;
-  const meta = site
-    ? `
-    <link rel="canonical" href="${abs(o.path)}" />
-    <link rel="alternate" hreflang="${o.l}" href="${abs(o.path)}" />
-    <link rel="alternate" hreflang="${o.l === "ru" ? "en" : "ru"}" href="${abs(o.other)}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="History Globe" />
-    <meta property="og:title" content="${esc(o.title)}" />
-    <meta property="og:description" content="${esc(o.desc)}" />
-    <meta property="og:url" content="${abs(o.path)}" />
-    <meta property="og:image" content="${abs(o.image ?? "og.jpg")}" />
-    <meta name="twitter:card" content="summary_large_image" />`
-    : "";
-  const ld = o.ld
-    ? `\n    <script type="application/ld+json">${JSON.stringify(o.ld).replace(/</g, "\\u003c")}</script>`
-    : "";
+  // The same page in every language: the path after the language.
+  const rest = o.path.slice(o.l.length + 1);
+  const paths = Object.fromEntries(LANGS.map((l) => [l, `${l}/${rest}`])) as Record<Lang, string>;
+  const meta = headMeta({
+    site,
+    title: o.title,
+    desc: o.desc,
+    paths,
+    l: o.l,
+    image: o.image,
+    ld: o.ld,
+  });
+  const langs = LANGS.filter((l) => l !== o.l)
+    .map(
+      (l) =>
+        `<a class="lang" href="${up}${paths[l]}" hreflang="${l}" lang="${l}">${LOCALE_NAMES[l]}</a>`,
+    )
+    .join("");
   return `<!doctype html>
 <html lang="${o.l}">
   <head>
@@ -333,18 +208,17 @@ function page(o: {
     <meta name="theme-color" content="#fbf8f2" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0f141b" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="${up}favicon.svg" type="image/svg+xml" />
-    <title>${esc(o.title)} | History Globe</title>
-    <meta name="description" content="${esc(o.desc)}" />${meta}${ld}${visits}
+    <title>${esc(o.title)} | History Globe</title>${meta}
     <link rel="stylesheet" href="${up}pages.css" />
   </head>
   <body>
     <a class="skip" href="#main">${T[o.l].skip}</a>
     <header class="bar">
       <a class="brand" href="${up}?locale=${o.l}"><img src="${up}favicon.svg" alt="" width="22" height="22" />History Globe</a>
-      <nav aria-label="${T[o.l].sections}"><a href="${up}${o.l}/places/">${T[o.l].places}</a><a href="${up}${o.l}/tours/">${T[o.l].toursAll}</a><a href="${up}${o.l}/questions/">${T[o.l].questions}</a><a class="lang" href="${up}${o.other}" hreflang="${o.l === "ru" ? "en" : "ru"}" lang="${o.l === "ru" ? "en" : "ru"}">${T[o.l].other}</a></nav>
+      <nav aria-label="${T[o.l].sections}"><a href="${up}${o.l}/places/">${T[o.l].places}</a><a href="${up}${o.l}/tours/">${T[o.l].toursAll}</a><a href="${up}${o.l}/questions/">${T[o.l].questions}</a>${langs}</nav>
     </header>
 ${o.body}
-    <footer class="foot"><a href="${up}docs/${o.l === "ru" ? "ru/" : ""}">${T[o.l].about}</a> · <a href="${up}docs/${o.l === "ru" ? "ru/" : ""}privacy.html">${T[o.l].privacy}</a> · OpenBible.info, Cliopatria, Itiner-e (CC BY 4.0), Pleiades (CC BY 3.0) · <a href="${up}docs/${o.l === "ru" ? "ru/" : ""}sources.html">${T[o.l].allSources}</a></footer>
+    <footer class="foot"><a href="${up}${docsPath(o.l)}">${T[o.l].about}</a> · <a href="${up}${docsPath(o.l, "privacy")}">${T[o.l].privacy}</a> · OpenBible.info, Cliopatria, Itiner-e (CC BY 4.0), Pleiades (CC BY 3.0) · <a href="${up}${docsPath(o.l, "sources")}">${T[o.l].allSources}</a></footer>
   </body>
 </html>
 `;
@@ -357,15 +231,11 @@ function photoHtml(id: string, name: string, l: Lang): string {
   const ph = content.photos?.[id];
   // Only when the image is there: a build without `pnpm data` has no photos to show.
   if (!ph || !hasPhoto(id)) return "";
-  const page = `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(ph.file.replaceAll(" ", "_"))}`;
+  const page = commonsPage(ph.file);
   const lic = ph.license === "Public domain" ? T[l].pd : ph.license;
   const shows = ph.shows && (l === "ru" ? (ph.shows.ru ?? ph.shows.en) : ph.shows.en);
   return `<figure class="photo"><img src="../../../data/photos/${id}.jpg" alt="${esc(name)}" loading="lazy" /><figcaption class="note">${shows ? `${esc(T[l].photoShows(shows))}<br />` : ""}<a href="${esc(page)}">${T[l].photo}: ${ph.author ? `${esc(ph.author)}, ` : ""}${esc(lic)}, Wikimedia Commons</a></figcaption></figure>`;
 }
-
-/** Anonymous visit counts (Vercel Web Analytics, no cookies; docs: privacy.html), in a
- * production build only: the script is served by the host itself. */
-const visits = site ? `\n    <script defer src="/_vercel/insights/script.js"></script>` : "";
 
 const slugOf = placeSlugs(places.map((f) => f.properties));
 
@@ -433,8 +303,8 @@ const write = (path: string, html: string) => {
   urls.push(`${path}/`);
 };
 
-for (const l of LANGS) {
-  const o = l === "ru" ? "en" : "ru";
+/** A page for every place with verses: its card as a page, with its article and photo. */
+function placePages(l: Lang): void {
   // Namesakes (two Antiochs) get where they are today in the page's title, as in the index.
   const sameName = new Map<string, number>();
   for (const f of shown)
@@ -538,7 +408,6 @@ for (const l of LANGS) {
         ),
         desc,
         path: `${path}/`,
-        other: `${o}/place/${slug}/`,
         body,
         depth: 3,
         // A shared link's preview carries no credit line: only a photo that needs none.
@@ -557,36 +426,10 @@ for (const l of LANGS) {
       }),
     );
   }
+}
 
-  // How far each stop is from the one before, as the tour's card says it: in a straight
-  // line, and along the Roman roads where the tour went by them (build-road-legs.ts).
-  const roadLegs = (
-    existsSync(join(data, "road-legs.json"))
-      ? JSON.parse(readFileSync(join(data, "road-legs.json"), "utf8"))
-      : {}
-  ) as Record<string, (number | null)[] | undefined>;
-  const legOf = (t: (typeof content.tours)[number], i: number) => {
-    const a = byId.get(t.stops[i - 1]?.place ?? "")?.geometry.coordinates;
-    const b = byId.get(t.stops[i]?.place ?? "")?.geometry.coordinates;
-    if (!a || !b) return "";
-    const d = distanceKm(a, b);
-    if (d < 2) return "";
-    const num = (km: number) => new Intl.NumberFormat(l).format(roundKm(km));
-    const stop = t.stops[i];
-    // A leg sailed or untold, or a tour not travelled, has no way by road.
-    const road = stop?.by || t.walked === false ? undefined : roadLegs[t.id]?.[i];
-    const sea =
-      stop?.by === "untold"
-        ? T[l].untold
-        : stop?.by === "sea"
-          ? T[l].sea(
-              stop.sailed?.days,
-              stop.sailed && formatRef(stop.sailed.ref, l),
-              stop.sailed?.about,
-            )
-          : "";
-    return T[l].leg(num(d), road ? num(road) : null, sea);
-  };
+/** A page for every question people ask, with the view of the map that answers it. */
+function questionPages(l: Lang): void {
   // Questions people ask (content/questions, via questions.json): a page each, for search,
   // with the view of the map that shows the answer; the places it names link to theirs.
   for (const q of questions) {
@@ -627,7 +470,6 @@ for (const l of LANGS) {
         title,
         desc: clip(q.answer[l][0] ?? title),
         path: `${path}/`,
-        other: `${o}/q/${q.id}/`,
         body,
         depth: 3,
         ld: {
@@ -652,7 +494,6 @@ for (const l of LANGS) {
         title: T[l].questionsTitle,
         desc: T[l].questionsTitle,
         path: `${l}/questions/`,
-        other: `${o}/questions/`,
         depth: 2,
         body: `    <main id="main" class="page">
       <h1>${T[l].questionsTitle}</h1>
@@ -673,7 +514,39 @@ for (const l of LANGS) {
     </main>`,
       }),
     );
+}
 
+/** A page for every tour, its stops and the way between them. */
+function tourPages(l: Lang): void {
+  // How far each stop is from the one before, as the tour's card says it: in a straight
+  // line, and along the Roman roads where the tour went by them (build-road-legs.ts).
+  const roadLegs = (
+    existsSync(join(data, "road-legs.json"))
+      ? JSON.parse(readFileSync(join(data, "road-legs.json"), "utf8"))
+      : {}
+  ) as Record<string, (number | null)[] | undefined>;
+  const legOf = (t: (typeof content.tours)[number], i: number) => {
+    const a = byId.get(t.stops[i - 1]?.place ?? "")?.geometry.coordinates;
+    const b = byId.get(t.stops[i]?.place ?? "")?.geometry.coordinates;
+    if (!a || !b) return "";
+    const d = distanceKm(a, b);
+    if (d < 2) return "";
+    const num = (km: number) => new Intl.NumberFormat(l).format(roundKm(km));
+    const stop = t.stops[i];
+    // A leg sailed or untold, or a tour not travelled, has no way by road.
+    const road = stop?.by || t.walked === false ? undefined : roadLegs[t.id]?.[i];
+    const sea =
+      stop?.by === "untold"
+        ? T[l].untold
+        : stop?.by === "sea"
+          ? T[l].sea(
+              stop.sailed?.days,
+              stop.sailed && formatRef(stop.sailed.ref, l),
+              stop.sailed?.about,
+            )
+          : "";
+    return T[l].leg(num(d), road ? num(road) : null, sea);
+  };
   for (const t of content.tours) {
     const title = t.title[l];
     const path = `${l}/tour/${t.id}`;
@@ -702,13 +575,15 @@ for (const l of LANGS) {
         title,
         desc: clip(`${title}: ${first}`),
         path: `${path}/`,
-        other: `${o}/tour/${t.id}/`,
         body,
         depth: 3,
       }),
     );
   }
+}
 
+/** The indexes: all places (those with an article first) and all tours. */
+function indexPages(l: Lang): void {
   const coll = new Intl.Collator(l);
   const list = [...shown].sort((a, b) =>
     coll.compare(nameOf(a.properties, l), nameOf(b.properties, l)),
@@ -742,7 +617,6 @@ for (const l of LANGS) {
       title: T[l].placesTitle,
       desc: T[l].placesTitle,
       path: `${l}/places/`,
-      other: `${o}/places/`,
       depth: 2,
       body: `    <main id="main" class="page">
       <h1>${T[l].placesTitle}</h1>
@@ -763,7 +637,6 @@ for (const l of LANGS) {
       title: T[l].toursTitle,
       desc: T[l].toursTitle,
       path: `${l}/tours/`,
-      other: `${o}/tours/`,
       depth: 2,
       body: `    <main id="main" class="page">
       <h1>${T[l].toursTitle}</h1>
@@ -789,92 +662,15 @@ for (const l of LANGS) {
   );
 }
 
-// The front page of each language (/ru/, /en/): what the globe is, for a reader who comes
-// from a search or a link, with the way into the map. The map itself stays at the root.
-const LANDING = {
-  ru: {
-    title: "Библейская история на глобусе",
-    desc: "Бесплатный атлас: места Библии на 3D-глобусе, государства вокруг них год за годом, экскурсии, статьи с источниками и листы для урока.",
-    kicker: "Бесплатный атлас библейской истории",
-    lede: "Места, о которых говорит Библия, на глобусе с рельефом; государства вокруг них — год за годом, от 3500 г. до н. э. до 1300 г. н. э.; у каждого места — стихи и источники.",
-    open: "Открыть глобус",
-    tours: "Экскурсии",
-    stats: ["мест", "экскурсий", "статей", "ответов на вопросы", "битв и осад"],
-    features: [
-      [
-        "Время на одной шкале",
-        "Ветхий и Новый Завет, Египет, Ассирия, Рим: передвиньте год — меняются границы, города и названия.",
-      ],
-      [
-        "Экскурсии с днями пути",
-        "Путешествия Авраама, Исход, походы Павла — по дорогам и рельефу, с числом дней, которое называет текст.",
-      ],
-      [
-        "Статьи с источниками",
-        "У каждого факта есть «на чём основано»: Флавий, Евсевий, надписи, раскопки. Спорное названо спорным.",
-      ],
-      [
-        "Для урока",
-        "Лист урока на A4, контурная карта для учеников, викторина на экране и на бумаге, урок по одной ссылке.",
-      ],
-      [
-        "Вопросы контекста",
-        "Где была Ниневия? Сколько шёл Павел до Рима? Короткие ответы с картой и стихами.",
-      ],
-      [
-        "Для разработчиков",
-        "Открытые данные под CC BY 4.0, API «стих → места» и глобус для встраивания на свой сайт.",
-      ],
-    ],
-    trust: "Как сделано",
-    trustText:
-      "Данные — OpenBible.info, Cliopatria, Pleiades, Itiner-e и другие открытые наборы. Статьи написаны с помощью ИИ и проверены по источникам отдельным проходом; учёные их пока не рецензировали, и мы так и пишем.",
-    method: "Методология",
-    privacy: "Без регистрации и cookie.",
-  },
-  en: {
-    title: "Biblical history on a globe",
-    desc: "A free atlas: the places of the Bible on a 3D globe, the states around them year by year, tours, articles with sources and sheets for a lesson.",
-    kicker: "A free atlas of biblical history",
-    lede: "The places the Bible names, on a globe with its relief; the states around them year by year, from 3500 BC to AD 1300; for every place, its verses and its sources.",
-    open: "Open the globe",
-    tours: "Tours",
-    stats: ["places", "tours", "articles", "questions answered", "battles and sieges"],
-    features: [
-      [
-        "One timeline",
-        "The Old and New Testaments, Egypt, Assyria, Rome: move the year and the borders, towns and names change.",
-      ],
-      [
-        "Tours with days on the road",
-        "Abraham's journeys, the Exodus, Paul's voyages — along the roads and the relief, with the days the text gives.",
-      ],
-      [
-        "Articles with sources",
-        "Every fact says what it rests on: Josephus, Eusebius, inscriptions, excavations. What is disputed is called disputed.",
-      ],
-      [
-        "For a lesson",
-        "A lesson sheet on A4, an outline map for pupils, a quiz on screen and on paper, a lesson in one link.",
-      ],
-      [
-        "Questions of context",
-        "Where was Nineveh? How long did Paul travel to Rome? Short answers with the map and the verses.",
-      ],
-      [
-        "For developers",
-        "Open data under CC BY 4.0, a verse-to-places API and a globe to embed on your own site.",
-      ],
-    ],
-    trust: "How it is made",
-    trustText:
-      "The data comes from OpenBible.info, Cliopatria, Pleiades, Itiner-e and other open sets. Articles are drafted with AI help and checked against their sources in a separate pass; scholars have not reviewed them yet, and the site says so.",
-    method: "Methodology",
-    privacy: "No account, no cookies.",
-  },
-} as const;
+// In this order, as the sitemap lists them.
 for (const l of LANGS) {
-  const o = l === "ru" ? "en" : "ru";
+  placePages(l);
+  questionPages(l);
+  tourPages(l);
+  indexPages(l);
+}
+
+for (const l of LANGS) {
   const L = LANDING[l];
   const n = new Intl.NumberFormat(l);
   const numbers = [
@@ -891,7 +687,6 @@ for (const l of LANGS) {
       title: L.title,
       desc: L.desc,
       path: `${l}/`,
-      other: `${o}/`,
       depth: 1,
       ld: {
         "@context": "https://schema.org",
@@ -910,8 +705,8 @@ for (const l of LANGS) {
       <ul class="stats">${numbers.map((x, i) => `<li><b>${n.format(x)}</b> ${esc(L.stats[i] ?? "")}</li>`).join("")}</ul>
       <ul class="features">${L.features.map(([h, t]) => `<li><h2>${esc(h)}</h2><p>${esc(t)}</p></li>`).join("")}</ul>
       <h2>${esc(L.trust)}</h2>
-      <p>${esc(L.trustText)} <a href="../docs/${l === "ru" ? "ru/" : ""}methodology.html">${esc(L.method)}</a>.</p>
-      <p class="note">${esc(L.privacy)} <a href="../docs/${l === "ru" ? "ru/" : ""}privacy.html">${esc(T[l].privacy)}</a> · <a href="places/">${esc(T[l].placesTitle)}</a> · <a href="questions/">${esc(T[l].questions)}</a></p>
+      <p>${esc(L.trustText)} <a href="../${docsPath(l, "methodology")}">${esc(L.method)}</a>.</p>
+      <p class="note">${esc(L.privacy)} <a href="../${docsPath(l, "privacy")}">${esc(T[l].privacy)}</a> · <a href="places/">${esc(T[l].placesTitle)}</a> · <a href="questions/">${esc(T[l].questions)}</a></p>
     </main>`,
     }),
   );
@@ -975,7 +770,7 @@ if (site) {
     sitemap,
     `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${["", "docs/", "docs/methodology.html", "docs/embedding.html", "docs/sources.html", "docs/author.html", "docs/api.html", "docs/privacy.html", "docs/ru/", "docs/ru/methodology.html", "docs/ru/embedding.html", "docs/ru/sources.html", "docs/ru/author.html", "docs/ru/api.html", "docs/ru/privacy.html", ...urls].map((u) => `  <url><loc>${esc(`${site}/${u}`)}</loc></url>`).join("\n")}
+${["", ...LANGS.flatMap((l) => DOC_PAGES.map((p) => docsPath(l, p))), ...urls].map((u) => `  <url><loc>${esc(`${site}/${u}`)}</loc></url>`).join("\n")}
 </urlset>
 `,
   );

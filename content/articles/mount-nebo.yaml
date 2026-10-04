@@ -1,0 +1,22 @@
+# Overview article (ADR 0007). Mainstream facts only; a mountain known by name from two verses; the town of Nebo and Pisgah have their own articles; the second candidate on the map is named as such.
+id: mount-nebo
+place: aefaa2d
+title:
+  en: "Mount Nebo"
+  ru: "Гора Нево"
+body:
+  en:
+    - "Mount Nebo is the height on the western edge of the Moabite plateau, opposite Jericho, from which Moses saw the promised land before he died. The Bible names it only twice. God tells Moses, “Get thee up into this mountain Abarim, unto mount Nebo, which is in the land of Moab, that is over against Jericho; and behold the land of Canaan”; and at the end of Deuteronomy “Moses went up from the plains of Moab unto the mountain of Nebo, to the top of Pisgah”, was shown the land “unto Dan” and died there. Nebo is one summit of the Abarim range; how it relates to Pisgah is not certain, and the two names are usually taken for the ridge and its top."
+    - "The mountain is generally placed at Jebel Neba and its western spur Ras Siyagha, about 9 km north-west of Madaba, where the map point stands; the name survives there, and Eusebius put Nabau six miles west of Heshbon. The map also marks Jebel Osha near es-Salt, farther north in Gilead, as a much less likely candidate. Pilgrims came to Siyagha by the fourth century: Egeria found a church and monks there. The Franciscans have excavated its Byzantine basilica and mosaics since 1933, and the Memorial of Moses on the summit is today one of the best-known sites of Jordan."
+  ru:
+    - "Гора Нево — высота на западном краю Моавитского плато против Иерихона, откуда Моисей перед смертью видел обетованную землю. По имени Библия называет её лишь дважды. Бог говорит Моисею: «взойди на сию гору Аварим, на гору Нево, которая в земле Моавитской, против Иерихона, и посмотри на землю Ханаанскую»; а в конце Второзакония «взошел Моисей с равнин Моавитских на гору Нево, на вершину Фасги», увидел землю «до самого Дана» и там умер. Нево — одна из вершин хребта Аварим; как она соотносится с Фасгой, точно не известно, и оба имени обычно понимают как хребет и его вершину."
+    - "Гору обычно помещают на Джебель-Неба и его западный выступ Рас-Сияга, примерно в 9 км к северо-западу от Мадабы, где стоит точка на карте; имя там сохранилось, и Евсевий помещал Навав в шести милях к западу от Есевона. На карте отмечена и Джебель-Оша близ Эс-Салта, севернее, в Галааде, как гораздо менее вероятный вариант. Паломники приходили на Сиягу уже в IV веке: Эгерия застала там церковь и монахов. Францисканцы с 1933 года раскапывают здешнюю византийскую базилику с мозаиками, и Мемориал Моисея на вершине сегодня — одно из самых известных мест Иордании."
+scripture:
+  - Deut.32.49
+  - Deut.34.1-Deut.34.5
+sources:
+  - "Egeria, Itinerarium 10-12"
+  - "Eusebius, Onomasticon, s.v. Nabau"
+  - "S. J. Saller, The Memorial of Moses on Mount Nebo (1941)"
+  - "M. Piccirillo and E. Alliata (eds.), Mount Nebo: New Archaeological Excavations 1967-1997 (1998)"
+status: checked

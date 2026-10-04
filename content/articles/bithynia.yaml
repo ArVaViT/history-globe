@@ -1,0 +1,26 @@
+# Overview article (ADR 0007). Mainstream facts only; a Roman province named twice in the New Testament; Pliny's letter on the Christians is the main outside witness.
+id: bithynia
+place: a5c0cb0
+title:
+  en: "Bithynia"
+  ru: "Вифиния"
+body:
+  en:
+    - "Bithynia is the north-western corner of Asia Minor, the green, wooded land along the Black Sea and the Sea of Marmara, facing Byzantium across the Bosporus. A Thracian people gave it its name, and in the third century BC its rulers made it a Hellenistic kingdom: Nicomedes I founded Nicomedia as his capital about 264 BC, and Prusias I, who gave Hannibal his last refuge, built Prusa under Mount Olympus. Nicomedes IV left the kingdom to Rome in 74 BC, and after the wars with Mithridates it was joined with the western part of Pontus as the province of Bithynia and Pontus. Its cities, Nicomedia, Nicaea, Prusa and Chalcedon, were rich and quarrelsome."
+    - "The New Testament names it twice. On the second journey Paul and his companions, kept from preaching in Asia, came to Mysia and “assayed to go into Bithynia: but the Spirit suffered them not”, and went down to Troas instead, whence they crossed to Macedonia. Yet the gospel reached it all the same: the first letter of Peter is addressed “to the strangers scattered throughout Pontus, Galatia, Cappadocia, Asia, and Bithynia”. About AD 112 Pliny the Younger, sent by Trajan to govern the province, wrote to the emperor that the Christians there were many, in towns and villages, of every age and rank, that they met before dawn to sing a hymn to Christ as to a god, and that the temples had been almost deserted; he asked how to try them, and Trajan's reply set the pattern for decades: they were not to be sought out, nor anonymous accusations heard."
+    - "Later Bithynia stood at the centre of the empire. Diocletian ruled from Nicomedia, where the Great Persecution began in 303; Constantine summoned the first general council to Nicaea in 325, and the fourth met at Chalcedon in 451. Today the region is north-western Turkey: Nicomedia is İzmit, Nicaea is the lakeside town of İznik with its Roman walls, Prusa is Bursa, and Chalcedon is Kadıköy, a district of Istanbul."
+  ru:
+    - "Вифиния — северо-западный угол Малой Азии, зелёная лесистая земля вдоль Чёрного и Мраморного морей, обращённая к Византию через Босфор. Имя ей дал фракийский народ, а в III веке до н. э. её правители сделали её эллинистическим царством: Никомед I около 264 г. до н. э. основал свою столицу Никомидию, а Прусий I, давший Ганнибалу последнее убежище, построил Прусу у подножия горы Олимп. Никомед IV завещал царство Риму в 74 г. до н. э., и после войн с Митридатом его соединили с западной частью Понта в провинцию Вифиния и Понт. Её города — Никомидия, Никея, Пруса и Халкидон — были богаты и вечно спорили между собой."
+    - "Новый Завет называет её дважды. Во втором путешествии Павел и его спутники, не допущенные проповедовать в Асии, «дойдя до Мисии, предпринимали идти в Вифинию; но Дух не допустил их», и они сошли в Троаду, откуда переправились в Македонию. И всё же Евангелие дошло и туда: первое послание Петра обращено к «пришельцам, рассеянным в Понте, Галатии, Каппадокии, Асии и Вифинии». Около 112 г. н. э. Плиний Младший, посланный Траяном управлять провинцией, писал императору, что христиан там много, в городах и сёлах, всякого возраста и звания, что они собираются до рассвета петь гимн Христу как Богу и что храмы почти опустели; он спрашивал, как их судить, и ответ Траяна на десятилетия стал правилом: не разыскивать их и не принимать безымянных доносов."
+    - "Позже Вифиния оказалась в средоточии империи. Диоклетиан правил из Никомидии, где в 303 году началось Великое гонение; Константин созвал первый Вселенский собор в Никею в 325 году, а четвёртый собрался в Халкидоне в 451 году. Сегодня это северо-запад Турции: Никомидия — Измит, Никея — городок Изник на берегу озера с римскими стенами, Пруса — Бурса, а Халкидон — Кадыкёй, район Стамбула."
+scripture:
+  - Acts.16.6-Acts.16.8
+  - 1Pet.1.1
+sources:
+  - "Pliny the Younger, Letters 10.96-97 (Pliny to Trajan on the Christians, and Trajan's reply)"
+  - "Strabo, Geography 12.4 (Bithynia)"
+  - "Lactantius, On the Deaths of the Persecutors 12 (the persecution begun at Nicomedia)"
+  - "S. Mitchell, Anatolia: Land, Men, and Gods in Asia Minor, 2 vols. (1993)"
+  - "C. J. Hemer, The Book of Acts in the Setting of Hellenistic History (1989)"
+  - "A. N. Sherwin-White, The Letters of Pliny: A Historical and Social Commentary (1966)"
+status: checked

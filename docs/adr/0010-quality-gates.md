@@ -15,9 +15,10 @@ the gate instead of fixing the code.
   merge, linear history, signed commits, no force-push, **no bypass for anyone**. Once
   CI exists, the single required check is `ci-pass`.
 - **Two local commands.** `pnpm gate` — format, lint, typecheck, unit and content checks
-  for what changed; fast enough for every push (lefthook runs it pre-push).
-  `pnpm gate:full` — everything CI runs, including end-to-end and visual tests in the
-  Playwright container. CI always runs the full set.
+  for what changed; fast enough for every push.
+  `pnpm gate:full` — the data rebuilt from the pipeline, then the gate.
+  _As built (2026-10-04):_ no pre-push hook and no CI yet; end-to-end and accessibility
+  checks run apart (`pnpm e2e`, `pnpm e2e:a11y`, e2e/README.md); no visual tests.
 - **Tests**: Vitest for the model, engine (with `FakeRenderer`) and style expressions
   (which features are visible in which year — no WebGL needed); property tests for the
   time model; Playwright end-to-end; **visual regression** in the official Playwright

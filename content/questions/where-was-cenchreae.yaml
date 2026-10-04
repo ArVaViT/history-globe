@@ -1,0 +1,24 @@
+id: where-was-cenchreae
+question:
+  en: "Where was Cenchreae, the church of Phoebe?"
+  ru: "Где находились Кенхреи, церковь Фивы?"
+answer:
+  en:
+    - "Cenchreae was the eastern harbour of Corinth, on the Saronic Gulf at today's village of Kechries in Greece; the map point stands on the bay. It lay about 11 km east of Corinth in a straight line (Strabo gives seventy stadia from the city) and served the trade with Asia, while Lechaeum on the Gulf of Corinth served the trade with Italy. Ephesus, where Paul sailed from here, is about 380 km across the Aegean."
+    - "Paul left Greece from Cenchreae about AD 52, at the end of his second journey, sailing for Syria with Priscilla and Aquila, “having shorn his head in Cenchrea: for he had a vow”; the vow is usually taken as Paul's, though the Greek could refer to Aquila. A few years later, probably writing from Corinth, he commended to the Romans “Phebe our sister, which is a servant of the church which is at Cenchrea”, asking them to help her, “for she hath been a succourer of many, and of myself also”. The Greek word is diakonos; whether it names an office, deacon, or a service is disputed, and the Synodal Bible renders it deaconess. She is usually taken to have carried the letter to Rome, about 1,000 km away in a straight line."
+    - "The port flourished after Corinth was refounded as a Roman colony in 44 BC; Pausanias saw a temple of Aphrodite and sanctuaries of Asclepius and Isis. American excavations in the 1960s found warehouses, fish tanks and, in the sunken southern part of the harbour, crates of panels of coloured glass, still packed, that went down in an earthquake of the later fourth century AD. The moles and part of the harbour now lie in shallow water by the shore, and a Christian basilica was later built at its southern end."
+  ru:
+    - "Кенхреи — восточная гавань Коринфа на Сароническом заливе, там, где сегодня стоит греческая деревня Кехриес; точка карты стоит у бухты. Гавань лежала примерно в 11 км к востоку от Коринфа по прямой (Страбон называет семьдесят стадий от города) и обслуживала торговлю с Асией, а Лехей на Коринфском заливе — торговлю с Италией. До Ефеса, куда Павел отплыл отсюда, — около 380 км через Эгейское море."
+    - "Павел покинул Грецию из Кенхрей около 52 г., в конце второго путешествия, отплыв в Сирию с Акилой и Прискиллой, «остригши голову в Кенхреях, по обету»; обет обычно считают Павловым, хотя по-гречески его можно отнести и к Акиле. Несколько лет спустя, вероятно из Коринфа, он писал римлянам: «Представляю вам Фиву, сестру нашу, диакониссу церкви Кенхрейской», — и просил помочь ей, «ибо и она была помощницею многим и мне самому». Греческое слово — диакон; означает ли оно должность или просто служение, спорят, и Синодальный перевод передаёт его как «диакониссу», а Библия короля Якова — как «служительницу». Обычно считают, что Фива и доставила послание в Рим — примерно за 1000 км по прямой."
+    - "Гавань процветала после того, как в 44 г. до н. э. Коринф был заново основан как римская колония; Павсаний видел здесь храм Афродиты и святилища Асклепия и Исиды. Американские раскопки 1960-х годов открыли склады, садки для рыбы, а в ушедшей под воду южной части гавани — ящики с панно из цветного стекла, ещё упакованные, которые затонули при землетрясении во второй половине IV века н. э. Молы и часть гавани лежат теперь на мелководье у берега, а у её южного конца позже построили христианскую базилику."
+map:
+  place: aa31dd3
+  year: "c. AD 52"
+  ref: Acts.18.18
+scripture: [Acts.18.18-Acts.18.19, Rom.16.1-Rom.16.2]
+sources:
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe article “Cenchreae” (Strabo, Pausanias, Apuleius and the excavation reports cited there) and History Globe tour “Paul's second journey”"
+  - "R. Scranton, J. W. Shaw and L. Ibrahim, Kenchreai, Eastern Port of Corinth I: Topography and Architecture (1978)"
+  - "J. Murphy-O'Connor, St. Paul's Corinth: Texts and Archaeology (3rd ed., 2002)"
+status: checked

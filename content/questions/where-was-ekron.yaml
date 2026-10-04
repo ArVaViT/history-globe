@@ -1,0 +1,26 @@
+id: where-was-ekron
+question:
+  en: "Where was Ekron, the city of Baal-zebub?"
+  ru: "Где находился Екрон, город Веельзевула?"
+answer:
+  en:
+    - "Ekron is Tel Miqne, also called Khirbet el-Muqanna, a mound on the inner edge of the southern coastal plain of Israel, about 36 km west of Jerusalem in a straight line; the map point stands on it. It was the northernmost of the five Philistine cities, about 9 km north of Gath, and the identification is certain: an inscription found there in 1996 names the city."
+    - "In the Bible Ekron is best known for its god. When King Ahaziah of Israel fell through a lattice in Samaria, he sent to “enquire of Baal-zebub the god of Ekron whether I shall recover of this disease”, a journey of some 64 km to the south-west; Elijah met the messengers: “Is it not because there is not a God in Israel, that ye go to enquire of Baal-zebub the god of Ekron?” The name means “lord of the flies”, perhaps a mocking change of Baal-zebul, “Baal the prince”; in the Gospels Beelzebub is the prince of devils. Earlier the captured ark was sent on from Gath to Ekron, as the Hebrew and the King James Version read; the Greek and the Russian Synodal name Ashkelon here. After Goliath fell, Israel pursued the Philistines “to the gates of Ekron”."
+    - "Trude Dothan and Seymour Gitin excavated Tel Miqne from 1981 to 1996. The Philistines founded a fortified city here in the twelfth century BC; under Assyrian rule in the seventh century it became the largest olive-oil production centre yet found in the ancient Near East, with over a hundred presses. In its temple the excavators found the inscription of “Achish son of Padi, ruler of Ekron”; Padi is the king whom Ekron's nobles handed over to Hezekiah in 701 BC and whom Sennacherib restored. The city was burned in Nebuchadnezzar's campaign on the Philistine coast, usually dated 604 BC, as Zephaniah had warned: “Ekron shall be rooted up.”"
+  ru:
+    - "Екрон — это Тель-Микне, или Хирбет-эль-Муканна, холм на внутреннем краю южной прибрежной равнины Израиля, примерно в 36 км к западу от Иерусалима по прямой; точка карты стоит на нём. Это самый северный из пяти филистимских городов, примерно в 9 км к северу от Гефа, и отождествление несомненно: найденная здесь в 1996 году надпись называет город."
+    - "В Библии Екрон больше всего известен своим божеством. Когда израильский царь Охозия упал через решётку горницы в Самарии, он послал послов за 64 км к юго-западу: «пойдите, спросите у Веельзевула, божества Аккаронского: выздоровею ли я от сей болезни?»; Илия встретил послов: «разве нет Бога в Израиле, что вы идете вопрошать Веельзевула, божество Аккаронское?» Имя значит «повелитель мух» и, возможно, насмешливо искажает Баал-Зебул — «Баал-князь»; в Евангелиях Веельзевул — князь бесовский. Ещё раньше захваченный ковчег отправили из Гефа в Екрон, как читают еврейский текст и английская Библия короля Якова; в греческом тексте и в Синодальном переводе здесь назван Аскалон. Когда пал Голиаф, израильтяне гнали филистимлян «до ворот Аккарона» — так в книгах Царств называется Екрон."
+    - "Труде Дотан и Сеймур Гитин раскапывали Тель-Микне с 1981 по 1996 год. Филистимляне основали здесь укреплённый город в XII веке до н. э.; под властью Ассирии в VII веке он стал крупнейшим из найденных на древнем Ближнем Востоке центров производства оливкового масла — здесь больше сотни давилен. В его храме нашли надпись «Ахиша, сына Падии, правителя Екрона»; Падия — тот царь, которого знать Екрона выдала Езекии в 701 г. до н. э. и которому Сеннахирим вернул престол. Город сгорел во время похода Навуходоносора на филистимское побережье, обычно датируемого 604 г. до н. э., как и предупреждал Софония: «Екрон искоренится»."
+map:
+  place: a3fc47a
+  year: "c. 850 BC"
+  ref: 2Kgs.1.2
+scripture:
+  [Josh.13.3, 1Sam.5.10, 1Sam.17.52, 2Kgs.1.2-2Kgs.1.3, 2Kgs.1.16, Matt.12.24, Zeph.2.4, Amos.1.8]
+sources:
+  - "Straight-line distances between the places' points (Ekron, Jerusalem, Gath, Samaria): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe article “Ekron”"
+  - "S. Gitin, T. Dothan and J. Naveh, 'A Royal Dedicatory Inscription from Ekron', Israel Exploration Journal 47 (1997)"
+  - "T. Dothan and M. Dothan, People of the Sea: The Search for the Philistines (1992)"
+  - "Sennacherib's annals on Padi of Ekron (701 BC), in the Chicago (Oriental Institute) Prism"
+status: checked

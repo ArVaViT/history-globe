@@ -1,0 +1,36 @@
+id: where-was-gath
+question:
+  en: "Where was Gath, the city of Goliath?"
+  ru: "Где находился Геф, город Голиафа?"
+answer:
+  en:
+    - "Gath is Tell es-Safi, a high mound in Israel where the valley of Elah opens onto the coastal plain, about 38 km west of Jerusalem in a straight line; the map point stands on it. It lay about 9 km south of Ekron and some 15 km down the valley from the place where David met Goliath. The identification was proposed in the nineteenth century; Tel Erani near Kiryat Gat, a town named after Gath, was also tried, but Tell es-Safi is now widely accepted because it fits the biblical geography and because it was the largest Philistine city of the tenth and ninth centuries BC."
+    - "Gath was one of the five Philistine cities, and the Bible ties it above all to David. Goliath was “of Gath, whose height was six cubits and a span”, and after his fall the Philistines fled “even unto Gath, and unto Ekron”. Fleeing from Saul, David “went to Achish the king of Gath” and feigned madness at his gate; later he served Achish with six hundred men and received Ziklag from him. When Saul and Jonathan fell, David lamented: “Tell it not in Gath, publish it not in the streets of Askelon; lest the daughters of the Philistines rejoice.” Ittai the Gittite and his men from Gath stood by David when Absalom rebelled."
+    - "Excavations led by Aren Maeir of Bar-Ilan University since 1996 have found a siege trench dug round the city in the late ninth century BC and a thick layer of destruction, which matches the report that “Hazael king of Syria went up, and fought against Gath, and took it”. Gath never regained its size. Amos holds it up as a warning, “go down to Gath of the Philistines”, and the later prophets list the Philistine cities without it. A potsherd of about the tenth century from the site bears two names, alwt and wlt, that recall the name Goliath without referring to him. The cities of the Philistines as a group are the subject of a separate question."
+  ru:
+    - "Геф — это Телль-эс-Сафи, высокий холм в Израиле там, где Долина дуба выходит на прибрежную равнину, примерно в 38 км к западу от Иерусалима по прямой; точка карты стоит на нём. Он лежал примерно в 9 км к югу от Екрона и километрах в 15 ниже по долине от места, где Давид вышел против Голиафа. Отождествление предложили ещё в XIX веке; пробовали и Тель-Эрани у Кирьят-Гата, города, названного в честь Гефа, но Телль-эс-Сафи теперь принят большинством: он подходит к библейской географии и был крупнейшим филистимским городом X–IX веков до н. э."
+    - "Геф был одним из пяти филистимских городов, и Библия связывает его прежде всего с Давидом. Голиаф был «из Гефа; ростом он — шести локтей и пяди», а после его гибели филистимляне бежали «до Гефа и до Аккарона». Спасаясь от Саула, Давид «пришел к Анхусу, царю Гефскому» и притворился безумным у его ворот; позднее он служил Анхусу с шестьюстами мужей и получил от него Секелаг. Когда пали Саул и Ионафан, Давид плакал: «Не рассказывайте в Гефе, не возвещайте на улицах Аскалона, чтобы не радовались дочери Филистимлян». Еффей Гефянин и его люди из Гефа остались с Давидом, когда восстал Авессалом."
+    - "Раскопки, которые с 1996 года ведёт Арен Маир из Бар-Иланского университета, обнаружили осадный ров, выкопанный вокруг города в конце IX века до н. э., и толстый слой разрушения; это совпадает с рассказом о том, что «выступил в поход Азаил, царь Сирийский, и пошел войною на Геф, и взял его». Прежних размеров Геф больше не достиг. Амос приводит его в пример как предостережение — «спуститесь в Геф Филистимский», а поздние пророки перечисляют филистимские города уже без него. На черепке около X века отсюда написаны два имени, alwt и wlt, напоминающие имя Голиаф, но к нему не относящиеся. О филистимских городах в целом рассказано в отдельном вопросе."
+map:
+  place: a18873f
+  year: "c. 1010 BC"
+  ref: 1Sam.21.10
+scripture:
+  [
+    Josh.13.3,
+    1Sam.17.4,
+    1Sam.17.52,
+    1Sam.21.10-1Sam.21.13,
+    1Sam.27.2-1Sam.27.6,
+    2Sam.1.20,
+    2Sam.15.18-2Sam.15.22,
+    2Kgs.12.17,
+    Amos.6.2,
+  ]
+sources:
+  - "Straight-line distances between the places' points (Gath, Jerusalem, Ekron, Valley of Elah): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe article “Gath” and History Globe questions on the Philistine cities and on where David fought Goliath"
+  - "A. M. Maeir (ed.), Tell es-Safi/Gath I: The 1996-2005 Seasons (2012)"
+  - "A. M. Maeir, S. J. Wimmer, A. Zukerman and A. Demsky, 'A Late Iron Age I/Early Iron Age II Old Canaanite Inscription from Tell es-Safi/Gath', BASOR 351 (2008)"
+  - "T. Dothan and M. Dothan, People of the Sea: The Search for the Philistines (1992)"
+status: checked

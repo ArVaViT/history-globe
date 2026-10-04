@@ -1,0 +1,28 @@
+# Overview article (ADR 0007). Mainstream facts only; the home of Zophar is unknown and the article says so; the Septuagint's Minaean reading is given as the Greek translators' view.
+id: naamah
+place: ac6b210
+title:
+  en: "Naamah"
+  ru: "Наема"
+body:
+  en:
+    - "Naamah is the home of Zophar the Naamathite, the third of Job's friends, and nothing is known of it but his name. When Job's three friends heard of his calamity, “they came every one from his own place; Eliphaz the Temanite, and Bildad the Shuhite, and Zophar the Naamathite”, to mourn with him and to comfort him. Zophar speaks twice, the harshest of the three, insisting that God punishes only the guilty and that Job should put away his sin; at the end the LORD rebukes the three, they offer sacrifice at Job's bidding, and “the LORD also accepted Job”."
+    - "The friends come from Edom and the Arabian borderlands, so Naamah is looked for there, not at the Naamah of Judah's lowland that Joshua lists, though the Russian form of the name used here, Naema, is that town's; in Job the Russian Bible has only Zophar the Naamite. The Greek translators of Job called Zophar “king of the Minaeans”, placing him in the incense kingdom of Ma'in in south Arabia next to Sheba, and the first candidate on the map follows that lead, marking Naamah at Sheba; the second is Jebel el-Na'ameh in north-west Arabia, chosen for the sound of its name; the third is Edom itself, home of Eliphaz. None of these can be shown, and most commentators leave the place unidentified."
+    - "There is nothing to visit: Naamah is a name in a story whose own land, Uz, is uncertain. It is marked only so that Zophar's home has a place on the map."
+  ru:
+    - "Наема — родина Софара Наамитянина, третьего из друзей Иова, и о ней не известно ничего, кроме его прозвания. Услышав о беде Иова, три его друга «пошли каждый из своего места: Елифаз Феманитянин, Вилдад Савхеянин и Софар Наамитянин», чтобы «сетовать с ним и утешать его». Софар говорит дважды, резче всех троих, настаивая, что Бог наказывает только виновных и что Иову надо оставить свой грех; в конце Господь обличает троих, они приносят жертву по слову Иова, «и Господь принял лице Иова»."
+    - "Друзья приходят из Едома и с окраин Аравии, поэтому Наему ищут там, а не в Наеме иудейской низменности из списка Иисуса Навина, хотя русская форма имени, Наема, взята именно от того города; в Книге Иова русская Библия знает лишь Софара Наамитянина. Греческие переводчики Иова назвали Софара «царём Минеев», поместив его в царство благовоний Маин на юге Аравии, рядом с Савой, и первый кандидат на карте идёт за этим, отмечая Наему у Савы; второй — Джебель-эн-Нааме на северо-западе Аравии, выбранная по созвучию имени; третий — сам Едом, родина Елифаза. Ни одно из этого не доказуемо, и большинство толкователей оставляет место неопознанным."
+    - "Посетить нечего: Наема — имя в рассказе, чья собственная земля, Уц, тоже неясна. Она отмечена лишь затем, чтобы у родины Софара было место на карте."
+scripture:
+  - Job.1.1
+  - Job.2.11
+  - Job.11.1
+  - Job.20.1
+  - Job.42.7-Job.42.9
+  - Josh.15.41
+sources:
+  - "Septuagint, Job 2:11 and the appendix to 42:17 (Zophar king of the Minaeans)"
+  - "E. Dhorme, A Commentary on the Book of Job (English translation, 1967)"
+  - "M. H. Pope, Job (Anchor Bible 15, 3rd ed., 1973)"
+  - "D. J. A. Clines, Job 1–20 (Word Biblical Commentary 17, 1989)"
+status: checked

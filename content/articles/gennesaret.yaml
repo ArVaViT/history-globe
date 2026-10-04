@@ -1,0 +1,28 @@
+# Overview article (ADR 0007). Mainstream facts only; Josephus is followed for the plain's size and produce; the boat's date follows its excavators.
+id: gennesaret
+place: a7de69e
+title:
+  en: "Gennesaret"
+  ru: "Геннисарет"
+body:
+  en:
+    - "Gennesaret is the small plain on the north-western shore of the Sea of Galilee, between Magdala and Capernaum, where the hills draw back from the water for about five kilometres and the streams from the Galilean uplands spread out before reaching the lake. Its name goes back to Chinnereth, the fortified town of Naphtali whose mound, Tel Kinrot, stands at the plain's northern end and which gave the lake its Old Testament name, the sea of Chinnereth; by the Maccabean age the plain was Gennesar, and the lake was called after it. Josephus, who commanded Galilee in AD 66, measured it at thirty stadia along the shore and twenty inland and could not praise it enough: walnuts, palms, figs and olives grew side by side, the air suited every kind of tree, grapes and figs ripened for ten months of the year, and a spring the people called Capharnaum watered it."
+    - "The Gospels bring Jesus here once by name. After the feeding of the five thousand and the night walk on the water, “when they were gone over, they came into the land of Gennesaret”, and, as Mark adds, “drew to the shore”; the people recognised him, carried their sick on beds to wherever he was heard to be, and “besought him that they might only touch the hem of his garment: and as many as touched were made perfectly whole”. Luke calls the whole lake by the plain's name: it was “by the lake of Gennesaret” that the crowd pressed on Jesus, and he taught from Simon's boat before the great catch of fish and the call of the first disciples."
+    - "The plain is farmed today by the kibbutz of Ginosar, which keeps its name, and by the villages around it, with bananas and mangoes under the lake-side heat; in 1986, in a year of drought, two of its members found in the mud off the shore a fishing boat of the first century BC or AD, now in the Yigal Allon Centre at the kibbutz. Tel Kinrot has been excavated since the 1980s, and Magdala, with its first-century synagogue, is uncovered at the plain's southern edge."
+  ru:
+    - "Геннисарет — небольшая равнина на северо-западном берегу Галилейского моря, между Магдалой и Капернаумом, где горы отступают от воды примерно на пять километров, а потоки с галилейских возвышенностей растекаются, не доходя до озера. Имя её восходит к Хиннерефу, укреплённому городу Неффалима, чей холм, Тель-Киннерот, стоит у северного края равнины и дал озеру ветхозаветное имя — море Хиннереф; к маккавейскому времени равнина звалась Геннисар, и озеро называли по ней. Иосиф Флавий, командовавший в Галилее в 66 г. н. э., мерил её в тридцать стадий вдоль берега и двадцать вглубь и не мог нахвалиться: орехи, пальмы, смоковницы и маслины росли рядом, воздух подходил всякому дереву, виноград и смоквы зрели десять месяцев в году, а поил её источник, который жители звали Капернаумом."
+    - "Евангелия приводят сюда Иисуса по имени один раз. После насыщения пяти тысяч и ночного хождения по воде, «переправившись, прибыли в землю Геннисаретскую», и, как добавляет Марк, «пристали к берегу»; жители узнали Его, на постелях приносили больных туда, где Он, как слышно было, находился, «и просили Его, чтобы только прикоснуться к краю одежды Его; и которые прикасались, исцелялись». Лука зовёт именем равнины всё озеро: именно «у озера Геннисаретского» народ теснился к Иисусу, и Он учил из лодки Симона перед великим уловом рыбы и призванием первых учеников."
+    - "Сегодня равнину возделывают кибуц Гиносар, сохранивший её имя, и окрестные селения — бананы и манго в приозёрной жаре; в 1986 году, в засуху, двое его членов нашли в иле у берега рыбацкую лодку I века до н. э. или н. э., которая теперь стоит в центре имени Игаля Алона при кибуце. Тель-Киннерот раскапывают с 1980-х годов, а у южного края равнины открыта Магдала с синагогой I века."
+scripture:
+  - Josh.19.35
+  - Matt.14.34-Matt.14.36
+  - Mark.6.53-Mark.6.56
+  - Luke.5.1-Luke.5.11
+sources:
+  - "Josephus, Jewish War 3.506-521 (the lake and plain of Gennesar)"
+  - "1 Maccabees 11.67 (the water of Gennesar)"
+  - "Pliny, Natural History 5.71 (the lake of Gennesara)"
+  - "V. Fritz, 'Kinneret: Excavations at Tell el-Oreimeh (Tel Kinrot), Preliminary Report on the 1982–1985 Seasons', Tel Aviv 20 (1993)"
+  - "S. Wachsmann, The Sea of Galilee Boat: An Extraordinary 2000 Year Old Discovery (1995)"
+  - "M. Nun, The Sea of Galilee and Its Fishermen in the New Testament (1989)"
+status: checked

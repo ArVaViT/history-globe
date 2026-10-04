@@ -1,0 +1,20 @@
+# Overview article (ADR 0007). Mainstream facts only; a wilderness station known only from the itinerary of Numbers 33; nothing is known of it, and the article says so.
+id: mount-shepher
+place: a39fe14
+title:
+  en: "Mount Shepher"
+  ru: "Гора Шафер"
+body:
+  en:
+    - "Mount Shepher, in the King James Version “mount Shapher”, is one of the camps of Israel in the wilderness listed only in the itinerary of Numbers 33: “And they went from Kehelathah, and pitched in mount Shapher. And they removed from mount Shapher, and encamped in Haradah.” The name may mean “beauty” or “fairness”. Like most of the stations between Hazeroth and Ezion-geber, it appears nowhere else, and the list gives no event, water or landmark to fix it."
+    - "Its site is unknown. The map draws it within about 50 km of Haradah, itself unplaced, and marks one proposal, Jebel Araif en-Naqa in the north-eastern Sinai near the Negev border, a conspicuous peak in a region where some reconstructions of the route pass. Others leave the whole sequence of camps unlocated, and there is no ancient tradition to choose between them."
+  ru:
+    - "Гора Шафер — один из станов Израиля в пустыне, известный только по перечню в 33-й главе книги Чисел: «И отправились из Кегелафы и расположились станом на горе Шафер. И отправились от горы Шафер и расположились станом в Хараде». Имя, возможно, значит «красота». Как и большинство станов между Асирофом и Ецион-Гавером, она больше нигде не упоминается, а перечень не называет ни события, ни воды, ни приметы, по которой её можно было бы найти."
+    - "Местоположение неизвестно. На карте она помещена в радиусе примерно 50 км от Харады, которая и сама не найдена, и отмечено одно предположение — Джебель-Араиф-эн-Нака на северо-востоке Синая у границы Негева, заметная вершина в краю, через который проходят некоторые реконструкции пути. Другие оставляют весь этот ряд станов неопределённым, и древнего предания, которое помогло бы выбрать, нет."
+scripture:
+  - Num.33.23-Num.33.24
+sources:
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "B. A. Levine, Numbers 21-36 (Anchor Bible, 2000)"
+  - "M. Noth, Numbers: A Commentary (Old Testament Library, 1968)"
+status: checked

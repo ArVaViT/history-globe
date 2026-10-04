@@ -1,0 +1,27 @@
+# Overview article (ADR 0007). Mainstream facts only; the reading of Isaiah 49:12 (Sinim or Syene) is given with the Qumran evidence; the Elephantine dates follow the papyri.
+id: syene
+place: a8a6a5b
+title:
+  en: "Syene"
+  ru: "Сиена"
+body:
+  en:
+    - "Syene, today Aswan, is the town at the First Cataract of the Nile, far up the river where it breaks through granite and Egypt proper ends and Nubia begins. It was Egypt's southern gate, a market and garrison town, with the quarries that gave the pharaohs the red granite of their obelisks, and opposite it the island of Elephantine, Yeb to the Egyptians, with its temple of the ram god Khnum and its fortress. Strabo and Pliny record that at Syene the noonday sun of the summer solstice stood straight overhead and lit the bottom of a well, the observation from which Eratosthenes measured the size of the earth."
+    - "For Ezekiel Syene marks the far end of Egypt, as Dan and Beersheba mark Israel: the land will be made desolate “from the tower of Syene even unto the border of Ethiopia”, and “from the tower of Syene shall they fall in it by the sword”; the Hebrew reads “from Migdol to Syene”, as the Synodal Bible has it, Migdol being the fortress at the northern frontier. In Isaiah the exiles are to return “from the north and from the west; and these from the land of Sinim”. Older readers took Sinim for a far land, even China; the great Isaiah scroll from Qumran reads Sewenim, the people of Syene, and most modern versions follow it, so that the prophet promises return from Egypt's furthest south."
+    - "That there were Jews to return from Syene is known from the Aramaic papyri found on Elephantine and at Aswan from the 1890s: letters, contracts and lists of a Jewish garrison serving the Persian kings in the fifth century BC, with a temple of their God, YHW, on the island. In 410 BC the priests of Khnum, with the Persian governor's connivance, destroyed the temple, and the community wrote in 407 to Bagoas, governor of Judah, and to the sons of Sanballat of Samaria for help to rebuild it. Today Aswan is a city of the Egyptian south below the High Dam, finished in 1970, which created Lake Nasser; Elephantine, with the ruins of the Khnum temple and the Jewish quarter, is excavated by German and Swiss institutes, and the temples of Philae were moved to a higher island when the lake rose."
+  ru:
+    - "Сиена, нынешний Асуан, — город у первого порога Нила, далеко вверх по реке, где она прорывается сквозь гранит и собственно Египет кончается, а начинается Нубия. Это были южные ворота Египта, торговый и гарнизонный город с каменоломнями, дававшими фараонам красный гранит для обелисков, а напротив — остров Элефантина, по-египетски Йеб, с храмом бараноголового бога Хнума и крепостью. Страбон и Плиний записали, что в Сиене полуденное солнце летнего солнцестояния стояло прямо над головой и освещало дно колодца; по этому наблюдению Эратосфен измерил окружность Земли."
+    - "Для Иезекииля Сиена отмечает дальний край Египта, как Дан и Вирсавия — Израиля: земля будет опустошена «от Мигдола до Сиены, до самого предела Ефиопии», и «от Мигдола до Сиены будут падать в нем от меча»; Мигдол — крепость на северной границе, а Библия короля Иакова читает здесь «от башни Сиены». У Исаии изгнанники вернутся «от севера и моря, а другие из земли Синим». Прежние читатели видели в Синим далёкую страну, даже Китай; большой свиток Исаии из Кумрана читает «Севеним», жители Сиены, и большинство современных переводов следуют ему, так что пророк обещает возвращение с самого юга Египта."
+    - "Что из Сиены было кому возвращаться, известно по арамейским папирусам, найденным на Элефантине и в Асуане с 1890-х годов: письма, договоры и списки иудейского гарнизона, служившего персидским царям в V веке до н. э., с храмом их Бога, Йахо, на острове. В 410 г. до н. э. жрецы Хнума при попустительстве персидского наместника разрушили храм, и община писала в 407 году Багою, наместнику Иудеи, и сыновьям Санаваллата Самарийского с просьбой помочь восстановить его. Сегодня Асуан — город египетского юга ниже Высотной плотины, законченной в 1970 году и создавшей озеро Насер; Элефантину с развалинами храма Хнума и иудейского квартала раскапывают германский и швейцарский институты, а храмы Филе перенесли на более высокий остров, когда озеро поднялось."
+scripture:
+  - Isa.49.12
+  - Ezek.29.10
+  - Ezek.30.6
+sources:
+  - "Herodotus, Histories 2.28-30 (Elephantine and the garrison at Syene)"
+  - "Strabo, Geography 17.1.48 (Syene and the well at the solstice)"
+  - "Pliny the Elder, Natural History 2.183 (the well at Syene)"
+  - "A. Cowley, Aramaic Papyri of the Fifth Century B.C. (1923)"
+  - "B. Porten, The Elephantine Papyri in English: Three Millennia of Cross-Cultural Continuity and Change (1996)"
+  - "J. Blenkinsopp, Isaiah 40-55 (Anchor Bible, 2002) (on Sinim and Syene in 49:12)"
+status: checked

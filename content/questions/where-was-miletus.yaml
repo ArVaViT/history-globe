@@ -1,0 +1,24 @@
+id: where-was-miletus
+question:
+  en: "Where was Miletus, where Paul said farewell to the elders of Ephesus?"
+  ru: "Где находился Милит, где Павел простился с пресвитерами Ефеса?"
+answer:
+  en:
+    - "Miletus stood on a peninsula near the mouth of the Maeander on the west coast of Asia Minor; its ruins, by the village of Balat in the province of Aydın in Turkey, now lie several kilometres inland, cut off from the sea by the river's silt, and the map point stands on them. Ephesus was about 46 km to the north in a straight line, the island of Patmos about 69 km to the west-south-west, and Jerusalem about 970 km away."
+    - "About AD 57, hurrying to be in Jerusalem by Pentecost, “Paul had determined to sail by Ephesus”, and the ship put in at Miletus instead: “from Miletus he sent to Ephesus, and called the elders of the church.” The messengers had to go and the elders to come back, so the stop took several days. His address to them is the only speech in Acts that Paul makes to Christians; at its end “they all wept sore, and fell on Paul's neck, and kissed him, sorrowing most of all for the words which he spake, that they should see his face no more.” Second Timothy adds: “Trophimus have I left at Miletum sick.”"
+    - "In the archaic age Miletus was one of the richest Greek cities, the mother of colonies around the Black Sea and the home of Thales, Anaximander and Anaximenes; the Persians took it in 494 BC after the sea battle of Lade. Under Rome it had a Jewish community, and an inscription on the seats of its theatre reserves a place for the Jews and the God-fearers, though its exact wording is read in more than one way. The great theatre and the Baths of Faustina still stand, and the market gate of Miletus was taken to the Pergamon Museum in Berlin."
+  ru:
+    - "Милит стоял на полуострове у устья Меандра, на западном берегу Малой Азии; его развалины у деревни Балат в турецкой провинции Айдын лежат теперь в нескольких километрах от моря, отрезанные от него речным илом, и точка карты стоит на них. Ефес был примерно в 46 км к северу по прямой, остров Патмос — примерно в 69 км к западо-юго-западу, а Иерусалим — примерно в 970 км."
+    - "Около 57 г., торопясь к Пятидесятнице в Иерусалим, Павел решил плыть мимо Ефеса — «ибо Павлу рассудилось миновать Ефес», — и корабль пристал в Милите: «Из Милита же послав в Ефес, он призвал пресвитеров церкви». Посланным нужно было дойти, а пресвитерам — прийти, так что стоянка заняла несколько дней. Его речь к ним — единственная в Деяниях речь Павла к христианам; в конце «немалый плач был у всех, и, падая на выю Павла, целовали его, скорбя особенно от сказанного им слова, что они уже не увидят лица его». Второе послание к Тимофею добавляет: «Трофима же я оставил больного в Милите»."
+    - "В архаическую эпоху Милит был одним из богатейших греческих городов, метрополией колоний вокруг Чёрного моря и родиной Фалеса, Анаксимандра и Анаксимена; персы взяли его в 494 г. до н. э. после морской битвы при Ладе. При римлянах здесь жила иудейская община, и надпись на скамьях театра отводит место иудеям и «богобоязненным», хотя точный смысл её слов читают по-разному. Большой театр и термы Фаустины стоят до сих пор, а рыночные ворота Милита увезли в Пергамский музей в Берлине."
+map:
+  place: a55027d
+  year: "c. AD 57"
+  ref: Acts.20.17
+scripture: [Acts.20.15-Acts.20.17, Acts.20.36-Acts.20.38, 2Tim.4.20]
+sources:
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe article “Miletus” (Strabo, Herodotus, Josephus and the works cited there) and History Globe tour “Paul's third journey”"
+  - "A. M. Greaves, Miletos: A History (2002)"
+  - "P. R. Trebilco, Jewish Communities in Asia Minor (1991), on the theatre inscription of Miletus"
+status: checked

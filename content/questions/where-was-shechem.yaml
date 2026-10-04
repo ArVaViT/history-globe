@@ -1,0 +1,36 @@
+id: where-was-shechem
+question:
+  en: "Where was Shechem?"
+  ru: "Где находился Сихем?"
+answer:
+  en:
+    - "Shechem was the mound of Tell Balata on the eastern edge of today's Nablus in the West Bank, in the pass between Mount Gerizim and Mount Ebal, where the roads of the central hill country cross. The map's point stands on the mound, about 49 km north of Jerusalem in a straight line, 11 km south-east of Samaria and 18 km north of Shiloh; Mount Gerizim's summit is about 1.8 km away and Ebal's 2.4 km. History Globe has an article on Shechem and its history; this answer keeps to where it was."
+    - "It is the first place in Canaan that Genesis names: “Abram passed through the land unto the place of Sichem, unto the plain of Moreh.” Jacob, back from Padan-aram, bought “a parcel of a field” before the city, and there the bones of Joseph were later buried. Joseph's brothers fed their father's flock “in Shechem”, about 78 km north of Hebron in a straight line. Joshua gathered all the tribes to Shechem to renew the covenant; it was one of the cities of refuge, “Shechem in mount Ephraim”; and when “all Israel were come to Shechem” to make Rehoboam king, the kingdom divided there, about 931 BC, and Jeroboam “built Shechem in mount Ephraim, and dwelt therein”."
+    - "The site was identified only in 1903, by Hermann Thiersch: the town had moved to Flavia Neapolis, founded in AD 72 a little to the west, which Arabic made Nablus, while the old mound kept the ruins. German excavations under Ernst Sellin from 1913 and the American Drew–McCormick expedition under G. Ernest Wright from 1956 uncovered the Middle Bronze Age walls, gates and fortress temple. Nearby lie Jacob's well and the village of Askar, usually taken for the Sychar of John's Gospel, about 0.8 km from the mound, and the shrine shown as Joseph's tomb."
+  ru:
+    - "Сихем — это холм Телль-Балата на восточной окраине нынешнего Наблуса на Западном берегу, в перевале между горами Гаризим и Гевал, где сходятся дороги центрального нагорья. Точка карты стоит на холме, примерно в 49 км к северу от Иерусалима по прямой, в 11 км к юго-востоку от Самарии и в 18 км к северу от Силома; вершина Гаризима — примерно в 1,8 км, Гевала — в 2,4 км. В History Globe есть статья о Сихеме и его истории; здесь ответ о том, где он был."
+    - "Это первое место в Ханаане, которое называет Книга Бытия: «И прошел Аврам по земле сей по длине ее до места Сихема, до дубравы Море». Иаков, вернувшись из Месопотамии, купил перед городом «часть поля», и там позднее схоронили кости Иосифа. Братья Иосифа пасли скот отца «в Сихеме», примерно в 78 км к северу от Хеврона по прямой. Иисус Навин собрал в Сихем все колена, чтобы обновить завет; это был один из городов убежища — «Сихем на горе Ефремовой»; и когда «в Сихем пришли все Израильтяне, чтобы воцарить» Ровоама, там около 931 г. до н. э. разделилось царство, а Иеровоам «обстроил… Сихем на горе Ефремовой и поселился в нем»."
+    - "Место опознал лишь в 1903 году Герман Тирш: город с его жителями перешёл в Неаполь (Флавия Неаполис), основанный в 72 г. н. э. немного западнее, — по-арабски Наблус, а древний холм сохранил развалины. Немецкие раскопки Эрнста Зеллина с 1913 года и американская экспедиция Дрю-Маккормик под руководством Дж. Эрнеста Райта с 1956 года открыли стены, ворота и храм-крепость среднего бронзового века. Рядом, примерно в 0,8 км от холма, лежат колодец Иакова и селение Аскар, которое обычно считают евангельским Сихарем, а также святилище, которое показывают как гробницу Иосифа."
+map:
+  place: adf74d4
+  year: "c. 931 BC"
+  ref: 1Kgs.12.1
+scripture:
+  [
+    Gen.12.6,
+    Gen.33.18-Gen.33.19,
+    Gen.37.12-Gen.37.14,
+    Josh.20.7,
+    Josh.24.1,
+    Josh.24.32,
+    1Kgs.12.1,
+    1Kgs.12.25,
+    John.4.5,
+  ]
+sources:
+  - "G. E. Wright, Shechem: The Biography of a Biblical City (1965)"
+  - "E. F. Campbell, Shechem III: The Stratigraphy and Architecture of Shechem/Tell Balâtah (2002)"
+  - "Pliny the Elder, Natural History 5.69; Justin Martyr, First Apology 1"
+  - "History Globe article “Shechem” and History Globe dated events (kingdom-divided c. 931 BC)"
+  - "Straight-line distances between the places' points (Shechem, Jerusalem, Samaria, Shiloh, Hebron, Mount Gerizim, Mount Ebal, Sychar): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

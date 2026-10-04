@@ -1,0 +1,25 @@
+# Overview article (ADR 0007). Mainstream facts only; Geliloth is treated as a landmark on the border, not a town; the word's use in Joshua 22 is explained; no site is chosen.
+id: geliloth
+place: a0c9a06
+title:
+  en: "Geliloth"
+  ru: "Гелилоф"
+body:
+  en:
+    - "Geliloth is a point on the border between Benjamin and Judah, named once in the description of Benjamin's southern line: from En-shemesh the border “went forth toward Geliloth, which is over against the going up of Adummim, and descended to the stone of Bohan the son of Reuben”. The same line, drawn from Judah's side, passes a Gilgal “that is before the going up to Adummim”, so the two names stand for one landmark. Both mean something like “circles”; Geliloth is also the word Joshua uses for the “borders”, or districts, of the Jordan where the eastern tribes built their altar, which the Synodal Bible renders as the neighbourhood of the Jordan, and the record on the map counts those verses too, though most translators read a common noun there."
+    - "The ascent of Adummim is the old road from Jericho up to Jerusalem along the ridge south of Wadi Qelt, named for its red rock, and later the road of the parable of the Good Samaritan. Geliloth lay somewhere on this road, east of En-shemesh and above the Jordan plain: the candidates on the map are Araq ed-Deir, El Khirbeh, Khan el-Ahmar, the ruined monastery of Euthymius by the road, and Tal'at ed-Damm, the Arabic name of the pass itself. It was probably a landmark, perhaps a circle of stones, rather than a town, and no one has identified it."
+    - "The road is now Route 1 from Jerusalem to Jericho and the Dead Sea, past the town of Ma'ale Adumim and the Inn of the Good Samaritan, where a museum of mosaics stands beside the old khan."
+  ru:
+    - "Гелилоф — точка на границе между Вениамином и Иудой, названная один раз в описании южной черты Вениамина: от Ен-Шемеша предел «идет к Гелилофу, который против возвышенности Адуммима, и нисходит к камню Богана, сына Рувимова». Та же черта, проведённая со стороны Иуды, проходит через Галгал, «который против возвышенности Адуммима», так что два имени означают один ориентир. Оба значат примерно «круги»; тем же словом гелилот Иисус Навин называет «окрестности Иордана», где восточные колена поставили жертвенник, и запись на карте считает и эти стихи, хотя большинство переводчиков читают там нарицательное слово."
+    - "Возвышенность Адуммима — старая дорога из Иерихона в Иерусалим по хребту к югу от Вади-Кельт, названная по красной скале, а позже — дорога притчи о добром самарянине. Гелилоф лежал где-то на этой дороге, восточнее Ен-Шемеша и над Иорданской равниной: кандидаты на карте — Арак-эд-Дейр, Эль-Хирбе, Хан-эль-Ахмар, развалины монастыря Евфимия у дороги, и Тальат-эд-Дамм, арабское имя самого перевала. Скорее всего, это был ориентир, может быть круг камней, а не город, и никто его не опознал."
+    - "Дорога теперь — шоссе 1 из Иерусалима в Иерихон и к Мёртвому морю, мимо города Маале-Адумим и Гостиницы доброго самарянина, где рядом со старым ханом стоит музей мозаик."
+scripture:
+  - Josh.15.7
+  - Josh.18.17
+  - Josh.22.10-Josh.22.11
+sources:
+  - "R. G. Boling and G. E. Wright, Joshua (Anchor Bible 6, 1982)"
+  - "Z. Kallai, Historical Geography of the Bible: The Tribal Territories of Israel (1986)"
+  - "F.-M. Abel, Géographie de la Palestine, vol. 2 (1938)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

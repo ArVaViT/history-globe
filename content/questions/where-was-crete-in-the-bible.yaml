@@ -1,0 +1,38 @@
+id: where-was-crete-in-the-bible
+question:
+  en: "Where is Crete in the Bible?"
+  ru: "Где Крит в Библии?"
+answer:
+  en:
+    - "Crete is the long island, some 260 km from east to west, that closes the Aegean Sea on the south, about 1,030 km west of Jerusalem in a straight line from its southern harbour of Fair Havens. The New Testament names it outright: Cretans heard the apostles at Pentecost, Paul's ship to Rome sheltered on its south coast, and Paul left Titus there. The Old Testament probably knows it as Caphtor, the land from which the Philistines came, though that identification is disputed."
+    - "Amos has the Lord say that he brought up the Philistines from Caphtor as he brought Israel out of Egypt, and Jeremiah calls them “the remnant of the country of Caphtor”. Caphtor is usually matched with the Keftiu of Egyptian texts and taken for Crete, but some scholars prefer Cyprus or the coast of Cilicia. Zephaniah's woe on “the nation of the Cherethites”, a people of the Philistine coast, uses a name that the Greek Bible renders as Cretans, and David's bodyguard of Cherethites and Pelethites is often explained the same way."
+    - "In the autumn of AD 59 Paul's ship “sailed under Crete, over against Salmone”, the eastern cape, and “came unto a place which is called The fair havens; nigh whereunto was the city of Lasea”. The crew wanted to winter at Phenice, “an haven of Crete”, about 73 km further west, but the wind Euroclydon caught them and drove them some 945 km to Malta; Paul said afterwards, “ye should have hearkened unto me, and not have loosed from Crete”. The letter to Titus says, “For this cause left I thee in Crete, that thou shouldest... ordain elders in every city”, and quotes a Cretan poet, whom Clement of Alexandria names as Epimenides: “The Cretians are alway liars, evil beasts, slow bellies.” The island is treated more fully in its article."
+  ru:
+    - "Крит — длинный остров, около 260 км с востока на запад, замыкающий Эгейское море с юга, примерно в 1030 км к западу от Иерусалима по прямой от его южной гавани Хорошие Пристани. Новый Завет называет его прямо: критяне слышали апостолов в Пятидесятницу, корабль Павла по пути в Рим укрывался у его южного берега, и Павел оставил там Тита. Ветхий Завет, вероятно, знает его как Кафтор — землю, откуда пришли филистимляне, хотя это отождествление спорно."
+    - "У Амоса Господь говорит, что вывел филистимлян из Кафтора, как Израиля из Египта, а Иеремия называет их «остаток острова Кафтора». Кафтор обычно сопоставляют с Кефтиу египетских текстов и считают Критом, но некоторые учёные предпочитают Кипр или побережье Киликии. Горе, которое Софония возвещает жителям филистимского побережья, в Синодальном переводе прямо обращено «народу Критскому»: еврейское «керетим» греческая Библия передаёт как «критяне», и так же часто объясняют хелефеев из телохранителей Давида."
+    - "Осенью 59 г. н. э. Павел и его спутники, по словам Луки, «подплыли к Криту при Салмоне», восточном мысе, и прибыли «к одному месту, называемому Хорошие Пристани, близ которого был город Ласея». Корабельщики хотели зимовать в Финике, «пристани Критской», примерно в 73 км западнее, но ветер эвроклидон подхватил их и унёс примерно на 945 км, к Мелиту; Павел потом сказал: «надлежало послушаться меня и не отходить от Крита». В послании к Титу сказано: «Для того я оставил тебя в Крите, чтобы ты довершил недоконченное и поставил по всем городам пресвитеров», и приведены слова критского поэта, которого Климент Александрийский называет Эпименидом: «Критяне всегда лжецы, злые звери, утробы ленивые». Подробнее об острове — в статье о нём."
+map:
+  place: a26aa94
+  year: "AD 59"
+  ref: Acts.27.7
+scripture:
+  [
+    Amos.9.7,
+    Jer.47.4,
+    Deut.2.23,
+    Zeph.2.5,
+    2Sam.8.18,
+    Acts.2.11,
+    Acts.27.7-Acts.27.8,
+    Acts.27.12-Acts.27.14,
+    Acts.27.21,
+    Titus.1.5,
+    Titus.1.12,
+  ]
+sources:
+  - "Straight-line distances between the places' points (Fair Havens, Phoenix, Malta, Jerusalem): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe article “Crete” and History Globe tour “Paul's voyage to Rome” (the autumn of AD 59)"
+  - "Septuagint, Zephaniah 2:5 (paroikoi Kreton)"
+  - "Clement of Alexandria, Stromata 1.14 (Epimenides as the prophet of Titus 1:12)"
+  - "J. Strange, Caphtor/Keftiu: A New Investigation (1980)"
+status: checked

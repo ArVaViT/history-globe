@@ -43,7 +43,24 @@ const approxYear = z.string().transform((s, ctx) => {
   }
 });
 
-const localized = z.object({ en: z.string().min(1), ru: z.string().min(1) }).catchall(z.string());
+/**
+ * A text in the languages the code knows: English and Russian always, others as they are
+ * translated. Any other key (a typo like `ua:`) is refused rather than dropped.
+ */
+function inLanguages<T extends z.ZodType>(t: T) {
+  return z.strictObject({ en: t, ru: t, uk: t.optional(), de: t.optional() }).transform(
+    (o) =>
+      Object.fromEntries(Object.entries(o).filter(([, v]) => v !== undefined)) as {
+        en: z.output<T>;
+        ru: z.output<T>;
+      } & Record<string, z.output<T>>,
+  );
+}
+/** Every language of a text has as many paragraphs as the English. */
+const sameParagraphs = (b: Readonly<Record<string, readonly unknown[] | undefined>>) =>
+  Object.values(b).every((p) => p === undefined || p.length === b.en?.length);
+
+const localized = inLanguages(z.string().min(1));
 
 export const PlaceNamesFile = z.strictObject({
   places: z.array(
@@ -391,11 +408,9 @@ export const ArticleFile = z.strictObject({
   id: z.string().regex(/^[a-z0-9-]+$/),
   place: z.string().regex(/^a[0-9a-f]{6}$/),
   title: localized,
-  body: z
-    .strictObject({ en: paragraphs, ru: paragraphs })
-    .refine((b) => b.en.length === b.ru.length, {
-      message: "the Russian text has as many paragraphs as the English",
-    }),
+  body: inLanguages(paragraphs).refine(sameParagraphs, {
+    message: "every language has as many paragraphs as the English",
+  }),
   scripture: z.array(osis).min(1),
   sources: z.array(z.string().min(3)).min(1),
   status: z.enum(["checked", "reviewed"]),
@@ -413,14 +428,9 @@ export type ArticleFile = z.output<typeof ArticleFile>;
 export const QuestionFile = z.strictObject({
   id: z.string().regex(/^[a-z0-9-]+$/),
   question: localized,
-  answer: z
-    .strictObject({
-      en: z.array(z.string().min(40).max(900)).min(1).max(4),
-      ru: z.array(z.string().min(40).max(900)).min(1).max(4),
-    })
-    .refine((b) => b.en.length === b.ru.length, {
-      message: "the Russian answer has as many paragraphs as the English",
-    }),
+  answer: inLanguages(z.array(z.string().min(40).max(900)).min(1).max(4)).refine(sameParagraphs, {
+    message: "every language has as many paragraphs as the English",
+  }),
   /** The view the page's button opens: a place, a year, a chapter's places. */
   map: z
     .strictObject({
@@ -467,7 +477,13 @@ export const AncientAuthorsFile = z.strictObject({
         /** As the standard edition numbers it: book.section (Josephus by Niese: "5.136-247"). */
         passage: z.string().regex(/^[0-9][0-9a-z.,:;–\- ]*$/),
         url: z.url({ protocol: /^https$/ }),
-        note: z.object({ en: z.string().min(20).max(320), ru: z.string().min(20).max(360) }),
+        // Russian and Ukrainian run longer than English for the same summary.
+        note: z.strictObject({
+          en: z.string().min(20).max(320),
+          ru: z.string().min(20).max(360),
+          uk: z.string().min(20).max(360).optional(),
+          de: z.string().min(20).max(360).optional(),
+        }),
       }),
     )
     .min(1),

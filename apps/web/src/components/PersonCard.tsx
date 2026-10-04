@@ -1,10 +1,10 @@
 import {
   canonicalPosition,
   formatCentury,
-  formatRef,
   medianYear,
   type ChapterYears,
   type Locale,
+  formatRefOr,
 } from "@hg/model";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "../i18n";
@@ -310,7 +310,7 @@ export function PersonCard({
                 >
                   <span className="font-serif text-[15.5px] text-ink">{placeName(p.place)}</span>
                   <span className="shrink-0 text-[12px] text-ink-soft tabular-nums">
-                    {verseLabel(p.verse, locale)}
+                    {formatRefOr(p.verse, locale)}
                   </span>
                 </button>
               </li>
@@ -331,14 +331,6 @@ export function PersonCard({
       <div className="px-5 pt-3 text-[11px] text-ink-soft">{t("person.credit")}</div>
     </Panel>
   );
-}
-
-function verseLabel(osis: string, locale: Locale): string {
-  try {
-    return formatRef(osis, locale);
-  } catch {
-    return osis;
-  }
 }
 
 /** Where a verse stands in the canon, for the order of the text; unknown ones last. */

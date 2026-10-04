@@ -1,0 +1,26 @@
+id: how-far-jerusalem-to-nazareth
+question:
+  en: "How far is Nazareth from Jerusalem?"
+  ru: "Как далеко от Иерусалима до Назарета?"
+answer:
+  en:
+    - "About 105 km in a straight line, Nazareth lying north of Jerusalem in the hills of Lower Galilee; by the Roman roads on the map the way is about 146 km, four or five days on foot. Luke has the family of Jesus make the journey every spring for Passover, and it is the setting of the one story of his boyhood: the Gospel does not say how long it took, only that on the way home they “went a day's journey” before they missed him."
+    - "Luke tells it plainly: “Now his parents went to Jerusalem every year at the feast of the passover. And when he was twelve years old, they went up to Jerusalem after the custom of the feast.” Galileans travelled in caravans of kin and neighbours, and Josephus reckons three days for those who hurried through Samaria. In such a company the parents, “supposing him to have been in the company”, walked a whole day before they “sought him among their kinsfolk and acquaintance”; they turned back, and “after three days they found him in the temple, sitting in the midst of the doctors”. Then “he went down with them, and came to Nazareth”. The boy of twelve gives the map its year, AD 8, counted from the conventional birth in 5 BC."
+    - "Two roads joined the towns. The ridge road through Samaria was the direct one: Jacob's well at Sychar lies roughly half way, about 54 km from Nazareth and 49 km from Jerusalem in a straight line, and Luke tells of a Samaritan village that would not receive Jesus “because his face was as though he would go to Jerusalem”. The other road went down to the Jordan valley, about 95 km to Jericho, and climbed 22 km more to the city, both in a straight line. Luke also has Joseph go up “from Galilee, out of the city of Nazareth” to Bethlehem, about 111 km in a straight line, before the birth. The roads, the days on foot and the distances to Capernaum and the lake are set out in the question on Jerusalem and Galilee."
+  ru:
+    - "Около 105 км по прямой: Назарет лежит к северу от Иерусалима, в горах Нижней Галилеи; по римским дорогам на карте путь составляет около 146 км — четыре-пять дней пешком. Лука пишет, что семья Иисуса ходила этим путём каждую весну на Пасху, и на нём разворачивается единственный рассказ о Его отрочестве: Евангелие не говорит, сколько длился путь, только что на обратной дороге родители прошли «дневной путь», прежде чем хватились Его."
+    - "Лука рассказывает просто: «Каждый год родители Его ходили в Иерусалим на праздник Пасхи. И когда Он был двенадцати лет, пришли они также по обычаю в Иерусалим на праздник». Галилеяне шли караванами родни и соседей, а Иосиф Флавий считает три дня для тех, кто спешил через Самарию. В таком караване родители, думая, «что Он идет с другими», целый день шли, прежде чем «стали искать Его между родственниками и знакомыми»; они вернулись, и «через три дня нашли Его в храме, сидящего посреди учителей». Потом «Он пошел с ними и пришел в Назарет». Двенадцатилетний Отрок даёт карте её год — 8 г. н. э., считая от условного года рождения, 5 г. до н. э."
+    - "Города соединяли две дороги. Прямая шла по хребту через Самарию: колодец Иакова у Сихаря лежит примерно на полпути, в 54 км от Назарета и в 49 км от Иерусалима по прямой, и Лука рассказывает о самарянском селении, где Иисуса не приняли, «потому что Он имел вид путешествующего в Иерусалим». Другая дорога спускалась в долину Иордана, около 95 км до Иерихона, и поднималась ещё на 22 км к городу — оба отрезка по прямой. Ещё до Рождества Иосиф, по Луке, пошёл «из Галилеи, из города Назарета» в Вифлеем — около 111 км по прямой. Дороги, дни пути и расстояния до Капернаума и озера разобраны в вопросе об Иерусалиме и Галилее."
+map:
+  place: af5884f
+  year: "AD 8"
+  ref: Luke.2.42
+scripture:
+  [Luke.1.26, Luke.2.4, Luke.2.39, Luke.2.41-Luke.2.46, Luke.2.51, Luke.9.51-Luke.9.53, John.1.46]
+sources:
+  - "Straight-line distances between the places' points (Nazareth, Jerusalem, Sychar, Jericho, Bethlehem): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Length along the Roman roads as given in the History Globe question on Jerusalem and Galilee: Itiner-e (de Soto, Pažout, Brughmans et al. 2025)"
+  - "History Globe tour “The childhood of Jesus, after Luke” (5 BC for the birth, AD 8 for the visit at twelve)"
+  - "Josephus, Life 269 (three days from Galilee to Jerusalem through Samaria)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008)"
+status: checked

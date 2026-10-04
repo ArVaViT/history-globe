@@ -1,0 +1,19 @@
+# Overview article (ADR 0007). Mainstream facts only; a wilderness station known only by name: the placement on the map is named as a guess.
+id: mithkah
+place: aa5f658
+title:
+  en: "Mithkah"
+  ru: "Мифка"
+body:
+  en:
+    - "Mithkah, Mithcah in the King James Version, is a camp of Israel in the wilderness, named only in the list of stations: “And they removed from Tarah, and pitched in Mithcah. And they went from Mithcah, and pitched in Hashmonah.” It belongs to the long run of stations between Hazeroth and Ezion-gaber of which no events are told. The name means “sweetness”, and readers have guessed at sweet water there, but the text says nothing of it."
+    - "Its site is unknown. The map draws only a wide circle, within some 50 km of its guess for Hashmonah, in the north-eastern Sinai and the Negev highlands, and gives a point along Wadi Abu Taqiya as a second, weaker guess. Since even the course of this part of the route is reconstructed, the map can show no more than the general area."
+  ru:
+    - "Мифка — стан Израиля в пустыне, известный только по перечню станов: «И отправились из Тараха и расположились станом в Мифке. И отправились из Мифки и расположились станом в Хашмон». Она входит в длинный ряд станов между Асирофом и Ецион-Гавером, о которых не рассказано никаких событий. Имя значит «сладость», и читатели догадывались о сладкой воде в этом месте, но текст об этом молчит."
+    - "Место её неизвестно. На карте очерчен лишь широкий круг радиусом около 50 км вокруг предполагаемой Хашмоны на северо-востоке Синая и в Негевском нагорье и даёт вторую, более слабую догадку — точку вдоль Вади Абу-Такия. Поскольку восстанавливается предположительно даже направление этой части пути, карта может показать лишь общую область."
+scripture:
+  - Num.33.28-Num.33.29
+sources:
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "B. A. Levine, Numbers 21-36 (Anchor Bible 4A, 2000)"
+status: checked

@@ -1,0 +1,24 @@
+id: where-was-samaria
+question:
+  en: "Where was Samaria?"
+  ru: "Где находилась Самария?"
+answer:
+  en:
+    - "Samaria was both a city and a region. The city stood on a lone hill in the central highlands, at today's Sebastia in the West Bank, about 56 km north of Jerusalem in a straight line and 11 km north-west of Shechem; the map point stands on it. King Omri “bought the hill Samaria of Shemer for two talents of silver” about 880 BC, built a city on it and made it the capital of the northern kingdom, and the name passed from the city to the land around it, the hill country of Ephraim and Manasseh between Judea and Galilee."
+    - "In the time of Jesus Samaria was the belt of hills between Galilee, which began at the plain of Jezreel, and Judea, which began north of Bethel; its people were the Samaritans, whose holy mountain was Gerizim above Shechem. The direct road from Galilee to Jerusalem crossed it, so John says of Jesus, “he must needs go through Samaria”, and brings him “to a city of Samaria, which is called Sychar”, about 11 km from the old capital. Luke has him pass “through the midst of Samaria and Galilee”, which the Russian Synodal Bible renders as between the two, along their border."
+    - "Acts sends the witnesses “in Jerusalem, and in all Judæa, and in Samaria”, and Philip “went down to the city of Samaria”, which may be Herod's rebuilt Sebaste or, as the Russian Synodal Bible takes it, a city of the region. Today Israel uses the name for the northern West Bank around Nablus, Jenin and Tulkarm."
+  ru:
+    - "Самария — и город, и область. Город стоял на отдельном холме в центральном нагорье, на месте нынешней Себастии на Западном берегу, примерно в 56 км к северу от Иерусалима по прямой и в 11 км к северо-западу от Сихема; на нём и стоит точка карты. Около 880 г. до н. э. «купил Амврий гору Семерон у Семира за два таланта серебра», построил на ней город и сделал его столицей Северного царства, а имя перешло от города на окрестную землю — горы Ефрема и Манассии между Иудеей и Галилеей."
+    - "Во времена Иисуса Самария была полосой гор между Галилеей, начинавшейся у Изреельской равнины, и Иудеей, начинавшейся к северу от Вефиля; её жители были самаряне, чьей священной горой был Гаризим над Сихемом. Прямая дорога из Галилеи в Иерусалим шла через неё, и Иоанн пишет об Иисусе: «Надлежало же Ему проходить через Самарию», и Он приходит «в город Самарийский, называемый Сихарь», примерно в 11 км от древней столицы. У Луки Он «проходил между Самариею и Галилеею», то есть по их границе; в английской Библии короля Иакова — через середину Самарии и Галилеи."
+    - "Книга Деяний посылает свидетелей «в Иерусалиме, и во всей Иудее, и Самарии», а Филипп «пришел в город Самарийский» — может быть, в отстроенную Иродом Севастию, а может быть, в другой город области, как понимает это Синодальный перевод. Сегодня этим именем в Израиле называют север Западного берега вокруг Наблуса, Дженина и Тулькарма."
+map:
+  place: a041bb3
+  year: "AD 30"
+  ref: John.4.4
+scripture: [1Kgs.16.24, John.4.4-John.4.5, John.4.9, Luke.17.11, Acts.1.8, Acts.8.5]
+sources:
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "J. W. Crowfoot, K. M. Kenyon and E. L. Sukenik, The Buildings at Samaria (1942)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008)"
+  - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. G. Vermes and F. Millar, vol. 1 (1973)"
+status: checked

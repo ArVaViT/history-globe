@@ -1,0 +1,27 @@
+# Overview article (ADR 0007). Mainstream facts only; the southern basin is given as the usual view and the northern alternative is named; the events of Genesis 14 are not dated.
+id: valley-of-siddim
+place: a4a5cce
+title:
+  en: "Valley of Siddim"
+  ru: "Сиддим"
+body:
+  en:
+    - "The vale of Siddim is the battlefield of Genesis 14, “which is the salt sea”: the writer explains that the valley of his story lay where the Dead Sea was in his own day. Most readers have therefore sought it in the shallow southern basin of the sea, south of the Lisan peninsula, which was only a few metres deep and is known from geological study to have been dry land in some periods and flooded in others. The “slimepits” of the valley fit the place: the Dead Sea was famous in antiquity for the lumps of bitumen that rose from its bed, Josephus calls it Lake Asphaltitis, and Diodorus describes the Nabateans harvesting the asphalt from rafts and selling it to Egypt. The meaning of the name Siddim is unknown. Those who put Sodom north of the Dead Sea, at Tall el-Hammam, look for the valley there instead; the question is tied to that of the cities."
+    - "“All these were joined together in the vale of Siddim, which is the salt sea.” Four kings from the east, led by Chedorlaomer of Elam, had held the cities of the plain for twelve years; in the fourteenth they came back, sweeping down the east of the Jordan and round by the south, and “there went out the king of Sodom, and the king of Gomorrah, and the king of Admah, and the king of Zeboiim, and the king of Bela (the same is Zoar;) and they joined battle with them in the vale of Siddim”. The five lost: “the vale of Siddim was full of slimepits; and the kings of Sodom and Gomorrah fled, and fell there; and they that remained fled to the mountain”. The victors took the goods of Sodom and Gomorrah and Lot with them, and Abram pursued them to Dan and beyond Damascus, brought Lot back, and met Melchizedek on his return. The valley is never mentioned again."
+    - "The southern basin today has dried out as the sea has fallen, and is largely occupied by the evaporation ponds of the potash works of Israel and Jordan; Mount Sodom, a ridge of rock salt, stands on its western shore."
+  ru:
+    - "Долина Сиддим — поле битвы 14-й главы Бытия, «где ныне море Соленое»: рассказчик поясняет, что долина его повествования лежала там, где в его дни было Мёртвое море. Поэтому большинство читателей искали её в мелком южном бассейне моря, южнее полуострова Лисан, глубина которого была всего несколько метров и который, как показали геологи, в одни эпохи был сушей, в другие — заливался водой. «Смоляные ямы» долины подходят к месту: Мёртвое море славилось в древности кусками битума, всплывавшими со дна, Иосиф Флавий зовёт его Асфальтовым озером, а Диодор описывает, как набатеи собирали асфальт с плотов и продавали в Египет. Значение имени Сиддим неизвестно. Те, кто помещает Содом к северу от Мёртвого моря, в Талль-эль-Хаммаме, ищут долину там; вопрос связан с вопросом о городах."
+    - "«Все сии соединились в долине Сиддим, где ныне море Соленое». Четыре царя с востока во главе с Кедорлаомером Еламским двенадцать лет держали города долины; на четырнадцатый они вернулись, пройдя восточнее Иордана и обогнув с юга, «и вышли царь Содомский, царь Гоморрский, царь Адмы, царь Севоимский и царь Белы, которая есть Сигор; и вступили в сражение с ними в долине Сиддим». Пятеро проиграли: «В долине же Сиддим было много смоляных ям. И цари Содомский и Гоморрский, обратившись в бегство, упали в них, а остальные убежали в горы». Победители увели имущество Содома и Гоморры и Лота с ними, а Аврам гнался за ними до Дана и за Дамаск, вернул Лота и на обратном пути встретил Мелхиседека. Больше долина не упоминается."
+    - "Южный бассейн сегодня обсох с падением уровня моря и по большей части занят испарительными прудами калийных заводов Израиля и Иордании; на его западном берегу стоит гора Содом — гряда каменной соли."
+scripture:
+  - Gen.14.3
+  - Gen.14.8-Gen.14.12
+  - Gen.14.14-Gen.14.18
+sources:
+  - "Josephus, Jewish War 4.476-485 (Lake Asphaltitis and its bitumen)"
+  - "Diodorus Siculus, Library 2.48; 19.98-99 (the harvest of asphalt)"
+  - "Strabo, Geography 16.2.42-44"
+  - "D. Neev and K. O. Emery, The Destruction of Sodom, Gomorrah, and Jericho: Geological, Climatological, and Archaeological Background (1995)"
+  - "A. Frumkin and Y. Elitzur, 'Historic Dead Sea Level Fluctuations Calibrated with Geological and Archaeological Evidence', Quaternary Research 57 (2002)"
+  - "E. A. Speiser, Genesis (Anchor Bible, 1964)"
+status: checked

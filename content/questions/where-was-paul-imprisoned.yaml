@@ -1,0 +1,41 @@
+id: where-was-paul-imprisoned
+question:
+  en: "Where was Paul imprisoned?"
+  ru: "Где Павел был в заключении?"
+answer:
+  en:
+    - "Acts names four places: a night in the town prison of Philippi in Macedonia, about AD 49/50; the Roman barracks of the Antonia fortress in Jerusalem after his arrest in 57; two years in Herod's praetorium at Caesarea, 57–59; and two years under guard in a rented house in Rome, about 60–62. The map point stands on Caesarea, where he was held longest, 87 km from Jerusalem in a straight line. Paul himself says he had been “in prisons more frequent” before most of these, so there were others that Acts does not tell, and Second Timothy speaks of a last imprisonment in Rome."
+    - "At Philippi the magistrates had Paul and Silas beaten and “cast them into prison”; the jailor “thrust them into the inner prison, and made their feet fast in the stocks”, until at midnight “there was a great earthquake, so that the foundations of the prison were shaken”. In Jerusalem the tribune had him “carried into the castle”, the Antonia at the north-west corner of the Temple Mount, and took him back there when the council nearly tore him apart. Then, under escort of two hundred soldiers, seventy horsemen and two hundred spearmen, he was sent by night to Caesarea, where Felix “commanded him to be kept in Herod's judgment hall”, and “after two years” left him bound for his successor Festus. In Rome “Paul was suffered to dwell by himself with a soldier that kept him”, and “dwelt two whole years in his own hired house”."
+    - "Philippi is about 1,415 km from Jerusalem, Caesarea about 2,235 km from Rome. Herod's palace at Caesarea, on the promontory beside the theatre, has been excavated and is usually taken for the praetorium where Paul was held. The letters written “in my bonds”, Philippians, Colossians, Philemon and Ephesians, are traditionally placed in Rome, but many scholars put them in Caesarea or in an imprisonment at Ephesus that Acts does not mention, where Paul says he “fought with beasts”; this is discussed in the question on where Paul wrote his letters. Clement of Rome, about AD 96, says Paul was in chains seven times. The Mamertine prison in the Forum is shown as the place of his last confinement only by a later tradition."
+  ru:
+    - "Деяния называют четыре места: ночь в городской темнице Филипп в Македонии, около 49/50 г. н. э.; римскую казарму в крепости Антония в Иерусалиме после ареста в 57 г.; два года в Иродовой претории в Кесарии, 57–59 гг.; и два года под стражей в наёмном доме в Риме, около 60–62 гг. Точка карты стоит на Кесарии, где его держали дольше всего, в 87 км от Иерусалима по прямой. Сам Павел пишет, что ещё до большинства этих заключений был «более в темницах», так что были и другие, о которых Деяния не рассказывают, а Второе послание к Тимофею говорит о последнем заключении в Риме."
+    - "В Филиппах начальники велели бить Павла и Силу и «ввергли в темницу»; страж «ввергнул их во внутреннюю темницу и ноги их забил в колоду», пока около полуночи не «сделалось великое землетрясение, так что поколебалось основание темницы». В Иерусалиме тысяченачальник «повелел вести его в крепость» — Антонию на северо-западном углу Храмовой горы — и снова взял его туда, когда синедрион едва не растерзал его. Потом под охраной двухсот пеших воинов, семидесяти конных и двухсот стрелков его ночью отправили в Кесарию, где Феликс «повелел ему быть под стражею в Иродовой претории» и «по прошествии двух лет» оставил его в узах преемнику Фесту. В Риме «Павлу позволено жить особо с воином, стерегущим его», и «жил Павел целых два года на своем иждивении»."
+    - "Филиппы лежат примерно в 1415 км от Иерусалима, Кесария — в 2235 км от Рима. Дворец Ирода в Кесарии, на мысу рядом с театром, раскопан, и его обычно считают той преторией, где держали Павла. Послания, написанные «в узах», — к Филиппийцам, Колоссянам, Филимону и Ефесянам — по преданию относят к Риму, но многие учёные помещают их в Кесарию или в заключение в Ефесе, о котором Деяния молчат, а Павел пишет, что «боролся со зверями в Ефесе»; об этом — в вопросе о том, где Павел писал свои послания. Климент Римский около 96 г. говорит, что Павел семь раз был в оковах. Мамертинскую тюрьму на Форуме считает местом его последнего заключения лишь позднее предание."
+map:
+  place: a58735e
+  year: "AD 58"
+  ref: Acts.23.35
+scripture:
+  [
+    Acts.16.23-Acts.16.26,
+    Acts.21.34,
+    Acts.22.24,
+    Acts.23.10,
+    Acts.23.23,
+    Acts.23.35,
+    Acts.24.27,
+    Acts.28.16,
+    Acts.28.30,
+    2Cor.11.23,
+    1Cor.15.32,
+    Phil.1.13,
+    2Tim.1.17,
+  ]
+sources:
+  - "Straight-line distances between the places' points (Philippi, Jerusalem, Caesarea, Rome): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe tours “Paul's arrest and trials” and “Paul's voyage to Rome” (the arrest c. AD 57, Festus c. 59, Rome c. 60) and History Globe question on where Paul wrote his letters"
+  - "1 Clement 5 (Paul seven times in chains)"
+  - "B. Rapske, The Book of Acts and Paul in Roman Custody (1994)"
+  - "G. S. Duncan, St. Paul's Ephesian Ministry (1929), the case for an Ephesian imprisonment"
+  - "K. G. Holum et al., King Herod's Dream: Caesarea on the Sea (1988)"
+status: checked

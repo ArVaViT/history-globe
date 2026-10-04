@@ -1,0 +1,26 @@
+id: where-was-beersheba
+question:
+  en: "Where was Beersheba, the well of Abraham?"
+  ru: "Где находилась Вирсавия, колодец Авраама?"
+answer:
+  en:
+    - "Beersheba lay in the northern Negev, on the edge of the desert, where wells along a broad wadi allowed settled life; the town of the kings of Judah is Tel Beer Sheva, a mound about 4 km east of the modern city of Beersheba in Israel, and the map point stands on it. It is about 70 km south-south-west of Jerusalem and 40 km south-west of Hebron in a straight line. The name is explained in Genesis as “well of the oath”; the Hebrew can also mean “well of seven”."
+    - "The patriarchs' stories turn on its wells. Abraham gave Abimelech seven ewe lambs as witness that he had dug a well, “Wherefore he called that place Beer-sheba; because there they sware both of them”, and he “planted a grove in Beer-sheba, and called there on the name of the LORD, the everlasting God”. Isaac's servants found water there, “therefore the name of the city is Beer-sheba unto this day”. “Jacob went out from Beer-sheba, and went toward Haran”, and in old age he offered sacrifices there on his way down to Egypt. Later Elijah, fleeing from Jezebel, “came to Beer-sheba, which belongeth to Judah, and left his servant there” before going on into the desert."
+    - "Yohanan Aharoni's excavations from 1969 showed that the mound was first settled only early in the Iron Age, long after the usual dates for the patriarchs; from about the tenth century BC (the date is disputed) it was a small planned town of Judah with a wall, a gate and a large well outside it, burned at the end of the eighth century. So the wells of Genesis are sought in the valley rather than on the mound, and in the old quarter of the modern city a well is shown as Abraham's. The phrase “from Dan to Beersheba”, the whole land from north to south, is the subject of a separate question."
+  ru:
+    - "Вирсавия лежала на севере Негева, у края пустыни, где колодцы вдоль широкого русла позволяли жить оседло; город иудейских царей — это Тель-Беэр-Шева, холм примерно в 4 км к востоку от нынешнего города Беэр-Шева в Израиле, и точка карты стоит на нём. Вирсавия лежит примерно в 70 км к юго-юго-западу от Иерусалима и в 40 км к юго-западу от Хеврона по прямой. Книга Бытия объясняет имя как «колодец клятвы»; по-еврейски оно может значить и «колодец семи»."
+    - "Истории патриархов вращаются вокруг её колодцев. Авраам дал Авимелеху семь агниц в свидетельство, что он выкопал колодезь: «Потому и назвал он сие место: Вирсавия, ибо тут оба они клялись», и «насадил Авраам при Вирсавии рощу и призвал там имя Господа, Бога вечного». Рабы Исаака нашли там воду: «Посему имя городу тому Беэршива (Вирсавия) до сего дня». «Иаков же вышел из Вирсавии и пошел в Харран», а в старости, идя в Египет, принёс здесь жертвы. Позже Илия, спасаясь от Иезавели, «пришел в Вирсавию, которая в Иудее, и оставил отрока своего там», прежде чем уйти в пустыню."
+    - "Раскопки Иоханана Ахарони с 1969 года показали, что холм впервые заселили лишь в начале железного века, намного позже обычных дат патриархов; примерно с X века до н. э. (дата спорна) здесь стоял небольшой спланированный город Иудеи со стеной, воротами и большим колодцем за ними, сгоревший в конце VIII века. Поэтому колодцы книги Бытия ищут в долине, а не на холме, а в старом квартале нынешнего города показывают колодец Авраама. Выражению «от Дана до Вирсавии» — вся земля с севера на юг — посвящён отдельный вопрос."
+map:
+  place: ad2f6c2
+  year: "1900 BC"
+  ref: Gen.21.31
+scripture:
+  [Gen.21.28-Gen.21.33, Gen.26.32-Gen.26.33, Gen.28.10, Gen.46.1, 1Kgs.19.3, Amos.5.5, Neh.11.27]
+sources:
+  - "Straight-line distances between the places' points (Beersheba, Jerusalem, Hebron): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe article “Beersheba” and History Globe question “How far is it from Dan to Beersheba?”"
+  - "Y. Aharoni (ed.), Beer-Sheba I: Excavations at Tel Beer-Sheba, 1969-1971 Seasons (1973)"
+  - "Z. Herzog and L. Singer-Avitz, Beer-Sheba III (2016)"
+  - "UNESCO World Heritage List, Biblical Tels: Megiddo, Hazor, Beer Sheba, inscribed 2005"
+status: checked

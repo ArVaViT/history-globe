@@ -1,4 +1,5 @@
-import { medianYear, yearOfRef, type ChapterYears } from "@hg/model";
+import { translate } from "./i18n";
+import { medianYear, yearOfRef, type ChapterYears, LOCALES } from "@hg/model";
 import type { LonLat, PlaceInfo } from "@hg/core";
 
 type Words = { en: string; ru: string };
@@ -51,7 +52,11 @@ export function lessonTour(
       30,
     title: lessonTitle(search)
       ? { en: lessonTitle(search), ru: lessonTitle(search) }
-      : { en: "Your lesson", ru: "Ваш урок" },
+      : {
+          ...Object.fromEntries(LOCALES.map((l) => [l, translate(l, "lesson.default_title")])),
+          en: translate("en", "lesson.default_title"),
+          ru: translate("ru", "lesson.default_title"),
+        },
     stops,
   };
 }

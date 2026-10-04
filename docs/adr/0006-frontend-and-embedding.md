@@ -30,6 +30,9 @@ data is public anyway, so the package buys no auth advantage.
   Greek), Golos Text for UI, Noto Serif Hebrew.
 - **i18n**: i18next 26 with typed keys and CI key coverage; locales `en`, `ru`, `uk`, `de`.
   UI strings live in i18n files; place names and articles live in data.
+  _As built (2026-10-04), superseding this line:_ no i18next — a small `t()` of our own
+  over one JSON file per language (`apps/web/src/i18n`), its keys kept equal across
+  languages by a test; locales `en` and `ru`, more to come together.
 - **Accessibility**: WCAG 2.2 AA. The keyboard and screen-reader path is a visible list of
   places; the slider announces years in words; reduced-motion and no-WebGL modes.
 

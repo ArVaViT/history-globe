@@ -1,0 +1,22 @@
+# Overview article (ADR 0007). Mainstream facts only; the city of an Edomite king, named in one list; its site is unknown and the app's candidates are given without choosing.
+id: pau
+place: a880de2
+title:
+  en: "Pau"
+  ru: "Пау"
+body:
+  en:
+    - "Pau, written Pai in Chronicles, was the city of Hadar (or Hadad), the last of the kings who “reigned in the land of Edom, before there reigned any king over the children of Israel”. Genesis says of him: “Hadar reigned in his stead: and the name of his city was Pau; and his wife's name was Mehetabel, the daughter of Matred, the daughter of Mezahab”, and Chronicles repeats the list. Almost every king in it is tied to a town of his own, and Pau is known only from this line."
+    - "Its site is unknown. The map marks a point along Wadi Fai, south-west of the Dead Sea, on the strength of the name, and also the possibility that the town is Beth-peor, since the Greek Bible reads the name as Phogor. Neither is more than a guess, and no inscription or later writer mentions Pau."
+  ru:
+    - "Пау — город Гадара (или Адада), последнего из царей, которые царствовали «в земле Едома, прежде царствования царей у сынов Израилевых». Книга Бытия говорит о нём: «воцарился по нем Гадар сын Варадов; имя городу его Пау; имя жене его Мегетавеель, дочь Матреды, сына Мезагава», а Паралипоменон повторяет этот список. Почти каждый царь в нём связан со своим городом, и Пау известен только по этой строке."
+    - "Местоположение неизвестно. Карта отмечает точку вдоль Вади Фай к юго-западу от Мёртвого моря, по созвучию имени, а также возможность, что это Беф-Фегор, поскольку греческая Библия читает имя как Фогор. И то и другое — не более чем догадка, и ни одна надпись, ни один позднейший писатель Пау не упоминают."
+scripture:
+  - Gen.36.31
+  - Gen.36.39
+  - 1Chr.1.50
+sources:
+  - "Septuagint, Genesis 36:39"
+  - "J. R. Bartlett, Edom and the Edomites (1989)"
+  - "C. Westermann, Genesis 12-36: A Commentary (1985)"
+status: checked

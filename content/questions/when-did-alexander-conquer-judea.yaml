@@ -1,0 +1,29 @@
+# Draft question. Alexander's visit to Jerusalem in Josephus is given as the legend most historians take it for.
+id: when-did-alexander-conquer-judea
+question:
+  en: "When did Alexander the Great conquer Judea?"
+  ru: "Когда Александр Македонский завоевал Иудею?"
+answer:
+  en:
+    - "In 332 BC. After defeating Darius III at Issus in November 333, Alexander marched down the coast of Syria and Phoenicia, took Tyre after a siege of seven months and Gaza after two more, and went on into Egypt; Judea, in the hills between the two, passed to him with the rest of the Persian province without any battle that the sources record. The map stands at Tyre in 332 BC. Tyre lies about 166 km north of Jerusalem in a straight line and Gaza about 79 km to the south-west."
+    - "The Greek and Roman historians of Alexander, Arrian, Diodorus and Curtius, do not mention the Jews at all. Josephus tells that while Tyre was besieged Alexander demanded help from the high priest Jaddua, who refused for his oath to Darius, and that after Gaza the king came up to Jerusalem, where Jaddua met him in his vestments, Alexander bowed before the Name on the priest's mitre and was shown the book of Daniel foretelling that a Greek would destroy the Persian empire. Most historians take the story for a legend of a later age; what is secure is that Samaria revolted against Alexander's governor Andromachus in 331 and was punished, as Curtius records, and the papyri of fugitives found in a cave of Wadi ed-Daliyeh in 1962 fit that account, while Judea stayed quiet and kept its laws."
+    - "Daniel's visions were read of these years: the he goat that “came from the west on the face of the whole earth, and touched not the ground” and broke the two horns of the ram, “the kings of Media and Persia”; the angel explains that “the rough goat is the king of Grecia: and the great horn that is between his eyes is the first king”, and that when the great horn is broken four rise in its place, as Alexander's empire was divided among his generals after his death at Babylon in 323 BC. Many commentators also read Zechariah's oracle against Tyre, of which he says, “he will smite her power in the sea”, and against Gaza, where “the king shall perish”, as a picture of the march of 332, though others date the chapter earlier. Judea then belonged to the Ptolemies of Egypt from 301 BC and passed to the Seleucids after the battle of Panium in 200 BC."
+  ru:
+    - "В 332 г. до н. э. Разбив Дария III при Иссе в ноябре 333 г., Александр прошёл вдоль берега Сирии и Финикии, взял Тир после семимесячной осады и Газу ещё через два месяца и двинулся в Египет; Иудея, в горах между ними, перешла к нему вместе с остальной персидской провинцией без какого-либо сражения, о котором сообщали бы источники. Карта стоит на Тире в 332 г. до н. э. Тир лежит примерно в 166 км к северу от Иерусалима по прямой, Газа — в 79 км к юго-западу."
+    - "Греческие и римские историки Александра — Арриан, Диодор, Курций — об иудеях вовсе не упоминают. Иосиф Флавий рассказывает, что во время осады Тира Александр потребовал помощи у первосвященника Иаддуя, тот отказал ради присяги Дарию, а после Газы царь поднялся в Иерусалим, где Иаддуй встретил его в облачении; Александр поклонился Имени на кидаре первосвященника, и ему показали книгу Даниила, предрекшую, что грек сокрушит Персидскую державу. Большинство историков считают рассказ легендой более позднего времени; достоверно же то, что Самария в 331 г. восстала против наместника Александра Андромаха и была наказана, как сообщает Курций, и с этим согласуются папирусы беглецов, найденные в 1962 году в пещере Вади-эд-Далие, а Иудея осталась спокойной и сохранила свои законы."
+    - "Видения Даниила читали об этих годах: козёл («с запада шел козел по лицу всей земли, не касаясь земли») сломил оба рога овна — «цари Мидийский и Персидский»; ангел объясняет, что «козел косматый — царь Греции, а большой рог, который между глазами его, это первый ее царь», и что, когда большой рог сломится, на его место выйдут четыре, — как держава Александра была поделена между его полководцами после его смерти в Вавилоне в 323 г. до н. э. Многие толкователи читают и пророчество Захарии о Тире, чью силу Господь «поразит… в море», и о Газе, где «не станет царя», как картину похода 332 года, хотя другие датируют главу раньше. Затем Иудея принадлежала египетским Птолемеям с 301 г. до н. э. и после битвы при Панионе в 200 г. до н. э. перешла к Селевкидам."
+map:
+  place: a160272
+  year: "332 BC"
+  ref: Zech.9.4
+scripture:
+  [Dan.8.5-Dan.8.8, Dan.8.20-Dan.8.21, Dan.11.3-Dan.11.4, Dan.7.6, Zech.9.3-Zech.9.5, Zech.9.8]
+sources:
+  - "Arrian, Anabasis 2.15-24 (Tyre); 2.25-27 (Gaza); Diodorus Siculus 17.40-46; Curtius Rufus, History of Alexander 4.8 (the Samaritans burn Andromachus)"
+  - "Josephus, Antiquities 11.302-347 (Sanballat, Jaddua and Alexander's visit to Jerusalem)"
+  - "S. J. D. Cohen, 'Alexander the Great and Jaddus the High Priest according to Josephus', AJS Review 7-8 (1982-1983)"
+  - "F. M. Cross, 'The Discovery of the Samaria Papyri', Biblical Archaeologist 26 (1963)"
+  - "A. B. Bosworth, Conquest and Empire: The Reign of Alexander the Great (1988)"
+  - "History Globe dated events (alexander 332 BC; alexandria-founded c. 331 BC; alexander-dies 323 BC; panium 200 BC) and History Globe battles (tyre-332)"
+  - "Straight-line distances between the places' points (Jerusalem, Tyre, Gaza): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

@@ -1,4 +1,4 @@
-import { formatCentury, medianYear, type ChapterYears, type Locale } from "@hg/model";
+import { formatCentury, isLocale, medianYear, type ChapterYears, type Locale } from "@hg/model";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "../i18n";
 import { loadPeople, peopleNow, personName, type People } from "../people";
@@ -28,7 +28,7 @@ export function PeoplePanel({
   onPerson: (index: number) => void;
 }) {
   const { t, i18n } = useTranslation();
-  const locale: Locale = i18n.language === "ru" ? "ru" : "en";
+  const locale: Locale = isLocale(i18n.language) ? i18n.language : "en";
   const [people, setPeople] = useState<People | null>(peopleNow);
   const [failed, setFailed] = useState(false);
   useEffect(() => {
@@ -76,7 +76,7 @@ export function PeoplePanel({
   }, [people, chapterYears, placeName, placeRank, locale]);
 
   return (
-    <Section id="people" title={t("overview.people")} className="w-[340px] max-md:w-full pb-3">
+    <Section>
       <div className="hg-fade max-h-[min(460px,52vh)] scroll-pt-7 overflow-y-auto [scrollbar-width:thin] max-md:max-h-[calc(100dvh-var(--hg-timeline-h,124px)-200px)]">
         {/* "Loading the map" was the only loading word: the list is quick, it shows nothing
             until it is in, and says so if it cannot load. */}

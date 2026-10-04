@@ -1,0 +1,37 @@
+id: where-was-damascus-in-the-bible
+question:
+  en: "Where was Damascus in the Bible?"
+  ru: "Где находился Дамаск в Библии?"
+answer:
+  en:
+    - "The Damascus of the Bible is the same city as today's capital of Syria: it stands on a plateau east of the Anti-Lebanon mountains, where the Barada river spreads out into the Ghouta oasis at the edge of the Syrian desert, about 217 km north-north-east of Jerusalem in a straight line; the map point stands on the Old City. It has been lived in for thousands of years and is one of the oldest continuously inhabited cities in the world. How long the road from Jerusalem was, and where Paul was converted on it, are told in separate questions."
+    - "Genesis already knows the city: Abram's heir was to be “this Eliezer of Damascus”. From about the tenth century BC it was the capital of Aram, the kingdom that fought Israel for two centuries: Rezon seized it in Solomon's day and “reigned in Damascus”, Ben-hadad and Hazael warred with Ahab and his sons, and Elisha “came to Damascus” when Ben-hadad was sick. Naaman, the Syrian commander, scorned the Jordan: “Are not Abana and Pharpar, rivers of Damascus, better than all the waters of Israel?” The Abana is the Barada. In 732 BC Tiglath-pileser III, called in by Ahaz of Judah, “went up against Damascus, and took it, and carried the people of it captive to Kir, and slew Rezin”, as Isaiah had foretold: “Damascus is taken away from being a city, and it shall be a ruinous heap.”"
+    - "The city recovered, and in the New Testament it had synagogues and a Jewish community large enough for Saul to seek believers there. Near the city he saw the light from heaven; in Damascus Ananias found him in “the street which is called Straight”, which still crosses the Old City from east to west as the line of the Roman main street, and he later escaped over the wall in a basket. The great Roman temple of Jupiter became a church and, in the early eighth century, the Umayyad Mosque, which still stands on the same site."
+  ru:
+    - "Дамаск Библии — тот же город, что нынешняя столица Сирии: он стоит на плато к востоку от Антиливана, там, где река Барада растекается по оазису Гута на краю Сирийской пустыни, примерно в 217 км к северо-северо-востоку от Иерусалима по прямой; точка карты стоит на Старом городе. Здесь живут тысячи лет, и это один из древнейших непрерывно населённых городов мира. Какой длины была дорога из Иерусалима и где на ней обратился Павел, рассказано в отдельных вопросах."
+    - "Город знает уже книга Бытия: наследником Аврама должен был стать «этот Елиезер из Дамаска». Примерно с X века до н. э. Дамаск был столицей Арама — царства, которое два века воевало с Израилем: во дни Соломона Разон со своими людьми пришёл туда, и они «водворились там, и владычествовали в Дамаске», Венадад и Азаил воевали с Ахавом и его сыновьями, а Елисей «пришел… в Дамаск», когда Венадад был болен. Сирийский военачальник Нееман презирал Иордан: «разве Авана и Фарфар, реки Дамасские, не лучше всех вод Израильских?» Авана — это Барада. В 732 г. до н. э. Феглаффелласар (Тиглатпаласар III), призванный Ахазом Иудейским, «пошел… в Дамаск, и взял его, и переселил жителей его в Кир, а Рецина умертвил», как и предсказывал Исаия: «Вот, Дамаск исключается из числа городов и будет грудою развалин»."
+    - "Город поднялся снова, и в Новом Завете в нём были синагоги и иудейская община, настолько большая, что Савл искал там верующих. Близ города он увидел свет с неба; в Дамаске Анания пошёл к нему «на улицу, так называемую Прямую», которая и теперь пересекает Старый город с востока на запад по линии главной римской улицы, а позже Савл бежал, спущенный в корзине по стене. Огромный римский храм Юпитера стал церковью, а в начале VIII века — мечетью Омейядов, которая и сейчас стоит на том же месте."
+map:
+  place: a69c1d4
+  year: "732 BC"
+  ref: 2Kgs.16.9
+scripture:
+  [
+    Gen.15.2,
+    1Kgs.11.23-1Kgs.11.24,
+    2Kgs.5.12,
+    2Kgs.8.7,
+    2Kgs.16.9,
+    Isa.17.1,
+    Amos.1.3-Amos.1.5,
+    Acts.9.2-Acts.9.3,
+    Acts.9.11,
+    2Cor.11.32-2Cor.11.33,
+  ]
+sources:
+  - "Straight-line distance between the places' points (Damascus, Jerusalem): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe article “Damascus” and History Globe questions on the distance from Jerusalem to Damascus and on where Paul was converted"
+  - "Eponym Chronicle for 733–732 BC (campaigns against Damascus)"
+  - "W. T. Pitard, Ancient Damascus (1987)"
+  - "R. Burns, Damascus: A History (2005)"
+status: checked

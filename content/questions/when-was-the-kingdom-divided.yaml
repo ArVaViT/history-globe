@@ -1,0 +1,37 @@
+# Draft question (the date of the division; a sibling question, "who-ruled-israel-after-solomon", takes the kings).
+id: when-was-the-kingdom-divided
+question:
+  en: "When was the kingdom of Israel divided?"
+  ru: "Когда разделилось царство Израильское?"
+answer:
+  en:
+    - "The kingdom divided about 931 BC, at the death of Solomon, when the northern tribes gathered at Shechem refused his son Rehoboam and made Jeroboam their king; 930 BC is also widely held, and some scholars put it at 922. The map uses c. 931 BC, the date of Thiele's chronology. Shechem, where it happened, lies about 49 km north of Jerusalem in a straight line."
+    - "Rehoboam went to Shechem, “for all Israel were come to Shechem to make him king”, and the people asked him to lighten the yoke of forced labour his father had laid on them. He took the advice of the young men: “my father also chastised you with whips, but I will chastise you with scorpions.” The answer was the old cry of rebellion: “What portion have we in David? neither have we inheritance in the son of Jesse: to your tents, O Israel.” Jeroboam, who had fled to Egypt from Solomon, was made king over all Israel, and “there was none that followed the house of David, but the tribe of Judah only”; the Russian Synodal text adds Benjamin here. “So Israel rebelled against the house of David unto this day.” Jeroboam fortified Shechem and, so that the people need not go up to Jerusalem, set golden calves at Bethel and at Dan, about 16 and 168 km from Jerusalem in a straight line."
+    - "The Bible gives no absolute year, so the date is reckoned backward from Assyrian records: Ahab fought at Qarqar in 853 BC and Jehu paid tribute to Shalmaneser III in 841, as the Kurkh Monolith and the Black Obelisk record. Adding up the reigns of Kings from there, with Israel and Judah starting their years in different months and sons sometimes reigning beside their fathers, Thiele arrived at 931/930 BC for the death of Solomon; Albright, who thought the figures needed more correction, gave 922. A second check comes from Egypt: “in the fifth year of king Rehoboam, that Shishak king of Egypt came up against Jerusalem”, and Shoshenq I recorded that campaign on the Bubastite Portal at Karnak, about 925 BC. The two kingdoms never reunited, and Israel fell to Assyria in 722 BC, Judah to Babylon in 586."
+  ru:
+    - "Царство разделилось около 931 г. до н. э., по смерти Соломона, когда северные колена, собравшиеся в Сихеме, отвергли его сына Ровоама и поставили царём Иеровоама; многие называют 930 г., некоторые учёные — 922-й. Карта показывает условный 931 г. до н. э., дату хронологии Тиле. Сихем, где это произошло, лежит примерно в 49 км к северу от Иерусалима по прямой."
+    - "Ровоам пошёл в Сихем, «ибо в Сихем пришли все Израильтяне, чтобы воцарить его», и народ просил облегчить иго принудительных работ, наложенное его отцом. Он послушал молодых людей: «отец мой наказывал вас бичами, а я буду наказывать вас скорпионами». В ответ прозвучал старый клич мятежа: «какая нам часть в Давиде? нет нам доли в сыне Иессеевом; по шатрам своим, Израиль!» Иеровоама, бежавшего от Соломона в Египет, воцарили над всем Израилем, и «за домом Давидовым не осталось никого, кроме колена Иудина и Вениаминова» — так в Синодальном переводе; в еврейском тексте названо одно колено Иудино. «И отложился Израиль от дома Давидова до сего дня». Иеровоам обстроил Сихем и, чтобы народ не ходил в Иерусалим, поставил золотых тельцов в Вефиле и в Дане — в 16 и 168 км от Иерусалима по прямой."
+    - "Библия не даёт абсолютного года, и дату отсчитывают назад от ассирийских записей: Ахав сражался при Каркаре в 853 г. до н. э., а Ииуй платил дань Салманасару III в 841-м, как сообщают Куркхский монолит и Чёрный обелиск. Складывая от этой точки годы царствований из книг Царств — с учётом того, что Израиль и Иудея начинали год в разные месяцы, а сыновья порой правили вместе с отцами, — Тиле вышел на 931/930 г. до н. э. для смерти Соломона; Олбрайт, считавший, что числа нуждаются в большей правке, дал 922-й. Вторая проверка — из Египта: «На пятом году царствования Ровоамова, Сусаким, царь Египетский, вышел против Иерусалима», и Шешонк I запечатлел этот поход на Бубастисском портале в Карнаке, около 925 г. до н. э. Два царства больше не соединились: Израиль пал под Ассирией в 722 г. до н. э., Иудея под Вавилоном — в 586-м."
+map:
+  place: adf74d4
+  year: "c. 931 BC"
+  ref: 1Kgs.12.16
+scripture:
+  [
+    1Kgs.11.11-1Kgs.11.13,
+    1Kgs.11.31,
+    1Kgs.12.1-1Kgs.12.4,
+    1Kgs.12.14-1Kgs.12.20,
+    1Kgs.12.25-1Kgs.12.29,
+    1Kgs.14.20-1Kgs.14.21,
+    1Kgs.14.25,
+  ]
+sources:
+  - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings (3rd ed., 1983) (the division c. 931 BC)"
+  - "W. F. Albright, 'The Chronology of the Divided Monarchy of Israel', BASOR 100 (1945) (the division 922 BC)"
+  - "G. Galil, The Chronology of the Kings of Israel and Judah (1996)"
+  - "The Kurkh Monolith of Shalmaneser III (Ahab at Qarqar, 853 BC) and the Black Obelisk (Jehu's tribute, 841 BC)"
+  - "The Bubastite Portal reliefs at Karnak, the town list of Shoshenq I (K. A. Kitchen, The Third Intermediate Period in Egypt, 2nd ed., 1986)"
+  - "History Globe dated events (kingdom-divided c. 931 BC; shishak c. 925 BC; samaria-falls 722 BC) and History Globe tour “The kingdom divides” (931 BC; 930 BC is also held)"
+  - "Straight-line distances between the places' points (Jerusalem, Shechem, Bethel, Dan): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

@@ -1,0 +1,29 @@
+# Overview article (ADR 0007). Mainstream facts only; the wilderness is unlocated and the three candidates on the map are named without choosing; the Synodal Bible writes both Sin and Zin as "Син", which the text notes.
+id: sin
+place: a0f54e4
+title:
+  en: "Sin"
+  ru: "Син"
+body:
+  en:
+    - "The wilderness of Sin is a stretch of desert on Israel's road from Egypt to Sinai, “between Elim and Sinai”. It is not the wilderness of Zin by Kadesh on the border of the land: the Hebrew names differ, though the Synodal Bible writes both as Sin. Its own name may be related to Sinai, and the Bible says nothing more of where it lay."
+    - "Where it is placed depends on where Mount Sinai is put. With the traditional Jebel Musa in the south of the peninsula, the candidates are the coastal plain of el-Markha on the Gulf of Suez below the mountains; the wider plain of el-Qaa further south; and Debbet er-Ramleh, the sandy plain inland that runs along the foot of the et-Tih escarpment towards the granite mountains. The map marks all three. Nothing has been found in any of them, and those who seek Sinai elsewhere move the wilderness of Sin with it."
+    - "Israel came here from Elim “on the fifteenth day of the second month after their departing out of the land of Egypt”, a month after the exodus, and here the whole congregation murmured: “Would to God we had died by the hand of the LORD in the land of Egypt, when we sat by the flesh pots”. The answer was bread from heaven: “at even the quails came up, and covered the camp: and in the morning the dew lay round about the host”, and the manna that Israel ate forty years was first gathered in the wilderness of Sin, with the rule that none be gathered on the sabbath. From here the people journeyed to Rephidim, where there was no water. The itinerary of Numbers sets the camp in the wilderness of Sin after a camp by the Red Sea and before Dophkah and Alush."
+    - "The region today is the South Sinai governorate of Egypt. The coast road from Suez to et-Tur runs the length of el-Markha and el-Qaa past Abu Zenima, while Debbet er-Ramleh lies inland, between the coastal hills and the et-Tih escarpment."
+  ru:
+    - "Пустыня Син — участок пустыни на пути Израиля из Египта к Синаю, «между Елимом и между Синаем». Это не пустыня Син (Цин) у Кадеса на границе земли: еврейские имена различны, хотя Синодальный перевод пишет обе одинаково. Само имя, возможно, родственно Синаю, а больше о её положении Библия не говорит."
+    - "Где её искать, зависит от того, где ставят гору Синай. При традиционном Джебель-Муса на юге полуострова кандидаты таковы: прибрежная равнина Эль-Марка на Суэцком заливе под горами; более широкая равнина Эль-Каа южнее; и Деббет-эр-Рамле — песчаная равнина в глубине полуострова вдоль подножия уступа Эт-Тих, уходящая к гранитным горам. На карте отмечены все три. Ни в одной из них ничего не найдено, а те, кто ищет Синай в другом месте, переносят с ним и пустыню Син."
+    - "Израиль пришёл сюда из Елима «в пятнадцатый день второго месяца по выходе их из земли Египетской», через месяц после исхода, и здесь возроптало всё общество: «о, если бы мы умерли от руки Господней в земле Египетской, когда мы сидели у котлов с мясом». Ответом был хлеб с неба: «Вечером налетели перепелы и покрыли стан, а поутру лежала роса около стана», и манну, которую Израиль ел сорок лет, впервые собирали в пустыне Син — с заповедью не собирать её в субботу. Отсюда народ двинулся к Рефидиму, где не было воды. Список станов в книге Чисел ставит стан в пустыне Син после стана у Чермного моря и перед Дофкой и Алушем."
+    - "Сегодня это мухафаза Южный Синай в Египте. Прибрежная дорога из Суэца в Эт-Тур тянется вдоль всей Эль-Марки и Эль-Каа мимо Абу-Зенимы, а Деббет-эр-Рамле лежит в глубине полуострова, между прибрежными горами и уступом Эт-Тих."
+scripture:
+  - Exod.16.1-Exod.16.4
+  - Exod.16.13-Exod.16.15
+  - Exod.16.35
+  - Exod.17.1
+  - Num.33.11-Num.33.12
+sources:
+  - "E. Robinson, Biblical Researches in Palestine, Mount Sinai and Arabia Petraea (1841)"
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "M. Har-El, The Sinai Journeys: The Route of the Exodus (1983)"
+  - "J. K. Hoffmeier, Ancient Israel in Sinai: The Evidence for the Authenticity of the Wilderness Tradition (2005)"
+status: checked

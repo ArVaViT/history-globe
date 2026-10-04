@@ -586,3 +586,138 @@ places:
       - "M. Dothan, 'Ashdod', Anchor Bible Dictionary 1 (1992), pp. 477-482"
       - "M. Dothan and D. N. Freedman, Ashdod I: The First Season of Excavations, 1962 ('Atiqot, English Series 7, 1967)"
       - "Encyclopaedia Judaica, 'Ashdod', on the Jewish Virtual Library"
+
+  # ---------- batch life 1 (fill) ----------
+  - id: a5feb15
+    en: Ephesus
+    # Why firm: the point stands on the Hellenistic-Roman city (Library of Celsus area),
+    # not on the archaic town by the Artemision. Strabo 14.1.21 (LacusCurtius, Loeb) says
+    # Lysimachus walled "the present city" and flooded the old one by blocking the drains;
+    # Pausanias 1.9.7 (theoi.com, Jones) says he "founded the modern city of Ephesus",
+    # settling there the people of Lebedus and Colophon; 7.3.4-5 repeats it. Lysimachus
+    # took Ephesus c. 294 BC; the move is dated c. 294-289 BC, so "c. 290".
+    from: "c. 290 BC"
+    note:
+      en: "The Ephesus of Acts and Revelation is the city Lysimachus built between Mount Pion and Mount Coressus about 290 BC: he walled the new site and, Strabo says, flooded the old town by the temple of Artemis by blocking its drains until its people moved; he settled there the people of Lebedus and Colophon; for a time it bore his wife's name, Arsinoeia."
+      ru: "Ефес Деяний и Откровения — город, построенный Лисимахом между горами Пион и Коресс около 290 г. до н. э.: он обнёс стеной новое место и, по словам Страбона, затопил старый город у храма Артемиды, заложив его стоки, пока жители не переселились; он поселил там жителей Лебедоса и Колофона; некоторое время город носил имя его жены — Арсиноя."
+    sources:
+      - "Strabo, Geography 14.1.21"
+      - "Pausanias, Description of Greece 1.9.7; 7.3.4-5"
+      - "'Ephesus', Encyclopaedia Britannica, 11th ed. (1911)"
+  - id: a513646
+    en: Dan
+    # Why firm: the excavators' page (Nelson Glueck School, HUC) states "By the end of the
+    # 4th century CE, in the late Roman period, Tel Dan was abandoned".
+    # Eusebius (c. 330) still lists Dan as a village four miles from Paneas
+    # on the road to Tyre. No `from`: Laish stood from the Early Bronze Age, before the
+    # period's start. The Assyrian capture of 732 BC is not an end (the town was restored).
+    until: "c. AD 400"
+    note:
+      en: "Taken by Tiglath-pileser III in 732 BC, Dan lived on as a small town with its sanctuary through the Hellenistic and Roman periods; Eusebius still knew it as a village four miles from Paneas, but by the end of the 4th century AD the mound was abandoned."
+      ru: "Взятый Тиглатпаласаром III в 732 г. до н. э., Дан пережил эллинистическую и римскую эпохи небольшим городком при святилище; Евсевий ещё знал его как селение в четырёх милях от Панеады, но к концу IV в. н. э. холм был оставлен."
+    sources:
+      - "Tel Dan excavations of A. Biran and D. Ilan (Nelson Glueck School of Biblical Archaeology, 'Tel Dan')"
+      - "Eusebius, Onomasticon, s.v. Dan"
+      - "Israel Ministry of Foreign Affairs, 'Biblical City of Dan' (Archaeology in Israel), on the Jewish Virtual Library (destruction by Tiglath-pileser III, 732 BC)"
+
+  # ---------- batch life 2 (fill) ----------
+  - id: aaf03fa
+    en: Jericho
+    # The New Testament Jericho (Tulul Abu el-'Alayiq by Wadi Qelt), not Tell es-Sultan.
+    # No `from`: Jericho stood as a town through the Hellenistic age (1 Macc 9:50; 16:11)
+    # before Hyrcanus I built his palace here, so the Hasmonean date is not a founding.
+    # End: Vespasian camped at Corea on 2 Daesius (June) 68 and reached Jericho the next day; Eusebius says the
+    # second city perished in the Roman war and a third was built elsewhere.
+    until: "AD 68"
+    note:
+      en: "The Jericho of the Gospels, the Hasmonean and Herodian town by Wadi Qelt, was taken by Vespasian in June AD 68: a great multitude fled to the hills facing Jerusalem, most of those left behind were killed, the Romans found the city deserted, and a fort with a garrison was set there. Eusebius writes that it was destroyed at the siege of Jerusalem and that a third Jericho was built afterwards, while remains of the two older cities were still pointed out."
+      ru: "Иерихон евангельских времён — хасмонейский и иродианский город у Вади-Кельт — взят Веспасианом в июне 68 г. н. э.: множество жителей бежало в горы напротив Иерусалима, большинство оставшихся было перебито, римляне нашли город опустевшим и поставили в нём укрепление с гарнизоном. Евсевий пишет, что он был разрушен при осаде Иерусалима и что затем построили третий Иерихон, а развалины двух прежних городов ещё показывали."
+    sources:
+      - "Josephus, Jewish War 4.449-451; 4.486"
+      - "Eusebius, Onomasticon, s.v. Ierichō (no. 530 in C. U. Wolf's translation)"
+  - id: a21f909
+    en: Timnah
+    # Tel Batash. Mazar's sequence runs about 700 years from the start of the MB IIB to the
+    # end of Iron I (Strata XII-V), then Iron II and Persian (Strata IV-I) with only stray
+    # Hellenistic finds; the Persian town is dated to the 5th-4th centuries, hence c. 350 BC
+    # (as Megiddo's Persian end in the file).
+    from: "c. 1700 BC"
+    until: "c. 350 BC"
+    note:
+      en: "Tel Batash, the Timnah of Samson, was founded as a fortified town ringed by earthen ramparts at the start of the Middle Bronze IIB; the last settlement on the mound (Stratum I) belonged to the Persian period, and after it there are only stray Hellenistic finds and a sparse Byzantine settlement nearby."
+      ru: "Тель-Баташ — Фимнафа Самсона — основан как укреплённый, обнесённый земляными валами город в начале среднего бронзового века IIB; последнее поселение на холме (слой I) относился к персидскому времени, а после него остались лишь единичные эллинистические находки и редкое византийское поселение по соседству."
+    sources:
+      - "A. Mazar, Timnah (Tel Batash) I: Stratigraphy and Architecture (Qedem 37, 1997)"
+      - "A. Mazar and N. Panitz-Cohen, Timnah (Tel Batash) II: The Finds from the First Millennium BCE (Qedem 42, 2001)"
+      - "N. Panitz-Cohen and A. Mazar, Timnah (Tel Batash) III: The Finds from the Second Millennium BCE (Qedem 45, 2006)"
+  - id: a244d8f
+    en: Eglon
+    # Tel 'Eton. Destroyed by the Assyrians in the late 8th century: Katz and Faust 2012
+    # cautiously said Sennacherib (701); Faust 2026 prefers Sargon II's campaign of 712/711,
+    # hence c. 710. Seventh-century remains lie only in the plain NW of the mound; the mound
+    # was reoccupied in the 4th century and abandoned in the 3rd (Faust 2026, p. 33).
+    # Identification "accepted by most scholars", not certain (Tell el-Hesi was the older one).
+    gap:
+      from: "c. 710 BC"
+      until: "c. 350 BC"
+    until: "c. 250 BC"
+    note:
+      en: "Tel 'Eton, which most scholars identify with Eglon, was a large Judahite town until the Assyrians destroyed it at the end of the 8th century BC, in Sargon II's campaign of 712/711 or Sennacherib's of 701; the mound then lay empty until the 4th century BC, when a fort and a village were built on it, and it was abandoned for good in the 3rd century BC."
+      ru: "Тель-Этон, который большинство учёных отождествляют с Еглоном, был крупным иудейским городом, пока в конце VIII в. до н. э. его не разрушили ассирийцы — в походе Саргона II 712/711 г. или Синаххериба 701 г.; после этого холм пустовал до IV в. до н. э., когда на нём построили крепость и селение, а в III в. до н. э. его оставили окончательно."
+    sources:
+      - "A. Faust, 'The History of Tel 'Eton Following the Results of the First Seven Seasons of Excavations (2006-2012)', Proceedings of the 8th ICAANE, vol. 2 (2014), pp. 585-604"
+      - "H. Katz and A. Faust, 'The Assyrian Destruction Layer at Tel 'Eton', Israel Exploration Journal 62 (2012), pp. 22-53"
+      - "A. Faust, 'Hezekiah's Reform? A View from Tel 'Eton on the Religious Development in Judah', Jerusalem Journal of Archaeology 9 (2026), pp. 31-60"
+
+  # ---------- batch life 3 (fill) ----------
+  - id: addba2a
+    en: Beth-zur
+    # Why firm: both campaigns at Khirbet et-Tubeiqa (Sellers and Albright 1931, Sellers
+    # and Funk 1957) end the sequence with the Hasmonean fortress; the coins run from the
+    # Ptolemies through the Seleucids to John Hyrcanus and then stop, and no Roman stratum
+    # follows. Negev and Gibson: "by 100 BCE the town had been fully abandoned"; JTA on
+    # the 1931 season: inhabited "until shortly before the Christian era". Encyclopaedia
+    # Judaica's older guess ("destroyed and abandoned, apparently during Vespasian's
+    # campaigns") rests on no stratum and is not followed; it is cited only for the
+    # Byzantine town on the opposite hill, Burj es-Sur, where Eusebius' village Bethsoro
+    # and the Madaba map's Bethsura stood (EJ: "probably"), so the point's own life ends here. The verses
+    # (Josh 15:58; 1 Chr 2:45; 2 Chr 11:7; Neh 3:16) all fall before 100 BC.
+    # Sellers' Middle Bronze gap (c. 1550-1200 BC; Dussaud's review of The Citadel of
+    # Beth-Zur, Syria 16 (1935), pp. 212-213) is left out: the schema holds one gap, and
+    # it would fade the town on the Joshua tour.
+    until: "c. 100 BC"
+    note:
+      en: "Excavated at Khirbet et-Tubeiqa in 1931 and 1957: the town flourished under the Ptolemies and Seleucids and was the Maccabean frontier fortress, but its coins stop with John Hyrcanus and it was abandoned about 100 BC. The village of Bethsoro that Eusebius knew, and the Bethsura of the Madaba map, probably stood on the opposite hill, Burj es-Sur."
+      ru: "Раскопки на Хирбет-эт-Тубейке в 1931 и 1957 гг.: город процветал при Птолемеях и Селевкидах и был пограничной крепостью Маккавеев, но его монеты обрываются на Иоанне Гиркане, и около 100 г. до н. э. он был оставлен. Селение, которое знал Евсевий, и город Мадабской карты, вероятно, стояли уже на соседнем холме — Бурдж-эс-Сур."
+    sources:
+      - "A. Negev and S. Gibson (eds.), Archaeological Encyclopedia of the Holy Land (2001), pp. 89-90, s.v. Beth-Zur"
+      - "Jewish Telegraphic Agency, 'Find Relics of 2,100 Years of Life at Beth Zur', 12 July 1931"
+      - "Encyclopaedia Judaica, 'Beth-Zur' (the Byzantine town at Burj es-Sur), on encyclopedia.com"
+
+  # ---------- batch life 4 (fill) ----------
+  - id: a5947d7
+    en: Tamar
+    # Why firm: the point stands for En Hazeva (92 %). The excavators (Cohen and Yisrael)
+    # found no stratum between the last Iron Age fortress (Stratum 4, 7th-6th c. BC) and
+    # the Nabataean way-station (Stratum 3): Persian and Hellenistic layers are absent, so
+    # the mound lay empty for some five centuries. Start: Cohen dates the end of Stratum 4
+    # to "about the same time as the First Temple (586 BC)"; the smashed cult vessels of
+    # the Edomite shrine he puts earlier, at Josiah's reform (c. 621 BC), so "c." is
+    # needed (Ben-Ami et al. 2024 and Ben-Ami, Tel Aviv 53, 2026, re-date the earlier Iron
+    # Age phases, not this end; the site is still read as abandoned in the early 6th c. BC).
+    # End: Cohen gives Stratum 3 as "first-second centuries CE"; Bowman (renewed
+    # excavations) has Tamar abandoned after 587 BC and rebuilt under Aretas IV
+    # (9 BC - AD 40), Stratum 5 "1st centuries BCE/CE", so "c. AD 1" fits both. Caveat for
+    # the reviewer: Ezekiel's border (Ezek 47:19; 48:28, c. 573 BC) names Tamar inside the
+    # gap; it is a landmark on the border there, not a living town, so the fade is
+    # acceptable but should be known. No tour stop lands on it.
+    gap:
+      from: "c. 586 BC"
+      until: "c. AD 1"
+    note:
+      en: "The last Iron Age fortress at En Hazeva, with its Edomite shrine, was destroyed at about the time Jerusalem fell, and the mound lay empty through the Persian and Hellenistic periods; the next settlers were Nabataeans, whose way-station of the 1st century BC–1st century AD lies under the Late Roman fort of Thamara."
+      ru: "Последняя крепость железного века в Эйн-Хацеве с её едомским святилищем погибла около времени падения Иерусалима, и в персидскую и эллинистическую эпохи холм стоял пустым; следующими здесь поселились набатеи, чья стоянка I в. до н. э. — I в. н. э. лежит под позднеримской крепостью Тамара."
+    sources:
+      - "R. Cohen and Y. Yisrael, 'The Iron Age Fortresses at En Haseva', Biblical Archaeologist 58.4 (1995), strata 6-1"
+      - "R. Cohen and Y. Yisrael, 'Smashing the Idols: Piecing Together an Edomite Shrine in Judah', Biblical Archaeology Review 22.4 (1996), pp. 40-51"
+      - "C. D. Bowman, 'Biblical Tamar (aka Ein Hazeva): Renewed Excavations 2005-2009', The Bible and Interpretation, Stratum 5"

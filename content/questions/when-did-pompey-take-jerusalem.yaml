@@ -1,0 +1,28 @@
+# Draft question. The Bible does not tell the event; the scripture list gives the verses that show Roman rule as its result.
+id: when-did-pompey-take-jerusalem
+question:
+  en: "When did Pompey take Jerusalem?"
+  ru: "Когда Помпей взял Иерусалим?"
+answer:
+  en:
+    - "In 63 BC, in the third month of the siege, in the year Cicero was consul at Rome, as Josephus dates it; the Temple mount was stormed on a fast day, and Judea came under Rome, where it stayed. The map stands at Jerusalem in 63 BC."
+    - "Pompey had just annexed Syria when the sons of Salome Alexandra, the high priest Hyrcanus II and his brother Aristobulus II, who had seized the throne, both came to him at Damascus in the spring of 63; a third embassy from the people asked him to abolish the kingship altogether. When Pompey marched on Jerusalem, Aristobulus's partisans held the Temple while Hyrcanus's party opened the city. The Romans raised their ramp on the north side, working on the sabbaths, when the defenders would fight only if attacked; the siege engines brought from Tyre broke the wall, and Josephus counts twelve thousand Jews killed, the priests cut down at the altar as they went on sacrificing. Pompey went into the Holy of Holies, which Tacitus says he found empty, but left the treasure and the next day ordered the Temple cleansed. Cassius Dio adds that the city fell on the day of Kronos, a Saturday."
+    - "Hyrcanus was left high priest without the royal title; Aristobulus was carried to Rome and walked in Pompey's triumph in 61 BC. Judea paid tribute and lost the coast, Samaria and the Greek cities beyond the Jordan, which counted their years from this “Pompeian era”; captives brought to Italy and later freed made up much of the Jewish community of Rome. The Psalms of Solomon lament a foreign conqueror who broke the walls of Jerusalem and whose body later lay unburied on the shore of Egypt, as Pompey's did in 48 BC. The Bible does not tell the event, but it is the background of the Gospels: Daniel's fourth kingdom, “strong as iron”, was read by the Jews of Jesus's day as Rome; the council feared that “the Romans shall come and take away both our place and nation”; and the question of tribute to Caesar was answered, “Render therefore unto Caesar the things which are Caesar's”."
+  ru:
+    - "В 63 г. до н. э., на третьем месяце осады, в год консульства Цицерона в Риме, как датирует Иосиф Флавий; Храмовую гору взяли штурмом в день поста, и Иудея попала под власть Рима — и осталась под ней. Карта стоит на Иерусалиме в 63 г. до н. э."
+    - "Помпей только что сделал Сирию римской провинцией, когда сыновья Саломеи Александры — первосвященник Гиркан II и его брат Аристобул II, захвативший престол, — оба явились к нему в Дамаск весной 63 г.; третье посольство, от народа, просило вовсе упразднить царскую власть. Когда Помпей двинулся на Иерусалим, сторонники Аристобула удерживали Храм, а партия Гиркана открыла город. Римляне возводили насыпь с северной стороны, работая по субботам, когда защитники сражались лишь при нападении; осадные машины, привезённые из Тира, проломили стену, и Иосиф Флавий насчитывает двенадцать тысяч убитых иудеев — священников рубили у жертвенника, когда те продолжали приносить жертвы. Помпей вошёл во Святое святых, которое, по Тациту, нашёл пустым, но не тронул сокровищ и на другой день велел очистить Храм. Дион Кассий добавляет, что город пал в день Кроноса, то есть в субботу."
+    - "Гиркана оставили первосвященником без царского титула; Аристобула увезли в Рим, и он шёл в триумфе Помпея в 61 г. до н. э. Иудея платила дань и лишилась побережья, Самарии и греческих городов за Иорданом, которые с тех пор считали годы от «помпеевой эры»; пленники, привезённые в Италию и позже отпущенные на волю, составили большую часть иудейской общины Рима. Псалмы Соломона оплакивают чужеземного завоевателя, проломившего стены Иерусалима, чьё тело потом лежало непогребённым на египетском берегу, — как и случилось с Помпеем в 48 г. до н. э. Библия об этом событии не рассказывает, но оно стало фоном Евангелий: четвёртое царство Даниила, крепкое «как железо», иудеи времён Иисуса понимали как Рим; синедрион боялся, что «придут Римляне и овладеют и местом нашим и народом»; а на вопрос о подати кесарю был дан ответ: «отдавайте кесарево кесарю, а Божие Богу»."
+map:
+  place: a15257a
+  year: "63 BC"
+  ref: John.11.48
+scripture: [John.11.48, Matt.22.17-Matt.22.21, Luke.2.1, Luke.3.1, Dan.2.40]
+sources:
+  - "Josephus, Antiquities 14.34-79 (the embassies at Damascus; the siege and capture; 14.66, the consulship of Antonius and Cicero and the fast day); Jewish War 1.131-158"
+  - "Cassius Dio, Roman History 37.15-17 (the day of Kronos)"
+  - "Tacitus, Histories 5.9 (Pompey in Jerusalem); Philo, Embassy to Gaius 155 (the Jews of Rome descended from captives)"
+  - "Plutarch, Pompey 39; Appian, Syrian Wars 49-51 (Syria made a province)"
+  - "Psalms of Solomon 2 and 8 (the capture of Jerusalem and the conqueror's end in Egypt)"
+  - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. G. Vermes and F. Millar, vol. 1 (1973)"
+  - "History Globe dated events (pompey 63 BC; herod 37 BC; judea-province AD 6), History Globe battles (jerusalem-63), History Globe question on where the Hasmoneans ruled from and History Globe article “Rome”"
+status: checked

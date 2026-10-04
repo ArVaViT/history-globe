@@ -1,0 +1,38 @@
+id: where-was-canaan
+question:
+  en: "Where was Canaan, the promised land?"
+  ru: "Где находился Ханаан, земля обетованная?"
+answer:
+  en:
+    - "Canaan is the land between the Mediterranean and the Jordan, from the Lebanon in the north to the desert south of Beersheba: today's Israel and the Palestinian territories, with Lebanon and the edge of south-western Syria. The map point for the region stands in Lower Galilee, about 110 km north of Jerusalem in a straight line. The name is older than Israel: Egyptian and cuneiform texts of the second millennium BC use it for Egypt's province in the Levant, and the Bible uses it for the land before Israel took it, and for the land promised to Abraham's seed."
+    - "Genesis draws the Canaanites' bounds “from Sidon, as thou comest to Gerar, unto Gaza; as thou goest, unto Sodom, and Gomorrah”, the coast from Lebanon to Philistia and inland to the Dead Sea, about 200 km from Sidon to Jerusalem in a straight line. Numbers gives the inheritance its formal borders: on the south from the wilderness of Zin by Edom and the Salt Sea to the brook of Egypt; “the great sea” on the west; on the north from the sea by a mount Hor to “the entrance of Hamath” and Zedad; on the east down past the sea of Chinnereth to the Jordan and “the salt sea”. The land east of the Jordan lay outside: the two and a half tribes “received their inheritance on this side Jordan near Jericho eastward”, and Joshua's men go out of Shiloh, “which is in the land of Canaan”, to Gilead. Deuteronomy's “from the river, the river Euphrates, even unto the uttermost sea” is a wider ideal."
+    - "Outside the Bible the name appears perhaps in a letter from Mari of the eighteenth century BC, on the statue of Idrimi of Alalakh, in the Amarna letters of the fourteenth century, where the pharaoh's province is Kinahhi, and on Merneptah's victory stele of about 1208 BC beside the first mention of Israel; the Egyptian texts take Canaan to run from Gaza to the Lebanon, much as Numbers does. The Greeks called the coast Phoenicia and the Romans the whole land Syria Palaestina; in the Bible the name gives way to the land of Israel and Judah, so that in the New Testament it survives only in Matthew's “woman of Canaan” from the coasts of Tyre and Sidon and in the retellings of the old history by Stephen and Paul. The article on Canaan tells of its peoples, its gods and the models of Israel's settlement; the questions on the journey from Ur and on Dan and Beersheba measure the land."
+  ru:
+    - "Ханаан — земля между Средиземным морем и Иорданом, от Ливана на севере до пустыни южнее Вирсавии: нынешние Израиль и палестинские территории с Ливаном и краем юго-западной Сирии. Точка карты для этой области стоит в Нижней Галилее, примерно в 110 км к северу от Иерусалима по прямой. Имя старше Израиля: египетские и клинописные тексты II тысячелетия до н. э. называют так египетскую провинцию в Леванте, а Библия — землю до того, как её взял Израиль, и землю, обещанную потомству Авраама."
+    - "Книга Бытия проводит пределы Хананеев «от Сидона к Герару до Газы, отсюда к Содому, Гоморре» — побережье от Ливана до Филистии и вглубь до Мёртвого моря, примерно 200 км от Сидона до Иерусалима по прямой. Книга Чисел даёт уделу формальные границы: на юге от пустыни Син подле Едома и Солёного моря до потока Египетского; «великое море» на западе; на севере от моря через гору Ор к Емафу и Цедаду; на востоке вниз мимо моря Киннереф к Иордану и «к Соленому морю». Земля за Иорданом осталась вне: два с половиной колена «получили удел свой за Иорданом, против Иерихона, к востоку», и люди Иисуса Навина выходят из Силома, «который в земле Ханаанской», в Галаад. Слова Второзакония «от реки, реки Евфрата, даже до моря западного» — более широкий идеал."
+    - "Вне Библии имя встречается, возможно, в письме из Мари XVIII века до н. э., на статуе Идрими из Алалаха, в амарнских письмах XIV века, где провинция фараона зовётся Кинаххи, и на победной стеле Мернептаха около 1208 г. до н. э. рядом с первым упоминанием Израиля; египетские тексты протягивают Ханаан от Газы до Ливана, почти как книга Чисел. Греки называли побережье Финикией, а римляне всю землю — Сирией Палестинской; в Библии имя уступает место земле Израилевой и Иудее, так что в Новом Завете оно остаётся лишь у Матфея, где из пределов Тира и Сидона выходит «женщина Хананеянка», и в пересказах старой истории у Стефана и Павла. Статья о Ханаане рассказывает о его народах, богах и моделях расселения Израиля; вопросы о пути из Ура и о Дане и Вирсавии измеряют землю."
+map:
+  place: a581f0c
+  year: "c. 1406 BC"
+  ref: Num.34.2
+scripture:
+  [
+    Gen.10.19,
+    Gen.12.5-Gen.12.7,
+    Gen.17.8,
+    Exod.3.8,
+    Num.34.2-Num.34.15,
+    Deut.11.24,
+    Josh.22.9,
+    Matt.15.22,
+    Acts.7.11,
+    Acts.13.19,
+  ]
+sources:
+  - "Straight-line distances between the places' points (Canaan, Jerusalem, Sidon): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "The Amarna letters, e.g. EA 8 and EA 30 (Kinahhi): W. L. Moran, The Amarna Letters (1992)"
+  - "The Merneptah Stele (Egyptian Museum, Cairo, JE 31408)"
+  - "A. F. Rainey, 'Who Is a Canaanite? A Review of the Textual Evidence', BASOR 304 (1996)"
+  - "N. P. Lemche, The Canaanites and Their Land (1991)"
+  - "History Globe article “Canaan” and questions “How far did Abraham travel from Ur to Canaan?” and “How far is it from Dan to Beersheba?”"
+status: checked

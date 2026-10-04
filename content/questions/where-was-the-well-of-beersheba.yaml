@@ -1,0 +1,26 @@
+id: where-was-the-well-of-beersheba
+question:
+  en: "Where was Abraham's well at Beersheba?"
+  ru: "Где был колодезь Авраама в Вирсавии?"
+answer:
+  en:
+    - "At Beersheba in the northern Negev, about 70 km south-west of Jerusalem in a straight line, but the exact well cannot be pointed out. The map point stands on Tel Beer Sheva, the mound of the biblical town about 4 km east of the modern city, where a deep well was found outside the city gate; the excavators dated the town to the Iron Age, long after the patriarchs, so no surviving well can be shown to be Abraham's. In the modern city an old well by the stream bed near the Old City, described by Edward Robinson in 1838, is shown as Abraham's Well, by tradition only."
+    - "Genesis tells of a quarrel over water with Abimelech, king of Gerar, about 27 km to the north-west: “Abraham reproved Abimelech because of a well of water, which Abimelech's servants had violently taken away.” Abraham gave him seven ewe lambs as a witness “that I have digged this well”, and “he called that place Beer-sheba; because there they sware both of them.” Then he “planted a grove in Beer-sheba, and called there on the name of the LORD, the everlasting God.” The Hebrew name allows both readings, “well of seven” and “well of the oath”, and the story plays on both."
+    - "A generation later the Philistines had stopped Abraham's wells, and Isaac dug them again. On the day he made his own oath with Abimelech his servants came and said, “We have found water”, and “he called it Shebah: therefore the name of the city is Beer-sheba unto this day.” Eusebius in the fourth century knew Beersheba as a large village with a Roman garrison and noted that many wells of the patriarchs were still pointed out in the district of Gerar."
+  ru:
+    - "В Вирсавии на севере Негева, примерно в 70 км к юго-западу от Иерусалима по прямой, но указать сам колодезь нельзя. Точка карты стоит на Тель-Шеве, холме библейского города примерно в 4 км к востоку от современного, где за городскими воротами нашли глубокий колодец; раскопщики датировали город железным веком, много позже патриархов, так что ни один сохранившийся колодец нельзя признать Авраамовым. В современном городе старый колодец у русла возле Старого города, описанный Эдвардом Робинсоном в 1838 году, показывают как «колодец Авраама» — лишь по преданию."
+    - "Книга Бытия рассказывает о споре за воду с Авимелехом, царём Герара, лежащего примерно в 27 км к северо-западу: «Авраам упрекал Авимелеха за колодезь с водою, который отняли рабы Авимелеховы». Авраам дал ему семь агниц в свидетельство, «что я выкопал этот колодезь». «Потому и назвал он сие место: Вирсавия, ибо тут оба они клялись». Потом «насадил Авраам при Вирсавии рощу и призвал там имя Господа, Бога вечного». Еврейское имя допускает два прочтения — «колодец семи» и «колодец клятвы», — и рассказ играет обоими."
+    - "Через поколение филистимляне завалили колодцы Авраама, и Исаак выкопал их вновь. В тот день, когда он сам заключил клятву с Авимелехом, рабы его пришли и сказали: «мы нашли воду», и «он назвал его: Шива. Посему имя городу тому Беэршива (Вирсавия) до сего дня». Евсевий в IV веке знал Вирсавию как большое селение с римским гарнизоном и отмечал, что многие колодцы патриархов ещё показывают в области Герара."
+map:
+  place: ad2f6c2
+  year: "c. 1900 BC"
+  ref: Gen.21.31
+scripture: [Gen.21.25-Gen.21.33, Gen.26.18, Gen.26.26-Gen.26.33]
+sources:
+  - "Eusebius, Onomasticon, s.v. Bersabee and Phrear (C. U. Wolf's translation, nos. 227 and 919-922)"
+  - "Y. Aharoni (ed.), Beer-Sheba I: Excavations at Tel Beer-Sheba, 1969-1971 Seasons (1973)"
+  - "Z. Herzog and L. Singer-Avitz, Beer-Sheba III (2016)"
+  - "E. Robinson, Biblical Researches in Palestine, Mount Sinai and Arabia Petraea (1841) (the wells at Beersheba, seen in 1838)"
+  - "History Globe article “Beersheba” and question “How far is it from Dan to Beersheba?”"
+  - "Straight-line distances between the places' points (Beersheba, Jerusalem, Gerar): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

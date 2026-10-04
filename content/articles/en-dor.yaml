@@ -1,0 +1,28 @@
+# Overview article (ADR 0007). Mainstream facts only; Khirbet es-Safsafa by Indur is the usual site, and the app's other candidates are named.
+id: en-dor
+place: aca444b
+title:
+  en: "En-dor"
+  ru: "Ен-Дор"
+body:
+  en:
+    - "En-dor was a town at the eastern end of the valley of Jezreel, on the north side of the hill of Moreh between Mount Tabor and Mount Gilboa. Joshua lists it with Beth-shean, Ibleam, Dor, Taanach and Megiddo among the Canaanite towns inside Issachar and Asher that fell to Manasseh. Its fame comes from the night before Gilboa. With the Philistines camped at Shunem across the valley, “Then said Saul unto his servants, Seek me a woman that hath a familiar spirit, that I may go to her, and enquire of her. And his servants said to him, Behold, there is a woman that hath a familiar spirit at Endor”. Saul went to her by night in disguise, round the Philistine camp, and the spirit of Samuel told him that he and his sons would die the next day. Psalm 83 (82 in the Synodal numbering) recalls the defeat of Sisera and Jabin at the Kishon, “Which perished at Endor: they became as dung for the earth”."
+    - "Eusebius places Aendor four miles south of Tabor, and the name survived in Indur, an Arab village on the northern slope of the hill of Moreh about 7 km south of Tabor, abandoned in 1948. The ancient town is sought at Khirbet es-Safsafa just above it, where Iron Age pottery has been collected, the first candidate on the map; Tell el-Ajjul and Indur itself are also listed. Because Joshua lists En-dor with Taanach and Megiddo, and the psalm ties it to the battle that Judges sets “in Taanach by the waters of Megiddo”, some have looked instead toward the valley's western end, at Tell Abu Qedeis or Khirbet Jadurah near Taanach. No excavation has settled the matter."
+    - "Today the ruins lie beside the Israeli kibbutz Ein Dor, founded in 1948 and named after the town, which keeps a small archaeological museum of finds from the district."
+  ru:
+    - "Ен-Дор — город на восточном краю долины Изреель, на северной стороне холма Море между горами Фавор и Гелвуй. Книга Иисуса Навина числит его с Беф-Саном, Ивлеамом, Дором, Фаанахом и Мегиддоном среди ханаанских городов внутри Иссахара и Асира, доставшихся Манассии. Слава его — от ночи перед Гелвуем. Когда Филистимляне стояли станом в Сонаме по ту сторону долины, «Тогда Саул сказал слугам своим: сыщите мне женщину волшебницу, и я пойду к ней и спрошу ее. И отвечали ему слуги его: здесь в Аэндоре есть женщина волшебница». Саул пошёл к ней ночью, переодетый, в обход филистимского стана, и дух Самуила сказал ему, что завтра он и сыновья его умрут. Псалом 82 (83 по еврейскому счёту) вспоминает поражение Сисары и Иавина у Киссона: «которые истреблены в Аендоре, сделались навозом для земли»."
+    - "Евсевий помещает Аендор в четырёх милях к югу от Фавора, и имя сохранилось в Индуре, арабской деревне на северном склоне холма Море примерно в 7 км к югу от Фавора, покинутой в 1948 году. Древний город ищут в Хирбет-эс-Сафсафе прямо над ней, где собрана керамика железного века, — первый кандидат на карте; Телль-эль-Аджуль и сам Индур тоже названы. Поскольку Иисус Навин числит Ен-Дор с Фаанахом и Мегиддоном, а псалом связывает его с битвой, которую книга Судей помещает «в Фанаахе у вод Мегиддонских», некоторые смотрели к западному краю долины, на Телль-Абу-Кедейс или Хирбет-Джадуру близ Фаанаха. Раскопки вопроса не решили."
+    - "Сегодня развалины лежат рядом с израильским кибуцем Эйн-Дор, основанным в 1948 году и названным по городу; в нём есть небольшой археологический музей находок из округи."
+scripture:
+  - Josh.17.11
+  - 1Sam.28.4-1Sam.28.8
+  - 1Sam.28.19
+  - Ps.83.9-Ps.83.10
+  - Judg.5.19
+sources:
+  - "Eusebius, Onomasticon, s.v. Aendor"
+  - "E. Robinson, Biblical Researches in Palestine, Mount Sinai and Arabia Petraea (1841)"
+  - "Z. Gal, Lower Galilee during the Iron Age (1992)"
+  - "P. K. McCarter, I Samuel (Anchor Bible, 1980)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

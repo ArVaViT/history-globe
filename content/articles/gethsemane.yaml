@@ -1,0 +1,25 @@
+# Overview article (ADR 0007). Mainstream facts only; the exact spot is unknown and the shrines are given as tradition; the dating of the olive trees is given as one study's result.
+id: gethsemane
+place: a42418f
+title:
+  en: "Gethsemane"
+  ru: "Гефсимания"
+body:
+  en:
+    - "Gethsemane is the place on the Mount of Olives where Jesus prayed on the night of his arrest. The name is usually explained as Aramaic for “oil press”. Only Matthew and Mark name it: “Then cometh Jesus with them unto a place called Gethsemane, and saith unto the disciples, Sit ye here, while I go and pray yonder.” Luke says only that he went “as he was wont, to the mount of Olives”, and John that he crossed “the brook Cedron, where was a garden”, a place Judas knew, “for Jesus ofttimes resorted thither with his disciples”. There Jesus prayed in anguish and there he was taken."
+    - "The Gospels give no more than this, and the exact spot is not known. By the fourth century Christians prayed at the foot of the Mount of Olives across the Kidron from the Temple Mount: Eusebius places Gethsemane there, and the pilgrim Egeria describes a church on the site of the prayer. Today the Church of All Nations, built in 1919–1924 over the remains of a Byzantine church, stands beside a garden of old olive trees kept by the Franciscans; a study of 2015 dated three of the eight to the twelfth century. Nearby are the Grotto of Gethsemane and the Tomb of Mary, also shown by tradition."
+  ru:
+    - "Гефсимания — место на горе Елеонской, где Иисус молился в ночь, когда Его взяли. Имя обычно объясняют как арамейское «масличный пресс». Называют его только Матфей и Марк: «Потом приходит с ними Иисус на место, называемое Гефсимания, и говорит ученикам: посидите тут, пока Я пойду помолюсь там». Лука говорит лишь, что Он «пошел по обыкновению на гору Елеонскую», а Иоанн — что Он вышел «за поток Кедрон, где был сад», место, которое знал и Иуда, «потому что Иисус часто собирался там с учениками Своими». Там Иисус молился в смертельной скорби, и там Его взяли."
+    - "Больше Евангелия не говорят, и точное место неизвестно. К IV веку христиане молились у подножия горы Елеонской, через Кедрон от Храмовой горы: Евсевий помещает Гефсиманию там, а паломница Эгерия описывает церковь на месте молитвы. Сегодня здесь стоит церковь Всех Наций, построенная в 1919–1924 годах на остатках византийской церкви, рядом с садом старых олив, который хранят францисканцы; исследование 2015 года датировало три из восьми XII веком. Поблизости — Гефсиманский грот и гробница Богородицы, также показываемые по преданию."
+scripture:
+  - Matt.26.36
+  - Mark.14.32
+  - Luke.22.39-Luke.22.40
+  - John.18.1-John.18.2
+sources:
+  - "Eusebius, Onomasticon, s.v. Gethsemane"
+  - "Egeria, Itinerarium 36"
+  - "J. E. Taylor, 'The Garden of Gethsemane: Not the Place of Jesus' Arrest', Biblical Archaeology Review 21.4 (1995)"
+  - "M. Bernabei, 'The age of the olive trees in the Garden of Gethsemane', Journal of Archaeological Science 53 (2015)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008)"
+status: checked

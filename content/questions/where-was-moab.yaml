@@ -1,0 +1,24 @@
+id: where-was-moab
+question:
+  en: "Where was Moab?"
+  ru: "Где находился Моав?"
+answer:
+  en:
+    - "Moab was the high tableland east of the Dead Sea, in today's central Jordan, from the gorge of the Zered (Wadi Hasa) in the south to the plains opposite Jericho in the north, cut in two by the deep canyon of the Arnon (Wadi Mujib). The map point stands on Kir-hareseth, today's Kerak, its chief city south of the Arnon, about 80 km south-east of Jerusalem in a straight line across the Dead Sea. Numbers calls the Arnon “the border of Moab, between Moab and the Amorites”: the land north of it, with Dibon, Medeba and Heshbon, changed hands between Moab and Israel more than once."
+    - "Most of the Bible's stories of Moab happen on its edges. Israel's last camp before the crossing was “in the plains of Moab on this side Jordan by Jericho”, and Moses died “in the land of Moab” on Mount Nebo, about 65 km north of the map point; “no man knoweth of his sepulchre unto this day”. In the days of the judges a man of Bethlehem went “to sojourn in the country of Moab” with his wife Naomi, and Ruth the Moabitess came back with her; the Moab plateau can be seen across the Dead Sea from the hills of Judah."
+    - "In the ninth century BC “Mesha king of Moab was a sheepmaster”, who paid Israel tribute in lambs and wool and then rebelled; his own stele, found at Dibon in 1868 and now in the Louvre, tells how he took back the north of the land. Moab faded as a kingdom after the Babylonian conquests of the sixth century BC; the plateau passed to the Nabataeans and in AD 106 to the Roman province of Arabia, and today it is the governorates of Madaba and Karak."
+  ru:
+    - "Моав — высокое плоскогорье к востоку от Мёртвого моря, в нынешней центральной Иордании, от ущелья Зареда (Вади-Хаса) на юге до равнин против Иерихона на севере, рассечённое надвое глубоким каньоном Арнона (Вади-Муджиб). Точка карты стоит на Кирхарешете, нынешнем Кераке, главном его городе к югу от Арнона, примерно в 80 км к юго-востоку от Иерусалима по прямой, через Мёртвое море. Книга Чисел называет Арнон границей: «Арнон граница Моава, между Моавом и Аморреем»; земля к северу от него, с Дивоном, Медевой и Есевоном, не раз переходила от Моава к Израилю и обратно."
+    - "Бо́льшая часть библейских рассказов о Моаве происходит на его окраинах. Последний стан Израиля перед переходом был «на равнинах Моава, при Иордане, против Иерихона», а Моисей умер «в земле Моавитской» на горе Нево, примерно в 65 км к северу от точки карты, «и никто не знает места погребения его даже до сего дня». Во дни судей человек из Вифлеема пошёл «жить на полях Моавитских» с женой Ноеминью, и Руфь Моавитянка вернулась вместе с ней; плато Моава видно через Мёртвое море с Иудейских гор."
+    - "В IX веке до н. э. «Меса, царь Моавитский, был богат скотом» и платил Израилю дань овцами и неостриженными баранами, а потом отложился; его собственная стела, найденная в Дивоне в 1868 году и ныне хранящаяся в Лувре, рассказывает, как он вернул север страны. После вавилонских завоеваний VI века до н. э. Моав исчезает как царство; плато перешло к Набатеям, а в 106 г. н. э. — к римской провинции Аравия, и сегодня это провинции Мадаба и Эль-Карак."
+map:
+  place: aa0b1d6
+  year: "c. 850 BC"
+  ref: 2Kgs.3.4
+scripture: [Num.21.13, Num.22.1, Deut.34.5-Deut.34.6, Ruth.1.1, 2Kgs.3.4-2Kgs.3.5]
+sources:
+  - "Region point and straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "The Mesha Stele (Louvre AO 5066); translation by K. A. D. Smelik in W. W. Hallo and K. L. Younger (eds.), The Context of Scripture, vol. 2 (2000)"
+  - "B. Routledge, Moab in the Iron Age: Hegemony, Polity, Archaeology (2004)"
+  - "B. MacDonald, 'East of the Jordan': Territories and Sites of the Hebrew Scriptures (2000)"
+status: checked

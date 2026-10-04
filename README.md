@@ -16,9 +16,9 @@ Russian (Synodal) names, disputed locations with their candidate sites, where ea
 today and the years it stood; 329 dated events and 57 battles; 2153 people of the Bible
 with their families (STEP Bible TIPNR, every tie read against the text); 553 sites of the
 ancient world around it; Roman roads (Itiner-e). 54 tours with walking days along the
-roads and the relief of each leg; 309 place articles, 100 question pages and 80
-ancient-author notes, 162 photos — each checked against its sources by an independent
-pass, every source line given in Russian too.
+roads and the relief of each leg; 642 place articles (every place named twice or more),
+200 question pages and 773 ancient-author notes, 320 photos — each checked against its
+sources by an independent pass, every source line given in Russian too.
 
 - **People:** search a name ("Давид"), or Overview → People: their family, the line of
   their fathers, the places they lived and acted in lit on the map, which goes to their

@@ -1,0 +1,34 @@
+id: where-was-the-sermon-on-the-mount
+question:
+  en: "Where was the Sermon on the Mount?"
+  ru: "Где была Нагорная проповедь?"
+answer:
+  en:
+    - "Matthew does not name the mountain: “seeing the multitudes, he went up into a mountain”, and when he came down he “entered into Capernaum”. The traditional site is the Mount of Beatitudes, the hill above Tabgha on the north-west shore of the Sea of Galilee, a little west of Capernaum, where the Church of the Beatitudes was built in 1938; the map point stands at Capernaum, about 33 km north-east of Nazareth and 127 km north of Jerusalem in a straight line. No one can say which hill it was: any of the slopes above the lake fits the Gospel's words, and the tradition is a pilgrims' choice, not a memory."
+    - "Luke tells the same sermon on level ground: Jesus “went out into a mountain to pray”, chose the twelve in the morning and “came down with them, and stood in the plain”, before a crowd “out of all Judaea and Jerusalem, and from the sea coast of Tyre and Sidon”. Readers have long reconciled the two by a flat shelf on the hillside, and the slopes above Tabgha have such terraces; many scholars hold rather that Matthew's mountain is a setting with meaning, a new Sinai where the new law is given, and that Luke's plain makes room for the crowds, so the question of a spot does not arise. Both Gospels set the sermon early in the Galilean ministry, when Jesus was based at Capernaum."
+    - "The tradition at Tabgha is old. A note from Egeria's travels, preserved by Peter the Deacon, says that near the seven springs rises the mountain with the cave to which the Saviour climbed and spoke the Beatitudes; a small Byzantine chapel found in 1935, dated by its excavator Bagatti to the fourth century and by others to the sixth, stood on the slope just above the road at Tabgha, and the Franciscan church of 1938, by Antonio Barluzzi, eight-sided for the eight Beatitudes, stands higher up the hill with the lake spread below. In the Middle Ages pilgrims were shown instead the Horns of Hattin, the twin-peaked hill west of Tiberias, a tradition of the Crusader period, since left behind."
+  ru:
+    - "Матфей не называет горы: «Увидев народ, Он взошел на гору», а сойдя с неё, «вошел Иисус в Капернаум». Традиционное место — гора Блаженств, холм над Табхой на северо-западном берегу Галилейского моря, чуть западнее Капернаума, где в 1938 году построена церковь Блаженств; точка карты стоит в Капернауме, примерно в 33 км к северо-востоку от Назарета и в 127 км к северу от Иерусалима по прямой. Какой это был холм, сказать нельзя: словам Евангелия отвечает любой склон над озером, и предание — выбор паломников, а не память."
+    - "Лука рассказывает ту же проповедь на ровном месте: Иисус «взошел… на гору помолиться», утром избрал двенадцать и, «сойдя с ними, стал Он на ровном месте» перед множеством народа «из всей Иудеи и Иерусалима и приморских мест Тирских и Сидонских». Читатели издавна примиряли оба рассказа плоским уступом на склоне, и склоны над Табхой такие террасы имеют; многие учёные считают скорее, что гора Матфея — место со смыслом, новый Синай, где даётся новый закон, а равнина Луки даёт простор толпам, так что вопрос о точке не возникает. Оба Евангелия ставят проповедь в начало галилейского служения, когда Иисус жил в Капернауме."
+    - "Предание в Табхе старое. Заметка из путешествия Эгерии, сохранённая Петром Диаконом, говорит, что близ семи источников поднимается гора с пещерой, на которую взошёл Спаситель и произнёс блаженства; маленькая византийская часовня, найденная в 1935 году и датированная раскопавшим её Багатти IV веком, а другими — VI, стояла на склоне сразу над дорогой в Табхе, а францисканская церковь 1938 года, построенная Антонио Барлуцци восьмигранной — по числу блаженств, — стоит выше по холму, и под ней расстилается озеро. В Средние века паломникам показывали вместо неё Рога Хаттина, двуглавый холм к западу от Тивериады: это предание времён крестоносцев, с тех пор оставленное."
+map:
+  place: af2161c
+  year: "AD 29"
+  ref: Matt.5.1
+scripture:
+  [
+    Matt.5.1-Matt.5.2,
+    Matt.7.28-Matt.7.29,
+    Matt.8.1,
+    Matt.8.5,
+    Luke.6.12-Luke.6.13,
+    Luke.6.17-Luke.6.20,
+  ]
+sources:
+  - "Straight-line distances between the places' points (Capernaum, Nazareth, Jerusalem): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Egeria's Travels, the notes of Peter the Deacon on the seven springs (tr. J. Wilkinson, Egeria's Travels, 3rd ed., 1999)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008), s.v. Tabgha (the Byzantine chapel and the Mount of Beatitudes)"
+  - "W. D. Davies and D. C. Allison, The Gospel According to Saint Matthew, vol. 1 (ICC, 1988), on Matthew 5:1"
+  - "I. H. Marshall, The Gospel of Luke (NIGTC, 1978), on Luke 6:17"
+  - "History Globe question “Where was Capernaum?” and tour “Jesus in Galilee, after Mark”"
+status: checked

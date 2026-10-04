@@ -1,0 +1,27 @@
+# Overview article (ADR 0007). Mainstream facts only; the hill is unlocated and depends on the site of Timnath-serah, which is itself debated; a minor place, said so.
+id: gaash
+place: ab05a42
+title:
+  en: "Gaash"
+  ru: "Гора Гааш"
+body:
+  en:
+    - "Gaash is a hill in the hill country of Ephraim known only as a landmark for Joshua's grave. Joshua was buried “in the border of his inheritance in Timnath-serah, which is in mount Ephraim, on the north side of the hill of Gaash”, and the book of Judges repeats the note, calling the town Timnath-heres. The “brooks of Gaash”, the ravines below the hill, were the home of one of David's thirty heroes, Hiddai, whom Chronicles calls Hurai. That is all the Bible says of it; Eusebius adds only that Joshua's monument was still shown near the village of Thamna."
+    - "The hill cannot be found without Timnath-serah, and that town is itself debated. Most scholars place it at Khirbet Tibnah, on the western slopes of the Samarian hills about 30 km north-west of Jerusalem, where rock-cut tombs lie beside the ruin, one of which Victor Guérin in the nineteenth century took for Joshua's; Jewish and Samaritan tradition points instead to Kifl Haris near Salfit, further north. If Tibnah is right, Gaash is one of the ridges south of it, and the brooks of Gaash the wadis that drain west from there toward the coastal plain. Nothing has been excavated that bears on the question."
+    - "The area today is the Salfit and Ramallah governorates of the West Bank, hill country of olive terraces and deep wadis, with Khirbet Tibnah an unoccupied ruin between the villages of Deir Nidham and Nabi Salih."
+  ru:
+    - "Гааш — гора в горах Ефремовых, известная лишь как ориентир для могилы Иисуса Навина. Иисуса похоронили «в пределе его удела в Фамнаф-Сараи, что на горе Ефремовой, на север от горы Гааша», и книга Судей повторяет это замечание. «Нахле-Гааш», то есть потоки Гааша, ущелья под горой, были родиной одного из тридцати храбрых Давида — Иддая, которого Паралипоменон зовёт Хураем. Это всё, что говорит о ней Библия; Евсевий добавляет лишь, что памятник Иисуса Навина ещё показывали близ селения Фамна."
+    - "Гору нельзя найти без Фамнаф-Сараи, а этот город сам служит предметом спора. Большинство учёных помещает его в Хирбет-Тибна на западных склонах Самарийских гор, примерно в 30 км к северо-западу от Иерусалима, где рядом с руинами лежат высеченные в скале гробницы, одну из которых Виктор Герен в XIX веке принял за гробницу Иисуса Навина; иудейское и самаритянское предание указывает вместо того на Кифль-Харис близ Сальфита, севернее. Если Тибна — верное место, то Гааш — один из хребтов к югу от него, а потоки Гааша — вади, стекающие оттуда на запад к приморской равнине. Раскопок, которые касались бы этого вопроса, не было."
+    - "Сегодня это мухафазы Сальфит и Рамалла на Западном берегу, горный край оливковых террас и глубоких вади, а Хирбет-Тибна — необитаемые руины между деревнями Дейр-Низам и Наби-Салих."
+scripture:
+  - Josh.24.30
+  - Judg.2.9
+  - 2Sam.23.30
+  - 1Chr.11.32
+sources:
+  - "Eusebius, Onomasticon, s.v. Gaas"
+  - "C. R. Conder and H. H. Kitchener, The Survey of Western Palestine: Memoirs, vol. 2, Samaria (1882)"
+  - "F.-M. Abel, Géographie de la Palestine, vol. 2 (1938)"
+  - "Z. Kallai, Historical Geography of the Bible: The Tribal Territories of Israel (1986)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

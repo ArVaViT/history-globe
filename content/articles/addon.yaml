@@ -1,0 +1,21 @@
+# Overview article (ADR 0007). Mainstream facts only; a Babylonian settlement of exiles known from one list in two copies; its site is unknown and said to be so.
+id: addon
+place: a95b373
+title:
+  en: "Addon"
+  ru: "Аддон"
+body:
+  en:
+    - "Addon (Addan in Ezra) is a place in Babylonia named in the list of those who returned to Judah with Zerubbabel: “these were they which went up also from Tel-melah, Tel-haresha, Cherub, Addon, and Immer: but they could not shew their father's house, nor their seed, whether they were of Israel”. Ezra's copy of the list has the same line. These were five settlements of exiles from which came families, and some priests, who could not prove their descent and were kept from the priesthood until a priest with Urim and Thummim should decide. The Synodal Bible runs the names together, as Cherub-Addan-Immer in Ezra and Cherub-Addon in Nehemiah."
+    - "Where Addon lay is unknown. The two names in Tel, “mound”, suggest new villages on old ruins; Cherub, Addon and Immer may be names of men after whom settlements were called, as Immer is a priestly family. Cuneiform tablets of the sixth and fifth centuries BC, among them the Al-Yahudu texts and the Murashu archive from Nippur, show Judean exiles settled in villages of their own in central Babylonia; none of the places named in them has been matched with Addon, and nothing more can be said."
+  ru:
+    - "Аддон (в книге Ездры — Аддан) — место в Вавилонии, названное в списке вернувшихся в Иудею с Зоровавелем: «И вот вышедшие из Тел-Мелаха, Тел-Харши, Херув-Аддона и Иммера; но они не могли показать о поколении своем и о племени своем, от Израиля ли они». Список у Ездры содержит ту же строку. Это пять поселений изгнанников, откуда пришли семьи и несколько священников, не сумевшие доказать своё происхождение; их отстранили от священства, пока не восстанет священник с уримом и туммимом. Синодальный перевод сливает имена: у Ездры — Херуб-Аддан-Иммер, у Неемии — Херув-Аддон."
+    - "Где лежал Аддон, неизвестно. Два названия со словом «тел», «холм», говорят о новых селениях на старых развалинах; Херув, Аддон и Иммер могут быть именами людей, по которым назвали поселения, — Иммер и есть священнический род. Клинописные таблички VI–V веков до н. э., среди них тексты Аль-Яхуду и архив Мурашу из Ниппура, показывают иудейских изгнанников в собственных селениях в средней Вавилонии; ни одно из названных там мест не отождествлено с Аддоном, и больше сказать нечего."
+scripture:
+  - Ezra.2.59
+  - Neh.7.61
+sources:
+  - "H. G. M. Williamson, Ezra, Nehemiah (Word Biblical Commentary, 1985)"
+  - "J. Blenkinsopp, Ezra–Nehemiah (Old Testament Library, 1988)"
+  - "L. E. Pearce and C. Wunsch, Documents of Judean Exiles and West Semites in Babylonia in the Collection of David Sofer (2014)"
+status: checked

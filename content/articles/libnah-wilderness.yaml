@@ -1,0 +1,21 @@
+# Overview article (ADR 0007). Mainstream facts only; a wilderness station known only by name: the app's guesses are named as guesses.
+id: libnah-wilderness
+place: a3e94bd
+title:
+  en: "Libnah (wilderness station)"
+  ru: "Ливна (стан в пустыне)"
+body:
+  en:
+    - "This Libnah is one of the camps of Israel in the wilderness, named only in the list of stations in Numbers 33: “And they departed from Rimmon-parez, and pitched in Libnah. And they removed from Libnah, and pitched at Rissah.” It belongs to a run of seventeen stations between Hazeroth and Ezion-gaber, most of which appear nowhere else, and the text tells nothing that happened there. The name means “white”, perhaps from the colour of the ground or from white poplars. It has nothing to do with Libnah the city of the Shephelah, which Joshua took and which later revolted against Judah."
+    - "Nothing fixes its place, and even the order of the route through these stations is a matter of reconstruction. The map gives two guesses: a point along Wadi el-Beidha, “the white wadi”, in the eastern Sinai, chosen for the echo of the meaning; and the Laban of Deuteronomy 1:1, one of the places named at the opening of Moses’ speeches, which some take to be the same station under another form of the name. Neither can be tested: a camp of tents left nothing to dig."
+  ru:
+    - "Эта Ливна — один из станов Израиля в пустыне, известный только по перечню в 33-й главе Чисел: «И отправились из Римнон-Фареца и расположились станом в Ливне. И отправились из Ливны и расположились станом в Риссе». Она входит в ряд из семнадцати станов между Асирофом и Ецион-Гавером, большая часть которых больше нигде не встречается, и текст не сообщает ничего, что случилось там. Имя значит «белая» — может быть, по цвету земли или по белым тополям. Она не имеет отношения к Ливне, городу Шефелы, который взял Иисус Навин и который позже отложился от Иудеи."
+    - "Ничто не указывает её места, и даже порядок пути через эти станы восстанавливается лишь предположительно. На карте даны две догадки: точка вдоль Вади-эль-Бейда, «белой долины», на востоке Синая, выбранная из-за созвучия смысла, и Лаван из начала Второзакония, одно из мест, где Моисей говорил свои речи, — некоторые считают его тем же станом под иной формой имени. Проверить ни ту, ни другую нельзя: стан из шатров не оставил ничего для раскопок."
+scripture:
+  - Num.33.20-Num.33.21
+  - Deut.1.1
+sources:
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "B. A. Levine, Numbers 21-36 (Anchor Bible 4A, 2000)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+status: checked

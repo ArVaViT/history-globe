@@ -1,0 +1,25 @@
+id: where-was-judea
+question:
+  en: "Where was Judea?"
+  ru: "Где находилась Иудея?"
+answer:
+  en:
+    - "Judea was the land of Judah around Jerusalem: the southern hill country from about Bethel to Hebron and Beersheba, with the wilderness falling east to the Dead Sea and the low hills of the Shephelah sloping west, most of it in today's West Bank and southern Israel. The map point stands on Jerusalem, its capital. It was small: Bethel to Beersheba is about 85 km in a straight line, and Bethlehem lies only 8 km south of Jerusalem, Hebron about 31 km."
+    - "Its size changed with its rulers. Under the Persians it was the little province of Yehud, “the province of Judea” of Ezra, hardly larger than the hills round Jerusalem; the Hasmoneans grew it into a kingdom from Galilee to Idumea. In the Gospels Judea is one region beside Galilee and Samaria: Jesus is born in “Bethlehem of Judaea”, John preaches “in the wilderness of Judaea”, and the news of John's birth spreads “throughout all the hill country of Judæa”. When Luke writes “Pontius Pilate being governor of Judæa”, the Roman province also took in Samaria and Idumea and was governed from Caesarea on the coast."
+    - "After the revolt of Bar Kokhba in AD 132–135 Hadrian renamed the province Syria Palaestina, and Judea dropped out of official use. The Judean hills and desert are today mostly in the West Bank, with Bethlehem and Hebron; Israel calls the area Judea and Samaria."
+  ru:
+    - "Иудея — земля Иуды вокруг Иерусалима: южное нагорье примерно от Вефиля до Хеврона и Вирсавии, с пустыней, спускающейся на восток к Мёртвому морю, и низкими холмами Шефелы, сходящими на запад; бо́льшая её часть лежит на нынешнем Западном берегу и на юге Израиля. Точка карты стоит на Иерусалиме, её столице. Страна была невелика: от Вефиля до Вирсавии около 85 км по прямой, а Вифлеем лежит всего в 8 км к югу от Иерусалима, Хеврон — примерно в 31 км."
+    - "Её размеры менялись вместе с правителями. При Персах это была маленькая провинция Йехуд, Иудейская область книги Ездры, едва ли больше гор вокруг Иерусалима; Хасмонеи расширили её до царства от Галилеи до Идумеи. В Евангелиях Иудея — одна из областей рядом с Галилеей и Самарией: Иисус рождается «в Вифлееме Иудейском», Иоанн проповедует «в пустыне Иудейской», а о рождении Иоанна рассказывают «по всей нагорной стране Иудейской». Когда Лука пишет, что «Понтий Пилат начальствовал в Иудее», римская провинция включала также Самарию и Идумею и управлялась из Кесарии на побережье."
+    - "После восстания Бар-Кохбы в 132–135 гг. н. э. Адриан переименовал провинцию в Сирию Палестинскую, и имя Иудеи вышло из официального употребления. Иудейские горы и пустыня сегодня по большей части лежат на Западном берегу, с Вифлеемом и Хевроном; Израиль называет эту область Иудеей и Самарией."
+map:
+  place: a149f13
+  year: "AD 28"
+  ref: Luke.3.1
+scripture: [Ezra.5.8, Matt.2.1, Matt.2.22, Matt.3.1, Luke.1.65, Luke.3.1, Acts.1.8]
+sources:
+  - "Region point and straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Y. Meshorer, A Treasury of Jewish Coins (2001) (the Yehud coins)"
+  - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. G. Vermes and F. Millar, vol. 1 (1973), on the prefects of Judea and the sons of Herod"
+  - "Cassius Dio, Roman History 69.12-14 (the Bar Kokhba revolt)"
+  - "O. Lipschits, The Fall and Rise of Jerusalem: Judah under Babylonian Rule (2005)"
+status: checked

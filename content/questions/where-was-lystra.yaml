@@ -1,0 +1,36 @@
+id: where-was-lystra
+question:
+  en: "Where was Lystra, the home of Timothy?"
+  ru: "Где находилась Листра, родина Тимофея?"
+answer:
+  en:
+    - "Lystra was a small Roman colony in Lycaonia, on the high plateau of central Turkey; its mound rises by the village of Hatunsaray, about 33 km south-south-west of Konya, ancient Iconium, in a straight line, and the map point stands on it. Derbe lay about 95 km to the east-south-east, Pisidian Antioch about 128 km to the north-west, and Jerusalem about 700 km away. Augustus settled veterans there as Colonia Iulia Felix Gemina Lustra, and a Latin inscription read on the mound by J. R. S. Sterrett in 1885 fixed the site."
+    - "Paul came to Lystra on his first journey, when he was stoned there, and came back on his second: “Then came he to Derbe and Lystra: and, behold, a certain disciple was there, named Timotheus, the son of a certain woman, which was a Jewess, and believed; but his father was a Greek: which was well reported of by the brethren that were at Lystra and Iconium.” Paul later recalls the faith of Timothy's grandmother Lois and mother Eunice, and that “from a child thou hast known the holy scriptures”. Most take Lystra as Timothy's home town; some read Acts 20:4, “Gaius of Derbe, and Timotheus”, as making Derbe his home instead."
+    - "Lystra was a mixed place: Roman colonists and Latin inscriptions above, and below them townspeople who still spoke “the speech of Lycaonia” and worshipped Zeus, whose priest had his temple before the city. On the way back through it on the first journey Paul and Barnabas were “confirming the souls of the disciples… that we must through much tribulation enter into the kingdom of God”, and ordained elders. The mound itself waited for systematic excavation until 2024, when Necmettin Erbakan University in Konya began work there; the stoning is told in the question “Where was Paul stoned?”."
+  ru:
+    - "Листра — небольшая римская колония в Ликаонии, на высоком плато в центре Турции; её холм поднимается у деревни Хатунсарай, примерно в 33 км к юго-юго-западу от Коньи, древней Иконии, по прямой, и точка карты стоит на нём. Дервия лежала примерно в 95 км к востоку-юго-востоку, Антиохия Писидийская — примерно в 128 км к северо-западу, а до Иерусалима около 700 км. Август поселил здесь ветеранов, назвав колонию Colonia Iulia Felix Gemina Lustra, и латинская надпись, прочитанная на холме Дж. Р. С. Стерреттом в 1885 г., установила место."
+    - "Павел пришёл в Листру в первом путешествии, когда его здесь побили камнями, и вернулся во втором: «Дошел он до Дервии и Листры. И вот, там был некоторый ученик, именем Тимофей, которого мать была Иудеянка уверовавшая, а отец Еллин, и о котором свидетельствовали братия, находившиеся в Листре и Иконии». Позже Павел вспоминает веру бабки Тимофея Лоиды и матери Евники и то, что «ты из детства знаешь священные писания». Большинство считает Листру родным городом Тимофея; некоторые же по Деян. 20:4, где рядом названы Гаий Дервянин и Тимофей, относят его родину к Дервии."
+    - "Листра была городом смешанным: наверху — римские колонисты и латинские надписи, внизу — горожане, ещё говорившие «по-ликаонски» и чтившие Зевса, жрец которого имел храм перед городом. Возвращаясь через неё в первом путешествии, Павел и Варнава утверждали «души учеников, увещевая пребывать в вере и поучая, что многими скорбями надлежит нам войти в Царствие Божие», и рукоположили пресвитеров. Систематически холм начали раскапывать лишь в 2024 г., когда работы повёл Университет Неджметтина Эрбакана в Конье; о побиении камнями рассказано в вопросе «Где Павла побили камнями?»."
+map:
+  place: af0719d
+  year: "AD 50"
+  ref: Acts.16.1
+scripture:
+  [
+    Acts.14.6,
+    Acts.14.11-Acts.14.13,
+    Acts.14.21-Acts.14.23,
+    Acts.16.1-Acts.16.3,
+    Acts.20.4,
+    2Tim.1.5,
+    2Tim.3.11,
+    2Tim.3.15,
+  ]
+sources:
+  - "Straight-line distances between the places' points (Lystra, Iconium, Derbe, Antioch in Pisidia, Jerusalem): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "J. R. S. Sterrett, The Wolfe Expedition to Asia Minor (1888), on the inscription of Colonia Lystra"
+  - "W. M. Ramsay, The Cities of St. Paul (1907), part VI: Lystra"
+  - "B. Levick, Roman Colonies in Southern Asia Minor (1967)"
+  - "Lystra excavations (Necmettin Erbakan University, from 2024), directed by İ. M. Mimiroğlu"
+  - "History Globe article “Lystra”, question “Where was Paul stoned?” and History Globe tours “Paul's first journey” and “Paul's second journey”"
+status: checked

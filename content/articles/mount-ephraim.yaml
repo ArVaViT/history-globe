@@ -1,0 +1,32 @@
+# Overview article (ADR 0007). Mainstream facts only; the record holds the three mentions in Jeremiah, and the article treats the hill country as a whole; the settlement surveys are reported, not interpreted.
+id: mount-ephraim
+place: ac0d1a5
+title:
+  en: "Mount Ephraim"
+  ru: "Гора Ефремова"
+body:
+  en:
+    - "Mount Ephraim, in modern versions the hill country of Ephraim, is not a single peak but the central range of the land between Bethel in the south and the plain of Jezreel in the north: limestone hills of 600 to 1,000 metres, once partly forested, with Shechem in its pass, Shiloh in its heart and Timnath-serah, Joshua's own town and grave, “which is in mount Ephraim”. The name belongs to the territory of the house of Joseph, and the Bible stretches it over the hills of Manasseh and down to Ramah and Bethel, where Deborah sat under her palm “in mount Ephraim”. Here lived Micah with his idol, and Elkanah of Ramathaim-zophim, Samuel's father; when the house of Joseph complained that the hills were too narrow for them, Joshua told them to clear the forest; and Jeroboam “built Shechem in mount Ephraim, and dwelt therein”, the first seat of the northern kingdom."
+    - "Jeremiah names the hills three times. In the alarm of invasion from the north, “a voice declareth from Dan, and publisheth affliction from mount Ephraim”, the news running south toward Jerusalem. In the book of consolation he promises that the watchmen of the north will one day call the people to the Temple of the south: “there shall be a day, that the watchmen upon the mount Ephraim shall cry, Arise ye, and let us go up to Zion unto the LORD our God”, a reunion of the two kingdoms. And in the oracle against Babylon Israel is brought home to its pasture, “and his soul shall be satisfied upon mount Ephraim and Gilead”."
+    - "Archaeological surveys of the hill country, led by Israel Finkelstein for southern Samaria and Adam Zertal for Manasseh, recorded hundreds of small villages founded in the twelfth and eleventh centuries BC on hills that had been thinly settled before, the material trace of the people who became Israel; the question of where they came from is debated. The hills are today the northern West Bank, around Nablus and Ramallah, and the ruins of Shiloh, Shechem and Khirbet Tibnah, the usual site of Timnath-serah, are still there among the terraced olives."
+  ru:
+    - "Гора Ефремова, в современных переводах нагорье Ефремово, — не одна вершина, а центральный хребет страны между Вефилем на юге и равниной Изреельской на севере: известняковые горы высотой от 600 до 1000 метров, когда-то отчасти лесистые, с Сихемом в проходе, Силомом в сердце и Фамнаф-Сараи, собственным городом и могилой Иисуса Навина, «что на горе Ефремовой». Имя принадлежит уделу дома Иосифова, и Библия распространяет его на горы Манассии и вниз до Рамы и Вефиля, где Девора сидела под своей пальмой «на горе Ефремовой». Здесь жил Миха со своим истуканом и Елкана из Рамафаим-Цофима, отец Самуила; когда дом Иосифов жаловался, что горы для него тесны, Иисус Навин велел ему расчищать лес; а о первой столице северного царства сказано: «обстроил Иеровоам Сихем на горе Ефремовой и поселился в нем»."
+    - "Иеремия называет эти горы трижды. В тревоге нашествия с севера «уже несется голос от Дана и гибельная весть с горы Ефремовой» — весть бежит на юг к Иерусалиму. В книге утешения он обещает, что стражи севера однажды позовут народ к храму на юге: «будет день, когда стражи на горе Ефремовой провозгласят: „вставайте, и взойдем на Сион к Господу Богу нашему“», — воссоединение двух царств. А в пророчестве о Вавилоне Израиль возвращён на свою пажить, «и душа его насытится на горе Ефремовой и в Галааде»."
+    - "Археологические обследования нагорья, которые вели Израэль Финкельштейн в южной Самарии и Адам Зерталь в Манассии, зафиксировали сотни маленьких селений, основанных в XII–XI веках до н. э. на холмах, прежде заселённых редко, — вещественный след народа, ставшего Израилем; откуда он пришёл, спорят. Сегодня эти горы — северная часть Западного берега вокруг Наблуса и Рамаллы, и среди террас с оливами всё ещё лежат развалины Силома, Сихема и Хирбет-Тибны, обычного места Фамнаф-Сараи."
+scripture:
+  - Josh.17.14-Josh.17.18
+  - Josh.24.30
+  - Judg.4.5
+  - Judg.17.1
+  - 1Sam.1.1
+  - 1Kgs.12.25
+  - Jer.4.15
+  - Jer.31.6
+  - Jer.50.19
+sources:
+  - "I. Finkelstein, The Archaeology of the Israelite Settlement (1988)"
+  - "I. Finkelstein, Z. Lederman and S. Bunimovitz, Highlands of Many Cultures: The Southern Samaria Survey, the Sites (1997)"
+  - "A. Zertal, The Manasseh Hill Country Survey, vol. 1: The Shechem Syncline (2004)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+  - "W. L. Holladay, Jeremiah 1 (Hermeneia, 1986)"
+status: checked

@@ -1,0 +1,20 @@
+# Overview article (ADR 0007). Mainstream facts only; the station Tarah of Numbers 33 (named Terah in the data); unlocated, placed by the app only relative to its neighbours.
+id: terah
+place: a944b90
+title:
+  en: "Terah"
+  ru: "Тарах"
+body:
+  en:
+    - "Terah, spelled Tarah in the King James Version, is a camp of Israel in the wilderness known only from the list of stations in Numbers 33: “And they departed from Tahath, and pitched at Tarah. And they removed from Tarah, and pitched in Mithcah.” It is one of the run of stations between Hazeroth and Kadesh, most of which appear nowhere else in the Bible, and the text tells of no event there. In Hebrew the name has the same consonants as that of Terah, Abraham's father, but nothing links the two."
+    - "Nothing more is known, and no site has been proposed with any confidence. How the itinerary of Numbers 33 relates to the real ground is itself debated, and the stations between Hazeroth and Ezion-geber cannot be fixed on the map. The map places Terah only approximately, within about 50 km of its neighbour Mithcah, which is equally unknown."
+  ru:
+    - "Тарах — стан Израиля в пустыне, известный только по перечню стоянок в 33-й главе книги Чисел: «И отправились из Тахафа и расположились станом в Тарахе. И отправились из Тараха и расположились станом в Мифке». Он входит в череду стоянок между Асирофом и Кадесом, большинство которых больше нигде в Библии не встречается, и текст не сообщает ни о каком событии там. По-еврейски у имени те же согласные, что у имени Фарры, отца Авраама, но ничто их не связывает."
+    - "Больше ничего не известно, и ни одного места с уверенностью не предложено. Как маршрут 33-й главы Чисел соотносится с местностью, само по себе спорно, и стоянки между Асирофом и Ецион-Гавером на карте не установить. Тарах на ней помещён лишь приблизительно, в пределах около 50 км от соседней Мифки, которая так же неизвестна."
+scripture:
+  - Num.33.27-Num.33.28
+sources:
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "B. A. Levine, Numbers 21–36 (Anchor Bible 4A, 2000)"
+  - "J. Milgrom, Numbers (JPS Torah Commentary, 1990)"
+status: checked

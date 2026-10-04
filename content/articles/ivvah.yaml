@@ -1,0 +1,27 @@
+# Overview article (ADR 0007). Mainstream facts only; Ivvah is equated with Avva as most do; its site is said to be unknown, the app's candidates given without choosing; the view that it is no place at all is mentioned.
+id: ivvah
+place: a9ac5f9
+title:
+  en: "Ivvah"
+  ru: "Ивва"
+body:
+  en:
+    - "Ivvah, Ivah in the Authorised Version, closes the list of conquered cities with which Sennacherib's officer taunted Jerusalem in 701 BC: “Where are the gods of Hamath, and of Arpad? where are the gods of Sepharvaim, Hena, and Ivah? have they delivered Samaria out of mine hand?” Hezekiah's prayer repeats the list with “the king of the city of Sepharvaim, of Hena, and Ivah”, and Isaiah has the same words. Most identify it with Ava, one of the places from which the king of Assyria brought settlers into the cities of Samaria after 722 BC, together with Babylon, Cuthah, Hamath and Sepharvaim; the newcomers kept their gods, and “the Avites made Nibhaz and Tartak”. In Hebrew the two names differ only in the last letter."
+    - "Where it was is unknown. Since the list runs through Syria, many look for Ivvah there: the first candidate on the map is Kafr Aya on the Orontes south-west of Homs, and another is Imma, now Imm, between Antioch and Aleppo. Others, taking Sepharvaim for Sippar, have placed it in Babylonia, as the second candidate on the map does by equating it with Ama; and some have held that Hena and Ivvah are not places at all but names of gods, or damaged words. The gods Nibhaz and Tartak are known from no other source, so they give no help. Nothing further is known."
+    - "No site has been excavated as Ivvah. Kafr Aya is a village in the Homs governorate of Syria, among the orchards and lakes of the Orontes valley."
+  ru:
+    - "Ивва замыкает перечень покорённых городов, которым военачальник Сеннахирима дразнил Иерусалим в 701 г. до н. э.: «Где боги Емафа и Арпада? Где боги Сепарваима, Ены и Иввы? Спасли ли они Самарию от руки моей?» Молитва Езекии повторяет перечень: «царь города Сепарваима, Ены и Иввы», и у Исаии те же слова. Большинство отождествляют её с Аввой, одним из мест, откуда царь Ассирийский перевёл поселенцев в города Самарийские после 722 г. до н. э., вместе с Вавилоном, Кутой, Емафом и Сепарваимом; пришельцы сохранили своих богов, и «Аввийцы сделали Нивхаза и Тартака». По-еврейски два имени различаются лишь последней буквой."
+    - "Где она была, неизвестно. Поскольку перечень идёт по Сирии, многие ищут Ивву там: первый кандидат на карте — Кафр-Айя на Оронте к юго-западу от Хомса, другой — Имма, нынешний Имм, между Антиохией и Алеппо. Другие, принимая Сепарваим за Сиппар, помещали её в Вавилонии, как делает и второй кандидат на карте, отождествляя её с Амой; а некоторые считали, что Ена и Ивва — вовсе не места, а имена богов или испорченные слова. Боги Нивхаз и Тартак не известны ни из какого другого источника и потому ничем не помогают. Больше ничего не известно."
+    - "Ни одно место не раскапывали как Ивву. Кафр-Айя — деревня в провинции Хомс в Сирии, среди садов и озёр долины Оронта."
+scripture:
+  - 2Kgs.17.24
+  - 2Kgs.17.31
+  - 2Kgs.18.34
+  - 2Kgs.19.13
+  - Isa.37.13
+sources:
+  - "M. Cogan and H. Tadmor, II Kings (Anchor Bible 11, 1988)"
+  - "J. Gray, I and II Kings (Old Testament Library, 2nd ed., 1970)"
+  - "B. Becking, The Fall of Samaria: An Historical and Archaeological Study (1992)"
+  - "N. Na'aman and R. Zadok, 'Sargon II's Deportations to Israel and Philistia (716–708 B.C.)', Journal of Cuneiform Studies 40 (1988)"
+status: checked

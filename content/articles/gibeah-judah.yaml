@@ -1,0 +1,23 @@
+# Overview article (ADR 0007). Mainstream facts only; a minor place: unlocated; whether the Gibeah of 2 Chr 13:2 is this town is left open; the app's candidates are given as proposals.
+id: gibeah-judah
+place: a2f0f05
+title:
+  en: "Gibeah in Judah"
+  ru: "Гива в Иудее"
+body:
+  en:
+    - "This Gibeah, “hill”, was a town in the hill country of Judah, not the better-known Gibeah of Saul in Benjamin. Joshua lists it in a district south-east of Hebron with Maon, Carmel, Ziph, Juttah, Jezreel and Zanoah: “Cain, Gibeah, and Timnah; ten cities with their villages”. Chronicles names a Gibeah as the home of the mother of King Abijah of Judah: “His mother’s name also was Michaiah the daughter of Uriel of Gibeah.” Which Gibeah is meant there is not said; Kings calls her Maachah the daughter of Abishalom, and the two notices are reconciled in different ways."
+    - "Nothing else is known, and the town has not been found. The name, common in a hilly land, gives no help. The map's main candidate is only the region south of Hebron, where the list places it; particular sites proposed include Khirbet el-Qaryatein and Bani Na'im on the edge of the desert, and Jab'a farther north, west of Bethlehem. None has produced the name."
+  ru:
+    - "Эта Гива, «холм», — город в горах Иуды, не путать с более известной Гивой Сауловой в Вениамине. Книга Иисуса Навина называет её в округе к юго-востоку от Хеврона вместе с Маоном, Кармилом, Зифом, Ютой, Изреелем и Заноахом: «Каин, Гива и Фимна: десять городов с их селами». Паралипоменон называет Гиву родиной матери Авии, царя Иудейского: «имя матери его Михаия, дочь Уриилова, из Гивы». Какая Гива имеется в виду, не сказано; книга Царств называет её Маахой, дочерью Авессалома, и эти два известия согласуют по-разному."
+    - "Больше ничего не известно, и город не найден. Имя, обычное для гористой страны, не помогает. Главный кандидат на карте — лишь область к югу от Хеврона, где её помещает список; из отдельных мест предлагали Хирбет-эль-Карьятейн и Бани-Наим на краю пустыни и Джабу севернее, к западу от Вифлеема. Ни одно не дало имени."
+scripture:
+  - Josh.15.55-Josh.15.57
+  - 2Chr.13.2
+  - 1Kgs.15.2
+sources:
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+  - "Z. Kallai, Historical Geography of the Bible: The Tribal Territories of Israel (1986)"
+  - "S. Japhet, I and II Chronicles (Old Testament Library, 1993)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

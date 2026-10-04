@@ -1,0 +1,25 @@
+# Overview article (ADR 0007). Mainstream facts only; the tower of the furnaces on Nehemiah's western wall; position and the origin of the name given as uncertain.
+id: tower-of-the-ovens
+place: a721f7f
+title:
+  en: "Tower of the Ovens"
+  ru: "Башня Печная"
+body:
+  en:
+    - "The Tower of the Ovens, “the tower of the furnaces” in the King James Version, was a tower on the wall of Jerusalem rebuilt by Nehemiah in the mid-fifth century BC. In the list of builders Malchijah son of Harim and Hashub son of Pahath-moab “repaired the other piece, and the tower of the furnaces”; at the dedication of the wall the second choir set out “from beyond the tower of the furnaces even unto the broad wall”, and went on round by the north to the sheep gate. The name may come from bakers' ovens or kilns nearby; Jeremiah mentions a bakers' street in the city, but nothing ties it to this tower."
+    - "From its place in the lists, between the Broad Wall and the Valley Gate, the tower stood on the western side of the city, and some put it at the north-west corner of the wall. It has not been found. In the Jewish Quarter of the Old City Nahman Avigad uncovered in 1970 a stretch of a massive late-eighth-century wall, often identified with the Broad Wall, but whether Nehemiah's wall still ran so far west is debated. The map places the tower simply in Jerusalem."
+  ru:
+    - "Башня Печная стояла на стене Иерусалима, восстановленной Неемией в середине V века до н. э. В списке строителей сказано, что Малхия, сын Харима, и Хашшув, сын Пахаф-Моава, чинили второй участок; «они же чинили и башню Печную»; при освящении стены второй хор шёл «по стене от Печной башни и до широкой стены» и дальше кругом по северной стороне к Овечьим воротам. Имя, возможно, дано по хлебным печам или обжиговым печам поблизости; Иеремия упоминает в городе улицу хлебопеков, но ничто не связывает её с этой башней."
+    - "По месту в списках, между Широкой стеной и воротами Долины, башня стояла на западной стороне города, и некоторые помещают её у северо-западного угла стены. Она не найдена. В Еврейском квартале Старого города Нахман Авигад в 1970 году открыл участок мощной стены конца VIII века до н. э., которую часто отождествляют с Широкой стеной, но заходила ли стена Неемии так далеко на запад, спорно. На карте башня помещена просто в Иерусалиме."
+scripture:
+  - Neh.3.8
+  - Neh.3.11
+  - Neh.3.13
+  - Neh.12.38
+  - Jer.37.21
+sources:
+  - "H. G. M. Williamson, Ezra, Nehemiah (Word Biblical Commentary 16, 1985)"
+  - "J. Blenkinsopp, Ezra–Nehemiah: A Commentary (1988)"
+  - "N. Avigad, Discovering Jerusalem (1983)"
+  - "H. Geva (ed.), Jewish Quarter Excavations in the Old City of Jerusalem, vol. 1 (2000)"
+status: checked

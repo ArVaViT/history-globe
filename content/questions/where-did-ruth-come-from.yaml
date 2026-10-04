@@ -1,0 +1,39 @@
+id: where-did-ruth-come-from
+question:
+  en: "Where did Ruth come from?"
+  ru: "Откуда была родом Руфь?"
+answer:
+  en:
+    - "Ruth was a Moabite, from the country of Moab: the high tableland east of the Dead Sea in today's Jordan, between the gorge of the Arnon and the brook Zered, with the plain to the north, up to Heshbon, held by Moab in some periods. The map point for Moab stands at Kerak, the old Kir-hareseth, about 75 km south-east of Bethlehem in a straight line; on foot the way went round the north end of the Dead Sea, by Jericho and the fords of the Jordan, and up onto the plateau. The book never names Ruth's town, only “the country of Moab”, which the Russian Synodal translation renders as the fields of Moab."
+    - "In a famine “a certain man of Beth-lehem-judah went to sojourn in the country of Moab”, with his wife Naomi and two sons, who “took them wives of the women of Moab; the name of the one was Orpah, and the name of the other Ruth”. When all three men had died, Ruth would not go home: “whither thou goest, I will go; and where thou lodgest, I will lodge: thy people shall be my people, and thy God my God”. She came to Bethlehem as “Ruth the Moabitess”, gleaned in the field of Boaz and married him, and her son Obed “is the father of Jesse, the father of David”. Later David, hunted by Saul, brought his father and mother to the king of Moab, perhaps trusting this kinship; Matthew names Ruth among the four women in the genealogy of Jesus."
+    - "Her origin was a question in itself, for the law said: “An Ammonite or Moabite shall not enter into the congregation of the LORD”. The rabbis answered that the ban meant Moabite men, not women, and made Ruth a descendant of Eglon, king of Moab. When the book was written is debated: many date it to the monarchy, for its interest in David's line, while others read it as a gentle answer, after the exile, to Ezra and Nehemiah's dismissal of foreign wives. The story is set “in the days when the judges ruled”, whose dates are themselves disputed; the map uses 1100 BC as a conventional point."
+  ru:
+    - "Руфь была моавитянка, из земли Моава: высокого плато к востоку от Мёртвого моря, в нынешней Иордании, между ущельем Арнона и долиной Заред, а равнина к северу, до Есевона, в иные времена тоже принадлежала Моаву. Точка карты для Моава стоит в Кераке, древнем Кирхарешете, примерно в 75 км к юго-востоку от Вифлеема по прямой; пешком путь шёл вокруг северного края Мёртвого моря, через Иерихон и броды Иордана, и вверх на плато. Город Руфи книга не называет — только «поля Моавитские», как передаёт Синодальный перевод; в английской Библии это страна Моава."
+    - "Во время голода «пошел один человек из Вифлеема Иудейского со своею женою и двумя сыновьями своими жить на полях Моавитских», и сыновья «взяли себе жен из Моавитянок, имя одной Орфа, а имя другой Руфь». Когда все трое мужчин умерли, Руфь не вернулась домой: «куда ты пойдешь, туда и я пойду, и где ты жить будешь, там и я буду жить; народ твой будет моим народом, и твой Бог — моим Богом». В Вифлеем она пришла как «Руфь Моавитянка», подбирала колосья на поле Вооза и вышла за него замуж, а её сын Овид — «отец Иессея, отца Давидова». Позже Давид, спасаясь от Саула, привёл отца и мать к царю Моавитскому — быть может, полагаясь на это родство; Матфей называет Руфь среди четырёх женщин в родословии Иисуса."
+    - "Само её происхождение было вопросом, ведь закон говорил: «Аммонитянин и Моавитянин не может войти в общество Господне». Раввины отвечали, что запрет касался мужчин-моавитян, а не женщин, и считали Руфь потомком Еглона, царя Моавитского. Когда написана книга, спорят: многие относят её ко времени царей, раз она занята родом Давида, другие читают её как мягкий ответ послепленного времени на то, что Ездра и Неемия отсылали чужеземных жён. Действие происходит «в те дни, когда управляли судьи», даты которых тоже спорны; карта берёт условный 1100 г. до н. э."
+map:
+  place: aa0b1d6
+  year: "1100 BC"
+  ref: Ruth.1.4
+scripture:
+  [
+    Ruth.1.1-Ruth.1.4,
+    Ruth.1.16,
+    Ruth.1.22,
+    Ruth.2.6,
+    Ruth.4.10,
+    Ruth.4.13,
+    Ruth.4.17,
+    1Sam.22.3-1Sam.22.4,
+    Matt.1.5,
+    Deut.23.3,
+    Neh.13.1-Neh.13.3,
+  ]
+sources:
+  - "Straight-line distance between the places' points (Bethlehem, Moab): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Mishnah, tractate Yevamot (a Moabite man, not a Moabite woman); Babylonian Talmud and Ruth Rabbah (Ruth of the house of Eglon)"
+  - "E. F. Campbell, Ruth (Anchor Bible 7, 1975)"
+  - "R. L. Hubbard, The Book of Ruth (NICOT, 1988)"
+  - "B. MacDonald, East of the Jordan: Territories and Sites of the Hebrew Scriptures (2000)"
+  - "History Globe tour “Ruth” (the conventional year 1100 BC) and the article on Moab"
+status: checked

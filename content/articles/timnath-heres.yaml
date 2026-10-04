@@ -1,0 +1,29 @@
+# Overview article (ADR 0007). Mainstream facts only; Khirbet Tibnah is the usual identification and the Kifl Haris tradition is given beside it; no absolute date is given for Joshua.
+id: timnath-heres
+place: a6e6528
+title:
+  en: "Timnath-heres"
+  ru: "Фамнаф-Сараи"
+body:
+  en:
+    - "Timnath-heres, “portion of the sun”, or Timnath-serah, as the Book of Joshua spells it with the second word reversed, was the town in the hill country of Ephraim that Israel gave to Joshua, and where he was buried. It is generally identified with Khirbet Tibnah, a mound on the western edge of the hills about 28 km south-west of Shechem, north-west of Ramallah, which keeps the name. Eusebius knew it as Thamna, where the tomb of Joshua was still shown, and Josephus names Thamna as the seat of one of the districts of Judea."
+    - "In 1863 Victor Guérin found on the slope a rock-cut tomb with some two hundred niches for lamps and took it for Joshua's. Jewish and Samaritan tradition has long shown the tombs of Joshua, Caleb and Nun instead at Kifl Haris near Salfit, about 13 km to the north. Later Jewish tradition explained the name Heres by a likeness of the sun set on the grave to recall the day the sun stood still at Gibeon."
+    - "“According to the word of the LORD they gave him the city which he asked, even Timnath-serah in mount Ephraim: and he built the city, and dwelt therein.” After the farewell at Shechem, Joshua died at a hundred and ten, “and they buried him in the border of his inheritance in Timnath-serah, which is in mount Ephraim, on the north side of the hill of Gaash”; the Greek Bible, followed by the Russian Synodal text, adds that the flint knives of the circumcision at Gilgal were laid in the tomb with him. Judges repeats the burial under the name Timnath-heres. The hill of Gaash is otherwise known only from the brooks of Gaash, home of one of David's warriors."
+    - "A survey in 2015 and excavations begun in 2022 by Bar-Ilan University found the town at its most important in the Iron Age and the early Roman period, when Thamna was a district town; the finds are still being published. The mound lies in the West Bank between the villages of Deir Nidham and Nabi Salih."
+  ru:
+    - "Фамнаф-Сараи, по-еврейски Тимнат-Херес, «удел солнца», или Тимнат-Серах, как пишет книга Иисуса Навина, переставив буквы второго слова, — город на горе Ефремовой, который Израиль дал Иисусу Навину и где его похоронили. Его обычно отождествляют с Хирбет-Тибной — холмом на западной кромке нагорья примерно в 28 км к юго-западу от Сихема, северо-западнее Рамаллы, который хранит имя. Евсевий знал его как Фамну, где всё ещё показывали гробницу Иисуса, а Иосиф Флавий называет Фамну средоточием одного из округов Иудеи."
+    - "В 1863 году Виктор Герен нашёл на склоне высеченную в скале гробницу примерно с двумя сотнями ниш для светильников и счёл её гробницей Иисуса. Иудейское и самаритянское предание издавна показывает гробницы Иисуса, Халева и Нуна в другом месте — в Кифль-Харисе близ Салфита, примерно в 13 км к северу. Позднее иудейское предание объясняло имя Херес изображением солнца, поставленным на могиле в память о дне, когда солнце остановилось над Гаваоном."
+    - "Книга Иисуса Навина говорит: «по повелению Господню дали ему город Фамнаф-Сараи, которого он просил, на горе Ефремовой; и построил он город и жил в нем». После прощания в Сихеме Иисус умер ста десяти лет, «и похоронили его в пределе его удела в Фамнаф-Сараи, что на горе Ефремовой, на север от горы Гааша»; греческая Библия, а за ней и Синодальный перевод, добавляет, что в гроб с ним положили каменные ножи обрезания в Галгале. Книга Судей повторяет рассказ о погребении; в еврейском тексте город там назван Тимнат-Херес. Гора Гааш известна больше лишь по Нахле-Гаашу, «потокам Гааша», откуда родом один из воинов Давида."
+    - "Обследование 2015 года и раскопки, начатые в 2022 году Университетом Бар-Илан, показали, что важнее всего город был в железном веке и в раннеримскую эпоху, когда Фамна была окружным городом; находки ещё публикуются. Холм лежит на Западном берегу между деревнями Дейр-Нидам и Наби-Салих."
+scripture:
+  - Josh.19.50
+  - Josh.24.30
+  - Judg.2.9
+  - 2Sam.23.30
+sources:
+  - "Eusebius, Onomasticon, s.v. Thamnathsara"
+  - "Josephus, Jewish War 3.55 (the toparchy of Thamna)"
+  - "V. Guérin, Description géographique, historique et archéologique de la Palestine, vol. 2: Samarie (1874-1875)"
+  - "C. R. Conder and H. H. Kitchener, The Survey of Western Palestine: Memoirs, vol. 2, Samaria (1882)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+status: checked

@@ -20,9 +20,39 @@ beforeAll(async () => {
   await loadLanguage("ru");
 });
 
+/** Every dictionary there is: a new language joins these checks by its file alone. */
+const DICTS = Object.fromEntries(
+  Object.entries(import.meta.glob<{ default: object }>("./*.json", { eager: true })).map(
+    ([file, mod]) => [file.replace(/^\.\/|\.json$/g, ""), mod.default],
+  ),
+);
+
+/** The plural forms a language uses for whole numbers ("1 остановка", "3 остановки", …). */
+function integerForms(lang: string): Set<string> {
+  const rules = new Intl.PluralRules(lang);
+  return new Set(Array.from({ length: 200 }, (_, i) => rules.select(i)));
+}
+
 describe("i18n dictionaries", () => {
-  it("ru and en define the same keys", () => {
-    expect(baseKeys(ru)).toEqual(baseKeys(en));
+  it("every language defines the same keys as English", () => {
+    for (const [lang, dict] of Object.entries(DICTS))
+      expect(baseKeys(dict), lang).toEqual(baseKeys(en));
+  });
+
+  it("every counted string has each plural form its language uses", () => {
+    const counted = [
+      ...new Set(
+        keys(en)
+          .filter((k) => /_(one|other)$/.test(k))
+          .map((k) => k.replace(/_(one|other)$/, "")),
+      ),
+    ];
+    for (const [lang, dict] of Object.entries(DICTS)) {
+      const have = new Set(keys(dict));
+      for (const base of counted)
+        for (const form of integerForms(lang))
+          expect(have.has(`${base}_${form}`), `${lang}: ${base}_${form}`).toBe(true);
+    }
   });
 
   it("keys the UI relies on exist where it looks for them", () => {

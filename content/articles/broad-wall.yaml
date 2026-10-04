@@ -1,0 +1,23 @@
+# Overview article (ADR 0007). Mainstream facts only; Avigad's wall is the usual identification; whether Nehemiah's wall used it is debated and given as such.
+id: broad-wall
+place: ab0d85b
+title:
+  en: "Broad Wall"
+  ru: "Стена широкая"
+body:
+  en:
+    - "The Broad Wall was a stretch of Jerusalem's wall on the north-western side of the city, named twice in Nehemiah. In the roll of the builders, the goldsmiths and the perfumers “fortified Jerusalem unto the broad wall”; at the dedication, the second choir with Nehemiah and half the people went along the wall “from beyond the tower of the furnaces even unto the broad wall”. The Hebrew verb in the first passage can also mean “left”, as the King James margin notes, and some read it that Nehemiah's builders left the western part of the old city outside their line, reaching only as far as this wall."
+    - "In 1970–1971 Nahman Avigad, excavating in the Jewish Quarter of the Old City, uncovered a massive city wall about 7 m thick, traced for some 65 m. It was built in the late eighth century BC across the western hill, over the foundations of houses pulled down for it, which recalls Isaiah's words to Hezekiah's Jerusalem: “the houses have ye broken down to fortify the wall”. Most scholars identify it with Nehemiah's Broad Wall, built when the city spread west under Hezekiah. Whether it still stood as a defence in Nehemiah's day is less certain, since the Persian-period city seems to have shrunk back to the eastern ridge. A section lies open below street level in the Jewish Quarter today."
+  ru:
+    - "Стена широкая — участок стены Иерусалима на северо-западной стороне города, дважды упомянутый у Неемии. В перечне строителей сказано, что серебряники и мастера благовоний «восстановили Иерусалим до стены широкой»; при освящении второй хор с Неемией и половиной народа шёл «по стене от Печной башни и до широкой стены». Еврейский глагол первого места может значить и «оставили», как отмечает английская Библия короля Иакова на полях, и иные понимают, что строители Неемии оставили западную часть старого города вне своей линии и дошли только до этой стены."
+    - "В 1970–1971 годах Нахман Авигад, копавший в Еврейском квартале Старого города, открыл мощную городскую стену толщиной около 7 м, прослеженную примерно на 65 м. Её построили в конце VIII века до н. э. поперёк западного холма поверх фундаментов снесённых ради неё домов, что напоминает слова Исаии к Иерусалиму Езекии: «разрушаете домы, чтобы укрепить стену». Большинство учёных отождествляют её со Стеной широкой Неемии, построенной, когда город при Езекии разросся на запад. Служила ли она ещё обороной во дни Неемии, менее ясно: город персидского времени, похоже, снова сжался до восточного хребта. Её участок открыт ниже уровня улицы в Еврейском квартале и сегодня."
+scripture:
+  - Neh.3.8
+  - Neh.12.38
+  - Isa.22.10
+sources:
+  - "N. Avigad, Discovering Jerusalem (1983)"
+  - "H. Geva (ed.), Jewish Quarter Excavations in the Old City of Jerusalem Conducted by Nahman Avigad, 1969–1982, vol. 1 (2000)"
+  - "H. G. M. Williamson, Ezra, Nehemiah (Word Biblical Commentary 16, 1985)"
+  - "D. Ussishkin, 'The Borders and De Facto Size of Jerusalem in the Persian Period', in O. Lipschits and M. Oeming (eds.), Judah and the Judeans in the Persian Period (2006)"
+status: checked

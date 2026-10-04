@@ -1,0 +1,27 @@
+# Overview article (ADR 0007). Mainstream facts only; this Eden is Bit-Adini on the Euphrates, told apart from the garden of Genesis; Assyrian dates follow the eponym chronology.
+id: eden
+place: a7409b9
+title:
+  en: "Eden"
+  ru: "Еден"
+body:
+  en:
+    - "This Eden is not the garden of Genesis but a country on the Euphrates: the Aramaean kingdom of Bit-Adini, “the house of Eden”, which held both banks of the river about its great bend below Carchemish, with its capital at Til Barsip, now Tell Ahmar in Syria. The Assyrians fought it hard in the ninth century BC. Ashurnasirpal II took tribute from its king Ahuni; Shalmaneser III besieged Til Barsip, captured it in 856 BC, renamed it Kar-Shalmaneser and settled Assyrians there, and the next year took Ahuni himself. From then on the land was an Assyrian province, in the eighth century the seat of the powerful commander Shamshi-ilu, who left his own inscriptions on the stone lions at the gate of Til Barsip."
+    - "That history is what the Assyrian envoys' message to Hezekiah assumes. Sennacherib's men asked, “Have the gods of the nations delivered them which my fathers have destroyed; as Gozan, and Haran, and Rezeph, and the children of Eden which were in Thelasar?”, and Isaiah's parallel repeats the list with “Telassar”; all four lie in the same Assyrian west, Gozan on the Khabur, Haran and Rezeph on the roads toward the Euphrates, and Telassar, not identified, somewhere in Bit-Adini. Amos threatens “him that holdeth the sceptre from the house of Eden” together with Damascus, meaning an Aramaean ruler of his own day; the map treats this Eden and the Beth-eden of Amos as one place. Ezekiel lists “Haran, and Canneh, and Eden” among the merchants of Tyre, the traders of the upper Euphrates."
+    - "Tell Ahmar was excavated by François Thureau-Dangin in 1929–1931, who found the Assyrian governor's palace with its wall paintings, and again by an Australian expedition from 1988; much of the lower town now lies under the reservoir of the Tishrin dam. The village of Tell Ahmar stands on the east bank of the Euphrates south of Jarabulus."
+  ru:
+    - "Этот Еден — не сад из книги Бытия, а страна на Евфрате: арамейское царство Бит-Адини, «дом Едена», владевшее обоими берегами реки у её большой излучины ниже Кархемиса, со столицей в Тиль-Барсипе, нынешнем Телль-Ахмаре в Сирии. Ассирийцы жестоко воевали с ним в IX веке до н. э. Ашшурнацирапал II брал дань с его царя Ахуни; Салманасар III осадил Тиль-Барсип, взял его в 856 г. до н. э., переименовал в Кар-Салманасар и поселил там ассирийцев, а на следующий год захватил самого Ахуни. С тех пор земля была ассирийской провинцией, в VIII веке — резиденцией могущественного военачальника Шамши-илу, оставившего собственные надписи на каменных львах у ворот Тиль-Барсипа."
+    - "Именно эту историю подразумевает послание ассирийских послов Езекии. Люди Сеннахирима спрашивали: «Боги народов, которых разорили отцы мои, спасли ли их? Спасли ли Гозан, и Харан, и Рецеф, и сынов Едена, что в Фалассаре?», и параллель у Исаии повторяет перечень; все четыре места лежат на одном ассирийском западе: Гозан на Хабуре, Харан и Рецеф на дорогах к Евфрату, а Фалассар, не отождествлённый, где-то в Бит-Адини. Амос вместе с Дамаском грозит истребить «держащего скипетр — из дома Еденова», разумея арамейского правителя своих дней; на карте этот Еден и Беф-Еден Амоса считаются одним местом. Иезекииль числит «Харан и Хане и Еден» среди купцов Тира, торговцев верхнего Евфрата."
+    - "Телль-Ахмар раскапывал Франсуа Тюро-Данжен в 1929–1931 годах, нашедший дворец ассирийского наместника с настенными росписями, а с 1988 года — австралийская экспедиция; бо́льшая часть нижнего города теперь лежит под водохранилищем плотины Тишрин. Деревня Телль-Ахмар стоит на восточном берегу Евфрата к югу от Джараблуса."
+scripture:
+  - 2Kgs.19.12
+  - Isa.37.12
+  - Ezek.27.23
+  - Amos.1.5
+sources:
+  - "Shalmaneser III, annals (RIMA 3, A.0.102) (the capture of Til Barsip and of Ahuni)"
+  - "F. Thureau-Dangin and M. Dunand, Til-Barsib (1936)"
+  - "G. Bunnens (ed.), Tell Ahmar 1988 Season (1990)"
+  - "E. Lipiński, The Aramaeans: Their Ancient History, Culture, Religion (2000)"
+  - "H. Sader, Les états araméens de Syrie depuis leur fondation jusqu'à leur transformation en provinces assyriennes (1987)"
+status: checked

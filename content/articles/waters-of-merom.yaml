@@ -1,0 +1,22 @@
+# Overview article (ADR 0007). Mainstream facts only; the old Lake Huleh identification is given as abandoned, and the Upper Galilee candidates are named without a choice.
+id: waters-of-merom
+place: a6ee047
+title:
+  en: "Waters of Merom"
+  ru: "Воды Меромские"
+body:
+  en:
+    - "The waters of Merom are the scene of Joshua's battle with the kings of the north. Jabin king of Hazor called together the kings of Galilee and the coast, a host “as the sand that is upon the sea shore in multitude, with horses and chariots very many”, and “they came and pitched together at the waters of Merom, to fight against Israel.” “So Joshua came, and all the people of war with him, against them by the waters of Merom suddenly; and they fell upon them”, chased them as far as Sidon, hamstrung their horses, burned their chariots and then took and burned Hazor itself. The name appears nowhere else in the Bible."
+    - "Where the waters were is uncertain. For a long time they were taken to be Lake Huleh in the upper Jordan valley, but there is no ancient support for this, and the lake is now largely drained. Most scholars now look to the town of Merom, which seems to appear in the list of Thutmose III and in the annals of Tiglath-pileser III, and to the springs and wadis of Upper Galilee: the map's candidates include the spring below Meron near Safed, the pool of Birket Hafour by Marun er-Ras on the Lebanese border, and the streams of Nahal Amud and Nahal Arbel running down to the Sea of Galilee. Josephus puts the kings' camp at Beroth, a town of Upper Galilee near Kedesh. None of these has been confirmed, and the field of battle remains unknown."
+  ru:
+    - "Воды Меромские — место битвы Иисуса Навина с царями севера. Иавин, царь Асорский, собрал царей Галилеи и побережья, «многочисленный народ, который множеством равнялся песку на берегу морском; и коней и колесниц было весьма много», и «пришли и расположились станом вместе при водах Меромских, чтобы сразиться с Израилем». «Иисус и с ним весь народ, способный к войне, внезапно вышли на них к водам Меромским и напали на них», гнали их до Сидона, подрезали жилы их коням, сожгли их колесницы, а потом взяли и сожгли сам Асор. Больше в Библии это имя не встречается."
+    - "Где были эти воды, неясно. Долгое время их считали озером Хула в верховьях Иорданской долины, но древних оснований для этого нет, а само озеро теперь почти осушено. Большинство учёных ищут их у города Мерома, который, по-видимому, упомянут в списке Тутмоса III и в анналах Тиглатпаласара III, среди источников и русел Верхней Галилеи: среди кандидатов на карте — источник под Мероном близ Цфата, пруд Биркет-Хафур у Марун-эр-Раса на ливанской границе и потоки Нахаль-Амуд и Нахаль-Арбель, сбегающие к Галилейскому морю. Иосиф Флавий помещает стан царей у Берота, города Верхней Галилеи близ Кедеса. Ни одно из этих мест не подтверждено, и поле битвы остаётся неизвестным."
+scripture:
+  - Josh.11.1-Josh.11.5
+  - Josh.11.7-Josh.11.11
+sources:
+  - "Josephus, Antiquities 5.1.18"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+  - "R. G. Boling and G. E. Wright, Joshua (Anchor Bible, 1982)"
+  - "'Merom, Waters of', in D. N. Freedman (ed.), The Anchor Bible Dictionary (1992)"
+status: checked
