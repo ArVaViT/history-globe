@@ -1,5 +1,5 @@
 import type { LayerVisibility } from "@hg/core";
-import type { Locale } from "@hg/model";
+import { docsPath, LOCALE_NAMES, LOCALES, type Locale } from "@hg/model";
 import { useEffect, useState } from "react";
 import { useTranslation } from "../i18n";
 import { canSave, saveOffline, saveSize, type SaveProgress } from "../offline";
@@ -39,7 +39,7 @@ export function SettingsDialog({
           <div className="flex items-center justify-between">
             <span className="text-[13px] font-semibold text-ink">{t("settings.language")}</span>
             <div className="flex rounded-full bg-paper-2 p-0.5">
-              {(["ru", "en"] as const).map((l) => (
+              {LOCALES.map((l) => (
                 <button
                   key={l}
                   onClick={() => {
@@ -48,7 +48,7 @@ export function SettingsDialog({
                   aria-pressed={locale === l}
                   className={`rounded-full px-3.5 py-1 text-[13px] transition ${locale === l ? "bg-paper font-medium text-ink shadow-[0_1px_3px_rgba(20,14,8,0.18)]" : "text-ink-soft hover:text-ink"}`}
                 >
-                  {l === "ru" ? "Русский" : "English"}
+                  {LOCALE_NAMES[l]}
                 </button>
               ))}
             </div>
@@ -84,19 +84,13 @@ export function SettingsDialog({
                 ›
               </span>
             </button>
-            <a
-              className={row}
-              href={`${import.meta.env.BASE_URL}docs/${locale === "ru" ? "ru/" : ""}`}
-            >
+            <a className={row} href={`${import.meta.env.BASE_URL}${docsPath(locale)}`}>
               {t("settings.help")}
               <span className="text-ink-soft" aria-hidden>
                 ›
               </span>
             </a>
-            <a
-              className={row}
-              href={`${import.meta.env.BASE_URL}docs/${locale === "ru" ? "ru/" : ""}privacy.html`}
-            >
+            <a className={row} href={`${import.meta.env.BASE_URL}${docsPath(locale, "privacy")}`}>
               {t("settings.privacy")}
               <span className="text-ink-soft" aria-hidden>
                 ›

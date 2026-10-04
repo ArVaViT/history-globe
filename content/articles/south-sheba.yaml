@@ -1,0 +1,23 @@
+# Overview article (ADR 0007). Mainstream facts only; "the South" is the land of the queen of the south, taken as Sheba; the South Arabian and Ethiopian traditions are both given. File name disambiguated: south.yaml is the Daniel 11 kingdom.
+id: south-sheba
+place: a422f1c
+title:
+  en: "South"
+  ru: "Юг"
+body:
+  en:
+    - "“The South” here is the homeland of “the queen of the south”, whom Jesus set against his own generation: she “shall rise up in the judgment with this generation, and shall condemn it: for she came from the uttermost parts of the earth to hear the wisdom of Solomon; and, behold, a greater than Solomon is here.” Matthew and Luke give the saying in almost the same words. She is the queen of Sheba who, in the book of Kings, came to Jerusalem with spices, gold and precious stones to test Solomon with hard questions, and the map accordingly places the South at Sheba."
+    - "The Gospels add nothing about the land itself; “the south” and “the uttermost parts of the earth” simply mark it as remote. Most scholars locate Sheba in south-western Arabia, the kingdom of Saba with its capital at Marib in today's Yemen, rich from the incense trade, though its inscriptions name no queen of Solomon's time. Josephus called her queen of Egypt and Ethiopia, and Ethiopian tradition, in the Kebra Nagast, makes her the mother of Menelik, the first king of its royal line. Nothing beyond these traditions is known of her or of her realm in the tenth century BC."
+  ru:
+    - "«Юг» здесь — родина царицы, которую Иисус противопоставил своему поколению: «Царица южная восстанет на суд с родом сим и осудит его, ибо она приходила от пределов земли послушать мудрости Соломоновой; и вот, здесь больше Соломона». Матфей и Лука передают эти слова почти одинаково. Это царица Савская, которая, по книге Царств, пришла в Иерусалим с благовониями, золотом и драгоценными камнями, чтобы испытать Соломона загадками, и поэтому на карте Юг помещён в Савской земле."
+    - "О самой стране Евангелия ничего не добавляют: слова «южная» и «от пределов земли» лишь говорят о её отдалённости. Большинство учёных помещают Саву на юго-западе Аравии — это царство Саба со столицей в Марибе на территории нынешнего Йемена, богатевшее на торговле благовониями, хотя его надписи не называют никакой царицы времён Соломона. Иосиф Флавий называл её царицей Египта и Эфиопии, а эфиопское предание в «Кебра Нагаст» делает её матерью Менелика, первого царя своей династии. Кроме этих преданий о ней и её царстве в X веке до н. э. ничего не известно."
+scripture:
+  - Matt.12.42
+  - Luke.11.31
+  - 1Kgs.10.1-1Kgs.10.2
+sources:
+  - "Josephus, Antiquities 8.6.5"
+  - "U. Luz, Matthew 8–20 (Hermeneia, 2001)"
+  - "K. A. Kitchen, 'Sheba and Arabia', in L. K. Handy (ed.), The Age of Solomon: Scholarship at the Turn of the Millennium (1997)"
+  - "E. A. Wallis Budge, The Queen of Sheba and Her Only Son Menyelek (Kebra Nagast) (1922)"
+status: checked

@@ -1,0 +1,26 @@
+id: where-was-the-pool-of-siloam
+question:
+  en: "Where was the Pool of Siloam?"
+  ru: "Где находилась купальня Силоам?"
+answer:
+  en:
+    - "At the southern end of the City of David, the oldest part of Jerusalem, below the Old City walls near the village of Silwan, which keeps the name; the map point stands there. It lay where the water of the Gihon spring, about 300 m away in a straight line, comes out after running through Hezekiah's tunnel, and about 1.2 km south of the Pool of Bethesda. Two pools are shown today: the small Byzantine one at the tunnel's outlet, long taken for the pool of the Gospel, and a larger stepped pool of Jesus' day found a little to the south-east in 2004."
+    - "John tells how Jesus anointed the eyes of a man born blind with clay and said, “Go, wash in the pool of Siloam, (which is by interpretation, Sent.) He went his way therefore, and washed, and came seeing.” Luke mentions “those eighteen, upon whom the tower in Siloam fell”. The water had come there long before: Hezekiah “made a pool, and a conduit, and brought water into the city” before the Assyrian invasion of 701 BC, and Nehemiah's builders repaired “the wall of the pool of Siloah by the king's garden”."
+    - "Frederick Bliss and Archibald Dickie uncovered the Byzantine church and pool at the tunnel's outlet in 1894–1897. In 2004 repair work on a pipe led Ronny Reich and Eli Shukron to the older pool: a great stepped reservoir some 70 m long, plastered in the Hasmonean period and used until the war against Rome, from which a stepped street climbs towards the Temple Mount. Most scholars now take it for the pool of John 9; part of it still lies under an orchard, and its full excavation was announced at the end of 2022."
+  ru:
+    - "На южном конце города Давидова, древнейшей части Иерусалима, ниже стен Старого города, у деревни Сильван, которая хранит имя; там стоит точка карты. Купальня лежала там, где вода источника Гион, примерно в 300 м по прямой, выходит наружу, пройдя тоннель Езекии, и примерно в 1,2 км к югу от купальни Вифезда. Сегодня показывают два водоёма: малый византийский у выхода тоннеля, который долго считали евангельским, и больший ступенчатый водоём времён Иисуса, найденный чуть юго-восточнее в 2004 году."
+    - "Иоанн рассказывает, как Иисус помазал брением глаза слепорождённому и сказал: «пойди, умойся в купальне Силоам, что значит посланный. Он пошел, и умылся, и пришел зрячим». Лука упоминает «те восемнадцать человек, на которых упала башня Силоамская». Вода пришла сюда задолго до того: Езекия «сделал пруд и водопровод и провел воду в город» перед ассирийским нашествием 701 г. до н. э., а строители Неемии чинили «стену у водоема Селах против царского сада»."
+    - "Фредерик Блисс и Арчибальд Дики в 1894–1897 годах открыли византийскую церковь и водоём у выхода тоннеля. В 2004 году ремонт трубы привёл Рони Райха и Эли Шукрона к более древней купальне: большому ступенчатому водоёму длиной около 70 м, оштукатуренному в хасмонейское время и служившему до войны с Римом; от него ступенчатая улица поднимается к Храмовой горе. Большинство учёных теперь считают его купальней из 9-й главы Иоанна; часть его ещё лежит под садом, а в конце 2022 года объявили о его полных раскопках."
+map:
+  place: a294859
+  year: "AD 29"
+  ref: John.9.7
+scripture: [John.9.1-John.9.11, Luke.13.4-Luke.13.5, 2Kgs.20.20, 2Chr.32.30, Neh.3.15, Isa.8.6]
+sources:
+  - "The Siloam Inscription (KAI 189)"
+  - "F. J. Bliss and A. C. Dickie, Excavations at Jerusalem 1894-1897 (1898)"
+  - "H. Shanks, 'The Siloam Pool: Where Jesus Cured the Blind Man', Biblical Archaeology Review 31.5 (2005)"
+  - "R. Reich and E. Shukron, Excavations in the City of David, Jerusalem (1995-2010) (2021)"
+  - "History Globe article “Siloam” and question “Where was the Pool of Bethesda?”"
+  - "Straight-line distances between the places' points (Siloam, the Gihon spring, Bethesda): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

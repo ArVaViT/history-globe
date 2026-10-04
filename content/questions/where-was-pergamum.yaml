@@ -1,0 +1,26 @@
+id: where-was-pergamum
+question:
+  en: "Where was Pergamum, “where Satan's seat is”?"
+  ru: "Где находился Пергам, «где престол сатаны»?"
+answer:
+  en:
+    - "Pergamum is Bergama in western Turkey, in the province of İzmir: the ancient citadel crowns a steep hill above the valley of the Caicus, about 25 km from the Aegean, and the map point stands on it. It lay about 61 km from Thyatira and 79 km from Smyrna in a straight line, and 112 km south-east of Troas. Its Attalid kings made it one of the great capitals of the Hellenistic world, until the last of them left his kingdom to Rome in 133 BC and it became the province of Asia."
+    - "Revelation, about AD 95, sends Pergamum the third of the seven letters: “I know thy works, and where thou dwellest, even where Satan's seat is”, and recalls the days “wherein Antipas was my faithful martyr, who was slain among you”. What the seat means is disputed: the great altar of Zeus on the citadel, the temple of Rome and Augustus that the Greeks of Asia were allowed to build here in 29 BC, the sanctuary of Asclepius, whose sign was a serpent, or the city's place as a seat of Roman power. The letter also rebukes those who hold the teaching of Balaam and of the Nicolaitans."
+    - "German excavations, begun by Carl Humann in 1878, laid bare the citadel with its steep theatre, its library and the temple of Trajan; the Great Altar was taken to Berlin and rebuilt in the Pergamon Museum. Below the hill lie the Asclepieion, where Galen, born in Pergamum about AD 129, studied medicine, and the Red Basilica, a huge temple of Egyptian gods with a church later built inside it. Pliny, after Varro, says that parchment was invented here, and the site has been on the UNESCO World Heritage List since 2014."
+  ru:
+    - "Пергам — это нынешняя Бергама на западе Турции, в провинции Измир: древний акрополь венчает крутой холм над долиной Каика, примерно в 25 км от Эгейского моря, и точка карты стоит на нём. Он лежал примерно в 61 км от Фиатиры и в 79 км от Смирны по прямой и в 112 км к юго-востоку от Троады. Цари из династии Атталидов сделали его одной из великих столиц эллинистического мира, пока последний из них не завещал своё царство Риму в 133 г. до н. э. и оно не стало провинцией Асия."
+    - "Откровение около 95 г. посылает Пергаму третье из семи посланий: «знаю твои дела, и что ты живешь там, где престол сатаны», — и вспоминает дни, «в которые у вас, где живет сатана, умерщвлен верный свидетель Мой Антипа». Что значит этот престол, спорят: великий алтарь Зевса на акрополе, храм Рима и Августа, который греки Асии получили право построить здесь в 29 г. до н. э., святилище Асклепия, знаком которого был змей, или положение города как оплота римской власти. Послание обличает и тех, кто держится учения Валаама и николаитов."
+    - "Немецкие раскопки, начатые Карлом Хуманом в 1878 году, открыли акрополь с крутым театром, библиотекой и храмом Траяна; Пергамский алтарь увезли в Берлин и собрали заново в Пергамском музее. Под холмом лежат Асклепион, где учился медицине Гален, родившийся в Пергаме около 129 г., и Красная базилика — огромный храм египетских богов, внутри которого позже построили церковь. Плиний вслед за Варроном пишет, что здесь изобрели пергамент, а с 2014 года место внесено в Список всемирного наследия ЮНЕСКО."
+map:
+  place: a75d2c1
+  year: "AD 95"
+  ref: Rev.2.13
+scripture: [Rev.1.11, Rev.2.12-Rev.2.17]
+sources:
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe article “Pergamum” (Strabo, Pliny, Cassius Dio, Tacitus and the works cited there) and History Globe tour “The seven churches of Revelation”"
+  - "Altertümer von Pergamon (German excavation reports, 1885-)"
+  - "H. Koester (ed.), Pergamon, Citadel of the Gods (1998)"
+  - "C. J. Hemer, The Letters to the Seven Churches of Asia in Their Local Setting (1986)"
+  - "UNESCO World Heritage List: Pergamon and its Multi-Layered Cultural Landscape (inscribed 2014)"
+status: checked

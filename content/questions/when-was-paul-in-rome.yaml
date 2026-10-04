@@ -1,0 +1,46 @@
+# Draft question (the years; "how-far-jerusalem-to-rome" takes the route, and the article "Rome" the city).
+id: when-was-paul-in-rome
+question:
+  en: "When was Paul in Rome?"
+  ru: "Когда Павел был в Риме?"
+answer:
+  en:
+    - "From the spring of AD 60 to about 62, on the usual chronology: he arrived as a prisoner after the winter's shipwreck, “dwelt two whole years in his own hired house”, and there Acts ends. Early tradition adds that he was released, travelled again, was arrested a second time and put to death in Rome under Nero, between the fire of 64 and the emperor's fall in 68. Scholars who date the procurator Festus earlier put the arrival in 56 or 57; the map uses AD 60."
+    - "Paul had long meant to see Rome: “After I have been there, I must also see Rome”, he said at Ephesus, and he wrote to the Romans of going on to Spain. Arrested in Jerusalem, he was kept two years at Caesarea under Felix; when Festus succeeded him Paul said, “I appeal unto Caesar”, and was sent by sea in the autumn, after “the fast” of the Day of Atonement. In Rome “Paul was suffered to dwell by himself with a soldier that kept him”, and he preached “with all confidence, no man forbidding him”. The letters to the Philippians, the Colossians, Philemon and the Ephesians are by old tradition the letters of these years, written by “Paul the aged, and now also a prisoner”, whose “bonds in Christ are manifest in all the palace” and who sends the greetings of the saints, “chiefly they that are of Caesar's household”; some scholars place one or more of them at Caesarea or Ephesus instead."
+    - "The year hangs on Festus. A few scholars, reading Josephus on the recall of Felix, put it in 55 or 56; most put Festus's arrival in 59, so that Paul sailed that autumn, wintered on Malta and reached Rome in the spring of 60. What came after the two years Luke does not say. Clement of Rome, about AD 96, writes that Paul taught “the whole world” righteousness and reached “the limit of the west”, and the Muratorian fragment speaks of his departure from Rome for Spain; Eusebius reports the tradition that after defending himself he went out to preach again and, coming to Rome a second time, was martyred under Nero; the second letter to Timothy has him on trial again, when at his “first answer no man stood with me”, and “the time of my departure is at hand”. Jerome gives the fourteenth year of Nero, AD 67–68, and his tomb is shown on the Ostian Way."
+  ru:
+    - "С весны 60 г. н. э. примерно по 62-й, по обычной хронологии: он прибыл узником после зимнего кораблекрушения, «жил… целых два года на своем иждивении», и на этом книга Деяний кончается. Раннее предание добавляет, что его отпустили, он снова путешествовал, был взят во второй раз и казнён в Риме при Нероне — между пожаром 64 г. и падением императора в 68-м. Учёные, датирующие прокуратора Феста раньше, относят прибытие к 56 или 57 г.; карта показывает 60 г. н. э."
+    - "Павел давно собирался увидеть Рим: «побывав там, я должен видеть и Рим», сказал он в Ефесе, а римлянам писал, что пойдёт дальше в Испанию. Схваченный в Иерусалиме, он два года содержался в Кесарии при Феликсе; когда на его место пришёл Фест, Павел сказал: «Требую суда кесарева», и его отправили морем осенью, когда «и пост уже прошел» — пост Дня очищения. В Риме «Павлу позволено жить особо с воином, стерегущим его», и проповедовал «со всяким дерзновением невозбранно». Послания к Филиппийцам, Колоссянам, Филимону и Ефесянам по древнему преданию написаны в эти годы — тем, кто называет себя «Павел старец, а теперь и узник», чьи «узы… о Христе сделались известными всей претории» и кто передаёт приветы от святых, «а наипаче из кесарева дома»; некоторые учёные относят одно или несколько из них к Кесарии или Ефесу."
+    - "Год зависит от Феста. Немногие учёные, читая у Иосифа Флавия об отзыве Феликса, относят это к 55 или 56 г.; большинство относит приход Феста к 59 г., так что Павел отплыл той же осенью, перезимовал на Мелите и достиг Рима весной 60-го. Что было после двух лет, Лука не говорит. Климент Римский около 96 г. пишет, что Павел научил праведности «весь мир» и дошёл «до предела запада», а канон Муратори говорит о его отбытии из Рима в Испанию; Евсевий передаёт предание, что, оправдавшись, он снова пошёл проповедовать и, придя в Рим во второй раз, принял мученическую смерть при Нероне; во Втором послании к Тимофею он снова под судом — «при первом моем ответе никого не было со мною» — и «время моего отшествия настало». Иероним называет четырнадцатый год Нерона, 67–68 гг. н. э., а его гробницу показывают на Остийской дороге."
+map:
+  place: afc8e7a
+  year: "AD 60"
+  ref: Acts.28.16
+scripture:
+  [
+    Acts.19.21,
+    Rom.15.24,
+    Acts.23.11,
+    Acts.24.27,
+    Acts.25.11-Acts.25.12,
+    Acts.27.1,
+    Acts.27.9,
+    Acts.28.16,
+    Acts.28.30-Acts.28.31,
+    Phil.1.13,
+    Phil.4.22,
+    Phlm.1.9,
+    2Tim.4.6,
+    2Tim.4.16-2Tim.4.17,
+  ]
+sources:
+  - "Josephus, Antiquities 20.182-188 (Felix recalled and accused, Pallas; Festus succeeds him)"
+  - "1 Clement 5; the Muratorian fragment (Paul's departure from Rome for Spain)"
+  - "Eusebius, Church History 2.22 (the two years, the release, the second visit to Rome and the martyrdom under Nero); 2.25.5-8"
+  - "Jerome, On Illustrious Men 5 (Paul put to death in the fourteenth year of Nero)"
+  - "Tacitus, Annals 15.38-44 (the fire of Rome and Nero's Christians)"
+  - "R. Riesner, Paul's Early Period: Chronology, Mission Strategy, Theology (1998)"
+  - "F. F. Bruce, Paul: Apostle of the Heart Set Free (1977)"
+  - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. G. Vermes and F. Millar, vol. 1 (1973), on the procurators Felix and Festus"
+  - "History Globe tour “Paul's arrest and trials” (AD 57) and History Globe tour “Paul's voyage to Rome” (AD 60, the arrival on the usual chronology), History Globe dated events (fire-of-rome AD 64), History Globe question on the distance from Jerusalem to Rome and History Globe article “Rome”"
+status: checked

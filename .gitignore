@@ -35,8 +35,8 @@ pipeline/out/
 apps/web/public/data/
 
 # Generated pages (scripts/build-pages.ts)
-apps/web/public/ru/
-apps/web/public/en/
+# Generated pages, one folder per language (two letters): a new language is ignored too.
+apps/web/public/[a-z][a-z]/
 apps/web/public/sitemap.xml
 apps/web/public/llms.txt
 # The open data as files (scripts/build-api.ts)

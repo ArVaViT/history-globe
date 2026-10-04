@@ -1,0 +1,25 @@
+id: where-was-smyrna
+question:
+  en: "Where was Smyrna in the Bible?"
+  ru: "Где находилась библейская Смирна?"
+answer:
+  en:
+    - "Smyrna is İzmir, the third city of Turkey, at the head of a long gulf on the Aegean coast; the map point stands in the city. Ephesus was about 56 km to the south in a straight line, Pergamum 79 km to the north and Sardis 79 km to the east, so Smyrna stood where the coast road met the road up the Hermus valley. The Roman city rose about 300 BC on the slopes of Mount Pagus, the hill now crowned by the castle of Kadifekale; older Smyrna had stood across the bay at Bayraklı."
+    - "The Bible names Smyrna only in Revelation, which about AD 95 sends it the second of the seven letters, one of the two with no rebuke. It speaks for “the first and the last, which was dead, and is alive”, warns of prison and “tribulation ten days”, and promises: “be thou faithful unto death, and I will give thee a crown of life.” Ramsay and Hemer read the words against the city's past: Strabo says that after the Lydians destroyed old Smyrna its people lived in villages for some four hundred years before the new city rose, and the buildings ringing Mount Pagus were likened to a crown. Others think the images need no local key."
+    - "Early in the second century Ignatius of Antioch stopped at Smyrna on his way to Rome and later wrote to its church and to its bishop Polycarp. Polycarp was burned in the stadium of Smyrna; the church's account of his death, dated by some to about 155–156 and by others later, is generally held to be the oldest Christian martyrdom story after the New Testament. After an earthquake about 178 Marcus Aurelius helped rebuild the city, and the colonnades of its Roman agora from that rebuilding are excavated in the centre of İzmir."
+  ru:
+    - "Смирна — это Измир, третий по величине город Турции, в глубине длинного залива на эгейском берегу; точка карты стоит в городе. Ефес лежал примерно в 56 км к югу по прямой, Пергам — в 79 км к северу, а Сардис — в 79 км к востоку, так что Смирна стояла там, где береговая дорога встречалась с дорогой вверх по долине Герма. Римский город вырос около 300 г. до н. э. на склонах горы Пагос, которую сейчас венчает крепость Кадифекале; старая Смирна стояла по другую сторону залива, в Байраклы."
+    - "Библия называет Смирну только в Откровении, которое около 95 г. посылает ей второе из семи посланий — одно из двух без обличения. Оно говорит от лица Того, «Который был мертв, и се, жив», предупреждает о темнице и о том, что «будете иметь скорбь дней десять», и обещает: «Будь верен до смерти, и дам тебе венец жизни». Рамзей и Хемер толковали эти слова по истории города: Страбон пишет, что после того как лидийцы разрушили старую Смирну, жители около четырёхсот лет жили по деревням, пока не вырос новый город, а постройки вокруг горы Пагос сравнивали с венцом. Другие считают, что эти образы не нуждаются в местном ключе."
+    - "В начале II века Игнатий Антиохийский по пути в Рим останавливался в Смирне, а потом написал её церкви и её епископу Поликарпу. Поликарпа сожгли на стадионе Смирны; рассказ церкви о его смерти, который одни датируют около 155–156 гг., а другие — более поздними годами, обычно считают древнейшим христианским повествованием о мученичестве после Нового Завета. После землетрясения около 178 г. Марк Аврелий помог отстроить город, и колоннады его римской агоры, возведённые тогда, раскопаны в центре Измира."
+map:
+  place: a2e65fb
+  year: "AD 95"
+  ref: Rev.2.8
+scripture: [Rev.1.11, Rev.2.8-Rev.2.11]
+sources:
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe article “Smyrna” (Herodotus, Strabo, Tacitus, the Martyrdom of Polycarp and the works cited there) and History Globe tour “The seven churches of Revelation”"
+  - "W. M. Ramsay, The Letters to the Seven Churches of Asia (1904)"
+  - "C. J. Hemer, The Letters to the Seven Churches of Asia in Their Local Setting (1986)"
+  - "C. J. Cadoux, Ancient Smyrna (1938)"
+status: checked

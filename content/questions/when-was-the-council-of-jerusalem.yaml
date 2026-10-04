@@ -1,0 +1,44 @@
+# Draft question. The date rests on the Gallio inscription; both identifications of Galatians 2 are given.
+id: when-was-the-council-of-jerusalem
+question:
+  en: "When was the Council of Jerusalem?"
+  ru: "Когда был Иерусалимский собор?"
+answer:
+  en:
+    - "About AD 49, between Paul's first missionary journey and his second: most scholars put it in 48 or 49, a few in 50 or 51. The map stands at Jerusalem in c. AD 49. The dispute began in Antioch, about 500 km north of Jerusalem in a straight line, where men from Judea taught the Gentile converts, “Except ye be circumcised after the manner of Moses, ye cannot be saved.”"
+    - "After Peter's speech to the apostles and elders, James gave the ruling, “that we trouble not them, which from among the Gentiles are turned to God”. The letter sent back by Judas Barsabas and Silas “unto the brethren which are of the Gentiles in Antioch and Syria and Cilicia” asked only “that ye abstain from meats offered to idols, and from blood, and from things strangled, and from fornication”; some ancient manuscripts add the golden rule. Paul then carried the decrees through the cities of his second journey. In Galatians he tells of going up to Jerusalem “fourteen years after” with Barnabas and Titus, when James, Cephas and John “gave to me and Barnabas the right hands of fellowship”, asking only that they remember the poor; most scholars take this to be the same meeting, while others identify it with the earlier famine visit of Acts 11 and date Galatians before the council."
+    - "Luke gives no year, so the date is reckoned from the one fixed point in Paul's life. A letter of Claudius inscribed at Delphi, dated AD 51/52, shows that Gallio was proconsul of Achaia from the summer of 51; Paul was brought before him at Corinth, where he spent eighteen months, so he had come there about the beginning of 50, after travelling through Asia Minor and Macedonia. That puts the council and the start of the second journey in 49 or late 48. The famine of Acts 11, which Josephus sets under the procurators Fadus and Tiberius Alexander, about 46–48, and Claudius's expulsion of the Jews from Rome about 49, after which Aquila and Priscilla had “lately come from Italy” when Paul met them in Corinth, fit the same frame; counting the “fourteen years” of Galatians from Paul's conversion about 33 or 34 gives 47 or 48, from his first visit to Jerusalem three years later, 50 or 51."
+  ru:
+    - "Около 49 г. н. э., между первым миссионерским путешествием Павла и вторым: большинство учёных относят его к 48 или 49 г., немногие — к 50 или 51-му. Карта стоит на Иерусалиме в условном 49 г. н. э. Спор начался в Антиохии, примерно в 500 км к северу от Иерусалима по прямой, где пришедшие из Иудеи учили обращённых язычников: «если не обрежетесь по обряду Моисееву, не можете спастись»."
+    - "После речи Петра перед апостолами и пресвитерами решение вынес Иаков: «не затруднять обращающихся к Богу из язычников». Письмо, отправленное с Иудой Варсавой и Силой «находящимся в Антиохии, Сирии и Киликии братиям из язычников», требовало лишь «воздерживаться от идоложертвенного, и крови, и удавленины, и блуда, и не делать другим того, чего себе не хотите» — золотое правило Синодальный перевод взял из части древних рукописей. Затем Павел разносил эти определения по городам своего второго путешествия. В Послании к Галатам он рассказывает, как «через четырнадцать лет» ходил в Иерусалим с Варнавой и Титом, и Иаков, Кифа и Иоанн «подали мне и Варнаве руку общения», прося только помнить нищих; большинство учёных видят здесь ту же встречу, другие же отождествляют её с более ранним приходом в голод из 11-й главы Деяний и датируют Послание к Галатам до собора."
+    - "Лука года не называет, и дату выводят из единственной твёрдой точки в жизни Павла. Письмо Клавдия, высеченное в Дельфах и датированное 51/52 г., показывает, что Галлион был проконсулом Ахаии с лета 51 г.; Павла привели к нему в Коринфе, где апостол провёл полтора года, значит, пришёл туда около начала 50-го, пройдя Малую Азию и Македонию. Это ставит собор и начало второго путешествия в 49 г. или в конец 48-го. Голод из 11-й главы Деяний, который Иосиф Флавий относит ко времени прокураторов Фада и Тиберия Александра, около 46–48 гг., и изгнание иудеев из Рима Клавдием около 49 г., после которого Павел встретил в Коринфе Акилу, «недавно пришедшего из Италии», и Прискиллу, укладываются в ту же рамку; если считать «четырнадцать лет» Послания к Галатам от обращения Павла около 33 или 34 г., выходит 47 или 48-й, а от его первого прихода в Иерусалим три года спустя — 50 или 51-й."
+map:
+  place: a15257a
+  year: "c. AD 49"
+  ref: Acts.15.6
+scripture:
+  [
+    Acts.15.1-Acts.15.2,
+    Acts.15.6-Acts.15.7,
+    Acts.15.13,
+    Acts.15.19-Acts.15.20,
+    Acts.15.22-Acts.15.23,
+    Acts.15.28-Acts.15.29,
+    Acts.16.4,
+    Gal.1.18,
+    Gal.2.1-Gal.2.2,
+    Gal.2.9-Gal.2.10,
+    Acts.11.28-Acts.11.30,
+    Acts.18.2,
+    Acts.18.12,
+  ]
+sources:
+  - "The Gallio inscription from Delphi (SIG³ 801D): Claudius's letter of his twenty-sixth acclamation, AD 51/52"
+  - "Josephus, Antiquities 20.101 (the famine under Fadus and Tiberius Alexander)"
+  - "Suetonius, Claudius 25.4; Orosius, History 7.6.15 (the ninth year of Claudius)"
+  - "R. Riesner, Paul's Early Period: Chronology, Mission Strategy, Theology (1998)"
+  - "C. K. Barrett, The Acts of the Apostles (ICC), vol. 2 (1998), on Acts 15"
+  - "F. F. Bruce, The Epistle to the Galatians (NIGTC, 1982), on Galatians 2:1-10 and the date of the letter"
+  - "History Globe dated events (council c. AD 49; claudius-expels c. AD 49; gallio c. AD 51), History Globe tour “Paul's first journey” and History Globe tour “Paul's second journey”"
+  - "Straight-line distance between the places' points (Jerusalem, Antioch on the Orontes): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

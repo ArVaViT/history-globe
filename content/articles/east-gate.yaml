@@ -1,0 +1,29 @@
+# Overview article (ADR 0007). Mainstream facts only; this record is the east gate of the Temple, not a city gate; the Golden Gate's date is given as debated.
+id: east-gate
+place: a4e8401
+title:
+  en: "East Gate"
+  ru: "Восточные ворота"
+body:
+  en:
+    - "The East Gate here is the eastern gate of the Temple courts in Jerusalem, the gate that faced the sunrise and the Mount of Olives, not a gate of the city wall. In the organisation of the gatekeepers under David “the lot eastward fell to Shelemiah”, the chief of the Korahite porters; under Hezekiah “Kore the son of Imnah the Levite, the porter toward the east, was over the freewill offerings of God”; and among those who rebuilt Nehemiah's wall, beside the priests opposite their houses, was “Shemaiah the son of Shechaniah, the keeper of the east gate”. The gate that Jeremiah calls the east gate in the King James Version, the way out to the valley of Hinnom, is a different one, the Potsherd Gate; the Synodal text names it Harshith."
+    - "Ezekiel makes this gate the hinge of his visions. Through it the glory of God leaves the Temple: the cherubim rose and “every one stood at the door of the east gate of the LORD's house; and the glory of the God of Israel was over them above”. Then the spirit “brought me unto the east gate of the LORD's house, which looketh eastward: and behold at the door of the gate five and twenty men”, the princes who gave wicked counsel. In the vision of the new Temple the glory returns the same way, “from the way of the east”, and the outer east gate is then shut: “This gate shall be shut, it shall not be opened, and no man shall enter in by it; because the LORD, the God of Israel, hath entered in by it”."
+    - "The Mishnah calls the eastern gate of Herod's Temple the Shushan Gate, from a picture of Susa upon it. The gate now in the eastern wall of the Temple Mount, the Golden Gate, is a double gate built, scholars argue, in the late Byzantine or early Umayyad period and walled up by the Ottomans; Jews, Christians and Muslims have all read Ezekiel's shut gate in it, and a Muslim cemetery lies before it."
+  ru:
+    - "Восточные ворота здесь — восточные ворота храмовых дворов в Иерусалиме, ворота, обращённые к восходу и к Елеонской горе, а не ворота городской стены. При устроении привратников у Давида «выпал жребий на восток Шелемии», главе кореевых привратников; при Езекии «Коре, сын Имны, левит, привратник на восточной стороне, был при добровольных приношениях Богу»; а среди строителей стены Неемии, рядом со священниками против их домов, был «Шемаия, сын Шехании, сторож восточных ворот». Ворота, через которые Иеремия выходит в долину сыновей Енномовых, — другие, ворота Харшиф; английская Библия короля Иакова зовёт и их восточными."
+    - "Иезекииль делает эти ворота осью своих видений. Через них слава Божия покидает Храм: Херувимы поднялись и «стали у входа в восточные врата Дома Господня, и слава Бога Израилева вверху над ними». Затем дух «привел меня к восточным воротам дома Господня, которые обращены к востоку. И вот, у входа в ворота двадцать пять человек» — князья, дававшие злой совет. В видении нового Храма слава возвращается тем же путём, «от востока», и внешние восточные ворота затем затворяются: «ворота сии будут затворены, не отворятся, и никакой человек не войдет ими, ибо Господь, Бог Израилев, вошел ими»."
+    - "Мишна зовёт восточные ворота Иродова храма воротами Шушан — по изображению Суз на них. Ворота, что стоят ныне в восточной стене Храмовой горы, Золотые ворота, — двойные ворота, построенные, как считают учёные, в поздневизантийское или раннеомейядское время и замурованные Османами; иудеи, христиане и мусульмане видели в них затворённые ворота Иезекииля, а перед ними лежит мусульманское кладбище."
+scripture:
+  - 1Chr.26.14
+  - 2Chr.31.14
+  - Neh.3.29
+  - Ezek.10.19
+  - Ezek.11.1
+  - Ezek.43.1-Ezek.43.4
+  - Ezek.44.1-Ezek.44.2
+sources:
+  - "Mishnah, Middot 1.3 (the Shushan Gate)"
+  - "D. I. Block, The Book of Ezekiel, 2 vols. (New International Commentary on the Old Testament, 1997-1998)"
+  - "D. Bahat, The Illustrated Atlas of Jerusalem (1990)"
+  - "L. Ritmeyer, The Quest: Revealing the Temple Mount in Jerusalem (2006)"
+status: checked

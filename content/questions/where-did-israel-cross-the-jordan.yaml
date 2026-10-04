@@ -1,0 +1,27 @@
+id: where-did-israel-cross-the-jordan
+question:
+  en: "Where did Israel cross the Jordan?"
+  ru: "Где Израиль перешёл Иордан?"
+answer:
+  en:
+    - "Opposite Jericho. The Book of Joshua says that the people came from Shittim to the river and “passed over right against Jericho”, and that they camped at Gilgal, “in the east border of Jericho”. The exact spot is not known. The map point stands on Gilgal at Khirbet el-Mefjir, about 2 km north-east of Tell es-Sultan, the mound of Jericho, and about 21 km in a straight line from Shittim, the last camp east of the river; Khirbet en-Nitla south-east of Jericho is the other usual candidate for Gilgal. Local tradition puts the crossing at the ford of Qasr al-Yahud, about 10 km south-east of the map point, where the baptism of Jesus is also remembered."
+    - "The text describes the river stopping upstream: the waters “stood and rose up upon an heap very far from the city Adam, that is beside Zaretan”, while those flowing to the Dead Sea “failed, and were cut off”. Adam is identified with Tell ed-Damiyeh, near the mouth of the Jabbok, about 28 km north of Jericho in a straight line, and Zarethan with Tell es-Sa'idiyeh, 18 km further north. It was the spring harvest, when “Jordan overfloweth all his banks”, and the priests with the ark stood “on dry ground in the midst of Jordan” until all had crossed; twelve stones from the riverbed were set up at Gilgal, and in the fourth century Eusebius was shown them at the second mile from Jericho."
+    - "How it happened is read in different ways. Many take it as a plain miracle; others note that the high marl banks near Damiyeh have collapsed and dammed the river for hours, as in the earthquake of 1927, and see God's hand in the timing. The date also divides scholars: the map follows the early chronology, about 1406 BC, forty years after an Exodus dated from 1 Kings 6:1, while many put Joshua in the thirteenth century BC or read the conquest story as later tradition. A psalm keeps it in one line: “Jordan was driven back”."
+  ru:
+    - "Против Иерихона. Книга Иисуса Навина говорит, что «двинулись они от Ситтима и пришли к Иордану», что «народ переходил против Иерихона» и что стан поставили в Галгале, «на восточной стороне Иерихона». Точное место неизвестно. Точка карты стоит на Галгале, в Хирбет-эль-Мефджире, примерно в 2 км к северо-востоку от Телль-эс-Султана, холма Иерихона, и примерно в 21 км по прямой от Ситтима, последнего стана к востоку от реки; другое обычное предположение для Галгала — Хирбет-эн-Нитла к юго-востоку от Иерихона. Местное предание помещает переход у брода Каср-эль-Яхуд, примерно в 10 км к юго-востоку от точки карты, где вспоминают и крещение Иисуса."
+    - "Текст описывает, как река остановилась выше по течению: «вода, текущая сверху, остановилась и стала стеною на весьма большое расстояние, до города Адама, который подле Цартана», а вода, текущая в Мёртвое море, «ушла и иссякла». Адам отождествляют с Телль-эд-Дамией близ устья Иавока, примерно в 28 км к северу от Иерихона по прямой, а Цартан — с Телль-эс-Саидией, ещё в 18 км севернее. Была весенняя жатва, когда Иордан «выступает из всех берегов своих», и священники с ковчегом «стояли на суше среди Иордана», пока все не перешли; двенадцать камней из русла поставили в Галгале, и в IV веке Евсевию показывали их у второй мили от Иерихона."
+    - "Как это произошло, понимают по-разному. Многие видят здесь прямое чудо; другие замечают, что высокие мергелевые берега у Дамии не раз обрушивались и на несколько часов перегораживали реку, как при землетрясении 1927 года, и видят руку Божию в самом времени события. Дата тоже разделяет учёных: карта следует ранней хронологии, около 1406 г. до н. э., через сорок лет после Исхода, датированного по 3 Цар 6:1, а многие относят Иисуса Навина к XIII веку до н. э. или считают рассказ о завоевании позднейшим преданием. Псалом хранит это событие в одной строке: «Иордан обратился назад»."
+map:
+  place: ab94aea
+  year: "c. 1406 BC"
+  ref: Josh.3.16
+scripture: [Josh.3.1, Josh.3.15-Josh.3.17, Josh.4.9, Josh.4.19-Josh.4.20, Ps.114.3]
+sources:
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Josephus, Antiquities 5.20 (the camp fifty furlongs from the Jordan, ten from Jericho); 5.34 (Gilgal means liberty)"
+  - "Eusebius, Onomasticon, s.v. Bounos and Galgala (C. U. Wolf's translation, nos. 211 and 311)"
+  - "J. Muilenburg, 'The Site of Ancient Gilgal', BASOR 140 (1955) 11-27"
+  - "N. N. Ambraseys, Earthquakes in the Mediterranean and Middle East (2009) (the Jordan blocked at Damiya in 1927)"
+  - "K. A. Kitchen, On the Reliability of the Old Testament (2003), on the date of the Exodus"
+  - "History Globe tour “The Exodus” (the stations and the conventional years)"
+status: checked

@@ -1,0 +1,26 @@
+# Overview article (ADR 0007). Mainstream facts only; a Roman province named twice in the New Testament; the Septuagint's Cappadocia for Caphtor is noted as a reading, not a fact.
+id: cappadocia
+place: a33fbde
+title:
+  en: "Cappadocia"
+  ru: "Каппадокия"
+body:
+  en:
+    - "Cappadocia is the high inland plateau of eastern central Anatolia, a land of cold winters, horses and wheat, framed by the Taurus to the south and the volcano Erciyes (Argaeus) at its heart. Long before the Bible's mention, Assyrian merchants traded there: the clay tablets of their colony at Kanesh (Kültepe), near Kayseri, date from the nineteenth and eighteenth centuries BC, and the region later lay within the Hittite world. Under the Persians it was a satrapy, then a kingdom of the Ariarathid house; Tiberius annexed it in AD 17, after the death of its last king, Archelaus, and it became a Roman province with Caesarea, the old Mazaca, as its capital."
+    - "The New Testament names it twice. Among the crowd at Pentecost were “the dwellers in Mesopotamia, and in Judæa, and Cappadocia, in Pontus, and Asia”, Jews and proselytes who heard the apostles speak each in his own tongue; and the first letter of Peter is sent to the strangers scattered “throughout Pontus, Galatia, Cappadocia, Asia, and Bithynia”. How the faith came there is not told. The Greek Septuagint renders Caphtor, the homeland of the Philistines, as Cappadocia in a few places, but that reading is not followed today."
+    - "In the fourth century Cappadocia gave the church Basil of Caesarea, his brother Gregory of Nyssa and their friend Gregory of Nazianzus, the Cappadocian Fathers. Its soft volcanic tuff, carved by erosion into cones and pillars, was hollowed out for dwellings, underground towns and hundreds of painted churches, most of them from the ninth to eleventh centuries. Today it is the region around Kayseri and Nevşehir in Turkey, and Göreme with the rock sites around it is a UNESCO World Heritage Site."
+  ru:
+    - "Каппадокия — высокое внутреннее плато восточной части Центральной Анатолии, земля холодных зим, коней и пшеницы, огороженная с юга Тавром, с вулканом Эрджиес (Аргей) посередине. Задолго до упоминания в Библии там торговали ассирийские купцы: глиняные таблички их колонии в Канеше (Кюльтепе) близ Кайсери относятся к XIX–XVIII векам до н. э., а позже край входил в хеттский мир. При персах это была сатрапия, затем царство дома Ариаратов; Тиберий присоединил её в 17 г. н. э., после смерти последнего царя Архелая, и она стала римской провинцией со столицей в Кесарии, древней Мазаке."
+    - "Новый Завет называет её дважды. Среди толпы в день Пятидесятницы были «жители Месопотамии, Иудеи и Каппадокии, Понта и Асии», Иудеи и прозелиты, слышавшие апостолов каждый на своём наречии; а первое послание Петра обращено к пришельцам, «рассеянным в Понте, Галатии, Каппадокии, Асии и Вифинии». Как туда пришла вера, не сказано. Греческая Септуагинта в нескольких местах передаёт Кафтор, родину Филистимлян, как Каппадокию, но этому чтению сегодня не следуют."
+    - "В IV веке Каппадокия дала Церкви Василия Кесарийского, его брата Григория Нисского и их друга Григория Назианзина — Каппадокийских отцов. Её мягкий вулканический туф, изваянный ветром и водой в конусы и столбы, вырубали под жилища, подземные города и сотни расписных церквей, большей частью IX–XI веков. Сегодня это край вокруг Кайсери и Невшехира в Турции, а Гёреме со скальными памятниками вокруг него — объект Всемирного наследия ЮНЕСКО."
+scripture:
+  - Acts.2.9
+  - 1Pet.1.1
+sources:
+  - "Strabo, Geography 12.1-2 (Cappadocia)"
+  - "Tacitus, Annals 2.42 (Cappadocia made a province)"
+  - "Septuagint, Deuteronomy 2.23 and Amos 9.7 (Caphtor rendered as Cappadocia)"
+  - "S. Mitchell, Anatolia: Land, Men, and Gods in Asia Minor, 2 vols. (1993)"
+  - "R. Van Dam, Kingdom of Snow: Roman Rule and Greek Culture in Cappadocia (2002)"
+  - "UNESCO World Heritage List, Göreme National Park and the Rock Sites of Cappadocia (inscribed 1985)"
+status: checked

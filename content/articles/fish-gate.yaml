@@ -1,0 +1,28 @@
+# Overview article (ADR 0007). Mainstream facts only; the gate is unlocated and its position on the north wall is the usual inference; the origin of the name is given as the common explanation.
+id: fish-gate
+place: a6057f5
+title:
+  en: "Fish Gate"
+  ru: "Рыбные ворота"
+body:
+  en:
+    - "The Fish Gate was a gate in the north wall of Jerusalem, named, it is usually thought, from the fish market beside it: Nehemiah complains that men of Tyre living in the city “brought fish, and all manner of ware, and sold on the sabbath unto the children of Judah, and in Jerusalem”, and fish from the coast and from Galilee would have come in by the northern road. Nehemiah's procession passed, going east, the Gate of Ephraim, the Old Gate, the Fish Gate, the tower of Hananel and the tower of Meah, and then reached the Sheep Gate, so the Fish Gate stood in the eastern part of the north wall, near the valley that ran down between the western hill and the Temple. It has not been found."
+    - "Manasseh, after his return from Assyria, “built a wall without the city of David, on the west side of Gihon, in the valley, even to the entering in at the fish gate”, and carried it round Ophel. In Nehemiah's repair “the fish gate did the sons of Hassenaah build, who also laid the beams thereof, and set up the doors thereof, the locks thereof, and the bars thereof”. Zephaniah, in the days of Josiah, hears the coming judgement in the sounds of the northern quarter: “there shall be the noise of a cry from the fish gate, and an howling from the second, and a great crashing from the hills”, and then bids the merchants of the Maktesh, the hollow below, to howl, for the trading people are cut down."
+    - "The Second Quarter, the Mishneh, which Zephaniah names with the gate, was the newer part of the city on the western hill, enclosed in the late eighth century BC by the Broad Wall that Nahman Avigad found in the Jewish Quarter. The Fish Gate would have let the road from the north into that quarter and down to the Temple. The present Damascus Gate, the main northern gate of the Old City, lies further north, on a line of wall first built in the Roman period."
+  ru:
+    - "Рыбные ворота были воротами в северной стене Иерусалима, названными, как обычно считают, по рыбному рынку рядом: Неемия жалуется, что Тиряне, жившие в городе, «привозили рыбу и всякий товар и продавали в субботу жителям Иудеи и в Иерусалиме», а рыба с побережья и из Галилеи приходила северной дорогой. Шествие Неемии прошло на восток Ефремовы ворота, Старые ворота, Рыбные ворота, башню Хананела и башню Меа и затем дошло до Овечьих ворот, так что Рыбные ворота стояли в восточной части северной стены, у лощины, спускавшейся между западным холмом и храмом. Они не найдены."
+    - "Манассия, вернувшись из Ассирии, «построил внешнюю стену города Давидова, на западной стороне Геона, по лощине и до входа в Рыбные ворота» и провёл её вокруг Офела. При починке Неемии «Ворота Рыбные строили уроженцы Сенаи: они покрыли их, и вставили двери их, замки их и засовы их». Софония во дни Иосии слышит грядущий суд в звуках северной части города: «вопль у ворот рыбных и рыдание у других ворот и великое разрушение на холмах», — и велит рыдать торговцам «нижней части города», ибо исчезнет весь торговый народ."
+    - "Рыдание «у других ворот» — по-еврейски это Мишне, «второй город», который Софония называет рядом с воротами: новая часть города на западном холме, обнесённая в конце VIII века до н. э. Широкой стеной, которую Нахман Авигад нашёл в Еврейском квартале. Рыбные ворота впускали дорогу с севера в этот квартал и вниз к храму. Нынешние Дамасские ворота, главные северные ворота Старого города, лежат севернее, на линии стены, впервые построенной в римское время."
+scripture:
+  - 2Chr.33.14
+  - Neh.3.3
+  - Neh.12.39
+  - Neh.13.16
+  - Zeph.1.10-Zeph.1.11
+sources:
+  - "J. Simons, Jerusalem in the Old Testament: Researches and Theories (1952)"
+  - "N. Avigad, Discovering Jerusalem (1983)"
+  - "H. G. M. Williamson, Ezra, Nehemiah (Word Biblical Commentary 16, 1985)"
+  - "A. Berlin, Zephaniah (Anchor Bible 25A, 1994)"
+  - "D. Bahat, The Illustrated Atlas of Jerusalem (1990)"
+status: checked

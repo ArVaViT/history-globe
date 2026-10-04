@@ -1,0 +1,23 @@
+# Overview article (ADR 0007). Mainstream facts only; Hauran is a well-known region; the biblical mentions are only Ezekiel's border, and the later history is told briefly.
+id: hauran
+place: a0e8903
+title:
+  en: "Hauran"
+  ru: "Авран"
+body:
+  en:
+    - "The Hauran is the broad volcanic plateau of southern Syria, east of the Golan and north of the Yarmuk, with the dark basalt massif of Jebel al-Arab (Jebel Druze) on its eastern side. Its rich red-brown soil made it a granary in antiquity, the heart of the land the Bible calls Bashan. The Bible names the Hauran only in Ezekiel's vision of the borders of the restored land: the northern border runs to “Hazar-hatticon, which is by the coast of Hauran”, and “the east side ye shall measure from Hauran, and from Damascus, and from Gilead, and from the land of Israel by Jordan”, so that the Hauran lies just outside the eastern line."
+    - "The name is old. Shalmaneser III of Assyria, after defeating Hazael of Damascus in 841 BC, says he marched to the mountains of Hauran, and after Tiglath-pileser III took Damascus in 732 BC the region seems to have formed an Assyrian province named after it. The Greeks called it Auranitis; Augustus gave it to Herod the Great, and after Herod it went with Trachonitis to his son Philip the tetrarch; it later came under direct Roman rule. Basalt towns such as Bosra and Canatha flourished there in Roman and Byzantine times."
+    - "Today the Hauran lies mostly in the Daraa and Suwayda governorates of Syria and reaches into northern Jordan; its basalt villages still preserve Roman and Byzantine houses, churches and theatres, the best known at Bosra."
+  ru:
+    - "Авран, Хауран, — широкое вулканическое плато на юге Сирии, к востоку от Голана и к северу от Ярмука, с тёмным базальтовым массивом Джебель-эль-Араб (Джебель-Друз) на востоке. Его плодородная красно-бурая почва сделала его в древности житницей; это сердце земли, которую Библия зовёт Васаном. Библия называет Авран только в видении Иезекииля о границах восстановленной земли: северная граница доходит до «Гацар-Тихон, который на границе Аврана», а о восточном крае сказано: «Черту восточного края ведите между Авраном и Дамаском, между Галаадом и землею Израильскою», так что Авран остаётся сразу за восточной чертой."
+    - "Имя древнее. Ассирийский царь Салманасар III, разбив Азаила Дамасского в 841 г. до н. э., говорит, что ходил к горам Хаурана, а после того как Феглаффелласар III в 732 г. до н. э. взял Дамаск, область, по-видимому, стала ассирийской провинцией, названной по ней. Греки звали её Авранитидой; Август отдал её Ироду Великому, а после Ирода она вместе с Трахонитидой перешла к его сыну Филиппу четвертовластнику, а позднее оказалась под прямой властью Рима. В римское и византийское время там процветали базальтовые города, такие как Бостра и Канафа."
+    - "Сегодня Хауран лежит большей частью в мухафазах Дараа и Сувейда в Сирии и заходит в северную Иорданию; его базальтовые селения до сих пор хранят римские и византийские дома, церкви и театры, самые известные — в Бостре."
+scripture:
+  - Ezek.47.16-Ezek.47.18
+sources:
+  - "Shalmaneser III, annals of the eighteenth year (841 BC), in A. K. Grayson, Assyrian Rulers of the Early First Millennium BC II (RIMA 3, 1996)"
+  - "Josephus, Antiquities 15.10.1; 17.11.4"
+  - "W. Zimmerli, Ezekiel 2 (Hermeneia, 1983)"
+  - "J.-M. Dentzer (ed.), Hauran I: Recherches archéologiques sur la Syrie du Sud à l'époque hellénistique et romaine (1985-1986)"
+status: checked

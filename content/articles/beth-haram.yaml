@@ -1,0 +1,23 @@
+# Overview article (ADR 0007). Mainstream facts only; the two spellings are noted; the later Livias is from Josephus and Eusebius; Tall er-Rama and Tall Iktanu are given as the candidates.
+id: beth-haram
+place: a4590cd
+title:
+  en: "Beth-haram"
+  ru: "Беф-Гарам"
+body:
+  en:
+    - "Beth-haram, spelt Beth-haran in Numbers and Beth-aram in Joshua, was a town of Gad in the Jordan valley opposite Jericho. When Reuben and Gad asked for the land east of the river, the Gadites fortified it: “Beth-nimrah, and Beth-haran, fenced cities: and folds for sheep”. Joshua lists it among Gad's towns “in the valley, Beth-aram, and Beth-nimrah, and Succoth, and Zaphon, the rest of the kingdom of Sihon king of Heshbon”. The Bible does not mention it again."
+    - "Its later history is better known than its biblical one. Under the name Betharamphtha Herod Antipas walled it and renamed it Livias, then Julias, after the wife of Augustus; Josephus says the palace there was burnt in the troubles after Herod the Great's death. Eusebius says the Syrians called the town Bethramphtha and that it was now Livias, and the pilgrim Egeria passed through Livias on her way to Mount Nebo. The name lives on at Tall er-Rama, a mound by the village of er-Rama in the Jordan valley of Jordan, which most take for the Roman city and perhaps the biblical one; the larger Tall Iktanu, about 3 km to the east, excavated by Kay Prag in 1987–1990 and occupied in the Early Bronze and Iron Ages, is the other candidate for Beth-haram itself. Neither has yielded an inscription."
+  ru:
+    - "Беф-Гарам, в книге Чисел Беф-Гаран, — город Гада в долине Иордана напротив Иерихона. Когда Рувим и Гад попросили землю за рекой, Гадитяне укрепили его: «и Беф-Нимру и Беф-Гаран, города укрепленные и дворы для овец». Книга Иисуса Навина числит его среди городов Гада «на долине Беф-Гарам и Беф-Нимра и Сокхоф и Цафон, остаток царства Сигона, царя Есевонского». Больше Библия его не упоминает."
+    - "Его поздняя история известна лучше библейской. Под именем Бетарамфта Ирод Антипа обнёс его стеной и переименовал в Ливиаду, затем в Юлиаду, в честь жены Августа; Иосиф Флавий говорит, что тамошний дворец сожгли в смуте после смерти Ирода Великого. Евсевий пишет, что сирийцы звали город Бетрамфтой, а теперь это Ливиада, а паломница Эгерия проходила через Ливиаду по пути на гору Нево. Имя живёт в Телль-эр-Раме, холме у селения Эр-Рама в иорданской долине Иордана, в котором большинство видят римский город и, возможно, библейский; более крупный Телль-Иктану примерно в 3 км к востоку, раскопанный Кей Прэг в 1987–1990 годах и обитаемый в раннем бронзовом и железном веках, — второй кандидат на сам Беф-Гарам. Надписей не дал ни один."
+scripture:
+  - Num.32.36
+  - Josh.13.27
+sources:
+  - "Josephus, Antiquities 18.27 (Betharamphtha renamed Julias); Jewish War 2.59 (the palace at Betharamatha burnt)"
+  - "Eusebius, Onomasticon, s.v. Betharam"
+  - "Egeria, Itinerarium 10 (Livias on the way to Nebo)"
+  - "K. Prag, 'Preliminary Report on the Excavations at Tell Iktanu, Jordan, 1987', Levant 21 (1989)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

@@ -11,6 +11,9 @@
  *
  * Usage: node scripts/build-docs.ts  (after build-content; counts read public/data)
  */
+import { LOCALE_NAMES, LOCALES, type SiteLocale } from "../packages/model/src/time.ts";
+import { esc, headMeta } from "./page-shell.ts";
+import { DOC_PAGES, type DocPage } from "../packages/model/src/site.ts";
 import {
   copyFileSync,
   existsSync,
@@ -29,23 +32,21 @@ const src = join(root, "content/docs");
 const out = join(pub, "docs");
 const site = process.env.SITE_URL?.replace(/\/+$/, "") ?? "";
 
-/** Anonymous visit counts (Vercel Web Analytics, no cookies; docs: privacy.html), in a
- * production build only: the script is served by the host itself. */
-const visits = site ? `\n    <script defer src="/_vercel/insights/script.js"></script>` : "";
-
-type Lang = "en" | "ru";
-const LANGS: readonly Lang[] = ["en", "ru"];
+type Lang = SiteLocale;
+// English first: its pages sit at the root of docs/.
+const LANGS: readonly Lang[] = ["en", ...LOCALES.filter((l) => l !== "en")];
+/** A language's folder under docs/: English at the root. */
+const prefix = (l: Lang) => (l === "en" ? "" : `${l}/`);
 
 /** The pages in the order of the menu. */
-const PAGES = ["index", "methodology", "embedding", "api", "sources", "author", "privacy"] as const;
-type Page = (typeof PAGES)[number];
+const PAGES = DOC_PAGES;
+type Page = DocPage;
 
 const T = {
   en: {
     docs: "Documentation",
     menu: "Contents",
     onPage: "On this page",
-    other: "Русский",
     copy: "Copy",
     copied: "Copied",
     updated: "Data as of",
@@ -54,15 +55,11 @@ const T = {
     docs: "Документация",
     menu: "Разделы",
     onPage: "На странице",
-    other: "English",
     copy: "Копировать",
     copied: "Скопировано",
     updated: "Данные на",
   },
 } as const;
-
-const esc = (s: string) =>
-  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 const read = (file: string): unknown =>
   existsSync(join(data, file)) ? JSON.parse(readFileSync(join(data, file), "utf8")) : undefined;
@@ -136,13 +133,11 @@ function dateIn(iso: string, l: Lang): string {
   }).format(d);
 }
 
-/** The Russian form for a count: 1 город, 2 города, 5 городов, 21 город. */
+/** The Russian form for a count by the language's own rules: 1 город, 2 города, 5 городов. */
+const RU_COUNT = new Intl.PluralRules("ru");
 function plural(n: number, one: string, few: string, many: string): string {
-  const d = n % 10;
-  const dd = n % 100;
-  if (d === 1 && dd !== 11) return one;
-  if (d >= 2 && d <= 4 && (dd < 12 || dd > 14)) return few;
-  return many;
+  const form = RU_COUNT.select(n);
+  return form === "one" ? one : form === "few" ? few : many;
 }
 
 /**
@@ -310,23 +305,21 @@ function page(o: {
   titles: Record<Page, string>;
   built: string;
 }): string {
+  // English at the root of docs/, every other language in its own folder.
   const up = o.l === "en" ? "" : "../";
+  const file = (p: Page) => (p === "index" ? "" : `${p}.html`);
   const here = (l: Lang, p: Page) =>
-    `${l === "en" ? up : o.l === "en" ? "ru/" : ""}${p === "index" ? "./" : `${p}.html`}`;
-  const otherLang: Lang = o.l === "en" ? "ru" : "en";
-  const path = (l: Lang) =>
-    `docs/${l === "en" ? "" : "ru/"}${o.name === "index" ? "" : `${o.name}.html`}`;
-  const meta = site
-    ? `
-    <link rel="canonical" href="${site}/${path(o.l)}" />
-    <link rel="alternate" hreflang="${o.l}" href="${site}/${path(o.l)}" />
-    <link rel="alternate" hreflang="${otherLang}" href="${site}/${path(otherLang)}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="History Globe" />
-    <meta property="og:title" content="${esc(o.src.title)}" />
-    <meta property="og:description" content="${esc(o.src.description)}" />
-    <meta property="og:image" content="${site}/og.jpg" />`
-    : "";
+    l === o.l ? file(p) || "./" : `${up}${prefix(l)}${file(p) || "./"}`;
+  const paths = Object.fromEntries(
+    LANGS.map((l) => [l, `docs/${prefix(l)}${file(o.name)}`]),
+  ) as Record<Lang, string>;
+  const meta = headMeta({ site, title: o.src.title, desc: o.src.description, paths, l: o.l });
+  const langs = LANGS.filter((l) => l !== o.l)
+    .map(
+      (l) =>
+        `<a class="lang" href="${here(l, o.name)}" hreflang="${l}" lang="${l}">${LOCALE_NAMES[l]}</a>`,
+    )
+    .join("");
   const nav = PAGES.map(
     (p) =>
       `<li><a href="${here(o.l, p)}"${p === o.name ? ' aria-current="page"' : ""}>${esc(o.titles[p])}</a></li>`,
@@ -346,15 +339,14 @@ function page(o: {
     <meta name="theme-color" content="#f6efe1" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#121a24" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="${up}../favicon.svg" type="image/svg+xml" />
-    <title>${o.name === "index" ? `History Globe ${T[o.l].docs}` : `${esc(o.src.title)} | History Globe`}</title>
-    <meta name="description" content="${esc(o.src.description)}" />${meta}${visits}
+    <title>${o.name === "index" ? `History Globe ${T[o.l].docs}` : `${esc(o.src.title)} | History Globe`}</title>${meta}
     <link rel="stylesheet" href="${up}docs.css" />
   </head>
   <body>
     <a class="skip" href="#main">${o.l === "en" ? "Skip to content" : "К содержанию"}</a>
     <header class="bar">
       <a class="brand" href="${here(o.l, "index")}"><img src="${up}../favicon.svg" alt="" width="22" height="22" />History Globe <span>${T[o.l].docs}</span></a>
-      <a class="lang" href="${here(otherLang, o.name)}" hreflang="${otherLang}" lang="${otherLang}">${T[o.l].other}</a>
+      ${langs}
     </header>
     <div class="layout">
       <nav class="side" aria-label="${T[o.l].menu}"><ul>${nav}</ul></nav>
@@ -484,7 +476,7 @@ for (const l of LANGS) {
       highlight(features(l === "ru" ? typeset(filled) : typesetEnglish(filled))),
     );
     writeFileSync(
-      join(out, l === "en" ? "" : "ru", p === "index" ? "index.html" : `${p}.html`),
+      join(out, prefix(l), p === "index" ? "index.html" : `${p}.html`),
       page({ l, name: p, src: sources[p], body, toc, titles, built: n.built ?? "" }),
     );
   }

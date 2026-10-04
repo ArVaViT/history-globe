@@ -1,4 +1,5 @@
 import type { Locale } from "@hg/model";
+import { placeName } from "@hg/model";
 import type { TimelineEvent } from "./components/Timeline";
 import type { LoadedData } from "./data";
 
@@ -20,7 +21,7 @@ export function timelineEventsOf(
   for (const [id, life] of Object.entries(data.life)) {
     const p = data.byId.get(id)?.props;
     if (!p || p.where_tpl === "same" || p.where_tpl === "at") continue;
-    const name = locale === "ru" ? (p.name_ru ?? p.name) : p.name;
+    const name = placeName(p, locale);
     const covered = (year: number) =>
       data.events.some((e) => e.place === id && Math.abs(e.year - year) <= 2);
     const add = (y: { year: number; approximate: boolean } | undefined, key: string) => {

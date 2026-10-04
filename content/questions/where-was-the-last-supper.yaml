@@ -1,0 +1,36 @@
+id: where-was-the-last-supper
+question:
+  en: "Where was the Last Supper?"
+  ru: "Где была Тайная вечеря?"
+answer:
+  en:
+    - "The Gospels do not say where the house stood, only that it was inside Jerusalem. Tradition since the fourth century places it on the south-western hill, today's Mount Zion, just outside the Zion Gate of the Old City, where the Cenacle, a Gothic hall of the Crusader period, is shown as the upper room; the map point stands on that hill, about 800 m south-west of the Jerusalem point and about 1.3 km from Gethsemane in a straight line. The site is likely rather than proven. The night of the supper, the eve of the Passover or the feast itself, is treated in the question on the date of the crucifixion."
+    - "Mark tells how the room was found: Jesus sent two disciples into the city, where “there shall meet you a man bearing a pitcher of water: follow him”, and the master of the house “will shew you a large upper room furnished and prepared”. Luke repeats the sign of the pitcher; Matthew says only “Go into the city to such a man”. The owner is never named. After the Ascension the apostles “went up into an upper room, where abode both Peter, and James, and John, and Andrew”; at Pentecost a sound from heaven “filled all the house where they were sitting”; and later Peter, freed from prison, came “to the house of Mary the mother of John, whose surname was Mark; where many were gathered together praying”. Christian tradition took these as one house and one room, though Luke's words do not say so."
+    - "The tradition goes back to the fourth century. Cyril of Jerusalem, about 350, spoke of the upper church of the apostles where the Spirit came down; Epiphanius wrote that when Hadrian came to Jerusalem he found a small church of God still standing on Zion, where the disciples had gone up to the upper room; Egeria in the 380s describes Pentecost kept in Sion. The basilica of Holy Sion rose there late in the fourth century; the Persians burnt it in 614, the Crusaders rebuilt it, and their hall is the Cenacle of today, with the cenotaph venerated as David's tomb beneath it; the Franciscans held it from the 1330s until the Ottomans made it a mosque in the sixteenth century. Bargil Pixner argued in 1990 that walls under the Cenacle belong to a Jewish-Christian synagogue, and later that the house stood in an Essene quarter; many scholars find both unproven."
+  ru:
+    - "Евангелия не говорят, где стоял дом, — только что он был в Иерусалиме. Предание с IV века помещает его на юго-западном холме, нынешней горе Сион, сразу за Сионскими воротами Старого города, где горницей показывают Сионскую горницу — готический зал времён крестоносцев; точка карты стоит на этом холме, примерно в 800 м к юго-западу от точки Иерусалима и в 1,3 км от Гефсимании по прямой. Место вероятное, но не доказанное. О ночи вечери — накануне Пасхи или в самый праздник — говорит вопрос о дате распятия."
+    - "Марк рассказывает, как нашли комнату: Иисус послал двух учеников в город, где «встретится вам человек, несущий кувшин воды; последуйте за ним», и хозяин дома «покажет вам горницу большую, устланную, готовую». Лука повторяет знак с кувшином; Матфей говорит только: «пойдите в город к такому-то». Хозяин нигде не назван. После Вознесения апостолы «взошли в горницу, где и пребывали, Петр и Иаков, Иоанн и Андрей»; в Пятидесятницу шум с неба «наполнил весь дом, где они находились»; позже Пётр, выведенный из темницы, пришёл «к дому Марии, матери Иоанна, называемого Марком, где многие собрались и молились». Христианское предание сочло всё это одним домом и одной горницей, хотя слова Луки этого не говорят."
+    - "Предание прослеживается до IV века. Кирилл Иерусалимский около 350 года говорил о верхней церкви апостолов, где сошёл Дух; Епифаний писал, что Адриан, придя в Иерусалим, нашёл на Сионе ещё стоящую малую церковь Божию — там, где ученики поднялись в горницу; Эгерия в 380-х годах описывает службу Пятидесятницы на Сионе. В конце IV века там встала базилика Святого Сиона; персы сожгли её в 614 году, крестоносцы отстроили, и их зал — нынешняя Сионская горница, а под ней кенотаф, почитаемый как гробница Давида; францисканцы владели ею с 1330-х годов, пока османы в XVI веке не обратили её в мечеть. Баргил Пикснер в 1990 году доказывал, что стены под горницей принадлежат иудеохристианской синагоге, а позже — что дом стоял в ессейском квартале; многие учёные считают и то и другое недоказанным."
+map:
+  place: abd9596
+  year: "c. AD 30"
+  ref: Mark.14.15
+scripture:
+  [
+    Mark.14.12-Mark.14.16,
+    Luke.22.10-Luke.22.12,
+    Matt.26.17-Matt.26.19,
+    1Cor.11.23,
+    Acts.1.13,
+    Acts.2.1-Acts.2.2,
+    Acts.12.12,
+  ]
+sources:
+  - "Straight-line distances between the places' points (Mount Zion, Jerusalem, Gethsemane): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Cyril of Jerusalem, Catechetical Lectures 16.4 (the upper church of the apostles)"
+  - "Epiphanius, On Weights and Measures 14 (the small church of God on Zion in Hadrian's day)"
+  - "Egeria, Itinerarium 43 (Pentecost at Sion)"
+  - "B. Pixner, “Church of the Apostles Found on Mount Zion”, Biblical Archaeology Review 16.3 (1990); “Jerusalem's Essene Gateway”, Biblical Archaeology Review 23.3 (1997)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008), s.v. Mount Zion (the Cenacle)"
+  - "History Globe articles “Zion” and “Mount Zion”, and the question on the date of the crucifixion"
+status: checked

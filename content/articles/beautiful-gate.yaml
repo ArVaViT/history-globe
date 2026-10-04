@@ -1,0 +1,23 @@
+# Overview article (ADR 0007). Mainstream facts only; the gate is named only in Acts; the two usual identifications (Nicanor's bronze gate, the eastern gate of the outer court) are given without choosing; the Golden Gate is said to be later.
+id: beautiful-gate
+place: a5c37fd
+title:
+  en: "Beautiful Gate"
+  ru: "Двери Красные"
+body:
+  en:
+    - "The Beautiful Gate was a gate of Herod's Temple in Jerusalem, known from one story. A man “lame from his mother’s womb was carried, whom they laid daily at the gate of the temple which is called Beautiful, to ask alms of them that entered into the temple”; Peter and John, going up at the hour of prayer, had no silver or gold and healed him instead, and the crowd “knew that it was he which sat for alms at the Beautiful gate of the temple”. He went with them into Solomon's porch, the colonnade along the east side of the outer court, where Peter preached. No other ancient writer calls any gate of the Temple “Beautiful”."
+    - "Which gate it was is therefore guessed from the sources on the Temple. Josephus describes nine gates of the inner courts plated with silver and gold and one, outside the sanctuary, of Corinthian bronze that far surpassed them in value; the Mishnah says all the gates were changed to gold except the gates of Nicanor, because of a miracle done for them. Most scholars take the Beautiful Gate to be that bronze gate of Nicanor, on the east side of the inner courts, though they differ on exactly where it stood; others, because the lame man went out into Solomon's porch, prefer the eastern gate of the outer court, the Shushan Gate of the Mishnah. Nothing of either survives. The sealed Golden Gate in the eastern wall of the Temple Mount, which Christian pilgrims have long called the Beautiful Gate, is a building of the Byzantine or early Islamic period."
+  ru:
+    - "Красные двери — ворота Иродова храма в Иерусалиме, известные по одному рассказу. Был «человек, хромой от чрева матери его, которого носили и сажали каждый день при дверях храма, называемых Красными, просить милостыни у входящих в храм»; Пётр и Иоанн, шедшие в час молитвы, не имели ни серебра, ни золота и вместо того исцелили его, и народ узнал, «что это был тот, который сидел у Красных дверей храма для милостыни». Он вошёл с ними в притвор Соломонов, колоннаду вдоль восточной стороны внешнего двора, где Пётр произнёс проповедь. Никакой другой древний писатель не называет ни одни ворота храма «Красными»."
+    - "Поэтому о том, какие это были ворота, гадают по источникам о храме. Иосиф Флавий описывает девять ворот внутренних дворов, обитых серебром и золотом, и одни, вне святилища, из коринфской бронзы, намного превосходившие их ценностью; Мишна говорит, что все ворота заменили золотыми, кроме ворот Никанора, ради чуда, с ними случившегося. Большинство учёных видят в Красных дверях эти бронзовые ворота Никанора на восточной стороне внутренних дворов, хотя расходятся в том, где именно они стояли; другие, поскольку хромой вышел в притвор Соломонов, предпочитают восточные ворота внешнего двора, Шушанские ворота Мишны. Ни от тех, ни от других ничего не сохранилось. Заложенные Золотые ворота в восточной стене Храмовой горы, которые христианские паломники издавна зовут Красными, — постройка византийского или раннеисламского времени."
+scripture:
+  - Acts.3.1-Acts.3.2
+  - Acts.3.10-Acts.3.11
+sources:
+  - "Josephus, Jewish War 5.201-206 (the gates of the Temple and the gate of Corinthian bronze)"
+  - "Mishnah, Middot 1.3-1.4 and 2.3 (the Shushan Gate; the gates of Nicanor); Yoma 3.10 (the miracle of Nicanor's doors)"
+  - "J. Jeremias, Jerusalem in the Time of Jesus (1969)"
+  - "C. K. Barrett, The Acts of the Apostles, vol. 1 (International Critical Commentary, 1994)"
+  - "L. Ritmeyer, The Quest: Revealing the Temple Mount in Jerusalem (2006)"
+status: checked

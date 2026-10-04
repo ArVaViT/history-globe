@@ -1,0 +1,26 @@
+id: where-was-zion
+question:
+  en: "Where was Zion?"
+  ru: "Где находился Сион?"
+answer:
+  en:
+    - "Zion was first the Jebusite stronghold on the narrow eastern ridge of Jerusalem, above the Gihon spring, which David took and renamed the City of David; then the name passed to the Temple hill just north of it, and in the Psalms and the prophets to the whole city. The hill called Mount Zion today is a third place, the higher western hill outside the Zion Gate of the Old City, which took the name only in the Christian era. In a straight line the three lie close: the map's point for the City of David is about 0.5 km south of Mount Moriah and 0.7 km east of today's Mount Zion. History Globe's articles on Zion and Mount Zion follow the name in full; this answer gives the short version."
+    - "The Bible starts with the ridge: “David took the strong hold of Zion: the same is the city of David.” When Solomon brought the ark up “out of the city of David, which is Zion” to the new Temple, the name went up with it, and the Temple hill became the holy mountain: “Yet have I set my king upon my holy hill of Zion”; “For the LORD hath chosen Zion; he hath desired it for his habitation.” The prophets use it for Jerusalem and its people — “out of Zion shall go forth the law” — and the exiles in Babylon “wept, when we remembered Zion”. In Hebrews it is lifted off the map altogether: “ye are come unto mount Sion, and unto the city of the living God, the heavenly Jerusalem”."
+    - "How the name reached the western hill is not recorded exactly. Josephus, after AD 70, took that hill for David's citadel; by the fourth century Christian pilgrims climbed it as Sion and were shown David's palace there, and the church of Holy Sion later stood on it. The meaning of the word itself is uncertain, perhaps “fortress” or “dry place”, and it is probably older than Israel. The map's point labelled Zion stands with Jerusalem's."
+  ru:
+    - "Сионом сначала называлась крепость иевусеев на узком восточном хребте Иерусалима над источником Гион, которую Давид взял и назвал Городом Давидовым; потом имя перешло на храмовый холм чуть севернее, а в псалмах и у пророков — на весь город. Холм, который сегодня зовётся горой Сион, — третье место: более высокий западный холм за Сионскими воротами Старого города, получивший это имя лишь в христианскую эпоху. По прямой все три близко: точка карты для Города Давидова лежит примерно в 0,5 км к югу от горы Мориа и в 0,7 км к востоку от нынешней горы Сион. Статьи History Globe о Сионе и горе Сион прослеживают имя полностью; здесь — краткий ответ."
+    - "Библия начинает с хребта: «Но Давид взял крепость Сион: это — город Давидов». Когда Соломон перенёс ковчег «из города Давидова, то есть Сиона» в новый Храм, имя поднялось вместе с ним, и храмовый холм стал святой горой: «Я помазал Царя Моего над Сионом, святою горою Моею»; «Ибо избрал Господь Сион, возжелал его в жилище Себе». Пророки называют так Иерусалим и его народ — «от Сиона выйдет закон», — а пленники в Вавилоне «плакали, когда вспоминали о Сионе». В Послании к Евреям имя совсем отрывается от карты: «вы приступили к горе Сиону и ко граду Бога живого, и к небесному Иерусалиму»."
+    - "Как имя перешло на западный холм, точно не записано. Иосиф Флавий после 70 г. н. э. принимал этот холм за крепость Давида; к IV веку христианские паломники поднимались на него как на Сион, и им показывали там дворец Давида, а позднее на нём стояла церковь Святого Сиона. Значение самого слова неясно — возможно, «крепость» или «сухое место», — и оно, вероятно, старше Израиля. Точка карты с именем Сион стоит вместе с точкой Иерусалима."
+map:
+  place: af20c46
+  year: "c. 1003 BC"
+  ref: 2Sam.5.7
+scripture: [2Sam.5.7, 1Kgs.8.1, Ps.2.6, Ps.132.13, Isa.2.3, Ps.137.1, Heb.12.22]
+sources:
+  - "Josephus, Jewish War 5.137 (the upper city called the Citadel by David)"
+  - "Bordeaux Pilgrim, Itinerarium Burdigalense 592-593 (Sion and David's palace, AD 333)"
+  - "J. Wilkinson, Jerusalem Pilgrims before the Crusades (2nd ed., 2002)"
+  - "'Jerusalem', in E. Stern (ed.), The New Encyclopedia of Archaeological Excavations in the Holy Land, vol. 2 (1993)"
+  - "History Globe articles “Zion”, “Mount Zion” and “City of David”, and History Globe battles (jebus c. 1003 BC)"
+  - "Straight-line distances between the places' points (City of David, Mount Moriah, Mount Zion): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

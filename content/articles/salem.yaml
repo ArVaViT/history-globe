@@ -1,0 +1,30 @@
+# Overview article (ADR 0007). Mainstream facts only; the identification with Jerusalem is given as the usual one, and the rival traditions near Scythopolis and Shechem are named as such.
+id: salem
+place: aad7e4e
+title:
+  en: "Salem"
+  ru: "Салим"
+body:
+  en:
+    - "Salem is the city of Melchizedek. When Abram came back from rescuing Lot and defeating the four kings, “Melchizedek king of Salem brought forth bread and wine: and he was the priest of the most high God”; he blessed Abram, and Abram gave him a tenth of all. The psalm that celebrates God's victory over the kings says, “In Salem also is his tabernacle, and his dwelling place in Zion”, setting the two names side by side; and the letter to the Hebrews draws out the name: Melchizedek is “King of righteousness, and after that also King of Salem, which is, King of peace”, a priest without genealogy whose order Christ fulfils."
+    - "Most readers, ancient and modern, have taken Salem for Jerusalem, as the psalm implies. The Genesis Apocryphon from Qumran glosses it “Salem, that is Jerusalem”, Josephus says Melchizedek's Solyma was afterwards called Hierosolyma, and the city's later king Adoni-zedek bears a name of the same shape. But Jerusalem's name was already Urusalim in the Amarna letters, so Salem would be a poetic short form. Two other traditions exist. Jerome, writing to Evangelus, says Salem was not Jerusalem but a town near Scythopolis where the ruins of Melchizedek's palace were shown, the Salim near which John baptised at Aenon; and the Samaritans place it at the village of Salim east of Shechem, reading Genesis 33:18 as “Jacob came to Shalem, a city of Shechem”, as the King James Bible also does; the Russian Bible takes the word as “in peace”."
+    - "Today Salem is, for most, the Old City of Jerusalem; the village of Salim stands east of Nablus, and the Salim of Jerome is sought in the Jordan valley south of Beth-shean."
+  ru:
+    - "Салим — город Мелхиседека. Когда Аврам возвращался, выручив Лота и разбив четырёх царей, «Мелхиседек, царь Салимский, вынес хлеб и вино, он был священник Бога Всевышнего»; он благословил Аврама, и Аврам дал ему десятую часть из всего. Псалом, прославляющий победу Бога над царями, говорит: «И было в Салиме жилище Его и пребывание Его на Сионе», ставя два имени рядом; а Послание к Евреям раскрывает имя: Мелхиседек — «царь правды, а потом и царь Салима, то есть, царь мира», священник без родословия, чей чин исполняет Христос."
+    - "Большинство читателей, древних и новых, принимало Салим за Иерусалим, как и подразумевает псалом. Апокриф Книги Бытия из Кумрана поясняет: «Салим, то есть Иерусалим», Иосиф Флавий говорит, что Солиму Мелхиседека позже назвали Иеросолимой, а позднейший царь города Адониседек носит имя того же склада. Но имя Иерусалима уже в Амарнских письмах — Урусалим, так что Салим был бы поэтическим сокращением. Есть и два других предания. Иероним в письме к Евангелу пишет, что Салим — не Иерусалим, а городок близ Скифополя, где показывали развалины дворца Мелхиседека, тот Салим, близ которого Иоанн крестил в Еноне; а Самаряне помещают его в деревню Салим к востоку от Сихема, понимая Бытие 33:18 так, что Иаков пришёл в Салим, город Сихемский, как читает и английская Библия короля Иакова; русская Библия читает здесь «благополучно пришел в город Сихем»."
+    - "Сегодня Салим для большинства — Старый город Иерусалима; деревня Салим стоит к востоку от Наблуса, а Салим Иеронима ищут в долине Иордана к югу от Беф-Сана."
+scripture:
+  - Gen.14.17-Gen.14.20
+  - Gen.33.18
+  - Josh.10.1
+  - Ps.76.2
+  - John.3.23
+  - Heb.7.1-Heb.7.3
+sources:
+  - "Genesis Apocryphon (1QapGen) col. 22 (Salem, that is Jerusalem)"
+  - "Josephus, Antiquities 1.180; Jewish War 6.438"
+  - "Jerome, Letter 73 (to Evangelus) on Melchizedek"
+  - "Amarna letters EA 287 and 290 (Urusalim), in W. L. Moran, The Amarna Letters (1992)"
+  - "J. A. Emerton, 'The Site of Salem, the City of Melchizedek (Genesis xiv 18)', in Studies in the Pentateuch, Supplements to Vetus Testamentum 41 (1990)"
+  - "F. L. Horton, The Melchizedek Tradition (1976)"
+status: checked

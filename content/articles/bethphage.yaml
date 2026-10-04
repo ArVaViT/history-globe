@@ -1,0 +1,25 @@
+# Overview article (ADR 0007). Mainstream facts only; the Franciscan site at et-Tur is the usual one, and the app's other two candidates are named.
+id: bethphage
+place: abff59d
+title:
+  en: "Bethphage"
+  ru: "Виффагия"
+body:
+  en:
+    - "Bethphage, “house of unripe figs”, was a village on the Mount of Olives beside Bethany, the last stop before Jerusalem on the road up from Jericho. All three synoptic Gospels name it at the start of the entry into Jerusalem: “when they drew nigh unto Jerusalem, and were come to Bethphage, unto the mount of Olives, then sent Jesus two disciples” to fetch the ass and her colt from “the village over against you”; Mark and Luke say “unto Bethphage and Bethany, at the mount of Olives”. Whether the colt was found in Bethphage itself or in Bethany the text does not say. The village is also known to rabbinic literature, which treats the wall of Bethphage as the outer limit of Jerusalem for certain rites, so that it must have stood close to the city on the east."
+    - "Eusebius lists Bethphage as a village on the Mount of Olives where the Lord came, and Jerome's Latin version calls it a small village. The usual site is in Kefr et-Tur, the village on the mount's eastern slope just above al-Eizariya (Bethany), where in the 1870s a local man came upon a stone block, painted by the Crusaders with the raising of Lazarus and the fetching of the colt; the Franciscans then built their chapel of Bethphage over it. Abu Dis, farther south-east, and Bethany itself are the other candidate sites on the map. Little of the ancient village has been excavated."
+    - "Today the Franciscan church of Bethphage in at-Tur, with the painted stone inside it, is the place where the Palm Sunday procession to Jerusalem sets out each year along the road over the mount."
+  ru:
+    - "Виффагия, «дом незрелых смокв», — селение на горе Елеонской рядом с Вифанией, последняя остановка перед Иерусалимом на дороге, поднимающейся от Иерихона. Все три синоптических Евангелия называют её в начале входа в Иерусалим: «когда приблизились к Иерусалиму и пришли в Виффагию к горе Елеонской, тогда Иисус послал двух учеников» за ослицей и молодым ослом в «селение, которое прямо перед вами»; Марк и Лука говорят «к Виффагии и Вифании, к горе Елеонской». Нашли ли ослёнка в самой Виффагии или в Вифании, текст не говорит. Селение знает и раввинская литература, для которой стена Виффагии — внешний предел Иерусалима для некоторых обрядов, так что оно должно было стоять вплотную к городу с востока."
+    - "Евсевий числит Виффагию селением на горе Елеонской, куда приходил Господь, а латинский перевод Иеронима называет его маленьким селением. Обычное место — в Кефр-эт-Туре, деревне на восточном склоне горы прямо над Эль-Эйзарией (Вифанией), где в 1870-х годах местный житель наткнулся на каменный блок, расписанный крестоносцами сценами воскрешения Лазаря и приведения ослёнка; францисканцы затем построили над ним свою часовню Виффагии. Абу-Дис дальше к юго-востоку и сама Вифания — другие кандидаты, отмеченные на карте. Древнее селение почти не раскапывали."
+    - "Сегодня францисканская церковь Виффагии в Эт-Туре, с расписанным камнем внутри, — место, откуда каждый год в Вербное воскресенье выходит шествие в Иерусалим по дороге через гору."
+scripture:
+  - Matt.21.1-Matt.21.3
+  - Mark.11.1
+  - Luke.19.29
+sources:
+  - "Eusebius, Onomasticon, s.v. Bethphage, with Jerome's Latin additions"
+  - "Babylonian Talmud, Pesahim 63b and 91a; Menahot 78b (the wall of Bethphage)"
+  - "S. J. Saller and E. Testa, The Archaeological Setting of the Shrine of Bethphage (1961)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008)"
+status: checked

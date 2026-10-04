@@ -1,0 +1,26 @@
+id: where-did-noahs-ark-land
+question:
+  en: "Where did Noah's ark land?"
+  ru: "Где остановился Ноев ковчег?"
+answer:
+  en:
+    - "Genesis says only that “the ark rested … upon the mountains of Ararat”, and Ararat is not a mountain but a country: the Hebrew name of Urartu, the kingdom around Lake Van in the highlands of eastern Turkey, Armenia and north-western Iran, which the Assyrians fought from the ninth to the seventh century BC. The map point for the region stands on the peak now called Mount Ararat, about 1,200 km north-east of Jerusalem in a straight line. Which peak the ark rested on the Bible does not say, and the traditions differ: that volcanic cone, 5,137 m, is the usual answer since the Middle Ages, while the older sources point to Mount Judi (Cudi Dağı), far to the south near the Tigris."
+    - "The name recurs: Sennacherib's sons, having killed him, “escaped into the land of Armenia”, which the Hebrew calls Ararat, and Jeremiah summons against Babylon “the kingdoms of Ararat, Minni, and Ashchenaz”, Urartu and its neighbours. The flood story of Mesopotamia, on the eleventh tablet of the Epic of Gilgamesh, lands the boat of Uta-napishti on Mount Nimush, which Assyrian annals place in the Zagros east of the Tigris; the Mesopotamian tradition, too, looked to the northern mountains in general. Josephus says that the Armenians called the place the Landing and still showed remains of the ark; he cites Berossus, who puts them at the mountain of the Cordyaeans, the Gordyaean hills by the upper Tigris where Judi stands, and Nicolaus of Damascus, who names a great mountain Baris in Armenia."
+    - "Mount Judi, above Cizre in south-eastern Turkey, is the ark's mountain in the Qur'an, al-Judi, and in the Syriac and early Armenian writers, whose mountains of Qardu are the Gordyaean mountains of the Greeks; Jacob of Nisibis was said to have climbed it for a plank of the ark. Mount Ararat itself, Masis to the Armenians and Ağrı Dağı to the Turks, is first tied to Noah in the eleventh and twelfth centuries, and western travellers, William of Rubruck in 1254 and then Marco Polo, carried the identification to Europe. Modern searches for the ark on both mountains have found nothing that archaeology accepts. The map point marks the region, as Genesis names it, and takes neither peak as certain."
+  ru:
+    - "Книга Бытия говорит лишь, что «остановился ковчег… на горах Араратских», а Арарат — не гора, а страна: еврейское имя Урарту, царства вокруг озера Ван в нагорьях восточной Турции, Армении и северо-западного Ирана, с которым ассирийцы воевали с IX по VII век до н. э. Точка карты для этой области стоит на вершине, которую ныне называют горой Арарат, примерно в 1200 км к северо-востоку от Иерусалима по прямой. На какой вершине остановился ковчег, Библия не говорит, и предания расходятся: этот вулканический конус, 5137 м, — обычный ответ со Средних веков, а более древние источники указывают на гору Джуди (Джуди-Даг) далеко к югу, у Тигра."
+    - "Имя встречается ещё: сыновья Сеннахирима, убив его, «убежали в землю Араратскую», а Иеремия созывает на Вавилон «царства Араратские, Мидийские и Аскеназские» — по еврейскому тексту — Арарат, Маннея и Аскеназ, Урарту и его соседей. Месопотамский рассказ о потопе на одиннадцатой табличке эпоса о Гильгамеше сажает корабль Утнапишти на гору Нимуш, которую ассирийские анналы помещают в горах Загроса к востоку от Тигра; и месопотамское предание смотрело на северные горы вообще. Иосиф Флавий пишет, что армяне звали это место Пристанищем и ещё показывали остатки ковчега; он приводит Бероса, который помещает их на горе кордиеев — Кордуенских горах у верхнего Тигра, где стоит Джуди, — и Николая Дамасского, называющего большую гору Барис в Армении."
+    - "Гора Джуди над Джизре на юго-востоке Турции — гора ковчега в Коране, аль-Джуди, и у сирийских и ранних армянских писателей, чьи горы Карду — Кордуенские горы греков; об Иакове Низибийском рассказывали, что он поднимался на неё за доской от ковчега. Сам Арарат, Масис у армян и Агры-Даг у турок, впервые связывают с Ноем в XI–XII веках, а в Европу это отождествление принесли путешественники — Гильом де Рубрук в 1254 году, затем Марко Поло. Современные поиски ковчега на обеих горах не нашли ничего, что признала бы археология. Точка карты обозначает область, как её называет Бытие, и ни одну из вершин не считает достоверной."
+map:
+  place: ab89be9
+  ref: Gen.8.4
+scripture: [Gen.8.4-Gen.8.5, 2Kgs.19.37, Isa.37.38, Jer.51.27, Gen.11.2]
+sources:
+  - "Straight-line distance between the places' points (Ararat, Jerusalem): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Josephus, Antiquities 1.90-95 (Berossus and Nicolaus of Damascus on the remains of the ark)"
+  - "The Epic of Gilgamesh, tablet XI (Mount Nimush), in A. R. George, The Babylonian Gilgamesh Epic (2003)"
+  - "Qur'an 11:44 (al-Judi)"
+  - "L. R. Bailey, Noah: The Person and the Story in History and Tradition (1989)"
+  - "P. Zimansky, Ecology and Empire: The Structure of the Urartian State (1985)"
+  - "History Globe dated events (Sargon II defeats Rusa of Urartu, 714 BC) and the place point (Ararat as Urartu)"
+status: checked

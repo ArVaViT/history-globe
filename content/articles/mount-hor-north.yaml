@@ -1,0 +1,22 @@
+# Overview article (ADR 0007). Mainstream facts only; the site is disputed and the app's candidates are given without choosing one.
+id: mount-hor-north
+place: a62fa2d
+title:
+  en: "Mount Hor (northern border)"
+  ru: "Гора Ор (северная граница)"
+body:
+  en:
+    - "This Mount Hor is not the mountain where Aaron died but a peak on the northern border of the promised land, as Moses was told to draw it: “And this shall be your north border: from the great sea ye shall point out for you mount Hor: From mount Hor ye shall point out your border unto the entrance of Hamath; and the goings forth of the border shall be to Zedad.” So the line ran from the Mediterranean inland by way of the mountain to Lebo-hamath, usually placed at Lebweh in the northern Beqaa, and Zedad, the town of Sadad in Syria. The Hebrew, hor ha-har, can be read as “the mountain of the mountain”, and these are the only two verses that name it. Ezekiel’s parallel description of the northern border does not mention it."
+    - "Which mountain is meant is disputed. The map marks first Mount Hermon, the highest peak of the region; the Aramaic Targum Pseudo-Jonathan renders it Taurus Amanus, a range much further north, and the Talmud also draws the northern limit at that range; Jebel Akkar, the northern end of the Lebanon range above the Eleutherus valley, fits a border running inland towards Hamath; and Ras Shaqqa, the coastal headland south of Tripoli that the Greeks called Theouprosopon, would mark the starting point on the sea. None of these can be proved, and the border itself may describe an ideal rather than a frontier Israel ever held."
+  ru:
+    - "Эта гора Ор — не та, где умер Аарон, а вершина на северной границе обетованной земли, как велено было провести её Моисею: «к северу же будет у вас граница: от великого моря проведите ее к горе Ор, от горы Ор проведите к Емафу, и будут выступы границы к Цедаду». Значит, линия шла от Средиземного моря вглубь суши через эту гору к входу в Емаф, который обычно помещают в Лебве на севере долины Бекаа, и к Цедаду — селению Садад в Сирии. Еврейское «ор ха-ар» можно понять как «гора горы», и называют её только эти два стиха. Иезекииль, описывая ту же северную границу, её не упоминает."
+    - "Какая гора имеется в виду — спорно. На карте первой отмечена гора Ермон, высочайшая вершина края; арамейский Таргум Псевдо-Ионафана передаёт имя как Тавр Аманский — хребет гораздо севернее, и Талмуд тоже проводит северный предел по этому хребту; Джебель-Аккар, северный конец Ливанского хребта над долиной Элевфера, подходит к границе, идущей вглубь к Емафу; а Рас-Шакка, прибрежный мыс к югу от Триполи, который греки называли Феупросопон, отмечал бы начало линии на море. Ни одно из мест не доказано, и сама граница, возможно, описывает идеал, а не рубеж, которым Израиль когда-либо владел."
+scripture:
+  - Num.34.7-Num.34.9
+  - Ezek.47.15-Ezek.47.17
+sources:
+  - "Targum Pseudo-Jonathan to Numbers 34.7-8"
+  - "Babylonian Talmud, Gittin 8a"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+  - "B. A. Levine, Numbers 21-36 (Anchor Bible 4A, 2000)"
+status: checked

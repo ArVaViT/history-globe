@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; the Holy Sepulchre is given as the site most scholars accept, the Garden Tomb and Taylor's lower site as the alternatives; the Constantinian dates follow Eusebius.
+id: golgotha
+place: a631d35
+title:
+  en: "Golgotha"
+  ru: "Голгофа"
+body:
+  en:
+    - "Golgotha is the place outside Jerusalem where Jesus was crucified. The name is Aramaic, gulgulta, “skull”; Matthew explains it as “a place of a skull”, and Luke gives only the Greek, Kranion, which the Latin Bible rendered Calvaria, whence Calvary. Why it was so called is not known: a bare rounded rock, a place of execution, or an old name are all guesses. John says the place “was nigh to the city”, by a road where passers-by could read the title on the cross, and that “in the place where he was crucified there was a garden; and in the garden a new sepulchre”; Hebrews says Jesus “suffered without the gate”. Roman law and Jewish custom alike put executions and tombs outside the walls."
+    - "In AD 325 or 326 Constantine ordered the temple of Venus that Hadrian had built in the heart of Aelia Capitolina to be pulled down, and Eusebius, who was there, tells how a rock-cut tomb came to light beneath it and was taken to be the tomb of Christ; the church over it was dedicated in 335, and a rock knoll a few dozen metres south-east of the tomb was venerated as Golgotha. Archaeology has shown that the site was a limestone quarry from the eighth century BC, abandoned and used for gardens and tombs in the first century, and that it lay outside the city wall of the time of Jesus until Agrippa I enclosed it in the 40s AD. Most scholars therefore accept the Church of the Holy Sepulchre as the place; Joan Taylor has argued that the crucifixion stood lower, by the road south of the rock, with the knoll later chosen as the showpiece."
+    - "The alternative is Gordon's Calvary, a cliff with two caves like eye sockets north of the Damascus Gate, first suggested by Otto Thenius in 1842 and made famous by General Charles Gordon in 1883, with the Garden Tomb beside it; the tomb, however, is of the Iron Age, cut some seven centuries before Jesus, and the site has little scholarly support, though it remains a quiet place of prayer. The rock of Golgotha is today enclosed in the Church of the Holy Sepulchre, shared by six Christian communities, under a Greek altar reached by stairs beside the entrance; the tomb lies under the restored Edicule in the rotunda."
+  ru:
+    - "Голгофа — место за стенами Иерусалима, где был распят Иисус. Имя арамейское, гулгулта, «череп»; Матфей объясняет его как «Лобное место», а Лука даёт только греческое Кранион, которое латинская Библия передала как Calvaria, откуда Кальвария. Почему место так называлось, неизвестно: голая округлая скала, место казни или старое имя — всё это догадки. Иоанн говорит, что место «было недалеко от города», у дороги, где прохожие могли прочесть надпись на кресте, и что на том месте, где Он распят, «был сад, и в саду гроб новый»; Послание к Евреям говорит, что Иисус «пострадал вне врат». Римский закон и иудейский обычай одинаково выносили казни и гробницы за стены."
+    - "В 325 или 326 году Константин велел снести храм Венеры, который Адриан построил в сердце Элии Капитолины, и Евсевий, бывший при этом, рассказывает, как под ним открылась высеченная в скале гробница, принятая за гроб Христов; церковь над ней освятили в 335 году, а скальный выступ в нескольких десятках метров к юго-востоку от гроба почитали как Голгофу. Археология показала, что здесь с VIII века до н. э. была каменоломня, заброшенная и занятая садами и гробницами в I веке, и что место лежало вне городской стены времён Иисуса, пока Агриппа I не обнёс его стеной в 40-х годах. Поэтому большинство учёных признаёт местом Храм Гроба Господня; Джоан Тейлор доказывала, что крест стоял ниже, у дороги к югу от скалы, а выступ был выбран позже как зримый знак."
+    - "Другое предложение — Голгофа Гордона, обрыв с двумя пещерами, похожими на глазницы, к северу от Дамасских ворот, который впервые предложил Отто Тениус в 1842 году, а прославил генерал Чарльз Гордон в 1883 году, и Садовая гробница рядом; гробница, однако, относится к железному веку и высечена веков за семь до Иисуса, и у этого места мало поддержки среди учёных, хотя оно остаётся тихим местом молитвы. Скала Голгофы ныне заключена в Храме Гроба Господня, который делят шесть христианских общин, под греческим престолом, куда ведёт лестница у входа; гроб лежит под восстановленной Кувуклией в ротонде."
+scripture:
+  - Matt.27.33
+  - Matt.27.39
+  - Mark.15.22
+  - Luke.23.33
+  - John.19.17
+  - John.19.20
+  - John.19.41
+  - Heb.13.12
+sources:
+  - "Eusebius, Life of Constantine 3.25-40"
+  - "Melito of Sardis, On Pascha (the crucifixion in the middle of the city)"
+  - "V. C. Corbo, Il Santo Sepolcro di Gerusalemme: Aspetti archeologici dalle origini al periodo crociato (1981-1982)"
+  - "G. Barkay, 'The Garden Tomb: Was Jesus Buried Here?', Biblical Archaeology Review 12.2 (1986)"
+  - "J. E. Taylor, 'Golgotha: A Reconsideration of the Evidence for the Sites of Jesus' Crucifixion and Burial', New Testament Studies 44 (1998)"
+  - "M. Biddle, The Tomb of Christ (1999)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008)"
+status: checked

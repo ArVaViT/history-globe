@@ -1,5 +1,5 @@
 import { YEAR_MAX, YEAR_MIN, type Camera, type LayerVisibility } from "@hg/core";
-import type { Locale } from "@hg/model";
+import { isLocale, type Locale } from "@hg/model";
 
 /** The shareable view (ADR 0006): everything needed to reopen the same scene. */
 export interface UrlView {
@@ -34,7 +34,6 @@ const layersWhere = (on: (layer: (typeof LAYERS)[number]) => boolean): LayerVisi
 });
 
 /** Only languages with a UI dictionary; uk and de join when theirs exist. */
-const LOCALES: readonly Locale[] = ["ru", "en"];
 
 const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
 /** Into [-180, 180): the same meridian however many turns the link adds. */
@@ -63,8 +62,8 @@ export function readUrl(
       bearing: wrap180(bearing),
     };
   }
-  const locale = p.get("locale") as Locale | null;
-  if (locale && LOCALES.includes(locale)) view.locale = locale;
+  const locale = p.get("locale");
+  if (isLocale(locale)) view.locale = locale;
   const hidden = p.get("hide")?.split(",");
   const listed = p.get("layers")?.split(",");
   if (hidden?.some((l) => (LAYERS as readonly string[]).includes(l))) {

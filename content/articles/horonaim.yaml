@@ -1,0 +1,27 @@
+# Overview article (ADR 0007). Mainstream facts only; the town is unlocated and the candidates on the Kerak plateau are given without choosing; the Mesha Stele reading is the accepted one.
+id: horonaim
+place: a9dd823
+title:
+  en: "Horonaim"
+  ru: "Оронаим"
+body:
+  en:
+    - "Horonaim was a town of Moab known from the prophets' laments over that land. Isaiah's oracle sees the fugitives of Moab fleeing to Zoar: “by the mounting up of Luhith with weeping shall they go it up; for in the way of Horonaim they shall raise up a cry of destruction”. Jeremiah, who reworks the same oracle, hears “A voice of crying shall be from Horonaim”, says that “in the going down of Horonaim the enemies have heard a cry of destruction”, and stretches the lament “from Zoar even unto Horonaim”. The pairing of the ascent of Luhith and the descent of Horonaim, and the road to Zoar at the south end of the Dead Sea, put the town on the steep western edge of the Moabite plateau, where the roads climb from the Dead Sea shore to the tableland south of the Arnon."
+    - "The town is older than the prophets. The Mesha Stele, the inscription of the king of Moab who rebelled after Ahab's death, ends with a campaign against Hauronen: Chemosh told Mesha “go down, fight against Hauronen”, and he went down; the broken lines that follow seem to say that he took it. Later Josephus lists Oronaim among the Moabite towns held by Alexander Jannaeus and promised back to the Nabataean king Aretas by Hyrcanus II. Where it stood is not settled: surveys of the Kerak plateau have proposed several ruins on the western scarp above the Dead Sea, among them el-Iraq, ed-Deir, Kathrabba, Khirbet Dhubab and Khirbet Meidan, and none has been excavated or has produced the name. Kathrabba is also a candidate for Luhith, so the two cannot both be right."
+    - "The region is today the Karak governorate of Jordan, where the road from the Dead Sea at Mazraa climbs the escarpment to Kerak, the ancient Kir-hareseth, through the kind of country the prophets describe."
+  ru:
+    - "Оронаим — город Моава, известный по плачам пророков об этой земле. Пророчество Исаии видит беглецов Моава, бегущих к Сигору: «восходят на Лухит с плачем; по дороге Хоронаимской поднимают страшный крик». Иеремия, перерабатывающий то же пророчество, слышит «вопль от Оронаима», говорит, что «на спуске с Оронаима неприятель слышит вопль о разорении», и растягивает плач «от Сигора до Оронаима». Пара восхождения в Лухит и спуска с Оронаима, а также дорога к Сигору на южном конце Мёртвого моря помещают город на крутой западный край Моавитского плато, где дороги поднимаются от берега Мёртвого моря на плоскогорье к югу от Арнона."
+    - "Город древнее пророков. Стела Меши, надпись царя Моава, отложившегося после смерти Ахава, кончается походом на Хауронен: Кемош сказал Месе «сойди, воюй с Хауроненом», и тот сошёл; повреждённые строки дальше, по-видимому, говорят, что он его взял. Позже Иосиф Флавий называет Оронаим среди моавитских городов, которыми владел Александр Яннай и которые Гиркан II обещал вернуть набатейскому царю Арете. Где он стоял, не решено: обследования плато Керак предложили несколько развалин на западном обрыве над Мёртвым морем, среди них Эль-Ирак, Эд-Дейр, Катрабба, Хирбет-Зубаб и Хирбет-Мейдан, и ни одна не раскопана и не дала имени. Катрабба к тому же претендует на Лухит, так что оба отождествления сразу верными быть не могут."
+    - "Сегодня это иорданская провинция Эль-Карак, где дорога от Мёртвого моря у Мазраа поднимается по уступу к Кераку, древнему Кирхарешету, через ту самую местность, какую описывают пророки."
+scripture:
+  - Isa.15.5
+  - Jer.48.3
+  - Jer.48.5
+  - Jer.48.34
+sources:
+  - "The Mesha Stele (Louvre AO 5066), lines 31-33; translation by K. A. D. Smelik in W. W. Hallo and K. L. Younger (eds.), The Context of Scripture, vol. 2 (2000)"
+  - "Josephus, Antiquities 13 (the Moabite towns of Alexander Jannaeus); 14 (the promise of Hyrcanus to Aretas)"
+  - "J. M. Miller (ed.), Archaeological Survey of the Kerak Plateau (1991)"
+  - "J. A. Dearman (ed.), Studies in the Mesha Inscription and Moab (1989)"
+  - "B. Routledge, Moab in the Iron Age: Hegemony, Polity, Archaeology (2004)"
+status: checked

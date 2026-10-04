@@ -1,0 +1,26 @@
+# Overview article (ADR 0007). Mainstream facts only; the town is unlocated and the candidates north of the Arnon are given without choosing.
+id: kedemoth
+place: a416b43
+title:
+  en: "Kedemoth"
+  ru: "Кедемоф"
+body:
+  en:
+    - "Kedemoth was a town on the Moabite plateau north of the Arnon, in the land that Israel took from Sihon and gave to Reuben. Moses remembers that “I sent messengers out of the wilderness of Kedemoth unto Sihon king of Heshbon with words of peace”, asking passage along the highway; Sihon refused and was beaten at Jahaz. The wilderness of Kedemoth was therefore the steppe on the desert side of the plateau, east of Dibon, where Israel stood after crossing the Arnon. Joshua lists Kedemoth with Jahaz and Mephaath among Reuben's towns, and it was one of the four cities given out of Reuben to the Levites of Merari; the Chronicler's list repeats it. The name, from the word for east, fits a place on the eastern margin of the settled land."
+    - "No site has been fixed. Mephaath, its neighbour in every list, is almost certainly Umm er-Rasas, whose Byzantine mosaics name the place Kastron Mefaa, so Kedemoth is sought in the same tableland between Dibon and the desert: surveys have proposed Aleiyan, er-Remeil, es-Saliyeh and Qasr ez-Zaferan, ruins with Iron Age pottery a few kilometres apart, and some have placed it at Umm er-Rasas itself. None has been excavated in a way that could decide the question, and the town has no history beyond the lists."
+    - "The ground is today in central Jordan, the open wheat and sheep country east of Dhiban toward the desert highway, with Umm ar-Rasas, a World Heritage site, at its edge."
+  ru:
+    - "Кедемоф — город на Моавитском плато к северу от Арнона, в земле, которую Израиль отнял у Сигона и отдал Рувиму. Моисей вспоминает: «И послал я послов из пустыни Кедемоф к Сигону, царю Есевонскому, с словами мирными», прося пропустить по дороге; Сигон отказал и был разбит при Иааце. Пустыня Кедемоф, стало быть, — степь на пустынной стороне плато, к востоку от Дивона, где Израиль стоял, перейдя Арнон. Иисус Навин перечисляет Кедемоф с Иаацей и Мефаафом среди городов Рувима, и он был одним из четырёх городов, отданных от Рувима левитам из рода Мерари; список Паралипоменона повторяет его. Имя, от слова «восток», подходит месту на восточной окраине обжитой земли."
+    - "Место не установлено. Мефааф, его сосед во всех списках, почти наверняка Умм-эр-Расас, чьи византийские мозаики называют место Кастрон-Мефаа, поэтому Кедемоф ищут на том же плоскогорье между Дивоном и пустыней: обследования предлагали Алейян, Эр-Ремейль, Эс-Салийе и Каср-эз-Заферан — развалины с керамикой железного века в нескольких километрах друг от друга, а некоторые помещали его в самом Умм-эр-Расасе. Ни одна из них не раскопана так, чтобы решить вопрос, и у города нет истории сверх списков."
+    - "Сегодня это центральная Иордания, открытый край хлебных полей и овечьих пастбищ к востоку от Дибана в сторону пустынного шоссе, с Умм-эр-Расасом, памятником Всемирного наследия, на его краю."
+scripture:
+  - Deut.2.26-Deut.2.27
+  - Josh.13.18
+  - Josh.21.36-Josh.21.37
+  - 1Chr.6.79
+sources:
+  - "J. A. Dearman, 'The Levitical Cities of Reuben and Moabite Toponymy', Bulletin of the American Schools of Oriental Research 276 (1989)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+  - "M. Piccirillo and E. Alliata (eds.), Umm al-Rasas Mayfa'ah I: Gli scavi del complesso di Santo Stefano (1994)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

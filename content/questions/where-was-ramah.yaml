@@ -1,0 +1,40 @@
+id: where-was-ramah
+question:
+  en: "Where was Ramah?"
+  ru: "Где находилась Рама?"
+answer:
+  en:
+    - "The Ramah most often meant in the Bible, Ramah of Benjamin, is usually identified with the village of er-Ram on a hill by the ridge road about 8.6 km north of Jerusalem in a straight line, today a Palestinian town just north of the city in the West Bank; the map's point stands there, 3.5 km north of Gibeah and 7.7 km south of Bethel. The name means “height”, and several other places bore it: Ramah in Naphtali and in Asher in Galilee, Ramath of the south in Simeon, and Ramoth-gilead east of the Jordan. History Globe has an article on Ramah; this answer sorts out which is which."
+    - "Ramah of Benjamin was a border town. Deborah judged Israel “under the palm tree of Deborah between Ramah and Beth-el”; Baasha of Israel “built Ramah, that he might not suffer any to go out or come in to Asa king of Judah”; Isaiah, watching an army come down from the north, cries, “Ramah is afraid; Gibeah of Saul is fled”. After the fall of Jerusalem Nebuzar-adan released Jeremiah at Ramah, where the captives bound for Babylon were gathered, and Jeremiah heard “A voice was heard in Ramah, lamentation, and bitter weeping; Rahel weeping for her children”, words Matthew applies to the children of Bethlehem, about 17 km to the south. Rachel's tomb lay “in the border of Benjamin at Zelzah”, near Ramah on that reading, though Genesis puts it “in the way to Ephrath, which is Beth-lehem”."
+    - "Samuel's Ramah is disputed. His father came from “Ramathaim-zophim, of mount Ephraim”; Samuel lived, judged and was buried “in his house at Ramah”. Many identify it with er-Ram, as the map does; others place it at Nebi Samwil, north-west of Jerusalem, or much farther north-west at Rentis, which many also take for New Testament Arimathea. The map's year, about 1050 BC, is a conventional point: the year the map gives for Saul's becoming king, while Samuel still judged from Ramah."
+  ru:
+    - "Рама, о которой Библия говорит чаще всего, — Рама Вениаминова — обычно отождествляется с селением эр-Рам на холме у дороги по хребту, примерно в 8,6 км к северу от Иерусалима по прямой; сегодня это палестинский городок сразу к северу от города, на Западном берегу. Там и стоит точка карты, в 3,5 км к северу от Гивы и в 7,7 км к югу от Вефиля. Имя значит «высота», и его носили и другие места: Рама в Неффалиме и в Асире в Галилее, южная Рама в Симеоне и Рамоф Галаадский за Иорданом. В History Globe есть статья о Раме; здесь ответ о том, какая Рама где."
+    - "Рама Вениаминова была пограничным городом. Девора судила Израиль «под Пальмою Девориною, между Рамою и Вефилем»; Вааса, царь Израильский, «начал строить Раму, чтобы никто не выходил и не уходил к Асе, царю Иудейскому»; Исаия, видя войско, идущее с севера, восклицает: «Рама трясется; Гива Саулова разбежалась». После падения Иерусалима Навузардан отпустил Иеремию в Раме, где собирали пленных для Вавилона, а Иеремия услышал: «голос слышен в Раме, вопль и горькое рыдание; Рахиль плачет о детях своих» — слова, которые Матфей относит к детям Вифлеема, примерно в 17 км к югу. Гроб Рахили был «на пределах Вениаминовых, в Целцахе», то есть, по такому прочтению, близ Рамы, хотя Книга Бытия помещает его «на дороге в Ефрафу, то есть Вифлеем»."
+    - "Рама Самуила спорна. Его отец был «из Рамафаим-Цофима, с горы Ефремовой»; Самуил жил и судил в Раме и был погребён «в доме его, в Раме». Многие отождествляют её с эр-Рамом, как и карта; другие помещают её в Неби-Самвиле, к северо-западу от Иерусалима, или гораздо дальше на северо-запад, в Рентисе, который многие считают и новозаветной Аримафеей. Год карты, около 1050 г. до н. э., — условная точка: год, которым карта отмечает воцарение Саула, когда Самуил ещё судил из Рамы."
+map:
+  place: a6d57ed
+  year: "c. 1050 BC"
+  ref: 1Sam.7.17
+scripture:
+  [
+    Josh.18.25,
+    Judg.4.5,
+    1Sam.1.1,
+    1Sam.7.17,
+    1Sam.25.1,
+    1Kgs.15.17,
+    Isa.10.29,
+    Jer.31.15,
+    Jer.40.1,
+    Matt.2.18,
+    1Sam.10.2,
+    Gen.35.19,
+  ]
+sources:
+  - "Josephus, Antiquities 8.303-306"
+  - "Eusebius, Onomasticon, s.v. Rama (Wolf no. 776)"
+  - "N. Na'aman, 'Reconsidering the Ancient Name of Nebi Samwil', PEQ 151 (2019) 202-217 (Ramathaim at Rentis; Ramah at Nebi Samwil)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+  - "History Globe article “Ramah”, History Globe dated events (saul-king c. 1050 BC) and History Globe tour “Samuel and the ark”"
+  - "Straight-line distances between the places' points (Ramah, Jerusalem, Gibeah, Bethel, Bethlehem): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

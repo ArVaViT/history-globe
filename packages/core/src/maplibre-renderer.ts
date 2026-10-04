@@ -15,27 +15,36 @@ const READY_FALLBACK_MS = 8000;
 /** The Via Appia, 312 BC: Roman roads are drawn from then on (style.ts). */
 const ROADS_FROM = -311;
 
-/** MapLibre's interface words, in each language the site speaks. */
-const MAP_UI = {
-  en: {
-    "ScaleControl.Kilometers": "km",
-    "ScaleControl.Meters": "m",
-    "NavigationControl.ZoomIn": "Zoom in",
-    "NavigationControl.ZoomOut": "Zoom out",
-    "NavigationControl.ResetBearing": "Reset bearing to north",
-    "AttributionControl.ToggleAttribution": "Map sources",
-    "Map.Title": "Map",
-  },
-  ru: {
-    "ScaleControl.Kilometers": "км",
-    "ScaleControl.Meters": "м",
-    "NavigationControl.ZoomIn": "Приблизить",
-    "NavigationControl.ZoomOut": "Отдалить",
-    "NavigationControl.ResetBearing": "Повернуть на север",
-    "AttributionControl.ToggleAttribution": "Источники карты",
-    "Map.Title": "Карта",
-  },
-} as const;
+/** MapLibre's own interface words: the app gives them in the reader's language (`mapUi`). */
+export interface MapUiWords {
+  readonly km: string;
+  readonly m: string;
+  readonly zoomIn: string;
+  readonly zoomOut: string;
+  readonly north: string;
+  readonly sources: string;
+  readonly title: string;
+}
+const ENGLISH_UI: MapUiWords = {
+  km: "km",
+  m: "m",
+  zoomIn: "Zoom in",
+  zoomOut: "Zoom out",
+  north: "Reset bearing to north",
+  sources: "Map sources",
+  title: "Map",
+};
+/** The words as MapLibre keys them. */
+const toMapLibre = (w: MapUiWords) =>
+  ({
+    "ScaleControl.Kilometers": w.km,
+    "ScaleControl.Meters": w.m,
+    "NavigationControl.ZoomIn": w.zoomIn,
+    "NavigationControl.ZoomOut": w.zoomOut,
+    "NavigationControl.ResetBearing": w.north,
+    "AttributionControl.ToggleAttribution": w.sources,
+    "Map.Title": w.title,
+  }) as const;
 
 /** The buttons MapLibre labelled when it made them, to relabel on a language change. */
 const MAP_UI_TITLES = [
@@ -65,6 +74,8 @@ export interface MapLibreRendererOptions extends StyleOptions {
   readonly places: FeatureCollection;
   /** Screen edges covered by the interface, so a flight puts its target where it shows. */
   readonly viewPadding?: () => { top: number; bottom: number; left: number; right: number };
+  /** MapLibre's words in a language; English when not given. */
+  readonly mapUi?: (locale: string) => MapUiWords;
 }
 
 type Box = readonly [number, number, number, number];
@@ -162,7 +173,10 @@ export class MapLibreRenderer implements Renderer {
   /** Heights at `n` points along a way: two points for a straight line, or a road's. */
   readonly profileAlong: (path: readonly LonLat[], n: number) => Promise<(number | null)[]>;
 
+  private readonly mapUi: (locale: string) => MapUiWords;
+
   constructor(o: MapLibreRendererOptions) {
+    this.mapUi = o.mapUi ?? (() => ENGLISH_UI);
     this.heightsAt = elevationReader(o.terrainTiles);
     const coarse = elevationReader(o.terrainTiles, 9);
     this.profileAlong = (path, n) => coarse(pointsAlongPath(path, n));
@@ -193,7 +207,7 @@ export class MapLibreRenderer implements Renderer {
       attributionControl: { compact: true },
       // MapLibre's words in the page's language from the first frame: the scale draws
       // before setLocale runs and would stay "km" until the map moved.
-      locale: MAP_UI[o.initialLocale === "ru" ? "ru" : "en"],
+      locale: toMapLibre(this.mapUi(o.initialLocale)),
       canvasContextAttributes: { antialias: true },
       // Wheel handled below: two fingers pan, a pinch or a mouse wheel zooms.
       scrollZoom: false,
@@ -773,18 +787,19 @@ export class MapLibreRenderer implements Renderer {
   setLocale(locale: Locale): void {
     this.edgeDirty = true;
     // MapLibre's own words (the scale's "km", the buttons' tooltips) in the same language.
-    // Ukrainian and German have no words here yet: English until they do.
-    const ui = MAP_UI[locale === "ru" ? "ru" : "en"];
+    const ui = toMapLibre(this.mapUi(locale));
     Object.assign(this.map._locale, ui);
     // The canvas is named for screen readers by MapLibre at start: renamed with the language.
     this.map.getCanvas().setAttribute("aria-label", ui["Map.Title"]);
-    for (const [selector, key] of MAP_UI_TITLES) {
-      const button = this.map.getContainer().querySelector(selector);
-      if (button) {
+    // The app moves the controls out of the map's container (into its own bar): looked
+    // for in the whole page, or a switch of language never relabelled them.
+    for (const [selector, key] of MAP_UI_TITLES)
+      for (const button of this.map.getContainer().ownerDocument.querySelectorAll(selector)) {
         button.setAttribute("title", ui[key]);
         button.setAttribute("aria-label", ui[key]);
       }
-    }
+    // The scale writes its unit when the map moves: once now, in the new words.
+    this.map.fire("move");
     this.whenLoaded(() => {
       this.map.setGlobalStateProperty("locale", locale);
     });

@@ -1,5 +1,5 @@
 import type { LonLat, Tour } from "@hg/core";
-import { formatRef, type Locale } from "@hg/model";
+import { formatRef, type Locale, placeName } from "@hg/model";
 import { ArrowLeft, ArrowRight, X } from "./icons";
 import { useTranslation } from "../i18n";
 import type { PlaceProps } from "../data";
@@ -52,11 +52,7 @@ export function TourStopCard({
   const profile = leg?.values;
   const stop = tour.stops[step];
   if (!stop) return null;
-  const name = place
-    ? locale === "ru"
-      ? (place.name_ru ?? place.name)
-      : place.name
-    : stop.placeId;
+  const name = place ? placeName(place, locale) : stop.placeId;
   const last = tour.stops.length - 1;
   // How far this stop is from the one before, or, at the start, how long the route is:
   // in a straight line, the only distance the data can vouch for.

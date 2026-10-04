@@ -1,0 +1,24 @@
+id: where-was-dothan
+question:
+  en: "Where was Dothan, where Joseph was sold?"
+  ru: "Где находился Дофан, где продали Иосифа?"
+answer:
+  en:
+    - "Dothan was Tell Dothan, a large mound south-west of Jenin in the northern West Bank, in a broad valley on the road between the coastal plain and the valley of Jezreel. The map's point stands on it, about 23 km north of Shechem, 16 km north of Samaria and 71 km north of Jerusalem in a straight line. The name has survived at the mound, and the identification is not seriously disputed. History Globe has an article on Dothan; this answer keeps to where it was and why the stories happen there."
+    - "Jacob sent Joseph “out of the vale of Hebron, and he came to Shechem”, about 78 km in a straight line; his brothers had moved on, and a man told him, “I heard them say, Let us go to Dothan. And Joseph went after his brethren, and found them in Dothan.” From Hebron that is about 100 km. While they ate, “a company of Ishmeelites came from Gilead with their camels bearing spicery and balm and myrrh, going to carry it down to Egypt”: the caravan road from the Jordan crossings to the coast ran through this valley, which is why a buyer for Joseph passed by. The map places the story at its conventional year of 1700 BC; the age of the patriarchs is disputed."
+    - "Dothan is named once more, in the days of Elisha. The king of Syria heard “he is in Dothan” and sent “horses, and chariots, and a great host: and they came by night, and compassed the city about”; Elisha's servant saw that “the mountain was full of horses and chariots of fire round about Elisha”, and Elisha led the blinded Syrians to Samaria, 16 km to the south. Joseph P. Free excavated the mound from 1953 to 1964 and found towns from the Early Bronze Age to the Iron Age; Eusebius knew Dothaim about twelve miles north of Sebaste, the old Samaria."
+  ru:
+    - "Дофан — это Телль-Дотан, большой холм к юго-западу от Дженина на севере Западного берега, в широкой долине на дороге между прибрежной равниной и Изреельской долиной. Точка карты стоит на нём, примерно в 23 км к северу от Сихема, в 16 км к северу от Самарии и в 71 км к северу от Иерусалима по прямой. Имя сохранилось у холма, и отождествление серьёзно не оспаривается. В History Globe есть статья о Дофане; здесь ответ о том, где он был и почему рассказы происходят именно там."
+    - "Иаков послал Иосифа «из долины Хевронской; и он пришел в Сихем» — примерно 78 км по прямой; братья ушли дальше, и встречный сказал ему: «я слышал, как они говорили: пойдем в Дофан. И пошел Иосиф за братьями своими и нашел их в Дофане». От Хеврона это около 100 км. Пока они ели, «идет из Галаада караван Измаильтян, и верблюды их несут стираксу, бальзам и ладан: идут они отвезти это в Египет»: караванная дорога от переправ через Иордан к морю шла этой долиной, поэтому покупатель для Иосифа и оказался рядом. Карта ставит рассказ в условный 1700 г. до н. э.; время патриархов спорно."
+    - "Дофан назван ещё раз, во дни Елисея. Царь Сирийский услышал: «вот, он в Дофаиме» — и послал «коней и колесницы и много войска. И пришли ночью и окружили город»; слуга Елисея увидел, что «вся гора наполнена конями и колесницами огненными кругом Елисея», а Елисей отвёл ослеплённых сирийцев в Самарию, в 16 км к югу. Джозеф П. Фри раскапывал холм с 1953 по 1964 год и нашёл поселения от раннего бронзового века до железного; Евсевий знал Дофаим примерно в двенадцати милях к северу от Севасты, древней Самарии."
+map:
+  place: ab635e4
+  year: "1700 BC"
+  ref: Gen.37.17
+scripture: [Gen.37.12-Gen.37.17, Gen.37.25-Gen.37.28, 2Kgs.6.13-2Kgs.6.20]
+sources:
+  - "Eusebius, Onomasticon, s.v. Dothaeim (C. U. Wolf's translation, no. 371)"
+  - "D. M. Master, J. M. Monson, E. H. E. Lass and G. A. Pierce (eds.), Dothan I: Remains from the Tell (1953-1964) (2005)"
+  - "History Globe article “Dothan” and History Globe tour “Joseph in Egypt” (the conventional year 1700 BC)"
+  - "Straight-line distances between the places' points (Dothan, Shechem, Samaria, Jerusalem, Hebron): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

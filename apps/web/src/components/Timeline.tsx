@@ -6,6 +6,8 @@ import {
   periodAt,
   type Locale,
   type PlaceLife,
+  parseYearInput,
+  pick,
 } from "@hg/model";
 import { ChevronDown, ChevronsLeft, ChevronsRight, Ellipsis, Pause, Play } from "./icons";
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
@@ -119,20 +121,6 @@ export function ticksFor(v: TimeView): number[] {
   return out;
 }
 
-/**
- * A year as a reader types it, as an astronomical year: "586 до н. э.", "586 BC", "-586"
- * are 585 BC's neighbour 1 - 586; "30", "AD 30", "30 н. э." are AD 30. Null if no year.
- */
-export function parseYearInput(text: string): number | null {
-  const t = text.trim().toLowerCase();
-  const m = /(\d{1,4})/.exec(t);
-  if (!m?.[1]) return null;
-  const n = Number(m[1]);
-  if (n === 0) return null;
-  const bc = t.startsWith("-") || /до\s*н|b\.?\s*c|до\s*р\.?\s*х|v\.\s*chr/.test(t);
-  return bc ? 1 - n : n;
-}
-
 /** "1000–831 BC": the first and the last year of a half-open range. */
 export function formatPeriodRange(range: { from: number; to: number }, locale: Locale): string {
   return formatYearRange(range.from, range.to - 1, locale);
@@ -202,7 +190,6 @@ export function Timeline({
   const [alpha, setAlpha] = useState(readAlpha);
   const { t } = useTranslation();
   const period = periodAt(year);
-  const ru = locale === "ru";
   const [view, setView] = useState<TimeView>(FULL_VIEW);
   const span = view.to - view.from;
   const zoomed = span < SPAN;
@@ -214,7 +201,7 @@ export function Timeline({
   const near = hover
     ? events.filter((e) => Math.abs(e.year - hover.year) <= Math.max(span / 100, 1)).slice(0, 3)
     : [];
-  const periodName = period ? (ru ? period.name.ru : period.name.en) : "";
+  const periodName = period ? (pick(period.name, locale) ?? "") : "";
   const track = useRef<HTMLDivElement>(null);
   const group = useRef<HTMLDivElement>(null);
   const range = useRef<HTMLInputElement>(null);
@@ -301,7 +288,7 @@ export function Timeline({
           style={{ left: `calc(1.5rem + (100% - 3rem) * ${String(hover.x / 100)})` }}
           className={`pointer-events-none absolute bottom-full mb-2 rounded-lg bg-ink px-2.5 py-1.5 text-[12px] leading-tight whitespace-nowrap text-paper shadow-lg ${hover.x < 15 ? "" : hover.x > 85 ? "-translate-x-full" : "-translate-x-1/2"}`}
         >
-          <div className="font-medium">{ru ? hovered.name.ru : hovered.name.en}</div>
+          <div className="font-medium">{pick(hovered.name, locale) ?? ""}</div>
           <div className="text-paper/75 tabular-nums">
             {formatPeriodRange(hovered.range, locale)}
           </div>
@@ -336,7 +323,7 @@ export function Timeline({
             )}
             {period?.disputed && (
               <span className="rounded-full whitespace-nowrap bg-[#f4dfc9] px-2 py-0.5 text-[11px] text-[#7a4a1d]">
-                {ru ? period.disputed.ru : period.disputed.en}
+                {pick(period.disputed, locale) ?? ""}
               </span>
             )}
           </div>
@@ -445,7 +432,7 @@ export function Timeline({
                 const from = Math.max(a.from, view.from);
                 const to = Math.min(a.to, view.to + 1);
                 if (to <= from) return [];
-                const name = ru ? a.ru : a.en;
+                const name = pick({ en: a.en, ru: a.ru }, locale) ?? a.en;
                 const x0 = (pct(from) / 100) * trackWidth;
                 const x1 = (pct(to) / 100) * trackWidth;
                 const w = labelWidth(name);

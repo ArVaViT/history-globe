@@ -1,6 +1,6 @@
 import { YEAR_MAX, type AncientSite, type PolityName, type Renderer } from "@hg/core";
 import { useEffect, useState } from "react";
-import { formatYear, formatYearRange, type Locale } from "@hg/model";
+import { formatYear, formatYearRange, type Locale, placeName, pick } from "@hg/model";
 import { useTranslation } from "../i18n";
 import type { PlaceProps } from "../data";
 
@@ -18,7 +18,7 @@ export function HoverTip({
   const ru = locale === "ru";
   const kindKey = `kind.${place.kind}`;
   const kind = t(kindKey) === kindKey ? "" : t(kindKey);
-  const primary = ru ? (place.name_ru ?? place.name) : place.name;
+  const primary = placeName(place, locale);
   const secondary =
     ru && place.name_ru
       ? place.name
@@ -110,9 +110,7 @@ export function BattleTip({ renderer, locale }: { renderer: Renderer; locale: Lo
           : { left: tip.at.x + 14, top: tip.at.y - 10 }
       }
     >
-      <div className="font-serif text-[14px] leading-tight">
-        {locale === "ru" ? tip.battle.ru : tip.battle.en}
-      </div>
+      <div className="font-serif text-[14px] leading-tight">{pick(tip.battle, locale) ?? ""}</div>
       <div className="text-[11px] text-paper/70">
         {tip.battle.approx ? `${t("place.circa")} ` : ""}
         {formatYear(tip.battle.year, locale)}
@@ -157,7 +155,7 @@ export function AncientTip({ renderer, locale }: { renderer: Renderer; locale: L
       }
     >
       <div className="font-serif text-[14px] leading-tight">
-        {locale === "ru" ? site.ru : site.en}
+        {pick({ en: site.en, ru: site.ru }, locale) ?? site.en}
         {kind && <span className="ml-1.5 font-sans text-[11px] text-paper/60">{kind}</span>}
       </div>
       <div className="text-[11px] text-paper/70">{years}</div>

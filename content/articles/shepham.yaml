@@ -1,0 +1,23 @@
+# Overview article (ADR 0007). Mainstream facts only; Shepham is unlocated and the article says so; the Shiphmite of 1 Chronicles 27:27 is linked to Shepham only as the Synodal Bible does, with Siphmoth as the alternative.
+id: shepham
+place: a9ba60c
+title:
+  en: "Shepham"
+  ru: "Шефам"
+body:
+  en:
+    - "Shepham is a point on the eastern border of the promised land as Numbers draws it before the crossing of the Jordan: “And ye shall point out your east border from Hazar-enan to Shepham: And the coast shall go down from Shepham to Riblah, on the east side of Ain; and the border shall descend, and shall reach unto the side of the sea of Chinnereth eastward.” It thus lay between Hazar-enan, the north-eastern corner of the land at the border of Damascus, and a Riblah east of a spring called Ain, from which the line ran down to the Sea of Galilee; this Riblah is not the Riblah on the Orontes where the Babylonians judged Zedekiah, which lies too far north, but an unknown place in the region of Mount Hermon and the Golan. Ezekiel's border for the restored land uses other names and leaves Shepham out."
+    - "No site called Shepham is known, and no ancient writer placed it. Those who put Hazar-enan at the oasis of Qaryatein in the Syrian desert run the border far to the east, and those who put it near Banias keep it close to Hermon; Shepham moves with it, and the map keeps the point within reach of its Riblah without claiming more. The only other possible mention is David's officer Zabdi “the Shiphmite”, set “over the increase of the vineyards for the wine cellars”; the Synodal Bible makes him a man of Shepham, but he may as well have come from Siphmoth in the Negeb of Judah, to which David sent part of the Amalekite spoil, and the question cannot be decided."
+  ru:
+    - "Шефам — точка на восточной границе обетованной земли, как её проводит книга Чисел перед переходом через Иордан: «границу восточную проведите себе от Гацар-Енана к Шефаму, от Шефама пойдет граница к Рибле, с восточной стороны Аина, потом пойдет граница и коснется берегов моря Киннереф с восточной стороны». Он лежал, стало быть, между Гацар-Енаном, северо-восточным углом земли у границы Дамаска, и некоей Риблой к востоку от источника по имени Аин, откуда черта спускалась к Галилейскому морю; эта Рибла — не Рибла на Оронте, где Вавилоняне судили Седекию, та лежит слишком далеко на севере, а неизвестное место в области Ермона и Голана. Граница восстановленной земли у Иезекииля пользуется другими именами и Шефама не называет."
+    - "Места под именем Шефам не известно, и ни один древний писатель его не помещал. Те, кто ставит Гацар-Енан у оазиса Карьятейн в Сирийской пустыне, уводят границу далеко на восток, а те, кто ищет его у Баниаса, держат её близ Ермона; Шефам движется вместе с ней, и карта держит точку в пределах досягаемости от своей Риблы, не утверждая большего. Единственное другое возможное упоминание — Завдий, начальник Давида над запасами вина в виноградниках, по еврейскому тексту «Шифмитянин»; Синодальный перевод делает его человеком «из Шефама», но он с тем же правом мог быть родом из Шифмофа в Негеве Иудином, куда Давид послал часть амаликитской добычи, и решить этот вопрос нельзя."
+scripture:
+  - Num.34.10-Num.34.11
+  - 1Chr.27.27
+  - 1Sam.30.28
+sources:
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+  - "Z. Kallai, Historical Geography of the Bible: The Tribal Territories of Israel (1986)"
+  - "B. A. Levine, Numbers 21-36 (Anchor Bible, 2000)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

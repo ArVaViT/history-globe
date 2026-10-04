@@ -1,0 +1,23 @@
+# Overview article (ADR 0007). Mainstream facts only; this is the district of Goshen in southern Judah, not Goshen in Egypt; its extent is unknown and the town it is named after is located only by proposal.
+id: goshen-judah
+place: ad3e63c
+title:
+  en: "Land of Goshen in Judah"
+  ru: "Земля Гошен в Иудее"
+body:
+  en:
+    - "This Goshen is not the land in Egypt where Jacob's family settled but a district in the south of Canaan, named only in the summaries of Joshua's conquests. After the southern campaign “Joshua smote them from Kadesh-barnea even unto Gaza, and all the country of Goshen, even unto Gibeon”, and the closing summary of the whole conquest names “all the south country, and all the land of Goshen, and the valley, and the plain”. It seems to have lain between the hill country of Judah and the Negeb, and it most likely took its name from the town of Goshen, which Joshua lists among the hill towns of Judah in one district with Debir, Eshtemoh and Anim."
+    - "Beyond these two verses nothing is known of the district: its borders are not given, and no other book names it. The town itself is unlocated. One proposal, which the map follows, puts it at ed-Dhahiriya, a hill town about 18 km south-west of Hebron, but this rests on the town's place in the list, not on any survival of the name. Ed-Dhahiriya today is a Palestinian town in the Hebron governorate of the West Bank, on the edge of the northern Negev."
+  ru:
+    - "Этот Гошен — не земля в Египте, где поселилась семья Иакова, а область на юге Ханаана, названная лишь в итоговых словах о завоеваниях Иисуса Навина. После южного похода Иисус поразил врагов «от Кадес-Варни до Газы, и всю землю Гошен даже до Гаваона», а заключительный перечень всего завоевания называет «всю землю полуденную, всю землю Гошен и низменные места». По-видимому, она лежала между нагорьем Иудеи и Негевом и, скорее всего, получила имя от города Гошен, который книга Иисуса Навина числит среди горных городов Иуды в одном округе с Давиром, Ештемо и Анимом."
+    - "Кроме этих двух стихов, об области ничего не известно: её границы не указаны, и ни одна другая книга её не называет. Сам город не найден. По одному предположению, которому следует карта, он стоял на месте ад-Дахирии, горного городка примерно в 18 км к юго-западу от Хеврона, но оно опирается на место города в списке, а не на сохранившееся имя. Ад-Дахирия сегодня — палестинский город в мухафазе Хеврон на Западном берегу, на краю северного Негева."
+scripture:
+  - Josh.10.41
+  - Josh.11.16
+  - Josh.15.48-Josh.15.51
+sources:
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+  - "Z. Kallai, Historical Geography of the Bible: The Tribal Territories of Israel (1986)"
+  - "R. G. Boling and G. E. Wright, Joshua (Anchor Bible, 1982)"
+  - "'Goshen', in D. N. Freedman (ed.), The Anchor Bible Dictionary (1992)"
+status: checked

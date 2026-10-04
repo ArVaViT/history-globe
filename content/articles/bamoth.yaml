@@ -1,0 +1,25 @@
+# Overview article (ADR 0007). Mainstream facts only; a station of the wanderings in Moab: the site is unknown and the candidates are given as such; the Mesha Stele's Beth-bamoth is noted as a possible match, not a proof.
+id: bamoth
+place: a1db553
+title:
+  en: "Bamoth"
+  ru: "Вамоф"
+body:
+  en:
+    - "Bamoth, “high places”, is a station on Israel's march through the land of Moab, named only in the itinerary of Numbers: “from Mattanah to Nahaliel: and from Nahaliel to Bamoth: And from Bamoth in the valley, that is in the country of Moab, to the top of Pisgah, which looketh toward Jeshimon”. It therefore lay on the plateau north of the Arnon, between the gorge and the heights above the Dead Sea, one stage short of Pisgah. It is probably the same place as Bamoth-baal, where Balak took Balaam to look down on Israel, and which Joshua lists among the towns of Reuben with Dibon and Beth-baal-meon."
+    - "The Mesha Stele of the ninth century BC, set up at Dibon by the king of Moab, says that he built Beth-bamoth, “for it was destroyed”; most readers take this for the same town, which would put it in Moabite hands after Reuben's day. Beyond that nothing is known. Eusebius puts it only vaguely in the region of the Arnon, and no ruin bears the name; Khirbet el-Quweiqiyeh, on the plateau a few kilometres south of Mount Nebo, is the usual guess, with Jebel Ataruz and Khirbet Libb, further south towards Dibon, also proposed. None has been excavated with Bamoth in view, so the map shows a region rather than a spot: the farmland of Jordan's Madaba governorate between Mount Nebo and Dhiban."
+  ru:
+    - "Вамоф, «высоты», — стан на пути Израиля через землю Моава, названный только в маршруте книги Чисел: «из Матанны в Нагалиил, из Нагалиила в Вамоф, из Вамофа в Гай, который в земле Моава, на вершине горы Фасги, обращенной лицем к пустыне». Значит, он лежал на плато к северу от Арнона, между ущельем и высотами над Мёртвым морем, на один переход не доходя до Фасги. Вероятно, это то же место, что Вамоф-Ваал, куда Валак возвёл Валаама взглянуть на Израиль и которое книга Иисуса Навина называет среди городов Рувима вместе с Дивоном и Беф-Ваал-Меоном."
+    - "Стела Меши IX века до н. э., поставленная царём Моава в Дивоне, говорит, что он отстроил Беф-Бамоф, «ибо он был разрушен»; большинство читателей видят в этом тот же город, который, выходит, после времён Рувима перешёл к Моавитянам. Сверх этого ничего не известно. Евсевий помещает его лишь смутно в области Арнона, и ни одна руина не носит этого имени; обычная догадка — Хирбет-эль-Кувейкия на плато в нескольких километрах к югу от горы Нево; предлагали также Джебель-Атаруз и Хирбет-Либб, южнее, ближе к Дивону. Ни одно из них не копали ради Вамофа, так что карта показывает скорее область, чем точку: поля иорданской провинции Мадаба между горой Нево и Дибаном."
+scripture:
+  - Num.21.19-Num.21.20
+  - Num.22.41
+  - Josh.13.17
+sources:
+  - "The Mesha Stele (Louvre AO 5066), line 27 (Beth-bamoth); translation by K. A. D. Smelik in W. W. Hallo and K. L. Younger (eds.), The Context of Scripture, vol. 2 (2000)"
+  - "Eusebius, Onomasticon, s.v. Bamoth"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+  - "J. A. Dearman (ed.), Studies in the Mesha Inscription and Moab (1989)"
+  - "J. M. Miller (ed.), Archaeological Survey of the Kerak Plateau (1991)"
+status: checked

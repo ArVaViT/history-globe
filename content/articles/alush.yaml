@@ -1,0 +1,21 @@
+# Overview article (ADR 0007). Mainstream facts only; a station of the itinerary with no known site; the app's point is called a guess.
+id: alush
+place: a32397f
+title:
+  en: "Alush"
+  ru: "Алуш"
+body:
+  en:
+    - "Alush is a station of the exodus known only from the itinerary of Numbers 33, between Dophkah and Rephidim: “they departed from Dophkah, and encamped in Alush. And they removed from Alush, and encamped at Rephidim, where was no water for the people to drink”. The narrative of Exodus, telling the same stretch, passes straight from the wilderness of Sin to Rephidim, so Dophkah and Alush are two camps the story itself does not name, and nothing happened at either that the Bible records."
+    - "Where it lay depends on where one puts Mount Sinai. On the traditional route down the west of the Sinai peninsula towards Jebel Musa it is sought in the wadis between the coast and the granite mountains; one proposal, Wadi el-Esh, rests only on the sound of the name, and no other evidence exists. The region is today the South Sinai governorate of Egypt."
+  ru:
+    - "Алуш — стан исхода, известный только по перечню в 33-й главе книги Чисел, между Дофкой и Рефидимом: «И отправились из Дофки и расположились станом в Алуше. И отправились из Алуша и расположились станом в Рефидиме, и не было там воды, чтобы пить народу». Повествование книги Исход на том же отрезке переходит прямо из пустыни Син в Рефидим, так что Дофка и Алуш — два стана, которых сам рассказ не называет, и ни в одном из них не произошло ничего, что записала бы Библия."
+    - "Где он лежал, зависит от того, куда поместить гору Синай. На традиционном пути вдоль запада Синайского полуострова к Джебель-Мусе его ищут в вади между берегом и гранитными горами; одно из предположений, Вади-эль-Эш, держится лишь на созвучии имени, других свидетельств нет. Край этот сегодня — мухафаза Южный Синай в Египте."
+scripture:
+  - Exod.17.1
+  - Num.33.13-Num.33.14
+sources:
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "J. K. Hoffmeier, Ancient Israel in Sinai: The Evidence for the Authenticity of the Wilderness Tradition (2005)"
+  - "J. Milgrom, Numbers (JPS Torah Commentary, 1990)"
+status: checked

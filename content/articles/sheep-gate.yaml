@@ -1,0 +1,28 @@
+# Overview article (ADR 0007). Mainstream facts only; the gate is unlocated and its north-eastern position is given as the usual inference from Nehemiah and from the pools of Bethesda.
+id: sheep-gate
+place: aa3d425
+title:
+  en: "Sheep Gate"
+  ru: "Овечьи ворота"
+body:
+  en:
+    - "The Sheep Gate was a gate in the north-eastern wall of Jerusalem beside the Temple, named, it is usually thought, for the sheep brought through it to the altar. Nothing of it has been found, and its place is inferred from Nehemiah's account of the walls: the priests built it, the circuit of repairs begins and ends at it, and it stood between the tower of Hananel and the tower of Meah on one side and the Temple's own gates and guards on the other. Most scholars therefore put it near the north-east corner of the Temple enclosure, roughly where the Lions' Gate (St Stephen's Gate) opens today, though the bounds of the city in the Persian period are themselves only partly known."
+    - "“Then Eliashib the high priest rose up with his brethren the priests, and they builded the sheep gate; they sanctified it, and set up the doors of it; even unto the tower of Meah they sanctified it, unto the tower of Hananeel.” It is the only gate whose builders are the priests and the only one that is said to be sanctified. The list of repairs goes round the city and comes back: “between the going up of the corner unto the sheep gate repaired the goldsmiths and the merchants”. At the dedication of the wall the second choir walked past the gate of Ephraim, the old gate, the fish gate and the two towers “even unto the sheep gate: and they stood still in the prison gate”, that is, at the Temple."
+    - "John places the pool of Bethesda “by the sheep market”; the Greek says only “by the sheep”, and the gate is what is meant, as the Synodal Bible reads it. There Jesus healed on a sabbath the man who had been ill thirty-eight years. The pools were found from 1888 beside the church of St Anne, just inside the Lions' Gate: two large rock-cut reservoirs divided by a partition, which with their porticoes explain the “five porches”, and beside them a later healing shrine and a Byzantine church. Their position fixes the Sheep Gate of the first century near the same corner. The Lions' Gate itself is Ottoman, of the 1530s; the Via Dolorosa begins inside it."
+  ru:
+    - "Овечьи ворота — ворота в северо-восточной стене Иерусалима, рядом с Храмом; названы, как обычно считают, по овцам, которых вели через них к жертвеннику. От них ничего не найдено, и место их выводят из рассказа Неемии о стенах: их строили священники, обход починки с них начинается и ими кончается, и стояли они между башнями Хананела и Меа с одной стороны и воротами и стражей самого Храма с другой. Поэтому большинство учёных помещают их у северо-восточного угла храмовой ограды, примерно там, где сегодня открываются Львиные ворота (ворота святого Стефана), хотя границы города персидского времени сами известны лишь отчасти."
+    - "«И встал Елияшив, великий священник, и братья его священники и построили Овечьи ворота: они освятили их и вставили двери их, и от башни Меа освятили их до башни Хананела». Это единственные ворота, которые строят священники, и единственные, о которых сказано, что их освятили. Список починок обходит город и возвращается: «между угольным жильем до ворот Овечьих чинили серебряники и торговцы». При освящении стены второй хор прошёл мимо ворот Ефремовых, Старых, Рыбных и двух башен «к Овечьим воротам, и остановились у ворот Темничных», то есть у Храма."
+    - "Иоанн помещает купальню Вифезда «у Овечьих ворот»: в греческом сказано лишь «у овечьих», и Синодальный перевод, как и большинство толкователей, понимает это как ворота. Там Иисус в субботу исцелил человека, болевшего тридцать восемь лет. Купальни нашли с 1888 года рядом с церковью святой Анны, сразу за Львиными воротами: два больших высеченных в скале водоёма, разделённых перемычкой, которые вместе с портиками объясняют «пять крытых ходов», а подле них — позднейшее святилище исцелений и византийская церковь. Их положение закрепляет Овечьи ворота I века у того же угла. Сами Львиные ворота — османские, 1530-х годов; за ними начинается Виа Долороза."
+scripture:
+  - Neh.3.1
+  - Neh.3.32
+  - Neh.12.39
+  - John.5.2-John.5.9
+sources:
+  - "J. Simons, Jerusalem in the Old Testament: Researches and Theories (1952)"
+  - "H. G. M. Williamson, Ezra, Nehemiah (Word Biblical Commentary 16, 1985)"
+  - "J. Jeremias, The Rediscovery of Bethesda: John 5:2 (1966)"
+  - "S. Gibson, 'The Pool of Bethesda in Jerusalem and Jewish Purification Practices of the Second Temple Period', Proche-Orient Chrétien 55 (2005)"
+  - "D. Bahat, The Illustrated Atlas of Jerusalem (1990)"
+  - "Eusebius, Onomasticon, s.v. Bezatha"
+status: checked

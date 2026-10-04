@@ -143,6 +143,32 @@ export function canonicalPosition(osis: string): number {
   return Object.keys(BOOKS).indexOf(r.book) * 1_000_000 + position(r);
 }
 
+/** A reference as formatRef writes it, or the OSIS text itself when it cannot be read. */
+export function formatRefOr(osis: string, locale: Locale): string {
+  try {
+    return formatRef(osis, locale);
+  } catch {
+    return osis;
+  }
+}
+
+/**
+ * A book's short name as a reader of `locale` reads it: the Synodal form in Russian (and in
+ * Ukrainian until it has its own), the English otherwise. Undefined for an unknown book.
+ */
+export function bookName(book: string, locale: Locale): string | undefined {
+  const names = BOOKS[book];
+  if (!names) return undefined;
+  return locale === "ru" || locale === "uk" ? names[0] : names[1];
+}
+
+/** How a book outside the Hebrew canon is marked, by language. */
+const DEUTERO_MARK: Readonly<Partial<Record<Locale, string>>> = {
+  en: "deuterocanonical",
+  ru: "неканоническая книга",
+  uk: "неканонічна книга",
+};
+
 /**
  * "Acts.13.4" → "Деян 13:4"; "Acts.13.4-Acts.14.26" → "Деян 13:4–14:26".
  * In Russian the numbers are the Synodal ones ("Ps.68.15" → "Пс 67:16", synodal.ts);
@@ -153,17 +179,14 @@ export function formatRef(osis: string, locale: Locale): string {
   if (parts.length > 2) throw new SyntaxError(`not an OSIS reference: "${osis}"`);
   const [startText, endText] = parts;
   const start = parseOne(startText ?? "");
-  const books = BOOKS[start.book];
-  if (!books) throw new SyntaxError(`unknown book in "${osis}"`);
-  const name = locale === "ru" || locale === "uk" ? books[0] : books[1];
+  const name = bookName(start.book, locale);
+  if (name === undefined) throw new SyntaxError(`unknown book in "${osis}"`);
   const shown = (r: Ref) => (locale === "ru" ? toSynodal(r.book, r.chapter, r.verse) : r);
   const from = shown(start);
   const head = `${name} ${from.chapter}${from.verse === null ? "" : `:${from.verse}`}`;
   // A book outside the Hebrew canon (1-2 Maccabees) says so wherever it is cited.
   const mark = (s: string) =>
-    DEUTEROCANON.has(start.book)
-      ? `${s} (${locale === "ru" || locale === "uk" ? "неканоническая книга" : "deuterocanonical"})`
-      : s;
+    DEUTEROCANON.has(start.book) ? `${s} (${DEUTERO_MARK[locale] ?? DEUTERO_MARK.en ?? ""})` : s;
   if (endText === undefined) return mark(head);
   const end = parseOne(endText);
   if (end.book !== start.book) throw new SyntaxError(`cross-book range: "${osis}"`);
@@ -256,7 +279,7 @@ function parseBook(typed: string, locale: Locale): { ref: string; label: string 
   }
   const names = book === undefined ? undefined : BOOKS[book];
   if (!book || !names) return null;
-  return { ref: book, label: locale === "ru" ? names[0] : names[1] };
+  return { ref: book, label: bookName(book, locale === "ru" ? "ru" : "en") ?? book };
 }
 
 /**
@@ -293,12 +316,12 @@ export function parseChapter(text: string, locale: Locale): { ref: string; label
   const books = book === undefined ? undefined : BOOKS[book];
   const lengths = book === undefined ? undefined : VERSES[book];
   if (!book || !books || !lengths) return null;
-  const label = `${locale === "ru" ? books[0] : books[1]} ${String(n)}`;
+  const label = `${bookName(book, locale === "ru" ? "ru" : "en") ?? book} ${String(n)}`;
   // A book named in English ("Psalm 23") is counted the English way, in either language:
   // the label then gives the Synodal number («Пс 22»).
   if (locale !== "ru" || /[a-z]/.test(word)) {
     if (n < 1 || n > lengths.length) return null;
-    const ru = `${books[0]} ${String(toSynodal(book, n, 1).chapter)}`;
+    const ru = `${bookName(book, "ru") ?? book} ${String(toSynodal(book, n, 1).chapter)}`;
     return { ref: `${book}.${String(n)}`, label: locale === "ru" ? ru : label };
   }
   // In Russian the number is the Synodal chapter: the English verses shown in it.

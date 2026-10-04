@@ -1,0 +1,23 @@
+# Overview article (ADR 0007). Mainstream facts only; this id covers the "rock" of Judges 1 and 2 Chronicles 25; the Petra/Umm el-Biyara and es-Sela identifications are given as the two views, the app's two candidates named, none chosen.
+id: sela
+place: a98b02e
+title:
+  en: "Sela"
+  ru: "Села"
+body:
+  en:
+    - "Sela, “the rock”, is used in the Bible both as a common noun and as the name of an Edomite stronghold, and it is not always clear which is meant. Judges draws the Amorite border “from the going up to Akrabbim, from the rock, and upward”, where the Hebrew reads “from Sela”; and after Amaziah of Judah had killed ten thousand Edomites in the Valley of Salt, his men took another ten thousand captive and “brought them unto the top of the rock, and cast them down from the top of the rock, that they all were broken in pieces”. The parallel in Kings says that Amaziah “took Selah by war, and called the name of it Joktheel”, so the rock of Chronicles is most naturally that Sela, the Edomite fortress. The map keeps the two apart; this entry covers the verses in Judges and Chronicles."
+    - "Where the Edomite Sela was is disputed. The old identification is with Petra, the Nabataean city whose Greek name also means “rock”, and in particular with the sheer-sided massif of Umm el-Biyara above it; many now prefer es-Sela, a rock-cut stronghold near Buseirah (Bozrah) in the Tafila governorate of Jordan, on whose cliff a relief and inscription of Nabonidus, king of Babylon, were identified in 1994. For the border of Judges, which runs from the ascent of Akrabbim south of the Dead Sea, a rock nearer that pass has also been suggested, and the map shows both possibilities. Petra, Umm el-Biyara and es-Sela are all in southern Jordan; es-Sela has been surveyed in recent years, but Amaziah's rock has not been identified on the ground."
+  ru:
+    - "Села, «скала», употребляется в Библии и как нарицательное слово, и как имя едомской твердыни, и не всегда ясно, что имеется в виду. Книга Судей проводит границу аморреев «от возвышенности Акравим и от Селы», где русский перевод оставил имя как есть; а после того как Амасия Иудейский перебил десять тысяч идумеев в долине Соляной, его люди взяли ещё десять тысяч в плен, «и привели их на вершину скалы, и низринули их с вершины скалы, и все они разбились совершенно». Параллельное место в книге Царств говорит, что Амасия «взял Селу войною, и дал ей имя Иокфеил», так что скала Паралипоменон — скорее всего та самая Села, крепость едомлян. На карте их держат врозь; эта статья охватывает стихи Судей и Паралипоменон."
+    - "Где стояла едомская Села, спорно. Старое отождествление — с Петрой, набатейским городом, чьё греческое имя тоже значит «скала», и особенно с отвесным массивом Умм-эль-Бияра над ней; ныне многие предпочитают Эс-Селу, вырубленную в скале крепость близ Бусейры (Восора) в иорданской провинции Эт-Тафила, на утёсе которой в 1994 году опознали рельеф и надпись Набонида, царя Вавилона. Для границы из книги Судей, идущей от подъёма Акравим к югу от Мёртвого моря, предлагали и скалу поближе к этому перевалу, и на карте показаны обе возможности. Петра, Умм-эль-Бияра и Эс-Села лежат на юге Иордании; Эс-Селу в последние годы обследовали, но скала Амасии на местности не опознана."
+scripture:
+  - Judg.1.36
+  - 2Chr.25.11-2Chr.25.12
+  - 2Kgs.14.7
+sources:
+  - "S. Dalley and A. Goguel, 'The Sela' Sculpture: A Neo-Babylonian Rock Relief in Southern Jordan', Annual of the Department of Antiquities of Jordan 41 (1997)"
+  - "J. R. Bartlett, Edom and the Edomites (1989)"
+  - "B. Lindars, Judges 1–5: A New Translation and Commentary (1995)"
+  - "F.-M. Abel, Géographie de la Palestine, vol. 2 (1938)"
+status: checked

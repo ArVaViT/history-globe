@@ -1,0 +1,24 @@
+# Overview article (ADR 0007). Mainstream facts only; this is the Arabia of Paul's letters, the Nabataean kingdom, not the Arabia of the Old Testament; what Paul did there is left open, as he leaves it.
+id: arabia-galatians
+place: a0f4ea8
+title:
+  en: "Arabia in Galatians"
+  ru: "Аравия в Послании к Галатам"
+body:
+  en:
+    - "The Arabia of Paul's letter to the Galatians is the Arabia of the Roman world: the kingdom of the Nabataeans south and east of Judaea, with its capital at Petra, which under Aretas IV (9 BC to AD 40) reached from the edge of Damascus to the Red Sea. After his conversion, Paul says, “neither went I up to Jerusalem to them which were apostles before me; but I went into Arabia, and returned again unto Damascus”; and in 2 Corinthians he adds that the governor under King Aretas guarded Damascus to seize him. Taken together the notices suggest that he spent his time in Nabataean country and made enemies there. Whether he preached or withdrew to think, and for how long of the three years before he went up to Jerusalem, he does not say. In the fourth chapter he uses the name in its other sense, for the peninsula of Sinai: “this Agar is mount Sinai in Arabia”."
+    - "In AD 106 Trajan annexed the Nabataean kingdom as the province of Arabia, with its seat at Bostra, and later writers called the region Arabia Petraea after its old capital. The land is today southern Jordan, the Negev and Sinai, and the north-west of Saudi Arabia. The Arabia of the Old Testament, the home of the nomads and incense traders, is another entry."
+  ru:
+    - "Аравия Послания к Галатам — это Аравия римского мира: царство Набатеев к югу и востоку от Иудеи со столицей в Петре, которое при Арете IV (9 г. до н. э. — 40 г. н. э.) простиралось от окрестностей Дамаска до Красного моря. После своего обращения, говорит Павел, он «не пошел в Иерусалим к предшествовавшим мне Апостолам, а пошел в Аравию и опять возвратился в Дамаск», а во Втором послании к Коринфянам добавляет, что правитель царя Ареты стерёг Дамаск, чтобы схватить его. Вместе эти известия говорят, что он провёл это время в набатейской земле и нажил там врагов. Проповедовал ли он или удалился размышлять и сколько из трёх лет до прихода в Иерусалим там пробыл, он не говорит. В четвёртой главе он берёт имя в другом смысле, для Синайского полуострова: «Агарь означает гору Синай в Аравии»."
+    - "В 106 г. н. э. Траян присоединил Набатейское царство как провинцию Аравия с центром в Бостре, и поздние писатели звали эту область Каменистой Аравией по её старой столице. Эта земля сегодня — юг Иордании, Негев и Синай, северо-запад Саудовской Аравии. Аравия Ветхого Завета, родина кочевников и торговцев благовониями, — отдельная статья."
+scripture:
+  - Gal.1.17
+  - Gal.4.25
+  - 2Cor.11.32
+sources:
+  - "Strabo, Geography 16.4.21 (Petra and the Nabataeans)"
+  - "Cassius Dio, Roman History 68.14 (Palma annexes the Arabia of Petra)"
+  - "G. W. Bowersock, Roman Arabia (1983)"
+  - "M. Hengel and A. M. Schwemer, Paul between Damascus and Antioch: The Unknown Years (1997)"
+  - "J. Murphy-O'Connor, Paul: A Critical Life (1996)"
+status: checked

@@ -1,0 +1,22 @@
+# Overview article (ADR 0007). Mainstream facts only; the reading of the Hebrew and the meaning of the paired "Egypt" are named as debated.
+id: kue
+place: af133c0
+title:
+  en: "Kue"
+  ru: "Кува"
+body:
+  en:
+    - "Kue is the land from which Solomon’s merchants bought horses, in a pair of verses in Kings and Chronicles: “Solomon had horses brought out of Egypt, and linen yarn: the king’s merchants received the linen yarn at a price”. That is how the King James Version understood the obscure Hebrew word; most modern translations, like the Russian Synodal, read it as a place name, Kue, the Que or Qawe of Assyrian records. Que was the fertile plain of Cilicia in south-east Anatolia, the later Cilicia Pedias around Adana, famous for horses: Herodotus says Cilicia paid the Persian king 360 white horses a year. The verses go on to say that chariots came from Egypt for six hundred shekels and horses for a hundred and fifty, and that the merchants sold them on to the kings of the Hittites and of Aram."
+    - "Some scholars read the Hebrew “Egypt” in these verses as Musri, a land in Anatolia, which would make the trade wholly northern; others keep Egypt. Beyond this trade the Bible says nothing of Kue. Assyrian kings from Shalmaneser III on campaigned there, and in the eighth century it became an Assyrian province; the Phoenician and Luwian inscriptions of Karatepe tell of a local ruler under the house of Awariku. Today the plain is the Çukurova of southern Turkey, with Adana as its city."
+  ru:
+    - "Кува — земля, откуда купцы Соломона покупали коней, по двум параллельным стихам из книг Царств и Паралипоменон: «Коней же царю Соломону приводили из Египта и из Кувы; царские купцы покупали их из Кувы за деньги». Так Синодальный перевод, как и большинство современных, читает это тёмное еврейское слово — как имя места, ассирийскую Куэ, или Кауэ; английская Библия короля Якова поняла его как «льняная пряжа». Куэ — плодородная равнина Киликии на юго-востоке Анатолии, позднейшая Равнинная Киликия вокруг Аданы, славившаяся конями: Геродот пишет, что Киликия ежегодно отдавала персидскому царю 360 белых коней. Далее сказано, что колесницу из Египта получали за шестьсот сиклей серебра, а коня за сто пятьдесят, и купцы доставляли их царям Хеттейским и Арамейским."
+    - "Некоторые учёные читают в этих стихах еврейское «Египет» как Мусри, землю в Анатолии, и тогда торговля целиком северная; другие оставляют Египет. Кроме этой торговли Библия о Куве ничего не говорит. Ассирийские цари начиная с Салманассара III ходили туда походами, и в VIII веке до н. э. она стала ассирийской провинцией; финикийские и лувийские надписи Каратепе рассказывают о местном правителе под властью дома Аварику. Сегодня эта равнина — Чукурова на юге Турции, с Аданой в качестве главного города."
+scripture:
+  - 1Kgs.10.28-1Kgs.10.29
+  - 2Chr.1.16-2Chr.1.17
+sources:
+  - "Herodotus, Histories 3.90"
+  - "Karatepe inscription of Azatiwada (KAI 26)"
+  - "H. Tadmor, 'Que and Musri', Israel Exploration Journal 11 (1961)"
+  - "M. Cogan, I Kings (Anchor Bible 10, 2001)"
+status: checked

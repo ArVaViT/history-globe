@@ -1,0 +1,21 @@
+# Overview article (ADR 0007). Mainstream facts only; a wilderness station known only by name: the app's placement is named as a guess.
+id: makheloth
+place: ac1fbba
+title:
+  en: "Makheloth"
+  ru: "Макелоф"
+body:
+  en:
+    - "Makheloth is a camp of Israel in the wilderness, named only in the list of stations in Numbers 33: “And they removed from Haradah, and pitched in Makheloth. And they removed from Makheloth, and encamped at Tahath.” It lies in the long run of stations between Hazeroth and Ezion-gaber of which the Bible tells no events. The name means “assemblies”, from the same root as Kehelathah three stations earlier, and nothing in the text explains it."
+    - "Its site is unknown. The map places it, with low confidence, at Kuntillet Ajrud in north-eastern Sinai, a desert way station of about 800 BC famous for its painted jars and inscriptions blessing travellers “by Yahweh of Samaria and his Asherah”; but nothing connects that site with Makheloth beyond its position on an old route. Since the order and course of these stations are themselves reconstructed, any point on the map is a guess."
+  ru:
+    - "Макелоф — стан Израиля в пустыне, известный только по перечню в 33-й главе Чисел: «И отправились из Харады и расположились станом в Макелофе. И отправились из Макелофа и расположились станом в Тахафе». Он стоит в длинном ряду станов между Асирофом и Ецион-Гавером, о которых Библия не рассказывает никаких событий. Имя значит «собрания», от того же корня, что и Кегелафа тремя станами раньше, и текст его никак не объясняет."
+    - "Место его неизвестно. На карте он с малой уверенностью помещён в Кунтиллет-Аджруд на северо-востоке Синая — пустынную станцию около 800 г. до н. э., знаменитую расписными сосудами и надписями, благословляющими путников «Яхве Самарийским и его Ашерой»; но ничто, кроме положения на старом пути, не связывает это место с Макелофом. Поскольку и порядок, и направление этих станов восстанавливаются лишь предположительно, любая точка на карте — догадка."
+scripture:
+  - Num.33.22
+  - Num.33.25-Num.33.26
+sources:
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "Z. Meshel, Kuntillet ʿAjrud (Horvat Teman): An Iron Age II Religious Site on the Judah-Sinai Border (2012)"
+  - "B. A. Levine, Numbers 21-36 (Anchor Bible 4A, 2000)"
+status: checked

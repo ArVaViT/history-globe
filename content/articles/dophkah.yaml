@@ -1,0 +1,22 @@
+# Overview article (ADR 0007). Mainstream facts only; a minor place: the Serabit el-Khadim guess is given as a guess tied to the traditional route of Sinai.
+id: dophkah
+place: a070c7b
+title:
+  en: "Dophkah"
+  ru: "Дофка"
+body:
+  en:
+    - "Dophkah is a station of the wilderness journey known only from the itinerary in Numbers: Israel “took their journey out of the wilderness of Sin, and encamped in Dophkah”, and “departed from Dophkah, and encamped in Alush”, from which they went on to Rephidim. Exodus, telling the same stretch of the journey, passes straight from the wilderness of Sin to Rephidim and does not name it. Nothing else is said of the place."
+    - "Where it lay depends on where one puts Mount Sinai. On the traditional route to Jebel Musa in the south of the peninsula, Dophkah is often sought at Serabit el-Khadim, the Egyptian turquoise mines with their temple of Hathor, where Flinders Petrie in 1905 found the Proto-Sinaitic inscriptions; the guess rests on a suggested link between the name and the Egyptian word for turquoise and on the mines lying inland from the coastal plain where the wilderness of Sin is usually placed. Nothing on the ground confirms it, and those who put Sinai elsewhere put Dophkah elsewhere too. Serabit el-Khadim today is a plateau in South Sinai, Egypt, with the ruined temple and the mine galleries still open."
+  ru:
+    - "Дофка — стан пустынного странствия, известный только по перечню в книге Чисел: Израильтяне «отправились из пустыни Син и расположились станом в Дофке», затем «отправились из Дофки и расположились станом в Алуше», откуда пошли в Рефидим. Книга Исход, рассказывая о том же отрезке пути, переходит прямо от пустыни Син к Рефидиму и Дофки не называет. Больше об этом месте ничего не сказано."
+    - "Где она лежала, зависит от того, где искать гору Синай. На традиционном пути к Джебель-Муса на юге полуострова Дофку часто помещают в Серабит-эль-Хадим, египетские бирюзовые рудники с храмом Хатхор, где Флиндерс Питри в 1905 году нашёл протосинайские надписи; догадка опирается на предполагаемую связь имени с египетским словом «бирюза» и на то, что рудники лежат в глубине полуострова за прибрежной равниной, где обычно помещают пустыню Син. Ничто на месте этого не подтверждает, а кто ищет Синай в другом месте, тот и Дофку ищет в другом. Серабит-эль-Хадим сегодня — плато на Южном Синае, в Египте, где по-прежнему открыты развалины храма и штольни рудников."
+scripture:
+  - Num.33.12-Num.33.13
+  - Exod.17.1
+sources:
+  - "W. M. F. Petrie, Researches in Sinai (1906)"
+  - "A. H. Gardiner, T. E. Peet and J. Černý, The Inscriptions of Sinai (2nd ed., 1952-1955)"
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "J. Simons, The Geographical and Topographical Texts of the Old Testament (1959)"
+status: checked

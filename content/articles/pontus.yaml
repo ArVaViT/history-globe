@@ -1,0 +1,31 @@
+# Overview article (ADR 0007). Mainstream facts only; the suggestion that the order of provinces in 1 Peter follows the carrier's route is given as a suggestion; Roman dates follow Magie.
+id: pontus
+place: a83a43e
+title:
+  en: "Pontus"
+  ru: "Понт"
+body:
+  en:
+    - "Pontus is the land along the south-eastern shore of the Black Sea, the Pontus Euxinus from which it took its name: a narrow, rainy coast with the Greek ports of Sinope, Amisus and Trapezus, and behind it the parallel ridges of the Pontic mountains and the valleys of the Iris and the Lycus, with Amaseia and the temple city of Comana. About 281 BC a Persian noble, Mithridates, founded a kingdom here; its greatest king, Mithridates VI Eupator, fought Rome in three wars from 89 BC and died in 63 BC, when Pompey joined the western part of his kingdom with Bithynia as the province of Bithynia and Pontus and gave the rest to client kings. The last of these, the kingdom of Polemon, was annexed under Nero in AD 64. Strabo, the geographer, was born at Amaseia and described his homeland with care."
+    - "In the New Testament Jews from Pontus were among those who heard the apostles at Pentecost; Aquila, Paul's fellow tentmaker and host at Corinth, was “a certain Jew named Aquila, born in Pontus”, who with his wife Priscilla had left Rome when Claudius expelled the Jews, and the couple later went with Paul to Ephesus and were greeted in his letter to Rome; and the First Epistle of Peter is addressed “to the strangers scattered throughout Pontus, Galatia, Cappadocia, Asia, and Bithynia”. Pontus stands first in that list, perhaps because the letter's bearer landed at a Pontic port and went round the provinces in that order, a suggestion that cannot be proved."
+    - "In AD 111 Pliny the Younger, governing Bithynia and Pontus, wrote to Trajan, probably from the Pontic coast, that the Christians were many, of every age and rank, in the towns, villages and countryside, and that the temples had been almost deserted; the emperor's reply fixed Roman practice for a century. Aquila of Pontus, who translated the Old Testament into Greek for the Jews in the second century, and Marcion, son of a bishop of Sinope, came from the country, and in the third century Gregory the Wonderworker was bishop of Neocaesarea. Pontus is today the Black Sea coast of Turkey, the provinces of Samsun, Sinop, Amasya, Tokat and Trabzon; its Greek population left in the exchange of 1923."
+  ru:
+    - "Понт — земля вдоль юго-восточного берега Чёрного моря, Понта Евксинского, от которого она получила имя: узкое дождливое побережье с греческими гаванями Синопой, Амисом и Трапезунтом, а за ним параллельные гряды Понтийских гор и долины Ириса и Лика с Амасией и храмовым городом Команой. Около 281 г. до н. э. персидский вельможа Митридат основал здесь царство; величайший его царь, Митридат VI Евпатор, с 89 г. до н. э. вёл с Римом три войны и погиб в 63 г. до н. э., когда Помпей соединил западную часть его царства с Вифинией в провинцию Вифиния и Понт, а остальное отдал зависимым царям. Последнее из их владений, царство Полемона, было присоединено при Нероне в 64 г. н. э. Географ Страбон родился в Амасии и описал свою родину с особой заботой."
+    - "В Новом Завете Иудеи из Понта были среди слышавших апостолов в день Пятидесятницы; в Коринфе Павел нашёл «некоторого Иудея, именем Акилу, родом Понтянина, недавно пришедшего из Италии», товарища по ремеслу, который с женой Прискиллой покинул Рим, когда Клавдий изгнал Иудеев; потом чета отправилась с Павлом в Ефес и получила привет в его послании к Римлянам; Первое же послание Петра обращено «пришельцам, рассеянным в Понте, Галатии, Каппадокии, Асии и Вифинии». Понт стоит в этом списке первым — быть может, потому, что податель письма высадился в понтийской гавани и обошёл провинции в таком порядке; доказать это нельзя."
+    - "В 111 г. н. э. Плиний Младший, управляя Вифинией и Понтом, писал Траяну, вероятно, с понтийского берега, что христиан много, всякого возраста и звания, в городах, сёлах и по деревням, и что храмы почти опустели; ответ императора определил римскую практику на столетие. Из этой страны происходили Акила Понтийский, во II веке переведший Ветхий Завет на греческий для Иудеев, и Маркион, сын епископа Синопы, а в III веке Григорий Чудотворец был епископом Неокесарии. Понт сегодня — черноморское побережье Турции, провинции Самсун, Синоп, Амасья, Токат и Трабзон; его греческое население ушло при обмене 1923 года."
+scripture:
+  - Acts.2.9
+  - Acts.18.1-Acts.18.3
+  - Acts.18.18-Acts.18.19
+  - Rom.16.3-Rom.16.4
+  - 1Pet.1.1
+sources:
+  - "Strabo, Geography 12.3 (Pontus)"
+  - "Appian, Mithridatic Wars"
+  - "Pliny the Younger, Letters 10.96-97 (the Christians of Pontus and Trajan's reply)"
+  - "Epiphanius, On Weights and Measures 14-15 (Aquila of Pontus)"
+  - "D. Magie, Roman Rule in Asia Minor to the End of the Third Century after Christ (1950)"
+  - "B. C. McGing, The Foreign Policy of Mithridates VI Eupator, King of Pontus (1986)"
+  - "C. J. Hemer, 'The Address of 1 Peter', Expository Times 89 (1978)"
+  - "S. Mitchell, Anatolia: Land, Men, and Gods in Asia Minor, 2 vols (1993)"
+status: checked

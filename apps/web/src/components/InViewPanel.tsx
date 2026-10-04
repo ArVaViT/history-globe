@@ -1,4 +1,5 @@
 import type { Locale } from "@hg/model";
+import { placeName } from "@hg/model";
 import { useState } from "react";
 import { useTranslation } from "../i18n";
 import { beforeItsTime, type LoadedData } from "../data";
@@ -41,7 +42,7 @@ export function InViewPanel({
   if (places.length === 0) return null;
 
   return (
-    <Section id="inview" title={t("inview.title")} className="w-[340px] max-md:w-full pb-2">
+    <Section>
       <ul aria-label={t("inview.title")}>
         {visible.map((p) => (
           <li key={p.id}>
@@ -52,9 +53,7 @@ export function InViewPanel({
               aria-current={p.id === selected}
               className={`flex w-full items-baseline justify-between gap-3 px-4 py-1 text-left hover:bg-paper-2 focus-visible:bg-paper-2 focus-visible:outline-none ${p.id === selected ? "text-accent" : "text-ink"} ${beforeItsTime(p, year) ? "opacity-65" : ""}`}
             >
-              <span className="truncate font-serif text-[14.5px]">
-                {locale === "ru" ? (p.name_ru ?? p.name) : p.name}
-              </span>
+              <span className="truncate font-serif text-[14.5px]">{placeName(p, locale)}</span>
               <span className="shrink-0 text-[11px] text-ink-soft tabular-nums">
                 {t("inview.verses", { count: p.verses })}
               </span>

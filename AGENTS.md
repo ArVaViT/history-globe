@@ -32,8 +32,8 @@ A change is done only when **all** of these hold:
 - **Never weaken a gate to make it pass**: do not relax lint rules, TypeScript options,
   test thresholds, bundle budgets or visual tolerances; do not add `// @ts-ignore`,
   `eslint-disable` or `.skip` without a written reason in the PR, and never in
-  `packages/core` or `packages/model`. Changes to CI config, presets in `tooling/` or
-  visual baselines need the owner's explicit approval in the PR.
+  `packages/core` or `packages/model`. A change to the gate itself (`pnpm gate`, its
+  budgets) needs the owner's explicit approval in the PR.
 - **Never import data outside the licence allowlist** (ADR 0008). No CC BY-SA, ODbL,
   GPL or non-commercial data — not even "temporarily" or "for a test fixture".
 - **Never commit secrets.** Secrets live in 1Password and reach commands through

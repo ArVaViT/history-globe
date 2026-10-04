@@ -5,7 +5,7 @@
  *
  * Usage: pnpm e2e (with the app running; see e2e/browser.mjs)
  */
-import { BASE, launch } from "./browser.mjs";
+import { BASE, launch, mapReady } from "./browser.mjs";
 
 const browser = await launch();
 const results = [];
@@ -277,7 +277,7 @@ await step("bad link does not hang", async () => {
 
 await step("a person found by name opens their card and takes the map to their time", async () => {
   await page.goto(BASE + "?locale=ru&year=30");
-  await page.waitForFunction(() => window.__hgMap?.loaded(), null, { timeout: 45000 });
+  await mapReady(page);
   await page.getByRole("button", { name: /^Поиск/ }).click();
   await page.locator("input[role=combobox]").fill("Давид");
   await page.locator('[id^="search-person-"]').first().waitFor({ timeout: 8000 });
@@ -293,7 +293,7 @@ await step("a person found by name opens their card and takes the map to their t
 });
 await step("Overview → People lists the story's people by century", async () => {
   await page.goto(BASE + "?locale=ru");
-  await page.waitForFunction(() => window.__hgMap?.loaded(), null, { timeout: 45000 });
+  await mapReady(page);
   // The overview remembers being open: press it only if its tabs are not there.
   if ((await page.getByRole("tab", { name: "Люди" }).count()) === 0)
     await page.getByRole("button", { name: /^Обзор/ }).click();
@@ -303,7 +303,7 @@ await step("Overview → People lists the story's people by century", async () =
 });
 await step("an ancient site found by name flies the map there in a year it stood", async () => {
   await page.goto(BASE + "?locale=ru&year=30");
-  await page.waitForFunction(() => window.__hgMap?.loaded(), null, { timeout: 45000 });
+  await mapReady(page);
   await page.getByRole("button", { name: /^Поиск/ }).click();
   await page.locator("input[role=combobox]").fill("Хаттуса");
   await page.locator('[id^="search-site-"]').first().dispatchEvent("mousedown", { timeout: 8000 });
@@ -316,7 +316,7 @@ await step("an ancient site found by name flies the map there in a year it stood
 
 await step("a person without places on the map (Noah) is found and opens their card", async () => {
   await page.goto(BASE + "?locale=ru&year=30");
-  await page.waitForFunction(() => window.__hgMap?.loaded(), null, { timeout: 45000 });
+  await mapReady(page);
   await page.getByRole("button", { name: /^Поиск/ }).click();
   await page.locator("input[role=combobox]").fill("Ной");
   await page
@@ -330,7 +330,7 @@ await step(
   "a name that is also a book offers the book, then the namesakes by their epithets",
   async () => {
     await page.goto(BASE + "?locale=ru&year=30");
-    await page.waitForFunction(() => window.__hgMap?.loaded(), null, { timeout: 45000 });
+    await mapReady(page);
     await page.getByRole("button", { name: /^Поиск/ }).click();
     await page.locator("input[role=combobox]").fill("Иоанн");
     await page.locator('[id^="search-person-"]').first().waitFor({ timeout: 8000 });
@@ -344,7 +344,7 @@ await step(
 
 await step("the line of Jesus goes back to Adam", async () => {
   await page.goto(BASE + "?locale=ru&year=30");
-  await page.waitForFunction(() => window.__hgMap?.loaded(), null, { timeout: 45000 });
+  await mapReady(page);
   await page.getByRole("button", { name: /^Поиск/ }).click();
   await page.locator("input[role=combobox]").fill("Иисус");
   await page
@@ -360,7 +360,7 @@ await step("the line of Jesus goes back to Adam", async () => {
 
 await step("a battle's mark opens its place, whose timeline tells the battle", async () => {
   await page.goto(BASE + "?locale=ru&year=-1009&camera=35.4,32.5,8,0,0");
-  await page.waitForFunction(() => window.__hgMap?.loaded(), null, { timeout: 45000 });
+  await mapReady(page);
   await page.waitForTimeout(1500);
   const at = await page.evaluate(() => {
     const m = window.__hgMap;
@@ -382,7 +382,7 @@ await step(
   "the Bible alone, in the settings, takes the ancient world off the map and the search",
   async () => {
     await page.goto(BASE + "?locale=ru");
-    await page.waitForFunction(() => window.__hgMap?.loaded(), null, { timeout: 45000 });
+    await mapReady(page);
     await page
       .getByRole("button", { name: /Настройки/ })
       .first()
@@ -407,7 +407,7 @@ await step(
 
 await step("Jerusalem's walls laid over Babylon at their true size", async () => {
   await page.goto(BASE + "?locale=ru&year=30&camera=44.42,32.54,13,0,0");
-  await page.waitForFunction(() => window.__hgMap?.loaded(), null, { timeout: 45000 });
+  await mapReady(page);
   await page.getByRole("button", { name: /^Ещё/ }).click();
   await page.getByRole("button", { name: /Стены Иерусалима/ }).click();
   await page.getByText(/га, по стенам/).waitFor({ timeout: 8000 });
@@ -422,13 +422,13 @@ await step("Jerusalem's walls laid over Babylon at their true size", async () =>
 await step("a voyage gives the days the text gives, with the verse", async () => {
   // Paul's third journey, stop 4: Philippi to Troas, «дней в пять» (Acts 20:6).
   await page.goto(BASE + "?tour=paul-3&stop=4&locale=ru");
-  await page.waitForFunction(() => window.__hgMap?.loaded(), null, { timeout: 45000 });
+  await mapReady(page);
   await page.getByText(/по морю, ≈\u00a05 дней \(Деян\u00a020:6\)/).waitFor({ timeout: 8000 });
 });
 
 await step("a place's card links the questions answered with it on the map", async () => {
   await page.goto(BASE + "?locale=ru&year=30&place=a70fd5d");
-  await page.waitForFunction(() => window.__hgMap?.loaded(), null, { timeout: 45000 });
+  await mapReady(page);
   const link = page.getByRole("link", { name: /Где находилась Ниневия\?/ });
   await link.waitFor({ timeout: 8000 });
   const href = await link.getAttribute("href");
@@ -439,7 +439,7 @@ await step(
   "the quiz plays on screen: a choice shows the right place, the end the score",
   async () => {
     await page.goto(BASE + "?tour=paul-1&locale=ru");
-    await page.waitForFunction(() => window.__hgMap?.loaded(), null, { timeout: 45000 });
+    await mapReady(page);
     await page.getByRole("button", { name: /^Ещё/ }).click();
     await page.getByRole("button", { name: /Викторина на экране/ }).click();
     await page.getByText(/Вопрос 1 из/).waitFor({ timeout: 15000 });
@@ -452,7 +452,7 @@ await step(
 
 await step("a quiz prints for a tour, the place never named in its own question", async () => {
   await page.goto(BASE + "?tour=paul-1&locale=ru");
-  await page.waitForFunction(() => window.__hgMap?.loaded(), null, { timeout: 45000 });
+  await mapReady(page);
   // Printing is the browser's: here the sheet is only built and read.
   await page.evaluate(() => {
     window.print = () => undefined;
@@ -474,7 +474,7 @@ await step("a quiz prints for a tour, the place never named in its own question"
 
 await step("a person's card offers their tours, and one starts", async () => {
   await page.goto(BASE + "?locale=ru");
-  await page.waitForFunction(() => window.__hgMap?.loaded(), null, { timeout: 45000 });
+  await mapReady(page);
   await page.getByRole("button", { name: "Поиск места" }).click();
   await page.getByPlaceholder("Место, человек, глава или год").fill("Павел");
   await page
@@ -489,7 +489,7 @@ await step("a person's card offers their tours, and one starts", async () => {
 
 await step("Back closes a chapter opened after the map", async () => {
   await page.goto(BASE + "?locale=ru");
-  await page.waitForFunction(() => window.__hgMap?.loaded(), null, { timeout: 45000 });
+  await mapReady(page);
   await page.waitForTimeout(800);
   await page.getByRole("button", { name: "Поиск места" }).click();
   // The search itself, not the field that stands in while it loads.
@@ -511,12 +511,15 @@ await step("Back closes a chapter opened after the map", async () => {
 await step("a lesson is built from place cards, named, and runs as a tour", async () => {
   for (const id of ["a15257a", "a112427"]) {
     await page.goto(BASE + `?locale=ru&year=30&place=${id}`);
-    await page.waitForFunction(() => window.__hgMap?.loaded(), null, { timeout: 45000 });
+    await mapReady(page);
     await page.getByRole("button", { name: /В урок/ }).click({ timeout: 8000 });
   }
   await page.getByRole("textbox", { name: /Название урока/ }).fill("Путь в Вифлеем");
+  // A link: the page loads anew. Waited for by its address first, or the wait for the map
+  // can catch the old page as it goes (it timed out once under load).
   await page.getByRole("link", { name: "Начать" }).click();
-  await page.waitForFunction(() => window.__hgMap?.loaded(), null, { timeout: 45000 });
+  await page.waitForURL(/tour=lesson/, { timeout: 15000 });
+  await mapReady(page);
   await page.getByText("Путь в Вифлеем").first().waitFor({ timeout: 8000 });
   expect(search().get("title") === "Путь в Вифлеем", `title=${search().get("title")}`);
   expect(search().get("tour") === "lesson", `tour=${search().get("tour")}`);
