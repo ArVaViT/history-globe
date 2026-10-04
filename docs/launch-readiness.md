@@ -64,15 +64,18 @@ launch), **owner** (needs the owner's decision or account).
 
 ## 3. Privacy
 
-- The app sets **no cookies**, has **no analytics and no accounts**. It keeps only
+- The app sets **no cookies** and has **no accounts**. Visits are counted by Vercel Web
+  Analytics (cookieless, no IP stored; loaded only on historyglobe.app in a production
+  build, `apps/web/src/visits.ts`; the static pages carry it when built with SITE_URL);
+  it is switched on in the Vercel project's Analytics tab. It keeps only
   interface choices in the browser's `localStorage` (panels open, the chevron's panel).
 - Third parties a visitor's browser talks to: the terrain host (Mapterhorn today, our
   R2 after the move above) and BibleGateway or Google Maps only when a link is clicked.
   Fonts and place photos are self-hosted.
 - The About page says so (done). With the terrain on our own R2, its Mapterhorn
   IP-logging line goes away.
-- If analytics is ever added: a cookieless, IP-anonymising service (Cloudflare Web
-  Analytics or Plausible), named in the privacy section.
+- What is kept and where is the public page `docs/privacy.html` (`content/docs/*/privacy.html`);
+  a change to any of the above changes that page and its date.
 
 ## 4. AI
 

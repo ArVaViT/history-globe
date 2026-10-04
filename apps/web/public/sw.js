@@ -65,6 +65,8 @@ self.addEventListener("fetch", (event) => {
     return;
   }
   if (request.method !== "GET") return;
+  // The visit counter's script and its calls (privacy.html) go to the network as they are.
+  if (url.pathname.startsWith("/_vercel/")) return;
   if (url.origin === self.location.origin) {
     if (built(url)) event.respondWith(cacheFirst(SHELL, request));
     else if (request.mode === "navigate") event.respondWith(networkFirst(SHELL, request, true));

@@ -25,3 +25,24 @@ source we either avoid or use in a way that stays safe whatever the answer is.
    edited text we would display?
 10. **Source snapshots** — may we keep private full copies of copyrighted sources for
     internal fact-checking, or only URLs, hashes and short excerpts?
+
+Added from the launch review of 2026-10-04 (privacy, analytics, photos):
+
+11. **Vercel Web Analytics for EU visitors** — is the description on the privacy page
+    enough, or does EDPB Guidelines 2/2023 call for consent? Is an EU representative
+    (Article 27 GDPR) needed for occasional processing?
+12. **Visitors' IPs sent to Mapterhorn** by the relief (joint controllership, Fashion ID):
+    is saying so on the privacy page enough until the relief moves to our own storage?
+13. **Russia** — any real duty under 152-FZ (localisation, notifying Roskomnadzor) for a
+    foreign private site in Russian that collects nothing but hosting logs; do the rules on
+    missionary activity or the labelling of religious material reach the display of Bible
+    texts; is anything beyond blocking at stake?
+14. **CC BY 2.0–3.0 photos** — is "author, licence, link to the file" without the work's
+    title, on a cropped image, enough? (Previews for shared links now use only public-domain
+    and CC0 photos.)
+15. **"History Globe" and "Globe of History"** (globeofhistory.com, the same field): any risk
+    of a dispute; is registering our own mark worth it?
+16. **National elevation models** (Licence Ouverte, Datenlizenz Deutschland, CC BY 2.5 and
+    others in Mapterhorn's list): is one link to that list enough, print sheets included?
+17. **Vercel Hobby plan** forbids commercial use: does it stand in the way of licensing the
+    data to platforms later (ADR 0008)?
