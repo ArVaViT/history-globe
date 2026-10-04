@@ -1,0 +1,22 @@
+# Overview article (ADR 0007). Mainstream facts only; this is the Phoenician Achzib on the coast of Asher, not Achzib of Judah; Assyrian dates follow the eponym chronology.
+id: achzib-galilee
+place: ad0d82f
+title:
+  en: "Achzib in Galilee"
+  ru: "Ахзив в Галилее"
+body:
+  en:
+    - "Achzib was a Phoenician harbour town on the coast of Galilee, about 14 km north of Acco, where the Kziv stream meets the sea; the mound, Tel Achziv, kept the name as ez-Zib. Joshua makes it the end of Asher's border: the line turns to Hosah “and the outgoings thereof are at the sea from the coast to Achzib”. Judges admits that Asher never held it: “Neither did Asher drive out the inhabitants of Accho, nor the inhabitants of Zidon, nor of Ahlab, nor of Achzib”. It stayed Phoenician. Sennacherib names Akzibu among the towns of Luli, king of Sidon, that he took in 701 BC, and Josephus knew it as Ecdippa."
+    - "Excavations on the mound and in its cemeteries, by I. Ben-Dor in 1941 to 1944, by M. W. Prausnitz from the late 1950s into the 1980s and by Eilat Mazar in 1988 to 1990, found a town fortified in the Middle Bronze Age and rich Phoenician tombs of the Iron Age, with pottery, jewellery and clay figurines; the harbour was in use through the Persian, Hellenistic and Roman periods. Today Achziv is a national park on the coast of Israel north of Nahariya, with the mound, the beaches and the houses of the village of az-Zib that stood there until 1948."
+  ru:
+    - "Ахзив — финикийский портовый городок на берегу Галилеи, примерно в 14 км к северу от Акко, где поток Кзив впадает в море; холм, Тель-Ахзив, сохранил имя как Эз-Зиб. Книга Иисуса Навина делает его концом предела Асира: предел поворачивает к Хоссе «и оканчивается у моря, в местечке Ахзиве». Книга Судей признаёт, что Асир его так и не взял: «И Асир не изгнал жителей Акко», а с ними и «жителей Сидона и Ахлава, Ахзива». Он остался финикийским. Сеннахирим называет Акзибу среди городов Лули, царя Сидонского, взятых им в 701 г. до н. э., а Иосиф Флавий знал его как Экдиппу."
+    - "Раскопки на холме и в его некрополях — И. Бен-Дора в 1941–1944 годах, М. Праусница с конца 1950-х по 1980-е годы и Эйлат Мазар в 1988–1990 годах — открыли город, укреплённый ещё в среднем бронзовом веке, и богатые финикийские гробницы железного века с керамикой, украшениями и глиняными фигурками; гавань служила и в персидское, эллинистическое и римское время. Сегодня Ахзив — национальный парк на побережье Израиля к северу от Нагарии, с холмом, пляжами и домами деревни Эз-Зиб, стоявшей здесь до 1948 года."
+scripture:
+  - Josh.19.29
+  - Judg.1.31
+sources:
+  - "Sennacherib's third campaign, the Rassam cylinder (RINAP 3/1, Sennacherib 4) (the towns of Luli of Sidon)"
+  - "Josephus, Jewish War 1.257"
+  - "M. W. Prausnitz, 'Achzib', in E. Stern (ed.), The New Encyclopedia of Archaeological Excavations in the Holy Land, vol. 1 (1993)"
+  - "E. Mazar, The Phoenicians in Achziv: The Southern Cemetery (Cuadernos de Arqueología Mediterránea 7, 2001)"
+status: checked

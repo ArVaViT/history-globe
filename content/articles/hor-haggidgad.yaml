@@ -1,0 +1,25 @@
+# Overview article (ADR 0007). Mainstream facts only; the station is said to be unlocated, the name-based proposal reported as such; the difference between the two itineraries is noted without resolving it.
+id: hor-haggidgad
+place: a5e36e6
+title:
+  en: "Hor-haggidgad"
+  ru: "Хор-Агидгад"
+body:
+  en:
+    - "Hor-haggidgad was a camping place of Israel on the march from Kadesh toward the Red Sea, named in the list of stations in Numbers: “they removed from Bene-jaakan, and encamped at Hor-hagidgad. And they went from Hor-hagidgad, and pitched in Jotbathah”. Deuteronomy, telling the same stretch of road in a short note on the death of Aaron, calls it Gudgodah: “From thence they journeyed unto Gudgodah; and from Gudgodah to Jotbath, a land of rivers of waters”. The two lists do not agree in the order of the stations before it, Moseroth and Bene-jaakan, and Deuteronomy places Aaron's death at Moserah while Numbers places it on Mount Hor; how the two accounts fit together is debated. Hor means a hole or cave, so the name is “the cave of Gidgad”."
+    - "The place has not been found. The stations between Kadesh and Ezion-geber lie somewhere in the mountains of the eastern Sinai or the western Negev and the Arabah, and the name is the only clue: in the nineteenth century travellers matched it with the Wadi Ghadhaghidh, written Khadakhid, in the eastern Sinai, and the map follows that; others, taking Jotbathah to be in the southern Arabah, look for Hor-haggidgad in the Arabah and the Negev, around En Orahot or the spring of Et-Taba. Nothing from Israel's time has been found at any of them."
+    - "Eusebius lists Gadgad only as a mountain and a station in the desert. The places in question lie today on both sides of the border between Egypt's Sinai and Israel's Negev and Arabah, desert crossed by a few tracks and the road down to the gulf."
+  ru:
+    - "Хор-Агидгад был стоянкой Израиля на пути от Кадеса к Чермному морю, названной в перечне станов в книге Чисел: «И отправились из Бене-Яакана и расположились станом в Хор-Агидгаде. И отправились из Хор-Агидгада и расположились станом в Иотвафе». Второзаконие, рассказывая тот же отрезок пути в короткой заметке о смерти Аарона, зовёт его Гудгод: «Оттуда отправились в Гудгод, из Гудгода в Иотвафу, в землю, где потоки вод». Два перечня расходятся в порядке станов перед ним, Мосерофа и Бене-Яакана, и Второзаконие помещает смерть Аарона в Мозере, а книга Чисел — на горе Ор; как согласовать два рассказа, спорят. Хор значит «пещера», так что имя означает «пещера Гидгада»."
+    - "Место не найдено. Станы между Кадесом и Ецион-Гавером лежат где-то в горах восточного Синая или западного Негева и Аравы, и имя — единственная подсказка: в XIX веке путешественники сопоставили его с Вади-Гадагид, пишется и Хадахид, в восточном Синае, и карта следует этому; другие, помещая Иотвафу в южной Араве, ищут Хор-Агидгад в Араве и Негеве, у Эйн-Орахота или источника Эт-Таба. Ничего от времён Израиля не найдено ни в одном из этих мест."
+    - "Евсевий называет Гадгад только горой и стоянкой в пустыне. Эти места лежат сегодня по обе стороны границы египетского Синая с израильскими Негевом и Аравой, в пустыне, которую пересекают несколько троп и дорога к заливу."
+scripture:
+  - Num.33.32-Num.33.33
+  - Deut.10.6-Deut.10.7
+sources:
+  - "E. Robinson, Biblical Researches in Palestine, Mount Sinai and Arabia Petraea (1841)"
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "B. A. Levine, Numbers 21–36 (Anchor Bible 4A, 2000)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+  - "Eusebius, Onomasticon, s.v. Gadgad"
+status: checked

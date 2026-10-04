@@ -1,0 +1,23 @@
+# Overview article (ADR 0007). Mainstream facts only; Sheshach is read, as nearly all commentators read it, as an atbash cipher for Babel; the absence of the phrase from the Greek of 25:26 is noted.
+id: sheshach
+place: ab58876
+title:
+  en: "Sheshach"
+  ru: "Сесах"
+body:
+  en:
+    - "Sheshach is not a separate city but a name for Babylon, used twice in Jeremiah. At the end of the list of nations who must drink the cup of the LORD's wrath comes “the king of Sheshach”, who “shall drink after them”; and in the oracle against Babylon the parallel lines make the meaning plain: “How is Sheshach taken! and how is the praise of the whole earth surprised! how is Babylon become an astonishment among the nations!” The form is explained as an atbash, a scribal cipher that replaces each letter of the Hebrew alphabet with its mirror from the other end: the consonants of Babel, b-b-l, become sh-sh-k. In the Hebrew of the first verse of that chapter the same device turns Kasdim, the Chaldeans, into Leb-kamai, which the translations render as a phrase."
+    - "Why the cipher was used is not known; by the time of the oracle against Babylon there was nothing to hide, and it may be a learned play rather than a disguise. The Greek translation of Jeremiah lacks the phrase about the king of Sheshach in chapter 25, and some take it for a later addition. Since Sheshach is Babylon, the map shows it at Babylon, whose ruins lie on the Euphrates south of Baghdad near Hillah in Iraq."
+  ru:
+    - "Сесах — не отдельный город, а имя Вавилона, дважды встречающееся у Иеремии. В конце перечня народов, которые должны испить чашу гнева Господня, стоит царь Сесаха: «а царь Сесаха выпьет после них»; а в пророчестве против Вавилона параллельные строки делают смысл ясным: «Как взят Сесах, и завоевана слава всей земли! Как сделался Вавилон ужасом между народами!» Форму объясняют как атбаш — писцовый шифр, заменяющий каждую букву еврейского алфавита её зеркальной парой с другого конца: согласные имени Бавель, б-б-л, становятся ш-ш-к. В еврейском тексте первого стиха той же главы тем же приёмом Касдим, халдеи, превращаются в Лев-Камай, который переводы передают как обычные слова."
+    - "Зачем понадобился шифр, неизвестно: ко времени пророчества против Вавилона скрывать было уже нечего, и это может быть учёной игрой, а не тайнописью. В греческом переводе Иеремии слов о царе Сесаха в 25-й главе нет, и некоторые считают их поздней вставкой. Раз Сесах — это Вавилон, на карте он показан на месте Вавилона, чьи развалины лежат на Евфрате к югу от Багдада, близ Хиллы в Ираке."
+scripture:
+  - Jer.25.26
+  - Jer.51.41
+  - Jer.51.1
+sources:
+  - "W. L. Holladay, Jeremiah 1 (Hermeneia, 1986)"
+  - "W. L. Holladay, Jeremiah 2 (Hermeneia, 1989)"
+  - "J. R. Lundbom, Jeremiah 21–36 (Anchor Bible 21B, 2004)"
+  - "W. McKane, A Critical and Exegetical Commentary on Jeremiah, vol. 1 (1986)"
+status: checked

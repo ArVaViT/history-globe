@@ -1,0 +1,23 @@
+# Overview article (ADR 0007). Mainstream facts only; Tel Gat Hefer beside Mashhad is the generally accepted site, supported by Jerome; the tomb of Jonah is given as tradition.
+id: gath-hepher
+place: ac51cec
+title:
+  en: "Gath-hepher"
+  ru: "Гафхефер"
+body:
+  en:
+    - "Gath-hepher was a town of Lower Galilee on the border of Zebulun, where the line “passeth on along on the east to Gittah-hepher”, as the King James Version spells it there. It is remembered as the home of the prophet Jonah: Jeroboam II restored the border of Israel “according to the word of the LORD God of Israel, which he spake by the hand of his servant Jonah, the son of Amittai, the prophet, which was of Gath-hepher”. This is the same Jonah son of Amittai to whom the word of the Lord came in the book of Jonah, and it places him in the first half of the eighth century BC."
+    - "The site is generally accepted as Tel Gat Hefer (Khirbet ez-Zurra), a mound beside the village of Mashhad about 4.5 km north-east of Nazareth. Jerome wrote that Geth lay two miles from Sepphoris on the road to Tiberias and that Jonah's tomb was shown there, and the mosque of Nabi Yunis in Mashhad still keeps the tradition. The mound is known mainly from surface survey, and little is known of the town beyond these two verses."
+  ru:
+    - "Гафхефер — город Нижней Галилеи на границе Завулона, где предел «проходит к востоку в Геф-Хефер», как Синодальный перевод называет его там. Его помнят как родину пророка Ионы: Иеровоам II восстановил пределы Израиля «по слову Господа Бога Израилева, которое Он изрек чрез раба Своего Иону, сына Амафиина, пророка из Гафхефера». Это тот же Иона, сын Амафиин, к которому было слово Господне в книге Ионы, и это помещает его в первую половину VIII века до н. э."
+    - "Место обычно отождествляют с Тель-Гат-Хефером (Хирбет-эз-Зурра), холмом у селения Машхад примерно в 4,5 км к северо-востоку от Назарета. Иероним писал, что Геф лежит в двух милях от Сепфориса по дороге в Тивериаду и что там показывают гробницу Ионы, и мечеть Наби-Юнис в Машхаде хранит это предание поныне. Холм известен главным образом по наземным обследованиям, и о городе известно немногим больше этих двух стихов."
+scripture:
+  - Josh.19.13
+  - 2Kgs.14.25
+  - Jonah.1.1
+sources:
+  - "Jerome, Commentary on Jonah, prologue"
+  - "Z. Gal, Lower Galilee during the Iron Age (1992)"
+  - "M. Cogan and H. Tadmor, II Kings (Anchor Bible, 1988)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+status: checked

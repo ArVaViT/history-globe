@@ -1,0 +1,27 @@
+# Overview article (ADR 0007). Mainstream facts only; the site is unknown and the app's candidates are given without choosing; the reading of the Mesha Stele's line on Kerioth is named as debated.
+id: kerioth
+place: a2d84de
+title:
+  en: "Kerioth"
+  ru: "Кериоф"
+body:
+  en:
+    - "Kerioth, “towns”, was a city of Moab, named in the Bible only by the prophets. Amos foretold that God would send a fire upon Moab “and it shall devour the palaces of Kerioth: and Moab shall die with tumult, with shouting, and with the sound of the trumpet”. Jeremiah's oracle on Moab brings judgement “upon Kerioth, and upon Bozrah, and upon all the cities of the land of Moab, far or near”, and later cries, “Kerioth is taken, and the strong holds are surprised”. The Hebrew word can also be read as a common noun, and the Synodal Bible does so in that last place, “the cities will be taken”. The palaces of Amos and the fortresses of Jeremiah mark Kerioth as one of the chief towns of the kingdom."
+    - "Outside the Bible, the stele of King Mesha, set up in the ninth century BC and found at Dhiban in 1868, tells how he took Ataroth from the men of Gad, killed its people and resettled it with men of Sharon and Maharith, and how he dragged a captured object, the altar-hearth of its god or the chief of the town (the reading is debated), “before Chemosh in Kerioth”. Kerioth was thus a seat of Chemosh, the god of Moab, and the stele puts it within reach of Ataroth, on the tableland north of the Arnon."
+    - "The site is not known. The usual candidate is el-Qereiyat (Qurayyat), a village between Dibon and Ataroth whose name keeps the ancient one; Khirbet Aleiyan to the east has also been proposed. Older scholars identified Kerioth with Ar, the ancient capital of Moab, or with Kir-hareseth (Kerak), taking Jeremiah's pairing of Kerioth and Bozrah to mean the great cities of the land; these views now have few followers, and the map shows all the candidates without choosing. Kerioth-hezron in the Negeb of Judah, from which some derive the name of Judas Iscariot, is a different place. The Moabite Kerioth, wherever it stood, lies today in the Madaba Governorate of Jordan."
+  ru:
+    - "Кериоф, «города», был городом Моава, названным в Библии только у пророков. Амос предрёк, что Бог пошлёт огонь на Моава, «и пожрет чертоги Кериофа, и погибнет Моав среди разгрома с шумом, при звуке трубы». Пророчество Иеремии о Моаве несёт суд «на Кериоф, и на Восор, и на все города земли Моавитской, дальние и ближние», а дальше восклицает, что Кериоф взят и крепости завоёваны. Еврейское слово можно читать и как нарицательное, и Синодальный перевод так и делает в этом последнем месте: «Города будут взяты, и крепости завоеваны». Чертоги у Амоса и крепости у Иеремии показывают, что Кериоф был одним из главных городов царства."
+    - "Вне Библии стела царя Месы, поставленная в IX веке до н. э. и найденная в Дивоне в 1868 году, рассказывает, как он взял Атароф у сынов Гада, перебил его жителей и заселил его людьми из Шарона и Махарифа, а захваченный предмет — жертвенный очаг его бога или вождя города (чтение спорно) — приволок «пред Хамосом в Кериоф». Кериоф, таким образом, был местом почитания Хамоса, бога Моава, и стела помещает его недалеко от Атарофа, на плоскогорье к северу от Арнона."
+    - "Место неизвестно. Обычный кандидат — эль-Курайят, деревня между Дивоном и Атарофом, в имени которой живёт древнее; предлагали и Хирбет-Алейян восточнее. Учёные прошлого отождествляли Кериоф с Аром, древней столицей Моава, или с Кирхарешетом (Кераком), понимая пару Кериоф и Восор у Иеремии как великие города страны; теперь у этих взглядов мало сторонников, и на карте показаны все кандидаты без выбора между ними. Кириаф-Хецрон в Негеве Иудином, от которого некоторые производят прозвище Иуды Искариота, — другое место. Моавитский Кериоф, где бы он ни стоял, лежит сегодня в провинции Мадаба в Иордании."
+scripture:
+  - Jer.48.24
+  - Jer.48.41
+  - Amos.2.2
+  - Josh.15.25
+sources:
+  - "The Mesha Stele (Louvre AO 5066), lines 10-14; translation by K. A. D. Smelik in W. W. Hallo and K. L. Younger (eds.), The Context of Scripture, vol. 2 (2000)"
+  - "J. A. Dearman (ed.), Studies in the Mesha Inscription and Moab (1989)"
+  - "B. Routledge, Moab in the Iron Age: Hegemony, Polity, Archaeology (2004)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

@@ -1,0 +1,24 @@
+# Overview article (ADR 0007). Mainstream facts only; this id covers the border Shihor of Joshua 13 and 1 Chronicles 13; the Nile branch and the Wadi el-Arish are given as the two views, the candidates on the map named, none chosen.
+id: shihor
+place: a305f43
+title:
+  en: "Shihor"
+  ru: "Сихор"
+body:
+  en:
+    - "Shihor marks the south-western end of the promised land in two passages. Joshua describes the land that still remained to be taken as running “from Sihor, which is before Egypt, even unto the borders of Ekron northward”, the country of the five lords of the Philistines; and when David brought up the ark from Kirjath-jearim he gathered all Israel “from Shihor of Egypt even unto the entering of Hemath”, an idiom for the whole land from end to end. The name is Egyptian, usually explained as “the waters of Horus”, and elsewhere in the prophets Shihor plainly means the Nile or one of its arms."
+    - "Which water is meant at the border is debated. Many take it to be the Pelusiac branch, the easternmost arm of the Nile in the Delta, which ran out to the sea near Pelusium; others think the border lay at the Wadi el-Arish, the Brook of Egypt of other border lists, and that Shihor is here another name for it; a few take it simply as the Nile. The map shows all three. The Pelusiac branch silted up long ago and survives only as traces in the north-eastern Delta near Port Said; the Wadi el-Arish reaches the sea at the city of El-Arish in northern Sinai."
+  ru:
+    - "Сихор отмечает юго-западный край обетованной земли в двух отрывках. Книга Иисуса Навина описывает ещё не занятую землю как простирающуюся «от Сихора, что пред Египтом, до пределов Екрона к северу», — страну пяти владельцев Филистимских; а когда Давид переносил ковчег из Кириаф-Иарима, он собрал всех израильтян «от Шихора Египетского до входа в Емаф» — оборот, означающий всю землю из конца в конец. Имя египетское, его обычно толкуют как «воды Гора», и в других местах у пророков Сихор ясно означает Нил или один из его рукавов."
+    - "Какая вода имеется в виду на границе, спорно. Многие считают, что это Пелусийский рукав — самый восточный рукав Нила в Дельте, впадавший в море у Пелусия; другие думают, что граница проходила по Вади-Эль-Ариш, Потоку Египетскому других описаний границ, и что Сихор здесь — другое его имя; некоторые видят в нём просто Нил. На карте показаны все три варианта. Пелусийский рукав давно занесло, и от него остались лишь следы на северо-востоке Дельты близ Порт-Саида; Вади-Эль-Ариш выходит к морю у города Эль-Ариш на севере Синая."
+scripture:
+  - Josh.13.2-Josh.13.3
+  - 1Chr.13.5
+  - Isa.23.3
+  - Jer.2.18
+sources:
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+  - "N. Na'aman, 'The Brook of Egypt and Assyrian Policy on the Border of Egypt', Tel Aviv 6 (1979)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+  - "R. G. Boling and G. E. Wright, Joshua (Anchor Bible 6, 1982)"
+status: checked

@@ -1,3 +1,4 @@
+import { isLocale } from "@hg/model";
 import type { Camera, Engine } from "@hg/core";
 import { chapterFocus } from "./chapter";
 import type { LoadedData } from "./data";
@@ -69,8 +70,7 @@ export function attachEmbed(
       locale?: unknown;
     };
     if (m.v !== 1) return;
-    if (m.type === "hg:set-locale" && (m.locale === "ru" || m.locale === "en"))
-      engine.setLocale(m.locale);
+    if (m.type === "hg:set-locale" && isLocale(m.locale)) engine.setLocale(m.locale);
     if (m.type !== "hg:set-view" || typeof m.view !== "object" || m.view === null) return;
     // What already holds is left alone: no flight for a view the map already shows.
     const v = m.view;

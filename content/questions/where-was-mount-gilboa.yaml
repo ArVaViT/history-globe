@@ -1,0 +1,26 @@
+id: where-was-mount-gilboa
+question:
+  en: "Where is Mount Gilboa, where Saul died?"
+  ru: "Где находится гора Гелвуй, где погиб Саул?"
+answer:
+  en:
+    - "Mount Gilboa is the ridge of hills on the south-eastern side of the valley of Jezreel, in northern Israel with its southern slopes in the West Bank, running from near Jezreel south-eastward and then south into the hills of Samaria, and falling steeply towards Beth-shan and the Jordan valley. The map's point stands on the southern part of the ridge, about 11 km south-west of Beth-shan, 16 km south-east of Jezreel and 75 km north of Jerusalem in a straight line. History Globe has an article on Mount Gilboa; this answer keeps to where it is and where Saul's last battle was fought."
+    - "The armies faced each other across the eastern valley: “the Philistines gathered themselves together, and came and pitched in Shunem: and Saul gathered all Israel together, and they pitched in Gilboa”, and Israel camped “by a fountain which is in Jezreel”, probably the spring of Harod at the ridge's north-western foot. In the battle “the men of Israel fled from before the Philistines, and fell down slain in mount Gilboa”; Saul's three sons were killed and Saul fell on his sword. The next day the Philistines “found Saul and his three sons fallen in mount Gilboa” and fastened his body to the wall of Beth-shan, from which the men of Jabesh-gilead, about 20 km away across the Jordan, “went all night” to take it down. The map's year is about 1010 BC, a conventional point."
+    - "David's lament for Saul and Jonathan curses the place: “Ye mountains of Gilboa, let there be no dew, neither let there be rain, upon you, nor fields of offerings: for there the shield of the mighty is vilely cast away.” The plural fits the ridge, a line of summits rather than one peak. Its Arabic name, Jebel Fuqu'a, is shared with the village of Faqqua on its southern slopes, and Eusebius knew a village Gelbus six miles from Scythopolis, as Beth-shan was then called. Where on the ridge the battle ended is not known: the text says only that Israel fled and fell on the mountain."
+  ru:
+    - "Гора Гелвуй — гряда холмов на юго-восточной стороне Изреельской долины, на севере Израиля, южными склонами уходящая на Западный берег; она тянется от окрестностей Изрееля на юго-восток, затем на юг, к горам Самарии, и круто обрывается к Беф-Сану и долине Иордана. Точка карты стоит на южной части гряды, примерно в 11 км к юго-западу от Беф-Сана, в 16 км к юго-востоку от Изрееля и в 75 км к северу от Иерусалима по прямой. В History Globe есть статья о горе Гелвуй; здесь ответ о том, где она находится и где шла последняя битва Саула."
+    - "Войска стояли друг против друга через восточную часть долины: «собрались Филистимляне и пошли и стали станом в Сонаме; собрал и Саул весь народ Израильский, и стали станом на Гелвуе», а Израиль расположился «у источника, что в Изрееле», вероятно у источника Харода у северо-западного подножия гряды. В битве «побежали мужи Израильские от Филистимлян и пали пораженные на горе Гелвуе»; три сына Саула были убиты, а сам он бросился на меч. На другой день филистимляне «нашли Саула и трех сыновей его, павших на горе Гелвуйской», и повесили его тело на стене Беф-Сана, откуда люди Иависа Галаадского, примерно в 20 км за Иорданом, «шли всю ночь», чтобы снять его. Год карты — около 1010 г. до н. э., условная точка."
+    - "Плач Давида о Сауле и Ионафане проклинает это место: «Горы Гелвуйские! да не сойдет ни роса, ни дождь на вас, и да не будет на вас полей с плодами, ибо там повержен щит сильных». Множественное число подходит к гряде — ряду вершин, а не одной горе. Её арабское имя, Джебель-Фукуа, носит и деревня Факкуа на южных склонах, а Евсевий знал селение Гелвус в шести милях от Скифополя, как тогда назывался Беф-Сан. Где на гряде кончилась битва, неизвестно: текст говорит лишь, что Израиль бежал и пал на горе."
+map:
+  place: acf57c5
+  year: "c. 1010 BC"
+  ref: 1Sam.31.1
+scripture: [1Sam.28.4, 1Sam.29.1, 1Sam.31.1-1Sam.31.13, 2Sam.1.21, 1Chr.10.1-1Chr.10.12]
+sources:
+  - "Eusebius, Onomasticon, s.v. Gelboue (C. U. Wolf's translation, no. 344)"
+  - "D. Baly, The Geography of the Bible (rev. ed., 1974)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+  - "P. K. McCarter, I Samuel (Anchor Bible, 1980)"
+  - "History Globe article “Mount Gilboa” and History Globe battles (gilboa c. 1010 BC)"
+  - "Straight-line distances between the places' points (Mount Gilboa, Beth-shan, Jezreel, Jabesh-gilead, Jerusalem): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

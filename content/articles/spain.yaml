@@ -1,0 +1,23 @@
+# Overview article (ADR 0007). Mainstream facts only; whether Paul reached Spain is given as unknown, with the early witnesses for it named as such.
+id: spain
+place: a3f0f69
+title:
+  en: "Spain"
+  ru: "Испания"
+body:
+  en:
+    - "Spain, the Roman Hispania, was the Iberian peninsula at the western end of the Mediterranean, conquered by Rome over two centuries from the Second Punic War and organised under Augustus into three provinces: Tarraconensis, Baetica and Lusitania. By Paul's day its coastal cities, Tarraco, Corduba, Gades and others, were thoroughly Roman, and Seneca and Lucan came from Corduba. In the New Testament Spain appears only in Paul's plan, written to the church at Rome: “Whensoever I take my journey into Spain, I will come to you”, and once the collection for Jerusalem was delivered, “I will come by you into Spain.”"
+    - "Paul wanted Rome as a base for a new mission in the west, where, as far as is known, no one had yet preached; Jewish communities in Spain are not securely attested before the later Roman centuries. Whether he ever got there is not known. Acts ends with Paul a prisoner in Rome. About AD 96 the letter of Clement of Rome says that he reached “the limit of the west”, and the Muratorian fragment, probably of the late second century, speaks of his journey to Spain; many scholars take these as real memory, others as inference from Romans. Today Hispania is Spain and Portugal."
+  ru:
+    - "Испания, римская Хиспания, — Пиренейский полуостров на западном краю Средиземного моря, который Рим завоёвывал два столетия начиная со Второй Пунической войны и который при Августе был разделён на три провинции: Тарраконскую, Бетику и Лузитанию. Ко времени Павла её приморские города — Тарракон, Кордуба, Гадес и другие — были вполне римскими, а Сенека и Лукан родились в Кордубе. В Новом Завете Испания появляется только в замысле Павла, о котором он пишет церкви в Риме: «как только предприму путь в Испанию, приду к вам», а доставив сбор в Иерусалим, «я отправлюсь через ваши места в Испанию»."
+    - "Павел хотел сделать Рим опорой для новой миссии на западе, где, насколько известно, ещё никто не проповедовал; иудейские общины в Испании надёжно засвидетельствованы лишь в позднеримские века. Попал ли он туда, неизвестно. Книга Деяний заканчивается тем, что Павел в Риме под стражей. Около 96 года послание Климента Римского говорит, что он дошёл «до предела запада», а Мураториев фрагмент, вероятно конца II века, упоминает его путешествие в Испанию; многие учёные видят в этом подлинную память, другие — вывод из Послания к Римлянам. Сегодня Хиспания — это Испания и Португалия."
+scripture:
+  - Rom.15.23-Rom.15.24
+  - Rom.15.28
+sources:
+  - "Clement of Rome, 1 Clement 5.7"
+  - "The Muratorian Fragment"
+  - "J. A. Fitzmyer, Romans (Anchor Bible 33, 1993)"
+  - "R. Jewett, Romans (Hermeneia, 2007)"
+  - "S. J. Keay, Roman Spain (1988)"
+status: checked

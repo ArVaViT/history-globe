@@ -1,0 +1,31 @@
+# Overview article (ADR 0007). Mainstream facts only; Tel Kedesh in Upper Galilee is the accepted site for Kedesh in Galilee; whether Barak's Kedesh-naphtali is the same town is named as debated.
+id: kedesh
+place: a321cb8
+title:
+  en: "Kedesh"
+  ru: "Кедес"
+body:
+  en:
+    - "Kedesh in Galilee was a Canaanite royal city in the hills of Upper Galilee, west of the Hula valley, at Tel Kedesh, a large double mound near today's border with Lebanon. Its name means “holy place”. Joshua counts “The king of Kedesh” among the kings he beat; the town fell to Naphtali, was made the northernmost of the cities of refuge, “Kedesh in Galilee in mount Naphtali”, and was given to the Levites of Gershon. Barak son of Abinoam, whom Deborah summoned “out of Kedesh-naphtali” to gather Zebulun and Naphtali, is usually taken to be from this Kedesh, though some place his muster at a Kedesh above the Sea of Galilee, nearer Mount Tabor."
+    - "In the days of Pekah “came Tiglath-pileser king of Assyria, and took Ijon, and Abel-beth-maachah, and Janoah, and Kedesh, and Hazor, and Gilead, and Galilee, all the land of Naphtali, and carried them captive to Assyria”, in 733–732 BC. The town then passed to the Phoenicians: in 145 BC Jonathan Maccabeus beat the generals of Demetrius II on the plain of Hazor and pursued them to Kedesh, and Josephus knew Cydasa as a strong village of the Tyrians, always at odds with the Galileans, where Titus camped in AD 67 before taking Gischala."
+    - "Excavations have shown the town of those later centuries. Sharon Herbert and Andrea Berlin, digging for the universities of Michigan and Minnesota in 1997–2012, uncovered on the lower mound a great administrative building of the Persian and Hellenistic periods, with an archive of more than two thousand clay sealings abandoned about 145 BC, the year of Jonathan's campaign. On the upper slope a Roman temple of the second and third centuries AD, whose dedication of AD 117/118 names the “holy god of the sky”, probably Baal-shamin, was studied by Tel Aviv University; its walls still stand several metres high. The site is today in Israel's Upper Galilee near Kibbutz Malkia, with the temple and tombs open to visitors."
+  ru:
+    - "Кедес в Галилее — ханаанский царский город в горах Верхней Галилеи, к западу от долины Хула, на Тель-Кедеше, большом двойном холме близ нынешней границы с Ливаном. Имя значит «святое место». Иисус Навин считает царя Кедеса среди разбитых им царей; город достался Неффалиму, был сделан самым северным из городов убежища — «Кедес в Галилее на горе Неффалимовой» — и отдан левитам из рода Гирсона. Варака, сына Авиноамова, которого Девора призвала «из Кедеса Неффалимова» собрать Завулона и Неффалима, обычно считают уроженцем этого Кедеса, хотя некоторые помещают его сбор в Кедес над Галилейским морем, ближе к Фавору."
+    - "Во дни Факея «пришел Феглаффелласар, царь Ассирийский, и взял Ион, Авел-Беф-Мааху, и Ианох, и Кедес, и Асор, и Галаад, и Галилею, всю землю Неффалимову, и переселил их в Ассирию» — в 733–732 годах до н. э. Затем город перешёл к финикиянам: в 145 году до н. э. Ионафан Маккавей разбил полководцев Деметрия II на равнине Асора и преследовал их до Кедеса, а Иосиф Флавий знал Кидасу как сильное селение Тирян, всегда враждовавшее с галилеянами, где Тит в 67 году н. э. стоял станом перед взятием Гисхалы."
+    - "Раскопки показали город этих поздних веков. Шарон Герберт и Андреа Берлин, копавшие для университетов Мичигана и Миннесоты в 1997–2012 годах, открыли на нижнем холме большое административное здание персидского и эллинистического времени с архивом более чем из двух тысяч глиняных оттисков печатей, брошенным около 145 года до н. э., в год похода Ионафана. На верхнем склоне римский храм II–III веков н. э., надпись которого 117/118 года называет «святого бога неба», вероятно Баал-Шамина, изучал Тель-Авивский университет; его стены до сих пор стоят на несколько метров в высоту. Сегодня это Верхняя Галилея в Израиле близ киббуца Малкия, и храм с гробницами открыты для посетителей."
+scripture:
+  - Josh.12.22
+  - Josh.19.37
+  - Josh.20.7
+  - Josh.21.32
+  - Judg.4.6
+  - Judg.4.9-Judg.4.10
+  - 2Kgs.15.29
+  - 1Chr.6.76
+sources:
+  - "1 Maccabees 11.63-74"
+  - "Josephus, Jewish War 2 (Cydasa, a village of the Tyrians); 4 (Titus at Cydasa before Gischala)"
+  - "S. C. Herbert and A. M. Berlin, 'A New Administrative Center for Persian and Hellenistic Galilee: Preliminary Report of the University of Michigan/University of Minnesota Excavations at Kedesh', Bulletin of the American Schools of Oriental Research 329 (2003)"
+  - "M. Fischer, A. Ovadiah and I. Roll, 'The Roman Temple at Kedesh, Upper Galilee: A Preliminary Study', Tel Aviv 11 (1984)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

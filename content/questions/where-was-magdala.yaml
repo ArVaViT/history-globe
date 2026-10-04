@@ -1,0 +1,27 @@
+id: where-was-magdala
+question:
+  en: "Where was Magdala, the town of Mary Magdalene?"
+  ru: "Где находилась Магдала, родной город Марии Магдалины?"
+answer:
+  en:
+    - "Magdala lay on the western shore of the Sea of Galilee below the cliffs of Mount Arbel, where the Arab village of al-Majdal stood until 1948 and the excavated town can be visited today beside Migdal in Israel; the map point stands on it. It is about 7 km north of Tiberias and 8 km south-west of Capernaum in a straight line, at the southern edge of the plain of Gennesaret. Its name is the Aramaic for “tower”. Most scholars identify it with Taricheae, the fish-salting town of Josephus, though Pliny puts Taricheae at the south end of the lake, so the identification is not certain."
+    - "The Gospels never describe an event in Magdala itself; the town is known through the woman named after it. Luke lists among those who followed Jesus “Mary called Magdalene, out of whom went seven devils”, with other women who ministered to him of their substance; she stood by the cross, and Mark says the risen Jesus “appeared first to Mary Magdalene”. After feeding the four thousand Jesus came, in the King James text, “into the coasts of Magdala”; many manuscripts read Magadan, and Mark has “the parts of Dalmanutha”, which has not been found. The later Western picture of Mary as a repentant harlot comes from a sermon of Gregory the Great in 591, which joined her with the sinful woman of Luke 7; the Gospels do not say so."
+    - "Excavations since 2007, by the Franciscans and from 2009 by the Israel Antiquities Authority, have uncovered a prosperous lakeside town with a harbour, streets and small plastered pools that may have served the fish trade. Its synagogue of the first century AD, with painted walls and a mosaic floor, is one of the few in Galilee from Jesus' time; in it stood a carved stone, the Magdala stone, bearing one of the earliest known reliefs of the seven-branched menorah. Josephus tells how Titus took Taricheae in AD 67, and the synagogue quarter was abandoned at the time of the revolt."
+  ru:
+    - "Магдала лежала на западном берегу моря Галилейского, под скалами горы Арбел, где до 1948 г. стояло арабское селение аль-Мадждаль; сегодня раскопанный город можно увидеть рядом с израильским Мигдалем, и точка карты стоит на нём. Отсюда примерно 7 км до Тивериады к югу и 8 км до Капернаума к северо-востоку по прямой; город стоял у южного края Геннисаретской равнины. Его имя по-арамейски значит «башня». Большинство учёных отождествляет его с Тарихеей, городом солёной рыбы у Иосифа Флавия, но Плиний помещает Тарихею у южного конца озера, так что отождествление не бесспорно."
+    - "Ни одного события в самой Магдале Евангелия не описывают; город известен благодаря женщине, названной по нему. Среди женщин, следовавших за Иисусом и служивших Ему имением своим, Лука называет первой ту, что дала имя городу: «Мария, называемая Магдалиною, из которой вышли семь бесов»; она стояла у креста, и, по Марку, воскресший Иисус «явился сперва Марии Магдалине». После насыщения четырёх тысяч Иисус, по Синодальному тексту, «прибыл в пределы Магдалинские»; во многих рукописях стоит Магадан, а у Марка — «пределы Далмануфские», которых не нашли. Западный образ Марии как раскаявшейся блудницы восходит к проповеди Григория Великого 591 г., соединившей её с грешницей из 7-й главы Луки; Евангелия этого не говорят."
+    - "Раскопки францисканцев с 2007 г. и Управления древностей Израиля с 2009 г. открыли зажиточный приозёрный город с гаванью, улицами и небольшими оштукатуренными бассейнами, которые, возможно, служили рыбному промыслу. Его синагога I века н. э. с расписными стенами и мозаичным полом — одна из немногих в Галилее времён Иисуса; в ней стоял резной камень, так называемый камень из Магдалы, с одним из самых ранних известных рельефов семисвечника. Иосиф Флавий рассказывает, как Тит взял Тарихею в 67 г. н. э., а квартал синагоги был оставлен во время восстания."
+map:
+  place: ad14067
+  year: "AD 30"
+  ref: Luke.8.2
+scripture: [Luke.8.1-Luke.8.3, Mark.15.40, Mark.16.9, John.20.18, Matt.15.39, Mark.8.10]
+sources:
+  - "Straight-line distances between the places' points (Magdala, Tiberias, Capernaum): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Josephus, Jewish War 3.462-542 (the fall of Taricheae in 67); Pliny the Elder, Natural History 5.71"
+  - "Gregory the Great, Homilies on the Gospels (591), on Mary Magdalene and the sinful woman"
+  - "D. Avshalom-Gorni and A. Najar, 'Migdal', Hadashot Arkheologiyot – Excavations and Surveys in Israel 125 (2013)"
+  - "R. Bauckham and S. De Luca, 'Magdala As We Now Know It', Early Christianity 6 (2015) 91-118"
+  - "R. Bauckham (ed.), Magdala of Galilee: A Jewish City in the Hellenistic and Roman Period (2018)"
+  - "History Globe article “Magdala”"
+status: checked

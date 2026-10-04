@@ -70,7 +70,6 @@
     "likely_site": "Most likely location",
     "tentative_site": "Location tentative",
     "certainty_note": "OpenBible's assessment: {{score}} of 1000",
-    "mentions": "Mentions in the Bible",
     "nt": "NT",
     "ot": "OT",
     "more": "{{count}} more",
@@ -81,7 +80,6 @@
     "nt_only": "Named only in the New Testament: faded on the map before its events.",
     "also_here": "Also here",
     "google_maps": "Google Maps",
-    "read_verse": "Read the verse",
     "photo": "Photo",
     "photo_pd": "public domain",
     "photo_shows": "Pictured: {{site}}, one of the proposed sites.",
@@ -196,8 +194,6 @@
   "error_map": "The map could not start: {{msg}}",
   "new_tab": "opens in a new tab",
   "panels": {
-    "hide": "Hide panels",
-    "show": "Show panels",
     "label": "Panels"
   },
   "legend": {
@@ -269,9 +265,6 @@
   "focus": {
     "clear": "Close and show the whole map"
   },
-  "tools": {
-    "label": "Map tools"
-  },
   "overview": {
     "title": "Overview",
     "tours": "Tours",
@@ -316,7 +309,8 @@
     "full_one": "A lesson holds up to {{count}} place",
     "full_other": "A lesson holds up to {{count}} places",
     "hint": "To make your own lesson: open a place and press “Add to a lesson” (the list icon) on its card. With two or more places, start the lesson or share its link.",
-    "remove": "Remove from the lesson"
+    "remove": "Remove from the lesson",
+    "default_title": "Your lesson"
   },
   "walls": {
     "failed": "The outlines did not load. Try opening the panel again.",
@@ -329,5 +323,23 @@
     "no_place": "Your location is not available: the browser gave none.",
     "source": "Outline from the 1864–65 Ordnance Survey of Jerusalem (C. W. Wilson) and Wikidata points; accurate to about {{m}} m.",
     "menu": "Jerusalem's walls — compare size"
+  },
+  "mapui": {
+    "km": "km",
+    "m": "m",
+    "zoom_in": "Zoom in",
+    "zoom_out": "Zoom out",
+    "north": "Reset bearing to north",
+    "sources": "Map sources",
+    "title": "Map"
+  },
+  "sheet": {
+    "notes": "Notes and questions",
+    "north": "↑ north",
+    "outline": "Outline map: name the places",
+    "km": "{{n}} km",
+    "quiz_intro": "Quiz: where did it happen? Find the passage and circle a letter.",
+    "answers": "Answers",
+    "letters": "A B C D"
   }
 }

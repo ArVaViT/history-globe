@@ -1,0 +1,36 @@
+id: where-was-caesarea-maritima
+question:
+  en: "Where was Caesarea, the city of Cornelius?"
+  ru: "Где находилась Кесария, город Корнилия?"
+answer:
+  en:
+    - "Caesarea Maritima, “Caesarea by the sea”, lies on the Mediterranean coast of Israel between Tel Aviv and Haifa, beside the modern town of Caesarea, about 87 km north-north-west of Jerusalem in a straight line; the map point stands on its ruins, now a national park. It is not Caesarea Philippi, the town at the foot of Mount Hermon where Peter confessed Jesus as the Christ, about 112 km to the north-east."
+    - "Herod the Great built the city from 22 BC on the site of a small anchorage called Strato's Tower and named it after Augustus. On a coast with no natural harbour he made one, Sebastos, with breakwaters of concrete laid in the open sea, and raised above it a temple of Rome and Augustus, a theatre, a palace on a promontory and an aqueduct. From AD 6 Caesarea was the seat of the Roman governors of Judea; a stone found in its theatre in 1961 names Pontius Pilate. Where Pilate and Paul lived and were held is told in separate questions."
+    - "In Acts the city is where the gospel first reached the gentiles. “There was a certain man in Cæsarea called Cornelius, a centurion of the band called the Italian band”; an angel told him to send to Joppa for Peter, and while Peter spoke in his house the Holy Spirit fell on all who heard. Philip the evangelist “preached in all the cities, till he came to Cæsarea” and made his home there. Herod Agrippa I died in Caesarea in AD 44, and Paul was held there two years under Felix and Festus before he sailed for Rome. Strife between the city's Greeks and Jews helped spark the revolt of AD 66; later Origen taught and Eusebius was bishop there."
+  ru:
+    - "Кесария Приморская лежит на средиземноморском берегу Израиля между Тель-Авивом и Хайфой, рядом с нынешним городком Кесария, примерно в 87 км к северо-северо-западу от Иерусалима по прямой; точка карты стоит на её развалинах, ныне национальном парке. Это не Кесария Филиппова — городок у подножия Ермона, где Пётр исповедал Иисуса Христом, примерно в 112 км к северо-востоку."
+    - "Ирод Великий строил город с 22 г. до н. э. на месте небольшой стоянки, называвшейся Башней Стратона, и назвал его в честь Августа. На берегу без естественной гавани он создал её — Себастос, с волнорезами из бетона, отлитыми прямо в открытом море, — и поставил над ней храм Ромы и Августа, театр, дворец на мысу и водопровод. С 6 г. н. э. Кесария была резиденцией римских наместников Иудеи; камень, найденный в её театре в 1961 году, называет Понтия Пилата. Где жил Пилат и где держали Павла, рассказано в отдельных вопросах."
+    - "В Деяниях этот город — место, где Евангелие впервые пришло к язычникам. «В Кесарии был некоторый муж, именем Корнилий, сотник из полка, называемого Италийским»; ангел велел ему послать за Петром в Иоппию, и когда Пётр говорил в его доме, Дух Святой сошёл на всех слушавших. Филипп благовестник, «проходя, благовествовал всем городам, пока пришел в Кесарию», и поселился там. В 44 г. н. э. в Кесарии умер Ирод Агриппа I, а Павла держали здесь два года при Феликсе и Фесте, прежде чем он отплыл в Рим. Вражда греков и иудеев города стала одним из поводов к восстанию 66 г. н. э.; позже здесь учил Ориген и был епископом Евсевий."
+map:
+  place: a58735e
+  year: "c. AD 40"
+  ref: Acts.10.1
+scripture:
+  [
+    Acts.8.40,
+    Acts.10.1-Acts.10.8,
+    Acts.10.24,
+    Acts.10.44-Acts.10.48,
+    Acts.12.19-Acts.12.23,
+    Acts.21.8,
+    Acts.23.33,
+    Acts.24.27,
+    Matt.16.13-Matt.16.16,
+  ]
+sources:
+  - "Straight-line distances between the places' points (Caesarea, Jerusalem, Caesarea Philippi): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe article “Caesarea”, History Globe tour “The apostle Peter” and History Globe questions on where Pilate lived and where Paul was imprisoned"
+  - "The Pilate stone from the theatre at Caesarea (found 1961)"
+  - "K. G. Holum, R. L. Hohlfelder, R. J. Bull and A. Raban, King Herod's Dream: Caesarea on the Sea (1988)"
+  - "L. I. Levine, Caesarea under Roman Rule (1975)"
+status: checked

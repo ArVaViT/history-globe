@@ -1,0 +1,23 @@
+# Overview article (ADR 0007). Mainstream facts only; whether the Gilgal of Elijah and Elisha is Jiljiliya or the Gilgal by Jericho is given as debated; the map leans to Jiljiliya.
+id: gilgal-elisha
+place: a6399b3
+title:
+  en: "Gilgal of Elijah and Elisha"
+  ru: "Галгал Илии и Елисея"
+body:
+  en:
+    - "This Gilgal is the starting point of Elijah's last journey and a gathering place of the prophets around Elisha. It came to pass, “when the LORD would take up Elijah into heaven by a whirlwind, that Elijah went with Elisha from Gilgal”, and from there to Beth-el, Jericho and the Jordan, where Elijah was taken up. Later “Elisha came again to Gilgal: and there was a dearth in the land; and the sons of the prophets were sitting before him”; when one of them shredded wild gourds into the pot, they cried “there is death in the pot”, and Elisha made the pottage harmless by throwing in meal."
+    - "Which Gilgal this was is debated. The famous Gilgal of Joshua lay near Jericho, but the Hebrew text says that from Gilgal “they went down to Beth-el”, and Bethel stands high in the hills, so many look for a Gilgal in the hill country instead. The usual candidate, and the map's, is Jiljiliya, a village some 12 km north of Bethel whose name keeps the old one; others hold that the route Gilgal, Bethel, Jericho, Jordan makes better sense if it began by Jericho, and that a school of prophets fits the old sanctuary there. The Gilgal of Deuteronomy, named beside Gerizim and Ebal and “the plains of Moreh”, is sometimes linked with the northern site. No excavation has decided the matter. Jiljiliya today is a small Palestinian village in the West Bank."
+  ru:
+    - "Этот Галгал — начало последнего пути Илии и место, где пророки собирались вокруг Елисея. «В то время, как Господь восхотел вознести Илию в вихре на небо, шел Илия с Елисеем из Галгала», а оттуда в Вефиль, Иерихон и к Иордану, где Илия был взят. Позже «Елисей же возвратился в Галгал. И был голод в земле той, и сыны пророков сидели пред ним»; когда один из них накрошил в котёл диких плодов, они закричали: «смерть в котле, человек Божий!», и Елисей обезвредил похлёбку, всыпав муки."
+    - "Какой это Галгал, спорно. Знаменитый Галгал Иисуса Навина лежал у Иерихона, но в еврейском тексте сказано, что из Галгала они «сошли» в Вефиль, а Вефиль стоит высоко в горах, поэтому многие ищут Галгал в нагорье. Обычный кандидат, принятый и на карте, — Джильджилия, селение примерно в 12 км к северу от Вефиля, сохранившее древнее имя; другие считают, что путь Галгал — Вефиль — Иерихон — Иордан понятнее, если он начался у Иерихона, и что школа пророков подходит к тамошнему древнему святилищу. Галгал Второзакония, названный рядом с Гаризимом и Гевалом, «близ дубравы Море», иногда связывают с северным местом. Раскопки вопроса не решили. Джильджилия сегодня — небольшое палестинское селение на Западном берегу."
+scripture:
+  - 2Kgs.2.1-2Kgs.2.2
+  - 2Kgs.4.38-2Kgs.4.41
+  - Deut.11.29-Deut.11.30
+sources:
+  - "M. Cogan and H. Tadmor, II Kings (Anchor Bible, 1988)"
+  - "C. R. Conder and H. H. Kitchener, The Survey of Western Palestine: Memoirs, vol. 2, Samaria (1882)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

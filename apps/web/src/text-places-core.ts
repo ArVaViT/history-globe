@@ -1,3 +1,4 @@
+import { escapeRegExp } from "@hg/model";
 /**
  * Finding the places a text names with the index of scripts/build-text-places.ts (the one
  * public/hg-places.js uses on other sites): only names that point to one place, in all
@@ -18,7 +19,7 @@ export function textPlacesFrom(data: {
   forms: Readonly<Record<string, string>>;
   names?: readonly string[];
 }): TextPlaces {
-  const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const esc = escapeRegExp;
   // Longest first, so «Антиохию Писидийскую» wins over «Антиохию»; «е» matches «ё» too.
   const alts = Object.keys(data.forms)
     .sort((a, b) => b.length - a.length)

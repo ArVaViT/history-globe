@@ -1,0 +1,22 @@
+id: where-was-the-land-of-nod
+question:
+  en: "Where was the land of Nod, where Cain went?"
+  ru: "Где находилась земля Нод, куда ушёл Каин?"
+answer:
+  en:
+    - "No one knows: the Bible places the land of Nod only “on the east of Eden”, and Eden itself cannot be fixed on a map, so the map shows the verse rather than a point. Genesis says that “Cain went out from the presence of the LORD, and dwelt in the land of Nod, on the east of Eden”, and that there he built a city and named it Enoch after his son. No ancient text outside Genesis and its retellings names such a country, and no attempt to match it with a real region has won acceptance."
+    - "Most commentators take the name as a play on words. Nod comes from the Hebrew verb for wandering, the same root as Cain's sentence a few verses earlier: “a fugitive and a vagabond shalt thou be in the earth”, which Cain repeats in his complaint. The land of Nod is then the land of wandering, the condition of the exile put as a place. Eusebius, following the Greek Bible's Naid, notes only that it was the land where Cain dwelt and that the name means “restlessness”."
+    - "Josephus retells the story differently: Cain, having travelled over many countries, built with his wife a city named Nod and settled there, so that in his account Nod is the name of a city. Attempts to place it somewhere east of Mesopotamia, in Iran or further into Asia, rest on guesses about Eden and have no evidence behind them. In English “the land of Nod” later became a jesting name for sleep, a pun that has nothing to do with Genesis."
+  ru:
+    - "Этого никто не знает: Библия помещает землю Нод лишь «на восток от Едема», а сам Едем на карте не найти, поэтому карта показывает стих, а не точку. Книга Бытия говорит: «И пошел Каин от лица Господня и поселился в земле Нод, на восток от Едема», и там он построил город и назвал его Енох по имени сына. Ни один древний текст, кроме Бытия и его пересказов, такой страны не называет, и ни одна попытка связать её с реальной областью не получила признания."
+    - "Большинство толкователей видят в названии игру слов. Нод происходит от еврейского глагола «скитаться» — того же корня, что и приговор Каину несколькими стихами раньше: «ты будешь изгнанником и скитальцем на земле», и Каин повторяет эти слова в своей жалобе. Земля Нод тогда — земля скитания, участь изгнанника, названная как место. Евсевий, следуя греческому «Наид», отмечает лишь, что это земля, где жил Каин, и что имя значит «беспокойство»."
+    - "Иосиф Флавий пересказывает историю иначе: Каин, пройдя многие страны, построил с женой город по имени Нод и поселился в нём, так что у него Нод — название города. Попытки поместить его где-то к востоку от Месопотамии, в Иране или дальше в Азии, держатся на догадках о Едеме и не опираются ни на какие данные. В английском языке «земля Нод» позднее стала шутливым названием сна — каламбур, к Бытию отношения не имеющий."
+map:
+  ref: Gen.4.16
+scripture: [Gen.4.12, Gen.4.14, Gen.4.16-Gen.4.17]
+sources:
+  - "Eusebius, Onomasticon, s.v. Naid (C. U. Wolf's translation, no. 723)"
+  - "Josephus, Antiquities, book 1 (Cain builds a city named Nod; Whiston's translation 1.2.2)"
+  - "G. J. Wenham, Genesis 1-15 (Word Biblical Commentary 1, 1987)"
+  - "History Globe question “Where was the Garden of Eden?” (Eden has no fixed site)"
+status: checked

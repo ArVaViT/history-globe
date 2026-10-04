@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; the land is unlocated and the southern and northern views are given without choosing; the Book of Job is not dated.
+id: uz
+place: a324c4d
+title:
+  en: "Uz"
+  ru: "Уц"
+body:
+  en:
+    - "“There was a man in the land of Uz, whose name was Job.” Where that land lay the Bible never says, and the question has been open since antiquity. The name belongs to three men in the genealogies: Uz the son of Aram, Uz (Huz in the King James) the son of Nahor, Abraham's brother, and Uz the son of Dishan the Horite, among the clans of Seir. Two readings follow."
+    - "The southern one puts Uz in or beside Edom: Lamentations addresses “O daughter of Edom, that dwellest in the land of Uz”, Job's friend Eliphaz comes from Teman in Edom, and the Greek Bible's note at the end of Job sets him “on the borders of Idumea and Arabia”. The northern one looks to the Aramean Uz and to the Hauran, south of Damascus, where Josephus says Uz founded Trachonitis and Damascus and where a tomb of Job has been venerated at Sheikh Saad since at least the fourth century; the oasis of Wadi Sirhan to the east has also been proposed. The map keeps the Edomite site first and the others beside it."
+    - "The land is named three times. Job, “perfect and upright”, lived there with his seven sons and three daughters and his herds, until the Sabeans from the south and the Chaldeans from Mesopotamia carried them off and the wind from the wilderness struck his house: raiders from both directions, which is why the land has been sought between them. Jeremiah's cup of wrath goes to “all the kings of the land of Uz, and all the kings of the land of the Philistines”, and Lamentations warns Edom in Uz that “the cup also shall pass through unto thee”."
+    - "Near Sheikh Saad in the Hauran the pilgrim Egeria in the 380s was shown Job's tomb at Carneas, with a church over it still unfinished; the “stone of Job” there is in fact a stela of Ramesses II, and a shrine of Job still stands in the village in southern Syria. Edom's hills, the other candidate, lie across the border in Jordan south of the Dead Sea."
+  ru:
+    - "«Был человек в земле Уц, имя его Иов». Где лежала эта земля, Библия не говорит, и вопрос открыт с древности. Имя носят трое мужей родословий: Уц, сын Арама, Уц, сын Нахора, брата Авраама, и Уц, сын Дишана Хорреянина, среди родов Сеира. Отсюда два прочтения."
+    - "Южное помещает Уц в Едоме или рядом с ним: Плач Иеремии взывает: «Радуйся и веселись, дочь Едома, обитательница земли Уц!», друг Иова Елифаз — из Фемана в Едоме, а приписка в конце книги Иова в греческой Библии селит его «на границе Идумеи и Аравии». Северное смотрит на арамейского Уца и на Авран к югу от Дамаска, где, по Иосифу Флавию, Уц основал Трахонитиду и Дамаск и где гробницу Иова чтят в Шейх-Сааде по меньшей мере с IV века; предлагали и оазис Вади-Сирхан на востоке. Карта ставит первым едомское место, а остальные рядом."
+    - "Земля названа трижды. Иов, «непорочен, справедлив», жил в ней с семью сыновьями, тремя дочерьми и стадами, пока савеяне с юга и халдеи из Месопотамии не угнали скот, а ветер из пустыни не обрушил дом: набеги с обеих сторон, оттого землю и ищут между ними. Чашу гнева у Иеремии пьют «и всех царей земли Уца, и всех царей земли Филистимской», как перечисляет пророк, а Плач предупреждает Едом в земле Уц: «И до тебя дойдет чаша»."
+    - "Близ Шейх-Саада в Авране паломнице Эгерии в 380-х годах показали гробницу Иова в Карнее с недостроенной церковью над ней; тамошний «камень Иова» на деле — стела Рамсеса II, а святилище Иова и сейчас стоит в этом селении на юге Сирии. Горы Едома, другой кандидат, лежат за границей, в Иордании, к югу от Мёртвого моря."
+scripture:
+  - Job.1.1
+  - Job.1.13-Job.1.19
+  - Jer.25.20
+  - Lam.4.21
+  - Gen.10.23
+  - Gen.22.21
+  - Gen.36.28
+sources:
+  - "Septuagint, Job 42.17 (the appendix on Job's land and lineage)"
+  - "Josephus, Antiquities 1.145 (Uz the founder of Trachonitis and Damascus)"
+  - "Egeria, Itinerarium 13-16 (Carneas, the tomb of Job), in J. Wilkinson, Egeria's Travels (3rd ed., 1999)"
+  - "M. H. Pope, Job (Anchor Bible, 3rd ed., 1973)"
+  - "D. J. A. Clines, Job 1-20 (Word Biblical Commentary, 1989)"
+  - "J. R. Bartlett, Edom and the Edomites (1989)"
+status: checked

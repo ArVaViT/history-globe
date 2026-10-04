@@ -1,0 +1,24 @@
+# Overview article (ADR 0007). Mainstream facts only; the Tigris is the Hiddekel of Genesis 2 and Daniel 10; the Eden geography is given as the text's, not as a located garden.
+id: tigris
+place: a38ebfd
+title:
+  en: "Tigris"
+  ru: "Тигр"
+body:
+  en:
+    - "The Tigris is the eastern of the two great rivers of Mesopotamia. It rises in the mountains of south-eastern Turkey near Lake Hazar, flows some 1,850 km south-east past Diyarbakır, Mosul and Baghdad, and joins the Euphrates in southern Iraq to form the Shatt al-Arab, which runs to the Persian Gulf. Faster and more prone to flood than the Euphrates, it carried the heartland of Assyria: Assur, Kalhu (Nimrud) and Nineveh stood on or near its banks, and later Seleucia and Ctesiphon, and Baghdad. Its Hebrew name, Hiddekel, comes from Akkadian Idiqlat; Tigris is the Greek form of its Persian name."
+    - "The Bible names it only twice. In Genesis it is one of the four rivers into which the river from Eden divides: “the name of the third river is Hiddekel: that is it which goeth toward the east of Assyria. And the fourth river is Euphrates.” With the Euphrates it ties the garden to the known world, while the other two rivers, Pishon and Gihon, have never been identified with certainty. In Daniel the river is the setting of the last great vision, in the third year of Cyrus: “in the four and twentieth day of the first month, as I was by the side of the great river, which is Hiddekel”, Daniel saw a man clothed in linen."
+    - "Today the Tigris flows through Turkey, along the Syrian border and through Iraq; dams in Turkey and Iraq have greatly reduced its flow and with it the southern marshes, and the ruins of Nineveh and Assur stand on its banks at Mosul and Qal'at Sherqat."
+  ru:
+    - "Тигр — восточная из двух великих рек Месопотамии. Он берёт начало в горах юго-восточной Турции близ озера Хазар, течёт около 1850 км на юго-восток мимо Диярбакыра, Мосула и Багдада и на юге Ирака сливается с Евфратом в Шатт-эль-Араб, который впадает в Персидский залив. Более быстрый и бурный в половодье, чем Евфрат, он нёс на себе сердце Ассирии: на его берегах или близ них стояли Ашшур, Кальху (Нимруд) и Ниневия, позже Селевкия и Ктесифон, а затем Багдад. Его еврейское имя, Хиддекель, восходит к аккадскому Идиклат; Тигр — греческая форма его персидского имени."
+    - "Библия называет его лишь дважды. В книге Бытия это одна из четырёх рек, на которые разделяется река из Едема: «Имя третьей реки Хиддекель (Тигр): она протекает пред Ассириею. Четвертая река Евфрат». Вместе с Евфратом он связывает сад с известным миром, тогда как две другие реки, Фисон и Гихон, так и не отождествлены с уверенностью. У Даниила река — место последнего великого видения в третий год Кира: «А в двадцать четвертый день первого месяца был я на берегу большой реки Тигра», — и Даниил увидел мужа, облечённого в льняную одежду."
+    - "Сегодня Тигр течёт по Турции, вдоль сирийской границы и через Ирак; плотины в Турции и Ираке сильно уменьшили его сток, а с ним и южные болота, а развалины Ниневии и Ашшура стоят на его берегах у Мосула и Калъат-Шерката."
+scripture:
+  - Gen.2.10-Gen.2.14
+  - Dan.10.1
+  - Dan.10.4-Dan.10.5
+sources:
+  - "C. Westermann, Genesis 1–11: A Commentary (English translation, 1984)"
+  - "J. J. Collins, Daniel (Hermeneia, 1993)"
+  - "G. Roux, Ancient Iraq (3rd ed., 1992)"
+status: checked

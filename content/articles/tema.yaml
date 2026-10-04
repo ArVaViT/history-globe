@@ -1,0 +1,29 @@
+# Overview article (ADR 0007). Mainstream facts only; the dates of Nabonidus' stay are given approximately; the oasis is Tayma, not Teman in Edom.
+id: tema
+place: acd48d6
+title:
+  en: "Tema"
+  ru: "Фема"
+body:
+  en:
+    - "Tema is Tayma, a great oasis in the north-west of Arabia, some 400 km south-east of the head of the Gulf of Aqaba, where the caravan road from South Arabia to Mesopotamia and Syria met the way across to the Red Sea coast. In Genesis Tema is one of the twelve sons of Ishmael, that is, an Arab tribe, and the oasis was its seat. A Saudi-German expedition has excavated there since 2004 and traced settlement back at least to the third millennium BC; a walled oasis town stood there by about 2000 BC, and its long enclosure wall still runs across the plain."
+    - "Assyrian and Babylonian records know the place. Tiglath-pileser III lists Tema among the Arab peoples that sent him gold, silver, camels and spices as tribute in the 730s BC. Nabonidus, the last king of Babylon, left Babylon to his son Belshazzar and lived at Tema for ten years, from about 553 to 543 BC, as his Harran stela and the Babylonian chronicle record; fragments of a stela with his name and image have been found at Tayma itself, and a prayer of Nabonidus among the Dead Sea Scrolls remembers his years there. An Aramaic stela of the Persian period from Tayma, now in the Louvre, records the founding of a new god's cult in the town."
+    - "The Bible sees Tema from the road. Job compares his friends to a wadi that dries up: “The troops of Tema looked, the companies of Sheba waited for them”. Isaiah's oracle on Arabia calls to the oasis to meet the refugees of a war in the desert: “The inhabitants of the land of Tema brought water to him that was thirsty, they prevented with their bread him that fled”. Jeremiah hands the cup of wrath to “Dedan, and Tema, and Buz”. Eliphaz the Temanite in Job comes from Teman in Edom, another place."
+    - "Tayma today is a town of the Tabuk region of Saudi Arabia. The ancient well Bir Haddaj, the old walls and the excavated quarters lie within and beside it, and the finds are shown in the town's museum."
+  ru:
+    - "Фема — это Тайма, большой оазис на северо-западе Аравии, примерно в 400 км к юго-востоку от вершины залива Акаба, где караванная дорога из Южной Аравии в Месопотамию и Сирию встречалась с путём к берегу Красного моря. В Бытии Фема — один из двенадцати сыновей Измаила, то есть арабское племя, и оазис был его средоточием. Саудовско-германская экспедиция ведёт здесь раскопки с 2004 года и проследила поселение по меньшей мере до III тысячелетия до н. э.; около 2000 г. до н. э. здесь уже стоял обнесённый стеной город оазиса, и его длинная стена до сих пор тянется по равнине."
+    - "Ассирийские и вавилонские записи знают это место. Тиглатпаласар III называет Фему среди арабских народов, что присылали ему в 730-х гг. до н. э. дань золотом, серебром, верблюдами и благовониями. Набонид, последний царь Вавилона, оставил Вавилон сыну Валтасару и десять лет, примерно с 553 по 543 г. до н. э., жил в Феме, как сообщают его стела из Харрана и вавилонская хроника; в самой Тайме найдены обломки стелы с его именем и изображением, а молитва Набонида среди свитков Мёртвого моря помнит его годы там. Арамейская стела персидского времени из Таймы, ныне в Лувре, сообщает об учреждении в городе культа нового бога."
+    - "Библия видит Фему с дороги. Иов сравнивает друзей с пересыхающим потоком: «смотрят на них дороги Фемайские, надеются на них пути Савейские». Пророчество Исаии об Аравии зовёт оазис навстречу беглецам войны в пустыне: «Живущие в земле Фемайской! несите воды навстречу жаждущим; с хлебом встречайте бегущих». Иеремия перечисляет среди пьющих чашу гнева «Дедана, и Фему, и Буза». Елифаз Феманитянин в книге Иова — из Фемана в Едоме, это другое место."
+    - "Тайма сегодня — город в провинции Табук в Саудовской Аравии. Древний колодец Бир-Хаддадж, старые стены и раскопанные кварталы лежат в нём и рядом с ним, а находки показывают в городском музее."
+scripture:
+  - Gen.25.15
+  - Job.6.19
+  - Isa.21.14
+  - Jer.25.23
+sources:
+  - "Tiglath-pileser III, summary inscriptions (the tribute of the Arabs), in H. Tadmor and S. Yamada, The Royal Inscriptions of Tiglath-pileser III and Shalmaneser V (RINAP 1, 2011)"
+  - "Nabonidus, the Harran stelae (H2), and the Nabonidus Chronicle, in P.-A. Beaulieu, The Reign of Nabonidus, King of Babylon 556-539 B.C. (1989)"
+  - "The Prayer of Nabonidus (4Q242), in F. García Martínez and E. J. C. Tigchelaar, The Dead Sea Scrolls Study Edition (1997-1998)"
+  - "I. Eph'al, The Ancient Arabs: Nomads on the Borders of the Fertile Crescent, 9th-5th Centuries B.C. (1982)"
+  - "A. Hausleiter, R. Eichmann and M. al-Najem (eds.), Tayma I: Archaeological Exploration, Palaeoenvironment, Cultural Contacts (2018)"
+status: checked

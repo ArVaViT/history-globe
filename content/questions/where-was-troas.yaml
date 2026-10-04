@@ -1,0 +1,24 @@
+id: where-was-troas
+question:
+  en: "Where was Troas, where Paul saw the man of Macedonia?"
+  ru: "Где находилась Троада, где Павлу явился Македонянин?"
+answer:
+  en:
+    - "Troas, in full Alexandria Troas, was a port on the Aegean coast of north-west Asia Minor, by the village of Dalyan in the province of Çanakkale in Turkey, opposite the island of Tenedos and south of Troy; the map point stands on its ruins. Assos lay about 33 km to the south-east in a straight line, and Neapolis in Macedonia, where Paul first landed in Europe, about 198 km across the northern Aegean. In Paul's day it was a Roman colony and the chief harbour for the crossing from Asia to Macedonia."
+    - "The New Testament brings Paul here three times. On the second journey, about AD 50, “they passing by Mysia came down to Troas”, and in the night “there stood a man of Macedonia, and prayed him, saying, Come over into Macedonia, and help us”; from here the story is told as “we”. The crossing took two days, “with a straight course to Samothracia, and the next day to Neapolis”; years later the same sea took five days the other way. Paul came back to preach and found “a door was opened unto me of the Lord”; on his last journey, about AD 57, he stayed seven days, talked at the breaking of bread until midnight, and Eutychus “fell down from the third loft, and was taken up dead”, but was brought alive. Second Timothy asks for “the cloke that I left at Troas with Carpus”."
+    - "Antigonus founded the city late in the fourth century BC, and Lysimachus renamed it Alexandria after Alexander; under Augustus it became a Roman colony. Early in the second century Ignatius of Antioch, taken under guard to Rome, wrote three of his letters here, and Zosimus says that Constantine began his new capital near Troas before choosing Byzantium. The circuit of the walls, baths, a theatre and the silted basins of the harbour can still be traced on the shore."
+  ru:
+    - "Троада, полностью Александрия Троадская, — гавань на эгейском берегу северо-запада Малой Азии, у деревни Дальян в турецкой провинции Чанаккале, напротив острова Тенедос и к югу от Трои; точка карты стоит на её развалинах. Асс лежал примерно в 33 км к юго-востоку по прямой, а македонский Неаполь, где Павел впервые ступил на землю Европы, — примерно в 198 км через северную часть Эгейского моря. Во времена Павла это была римская колония и главная гавань для переправы из Асии в Македонию."
+    - "Новый Завет приводит сюда Павла трижды. Во втором путешествии, около 50 г., «миновав же Мисию, сошли они в Троаду», и ночью ему было видение: «предстал некий муж, Македонянин, прося его и говоря: приди в Македонию и помоги нам»; отсюда рассказ ведётся от лица «мы». Переправа заняла два дня — «мы прямо прибыли в Самофракию, а на другой день в Неаполь», — а годы спустя обратный путь по тому же морю занял пять дней. Позже Павел пришёл сюда благовествовать, и ему «отверста была дверь Господом»; в последнем путешествии, около 57 г., он пробыл здесь семь дней, беседовал при преломлении хлеба до полуночи, и Евтих «упал вниз с третьего жилья, и поднят мертвым», но его привели живым. Второе послание к Тимофею просит принести «фелонь, который я оставил в Троаде у Карпа»."
+    - "Город основал Антигон в конце IV века до н. э., а Лисимах переименовал его в Александрию в честь Александра; при Августе он стал римской колонией. В начале II века Игнатий Антиохийский, которого под стражей везли в Рим, написал отсюда три своих послания, а Зосим сообщает, что Константин начал строить новую столицу близ Троады, прежде чем выбрал Византий. На берегу и сейчас можно проследить кольцо стен, бани, театр и занесённые илом бассейны гавани."
+map:
+  place: a91c509
+  year: "AD 50"
+  ref: Acts.16.8
+scripture: [Acts.16.8-Acts.16.11, Acts.20.5-Acts.20.12, 2Cor.2.12-2Cor.2.13, 2Tim.4.13]
+sources:
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe article “Troas” (Strabo, Ignatius, Zosimus and the works cited there) and History Globe tours “Paul's second journey” and “Paul's third journey”"
+  - "J. M. Cook, The Troad: An Archaeological and Topographical Study (1973)"
+  - "S. Feuser, Der Hafen von Alexandria Troas (Asia Minor Studien 63, 2009)"
+status: checked

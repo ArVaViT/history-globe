@@ -1,0 +1,39 @@
+id: where-was-mizpah
+question:
+  en: "Where was Mizpah, where Samuel judged Israel?"
+  ru: "Где находилась Массифа, в которой Самуил судил Израиль?"
+answer:
+  en:
+    - "Mizpah of Benjamin, where Samuel judged Israel and Saul was chosen king, is usually identified with Tell en-Nasbeh, a low hill beside the old road north from Jerusalem, about 12 km from the city in a straight line; the map point stands there. The main alternative is Nebi Samwil, the high hill north-west of Jerusalem where a later tradition shows the tomb of Samuel. The name means “watchtower”, and the Bible has more than one Mizpah: another lay in Gilead, east of the Jordan, about 59 km away."
+    - "At Mizpah all Israel gathered before the war on Benjamin, and here Samuel called the people when the Philistines pressed them: “they gathered together to Mizpeh, and drew water, and poured it out before the LORD, and fasted on that day… And Samuel judged the children of Israel in Mizpeh.” After the victory he “took a stone, and set it between Mizpeh and Shen, and called the name of it Eben-ezer, saying, Hitherto hath the LORD helped us.” Mizpah was one of the three towns of his yearly circuit with Bethel and Gilgal, and here Saul was chosen by lot. Later Asa of Judah fortified it with the stones Baasha had brought to Ramah, 4 km away; the massive wall of Tell en-Nasbeh is often linked with this work."
+    - "After the Babylonians burned Jerusalem in 587 or 586 BC, Mizpah became the seat of Gedaliah, the governor they appointed: “Then went Jeremiah unto Gedaliah the son of Ahikam to Mizpah; and dwelt with him among the people that were left in the land.” There Ishmael son of Nethaniah murdered Gedaliah. William F. Badè excavated Tell en-Nasbeh in 1926–1935, and the finds fit this story: the town was not destroyed with Jerusalem and flourished in the sixth century BC, which is the strongest argument for the identification."
+    - "The Mizpah of Gilead is the heap of stones where Jacob and Laban parted: “The LORD watch between me and thee, when we are absent one from another.” Jephthah came home there from his victory and his daughter came out to meet him. Its site is unknown; the map follows the proposal at Jel‘ad in the hills of Gilead, one of several candidates."
+  ru:
+    - "Массифа Вениаминова, где Самуил судил Израиль и где Саул был избран царём, обычно отождествляется с Телль-эн-Насбе — невысоким холмом у старой дороги из Иерусалима на север, примерно в 12 км от города по прямой; точка карты стоит там. Главная альтернатива — Неби-Самуил, высокий холм к северо-западу от Иерусалима, где позднее предание показывает гробницу Самуила. Имя означает «сторожевая башня», и Массифа в Библии не одна: другая лежала в Галааде, за Иорданом, примерно в 59 км отсюда."
+    - "В Массифе собрался весь Израиль перед войной с Вениамином, и сюда Самуил созвал народ, когда теснили филистимляне: «И собрались в Массифу, и черпали воду, и проливали пред Господом, и постились в тот день… И судил Самуил сынов Израилевых в Массифе». После победы «взял Самуил один камень, и поставил между Массифою и между Сеном, и назвал его Авен-Езер, сказав: до сего места помог нам Господь». Массифа была одним из трёх городов, которые он обходил из года в год вместе с Вефилем и Галгалом, и здесь Саул был избран по жребию. Позже Аса, царь Иудейский, укрепил её камнями, которые Вааса свёз в Раму, в 4 км отсюда; с этой стройкой часто связывают мощную стену Телль-эн-Насбе."
+    - "Когда вавилоняне сожгли Иерусалим в 587 или 586 г. до н. э., Массифа стала резиденцией Годолии, которого они поставили начальником: «И пришел Иеремия к Годолии, сыну Ахикама, в Массифу, и жил с ним среди народа, остававшегося в стране». Там Исмаил, сын Нафании, убил Годолию. Уильям Бейд раскапывал Телль-эн-Насбе в 1926–1935 гг., и находки согласуются с этим рассказом: город не был разрушен вместе с Иерусалимом и процветал в VI веке до н. э. — это самый сильный довод в пользу отождествления."
+    - "Массифа Галаадская — это груда камней, у которой расстались Иаков и Лаван: «да надзирает Господь надо мною и над тобою, когда мы скроемся друг от друга». Туда вернулся с победы Иеффай, и навстречу ему вышла его дочь. Место её неизвестно; карта следует предположению о Джел‘аде в горах Галаада — одному из нескольких."
+map:
+  place: a736f6c
+  year: "587 BC"
+  ref: Jer.40.6
+scripture:
+  [
+    Judg.20.1,
+    1Sam.7.5-1Sam.7.6,
+    1Sam.7.12,
+    1Sam.7.16,
+    1Sam.10.17,
+    1Kgs.15.22,
+    Jer.40.6,
+    Jer.41.2,
+    Gen.31.49,
+    Judg.11.34,
+  ]
+sources:
+  - "Straight-line distances between the places' points (Mizpah of Benjamin, Mizpah of Gilead, Jerusalem, Ramah): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe article “Mizpah”"
+  - "C. C. McCown, Tell en-Nasbeh I: Archaeological and Historical Results (1947)"
+  - "J. R. Zorn and A. J. Brody (eds.), “As for me, I will dwell at Mizpah”: The Tell en-Nasbeh Excavations after 85 Years (2014)"
+  - "O. Lipschits, The Fall and Rise of Jerusalem: Judah under Babylonian Rule (2005)"
+status: checked

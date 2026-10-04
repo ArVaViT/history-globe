@@ -1,0 +1,26 @@
+id: where-was-the-cave-of-machpelah
+question:
+  en: "Where is the cave of Machpelah, the tomb of the patriarchs?"
+  ru: "Где находится пещера Махпела, гробница патриархов?"
+answer:
+  en:
+    - "In Hebron, in the hills of Judah about 30 km south of Jerusalem in a straight line, under the great stone enclosure known as the Cave of the Patriarchs or the Haram al-Khalil. The map point stands on it, less than a kilometre from Tel Rumeida, the mound of ancient Hebron, and about 4 km from Mamre, which Genesis names beside it. The identification goes back at least to the Herodian period, when the enclosure was built, and is not seriously disputed, though the cave itself has not been excavated."
+    - "Genesis gives the place in detail: “the field of Ephron, which was in Machpelah, which was before Mamre, the field, and the cave which was therein”. Abraham bought it to bury Sarah, “in the cave of the field of Machpelah before Mamre: the same is Hebron in the land of Canaan”, and Isaac and Ishmael buried Abraham there. Dying in Egypt, Jacob listed those who lay in it: “There they buried Abraham and Sarah his wife; there they buried Isaac and Rebekah his wife; and there I buried Leah”; his sons carried him up and buried him there too."
+    - "The enclosure, about 59 by 34 m, is attributed to Herod the Great for its likeness to the walls of the Temple Mount. A church inside it became a mosque after the Arab conquest, a church again under the Crusaders and a mosque under Saladin. The cave below the floor is closed; visitors see cenotaphs above it. Since 1994 the building has been divided between a mosque and a synagogue, and in 2017 UNESCO inscribed the old town of Hebron with the sanctuary."
+  ru:
+    - "В Хевроне, в Иудейских горах примерно в 30 км к югу от Иерусалима по прямой, под огромной каменной оградой, известной как Пещера патриархов или Харам-эль-Халиль. Точка карты стоит на ней, меньше чем в километре от Тель-Румейды, холма древнего Хеврона, и примерно в 4 км от Мамре, которое Бытие называет рядом с ней. Отождествление восходит по меньшей мере ко временам Ирода, когда построили ограду, и всерьёз не оспаривается, хотя саму пещеру не раскапывали."
+    - "Бытие описывает место подробно: «поле Ефроново, которое при Махпеле, против Мамре, поле и пещера, которая на нем». Авраам купил его, чтобы похоронить Сарру «в пещере поля в Махпеле, против Мамре, что ныне Хеврон, в земле Ханаанской», и там Исаак и Измаил погребли самого Авраама. Умирая в Египте, Иаков перечислил тех, кто там лежит: «там похоронили Авраама и Сарру, жену его; там похоронили Исаака и Ревекку, жену его; и там похоронил я Лию»; сыновья отнесли его туда и похоронили и его."
+    - "Ограду, около 59 на 34 м, приписывают Ироду Великому за сходство со стенами Храмовой горы. Церковь внутри неё после арабского завоевания стала мечетью, при крестоносцах снова церковью, а при Саладине — опять мечетью. Пещера под полом закрыта; посетители видят над ней кенотафы. С 1994 года здание разделено между мечетью и синагогой, а в 2017 году ЮНЕСКО внесла старый город Хеврона со святилищем в список Всемирного наследия."
+map:
+  place: ae00861
+  year: "c. 1900 BC"
+  ref: Gen.23.19
+scripture: [Gen.23.9, Gen.23.17-Gen.23.20, Gen.25.9-Gen.25.10, Gen.49.29-Gen.49.32, Gen.50.13]
+sources:
+  - "Josephus, Jewish War 4.532 (the monuments of the patriarchs at Hebron)"
+  - "L.-H. Vincent, E. J. H. Mackay and F.-M. Abel, Hébron: Le Haram el-Khalîl, sépulture des patriarches (1923)"
+  - "D. M. Jacobson, 'The Plan of the Ancient Haram el-Khalil in Hebron', Palestine Exploration Quarterly 113 (1981)"
+  - "UNESCO World Heritage List, Hebron/Al-Khalil Old Town, inscribed 2017"
+  - "History Globe article “Machpelah” and question “Where was Hebron?”"
+  - "Straight-line distances between the places' points (Machpelah, Jerusalem, Hebron, Mamre): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

@@ -1,0 +1,29 @@
+# Overview article (ADR 0007). Mainstream facts only; the identification with Ma'in rests on the name and Eusebius and is the usual one; the Mesha Stele line numbers follow the standard editions.
+id: baal-meon
+place: a76f7b7
+title:
+  en: "Baal-meon"
+  ru: "Ваал-Меон"
+body:
+  en:
+    - "Baal-meon was a town on the plateau of Moab north of the Arnon, in the fertile wheat country south-west of Medeba. It is usually identified with Ma'in, a town about 7 km south-west of Madaba in Jordan whose name preserves the old one; Eusebius knew Beelmeon as a very large village near Mount Baaru, with its hot springs, nine miles from Heshbon, which fits the hot waters of Hammamat Ma'in in the gorge below. The Bible gives the name in four forms: Beon in the list of towns the tribes of Reuben and Gad asked for, Baal-meon among the towns Reuben rebuilt, “Beth-baal-meon” in Joshua, and Beth-meon in Jeremiah's oracle on Moab."
+    - "Reuben's settlers rebuilt “Nebo, and Baal-meon, (their names being changed,)” and gave the towns new names, presumably to drop the name of the god Baal; Joshua assigns Reuben “Dibon, and Bamoth-baal, and Beth-baal-meon”, and the Reubenite chief Bela “dwelt in Aroer, even unto Nebo and Baal-meon”. The town changed hands with the plateau. On his stele, found at Dhiban and now in the Louvre, Mesha king of Moab, about 840 BC, says that he built Baal-meon and made a reservoir in it, and names Beth-baal-meon again among the places he restored. Ezekiel, in the sixth century, counts it with Beth-jeshimoth and Kiriathaim as the frontier cities of Moab, “the glory of the country”, to be opened to the men of the east."
+    - "No excavation has traced the Iron Age town, but Ma'in was a considerable place in Byzantine times: a church on its acropolis has a mosaic floor of AD 719–720 with a border of the towns of the region, Belemounta among them; part of it is now kept at Madaba. Today Ma'in is a Jordanian town in the Madaba governorate, and the hot springs of Hammamat Ma'in below it are a resort above the Dead Sea."
+  ru:
+    - "Ваал-Меон — город на плоскогорье Моава к северу от Арнона, в хлебородной стране к юго-западу от Медевы. Его обычно отождествляют с Маином, городком примерно в 7 км к юго-западу от Мадабы в Иордании, чьё имя хранит древнее; Евсевий знал Веелмеон как очень большое селение у горы Ваару с её горячими источниками, в девяти милях от Есевона, что подходит к горячим водам Хаммамат-Маин в ущелье ниже. Библия даёт имя в четырёх видах: Веон в списке городов, которых просили колена Рувима и Гада, Ваал-Меон среди городов, отстроенных Рувимом, «Беф-Ваал-Меон» у Иисуса Навина и Бет-Маон в пророчестве Иеремии о Моаве."
+    - "Поселенцы Рувима отстроили «Нево, и Ваал-Меон, которых имена переменены», и дали городам новые имена — надо думать, чтобы убрать имя бога Ваала; Иисус Навин отдаёт Рувиму «Дивон, Вамоф-Ваал и Беф-Ваал-Меон», а рувимский вождь Бела «обитал в Ароере до Нево и Ваал-Меона». Город переходил из рук в руки вместе с плоскогорьем. На своей стеле, найденной в Дивоне и хранящейся в Лувре, Меса, царь Моавитский, около 840 г. до н. э. говорит, что построил Ваал-Меон и сделал в нём водоём, и снова называет Беф-Ваал-Меон среди мест, которые восстановил. Иезекииль в VI веке называет его с Беф-Иешимофом и Кириафаимом среди пограничных городов Моава, «красы земли», которые будут открыты сынам востока."
+    - "Раскопки не проследили город железного века, но в византийское время Маин был заметным местом: церковь на его акрополе имеет мозаичный пол 719–720 гг. н. э. с каймой из городов округи, среди них Велемунта; часть его хранится теперь в Мадабе. Сегодня Маин — иорданский городок в мухафазе Мадаба, а горячие источники Хаммамат-Маин под ним — курорт над Мёртвым морем."
+scripture:
+  - Num.32.3
+  - Num.32.37-Num.32.38
+  - Josh.13.17
+  - 1Chr.5.8
+  - Jer.48.23
+  - Ezek.25.9
+sources:
+  - "The Mesha Stele (Louvre AO 5066), lines 9 and 30; translation by K. A. D. Smelik in W. W. Hallo and K. L. Younger (eds.), The Context of Scripture, vol. 2 (2000)"
+  - "Eusebius, Onomasticon, s.v. Beelmeon"
+  - "M. Piccirillo, The Mosaics of Jordan (1993) (the church of the Acropolis at Ma'in)"
+  - "J. A. Dearman (ed.), Studies in the Mesha Inscription and Moab (1989)"
+  - "B. Routledge, Moab in the Iron Age: Hegemony, Polity, Archaeology (2004)"
+status: checked

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { clampView, FULL_VIEW, parseYearInput, ticksFor, zoomView } from "./Timeline";
+import { parseYearInput } from "@hg/model";
+import { clampView, FULL_VIEW, ticksFor, zoomView } from "./Timeline";
 
 describe("the timeline window", () => {
   it("zooms around the pointer and keeps inside the range", () => {
@@ -39,5 +40,6 @@ describe("parseYearInput", () => {
     expect(parseYearInput("586 B.C.")).toBe(-585);
     expect(parseYearInput("586 BCE")).toBe(-585);
     expect(parseYearInput("586 v. Chr.")).toBe(-585);
+    expect(parseYearInput("586 р. до н. е.")).toBe(-585);
   });
 });

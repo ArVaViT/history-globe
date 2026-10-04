@@ -1,0 +1,24 @@
+# Overview article (ADR 0007). Mainstream facts only; Tegarama/Til-garimmu near Gürün is the usual identification and the Armenian tradition the other, as the candidates on the map have it; the Sennacherib date follows the eponym chronology.
+id: beth-togarmah
+place: a263e60
+title:
+  en: "Beth-togarmah"
+  ru: "Фогарма"
+body:
+  en:
+    - "Beth-togarmah, “the house of Togarmah”, was a people and land of the far north in Ezekiel. Togarmah is a son of Gomer in the table of nations, a brother of Ashkenaz, that is a people of Anatolia. In the lament over Tyre, “they of the house of Togarmah traded in thy fairs with horses and horsemen and mules”, and in the prophecy of Gog it marches in his host: “Gomer, and all his bands; the house of Togarmah of the north quarters, and all his bands”. Horses and mules were the famous export of the Anatolian plateau, and the north is where the prophet puts it."
+    - "Most scholars identify it with Tegarama of the Hittite texts, Til-garimmu of the Assyrian, a town and district on the border of Tabal in the Anti-Taurus, near modern Gürün in the province of Sivas in Turkey, on the road from Malatya to Kayseri; Sennacherib's annals record its capture in 695 BC. Armenian tradition, in Moses of Khorene, made Torgom the father of Hayk, ancestor of the Armenians, and “the house of Torgom” became a name for Armenia, which is why older maps put Togarmah there; the Georgian chronicles have a Targamos too. The town at Gürün has not been excavated, and the biblical name is known only from these three verses."
+  ru:
+    - "Дом Фогарма — народ и земля далёкого севера у Иезекииля. Фогарма — сын Гомера в таблице народов, брат Аскеназа, то есть народ Анатолии. В плаче о Тире «из дома Фогарма за товары твои доставляли тебе лошадей и строевых коней и лошаков», а в пророчестве о Гоге он идёт в его полчище: «Гомера со всеми отрядами его, дом Фогарма, от пределов севера, со всеми отрядами его». Кони и мулы были знаменитым вывозом Анатолийского плоскогорья, а север — туда пророк его и помещает."
+    - "Большинство учёных отождествляют его с Тегарамой хеттских текстов, Тиль-гариммой ассирийских, городом и областью на границе Табала в Антитавре, близ нынешнего Гюрюна в турецкой провинции Сивас, на дороге из Малатьи в Кайсери; анналы Сеннахирима записывают его взятие в 695 г. до н. э. Армянское предание у Мовсеса Хоренаци сделало Торгома отцом Хайка, родоначальника армян, и «дом Торгома» стало именем Армении, оттого на старых картах Фогарму помещали там; есть Таргамос и в грузинских летописях. Город у Гюрюна не раскопан, а библейское имя известно только по этим трём стихам."
+scripture:
+  - Gen.10.3
+  - Ezek.27.14
+  - Ezek.38.6
+sources:
+  - "Sennacherib's annals, the campaign against Til-garimmu (RINAP 3/1, Sennacherib 17, col. v)"
+  - "Moses of Khorene, History of the Armenians 1.5 (Torgom and Hayk)"
+  - "M. C. Astour, 'Togarmah', in D. N. Freedman (ed.), The Anchor Bible Dictionary, vol. 6 (1992)"
+  - "T. Bryce, The World of the Neo-Hittite Kingdoms: A Political and Military History (2012)"
+  - "M. Greenberg, Ezekiel 21-37 (Anchor Bible 22A, 1997)"
+status: checked

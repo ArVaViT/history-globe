@@ -1,0 +1,40 @@
+id: how-far-egypt-to-canaan
+question:
+  en: "How far was it from Egypt to Canaan?"
+  ru: "Как далеко было от Египта до Ханаана?"
+answer:
+  en:
+    - "From the land of Goshen in the eastern Nile Delta, where Jacob's family settled, to Gaza on the southern coast of Canaan is about 260 km in a straight line; to Beersheba about 290 km, to Hebron about 320 km and to Jerusalem about 340 km. At 25–30 km a day that is ten to fourteen days on foot. The frontier between the two lands was the Brook of Egypt, the Wadi el-Arish, about 190 km from Goshen and 74 km short of Gaza, so most of the way lay across the sand and scrub of northern Sinai. The map point stands on Goshen, at Qantir, the site of Rameses."
+    - "The patriarchs went down this way again and again. “Abram went down into Egypt to sojourn there; for the famine was grievous in the land.” Joseph was sold to a caravan of Ishmeelites “going to carry it down to Egypt”; his brothers went twice for corn, and he sent his father “ten asses laden with the good things of Egypt”. Then “Jacob rose up from Beer-sheba: and the sons of Israel carried Jacob their father... in the wagons which Pharaoh had sent”, and Judah went ahead “to direct his face unto Goshen”. After his death his sons carried him back to the cave of Machpelah at Hebron; Genesis has the funeral pass by the threshing floor of Atad by the Jordan, a far longer way round."
+    - "The usual road was the coast road, which the Egyptians called the Way of Horus and lined with forts and wells, from Tjaru on the edge of the Delta to Gaza; Exodus calls it “the way of the land of the Philistines, although that was near”, and says God led Israel the other way, into the wilderness, so that a short journey became forty years. The Synodal text of Exodus 12:40, following the Greek, counts the 430 years as the time Israel and their fathers lived in Egypt and in the land of Canaan, which shortens the stay in Egypt itself; the Hebrew has Egypt alone. In the Gospels the same road carried Joseph, Mary and the child, who “departed into Egypt” to escape Herod. The map's Joseph tour uses 1700 BC, a conventional point, since the age of the patriarchs is disputed."
+  ru:
+    - "От земли Гесем в восточной дельте Нила, где поселилась семья Иакова, до Газы на южном побережье Ханаана около 260 км по прямой; до Вирсавии около 290 км, до Хеврона около 320 км и до Иерусалима около 340 км. По 25–30 км в день это от десяти до четырнадцати дней пешком. Границей двух земель был поток Египетский, вади Эль-Ариш, примерно в 190 км от Гесема и в 74 км от Газы, так что большая часть пути шла по пескам и кустарнику северного Синая. Точка карты стоит на Гесеме, у Кантира, на месте Раамсеса."
+    - "Патриархи ходили этим путём снова и снова. «Сошел Аврам в Египет, пожить там, потому что усилился голод в земле той». Иосифа продали каравану Измаильтян, которые шли «отвезти это в Египет»; братья дважды ходили за хлебом, а он послал отцу «десять ослов, навьюченных лучшими произведениями Египетскими». Потом «Иаков отправился из Вирсавии; и повезли сыны Израилевы Иакова, отца своего... на колесницах, которые послал фараон», а Иуда шёл впереди, «чтобы он указал путь в Гесем». После смерти Иакова сыновья отнесли его в пещеру Махпела у Хеврона; по Книге Бытия похоронное шествие прошло через Горен-гаатад при Иордане — гораздо более длинным путём."
+    - "Обычной была приморская дорога, которую египтяне называли Путём Хора и снабдили крепостями и колодцами, от Чару на краю дельты до Газы; Исход говорит, что Бог не повёл Израиль «по дороге земли Филистимской, потому что она близка», а повёл другим путём, в пустыню, так что короткий путь растянулся на сорок лет. Синодальный текст Исхода 12:40, вслед за греческим, относит 430 лет ко времени, когда сыны Израилевы «и отцы их обитали в Египте и в земле Ханаанской», что сокращает пребывание в самом Египте; в еврейском тексте назван один Египет. В Евангелиях той же дорогой шли Иосиф, Мария и Младенец, когда Иосиф, спасаясь от Ирода, «пошел в Египет». Тур об Иосифе на карте берёт 1700 г. до н. э. как условную точку, поскольку время патриархов спорно."
+map:
+  place: a60f092
+  year: "1700 BC"
+  ref: Gen.46.28
+scripture:
+  [
+    Gen.12.10,
+    Gen.37.25,
+    Gen.42.2,
+    Gen.45.23,
+    Gen.46.5,
+    Gen.46.28,
+    Gen.47.11,
+    Gen.50.10,
+    Gen.50.13,
+    Exod.12.40,
+    Exod.13.17,
+    Num.34.5,
+    Matt.2.14,
+  ]
+sources:
+  - "Straight-line distances between the places' points (Goshen, Gaza, Beersheba, Hebron, Jerusalem, the Brook of Egypt): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe tours “Joseph in Egypt” and “Jacob” (conventional years) and History Globe question on the route of the Exodus"
+  - "Septuagint, Exodus 12:40 (in the land of Egypt and in the land of Canaan)"
+  - "J. K. Hoffmeier, Ancient Israel in Sinai: The Evidence for the Authenticity of the Wilderness Tradition (2005)"
+  - "M. Bietak, Avaris and Piramesse: Archaeological Exploration in the Eastern Nile Delta (1981)"
+status: checked

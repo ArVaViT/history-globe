@@ -1,0 +1,25 @@
+id: where-was-berea
+question:
+  en: "Where was Berea, whose Jews searched the scriptures daily?"
+  ru: "Где находилась Верия, где иудеи ежедневно разбирали Писания?"
+answer:
+  en:
+    - "Berea, ancient Beroea, is the town of Veria in Greek Macedonia, on the eastern slope of Mount Vermio above the plain west of Thessalonica; the map point stands on it. It lay about 64 km west-south-west of Thessalonica in a straight line, off the main road, the Via Egnatia, and about 312 km north-north-west of Athens. Under Rome it was one of the leading towns of Macedonia and later the seat of the league of the Macedonian cities."
+    - "Paul and Silas came here about AD 50, when after the riot in Thessalonica “the brethren immediately sent away Paul and Silas by night unto Berea”. Acts praises their hearers: “These were more noble than those in Thessalonica, in that they received the word with all readiness of mind, and searched the scriptures daily, whether those things were so.” Many believed, with Greek women of standing and not a few men. When Jews from Thessalonica came to stir up the people, the brethren “sent away Paul to go as it were to the sea”, and he went on to Athens, while Silas and Timothy stayed. Later Sopater of Berea went with Paul to Asia."
+    - "Whether Paul then sailed to Athens from a port on the coast, such as Pydna or Dium, or went by land is disputed: many manuscripts read “as far as the sea”, while the reading behind the King James and the Synodal texts, “as it were to the sea”, has been taken for a feint to put off pursuers. Paved Roman streets and stretches of a late Roman wall rebuilt with reused inscribed stones lie under modern Veria, and a modern monument in the town, the Bema of the Apostle Paul, marks the place where tradition says he preached."
+  ru:
+    - "Древняя Верия — это нынешний город Верия в греческой Македонии, на восточном склоне горы Вермион над равниной к западу от Фессалоники; точка карты стоит на нём. Она лежала примерно в 64 км к западо-юго-западу от Фессалоники по прямой, в стороне от главной дороги — Эгнатиевой, и примерно в 312 км к северо-северо-западу от Афин. При римлянах это был один из главных городов Македонии, а позже — центр союза македонских городов."
+    - "Павел и Сила пришли сюда около 50 г., когда после смуты в Фессалонике братия «немедленно ночью отправили Павла и Силу в Верию». Деяния хвалят их слушателей: «Здешние были благомысленнее Фессалоникских: они приняли слово со всем усердием, ежедневно разбирая Писания, точно ли это так». Многие уверовали, а с ними почётные еллинские женщины и немало мужчин. Когда иудеи из Фессалоники пришли возмущать народ, братия «отпустили Павла, как будто идущего к морю», и он ушёл в Афины, а Сила и Тимофей остались. Позже Сосипатр Пирров, Вериянин, сопровождал Павла до Асии."
+    - "Отплыл ли тогда Павел в Афины из приморской гавани, например Пидны или Диона, или пошёл сушей, — спорно: многие рукописи читают «до моря», а чтение, на котором стоят Синодальный перевод и Библия короля Якова, — «как будто к морю» — понимают как уловку, чтобы сбить с толку преследователей. Под нынешней Верией лежат мощёные римские улицы и участки позднеримской стены, перестроенной из старых надписанных камней, а современный памятник в городе, Вима апостола Павла, отмечает место, где, по преданию, он проповедовал."
+map:
+  place: a62fe31
+  year: "AD 50"
+  ref: Acts.17.10
+scripture: [Acts.17.10-Acts.17.15, Acts.20.4]
+sources:
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe article “Berea” (Livy, Plutarch and the works cited there) and History Globe tour “Paul's second journey”"
+  - "B. M. Metzger, A Textual Commentary on the Greek New Testament (2nd ed., 1994)"
+  - "L. Gounaropoulou and M. B. Hatzopoulos, Epigraphes Katō Makedonias I: Epigraphes Beroias (1998)"
+  - "F. Papazoglou, Les villes de Macédoine à l'époque romaine (BCH Suppl. 16, 1988)"
+status: checked

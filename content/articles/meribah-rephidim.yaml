@@ -1,0 +1,29 @@
+# Overview article (ADR 0007). Mainstream facts only; this record is the Meribah of Rephidim, kept apart from the Meribah of Kadesh, which has its own article; the site follows Rephidim's and is given as unlocated.
+id: meribah-rephidim
+place: a65db0f
+title:
+  en: "Meribah"
+  ru: "Мерива"
+body:
+  en:
+    - "Meribah, “strife”, is the name Moses gave to the place at Rephidim where Israel, on the way from the Red Sea to Sinai, found no water and quarrelled with him: “And he called the name of the place Massah, and Meribah, because of the chiding of the children of Israel, and because they tempted the LORD, saying, Is the LORD among us, or not?” At God's word Moses went before the people with the elders and struck the rock in Horeb with his rod, and water came out of it. This is the first Meribah; the second, where Moses himself was condemned, lay at Kadesh nearly forty years later and has its own record. The two names, Massah and Meribah, Trial and Strife, describe one event, and the later books usually pair them."
+    - "The blessing of Moses recalls that day for Levi, “whom thou didst prove at Massah, and with whom thou didst strive at the waters of Meribah”, and Psalm 95, in the Synodal Bible Psalm 94, turns it into a warning for every generation: “Harden not your heart, as in the provocation, and as in the day of temptation in the wilderness”, where the Hebrew has the names themselves, Meribah and Massah, as the Synodal text shows. The Epistle to the Hebrews quotes the psalm at length to its readers, and Paul, saying that the fathers “did all drink the same spiritual drink: for they drank of that spiritual Rock that followed them: and that Rock was Christ”, draws on the Jewish tradition that the rock of Rephidim went with Israel through the wilderness."
+    - "Where it was depends on Rephidim, which is itself unlocated. With Sinai at Jebel Musa, the usual choices are the oasis of Wadi Feiran or a wadi nearer the mountain; Eusebius placed Rephidim beside Horeb, and the pilgrim of Piacenza in the sixth century was shown at Pharan the place where Moses prayed during the battle with Amalek, which followed the miracle of the water. A split boulder in Wadi el-Leja by the monastery of St Catherine has long been shown to pilgrims as the rock of Moses. None of this is confirmed by any find; the map keeps the camp beside its Rephidim in the south of the Sinai peninsula."
+  ru:
+    - "Мерива, «распря», — имя, которое Моисей дал месту в Рефидиме, где Израиль, идя от Чермного моря к Синаю, не нашёл воды и ссорился с ним: «И нарек месту тому имя: Масса и Мерива, по причине укорения сынов Израилевых и потому, что они искушали Господа, говоря: есть ли Господь среди нас, или нет?» По слову Божию Моисей пошёл перед народом со старейшинами и ударил жезлом в скалу в Хориве, и из неё пошла вода. Это первая Мерива; вторая, где был осуждён сам Моисей, лежала в Кадесе почти сорок лет спустя, и у неё своя запись. Два имени, Масса и Мерива, Искушение и Распря, описывают одно событие, и позднейшие книги обычно ставят их рядом."
+    - "Благословение Моисея вспоминает тот день ради Левия, «которого Ты искусил в Массе, с которым Ты препирался при водах Меривы», а 95-й псалом, в Синодальной Библии 94-й, обращает его в предостережение всякому поколению: «не ожесточите сердца вашего, как в Мериве, как в день искушения в пустыне», — там, где в еврейском тексте стоят сами имена, Мерива и Масса. Послание к Евреям подробно приводит этот псалом своим читателям, а Павел, говоря, что отцы «пили одно и то же духовное питие: ибо пили из духовного последующего камня; камень же был Христос», опирается на иудейское предание о том, что скала Рефидима шла с Израилем по пустыне."
+    - "Где это было, зависит от Рефидима, а он сам не найден. При Синае на Джебель-Муса обычно выбирают оазис Вади-Фейран или вади поближе к горе; Евсевий помещал Рефидим рядом с Хоривом, а паломнику из Пьяченцы в VI веке показывали в Фаране место, где Моисей молился во время битвы с Амаликом, последовавшей за чудом с водой. Расколотую глыбу в Вади-эль-Леджа у монастыря Святой Екатерины издавна показывают паломникам как скалу Моисея. Ничто из этого не подтверждено находками; на карте стан стоит рядом с отмеченным там Рефидимом на юге Синайского полуострова."
+scripture:
+  - Exod.17.1-Exod.17.7
+  - Deut.6.16
+  - Deut.33.8
+  - Ps.95.8-Ps.95.9
+  - 1Cor.10.4
+  - Heb.3.7-Heb.3.11
+sources:
+  - "Eusebius, Onomasticon, s.v. Raphidim"
+  - "The Piacenza Pilgrim (Antoninus), Itinerarium 40 (Pharan and the place of the battle with Amalek)"
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "W. H. C. Propp, Exodus 1-18 (Anchor Bible, 1999)"
+  - "J. K. Hoffmeier, Ancient Israel in Sinai: The Evidence for the Authenticity of the Wilderness Tradition (2005)"
+status: checked

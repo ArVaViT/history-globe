@@ -1,0 +1,27 @@
+# Overview article (ADR 0007). Mainstream facts only; the location is disputed and the map's candidates are given without choosing one.
+id: arimathea
+place: af3d9fc
+title:
+  en: "Arimathea"
+  ru: "Аримафея"
+body:
+  en:
+    - "Arimathea is known only as the home town of Joseph, the member of the Sanhedrin who buried Jesus. Luke calls it “a city of the Jews”, which suggests a town in or near the Jewish hill country rather than in Galilee or a Greek city. All four Gospels name it. Matthew tells of “a rich man of Arimathæa, named Joseph, who also himself was Jesus' disciple”, who begged the body from Pilate, wrapped it in clean linen and “laid it in his own new tomb, which he had hewn out in the rock”; Mark calls him “an honourable counsellor, which also waited for the kingdom of God”, who “went in boldly unto Pilate”; Luke adds that he “had not consented to the counsel and deed of them”; John, that he was a disciple “secretly for fear of the Jews”, and that Nicodemus came with him."
+    - "Where it stood is disputed, and the map keeps the candidates. The Greek name looks like Ramathaim, the home of Samuel, and Eusebius wrote that Armathem Sophim, Samuel's city, lay near Diospolis (Lydda) and was the Arimathea of the Gospels. That fits 1 Maccabees, which says the district of Ramathaim was transferred from Samaria to Judea in 145 BC, and points to Rantis (Rentis), a village about 15 km north-east of Lod on the edge of the hills, the choice most scholars make today. Others place Arimathea at Samuel's Ramah itself, which they put at al-Ram or al-Bira north of Jerusalem, or at Beit Rima near Rantis. Crusader pilgrims honoured Ramla, a town founded only in the eighth century, as Arimathea; that has no ancient claim."
+    - "Nothing has been excavated as Arimathea. Rantis is a Palestinian village in the Ramallah governorate, close to the Green Line; Joseph himself is honoured as a saint in the eastern and western churches, and medieval legend carried him as far as Glastonbury."
+  ru:
+    - "Аримафея известна только как родной город Иосифа, члена синедриона, похоронившего Иисуса. Лука называет её так: «из Аримафеи, города Иудейского», что указывает на городок в иудейском нагорье или рядом с ним, а не в Галилее и не на греческий город. Её называют все четыре Евангелия. Матфей рассказывает, что «пришел богатый человек из Аримафеи, именем Иосиф, который также учился у Иисуса»: он просил у Пилата тело, обвил его чистой плащаницей и «положил его в новом своем гробе, который высек он в скале»; Марк зовёт его «знаменитый член совета, который и сам ожидал Царствия Божия» и говорит, что он «осмелился войти к Пилату»; Лука добавляет, что он был «не участвовавший в совете и в деле их»; Иоанн — что он был «ученик Иисуса, но тайный, из страха от Иудеев» и что с ним пришёл Никодим."
+    - "Где она стояла, спорно, и карта хранит кандидатов. Греческое имя похоже на Рамафаим, родину Самуила, и Евсевий писал, что Армафем Софим, город Самуила, лежит близ Диосполя (Лидды) и есть евангельская Аримафея. Это согласуется с Первой книгой Маккавейской, по которой округ Рамафаим был передан из Самарии Иудее в 145 г. до н. э., и указывает на Рантис (Рентис), селение примерно в 15 км к северо-востоку от Лода на краю гор, — выбор большинства нынешних учёных. Другие помещают Аримафею в самой Раме Самуила, которую ищут в Эр-Раме или Эль-Бире к северу от Иерусалима, или в Бейт-Риме рядом с Рантисом. Паломники времён крестоносцев чтили как Аримафею Рамлу — город, основанный только в VIII веке; древнего основания у этого нет."
+    - "Ничто не раскопано как Аримафея. Рантис — палестинское селение в мухафазе Рамалла, у самой «зелёной линии»; сам Иосиф почитается как святой в восточной и западной церквах, а средневековая легенда увела его даже в Гластонбери."
+scripture:
+  - Matt.27.57-Matt.27.60
+  - Mark.15.43
+  - Luke.23.50-Luke.23.51
+  - John.19.38-John.19.39
+sources:
+  - "Eusebius, Onomasticon, s.v. Armathem Sophim"
+  - "1 Maccabees 11.34 (the district of Ramathaim)"
+  - "F.-M. Abel, Géographie de la Palestine, vol. 2 (1938)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+  - "D. Pringle, The Churches of the Crusader Kingdom of Jerusalem: A Corpus, vol. 2 (1998) (Ramla as Arimathea)"
+status: checked

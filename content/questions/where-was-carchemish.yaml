@@ -1,0 +1,25 @@
+id: where-was-carchemish
+question:
+  en: "Where was Carchemish, where Nebuchadnezzar defeated Egypt?"
+  ru: "Где находился Кархемис, где Навуходоносор разбил Египет?"
+answer:
+  en:
+    - "Carchemish stood on the west bank of the Euphrates at the river's main crossing in northern Syria; its ruins lie on today's border between Turkey and Syria, beside Karkamış on the Turkish side and Jarabulus on the Syrian, and the map point stands on them. It is about 617 km north-north-east of Jerusalem in a straight line, and about 91 km west of Haran, across the river."
+    - "Its name in the Bible comes from the battle that ended the Assyrian age. In 609 BC Pharaoh Necho marched north to help the last king of Assyria hold the Euphrates; “Necho king of Egypt came up to fight against Carchemish by Euphrates: and Josiah went out against him”, and Josiah fell at Megiddo, about 538 km to the south. In 605 BC the crown prince Nebuchadnezzar crossed the river and destroyed the Egyptian army at Carchemish; the Babylonian Chronicle says that he overtook the survivors in the district of Hamath and not one man escaped home. Jeremiah dates it exactly: “the army of Pharaoh-necho king of Egypt, which was by the river Euphrates in Carchemish, which Nebuchadrezzar king of Babylon smote in the fourth year of Jehoiakim”. The victory opened Syria and Judah to Babylon."
+    - "Carchemish had been great long before. In the fourteenth century BC the Hittites made it the seat of their viceroys in Syria, and after their empire fell it was the leading Neo-Hittite kingdom, known for its carved reliefs and Luwian hieroglyphic inscriptions, until Sargon II of Assyria took it in 717 BC; Isaiah has the Assyrian boast, “Is not Calno as Carchemish?” The British Museum excavated it in 1911–1914 and 1920 under D. G. Hogarth and Leonard Woolley, with T. E. Lawrence on the staff, and a Turkish and Italian team has worked on the Turkish side since 2011."
+  ru:
+    - "Кархемис стоял на западном берегу Евфрата, у главной переправы через реку в северной Сирии; его развалины лежат на нынешней границе Турции и Сирии, рядом с Каркамышем на турецкой стороне и Джараблусом на сирийской, и точка карты стоит на них. Отсюда около 617 км до Иерусалима на юго-юго-запад по прямой и около 91 км до Харрана на восток, за рекой."
+    - "В Библию его имя попало из-за битвы, закончившей ассирийскую эпоху. В 609 г. до н. э. фараон Нехао пошёл на север, чтобы помочь последнему царю Ассирии удержать Евфрат: «пошел Нехао, царь Египетский, на войну к Кархемису на Евфрате; и Иосия вышел навстречу ему», и Иосия пал при Мегиддоне, примерно в 538 км к югу. В 605 г. до н. э. наследник престола Навуходоносор переправился через реку и разгромил египетское войско при Кархемисе; Вавилонская хроника говорит, что он настиг уцелевших в области Емафа и ни один не вернулся домой. Иеремия точно датирует битву: «о войске фараона Нехао, царя Египетского, которое было при реке Евфрате в Кархемисе, и которое поразил Навуходоносор, царь Вавилонский, в четвертый год Иоакима». Победа открыла Вавилону Сирию и Иудею."
+    - "Кархемис был велик задолго до того. В XIV веке до н. э. хетты сделали его резиденцией своих наместников в Сирии, а после падения их державы он был главным новохеттским царством, известным резными рельефами и лувийскими иероглифическими надписями, пока в 717 г. до н. э. его не взял ассирийский царь Саргон II; у Исаии ассириец хвалится: «Халне не то же ли, что Кархемис?» Британский музей раскапывал его в 1911–1914 и 1920 годах под руководством Д. Хогарта и Леонарда Вулли, и среди сотрудников был Т. Э. Лоуренс, а с 2011 года на турецкой стороне работает турецко-итальянская экспедиция."
+map:
+  place: af6c730
+  year: "605 BC"
+  ref: Jer.46.2
+scripture: [2Kgs.23.29, 2Chr.35.20-2Chr.35.24, Jer.46.2, Isa.10.9]
+sources:
+  - "Straight-line distances between the places' points (Carchemish, Jerusalem, Haran, Megiddo): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe article “Carchemish”"
+  - "Babylonian Chronicle ABC 5 (the battle of Carchemish, 605 BC); ABC 3 (Necho and the Assyrians, 609 BC)"
+  - "D. G. Hogarth, C. L. Woolley and R. D. Barnett, Carchemish: Report on the Excavations at Djerabis on behalf of the British Museum, Parts I-III (1914-1952)"
+  - "T. Bryce, The World of the Neo-Hittite Kingdoms (2012)"
+status: checked

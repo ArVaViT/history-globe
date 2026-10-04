@@ -1,0 +1,28 @@
+# Overview article (ADR 0007). Mainstream facts only; a minor place: the site is disputed, the candidates are given, and the Malatha link is called likely, not proved.
+id: moladah
+place: a03a5d0
+title:
+  en: "Moladah"
+  ru: "Молада"
+body:
+  en:
+    - "Moladah was a town of the Negeb, the dry south of Judah around Beer-sheba, known only from lists. Joshua counts it among the southernmost towns of Judah “toward the coast of Edom”, and then among the towns given to Simeon inside Judah's lot: “Beer-sheba, or Sheba, and Moladah”. Chronicles repeats the Simeonite list, and after the exile the men of Judah settled again “at Jeshua, and at Moladah, and at Beth-phelet”. No story is set there, and no prophet names it."
+    - "Where it stood is not certain. Josephus tells how Herod Agrippa, ruined and desperate, went to a tower at Malatha in Idumaea, and Eusebius measures distances in the Negeb from the fort of Malaatha; that name survives at Tel Malhata, a large mound in the Beer-sheba valley east of the city with a fortified town of the Iron Age, excavated in the 1960s and 1990s. Many scholars take Malatha to be Moladah under a later form of the name, but others give Tel Malhata to Canaanite Arad or Hormah, and the first candidate on the map is Khirbet el-Waten, a smaller site nearer Beer-sheba; Khirbet Kuseife and Tel Yeshua have also been proposed. Nothing found at any of them names the town."
+    - "Today the area is the eastern Beer-sheba valley in Israel, between the city and Arad, with Bedouin townships, fields and the excavated mound of Tel Malhata beside the Nevatim air base."
+  ru:
+    - "Молада — город Негева, сухого юга Иудеи вокруг Вирсавии, известный только по спискам. Иисус Навин числит его среди городов «с края колена сынов Иудиных в смежности с Идумеею на юге», а затем среди городов, отданных Симеону внутри удела Иуды: «Вирсавия или Шева, Молада». Паралипоменон повторяет симеоновский список, а после плена сыны Иуды снова поселились «в Иешуе, в Моладе и в Беф-Палете». Никакое событие там не происходит, и ни один пророк его не называет."
+    - "Где он стоял, неизвестно точно. Иосиф Флавий рассказывает, как разорённый и отчаявшийся Ирод Агриппа пошёл к башне в Малафе в Идумее, а Евсевий отмеряет расстояния в Негеве от крепости Малаафа; это имя сохранилось в Тель-Малхате, большом холме в долине Вирсавии к востоку от города, с укреплённым городом железного века, раскопанным в 1960-х и 1990-х годах. Многие учёные считают Малафу позднейшей формой имени Молада, но другие отдают Тель-Малхату ханаанскому Араду или Хорме, а первый кандидат на карте — Хирбет-эль-Ватен, меньшее городище ближе к Вирсавии; предлагали также Хирбет-Кусейфе и Тель-Иешуа. Ни на одном из них не найдено ничего с именем города."
+    - "Сегодня это восточная часть долины Беэр-Шевы в Израиле, между городом и Арадом, с бедуинскими посёлками, полями и раскопанным холмом Тель-Малхата рядом с авиабазой Неватим."
+scripture:
+  - Josh.15.21
+  - Josh.15.26
+  - Josh.19.2
+  - 1Chr.4.28
+  - Neh.11.26
+sources:
+  - "Josephus, Antiquities 18.147 (Agrippa at the tower of Malatha)"
+  - "Eusebius, Onomasticon, s.v. Arad (the distance from Malaatha)"
+  - "F.-M. Abel, Géographie de la Palestine, vol. 2 (1938)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+  - "I. Beit-Arieh and L. Freud (eds.), Tel Malḥata: A Central City in the Biblical Negev (2015)"
+status: checked

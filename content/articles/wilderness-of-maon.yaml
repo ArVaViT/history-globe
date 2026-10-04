@@ -1,0 +1,21 @@
+# Overview article (ADR 0007). Mainstream facts only; written for the wilderness, the town of Maon having its own article; the rock of the story is unlocated and said so.
+id: wilderness-of-maon
+place: ae11a0d
+title:
+  en: "Wilderness of Maon"
+  ru: "Пустыня Маон"
+body:
+  en:
+    - "The wilderness of Maon is the stretch of desert below Maon, the town of Judah at Khirbet Ma'in about 13 km south of Hebron, where the farmed hills give way to bare slopes running down to the Dead Sea. It is named only in the story of David's flight from Saul. After the men of Ziph betrayed his hiding places, “David and his men were in the wilderness of Maon, in the plain on the south of Jeshimon”; he “came down into a rock, and abode in the wilderness of Maon. And when Saul heard that, he pursued after David in the wilderness of Maon.” Saul went along one side of a mountain and David along the other, and Saul's men were closing round him when word came of a Philistine raid. Saul turned back, and the place was called Sela-hammahlekoth, “the rock of divisions”."
+    - "That is all the Bible says of the wilderness itself, though the nearby town is also the home of Nabal and Abigail two chapters later. The rock and the mountain of the chase have not been identified, and no remains in the wilderness are tied to the story. Today it is the eastern edge of the south Hebron hills in the West Bank, dry grazing land with scattered herders' villages and caves."
+  ru:
+    - "Пустыня Маон — полоса пустыни ниже Маона, иудейского города на месте Хирбет-Маина примерно в 13 км к югу от Хеврона, где возделанные холмы сменяются голыми склонами, спускающимися к Мёртвому морю. Она названа только в рассказе о бегстве Давида от Саула. После того как зифеи выдали его убежища, «Давид же и люди его были в пустыне Маон, на равнине, направо от Иесимона»; он «перешел к скале и оставался в пустыне Маон. И услышал Саул, и погнался за Давидом в пустыню Маон». Саул шёл по одной стороне горы, Давид по другой, и люди Саула уже окружали его, когда пришла весть о набеге филистимлян. Саул повернул назад, и место назвали Села-Гаммахлекоф, «скала разделения»."
+    - "Это всё, что Библия говорит о самой пустыне, хотя в соседнем городе двумя главами ниже живут Навал и Авигея. Скала и гора, где шла погоня, не найдены, и никакие остатки в пустыне не связаны с этим рассказом. Сегодня это восточная кромка южных Хевронских гор на Западном берегу — сухие пастбища с редкими деревнями пастухов и пещерами."
+scripture:
+  - 1Sam.23.24-1Sam.23.28
+  - 1Sam.25.2
+sources:
+  - "C. R. Conder and H. H. Kitchener, The Survey of Western Palestine: Memoirs, vol. 3, Judaea (1883)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+  - "P. K. McCarter, I Samuel (Anchor Bible, 1980)"
+status: checked

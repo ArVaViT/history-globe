@@ -1,0 +1,22 @@
+# Overview article (ADR 0007). Mainstream facts only; biblical India is the Persian province on the Indus, not the whole subcontinent; the Synodal Bible names the king Artaxerxes.
+id: india
+place: a878481
+title:
+  en: "India"
+  ru: "Индия"
+body:
+  en:
+    - "India appears in the Bible only as the eastern limit of the Persian empire in the book of Esther. Its opening describes Ahasuerus, “which reigned, from India even unto Ethiopia, over an hundred and seven and twenty provinces”, and Mordecai's decree in favour of the Jews was sent to the rulers of the provinces “from India unto Ethiopia”, to each in its own script and language. The Hebrew name, Hoddu, comes from the same Persian form, Hindush, as the Greek India, and means the land of the Indus river, not the whole subcontinent. The king is usually identified with Xerxes I (486–465 BC); the Synodal Bible, following the Greek, calls him Artaxerxes."
+    - "Darius I added the Indus lands to the empire about 518 BC, and they appear as Hindush in the lists of peoples carved in his inscriptions at Persepolis and Naqsh-i Rustam. Herodotus says the Indians paid the largest tribute of all, three hundred and sixty talents of gold dust a year, and that Indian troops marched with Xerxes against Greece. The region is today the Indus valley of Pakistan, with neighbouring north-western India."
+  ru:
+    - "Индия в Библии появляется только как восточный предел Персидской державы в книге Есфири. Её начало описывает Артаксеркса, который «царствовал над ста двадцатью семью областями от Индии и до Ефиопии», а указ Мардохея в пользу Иудеев был послан правителям областей «от Индии до Ефиопии», каждой её письменами и на её языке. Еврейское имя, Ходду, восходит к той же персидской форме Хиндуш, что и греческое «Индия», и означает землю реки Инд, а не весь субконтинент. Царя обычно отождествляют с Ксерксом I (486–465 гг. до н. э.); Синодальный перевод вслед за греческим зовёт его Артаксерксом."
+    - "Дарий I присоединил земли по Инду к державе около 518 г. до н. э., и они значатся как Хиндуш в списках народов, высеченных в его надписях в Персеполе и Накш-и-Рустаме. Геродот пишет, что индийцы платили самую большую дань из всех — триста шестьдесят талантов золотого песка в год — и что индийские воины шли с Ксерксом на Грецию. Сегодня это долина Инда в Пакистане и соседние северо-западные земли Индии."
+scripture:
+  - Esth.1.1
+  - Esth.8.9
+sources:
+  - "Herodotus, Histories 3.94; 7.65"
+  - "Darius I, inscriptions DPe and DNa, in R. G. Kent, Old Persian: Grammar, Texts, Lexicon (2nd ed., 1953)"
+  - "C. A. Moore, Esther (Anchor Bible, 1971)"
+  - "P. Briant, From Cyrus to Alexander: A History of the Persian Empire (2002)"
+status: checked

@@ -1,0 +1,27 @@
+id: where-was-the-garden-of-gethsemane
+question:
+  en: "Where was the Garden of Gethsemane?"
+  ru: "Где находился Гефсиманский сад?"
+answer:
+  en:
+    - "Gethsemane lay at the foot of the Mount of Olives, across the Kidron valley east of the Temple Mount of Jerusalem; the map point stands at the garden beside the Church of All Nations, about 600 m from the Jerusalem point and about 900 m from the traditional Golgotha in a straight line. The name is Aramaic, gat shemanim, “oil press”: it was an olive grove with a press on the slope where the road from the city climbs towards Bethany. Its general position is secure, its exact bounds are not; the page on Golgotha names the rival spots, and this one follows the garden itself."
+    - "Matthew and Mark call it a place, a plot of ground: “Then cometh Jesus with them unto a place called Gethsemane, and saith unto the disciples, Sit ye here, while I go and pray yonder.” John calls it a garden: Jesus “went forth with his disciples over the brook Cedron, where was a garden”, and adds that Judas “knew the place: for Jesus ofttimes resorted thither with his disciples”. Luke names no garden, only the mount: Jesus “went, as he was wont, to the mount of Olives”, and withdrew from the disciples “about a stone's cast”. Put together, the place was an enclosed olive orchard at the bottom of the mount, a short walk from the city after the supper, where Jesus prayed three times and was arrested."
+    - "Pilgrims were shown the place from the fourth century. Eusebius' Onomasticon sets Gethsemane at the foot of the Mount of Olives, where the faithful came to pray, and Jerome's Latin version adds that a church had been built there; Egeria, about 384, describes the vigil of Holy Thursday night that ended at Gethsemane before dawn. That Byzantine church was in ruins by the Middle Ages, the Crusaders built another, and in 1919–1924 the Franciscans raised the Church of All Nations on the foundations of both, over the rock venerated as the place of the agony. The garden beside it keeps eight ancient olives; a dating study published in 2015 put the trunks of three of them in the twelfth century, so they are not the trees of the Gospels, though their roots may be older. The Grotto of Gethsemane to the north, the Russian garden up the slope and the Greek Orthodox plot are claimed as well."
+  ru:
+    - "Гефсимания лежала у подножия горы Елеонской, за Кедронской долиной к востоку от Храмовой горы Иерусалима; точка карты стоит в саду рядом с церковью Всех Наций, примерно в 600 м от точки Иерусалима и в 900 м от традиционной Голгофы по прямой. Имя арамейское, гат шемани́м — «масличный пресс»: это была оливковая роща с давильней на склоне, где дорога из города поднимается к Вифании. Общее положение сада надёжно, точные границы — нет; страница о Голгофе называет соперничающие места, а эта говорит о самом саде."
+    - "Матфей и Марк называют его местом, участком земли: «Потом приходит с ними Иисус на место, называемое Гефсимания, и говорит ученикам: посидите тут, пока Я пойду помолюсь там». Иоанн называет его садом: Иисус «вышел с учениками Своими за поток Кедрон, где был сад», и добавляет, что Иуда знал «это место… потому что Иисус часто собирался там с учениками Своими». Лука не называет сада, только гору: Иисус «пошел по обыкновению на гору Елеонскую» и отошёл от учеников «на вержение камня». Вместе это огороженная оливковая роща у подножия горы, в нескольких минутах ходьбы от города после вечери, где Иисус трижды молился и был взят под стражу."
+    - "Паломникам показывали это место с IV века. «Ономастикон» Евсевия помещает Гефсиманию у подножия горы Елеонской, где верные приходят молиться, а латинский перевод Иеронима добавляет, что там построена церковь; Эгерия около 384 года описывает бдение в ночь Великого четверга, которое заканчивалось в Гефсимании перед рассветом. Та византийская церковь к Средним векам лежала в руинах, крестоносцы построили другую, а в 1919–1924 годах францисканцы возвели на фундаментах обеих церковь Всех Наций — над скалой, почитаемой как место моления о чаше. В саду рядом растут восемь древних олив; радиоуглеродное исследование, опубликованное в 2015 году, отнесло стволы трёх из них к XII веку, так что это не деревья евангельских времён, хотя корни могут быть старше. На то же звание претендуют Гефсиманский грот чуть севернее, русский сад выше по склону и греческий православный участок."
+map:
+  place: a42418f
+  year: "c. AD 30"
+  ref: Matt.26.36
+scripture:
+  [Matt.26.30, Matt.26.36-Matt.26.39, Mark.14.32, Luke.22.39-Luke.22.44, John.18.1-John.18.2]
+sources:
+  - "Straight-line distances between the places' points (Gethsemane, Jerusalem, Golgotha): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Eusebius, Onomasticon, s.v. Gethsimani, with Jerome's Latin additions (tr. C. U. Wolf)"
+  - "Egeria, Itinerarium 36"
+  - "M. Bernabei, “The age of the olive trees in the Garden of Gethsemane”, Journal of Archaeological Science 53 (2015)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008), s.v. Gethsemane"
+  - "History Globe article “Mount of Olives” and the question on Golgotha (the candidate sites)"
+status: checked

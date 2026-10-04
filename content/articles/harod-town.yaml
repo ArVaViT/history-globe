@@ -1,0 +1,22 @@
+# Overview article (ADR 0007). Mainstream facts only; Harod is known only as the home of two of David's heroes; the two proposals (a site near Jerusalem, the spring of Harod in the Jezreel valley) are given without choosing.
+id: harod-town
+place: afd8b40
+title:
+  en: "Harod, home of the Harodites"
+  ru: "Харод, родина Хародитян"
+body:
+  en:
+    - "Harod is known only through the men called after it. In the list of David's mighty men two of the thirty stand side by side: “Shammah the Harodite, Elika the Harodite”. The parallel list in Chronicles has “Shammoth the Harorite”, a one-letter difference in Hebrew that most scholars explain as a copyist's slip for Harodite; Elika is missing there. The Bible never names the town itself, and nothing is told of either man beyond his place in the list."
+    - "Where Harod was is unknown. Since several of David's heroes came from the villages around Bethlehem and Jerusalem, some look for it in Judah, and the map follows the proposal of Khirbet el-Harazan, a ruin south-east of Jerusalem; others connect the Harodites with the spring of Harod in the Jezreel valley, where Gideon camped before his night attack on Midian. Neither view rests on more than the name, and no excavation has settled it."
+  ru:
+    - "Харод известен только по людям, названным по нему. В списке храбрых Давида двое из тридцати стоят рядом: «Шамма Хародитянин, Елика Хародитянин». Параллельный список Паралипоменон даёт «Шамма Гародитянин», а в еврейском тексте там стоит имя, отличающееся одной буквой, что большинство исследователей объясняет ошибкой переписчика; Елики там нет. Сам город Библия не называет ни разу, и ни о ком из этих двоих ничего не рассказано, кроме места в списке."
+    - "Где был Харод, неизвестно. Поскольку несколько храбрых Давида происходили из селений вокруг Вифлеема и Иерусалима, одни ищут его в Иудее, и карта следует предположению о Хирбет-эль-Харазане, развалинах к юго-востоку от Иерусалима; другие связывают Хародитян с источником Харод в Изреельской долине, у которого стоял станом Гедеон перед ночным нападением на Мадианитян. Ни одно мнение не опирается ни на что, кроме имени, и раскопки вопроса не решили."
+scripture:
+  - 2Sam.23.25
+  - 1Chr.11.27
+  - Judg.7.1
+sources:
+  - "P. K. McCarter, II Samuel (Anchor Bible, 1984)"
+  - "'Harod', in D. N. Freedman (ed.), The Anchor Bible Dictionary (1992)"
+  - "N. Na'aman, 'The List of David's Officers (šālîšîm)', Vetus Testamentum 38 (1988)"
+status: checked

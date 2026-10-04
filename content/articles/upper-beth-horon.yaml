@@ -1,0 +1,30 @@
+# Overview article (ADR 0007). Mainstream facts only; written for the upper town alone, the pass and its battles being in the Beth-horon article; the archaeology is from surveys only, and is said so.
+id: upper-beth-horon
+place: ab682e6
+title:
+  en: "Upper Beth-horon"
+  ru: "Беф-Орон верхний"
+body:
+  en:
+    - "Upper Beth-horon, Beth-horon the upper, was the higher of the two towns of Beth-horon on the ridge that climbs from the valley of Aijalon to the plateau of Gibeon. It is the village of Beit Ur al-Fauqa, “the upper Beit Ur”, about 600 m above the sea in the West Bank some 16 km north-west of Jerusalem; Lower Beth-horon, Beit Ur al-Tahta, lies 3 km down the road and about 200 m lower. The ascent of Beth-horon ends at the upper town, and from it the road runs along the ridge to Gibeon and Jerusalem, so that whoever held the upper town held the way up from the coast. Potsherds found in the village date from the Iron Age onward; the site has not been dug."
+    - "The Bible names the upper town in borders and building. The border of Ephraim on the east ran from “Ataroth-addar, unto Beth-horon the upper”, and Beth-horon was given to the Levites of Kohath. The Chronicler says that Sherah, of the line of Ephraim, “built Beth-horon the nether, and the upper”. Of Solomon he says that “he built Beth-horon the upper, and Beth-horon the nether, fenced cities, with walls, gates, and bars”, where Kings names only the lower town: the two together closed the pass. The battles belong to the road between them, where Joshua chased the five kings “going down to Beth-horon”, a Philistine raiding party turned toward the way of Beth-horon in Saul's day, Judas Maccabeus broke Seron at the ascent, and the legion of Cestius Gallus was cut up in its retreat in AD 66."
+    - "Eusebius knew two villages of Bethoron about twelve miles from Jerusalem on the road to Nicopolis. Beit Ur al-Fauqa is still a small village on its spur, and stretches of the old road, with steps cut in the rock, survive between the two Beit Urs."
+  ru:
+    - "Беф-Орон верхний, или Верхний Беф-Орон, был высшим из двух городов Беф-Орона на гребне, который поднимается из долины Аиалонской к плато Гаваона. Это деревня Бейт-Ур-эль-Фаука, «верхний Бейт-Ур», примерно в 600 м над морем на Западном берегу, километрах в 16 к северо-западу от Иерусалима; Нижний Беф-Орон, Бейт-Ур-эт-Тахта, лежит в 3 км ниже по дороге и метров на 200 ниже. Подъём Беф-Оронский кончается у верхнего города, и от него дорога идёт по гребню к Гаваону и Иерусалиму, так что кто держал верхний город, держал и путь с побережья наверх. Черепки, найденные в деревне, относятся к железному веку и позднее; раскопок здесь не было."
+    - "Библия называет верхний город в пределах и в строительстве. У Ефрема с востока «пределом удела их был Атароф-Адар до Беф-Орона верхнего», а Беф-Орон отдали левитам из рода Каафа. Летописец говорит, что Шеера из потомков Ефрема «построила Беф-Орон нижний и верхний». О Соломоне он говорит: «Он обстроил Вефорон верхний и Вефорон нижний, города укрепленные, со стенами, воротами и запорами», тогда как книга Царств называет лишь нижний город: вдвоём они запирали проход. Битвы же принадлежат дороге между ними, где Иисус Навин гнал пятерых царей «по дороге к возвышенности Вефорона», куда во дни Саула повернул отряд филистимлян, где Иуда Маккавей разбил Сирона на подъёме, а в 66 году н. э. был истреблён при отступлении легион Цестия Галла."
+    - "Евсевий знал два селения Бефорон милях в двенадцати от Иерусалима по дороге в Никополь. Бейт-Ур-эль-Фаука и сегодня небольшая деревня на своём отроге, а между двумя Бейт-Урами сохранились участки старой дороги со ступенями, высеченными в скале."
+scripture:
+  - Josh.10.10-Josh.10.11
+  - Josh.16.5
+  - Josh.21.22
+  - 1Sam.13.18
+  - 1Chr.7.24
+  - 2Chr.8.5
+sources:
+  - "1 Maccabees 3.13-24 (Seron at the ascent of Beth-horon)"
+  - "Josephus, Jewish War 2.546-555 (the retreat of Cestius Gallus)"
+  - "Eusebius, Onomasticon, s.v. Bethoron"
+  - "C. R. Conder and H. H. Kitchener, The Survey of Western Palestine: Memoirs, vol. 3, Judaea (1883)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+  - "D. A. Dorsey, The Roads and Highways of Ancient Israel (1991)"
+status: checked

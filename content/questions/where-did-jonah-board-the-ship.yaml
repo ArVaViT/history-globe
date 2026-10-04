@@ -1,0 +1,35 @@
+id: where-did-jonah-board-the-ship
+question:
+  en: "Where did Jonah board the ship?"
+  ru: "Где Иона сел на корабль?"
+answer:
+  en:
+    - "At Joppa, today's Jaffa, the old port on a rocky headland at the southern edge of Tel Aviv-Yafo: Jonah “went down to Joppa; and he found a ship going to Tarshish: so he paid the fare thereof, and went down into it”. Joppa was the nearest port to the hill country, about 55 km north-west of Jerusalem in a straight line and about 93 km south-west of Jonah's home at Gath-hepher in Galilee; the map point stands on the ancient mound. Where he was going, and where he was sent instead, is told in the question on Jonah's mission."
+    - "Joppa had been a port long before Jonah. Egyptian kings held it from the fifteenth century BC, and excavators have found the gate of their fortress; the cedar for Solomon's Temple was brought “in floats by sea to Joppa” and carried up to Jerusalem, and the returned exiles brought it the same way “to the sea of Joppa”. A ship bound for Tarshish was a large sea-going merchantman, probably Phoenician, made for the long run west; the sailors “cried every man unto his god, and cast forth the wares that were in the ship into the sea”, while Jonah had gone down into the hold and lay fast asleep. The harbour itself was small and open to the wind, and Josephus describes how dangerous its rocks were to ships."
+    - "Centuries later Peter stayed at Joppa “many days” with Simon a tanner, “whose house is by the sea side”, and on its roof saw the vision that sent him to the Roman centurion Cornelius at Caesarea, 51 km up the coast: the prophet who fled from Joppa rather than preach to the gentiles of Nineveh and the apostle who went out from Joppa to a gentile house are often set side by side, the more so since Jesus called Peter “Simon Bar-jona”, son of Jonah. Jerome, describing Paula's pilgrimage of the 380s, names Joppa as the port of Jonah's flight. The map uses 780 BC, a point in the reign of Jeroboam II, under whom Jonah prophesied."
+  ru:
+    - "В Иоппии, нынешней Яффе, старой гавани на скалистом мысу у южного края Тель-Авива-Яффо: Иона «пришел в Иоппию, и нашел корабль, отправлявшийся в Фарсис, отдал плату за провоз и вошел в него». Иоппия была ближайшей гаванью для горной страны — примерно в 55 км к северо-западу от Иерусалима по прямой и в 93 км к юго-западу от родного Гафхефера Ионы в Галилее; точка карты стоит на древнем холме. Куда он плыл и куда был послан вместо этого, рассказано в вопросе о миссии Ионы."
+    - "Иоппия была гаванью задолго до Ионы. Египетские цари владели ею с XV века до н. э., и археологи нашли ворота их крепости; кедры для храма Соломона пригоняли «в плотах по морю в Яфу» и везли в Иерусалим, и вернувшиеся из плена доставляли лес так же — «по морю в Яфу». Корабль в Фарсис был большим морским торговым судном, вероятно финикийским, рассчитанным на дальний путь на запад; корабельщики «взывали каждый к своему богу, и стали бросать в море кладь с корабля», а Иона «спустился во внутренность корабля, лег и крепко заснул». Сама гавань была маленькой и открытой ветрам, и Иосиф Флавий описывает, как опасны были её скалы для кораблей."
+    - "Спустя века Пётр «довольно дней пробыл» в Иоппии у Симона кожевника, «которого дом находится при море», и на его кровле увидел видение, пославшее его к римскому сотнику Корнилию в Кесарию, в 51 км вверх по побережью: пророка, бежавшего из Иоппии, лишь бы не проповедовать язычникам Ниневии, и апостола, вышедшего из Иоппии в дом язычника, часто ставят рядом — тем более что Иисус назвал Петра «Симон, сын Ионин». Иероним, описывая паломничество Павлы в 380-х годах, называет Иоппию пристанью, откуда бежал Иона. Карта берёт 780 г. до н. э. — точку в царствование Иеровоама II, при котором пророчествовал Иона."
+map:
+  place: ae023a9
+  year: "780 BC"
+  ref: Jonah.1.3
+scripture:
+  [
+    Jonah.1.3,
+    Jonah.1.5,
+    2Kgs.14.25,
+    2Chr.2.16,
+    Ezra.3.7,
+    Acts.9.43,
+    Acts.10.5-Acts.10.6,
+    Matt.16.17,
+  ]
+sources:
+  - "Straight-line distances between the places' points (Joppa, Jerusalem, Gath-hepher, Caesarea): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe article “Joppa”, History Globe tour “Jonah” and History Globe question on where Jonah was sent"
+  - "Josephus, Jewish War 3.414-431 (Joppa's harbour and its rocks)"
+  - "Jerome, Letter 108.8 (Joppa, the port of Jonah's flight)"
+  - "M. Peilstöcker and A. A. Burke (eds.), The History and Archaeology of Jaffa 1 (2011)"
+status: checked

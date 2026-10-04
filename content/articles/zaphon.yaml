@@ -1,0 +1,26 @@
+# Overview article (ADR 0007). Mainstream facts only; whether the three verses mean the mountain or merely "north" is given as a question of reading, not settled.
+id: zaphon
+place: a78e845
+title:
+  en: "Mount Zaphon"
+  ru: "Гора Цафон"
+body:
+  en:
+    - "Mount Zaphon is Jebel al-Aqra, a bald limestone peak some 1,700 m high that rises straight out of the sea just north of the mouth of the Orontes, on the border of Turkey and Syria. In the tablets of Ugarit, some 40 km to the south, of the fourteenth and thirteenth centuries BC, it is Sapunu, the mountain of Baal, on which the craftsman god built him a palace of silver and gold and from which he thundered; the Hittites called it Hazzi and set it among the gods who witnessed their treaties. To the Greeks and Romans it was Mount Casius, seat of Zeus Kasios, and Hadrian climbed it by night to see the sunrise and as he sacrificed, lightning struck the victim and the attendant. Because it stood to the north of Canaan, its name became the ordinary Hebrew word for “north”, tsafon."
+    - "That is why the Hebrew Bible can be read in two ways where it uses the word with the old mountain in mind. Psalm 48 praises Zion as “the joy of the whole earth”, “on the sides of the north, the city of the great King”, naming Zion's height with the word that at Ugarit named Baal's seat: many take it to say that Zion, not Zaphon, is the true mountain of God. The king of Babylon in Isaiah boasts, “I will sit also upon the mount of the congregation, in the sides of the north”, that is, on the mountain where the gods assemble. Job says of God, “He stretcheth out the north over the empty place, and hangeth the earth upon nothing”, where “the north” may be the mountain, or the northern sky. The Russian Synodal text, like most translations, gives simply “north” in all three and has no name Zaphon at all."
+    - "The mountain, Kel Dağı in Turkish, stands today in the province of Hatay, its summit a military zone; the ruins of Ugarit, Ras Shamra, lie across the Syrian border some 40 km south, and the sunrise from the top is still a famous sight."
+  ru:
+    - "Гора Цафон — это Джебель-эль-Акра, голая известняковая вершина высотой около 1700 м, встающая прямо из моря чуть севернее устья Оронта, на границе Турции и Сирии. В табличках Угарита, лежащего километрах в 40 южнее, XIV–XIII веков до н. э. она зовётся Цапуну — гора Ваала, на которой бог-ремесленник построил ему дворец из серебра и золота и с которой он гремел громом; хетты звали её Хацци и ставили среди богов, свидетельствовавших их договоры. Для греков и римлян это была гора Касий, престол Зевса Касия, и Адриан поднялся на неё ночью, чтобы увидеть восход, и во время жертвоприношения молния поразила жертву и прислужника. Оттого что она стояла к северу от Ханаана, её имя стало обычным еврейским словом «север» — цафон."
+    - "Поэтому еврейскую Библию можно читать двояко там, где она употребляет это слово, помня о древней горе. 47-й псалом славит Сион как «радость всей земли», «на северной стороне ее город великого Царя» — тем самым словом, которым в Угарите назывался престол Ваала: многие понимают это так, что истинная гора Божия — Сион, а не Цафон. Царь Вавилонский у Исаии хвалится: «сяду на горе в сонме богов, на краю севера», то есть на горе собрания богов. Иов говорит о Боге: «Он распростер север над пустотою, повесил землю ни на чем», где «север» может быть и горой, и северным небом. Синодальный перевод, как и большинство переводов, во всех трёх местах даёт просто «север» и имени Цафон не знает вовсе."
+    - "Гора, по-турецки Кель-Дагы, стоит сегодня в провинции Хатай, её вершина — военная зона; развалины Угарита, Рас-Шамра, лежат за сирийской границей километрах в 40 южнее, а восход с вершины по-прежнему знаменитое зрелище."
+scripture:
+  - Job.26.7
+  - Ps.48.2
+  - Isa.14.13
+sources:
+  - "The Baal Cycle (KTU 1.3-1.4), in M. S. Smith and W. T. Pitard, The Ugaritic Baal Cycle, vol. 2 (2009)"
+  - "Historia Augusta, Life of Hadrian 14.3 (the ascent of Mount Casius)"
+  - "R. J. Clifford, The Cosmic Mountain in Canaan and the Old Testament (1972)"
+  - "H. Niehr, 'Zaphon', in K. van der Toorn, B. Becking and P. W. van der Horst (eds.), Dictionary of Deities and Demons in the Bible (2nd ed., 1999)"
+  - "R. Lane Fox, Travelling Heroes in the Epic Age of Homer (2008)"
+status: checked

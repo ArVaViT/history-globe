@@ -1,9 +1,17 @@
 import { describe, expect, it } from "vitest";
-import { pointsAlong, pointsAlongPath } from "./elevation";
+import { pointsAlongPath } from "./elevation";
 
 describe("points along a way", () => {
   it("spaces a straight line evenly, both ends included", () => {
-    expect(pointsAlong([0, 0], [4, 0], 5)).toEqual([
+    expect(
+      pointsAlongPath(
+        [
+          [0, 0],
+          [4, 0],
+        ],
+        5,
+      ),
+    ).toEqual([
       [0, 0],
       [1, 0],
       [2, 0],

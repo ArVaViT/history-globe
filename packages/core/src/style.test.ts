@@ -19,6 +19,12 @@ function visibleIn(year: number, y0: number, y1: number): boolean {
 }
 
 describe("style", () => {
+  // The whole style as built: a move or a refactor of its expressions changes nothing here.
+  // An intended change updates it with `vitest -u` and shows in review as a diff.
+  it("is built as before", () => {
+    expect(style).toMatchSnapshot();
+  });
+
   it("is a valid MapLibre style", () => {
     expect(validateStyleMin(style)).toEqual([]);
   });

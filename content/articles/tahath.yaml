@@ -1,0 +1,20 @@
+# Overview article (ADR 0007). Mainstream facts only; a station known only from the itinerary of Numbers 33; unlocated, placed on the map only relative to its neighbours.
+id: tahath
+place: abe40d1
+title:
+  en: "Tahath"
+  ru: "Тахаф"
+body:
+  en:
+    - "Tahath is one of the camps of Israel in the wilderness, known only from the list of stations in Numbers 33: “And they removed from Makheloth, and encamped at Tahath. And they departed from Tahath, and pitched at Tarah.” It belongs to the run of eighteen stations from Rithmah to Ezion-geber, between Hazeroth and Kadesh, most of which are named nowhere else in the Bible, and the text records nothing that happened there. The name means “below” or “beneath”, which may describe a low-lying spot; a man named Tahath appears among the Kohathite Levites, but there is no reason to connect him with the camp."
+    - "No site has been proposed with any confidence. The itinerary itself is variously explained, as a record of a real route, as a list built from a later road through Sinai and the Negev, or as a mixture of both, and the order of its stations cannot be fixed on the ground. The map therefore places Tahath only approximately, within about 50 km of its neighbour Tarah, which is equally unknown."
+  ru:
+    - "Тахаф — один из станов Израиля в пустыне, известный только по перечню стоянок в 33-й главе книги Чисел: «И отправились из Макелофа и расположились станом в Тахафе. И отправились из Тахафа и расположились станом в Тарахе». Он входит в череду восемнадцати стоянок от Рифмы до Ецион-Гавера, между Асирофом и Кадесом, большинство которых больше нигде в Библии не названо, и текст не сообщает ни о каком событии там. Имя значит «низ» или «внизу», что может описывать низменное место; среди левитов-каафитов есть человек по имени Тахаф, но связывать его со станом нет оснований."
+    - "Ни одного места с уверенностью не предложено. Сам маршрут объясняют по-разному — как запись подлинного пути, как перечень, составленный по позднейшей дороге через Синай и Негев, или как смесь того и другого, — и порядок его стоянок на местности не установить. Поэтому на карте Тахаф помещён лишь приблизительно, в пределах около 50 км от соседнего Тараха, который так же неизвестен."
+scripture:
+  - Num.33.26-Num.33.27
+sources:
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "B. A. Levine, Numbers 21–36 (Anchor Bible 4A, 2000)"
+  - "J. Milgrom, Numbers (JPS Torah Commentary, 1990)"
+status: checked

@@ -1,0 +1,34 @@
+id: where-was-ziklag
+question:
+  en: "Where was Ziklag, David's town among the Philistines?"
+  ru: "Где находился Секелаг, город Давида у филистимлян?"
+answer:
+  en:
+    - "Ziklag was a town in the Negev, the dry south of Judah, but its exact site is disputed. The map point stands on Tell esh-Sharia (Tel Sera'), a mound on Nahal Gerar about 22 km north-west of Beersheba and 68 km south-west of Jerusalem in a straight line, which many scholars accept; Tel Halif, north-east of Beersheba, was proposed earlier, and in 2019 the excavators of Khirbet er-Ra'i near Lachish argued for their site, which others reject because it lies in the Shephelah rather than in the Negev."
+    - "Fleeing from Saul, David asked Achish, king of Gath, for “a place in some town in the country”: “Then Achish gave him Ziklag that day: wherefore Ziklag pertaineth unto the kings of Judah unto this day.” He lived “in the country of the Philistines” for “a full year and four months”, raiding the peoples of the south from there. From Tell esh-Sharia Gath (Tell es-Safi) is about 38 km to the north in a straight line, far enough for David to act unseen."
+    - "While David marched with the Philistine army, the Amalekites invaded the south and had “smitten Ziklag, and burned it with fire”, carrying off the women and children. He pursued them past the brook Besor, about 30 km west of the map point, recovered everything and sent part of the spoil “unto the elders of Judah, even to his friends”. At Ziklag he heard of Saul's death, and from there he went up to Hebron, about 43 km to the north-east, to be anointed king."
+  ru:
+    - "Секелаг — город в Негеве, сухом юге Иудеи, но где именно он стоял, спорят. Точка карты стоит на Телль-эш-Шариа (Тель-Сера), холме у русла Нахаль-Герар примерно в 22 км к северо-западу от Вирсавии и в 68 км к юго-западу от Иерусалима по прямой; это отождествление принимают многие учёные. Раньше предлагали Тель-Халиф к северо-востоку от Вирсавии, а в 2019 году раскопщики Хирбет-ар-Раи близ Лахиса назвали Секелагом свой холм; другие возражают, что он лежит в Шефеле, а не в Негеве."
+    - "Спасаясь от Саула, Давид просил Анхуса, царя Гефского: «пусть дано будет мне место в одном из малых городов». «Тогда дал ему Анхус Секелаг, посему Секелаг и остался за царями Иудейскими доныне». Давид прожил «в стране Филистимской» год и четыре месяца и оттуда совершал набеги на народы юга. От Телль-эш-Шариа до Гефа (Телль-эс-Сафи) около 38 км к северу по прямой — достаточно далеко, чтобы Давид действовал незаметно."
+    - "Пока Давид шёл с филистимским войском, Амаликитяне напали на Секелаг, «и взяли Секелаг и сожгли его огнем», уведя женщин и детей. Он догнал их за потоком Восор, примерно в 30 км к западу от точки карты, отбил всё и послал часть добычи «к старейшинам Иудиным, друзьям своим». В Секелаге он узнал о смерти Саула и оттуда поднялся в Хеврон, примерно в 43 км к северо-востоку, где его помазали на царство."
+map:
+  place: a0ed7ff
+  year: "c. 1010 BC"
+  ref: 1Sam.27.6
+scripture:
+  [
+    1Sam.27.5-1Sam.27.7,
+    1Sam.30.1-1Sam.30.3,
+    1Sam.30.9-1Sam.30.10,
+    1Sam.30.26,
+    2Sam.1.1,
+    2Sam.2.1-2Sam.2.4,
+    Josh.15.31,
+  ]
+sources:
+  - "Straight-line distances between the places' points (Ziklag, Beersheba, Jerusalem, Gath, the brook Besor, Hebron): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "E. D. Oren, 'Ziglag: A Biblical City on the Edge of the Negev', Biblical Archaeologist 45 (1982), pp. 155-166"
+  - "K. H. Keimer, 'Biblical Ziklag: The Case for Khirbet er-Ra'i', Palestine Exploration Quarterly 155 (2023), pp. 115-134"
+  - "A. Borschel-Dan, 'As archaeologists say they've found King David's city of refuge, a debate begins', The Times of Israel, 8 July 2019 (the objections of A. Maeir and I. Finkelstein)"
+  - "History Globe article “Ziklag”"
+status: checked

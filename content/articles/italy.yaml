@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; the date of Claudius' edict follows Orosius and is said to be debated; the Italian cohort is reported from the inscriptions.
+id: italy
+place: a7184a7
+title:
+  en: "Italy"
+  ru: "Италия"
+body:
+  en:
+    - "Italy in the New Testament is the Roman heartland, the peninsula from the Alps to the straits of Messina, which by the first century AD was one land of Roman citizens with Rome at its head. Augustus divided it into eleven regions; its ports of Puteoli on the bay of Naples and Ostia at the Tiber's mouth received the grain fleets of Egypt, and from the bay the roads joined the Appian Way to the capital. Jews had lived in Rome since the second century BC, and by the time of Augustus their community there numbered in the thousands."
+    - "Italy enters Acts through people who came from it. At Corinth Paul “found a certain Jew named Aquila, born in Pontus, lately come from Italy, with his wife Priscilla”, because Claudius had commanded all Jews to depart from Rome. Suetonius confirms that Claudius expelled the Jews of Rome, who in his words kept rioting at the instigation of one Chrestus; Orosius dates the edict to AD 49, though the date is debated. Cornelius at Caesarea was a centurion “of the band called the Italian band”, a cohort of Roman citizens from Italy of the kind inscriptions attest in Syria."
+    - "Then “when it was determined that we should sail into Italy”, Paul was handed to the centurion Julius, who at Myra “found a ship of Alexandria sailing into Italy”; after the shipwreck on Malta they landed at Puteoli, found brethren there, and so went toward Rome. The letter to the Hebrews ends with “They of Italy salute you”, which tells where the writer or his readers were, though not which."
+    - "Roman Italy is today the Italian Republic; Puteoli is Pozzuoli, where the quays of Paul's day lie under the harbour, and the Appian Way can still be walked outside Rome."
+  ru:
+    - "Италия в Новом Завете — сердце римского мира, полуостров от Альп до Мессинского пролива, который к I веку н. э. был единой землёй римских граждан с Римом во главе. Август разделил её на одиннадцать областей; её гавани — Путеол в Неаполитанском заливе и Остия в устье Тибра — принимали хлебные флоты Египта, а от залива дороги выводили на Аппиеву дорогу к столице. Иудеи жили в Риме со II века до н. э., и ко времени Августа их община насчитывала тысячи."
+    - "В Деяния Италия входит через людей, пришедших оттуда. В Коринфе Павел нашёл «некоторого Иудея, именем Акилу, родом Понтянина, недавно пришедшего из Италии, и Прискиллу, жену его», потому что Клавдий повелел всем Иудеям удалиться из Рима. Светоний подтверждает, что Клавдий изгнал из Рима иудеев, которые, по его словам, постоянно волновались, подстрекаемые неким Хрестом; Орозий относит указ к 49 году н. э., хотя дата оспаривается. Корнилий в Кесарии был «сотник из полка, называемого Италийским» — когорты римских граждан из Италии, какие надписи засвидетельствовали в Сирии."
+    - "Затем настал день, о котором Лука говорит: «Когда решено было плыть нам в Италию, то отдали Павла и некоторых других узников сотнику Августова полка, именем Юлию»; в Мирах тот «нашел Александрийский корабль, плывущий в Италию»; после кораблекрушения у Мелита они высадились в Путеоле, нашли там братьев и так пошли в Рим. Послание к Евреям кончается словами «Приветствуют вас Италийские», что говорит, где находился писавший или его читатели, но не говорит, кто именно."
+    - "Римская Италия сегодня — Итальянская Республика; Путеол — это Поццуоли, где причалы времён Павла лежат под гаванью, а по Аппиевой дороге под Римом по-прежнему можно пройти."
+scripture:
+  - Acts.10.1
+  - Acts.18.2
+  - Acts.27.1
+  - Acts.27.6
+  - Acts.28.13-Acts.28.14
+  - Heb.13.24
+sources:
+  - "Suetonius, Life of Claudius 25.4"
+  - "Orosius, Histories against the Pagans 7.6.15-16"
+  - "Cassius Dio, Roman History 60.6.6"
+  - "Strabo, Geography 5 (Italy and Puteoli)"
+  - "H. J. Leon, The Jews of Ancient Rome (1960)"
+  - "B. Rapske, The Book of Acts and Paul in Roman Custody (1994)"
+  - "L. Casson, Ships and Seamanship in the Ancient World (1971)"
+status: checked

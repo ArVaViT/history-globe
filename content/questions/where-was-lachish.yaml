@@ -1,0 +1,34 @@
+id: where-was-lachish
+question:
+  en: "Where was Lachish, the city Sennacherib besieged?"
+  ru: "Где находился Лахис, осаждённый Сеннахиримом?"
+answer:
+  en:
+    - "Lachish is Tell ed-Duweir, now Tel Lachish, a large mound in the Shephelah, the low hills between the Judaean highlands and the coastal plain, about 43 km south-west of Jerusalem in a straight line; the map point stands on it. It guarded the road from the coast into the hills of Judah and was the strongest city of the kingdom after Jerusalem. Earlier scholars sought Lachish elsewhere, but since the excavations of the 1930s Tell ed-Duweir is generally accepted."
+    - "In 701 BC Sennacherib of Assyria besieged Lachish while his officers went up against Jerusalem. Hezekiah “sent to the king of Assyria to Lachish, saying, I have offended; return from me: that which thou puttest on me will I bear”, and the king of Assyria sent his commanders “from Lachish to king Hezekiah with a great host against Jerusalem”. Sennacherib lined a hall of his palace at Nineveh with reliefs of the siege, now in the British Museum, with a caption that the booty of Lachish passed before him. At the site excavators found the burned city of that year and the Assyrian siege ramp against its south-western corner, the only Assyrian ramp yet found."
+    - "A century later the Babylonians came. Jeremiah writes that the army fought “against Lachish, and against Azekah: for these defenced cities remained of the cities of Judah”. Among the ink-written potsherds found in the gate in 1935, the Lachish letters, one officer reports that they are watching for the signals of Lachish because they cannot see Azekah, 17 km to the north-north-east. The city was burned in 587 or 586 BC. Joshua had taken Lachish centuries before; the Canaanite city of the Amarna letters was destroyed in the twelfth century BC, and how that fall relates to Joshua's conquest is disputed."
+  ru:
+    - "Лахис — это Телль-эд-Дувейр, ныне Тель-Лахиш, большой холм в Шефеле, низких холмах между Иудейскими горами и прибрежной равниной, примерно в 43 км к юго-западу от Иерусалима по прямой; точка карты стоит на нём. Он сторожил дорогу от побережья в горы Иудеи и был самым сильным городом царства после Иерусалима. Прежние исследователи искали Лахис в других местах, но после раскопок 1930-х годов Телль-эд-Дувейр принят почти всеми."
+    - "В 701 г. до н. э. ассирийский царь Сеннахирим осадил Лахис, а его военачальники пошли на Иерусалим. Езекия «послал… к царю Ассирийскому в Лахис сказать: виновен я; отойди от меня; что наложишь на меня, я внесу», а царь Ассирийский послал своих военачальников «из Лахиса к царю Езекии с большим войском в Иерусалим». Сеннахирим украсил один из залов своего дворца в Ниневии рельефами осады — теперь они в Британском музее — с надписью о том, что добыча Лахиса проходила перед ним. На месте археологи нашли сожжённый в тот год город и ассирийскую осадную насыпь у его юго-западного угла — единственную найденную до сих пор."
+    - "Через сто с лишним лет пришли вавилоняне. Иеремия пишет, что войско воевало «против Лахиса и Азеки; ибо из городов Иудейских сии только оставались, как города укрепленные». Среди черепков с надписями чернилами, найденных в воротах в 1935 году, — лахисских писем — есть донесение военачальника: они следят за сигналами Лахиса, потому что не видят Азеки, лежащей в 17 км к северо-северо-востоку. Город сгорел в 587 или 586 г. до н. э. Иисус Навин взял Лахис за много веков до того; ханаанский город амарнских писем был разрушен в XII веке до н. э., и как это разрушение соотносится с завоеванием Иисуса Навина, спорно."
+map:
+  place: a3cc590
+  year: "701 BC"
+  ref: 2Kgs.18.14
+scripture:
+  [
+    Josh.10.31-Josh.10.32,
+    2Kgs.14.19,
+    2Kgs.18.13-2Kgs.18.17,
+    2Kgs.19.8,
+    2Chr.32.9,
+    Jer.34.7,
+    Neh.11.30,
+  ]
+sources:
+  - "Straight-line distances between the places' points (Lachish, Jerusalem, Azekah): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe article “Lachish” and History Globe question on when Assyria besieged Jerusalem"
+  - "Lachish ostracon 4 (KAI 194); H. Torczyner, Lachish I: The Lachish Letters (1938)"
+  - "D. Ussishkin, The Renewed Archaeological Excavations at Lachish (1973-1994) (2004)"
+  - "D. Ussishkin, Biblical Lachish (2014)"
+status: checked

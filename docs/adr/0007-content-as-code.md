@@ -37,7 +37,7 @@ second-pass loop converges (95 of 95 evidence snippets confirmed in their source
   outside git. Snippets are never shown to readers.
 - **CI checks the meaning, not just the shape**: every verse reference exists; every
   snippet is found in the saved source; confidence labels follow the rules in
-  `content/STYLE.md`; no service notes in reader text; nothing from a share-alike source.
+  `docs/content-guide.md`; no service notes in reader text; nothing from a share-alike source.
 - **Review pipeline for articles**: writer model → automated checks → reviewer model →
   edit → second pass on changed parts → lead written last → scholar review → translation.
   Master language is English; Scripture is quoted from licensed translations, never

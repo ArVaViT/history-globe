@@ -1,0 +1,27 @@
+# Overview article (ADR 0007). Mainstream facts only; the Egyptian Succoth of the exodus, not the Succoth of the Jordan valley (succoth.yaml); the site is disputed and the app's candidates are named without choosing; the date of the Exodus is not given.
+id: succoth-egypt
+place: aa28709
+title:
+  en: "Succoth"
+  ru: "Сокхоф"
+body:
+  en:
+    - "Succoth was the first station of the exodus: “the children of Israel journeyed from Rameses to Succoth, about six hundred thousand on foot that were men, beside children”, and from Succoth they went on to Etham “in the edge of the wilderness”. The itinerary of Numbers repeats the two stages. The Hebrew name means booths, and the place is not the Succoth of Jacob and Gideon in the Jordan valley. Most scholars see in it the Egyptian Tjeku, a name for the eastern Wadi Tumilat, the narrow valley that runs from the Delta to the Bitter Lakes and was the natural road out of Egypt towards Sinai. Two papyri of the late thirteenth century BC know Tjeku well: one reports Shasu bedouin from Edom let through its fortress to the pools of Pithom to water their flocks, another a pursuit of two runaway slaves past the walls of Tjeku."
+    - "Where in the valley Succoth stood is disputed. The usual candidate is Tell el-Maskhuta near its eastern end, about 17 km west of Ismailia, where Édouard Naville dug in 1883 and found storehouses and the name Tjeku, though he took the site for Pithom. John Holladay's excavations of 1978–1985 showed that the town there was founded about 600 BC, when Necho II cut his canal through the valley, with a Hyksos-period settlement before and almost nothing of the New Kingdom between; so many now put Pithom at Tell er-Retaba, 13 km further west, and let Succoth be the district rather than one mound, while others hold that Succoth and Pithom were the same place. The map marks Tell el-Maskhuta, the neighbourhood of Jabal Maryam by Lake Timsah, Tell er-Retaba, and the identity with Pithom."
+    - "Wadi Tumilat today lies in the Ismailia governorate of Egypt, watered by the Ismailia Canal of the 1860s along the line of the ancient one; the railway and the road from Zagazig to Ismailia follow it, and the mounds of el-Maskhuta and er-Retaba rise among the fields."
+  ru:
+    - "Сокхоф — первый стан исхода: «отправились сыны Израилевы из Раамсеса в Сокхоф до шестисот тысяч пеших мужчин, кроме детей», а из Сокхофа двинулись дальше в Ефам, «в конце пустыни». Список станов в книге Чисел повторяет оба перехода. Еврейское имя значит «шалаши», и это не Сокхоф Иакова и Гедеона в долине Иордана. Большинство учёных видят в нём египетское Чеку — название восточной части Вади-Тумилат, узкой долины, идущей от Дельты к Горьким озёрам и бывшей естественной дорогой из Египта к Синаю. Два папируса конца XIII века до н. э. хорошо знают Чеку: один доносит, что бедуинов-шасу из Едома пропустили через его крепость к прудам Пифома напоить стада, другой рассказывает о погоне за двумя беглыми рабами мимо стен Чеку."
+    - "Где в долине стоял Сокхоф, спорно. Обычный кандидат — Телль-эль-Масхута у её восточного конца, примерно в 17 км к западу от Исмаилии, где Эдуар Навилль копал в 1883 году и нашёл склады и имя Чеку, хотя принял городище за Пифом. Раскопки Джона Холладея 1978–1985 годов показали, что тамошний город основан около 600 г. до н. э., когда Нехо II провёл по долине свой канал; до него было поселение времён гиксосов, а от Нового царства между ними почти ничего. Поэтому многие теперь помещают Пифом в Телль-эр-Ретабу, на 13 км западнее, а Сокхоф считают скорее округой, чем одним холмом; другие держатся того, что Сокхоф и Пифом — одно место. На карте отмечены Телль-эль-Масхута, окрестности Джебель-Марьям у озера Тимсах, Телль-эр-Ретаба и тождество с Пифомом."
+    - "Вади-Тумилат сегодня лежит в египетской мухафазе Исмаилия; его орошает Исмаилийский канал 1860-х годов, проведённый по линии древнего; вдоль него идут железная дорога и шоссе из Загазига в Исмаилию, а холмы Эль-Масхута и Эр-Ретаба поднимаются среди полей."
+scripture:
+  - Exod.12.37-Exod.12.38
+  - Exod.13.20
+  - Num.33.5-Num.33.6
+sources:
+  - "Papyrus Anastasi V and VI (the runaway slaves; the Shasu of Edom at the fortress of Tjeku), ANET 259"
+  - "É. Naville, The Store-City of Pithom and the Route of the Exodus (1885)"
+  - "J. S. Holladay, Cities of the Delta, Part III: Tell el-Maskhuta (1982)"
+  - "D. B. Redford, 'Exodus I 11', Vetus Testamentum 13 (1963)"
+  - "J. K. Hoffmeier, Israel in Egypt: The Evidence for the Authenticity of the Exodus Tradition (1997)"
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+status: checked

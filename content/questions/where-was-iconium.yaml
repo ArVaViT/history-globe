@@ -1,0 +1,26 @@
+id: where-was-iconium
+question:
+  en: "Where was Iconium?"
+  ru: "Где находилась Икония?"
+answer:
+  en:
+    - "Iconium is the modern city of Konya in central Turkey, on the edge of the Anatolian plateau, and the ancient town lies beneath it; the map point stands on the old centre. It is about 124 km east-south-east of Pisidian Antioch, 33 km north-north-east of Lystra and 96 km north-west of Derbe in a straight line, and about 720 km from Jerusalem. Watered by streams from the hills to the west, it was the richest town of a dry plain, and the Roman road from Antioch to the east ran through it."
+    - "Paul and Barnabas came here after they were driven out of Antioch. “It came to pass in Iconium, that they went both together into the synagogue of the Jews, and so spake, that a great multitude both of the Jews and also of the Greeks believed.” They stayed “long time”, but “the multitude of the city was divided: and part held with the Jews, and part with the apostles”; when Gentiles and Jews with their rulers moved to stone them, “they were ware of it, and fled unto Lystra and Derbe, cities of Lycaonia”. Luke's wording sets Iconium apart from Lycaonia, and William Ramsay argued that this was right for Paul's day, when Iconium still counted itself Phrygian, as Xenophon had called it in 401 BC."
+    - "Under Claudius the city took the name Claudiconium, and Hadrian made it a Roman colony. The second-century Acts of Paul set here the story of Thecla, a young woman of Iconium who left her betrothed to follow Paul; Tertullian already knew it as a romance written by a presbyter of Asia. In the twelfth and thirteenth centuries Konya was the capital of the Seljuk sultans of Rum, and the poet Jalal al-Din Rumi is buried there."
+  ru:
+    - "Икония — нынешний город Конья в центре Турции, на краю Анатолийского плато; древний город лежит под ним, и точка карты стоит на старом центре. Отсюда примерно 124 км до Антиохии Писидийской к западу-северо-западу, 33 км до Листры к юго-юго-западу и 96 км до Дервии к юго-востоку по прямой, а до Иерусалима около 720 км. Орошаемая ручьями с гор на западе, Икония была самым богатым городом засушливой равнины, и через неё проходила римская дорога из Антиохии на восток."
+    - "Павел и Варнава пришли сюда, изгнанные из Антиохии. «В Иконии они вошли вместе в Иудейскую синагогу и говорили так, что уверовало великое множество Иудеев и Еллинов». Они пробыли здесь «довольно времени», но «народ в городе разделился: и одни были на стороне Иудеев, а другие на стороне Апостолов»; когда язычники и Иудеи со своими начальниками устремились побить их камнями, апостолы, «узнав о сем, удалились в Ликаонские города Листру и Дервию». Слова Луки отделяют Иконию от Ликаонии, и Уильям Рамзай доказывал, что для времени Павла это верно: Икония тогда ещё считала себя фригийской, как назвал её Ксенофонт в 401 г. до н. э."
+    - "При Клавдии город принял имя Клавдиконий, а Адриан сделал его римской колонией. «Деяния Павла» II века помещают здесь рассказ о Фекле, девушке из Иконии, которая оставила жениха, чтобы следовать за Павлом; уже Тертуллиан знал, что это повесть, сочинённая пресвитером из Асии. В XII–XIII веках Конья была столицей сельджукских султанов Рума, и здесь похоронен поэт Джалаладдин Руми."
+map:
+  place: ae425aa
+  year: "AD 47"
+  ref: Acts.14.1
+scripture: [Acts.13.51, Acts.14.1-Acts.14.6, Acts.14.19, Acts.14.21, Acts.16.2, 2Tim.3.11]
+sources:
+  - "Straight-line distances between the places' points (Iconium, Antioch in Pisidia, Lystra, Derbe, Jerusalem): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Xenophon, Anabasis 1.2.19; Strabo, Geography 12.6.1"
+  - "W. M. Ramsay, St. Paul the Traveller and the Roman Citizen (1895), on Iconium as a Phrygian city"
+  - "Acts of Paul and Thecla; Tertullian, On Baptism 17"
+  - "S. Mitchell, Anatolia: Land, Men, and Gods in Asia Minor (2 vols., 1993)"
+  - "History Globe article “Iconium” and History Globe tour “Paul's first journey”"
+status: checked

@@ -2,14 +2,19 @@ import { YEAR_MAX, type Engine } from "@hg/core";
 import {
   useCallback,
   useEffect,
+  useMemo,
+  useRef,
   useState,
   useSyncExternalStore,
   type Dispatch,
   type SetStateAction,
 } from "react";
+import type { Locale } from "@hg/model";
 import { chapterFocus } from "./chapter";
 import type { LoadedData } from "./data";
 import { focusOf, keyAction } from "./keys";
+import type { TFunction } from "./i18n";
+import { timelineEventsOf } from "./timeline-events";
 import { readUrl, writeUrl } from "./url";
 import type { Globe } from "./useGlobe";
 
@@ -327,4 +332,86 @@ export function useHeightVar(name: string): (el: HTMLElement | null) => (() => v
     },
     [name],
   );
+}
+
+/**
+ * The dated events shown (all, or under "the Bible alone" only those it tells) and the
+ * marks on the slider: the places' founding, destruction and ruin, the turning points of
+ * the history and, under the Bible alone, the battles it tells.
+ */
+export function useTimelineMarks(
+  data: LoadedData | null,
+  bibleOnly: boolean,
+  locale: Locale,
+  t: TFunction,
+) {
+  const events = useMemo(
+    () => (!data ? [] : bibleOnly ? data.events.filter((e) => e.ref !== undefined) : data.events),
+    [data, bibleOnly],
+  );
+  // Founding, destruction and ruin of places, and the turning points of the history.
+  // Under the Bible alone the battles it tells are marks too: before Solomon the Bible's
+  // dated events are few (no disputed early dates), its battles many (Jericho, Ai, Gibeon).
+  const timelineEvents = useMemo(() => {
+    if (!data) return [];
+    const battles = bibleOnly
+      ? data.battles.flatMap((b) =>
+          // Told as an event too (Lachish, 588 BC): marked once, as the card lists it once.
+          b.ref === undefined ||
+          events.some((e) => e.place === b.place && Math.abs(e.year - b.year) <= 1)
+            ? []
+            : [
+                {
+                  id: `battle:${b.id}`,
+                  year: b.year,
+                  approximate: b.approximate,
+                  title: b.title,
+                  place: b.place,
+                  ref: b.ref,
+                  sources: b.sources,
+                },
+              ],
+        )
+      : [];
+    return timelineEventsOf(
+      { life: data.life, byId: data.byId, events: [...events, ...battles] },
+      locale,
+      t,
+    );
+  }, [data, events, bibleOnly, locale, t]);
+  return { events, timelineEvents };
+}
+
+/**
+ * The sheet for a class (print.ts): while it is drawn the map is briefly resized and
+ * reframed under a cover, the keys wait, and a second press waits for the first.
+ */
+export function usePrintSheet(globe: Globe | null, data: LoadedData | null, personLabel: string) {
+  const [preparing, setPreparing] = useState(false);
+  // The cover stops the mouse; the keys (a tour's arrows, the map's own) wait too, or a
+  // stop would change while the sheet is drawn.
+  useEffect(() => {
+    if (!preparing) return;
+    const hold = (e: KeyboardEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+    };
+    window.addEventListener("keydown", hold, true);
+    return () => {
+      window.removeEventListener("keydown", hold, true);
+    };
+  }, [preparing]);
+  // Set at once, before the module loads: a second press meanwhile must not start another.
+  const printing = useRef(false);
+  const printForClass = async (blank = false) => {
+    if (!globe || !data || printing.current) return;
+    printing.current = true;
+    try {
+      const { printForClass: print } = await import("./print");
+      await print({ globe, data, personLabel, setPreparing, blank });
+    } finally {
+      printing.current = false;
+    }
+  };
+  return { preparing, printForClass };
 }

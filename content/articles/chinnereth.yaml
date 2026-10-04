@@ -1,0 +1,29 @@
+# Overview article (ADR 0007). Mainstream facts only; the record is the town Chinnereth (Tel Kinrot) and the district named after it; the lake has its own article (Sea of Galilee).
+id: chinnereth
+place: a2bb265
+title:
+  en: "Chinnereth"
+  ru: "Киннереф"
+body:
+  en:
+    - "Chinnereth was a fortified town on the north-western shore of the lake that took its name from it, the sea of Chinnereth, today's Sea of Galilee or Kinneret. The town is Tel Kinrot (Tell el-Oreimeh), a steep mound above the shore between Tabgha and Ginosar, named in the list of Thutmose III at Karnak in the fifteenth century BC. Excavations by Volkmar Fritz from 1982 and by the Kinneret Regional Project since 2003 have uncovered a Middle Bronze fortified city and, above it, a large walled town of the early Iron Age, with houses, storerooms and a massive city wall, that flourished about the eleventh and tenth centuries and was destroyed, and a smaller Israelite town of the ninth and eighth centuries. The lake's later name Gennesaret, and the plain of Gennesar that Josephus praised, carry on the old name of the town."
+    - "In the Bible the name serves mostly as a landmark. Moses describes the land east of the Jordan as reaching “from Chinnereth even unto the sea of the plain, even the salt sea”, and the sea of Chinnereth marks the eastern border of the promised land and of Sihon's old kingdom. Jabin's allies gathered from “the plains south of Chinneroth”, and the town itself stands among the fenced cities of Naphtali, “Ziddim, Zer, and Hammath, Rakkath, and Chinnereth”, the last two beside Tiberias and at Tel Kinrot. Its one event is a defeat: when Asa of Judah bought the help of Ben-hadad of Damascus against Baasha, the Aramaean captains “smote Ijon, and Dan, and Abel-beth-maachah, and all Cinneroth, with all the land of Naphtali” (the Synodal text reads Ain for Ijon). By then Chinnereth meant the district round the lake as much as the town."
+    - "Today the mound stands in a nature reserve beside the Tabgha churches and Kibbutz Ginosar, with the road from Tiberias to Capernaum at its foot and the lake below."
+  ru:
+    - "Киннереф — укреплённый город на северо-западном берегу озера, которое получило от него имя: море Киннереф, нынешнее Галилейское море, или Кинерет. Город — это Тель-Кинрот (Телль-эль-Орейме), крутой холм над берегом между Табхой и Гиносаром, названный в списке Тутмоса III в Карнаке в XV веке до н. э. Раскопки Фолькмара Фрица с 1982 года и Кинеретского регионального проекта с 2003 года открыли укреплённый город среднего бронзового века, над ним — большой обнесённый стеной город раннего железного века с домами, кладовыми и мощной городской стеной, процветавший примерно в XI–X веках и разрушенный, и меньший израильский город IX–VIII веков. Позднейшее имя озера, Геннисарет, и равнина Геннисар, которую хвалил Иосиф Флавий, продолжают древнее имя города."
+    - "В Библии имя служит большей частью ориентиром. Моисей описывает землю к востоку от Иордана «от Киннерефа до моря равнины, моря Соленого», а море Киннереф отмечает восточную границу обетованной земли и прежнего царства Сигона. Союзники Иавина собрались с равнины «с южной стороны Хиннарофа», а сам город стоит среди укреплённых городов Неффалима: «Циддим, Цер, Хамаф, Раккаф и Хиннереф» — два последних у Тивериады и на Тель-Кинроте. Единственное его событие — поражение: когда Аса Иудейский купил помощь Венадада Дамасского против Ваасы, арамейские военачальники поразили «Аин и Дан и Авел-Беф-Мааху и весь Киннероф, по всей земле Неффалима». К тому времени Киннереф означал и округу озера, не только город."
+    - "Сегодня холм стоит в заповеднике рядом с церквами Табхи и кибуцем Гиносар, с дорогой из Тверии в Капернаум у подножия и озером внизу."
+scripture:
+  - Num.34.11
+  - Deut.3.17
+  - Josh.11.2
+  - Josh.13.27
+  - Josh.19.35
+  - 1Kgs.15.20
+sources:
+  - "The topographical list of Thutmose III at Karnak"
+  - "Josephus, Jewish War 3.516-521 (the plain of Gennesar)"
+  - "V. Fritz, Kinneret: Ergebnisse der Ausgrabungen auf dem Tell el-'Orēme am See Gennesaret 1982-1985 (1990)"
+  - "S. Münger, J. Zangenberg and J. Pakkala, 'Kinneret - An Urban Center at the Crossroads: Excavations on Iron IB Tel Kinrot at the Lake of Galilee', Near Eastern Archaeology 74 (2011)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

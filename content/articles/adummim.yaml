@@ -1,0 +1,23 @@
+# Overview article (ADR 0007). Mainstream facts only; the link with the parable of the Good Samaritan is given as Jerome's, not as fact.
+id: adummim
+place: acf8790
+title:
+  en: "Adummim"
+  ru: "Адуммим"
+body:
+  en:
+    - "Adummim, “the red ones”, is the steep ascent on the road from Jericho up to Jerusalem, named for the red rock of the hillside. Joshua uses it twice as a landmark on the border between Judah and Benjamin: the line runs past Gilgal, or Geliloth, “that is before the going up to Adummim, which is on the south side of the river”, the river being the Wadi Qelt. Eusebius knew the place as Maledomni, on the road down from Jerusalem to Jericho, and Jerome, explaining the name as “the place of blood” for the blood that robbers shed there, connected it with the parable of the traveller who went down from Jerusalem to Jericho and fell among thieves."
+    - "The Crusaders held a small castle on the red hill above the road, whose ruins remain; the Ottoman khan beside it, long shown to travellers as the Inn of the Good Samaritan, is now a museum of mosaics; and the Israeli city of Ma'ale Adumim, founded east of Jerusalem in 1975, takes its name from the ascent. The modern highway from Jerusalem to Jericho and the Dead Sea still climbs the same slope."
+  ru:
+    - "Адуммим, «красные», — крутой подъём на дороге из Иерихона в Иерусалим, названный по красной породе склона. Книга Иисуса Навина дважды берёт его ориентиром на границе Иуды и Вениамина: предел проходит мимо Галгала, или Гелилофа, «который против возвышенности Адуммима, лежащего с южной стороны потока», и поток этот — Вади-Кельт. Евсевий знал это место как Маледомни на дороге из Иерусалима в Иерихон, а Иероним, толкуя имя как «место крови» — от крови, которую проливали там разбойники, — связал его с притчей о путнике, который шёл из Иерусалима в Иерихон и попался разбойникам."
+    - "Крестоносцы держали на красном холме над дорогой небольшой замок, развалины которого сохранились; османский постоялый двор рядом, который долго показывали путешественникам как гостиницу доброго самарянина, теперь музей мозаик; а израильский город Маале-Адумим, основанный к востоку от Иерусалима в 1975 году, носит имя этого подъёма. Современное шоссе из Иерусалима в Иерихон и к Мёртвому морю всё так же поднимается по этому склону."
+scripture:
+  - Josh.15.7
+  - Josh.18.17
+  - Luke.10.30
+sources:
+  - "Eusebius, Onomasticon, s.v. Adommim"
+  - "Jerome, Letter 108.12"
+  - "D. Pringle, Secular Buildings in the Crusader Kingdom of Jerusalem: An Archaeological Gazetteer (1997)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008)"
+status: checked

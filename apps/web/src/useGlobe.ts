@@ -7,6 +7,7 @@ import { MAP_FONTS } from "./fonts";
 import type { UrlView } from "./url";
 import { viewPadding } from "./view-padding.ts";
 import { TERRAIN_TILES } from "./offline";
+import { translate } from "./i18n";
 
 const DEFAULT_CAMERA: Camera = { center: [35.3, 32.0], zoom: 5.4, pitch: 40, bearing: -10 };
 // On a phone the view is pushed up for the card below, so the Holy Land would sit at the
@@ -106,6 +107,15 @@ function createGlobe(
     fonts: MAP_FONTS,
     initialYear: init.year ?? DEFAULT_STATE.year,
     initialLocale: init.locale ?? DEFAULT_STATE.locale,
+    mapUi: (l) => ({
+      km: translate(l, "mapui.km"),
+      m: translate(l, "mapui.m"),
+      zoomIn: translate(l, "mapui.zoom_in"),
+      zoomOut: translate(l, "mapui.zoom_out"),
+      north: translate(l, "mapui.north"),
+      sources: translate(l, "mapui.sources"),
+      title: translate(l, "mapui.title"),
+    }),
     viewPadding: () =>
       viewPadding(innerWidth, innerHeight, compactFrame, timelineHeight(), cardOpen(), chipShown()),
   });

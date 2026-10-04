@@ -24,17 +24,17 @@ content/            curated records and articles (ADR 0007)
 docs/               ADRs, attributions, legal questions
 ```
 
-| Layer     | Choice                                                                                | Version                        |
-| --------- | ------------------------------------------------------------------------------------- | ------------------------------ |
-| Runtime   | Node.js LTS in CI and production, pinned by `devEngines.runtime` + `onFail: download` | 24.x (`>=24.11 <27`)           |
-| Packages  | pnpm, pinned in `packageManager` (plain `npx pnpm` would fetch 12)                    | 11.27.x                        |
-| Types     | TypeScript, same line as Equip                                                        | 6.0.x                          |
-| Lint      | ESLint + typescript-eslint `strictTypeChecked` + react-hooks                          | 10.11 / 8.70                   |
-| Format    | Prettier                                                                              | 3.9.x                          |
-| Build     | Vite + plugin-react                                                                   | 8.3.x                          |
-| Dead code | knip                                                                                  | 6.x                            |
-| Git hooks | lefthook: pre-push runs the fast gate                                                 | 2.1.x                          |
-| Python    | CPython + uv + ruff + mypy `--strict` + pytest                                        | 3.14 / 0.12 / 0.16 / 2.3 / 9.1 |
+| Layer     | Choice                                                                | Version                        |
+| --------- | --------------------------------------------------------------------- | ------------------------------ |
+| Runtime   | Node.js LTS in CI and production, pinned by `engines` in package.json | 24.x (`>=24.11 <27`)           |
+| Packages  | pnpm, pinned in `packageManager` (plain `npx pnpm` would fetch 12)    | 11.27.x                        |
+| Types     | TypeScript, same line as Equip                                        | 6.0.x                          |
+| Lint      | ESLint + typescript-eslint `strictTypeChecked` + react-hooks          | 10.11 / 8.70                   |
+| Format    | Prettier                                                              | 3.9.x                          |
+| Build     | Vite + plugin-react                                                   | 8.3.x                          |
+| Dead code | knip                                                                  | 6.x                            |
+| Git hooks | lefthook: pre-push runs the fast gate                                 | 2.1.x                          |
+| Python    | CPython + uv + ruff + mypy `--strict` + pytest                        | 3.14 / 0.12 / 0.16 / 2.3 / 9.1 |
 
 TypeScript strictness beyond `strict`: `noUncheckedIndexedAccess`,
 `exactOptionalPropertyTypes`, `verbatimModuleSyntax`, `erasableSyntaxOnly`.

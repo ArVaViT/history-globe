@@ -1,0 +1,26 @@
+id: where-was-persia
+question:
+  en: "Where was Persia?"
+  ru: "Где находилась Персия?"
+answer:
+  en:
+    - "Persia proper was Parsa, the Persis of the Greeks: the highlands of Fars in south-western Iran, north-east of the Persian Gulf, with the royal cities of Pasargadae and Persepolis north-east of today's Shiraz. In the Bible “Persia” is the empire its kings built from about 550 BC, which in Esther reaches “from India even unto Ethiopia, over an hundred and seven and twenty provinces”. The map point does not stand in Fars but on Ecbatana, today's Hamadan in western Iran, one of the empire's royal cities, about 1,280 km east of Jerusalem in a straight line."
+    - "The Persian kings moved between several capitals. Ecbatana, the old city of the Medes, was where, Xenophon says, the king spent the summer, and there under Darius the roll with the decree of Cyrus was found, “at Achmetha, in the palace that is in the province of the Medes”. Susa, where Nehemiah served and Esther is set, lies about 290 km to the south; Babylon, about 455 km south-west of Ecbatana, fell to Cyrus in 539 BC, and in “the first year of Cyrus king of Persia” the exiles were allowed to go home. Daniel's ram with two horns is “the kings of Media and Persia”."
+    - "Alexander burned Persepolis in 330 BC, and the empire passed to the Macedonians; Parthian and then Sasanian kings later ruled Iran again. Europeans called the whole country Persia until 1935, when its government asked foreign states to use its own name, Iran; the province of Fars keeps the old one."
+  ru:
+    - "Собственно Персия — это Парса, Персида греков: нагорье Фарса на юго-западе Ирана, к северо-востоку от Персидского залива, с царскими городами Пасаргадами и Персеполем к северо-востоку от нынешнего Шираза. В Библии «Персия» — это держава, которую её цари создали начиная примерно с 550 г. до н. э. и которая в книге Есфири простирается «над ста двадцатью семью областями от Индии и до Ефиопии». Точка карты стоит не в Фарсе, а на Екбатане, нынешнем Хамадане на западе Ирана, одном из царских городов державы, примерно в 1280 км к востоку от Иерусалима по прямой."
+    - "Персидские цари переезжали между несколькими столицами. В Екбатане, древнем городе Мидян, царь, по словам Ксенофонта, проводил лето, и там при Дарии нашли свиток с указом Кира: «в Екбатане во дворце, который в области Мидии». Сузы, где служил Неемия и где происходит действие книги Есфири, лежат примерно в 290 км к югу; Вавилон, примерно в 455 км к юго-западу от Екбатаны, пал перед Киром в 539 г. до н. э., и «в первый год Кира, царя Персидского» пленникам позволили вернуться домой. Овен с двумя рогами у Даниила — это «цари Мидийский и Персидский»."
+    - "Александр сжёг Персеполь в 330 г. до н. э., и держава перешла к македонянам; позже Ираном снова правили Парфяне, а затем Сасаниды. Европейцы называли всю страну Персией до 1935 года, когда её правительство попросило иностранные государства называть её собственным именем — Иран; провинция Фарс хранит старое имя."
+map:
+  place: ab9696f
+  year: "538 BC"
+  ref: Ezra.1.1
+scripture: [Ezra.1.1, Ezra.6.2, Neh.1.1, Esth.1.1-Esth.1.2, Dan.6.28, Dan.8.20]
+sources:
+  - "Region point and straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Xenophon, Cyropaedia 8.6.22; Anabasis 3.5.15"
+  - "Arrian, Anabasis 3.18 (the burning of Persepolis)"
+  - "S. C. Brown, 'Ecbatana', Encyclopaedia Iranica VIII (1997), pp. 80-84"
+  - "P. Briant, From Cyrus to Alexander: A History of the Persian Empire (2002)"
+  - "A. Kuhrt, The Persian Empire: A Corpus of Sources from the Achaemenid Period (2007)"
+status: checked

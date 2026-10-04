@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { formatRef, type Locale } from "@hg/model";
+import { formatRef, type Locale, placeName } from "@hg/model";
 import { chapterLabel, firstVerseIn, readingOrder } from "../chapter";
 import type { LoadedData } from "../data";
 import { useTranslation } from "../i18n";
@@ -56,7 +56,7 @@ export function ChapterPicker({
   const name = (id: string) => {
     const p = data.byId.get(id)?.props;
     if (!p) return id;
-    return locale === "ru" ? (p.name_ru ?? p.name) : p.name;
+    return placeName(p, locale);
   };
   const ids = readingOrder(
     chapter.places,

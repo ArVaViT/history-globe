@@ -1,0 +1,35 @@
+id: where-was-pisidian-antioch
+question:
+  en: "Where was Pisidian Antioch?"
+  ru: "Где находилась Антиохия Писидийская?"
+answer:
+  en:
+    - "Pisidian Antioch stood on a hill about a kilometre north-east of the town of Yalvaç in the lake district of west-central Turkey, where its ruins can be visited; the map point stands on them. It lay about 153 km north of Perga, from which Paul climbed to it over the Taurus, about 124 km west-north-west of Iconium and about 815 km from Jerusalem, all in a straight line. Strictly it was a city of Phrygia on the border of Pisidia, “Antioch near Pisidia” in Strabo's phrase; it is not the Syrian Antioch on the Orontes, about 500 km away, from which the journey set out."
+    - "Paul and Barnabas came here on their first journey: “when they departed from Perga, they came to Antioch in Pisidia, and went into the synagogue on the sabbath day, and sat down.” Invited to speak after the reading of the law and the prophets, Paul gave the first of his sermons that Acts reports in full, telling Israel's story from Egypt to David and on to Jesus. “The next sabbath day came almost the whole city together to hear the word of God”; when the Jews opposed them, Paul and Barnabas said, “lo, we turn to the Gentiles”, and after they were expelled they “shook off the dust of their feet against them, and came unto Iconium.”"
+    - "Augustus made the city a Roman colony of veterans, Colonia Caesarea, after 25 BC, and excavations have uncovered its temple of Augustus, a colonnaded square named after Tiberius, a monumental gate by which fragments of a Latin copy of Augustus' Res Gestae were found in 1914, an aqueduct and a great basilica of the fourth century. Inscriptions of the city name members of a senatorial family, the Sergii Paulli, and William Ramsay linked them with Sergius Paulus, the proconsul of Cyprus who had just believed; some take this as the reason Paul went on to Antioch, others find the link too slight to bear the weight."
+  ru:
+    - "Антиохия Писидийская стояла на холме примерно в километре к северо-востоку от городка Ялвач в Озёрном крае на западе центральной Турции; её развалины открыты для посещения, и точка карты стоит на них. Она лежала примерно в 153 км к северу от Пергии, откуда Павел поднялся к ней через Тавр, примерно в 124 км к западу-северо-западу от Иконии и примерно в 815 км от Иерусалима — всё по прямой. Строго говоря, это был город Фригии на границе с Писидией, «Антиохия близ Писидии», как пишет Страбон; не путать с сирийской Антиохией на Оронте, примерно в 500 км отсюда, откуда путешествие началось."
+    - "Павел и Варнава пришли сюда в первом путешествии: «проходя от Пергии, прибыли в Антиохию Писидийскую и, войдя в синагогу в день субботний, сели». Приглашённый сказать слово после чтения закона и пророков, Павел произнёс первую из своих проповедей, которые Деяния передают целиком, — рассказ об Израиле от Египта до Давида и дальше до Иисуса. «В следующую субботу почти весь город собрался слушать слово Божие»; когда Иудеи воспротивились, Павел и Варнава сказали: «вот, мы обращаемся к язычникам», а изгнанные, «отрясши на них прах от ног своих, пошли в Иконию»."
+    - "После 25 г. до н. э. Август сделал город римской колонией ветеранов, Colonia Caesarea, и раскопки открыли его храм Августа, площадь с колоннадой, названную в честь Тиверия, парадные ворота, у которых в 1914 г. нашли фрагменты латинской копии «Деяний Августа», акведук и большую базилику IV века. Надписи города называют членов сенаторского рода Сергиев Павлов, и Уильям Рамзай связал их с Сергием Павлом, только что уверовавшим проконсулом Кипра; одни видят в этом причину, по которой Павел пошёл в Антиохию, другие считают эту связь слишком зыбкой."
+map:
+  place: a6c704a
+  year: "AD 47"
+  ref: Acts.13.14
+scripture:
+  [
+    Acts.13.7-Acts.13.12,
+    Acts.13.13-Acts.13.16,
+    Acts.13.44-Acts.13.51,
+    Acts.14.19,
+    Acts.14.21-Acts.14.23,
+    2Tim.3.11,
+  ]
+sources:
+  - "Straight-line distances between the places' points (Antioch in Pisidia, Perga, Iconium, Antioch on the Orontes, Jerusalem): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Strabo, Geography 12.6.4; 12.8.14"
+  - "W. M. Ramsay, 'Colonia Caesarea (Pisidian Antioch) in the Augustan Age', Journal of Roman Studies 6 (1916), on the Res Gestae fragments"
+  - "W. M. Ramsay, The Bearing of Recent Discovery on the Trustworthiness of the New Testament (1915), ch. XII, on Sergius Paullus; B. Van Elderen, 'Some Archaeological Observations on Paul's First Missionary Journey', in W. W. Gasque and R. P. Martin (eds.), Apostolic History and the Gospel (1970), 150-161"
+  - "S. Mitchell and M. Waelkens, Pisidian Antioch: The Site and its Monuments (1998)"
+  - "S. Mitchell, Anatolia: Land, Men, and Gods in Asia Minor, vol. 2 (1993)"
+  - "History Globe articles “Antioch of Pisidia” and “Antioch”, question “Where was Antioch?” and History Globe tour “Paul's first journey”"
+status: checked

@@ -1,0 +1,28 @@
+# Overview article (ADR 0007). Mainstream facts only; the location is disputed and the map's candidates are given without choosing one; Hosea's Beth-aven is treated as the app does, as a name for Bethel.
+id: beth-aven
+place: a03cb21
+title:
+  en: "Beth-aven"
+  ru: "Беф-Авен"
+body:
+  en:
+    - "Beth-aven, “house of wickedness” or “of nothingness”, was a place in the hills of Benjamin east of Bethel, towards the desert that drops to the Jordan. Joshua sent spies from Jericho “to Ai, which is beside Beth-aven, on the east side of Beth-el”; Benjamin's northern border ends “at the wilderness of Beth-aven”; and in Saul's war the Philistines “pitched in Michmash, eastward from Beth-aven”, until Jonathan's exploit turned the day and “the battle passed over unto Beth-aven”. Hosea, more than two centuries later, uses the name for Bethel itself, telling Israel “neither go ye up to Beth-aven” and mocking “the calves of Beth-aven”; the map keeps those verses with Bethel. Whether the Beth-aven of Joshua and Samuel was a real village whose ill-sounding name the prophet borrowed, or whether it was always a nickname for Bethel or for the ruin of Ai, is debated."
+    - "Its site is disputed, and the map keeps the candidates. Those who take it for a separate town look for it on the ridge between Bethel and Michmash: Tell Maryam above Wadi Suweinit near Mukhmas, Burqa or Khirbet Nisieh south of Beitin, or El Q'ada; others identify it with Beitin, that is with Bethel, and a few have placed it as far west as Upper Beth-horon. The wilderness of Beth-aven would then be the bare eastern slope between Bethel and the Jordan valley. Nothing has been excavated as Beth-aven."
+    - "The ground is today the hill country of the central West Bank around Beitin, Deir Dibwan and Mukhmas, north-east of Ramallah, with the desert of the Wadi Suweinit gorge falling away to the east."
+  ru:
+    - "Беф-Авен, «дом нечестия» или «дом пустоты», — место в горах Вениамина к востоку от Вефиля, в сторону пустыни, спускающейся к Иордану. Иисус Навин послал из Иерихона соглядатаев «в Гай, что близ Беф-Авена, с восточной стороны Вефиля»; северный предел Вениамина «оканчивается в пустыне Бефавен»; а в войну Саула Филистимляне «расположились станом в Михмасе, с восточной стороны Беф-Авена», пока подвиг Ионафана не переломил день: «битва же простерлась даже до Беф-Авена». Осия более двух веков спустя зовёт этим именем сам Вефиль, веля Израилю «не восходите в Беф-Авен» и насмехаясь: «За тельца Беф-Авена вострепещут жители Самарии»; на карте те стихи оставлены при Вефиле. Был ли Беф-Авен Иисуса Навина и Самуила настоящим селением, чьё дурное имя пророк позаимствовал, или это всегда было прозвище Вефиля или развалин Гая — спорно."
+    - "Его место спорно, и карта хранит кандидатов. Те, кто считает его отдельным городком, ищут его на гряде между Вефилем и Михмасом: Телль-Марьям над Вади-Сувейнит близ Мухмаса, Бурка или Хирбет-Нисье к югу от Бейтина, или Эль-Каада; другие отождествляют его с Бейтином, то есть с Вефилем, а немногие помещали его даже в верхний Беф-Орон на западе. Пустыня Беф-Авен тогда — голый восточный склон между Вефилем и долиной Иордана. Ничто не раскопано как Беф-Авен."
+    - "Эта земля сегодня — нагорье центральной части Западного берега вокруг Бейтина, Дейр-Дибвана и Мухмаса, к северо-востоку от Рамаллы, с пустыней ущелья Вади-Сувейнит, уходящей на восток."
+scripture:
+  - Josh.7.2
+  - Josh.18.12
+  - 1Sam.13.5
+  - 1Sam.14.23
+  - Hos.4.15
+  - Hos.10.5
+sources:
+  - "F.-M. Abel, Géographie de la Palestine, vol. 2 (1938)"
+  - "Z. Kallai, Historical Geography of the Bible: The Tribal Territories of Israel (1986)"
+  - "D. Livingston, 'Location of Biblical Bethel and Ai Reconsidered', Westminster Theological Journal 33 (1970)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

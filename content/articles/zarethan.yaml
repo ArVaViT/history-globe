@@ -1,0 +1,26 @@
+# Overview article (ADR 0007). Mainstream facts only; the site is given as disputed, Tell es-Sa'idiyeh being the leading candidate; the archaeology is that of the candidate, not of a proven Zarethan.
+id: zarethan
+place: afa84ca
+title:
+  en: "Zarethan"
+  ru: "Цартан"
+body:
+  en:
+    - "Zarethan was a town in the Jordan valley, named three times and spelt three ways, and its site is disputed. The leading candidate is Tell es-Sa'idiyeh, a large double mound on the east side of the valley in Jordan, about 2 km from the river where the Wadi Kufrinjeh comes down from Gilead; Nelson Glueck proposed it in the 1940s, and the identification is widely used but unproved. Others have argued for Tell Umm Hamad near the mouth of the Jabbok, or for smaller mounds nearby. The texts pull in two directions: Joshua puts Zarethan beside Adam, the town at the Jabbok ford, while Kings sets Beth-shean, some 45 km north of Adam, “by Zartanah beneath Jezreel”, so that some think of two places, or of a district rather than a town."
+    - "When Israel crossed the Jordan, “the waters which came down from above stood and rose up upon an heap very far from the city Adam, that is beside Zaretan”, while the water below ran off to the Dead Sea. Solomon's fifth district took in “Taanach and Megiddo, and all Beth-shean, which is by Zartanah beneath Jezreel”. The bronze pillars, the sea and the lavers of the Temple were cast near here: “In the plain of Jordan did the king cast them, in the clay ground between Succoth and Zarthan”, where Chronicles reads Zeredathah; the heavy clay of the valley floor served for the moulds."
+    - "Tell es-Sa'idiyeh was excavated by James Pritchard in 1964–1967 and by Jonathan Tubb for the British Museum in 1985–1996. The lower mound held a town of the Late Bronze and early Iron Ages with a cemetery of the thirteenth and twelfth centuries BC whose burials show Egyptian customs, and a stone staircase on the north slope that led down to a spring. On the upper mound a well-planned town of the eighth century BC, with rows of houses, was destroyed late in that century, perhaps by the Assyrians, and a large building of the Persian period followed. The mound stands today in the farmland of the Jordan valley north of Deir Alla."
+  ru:
+    - "Цартан — город в долине Иордана, названный трижды и трижды по-разному написанный, и его место спорно. Главный кандидат — Телль-эс-Саидийе, большой двойной холм на восточной стороне долины в Иордании, километрах в двух от реки, где из Галаада спускается Вади-Куфринджа; Нельсон Глюк предложил его в 1940-х годах, и это отождествление широко принято, но не доказано. Другие доказывали, что это Телль-Умм-Хамад близ устья Иавока или меньшие холмы поблизости. Тексты тянут в разные стороны: книга Иисуса Навина ставит Цартан подле Адама, города у брода через Иавок, а книга Царств помещает Беф-Сан, километрах в 45 к северу от Адама, «близ Цартана ниже Иезрееля», так что иные думают о двух местах или об округе, а не о городе."
+    - "Когда Израиль переходил Иордан, «вода, текущая сверху, остановилась и стала стеною на весьма большое расстояние, до города Адама, который подле Цартана», а вода ниже ушла к Мёртвому морю. Пятый округ Соломона включал Фаанах, Мегиддо и Беф-Сан, «что близ Цартана ниже Иезрееля». Медные столбы, море и умывальницы Храма отливали поблизости: «Царь выливал их в глинистой земле, в окрестности Иордана, между Сокхофом и Цартаном», где Паралипоменон читает Цереда; тяжёлая глина дна долины годилась для форм."
+    - "Телль-эс-Саидийе раскапывали Джеймс Причард в 1964–1967 годах и Джонатан Табб для Британского музея в 1985–1996 годах. На нижнем холме был город позднего бронзового и раннего железного веков с кладбищем XIII–XII веков до н. э., погребения которого показывают египетские обычаи, и каменная лестница на северном склоне, что вела вниз к источнику. На верхнем холме хорошо распланированный город VIII века до н. э. с рядами домов был разрушен в конце того же века, возможно ассирийцами, а за ним последовало большое здание персидского времени. Холм стоит сегодня среди полей долины Иордана к северу от Дейр-Аллы."
+scripture:
+  - Josh.3.16
+  - 1Kgs.4.12
+  - 1Kgs.7.46
+  - 2Chr.4.17
+sources:
+  - "N. Glueck, Explorations in Eastern Palestine, IV (Annual of the American Schools of Oriental Research 25-28, 1951)"
+  - "J. B. Pritchard, Tell es-Sa'idiyeh: Excavations on the Tell, 1964-1966 (1985)"
+  - "J. N. Tubb, 'Tell es-Sa'idiyeh: Preliminary Report on the First Three Seasons of Renewed Excavations', Levant 20 (1988)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+status: checked

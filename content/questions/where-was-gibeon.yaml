@@ -1,0 +1,25 @@
+id: where-was-gibeon
+question:
+  en: "Where was Gibeon?"
+  ru: "Где находился Гаваон?"
+answer:
+  en:
+    - "Gibeon is el-Jib, a village on a hill about 9 km north-west of Jerusalem in a straight line, in the land of Benjamin, today in the West Bank; the map point stands on it. Unlike many biblical towns, its site is not in doubt: the name survived in the village, and James B. Pritchard, who excavated there from 1956 to 1962, found jar handles inscribed with the name Gibeon. It lay on the road climbing from the coastal plain through Beth-horon, about 8 km to the west, to the hills around Jerusalem."
+    - "When “the inhabitants of Gibeon heard what Joshua had done unto Jericho and to Ai”, they came to him in worn clothes as if from a far country, and “Joshua made peace with them”; when the trick was found out they were made hewers of wood and drawers of water. Five Amorite kings then besieged the town, and Joshua's victory there gave rise to the words “Sun, stand thou still upon Gibeon”, which have a page of their own. In David's time the men of Joab and Abner “met together by the pool of Gibeon” and sat down on either side of it, and the fight began there."
+    - "Gibeon had “the great high place”: “a thousand burnt offerings did Solomon offer upon that altar. In Gibeon the LORD appeared to Solomon in a dream by night”, and there he asked for wisdom. Pritchard cleared a great round shaft cut into the rock, with a stair winding down to the water table, which many link with the pool of 2 Samuel, though its date is debated, and found many jar handles from a wine industry of the late Iron Age. In the fourth century Eusebius still knew a village of the same name, which he put four miles west of Bethel."
+  ru:
+    - "Гаваон — это Эль-Джиб, селение на холме примерно в 9 км к северо-западу от Иерусалима по прямой, в земле Вениамина, ныне на Западном берегу; точка карты стоит на нём. В отличие от многих библейских городов, его место не вызывает сомнений: имя сохранилось в названии селения, а Джеймс Б. Притчард, копавший здесь с 1956 по 1962 год, нашёл ручки кувшинов с надписью «Гаваон». Город стоял на дороге, поднимавшейся с приморской равнины через Беф-Орон, примерно в 8 км к западу, в горы вокруг Иерусалима."
+    - "Когда «жители Гаваона, услышав, что Иисус сделал с Иерихоном и Гаем», пришли к нему в ветхой одежде, будто из дальней земли, «заключил Иисус с ними мир»; когда обман открылся, их сделали дровосеками и водоносами. Тогда пять аморрейских царей осадили город, и победа Иисуса у Гаваона дала слова «стой, солнце, над Гаваоном», о которых есть отдельная страница. Во дни Давида люди Иоава и Авенира «встретились у Гаваонского пруда, и засели те на одной стороне пруда, а эти на другой», и там началась битва."
+    - "В Гаваоне был «главный жертвенник»: «Тысячу всесожжений вознес Соломон на том жертвеннике. В Гаваоне явился Господь Соломону во сне ночью», и там он просил мудрости. Притчард расчистил большой круглый колодец, высеченный в скале, с лестницей, спускающейся к грунтовым водам, — многие связывают его с прудом из Второй книги Царств, хотя датировка спорна, — и нашёл множество ручек кувшинов от винного промысла конца железного века. В IV веке Евсевий ещё знал селение с тем же названием и помещал его в четырёх милях к западу от Вефиля."
+map:
+  place: aede336
+  year: "c. 1406 BC"
+  ref: Josh.9.3
+scripture: [Josh.9.3-Josh.9.27, Josh.10.1-Josh.10.12, 2Sam.2.12-2Sam.2.16, 1Kgs.3.4-1Kgs.3.9]
+sources:
+  - "J. B. Pritchard, Hebrew Inscriptions and Stamps from Gibeon (1959) (the inscribed jar handles; the stepped tunnel; dating)"
+  - "J. B. Pritchard, Gibeon, Where the Sun Stood Still: The Discovery of the Biblical City (1962)"
+  - "Eusebius, Onomasticon, s.v. Gabaon (no. 313 in C. U. Wolf's translation)"
+  - "History Globe article “Gibeon”"
+  - "Straight-line distances between the places' points (Gibeon, Jerusalem, Upper Beth-horon): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

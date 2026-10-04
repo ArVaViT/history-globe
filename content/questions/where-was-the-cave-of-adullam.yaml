@@ -1,0 +1,35 @@
+id: where-was-the-cave-of-adullam
+question:
+  en: "Where was the cave of Adullam?"
+  ru: "Где находилась пещера Одолламская?"
+answer:
+  en:
+    - "The cave of Adullam was at or near the town of Adullam in the Shephelah, the foothills of Judah, about 26 km south-west of Jerusalem and 20 km west-south-west of Bethlehem in a straight line, just above the southern end of the valley of Elah, where David had fought Goliath. The town is usually placed at Khirbet esh-Sheikh Madhkur, a hilltop with rock-cut caves and cisterns, where the map point stands; the old name is thought to survive in the ruin of Id el-Miyeh at its foot. No inscription has confirmed the identification, and the Bible does not say which of the caves David used."
+    - "David came here fleeing Saul, after feigning madness before the king of Gath, 16 km away: he “escaped to the cave Adullam”, his family came down to him, and “every one that was in distress, and every one that was in debt, and every one that was discontented, gathered themselves unto him”, about four hundred men. Later, “in the harvest time”, three of his mighty men came to him “unto the cave of Adullam” while the Philistines held Bethlehem; when he longed for water from its well, they broke through and brought it, and he “poured it out unto the LORD”. The same passages say that “David was then in an hold”, and the prophet Gad tells him, “Abide not in the hold”; whether that is the cave itself or another stronghold is disputed. Psalms 57 and 142 (56 and 141 in the Synodal Bible) are headed as prayers “in the cave”; tradition links them to Adullam or to En-gedi."
+    - "Adullam was a town long before and after David: Judah's friend Hirah was an Adullamite, Rehoboam fortified it, Micah names it “Adullam the glory of Israel”, and men of Judah lived there again after the exile; Judas Maccabeus kept the sabbath in the city of Odollam. In the fourth century AD Eusebius knew it as a very large village ten miles east of Eleutheropolis, Beth Guvrin. Later pilgrims were shown another “cave of Adullam”, the great Khareitun cave near Tekoa, in the wilderness south-east of Bethlehem, a tradition probably owed to the Crusaders, but the biblical town lies in the lowland."
+  ru:
+    - "Пещера Одолламская находилась в городе Одоллам или рядом с ним, в Шефеле — предгорьях Иудеи, примерно в 26 км к юго-западу от Иерусалима и в 20 км к западо-юго-западу от Вифлеема по прямой, чуть выше южного конца долины дуба, где Давид сразился с Голиафом. Город обычно помещают на Хирбет-эш-Шейх-Мадкур — вершине холма с высеченными в скале пещерами и цистернами, где стоит точка карты; старое имя, как думают, сохранилось в названии развалин Ид-эль-Мие у его подножия. Надпись этого пока не подтвердила, и Библия не говорит, в какой из пещер укрывался Давид."
+    - "Давид пришёл сюда, спасаясь от Саула, после того как притворился безумным перед царём Гефа, в 16 км отсюда: он «убежал в пещеру Одолламскую», к нему пришёл весь дом его отца, и «собрались к нему все притесненные и все должники и все огорченные душею» — около четырёхсот человек. Позже «во время жатвы» трое из его храбрых пришли к Давиду «в пещеру Одоллам», когда филистимляне стояли в Вифлееме; когда он захотел воды из вифлеемского колодезя, они пробились и принесли её, и он «вылил ее во славу Господа». Те же рассказы говорят, что Давид был «в укрепленном месте», а пророк Гад велит ему: «не оставайся в этом убежище»; то ли это сама пещера, то ли другая твердыня, — спорно. Псалмы 56 и 141 (57 и 142 в еврейском счёте) надписаны как молитвы Давида «в пещере»; предание связывает их с Одолламом или с Ен-Гадди."
+    - "Одоллам был городом задолго до Давида и после него: друг Иуды Хира был Одолламитянин, Ровоам укрепил город, у Михея сказано: «он пройдет до Одоллама, славы Израиля», а после плена здесь снова жили люди Иудины; Иуда Маккавей справил субботу в городе Одоллам. В IV веке Евсевий знал его как очень большое селение в десяти милях к востоку от Елевферополя, Бейт-Гуврина. Позднейшим паломникам показывали другую «пещеру Одолламскую» — большую пещеру Харейтун близ Фекои, в пустыне к юго-востоку от Вифлеема (предание, вероятно, идёт от крестоносцев), но библейский город лежит в низменности."
+map:
+  place: af82614
+  year: "c. 1010 BC"
+  ref: 1Sam.22.1
+scripture:
+  [
+    1Sam.22.1-1Sam.22.5,
+    2Sam.23.13-2Sam.23.17,
+    1Chr.11.15-1Chr.11.19,
+    Ps.57.1,
+    Ps.142.1,
+    Gen.38.1,
+    2Chr.11.7,
+    Mic.1.15,
+    Neh.11.30,
+  ]
+sources:
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe article “Adullam” (2 Maccabees, Josephus and Eusebius' Onomasticon as cited there) and History Globe tour “The life of David”"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+  - "C. R. Conder and H. H. Kitchener, The Survey of Western Palestine, vol. 3: Judaea (1883)"
+status: checked

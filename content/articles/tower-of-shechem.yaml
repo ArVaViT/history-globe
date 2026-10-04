@@ -1,0 +1,26 @@
+# Overview article (ADR 0007). Mainstream facts only; whether the Tower was Shechem's own citadel or a separate stronghold is given as debated; the fortress temple's dates are those of its excavators.
+id: tower-of-shechem
+place: a939939
+title:
+  en: "Tower of Shechem"
+  ru: "Башня Сихемская"
+body:
+  en:
+    - "The Tower of Shechem, Migdal-Shechem, appears only in the story of Abimelech. Whether it was the walled citadel of Shechem itself, with the temple on it, or a separate stronghold near the city is debated: Abimelech razes Shechem and sows it with salt, and only then “all the men of the tower of Shechem” gather in the hold of the temple of El-berith, which suggests to some a second place, while others take the tower for the acropolis that held out after the lower town fell. Shechem is Tell Balata on the east edge of Nablus."
+    - "“And when all the men of the tower of Shechem heard that, they entered into an hold of the house of the god Berith.” Abimelech went up Mount Zalmon with his men, cut a bough, laid it on his shoulder and told them to do as he had done; “and all the people likewise cut down every man his bough, and followed Abimelech, and put them to the hold, and set the hold on fire upon them; so that all the men of the tower of Shechem died also, about a thousand men and women”. So the curse of Jotham was fulfilled, that fire should come out from Abimelech and devour the men of Shechem and the house of Millo; Abimelech himself died at Thebez, when a woman dropped a millstone on his head from another tower."
+    - "Excavations at Tell Balata by Ernst Sellin between 1913 and 1927 and by the Drew-McCormick expedition, led first by G. Ernest Wright, in 1956–1973 uncovered on the city's acropolis a fortress temple with walls over five metres thick, built about 1650 BC and standing, with rebuildings, into the twelfth century BC, when the city was destroyed. Wright identified it with the temple of Baal-berith, the lord of the covenant, and Lawrence Stager has argued that the fortress temple itself was the Tower of Shechem of Judges 9. The temple's foundations and the great standing stone in its forecourt can be seen today in the archaeological park of Tell Balata in Nablus."
+  ru:
+    - "Башня Сихемская, по-еврейски Мигдал-Шехем, встречается только в истории Авимелеха. Была ли это обнесённая стеной цитадель самого Сихема с храмом на ней или отдельное укрепление близ города — спорно: Авимелех разрушает Сихем и засевает его солью, и лишь потом «все бывшие в башне Сихемской» собираются в твердыне капища Ваал-Верифа, что одним указывает на второе место, а другие видят в башне акрополь, который держался после падения нижнего города. Сихем — это Телль-Балата на восточной окраине Наблуса."
+    - "«Услышав об этом, все бывшие в башне Сихемской ушли в башню капища Ваал-Верифа». Авимелех поднялся на гору Селмон со своими людьми, нарубил сучьев, положил их на плечи и велел делать то же; «и нарубил каждый из всего народа сучьев, и пошли за Авимелехом, и положили к башне, и сожгли посредством их башню огнем, и умерли все бывшие в башне Сихемской, около тысячи мужчин и женщин». Так сбылось проклятие Иофама — что от Авимелеха выйдет огонь и пожжёт жителей Сихема и дом Милло; сам Авимелех погиб в Тевеце, когда женщина сбросила ему на голову обломок жернова с другой башни."
+    - "Раскопки Телль-Балаты, которые вели Эрнст Зеллин в 1913–1927 годах и экспедиция Дрю-Маккормик, которую сначала возглавлял Джордж Эрнест Райт, в 1956–1973 годах, открыли на акрополе города храм-крепость со стенами толщиной более пяти метров, построенный около 1650 г. до н. э. и стоявший, с перестройками, до XII века до н. э., когда город был разрушен. Райт отождествил его с храмом Ваал-Верифа, владыки завета, а Лоуренс Стейджер доказывал, что сам храм-крепость и был Башней Сихемской из 9-й главы Судей. Основания храма и большой стоячий камень перед ним можно видеть сегодня в археологическом парке Телль-Балата в Наблусе."
+scripture:
+  - Judg.9.6
+  - Judg.9.45
+  - Judg.9.46-Judg.9.49
+  - Judg.9.50-Judg.9.53
+sources:
+  - "G. E. Wright, Shechem: The Biography of a Biblical City (1965)"
+  - "L. E. Stager, 'The Fortress-Temple at Shechem and the “House of El, Lord of the Covenant”', in P. H. Williams and T. Hiebert (eds.), Realia Dei: Essays in Archaeology and Biblical Interpretation in Honor of Edward F. Campbell, Jr. (1999), pp. 228-249"
+  - "E. F. Campbell, Shechem III: The Stratigraphy and Architecture of Shechem/Tell Balâtah (2002)"
+  - "R. G. Boling, Judges (Anchor Bible, 1975)"
+status: checked

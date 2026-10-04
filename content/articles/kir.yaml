@@ -1,0 +1,26 @@
+# Overview article (ADR 0007). Mainstream facts only; the site is unknown and the article says so; the candidates are given without choosing.
+id: kir
+place: ab92800
+title:
+  en: "Kir"
+  ru: "Кир"
+body:
+  en:
+    - "Kir is a land or city of the Aramaeans whose site nobody knows. The Bible names it four times, three of them in connection with Syria. Amos says the LORD brought “the Syrians from Kir” as he brought Israel out of Egypt and the Philistines from Caphtor; the same prophet threatens that “the people of Syria shall go into captivity unto Kir”. The threat came true in 732 BC: when Ahaz of Judah bought the help of Tiglath-pileser III against Rezin of Damascus, the Assyrian king took Damascus, “carried the people of it captive to Kir, and slew Rezin”. Isaiah, foreseeing an army before Jerusalem, says that “Elam bare the quiver” and “Kir uncovered the shield”, as if the men of Kir were serving as Assyrian troops."
+    - "The Hebrew word qir means “wall”, which has not helped to find the place. The Greek translators did not know it: in Amos 9:7 they wrote that the Syrians came “from the pit”, and Jerome's Latin Bible turned the name into Cyrene. Tiglath-pileser's own inscriptions for the campaign against Damascus are broken and do not say where he sent the captives. Since Isaiah pairs Kir with Elam, many look for it in the east, on the Assyrian border with Elam, and the first candidate on the map is Der (modern Badrah) beyond the Tigris; others have proposed the land of Koa named by Ezekiel, the Amuk valley or Emar (Tell Meskene) on the Euphrates in the old Aramaean country, Elam itself, or, following an old guess from the name of the river Cyrus, the valley of the Kura in the Caucasus. None of these rests on more than a resemblance of names, and the question is open."
+    - "Nothing of Kir can be visited, because nothing has been identified. What the four verses do show is the Assyrian practice of deporting a conquered people far from home, which Israel itself would meet ten years later when Samaria fell."
+  ru:
+    - "Кир — земля или город Арамеев, местоположение которого никому не известно. Библия называет его четыре раза, из них трижды в связи с Сирией. Амос говорит, что Господь вывел Арамлян «из Кира», как вывел Израиля из Египта, а Филистимлян из Кафтора; тот же пророк грозит, что «пойдет народ Арамейский в плен в Кир». Угроза исполнилась в 732 г. до н. э.: когда Ахаз Иудейский купил помощь Феглаффелласара III против Рецина Дамасского, царь Ассирийский взял Дамаск, «переселил жителей его в Кир, а Рецина умертвил». Исаия, провидя войско под Иерусалимом, говорит: «Елам несет колчан», а «Кир обнажает щит», словно люди из Кира служили в ассирийских отрядах."
+    - "Еврейское слово «кир» значит «стена», и это не помогло найти место. Греческие переводчики его не знали: в Амосе 9:7 они написали, что Арамляне пришли «из рва», а латинская Библия Иеронима превратила имя в Кирену. Собственные надписи Феглаффелласара о походе на Дамаск разбиты и не говорят, куда он отправил пленных. Поскольку Исаия ставит Кир рядом с Еламом, многие ищут его на востоке, на ассирийской границе с Еламом, и первый кандидат на карте — Дер (нынешняя Бадра) за Тигром; другие предлагали землю Коа, названную Иезекиилем, долину Амик или Емар (Телль-Мескене) на Евфрате в старой арамейской стране, сам Елам или, по старой догадке от имени реки Кир (Кура), её долину на Кавказе. Ни одно из этих предложений не держится ни на чём, кроме сходства имён, и вопрос открыт."
+    - "Посетить Кир нельзя, потому что ничего не найдено. Зато четыре стиха показывают ассирийский обычай переселять покорённый народ далеко от дома, с которым сам Израиль столкнётся десять лет спустя, при падении Самарии."
+scripture:
+  - 2Kgs.16.9
+  - Isa.22.6
+  - Amos.1.5
+  - Amos.9.7
+sources:
+  - "H. Tadmor, The Inscriptions of Tiglath-pileser III, King of Assyria (1994)"
+  - "B. Oded, Mass Deportations and Deportees in the Neo-Assyrian Empire (1979)"
+  - "S. M. Paul, Amos (Hermeneia, 1991)"
+  - "F. I. Andersen and D. N. Freedman, Amos (Anchor Bible 24A, 1989)"
+status: checked

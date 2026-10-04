@@ -1,0 +1,27 @@
+id: where-was-the-city-of-david
+question:
+  en: "Where was the City of David?"
+  ru: "Где находился Город Давидов?"
+answer:
+  en:
+    - "The City of David was the narrow ridge that runs south from the Temple Mount in Jerusalem, between the Kidron valley on the east and the central valley, the Tyropoeon, on the west; today it lies in Silwan, just outside the southern wall of the Old City. It was the oldest Jerusalem, the Jebusite town that David took about 1003 BC. The map's point stands on the ridge above the Gihon spring, about 0.5 km south of the map's point for Mount Moriah and about 0.7 km east of today's Mount Zion in a straight line. History Globe has an article on the City of David and a question on when David took Jerusalem; this answer keeps to where it was."
+    - "The name begins with the conquest: “David took the strong hold of Zion: the same is the city of David”, and “David dwelt in the fort, and called it the city of David. And David built round about from Millo and inward.” David was buried there, and Solomon brought the ark up “out of the city of David, which is Zion” to the Temple on the hill to the north, which shows that the two were different places. After the exile Nehemiah's builders repaired the wall by the pool of Siloah “unto the stairs that go down from the city of David”, at the southern foot of the ridge."
+    - "Josephus already took the higher western hill for David's stronghold, and for centuries tradition placed the City of David there, on the hill now called Mount Zion, where David's tomb is still shown. Excavators from Charles Warren in 1867 to Raymond Weill in 1913 returned it to the eastern ridge: it is the only hill beside a perennial spring, the Gihon, and the Bible's own topography, from the spring to the stairs and the Siloam pool, fits it. The ridge was small, about 5 ha; most scholars accept this placing, while the age of the great stone structures on its summit, whether of David's time or later, is disputed."
+  ru:
+    - "Город Давидов — это узкий хребет, идущий к югу от Храмовой горы в Иерусалиме, между долиной Кедрона на востоке и средней, Тиропеонской, долиной на западе; сегодня он лежит в Сильване, сразу за южной стеной Старого города. Это древнейший Иерусалим — город иевусеев, который Давид взял около 1003 г. до н. э. Точка карты стоит на хребте над источником Гион, примерно в 0,5 км к югу от точки горы Мориа и в 0,7 км к востоку от нынешней горы Сион по прямой. В History Globe есть статья о Городе Давидовом и вопрос о том, когда Давид взял Иерусалим; здесь ответ о том, где он был."
+    - "Имя начинается с завоевания: «Но Давид взял крепость Сион: это — город Давидов», и «поселился Давид в крепости, и назвал ее городом Давидовым, и обстроил кругом от Милло и внутри». Там Давид был погребён, а Соломон перенёс ковчег «из города Давидова, то есть Сиона» в Храм на холме к северу — значит, это были разные места. После плена строители Неемии чинили стену у водоёма Селах «до ступеней, спускающихся из города Давидова», у южного подножия хребта."
+    - "Уже Иосиф Флавий принимал за крепость Давида более высокий западный холм, и веками предание помещало Город Давидов там, на холме, который теперь зовётся горой Сион и где до сих пор показывают гробницу Давида. Археологи — от Чарльза Уоррена в 1867 году до Раймона Вейля в 1913-м — вернули его восточному хребту: только этот холм стоит у постоянного источника, Гиона, и с ним сходится топография самой Библии — от источника до ступеней и Силоамского пруда. Хребет был невелик, около 5 га; большинство учёных принимает это положение, а возраст больших каменных сооружений на его вершине — времён Давида или позднее — спорен."
+map:
+  place: a84f426
+  year: "c. 1003 BC"
+  ref: 2Sam.5.9
+scripture: [2Sam.5.7-2Sam.5.9, 1Kgs.2.10, 1Kgs.8.1, Neh.3.15, Neh.12.37]
+sources:
+  - "Josephus, Jewish War 5.137-145 (the upper and lower city, the Valley of the Cheesemongers, Siloam)"
+  - "C. Warren and C. W. Wilson, The Recovery of Jerusalem (1871)"
+  - "Y. Shiloh, Excavations at the City of David (Qedem 19, 1984)"
+  - "R. Reich, Excavating the City of David: Where Jerusalem's History Began (2011)"
+  - "E. Mazar, Preliminary Report on the City of David Excavations 2005 at the Visitors Center Area (2007); I. Finkelstein, Z. Herzog, L. Singer-Avitz and D. Ussishkin, 'Has King David's Palace in Jerusalem Been Found?', Tel Aviv 34 (2007) 142-164"
+  - "History Globe battles (jebus c. 1003 BC), History Globe article “City of David” and History Globe question on when David captured Jerusalem"
+  - "Straight-line distances between the places' points (City of David, Mount Moriah, Mount Zion): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

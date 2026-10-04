@@ -1,0 +1,29 @@
+# Draft question. The usual date (4 BC) and the minority date (1 BC) are both given; the map keeps c. 4 BC.
+id: when-did-herod-the-great-die
+question:
+  en: "When did Herod the Great die?"
+  ru: "Когда умер Ирод Великий?"
+answer:
+  en:
+    - "In the spring of 4 BC, on the usual dating: Josephus says Herod died at his winter palace at Jericho after a lunar eclipse and shortly before Passover, about seventy years old, in the thirty-fourth year since he took Jerusalem and the thirty-seventh since Rome named him king. A minority of scholars put his death in 1 BC. The map stands at the Jericho of the Gospels, where his palaces lay, about 21 km from Jerusalem in a straight line, in c. 4 BC."
+    - "Matthew's story turns on the date: Joseph took the child to Egypt and “was there until the death of Herod”; then “when Herod was dead, behold, an angel of the Lord appeareth in a dream to Joseph in Egypt”, and hearing “that Archelaus did reign in Judaea in the room of his father Herod” he settled in Galilee instead. Josephus tells the end in detail: Herod had the teachers who pulled down the golden eagle from the Temple gate burned alive, and that night the moon was eclipsed; he bathed in the warm springs of Callirrhoe beyond the Jordan, came back to Jericho, changed his will, had his son Antipater executed five days before his own death, and was carried in state to the fortress of Herodium, which he had built for his tomb. In 2007 Ehud Netzer found on the slope of Herodium a mausoleum and a smashed sarcophagus that he identified as Herod's, a claim some have questioned."
+    - "The eclipse is the hinge. One on 13 March 4 BC was partial and fell a month before Passover, which suits the usual date; Filmer in 1966 and Steinmann in 2009 preferred the total eclipse of 10 January 1 BC, arguing that Josephus's months of events hardly fit between March and April. Most historians keep 4 BC, because Herod's sons counted their reigns from it: Archelaus was deposed in his tenth year in AD 6, Philip died in the twentieth year of Tiberius after thirty-seven years, and the coins of Antipas run to his forty-third year, AD 39. On the usual date Jesus, born “in the days of Herod the king”, was born about 6–4 BC, since Herod had the children of Bethlehem killed “from two years old and under”; on the other, in 3–2 BC."
+  ru:
+    - "Весной 4 г. до н. э. по обычной датировке: Иосиф Флавий сообщает, что Ирод умер в своём зимнем дворце в Иерихоне после лунного затмения и незадолго до Пасхи, лет семидесяти, на тридцать четвёртом году после взятия Иерусалима и на тридцать седьмом с тех пор, как Рим назвал его царём. Меньшинство учёных относит его смерть к 1 г. до н. э. Карта стоит на евангельском Иерихоне, где лежали его дворцы, примерно в 21 км от Иерусалима по прямой, в условном 4 г. до н. э."
+    - "Рассказ Матфея держится на этой дате: Иосиф унёс Младенца в Египет и «там был до смерти Ирода»; затем «по смерти же Ирода, — се, Ангел Господень во сне является Иосифу в Египте», а услышав, «что Архелай царствует в Иудее вместо Ирода, отца своего», он поселился в Галилее. Иосиф Флавий рассказывает конец подробно: больной и измученный, Ирод велел сжечь заживо учителей, сорвавших золотого орла с ворот Храма, и в ту ночь случилось лунное затмение; он лечился в тёплых источниках Каллирои за Иорданом, вернулся в Иерихон, переменил завещание, за пять дней до собственной смерти казнил сына Антипатра и был с царской пышностью перенесён в крепость Иродион, которую построил себе для гробницы. В 2007 году Эхуд Нецер нашёл на склоне Иродиона мавзолей и разбитый саркофаг, которые счёл Иродовыми; некоторые эту догадку оспаривают."
+    - "Затмение — ключ ко всему. Затмение 13 марта 4 г. до н. э. было частным и случилось за месяц до Пасхи, что подходит к обычной дате; Филмер в 1966 году и Стайнманн в 2009-м предпочли полное затмение 10 января 1 г. до н. э., доказывая, что месяцы событий у Иосифа едва умещаются между мартом и апрелем. Большинство историков держатся 4 г., потому что сыновья Ирода считали своё правление от него: Архелай был смещён на десятом году, в 6 г. н. э., Филипп умер в двадцатый год Тиверия после тридцати семи лет правления, а монеты Антипы доходят до его сорок третьего года, 39 г. н. э. По обычной дате Иисус, родившийся «во дни царя Ирода», родился около 6–4 гг. до н. э., ведь Ирод велел избить младенцев в Вифлееме «от двух лет и ниже»; по другой — в 3–2 гг. до н. э."
+map:
+  place: aaf03fa
+  year: "c. 4 BC"
+  ref: Matt.2.19
+scripture: [Matt.2.1, Matt.2.15-Matt.2.16, Matt.2.19-Matt.2.22, Luke.1.5]
+sources:
+  - "Josephus, Antiquities 17.167-199 (the eclipse, Herod's death at Jericho and the funeral); Jewish War 1.659-673"
+  - "Josephus, Antiquities 17.342-344 (Archelaus banished in his tenth year); 18.106 (Philip's death in the twentieth year of Tiberius, after thirty-seven years)"
+  - "W. E. Filmer, 'The Chronology of the Reign of Herod the Great', Journal of Theological Studies 17 (1966); T. D. Barnes, 'The Date of Herod's Death', Journal of Theological Studies 19 (1968)"
+  - "A. E. Steinmann, 'When Did Herod the Great Reign?', Novum Testamentum 51 (2009)"
+  - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. G. Vermes and F. Millar, vol. 1 (1973), on Herod, his sons and the census of Quirinius"
+  - "E. Netzer, The Architecture of Herod, the Great Builder (2006); E. Netzer, 'In Search of Herod's Tomb', Biblical Archaeology Review 37.1 (2011)"
+  - "History Globe dated events (herod 37 BC; jesus-born c. 5 BC; herod-dies c. 4 BC; judea-province AD 6), History Globe question on when Jesus was born and History Globe question on Herod's palaces"
+  - "Straight-line distance between the places' points (Jericho of the Gospels, Jerusalem): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

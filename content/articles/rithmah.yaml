@@ -1,0 +1,21 @@
+# Overview article (ADR 0007). Mainstream facts only; a wilderness station known only from the itinerary of Numbers 33; Rashi's link with the spies is given as tradition; the site is unknown.
+id: rithmah
+place: a2e73ba
+title:
+  en: "Rithmah"
+  ru: "Рифма"
+body:
+  en:
+    - "Rithmah is a camp of Israel in the wilderness named only in the itinerary of Numbers 33, the first after Hazeroth: “And they departed from Hazeroth, and pitched in Rithmah. And they departed from Rithmah, and pitched at Rimmon-parez.” The name comes from rotem, the white broom bush of the desert. Because the narrative in Numbers goes straight from Hazeroth to the wilderness of Paran and the sending of the spies, Jewish tradition, followed by Rashi, took Rithmah for the place of the spies' evil report."
+    - "Its site is unknown. The map marks five candidates, chiefly wadis whose Arabic names keep the word for broom: Wadi Ratamah in the southern Sinai, where the map point stands, Wadi Abu Retemat in the north-eastern Sinai, Wadi er-Retame in north-western Arabia, Ain Rathmah, and Bir es-Sawra. The broom grows all over these deserts, so the name proves little."
+  ru:
+    - "Рифма — стан Израиля в пустыне, названный только в перечне 33-й главы книги Чисел, первый после Асирофа: «И отправились из Асирофа и расположились станом в Рифме. И отправились из Рифмы и расположились станом в Римнон-Фареце». Имя происходит от «ротем» — белого пустынного дрока. Поскольку рассказ книги Чисел переходит от Асирофа прямо к пустыне Фаран и посылке соглядатаев, иудейское предание, а за ним Раши, считало Рифму местом, где соглядатаи распустили худую молву."
+    - "Местоположение неизвестно. На карте отмечено пять вариантов, в основном вади, чьи арабские имена хранят слово «дрок»: Вади Ратама на юге Синая, где стоит точка на карте, Вади Абу-Ретемат на северо-востоке Синая, Вади эр-Ретаме на северо-западе Аравии, Айн-Ратму и Бир-эс-Савру. Дрок растёт по всем этим пустыням, так что имя мало что доказывает."
+scripture:
+  - Num.12.16-Num.13.3
+  - Num.33.18-Num.33.19
+sources:
+  - "Rashi on Numbers 33:18"
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "B. A. Levine, Numbers 21-36 (Anchor Bible, 2000)"
+status: checked

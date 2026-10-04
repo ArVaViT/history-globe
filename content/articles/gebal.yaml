@@ -1,0 +1,26 @@
+# Overview article (ADR 0007). Mainstream facts only; the Gebal of Psalm 83 is distinguished; the Synodal rendering of Joshua 13:5 is noted.
+id: gebal
+place: a9a2541
+title:
+  en: "Gebal"
+  ru: "Гевал"
+body:
+  en:
+    - "Gebal is the Hebrew name of Byblos, the Phoenician port on the coast of Lebanon about 30 km north of Beirut: Gubla in the Akkadian of the Amarna letters, Kepen to the Egyptians, Byblos to the Greeks, who took their word for papyrus, and so for book, from the trade that passed through it. People have lived on its headland since the Neolithic age, and from the third millennium BC it was the harbour through which the cedar of Lebanon went to Egypt and Egyptian gifts came to the temples of the Lady of Byblos. In the fourteenth century BC its king Rib-Hadda wrote Pharaoh more letters than any other vassal, begging for help; about 1075 BC the Egyptian envoy Wenamun came for timber and was kept waiting on the shore; and the sarcophagus of King Ahiram, from about 1000 BC, carries one of the earliest inscriptions in the Phoenician alphabet, the ancestor of the Hebrew and Greek letters."
+    - "The Bible names it three times. Among the lands still unconquered in Joshua's old age is “the land of the Giblites”, which the Synodal Bible renders as the land of Gebla; when Solomon built the Temple, “Solomon's builders and Hiram's builders did hew them, and the stonesquarers”, where the Hebrew, kept in the Synodal text, says the Giblites; and in Ezekiel's lament over Tyre, “The ancients of Gebal and the wise men thereof were in thee thy calkers”, the shipwrights who stopped the seams of her ships. The Gebal of Psalm 83, in league with Moab and Ammon, is a different place, a district of Edom."
+    - "Byblos lived on under Persians, Greeks and Romans, who built its colonnaded street and theatre, and the Crusaders held it as Giblet from 1104 and left a castle. Pierre Montet dug the royal tombs in 1921–1924, and Maurice Dunand excavated the site from 1926 for half a century. It is the town of Jbeil in Lebanon today, with its harbour, souk and ruins, inscribed by UNESCO in 1984."
+  ru:
+    - "Гевал — еврейское имя Библа, финикийской гавани на побережье Ливана примерно в 30 км к северу от Бейрута: Губла в аккадском языке амарнских писем, Кепен у египтян, Библ у греков, которые взяли отсюда своё слово для папируса, а значит и для книги, по торговле, шедшей через этот порт. Люди живут на его мысу с неолита, а с третьего тысячелетия до н. э. это была гавань, через которую ливанский кедр шёл в Египет, а египетские дары приходили в храмы Владычицы Библа. В XIV веке до н. э. его царь Риб-Адди написал фараону больше писем, чем любой другой вассал, умоляя о помощи против соседей; около 1075 г. до н. э. египетский посланник Унамон приехал за лесом и долго ждал на берегу; а саркофаг царя Ахирама, около 1000 г. до н. э., несёт одну из древнейших надписей финикийским алфавитом, предком еврейских и греческих букв."
+    - "Библия называет его трижды. Среди земель, ещё не завоёванных к старости Иисуса Навина, названа «земля Гевла», как передаёт Синодальный перевод; о камнях для храма Соломона сказано: «Обтесывали же их работники Соломоновы и работники Хирамовы и Гивлитяне»; а в плаче Иезекииля о Тире «Старшие из Гевала и знатоки его были у тебя, чтобы заделывать пробоины твои» — корабельщики, конопатившие швы её судов. Гевал 82-го псалма, в союзе с Моавом и Аммоном, — другое место, область Едома."
+    - "Библ жил и при персах, греках и римлянах, построивших его улицу с колоннадой и театр, а крестоносцы держали его как Жибле с 1104 года и оставили замок. Пьер Монте раскопал царские гробницы в 1921–1924 годах, а Морис Дюнан вёл раскопки с 1926 года полвека. Сегодня это город Джубейль в Ливане, с гаванью, рынком и развалинами, внесённый в список ЮНЕСКО в 1984 году."
+scripture:
+  - Josh.13.5
+  - 1Kgs.5.18
+  - Ezek.27.9
+sources:
+  - "The Amarna letters of Rib-Hadda of Gubla, in W. L. Moran, The Amarna Letters (1992)"
+  - "The Report of Wenamun, in M. Lichtheim, Ancient Egyptian Literature, vol. 2 (1976)"
+  - "P. Montet, Byblos et l'Égypte: quatre campagnes de fouilles à Gebeil, 1921–1924 (1928)"
+  - "M. Dunand, Fouilles de Byblos, vols. 1–2 (1937–1958)"
+  - "N. Jidejian, Byblos through the Ages (1968)"
+status: checked

@@ -1,0 +1,26 @@
+id: where-was-mesopotamia
+question:
+  en: "Where was Mesopotamia?"
+  ru: "Где находилась Месопотамия?"
+answer:
+  en:
+    - "Mesopotamia, Greek for “between the rivers”, is the land of the Euphrates and the Tigris, most of it in today's Iraq, with the north-east of Syria and the south-east of Turkey. In the Old Testament, though, the word stands for the Hebrew Aram-naharaim, “Aram of the two rivers”: only the upper country around Haran, between the great bend of the Euphrates and the Khabur. The map point stands there, on Haran, about 665 km north-east of Jerusalem in a straight line and about 690 km north-west of Babylon."
+    - "This upper Mesopotamia was the home of Abraham's kin. His servant “went to Mesopotamia, unto the city of Nahor” to find a wife for Isaac, and Jacob later served Laban there for Leah and Rachel; the Synodal Bible renders Laban's Padan-aram as Mesopotamia too. Balaam was hired “of Pethor of Mesopotamia”, the Pitru of the Assyrian annals on the river Sajur near Carchemish, which lies about 90 km west of Haran; and in the days of the judges Israel served “Chushan-rishathaim king of Mesopotamia” eight years."
+    - "The New Testament uses the word in its wider Greek sense, the whole land between the rivers down to the Persian Gulf. Among the crowd at Pentecost were “the dwellers in Mesopotamia”, the Jews of Babylonia, and Stephen says that God appeared to Abraham “when he was in Mesopotamia, before he dwelt in Charran”: for him Ur, far down the Euphrates, was Mesopotamia as well. Modern historians use the name in this wide sense, for the land of Ur, Babylon and Nineveh; Nineveh lies about 370 km east of Haran."
+  ru:
+    - "Месопотамия, по-гречески «Междуречье», — земля Евфрата и Тигра, бо́льшая часть которой лежит в нынешнем Ираке, вместе с северо-востоком Сирии и юго-востоком Турции. Но в Ветхом Завете это слово передаёт еврейское Арам-Нахараим, «Арам двух рек»: только верхнюю страну вокруг Харрана, между большой излучиной Евфрата и Хабуром. Там и стоит точка карты — на Харране, примерно в 665 км к северо-востоку от Иерусалима по прямой и в 690 км к северо-западу от Вавилона."
+    - "Эта верхняя Месопотамия была родиной родни Авраама. Его раб «пошел в Месопотамию, в город Нахора», чтобы найти жену Исааку, и позже Иаков служил там Лавану за Лию и Рахиль; Синодальный перевод и Паддан-Арам, страну Лавана, называет Месопотамией. Валаама наняли «из Пефора Месопотамского» — это Питру ассирийских анналов на реке Саджур близ Кархемиса, примерно в 90 км к западу от Харрана; а во дни судей Господь предал Израиль «в руки Хусарсафема, царя Месопотамского», и сыны Израилевы служили ему восемь лет."
+    - "Новый Завет употребляет слово в широком греческом смысле — вся земля между реками до Персидского залива. Среди толпы в день Пятидесятницы были «жители Месопотамии», Иудеи Вавилонии, а Стефан говорит, что Бог явился Аврааму «в Месопотамии, прежде переселения его в Харран»: для него и Ур, далеко вниз по Евфрату, был Месопотамией. Нынешние историки понимают имя в этом широком смысле — как землю Ура, Вавилона и Ниневии; Ниневия лежит примерно в 370 км к востоку от Харрана."
+map:
+  place: a43f60f
+  year: "c. 1850 BC"
+  ref: Gen.24.10
+scripture: [Gen.24.10, Gen.28.2, Deut.23.4, Judg.3.8, Acts.2.9, Acts.7.2]
+sources:
+  - "Region point and straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Septuagint, Genesis 24:10 (Mesopotamia for Aram-naharaim)"
+  - "Shalmaneser III, the Kurkh Monolith (Pitru on the river Sajur)"
+  - "Strabo, Geography, book 16 (Mesopotamia between the Euphrates and the Tigris)"
+  - "G. Roux, Ancient Iraq (3rd ed., 1992)"
+  - "M. Van De Mieroop, A History of the Ancient Near East ca. 3000-323 BC (2004)"
+status: checked

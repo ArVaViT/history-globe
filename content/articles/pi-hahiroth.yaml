@@ -1,0 +1,27 @@
+# Overview article (ADR 0007). Mainstream facts only; the site depends on the disputed route of the Exodus, and the candidates are given without choosing.
+id: pi-hahiroth
+place: ababfd2
+title:
+  en: "Pi-hahiroth"
+  ru: "Пи-Гахироф"
+body:
+  en:
+    - "Pi-hahiroth was the last camp of Israel before the crossing of the sea. From Etham on the edge of the wilderness the LORD told Moses to turn back and “encamp before Pi-hahiroth, between Migdol and the sea, over against Baal-zephon”, so that Pharaoh would think the people trapped; there the Egyptian chariots overtook them “beside Pi-hahiroth, before Baal-zephon”, and from there, the itinerary says, they “passed through the midst of the sea into the wilderness” and marched three days to Marah. The name has an Egyptian look, with the pi, “house”, of Pithom and Pi-beseth, but the rest is unexplained: a “house of Hathor” and a Semitic “mouth of the canals” have both been proposed, the latter with the frontier canal of the eastern delta in mind."
+    - "Where the camp lay depends on where one puts the sea and Baal-zephon, and that is disputed. The first candidate on the map keeps Pi-hahiroth beside Baal-zephon, which some place at Tell Defenneh, the later Daphnae on the eastern delta, because a Phoenician letter from Egypt invokes “Baal-zephon and all the gods of Tahpanhes”; others place Baal-zephon at the shrine of Zeus Casius on the bar of Lake Bardawil and bring Israel along the Mediterranean shore. Those who take the sea for the Bitter Lakes or the Gulf of Suez look to the plain under Jebel Jinayfah or Jebel Abu Hasa near Suez; Pelusium and Qantara have also been named. No inscription has settled it, and the question stays open."
+    - "Today the candidate sites lie along the Suez Canal, from the marshes of the eastern delta down to the Bitter Lakes and the city of Suez."
+  ru:
+    - "Пи-Гахироф — последний стан Израиля перед переходом через море. От Ефама на краю пустыни Господь велел Моисею повернуть назад, чтобы народ расположился «станом пред Пи-Гахирофом, между Мигдолом и между морем, пред Ваал-Цефоном», и фараон решил, что они в ловушке; там египетские колесницы настигли их «при Пи-Гахирофе пред Ваал-Цефоном», и оттуда, по перечню станов, они «прошли среди моря в пустыню» и три дня шли до Мерры. Имя выглядит по-египетски, с тем же «пи», «дом», что в Пифоме и Пи-Бесете, но остальное не объяснено: предлагали и «дом Хатхор», и семитское «устье каналов», во втором случае имея в виду пограничный канал восточной дельты."
+    - "Где лежал стан, зависит от того, где искать море и Ваал-Цефон, а это спорно. Первый кандидат на карте оставляет Пи-Гахироф рядом с Ваал-Цефоном, который одни помещают в Телль-Дефенне, позднейшую Дафну в восточной дельте, потому что финикийское письмо из Египта призывает «Ваал-Цефона и всех богов Тахпанхеса»; другие ставят Ваал-Цефон у святилища Зевса Касия на косе озера Бардавиль и ведут Израиль вдоль берега Средиземного моря. Те, кто считает морем Горькие озёра или Суэцкий залив, смотрят на равнину под горой Джинейфа или Джебель-Абу-Хаса близ Суэца; называли также Пелусий и Эль-Кантару. Ни одна надпись вопроса не решила, и он остаётся открытым."
+    - "Сегодня места-кандидаты лежат вдоль Суэцкого канала, от болот восточной дельты до Горьких озёр и города Суэц."
+scripture:
+  - Exod.13.20
+  - Exod.14.2-Exod.14.4
+  - Exod.14.9
+  - Num.33.7-Num.33.8
+sources:
+  - "O. Eissfeldt, Baal Zaphon, Zeus Kasios und der Durchzug der Israeliten durchs Meer (1932)"
+  - "W. F. Albright, 'Baal-Zephon', in Festschrift Alfred Bertholet (1950) (the Phoenician letter from Saqqara)"
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "J. K. Hoffmeier, Israel in Egypt: The Evidence for the Authenticity of the Exodus Tradition (1997)"
+  - "J. K. Hoffmeier, Ancient Israel in Sinai: The Evidence for the Authenticity of the Wilderness Tradition (2005)"
+status: checked

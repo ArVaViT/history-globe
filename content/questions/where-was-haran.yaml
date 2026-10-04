@@ -1,0 +1,35 @@
+id: where-was-haran
+question:
+  en: "Where was Haran, where Abraham stopped?"
+  ru: "Где находился Харран, где остановился Авраам?"
+answer:
+  en:
+    - "Haran is Harran, a town in south-eastern Turkey near the Syrian border, in the valley of the Balikh, a tributary of the Euphrates, about 40 km south-east of Şanlıurfa; the map point stands on its mound, about 665 km north-east of Jerusalem and about 620 km from Shechem in a straight line, and about 925 km from Ur if Ur is Tell el-Muqayyar in southern Iraq. Its name, Harranu, means “road” in Akkadian: it lay where the routes from Nineveh and Babylonia to Syria and Anatolia crossed, about 90 km east of the Euphrates ford at Carchemish, and it was the city of the moon god Sin."
+    - "Here Terah stopped on the way from Ur to Canaan, “and they came unto Haran, and dwelt there”, and here he died; from Haran Abram set out at seventy-five with Sarai and Lot, and Stephen recalls that God “removed him into this land” from Charran after his father's death. Two generations later Rebekah sent Jacob back “to Laban my brother to Haran”, where he served fourteen years for Leah and Rachel and where eleven of his sons were born; the well where he met Rachel lay outside the town, among shepherds who told him: “Of Haran are we.” The Haran of the city is not the Haran of the family: Abram's brother Haran, the father of Lot, who died in Ur, is spelt with a different first letter in Hebrew, and the Synodal Bible keeps them apart as Харран and Аран."
+    - "The region fits the patriarchs' kin: Abraham's servant went to “the city of Nahor” nearby to find Rebekah, and the names of Abraham's forebears Serug, Nahor and Terah recur as place names around Haran in cuneiform records. The mound of Harran has been dug since the 1950s, but the great temple of Sin known from the texts of Nabonidus has not been securely located, and the standing ruins, the citadel, walls and Umayyad mosque, are of Islamic date. The debate is less about Haran than about Ur: a minority put Ur of the Chaldees in the north near Haran, which would make Terah's journey short. The article on Haran tells the city's later history, from the last king of Assyria to Crassus and Julian."
+  ru:
+    - "Харран — это Харран, городок на юго-востоке Турции у сирийской границы, в долине реки Белих, притока Евфрата, примерно в 40 км к юго-востоку от Шанлыурфы; точка карты стоит на его холме, примерно в 665 км к северо-востоку от Иерусалима и в 620 км от Сихема по прямой, а от Ура — в 925 км, если Ур — это Телль-эль-Мукайяр на юге Ирака. Его имя, Харрану, по-аккадски означает «дорога»: здесь скрещивались пути из Ниневии и Вавилонии в Сирию и Анатолию, примерно в 90 км к востоку от переправы через Евфрат у Кархемиса, и это был город бога луны Сина."
+    - "Здесь Фарра остановился на пути из Ура в Ханаан — «дойдя до Харрана, они остановились там» — и здесь умер; из Харрана Аврам вышел семидесяти пяти лет с Сарой и Лотом, а Стефан вспоминает, что по смерти отца Бог «переселил его… в сию землю». Два поколения спустя Ревекка отослала Иакова «к Лавану, брату моему, в Харран», где он четырнадцать лет служил за Лию и Рахиль и где родились одиннадцать его сыновей; колодец, у которого он встретил Рахиль, лежал за городом, среди пастухов, сказавших ему: «мы из Харрана». Харран-город — не то, что Аран из семьи: брат Аврама Аран, отец Лота, умерший в Уре, пишется по-еврейски с другой первой буквы, и Синодальный перевод разводит их как Харран и Аран."
+    - "Край подходит родне патриархов: раб Авраама пошёл за Ревеккой «в город Нахора» неподалёку, а имена предков Авраама — Серух, Нахор и Фарра — встречаются в клинописных текстах как названия мест в округе Харрана. Холм Харрана копают с 1950-х годов, но большой храм Сина, известный по текстам Набонида, до сих пор надёжно не найден, а стоящие руины — цитадель, стены и омейядская мечеть — исламского времени. Спор идёт не столько о Харране, сколько об Уре: меньшинство помещает Ур Халдейский на севере, близ Харрана, и тогда путь Фарры был коротким. Статья о Харране рассказывает позднейшую историю города — от последнего царя Ассирии до Красса и Юлиана."
+map:
+  place: a6d9af3
+  year: "1900 BC"
+  ref: Gen.11.31
+scripture:
+  [
+    Gen.11.27-Gen.11.32,
+    Gen.12.4-Gen.12.5,
+    Gen.24.10,
+    Gen.27.43,
+    Gen.28.10,
+    Gen.29.4,
+    2Kgs.19.12,
+    Acts.7.2-Acts.7.4,
+  ]
+sources:
+  - "Straight-line distances between the places' points (Haran, Jerusalem, Shechem, Ur, Carchemish): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "T. M. Green, The City of the Moon God: Religious Traditions of Harran (1992)"
+  - "G. J. Wenham, Genesis 1-15 (Word Biblical Commentary 1, 1987), on Genesis 11:27-32 (the names of Terah's family as towns near Haran)"
+  - "C. H. Gordon, 'Abraham and the Merchants of Ura', Journal of Near Eastern Studies 17 (1958) (the northern Ur)"
+  - "History Globe article “Haran” and questions “Where was Ur of the Chaldees?” and “How far did Abraham travel from Ur to Canaan?”"
+status: checked

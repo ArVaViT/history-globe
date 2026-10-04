@@ -1,0 +1,24 @@
+id: where-was-ammon
+question:
+  en: "Where was Ammon?"
+  ru: "Где находился Аммон?"
+answer:
+  en:
+    - "Ammon was a small kingdom on the edge of the desert east of the Jordan, around its capital Rabbah, which is Amman, the capital of Jordan today; the map point stands on Rabbah, about 69 km east of Jerusalem in a straight line. Its land lay on the upper Jabbok, the Zarqa, which rises at Amman and curves north and then west to the Jordan, with Gilead between Ammon and the river, Moab to the south and the steppe to the east."
+    - "Israel on the way to Canaan was told to leave it alone: “I will not give thee of the land of the children of Ammon any possession; because I have given it unto the children of Lot for a possession”. The border with Gilead was argued over for centuries; in Jephthah's day the king of Ammon claimed the land “from Arnon even unto Jabbok, and unto Jordan”. Deuteronomy notes that the iron bedstead of Og, king of Bashan, nine cubits long, was still to be seen “in Rabbath of the children of Ammon”."
+    - "David's general Joab besieged Rabbah, where Uriah the Hittite was killed, “and took the royal city”, then “the city of waters”, and David came to take the city himself. Ammon later paid tribute to Assyria and still had a king, Baalis, after the fall of Jerusalem in 587 BC. In the third century BC Ptolemy II refounded Rabbah as Philadelphia, later one of the cities of the Decapolis, and its Roman theatre still stands below the Citadel hill of Amman."
+  ru:
+    - "Аммон — небольшое царство на краю пустыни к востоку от Иордана вокруг столицы Раввы, нынешнего Аммана, столицы Иордании; точка карты стоит на Равве, примерно в 69 км к востоку от Иерусалима по прямой. Его земля лежала на верхнем Иавоке, нынешней Зарке, который начинается в Аммане и поворачивает на север, а затем на запад к Иордану; между Аммоном и рекой лежал Галаад, на юге — Моав, на востоке — степь."
+    - "Израилю на пути в Ханаан было велено не трогать его: «Я не дам тебе ничего от земли сынов Аммоновых во владение, потому что Я отдал ее во владение сынам Лотовым». О границе с Галаадом спорили веками: во дни Иеффая царь Аммонитский требовал землю «от Арнона до Иавока и Иордана». Второзаконие замечает, что железный одр Ога, царя Васанского, длиной девять локтей, и тогда ещё стоял «в Равве, у сынов Аммоновых»."
+    - "Иоав, военачальник Давида, осаждал Равву, под которой погиб Урия Хеттеянин, и «взял почти царственный город», а затем «овладел водою города», и Давид пришёл взять город сам. Позже Аммон платил дань Ассирии и ещё имел царя, Ваалиса, после падения Иерусалима в 587 г. до н. э. В III веке до н. э. Птолемей II заново основал Равву как Филадельфию, позже один из городов Десятиградия, и её римский театр до сих пор стоит под холмом Цитадели Аммана."
+map:
+  place: a6046fa
+  year: "c. 1000 BC"
+  ref: 2Sam.12.26
+scripture: [Deut.2.19, Deut.3.11, Judg.11.13, 2Sam.12.26-2Sam.12.29, Jer.40.14]
+sources:
+  - "Region point and straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Pliny the Elder, Natural History 5.74 (Philadelphia in the Decapolis)"
+  - "B. MacDonald and R. W. Younker (eds.), Ancient Ammon (1999)"
+  - "A. Northedge, Studies on Roman and Islamic 'Amman, vol. 1 (1992)"
+status: checked

@@ -1,0 +1,28 @@
+# Overview article (ADR 0007). Mainstream facts only; Baalah is Kiriath-jearim by the Bible's own words, and the two other Baalahs are told apart.
+id: baalah
+place: ac2f5ea
+title:
+  en: "Baalah"
+  ru: "Ваал"
+body:
+  en:
+    - "Baalah is another name of Kiriath-jearim, the town on the border of Judah and Benjamin about 13 km west of Jerusalem where the ark of the covenant rested for twenty years. Joshua, tracing Judah's northern border, brings it from the spring of Nephtoah to Mount Ephron, “and the border was drawn to Baalah, which is Kirjath-jearim: And the border compassed from Baalah westward unto mount Seir”; the same book twice calls the town Kirjath-baal, “which is Kirjath-jearim”. The Chronicler has David go up “to Baalah, that is, to Kirjath-jearim, which belonged to Judah, to bring up thence the ark of God”, where the parallel in Samuel says he went “from Baale of Judah”. The old name points to a Canaanite sanctuary of Baal; Kiriath-jearim, “the city of forests”, is the name Israel used."
+    - "Two other places share the name and are not this one: Baalah, a town in the Negeb of Judah, and Mount Baalah on the border near Ekron and Jabneel. Kiriath-jearim itself is identified with Deir el-Azar, the hill above Abu Ghosh, where Eusebius already knew Kariathiareim on the road from Jerusalem to Diospolis. Excavations in 2017 found on the summit a great artificial platform held by massive retaining walls, which the excavators date to the eighth century BC; who built it, and why, is debated."
+    - "Today the summit carries the church of Our Lady of the Ark of the Covenant, built in 1924 over the remains of a Byzantine church, with a statue of Mary visible from the Jerusalem road; the article on Kiriath-jearim tells the rest of the story."
+  ru:
+    - "Ваал — другое имя Кириаф-Иарима, города на границе Иуды и Вениамина примерно в 13 км к западу от Иерусалима, где двадцать лет стоял ковчег завета. Книга Иисуса Навина, ведя северный предел Иуды от источника Нефтоах к горе Ефрона, говорит: «поворачивает предел к Ваалу, который есть Кириаф-Иарим; потом поворачивает предел от Ваала к морю и идет к горе Сеиру»; та же книга дважды зовёт город Кириаф-Ваал, «иначе Кириаф-Иарим». В книге Царств Давид идёт за ковчегом «из Ваала Иудина»; в параллельном рассказе Паралипоменон еврейский текст тоже называет Ваал, но Синодальный перевод оставляет там только Кириаф-Иарим. Старое имя указывает на ханаанское святилище Ваала; Кириаф-Иарим, «город лесов», — имя, которым пользовался Израиль."
+    - "Два других места носят то же имя и к этому не относятся: Ваала, город в Негеве Иудином, и гора Ваал на границе близ Екрона и Иавнеила. Сам Кириаф-Иарим отождествляют с Дейр-эль-Азаром, холмом над Абу-Гошем, где Евсевий уже знал Кариафиарим на дороге из Иерусалима в Диосполь. Раскопки 2017 года открыли на вершине большую искусственную площадку, удержанную мощными подпорными стенами, которую раскопщики датируют VIII веком до н. э.; кто и зачем её построил, спорно."
+    - "Сегодня вершину занимает церковь Богоматери Ковчега Завета, построенная в 1924 году над остатками византийской церкви, со статуей Марии, видной с иерусалимской дороги; остальное рассказывает статья о Кириаф-Иариме."
+scripture:
+  - Josh.15.9-Josh.15.10
+  - Josh.15.60
+  - Josh.18.14
+  - 1Sam.7.1-1Sam.7.2
+  - 2Sam.6.2
+  - 1Chr.13.5-1Chr.13.6
+sources:
+  - "Eusebius, Onomasticon, s.v. Baala and Kariathiareim"
+  - "I. Finkelstein, T. Römer, C. Nicolle et al., 'Excavations at Kiriath-jearim near Jerusalem, 2017: Preliminary Report', Semitica 60 (2018)"
+  - "C. McKinny, O. Schwartz, G. Barkay, A. Fantalkin and B. Zissu, 'Kiriath-Jearim (Deir el-ʿÂzar): Archaeological Investigations of a Biblical Town in the Judaean Hill Country', Israel Exploration Journal 68 (2018)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+status: checked

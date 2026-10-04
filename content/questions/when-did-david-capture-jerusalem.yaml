@@ -1,0 +1,28 @@
+# Draft question (the date of the capture; the article "Jebus" covers the city's name and identity).
+id: when-did-david-capture-jerusalem
+question:
+  en: "When did David capture Jerusalem?"
+  ru: "Когда Давид взял Иерусалим?"
+answer:
+  en:
+    - "About 1003 BC on the usual chronology: David was made king at Hebron about 1010 BC, reigned there seven years and six months, then took the Jebusite stronghold of Zion and made it his capital. The map uses c. 1003 BC; many writers round it to c. 1000 BC, and some scholars doubt that the Bible's round figures can be dated so closely. Hebron lies about 31 km south of Jerusalem in a straight line."
+    - "“In Hebron he reigned over Judah seven years and six months: and in Jerusalem he reigned thirty and three years over all Israel and Judah.” Once all the tribes had anointed him, David marched on Jerusalem, a city that had stayed Canaanite between Judah and Benjamin: “the Jebusites dwell with the children of Judah at Jerusalem unto this day”. The Jebusites mocked that the blind and the lame could hold the walls, but “David took the strong hold of Zion: the same is the city of David”. Chronicles adds that Joab went up first and became chief; the Hebrew word tsinnor in David's order, rendered “gutter” in English Bibles and “spear” in the Russian, has long been read as a water shaft by which the city was entered. David then built “round about from Millo and inward”."
+    - "The year is counted backward from the division of the kingdom about 931 BC: Solomon's forty years give about 970 for his accession, David's forty years about 1010, and the seven and a half years at Hebron bring the capture to about 1003 or 1002 BC; because the forty-year figures may be round, c. 1000 BC is common. The city David took was the ridge south of the Temple Mount now called the City of David, above the Gihon spring. Warren's Shaft, found in 1867, was long taken for the “gutter”, but Reich and Shukron's excavations concluded that the shaft was not opened until centuries later. In 2005 Eilat Mazar found the Large Stone Structure above the Stepped Stone Structure and called it David's palace; Finkelstein and others date the remains later and see a small town in David's day. The Tel Dan stele, found in 1993, names the “house of David” in the ninth century BC."
+  ru:
+    - "Около 1003 г. до н. э. по обычной хронологии: Давид был поставлен царём в Хевроне около 1010 г. до н. э., царствовал там семь лет и шесть месяцев, затем взял иевусейскую крепость Сион и сделал её своей столицей. Карта показывает условный 1003 г. до н. э.; многие округляют до 1000 г., а некоторые учёные сомневаются, что круглые числа Библии можно датировать так точно. Хеврон лежит примерно в 31 км к югу от Иерусалима по прямой."
+    - "«В Хевроне царствовал над Иудою семь лет и шесть месяцев, и в Иерусалиме царствовал тридцать три года над всем Израилем и Иудою». Когда все колена помазали его, Давид пошёл на Иерусалим — город, остававшийся ханаанским между Иудой и Вениамином: «Иевусеи живут с сынами Иуды в Иерусалиме даже до сего дня». Иевусеи насмехались, что стены удержат и слепые с хромыми, «но Давид взял крепость Сион: это — город Давидов». Паралипоменон добавляет, что Иоав взошёл первым и стал военачальником; еврейское слово циннор в приказе Давида, переданное в Синодальном переводе как «копьё», а в английских Библиях как «водосток», давно читают как водяную шахту, через которую вошли в город. Затем Давид «обстроил кругом от Милло и внутри»."
+    - "Год отсчитывают назад от разделения царства около 931 г. до н. э.: сорок лет Соломона дают около 970 г. для его воцарения, сорок лет Давида — около 1010-го, а семь с половиной лет в Хевроне приводят взятие города примерно к 1003 или 1002 г. до н. э.; поскольку сорокалетние числа могут быть круглыми, часто пишут «около 1000 г.». Город, взятый Давидом, — это гребень к югу от Храмовой горы, ныне Город Давида, над источником Гихон. Шахту Уоррена, открытую в 1867 году, долго считали тем самым «водостоком», но раскопки Райха и Шукрона показали, что шахта была открыта лишь столетия спустя. В 2005 году Эйлат Мазар нашла над Ступенчатой каменной структурой Большую каменную структуру и назвала её дворцом Давида; Финкельштейн и другие датируют остатки позже и видят во дни Давида небольшой городок. Стела из Тель-Дана, найденная в 1993 году, называет «дом Давида» в IX веке до н. э."
+map:
+  place: a15257a
+  year: "c. 1003 BC"
+  ref: 2Sam.5.7
+scripture: [2Sam.5.4-2Sam.5.9, 1Chr.11.4-1Chr.11.6, 1Kgs.2.11, Josh.15.63, Judg.1.21]
+sources:
+  - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings (3rd ed., 1983) (Solomon c. 970-931 BC; the division c. 931 BC)"
+  - "K. M. Kenyon, Digging Up Jerusalem (1974)"
+  - "R. Reich and E. Shukron, Excavations in the City of David, Jerusalem (1995-2010) (2021)"
+  - "E. Mazar, 'Did I Find King David's Palace?', Biblical Archaeology Review 32.1 (2006); I. Finkelstein, Z. Herzog, L. Singer-Avitz and D. Ussishkin, 'Has King David's Palace in Jerusalem Been Found?', Tel Aviv 34 (2007)"
+  - "A. Biran and J. Naveh, 'An Aramaic Stele Fragment from Tel Dan', Israel Exploration Journal 43 (1993)"
+  - "History Globe dated events (david-king-hebron c. 1010 BC) and History Globe battles (jebus c. 1003 BC), History Globe tour “The life of David” and History Globe article “Jebus”"
+  - "Straight-line distance between the places' points (Jerusalem, Hebron): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

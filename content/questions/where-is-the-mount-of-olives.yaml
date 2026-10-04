@@ -1,0 +1,37 @@
+id: where-is-the-mount-of-olives
+question:
+  en: "Where is the Mount of Olives?"
+  ru: "Где находится гора Елеонская?"
+answer:
+  en:
+    - "The Mount of Olives is the ridge immediately east of Jerusalem, across the Kidron valley from the Temple Mount: the map point stands on its summit, about 1.1 km east of the Jerusalem point in a straight line, with Gethsemane at its foot some 600 m down the slope. The main summit rises a little over 800 m above sea level, about 80 m higher than the Temple platform, so the whole city lies in view from it; Mount Scopus carries the ridge on to the north, and Bethphage and Bethany lie on the eastern slope towards Jericho. The article on the mount tells its history in full; this page answers the question of place."
+    - "Acts measures it: the disciples came back “unto Jerusalem from the mount called Olivet, which is from Jerusalem a sabbath day's journey”, the two thousand cubits, about a kilometre, allowed on the sabbath; Josephus reckons it five or six stadia from the city. Zechariah fixes its side: “the mount of Olives, which is before Jerusalem on the east”. Ezekiel saw the glory of the LORD leave the city and stand “upon the mountain which is on the east side of the city”; David fled from Absalom “by the ascent of mount Olivet”; and in his last week Jesus came to Jerusalem over it from Bethphage, sat on it “over against the temple” to speak of the end, spent the nights there, prayed in Gethsemane and, by Luke, was taken up from it near Bethany."
+    - "Today the mount lies in East Jerusalem. Its western face is the Jewish cemetery, in use since biblical times, below the village of at-Tur on the top; on the slope stand the Chapel of the Ascension, the Pater Noster church on the site of Constantine's Eleona basilica, the Russian church of Mary Magdalene with its golden domes, Dominus Flevit and the Church of All Nations at Gethsemane, and at the foot the rock-cut Kidron tombs of the Second Temple period. The view of the Old City from the summit is the one most pictures of Jerusalem show."
+  ru:
+    - "Гора Елеонская — гряда сразу к востоку от Иерусалима, за Кедронской долиной напротив Храмовой горы: точка карты стоит на её вершине, примерно в 1,1 км к востоку от точки Иерусалима по прямой, а у подножия, метрах в 600 ниже по склону, — Гефсимания. Главная вершина поднимается чуть выше 800 м над уровнем моря, примерно на 80 м выше храмовой площадки, так что с неё виден весь город; к северу гряду продолжает гора Скопус, а на восточном склоне, в сторону Иерихона, лежат Виффагия и Вифания. Статья о горе рассказывает её историю целиком; эта страница отвечает на вопрос о месте."
+    - "Деяния дают меру: ученики «возвратились в Иерусалим с горы, называемой Елеон, которая находится близ Иерусалима, в расстоянии субботнего пути» — две тысячи локтей, около километра, разрешённые в субботу; Иосиф Флавий считает от города пять или шесть стадий. Захария называет сторону: «на горе Елеонской, которая перед лицем Иерусалима к востоку». Иезекииль видел, как слава Господня покинула город и «остановилась над горою, которая на восток от города»; Давид бежал от Авессалома, когда «пошел на гору Елеонскую»; а в последнюю неделю Иисус пришёл через неё в Иерусалим из Виффагии, сидел на ней «против храма», говоря о конце, проводил там ночи, молился в Гефсимании и, по Луке, вознёсся с неё близ Вифании."
+    - "Сегодня гора лежит в Восточном Иерусалиме. Её западный склон — еврейское кладбище, где хоронят с библейских времён, ниже селения Эт-Тур на вершине; на склоне стоят часовня Вознесения, церковь Pater Noster на месте Константиновой базилики Элеона, русская церковь Марии Магдалины с золотыми куполами, Dominus Flevit и церковь Всех Наций в Гефсимании, а у подножия — высеченные в скале гробницы Кедрона времён Второго храма. Вид на Старый город с вершины — тот самый, что показывает большинство фотографий Иерусалима."
+map:
+  place: ac2c4c5
+  year: "AD 30"
+  ref: Acts.1.12
+scripture:
+  [
+    Acts.1.12,
+    Zech.14.4,
+    Ezek.11.23,
+    2Sam.15.30,
+    Matt.21.1,
+    Mark.13.3,
+    Luke.21.37,
+    Luke.22.39,
+    Luke.24.50,
+  ]
+sources:
+  - "Straight-line distances between the places' points (Mount of Olives, Jerusalem, Gethsemane): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Josephus, Antiquities 20.169 (the Mount of Olives five stadia from the city); Jewish War 5.70 (six stadia)"
+  - "Eusebius, Life of Constantine 3.41-43 (the church on the Mount of Olives)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008), s.v. Mount of Olives"
+  - "D. Bahat, The Illustrated Atlas of Jerusalem (1990)"
+  - "History Globe article “Mount of Olives” (the sabbath day's journey, the heights and the churches)"
+status: checked

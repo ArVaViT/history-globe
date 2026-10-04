@@ -1,0 +1,27 @@
+id: where-was-sychar
+question:
+  en: "Where was Sychar, the Samaritan town of John 4?"
+  ru: "Где находился Сихарь, самарийский город из 4-й главы Иоанна?"
+answer:
+  en:
+    - "Sychar was most probably the village of Askar on the lower slope of Mount Ebal, on the eastern edge of today's Nablus in the West Bank, about a kilometre north of Jacob's well; the map point stands there, about 49 km north of Jerusalem in a straight line. Many scholars, however, hold that John meant Shechem itself, the mound of Tell Balata, which lies under a kilometre from Askar and only a few hundred metres from the well. The well is not in doubt; the question is which town the woman came from."
+    - "The case for Askar is that early witnesses keep the two places apart. Eusebius lists Sychar separately from Shechem, and the Pilgrim of Bordeaux in 333 was shown Sichem with Joseph's tomb and, a mile away, a place called Sechar, from which the Samaritan woman came down to draw water. The case for Shechem is its nearness to the well and the word of Jerome, who took Sychar for a mistaken reading of Shechem. Against it, the old city on Tell Balata had been destroyed by John Hyrcanus about 107 BC, and it is not clear that anyone lived there in Jesus' day."
+    - "For John the town matters as much as the well. The woman “left her waterpot, and went her way into the city”; while its people came out, Jesus told the disciples, “Lift up your eyes, and look on the fields; for they are white already to harvest”, perhaps pointing to the plain below Askar. The Samaritans “besought him that he would tarry with them: and he abode there two days”, and said at the end: “we have heard him ourselves, and know that this is indeed the Christ, the Saviour of the world.” The site of the well itself is treated in a separate question."
+  ru:
+    - "Сихарь — вероятнее всего, селение Аскар на нижнем склоне горы Гевал, на восточной окраине нынешнего Наблуса на Западном берегу, примерно в километре к северу от колодца Иакова; там стоит точка карты, примерно в 49 км к северу от Иерусалима по прямой. Многие учёные, однако, считают, что Иоанн имел в виду сам Сихем — холм Телль-Балата, который лежит менее чем в километре от Аскара и всего в нескольких сотнях метров от колодца. О колодце не спорят; вопрос в том, из какого города пришла женщина."
+    - "В пользу Аскара говорит то, что ранние свидетели различают эти места. Евсевий называет Сихарь отдельно от Сихема, а Бордоскому паломнику в 333 г. показали Сихем с гробницей Иосифа и в миле от него место под названием Сехар, откуда самарянка спускалась за водой. В пользу Сихема говорят его близость к колодцу и слово Иеронима, считавшего «Сихарь» ошибочным чтением вместо «Сихем». Против — то, что старый город на Телль-Балате был разрушен Иоанном Гирканом около 107 г. до н. э., и неясно, жил ли там кто-нибудь во дни Иисуса."
+    - "Для Иоанна город важен не меньше колодца. Женщина «оставила водонос свой, и пошла в город»; пока его жители шли к Нему, Иисус сказал ученикам: «возведите очи ваши и посмотрите на нивы, как они побелели и поспели к жатве», — возможно, указывая на равнину под Аскаром. Самаряне «просили Его побыть у них; и Он пробыл там два дня», а под конец сказали: «сами слышали и узнали, что Он истинно Спаситель мира, Христос». О месте самого колодца — отдельный вопрос."
+map:
+  place: a27b472
+  year: "c. AD 28"
+  ref: John.4.5
+scripture:
+  [John.4.5-John.4.6, John.4.28-John.4.30, John.4.35, John.4.39-John.4.42, Gen.33.18-Gen.33.19]
+sources:
+  - "Straight-line distances between the places' points (Sychar at Askar, Shechem at Tell Balata, Jerusalem): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Eusebius, Onomasticon, s.v. Suchar and Suchem (C. U. Wolf's translation, nos. 902, 807)"
+  - "Itinerary of the Bordeaux Pilgrim (AD 333), tr. A. Stewart (Palestine Pilgrims' Text Society, 1887)"
+  - "Jerome, Letter 108.13"
+  - "E. F. Campbell, Shechem III: The Stratigraphy and Architecture of Shechem/Tell Balatah (2002)"
+  - "History Globe article “Sychar” and question “Where is Jacob's well?”"
+status: checked

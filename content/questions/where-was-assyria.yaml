@@ -1,0 +1,26 @@
+id: where-was-assyria
+question:
+  en: "Where was Assyria?"
+  ru: "Где находилась Ассирия?"
+answer:
+  en:
+    - "Assyria was the land on the upper Tigris in what is now northern Iraq, around Mosul and Erbil; the map point stands on Nineveh, opposite Mosul, about 890 km north-east of Jerusalem in a straight line. Its heartland was small: Ashur, the old capital and the city of its god, lies about 100 km south of Nineveh on the same river, and Calah, today's Nimrud, about 33 km to the south. Genesis places it by the Tigris, the Hiddekel, “which goeth toward the east of Assyria”, and says that Asshur “builded Nineveh, and the city Rehoboth, and Calah”."
+    - "From the ninth to the seventh century BC the Assyrian empire reached far beyond this heartland, from western Iran to Egypt, and the Bible meets it in the west. Tiglath-pileser III took “Gilead, and Galilee, all the land of Naphtali, and carried them captive to Assyria” in 733–732 BC; in 722 BC the king of Assyria “took Samaria, and carried Israel away into Assyria, and placed them in Halah and in Habor by the river of Gozan, and in the cities of the Medes”. Halah lay close to Nineveh, the Habor is the Khabur in north-eastern Syria, about 280 km west of the map point, and the cities of the Medes were in the Zagros of western Iran."
+    - "For the prophets Assyria was “the rod of mine anger”, and Jonah was sent to Nineveh, “that great city”. The empire fell to the Medes and the Babylonians, who took Ashur in 614 BC and Nineveh in 612; its last king lost Harran in 610 and failed to retake it in 609. The ruins of Nineveh, Nimrud and Khorsabad were dug from the 1840s, and the name lives on among the Assyrian Christians of Iraq, Syria and the diaspora."
+  ru:
+    - "Ассирия — страна на верхнем Тигре, на севере нынешнего Ирака, вокруг Мосула и Эрбиля; точка карты стоит на Ниневии напротив Мосула, примерно в 890 км к северо-востоку от Иерусалима по прямой. Сердцевина её была невелика: Ассур, древняя столица и город её бога, лежит примерно в 100 км к югу от Ниневии на той же реке, а Калах, нынешний Нимруд, — примерно в 33 км к югу. Книга Бытия помещает её у Тигра, Хиддекеля, который «протекает пред Ассириею», и говорит, что Ассур «построил Ниневию, Реховоф-ир, Калах»."
+    - "С IX по VII век до н. э. Ассирийская держава простиралась далеко за пределы этой сердцевины, от западного Ирана до Египта, и Библия встречает её на западе. Феглаффелласар III в 733–732 гг. до н. э. взял «Галаад, и Галилею, всю землю Неффалимову, и переселил их в Ассирию»; в 722 г. до н. э. «взял царь Ассирийский Самарию, и переселил Израильтян в Ассирию, и поселил их в Халахе и в Хаворе, при реке Гозан, и в городах Мидийских». Халах лежал близ Ниневии, Хавор — это Хабур на северо-востоке Сирии, примерно в 280 км к западу от точки карты, а города Мидийские — в горах Загроса на западе Ирана."
+    - "Для пророков Ассирия — «жезл гнева Моего», и Иону послали в Ниневию, «город великий». Державу сокрушили Мидяне и Вавилоняне: они взяли Ассур в 614 г. до н. э. и Ниневию в 612 г.; последний её царь потерял Харран в 610 г. и не смог отбить его в 609 г. Развалины Ниневии, Нимруда и Хорсабада раскапывают с 1840-х годов, а имя живёт у ассирийцев-христиан Ирака, Сирии и рассеяния."
+map:
+  place: a3d1321
+  year: "722 BC"
+  ref: 2Kgs.17.6
+scripture: [Gen.2.14, Gen.10.11, 2Kgs.15.29, 2Kgs.17.6, 2Kgs.18.11, Isa.10.5, Jonah.1.2]
+sources:
+  - "Region point and straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Tiglath-pileser III, Annals and Summary Inscriptions (RINAP 1) (the tribute of Menahem; the campaigns of 733-732 BC)"
+  - "Sargon II, Annals and the Nimrud Prism (the capture of Samaria and the deportation of its people)"
+  - "Babylonian Chronicle ABC 3 (the fall of Ashur, 614 BC, and of Nineveh, 612 BC); ABC 5 (Carchemish, 605 BC)"
+  - "A. H. Layard, Nineveh and Its Remains (1849)"
+  - "K. Radner, Ancient Assyria: A Very Short Introduction (2015)"
+status: checked

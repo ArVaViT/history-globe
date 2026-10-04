@@ -62,31 +62,10 @@ export const ChevronsRight = icon(
     <path d="m13 17 5-5-5-5" />
   </>,
 );
-export const ExternalLink = icon(
-  <>
-    <path d="M15 3h6v6" />
-    <path d="M10 14 21 3" />
-    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-  </>,
-);
 export const MapPin = icon(
   <>
     <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
     <circle cx="12" cy="10" r="3" />
-  </>,
-);
-export const Menu = icon(
-  <>
-    <path d="M4 5h16" />
-    <path d="M4 12h16" />
-    <path d="M4 19h16" />
-  </>,
-);
-export const PanelLeftClose = icon(
-  <>
-    <rect width="18" height="18" x="3" y="3" rx="2" />
-    <path d="M9 3v18" />
-    <path d="m16 15-3-3 3-3" />
   </>,
 );
 export const Pause = icon(
@@ -159,12 +138,6 @@ export const Ellipsis = icon(
     <circle cx="12" cy="12" r="1" />
     <circle cx="19" cy="12" r="1" />
     <circle cx="5" cy="12" r="1" />
-  </>,
-);
-export const Gauge = icon(
-  <>
-    <path d="m12 14 4-4" />
-    <path d="M3.34 19a10 10 0 1 1 17.32 0" />
   </>,
 );
 export const Maximize = icon(

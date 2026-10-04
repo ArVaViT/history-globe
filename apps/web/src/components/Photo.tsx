@@ -1,3 +1,4 @@
+import { pick, commonsPage } from "@hg/model";
 import type { PlacePhoto } from "@hg/model";
 import { useState } from "react";
 import { useTranslation } from "../i18n";
@@ -23,11 +24,10 @@ export function Photo({
 }) {
   const { t, i18n } = useTranslation();
   // A disputed place's photo shows one candidate: named, so the picture settles nothing.
-  const shows =
-    photo.shows && (i18n.language === "ru" ? (photo.shows.ru ?? photo.shows.en) : photo.shows.en);
+  const shows = photo.shows && pick(photo.shows, i18n.language);
   const [failed, setFailed] = useState(false);
   if (failed) return null;
-  const page = `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(photo.file.replaceAll(" ", "_"))}`;
+  const page = commonsPage(photo.file);
   const free = photo.license === "Public domain" || photo.license.startsWith("CC0");
   return (
     <figure className={className}>

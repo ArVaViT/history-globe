@@ -1,0 +1,24 @@
+# Overview article (ADR 0007). Mainstream facts only; the King James and the Synodal read Num 22:41 as a phrase, Joshua as a town, and both readings are given; the site is the same unknown one as Bamoth.
+id: bamoth-baal
+place: a577c27
+title:
+  en: "Bamoth-baal"
+  ru: "Вамоф-Ваал"
+body:
+  en:
+    - "Bamoth-baal, “the high places of Baal”, was a sanctuary and town on the Moabite plateau north of the Arnon. It is first the place from which Balaam saw Israel: on the morning after his arrival “Balak took Balaam, and brought him up into the high places of Baal, that thence he might see the utmost part of the people”, the King James Version, like the Synodal Bible, translating the name as a phrase. From there Balak led him on to Pisgah and to Peor, each a height with a view of the camp in the plains below. Joshua lists it as a town, among the cities of Reuben on the tableland: “Dibon, and Bamoth-baal, and Beth-baal-meon”."
+    - "Nearly everyone takes it for the Bamoth of Israel's itinerary, the station before Pisgah, and perhaps for the Beth-bamoth that Mesha, king of Moab, says on his stele he rebuilt. The name shows a hill shrine of the Canaanite and Moabite kind, the “high place” the prophets denounced, and the view required by the story fits the western edge of the plateau above the Dead Sea. But no site is known: Khirbet el-Quweiqiyeh, Jebel Ataruz, where a Moabite temple of the ninth century BC has been excavated, and Khirbet Libb have each been suggested, and no inscription has settled it. The region is the Madaba governorate of Jordan, between Dhiban and Mount Nebo."
+  ru:
+    - "Вамоф-Ваал, «высоты Вааловы», — святилище и город на Моавитском плато к северу от Арнона. Сначала это место, откуда Валаам увидел Израиль: наутро после его прибытия «Валак взял Валаама и возвел его на высоты Вааловы, чтобы он увидел оттуда часть народа»; Синодальный перевод, как и английская Библия короля Иакова, передаёт имя как выражение. Оттуда Валак повёл его на Фасгу и на Фегор, каждая из этих высот открывала вид на стан внизу на равнине. Книга Иисуса Навина называет его городом, среди городов Рувима на плоскогорье: «Дивон, Вамоф-Ваал и Беф-Ваал-Меон»."
+    - "Почти все видят в нём Вамоф из маршрута Израиля, стан перед Фасгой, и, возможно, тот Беф-Бамоф, который Меса, царь Моава, по словам его стелы, отстроил. Имя указывает на холмовое святилище ханаанского и моавитского образца, «высоту», которую обличали пророки, а вид, нужный для рассказа, подходит к западному краю плато над Мёртвым морем. Но место неизвестно: предлагали Хирбет-эль-Кувейкию, Джебель-Атаруз, где раскопан моавитский храм IX века до н. э., и Хирбет-Либб, и ни одна надпись вопроса не решила. Это район иорданской провинции Мадаба, между Дибаном и горой Нево."
+scripture:
+  - Num.22.41
+  - Josh.13.17
+  - Num.21.19-Num.21.20
+sources:
+  - "The Mesha Stele (Louvre AO 5066), line 27 (Beth-bamoth); translation by K. A. D. Smelik in W. W. Hallo and K. L. Younger (eds.), The Context of Scripture, vol. 2 (2000)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+  - "C. Ji, 'The Early Iron Age II Temple at Hirbet 'Atarus and Its Architecture and Selected Cultic Objects', in J. Kamlah (ed.), Temple Building and Temple Cult (2012)"
+  - "B. Routledge, Moab in the Iron Age: Hegemony, Polity, Archaeology (2004)"
+status: checked

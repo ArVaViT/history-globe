@@ -1,5 +1,5 @@
 import { YEAR_MAX, YEAR_MIN, type Engine, type Renderer } from "@hg/core";
-import { formatYear, medianYear, periodAt } from "@hg/model";
+import { formatYear, medianYear, periodAt, placeName as nameOf, pick } from "@hg/model";
 import { BookOpen, ChevronDown, Search, Settings, X } from "./components/icons";
 import {
   lazy,
@@ -80,8 +80,9 @@ import {
   usePlayback,
   useBibleOnly,
   useUrlSync,
+  useTimelineMarks,
+  usePrintSheet,
 } from "./app-hooks";
-import { timelineEventsOf } from "./timeline-events";
 import { chapterFocus, chapterLabel } from "./chapter";
 import { useEmbed, useEmbedError } from "./embed";
 import { readUrl } from "./url";
@@ -142,7 +143,7 @@ export function App() {
   const placeLabel = useCallback(
     (id: string): string | undefined => {
       const p = data?.byId.get(id)?.props;
-      return p ? (i18n.language === "ru" ? (p.name_ru ?? p.name) : p.name) : undefined;
+      return p ? nameOf(p, i18n.language) : undefined;
     },
     [data, i18n.language],
   );
@@ -232,9 +233,13 @@ export function App() {
   }, []);
 
   useEffect(() => {
-    void i18n.changeLanguage(state.locale);
+    // The map's own words come from the dictionary, which a first switch to a language
+    // loads: the map is relabelled once it is in.
+    void i18n.changeLanguage(state.locale).then(() => {
+      globe?.renderer.setLocale(state.locale);
+    });
     document.documentElement.lang = state.locale;
-  }, [i18n, state.locale]);
+  }, [i18n, state.locale, globe]);
 
   useUrlSync(globe, data);
   const { ready, hover, inView } = useMapFeed(globe, state.layers.places);
@@ -357,9 +362,7 @@ export function App() {
           ? personLabel
           : chapterLabel(s.focus.ref, s.locale)
         : place
-          ? s.locale === "ru"
-            ? (place.name_ru ?? place.name)
-            : place.name
+          ? nameOf(place, s.locale)
           : "";
     const shot = await globe.renderer.snapshot();
     const { download, mapPicture } = await import("./snapshot");
@@ -395,75 +398,15 @@ export function App() {
   // there: the next stop's card is ready when Next is pressed, and a long tour does not
   // read every tile it crosses at once.
 
-  // While the sheet is drawn the map is briefly resized and reframed: a cover hides it,
-  // and a second press waits for the first.
-  const [preparing, setPreparing] = useState(false);
-  // The cover stops the mouse; the keys (a tour's arrows, the map's own) wait too, or a
-  // stop would change while the sheet is drawn.
-  useEffect(() => {
-    if (!preparing) return;
-    const hold = (e: KeyboardEvent) => {
-      e.preventDefault();
-      e.stopPropagation();
-    };
-    window.addEventListener("keydown", hold, true);
-    return () => {
-      window.removeEventListener("keydown", hold, true);
-    };
-  }, [preparing]);
-  // Set at once, before the module loads: a second press meanwhile must not start another.
-  const printing = useRef(false);
-  const printForClass = async (blank = false) => {
-    if (!globe || !data || printing.current) return;
-    printing.current = true;
-    try {
-      const { printForClass: print } = await import("./print");
-      await print({ globe, data, personLabel, setPreparing, blank });
-    } finally {
-      printing.current = false;
-    }
-  };
+  const { preparing, printForClass } = usePrintSheet(globe, data, personLabel);
 
   const hoverPlace = hover ? data?.byId.get(hover.id)?.props : undefined;
   // The Bible alone (a setting): the events it tells, no ancient world around them.
   const [bibleOnly, setBibleOnly] = useBibleOnly();
-  const events = useMemo(
-    () => (!data ? [] : bibleOnly ? data.events.filter((e) => e.ref !== undefined) : data.events),
-    [data, bibleOnly],
-  );
+  const { events, timelineEvents } = useTimelineMarks(data, bibleOnly, state.locale, t);
   useEffect(() => {
     globe?.renderer.setBibleOnly(bibleOnly);
   }, [globe, bibleOnly]);
-  // Founding, destruction and ruin of places, and the turning points of the history.
-  // Under the Bible alone the battles it tells are marks too: before Solomon the Bible's
-  // dated events are few (no disputed early dates), its battles many (Jericho, Ai, Gibeon).
-  const timelineEvents = useMemo(() => {
-    if (!data) return [];
-    const battles = bibleOnly
-      ? data.battles.flatMap((b) =>
-          // Told as an event too (Lachish, 588 BC): marked once, as the card lists it once.
-          b.ref === undefined ||
-          events.some((e) => e.place === b.place && Math.abs(e.year - b.year) <= 1)
-            ? []
-            : [
-                {
-                  id: `battle:${b.id}`,
-                  year: b.year,
-                  approximate: b.approximate,
-                  title: b.title,
-                  place: b.place,
-                  ref: b.ref,
-                  sources: b.sources,
-                },
-              ],
-        )
-      : [];
-    return timelineEventsOf(
-      { life: data.life, byId: data.byId, events: [...events, ...battles] },
-      state.locale,
-      t,
-    );
-  }, [data, events, bibleOnly, state.locale, t]);
   const selected = state.selectedPlace ? data?.byId.get(state.selectedPlace)?.props : undefined;
   // Its own years, for the line under the slider; a gate's years are its city's: none.
   const selectedLife = selected ? data?.life[selected.id] : undefined;
@@ -507,11 +450,7 @@ export function App() {
   const moreShown = moreOpen && !searchOpen;
 
   // The tab names what is open: a shared link or a history entry says where it leads.
-  const placeName = selected
-    ? state.locale === "ru"
-      ? (selected.name_ru ?? selected.name)
-      : selected.name
-    : undefined;
+  const placeName = selected ? nameOf(selected, state.locale) : undefined;
   const tourName = tour && state.tour ? (tour.title[state.locale] ?? tour.title.en) : undefined;
   const openName = tourName && placeName ? `${tourName} · ${placeName}` : (placeName ?? tourName);
   useEffect(() => {
@@ -930,7 +869,7 @@ export function App() {
                   }}
                   stopName={(id) => {
                     const p = data.byId.get(id)?.props;
-                    return p ? (state.locale === "ru" ? (p.name_ru ?? p.name) : p.name) : id;
+                    return p ? nameOf(p, state.locale) : id;
                   }}
                 />
               ) : person && !selected ? (
@@ -1019,10 +958,7 @@ export function App() {
                         : {
                             from: fromEntry
                               ? {
-                                  name:
-                                    state.locale === "ru"
-                                      ? (fromEntry.props.name_ru ?? fromEntry.props.name)
-                                      : fromEntry.props.name,
+                                  name: nameOf(fromEntry.props, state.locale),
                                   at: fromEntry.info.at,
                                 }
                               : null,
@@ -1101,7 +1037,7 @@ export function App() {
                 </span>
                 {periodNow && (
                   <span className="text-[12.5px] text-ink-soft max-[360px]:hidden">
-                    {state.locale === "ru" ? periodNow.name.ru : periodNow.name.en}
+                    {pick(periodNow.name, state.locale) ?? ""}
                   </span>
                 )}
                 <ChevronDown className="size-4 rotate-180 text-ink-soft" aria-hidden />

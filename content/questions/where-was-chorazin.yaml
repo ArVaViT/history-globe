@@ -1,0 +1,26 @@
+id: where-was-chorazin
+question:
+  en: "Where was Chorazin?"
+  ru: "Где находился Хоразин?"
+answer:
+  en:
+    - "Chorazin stood on the black basalt hills above the northern shore of the Sea of Galilee, at the ruin of Khirbet Karazeh, where the old name survives, today the Korazim national park in Israel; the map point stands on it. It lies about 3.5 km north of Capernaum, about 6 km west of Bethsaida and about 130 km north of Jerusalem, all in a straight line. With Capernaum and Bethsaida it made the small triangle of towns at the head of the lake where much of Jesus' Galilean ministry took place."
+    - "Chorazin is named only in one saying, kept by Matthew and Luke. Matthew writes: “Then began he to upbraid the cities wherein most of his mighty works were done, because they repented not: Woe unto thee, Chorazin! woe unto thee, Bethsaida! for if the mighty works, which were done in you, had been done in Tyre and Sidon, they would have repented long ago in sackcloth and ashes.” So the Gospels imply many miracles there, yet describe none. Medieval writers drew a grim conclusion from the curse: Adso of Montier-en-Der, about 950, taught that the Antichrist would be raised in Bethsaida and Chorazin."
+    - "What visitors see today is mostly the town of the third and fourth centuries AD, excavated by Ze'ev Yeivin in 1962–1964 and 1980–1987: basalt houses, a ritual bath, olive presses and a synagogue carved with reliefs, whose dates are still debated. In it was found a basalt chair with an Aramaic dedication, often called the “seat of Moses” after Jesus' words that “the scribes and the Pharisees sit in Moses’ seat”; the original is in the Israel Museum. In the early fourth century Eusebius knew Chorazin as a deserted village two miles from Capernaum."
+  ru:
+    - "Хоразин стоял на чёрных базальтовых холмах над северным берегом моря Галилейского, на развалинах Хирбет-Керазе, где сохранилось древнее имя; сегодня это национальный парк Коразим в Израиле, и точка карты стоит на нём. Он лежит примерно в 3,5 км к северу от Капернаума, примерно в 6 км к западу от Вифсаиды и примерно в 130 км к северу от Иерусалима — всё по прямой. Вместе с Капернаумом и Вифсаидой он образовывал небольшой треугольник городов у северного конца озера, где прошла значительная часть служения Иисуса в Галилее."
+    - "Хоразин назван лишь в одном речении, которое сохранили Матфей и Лука. Матфей пишет: «Тогда начал Он укорять города, в которых наиболее явлено было сил Его, за то, что они не покаялись: горе тебе, Хоразин! горе тебе, Вифсаида! ибо если бы в Тире и Сидоне явлены были силы, явленные в вас, то давно бы они во вретище и пепле покаялись». Значит, чудес там было много, но ни одного Евангелия не описывают. Средневековые авторы сделали из этого проклятия мрачный вывод: Адсон из Монтье-ан-Дер около 950 г. учил, что антихрист будет воспитан в Вифсаиде и Хоразине."
+    - "То, что видят сегодня посетители, — в основном город III–IV веков н. э., который раскапывал Зеэв Йеивин в 1962–1964 и 1980–1987 гг.: базальтовые дома, ритуальная купальня, давильни для оливок и синагога с резными рельефами, даты которой по-прежнему спорны. В ней нашли базальтовое кресло с арамейской посвятительной надписью, которое часто называют «Моисеевым седалищем» по словам Иисуса: «на Моисеевом седалище сели книжники и фарисеи»; подлинник хранится в Музее Израиля. В начале IV века Евсевий знал Хоразин как запустевшее селение в двух милях от Капернаума."
+map:
+  place: a593a48
+  year: "AD 30"
+  ref: Matt.11.21
+scripture: [Matt.11.20-Matt.11.22, Luke.10.13-Luke.10.14, Matt.23.2]
+sources:
+  - "Straight-line distances between the places' points (Chorazin, Capernaum, Bethsaida, Jerusalem): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Eusebius, Onomasticon, s.v. Chorazein (C. U. Wolf's translation, no. 976)"
+  - "Adso of Montier-en-Der, Letter on the Origin and Time of the Antichrist (c. 950)"
+  - "Z. Yeivin, The Synagogue at Korazim: The 1962-1964, 1980-1987 Excavations (Israel Antiquities Authority Reports, 2000)"
+  - "A. Negev and S. Gibson (eds.), Archaeological Encyclopedia of the Holy Land (2005)"
+  - "History Globe article “Chorazin”"
+status: checked

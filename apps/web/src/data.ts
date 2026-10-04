@@ -1,3 +1,4 @@
+import { loadLanguage } from "./i18n";
 import { NT_FROM, type PlaceInfo, type Tour } from "@hg/core";
 import type {
   ChapterYears,
@@ -9,6 +10,7 @@ import type {
   PlacePhoto,
   PleiadesLink,
 } from "@hg/model";
+import { placeName, hasNameIn, namesOf, LOCALES } from "@hg/model";
 export { siteCertainty } from "@hg/model";
 import type { FeatureCollection, Point } from "geojson";
 
@@ -150,7 +152,7 @@ export function alsoHere(
   features: readonly { geometry: Point; properties: PlaceProps }[],
   locale: Locale,
 ): Map<string, string[]> {
-  const shown = (p: PlaceProps) => (locale === "ru" ? (p.name_ru ?? p.name) : p.name);
+  const shown = (p: PlaceProps) => placeName(p, locale);
   const byPoint = new Map<string, PlaceProps[]>();
   for (const f of features) {
     const key = f.geometry.coordinates.join(",");
@@ -164,9 +166,9 @@ export function alsoHere(
       const seen = new Set([shown(p)]);
       const others = sorted
         .filter((o) => {
-          // In Russian, as on the map, a record without a Russian name is not listed:
+          // As on the map, a record without a name in the reader's language is not listed:
           // an English "Beyond the River" among Сион and Иевус.
-          if (locale === "ru" && o.name_ru === undefined) return false;
+          if (!hasNameIn(o, locale)) return false;
           if (seen.has(shown(o))) return false;
           seen.add(shown(o));
           return true;
@@ -210,14 +212,23 @@ export function markRussianDuplicates(
   return marked;
 }
 
+/** A data file as JSON; a missing file (404, a host's HTML page) fails by its name. */
+async function getJson<T>(file: string): Promise<T> {
+  const r = await fetch(`${DATA_URL}/${file}`);
+  if (!r.ok) throw new Error(`${file}: ${String(r.status)}`);
+  return (await r.json()) as T;
+}
+
 export async function loadData(): Promise<LoadedData> {
+  // A lesson's default title is written in every language from the dictionaries: they
+  // load beside the data, not before it.
+  const dictionaries = Promise.all(LOCALES.map((l) => loadLanguage(l)));
   const [places, content, siteFc] = await Promise.all([
-    fetch(`${DATA_URL}/places.geojson`).then((r) => r.json() as Promise<LoadedData["places"]>),
-    fetch(`${DATA_URL}/content.json`).then((r) => r.json() as Promise<ContentRelease>),
-    fetch(`${DATA_URL}/sites.geojson`).then(
-      (r) => r.json() as Promise<FeatureCollection<Point, SiteProps>>,
-    ),
+    getJson<LoadedData["places"]>("places.geojson"),
+    getJson<ContentRelease>("content.json"),
+    getJson<FeatureCollection<Point, SiteProps>>("sites.geojson"),
   ]);
+  await dictionaries;
   const sites = groupSites(siteFc);
   const byId = new Map<string, { props: PlaceProps; info: PlaceInfo }>();
   for (const f of places.features) {
@@ -382,7 +393,7 @@ export function searchPlaces(
     if (!props.dup) first.add(`${info.at.join()}|${props.name_ru ?? props.name}`);
   for (const { props, info } of data.byId.values()) {
     if (props.dup && first.has(`${info.at.join()}|${props.name_ru ?? props.name}`)) continue;
-    const names = [props.name, props.name_ru ?? ""].map(foldName);
+    const names = namesOf(props).map(foldName);
     const prefix =
       names.some((n) => n.startsWith(q)) ||
       stems.some((st) => names.some((n) => n.startsWith(st) && n.length - st.length <= 2));

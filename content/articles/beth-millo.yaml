@@ -1,0 +1,26 @@
+# Overview article (ADR 0007). Mainstream facts only; Beth-millo and the tower of Shechem are given as probably one place, and the Jerusalem house of Millo of 2 Kings is told apart.
+id: beth-millo
+place: a53f299
+title:
+  en: "Beth-millo"
+  ru: "Дом Милло"
+body:
+  en:
+    - "Beth-millo, “the house of the fill”, was a quarter or stronghold of Shechem in the days of Abimelech, the son of Gideon. After he had killed his brothers, “all the men of Shechem gathered together, and all the house of Millo, and went, and made Abimelech king, by the plain of the pillar that was in Shechem”. Jotham, the brother who escaped, ended his fable of the trees with a curse: if they had not dealt truly, “let fire come out from Abimelech, and devour the men of Shechem, and the house of Millo; and let fire come out from the men of Shechem, and from the house of Millo, and devour Abimelech”. So it came about: Abimelech destroyed Shechem, and when “all the men of the tower of Shechem” shut themselves in “an hold of the house of the god Berith”, he burned it over them. The house of Millo and the tower of Shechem are probably the same fortified quarter; the map offers both readings."
+    - "Shechem is Tell Balata at Nablus, dug by Ernst Sellin from 1913 and by G. Ernest Wright's expedition in 1956–1964. Its dominant building was a fortress-temple of the Middle Bronze Age, about 1650 BC, with walls more than five metres thick, raised on an artificial fill above the city. Wright identified a later, smaller phase of it with the temple of Baal-berith of Judges 9; Lawrence Stager has argued that the great temple itself was still in use in the time of the judges, and it has been suggested that the “fill” of Beth-millo is its platform. A second “house of Millo”, where the servants of Joash murdered him, lay in Jerusalem and is a different place."
+    - "Today the foundations of the fortress-temple, with a standing stone re-erected before them, are the centrepiece of the Tell Balata archaeological park on the eastern edge of Nablus."
+  ru:
+    - "Дом Милло, «дом насыпи», — квартал или крепость Сихема во дни Авимелеха, сына Гедеона. После того как он убил своих братьев, «собрались все жители Сихемские и весь дом Милло, и пошли и поставили царем Авимелеха у дуба, что близ Сихема». Иофам, уцелевший брат, закончил свою притчу о деревьях проклятием: если они поступили не по правде, «то да изыдет огонь от Авимелеха и да пожжет жителей Сихемских и весь дом Милло и да изыдет огонь от жителей Сихемских и от дома Милло, и да пожжет Авимелеха». Так и случилось: Авимелех разрушил Сихем, а когда «все бывшие в башне Сихемской ушли в башню капища Ваал-Верифа», он сжёг её вместе с ними. Дом Милло и башня Сихемская — вероятно, один и тот же укреплённый квартал; на карте даны оба прочтения."
+    - "Сихем — это Телль-Балата в Наблусе, который копали Эрнст Зеллин с 1913 года и экспедиция Дж. Эрнеста Райта в 1956–1964 годах. Главным его зданием был храм-крепость среднего бронзового века, около 1650 г. до н. э., со стенами толще пяти метров, поднятый на искусственной насыпи над городом. Райт отождествил его позднейшую, меньшую фазу с капищем Ваал-Верифа из 9-й главы Судей; Лоренс Стейджер доказывал, что сам большой храм ещё служил во времена судей, и высказывалась мысль, что «насыпь» дома Милло — его площадка. Второй «дом Милло», где слуги убили Иоаса, лежал в Иерусалиме и является другим местом."
+    - "Сегодня основания храма-крепости с заново поставленным перед ними священным камнем — сердцевина археологического парка Телль-Балата на восточной окраине Наблуса."
+scripture:
+  - Judg.9.6
+  - Judg.9.20
+  - Judg.9.46-Judg.9.49
+  - 2Kgs.12.20
+sources:
+  - "G. E. Wright, Shechem: The Biography of a Biblical City (1965)"
+  - "L. E. Stager, 'The Fortress-Temple at Shechem and the “House of El, Lord of the Covenant”', in P. H. Williams and T. Hiebert (eds.), Realia Dei: Essays in Archaeology and Biblical Interpretation in Honor of Edward F. Campbell, Jr. (1999)"
+  - "E. F. Campbell, Shechem III: The Stratigraphy and Architecture of Shechem/Tell Balâṭah (2002)"
+  - "R. G. Boling, Judges (Anchor Bible 6A, 1975)"
+status: checked

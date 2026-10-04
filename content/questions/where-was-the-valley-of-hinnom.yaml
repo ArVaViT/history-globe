@@ -1,0 +1,38 @@
+id: where-was-the-valley-of-hinnom
+question:
+  en: "Where was the Valley of Hinnom, the Gehenna of the Gospels?"
+  ru: "Где находилась долина Еннома — евангельская геенна?"
+answer:
+  en:
+    - "The Valley of Hinnom is the valley that curves round the west and south of Jerusalem's Old City, today's Wadi er-Rababi or Gei Ben Hinnom: it runs south from below the Jaffa Gate, turns east under Mount Zion and the quarter of Abu Tor, and joins the Kidron below the Pool of Siloam, near the spring of En-rogel. The map point stands in it, about 1 km south-west of the map's point for Jerusalem and 1.7 km from the Kidron's in a straight line. In Joshua the border of Judah and Benjamin “went up by the valley of the son of Hinnom unto the south side of the Jebusite; the same is Jerusalem”, and after the exile Judah dwelt “from Beer-sheba unto the valley of Hinnom”."
+    - "The place was not always agreed. Arab tradition calls part of the Kidron, under the eastern wall of the Temple Mount, Wadi Jahannam, the valley of Gehenna, and medieval Muslims and Christians alike set the Last Judgment there; a few nineteenth-century scholars put Hinnom in the Kidron or in the central Tyropoeon valley. The border in Joshua decides it for the western and southern valley: from En-rogel the line climbs the valley of Hinnom past the south of the city and then to “the top of the mountain that lieth before the valley of Hinnom westward”. Jeremiah went out to the valley “by the entry of the east gate”, as the King James Version renders it; the Hebrew Harsith is more likely the Potsherd Gate, and the Synodal translation keeps the name."
+    - "In the valley stood Tophet, where the kings of Judah burned their children: Jeremiah condemns “the high places of Tophet, which is in the valley of the son of Hinnom, to burn their sons and their daughters in the fire”, and Josiah “defiled Topheth… that no man might make his son or his daughter to pass through the fire to Molech” about 622 BC. From its Hebrew name, Ge Hinnom, came the Greek Geenna, Gehenna, the place of fiery judgment in the Gospels: fear him “which is able to destroy both soul and body in hell”. The common story that the valley was the city's ever-burning rubbish dump goes back to the medieval commentator David Kimhi, about 1200, and has no ancient evidence. History Globe has an article on the valley; this answer keeps to where it was."
+  ru:
+    - "Долина Еннома — это долина, огибающая Старый город Иерусалима с запада и юга, нынешняя Вади-эр-Рабаби, или Гей-Бен-Хинном: она идёт на юг от подножия Яффских ворот, поворачивает на восток под горой Сион и кварталом Абу-Тор и сливается с Кедроном ниже Силоамского пруда, у источника Ен-Рогел. Точка карты стоит в ней, примерно в 1 км к юго-западу от точки Иерусалима и в 1,7 км от точки Кедрона по прямой. В книге Иисуса Навина граница Иуды и Вениамина «идет вверх к долине сына Енномова с южной стороны Иевуса, который есть Иерусалим», а после плена иудеи расположились «от Вирсавии и до долины Енномовой»."
+    - "Это место определяли не всегда одинаково. Арабское предание называет часть Кедрона под восточной стеной Храмовой горы Вади-Джаханнам, долиной геенны, и средневековые мусульмане и христиане одинаково помещали там Страшный суд; немногие учёные XIX века искали долину Еннома в Кедроне или в средней, Тиропеонской долине. Граница в книге Иисуса Навина решает дело в пользу западной и южной долины: от Ен-Рогела линия поднимается долиной Еннома мимо юга города, а затем «на вершину горы, которая к западу против долины Енномовой». Иеремия выходил в долину, «которая у ворот Харшиф», — так Синодальный перевод сохраняет еврейское имя, которое скорее значит «ворота черепков»; английская Библия короля Якова передаёт его как восточные ворота."
+    - "В долине стоял Тофет, где цари Иудеи сжигали детей: Иеремия обличает «высоты Тофета в долине сыновей Енномовых, чтобы сожигать сыновей своих и дочерей своих в огне», а Иосия около 622 г. до н. э. «осквернил… Тофет, что на долине сыновей Еннома, чтобы никто не проводил сына своего и дочери своей чрез огонь Молоху». Из её еврейского имени, Ге-Хинном, вышло греческое Геенна — в Евангелиях место огненного суда: бойтесь того, «кто может и душу и тело погубить в геенне». Расхожий рассказ, будто долина была вечно горящей городской свалкой, восходит к средневековому комментатору Давиду Кимхи, около 1200 г., и древних подтверждений не имеет. Долине в History Globe посвящена отдельная статья; здесь ответ о том, где она была."
+map:
+  place: a37c8e6
+  year: "622 BC"
+  ref: 2Kgs.23.10
+scripture:
+  [
+    Josh.15.8,
+    Josh.18.16,
+    Neh.11.30,
+    Jer.19.2,
+    Jer.19.6,
+    Jer.7.31,
+    2Chr.28.3,
+    2Kgs.23.10,
+    Matt.5.22,
+    Matt.10.28,
+    Mark.9.43,
+  ]
+sources:
+  - "Straight-line distances between the places' points (the Valley of Hinnom, Jerusalem, the Kidron): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "L. R. Bailey, 'Gehenna: The Topography of Hell', Biblical Archaeologist 49 (1986)"
+  - "G. Dalman, Jerusalem und sein Gelände (1930)"
+  - "J. Day, Molech: A God of Human Sacrifice in the Old Testament (1989)"
+  - "History Globe article on the Valley of Hinnom, tour “Josiah” (622 BC; 621 BC also held) and dated events (Josiah's reform c. 622 BC)"
+status: checked

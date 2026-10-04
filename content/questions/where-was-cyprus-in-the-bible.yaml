@@ -1,0 +1,37 @@
+id: where-was-cyprus-in-the-bible
+question:
+  en: "Where is Cyprus in the Bible?"
+  ru: "Где Кипр в Библии?"
+answer:
+  en:
+    - "Cyprus is the island in the north-eastern corner of the Mediterranean, the same island as today, about 75 km off the coast of Asia Minor and 100 km off Syria. The Old Testament calls it Kittim or Chittim, after the city of Kition at modern Larnaca; the New Testament calls it Cyprus and sets three scenes there: Barnabas's homeland, Paul's first mission, and the ships of Paul's later voyages sailing past it. Salamis, its chief port on the east coast, is about 210 km from Seleucia, the port of Antioch, and about 400 km from Jerusalem in a straight line."
+    - "In the prophets Kittim is a land of ships and the far west: Balaam foresees that “ships shall come from the coast of Chittim, and shall afflict Asshur”; Jeremiah says “pass over the isles of Chittim, and see”; Ezekiel's Tyre has benches of ivory “brought out of the isles of Chittim”. In time the name came to mean any western seafarers, and Daniel's “ships of Chittim” are the Romans who turned back Antiochus IV from Egypt in 168 BC. Josephus already explains that Kittim was Cyprus, and that the Hebrews called all islands and coasts by that name."
+    - "Joseph Barnabas was “a Levite, and of the country of Cyprus”. Believers scattered after the death of Stephen “travelled as far as Phenice, and Cyprus, and Antioch”. About AD 47 Barnabas and Saul “departed unto Seleucia; and from thence they sailed to Cyprus”, preached in the synagogues of Salamis and went “through the isle unto Paphos”, the Roman capital on the west coast, 145 km further, where the proconsul Sergius Paulus “believed, being astonished at the doctrine of the Lord”. Later Barnabas “took Mark, and sailed unto Cyprus” on his own. Paul's ship to Jerusalem “discovered Cyprus” and left it “on the left hand”; on the way to Rome “we sailed under Cyprus, because the winds were contrary”. The island is treated more fully in its article."
+  ru:
+    - "Кипр — остров в северо-восточном углу Средиземного моря, тот же, что и сегодня, примерно в 75 км от берега Малой Азии и в 100 км от Сирии. Ветхий Завет называет его Киттимом, по городу Китион на месте нынешней Ларнаки; Новый Завет зовёт Кипром и помещает там три сюжета: родину Варнавы, первую миссию Павла и корабли последующих путешествий Павла, проходившие мимо. Саламин, его главная гавань на восточном берегу, лежит примерно в 210 км от Селевкии, гавани Антиохии, и в 400 км от Иерусалима по прямой."
+    - "У пророков Киттим — страна кораблей и дальнего запада: Валаам предвидит, что «придут корабли от Киттима, и смирят Ассура»; Иеремия говорит: «пойдите на острова Хиттимские и посмотрите»; у Иезекииля скамьи Тира сделаны «с оправою из слоновой кости с островов Киттимских». Со временем имя стало означать вообще западных мореходов, и «корабли Киттимские» у Даниила — это римляне, которые в 168 г. до н. э. повернули Антиоха IV назад из Египта. Уже Иосиф Флавий объясняет, что Киттим — это Кипр и что евреи называли так все острова и побережья."
+    - "Иосия Варнава был «левит, родом Кипрянин». Верующие, рассеявшиеся после смерти Стефана, «прошли до Финикии, и Кипра, и Антиохии». Около 47 г. н. э. Варнава и Савл «пришли в Селевкию, а оттуда отплыли в Кипр», проповедовали в синагогах Саламина и, «пройдя весь остров до Пафа», римской столицы на западном берегу, ещё в 145 км, обратили проконсула Сергия Павла, который «уверовал, дивясь учению Господню». Позже Варнава, «взяв Марка, отплыл в Кипр» уже без Павла. Корабль Павла по пути в Иерусалим был «в виду Кипра» и оставил его «слева»; по пути в Рим «мы приплыли в Кипр, по причине противных ветров». Подробнее об острове — в статье о нём."
+map:
+  place: a2e7601
+  year: "AD 47"
+  ref: Acts.13.4
+scripture:
+  [
+    Num.24.24,
+    Jer.2.10,
+    Ezek.27.6,
+    Dan.11.30,
+    Acts.4.36,
+    Acts.11.19,
+    Acts.13.4-Acts.13.12,
+    Acts.15.39,
+    Acts.21.3,
+    Acts.27.4,
+  ]
+sources:
+  - "Straight-line distances between the places' points (Seleucia, Salamis, Paphos, Jerusalem): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe article “Cyprus” and History Globe tour of Paul's first journey (c. AD 46-48)"
+  - "Josephus, Antiquities 1.6.1 (1.128): Kittim, Cyprus and Citium"
+  - "Polybius, Histories 29.27 (Popillius Laenas turns Antiochus IV back from Egypt, 168 BC)"
+  - "T. B. Mitford, 'Roman Cyprus', ANRW II.7.2 (1980)"
+status: checked

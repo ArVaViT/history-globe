@@ -36,12 +36,7 @@ export function EventsPanel({
   }, []);
   if (events.length === 0) return null;
   return (
-    <Section
-      id="events"
-      title={t("events.title")}
-      defaultOpen={false}
-      className="w-[340px] max-md:w-full pb-3"
-    >
+    <Section>
       <ol
         ref={list}
         className="hg-fade max-h-[min(460px,52vh)] max-md:max-h-[calc(100dvh-var(--hg-timeline-h,124px)-200px)] overflow-y-auto [scrollbar-width:thin]"
@@ -56,7 +51,7 @@ export function EventsPanel({
               className={`mx-2 flex w-[calc(100%-16px)] items-baseline gap-3 rounded-xl px-2 py-1 text-left hover:bg-paper-2 ${e.year === year ? "bg-paper-2" : ""}`}
             >
               <span
-                className={`${locale === "ru" ? "w-[104px]" : "w-[72px]"} shrink-0 text-right text-[11px] whitespace-nowrap text-ink-soft tabular-nums`}
+                className={`${locale === "en" ? "w-[72px]" : "w-[104px]"} shrink-0 text-right text-[11px] whitespace-nowrap text-ink-soft tabular-nums`}
               >
                 {e.approximate ? `${t("place.circa")} ` : ""}
                 {formatYear(e.year, locale)}

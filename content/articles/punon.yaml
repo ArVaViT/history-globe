@@ -1,0 +1,23 @@
+# Overview article (ADR 0007). Mainstream facts only; a wilderness station usually placed at Faynan, the copper district of Edom; the link with the bronze serpent is given as a suggestion only.
+id: punon
+place: a9ecc26
+title:
+  en: "Punon"
+  ru: "Пунон"
+body:
+  en:
+    - "Punon is one of the last camps of Israel on the way round Edom, named only in the itinerary of Numbers 33: “And they departed from Zalmonah, and pitched in Punon. And they departed from Punon, and pitched in Oboth.” The Bible tells nothing that happened there; some have connected it with the bronze serpent, made at a camp in this stretch of the journey, because Punon was a place of copper, but the text does not name the camp."
+    - "Punon is generally identified with Khirbet Faynan on the eastern side of the Arabah, about 40 km south of the Dead Sea, the richest copper district of the southern Levant; the Edomite chief Pinon may bear the same name. Copper was mined and smelted there from the Chalcolithic period; Iron Age smelting reached its height at nearby Khirbat en-Nahas, and in Roman times the mines of Phaeno were a place of condemnation where Christians laboured in the persecution of Diocletian, as Eusebius records. Faynan is today in the Dana Biosphere Reserve in Jordan."
+  ru:
+    - "Пунон — один из последних станов Израиля на пути в обход Едома, названный только в перечне 33-й главы книги Чисел: «И отправились из Салмона и расположились станом в Пуноне. И отправились из Пунона и расположились станом в Овофе». Библия не рассказывает, что там произошло; некоторые связывали его с медным змеем, сделанным на одном из станов этого отрезка пути, поскольку Пунон был краем меди, но текст этот стан не называет."
+    - "Пунон обычно отождествляют с Хирбет-Файнаном на восточной стороне Аравы, примерно в 40 км к югу от Мёртвого моря, богатейшим медным краем южного Леванта; имя едомского князя Пинона, возможно, то же самое. Медь там добывали и плавили с энеолита; в железном веке плавка достигла расцвета в соседнем Хирбет-эн-Нахасе, а в римское время рудники Фено были местом ссылки, где во время гонения Диоклетиана трудились христиане, как пишет Евсевий. Файнан сегодня входит в биосферный заповедник Дана в Иордании."
+scripture:
+  - Num.21.8-Num.21.9
+  - Num.33.42-Num.33.43
+  - Gen.36.41
+sources:
+  - "Eusebius, Martyrs of Palestine 7; 13"
+  - "Eusebius, Onomasticon, s.v. Phinon"
+  - "T. E. Levy, M. Najjar and E. Ben-Yosef (eds.), New Insights into the Iron Age Archaeology of Edom, Southern Jordan (2014)"
+  - "B. MacDonald, The Southern Jordan Edomite Plateau and the Dead Sea Rift Valley: The Bronze Age to the Islamic Period (2015)"
+status: checked

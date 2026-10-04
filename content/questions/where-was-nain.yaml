@@ -1,0 +1,25 @@
+id: where-was-nain
+question:
+  en: "Where was Nain, where Jesus raised the widow's son?"
+  ru: "Где находился Наин, где Иисус воскресил сына вдовы?"
+answer:
+  en:
+    - "Nain is the Arab village of Nein in Lower Galilee, in today's Israel, on the northern slope of the hill of Moreh, looking across the Jezreel valley to Mount Tabor; the map point stands on it. It lies about 9 km south-east of Nazareth and 7 km south-west of Tabor in a straight line, and about 96 km north of Jerusalem. The old name has survived, and the identification is generally accepted."
+    - "Luke alone tells the story. As Jesus “came nigh to the gate of the city, behold, there was a dead man carried out, the only son of his mother, and she was a widow”. He touched the bier and said, “Young man, I say unto thee, Arise. And he that was dead sat up, and began to speak. And he delivered him to his mother.” The crowd cried, “That a great prophet is risen up among us”. The King James text says he came there “the day after” healing the centurion's servant in Capernaum, some 35 km away in a straight line, a long day's walk; other manuscripts say only that it was soon afterwards, as the Synodal translation has it."
+    - "The words “delivered him to his mother” repeat what Elijah did for the widow of Zarephath, and the place recalls Elisha: Shunem, where he raised the Shunammite's son, lies only about 3 km away on the other side of the same hill. Eusebius placed Nain near Endor south of Tabor, and Jerome writes that in the 380s it was pointed out to Paula from the mountain. Small excavations in the village have found a hiding complex of the Roman period, Byzantine winepresses and later houses, but nothing of a walled town; Luke's “gate” may mean simply the way out of the village."
+  ru:
+    - "Наин — это арабское селение Нейн в Нижней Галилее, на территории нынешнего Израиля, на северном склоне холма Море, откуда через Изреельскую долину видна гора Фавор; точка карты стоит на нём. Оно лежит примерно в 9 км к юго-востоку от Назарета и в 7 км к юго-западу от Фавора по прямой и примерно в 96 км к северу от Иерусалима. Древнее имя сохранилось, и отождествление общепринято."
+    - "Рассказ есть только у Луки. Когда Иисус «приблизился к городским воротам, тут выносили умершего, единственного сына у матери, а она была вдова». Он прикоснулся к одру и сказал: «юноша! тебе говорю, встань! Мертвый, поднявшись, сел и стал говорить; и отдал его Иисус матери его». Народ восклицал: «великий пророк восстал между нами». Синодальный перевод начинает рассказ словами «После сего»; в других рукописях, как в английской Библии короля Якова, сказано, что это было на следующий день после исцеления слуги сотника в Капернауме, а это около 35 км по прямой — долгий дневной переход."
+    - "Слова «отдал его… матери его» повторяют то, что Илия сделал для вдовы из Сарепты, а само место напоминает об Елисее: Сонам, где он воскресил сына сонамитянки, лежит всего примерно в 3 км отсюда, по другую сторону того же холма. Евсевий помещал Наин близ Аэндора к югу от Фавора, а Иероним пишет, что в 380-х годах его показали Павле с горы. Небольшие раскопки в селении нашли подземное убежище римского времени, византийские винодавильни и более поздние дома, но ничего от обнесённого стеной города; «ворота» у Луки могут означать просто выход из селения."
+map:
+  place: aee679c
+  year: "AD 30"
+  ref: Luke.7.11
+scripture: [Luke.7.1, Luke.7.11-Luke.7.17, 1Kgs.17.23, 2Kgs.4.8, 2Kgs.4.32-2Kgs.4.37]
+sources:
+  - "Straight-line distances between the places' points (Nain, Nazareth, Mount Tabor, Shunem, Capernaum, Jerusalem): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Eusebius, Onomasticon, s.v. Naein (C. U. Wolf's translation, no. 750)"
+  - "Jerome, Letter 108.13"
+  - "O. Zidan, 'Nein', Hadashot Arkheologiyot 128 (2016); Y. Tsur, 'Nein', Hadashot Arkheologiyot 135 (2023)"
+  - "History Globe article “Nain” and History Globe tour “The life of Jesus”"
+status: checked

@@ -1,0 +1,25 @@
+# Overview article (ADR 0007). Mainstream facts only; Nimrah is the same town; Eusebius' Bethnamaris and Josephus' Bethennabris are noted; Tall Nimrin and Tall Bleibil are the two candidates.
+id: beth-nimrah
+place: af66b89
+title:
+  en: "Beth-nimrah"
+  ru: "Беф-Нимра"
+body:
+  en:
+    - "Beth-nimrah was a town of Gad in the Jordan valley, north-east of the Dead Sea and under 20 km from Jericho across the river. The Gadites and Reubenites asked for the land because it was “a place for cattle”, and Nimrah is in their first list of its towns; when Moses gave it them, “the children of Gad built Dibon, and Ataroth … and Beth-nimrah, and Beth-haran, fenced cities: and folds for sheep”. Joshua places it with Beth-haram, Succoth and Zaphon “in the valley”, the lower Jordan plain that had been Sihon's. The “waters of Nimrim” in the oracles on Moab are usually taken for a different stream, far to the south."
+    - "The town lived on. Eusebius knew a village Bethnabris five Roman miles north of Livias, and the Bethennabris where Josephus says Jewish fugitives gathered in AD 68 before Placidus drove them into the Jordan is probably the same. The name survives in the Wadi Nimrin and at Tall Nimrin, a mound at the mouth of the wadi beside the modern town of South Shuna in Jordan. Excavations there from 1989 found a town of the Middle Bronze Age, the Iron Age and the Persian to Byzantine periods, which suits the biblical and the later Beth-nimrah; the neighbouring Tall Bleibil, with Iron Age pottery, is the other candidate, and the Bible gives nothing more to choose by."
+  ru:
+    - "Беф-Нимра — город Гада в долине Иордана, к северо-востоку от Мёртвого моря, менее чем в 20 км от Иерихона за рекой. Гадитяне и Рувимляне просили эту землю, потому что она была «место годное для стад», и Нимра стоит в их первом списке её городов; когда Моисей отдал её им, «построили сыны Гадовы Дивон и Атароф … и Беф-Нимру и Беф-Гаран, города укрепленные и дворы для овец». Книга Иисуса Навина ставит её с Беф-Гарамом, Сокхофом и Цафоном «на долине», в нижней Иорданской равнине, бывшей владением Сигона. «воды Нимрима» в пророчествах о Моаве обычно считают другим потоком, далеко на юге."
+    - "Город жил и дальше. Евсевий знал селение Бетнабрис в пяти римских милях к северу от Ливиады, а Бетеннабрис, где, по словам Иосифа Флавия, в 68 году собрались иудейские беглецы, прежде чем Плацид загнал их в Иордан, — вероятно, то же место. Имя сохранилось в Вади-Нимрин и в Телль-Нимрине, холме у устья вади рядом с нынешним городом Южная Шуна в Иордании. Раскопки там с 1989 года открыли город среднего бронзового века, железного века и от персидского до византийского времени, что подходит и к библейской, и к поздней Беф-Нимре; соседний Телль-Блейбель с керамикой железного века — второй кандидат, а Библия больше ничего для выбора не даёт."
+scripture:
+  - Num.32.3
+  - Num.32.36
+  - Josh.13.27
+  - Isa.15.6
+sources:
+  - "Eusebius, Onomasticon, s.v. Bethnamran"
+  - "Josephus, Jewish War 4.420-437 (Bethennabris)"
+  - "J. W. Flanagan, D. W. McCreery and K. N. Yassine, 'First Preliminary Report of the 1989 Tell Nimrin Project', Annual of the Department of Antiquities of Jordan 34 (1990)"
+  - "N. Glueck, Explorations in Eastern Palestine, IV (Annual of the American Schools of Oriental Research 25-28, 1951)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

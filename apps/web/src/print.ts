@@ -1,8 +1,9 @@
-import { formatRef, formatYear, periodAt } from "@hg/model";
+import { formatYear, periodAt, pick, placeName, formatRefOr, escapeRegExp } from "@hg/model";
 import { chapterLabel, firstVerseIn, readingOrder } from "./chapter";
 import { DATA_URL, type LoadedData } from "./data";
 import type { Globe } from "./useGlobe";
 import { loadVerse } from "./verses";
+import { translate } from "./i18n";
 import { distanceKm, roundKm } from "./distance";
 import { romanLeg } from "./leg";
 import { russianCases } from "../../../scripts/russian-forms.ts";
@@ -182,15 +183,9 @@ export async function printForClass({
   const ru = s.locale === "ru";
   const nameOf = (id: string) => {
     const p = data.byId.get(id)?.props;
-    return p ? (ru ? (p.name_ru ?? p.name) : p.name) : id;
+    return p ? placeName(p, s.locale) : id;
   };
-  const ref = (osis: string) => {
-    try {
-      return formatRef(osis, s.locale);
-    } catch {
-      return osis;
-    }
-  };
+  const ref = (osis: string) => formatRefOr(osis, s.locale);
   const tour = s.tour ? data.tours.find((x) => x.id === s.tour?.id) : undefined;
   const chapter = s.focus && !s.focus.ref.startsWith("person:") ? s.focus : null;
   const chapterOrder = chapter
@@ -326,12 +321,12 @@ export async function printForClass({
             ? nameOf(place.id)
             : "",
     blank,
-    notes: ru ? "Заметки и вопросы" : "Notes and questions",
-    north: ru ? "↑\u00a0север" : "↑\u00a0north",
+    notes: translate(s.locale, "sheet.notes"),
+    north: translate(s.locale, "sheet.north"),
     when: [
-      blank ? (ru ? "Контурная карта: подпишите места" : "Outline map: name the places") : "",
+      blank ? translate(s.locale, "sheet.outline") : "",
       formatYear(s.year, s.locale),
-      period ? (ru ? period.name.ru : period.name.en) : "",
+      period ? (pick(period.name, s.locale) ?? "") : "",
     ]
       .filter(Boolean)
       .join(" · "),
@@ -342,7 +337,7 @@ export async function printForClass({
           const step = 10 ** Math.floor(Math.log10(across / 4));
           const km = [5, 2, 1].map((k) => k * step).find((k) => k <= across / 4) ?? step;
           const n = new Intl.NumberFormat(s.locale).format(km);
-          return { scale: { share: km / across, label: ru ? `${n}\u00a0км` : `${n}\u00a0km` } };
+          return { scale: { share: km / across, label: translate(s.locale, "sheet.km", { n }) } };
         })()
       : {}),
     items: tour
@@ -398,7 +393,7 @@ export function maskPlace(
       if (word.length < 3) continue;
       const ru = locale === "ru";
       const stem = ru && word.length > 4 ? word.slice(0, -2) : word;
-      const esc = stem.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const esc = escapeRegExp(stem);
       // A short Russian name keeps its whole word and takes a case ending («до Дана»),
       // never a longer name («Даниил»).
       const tail = !ru ? "" : stem === word ? "\\p{L}{0,2}" : "\\p{L}{0,3}";
@@ -441,7 +436,7 @@ export function inCaseOf(text: string, answer: string, options: readonly string[
   // Every mention of the answer, whole form against whole form, with the cases it can be.
   const found = new Map<number, Set<number>>();
   own.forEach((form, i) => {
-    const esc = plain(form).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const esc = escapeRegExp(plain(form));
     for (const m of t.matchAll(new RegExp(`(?<![\\p{L}-])${esc}(?![\\p{L}-])`, "gu")))
       found.set(m.index, (found.get(m.index) ?? new Set()).add(i));
   });
@@ -513,7 +508,7 @@ export async function buildQuiz({
   const ru = s.locale === "ru";
   const nameOf = (id: string) => {
     const p = data.byId.get(id)?.props;
-    return p ? (ru ? (p.name_ru ?? p.name) : p.name) : id;
+    return p ? placeName(p, s.locale) : id;
   };
   const { loadTextPlaces } = await import("./text-places");
   const index = await loadTextPlaces(s.locale).catch(() => null);
@@ -556,7 +551,7 @@ export async function buildQuiz({
           .sort((a, b) => b.props.verses - a.props.verses)
           .map(({ props }) => ({
             id: props.id,
-            n: ru ? (props.name_ru ?? props.name) : props.name,
+            n: placeName(props, s.locale),
           }))
           .filter((x, k, all) => !own.has(x.n) && all.findIndex((y) => y.n === x.n) === k)
           .slice(0, 4 - own.size + 2);
@@ -594,13 +589,7 @@ export async function buildQuiz({
         text: capital(
           maskPlace(text, index, st.placeId, [plain[i] ?? "", p?.name ?? ""], s.locale),
         ),
-        ref: (() => {
-          try {
-            return formatRef(st.ref, s.locale);
-          } catch {
-            return st.ref;
-          }
-        })(),
+        ref: formatRefOr(st.ref, s.locale),
         options: shown,
         names: options,
         answer: options.indexOf(names[i] ?? ""),
@@ -625,8 +614,7 @@ export async function printQuiz({
   const quiz = await buildQuiz({ globe, data });
   if (!quiz) return;
   const s = globe.engine.store.get();
-  const ru = s.locale === "ru";
-  const letters = ru ? ["А", "Б", "В", "Г"] : ["A", "B", "C", "D"];
+  const letters = translate(s.locale, "sheet.letters").split(" ");
   const items = quiz.items.map((it) => ({ ...it, answer: letters[it.answer] ?? "" }));
 
   document.getElementById("hg-print")?.remove();
@@ -638,13 +626,7 @@ export async function printQuiz({
   const titles = make("div", "");
   titles.append(
     make("h1", "", quiz.title),
-    make(
-      "p",
-      "hg-sheet-when",
-      ru
-        ? "Викторина: где это было? Найдите отрывок и обведите букву."
-        : "Quiz: where did it happen? Find the passage and circle a letter.",
-    ),
+    make("p", "hg-sheet-when", translate(s.locale, "sheet.quiz_intro")),
   );
   head.append(titles, make("p", "hg-sheet-brand", "History Globe"));
   sheet.append(head);
@@ -670,7 +652,7 @@ export async function printQuiz({
     make(
       "p",
       "hg-quiz-key",
-      `${ru ? "Ответы" : "Answers"}: ${items.map((it, i) => `${String(i + 1)} — ${it.answer}`).join("; ")}`,
+      `${translate(s.locale, "sheet.answers")}: ${items.map((it, i) => `${String(i + 1)} — ${it.answer}`).join("; ")}`,
     ),
   );
   sheet.append(foot);

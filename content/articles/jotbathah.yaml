@@ -1,0 +1,24 @@
+# Overview article (ADR 0007). Mainstream facts only; the Yotvata identification is given as the usual but unproven one, with the other candidates; the Roman fort is dated by its excavator.
+id: jotbathah
+place: a7384d7
+title:
+  en: "Jotbathah"
+  ru: "Иотвафа"
+body:
+  en:
+    - "Jotbathah was a camping place of Israel on the way from Kadesh to the Red Sea, and the one station on that stretch of which the Bible says anything beyond its name. Numbers lists it between Hor-haggidgad and Ebronah, two stops before Ezion-geber on the gulf: “they went from Hor-hagidgad, and pitched in Jotbathah. And they removed from Jotbathah, and encamped at Ebronah”. Deuteronomy, calling it Jotbath, adds the detail that explains the name, which means something like “pleasantness”: “from Gudgodah to Jotbath, a land of rivers of waters”. It was, then, an oasis with running water, a rare thing on that road, and since Ezion-geber lay at the head of the Gulf of Aqaba, Jotbathah is sought in the southern Arabah or on the gulf's shore."
+    - "The usual identification is the oasis of Ain Ghadian in the Arabah about 40 km north of Eilat, where springs feed a marsh and palms: in the 1950s the kibbutz founded there took the name Yotvata on that assumption, and Zeev Meshel excavated beside it a Roman fort built under Diocletian, about AD 300, with a Latin inscription. Nothing from Israel's time has been found. Other candidates are Taba on the gulf shore south of Eilat, which the map prefers, the spring of Et-Taba in the Arabah near Yotvata, and Ein Weibeh further up the Arabah; none can be proved, and the choice depends on where Mount Sinai and the whole route are placed."
+    - "Yotvata today is a kibbutz known across Israel for its dairy, with the Hai-Bar nature reserve beside it and the Timna copper mines a little to the south; Taba is the Egyptian border town at the head of the gulf, with its crossing from Eilat."
+  ru:
+    - "Иотвафа была стоянкой Израиля на пути от Кадеса к Чермному морю, единственной на этом отрезке, о которой Библия говорит что-то сверх имени. Книга Чисел ставит её между Хор-Агидгадом и Авроном, за две стоянки до Ецион-Гавера на заливе: «И отправились из Хор-Агидгада и расположились станом в Иотвафе. И отправились от Иотвафы и расположились станом в Авроне». Второзаконие добавляет подробность, объясняющую имя, которое значит примерно «приятность»: «из Гудгода в Иотвафу, в землю, где потоки вод». Значит, это был оазис с проточной водой, редкость на той дороге, и, поскольку Ецион-Гавер лежал у вершины залива Акаба, Иотвафу ищут в южной Араве или на берегу залива."
+    - "Обычное отождествление — оазис Айн-Гадиан в Араве примерно в 40 км к северу от Эйлата, где источники питают болото и пальмы: в 1950-х годах основанный там кибуц взял имя Йотвата по этому предположению, а Зеэв Мешель раскопал рядом римскую крепость, построенную при Диоклетиане около 300 г. н. э., с латинской надписью. Ничего от времён Израиля не найдено. Другие кандидаты — Таба на берегу залива к югу от Эйлата, которой отдано предпочтение на карте, источник Эт-Таба в Араве близ Йотваты и Айн-Вейбе дальше по Араве; ни один нельзя доказать, и выбор зависит от того, куда помещают гору Синай и весь путь."
+    - "Йотвата сегодня — кибуц, известный по всему Израилю своей молочной фермой, рядом с заповедником Хай-Бар и медными рудниками Тимны чуть южнее; Таба — египетский пограничный городок у вершины залива с переходом из Эйлата."
+scripture:
+  - Num.33.33-Num.33.34
+  - Deut.10.7
+sources:
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "Z. Meshel, 'A Fort at Yotvata from the Time of Diocletian', Israel Exploration Journal 39 (1989)"
+  - "B. A. Levine, Numbers 21–36 (Anchor Bible 4A, 2000)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+status: checked

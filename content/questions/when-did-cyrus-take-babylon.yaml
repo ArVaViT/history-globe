@@ -1,0 +1,40 @@
+# Draft question (the night of the capture and its date; "when-did-the-jews-return-from-babylon" takes the edict and the return).
+id: when-did-cyrus-take-babylon
+question:
+  en: "When did Cyrus take Babylon?"
+  ru: "Когда Кир взял Вавилон?"
+answer:
+  en:
+    - "On 12 October 539 BC, by the Babylonian chronicle's own dating: on the sixteenth day of the month Tishri Ugbaru, governor of Gutium, and the army of Cyrus entered Babylon without a battle, and Cyrus himself came into the city seventeen days later, on 29 October. The map stands at Babylon in 539 BC. Babylon lies about 870 km east of Jerusalem in a straight line."
+    - "Daniel sets the fall in a single night. Belshazzar “made a great feast to a thousand of his lords”, drank from the vessels of the Temple, and saw the hand write on the wall: “PERES; Thy kingdom is divided, and given to the Medes and Persians.” “In that night was Belshazzar the king of the Chaldeans slain. And Darius the Median took the kingdom.” The cuneiform records bear out the frame: Belshazzar was the son of Nabonidus, the last king, who left him in charge of Babylon for the ten years he spent at Tema in Arabia, which is why Belshazzar could offer Daniel only the third place in the kingdom; Herodotus and Xenophon did not know his name. “Darius the Median”, who is in no other record, is taken by some for Gubaru the governor, by others for Cyrus himself under another name, and by many critics for a confusion with the later Darius I; the question is open."
+    - "The Nabonidus Chronicle says that Cyrus beat the Babylonians at Opis on the Tigris, took Sippar without fighting on the fourteenth of Tishri, that Nabonidus fled, and that two days later Ugbaru's troops entered Babylon; Nabonidus was captured on his return, and the Cyrus Cylinder claims that Marduk himself let the king in without battle. Herodotus and Xenophon add that the Persians came in along the bed of the diverted Euphrates during a festival, a story many doubt. Isaiah had named Cyrus as the Lord's “shepherd” and “his anointed” who would be given “the treasures of darkness” and before whom the Lord would “break in pieces the gates of brass”; Jeremiah foretold that “the LORD hath raised up the spirit of the kings of the Medes” against Babylon. Cyrus's first year as king of Babylon began in the spring of 538 BC: that is the “first year of Cyrus” of Ezra's decree freeing the exiles."
+  ru:
+    - "12 октября 539 г. до н. э. по датировке самой вавилонской хроники: в шестнадцатый день месяца тишри Угбару, правитель Гутиума, и войско Кира вошли в Вавилон без боя, а сам Кир вступил в город семнадцать дней спустя, 29 октября. Карта стоит на Вавилоне в 539 г. до н. э. Вавилон лежит примерно в 870 км к востоку от Иерусалима по прямой."
+    - "Даниил вмещает падение в одну ночь. Валтасар «сделал большое пиршество для тысячи вельмож своих», пил из сосудов Храма и увидел, как рука пишет на стене: «Перес — разделено царство твое и дано Мидянам и Персам». «В ту же самую ночь Валтасар, царь Халдейский, был убит, и Дарий Мидянин принял царство». Клинописные записи подтверждают рамку рассказа: Валтасар был сыном Набонида, последнего царя, который оставил его править Вавилоном на те десять лет, что сам провёл в аравийской Феме, — потому Валтасар и мог предложить Даниилу лишь третье место в царстве; Геродот и Ксенофонт его имени не знали. «Дария Мидянина», которого нет ни в одной другой записи, одни отождествляют с наместником Губару, другие — с самим Киром под другим именем, а многие критики считают путаницей с позднейшим Дарием I; вопрос открыт."
+    - "Хроника Набонида сообщает, что Кир разбил вавилонское войско при Описе на Тигре, четырнадцатого тишри взял Сиппар без боя, что Набонид бежал и что через два дня войска Угбару вошли в Вавилон; Набонида схватили, когда он вернулся в город, а Цилиндр Кира утверждает, что сам Мардук впустил царя без сражения. Геродот и Ксенофонт добавляют, что персы вошли по руслу отведённого Евфрата во время праздника, — многие в этом сомневаются. Исаия назвал Кира «пастырем» Господа и «помазанником», которому отдадут «хранимые во тьме сокровища» и которому Господь обещал: «медные двери сокрушу и запоры железные сломаю»; Иеремия предрёк, что «Господь возбудил дух царей Мидийских» против Вавилона. Первый год царствования Кира как царя Вавилона начался весной 538 г. до н. э., и это тот самый «первый год Кира» из указа в книге Ездры, отпустившего переселенцев домой."
+map:
+  place: a217d18
+  year: "539 BC"
+  ref: Dan.5.30
+scripture:
+  [
+    Dan.5.1,
+    Dan.5.25-Dan.5.31,
+    Dan.6.28,
+    Isa.44.27-Isa.44.28,
+    Isa.45.1-Isa.45.4,
+    Isa.13.17,
+    Jer.51.11,
+    Jer.51.31,
+    Ezra.1.1-Ezra.1.3,
+  ]
+sources:
+  - "Nabonidus Chronicle (ABC 7) iii 12-18 (Opis; Sippar on 14 Tishri; Babylon entered on 16 Tishri without battle; Cyrus's entry on 3 Marcheshvan); Cyrus Cylinder, ll. 17 and 30-32"
+  - "The Nabonidus Cylinder from Sippar and the Verse Account of Nabonidus (Belshazzar the king's son; the years at Tema), in A. Kuhrt, The Persian Empire: A Corpus of Sources from the Achaemenid Period (2007)"
+  - "Herodotus, Histories 1.188-191 (the Euphrates diverted); Xenophon, Cyropaedia 7.5 (the city taken during a festival)"
+  - "P.-A. Beaulieu, The Reign of Nabonidus, King of Babylon 556-539 B.C. (1989)"
+  - "P. Briant, From Cyrus to Alexander: A History of the Persian Empire (2002)"
+  - "D. J. Wiseman, 'Some Historical Problems in the Book of Daniel', in Notes on Some Problems in the Book of Daniel (1965) (Darius the Mede as Cyrus)"
+  - "History Globe dated events (astyages-defeated c. 550 BC; babylon-taken 539 BC; cyrus-edict 538 BC), History Globe question on when the Jews returned from Babylon and History Globe article “Babylon”"
+  - "Straight-line distance between the places' points (Jerusalem, Babylon): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

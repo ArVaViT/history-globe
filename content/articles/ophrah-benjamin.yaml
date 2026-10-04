@@ -1,0 +1,23 @@
+# Overview article (ADR 0007). Mainstream facts only; Ophrah of Benjamin, not Gideon's Ophrah; the usual identification with et-Taiyibeh is given as likely, not proved.
+id: ophrah-benjamin
+place: a53b82d
+title:
+  en: "Ophrah"
+  ru: "Офра"
+body:
+  en:
+    - "This Ophrah is a town of Benjamin, not the Ophrah of Gideon in Manasseh, which has its own article. It is named in the list of Benjamin's cities, “And Avim, and Parah, and Ophrah”, and once in the story of Saul's war with the Philistines: from their camp at Michmash “the spoilers came out of the camp of the Philistines in three companies: one company turned unto the way that leadeth to Ophrah, unto the land of Shual”. That is all the Bible says of it by this name."
+    - "It is usually identified with et-Taiyibeh, a hilltop village about 6 km north-east of Bethel, which fits both passages and Eusebius' note of a village Aphra five miles east of Bethel; many also equate it with Ephron, taken by Abijah, and with the Ephraim to which Jesus withdrew, though this is not certain. Taybeh is today a Palestinian Christian village with the ruined Byzantine church of St George."
+  ru:
+    - "Эта Офра — город Вениамина, а не Офра Гедеона в Манассии, о которой есть отдельная статья. Она названа в списке городов Вениамина — «Аввим, Фара и Офра» — и однажды в рассказе о войне Саула с Филистимлянами: из их стана у Михмаса «вышли из стана Филистимского три отряда для опустошения земли: один направился по дороге к Офре, в округ Суаль». Больше под этим именем Библия о ней ничего не говорит."
+    - "Её обычно отождествляют с Эт-Тайибе, селением на холме примерно в 6 км к северо-востоку от Вефиля, что подходит к обоим местам и к замечанию Евсевия о селении Афра в пяти милях к востоку от Вефиля; многие считают её также Ефроном, взятым Авией, и городом Ефраимом, куда удалился Иисус, хотя это не точно. Тайбе сегодня — палестинское христианское селение с развалинами византийской церкви святого Георгия."
+scripture:
+  - Josh.18.23
+  - 1Sam.13.17
+  - 2Chr.13.19
+  - John.11.54
+sources:
+  - "Eusebius, Onomasticon, s.v. Aphra"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+  - "P. K. McCarter, I Samuel (Anchor Bible, 1980)"
+status: checked

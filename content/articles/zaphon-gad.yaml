@@ -1,0 +1,23 @@
+# Overview article (ADR 0007). Mainstream facts only; written for the town of Gad (Mount Zaphon has its own article); the reading of Judges 12:1 and the candidate sites are given without a choice.
+id: zaphon-gad
+place: ab49753
+title:
+  en: "Zaphon"
+  ru: "Цафон"
+body:
+  en:
+    - "Zaphon was a town of Gad in the Jordan valley, east of the river. Joshua lists it with Beth-aram, Beth-nimrah and Succoth as “the rest of the kingdom of Sihon king of Heshbon, Jordan and his border, even unto the edge of the sea of Chinnereth”. The second mention is less certain. When the men of Ephraim came to quarrel with Jephthah after his victory over Ammon, the King James Bible says they “went northward”; the Hebrew word, tsaphonah, can also mean “to Zaphon”, and many modern translations read it so, as does the Synodal text with its own form of the name: «перешли в Севину». If so, Zaphon was where Ephraim crossed the Jordan to confront Jephthah, before the slaughter at the fords that followed the test of “Shibboleth”."
+    - "The name means “north”, and nothing else is known of the town's history. The Jerusalem Talmud equates it with Amathus, but most scholars look for it in the central Jordan valley north of Succoth. The map's chief candidate is Tell es-Sa'idiyeh, a large mound excavated by J. B. Pritchard and later by J. N. Tubb, although its excavators preferred to identify it with Zarethan; Tell el-Qos, Tell el-Mazar and Khirbet Buweib nearby have also been proposed. The question remains open."
+  ru:
+    - "Цафон — город Гада в Иорданской долине, к востоку от реки. Книга Иисуса Навина называет его вместе с Беф-Гарамом, Беф-Нимрой и Сокхофом как «остаток царства Сигона, царя Есевонского; пределом его был Иордан до моря Хиннерефского». Второе упоминание менее надёжно. Когда ефремляне пришли ссориться с Иеффаем после его победы над Аммоном, английская Библия короля Якова говорит, что они пошли на север; еврейское слово цафона значит и «к Цафону», и так читают многие современные переводы, а Синодальный передаёт имя по-своему: «перешли в Севину». Если так, то у Цафона ефремляне перешли Иордан против Иеффая, перед резнёй у бродов, которой кончилась проба словом «шибболет»."
+    - "Имя значит «север», и больше об истории города ничего не известно. Иерусалимский Талмуд отождествляет его с Амафом, но большинство учёных ищут его в средней части Иорданской долины к северу от Сокхофа. Главный кандидат на карте — Телль-эс-Саидийе, большой холм, раскопанный Дж. Притчардом, а позже Дж. Таббом, хотя сами раскопщики считали его Цартаном; предлагали и соседние Телль-эль-Кос, Телль-эль-Мазар и Хирбет-Бувейб. Вопрос остаётся открытым."
+scripture:
+  - Josh.13.27
+  - Judg.12.1-Judg.12.6
+sources:
+  - "Jerusalem Talmud, Shevi'it 9:2"
+  - "N. Glueck, The River Jordan (1946)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+  - "R. G. Boling, Judges (Anchor Bible, 1975)"
+  - "J. N. Tubb, 'Tell es-Sa'idiyeh', in E. Stern (ed.), The New Encyclopedia of Archaeological Excavations in the Holy Land (1993)"
+status: checked

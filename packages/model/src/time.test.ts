@@ -1,12 +1,16 @@
 import fc from "fast-check";
 import { describe, expect, it } from "vitest";
 import {
-  centuryId,
   centuryOf,
   centuryRange,
   contains,
   formatYear,
   formatCentury,
+  isLocale,
+  isYearInput,
+  parseYearInput,
+  pick,
+  placeName,
   formatYearRange,
   inclusiveRange,
   parseLabel,
@@ -86,11 +90,6 @@ describe("intervals", () => {
 });
 
 describe("labels and ids", () => {
-  it("formats centuries for ids", () => {
-    expect(centuryId(1, "AD")).toBe("c+01");
-    expect(centuryId(10, "BC")).toBe("c-10");
-  });
-
   it.each([
     ["586 BC", BC(586)],
     ["c. 1000 BC", { ...BC(1000), approximate: true }],
@@ -138,5 +137,51 @@ describe("formatCentury", () => {
     expect(formatCentury(1250, "en")).toBe("13th century AD");
     expect(formatCentury(-1899, "ru")).toBe("XIX в. до н. э.");
     expect(formatCentury(250, "en")).toBe("3rd century AD");
+  });
+});
+
+describe("the site's languages", () => {
+  it("knows its published locales and nothing else", () => {
+    expect(isLocale("ru")).toBe(true);
+    expect(isLocale("en")).toBe(true);
+    expect(isLocale("de")).toBe(false);
+    expect(isLocale(null)).toBe(false);
+  });
+});
+
+describe("text in the reader's language", () => {
+  it("picks the language's text, else the English", () => {
+    expect(pick({ en: "Hill", ru: "Холм" }, "ru")).toBe("Холм");
+    expect(pick({ en: "Hill", ru: "Холм" }, "uk")).toBe("Hill");
+    expect(pick(undefined, "ru")).toBeUndefined();
+  });
+  it("names a place in the language it has a name in", () => {
+    const bethel = { name: "Bethel", name_ru: "Вефиль" };
+    expect(placeName(bethel, "ru")).toBe("Вефиль");
+    expect(placeName(bethel, "en")).toBe("Bethel");
+    expect(placeName({ name: "Bethel" }, "ru")).toBe("Bethel");
+  });
+});
+
+describe("isYearInput", () => {
+  it("takes a year and nothing else, in the site's languages", () => {
+    for (const q of ["586 до н. э.", "30 г. н. э.", "AD 30", "-586", "586 BC", "586 B.C.", "30"])
+      expect(isYearInput(q), q).toBe(true);
+    for (const q of ["Деян 16", "Bethel", "586 до н. э. Иерусалим", ""])
+      expect(isYearInput(q), q).toBe(false);
+  });
+});
+
+describe("formatCentury in every language the code knows", () => {
+  it("speaks the reader's language, not Russian by default", () => {
+    expect(formatCentury(-585, "uk")).toBe("VI ст. до н. е.");
+    expect(formatCentury(30, "de")).toBe("1. Jh. n. Chr.");
+  });
+});
+
+describe("parseYearInput reads BC loosely", () => {
+  it("takes «до нашей эры» and a cut-off «до н» as BC", () => {
+    expect(parseYearInput("586 до нашей эры")).toBe(-585);
+    expect(parseYearInput("586 до н")).toBe(-585);
   });
 });

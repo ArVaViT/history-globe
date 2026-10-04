@@ -1,0 +1,24 @@
+id: where-was-galilee
+question:
+  en: "Where was Galilee?"
+  ru: "Где находилась Галилея?"
+answer:
+  en:
+    - "Galilee was the northern part of the land west of the Jordan, today the north of Israel: from the plain of Jezreel in the south to the borders of Tyre and the hills of Lebanon in the north, and from the Sea of Galilee and the upper Jordan in the east towards the coastal plain by Acco. The map point stands on the western shore of the lake beside Tiberias, about 115 km north of Jerusalem in a straight line; Nazareth is about 22 km to the west of it and Capernaum about 14 km to the north."
+    - "Josephus, who commanded Galilee in the war of AD 66, divides it into Upper Galilee, a highland rising to about 1,200 m at Mount Meron, and Lower Galilee, low ridges and fertile valleys with Nazareth, Cana and Sepphoris, falling to the lake about 210 m below sea level. Joshua names Kedesh “in Galilee in mount Naphtali” as a city of refuge in the north; from Kedesh to Jezreel, on the edge of its plain, is about 64 km in a straight line, so the whole region was small."
+    - "Isaiah calls it “Galilee of the nations”, a frontier ringed by Phoenicians and Arameans, and Matthew sees the words fulfilled when Jesus settles at Capernaum: “by the way of the sea, beyond Jordan, Galilee of the Gentiles”. In his time it was ruled not by Pilate but by Herod Antipas, “being tetrarch of Galilee”, with Samaria lying between it and Judea; Matthew writes that “Jesus went about all Galilee, teaching in their synagogues”, and most of his ministry was spent in a few towns round the lake."
+  ru:
+    - "Галилея — северная часть земли к западу от Иордана, нынешний север Израиля: от Изреельской равнины на юге до пределов Тира и гор Ливана на севере и от Галилейского моря и верхнего Иордана на востоке до приморской равнины у Акко. Точка карты стоит на западном берегу озера рядом с Тивериадой, примерно в 115 км к северу от Иерусалима по прямой; Назарет лежит примерно в 22 км к западу от неё, а Капернаум — примерно в 14 км к северу."
+    - "Иосиф Флавий, командовавший Галилеей в войну 66 г. н. э., делит её на Верхнюю Галилею, нагорье, поднимающееся примерно до 1200 м у горы Мерон, и Нижнюю — невысокие гряды и плодородные долины с Назаретом, Каной и Сепфорисом, спускающиеся к озеру на 210 м ниже уровня моря. Книга Иисуса Навина называет городом убежища на севере Кедес «в Галилее на горе Неффалимовой»; от Кедеса до Изрееля на краю его равнины около 64 км по прямой, так что вся область была невелика."
+    - "Исаия называет её Галилеей языческой — пограничным краем среди финикийцев и арамеев, и Матфей видит исполнение этих слов, когда Иисус поселяется в Капернауме: «на пути приморском, за Иорданом, Галилея языческая». В Его время ею правил не Пилат, а Ирод Антипа, который «был четвертовластником в Галилее», а между ней и Иудеей лежала Самария; Матфей пишет: «И ходил Иисус по всей Галилее, уча в синагогах их», и бо́льшая часть Его служения прошла в нескольких городах вокруг озера."
+map:
+  place: a9cf1e8
+  year: "AD 30"
+  ref: Matt.4.15
+scripture: [Josh.20.7, 1Kgs.9.11, Isa.9.1, Matt.4.12-Matt.4.16, Matt.4.23, Luke.3.1, John.7.52]
+sources:
+  - "Region point and straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Josephus, Jewish War 3.35-43 (the description of Galilee); 3.141-408 (Jotapata); Life 235 (the towns and villages of Galilee)"
+  - "S. Freyne, Galilee from Alexander the Great to Hadrian, 323 BCE to 135 CE (1980)"
+  - "M. A. Chancey, The Myth of a Gentile Galilee (2002)"
+status: checked

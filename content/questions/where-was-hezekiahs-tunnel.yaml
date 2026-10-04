@@ -1,0 +1,25 @@
+id: where-was-hezekiahs-tunnel
+question:
+  en: "Where was Hezekiah's tunnel?"
+  ru: "Где проходил тоннель Езекии?"
+answer:
+  en:
+    - "Hezekiah's tunnel runs through the rock under the City of David, the ridge south of the Temple Mount in Jerusalem, from the Gihon spring in the Kidron valley on the east side to the Pool of Siloam at the southern tip of the ridge. It winds for about 533 m, though the map's points for the spring and the pool are only about 300 m apart in a straight line. It still carries the spring's water, and visitors wade through it in the City of David park in Silwan, East Jerusalem. History Globe's articles on the City of David, Gihon and Siloam tell more; this answer keeps to where the tunnel ran."
+    - "Chronicles says exactly where it went: “This same Hezekiah also stopped the upper watercourse of Gihon, and brought it straight down to the west side of the city of David.” Before Sennacherib came, Hezekiah and his princes resolved “to stop the waters of the fountains which were without the city”, so that the kings of Assyria should not “come, and find much water”; Kings sums it up, “how he made a pool, and a conduit, and brought water into the city”. Isaiah speaks of the same works: “ye gathered together the waters of the lower pool… Ye made also a ditch between the two walls for the water of the old pool.” The map dates the tunnel to about 700 BC, just before the siege of 701."
+    - "In 1880 an inscription was found cut in the wall near the tunnel's lower end. It tells how two gangs of hewers worked towards each other, heard each other's voices through the rock and met, and how the water then flowed 1,200 cubits from the spring to the pool; it is now in the Istanbul Archaeological Museums. Radiocarbon dating of plant matter in the plaster, published in 2003, fits Hezekiah's reign; Ronny Reich and Eli Shukron have argued that the tunnel was begun earlier, about 800 BC, so the attribution to Hezekiah is disputed. Why the tunnel winds is also argued: the hewers may have followed a natural fissure in the karst."
+  ru:
+    - "Тоннель Езекии проходит в скале под Городом Давидовым — хребтом к югу от Храмовой горы в Иерусалиме — от источника Гион в долине Кедрона, на восточной стороне, до Силоамского пруда на южной оконечности хребта. Он вьётся на протяжении около 533 м, хотя точки карты для источника и пруда отстоят друг от друга всего примерно на 300 м по прямой. По нему и сейчас течёт вода источника, и посетители проходят его вброд в парке Города Давидова в Сильване, в Восточном Иерусалиме. Подробнее рассказывают статьи History Globe о Городе Давидовом, Гионе и Силоаме; здесь ответ о том, где шёл тоннель."
+    - "Паралипоменон точно указывает его путь: «Он же, Езекия, запер верхний проток вод Геона и провел их вниз к западной стороне города Давидова». Перед приходом Сеннахирима Езекия с князьями решил «засыпать источники воды, которые вне города», говоря: «да не найдут цари Ассирийские, придя сюда, много воды»; книга Царств подытоживает: «он сделал пруд и водопровод и провел воду в город». О тех же работах говорит Исаия: «собираете воды в нижнем пруде… и устрояете между двумя стенами хранилище для вод старого пруда». Карта относит тоннель примерно к 700 г. до н. э., незадолго до осады 701 года."
+    - "В 1880 году у нижнего конца тоннеля нашли надпись, высеченную в стене. Она рассказывает, как две артели каменотёсов шли навстречу друг другу, услышали сквозь скалу голоса друг друга и сошлись и как потом вода потекла от источника к пруду на 1200 локтей; теперь надпись хранится в Археологических музеях Стамбула. Радиоуглеродная датировка растительных остатков в штукатурке, опубликованная в 2003 году, согласуется с царствованием Езекии; Рони Райх и Эли Шукрон доказывали, что тоннель начали раньше, около 800 г. до н. э., так что приписывание его Езекии спорно. Спорят и о том, почему тоннель извилист: возможно, каменотёсы шли по природной трещине в карсте."
+map:
+  place: a2a303c
+  year: "c. 700 BC"
+  ref: 2Chr.32.30
+scripture: [2Chr.32.2-2Chr.32.4, 2Chr.32.30, 2Kgs.20.20, Isa.22.9-Isa.22.11]
+sources:
+  - "The Siloam Inscription (KAI 189)"
+  - "A. Frumkin, A. Shimron and J. Rosenbaum, 'Radiometric Dating of the Siloam Tunnel, Jerusalem', Nature 425 (2003) 169-171; R. Reich and E. Shukron, 'The Date of the Siloam Tunnel Reconsidered', Tel Aviv 38 (2011) 147-157"
+  - "R. Reich, Excavating the City of David: Where Jerusalem's History Began (2011)"
+  - "History Globe dated events (siloam-tunnel c. 700 BC; Sennacherib 701 BC) and History Globe articles “City of David”, “Gihon” and “Siloam”"
+  - "Straight-line distance between the places' points (Gihon, Siloam): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

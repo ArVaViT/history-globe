@@ -15,6 +15,7 @@
  * Usage: node scripts/build-road-legs.ts  (after the data build: it reads roads-*.geojson
  * and content.json)
  */
+import { distanceKm } from "../apps/web/src/distance.ts";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -22,14 +23,8 @@ const data = join(import.meta.dirname, "..", "apps/web/public/data");
 const out = join(data, "road-legs.json");
 
 type Pt = readonly [number, number];
-const R = 6371.0088;
-const km = (a: Pt, b: Pt) => {
-  const rad = Math.PI / 180;
-  const h =
-    Math.sin(((b[1] - a[1]) * rad) / 2) ** 2 +
-    Math.cos(a[1] * rad) * Math.cos(b[1] * rad) * Math.sin(((b[0] - a[0]) * rad) / 2) ** 2;
-  return 2 * R * Math.asin(Math.min(1, Math.sqrt(h)));
-};
+// The same great-circle distance as the app's cards.
+const km = (a: Pt, b: Pt) => distanceKm(a, b);
 
 const FROM_YEAR = -311; // 312 BC
 const SNAP_KM = 10;

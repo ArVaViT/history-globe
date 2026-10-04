@@ -1,0 +1,29 @@
+# Overview article (ADR 0007). Mainstream facts only; written for the wilderness, the town of Ziph having its own article; the places within it are located by name only and are said so.
+id: wilderness-of-ziph
+place: a50057d
+title:
+  en: "Wilderness of Ziph"
+  ru: "Пустыня Зиф"
+body:
+  en:
+    - "The wilderness of Ziph is the stretch of the Judean desert that falls away east and south-east of Ziph, the town on the ridge about 6 km south-east of Hebron where the farmed hills end. Beyond it the bare limestone slopes, cut by dry wadis, drop toward the Dead Sea; the Bible calls that whole waste Jeshimon. Winter rain gives it a short spring of grass for flocks, and its caves and ridges have sheltered fugitives in every age. The story names places within it that are known only from the story: the hill of Hachilah, which “is on the south of Jeshimon”, and Horesh, which the King James Bible translates as “a wood” and which is usually taken for a place, perhaps Khirbet Khoreisa a few kilometres south of Ziph. None has been dug."
+    - "Here David hid from Saul after leaving Keilah. “David abode in the wilderness in strong holds, and remained in a mountain in the wilderness of Ziph. And Saul sought him every day, but God delivered him not into his hand.” At Horesh Jonathan came to him for the last time, told him “thou shalt be king over Israel, and I shall be next unto thee”, and the two made a covenant."
+    - "Then the Ziphites went up to Saul at Gibeah and offered to betray David's hiding places, and the chase ran on into the wilderness of Maon until a Philistine raid called Saul away. Later the Ziphites informed again, and “Saul arose, and went down to the wilderness of Ziph, having three thousand chosen men of Israel with him, to seek David in the wilderness of Ziph”; he camped on the hill of Hachilah, and David crept into the camp by night and took the spear and the cruse of water from beside his head. The title of Psalm 54 remembers the Ziphites' betrayal."
+    - "The wilderness is today the eastern edge of the south Hebron hills in the West Bank, between the town of Yatta and the Dead Sea, still grazed by flocks and still mostly empty."
+  ru:
+    - "Пустыня Зиф — часть Иудейской пустыни, спадающая на восток и юго-восток от Зифа, города на гребне примерно в 6 км к юго-востоку от Хеврона, где кончаются возделанные холмы. Дальше голые известняковые склоны, изрезанные сухими руслами, спускаются к Мёртвому морю; всю эту пустошь Библия зовёт Иесимоном. Зимний дождь даёт ей короткую весеннюю траву для стад, а её пещеры и гряды во все века укрывали беглецов. Рассказ называет в ней места, известные только из рассказа: холм Гахила, «что направо от Иесимона», и Хореш, который Синодальный перевод передаёт как «лес» и который обычно считают названием места, быть может Хирбет-Хурейса в нескольких километрах к югу от Зифа. Ни одно из них не раскопано."
+    - "Здесь Давид скрывался от Саула, уйдя из Кеилы. «Давид же пребывал в пустыне в неприступных местах и потом на горе в пустыне Зиф. Саул искал его всякий день; но Бог не предал Давида в руки его». В Хореше Ионафан пришёл к нему в последний раз, сказал ему: «ты будешь царствовать над Израилем, а я буду вторым по тебе», и они заключили завет."
+    - "Потом зифеи пошли к Саулу в Гиву и предложили выдать убежища Давида, и погоня ушла в пустыню Маон, пока набег филистимлян не отозвал Саула. Позже зифеи донесли снова, и «встал Саул и спустился в пустыню Зиф, и с ним три тысячи отборных мужей Израильских, чтоб искать Давида в пустыне Зиф»; он стал станом на холме Гахила, а Давид ночью прокрался в стан и унёс копьё и сосуд с водой от его изголовья. Надписание 53-го псалма помнит предательство зифеев."
+    - "Сегодня эта пустыня — восточная кромка южных Хевронских гор на Западном берегу, между городом Ятта и Мёртвым морем; по ней всё так же пасут стада, и она всё так же почти пуста."
+scripture:
+  - 1Sam.23.14-1Sam.23.19
+  - 1Sam.23.24
+  - 1Sam.26.1-1Sam.26.3
+  - 1Sam.26.12
+  - Ps.54.1
+sources:
+  - "C. R. Conder and H. H. Kitchener, The Survey of Western Palestine: Memoirs, vol. 3, Judaea (1883)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+  - "P. K. McCarter, I Samuel (Anchor Bible, 1980)"
+  - "Y. Elitzur, Ancient Place Names in the Holy Land: Preservation and History (2004)"
+status: checked

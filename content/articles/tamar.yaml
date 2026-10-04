@@ -1,0 +1,28 @@
+# Overview article (ADR 0007). Mainstream facts only; En Hazeva is given as the usual identification and Mezad Tamar as the alternative, without choosing; the reading Tamar/Tadmor in 1 Kings 9:18 is explained, not pressed.
+id: tamar
+place: a5947d7
+title:
+  en: "Tamar"
+  ru: "Тамара"
+body:
+  en:
+    - "Tamar, “palm”, is the southern anchor of the border of the land in Ezekiel's vision of its restoration: “And the south side southward, from Tamar even to the waters of strife in Kadesh, the river to the great sea”, and again for the lot of Gad, “from Tamar unto the waters of strife in Kadesh”. Some read the name also at the end of the eastern border, where the Hebrew letters that the King James Version takes as “ye shall measure” can be read as Tamar. The place was thus a known point south of the Dead Sea, on the way between the Arabah and the Negeb. The written Hebrew text of 1 Kings says that Solomon built “Tamar in the wilderness, in the land”, which the reading tradition and Chronicles turn into Tadmor, Palmyra in Syria; many scholars think the Judean Tamar is meant, a fort on the road to Edom and the Red Sea. Hazazon-tamar, “which is En-gedi”, is a different place."
+    - "In Roman and Byzantine times a fort called Thamara stood in the same region: Eusebius describes it as a village a day's journey from Mampsis on the road to Aila, with a garrison, and it appears on the Peutinger map. Two sites compete for both names. At En Hazeva (Ain Husb), an oasis in the northern Arabah some 35 km south of the Dead Sea, Rudolph Cohen and Yigal Yisrael excavated in 1987–1995 a series of fortresses from the tenth or ninth to the sixth century BC, the largest of them of Judah's later kings, with a pit of smashed cult vessels of the seventh century in Edomite style beside it, and over them a Roman fort; many now call this Tamar. Mezad Tamar (Qasr el-Juheiniye), a small Roman fort in the hills south-west of the Dead Sea, excavated by Mordechai Gichon in 1973–1975, was identified with Thamara by its excavator and is the other candidate, and the map shows both."
+    - "En Hazeva today lies beside the Arabah road in Israel, with the partly restored fortresses open to visitors near the moshav of Ein Hatzeva; Mezad Tamar, a small square fort of the Roman period, stands in the Negev hills some 24 km to the north."
+  ru:
+    - "Тамара, «пальма», — южная опора границы земли в видении Иезекииля о её восстановлении: «А южный край с полуденной стороны от Тамары до вод пререкания при Кадисе, и по течению потока до великого моря», и снова для удела Гада — «от Тамары к водам пререкания при Кадисе». Некоторые читают это имя и в конце восточной границы, где еврейские буквы, понятые Библией короля Иакова как «отмерьте», можно прочесть как Тамара. Место, стало быть, было известной точкой к югу от Мёртвого моря, на пути между Аравой и Негевом. Еврейский текст Третьей книги Царств в написанном виде говорит, что Соломон построил «Тамар в пустыне, в земле», что чтение по традиции и Паралипоменон превращают в Фадмор, сирийскую Пальмиру; многие учёные думают, что имеется в виду иудейская Тамара, крепость на дороге в Едом и к Чермному морю. Хацацон-Фамар, «то есть в Енгедди», — другое место."
+    - "В римское и византийское время в тех же краях стояла крепость Фамара: Евсевий описывает её как селение в дне пути от Мампсиса по дороге в Аилу, с гарнизоном, и она есть на Певтингеровой карте. За библейское и римское имя спорят два места. В Эйн-Хацеве (Айн-Хусб), оазисе в северной Араве примерно в 35 км к югу от Мёртвого моря, Рудольф Коэн и Игаль Исраэль раскопали в 1987–1995 годах ряд крепостей от X или IX до VI века до н. э., крупнейшую из них — времён поздних царей Иудеи, с ямой разбитых культовых сосудов VII века в едомском стиле рядом, а над ними римский форт; многие теперь называют это место Тамарой. Мецад-Тамар (Каср-эль-Джухейние), небольшой римский форт в горах к юго-западу от Мёртвого моря, раскопанный Мордехаем Гихоном в 1973–1975 годах, был отождествлён им с Фамарой и остаётся вторым кандидатом; на карте показаны оба."
+    - "Эйн-Хацева сегодня лежит у дороги по Араве в Израиле, и частично восстановленные крепости открыты для посетителей рядом с мошавом Эйн-Хацева; Мецад-Тамар, небольшой квадратный форт римского времени, стоит в Негевских горах примерно в 24 км к северу."
+scripture:
+  - Ezek.47.18-Ezek.47.19
+  - Ezek.48.28
+  - 1Kgs.9.18
+  - Gen.14.7
+  - 2Chr.20.2
+sources:
+  - "Eusebius, Onomasticon, s.v. Asasonthamar (Thamara)"
+  - "R. Cohen and Y. Yisrael, 'The Iron Age Fortresses at En Haseva', Biblical Archaeologist 58 (1995)"
+  - "M. Gichon, 'Excavations at Mezad Tamar–Tamara 1973-75: Preliminary Report', Saalburg-Jahrbuch 33 (1976)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

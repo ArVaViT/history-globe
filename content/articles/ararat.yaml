@@ -1,0 +1,29 @@
+# Overview article (ADR 0007). Mainstream facts only; Ararat is treated as the land of Urartu, and the rival traditions about the ark's mountain are given without choosing one.
+id: ararat
+place: ab89be9
+title:
+  en: "Ararat"
+  ru: "Арарат"
+body:
+  en:
+    - "Ararat in the Bible is a country, not a peak: the Hebrew form of Urartu, the kingdom that the Assyrians knew in the mountains north of them, around Lake Van, from the ninth to the seventh century BC. Its kings, Sarduri, Menua, Argishti and Rusa, ruled from Tushpa, the rock of Van, built fortresses and canals, wrote in cuneiform and fought Assyria for the passes; Sargon II's eighth campaign in 714 BC, told in his letter to the god Ashur, broke their power, and Urartu fell early in the sixth century, probably to the Medes. The Armenians inherited the land, and the Septuagint renders the name as Armenia in Isaiah, the King James Version in both Kings and Isaiah."
+    - "Genesis says that after the flood “the ark rested in the seventh month, on the seventeenth day of the month, upon the mountains of Ararat”, somewhere in that highland. When Sennacherib was murdered in 681 BC, “Adrammelech and Sharezer his sons smote him with the sword: and they escaped into the land of Armenia”, that is Ararat; the Babylonian Chronicle records the murder, and Esarhaddon's own inscription says the brothers fled to an unknown land. Jeremiah summons against Babylon “the kingdoms of Ararat, Minni, and Ashchenaz”, Urartu, the Mannaeans and the Scythians (the Synodal text reads Media for Minni)."
+    - "Which mountain the ark came to rest on the Bible does not say. Berossus, quoted by Josephus, put its remains in the mountains of the Cordyaeans, and Jewish, Syriac and early Muslim tradition pointed to Mount Judi (Cudi Dagi) above the Tigris near Cizre; from the Middle Ages Armenian tradition fixed on Masis, the volcano of 5,137 m that Europeans call Mount Ararat. It rises in eastern Turkey by the borders of Armenia and Iran, and the search for the ark on its slopes has found nothing. The old Urartian fortresses survive at Van, at Erebuni and Karmir Blur in Yerevan and at Cavustepe, and the land of Ararat is today shared by Turkey, Armenia and north-western Iran."
+  ru:
+    - "Арарат в Библии — страна, а не вершина: еврейская форма имени Урарту, царства, которое Ассирийцы знали в горах к северу от себя, вокруг озера Ван, с IX по VII век до н. э. Его цари — Сардури, Менуа, Аргишти, Руса — правили из Тушпы, скалы Вана, строили крепости и каналы, писали клинописью и бились с Ассирией за перевалы; восьмой поход Саргона II в 714 г. до н. э., описанный в его письме богу Ашшуру, сломил их силу, и в начале VI века Урарту пало, вероятно, под ударами Мидян. Землю унаследовали армяне, и Септуагинта передаёт имя как Армения у Исаии, а английская Библия короля Иакова — и у Исаии, и в книгах Царств."
+    - "Книга Бытия говорит, что после потопа «остановился ковчег в седьмом месяце, в семнадцатый день месяца, на горах Араратских» — где-то в этом нагорье. Когда в 681 г. до н. э. был убит Сеннахирим, «Адрамелех и Шарецер, сыновья его, убили его мечом, а сами убежали в землю Араратскую»; Вавилонская хроника записала убийство, а собственная надпись Асардана говорит, что братья бежали в неведомую землю. Иеремия созывает против Вавилона «царства Араратские, Мидийские и Аскеназские» — Урарту, Маннеев и Скифов (в еврейском тексте вместо Мидии стоит Минни)."
+    - "На какой горе остановился ковчег, Библия не говорит. Берос, которого цитирует Иосиф Флавий, помещал его остатки в горах Кордуенских, и иудейское, сирийское и раннее мусульманское предание указывало на гору Джуди (Джуди-Даг) над Тигром близ Джизре; с Средних веков армянское предание закрепило за ковчегом Масис — вулкан высотой 5137 м, который европейцы зовут Араратом. Он поднимается на востоке Турции у границ Армении и Ирана, и поиски ковчега на его склонах ничего не нашли. Урартские крепости стоят в Ване, в Эребуни и Кармир-Блуре в Ереване и в Чавуштепе, а землю Арарат делят сегодня Турция, Армения и северо-запад Ирана."
+scripture:
+  - Gen.8.4
+  - 2Kgs.19.37
+  - Isa.37.38
+  - Jer.51.27
+sources:
+  - "Josephus, Antiquities 1.90-95 (Berossus on the remains of the ark)"
+  - "Babylonian Chronicle ABC 1 iii 34-35 (the murder of Sennacherib)"
+  - "Esarhaddon, Nineveh A prism (RINAP 4, Esarhaddon 1) (the flight of his brothers)"
+  - "Sargon II, Letter to Ashur on the eighth campaign (714 BC)"
+  - "B. B. Piotrovsky, The Ancient Civilization of Urartu (1969)"
+  - "P. E. Zimansky, Ecology and Empire: The Structure of the Urartian State (1985)"
+  - "L. R. Bailey, Noah: The Person and the Story in History and Tradition (1989)"
+status: checked

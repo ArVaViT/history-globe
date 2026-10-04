@@ -1,0 +1,27 @@
+# Overview article (ADR 0007). Mainstream facts only; Pliny's list is given as his, and whether the cities formed a league is named as doubted.
+id: decapolis
+place: ae733a2
+title:
+  en: "Decapolis"
+  ru: "Десятиградие"
+body:
+  en:
+    - "The Decapolis, “ten cities”, was the Roman-period name for a group of Greek cities and their territories lying mostly east of the Jordan and the Sea of Galilee, with Scythopolis (Beth-shean) alone on the west bank. Pliny the Elder, noting that not everyone gave the same list, names Damascus, Philadelphia (the old Rabbah of Ammon), Raphana, Scythopolis, Gadara, Hippos, Dion, Pella, Gerasa and Canatha; Ptolemy a century later gave a longer list. They were Greek cities, several founded or refounded under Alexander's successors, islands of Hellenism among Jews, Nabataeans and Ituraeans. Alexander Jannaeus took many of them; Pompey in 63 BC freed them from Jewish rule and attached them to the province of Syria, and most dated their coins from that year. Whether they ever formed a league is doubted; the name may have meant no more than a region."
+    - "The Gospels name it three times. Early in Jesus' ministry crowds followed him “from Galilee, and from Decapolis, and from Jerusalem, and from Judaea, and from beyond Jordan”. The man freed of the legion of demons in the country of the Gadarenes “began to publish in Decapolis how great things Jesus had done for him”. And returning from the region of Tyre and Sidon Jesus “came unto the sea of Galilee, through the midst of the coasts of Decapolis”, where he healed a deaf man with an impediment in his speech. In AD 66 Jewish bands attacked the cities of the Decapolis, and the people of Scythopolis slaughtered their own Jews; according to Eusebius the Christians of Jerusalem withdrew before the war to Pella. In 106 the southern cities passed into Trajan's province of Arabia."
+    - "Today the ruins of Gerasa at Jerash, Gadara at Umm Qais and Pella at Tabaqat Fahl in Jordan, of Scythopolis at Beit She'an and Hippos at Sussita in Israel, and of Philadelphia beneath Amman's citadel are among the best-preserved Roman cities of the East, with colonnaded streets, theatres and temples; Damascus remains the capital of Syria."
+  ru:
+    - "Десятиградие, «десять городов», — название римского времени для группы греческих городов с их землями, лежавших большей частью к востоку от Иордана и Галилейского моря; на западном берегу был один Скифополь (Беф-Сан). Плиний Старший, замечая, что не все дают один и тот же перечень, называет Дамаск, Филадельфию (прежнюю Равву Аммонитскую), Рафану, Скифополь, Гадару, Гиппос, Дион, Пеллу, Герасу и Канафу; Птолемей столетием позже дал более длинный список. Это были греческие города, многие основанные или переустроенные при преемниках Александра, — островки эллинизма среди иудеев, набатеев и итурейцев. Александр Яннай взял многие из них; Помпей в 63 г. до н. э. освободил их от иудейской власти и приписал к провинции Сирия, и большинство вело счёт лет на монетах с этого года. Составляли ли они когда-нибудь союз, сомнительно; имя могло означать всего лишь область."
+    - "Евангелия называют его трижды. В начале служения Иисуса за Ним шло множество народа «из Галилеи и Десятиградия, и Иерусалима, и Иудеи, и из-за Иордана». Человек, освобождённый от легиона бесов в стране Гадаринской, «начал проповедывать в Десятиградии, что сотворил с ним Иисус». А возвращаясь из пределов Тира и Сидона, Иисус «пошел к морю Галилейскому через пределы Десятиградия», где исцелил глухого косноязычного. В 66 г. н. э. иудейские отряды напали на города Десятиградия, а жители Скифополя перебили своих иудеев; по словам Евсевия, христиане Иерусалима перед войной ушли в Пеллу. В 106 году южные города вошли в провинцию Траяна Аравия."
+    - "Сегодня развалины Герасы в Джераше, Гадары в Умм-Кайсе и Пеллы в Табакат-Фахле в Иордании, Скифополя в Бейт-Шеане и Гиппоса в Суссите в Израиле и Филадельфии под цитаделью Аммана — среди лучше всего сохранившихся римских городов Востока, с колоннадными улицами, театрами и храмами; Дамаск остаётся столицей Сирии."
+scripture:
+  - Matt.4.25
+  - Mark.5.20
+  - Mark.7.31-Mark.7.37
+sources:
+  - "Pliny the Elder, Natural History 5.74 (the ten cities)"
+  - "Ptolemy, Geography, book 5 (the cities of Coele-Syria and the Decapolis)"
+  - "Josephus, Jewish War 2.458-476 (the attacks of AD 66 and the massacre at Scythopolis); 3.446 (Scythopolis the largest city of the Decapolis)"
+  - "Eusebius, Ecclesiastical History 3.5.3 (the flight to Pella)"
+  - "S. T. Parker, 'The Decapolis Reviewed', Journal of Biblical Literature 94 (1975)"
+  - "C. H. Kraeling (ed.), Gerasa: City of the Decapolis (1938)"
+status: checked

@@ -1,3 +1,4 @@
+import { pick } from "@hg/model";
 import type { Locale } from "@hg/model";
 import { DATA_URL } from "./data";
 
@@ -113,5 +114,5 @@ export function loadPeople(): Promise<People> {
 
 /** A person's name in the reader's language: the Synodal form in Russian when known. */
 export function personName(p: Person, locale: Locale): string {
-  return locale === "ru" && p.ru ? p.ru : p.name;
+  return pick({ en: p.name, ru: p.ru }, locale) ?? p.name;
 }

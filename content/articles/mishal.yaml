@@ -1,0 +1,26 @@
+# Overview article (ADR 0007). Mainstream facts only; the site is disputed and the candidates on the map are given without choosing; the Egyptian mention is given as the usual reading.
+id: mishal
+place: a93f8b6
+title:
+  en: "Mishal"
+  ru: "Мишал"
+body:
+  en:
+    - "Mishal, in Chronicles Mashal, was a town of Asher on the plain of Acco, named only in lists. Joshua places it on the tribe's border: “And Alammelech, and Amad, and Misheal; and reacheth to Carmel westward, and to Shihor-libnath”, and it was given with its pastures to the Levites of Gershon: “And out of the tribe of Asher, Mishal with her suburbs, Abdon with her suburbs”. Nothing more is told of it. Some scholars find the same name in the list of Canaanite towns conquered by Thutmose III in the fifteenth century BC, which would make Mishal a Canaanite town long before the tribes; it was never, so far as the texts show, a place of any event."
+    - "Its site is disputed, and the question is tied to that of Achshaph, another town of Asher in the same plain. The leading candidate is Tell Keisan, a large mound in the plain about 8 km south-east of Acco, which the École biblique of Jerusalem excavated in 1971–1980 and found occupied from the Early Bronze Age to the Byzantine period, with a prosperous Phoenician town of the Iron Age; but Keisan is claimed for Achshaph as well. Tell Bir el-Gharbi (Tel Bira) a little to the north and Tel Nahal by the mouth of the Kishon have also been proposed, and the map shows all three."
+    - "Whichever it was, Mishal lay in the fertile plain between Acco and the hills of Galilee, today the Acco plain of northern Israel, where Tell Keisan rises among the fields a few kilometres from the Haifa–Acco road."
+  ru:
+    - "Мишал, в Паралипоменоне Машал, был городом Асира на равнине Акко, названным только в списках. Книга Иисуса Навина ставит его на границе колена: «Аламелех, Амад и Мишал; и примыкает предел к Кармилу с западной стороны и к Шихор-Ливнафу», и его отдали с предместьями левитам из рода Гирсона: «от колена Асирова: Мишал и предместья его, Авдон и предместья его». Больше о нём ничего не сказано. Некоторые учёные находят то же имя в списке ханаанских городов, покорённых Тутмосом III в XV веке до н. э., так что Мишал был бы ханаанским городом задолго до колен; местом какого-либо события он, насколько видно из текстов, не был никогда."
+    - "Его положение спорно, и вопрос связан с вопросом об Ахсафе, другом городе Асира на той же равнине. Главный кандидат — Телль-Кейсан, большой холм на равнине примерно в 8 км к юго-востоку от Акко, который Иерусалимская библейская школа раскапывала в 1971–1980 годах и нашла заселённым от ранней бронзы до византийского времени, с зажиточным финикийским городом железного века; но на Кейсан претендует и Ахсаф. Предлагали также Телль-Бир-эль-Гарби (Тель-Бира) немного севернее и Тель-Нахаль у устья Киссона, и на карте показаны все три места."
+    - "Каким бы он ни был, Мишал лежал на плодородной равнине между Акко и горами Галилеи — сегодня это равнина Акко на севере Израиля, где Телль-Кейсан поднимается среди полей в нескольких километрах от дороги из Хайфы в Акко."
+scripture:
+  - Josh.19.26
+  - Josh.21.30
+  - 1Chr.6.74
+sources:
+  - "J. Briend and J.-B. Humbert, Tell Keisan (1971-1976): une cité phénicienne en Galilée (1980)"
+  - "J. Simons, Handbook for the Study of Egyptian Topographical Lists Relating to Western Asia (1937) (the list of Thutmose III)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+  - "Z. Kallai, Historical Geography of the Bible: The Tribal Territories of Israel (1986)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

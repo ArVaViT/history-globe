@@ -1,0 +1,27 @@
+id: where-was-derbe
+question:
+  en: "Where was Derbe?"
+  ru: "Где находилась Дервия?"
+answer:
+  en:
+    - "Derbe lay in south-eastern Lycaonia, on the plain of central Turkey, at or very near the mound of Kerti Hüyük about 22 km north-east of Karaman, ancient Laranda; the map point stands on the mound. It is about 95 km east-south-east of Lystra and 96 km south-east of Konya, ancient Iconium, in a straight line, and about 645 km from Jerusalem. Older scholars, following William Ramsay, put Derbe at Gudelisin farther west; in 1956 Michael Ballance found at Kerti Hüyük a dedication of AD 157 by “the council and people of Derbe”, but after a bishop of Derbe's tombstone turned up at Devri Şehri, about 4 km away, he proposed that site instead, so the exact spot is not fully settled."
+    - "Derbe was the farthest point of Paul's first journey. Stoned at Lystra, Paul “rose up, and came into the city: and the next day he departed with Barnabas to Derbe. And when they had preached the gospel to that city, and had taught many, they returned again to Lystra, and to Iconium, and Antioch”. From Derbe the road ran on east through the Taurus by the Cilician Gates to Tarsus, Paul's home town, about 145 km away in a straight line, the short way back to Syria; instead they turned round and went back through the towns that had driven them out, to strengthen the new churches."
+    - "Acts tells of no trouble at Derbe, and when Paul later lists his persecutions “at Antioch, at Iconium, at Lystra”, Derbe is missing. He came back on his second journey, and among the men who went with him to Asia was “Gaius of Derbe”. In the first century BC the town had been the seat of Antipater of Derbe, a friend of Cicero, until Amyntas of Galatia killed him; after 25 BC it belonged to the Roman province of Galatia and later called itself Claudio-Derbe on its coins."
+  ru:
+    - "Дервия лежала на юго-востоке Ликаонии, на равнине в центре Турции, на холме Керти-Хююк примерно в 22 км к северо-востоку от Карамана, древней Ларанды, или совсем рядом с ним; точка карты стоит на холме. Отсюда примерно 95 км до Листры к западу-северо-западу и 96 км до Коньи, древней Иконии, к северо-западу по прямой, а до Иерусалима около 645 км. Прежние учёные вслед за Уильямом Рамзаем помещали Дервию западнее, у Гюделисина; в 1956 г. Майкл Балланс нашёл на Керти-Хююке посвящение 157 г. от «совета и народа Дервии», но, когда в Деври-Шехри, примерно в 4 км оттуда, нашлось надгробие епископа Дервии, предложил это место, так что точное место ещё не вполне установлено."
+    - "Дервия была самой дальней точкой первого путешествия Павла. Побитый камнями в Листре, Павел «встал и пошел в город, а на другой день удалился с Варнавою в Дервию. Проповедав Евангелие сему городу и приобретя довольно учеников, они обратно проходили Листру, Иконию и Антиохию». От Дервии дорога шла дальше на восток через Тавр, Киликийскими воротами, к Тарсу, родному городу Павла, примерно в 145 км по прямой, — короткий путь назад в Сирию; но они повернули и пошли обратно через города, которые их изгнали, чтобы укрепить новые церкви."
+    - "Деяния не говорят ни о каких гонениях в Дервии, и когда Павел позже перечисляет гонения, постигшие его «в Антиохии, Иконии, Листрах», Дервии в этом списке нет. Он вернулся сюда во втором путешествии, а среди спутников, шедших с ним в Асию, был Гаий из Дервии. В I веке до н. э. городом владел Антипатр Дервийский, друг Цицерона, пока его не убил Аминта Галатский; после 25 г. до н. э. Дервия вошла в римскую провинцию Галатию и позже называла себя на монетах Клавдио-Дервией."
+map:
+  place: aa401a9
+  year: "AD 47"
+  ref: Acts.14.20
+scripture: [Acts.14.6, Acts.14.20-Acts.14.22, Acts.16.1, Acts.20.4, 2Tim.3.11]
+sources:
+  - "Straight-line distances between the places' points (Derbe, Lystra, Iconium, Tarsus, Jerusalem): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Dedication of the council and people of Derbe, AD 157: M. Ballance, 'The Site of Derbe: A New Inscription', Anatolian Studies 7 (1957), 147-151"
+  - "M. Ballance, 'Derbe and Faustinopolis', Anatolian Studies 14 (1964), 139-145"
+  - "W. M. Ramsay, The Cities of St. Paul (1907), part V: Derbe"
+  - "Strabo, Geography 12.6.3; Cicero, Letters to Friends 13.73"
+  - "B. V. Head, Historia Numorum (2nd ed., 1911), Lycaonia: Derbe (coins of Claudio-Derbe)"
+  - "History Globe article “Derbe” and History Globe tour “Paul's first journey”"
+status: checked

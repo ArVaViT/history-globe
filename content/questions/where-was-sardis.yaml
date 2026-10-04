@@ -1,0 +1,26 @@
+id: where-was-sardis
+question:
+  en: "Where was Sardis?"
+  ru: "Где находился Сардис?"
+answer:
+  en:
+    - "Sardis lay in western Turkey by the village of Sart, in the province of Manisa, where the Pactolus stream comes down from Mount Tmolus into the valley of the Hermus; the map point stands on the site. It was about 44 km from Philadelphia, 51 km from Thyatira and 79 km east of Smyrna in a straight line. A steep citadel rose above the lower city, which had been the royal city of Lydia under Gyges and Croesus and then the seat of a Persian satrap at the western end of the Royal Road to Susa."
+    - "Revelation, about AD 95, gives Sardis the fifth of the seven letters, one of the sternest: “I know thy works, that thou hast a name that thou livest, and art dead.” It warns, “If therefore thou shalt not watch, I will come on thee as a thief”, yet a few “have not defiled their garments; and they shall walk with me in white”. Ramsay and Hemer read the warning against the city's past: its citadel, thought impregnable, fell twice by surprise, to Cyrus about 547 BC and to Antiochus III about 214 BC, when soldiers climbed an unguarded cliff. Some also identify Sepharad, where Obadiah places exiles of Jerusalem, with Sardis; others doubt it."
+    - "In AD 17 an earthquake struck twelve cities of Asia, Sardis worst of all, and Tiberius remitted its tribute for five years. The Harvard-Cornell excavations, from 1958, uncovered the great bath-gymnasium, part of which the Jews of the late Roman city used as a synagogue over 50 m long, one of the largest known from antiquity, and the temple of Artemis below the citadel. About 170 Melito, bishop of Sardis, wrote his sermon On the Passover."
+  ru:
+    - "Сардис лежал на западе Турции у деревни Сарт в провинции Маниса, там, где ручей Пактол спускается с горы Тмол в долину Герма; точка карты стоит на этом месте. Отсюда около 44 км до Филадельфии, 51 км до Фиатиры и 79 км на восток от Смирны по прямой. Над нижним городом поднимался крутой акрополь; Сардис был царским городом Лидии при Гигесе и Крезе, а затем резиденцией персидского сатрапа на западном конце Царской дороги в Сузы."
+    - "Откровение около 95 г. посылает Сардису пятое из семи посланий — одно из самых суровых: «знаю твои дела; ты носишь имя, будто жив, но ты мертв». Оно предостерегает: «Если же не будешь бодрствовать, то Я найду на тебя, как тать», — и всё же несколько человек «не осквернили одежд своих и будут ходить со Мною в белых одеждах». Рамзей и Хемер толковали предостережение по истории города: его акрополь, считавшийся неприступным, дважды взяли врасплох — Кир около 547 г. до н. э. и Антиох III около 214 г. до н. э., когда воины взобрались по неохраняемому обрыву. Некоторые также отождествляют с Сардисом Сефарад, где, по Авдию, жили пленники из Иерусалима; другие в этом сомневаются."
+    - "В 17 г. н. э. землетрясение поразило двенадцать городов Асии, а сильнее всех Сардис, и Тиберий освободил его от податей на пять лет. Раскопки Гарвардского и Корнеллского университетов, начатые в 1958 году, открыли большой комплекс бань и гимнасия, часть которого иудеи позднеримского города превратили в синагогу длиной более 50 м — одну из крупнейших известных в древности, — и храм Артемиды под акрополем. Около 170 г. Мелитон, епископ Сардийский, написал здесь проповедь «О Пасхе»."
+map:
+  place: aab4a5f
+  year: "AD 95"
+  ref: Rev.3.1
+scripture: [Rev.1.11, Rev.3.1-Rev.3.6, Obad.1.20]
+sources:
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe article “Sardis” (Herodotus, Polybius, Tacitus, Eusebius and the works cited there), History Globe dated events (Sardis taken c. 547 BC) and History Globe tour “The seven churches of Revelation”"
+  - "Archaeological Exploration of Sardis (Harvard-Cornell expedition, 1958-), publications and online essays on the synagogue"
+  - "G. M. A. Hanfmann, Sardis from Prehistoric to Roman Times (1983)"
+  - "W. M. Ramsay, The Letters to the Seven Churches of Asia (1904)"
+  - "C. J. Hemer, The Letters to the Seven Churches of Asia in Their Local Setting (1986)"
+status: checked

@@ -1,0 +1,26 @@
+id: where-was-endor
+question:
+  en: "Where was Endor, the home of the witch of Endor?"
+  ru: "Где находился Ен-Дор, где жила аэндорская волшебница?"
+answer:
+  en:
+    - "Endor was a village at the eastern end of the valley of Jezreel, on the northern slope of the hill of Moreh, in Lower Galilee in today's Israel. It is most often placed at Khirbet es-Safsafa, near the old Arab village of Indur that kept the name; the map's point stands there, about 4.7 km south of Mount Tabor, 6.7 km north-east of Shunem and about 98 km north of Jerusalem in a straight line. Indur itself and Tell el-Ajjul are other candidates, and a few look to the western end of the valley near Taanach. History Globe has an article on En-dor; this answer keeps to where it was."
+    - "Its place explains the story. Before the battle of Gilboa “the Philistines gathered themselves together, and came and pitched in Shunem: and Saul gathered all Israel together, and they pitched in Gilboa”, across the valley to the south. When the Lord did not answer him, Saul said, “Seek me a woman that hath a familiar spirit… And his servants said to him, Behold, there is a woman that hath a familiar spirit at Endor.” To reach her “Saul disguised himself, and put on other raiment, and he went, and two men with him, and they came to the woman by night”: from Israel's camp by the spring in Jezreel, about 11 km in a straight line, past the Philistine camp at Shunem and round the hill of Moreh, behind the enemy lines."
+    - "Joshua lists Endor among the Canaanite towns that Manasseh held within Issachar and Asher, beside Beth-shean, Taanach and Megiddo, and Psalm 83 (82 in the Synodal numbering) recalls the enemies of Deborah's day “which perished at Endor”. The map dates Saul's night visit and his death on Gilboa the next day to about 1010 BC, a conventional point. Eusebius placed Endor four miles south of Tabor; Indur was abandoned in 1948, and the kibbutz Ein Dor nearby takes its name from the ancient town."
+  ru:
+    - "Ен-Дор — селение на восточном краю Изреельской долины, на северном склоне холма Море, в Нижней Галилее, на территории нынешнего Израиля. Чаще всего его помещают в Хирбет-эс-Сафсафе, рядом со старой арабской деревней Индур, сохранившей имя; там и стоит точка карты, примерно в 4,7 км к югу от горы Фавор, в 6,7 км к северо-востоку от Сонама и примерно в 98 км к северу от Иерусалима по прямой. Другие кандидаты — сам Индур и Телль-эль-Аджуль, а немногие ищут его на западном краю долины, у Фаанаха. В History Globe есть статья о Ен-Доре; здесь ответ о том, где он был."
+    - "Место объясняет рассказ. Перед битвой на Гелвуе «собрались Филистимляне и пошли и стали станом в Сонаме; собрал и Саул весь народ Израильский, и стали станом на Гелвуе» — к югу, через долину. Когда Господь не ответил ему, Саул сказал: «сыщите мне женщину волшебницу… И отвечали ему слуги его: здесь в Аэндоре есть женщина волшебница». Чтобы дойти до неё, «снял с себя Саул одежды свои и надел другие, и пошел сам и два человека с ним, и пришли они к женщине ночью»: от стана Израиля у источника в Изрееле — около 11 км по прямой — мимо стана филистимлян в Сонаме и вокруг холма Море, в тыл врагу."
+    - "Книга Иисуса Навина называет Ен-Дор среди хананейских городов, которыми Манассия владел в уделах Иссахара и Асира, рядом с Беф-Саном, Фаанахом и Мегиддоном, а Псалом 82 (83 в еврейской нумерации) вспоминает врагов времён Деворы, «которые истреблены в Аендоре». Карта относит ночной поход Саула и его гибель на Гелвуе на следующий день примерно к 1010 г. до н. э. — условная точка. Евсевий помещал Ен-Дор в четырёх милях к югу от Фавора; Индур опустел в 1948 году, а соседний кибуц Эйн-Дор назван по древнему городу."
+map:
+  place: aca444b
+  year: "c. 1010 BC"
+  ref: 1Sam.28.7
+scripture: [1Sam.28.4, 1Sam.28.7-1Sam.28.8, 1Sam.29.1, Josh.17.11, Ps.83.10]
+sources:
+  - "Eusebius, Onomasticon, s.v. Aendor (C. U. Wolf's translation, no. 150)"
+  - "P. K. McCarter, I Samuel (Anchor Bible, 1980)"
+  - "Z. Gal, Lower Galilee during the Iron Age (1992)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+  - "History Globe article “En-dor”, History Globe battles (gilboa c. 1010 BC) and History Globe tour “Saul, the first king”"
+  - "Straight-line distances between the places' points (En-dor, Mount Tabor, Shunem, Jezreel, Jerusalem): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

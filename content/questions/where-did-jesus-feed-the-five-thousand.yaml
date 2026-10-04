@@ -1,0 +1,34 @@
+id: where-did-jesus-feed-the-five-thousand
+question:
+  en: "Where did Jesus feed the five thousand?"
+  ru: "Где Иисус накормил пять тысяч человек?"
+answer:
+  en:
+    - "On the shore of the Sea of Galilee, in a lonely place that Luke alone locates: Jesus withdrew with the apostles “into a desert place belonging to the city called Bethsaida”, at the north end of the lake east of the Jordan's mouth; the map point stands at Bethsaida, about 6 km north-east of Capernaum in a straight line. Christian tradition has shown the place since the fourth century at Tabgha, on the north-west shore west of Capernaum, where the Church of the Multiplication keeps the mosaic of the loaves and fishes; many scholars prefer the north-eastern shore with Luke, and the exact spot is unknown."
+    - "All four Gospels tell the miracle, the only one they share. Mark says Jesus called the apostles “apart into a desert place” and they went “by ship privately”, while the crowd “ran afoot thither out of all cities, and outwent them”; there was “green grass” to sit on, so it was spring, and John adds that the Passover was near and the men numbered about five thousand, “beside women and children”, says Matthew. Afterwards Jesus “constrained his disciples to get into the ship, and to go to the other side before unto Bethsaida”, while John has them cross “toward Capernaum”; next day boats from Tiberias came “nigh unto the place where they did eat bread”. A crossing “to Bethsaida” after a feeding near Bethsaida is the puzzle: commentators read Mark's words as a run along the shore, or put the feeding further down the eastern side, or at Tabgha, taking Luke's Bethsaida loosely."
+    - "The tradition at Tabgha, Heptapegon, “seven springs”, goes back to Egeria's time: the note preserved by Peter the Deacon says that by the springs is a grassy field where the Lord fed the people from five loaves and two fishes, and that the stone on which he laid them had been made into an altar. A small shrine stood there in the fourth century, and in the fifth a basilica with mosaics of the lake's birds and plants and, before the altar, the basket of loaves between two fish; A. E. Mader and A. M. Schneider uncovered it from 1932, and the present church of the 1980s was built on the old plan. The memory probably settled on the west shore because the pilgrims' road ran there; the eastern shore of Luke's Bethsaida lay far from their path."
+  ru:
+    - "На берегу Галилейского моря, в пустынном месте, которое из евангелистов определяет один Лука: Иисус удалился с апостолами «в пустое место, близ города, называемого Вифсаидою», у северного конца озера к востоку от устья Иордана; точка карты стоит в Вифсаиде, примерно в 6 км к северо-востоку от Капернаума по прямой. Христианское предание с IV века показывает это место в Табхе, на северо-западном берегу западнее Капернаума, где церковь Умножения хлебов хранит мозаику с хлебами и рыбами; многие учёные вслед за Лукой предпочитают северо-восточный берег, а точное место неизвестно."
+    - "Чудо рассказывают все четыре Евангелия — единственное из чудес, общее им всем. Марк говорит, что Иисус позвал апостолов «в пустынное место» и они «отправились… в лодке одни», а народ «бежали туда пешие из всех городов» и опередил их; сидели на «зеленой траве», что указывает на весну, Иоанн добавляет, что приближалась Пасха и мужчин было около пяти тысяч — «кроме женщин и детей», говорит Матфей. Потом Иисус «понудил учеников Своих войти в лодку и отправиться вперед на другую сторону к Вифсаиде», а у Иоанна они плывут «на ту сторону моря, в Капернаум», куда назавтра пришли лодки из Тивериады, искавшие Его «близко к тому месту, где ели хлеб». Переправа «к Вифсаиде» после насыщения близ Вифсаиды — загадка: толкователи понимают слова Марка как путь вдоль берега, или помещают насыщение дальше по восточному берегу, или относят его к Табхе, считая Вифсаиду у Луки приблизительной."
+    - "Предание в Табхе — Гептапегон, «семь источников» — восходит ко временам Эгерии: заметка, сохранённая Петром Диаконом, говорит, что у источников есть травянистое поле, где Господь накормил народ пятью хлебами и двумя рыбами, а камень, на который Он их положил, обращён в алтарь. В IV веке там стояла малая часовня, а в V веке — базилика с мозаиками птиц и растений озера и, перед алтарём, с корзиной хлебов между двумя рыбами; А. Э. Мадер и А. М. Шнайдер раскрыли её начиная с 1932 года, и нынешняя церковь 1980-х годов построена по старому плану. Память закрепилась на западном берегу, вероятно, потому, что там шла дорога паломников; восточный берег Лукиной Вифсаиды лежал далеко от их пути."
+map:
+  place: a91b732
+  year: "AD 29"
+  ref: Luke.9.10
+scripture:
+  [
+    Luke.9.10-Luke.9.17,
+    Mark.6.30-Mark.6.45,
+    Matt.14.13-Matt.14.21,
+    John.6.1-John.6.15,
+    John.6.17,
+    John.6.23,
+  ]
+sources:
+  - "Straight-line distance between the places' points (Bethsaida, Capernaum): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Egeria's Travels, the notes of Peter the Deacon on the seven springs (tr. J. Wilkinson, Egeria's Travels, 3rd ed., 1999)"
+  - "A. M. Schneider, The Church of the Multiplying of the Loaves and Fishes at Tabgha on the Lake of Gennesaret, and Its Mosaics (1937)"
+  - "R. T. France, The Gospel of Mark (NIGTC, 2002), on Mark 6:45"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008), s.v. Tabgha"
+  - "History Globe question “Where was Bethsaida?” (the two candidate sites) and tour “Jesus in Galilee, after Mark”"
+status: checked

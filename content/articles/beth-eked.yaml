@@ -1,0 +1,22 @@
+# Overview article (ADR 0007). Mainstream facts only; the King James translates the name, the Synodal keeps it; Eusebius' village is given; Beit Qad and Kafr Ra'i are named as candidates, nothing excavated.
+id: beth-eked
+place: a7abec7
+title:
+  en: "Beth-eked"
+  ru: "Беф-Екед"
+body:
+  en:
+    - "Beth-eked, in full Beth-eked of the shepherds, was a place on the road from Jezreel to Samaria, the scene of one of the killings of Jehu's coup. The King James Version translates the name, “the shearing house”; the Synodal Bible keeps it, “Beth-eked of the shepherds”. After slaughtering the house of Ahab at Jezreel, Jehu “arose and departed, and came to Samaria. And as he was at the shearing house in the way, Jehu met with the brethren of Ahaziah king of Judah”, who were going down to greet the royal family, knowing nothing of what had happened. “And he said, Take them alive. And they took them alive, and slew them at the pit of the shearing house, even two and forty men; neither left he any of them.” The Chronicler tells the same deed without the place."
+    - "Nothing else is recorded. Eusebius knew a village Bethacath in the great plain, fifteen Roman miles from Legio, the camp at Megiddo, and Beit Qad, a village about 6 km east of Jenin at the edge of the Jezreel valley, keeps something of the name and fits the road; Kafr Ra'i, in the hills to the south-west, has also been proposed. Neither has been excavated, and the cistern of the story has not been found."
+  ru:
+    - "Беф-Екед, полностью Беф-Екед пастушеский, — место на дороге из Изрееля в Самарию, где совершилось одно из убийств переворота Ииуя. Английская Библия короля Иакова переводит имя — «дом стрижки»; Синодальный перевод сохраняет его. Перебив дом Ахава в Изрееле, Ииуй «встал, и пошел, и пришел в Самарию. Находясь на пути при Беф-Екеде пастушеском, встретил Ииуй братьев Охозии, царя Иудейского», которые шли приветствовать царскую семью, ничего не зная о случившемся. «И сказал он: возьмите их живых. И взяли их живых, и закололи их», сорок два человека, «при колодезе Беф-Екеда, и не осталось из них ни одного». Паралипоменон рассказывает о том же без названия места."
+    - "Больше ничего не записано. Евсевий знал селение Бетакаф на Великой равнине, в пятнадцати римских милях от Легиона, лагеря у Мегиддо, и Бейт-Кад, деревня примерно в 6 км к востоку от Дженина на краю Изреельской долины, хранит что-то от имени и подходит к дороге; предлагали также Кафр-Раи в холмах к юго-западу. Ни то, ни другое не копали, и колодца из рассказа не нашли."
+scripture:
+  - 2Kgs.10.12-2Kgs.10.14
+  - 2Chr.22.8
+sources:
+  - "Eusebius, Onomasticon, s.v. Bethacath"
+  - "F.-M. Abel, Géographie de la Palestine, vol. 2 (1938)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+  - "M. Cogan and H. Tadmor, II Kings (Anchor Bible 11, 1988)"
+status: checked

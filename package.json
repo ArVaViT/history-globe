@@ -23,7 +23,8 @@
     "content": "node scripts/build-content.ts && node scripts/build-road-legs.ts && node scripts/build-text-places.ts && node scripts/build-pages.ts && node scripts/build-api.ts && node scripts/build-docs.ts",
     "e2e": "node e2e/flows.mjs",
     "e2e:a11y": "node e2e/a11y.mjs",
-    "sources": "node scripts/sources.ts"
+    "sources": "node scripts/sources.ts",
+    "licenses": "node scripts/third-party-licenses.ts"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",

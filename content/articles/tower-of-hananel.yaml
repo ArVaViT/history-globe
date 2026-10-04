@@ -1,0 +1,27 @@
+# Overview article (ADR 0007). Mainstream facts only; the tower is unlocated and its place at the later Antonia is given as the usual inference; the Synodal spelling varies between books, which the text notes.
+id: tower-of-hananel
+place: af58391
+title:
+  en: "Tower of Hananel"
+  ru: "Башня Хананела"
+body:
+  en:
+    - "The tower of Hananel stood in the north wall of Jerusalem, beside the tower of Meah (the Hundred) and between the Sheep Gate and the Fish Gate, on the north side of the city above the Temple, the side from which Jerusalem was most often attacked. The name means “God has been gracious” and may be that of its builder. Nothing of the tower is known from the ground; the prophets name it as the city's northern landmark, and most scholars put it at the rock that later carried the Hasmonean Baris and Herod's fortress Antonia, at the north-west corner of the Temple Mount. The Synodal Bible writes the name as Hananel in Nehemiah and as Anameil in Jeremiah and Zechariah."
+    - "Nehemiah's priests built the Sheep Gate and sanctified the wall “even unto the tower of Meah they sanctified it, unto the tower of Hananeel”, and at the dedication the second choir passed “the tower of Hananeel, and the tower of Meah, even unto the sheep gate”. The tower was older than Nehemiah: Jeremiah had promised that “the city shall be built to the LORD from the tower of Hananeel unto the gate of the corner”, measuring the restored Jerusalem from its north-east to its north-west corner, and Zechariah sees the city inhabited “from the tower of Hananeel unto the king's winepresses”, from its northern height to the royal gardens at its southern tip."
+    - "Herod rebuilt the Baris as the Antonia, which Josephus describes as a tower on a rock at the corner of the Temple courts; the Romans stormed it in AD 70. Today the scarp lies beneath the Umariya school on the Via Dolorosa, at its first station, by the north-west corner of the Haram esh-Sharif."
+  ru:
+    - "Башня Хананела стояла в северной стене Иерусалима, рядом с башней Меа («Сто») и между Овечьими и Рыбными воротами, на северной стороне города над Храмом, с той стороны, откуда на Иерусалим чаще всего нападали. Имя значит «Бог помиловал» и, возможно, принадлежало её строителю. Из земли о башне ничего не известно; пророки называют её северной межой города, и большинство учёных помещают её на скале, которая позже несла хасмонейскую Барис и крепость Ирода Антонию у северо-западного угла Храмовой горы. Синодальный перевод пишет имя как Хананел у Неемии и как Анамеил у Иеремии и Захарии."
+    - "Священники Неемии построили Овечьи ворота и освятили стену «от башни Меа освятили их до башни Хананела», а при освящении стены второй хор прошёл мимо «башни Хананела, и башни Меа, к Овечьим воротам». Башня старше Неемии: Иеремия обещал, что «город устроен будет во славу Господа от башни Анамеила до ворот угольных», отмеряя восстановленный Иерусалим от северо-восточного угла до северо-западного, а Захария видит город населённым «от башни Анамеила до царских точил» — от его северной высоты до царских садов у южной оконечности."
+    - "Ирод перестроил Барис в Антонию, которую Иосиф Флавий описывает как башню на скале у угла храмовых дворов; римляне взяли её штурмом в 70 году н. э. Сегодня этот скальный уступ лежит под школой Умария на Виа Долороза, у её первой остановки, возле северо-западного угла Харам-эш-Шариф."
+scripture:
+  - Neh.3.1
+  - Neh.12.39
+  - Jer.31.38
+  - Zech.14.10
+sources:
+  - "J. Simons, Jerusalem in the Old Testament: Researches and Theories (1952)"
+  - "H. G. M. Williamson, Ezra, Nehemiah (Word Biblical Commentary 16, 1985)"
+  - "Josephus, Antiquities 15.403; Jewish War 5.238-247 (the Baris and the Antonia)"
+  - "D. Bahat, The Illustrated Atlas of Jerusalem (1990)"
+  - "H. Geva (ed.), Ancient Jerusalem Revealed (1994)"
+status: checked

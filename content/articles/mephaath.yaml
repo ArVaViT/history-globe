@@ -1,0 +1,28 @@
+# Overview article (ADR 0007). Mainstream facts only; the mosaics prove the Roman and Byzantine Mefaa at Umm er-Rasas, and the doubt whether the Iron Age town stood there is named as such.
+id: mephaath
+place: a97cb23
+title:
+  en: "Mephaath"
+  ru: "Мефааф"
+body:
+  en:
+    - "Mephaath was a town on the Moabite plateau east of the Dead Sea, the Mishor, given to the tribe of Reuben with Jahaz and Kedemoth and then set aside, with its pasture lands, for the Levites of the family of Merari: “Kedemoth with her suburbs, and Mephaath with her suburbs”. By the time of Jeremiah it was Moabite again, and the prophet names it among the cities of the plain on which “judgment is come”, between Jahaz and Dibon. The Russian Bible there writes the name as Mofaf."
+    - "In the fourth century Eusebius knew Mephaath as a place where a Roman garrison watched the edge of the desert, and the late Roman army list, the Notitia Dignitatum, stations a cavalry unit at Mefa under the duke of Arabia. That fort is Umm er-Rasas, some 27 km south-east of Madaba: a walled camp of about 160 by 140 m with a town beside it, sixteen churches, and mosaic floors whose inscriptions call the place Kastron Mefaa. The mosaic of the church of St Stephen, laid in the eighth century, shows the cities of Palestine and Jordan; a 15 m tower outside the walls is usually taken for a stylite's pillar. UNESCO inscribed the site in 2004. Whether the Iron Age town of the Bible stood on the same spot is less certain; older scholars placed Mephaath at Tell Jawah or Khirbet Nefa'ah south of Amman on the strength of the name, but most now accept Umm er-Rasas."
+    - "Today Umm er-Rasas lies in central Jordan, a World Heritage Site on the open steppe, its churches roofed to protect the mosaics and its tower still standing."
+  ru:
+    - "Мефааф — город на Моавитском плато к востоку от Мёртвого моря, на равнине Мисор, отданный колену Рувимову вместе с Иаацей и Кедемофом, а затем выделенный с предместьями левитам из рода Мерари: «Кедемоф и предместья его, Мефааф и предместья его». Ко времени Иеремии он снова был моавитским, и пророк называет его среди городов равнины, на которые «суд пришел», между Иаацей и Дивоном. Русская Библия пишет там имя как Мофаф."
+    - "В IV веке Евсевий знал Мефааф как место, где римский гарнизон стерёг край пустыни, а позднеримский список войск, Notitia Dignitatum, ставит конный отряд в Мефе под началом дукса Аравии. Эта крепость — Умм-эр-Расас примерно в 27 км к юго-востоку от Мадабы: обнесённый стеной лагерь примерно 160 на 140 м с посёлком рядом, шестнадцать церквей и мозаичные полы, надписи на которых зовут место Кастрон Мефаа. Мозаика церкви святого Стефана, выложенная в VIII веке, показывает карту городов Палестины и Иордании; башню высотой 15 м за стенами обычно считают столпом столпника. ЮНЕСКО внесла памятник в список в 2004 году. Стоял ли на том же месте библейский город железного века, менее ясно; прежние учёные по созвучию имени помещали Мефааф в Телль-Джава или Хирбет-Нефаа к югу от Аммана; большинство теперь принимает Умм-эр-Расас."
+    - "Сегодня Умм-эр-Расас лежит в центральной Иордании — объект Всемирного наследия в открытой степи; церкви накрыты кровлей ради мозаик, а башня всё ещё стоит."
+scripture:
+  - Josh.13.18
+  - Josh.21.36-Josh.21.37
+  - 1Chr.6.78-1Chr.6.79
+  - Jer.48.21
+sources:
+  - "Eusebius, Onomasticon, s.v. Mephaath"
+  - "Notitia Dignitatum, Oriens (the dux Arabiae; Mefa)"
+  - "J. A. Dearman, 'The Levitical Cities of Reuben and Moabite Toponymy', Bulletin of the American Schools of Oriental Research 276 (1989)"
+  - "M. Piccirillo, The Mosaics of Jordan (1993)"
+  - "M. Piccirillo and E. Alliata, Umm al-Rasas Mayfa'ah I: Gli scavi del complesso di Santo Stefano (1994)"
+  - "UNESCO World Heritage List, Um er-Rasas (Kastrom Mefa'a), inscribed 2004"
+status: checked

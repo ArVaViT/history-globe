@@ -1,0 +1,23 @@
+# Overview article (ADR 0007). Mainstream facts only; "River" is the river of "Rehoboth by the river", not a name; the Euphrates reading and the Edomite wadis are given as the two lines of opinion, neither as fact.
+id: river
+place: a3bb384
+title:
+  en: "River"
+  ru: "Река"
+body:
+  en:
+    - "“River” here is not a name of its own: it is the river in the phrase “Rehoboth by the river”, the home of Saul (Shaul), one of the eight kings who, Genesis says, reigned in the land of Edom before Israel had a king. Genesis and Chronicles give the line of the list and say nothing more. In the Old Testament “the river” without a name is usually the Euphrates, and so the city was long sought far from Edom, at Rahaba on the middle Euphrates below the mouth of the Khabur; an Edomite king from so distant a town is hard to explain, unless he came to the throne from outside. Others keep Rehoboth in or near Edom and look for its river among the wadis of the plateau: the Zered (Wadi Hasa), Wadi Ghuwayr near Feinan, Wadi Rihab, or the Brook of Egypt on the western side. The map shows these candidates; none is proved."
+    - "Nothing is known of the city beyond the king's name, and nothing of the river beyond the word. The Edomite king list of Genesis 36 is itself undated: its kings do not succeed father to son and each comes from a different town, which suggests an early elective kingship, but no inscription names any of them. Today the Zered is the deep gorge of Wadi Hasa between the Karak and Tafila governorates of Jordan; Rahaba (ar-Rahba) is a ruined mediaeval castle above the Euphrates near Mayadin in Syria."
+  ru:
+    - "«Река» здесь не собственное имя: это река из слов о Сауле «из Реховофа, что при реке» — Реховоф был родиной Саула, одного из восьми царей, которые, по книге Бытия, царствовали в земле Едома прежде, чем у Израиля появился царь. Бытие и Паралипоменон приводят строку списка и больше ничего не говорят. В Ветхом Завете «река» без имени обычно означает Евфрат, и потому город долго искали далеко от Едома — в Рахабе на среднем Евфрате ниже устья Хавора; едомского царя из столь далёкого города трудно объяснить, разве что он пришёл к престолу извне. Другие оставляют Реховоф в Едоме или рядом с ним и ищут его реку среди вади плоскогорья: Заред (Вади-Хаса), Вади-Гувейр близ Файнана, Вади-Рихаб или Поток Египетский на западной стороне. На карте показаны эти варианты; ни один не доказан."
+    - "О городе не известно ничего, кроме имени царя, а о реке — ничего, кроме самого слова. Список едомских царей в 36-й главе Бытия сам не датирован: цари в нём не наследуют отцу, и каждый происходит из другого города, что говорит о ранней выборной власти, но ни одна надпись не называет никого из них. Сегодня Заред — глубокое ущелье Вади-Хаса между провинциями Эль-Карак и Эт-Тафила в Иордании; Рахаба (Эр-Рахба) — разрушенный средневековый замок над Евфратом близ Маядина в Сирии."
+scripture:
+  - Gen.36.31
+  - Gen.36.37
+  - 1Chr.1.48
+sources:
+  - "J. R. Bartlett, Edom and the Edomites (1989)"
+  - "C. Westermann, Genesis 12–36: A Commentary (English translation, 1985)"
+  - "F.-M. Abel, Géographie de la Palestine, vol. 2 (1938)"
+  - "A. Musil, Arabia Petraea, vol. 2: Edom (1907–1908)"
+status: checked

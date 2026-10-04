@@ -10,6 +10,9 @@ import {
   type PlaceLife,
   type PlacePhoto,
   type PleiadesLink,
+  placeName as nameOf,
+  pick,
+  formatRefOr,
 } from "@hg/model";
 import { ArrowLeft, MapPin, Ruler, X, ZoomIn } from "./icons";
 import { useEffect, useRef, useState } from "react";
@@ -41,14 +44,6 @@ function lifeYear(
   t: (key: string) => string,
 ): string {
   return `${y.approximate ? `${t("place.circa")} ` : ""}${formatYear(y.year, locale)}`;
-}
-
-function safeRef(osis: string, locale: Locale): string {
-  try {
-    return formatRef(osis, locale);
-  } catch {
-    return osis;
-  }
 }
 
 type PlaceTab = "story" | "time" | "people" | "sites" | "verses";
@@ -192,7 +187,7 @@ export function PlaceCard({
   const { t } = useTranslation();
   const lesson = useLesson(place.id, year);
   const ru = locale === "ru";
-  const title = ru ? (place.name_ru ?? place.name) : place.name;
+  const title = nameOf(place, locale);
   // Where it is today, in the reader's language, unless that only repeats the title
   // (Jordan River and Jordan are both «Иордан»).
   // In Russian an English line stands in only where it names something else (never «Argob»).
@@ -283,10 +278,12 @@ export function PlaceCard({
             <div className="mt-0.5 text-[12px] text-ink-soft">
               {place.name_ru_osis && (
                 // Where the Russian form is from, in full on hover and for screen readers.
-                <span title={t("place.synodal_from", { ref: safeRef(place.name_ru_osis, locale) })}>
-                  <span aria-hidden>{safeRef(place.name_ru_osis, locale)}</span>
+                <span
+                  title={t("place.synodal_from", { ref: formatRefOr(place.name_ru_osis, locale) })}
+                >
+                  <span aria-hidden>{formatRefOr(place.name_ru_osis, locale)}</span>
                   <span className="sr-only">
-                    {t("place.synodal_from", { ref: safeRef(place.name_ru_osis, locale) })}
+                    {t("place.synodal_from", { ref: formatRefOr(place.name_ru_osis, locale) })}
                   </span>
                 </span>
               )}
@@ -430,7 +427,7 @@ export function PlaceCard({
                 }}
                 className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
               >
-                {ru ? (p.name_ru ?? p.name) : p.name}
+                {nameOf(p, locale)}
               </button>
             </span>
           ))}
@@ -523,7 +520,7 @@ export function PlaceCard({
                       {personName(p, locale)}
                     </span>
                     <span className="shrink-0 text-[12px] text-ink-soft tabular-nums">
-                      {safeRef(h.verse, locale)}
+                      {formatRefOr(h.verse, locale)}
                     </span>
                   </button>
                 </li>
@@ -618,7 +615,7 @@ export function PlaceCard({
               {(allEvents ? events : events.slice(0, EVENTS_SHOWN)).map((e) => (
                 <li key={e.id} className="flex gap-2">
                   <span
-                    className={`${ru ? "w-[104px]" : "w-[72px]"} shrink-0 text-right text-[12px] whitespace-nowrap text-ink-soft tabular-nums`}
+                    className={`${locale === "en" ? "w-[72px]" : "w-[104px]"} shrink-0 text-right text-[12px] whitespace-nowrap text-ink-soft tabular-nums`}
                   >
                     {e.approximate ? `${t("place.circa")} ` : ""}
                     {formatYear(e.year, locale)}
@@ -635,7 +632,7 @@ export function PlaceCard({
                           rel="noopener noreferrer"
                           className="text-[12.5px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
                         >
-                          {safeRef(e.ref, locale)}
+                          {formatRefOr(e.ref, locale)}
                         </a>
                       </>
                     )}
@@ -666,7 +663,7 @@ export function PlaceCard({
               {battles.map((b) => (
                 <li key={b.id} className="flex gap-2">
                   <span
-                    className={`${ru ? "w-[104px]" : "w-[72px]"} shrink-0 text-right text-[12px] whitespace-nowrap text-ink-soft tabular-nums`}
+                    className={`${locale === "en" ? "w-[72px]" : "w-[104px]"} shrink-0 text-right text-[12px] whitespace-nowrap text-ink-soft tabular-nums`}
                   >
                     {b.approximate ? `${t("place.circa")} ` : ""}
                     {formatYear(b.year, locale)}
@@ -682,7 +679,7 @@ export function PlaceCard({
                           rel="noopener noreferrer"
                           className="text-[12.5px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
                         >
-                          {safeRef(b.ref, locale)}
+                          {formatRefOr(b.ref, locale)}
                         </a>
                       </>
                     )}
@@ -719,7 +716,7 @@ export function PlaceCard({
                       <button
                         key={o}
                         data-verse
-                        aria-label={safeRef(o, locale)}
+                        aria-label={formatRefOr(o, locale)}
                         aria-expanded={openVerse === o}
                         aria-controls={openVerse === o ? "verse-text" : undefined}
                         onClick={() => {
@@ -778,7 +775,7 @@ export function PlaceCard({
                   rel="noopener noreferrer"
                   className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
                 >
-                  {locale === "ru" ? q.ru : q.en}
+                  {pick(q, locale) ?? ""}
                   <span className="sr-only"> ({t("new_tab")})</span>
                 </a>
               </li>
@@ -832,7 +829,7 @@ function ArticleSection({ placeId, locale }: { placeId: string; locale: Locale }
   if (article === undefined) return <p className="px-5 pt-3 text-[13px] text-ink-soft">…</p>;
   if (article === null)
     return <p className="px-5 pt-3 text-[13px] text-ink-soft">{t("place.article_failed")}</p>;
-  const body = locale === "ru" ? article.body.ru : article.body.en;
+  const body = pick(article.body, locale) ?? [];
   return (
     <section className="px-5 pt-3">
       <div className="space-y-3 font-serif text-[16px] leading-[1.65] text-ink">
@@ -973,7 +970,8 @@ function VerseText({
       )}
       <figcaption className="mt-1 flex flex-wrap items-baseline gap-x-2 text-[12px] text-ink-soft">
         <span>
-          {safeRef(osis, locale)} · {t(locale === "ru" ? "place.verse_synodal" : "place.verse_kjv")}
+          {formatRefOr(osis, locale)} ·{" "}
+          {t(locale === "ru" ? "place.verse_synodal" : "place.verse_kjv")}
         </span>
         <a
           href={verseUrl(osis, locale)}
@@ -1031,7 +1029,7 @@ function byBook(
 ): { book: string; refs: { osis: string; cv: string }[] }[] {
   const groups: { book: string; refs: { osis: string; cv: string }[] }[] = [];
   for (const o of osis) {
-    const label = safeRef(o, locale);
+    const label = formatRefOr(o, locale);
     const cut = label.lastIndexOf(" ");
     const book = label.slice(0, cut);
     const cv = label.slice(cut + 1);
@@ -1071,7 +1069,6 @@ function AncientAuthors({ placeId, locale }: { placeId: string; locale: Locale }
     };
   }, [placeId]);
   if (mentions.length === 0) return null;
-  const ru = locale === "ru";
   return (
     <div className="px-5 pt-3 text-[13px] leading-snug">
       <h3 className="text-[12px] text-ink-soft">{t("place.ancient_authors")}</h3>
@@ -1084,11 +1081,11 @@ function AncientAuthors({ placeId, locale }: { placeId: string; locale: Locale }
               rel="noopener noreferrer"
               className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
             >
-              {ru ? m.author.ru : m.author.en}, <i>{ru ? m.work.ru : m.work.en}</i>{" "}
+              {pick(m.author, locale) ?? ""}, <i>{pick(m.work, locale) ?? ""}</i>{" "}
               {m.passage.replace(/-/g, "–")}
               <span className="sr-only"> ({t("new_tab")})</span>
             </a>
-            <span className="text-ink"> — {ru ? m.note.ru : m.note.en}</span>
+            <span className="text-ink"> — {pick(m.note, locale) ?? ""}</span>
           </li>
         ))}
       </ul>

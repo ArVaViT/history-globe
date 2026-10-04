@@ -1,0 +1,27 @@
+# Overview article (ADR 0007). Mainstream facts only; the place is unlocated and the candidates are given without choosing; the Egyptian etymology is reported as the common suggestion.
+id: etham
+place: a27d0e0
+title:
+  en: "Etham"
+  ru: "Ефам"
+body:
+  en:
+    - "Etham is the second station of the Exodus. Israel left Rameses for Succoth, and “they took their journey from Succoth, and encamped in Etham, in the edge of the wilderness”; from Etham they were told to turn back and camp before Pi-hahiroth, between Migdol and the sea. After the crossing they “went three days' journey in the wilderness of Etham”, which the book of Exodus calls the wilderness of Shur, the desert east of the Egyptian frontier toward Canaan. Etham therefore lay where the cultivated Delta ends and the desert begins, on the eastern edge of Egypt, somewhere along the line of the modern Suez Canal."
+    - "Where exactly is not known, and no site has been found. Many take the name to be the Egyptian word khetem, “fortress”: the pharaohs kept a line of forts on the eastern frontier, and papyri of the thirteenth century BC speak of the fortress of Tjeku, the district of Succoth, through which runaway slaves and Shasu nomads passed. On that reading Etham was a frontier post in the Wadi Tumilat, near Pithom (Tell er-Retaba) or at the Bitter Lakes beyond it. Others look to the north, to the great fortress of Tjaru at Tell Hebua by the old Pelusiac branch of the Nile, or to the ground near Qantara and Ismailia; the choice depends on which route one gives the Exodus, and the question is open."
+    - "The region is today the Ismailia governorate of Egypt, on both banks of the Suez Canal, with the desert of Sinai beyond; Lake Timsah and the Bitter Lakes lie along the old edge of the cultivated land."
+  ru:
+    - "Ефам — второй стан исхода. Израиль вышел из Раамсеса в Сокхоф, и «двинулись сыны Израилевы из Сокхофа и расположились станом в Ефаме, в конце пустыни»; из Ефама им было велено обратиться и стать пред Пи-Гахирофом, между Мигдолом и морем. Перейдя море, они «шли три дня пути пустынею Ефам», которую книга Исход называет пустыней Сур, — степью к востоку от египетской границы, в сторону Ханаана. Значит, Ефам лежал там, где кончается возделанная Дельта и начинается пустыня, на восточной окраине Египта, где-то по линии нынешнего Суэцкого канала."
+    - "Где именно — неизвестно, и никакого места не найдено. Многие видят в имени египетское слово хетем, «крепость»: фараоны держали на восточной границе цепь укреплений, и папирусы XIII века до н. э. говорят о крепости Чеку, области Сокхофа, через которую проходили беглые рабы и кочевники шасу. При таком чтении Ефам был пограничным постом в Вади-Тумилат, близ Пифома (Телль-эр-Ретаба) или у Горьких озёр за ним. Другие смотрят на север — к большой крепости Чару в Телль-Хабуа у древнего Пелузийского рукава Нила или к окрестностям Эль-Кантары и Исмаилии; выбор зависит от того, каким путём вести исход, и вопрос остаётся открытым."
+    - "Сегодня это египетская провинция Исмаилия по обоим берегам Суэцкого канала, за которым лежит Синайская пустыня; озеро Тимсах и Горькие озёра тянутся вдоль древнего края возделанной земли."
+scripture:
+  - Exod.13.20
+  - Exod.14.2
+  - Exod.15.22
+  - Num.33.5-Num.33.8
+sources:
+  - "Papyrus Anastasi V and VI (the fortress of Tjeku), in A. H. Gardiner, Late-Egyptian Miscellanies (1937)"
+  - "A. H. Gardiner, 'The Geography of the Exodus: An Answer to Professor Naville and Others', Journal of Egyptian Archaeology 10 (1924)"
+  - "E. Naville, The Store-City of Pithom and the Route of the Exodus (1885)"
+  - "J. K. Hoffmeier, Ancient Israel in Sinai: The Evidence for the Authenticity of the Wilderness Tradition (2005)"
+  - "K. A. Kitchen, On the Reliability of the Old Testament (2003)"
+status: checked

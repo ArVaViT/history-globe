@@ -1,0 +1,25 @@
+# Overview article (ADR 0007). Mainstream facts only; the location depends on the route of the exodus, itself disputed, and the map's candidates are given without choosing one.
+id: elim
+place: a2410c1
+title:
+  en: "Elim"
+  ru: "Елим"
+body:
+  en:
+    - "Elim was the oasis where Israel rested after the crossing of the sea and the bitter water of Marah: “they came to Elim, where were twelve wells of water, and threescore and ten palm trees: and they encamped there by the waters”. The itinerary in Numbers repeats the twelve springs and seventy palms, and adds that from Elim they “encamped by the Red sea” before entering the wilderness of Sin, “which is between Elim and Sinai”, on the fifteenth day of the second month after leaving Egypt. The name means “great trees” or “terebinths”; later readers made the twelve springs the tribes and the seventy palms the elders."
+    - "Where it lay depends on the route of the exodus, which is disputed, and the map keeps the candidates. On the usual southern route down the west coast of the Sinai peninsula, Edward Robinson in 1838 chose Wadi Gharandal, about 90 km south-east of Suez, where springs, tamarisks and palms still make the first real oasis south of the Suez plain, and most atlases have followed him. Others name Uyun Musa, the Springs of Moses just south of Suez, sometimes taken for Marah; Byzantine tradition set Elim at Raithou, the palm oasis of el-Tor far down the coast; and Wadi ar-Raynah has also been proposed. Those who take Israel across the north of the peninsula look elsewhere again. Nothing can be dug up to decide it: an oasis leaves no walls."
+    - "Wadi Gharandal today is a stop on the Suez–Sharm el-Sheikh road in Egypt's South Sinai governorate, a green strip of palms and reeds between the desert and the Gulf of Suez."
+  ru:
+    - "Елим — оазис, где Израиль отдохнул после перехода через море и горькой воды Мерры: «И пришли в Елим; там было двенадцать источников воды и семьдесят финиковых дерев, и расположились там станом при водах». Перечень станов в книге Чисел повторяет двенадцать источников и семьдесят пальм и прибавляет, что из Елима они «расположились станом у Чермного моря», прежде чем войти в пустыню Син, «что между Елимом и между Синаем», в пятнадцатый день второго месяца по выходе из Египта. Имя значит «большие деревья» или «теревинфы»; позднейшие читатели видели в двенадцати источниках колена, а в семидесяти пальмах — старейшин."
+    - "Где он лежал, зависит от пути исхода, который спорен, и карта хранит кандидатов. На обычном южном пути вдоль западного берега Синайского полуострова Эдвард Робинсон в 1838 году выбрал Вади-Гарандаль, примерно в 90 км к юго-востоку от Суэца, где источники, тамариски и пальмы до сих пор образуют первый настоящий оазис к югу от Суэцкой равнины, и большинство атласов пошли за ним. Другие называют Уюн-Муса, Источники Моисея сразу к югу от Суэца, которые иногда принимают за Мерру; византийское предание помещало Елим в Раифу, пальмовый оазис Эт-Тура далеко вниз по берегу; предлагали и Вади-ар-Райну. Те, кто ведёт Израиль через север полуострова, ищут снова в другом месте. Раскопки тут ничего не решат: оазис не оставляет стен."
+    - "Вади-Гарандаль сегодня — остановка на дороге Суэц — Шарм-эш-Шейх в египетской мухафазе Южный Синай, зелёная полоса пальм и тростника между пустыней и Суэцким заливом."
+scripture:
+  - Exod.15.27
+  - Exod.16.1
+  - Num.33.9-Num.33.10
+sources:
+  - "E. Robinson, Biblical Researches in Palestine, Mount Sinai and Arabia Petraea, vol. 1 (1841)"
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "J. K. Hoffmeier, Ancient Israel in Sinai: The Evidence for the Authenticity of the Wilderness Tradition (2005)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

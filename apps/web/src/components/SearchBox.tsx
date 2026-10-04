@@ -7,6 +7,11 @@ import {
   medianYear,
   parseChapter,
   type Locale,
+  placeName,
+  isYearInput,
+  parseYearInput,
+  pick,
+  namesOf,
 } from "@hg/model";
 import { useEffect, useMemo, useState, type RefObject } from "react";
 import { useTranslation } from "../i18n";
@@ -14,7 +19,6 @@ import { chapterFocus, type ChapterFocus } from "../chapter";
 import { DATA_URL, foldName, searchPlaces, type LoadedData, type PlaceProps } from "../data";
 import { loadPeople, peopleNow, personName, type People } from "../people";
 import { Panel } from "./Panel";
-import { parseYearInput } from "./Timeline";
 
 /**
  * Two names that are the same words in other cases («Город Давидов», «Город Давида»):
@@ -74,10 +78,6 @@ type AncientFile = {
   }[];
 };
 
-/** A query that is a year and nothing else: "586 до н. э.", "30 г. н. э.", "AD 30", "-586". */
-const YEAR_ONLY =
-  /^\s*(ad\s*)?-?\d{1,4}\s*(г\.?|год[а-я]*)?\s*(до\s*н\.?\s*э\.?|н\.?\s*э\.?|b\.?\s*c\.?\s*e?\.?|a\.?\s*d\.?)?\s*$/i;
-
 /**
  * The search in the header, in the title's place: the field on the header's line and the
  * results dropping below it, over the column. Esc or a choice gives the title back.
@@ -131,12 +131,7 @@ export function SearchBox({
   // "Деян 16": the places whose verses include that chapter, offered above the names.
   // A place's own name before the number («Иерусалим 1», "Jericho 6") is not a book.
   const placeNames = useMemo(
-    () =>
-      new Set(
-        [...data.byId.values()].flatMap(({ props }) =>
-          [props.name, props.name_ru ?? ""].map(foldName),
-        ),
-      ),
+    () => new Set([...data.byId.values()].flatMap(({ props }) => namesOf(props).map(foldName))),
     [data],
   );
   const chapter = useMemo(() => {
@@ -147,7 +142,7 @@ export function SearchBox({
   }, [data, query, i18n.language, placeNames]);
   // A year typed on its own, inside the map's range: offered first, as a chapter is.
   const year = useMemo(() => {
-    if (chapter || !YEAR_ONLY.test(query)) return null;
+    if (chapter || !isYearInput(query)) return null;
     const y = parseYearInput(query);
     return y !== null && y >= YEAR_MIN && y <= YEAR_MAX ? y : null;
   }, [chapter, query]);
@@ -233,7 +228,7 @@ export function SearchBox({
                 ? `search-tour-${tourAt(active)?.id ?? ""}`
                 : undefined;
   const open = query.trim().length >= 2;
-  const nameOf = (p: PlaceProps) => (ru ? (p.name_ru ?? p.name) : p.name);
+  const nameOf = (p: PlaceProps) => placeName(p, i18n.language);
 
   const choose = (id: string) => {
     onSelect(id);
@@ -476,7 +471,9 @@ export function SearchBox({
                   }}
                   className={`flex cursor-pointer items-baseline justify-between gap-3 px-4 py-1.5 ${j === 0 && results.length + persons.length > 0 ? "border-t border-line" : ""} ${i === active ? "bg-paper-2" : ""}`}
                 >
-                  <span className="font-serif text-[15px] text-ink">{ru ? site.ru : site.en}</span>
+                  <span className="font-serif text-[15px] text-ink">
+                    {pick({ en: site.en, ru: site.ru }, i18n.language) ?? site.en}
+                  </span>
                   <span className="truncate text-xs text-ink-soft">
                     {/* When it stood says more than "capital" (of what?) and sets it
                         apart from the Bible's places, which have no span here. */}
