@@ -1,0 +1,27 @@
+id: where-was-paul-stoned
+question:
+  en: "Where was Paul stoned?"
+  ru: "Где Павла побили камнями?"
+answer:
+  en:
+    - "Paul was stoned at Lystra, a small Roman colony in Lycaonia, the high plain of central Asia Minor, about 33 km south-west of Iconium (today's Konya) in a straight line; the map point stands on the mound by the village of Hatunsaray in Turkey. Derbe, where he went the next day, was about 95 km further east, and Pisidian Antioch, from which his enemies followed him, about 128 km to the north-west."
+    - "Paul and Barnabas had fled there from Iconium. When Paul healed a man lame from birth, the crowd “lifted up their voices, saying in the speech of Lycaonia, The gods are come down to us in the likeness of men”, took Barnabas for Zeus and Paul for Hermes, and the priest of Zeus brought oxen to sacrifice. Then “there came thither certain Jews from Antioch and Iconium, who persuaded the people, and, having stoned Paul, drew him out of the city, supposing he had been dead. Howbeit, as the disciples stood round about him, he rose up, and came into the city: and the next day he departed with Barnabas to Derbe.” Paul came back to Lystra on the same journey and again on the next, when he took Timothy, a native of the town, as his companion; years later he reminded Timothy of the persecutions “at Antioch, at Iconium, at Lystra”."
+    - "Lystra was found in 1885, when the American J. R. S. Sterrett read a Latin inscription on the mound naming the colony Lustra; Augustus had settled veterans there about 25 BC. Inscriptions from the district record priests of Zeus and a statue of Hermes dedicated to Zeus, so Luke's pair of gods matches the local cult, and Ovid's tale of Zeus and Hermes visiting Baucis and Philemon in the guise of men is set in neighbouring Phrygia. Systematic excavation of the mound began only in 2024, by a team from Necmettin Erbakan University in Konya."
+  ru:
+    - "Павла побили камнями в Листре, небольшой римской колонии в Ликаонии, на высоком плато в центре Малой Азии, примерно в 33 км к юго-западу от Иконии (нынешней Коньи) по прямой; точка карты стоит на холме у турецкой деревни Хатунсарай. Дервия, куда он ушёл на следующий день, лежала примерно в 95 км дальше на восток, а Антиохия Писидийская, откуда за ним пришли враги, — примерно в 128 км к северо-западу."
+    - "Павел и Варнава бежали сюда из Иконии. Когда Павел исцелил хромого от рождения, народ «возвысил свой голос, говоря по-ликаонски: боги в образе человеческом сошли к нам», Варнаву приняли за Зевса, Павла — за Гермеса, и жрец Зевса привёл волов для жертвы. Затем «из Антиохии и Иконии пришли некоторые Иудеи… И, возбудив народ, побили Павла камнями и вытащили за город, почитая его умершим. Когда же ученики собрались около него, он встал и пошел в город, а на другой день удалился с Варнавою в Дервию». Павел вернулся в Листру в то же путешествие и снова в следующее, когда взял в спутники Тимофея, уроженца этого города; годы спустя он напоминал Тимофею о гонениях «в Антиохии, Иконии, Листрах»."
+    - "Листру нашли в 1885 году, когда американец Дж. Р. С. Стеррет прочёл на холме латинскую надпись с именем колонии — Лустра; Август поселил здесь ветеранов около 25 г. до н. э. Надписи округи упоминают жрецов Зевса и статую Гермеса, посвящённую Зевсу, так что пара богов у Луки совпадает с местным культом, а рассказ Овидия о том, как Зевс и Гермес в образе людей пришли к Филемону и Бавкиде, разворачивается в соседней Фригии. Систематические раскопки холма начались лишь в 2024 году — их ведёт Университет Неджметтина Эрбакана в Конье."
+map:
+  place: af0719d
+  year: "AD 48"
+  ref: Acts.14.19
+scripture: [Acts.14.6-Acts.14.20, Acts.16.1-Acts.16.2, 2Tim.3.11]
+sources:
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "J. R. S. Sterrett, The Wolfe Expedition to Asia Minor (1888), the inscription naming the colony Lustra"
+  - "W. M. Calder, 'Zeus and Hermes at Lystra', The Expositor, 7th series, 10 (1910)"
+  - "Ovid, Metamorphoses 8.611-724 (Baucis and Philemon)"
+  - "C. K. Barrett, The Acts of the Apostles (ICC), vol. 1 (1994), on Acts 14:6-20"
+  - "B. Levick, Roman Colonies in Southern Asia Minor (1967)"
+  - "Lystra excavations (Necmettin Erbakan University, from 2024), directed by İ. M. Mimiroğlu"
+status: checked

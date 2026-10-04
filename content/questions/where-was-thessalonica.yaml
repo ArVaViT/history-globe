@@ -1,0 +1,25 @@
+id: where-was-thessalonica
+question:
+  en: "Where was Thessalonica?"
+  ru: "Где находилась Фессалоника?"
+answer:
+  en:
+    - "Thessalonica is the city of Thessaloniki in northern Greece, at the head of the Thermaic Gulf; the map point stands on it. It was the capital of the Roman province of Macedonia and lay on the Via Egnatia, the road from the Adriatic to Byzantium, about 120 km west of Philippi and 64 km from Berea in a straight line; Athens, which Paul reached by way of Berea and the sea, was about 300 km to the south."
+    - "Paul came along the Egnatian road: “when they had passed through Amphipolis and Apollonia, they came to Thessalonica, where was a synagogue of the Jews”, and for three sabbaths he argued there from the scriptures. A mob dragged his host Jason “unto the rulers of the city, crying, These that have turned the world upside down are come hither also”, and accused the preachers of “saying that there is another king, one Jesus”. Luke's word for the rulers, politarchs, was once thought his mistake; it has since turned up in more than thirty inscriptions of Macedonia, one of them on the city's Vardar Gate, now in the British Museum, naming the politarchs of Thessalonica. The church Paul left behind received his earliest surviving letter, and its faith “sounded out… not only in Macedonia and Achaia, but also in every place”."
+    - "Cassander founded the city about 315 BC, gathering the people of the villages around the gulf, and named it for his wife Thessalonike, Alexander the Great's half-sister. Rome made it the seat of the province in 146 BC and a free city after the battle of Philippi in 42 BC, which is why it was governed by its own magistrates and not by a Roman garrison. Unlike Philippi it never fell empty, so the ancient city lies under the modern one; the Roman forum, with its odeon, was excavated in the 1960s in the city centre."
+  ru:
+    - "Фессалоника — это город Салоники на севере Греции, в глубине Термического залива; точка карты стоит на нём. Это была столица римской провинции Македония, и она лежала на Эгнатиевой дороге, ведущей от Адриатики к Византию, примерно в 120 км к западу от Филипп и в 64 км от Верии по прямой; Афины, куда Павел попал через Верию и морем, лежали примерно в 300 км к югу."
+    - "Павел пришёл по Эгнатиевой дороге: «Прошедши через Амфиполь и Аполлонию, они пришли в Фессалонику, где была Иудейская синагога», и три субботы говорил там из Писаний. Толпа повлекла его хозяина Иасона «к городским начальникам, крича, что эти всесветные возмутители пришли и сюда», и обвинила проповедников в том, что они почитают «другого царем, Иисуса». Слово Луки для начальников — политархи — когда-то считали его ошибкой; с тех пор оно найдено более чем в тридцати надписях Македонии, одна из них — с городских Вардарских ворот, ныне в Британском музее, — называет политархов Фессалоники. Церковь, которую оставил Павел, получила самое раннее из его сохранившихся посланий, и от неё «пронеслось слово Господне не только в Македонии и Ахаии, но и во всяком месте»."
+    - "Кассандр основал город около 315 г. до н. э., собрав жителей селений вокруг залива, и назвал его в честь жены Фессалоники, единокровной сестры Александра Великого. Рим сделал его центром провинции в 146 г. до н. э. и свободным городом после битвы при Филиппах в 42 г. до н. э. — потому им правили собственные магистраты, а не римский гарнизон. В отличие от Филипп, он никогда не пустел, так что древний город лежит под современным; римский форум с одеоном раскопали в 1960-х годах в центре города."
+map:
+  place: afa9d8e
+  year: "AD 50"
+  ref: Acts.17.1
+scripture: [Acts.17.1-Acts.17.9, 1Thess.1.1, 1Thess.1.8, Phil.4.16, Acts.20.4, 2Tim.4.10]
+sources:
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Strabo, Geography 7, fragments 21 and 24 (Cassander's foundation and the name)"
+  - "The Vardar Gate inscription of the politarchs of Thessalonica, British Museum"
+  - "G. H. R. Horsley, 'The Politarchs', in D. W. J. Gill and C. Gempf (eds.), The Book of Acts in Its Graeco-Roman Setting (1994)"
+  - "C. vom Brocke, Thessaloniki, Stadt des Kassander und Gemeinde des Paulus (2001)"
+status: checked

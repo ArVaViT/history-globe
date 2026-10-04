@@ -1,0 +1,36 @@
+# Overview article (ADR 0007). Mainstream facts only; the location is unknown and the candidates are given without choosing one.
+id: ophir
+place: a104820
+title:
+  en: "Ophir"
+  ru: "Офир"
+body:
+  en:
+    - "Ophir is the land of gold in the Old Testament, reached by ship from Ezion-geber at the head of the Gulf of Aqaba. Where it lay has never been settled. The table of nations puts Ophir among the sons of Joktan, between Sheba and Havilah, which points to Arabia, and many scholars look for it on the south-western coast of the peninsula, in the Yemen, or across the straits on the African shore, the Punt of Egyptian voyages. Others have sent Solomon's ships farther: Josephus placed Ophir in India, and later writers named Sri Lanka, Goa and Sofala in Mozambique."
+    - "The Spaniards who found the Solomon Islands in 1568 named them in the hope that they had found Ophir, and Karl Mauch in 1871 took Great Zimbabwe for Solomon's mines. No inscription names the land. An eighth-century ostracon from Tell Qasile near Tel Aviv, however, reads “gold of Ophir to Beth-horon, thirty shekels”, so, if the ostracon is genuine, as most hold, the phrase was a merchant's term for a known kind of gold."
+    - "Kings tells how Hiram of Tyre sent sailors “that had knowledge of the sea” to man Solomon's fleet at Ezion-geber: “they came to Ophir, and fetched from thence gold, four hundred and twenty talents” (Chronicles says 450), and with the gold “great plenty of almug trees, and precious stones”, from which the king made pillars for the Temple and harps for the singers. A century later Jehoshaphat “made ships of Tharshish to go to Ophir for gold: but they went not; for the ships were broken at Ezion-geber”."
+    - "Elsewhere the name is a byword for the finest gold. David gave for the Temple “three thousand talents of gold, of the gold of Ophir”; Job's friend tells him to lay up “the gold of Ophir as the stones of the brooks”, and wisdom “cannot be valued with the gold of Ophir”; the king's bride in Psalm 45 stands at his right hand “in gold of Ophir”; and Isaiah says the Lord will make a man more precious “than the golden wedge of Ophir”. The app marks south-western Arabia as the likeliest region and shows the other candidates beside it."
+  ru:
+    - "Офир — страна золота в Ветхом Завете, куда плавали на кораблях из Ецион-Гавера в вершине залива Акаба. Где она лежала, так и не установлено. Таблица народов помещает Офира среди сыновей Иоктана, между Шевой и Хавилой, а это указывает на Аравию, и многие учёные ищут его на юго-западном побережье полуострова, в Йемене, или за проливом на африканском берегу, в Пунте египетских плаваний. Другие отправляли корабли Соломона дальше: Иосиф Флавий помещал Офир в Индии, а позднейшие авторы называли Шри-Ланку, Гоа и Софалу в Мозамбике."
+    - "Испанцы, открывшие в 1568 г. Соломоновы острова, назвали их так в надежде, что нашли Офир, а Карл Маух в 1871 г. принял Большой Зимбабве за копи Соломона. Ни одна надпись не называет эту страну. Однако остракон VIII века до н. э. из Телль-Касиле близ Тель-Авива гласит: «золото Офира для Беф-Орона, тридцать сиклей», — значит, если остракон подлинный, как считает большинство, выражение было купеческим обозначением известного сорта золота."
+    - "Третья книга Царств рассказывает, как Хирам Тирский прислал на флот Соломона в Ецион-Гавере «корабельщиков, знающих море»: «и отправились они в Офир, и взяли оттуда золота четыреста двадцать талантов» (по Паралипоменон — четыреста пятьдесят), а вместе с золотом «великое множество красного дерева и драгоценных камней», из которых царь сделал перила для Храма и гусли для певцов. Веком позже Иосафат «сделал корабли на море, чтобы ходить в Офир за золотом; но они не дошли, ибо разбились в Ецион-Гавере»."
+    - "В других местах это имя — синоним лучшего золота. Давид дал на Храм «три тысячи талантов золота, золота Офирского»; друг Иова советует ему вменять «в камни потоков — золото Офирское», а о мудрости сказано: «не оценивается она золотом Офирским»; невеста царя в 44-м псалме стоит одесную его «в Офирском золоте»; Исаия говорит, что Господь сделает мужей «дороже золота Офирского». Приложение отмечает юго-западную Аравию как самую вероятную область и показывает рядом другие варианты."
+scripture:
+  - Gen.10.29
+  - 1Kgs.9.26-1Kgs.9.28
+  - 1Kgs.10.11-1Kgs.10.12
+  - 1Kgs.22.48
+  - 1Chr.29.4
+  - 2Chr.8.18
+  - 2Chr.9.10
+  - Job.22.24
+  - Job.28.16
+  - Ps.45.9
+  - Isa.13.12
+sources:
+  - "Josephus, Antiquities 8.164 (Ophir in India)"
+  - "B. Maisler (Mazar), “Two Hebrew Ostraca from Tell Qasile”, Journal of Near Eastern Studies 10 (1951)"
+  - "D. W. Baker, “Ophir”, Anchor Bible Dictionary 5 (1992)"
+  - "K. A. Kitchen, “Sheba and Arabia”, in L. K. Handy (ed.), The Age of Solomon (1997)"
+  - "K. Mauch, The Journals of Carl Mauch: His Travels in the Transvaal and Rhodesia, 1869-1872 (1969)"
+status: checked

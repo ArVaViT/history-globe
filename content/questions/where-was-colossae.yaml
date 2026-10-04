@@ -1,0 +1,27 @@
+id: where-was-colossae
+question:
+  en: "Where was Colossae?"
+  ru: "Где находились Колоссы?"
+answer:
+  en:
+    - "Colossae stood in the valley of the Lycus in Phrygia, in the south-west of Asia Minor, about 170 km east of Ephesus in a straight line; the map point stands on its mound near the town of Honaz in Turkey, under the mountain of the same name. Its two neighbours in the letter were close by: Laodicea 14 km down the valley to the west, and Hierapolis, with its hot springs and white terraces, 19 km to the north-west."
+    - "Paul wrote “To the saints and faithful brethren in Christ which are at Colosse”, but had never been there: he speaks of his struggle for them and for those at Laodicea, “as many as have not seen my face in the flesh”. The church had been founded by Epaphras, “who is one of you”, and the letter travelled with Onesimus, also “one of you”, the runaway slave of Philemon, whose house church was in the same town. Paul asked that the letter be read at Laodicea too, and the Laodicean letter at Colossae, so the three churches of the valley were one circle."
+    - "Herodotus calls Colossae “a great city of Phrygia” where Xerxes halted in 481 BC, and Xenophon found it “populous, prosperous and large” eighty years later, on the road east from Sardis. By Strabo's day it was a small town overshadowed by Laodicea, though its wool, dyed a colour named after the town, was still prized. An earthquake shook the valley in AD 60, in the reign of Nero; Tacitus records that Laodicea rebuilt itself without help from Rome and does not mention Colossae, and the town faded in the Byzantine period, its people moving to Chonai on the slope above. Long left unexcavated, unlike its neighbours, the mound was surveyed by Pamukkale University from 2021, and the first excavations began there in 2025."
+  ru:
+    - "Колоссы стояли в долине Лика во Фригии, на юго-западе Малой Азии, примерно в 170 км к востоку от Ефеса по прямой; точка карты стоит на его холме у турецкого города Хоназ, под одноимённой горой. Оба соседа, названные в послании, были рядом: Лаодикия — в 14 км вниз по долине на запад, а Иераполь с его горячими источниками и белыми террасами — в 19 км к северо-западу."
+    - "Павел писал «находящимся в Колоссах святым и верным братиям во Христе», но сам там не бывал: он говорит о своём подвиге ради них и ради тех, кто в Лаодикии, «и ради всех, кто не видел лица моего в плоти». Церковь основал Епафрас, «ваш», а послание шло с Онисимом, тоже «от вас», — беглым рабом Филимона, чья домашняя церковь была в том же городе. Павел просил прочесть послание и в Лаодикии, а лаодикийское — в Колоссах, так что три церкви долины составляли один круг."
+    - "Геродот называет Колоссы «большим городом Фригии», где Ксеркс останавливался в 481 г. до н. э., а Ксенофонт восемьдесят лет спустя нашёл их «многолюдными, богатыми и большими», на дороге из Сардиса на восток. Ко времени Страбона это был городок в тени Лаодикии, хотя его шерсть, крашенная в цвет, названный по городу, ещё ценилась. В 60 году, при Нероне, долину потрясло землетрясение; Тацит пишет, что Лаодикия отстроилась без помощи Рима, а Колоссы не упоминает, и в византийское время город угас — жители перебрались в Хоны на склоне выше. В отличие от соседей, холм долго не раскапывали; с 2021 года его обследовал Университет Памуккале, а в 2025 году там начались первые раскопки."
+map:
+  place: a4e5a69
+  year: "AD 60"
+  ref: Col.1.2
+scripture: [Col.1.2, Col.2.1, Col.4.9, Col.4.12-Col.4.13, Col.4.16, Phlm.1.1-Phlm.1.2, Phlm.1.10]
+sources:
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Herodotus, Histories 7.30 (Xerxes at Colossae)"
+  - "Xenophon, Anabasis 1.2.6 (Cyrus at Colossae)"
+  - "Strabo, Geography 12.8.13 (Laodicea and the small town of Colossae)"
+  - "Tacitus, Annals 14.27 (the earthquake at Laodicea)"
+  - "A. H. Cadwallader and M. Trainor (eds.), Colossae in Space and Time: Linking to an Ancient City (2011)"
+  - "Pamukkale University, Colossae Archaeological Survey (from 2021) and excavations (from 2025), directed by B. Yener"
+status: checked

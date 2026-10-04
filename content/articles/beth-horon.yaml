@@ -1,0 +1,34 @@
+# Overview article (ADR 0007). Mainstream facts only; written for the pair of towns and the pass, the lower town having its own article; no absolute dates are given for Joshua or Saul; Sanballat's origin is given as a suggestion.
+id: beth-horon
+place: a75b45e
+title:
+  en: "Beth-horon"
+  ru: "Беф-Орон"
+body:
+  en:
+    - "Beth-horon was a pair of towns, Upper and Lower, on the ridge that climbs from the valley of Aijalon to the plateau of Gibeon, 17 to 19 km north-west of Jerusalem; the villages of Beit Ur al-Fauqa and Beit Ur al-Tahta, some 3 km apart and about 200 m different in height, keep the name and the sites. The road between them, “the way that goeth up to Beth-horon” and “the going down to Beth-horon”, was the easiest way from the coast into the hills, and for that reason armies came this way for two thousand years. Joshua counts Beth-horon among the Levitical cities of Ephraim, the border of Ephraim and Benjamin passed by it, and the Chronicler says that Sherah, a daughter of Ephraim, built both towns."
+    - "The first battle here is Joshua's. When the five Amorite kings fled from Gibeon, Israel “chased them along the way that goeth up to Beth-horon”, and “in the going down to Beth-horon” the LORD “cast down great stones from heaven upon them unto Azekah”, so that more died by the hail than by the sword; it was the day the sun stood still over Gibeon. In Saul's war a Philistine raiding party “turned the way to Beth-horon”. Solomon fortified Lower Beth-horon with Gezer, and Chronicles adds the upper town, “fenced cities, with walls, gates, and bars”; Shishak's list at Karnak of the towns he took about 925 BC includes Beth-horon. The Israelite soldiers Amaziah sent home raided the cities of Judah “from Samaria even unto Beth-horon”. Sanballat the Horonite, Nehemiah's enemy, may have taken his name from here."
+    - "Judas Maccabeus won his first victory in the open on the ascent of Beth-horon, routing the Seleucid commander Seron about 166 BC; Bacchides later fortified the town. In November AD 66 the legate of Syria, Cestius Gallus, retreating from Jerusalem, was caught on the descent of Beth-horon by the Jewish rebels and lost his siege engines, his baggage and thousands of men, the disaster that opened the war with Rome. Eusebius knew two villages called Bethoron about twelve miles from Jerusalem on the road to Nicopolis. Today the two villages are Palestinian, in the West Bank; the Israeli settlement Beit Horon, founded in 1977, lies between them, and Route 443 follows the old road."
+  ru:
+    - "Беф-Орон — пара городов, Верхний и Нижний, на гребне, поднимающемся из долины Аиалонской к плато Гаваона, в 17–19 км к северо-западу от Иерусалима; деревни Бейт-Ур-эль-Фаука и Бейт-Ур-эт-Тахта, в 3 км одна от другой и с разницей высот около 200 м, сохранили имя и места. Дорога между ними, «по дороге к возвышенности Вефорона» и «по скату горы Вефоронской», как говорит книга Иисуса Навина, была самым удобным путём с побережья в горы, и потому войска шли здесь две тысячи лет. Книга Иисуса Навина числит Беф-Орон среди левитских городов Ефрема, граница Ефрема и Вениамина проходила мимо него, а летописец говорит, что оба города построила Шеера, дочь Ефрема."
+    - "Первая битва здесь — битва Иисуса Навина. Когда пять царей Аморрейских бежали от Гаваона, Израильтяне преследовали их «по дороге к возвышенности Вефорона», а когда те бежали «по скату горы Вефоронской, Господь бросал на них с небес большие камни града до самого Азека», так что от града погибло больше, чем от меча; в тот день солнце стояло над Гаваоном. В войну Саула филистимский отряд «направился по дороге Вефоронской». Соломон укрепил нижний Беф-Орон вместе с Газером, а Паралипоменон добавляет верхний город: «города укрепленные, со стенами, воротами и запорами»; список Сусакима в Карнаке, около 925 г. до н. э., называет Беф-Орон среди взятых им городов. Воины Израиля, отосланные Амасией, разорили города Иудеи «от Самарии до Вефорона». Санаваллат Хоронит, враг Неемии, возможно, носил имя по этому месту."
+    - "Иуда Маккавей одержал первую победу в открытом поле на подъёме Вефорона, разбив селевкидского военачальника Сирона около 166 г. до н. э.; позже Вакхид укрепил город. В ноябре 66 г. н. э. легат Сирии Цестий Галл, отступая от Иерусалима, был настигнут на спуске Вефорона иудейскими повстанцами и потерял осадные машины, обоз и тысячи людей — беда, с которой началась война с Римом. Евсевий знал два селения Веторон примерно в двенадцати милях от Иерусалима по дороге в Никополь. Сегодня обе деревни палестинские, на Западном берегу; между ними лежит израильское поселение Бейт-Хорон, основанное в 1977 г., а шоссе 443 идёт по старой дороге."
+scripture:
+  - Josh.10.10-Josh.10.12
+  - Josh.16.3-Josh.16.5
+  - Josh.18.13-Josh.18.14
+  - Josh.21.22
+  - 1Sam.13.18
+  - 1Kgs.9.17
+  - 1Chr.7.24
+  - 2Chr.8.5
+  - 2Chr.25.13
+  - Neh.2.10
+sources:
+  - "1 Maccabees 3.13-24 (Seron); 9.50 (Bacchides)"
+  - "Josephus, Jewish War 2.546-555 (the retreat of Cestius Gallus)"
+  - "Eusebius, Onomasticon, s.v. Bethoron"
+  - "Shoshenq I, the Bubastite Portal reliefs at Karnak (the list of conquered towns)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+  - "D. A. Dorsey, The Roads and Highways of Ancient Israel (1991)"
+status: checked

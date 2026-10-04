@@ -114,3 +114,13 @@ export function localizeCitation(text: string, locale: Locale): string {
   for (const [re, ru] of WORKS_RU) out = out.replace(re, ru);
   return out;
 }
+
+/** A list of sources as a reader of `locale` reads them: the build's Russian where it has it. */
+export function sourcesOf(
+  x: { readonly sources: readonly string[]; readonly sources_ru?: readonly string[] },
+  locale: Locale,
+): string[] {
+  return locale === "ru" && x.sources_ru
+    ? [...x.sources_ru]
+    : x.sources.map((s) => localizeCitation(s, locale));
+}

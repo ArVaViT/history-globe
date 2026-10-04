@@ -15,10 +15,10 @@ Persia; state borders by year from 3500 BC to AD 1300; 1288 biblical places with
 Russian (Synodal) names, disputed locations with their candidate sites, where each is
 today and the years it stood; 329 dated events and 57 battles; 2153 people of the Bible
 with their families (STEP Bible TIPNR, every tie read against the text); 553 sites of the
-ancient world around it; Roman roads (Itiner-e). 46 tours with walking days along the
-roads and the relief of each leg; 155 place articles, 62 question pages and 80
-ancient-author notes, 140 photos — each checked against its sources by an independent
-pass.
+ancient world around it; Roman roads (Itiner-e). 54 tours with walking days along the
+roads and the relief of each leg; 309 place articles, 100 question pages and 80
+ancient-author notes, 162 photos — each checked against its sources by an independent
+pass, every source line given in Russian too.
 
 - **People:** search a name ("Давид"), or Overview → People: their family, the line of
   their fathers, the places they lived and acted in lit on the map, which goes to their

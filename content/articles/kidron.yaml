@@ -1,0 +1,39 @@
+# Overview article (ADR 0007). Mainstream facts only; the dating of the Kidron tombs follows the usual Hasmonean-Herodian range.
+id: kidron
+place: a553110
+title:
+  en: "Kidron"
+  ru: "Кедрон"
+body:
+  en:
+    - "The Kidron is the valley on the east side of Jerusalem, between the Temple Mount and the City of David on one hand and the Mount of Olives on the other. The Hebrew calls it a nahal, a torrent bed that runs only after heavy rain. It begins north of the Old City, deepens as it passes the temple and the Gihon spring on its western slope, takes in the Tyropoeon and the Valley of Hinnom below Siloam, and goes on as Wadi en-Nar through the wilderness of Judah to the Dead Sea. Centuries of rubble have raised its floor by many metres beside the temple. On its eastern side stand rock-cut monuments of the Hasmonean and Herodian age, the so-called tombs of Absalom and Zechariah and the tomb of the priestly family of Hezir, and above it the village of Silwan with tombs of the kingdom of Judah."
+    - "David, fleeing from Absalom, “passed over the brook Kidron” toward the wilderness, and Solomon forbade Shimei to cross it on pain of death. The reforming kings threw into it what they cleared out of the temple: Asa burnt his mother's idol “by the brook Kidron”; Hezekiah's Levites carried the uncleanness of the house “into the brook Kidron” and the altars of the city were cast there at his Passover; Josiah burnt the vessels of Baal “in the fields of Kidron”, ground the Asherah to powder beside the brook and threw the dust of Manasseh's altars into it. Nehemiah rode by night “by the brook” to inspect the ruined wall, and Jeremiah promises that “all the fields unto the brook of Kidron” will be holy to the LORD."
+    - "After the last supper Jesus “went forth with his disciples over the brook Cedron, where was a garden”, Gethsemane on the slope opposite. Josephus describes the dizzying depth of the valley beneath the temple's eastern colonnade. Since Jews, Christians and Muslims took it for the “valley of Jehoshaphat” of Joel, where God will judge the nations, graves have covered both its slopes; at its head the Byzantine crypt and twelfth-century church mark the Tomb of the Virgin. Far down the wadi, in the desert, Sabas founded his great laura, Mar Saba, in 483."
+    - "Today the valley divides the Old City and the City of David excavations from Silwan and the villages of the Mount of Olives; a road runs along its floor past the Gihon spring. Much of the city's sewage still runs down it toward the Dead Sea, and in wet winters the Kidron floods."
+  ru:
+    - "Кедрон — долина с восточной стороны Иерусалима, между Храмовой горой и Городом Давида с одной стороны и Елеонской горой с другой. По-еврейски это нахал, русло потока, текущего лишь после сильных дождей. Долина начинается к северу от Старого города, углубляется, проходя мимо храма и источника Гихон на западном склоне, принимает Тиропеон и долину Еннома ниже Силоама и уходит как Вади-эн-Нар через Иудейскую пустыню к Мёртвому морю. Века мусора подняли её дно у храма на много метров. На восточной стороне стоят высеченные в скале памятники хасмонейского и иродианского времени — так называемые гробницы Авессалома и Захарии и гробница священнического рода Хезира, а выше — селение Силван с гробницами эпохи Иудейского царства."
+    - "Давид, спасаясь от Авессалома, «перешел поток Кедрон» по дороге к пустыне, а Соломон под страхом смерти запретил Семею переходить его. Цари-реформаторы бросали туда то, что выносили из храма: Аса сжёг истукан своей матери «у потока Кедрона»; левиты Езекии вынесли нечистое из дома «к потоку Кедрону», и туда же бросили жертвенники города в его Пасху; Иосия сжёг вещи Ваала «в долине Кедрон», истёр Астарту в прах у потока и бросил в него прах жертвенников Манассии. Неемия ночью ехал «по лощине», осматривая разрушенную стену, а Иеремия обещает, что «все поле до потока Кедрона» будет святынею Господа."
+    - "После Тайной вечери Иисус «вышел с учениками Своими за поток Кедрон, где был сад» — Гефсимания на склоне напротив. Иосиф Флавий описывает головокружительную глубину долины под восточной колоннадой храма. Поскольку иудеи, христиане и мусульмане приняли её за «долину Иосафата» из книги Иоиля, где Бог будет судить народы, могилы покрыли оба склона; у её верховья византийская крипта и церковь XII века отмечают Гробницу Богородицы. Далеко вниз по вади, в пустыне, Савва основал в 483 году свою великую лавру — Мар-Сабу."
+    - "Сегодня долина отделяет Старый город и раскопки Города Давида от Силвана и селений Елеонской горы; по её дну идёт дорога мимо источника Гихон. По ней до сих пор стекает к Мёртвому морю значительная часть сточных вод города, а в дождливые зимы Кедрон разливается."
+scripture:
+  - 2Sam.15.23
+  - 1Kgs.2.37
+  - 1Kgs.15.13
+  - 2Kgs.23.4
+  - 2Kgs.23.6
+  - 2Kgs.23.12
+  - 2Chr.29.16
+  - 2Chr.30.14
+  - Neh.2.15
+  - Jer.31.40
+  - Joel.3.2
+  - John.18.1
+sources:
+  - "Josephus, Jewish War 5 (the valley beneath the temple's eastern portico)"
+  - "N. Avigad, Ancient Monuments in the Kidron Valley (1954)"
+  - "J. Simons, Jerusalem in the Old Testament (1952)"
+  - "D. Ussishkin, The Village of Silwan: The Necropolis from the Period of the Judean Kingdom (1993)"
+  - "D. Bahat, The Illustrated Atlas of Jerusalem (1990)"
+  - "R. Reich, Excavating the City of David: Where Jerusalem's History Began (2011)"
+  - "J. Patrich, Sabas, Leader of Palestinian Monasticism (1995)"
+status: checked

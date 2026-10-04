@@ -1,0 +1,36 @@
+# Overview article (ADR 0007). Mainstream facts only; the Transfiguration is given as a tradition, since the Gospels do not name the mountain.
+id: mount-tabor
+place: acd63ee
+title:
+  en: "Mount Tabor"
+  ru: "Гора Фавор"
+body:
+  en:
+    - "Mount Tabor is a lone, rounded hill at the north-eastern edge of the Jezreel valley, about 575 m above the sea and some 400 m above the plain, with the Sea of Galilee 17 km to the east. Its shape made it a proverb: “as Tabor is among the mountains, and as Carmel by the sea”, says Jeremiah, and a psalm has “Tabor and Hermon” rejoice in God's name. Here the lands of Issachar, Zebulun and Naphtali met, and a town of the same name at its foot was given to the Levites. Hosea's “net spread upon Tabor” suggests that a sanctuary stood on it."
+    - "Its great biblical day is the war of Deborah. She sent for Barak and told him, “Go and draw toward mount Tabor, and take with thee ten thousand men of the children of Naphtali and of the children of Zebulun”; Sisera brought his nine hundred chariots to the Kishon below, and “Barak went down from mount Tabor” and routed them. Gideon later asked the kings of Midian about the men “whom ye slew at Tabor”, and learned they were his own brothers."
+    - "The hill was a fortress in later ages. Antiochus III took Atabyrion from the Ptolemies in 218 BC; Gabinius defeated the Hasmonean Alexander near it in 55 BC; and in AD 66 Josephus, as commander in Galilee, walled the summit in forty days, only for the Romans under Placidus to take it the next year. The Gospels say that Jesus was transfigured on “an high mountain apart” without naming it, but a tradition going back at least to the fourth century, found in Cyril of Jerusalem and Jerome, placed the Transfiguration on Tabor, and the Gospel according to the Hebrews quoted by Origen already spoke of “the great mountain Tabor”. By the sixth century three churches stood on the top; crusaders and then Saladin's successors held it, and Baybars destroyed its fortifications in 1263."
+    - "Today the summit, reached by a hairpin road from the Arab village of Daburiyya, carries the Franciscan basilica of the Transfiguration, built in 1924 to the design of Antonio Barluzzi on the ruins of the crusader church, and the Greek Orthodox monastery of St Elias. The slopes are a nature reserve of Tabor oak, and the view takes in the whole Jezreel valley from Carmel to Gilboa."
+  ru:
+    - "Гора Фавор — одинокий округлый холм у северо-восточного края Изреельской долины, около 575 м над уровнем моря и примерно на 400 м выше равнины; Галилейское море лежит в 17 км к востоку. Её очертания вошли в пословицу: «как Фавор среди гор и как Кармил при море», говорит Иеремия, а в псалме «Фавор и Ермон о имени Твоем радуются». Здесь сходились земли Иссахара, Завулона и Неффалима, а одноимённый город у подножия был отдан левитам. Слова Осии о священниках, бывших «сетью, раскинутою на Фаворе», наводят на мысль, что на горе стояло святилище."
+    - "Её великий библейский день — война Деворы. Она призвала Варака и сказала: «пойди, взойди на гору Фавор и возьми с собою десять тысяч человек из сынов Неффалимовых и сынов Завулоновых»; Сисара привёл свои девятьсот колесниц к Киссону внизу, и «сошел Варак с горы Фавора» и разбил их. Позже Гедеон спросил царей Мадиамских о тех, «которых вы убили на Фаворе», и узнал, что это были его братья."
+    - "В позднейшие века холм был крепостью. Антиох III взял Атавирион у Птолемеев в 218 г. до н. э.; Габиний разбил близ него Хасмонея Александра в 55 г. до н. э.; а в 66 г. н. э. Иосиф Флавий, начальствуя в Галилее, за сорок дней обнёс вершину стеной, но уже на следующий год её взяли римляне под началом Плацида. Евангелия говорят, что Иисус возвёл учеников «на гору высокую» и преобразился, не называя горы, но предание, восходящее по меньшей мере к IV веку, у Кирилла Иерусалимского и Иеронима, поместило Преображение на Фавор, а Евангелие евреев, которое цитирует Ориген, уже говорило о «великой горе Фавор». К VI веку на вершине стояли три церкви; ею владели крестоносцы, затем преемники Саладина, а в 1263 г. Бейбарс разрушил её укрепления."
+    - "Сегодня на вершине, куда ведёт серпантин от арабской деревни Дабурия, стоят францисканская базилика Преображения, построенная в 1924 г. по проекту Антонио Барлуцци на развалинах церкви крестоносцев, и греческий православный монастырь Святого Илии. Склоны — заповедник фаворского дуба, а с вершины видна вся Изреельская долина от Кармила до Гелвуя."
+scripture:
+  - Josh.19.22
+  - Judg.4.6
+  - Judg.4.12-Judg.4.16
+  - Judg.8.18-Judg.8.19
+  - 1Chr.6.77
+  - Ps.89.12
+  - Jer.46.18
+  - Hos.5.1
+  - Matt.17.1-Matt.17.2
+sources:
+  - "Polybius, Histories 5.70.6-9 (Antiochus III takes Atabyrion)"
+  - "Josephus, Jewish War 2.573; 4.54-61 (the wall on Tabor and its fall); Antiquities 14.102 (Gabinius)"
+  - "Origen, Commentary on John 2.12 (the Gospel according to the Hebrews on Tabor)"
+  - "Cyril of Jerusalem, Catechetical Lectures 12.16; Jerome, Letter 108.13 (the Transfiguration on Tabor)"
+  - "Piacenza Pilgrim, Itinerarium 6 (three churches on the summit)"
+  - "Eusebius, Onomasticon, s.v. Thabor"
+  - "D. Baly, The Geography of the Bible (rev. ed., 1974)"
+status: checked

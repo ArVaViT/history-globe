@@ -1,0 +1,39 @@
+# Overview article (ADR 0007). Mainstream facts only; the site of Mount Sinai, and so of the wilderness, is given as disputed; the traditional identification is named as tradition.
+id: wilderness-of-sinai
+place: ae50cf1
+title:
+  en: "Wilderness of Sinai"
+  ru: "Пустыня Синайская"
+body:
+  en:
+    - "The Wilderness of Sinai is the desert about the mount of the Law, where Israel “camped before the mount”. Exodus dates the arrival to the third month after leaving Egypt, and Numbers the departure to the twentieth day of the second month of the second year: nearly a year in one camp. Where it lay depends on where Mount Sinai was. Since the fourth century tradition has placed the mountain at Jebel Musa in the granite south of the Sinai peninsula, with the plain of er-Raha at its foot large enough for a great camp; others have argued for Jebel Serbal above the oasis of Feiran, for hills in the north of the peninsula, or for Jebel al-Lawz in north-western Arabia. None of these is proved, and the question is open."
+    - "Here the Lord came down “in fire”, so that the mountain smoked “as the smoke of a furnace”, and spoke the ten commandments; here Israel made the golden calf, and here the tabernacle was built and raised. Leviticus closes its laws of offerings with the note that the Lord gave them “in the wilderness of Sinai”, where Nadab and Abihu died “when they offered strange fire”. In the wilderness of Sinai Moses took the first census of the people, numbered the Levites and kept the second Passover, “on the fourteenth day of the first month at even”. Then the cloud lifted, Israel “took their journeys out of the wilderness of Sinai; and the cloud rested in the wilderness of Paran”; of all those numbered here only Caleb and Joshua lived to enter the land."
+    - "Elijah fled to Horeb, and Paul speaks of “mount Sinai in Arabia”. Pilgrims came to Jebel Musa by the fourth century: Egeria, about 383, climbed the mountain and was shown the places of the story by the monks living there, and the emperor Justinian built the fortified monastery at its foot, which later took the name of St Catherine; Tischendorf found the Codex Sinaiticus in its library in 1844 and 1859."
+    - "The wilderness is the South Sinai governorate of Egypt. The monastery, its area a UNESCO site since 2002, is served by the Jebeliya Bedouin and the town of Saint Catherine; pilgrims climb Jebel Musa, 2,285 m, by night to see the sunrise; and the resort of Sharm el-Sheikh lies on the coast to the south."
+  ru:
+    - "Пустыня Синайская — пустыня вокруг горы Закона, где «расположился там Израиль станом против горы». Исход относит приход сюда к третьему месяцу по выходе из Египта, а книга Чисел — уход к двадцатому дню второго месяца второго года: почти год на одной стоянке. Где она лежала, зависит от того, где была гора Синай. С IV века предание помещает гору на Джебель-Муса в гранитном юге Синайского полуострова, с равниной эр-Раха у подножия, достаточной для большого стана; другие доказывали, что это Джебель-Сербал над оазисом Фейран, холмы на севере полуострова или Джебель-эль-Лауз на северо-западе Аравии. Ни одно из этих мест не доказано, и вопрос открыт."
+    - "Здесь Господь сошёл на гору «в огне», так что от неё восходил дым, «как дым из печи», и изрёк десять заповедей; здесь Израиль сделал золотого тельца, здесь была построена и поставлена скиния. Книга Левит заключает законы о жертвах заметкой, что Господь дал их «в пустыне Синайской», где умерли Надав и Авиуд, «когда они принесли огонь чуждый». В пустыне Синайской Моисей провёл первое исчисление народа, исчислил левитов и совершил вторую Пасху, «в первый месяц, в четырнадцатый день месяца вечером». Затем облако поднялось, сыны Израилевы отправились «из пустыни Синайской, и остановилось облако в пустыне Фаран»; из всех исчисленных здесь дожили до входа в землю только Халев и Иисус Навин."
+    - "Илия бежал к Хориву, а Павел пишет, что Агарь «означает гору Синай в Аравии». Паломники приходили к Джебель-Муса уже в IV веке: Эгерия около 383 года поднялась на гору, и жившие там монахи показали ей места рассказа, а император Юстиниан построил у подножия укреплённый монастырь, позже получивший имя святой Екатерины; в его библиотеке Тишендорф нашёл Синайский кодекс в 1844 и 1859 годах."
+    - "Пустыня эта — провинция Южный Синай в Египте. Монастырь, окрестности которого с 2002 года в списке ЮНЕСКО, обслуживают бедуины джебелия и городок Святой Екатерины; паломники поднимаются на Джебель-Муса, 2285 м, ночью, чтобы встретить восход; а курорт Шарм-эш-Шейх лежит на побережье южнее."
+scripture:
+  - Exod.19.1-Exod.19.2
+  - Exod.19.16-Exod.19.20
+  - Lev.7.38
+  - Num.1.1
+  - Num.3.4
+  - Num.9.1-Num.9.5
+  - Num.10.11-Num.10.12
+  - Num.26.64
+  - Num.33.15-Num.33.16
+  - Deut.1.6
+  - 1Kgs.19.8
+  - Gal.4.25
+sources:
+  - "Egeria, Itinerarium 1-5 (the mountain of God and its monks)"
+  - "Procopius, Buildings 5.8 (Justinian's monastery at the foot of the mountain)"
+  - "Eusebius, Onomasticon, s.v. Choreb; Sina"
+  - "E. Robinson, Biblical Researches in Palestine, Mount Sinai and Arabia Petraea (1841)"
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "J. K. Hoffmeier, Ancient Israel in Sinai: The Evidence for the Authenticity of the Wilderness Tradition (2005)"
+  - "UNESCO World Heritage List, Saint Catherine Area, inscribed 2002"
+status: checked

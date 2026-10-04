@@ -1,0 +1,36 @@
+# Overview article (ADR 0007). Mainstream facts only; the two senses of the name (Aram-naharaim in the Old Testament, the whole land between the rivers in Acts) are kept apart; the Synodal rendering of Padan-aram as Mesopotamia is noted.
+id: mesopotamia
+place: a43f60f
+title:
+  en: "Mesopotamia"
+  ru: "Месопотамия"
+body:
+  en:
+    - "Mesopotamia, Greek for “between the rivers”, is the land of the Euphrates and the Tigris. In the Old Testament the name, taken from the Septuagint, stands for the Hebrew Aram-naharaim, “Aram of the two rivers”: not Babylonia but the upper country around Haran, between the great bend of the Euphrates and the Khabur, in what is now south-eastern Turkey and north-eastern Syria. The Synodal Bible also renders Padan-aram, the home of Laban, as Mesopotamia. In the New Testament the word has its wider Greek sense: the “dwellers in Mesopotamia” at Pentecost are the Jews of Babylonia, and Stephen says that God appeared to Abraham “when he was in Mesopotamia, before he dwelt in Charran”, that is, at Ur."
+    - "Abraham's servant “went to Mesopotamia, unto the city of Nahor” to find Rebekah, and Jacob was sent to the same house for his wives. Balaam, whom Balak hired, was “of Pethor of Mesopotamia”; Pethor is the Pitru on the river Sajur near Carchemish that Shalmaneser III names in his annals. In the days of the judges the Lord sold Israel “into the hand of Chushan-rishathaim king of Mesopotamia”, whom they served eight years until Othniel delivered them, and the Ammonites hired chariots against David “out of Mesopotamia”, a war remembered in the title of Psalm 60."
+    - "In the wider sense Mesopotamia is the cradle of the cities, writing and empires of the Bible's world: Ur, Babel and Babylon on the Euphrates, Asshur, Calah and Nineveh on the Tigris. The Greeks gave the land its name in the age of Alexander; Trajan made it a Roman province for a few years in AD 115, and Septimius Severus again in the 190s. The Jews carried to Babylon stayed, and their schools produced the Babylonian Talmud; the Church of the East grew at Edessa and Nisibis and spread from there to India and China."
+    - "Today the land between the rivers is Iraq, with the north-east of Syria and the south-east of Turkey. Haran is a village of beehive houses near Şanlıurfa; the rivers are dammed at Keban, Atatürk, Tabqa and Mosul, and the marshes of the lower Tigris and Euphrates, drained in the 1990s, have been partly restored."
+  ru:
+    - "Месопотамия, по-гречески «Междуречье», — земля Евфрата и Тигра. В Ветхом Завете это имя, взятое из Септуагинты, передаёт еврейское Арам-Нахараим, «Арам двух рек»: не Вавилонию, а верхнюю страну вокруг Харрана, между большой излучиной Евфрата и Хабуром, на нынешнем юго-востоке Турции и северо-востоке Сирии. Синодальный перевод называет Месопотамией и Паддан-Арам, родину Лавана. В Новом Завете слово имеет широкий греческий смысл: «жители Месопотамии» в день Пятидесятницы — это Иудеи Вавилонии, а Стефан говорит, что Бог явился Аврааму «в Месопотамии, прежде переселения его в Харран», то есть в Уре."
+    - "Раб Авраама «пошел в Месопотамию, в город Нахора», чтобы найти Ревекку, и Иаков был послан в тот же дом за жёнами. Валаам, которого нанял Валак, был «из Пефора Месопотамского»; Пефор — это Питру на реке Саджур близ Кархемиса, который Салманасар III называет в своих анналах. Во дни судей Господь предал Израиль «в руки Хусарсафема, царя Месопотамского», которому они служили восемь лет, пока их не избавил Гофониил, а Аммонитяне наняли против Давида колесницы «из Сирии Месопотамской» — война, о которой помнит надписание 59-го псалма."
+    - "В широком смысле Месопотамия — колыбель городов, письменности и империй библейского мира: Ур, Вавилон на Евфрате, Ассур, Калах и Ниневия на Тигре. Греки дали земле имя в эпоху Александра; Траян на несколько лет сделал её римской провинцией в 115 г. н. э., а Септимий Север — вновь в 190-х годах. Уведённые в Вавилон Иудеи остались там, и их школы создали Вавилонский Талмуд; Церковь Востока выросла в Едессе и Нисибине и распространилась оттуда до Индии и Китая."
+    - "Сегодня земля между реками — это Ирак с северо-востоком Сирии и юго-востоком Турции. Харран — деревня с домами-ульями близ Шанлыурфы; реки перегорожены плотинами Кебан, Ататюрк, Табка и Мосул, а болота нижнего Тигра и Евфрата, осушенные в 1990-х годах, частично восстановлены."
+scripture:
+  - Gen.11.31
+  - Gen.24.10
+  - Gen.28.2
+  - Deut.23.4
+  - Judg.3.8-Judg.3.10
+  - 1Chr.19.6
+  - Ps.60.1
+  - Acts.2.9
+  - Acts.7.2
+sources:
+  - "Septuagint, Genesis 24:10 (Mesopotamia for Aram-naharaim)"
+  - "Shalmaneser III, the Kurkh Monolith (Pitru on the river Sajur)"
+  - "Strabo, Geography, book 16 (Mesopotamia between the Euphrates and the Tigris)"
+  - "Cassius Dio, Roman History, book 68 (Trajan's province of Mesopotamia)"
+  - "G. Roux, Ancient Iraq (3rd ed., 1992)"
+  - "A. Kuhrt, The Ancient Near East c. 3000-330 BC (1995)"
+  - "M. Van De Mieroop, A History of the Ancient Near East ca. 3000-323 BC (2004)"
+status: checked

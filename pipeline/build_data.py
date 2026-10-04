@@ -280,6 +280,7 @@ def build_places(
         nt = sum(1 for v in verses if v["osis"].split(".")[0] in NT_BOOKS)
         name = r["friendly_id"]
         base = name.rsplit(" ", 1)[0] if name.rsplit(" ", 1)[-1].isdigit() else name
+        base = ENGLISH_NAMES.get(r["id"], base)
         feats.append({
             "type": "Feature",
             "id": len(feats),
@@ -287,7 +288,7 @@ def build_places(
             "properties": {
                 "id": r["id"],
                 "name": base,
-                "kind": (r.get("types") or ["place"])[0],
+                "kind": place_kind(r.get("types")),
                 # Candidate sites shipped in sites.geojson: 0 when fewer than two.
                 "sites": sites_per_place.get(r["id"], (0, False))[0],
                 "disputed": sites_per_place.get(r["id"], (0, False))[1],
@@ -446,6 +447,35 @@ def ensure_low_tier(
     return [(a[0], a[1], a[2], 1) if i == nearest else a for i, a in enumerate(anchors)]
 
 
+# English names where OpenBible's is another place's: its record for the camp on the plains
+# of Moab is named "Moab", like the country (the Russian is «Равнины Моавитские»).
+ENGLISH_NAMES = {"aca767b": "Plains of Moab"}
+
+
+def place_kind(types: list[str] | None) -> str:
+    """The kind a place is drawn and named as. OpenBible lists a place's types in the order
+    of the alphabet, not of weight, so "island" comes first for Elath and Ophir, where the
+    Bible's "isles" are far coastlands: a place that is a settlement too is not called an
+    island (Crete, Cyprus, Patmos are islands alone, Caphtor an island or a land): it is
+    the land it names, or else the town."""
+    t = types or ["place"]
+    if t[0] == "island" and "settlement" in t:
+        return "region" if "region" in t else "settlement"
+    return t[0]
+
+
+def lead_anchor(anchors: list[tuple[float, float, float, int]], parts: list[list[list[list[float]]]]) -> int | None:
+    """The one label point that names a polity when the whole map is in view: of the points
+    shown at a region's view (tier 0 or 1), the nearest to the centroid of its largest part.
+    Parthia was named three times across the screen at zoom 3."""
+    low = [i for i, a in enumerate(anchors) if a[3] < 2]
+    if not low:
+        return None
+    largest = max(parts, key=lambda poly: ring_area_centroid(poly[0])[0])
+    _, cx, cy = ring_area_centroid(largest[0])
+    return min(low, key=lambda i: (anchors[i][0] - cx) ** 2 + (anchors[i][1] - cy) ** 2)
+
+
 def build_polities() -> tuple[dict, dict, dict]:
     clio = json.loads(fetch("cliopatria").read_text(encoding="utf-8"))
     polys, labels = [], []
@@ -523,12 +553,20 @@ def build_polities() -> tuple[dict, dict, dict]:
         polys.append({"type": "Feature", "geometry": {"type": "MultiPolygon", "coordinates": kept}, "properties": props})
         if not is_relation:
             total = sum(ring_area_centroid(k[0])[0] for k in kept)
-            for lx, ly, _part, tier in ensure_low_tier(label_anchors(kept), kept):
+            anchors = ensure_low_tier(label_anchors(kept), kept)
+            lead = lead_anchor(anchors, kept)
+            for i, (lx, ly, _part, tier) in enumerate(anchors):
                 labels.append({
                     "type": "Feature",
                     "geometry": {"type": "Point", "coordinates": [round(lx, 3), round(ly, 3)]},
-                    # Bigger polities get labels earlier and larger.
-                    "properties": {**props, "size": round(math.log10(max(total, 0.01)) + 2, 2), "tier": tier},
+                    # Bigger polities get labels earlier and larger; the lead point alone names
+                    # the polity at a continent's view (the style), where its grid repeated it.
+                    "properties": {
+                        **props,
+                        "size": round(math.log10(max(total, 0.01)) + 2, 2),
+                        "tier": tier,
+                        **({"lead": 1} if i == lead else {}),
+                    },
                 })
     stats = {
         "polity_shapes": len(polys),

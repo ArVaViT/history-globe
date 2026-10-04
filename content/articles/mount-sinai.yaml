@@ -1,0 +1,46 @@
+# Overview article (ADR 0007). Mainstream facts only; the site is given as disputed, with the app's candidates named and Jebel Musa as the traditional one; the date of the exodus is not fixed.
+id: mount-sinai
+place: abfba2a
+title:
+  en: "Mount Sinai"
+  ru: "Гора Синай"
+body:
+  en:
+    - "Mount Sinai is the mountain where, according to Exodus, God gave Israel the Law. Where it stood is not known for certain. Since the fourth century Christian tradition has placed it at Jebel Musa, the “mountain of Moses”, 2,285 m high in the granite heart of the southern Sinai peninsula, with the monastery of St Catherine at its foot. Other candidates are Ras Safsafeh, the northern spur of the same massif above the plain of er-Raha; Jebel Serbal above the oasis of Feiran; Jebel Katherina, the highest peak of the range; Har Karkom in the Negev, proposed by Emmanuel Anati; Jebel Sin Bishar in western Sinai; and mountains in north-west Arabia, since Paul writes of “mount Sinai in Arabia”."
+    - "Israel came into the wilderness of Sinai in the third month after leaving Egypt and “camped before the mount”. On the third day “mount Sinai was altogether on a smoke, because the LORD descended upon it in fire”, and God spoke the Ten Commandments. Moses was on the mountain forty days and forty nights and received “two tables of testimony, tables of stone, written with the finger of God”; he broke them when he found the people worshipping the golden calf, and went up again for a second pair; when he came down, “the skin of his face shone”. Leviticus ends with the commandments given “in mount Sinai”. Deuteronomy and the books of Kings call the same mountain Horeb."
+    - "In the Song of Deborah Sinai melts “from before the LORD”, in Psalm 68 it “was moved at the presence of God”, and Nehemiah's Levites remember that God “camest down also upon mount Sinai”. Elijah fled to the same mountain under the name Horeb. In the New Testament Stephen recalls the angel “in the mount Sina”; Paul makes Hagar stand for “mount Sinai in Arabia”; and Hebrews sets “the mount that might be touched, and that burned with fire” against mount Zion. The date of the events depends on the disputed date of the exodus, in the fifteenth or the thirteenth century BC."
+    - "Pilgrims were climbing Jebel Musa by the fourth century: Egeria, about 383, describes the ascent, the church on the summit and the bush that still grew beside the chapel below. Justinian built the fortified monastery at its foot in the middle of the sixth century, and its library, one of the oldest in Christendom, held the Codex Sinaiticus until the nineteenth century. The monastery with the mountain has been a UNESCO World Heritage site since 2002. No trace of the Israelite camp has been found at any of the candidate mountains; the choice between them rests on the biblical itinerary and on tradition, and remains open."
+  ru:
+    - "Гора Синай — гора, на которой, по книге Исход, Бог дал Израилю Закон. Где она стояла, точно не известно. С IV века христианское предание помещает её на Джебель-Муса, «гору Моисея», высотой 2285 м в гранитном сердце южной части Синайского полуострова, у подножия которой стоит монастырь Святой Екатерины. Другие кандидаты — Рас-эс-Сафсафе, северный отрог того же массива над равниной Эр-Раха; Джебель-Сербал над оазисом Фейран; гора Святой Екатерины, высшая точка хребта; Хар-Карком в Негеве, предложенный Эммануэлем Анати; Джебель-Син-Бишар на западе Синая; и горы северо-западной Аравии, поскольку Павел помещает «гору Синай в Аравии»."
+    - "Израиль пришёл в пустыню Синайскую в третий месяц по выходе из Египта и «расположился там Израиль станом против горы». На третий день «гора же Синай вся дымилась оттого, что Господь сошел на нее в огне», и Бог изрёк десять заповедей. Моисей пробыл на горе сорок дней и сорок ночей и получил «две скрижали откровения, скрижали каменные, на которых написано было перстом Божиим»; он разбил их, застав народ у золотого тельца, и взошёл снова за вторыми; когда он сходил, «лице его стало сиять лучами». Книга Левит кончается заповедями, данными «на горе Синае». Второзаконие и книги Царств называют ту же гору Хоривом."
+    - "В песни Деворы горы тают «от лица Господа», в 67-м псалме земля трясётся и Синай — «от лица Бога», а левиты Неемии вспоминают: «снисшел Ты на гору Синай». Илия бежал к той же горе под именем Хорив. В Новом Завете Стефан вспоминает Ангела «на горе Синае»; у Павла Агарь означает «гору Синай в Аравии»; Послание к Евреям говорит верующим, что они приступили не «к горе, осязаемой и пылающей огнем», а к горе Сион. Дата событий зависит от спорной даты исхода, в XV или XIII веке до н. э."
+    - "Паломники поднимались на Джебель-Муса уже в IV веке: Эгерия около 383 г. описывает восхождение, церковь на вершине и куст, который всё ещё рос у часовни внизу. Юстиниан в середине VI века построил у подножия укреплённый монастырь, и его библиотека, одна из древнейших в христианском мире, хранила Синайский кодекс до XIX века. Монастырь вместе с горой с 2002 года входит в список Всемирного наследия ЮНЕСКО. Следов израильского стана не найдено ни у одной из гор-кандидатов; выбор между ними опирается на библейский маршрут и на предание и остаётся открытым."
+scripture:
+  - Exod.3.1
+  - Exod.19.1-Exod.19.2
+  - Exod.19.18-Exod.19.20
+  - Exod.20.1
+  - Exod.24.16-Exod.24.18
+  - Exod.31.18
+  - Exod.34.29
+  - Lev.27.34
+  - Num.10.11-Num.10.12
+  - Deut.33.2
+  - Judg.5.5
+  - Neh.9.13
+  - Ps.68.8
+  - Acts.7.30
+  - Acts.7.38
+  - Gal.4.24-Gal.4.25
+  - Heb.12.18-Heb.12.21
+sources:
+  - "Egeria, Itinerarium 1-5 (the ascent of Sinai, the church on the summit and the bush)"
+  - "Procopius, Buildings 5.8 (Justinian's monastery at the foot of the mountain)"
+  - "Eusebius, Onomasticon, s.v. Sina and Choreb"
+  - "E. Robinson, Biblical Researches in Palestine, Mount Sinai and Arabia Petraea (1841) (Ras Safsafeh)"
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "M. Har-El, The Sinai Journeys: The Route of the Exodus (1983) (Jebel Sin Bishar)"
+  - "E. Anati, The Mountain of God: Har Karkom (1986)"
+  - "J. K. Hoffmeier, Ancient Israel in Sinai (2005)"
+  - "UNESCO World Heritage List, Saint Catherine Area, inscribed 2002"
+status: checked

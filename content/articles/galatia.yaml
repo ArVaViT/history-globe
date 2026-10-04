@@ -1,0 +1,37 @@
+# Overview article (ADR 0007). Mainstream facts only; the North and South Galatian views of the Epistle's addressees are given without choosing.
+id: galatia
+place: a0f440a
+title:
+  en: "Galatia"
+  ru: "Галатия"
+body:
+  en:
+    - "Galatia is the high plateau of central Anatolia around Ancyra, modern Ankara, named after the Gauls (Galatai) who crossed into Asia Minor in 278 BC and settled there in three tribes, the Tolistobogii, Tectosages and Trocmi, with Pessinus, Ancyra and Tavium as their centres. They raided and hired themselves out for a century, were checked by Attalus I of Pergamum, whose victory the Dying Gaul commemorates, and crushed by the Roman consul Manlius Vulso in 189 BC; Jerome, in the fourth century AD, says they still spoke a tongue like that of the Treveri on the Moselle. When the last king, Amyntas, died in 25 BC, Augustus made Galatia a Roman province and added to it Pisidia and parts of Phrygia and Lycaonia, with Antioch, Iconium, Lystra and Derbe."
+    - "That double meaning is why the New Testament's Galatia is debated. Paul and Barnabas founded churches in those southern cities on the first journey; on the second Paul had “gone throughout Phrygia and the region of Galatia”, and on the third went “over all the country of Galatia and Phrygia in order, strengthening all the disciples”. The Epistle “unto the churches of Galatia”, which recalls how he first preached to them “through infirmity of the flesh” and was received “as an angel of God”, is addressed by the South Galatian view to the churches of Acts 13–14 and by the older North Galatian view to converts in the Gaulish north, never named in Acts; the question is open, and with it the letter's date. Paul ordered a collection there for Jerusalem, Crescens went to Galatia in Paul's last days, and Peter writes to the strangers of “Pontus, Galatia, Cappadocia, Asia, and Bithynia”."
+    - "Ancyra kept the best copy of Augustus' Res Gestae on the walls of his temple there. The province was divided in the fourth century, and the name faded under the Byzantines and Turks. Ankara, the capital of Turkey since 1923, stands on the old Ancyra, and Pessinus (Ballıhisar) and Tavium (Büyüknefes) are villages with ruins."
+  ru:
+    - "Галатия — высокое плоскогорье центральной Анатолии вокруг Анкиры, нынешней Анкары, названное по галлам (галатам), которые переправились в Малую Азию в 278 г. до н. э. и осели там тремя племенами — толистобогиями, тектосагами и трокмами — с центрами в Пессинунте, Анкире и Тавии. Целый век они совершали набеги и нанимались в войска, были остановлены Атталом I Пергамским, чью победу увековечил «Умирающий галл», и разгромлены римским консулом Манлием Вульсоном в 189 г. до н. э.; Иероним в IV веке н. э. говорит, что они всё ещё говорили на языке, похожем на язык треверов на Мозеле. Когда в 25 г. до н. э. умер последний царь Аминта, Август сделал Галатию римской провинцией и присоединил к ней Писидию и части Фригии и Ликаонии с Антиохией, Иконией, Листрой и Дервией."
+    - "Из-за этого двойного смысла Галатия Нового Завета — предмет спора. Павел и Варнава основали церкви в этих южных городах в первом путешествии; во втором он со спутниками прошёл «через Фригию и Галатийскую страну», а в третьем «проходил по порядку страну Галатийскую и Фригию, утверждая всех учеников». Послание «церквам Галатийским», напоминающее, что он благовествовал им впервые «в немощи плоти» и что его приняли «как Ангела Божия», по южногалатийскому взгляду обращено к церквам 13–14 глав Деяний, а по северогалатийскому, более старому, — к обращённым среди галлов плоскогорья, которых Деяния не называют; вопрос остаётся открытым, а с ним и дата письма. Павел распорядился о сборе там для Иерусалима, Крискент в последние дни Павла пошёл в Галатию, а Пётр пишет пришельцам, рассеянным «в Понте, Галатии, Каппадокии, Асии и Вифинии»."
+    - "Анкира сохранила лучшую копию «Деяний» Августа на стенах его храма. Провинцию разделили в IV веке, и имя поблёкло при византийцах и турках. Анкара, столица Турции с 1923 года, стоит на древней Анкире, а Пессинунт (Баллыхисар) и Тавий (Бююкнефес) — деревни с развалинами."
+scripture:
+  - Acts.13.14
+  - Acts.14.6
+  - Acts.16.6
+  - Acts.18.23
+  - 1Cor.16.1
+  - Gal.1.2
+  - Gal.3.1
+  - Gal.4.13-Gal.4.14
+  - 2Tim.4.10
+  - 1Pet.1.1
+sources:
+  - "Livy, History of Rome 38.16-27 (the Gauls in Asia and the campaign of Manlius Vulso)"
+  - "Strabo, Geography 12.5.1-4 (Galatia)"
+  - "Pliny the Elder, Natural History 5.146-147"
+  - "Res Gestae Divi Augusti, the Monumentum Ancyranum"
+  - "Jerome, Commentary on Galatians, preface to book 2 (the Galatian language)"
+  - "J. B. Lightfoot, Saint Paul's Epistle to the Galatians (1865) (the North Galatian view)"
+  - "W. M. Ramsay, A Historical Commentary on St Paul's Epistle to the Galatians (1899) (the South Galatian view)"
+  - "S. Mitchell, Anatolia: Land, Men, and Gods in Asia Minor, 2 vols (1993)"
+  - "F. F. Bruce, The Epistle to the Galatians (New International Greek Testament Commentary, 1982)"
+status: checked

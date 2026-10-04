@@ -1,0 +1,40 @@
+# Overview article (ADR 0007). Mainstream facts only; the lake's measurements are approximate; the founding date of Tiberias is given as about AD 20.
+id: sea-of-galilee
+place: a562fcc
+title:
+  en: "Sea of Galilee"
+  ru: "Море Галилейское"
+body:
+  en:
+    - "The Sea of Galilee is a freshwater lake in the rift valley of the Jordan, about 21 km long and 13 km wide, up to 43 m deep, with its surface some 210 m below sea level, the lowest freshwater lake on earth. The Jordan enters it from the north and leaves it at the south, hot springs rise at Tiberias, and winds off the hills raise sudden storms. The Old Testament calls it the sea of Chinnereth, after a town on its north-western shore, and sets it at the border of the land: “the border shall descend, and shall reach unto the side of the sea of Chinnereth eastward”. The Gospels say sea of Galilee, lake of Gennesaret, and “the sea of Tiberias”, after the city Herod Antipas built about AD 20; Josephus, who measured it at 140 by 40 stadia, praises its sweet, cool water, and in Hebrew it is still the Kinneret."
+    - "Jesus, “walking by the sea of Galilee, saw two brethren, Simon called Peter, and Andrew his brother, casting a net into the sea”, and then James and John; he made Capernaum, “upon the sea coast”, his own city and crossed the lake again and again. From a boat he taught the crowds; on it he slept in the storm and, waked, “rebuked the wind, and said unto the sea, Peace, be still”; in the fourth watch of the night he came to the disciples “walking on the sea”. Beyond the lake he fed the five thousand and healed the demoniac of the Gadarenes, and on its shore, after the resurrection, he “shewed himself again to the disciples at the sea of Tiberias” and told them, “Cast the net on the right side of the ship, and ye shall find”."
+    - "The lake fed a whole economy. Josephus once gathered the lake's 330 boats at Tarichaeae, the Magdala of Mary, and Strabo knew the town for its salted fish; Roman harbours have been traced at Capernaum, Magdala, Kursi and a dozen other points, and in 1986 a drought exposed on the mud at Ginosar a first-century boat, 8.2 m long, now in the kibbutz museum. In Byzantine times churches marked the shore: at Tabgha, with its mosaic of the loaves and fishes, at Capernaum over the house of Peter, and at Kursi."
+    - "Today the lake is Israel's chief reservoir: the National Water Carrier has pumped from it since 1964, and its level is reported in the daily news. Tiberias is a resort town, kibbutzim such as Ein Gev and Ginosar farm its shores, pilgrims are baptised at the Jordan outlet, and the Golan Heights, held by Israel since 1967, rise on its eastern side."
+  ru:
+    - "Море Галилейское — пресное озеро в рифтовой долине Иордана, около 21 км в длину и 13 км в ширину, глубиной до 43 м, с поверхностью примерно на 210 м ниже уровня моря, самое низкое пресное озеро на земле. Иордан входит в него с севера и выходит на юге, у Тивериады бьют горячие источники, а ветры, падающие с гор, поднимают внезапные бури. Ветхий Завет называет его морем Киннереф, по городку на северо-западном берегу, и ставит на границе земли: «пойдет граница и коснется берегов моря Киннереф с восточной стороны». Евангелия говорят о море Галилейском, озере Геннисаретском и «море Тивериадском», по городу, который Ирод Антипа построил около 20 г. н. э.; Иосиф Флавий, намеривший 140 на 40 стадий, хвалит его сладкую и прохладную воду, а по-еврейски оно и сейчас Кинерет."
+    - "Иисус «близ моря Галилейского» увидел «двух братьев: Симона, называемого Петром, и Андрея, брата его, закидывающих сети в море», а затем Иакова и Иоанна; Он поселился «в Капернауме приморском», сделав его Своим городом, и снова и снова переправлялся через озеро. Из лодки Он учил народ; в ней спал во время бури и, разбуженный, «запретил ветру и сказал морю: умолкни, перестань»; в четвёртую стражу ночи пришёл к ученикам, «идя по морю». За озером Он накормил пять тысяч и исцелил бесноватого из страны Гадаринской, а на его берегу после воскресения «опять явился ученикам Своим при море Тивериадском» и сказал: «закиньте сети по правую сторону лодки, и поймаете»."
+    - "Озеро кормило целое хозяйство. Иосиф Флавий однажды собрал у Тарихеи, Магдалы Марии, все лодки озера — 330, а Страбон знал этот город по солёной рыбе; гавани и молы римского времени прослежены у Капернаума, Магдалы, Курси и ещё в дюжине мест, а в 1986 году засуха обнажила на иле у Гиносара лодку I века длиной 8,2 м, ныне в музее кибуца. В византийское время берег отметили церкви: в Табхе с мозаикой хлебов и рыб, в Капернауме над домом Петра и в Курси."
+    - "Сегодня озеро — главное водохранилище Израиля: Всеизраильский водовод качает из него с 1964 года, а его уровень сообщают в ежедневных новостях. Тверия — курортный город, кибуцы вроде Эйн-Гева и Гиносара возделывают его берега, паломники крестятся у истока Иордана, а на восточной стороне поднимаются Голанские высоты, удерживаемые Израилем с 1967 года."
+scripture:
+  - Num.34.11
+  - Josh.12.3
+  - Josh.13.27
+  - Matt.4.13
+  - Matt.4.18
+  - Matt.9.1
+  - Matt.14.25
+  - Matt.15.29
+  - Mark.1.16
+  - Mark.4.37-Mark.4.39
+  - Mark.7.31
+  - Luke.5.1-Luke.5.6
+  - John.6.1
+  - John.21.1-John.21.6
+sources:
+  - "Josephus, Jewish War 3.506-521 (the lake of Gennesar); 2.635 (the lake's boats: 330 in Niese's Greek text, 230 in Whiston)"
+  - "Strabo, Geography 16.2.45 (the salted fish of Taricheae)"
+  - "Pliny, Natural History 5.71 (the lake of Gennesara)"
+  - "M. Nun, The Sea of Galilee and Its Fishermen in the New Testament (1989)"
+  - "S. Wachsmann, The Sea of Galilee Boat: An Extraordinary 2000 Year Old Discovery (1995)"
+  - "M. Aviam, Jews, Pagans and Christians in the Galilee (2004)"
+status: checked

@@ -80,6 +80,28 @@ const SITE_LABEL: ExpressionSpecification = [
 const SHARE: ExpressionSpecification = ["to-number", ["get", "share"], 0];
 
 /** Localised name with fallback to the English one. */
+/** Where a state's name may stand around its point, in ems. */
+const POLITY_LABEL_OFFSETS: ["center", [number, number], ...(string | [number, number])[]] = [
+  "center",
+  [0, 0],
+  "top",
+  [0, 2],
+  "bottom",
+  [0, -2],
+  "left",
+  [2, 0],
+  "right",
+  [-2, 0],
+  "top-left",
+  [1.4, 1.4],
+  "top-right",
+  [-1.4, 1.4],
+  "bottom-left",
+  [1.4, -1.4],
+  "bottom-right",
+  [-1.4, -1.4],
+];
+
 export const NAME: ExpressionSpecification = [
   "case",
   ["==", LOCALE, "ru"],
@@ -684,15 +706,31 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       metadata: { group: "places" },
       filter: ["all", isSettlement, visibleAtZoom],
       paint: {
+        // The places picked out (a chapter's, a person's) are one size: the passage decides
+        // what matters, not how often the Bible names the town. The lesser towns are smaller
+        // at a region's view, where three hundred of them made a carpet over the Levant.
         "circle-radius": [
-          "case",
-          ["boolean", ["feature-state", "selected"], false],
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          6,
+          [
+            "case",
+            ["boolean", ["feature-state", "selected"], false],
+            8,
+            IN_TOUR,
+            4.5,
+            ["match", ["get", "rank"], 0, 5, 1, 4, 2, 2.3, 2.6],
+          ],
           8,
-          // The places picked out (a chapter's, a person's) are one size: the passage
-          // decides what matters, not how often the Bible names the town.
-          IN_TOUR,
-          4.5,
-          ["match", ["get", "rank"], 0, 5, 1, 4, 2, 3.2, 2.6],
+          [
+            "case",
+            ["boolean", ["feature-state", "selected"], false],
+            8,
+            IN_TOUR,
+            4.5,
+            ["match", ["get", "rank"], 0, 5, 1, 4, 2, 3.2, 2.6],
+          ],
         ],
         // Where the place stood is uncertain (disputed, or tentative under 600):
         // a hollow dot, so the map itself says how sure it is, not only the card.
@@ -969,6 +1007,9 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         ["any", ["<", ["coalesce", ["get", "tier"], 0], 2], [">=", ["zoom"], 6]],
         // A pinned name (its own layer) takes over from zoom 6.
         ["any", ["!", ["has", "pin"]], ["<", ["zoom"], 6]],
+        // At a continent's view one point names each state (build_data.py lead_anchor):
+        // its grid of points named Parthia three times across the screen.
+        ["any", ["has", "lead"], [">=", ["zoom"], 4]],
       ],
       metadata: { group: "borders" },
       minzoom: 2.5,
@@ -1014,9 +1055,10 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         // Some padding keeps an empire's anchors from crowding one view; 48 px made the
         // box so large that a river label nearby left the Neo-Babylonian Empire unnamed.
         "text-padding": 16,
-        // Room to move off a river or a town instead of disappearing.
-        "text-variable-anchor": ["center", "top", "bottom"],
-        "text-radial-offset": 1.2,
+        // Room to move off a town instead of disappearing: two ems in eight directions.
+        // Assyria's point lies at Nineveh; a step of 1.2 ems up or down left it unnamed at
+        // 701 BC (over 28 years at the first view, 18 large states unnamed, then 12).
+        "text-variable-anchor-offset": POLITY_LABEL_OFFSETS,
         "text-allow-overlap": false,
       },
       paint: {
@@ -1293,6 +1335,19 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
     label.filter = now;
   }
 
+  // A large state at the edge of the view whose own points are off screen (Parthia east of
+  // the first view): MapLibreRenderer.nameEdgeStates writes a point inside its part in view,
+  // named after the main labels have their room.
+  const polityLabel = layers.findIndex((l) => l.id === "polity-label");
+  const main = layers[polityLabel];
+  if (main?.type === "symbol")
+    layers.splice(polityLabel, 0, {
+      ...main,
+      id: "polity-label-edge",
+      source: "polity-edge-labels",
+      filter: ERA_FILTER,
+    });
+
   return {
     version: 8,
     projection: { type: "globe" },
@@ -1346,6 +1401,8 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         attribution: "Cliopatria / Seshat (CC BY 4.0, modified)",
       },
       "polity-labels": { type: "geojson", data: `${o.dataUrl}/polity-labels.geojson` },
+      // Filled from the view (MapLibreRenderer.nameEdgeStates).
+      "polity-edge-labels": { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       rivers: {
         type: "geojson",
         data: `${o.dataUrl}/rivers.geojson`,

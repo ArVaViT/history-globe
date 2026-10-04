@@ -1,0 +1,26 @@
+id: where-did-philip-meet-the-ethiopian
+question:
+  en: "Where did Philip baptize the Ethiopian eunuch?"
+  ru: "Где Филипп крестил эфиопского евнуха?"
+answer:
+  en:
+    - "Somewhere on the road from Jerusalem down to Gaza, the last town before the desert on the way to Egypt, about 79 km south-west of Jerusalem in a straight line; Acts names no place. Two traditions claim the water. Eusebius and Jerome put it at a spring below Beth-zur, about 25 km south of Jerusalem on the road to Hebron, today Ain ed-Dirweh; a later tradition holds to Ein Hanniya in the Rephaim valley on the south-western edge of the city, where the remains of a Byzantine church stand by the spring. Afterwards Philip “was found at Azotus”, Ashdod, 34 km up the coast from Gaza, and preached northward 86 km to Caesarea, where he settled."
+    - "Acts tells it: the angel said to Philip, “Arise, and go toward the south unto the way that goeth down from Jerusalem unto Gaza, which is desert”; there he met “a man of Ethiopia, an eunuch of great authority under Candace queen of the Ethiopians, who had the charge of all her treasure, and had come to Jerusalem for to worship”, reading Isaiah in his chariot. “And as they went on their way, they came unto a certain water: and the eunuch said, See, here is water; what doth hinder me to be baptized?” “And he commanded the chariot to stand still: and they went down both into the water, both Philip and the eunuch; and he baptized him.” Then “the Spirit of the Lord caught away Philip, that the eunuch saw him no more: and he went on his way rejoicing”."
+    - "Ethiopia here is Kush, the kingdom on the Nile beyond Egypt with its capital at Meroë in today's Sudan, some 1,650 km from Jerusalem in a straight line, not the Ethiopia of the Aksumite highlands; Candace is not a name but kandake, the title of its queen mothers, as Pliny notes. The words “which is desert” may describe the road through the Judaean hills or Gaza itself, whose old city Strabo says lay deserted after Alexander razed it, the new town standing nearer the sea. The map's year is about AD 34, with the scattering of the church after Stephen's death. The place card lists the candidate springs."
+  ru:
+    - "Где-то на дороге из Иерусалима в Газу, последний город перед пустыней на пути в Египет, примерно в 79 км к юго-западу от Иерусалима по прямой; Деяния места не называют. На эту воду притязают два предания. Евсевий и Иероним помещали её у источника под Беф-Цуром, примерно в 25 км к югу от Иерусалима на дороге в Хеврон, — ныне Айн-эд-Дирве; более позднее предание держится за Эйн-Ханию в долине Рефаим, на юго-западной окраине города, где у источника стоят остатки византийской церкви. Потом Филипп «оказался в Азоте» — Ашдоде, в 34 км вверх по берегу от Газы, — и проповедовал на север 86 км до Кесарии, где и поселился."
+    - "Деяния рассказывают: ангел сказал Филиппу: «встань и иди на полдень, на дорогу, идущую из Иерусалима в Газу, на ту, которая пуста»; там ему встретился «муж Ефиоплянин, евнух, вельможа Кандакии, царицы Ефиопской, хранитель всех сокровищ ее, приезжавший в Иерусалим для поклонения», который читал в колеснице Исаию. «Между тем, продолжая путь, они приехали к воде; и евнух сказал: вот вода; что препятствует мне креститься?» «И приказал остановить колесницу, и сошли оба в воду, Филипп и евнух; и крестил его». Затем «Филиппа восхитил Ангел Господень, и евнух уже не видел его и продолжал путь, радуясь»."
+    - "Эфиопия здесь — Куш, царство на Ниле за Египтом со столицей в Мероэ в нынешнем Судане, примерно в 1650 км от Иерусалима по прямой, а не Эфиопия Аксумского нагорья; Кандакия — не имя, а «кандаке», титул тамошних цариц-матерей, как отмечает Плиний. Слова «на ту, которая пуста» могут относиться к дороге через Иудейские горы или к самой Газе, старый город которой, по Страбону, лежал в запустении после того, как Александр его разрушил, а новый стоял ближе к морю. Год на карте — около 34 г. н. э., когда церковь рассеялась после смерти Стефана. Карточка места перечисляет источники-кандидаты."
+map:
+  place: aa8edd2
+  year: "c. AD 34"
+  ref: Acts.8.26
+scripture: [Acts.8.26-Acts.8.27, Acts.8.36, Acts.8.38-Acts.8.40, Acts.21.8]
+sources:
+  - "Eusebius, Onomasticon, s.v. Bethsoron (the spring where the eunuch was baptized), with Jerome's Latin version"
+  - "Strabo, Geography 16.2.30 (Gaza deserted); 17.1.54 (Candace); Pliny the Elder, Natural History 6.186 (the name Candace passed from queen to queen)"
+  - "D. A. Welsby, The Kingdom of Kush: The Napatan and Meroitic Empires (1996)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008) (Ein Hanniya)"
+  - "History Globe tour “Philip the evangelist” and History Globe article “Gaza”"
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

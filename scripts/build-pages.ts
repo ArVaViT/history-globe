@@ -17,7 +17,7 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync
 import { join } from "node:path";
 import type { ContentRelease, PlaceLife } from "../packages/model/src/content.ts";
 import { formatRef, NT_BOOKS } from "../packages/model/src/scripture.ts";
-import { localizeCitation } from "../packages/model/src/citation.ts";
+import { sourcesOf } from "../packages/model/src/citation.ts";
 import { formatYear } from "../packages/model/src/time.ts";
 import { siteCertainty } from "../packages/model/src/sites.ts";
 import { placeSlugs } from "./slugs.ts";
@@ -59,6 +59,7 @@ interface Article {
   body: Record<Lang, string[]>;
   scripture: string[];
   sources: string[];
+  sources_ru?: string[];
   status: string;
   reviewer?: string;
 }
@@ -98,6 +99,7 @@ const questions = (
   map?: { place?: string; year?: { year: number }; ref?: string };
   scripture: string[];
   sources: string[];
+  sources_ru?: string[];
   status: "checked" | "reviewed";
   reviewer?: string;
 }[];
@@ -497,7 +499,9 @@ for (const l of LANGS) {
       <h2>${T[l].article}</h2>
       ${art.body[l].map((para) => `<p>${esc(para)}</p>`).join("\n      ")}
       <p class="note">${T[l].scripture}: ${art.scripture.map((r) => esc(refOf(r, l))).join("; ")}</p>
-      <details class="note"><summary>${T[l].sources}</summary><ul>${art.sources.map((s) => `<li>${esc(localizeCitation(s, l))}</li>`).join("")}</ul></details>
+      <details class="note"><summary>${T[l].sources}</summary><ul>${sourcesOf(art, l)
+        .map((s) => `<li>${esc(s)}</li>`)
+        .join("")}</ul></details>
       <p class="note">${art.status === "reviewed" && art.reviewer ? `${T[l].reviewed}: ${esc(art.reviewer)}` : T[l].checked}</p>`
           : ""
       }
@@ -598,7 +602,9 @@ for (const l of LANGS) {
       ${q.answer[l].map((p) => `<p>${linked(p)}</p>`).join("\n      ")}
       <p class="actions"><a class="button" href="../../../?${esc(view.toString())}">${T[l].showMap} →</a></p>
       <p class="note">${T[l].scripture}: ${q.scripture.map((r) => esc(refOf(r, l))).join("; ")}</p>
-      <details class="note"><summary>${T[l].sources}</summary><ul>${q.sources.map((s) => `<li>${esc(localizeCitation(s, l))}</li>`).join("")}</ul></details>
+      <details class="note"><summary>${T[l].sources}</summary><ul>${sourcesOf(q, l)
+        .map((s) => `<li>${esc(s)}</li>`)
+        .join("")}</ul></details>
       <p class="note">${q.status === "reviewed" && q.reviewer ? `${T[l].reviewed}: ${esc(q.reviewer)}` : T[l].checkedQ}</p>
     </main>`;
     write(
@@ -698,13 +704,17 @@ for (const l of LANGS) {
   const withArticle = list.filter((f) => articles[f.properties.id]);
   // Duplicate records keep their pages (old links) but are not listed twice.
   const listed = list.filter((f) => !f.properties.dup);
+  // A place with an article is listed by the article's title: the land of Babylonia is
+  // not the city, though the Synodal text calls both Вавилон.
+  const shownName = (f: (typeof list)[number]) =>
+    articles[f.properties.id]?.title[l] ?? nameOf(f.properties, l);
   // Namesakes in the index (two Antiochs) are told apart by where they are today.
+  listed.sort((a, b) => coll.compare(shownName(a), shownName(b)));
   const named = new Map<string, number>();
   for (const f of list)
-    if (!f.properties.dup)
-      named.set(nameOf(f.properties, l), (named.get(nameOf(f.properties, l)) ?? 0) + 1);
+    if (!f.properties.dup) named.set(shownName(f), (named.get(shownName(f)) ?? 0) + 1);
   const link = (f: (typeof list)[number]) => {
-    const name = nameOf(f.properties, l);
+    const name = shownName(f);
     const where = l === "ru" ? content.where_ru?.[f.properties.id] : f.properties.where;
     const tell =
       (named.get(name) ?? 0) > 1 && where && where !== name
@@ -724,7 +734,10 @@ for (const l of LANGS) {
       body: `    <main id="main" class="page">
       <h1>${T[l].placesTitle}</h1>
       <h2>${T[l].articlesTitle} · ${String(withArticle.length)}</h2>
-      <ul class="columns">${withArticle.map(link).join("")}</ul>
+      <ul class="columns">${[...withArticle]
+        .sort((a, b) => coll.compare(shownName(a), shownName(b)))
+        .map(link)
+        .join("")}</ul>
       <h2>${T[l].allPlaces} · ${String(listed.length)}</h2>
       <ul class="columns">${listed.map(link).join("")}</ul>
     </main>`,

@@ -1,0 +1,75 @@
+# Ahab's wars with Syria and Jehoshaphat's reign, 1 Kings 20 and 22 with 2 Chronicles
+# 17-20, in the order of the story: each book's stops keep their own order, and Jehoshaphat's
+# third year (2 Chr 17) comes first because it is the earliest. Elijah's part (1 Kgs 17-19,
+# 21) is in his own tour. The tour's year (853 BC) is Ahab's death at Ramoth-gilead, the
+# usual date from Shalmaneser III's annals (Qarqar, 853 BC; Thiele). Jehoshaphat's
+# teaching mission in his third year carries 870 BC (his reign c. 872-848 BC, the first
+# years with Asa). The siege of Samaria and the battle of Aphek fall some years before
+# 853; the ships at Ezion-geber, built with Ahaziah, just after it. Micaiah prophesies at
+# the gate of Samaria (1 Kgs 22:10), so his scene is told there.
+id: ahab-jehoshaphat
+title:
+  en: "Ahab and Jehoshaphat"
+  ru: "Ахав и Иосафат"
+year: "853 BC"
+# Where the story happens, told of two kings: no time on foot.
+walked: false
+people: ["Ahab@1Ki.16.28-Mic", "Jehoshaphat@1Ki.15.24-Mat"]
+approximate: true
+stops:
+  - place: a15257a # Jerusalem
+    ref: 2Chr.17.1-2Chr.17.19
+    year: "870 BC"
+    note:
+      en: "Jehoshaphat king of Judah strengthens the land and in his third year sends princes and Levites with the book of the law to teach in all the cities of Judah."
+      ru: "Иосафат, царь Иудейский, укрепляет страну и в третий год посылает князей и левитов с книгой закона учить народ по всем городам Иудеи."
+  - place: a041bb3 # Samaria
+    ref: 1Kgs.20.1-1Kgs.20.21
+    note:
+      en: 'Ben-hadad of Syria with thirty-two kings besieges Samaria; a prophet tells Ahab, "I will deliver it into thine hand this day", and the young men of the princes of the provinces rout the Syrians.'
+      ru: "Венадад Сирийский с тридцатью двумя царями осаждает Самарию; пророк говорит Ахаву: «Я сегодня предам его в руку твою», и слуги областных начальников обращают Сириян в бегство."
+  - place: a6fc60d # Aphek
+    ref: 1Kgs.20.26-1Kgs.20.34
+    note:
+      en: "A year later Ben-hadad comes up to Aphek, the Syrians saying the Lord is a God of the hills and not of the valleys; Israel smites them, a wall falls on 27,000 in Aphek, and Ahab lets Ben-hadad go for a covenant."
+      ru: "Через год Венадад выступает к Афеку: Сирияне говорят, что Господь есть Бог гор, а не Бог долин; Израиль поражает их, в Афеке стена падает на двадцать семь тысяч, и Ахав отпускает Венадада, заключив договор."
+  - place: a041bb3 # Samaria
+    ref: 1Kgs.22.1-1Kgs.22.28
+    note:
+      en: 'In the third year without war Jehoshaphat comes down to Ahab and agrees to go up with him to Ramoth-gilead. At the gate of Samaria some four hundred prophets promise victory; Micaiah alone sees Israel scattered "as sheep that have not a shepherd", and is put in prison.'
+      ru: "На третий год без войны Иосафат приходит к Ахаву и соглашается идти с ним на Рамоф Галаадский. У ворот Самарии около четырёхсот пророков сулят победу; один Михей видит Израильтян, рассеянных «как овец, у которых нет пастыря», и его сажают в темницу."
+  - place: a2fe63c # Ramoth-gilead
+    ref: 1Kgs.22.29-1Kgs.22.36
+    note:
+      en: "At Ramoth-gilead Ahab goes into the battle disguised; a bow drawn at a venture strikes him between the joints of the harness, and he dies at even in his chariot."
+      ru: "У Рамофа Галаадского Ахав идёт в бой переодетым; случайно пущенная стрела ранит его сквозь швы лат, и вечером он умирает в колеснице."
+  - place: a041bb3 # Samaria
+    ref: 1Kgs.22.37-1Kgs.22.40
+    note:
+      en: "The king is brought to Samaria and buried; the chariot is washed in the pool of Samaria, and the dogs lick up his blood, according to the word of the Lord (1 Kgs 21:19)."
+      ru: "Царя привозят в Самарию и хоронят; колесницу обмывают на пруде Самарийском, и псы лижут его кровь, по слову Господа (3 Цар 21:19)."
+  - place: a15257a # Jerusalem
+    ref: 2Chr.19.1-2Chr.19.11
+    note:
+      en: 'Jehoshaphat returns in peace to Jerusalem; Jehu the son of Hanani rebukes him: "Shouldest thou help the ungodly?" The king sets judges in the fortified cities and in Jerusalem.'
+      ru: "Иосафат возвращается с миром в Иерусалим; Ииуй, сын Анании, обличает его: «следовало ли тебе помогать нечестивцу?» Царь ставит судей по укреплённым городам и в Иерусалиме."
+  - place: a51df0e # Engedi
+    ref: 2Chr.20.1-2Chr.20.19
+    note:
+      en: 'Moab, Ammon and mount Seir come against Judah and stand at Hazazon-tamar, which is En-gedi. Jehoshaphat proclaims a fast and prays, "neither know we what to do: but our eyes are upon thee"; Jahaziel answers, "the battle is not yours, but God''s".'
+      ru: "Моавитяне, Аммонитяне и жители горы Сеира идут на Иудею и стоят у Ен-Гадди, в Хацацон-Фамаре. Иосафат объявляет пост и молится: «мы не знаем, что делать, но к Тебе очи наши!»; Иозиил отвечает: «не ваша война, а Божия»."
+  - place: a2e3aa0 # Tekoa
+    ref: 2Chr.20.20-2Chr.20.25
+    note:
+      en: 'Early in the morning Judah goes out to the wilderness of Tekoa with singers before the army, "Praise the Lord; for his mercy endureth for ever"; the enemies destroy one another, and the spoil takes three days to gather.'
+      ru: "Рано утром Иудеи выходят в пустыню Фекойскую с певцами впереди войска: «славьте Господа, ибо вовек милость Его!»; враги истребляют друг друга, и добычу собирают три дня."
+  - place: a71f834 # Valley of Beracah
+    ref: 2Chr.20.26-2Chr.20.30
+    note:
+      en: "On the fourth day they bless the Lord in a valley called from then the valley of Berachah, Blessing, and return to Jerusalem with psalteries, harps and trumpets."
+      ru: "В четвёртый день они благословляют Господа в долине, которую с тех пор зовут долиною благословения, и возвращаются в Иерусалим с псалтирями, цитрами и трубами."
+  - place: a8e53d5 # Ezion-geber
+    ref: 2Chr.20.35-2Chr.20.37
+    note:
+      en: "At the last Jehoshaphat joins Ahaziah, Ahab's son, to build ships at Ezion-geber for Tarshish; Eliezer of Mareshah prophesies against the alliance, and the ships are broken."
+      ru: "Под конец Иосафат вступает в союз с Охозией, сыном Ахава, чтобы строить в Ецион-Гавере корабли для Фарсиса; Елиезер из Мареши пророчествует против союза, и корабли разбиваются."

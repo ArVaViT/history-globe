@@ -1,0 +1,28 @@
+# Overview article (ADR 0007). Mainstream facts only; the location is given as disputed and the textual problem of 2 Samuel 8:13 is named.
+id: valley-of-salt
+place: af936bd
+title:
+  en: "Valley of Salt"
+  ru: "Долина Соляная"
+body:
+  en:
+    - "The Valley of Salt was the scene of two victories of Judah over Edom. It is usually sought in the salt flats (es-Sebkha) at the southern end of the Dead Sea, where the Arabah opens into a plain of salt and mud south of the sea, on the road from Judah into Edom; the Hebrew ge-melah, “valley of salt”, suits the place. The main alternative is Wadi el-Milh, “the salt wadi”, east of Beersheba, which keeps the name but lies far from Edom; the Arabah south of the Sebkha has also been named. The exact spot cannot be fixed."
+    - "“David gat him a name when he returned from smiting of the Syrians in the valley of salt, being eighteen thousand men”: so the text of Samuel, but Chronicles and the title of Psalm 60 say Edomites, and the Hebrew letters of Aram and Edom are easily confused. Chronicles credits the blow to Abishai, the psalm title to Joab with twelve thousand slain; after it David “put garrisons in Edom”. Some two centuries later Amaziah of Judah “slew of Edom in the valley of salt ten thousand, and took Selah by war, and called the name of it Joktheel”; Chronicles adds that ten thousand captives were thrown from the top of the rock."
+    - "Edom had already broken free under Jehoram, and in the days of Ahaz it struck Judah again; the valley is not mentioned after Amaziah. Today the southern basin of the Dead Sea, divided between Israel and Jordan, has dried out as the sea retreated and is largely taken up by the evaporation ponds of the potash works on both sides."
+  ru:
+    - "Долина Соляная — место двух побед Иудеи над Едомом. Её обычно ищут в солончаках (Эс-Себха) у южной оконечности Мёртвого моря, где Арава переходит в равнину соли и ила южнее моря, на дороге из Иудеи в Едом; еврейское ге-мелах, «долина соли», подходит к этому месту. Главная альтернатива — Вади-эль-Мильх, «соляное вади», к востоку от Вирсавии, которое сохранило имя, но лежит далеко от Едома; называли и Араву южнее Себхи. Точное место установить нельзя."
+    - "«И сделал Давид себе имя, возвращаясь с поражения восемнадцати тысяч Сирийцев в долине Соленой», — так в книге Царств, но Паралипоменон и надписание псалма говорят об Идумеях, а еврейские буквы в словах Арам и Едом легко спутать. Паралипоменон приписывает удар Авессе, надписание псалма — Иоаву, с двенадцатью тысячами убитых; после этого «поставил он охранные войска в Идумее». Примерно два века спустя Амасия, царь Иудейский, «поразил десять тысяч Идумеян на долине Соляной, и взял Селу войною, и дал ей имя Иокфеил»; Паралипоменон добавляет, что десять тысяч пленных сбросили с вершины скалы."
+    - "Едом отложился от Иудеи ещё при Иораме, а во дни Ахаза снова напал на неё; после Амасии долина больше не упоминается. Сегодня южный бассейн Мёртвого моря, поделённый между Израилем и Иорданией, обмелел с отступлением моря и по большей части занят испарительными прудами калийных заводов по обе стороны границы."
+scripture:
+  - 2Sam.8.13-2Sam.8.14
+  - 2Kgs.14.7
+  - 1Chr.18.12-1Chr.18.13
+  - 2Chr.25.11-2Chr.25.12
+  - Ps.60.1
+sources:
+  - "P. K. McCarter, II Samuel (Anchor Bible, 1984) (the text of 2 Samuel 8:13)"
+  - "J. R. Bartlett, Edom and the Edomites (1989)"
+  - "D. Baly, The Geography of the Bible (rev. ed., 1974)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+  - "'Salt, Valley of', in D. N. Freedman (ed.), The Anchor Bible Dictionary (1992)"
+status: checked

@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; Massah is a name given to the place of an event rather than a camp, and the app's candidates (Meribah, Rephidim, Kadesh-barnea) are given without a choice; the Synodal psalm numbering is noted.
+id: massah
+place: a296e06
+title:
+  en: "Massah"
+  ru: "Масса"
+body:
+  en:
+    - "Massah, “testing”, is the name Moses gave, with Meribah, “quarrel”, to the place at Rephidim where Israel found no water on the way from the wilderness of Sin to Sinai. The people “did chide with Moses, and said, Give us water that we may drink”, and asked, “Is the LORD among us, or not?”; Moses struck “the rock in Horeb” with his rod before the elders, and water came out. Massah is thus not a camp of its own but the name of what happened at Rephidim, and the map shows it with the places it may be: Meribah and Rephidim, which tradition sets in the south of Sinai, in or near the oasis of Feiran, and Kadesh-barnea in the north, where a second “water of Meribah” was struck from the rock near the end of the forty years. Deuteronomy, which names Massah between Taberah and Kibroth-hattaavah as a place where Israel provoked the Lord, may count it separately."
+    - "Massah became the byword for testing God. “Ye shall not tempt the LORD your God, as ye tempted him in Massah”, says Deuteronomy, and Jesus answered the tempter with that verse; the blessing of Levi recalls the holy one “whom thou didst prove at Massah, and with whom thou didst strive at the waters of Meribah”. Psalm 95 (94 in the Synodal numbering) warns, “Harden not your heart, as in the provocation, and as in the day of temptation in the wilderness”, where the Hebrew has Meribah and Massah, and the Letter to the Hebrews repeats the warning. Paul saw in the rock that gave water a figure of Christ."
+    - "Eusebius placed Rephidim near Pharan, the oasis of Feiran, and pilgrims on the way to Sinai passed through it from the fourth century on. Feiran, the largest oasis of the peninsula, with its palm groves, Byzantine ruins and Jebel Serbal above, is in the South Sinai governorate of Egypt; nothing on the ground can be tied to Massah."
+  ru:
+    - "Масса, «искушение», — имя, которое Моисей дал вместе с Меривой, «укорение», месту в Рефидиме, где Израиль не нашёл воды на пути из пустыни Син к Синаю. Народ укорял Моисея, говоря: «дайте нам воды пить», и спрашивал: «есть ли Господь среди нас, или нет?»; Моисей ударил жезлом «в скалу» в Хориве перед старейшинами, и пошла вода. Масса, таким образом, не отдельный стан, а имя того, что случилось в Рефидиме, и карта показывает её вместе с местами, которыми она может быть: Меривой и Рефидимом, которые предание помещает на юге Синая, в оазисе Фейран или близ него, и Кадесом на севере, где к концу сорока лет из скалы была изведена вторая «вода Меривы». Второзаконие, называющее Массу между Таверой и Киброт-Гаттаавой как место, где Израиль раздражил Господа, возможно, считает её отдельно."
+    - "Масса стала нарицательным именем искушения Бога. «Не искушайте Господа, Бога вашего, как вы искушали Его в Массе», — говорит Второзаконие, и этим стихом Иисус ответил искусителю; благословение Левия вспоминает святого мужа, «которого Ты искусил в Массе, с которым Ты препирался при водах Меривы». Псалом 94 (95-й по еврейскому счёту) предостерегает: «не ожесточите сердца вашего, как в Мериве, как в день искушения в пустыне», и Послание к Евреям повторяет это предостережение. Павел видел в скале, давшей воду, образ Христа."
+    - "Евсевий помещал Рефидим близ Фарана, оазиса Фейран, и паломники на пути к Синаю проходили через него с IV века. Фейран, крупнейший оазис полуострова, с пальмовыми рощами, византийскими развалинами и горой Сербал над ним, лежит в провинции Южный Синай в Египте; ничто на земле нельзя связать с Массой."
+scripture:
+  - Exod.17.1-Exod.17.7
+  - Num.20.1
+  - Num.20.13
+  - Deut.6.16
+  - Deut.9.22
+  - Deut.33.8
+  - Ps.95.8
+  - Matt.4.7
+  - 1Cor.10.4
+  - Heb.3.8
+sources:
+  - "Eusebius, Onomasticon, s.v. Raphidim"
+  - "Egeria, Itinerarium (Pharan)"
+  - "E. Robinson, Biblical Researches in Palestine, Mount Sinai and Arabia Petraea (1841)"
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "J. K. Hoffmeier, Ancient Israel in Sinai: The Evidence for the Authenticity of the Wilderness Tradition (2005)"
+status: checked

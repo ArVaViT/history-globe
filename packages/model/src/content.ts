@@ -441,6 +441,18 @@ export const QuestionFile = z.strictObject({
 export type QuestionFile = z.output<typeof QuestionFile>;
 
 /**
+ * Source lines in Russian (content/sources-ru.yaml): each line of an article's, a question's
+ * or a place's years' sources, as written, to the line a Russian reader reads — ancient works
+ * by their Russian titles, notes in Russian, modern scholarship as it was published.
+ */
+export const SourcesRuFile = z.record(z.string().min(1), z.string().min(1));
+
+/** An article or a question as the build writes it: its sources in Russian beside them. */
+export interface WithSourcesRu {
+  readonly sources_ru?: readonly string[];
+}
+
+/**
  * What ancient authors outside the Bible say of a place (content/ancient-authors.yaml), in
  * the manner of ToposText: the passage, a free text of it, and our own summary in both
  * languages, never their words in a modern translation.
@@ -528,6 +540,8 @@ export interface PlaceLife {
   };
   readonly note: Readonly<Record<string, string>>;
   readonly sources: readonly string[];
+  /** The sources as a Russian reader reads them (content/sources-ru.yaml). */
+  readonly sources_ru?: readonly string[];
   /** Taken over from the city it lies in: says nothing of when the place itself began. */
   readonly inherited?: true;
 }

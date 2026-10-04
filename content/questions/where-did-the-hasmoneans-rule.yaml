@@ -1,0 +1,26 @@
+id: where-did-the-hasmoneans-rule
+question:
+  en: "Where did the Hasmoneans rule from?"
+  ru: "Откуда правили Хасмонеи?"
+answer:
+  en:
+    - "From Jerusalem, where the map point stands. The family came from Modein, a village in the foothills north-west of the city, where in 167 BC the priest Mattathias refused to sacrifice to the gods of Antiochus IV and began the revolt; his son Judas Maccabeus took Jerusalem and cleansed the Temple in December 164 BC, the event kept as Hanukkah, “the feast of the dedication” at which John shows Jesus walking in Solomon's porch."
+    - "Judas' brothers turned the revolt into a state: Jonathan became high priest in 152 BC, Simon won freedom from tribute in 142, and the people made him hereditary high priest and ruler. John Hyrcanus (134–104 BC) conquered Idumea and Samaria and razed the temple on Gerizim; Aristobulus I took the title of king; Alexander Jannaeus (103–76) pushed the borders to the coast and across the Jordan, nearly to the size of David's kingdom; his widow Salome Alexandra reigned until 67. Their palace stood in the Upper City of Jerusalem above the Temple, and they built winter palaces with pools and gardens at Jericho, excavated since the 1970s. Daniel's visions of the little horn and of the forces that would “pollute the sanctuary of strength” were read in these years, with the promise that “the people that do know their God shall be strong, and do exploits”."
+    - "The dynasty ended in civil war. Salome's sons Hyrcanus II and Aristobulus II both appealed to Pompey, who took Jerusalem in 63 BC and entered the Holy of Holies; Rome kept Hyrcanus as high priest and ethnarch, and the last Hasmonean king, Antigonus, reigned with Parthian help from 40 to 37 BC until Herod, whose wife Mariamne was a Hasmonean princess, took the city with Roman legions. The books of Maccabees, which tell the first part of the story, are in the Greek and Slavonic Bibles but not in the Hebrew canon."
+  ru:
+    - "Из Иерусалима, где и стоит точка карты. Род происходил из Модина, селения в предгорьях к северо-западу от города, где в 167 г. до н. э. священник Маттафия отказался принести жертву богам Антиоха IV и начал восстание; его сын Иуда Маккавей взял Иерусалим и очистил Храм в декабре 164 г. до н. э. — это событие вспоминают в Хануку, «праздник обновления», на котором Иоанн показывает Иисуса ходящим в притворе Соломоновом."
+    - "Братья Иуды превратили восстание в государство: Ионафан стал первосвященником в 152 г. до н. э., Симон в 142-м добился свободы от дани, и народ сделал его наследственным первосвященником и правителем. Иоанн Гиркан (134–104 гг.) завоевал Идумею и Самарию и разрушил храм на Гаризиме; Аристобул I принял титул царя; Александр Яннай (103–76) раздвинул границы до побережья и за Иордан, почти до размеров царства Давида; его вдова Саломея Александра правила до 67 г. Их дворец стоял в Верхнем городе Иерусалима над Храмом, а в Иерихоне они построили зимние дворцы с бассейнами и садами, раскопанные с 1970-х годов. Видения Даниила о небольшом роге и о войске, которое «осквернит святилище могущества», читали в эти годы, вместе с обещанием: «люди, чтущие своего Бога, усилятся и будут действовать»."
+    - "Династия кончилась междоусобицей. Сыновья Саломеи Гиркан II и Аристобул II оба обратились к Помпею, который взял Иерусалим в 63 г. до н. э. и вошёл в Святое святых; Рим оставил Гиркана первосвященником и этнархом, а последний хасмонейский царь Антигон правил с помощью парфян с 40 по 37 г. до н. э., пока Ирод, чья жена Мариамна была хасмонейской царевной, не взял город с римскими легионами. Книги Маккавейские, рассказывающие первую часть этой истории, есть в греческой и славянской Библии, но не в еврейском каноне."
+map:
+  place: a15257a
+  year: "164 BC"
+  ref: John.10.22
+scripture:
+  [John.10.22-John.10.23, Dan.11.31-Dan.11.32, Dan.8.9-Dan.8.14, 1Macc.2.1, 1Macc.4.52-1Macc.4.59]
+sources:
+  - "1 Maccabees 2:1-28 (Mattathias at Modein); 4:36-59 (the dedication); 13:41-42 (freedom from tribute); 14:41 (Simon high priest and ruler)"
+  - "Josephus, Antiquities 12.265-13.432 and 14.1-79 (the Hasmoneans from Mattathias to Pompey); 20.189-190 (the Hasmonean palace above the Temple)"
+  - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. G. Vermes and F. Millar, vol. 1 (1973)"
+  - "E. Netzer, Hasmonean and Herodian Palaces at Jericho, vol. 1 (2001)"
+  - "E. Regev, The Hasmoneans: Ideology, Archaeology, Identity (2013)"
+status: checked

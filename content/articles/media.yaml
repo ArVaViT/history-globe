@@ -1,0 +1,41 @@
+# Overview article (ADR 0007). Mainstream facts only; the identity of Darius the Mede is given as unresolved.
+id: media
+place: ad2fadf
+title:
+  en: "Media"
+  ru: "Мидия"
+body:
+  en:
+    - "Media was the land of the Medes, the high plateau of north-western Iran behind the Zagros mountains, with Ecbatana, now Hamadan, as its capital. The Medes were an Iranian people who appear in Assyrian records from the ninth century BC, when Shalmaneser III raided their country, famous for its horses; Sargon II and his successors took tribute from dozens of Median chiefs. When Samaria fell in 722 BC the Assyrians settled some of the deported Israelites “in the cities of the Medes”."
+    - "Herodotus tells how Deioces united the Medes and built Ecbatana with its seven walls, and how Cyaxares made them a power: with Nabopolassar of Babylon he destroyed Nineveh in 612 BC, as the Babylonian Chronicle confirms, and fought Lydia until an eclipse ended a battle in 585. Isaiah and Jeremiah saw the Medes as the destroyers of Babylon: “Go up, O Elam: besiege, O Media”, and “the LORD hath raised up the spirit of the kings of the Medes”. Yet by the time Babylon fell in 539 the Medes had been overtaken: about 550 BC Cyrus the Persian defeated Astyages, the last Median king, whose own army deserted him, and Ecbatana became the summer residence of the Persian kings. There, in “the palace that is in the province of the Medes”, the scroll with Cyrus' decree about the Temple was found in Darius' day."
+    - "So the Bible speaks of Persia and Media together: the seven princes of Esther, the laws “of the Persians and the Medes” that alter not, the two-horned ram of Daniel's vision that “are the kings of Media and Persia”. Daniel's “Darius the Median”, who took the kingdom after Belshazzar, has no match in the known sources, and his identity remains debated. Medes were at Jerusalem at Pentecost, among the Parthians and Elamites."
+    - "Under the Persians Media was a satrapy whose revolt in 522 BC Darius crushed, as he records at Behistun; under the Seleucids, Parthians and Sasanians it kept its name, and Media Atropatene in the north became Azerbaijan. Excavations at Tepe Nush-i Jan and Godin Tepe have uncovered Median fortresses and a fire temple of the eighth and seventh centuries BC. The old Median heartland is now the Iranian provinces of Hamadan, Kermanshah and Kurdistan, and Hamadan is still a city of half a million."
+  ru:
+    - "Мидия — страна Мидян, высокое плоскогорье северо-западного Ирана за горами Загрос, со столицей Екбатаной, нынешним Хамаданом. Мидяне — иранский народ, известный по ассирийским записям с IX века до н. э., когда Салманасар III совершил набег на их страну, славную конями; Саргон II и его преемники брали дань с десятков мидийских вождей. Когда в 722 г. до н. э. пала Самария, ассирийцы поселили часть выведенных Израильтян «в городах Мидийских»."
+    - "Геродот рассказывает, как Деиок объединил Мидян и построил Екбатану с семью стенами и как Киаксар сделал их силой: вместе с Набопаласаром Вавилонским он разрушил Ниневию в 612 г. до н. э., что подтверждает Вавилонская хроника, и воевал с Лидией, пока затмение не прервало битву в 585 г. Исаия и Иеремия видели в Мидянах разрушителей Вавилона: «восходи, Елам, осаждай, Мид!» и «Господь возбудил дух царей Мидийских». Но к падению Вавилона в 539 г. Мидян уже обогнали: около 550 г. до н. э. Кир Персидский разбил Астиага, последнего мидийского царя, которого покинуло собственное войско, и Екбатана стала летней резиденцией персидских царей. Там, «во дворце, который в области Мидии», во дни Дария нашли свиток с указом Кира о Храме."
+    - "Потому Библия говорит о Персии и Мидии вместе: семь князей в книге Есфирь, «законы Персидские и Мидийские», которые не отменяются, двурогий овен в видении Даниила — «цари Мидийский и Персидский». «Дарий Мидянин» Даниила, принявший царство после Валтасара, не находит соответствия в известных источниках, и вопрос о том, кто он, остаётся спорным. Мидяне были в Иерусалиме в день Пятидесятницы, среди Парфян и Еламитов."
+    - "При Персах Мидия была сатрапией, восстание которой в 522 г. до н. э. подавил Дарий, как он записал в Бехистуне; при Селевкидах, Парфянах и Сасанидах она сохранила имя, а Мидия Атропатена на севере стала Азербайджаном. Раскопки в Тепе-Нуш-и-Джан и Годин-Тепе открыли мидийские крепости и храм огня VIII–VII веков до н. э. Старое сердце Мидии — ныне иранские провинции Хамадан, Керманшах и Курдистан, а Хамадан и сейчас город на полмиллиона жителей."
+scripture:
+  - 2Kgs.17.6
+  - Ezra.6.2
+  - Esth.1.3
+  - Esth.1.14
+  - Esth.1.19
+  - Isa.13.17
+  - Isa.21.2
+  - Jer.51.11
+  - Jer.51.28
+  - Dan.5.28
+  - Dan.5.31
+  - Dan.8.20
+  - Acts.2.9
+sources:
+  - "Herodotus, Histories 1.95-130 (Deioces, Cyaxares, Astyages)"
+  - "Babylonian Chronicle ABC 3 (the fall of Nineveh, 612 BC); Nabonidus Chronicle (ABC 7) ii 1-4 (Cyrus and Astyages)"
+  - "Darius I, the Behistun inscription (the Median revolt of Phraortes)"
+  - "Shalmaneser III, Black Obelisk (RIMA 3, A.0.102.14), the twenty-fourth year (the Medes)"
+  - "Strabo, Geography 11.13.1, 11.13.5 (Ecbatana as a royal residence)"
+  - "D. Stronach and M. Roaf, Nush-i Jan I: The Major Buildings of the Median Settlement (2007)"
+  - "G. B. Lanfranchi, M. Roaf and R. Rollinger (eds.), Continuity of Empire (?): Assyria, Media, Persia (2003)"
+  - "H. H. Rowley, Darius the Mede and the Four World Empires in the Book of Daniel (1935)"
+status: checked

@@ -1,0 +1,45 @@
+# Overview article (ADR 0007). Mainstream facts only; the origin of the Philistines is given as the usual Aegean view, the date of their settlement as approximate.
+id: philistia
+place: ac71e65
+title:
+  en: "Philistia"
+  ru: "Земля Филистимская"
+body:
+  en:
+    - "Philistia is the southern coastal plain of Canaan, from the Yarkon near Joppa down to the brook of Egypt, between the sea and the Shephelah, the foothills of Judah. Here lay the five cities of the Philistines, Gaza, Ashkelon and Ashdod on the coast road and Ekron and Gath inland, each under its own lord: Joshua counts “five lords of the Philistines”. The Bible brings the Philistines from Caphtor, usually taken to be Crete: the LORD brought up “the Philistines from Caphtor”, says Amos, and Jeremiah calls them “the remnant of the country of Caphtor”. Reliefs of Rameses III at Medinet Habu show the Peleset among the Sea Peoples who attacked Egypt about 1175 BC, and the earliest Philistine towns, with their Aegean-style pottery, hearths and pig bones, were settled soon after."
+    - "In the days of the judges and of Saul the Philistines were Israel's chief enemy: Samson fought them, they captured the ark at Ebenezer, and after Gilboa they sent Saul's armour “into the land of the Philistines round about”. David, who had served Achish of Gath, subdued them, and the psalm cries “Philistia, triumph thou because of me”. Uzziah broke down the walls of Gath, Jabneh and Ashdod. From the eighth century the plain passed under Assyria: Tiglath-pileser III took Gaza in 734, Sargon II crushed the revolt of Ashdod in 711, and Sennacherib in 701 restored Padi, king of Ekron, whom Hezekiah had held in Jerusalem. Isaiah warned, “Rejoice not thou, whole Palestina”, and in 604 BC Nebuchadnezzar destroyed Ashkelon; Ekron fell about the same time, and the Philistines vanish from history."
+    - "A dedicatory inscription found at Ekron in 1996 names its kings Padi and Achish, known from the Assyrian annals, and excavations at Ashdod, Ashkelon, Ekron (Tel Miqne) and Gath (Tell es-Safi) have traced the Philistine cities from their founding to their fall. The Greek name of the whole land, Palaistine, which Herodotus used in the fifth century BC, is the name of Philistia; Hadrian made it the name of the Roman province after 135, and from it comes Palestine. The psalmist still named “Philistia, and Tyre, with Ethiopia” among the nations born into Zion, and Zechariah foretold a stranger in Ashdod, when God would “cut off the pride of the Philistines”."
+    - "Today the old Philistine plain is divided: Gaza lies in the Gaza Strip, with some two million people, while Ashkelon, Ashdod, with one of Israel's two main ports, and the mounds of Ekron and Gath lie in Israel."
+  ru:
+    - "Земля Филистимская — южная приморская равнина Ханаана, от Яркона у Яффы до потока Египетского, между морем и Шефелой, предгорьями Иудеи. Здесь стояли пять городов Филистимлян: Газа, Аскалон и Азот на приморской дороге, Екрон и Геф в глубине, каждый со своим владельцем; книга Иисуса Навина считает «пять владельцев Филистимских». Библия выводит Филистимлян из Кафтора, под которым обычно понимают Крит: Господь вывел «Филистимлян — из Кафтора», говорит Амос, а Иеремия называет их «остаток острова Кафтора». Рельефы Рамсеса III в Мединет-Абу показывают пелесет среди «народов моря», напавших на Египет около 1175 г. до н. э., и первые филистимские города с их посудой эгейского образца, очагами и свиными костями были заселены вскоре после того."
+    - "Во дни судей и Саула Филистимляне были главным врагом Израиля: с ними воевал Самсон, они захватили ковчег при Авен-Езере, а после Гелвуя разослали доспехи Саула «по всей земле Филистимской». Давид, служивший Анхусу Гефскому, покорил их, и псалом восклицает: «Восклицай Мне, земля Филистимская!» Озия разрушил стены Гефа, Иавнеи и Азота. С VIII века равнина перешла под власть Ассирии: Феглаффелласар III взял Газу в 734 г., Саргон II подавил восстание Азота в 711 г., а Сеннахирим в 701 г. вернул на престол Падия, царя Екрона, которого Езекия держал в Иерусалиме. Исаия предупреждал: «не радуйся, земля Филистимская», а в 604 г. до н. э. Навуходоносор разрушил Аскалон; около того же времени пал Екрон, и Филистимляне исчезают из истории."
+    - "Посвятительная надпись, найденная в Екроне в 1996 году, называет его царей Падия и Ахиша, известных по ассирийским анналам, а раскопки Азота, Аскалона, Екрона (Тель-Микне) и Гефа (Телль-эс-Сафи) проследили филистимские города от основания до гибели. Греческое имя всей страны, Палестина, которым в V веке до н. э. пользовался Геродот, — это имя Филистии; после 135 года Адриан сделал его названием римской провинции. Псалмопевец всё ещё называл «Филистимляне и Тир с Ефиопиею» среди народов, рождённых в Сионе, а Захария предрекал чужое племя в Азоте, когда Бог уничтожит «высокомерие Филистимлян»."
+    - "Сегодня древняя филистимская равнина разделена: Газа лежит в секторе Газа, где живёт около двух миллионов человек, а Ашкелон, Ашдод с одним из двух главных портов Израиля и холмы Екрона и Гефа — в Израиле."
+scripture:
+  - Gen.10.14
+  - Deut.2.23
+  - Josh.13.2-Josh.13.3
+  - Judg.10.6-Judg.10.7
+  - 1Sam.4.1-1Sam.4.11
+  - 1Sam.31.9
+  - 2Sam.8.1
+  - 2Chr.26.6
+  - Ps.60.8
+  - Ps.87.4
+  - Isa.14.29-Isa.14.31
+  - Jer.47.4-Jer.47.5
+  - Ezek.25.15-Ezek.25.16
+  - Joel.3.4
+  - Amos.9.7
+  - Zeph.2.5
+  - Zech.9.5-Zech.9.6
+sources:
+  - "The Medinet Habu reliefs and inscriptions of Rameses III, year 8 (the Sea Peoples; the Peleset)"
+  - "Herodotus, Histories 1.105; 7.89 (Palaistine)"
+  - "Tiglath-pileser III, Summary Inscriptions (RINAP 1) (Hanunu of Gaza); Sargon II, Annals (the Ashdod revolt); Sennacherib's prism (RINAP 3/1) (Padi of Ekron); Babylonian Chronicle ABC 5 (Ashkelon, 604 BC)"
+  - "S. Gitin, T. Dothan and J. Naveh, 'A Royal Dedicatory Inscription from Ekron', Israel Exploration Journal 47 (1997)"
+  - "T. Dothan, The Philistines and Their Material Culture (1982)"
+  - "L. E. Stager, 'The Impact of the Sea Peoples in Canaan (1185-1050 BCE)', in T. E. Levy (ed.), The Archaeology of Society in the Holy Land (1995)"
+  - "A. Yasur-Landau, The Philistines and Aegean Migration at the End of the Late Bronze Age (2010)"
+  - "A. M. Maeir (ed.), Tell es-Safi/Gath I: The 1996-2005 Seasons (2012)"
+status: checked

@@ -1,0 +1,43 @@
+# Overview article (ADR 0007). Mainstream facts only; the place of the crossing is given as disputed, with the app's candidates named; the "sea of reeds" reading is given as the usual one.
+id: red-sea
+place: a3d18b2
+title:
+  en: "Red Sea"
+  ru: "Чермное море"
+body:
+  en:
+    - "The Red Sea of the English Bible is the Hebrew yam suph, “sea of reeds”: suph is the word for the “flags” in which the infant Moses was hidden, and it seems borrowed from the Egyptian name of the papyrus marsh. The Greek translators rendered it Red Sea, the Greek name for the waters between Africa and Arabia, and the Latin, English and Russian Bibles followed them. In the Bible the name covers more than one stretch of water: Solomon's ships were built at Ezion-geber “on the shore of the Red sea, in the land of Edom”, that is on the Gulf of Aqaba, and Israel went round Edom “by the way of the Red sea”."
+    - "The sea of the exodus is the one Israel crossed. Led “through the way of the wilderness of the Red sea”, the people saw the Egyptian chariots behind them; Moses stretched out his hand, “the LORD caused the sea to go back by a strong east wind all that night”, and Israel went “into the midst of the sea upon the dry ground”, while Pharaoh's host was drowned. The Song of the Sea sings that his chosen captains “are drowned in the Red sea”. From there Moses led the people into the wilderness of Shur; the list of stations has them camp “by the Red sea” again after Elim."
+    - "Where the crossing took place is disputed. The candidates run from the northern end of the Gulf of Suez through the Bitter Lakes, Lake Timsah and the Ballah Lakes, the chain of lakes along today's Suez Canal, to the Pelusiac branch of the Nile and the lagoons of the Mediterranean shore; a few place it at the Gulf of Aqaba. Egyptian texts of the New Kingdom know a papyrus marsh near the city of Rameses, and many scholars look for the yam suph among the lakes east of the Delta, holding that the name was later stretched to the Red Sea proper. Josephus already compared the crossing with Alexander's passage along the Pamphylian shore."
+    - "The crossing became Israel's great memory of deliverance. Rahab had heard how “the LORD dried up the water of the Red sea”; the Psalms praise him “which divided the Red sea into parts” and “overthrew Pharaoh and his host in the Red sea”; Stephen names the wonders “in the Red sea”, and Hebrews says that by faith “they passed through the Red sea as by dry land”. The Red Sea today, some 2,250 km long between Africa and Arabia, is joined to the Mediterranean by the Suez Canal, opened in 1869 through those same lakes, and its coral reefs draw divers to Sinai, Eilat and Aqaba."
+  ru:
+    - "Чермное море Библии — еврейское ям-суф, «море тростника»: словом суф назван тростник, в котором спрятали младенца Моисея, и, по-видимому, оно заимствовано из египетского названия папирусных болот. Греческие переводчики передали его как Красное море, греческое имя вод между Африкой и Аравией, и латинская, английская и русская Библии последовали за ними; славянское «чермное» и значит «красное». В Библии это имя покрывает не одну полосу воды: корабли Соломона строились в Ецион-Гавере «на берегу Чермного моря, в земле Идумейской», то есть на заливе Акаба, а Израиль обходил Едом «путем Чермного моря»."
+    - "Море исхода — то, которое Израиль перешёл. «И обвел Бог народ дорогою пустынною к Чермному морю», и народ увидел за собой египетские колесницы; Моисей простёр руку, «и гнал Господь море сильным восточным ветром всю ночь», и Израиль пошёл «среди моря по суше», а войско фараона потонуло. Песнь у моря поёт, что его избранные военачальники «потонули в Чермном море». Оттуда Моисей повёл народ в пустыню Сур; в перечне станов они ещё раз стоят «у Чермного моря» после Елима."
+    - "Где произошёл переход, спорно. Кандидаты тянутся от северной оконечности Суэцкого залива через Горькие озёра, озеро Тимсах и озёра Баллах — цепь озёр вдоль нынешнего Суэцкого канала — до Пелусийского рукава Нила и лагун средиземноморского берега; немногие помещают его у залива Акаба. Египетские тексты Нового царства знают папирусное болото близ города Раамсеса, и многие учёные ищут ям-суф среди озёр к востоку от Дельты, полагая, что имя позже распространили на собственно Красное море. Иосиф Флавий уже сравнивал переход с проходом Александра вдоль памфилийского берега."
+    - "Переход стал главной памятью Израиля об избавлении. Раав слышала, «как Господь Бог иссушил пред вами воду Чермного моря»; псалмы славят Того, Кто «разделил Чермное море» и «низверг фараона и войско его в море Чермное»; Стефан называет чудеса «в Чермном море», а Послание к Евреям говорит: «Верою перешли они Чермное море, как по суше». Красное море сегодня, длиной около 2250 км между Африкой и Аравией, соединено со Средиземным Суэцким каналом, открытым в 1869 году через те же озёра, а его коралловые рифы привлекают ныряльщиков на Синай, в Эйлат и Акабу."
+scripture:
+  - Exod.2.3
+  - Exod.13.18
+  - Exod.14.21-Exod.14.22
+  - Exod.15.4
+  - Exod.15.22
+  - Num.21.4
+  - Num.33.8-Num.33.10
+  - 1Kgs.9.26
+  - Josh.2.10
+  - Josh.4.23
+  - Neh.9.9
+  - Ps.106.9
+  - Ps.136.13-Ps.136.15
+  - Isa.63.11
+  - Acts.7.36
+  - Heb.11.29
+sources:
+  - "Septuagint, Exodus 13.18 and 15.4 (erythra thalassa)"
+  - "Josephus, Antiquities 2.324-349 (the crossing; Alexander at the Pamphylian sea)"
+  - "Papyrus Anastasi III (the papyrus marsh near Pi-Ramesse), in R. A. Caminos, Late-Egyptian Miscellanies (1954)"
+  - "B. F. Batto, 'The Reed Sea: Requiescat in Pace', Journal of Biblical Literature 102 (1983)"
+  - "G. I. Davies, The Way of the Wilderness (1979)"
+  - "J. K. Hoffmeier, Israel in Egypt (1996); Ancient Israel in Sinai (2005)"
+  - "K. A. Kitchen, On the Reliability of the Old Testament (2003)"
+status: checked

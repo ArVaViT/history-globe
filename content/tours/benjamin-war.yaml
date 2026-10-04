@@ -1,0 +1,63 @@
+# The Levite of Ephraim and the war of Israel with Benjamin, Judges 19-21, in the order of
+# the text. The chapters are not dated ("in those days there was no king in Israel"); the
+# tour's year (1150 BC) is the point of the Judges tour, for the map only. Phinehas the son
+# of Eleazar serving before the ark (20:28) sets the story early in the period, like the
+# Danites' migration. The Levite's home on mount Ephraim has no place on the map. "The
+# house of God" where Israel asks counsel (20:18, 26; 21:2) is Hebrew beth-el: most modern
+# translations and commentators read the town of Bethel, where the ark then stood (20:27),
+# and the Synodal itself names Bethel in 20:31; the KJV and Synodal keep "house of God",
+# and some take it as the sanctuary wherever it stood. The stop says so.
+id: benjamin-war
+title:
+  en: "The war with Benjamin"
+  ru: "Война с Вениамином"
+year: "1150 BC"
+# Where the story happens, told of a Levite and then of all Israel: no time on foot.
+walked: false
+approximate: true
+stops:
+  - place: a112427 # Bethlehem
+    ref: Judg.19.1-Judg.19.9
+    note:
+      en: "A Levite of mount Ephraim goes to Bethlehem-judah to bring back his concubine; her father keeps him feasting for five days."
+      ru: "Левит с горы Ефремовой идёт в Вифлеем Иудейский вернуть наложницу; её отец пять дней удерживает его угощением."
+  - place: a403c45 # Jebus
+    ref: Judg.19.10-Judg.19.12
+    note:
+      en: "With the day far spent they reach Jebus, which is Jerusalem; the Levite will not lodge in a city of strangers and goes on to Gibeah."
+      ru: "К вечеру они доходят до Иевуса, что ныне Иерусалим; левит не хочет ночевать в городе иноплеменников и идёт дальше, к Гиве."
+  - place: ac24f5f # Gibeah
+    ref: Judg.19.13-Judg.19.30
+    note:
+      en: "At Gibeah of Benjamin no one takes them in but an old man; the men of the city abuse the concubine through the night, and she dies at the door. The Levite cuts her body into twelve pieces and sends them through all the coasts of Israel."
+      ru: "В Гиве Вениаминовой их не пускает в дом никто, кроме одного старика; мужчины города всю ночь насилуют наложницу, и она умирает у порога. Левит разрезает её тело на двенадцать частей и рассылает во все пределы Израилевы."
+  - place: a736f6c # Mizpah
+    ref: Judg.20.1-Judg.20.17
+    note:
+      en: 'All Israel, "from Dan even to Beer-sheba", gathers to the Lord at Mizpah; Benjamin refuses to give up the men of Gibeah.'
+      ru: "Весь Израиль, «от Дана до Вирсавии», собирается пред Господа в Массифу; Вениамин отказывается выдать развращённых людей Гивы."
+  - place: a64f355 # Bethel
+    ref: Judg.20.18-Judg.20.28
+    note:
+      en: "At the house of God, in Hebrew Beth-el and usually taken as the town of Bethel, Israel asks who shall go up first; twice beaten, they weep and fast before the ark, where Phinehas the son of Eleazar serves, and are told to go up once more."
+      ru: "В доме Божием (по-еврейски Бет-Эль, обычно понимаемом как город Вефиль) Израиль вопрошает, кому идти первым; дважды разбитые, они плачут и постятся пред ковчегом, при котором служит Финеес, сын Елеазара, и получают повеление идти снова."
+  - place: ac24f5f # Gibeah
+    ref: Judg.20.29-Judg.20.44
+    note:
+      en: "An ambush is set round Gibeah; the city is taken and burned, and Benjamin is smitten: 25,100 men fall that day."
+      ru: "Вокруг Гивы ставят засаду; город взят и сожжён, Вениамин разбит: в тот день падают двадцать пять тысяч сто человек."
+  - place: a45acc3 # Rimmon
+    ref: Judg.20.45-Judg.20.48
+    note:
+      en: "Six hundred men flee to the rock of Rimmon in the wilderness and stay there four months, all that is left of the tribe."
+      ru: "Шестьсот человек бегут к скале Риммону в пустыне и остаются там четыре месяца, всё, что уцелело от колена."
+  - place: af92088 # Jabesh-gilead
+    ref: Judg.21.1-Judg.21.14
+    note:
+      en: "Israel has sworn not to give Benjamin wives. Jabesh-gilead sent no one to Mizpah: twelve thousand men smite it and bring four hundred virgins to the camp at Shiloh."
+      ru: "Израиль поклялся не отдавать дочерей Вениамину. Из Иависа Галаадского никто не приходил в Массифу: двенадцать тысяч поражают его и приводят четыреста девиц в стан в Силом."
+  - place: aa4680a # Shiloh
+    ref: Judg.21.15-Judg.21.25
+    note:
+      en: 'At the yearly feast of the Lord in Shiloh the Benjamites, hidden in the vineyards, catch wives from the daughters of Shiloh as they come out to dance. "In those days there was no king in Israel: every man did that which was right in his own eyes."'
+      ru: "На ежегодном празднике Господнем в Силоме Вениамитяне, засев в виноградниках, хватают себе жён из девиц Силомских, вышедших плясать. «В те дни не было царя у Израиля; каждый делал то, что ему казалось справедливым»."

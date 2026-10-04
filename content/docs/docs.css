@@ -522,6 +522,15 @@ pre:hover .copy,
 .copy:hover {
   background: rgb(255 255 255 / 0.12);
 }
+/* A phone has no hover: the button stands under the code, always shown, never over it. */
+@media (hover: none) {
+  .copy {
+    position: static;
+    display: block;
+    margin: 12px 0 0 auto;
+    opacity: 1;
+  }
+}
 
 .table {
   overflow-x: auto;

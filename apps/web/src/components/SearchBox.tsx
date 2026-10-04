@@ -189,10 +189,16 @@ export function SearchBox({
     if (year !== null) return [];
     const q = foldName(query);
     if (q.length < 4) return [];
+    // Or whose traveller the name finds: «Павел» for «путешествие Павла».
+    const who = new Set(persons.map(({ person }) => person.id));
     return data.tours
-      .filter((tour) => Object.values(tour.title).some((n) => foldName(n).includes(q)))
+      .filter(
+        (tour) =>
+          Object.values(tour.title).some((n) => foldName(n).includes(q)) ||
+          (tour.people ?? []).some((id) => who.has(id)),
+      )
       .slice(0, 3);
-  }, [data, year, query]);
+  }, [data, year, query, persons]);
   // A place found only by a loose match (a case form, a stem) gives way when anything
   // starts with what was typed: "Хатт" offers Hatti and Hattusa, not Dinhabah.
   const results = useMemo(() => {

@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; this record carries the verses where Cush appears as the far edge of the world or through its people (Esther, the Cushite messenger, Job, Amos, Acts 8); the land and kingdom of Cush, Tirhakah and the prophets' oracles belong to the article cush. The passage of the name to Aksum is explained.
+id: ethiopia
+place: ab45bd3
+title:
+  en: "Ethiopia"
+  ru: "Ефиопия"
+body:
+  en:
+    - "The Ethiopia of these verses is not the modern country but Cush, the Nile land south of Egypt in today's Sudan; the Greek name Aithiopes, “burnt-faced”, passed through the Septuagint into the English and Russian Bibles. Here Cush is the far edge of the known world. Ahasuerus reigned over a hundred and twenty-seven provinces “from India even unto Ethiopia”, and Mordecai's decree went out to the rulers of all of them. The Persian record agrees: Darius lists Kush among the lands of his empire in his tomb inscription at Naqsh-i Rustam, and Herodotus tells that the Ethiopians bordering Egypt paid no fixed tribute but brought the king gifts of gold, ebony, boys and elephant tusks."
+    - "Cushites also appear as people. When Absalom fell, Joab sent a Cushite runner to David; the King James Version, like the Synodal Bible, takes the Hebrew “the Cushite” as a name, Cushi, and it was he who brought the king the news. Job says of wisdom that “the topaz of Ethiopia shall not equal it”: Pliny, citing Juba, says the topazos came from an island in the Red Sea, and the stone he describes is thought to be the green peridot of Zabargad. Amos sets Israel beside the distant Cushites: “Are ye not as children of the Ethiopians unto me, O children of Israel?”"
+    - "In Acts “a man of Ethiopia, an eunuch of great authority under Candace queen of the Ethiopians”, returning from Jerusalem, sat in his chariot reading Isaiah; Philip explained the prophet to him and baptised him. Candace, as Pliny notes, was a title passed from queen to queen at Meroë. Eusebius records that the eunuch was the first of the Gentiles to believe and was said to have preached in his own country. In the fourth century the Greek text of King Ezana of Aksum rendered his people's name Habashat as Ethiopians, and the name passed to the highland kingdom; the Ethiopian Church, calling the eunuch Bachos, counts him as the first of its faithful."
+  ru:
+    - "Ефиопия этих стихов — не нынешняя страна, а Куш, нильская земля к югу от Египта, в сегодняшнем Судане; греческое имя «эфиопы», «опалённые лицом», через Септуагинту перешло в русскую и английскую Библию. Здесь Куш — край известного мира. Артаксеркс царствовал над ста двадцатью семью областями «от Индии и до Ефиопии», и указ Мардохея был разослан правителям их всех. Персидские источники согласны: Дарий в надписи на своей гробнице в Накше-Рустаме числит Куш среди земель державы, а Геродот рассказывает, что эфиопы, соседние с Египтом, не платили постоянной подати, но приносили царю дары — золото, эбеновое дерево, мальчиков и слоновые бивни."
+    - "Кушиты появляются и как люди. Когда пал Авессалом, Иоав послал к Давиду бегуна-кушита; Синодальный перевод, как и английская Библия, понимает еврейское «кушит» как имя — Хусий, — и это он принёс царю весть. Иов говорит о мудрости: «Не равняется с нею топаз Ефиопский»; Плиний со слов Юбы пишет, что топаз везли с острова в Красном море, и описанный им камень считают зелёным перидотом с острова Забаргад. Амос ставит Израиль рядом с далёкими кушитами: «Не таковы ли, как сыны Ефиоплян, и вы для Меня, сыны Израилевы?»"
+    - "В Деяниях «муж Ефиоплянин, евнух, вельможа Кандакии, царицы Ефиопской», возвращаясь из Иерусалима, читал на колеснице пророка Исаию; Филипп объяснил ему пророка и крестил его. Кандакия, как замечает Плиний, — титул, переходивший в Мероэ от царицы к царице. Евсевий пишет, что евнух первым из язычников уверовал и, по преданию, проповедовал у себя на родине. В IV веке греческий текст надписи царя Эзаны из Аксума передал имя его народа, Хабашат, словом «эфиопы», и имя перешло к царству на нагорье; Эфиопская церковь, называя евнуха Бахосом, считает его первым из своих верных."
+scripture:
+  - 2Sam.18.21
+  - 2Sam.18.31-2Sam.18.32
+  - Esth.1.1
+  - Esth.8.9
+  - Job.28.19
+  - Amos.9.7
+  - Acts.8.27-Acts.8.28
+  - Acts.8.35-Acts.8.38
+sources:
+  - "Darius I, tomb inscription at Naqsh-i Rustam (DNa), the list of lands"
+  - "Herodotus, Histories 3.97 (the gifts of the Ethiopians to the Persian king)"
+  - "Pliny the Elder, Natural History 6.186 (Candace, a name passed from queen to queen); 37.107-108 (topazos from an island in the Red Sea)"
+  - "Eusebius, Church History 2.1.13 (the Ethiopian eunuch)"
+  - "L. Török, The Kingdom of Kush: Handbook of the Napatan-Meroitic Civilization (1997)"
+  - "S. Munro-Hay, Aksum: An African Civilisation of Late Antiquity (1991)"
+  - "J. A. Harrell, 'Discovery of the Red Sea Source of Topazos (Ancient Gem Peridot) on Zabargad Island, Egypt', in Proceedings of the Twelfth Annual Sinkankas Symposium: Peridot and Uncommon Green Gem Minerals (2014)"
+status: checked

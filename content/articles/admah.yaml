@@ -1,0 +1,30 @@
+# Overview article (ADR 0007). Mainstream facts only; the cities of the plain are unlocated, and the app's southern, northern and "Adam" candidates are given without choosing.
+id: admah
+place: a41a054
+title:
+  en: "Admah"
+  ru: "Адма"
+body:
+  en:
+    - "Admah was one of the cities of the plain, named with Sodom, Gomorrah and Zeboiim in the Table of Nations as the limit of the Canaanites' border and in the war of the four kings, when Shinab king of Admah marched out with his neighbours and they “joined battle with them in the vale of Siddim”. The story of the overthrow in Genesis 19 names only Sodom and Gomorrah, but Moses' warning lists all four, “Sodom, and Gomorrah, Admah, and Zeboim, which the LORD overthrew in his anger”, and Hosea makes Admah the measure of God's reluctance to punish: “how shall I make thee as Admah? how shall I set thee as Zeboim? mine heart is turned within me”. The Synodal Bible there reads Adam."
+    - "No site is known, and the app shows the rival guesses. The southern theory puts the cities at the south-eastern end of the Dead Sea, where a survey in 1973 added four Early Bronze Age sites, Numeira, Safi, Feifa and Khanazir, to the known town of Bab edh-Dhra; Feifa and Khanazir, the two southernmost, were proposed for Admah and Zeboiim, but excavation showed them to be cemeteries, Feifa's walled enclosure an Iron Age fort built over the graves, rather than towns, and the whole scheme is doubted. The northern theory looks to the plain north of the Dead Sea, around Tall el-Hammam and Tall Nimrin, and a few have thought of Adam, the town by the Jordan where the waters stood when Israel crossed. Josephus and Strabo knew only the burnt land about Sodom, and Eusebius only lists Admah among the five cities destroyed with it."
+    - "Nothing else is told of Admah. The south-eastern shore is today the Ghor es-Safi in Jordan, with potash works and the shrinking southern basin of the sea; the northern plain is the farmland of the Jordan Valley opposite Jericho."
+  ru:
+    - "Адма была одним из городов долины и названа вместе с Содомом, Гоморрой и Севоимом в родословии народов как предел Хананеев и в войне четырёх царей, когда Шинав, царь Адмы, вышел с соседями и они «вступили в сражение с ними в долине Сиддим». Рассказ о гибели в 19-й главе Бытия называет только Содом и Гоморру, но предостережение Моисея перечисляет все четыре — «Содома, Гоморры, Адмы и Севоима, которые ниспроверг Господь во гневе Своем», — а Осия делает Адму мерой нежелания Бога карать: «Поступлю ли с тобою, как с Адамом, сделаю ли тебе, что Севоиму? Повернулось во Мне сердце Мое». Синодальный перевод читает здесь «Адам»."
+    - "Место неизвестно, и приложение показывает соперничающие догадки. Южная теория помещает города у юго-восточного конца Мёртвого моря, где обследование 1973 года добавило к уже известному городу Баб-эд-Дра ещё четыре памятника раннего бронзового века — Нумейру, Сафи, Фейфу и Ханазир; Фейфу и Ханазир, два самых южных, предлагали для Адмы и Севоима, но раскопки показали, что это кладбища, а обнесённая стеной ограда в Фейфе — крепость железного века поверх могил, а не города, и вся схема вызывает сомнения. Северная теория смотрит на равнину к северу от Мёртвого моря, вокруг Талль-эль-Хаммама и Талль-Нимрина, а немногие думали об Адаме, городе у Иордана, где остановились воды при переходе Израиля. Иосиф Флавий и Страбон знали только выжженную землю вокруг Содома, а Евсевий лишь называет Адму среди пяти городов, погибших вместе с ним."
+    - "Больше об Адме ничего не рассказано. Юго-восточный берег сегодня — Гор-эс-Сафи в Иордании с калийными заводами и усыхающей южной котловиной моря; северная равнина — поля Иорданской долины против Иерихона."
+scripture:
+  - Gen.10.19
+  - Gen.14.2
+  - Gen.14.8
+  - Deut.29.23
+  - Hos.11.8
+sources:
+  - "Josephus, Jewish War 4.483-485 (the land of Sodom beside the lake)"
+  - "Strabo, Geography 16.2.44 (the burnt country around Sodom)"
+  - "Eusebius, Onomasticon, s.v. Adama"
+  - "W. E. Rast and R. T. Schaub, 'Survey of the Southeastern Plain of the Dead Sea, 1973', Annual of the Department of Antiquities of Jordan 19 (1974)"
+  - "R. T. Schaub and W. E. Rast, Bab edh-Dhra: Excavations in the Cemetery Directed by Paul W. Lapp (1965-67) (1989)"
+  - "S. Collins and L. C. Scott, Discovering the City of Sodom (2013) (the northern theory)"
+  - "B. MacDonald, “East of the Jordan”: Territories and Sites of the Hebrew Scriptures (2000)"
+status: checked

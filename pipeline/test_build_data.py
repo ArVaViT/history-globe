@@ -14,6 +14,8 @@ from build_data import (
     coord_banned,
     ensure_low_tier,
     label_anchors,
+    lead_anchor,
+    place_kind,
     rank_of,
     site_label,
 )
@@ -150,6 +152,13 @@ class LabelTiers(unittest.TestCase):
         self.assertEqual(tier, 1)
         self.assertTrue(30.0 <= x <= 31.0 and 20.0 <= y <= 21.0)
 
+    def test_one_lead_point_names_the_polity_far_out(self) -> None:
+        square = [[[30.0, 20.0], [36.0, 20.0], [36.0, 26.0], [30.0, 26.0], [30.0, 20.0]]]
+        # The middle (33, 23) is the nearest low-tier point; a fine point is never the lead.
+        anchors = [(30.5, 20.5, 36.0, 1), (33.0, 23.2, 36.0, 1), (33.0, 23.0, 36.0, 2)]
+        self.assertEqual(lead_anchor(anchors, [square]), 1)
+        self.assertIsNone(lead_anchor([(33.0, 23.0, 36.0, 2)], [square]))
+
 
 
 class IdentificationConfidenceTest(unittest.TestCase):
@@ -160,5 +169,15 @@ class IdentificationConfidenceTest(unittest.TestCase):
         self.assertIsNone(identification_confidence({}))
         self.assertIsNone(identification_confidence({"score": {}}))
 
+class PlaceKindTest(unittest.TestCase):
+    def test_island_only_where_nothing_else_is_said(self):
+        self.assertEqual(place_kind(["island", "settlement"]), "settlement")
+        self.assertEqual(place_kind(["island", "mine", "region", "settlement"]), "region")
+        self.assertEqual(place_kind(["island", "region"]), "island")
+        self.assertEqual(place_kind(["island"]), "island")
+        self.assertEqual(place_kind(None), "place")
+
+
 if __name__ == "__main__":
     unittest.main()
+

@@ -1,0 +1,35 @@
+# Overview article (ADR 0007). Mainstream facts only; the reading of the name as a town (Lebo) rather than a pass is the view of most scholars and is given as such.
+id: lebo-hamath
+place: a5eb047
+title:
+  en: "Lebo-hamath"
+  ru: "Вход в Емаф"
+body:
+  en:
+    - "Lebo-hamath marks the northern limit of the land of Israel in the Bible. The King James Version, like the Synodal Bible and most passages of the Septuagint, translates the name as a phrase, “the entering in of Hamath”, as if it were the pass leading into the kingdom of Hamath on the Orontes; most scholars now read Lebo as a town, “Lebo of Hamath”, and identify it with Labweh in the northern Bekaa valley of Lebanon, beside the springs of the Orontes, about 25 km north-east of Baalbek. The name appears as Lab'u in Egyptian texts of Amenhotep II and Ramesses II, and an inscription of Tiglath-pileser III names it next to the towns of Hamath; Roman itineraries still knew a station Libo between Baalbek and Kadesh on the Orontes."
+    - "The spies sent by Moses searched the land “from the wilderness of Zin unto Rehob, as men come to Hamath”; Numbers draws the northern border “from mount Hor... unto the entrance of Hamath”, and Joshua lists the land still unconquered “from Baal-gad under mount Hermon unto the entering into Hamath”. The measure of the whole land became “from the entering in of Hamath unto the river of Egypt”: so all Israel gathered when Solomon dedicated the Temple, and so Jeroboam II “restored the coast of Israel from the entering of Hamath unto the sea of the plain”. Amos turns the phrase into a threat, a nation that will afflict Israel “from the entering in of Hemath unto the river of the wilderness”; Ezekiel's ideal land again reaches north to Hamath and the border of Damascus."
+    - "Labweh today is a village of the Baalbek district on the road from Baalbek to Hermel, with tells beside its springs; Diana Kirkbride's excavations there in 1969 reached levels of the Pre-Pottery Neolithic, the oldest known in the Bekaa. The springs are among the sources of the Orontes (al-Asi), the river that flows north past Riblah, Hamath and Antioch to the sea."
+  ru:
+    - "Вход в Емаф — северный предел земли Израиля в Библии. Синодальный перевод, как и Септуагинта в большинстве мест, передаёт имя описательно, «вход в Емаф», будто речь о проходе, ведущем в царство Емаф на Оронте; большинство учёных теперь читают Лево как название города, «Лево-Хамат», и отождествляют его с Лабве в северной части долины Бекаа в Ливане, у истоков Оронта, примерно в 25 км к северо-востоку от Баальбека. Имя встречается как Лабу в египетских текстах Аменхотепа II и Рамсеса II, а надпись Феглаффелласара III называет его рядом с городами Емафа; римские дорожники ещё знали станцию Либо между Баальбеком и Кадешем на Оронте."
+    - "Соглядатаи, посланные Моисеем, высмотрели землю «от пустыни Син даже до Рехова, близ Емафа»; книга Чисел ведёт северную границу «от горы Ор... к Емафу», а книга Иисуса Навина перечисляет ещё не завоёванную землю «от Ваал-Гада, что подле горы Ермона, до входа в Емаф». Мерой всей земли стало «от входа в Емаф до реки Египетской»: так собрался весь Израиль, когда Соломон освящал храм, и так Иеровоам II «восстановил пределы Израиля, от входа в Емаф до моря пустыни». У Амоса та же формула обращается в угрозу — народ, который будет теснить Израиль «от входа в Емаф до потока в пустыне»; у Иезекииля земля будущего снова доходит на севере до Емафа и границы Дамаска."
+    - "Лабве сегодня — селение в округе Баальбек на дороге из Баальбека в Хермель, с теллями у источников; раскопки Дианы Киркбрайд в 1969 году дошли там до слоёв докерамического неолита, древнейших из известных в Бекаа. Источники — одни из истоков Оронта (Эль-Аси), реки, которая течёт на север мимо Ривлы, Емафа и Антиохии к морю."
+scripture:
+  - Num.13.21
+  - Num.34.7-Num.34.8
+  - Josh.13.5
+  - Judg.3.3
+  - 1Kgs.8.65
+  - 2Kgs.14.25
+  - 1Chr.13.5
+  - 2Chr.7.8
+  - Ezek.47.15-Ezek.47.17
+  - Ezek.47.20
+  - Ezek.48.1
+  - Amos.6.14
+sources:
+  - "B. Mazar, 'Lebo-hamath and the Northern Boundary of Canaan', in The Early Biblical Period: Historical Studies (1986)"
+  - "H. Tadmor, The Inscriptions of Tiglath-pileser III, King of Assyria (1994)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+  - "D. Kirkbride, 'Early Byblos and the Beqa'a', Mélanges de l'Université Saint-Joseph 45 (1969) (the excavations at Tell Labweh)"
+status: checked

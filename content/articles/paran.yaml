@@ -1,0 +1,35 @@
+# Overview article (ADR 0007). Mainstream facts only; the extent of the wilderness is given as the usual view, and Mount Paran as unlocated.
+id: paran
+place: aa6b19b
+title:
+  en: "Paran"
+  ru: "Фаран"
+body:
+  en:
+    - "The wilderness of Paran is the great desert between the mountain of Sinai and the hill country of Canaan: the bare limestone plateau of the central Sinai peninsula, and in the usual view the Negeb highlands as well, with Kadesh-barnea on its north-eastern edge. Deuteronomy calls the way through it “all that great and terrible wilderness”. In Genesis the four kings swept the Horites of Seir “unto El-paran, which is by the wilderness”, and Ishmael, sent away by Abraham, “dwelt in the wilderness of Paran: and his mother took him a wife out of the land of Egypt”."
+    - "Israel crossed Paran after Sinai: they set out from the wilderness of Sinai, “and the cloud rested in the wilderness of Paran”; they camped there after Hazeroth, and from it Moses sent the twelve spies into Canaan, who after forty days came back “unto the wilderness of Paran, to Kadesh”. The people's refusal to go up condemned the generation to the desert. Deuteronomy opens with Moses speaking to Israel “between Paran, and Tophel, and Laban, and Hazeroth”, and in the blessing of Moses the LORD “shined forth from mount Paran”; Habakkuk too sings that “God came from Teman, and the Holy One from mount Paran”. Which mountain is meant is unknown. After Samuel's death David “went down to the wilderness of Paran”, where the Greek Bible reads Maon, and Hadad the Edomite, fleeing Joab, passed through Paran, took men from it and went down to Egypt."
+    - "The name lived on at the oasis of Feiran in south-western Sinai, where the Byzantine town of Pharan had its bishop, while Eusebius put a city Pharan beside the desert of the Saracens, three days' journey east of Aila; most scholars, however, put the biblical wilderness farther north and east, on the Tih plateau and in the Negeb. Today the plateau belongs to Egypt and the Negeb highlands to Israel, where Nahal Paran, a wadi some 150 km long, carries the old name to the Arabah."
+  ru:
+    - "Пустыня Фаран — великая пустыня между горой Синай и нагорьем Ханаана: голое известняковое плато середины Синайского полуострова, а по обычному мнению и нагорье Негева, с Кадес-Варни на его северо-восточном краю. Второзаконие говорит о пути «по всей этой великой и страшной пустыне». В книге Бытия четыре царя гнали Хорреев Сеира «до Эл-Фарана, что при пустыне», а Измаил, отосланный Авраамом, «жил в пустыне Фаран; и мать его взяла ему жену из земли Египетской»."
+    - "Израиль прошёл Фаран после Синая: они двинулись из пустыни Синайской, «и остановилось облако в пустыне Фаран»; там они стали станом после Асирофа, и оттуда Моисей послал двенадцать соглядатаев в Ханаан, которые через сорок дней вернулись «в пустыню Фаран, в Кадес». Отказ народа идти обрёк это поколение на пустыню. Второзаконие открывается речью Моисея к Израилю «между Фараном и Тофелом, и Лаваном, и Асирофом», а в благословении Моисея Господь «воссиял от горы Фарана»; и Аввакум поёт: «Бог от Фемана грядет, и Святый — от горы Фаран». Какая гора имеется в виду, неизвестно. После смерти Самуила Давид «сошел к пустыне Фаран», где греческая Библия читает Маон, а Адер Идумеянин, спасаясь от Иоава, прошёл через Фаран, взял оттуда людей и сошёл в Египет."
+    - "Имя сохранилось в оазисе Фейран на юго-западе Синая, где византийский город Фаран имел своего епископа, тогда как Евсевий помещал город Фаран у пустыни сарацин, в трёх днях пути к востоку от Аилы; большинство учёных, однако, помещают библейскую пустыню дальше к северу и востоку, на плато Эт-Тих и в Негеве. Сегодня плато принадлежит Египту, а нагорье Негева — Израилю, где Нахаль-Паран, вади длиной около 150 км, несёт древнее имя к Араве."
+scripture:
+  - Gen.14.6
+  - Gen.21.21
+  - Num.10.12
+  - Num.12.16
+  - Num.13.3
+  - Num.13.26
+  - Deut.1.1
+  - Deut.1.19
+  - Deut.33.2
+  - 1Sam.25.1
+  - 1Kgs.11.17-1Kgs.11.18
+  - Hab.3.3
+sources:
+  - "Eusebius, Onomasticon, s.v. Pharan"
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+  - "I. Finkelstein, Living on the Fringe: The Archaeology and History of the Negev, Sinai and Neighbouring Regions in the Bronze and Iron Ages (1995)"
+  - "P. Mayerson, 'The Desert of Southern Palestine according to Byzantine Sources', Proceedings of the American Philosophical Society 107 (1963)"
+status: checked
