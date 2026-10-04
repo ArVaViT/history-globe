@@ -11,7 +11,37 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <title>History Globe</title>
+    <title>History Globe — библейская история на глобусе</title>
+    <link rel="canonical" href="https://historyglobe.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="History Globe" />
+    <meta property="og:title" content="History Globe — библейская история на глобусе" />
+    <meta
+      property="og:description"
+      content="Места Библии, границы государств и маршруты по годам на 3D-глобусе, со ссылками на стихи. Бесплатно."
+    />
+    <meta property="og:url" content="https://historyglobe.app/" />
+    <meta property="og:image" content="https://historyglobe.app/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "History Globe",
+        "url": "https://historyglobe.app/",
+        "description": "A 3D globe of biblical history: the places the Bible names, linked to their verses, the states around them year by year, tours and lessons.",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any",
+        "inLanguage": ["ru", "en"],
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": {
+          "@type": "Person",
+          "name": "Vadym Arnaut",
+          "url": "https://historyglobe.app/docs/author.html"
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
@@ -20,7 +50,8 @@
         History Globe — карта библейской истории. Без JavaScript карта не откроется, но все места и
         экскурсии есть списком: <a href="ru/places/">места</a>, <a href="ru/tours/">экскурсии</a>;
         in English: <a href="en/places/">places</a>, <a href="en/tours/">tours</a>.
-        <a href="docs/ru/">О проекте</a> · <a href="docs/">About</a>.
+        <a href="ru/">О проекте</a> · <a href="en/">About</a> ·
+        <a href="docs/ru/privacy.html">Конфиденциальность</a>.
       </p>
     </noscript>
     <script type="module" src="/src/main.tsx"></script>

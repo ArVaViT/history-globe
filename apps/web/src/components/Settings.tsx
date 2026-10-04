@@ -93,6 +93,15 @@ export function SettingsDialog({
                 ›
               </span>
             </a>
+            <a
+              className={row}
+              href={`${import.meta.env.BASE_URL}docs/${locale === "ru" ? "ru/" : ""}privacy.html`}
+            >
+              {t("settings.privacy")}
+              <span className="text-ink-soft" aria-hidden>
+                ›
+              </span>
+            </a>
           </div>
         </div>
       </Modal>

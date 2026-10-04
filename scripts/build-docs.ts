@@ -29,11 +29,15 @@ const src = join(root, "content/docs");
 const out = join(pub, "docs");
 const site = process.env.SITE_URL?.replace(/\/+$/, "") ?? "";
 
+/** Anonymous visit counts (Vercel Web Analytics, no cookies; docs: privacy.html), in a
+ * production build only: the script is served by the host itself. */
+const visits = site ? `\n    <script defer src="/_vercel/insights/script.js"></script>` : "";
+
 type Lang = "en" | "ru";
 const LANGS: readonly Lang[] = ["en", "ru"];
 
 /** The pages in the order of the menu. */
-const PAGES = ["index", "methodology", "embedding", "api", "sources", "author"] as const;
+const PAGES = ["index", "methodology", "embedding", "api", "sources", "author", "privacy"] as const;
 type Page = (typeof PAGES)[number];
 
 const T = {
@@ -343,7 +347,7 @@ function page(o: {
     <meta name="theme-color" content="#121a24" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="${up}../favicon.svg" type="image/svg+xml" />
     <title>${o.name === "index" ? `History Globe ${T[o.l].docs}` : `${esc(o.src.title)} | History Globe`}</title>
-    <meta name="description" content="${esc(o.src.description)}" />${meta}
+    <meta name="description" content="${esc(o.src.description)}" />${meta}${visits}
     <link rel="stylesheet" href="${up}docs.css" />
   </head>
   <body>

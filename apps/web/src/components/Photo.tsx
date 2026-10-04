@@ -28,6 +28,7 @@ export function Photo({
   const [failed, setFailed] = useState(false);
   if (failed) return null;
   const page = `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(photo.file.replaceAll(" ", "_"))}`;
+  const free = photo.license === "Public domain" || photo.license.startsWith("CC0");
   return (
     <figure className={className}>
       {/* The credit sits on the photo's corner: next to the image, as CC BY asks, without a
@@ -47,11 +48,19 @@ export function Photo({
           target="_blank"
           rel="noopener noreferrer"
           title={`${t("place.photo")}: ${photo.author ? `${photo.author}, ` : ""}${photo.license === "Public domain" ? t("place.photo_pd") : photo.license}, Wikimedia Commons`}
-          className="absolute right-1.5 bottom-1.5 max-w-[80%] truncate rounded-full bg-black/60 px-2 py-0.5 text-[10.5px] text-white/95 hover:bg-black/75"
+          className="absolute right-1.5 bottom-1.5 flex max-w-[85%] rounded-full bg-black/60 px-2 py-0.5 text-[10.5px] text-white/95 hover:bg-black/75"
         >
-          {/* No copyright to mark on a public-domain photo. */}
-          {photo.license === "Public domain" ? "" : "© "}
-          {photo.author ?? "Wikimedia Commons"}
+          {/* The licence stays in sight (CC BY asks for it, and a phone has no tooltip); a
+              long name is cut instead. No copyright to mark on a free photo. */}
+          <span className="truncate">
+            {free ? "" : "© "}
+            {photo.author ?? "Wikimedia Commons"}
+          </span>
+          {photo.license !== "Public domain" && (
+            <span className="shrink-0" aria-hidden>
+              &nbsp;· {photo.license}
+            </span>
+          )}
           <span className="sr-only">
             {" "}
             ({t("place.photo")}:{" "}

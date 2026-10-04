@@ -200,6 +200,8 @@ const T = {
     desc: (n: string, k: string, v: number) =>
       `${n} (${k}) на карте библейской истории: где это место сегодня, его история и упоминания в Библии (${String(v)}).`,
     about: "О проекте",
+    privacy: "Конфиденциальность",
+    allSources: "все источники",
     photo: "Фото",
     pd: "общественное достояние",
     other: "English",
@@ -255,6 +257,8 @@ const T = {
     desc: (n: string, k: string, v: number) =>
       `${n} (${k}) on the map of biblical history: where it is today, its history and the Bible verses that name it (${String(v)}).`,
     about: "About",
+    privacy: "Privacy",
+    allSources: "all sources",
     photo: "Photo",
     pd: "public domain",
     other: "Русский",
@@ -330,7 +334,7 @@ function page(o: {
     <meta name="theme-color" content="#0f141b" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="${up}favicon.svg" type="image/svg+xml" />
     <title>${esc(o.title)} | History Globe</title>
-    <meta name="description" content="${esc(o.desc)}" />${meta}${ld}
+    <meta name="description" content="${esc(o.desc)}" />${meta}${ld}${visits}
     <link rel="stylesheet" href="${up}pages.css" />
   </head>
   <body>
@@ -340,7 +344,7 @@ function page(o: {
       <nav aria-label="${T[o.l].sections}"><a href="${up}${o.l}/places/">${T[o.l].places}</a><a href="${up}${o.l}/tours/">${T[o.l].toursAll}</a><a href="${up}${o.l}/questions/">${T[o.l].questions}</a><a class="lang" href="${up}${o.other}" hreflang="${o.l === "ru" ? "en" : "ru"}" lang="${o.l === "ru" ? "en" : "ru"}">${T[o.l].other}</a></nav>
     </header>
 ${o.body}
-    <footer class="foot"><a href="${up}docs/${o.l === "ru" ? "ru/" : ""}">${T[o.l].about}</a> · OpenBible.info (CC BY 4.0), Cliopatria (CC BY 4.0)</footer>
+    <footer class="foot"><a href="${up}docs/${o.l === "ru" ? "ru/" : ""}">${T[o.l].about}</a> · <a href="${up}docs/${o.l === "ru" ? "ru/" : ""}privacy.html">${T[o.l].privacy}</a> · OpenBible.info, Cliopatria, Itiner-e (CC BY 4.0), Pleiades (CC BY 3.0) · <a href="${up}docs/${o.l === "ru" ? "ru/" : ""}sources.html">${T[o.l].allSources}</a></footer>
   </body>
 </html>
 `;
@@ -358,6 +362,10 @@ function photoHtml(id: string, name: string, l: Lang): string {
   const shows = ph.shows && (l === "ru" ? (ph.shows.ru ?? ph.shows.en) : ph.shows.en);
   return `<figure class="photo"><img src="../../../data/photos/${id}.jpg" alt="${esc(name)}" loading="lazy" /><figcaption class="note">${shows ? `${esc(T[l].photoShows(shows))}<br />` : ""}<a href="${esc(page)}">${T[l].photo}: ${ph.author ? `${esc(ph.author)}, ` : ""}${esc(lic)}, Wikimedia Commons</a></figcaption></figure>`;
 }
+
+/** Anonymous visit counts (Vercel Web Analytics, no cookies; docs: privacy.html), in a
+ * production build only: the script is served by the host itself. */
+const visits = site ? `\n    <script defer src="/_vercel/insights/script.js"></script>` : "";
 
 const slugOf = placeSlugs(places.map((f) => f.properties));
 
@@ -533,7 +541,12 @@ for (const l of LANGS) {
         other: `${o}/place/${slug}/`,
         body,
         depth: 3,
-        ...(content.photos?.[p.id] && hasPhoto(p.id) ? { image: `data/photos/${p.id}.jpg` } : {}),
+        // A shared link's preview carries no credit line: only a photo that needs none.
+        ...(content.photos?.[p.id] &&
+        hasPhoto(p.id) &&
+        ["Public domain", "CC0"].includes(content.photos[p.id]?.license ?? "")
+          ? { image: `data/photos/${p.id}.jpg` }
+          : {}),
         ld: {
           "@context": "https://schema.org",
           "@type": "Place",
@@ -776,6 +789,175 @@ for (const l of LANGS) {
   );
 }
 
+// The front page of each language (/ru/, /en/): what the globe is, for a reader who comes
+// from a search or a link, with the way into the map. The map itself stays at the root.
+const LANDING = {
+  ru: {
+    title: "Библейская история на глобусе",
+    desc: "Бесплатный атлас: места Библии на 3D-глобусе, государства вокруг них год за годом, экскурсии, статьи с источниками и листы для урока.",
+    kicker: "Бесплатный атлас библейской истории",
+    lede: "Места, о которых говорит Библия, на глобусе с рельефом; государства вокруг них — год за годом, от 3500 г. до н. э. до 1300 г. н. э.; у каждого места — стихи и источники.",
+    open: "Открыть глобус",
+    tours: "Экскурсии",
+    stats: ["мест", "экскурсий", "статей", "ответов на вопросы", "битв и осад"],
+    features: [
+      [
+        "Время на одной шкале",
+        "Ветхий и Новый Завет, Египет, Ассирия, Рим: передвиньте год — меняются границы, города и названия.",
+      ],
+      [
+        "Экскурсии с днями пути",
+        "Путешествия Авраама, Исход, походы Павла — по дорогам и рельефу, с числом дней, которое называет текст.",
+      ],
+      [
+        "Статьи с источниками",
+        "У каждого факта есть «на чём основано»: Флавий, Евсевий, надписи, раскопки. Спорное названо спорным.",
+      ],
+      [
+        "Для урока",
+        "Лист урока на A4, контурная карта для учеников, викторина на экране и на бумаге, урок по одной ссылке.",
+      ],
+      [
+        "Вопросы контекста",
+        "Где была Ниневия? Сколько шёл Павел до Рима? Короткие ответы с картой и стихами.",
+      ],
+      [
+        "Для разработчиков",
+        "Открытые данные под CC BY 4.0, API «стих → места» и глобус для встраивания на свой сайт.",
+      ],
+    ],
+    trust: "Как сделано",
+    trustText:
+      "Данные — OpenBible.info, Cliopatria, Pleiades, Itiner-e и другие открытые наборы. Статьи написаны с помощью ИИ и проверены по источникам отдельным проходом; учёные их пока не рецензировали, и мы так и пишем.",
+    method: "Методология",
+    privacy: "Без регистрации и cookie.",
+  },
+  en: {
+    title: "Biblical history on a globe",
+    desc: "A free atlas: the places of the Bible on a 3D globe, the states around them year by year, tours, articles with sources and sheets for a lesson.",
+    kicker: "A free atlas of biblical history",
+    lede: "The places the Bible names, on a globe with its relief; the states around them year by year, from 3500 BC to AD 1300; for every place, its verses and its sources.",
+    open: "Open the globe",
+    tours: "Tours",
+    stats: ["places", "tours", "articles", "questions answered", "battles and sieges"],
+    features: [
+      [
+        "One timeline",
+        "The Old and New Testaments, Egypt, Assyria, Rome: move the year and the borders, towns and names change.",
+      ],
+      [
+        "Tours with days on the road",
+        "Abraham's journeys, the Exodus, Paul's voyages — along the roads and the relief, with the days the text gives.",
+      ],
+      [
+        "Articles with sources",
+        "Every fact says what it rests on: Josephus, Eusebius, inscriptions, excavations. What is disputed is called disputed.",
+      ],
+      [
+        "For a lesson",
+        "A lesson sheet on A4, an outline map for pupils, a quiz on screen and on paper, a lesson in one link.",
+      ],
+      [
+        "Questions of context",
+        "Where was Nineveh? How long did Paul travel to Rome? Short answers with the map and the verses.",
+      ],
+      [
+        "For developers",
+        "Open data under CC BY 4.0, a verse-to-places API and a globe to embed on your own site.",
+      ],
+    ],
+    trust: "How it is made",
+    trustText:
+      "The data comes from OpenBible.info, Cliopatria, Pleiades, Itiner-e and other open sets. Articles are drafted with AI help and checked against their sources in a separate pass; scholars have not reviewed them yet, and the site says so.",
+    method: "Methodology",
+    privacy: "No account, no cookies.",
+  },
+} as const;
+for (const l of LANGS) {
+  const o = l === "ru" ? "en" : "ru";
+  const L = LANDING[l];
+  const n = new Intl.NumberFormat(l);
+  const numbers = [
+    shown.length,
+    content.tours.length,
+    Object.keys(articles).length,
+    questions.length,
+    content.battles?.length ?? 0,
+  ];
+  write(
+    l,
+    page({
+      l,
+      title: L.title,
+      desc: L.desc,
+      path: `${l}/`,
+      other: `${o}/`,
+      depth: 1,
+      ld: {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "History Globe",
+        url: `${site}/`,
+        inLanguage: l,
+        description: L.desc,
+      },
+      body: `    <main id="main" class="page landing">
+      <p class="kicker">${esc(L.kicker)}</p>
+      <h1>${esc(L.title)}</h1>
+      <p class="lede">${esc(L.lede)}</p>
+      <p class="actions"><a class="button" href="../?locale=${l}">${esc(L.open)}</a> <a href="tours/">${esc(L.tours)}</a></p>
+      <a class="hero" href="../?locale=${l}"><img src="../og.jpg" alt="" width="1200" height="630" /></a>
+      <ul class="stats">${numbers.map((x, i) => `<li><b>${n.format(x)}</b> ${esc(L.stats[i] ?? "")}</li>`).join("")}</ul>
+      <ul class="features">${L.features.map(([h, t]) => `<li><h2>${esc(h)}</h2><p>${esc(t)}</p></li>`).join("")}</ul>
+      <h2>${esc(L.trust)}</h2>
+      <p>${esc(L.trustText)} <a href="../docs/${l === "ru" ? "ru/" : ""}methodology.html">${esc(L.method)}</a>.</p>
+      <p class="note">${esc(L.privacy)} <a href="../docs/${l === "ru" ? "ru/" : ""}privacy.html">${esc(T[l].privacy)}</a> · <a href="places/">${esc(T[l].placesTitle)}</a> · <a href="questions/">${esc(T[l].questions)}</a></p>
+    </main>`,
+    }),
+  );
+}
+
+// llms.txt (llmstxt.org): the site in a page for language models and agents that read it on
+// someone's behalf — what it is, where the data and its licence are, how to cite it.
+{
+  const base = site || "https://historyglobe.app";
+  const text = `# History Globe
+
+> A free 3D atlas of biblical history in Russian and English: ${String(shown.length)} places the Bible names, each linked to its verses, the states around them year by year from 3500 BC to AD 1300, ${String(content.tours.length)} tours, ${String(Object.keys(articles).length)} place articles and ${String(questions.length)} short answers, every fact with its sources.
+
+The map is an app at ${base}/ (state lives in the address: ?year=, ?place=, ?tour=, ?locale=ru|en). Every place, tour and question also has a plain HTML page, listed below. The data is open under CC BY 4.0: credit "History Globe by Vadym Arnaut" and the sources the API index names (OpenBible.info and others). The code is all rights reserved. Articles are drafted with AI help and checked against their sources in a separate pass; they have not been reviewed by scholars, and the site says so.
+
+## Start here
+
+- [About the globe (English)](${base}/en/): what it is and what it does
+- [О глобусе (по-русски)](${base}/ru/)
+- [Methodology](${base}/docs/methodology.html): where the data comes from and how it is checked
+- [Sources and licences](${base}/docs/sources.html)
+- [Privacy](${base}/docs/privacy.html)
+
+## Data and API
+
+- [API documentation](${base}/docs/api.html): static JSON, no key, CC BY 4.0
+- [API index](${base}/api/v1/index.json)
+- [Places](${base}/api/v1/places.json): ids, names in both languages, coordinates, certainty
+- Verses to places: ${base}/api/v1/verses/{Book}.json (OSIS book ids, e.g. Acts)
+- [Tours](${base}/api/v1/tours.json), [events](${base}/api/v1/events.json), [battles](${base}/api/v1/battles.json), [questions](${base}/api/v1/questions.json)
+- [Embedding the globe](${base}/docs/embedding.html)
+
+## Pages
+
+- [All places, English](${base}/en/places/), [все места](${base}/ru/places/)
+- [Tours](${base}/en/tours/), [экскурсии](${base}/ru/tours/)
+- [Questions](${base}/en/questions/), [вопросы](${base}/ru/questions/)
+- [Sitemap](${base}/sitemap.xml)
+
+## Optional
+
+- [Author](${base}/docs/author.html); errors: historyglobe.vadym@gmail.com
+`;
+  writeFileSync(join(pub, "llms.txt"), text);
+}
+
 // Pages of places or tours that are gone.
 const kept = new Set(urls.map((u) => u.replace(/\/$/, "")));
 for (const l of LANGS)
@@ -793,7 +975,7 @@ if (site) {
     sitemap,
     `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${["", "docs/", "docs/methodology.html", "docs/embedding.html", "docs/sources.html", "docs/author.html", "docs/ru/", "docs/ru/methodology.html", "docs/ru/embedding.html", "docs/ru/sources.html", "docs/ru/author.html", ...urls].map((u) => `  <url><loc>${esc(`${site}/${u}`)}</loc></url>`).join("\n")}
+${["", "docs/", "docs/methodology.html", "docs/embedding.html", "docs/sources.html", "docs/author.html", "docs/api.html", "docs/privacy.html", "docs/ru/", "docs/ru/methodology.html", "docs/ru/embedding.html", "docs/ru/sources.html", "docs/ru/author.html", "docs/ru/api.html", "docs/ru/privacy.html", ...urls].map((u) => `  <url><loc>${esc(`${site}/${u}`)}</loc></url>`).join("\n")}
 </urlset>
 `,
   );
