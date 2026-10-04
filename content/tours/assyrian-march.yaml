@@ -1,0 +1,80 @@
+# Isaiah 10:28-32: the prophet's picture of the Assyrian coming down on Jerusalem from the
+# north, village by village, in the order of the verses. It is a way as the oracle tells
+# it, not a march the histories record: Sennacherib's envoys came up from Lachish, in the
+# south-west (2 Kgs 18:17), and some read the oracle of Sargon's time. The tour's year (701 BC) is Sennacherib's campaign, the invasion the
+# text is usually read against (Hezekiah's tour). A vision, not a journey: no time on foot.
+# Most of these villages are located only tentatively; Migron (10:28) uses the map's
+# record tagged for that verse.
+id: assyrian-march
+title:
+  en: "The Assyrian comes: Isaiah 10"
+  ru: "Идёт Ассириянин: Исаия 10"
+year: "701 BC"
+walked: false
+approximate: true
+stops:
+  - place: ad053dd # Aiath
+    ref: Isa.10.28
+    note:
+      en: '"He is come to Aiath": the Assyrian enters Benjamin from the north, at the Ai of old.'
+      ru: "«Он идет на Аиаф»: Ассириянин входит в землю Вениамина с севера, у древнего Гая."
+  - place: ade6a96 # Migron
+    ref: Isa.10.28
+    note:
+      en: '"He is passed to Migron."'
+      ru: "«проходит Мигрон»."
+  - place: adea06c # Michmash
+    ref: Isa.10.28
+    note:
+      en: '"At Michmash he hath laid up his carriages": the baggage is left before the pass.'
+      ru: "«в Михмасе складывает свои запасы»: обоз оставлен перед теснинами."
+  - place: a264254 # Geba
+    ref: Isa.10.29
+    note:
+      en: '"They are gone over the passage": the pass of Michmash, where Jonathan once climbed; at Geba they lodge for the night.'
+      ru: "«Проходят теснины»: теснины Михмаса, где когда-то поднимался Ионафан; «в Геве ночлег их»."
+  - place: a6d57ed # Ramah
+    ref: Isa.10.29
+    note:
+      en: '"Ramah is afraid."'
+      ru: "«Рама трясется»."
+  - place: ac24f5f # Gibeah
+    ref: Isa.10.29
+    note:
+      en: '"Gibeah of Saul is fled": the first king''s town empties before them.'
+      ru: "«Гива Саулова разбежалась»: город первого царя пустеет перед ними."
+  - place: ac10bcf # Gallim
+    ref: Isa.10.30
+    note:
+      en: '"Lift up thy voice, O daughter of Gallim."'
+      ru: "«Вой голосом твоим, дочь Галима»."
+  - place: a7e39d2 # Laishah
+    ref: Isa.10.30
+    note:
+      en: '"Cause it to be heard unto Laish."'
+      ru: "«пусть услышит тебя Лаис»."
+  - place: ab34789 # Anathoth
+    ref: Isa.10.30
+    note:
+      en: '"O poor Anathoth": the town Jeremiah will later come from (Jer 1:1).'
+      ru: "«бедный Анафоф!»: городок, из которого позже выйдет Иеремия (Иер 1:1)."
+  - place: a67297a # Madmenah
+    ref: Isa.10.31
+    note:
+      en: '"Madmenah is removed."'
+      ru: "«Мадмена разбежалась»."
+  - place: a58df35 # Gebim
+    ref: Isa.10.31
+    note:
+      en: '"The inhabitants of Gebim gather themselves to flee."'
+      ru: "«жители Гевима спешат уходить»."
+  - place: afdda14 # Nob
+    ref: Isa.10.32
+    note:
+      en: '"As yet shall he remain at Nob that day": at the priests'' town (1 Sam 22:19), within sight of Jerusalem.'
+      ru: "«Еще день простоит он в Нове»: в Номве, городе священников (1 Цар 22:19), в виду Иерусалима."
+  - place: a15257a # Jerusalem
+    ref: Isa.10.32-Isa.10.34
+    note:
+      en: 'He shakes his hand against "the mount of the daughter of Zion, the hill of Jerusalem": here the picture ends. The Lord of hosts lops the bough with terror, the high ones of stature are hewn down, and Lebanon falls by a mighty one.'
+      ru: "Он «грозит рукою своею горе Сиону, холму Иерусалимскому»: здесь картина обрывается. Господь Саваоф страшною силою сорвёт ветви, величающиеся ростом будут срублены, и Ливан падёт от Всемогущего."

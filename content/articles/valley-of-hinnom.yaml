@@ -1,0 +1,39 @@
+# Overview article (ADR 0007). Mainstream facts only; the rubbish-dump story of Gehenna is named as a medieval tradition without ancient evidence.
+id: valley-of-hinnom
+place: a37c8e6
+title:
+  en: "Valley of Hinnom"
+  ru: "Долина Еннома"
+body:
+  en:
+    - "The Valley of Hinnom, in Hebrew Ge Ben-Hinnom, “the valley of the son of Hinnom”, curves round the west and south of Jerusalem's Old City, from below the Jaffa Gate to its meeting with the Kidron beneath Siloam; its Arabic name is Wadi er-Rababi. Joshua runs the border of Judah and Benjamin along it, so that the Jebusite city lay just inside Benjamin. In the last centuries of the kingdom its slopes held tombs: at Ketef Hinnom, on the shoulder above the valley, Gabriel Barkay found in 1979 two tiny silver scrolls of about 600 BC inscribed with the priestly blessing of Numbers, the oldest known text of Scripture."
+    - "Here was Tophet, where children were burnt. Ahaz “burnt his children in the fire” in the valley, and Manasseh did the same; Jeremiah accuses Judah of building “the high places of Tophet, which is in the valley of the son of Hinnom, to burn their sons and their daughters in the fire; which I commanded them not”, and of high places of Baal there for Molech. He broke a potter's jar at its gate and foretold that it would be called “the valley of slaughter”, where men would bury “till there be no place”. Josiah “defiled Topheth ... that no man might make his son or his daughter to pass through the fire to Molech”. After the exile the people of Judah lived “from Beer-sheba unto the valley of Hinnom”."
+    - "From the Aramaic Ge-hinnam came the Greek Geenna, Gehenna, by Jesus' day the name of the place of fiery punishment after death. “whosoever shall say, Thou fool, shall be in danger of hell fire”; fear him “which is able to destroy both soul and body in hell”; better to enter life maimed than “to go into hell, into the fire that never shall be quenched”. The familiar notion that the valley was the city's ever-burning rubbish dump comes from a medieval commentator, David Kimhi, and has no ancient support. Christian tradition set Aceldama, the field bought with Judas' silver, on its southern slope, where the monastery of St Onuphrius stands among old tombs."
+    - "Today the valley, Gei Ben Hinnom, is a green park below Mount Zion and the quarter of Abu Tor, with the Ottoman Sultan's Pool at its head, now a concert ground, and the Ketef Hinnom tombs beside the Menachem Begin Heritage Center."
+  ru:
+    - "Долина Еннома, по-еврейски Ге Бен-Хинном, долина сына Еннома, огибает Старый город Иерусалима с запада и юга, от подножия Яффских ворот до слияния с Кедроном ниже Силоама; её арабское имя — Вади-эр-Рабаби. Книга Иисуса Навина ведёт по ней границу Иуды и Вениамина, так что город Иевусеев оказывался в самом краю Вениамина. В последние века царства на её склонах были гробницы: в Кетеф-Хинном, на плече над долиной, Габриэль Баркай нашёл в 1979 году два крошечных серебряных свитка около 600 г. до н. э. со священническим благословением из книги Чисел — древнейший известный текст Писания."
+    - "Здесь был Тофет, где сжигали детей. Ахаз «проводил сыновей своих через огонь» в долине, и то же делал Манассия; Иеремия обличает Иудею в том, что она устроила «высоты Тофета в долине сыновей Енномовых, чтобы сожигать сыновей своих и дочерей своих в огне, чего Я не повелевал», и капища Ваалу там же в честь Молоха. Он разбил кувшин горшечника у её ворот и предрёк, что её назовут «долиною убийства», где будут хоронить «по недостатку места». Иосия осквернил Тофет, «чтобы никто не проводил сына своего и дочери своей чрез огонь Молоху». После плена иудеи расположились «от Вирсавии и до долины Енномовой»."
+    - "Из арамейского Ге-хиннам вышло греческое Геенна — ко времени Иисуса имя места огненного наказания после смерти. «кто скажет: “безумный”, подлежит геенне огненной»; бойтесь того, «кто может и душу и тело погубить в геенне»; лучше войти в жизнь увечному, «нежели с двумя руками идти в геенну, в огонь неугасимый». Привычное представление, будто долина была вечно горящей городской свалкой, идёт от средневекового комментатора Давида Кимхи и не имеет древних подтверждений. Христианское предание поместило Акелдаму, поле, купленное на серебро Иуды, на её южном склоне, где среди старых гробниц стоит монастырь святого Онуфрия."
+    - "Сегодня долина, Гей-Бен-Хинном, — зелёный парк под горой Сион и кварталом Абу-Тор, с османским Султанским прудом в верховье, ныне концертной площадкой, и гробницами Кетеф-Хинном рядом с Центром наследия Менахема Бегина."
+scripture:
+  - Josh.15.8
+  - Josh.18.16
+  - 2Kgs.23.10
+  - 2Chr.28.3
+  - 2Chr.33.6
+  - Neh.11.30
+  - Jer.7.31-Jer.7.32
+  - Jer.19.2
+  - Jer.19.6
+  - Jer.32.35
+  - Matt.5.22
+  - Matt.10.28
+  - Mark.9.43
+sources:
+  - "Eusebius, Onomasticon, s.v. Geennom"
+  - "G. Barkay, 'The Priestly Benediction on Silver Plaques from Ketef Hinnom in Jerusalem', Tel Aviv 19 (1992)"
+  - "G. Barkay, M. J. Lundberg, A. G. Vaughn and B. Zuckerman, 'The Amulets from Ketef Hinnom: A New Edition and Evaluation', Bulletin of the American Schools of Oriental Research 334 (2004)"
+  - "L. R. Bailey, 'Gehenna: The Topography of Hell', Biblical Archaeologist 49 (1986)"
+  - "J. Day, Molech: A God of Human Sacrifice in the Old Testament (1989)"
+  - "G. Dalman, Jerusalem und sein Gelände (1930)"
+status: checked

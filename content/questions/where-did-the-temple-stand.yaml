@@ -1,0 +1,26 @@
+id: where-did-the-temple-stand
+question:
+  en: "Where did the Temple stand, and what is the Dome of the Rock?"
+  ru: "Где стоял Храм и что такое Купол Скалы?"
+answer:
+  en:
+    - "On the Temple Mount, the Haram al-Sharif, in the Old City of Jerusalem: the hill north of the City of David that Chronicles calls Mount Moriah, where David bought the threshing floor of Araunah the Jebusite. Solomon's Temple stood there from about 966 BC until the Babylonians burned it in 587 or 586; the Second Temple from 516 BC; Herod the Great rebuilt it from about 20 BC on a platform of some 14 ha whose retaining walls still stand, the Western Wall among them, until the Romans destroyed it in AD 70. The Dome of the Rock, built about 691/692 under the caliph Abd al-Malik, is a shrine, not a mosque, built over the bare rock at the summit; most scholars hold that the Temple's innermost sanctuary stood on or beside that rock."
+    - "Chronicles says that “Solomon began to build the house of the LORD at Jerusalem in mount Moriah, where the Lord appeared unto David his father, in the place that David had prepared in the threshingfloor of Ornan the Jebusite”, and so ties the Temple to the land of Moriah where Abraham was sent to offer Isaac. Kings dates the start to “the fourth year of Solomon's reign over Israel, in the month Zif, which is the second month”. In the Gospels the Jews say of Herod's work, “Forty and six years was this temple in building”, and Jesus answers his disciples' admiration: “There shall not be left here one stone upon another, that shall not be thrown down.”"
+    - "No excavation is possible on the platform, so the Temple's exact place is argued from the rock, the Mishnah's measurements and the cisterns. Leen Ritmeyer and most others put the Holy of Holies over the rock under the Dome, with the altar to its east; Asher Kaufman argued for a spot about 100 m to the north, under the small Dome of the Spirits; a few look south, near the fountain of al-Kas. Of Solomon's building nothing has been identified; of Herod's, the walls, the gates, a fallen trumpeting-place inscription and the Greek warning stone that barred gentiles from the inner courts. The Byzantines left the Mount in ruins; the Muslim builders chose the rock, and Abd al-Malik's mosaic inscription inside the Dome gives the year 72 of the Hijra, 691/692."
+  ru:
+    - "На Храмовой горе, Харам аш-Шариф, в Старом городе Иерусалима — на холме к северу от Города Давидова, который Паралипоменон называет горой Мориа, где Давид купил гумно Орны Иевусеянина. Храм Соломона стоял там примерно с 966 г. до н. э., пока вавилоняне не сожгли его в 587 или 586 году; Второй Храм — с 516 г. до н. э.; Ирод Великий перестроил его примерно с 20 г. до н. э. на платформе около 14 га, чьи подпорные стены стоят до сих пор, среди них и Западная стена, — пока римляне не разрушили его в 70 г. н. э. Купол Скалы, построенный около 691/692 года при халифе Абд аль-Малике, — святилище, а не мечеть, построенное над голой скалой на вершине; большинство учёных считает, что внутреннее святилище Храма стояло на этой скале или рядом с ней."
+    - "Паралипоменон говорит: «И начал Соломон строить дом Господень в Иерусалиме на горе Мориа, которая указана была Давиду, отцу его, на месте, которое приготовил Давид, на гумне Орны Иевусеянина», — и так связывает Храм с землёй Мориа, куда Авраам был послан принести Исаака. Книга Царств датирует начало работ: «в четвертый год царствования Соломонова над Израилем, в месяц Зиф, который есть второй месяц». В Евангелиях иудеи говорят о постройке Ирода: «сей храм строился сорок шесть лет», а Иисус отвечает на восхищение учеников: «не останется здесь камня на камне; все будет разрушено»."
+    - "Раскопки на платформе невозможны, и точное место Храма выводят из скалы, мер Мишны и цистерн. Леен Ритмейер и большинство других помещают Святое Святых над скалой под Куполом, а жертвенник — к востоку от неё; Ашер Кауфман доказывал, что место лежит примерно в 100 м к северу, под маленьким Куполом Духов; немногие смотрят на юг, к фонтану аль-Кас. От постройки Соломона ничего не опознано; от Иродовой — стены, ворота, упавший камень с надписью о месте трубления и греческая плита, запрещавшая язычникам вход во внутренние дворы. Византийцы оставили гору в развалинах; мусульманские строители выбрали скалу, и мозаичная надпись Абд аль-Малика внутри Купола называет 72 год хиджры — 691/692."
+map:
+  place: a15257a
+  year: "c. 966 BC"
+  ref: 2Chr.3.1
+scripture: [2Sam.24.18, 2Chr.3.1, 1Kgs.6.1, Gen.22.2, John.2.20, Matt.24.1-Matt.24.2]
+sources:
+  - "Josephus, Antiquities 15.380-425 (Herod's Temple); Jewish War 5.184-237 (the Temple and its courts)"
+  - "Mishnah, Middot (the measurements of the Temple Mount and the sanctuary)"
+  - "L. Ritmeyer, The Quest: Revealing the Temple Mount in Jerusalem (2006)"
+  - "A. S. Kaufman, 'Where the Ancient Temple of Jerusalem Stood', Biblical Archaeology Review 9.2 (1983)"
+  - "O. Grabar, The Dome of the Rock (2006) (the inscription of AH 72)"
+  - "History Globe dated events (temple-built c. 966 BC; second-temple c. 516 BC; herod-temple c. 20 BC; temple-destroyed AD 70; dome-of-the-rock c. AD 691) and History Globe questions on Solomon's Temple, the Second Temple and the destruction of AD 70"
+status: checked

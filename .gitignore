@@ -42,3 +42,6 @@ apps/web/public/sitemap.xml
 apps/web/public/api/
 apps/web/public/docs/
 db/seed/
+
+# Vercel CLI (project link and local builds; deploys are prebuilt, ADR 0012)
+.vercel/

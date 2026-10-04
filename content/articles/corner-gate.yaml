@@ -1,0 +1,27 @@
+# Overview article (ADR 0007). Mainstream facts only; the gate is unlocated and its north-western position is given as the usual inference; no absolute dates are given for Jehoash and Uzziah.
+id: corner-gate
+place: a68aa8f
+title:
+  en: "Corner Gate"
+  ru: "Угольные ворота"
+body:
+  en:
+    - "The Corner Gate was a gate of Jerusalem in the days of the kings, named from the corner of the wall at which it stood. Nothing of it has been found, and its place is inferred from the texts: the wall ran four hundred cubits, about 200 m, from the Gate of Ephraim to the Corner Gate, and Jeremiah and Zechariah pair it with the tower of Hananel, which stood at the north-east. Most scholars therefore put the Corner Gate at the north-west corner of the city of that time, where the north wall turned south along the western hill, roughly in the area of today's Jaffa Gate and the Citadel, though the bounds of the city in the eighth century are themselves debated."
+    - "The gate first appears in a defeat. When Jehoash of Israel beat Amaziah of Judah at Beth-shemesh he came to Jerusalem “and brake down the wall of Jerusalem from the gate of Ephraim unto the corner gate, four hundred cubits”, took hostages and the treasures of the Temple, and went home to Samaria. Amaziah's son Uzziah “built towers in Jerusalem at the corner gate, and at the valley gate, and at the turning of the wall, and fortified them”. Nehemiah's account of the walls he repaired does not name the Corner Gate, perhaps because that stretch was then outside the smaller city, or went by another name."
+    - "The prophets use the gate to measure the city of the future. Jeremiah promises “the days come, saith the LORD, that the city shall be built to the LORD from the tower of Hananeel unto the gate of the corner”, and on over the hill Gareb to Goath, so that the whole valley of the dead bodies and of the ashes shall be holy. Zechariah sees Jerusalem lifted up and inhabited “from Benjamin's gate unto the place of the first gate, unto the corner gate, and from the tower of Hananeel unto the king's winepresses”. Nahman Avigad's discovery in the 1970s of the Broad Wall, seven metres thick and of the late eighth century BC, crossing the Jewish Quarter, showed that the city had by then spread onto the western hill, and so where such a corner can have been."
+  ru:
+    - "Угольные ворота — ворота Иерусалима времён царей, названные по углу стены, у которого они стояли. От них ничего не найдено, и их место выводят из текстов: стена шла четыреста локтей, около 200 м, от ворот Ефремовых до Угольных ворот, а Иеремия и Захария ставят их в пару с башней Хананела (в Синодальном переводе — Анамеила), стоявшей на северо-востоке. Поэтому большинство учёных помещают Угольные ворота в северо-западный угол тогдашнего города, где северная стена поворачивала к югу вдоль западного холма, примерно в районе нынешних Яффских ворот и Цитадели, хотя сами границы города в VIII веке спорны."
+    - "Впервые ворота появляются в поражении. Иоас Израильский, разбив Амасию Иудейского при Вефсамисе, пришёл в Иерусалим «и разрушил стену Иерусалимскую от ворот Ефремовых до ворот угольных на четыреста локтей», взял заложников и сокровища Храма и вернулся в Самарию. О сыне Амасии сказано: «построил Озия башни в Иерусалиме над воротами угольными и над воротами долины и на углу, и укрепил их». Рассказ Неемии о стенах, которые он чинил, не называет Угольных ворот — быть может, потому, что этот участок был тогда вне меньшего города или звался иначе."
+    - "Пророки мерят воротами будущий город. Иеремия обещает: «наступают дни, говорит Господь, когда город устроен будет во славу Господа от башни Анамеила до ворот угольных», и дальше через холм Гарив до Гоафа, так что вся долина трупов и пепла будет святынею. Захария видит Иерусалим, который высоко стоит на своём месте и населится «от ворот Вениаминовых до места первых ворот, до угловых ворот, и от башни Анамеила до царских точил». Открытая Нахманом Авигадом в 1970-х годах Широкая стена, семиметровой толщины и конца VIII века до н. э., пересекающая Еврейский квартал, показала, что город к тому времени распространился на западный холм, а значит, и где мог быть такой угол."
+scripture:
+  - 2Kgs.14.13-2Kgs.14.14
+  - 2Chr.25.23
+  - 2Chr.26.9
+  - Jer.31.38-Jer.31.40
+  - Zech.14.10
+sources:
+  - "J. Simons, Jerusalem in the Old Testament: Researches and Theories (1952)"
+  - "N. Avigad, Discovering Jerusalem (1983)"
+  - "D. Bahat, The Illustrated Atlas of Jerusalem (1990)"
+  - "H. Geva (ed.), Ancient Jerusalem Revealed (1994)"
+status: checked

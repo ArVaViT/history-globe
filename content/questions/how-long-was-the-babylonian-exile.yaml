@@ -1,0 +1,36 @@
+id: how-long-was-the-babylonian-exile
+question:
+  en: "How long did the Babylonian exile last?"
+  ru: "Сколько длился вавилонский плен?"
+answer:
+  en:
+    - "About fifty to seventy years, depending on where one starts and stops. The first deportation from Jerusalem came in March 597 BC, when Nebuchadnezzar took the city and carried off King Jehoiachin; the Temple was burned in 586 (587 is also held); and Cyrus let the exiles return in 538. From the first deportation to the return is 59 years, from the fall of the Temple 48; from the Temple's burning to its rebuilding in 516 is 70."
+    - "Jeremiah had set the term: “these nations shall serve the king of Babylon seventy years”, and “after seventy years be accomplished at Babylon I will visit you”. The Chronicler counts those years as the land's missed sabbaths, Daniel “understood by books the number of the years”, and Zechariah's angel, about 519 BC, still asks how long the Lord's anger against Jerusalem will last, “these threescore and ten years”. Readers have fitted the seventy years in several ways: from Nebuchadnezzar's first campaign in 605 to Cyrus' decree (67 years), from 586 to the finished Temple in 516 (70), or as a round number for a lifetime."
+    - "The deportations themselves were three: in 597, when “all the princes, and all the mighty men of valour, even ten thousand captives” were taken; in 586, after the city burned; and in 582, when Jeremiah counts a further 745 persons. Cuneiform tablets from a settlement called Al-Yahudu, “Judah-town”, and its neighbours in Babylonia, dated from 572 to 477 BC, show Judeans farming there generations after the return began, and the community that stayed grew into the Babylonian Jewry of the Talmud a thousand years later."
+  ru:
+    - "Примерно от пятидесяти до семидесяти лет, смотря откуда и докуда считать. Первое переселение из Иерусалима было в марте 597 г. до н. э., когда Навуходоносор взял город и увёл царя Иехонию; Храм сгорел в 586 г. (называют и 587-й); Кир отпустил переселенцев в 538-м. От первого переселения до возвращения — 59 лет, от гибели Храма — 48; от сожжения Храма до его восстановления в 516 г. — 70."
+    - "Срок назначил Иеремия: «народы сии будут служить царю Вавилонскому семьдесят лет» и «когда исполнится вам в Вавилоне семьдесят лет, тогда Я посещу вас». Летописец считает эти годы как субботы, которых не праздновала земля, Даниил «сообразил по книгам число лет», а ангел у Захарии около 519 г. всё ещё спрашивает, доколе продлится гнев Господа на Иерусалим — «вот уже семьдесят лет». Семьдесят лет укладывали по-разному: от первого похода Навуходоносора в 605 г. до указа Кира (67 лет), от 586 г. до завершённого Храма в 516-м (70) или как круглое число — срок человеческой жизни."
+    - "Самих переселений было три: в 597 г., когда увели «всех князей, и все храброе войско, — десять тысяч было переселенных»; в 586-м, после сожжения города; и в 582-м, когда Иеремия насчитывает ещё 745 человек. Клинописные таблички из поселения Аль-Яхуду, «Иудейский город», и соседних с ним в Вавилонии, датированные 572–477 гг. до н. э., показывают иудеев, возделывавших там землю, — поколения спустя после начала возвращения, а оставшаяся община выросла в вавилонское еврейство Талмуда тысячу лет спустя."
+map:
+  place: a217d18
+  year: "586 BC"
+  ref: Jer.29.10
+scripture:
+  [
+    Jer.25.11-Jer.25.12,
+    Jer.29.10,
+    2Chr.36.20-2Chr.36.21,
+    Dan.9.2,
+    Zech.1.12,
+    2Kgs.24.14,
+    2Kgs.25.8-2Kgs.25.11,
+    Jer.52.30,
+    Ezra.1.1,
+  ]
+sources:
+  - "Babylonian Chronicle (ABC 5), rev. 11-13 (Jerusalem taken on 2 Adar of Nebuchadnezzar's seventh year, 597 BC)"
+  - "History Globe dated events (jerusalem-falls c. 586 BC; babylon-taken 539 BC; cyrus-edict 538 BC; second-temple c. 516 BC)"
+  - "L. E. Pearce and C. Wunsch, Documents of Judean Exiles and West Semites in Babylonia in the Collection of David Sofer (2014)"
+  - "O. Lipschits, The Fall and Rise of Jerusalem: Judah under Babylonian Rule (2005)"
+  - "H. G. M. Williamson, Ezra, Nehemiah (Word Biblical Commentary 16, 1985)"
+status: checked

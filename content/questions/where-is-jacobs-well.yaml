@@ -1,0 +1,28 @@
+id: where-is-jacobs-well
+question:
+  en: "Where is Jacob's well?"
+  ru: "Где находится колодец Иакова?"
+answer:
+  en:
+    - "At the eastern edge of Nablus in the West Bank, where the pass between Mount Gerizim and Mount Ebal opens on to the plain: the well lies at the foot of Gerizim, a few hundred metres from the mound of ancient Shechem, Tell Balata, and about a kilometre south of the village of Askar, where the map places Sychar. Jerusalem is 49 km to the south and Nazareth 54 km to the north, so the well stands about halfway on the road from Judaea to Galilee through Samaria. It is one of the few holy places of the Gospels whose identification almost no one disputes, kept today in the crypt of the Greek Orthodox church of St Photini, the name tradition gives the Samaritan woman."
+    - "John sets the scene: Jesus “cometh he to a city of Samaria, which is called Sychar, near to the parcel of ground that Jacob gave to his son Joseph. Now Jacob's well was there. Jesus therefore, being wearied with his journey, sat thus on the well: and it was about the sixth hour.” The woman objects, “thou hast nothing to draw with, and the well is deep”, and asks, “Art thou greater than our father Jacob, which gave us the well, and drank thereof himself, and his children, and his cattle?” Pointing to Gerizim she says, “Our fathers worshipped in this mountain”. Genesis knows the field but not the well: Jacob “bought a parcel of a field, where he had spread his tent, at the hand of the children of Hamor, Shechem's father, for an hundred pieces of money”, and in it Joseph's bones were buried, as Joshua records."
+    - "The well is cut through rock and is deep: Henry Maundrell in 1697 gave thirty-five yards, 105 feet or about 32 m, and the Survey of Western Palestine (1882) found 75 feet, about 23 m, after centuries of rubbish; it has since been cleared. A church stood over it by the 380s, when Jerome's Paula visited; the pilgrim Arculf about 680 saw a cruciform church with the well at its centre; the Crusaders rebuilt it, and after its ruin the Greek Orthodox bought the site about 1860 and finished the present church in 2007. Joseph's traditional tomb lies a few hundred metres to the north. On Gerizim above, the Samaritans' temple stood, by its excavator's dating, from the fifth century BC until John Hyrcanus destroyed it, and they still keep Passover on the mountain."
+  ru:
+    - "На восточной окраине Наблуса на Западном берегу, где проход между горами Гаризим и Гевал открывается на равнину: колодец лежит у подножия Гаризима, в нескольких сотнях метров от холма древнего Сихема, Телль-Балаты, и примерно в километре к югу от деревни Аскар, куда карта помещает Сихарь. Иерусалим — в 49 км к югу, Назарет — в 54 км к северу, так что колодец стоит примерно на полпути из Иудеи в Галилею через Самарию. Это одно из немногих святых мест Евангелий, чьё отождествление почти никто не оспаривает; сегодня он хранится в крипте греческой православной церкви святой Фотинии — так предание зовёт самарянку."
+    - "Иоанн задаёт место действия: Иисус «приходит Он в город Самарийский, называемый Сихарь, близ участка земли, данного Иаковом сыну своему Иосифу. Там был колодезь Иаковлев. Иисус, утрудившись от пути, сел у колодезя. Было около шестого часа». Женщина возражает: «тебе и почерпнуть нечем, а колодезь глубок» — и спрашивает: «Неужели ты больше отца нашего Иакова, который дал нам этот колодезь и сам из него пил, и дети его, и скот его?» Указывая на Гаризим, она говорит: «Отцы наши поклонялись на этой горе». Бытие знает поле, но не колодец: Иаков «купил часть поля, на котором раскинул шатер свой, у сынов Еммора, отца Сихемова, за сто монет», и в нём, как записано у Иисуса Навина, похоронили кости Иосифа."
+    - "Колодец высечен в скале и глубок: Генри Маундрелл в 1697 году назвал тридцать пять ярдов, 105 футов, около 32 м, а Обзор Западной Палестины (1882) — 75 футов, около 23 м, после столетий мусора; с тех пор его расчистили. Церковь стояла над ним уже в 380-е годы, когда его посетила Павла, спутница Иеронима; паломник Аркульф около 680 года видел крестообразную церковь с колодцем посередине; крестоносцы отстроили её, а после её гибели греческая православная церковь купила место около 1860 года и завершила нынешний храм в 2007-м. Традиционная гробница Иосифа лежит в нескольких сотнях метров к северу. На Гаризиме наверху храм самарян стоял, по датировке его раскопщика, с V века до н. э., пока его не разрушил Иоанн Гиркан, и они до сих пор справляют на горе Пасху."
+map:
+  place: a27b472
+  year: "c. AD 28"
+  ref: John.4.6
+scripture: [John.4.5-John.4.6, John.4.11-John.4.12, John.4.20, Gen.33.18-Gen.33.19, Josh.24.32]
+sources:
+  - "Jerome, Letter 108.13 (Paula at Jacob's well)"
+  - "Adamnan, De locis sanctis 2.21 (Arculf's account of the church over the well)"
+  - "H. Maundrell, A Journey from Aleppo to Jerusalem at Easter, A.D. 1697 (1703)"
+  - "C. R. Conder and H. H. Kitchener, The Survey of Western Palestine: Memoirs, vol. 2 (1882)"
+  - "D. Pringle, The Churches of the Crusader Kingdom of Jerusalem, vol. 1 (1993), no. 108 (Jacob's Well)"
+  - "Y. Magen, Mount Gerizim Excavations, vol. II: A Temple City (2008)"
+  - "History Globe articles “Sychar” and “Shechem”"
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

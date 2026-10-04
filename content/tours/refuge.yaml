@@ -1,0 +1,45 @@
+# The six cities of refuge: Moses sets apart three east of the Jordan (Deut 4:41-43; the
+# law is Num 35:9-34) and Joshua three west of it (Josh 20:7), in the order of the text.
+# The tour's year (1406 BC) follows the Exodus and conquest tours' reckoning (1 Kgs 6:1);
+# the later date, c. 1220 BC, is also held. A point for the map. Kedesh uses the map's
+# record tagged for Josh 20:7 (a duplicate of Kedesh at Tel Kedesh), so the three western
+# cities stay in the order of that verse.
+id: refuge
+title:
+  en: "The six cities of refuge"
+  ru: "Шесть городов убежища"
+year: "1406 BC"
+# Where the cities were, not a journey: no time on foot.
+walked: false
+approximate: true
+stops:
+  - place: a0cd098 # Bezer
+    ref: Deut.4.41-Deut.4.43
+    note:
+      en: 'Moses sets apart three cities east of the Jordan, "that the slayer might flee thither, which should kill his neighbour unawares": first Bezer in the wilderness, on the plain, of Reuben.'
+      ru: "Моисей отделяет три города к востоку от Иордана, «чтоб убегал туда убийца, который убьет ближнего своего без намерения»: первый Бецер в пустыне, на равнине, в колене Рувимовом."
+  - place: a95147f # Ramoth
+    ref: Deut.4.43
+    note:
+      en: "Ramoth in Gilead, of the Gadites: Ramoth-gilead, where Ahab would fall."
+      ru: "Рамоф в Галааде, в колене Гадовом: тот Рамоф Галаадский, где падёт Ахав."
+  - place: abb5c1e # Golan
+    ref: Deut.4.43
+    note:
+      en: "Golan in Bashan, of Manasseh, the northernmost of the three."
+      ru: "Голан в Васане, в колене Манассиином, самый северный из трёх."
+  - place: a662eed # Kedesh
+    ref: Josh.20.1-Josh.20.7
+    note:
+      en: 'After the conquest the land west of the Jordan gets its three, "that the slayer that killeth any person unawares and unwittingly may flee thither": first Kedesh in Galilee in mount Naphtali.'
+      ru: "После завоевания три города получает и земля к западу от Иордана, «чтобы мог убегать туда убийца, убивший человека по ошибке, без умысла»: первый Кедес в Галилее, на горе Неффалимовой."
+  - place: adf74d4 # Shechem
+    ref: Josh.20.7
+    note:
+      en: "Shechem in mount Ephraim, between Ebal and Gerizim, where Joshua will renew the covenant."
+      ru: "Сихем на горе Ефремовой, между Гевалом и Гаризимом, где Иисус Навин обновит завет."
+  - place: a85151a # Hebron
+    ref: Josh.20.7-Josh.20.9
+    note:
+      en: 'Kirjath-arba, which is Hebron, in the mountain of Judah. The cities are "for all the children of Israel, and for the stranger that sojourneth among them", until the slayer stands before the congregation.'
+      ru: "Кириаф-Арбы, иначе Хеврон, на горе Иудиной. Города назначены «для всех сынов Израилевых и для пришельцев, живущих у них», доколе убивший не предстанет пред общество на суд."

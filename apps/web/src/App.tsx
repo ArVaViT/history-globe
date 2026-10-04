@@ -311,10 +311,18 @@ export function App() {
       setQuiz(null);
       return true;
     }
-    if (!person || state.selectedPlace) return false;
-    closePerson();
-    return true;
-  }, [quizOf, person, state.selectedPlace, closePerson]);
+    if (person && !state.selectedPlace) {
+      closePerson();
+      return true;
+    }
+    // The overview is a panel like the others: Escape folds it when nothing else is open.
+    if (moreOpen && !searchOpen && !state.selectedPlace && !state.tour) {
+      setMoreOpen(false);
+      writeMore(false);
+      return true;
+    }
+    return false;
+  }, [quizOf, person, state.selectedPlace, state.tour, closePerson, moreOpen, searchOpen]);
   useKeys(globe, { togglePlay, focusSearch, closeOwn });
 
   // Fly to the place from the URL once the globe exists, or start its tour or chapter.

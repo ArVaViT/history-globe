@@ -1,0 +1,26 @@
+id: where-did-moses-die
+question:
+  en: "Where did Moses die?"
+  ru: "Где умер Моисей?"
+answer:
+  en:
+    - "On Mount Nebo in the land of Moab, east of the Jordan, opposite Jericho. The traditional summit is Siyagha, about 700 m high, in today's Jordan about 9 km north-west of Madaba; it lies about 29 km east of Jericho and 46 km from Jerusalem in a straight line, and the northern end of the Dead Sea is about 15 km to the west, more than a kilometre below. The map puts Mount Nebo and the top of Pisgah at this point; a second peak, Khirbet al-Mukhayyat, 3 km to the south-east, is usually taken for the town of Nebo of Numbers and of the Mesha Stele. Where Moses was buried is a different question, and the Bible says that no one knows."
+    - "Deuteronomy tells it in a few lines: “And Moses went up from the plains of Moab unto the mountain of Nebo, to the top of Pisgah, that is over against Jericho. And the LORD shewed him all the land of Gilead, unto Dan”; “So Moses the servant of the LORD died there in the land of Moab, according to the word of the LORD. And he buried him in a valley in the land of Moab, over against Beth-peor: but no man knoweth of his sepulchre unto this day.” God had told him: “Get thee up into this mountain Abarim, unto mount Nebo, which is in the land of Moab, that is over against Jericho; and behold the land of Canaan”. Beth-peor is placed on the map at Khirbet Ayun Musa, the springs of Moses in the valley north-east of the summit. From Siyagha one sees the Jordan valley, Jericho, the Dead Sea and the hills of Judah, though not the Mediterranean that Deuteronomy names."
+    - "Josephus says that a cloud came over Moses as he spoke with Eleazar and Joshua, and he vanished from sight, lest anyone should say that he had gone to God. The pilgrim Egeria climbed Nebo in the early 380s and was shown the place by the monks who lived there; a church of the fourth century grew into a Byzantine basilica with mosaic floors, one of them dated 530/531. The Franciscans excavated the site from 1933 under Sylvester Saller, and Michele Piccirillo continued the work; the Franciscan Custody of the Holy Land keeps the Memorial of Moses there today; Pope John Paul II prayed there in March 2000, and the basilica, restored under a new roof, reopened in 2016. In 2 Maccabees, Mount Nebo is the mountain where Jeremiah hid the ark."
+  ru:
+    - "На горе Нево в земле Моавитской, к востоку от Иордана, напротив Иерихона. Традиционная вершина — Сияга, высотой около 700 м, в нынешней Иордании примерно в 9 км к северо-западу от Мадабы; она лежит примерно в 29 км к востоку от Иерихона и в 46 км от Иерусалима по прямой, а северный край Мёртвого моря — в 15 км к западу, больше чем на километр ниже. Карта ставит гору Нево и вершину Фасги в этой точке; вторая вершина, Хирбет-эль-Мухайят в 3 км к юго-востоку, обычно считается городом Нево из книги Чисел и стелы Меши. Где Моисей погребён — другой вопрос, и Библия говорит, что этого не знает никто."
+    - "Второзаконие рассказывает это в нескольких строках: «И взошел Моисей с равнин Моавитских на гору Нево, на вершину Фасги, что против Иерихона, и показал ему Господь всю землю Галаад до самого Дана»; «И умер там Моисей, раб Господень, в земле Моавитской, по слову Господню; и погребен на долине в земле Моавитской против Беф-Фегора, и никто не знает места погребения его даже до сего дня». Бог сказал ему: «взойди на сию гору Аварим, на гору Нево, которая в земле Моавитской, против Иерихона, и посмотри на землю Ханаанскую». Беф-Фегор карта помещает в Хирбет-Аюн-Муса — у источников Моисея в долине к северо-востоку от вершины. С Сияги видны долина Иордана, Иерихон, Мёртвое море и горы Иудеи, но не Средиземное море, которое называет Второзаконие."
+    - "Иосиф Флавий пишет, что, пока Моисей говорил с Елеазаром и Иисусом Навином, его окутало облако, и он скрылся из глаз, — чтобы никто не сказал, будто он ушёл к Богу. Паломница Эгерия поднялась на Нево в начале 380-х годов, и жившие там монахи показали ей это место; церковь IV века выросла в византийскую базилику с мозаичными полами, один из них датирован 530/531 годом. Францисканцы раскапывали место с 1933 года под началом Сильвестра Саллера, работу продолжил Микеле Пиччирилло; сегодня здесь стоит Мемориал Моисея, которым ведает францисканская Кустодия Святой Земли; в марте 2000 года здесь молился папа Иоанн Павел II, а базилика под новой кровлей после реставрации вновь открылась в 2016 году. Во Второй книге Маккавейской гора Нево названа местом, где Иеремия спрятал ковчег."
+map:
+  place: aefaa2d
+  year: "c. 1406 BC"
+  ref: Deut.34.1
+scripture: [Deut.34.1-Deut.34.6, Deut.32.49-Deut.32.50, Num.27.12, Num.32.38, Deut.3.27]
+sources:
+  - "Josephus, Antiquities 4.323-326 (the death of Moses)"
+  - "2 Maccabees 2.4-8 (Jeremiah hides the ark in a cave on the mountain Moses climbed)"
+  - "Mesha Stele, lines 14-18 (Nebo taken from Israel)"
+  - "Egeria, Itinerarium 10-12 (the ascent of Nebo)"
+  - "S. J. Saller, The Memorial of Moses on Mount Nebo (1941); M. Piccirillo and E. Alliata (eds.), Mount Nebo: New Archaeological Excavations 1967-1997 (1998)"
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0); History Globe tour “The Exodus” (Moses' death, 1406 BC on the map's chronology)"
+status: checked

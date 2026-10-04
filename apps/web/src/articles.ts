@@ -1,8 +1,8 @@
-import type { ArticleFile } from "@hg/model";
+import type { ArticleFile, WithSourcesRu } from "@hg/model";
 import { DATA_URL } from "./data";
 
 /** An article as articles.json holds it (content/articles, ADR 0007). */
-export type Article = ArticleFile;
+export type Article = ArticleFile & WithSourcesRu;
 
 let all: Promise<Readonly<Record<string, Article>>> | null = null;
 

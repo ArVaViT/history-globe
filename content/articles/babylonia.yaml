@@ -1,0 +1,44 @@
+# Overview article (ADR 0007). Mainstream facts only; Hammurabi's dates and the year of Ezra's journey are given as debated; this is the region, not the city (babylon.yaml).
+id: babylonia
+place: a8394b8
+title:
+  en: "Babylonia"
+  ru: "Вавилония"
+body:
+  en:
+    - "Babylonia here is the land the exiles were carried to, not the city of Babylon: the alluvial plain of the lower Tigris and Euphrates, from about Baghdad south to the marshes and the Persian Gulf, flat, hot, nearly rainless, and fed by canals. Genesis calls it “the land of Shinar”, with Babel, Erech and Accad as the first cities of its kingdom; the prophets say “the land of the Chaldeans”, after the tribes who ruled it from the seventh century BC, and Ezra “the province of Babylon”. Sumerian cities rose here before 3000 BC, Hammurabi of Babylon united the land in the eighteenth century BC (the chronologies differ by a century and more), and Kassites and Assyrians held it in turn until Nabopolassar made it independent in 626 BC and his son Nebuchadnezzar II (605–562) made it an empire."
+    - "For Judah, Babylonia was the land of exile. Nebuchadnezzar took Jerusalem in 597 BC and carried off Jehoiachin and “all the craftsmen and smiths”; in 586 (or 587) his army burned the city, and “the rest of the people that were left in the city” followed. The exiles were settled on the canals of the Nippur region: Ezekiel saw his visions “among the captives by the river of Chebar”, and cuneiform tablets from a “town of Judah” (Al-Yahudu) record their fields, debts and Hebrew names from 572 to 477 BC. Jehoiachin's rations are listed in the archives of Nebuchadnezzar's palace. “By the rivers of Babylon, there we sat down, yea, we wept, when we remembered Zion”."
+    - "Cyrus of Persia took Babylon without a battle in 539 BC, and in his first year Sheshbazzar brought the temple vessels “from Babylon unto Jerusalem”; Ezra 2 lists “the children of the province that went up out of the captivity”, and Ezra himself “went up from Babylon” under Artaxerxes, in 458 BC by the usual reckoning, though some put him in 398. Many Jews stayed: the Murashu business archive from Nippur names them in the fifth century, and in later centuries the academies of Sura and Pumbedita produced the Babylonian Talmud. Jeremiah's long oracle foresaw the land's end: “the hindermost of the nations shall be a wilderness, a dry land, and a desert”."
+    - "Babylonia passed to Alexander, the Seleucids, the Parthians and the Sasanians, whose capital was at Ctesiphon, and in 637 to the Arabs. Today it is southern Iraq, with governorates such as Babil, Wasit, Qadisiyah, Dhi Qar and Basra, with the ruins of Babylon, Nippur, Uruk and Ur rising from the plain, and the marshes at its southern end, drained in the 1990s and partly restored."
+  ru:
+    - "Вавилония здесь — страна, куда уводили пленников, а не город Вавилон. Слова Вавилония в Синодальном переводе нет: страна там зовётся тем же именем Вавилон, а ещё землёй Халдейской («в земле Халдейской» у Иезекииля) а у Ездры — «во всей области Вавилонской». Это наносная равнина нижнего Тигра и Евфрата, от Багдада на юг до болот и Персидского залива: плоская, жаркая, почти без дождей, питаемая каналами. Книга Бытия называет её землёй Сеннаар, где «Вавилон, Эрех, Аккад и Халне» были первыми городами царства; пророки говорят о «земле Халдеев», по имени племён, правивших ею с VII века до н. э. Шумерские города поднялись здесь до 3000 г. до н. э., Хаммурапи объединил страну в XVIII веке до н. э. (хронологии расходятся на столетие и больше), а затем ею владели касситы и ассирийцы, пока Набопаласар не сделал её независимой в 626 г. до н. э., а его сын Навуходоносор II (605–562) — империей."
+    - "Для Иудеи Вавилония была землёй плена. Навуходоносор взял Иерусалим в 597 г. до н. э., увёл Иехонию «и всех плотников и кузнецов»; в 586 (или 587) г. его войско сожгло город, и за ними последовал «прочий народ, остававшийся в городе». Переселенцев поселили на каналах в округе Ниппура: Иезекииль видел видения «среди переселенцев при реке Ховаре», а клинописные таблички из «города Иудеев» (Аль-Яхуду) записывают их поля, долги и еврейские имена с 572 по 477 г. до н. э. Пайки Иехонии перечислены в архивах дворца Навуходоносора. «При реках Вавилона, там сидели мы и плакали, когда вспоминали о Сионе»."
+    - "Кир Персидский взял Вавилон без боя в 539 г. до н. э., и в первый его год Шешбацар привёз сосуды храма «из Вавилона в Иерусалим»; вторая глава Ездры перечисляет «сыны страны из пленников переселения», а сам Ездра «вышел из Вавилона» при Артаксерксе — в 458 г. до н. э. по обычному счёту, хотя некоторые относят его к 398 г. Многие Иудеи остались: деловой архив Мурашу из Ниппура называет их в V веке, а в позднейшие века академии Суры и Пумбедиты создали Вавилонский Талмуд. Долгое пророчество Иеремии предвидело конец страны: «вот будущность тех народов — пустыня, сухая земля и степь»."
+    - "Вавилония перешла к Александру, Селевкидам, парфянам и Сасанидам, чьей столицей был Ктесифон, а в 637 г. — к арабам. Сегодня это южный Ирак, с такими провинциями, как Бабиль, Васит, Кадисия, Ди-Кар и Басра, с руинами Вавилона, Ниппура, Урука и Ура, поднимающимися над равниной, и болотами на южном краю, осушенными в 1990-х годах и отчасти восстановленными."
+scripture:
+  - Gen.10.10
+  - Gen.11.2
+  - 2Kgs.24.14-2Kgs.24.16
+  - 2Kgs.25.11
+  - Ps.137.1
+  - Ezek.1.1-Ezek.1.3
+  - Ezra.1.11
+  - Ezra.2.1
+  - Ezra.5.12
+  - Ezra.7.6
+  - Ezra.7.16
+  - Ezra.8.1
+  - Jer.50.1
+  - Jer.50.12
+  - Jer.51.43
+sources:
+  - "Babylonian Chronicle ABC 5 (the capture of Jerusalem, 597 BC); Nabonidus Chronicle ABC 7 (the fall of Babylon, 539 BC)"
+  - "The Cyrus Cylinder (British Museum 90920)"
+  - "The Jehoiachin ration tablets from Babylon (Vorderasiatisches Museum, Berlin), in J. B. Pritchard (ed.), Ancient Near Eastern Texts Relating to the Old Testament (3rd ed., 1969)"
+  - "L. E. Pearce and C. Wunsch, Documents of Judean Exiles and West Semites in Babylonia in the Collection of David Sofer (2014)"
+  - "M. W. Stolper, Entrepreneurs and Empire: The Murašû Archive, the Murašû Firm, and Persian Rule in Babylonia (1985)"
+  - "Herodotus, Histories 1.178-200 (Babylon and its land); Strabo, Geography 16.1 (Babylonia)"
+  - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016)"
+  - "A. Kuhrt, The Ancient Near East c. 3000-330 BC (1995)"
+  - "H. G. M. Williamson, Ezra, Nehemiah (Word Biblical Commentary 16, 1985) (the date of Ezra)"
+status: checked

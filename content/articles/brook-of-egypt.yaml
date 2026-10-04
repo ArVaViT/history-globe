@@ -1,0 +1,34 @@
+# Overview article (ADR 0007). Mainstream facts only; the identification is given as disputed, Wadi el-Arish being the usual view and Nahal Besor the main alternative.
+id: brook-of-egypt
+place: a7a59b4
+title:
+  en: "Brook of Egypt"
+  ru: "Поток Египетский"
+body:
+  en:
+    - "The Brook of Egypt (Hebrew nahal Mitsrayim) was the south-western border of the promised land, the wadi where Canaan ended and the desert road to Egypt began; its counterpart in the north was Lebo-hamath. It is distinct from “the river of Egypt” of the covenant with Abram, where a different word is used and the Nile is probably meant. Most identify it with Wadi el-Arish, the great dry river of northern Sinai that gathers the rains of the peninsula and reaches the Mediterranean at el-Arish, some 75 km south-west of Gaza. Nadav Na'aman argued that the Assyrian “Brook of Egypt” was rather Nahal Besor, the wadi south of Gaza, and a few have placed it at the Shihor, the easternmost branch of the Nile."
+    - "Numbers draws the southern border from Kadesh-barnea past Azmon “unto the river of Egypt, and the goings out of it shall be at the sea”, and Joshua repeats the line for Judah, whose Philistine coast reaches “unto the river of Egypt, and the great sea”. Solomon's assembly came “from the entering in of Hamath unto the river of Egypt”. After Carchemish, Kings notes, “the king of Babylon had taken from the river of Egypt unto the river Euphrates all that pertained to the king of Egypt”. Isaiah foresees Israel gathered “from the channel of the river unto the stream of Egypt”, and Ezekiel's new land runs in the south “from Tamar even to the waters of strife in Kadesh, the river to the great sea”."
+    - "The Assyrians knew the same frontier. Tiglath-pileser III set up his royal stele at the Brook of Egypt in 734 BC; Sargon II settled deportees on the border of “the city of the Brook of Egypt” and opened the sealed trading post (kāru) of Egypt to trade. The Greeks called the town at the wadi's mouth Rhinocolura; Diodorus tells that Actisanes, an Ethiopian king who had conquered Egypt, settled convicts with their noses cut off there, whence the name. Today el-Arish is the capital of Egypt's North Sinai governorate, and Wadi el-Arish still floods after the rare winter rains."
+  ru:
+    - "Поток Египетский (евр. нахал Мицраим) — юго-западная граница обетованной земли, вади, где кончался Ханаан и начиналась пустынная дорога в Египет; на севере ему отвечал вход в Емаф. Его следует отличать от «реки Египетской» из завета с Аврамом: там стоит другое слово и, вероятно, имеется в виду Нил. Большинство отождествляют поток с Вади-эль-Ариш, большой сухой рекой северного Синая, которая собирает дожди полуострова и выходит к Средиземному морю у Эль-Ариша, примерно в 75 км к юго-западу от Газы. Надав Нааман доказывал, что ассирийский «Поток Египетский» — скорее Нахаль-Бесор, вади к югу от Газы, а иные помещали его на Сихор, самый восточный рукав Нила."
+    - "Книга Чисел ведёт южную границу от Кадес-Варни через Ацмон «к потоку Египетскому, и будут выступы ее к морю», а книга Иисуса Навина повторяет ту же линию для Иуды, чей филистимский берег доходит «до самого потока Египетского и великого моря». Собрание Соломона сошлось «от входа в Емаф до реки Египетской». После Кархемиса, замечает книга Царств, царь Вавилонский взял всё, «от потока Египетского до реки Евфрата, что принадлежало царю Египетскому». Исаия предвидит, что Израиль будет собран «от великой реки до потока Египетского», а у Иезекииля южный край новой земли идёт «от Тамары до вод пререкания при Кадисе, и по течению потока до великого моря»."
+    - "Ассирийцы знали ту же границу. Феглаффелласар III поставил свою царскую стелу у Потока Египетского в 734 г. до н. э.; Саргон II поселил переселенцев на границе «города Потока Египетского» и открыл для торговли запечатанную пристань (кару) Египта. Греки называли город в устье вади Ринокорура; Диодор рассказывает, что Актисан, эфиопский царь, завоевавший Египет, поселил там преступников с отрезанными носами, откуда и имя. Сегодня Эль-Ариш — столица египетской провинции Северный Синай, а Вади-эль-Ариш по-прежнему наполняется после редких зимних дождей."
+scripture:
+  - Gen.15.18
+  - Num.34.5
+  - Josh.15.4
+  - Josh.15.47
+  - 1Kgs.8.65
+  - 2Kgs.24.7
+  - 2Chr.7.8
+  - Isa.27.12
+  - Ezek.47.19
+  - Ezek.48.28
+sources:
+  - "H. Tadmor, The Inscriptions of Tiglath-pileser III, King of Assyria (1994) (the city of the Brook of Egypt)"
+  - "Sargon II, the Nimrud Prism (H. Tadmor, 'The Campaigns of Sargon II of Assur', Journal of Cuneiform Studies 12, 1958)"
+  - "N. Na'aman, 'The Brook of Egypt and Assyrian Policy on the Border of Egypt', Tel Aviv 6 (1979)"
+  - "Diodorus Siculus, Library 1.60 (Rhinocolura)"
+  - "Strabo, Geography 16.2.31"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

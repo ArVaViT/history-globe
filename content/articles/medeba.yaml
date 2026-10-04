@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; the Mesha Stele is dated by its usual mid-ninth-century reckoning.
+id: medeba
+place: af4f21c
+title:
+  en: "Medeba"
+  ru: "Медева"
+body:
+  en:
+    - "Medeba, now Madaba in Jordan, stands on the plateau 30 km south-west of Amman, and the tableland around it is “the plain of Medeba” of Joshua, the Mishor between Heshbon and Dibon. The old song about Sihon says his Amorites “laid them waste even unto Nophah, which reacheth unto Medeba”; Joshua assigned the plain to Reuben. When the Ammonites hired Aramean chariots against David, they “came and pitched before Medeba”, and Joab beat them there."
+    - "Mesha's stele says that Omri, king of Israel, had taken the land of Medeba and Israel lived in it in his days and half his son's, forty years, until Chemosh restored it in Mesha's time; so Isaiah's oracle has Moab howling “over Nebo, and over Medeba”. In 1 Maccabees the sons of Jambri of Medeba kidnapped and killed John, brother of Jonathan Maccabee, and were ambushed at a wedding; John Hyrcanus took Medeba after a six-month siege about 128 BC, and his grandson Hyrcanus II promised to return it to the Nabataean king Aretas. From AD 106 it belonged to the Roman province of Arabia, struck coins and became a Christian city with a bishop."
+    - "Madaba's fame is its mosaics. In 1884 the Christian Arabs who resettled the abandoned town from Kerak found, under the floor of a church they were rebuilding, the mosaic map of the Holy Land made about 560–565, with Jerusalem drawn street by street; it was published in 1897 and is still in the church of Saint George. Dozens of other pavements of the sixth and seventh centuries, in the church of the Virgin, the Hippolytus Hall and the church of the Apostles, have made Madaba “the city of mosaics”. Excavation on the tell by Timothy Harrison's team has reached Iron Age fortifications under the Roman street."
+    - "Today Madaba is the capital of a governorate of about 200,000 people, with a large Christian community, an archaeological park and a school of mosaics, a few kilometres from Mount Nebo."
+  ru:
+    - "Медева, ныне Мадаба в Иордании, стоит на плато в 30 км к юго-западу от Аммана, а плоскогорье вокруг неё — «равнина Медева» книги Иисуса Навина, Мишор между Есевоном и Дивоном. Древняя песнь о Сигоне говорит, что его Аморреи опустошили землю «до Нофы, которая близ Медевы»; Иисус Навин отдал равнину Рувиму. Когда Аммонитяне наняли арамейские колесницы против Давида, те «пришли и расположились станом пред Медевою», и Иоав разбил их там."
+    - "Стела Месы говорит, что Амврий, царь Израильский, взял землю Медевы и Израиль жил в ней в его дни и половину дней его сына, сорок лет, пока Хамос не вернул её во дни Месы; потому в пророчестве Исаии «Моав рыдает над Нево и Медевою». В Первой книге Маккавейской сыны Иамврия из Медевы похитили и убили Иоанна, брата Ионафана Маккавея, и попали в засаду на свадьбе; Иоанн Гиркан взял Медеву после шестимесячной осады около 128 г. до н. э., а его внук Гиркан II обещал вернуть её набатейскому царю Арете. С 106 г. н. э. она принадлежала римской провинции Аравия, чеканила монету и стала христианским городом с епископом."
+    - "Слава Мадабы — её мозаики. В 1884 году арабы-христиане, заселившие покинутый город из Керака, нашли под полом церкви, которую перестраивали, мозаичную карту Святой земли, сделанную около 560–565 годов, с Иерусалимом, нарисованным улица за улицей; её издали в 1897 году, и она до сих пор в церкви святого Георгия. Десятки других полов VI–VII веков, в церкви Богородицы, зале Ипполита и церкви Апостолов, сделали Мадабу «городом мозаик». Раскопки на холме под руководством Тимоти Харрисона дошли до укреплений железного века под римской улицей."
+    - "Сегодня Мадаба — столица провинции примерно на 200 тысяч жителей, с большой христианской общиной, археологическим парком и школой мозаики, в нескольких километрах от горы Нево."
+scripture:
+  - Num.21.30
+  - Josh.13.9
+  - Josh.13.16
+  - 1Chr.19.7
+  - Isa.15.2
+sources:
+  - "The Mesha Stele (KAI 181), lines 7-9 (Omri and the land of Medeba)"
+  - "1 Maccabees 9.35-42"
+  - "Josephus, Antiquities 13.255 (Hyrcanus takes Medeba); 14.18 (the promise to Aretas)"
+  - "Eusebius, Onomasticon, s.v. Medaba"
+  - "H. Donner, The Mosaic Map of Madaba: An Introductory Guide (1992)"
+  - "M. Piccirillo, The Mosaics of Jordan (1993)"
+  - "M. Piccirillo and E. Alliata (eds.), The Madaba Map Centenary 1897–1997 (1999)"
+  - "T. P. Harrison et al., 'The Tall Madaba Archaeological Project: Preliminary Report of the 1998–2000 Field Seasons', Annual of the Department of Antiquities of Jordan 47 (2003)"
+status: checked

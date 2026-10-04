@@ -3404,12 +3404,14 @@ places:
     evidence:
       osis: 1Sam.27.6
       excerpt: "дал ему Анхус Секелаг, посему Секелаг и остался"
+  # Every verse of this record is "the plains of Moab", Israel's last camp before the Jordan
+  # (Moab the land is aa0b1d6): named so, as Num 31:12 has it.
   - id: aca767b
-    en: "Moab"
-    ru: "Моав"
+    en: "Plains of Moab"
+    ru: "Равнины Моавитские"
     evidence:
-      osis: Num.22.1
-      excerpt: "Израилевы, и остановились на равнинах Моава, при Иордане, против Иерихона."
+      osis: Num.31.12
+      excerpt: "к стану, на равнины Моавитские, что у Иордана, против Иерихона."
   - id: a60f092
     en: "Goshen"
     ru: "Гесем"
@@ -7646,14 +7648,23 @@ places:
     en: "Zophim"
     ru: "Цофим"
 
+  # descriptive: Синодальный пишет «на углу» (2 Пар 26:9; Неем 3:19–25), угол стены Иерусалима.
+  - id: aac6cda
+    en: "Angle"
+    ru: "Угол"
+
   # Daniel 11's "king of the north" and "king of the south": a bare «Север» read on the
-  # map as a point of the compass, so the realm is named.
+  # map as a point of the compass, so the realm is named — in the text's own words, «царство
+  # южного царя» (Дан 11:9); the north's by the same pattern («царь северный», Дан 11:6–15).
   - id: a244929
     en: "North"
-    ru: "Царство северное"
+    ru: "Царство северного царя"
   - id: a1c0469
     en: "South"
-    ru: "Царство южное"
+    ru: "Царство южного царя"
+    evidence:
+      osis: Dan.11.9
+      excerpt: "Хотя этот и сделает нашествие на царство южного царя, но возвратится в свою землю."
   # descriptive: «царица южная» (Мф 12:42), то же место, что Сава.
   - id: a422f1c
     en: "South"

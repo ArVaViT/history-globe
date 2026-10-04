@@ -1,0 +1,30 @@
+# Overview article (ADR 0007). Mainstream facts only; the Shatt en-Nil identification is given as the usual one and the Habor as the older, abandoned one (the app's two candidates).
+id: chebar
+place: a3d2f0a
+title:
+  en: "Chebar"
+  ru: "Река Ховар"
+body:
+  en:
+    - "The Chebar was not a natural river but one of the great canals of Babylonia, in the plain of Nippur south-east of Babylon. The Hebrew nehar Kebar answers to the Akkadian nar Kabari, “the great canal”, which business tablets of the Murashu firm from Nippur name in the fifth century BC; since Hilprecht it is usually taken to be the Shatt en-Nil, the dry bed that runs through the ruins of Nippur and once carried Euphrates water across the plain. The older identification with the Habor (Khabur) in northern Mesopotamia, where the Assyrians had settled the exiles of Samaria, is now generally given up, since Ezekiel places the Chebar “in the land of the Chaldeans”."
+    - "The exiles deported with Jehoiachin in 597 BC were settled along it. Ezekiel, a priest among them, saw the heavens opened “as I was among the captives by the river of Chebar”, in the fifth year of the captivity, 593 BC: the storm wind out of the north, the four living creatures, the wheels and the throne. He went “to them of the captivity at Tel-abib, that dwelt by the river of Chebar, and I sat where they sat”. When the glory of the LORD appeared to him again on the plain, in the Temple, and at last returning to the new Temple, it was each time “as the glory which I saw by the river of Chebar”. Cuneiform tablets from a “town of Judah” and other villages of Judean settlers, probably in the same region, dated 572–477 BC, show the kind of community Ezekiel addressed."
+    - "The canal silted up long ago. Nippur was dug by the University of Pennsylvania in 1889–1900 and by Chicago from 1948, and its mounds, with the ziggurat of Enlil, rise beside the old bed near the town of Afak in Iraq's Qadisiyah governorate."
+  ru:
+    - "Ховар был не природной рекой, а одним из больших каналов Вавилонии, на равнине Ниппура к юго-востоку от Вавилона. Еврейское нехар Кевар отвечает аккадскому нар Кабари, «большой канал», который называют деловые таблички дома Мурашу из Ниппура в V веке до н. э.; со времён Хильпрехта его обычно считают Шатт-эн-Нилем, сухим руслом, которое проходит через развалины Ниппура и когда-то несло воду Евфрата через равнину. Прежнее отождествление с Хавором (Хабуром) в северной Месопотамии, куда ассирийцы переселили изгнанников Самарии, теперь обычно оставлено, так как Иезекииль помещает Ховар «в земле Халдейской»."
+    - "Вдоль него поселили переселенцев, уведённых с Иехонией в 597 г. до н. э. Иезекииль, священник среди них, увидел, как отверзлись небеса, «когда я находился среди переселенцев при реке Ховаре», в пятый год плена, в 593 г. до н. э.: бурный ветер с севера, четырёх животных, колёса и престол. Он пришёл «к переселенным в Тел-Авив, живущим при реке Ховаре, и остановился там, где они жили». Когда слава Господня снова являлась ему в поле, в храме и, наконец, возвращаясь в новый храм, это каждый раз была слава, «которую видел я при реке Ховаре». Клинописные таблички из «города Иудеев» и других селений иудейских поселенцев, вероятно в тех же местах, датированные 572–477 гг. до н. э., показывают, к какой общине обращался Иезекииль."
+    - "Канал давно заилился. Ниппур раскапывал Пенсильванский университет в 1889–1900 годах и Чикагский с 1948 года, и его холмы с зиккуратом Энлиля поднимаются у старого русла близ города Афак в иракской провинции Кадисия."
+scripture:
+  - Ezek.1.1-Ezek.1.3
+  - Ezek.3.15
+  - Ezek.3.23
+  - Ezek.10.15
+  - Ezek.10.20-Ezek.10.22
+  - Ezek.43.3
+sources:
+  - "H. V. Hilprecht and A. T. Clay, Business Documents of Murashû Sons of Nippur Dated in the Reign of Artaxerxes I (1898)"
+  - "R. Zadok, The Jews in Babylonia during the Chaldean and Achaemenian Periods according to the Babylonian Sources (1979)"
+  - "W. Zimmerli, Ezekiel 1 (Hermeneia, 1979)"
+  - "M. Greenberg, Ezekiel 1-20 (Anchor Bible 22, 1983)"
+  - "L. E. Pearce and C. Wunsch, Documents of Judean Exiles and West Semites in Babylonia in the Collection of David Sofer (2014)"
+  - "M. Gibson, 'Nippur', in E. M. Meyers (ed.), The Oxford Encyclopedia of Archaeology in the Near East, vol. 4 (1997)"
+status: checked

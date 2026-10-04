@@ -1,0 +1,25 @@
+id: where-was-susa
+question:
+  en: "Where was Susa, the Shushan of Esther?"
+  ru: "Где находились Сузы, престольный город Есфири?"
+answer:
+  en:
+    - "Susa is the mound of Shush in Khuzestan, in south-western Iran, on the plain below the Zagros mountains; the map point stands on it. It lay about 360 km east of Babylon in a straight line and about 1,230 km from Jerusalem, and it had long been a chief city of Elam before the Persians made it one of their royal cities."
+    - "Three books of the Bible are set there. Daniel sees his vision of the ram and the goat “at Shushan in the palace, which is in the province of Elam… by the river of Ulai”; Nehemiah is cupbearer “in Shushan the palace” when the news from Jerusalem reaches him in the twentieth year of Artaxerxes, 445 BC; and the whole Book of Esther plays out in the palace and city of Susa in the reign of Ahasuerus, who is Xerxes (486–465 BC): “the king and Haman sat down to drink; but the city Shushan was perplexed.” Darius I had built the palace at the end of the sixth century; his foundation inscription lists cedar from Lebanon, gold from Lydia and Bactria, lapis lazuli from Sogdiana and ivory from Kush, India and Arachosia, brought together by craftsmen from every part of the empire."
+    - "Herodotus describes the Royal Road from Sardis to Susa, 111 stations and about ninety days on foot, nearly 2,000 km in a straight line; the king's couriers rode it in relays, as the posts of Ahasuerus “went out, being hastened by the king's commandment”. French excavators dug Susa from 1884 onward: the palace of Darius with its glazed-brick archers, now in the Louvre, and in 1901 the stele of Hammurabi's laws, which an Elamite king had carried off from Babylonia. A shrine beside the mound is venerated as the tomb of Daniel."
+  ru:
+    - "Сузы — это холм Шуш в Хузестане, на юго-западе Ирана, на равнине под горами Загроса; точка карты стоит на нём. Город лежал примерно в 360 км к востоку от Вавилона по прямой и в 1230 км от Иерусалима и долго был одним из главных городов Елама, прежде чем персы сделали его одним из своих царских городов."
+    - "Три книги Библии разворачиваются здесь. Даниил видит видение об овне и козле «в Сузах, престольном городе в области Еламской… у реки Улая»; Неемия — виночерпий «в Сузах, престольном городе», когда в двадцатый год Артаксеркса, в 445 г. до н. э., к нему приходят вести из Иерусалима; а вся книга Есфири происходит во дворце и городе Сузы при Артаксерксе Синодального перевода, то есть Ксерксе (486–465 гг. до н. э.): «царь и Аман сидели и пили, а город Сузы был в смятении». Дворец построил Дарий I в конце VI века; его закладная надпись перечисляет кедр с Ливана, золото из Лидии и Бактрии, лазурит из Согдианы, слоновую кость из Куша, Индии и Арахосии — всё, что свезли мастера со всех концов империи."
+    - "Геродот описывает Царскую дорогу из Сардиса в Сузы: 111 станций и около девяноста дней пешего пути, почти 2000 км по прямой; царские гонцы скакали по ней эстафетой, как гонцы Артаксеркса в книге Есфирь, что «отправились быстро с царским повелением». Французские археологи копали Сузы с 1884 года: дворец Дария с его лучниками из глазурованного кирпича, ныне в Лувре, а в 1901 году — стелу с законами Хаммурапи, которую эламский царь увёз из Вавилонии. Святилище рядом с холмом почитают как гробницу Даниила."
+map:
+  place: a033b84
+  year: "483 BC"
+  ref: Esth.1.2
+scripture: [Esth.1.2-Esth.1.3, Esth.3.15, Neh.1.1, Dan.8.2]
+sources:
+  - "Straight-line distances between the places' points (Susa, Babylon, Jerusalem, Sardis): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Herodotus, Histories 5.52-54 (the Royal Road from Sardis to Susa)"
+  - "The Susa foundation charter of Darius I (DSf), in A. Kuhrt, The Persian Empire: A Corpus of Sources from the Achaemenid Period (2007)"
+  - "P. Briant, From Cyrus to Alexander: A History of the Persian Empire (2002)"
+  - "J. Perrot (ed.), The Palace of Darius at Susa: The Great Royal Residence of Achaemenid Persia (2013)"
+status: checked

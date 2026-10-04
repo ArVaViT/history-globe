@@ -1,0 +1,24 @@
+id: where-did-naaman-bathe
+question:
+  en: "Where did Naaman bathe?"
+  ru: "Где омывался Нееман?"
+answer:
+  en:
+    - "In the Jordan, the river that runs from the Sea of Galilee down to the Dead Sea; the text names no spot on its banks. The map point for the river stands near Jericho, about 67 km from Samaria in a straight line; the text does not say to which reach of the river Naaman drove from Elisha's door."
+    - "Naaman, “captain of the host of the king of Syria”, was a leper; a captive Israelite girl told his wife of “the prophet that is in Samaria”, and he came with his horses and chariot to the door of Elisha's house, where a servant told him: “Go and wash in Jordan seven times, and thy flesh shall come again to thee, and thou shalt be clean.” He was angry: “Are not Abana and Pharpar, rivers of Damascus, better than all the waters of Israel?” His servants talked him round, and he “dipped himself seven times in Jordan, according to the saying of the man of God: and his flesh came again like unto the flesh of a little child”. Jesus recalled the story at Nazareth: of all the lepers in Israel in Elisha's day, “none of them was cleansed, saving Naaman the Syrian”."
+    - "Naaman's rivers are real. The Abana is the Barada, which rises in the Anti-Lebanon and makes Damascus an oasis; the Pharpar is usually taken as the Awaj, south of the city. Both are clear mountain streams, while the Jordan below Galilee is a muddy, winding river in a hot trench below sea level; Damascus is about 205 km in a straight line from the map point on the Jordan near Jericho, so the prophet's cure sent a great man a long way to a poor river. Naaman asked for two mules' burden of earth to take home, meaning to worship Israel's God on Israel's soil in Damascus."
+  ru:
+    - "В Иордане — реке, что течёт от Галилейского моря к Мёртвому; места на её берегу текст не называет. Точка карты для реки стоит у Иерихона, примерно в 67 км от Самарии по прямой; к какому участку реки Нееман поехал от дверей Елисея, текст не говорит."
+    - "Нееман, «военачальник царя Сирийского», был прокажённым; пленная израильтянка сказала его жене, что ему надо бы побывать «у пророка, который в Самарии», и он приехал на конях и колеснице к дому Елисея, где слуга передал ему: «пойди, омойся семь раз в Иордане, и обновится тело твое у тебя, и будешь чист». Он разгневался: «разве Авана и Фарфар, реки Дамасские, не лучше всех вод Израильских?» Слуги его уговорили, и он «окунулся в Иордане семь раз, по слову человека Божия, и обновилось тело его, как тело малого ребенка». Иисус вспомнил эту историю в Назарете: из всех прокажённых Израиля при Елисее «ни один из них не очистился, кроме Неемана Сириянина»."
+    - "Реки Неемана настоящие. Авана — это Барада, которая берёт начало в Антиливане и делает Дамаск оазисом; Фарфар обычно отождествляют с Аваджем к югу от города. Обе — прозрачные горные реки, тогда как Иордан ниже Галилеи — мутная извилистая река в жаркой впадине ниже уровня моря; от Дамаска до точки карты на Иордане у Иерихона около 205 км по прямой, так что пророк послал вельможу далеко, к неказистой реке. Нееман попросил земли, сколько снесут два лошака, чтобы поклоняться Богу Израиля на земле Израиля в Дамаске."
+map:
+  place: ae686c9
+  year: "c. 850 BC"
+  ref: 2Kgs.5.14
+scripture: [2Kgs.5.1-2Kgs.5.3, 2Kgs.5.9-2Kgs.5.14, 2Kgs.5.17, Luke.4.27]
+sources:
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "The Abana as the Barada and the Pharpar as the Awaj: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "M. Cogan and H. Tadmor, II Kings (Anchor Bible 11, 1988), on 2 Kings 5"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008), s.v. Jordan River, Samaria"
+status: checked

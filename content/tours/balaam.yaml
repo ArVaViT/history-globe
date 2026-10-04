@@ -1,0 +1,59 @@
+# Balaam, Numbers 22-24, with the end of his story in Numbers 25 and 31, in the order of
+# the text. The tour's year (1407 BC) follows the Exodus tour's reckoning (1 Kgs 6:1): the
+# fortieth year, on the plains of Moab before the crossing in 1406 BC; the later date,
+# c. 1220 BC, is also held. A point for the map. Balaam's way from Pethor to Moab is told
+# (the ass on the road, 22:21-35) but no station of it is named; the three heights he is
+# taken to are Moab's, east of the Jordan, and the map shows OpenBible's most likely sites.
+# Midian is the map's point for the land east of the Gulf of Aqaba; the Midianites of
+# Numbers 25 and 31 were then near Moab (22:4), so the last stop marks the people, not
+# the battlefield.
+id: balaam
+title:
+  en: "Balaam"
+  ru: "Валаам"
+year: "1407 BC"
+people: ["Balaam@Num.22.5-Rev"]
+approximate: true
+stops:
+  - place: aa9e754 # Pethor
+    ref: Num.22.1-Num.22.21
+    note:
+      en: 'Balak king of Moab sends princes to Balaam at Pethor by the River: "curse me this people; for they are too mighty for me". God lets him go, but only to speak the word given him.'
+      ru: "Валак, царь Моавитский, посылает послов к Валааму в Пефор, что на реке Евфрате: «прокляни мне народ сей, ибо он сильнее меня». Бог отпускает его, но только говорить то, что Он скажет."
+  - place: a6c0a5f # Ir-moab
+    ref: Num.22.22-Num.22.38
+    note:
+      en: "On the road the ass sees the angel of the Lord with a drawn sword and speaks; Balak meets Balaam at a city of Moab on the border of the Arnon."
+      ru: "В дороге ослица видит Ангела Господня с обнажённым мечом и говорит; Валак встречает Валаама в городе Моавитском на границе при Арноне."
+  - place: aeb19d6 # Kiriath-huzoth
+    ref: Num.22.39-Num.22.40
+    note:
+      en: "They come to Kiriath-huzoth, where Balak offers oxen and sheep and sends to Balaam and the princes with him."
+      ru: "Они приходят в Кириаф-Хуцоф; Валак закалывает волов и овец и посылает Валааму и князьям, бывшим с ним."
+  - place: a577c27 # Bamoth-baal
+    ref: Num.22.41-Num.23.12
+    note:
+      en: 'From the high places of Baal Balaam sees the edge of the camp; seven altars, and the first oracle: "How shall I curse, whom God hath not cursed?"'
+      ru: "С высот Вааловых Валаам видит часть народа; семь жертвенников и первое слово: «Как прокляну я? Бог не проклинает его»."
+  - place: afd9259 # Pisgah
+    ref: Num.23.13-Num.23.26
+    note:
+      en: "On the top of Pisgah, in the field of Zophim, the second oracle: God is not a man that He should lie; what He has blessed Balaam cannot reverse."
+      ru: "На вершине Фасги, на месте стражей, второе слово: Бог не человек, чтобы Ему лгать; что Он благословил, того Валаам не может отменить."
+  - place: a9ef72b # Peor
+    ref: Num.23.27-Num.24.25
+    note:
+      en: 'From the top of Peor, looking toward Jeshimon, Balaam blesses the tents of Jacob and sees the far-off king: "there shall come a Star out of Jacob, and a Sceptre shall rise out of Israel". Then he returns to his place.'
+      ru: "С вершины Фегора, обращённого к пустыне, Валаам благословляет шатры Иакова и видит грядущего царя: «Восходит звезда от Иакова и восстает жезл от Израиля». Затем он уходит обратно в своё место."
+  - place: af64fb3 # Shittim
+    ref: Num.25.1-Num.25.9
+    by: untold
+    note:
+      en: "At Shittim the people go after the daughters of Moab and join themselves to Baal-peor; a plague takes twenty-four thousand before Phinehas stays it."
+      ru: "В Ситтиме народ блудодействует с дочерями Моава и прилепляется к Ваал-Фегору; поражение уносит двадцать четыре тысячи, пока Финеес не останавливает его."
+  - place: acc6d8e # Midian
+    ref: Num.31.1-Num.31.16
+    by: untold
+    note:
+      en: 'Israel goes to war on Midian: five kings fall, and "Balaam also the son of Beor they slew with the sword". Moses says the trespass at Peor came "through the counsel of Balaam".'
+      ru: "Израиль идёт войной на Мадиам: падают пять царей, и «Валаама, сына Веорова, убили мечом». Моисей говорит, что отступление в Фегоре было «по совету Валаамову»."

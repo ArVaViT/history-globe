@@ -19,7 +19,7 @@ export interface SiteLabelParts {
 export function siteLabelRu(
   p: SiteLabelParts,
   ruName: (placeId: string) => string | undefined,
-  /** The Russian name of the place the label belongs to: "то же место, что Гай" on Гай
+  /** The Russian name of the place the label belongs to: "там же, где Гай" on Гай
    * says nothing, so it reads as the place's own name in other verses. */
   ownRu?: string,
 ): string | undefined {
@@ -31,7 +31,7 @@ export function siteLabelRu(
   const unit = p.unit === "m" ? "м" : "км";
   switch (p.tpl) {
     case "same":
-      return x === ownRu ? `там же, где ${x} в других стихах` : `то же место, что ${x}`;
+      return x === ownRu ? `там же, где ${x} в других стихах` : `там же, где ${x}`;
     case "same_name":
       return `там же, где ${x} в других стихах`;
     case "within":

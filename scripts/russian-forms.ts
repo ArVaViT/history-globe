@@ -74,6 +74,26 @@ function possessiveCases(w: string): Cases | null {
 export const COMMON =
   /^(Гора|Горы|Долина|Поток|Пустыня|Море|Озеро|Река|Ворота|Башня|Город|Источник|Холм|Земля|Страна|Дубрава|Лес|Пруд|Притвор|Улица)$/;
 
+/**
+ * A place name's cases in order (nominative, genitive, dative, accusative, instrumental,
+ * prepositional, old instrumental), when its ending tells them: a quiz offers its choices
+ * in the case the gap is in («из ______» → «Ефеса», «Вифлеема»). Null when unknown.
+ */
+export function russianCases(name: string): readonly string[] | null {
+  const words = name.split(" ");
+  if (words.length === 1) return nounCases(name);
+  const [w0 = "", w1 = "", ...rest] = words;
+  if (rest.length) return null;
+  const a0 = COMMON.test(w0) ? null : adjectiveCases(w0);
+  const n0 = nounCases(w0);
+  const n1 = nounCases(w1);
+  const a1 = adjectiveCases(w1) ?? possessiveCases(w1);
+  if (a0 && n1) return a0.map((x, i) => `${x} ${n1[i] ?? ""}`);
+  if (n0 && a1) return n0.map((x, i) => `${x} ${a1[i] ?? ""}`);
+  if (n0 && COMMON.test(w0)) return n0.map((x) => `${x} ${w1}`);
+  return null;
+}
+
 /** The forms of a Russian name in running text: its cases, by the endings of its words. */
 export function russianForms(name: string): string[] {
   const n = plain(name);

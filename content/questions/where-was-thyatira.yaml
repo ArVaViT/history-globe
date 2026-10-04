@@ -1,0 +1,26 @@
+id: where-was-thyatira
+question:
+  en: "Where was Thyatira, Lydia's home town?"
+  ru: "Где находилась Фиатира, родной город Лидии?"
+answer:
+  en:
+    - "Thyatira lay in the valley of the Lycus, a tributary of the Hermus, in the region of Lydia in western Asia Minor; the modern town of Akhisar in Turkey stands on the site, and the map point stands there. It was about 61 km from Pergamum and 51 km from Sardis in a straight line, on the road between them; Ephesus was 117 km to the south-west."
+    - "Lydia met Paul far from home, at Philippi in Macedonia, some 380 km across the Aegean: “And a certain woman named Lydia, a seller of purple, of the city of Thyatira, which worshipped God, heard us: whose heart the Lord opened.” Her trade fits the city: inscriptions from Thyatira name more guilds than any other city of the province, among them the dyers, and one of the cloths dyed there was a red made from madder root rather than the sea-snail purple of Tyre. Thyatira was also one of the seven churches of Revelation, warned about “that woman Jezebel”; its church, Christ says, had works, love, service and faith."
+    - "Strabo calls Thyatira a settlement of Macedonians, planted by the Seleucid kings early in the third century BC to guard the road; it had no acropolis and changed hands between the Seleucids and Pergamum before Rome took it with the rest of Attalus' kingdom in 133 BC. Little of the ancient city is visible under modern Akhisar beyond a stretch of colonnaded street and a basilica cleared in the town centre, so Lydia's city is known mostly from its inscriptions and coins."
+  ru:
+    - "Фиатира лежала в долине Лика, притока Герма, в области Лидия на западе Малой Азии; на этом месте стоит нынешний турецкий город Акхисар, где и поставлена точка карты. До Пергама отсюда около 61 км, до Сардиса 51 км по прямой — город стоял на дороге между ними; Ефес лежал в 117 км к юго-западу."
+    - "Лидия встретила Павла далеко от дома — в македонских Филиппах, примерно в 380 км через Эгейское море: «И одна женщина из города Фиатир, именем Лидия, торговавшая багряницею, чтущая Бога, слушала; и Господь отверз сердце ее внимать тому, что говорил Павел». Её ремесло под стать городу: надписи из Фиатиры называют больше ремесленных товариществ, чем в любом другом городе провинции, среди них — красильщиков, и одной из здешних красок был красный цвет из корня марены, а не пурпур из морской улитки, как в Тире. Фиатира — и одна из семи церквей Откровения: её обличают за то, что она попускает «жене Иезавели» учить; у этой церкви, говорит Христос, есть дела, любовь, служение и вера."
+    - "Страбон называет Фиатиру поселением македонян; её основали Селевкиды в начале III века до н. э., чтобы охранять дорогу; акрополя у города не было, и он переходил от Селевкидов к Пергаму, пока в 133 г. до н. э. Рим не получил его вместе с царством Аттала. Под нынешним Акхисаром от древнего города видно немного — отрезок улицы с колоннадой и базилика, расчищенные в центре, — так что город Лидии известен в основном по надписям и монетам."
+map:
+  place: a94b661
+  year: "AD 50"
+  ref: Acts.16.14
+scripture: [Acts.16.14-Acts.16.15, Acts.16.40, Rev.1.11, Rev.2.18-Rev.2.20]
+sources:
+  - "Straight-line distances between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Strabo, Geography 13.4.4 (Thyatira a settlement of Macedonians)"
+  - "Pliny the Elder, Natural History 5.115 (Thyatira on the Lycus)"
+  - "Tituli Asiae Minoris V.2: Regio septentrionalis ad orientem vergens, ed. P. Herrmann (1989), the inscriptions of Thyatira and its guilds"
+  - "C. J. Hemer, The Letters to the Seven Churches of Asia in Their Local Setting (1986)"
+  - "W. M. Ramsay, The Letters to the Seven Churches of Asia (1904)"
+status: checked

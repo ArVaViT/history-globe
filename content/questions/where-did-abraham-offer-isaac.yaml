@@ -1,0 +1,26 @@
+id: where-did-abraham-offer-isaac
+question:
+  en: "Where did Abraham offer Isaac?"
+  ru: "Где Авраам приносил в жертву Исаака?"
+answer:
+  en:
+    - "Genesis says only “the land of Moriah” and “one of the mountains which I will tell thee of”; Jewish tradition from at least the time of the Chronicler has placed it on the hill of the Temple in Jerusalem, where the map point stands, marked as disputed. Abraham went back to Beersheba afterwards, about 70 km to the south-west in a straight line, and is usually thought to have set out from there; “on the third day Abraham lifted up his eyes, and saw the place afar off”, a pace that suits the hill country of Judah."
+    - "The link to Jerusalem is made in Chronicles: “Then Solomon began to build the house of the LORD at Jerusalem in mount Moriah, where the Lord appeared unto David his father, in the place that David had prepared in the threshingfloor of Ornan the Jebusite.” The Book of Jubilees calls Abraham's mountain Mount Zion, and Josephus says plainly that it was the hill on which David later built the Temple. Jewish tradition fixes the place at the rock now under the Dome of the Rock; the Quran tells the story of Abraham's son too, though there the son is unnamed and later Muslim tradition mostly makes him Ishmael."
+    - "The Samaritans read the name differently and claim Mount Gerizim above Shechem, their own holy mountain, and the Samaritan Pentateuch is often read as “the land of Moreh”, the oak of Moreh at Shechem being Abraham's first halt in Canaan. The Syriac Bible has “the land of the Amorites”, and the Septuagint translators gave up on the name and wrote “the high land”. No archaeology can settle it; the name Moriah occurs nowhere else but in these two verses."
+  ru:
+    - "Книга Бытия говорит только о «земле Мориа» и «одной из гор, о которой Я скажу тебе»; иудейское предание по меньшей мере со времён Летописца помещает жертвоприношение на холм Храма в Иерусалиме, где и стоит точка карты, помеченная как спорная. Потом Авраам вернулся в Вирсавию, примерно в 70 км к юго-западу по прямой, и обычно считают, что вышел он оттуда же; «На третий день Авраам возвел очи свои, и увидел то место издалека» — шаг, подходящий горам Иудеи."
+    - "Связь с Иерусалимом проводит книга Паралипоменон: «И начал Соломон строить дом Господень в Иерусалиме на горе Мориа, которая указана была Давиду, отцу его, на месте, которое приготовил Давид, на гумне Орны Иевусеянина». Книга Юбилеев называет гору Авраама Сионом, а Иосиф Флавий прямо говорит, что это холм, на котором Давид позже построил Храм. Иудейское предание указывает это место на скале, над которой ныне стоит Купол Скалы; Коран тоже рассказывает о сыне Авраама, хотя сын там не назван, и позднейшее мусульманское предание чаще видит в нём Измаила."
+    - "Самаряне читают имя иначе и указывают на гору Гаризим над Сихемом, свою святую гору: Самаритянское Пятикнижие часто читают как «земля Море» — дубрава Море у Сихема была первой стоянкой Авраама в Ханаане. Сирийская Библия даёт «землю Аморреев», а переводчики Септуагинты отказались от имени и написали «высокая земля». Археология тут бессильна: имя Мориа не встречается нигде, кроме этих двух стихов."
+map:
+  place: adaf385
+  year: "c. 2000 BC"
+  ref: Gen.22.2
+scripture: [Gen.22.1-Gen.22.4, Gen.22.14, Gen.22.19, 2Chr.3.1, Gen.12.6]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Josephus, Antiquities 1.224-226 (the mountain where David later built the Temple)"
+  - "Jubilees 18:13 (Mount Zion), tr. O. S. Wintermute in J. H. Charlesworth (ed.), The Old Testament Pseudepigrapha, vol. 2 (1985)"
+  - "The Samaritan Pentateuch at Genesis 22:2, ed. A. Tal and M. Florentin (2010)"
+  - "G. J. Wenham, Genesis 16-50 (Word Biblical Commentary 2, 1994), on Genesis 22:2"
+  - "Quran 37:99-113 (the sacrifice of Abraham's son)"
+status: checked

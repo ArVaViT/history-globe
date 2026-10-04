@@ -1,0 +1,35 @@
+# Overview article (ADR 0007). Mainstream facts only; the meaning of the name and the extent of the region are given as uncertain. Covers only the Padan-aram verses of this record; Aram-naharaim and the wider Mesopotamia belong to the article mesopotamia.
+id: paddan-aram
+place: a8ec7ba
+title:
+  en: "Paddan-aram"
+  ru: "Паддан-Арам"
+body:
+  en:
+    - "Paddan-aram is the name Genesis gives to the country around Haran in upper Mesopotamia, on the Balikh, a tributary of the Euphrates, where Abraham's kin stayed behind when he went on to Canaan. The Septuagint renders it “Mesopotamia of Syria” and the Synodal Bible simply “Mesopotamia”; elsewhere the Bible calls the same country Aram-naharaim, “Aram of the two rivers”, and the King James Version turns that too into Mesopotamia. Hosea speaks of “the country of Syria”, in Hebrew the field of Aram, which suggests that paddan meant “field” or, as in Akkadian, “road”. How far the region reached is unknown; on the map it is the same place as Aram-naharaim, or Haran itself, and a tell near Harran called Tell Feddan has been linked with the name. This article covers only the Padan-aram verses of Genesis; the other “Mesopotamia” of the Bible, Aram-naharaim, has its own article."
+    - "Isaac took to wife Rebekah, “the daughter of Bethuel the Syrian of Padan-aram, the sister to Laban the Syrian”. He later told Jacob, “Arise, go to Padan-aram, to the house of Bethuel thy mother's father; and take thee a wife from thence of the daughters of Laban”. Jacob served Laban twenty years for Leah and Rachel, and all his children but Benjamin were born “in Padan-aram”; then he gathered the cattle “which he had gotten in Padan-aram” and set out for Canaan. God appeared to him at Bethel “when he came out of Padan-aram” and named him Israel, and on the way Rachel died near Bethlehem, as Jacob remembered in Egypt. The old confession of Deuteronomy sums the story up: “A Syrian ready to perish was my father”."
+    - "Haran was a real city of the Bronze Age, named in the archives of Mari and Ebla in the third and second millennia BC; it was a centre of the moon god Sin, whose temple the last king of Babylon, Nabonidus, rebuilt in the sixth century BC. Arameans settled the region late in the second millennium, which is why Genesis calls Laban “the Syrian”. Today Harran lies in Turkey's Şanlıurfa province near the Syrian border; among its ruins stand the minaret of the Great Mosque built by the caliph Marwan II in 744–750 and a medieval castle."
+  ru:
+    - "Месопотамия Синодального перевода в книге Бытия — это Паддан-Арам, страна вокруг Харрана в верхней Месопотамии, на Балихе, притоке Евфрата, где осталась родня Авраама, когда он пошёл дальше в Ханаан. Септуагинта передаёт имя как «Месопотамия Сирийская», Синодальная Библия — просто «Месопотамия»; в других местах Библия зовёт ту же страну Арам-Нахараим, «Арам двух рек», и Синодальный перевод называет её то «Месопотамией», то «Сирией Месопотамской». У Осии Иаков убежал «на поля Сирийские», по-еврейски — на поле Арама, и это подсказывает, что паддан значило «поле» или, как в аккадском, «дорога». Как далеко простиралась область, неизвестно; на карте это то же место, что Арам-Нахараим, или сам Харран, а с именем связывали и телль близ Харрана, Телль-Феддан. Здесь собраны только стихи Бытия, где стоит Паддан-Арам; другая «Месопотамия» Библии, Арам-Нахараим, описана в отдельной статье."
+    - "Исаак взял в жёны Ревекку, «дочь Вафуила Арамеянина из Месопотамии, сестру Лавана Арамеянина». Позже он сказал Иакову: «встань, пойди в Месопотамию, в дом Вафуила, отца матери твоей, и возьми себе жену оттуда, из дочерей Лавана». Иаков двадцать лет служил Лавану за Лию и Рахиль, и все его дети, кроме Вениамина, родились «в Месопотамии»; потом он собрал скот, «который он приобрел в Месопотамии», и пошёл в Ханаан. Бог явился ему в Лузе «по возвращении его из Месопотамии» и нарёк Израилем, а по дороге близ Вифлеема умерла Рахиль, о чём Иаков вспоминал в Египте. Древнее исповедание из Второзакония подводит итог: «отец мой был странствующий Арамеянин»."
+    - "Харран — настоящий город бронзового века, названный в архивах Мари и Эблы в III–II тысячелетиях до н. э.; это был центр лунного бога Сина, чей храм в VI веке до н. э. отстроил последний царь Вавилона Набонид. Арамеи заселили область в конце II тысячелетия, потому Бытие и зовёт Лавана Арамеянином. Сегодня Харран лежит в турецкой провинции Шанлыурфа у сирийской границы; среди его развалин стоят минарет Большой мечети, построенной халифом Марваном II в 744–750 годах, и средневековая крепость."
+scripture:
+  - Gen.25.20
+  - Gen.28.2
+  - Gen.28.5-Gen.28.7
+  - Gen.29.4
+  - Gen.31.18
+  - Gen.33.18
+  - Gen.35.9
+  - Gen.35.26
+  - Gen.46.15
+  - Gen.48.7
+  - Deut.26.5
+  - Hos.12.12
+sources:
+  - "W. T. Pitard, 'Aram-Naharaim' and 'Paddan-Aram', in D. N. Freedman (ed.), The Anchor Bible Dictionary (1992)"
+  - "R. de Vaux, The Early History of Israel (1978)"
+  - "S. Lloyd and W. Brice, 'Harran', Anatolian Studies 1 (1951)"
+  - "T. M. Green, The City of the Moon God: Religious Traditions of Harran (1992)"
+  - "P.-A. Beaulieu, The Reign of Nabonidus, King of Babylon 556-539 B.C. (1989) (the temple of Sin at Harran)"
+status: checked
