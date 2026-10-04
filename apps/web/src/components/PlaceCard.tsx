@@ -2,7 +2,7 @@ import {
   formatRef,
   formatYear,
   formatYearRange,
-  localizeCitation,
+  sourcesOf,
   type AncientMention,
   type HistoryBattle,
   type HistoryEvent,
@@ -588,7 +588,7 @@ export function PlaceCard({
             </div>
             <div className="mt-0.5">{life.note[locale] ?? life.note.en}</div>
             <div className="mt-1 text-[11px] text-ink-soft">
-              {life.sources.map((x) => localizeCitation(x, locale)).join("; ")}
+              {sourcesOf(life, locale).join("; ")}
             </div>
           </div>
         )}
@@ -858,8 +858,7 @@ function ArticleSection({ placeId, locale }: { placeId: string; locale: Locale }
           ))}
         </div>
         <div className="mt-1">
-          {t("place.article_sources")}:{" "}
-          {article.sources.map((x) => localizeCitation(x, locale)).join("; ")}.
+          {t("place.article_sources")}: {sourcesOf(article, locale).join("; ")}.
         </div>
         <div className="mt-1 italic">
           {article.status === "reviewed" && article.reviewer

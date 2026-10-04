@@ -1,0 +1,35 @@
+# Overview article (ADR 0007). Mainstream facts only; this is Carmel of Judah, not Mount Carmel; the reading of 2 Chronicles 26:10 is noted as uncertain.
+id: carmel
+place: a053f15
+title:
+  en: "Carmel"
+  ru: "Кармил"
+body:
+  en:
+    - "Carmel was a town in the hill country of Judah, south-east of Hebron, not to be confused with Mount Carmel by the sea. The name means a garden or orchard land, and the town lay on the edge of the settled hills, where the wilderness of Judah begins. Joshua lists it in one district with Maon, Ziph and Juttah: “Maon, Carmel, and Ziph, and Juttah”. The site is Khirbet el-Kirmil, about 12 km from Hebron and a short walk from Maon (Khirbet Ma'in); the Arabic name has kept the old one, and Edward Robinson recognised it there in 1838."
+    - "After his victory over Amalek “Saul came to Carmel, and, behold, he set him up a place”, a monument, before going down to Gilgal to meet Samuel. Here lived Nabal, “a man in Maon, whose possessions were in Carmel”, “very great”, with three thousand sheep and a thousand goats, who was shearing them in Carmel when David's men asked for food and were refused. His wife Abigail, “a woman of good understanding, and of a beautiful countenance”, met David with provisions and turned him from bloodshed; when Nabal died she became David's wife, and the books of Samuel and Chronicles call her “Abigail the Carmelitess” ever after. Her son, Chileab or Daniel, was born at Hebron. Hezrai the Carmelite was one of David's thirty mighty men. The Chronicler says that Uzziah had vine dressers “in the mountains, and in Carmel”, though the word there may simply mean the orchard land."
+    - "Eusebius, in the fourth century, knew Chermala as a village east of Hebron with a Roman garrison, and the ruins of Khirbet el-Kirmil include a large ancient reservoir, remains of a Byzantine church and a tower of the Crusader period. The site lies today in the southern Hebron hills of the West Bank, beside the village of al-Karmil near Yatta."
+  ru:
+    - "Кармил был городом в нагорье Иудеи к юго-востоку от Хеврона; его не следует путать с горой Кармил у моря. Имя значит сад или плодовую землю, и город стоял на краю обжитых гор, где начинается пустыня Иудейская. Книга Иисуса Навина называет его в одном округе с Маоном, Зифом и Ютой: «Маон, Кармил, Зиф и Юта». Это Хирбет-эль-Кирмиль, примерно в 12 км от Хеврона и в получасе ходьбы от Маона (Хирбет-Маин); арабское название сохранило древнее, и Эдвард Робинсон узнал его здесь в 1838 году."
+    - "После победы над Амаликом «Саул ходил на Кармил и там поставил себе памятник», прежде чем сойти в Галгал навстречу Самуилу. Здесь жил Навал: «Был некто в Маоне, а имение его на Кармиле, человек очень богатый; у него было три тысячи овец и тысяча коз», и он стриг их на Кармиле, когда люди Давида попросили пищи и получили отказ. Его жена Авигея, «весьма умная и красивая лицем», вышла навстречу Давиду с припасами и отвратила его от кровопролития; когда Навал умер, она стала женой Давида, и книги Царств и Паралипоменон зовут её с тех пор Кармилитянкой. Её сын, Далуиа, родился в Хевроне. Хецрай Кармилитянин был одним из тридцати храбрых Давида. Летописец говорит, что у Озии были садовники «на горах и на Кармиле», хотя слово здесь может означать просто плодовые земли."
+    - "Евсевий в IV веке знал Хермалу как селение к востоку от Хеврона с римским гарнизоном, а среди развалин Хирбет-эль-Кирмиля — большой древний водоём, остатки византийской церкви и башня времён крестоносцев. Сегодня это место лежит в южных Хевронских горах на Западном берегу, рядом с селением Эль-Кармиль близ Ятты."
+scripture:
+  - Josh.15.55
+  - 1Sam.15.12
+  - 1Sam.25.2-1Sam.25.3
+  - 1Sam.25.5-1Sam.25.7
+  - 1Sam.25.40-1Sam.25.42
+  - 1Sam.27.3
+  - 1Sam.30.5
+  - 2Sam.2.2
+  - 2Sam.3.3
+  - 2Sam.23.35
+  - 1Chr.3.1
+  - 1Chr.11.37
+  - 2Chr.26.10
+sources:
+  - "Eusebius, Onomasticon, s.v. Carmel (Chermala)"
+  - "E. Robinson, Biblical Researches in Palestine, Mount Sinai and Arabia Petraea (1841)"
+  - "C. R. Conder and H. H. Kitchener, The Survey of Western Palestine: Memoirs, vol. 3 (1883)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+status: checked

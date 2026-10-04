@@ -138,6 +138,13 @@ in `data-checks.md`; this is what it cannot check.
   biblical names in their Synodal form, as in `place-names.yaml`.
 - Russian typography (the build checks): «» quotes, an em dash between words (the
   digital Synodal text sets hyphens: quote it with dashes), no double spaces.
+- Sources are written in English. Each line has its Russian in `content/sources-ru.yaml`
+  (the build stops without one): ancient works by their Russian titles («Флавий,
+  «Иудейская война»»), notes in Russian, Bible references in the Synodal books and
+  numbering; modern scholarship stays as published, as Russian bibliographies cite it.
+  The same holds for the sources of questions and of `place-life.yaml`.
+- The title names the article apart from its namesakes (Вавилон, Вавилония): the list of
+  articles shows it.
 - The cycle that converges: a writer, then an independent reviewer who opens the sources
   and fixes the file, then the lead reads the report and commits. No article has passed
   without changes; reviewers find 4–8 points per batch of five.

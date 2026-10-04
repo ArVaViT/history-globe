@@ -1,0 +1,38 @@
+id: what-was-the-route-of-the-exodus
+question:
+  en: "What was the route of the Exodus?"
+  ru: "Каким путём шёл Исход?"
+answer:
+  en:
+    - "The Bible gives the stations, not the roads: Israel left Rameses in the eastern Nile Delta for Succoth and Etham, turned back to the sea and crossed it, went three days to Marah, then by Elim and Rephidim to Mount Sinai, which they reached in the third month; from Sinai they went by Kibroth-hattaavah and Hazeroth to Kadesh-barnea on the edge of the Negev; after thirty-eight years in the wilderness, by Mount Hor and the way of the Red Sea round Edom, up through Moab past the Arnon, Dibon and Heshbon to the plains of Moab at Shittim opposite Jericho. Summed in straight lines from station to station as the map places them, the way comes to about 1,250 km, more than three times the 383 km from Rameses to Shittim as the crow flies; Rameses to Sinai alone is about 325 km in a straight line."
+    - "Exodus says that “God led them not through the way of the land of the Philistines, although that was near”, the coast road to Gaza, “but God led the people about, through the way of the wilderness of the Red sea”. Deuteronomy remarks: “There are eleven days' journey from Horeb by the way of mount Seir unto Kadesh-barnea”, about 240 km in a straight line, and adds that “the space in which we came from Kadesh-barnea, until we were come over the brook Zered, was thirty and eight years”. From Mount Hor “they journeyed from mount Hor by the way of the Red sea, to compass the land of Edom”, and at the end “the children of Israel set forward, and pitched in the plains of Moab on this side Jordan by Jericho”. Numbers 33 lists some forty camps in all."
+    - "Only a few of the stations are placed with confidence: Rameses at Qantir, Succoth at Tell el-Maskhuta, Kadesh-barnea at the springs of Ain el-Qudeirat; the rest depend on where Mount Sinai is put, and the map follows the southern route to Jebel Musa, the tradition since the fourth century, while others lead Israel along the coast, across the middle of the peninsula, or into north-western Arabia. No camp has left traces that archaeology can date, and the map's year of 1446 BC is one convention; many scholars put the Exodus in the thirteenth century BC or doubt that it happened as told. The crossing of the sea and the site of Sinai are treated in their own questions."
+  ru:
+    - "Библия называет стоянки, а не дороги: Израиль вышел из Раамсеса в восточной дельте Нила в Сокхоф и Ефам, повернул к морю и перешёл его, три дня шёл до Мерры, затем через Елим и Рефидим к горе Синай, куда пришёл в третий месяц; от Синая — через Киброт-Гаттааву и Асироф в Кадес-Варни на краю Негева; после тридцати восьми лет в пустыне — через гору Ор и дорогой Чермного моря в обход Едома, вверх через Моав мимо Арнона, Дивона и Есевона на равнины Моава в Ситтим напротив Иерихона. Если сложить прямые отрезки от стоянки к стоянке, как их ставит карта, путь составит около 1250 км — втрое с лишним больше 383 км от Раамсеса до Ситтима по прямой; от Раамсеса до Синая по прямой около 325 км."
+    - "Исход говорит, что «Бог не повел его по дороге земли Филистимской, потому что она близка» — это приморская дорога на Газу, — «обвел Бог народ дорогою пустынною к Чермному морю». Второзаконие замечает, что Кадес-Варни лежит «в расстоянии одиннадцати дней пути от Хорива, по дороге от горы Сеир», — около 240 км по прямой, — и добавляет: «С тех пор, как мы пошли в Кадес-Варни и как прошли долину Заред, минуло тридцать восемь лет». От горы Ор «отправились они путем Чермного моря, чтобы миновать землю Едома», и наконец «остановились на равнинах Моава, при Иордане, против Иерихона». Книга Чисел, глава 33, перечисляет около сорока станов."
+    - "Лишь немногие стоянки привязаны уверенно: Раамсес — Кантир, Сокхоф — Телль-эль-Масхута, Кадес-Варни — источники Айн-эль-Кудейрат; остальное зависит от того, где искать Синай. Карта следует южному пути к Джебель-Муса, преданию с IV века, а другие ведут Израиль вдоль берега, через середину полуострова или в северо-западную Аравию. Ни одна стоянка не оставила следов, которые археология могла бы датировать, а 1446 г. до н. э. на карте — лишь одна из условностей: многие учёные относят Исход к XIII веку до н. э. или сомневаются, что он был таким, как рассказан. Переходу через море и месту Синая посвящены отдельные вопросы."
+map:
+  place: ac2cef0
+  year: "c. 1445 BC"
+  ref: Num.33.1
+scripture:
+  [
+    Exod.12.37,
+    Exod.13.17-Exod.13.18,
+    Exod.19.1-Exod.19.2,
+    Num.10.12,
+    Num.20.1,
+    Num.21.4,
+    Num.22.1,
+    Num.33.1-Num.33.49,
+    Deut.1.2,
+    Deut.2.14,
+  ]
+sources:
+  - "Straight-line legs summed station to station from the map's place coordinates: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "History Globe tour “The Exodus” (the stations and the conventional years)"
+  - "J. K. Hoffmeier, Ancient Israel in Sinai: The Evidence for the Authenticity of the Wilderness Tradition (2005)"
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "R. Cohen and H. Bernick-Greenberg, Excavations at Kadesh Barnea (Tell el-Qudeirat) 1976-1982 (IAA Reports 34, 2007)"
+  - "History Globe article “Kadesh-barnea” and History Globe questions on the crossing of the sea and on Mount Sinai"
+status: checked

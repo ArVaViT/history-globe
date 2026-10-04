@@ -1,0 +1,31 @@
+# Overview article (ADR 0007). Mainstream facts only; the site is disputed and the app's candidates (Aqaba, Tell el-Kheleifeh, Ezion-geber, Eilat) are given without a choice; the Aram/Edom reading of 2 Kings 16:6 is noted.
+id: elath
+place: af0ac29
+title:
+  en: "Elath"
+  ru: "Елаф"
+body:
+  en:
+    - "Elath, or Eloth, was the port at the head of the Gulf of Aqaba, the eastern arm of the Red Sea, named in the Bible beside Ezion-geber “on the shore of the Red sea, in the land of Edom”. Its site is disputed. The Nabataean and Roman town of Aila lies under the modern Aqaba, where the Islamic port of Ayla has been excavated; Tell el-Kheleifeh, a mound on the shore between Aqaba and Eilat, was dug by Nelson Glueck in 1938–40, who took it for Ezion-geber, but a later reappraisal dated its fort and store rooms to the eighth to sixth centuries BC, which would suit the Elath of Uzziah; others hold that Elath and Ezion-geber are the same place, and Israel gave the biblical name to its own town of Eilat. All four appear as candidates on the map."
+    - "Israel passed Edom “through the way of the plain from Elath, and from Ezion-gaber” on the way to Moab. Solomon “made a navy of ships in Ezion-geber, which is beside Eloth”, manned with Hiram's “shipmen that had knowledge of the sea”, which brought gold from Ophir, and Jehoshaphat's ships of Tarshish “were broken at Ezion-geber”. Azariah, or Uzziah, “built Elath, and restored it to Judah” in the eighth century BC, and under Ahaz “Rezin king of Syria recovered Elath to Syria, and drave the Jews from Elath”; the Hebrew margin and the Synodal Bible then say that Edomites, not Syrians, settled there, the two names differing by one letter."
+    - "Aila was the terminus of Trajan's road from Bostra, held a Roman legion from about AD 300, and sent a bishop to the council of Nicaea; Eusebius knew it as Ailam, a town at the edge of Palestine by the Red Sea where a detachment of the Tenth Legion was stationed. Under Islam the port of Ayla served pilgrims on the way to Mecca. Today Aqaba, Jordan's only seaport, and Eilat, Israel's Red Sea resort, face each other across the head of the gulf, with Egyptian Taba and the Saudi shore beyond, and the mound of Tell el-Kheleifeh lies between them on the border."
+  ru:
+    - "Елаф, или Елоф, был портом в вершине залива Акаба, восточного рукава Красного моря, названным в Библии рядом с Ецион-Гавером «на берегу Чермного моря, в земле Идумейской». Его место спорно. Набатейский и римский город Айла лежит под нынешней Акабой, где раскопан исламский порт Айла; Телль-эль-Хелейфе, холм на берегу между Акабой и Эйлатом, копал в 1938–1940 годах Нельсон Глюк, принявший его за Ецион-Гавер, но позднейшая переоценка отнесла его крепость и кладовые к VIII–VI векам до н. э., что подошло бы Елафу Озии; иные считают Елаф и Ецион-Гавер одним местом, а Израиль дал библейское имя своему городу Эйлат. Все четыре места показаны на карте как кандидаты."
+    - "Израиль прошёл мимо Едома «путем равнины, от Елафа и Ецион-Гавера» по дороге в Моав. Соломон «сделал корабль в Ецион-Гавере, что при Елафе», Хирам послал на него «корабельщиков, знающих море», и корабли привезли золото из Офира, а корабли Иосафата «разбились в Ецион-Гавере». Азария, он же Озия, «обстроил Елаф, и возвратил его Иуде» в VIII веке до н. э., а при Ахазе «Рецин, царь Сирийский, возвратил Сирии Елаф и изгнал Иудеев из Елафа»; еврейское чтение на полях и Синодальный перевод говорят дальше, что там поселились Идумеяне, а не Сирийцы, — два имени различаются одной буквой."
+    - "Айла была концом дороги Траяна из Бостры, с 300 г. н. э. держала римский легион и послала епископа на Никейский собор; Евсевий знал её как Айлам, город на краю Палестины у Красного моря, где стоял отряд Десятого легиона. При исламе порт Айла служил паломникам на пути в Мекку. Сегодня Акаба, единственный морской порт Иордании, и Эйлат, израильский курорт на Красном море, смотрят друг на друга через вершину залива, за ними — египетская Таба и саудовский берег, а холм Телль-эль-Хелейфе лежит между ними на границе."
+scripture:
+  - Deut.2.8
+  - 1Kgs.9.26-1Kgs.9.28
+  - 1Kgs.22.48
+  - 2Kgs.14.22
+  - 2Kgs.16.6
+  - 2Chr.8.17
+  - 2Chr.26.2
+sources:
+  - "N. Glueck, The Other Side of the Jordan (1940)"
+  - "G. D. Pratico, Nelson Glueck's 1938-1940 Excavations at Tell el-Kheleifeh: A Reappraisal (1993)"
+  - "Eusebius, Onomasticon, s.v. Ailam"
+  - "Strabo, Geography, book 16 (Aelana at the head of the Aelanitic gulf)"
+  - "S. T. Parker and A. M. Smith II (eds.), The Roman Aqaba Project Final Report, vol. 1 (2014)"
+  - "D. Whitcomb, Ayla: Art and Industry in the Islamic Port of Aqaba (1994)"
+status: checked

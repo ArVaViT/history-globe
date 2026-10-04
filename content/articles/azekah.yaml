@@ -1,0 +1,31 @@
+# Overview article (ADR 0007). Mainstream facts only; the attribution of the Assyrian "Azekah inscription" to Sennacherib follows the usual view.
+id: azekah
+place: af2ca0c
+title:
+  en: "Azekah"
+  ru: "Азека"
+body:
+  en:
+    - "Azekah was a fortified town of Judah in the Shephelah, the foothills between the hill country and the Philistine plain. Its site, Tel Azekah (Tell Zakariya), is a steep mound above the valley of Elah, about 30 km south-west of Jerusalem, on the road that climbed from the coast towards Hebron and Bethlehem. The mound was first excavated by Bliss and Macalister for the Palestine Exploration Fund in 1898–1899, and since 2012 by a joint expedition of Tel Aviv and Heidelberg universities, which has found a large Canaanite town of the Late Bronze Age, destroyed by fire about 1130 BC, under the Judahite city."
+    - "When Joshua routed the five Amorite kings at Gibeon and chased them down the pass of Beth-horon, “the LORD cast down great stones from heaven upon them unto Azekah”. Joshua lists Azekah in the Shephelah district of Judah with Jarmuth, Adullam and Socoh. The Philistines, with Goliath among them, “pitched between Shochoh and Azekah, in Ephes-dammim” for the battle in the valley of Elah; Rehoboam fortified the town among the strongholds of Judah, and after the exile men of Judah settled again “at Azekah, and in the villages thereof”."
+    - "Azekah stood on the road of invaders. A fragmentary Assyrian text, generally assigned to Sennacherib's campaign of 701 BC, describes the siege of Azekah, set on a mountain ridge like pointed daggers, and its capture by ramps and battering rams. In 588 BC, as Nebuchadnezzar's army closed on Jerusalem, Jeremiah noted that Lachish and Azekah alone held out, “for these defenced cities remained of the cities of Judah”; one of the ostraca found in the gate of Lachish, a letter from an outpost, says that its men are watching for the fire signals of Lachish because they can no longer see Azekah. Eusebius knew Azeca as a village between Eleutheropolis and Jerusalem."
+    - "Today Tel Azekah lies in Israel, in the British Park near the moshav of Zekharia, with a view over the valley of Elah; the excavation continues each summer."
+  ru:
+    - "Азека была укреплённым городом Иудеи в Шефеле, предгорьях между нагорьем и Филистимской равниной. Её место, Тель-Азека (Телль-Закария), — крутой холм над долиной Дуба примерно в 30 км к юго-западу от Иерусалима, на дороге, поднимавшейся от побережья к Хеврону и Вифлеему. Холм впервые раскапывали Блисс и Макалистер для Палестинского исследовательского фонда в 1898–1899 годах, а с 2012 года — совместная экспедиция Тель-Авивского и Гейдельбергского университетов, нашедшая под иудейским городом большой ханаанский город позднего бронзового века, сгоревший около 1130 г. до н. э."
+    - "Когда Иисус Навин разбил пятерых Аморрейских царей при Гаваоне и гнал их по спуску Вефоронскому, «Господь бросал на них с небес большие камни града до самого Азека». Книга Иисуса Навина числит Азеку в округе Шефелы вместе с Иармуфом, Одолламом и Сохо. Филистимляне, и среди них Голиаф, «расположились станом между Сокхофом и Азеком в Ефес-Даммиме» для битвы в долине Дуба; Ровоам укрепил город среди крепостей Иудеи, а после плена люди Иуды снова поселились «в Азеке и зависящих от нее городах»."
+    - "Азека стояла на пути завоевателей. Обломок ассирийского текста, который обычно относят к походу Сеннахирима 701 г. до н. э., описывает осаду Азеки, расположенной на горном хребте, словно острые кинжалы, и её взятие при помощи насыпей и таранов. В 588 г. до н. э., когда войско Навуходоносора подступало к Иерусалиму, Иеремия отметил, что держались лишь Лахис и Азека, «ибо из городов Иудейских сии только оставались, как города укрепленные»; один из черепков, найденных в воротах Лахиса, письмо с заставы, сообщает, что его люди следят за сигнальными огнями Лахиса, потому что Азеки больше не видят. Евсевий знал Азеку как селение между Элевтерополем и Иерусалимом."
+    - "Сегодня Тель-Азека лежит в Израиле, в Британском парке у мошава Зехария, с видом на долину Дуба; раскопки продолжаются каждое лето."
+scripture:
+  - Josh.10.10-Josh.10.11
+  - Josh.15.35
+  - 1Sam.17.1-1Sam.17.3
+  - 2Chr.11.9
+  - Neh.11.30
+  - Jer.34.7
+sources:
+  - "The Lachish ostraca, letter 4 (H. Torczyner, Lachish I: The Lachish Letters, 1938)"
+  - "N. Na'aman, 'Sennacherib's “Letter to God” on His Campaign to Judah', Bulletin of the American Schools of Oriental Research 214 (1974) (the Azekah inscription)"
+  - "F. J. Bliss and R. A. S. Macalister, Excavations in Palestine during the Years 1898-1900 (1902)"
+  - "O. Lipschits, Y. Gadot and M. Oeming, 'Tel Azekah 113 Years After: Preliminary Evaluation of the Renewed Excavations at the Site', Near Eastern Archaeology 75 (2012)"
+  - "Eusebius, Onomasticon, s.v. Azeca"
+status: checked

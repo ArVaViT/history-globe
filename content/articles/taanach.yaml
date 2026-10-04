@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; the Taanach tablets and the cult stand follow the excavators' reports; Shoshenq's list is read as including Taanach.
+id: taanach
+place: a6f05f6
+title:
+  en: "Taanach"
+  ru: "Фаанах"
+body:
+  en:
+    - "Taanach was a Canaanite city on the southern edge of the Jezreel valley, 8 km south-east of Megiddo, where the road from the coast climbs into the hills of Samaria. The mound, Tell Ti'innik, with a Palestinian village of the same name at its foot, keeps the name. Thutmose III, marching on Megiddo in the fifteenth century BC, considered the road by Taanach before choosing the pass of Aruna; about a dozen cuneiform tablets of that century found on the mound, letters and lists in Akkadian, are among the oldest archives dug up in the land."
+    - "Joshua counts “the king of Taanach” among the defeated, yet the city stayed Canaanite: Manasseh received it with Megiddo, Beth-shean, Dor and Ibleam, “but the Canaanites would dwell in that land”. The Song of Deborah sets the battle with Sisera here: “then fought the kings of Canaan in Taanach by the waters of Megiddo; they took no gain of money”. It became a Levitical city, and under Solomon Baana the son of Ahilud governed “Taanach and Megiddo” together. Pharaoh Shoshenq I (the biblical Shishak) lists Taanach among the towns he took about 925 BC, and the excavators linked a destruction of the tenth-century town with his campaign."
+    - "The Austrian scholar Ernst Sellin dug the mound in 1902–1904 and found the tablets; Paul Lapp returned in 1963–1968 and uncovered, in a tenth-century context, the painted terracotta cult stand with lions, sphinxes, a tree between goats and a sun disc above a horse, now in the Israel Museum. Eusebius knew Taanach as a large village three miles from Legio. The village of Ti'innik lies in the Jenin governorate of the West Bank, close to the Green Line."
+  ru:
+    - "Фаанах был ханаанским городом на южной кромке Изреельской долины, в 8 км к юго-востоку от Мегиддо, там, где дорога с побережья поднимается в холмы Самарии. Холм Телль-Тианник с палестинской деревней того же имени у подножия хранит название. Тутмос III, идя на Мегиддо в XV веке до н. э., рассматривал дорогу через Фаанах, прежде чем выбрать проход Аруна; около дюжины клинописных табличек того века, найденных на холме, — письма и списки по-аккадски — один из древнейших архивов, раскопанных в этой земле."
+    - "В списке побеждённых у Иисуса Навина стоит «один царь Фаанаха», но город остался ханаанским: Манассия получил его с Мегиддо, Беф-Саном, Дором и Ивлеамом, «и остались Хананеи жить в земле сей». Песнь Деворы помещает сюда битву с Сисарой: «тогда сразились цари Ханаанские в Фанаахе у вод Мегиддонских, но не получили нимало серебра». Он стал левитским городом, а при Соломоне Ваана, сын Ахилуда, управлял вместе «в Фаанахе и Мегиддо». Фараон Шешонк I (библейский Сусаким) перечисляет Фаанах среди городов, взятых им около 925 г. до н. э., и раскопщики связали с его походом разрушение города X века."
+    - "Австрийский учёный Эрнст Зеллин копал холм в 1902–1904 годах и нашёл таблички; Пол Лапп вернулся сюда в 1963–1968 годах и нашёл в слое X века расписную глиняную культовую подставку со львами, сфинксами, деревом между козлами и солнечным диском над конём, ныне в Музее Израиля. Евсевий знал Фаанах как большое селение в трёх милях от Легиона. Деревня Тианник лежит в провинции Дженин на Западном берегу, близ «зелёной линии»."
+scripture:
+  - Josh.12.21
+  - Josh.17.11
+  - Josh.21.25
+  - Judg.1.27
+  - Judg.5.19
+  - 1Kgs.4.12
+  - 1Chr.7.29
+sources:
+  - "The annals of Thutmose III at Karnak (the council of war before Megiddo), in D. B. Redford, The Wars in Syria and Palestine of Thutmose III (2003)"
+  - "Shoshenq I, the Bubastite Portal reliefs at Karnak (the list of conquered towns)"
+  - "Eusebius, Onomasticon, s.v. Thaanach"
+  - "E. Sellin, Tell Ta'annek (1904)"
+  - "W. F. Albright, 'A Prince of Taanach in the Fifteenth Century B.C.', Bulletin of the American Schools of Oriental Research 94 (1944)"
+  - "P. W. Lapp, 'Taanach by the Waters of Megiddo', Biblical Archaeologist 30 (1967)"
+  - "W. E. Rast, Taanach I: Studies in the Iron Age Pottery (1978)"
+  - "A. E. Glock, 'Taanach', in E. Stern (ed.), The New Encyclopedia of Archaeological Excavations in the Holy Land, vol. 4 (1993)"
+status: checked

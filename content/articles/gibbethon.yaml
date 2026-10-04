@@ -1,0 +1,26 @@
+# Overview article (ADR 0007). Mainstream facts only; the site is disputed and the app's candidates are given without a choice; the regnal dates follow Thiele's chronology; the Synodal Bible spells the name two ways, which is noted.
+id: gibbethon
+place: a6f048c
+title:
+  en: "Gibbethon"
+  ru: "Гавафон"
+body:
+  en:
+    - "Gibbethon was a town on the edge of the Philistine plain, in the lot of Dan near Ekron and Gezer, which Joshua lists with Eltekeh and Baalath and assigns to the Levites of Kohath. Its site is disputed: the map's candidates are Tell Melat (Tel Malot), a mound about 5 km west of Gezer, Ras Abu Hamid near Ramla, Aqir, and Qibya in the hills to the north-east. The Synodal Bible spells the name Гиввефон in Joshua and Гавафон in Kings."
+    - "Around 900 BC Gibbethon was held by the Philistines, and twice the army of Israel lay before it when its king was killed at home. Nadab son of Jeroboam “and all Israel laid siege to Gibbethon”, and Baasha “smote him at Gibbethon, which belonged to the Philistines” in the third year of Asa, about 909 BC. A generation later, “in the twenty and seventh year of Asa”, about 885 BC, “the people were encamped against Gibbethon” when Zimri murdered Elah in Tirzah; the army in the camp “made Omri, the captain of the host, king over Israel that day”, and “Omri went up from Gibbethon, and all Israel with him, and they besieged Tirzah”. So the dynasty of Omri began under the walls of this town."
+    - "Gibbethon appears once more outside the Bible: among the towns of his western campaigns whose capture Sargon II of Assyria had carved on the walls of his palace at Khorsabad is a city labelled Gabbutunu. Today the candidate mounds lie among the fields and towns between Rehovot, Ramla and Gezer in central Israel, and the Philistine border town is known only from these few lines."
+  ru:
+    - "Гавафон был городом на краю Филистимской равнины, в уделе Дана близ Екрона и Газера; Иисус Навин перечисляет его вместе с Елтеке и Ваалафом и отдаёт левитам из рода Каафа. Место его спорно: кандидаты на карте — Телль-Мелат (Тель-Малот), холм примерно в 5 км к западу от Газера, Рас-Абу-Хамид близ Рамлы, Акир и Кибия в холмах к северо-востоку. Синодальный перевод пишет имя как Гиввефон в книге Иисуса Навина и как Гавафон в книгах Царств."
+    - "Около 900 г. до н. э. Гавафон держали Филистимляне, и дважды войско Израиля стояло под ним, когда дома убивали царя. Нават, сын Иеровоама, «и все Израильтяне осаждали Гавафон», и Вааса убил его «при Гавафоне Филистимском» в третий год Асы, около 909 г. до н. э. Поколение спустя, «в двадцать седьмой год Асы», около 885 г. до н. э., «народ осаждал Гавафон Филистимский», когда Замврий умертвил Илу в Фирце; войско в стане воцарило «Амврия, военачальника, над Израилем в тот же день», и «отступили Амврий и все Израильтяне с ним от Гавафона и осадили Фирцу». Так династия Амврия началась под стенами этого города."
+    - "Ещё раз Гавафон появляется вне Библии: среди городов его западных походов, взятие которых Саргон II Ассирийский велел высечь на стенах своего дворца в Хорсабаде, есть город с подписью Габбутуну. Сегодня холмы-кандидаты лежат среди полей и городков между Реховотом, Рамлой и Газером в центре Израиля, а филистимский пограничный город известен только по этим немногим строкам."
+scripture:
+  - Josh.19.44
+  - Josh.21.23
+  - 1Kgs.15.27-1Kgs.15.28
+  - 1Kgs.16.15-1Kgs.16.17
+sources:
+  - "Sargon II, the Khorsabad palace reliefs with their captions (the siege of Gabbutunu), in A. Fuchs, Die Inschriften Sargons II. aus Khorsabad (1994)"
+  - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings (3rd ed., 1983)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (rev. ed., 1979)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

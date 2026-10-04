@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { localizeCitation } from "./citation.ts";
+import { localizeCitation, sourcesOf } from "./citation.ts";
 
 describe("localizeCitation", () => {
   it("gives Bible references the Synodal books and numbering", () => {
@@ -31,5 +31,19 @@ describe("ancient works in Russian", () => {
       "Плиний Старший, «Естественная история» 5.70",
     );
     expect(localizeCitation("Amarna letters EA 287-290", "ru")).toBe("Амарнские письма EA 287-290");
+  });
+});
+
+describe("sourcesOf", () => {
+  const x = {
+    sources: ["Egeria, Itinerarium 10-12 (the ascent of Mount Nebo)"],
+    sources_ru: ["Эгерия, «Паломничество» 10–12 (восхождение на гору Нево)"],
+  };
+  it("reads the build's Russian lines in Russian, the written ones in English", () => {
+    expect(sourcesOf(x, "ru")).toEqual(x.sources_ru);
+    expect(sourcesOf(x, "en")).toEqual(x.sources);
+  });
+  it("falls back to the automatic pass where the build wrote no Russian", () => {
+    expect(sourcesOf({ sources: ["Livy 44.45"] }, "ru")).toEqual(["Тит Ливий 44.45"]);
   });
 });

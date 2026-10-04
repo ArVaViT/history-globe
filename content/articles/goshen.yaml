@@ -1,0 +1,37 @@
+# Overview article (ADR 0007). Mainstream facts only; the extent of Goshen is given as the usual placing in the eastern Delta; the exodus is not dated here; the Goshen of Joshua is said to be another place.
+id: goshen
+place: a60f092
+title:
+  en: "Goshen"
+  ru: "Гесем"
+body:
+  en:
+    - "Goshen is the district of the eastern Nile Delta where Jacob's family settled, “the best of the land”, which Genesis also calls “the land of Rameses”. It was pasture country on the edge of Egypt, near enough to the court for Joseph to drive out in his chariot to meet his father, and apart enough for shepherds, “for every shepherd is an abomination unto the Egyptians”. The Septuagint renders it “Gesem of Arabia”, after the Arabian nome of the eastern Delta whose capital was Phakoussa, the modern Faqus, and most scholars place Goshen between Faqus and the Wadi Tumilat, the valley that leads east from the Delta towards the Bitter Lakes. Édouard Naville, who dug at Saft el-Henneh in 1885, held that the Egyptian name of its district lay behind the Septuagint's Gesem. The Goshen of Joshua's conquest is a different place in the hills of Judah."
+    - "Joseph sent word to his father, “thou shalt dwell in the land of Goshen, and thou shalt be near unto me”; Jacob sent Judah ahead “to direct his face unto Goshen”, and there Joseph “fell on his neck, and wept on his neck a good while”. Pharaoh gave leave: “in the land of Goshen let them dwell”, and Israel “grew, and multiplied exceedingly” there. When the brothers went up to bury Jacob they left their little ones and flocks in Goshen. In the plagues God set the land apart: “I will sever in that day the land of Goshen, in which my people dwell, that no swarms of flies shall be there”, and “only in the land of Goshen, where the children of Israel were, was there no hail”. The exodus itself set out “from Rameses to Succoth”."
+    - "Excavation has filled in the region. Tell el-Dab'a, near Faqus, is Avaris, the capital of the Hyksos, where Manfred Bietak's work since 1966 has uncovered a large town of settlers from Canaan in the Middle Bronze Age; Qantir beside it is Pi-Ramesses, the Delta residence of Rameses II; and Tell er-Retabah and Tell el-Maskhuta in the Wadi Tumilat are the candidates for Pithom. These show Semitic herdsmen and labourers living in the very district Genesis names, though no Egyptian text names Israel in Goshen."
+    - "Today Goshen is the Sharqia governorate of Egypt, dense farmland between Zagazig and Faqus, cut by the Ismailia canal that follows the Wadi Tumilat east to Ismailia. The mounds of Tell el-Dab'a and Qantir lie among the fields, and statues and obelisks of Pi-Ramesses were carried off to be reused at Tanis."
+  ru:
+    - "Гесем — область восточной дельты Нила, где поселилась семья Иакова, «в лучшей части земли», как говорит Бытие, помещая их «в земле Раамсес». Это была пастушья страна на краю Египта: достаточно близкая ко двору, чтобы Иосиф выехал на колеснице встретить отца, и достаточно обособленная для пастухов, «ибо мерзость для Египтян всякий пастух овец». Септуагинта передаёт её как «Гесем Аравийский», по Аравийскому ному восточной Дельты со столицей Факусса, нынешним Факусом, и большинство учёных помещает Гесем между Факусом и Вади-Тумилат, долиной, ведущей из Дельты на восток к Горьким озёрам. Эдуар Навиль, копавший в Сафт-эль-Хенне в 1885 году, считал, что за Гесемом Септуагинты стоит египетское имя этого округа. Гошен из завоеваний Иисуса Навина — другое место, в горах Иудеи."
+    - "Иосиф велел передать отцу: «ты будешь жить в земле Гесем; и будешь близ меня»; Иаков послал вперёд Иуду, «чтобы он указал путь в Гесем», и там Иосиф «пал на шею его, и долго плакал на шее его». Фараон дозволил: «пусть живут они в земле Гесем», и Израиль там «плодились, и весьма умножились». Отправляясь хоронить Иакова, братья оставили в Гесеме детей и скот. В казнях Бог отделил эту землю: «отделю в тот день землю Гесем, на которой пребывает народ Мой, и там не будет песьих мух», и «только в земле Гесем, где жили сыны Израилевы, не было града». Сам исход начался «из Раамсеса в Сокхоф»."
+    - "Раскопки наполнили эту область содержанием. Телль-эд-Даба близ Факуса — это Аварис, столица гиксосов, где работы Манфреда Битака с 1966 года открыли большой город переселенцев из Ханаана эпохи средней бронзы; Кантир рядом — Пер-Рамсес, дельтовая резиденция Рамсеса II; а Телль-эр-Ретаба и Телль-эль-Масхута в Вади-Тумилат — кандидаты на Пифом. Всё это показывает семитских пастухов и работников в той самой области, которую называет Бытие, хотя ни один египетский текст не упоминает Израиль в Гесеме."
+    - "Сегодня Гесем — провинция Шаркия в Египте, густо возделанная земля между Загазигом и Факусом, прорезанная Исмаилийским каналом, который идёт по Вади-Тумилат на восток к Исмаилии. Холмы Телль-эд-Даба и Кантира лежат среди полей, а статуи и обелиски Пер-Рамсеса были увезены и заново использованы в Танисе."
+scripture:
+  - Gen.45.10
+  - Gen.46.28-Gen.46.29
+  - Gen.46.34
+  - Gen.47.1-Gen.47.6
+  - Gen.47.11
+  - Gen.47.27
+  - Gen.50.8
+  - Exod.8.22
+  - Exod.9.26
+  - Exod.12.37
+  - Josh.10.41
+sources:
+  - "Septuagint, Genesis 45:10 and 46:34 (Gesem Arabias); 46:28 (Heroopolis in the land of Ramesses)"
+  - "E. Naville, The Shrine of Saft el Henneh and the Land of Goshen (1887)"
+  - "M. Bietak, Avaris: The Capital of the Hyksos. Recent Excavations at Tell el-Dab'a (1996)"
+  - "K. A. Kitchen, Pharaoh Triumphant: The Life and Times of Ramesses II (1982) (Pi-Ramesses at Qantir)"
+  - "J. K. Hoffmeier, Israel in Egypt: The Evidence for the Authenticity of the Exodus Tradition (1996)"
+  - "Eusebius, Onomasticon, s.v. Gesem"
+status: checked

@@ -1,0 +1,34 @@
+# Overview article (ADR 0007). Mainstream facts only; the peak itself is unidentified, and this is said plainly.
+id: peor
+place: a9ef72b
+title:
+  en: "Peor"
+  ru: "Фегор"
+body:
+  en:
+    - "Peor was a mountain in the land of Moab, east of the Jordan opposite Jericho, in the range that falls from the plateau of Medeba to the Jordan plain: “the top of Peor, that looketh toward Jeshimon”, the wasteland of the valley floor. A town, Beth-peor, lay below it, and the god worshipped there was Baal of Peor. Eusebius knew Bethphogor “near Mount Phogor, opposite Jericho, six miles above Livias”, that is above Beth-haram on the road up to Heshbon, and elsewhere sets Mount Phogor on the road from Livias up to Heshbon, which puts Peor in the hills north of Mount Nebo. Which peak it was no one can say; the app sets it beside Beth-peor, itself not surely located. The Balaam of the story was remembered in these parts: a plaster inscription of about 800 BC found in 1967 at Deir Alla in the Jordan valley tells of Balaam son of Beor, a seer of the gods."
+    - "Balak took Balaam to the top of Peor for the third of his oracles, and Balaam blessed Israel once more. Then, while Israel “abode in Shittim” below, “the people began to commit whoredom with the daughters of Moab”, ate their sacrifices and bowed to their gods: “Israel joined himself unto Baal-peor”, and a plague fell until Phinehas killed Zimri and the Midianite woman Cozbi, slain “in the day of the plague for Peor's sake”. Moses later laid the seduction to Balaam's counsel. Deuteronomy sets Moses' last speeches “in the valley over against Beth-peor”, reminds Israel, “Your eyes have seen what the LORD did because of Baal-peor”, and buries him “in a valley in the land of Moab, over against Beth-peor”, where “no man knoweth of his sepulchre unto this day”."
+    - "The iniquity of Peor became a byword: “Is the iniquity of Peor too little for us”, Phinehas asks the eastern tribes at their altar; the psalm recalls how Israel “joined themselves also unto Baal-peor, and ate the sacrifices of the dead”, and Hosea sees the first fathers going “to Baal-peor” and separating themselves “unto that shame”. Today the hills of Peor are the Jordanian countryside north-west of Madaba, between Mount Nebo with its Franciscan church and the springs of Ayun Musa, overlooking the Dead Sea and the Jordan valley; nothing on the ground marks the mountain."
+  ru:
+    - "Фегор — гора в земле Моавитской, к востоку от Иордана против Иерихона, в цепи, спадающей от плато Медевы к Иорданской равнине: «верх Фегора, обращенного к пустыне», к пустоши на дне долины. Под ней лежал город Беф-Фегор, а чтимым там богом был Ваал-Фегор. Евсевий знал Бетфогор близ горы Фогор, против Иерихона, в шести милях выше Ливиады, то есть выше Беф-Гарама, а гору Фогор он же ставит на дороге от Ливиады вверх к Есевону, что помещает Фегор в холмы к северу от горы Нево. Какая это была вершина, никто сказать не может; приложение ставит её рядом с Беф-Фегором, который сам надёжно не локализован. Валаама из этого рассказа в здешних краях помнили: надпись на штукатурке около 800 г. до н. э., найденная в 1967 году в Дейр-Алле в Иорданской долине, говорит о Валааме, сыне Веора, прозорливце богов."
+    - "Валак взял Валаама на верх Фегора ради третьего из его пророчеств, и Валаам снова благословил Израиль. Затем, пока внизу «жил Израиль в Ситтиме», «начал народ блудодействовать с дочерями Моава», ел их жертвы и кланялся их богам: «И прилепился Израиль к Ваал-Фегору», и поражение шло, пока Финеес не убил Зимри и мадианитянку Хазву, убитую «в день поражения за Фегора». Позже Моисей возложил это соблазнение на совет Валаама. Второзаконие помещает последние речи Моисея «на долине, напротив Беф-Фегора», напоминает Израилю: «Глаза ваши видели все, что сделал Господь Бог наш с Ваал-Фегором», и погребает его «на долине в земле Моавитской против Беф-Фегора», где «никто не знает места погребения его даже до сего дня»."
+    - "Грех Фегора стал присловьем: «Разве мало для нас беззакония Фегорова», — говорит Финеес восточным коленам у их жертвенника; псалом вспоминает: «Они прилепились к Ваалфегору и ели жертвы бездушным», а Осия видит первых отцов, которые «пошли к Ваал-Фегору и предались постыдному». Сегодня холмы Фегора — иорданская сельская местность к северо-западу от Мадабы, между горой Нево с её францисканской церковью и источниками Айн-Муса, над Мёртвым морем и Иорданской долиной; ничто на земле не отмечает гору."
+scripture:
+  - Num.23.28
+  - Num.25.1-Num.25.3
+  - Num.25.18
+  - Num.31.16
+  - Deut.3.29
+  - Deut.4.3
+  - Deut.34.6
+  - Josh.22.17
+  - Ps.106.28
+  - Hos.9.10
+sources:
+  - "Eusebius, Onomasticon, s.v. Bethphogor"
+  - "J. Hoftijzer and G. van der Kooij, Aramaic Texts from Deir 'Alla (1976)"
+  - "S. J. Saller and B. Bagatti, The Town of Nebo (Khirbet el-Mekhayyat) (1949)"
+  - "J. Milgrom, Numbers (JPS Torah Commentary, 1990)"
+  - "B. A. Levine, Numbers 21–36 (Anchor Bible, 2000)"
+  - "B. MacDonald, 'East of the Jordan': Territories and Sites of the Hebrew Scriptures (2000)"
+status: checked

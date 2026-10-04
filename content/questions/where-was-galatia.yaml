@@ -1,0 +1,26 @@
+id: where-was-galatia
+question:
+  en: "Where was Galatia?"
+  ru: "Где находилась Галатия?"
+answer:
+  en:
+    - "Galatia was the high plateau of central Asia Minor around Ancyra, today's Ankara; the map point stands in the middle of the region, south of the city. The name comes from the Galatians, Celtic tribes who crossed into Asia in 278 BC and settled there, around Ancyra, Pessinus and Tavium. In 25 BC Rome made it a province and added the lands to the south, Pisidia and Lycaonia, so that Pisidian Antioch, Iconium, Lystra and Derbe, the cities of Paul's first journey, were Galatian by law though not by race; from the map point they lie 160 to 195 km to the south and south-west."
+    - "This double meaning is the question behind the letter “unto the churches of Galatia”. The older view, still common in Europe, takes the Galatians to be the Celts of the north, whom Paul would have visited on his second and third journeys when Acts says he went through “Phrygia and the region of Galatia” and “all the country of Galatia and Phrygia”; the letter then dates to the mid-50s. The South Galatian view, argued by William Ramsay from the Roman provincial boundaries, makes the recipients the churches of Antioch, Iconium, Lystra and Derbe, and allows the letter to be as early as about 48, before the council of Jerusalem; many English-language commentaries now prefer it. Peter also writes to “the strangers scattered throughout Pontus, Galatia, Cappadocia, Asia, and Bithynia”, listing the provinces."
+    - "The Galatians kept their Celtic speech: Jerome, who had lived in Trier, wrote in the 380s that they spoke almost the same tongue as the Treveri of the Rhineland. Ancyra's temple of Augustus and Roma, built under Augustus, carries on its walls the fullest copy of the emperor's own account of his reign, the Monumentum Ancyranum; the temple still stands in Ankara."
+  ru:
+    - "Галатия — высокое плато в центре Малой Азии вокруг Анкиры, нынешней Анкары; точка карты стоит посреди области, к югу от города. Имя дали галаты, кельтские племена, которые перешли в Азию в 278 г. до н. э. и осели там, вокруг Анкиры, Пессинунта и Тавия. В 25 г. до н. э. Рим сделал её провинцией и прибавил земли к югу, Писидию и Ликаонию, так что Антиохия Писидийская, Икония, Листра и Дервия — города первого путешествия Павла — были галатийскими по закону, хотя и не по крови; от точки карты они лежат в 160–195 км к югу и юго-западу."
+    - "В этой двойственности — вопрос, стоящий за посланием «церквам Галатийским». Старое мнение, по-прежнему распространённое в Европе, видит в галатах кельтов севера, которых Павел посетил бы во втором и третьем путешествиях, когда, по Деяниям, он прошёл «через Фригию и Галатийскую страну» и «страну Галатийскую и Фригию»; тогда послание относится к середине 50-х годов. Южногалатийская теория, которую Уильям Рамсей вывел из римских провинциальных границ, делает адресатами церкви Антиохии, Иконии, Листры и Дервии и позволяет датировать послание уже примерно 48 годом, до Иерусалимского собора; многие англоязычные комментарии теперь предпочитают её. Пётр тоже пишет «пришельцам, рассеянным в Понте, Галатии, Каппадокии, Асии и Вифинии», перечисляя провинции."
+    - "Галаты сохранили кельтскую речь: Иероним, живший в Трире, писал в 380-х годах, что они говорят почти на том же языке, что и треверы Рейнской области. Храм Августа и Ромы в Анкире, построенный при Августе, несёт на стенах самую полную копию собственного отчёта императора о своём правлении — Monumentum Ancyranum; храм до сих пор стоит в Анкаре."
+map:
+  place: a0f440a
+  year: "AD 50"
+  ref: Gal.1.2
+scripture: [Gal.1.2, Gal.3.1, Acts.16.6, Acts.18.23, 1Cor.16.1, 1Pet.1.1, 2Tim.4.10]
+sources:
+  - "Straight-line distances between the places' points (Galatia, Antioch in Pisidia, Iconium, Lystra): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Livy, History of Rome 38.16 (the Gauls cross into Asia); Strabo, Geography 12.5.1-4 (the Galatian tribes and the province)"
+  - "Jerome, Commentary on Galatians, preface to book 2 (the speech of the Galatians and the Treveri)"
+  - "W. M. Ramsay, A Historical Commentary on St. Paul's Epistle to the Galatians (1899)"
+  - "S. Mitchell, Anatolia: Land, Men, and Gods in Asia Minor, vol. 1 (1993)"
+  - "F. F. Bruce, The Epistle to the Galatians (NIGTC, 1982)"
+status: checked

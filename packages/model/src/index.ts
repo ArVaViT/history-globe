@@ -12,6 +12,7 @@ export type {
   PlaceLife,
   PlacePhoto,
   TourFile,
+  WithSourcesRu,
 } from "./content.ts";
 export * from "./periods.ts";
 export * from "./sites.ts";

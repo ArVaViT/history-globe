@@ -1,0 +1,39 @@
+# Overview article (ADR 0007). Mainstream facts only; the Synodal Bible renders the name three ways (Иония, Греция, Еллада), and the article says so.
+id: greece
+place: a4492a0
+title:
+  en: "Greece"
+  ru: "Еллада"
+body:
+  en:
+    - "Greece is the mountainous peninsula and islands at the south of the Balkans, the home of the Hellenes, whose city-states, Athens, Sparta, Corinth and the rest, shaped philosophy, drama, history and the Greek language in which the New Testament was written. The Hebrew Bible calls the Greeks Javan, the Ionians of the Asian coast, whom it met first: Javan is a son of Japheth in the table of nations, and his sons are Elishah, Tarshish, Kittim and Dodanim, the islands and coasts of the west. Joel accuses Tyre and Sidon of having sold the children of Judah “unto the Grecians”, and Zechariah promises to raise up the sons of Zion “against thy sons, O Greece”."
+    - "Daniel saw Greece as an empire. The he-goat that flew from the west and broke the ram of Persia “is the king of Grecia: and the great horn that is between his eyes is the first king”, Alexander, who crossed into Asia in 334 BC and died at Babylon in 323; the fourth king of Persia, “far richer than they all”, who would “stir up all against the realm of Grecia”, is usually taken to be Xerxes, whose invasion of 480 BC was turned back at Salamis and Plataea. Alexander's successors, the Ptolemies and Seleucids, ruled the Jews for nearly two centuries, and under them Greek became the language of the Jews of Egypt, who translated the Law into it; the Maccabean revolt of 167 BC was fought against the Hellenising of Jerusalem. Rome conquered Greece in 146 BC and set it under the governor of Macedonia; in 27 BC Augustus made the south the province of Achaia."
+    - "Paul crossed into Europe in answer to a man of Macedonia who said, “Come over into Macedonia, and help us”, and founded churches at Philippi, Thessalonica and Berea; he preached in the Areopagus at Athens and spent eighteen months at Corinth. Luke uses the name Hellas, Greece, once only, when on the third journey Paul “came into Greece” and stayed three months; elsewhere the New Testament says Macedonia and Achaia. The Synodal Bible renders the name three ways: Ionia in Zechariah, Greece in Daniel, Hellas in Acts."
+    - "Greece was Byzantine and Orthodox for a thousand years, Ottoman for four centuries, and won its independence in 1830. Today the Hellenic Republic, with its capital at Athens, has about ten million people, and Philippi, Thessalonica, Berea and Corinth, where Paul founded churches, are still the sees of Orthodox metropolitans."
+  ru:
+    - "Еллада, Греция, — гористый полуостров и острова на юге Балкан, родина эллинов, чьи города-государства, Афины, Спарта, Коринф и другие, создали философию, театр, историю и греческий язык, на котором написан Новый Завет. Еврейская Библия зовёт греков Иаваном, по ионийцам азиатского берега, с которыми встретилась раньше других: Иаван — сын Иафета в таблице народов, а его сыновья Елиса, Фарсис, Киттим и Доданим — острова и берега запада. Иоиль обвиняет Тир и Сидон в том, что они продавали сынов Иуды «сынам Еллинов», а Захария обещает воздвигнуть сынов Сиона «против сынов твоих, Иония»."
+    - "Даниил видел Грецию как империю. Козёл, прилетевший с запада и сломивший овна Персии, «царь Греции, а большой рог, который между глазами его, это первый ее царь» — Александр, перешедший в Азию в 334 г. до н. э. и умерший в Вавилоне в 323 г.; четвёртый царь Персии, который «превзойдет всех великим богатством» и «поднимет всех против царства Греческого», — обычно Ксеркс, чьё вторжение 480 г. до н. э. было отбито при Саламине и Платеях. Преемники Александра, Птолемеи и Селевкиды, почти два века правили Иудеями, и при них греческий стал языком Иудеев Египта, переведших на него Закон; восстание Маккавеев 167 г. до н. э. было поднято против эллинизации Иерусалима. Рим покорил Грецию в 146 г. до н. э. и подчинил её наместнику Македонии; в 27 г. до н. э. Август сделал юг провинцией Ахаия."
+    - "Павел переправился в Европу по зову Македонянина, сказавшего: «приди в Македонию и помоги нам», и основал церкви в Филиппах, Фессалонике и Верии; он проповедовал в ареопаге в Афинах и полтора года провёл в Коринфе. Имя Еллада Лука употребляет лишь однажды, когда в третьем путешествии Павел «пришел в Елладу» и провёл там три месяца; в остальных местах Новый Завет говорит о Македонии и Ахаии. Синодальный перевод передаёт имя тремя способами: Иония у Захарии, Греция у Даниила, Еллада в Деяниях."
+    - "Тысячу лет Греция была византийской и православной, четыре века — османской, а в 1830 году обрела независимость. Сегодня в Греческой Республике со столицей в Афинах живёт около десяти миллионов человек, а Филиппы, Фессалоника, Верия и Коринф, где Павел основал церкви, и ныне — кафедры православных митрополитов."
+scripture:
+  - Gen.10.2-Gen.10.4
+  - Joel.3.6
+  - Zech.9.13
+  - Dan.8.21
+  - Dan.10.20
+  - Dan.11.2
+  - Acts.16.9
+  - Acts.17.22
+  - Acts.18.11
+  - Acts.20.2-Acts.20.3
+  - 1Thess.1.7
+sources:
+  - "Herodotus, Histories, books 7-9 (the expedition of Xerxes)"
+  - "Arrian, Anabasis of Alexander"
+  - "1 Maccabees 1.1-10 (Alexander and his successors)"
+  - "Josephus, Antiquities 1.6.1 (Javan, the ancestor of the Greeks)"
+  - "Pausanias, Description of Greece 7.16 (the Roman conquest, 146 BC)"
+  - "M. Hengel, Judaism and Hellenism (1974)"
+  - "J. J. Collins, Daniel (Hermeneia, 1993)"
+  - "S. E. Alcock, Graecia Capta: The Landscapes of Roman Greece (1993)"
+status: checked

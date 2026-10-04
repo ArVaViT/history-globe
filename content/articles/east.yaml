@@ -1,0 +1,39 @@
+# Overview article (ADR 0007). Mainstream facts only; "the east" is a direction and its peoples rather than a bounded land, and the origin of the Magi is given as unknown.
+id: east
+place: ab0b2dd
+title:
+  en: "East"
+  ru: "Восток"
+body:
+  en:
+    - "“The east” in the Bible is less a country than a direction and the peoples who lived in it: the “children of the east” (Hebrew bene qedem), the tribes of the Syrian and Arabian desert beyond Gilead and Ammon. Abraham sent the sons of his concubines away “eastward, unto the east country”; Jacob “came into the land of the people of the east”, which the story goes on to call Haran; Balaam was brought by Balak “out of the mountains of the east”. Ezekiel threatens Ammon with “the men of the east”, who will pitch their camps in its fields and eat its fruit, so that on the map the region is set around Rabbah."
+    - "In Judges the children of the east came up with Midian and Amalek every harvest and lay in the valley of Jezreel “like grasshoppers for multitude”, their camels “as the sand by the sea side”, until Gideon routed them. Job, “the greatest of all the men of the east”, lived in the land of Uz. Their reputation was wisdom: Solomon's wisdom “excelled the wisdom of all the children of the east country, and all the wisdom of Egypt”. Jeremiah's oracle against Kedar commands, “spoil the men of the east”, and the annals of the Assyrian kings of the eighth and seventh centuries BC name Kedar and other Arab tribes among the camel-nomads of the same desert."
+    - "In the New Testament “wise men from the east”, magi, came to Jerusalem asking for the newborn King of the Jews, for they had seen his star “in the east”; the Gospel does not say from where. Herodotus knew the magi as a priestly tribe of the Medes, and early Christian writers already disagreed: Justin Martyr brought them from Arabia, others from Persia. Revelation sees the Euphrates dried up “that the way of the kings of the east might be prepared”. The lands of the children of the east are today the deserts of eastern Jordan, Syria, western Iraq and northern Saudi Arabia."
+  ru:
+    - "«Восток» в Библии — не столько страна, сколько сторона света и народы, жившие в ней: «сыны востока» (евр. бене кедем), племена Сирийской и Аравийской пустыни за Галаадом и Аммоном. Авраам отослал сыновей наложниц «на восток, в землю восточную»; Иаков «пошел в землю сынов востока», которую рассказ дальше называет Харраном; Валаама Валак привёл «от гор восточных». Иезекииль грозит отдать Аммон «в наследие сынам востока», которые поставят в его земле шатры и будут есть его плоды, — потому на карте эта область положена вокруг Раввы."
+    - "В книге Судей сыны востока вместе с Мадианитянами и Амаликитянами приходили каждую жатву и стояли в долине Изреельской «в таком множестве, как саранча», а верблюдам их «не было числа», пока их не разбил Гедеон. Иов, «знаменитее всех сынов Востока», жил в земле Уц. Славились они мудростью: «была мудрость Соломона выше мудрости всех сынов востока и всей мудрости Египтян». Пророчество Иеремии о Кидаре велит: «опустошайте сыновей востока!», а анналы ассирийских царей VIII–VII веков до н. э. называют Кидар и другие арабские племена среди кочевников той же пустыни."
+    - "В Новом Завете «волхвы с востока», маги, пришли в Иерусалим и спрашивали о родившемся Царе Иудейском, ибо видели «звезду Его на востоке»; откуда именно, Евангелие не говорит. Геродот знал магов как жреческое племя мидян, и ранние христианские писатели уже расходились: Иустин Мученик выводил их из Аравии, другие — из Персии. В Откровении Евфрат высыхает, «чтобы готов был путь царям от восхода солнечного». Земли сынов востока — сегодня пустыни восточной Иордании, Сирии, западного Ирака и северной Саудовской Аравии."
+scripture:
+  - Gen.25.6
+  - Gen.29.1
+  - Num.23.7
+  - Judg.6.3
+  - Judg.6.33
+  - Judg.7.12
+  - Judg.8.10
+  - 1Kgs.4.30
+  - Job.1.3
+  - Isa.11.14
+  - Jer.49.28
+  - Ezek.25.4
+  - Ezek.25.10
+  - Matt.2.1-Matt.2.2
+  - Matt.2.9
+  - Rev.16.12
+sources:
+  - "Herodotus, Histories 1.101; 1.132 (the magi among the Medes)"
+  - "Justin Martyr, Dialogue with Trypho 77-78 (the Magi from Arabia)"
+  - "I. Eph'al, The Ancient Arabs: Nomads on the Borders of the Fertile Crescent, 9th-5th Centuries B.C. (1982)"
+  - "R. E. Brown, The Birth of the Messiah (2nd ed., 1993) (the Magi and the star)"
+  - "D. Baly, The Geography of the Bible (rev. ed., 1974)"
+status: checked

@@ -1,0 +1,26 @@
+id: where-did-joseph-flee-in-egypt
+question:
+  en: "Where in Egypt did Joseph take Mary and the child?"
+  ru: "Куда в Египте Иосиф увёл Марию и Младенца?"
+answer:
+  en:
+    - "Matthew does not say. He writes only that Joseph “took the young child and his mother by night, and departed into Egypt: And was there until the death of Herod”, and that after the dream in Egypt he came back to the land of Israel and settled at Nazareth. Egypt was the nearest Roman province outside Herod's reach, with a Jewish population of hundreds of thousands, above all in Alexandria; the map point stands at Heliopolis, the On of Genesis, about 410 km from Bethlehem in a straight line, the first stop that the later tradition names in the Nile valley."
+    - "The places come from tradition. The Gospel of Pseudo-Matthew, a Latin text of the early Middle Ages, has the idols fall at a city it calls Sotinen in Hermopolis; a homily ascribed to the patriarch Theophilus of Alexandria (died 412) but written much later, in which the Virgin tells him the story in a vision, takes the family by Bubastis and Hermopolis up the Nile to a house at Qusqam in Upper Egypt. The Coptic Church keeps a fuller route today, from Pelusium by Bubastis, Heliopolis and Babylon of Egypt (Old Cairo) up to Qusqam: the sycamore and spring at Matariya in Heliopolis, the crypt of the church of St Sergius in Old Cairo, and the monastery of al-Muharraq at Qusqam, where the family is said to have lived six months until the angel told Joseph to return."
+    - "The length of the stay is also unknown; Matthew ties the return to Herod's death in 4 BC, and the Copts count about three and a half years. Matthew's point is not the route but the fulfilment: “Out of Egypt have I called my son”, Hosea's words about Israel, now spoken of the child who retraces the nation's path."
+  ru:
+    - "Матфей не говорит. Он пишет лишь, что Иосиф «взял Младенца и Матерь Его ночью и пошел в Египет, и там был до смерти Ирода», а после сна в Египте вернулся в землю Израилеву и поселился в Назарете. Египет был ближайшей римской провинцией вне власти Ирода, с иудейским населением в сотни тысяч, прежде всего в Александрии; точка карты стоит в Илиополе — Оне Книги Бытия, примерно в 410 км от Вифлеема по прямой, первой остановке в долине Нила, которую называет позднейшее предание."
+    - "Все места — из предания. Евангелие Псевдо-Матфея, латинский текст раннего Средневековья, обрушивает идолов в городе, который называет Сотинен в Гермополе; проповедь, приписанная патриарху Феофилу Александрийскому (умер в 412 году), но написанная много позже, где Богородица рассказывает ему всё в видении, ведёт семью через Бубастис и Гермополь вверх по Нилу до дома в Кускаме в Верхнем Египте. Коптская церковь хранит и сегодня более полный маршрут — от Пелусия (библейского Сина) через Бубастис, Илиополь и Вавилон Египетский (Старый Каир) до Кускама: сикомора и источник в Матарии в Илиополе, крипта церкви святого Сергия в Старом Каире и монастырь аль-Мухаррак в Кускаме, где, по преданию, семья прожила полгода, пока ангел не велел Иосифу вернуться."
+    - "Длительность пребывания тоже неизвестна; Матфей связывает возвращение со смертью Ирода в 4 г. до н. э., а копты насчитывают около трёх с половиной лет. Для Матфея важен не маршрут, а исполнение: «из Египта воззвал Я Сына Моего» — слова Осии об Израиле, сказанные теперь о Младенце, который повторяет путь народа."
+map:
+  place: acd9137
+  year: "4 BC"
+  ref: Matt.2.14
+scripture: [Matt.2.13-Matt.2.15, Matt.2.19-Matt.2.23, Hos.11.1]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Gospel of Pseudo-Matthew 22-24 (the idols of Sotinen in Hermopolis), in J. K. Elliott, The Apocryphal New Testament (1993)"
+  - "The Vision of Theophilus, ed. and tr. A. Mingana, Bulletin of the John Rylands Library 13 (1929), 383-474; e-Clavis: Christian Apocrypha (NASSCAL), s.v. Vision of Theophilus"
+  - "O. F. A. Meinardus, The Holy Family in Egypt (1986)"
+  - "R. T. France, The Gospel of Matthew (NICNT, 2007), on Matthew 2:13-23"
+  - "Philo, Against Flaccus 43 (a million Jews in Egypt)"
+status: checked

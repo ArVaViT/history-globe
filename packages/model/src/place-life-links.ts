@@ -50,6 +50,7 @@ export function inheritLife(
         ? of.note
         : { en: `${townEn}: ${of.note.en ?? ""}`, ru: `${townRu}: ${of.note.ru ?? ""}` },
       sources: of.sources,
+      ...(of.sources_ru ? { sources_ru: of.sources_ru } : {}),
       inherited: true,
     };
   }

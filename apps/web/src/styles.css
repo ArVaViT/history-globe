@@ -311,187 +311,213 @@ summary {
   .hg-sheet {
     display: block;
     page: hg-sheet;
-    color: #1f1a12;
-    font: 10pt/1.4 var(--font-sans);
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
   }
-  .hg-sheet-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 8mm;
-    margin-bottom: 4mm;
-  }
-  .hg-sheet h1 {
-    margin: 0;
-    font: 600 20pt/1.15 var(--font-serif);
-  }
-  .hg-sheet-when {
-    margin: 1mm 0 0;
-    color: #5b4f3c;
-    font-size: 11pt;
-  }
-  .hg-sheet-brand {
-    margin: 0;
-    color: #9a3b1f;
-    font: 11pt var(--font-serif);
-    white-space: nowrap;
-  }
-  /* As wide as the sheet, up to 240 mm (a landscape page): drawn whole, so the scale bar
-     under it, a share of the same width, stays true. */
-  .hg-sheet-map,
-  .hg-sheet-scale {
-    max-width: 240mm;
-  }
-  .hg-sheet-map {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 2mm;
-  }
-  /* The map's scale: a bar a round length long, under its left corner. */
-  .hg-sheet-scale {
-    display: flex;
-    align-items: center;
-    gap: 2mm;
-    margin-top: 1.5mm;
-    color: #5b4f3c;
-    font-size: 8pt;
-  }
-  .hg-sheet-north {
-    margin-left: auto;
-  }
-  .hg-sheet-scale span:first-child {
-    height: 1.6mm;
-    border: 0.3mm solid #5b4f3c;
-    border-top: 0;
-  }
-  .hg-sheet-list {
-    columns: 2;
-    column-gap: 8mm;
-    margin: 5mm 0 0;
-    padding: 0;
-    list-style: none;
-  }
-  .hg-sheet-list.notes {
-    columns: 1;
-  }
-  .hg-sheet-list.notes.many {
-    columns: 2;
-  }
-  .hg-sheet-list li {
-    display: flex;
-    gap: 2.5mm;
-    break-inside: avoid;
-    margin: 0 0 1.6mm;
-  }
-  .hg-sheet-n {
-    flex: none;
-    display: grid;
-    place-items: center;
-    width: 5mm;
-    height: 5mm;
-    border-radius: 50%;
-    background: #9a3b1f;
-    color: #fff;
-    font-size: 7.5pt;
-    font-weight: 600;
-  }
-  .hg-sheet-place {
-    margin: 0;
-  }
-  .hg-sheet-place b {
-    font: 600 10.5pt var(--font-serif);
-  }
-  .hg-sheet-ref {
-    margin-left: 2mm;
-    color: #5b4f3c;
-  }
-  /* An outline map: a line to write the name on. */
-  .hg-sheet-blank {
-    display: inline-block;
-    width: 48mm;
-    height: 5mm;
-    border-bottom: 0.3mm solid #5b4f3c;
-    vertical-align: bottom;
-  }
-  /* An outline map: a frame round the white map, the passage kept on its line, and
-     lines for notes below. */
-  .hg-sheet.blank .hg-sheet-map {
-    border: 0.3mm solid #cfc4ad;
-  }
-  .hg-sheet.blank .hg-sheet-ref {
-    white-space: nowrap;
-  }
-  .hg-sheet.blank .hg-sheet-list li {
-    align-items: flex-end;
-    margin-bottom: 3mm;
-  }
-  /* A quiz: numbered questions, four choices each, the answers small at the foot. */
-  .hg-quiz {
-    margin: 5mm 0 0;
-    padding: 0;
-    list-style: none;
-    font: 10.5pt/1.45 var(--font-serif);
-  }
-  .hg-quiz li {
-    break-inside: avoid;
-    margin: 0 0 3.5mm;
-  }
-  .hg-quiz-q {
-    margin: 0;
-  }
-  .hg-quiz-n {
-    margin-right: 1.5mm;
-  }
-  .hg-quiz-o {
-    padding-left: 5mm;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1mm 7mm;
-    margin: 1mm 0 0;
-    font-family: var(--font-sans);
-    font-size: 10pt;
-  }
-  .hg-quiz-key {
-    transform: rotate(180deg);
-    text-align: right;
-  }
-  .hg-sheet-lines {
-    margin-top: 6mm;
-  }
-  .hg-sheet-lines p {
-    margin: 0 0 1mm;
-    color: #5b4f3c;
-    font-weight: 600;
-  }
-  .hg-sheet-lines span {
-    display: block;
-    height: 8mm;
-    border-bottom: 0.3mm solid #cfc4ad;
-  }
-  .hg-sheet-note {
-    margin: 0.4mm 0 0;
-    color: #3a3226;
-    font: 9.5pt/1.4 var(--font-serif);
-  }
-  .hg-sheet-foot {
-    margin-top: 5mm;
-    padding-top: 2mm;
-    border-top: 0.3mm solid #d8ccb2;
-    color: #5b4f3c;
-    font-size: 7.5pt;
-  }
-  .hg-sheet-foot p {
-    margin: 0 0 0.8mm;
-  }
-  /* A lesson's link is long (its places, its name): it breaks anywhere rather than
-     widening the page, which the browser would then shrink to fit. */
-  .hg-sheet-url {
-    color: #9a3b1f;
-    overflow-wrap: anywhere;
-  }
+}
+/* The sheet's own look, in print and while print.ts measures it off screen at the width
+   of an A4 page inside its margins (186 mm), to choose the layout that keeps it one page. */
+.hg-sheet {
+  color: #1f1a12;
+  font: 10pt/1.4 var(--font-sans);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.hg-sheet.hg-measure {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -10000px;
+  width: 186mm;
+  visibility: hidden;
+}
+.hg-sheet-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8mm;
+  margin-bottom: 4mm;
+}
+.hg-sheet h1 {
+  margin: 0;
+  font: 600 20pt/1.15 var(--font-serif);
+}
+.hg-sheet-when {
+  margin: 1mm 0 0;
+  color: #5b4f3c;
+  font-size: 11pt;
+}
+.hg-sheet-brand {
+  margin: 0;
+  color: #9a3b1f;
+  font: 11pt var(--font-serif);
+  white-space: nowrap;
+}
+/* As wide as the sheet, up to 240 mm (a landscape page): drawn whole, so the scale bar
+   under it, a share of the same width, stays true. */
+.hg-sheet-map,
+.hg-sheet-scale {
+  max-width: 240mm;
+}
+/* A sheet a little long for one page (print.ts fitOnePage): the map a little smaller,
+   the scale bar with it. */
+.hg-sheet.tight .hg-sheet-map,
+.hg-sheet.tight .hg-sheet-scale {
+  max-width: 85%;
+}
+.hg-sheet.tighter .hg-sheet-map,
+.hg-sheet.tighter .hg-sheet-scale {
+  max-width: 72%;
+}
+.hg-sheet.tightest .hg-sheet-map,
+.hg-sheet.tightest .hg-sheet-scale {
+  max-width: 60%;
+}
+.hg-sheet-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2mm;
+}
+/* The map's scale: a bar a round length long, under its left corner. */
+.hg-sheet-scale {
+  display: flex;
+  align-items: center;
+  gap: 2mm;
+  margin-top: 1.5mm;
+  color: #5b4f3c;
+  font-size: 8pt;
+}
+.hg-sheet-north {
+  margin-left: auto;
+}
+.hg-sheet-scale span:first-child {
+  height: 1.6mm;
+  border: 0.3mm solid #5b4f3c;
+  border-top: 0;
+}
+.hg-sheet-list {
+  columns: 2;
+  column-gap: 8mm;
+  margin: 5mm 0 0;
+  padding: 0;
+  list-style: none;
+}
+.hg-sheet-list.notes {
+  columns: 1;
+}
+.hg-sheet-list.notes.many {
+  columns: 2;
+}
+.hg-sheet-list li {
+  display: flex;
+  gap: 2.5mm;
+  break-inside: avoid;
+  margin: 0 0 1.6mm;
+}
+.hg-sheet-n {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 5mm;
+  height: 5mm;
+  border-radius: 50%;
+  background: #9a3b1f;
+  color: #fff;
+  font-size: 7.5pt;
+  font-weight: 600;
+}
+.hg-sheet-place {
+  margin: 0;
+}
+.hg-sheet-place b {
+  font: 600 10.5pt var(--font-serif);
+}
+.hg-sheet-ref {
+  margin-left: 2mm;
+  color: #5b4f3c;
+}
+/* An outline map: a line to write the name on. */
+.hg-sheet-blank {
+  display: inline-block;
+  width: 48mm;
+  height: 5mm;
+  border-bottom: 0.3mm solid #5b4f3c;
+  vertical-align: bottom;
+}
+/* An outline map: a frame round the white map, the passage kept on its line, and
+   lines for notes below. */
+.hg-sheet.blank .hg-sheet-map {
+  border: 0.3mm solid #cfc4ad;
+}
+.hg-sheet.blank .hg-sheet-ref {
+  white-space: nowrap;
+}
+.hg-sheet.blank .hg-sheet-list li {
+  align-items: flex-end;
+  margin-bottom: 3mm;
+}
+/* A quiz: numbered questions, four choices each, the answers small at the foot. */
+.hg-quiz {
+  margin: 5mm 0 0;
+  padding: 0;
+  list-style: none;
+  font: 10.5pt/1.45 var(--font-serif);
+}
+.hg-quiz li {
+  break-inside: avoid;
+  margin: 0 0 3.5mm;
+}
+.hg-quiz-q {
+  margin: 0;
+}
+.hg-quiz-n {
+  margin-right: 1.5mm;
+}
+.hg-quiz-o {
+  padding-left: 5mm;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1mm 7mm;
+  margin: 1mm 0 0;
+  font-family: var(--font-sans);
+  font-size: 10pt;
+}
+.hg-quiz-key {
+  transform: rotate(180deg);
+  text-align: right;
+}
+.hg-sheet-lines {
+  margin-top: 6mm;
+}
+.hg-sheet-lines p {
+  margin: 0 0 1mm;
+  color: #5b4f3c;
+  font-weight: 600;
+}
+.hg-sheet-lines span {
+  display: block;
+  height: 8mm;
+  border-bottom: 0.3mm solid #cfc4ad;
+}
+.hg-sheet-note {
+  margin: 0.4mm 0 0;
+  color: #3a3226;
+  font: 9.5pt/1.4 var(--font-serif);
+}
+.hg-sheet-foot {
+  margin-top: 5mm;
+  padding-top: 2mm;
+  border-top: 0.3mm solid #d8ccb2;
+  color: #5b4f3c;
+  font-size: 7.5pt;
+}
+.hg-sheet-foot p {
+  margin: 0 0 0.8mm;
+}
+/* A lesson's link is long (its places, its name): it breaks anywhere rather than
+   widening the page, which the browser would then shrink to fit. */
+.hg-sheet-url {
+  color: #9a3b1f;
+  overflow-wrap: anywhere;
 }
 
 /* Inside another site (App.tsx): no scale bar; in a narrow column no zoom buttons either,

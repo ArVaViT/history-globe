@@ -1,0 +1,25 @@
+id: how-far-jerusalem-to-bethlehem
+question:
+  en: "How far is Bethlehem from Jerusalem?"
+  ru: "Как далеко от Иерусалима до Вифлеема?"
+answer:
+  en:
+    - "Bethlehem is about 8 km south of Jerusalem in a straight line and about 10 km by the Roman road on the map, a walk of two to three hours. Eusebius, in the fourth century, put it at six Roman miles, about 9 km, and so did the pilgrim of Bordeaux in AD 333: four miles to Rachel's tomb and two more to the town."
+    - "The two towns sit on the same ridge of the Judean hills, with the road running south past Rachel's tomb: “And Rachel died, and was buried in the way to Ephrath, which is Beth-lehem.” Micah's “Beth-lehem Ephratah, though thou be little among the thousands of Judah” answered the question Herod put to the scribes, and the Magi who had come to Jerusalem rode on the short last stage to the child. Herod then “slew all the children that were in Bethlehem, and in all the coasts thereof”; a town of this size, within an evening's walk of the capital, would have had few children of two years and under."
+    - "The nearness explains the ease with which Joseph, of “the house and lineage of David”, could be counted in his ancestral town and the family could present the child in the Temple forty days later. In the second century Justin Martyr, born in Palestine, said Jesus was born in a cave near the village, and Origen wrote that the cave was shown to visitors; Constantine had the Church of the Nativity built over it, dedicated in 339, and the present building, rebuilt by Justinian in the sixth century, still stands on the same spot."
+  ru:
+    - "Вифлеем лежит примерно в 8 км к югу от Иерусалима по прямой и примерно в 10 км по римской дороге на карте — два-три часа ходьбы. Евсевий в IV веке считал шесть римских миль, около 9 км, и столько же бордоский паломник в 333 году: четыре мили до гробницы Рахили и ещё две до города."
+    - "Два города стоят на одном хребте Иудейских гор, а дорога идёт на юг мимо гробницы Рахили: «И умерла Рахиль, и погребена на дороге в Ефрафу, то есть Вифлеем». Слова Михея «И ты, Вифлеем-Ефрафа, мал ли ты между тысячами Иудиными?» были ответом на вопрос, который Ирод задал книжникам, и волхвы, пришедшие в Иерусалим, проехали короткий последний переход к Младенцу. Затем Ирод «послал избить всех младенцев в Вифлееме и во всех пределах его»; в городке такого размера, в вечернем переходе от столицы, детей двух лет и младше было немного."
+    - "Близость объясняет, как легко Иосиф, «из дома и рода Давидова», мог записаться в городе предков, а семья сорок дней спустя принести Младенца в Храм. Во II веке Иустин Мученик, уроженец Палестины, писал, что Иисус родился в пещере близ селения, а Ориген — что пещеру показывают приходящим; Константин велел построить над ней храм Рождества, освящённый в 339 году, и нынешнее здание, перестроенное Юстинианом в VI веке, стоит на том же месте."
+map:
+  place: a112427
+  year: "5 BC"
+  ref: Matt.2.1
+scripture: [Matt.2.1-Matt.2.6, Matt.2.16, Luke.2.4, Luke.2.22, Gen.35.19, Mic.5.2]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Length along the Roman roads: Itiner-e (de Soto, Pažout, Brughmans et al. 2025), Jerusalem to Bethlehem (10 km)"
+  - "Eusebius, Onomasticon, s.v. Bethleem (six miles from Jerusalem); Itinerarium Burdigalense 598 (four miles to Rachel's tomb, two more to Bethlehem)"
+  - "Justin Martyr, Dialogue with Trypho 78; Origen, Against Celsus 1.51 (the cave shown at Bethlehem)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008), s.v. Bethlehem"
+status: checked

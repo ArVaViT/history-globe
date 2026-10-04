@@ -1,0 +1,36 @@
+# Overview article (ADR 0007). Mainstream facts only; the river itself (Wadi Mujib). The "Valley of the Arnon" is a separate record on the map.
+id: arnon
+place: a4cc324
+title:
+  en: "Arnon"
+  ru: "Арнон"
+body:
+  en:
+    - "The Arnon is the river that cuts the Moabite plateau in two, today the Wadi Mujib in Jordan. It rises in the desert east of the King's Highway, gathers the Wadi Wala and other tributaries, and falls through a canyon several hundred metres deep to the Dead Sea, which it enters half-way down the eastern shore. The gorge was the great barrier of the tableland: the Bible speaks of its “brooks” and its “fords”, and the King's Highway had to descend one wall and climb the other."
+    - "“Arnon is the border of Moab, between Moab and the Amorites”, Numbers says, quoting a fragment of the lost book of the wars of the Lord. Sihon of Heshbon had taken the land north of the river from Moab; Israel took it from Sihon and held “from Arnon unto Jabbok”, and Aroer “on the bank of the river Arnon” marked the southern end of Reuben. Balak met Balaam at a town of Moab “in the border of Arnon”. Three centuries later Jephthah reminded the Ammonites that Israel had lived along the Arnon all that time. In Jehu's days Hazael of Damascus seized the land “from Aroer, which is by the river Arnon”. Isaiah pictured the daughters of Moab “at the fords of Arnon” like birds driven from the nest, and Jeremiah bade Moab's mourners “tell ye it in Arnon”."
+    - "Mesha, king of Moab, records on his stele that he built the road at the Arnon; the Romans, after AD 106, carried the Via Nova Traiana across the gorge, and milestones still stand along the descent. Eusebius knew the Arnon as a steep gorge north of Areopolis, guarded by posts of soldiers. Travellers of the nineteenth century, Burckhardt among them, were the first Europeans to describe the canyon, and the modern highway, with a bridge at the bottom, still winds down and up its walls."
+    - "Since 1987 the lower gorge has been the Mujib Biosphere Reserve, often called the lowest nature reserve in the world, home to ibex and to a wet-canyon trail popular with hikers; a dam finished in the early 2000s holds the river above it. The name Arnon survives nowhere on the ground, but the Mujib is the same river the Moabites and Israelites crossed."
+  ru:
+    - "Арнон — река, рассекающая Моавитское плато надвое, ныне Вади-Муджиб в Иордании. Она начинается в пустыне к востоку от Царской дороги, принимает Вади-Вала и другие притоки и падает каньоном глубиной в несколько сотен метров к Мёртвому морю, в которое впадает посередине восточного берега. Ущелье было главной преградой плоскогорья: Библия говорит о его потоках и бродах, а Царской дороге приходилось спускаться по одной стене и подниматься по другой."
+    - "«Арнон граница Моава, между Моавом и Аморреем», — говорит книга Чисел, приводя отрывок из утраченной книги браней Господних. Сигон Есевонский отнял у Моава землю к северу от реки; Израиль отнял её у Сигона и владел ею «от Арнона до Иавока», а Ароер «на берегу потока Арнона» отмечал южный край Рувима. Валак встретил Валаама в городе Моавитском, «который на границе при Арноне». Три века спустя Иеффай напоминал Аммонитянам, что всё это время Израиль жил вдоль Арнона. Во дни Ииуя Азаил Дамасский захватил землю «начиная от Ароера, который при потоке Арноне». Исаия видел дочерей Моава «у бродов Арнонских» подобными птицам, выброшенным из гнезда, а Иеремия велел плачущим о Моаве возвестить в Арноне, что он опустошён."
+    - "Меса, царь Моавитский, записал на своей стеле, что построил дорогу у Арнона; римляне после 106 г. н. э. провели через ущелье Новую Траянову дорогу, и вдоль спуска до сих пор стоят её мильные камни. Евсевий знал Арнон как крутое ущелье к северу от Ареополя, которое стерегли военные посты. Путешественники XIX века, среди них Буркхардт, первыми из европейцев описали каньон, а современное шоссе с мостом на дне всё так же вьётся вниз и вверх по его стенам."
+    - "С 1987 года нижняя часть ущелья — биосферный заповедник Муджиб, который часто называют самым низко лежащим заповедником мира, с горными козлами и популярной у туристов тропой по воде; плотина, достроенная в начале 2000-х, держит реку выше. Имя Арнон нигде на местности не сохранилось, но Муджиб — та же река, которую переходили Моавитяне и Израильтяне."
+scripture:
+  - Num.21.13-Num.21.15
+  - Num.21.24-Num.21.26
+  - Num.22.36
+  - Deut.2.24
+  - Deut.3.8
+  - Judg.11.18
+  - Judg.11.26
+  - 2Kgs.10.33
+  - Isa.16.2
+  - Jer.48.20
+sources:
+  - "The Mesha Stele (KAI 181), line 26 (the road at the Arnon)"
+  - "Eusebius, Onomasticon, s.v. Arnon"
+  - "J. L. Burckhardt, Travels in Syria and the Holy Land (1822)"
+  - "N. Glueck, Explorations in Eastern Palestine I (Annual of the American Schools of Oriental Research 14, 1934)"
+  - "D. F. Graf, 'The Via Nova Traiana in Arabia Petraea', in J. H. Humphrey (ed.), The Roman and Byzantine Near East (1995)"
+  - "B. Routledge, Moab in the Iron Age: Hegemony, Polity, Archaeology (2004)"
+status: checked

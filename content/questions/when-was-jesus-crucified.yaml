@@ -1,0 +1,39 @@
+id: when-was-jesus-crucified
+question:
+  en: "When was Jesus crucified?"
+  ru: "Когда распяли Иисуса?"
+answer:
+  en:
+    - "The Gospels agree that Jesus died on a Friday, the eve of a sabbath, at Passover, while Pontius Pilate governed Judea (about 26–36), but they do not name the year. Most scholars choose between two dates: Friday 7 April AD 30 and Friday 3 April AD 33. Early writers and a minority give others: Tertullian dates the Passion to the consulship of the two Gemini, AD 29, and Cassiodorus to AD 31. The map uses c. AD 30 as a conventional point; AD 33 is also widely held."
+    - "Mark sets the Last Supper on “the first day of unleavened bread, when they killed the passover”, so in the first three Gospels Jesus dies on Nisan 15, the feast day itself. John says those who brought Jesus would not enter the judgment hall, “that they might eat the passover”, and that at the sentence “it was the preparation of the passover”: in John he dies on Nisan 14, when the lambs were slain. Some reconcile the two by calendars in use side by side. The month began with the sighting of the new crescent, which astronomy can reckon. In Nature in 1983 C. J. Humphreys and W. G. Waddington found that in AD 26–36 Nisan 14 fell on a Friday in AD 30 and 33, and Nisan 15 possibly in AD 34, which they thought unlikely; taking John's day and a lunar eclipse on the evening of 3 April 33, they argued for that date. Others, on the same tables, keep AD 30."
+    - "Luke dates the start of John the Baptist's preaching “in the fifteenth year of the reign of Tiberius Caesar, Pontius Pilate being governor of Judaea”. Counted from the death of Augustus in AD 14 this is AD 28/29; a few count from an earlier co-regency and get AD 26/27. John names three Passovers in the ministry, so AD 33 allows a ministry of three years or more, while AD 30 needs a shorter one or the earlier count. At the first Passover the Jews say: “Forty and six years was this temple in building”. Herod began the rebuilding in his eighteenth year, 20/19 BC, and forty-six years on is Passover AD 27/28, which suits AD 30; read as “built forty-six years ago”, from the completion of the sanctuary about 18 BC, the words point to AD 29/30, which suits AD 33."
+  ru:
+    - "Евангелия согласны, что Иисус умер в пятницу, накануне субботы, на Пасху, когда Иудеей управлял Понтий Пилат (примерно 26–36 гг.), но года не называют. Большинство учёных выбирает между двумя датами: пятница 7 апреля 30 г. н. э. и пятница 3 апреля 33 г. н. э. Древние авторы и меньшинство учёных называют другие: Тертуллиан относит Страсти к консульству двух Геминов, 29 г., Кассиодор — к 31 г. Карта показывает условный 30 г.; 33 г. держатся тоже многие."
+    - "У Марка Тайная вечеря — «в первый день опресноков, когда заколали пасхального агнца», так что в первых трёх Евангелиях Иисус умирает 15 нисана, в самый праздник. Иоанн пишет, что приведшие Его не вошли в преторию, «чтобы можно было есть пасху», и что при приговоре «была пятница перед Пасхою»: у Иоанна Он умирает 14 нисана, когда закалали агнцев. Некоторые согласуют оба рассказа разными календарями. Месяц начинался с появления нового серпа луны, и это можно рассчитать. В журнале Nature в 1983 г. К. Хамфрис и У. Уоддингтон нашли, что в 26–36 гг. 14 нисана приходилось на пятницу в 30 и 33 г., а 15 нисана — возможно, в 34 г., что они сочли маловероятным; приняв день Иоанна и лунное затмение вечером 3 апреля 33 г., они выбрали эту дату. Другие по тем же таблицам держатся 30 г."
+    - "Лука датирует начало проповеди Иоанна Крестителя: «В пятнадцатый же год правления Тиверия кесаря, когда Понтий Пилат начальствовал в Иудее». От смерти Августа в 14 г. это 28/29 г.; немногие считают от более раннего соправления и получают 26/27 г. Иоанн называет в служении три Пасхи, так что 33 г. допускает служение в три года и больше, а 30 г. требует более короткого или раннего счёта. На первой Пасхе иудеи говорят: «сей храм строился сорок шесть лет». Ирод начал перестройку в восемнадцатый год своего царствования, 20/19 г. до н. э., и через сорок шесть лет — Пасха 27/28 г., что подходит к 30 г.; если читать «построен сорок шесть лет назад», от завершения святилища около 18 г. до н. э., слова указывают на 29/30 г., что подходит к 33 г."
+map:
+  place: a631d35
+  year: "c. AD 30"
+  ref: John.19.14
+scripture:
+  [
+    Mark.14.12,
+    Mark.15.42,
+    John.18.28,
+    John.19.14,
+    John.19.31,
+    Luke.3.1,
+    Luke.3.23,
+    John.2.13,
+    John.2.20,
+    John.6.4,
+    John.11.55,
+  ]
+sources:
+  - "C. J. Humphreys and W. G. Waddington, “Dating the Crucifixion”, Nature 306 (1983), 743-746; and C. J. Humphreys, “The Date of the Crucifixion”, Journal of the American Scientific Affiliation 37 (1985)"
+  - "Josephus, Antiquities 15.380 (Herod begins the Temple in his eighteenth year); 18.35 and 18.89 (Pilate's ten years)"
+  - "Tertullian, Against the Jews 8 (the consulship of Rubellius Geminus and Fufius Geminus)"
+  - "A. E. Steinmann, “Did It Take Forty-Six Years or More to Build the Temple?”, Journal of the Evangelical Theological Society 65.2 (2022), 319-331 (John 2:20 and its two readings)"
+  - "H. W. Hoehner, Chronological Aspects of the Life of Christ (1977), on the year of the crucifixion and the fifteenth year of Tiberius"
+  - "History Globe dated events (crucifixion c. AD 30; Pilate prefect c. AD 26) and History Globe tour “The resurrection and the appearances” (the conventional year AD 30; AD 33 is also held)"
+status: checked

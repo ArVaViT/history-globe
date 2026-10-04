@@ -1,0 +1,31 @@
+# Overview article (ADR 0007). Mainstream facts only; the gate is unlocated; the Temple's own Water Gate in the Mishnah is distinguished; Eilat Mazar's gatehouse is reported as her suggestion.
+id: water-gate
+place: a0293ff
+title:
+  en: "Water Gate"
+  ru: "Водяные ворота"
+body:
+  en:
+    - "The Water Gate was a gate on the east side of Jerusalem in Nehemiah's day, on the slope of the City of David above the Gihon spring, from which it must have taken its name: the way the water carriers came up from the city's spring. Nehemiah's account of the wall places it after the Fountain Gate and the stairs of the City of David, where the Nethinim who dwelt in Ophel repaired “unto the place over against the water gate toward the east, and the tower that lieth out”; the temple servants lived near it, close to the water they fetched. The gate itself is not said to have been repaired, and since Nehemiah's wall ran along the crest of the ridge, leaving the spring outside, many think it was by then an inner gate in the old wall further down the slope."
+    - "The square before it is the scene of the great reading of the Law. On the first day of the seventh month “all the people gathered themselves together as one man into the street that was before the water gate”, and Ezra read “from the morning until midday, before the men and the women, and those that could understand”, standing on a wooden pulpit, while the Levites “gave the sense, and caused them to understand the reading”. The people wept, were told to rejoice, and kept the Feast of Tabernacles in booths “in the street of the water gate, and in the street of the gate of Ephraim”. At the dedication of the wall one of the two processions went up “by the stairs of the city of David, at the going up of the wall, above the house of David, even unto the water gate eastward”."
+    - "The Mishnah names a Water Gate among the gates of the Second Temple court, through which the water for the libation of Tabernacles was brought in; that is a different gate, inside the sanctuary. Kathleen Kenyon's trench on the eastern slope in the 1960s and Benjamin and Eilat Mazar's work on the Ophel in 1986–1987, which uncovered a gatehouse of the First Temple period that Eilat Mazar suggested was the Water Gate, are the nearest archaeology has come; the gate has not been found. The slope is now part of the City of David archaeological park beside the village of Silwan."
+  ru:
+    - "Водяные ворота были воротами на восточной стороне Иерусалима во дни Неемии, на склоне города Давидова над источником Гион, от которого они, должно быть, и получили имя: этим путём водоносы поднимались от городского источника. Рассказ Неемии о стене ставит их после ворот Источника и ступеней города Давидова, где нефинеи, жившие в Офеле, «починили напротив Водяных ворот к востоку и до выступающей башни»; храмовые служители жили рядом, близко к воде, которую носили. О починке самих ворот не сказано, и, поскольку стена Неемии шла по гребню хребта, оставляя источник снаружи, многие думают, что ворота к тому времени были внутренними, в старой стене ниже по склону."
+    - "Площадь перед ними — место великого чтения Закона. В первый день седьмого месяца «собрался весь народ, как один человек, на площадь, которая пред Водяными воротами», и Ездра читал «от рассвета до полудня, пред мужчинами и женщинами и всеми, которые могли понимать», стоя на деревянном возвышении, а левиты «присоединяли толкование, и народ понимал прочитанное». Народ плакал, ему велели радоваться, и праздник Кущей справляли в кущах «на площади у Водяных ворот, и на площади у Ефремовых ворот». При освящении стены одно из двух шествий взошло «по ступеням города Давидова, по лестнице, ведущей на стену сверх дома Давидова до Водяных ворот к востоку»."
+    - "Мишна называет Водяные ворота среди ворот двора Второго храма, через которые вносили воду для возлияния на Кущи; это другие ворота, внутри святилища. Траншея Кэтлин Кеньон на восточном склоне в 1960-х годах и работы Биньямина и Эйлат Мазар на Офеле в 1986–1987 годах, открывшие привратное здание времён Первого храма, в котором Эйлат Мазар предположила Водяные ворота, — самое близкое, к чему подошла археология; сами ворота не найдены. Склон теперь входит в археологический парк «Город Давида» рядом с деревней Силуан."
+scripture:
+  - Neh.3.15
+  - Neh.3.26
+  - Neh.8.1-Neh.8.3
+  - Neh.8.4
+  - Neh.8.8
+  - Neh.8.16
+  - Neh.12.37
+sources:
+  - "Mishnah, Middot 1.4 and 2.6; Sukkah 4.9 (the Water Gate of the Temple)"
+  - "K. M. Kenyon, Digging Up Jerusalem (1974)"
+  - "E. Mazar and B. Mazar, Excavations in the South of the Temple Mount: The Ophel of Biblical Jerusalem (Qedem 29, 1989)"
+  - "H. G. M. Williamson, Ezra, Nehemiah (Word Biblical Commentary 16, 1985)"
+  - "J. Simons, Jerusalem in the Old Testament: Researches and Theories (1952)"
+  - "D. Ussishkin, 'The Borders and De Facto Size of Jerusalem in the Persian Period', in O. Lipschits and M. Oeming (eds.), Judah and the Judeans in the Persian Period (2006)"
+status: checked

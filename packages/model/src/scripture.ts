@@ -220,6 +220,14 @@ const BOOK_ALIASES: Readonly<Record<string, string>> = {
   песнь: "Song",
   исаи: "Isa",
   иезекиил: "Ezek",
+  // English names that do not start with the abbreviation ("1 Kings" against "1 Kgs").
+  "1 kings": "1Kgs",
+  "2 kings": "2Kgs",
+  "1 ki": "1Kgs",
+  "2 ki": "2Kgs",
+  "song of songs": "Song",
+  "song of solomon": "Song",
+  songs: "Song",
 };
 
 const aliasOf = (word: string): string | undefined => {
@@ -262,7 +270,10 @@ export function parseChapter(text: string, locale: Locale): { ref: string; label
   const typed = norm(text).replace(/^(евангелие )?от /, "");
   const book0 = parseBook(typed, locale);
   if (book0) return book0;
-  const m = /^(\d?\s?[a-zа-я]+(?:\s[a-zа-я]+)?)\s?(\d{1,3})$/.exec(typed);
+  // A verse after the chapter ("Acts 16:12", «Деян 16:12-15») opens the chapter.
+  const m = /^(\d?\s?[a-zа-я]+(?:\s[a-zа-я]+){0,2})\s?(\d{1,3})(?::\d{1,3}(?:[-–]\d{1,3})?)?$/.exec(
+    typed,
+  );
   if (!m) return null;
   const word = (m[1] ?? "").replace(/^(\d) ?/, "$1 ").trim();
   const n = Number(m[2]);
@@ -283,8 +294,13 @@ export function parseChapter(text: string, locale: Locale): { ref: string; label
   const lengths = book === undefined ? undefined : VERSES[book];
   if (!book || !books || !lengths) return null;
   const label = `${locale === "ru" ? books[0] : books[1]} ${String(n)}`;
-  if (locale !== "ru")
-    return n >= 1 && n <= lengths.length ? { ref: `${book}.${String(n)}`, label } : null;
+  // A book named in English ("Psalm 23") is counted the English way, in either language:
+  // the label then gives the Synodal number («Пс 22»).
+  if (locale !== "ru" || /[a-z]/.test(word)) {
+    if (n < 1 || n > lengths.length) return null;
+    const ru = `${books[0]} ${String(toSynodal(book, n, 1).chapter)}`;
+    return { ref: `${book}.${String(n)}`, label: locale === "ru" ? ru : label };
+  }
   // In Russian the number is the Synodal chapter: the English verses shown in it.
   const verses: [number, number][] = [];
   lengths.forEach((count, i) => {

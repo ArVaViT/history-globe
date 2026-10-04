@@ -1,0 +1,31 @@
+# Overview article (ADR 0007). Mainstream facts only. The place is the Jericho of the Gospels at Tulul Abu el-Alayiq; the Old Testament city at Tell es-Sultan has its own article (jericho), so this one does not retell it.
+id: jericho-herodian
+place: aaf03fa
+title:
+  en: "Jericho"
+  ru: "Иерихон"
+body:
+  en:
+    - "The Jericho of the Gospels was not the mound of Joshua's city, Tell es-Sultan, which lay deserted, but a new town about 2 km to the south at the mouth of the Wadi Qelt, where the road from Jerusalem comes down into the Jordan valley: the mounds of Tulul Abu el-Alayiq on both banks of the stream. The map keeps this place apart; the older Jericho has its own article."
+    - "Here the Hasmonean kings built a winter palace with pools and gardens, watered by aqueducts from the springs of the Wadi Qelt, and here in 35 BC the young high priest Aristobulus III was drowned by Herod's men in a swimming pool. Herod, who had to lease the balsam and date groves back from Cleopatra after Antony gave them to her, built three palaces of his own, the last with a sunken garden and a bath on both banks of the wadi, and a theatre and hippodrome nearby. He died at Jericho in 4 BC. Strabo describes the oasis: a plain ringed by mountains, a palm grove a hundred stadia long, the king's palace and the balsam that grew nowhere else. Archelaus rebuilt the palace, and Vespasian's legions ruined the town in AD 68."
+    - "Jesus came this way on his last journey to Jerusalem. As he left Jericho with a great crowd, blind Bartimaeus “sat by the highway side begging” and was healed; Luke, who sets the healing as Jesus “was come nigh unto Jericho”, adds that in the city Zacchaeus, “the chief among the publicans”, climbed a sycamore to see him and received him at his house. The man in the parable “went down from Jerusalem to Jericho, and fell among thieves”: the road drops about a thousand metres in 25 km through the desert along the Wadi Qelt."
+    - "Charles Warren dug trenches here in 1868; James Kelso and Dimitri Baramki in 1950 and James Pritchard in 1951 uncovered Herod's buildings, and Ehud Netzer's excavations of 1973–1987 laid out the whole sequence of Hasmonean and Herodian palaces. The ruins lie beside the Jerusalem road on the western edge of the modern city of Jericho (Ariha) in the West Bank, under the cliffs of the Judaean desert."
+  ru:
+    - "Иерихон Евангелий — не холм города Иисуса Навина, Телль-эс-Султан, который лежал в запустении, а новый город примерно в 2 км к югу, у выхода Вади-Кельт, где дорога из Иерусалима спускается в Иорданскую долину: холмы Тулуль-Абу-эль-Алайик по обоим берегам потока. Карта держит это место отдельно; у древнего Иерихона своя статья."
+    - "Здесь цари Хасмонеи построили зимний дворец с бассейнами и садами, питаемыми водопроводами от источников Вади-Кельт, и здесь в 35 г. до н. э. люди Ирода утопили в бассейне юного первосвященника Аристовула III. Ирод, которому пришлось арендовать у Клеопатры бальзамовые и финиковые рощи после того, как Антоний подарил их ей, построил три собственных дворца, последний — с углублённым садом и баней по обоим берегам вади, а поблизости театр и ипподром. Он умер в Иерихоне в 4 г. до н. э. Страбон описывает оазис: равнина в кольце гор, пальмовая роща длиной в сто стадиев, царский дворец и бальзам, не росший больше нигде. Архелай отстроил дворец, а легионы Веспасиана разорили город в 68 г. н. э."
+    - "Этим путём Иисус шёл в последнее путешествие в Иерусалим. Когда Он выходил из Иерихона с множеством народа, слепой Вартимей «сидел у дороги, прося милостыни» и был исцелён; Лука, у которого исцеление происходит, «Когда же подходил Он к Иерихону», добавляет, что в городе Закхей, «начальник мытарей», влез на смоковницу, чтобы увидеть Его, и принял Его в своём доме. Человек из притчи «шел из Иерусалима в Иерихон и попался разбойникам»: дорога теряет около тысячи метров высоты на 25 км пустыни вдоль Вади-Кельт."
+    - "Чарльз Уоррен копал здесь траншеи в 1868 году; Джеймс Келсо и Димитрий Барамки в 1950-м и Джеймс Притчард в 1951-м открыли постройки Ирода, а раскопки Эхуда Нецера 1973–1987 годов выстроили всю последовательность хасмонейских и иродианских дворцов. Руины лежат у Иерусалимской дороги на западной окраине современного Иерихона (Арихи) на Западном берегу, под обрывами Иудейской пустыни."
+scripture:
+  - Matt.20.29-Matt.20.34
+  - Mark.10.46-Mark.10.52
+  - Luke.10.30
+  - Luke.18.35-Luke.18.43
+  - Luke.19.1-Luke.19.10
+sources:
+  - "Strabo, Geography 16.2.41"
+  - "Josephus, Antiquities 15.53-56 (Aristobulus III); 15.96 (the balsam groves and Cleopatra); 17.173-199 (Herod's death at Jericho); Jewish War 4.451-475"
+  - "J. L. Kelso and D. C. Baramki, Excavations at New Testament Jericho and Khirbet en-Nitla (Annual of the American Schools of Oriental Research 29–30, 1955)"
+  - "J. B. Pritchard, The Excavation at Herodian Jericho, 1951 (Annual of the American Schools of Oriental Research 32–33, 1958)"
+  - "E. Netzer, Hasmonean and Herodian Palaces at Jericho: Final Reports of the 1973–1987 Excavations, vol. 1 (2001)"
+  - "E. Netzer, The Architecture of Herod, the Great Builder (2006)"
+status: checked

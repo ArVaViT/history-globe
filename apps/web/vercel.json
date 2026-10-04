@@ -12,6 +12,26 @@
       "source": "/docs/ru",
       "destination": "/docs/ru/",
       "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru)/place/moab-aa0b1d6",
+      "destination": "/:lang/place/moab/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru)/place/moab-aa0b1d6/",
+      "destination": "/:lang/place/moab/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru)/place/moab-aca767b",
+      "destination": "/:lang/place/plains-of-moab/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru)/place/moab-aca767b/",
+      "destination": "/:lang/place/plains-of-moab/",
+      "permanent": true
     }
   ],
   "headers": [

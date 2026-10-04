@@ -1,0 +1,32 @@
+# Overview article (ADR 0007). Mainstream facts only; the word is a common noun as well as a name, and the two verses in Numbers are explained as another waste; the hill of Hachilah is left unidentified.
+id: jeshimon
+place: ad41f6e
+title:
+  en: "Jeshimon"
+  ru: "Иесимон"
+body:
+  en:
+    - "Jeshimon is a Hebrew word for wasteland, used in the Bible both as a common noun and as the name of a district, and the Authorised Version keeps it as a name in six verses. The app's record stands in the wilderness of Judah, east of Ziph and Maon, where the hill country breaks down in bare chalk ridges to the Dead Sea. Here the Ziphites told Saul that David was hiding “in the hill of Hachilah, which is on the south of Jeshimon”, David and his men were “in the wilderness of Maon, in the plain on the south of Jeshimon”, and Saul camped “in the hill of Hachilah, which is before Jeshimon, by the way” on the night David crept into his camp and took his spear."
+    - "The two verses in Numbers belong to another waste. From Pisgah and from the top of Peor Balak and Balaam looked out over the Jeshimon, the desert floor of the Jordan valley at the north end of the Dead Sea, where Beth-jeshimoth, “house of the wastes”, lay at the foot of the Moabite hills. The Synodal Bible accordingly translates the word as “wilderness” in Numbers and keeps Jeshimon as a name only in Samuel. The word appears again in Moses' song, “the waste howling wilderness”, and in the Psalms and Isaiah for the desert of the wanderings."
+    - "The Judean Jeshimon is today the Judean Desert, the strip of ravines between the hills of Hebron and the Dead Sea: Ein Gedi with its spring, the caves of Nahal Hever, the Dead Sea Scrolls caves further north, Masada and the monastery of Mar Saba on its edges, and Bedouin camps and shepherds in between. The hill of Hachilah has not been identified."
+  ru:
+    - "Иесимон — еврейское слово, означающее пустошь; в Библии оно употребляется и как нарицательное, и как имя местности, и в шести стихах английские переводчики сохранили его как название. Запись приложения стоит в пустыне Иудейской, к востоку от Зифа и Маона, где нагорье обрывается голыми меловыми грядами к Мёртвому морю. Здесь Зифеи донесли Саулу, что Давид скрывается «на холме Гахила, что направо от Иесимона», Давид с людьми был «в пустыне Маон, на равнине, направо от Иесимона», а Саул стал «на холме Гахила, что направо от Иесимона, при дороге» в ту ночь, когда Давид прокрался в его стан и унёс копьё."
+    - "Два стиха в книге Чисел относятся к другой пустоши. С Фасги и с вершины Фегора Валак и Валаам смотрели на Иесимон — пустынное дно долины Иордана у северного конца Мёртвого моря, где у подножия Моавитских гор лежал Беф-Иешимоф, «дом пустошей». Синодальный перевод соответственно передаёт это слово в Числах как «пустыня» и сохраняет Иесимон как имя только в книгах Царств. Слово встречается и в песни Моисея — «в степи печальной и дикой», — и в Псалмах и у Исаии о пустыне странствий."
+    - "Иудейский Иесимон сегодня — Иудейская пустыня, полоса ущелий между Хевронскими горами и Мёртвым морем: Эйн-Геди с его источником, пещеры Нахаль-Хевер, пещеры свитков Мёртвого моря дальше к северу, Масада и монастырь Мар-Саба по краям, а между ними бедуинские стоянки и пастухи. Холм Гахила не отождествлён."
+scripture:
+  - Num.21.20
+  - Num.23.28
+  - Deut.32.10
+  - 1Sam.23.19
+  - 1Sam.23.24
+  - 1Sam.26.1-1Sam.26.3
+  - Ps.78.40
+  - Ps.107.4
+  - Isa.43.19-Isa.43.20
+sources:
+  - "Eusebius, Onomasticon, s.v. Bethasimuth (Beth-jeshimoth)"
+  - "P. K. McCarter, I Samuel (Anchor Bible 8, 1980)"
+  - "B. A. Levine, Numbers 21-36 (Anchor Bible 4A, 2000)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+  - "'Jeshimon', in D. N. Freedman (ed.), The Anchor Bible Dictionary, vol. 3 (1992)"
+status: checked

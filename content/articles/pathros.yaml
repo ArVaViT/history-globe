@@ -1,0 +1,31 @@
+# Overview article (ADR 0007). Mainstream facts only; the Egyptian etymology is the usual one.
+id: pathros
+place: aab30ec
+title:
+  en: "Pathros"
+  ru: "Пафрос"
+body:
+  en:
+    - "Pathros is Upper Egypt, the long Nile valley south of Memphis up to the First Cataract at Syene (Aswan), with Thebes as its old capital. The name is Egyptian, pa-ta-resi, “the southern land”, and Assyrian kings used it too: after conquering Egypt in 671 BC Esarhaddon called himself king of Musur, Paturisi and Kusi, that is Lower Egypt, Upper Egypt and Nubia. In the table of nations the Pathrusim are among the sons of Mizraim."
+    - "The prophets name it with Egypt and Cush. Isaiah promises the Lord will recover his remnant “from Assyria, and from Egypt, and from Pathros, and from Cush”. Jeremiah, carried to Egypt after the murder of Gedaliah, addressed “all the Jews which dwell in the land of Egypt, which dwell at Migdol, and at Tahpanhes, and at Noph, and in the country of Pathros”, and it was “all the people that dwelt in the land of Egypt, in Pathros” who answered that they would go on burning incense to the queen of heaven. Ezekiel foretold that Egypt would be brought back “into the land of Pathros, into the land of their habitation”, a base kingdom, and that Pathros would be made desolate with Zoan and No."
+    - "Ezekiel's phrase fits the fact that Egyptian kingship began in the south, at Hierakonpolis and Abydos. Jews in Pathros are known from the Aramaic papyri of Elephantine, the island at Syene, where a Jewish garrison with a temple of its own served the Persian kings in the fifth century BC; the priests of Khnum destroyed the temple in 410, and the community petitioned Jerusalem and Samaria to have it rebuilt. The settlement may go back to the days of Jeremiah's refugees or earlier, since Herodotus says Psammetichus already kept a garrison at Elephantine."
+    - "Today Pathros is the Sa'id, the Upper Egypt of the governorates from Beni Suef to Aswan, with Luxor on the site of Thebes; its people are the Sa'idis, and the Nile still ties it together."
+  ru:
+    - "Пафрос — Верхний Египет, длинная долина Нила к югу от Мемфиса до первого порога у Сиены (Асуана), со старой столицей в Фивах. Имя египетское, па-та-реси, «южная земля», и ассирийские цари тоже им пользовались: завоевав Египет в 671 г. до н. э., Асардан назвал себя царём Мусура, Патуриси и Куси, то есть Нижнего Египта, Верхнего Египта и Нубии. В таблице народов Патрусим стоят среди сынов Мицраима."
+    - "Пророки называют его рядом с Египтом и Хусом. Исаия обещает, что Господь возвратит Себе остаток народа, «какой останется у Ассура, и в Египте, и в Патросе, и у Хуса». Иеремии, уведённому в Египет после убийства Годолии, было слово «о всех Иудеях, живущих в земле Египетской, поселившихся в Магдоле и Тафнисе, и в Нофе, и в земле Пафрос», и именно «весь народ, живший в земле Египетской, в Пафросе» отвечал, что будет и дальше кадить богине неба. Иезекииль предрёк, что Египет вернут «в землю Пафрос, в землю происхождения их», царством слабым, и что Пафрос будет опустошён вместе с Цоаном и Но."
+    - "Слова Иезекииля отвечают тому, что египетская царская власть началась на юге, в Иераконполе и Абидосе. Иудеи в Пафросе известны по арамейским папирусам с Элефантины, острова у Сиены, где иудейский гарнизон с собственным храмом служил персидским царям в V веке до н. э.; жрецы Хнума разрушили храм в 410 году, и община просила Иерусалим и Самарию помочь его восстановить. Поселение, возможно, восходит ко временам беглецов Иеремии или ещё раньше, ведь Геродот говорит, что уже Псамметих держал гарнизон на Элефантине."
+    - "Сегодня Пафрос — это Саид, Верхний Египет провинций от Бени-Суэфа до Асуана, с Луксором на месте Фив; его жители — саиди, и Нил по-прежнему связывает его воедино."
+scripture:
+  - Gen.10.14
+  - Isa.11.11
+  - Jer.44.1
+  - Jer.44.15
+  - Ezek.29.14
+  - Ezek.30.14
+sources:
+  - "Esarhaddon, inscriptions after the conquest of Egypt (RINAP 4), the title king of Egypt, Paturisu and Kush"
+  - "Herodotus, Histories 2.30 (the garrison at Elephantine under Psammetichus)"
+  - "A. H. Gardiner, Ancient Egyptian Onomastica (1947)"
+  - "B. Porten, The Elephantine Papyri in English: Three Millennia of Cross-Cultural Continuity and Change (1996), the petition to Bagohi of 407 BC"
+  - "K. A. Kitchen, The Third Intermediate Period in Egypt (1100–650 BC) (2nd ed., 1986)"
+status: checked

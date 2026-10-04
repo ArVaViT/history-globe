@@ -1,0 +1,35 @@
+# Overview article (ADR 0007). Mainstream facts only; the capital of Zobah is unlocated and its bounds are given as unknown; no absolute dates are given for Saul and David.
+id: zobah
+place: a4aa78a
+title:
+  en: "Zobah"
+  ru: "Сува"
+body:
+  en:
+    - "Zobah, or Aram-zobah, was an Aramaean kingdom north of Damascus, in the Beqaa valley of Lebanon and the country beyond it towards Hamath and the Euphrates; its capital has not been found, and its exact bounds are unknown. The record here is placed in the Beqaa. In the eighth and seventh centuries BC Assyrian lists and letters name a province Subutu, or Subat, in the same region, which keeps the name. The Bible speaks of “kings of Zobah” in Saul's day and of one king, Hadadezer son of Rehob, in David's; the cities of Hadadezer from which David carried off much bronze, Tibhath and Chun, or Betah and Berothai, probably lay in the northern Beqaa."
+    - "Saul fought the kings of Zobah among his neighbours. David met Hadadezer when the king of Zobah “went to recover his border at the river Euphrates”: he took his chariots, horsemen and twenty thousand footmen, hamstrung the chariot horses, and when “the Syrians of Damascus came to succour Hadadezer king of Zobah” defeated them too and put garrisons in Damascus. Toi, king of Hamath, who had been at war with Hadadezer, sent his son with gifts of silver, gold and bronze. Later the Ammonites hired “the Syrians of Beth-rehob, and the Syrians of Zoba” against David; Joab beat them before Rabbah, and Hadadezer brought the Aramaeans from beyond the Euphrates to Helam, where David routed them, so that all the kings who had served Hadadezer made peace with Israel. Chronicles tells the same wars, and the title of Psalm 60 remembers the one with Aram-zobah."
+    - "One of David's mighty men was “Igal the son of Nathan of Zobah”. Rezon son of Eliadah, who “fled from his lord Hadadezer king of Zobah”, gathered a band, seized Damascus and troubled Solomon all his days: the rise of Damascus marks the end of Zobah's leadership among the Aramaeans. The kingdom is not mentioned again, and the Assyrian province that kept its name lay between Damascus and Hamath. Today the Beqaa is the farmland of eastern Lebanon between the Lebanon and Anti-Lebanon ranges, with Baalbek, the ancient Heliopolis, in its north."
+  ru:
+    - "Сува, или Арам-Цова, была арамейским царством к северу от Дамаска, в долине Бекаа в Ливане и в землях за ней в сторону Емафа и Евфрата; её столица не найдена, а точные границы неизвестны. Запись здесь помещена в Бекаа. В VIII–VII веках до н. э. ассирийские списки и письма называют в тех же краях провинцию Субуту, или Субат, сохранившую это имя. Библия говорит о войне Саула «с царями Совы» и об одном царе, Адраазаре, сыне Рехова, во дни Давида; города Адраазара, из которых Давид вывез много меди, Тивхава и Кун, во Второй книге Царств — Беф и Бероф, лежали, вероятно, на севере Бекаа."
+    - "Саул воевал с царями Сувы среди прочих соседей. Давид столкнулся с Адраазаром, когда царь Сувский «шел, чтоб восстановить свое владычество при реке Евфрате»: он взял его колесницы, всадников и двадцать тысяч пеших, подрезал жилы колесничным коням, а когда «пришли Сирийцы Дамасские на помощь к Адраазару, царю Сувскому», разбил и их и поставил охранные войска в Дамаске. Фой, царь Емафа, воевавший с Адраазаром, прислал своего сына с дарами из серебра, золота и меди. Позже Аммонитяне наняли против Давида «Сирийцев из Беф-Рехова и Сирийцев Сувы»; Иоав разбил их под Раввой, а Адраазар привёл арамеев из-за Евфрата к Еламу, где Давид разгромил их, так что все цари, покорные Адраазару, заключили мир с Израилем. Книги Паралипоменон рассказывают о тех же войнах, а надписание 59-го псалма вспоминает войну с «Сириею Цованскою»."
+    - "Среди храбрых Давида был «Игал, сын Нафана, из Цобы». Разон, сын Елиады, «который убежал от государя своего Адраазара, царя Сувского», собрал отряд, захватил Дамаск и вредил Соломону во все его дни: возвышение Дамаска означает конец первенства Сувы среди арамеев. Больше царство не упоминается, а ассирийская провинция, сохранившая его имя, лежала между Дамаском и Емафом. Сегодня Бекаа — земледельческая долина восточного Ливана между хребтами Ливан и Антиливан, с Баальбеком, древним Гелиополем, на севере."
+scripture:
+  - 1Sam.14.47
+  - 2Sam.8.3-2Sam.8.8
+  - 2Sam.8.9-2Sam.8.10
+  - 2Sam.8.12
+  - 2Sam.10.6-2Sam.10.8
+  - 2Sam.10.15-2Sam.10.19
+  - 2Sam.23.36
+  - 1Kgs.11.23-1Kgs.11.25
+  - 1Chr.18.3-1Chr.18.9
+  - 1Chr.19.6
+  - Ps.60.1
+sources:
+  - "Assyrian provincial lists and the Nimrud letters naming Subutu (E. Forrer, Die Provinzeinteilung des assyrischen Reiches, 1920)"
+  - "B. Mazar, 'The Aramean Empire and Its Relations with Israel', Biblical Archaeologist 25 (1962)"
+  - "A. Malamat, 'Aspects of the Foreign Policies of David and Solomon', Journal of Near Eastern Studies 22 (1963)"
+  - "H. Sader, Les états araméens de Syrie depuis leur fondation jusqu'à leur transformation en provinces assyriennes (1987)"
+  - "W. T. Pitard, Ancient Damascus (1987)"
+  - "E. Lipiński, The Aramaeans: Their Ancient History, Culture, Religion (2000)"
+status: checked

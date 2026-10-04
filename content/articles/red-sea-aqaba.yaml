@@ -1,0 +1,34 @@
+# Overview article (ADR 0007). Mainstream facts only; this record is the Gulf of Aqaba (the app's "Red Sea" at Elath); the Exodus crossing is another record (red-sea.yaml) and is only pointed to.
+id: red-sea-aqaba
+place: ad64d75
+title:
+  en: "Red Sea"
+  ru: "Чермное море"
+body:
+  en:
+    - "This article is about the Red Sea's eastern arm, the Gulf of Aqaba or Eilat, the stretch of the Bible's Red Sea that is beyond doubt: it runs some 160 km north from the Straits of Tiran to Elath and Ezion-geber. (The sea of the Exodus crossing and the meaning of its name are treated in the other Red Sea article.) The gulf is a trench of the great rift, up to 1,850 m deep and at most about 24 km wide, between the granite mountains of Sinai and the Hejaz, with coral reefs along both shores."
+    - "God set Israel's bounds “from the Red sea even unto the sea of the Philistines, and from the desert unto the river”. After the refusal at Kadesh the people were sent back “into the wilderness by the way of the Red sea”, went round Edom by that road, and “the soul of the people was much discouraged because of the way”; Jephthah recalled that Israel “walked through the wilderness unto the Red sea, and came to Kadesh”. At the head of the gulf Solomon built his fleet at Ezion-geber beside Eloth, and Hiram's sailors took it to Ophir. In Jeremiah's oracle on Edom the cry of its fall is heard as far as the Red Sea: “at the cry the noise thereof was heard in the Red sea”."
+    - "The gulf took its ancient name, the Aelanites, from Aela or Aelana, the biblical Elath at its head, which Strabo knew as the end of the overland road from Gaza; in Eusebius' day the Tenth Legion was stationed there. The copper mines of Timna lie in the Arabah just north of it. Today four states meet at the gulf, Egypt, Israel, Jordan and Saudi Arabia; Aqaba is Jordan's only seaport and Eilat Israel's outlet to the south, and Egypt's closing of the Straits of Tiran to Israeli shipping in 1967 helped bring on the Six-Day War."
+  ru:
+    - "Эта статья — о восточном рукаве Чермного моря, заливе Акаба, или Эйлатском, — той части библейского Чермного моря, о которой нет спора: он тянется примерно на 160 км к северу от Тиранского пролива до Елафа и Ецион-Гавера. (О море перехода в книге Исход и о значении его имени говорит другая статья о Чермном море.) Залив — впадина великого разлома, глубиной до 1850 м и шириной не больше примерно 24 км, между гранитными горами Синая и Хиджаза, с коралловыми рифами по обоим берегам."
+    - "Бог провёл пределы Израиля «от моря Чермного до моря Филистимского и от пустыни до реки великой Евфрата». После отказа у Кадеса народ отослали назад «в пустыню к Чермному морю», и они обошли Едом этой дорогой. «И стал малодушествовать народ на пути». Иеффай вспоминал, что Израиль «пошел в пустыню к Чермному морю и пришел в Кадес». У вершины залива Соломон построил флот в Ецион-Гавере при Елафе, и корабельщики Хирама водили его в Офир. В пророчестве Иеремии о Едоме крик его падения доносится до Чермного моря: «отголосок крика их слышен будет у Чермного моря»."
+    - "Залив получил древнее имя Эланитского от Элы, или Эланы, — библейского Елафа у его вершины, который Страбон знал как конец сухопутной дороги из Газы; во времена Евсевия там стоял Десятый легион. Медные рудники Тимны лежат в Араве чуть к северу. Сегодня у залива сходятся четыре государства — Египет, Израиль, Иордания и Саудовская Аравия; Акаба — единственный морской порт Иордании, Эйлат — выход Израиля на юг, а закрытие Египтом Тиранского пролива для израильских судов в 1967 году стало одним из поводов к Шестидневной войне."
+scripture:
+  - Exod.23.31
+  - Num.14.25
+  - Num.21.4
+  - Deut.1.40
+  - Deut.2.1
+  - Deut.2.8
+  - Judg.11.16
+  - 1Kgs.9.26-1Kgs.9.28
+  - 2Chr.8.17
+  - Jer.49.21
+sources:
+  - "Herodotus, Histories 2.11 (the Arabian Gulf)"
+  - "Strabo, Geography 16.2.30 and 16.4.4 (Aela and the Aelanites gulf)"
+  - "Josephus, Jewish Antiquities 8.163 (Solomon's ships at Ezion-geber near Eloth)"
+  - "Eusebius, Onomasticon, s.v. Ailam (the Tenth Legion at Aila)"
+  - "B. Rothenberg, Timna: Valley of the Biblical Copper Mines (1972)"
+  - "S. T. Parker, 'The Roman 'Aqaba Project: The 1994 Campaign', Annual of the Department of Antiquities of Jordan 40 (1996)"
+status: checked

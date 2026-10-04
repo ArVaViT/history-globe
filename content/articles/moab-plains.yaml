@@ -1,0 +1,39 @@
+# Overview article (ADR 0007). Mainstream facts only; this record is the plains of Moab (all its verses say "plains of Moab"), not the Moabite plateau (moab.yaml); no mound is identified with Abel-shittim or Beth-jeshimoth as fact.
+id: moab-plains
+place: aca767b
+title:
+  en: "Plains of Moab"
+  ru: "Равнины Моавитские"
+body:
+  en:
+    - "The plains of Moab, in Hebrew arboth Moab, are not the Moabite plateau but the lowland at the north-eastern corner of the Dead Sea, where the Jordan valley widens before the river enters the sea, “on this side Jordan by Jericho”. The camp stretched “from Beth-jesimoth even unto Abel-shittim”, several kilometres along the foot of the hills north of the lake shore, watered by the streams coming down from the Moabite heights. The plateau above had been Moab's and then Sihon's; Israel took it from the Amorites, which is why the plain bears Moab's name though it was not Moabite land when Israel came."
+    - "Here the wanderings ended. While Israel camped on these plains, Balak king of Moab sent for Balaam; here, at Shittim, “the people began to commit whoredom with the daughters of Moab” and the plague followed; here Moses and Eleazar took the second census, the war against Midian brought its captives “unto the camp at the plains of Moab”, and the laws of the cities of refuge and of Zelophehad's daughters were given, “the commandments and the judgments, which the LORD commanded by the hand of Moses unto the children of Israel in the plains of Moab”. Deuteronomy is Moses' farewell spoken “in the land of Moab”, and its covenant is set “beside the covenant which he made with them in Horeb”. Moses went up from the plains to Nebo and died, and “the children of Israel wept for Moses in the plains of Moab thirty days”. Joshua's spies left from Shittim, and from here the people crossed the Jordan."
+    - "Josephus places Moses' last assembly at Abila, a place full of palm trees, sixty furlongs from the Jordan; Eusebius still knew a village Isimouth opposite Jericho, ten miles to the south by the Dead Sea, and put Shittim near Mount Peor. The plain is dotted with mounds of the Bronze and Iron Ages: Tall el-Hammam, the largest, Tell Iktanu, Tall Nimrin and Tall el-Kafrayn, several of them proposed for Abel-shittim or Beth-jeshimoth, none proven. Today it is the Jordan Valley district around South Shuna and Sweimeh in Jordan, irrigated farmland and Dead Sea hotels, with Mount Nebo looking down on it from the east and Jericho across the river."
+  ru:
+    - "Равнины Моавитские, по-еврейски арвот Моав, — не Моавитское плоскогорье, а низина у северо-восточного угла Мёртвого моря, где долина Иордана расширяется перед впадением реки в море, «при Иордане, против Иерихона». Стан тянулся «от Беф-Иешимофа до Аве-Ситтима», на несколько километров вдоль подножия гор к северу от берега озера, и орошался потоками, сбегающими с Моавитских высот. Плоскогорье над ним принадлежало сначала Моаву, потом Сигону; Израиль отнял его у Аморреев, поэтому равнина носит имя Моава, хотя землёй Моавитян ко времени прихода Израиля не была."
+    - "Здесь закончились странствия. Пока Израиль стоял станом на этих равнинах, Валак, царь Моавитский, послал за Валаамом, чтобы проклясть его; здесь, в Ситтиме, «начал народ блудодействовать с дочерями Моава», и за этим последовала язва; здесь Моисей и Елеазар провели второе исчисление, война с Мадианитянами привела пленных «к стану, на равнины Моавитские», и были даны законы о городах убежища и о дочерях Салпаада — «заповеди и постановления, которые дал Господь сынам Израилевым чрез Моисея на равнинах Моавитских». Второзаконие — прощальные речи Моисея «в земле Моавитской», и завет в нём поставлен «кроме завета, который Господь поставил с ними на Хориве». Моисей взошёл с равнин на Нево и умер, и «оплакивали Моисея сыны Израилевы на равнинах Моавитских у Иордана близ Иерихона тридцать дней». Из Ситтима ушли соглядатаи Иисуса Навина, и отсюда народ перешёл Иордан."
+    - "Иосиф Флавий помещает последнее собрание Моисея в Авиле, месте, полном пальм, в шестидесяти стадиях от Иордана; Евсевий ещё знал селение Исимуф против Иерихона, в десяти милях к югу у Мёртвого моря, а Ситтим помещал близ горы Фегор. Равнина усеяна холмами бронзового и железного веков: Талль-эль-Хаммам, самый большой, Телль-Иктану, Талль-Нимрин и Талль-эль-Кафрейн; несколько из них предлагали на роль Аве-Ситтима или Беф-Иешимофа, ни одно не доказано. Сегодня это округ Иорданской долины вокруг Южной Шуны и Свеймы в Иордании, орошаемые поля и отели Мёртвого моря; с востока на равнину смотрит гора Нево, а за рекой лежит Иерихон."
+scripture:
+  - Num.22.1
+  - Num.25.1
+  - Num.26.3
+  - Num.31.12
+  - Num.33.48-Num.33.50
+  - Num.35.1
+  - Num.36.13
+  - Deut.1.5
+  - Deut.29.1
+  - Deut.34.1
+  - Deut.34.5-Deut.34.8
+  - Josh.2.1
+  - Josh.3.1
+  - Josh.13.32
+sources:
+  - "Josephus, Jewish Antiquities 4.176 (Moses assembles the people at Abila, “a place full of palm-trees”); 5.4 (from Abila to the Jordan, sixty furlongs)"
+  - "Eusebius, Onomasticon, s.v. Bethasimuth; Sattim"
+  - "N. Glueck, Explorations in Eastern Palestine IV (Annual of the American Schools of Oriental Research 25-28, 1951)"
+  - "K. Prag, 'Preliminary Report on the Excavations at Tell Iktanu, Jordan, 1987', Levant 21 (1989)"
+  - "J. W. Flanagan, D. W. McCreery and K. N. Yassine, 'First Preliminary Report of the 1989 Tell Nimrin Project', Annual of the Department of Antiquities of Jordan 34 (1990)"
+  - "S. Collins, C. M. Kobs and M. C. Luddeni, The Tall al-Hammam Excavations, vol. 1 (2015)"
+  - "B. MacDonald, “East of the Jordan”: Territories and Sites of the Hebrew Scriptures (2000)"
+status: checked

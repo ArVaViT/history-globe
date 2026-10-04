@@ -1,0 +1,27 @@
+id: where-was-the-septuagint-made
+question:
+  en: "Where was the Septuagint made?"
+  ru: "Где была создана Септуагинта?"
+answer:
+  en:
+    - "In Alexandria, the Greek capital of Egypt founded by Alexander in 331 BC, about 510 km from Jerusalem in a straight line; the map point stands on it. The Jews of the city, who spoke Greek and were losing their Hebrew, translated the Law of Moses there in the third century BC, and the rest of the scriptures followed over the next two centuries, so that by about 132 BC the grandson of Ben Sira could write in his prologue that the Law, the Prophets and the rest of the books read differently in Greek than in Hebrew."
+    - "The story of the translation is told in the Letter of Aristeas, written in Alexandria in the second century BC: King Ptolemy II (283–246 BC), at the suggestion of his librarian, asked the high priest in Jerusalem for seventy-two elders, six from each tribe, who translated the Law on the island of Pharos in seventy-two days. Philo, an Alexandrian Jew of Jesus' time, says the city kept an annual festival on Pharos in honour of the translation, and Josephus retells the letter at length. The number gave the version its name, “the Seventy”, Septuaginta in Latin. Most scholars accept the time and place while treating the royal commission and the miraculous agreement of the translators as legend."
+    - "This was the Bible of the first Christians outside Palestine. When Luke quotes the passage the Ethiopian eunuch was reading, “He was led as a sheep to the slaughter; and like a lamb dumb before his shearer”, the words follow the Greek of Isaiah; Apollos, “born at Alexandria, an eloquent man, and mighty in the scriptures”, had learned them in that form. The Dead Sea Scrolls include Greek fragments of the Pentateuch from the second and first centuries BC, among the oldest copies, and some Hebrew texts closer to the Septuagint's source than to the later Masoretic text."
+  ru:
+    - "В Александрии, греческой столице Египта, основанной Александром в 331 г. до н. э., примерно в 510 км от Иерусалима по прямой; точка карты стоит на ней. Иудеи города, говорившие по-гречески и терявшие еврейский язык, перевели там Закон Моисеев в III веке до н. э., а остальные книги Писания последовали в ближайшие два столетия, так что около 132 г. до н. э. внук Бен-Сиры мог писать в своём предисловии, что Закон, Пророки и прочие книги по-гречески звучат иначе, чем по-еврейски."
+    - "Историю перевода рассказывает Письмо Аристея, написанное в Александрии во II веке до н. э.: царь Птолемей II (283–246 гг. до н. э.) по совету своего библиотекаря попросил у первосвященника в Иерусалиме семьдесят два старца, по шесть от каждого колена, и те перевели Закон на острове Фарос за семьдесят два дня. Филон, александрийский иудей времён Иисуса, пишет, что город ежегодно справлял на Фаросе праздник в честь перевода, а Иосиф Флавий пространно пересказывает письмо. Число дало переводу имя — «Семьдесят», по-латыни Септуагинта. Большинство учёных принимают время и место, считая царский заказ и чудесное согласие переводчиков легендой."
+    - "Это была Библия первых христиан за пределами Палестины. Когда Лука приводит отрывок, который читал эфиопский евнух, — «как овца, веден был Он на заклание, и, как агнец пред стригущим его безгласен», — слова следуют греческому тексту Исаии; Аполлос, «родом из Александрии, муж красноречивый и сведущий в Писаниях», знал их в этом виде. Среди свитков Мёртвого моря есть греческие фрагменты Пятикнижия II–I веков до н. э., одни из древнейших списков, и еврейские тексты, которые ближе к источнику Септуагинты, чем к позднейшему масоретскому тексту."
+map:
+  place: aee7248
+  year: "c. 250 BC"
+  ref: Acts.18.24
+scripture: [Acts.18.24, Acts.8.32-Acts.8.33, Isa.53.7-Isa.53.8, Acts.6.9]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Letter of Aristeas, tr. R. J. H. Shutt in J. H. Charlesworth (ed.), The Old Testament Pseudepigrapha, vol. 2 (1985)"
+  - "Philo, On the Life of Moses 2.25-44 (the translation and the festival on Pharos)"
+  - "Josephus, Antiquities 12.11-118 (the translation under Ptolemy II)"
+  - "Prologue to the Wisdom of Ben Sira (Ecclesiasticus)"
+  - "N. Fernández Marcos, The Septuagint in Context: Introduction to the Greek Versions of the Bible (2000)"
+  - "E. Tov, Textual Criticism of the Hebrew Bible (3rd ed., 2012)"
+status: checked

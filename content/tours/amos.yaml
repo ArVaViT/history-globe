@@ -1,0 +1,77 @@
+# Amos, in the order of the book: the herdman of Tekoa, the oracles against the nations
+# (1:3-2:16), the words against Samaria, Bethel, Gilgal and Beersheba, and Amaziah the
+# priest of Bethel sending him home (7:10-17). The tour's year (760 BC) is the usual point
+# for "two years before the earthquake" (1:1), in the reigns of Uzziah and Jeroboam II
+# (Jeroboam II c. 793-753 BC); the earthquake is set c. 760 BC from the destruction layer
+# at Hazor (Yadin), c. 750 BC by others.
+# Israel's own oracle (2:6-16) names no place and is told at Samaria.
+id: amos
+title:
+  en: "Amos: the words against the nations"
+  ru: "Амос: слово против народов"
+year: "760 BC"
+# Where the words were aimed, not a journey: no time on foot. Only Tekoa and Bethel are
+# the prophet's own places.
+walked: false
+approximate: true
+stops:
+  - place: a2e3aa0 # Tekoa
+    ref: Amos.1.1-Amos.1.2
+    note:
+      en: '"The words of Amos, who was among the herdmen of Tekoa": a shepherd of Judah sent to Israel, two years before the earthquake.'
+      ru: "«Слова Амоса, одного из пастухов Фекойских»: пастух из Иудеи, посланный к Израилю, за два года перед землетрясением."
+  - place: a69c1d4 # Damascus
+    ref: Amos.1.3-Amos.1.5
+    note:
+      en: '"For three transgressions of Damascus, and for four": they threshed Gilead with iron; the people of Syria shall go captive to Kir.'
+      ru: "«за три преступления Дамаска и за четыре»: они молотили Галаад железными молотилами; народ Арамейский пойдёт в плен в Кир."
+  - place: aa8edd2 # Gaza
+    ref: Amos.1.6-Amos.1.8
+    note:
+      en: "Gaza carried a whole people away captive to deliver them up to Edom: fire on its wall, and the remnant of the Philistines shall perish."
+      ru: "Газа вывела всех в плен, чтобы предать их Едому: огонь в стены её, и остаток Филистимлян погибнет."
+  - place: a160272 # Tyre
+    ref: Amos.1.9-Amos.1.10
+    note:
+      en: "Tyre delivered up captives to Edom and remembered not the brotherly covenant."
+      ru: "Тир передал пленных Едому и не вспомнил братского союза."
+  - place: a871210 # Bozrah
+    ref: Amos.1.11-Amos.1.12
+    note:
+      en: 'Edom pursued his brother with the sword: "I will send a fire upon Teman, which shall devour the palaces of Bozrah."'
+      ru: "Едом преследовал брата своего мечом: «пошлю огонь на Феман, и пожрет чертоги Восора»."
+  - place: ae067b5 # Rabbah
+    ref: Amos.1.13-Amos.1.15
+    note:
+      en: "The Ammonites ripped up the women of Gilead to enlarge their border: fire in the wall of Rabbah, and their king goes into captivity."
+      ru: "Аммонитяне рассекали беременных в Галааде, чтобы расширить пределы свои: огонь в стенах Раввы, и царь их пойдёт в плен."
+  - place: a2d84de # Kerioth
+    ref: Amos.2.1-Amos.2.3
+    note:
+      en: "Moab burned the bones of the king of Edom into lime: fire shall devour the palaces of Kerioth."
+      ru: "Моав пережёг кости царя Едомского в известь: огонь пожрёт чертоги Кериофа."
+  - place: a15257a # Jerusalem
+    ref: Amos.2.4-Amos.2.5
+    note:
+      en: 'Judah too: they despised the law of the Lord; "I will send a fire upon Judah, and it shall devour the palaces of Jerusalem."'
+      ru: "И Иуда: отвергли закон Господень; «пошлю огонь на Иуду, и пожрет чертоги Иерусалима»."
+  - place: a041bb3 # Samaria
+    ref: Amos.2.6-Amos.4.3
+    note:
+      en: 'Last and longest, Israel: they sell the righteous for silver and the poor for a pair of shoes. The nations are called to the mountains of Samaria to see its oppressions, and the "kine of Bashan" shall be led away with hooks.'
+      ru: "Последним и дольше всех обличается Израиль: продают правого за серебро и бедного за пару сандалий. Народы зовут на горы Самарии посмотреть на притеснения в ней, и «телицы Васанские» будут уведены крюками."
+  - place: ab94aea # Gilgal
+    ref: Amos.4.4-Amos.4.13
+    note:
+      en: "The sacrifices at Bethel and Gilgal only multiply transgression; famine, drought, blight and plague did not bring Israel back. Prepare to meet thy God."
+      ru: "Жертвы в Вефиле и Галгале лишь умножают преступления; голод, засуха, ржа и мор не вернули Израиль. Приготовься к сретению Бога твоего."
+  - place: ad2f6c2 # Beersheba
+    ref: Amos.5.1-Amos.5.27
+    note:
+      en: 'A lament over the virgin of Israel: "seek not Beth-el, nor enter into Gilgal, and pass not to Beer-sheba"; seek the Lord, and let judgment run down as waters.'
+      ru: "Плач о деве Израилевой: «Не ищите Вефиля и не ходите в Галгал, и в Вирсавию не странствуйте»; ищите Господа, и пусть, как вода, течёт суд."
+  - place: a64f355 # Bethel
+    ref: Amos.7.10-Amos.7.17
+    note:
+      en: 'Amaziah the priest of Bethel reports Amos to Jeroboam and sends him away to Judah: "prophesy not again any more at Beth-el: for it is the king''s chapel". Amos answers that he was no prophet nor a prophet''s son, but the Lord took him from the flock.'
+      ru: "Амасия, священник Вефильский, доносит на Амоса Иеровоаму и гонит его в Иудею: «в Вефиле больше не пророчествуй, ибо он святыня царя». Амос отвечает: «я не пророк и не сын пророка», но Господь взял его от овец."

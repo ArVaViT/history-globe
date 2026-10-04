@@ -1,0 +1,32 @@
+# Overview article (ADR 0007). Mainstream facts only; Assyrian dates follow the eponym chronicle; the Sefire treaty date is given as approximate.
+id: arpad
+place: a173c40
+title:
+  en: "Arpad"
+  ru: "Арпад"
+body:
+  en:
+    - "Arpad was the capital of an Aramaean kingdom of northern Syria, Bit-Agusi, “the house of Gusi”, named after its founder of the ninth century BC. The site is Tell Rifaat, a large mound about 30 km north of Aleppo, where M. V. Seton-Williams dug in 1956, 1960 and 1964 and found massive mud-brick fortifications and Iron Age levels, though the city is still mostly unexcavated. The kingdom reached from the Afrin valley to the Euphrates and for a time led the Aramaean states of the north."
+    - "Arpad's history is known from its neighbours and enemies. About 800 BC its king joined the coalition that Bar-hadad of Damascus led against Zakkur of Hamath, as Zakkur's stele records. Three stelae found at Sefire, south-east of Aleppo, carry the treaty that Mati'el of Arpad swore about 754 BC with a king called Bar-ga'yah of KTK, the longest Aramaic inscription of the period, with curses that resemble those of Deuteronomy; the same Mati'-ilu had sworn a treaty to Ashur-nirari V of Assyria. He then went over to Urartu, and Tiglath-pileser III besieged Arpad for three years, from 743 BC, took it in 740 and made it the seat of an Assyrian province. It rose once more with Hamath and Damascus in 720 and was crushed by Sargon II."
+    - "This is why Arpad is a byword in the Bible for a city that could not be saved. Sennacherib's Rabshakeh asked under the walls of Jerusalem, “Where are the gods of Hamath, and of Arpad?”, and his letter to Hezekiah, “Where is the king of Hamath, and the king of Arpad?”; Isaiah's Assyrian boasts, “is not Hamath as Arpad?”; Jeremiah's oracle on Damascus begins, “Hamath is confounded, and Arpad”. Tall Rifaat today is a town of the Aleppo governorate of Syria, which changed hands more than once in the Syrian war; the mound rises beside it."
+  ru:
+    - "Арпад был столицей арамейского царства северной Сирии, Бит-Агуси, «дома Гуси», названного по его основателю IX века до н. э. Это Телль-Рифаат, большой холм примерно в 30 км к северу от Алеппо, где М. В. Сетон-Уильямс копала в 1956, 1960 и 1964 гг. и нашла мощные сырцовые укрепления и слои железного века, хотя город по большей части ещё не раскопан. Царство простиралось от долины Африна до Евфрата и одно время возглавляло арамейские государства севера."
+    - "История Арпада известна от его соседей и врагов. Около 800 г. до н. э. его царь вошёл в коалицию, которую Бар-Хадад Дамасский повёл против Закура Емафского, как записано на стеле Закура. Три стелы, найденные в Сефире к юго-востоку от Алеппо, несут договор, который Матиэль Арпадский заключил около 754 г. до н. э. с царём по имени Бар-Гайя из КТК, — самую длинную арамейскую надпись того времени, с проклятиями, похожими на проклятия Второзакония; тот же Мати-илу присягал по договору Ашшур-нирари V Ассирийскому. Затем он перешёл к Урарту, и Феглаффелласар III три года, с 743 г. до н. э., осаждал Арпад, взял его в 740 г. и сделал центром ассирийской провинции. Город поднялся ещё раз вместе с Емафом и Дамаском в 720 г. и был раздавлен Саргоном II."
+    - "Потому Арпад в Библии — пример города, который не удалось спасти. Рабсак Сеннахирима спрашивал под стенами Иерусалима: «Где боги Емафа и Арпада?», а его письмо Езекии: «Где царь Емафа, и царь Арпада?»; Ассириец у Исаии хвалится: «Емаф не то же ли, что Арпад?»; пророчество Иеремии о Дамаске начинается словами: «Посрамлены Емаф и Арпад». Телль-Рифаат сегодня — город провинции Алеппо в Сирии, не раз переходивший из рук в руки в сирийской войне; холм поднимается рядом с ним."
+scripture:
+  - 2Kgs.18.34
+  - 2Kgs.19.13
+  - Isa.10.9
+  - Isa.36.19
+  - Isa.37.13
+  - Jer.49.23
+sources:
+  - "The Zakkur Stele (KAI 202)"
+  - "The Sefire stelae (KAI 222-224); J. A. Fitzmyer, The Aramaic Inscriptions of Sefire (rev. ed., 1995)"
+  - "Treaty of Ashur-nirari V with Mati'-ilu of Arpad (SAA 2, no. 2)"
+  - "A. Millard, The Eponyms of the Assyrian Empire 910-612 BC (1994) (the siege of Arpad, 743-740 BC)"
+  - "Tiglath-pileser III, Annals (RINAP 1); Sargon II, Annals (RINAP 2) (the revolt of 720 BC)"
+  - "M. V. Seton-Williams, 'Preliminary Report on the Excavations at Tell Rifa'at', Iraq 23 (1961); 'The Excavations at Tell Rifa'at, 1964', Iraq 29 (1967)"
+  - "H. Sader, Les états araméens de Syrie (1987)"
+  - "E. Lipiński, The Aramaeans: Their Ancient History, Culture, Religion (2000)"
+status: checked

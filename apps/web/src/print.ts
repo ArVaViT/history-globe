@@ -5,6 +5,7 @@ import type { Globe } from "./useGlobe";
 import { loadVerse } from "./verses";
 import { distanceKm, roundKm } from "./distance";
 import { romanLeg } from "./leg";
+import { russianCases } from "../../../scripts/russian-forms.ts";
 
 /**
  * A sheet for a class: the map as drawn, under a title and the year, with the stops of the
@@ -60,6 +61,33 @@ export function readableLink(link: string): string {
     : link;
 }
 
+/** The height of an A4 page inside its margins (styles.css, `@page hg-sheet`), less a
+ * little for the browser's own breaks, in CSS pixels. */
+const PAGE_PX = ((297 - 24 - 4) * 96) / 25.4;
+
+/**
+ * The layout that keeps the sheet one page, measured off screen at the page's width: as
+ * built, the stops in two columns, then the map a little smaller. A sheet longer than all
+ * of them keeps two columns and takes the pages it needs. Balaam's eighth stop went over
+ * to a second page alone.
+ */
+function fitOnePage(sheet: HTMLElement, list: HTMLElement | null): void {
+  sheet.classList.add("hg-measure");
+  const fits = () => sheet.getBoundingClientRect().height <= PAGE_PX;
+  const tries: [Element | null, string][] = [
+    [list, "many"],
+    [sheet, "tight"],
+    [sheet, "tighter"],
+    [sheet, "tightest"],
+  ];
+  for (const [el, name] of tries) {
+    if (fits()) break;
+    el?.classList.add(name);
+  }
+  if (!fits()) sheet.classList.remove("tight", "tighter", "tightest");
+  sheet.classList.remove("hg-measure");
+}
+
 export async function printSheet(s: PrintSheet): Promise<void> {
   document.getElementById("hg-print")?.remove();
   const sheet = make("section", `hg-sheet${s.blank ? " blank" : ""}`);
@@ -86,7 +114,8 @@ export async function printSheet(s: PrintSheet): Promise<void> {
     sheet.append(bar);
   }
   if (s.items.length > 0) {
-    // A long tour's stops in two columns, so that the sheet stays one page.
+    // A long tour's stops in two columns, so that the sheet stays one page (fitOnePage
+    // chooses for fewer stops).
     const list = make(
       "ol",
       `hg-sheet-list${s.blank || s.items.some((i) => i.note) ? " notes" : ""}${s.items.length >= 10 ? " many" : ""}`,
@@ -121,6 +150,7 @@ export async function printSheet(s: PrintSheet): Promise<void> {
   document.body.append(sheet);
 
   await img.decode().catch(() => undefined);
+  fitOnePage(sheet, sheet.querySelector("ol"));
   const done = () => {
     sheet.remove();
     window.removeEventListener("afterprint", done);
@@ -378,6 +408,65 @@ export function maskPlace(
   return out.replace(/______(?:[\s-]*______)+/g, gap).trim();
 }
 
+/** The case a preposition before a Russian name asks for (index into russianCases). */
+const CASE_AFTER: Readonly<Record<string, number>> = {
+  в: 5,
+  во: 5,
+  на: 5,
+  о: 5,
+  об: 5,
+  при: 5,
+  из: 1,
+  от: 1,
+  до: 1,
+  у: 1,
+  около: 1,
+  близ: 1,
+  к: 2,
+  ко: 2,
+  по: 2,
+};
+
+/**
+ * The quiz's choices in the case the gap stands in: «вышел из ______» offers «Ефеса» and
+ * «Вифлеема», not «Ефес». The case is the one the answer's name takes in the text; where a
+ * form could be several cases («Самарии»), the preposition before it decides. Unknown, or
+ * one choice that does not decline: the choices stay as they are.
+ */
+export function inCaseOf(text: string, answer: string, options: readonly string[]): string[] {
+  const own = russianCases(answer);
+  if (!own) return [...options];
+  const plain = (x: string) => x.replace(/ё/g, "е");
+  const t = plain(text);
+  // Every mention of the answer, whole form against whole form, with the cases it can be.
+  const found = new Map<number, Set<number>>();
+  own.forEach((form, i) => {
+    const esc = plain(form).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    for (const m of t.matchAll(new RegExp(`(?<![\\p{L}-])${esc}(?![\\p{L}-])`, "gu")))
+      found.set(m.index, (found.get(m.index) ?? new Set()).add(i));
+  });
+  if (found.size === 0) return [...options];
+  const cases = new Set<number>();
+  for (const [at, can] of found) {
+    if (can.has(0)) return [...options];
+    const before = (/(\p{L}+)\s+$/u.exec(t.slice(0, at))?.[1] ?? "").toLowerCase();
+    const after = CASE_AFTER[before];
+    const index =
+      can.size === 1 ? [...can][0] : after !== undefined && can.has(after) ? after : undefined;
+    if (index === undefined) return [...options];
+    cases.add(index === 6 ? 4 : index);
+  }
+  // Two gaps in two cases («в ______ … из ______»): one set of choices cannot fit both.
+  if (cases.size !== 1) return [...options];
+  const index = [...cases][0] ?? 0;
+  const out = options.map((o) => {
+    const [base = "", rest] = o.split(/(?= \()/);
+    const c = russianCases(base);
+    return c?.[index] === undefined ? null : `${c[index]}${rest ?? ""}`;
+  });
+  return out.every((x) => x !== null) ? out : [...options];
+}
+
 /** A verse quoted from mid-sentence («они, узнав…») starts the question with a capital. */
 const capital = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
@@ -400,6 +489,8 @@ export interface QuizItem {
   readonly options: readonly string[];
   /** Index of the right option. */
   readonly answer: number;
+  /** The options in the nominative, to name the right one after a wrong choice. */
+  readonly names: readonly string[];
   /** The place each option names, to fly to it and measure how far off a wrong one is. */
   readonly ids: readonly string[];
 }
@@ -497,6 +588,7 @@ export async function buildQuiz({
     if (!text || overlaps(i)) return [];
     const p = data.byId.get(st.placeId)?.props;
     const options = quizOptions(names[i] ?? "", pool, i + 1);
+    const shown = ru ? inCaseOf(text, plain[i] ?? "", options) : options;
     return [
       {
         text: capital(
@@ -509,7 +601,8 @@ export async function buildQuiz({
             return st.ref;
           }
         })(),
-        options,
+        options: shown,
+        names: options,
         answer: options.indexOf(names[i] ?? ""),
         ids: options.map((o) => idOf.get(o) ?? ""),
       },

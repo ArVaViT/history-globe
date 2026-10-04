@@ -1,0 +1,34 @@
+id: where-was-peter-imprisoned-and-freed
+question:
+  en: "Where was Peter imprisoned and freed by the angel?"
+  ru: "Где Пётр был заключён и освобождён ангелом?"
+answer:
+  en:
+    - "In Jerusalem, at Passover of AD 44 or the year before, under Herod Agrippa I, who had just had James the brother of John beheaded. Acts does not name the prison. The royal palaces stood on the western hill above the Temple, and the Antonia fortress at the north-west corner of the Temple Mount held the garrison; either could have held Peter, and the iron gate “that leadeth unto the city” suggests a place at the edge of the built town. The house of Mary, the mother of John Mark, where the church was praying, is claimed by the Syrian Orthodox church of St Mark in the Armenian Quarter, a tradition that cannot be traced earlier than the Byzantine period. Agrippa left for Caesarea, 87 km away, and died there in 44."
+    - "Luke tells it closely: Herod, having killed James, “proceeded further to take Peter also. (Then were the days of unleavened bread.)” He “delivered him to four quaternions of soldiers to keep him”. “The same night Peter was sleeping between two soldiers, bound with two chains: and the keepers before the door kept the prison. And, behold, the angel of the Lord came upon him, and a light shined in the prison”. “When they were past the first and the second ward, they came unto the iron gate that leadeth unto the city; which opened to them of his own accord”. Peter went “to the house of Mary the mother of John, whose surname was Mark; where many were gathered together praying”, then “departed, and went into another place”. Herod “examined the keepers, and commanded that they should be put to death. And he went down from Judæa to Cæsarea, and there abode.”"
+    - "The date is anchored more firmly than most in Acts: Agrippa received Judea from Claudius in 41 and died at Caesarea in 44, struck down at games in the emperor's honour, as Josephus relates in agreement with Acts. Where Peter went is not said; Antioch and Rome have both been guessed. The chains venerated in Rome at San Pietro in Vincoli are said, in a later tradition, to have been sent from Jerusalem by the empress Eudocia in the fifth century. The church of St Peter in Gallicantu on the eastern slope of Mount Zion commemorates not this prison but the house of Caiaphas and Peter's denial."
+  ru:
+    - "В Иерусалиме, на Пасху 44 г. н. э. или годом раньше, при Ироде Агриппе I, который только что обезглавил Иакова, брата Иоаннова. Деяния не называют темницу. Царские дворцы стояли на западном холме над Храмом, а в крепости Антония на северо-западном углу Храмовой горы стоял гарнизон; Петра могли держать и там и там, а железные ворота, «ведущие в город», указывают на место у края застроенного города. Дом Марии, матери Иоанна Марка, где молилась церковь, приписывает себе сирийская православная церковь святого Марка в Армянском квартале — предание, которое не прослеживается раньше византийского времени. Агриппа уехал в Кесарию, за 87 км, и умер там в 44 году."
+    - "Лука рассказывает подробно: Ирод «убил Иакова, брата Иоаннова, мечом» и, видя, что это приятно иудеям, «вслед за тем взял и Петра, - тогда были дни опресноков». Он «приказал четырем четверицам воинов стеречь его», и «в ту ночь Петр спал между двумя воинами, скованный двумя цепями, и стражи у дверей стерегли темницу. И вот, Ангел Господень предстал, и свет осиял темницу». «Пройдя первую и вторую стражу, они пришли к железным воротам, ведущим в город, которые сами собою отворились им». Пётр «пришел к дому Марии, матери Иоанна, называемого Марком, где многие собрались и молились», а потом, «выйдя, пошел в другое место». Ирод же «судил стражей и велел казнить их. Потом он отправился из Иудеи в Кесарию и там оставался»."
+    - "Эта дата закреплена надёжнее большинства в Деяниях: Агриппа получил Иудею от Клавдия в 41 году и умер в Кесарии в 44-м, сражённый на играх в честь императора, как рассказывает Иосиф Флавий в согласии с Деяниями. Куда ушёл Пётр, не сказано; гадали и об Антиохии, и о Риме. О цепях, почитаемых в Риме в церкви Сан-Пьетро-ин-Винколи, позднее предание говорит, что их прислала из Иерусалима императрица Евдокия в V веке. Церковь святого Петра в Галликанту на восточном склоне горы Сион напоминает не об этой темнице, а о доме Каиафы и отречении Петра."
+map:
+  place: a15257a
+  year: "AD 44"
+  ref: Acts.12.7
+scripture:
+  [
+    Acts.12.1-Acts.12.4,
+    Acts.12.6-Acts.12.7,
+    Acts.12.10,
+    Acts.12.12,
+    Acts.12.17,
+    Acts.12.19,
+    Acts.12.21-Acts.12.23,
+  ]
+sources:
+  - "Josephus, Antiquities 19.274-275 (Claudius gives Agrippa Judea and Samaria); 19.343-350 (his death at Caesarea)"
+  - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. G. Vermes and F. Millar, vol. 1 (1973), § 18 (Agrippa I)"
+  - "J. Murphy-O'Connor, The Holy Land: An Oxford Archaeological Guide (5th ed., 2008) (St Mark's, St Peter in Gallicantu)"
+  - "History Globe tour “The apostle Peter” and History Globe dated events (agrippa-dies AD 44)"
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+status: checked

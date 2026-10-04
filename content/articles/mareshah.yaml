@@ -1,0 +1,34 @@
+# Overview article (ADR 0007). Mainstream facts only; the site, Tel Maresha (Tell Sandahanna), is the accepted one; the figures of Zerah's army are quoted as the text gives them.
+id: mareshah
+place: a5cda86
+title:
+  en: "Mareshah"
+  ru: "Мареша"
+body:
+  en:
+    - "Mareshah is Tel Maresha, the mound of Tell Sandahanna in the Shephelah, the lowland of Judah, about 2 km south of Beit Guvrin and about 38 km south-west of Jerusalem, on the road from the coast to Hebron. Joshua lists it among the cities of the lowland with Keilah and Achzib, and the genealogies of Judah give it a founder, Laadah, and count “the sons of Mareshah the father of Hebron” among Caleb's line. Rehoboam fortified it with Gath and Ziph, and Micah plays on its name, “heir”: “Yet will I bring an heir unto thee, O inhabitant of Mareshah”."
+    - "Here Asa met “Zerah the Ethiopian with an host of a thousand thousand, and three hundred chariots”, and the armies “set the battle in array in the valley of Zephathah at Mareshah”; Asa prayed, “it is nothing with thee to help, whether with many, or with them that have no power”, and pursued the broken host to Gerar. From Mareshah came the prophet Eliezer, who told Jehoshaphat that his ships would not sail because he had joined himself with Ahaziah."
+    - "After the exile Edomites settled the lowland, and Mareshah, now Marisa, became the chief town of Idumea, with a colony of Sidonian merchants whose painted tombs, found in 1902, show hunting scenes and animals; the Zenon papyri of 259 BC record Ptolemaic agents trading there. John Hyrcanus took it late in the second century BC and made the Idumeans Jews, among them the ancestors of Herod; the Parthians destroyed it in 40 BC, and Eusebius saw only ruins two miles from Eleutheropolis. Under the mound and around it are hundreds of rock-cut caves: olive presses, columbaria for doves, cisterns and the great bell-shaped quarries of Beit Guvrin."
+    - "Bliss and Macalister excavated the Hellenistic town in 1898–1900, and Amos Kloner's work since the 1980s cleared the caves; the Beit Guvrin–Maresha national park, with the Sidonian tomb and the bell caves, was inscribed by UNESCO in 2014."
+  ru:
+    - "Мареша — это Тель-Мареша, холм Телль-Сандаханна в Шефеле, низменности Иуды, примерно в 2 км к югу от Бейт-Гуврина и примерно в 38 км к юго-западу от Иерусалима, на дороге с побережья в Хеврон. Иисус Навин перечисляет её среди городов низменности вместе с Кеилой и Ахзивом, а родословия Иуды дают ей основателя, Лаеду, и числят «сыновья Мареши, отца Хеврона» в роду Халева. Ровоам укрепил её вместе с Гефом и Зифом, а Михей играет её именем, созвучным слову «наследник»: «Еще наследника приведу к тебе, жительница Мореша»."
+    - "Здесь Аса встретил Зарая Ефиоплянина «с войском в тысячу тысяч и с тремястами колесниц», и войска «построились к сражению на долине Цефата у Мареши»; Аса молился: «не в Твоей ли силе помочь сильному или бессильному?» — и преследовал разбитое войско до Герара. Из Мареши был пророк Елиезер, сказавший Иосафату, что его корабли не пойдут, потому что он вступил в общение с Охозией."
+    - "После плена низменность заселили Идумеи, и Мареша, теперь Мариса, стала главным городом Идумеи с колонией сидонских купцов, чьи расписные гробницы, найденные в 1902 году, показывают сцены охоты и зверей; папирусы Зенона 259 г. до н. э. отмечают здесь торговлю агентов Птолемеев. Иоанн Гиркан взял её в конце II века до н. э. и обратил Идумеев в иудейство, среди них предков Ирода; парфяне разрушили её в 40 г. до н. э., и Евсевий видел лишь развалины в двух милях от Елевферополя. Под холмом и вокруг него сотни высеченных в скале пещер: маслодавильни, колумбарии для голубей, водоёмы и огромные колоколообразные каменоломни Бейт-Гуврина."
+    - "Блисс и Макалистер раскопали эллинистический город в 1898–1900 годах, а работы Амоса Клонера с 1980-х расчистили пещеры; национальный парк Бейт-Гуврин — Мареша с сидонской гробницей и колокольными пещерами внесён в список ЮНЕСКО в 2014 году."
+scripture:
+  - Josh.15.44
+  - 1Chr.2.42
+  - 1Chr.4.21
+  - 2Chr.11.8
+  - 2Chr.14.9-2Chr.14.13
+  - 2Chr.20.37
+  - Mic.1.15
+sources:
+  - "Josephus, Antiquities 13.257 (Hyrcanus takes Adora and Marisa and makes the Idumeans Jews); 14.364 (the Parthians destroy Marisa)"
+  - "The Zenon papyri from the archive of Zenon of Kaunos (259 BC, Marisa)"
+  - "Eusebius, Onomasticon, s.v. Maresa"
+  - "F. J. Bliss and R. A. S. Macalister, Excavations in Palestine during the Years 1898-1900 (1902)"
+  - "J. P. Peters and H. Thiersch, Painted Tombs in the Necropolis of Marissa (Marêshah) (1905)"
+  - "A. Kloner, Maresha Excavations Final Report I: Subterranean Complexes 21, 44, 70 (2003)"
+  - "UNESCO World Heritage List, Caves of Maresha and Bet-Guvrin in the Judean Lowlands, inscribed 2014"
+status: checked

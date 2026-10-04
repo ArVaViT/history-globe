@@ -1,0 +1,38 @@
+# Overview article (ADR 0007). Mainstream facts only; Gallio's year follows the usual reading of the Delphi inscription.
+id: achaia
+place: aef4242
+title:
+  en: "Achaia"
+  ru: "Ахаия"
+body:
+  en:
+    - "Achaia in the New Testament is the Roman province of southern Greece: the Peloponnese, Attica with Athens, Boeotia and the lands north to the border of Macedonia, with the islands. The name was old and narrow, the north coast of the Peloponnese, home of the Achaean League; when the Romans crushed the League and destroyed Corinth in 146 BC they gave the name to all the Greece they had conquered. Augustus made Achaia a province of its own in 27 BC, governed by a proconsul of the senate seated at Corinth, which Julius Caesar had refounded as a Roman colony in 44 BC; Tiberius put it for a time under an imperial legate, and Claudius returned it to the senate in AD 44."
+    - "Paul came into Achaia from Macedonia, through Athens to Corinth, where he stayed eighteen months. There, “when Gallio was the deputy of Achaia, the Jews made insurrection with one accord against Paul” and brought him before the proconsul's judgement seat; Gallio refused to hear the case. A letter of Claudius inscribed at Delphi names Gallio as proconsul and fixes his year, probably AD 51–52, the surest date in Paul's life. The household of Stephanas was “the firstfruits of Achaia”; Apollos later went over from Ephesus “into Achaia”. Paul addressed his second letter to Corinth “with all the saints which are in all Achaia”, and the church at Cenchreae, Corinth's eastern port, had its deaconess Phoebe."
+    - "The province took part in the collection for Jerusalem: “it hath pleased them of Macedonia and Achaia to make a certain contribution for the poor saints”, and Paul boasted to the Macedonians that “Achaia was ready a year ago”. The Thessalonians had become “ensamples to all that believe in Macedonia and Achaia”. Paul passed through both provinces again on his way to Jerusalem and spent three months in Greece. Nero declared the Greeks free in AD 67, but Vespasian made Achaia a province once more, and it remained one, poorer and quieter than in classical days, until the empire's end."
+    - "Today Achaea is a small regional unit of Greece on the Gulf of Corinth, with its capital at Patras, while the old province is the heart of the Hellenic Republic: Athens, the Peloponnese and central Greece."
+  ru:
+    - "Ахаия в Новом Завете — римская провинция южной Греции: Пелопоннес, Аттика с Афинами, Беотия и земли к северу до границы с Македонией, вместе с островами. Имя было старым и узким — так звался северный берег Пелопоннеса, родина Ахейского союза; когда римляне разгромили союз и разрушили Коринф в 146 г. до н. э., они дали это имя всей завоёванной Греции. Август в 27 г. до н. э. сделал Ахаию отдельной провинцией под управлением сенатского проконсула с резиденцией в Коринфе, который Юлий Цезарь в 44 г. до н. э. восстановил как римскую колонию; Тиберий на время передал её императорскому легату, а Клавдий в 44 г. н. э. вернул сенату."
+    - "Павел пришёл в Ахаию из Македонии, через Афины в Коринф, где провёл полтора года. Лука пишет: «во время проконсульства Галлиона в Ахаии, напали Иудеи единодушно на Павла» и привели его к судилищу проконсула; Галлион отказался разбирать дело. Письмо Клавдия, высеченное в Дельфах, называет Галлиона проконсулом и определяет его год, вероятно 51–52 гг. н. э., — самая надёжная дата в жизни Павла. Семейство Стефаново было «начаток Ахаии»; позже Аполлос отправился из Ефеса «в Ахаию». Второе послание в Коринф Павел обратил к церкви «со всеми святыми по всей Ахаии», а у церкви в Кенхреях, восточной гавани Коринфа, была диаконисса Фива."
+    - "Провинция участвовала в сборе для Иерусалима: «Македония и Ахаия усердствуют некоторым подаянием для бедных между святыми в Иерусалиме», и Павел хвалился перед Македонянами, что «Ахаия приготовлена еще с прошедшего года». Фессалоникийцы стали «образцом для всех верующих в Македонии и Ахаии». По пути в Иерусалим Павел снова прошёл обе провинции и провёл три месяца в Елладе. Нерон в 67 г. н. э. объявил греков свободными, но Веспасиан вновь сделал Ахаию провинцией, и она оставалась ею, беднее и тише, чем в классические дни, до конца империи."
+    - "Сегодня Ахея — небольшая область Греции на берегу Коринфского залива со столицей в Патрах, а древняя провинция — это сердце Греческой Республики: Афины, Пелопоннес и Средняя Греция."
+scripture:
+  - Acts.18.1
+  - Acts.18.11-Acts.18.17
+  - Acts.18.27
+  - Acts.19.21
+  - Acts.20.2-Acts.20.3
+  - Rom.15.26
+  - Rom.16.1
+  - 1Cor.16.15
+  - 2Cor.1.1
+  - 2Cor.9.2
+  - 2Cor.11.10
+  - 1Thess.1.7-1Thess.1.8
+sources:
+  - "Pausanias, Description of Greece 7.16.7-10 (Mummius, the fall of Corinth and the Roman governor)"
+  - "Strabo, Geography 17.3.25 (the division of the provinces under Augustus)"
+  - "Tacitus, Annals 1.76 (Achaia and Macedonia given to the emperor, AD 15); Suetonius, Claudius 25 (returned to the senate)"
+  - "The letter of Claudius to Delphi naming Gallio (SIG³ 801D); A. Plassart, 'L'inscription de Delphes mentionnant le proconsul Gallion', Revue des études grecques 80 (1967)"
+  - "J. Murphy-O'Connor, St. Paul's Corinth: Texts and Archaeology (3rd ed., 2002)"
+  - "S. E. Alcock, Graecia Capta: The Landscapes of Roman Greece (1993)"
+status: checked

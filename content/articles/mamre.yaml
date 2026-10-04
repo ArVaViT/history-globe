@@ -1,0 +1,32 @@
+# Overview article (ADR 0007). Mainstream facts only; the Herodian date of the enclosure at Ramat el-Khalil is the usual view; the Russian oak is given as a rival tradition.
+id: mamre
+place: aeb9e97
+title:
+  en: "Mamre"
+  ru: "Мамре"
+body:
+  en:
+    - "Mamre is the place by Hebron where Abraham pitched his tent under the terebinths, or oaks, and built an altar. Genesis names it after Mamre the Amorite, Abraham's ally against the four kings, and makes it the home of the patriarchs: here the Lord appeared to Abraham “in the plains of Mamre” as he sat in the tent door, and three men were fed and promised Sarah a son; the cave of Machpelah, where Sarah, Abraham, Isaac, Rebekah, Leah and Jacob were buried, lay in the field “before Mamre: the same is Hebron”; and Jacob came home “unto Isaac his father unto Mamre, unto the city of Arbah, which is Hebron”."
+    - "Since Herod's day the site shown has been Ramat el-Khalil, some 3-4 km north of Hebron, where an enclosure of great drafted stones, about 65 by 50 m, surrounds a well and the place of a tree; most scholars take the enclosure for Herod's work. Josephus knew a terebinth near Hebron said to be as old as the world. After the Bar Kokhba war, Jerome says, Hadrian sold Jewish captives at the market of the Terebinth here, and the enclosure was rebuilt in his reign. The emperor Constantine, told by his mother-in-law Eutropia that pagans sacrificed on the holy ground, ordered the idols burned and a basilica built, which Eusebius describes; Sozomen tells how Jews, pagans and Christians still met every summer at the fair of the terebinth, each honouring the place in their own way. The German excavations of 1926-28 uncovered the enclosure and Constantine's church."
+    - "A rival tradition holds to the Oak of Abraham 2 km west of Hebron, a great Palestine oak bought by the Russian church in 1868, where the Holy Trinity monastery stands; the old trunk has looked dead since 1996 and fell in 2019, and shoots from it are tended beside it. Khirbet Nimreh nearby has also been proposed. Today Ramat el-Khalil lies among the houses of Hebron in the West Bank, a fenced ruin visited by few."
+  ru:
+    - "Мамре — место у Хеврона, где Авраам раскинул шатёр у дубравы и построил жертвенник. Книга Бытия называет его по имени Мамре Аморреянина, союзника Авраама против четырёх царей, и делает его домом патриархов: здесь Господь явился Аврааму «у дубравы Мамре», когда он сидел при входе в шатёр, и три мужа ели у него и обещали Сарре сына; пещера Махпела, где погребли Сарру, Авраама, Исаака, Ревекку, Лию и Иакова, лежала на поле «против Мамре, что ныне Хеврон»; и Иаков пришёл «к Исааку, отцу своему, ибо он был еще жив, в Мамре, в Кириаф-Арбу, то есть Хеврон»."
+    - "Со времён Ирода это место показывают в Рамат-эль-Халиле, в 3–4 км к северу от Хеврона, где ограда из огромных тёсаных камней, около 65 на 50 м, окружает колодец и место дерева; большинство учёных считают ограду постройкой Ирода. Иосиф Флавий знал близ Хеврона теревинф, которому, говорили, столько же лет, сколько миру. После войны Бар-Кохбы, по словам Иеронима, Адриан продавал здесь, на рынке у Теревинфа, иудейских пленников, и при нём ограду отстроили заново. Император Константин, узнав от тёщи Евтропии, что язычники приносят жертвы на святой земле, велел сжечь идолов и построить базилику, которую описывает Евсевий; Созомен рассказывает, как Иудеи, язычники и христиане по-прежнему сходились каждое лето на ярмарку у теревинфа, и каждый чтил место по-своему. Немецкие раскопки 1926–1928 гг. открыли ограду и церковь Константина."
+    - "Соперничающее предание держится Дуба Авраама в 2 км к западу от Хеврона — огромного палестинского дуба, купленного Русской церковью в 1868 г., где стоит монастырь Святой Троицы; старый ствол засох к 1996 г. и рухнул в 2019 г., а рядом выхаживают его побеги. Предлагали и соседний Хирбет-Нимре. Сегодня Рамат-эль-Халиль лежит среди домов Хеврона на Западном берегу — огороженная руина, которую посещают немногие."
+scripture:
+  - Gen.13.18
+  - Gen.14.13
+  - Gen.18.1-Gen.18.10
+  - Gen.23.17-Gen.23.19
+  - Gen.25.9
+  - Gen.35.27
+  - Gen.49.30
+  - Gen.50.13
+sources:
+  - "Josephus, Jewish War 4.533 (the terebinth near Hebron)"
+  - "Eusebius, Life of Constantine 3.51-53 (the basilica at Mamre); Onomasticon, s.v. Arbo"
+  - "Sozomen, Church History 2.4 (the fair at the terebinth)"
+  - "Jerome, Commentary on Zechariah 3, on Zech. 11.4-5 (captives sold at the Terebinth after Bar Kokhba)"
+  - "A. E. Mader, Mambre: Die Ergebnisse der Ausgrabungen im heiligen Bezirk Râmet el-Ḫalîl in Südpalästina 1926-1928 (1957)"
+  - "Y. Magen, “Mamre: A Cultic Site from the Reign of Herod”, in G. C. Bottini, L. Di Segni and L. D. Chrupcała (eds.), One Land, Many Cultures (2003)"
+status: checked

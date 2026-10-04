@@ -1,0 +1,35 @@
+# Overview article (ADR 0007). Mainstream facts only; the location depends on that of Sodom and is given as disputed, with the map's candidates.
+id: zoar
+place: aacfcda
+title:
+  en: "Zoar"
+  ru: "Сигор"
+body:
+  en:
+    - "Zoar, earlier called Bela, was the fifth of the cities of the plain, with Sodom, Gomorrah, Admah and Zeboiim, whose kings fought in the vale of Siddim. When Lot fled from Sodom he begged to be spared the mountains: “this city is near to flee unto, and it is a little one”, and so it was spared and named Zoar, “little”; “The sun was risen upon the earth when Lot entered into Zoar”. Yet he feared to stay and went up to a cave in the mountain, where his daughters bore Moab and Ammon. Lot had first seen the plain “well watered every where”, like the garden of the Lord, “as thou comest unto Zoar”, and Moses from Pisgah saw the valley of Jericho “unto Zoar”. In Isaiah and Jeremiah Zoar is a Moabite town to which the fugitives run."
+    - "Where Zoar lay depends on where Sodom lay, and that is disputed. Josephus, Eusebius and the Madaba mosaic map of the sixth century all put Zoara at the southern end of the Dead Sea, and the usual identification is the oasis of Ghor es-Safi in Jordan, where the Wadi Hasa comes down; the map's other candidates are nearby mounds such as Tell esh-Sheikh Isa and the sugar mills of Tawahin es-Sukkar, the vale of Siddim under the shallow southern basin, the mouth of the Arnon, and the plain north of the Dead Sea favoured by those who look for Sodom there."
+    - "The southern site at least has a long history. Byzantine Zoara had a bishop, a Roman garrison in Eusebius' day, and a cemetery with hundreds of Greek tombstones and Jewish Aramaic ones dated by the years since the destruction of the Temple. On the hill above, at Deir Ain Abata, Konstantinos Politis excavated in 1988–2003 a monastery built around a cave that pilgrims venerated as Lot's; the Madaba map shows the sanctuary of Saint Lot beside Zoara. In the Middle Ages Zughar was known for its dates, indigo and sugar."
+    - "Today Ghor es-Safi is a farming town of potash works and tomato fields at the lowest inhabited spot on earth, with a Museum at the Lowest Place on Earth, opened in 2012 beside the monastery of Lot."
+  ru:
+    - "Сигор, прежде называвшийся Бела, был пятым из городов долины, вместе с Содомом, Гоморрой, Адмой и Севоимом, чьи цари сражались в долине Сиддим. Убегая из Содома, Лот просил избавить его от гор: «ближе бежать в сей город, он же мал», и город был пощажён и назван Сигор, «малый»; «Солнце взошло над землею, и Лот пришел в Сигор». Но он побоялся остаться и ушёл в пещеру в горе, где дочери родили ему Моава и Аммона. Прежде Лот видел, что вся окрестность Иорданская «до Сигора орошалась водою, как сад Господень», а Моисей с Фасги видел равнину долины Иерихона «до Сигора». У Исаии и Иеремии Сигор — моавитский город, куда бегут беглецы."
+    - "Где лежал Сигор, зависит от того, где лежал Содом, а это спорно. Иосиф Флавий, Евсевий и мозаичная карта из Мадабы VI века помещают Зоару у южного конца Мёртвого моря, и обычное отождествление — оазис Гор-эс-Сафи в Иордании, куда спускается Вади-Хаса; другие кандидаты карты — соседние холмы вроде Телль-эш-Шейх-Исы и сахарные мельницы Тавахин-эс-Суккар, долина Сиддим под мелкой южной частью моря, устье Арнона и равнина к северу от Мёртвого моря, которую предпочитают ищущие там Содом."
+    - "У южного места, по крайней мере, долгая история. У византийской Зоары были епископ, римский гарнизон во дни Евсевия и кладбище с сотнями греческих надгробий и иудейскими арамейскими, датированными годами от разрушения Храма. На холме выше, в Дейр-Айн-Абата, Константинос Политис в 1988–2003 годах раскопал монастырь, построенный вокруг пещеры, которую паломники чтили как пещеру Лота; карта из Мадабы показывает святилище святого Лота рядом с Зоарой. В Средние века Зугар славился финиками, индиго и сахаром."
+    - "Сегодня Гор-эс-Сафи — земледельческий городок с поташными заводами и томатными полями в самом низком обитаемом месте земли, с Музеем самого низкого места на земле, открытым в 2012 году рядом с монастырём Лота."
+scripture:
+  - Gen.13.10
+  - Gen.14.2
+  - Gen.14.8
+  - Gen.19.18-Gen.19.23
+  - Gen.19.30
+  - Deut.34.3
+  - Isa.15.5
+  - Jer.48.34
+sources:
+  - "Josephus, Jewish War 4.482 (Zoara)"
+  - "Eusebius, Onomasticon, s.v. Bala (Segor)"
+  - "The Madaba mosaic map (sixth century), Balak also Segor, and the sanctuary of Saint Lot"
+  - "K. D. Politis, Sanctuary of Lot at Deir 'Ain 'Abata in Jordan: Excavations 1988–2003 (2012)"
+  - "Y. E. Meimaris and K. I. Kritikakou-Nikolaropoulou, Inscriptions from Palaestina Tertia, vol. Ia: The Greek Inscriptions from Ghor es-Safi (Byzantine Zoora) (2005)"
+  - "W. F. Albright, 'The Archaeological Results of an Expedition to Moab and the Dead Sea', Bulletin of the American Schools of Oriental Research 14 (1924)"
+  - "S. Collins and L. C. Scott, Discovering the City of Sodom (2013) (the case for a site north of the Dead Sea)"
+status: checked

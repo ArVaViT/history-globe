@@ -1,0 +1,28 @@
+id: how-big-was-the-roman-empire
+question:
+  en: "How big was the Roman Empire in Jesus' day?"
+  ru: "Насколько велика была Римская империя во дни Иисуса?"
+answer:
+  en:
+    - "Under Tiberius (AD 14–37) the empire reached from the Atlantic to the Euphrates and from the Rhine and Danube to the Sahara: all of Spain, Gaul, Italy and Greece, most of the Balkans and Asia Minor, Syria, Egypt and the North African coast. Rome, where the map point stands, lay about 2,300 km from Jerusalem in a straight line, 1,950 km from Alexandria and 1,400 km from the middle of Spain. By Rein Taagepera's measurements the empire covered about 5 million square kilometres at its largest under Trajan, a century later, and most of that was already Roman in Jesus' lifetime."
+    - "Luke frames the Nativity by it: “there went out a decree from Caesar Augustus, that all the world should be taxed”, and he dates the Baptist's preaching to “the fifteenth year of the reign of Tiberius Caesar”. Augustus himself listed his conquests in the inscription he left for his tomb, from Spain and the Alps to Egypt and the Danube, and Tacitus counts the garrison of AD 23: twenty-five legions on the Rhine and the Danube, in Spain, Dalmatia, Africa, Egypt and Syria, with as many auxiliaries, and a ring of client kings beyond. Judea was one corner of this: a province under a prefect since AD 6, while Galilee was ruled by Herod's son Antipas, one of the client princes."
+    - "How many people lived in it is a guess. The old reckoning of Karl Julius Beloch gave 54 million for AD 14; recent estimates for that year run from about 45 to 60 million, and up to some 75 million at the peak in the second century. A Roman citizen such as Paul could travel the whole of it on one law and, in the east, one language, Greek; he could say “I appeal unto Caesar” in Caesarea and be sent to Rome, as the last chapters of Acts tell."
+  ru:
+    - "При Тиберии (14–37 гг.) империя простиралась от Атлантики до Евфрата и от Рейна и Дуная до Сахары: вся Испания, Галлия, Италия и Греция, большая часть Балкан и Малой Азии, Сирия, Египет и побережье Северной Африки. Рим, где стоит точка карты, лежал примерно в 2300 км от Иерусалима по прямой, в 1950 км от Александрии и в 1400 км от середины Испании. По измерениям Рейна Таагеперы, империя занимала около 5 миллионов квадратных километров в пору наибольшего размаха при Траяне, столетием позже, и большая часть этого была римской уже при жизни Иисуса."
+    - "Лука обрамляет ею Рождество: «вышло от кесаря Августа повеление сделать перепись по всей земле», а проповедь Крестителя он датирует так: «В пятнадцатый же год правления Тиверия кесаря». Сам Август перечислил свои завоевания в надписи, оставленной для своей гробницы, — от Испании и Альп до Египта и Дуная, а Тацит считает войско 23 года: двадцать пять легионов на Рейне и Дунае, в Испании, Далмации, Африке, Египте и Сирии, столько же вспомогательных войск и кольцо зависимых царей за границей. Иудея была одним углом этого мира: провинция под началом префекта с 6 года, тогда как Галилеей правил сын Ирода Антипа, один из зависимых князей."
+    - "Сколько в ней жило людей — догадка. Старый подсчёт Карла Юлиуса Белоха давал 54 миллиона на 14 год; новые оценки на тот же год — примерно от 45 до 60 миллионов, а на пик во II веке — до 75 миллионов. Римский гражданин, как Павел, мог проехать её всю при одном законе и, на востоке, одном языке — греческом; он мог сказать в Кесарии «Требую суда кесарева» и быть отправленным в Рим, как рассказывают последние главы Деяний."
+map:
+  place: afc8e7a
+  year: "AD 30"
+  ref: Luke.2.1
+scripture: [Luke.2.1, Luke.3.1, Acts.22.27-Acts.22.28, Acts.25.11-Acts.25.12, Rom.1.7]
+sources:
+  - "Straight-line distances between the places' points (Rome, Jerusalem, Alexandria, Spain): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Res Gestae Divi Augusti 25-33 (the provinces and conquests)"
+  - "Tacitus, Annals 4.5 (the legions and client kingdoms in AD 23)"
+  - "R. Taagepera, 'Size and Duration of Empires: Growth-Decline Curves, 600 B.C. to 600 A.D.', Social Science History 3 (1979)"
+  - "K. J. Beloch, Die Bevölkerung der griechisch-römischen Welt (1886)"
+  - "B. W. Frier, 'Demography', in The Cambridge Ancient History, vol. 11 (2nd ed., 2000); K. Harper, The Fate of Rome (2017)"
+  - "W. Scheidel, 'Demography', in W. Scheidel, I. Morris and R. Saller (eds.), The Cambridge Economic History of the Greco-Roman World (2007)"
+  - "History Globe dated events (Judea a province, AD 6)"
+status: checked

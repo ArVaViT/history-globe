@@ -1,0 +1,32 @@
+# Overview article (ADR 0007). Mainstream facts only; the Synodal Bible writes both Zin and Sin as "Син", which the text notes.
+id: zin
+place: a0b5c50
+title:
+  en: "Zin"
+  ru: "Син"
+body:
+  en:
+    - "The wilderness of Zin is the desert on Israel's southern border, between the wilderness of Paran to the south and the Negeb of Judah to the north, from the edge of Edom and the Arabah westward to Kadesh-barnea. It is not the wilderness of Sin near Sinai, where the manna first fell; the Hebrew names differ, though the Synodal Bible writes both as Sin. The spies went up “from the wilderness of Zin unto Rehob”; the southern border of the land ran “from the wilderness of Zin along by the coast of Edom”, over the ascent of Akrabbim and past Kadesh-barnea, and Judah's lot reached “to the border of Edom the wilderness of Zin southward”."
+    - "Here, in the fortieth year, “came the children of Israel, even the whole congregation, into the desert of Zin in the first month: and the people abode in Kadesh; and Miriam died there”. The water failed, the people quarrelled, and Moses struck the rock twice at the waters of Meribah; for that, the Lord told him and Aaron, “ye rebelled against my commandment in the desert of Zin”, and neither would enter the land. The itinerary of Numbers lists the camp “in the wilderness of Zin, which is Kadesh” before Mount Hor, where Aaron died, and a psalm hears the voice of the Lord shake “the wilderness of Kadesh”."
+    - "Kadesh is usually placed at Ein el-Qudeirat in northern Sinai, the richest spring of the region, where Rudolph Cohen excavated three successive Judahite fortresses of the tenth to sixth centuries BC; nothing found there is older. The wilderness of Zin is thus the central Negev highlands and the plateau that drops into the Arabah. C. L. Woolley and T. E. Lawrence surveyed it for the Palestine Exploration Fund in 1914 and called their report The Wilderness of Zin, though its purpose was also a military map."
+    - "Today this is the Negev of Israel: the craters of Makhtesh Ramon and the Great Makhtesh, the Nahal Zin canyon with the spring of Ein Avdat, the Nabataean city of Avdat, and Sde Boker, where David Ben-Gurion is buried above the gorge. Ein el-Qudeirat itself lies across the border in Egypt."
+  ru:
+    - "Пустыня Син (Цин) — пустыня на южной границе Израиля, между пустыней Фаран к югу и Негевом Иудиным к северу, от края Едома и Аравы на запад до Кадес-Варни. Это не пустыня Син близ Синая, где впервые выпала манна: еврейские имена различны, хотя Синодальный перевод пишет обе как Син. Соглядатаи прошли землю «от пустыни Син даже до Рехова»; южная граница земли шла «от пустыни Син, подле Едома», через возвышенность Акравим и мимо Кадес-Варни, а удел Иуды доходил до того, что «в смежности с Идумеею была пустыня Син, к югу»."
+    - "Сюда в сороковой год «пришли сыны Израилевы, все общество, в пустыню Син в первый месяц, и остановился народ в Кадесе, и умерла там Мариам». Вода иссякла, народ роптал, и Моисей дважды ударил в скалу при водах Меривы; за это, сказал Господь ему и Аарону, «вы не послушались повеления Моего в пустыне Син», и ни один из них не войдёт в землю. Список станов в книге Чисел называет стан «в пустыне Син» перед горой Ор, где умер Аарон, а псалом слышит, как глас Господа потрясает «пустыню Кадес»."
+    - "Кадес обычно помещают в Эйн-эль-Кудейрат на севере Синая, у самого обильного источника края, где Рудольф Коэн раскопал три сменявшие друг друга иудейские крепости X–VI веков до н. э.; ничего более древнего там не найдено. Пустыня Син, стало быть, — центральное нагорье Негева и плато, обрывающееся к Араве. Ч. Л. Вулли и Т. Э. Лоуренс обследовали его для Фонда исследования Палестины в 1914 году и назвали отчёт «Пустыня Син», хотя целью была и военная карта."
+    - "Сегодня это израильский Негев: кратеры Махтеш-Рамон и Большой Махтеш, каньон Нахаль-Цин с источником Эйн-Авдат, набатейский город Авдат и Сде-Бокер, где над ущельем похоронен Давид Бен-Гурион. Сам Эйн-эль-Кудейрат лежит за границей, в Египте."
+scripture:
+  - Num.13.21
+  - Num.20.1-Num.20.13
+  - Num.27.14
+  - Num.33.36-Num.33.37
+  - Num.34.3-Num.34.4
+  - Deut.32.51
+  - Josh.15.1-Josh.15.3
+  - Ps.29.8
+sources:
+  - "C. L. Woolley and T. E. Lawrence, The Wilderness of Zin (Palestine Exploration Fund Annual 3, 1914–1915)"
+  - "R. Cohen and H. Bernick-Greenberg, Excavations at Kadesh Barnea (Tell el-Qudeirat) 1976–1982 (Israel Antiquities Authority Reports 34, 2007)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+  - "A. F. Rainey and R. S. Notley, The Sacred Bridge: Carta's Atlas of the Biblical World (2006)"
+status: checked

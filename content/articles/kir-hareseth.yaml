@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; Kerak is given as the usual identification with the dissent noted; the Crusader dates follow William of Tyre.
+id: kir-hareseth
+place: ab55371
+title:
+  en: "Kir-hareseth"
+  ru: "Кирхарешет"
+body:
+  en:
+    - "Kir-hareseth, also Kir-heres and Kir of Moab, was the fortress city of southern Moab, and is all but certainly Kerak in Jordan: a town on a steep spur over 900 m above sea level, cut off by valleys on three sides, some 15 km east of the Dead Sea and south of the Arnon. The Aramaic Targum renders Kir of Moab as Kerakka of Moab, the Madaba mosaic map of the sixth century labels the walled city Charachmoba, and the name lives on in Kerak. A few have questioned the identification: B. C. Jones argued that the Targum evidence does not bear it out and looked for the city north of the Arnon; most still hold to Kerak."
+    - "The city appears in the war of Jehoram of Israel, Jehoshaphat and the king of Edom against Mesha, about 850 BC. The allies ravaged Moab until “only in Kir-haraseth left they the stones thereof; howbeit the slingers went about it, and smote it”; the king of Moab tried to break through to the king of Edom, failed, and “took his eldest son that should have reigned in his stead, and offered him for a burnt offering upon the wall”, and the besiegers withdrew. Mesha's own stele, found at Dibon, does not mention the siege. Isaiah's oracle on Moab mourns “the foundations of Kir-hareseth” and says, “my bowels shall sound like an harp for Moab, and mine inward parts for Kir-haresh”, and Jeremiah repeats it: “mine heart shall mourn for the men of Kir-heres”."
+    - "Under the Nabataeans and Rome Charachmoba was a city of the province of Arabia and later a bishopric. In 1142 the Crusader Pagan the Butler built the great castle of Kerak, Crac des Moabites, that still crowns the spur; Reynald of Châtillon held it, Saladin besieged it in 1183 and 1184, and it surrendered in 1188. Al-Karak today is the capital of the Karak governorate, with the castle and a museum in it, and the ruins of the Iron Age city, if they survive, lie under the modern town."
+  ru:
+    - "Кирхарешет, он же Кирхарес и Кир-Моав, был городом-крепостью южного Моава и почти наверняка — Керак в Иордании: город на крутом отроге на высоте более 900 м над уровнем моря, отрезанный долинами с трёх сторон, километрах в пятнадцати к востоку от Мёртвого моря и к югу от Арнона. Арамейский Таргум передаёт Кир-Моав как Керакка Моавитская, мозаичная карта в Мадабе VI века подписывает обнесённый стеной город Харахмова, и имя живёт в названии Керак. Немногие оспаривали отождествление: Б. К. Джонс доказывал, что свидетельство Таргума его не подтверждает, и искал город к северу от Арнона; большинство по-прежнему держится Керака."
+    - "Город появляется в войне Иорама Израильского, Иосафата и царя Едомского против Месы около 850 г. до н. э. Союзники опустошали Моав, «так что оставались только каменья в Кир-Харешете. И обступили его пращники и разрушили его»; царь Моавитский попытался пробиться к царю Едомскому, не смог и «взял он сына своего первенца, которому следовало царствовать вместо него, и вознес его во всесожжение на стене», и осаждавшие отступили. Собственная стела Месы, найденная в Дивоне, об осаде не говорит. Пророчество Исаии о Моаве стенает «о твердынях Кирхарешета» и говорит: «внутренность моя стонет о Моаве, как гусли, и сердце мое — о Кирхарешете», а Иеремия повторяет его: «будут воздыхать о мужах Кирхареса»."
+    - "При набатеях и Риме Харахмова была городом провинции Аравия, а позже епископией. В 1142 году крестоносец Пайен Виночерпий построил большой замок Керак, Крак Моавитский, который до сих пор венчает отрог; им владел Рено Шатильонский, Саладин осаждал его в 1183 и 1184 годах, и в 1188-м замок сдался. Эль-Карак сегодня — центр провинции Карак, с замком и музеем в нём, а развалины города железного века, если они уцелели, лежат под современным городом."
+scripture:
+  - 2Kgs.3.4-2Kgs.3.5
+  - 2Kgs.3.24-2Kgs.3.27
+  - Isa.15.1
+  - Isa.16.7
+  - Isa.16.11
+  - Jer.48.31
+  - Jer.48.36
+sources:
+  - "The Mesha Stele (Louvre AO 5066); translation by K. A. D. Smelik in W. W. Hallo and K. L. Younger (eds.), The Context of Scripture, vol. 2 (2000)"
+  - "Targum Jonathan on Isaiah 15:1 (Kerakka of Moab for Kir of Moab)"
+  - "The Madaba mosaic map (Charachmoba), in M. Piccirillo and E. Alliata (eds.), The Madaba Map Centenary 1897-1997 (1999)"
+  - "William of Tyre, A History of Deeds Done Beyond the Sea 15.21 (Pagan the Butler builds the castle of Kerak)"
+  - "B. C. Jones, 'In Search of Kir Hareseth: A Case Study in Site Identification', Journal for the Study of the Old Testament 52 (1991)"
+  - "J. M. Miller (ed.), Archaeological Survey of the Kerak Plateau (1991)"
+  - "J. A. Dearman (ed.), Studies in the Mesha Inscription and Moab (1989)"
+  - "B. Routledge, Moab in the Iron Age: Hegemony, Polity, Archaeology (2004)"
+status: checked

@@ -147,3 +147,11 @@ describe("books outside the Hebrew canon", () => {
     expect(isDeuterocanon("Mal.4.6")).toBe(false);
   });
 });
+
+describe("parseChapter with an English book name in Russian", () => {
+  it("counts the chapter the English way and labels it the Synodal way", () => {
+    expect(parseChapter("Psalm 23", "ru")).toEqual({ ref: "Ps.23", label: "Пс 22" });
+    expect(parseChapter("Psalms 23:1", "ru")?.ref).toBe("Ps.23");
+    expect(parseChapter("Пс 23", "ru")?.label).toBe("Пс 23");
+  });
+});

@@ -1,0 +1,36 @@
+id: who-were-the-samaritans
+question:
+  en: "Who were the Samaritans, and where is Mount Gerizim?"
+  ru: "Кто такие самаряне и где находится гора Гаризим?"
+answer:
+  en:
+    - "The Samaritans were the people of the hill country between Judea and Galilee who kept the law of Moses but worshipped not in Jerusalem but on Mount Gerizim, the mountain 881 m above sea level that rises over Shechem, today's Nablus in the West Bank; the map point stands on its summit, about 47 km north of Jerusalem in a straight line. Moses had ordered the blessing to be read from Gerizim and the curse from the facing Mount Ebal."
+    - "Their origin was told two ways. Kings says that after Samaria fell in 722 BC the king of Assyria “brought men from Babylon, and from Cuthah, and from Ava, and from Hamath, and from Sepharvaim, and placed them in the cities of Samaria”, and that they mixed the worship of the Lord with their own gods; the Jews called them Cutheans. The Samaritans themselves claim descent from the tribes of Ephraim and Manasseh, keep the Pentateuch alone as scripture, and hold that it was Judah that strayed by moving the sanctuary from Shechem. When the returned exiles were building the Temple, the people of the land offered to help, “for we seek your God, as ye do”, and were refused; from then on the quarrel was about the one true place of worship. The woman at the well put it to Jesus: “Our fathers worshipped in this mountain; and ye say, that in Jerusalem is the place where men ought to worship.”"
+    - "Excavations on Gerizim from 1983 to 2006 uncovered a walled sacred precinct of the Persian period, about the fifth century BC, enlarged into a great temple city in the second; Josephus tells its building under Alexander and its destruction by the Hasmonean John Hyrcanus, which the coins and pottery date to about 110 BC. The Samaritans never rebuilt it, but still sacrifice the Passover lambs on the mountain each spring. About 900 remain, roughly half in Kiryat Luza on Gerizim and half in Holon near Tel Aviv."
+  ru:
+    - "Самаряне — жители горной страны между Иудеей и Галилеей, которые держались закона Моисеева, но поклонялись не в Иерусалиме, а на горе Гаризим высотой 881 м над уровнем моря, поднимающейся над Сихемом, нынешним Наблусом на Западном берегу; точка карты стоит на её вершине, примерно в 47 км к северу от Иерусалима по прямой. Моисей велел читать благословение с Гаризима, а проклятие — с горы Гевал напротив."
+    - "Их происхождение рассказывали двояко. Книга Царств говорит, что после падения Самарии в 722 г. до н. э. царь Ассирийский «перевел… людей из Вавилона, и из Куты, и из Аввы, и из Емафа, и из Сепарваима, и поселил их в городах Самарийских» и что те смешали почитание Господа со своими богами; отсюда иудеи звали их кутийцами. Сами самаряне ведут род от колен Ефрема и Манассии, признают Писанием одно Пятикнижие и считают, что это Иуда уклонился, перенеся святилище из Сихема. Когда вернувшиеся переселенцы строили Храм, народ земли предложил помощь — «мы, как и вы, прибегаем к Богу вашему» — и получил отказ; с тех пор спор шёл об одном истинном месте поклонения. Женщина у колодца сказала Иисусу: «Отцы наши поклонялись на этой горе, а вы говорите, что место, где должно поклоняться, находится в Иерусалиме»."
+    - "Раскопки на Гаризиме в 1983–2006 годах открыли обнесённый стеной священный участок персидского времени, около V века до н. э., расширенный во II веке в большой храмовый город; Иосиф Флавий рассказывает о его постройке при Александре и о разрушении хасмонеем Иоанном Гирканом, которое монеты и керамика относят примерно к 110 г. до н. э. Самаряне его не восстановили, но до сих пор каждую весну приносят на горе пасхальных агнцев. Их осталось около 900 человек — примерно поровну в Кирьят-Лузе на Гаризиме и в Холоне под Тель-Авивом."
+map:
+  place: a30e967
+  year: "AD 30"
+  ref: John.4.20
+scripture:
+  [
+    Deut.11.29,
+    Deut.27.12,
+    2Kgs.17.24-2Kgs.17.29,
+    Ezra.4.1-Ezra.4.3,
+    John.4.9,
+    John.4.20-John.4.21,
+    Luke.10.33,
+    Luke.17.16,
+  ]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Josephus, Antiquities 11.302-347 (the temple on Gerizim under Alexander); 13.254-256 (its destruction by John Hyrcanus)"
+  - "Y. Magen, Mount Gerizim Excavations, vol. 2: A Temple City (2008)"
+  - "M. Kartveit, The Origin of the Samaritans (2009)"
+  - "R. Pummer, The Samaritans: A Profile (2016)"
+  - "Present numbers (about 900 in 2024, in Kiryat Luza and Holon): the Samaritan community's own figures, as reported in the press"
+status: checked

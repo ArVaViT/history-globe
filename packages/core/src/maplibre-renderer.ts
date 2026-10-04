@@ -24,6 +24,7 @@ const MAP_UI = {
     "NavigationControl.ZoomOut": "Zoom out",
     "NavigationControl.ResetBearing": "Reset bearing to north",
     "AttributionControl.ToggleAttribution": "Map sources",
+    "Map.Title": "Map",
   },
   ru: {
     "ScaleControl.Kilometers": "км",
@@ -32,6 +33,7 @@ const MAP_UI = {
     "NavigationControl.ZoomOut": "Отдалить",
     "NavigationControl.ResetBearing": "Повернуть на север",
     "AttributionControl.ToggleAttribution": "Источники карты",
+    "Map.Title": "Карта",
   },
 } as const;
 
@@ -65,6 +67,40 @@ export interface MapLibreRendererOptions extends StyleOptions {
   readonly viewPadding?: () => { top: number; bottom: number; left: number; right: number };
 }
 
+type Box = readonly [number, number, number, number];
+/** A shape's bounding box, west, south, east, north. */
+function bboxOf(g: GeoJSON.Geometry): Box {
+  const polys =
+    g.type === "Polygon" ? [g.coordinates] : g.type === "MultiPolygon" ? g.coordinates : [];
+  let [w, s, e, n] = [Infinity, Infinity, -Infinity, -Infinity];
+  for (const rings of polys)
+    for (const [x = 0, y = 0] of rings[0] ?? []) {
+      w = Math.min(w, x);
+      s = Math.min(s, y);
+      e = Math.max(e, x);
+      n = Math.max(n, y);
+    }
+  return [w, s, e, n];
+}
+const inBox = (b: Box, x: number, y: number) => x >= b[0] && x <= b[2] && y >= b[1] && y <= b[3];
+
+/** Whether a polygon (a tile's piece of a shape) covers a point: even-odd over its rings. */
+function covers(g: GeoJSON.Geometry, lon: number, lat: number): boolean {
+  const polys =
+    g.type === "Polygon" ? [g.coordinates] : g.type === "MultiPolygon" ? g.coordinates : [];
+  return polys.some((rings) => {
+    let inside = false;
+    for (const ring of rings)
+      for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+        const [xi = 0, yi = 0] = ring[i] ?? [];
+        const [xj = 0, yj = 0] = ring[j] ?? [];
+        if (yi > lat !== yj > lat && lon < ((xj - xi) * (lat - yi)) / (yj - yi) + xi)
+          inside = !inside;
+      }
+    return inside;
+  });
+}
+
 export class MapLibreRenderer implements Renderer {
   readonly map: MLMap;
   private readonly featureIdByPlace = new Map<string, number>();
@@ -94,6 +130,10 @@ export class MapLibreRenderer implements Renderer {
   private printing = false;
   private readyTimer: ReturnType<typeof setTimeout> | undefined;
   private settleTimer: ReturnType<typeof setTimeout> | undefined;
+  /** The edge labels last written (nameEdgeStates): unchanged, nothing is set. */
+  private edgeLabels = "[]";
+  /** Whether the view changed since the edge labels were worked out. */
+  private edgeDirty = true;
   private readonly viewPadding: MapLibreRendererOptions["viewPadding"];
   private pulse: { frame: number; markers: maplibregl.Marker[] } | null = null;
   private readonly dataUrl: string;
@@ -364,6 +404,20 @@ export class MapLibreRenderer implements Renderer {
       this.battleShown = false;
       for (const h of this.handlers.hoverBattle) h(null, null);
     });
+    // Edge labels are worked out again only when the view or what it shows has changed:
+    // "idle" also follows a hover or the edge labels' own new data.
+    this.map.on("idle", () => {
+      if (!this.edgeDirty || this.printing) return;
+      this.edgeDirty = false;
+      this.nameEdgeStates();
+    });
+    for (const event of ["moveend", "resize"] as const)
+      this.map.on(event, () => {
+        this.edgeDirty = true;
+      });
+    this.map.on("sourcedata", (e) => {
+      if (e.sourceId === "polities" && e.isSourceLoaded) this.edgeDirty = true;
+    });
     // A trackpad sends dozens of small moves a second: report the camera once it rests.
     this.map.on("moveend", () => {
       this.loadRoads();
@@ -429,6 +483,107 @@ export class MapLibreRenderer implements Renderer {
     return out.length > 0 ? out : null;
   }
 
+  /**
+   * Names a large state that the view shows unnamed: its own label points off screen
+   * (Parthia east of the first view, the Sasanians at AD 400) or crowded out. A point
+   * inside the part in view, in the open (not under a panel, not at sea), written once
+   * the map rests. Over 28 years at the first view, 12 large states went unnamed before.
+   */
+  private nameEdgeStates(): void {
+    const source = this.map.getSource<GeoJSONSource>("polity-edge-labels");
+    if (!source || this.destroyed) return;
+    const canvas = this.map.getCanvas();
+    const box = canvas.getBoundingClientRect();
+    // One query for the view, then the samples tested in memory: a query per sample took
+    // half a second.
+    const shapes = (layer: string) =>
+      this.map.getLayer(layer) && this.map.getLayoutProperty(layer, "visibility") !== "none"
+        ? this.map.queryRenderedFeatures({ layers: [layer] })
+        : [];
+    const states = shapes("polity-fill");
+    const water = shapes("water").map((f) => ({ f, box: bboxOf(f.geometry) }));
+    const seen = new Map<string, { p: Record<string, unknown>; at: [number, number][] }>();
+    let cells = 0;
+    const step = 80;
+    if (states.length > 0)
+      for (let x = step / 2; x < box.width; x += step)
+        for (let y = step / 2; y < box.height; y += step) {
+          if (document.elementFromPoint(box.left + x, box.top + y) !== canvas) continue;
+          const { lng, lat } = this.map.unproject([x, y]);
+          // Off the globe (in space, or the sky when tilted) a pixel unprojects to the
+          // horizon: such a sample is not map.
+          const back = this.map.project([lng, lat]);
+          if (Math.hypot(back.x - x, back.y - y) > 2) continue;
+          cells += 1;
+          if (water.some(({ f, box }) => inBox(box, lng, lat) && covers(f.geometry, lng, lat)))
+            continue;
+          // A state comes in a piece per tile: counted once a sample.
+          const here = new Set<string>();
+          for (const f of states) {
+            const name = (f.properties as { name?: string }).name;
+            if (!name || here.has(name) || !covers(f.geometry, lng, lat)) continue;
+            here.add(name);
+            const s = seen.get(name) ?? { p: f.properties, at: [] as [number, number][] };
+            s.at.push([x, y]);
+            seen.set(name, s);
+          }
+        }
+    const named = new Set(
+      this.map
+        .queryRenderedFeatures({ layers: ["polity-label", "polity-label-pin"] })
+        .map((f) => (f.properties as { name?: string }).name),
+    );
+    // The names already written: the label goes where it is farthest from them, near the
+    // middle of the state's part in view. At its middle alone Rome lost to the towns of
+    // Judea on a phone.
+    // Only the names placed before it (the layers above): it cannot push those away, so the
+    // choice does not swing between two points as it pushes a town's name in and out.
+    const order = this.map.getLayersOrder();
+    const symbols = order
+      .slice(order.indexOf("polity-label-edge") + 1)
+      .filter((id) => this.map.getLayer(id)?.type === "symbol");
+    const written = this.map
+      .queryRenderedFeatures({ layers: symbols })
+      .flatMap((f) => (f.geometry.type === "Point" ? [f.geometry.coordinates] : []))
+      .map(([lon = 0, lat = 0]) => this.map.project([lon, lat]));
+    // Room to the names around and to the edges of the screen: a name at the edge is cut.
+    const room = ([x, y]: [number, number]) =>
+      Math.min(
+        160,
+        x,
+        box.width - x,
+        y * 2,
+        (box.height - y) * 2,
+        ...written.map((q) => Math.hypot(q.x - x, (q.y - y) * 2)),
+      );
+    const features: GeoJSON.Feature[] = [];
+    for (const [name, { p, at }] of seen) {
+      // A state over a twentieth of the open map at least: a sliver at the edge goes unnamed.
+      if (named.has(name) || at.length < Math.max(3, cells / 20)) continue;
+      const mx = at.reduce((a, [x]) => a + x, 0) / at.length;
+      const my = at.reduce((a, [, y]) => a + y, 0) / at.length;
+      const score = (q: [number, number]) => room(q) - 0.25 * Math.hypot(q[0] - mx, q[1] - my);
+      const [x, y] = at.reduce((a, b) => (score(b) > score(a) ? b : a));
+      const { lng, lat } = this.map.unproject([x, y]);
+      features.push({
+        type: "Feature",
+        geometry: { type: "Point", coordinates: [+lng.toFixed(3), +lat.toFixed(3)] },
+        properties: {
+          name,
+          name_ru: p.name_ru,
+          y0: p.y0,
+          y1: p.y1,
+          size: 3.4,
+          ...(p.v ? { v: p.v, v_ru: p.v_ru } : {}),
+        },
+      });
+    }
+    const data = JSON.stringify(features);
+    if (data === this.edgeLabels) return;
+    this.edgeLabels = data;
+    void source.setData({ type: "FeatureCollection", features });
+  }
+
   private whenLoaded(run: () => void): void {
     if (this.destroyed) return;
     if (this.loaded) run();
@@ -443,6 +598,7 @@ export class MapLibreRenderer implements Renderer {
   }
 
   setYear(year: number): void {
+    this.edgeDirty = true;
     // Dragging the slider fires many input events per frame; apply at most one year per
     // animation frame so the map re-filters once, not dozens of times.
     const schedule = this.pendingYear === null;
@@ -615,10 +771,13 @@ export class MapLibreRenderer implements Renderer {
   }
 
   setLocale(locale: Locale): void {
+    this.edgeDirty = true;
     // MapLibre's own words (the scale's "km", the buttons' tooltips) in the same language.
     // Ukrainian and German have no words here yet: English until they do.
     const ui = MAP_UI[locale === "ru" ? "ru" : "en"];
     Object.assign(this.map._locale, ui);
+    // The canvas is named for screen readers by MapLibre at start: renamed with the language.
+    this.map.getCanvas().setAttribute("aria-label", ui["Map.Title"]);
     for (const [selector, key] of MAP_UI_TITLES) {
       const button = this.map.getContainer().querySelector(selector);
       if (button) {
@@ -632,6 +791,7 @@ export class MapLibreRenderer implements Renderer {
   }
 
   setLayers(layers: LayerVisibility): void {
+    this.edgeDirty = true;
     this.layersNow = layers;
     this.whenLoaded(() => {
       for (const [group, ids] of Object.entries(this.groups)) {
@@ -843,7 +1003,21 @@ export class MapLibreRenderer implements Renderer {
       this.map.setPaintProperty(x.id, x.key, x.to);
     }
     for (const l of hidden) this.map.setLayoutProperty(l.id, "visibility", "none");
+    // No battles on the sheet: their swords crowded round the stops and covered the
+    // numbers of a lesson sheet; the sheet is the tour's.
+    const battles =
+      this.map.getLayer("battle-icon") &&
+      this.map.getLayoutProperty("battle-icon", "visibility") !== "none";
+    if (battles) this.map.setLayoutProperty("battle-icon", "visibility", "none");
+    // The edge labels were worked out for the screen's view, not the sheet's.
+    void this.map
+      .getSource<GeoJSONSource>("polity-edge-labels")
+      ?.setData({ type: "FeatureCollection", features: [] });
+    this.edgeLabels = "[]";
     const restore = () => {
+      if (battles && this.map.getLayer("battle-icon"))
+        this.map.setLayoutProperty("battle-icon", "visibility", "visible");
+      this.edgeDirty = true;
       for (const x of paints)
         if (this.map.getLayer(x.id)) this.map.setPaintProperty(x.id, x.key, x.was);
       for (const l of hidden)

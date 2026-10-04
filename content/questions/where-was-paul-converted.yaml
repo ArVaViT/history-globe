@@ -1,0 +1,36 @@
+id: where-was-paul-converted
+question:
+  en: "Where was Paul converted on the road to Damascus?"
+  ru: "Где обратился Павел на пути в Дамаск?"
+answer:
+  en:
+    - "Acts says only that it happened as Saul “came near Damascus”, at midday; no spot is named. Damascus lies about 217 km north-north-east of Jerusalem in a straight line and about 251 km by the Roman road on the map, eight days' walk, so the vision came at the end of the journey. Since at least the Crusader period Christians have pointed to Kaukab, a hill about 18 km south-west of the city on the old road from Galilee, where a Greek Orthodox monastery stands today. In Damascus itself the street called Straight, the Roman decumanus, still runs east to west across the Old City, with a chapel of Ananias at its eastern end and the chapel of St Paul at Bab Kisan, where the basket is remembered. The map's year is about AD 34; scholars put the event between 31 and 36."
+    - "Luke tells it three times. “And as he journeyed, he came near Damascus: and suddenly there shined round about him a light from heaven”; Paul himself says it was “about noon”, a light “above the brightness of the sun”. Blinded, “they led him by the hand, and brought him into Damascus”, and the Lord sent Ananias “into the street which is called Straight, and enquire in the house of Judas for one called Saul, of Tarsus”. Within days Saul “preached Christ in the synagogues, that he is the Son of God”. In Galatians he adds that he “went into Arabia, and returned again unto Damascus”, and in 2 Corinthians that “the governor under Aretas the king kept the city of the Damascenes with a garrison, desirous to apprehend me: And through a window in a basket was I let down by the wall, and escaped his hands.”"
+    - "Arabia is the Nabataean kingdom south and east of Damascus, whose king Aretas IV reigned from 9 BC to AD 40; his officer at Damascus is the firmest clue to the dates, since the escape must fall before 40 and, by Galatians, three years after the conversion. Whether Aretas actually ruled Damascus in those years or only kept an agent among its Nabataeans is debated, as no Roman coins of Damascus are known from 34 to 62. The road Saul took is not stated; the map draws the Roman road north through Samaria and Galilee and past the foot of Hermon, the natural way for a traveller from Jerusalem. Nothing of the house of Judas is known, and the chapel of Ananias lies below today's street, at what is taken to be the Roman ground level."
+  ru:
+    - "Деяния говорят лишь, что это случилось, когда Савл «приближался к Дамаску», в полдень; место не названо. Дамаск лежит примерно в 217 км к северо-северо-востоку от Иерусалима по прямой и в 251 км по римской дороге на карте — восемь дней пути, так что видение пришло в конце дороги. По меньшей мере со времён крестоносцев христиане указывают на Каукаб, холм примерно в 18 км к юго-западу от города на старой дороге из Галилеи, где сегодня стоит греческий православный монастырь. В самом Дамаске улица Прямая, римский декуманус, по-прежнему пересекает Старый город с востока на запад; у её восточного конца — часовня Анании, а у ворот Баб-Кисан — часовня апостола Павла, где вспоминают корзину. Год на карте — около 34 г. н. э.; учёные относят событие к 31–36 годам."
+    - "Лука рассказывает это трижды. «Когда же он шел и приближался к Дамаску, внезапно осиял его свет с неба»; сам Павел говорит, что было «около полудня», и свет был «превосходящий солнечное сияние». Ослепшего, «повели его за руки, и привели в Дамаск», а Господь послал Ананию: «пойди на улицу, так называемую Прямую, и спроси в Иудином доме Тарсянина, по имени Савла». Через несколько дней Савл «стал проповедывать в синагогах об Иисусе, что Он есть Сын Божий». В Послании к Галатам он добавляет, что «пошел в Аравию и опять возвратился в Дамаск», а во Втором послании к Коринфянам — что «областной правитель царя Ареты стерег город Дамаск, чтобы схватить меня; и я в корзине был спущен из окна по стене и избежал его рук»."
+    - "Аравия — это Набатейское царство к югу и востоку от Дамаска, чей царь Арета IV правил с 9 г. до н. э. по 40 г. н. э.; его наместник в Дамаске — самая твёрдая опора для дат, ведь бегство должно было случиться до 40 года, а по Галатам — через три года после обращения. Правил ли Арета Дамаском в те годы на деле или лишь держал своего человека среди тамошних набатеев, спорно: римских монет Дамаска с 34 по 62 год не известно. Какой дорогой шёл Савл, не сказано; карта ведёт римскую дорогу на север через Самарию и Галилею и мимо подножия Ермона — естественный путь для идущего из Иерусалима. О доме Иуды ничего не известно, а часовня Анании лежит ниже нынешней улицы, на уровне, который считают римским."
+map:
+  place: a69c1d4
+  year: "c. AD 34"
+  ref: Acts.9.3
+scripture:
+  [
+    Acts.9.3,
+    Acts.9.8,
+    Acts.9.11,
+    Acts.9.19-Acts.9.20,
+    Acts.22.6,
+    Acts.26.13,
+    Gal.1.17-Gal.1.18,
+    2Cor.11.32-2Cor.11.33,
+  ]
+sources:
+  - "Josephus, Antiquities 18.109-115 (Aretas IV and Herod Antipas)"
+  - "R. Burns, Damascus: A History (2005)"
+  - "R. Riesner, Paul's Early Period: Chronology, Mission Strategy, Theology (1998)"
+  - "J. Murphy-O'Connor, Paul: A Critical Life (1996)"
+  - "History Globe tour “The conversion of Saul” (AD 34 on the map), History Globe article “Damascus” and History Globe question on the distance from Jerusalem to Damascus"
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0); length along the Roman roads: Itiner-e (de Soto, Pažout, Brughmans et al. 2025), Jerusalem to Damascus (251 km)"
+status: checked

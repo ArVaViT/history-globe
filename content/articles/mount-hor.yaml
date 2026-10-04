@@ -1,0 +1,31 @@
+# Overview article (ADR 0007). Mainstream facts only; the site is disputed, and the candidates are given without choosing one.
+id: mount-hor
+place: ad8027f
+title:
+  en: "Mount Hor"
+  ru: "Гора Ор"
+body:
+  en:
+    - "Mount Hor is the mountain “by the coast of the land of Edom” where Aaron died. From Kadesh the whole congregation came to Mount Hor, and there the LORD told Moses that Aaron would not enter the land because of the rebellion at Meribah. Moses, Aaron and Eleazar went up “in the sight of all the congregation”; Moses stripped Aaron of his garments and put them on Eleazar, “and Aaron died there in the top of the mount”, and Israel mourned him thirty days. The list of stations dates his death to the first day of the fifth month of the fortieth year after the exodus, at the age of a hundred and twenty-three. From Mount Hor Israel set out “by the way of the Red sea, to compass the land of Edom”. Deuteronomy, however, places Aaron's death at Moserah, perhaps a camp at the mountain's foot, perhaps another tradition; Moses is told he will die “as Aaron thy brother died in mount Hor”."
+    - "Where the mountain stood is disputed. Josephus says Aaron died on one of the high mountains that enclose Petra, and Jewish, Christian and Muslim tradition settled on Jebel Harun, “Aaron's mountain”, the highest peak above the city at about 1,350 m. On its upper slope a church and monastery of St Aaron stood from the fifth century, named in a Petra papyrus of 573 and excavated by the Finnish Jabal Harun Project from 1997; on the summit a Mamluk shrine with a white dome, restored under Sultan al-Nasir Muhammad, marks the tomb. Many scholars object that Jebel Harun lies in the heart of Edom, not on its border, and look instead to the edge of the wilderness of Zin: Har Zin, or hills nearer Kadesh-barnea such as Imaret el-Khureisheh, Jebel es-Sabha and Jebel el-Hamrah; Jebel Madurah was H. C. Trumbull's choice in 1884. Nothing found so far settles the question."
+    - "Another Mount Hor marks the northern border of the land in Numbers 34, between the Great Sea and the entrance of Hamath, a peak of the Lebanon range that no one has identified. Today Jebel Harun, reached by a long trail from Petra, is a place of pilgrimage for all three faiths, its white shrine visible from almost everywhere in the ruins; Har Zin is a bare height in the Negev of Israel above the Zin valley."
+  ru:
+    - "Гора Ор — гора «у пределов земли Едомской», на которой умер Аарон. От Кадеса всё общество пришло к горе Ор, и там Господь сказал Моисею, что Аарон не войдёт в землю из-за непокорности у вод Меривы. Моисей, Аарон и Елеазар взошли на гору «в глазах всего общества»; Моисей снял с Аарона одежды и облёк в них Елеазара, «и умер там Аарон на вершине горы», и Израиль оплакивал его тридцать дней. Перечень станов датирует его смерть первым днём пятого месяца сорокового года по исходе из Египта, в возрасте ста двадцати трёх лет. От горы Ор Израиль отправился «путем Чермного моря, чтобы миновать землю Едома». Второзаконие, однако, помещает смерть Аарона в Мозер, что читатели понимали как стан у подножия горы или как иное предание; Моисею сказано, что он умрёт, «как умер Аарон, брат твой, на горе Ор»."
+    - "Где стояла гора — спорно. Иосиф Флавий говорит, что Аарон умер на одной из высоких гор, окружающих Петру, и иудейское, христианское и мусульманское предание остановилось на Джебель-Харуне, «горе Аарона», высочайшей вершине над городом, около 1350 м. На её верхнем склоне с V века стояли церковь и монастырь святого Аарона, названные в петрском папирусе 573 года и раскопанные финским проектом «Джабаль-Харун» с 1997 года; на вершине гробницу отмечает мамлюкское святилище с белым куполом, восстановленное при султане ан-Насире Мухаммаде. Многие учёные возражают, что Джебель-Харун лежит в сердце Едома, а не на его границе, и смотрят на край пустыни Син: Хар-Цин или холмы ближе к Кадес-Варни — Имарет-эль-Хурейше, Джебель-эс-Сабха и Джебель-эль-Хамра; Джебель-Мадура был выбором Г. К. Трамбулла в 1884 году. Ничто из найденного пока вопроса не решает."
+    - "Другая гора Ор обозначает в 34-й главе Чисел северную границу земли, между Великим морем и входом в Емаф, — вершина Ливанского хребта, которую никто не отождествил. Сегодня Джебель-Харун, куда ведёт долгая тропа из Петры, — место паломничества для всех трёх вер, его белое святилище видно почти отовсюду среди развалин; Хар-Цин — голая высота в израильском Негеве над долиной Цин."
+scripture:
+  - Num.20.22-Num.20.29
+  - Num.21.4
+  - Num.33.37-Num.33.39
+  - Num.33.41
+  - Num.34.7-Num.34.8
+  - Deut.10.6
+  - Deut.32.50
+sources:
+  - "Josephus, Antiquities 4 (Aaron's death on a mountain by Petra)"
+  - "J. Frösén, A. Arjava and M. Lehtinen (eds.), The Petra Papyri I (2002)"
+  - "Z. T. Fiema and J. Frösén (eds.), Petra – The Mountain of Aaron: The Finnish Archaeological Project in Jordan, vol. 1, The Church and the Chapel (2008)"
+  - "H. C. Trumbull, Kadesh-Barnea: Its Importance and Probable Site (1884)"
+  - "G. I. Davies, The Way of the Wilderness: A Geographical Study of the Wilderness Itineraries in the Old Testament (1979)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+status: checked

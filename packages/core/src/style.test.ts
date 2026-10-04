@@ -27,6 +27,7 @@ describe("style", () => {
     expect(layersInGroup(style, "borders")).toEqual([
       "polity-fill",
       "polity-line",
+      "polity-label-edge",
       "polity-label",
       "polity-label-pin",
     ]);

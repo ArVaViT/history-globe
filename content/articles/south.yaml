@@ -1,0 +1,30 @@
+# Overview article (ADR 0007). Mainstream facts only; the "king of the south" of Daniel 11 is read, as nearly all commentators read it, as the Ptolemaic kingdom; the date of the chapter is given as debated.
+id: south
+place: a1c0469
+title:
+  en: "South"
+  ru: "Царство южного царя"
+body:
+  en:
+    - "The South of Daniel 11 is a kingdom, not a country: the “king of the south” who wars through the chapter with the “king of the north”. Since Jerome, who answered the pagan Porphyry on this chapter, readers have agreed that the south is Egypt under the Ptolemies and the north is Syria under the Seleucids, the two Greek dynasties that divided Alexander's empire; Egypt lies south of Judah, and the chapter itself names Egypt as the land where the king of the south carries off captured gods. The Ptolemies ruled from Alexandria from 305 to 30 BC, and for a century they also held Judea, which lay between the two kingdoms and changed hands in their wars."
+    - "The vision follows those wars: “the king of the south shall be strong, and one of his princes; and he shall be strong above him”: Ptolemy I and his former general Seleucus I. “the king's daughter of the south shall come to the king of the north to make an agreement”: Berenice, daughter of Ptolemy II, married Antiochus II about 252 BC and was murdered. Her brother Ptolemy III invaded Syria and carried gods and treasure “into Egypt”; his Adulis inscription boasts of sacred things brought home. Antiochus III was beaten by Ptolemy IV at Raphia in 217 BC, but at Panium in 200 he took Judea: “the arms of the south shall not withstand”. His daughter Cleopatra was given to Ptolemy V. Antiochus IV twice invaded Egypt, in 170 and 168 BC; the second time, “at the time appointed”, the Romans turned him back at Alexandria, “but it shall not be as the former”. Returning, he fell on Jerusalem."
+    - "After verse 39 the vision and the known history part: the last war of the king of the south, in which the king of the north overruns Egypt and dies, does not match what is known of Antiochus, who died in Persia in 164 BC. Readers have differed ever since over whether the chapter looks beyond him. Most modern scholars date the chapter to about 165 BC, during the Maccabean crisis; the traditional view holds it to be a prophecy of the sixth century. In either case the kingdom of the south is the Egypt of Alexandria, whose last queen, Cleopatra VII, died in 30 BC, when Egypt became a Roman province."
+  ru:
+    - "Юг в одиннадцатой главе Даниила — не страна, а царство: «южный царь», который на протяжении всей главы воюет с царём северным. Со времён Иеронима, отвечавшего язычнику Порфирию по поводу этой главы, читатели сходятся в том, что юг — это Египет Птолемеев, а север — Сирия Селевкидов, двух греческих династий, поделивших державу Александра; Египет лежит к югу от Иудеи, и сама глава называет Египет землёй, куда южный царь увозит захваченных богов. Птолемеи правили из Александрии с 305 по 30 г. до н. э. и около века держали и Иудею, лежавшую между двумя царствами и переходившую из рук в руки в их войнах."
+    - "Видение идёт за этими войнами: «И усилится южный царь и один из князей его пересилит его и будет владычествовать»: Птолемей I и его бывший полководец Селевк I. «дочь южного царя придет к царю северному, чтобы установить правильные отношения между ними»: Береника, дочь Птолемея II, около 252 г. до н. э. вышла за Антиоха II и была убита. Её брат Птолемей III вторгся в Сирию и увёз богов и сокровища «в плен в Египет»; надпись в Адулисе хвалится возвращёнными святынями. Антиох III был разбит Птолемеем IV при Рафии в 217 г. до н. э., но при Панионе в 200 г. взял Иудею: «не устоят мышцы юга». Его дочь Клеопатра была отдана Птолемею V. Антиох IV Епифан дважды вторгался в Египет, в 170 и 168 гг. до н. э.; во второй раз, «в назначенное время», римляне повернули его назад у Александрии, и «последний поход не такой будет, как прежний». Возвращаясь, он обрушился на Иерусалим и Храм."
+    - "После 39-го стиха видение и известная история расходятся: последняя война южного царя, в которой царь северный захватывает Египет и гибнет, не совпадает с тем, что известно об Антиохе, умершем в Персии в 164 г. до н. э. С тех пор читатели спорят, не смотрит ли глава дальше него. Большинство современных учёных датируют главу примерно 165 г. до н. э., временем Маккавейского кризиса; традиционный взгляд считает её пророчеством VI века. В любом случае царство южного царя — это Египет Александрии, последняя царица которого, Клеопатра VII, умерла в 30 г. до н. э., когда Египет стал римской провинцией."
+scripture:
+  - Dan.11.5-Dan.11.9
+  - Dan.11.11-Dan.11.12
+  - Dan.11.14-Dan.11.17
+  - Dan.11.25-Dan.11.30
+  - Dan.11.40-Dan.11.43
+sources:
+  - "Jerome, Commentary on Daniel, on chapter 11 (with Porphyry's reading)"
+  - "Polybius, Histories 5.79-86 (Raphia); 29.27 (Antiochus IV turned back by Popilius Laenas)"
+  - "1 Maccabees 1.16-24 (Antiochus in Egypt and in Jerusalem)"
+  - "The Adulis inscription of Ptolemy III (OGIS 54), preserved by Cosmas Indicopleustes, Christian Topography 2"
+  - "J. A. Montgomery, A Critical and Exegetical Commentary on the Book of Daniel (1927)"
+  - "J. J. Collins, Daniel (Hermeneia, 1993)"
+  - "G. Hölbl, A History of the Ptolemaic Empire (2001)"
+status: checked

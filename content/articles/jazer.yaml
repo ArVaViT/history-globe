@@ -1,0 +1,32 @@
+# Overview article (ADR 0007). Mainstream facts only; the site is unidentified and the candidates are given without choosing one.
+id: jazer
+place: a095b6e
+title:
+  en: "Jazer"
+  ru: "Иазер"
+body:
+  en:
+    - "Jazer was a town of Gilead east of the Jordan, in the hills between Heshbon and the Jabbok, in country good for cattle and vines. Where exactly it stood is not known. Eusebius put it ten Roman miles west of Philadelphia (Amman) and fifteen from Heshbon, at the source of a great stream that falls into the Jordan. Scholars have looked for it at Khirbet Jazzir, near es-Salt by the springs of the Wadi Shu'eib, which suits Eusebius' stream; at Khirbet es-Sar (Sara) west of Amman, which suits his distances; and at Khirbet es-Sireh and Yajuz nearby. None of these has been excavated enough to settle the question."
+    - "In Numbers Moses “sent to spy out Jaazer”, and Israel took its villages and drove out the Amorites. The tribes of Reuben and Gad, who “had a very great multitude of cattle”, saw “the land of Jazer, and the land of Gilead, that, behold, the place was a place for cattle”, and asked Moses for it; Gad rebuilt Jazer among its fenced cities. Joshua makes it the first point of Gad's border and a Levitical town of the sons of Merari. When Joab counted the people for David he crossed the Jordan and went “toward Jazer”; in David's fortieth year, Chronicles says, valiant men of the Levites were found “at Jazer of Gilead”."
+    - "By the time of Isaiah and Jeremiah the town was Moab's, and both prophets mourn its vineyards: the vine of Sibmah, whose branches “are come even unto Jazer”, and “the weeping of Jazer”. Jeremiah's “sea of Jazer” may be a pool or a slip of the text. In 1 Maccabees Judas Maccabeus took Jazer and its villages from the Ammonites about 163 BC. Today the candidate sites lie in the hills of the Balqa, west of Amman in Jordan."
+  ru:
+    - "Иазер — город Галаада к востоку от Иордана, в холмах между Есевоном и Иавоком, в краю, пригодном для скота и виноградников. Где именно он стоял, неизвестно. Евсевий помещал его в десяти римских милях к западу от Филадельфии (Аммана) и в пятнадцати от Есевона, у истока большого потока, впадающего в Иордан. Его искали в Хирбет-Джаззире близ Эс-Салта у источников Вади-Шуэйб, что отвечает потоку Евсевия; в Хирбет-эс-Саре (Хирбет-Сара) к западу от Аммана, что отвечает его расстояниям; а также в соседних Хирбет-эс-Сире и Яджузе. Ни одно из этих мест не раскопано настолько, чтобы решить вопрос."
+    - "В книге Чисел «послал Моисей высмотреть Иазер», и Израиль взял его селения и прогнал Аморреев. Колена Рувима и Гада, у которых «стад было весьма много», увидели, «что земля Иазер и земля Галаад есть место годное для стад», и просили её у Моисея; Гад отстроил Иазер среди своих укреплённых городов. У Иисуса Навина он — первая точка предела Гадова и левитский город сынов Мерари. Когда Иоав считал народ для Давида, он перешёл Иордан и направился «к Иазеру»; в сороковой год Давида, по книге Паралипоменон, были найдены «люди мужественные в Иазере Галаадском» из левитов."
+    - "Ко времени Исаии и Иеремии город был моавитским, и оба пророка оплакивают его виноградники: лозу Севамскую, побеги которой «достигали до Иазера», и плачет о ней «плачем Иазера». Озеро Иазера у Иеремии («достигали до озера Иазера») — быть может, пруд или описка в тексте. По Первой книге Маккавейской Иуда Маккавей около 163 г. до н. э. взял Иазер и его селения у Аммонитян. Сегодня места-кандидаты лежат в холмах Балки, к западу от Аммана в Иордании."
+scripture:
+  - Num.21.32
+  - Num.32.1-Num.32.5
+  - Num.32.35
+  - Josh.13.25
+  - Josh.21.39
+  - 2Sam.24.5
+  - 1Chr.26.31
+  - Isa.16.8-Isa.16.9
+  - Jer.48.32
+sources:
+  - "Eusebius, Onomasticon, s.v. Iazer"
+  - "1 Maccabees 5.8 (Judas takes Jazer)"
+  - "R. de Vaux, “Notes d'histoire et de topographie transjordaniennes”, Vivre et Penser 1 (1941)"
+  - "B. MacDonald, “East of the Jordan”: Territories and Sites of the Hebrew Scriptures (2000)"
+  - "Y. Aharoni, The Land of the Bible: A Historical Geography (2nd ed., 1979)"
+status: checked

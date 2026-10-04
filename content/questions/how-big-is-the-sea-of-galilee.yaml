@@ -1,0 +1,25 @@
+id: how-big-is-the-sea-of-galilee
+question:
+  en: "How big is the Sea of Galilee?"
+  ru: "Насколько велико Галилейское море?"
+answer:
+  en:
+    - "The Sea of Galilee is a freshwater lake about 21 km long from north to south and up to 13 km wide, with an area of about 166 square kilometres and a greatest depth of about 43 m; its surface lies between about 209 and 215 m below the level of the Mediterranean, depending on the year, which makes it the lowest freshwater lake on earth. The map point stands in the middle of it, about 120 km north of Jerusalem in a straight line; Capernaum on the northern shore and Tiberias on the western are 12 km apart."
+    - "The Bible calls it by several names: “the sea of Chinnereth” in the Law and Joshua, “the lake of Gennesaret” in Luke, and “the sea of Galilee, which is the sea of Tiberias” in John, after the city Herod Antipas built on its shore about AD 20. Jesus called his first disciples here, “walking by the sea of Galilee”, taught from a boat, crossed it many times, and was caught on it in a storm when “the waves beat into the ship, so that it was now full”. Such storms are real: the lake lies in a deep trench, and winds pouring down the gorges from the heights on either side can raise it in minutes."
+    - "Josephus, who commanded Galilee in the war of AD 66, says the lake is 140 stadia long and 40 broad, about 26 by 7 km, its water sweet and good to drink; a fishing boat of his time, found in the mud of the western shore in 1986 when the water fell low, is 8.2 m long and was built for a crew of five, four rowers and a helmsman; its excavator reckoned it could carry about fifteen men in all. The lake's level has dropped in recent decades as Israel pumped it for water, so that the shore of the Gospels now often lies some way back from the water."
+  ru:
+    - "Галилейское море — пресное озеро длиной около 21 км с севера на юг и шириной до 13 км, площадью около 166 квадратных километров и наибольшей глубиной около 43 м; его поверхность лежит примерно на 209–215 м ниже уровня Средиземного моря, смотря по году, что делает его самым низким пресным озером на земле. Точка карты стоит посреди него, примерно в 120 км к северу от Иерусалима по прямой; Капернаум на северном берегу и Тивериада на западном отстоят друг от друга на 12 км."
+    - "Библия называет его по-разному: море Киннереф в Законе и у Иисуса Навина, озеро Геннисаретское у Луки, а у Иоанна Иисус идёт «на ту сторону моря Галилейского, в окрестности Тивериады» — по городу, который Ирод Антипа построил на его берегу около 20 года. Здесь Иисус призвал первых учеников — «Проходя же близ моря Галилейского, Он увидел двух братьев», — учил из лодки, много раз переправлялся и попал на нём в бурю, когда «волны били в лодку, так что она уже наполнялась водою». Такие бури настоящие: озеро лежит в глубокой впадине, и ветры, скатывающиеся по ущельям с высот по обе стороны, за минуты поднимают его."
+    - "Иосиф Флавий, командовавший Галилеей в войне 66 года, пишет, что озеро имеет 140 стадий в длину и 40 в ширину, примерно 26 на 7 км, что вода его сладкая и годная для питья; рыбацкая лодка его времени, найденная в иле западного берега в 1986 году, когда вода спала, имеет 8,2 м в длину и строилась на команду из пяти человек — четверо гребцов и кормчий; по расчёту исследователя, всего она могла взять около пятнадцати человек. В последние десятилетия уровень озера падал, потому что Израиль брал из него воду, так что берег Евангелий теперь нередко лежит в стороне от воды."
+map:
+  place: a562fcc
+  year: "AD 28"
+  ref: Matt.4.18
+scripture: [Num.34.11, Luke.5.1, John.6.1, Matt.4.18, Mark.4.37, Matt.14.34, John.21.1]
+sources:
+  - "Straight-line distances between the places' points (Sea of Galilee, Jerusalem, Capernaum, Tiberias): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "Josephus, Jewish War 3.506-521 (the lake, its water and the plain of Gennesaret)"
+  - "T. Zohary, A. Sukenik, T. Berman and A. Nishri (eds.), Lake Kinneret: Ecology and Management (2014), the lake's dimensions, depth and level"
+  - "S. Wachsmann, The Sea of Galilee Boat: An Extraordinary 2000 Year Old Discovery (1995); S. Wachsmann, 'The Galilee Boat: 2,000-Year-Old Hull Recovered Intact', Biblical Archaeology Review 14.5 (1988)"
+  - "M. Nun, The Sea of Galilee and Its Fishermen in the New Testament (1989)"
+status: checked

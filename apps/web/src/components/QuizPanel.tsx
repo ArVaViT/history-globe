@@ -99,7 +99,10 @@ export function QuizPanel({
           <X className="size-4" />
         </button>
       </div>
-      {done ? (
+      {items.length < 3 ? (
+        // Pentecost: all its stops are one passage, so nearly nothing can be asked.
+        <p className="mt-3 text-[14px] text-ink">{t("quiz.too_few")}</p>
+      ) : done ? (
         <div className="mt-3" aria-live="polite">
           <p className="font-serif text-[20px] text-ink">
             {t("quiz.score", { score, total: items.length })}
@@ -157,8 +160,8 @@ export function QuizPanel({
                 {chosen === item.answer
                   ? t("quiz.right")
                   : off !== null
-                    ? t("quiz.wrong_km", { name: item.options[item.answer] ?? "", km: km(off) })
-                    : t("quiz.wrong", { name: item.options[item.answer] ?? "" })}
+                    ? t("quiz.wrong_km", { name: item.names[item.answer] ?? "", km: km(off) })
+                    : t("quiz.wrong", { name: item.names[item.answer] ?? "" })}
               </p>
               <button
                 onClick={next}

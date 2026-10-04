@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { maskPlace, quizOptions, readableLink } from "./print";
+import { inCaseOf, maskPlace, quizOptions, readableLink } from "./print";
 
 describe("readableLink", () => {
   it("prints a lesson's name in its own letters, and types back to the same link", () => {
@@ -57,5 +57,45 @@ describe("a quiz", () => {
     expect(new Set(o).size).toBe(4);
     expect([...o].sort((a, b) => a.localeCompare(b))).toEqual(o);
     expect(quizOptions("Листра", ["Листра", "Икония"], 1)).toEqual(["Икония", "Листра"]);
+  });
+});
+
+describe("the quiz's choices in Russian", () => {
+  it("take the case of the gap", () => {
+    expect(inCaseOf("Павел вышел из Ефеса и пришёл", "Ефес", ["Вифлеем", "Ефес"])).toEqual([
+      "Вифлеема",
+      "Ефеса",
+    ]);
+    // «Самарии» is genitive, dative or prepositional: «в» decides.
+    expect(inCaseOf("Филипп проповедовал в Самарии", "Самария", ["Ефес", "Самария"])).toEqual([
+      "Ефесе",
+      "Самарии",
+    ]);
+  });
+
+  it("stay as they are when the name stands in the nominative or a choice does not decline", () => {
+    expect(inCaseOf("Ефес — главный город Асии", "Ефес", ["Ефес", "Вифлеем"])).toEqual([
+      "Ефес",
+      "Вифлеем",
+    ]);
+    expect(inCaseOf("пришёл из Ефеса", "Ефес", ["Ефес", "Мегиддо"])).toEqual(["Ефес", "Мегиддо"]);
+  });
+});
+
+describe("the quiz's choices in Russian, more than one gap", () => {
+  it("stay as they are when the gaps stand in different cases", () => {
+    expect(inCaseOf("пришёл в Ефес, а потом вышел из Ефеса", "Ефес", ["Ефес", "Вифлеем"])).toEqual([
+      "Ефес",
+      "Вифлеем",
+    ]);
+  });
+
+  it("read the whole name, not another place's first word", () => {
+    expect(
+      inCaseOf("из Антиохии Сирийской в Антиохию Писидийскую", "Антиохия Писидийская", [
+        "Антиохия Писидийская",
+        "Самария",
+      ]),
+    ).toEqual(["Антиохию Писидийскую", "Самарию"]);
   });
 });

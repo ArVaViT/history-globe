@@ -55,7 +55,7 @@ export interface PlaceProps {
 /** A candidate location of a disputed place, with OpenBible's assessment in percent. */
 export interface Site {
   readonly label: string;
-  /** Russian label where the content build could write one ("то же место, что Авила"). */
+  /** Russian label where the content build could write one ("там же, где Авила"). */
   readonly labelRu?: string;
   /** null when OpenBible has rated none of the candidates. */
   readonly share: number | null;

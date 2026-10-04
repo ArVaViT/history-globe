@@ -1,0 +1,70 @@
+# Pentecost, Acts 2: the lands the pilgrims in Jerusalem came from (2:9-11), in the order
+# of the text, between the outpouring (2:1-13) and Peter's word and the three thousand
+# (2:14-47). Parthia, Media, Elam, Crete and Arabia have no place tagged for these verses
+# and are told at the stops beside them; Judea, the host land, is left out. The tour's year (AD 30) is
+# the conventional point of the crucifixion and of this Pentecost (AD 33 is also held).
+# Peter's ministry from this day on is in his own tour.
+id: pentecost
+title:
+  en: "Pentecost: where the pilgrims came from"
+  ru: "Пятидесятница: откуда пришли паломники"
+year: "AD 30"
+# The lands of a list, not a journey: no time on foot.
+walked: false
+approximate: true
+stops:
+  - place: a15257a # Jerusalem
+    ref: Acts.2.1-Acts.2.13
+    note:
+      en: 'On the day of Pentecost the Spirit comes with a sound from heaven and tongues as of fire; devout Jews "out of every nation under heaven" hear the Galileans, each in his own language.'
+      ru: "В день Пятидесятницы сходит Дух с шумом с неба и языками как бы огненными; набожные Иудеи «из всякого народа под небом» слышат Галилеян, каждый на своём наречии."
+  - place: a43f60f # Mesopotamia
+    ref: Acts.2.9
+    note:
+      en: "First the east: Parthians, Medes, Elamites and the dwellers in Mesopotamia, where Jews had lived since the exile."
+      ru: "Сначала восток: Парфяне, Мидяне, Еламиты и жители Месопотамии, где иудеи жили со времён плена."
+  - place: a33fbde # Cappadocia
+    ref: Acts.2.9
+    note:
+      en: "Cappadocia, in the heart of Asia Minor: Peter will write his letter to its churches (1 Pet 1:1)."
+      ru: "Каппадокия в сердце Малой Азии: Пётр напишет туда своё послание (1 Пет 1:1)."
+  - place: a83a43e # Pontus
+    ref: Acts.2.9
+    note:
+      en: "Pontus on the Black Sea, the home of Aquila, whom Paul will meet at Corinth (Acts 18:2)."
+      ru: "Понт на Чёрном море, родина Акилы, которого Павел встретит в Коринфе (Деян 18:2)."
+  - place: a197f19 # Asia
+    ref: Acts.2.9
+    note:
+      en: "Asia, the province of Ephesus, where Paul will teach for three years and the seven churches of Revelation will stand."
+      ru: "Асия, провинция с Ефесом, где Павел будет учить три года и где встанут семь церквей Откровения."
+  - place: ab8ae56 # Phrygia
+    ref: Acts.2.10
+    note:
+      en: "Phrygia inland, which Paul will cross twice on his journeys."
+      ru: "Фригия в глубине суши, через которую Павел дважды пройдёт в своих путешествиях."
+  - place: aa95188 # Pamphylia
+    ref: Acts.2.10
+    note:
+      en: "Pamphylia on the south coast, with Perga, where John Mark will turn back (Acts 13:13)."
+      ru: "Памфилия на южном берегу, с Пергией, откуда Иоанн Марк повернёт назад (Деян 13:13)."
+  - place: af301ca # Egypt
+    ref: Acts.2.10
+    note:
+      en: "Egypt, with the great Jewish community of Alexandria, the city of Apollos (Acts 18:24)."
+      ru: "Египет с большой иудейской общиной Александрии, города Аполлоса (Деян 18:24)."
+  - place: a81cdb5 # Cyrene
+    ref: Acts.2.10
+    note:
+      en: '"The parts of Libya about Cyrene": Simon who carried the cross was of Cyrene, and men of Cyprus and Cyrene will preach the Lord Jesus to the Greeks at Antioch (Acts 11:20).'
+      ru: "Из «частей Ливии, прилежащих к Киринее»: из Киринеи был Симон, нёсший крест, а Кипряне и Киринейцы будут благовествовать Еллинам в Антиохии (Деян 11:20)."
+  - place: afc8e7a # Rome
+    ref: Acts.2.10
+    note:
+      en: '"Strangers of Rome, Jews and proselytes", the westernmost of the list; Cretans and Arabians close it.'
+      ru: "«пришедшие из Рима, Иудеи и прозелиты», самые западные в списке; замыкают его критяне и аравитяне."
+  - place: a15257a # Jerusalem
+    ref: Acts.2.14-Acts.2.47
+    note:
+      en: 'Peter stands up with the eleven: this is what Joel foretold, and Jesus whom you crucified God has raised up. About three thousand are baptised, "and the Lord added to the church daily such as should be saved".'
+      ru: "Пётр встаёт с одиннадцатью: это то, о чём говорил Иоиль, и Иисуса, Которого вы распяли, Бог воскресил. Крестятся около трёх тысяч, «Господь же ежедневно прилагал спасаемых к Церкви»."

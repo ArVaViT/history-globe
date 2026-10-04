@@ -1,0 +1,41 @@
+# Overview article (ADR 0007). Mainstream facts only; present-day figures for the lake are approximate and change from year to year.
+id: salt-sea
+place: abed304
+title:
+  en: "Salt Sea"
+  ru: "Соленое море"
+body:
+  en:
+    - "The Salt Sea of the Bible is the Dead Sea, the lake into which the Jordan flows and from which nothing flows out. Its surface, more than 430 m below the level of the Mediterranean, is the lowest point on land. The water is about ten times saltier than the ocean: no fish live in it, and a swimmer cannot sink. The Bible also calls it the sea of the plain (the Arabah) and the east sea; Greek and Roman writers knew it as the Asphalt Lake, from the lumps of bitumen that rose from its bed, and the name Dead Sea appears in Pausanias in the second century AD. Arabs call it the Sea of Lot."
+    - "Genesis first names it when four kings fought five “in the vale of Siddim, which is the salt sea”, full of slimepits of bitumen; Sodom and Gomorrah lay on its plain, and Lot's wife “became a pillar of salt”. In the Law and Joshua the sea is a border: the south border of the land was to be “the outmost coast of the salt sea eastward”, the Jordan's waters flowing down to it “failed, and were cut off” when Israel crossed, and the east border of Judah “was the salt sea, even unto the end of Jordan”. Jeroboam II restored Israel's border “unto the sea of the plain”. The prophets look for its healing: Ezekiel sees a river from the Temple go down into the sea, so that “the waters shall be healed” and fishers stand “from En-gedi even unto En-eglaim”, and Zechariah's living waters flow “toward the former sea”."
+    - "The shores carry much history. David hid at En-gedi; Herod built his palaces on Masada, where the last rebels against Rome died in AD 73 or 74; at Qumran, in caves above the north-west shore, the Dead Sea Scrolls were found from 1947. Josephus describes the lake's bitter water and floating bitumen, and tells how Vespasian had men thrown in bound to see whether they would sink. Diodorus says local Arabs gathered the bitumen and sold it in Egypt for embalming. The sixth-century Madaba mosaic map shows two boats on it."
+    - "Today the lake is shared by Israel, the West Bank and Jordan. With the Jordan's water diverted and potash works evaporating the shallow southern basin, the surface has been falling by about a metre a year; the Lisan peninsula has become a land bridge, and thousands of sinkholes open along the retreating shore. Where the cities of the plain stood is not known: Early Bronze Age towns at Bab edh-Dhra and Numeira on the south-eastern shore are often named, and a site farther north, Tall el-Hammam, has also been proposed."
+  ru:
+    - "Соленое море Библии — это Мёртвое море, озеро, в которое впадает Иордан и из которого ничего не вытекает. Его поверхность, более чем на 430 м ниже уровня Средиземного моря, — самая низкая точка суши. Вода примерно в десять раз солонее океанской, так что рыба в ней не живёт, а пловец не может утонуть. Библия зовёт его также морем равнины (Аравы) и морем восточным; греческие и римские авторы знали его как Асфальтовое озеро — по кускам битума, всплывавшим со дна, а имя Мёртвое море встречается у Павсания во II веке н. э. Арабы называют его морем Лота."
+    - "Книга Бытия впервые называет его, когда четыре царя сразились с пятью «в долине Сиддим, где ныне море Соленое», полной смоляных ям; на его равнине лежали Содом и Гоморра, а жена Лота «стала соляным столпом». В Законе и у Иисуса Навина это море — граница: южный предел земли шёл «от конца Соленого моря с востока», вода Иордана, текущая к нему, «ушла и иссякла», когда Израиль переходил реку, а пределом Иуды к востоку было «все море Соленое, до устья Иордана». Иеровоам II восстановил пределы Израиля «до моря пустыни». Пророки ждут его исцеления: Иезекииль видит поток из Храма, который войдёт в море, «и воды его сделаются здоровыми», и рыболовов «от Ен-Гадди до Эглаима», а у Захарии живые воды текут «к морю восточному»."
+    - "Берега полны истории. Давид скрывался в Ен-Гадди; Ирод построил дворцы на Масаде, где в 73 или 74 г. н. э. погибли последние повстанцы против Рима; в Кумране, в пещерах над северо-западным берегом, с 1947 г. находили свитки Мёртвого моря. Иосиф Флавий описывает горькую воду и плавающий битум и рассказывает, как Веспасиан велел бросить в озеро связанных людей, чтобы проверить, утонут ли они. Диодор пишет, что здешние арабы собирали битум и продавали его в Египет для бальзамирования. Мозаичная карта из Мадабы VI века показывает две лодки, плывущие по морю."
+    - "Сегодня озеро делят Израиль, Западный берег и Иордания. С тех пор как воду Иордана отвели, а калийные заводы выпаривают мелкую южную котловину, уровень падает примерно на метр в год; полуостров Лисан стал перешейком, а вдоль отступающего берега открываются тысячи провалов. Где стояли города равнины, неизвестно: часто называют города раннего бронзового века Баб-эд-Дра и Нумейру на юго-восточном берегу, а также предлагали место севернее — Талль-эль-Хаммам."
+scripture:
+  - Gen.14.3
+  - Gen.14.10
+  - Gen.19.24-Gen.19.26
+  - Num.34.3
+  - Num.34.12
+  - Deut.3.17
+  - Josh.3.16
+  - Josh.15.5
+  - 1Sam.24.1
+  - 2Kgs.14.25
+  - Ezek.47.8-Ezek.47.10
+  - Joel.2.20
+  - Zech.14.8
+sources:
+  - "Josephus, Jewish War 4.476-485 (the lake, its bitumen, Vespasian's test)"
+  - "Diodorus Siculus, Library 2.48; 19.98-99 (the bitumen and its sale in Egypt)"
+  - "Pliny the Elder, Natural History 5.72"
+  - "Pausanias, Description of Greece 5.7.4-5 (the Dead Sea)"
+  - "The Madaba mosaic map (sixth century), the Dead Sea with its boats"
+  - "W. E. Rast and R. T. Schaub (eds.), Bab edh-Dhra: Excavations at the Town Site (1975-1981) (2003)"
+  - "Y. Enzel, A. Agnon and M. Stein (eds.), New Frontiers in Dead Sea Paleoenvironmental Research (2006)"
+  - "J. C. VanderKam, The Dead Sea Scrolls Today (2nd ed., 2010)"
+status: checked

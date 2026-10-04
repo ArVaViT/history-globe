@@ -1,0 +1,43 @@
+# Overview article (ADR 0007). Mainstream facts only; Ezekiel 30:5, where the versions differ, is explained.
+id: arabia
+place: a59f6f5
+title:
+  en: "Arabia"
+  ru: "Аравия"
+body:
+  en:
+    - "In the Old Testament Arabia is less a country than the steppe and desert east and south of the settled land, and its people. Solomon's gold came in part from “all the kings of Arabia” along with the spice merchants; the Arabians brought Jehoshaphat flocks of rams and goats, and later raided Judah. Isaiah's “burden upon Arabia” speaks to the caravans of Dedan hiding in the scrub and to Tema bringing water to fugitives; Jeremiah's cup of wrath goes to “all the kings of Arabia, and all the kings of the mingled people that dwell in the desert”; Ezekiel names “Arabia, and all the princes of Kedar” among Tyre's traders in lambs and goats. Geshem the Arabian mocked Nehemiah's wall."
+    - "In Ezekiel 30:5 the same Hebrew letters are read as Arabia by some translators and as “mingled people” by the King James and Synodal versions. Outside the Bible, Assyrian records from 853 BC, when Gindibu the Arab brought a thousand camels to Qarqar, name Arab kings and queens, and Nabonidus of Babylon spent ten years at Tema in the oasis country."
+    - "Greek writers divided Arabia into the fertile south, the desert and, later, Arabia Petraea about Petra. Herodotus described its frankincense; the Nabataeans built a trading kingdom from Petra that lasted until Trajan made it the Roman province of Arabia in AD 106, with its capital at Bostra. In the New Testament Arabians hear the apostles at Pentecost; Paul after his conversion “went into Arabia, and returned again unto Damascus”, that is, into the Nabataean kingdom of Aretas IV, whose governor later tried to arrest him; and he writes of “mount Sinai in Arabia”."
+    - "In the seventh century the Arabian Peninsula became the cradle of Islam. Today it holds Saudi Arabia, Yemen, Oman, the Emirates, Qatar, Bahrain and Kuwait; the old caravan cities of the Bible's Arabia, Tema (Tayma), Dedan (al-Ula) and Marib, are being excavated, and the Nabataean tombs of Hegra near al-Ula were inscribed by UNESCO in 2008."
+  ru:
+    - "В Ветхом Завете Аравия — не столько страна, сколько степь и пустыня к востоку и югу от населённой земли и её народ. Золото Соломону шло, среди прочего, «от всех царей Аравийских» и от купцов благовоний; Аравитяне пригоняли Иосафату стада овнов и козлов, а позже разоряли Иудею. «Пророчество об Аравии» у Исаии обращено к караванам Деданским, укрывающимся в лесу, и к Фемайцам, несущим воду беглецам; чаша гнева у Иеремии достаётся всем царям Аравии и царям народов разноплеменных, живущих в пустыне; Иезекииль называет Аравию и всех князей Кидарских среди торговцев Тира ягнятами и козлами. Гешем Аравитянин насмехался над стеной Неемии."
+    - "В Иез. 30:5 те же еврейские буквы одни переводчики читают как Аравия, а перевод Короля Иакова и Синодальный — как «смешанный народ». Вне Библии ассирийские записи с 853 г. до н. э., когда Гиндибу Араб привёл к Каркару тысячу верблюдов, называют арабских царей и цариц, а Набонид Вавилонский провёл десять лет в Феме среди оазисов."
+    - "Греческие писатели делили Аравию на плодородный юг, пустыню и, позже, Каменистую Аравию вокруг Петры. Геродот описал её ладан; Набатеи построили из Петры торговое царство, просуществовавшее до того, как Траян в 106 г. н. э. сделал его римской провинцией Аравия со столицей в Бостре. В Новом Завете аравитяне слышат апостолов в день Пятидесятницы; Павел после обращения «пошел в Аравию и опять возвратился в Дамаск», то есть в Набатейское царство Ареты IV, чей наместник позже пытался его схватить; и он пишет, что «Агарь означает гору Синай в Аравии»."
+    - "В VII веке Аравийский полуостров стал колыбелью ислама. Сегодня на нём Саудовская Аравия, Йемен, Оман, Эмираты, Катар, Бахрейн и Кувейт; старые караванные города библейской Аравии — Фема (Тайма), Дедан (Эль-Ула) и Мариб — раскапываются, а набатейские гробницы Хегры близ Эль-Улы в 2008 году внесены в список ЮНЕСКО."
+scripture:
+  - 1Kgs.10.15
+  - 2Chr.9.14
+  - 2Chr.17.11
+  - 2Chr.21.16
+  - Neh.2.19
+  - Isa.21.13-Isa.21.14
+  - Jer.25.24
+  - Ezek.27.21
+  - Ezek.30.5
+  - Acts.2.11
+  - 2Cor.11.32
+  - Gal.1.17
+  - Gal.4.25
+sources:
+  - "Kurkh Monolith of Shalmaneser III (Gindibu the Arab at Qarqar, 853 BC)"
+  - "Nabonidus, Harran stelae (the years at Tema)"
+  - "Herodotus, Histories 3 (the Arabs and their incense)"
+  - "Diodorus Siculus, Library 19 (the Nabataeans)"
+  - "Strabo, Geography 16"
+  - "Cassius Dio, Roman History 68 (the annexation of Arabia)"
+  - "I. Eph'al, The Ancient Arabs: Nomads on the Borders of the Fertile Crescent, 9th–5th Centuries B.C. (1982)"
+  - "G. W. Bowersock, Roman Arabia (1983)"
+  - "R. G. Hoyland, Arabia and the Arabs: From the Bronze Age to the Coming of Islam (2001)"
+  - "UNESCO World Heritage List, Hegra Archaeological Site (al-Hijr / Madā'in Ṣāliḥ), inscribed 2008"
+status: checked

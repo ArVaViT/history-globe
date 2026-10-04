@@ -23,7 +23,7 @@ describe("siteLabelRu", () => {
         { label: "same place as Abila", tpl: "same", ref: "a818a40", ref_text: "Abila" },
         ru,
       ),
-    ).toBe("то же место, что Авила");
+    ).toBe("там же, где Авила");
   });
 
   it("keeps the English label without a Synodal name or a template", () => {

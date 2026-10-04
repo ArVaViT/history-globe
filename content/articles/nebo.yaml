@@ -1,0 +1,33 @@
+# Overview article (ADR 0007). Mainstream facts only; the town of Nebo, not the mountain, which is a separate record on the map; the two candidate sites are given without choosing.
+id: nebo
+place: ab5bd29
+title:
+  en: "Nebo"
+  ru: "Нево"
+body:
+  en:
+    - "Nebo was a town of Moab on the plateau north of the Arnon, near the mountain of the same name from which Moses saw the land; the mountain is a separate place on the map. When the tribes of Reuben and Gad asked for the land east of Jordan they named Nebo among its towns, with Heshbon, Elealeh and Baal-meon, and Reuben rebuilt it, “their names being changed”, perhaps because Nebo was also the name of a Babylonian god. Israel's last camp before the plains of Moab was “in the mountains of Abarim, before Nebo”. The Reubenite Bela “dwelt in Aroer, even unto Nebo and Baal-meon”."
+    - "Mesha, king of Moab, tells the rest on his stele: Chemosh said to him, “Go, take Nebo from Israel”; he went by night, fought from daybreak until noon, took the town, killed its seven thousand people as a devotion to Ashtar-Chemosh, and carried the vessels of Yahweh before Chemosh. So in Isaiah's day Nebo was Moabite again, and “Moab shall howl over Nebo, and over Medeba”; Jeremiah's oracle on Moab opens “Woe unto Nebo! for it is spoiled”, and names it again with Dibon and Beth-diblathaim."
+    - "Two sites in the hills around Mount Nebo claim the town. Khirbet el-Mukhayyat, on a spur 3 km south-east of the summit, has Iron Age sherds and tombs and the Byzantine village with the churches of Saints Lot and Procopius, of Amos and Casiseus and of Saint George, whose mosaics the Franciscans uncovered from the 1930s; Sylvester Saller and Bellarmino Bagatti published it as “the town of Nebo”. Khirbet Ayun Musa, by the springs of Moses in the valley to the north, is the other candidate; Egeria in 384 was shown the springs and climbed from them to the church on the summit. The Nebo that Eusebius knew as a deserted place near Heshbon is probably Mukhayyat."
+    - "Today both lie in the Madaba governorate of Jordan, a few kilometres from the Memorial of Moses on Siyagha, and the mosaics of Mukhayyat are open to visitors."
+  ru:
+    - "Нево был городом Моава на плато к северу от Арнона, близ одноимённой горы, с которой Моисей видел землю; гора — отдельное место на карте. Когда колена Рувима и Гада просили землю за Иорданом, они назвали Нево среди её городов, вместе с Есевоном, Елеале и Ваал-Меоном, и Рувим отстроил его — города, «которых имена переменены», быть может, потому что Нево было и именем вавилонского бога. Последний стан Израиля перед равнинами Моавитскими был «на горах Аваримских пред Нево». Рувимлянин Бела «обитал в Ароере до Нево и Ваал-Меона»."
+    - "Остальное рассказывает на своей стеле Меса, царь Моавитский: Хамос сказал ему: «Иди, возьми Нево у Израиля»; он пошёл ночью, бился от рассвета до полудня, взял город, убил его семь тысяч жителей как посвящение Аштар-Хамосу и отнёс сосуды Яхве пред лицо Хамоса. Так во дни Исаии Нево снова был моавитским, и «Моав рыдает над Нево и Медевою»; пророчество Иеремии о Моаве начинается словами «горе Нево! он опустошен» и называет его снова вместе с Дивоном и Бет-Дивлафаимом."
+    - "На город притязают два места в холмах вокруг горы Нево. Хирбет-эль-Мухайят, на отроге в 3 км к юго-востоку от вершины, хранит черепки и гробницы железного века и византийское селение с церквами святых Лота и Прокопия, Амоса и Касисея и святого Георгия, чьи мозаики францисканцы открывали с 1930-х; Сильвестр Саллер и Беллармино Багатти издали его как «город Нево». Хирбет-Аюн-Муса, у источников Моисея в долине к северу, — второй кандидат; Эгерии в 384 году показали источники, и от них она поднялась к церкви на вершине. Нево, которое Евсевий знал как заброшенное место близ Есевона, — вероятно, Мухайят."
+    - "Сегодня оба места лежат в провинции Мадаба в Иордании, в нескольких километрах от Мемориала Моисея на Сияге, и мозаики Мухайята открыты для посетителей."
+scripture:
+  - Num.32.3
+  - Num.32.37-Num.32.38
+  - Num.33.47
+  - 1Chr.5.8
+  - Isa.15.2
+  - Jer.48.1
+  - Jer.48.22
+sources:
+  - "The Mesha Stele (KAI 181), lines 14-18 (the capture of Nebo)"
+  - "Egeria, Itinerarium 10-12 (the springs of Moses and Mount Nebo)"
+  - "Eusebius, Onomasticon, s.v. Nabau"
+  - "S. J. Saller and B. Bagatti, The Town of Nebo (Khirbet el-Mekhayyat), with a Brief Survey of Other Ancient Christian Monuments in Transjordan (1949)"
+  - "M. Piccirillo, The Mosaics of Jordan (1993)"
+  - "B. Routledge, Moab in the Iron Age: Hegemony, Polity, Archaeology (2004)"
+status: checked

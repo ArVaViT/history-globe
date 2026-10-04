@@ -1,0 +1,26 @@
+id: where-did-pilate-live
+question:
+  en: "Where did Pontius Pilate live?"
+  ru: "Где жил Понтий Пилат?"
+answer:
+  en:
+    - "Pilate's seat was Caesarea on the coast, the harbour city Herod the Great had built and named for Augustus, about 87 km north-west of Jerusalem in a straight line; the map point stands on its ruins south of Haifa. From AD 6 the Roman governors of Judea lived there, in Herod's palace on the promontory, and came up to Jerusalem for the feasts, when the crowds were largest."
+    - "Luke lists “Pontius Pilate being governor of Judaea” beside the tetrarchs, and Acts shows his successors at home in Caesarea: Paul was held “in Herod's judgment hall” there, and Festus “ascended from Caesarea to Jerusalem” three days after taking office. In Jerusalem the governor used the praetorium, and the Gospels place the trial of Jesus there; most scholars take it to be Herod's palace on the western hill, where Philo says Pilate hung gilded shields and where the procurator Florus later set up his tribunal, though the tradition of the Via Dolorosa puts it in the Antonia fortress by the Temple. Josephus tells how Pilate, newly arrived, sent troops into Jerusalem by night with standards bearing the emperor's image, and how the people lay for five days in front of his house at Caesarea until he gave way."
+    - "In 1961 Italian excavators found in the theatre of Caesarea a reused limestone block inscribed with Pilate's name and title, prefect of Judea, from a building he had dedicated to Tiberius; it is the only stone inscription of his day known to name him, and it fixes both his rank and his city. Herod's palace, with a pool cut into the rock of the promontory, was excavated from the 1970s to the 1990s, and the governors' residence is placed there."
+  ru:
+    - "Резиденцией Пилата была Кесария на побережье — портовый город, который Ирод Великий построил и назвал в честь Августа, примерно в 87 км к северо-западу от Иерусалима по прямой; точка карты стоит на его развалинах к югу от Хайфы. С 6 года римские наместники Иудеи жили здесь, во дворце Ирода на мысу, и поднимались в Иерусалим на праздники, когда толпы были всего больше."
+    - "Лука перечисляет: «Понтий Пилат начальствовал в Иудее» — рядом с четвертовластниками, а Деяния показывают его преемников дома, в Кесарии: Павла держали там «в Иродовой претории», а Фест через три дня после вступления в должность «отправился из Кесарии в Иерусалим». В Иерусалиме наместник занимал преторию, и Евангелия помещают туда суд над Иисусом; большинство учёных видят в ней дворец Ирода на западном холме, где, по словам Филона, Пилат повесил золочёные щиты и где позже наместник Флор ставил своё судейское кресло, хотя предание Крестного пути помещает её в крепость Антония у Храма. Иосиф Флавий рассказывает, как Пилат, едва прибыв, ночью ввёл в Иерусалим войска со знамёнами, несущими изображение императора, и как народ пять дней лежал перед его домом в Кесарии, пока он не уступил."
+    - "В 1961 году итальянские археологи нашли в театре Кесарии вторично использованный известняковый блок с именем и титулом Пилата — префект Иудеи — от здания, которое он посвятил Тиберию; это единственная известная каменная надпись его времени с его именем, и она закрепляет и его чин, и его город. Дворец Ирода с бассейном, вырубленным в скале мыса, раскопан в 1970-х–1990-х годах, и резиденцию наместников помещают там."
+map:
+  place: a58735e
+  year: "AD 30"
+  ref: Acts.23.35
+scripture: [Luke.3.1, Matt.27.2, Matt.27.27, Acts.23.33-Acts.23.35, Acts.25.1-Acts.25.6, Acts.10.1]
+sources:
+  - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "A. Frova, 'L'iscrizione di Ponzio Pilato a Cesarea', Rendiconti dell'Istituto Lombardo 95 (1961)"
+  - "Josephus, Jewish War 2.169-174 (the standards; the crowd at Pilate's house in Caesarea); 2.301-308 (Florus' tribunal at the palace); Antiquities 18.55-59"
+  - "Philo, Embassy to Gaius 299-305 (the shields in Herod's palace in Jerusalem)"
+  - "K. L. Gleason et al., 'The Promontory Palace at Caesarea Maritima', Journal of Roman Archaeology 11 (1998)"
+  - "H. K. Bond, Pontius Pilate in History and Interpretation (1998)"
+status: checked

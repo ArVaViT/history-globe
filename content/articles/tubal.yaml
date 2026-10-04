@@ -1,0 +1,31 @@
+# Overview article (ADR 0007). Mainstream facts only; the identification with Tabal is the usual one.
+id: tubal
+place: aaaaead
+title:
+  en: "Tubal"
+  ru: "Фувал"
+body:
+  en:
+    - "Tubal is a people of Asia Minor, a son of Japheth in the table of nations and the constant companion of Meshech in Ezekiel. It is generally identified with Tabal of the Assyrian records, a land of small Luwian-speaking kingdoms on the plateau of south-central Anatolia, in the old Hittite country around modern Kayseri and Niğde, north of the Taurus and its silver mines. Shalmaneser III received tribute from twenty-four kings of Tabal in 837 BC; Tiglath-pileser III deposed its king Wassurme and put a commoner, Hulli, in his place; Sargon II married his daughter to Ambaris of Tabal and then, in 713, carried him off to Assyria. Hieroglyphic Luwian inscriptions of these kings survive on the rocks of Cappadocia. The Greeks later knew the Tibareni on the Black Sea coast, in the same satrapy as the Moschi, and Josephus made the Thobelites the Iberians of the Caucasus."
+    - "Ezekiel names “Javan, Tubal, and Meshech” among the merchants of Tyre who “traded the persons of men and vessels of brass”, the slaves and bronze that Anatolia exported. In his vision of the dead “there is Meshech, Tubal, and all her multitude”, warriors gone down to the pit. And in the oracle against Gog, Tubal is half of his realm: “Gog, the land of Magog, the chief prince of Meshech and Tubal”. Isaiah sends the survivors of Israel as messengers to far nations, “to Tubal, and Javan, to the isles afar off, that have not heard my fame”; the Synodal Bible writes the name there as Tubal rather than its usual Fuval."
+    - "Tabal was overrun by the Cimmerians in the seventh century BC, later passed under Persian rule, and the name died out. The region is central Turkey, around Kayseri and Niğde, where the mound of Kültepe and the rock inscriptions of the Tabalian kings remain."
+  ru:
+    - "Фувал — народ Малой Азии, сын Иафета в таблице народов и постоянный спутник Мешеха у Иезекииля. Его обычно отождествляют с Табалом ассирийских записей — страной малых лувийских царств на плато южной Анатолии, в старой хеттской земле вокруг нынешних Кайсери и Нигде, к северу от Тавра и его серебряных рудников. Салманасар III получил дань от двадцати четырёх царей Табала в 837 г. до н. э.; Тиглатпаласар III низложил его царя Вассурме и посадил на его место простолюдина Хулли; Саргон II выдал дочь за Амбариса Табальского, а затем, в 713 г., увёл его в Ассирию. Лувийские иероглифические надписи этих царей сохранились на скалах Каппадокии. Греки позже знали тибаренов на берегу Чёрного моря, в одной сатрапии с мосхами, а Иосиф Флавий считал фовелитов иберами Кавказа."
+    - "Иезекииль называет Иавана, Фувала и Мешеха среди купцов Тира, которые выменивали товары «на души человеческие и медную посуду» — рабов и бронзу, которые вывозила Анатолия. В его видении мёртвых «там Мешех и Фувал со всем множеством своим», воины, сошедшие в преисподнюю. А в пророчестве о Гоге Фувал — половина его державы: «Гог, князь Роша, Мешеха и Фувала». Исаия посылает уцелевших из Израиля вестниками к дальним народам, «к Тубалу и Явану, на дальние острова, которые не слышали обо Мне»; Синодальная Библия пишет здесь имя как Тубал, а не обычное Фувал."
+    - "В VII веке до н. э. Табал опустошили киммерийцы, позже он вошёл в Персидскую державу, и имя исчезло. Этот край — центральная Турция, около Кайсери и Нигде, где остались холм Кюльтепе и наскальные надписи табальских царей."
+scripture:
+  - Gen.10.2
+  - Isa.66.19
+  - Ezek.27.13
+  - Ezek.32.26
+  - Ezek.38.2-Ezek.38.3
+  - Ezek.39.1
+sources:
+  - "Shalmaneser III, annals (RIMA 3, A.0.102) (the twenty-four kings of Tabal)"
+  - "Tiglath-pileser III, Summary Inscription 7 (RINAP 1, Tiglath-pileser III 47) (Wassurme and Hulli)"
+  - "Sargon II, annals, in A. Fuchs, Die Inschriften Sargons II. aus Khorsabad (1994) (Ambaris of Tabal)"
+  - "Herodotus, Histories 3.94; 7.78 (the Tibareni and Moschi)"
+  - "Josephus, Antiquities 1.124"
+  - "J. D. Hawkins, Corpus of Hieroglyphic Luwian Inscriptions, vol. 1 (2000)"
+  - "T. Bryce, The World of the Neo-Hittite Kingdoms: A Political and Military History (2012)"
+status: checked

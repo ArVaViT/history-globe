@@ -30,6 +30,7 @@ import {
   type ContentRelease,
   type PleiadesLink,
   type PlacePhoto,
+  SourcesRuFile,
 } from "../packages/model/src/content.ts";
 import { inheritLife } from "../packages/model/src/place-life-links.ts";
 import { POLITY_SPLIT_YEAR } from "../packages/model/src/time.ts";
@@ -913,16 +914,31 @@ for (const v of overridesFile.vassals ?? []) {
 // A polity of many parts (the Greek city-states, Phoenicia) had a centre label on each:
 // seven "Greek city-states" at a region's view. One per shape and years keeps tier 0;
 // the others become tier 2, shown from zoom 6 (style.ts), where they no longer crowd.
+// The same pass picks the one lead point (build_data.py lead_anchor) that names the state
+// at a continent's view: the kept centre label where there is one. Each part brought its
+// own lead, and a demoted lead left the state unnamed far out (the Roman Empire, Venice).
 {
-  const seen = new Set<string>();
-  for (const f of polityLabels.features as {
-    properties: PolityFeature["properties"] & { tier?: number };
-  }[]) {
+  type Label = { properties: PolityFeature["properties"] & { tier?: number; lead?: number } };
+  const groups = new Map<string, Label[]>();
+  for (const f of polityLabels.features as Label[]) {
     // A label left with no years by a correction must not take the place of the one drawn.
-    if (f.properties.tier !== 0 || f.properties.rel || f.properties.y1 <= f.properties.y0) continue;
+    if (f.properties.rel || f.properties.y1 <= f.properties.y0) continue;
     const key = `${f.properties.name}|${String(f.properties.y0)}`;
-    if (seen.has(key)) f.properties.tier = 2;
-    else seen.add(key);
+    groups.set(key, [...(groups.get(key) ?? []), f]);
+  }
+  for (const group of groups.values()) {
+    const centres = group.filter((f) => f.properties.tier === 0);
+    const keep = centres.find((f) => f.properties.lead) ?? centres[0];
+    for (const f of centres) if (f !== keep) f.properties.tier = 2;
+    const lead =
+      keep ??
+      group.find((f) => f.properties.lead && (f.properties.tier ?? 0) < 2) ??
+      group.find((f) => (f.properties.tier ?? 0) < 2) ??
+      group[0];
+    for (const f of group) {
+      if (f === lead) f.properties.lead = 1;
+      else delete f.properties.lead;
+    }
   }
 }
 
@@ -1159,7 +1175,7 @@ Object.assign(
 );
 
 // Candidate sites get a Russian label where their English one refers to a place with a
-// Synodal name ("same place as Abila" -> "то же место, что Авила").
+// Synodal name ("same place as Abila" -> "там же, где Авила").
 const sitesPath = join(out, "sites.geojson");
 const sites = JSON.parse(readFileSync(sitesPath, "utf8")) as {
   features: { properties: SiteLabelParts & { place: string; label_ru?: string } }[];
@@ -1401,6 +1417,37 @@ const chapterYears = packChapterYears(ChapterYearsFile.parse(load("content/chapt
 ]);
 errors.push(...chapterYears.errors);
 
+// Sources in Russian (content/sources-ru.yaml): every line a reader sees, on a card or a
+// page, has its Russian; a new line without one stops the build.
+const sourcesRu = SourcesRuFile.parse(load("content/sources-ru.yaml"));
+const seenRu = new Set<string>();
+const inRussian = (where: string, list: readonly string[]): string[] =>
+  list.map((s) => {
+    seenRu.add(s);
+    const ru = sourcesRu[s];
+    if (ru === undefined)
+      errors.push(`${where}: no Russian for the source "${s}" (sources-ru.yaml)`);
+    return ru ?? s;
+  });
+const articlesOut = articles.map((a) => ({
+  ...a,
+  sources_ru: inRussian(`articles/${a.id}`, a.sources),
+}));
+const questionsOut = questions.map((q) => ({
+  ...q,
+  sources_ru: inRussian(`questions/${q.id}`, q.sources),
+}));
+for (const [id, l] of Object.entries(life))
+  if (!l.inherited) life[id] = { ...l, sources_ru: inRussian(`place-life: ${id}`, l.sources) };
+for (const [id, l] of Object.entries(life))
+  if (l.inherited) {
+    const ru = l.sources.map((s) => sourcesRu[s] ?? s);
+    life[id] = { ...l, sources_ru: ru };
+  }
+// A translation no line uses any more is stale.
+for (const s of Object.keys(sourcesRu))
+  if (!seenRu.has(s)) errors.push(`sources-ru.yaml: "${s}" is no source of anything`);
+
 if (errors.length > 0) {
   console.error(errors.join("\n"));
   process.exit(1);
@@ -1444,7 +1491,7 @@ const release: ContentRelease = {
     return by;
   }, {}),
 };
-writeFileSync(join(out, "questions.json"), JSON.stringify(questions));
+writeFileSync(join(out, "questions.json"), JSON.stringify(questionsOut));
 // What ancient authors say of places (content/ancient-authors.yaml): loaded when a card
 // opens, place id → its mentions in the file's order.
 {
@@ -1482,7 +1529,7 @@ const wallsFile = join(root, "content/jerusalem-walls.geojson");
 }
 writeFileSync(
   join(out, "articles.json"),
-  JSON.stringify(Object.fromEntries(articles.map((a) => [a.place, a]))),
+  JSON.stringify(Object.fromEntries(articlesOut.map((a) => [a.place, a]))),
 );
 for (const [path, text] of [...writes, ...ancientWrites]) writeFileSync(path, text);
 writeFileSync(join(out, "content.json"), JSON.stringify(release));

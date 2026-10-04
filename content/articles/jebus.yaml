@@ -1,0 +1,36 @@
+# Overview article (ADR 0007). Mainstream facts only; Jebus is taken as Jerusalem, as the Bible says, and the minority view that separates them (the app's Shufat candidate) is named as such; no absolute dates are given for David.
+id: jebus
+place: a403c45
+title:
+  en: "Jebus"
+  ru: "Иевус"
+body:
+  en:
+    - "Jebus is the name the Bible gives Jerusalem in the days before David, when the Jebusites held it; the record here stands at Jerusalem. In the border lists of Joshua the city appears as “the Jebusite; the same is Jerusalem”, and among the towns of Benjamin as “Jebusi, which is Jerusalem”. The Levite of Judges 19 “came over against Jebus, which is Jerusalem”, and his servant proposed to turn in to “this city of the Jebusites”, but his master would not lodge in a city of strangers and went on to Gibeah. The Chronicler says that “David and all Israel went to Jerusalem, which is Jebus”, and that “the inhabitants of Jebus said to David, Thou shalt not come hither.”"
+    - "The Jebusites are counted among the peoples of Canaan from Genesis onward, and Ezekiel reminds Jerusalem that “thy father was an Amorite, and thy mother an Hittite”. Neither Judah nor Benjamin drove them out: “the Jebusites dwell with the children of Judah at Jerusalem unto this day.” David took “the strong hold of Zion” from them and made it the city of David, and when the plague was stayed he bought the threshing floor of Araunah the Jebusite, where Solomon later built the Temple. Zechariah could still promise that Ekron would be “as a Jebusite”, a stranger absorbed into Judah."
+    - "Outside the Bible the city is never called Jebus. Egyptian execration texts of the nineteenth or eighteenth century BC seem to name Rushalimum, and the Amarna letters of the fourteenth century, written by its ruler Abdi-Heba, call it Urusalim; the name Jerusalem is therefore older than the Bible's Jebus, which most scholars take for a name formed from the people, or for the name of the citadel. A few, following J. Maxwell Miller, have argued that Jebus was a separate town north of Jerusalem, at Shuafat, and that the two were later confused; most reject this, since the Bible itself equates them. The Jebusite city has been sought on the ridge of the City of David above the Gihon spring, where fortifications of the Middle Bronze Age and remains of the Late Bronze Age have been found."
+  ru:
+    - "Иевус — имя, которым Библия называет Иерусалим во дни до Давида, когда им владели Иевусеи; запись здесь стоит в Иерусалиме. В пограничных списках книги Иисуса Навина город назван «Иевуса, который есть Иерусалим», а среди городов Вениамина — «Иевус, иначе Иерусалим». Левит из 19-й главы Судей «пришел к Иевусу, что ныне Иерусалим», и слуга предложил ему: «зайдем в этот город Иевусеев и ночуем в нем», но господин не захотел ночевать в городе чужих и пошёл дальше в Гиву. Летописец говорит, что «пошел Давид и весь Израиль к Иерусалиму, то есть к Иевусу», и что «сказали жители Иевуса Давиду: не войдешь сюда»."
+    - "Иевусеи числятся среди народов Ханаана начиная с книги Бытия, а Иезекииль напоминает Иерусалиму: «отец твой Аморрей, и мать твоя Хеттеянка». Ни Иуда, ни Вениамин не изгнали их: «Иевусеи живут с сынами Иуды в Иерусалиме даже до сего дня». Давид взял у них крепость Сион и сделал её городом Давидовым, а когда язва прекратилась, купил гумно Орны Иевусеянина, где Соломон потом построил Храм. Захария ещё мог обещать, что Екрон будет «как Иевусей», чужак, вошедший в Иудею."
+    - "Вне Библии город никогда не называется Иевусом. Египетские тексты проклятий XIX или XVIII века до н. э., по-видимому, называют Рушалимум, а амарнские письма XIV века, написанные его правителем Абди-Хебой, зовут его Урусалим; имя Иерусалим, стало быть, старше библейского Иевуса, в котором большинство учёных видят имя, образованное от народа, или имя крепости. Немногие, вслед за Дж. Максвеллом Миллером, доказывали, что Иевус был отдельным городом к северу от Иерусалима, в Шуафате, и что позже их смешали; большинство это отвергает, поскольку сама Библия отождествляет их. Иевусейский город ищут на гребне города Давидова над источником Гион, где найдены укрепления среднего бронзового века и остатки позднего бронзового века."
+scripture:
+  - Gen.10.16
+  - Josh.15.8
+  - Josh.15.63
+  - Josh.18.16
+  - Josh.18.28
+  - Judg.1.21
+  - Judg.19.10-Judg.19.12
+  - 2Sam.5.6-2Sam.5.9
+  - 2Sam.24.16-2Sam.24.25
+  - 1Chr.11.4-1Chr.11.5
+  - 2Chr.3.1
+  - Ezek.16.3
+  - Zech.9.7
+sources:
+  - "The Egyptian execration texts (G. Posener, Princes et pays d'Asie et de Nubie, 1940)"
+  - "Amarna letters EA 285-290 (Abdi-Heba of Urusalim), tr. W. L. Moran, The Amarna Letters (1992)"
+  - "J. M. Miller, 'Jebus and Jerusalem: A Case of Mistaken Identity', Zeitschrift des Deutschen Palästina-Vereins 90 (1974)"
+  - "N. Na'aman, 'Canaanite Jerusalem and Its Central Hill Country Neighbours in the Second Millennium B.C.E.', Ugarit-Forschungen 24 (1992)"
+  - "R. Reich and E. Shukron, Excavations in the City of David, Jerusalem (1995-2010) (2021)"
+status: checked

@@ -1,0 +1,56 @@
+# Joab's census, 2 Samuel 24 (1 Chronicles 21 tells it again), in the order of the text:
+# Joab and the captains go round the land from Aroer to Beersheba and come back to
+# Jerusalem after nine months and twenty days. The chapter is not dated; the tour's year
+# (975 BC) is a point late in David's reign (c. 1010-970 BC), for the map only. The land of
+# Tahtim-hodshi (24:6) and the cities of the Hivites and Canaanites (24:7) have no place on
+# the map; David's command (24:1-4) names no place, so the tour opens at Aroer. The Aroer
+# "in the midst of the river" is taken as Aroer on the Arnon, the city so described in
+# Deut 2:36 and Josh 13:9, 16; Dan-jaan (24:6) is usually read as Dan.
+id: census
+title:
+  en: "Joab's census of Israel"
+  ru: "Перепись Иоава"
+year: "975 BC"
+people: ["Joab@1Sa.26.6-Psa"]
+approximate: true
+stops:
+  - place: ae46f2e # Aroer
+    ref: 2Sam.24.1-2Sam.24.5
+    note:
+      en: 'David tells Joab, "Go now through all the tribes of Israel, from Dan even to Beer-sheba, and number ye the people"; the captains cross the Jordan and pitch at Aroer.'
+      ru: "Давид велит Иоаву: «пройди по всем коленам Израилевым и Иудиным от Дана до Вирсавии, и исчислите народ»; военачальники переходят Иордан и останавливаются в Ароере."
+  - place: a095b6e # Jazer
+    ref: 2Sam.24.5
+    note:
+      en: "From Aroer the way leads toward Jazer, in the land of Gad."
+      ru: "От Ароера путь идёт к Иазеру, в земле Гадовой."
+  - place: ae73b90 # Gilead
+    ref: 2Sam.24.6
+    note:
+      en: "They come to Gilead and to the land of Tahtim-hodshi."
+      ru: "Приходят в Галаад и в землю Тахтим-Ходши."
+  - place: a513646 # Dan
+    ref: 2Sam.24.6
+    note:
+      en: "They come to Dan-jaan, usually taken as Dan, the northern end of the land."
+      ru: "Приходят в Дан-Яан, обычно понимаемый как Дан, северный край земли."
+  - place: a98e4d7 # Sidon
+    ref: 2Sam.24.6
+    note:
+      en: "They go about to Sidon."
+      ru: "Обходят Сидон."
+  - place: a160272 # Tyre
+    ref: 2Sam.24.7
+    note:
+      en: "They come to the stronghold of Tyre and to all the cities of the Hivites and the Canaanites."
+      ru: "Приходят к укреплению Тира и во все города Хивеян и Хананеян."
+  - place: ad2f6c2 # Beersheba
+    ref: 2Sam.24.7
+    note:
+      en: "They go out to the south of Judah, to Beersheba."
+      ru: "Выходят на юг Иудеи, в Вирсавию."
+  - place: a15257a # Jerusalem
+    ref: 2Sam.24.8-2Sam.24.25
+    note:
+      en: "After nine months and twenty days they come to Jerusalem: 800,000 men in Israel, 500,000 in Judah. David's heart smites him; he chooses the plague rather than the hand of man, 70,000 die from Dan to Beersheba, and the Lord stays the angel's hand by the threshing floor of Araunah the Jebusite, which David buys and builds an altar on."
+      ru: "Через девять месяцев и двадцать дней они приходят в Иерусалим: восемьсот тысяч мужей в Израиле, пятьсот тысяч в Иудее. Сердце Давида вздрагивает; он выбирает язву, а не руки человеческие, умирает семьдесят тысяч от Дана до Вирсавии, и Господь останавливает Ангела у гумна Орны Иевусеянина, которое Давид покупает и ставит на нём жертвенник."

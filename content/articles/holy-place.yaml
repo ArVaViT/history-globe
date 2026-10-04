@@ -1,0 +1,42 @@
+# Overview article (ADR 0007). Mainstream facts only; the position of the hall on the Temple Mount is named as disputed; Josephus and 1 Maccabees are followed for the Second Temple.
+id: holy-place
+place: ab60a74
+title:
+  en: "Holy Place"
+  ru: "Святилище"
+body:
+  en:
+    - "The Holy Place is the main hall of the sanctuary, the room between the porch and the Holy of Holies. In the tabernacle it was the first of two chambers, divided from the inner one by the veil: “the vail shall divide unto you between the holy place and the most holy”. It held the table of the showbread on the north, the lampstand on the south and the golden altar of incense before the veil. In Solomon's Temple the same hall, the hekal, was forty cubits long, twenty wide and thirty high, panelled with cedar and overlaid with gold, with ten lampstands, “five on the right side, and five on the left, before the oracle”; the Bible usually calls the whole building “the house” and this room “the temple”."
+    - "Ordinary priests served here every day, trimming the lamps and burning incense morning and evening, and set out fresh bread each sabbath; only the high priest went beyond the veil, once a year. When the ark was brought in, the ends of its staves “were seen out in the holy place before the oracle”, and as the priests came out “the cloud filled the house of the LORD”. Hezekiah had the Levites carry “the filthiness out of the holy place” after Ahaz had shut the doors and put out the lamps. Ezekiel's visionary temple keeps the plan, with chambers where the priests leave “their garments wherein they minister; for they are holy”."
+    - "The Second Temple and Herod's rebuilding kept the arrangement. Josephus describes the hall with its great golden doors and Babylonian tapestry, and inside it the lampstand, the table and the altar of incense; Antiochus IV carried these off in 169 BC, Judas Maccabeus made new ones, and Pompey, who entered in 63 BC, touched nothing. Here Zacharias, whose “lot was to burn incense”, saw the angel while the people waited outside. Jesus warned of “the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place”. The Epistle to the Hebrews names the first tent “the sanctuary” and the second “the Holiest of all”, and sees in the high priest's one yearly entrance a figure of Christ, who “entered in once into the holy place, having obtained eternal redemption for us”."
+    - "After Titus burned the Temple in AD 70 the lampstand and the table were carried in his triumph at Rome, as the relief on the Arch of Titus shows. Where the hall stood on the Temple Mount is disputed: most place the Temple with its inner shrine at the rock under the Dome of the Rock, some further north or south, and nothing of it can be seen or dug today."
+  ru:
+    - "Святилище — главный зал святого дома, помещение между притвором и Святым святых. В скинии это была первая из двух частей, отделённая от внутренней завесой: «и будет завеса отделять вам святилище от Святаго-святых». Здесь стояли стол хлебов предложения с северной стороны, светильник с южной и золотой жертвенник курения перед завесой. В храме Соломона тот же зал, хекал, имел сорок локтей в длину, двадцать в ширину и тридцать в высоту, был обшит кедром и обложен золотом, и в нём стояли десять светильников — «пять по правую сторону и пять по левую сторону, пред задним отделением храма»; Библия обычно называет всё здание «домом», а эту комнату — «храмом»."
+    - "Здесь ежедневно служили обычные священники: поправляли лампады, воскуряли утром и вечером, каждую субботу выкладывали свежие хлебы; за завесу входил только первосвященник, раз в год. Когда внесли ковчег, «головки шестов видны были из святилища пред давиром», а когда священники вышли, «облако наполнило дом Господень». Езекия велел левитам выбросить «нечистоту из святилища» после того, как при Ахазе двери заперли и светильники погасили. Храм видения Иезекииля сохраняет тот же план, с комнатами, где священники должны оставить одежды, «в которых служили, ибо они священны»."
+    - "Второй храм и перестройка Ирода сохранили то же устройство. Иосиф Флавий описывает зал с огромными золочёными дверями и вавилонской завесой, а внутри — светильник, стол и жертвенник курения; Антиох IV унёс их в 169 г. до н. э., Иуда Маккавей сделал новые, а Помпей, вошедший сюда в 63 г. до н. э., ничего не тронул. Здесь Захарии, которому по жребию досталось «войти в храм Господень для каждения», явился Ангел, пока народ ждал снаружи. Иисус предупреждал: когда увидите «мерзость запустения, реченную через пророка Даниила, стоящую на святом месте». Послание к Евреям называет первую скинию «святое», а вторую — «святое святых», и видит в единственном годовом входе первосвященника образ Христа, Который «однажды вошел во святилище и приобрел вечное искупление»."
+    - "После того как Тит сжёг храм в 70 г. н. э., светильник и стол пронесли в его триумфе в Риме, как показывает рельеф на арке Тита. Где стоял зал на Храмовой горе, спорно: большинство помещает храм с его внутренним святилищем у скалы под Куполом Скалы, некоторые — севернее или южнее, и сегодня от него нельзя ни увидеть, ни раскопать ничего."
+scripture:
+  - Exod.26.33-Exod.26.35
+  - Exod.40.22-Exod.40.27
+  - Lev.16.2
+  - 1Kgs.6.17
+  - 1Kgs.7.49
+  - 1Kgs.8.8-1Kgs.8.11
+  - 2Chr.29.5-2Chr.29.7
+  - Ezek.42.14
+  - Matt.24.15
+  - Luke.1.9-Luke.1.11
+  - Heb.9.2-Heb.9.3
+  - Heb.9.11-Heb.9.12
+  - Heb.9.24-Heb.9.25
+sources:
+  - "Josephus, Jewish War 5.207-219 (the hall of Herod's Temple, its doors, curtain and furniture); 7.148-150 (the lampstand and table in the triumph)"
+  - "Josephus, Jewish Antiquities 3.122-150 (the tabernacle); 14.71-72 (Pompey in the Temple)"
+  - "1 Maccabees 1.21-23 (Antiochus takes the vessels); 4.49-51 (Judas makes new ones)"
+  - "Tacitus, Histories 5.9 (Pompey enters the Temple)"
+  - "Mishnah, Tamid 3.6-9 and 6.1-3 (the daily service in the hall); Middot 4.1-7 (the hall's doors and measurements)"
+  - "M. Haran, Temples and Temple-Service in Ancient Israel (1978)"
+  - "V. Hurowitz, I Have Built You an Exalted House: Temple Building in the Bible in Light of Mesopotamian and Northwest Semitic Writings (1992)"
+  - "C. Meyers, 'Temple, Jerusalem', in D. N. Freedman (ed.), The Anchor Bible Dictionary, vol. 6 (1992)"
+  - "L. Ritmeyer, The Quest: Revealing the Temple Mount in Jerusalem (2006) (the position of the Temple)"
+status: checked

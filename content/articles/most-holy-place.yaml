@@ -1,0 +1,40 @@
+# Overview article (ADR 0007). Mainstream facts only; the position of the inner sanctuary on the Temple Mount is given as disputed.
+id: most-holy-place
+place: a9acaaf
+title:
+  en: "Most Holy Place"
+  ru: "Святое Святых"
+body:
+  en:
+    - "The Most Holy Place, or Holy of Holies, was the innermost room of the tabernacle and then of the Temple in Jerusalem, where the ark of the covenant stood. In the tabernacle a veil divided “between the holy place and the most holy”, and the mercy seat was set upon the ark “in the most holy place”. In Solomon's Temple it was the debir, which the King James Version calls “the oracle”: a cube of twenty cubits (about 9 m) overlaid with gold, with two olive-wood cherubim ten cubits high, under whose wings the priests brought the ark “into the oracle of the house, to the most holy place”. Chronicles says the gold alone came to six hundred talents."
+    - "Only the high priest entered, once a year on the Day of Atonement, with blood and incense: Leviticus warns Aaron “that he come not at all times into the holy place within the vail before the mercy seat”. The Letter to the Hebrews builds on this: “after the second veil, the tabernacle which is called the Holiest of all”, into which “went the high priest alone once every year, not without blood”. Ezekiel's visionary temple keeps the twenty-cubit room, “This is the most holy place”, and Daniel's seventy weeks end with the anointing of “the most Holy”."
+    - "The ark vanished when the Babylonians burnt the Temple in 587 or 586 BC, and the inner room of the Second Temple stood empty. When Pompey took Jerusalem in 63 BC he went in, Josephus says, and saw what only the high priest might see, but took nothing; Tacitus records that Pompey found no image of a god there, only an empty seat and bare secrets. The Mishnah remembers a stone there, the Foundation Stone, on which the high priest set his censer. The Gospels tell that at the death of Jesus “the veil of the temple was rent in twain from the top to the bottom”, and Hebrews speaks of “boldness to enter into the holiest by the blood of Jesus”, by a new way “through the veil, that is to say, his flesh”."
+    - "The Temple was destroyed in AD 70. Since 691 or 692 the Dome of the Rock has stood on the Temple Mount (al-Haram al-Sharif) over the exposed bedrock. Where on the Mount the Most Holy Place stood is debated: one view sets it over this rock, others somewhat to the north or to the south of it. Nothing of the room survives, and excavation on the Mount is not permitted. Many observant Jews do not walk on the platform at all, for fear of treading where the Holy of Holies stood."
+  ru:
+    - "Святое Святых — внутренняя комната скинии, а затем Иерусалимского храма, где стоял ковчег завета. В скинии завеса отделяла «святилище от Святаго-святых», а крышку ковчега велено было положить «во Святом-святых». В храме Соломона это был давир — Синодальный перевод так и оставляет еврейское слово: куб в двадцать локтей (около 9 м), обложенный золотом, с двумя херувимами из масличного дерева высотой в десять локтей, под крылья которых священники внесли ковчег «на место его, в давир храма, во Святое Святых». По Паралипоменону, одного золота на него пошло шестьсот талантов."
+    - "Входил сюда только первосвященник, раз в год, в день очищения, с кровью и курением: Левит предупреждает Аарона, «чтоб он не во всякое время входил во святилище за завесу пред крышку». На это опирается Послание к Евреям: «За второю же завесою была скиния, называемая „святое святых“», куда «однажды в год один только первосвященник, не без крови». В храме, который видел Иезекииль, та же комната в двадцать локтей: «это — Святое Святых», а семьдесят седьмин Даниила кончаются тем, что «помазан был Святый святых»."
+    - "Ковчег исчез, когда вавилоняне сожгли храм в 587 или 586 г. до н. э., и внутренняя комната Второго храма стояла пустой. Взяв Иерусалим в 63 г. до н. э., Помпей вошёл туда и, по словам Иосифа Флавия, увидел то, что дозволено видеть одному первосвященнику, но ничего не тронул; Тацит пишет, что Помпей не нашёл там изображения бога — лишь пустое место и бессодержательные тайны. Мишна помнит там камень, Камень основания, на который первосвященник ставил кадильницу. Евангелия рассказывают, что в час смерти Иисуса «завеса в храме разодралась надвое, сверху донизу», а Послание к Евреям говорит о дерзновении «входить во святилище посредством Крови Иисуса Христа» новым путём — «чрез завесу, то есть, плоть Свою»."
+    - "Храм был разрушен в 70 г. н. э. С 691–692 гг. на Храмовой горе (Харам-аш-Шариф) над выходом скалы стоит Купол Скалы. Где на горе стояло Святое Святых, спорят: по одному мнению — над этой скалой, по другим — несколько севернее или южнее. От самой комнаты ничего не осталось, а раскопки на горе не разрешены. Многие религиозные евреи вовсе не ходят по площадке, чтобы не ступить туда, где стояло Святое Святых."
+scripture:
+  - Exod.26.33-Exod.26.34
+  - Lev.16.2
+  - 1Kgs.6.16
+  - 1Kgs.6.19-1Kgs.6.20
+  - 1Kgs.6.23
+  - 1Kgs.8.6
+  - 2Chr.3.8
+  - 2Chr.5.7
+  - Ezek.41.4
+  - Dan.9.24
+  - Matt.27.51
+  - Heb.9.3
+  - Heb.9.7
+  - Heb.10.19-Heb.10.20
+sources:
+  - "Josephus, Jewish War 5.219 (the empty inner sanctuary); Antiquities 14.71-72 (Pompey enters the sanctuary)"
+  - "Tacitus, Histories 5.9"
+  - "Mishnah, Yoma 5.1-2 (the high priest within the veil; the Foundation Stone); Middot 4.7 (the dimensions of the house)"
+  - "V. A. Hurowitz, I Have Built You an Exalted House: Temple Building in the Bible in Light of Mesopotamian and Northwest Semitic Writings (1992)"
+  - "L. Ritmeyer, The Quest: Revealing the Temple Mount in Jerusalem (2006)"
+  - "O. Grabar, The Dome of the Rock (2006)"
+status: checked

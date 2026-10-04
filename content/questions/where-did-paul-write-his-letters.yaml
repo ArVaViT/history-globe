@@ -1,0 +1,40 @@
+id: where-did-paul-write-his-letters
+question:
+  en: "Where did Paul write his letters from?"
+  ru: "Откуда Павел писал свои послания?"
+answer:
+  en:
+    - "From the cities where he stayed longest: Corinth, Ephesus and, at the end, Rome. The map point stands on Corinth, from which the earliest letter and the longest were sent. Only a few letters name their place of writing outright, and the rest are placed by matching their hints with the story in Acts, so some of the answers below are disputed."
+    - "First Thessalonians was written at Corinth about AD 50, soon after Timothy had come back from Thessalonica: “when Silas and Timotheus were come from Macedonia”, as Acts says of Paul's stay there. First Corinthians came from Ephesus about 55: “I will tarry at Ephesus until Pentecost.” Second Corinthians followed from Macedonia later that year, after Paul had crossed from Troas and found Titus. Romans was written at Corinth about 57, during the three months Paul spent in Greece before his last journey to Jerusalem: he commends “Phebe our sister, which is a servant of the church which is at Cenchrea”, Corinth's eastern port 11 km away, and sends greetings from his host Gaius and from “Erastus the chamberlain of the city”, whose name appears on a paving inscription found at Corinth. Galatians is put either at Antioch about 48 or at Ephesus a few years later."
+    - "The letters from prison, Philippians, Colossians, Philemon and Ephesians, speak of “my bonds”, of “all the palace” and of “they that are of Caesar's household”; the old view places them in Rome during the two years of Acts 28, about 60–62, and that is still the most common, but many scholars argue for Ephesus about 54–55 or for Caesarea, where Paul lay two years before his appeal, since Onesimus and the messengers travel so easily between the apostle and the Lycus valley. Second Timothy, if Paul's own, was written from a Roman prison near the end: “when he was in Rome, he sought me out very diligently.”"
+  ru:
+    - "Из городов, где он задерживался дольше всего: из Коринфа, Ефеса и, под конец, из Рима. Точка карты стоит на Коринфе, откуда ушли самое раннее послание и самое длинное. Лишь немногие послания прямо называют место написания, остальные помещают, сверяя намёки в них с рассказом Деяний, так что часть ответов ниже оспаривается."
+    - "Первое послание к Фессалоникийцам написано в Коринфе около 50 года, вскоре после возвращения Тимофея из Фессалоники — «когда пришли из Македонии Сила и Тимофей», как говорят Деяния о пребывании Павла там. Первое к Коринфянам пришло из Ефеса около 55 года: «В Ефесе же я пробуду до Пятидесятницы». Второе к Коринфянам последовало из Македонии в том же году, когда Павел нашёл там Тита. Послание к Римлянам написано в Коринфе около 57 года, в три месяца, которые Павел провёл в Элладе перед последним путём в Иерусалим: он представляет «Фиву, сестру нашу, диакониссу церкви Кенхрейской» — Кенхреи, восточная гавань Коринфа, в 11 км от города — и передаёт приветы от хозяина дома Гаия и от Ераста: «Приветствует вас Ераст, городской казнохранитель» — его имя стоит на мостовой, найденной в Коринфе. Послание к Галатам относят либо к Антиохии около 48 года, либо к Ефесу несколькими годами позже."
+    - "Послания из уз — к Филиппийцам, Колоссянам, Филимону и Ефесянам — говорят об «узах моих», о «всей претории» и о тех, кто «из кесарева дома»; старое мнение помещает их в Рим, в два года из 28-й главы Деяний, около 60–62 годов, и оно по-прежнему самое распространённое, но многие учёные доказывают Ефес около 54–55 годов или Кесарию, где Павел два года сидел до своей апелляции, — слишком легко ходят Онисим и посланцы между апостолом и долиной Лика. Второе к Тимофею, если оно принадлежит Павлу, написано из римской тюрьмы под конец: «быв в Риме, с великим тщанием искал меня и нашел»."
+map:
+  place: a6f437a
+  year: "AD 57"
+  ref: Rom.16.23
+scripture:
+  [
+    Acts.18.5,
+    1Thess.3.6,
+    1Cor.16.8,
+    2Cor.2.13,
+    2Cor.7.5,
+    Acts.20.2-Acts.20.3,
+    Rom.16.1,
+    Rom.16.23,
+    Phil.1.13,
+    Phil.4.22,
+    Acts.28.30,
+    2Tim.1.17,
+  ]
+sources:
+  - "Straight-line distance between the places' points (Corinth, Cenchreae): OpenBible.info Bible Geocoding Data (CC BY 4.0)"
+  - "J. H. Kent, Corinth VIII.3: The Inscriptions 1926-1950 (1966), no. 232 (the Erastus pavement)"
+  - "G. S. Duncan, St. Paul's Ephesian Ministry (1929), the case for Ephesus as the place of the prison letters"
+  - "R. Riesner, Paul's Early Period: Chronology, Mission Strategy, Theology (1998)"
+  - "J. Murphy-O'Connor, Paul: A Critical Life (1996)"
+  - "F. F. Bruce, Paul: Apostle of the Heart Set Free (1977)"
+status: checked
