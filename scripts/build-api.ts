@@ -87,9 +87,10 @@ const manifest = existsSync(join(data, "manifest.json"))
 
 const LICENSE = "CC BY 4.0";
 const CREDIT = [
-  "History Globe by Vadym Arnaut (https://github.com/ArVaViT/history-globe), CC BY 4.0",
-  "Places, verse tags and points: OpenBible.info Bible Geocoding Data (CC BY 4.0, modified)",
+  "History Globe by Vadym Arnaut (https://historyglobe.app), CC BY 4.0",
+  "Places, verse tags and points: OpenBible.info Bible Geocoding Data (CC BY 4.0, modified); some points from Wikidata (CC0)",
   "Russian names: read from the Russian Synodal translation (public domain)",
+  "Third-party parts keep their own licences: https://historyglobe.app/docs/sources.html",
 ];
 
 // Fresh each build: a book or file that is gone must not linger.

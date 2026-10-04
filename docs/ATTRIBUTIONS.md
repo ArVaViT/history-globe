@@ -76,7 +76,10 @@ Terrain
   ASTER GDEM courtesy of METI and NASA (Israel 10 m DEM processed by 4cast LTD).
   Cyprus DTM 2019 © Department of Lands and Surveys, Republic of Cyprus,
   licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).
-  [Add every other Mapterhorn source that falls inside the published extent.]
+  Zoomed in, other countries' relief comes from their national elevation models
+  (IGN France, CNIG España, INGV and others, 151 sources in all) under their open
+  licences; CC BY 4.0 allows the credit to point to Mapterhorn's list above, which the
+  sources page does.
 
 Base cartography
   Made with Natural Earth. Free vector and raster map data @ naturalearthdata.com.

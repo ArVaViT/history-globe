@@ -8,6 +8,7 @@ import { App } from "./App";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { i18n } from "./i18n";
 import { registerOffline } from "./offline";
+import { countVisits } from "./visits";
 import { readUrl } from "./url";
 import { DEFAULT_STATE } from "@hg/core";
 
@@ -34,6 +35,7 @@ window.setTimeout(() => {
 
 // What has been fetched stays for use without a network (public/sw.js).
 registerOffline();
+countVisits();
 
 const root = document.getElementById("root");
 if (!root) throw new Error("#root is missing");
