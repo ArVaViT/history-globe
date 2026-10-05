@@ -71,8 +71,6 @@ export interface Renderer {
   flyTo(target: Partial<Camera> & { readonly center: LonLat }, durationMs?: number): void;
   /** Pan, keeping the zoom, if the point lies under the panels and cards. */
   reveal?(at: LonLat): void;
-  /** An outline laid over the map at its true size, or none (comparing sizes). */
-  setOutline?(ring: readonly LonLat[] | null): void;
   /** The Bible alone (a setting): what it does not tell steps off the map. */
   setBibleOnly?(on: boolean): void;
   setRoute(coordinates: readonly LonLat[], currentIndex: number): void;

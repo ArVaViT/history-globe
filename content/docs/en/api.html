@@ -24,58 +24,61 @@ description: The places, the verses that name them, the events and the tours as 
    "page": { "en": "/en/place/philippi/", "ru": "/ru/place/philippi/" } }, …]</code></pre>
 
 <h2>All the files</h2>
-<table>
-  <thead>
-    <tr>
-      <th>File</th>
-      <th>What it holds</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>/api/v1/index.json</code></td>
-      <td>the list of files and books, the licence and the credits, the build date</td>
-    </tr>
-    <tr>
-      <td><code>/api/v1/places.json</code></td>
-      <td>
-        every place: id, names, kind, point, how many verses name it, its page (for a place some
-        verse names)
-      </td>
-    </tr>
-    <tr>
-      <td><code>/api/v1/verses/{Book}.json</code></td>
-      <td>
-        a verse → the places it names, one file a book (<code>Gen</code>, <code>1Kgs</code>,
-        <code>Acts</code>…)
-      </td>
-    </tr>
-    <tr>
-      <td><code>/api/v1/events.json</code></td>
-      <td>the dated events, with <code>ref</code> where the Bible tells the event</td>
-    </tr>
-    <tr>
-      <td><code>/api/v1/battles.json</code></td>
-      <td>
-        battles and sieges: place, year, sides and outcome, with <code>ref</code> where the Bible
-        tells the battle
-      </td>
-    </tr>
-    <tr>
-      <td><code>/api/v1/questions.json</code></td>
-      <td>
-        questions people ask, answered in both languages, with the view of the map and the sources
-      </td>
-    </tr>
-    <tr>
-      <td><code>/api/v1/tours.json</code></td>
-      <td>
-        the tours: their stops in order, each with its passage and note; <code>by: "sea"</code> for
-        a leg sailed, and <code>sailed</code> (days and verse) where the text says how long
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>File</th>
+        <th>What it holds</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/v1/index.json</code></td>
+        <td>the list of files and books, the licence and the credits, the build date</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/places.json</code></td>
+        <td>
+          every place: id, names, kind, point, how many verses name it, its page (for a place some
+          verse names)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/verses/{Book}.json</code></td>
+        <td>
+          a verse → the places it names, one file a book (<code>Gen</code>, <code>1Kgs</code>,
+          <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/events.json</code></td>
+        <td>the dated events, with <code>ref</code> where the Bible tells the event</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/battles.json</code></td>
+        <td>
+          battles and sieges: place, year, sides and outcome, with <code>ref</code> where the Bible
+          tells the battle
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/questions.json</code></td>
+        <td>
+          questions people ask, answered in both languages, with the view of the map and the sources
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/tours.json</code></td>
+        <td>
+          the tours: their stops in order, each with its passage and note;
+          <code>by: "sea"</code> for a leg sailed, and <code>sailed</code> (days and verse) where
+          the text says how long
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <h2>Conventions</h2>
 <ul>

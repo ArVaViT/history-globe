@@ -20,9 +20,8 @@ import { useTranslation } from "../i18n";
 import { loadArticle, type Article } from "../articles";
 import { beforeItsTime, DATA_URL, siteCertainty, type PlaceProps, type Site } from "../data";
 import { mapsUrl, verseUrl } from "../links";
-import { distanceKm, roundKm, walkTime } from "../distance";
 import { loadVerse } from "../verses";
-import { LessonBar, LessonToggle, useLesson } from "./LessonRow";
+import { LessonToggle, useLesson } from "./LessonRow";
 import { readUrl } from "../url";
 
 // The app's own reading of the address (`embed=1` or /embed/v1), as App's EMBED.
@@ -88,7 +87,8 @@ export function PlaceCard({
   hasArticle = false,
   photo,
   polities,
-  measure,
+  onMeasure,
+  onLesson,
   pleiades,
   questions,
   onPerson,
@@ -133,15 +133,10 @@ export function PlaceCard({
   /** Questions answered with this place on the map (their pages are /{locale}/q/{id}/). */
   questions?:
     readonly { readonly id: string; readonly en: string; readonly ru: string }[] | undefined;
-  /** Distance from a place picked before ("Distance from here"), or this place is the start. */
-  measure?:
-    | {
-        readonly from: { readonly name: string; readonly at: readonly [number, number] } | null;
-        readonly isFrom: boolean;
-        readonly onToggle: () => void;
-        readonly onClear: () => void;
-      }
-    | undefined;
+  /** Opens the distance tool with this place as its first end. */
+  onMeasure?: (() => void) | undefined;
+  /** Opens the lesson tool, this place just added to the lesson. */
+  onLesson?: (() => void) | undefined;
 }) {
   // Opened lists stay open for this place; the card is keyed by place, so a new place
   // starts folded again.
@@ -292,14 +287,13 @@ export function PlaceCard({
         </div>
         <div className="-mr-1 flex shrink-0 items-center gap-0.5">
           {/* Not in a frame on another site: a lesson is the globe's own. */}
-          {!EMBEDDED && place.osis.length > 0 && <LessonToggle lesson={lesson} />}
-          {measure && (
+          {!EMBEDDED && place.osis.length > 0 && <LessonToggle lesson={lesson} onAdd={onLesson} />}
+          {onMeasure && (
             <button
-              onClick={measure.onToggle}
+              onClick={onMeasure}
               aria-label={t("place.measure")}
-              title={t(measure.isFrom ? "place.measure_stop" : "place.measure")}
-              aria-pressed={measure.isFrom}
-              className={`rounded-full p-1.5 hover:bg-paper-2 ${measure.isFrom ? "bg-paper-2 text-accent" : "text-ink-soft hover:text-ink"}`}
+              title={t("place.measure")}
+              className="rounded-full p-1.5 text-ink-soft hover:bg-paper-2 hover:text-ink"
             >
               <Ruler className="size-[18px]" aria-hidden />
             </button>
@@ -322,10 +316,6 @@ export function PlaceCard({
           </button>
         </div>
       </div>
-
-      {!EMBEDDED && (lesson.picked.length > 0 || lesson.undo) && (
-        <LessonBar lesson={lesson} locale={locale} />
-      )}
 
       {photo && <Photo photo={photo} placeId={place.id} title={title} />}
 
@@ -384,13 +374,6 @@ export function PlaceCard({
             })
             .join(" · ")}
         </div>
-      )}
-
-      {measure?.isFrom && (
-        <div className="px-5 pt-3 text-[13px] text-ink-soft">{t("place.measure_hint")}</div>
-      )}
-      {measure?.from && !measure.isFrom && (
-        <MeasureLine from={measure.from} to={title} at={at} onClear={measure.onClear} />
       )}
 
       <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 px-5 pt-3 text-[14px] text-ink">
@@ -984,41 +967,6 @@ function VerseText({
         </a>
       </figcaption>
     </figure>
-  );
-}
-
-/** "Иерусалим → Вифлеем: 9 км по прямой · ≈ 2 ч пешком", with a way to clear it. */
-function MeasureLine({
-  from,
-  to,
-  at,
-  onClear,
-}: {
-  from: { readonly name: string; readonly at: readonly [number, number] };
-  to: string;
-  at: readonly [number, number];
-  onClear: () => void;
-}) {
-  const { t } = useTranslation();
-  const km = distanceKm(from.at, at);
-  const w = walkTime(km);
-  const walk =
-    "hours" in w ? t("place.walk_hours", { n: w.hours }) : t("place.walk_days", { count: w.days });
-  return (
-    <div className="flex items-start gap-2 px-5 pt-3 text-[13.5px] leading-snug text-ink">
-      <Ruler className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden />
-      <span className="flex-1">
-        {t("place.distance_to", { from: from.name, to, km: roundKm(km), walk })}
-      </span>
-      <button
-        onClick={onClear}
-        aria-label={t("place.measure_stop")}
-        title={t("place.measure_stop")}
-        className="-mt-0.5 rounded-full p-0.5 text-ink-soft hover:bg-paper-2 hover:text-ink"
-      >
-        <X className="size-4" aria-hidden />
-      </button>
-    </div>
   );
 }
 

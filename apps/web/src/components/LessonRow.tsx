@@ -1,5 +1,5 @@
 import type { Locale } from "@hg/model";
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { useTranslation } from "../i18n";
 import { LESSON_MAX, lessonSearch, TITLE_MAX, type LessonStop } from "../lesson";
 
@@ -57,6 +57,42 @@ function writePicked(ids: readonly LessonStop[]): void {
   }
 }
 
+/**
+ * The lesson shared by every view of it (the place card's button, the lesson tool): one
+ * store, so a place added in one shows in the other at once.
+ */
+const listeners = new Set<() => void>();
+let snapshot: { picked: readonly LessonStop[]; title: string } | null = null;
+const current = () => (snapshot ??= { picked: readPicked(), title: readTitle() });
+function setLesson(picked: readonly LessonStop[], title: string): void {
+  writePicked(picked);
+  writeTitle(title);
+  snapshot = { picked: [...picked], title };
+  for (const f of listeners) f();
+}
+const subscribe = (f: () => void) => {
+  listeners.add(f);
+  return () => listeners.delete(f);
+};
+/** The lesson as it stands, kept up to date. */
+export const useLessonStore = () => useSyncExternalStore(subscribe, current, current);
+/** Adds a place at a year (the lesson tool adds every place opened); false when full. */
+export function addToLesson(stop: LessonStop): boolean {
+  const { picked, title } = current();
+  if (picked.some((s) => s.id === stop.id)) return true;
+  if (picked.length >= LESSON_MAX) return false;
+  setLesson([...picked, stop], title);
+  return true;
+}
+/** Takes a place out of the lesson. */
+export function removeFromLesson(id: string): void {
+  const { picked, title } = current();
+  setLesson(
+    picked.filter((s) => s.id !== id),
+    title,
+  );
+}
+
 /** "Add to a lesson" (Lucide list-plus), drawn here so the first chunk does not carry it. */
 const ListPlus = () => (
   <svg
@@ -98,14 +134,10 @@ export interface Lesson {
  * browser until cleared; this place is added at the year the map shows.
  */
 export function useLesson(placeId: string, year: number): Lesson {
-  const [picked, setPicked] = useState(readPicked);
-  const [title, setTitle] = useState(readTitle);
+  const { picked, title } = useLessonStore();
   const [cleared, setCleared] = useState<{ ids: LessonStop[]; title: string } | null>(null);
   const save = (ids: LessonStop[], name = title) => {
-    writePicked(ids);
-    setPicked(ids);
-    writeTitle(name);
-    setTitle(name);
+    setLesson(ids, name);
     setCleared(null);
   };
   const inLesson = picked.some((s) => s.id === placeId);
@@ -114,8 +146,7 @@ export function useLesson(placeId: string, year: number): Lesson {
     picked,
     title,
     setTitle: (name) => {
-      writeTitle(name);
-      setTitle(name);
+      setLesson(picked, name);
     },
     inLesson,
     full,
@@ -138,7 +169,14 @@ export function useLesson(placeId: string, year: number): Lesson {
 }
 
 /** The card's header button: add this place to the lesson, or take it out. */
-export function LessonToggle({ lesson }: { lesson: Lesson }) {
+export function LessonToggle({
+  lesson,
+  onAdd,
+}: {
+  lesson: Lesson;
+  /** After the place is added: the lesson tool opens on it. */
+  onAdd?: (() => void) | undefined;
+}) {
   const { t } = useTranslation();
   const title = lesson.full
     ? t("lesson.full", { count: LESSON_MAX })
@@ -147,7 +185,11 @@ export function LessonToggle({ lesson }: { lesson: Lesson }) {
       : t("lesson.add");
   return (
     <button
-      onClick={lesson.toggle}
+      onClick={() => {
+        const adding = !lesson.inLesson;
+        lesson.toggle();
+        if (adding) onAdd?.();
+      }}
       // One name, its state in aria-pressed: "В урок, нажата" is the place in the lesson.
       aria-label={t("lesson.add")}
       title={title}

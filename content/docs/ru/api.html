@@ -25,56 +25,58 @@ description: Места, стихи, в которых они названы, с
    "page": { "en": "/en/place/philippi/", "ru": "/ru/place/philippi/" } }, …]</code></pre>
 
 <h2>Все файлы</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Файл</th>
-      <th>Что в нём</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>/api/v1/index.json</code></td>
-      <td>список файлов и книг, лицензия и указание источников, дата сборки</td>
-    </tr>
-    <tr>
-      <td><code>/api/v1/places.json</code></td>
-      <td>
-        все места: идентификатор, названия, вид, точка, сколько стихов их называют, страница (у
-        мест, названных в стихах)
-      </td>
-    </tr>
-    <tr>
-      <td><code>/api/v1/verses/{Book}.json</code></td>
-      <td>
-        стих → названные в нём места, по файлу на книгу (<code>Gen</code>, <code>1Kgs</code>,
-        <code>Acts</code>…)
-      </td>
-    </tr>
-    <tr>
-      <td><code>/api/v1/events.json</code></td>
-      <td>датированные события; у тех, о которых рассказывает Библия, — <code>ref</code></td>
-    </tr>
-    <tr>
-      <td><code>/api/v1/battles.json</code></td>
-      <td>
-        битвы и осады: место, год, стороны и исход; у тех, о которых рассказывает Библия, —
-        <code>ref</code>
-      </td>
-    </tr>
-    <tr>
-      <td><code>/api/v1/questions.json</code></td>
-      <td>частые вопросы с ответами на двух языках, видом карты и источниками</td>
-    </tr>
-    <tr>
-      <td><code>/api/v1/tours.json</code></td>
-      <td>
-        экскурсии: остановки по порядку, у каждой отрывок и заметка; <code>by: "sea"</code> у
-        участка по морю и <code>sailed</code> (дни и стих), где текст называет срок
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Файл</th>
+        <th>Что в нём</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/v1/index.json</code></td>
+        <td>список файлов и книг, лицензия и указание источников, дата сборки</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/places.json</code></td>
+        <td>
+          все места: идентификатор, названия, вид, точка, сколько стихов их называют, страница (у
+          мест, названных в стихах)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/verses/{Book}.json</code></td>
+        <td>
+          стих → названные в нём места, по файлу на книгу (<code>Gen</code>, <code>1Kgs</code>,
+          <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/events.json</code></td>
+        <td>датированные события; у тех, о которых рассказывает Библия, — <code>ref</code></td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/battles.json</code></td>
+        <td>
+          битвы и осады: место, год, стороны и исход; у тех, о которых рассказывает Библия, —
+          <code>ref</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/questions.json</code></td>
+        <td>частые вопросы с ответами на двух языках, видом карты и источниками</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/tours.json</code></td>
+        <td>
+          экскурсии: остановки по порядку, у каждой отрывок и заметка; <code>by: "sea"</code> у
+          участка по морю и <code>sailed</code> (дни и стих), где текст называет срок
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <h2>Соглашения</h2>
 <ul>

@@ -50,18 +50,6 @@ export const ChevronDown = icon(
     <path d="m6 9 6 6 6-6" />
   </>,
 );
-export const ChevronsLeft = icon(
-  <>
-    <path d="m11 17-5-5 5-5" />
-    <path d="m18 17-5-5 5-5" />
-  </>,
-);
-export const ChevronsRight = icon(
-  <>
-    <path d="m6 17 5-5-5-5" />
-    <path d="m13 17 5-5-5-5" />
-  </>,
-);
 export const MapPin = icon(
   <>
     <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
@@ -148,18 +136,6 @@ export const Maximize = icon(
     <path d="M16 21h3a2 2 0 0 0 2-2v-3" />
   </>,
 );
-export const Castle = icon(
-  <>
-    <path d="M10 5V3" />
-    <path d="M14 5V3" />
-    <path d="M15 21v-3a3 3 0 0 0-6 0v3" />
-    <path d="M18 3v8" />
-    <path d="M18 5H6" />
-    <path d="M22 11H2" />
-    <path d="M22 9v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9" />
-    <path d="M6 3v8" />
-  </>,
-);
 export const Ruler = icon(
   <>
     <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z" />
@@ -167,5 +143,32 @@ export const Ruler = icon(
     <path d="m11.5 9.5 2-2" />
     <path d="m8.5 6.5 2-2" />
     <path d="m17.5 15.5 2-2" />
+  </>,
+);
+
+export const CircleHelp = icon(
+  <>
+    <circle cx="12" cy="12" r="10" />
+    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+    <path d="M12 17h.01" />
+  </>,
+);
+export const ListPlus = icon(
+  <>
+    <path d="M11 12H3" />
+    <path d="M16 6H3" />
+    <path d="M16 18H3" />
+    <path d="M18 9v6" />
+    <path d="M21 12h-6" />
+  </>,
+);
+export const PencilRuler = icon(
+  <>
+    <path d="M13 7 8.7 2.7a2.41 2.41 0 0 0-3.4 0L2.7 5.3a2.41 2.41 0 0 0 0 3.4L7 13" />
+    <path d="m8 6 2-2" />
+    <path d="m18 16 2-2" />
+    <path d="m17 11 4.3 4.3c.94.94.94 2.46 0 3.4l-2.6 2.6c-.94.94-2.46.94-3.4 0L11 17" />
+    <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
+    <path d="m15 5 4 4" />
   </>,
 );

@@ -710,24 +710,6 @@ const release: ContentRelease = {
 };
 writeFileSync(join(out, "questions.json"), JSON.stringify(questionsOut));
 writeFileSync(join(out, "ancient-authors.json"), JSON.stringify(ancientByPlace));
-// Jerusalem's walls in three periods (content/jerusalem-walls.geojson: the 1864-65 survey
-// and Wikidata points, docs/ATTRIBUTIONS.md), to lay over another place and compare.
-const wallsFile = join(root, "content/jerusalem-walls.geojson");
-{
-  const walls = JSON.parse(readFileSync(wallsFile, "utf8")) as {
-    features: {
-      properties: { id?: string };
-      geometry: { type: string; coordinates: number[][][] };
-    }[];
-  };
-  for (const f of walls.features) {
-    const ring = f.geometry.coordinates[0] ?? [];
-    const [a, z] = [ring[0], ring.at(-1)];
-    if (f.geometry.type !== "Polygon" || ring.length < 4 || a?.[0] !== z?.[0] || a?.[1] !== z?.[1])
-      throw new Error(`jerusalem-walls: ${f.properties.id ?? "?"} is not a closed polygon`);
-  }
-  writeFileSync(join(out, "walls.geojson"), JSON.stringify(walls));
-}
 writeFileSync(
   join(out, "articles.json"),
   JSON.stringify(Object.fromEntries(articlesOut.map((a) => [a.place, a]))),

@@ -21,7 +21,7 @@ export function Panel({
 
 /**
  * A part of the overview panel: its tab names it, so only the content shows. Tours,
- * events, articles and the in-view list each fill one tab.
+ * events, people and articles each fill one tab.
  */
 export function Section({ children }: { children: ReactNode }) {
   return <div className="pt-2 pb-2">{children}</div>;

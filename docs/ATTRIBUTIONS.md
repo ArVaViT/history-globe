@@ -25,12 +25,6 @@ Bible people and family links
   redistributed. Synodal Russian forms of the names read from the 1876 text
   (public domain).
 
-Jerusalem's walls (content/jerusalem-walls.geojson)
-  Traced on the Ordnance Survey of Jerusalem, 1864-65, by Capt. C. W. Wilson (Wikimedia
-  Commons scan, public domain), georeferenced with ten Wikidata points (CC0). The walls of
-  Jesus' time and of the City of David are our reconstruction from Josephus (War 5.142-146)
-  and published excavations. Our outlines: CC0.
-
 Roman roads
   de Soto, P., Pažout, A., Brughmans, T., Vahlstrup, P., et al. (2025). A
   High-Resolution Dataset of Roads of the Roman Empire: Itiner-e static version
