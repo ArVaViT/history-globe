@@ -169,55 +169,28 @@ export interface MapFeed {
   readonly ready: boolean;
   /** The place under the pointer and where the pointer is. */
   readonly hover: { id: string; at: { x: number; y: number } } | null;
-  /** The places on screen (ids). */
-  readonly inView: string[];
 }
 
-/** What the map reports back: ready, the hovered place, the places in view. */
-export function useMapFeed(globe: Globe | null, placesShown: boolean): MapFeed {
+/** What the map reports back: ready, and the hovered place. */
+export function useMapFeed(globe: Globe | null): MapFeed {
   const [ready, setReady] = useState(false);
   const [hover, setHover] = useState<MapFeed["hover"]>(null);
-  const [inView, setInView] = useState<string[]>([]);
 
   useEffect(() => {
     if (!globe) return;
-    const refreshInView = () => {
-      setInView(globe.renderer.visiblePlaces());
-    };
     const offReady = globe.renderer.on("ready", () => {
       setReady(true);
-      refreshInView();
     });
-    // Ready can come before the labels are placed: list what is in view again once
-    // the map has settled.
-    globe.renderer.map.once("idle", refreshInView);
-    const offCamera = globe.renderer.on("cameraChanged", refreshInView);
     const offHover = globe.renderer.on("hover", (id, at) => {
       setHover(id && at ? { id, at } : null);
     });
     return () => {
       offReady();
-      offCamera();
       offHover();
-      globe.renderer.map.off("idle", refreshInView);
     };
   }, [globe]);
 
-  // Toggling the places layer changes what is in view without moving the camera.
-  useEffect(() => {
-    if (!globe) return;
-    const map = globe.renderer.map;
-    const refresh = () => {
-      setInView(globe.renderer.visiblePlaces());
-    };
-    map.once("idle", refresh);
-    map.triggerRepaint();
-    return () => {
-      map.off("idle", refresh);
-    };
-  }, [globe, placesShown]);
-
-  return { ready, hover, inView };
+  return { ready, hover };
 }
 
 /** Play: the year runs forward five years a tick and stops at the end. */

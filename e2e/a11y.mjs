@@ -19,17 +19,20 @@ const acts = {
     await p.getByRole("button", { name: /^Обзор/ }).click();
     await p.waitForTimeout(1200);
   },
+  tools: async () => {
+    await p.getByRole("button", { name: "Инструменты" }).click();
+    await p.getByRole("button", { name: /^Расстояние/ }).waitFor({ timeout: 8000 });
+    await p.waitForTimeout(300);
+  },
+  measure: async () => {
+    await p.getByRole("button", { name: "Расстояние отсюда" }).click();
+    await p.getByText("Теперь нажмите второе место").waitFor({ timeout: 8000 });
+  },
   more: async () => {
     await p.getByRole("button", { name: /^Ещё/ }).click();
     // The panel loads on the press, then fades in: checked once it is all there.
     await p.getByText("Скорость").first().waitFor({ timeout: 8000 });
     await p.waitForTimeout(600);
-  },
-  walls: async () => {
-    await p.getByRole("button", { name: /^Ещё/ }).click();
-    await p.getByRole("button", { name: /Стены Иерусалима/ }).click();
-    await p.getByText(/га, по стенам/).waitFor({ timeout: 8000 });
-    await p.waitForTimeout(400);
   },
   search: async () => {
     await p.getByRole("button", { name: /Поиск/ }).click();
@@ -64,7 +67,8 @@ for (const [url, act] of [
   ["?locale=en&place=abfba2a"],
   ["?locale=ru", "overview"],
   ["?locale=ru", "more"],
-  ["?locale=ru&year=30&camera=35.231,31.777,13.5,0,0", "walls"],
+  ["?locale=ru", "tools"],
+  ["?locale=ru&place=a15257a&year=30", "measure"],
   ["?locale=ru", "search"],
   ["?locale=ru", "person"],
   ["?locale=ru", "people"],

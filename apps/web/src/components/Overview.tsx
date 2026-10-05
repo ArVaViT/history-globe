@@ -1,9 +1,9 @@
-import { useRef, useState, type ReactNode } from "react";
+import { Suspense, useRef, useState, type ReactNode } from "react";
 import { useTranslation } from "../i18n";
 import { Panel } from "./Panel";
 
-export type OverviewTab = "tours" | "events" | "people" | "articles" | "inview";
-const TABS: readonly OverviewTab[] = ["tours", "events", "people", "articles", "inview"];
+export type OverviewTab = "tours" | "events" | "people" | "articles";
+const TABS: readonly OverviewTab[] = ["tours", "events", "people", "articles"];
 
 function readTab(): OverviewTab {
   try {
@@ -43,10 +43,10 @@ export function Overview({
   };
   return (
     <Panel className="hg-slide-left w-[360px] max-md:w-full">
-      {/* No cross of its own: the book in the header opens and closes it, and five tabs
+      {/* No cross of its own: the book in the header opens and closes it, and four tabs
           need the room. */}
       <div id="more-panels" className="flex items-center gap-1 px-2 pt-2">
-        {/* Five tabs outrun a phone: the row scrolls, and a strip in the panel's colour
+        {/* Four tabs outrun a phone: the row scrolls, and a strip in the panel's colour
             fades its edge (a mask would fade the text, read against the map by checkers). */}
         <div className="relative flex min-w-0 flex-1">
           <div
@@ -100,7 +100,8 @@ export function Overview({
         </div>
       </div>
       <div id="overview-panel" role="tabpanel" aria-labelledby={`overview-tab-${tab}`}>
-        {panels[tab]}
+        {/* A tab whose code is still coming keeps the panel up, at its height. */}
+        <Suspense fallback={<div className="h-64" />}>{panels[tab]}</Suspense>
       </div>
     </Panel>
   );

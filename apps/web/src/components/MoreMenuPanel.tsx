@@ -1,5 +1,5 @@
 import { useTranslation } from "../i18n";
-import { Camera, Castle, Maximize, Printer, Route } from "./icons";
+import { Camera, Maximize, Printer, Route } from "./icons";
 
 const SPEEDS = [0.5, 1, 2, 4];
 const speedLabel = (speed: number) => (speed < 1 ? "½×" : `${String(speed)}×`);
@@ -19,7 +19,6 @@ export function MoreMenuPanel({
   onPrintBlank,
   onPrintQuiz,
   onQuiz,
-  onWalls,
   close,
 }: {
   speed: number;
@@ -33,8 +32,6 @@ export function MoreMenuPanel({
   onPrintQuiz?: (() => void) | undefined;
   /** The same quiz played on screen (QuizPanel). */
   onQuiz?: (() => void) | undefined;
-  /** Jerusalem's walls over another place (WallsPanel): to compare sizes. */
-  onWalls?: (() => void) | undefined;
   close: () => void;
 }) {
   const { t } = useTranslation();
@@ -157,18 +154,6 @@ export function MoreMenuPanel({
         >
           <Route className="size-4 shrink-0 text-ink-soft" aria-hidden />
           {t("time.quiz")}
-        </button>
-      )}
-      {onWalls && (
-        <button
-          className={item}
-          onClick={() => {
-            close();
-            onWalls();
-          }}
-        >
-          <Castle className="size-4 shrink-0 text-ink-soft" aria-hidden />
-          {t("walls.menu")}
         </button>
       )}
     </div>

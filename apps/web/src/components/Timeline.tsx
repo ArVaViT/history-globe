@@ -9,7 +9,7 @@ import {
   parseYearInput,
   pick,
 } from "@hg/model";
-import { ChevronDown, ChevronsLeft, ChevronsRight, Ellipsis, Pause, Play } from "./icons";
+import { ChevronDown, Ellipsis, Pause, Play } from "./icons";
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { useTranslation } from "../i18n";
 import { ErrorBoundary } from "./ErrorBoundary";
@@ -153,7 +153,6 @@ export function Timeline({
   onPrint,
   onPrintBlank,
   onPrintQuiz,
-  onWalls,
   onQuiz,
   onEvent,
   life,
@@ -175,7 +174,6 @@ export function Timeline({
   /** The outline map for a class, when a tour or a chapter is shown. */
   onPrintBlank?: (() => void) | undefined;
   onPrintQuiz?: (() => void) | undefined;
-  onWalls?: (() => void) | undefined;
   onQuiz?: (() => void) | undefined;
   /** A mark pressed: its year, and its place opened. Keyboard users have the events tab. */
   onEvent?: (event: TimelineEvent) => void;
@@ -305,7 +303,7 @@ export function Timeline({
         </div>
       )}
       <div ref={group} role="group" aria-label={t("time.timeline")}>
-        <div className="flex items-center gap-4 max-xl:flex-wrap max-xl:gap-x-3 max-xl:gap-y-1">
+        <div className="flex items-center gap-4 max-xl:flex-wrap max-xl:gap-x-3 max-xl:gap-y-1 max-md:gap-x-2">
           <YearField year={year} locale={locale} onYear={onYear} />
           <div className="flex flex-1 flex-wrap items-center gap-x-2 gap-y-1 text-[13px] leading-snug text-ink-soft max-xl:order-last max-xl:basis-full max-md:text-[11.5px]">
             <span className="font-medium text-ink">{periodName}</span>
@@ -328,20 +326,19 @@ export function Timeline({
             )}
           </div>
           {scaleSlot && <div ref={scaleSlot} className="hg-map-slot flex items-center gap-2" />}
-          <div className="flex items-center gap-1">
-            <IconButton
+          <div className="flex items-center gap-1 max-md:gap-0.5">
+            <YearStep
               label={t("time.back", { n: 100 })}
+              text="−100"
               onClick={() => {
                 onYear(year - 100);
               }}
-            >
-              <ChevronsLeft className="size-4" aria-hidden />
-            </IconButton>
+            />
             <button
               onClick={onPlay}
               aria-label={playing ? t("time.pause") : t("time.play")}
               title={playing ? t("time.pause") : t("time.play")}
-              className="grid size-10 place-items-center rounded-full bg-accent text-paper transition hover:brightness-110 active:scale-95"
+              className="grid size-10 place-items-center rounded-full bg-accent text-paper transition hover:brightness-110 active:scale-95 max-md:size-9"
             >
               {playing ? (
                 <Pause className="size-4" aria-hidden />
@@ -349,14 +346,13 @@ export function Timeline({
                 <Play className="size-4 translate-x-px" aria-hidden />
               )}
             </button>
-            <IconButton
+            <YearStep
               label={t("time.forward", { n: 100 })}
+              text="+100"
               onClick={() => {
                 onYear(year + 100);
               }}
-            >
-              <ChevronsRight className="size-4" aria-hidden />
-            </IconButton>
+            />
             <MoreMenu
               speed={speed}
               onSpeed={onSpeed}
@@ -364,7 +360,6 @@ export function Timeline({
               onPrint={onPrint}
               onPrintBlank={onPrintBlank}
               onPrintQuiz={onPrintQuiz}
-              onWalls={onWalls}
               onQuiz={onQuiz}
               alpha={alpha}
               onAlpha={(a) => {
@@ -672,7 +667,7 @@ function YearField({
   }, [editing]);
   const shown = formatYear(year, locale);
   const big =
-    "min-w-[210px] font-serif text-[28px] leading-none font-semibold whitespace-nowrap text-ink tabular-nums max-xl:min-w-0 max-xl:flex-1 max-lg:text-[21px] max-md:text-[16px]";
+    "min-w-[210px] font-serif text-[28px] leading-none font-semibold whitespace-nowrap text-ink tabular-nums max-xl:min-w-0 max-xl:flex-1 max-lg:text-[21px] max-md:text-[15px]";
   if (!editing)
     return (
       <button
@@ -751,7 +746,6 @@ function MoreMenu({
   onPrint,
   onPrintBlank,
   onPrintQuiz,
-  onWalls,
   onQuiz,
   alpha,
   onAlpha,
@@ -765,7 +759,6 @@ function MoreMenu({
   /** The outline map for a class, when a tour or a chapter is shown. */
   onPrintBlank?: (() => void) | undefined;
   onPrintQuiz?: (() => void) | undefined;
-  onWalls?: (() => void) | undefined;
   onQuiz?: (() => void) | undefined;
 }) {
   const { t } = useTranslation();
@@ -833,7 +826,6 @@ function MoreMenu({
               onPrint={onPrint}
               onPrintBlank={onPrintBlank}
               onPrintQuiz={onPrintQuiz}
-              onWalls={onWalls}
               onQuiz={onQuiz}
               close={() => {
                 setOpen(false);
@@ -958,6 +950,25 @@ function IconButton({
       className="grid size-8 place-items-center rounded-full text-ink-soft hover:bg-paper-2 hover:text-ink"
     >
       {children}
+    </button>
+  );
+}
+
+/**
+ * A step of the year beside the play button, said in years ("−100", "+100"): two arrows
+ * alone did not say how far they went, and looked like stray marks next to the play.
+ */
+/** A century back or forward; on the narrowest phones the year needs the room, and the
+ * slider and the typed year remain. */
+function YearStep({ label, text, onClick }: { label: string; text: string; onClick: () => void }) {
+  return (
+    <button
+      onClick={onClick}
+      aria-label={label}
+      title={label}
+      className="h-8 rounded-full border border-line px-2.5 text-[12.5px] max-md:h-7 max-md:px-1 max-md:text-[11.5px] max-[380px]:hidden font-medium text-ink-soft tabular-nums transition hover:border-accent/50 hover:bg-paper-2 hover:text-ink active:scale-95"
+    >
+      {text}
     </button>
   );
 }

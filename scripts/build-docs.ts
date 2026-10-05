@@ -50,6 +50,10 @@ const T = {
     copy: "Copy",
     copied: "Copied",
     updated: "Data as of",
+    open: "Open the globe",
+    prev: "Previous",
+    next: "Next",
+    data: "Data under CC BY 4.0",
   },
   ru: {
     docs: "Документация",
@@ -58,6 +62,10 @@ const T = {
     copy: "Копировать",
     copied: "Скопировано",
     updated: "Данные на",
+    open: "Открыть глобус",
+    prev: "Назад",
+    next: "Далее",
+    data: "Данные под CC BY 4.0",
   },
 } as const;
 
@@ -217,13 +225,15 @@ const icon = (name: string) =>
 
 /** Feature cards: the icon a list item names goes into its card. */
 function features(body: string): string {
-  return body.replace(
-    /<li data-icon="(\w+)">([\s\S]*?)<\/li>/g,
-    (_, name: string, text: string) => {
-      if (!ICONS[name]) throw new Error(`docs: unknown icon "${name}"`);
-      // A card's title stands alone: no full stop after it.
-      return `<li>${icon(name)}${text.replace(/^(\s*<b>[^<]*?)\.<\/b>/, "$1</b>")}</li>`;
-    },
+  return (
+    body
+      // A table wider than a phone scrolls in its frame: the frame takes the keyboard too.
+      .replaceAll('<div class="table">', '<div class="table" tabindex="0">')
+      .replace(/<li data-icon="(\w+)">([\s\S]*?)<\/li>/g, (_, name: string, text: string) => {
+        if (!ICONS[name]) throw new Error(`docs: unknown icon "${name}"`);
+        // A card's title stands alone: no full stop after it.
+        return `<li>${icon(name)}${text.replace(/^(\s*<b>[^<]*?)\.<\/b>/, "$1</b>")}</li>`;
+      })
   );
 }
 
@@ -324,6 +334,22 @@ function page(o: {
     (p) =>
       `<li><a href="${here(o.l, p)}"${p === o.name ? ' aria-current="page"' : ""}>${esc(o.titles[p])}</a></li>`,
   ).join("");
+  // The pages before and after this one, to read the documentation through.
+  const at = PAGES.indexOf(o.name);
+  const prev = PAGES[at - 1];
+  const next = PAGES[at + 1];
+  const pager =
+    prev || next
+      ? `<nav class="pager" aria-label="${T[o.l].prev} / ${T[o.l].next}">${
+          prev
+            ? `<a class="prev" href="${here(o.l, prev)}"><span>${T[o.l].prev}</span>${esc(o.titles[prev])}</a>`
+            : "<span></span>"
+        }${
+          next
+            ? `<a class="next" href="${here(o.l, next)}"><span>${T[o.l].next}</span>${esc(o.titles[next])}</a>`
+            : ""
+        }</nav>`
+      : "";
   const toc =
     o.toc.length > 1
       ? `<nav class="toc" aria-label="${T[o.l].onPage}"><p>${T[o.l].onPage}</p><ul>${o.toc
@@ -346,14 +372,18 @@ function page(o: {
     <a class="skip" href="#main">${o.l === "en" ? "Skip to content" : "К содержанию"}</a>
     <header class="bar">
       <a class="brand" href="${here(o.l, "index")}"><img src="${up}../favicon.svg" alt="" width="22" height="22" />History Globe <span>${T[o.l].docs}</span></a>
-      ${langs}
+      <span class="bar-end">${langs}<a class="open" href="${up}../?locale=${o.l}">${T[o.l].open}</a></span>
     </header>
     <div class="layout">
-      <nav class="side" aria-label="${T[o.l].menu}"><ul>${nav}</ul></nav>
+      <nav class="side" aria-label="${T[o.l].menu}"><p>${T[o.l].menu}</p><ul>${nav}</ul></nav>
       <main id="main">
         <h1>${esc(o.src.title)}</h1>
 ${o.body.trim()}
-        ${o.name === "author" ? "" : `<p class="stamp">${T[o.l].updated} ${dateIn(o.built, o.l)}</p>`}
+        ${pager}
+        <footer class="foot">
+          <span>History Globe · ${T[o.l].data}</span>
+          ${o.name === "author" ? "" : `<span>${T[o.l].updated} ${dateIn(o.built, o.l)}</span>`}
+        </footer>
       </main>
       ${toc}
     </div>
@@ -368,31 +398,6 @@ ${o.body.trim()}
       for (const code of document.querySelectorAll("pre code"))
         if (code.innerHTML.includes("https://&lt;globe-host&gt;"))
           code.innerHTML = code.innerHTML.replaceAll("https://&lt;globe-host&gt;", location.origin);
-      const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-      // The figures count up to their number once seen.
-      const count = (el) => {
-        const to = Number(el.textContent.replace(/[^0-9]/g, ""));
-        if (!to || still) return;
-        const t0 = performance.now();
-        const fmt = new Intl.NumberFormat(document.documentElement.lang);
-        const step = (t) => {
-          const k = Math.min(1, (t - t0) / 1100);
-          el.textContent = fmt.format(Math.round(to * (1 - Math.pow(1 - k, 3))));
-          if (k < 1) requestAnimationFrame(step);
-        };
-        requestAnimationFrame(step);
-      };
-      // The live globe leans a little after the pointer.
-      const hero = document.querySelector(".hero");
-      if (hero && !still && matchMedia("(pointer: fine)").matches)
-        hero.addEventListener("pointermove", (e) => {
-          const r = hero.getBoundingClientRect();
-          const x = (e.clientX - r.left) / r.width - 0.5;
-          const y = (e.clientY - r.top) / r.height - 0.5;
-          const f = hero.querySelector("iframe");
-          f.style.setProperty("--ty", (x * 4).toFixed(2) + "deg");
-          f.style.setProperty("--tx", (-y * 3).toFixed(2) + "deg");
-        });
       // The page menu follows the section in view.
       const marks = [...document.querySelectorAll(".toc a")];
       if (marks.length && "IntersectionObserver" in window) {
@@ -408,25 +413,6 @@ ${o.body.trim()}
           { rootMargin: "-20% 0px -70% 0px" },
         );
         for (const h of document.querySelectorAll("main h2[id]")) io.observe(h);
-      }
-      // Motion: the hero frame settles and the sections rise into view as they are reached.
-      if ("IntersectionObserver" in window) {
-        const watch = new IntersectionObserver(
-          (seen) => {
-            for (const e of seen)
-              if (e.isIntersecting) {
-                e.target.classList.add("in");
-                if (e.target.classList.contains("figures"))
-                  for (const b of e.target.querySelectorAll("b")) count(b);
-                watch.unobserve(e.target);
-              }
-          },
-          { threshold: 0.12 },
-        );
-        for (const el of document.querySelectorAll("main > h2, main > ul, main > p:not(.lede), main > .table, main > pre, .figures, .hero")) {
-          if (!el.classList.contains("hero")) el.classList.add("reveal");
-          watch.observe(el);
-        }
       }
       // Copy buttons on code samples.
       for (const pre of document.querySelectorAll("pre")) {

@@ -247,21 +247,6 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       paint: { "line-color": T.accent, "line-width": 2, "line-dasharray": [1.5, 1.5] },
     },
     {
-      // An outline laid over the map to compare sizes (Jerusalem's walls over Babylon):
-      // a pale fill and a dashed edge, under the route and the places.
-      id: "outline-fill",
-      type: "fill",
-      source: "outline",
-      paint: { "fill-color": T.accent, "fill-opacity": 0.12 },
-    },
-    {
-      id: "outline-line",
-      type: "line",
-      source: "outline",
-      layout: { "line-join": "round" },
-      paint: { "line-color": T.accent, "line-width": 2.2, "line-dasharray": [2, 1.4] },
-    },
-    {
       // The rest of a tour's way, faint: where it goes is seen from the first stop.
       id: "route-ahead",
       type: "line",
@@ -1090,8 +1075,6 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       "roads-minor": { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       // Filled once the map has loaded (MapLibreRenderer.loadBattles).
       battles: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
-      // An outline to compare sizes (MapLibreRenderer.setOutline): empty until asked for.
-      outline: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       // Filled once the map has loaded (MapLibreRenderer.loadAncient).
       ancient: {
         type: "geojson",

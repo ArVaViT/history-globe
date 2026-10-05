@@ -594,31 +594,6 @@ exports[`style > is built as before 1`] = `
       "type": "line",
     },
     {
-      "id": "outline-fill",
-      "paint": {
-        "fill-color": "#9a3b1f",
-        "fill-opacity": 0.12,
-      },
-      "source": "outline",
-      "type": "fill",
-    },
-    {
-      "id": "outline-line",
-      "layout": {
-        "line-join": "round",
-      },
-      "paint": {
-        "line-color": "#9a3b1f",
-        "line-dasharray": [
-          2,
-          1.4,
-        ],
-        "line-width": 2.2,
-      },
-      "source": "outline",
-      "type": "line",
-    },
-    {
       "filter": [
         "all",
         [
@@ -11247,13 +11222,6 @@ exports[`style > is built as before 1`] = `
       "type": "geojson",
     },
     "measure": {
-      "data": {
-        "features": [],
-        "type": "FeatureCollection",
-      },
-      "type": "geojson",
-    },
-    "outline": {
       "data": {
         "features": [],
         "type": "FeatureCollection",

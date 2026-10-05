@@ -1,6 +1,7 @@
 import { YEAR_MAX, YEAR_MIN, type Engine, type Renderer } from "@hg/core";
 import { formatYear, medianYear, periodAt, placeName as nameOf, pick } from "@hg/model";
-import { BookOpen, ChevronDown, Search, Settings, X } from "./components/icons";
+import { BookOpen, ChevronDown, PencilRuler, Search, Settings, X } from "./components/icons";
+import type { Tool } from "./components/ToolsPanel";
 import {
   lazy,
   Suspense,
@@ -26,6 +27,9 @@ const PlaceCard = lazy(() =>
 const TourStopCard = lazy(() =>
   import("./components/TourStopCard").then((m) => ({ default: m.TourStopCard })),
 );
+const ToolsPanel = lazy(() =>
+  import("./components/ToolsPanel").then((m) => ({ default: m.ToolsPanel })),
+);
 const SettingsDialog = lazy(() =>
   import("./components/Settings").then((m) => ({ default: m.SettingsDialog })),
 );
@@ -37,15 +41,15 @@ const PolityTip = lazy(() => tips().then((m) => ({ default: m.PolityTip })));
 const AncientTip = lazy(() => tips().then((m) => ({ default: m.AncientTip })));
 const BattleTip = lazy(() => tips().then((m) => ({ default: m.BattleTip })));
 const Overview = lazy(() => import("./components/Overview").then((m) => ({ default: m.Overview })));
-const ToursPanel = lazy(() =>
-  import("./components/ToursPanel").then((m) => ({ default: m.ToursPanel })),
-);
-const EventsPanel = lazy(() =>
-  import("./components/EventsPanel").then((m) => ({ default: m.EventsPanel })),
-);
-const ArticlesPanel = lazy(() =>
-  import("./components/ArticlesPanel").then((m) => ({ default: m.ArticlesPanel })),
-);
+// The overview's tabs: all four fetched once the overview opens, so a switch of tab shows
+// the next at once instead of a blank while its code loads.
+const loadTours = () => import("./components/ToursPanel");
+const loadEvents = () => import("./components/EventsPanel");
+const loadArticles = () => import("./components/ArticlesPanel");
+const loadPeoplePanel = () => import("./components/PeoplePanel");
+const ToursPanel = lazy(() => loadTours().then((m) => ({ default: m.ToursPanel })));
+const EventsPanel = lazy(() => loadEvents().then((m) => ({ default: m.EventsPanel })));
+const ArticlesPanel = lazy(() => loadArticles().then((m) => ({ default: m.ArticlesPanel })));
 // The search opens on a press: its code (and the people's and sites' lookups) waits for it.
 const SearchBox = lazy(() =>
   import("./components/SearchBox").then((m) => ({ default: m.SearchBox })),
@@ -55,19 +59,10 @@ const EmbedBar = lazy(() => import("./components/EmbedBar").then((m) => ({ defau
 const ChapterPicker = lazy(() =>
   import("./components/EmbedBar").then((m) => ({ default: m.ChapterPicker })),
 );
-const PeoplePanel = lazy(() =>
-  import("./components/PeoplePanel").then((m) => ({ default: m.PeoplePanel })),
-);
-// Jerusalem's walls laid over another place, to compare sizes: on a press in the menu.
-const WallsPanel = lazy(() =>
-  import("./components/WallsPanel").then((m) => ({ default: m.WallsPanel })),
-);
+const PeoplePanel = lazy(() => loadPeoplePanel().then((m) => ({ default: m.PeoplePanel })));
 // The tour's quiz played on screen: on a press in the menu.
 const QuizPanel = lazy(() =>
   import("./components/QuizPanel").then((m) => ({ default: m.QuizPanel })),
-);
-const InViewPanel = lazy(() =>
-  import("./components/InViewPanel").then((m) => ({ default: m.InViewPanel })),
 );
 import { loadData, type LoadedData } from "./data";
 import {
@@ -109,9 +104,10 @@ export function App() {
   const [settingsLoaded, setSettingsLoaded] = useState(false);
   if (settingsOpen && !settingsLoaded) setSettingsLoaded(true);
   const [moreOpen, setMoreOpen] = useState(readMore);
+  // The tool open (its menu or one of them), or none.
+  const [tool, setTool] = useState<Tool | null>(null);
   // The search is a magnifier until pressed: one field less on the map.
   const [searchOpen, setSearchOpen] = useState(false);
-  const [wallsOpen, setWallsOpen] = useState(false);
   // The tour's quiz on screen, kept with the tour it was made for.
   const [quizOf, setQuiz] = useState<{
     readonly tour: string;
@@ -242,7 +238,7 @@ export function App() {
   }, [i18n, state.locale, globe]);
 
   useUrlSync(globe, data);
-  const { ready, hover, inView } = useMapFeed(globe, state.layers.places);
+  const { ready, hover } = useMapFeed(globe);
   useEffect(() => {
     // The map's own controls (scale, zoom and compass, the sources' (i)) move into the
     // player: one bar at the bottom instead of pieces floating over the map.
@@ -320,6 +316,10 @@ export function App() {
       closePerson();
       return true;
     }
+    if (tool && !state.selectedPlace && !state.tour) {
+      setTool(null);
+      return true;
+    }
     // The overview is a panel like the others: Escape folds it when nothing else is open.
     if (moreOpen && !searchOpen && !state.selectedPlace && !state.tour) {
       setMoreOpen(false);
@@ -327,7 +327,7 @@ export function App() {
       return true;
     }
     return false;
-  }, [quizOf, person, state.selectedPlace, state.tour, closePerson, moreOpen, searchOpen]);
+  }, [quizOf, person, state.selectedPlace, state.tour, closePerson, moreOpen, searchOpen, tool]);
   useKeys(globe, { togglePlay, focusSearch, closeOwn });
 
   // Fly to the place from the URL once the globe exists, or start its tour or chapter.
@@ -411,11 +411,43 @@ export function App() {
   // Its own years, for the line under the slider; a gate's years are its city's: none.
   const selectedLife = selected ? data?.life[selected.id] : undefined;
   const ownLife = selectedLife && !selectedLife.inherited ? selectedLife : undefined;
-  // "Distance from here": the place measured from, kept while other places are opened.
-  const [measureFrom, setMeasureFrom] = useState<string | null>(null);
-  const fromEntry = measureFrom ? data?.byId.get(measureFrom) : undefined;
-  const measureTo = selected && measureFrom && selected.id !== measureFrom ? selected.id : null;
-  const toAt = measureTo ? data?.byId.get(measureTo)?.info.at : undefined;
+  // The distance tool: the first place opened is one end, the next the other; a third
+  // opened is a new other end, measured from the same first.
+  const [measure, setMeasure] = useState<{ from: string | null; to: string | null }>({
+    from: null,
+    to: null,
+  });
+  const openTool = useCallback((next: Tool | null) => {
+    setTool(next);
+    if (next !== "measure") setMeasure({ from: null, to: null });
+  }, []);
+  // A place opened while a tool is open is the tool's next step: an end of the distance, or
+  // a stop of the lesson (at the year shown). Opening the tool with a place open counts it.
+  const pickedFor = tool === "measure" || tool === "lesson" ? tool : null;
+  const opened = state.selectedPlace;
+  const [stepSeen, setStepSeen] = useState<string | null>(null);
+  const stepKey = pickedFor && opened ? `${pickedFor}:${opened}` : null;
+  if (stepKey !== stepSeen) {
+    setStepSeen(stepKey);
+    if (stepKey && pickedFor === "measure" && opened) {
+      if (!measure.from) setMeasure({ from: opened, to: null });
+      else if (opened !== measure.from) setMeasure({ from: measure.from, to: opened });
+    }
+  }
+  const yearNow = state.year;
+  useEffect(() => {
+    if (pickedFor !== "lesson" || !opened) return;
+    // Only a place with verses makes a stop.
+    if (data?.byId.get(opened)?.props.osis.length)
+      void import("./components/LessonRow").then((m) =>
+        m.addToLesson({ id: opened, year: yearNow }),
+      );
+    // The year is the one the place was opened at, not a later one.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pickedFor, opened, data]);
+  const fromEntry = measure.from ? data?.byId.get(measure.from) : undefined;
+  const toEntry = measure.to ? data?.byId.get(measure.to) : undefined;
+  const toAt = toEntry?.info.at;
   useEffect(() => {
     globe?.renderer.setMeasure(fromEntry?.info.at ?? null, toAt ?? null);
     // Both ends in view: the place's own flight lands first, then the frame widens.
@@ -448,6 +480,13 @@ export function App() {
   // The search results drop over the column: the shared panel waits, or its list would
   // read as more results. It comes back, on the same tab, when the search closes.
   const moreShown = moreOpen && !searchOpen;
+  useEffect(() => {
+    if (!moreShown) return;
+    void loadTours();
+    void loadEvents();
+    void loadArticles();
+    void loadPeoplePanel();
+  }, [moreShown]);
 
   // The tab names what is open: a shared link or a history entry says where it leads.
   const placeName = selected ? nameOf(selected, state.locale) : undefined;
@@ -655,6 +694,25 @@ export function App() {
                       >
                         <BookOpen className="size-[18px]" aria-hidden />
                       </HeaderButton>
+                      {!EMBED && (
+                        <HeaderButton
+                          label={t("tools.title")}
+                          active={tool !== null}
+                          expanded={tool !== null}
+                          controls="tools-panel"
+                          onClick={() => {
+                            const next = tool === null;
+                            // On a phone the tools and the overview share the column.
+                            if (next && narrow) {
+                              setMoreOpen(false);
+                              writeMore(false);
+                            }
+                            openTool(next ? "menu" : null);
+                          }}
+                        >
+                          <PencilRuler className="size-[18px]" aria-hidden />
+                        </HeaderButton>
+                      )}
                       <HeaderButton
                         label={t("settings.title")}
                         dialog
@@ -725,22 +783,59 @@ export function App() {
                   />
                 </Suspense>
               )}
+              {tool && (
+                <div id="tools-panel">
+                  <Suspense fallback={null}>
+                    <ToolsPanel
+                      tool={tool}
+                      compact={narrow && cardOpen}
+                      onTool={openTool}
+                      onClose={() => {
+                        openTool(null);
+                      }}
+                      locale={state.locale}
+                      year={state.year}
+                      placeName={(id) => placeLabel(id) ?? id}
+                      measure={{
+                        from: fromEntry
+                          ? { name: nameOf(fromEntry.props, state.locale), at: fromEntry.info.at }
+                          : null,
+                        to: toEntry
+                          ? { name: nameOf(toEntry.props, state.locale), at: toEntry.info.at }
+                          : null,
+                        onReset: () => {
+                          setMeasure({ from: null, to: null });
+                        },
+                      }}
+                      tours={data.tours.map((x) => ({
+                        id: x.id,
+                        title: x.title[state.locale] ?? x.title.en ?? x.id,
+                      }))}
+                      onQuiz={(id, print) => {
+                        setPlaying(false);
+                        if (narrow) setMoreOpen(false);
+                        engine.startTour(id);
+                        if (print) {
+                          void import("./print").then((m) => m.printQuiz({ globe, data }));
+                          return;
+                        }
+                        // The quiz stands where the tour's card is: the tool has done its part.
+                        openTool(null);
+                        void import("./print")
+                          .then((m) => m.buildQuiz({ globe, data }))
+                          .then((q) => {
+                            setQuiz(q && q.items.length > 0 ? { tour: id, quiz: q } : null);
+                          });
+                      }}
+                    />
+                  </Suspense>
+                </div>
+              )}
               {
                 <div
                   id="side-panels"
                   className={`flex flex-col gap-3 *:shrink-0 ${cardOpen ? "max-md:hidden" : ""}`}
                 >
-                  {wallsOpen && (
-                    <Suspense fallback={null}>
-                      <WallsPanel
-                        renderer={globe.renderer}
-                        locale={state.locale}
-                        onClose={() => {
-                          setWallsOpen(false);
-                        }}
-                      />
-                    </Suspense>
-                  )}
                   {moreShown && (
                     <Suspense fallback={null}>
                       <Overview
@@ -807,18 +902,6 @@ export function App() {
                                 // On a phone the card comes up under the overview: it gives way.
                                 if (narrow) setMoreOpen(false);
                                 openPerson(i, null);
-                              }}
-                            />
-                          ),
-                          inview: (
-                            <InViewPanel
-                              ids={inView}
-                              data={data}
-                              locale={state.locale}
-                              year={state.year}
-                              selected={state.selectedPlace}
-                              onSelect={(id) => {
-                                engine.selectPlace(id);
                               }}
                             />
                           ),
@@ -952,25 +1035,18 @@ export function App() {
                     hasArticle={selected.id in data.articles}
                     polities={polities}
                     pleiades={data.pleiades[selected.id]}
-                    measure={
+                    // The card's ruler and list open their tools, this place the first step.
+                    onMeasure={
                       compact
                         ? undefined
-                        : {
-                            from: fromEntry
-                              ? {
-                                  name: nameOf(fromEntry.props, state.locale),
-                                  at: fromEntry.info.at,
-                                }
-                              : null,
-                            isFrom: measureFrom === selected.id,
-                            onToggle: () => {
-                              setMeasureFrom(measureFrom === selected.id ? null : selected.id);
-                            },
-                            onClear: () => {
-                              setMeasureFrom(null);
-                            },
+                        : () => {
+                            openTool("measure");
+                            setMeasure({ from: selected.id, to: null });
                           }
                     }
+                    onLesson={() => {
+                      openTool("lesson");
+                    }}
                     photo={shortFrame ? undefined : data.photos[selected.id]}
                     onPerson={(i) => {
                       setPlaying(false);
@@ -1073,14 +1149,6 @@ export function App() {
                     : () => {
                         setPlaying(false);
                         void printForClass(true);
-                      }
-                }
-                // Jerusalem's walls over another place, to compare sizes.
-                onWalls={
-                  EMBED
-                    ? undefined
-                    : () => {
-                        setWallsOpen(true);
                       }
                 }
                 // The same quiz on screen: a choice shows the place on the map.
