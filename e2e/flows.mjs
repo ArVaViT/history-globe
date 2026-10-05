@@ -130,25 +130,10 @@ await step("space plays and pauses, / focuses the search", async () => {
   );
   await page.keyboard.press("Escape");
 });
-await step("More opens tours, events and the in-view list", async () => {
+await step("the book opens the overview on its tours", async () => {
   await page.getByRole("button", { name: "Обзор: экскурсии, события, люди, статьи" }).click();
   await page.getByRole("tab", { name: "Экскурсии" }).click();
   await page.getByText("Земная жизнь Иисуса").waitFor({ timeout: 3000 });
-});
-await step("turning places off empties the in-view list", async () => {
-  await page.getByRole("button", { name: "Настройки" }).click();
-  await page.getByText("Библейские места").click();
-  await page.keyboard.press("Escape");
-  await page.waitForTimeout(1500);
-  expect(
-    (await page.getByText("В КАДРЕ", { exact: false }).count()) === 0 ||
-      (await page.locator('ul[aria-label="В кадре"] li').count()) === 0,
-    "list not empty",
-  );
-  await page.getByRole("button", { name: "Настройки" }).click();
-  await page.getByText("Библейские места").click();
-  await page.keyboard.press("Escape");
-  await page.waitForTimeout(800);
 });
 await step("layers off are written to the URL", async () => {
   await page.getByRole("button", { name: "Настройки" }).click();
@@ -405,20 +390,6 @@ await step(
   },
 );
 
-await step("Jerusalem's walls laid over Babylon at their true size", async () => {
-  await page.goto(BASE + "?locale=ru&year=30&camera=44.42,32.54,13,0,0");
-  await mapReady(page);
-  await page.getByRole("button", { name: /^Ещё/ }).click();
-  await page.getByRole("button", { name: /Стены Иерусалима/ }).click();
-  await page.getByText(/га, по стенам/).waitFor({ timeout: 8000 });
-  await page.waitForFunction(
-    () => window.__hgMap.queryRenderedFeatures({ layers: ["outline-line"] }).length > 0,
-    null,
-    { timeout: 8000 },
-  );
-  await page.getByRole("button", { name: "Закрыть" }).first().click();
-});
-
 await step("a voyage gives the days the text gives, with the verse", async () => {
   // Paul's third journey, stop 4: Philippi to Troas, «дней в пять» (Acts 20:6).
   await page.goto(BASE + "?tour=paul-3&stop=4&locale=ru");
@@ -534,6 +505,23 @@ await step("a lesson is built from place cards, named, and runs as a tour", asyn
     localStorage.removeItem("hg-lesson");
     localStorage.removeItem("hg-lesson-title");
   });
+});
+
+await step("the distance tool measures from one opened place to the next", async () => {
+  await page.goto(BASE + "?locale=ru&year=30&place=a15257a");
+  await mapReady(page);
+  // The card's ruler opens the tool with this place as the first end.
+  await page.getByRole("button", { name: "Расстояние отсюда" }).click({ timeout: 8000 });
+  await page.getByText("Теперь нажмите второе место").waitFor({ timeout: 8000 });
+  await page
+    .getByRole("button", { name: /Поиск|Найти/ })
+    .first()
+    .click();
+  await page.keyboard.type("Вифлеем");
+  await page.waitForTimeout(600);
+  await page.keyboard.press("Enter");
+  await page.getByText(/^\d+ км по прямой$/).waitFor({ timeout: 8000 });
+  await page.getByRole("button", { name: "Закрыть инструменты" }).click();
 });
 
 console.log(results.join("\n"));

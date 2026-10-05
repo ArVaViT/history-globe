@@ -678,24 +678,6 @@ export class MapLibreRenderer implements Renderer {
     });
   }
 
-  /** An outline laid over the map at its true size (outline.ts), or none. */
-  setOutline(ring: readonly LonLat[] | null): void {
-    this.whenLoaded(() => {
-      void this.map.getSource<GeoJSONSource>("outline")?.setData({
-        type: "FeatureCollection",
-        features: ring
-          ? [
-              {
-                type: "Feature",
-                properties: {},
-                geometry: { type: "Polygon", coordinates: [ring.map((p) => [p[0], p[1]])] },
-              },
-            ]
-          : [],
-      });
-    });
-  }
-
   /** The Bible alone (a setting): the battles it does not tell step off the map. */
   setBibleOnly(on: boolean): void {
     this.bibleOnly = on;

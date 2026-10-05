@@ -109,9 +109,6 @@
     "tab_verses": "Verses",
     "article_failed": "The article did not load. Try opening the place again.",
     "measure": "Distance from here",
-    "measure_stop": "Clear the distance",
-    "measure_hint": "Pick a second place on the map",
-    "distance_to": "{{from}} → {{to}}: {{km}} km in a straight line · {{walk}} on foot",
     "walk_hours": "≈ {{n}} h",
     "walk_days_one": "≈ {{count}} day",
     "walk_days_other": "≈ {{count}} days",
@@ -184,11 +181,6 @@
     "room": "room",
     "stone heap": "heap of stones",
     "wadi": "wadi"
-  },
-  "inview": {
-    "title": "In view",
-    "verses_one": "{{count}} verse",
-    "verses_other": "{{count}} verses"
   },
   "error_data": "Could not load the data: {{msg}}",
   "error_map": "The map could not start: {{msg}}",
@@ -270,8 +262,7 @@
     "tours": "Tours",
     "events": "Events",
     "people": "People",
-    "articles": "Articles",
-    "inview": "In view"
+    "articles": "Articles"
   },
   "person": {
     "tours": "Tours",
@@ -308,21 +299,9 @@
     "year_hint": "Each place is added with the year set on the timeline; its stop shows the verse nearest that year.",
     "full_one": "A lesson holds up to {{count}} place",
     "full_other": "A lesson holds up to {{count}} places",
-    "hint": "To make your own lesson: open a place and press “Add to a lesson” (the list icon) on its card. With two or more places, start the lesson or share its link.",
+    "hint": "To make your own lesson: open the Tools (the pencil and ruler) → “Your lesson”, then open places: each one joins the lesson. With two or more places, start the lesson or share its link.",
     "remove": "Remove from the lesson",
     "default_title": "Your lesson"
-  },
-  "walls": {
-    "failed": "The outlines did not load. Try opening the panel again.",
-    "title": "Jerusalem's walls",
-    "intro": "The outline stands in the middle of the map at its true size: move the map to Babylon, Rome or your own town and compare.",
-    "size": "≈ {{ha}} ha, ≈ {{km}} km round the walls",
-    "here": "To the middle of the map",
-    "me": "Over where I am",
-    "home": "Back to Jerusalem",
-    "no_place": "Your location is not available: the browser gave none.",
-    "source": "Outline from the 1864–65 Ordnance Survey of Jerusalem (C. W. Wilson) and Wikidata points; accurate to about {{m}} m.",
-    "menu": "Jerusalem's walls — compare size"
   },
   "mapui": {
     "km": "km",
@@ -341,5 +320,26 @@
     "quiz_intro": "Quiz: where did it happen? Find the passage and circle a letter.",
     "answers": "Answers",
     "letters": "A B C D"
+  },
+  "tools": {
+    "title": "Tools",
+    "close": "Close the tools",
+    "back": "All tools",
+    "measure": "Distance",
+    "measure_about": "Between two places: in a straight line, and how long on foot",
+    "measure_first": "Click the first place on the map",
+    "measure_second": "Now click the second place",
+    "measure_next": "Click another place to measure from the first again.",
+    "measure_reset": "Measure again",
+    "km": "{{km}} km in a straight line",
+    "measure_walk": "{{walk}} on foot",
+    "lesson": "Your lesson",
+    "lesson_about": "Gather places into a route and share it with a class",
+    "lesson_pick": "Open places on the map or from the search: each one joins the lesson",
+    "lesson_share": "Start the lesson or copy its link",
+    "quiz": "Quiz",
+    "quiz_about": "“Where did it happen?” on any tour: on screen or on an A4 sheet",
+    "quiz_pick": "Pick a tour: its quiz opens on screen. The printer makes an A4 sheet for a class.",
+    "quiz_print": "Print for students (A4)"
   }
 }

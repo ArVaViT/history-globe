@@ -670,8 +670,18 @@ for (const l of LANGS) {
   indexPages(l);
 }
 
+// The front page's pictures (public/shots/<lang>-<name>.jpg, taken from the app) and where
+// each opens the globe: the same view, live.
+const SHOTS = { time: "year=-700&camera=40,33,4.6,25,0" } as const;
+const ROWS = [
+  { shot: "tour", q: "tour=paul-2&stop=4" },
+  { shot: "place", q: "place=a15257a&year=30" },
+  { shot: "quiz", q: "tour=exodus" },
+] as const;
+
 for (const l of LANGS) {
   const L = LANDING[l];
+  const app = (q: string) => `../?locale=${l}${q ? `&${q}` : ""}`;
   const n = new Intl.NumberFormat(l);
   const numbers = [
     shown.length,
@@ -696,17 +706,49 @@ for (const l of LANGS) {
         inLanguage: l,
         description: L.desc,
       },
-      body: `    <main id="main" class="page landing">
-      <p class="kicker">${esc(L.kicker)}</p>
-      <h1>${esc(L.title)}</h1>
-      <p class="lede">${esc(L.lede)}</p>
-      <p class="actions"><a class="button" href="../?locale=${l}">${esc(L.open)}</a> <a href="tours/">${esc(L.tours)}</a></p>
-      <a class="hero" href="../?locale=${l}"><img src="../og.jpg" alt="" width="1200" height="630" /></a>
-      <ul class="stats">${numbers.map((x, i) => `<li><b>${n.format(x)}</b> ${esc(L.stats[i] ?? "")}</li>`).join("")}</ul>
-      <ul class="features">${L.features.map(([h, t]) => `<li><h2>${esc(h)}</h2><p>${esc(t)}</p></li>`).join("")}</ul>
-      <h2>${esc(L.trust)}</h2>
-      <p>${esc(L.trustText)} <a href="../${docsPath(l, "methodology")}">${esc(L.method)}</a>.</p>
-      <p class="note">${esc(L.privacy)} <a href="../${docsPath(l, "privacy")}">${esc(T[l].privacy)}</a> · <a href="places/">${esc(T[l].placesTitle)}</a> · <a href="questions/">${esc(T[l].questions)}</a></p>
+      body: `    <main id="main" class="landing">
+      <section class="l-hero">
+        <div class="l-wrap">
+          <p class="kicker">${esc(L.kicker)}</p>
+          <h1>${esc(L.title)}</h1>
+          <p class="lede">${esc(L.lede)}</p>
+          <p class="l-actions"><a class="button" href="${app("")}">${esc(L.open)}</a><a class="l-link" href="tours/">${esc(L.tours)} →</a></p>
+        </div>
+        <figure class="l-frame l-frame-hero">
+          <a href="${app(SHOTS.time)}"><img src="../shots/${l}-time.jpg" alt="${esc(L.heroAlt)}" width="1440" height="900" fetchpriority="high" /></a>
+          <figcaption>${esc(L.heroNote)}</figcaption>
+        </figure>
+      </section>
+      <ul class="l-stats">${numbers.map((x, i) => `<li><b>${n.format(x)}</b><span>${esc(L.stats[i] ?? "")}</span></li>`).join("")}</ul>
+${L.rows
+  .map(
+    ([eyebrow, h, text, link, alt], i) => `      <section class="l-row${i % 2 ? " l-flip" : ""}">
+        <div class="l-copy">
+          <p class="kicker">${esc(eyebrow)}</p>
+          <h2>${esc(h)}</h2>
+          <p>${esc(text)}</p>
+          <p><a class="l-link" href="${app(ROWS[i]?.q ?? "")}">${esc(link)} →</a></p>
+        </div>
+        <figure class="l-frame"><a href="${app(ROWS[i]?.q ?? "")}" tabindex="-1" aria-hidden="true"><img src="../shots/${l}-${ROWS[i]?.shot ?? "time"}.jpg" alt="${esc(alt)}" width="1440" height="900" loading="lazy" /></a></figure>
+      </section>`,
+  )
+  .join("\n")}
+      <ul class="l-cards">${L.cards
+        .map(
+          ([h, text, link], i) =>
+            `<li><h2>${esc(h)}</h2><p>${esc(text)}</p><a href="${[`questions/`, `../${docsPath(l, "api")}`, `../${docsPath(l, "privacy")}`][i] ?? ""}">${esc(link)} →</a></li>`,
+        )
+        .join("")}</ul>
+      <section class="l-trust">
+        <h2>${esc(L.trust)}</h2>
+        <p>${esc(L.trustText)}</p>
+        <p><a class="l-link" href="../${docsPath(l, "methodology")}">${esc(L.method)} →</a></p>
+      </section>
+      <section class="l-cta">
+        <h2>${esc(L.ctaTitle)}</h2>
+        <p>${esc(L.ctaText)}</p>
+        <p><a class="button" href="${app("")}">${esc(L.open)}</a></p>
+      </section>
     </main>`,
     }),
   );
