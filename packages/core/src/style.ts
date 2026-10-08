@@ -1118,7 +1118,15 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         tileSize: 512,
         maxzoom: 12,
       },
-      water: { type: "geojson", data: `${o.dataUrl}/water.geojson`, attribution: "Natural Earth" },
+      // Not simplified (tolerance 0): the islands are joined to the sea's outline by
+      // zero-width cuts (pipeline/build_data.py, join_holes), and simplifying the two sides
+      // of a cut apart opens it into a hairline of land across the sea.
+      water: {
+        type: "geojson",
+        data: `${o.dataUrl}/water.geojson`,
+        attribution: "Natural Earth",
+        tolerance: 0,
+      },
       coast: { type: "geojson", data: `${o.dataUrl}/coast.geojson` },
       polities: {
         type: "geojson",

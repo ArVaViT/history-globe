@@ -20210,6 +20210,7 @@ exports[`style > is built as before 1`] = `
     "water": {
       "attribution": "Natural Earth",
       "data": "/data/water.geojson",
+      "tolerance": 0,
       "type": "geojson",
     },
   },

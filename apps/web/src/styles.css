@@ -109,15 +109,28 @@ body {
 }
 
 .hg-map-slot .maplibregl-ctrl-attrib {
+  /* The sources' (i): the licences want it on the map, the reader rarely does. First in
+     the row, away from the player's buttons, small and faint until pointed at. */
+  order: -1;
+  margin-right: 4px !important;
+  opacity: 0.45;
+  transition: opacity 150ms;
   position: relative;
   min-height: 32px;
   padding: 0 !important;
   background: transparent !important;
   box-shadow: none !important;
 }
+.hg-map-slot .maplibregl-ctrl-attrib:hover,
+.hg-map-slot .maplibregl-ctrl-attrib:focus-within,
+.hg-map-slot .maplibregl-ctrl-attrib.maplibregl-compact-show {
+  opacity: 1;
+}
 .hg-map-slot .maplibregl-ctrl-attrib-button {
   position: static;
-  background-size: 18px;
+  width: 24px !important;
+  height: 24px !important;
+  background-size: 14px;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -131,7 +144,7 @@ body {
 }
 .hg-map-slot .maplibregl-ctrl-attrib.maplibregl-compact-show .maplibregl-ctrl-attrib-inner {
   position: absolute;
-  right: 0;
+  left: 0;
   bottom: calc(100% + 8px);
   width: min(420px, 80vw);
   padding: 8px 12px;

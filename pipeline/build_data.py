@@ -629,6 +629,57 @@ def clip_polygons(fc: dict, box: tuple[float, float, float, float]) -> list:
     return out
 
 
+def polygons_of(feature: dict) -> list:
+    g = feature["geometry"]
+    return g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]
+
+
+def ring_area(ring: list[list[float]]) -> float:
+    """Signed area (shoelace): positive when the ring runs counter-clockwise."""
+    return sum(a[0] * b[1] - b[0] * a[1] for a, b in zip(ring, ring[1:] + ring[:1])) / 2
+
+
+def join_holes(polygon: list[list[list[float]]]) -> list[list[float]]:
+    """A polygon's holes joined to its outer ring by zero-width cuts, as one closed ring.
+
+    MapLibre cuts a GeoJSON source into tiles, simplifies each ring on its own for every
+    zoom and triangulates it with earcut, which also joins each hole to the outer ring, at
+    the first edge left of the hole. An island in a narrow strait (Bubiyan off Kuwait) then
+    crosses the simplified coast, its join lands on the next shore to the west (the Gulf of
+    Suez), and the triangles fill the land between with sea: a straight band across Arabia.
+    Holes cut along a tile's edge break the joins in the same way (Central America drawn
+    as sea). A ring with no holes has nothing to join. Holes are joined as earcut does:
+    leftmost first, each to the nearest edge straight to its left, so a cut runs at sea and
+    crosses no other ring. Its two sides are the same points, so it stays closed as long as
+    the tiles are not simplified: the style draws the water with tolerance 0."""
+    outer = polygon[0][:-1] if polygon[0][0] == polygon[0][-1] else list(polygon[0])
+    if ring_area(outer) < 0:
+        outer.reverse()
+    holes = []
+    for ring in polygon[1:]:
+        hole = ring[:-1] if ring[0] == ring[-1] else list(ring)
+        if len(hole) < 3:
+            continue
+        if ring_area(hole) > 0:
+            hole.reverse()
+        start = min(range(len(hole)), key=lambda i: (hole[i][0], hole[i][1]))
+        holes.append(hole[start:] + hole[:start])
+    for hole in sorted(holes, key=lambda h: (h[0][0], h[0][1])):
+        hx, hy = hole[0]
+        best, at = -math.inf, None
+        for i, a in enumerate(outer):
+            b = outer[i + 1] if i + 1 < len(outer) else outer[0]
+            if (a[1] <= hy <= b[1] or b[1] <= hy <= a[1]) and a[1] != b[1]:
+                x = a[0] + (hy - a[1]) * (b[0] - a[0]) / (b[1] - a[1])
+                if best < x <= hx:
+                    best, at = x, i
+        if at is None:  # not inside the outer ring: nothing to cut it out of
+            continue
+        bridge = [best, hy]
+        outer[at + 1 : at + 1] = [bridge, *hole, hole[0], bridge]
+    return [*outer, outer[0]]
+
+
 def in_region(p: list[float]) -> bool:
     return BBOX[0] <= p[0] <= BBOX[2] and BBOX[1] <= p[1] <= BBOX[3]
 
@@ -659,9 +710,13 @@ def build_water() -> tuple[dict, dict]:
         if f["properties"].get("featurecla") != "Reservoir" and f["properties"].get("name") not in MODERN_LAKES
     ]
     sea = clip_polygons(ocean10, BBOX) + [p for box in OUTSIDE_REGION for p in clip_polygons(ocean, box)]
+    # No holes in what MapLibre triangulates: see join_holes.
     water = {
         "type": "FeatureCollection",
-        "features": [{"type": "Feature", "properties": {}, "geometry": {"type": "MultiPolygon", "coordinates": sea}}, *natural],
+        "features": [
+            {"type": "Feature", "properties": {}, "geometry": {"type": "MultiPolygon", "coordinates": [[join_holes(p)] for p in polys]}}
+            for polys in [sea, *(polygons_of(f) for f in natural)]
+        ],
     }
     shore_lines = [
         *build_coast(ocean10, keep=in_region)["features"][0]["geometry"]["coordinates"],
