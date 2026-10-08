@@ -4,7 +4,7 @@
  */
 import type { FeatureCollection } from "geojson";
 import type { ExpressionSpecification } from "maplibre-gl";
-import { KIND_ICON } from "./icons.ts";
+import { DOT_RADIUS, KIND_ICON } from "./icons.ts";
 import { AREA_KINDS, SETTLEMENT_KINDS, WATER_KINDS } from "./kinds.ts";
 
 export const MAP_FONT = "Map Serif";
@@ -374,6 +374,76 @@ export const labelledAtZoom: ExpressionSpecification = [
   [">=", ["zoom"], 10],
   IS_SELECTED,
   IN_TOUR,
+];
+
+/**
+ * The reader's own picks: the selected place and the places of a tour, a chapter or a
+ * person. Their marks are drawn whatever else is near; every other mark gives way.
+ */
+export const PICKED: ExpressionSpecification = ["any", IS_SELECTED, IN_TOUR];
+
+/**
+ * A tour's numbered stops are drawn (MapLibreRenderer.setRoute, with the routes layer on):
+ * a stop's own mark lies hidden under its disc, as the circles once lay under it.
+ */
+export const STOPS_SHOWN: ExpressionSpecification = ["boolean", ["global-state", "stops"], false];
+
+/** A mark's opacity: none under a tour's stop disc, else faded as its place's name is. */
+export const markOpacity = (faded: number): ExpressionSpecification => [
+  "case",
+  ["all", IN_TOUR, STOPS_SHOWN],
+  0,
+  fadeBeforeNT(faded),
+];
+
+/**
+ * A town's mark (icons.ts): the great towns (rank 0) ringed, as on a printed atlas, but
+ * not while a chapter, a tour or a person's places are picked out, where Jerusalem, named
+ * once in Acts 16, outweighed Philippi, where the chapter happens. An uncertain site is
+ * hollow; the selected town a plain dot, in gold.
+ */
+export const TOWN_MARK: ExpressionSpecification = [
+  "case",
+  IS_SELECTED,
+  "hg-dot",
+  ["all", ["==", ["get", "rank"], 0], NOT_TOURING],
+  ["case", UNCERTAIN_SITE, "hg-dot-ringed-hollow", "hg-dot-ringed"],
+  UNCERTAIN_SITE,
+  "hg-dot-hollow",
+  "hg-dot",
+];
+
+/**
+ * A town mark's size, as the dots' radii were (in px, over icons.ts DOT_RADIUS): the
+ * picked places one size, the lesser towns smaller at a region's view, where three hundred
+ * of them made a carpet over the Levant. A ringed mark is drawn at its own size.
+ */
+const townSize = (rank2: number): ExpressionSpecification => [
+  "case",
+  IS_SELECTED,
+  8 / DOT_RADIUS,
+  IN_TOUR,
+  4.5 / DOT_RADIUS,
+  [
+    "match",
+    ["get", "rank"],
+    0,
+    ["case", NOT_TOURING, 1, 5 / DOT_RADIUS],
+    1,
+    4 / DOT_RADIUS,
+    2,
+    rank2 / DOT_RADIUS,
+    2.6 / DOT_RADIUS,
+  ],
+];
+export const TOWN_MARK_SIZE: ExpressionSpecification = [
+  "interpolate",
+  ["linear"],
+  ["zoom"],
+  6,
+  townSize(2.3),
+  8,
+  townSize(3.2),
 ];
 
 /** Labels keep more room around them at a region's zoom than up close. */

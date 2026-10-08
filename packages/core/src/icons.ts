@@ -159,7 +159,73 @@ const DRAW: Readonly<Record<string, Draw>> = {
   },
 };
 
-export const ICON_NAMES = Object.keys(DRAW);
+/**
+ * The marks of towns and ancient sites, as icons rather than circles: a symbol takes part
+ * in MapLibre's collision detection and a circle does not, so with circles a dozen towns
+ * around Jerusalem piled up at a globe's view and the names lay under the pile. Each mark
+ * is drawn on a canvas just its own size (plus room for the halo), so its collision box is
+ * the mark, not a 16 px icon square. Sizes in device pixels at pixelRatio 2, radii as the
+ * circles had them: the fill out to its radius, a stroke outside it.
+ */
+const ring = (c: CanvasRenderingContext2D, at: number, inner: number, outer: number) => {
+  c.beginPath();
+  c.arc(at, at, outer, 0, Math.PI * 2);
+  c.arc(at, at, inner, 0, Math.PI * 2, true);
+  c.fill();
+};
+const disc = (c: CanvasRenderingContext2D, at: number, r: number) => {
+  c.beginPath();
+  c.arc(at, at, r, 0, Math.PI * 2);
+  c.fill();
+};
+/** Radius of the plain dot (hg-dot) in CSS pixels: the style scales it with `icon-size`. */
+export const DOT_RADIUS = 4;
+const MARKS: Readonly<Record<string, { size: number; draw: Draw }>> = {
+  // A town: a filled dot; the halo is its outline.
+  "hg-dot": {
+    size: 16,
+    draw: (c) => {
+      disc(c, 8, 8);
+    },
+  },
+  // A town whose site is uncertain: hollow.
+  "hg-dot-hollow": {
+    size: 16,
+    draw: (c) => {
+      ring(c, 8, 4.4, 8);
+    },
+  },
+  // A great town (rank 0): a 5 px dot inside a ring at 8.5 px, as on a printed atlas.
+  "hg-dot-ringed": {
+    size: 40,
+    draw: (c) => {
+      disc(c, 20, 10);
+      ring(c, 20, 17, 20);
+    },
+  },
+  "hg-dot-ringed-hollow": {
+    size: 40,
+    draw: (c) => {
+      ring(c, 20, 5.5, 10);
+      ring(c, 20, 17, 20);
+    },
+  },
+  // An ancient site (ADR 0013): a small grey ring round a 3.3 px hole.
+  "hg-ancient": {
+    size: 20,
+    draw: (c) => {
+      ring(c, 10, 6.6, 9.6);
+    },
+  },
+};
+
+export const ICON_NAMES = [...Object.keys(DRAW), ...Object.keys(MARKS)];
+
+/** A mark's size on the map in CSS pixels at icon-size 1, its halo's room included. */
+export function markBox(name: string): number | null {
+  const mark = MARKS[name];
+  return mark ? (mark.size + 2 * MARK_PAD) / 2 : null;
+}
 
 /** The icon as a data URL in a given colour, for HTML (the map legend). */
 export function iconDataUrl(name: string, color: string): string | null {
@@ -177,6 +243,8 @@ export function iconDataUrl(name: string, color: string): string | null {
 }
 
 const PAD = 5; // pixels of room around the shape for the halo
+// Round a mark: room for a 3 px halo (6 device pixels), the widest the style draws.
+const MARK_PAD = 6;
 const SDF_RADIUS = 8; // MapLibre's SDF scale: 8 px of distance over the alpha range
 
 /**
@@ -185,9 +253,11 @@ const SDF_RADIUS = 8; // MapLibre's SDF scale: 8 px of distance over the alpha r
  * would leave the halo a sub-pixel ring. Needs a DOM canvas.
  */
 export function drawIcon(name: string): ImageData | null {
-  const draw = DRAW[name];
+  const mark = MARKS[name];
+  const draw = mark?.draw ?? DRAW[name];
   if (!draw) return null;
-  const size = SIZE + 2 * PAD;
+  const pad = mark ? MARK_PAD : PAD;
+  const size = (mark?.size ?? SIZE) + 2 * pad;
   const canvas = document.createElement("canvas");
   canvas.width = size;
   canvas.height = size;
@@ -195,7 +265,7 @@ export function drawIcon(name: string): ImageData | null {
   if (!c) return null;
   c.fillStyle = "#000";
   c.strokeStyle = "#000";
-  c.translate(PAD, PAD);
+  c.translate(pad, pad);
   draw(c);
   const img = c.getImageData(0, 0, size, size);
   const inside = new Uint8Array(size * size);

@@ -26,7 +26,7 @@ const acts = {
   },
   measure: async () => {
     await p.getByRole("button", { name: "Расстояние отсюда" }).click();
-    await p.getByText("Теперь нажмите второе место").waitFor({ timeout: 8000 });
+    await p.getByText("Теперь второе").waitFor({ timeout: 8000 });
   },
   more: async () => {
     await p.getByRole("button", { name: /^Ещё/ }).click();

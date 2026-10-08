@@ -82,7 +82,13 @@ import { chapterFocus, chapterLabel } from "./chapter";
 import { useEmbed, useEmbedError } from "./embed";
 import { readUrl } from "./url";
 import { loadPeople, personName, type People } from "./people";
-import { setCompactFrame, setPersonCardOpen, useGlobe, useGlobeState } from "./useGlobe";
+import {
+  setCompactFrame,
+  setLeftPanelOpen,
+  setPersonCardOpen,
+  useGlobe,
+  useGlobeState,
+} from "./useGlobe";
 
 const INITIAL = readUrl();
 /** Inside another site's page: the map, the card and the slider, no column. */
@@ -480,6 +486,11 @@ export function App() {
   // The search results drop over the column: the shared panel waits, or its list would
   // read as more results. It comes back, on the same tab, when the search closes.
   const moreShown = moreOpen && !searchOpen;
+  // Something open in the left column takes its room from the map: the centre moves over.
+  const leftPanel = columnShown && (moreShown || searchOpen || tool !== null);
+  useEffect(() => {
+    setLeftPanelOpen(leftPanel);
+  }, [leftPanel]);
   useEffect(() => {
     if (!moreShown) return;
     void loadTours();

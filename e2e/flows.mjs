@@ -231,7 +231,7 @@ await step("book opens and closes the overview", async () => {
 });
 await step("switch to English", async () => {
   await page.getByRole("button", { name: "Настройки" }).click();
-  await page.getByRole("button", { name: "English" }).click();
+  await page.getByRole("combobox", { name: "Язык" }).selectOption("en");
   await page.keyboard.press("Escape");
   await page
     .getByRole("button", { name: /Find a place|Close the search/ })
@@ -376,7 +376,7 @@ await step(
     await page.keyboard.press("Escape");
     // Hidden on the map, not in the reader's own switch: a link they share stays theirs.
     await page.waitForFunction(
-      () => window.__hgMap.getLayoutProperty("ancient-dot", "visibility") === "none",
+      () => window.__hgMap.getLayoutProperty("ancient-label", "visibility") === "none",
       null,
       { timeout: 5000 },
     );
@@ -512,7 +512,7 @@ await step("the distance tool measures from one opened place to the next", async
   await mapReady(page);
   // The card's ruler opens the tool with this place as the first end.
   await page.getByRole("button", { name: "Расстояние отсюда" }).click({ timeout: 8000 });
-  await page.getByText("Теперь нажмите второе место").waitFor({ timeout: 8000 });
+  await page.getByText("Теперь второе").waitFor({ timeout: 8000 });
   await page
     .getByRole("button", { name: /Поиск|Найти/ })
     .first()

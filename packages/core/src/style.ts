@@ -1,4 +1,11 @@
-import type { ExpressionSpecification, LayerSpecification, StyleSpecification } from "maplibre-gl";
+import type {
+  ExpressionSpecification,
+  LayerSpecification,
+  StyleSpecification,
+  SymbolLayerSpecification,
+} from "maplibre-gl";
+import { DOT_RADIUS } from "./icons.ts";
+import { LAST_ZOOM } from "./majors.ts";
 import {
   MAP_FONT,
   MAP_FONT_ITALIC,
@@ -41,6 +48,10 @@ import {
   ANCIENT_NOW,
   BATTLE_INK,
   ANCIENT_INK,
+  PICKED,
+  TOWN_MARK,
+  TOWN_MARK_SIZE,
+  markOpacity,
 } from "./style-expressions.ts";
 export {
   MAP_FONT,
@@ -72,6 +83,158 @@ export interface StyleOptions {
   readonly initialYear: number;
   readonly initialLocale: string;
 }
+
+type SymbolLayout = NonNullable<SymbolLayerSpecification["layout"]>;
+type SymbolPaint = NonNullable<SymbolLayerSpecification["paint"]>;
+
+const SELECTED_STATE: ExpressionSpecification = ["boolean", ["feature-state", "selected"], false];
+const HOVER_STATE: ExpressionSpecification = ["boolean", ["feature-state", "hover"], false];
+
+/** A town is named at this zoom (the dot alone otherwise: place-dot). */
+export const TOWN_NAMED: ExpressionSpecification = [
+  "all",
+  isSettlement,
+  visibleAtZoom,
+  labelledAtZoom,
+  LABEL_IN_TIME,
+  NOT_HIDDEN,
+  HAS_LOCAL_NAME,
+  NOT_DUP,
+  ["!", OFF_TOUR],
+  // Another name of a place on the same point (Zion for Jerusalem) is named only up
+  // close, unless it is the one picked: at a region's zoom it crowded out its city.
+  ["any", ["!=", ["get", "where_tpl"], "same"], [">=", ["zoom"], 11], IS_SELECTED, IN_TOUR],
+];
+/** TOWN_NAMED for a picked town, whose zoom rules always let it be named. */
+const PICKED_NAMED: ExpressionSpecification = [
+  "all",
+  NOT_HIDDEN,
+  HAS_LOCAL_NAME,
+  NOT_DUP,
+  ["!", OFF_TOUR],
+];
+
+/**
+ * A great town (rank 0, not a second name on its point) standing in the year, not picked,
+ * no tour or chapter in focus: drawn with its name by place-label-major, from its own
+ * source (majors.ts), and left out of the town layers here. Placed with the other towns,
+ * Tyre's name and the room kept round it took Damascus off the map at zoom 4.
+ */
+export const MAJOR_TOWN: ExpressionSpecification = [
+  "all",
+  isSettlement,
+  ["==", ["get", "rank"], 0],
+  ["!=", ["get", "where_tpl"], "same"],
+  ["!", OUT_OF_TIME],
+  ["!", PICKED],
+  NOT_TOURING,
+];
+/** The great town keeps its ring at the tile's zoom (majors.ts thinMajors, `keep`). */
+export const MAJOR_KEPT: ExpressionSpecification = [
+  "any",
+  [">=", ["zoom"], LAST_ZOOM],
+  ["==", ["%", ["floor", ["/", ["to-number", ["get", "keep"], 0], ["^", 2, ["zoom"]]]], 2], 1],
+];
+
+const TOWN_MARK_LAYOUT: SymbolLayout = {
+  "icon-image": TOWN_MARK,
+  "icon-size": TOWN_MARK_SIZE,
+  // The mark's image already has its halo's room round it.
+  "icon-padding": 0,
+  "symbol-sort-key": PLACE_ORDER,
+};
+const TOWN_MARK_PAINT: SymbolPaint = {
+  "icon-color": ["case", SELECTED_STATE, T.gold, T.accent],
+  "icon-halo-color": T.halo,
+  "icon-halo-width": [
+    "case",
+    HOVER_STATE,
+    2.6,
+    ["all", UNCERTAIN_SITE, ["!", SELECTED_STATE]],
+    1.8,
+    1.6,
+  ],
+  "icon-opacity": markOpacity(0.3),
+};
+const TOWN_TEXT_LAYOUT: SymbolLayout = {
+  "text-font": [MAP_FONT],
+  // A chapter's or a tour's places, picked out, in one size, as their marks are.
+  // The great cities grow from zoom 9 in: at zoom 10 Jerusalem stood at the villages'
+  // size among 150 names. Not before: the tiles lay names out at the size one zoom in,
+  // and growing from 8 already cost Bethlehem its name at 8.
+  "text-size": [
+    "interpolate",
+    ["linear"],
+    ["zoom"],
+    9,
+    ["case", IN_TOUR, 13.5, ["match", ["get", "rank"], 0, 15, 1, 13.5, 2, 12.5, 11.5]],
+    11,
+    ["case", IN_TOUR, 13.5, ["match", ["get", "rank"], 0, 17, 1, 14.5, 2, 12.5, 11]],
+  ],
+  "text-variable-anchor": ["top", "bottom", "right", "left"],
+  "text-radial-offset": 0.8,
+  "text-justify": "auto",
+  "text-padding": LABEL_PADDING,
+  // No room for the name: the mark stays alone.
+  "text-optional": true,
+};
+const TOWN_TEXT_PAINT: SymbolPaint = {
+  "text-color": ["case", SELECTED_STATE, T.accent, T.ink],
+  "text-halo-color": T.halo,
+  // A faded name has no halo: on the dark sea a light one read as a smudge.
+  "text-halo-width": ["case", OUT_OF_TIME, 0, 1.6],
+  "text-opacity": fadeBeforeNT(0.45),
+};
+
+/** Places drawn with a mark of their own kind: landmarks, and rivers known by a point. */
+const LANDMARK_MARKED: ExpressionSpecification = ["any", isLandmark, ["all", isWater, hasIcon]];
+/** A landmark's icon (icons.ts), or a small dark dot for a kind without one. */
+const LANDMARK_MARK: ExpressionSpecification = ["case", hasIcon, ICON_OF_KIND, "hg-dot"];
+const LANDMARK_NAMED: ExpressionSpecification = [
+  "all",
+  isLandmark,
+  visibleAtZoom,
+  labelledAtZoom,
+  LABEL_IN_TIME,
+  NOT_HIDDEN,
+  HAS_LOCAL_NAME,
+  NOT_DUP,
+  ["!", IS_SELECTED],
+  ["!", OFF_TOUR],
+];
+/** A river, wadi or canal known by a point (seas and lakes: place-label-sea). */
+const WATER_NAMED: ExpressionSpecification = [
+  "all",
+  isWater,
+  NOT_HIDDEN,
+  ["!=", ["get", "kind"], "body of water"],
+  visibleAtZoom,
+  NOT_DUP,
+  ["!", IS_SELECTED],
+  ["!", OFF_TOUR],
+];
+const LANDMARK_MARK_LAYOUT: SymbolLayout = {
+  "icon-image": LANDMARK_MARK,
+  "icon-size": [
+    "case",
+    hasIcon,
+    ["match", ["get", "rank"], 0, 1.35, 1, 1.2, 1],
+    ["case", IS_SELECTED, 6 / DOT_RADIUS, 2.6 / DOT_RADIUS],
+  ],
+  "icon-padding": 0,
+  "symbol-sort-key": PLACE_ORDER,
+};
+const LANDMARK_MARK_PAINT: SymbolPaint = {
+  "icon-color": [
+    "case",
+    SELECTED_STATE,
+    T.gold,
+    ["match", ["get", "kind"], ["river", "wadi", "canal"], T.water, LANDMARK_INK],
+  ],
+  "icon-halo-color": T.halo,
+  "icon-halo-width": ["case", HOVER_STATE, ["case", hasIcon, 3, 2.6], hasIcon, 1.6, 1.2],
+  "icon-opacity": markOpacity(0.3),
+};
 
 export function buildStyle(o: StyleOptions): StyleSpecification {
   const layers: LayerSpecification[] = [
@@ -294,151 +457,6 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       // with short gaps, so it reads as a line on the relief and on a printed sheet.
       paint: { "line-color": T.accent, "line-width": 4, "line-dasharray": [2.6, 1] },
     },
-    {
-      id: "ancient-dot",
-      type: "circle",
-      source: "ancient",
-      metadata: { group: "ancient" },
-      filter: ANCIENT_NOW,
-      paint: {
-        // A hollow ring, as in the key: no fill to read as a white dot.
-        "circle-radius": ["match", ["get", "rank"], 0, 3.8, 1, 3.3, 2.8],
-        "circle-color": T.halo,
-        "circle-opacity": 0,
-        "circle-stroke-color": ANCIENT_INK,
-        "circle-stroke-width": 1.5,
-        // A tour, a person or a chapter in focus: the ancient world steps back with the
-        // places off it.
-        "circle-stroke-opacity": ["case", NOT_TOURING, 0.9, 0.35],
-      },
-    },
-    {
-      // Mountains, springs, gates…: a small dark mark under the towns.
-      id: "landmark-dot",
-      type: "circle",
-      source: "places",
-      metadata: { group: "places" },
-      // Landmarks without an icon of their own keep a small dot.
-      filter: ["all", isLandmark, ["!", hasIcon], visibleAtZoom],
-      paint: {
-        "circle-radius": ["case", ["boolean", ["feature-state", "selected"], false], 6, 2.6],
-        "circle-color": [
-          "case",
-          ["boolean", ["feature-state", "selected"], false],
-          T.gold,
-          LANDMARK_INK,
-        ],
-        "circle-stroke-color": T.halo,
-        "circle-stroke-width": ["case", ["boolean", ["feature-state", "hover"], false], 2.6, 1.2],
-        "circle-opacity": fadeBeforeNT(0.3),
-        "circle-stroke-opacity": fadeBeforeNT(0.3),
-      },
-    },
-    {
-      // A mountain, a spring, a gate: an icon that says what the place is.
-      id: "landmark-icon",
-      type: "symbol",
-      source: "places",
-      metadata: { group: "places" },
-      filter: ["all", ["any", isLandmark, isWater], hasIcon, visibleAtZoom],
-      layout: {
-        "icon-image": ICON_OF_KIND,
-        "icon-size": ["match", ["get", "rank"], 0, 1.35, 1, 1.2, 1],
-        "icon-allow-overlap": true,
-        "icon-ignore-placement": true,
-      },
-      paint: {
-        "icon-color": [
-          "case",
-          ["boolean", ["feature-state", "selected"], false],
-          T.gold,
-          ["match", ["get", "kind"], ["river", "wadi", "canal"], T.water, LANDMARK_INK],
-        ],
-        "icon-halo-color": T.halo,
-        "icon-halo-width": ["case", ["boolean", ["feature-state", "hover"], false], 3, 1.6],
-        "icon-opacity": fadeBeforeNT(0.3),
-      },
-    },
-    {
-      // Major towns (most mentioned) get a ring around their dot, as on a printed atlas;
-      // not while a chapter, a tour or a person's places are picked out, where Jerusalem,
-      // named once in Acts 16, outweighed Philippi, where the chapter happens.
-      id: "place-ring",
-      type: "circle",
-      source: "places",
-      metadata: { group: "places" },
-      filter: ["all", isSettlement, ["==", ["get", "rank"], 0], visibleAtZoom, NOT_TOURING],
-      paint: {
-        "circle-radius": 8.5,
-        "circle-color": "rgba(0,0,0,0)",
-        "circle-stroke-color": T.accent,
-        "circle-stroke-width": 1.5,
-        "circle-stroke-opacity": fadeBeforeNT(0.3),
-      },
-    },
-    {
-      id: "place-dot",
-      type: "circle",
-      source: "places",
-      metadata: { group: "places" },
-      filter: ["all", isSettlement, visibleAtZoom],
-      paint: {
-        // The places picked out (a chapter's, a person's) are one size: the passage decides
-        // what matters, not how often the Bible names the town. The lesser towns are smaller
-        // at a region's view, where three hundred of them made a carpet over the Levant.
-        "circle-radius": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          6,
-          [
-            "case",
-            ["boolean", ["feature-state", "selected"], false],
-            8,
-            IN_TOUR,
-            4.5,
-            ["match", ["get", "rank"], 0, 5, 1, 4, 2, 2.3, 2.6],
-          ],
-          8,
-          [
-            "case",
-            ["boolean", ["feature-state", "selected"], false],
-            8,
-            IN_TOUR,
-            4.5,
-            ["match", ["get", "rank"], 0, 5, 1, 4, 2, 3.2, 2.6],
-          ],
-        ],
-        // Where the place stood is uncertain (disputed, or tentative under 600):
-        // a hollow dot, so the map itself says how sure it is, not only the card.
-        "circle-color": [
-          "case",
-          ["boolean", ["feature-state", "selected"], false],
-          T.gold,
-          UNCERTAIN_SITE,
-          T.halo,
-          T.accent,
-        ],
-        "circle-stroke-color": [
-          "case",
-          ["boolean", ["feature-state", "selected"], false],
-          T.halo,
-          UNCERTAIN_SITE,
-          T.accent,
-          T.halo,
-        ],
-        "circle-stroke-width": [
-          "case",
-          ["boolean", ["feature-state", "hover"], false],
-          3,
-          ["all", UNCERTAIN_SITE, ["!", ["boolean", ["feature-state", "selected"], false]]],
-          1.8,
-          1.6,
-        ],
-        "circle-opacity": fadeBeforeNT(0.3),
-        "circle-stroke-opacity": fadeBeforeNT(0.3),
-      },
-    },
     // Tour stops lie under the labels: an island named at its centre (Melita) stays readable.
     {
       id: "route-stop",
@@ -503,41 +521,30 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       },
       paint: { "text-color": T.accent, "text-halo-color": T.halo, "text-halo-width": 1.5 },
     },
+    // Every mark on the map is a symbol, not a circle, so it takes part in the collision of
+    // labels: placed by importance, a mark that would cover a more important one, or a
+    // name, is left off until the map is closer (the owner's view of 8.10.2026: a dozen
+    // towns, battles and names piled round Jerusalem at a globe's view). Symbol layers are
+    // placed from the top of the stack down: the reader's picks first, then the towns with
+    // their names, battles, the unnamed towns, states, landmarks, the ancient world, and
+    // last the landmarks too small to be named at the zoom.
     {
-      // Battles and sieges in their years (a few either side: a slider step is five), above
-      // the places; their names from zoom 6. Under "the Bible alone", only those it tells.
-      id: "battle-icon",
+      // Mountains, springs, gates…, without their name at this zoom: an icon that says what
+      // the place is, or a small dark dot.
+      id: "landmark-icon",
       type: "symbol",
-      source: "battles",
-      metadata: { group: "battles" },
+      source: "places",
+      metadata: { group: "places" },
       filter: [
         "all",
-        [">=", YEAR, ["-", ["get", "year"], 5]],
-        ["<=", YEAR, ["+", ["get", "year"], 5]],
-        ["any", ["!", ["boolean", ["global-state", "bibleOnly"], false]], ["has", "ref"]],
+        LANDMARK_MARKED,
+        visibleAtZoom,
+        ["!", IS_SELECTED],
+        ["!", LANDMARK_NAMED],
+        ["!", WATER_NAMED],
       ],
-      layout: {
-        "icon-image": "hg-battle",
-        "icon-size": 1.45,
-        "icon-allow-overlap": true,
-        "icon-ignore-placement": true,
-        "icon-offset": [14, -14],
-        "text-field": ["step", ["zoom"], "", 6, ["coalesce", ["get", LOCALE], ["get", "en"]]],
-        "text-font": [MAP_FONT],
-        "text-size": 11,
-        "text-anchor": "left",
-        "text-offset": [2.6, -1.2],
-        "text-optional": true,
-        "text-padding": LABEL_PADDING,
-      },
-      paint: {
-        "icon-color": BATTLE_INK,
-        "icon-halo-color": T.halo,
-        "icon-halo-width": 1.6,
-        "text-color": BATTLE_INK,
-        "text-halo-color": T.halo,
-        "text-halo-width": 1.4,
-      },
+      layout: LANDMARK_MARK_LAYOUT,
+      paint: LANDMARK_MARK_PAINT,
     },
     {
       id: "ancient-label",
@@ -546,6 +553,11 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       metadata: { group: "ancient" },
       filter: ANCIENT_NOW,
       layout: {
+        // A hollow ring, as in the key; with its name or alone, never under another's.
+        "icon-image": "hg-ancient",
+        "icon-size": ["match", ["get", "rank"], 0, 3.8 / 3.3, 1, 1, 2.8 / 3.3],
+        "icon-padding": 0,
+        "text-optional": true,
         "text-field": ["coalesce", ["get", LOCALE], ["get", "en"]],
         "text-font": [MAP_FONT],
         "text-size": ["match", ["get", "rank"], 0, 12.5, 1, 11.5, 11],
@@ -556,6 +568,10 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-padding": LABEL_PADDING,
       },
       paint: {
+        "icon-color": ANCIENT_INK,
+        // A tour, a person or a chapter in focus: the ancient world steps back with the
+        // places off it.
+        "icon-opacity": ["case", NOT_TOURING, 0.9, 0.35],
         "text-color": ANCIENT_INK,
         "text-halo-color": T.halo,
         // Faded during a tour or a chapter, a light halo on the dark sea read as a smudge
@@ -601,29 +617,25 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: [
-        "all",
-        isWater,
-        NOT_HIDDEN,
-        ["!=", ["get", "kind"], "body of water"],
-        visibleAtZoom,
-        NOT_DUP,
-        ["!", IS_SELECTED],
-        ["!", OFF_TOUR],
-      ],
+      // A river, wadi or canal known by a point: its wave mark, the name beside it.
+      filter: WATER_NAMED,
       layout: {
+        ...LANDMARK_MARK_LAYOUT,
+        "text-optional": true,
         "text-field": NAME,
         "text-font": [MAP_FONT_ITALIC],
         "text-size": ["match", ["get", "rank"], 0, 14, 1, 12.5, 11.5],
         "text-letter-spacing": 0.06,
-        "symbol-sort-key": PLACE_ORDER,
-        // A sea's name on two short lines rather than one long one across the coast.
+        "text-variable-anchor": ["top", "bottom", "right", "left"],
+        "text-radial-offset": 1,
+        "text-justify": "auto",
         "text-max-width": 5,
+        "text-padding": LABEL_PADDING,
       },
-      // Seas are labelled on the dark sea; rivers, wadis and canals on land.
       paint: {
-        "text-color": ["match", ["get", "kind"], "body of water", "#d7e7f2", T.water],
-        "text-halo-color": ["match", ["get", "kind"], "body of water", "#1d4a66", T.halo],
+        ...LANDMARK_MARK_PAINT,
+        "text-color": T.water,
+        "text-halo-color": T.halo,
         "text-halo-width": 1.3,
       },
     },
@@ -632,19 +644,10 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: [
-        "all",
-        isLandmark,
-        visibleAtZoom,
-        labelledAtZoom,
-        LABEL_IN_TIME,
-        NOT_HIDDEN,
-        HAS_LOCAL_NAME,
-        NOT_DUP,
-        ["!", IS_SELECTED],
-        ["!", OFF_TOUR],
-      ],
+      filter: LANDMARK_NAMED,
       layout: {
+        ...LANDMARK_MARK_LAYOUT,
+        "text-optional": true,
         "text-field": NAME,
         "text-font": [MAP_FONT_ITALIC],
         "text-size": ["match", ["get", "rank"], 0, 13.5, 1, 12.5, 11.5],
@@ -655,6 +658,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-padding": LABEL_PADDING,
       },
       paint: {
+        ...LANDMARK_MARK_PAINT,
         "text-color": [
           "case",
           ["boolean", ["feature-state", "selected"], false],
@@ -727,7 +731,9 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       },
     },
     {
-      id: "place-label",
+      // The towns not named at this zoom (the least-named before zoom 10, a second record
+      // of a name, a name the map's language lacks…): their dots alone, after the named ones.
+      id: "place-dot",
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
@@ -735,49 +741,13 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "all",
         isSettlement,
         visibleAtZoom,
-        labelledAtZoom,
-        LABEL_IN_TIME,
-        NOT_HIDDEN,
-        HAS_LOCAL_NAME,
-        NOT_DUP,
-        ["!", OFF_TOUR],
-        // Another name of a place on the same point (Zion for Jerusalem) is named only up
-        // close, unless it is the one picked: at a region's zoom it crowded out its city.
-        ["any", ["!=", ["get", "where_tpl"], "same"], [">=", ["zoom"], 11], IS_SELECTED, IN_TOUR],
+        ["!", PICKED],
+        ["!", TOWN_NAMED],
+        ["!", MAJOR_TOWN],
       ],
-      layout: {
-        "text-field": NAME,
-        "text-font": [MAP_FONT],
-        // A chapter's or a tour's places, picked out, in one size, as their marks are.
-        // The great cities grow from zoom 9 in: at zoom 10 Jerusalem stood at the villages'
-        // size among 150 names. Not before: the tiles lay names out at the size one zoom in,
-        // and growing from 8 already cost Bethlehem its name at 8.
-        "text-size": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          9,
-          ["case", IN_TOUR, 13.5, ["match", ["get", "rank"], 0, 15, 1, 13.5, 2, 12.5, 11.5]],
-          11,
-          ["case", IN_TOUR, 13.5, ["match", ["get", "rank"], 0, 17, 1, 14.5, 2, 12.5, 11]],
-        ],
-        "text-variable-anchor": ["top", "bottom", "right", "left"],
-        "text-radial-offset": 0.8,
-        "text-justify": "auto",
-        "symbol-sort-key": PLACE_ORDER,
-        "text-padding": LABEL_PADDING,
-      },
-      paint: {
-        "text-color": ["case", ["boolean", ["feature-state", "selected"], false], T.accent, T.ink],
-        "text-halo-color": T.halo,
-        // A faded name has no halo: on the dark sea a light one read as a smudge.
-        "text-halo-width": ["case", OUT_OF_TIME, 0, 1.6],
-        "text-opacity": fadeBeforeNT(0.45),
-      },
+      layout: TOWN_MARK_LAYOUT,
+      paint: TOWN_MARK_PAINT,
     },
-    // Seas and lakes above the towns' names, so placed before them: the Salt Sea and the Sea
-    // of Galilee lost to Capernaum and Jericho and went unnamed at zoom 8. Rivers and wadis
-    // stay below (place-label-water): placed first, Ahava took Babylon's room.
     {
       id: "place-label-sea",
       type: "symbol",
@@ -801,6 +771,11 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "symbol-sort-key": PLACE_ORDER,
         // A sea's name on two short lines rather than one long one across the coast.
         "text-max-width": 5,
+        // Off its point when a town's mark or name is there: placed after the towns, so the
+        // Salt Sea's name no longer covers Jerusalem far out, and, free to move, it is not
+        // lost to Capernaum and Jericho at zoom 8 as it was without.
+        "text-variable-anchor": ["center", "top", "bottom", "left", "right"],
+        "text-radial-offset": 0.6,
       },
       // Seas are labelled on the dark sea; rivers, wadis and canals on land.
       paint: {
@@ -824,9 +799,10 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       metadata: { group: "borders" },
       // The small states among the Bible's towns (Judah, Israel, Philistia), their label
       // moved by build-content.ts to the emptiest point of its shape near the middle, from
-      // zoom 6. Placed before the towns' names (this layer sits above them): its point is
-      // the one farthest from any town named at that zoom, so it rarely costs one, and
-      // placed after them it never found room. Never drawn across a name.
+      // zoom 6. Its point is the one farthest from any town named at that zoom. Placed
+      // after the towns, their marks and the battles, before the unnamed dots and seas: placed
+      // first, with the towns' marks now taking part in the collision, "KINGDOM OF JUDAH"
+      // took Jerusalem off the map at zoom 6. Never drawn across a name or a mark.
       minzoom: 6,
       layout: {
         // A vassal's second line, smaller: "JUDAH / under Assyria".
@@ -870,6 +846,63 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
         "text-halo-color": T.halo,
         "text-halo-width": 2.4,
         "text-halo-blur": 0.6,
+      },
+    },
+    {
+      // A town's mark and its name, placed together: the most named first, a name moved
+      // round the marks already placed or left off, a mark that would cover another or a
+      // name left off with its name.
+      id: "place-label",
+      type: "symbol",
+      source: "places",
+      metadata: { group: "places" },
+      filter: ["all", TOWN_NAMED, ["!", PICKED], ["!", MAJOR_TOWN]],
+      layout: { ...TOWN_MARK_LAYOUT, ...TOWN_TEXT_LAYOUT, "text-field": NAME },
+      paint: { ...TOWN_MARK_PAINT, ...TOWN_TEXT_PAINT },
+    },
+    {
+      // Battles and sieges in their years (a few either side: a slider step is five), beside
+      // their place: the year's events, placed after the great towns (their own layer above,
+      // so the swords of Tekoa no longer take Jerusalem off the map) and before the other
+      // towns, states, seas and unnamed dots, whose names move round them (Saul at Gilboa,
+      // 1010 BC, was lost to the names of the Jezreel valley). Where a great town's ring
+      // leaves no room (the siege of Jerusalem in AD 70, between it and Samaria), they show
+      // a step closer. Two at one place show one. Their names from zoom 6. Under "the Bible alone", only
+      // those it tells.
+      id: "battle-icon",
+      type: "symbol",
+      source: "battles",
+      metadata: { group: "battles" },
+      filter: [
+        "all",
+        [">=", YEAR, ["-", ["get", "year"], 5]],
+        ["<=", YEAR, ["+", ["get", "year"], 5]],
+        ["any", ["!", ["boolean", ["global-state", "bibleOnly"], false]], ["has", "ref"]],
+      ],
+      layout: {
+        "icon-image": "hg-battle",
+        "icon-size": 1.45,
+        // Up and right of the place, clear of its mark: closer in, their own town's ring
+        // (Jerusalem in AD 70) left no room for the swords at any zoom.
+        "icon-offset": [17, -17],
+        // The swords cross on a diagonal: their box is drawn in from the icon's square and
+        // its halo's room, so it stays off the place's ring.
+        "icon-padding": -5,
+        "text-field": ["step", ["zoom"], "", 6, ["coalesce", ["get", LOCALE], ["get", "en"]]],
+        "text-font": [MAP_FONT],
+        "text-size": 11,
+        "text-anchor": "left",
+        "text-offset": [2.6, -1.2],
+        "text-optional": true,
+        "text-padding": LABEL_PADDING,
+      },
+      paint: {
+        "icon-color": BATTLE_INK,
+        "icon-halo-color": T.halo,
+        "icon-halo-width": 1.6,
+        "text-color": BATTLE_INK,
+        "text-halo-color": T.halo,
+        "text-halo-width": 1.4,
       },
     },
     {
@@ -939,45 +972,91 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       paint: { "text-color": T.accent, "text-halo-color": T.halo, "text-halo-width": 1.6 },
     },
     {
+      // The great towns with their names, placed right after the reader's picks: their
+      // rings are drawn whatever lies near, and names, states, battles, seas and lesser
+      // marks give way to them. Far out only a greater town's ring keeps one off the map
+      // (majors.ts thins them, as MapLibre would not: here they never give way).
+      id: "place-label-major",
+      type: "symbol",
+      source: "majors",
+      metadata: { group: "places" },
+      filter: ["all", MAJOR_TOWN, visibleAtZoom, MAJOR_KEPT],
+      layout: {
+        ...TOWN_MARK_LAYOUT,
+        ...TOWN_TEXT_LAYOUT,
+        "icon-allow-overlap": true,
+        // TOWN_NAMED for a great town standing in the year, whose zoom rules let it be named.
+        "text-field": ["case", ["all", NOT_HIDDEN, HAS_LOCAL_NAME, NOT_DUP], NAME, ""],
+      },
+      paint: { ...TOWN_MARK_PAINT, ...TOWN_TEXT_PAINT },
+    },
+    {
+      // The selected town and the places of a tour, a chapter or a person: placed before
+      // every other mark and name, and drawn whatever lies near (the reader asked for them).
+      // Their names still give way to each other.
+      id: "place-label-picked",
+      type: "symbol",
+      source: "places",
+      metadata: { group: "places" },
+      filter: ["all", isSettlement, visibleAtZoom, PICKED],
+      layout: {
+        ...TOWN_MARK_LAYOUT,
+        ...TOWN_TEXT_LAYOUT,
+        "icon-allow-overlap": true,
+        "text-field": ["case", PICKED_NAMED, NAME, ""],
+      },
+      paint: { ...TOWN_MARK_PAINT, ...TOWN_TEXT_PAINT },
+    },
+    {
       // The selected region, sea, mountain or spring: their layers are placed after towns,
       // so its own layer, placed first, keeps a town beside it from taking its label's room.
-      // A river drawn as a line keeps its line label.
+      // A mountain or a spring keeps its mark here, drawn whatever lies near. A river drawn
+      // as a line keeps its line label.
       id: "place-label-selected",
       type: "symbol",
       source: "places",
       metadata: { group: "places" },
-      filter: [
-        "all",
-        IS_SELECTED,
-        NOT_HIDDEN,
-        ["!", isSettlement],
-        ["!", ["has", "line"]],
-        visibleAtZoom,
-        ["any", ["!", isLandmark], HAS_LOCAL_NAME],
-      ],
+      filter: ["all", IS_SELECTED, ["!", isSettlement], ["!", ["has", "line"]], visibleAtZoom],
       layout: {
-        "text-field": NAME,
+        ...LANDMARK_MARK_LAYOUT,
+        // Regions and seas have no mark: their name is all there is.
+        "icon-image": ["case", LANDMARK_MARKED, LANDMARK_MARK, ""],
+        "icon-allow-overlap": true,
+        "text-optional": true,
+        "text-field": [
+          "case",
+          ["all", NOT_HIDDEN, ["any", ["!", isLandmark], HAS_LOCAL_NAME]],
+          NAME,
+          "",
+        ],
         "text-font": [MAP_FONT_ITALIC],
         "text-size": 13.5,
         "text-variable-anchor": ["top", "bottom", "right", "left"],
         "text-radial-offset": 1,
         "text-justify": "auto",
       },
-      paint: { "text-color": T.accent, "text-halo-color": T.halo, "text-halo-width": 1.5 },
+      paint: {
+        ...LANDMARK_MARK_PAINT,
+        "text-color": T.accent,
+        "text-halo-color": T.halo,
+        "text-halo-width": 1.5,
+      },
     },
   ];
 
   // A town not standing in the year (Antioch in 1300 BC) is named faded, and below the
   // ancient world's sites that do stand then: Ugarit's name wins the room over it.
-  const label = layers.find((l) => l.id === "place-label");
-  const ancient = layers.findIndex((l) => l.id === "ancient-label");
-  if (label?.type === "symbol" && label.filter && ancient >= 0) {
+  // Its dot alone, the same way: below the ancient world's marks.
+  for (const id of ["place-dot", "place-label"]) {
+    const layer = layers.find((l) => l.id === id);
+    const ancient = layers.findIndex((l) => l.id === "ancient-label");
+    if (layer?.type !== "symbol" || !layer.filter || ancient < 0) continue;
     const shown: ExpressionSpecification = ["any", ["!", OUT_OF_TIME], IS_SELECTED, IN_TOUR];
-    const base = label.filter as ExpressionSpecification;
+    const base = layer.filter as ExpressionSpecification;
     const past: ExpressionSpecification = ["all", base, ["!", shown]];
     const now: ExpressionSpecification = ["all", base, shown];
-    layers.splice(ancient, 0, { ...label, id: "place-label-past", filter: past });
-    label.filter = now;
+    layers.splice(ancient, 0, { ...layer, id: `${id}-past`, filter: past });
+    layer.filter = now;
   }
 
   // A large state at the edge of the view whose own points are off screen (Parthia east of
@@ -1001,6 +1080,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       locale: { default: o.initialLocale },
       selected: { default: "" },
       tourPlaces: { default: [] },
+      stops: { default: false },
       bibleOnly: { default: false },
       hiddenNames: { default: [] },
     },
@@ -1061,6 +1141,9 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       },
       // The seas' and lakes' names at their own points (seaLabels): filled with the places.
       "sea-labels": { type: "geojson", data: { type: "FeatureCollection", features: [] } },
+      // The great towns standing in the year, thinned by zoom (majors.ts): filled with the
+      // places and again when the year or the selected place changes.
+      majors: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       mask: { type: "geojson", data: focusMask() },
       sites: { type: "geojson", data: `${o.dataUrl}/sites.geojson` },
       route: { type: "geojson", data: { type: "FeatureCollection", features: [] } },

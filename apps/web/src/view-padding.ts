@@ -13,13 +13,15 @@ export function viewPadding(
   timeline = 124,
   card = true,
   chip = false,
+  panel = true,
 ) {
   // Embedded, there is no column on the left, the chapter's chip sits at the top and the
   // timeline is folded to a line until opened (its height is measured); with no card
   // open, the frame is the map's.
   // The column is 360 px at 16 px; the card 420 px at the right edge;
   // the full-width timeline about 175 px tall.
-  const column = embed ? 0 : 376;
+  // No panel open on the left (the overview, a tool, the search), the map has that room too.
+  const column = embed || !panel ? 0 : 376;
   const top = embed ? 56 : 0;
   const bottom = embed ? timeline + 24 : 190;
   // Embedded, the card keeps 60 px of the right edge for the map's zoom buttons.

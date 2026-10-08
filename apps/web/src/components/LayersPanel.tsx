@@ -1,6 +1,7 @@
 import { iconDataUrl, type LayerVisibility } from "@hg/core";
-import { useMemo } from "react";
+import { useMemo, type ReactNode } from "react";
 import { useTranslation } from "../i18n";
+import { Check, Landmark, MapIcon, MapPin, Milestone, Mountain, Route, Swords } from "./icons";
 
 const ORDER: (keyof LayerVisibility)[] = [
   "relief",
@@ -27,7 +28,17 @@ const LEGEND = [
 ] as const;
 const INK = "#5b4630";
 
-/** The map layers, each with its switch (in the settings window). */
+const LAYER_ICONS: Record<keyof LayerVisibility, (p: { className?: string }) => ReactNode> = {
+  relief: Mountain,
+  borders: MapIcon,
+  roads: Milestone,
+  ancient: Landmark,
+  battles: Swords,
+  places: MapPin,
+  routes: Route,
+};
+
+/** The map layers as tiles, each with its icon: on or off at a glance (in the settings). */
 export function LayerToggles({
   layers,
   onToggle,
@@ -41,25 +52,42 @@ export function LayerToggles({
   const { t } = useTranslation();
   return (
     <fieldset>
-      <legend className="pb-1 text-[13px] font-semibold text-ink">{t("layers.title")}</legend>
-      {ORDER.map((layer) => (
-        <label
-          key={layer}
-          className={`flex items-center justify-between py-1.5 text-[14px] text-ink ${locked.includes(layer) ? "opacity-50" : "cursor-pointer"}`}
-        >
-          {t(`layers.${layer}`)}
-          <input
-            type="checkbox"
-            role="switch"
-            checked={layers[layer] && !locked.includes(layer)}
-            disabled={locked.includes(layer)}
-            onChange={(e) => {
-              onToggle(layer, e.target.checked);
-            }}
-            className="hg-switch"
-          />
-        </label>
-      ))}
+      <legend className="pb-2 text-[11px] font-semibold tracking-[0.08em] text-ink-soft uppercase">
+        {t("layers.title")}
+      </legend>
+      <div className="grid grid-cols-1 gap-1.5 min-[440px]:grid-cols-2">
+        {ORDER.map((layer) => {
+          const Icon = LAYER_ICONS[layer];
+          const off = locked.includes(layer);
+          const on = layers[layer] && !off;
+          return (
+            <label
+              key={layer}
+              className={`flex items-center gap-2.5 rounded-xl border px-3 py-2 text-[13.5px] transition has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-focus ${
+                off
+                  ? "border-line text-ink-soft opacity-50"
+                  : on
+                    ? "cursor-pointer border-accent/40 bg-accent/8 text-ink"
+                    : "cursor-pointer border-line text-ink-soft hover:border-ink-soft/40 hover:text-ink"
+              }`}
+            >
+              <input
+                type="checkbox"
+                role="switch"
+                checked={on}
+                disabled={off}
+                onChange={(e) => {
+                  onToggle(layer, e.target.checked);
+                }}
+                className="sr-only"
+              />
+              <Icon className={`size-4 shrink-0 ${on ? "text-accent" : ""}`} />
+              <span className="min-w-0 flex-1 truncate">{t(`layers.${layer}`)}</span>
+              {on && <Check className="size-3.5 shrink-0 text-accent" />}
+            </label>
+          );
+        })}
+      </div>
     </fieldset>
   );
 }
