@@ -52,7 +52,7 @@ export function LayerToggles({
   const { t } = useTranslation();
   return (
     <fieldset>
-      <legend className="pb-2 text-[11px] font-semibold tracking-[0.08em] text-ink-soft uppercase">
+      <legend className="px-1 pb-2 text-[11px] font-semibold tracking-[0.08em] text-ink-soft uppercase">
         {t("layers.title")}
       </legend>
       <div className="grid grid-cols-1 gap-1.5 min-[440px]:grid-cols-2">
@@ -63,12 +63,12 @@ export function LayerToggles({
           return (
             <label
               key={layer}
-              className={`flex items-center gap-2.5 rounded-xl border px-3 py-2 text-[13.5px] transition has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-focus ${
+              className={`flex items-center gap-2.5 min-h-11 rounded-2xl border px-3.5 py-2 text-[14px] min-[440px]:[&:last-child:nth-child(odd)]:col-span-2 transition has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-focus ${
                 off
-                  ? "border-line text-ink-soft opacity-50"
+                  ? "border-line bg-paper-2/45 text-ink-soft opacity-50"
                   : on
                     ? "cursor-pointer border-accent/40 bg-accent/8 text-ink"
-                    : "cursor-pointer border-line text-ink-soft hover:border-ink-soft/40 hover:text-ink"
+                    : "cursor-pointer border-line bg-paper-2/45 text-ink-soft hover:border-ink-soft/40 hover:text-ink"
               }`}
             >
               <input

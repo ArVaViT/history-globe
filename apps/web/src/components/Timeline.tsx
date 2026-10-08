@@ -9,7 +9,7 @@ import {
   parseYearInput,
   pick,
 } from "@hg/model";
-import { ChevronDown, Ellipsis, Pause, Play } from "./icons";
+import { ChevronDown, ChevronLeft, ChevronRight, Ellipsis, Pause, Play } from "./icons";
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { useTranslation } from "../i18n";
 import { ErrorBoundary } from "./ErrorBoundary";
@@ -290,6 +290,9 @@ export function Timeline({
           <div className="text-paper/75 tabular-nums">
             {formatPeriodRange(hovered.range, locale)}
           </div>
+          {hovered.disputed && (
+            <div className="mt-0.5 text-gold">{pick(hovered.disputed, locale) ?? ""}</div>
+          )}
           {!zoomed && <div className="mt-1 text-paper/60">{t("time.zoom_hint")}</div>}
           {near.map((e) => (
             <div key={`${String(e.year)}${e.label}${e.place ?? ""}`} className="mt-1 text-paper">
@@ -302,26 +305,32 @@ export function Timeline({
           ))}
         </div>
       )}
+      {onCollapse && (
+        // A small tab on the panel's top edge, in the middle: out of the controls' way.
+        <button
+          onClick={onCollapse}
+          aria-expanded
+          aria-label={t("time.collapse")}
+          title={t("time.collapse")}
+          className="group absolute top-0 left-1/2 z-10 grid h-4 w-12 -translate-x-1/2 place-items-center rounded-b-lg text-ink-soft/50 transition hover:text-ink focus-visible:text-ink"
+        >
+          <ChevronDown
+            className="size-3.5 transition-transform duration-150 group-hover:scale-[1.35]"
+            aria-hidden
+          />
+        </button>
+      )}
       <div ref={group} role="group" aria-label={t("time.timeline")}>
         <div className="flex items-center gap-4 max-xl:flex-wrap max-xl:gap-x-3 max-xl:gap-y-1 max-md:gap-x-2">
           <YearField year={year} locale={locale} onYear={onYear} />
           <div className="flex flex-1 flex-wrap items-center gap-x-2 gap-y-1 text-[13px] leading-snug text-ink-soft max-xl:order-last max-xl:basis-full max-md:text-[11.5px]">
-            <span className="font-medium text-ink">{periodName}</span>
-            {period && (
-              <span className="text-ink-soft tabular-nums">
-                {formatPeriodRange(period.range, locale)}
-              </span>
-            )}
+            {/* The era's name and years are in the tip over the band: here only the key to
+                the line under it, when a place's years are drawn. */}
             {life && (
               // The key to the line under the band: whose years it shows.
-              <span className="ml-2 inline-flex items-center gap-1.5 text-ink-soft">
+              <span className="inline-flex items-center gap-1.5 text-ink-soft">
                 <span className="h-[5px] w-4 rounded-full bg-accent/70" aria-hidden />
                 {t("time.life_of", { name: life.name })}
-              </span>
-            )}
-            {period?.disputed && (
-              <span className="rounded-full whitespace-nowrap bg-[#f4dfc9] px-2 py-0.5 text-[11px] text-[#7a4a1d]">
-                {pick(period.disputed, locale) ?? ""}
               </span>
             )}
           </div>
@@ -329,7 +338,7 @@ export function Timeline({
           <div className="flex items-center gap-1 max-md:gap-0.5">
             <YearStep
               label={t("time.back", { n: 100 })}
-              text="−100"
+              dir="back"
               onClick={() => {
                 onYear(year - 100);
               }}
@@ -348,7 +357,7 @@ export function Timeline({
             </button>
             <YearStep
               label={t("time.forward", { n: 100 })}
-              text="+100"
+              dir="forward"
               onClick={() => {
                 onYear(year + 100);
               }}
@@ -367,11 +376,6 @@ export function Timeline({
                 writeAlpha(a);
               }}
             />
-            {onCollapse && (
-              <IconButton label={t("time.collapse")} onClick={onCollapse} expanded>
-                <ChevronDown className="size-5" aria-hidden />
-              </IconButton>
-            )}
           </div>
         </div>
 
@@ -559,7 +563,8 @@ export function Timeline({
             />
           )}
         </div>
-        {zoomed && (
+        {/* Always there, zoomed or not: the bar coming and going moved everything below. */}
+        {
           <Overview
             view={view}
             locale={locale}
@@ -572,8 +577,9 @@ export function Timeline({
             }}
             label={t("time.window")}
             resetLabel={t("time.zoom_out")}
+            zoomed={zoomed}
           />
-        )}
+        }
       </div>
     </Panel>
   );
@@ -850,6 +856,7 @@ function Overview({
   onReset,
   label,
   resetLabel,
+  zoomed,
 }: {
   view: TimeView;
   locale: Locale;
@@ -858,6 +865,8 @@ function Overview({
   onReset: () => void;
   label: string;
   resetLabel: string;
+  /** Not zoomed, the window is the whole range and there is nothing to reset. */
+  zoomed: boolean;
 }) {
   const box = useRef<HTMLDivElement>(null);
   const drag = useRef<{ x: number; from: number } | null>(null);
@@ -906,7 +915,7 @@ function Overview({
         onPointerCancel={() => {
           drag.current = null;
         }}
-        className="relative h-3 flex-1 cursor-grab touch-none rounded-full bg-ink/10 active:cursor-grabbing"
+        className="relative h-2 flex-1 cursor-grab touch-none rounded-full bg-ink/8 active:cursor-grabbing"
       >
         <span
           aria-hidden
@@ -916,12 +925,17 @@ function Overview({
         <span
           aria-hidden
           style={{ left: `${String(at(view.from))}%`, width: `${String((span / SPAN) * 100)}%` }}
-          className="absolute inset-y-0 min-w-2 rounded-full bg-ink/35 ring-1 ring-paper"
+          // The whole range in view: the window is the bar itself, barely there.
+          className={`absolute inset-y-0 min-w-2 rounded-full ring-1 ring-paper transition-colors ${zoomed ? "bg-ink/35" : "bg-ink/10"}`}
         />
       </div>
       <button
         onClick={onReset}
-        className="rounded-full px-2 text-[11.5px] text-ink-soft hover:bg-paper-2 hover:text-ink"
+        // Kept in place when not needed, so the bar's length never changes.
+        disabled={!zoomed}
+        aria-hidden={!zoomed}
+        tabIndex={zoomed ? 0 : -1}
+        className={`rounded-full px-2 text-[11.5px] text-ink-soft hover:bg-paper-2 hover:text-ink ${zoomed ? "" : "invisible"}`}
       >
         {resetLabel}
       </button>
@@ -929,46 +943,32 @@ function Overview({
   );
 }
 
-function IconButton({
+/**
+ * A century back or forward, beside the play button: a round arrow in the play's own
+ * shape, quieter; its name (hover and screen readers) says how far. On the narrowest
+ * phones the year needs the room, and the slider and the typed year remain.
+ */
+function YearStep({
   label,
+  dir,
   onClick,
-  expanded,
-  children,
 }: {
   label: string;
+  dir: "back" | "forward";
   onClick: () => void;
-  /** A disclosure's state, for the button that folds the player (embedded). */
-  expanded?: boolean;
-  children: React.ReactNode;
 }) {
-  return (
-    <button
-      onClick={onClick}
-      aria-expanded={expanded}
-      aria-label={label}
-      title={label}
-      className="grid size-8 place-items-center rounded-full text-ink-soft hover:bg-paper-2 hover:text-ink"
-    >
-      {children}
-    </button>
-  );
-}
-
-/**
- * A step of the year beside the play button, said in years ("−100", "+100"): two arrows
- * alone did not say how far they went, and looked like stray marks next to the play.
- */
-/** A century back or forward; on the narrowest phones the year needs the room, and the
- * slider and the typed year remain. */
-function YearStep({ label, text, onClick }: { label: string; text: string; onClick: () => void }) {
+  const Arrow = dir === "back" ? ChevronLeft : ChevronRight;
   return (
     <button
       onClick={onClick}
       aria-label={label}
       title={label}
-      className="h-8 rounded-full border border-line px-2.5 text-[12.5px] max-md:h-7 max-md:px-1 max-md:text-[11.5px] max-[380px]:hidden font-medium text-ink-soft tabular-nums transition hover:border-accent/50 hover:bg-paper-2 hover:text-ink active:scale-95"
+      className="grid size-8 place-items-center rounded-full border border-line text-ink-soft transition hover:border-accent/50 hover:bg-paper-2 hover:text-accent active:scale-95 max-md:size-7 max-[380px]:hidden"
     >
-      {text}
+      <Arrow
+        className={`size-4 ${dir === "back" ? "-translate-x-px" : "translate-x-px"}`}
+        aria-hidden
+      />
     </button>
   );
 }

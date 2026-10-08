@@ -1,6 +1,6 @@
 import type { LayerVisibility } from "@hg/core";
 import { docsPath, LOCALE_NAMES, LOCALES, type Locale } from "@hg/model";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { useTranslation } from "../i18n";
 import { canSave, saveOffline, saveSize, type SaveProgress } from "../offline";
 import { LayerToggles, Legend } from "./LayersPanel";
@@ -30,55 +30,56 @@ export function SettingsDialog({
 }) {
   const { t } = useTranslation();
   const [legend, setLegend] = useState(false);
-  // The links under a hairline: lighter than the settings above them.
+  // Grouped as in a system's settings: rows in rounded cards, a hairline between them.
+  const card = "flex flex-col divide-y divide-line rounded-2xl border border-line bg-paper-2/45";
   const row =
-    "-mx-2 flex items-center justify-between rounded-lg px-2 py-2 text-[14px] text-ink hover:bg-paper-2";
+    "flex min-h-11 items-center justify-between gap-4 px-3.5 py-2 text-[14px] text-ink first:rounded-t-2xl last:rounded-b-2xl";
+  const link = `${row} transition hover:bg-paper-2`;
+  const label = (Icon: (p: { className?: string }) => ReactNode, text: string) => (
+    <span className="flex items-center gap-2.5">
+      <Icon className="size-4 shrink-0 text-ink-soft" />
+      {text}
+    </span>
+  );
   // Pages of their own, in a new tab: the arrow says the link leaves the map.
-  const page = (path: string, label: string) => (
-    <a className={row} href={`${import.meta.env.BASE_URL}${path}`} target="_blank" rel="noopener">
-      {label}
+  const page = (path: string, text: string) => (
+    <a className={link} href={`${import.meta.env.BASE_URL}${path}`} target="_blank" rel="noopener">
+      {text}
       <ArrowUpRight className="size-4 text-ink-soft" />
     </a>
   );
   return (
     <>
       <Modal open={open && !legend} title={t("settings.title")} onClose={onClose} wide>
-        <div className="flex flex-col gap-5">
-          <label className="flex items-center justify-between gap-4">
-            <span className="flex items-center gap-2.5 text-[14px] text-ink">
-              <Globe className="size-4 text-ink-soft" />
-              {t("settings.language")}
-            </span>
-            {/* A list, not buttons: there will be many languages. */}
-            <span className="relative">
-              <select
-                aria-label={t("settings.language")}
-                value={locale}
-                onChange={(e) => {
-                  const next = LOCALES.find((l) => l === e.target.value);
-                  if (next) onLocale(next);
-                }}
-                className="cursor-pointer appearance-none rounded-full border border-line bg-paper-2 py-1.5 pr-8 pl-3.5 text-[13.5px] text-ink hover:border-ink-soft/40"
-              >
-                {LOCALES.map((l) => (
-                  <option key={l} value={l} lang={l}>
-                    {LOCALE_NAMES[l]}
-                  </option>
-                ))}
-              </select>
-              <ChevronDown className="pointer-events-none absolute top-1/2 right-2.5 size-3.5 -translate-y-1/2 text-ink-soft" />
-            </span>
-          </label>
-          <LayerToggles layers={layers} onToggle={onLayer} locked={bibleOnly ? ["ancient"] : []} />
-          <div className="flex flex-col gap-3 border-t border-line pt-4">
-            <label
-              className="flex cursor-pointer items-center justify-between gap-4 text-[14px] text-ink"
-              title={t("settings.bible_only_hint")}
-            >
-              <span className="flex items-center gap-2.5">
-                <BookOpen className="size-4 text-ink-soft" />
-                {t("settings.bible_only")}
+        <div className="flex flex-col gap-4">
+          <div className={card}>
+            <label className={row}>
+              {label(Globe, t("settings.language"))}
+              {/* A list, not buttons: there will be many languages. */}
+              <span className="relative">
+                <select
+                  aria-label={t("settings.language")}
+                  value={locale}
+                  onChange={(e) => {
+                    const next = LOCALES.find((l) => l === e.target.value);
+                    if (next) onLocale(next);
+                  }}
+                  className="cursor-pointer appearance-none rounded-full border border-line bg-paper py-1 pr-8 pl-3 text-[13px] text-ink transition hover:border-ink-soft/40"
+                >
+                  {LOCALES.map((l) => (
+                    <option key={l} value={l} lang={l}>
+                      {LOCALE_NAMES[l]}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown className="pointer-events-none absolute top-1/2 right-2.5 size-3.5 -translate-y-1/2 text-ink-soft" />
               </span>
+            </label>
+          </div>
+          <LayerToggles layers={layers} onToggle={onLayer} locked={bibleOnly ? ["ancient"] : []} />
+          <div className={card}>
+            <label className={`${row} cursor-pointer`} title={t("settings.bible_only_hint")}>
+              {label(BookOpen, t("settings.bible_only"))}
               <input
                 type="checkbox"
                 role="switch"
@@ -89,11 +90,11 @@ export function SettingsDialog({
                 className="hg-switch"
               />
             </label>
-            {canSave() && <OfflineSave locale={locale} />}
+            {canSave() && <OfflineSave locale={locale} className={row} />}
           </div>
-          <div className="flex flex-col border-t border-line pt-2">
+          <div className={card}>
             <button
-              className={row}
+              className={link}
               onClick={() => {
                 setLegend(true);
               }}
@@ -122,7 +123,7 @@ export function SettingsDialog({
 const SAVED_KEY = "hg:offline-saved";
 
 /** Save the globe for use with no network (offline.ts): the size first, then the progress. */
-function OfflineSave({ locale }: { locale: Locale }) {
+function OfflineSave({ locale, className }: { locale: Locale; className: string }) {
   const { t } = useTranslation();
   const [size, setSize] = useState<number | null>(null);
   const [progress, setProgress] = useState<SaveProgress | null>(null);
@@ -158,10 +159,7 @@ function OfflineSave({ locale }: { locale: Locale }) {
             ? t("settings.offline_saved", { date })
             : null;
   return (
-    <div
-      className="flex items-center justify-between gap-4 text-[14px] text-ink"
-      title={t("settings.offline_hint")}
-    >
+    <div className={className} title={t("settings.offline_hint")}>
       <span className="flex items-center gap-2.5">
         <Download className="size-4 shrink-0 text-ink-soft" />
         <span>
@@ -188,7 +186,7 @@ function OfflineSave({ locale }: { locale: Locale }) {
             }
           });
         }}
-        className="shrink-0 rounded-full border border-line px-3 py-1 text-[13px] text-ink hover:border-accent hover:text-accent disabled:opacity-50"
+        className="shrink-0 rounded-full border border-line bg-paper px-3 py-1 text-[13px] text-ink transition hover:border-accent/50 hover:text-accent disabled:opacity-50"
       >
         {date ? t("settings.offline_again") : t("settings.offline_save", { mb })}
       </button>
