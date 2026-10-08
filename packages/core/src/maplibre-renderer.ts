@@ -8,6 +8,7 @@ import type { Camera, LonLat, PolityName, Renderer, RendererEvents } from "./ren
 import type { LayerVisibility } from "./state.ts";
 import { buildStyle, layersInGroup, MAP_FONT, seaLabels, type StyleOptions } from "./style.ts";
 import { drawIcon } from "./icons.ts";
+import { thinMajors } from "./majors.ts";
 import { WheelClassifier } from "./wheel.ts";
 
 const READY_FALLBACK_MS = 8000;
@@ -55,11 +56,13 @@ const MAP_UI_TITLES = [
 ] as const;
 
 const PLACE_LAYERS = [
+  "place-label-major",
   "place-dot",
-  "landmark-dot",
+  "place-dot-past",
   "landmark-icon",
   "place-label",
   "place-label-past",
+  "place-label-picked",
   "place-label-area",
   "place-label-water",
   "place-label-sea",
@@ -115,6 +118,10 @@ function covers(g: GeoJSON.Geometry, lon: number, lat: number): boolean {
 export class MapLibreRenderer implements Renderer {
   readonly map: MLMap;
   private readonly featureIdByPlace = new Map<string, number>();
+  private readonly places: FeatureCollection;
+  /** The great towns as last drawn (majors.ts): written again only when they change. */
+  private majorsNow = "";
+  private selectedPlace: string | null = null;
   private readonly groups: Record<string, string[]>;
   private selected: number | null = null;
   private hovered: number | null = null;
@@ -162,6 +169,8 @@ export class MapLibreRenderer implements Renderer {
   private bibleOnly = false;
   private layersNow: LayerVisibility | null = null;
   private battlesOn = true;
+  /** A tour's numbered stops are drawn: the route has stops and the routes layer is on. */
+  private stops = { route: false, layer: true, shown: false };
 
   /** Heights above sea level from the relief's tiles (elevation.ts), for the tours. */
   readonly heightsAt: (points: readonly LonLat[]) => Promise<(number | null)[]>;
@@ -192,6 +201,8 @@ export class MapLibreRenderer implements Renderer {
       ancient: layersInGroup(style, "ancient"),
       battles: layersInGroup(style, "battles"),
     };
+    this.places = o.places;
+    this.year = o.initialYear;
     for (const f of o.places.features) {
       const pid = (f.properties as { id?: string } | null)?.id;
       if (pid !== undefined && typeof f.id === "number") this.featureIdByPlace.set(pid, f.id);
@@ -284,6 +295,7 @@ export class MapLibreRenderer implements Renderer {
     this.map.once("style.load", () => {
       void (this.map.getSource("places") as GeoJSONSource).setData(o.places);
       void this.map.getSource<GeoJSONSource>("sea-labels")?.setData(seaLabels(o.places));
+      this.fillMajors();
       this.map.setTerrain({ source: "dem-terrain", exaggeration: 1.5 });
       this.loaded = true;
       for (const run of this.pending) run();
@@ -605,10 +617,43 @@ export class MapLibreRenderer implements Renderer {
   }
 
   private setHoverState(fid: number | null): void {
-    if (this.hovered !== null)
-      this.map.setFeatureState({ source: "places", id: this.hovered }, { hover: false });
+    // The great towns are drawn from their own source, with the places' ids.
+    for (const source of ["places", "majors"]) {
+      if (this.hovered !== null)
+        this.map.setFeatureState({ source, id: this.hovered }, { hover: false });
+      if (fid !== null) this.map.setFeatureState({ source, id: fid }, { hover: true });
+    }
     this.hovered = fid;
-    if (fid !== null) this.map.setFeatureState({ source: "places", id: fid }, { hover: true });
+  }
+
+  private paddingQueued = false;
+
+  /**
+   * The open part of the screen changed (a card or a panel opened or closed): the centre
+   * glides with it. During a move it waits for the move to end; setPadding would stop it.
+   */
+  syncPadding(duration = 450): void {
+    const pad = this.viewPadding?.();
+    if (!pad || this.printing) return;
+    if (this.map.isMoving()) {
+      if (this.paddingQueued) return;
+      this.paddingQueued = true;
+      this.map.once("moveend", () => {
+        this.paddingQueued = false;
+        this.syncPadding(duration);
+      });
+      return;
+    }
+    const now = this.map.getPadding();
+    if (
+      now.top === pad.top &&
+      now.bottom === pad.bottom &&
+      now.left === pad.left &&
+      now.right === pad.right
+    )
+      return;
+    if (duration > 0) this.map.easeTo({ padding: pad, duration });
+    else this.map.setPadding(pad);
   }
 
   setYear(year: number): void {
@@ -629,6 +674,9 @@ export class MapLibreRenderer implements Renderer {
       // The site named may not stand in the new year.
       if (y !== this.year) this.hideAncient();
       this.year = y;
+      this.whenLoaded(() => {
+        this.fillMajors();
+      });
       this.loadRoads();
     });
   }
@@ -666,7 +714,7 @@ export class MapLibreRenderer implements Renderer {
 
   private ancientAt(e: MapMouseEvent) {
     if (!this.loaded || this.ancient !== "yes" || !this.ancientOn) return undefined;
-    return this.map.queryRenderedFeatures(e.point, { layers: ["ancient-label", "ancient-dot"] })[0];
+    return this.map.queryRenderedFeatures(e.point, { layers: ["ancient-label"] })[0];
   }
 
   /** The battles (a few kB) load once the map is up, while their layer is on. */
@@ -801,6 +849,8 @@ export class MapLibreRenderer implements Renderer {
       }
       // The lights along a route go with the routes layer.
       this.map.getContainer().classList.toggle("hg-no-routes", !layers.routes);
+      this.stops.layer = layers.routes;
+      this.showStops();
       if (layers.relief) this.map.setTerrain({ source: "dem-terrain", exaggeration: 1.5 });
       else this.map.setTerrain(null);
       this.roadsOn = layers.roads;
@@ -825,7 +875,24 @@ export class MapLibreRenderer implements Renderer {
       }
       // Drives the "sites of the selected place" layers (disputed locations).
       this.map.setGlobalStateProperty("selected", placeId ?? "");
+      this.selectedPlace = placeId;
+      this.fillMajors();
     });
+  }
+
+  /**
+   * The great towns standing in the year, each with the zooms its ring is drawn at
+   * (majors.ts): written to their source only when that changes, a few times a century
+   * of the slider, not on every step.
+   */
+  private fillMajors(): void {
+    const majors = thinMajors(this.places, this.year, this.selectedPlace);
+    const key = majors.features
+      .map((f) => `${String(f.id)}:${String(f.properties?.["keep"])}`)
+      .join();
+    if (key === this.majorsNow) return;
+    this.majorsNow = key;
+    void this.map.getSource<GeoJSONSource>("majors")?.setData(majors);
   }
 
   flyTo(target: Partial<Camera> & { readonly center: LonLat }, durationMs?: number): void {
@@ -966,16 +1033,9 @@ export class MapLibreRenderer implements Renderer {
           }))
       : [];
     // An outline map is a line drawing to write on: no relief, no tint of states, no
-    // dots of other places; pale land and sea, the coast and the rivers, the route.
-    const PLAIN = [
-      "relief",
-      "hillshade",
-      "polity-fill",
-      "place-dot",
-      "place-ring",
-      "ancient-dot",
-      "landmark-dot",
-    ];
+    // dots of other places (symbols, hidden above with the names); pale land and sea, the
+    // coast and the rivers, the route.
+    const PLAIN = ["relief", "hillshade", "polity-fill"];
     if (blank)
       for (const id of PLAIN)
         if (this.map.getLayer(id) && this.map.getLayoutProperty(id, "visibility") !== "none")
@@ -1273,8 +1333,21 @@ export class MapLibreRenderer implements Renderer {
         type: "FeatureCollection",
         features,
       });
+      this.stops.route = coordinates.length > 0;
+      this.showStops();
       this.runPulses(walked);
     });
+  }
+
+  /**
+   * Tells the style whether a tour's stop discs are drawn: a stop's own mark then lies
+   * hidden under its disc (style-expressions.ts markOpacity), as the circles lay under it.
+   */
+  private showStops(): void {
+    const shown = this.stops.route && this.stops.layer;
+    if (shown === this.stops.shown) return;
+    this.stops.shown = shown;
+    this.map.setGlobalStateProperty("stops", shown);
   }
 
   /**

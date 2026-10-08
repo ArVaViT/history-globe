@@ -10,10 +10,9 @@ import { TERRAIN_TILES } from "./offline";
 import { translate } from "./i18n";
 
 const DEFAULT_CAMERA: Camera = { center: [35.3, 32.0], zoom: 5.4, pitch: 40, bearing: -10 };
-// On a phone the view is pushed up for the card below, so the Holy Land would sit at the
-// top over half a screen of desert: aimed further north, it is in the middle, Paul's
-// Asia Minor above it.
-const PHONE_CAMERA: Camera = { center: [36.0, 35.6], zoom: 5.0, pitch: 40, bearing: -10 };
+// On a phone, a little closer and a little north: the Holy Land in the middle of the open
+// screen, Paul's Asia Minor above it.
+const PHONE_CAMERA: Camera = { center: [35.6, 32.6], zoom: 5.0, pitch: 40, bearing: -10 };
 
 const TERRAIN = {
   // Development source. Production serves its own extract from R2 (ADR 0005).
@@ -61,6 +60,7 @@ export function useGlobe(
       });
     return () => {
       cancelled = true;
+      if (current === created?.renderer) current = null;
       created?.engine.destroy();
       setGlobe(null);
     };
@@ -79,8 +79,19 @@ let compactFrame = false;
 export function setCompactFrame(on: boolean): void {
   compactFrame = on;
 }
+/** A panel open in the left column (App.tsx): the overview, a tool or the search. */
+let leftPanel = false;
+/** The renderer whose padding follows those two (one globe at a time). */
+let current: MapLibreRenderer | null = null;
 export function setPersonCardOpen(open: boolean): void {
+  if (personCard === open) return;
   personCard = open;
+  current?.syncPadding();
+}
+export function setLeftPanelOpen(open: boolean): void {
+  if (leftPanel === open) return;
+  leftPanel = open;
+  current?.syncPadding();
 }
 
 function createGlobe(
@@ -117,7 +128,15 @@ function createGlobe(
       title: translate(l, "mapui.title"),
     }),
     viewPadding: () =>
-      viewPadding(innerWidth, innerHeight, compactFrame, timelineHeight(), cardOpen(), chipShown()),
+      viewPadding(
+        innerWidth,
+        innerHeight,
+        compactFrame,
+        timelineHeight(),
+        cardOpen(),
+        chipShown(),
+        leftPanel,
+      ),
   });
   const engine = createEngine({
     renderer,
@@ -135,6 +154,17 @@ function createGlobe(
     const s = engine.store.get();
     return s.selectedPlace !== null || s.tour !== null || personCard;
   };
+  // Until now the padding guessed a card was open: set the real one before the first frame,
+  // then let the centre follow a card or a chapter's chip opening and closing.
+  renderer.syncPadding(0);
+  let framed = `${String(cardOpen())}${String(chipShown())}`;
+  engine.store.subscribe(() => {
+    const now = `${String(cardOpen())}${String(chipShown())}`;
+    if (now === framed) return;
+    framed = now;
+    renderer.syncPadding();
+  });
+  current = renderer;
   if (import.meta.env.DEV) {
     // Handle for local debugging and screenshot scripts; never in production builds.
     (window as unknown as { __hgMap?: unknown }).__hgMap = renderer.map;
