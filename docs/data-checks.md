@@ -18,6 +18,12 @@ the data first (`pnpm data`).
 - **Candidate sites:** shares are normalised over the candidates shown; a place is
   `disputed` when the runner-up has at least `DISPUTED_MIN_SHARE` %. OpenBible's English
   templates ("another name for X", "within 5 km of X") are kept with the referenced id.
+- **Water has no holes.** Islands are joined to the sea's outline by zero-width cuts
+  (`join_holes`), and the style draws the water unsimplified (`tolerance: 0`), so the cuts
+  stay closed. A hole near a shore crossed the simplified coast in MapLibre's low-zoom tiles
+  and earcut drew a straight band of sea across Arabia. `scripts/water-tiles.test.ts` tiles
+  `water.geojson` as MapLibre does (geojson-vt, earcut) up to zoom 6 and fails on any sea
+  drawn over land.
 - Unit tests: `pipeline/test_build_data.py`.
 
 ## Content (`scripts/build-content.ts`, schemas in `packages/model/src/content.ts`)

@@ -520,8 +520,7 @@ ol.stops p {
   }
 }
 
-/* The front page of a language (/ru/, /en/): the globe first, then what it does, each in a
-   picture taken from the app that opens the same view live. */
+/* Buttons on the place and tour pages. */
 .button {
   display: inline-block;
   margin-right: 14px;
@@ -535,302 +534,691 @@ ol.stops p {
 .button:hover {
   filter: brightness(1.1);
 }
-.landing {
-  --wide: 1120px;
-  padding: 0 24px 24px;
-}
-.landing > * {
-  max-width: var(--wide);
-  margin-inline: auto;
-}
-.landing h2 {
-  margin: 0 0 12px;
-  font: 600 clamp(24px, 3vw, 32px) / 1.18 var(--serif);
-  letter-spacing: -0.012em;
-  text-wrap: balance;
-}
-.landing p {
-  margin: 0 0 14px;
-}
-.l-link {
-  font-weight: 600;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.l-link:hover {
-  text-decoration: underline;
-}
-
-.l-hero {
-  padding: 72px 0 0;
-  text-align: center;
-}
-.l-hero .l-wrap {
-  max-width: 760px;
-  margin: 0 auto;
-}
-.l-hero h1 {
-  font-size: clamp(38px, 6.4vw, 68px);
-  line-height: 1.03;
-  letter-spacing: -0.025em;
-}
-.l-hero .lede {
-  max-width: 36em;
-  margin: 20px auto 0;
-  color: var(--ink-soft);
-  font: 19px/1.6 var(--serif);
-  text-wrap: pretty;
-}
-.l-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 12px 24px;
-  margin-top: 32px !important;
-}
-.l-actions .button {
-  margin: 0;
-  padding: 13px 26px;
-  font-size: 16px;
-  box-shadow: 0 14px 30px -16px var(--accent);
-}
-
-/* A picture of the app in a quiet frame, the way a screen sits on a desk. */
-.l-frame {
-  margin: 0;
-}
-.l-frame a {
-  display: block;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: var(--paper-2);
-  box-shadow:
-    0 1px 0 rgb(255 255 255 / 0.6) inset,
-    0 30px 60px -36px rgb(40 26 10 / 0.55),
-    0 12px 24px -18px rgb(40 26 10 / 0.25);
-  transition:
-    transform 260ms ease,
-    box-shadow 260ms ease;
-}
-.l-frame a:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 40px 70px -36px rgb(40 26 10 / 0.6),
-    0 14px 28px -18px rgb(40 26 10 / 0.3);
-}
-.l-frame img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.l-frame-hero {
-  margin-top: 56px;
-}
-.l-frame-hero a {
-  border-radius: 22px;
-}
-.l-frame figcaption {
-  margin-top: 12px;
-  text-align: center;
-}
-
-.l-stats {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  margin-top: 56px;
-  margin-bottom: 0;
-  padding: 0;
-  list-style: none;
-  border-block: 1px solid var(--line);
-}
-.l-stats li {
-  margin: 0;
-  padding: 22px 12px;
-  text-align: center;
-}
-.l-stats li + li {
-  border-left: 1px solid var(--line);
-}
-.l-stats b {
-  display: block;
-  color: var(--ink);
-  font: 600 clamp(26px, 3.2vw, 36px) / 1.1 var(--serif);
-  letter-spacing: -0.02em;
-  font-variant-numeric: tabular-nums;
-}
-.l-stats span {
-  color: var(--ink-soft);
-  font-size: 13.5px;
-}
-
-/* What it does: words beside the picture, sides taking turns. */
-.l-row {
-  display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 8fr);
-  gap: 56px;
-  align-items: center;
-  margin-top: 112px;
-}
-.l-flip {
-  grid-template-columns: minmax(0, 8fr) minmax(0, 5fr);
-}
-.l-flip .l-copy {
-  order: 2;
-}
-.l-copy p:not(.kicker) {
-  color: var(--ink-soft);
-  font-size: 16.5px;
-  line-height: 1.65;
-}
-
-.l-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 112px;
-  margin-bottom: 0;
-  padding: 0;
-  list-style: none;
-}
-.l-cards li {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 24px 24px 20px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: var(--card);
-}
-.l-cards h2 {
-  font-size: 19px;
-  margin-bottom: 8px;
-}
-.l-cards p {
-  flex: 1;
-  color: var(--ink-soft);
-  font-size: 15px;
-  line-height: 1.55;
-}
-.l-cards a {
-  font-size: 14.5px;
-  font-weight: 600;
-  text-decoration: none;
-}
-.l-cards a:hover {
-  text-decoration: underline;
-}
-
-.l-trust {
-  max-width: 720px !important;
-  margin-top: 96px;
-  text-align: center;
-}
-.l-trust p:not(:last-child) {
-  color: var(--ink-soft);
-  font: 17px/1.7 var(--serif);
-}
-
-.l-cta {
-  margin-top: 96px;
-  margin-bottom: 48px;
-  padding: 56px 24px;
-  border-radius: 24px;
-  background:
-    radial-gradient(
-      600px 240px at 50% 0,
-      color-mix(in srgb, var(--accent) 14%, transparent),
-      transparent 70%
-    ),
-    var(--paper-2);
-  border: 1px solid var(--line);
-  text-align: center;
-}
-.l-cta h2 {
-  font-size: clamp(28px, 4vw, 40px);
-}
-.l-cta p {
-  color: var(--ink-soft);
-}
-.l-cta .button {
-  margin: 10px 0 0;
-  padding: 13px 26px;
-  font-size: 16px;
-}
-
 @media (prefers-color-scheme: dark) {
-  .l-frame a {
-    box-shadow: 0 30px 60px -30px rgb(0 0 0 / 0.8);
-  }
   .button {
     color: #1b140c;
   }
 }
 
+/* The front page of a language (/ru/, /en/): the documentation's palette and its one sans
+   face (content/docs/docs.css), so the front page, the docs and the map read as one
+   product. The globe first, then what it does, each in a picture taken from the app that
+   opens the same view live; few words. */
+.home {
+  --paper: #fcfbf8;
+  --paper-2: #f5f2ec;
+  --paper-3: #ede8df;
+  --card: #ffffff;
+  --ink: #1f1a13;
+  --ink-2: #4a4237;
+  --ink-soft: #625a4e;
+  --ink-faint: #756c5f;
+  --line: #e7e1d6;
+  --accent: #9a3b1f;
+  --accent-ink: #8a3219;
+  --accent-soft: rgb(154 59 31 / 0.08);
+  --accent-line: rgb(154 59 31 / 0.28);
+  --night: #0c1218;
+  --frame-shadow:
+    0 1px 2px rgb(31 26 19 / 0.05), 0 40px 80px -40px rgb(60 36 12 / 0.45),
+    0 18px 36px -24px rgb(31 26 19 / 0.25);
+  --wide: 1200px;
+  background: var(--paper);
+  color: var(--ink-2);
+  font-feature-settings: "ss01";
+}
+@media (prefers-color-scheme: dark) {
+  .home {
+    --paper: #0c1218;
+    --paper-2: #111921;
+    --paper-3: #18222d;
+    --card: #111921;
+    --ink: #ece6da;
+    --ink-2: #d2cabb;
+    --ink-soft: #a9a091;
+    --ink-faint: #8d8475;
+    --line: #212c38;
+    --accent: #ec9a72;
+    --accent-ink: #f0a983;
+    --accent-soft: rgb(236 154 114 / 0.1);
+    --accent-line: rgb(236 154 114 / 0.32);
+    --frame-shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 40px 90px -40px rgb(0 0 0 / 0.85);
+  }
+}
+.home .i {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+.home a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* The bar as in the docs: the mark, the lists, the language, the way into the map. */
+.home .bar {
+  padding: 0 24px;
+  background: color-mix(in srgb, var(--paper) 86%, transparent);
+  border-bottom-color: var(--line);
+}
+.home .brand {
+  font-weight: 650;
+  font-size: 15px;
+}
+.home .bar nav {
+  align-items: center;
+}
+.home .bar nav a {
+  padding: 7px 12px;
+  font-size: 14px;
+}
+.home .bar nav a.open {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 8px;
+  padding: 7px 14px;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 550;
+}
+.home .bar nav a.open:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.home .bar nav a.open .i {
+  width: 14px;
+  height: 14px;
+}
+
+.landing {
+  padding: 0 24px;
+}
+.landing h1,
+.landing h2 {
+  color: var(--ink);
+  font-family: var(--sans);
+  text-wrap: balance;
+}
+.landing p {
+  margin: 0;
+}
+
+/* The first screen: one line of what it is, the way in, the globe. */
+.hero {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 88px 0 0;
+  text-align: center;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px 5px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink-soft);
+  font-size: 13.5px;
+  font-weight: 550;
+  line-height: 1.4;
+}
+.pill::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.hero h1 {
+  margin: 24px 0 0;
+  font: 700 clamp(40px, 7.2vw, 84px) / 1 var(--sans);
+  letter-spacing: -0.045em;
+}
+.hero .lede {
+  max-width: 34em;
+  margin: 24px auto 0;
+  color: var(--ink-soft);
+  font-size: 19px;
+  line-height: 1.6;
+  text-wrap: balance;
+}
+.actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 36px !important;
+}
+.cta,
+.ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 46px;
+  padding: 0 22px;
+  border-radius: 10px;
+  font-size: 15.5px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+.cta {
+  background: var(--accent);
+  color: #fff;
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.18) inset,
+    0 10px 24px -12px var(--accent);
+}
+.cta:hover {
+  transform: translateY(-1px);
+}
+.cta .i {
+  transition: transform 160ms ease;
+}
+.cta:hover .i {
+  transform: translateX(2px);
+}
+.ghost {
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+}
+.ghost:hover {
+  border-color: color-mix(in srgb, var(--ink) 22%, var(--line));
+}
+@media (prefers-color-scheme: dark) {
+  .cta {
+    color: #1b140c;
+  }
+}
+
+/* The globe in a quiet frame, the way a screen sits on a desk, a glow of the accent behind. */
+.shot {
+  position: relative;
+  max-width: var(--wide);
+  margin: 64px auto 0;
+}
+.shot::before {
+  content: "";
+  position: absolute;
+  inset: -12% 6% 30%;
+  z-index: -1;
+  background: radial-gradient(closest-side, var(--accent-soft), transparent);
+  filter: blur(20px);
+}
+.shot a {
+  display: block;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--paper-2) 70%, transparent);
+  box-shadow: var(--frame-shadow);
+}
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+.shot figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 16px;
+  margin-top: 16px;
+  color: var(--ink-faint);
+  font-size: 13.5px;
+}
+.shot figcaption b {
+  color: var(--ink-soft);
+  font-weight: 550;
+}
+
+/* The numbers, each a way into its list. */
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 1040px;
+  margin: 72px auto 0;
+  padding: 0;
+  list-style: none;
+}
+.numbers li {
+  margin: 0;
+  padding: 4px 16px;
+  text-align: center;
+}
+.numbers li + li {
+  border-left: 1px solid var(--line);
+}
+.numbers a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.numbers b {
+  display: block;
+  color: var(--ink);
+  font-size: clamp(30px, 3.4vw, 42px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  transition: color 160ms ease;
+}
+.numbers a:hover b {
+  color: var(--accent-ink);
+}
+.numbers span {
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+/* What it does: three tiles, each a picture from the app that opens the same view. */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: var(--wide);
+  margin: 120px auto 0;
+}
+.tile {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--paper-2);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 200ms ease;
+}
+.tile:hover {
+  border-color: var(--accent-line);
+}
+.tile-copy {
+  padding: 40px 40px 32px;
+}
+.eyebrow {
+  color: var(--accent-ink);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.tile h2 {
+  margin: 10px 0 0;
+  font-size: clamp(24px, 2.4vw, 30px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+.tile p:not(.eyebrow) {
+  max-width: 30em;
+  margin-top: 12px;
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.6;
+}
+.tile .more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+  color: var(--accent-ink);
+  font-size: 14.5px;
+  font-weight: 600;
+}
+.tile .more .i {
+  transition: transform 160ms ease;
+}
+.tile:hover .more .i {
+  transform: translateX(3px);
+}
+/* The picture runs off the tile's right and bottom edges: a window into the app. */
+.tile-shot {
+  align-self: end;
+  padding-left: 40px;
+}
+.tile-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: right top;
+  border: 1px solid var(--line);
+  border-width: 1px 0 0 1px;
+  border-radius: 12px 0 0 0;
+  box-shadow: var(--frame-shadow);
+  transition: transform 400ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.tile:hover .tile-shot img {
+  transform: translate(-4px, -4px);
+}
+.tile-tour {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 8fr);
+  grid-template-rows: none;
+}
+.tile-tour .tile-copy {
+  align-self: center;
+  padding: 48px;
+}
+.tile-tour .tile-shot {
+  padding-top: 48px;
+}
+.tile-tour .tile-shot img {
+  aspect-ratio: 16 / 10;
+}
+
+/* Three things to know, in a row. */
+.facts-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: var(--wide);
+  margin: 112px auto 0;
+  padding: 0;
+  list-style: none;
+}
+.facts-row li {
+  margin: 0;
+}
+.ic {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--card);
+  color: var(--accent-ink);
+}
+.ic .i {
+  width: 18px;
+  height: 18px;
+}
+.facts-row h2 {
+  margin: 18px 0 6px;
+  font-size: 17px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+.facts-row p {
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.6;
+}
+.facts-row a,
+.sources a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  color: var(--accent-ink);
+  font-size: 14.5px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.facts-row a:hover,
+.sources a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-line);
+}
+
+/* Where the map comes from: the open sets by name, and how far the articles are checked. */
+.sources {
+  max-width: 1040px;
+  margin: 112px auto 0;
+  padding-top: 56px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+.sources h2 {
+  margin: 0;
+  color: var(--ink-faint);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.sources ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px 44px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.sources li {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 650;
+  letter-spacing: -0.03em;
+}
+.sources li a {
+  margin: 0;
+}
+.sources p {
+  max-width: 40em;
+  margin: 28px auto 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.65;
+}
+.sources .method {
+  margin-top: 8px;
+}
+
+/* The last word: the globe at night behind the way in. */
+.closing {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 440px;
+  max-width: var(--wide);
+  margin: 120px auto 72px;
+  padding: 64px 24px;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--night);
+  text-align: center;
+}
+.closing img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 40% 40%;
+  opacity: 0.9;
+}
+.closing::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(70% 80% at 50% 50%, rgb(12 18 24 / 0.62), rgb(12 18 24 / 0.9)),
+    linear-gradient(rgb(12 18 24 / 0.1), rgb(12 18 24 / 0.5));
+}
+.closing h2 {
+  margin: 0;
+  color: #f6f1e7;
+  font-size: clamp(32px, 4.6vw, 56px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+.closing p {
+  margin-top: 16px;
+  color: rgb(246 241 231 / 0.74);
+  font-size: 17px;
+}
+.closing .cta-light {
+  margin-top: 16px;
+  background: #fcfbf8;
+  color: #1f1a13;
+  box-shadow: 0 10px 30px -12px rgb(0 0 0 / 0.6);
+}
+
+.home .foot {
+  max-width: var(--wide);
+  padding: 24px 24px 48px;
+  border-top: 0;
+  color: var(--ink-faint);
+  text-align: center;
+}
+
 @media (max-width: 900px) {
-  .l-row,
-  .l-flip {
+  .tiles {
     grid-template-columns: 1fr;
-    gap: 24px;
-    margin-top: 72px;
+    margin-top: 88px;
   }
-  .l-flip .l-copy {
-    order: 0;
+  .tile-tour {
+    grid-template-columns: none;
+    grid-template-rows: auto 1fr;
   }
-  .l-cards {
+  .tile-tour .tile-copy {
+    padding: 40px 40px 32px;
+  }
+  .tile-tour .tile-shot {
+    padding-top: 0;
+  }
+  .tile-tour .tile-shot img {
+    aspect-ratio: 4 / 3;
+  }
+  .facts-row {
     grid-template-columns: 1fr;
-    margin-top: 72px;
+    gap: 32px;
+    max-width: 560px;
   }
-  .l-stats {
+  .numbers {
     grid-template-columns: repeat(3, 1fr);
+    row-gap: 24px;
   }
-  .l-stats li:nth-child(4) {
+  .numbers li:nth-child(4) {
     border-left: 0;
-  }
-  .l-stats li:nth-child(n + 4) {
-    border-top: 1px solid var(--line);
   }
 }
 @media (max-width: 640px) {
+  .home .bar {
+    padding: 0 16px;
+  }
+  /* On a phone the bar holds the mark, the language and the way in; the lists are below. */
+  .home .bar nav a:not(.lang, .open) {
+    display: none;
+  }
+  .home .bar nav a.open {
+    margin-left: 4px;
+  }
   .landing {
-    padding: 0 16px 16px;
+    padding: 0 16px;
   }
-  .l-hero {
-    padding-top: 40px;
+  .hero {
+    padding-top: 48px;
   }
-  .l-hero .lede {
+  .hero h1 {
+    margin-top: 20px;
+    letter-spacing: -0.04em;
+  }
+  .hero .lede {
+    margin-top: 18px;
     font-size: 17px;
   }
-  .l-frame-hero {
-    margin-top: 36px;
+  .actions-row {
+    margin-top: 28px !important;
   }
-  .l-frame a,
-  .l-frame-hero a {
-    border-radius: 12px;
+  .actions-row a {
+    flex: 1;
+    justify-content: center;
   }
-  .l-stats {
+  .shot {
+    margin-top: 40px;
+  }
+  .shot a {
+    padding: 5px;
+    border-radius: 18px;
+  }
+  /* The whole screen of the app is too small to read on a phone: the middle of it. */
+  .shot img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 45% 50%;
+    border-radius: 13px;
+  }
+  .shot figcaption {
+    flex-direction: column;
+    text-align: center;
+  }
+  .numbers {
     grid-template-columns: repeat(2, 1fr);
+    margin-top: 48px;
   }
-  .l-stats li:nth-child(n) {
+  .numbers li:nth-child(n) {
     border-left: 0;
-    border-top: 0;
   }
-  .l-stats li:nth-child(even) {
+  .numbers li:nth-child(even) {
     border-left: 1px solid var(--line);
   }
-  .l-stats li:nth-child(n + 3) {
-    border-top: 1px solid var(--line);
-  }
-  .l-stats li:last-child {
+  .numbers li:last-child {
     grid-column: 1 / -1;
-    border-left: 0;
   }
-  .l-trust,
-  .l-cta {
+  .tiles {
+    gap: 16px;
     margin-top: 72px;
   }
-  .l-cta {
-    padding: 40px 20px;
+  .tile,
+  .tile-tour {
+    border-radius: 18px;
+  }
+  .tile-copy,
+  .tile-tour .tile-copy {
+    padding: 28px 24px 24px;
+  }
+  .tile-shot {
+    padding-left: 24px;
+  }
+  .tile-shot img,
+  .tile-tour .tile-shot img {
+    aspect-ratio: 1;
+  }
+  .facts-row,
+  .sources {
+    margin-top: 80px;
+  }
+  .sources {
+    padding-top: 40px;
+  }
+  .sources ul {
+    gap: 6px 24px;
+  }
+  .closing {
+    min-height: 380px;
+    margin: 80px auto 48px;
+    border-radius: 18px;
+  }
+}
+/* The narrowest phones: the mark without its name, so the way in fits. */
+@media (max-width: 420px) {
+  .home .brand {
+    font-size: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home *,
+  .home *::before {
+    transition: none !important;
   }
 }

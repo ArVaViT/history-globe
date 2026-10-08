@@ -168,6 +168,20 @@ function lifeLine(life: PlaceLife | undefined, l: Lang): string {
   return `<div class="callout"><p><b>${esc(parts.join(" · "))}</b></p>${note ? `<p>${esc(note)}</p>` : ""}</div>`;
 }
 
+/** Line icons (Lucide, ISC) for the front page, as the documentation draws them. */
+const ICONS = {
+  out: '<path d="M7 7h10v10"/><path d="M7 17 17 7"/>',
+  right: '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+  help: '<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>',
+  data: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/>',
+  shield:
+    '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>',
+} as const;
+/** An icon as inline SVG; decorative, so hidden from screen readers. */
+function icon(name: keyof typeof ICONS): string {
+  return `<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`;
+}
+
 /** The page shell: the same look as the docs pages, light and without a script. */
 function page(o: {
   l: Lang;
@@ -180,6 +194,8 @@ function page(o: {
   ld?: object;
   /** The preview image, relative to the site root (the place's photo). */
   image?: string;
+  /** The front page: the documentation's palette and one sans face, the way into the map in the bar. */
+  home?: boolean;
 }): string {
   const up = "../".repeat(o.depth);
   // The same page in every language: the path after the language.
@@ -205,17 +221,21 @@ function page(o: {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#fbf8f2" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0f141b" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="${o.home ? "#fcfbf8" : "#fbf8f2"}" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="${o.home ? "#0c1218" : "#0f141b"}" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="${up}favicon.svg" type="image/svg+xml" />
-    <title>${esc(o.title)} | History Globe</title>${meta}
+    <title>${esc(o.title)} | History Globe</title>${meta}${
+      o.home
+        ? `\n    <link rel="preload" href="${up}docs/fonts/golos-text-${o.l === "ru" ? "cyrillic" : "latin"}-wght-normal.woff2" as="font" type="font/woff2" crossorigin />`
+        : ""
+    }
     <link rel="stylesheet" href="${up}pages.css" />
   </head>
-  <body>
+  <body${o.home ? ' class="home"' : ""}>
     <a class="skip" href="#main">${T[o.l].skip}</a>
     <header class="bar">
       <a class="brand" href="${up}?locale=${o.l}"><img src="${up}favicon.svg" alt="" width="22" height="22" />History Globe</a>
-      <nav aria-label="${T[o.l].sections}"><a href="${up}${o.l}/places/">${T[o.l].places}</a><a href="${up}${o.l}/tours/">${T[o.l].toursAll}</a><a href="${up}${o.l}/questions/">${T[o.l].questions}</a>${langs}</nav>
+      <nav aria-label="${T[o.l].sections}"><a href="${up}${o.l}/places/">${T[o.l].places}</a><a href="${up}${o.l}/tours/">${T[o.l].toursAll}</a><a href="${up}${o.l}/questions/">${T[o.l].questions}</a>${o.home ? `<a class="hide-s" href="${up}${docsPath(o.l)}">${LANDING[o.l].docs}</a>` : ""}${langs}${o.home ? `<a class="open" href="${up}?locale=${o.l}">${LANDING[o.l].open}${icon("out")}</a>` : ""}</nav>
     </header>
 ${o.body}
     <footer class="foot"><a href="${up}${docsPath(o.l)}">${T[o.l].about}</a> · <a href="${up}${docsPath(o.l, "privacy")}">${T[o.l].privacy}</a> · OpenBible.info, Cliopatria, Itiner-e (CC BY 4.0), Pleiades (CC BY 3.0) · <a href="${up}${docsPath(o.l, "sources")}">${T[o.l].allSources}</a></footer>
@@ -671,25 +691,42 @@ for (const l of LANGS) {
 }
 
 // The front page's pictures (public/shots/<lang>-<name>.jpg, taken from the app) and where
-// each opens the globe: the same view, live.
+// each opens the globe: the same view, live. The pictures are the app's whole screen; the
+// tiles crop them towards the card at the right (CSS), so the card stays legible on a phone.
 const SHOTS = { time: "year=-700&camera=40,33,4.6,25,0" } as const;
 const ROWS = [
   { shot: "tour", q: "tour=paul-2&stop=4" },
   { shot: "place", q: "place=a15257a&year=30" },
   { shot: "quiz", q: "tour=exodus" },
 ] as const;
+/** The open sets the map is drawn from, named on the front page (the rest: the sources page). */
+const SOURCE_NAMES = ["OpenBible.info", "Cliopatria", "Pleiades", "Itiner-e"] as const;
 
 for (const l of LANGS) {
   const L = LANDING[l];
   const app = (q: string) => `../?locale=${l}${q ? `&${q}` : ""}`;
   const n = new Intl.NumberFormat(l);
-  const numbers = [
-    shown.length,
-    content.tours.length,
-    Object.keys(articles).length,
-    questions.length,
-    content.battles?.length ?? 0,
+  // Each number leads to its list where there is one.
+  const numbers: [number, string][] = [
+    [shown.length, "places/"],
+    [content.tours.length, "tours/"],
+    [Object.keys(articles).length, "places/"],
+    [questions.length, "questions/"],
+    [content.battles?.length ?? 0, ""],
   ];
+  const tile = (i: number) => {
+    const [eyebrow, h, text, link, alt] = L.rows[i] ?? L.rows[0];
+    const row = ROWS[i] ?? ROWS[0];
+    return `<a class="tile tile-${row.shot}" href="${app(row.q)}">
+          <div class="tile-copy">
+            <p class="eyebrow">${esc(eyebrow)}</p>
+            <h2>${esc(h)}</h2>
+            <p>${esc(text)}</p>
+            <span class="more">${esc(link)}${icon("right")}</span>
+          </div>
+          <div class="tile-shot"><img src="../shots/${l}-${row.shot}.jpg" alt="${esc(alt)}" width="1440" height="900" loading="lazy" /></div>
+        </a>`;
+  };
   write(
     l,
     page({
@@ -698,6 +735,7 @@ for (const l of LANGS) {
       desc: L.desc,
       path: `${l}/`,
       depth: 1,
+      home: true,
       ld: {
         "@context": "https://schema.org",
         "@type": "WebSite",
@@ -707,47 +745,48 @@ for (const l of LANGS) {
         description: L.desc,
       },
       body: `    <main id="main" class="landing">
-      <section class="l-hero">
-        <div class="l-wrap">
-          <p class="kicker">${esc(L.kicker)}</p>
-          <h1>${esc(L.title)}</h1>
-          <p class="lede">${esc(L.lede)}</p>
-          <p class="l-actions"><a class="button" href="${app("")}">${esc(L.open)}</a><a class="l-link" href="tours/">${esc(L.tours)} →</a></p>
-        </div>
-        <figure class="l-frame l-frame-hero">
-          <a href="${app(SHOTS.time)}"><img src="../shots/${l}-time.jpg" alt="${esc(L.heroAlt)}" width="1440" height="900" fetchpriority="high" /></a>
-          <figcaption>${esc(L.heroNote)}</figcaption>
-        </figure>
+      <section class="hero">
+        <p class="pill">${esc(L.kicker)}</p>
+        <h1>${esc(L.title)}</h1>
+        <p class="lede">${esc(L.lede)}</p>
+        <p class="actions-row"><a class="cta" href="${app("")}">${esc(L.open)}${icon("right")}</a><a class="ghost" href="tours/">${esc(L.tours)}</a></p>
       </section>
-      <ul class="l-stats">${numbers.map((x, i) => `<li><b>${n.format(x)}</b><span>${esc(L.stats[i] ?? "")}</span></li>`).join("")}</ul>
-${L.rows
-  .map(
-    ([eyebrow, h, text, link, alt], i) => `      <section class="l-row${i % 2 ? " l-flip" : ""}">
-        <div class="l-copy">
-          <p class="kicker">${esc(eyebrow)}</p>
-          <h2>${esc(h)}</h2>
-          <p>${esc(text)}</p>
-          <p><a class="l-link" href="${app(ROWS[i]?.q ?? "")}">${esc(link)} →</a></p>
-        </div>
-        <figure class="l-frame"><a href="${app(ROWS[i]?.q ?? "")}" tabindex="-1" aria-hidden="true"><img src="../shots/${l}-${ROWS[i]?.shot ?? "time"}.jpg" alt="${esc(alt)}" width="1440" height="900" loading="lazy" /></a></figure>
-      </section>`,
-  )
-  .join("\n")}
-      <ul class="l-cards">${L.cards
-        .map(
-          ([h, text, link], i) =>
-            `<li><h2>${esc(h)}</h2><p>${esc(text)}</p><a href="${[`questions/`, `../${docsPath(l, "api")}`, `../${docsPath(l, "privacy")}`][i] ?? ""}">${esc(link)} →</a></li>`,
-        )
+      <figure class="shot">
+        <a href="${app(SHOTS.time)}"><img src="../shots/${l}-time.jpg" alt="${esc(L.heroAlt)}" width="1440" height="900" fetchpriority="high" /></a>
+        <figcaption><b>${esc(L.heroNote)}</b><span>${esc(L.live)}</span></figcaption>
+      </figure>
+      <ul class="numbers">${numbers
+        .map(([x, href], i) => {
+          const inner = `<b>${n.format(x)}</b><span>${esc(L.stats[i] ?? "")}</span>`;
+          return `<li>${href ? `<a href="${href}">${inner}</a>` : inner}</li>`;
+        })
         .join("")}</ul>
-      <section class="l-trust">
-        <h2>${esc(L.trust)}</h2>
-        <p>${esc(L.trustText)}</p>
-        <p><a class="l-link" href="../${docsPath(l, "methodology")}">${esc(L.method)} →</a></p>
+      <section class="tiles">
+        ${tile(0)}
+        ${tile(1)}
+        ${tile(2)}
       </section>
-      <section class="l-cta">
-        <h2>${esc(L.ctaTitle)}</h2>
-        <p>${esc(L.ctaText)}</p>
-        <p><a class="button" href="${app("")}">${esc(L.open)}</a></p>
+      <ul class="facts-row">${L.cards
+        .map(([h, text, link], i) => {
+          const href =
+            [`questions/`, `../${docsPath(l, "api")}`, `../${docsPath(l, "privacy")}`][i] ?? "";
+          const ic = (["help", "data", "shield"] as const)[i] ?? "help";
+          return `<li><span class="ic">${icon(ic)}</span><h2>${esc(h)}</h2><p>${esc(text)}</p><a href="${href}">${esc(link)}${icon("right")}</a></li>`;
+        })
+        .join("")}</ul>
+      <section class="sources">
+        <h2>${esc(L.trust)}</h2>
+        <ul>${SOURCE_NAMES.map((x) => `<li>${x}</li>`).join("")}<li><a href="../${docsPath(l, "sources")}">${esc(L.sources)}${icon("right")}</a></li></ul>
+        <p>${esc(L.trustText)}</p>
+        <p class="method"><a href="../${docsPath(l, "methodology")}">${esc(L.method)}${icon("right")}</a></p>
+      </section>
+      <section class="closing">
+        <img src="../shots/${l}-time.jpg" alt="" width="1440" height="900" loading="lazy" />
+        <div>
+          <h2>${esc(L.ctaTitle)}</h2>
+          <p>${esc(L.ctaText)}</p>
+          <p><a class="cta cta-light" href="${app("")}">${esc(L.open)}${icon("right")}</a></p>
+        </div>
       </section>
     </main>`,
     }),

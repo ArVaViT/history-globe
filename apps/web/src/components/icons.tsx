@@ -231,3 +231,4 @@ export const Swords = icon(
   </>,
 );
 export const ChevronRight = icon(<path d="m9 18 6-6-6-6" />);
+export const ChevronLeft = icon(<path d="m15 18-6-6 6-6" />);

@@ -8,6 +8,8 @@ from build_data import (
     banned_lonlats,
     build_coast,
     clip_ring,
+    join_holes,
+    ring_area,
     simplify_shore,
     OUTSIDE_REGION,
     BBOX,
@@ -107,6 +109,27 @@ class Clip(unittest.TestCase):
         # Every band touches the region only along its edge.
         for x0, y0, x1, y1 in OUTSIDE_REGION:
             self.assertFalse(x0 < BBOX[2] and x1 > BBOX[0] and y0 < BBOX[3] and y1 > BBOX[1])
+
+
+class Holes(unittest.TestCase):
+    def test_joins_islands_to_the_sea_by_cuts_at_sea(self) -> None:
+        sea = [[0.0, 0.0], [10.0, 0.0], [10.0, 10.0], [0.0, 10.0], [0.0, 0.0]]
+        west = [[2.0, 4.0], [2.0, 6.0], [3.0, 6.0], [3.0, 4.0], [2.0, 4.0]]
+        east = [[6.0, 4.5], [6.0, 5.5], [7.0, 5.5], [7.0, 4.5], [6.0, 4.5]]
+        ring = join_holes([sea, east, west])
+        self.assertEqual(ring[0], ring[-1])
+        # One ring, its area the sea's less the islands', every island corner on it.
+        self.assertAlmostEqual(ring_area(ring[:-1]), 100.0 - 2.0 - 1.0)
+        for corner in west[:-1] + east[:-1]:
+            self.assertIn(corner, ring)
+        # The west island is cut to the shore, the east one to the west island, both
+        # straight west at sea.
+        self.assertIn([0.0, 4.0], ring)
+        self.assertIn([3.0, 4.5], ring)
+
+    def test_leaves_a_polygon_without_holes_as_it_is(self) -> None:
+        sea = [[0.0, 0.0], [10.0, 0.0], [10.0, 10.0], [0.0, 10.0], [0.0, 0.0]]
+        self.assertEqual(join_holes([sea]), sea)
 
 
 class Shore(unittest.TestCase):
