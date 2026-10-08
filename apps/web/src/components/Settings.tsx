@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "../i18n";
 import { canSave, saveOffline, saveSize, type SaveProgress } from "../offline";
 import { LayerToggles, Legend } from "./LayersPanel";
+import { ArrowUpRight, BookOpen, ChevronDown, ChevronRight, Download, Globe } from "./icons";
 import { Modal } from "./Modal";
 
 /** Language, layers, the map key and the help page: one window behind the gear. */
@@ -29,49 +30,67 @@ export function SettingsDialog({
 }) {
   const { t } = useTranslation();
   const [legend, setLegend] = useState(false);
-  // Plain rows under a hairline: lighter than the settings above them.
+  // The links under a hairline: lighter than the settings above them.
   const row =
     "-mx-2 flex items-center justify-between rounded-lg px-2 py-2 text-[14px] text-ink hover:bg-paper-2";
+  // Pages of their own, in a new tab: the arrow says the link leaves the map.
+  const page = (path: string, label: string) => (
+    <a className={row} href={`${import.meta.env.BASE_URL}${path}`} target="_blank" rel="noopener">
+      {label}
+      <ArrowUpRight className="size-4 text-ink-soft" />
+    </a>
+  );
   return (
     <>
-      <Modal open={open && !legend} title={t("settings.title")} onClose={onClose}>
+      <Modal open={open && !legend} title={t("settings.title")} onClose={onClose} wide>
         <div className="flex flex-col gap-5">
-          <div className="flex items-center justify-between">
-            <span className="text-[13px] font-semibold text-ink">{t("settings.language")}</span>
-            <div className="flex rounded-full bg-paper-2 p-0.5">
-              {LOCALES.map((l) => (
-                <button
-                  key={l}
-                  onClick={() => {
-                    onLocale(l);
-                  }}
-                  aria-pressed={locale === l}
-                  className={`rounded-full px-3.5 py-1 text-[13px] transition ${locale === l ? "bg-paper font-medium text-ink shadow-[0_1px_3px_rgba(20,14,8,0.18)]" : "text-ink-soft hover:text-ink"}`}
-                >
-                  {LOCALE_NAMES[l]}
-                </button>
-              ))}
-            </div>
-          </div>
-          <LayerToggles layers={layers} onToggle={onLayer} locked={bibleOnly ? ["ancient"] : []} />
-          <label className="flex cursor-pointer items-start justify-between gap-4 text-[14px] text-ink">
-            <span>
-              {t("settings.bible_only")}
-              <span className="mt-0.5 block text-[12px] text-ink-soft">
-                {t("settings.bible_only_hint")}
-              </span>
+          <label className="flex items-center justify-between gap-4">
+            <span className="flex items-center gap-2.5 text-[14px] text-ink">
+              <Globe className="size-4 text-ink-soft" />
+              {t("settings.language")}
             </span>
-            <input
-              type="checkbox"
-              role="switch"
-              checked={bibleOnly}
-              onChange={(e) => {
-                onBibleOnly(e.target.checked);
-              }}
-              className="hg-switch mt-0.5"
-            />
+            {/* A list, not buttons: there will be many languages. */}
+            <span className="relative">
+              <select
+                aria-label={t("settings.language")}
+                value={locale}
+                onChange={(e) => {
+                  const next = LOCALES.find((l) => l === e.target.value);
+                  if (next) onLocale(next);
+                }}
+                className="cursor-pointer appearance-none rounded-full border border-line bg-paper-2 py-1.5 pr-8 pl-3.5 text-[13.5px] text-ink hover:border-ink-soft/40"
+              >
+                {LOCALES.map((l) => (
+                  <option key={l} value={l} lang={l}>
+                    {LOCALE_NAMES[l]}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown className="pointer-events-none absolute top-1/2 right-2.5 size-3.5 -translate-y-1/2 text-ink-soft" />
+            </span>
           </label>
-          {canSave() && <OfflineSave locale={locale} />}
+          <LayerToggles layers={layers} onToggle={onLayer} locked={bibleOnly ? ["ancient"] : []} />
+          <div className="flex flex-col gap-3 border-t border-line pt-4">
+            <label
+              className="flex cursor-pointer items-center justify-between gap-4 text-[14px] text-ink"
+              title={t("settings.bible_only_hint")}
+            >
+              <span className="flex items-center gap-2.5">
+                <BookOpen className="size-4 text-ink-soft" />
+                {t("settings.bible_only")}
+              </span>
+              <input
+                type="checkbox"
+                role="switch"
+                checked={bibleOnly}
+                onChange={(e) => {
+                  onBibleOnly(e.target.checked);
+                }}
+                className="hg-switch"
+              />
+            </label>
+            {canSave() && <OfflineSave locale={locale} />}
+          </div>
           <div className="flex flex-col border-t border-line pt-2">
             <button
               className={row}
@@ -80,22 +99,10 @@ export function SettingsDialog({
               }}
             >
               {t("legend.title")}
-              <span className="text-ink-soft" aria-hidden>
-                ›
-              </span>
+              <ChevronRight className="size-4 text-ink-soft" />
             </button>
-            <a className={row} href={`${import.meta.env.BASE_URL}${docsPath(locale)}`}>
-              {t("settings.help")}
-              <span className="text-ink-soft" aria-hidden>
-                ›
-              </span>
-            </a>
-            <a className={row} href={`${import.meta.env.BASE_URL}${docsPath(locale, "privacy")}`}>
-              {t("settings.privacy")}
-              <span className="text-ink-soft" aria-hidden>
-                ›
-              </span>
-            </a>
+            {page(docsPath(locale), t("settings.help"))}
+            {page(docsPath(locale, "privacy"), t("settings.privacy"))}
           </div>
         </div>
       </Modal>
@@ -139,20 +146,29 @@ function OfflineSave({ locale }: { locale: Locale }) {
   const date = savedAt
     ? new Intl.DateTimeFormat(locale, { day: "numeric", month: "long" }).format(new Date(savedAt))
     : null;
+  // Nothing to explain before the first save: the word and the size say it.
+  const status =
+    progress?.state === "saving"
+      ? t("settings.offline_saving", { done: progress.done, total: progress.total })
+      : progress?.state === "error"
+        ? t("settings.offline_error")
+        : progress?.state === "saved" && progress.failed > 0
+          ? t("settings.offline_partly", { n: progress.failed })
+          : date
+            ? t("settings.offline_saved", { date })
+            : null;
   return (
-    <div className="flex items-start justify-between gap-4 text-[14px] text-ink">
-      <span>
-        {t("settings.offline")}
-        <span className="mt-0.5 block text-[12px] text-ink-soft" aria-live="polite">
-          {progress?.state === "saving"
-            ? t("settings.offline_saving", { done: progress.done, total: progress.total })
-            : progress?.state === "error"
-              ? t("settings.offline_error")
-              : progress?.state === "saved" && progress.failed > 0
-                ? t("settings.offline_partly", { n: progress.failed })
-                : date
-                  ? t("settings.offline_saved", { date })
-                  : t("settings.offline_hint")}
+    <div
+      className="flex items-center justify-between gap-4 text-[14px] text-ink"
+      title={t("settings.offline_hint")}
+    >
+      <span className="flex items-center gap-2.5">
+        <Download className="size-4 shrink-0 text-ink-soft" />
+        <span>
+          {t("settings.offline")}
+          <span className="block text-[12px] text-ink-soft empty:hidden" aria-live="polite">
+            {status}
+          </span>
         </span>
       </span>
       <button

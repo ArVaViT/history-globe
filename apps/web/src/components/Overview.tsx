@@ -46,9 +46,8 @@ export function Overview({
       {/* No cross of its own: the book in the header opens and closes it, and four tabs
           need the room. */}
       <div id="more-panels" className="flex items-center gap-1 px-2 pt-2">
-        {/* Four tabs outrun a phone: the row scrolls, and a strip in the panel's colour
-            fades its edge (a mask would fade the text, read against the map by checkers). */}
-        <div className="relative flex min-w-0 flex-1">
+        {/* The tabs share the row evenly; a language with longer words scrolls it. */}
+        <div className="flex min-w-0 flex-1">
           <div
             role="tablist"
             aria-label={t("overview.title")}
@@ -83,7 +82,7 @@ export function Overview({
                 onClick={() => {
                   pick(id);
                 }}
-                className={`shrink-0 rounded-full px-2.5 py-1.5 text-[12px] whitespace-nowrap transition ${
+                className={`flex-1 shrink-0 rounded-full px-2.5 py-1.5 text-center text-[12px] whitespace-nowrap transition ${
                   tab === id
                     ? "bg-paper-2 font-medium text-ink shadow-[inset_0_0_0_1px_var(--color-line)]"
                     : "text-ink-soft hover:text-ink"
@@ -93,10 +92,6 @@ export function Overview({
               </button>
             ))}
           </div>
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-y-0 right-0 w-5 bg-gradient-to-l from-paper to-transparent"
-          />
         </div>
       </div>
       <div id="overview-panel" role="tabpanel" aria-labelledby={`overview-tab-${tab}`}>

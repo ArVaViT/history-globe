@@ -11,11 +11,14 @@ export function Modal({
   title,
   onClose,
   children,
+  wide = false,
 }: {
   open: boolean;
   title: string;
   onClose: () => void;
   children: ReactNode;
+  /** Room for two columns (the settings); a phone still gets the screen's width. */
+  wide?: boolean;
 }) {
   const { t } = useTranslation();
   const ref = useRef<HTMLDialogElement>(null);
@@ -43,7 +46,7 @@ export function Modal({
       onClick={(e) => {
         if (e.target === e.currentTarget && downOnBackdrop.current) onClose();
       }}
-      className="hg-modal m-auto w-[min(420px,calc(100vw-24px))] rounded-3xl border border-line bg-paper p-0 text-ink shadow-[0_24px_60px_rgba(0,0,0,0.35)]"
+      className={`hg-modal m-auto ${wide ? "w-[min(560px,calc(100vw-24px))]" : "w-[min(420px,calc(100vw-24px))]"} rounded-3xl border border-line bg-paper p-0 text-ink shadow-[0_24px_60px_rgba(0,0,0,0.35)]`}
     >
       <div className="flex items-center justify-between px-5 pt-4 pb-2">
         <h2 className="font-serif text-[20px] font-semibold">{title}</h2>

@@ -172,3 +172,62 @@ export const PencilRuler = icon(
     <path d="m15 5 4 4" />
   </>,
 );
+export const ArrowUpRight = icon(
+  <>
+    <path d="M7 7h10v10" />
+    <path d="M7 17 17 7" />
+  </>,
+);
+export const Globe = icon(
+  <>
+    <circle cx="12" cy="12" r="10" />
+    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+    <path d="M2 12h20" />
+  </>,
+);
+export const Download = icon(
+  <>
+    <path d="M12 15V3" />
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+    <path d="m7 10 5 5 5-5" />
+  </>,
+);
+export const Check = icon(<path d="M20 6 9 17l-5-5" />);
+export const Mountain = icon(<path d="m8 3 4 8 5-5 5 15H2L8 3z" />);
+export const MapIcon = icon(
+  <>
+    <path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z" />
+    <path d="M15 5.764v15" />
+    <path d="M9 3.236v15" />
+  </>,
+);
+export const Milestone = icon(
+  <>
+    <path d="M12 13v8" />
+    <path d="M12 3v3" />
+    <path d="M4 6a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h13a2 2 0 0 0 1.152-.365l3.424-2.317a1 1 0 0 0 0-1.635l-3.424-2.318A2 2 0 0 0 17 6z" />
+  </>,
+);
+export const Landmark = icon(
+  <>
+    <path d="M3 22h18" />
+    <path d="M6 18v-7" />
+    <path d="M10 18v-7" />
+    <path d="M14 18v-7" />
+    <path d="M18 18v-7" />
+    <path d="M12 2 20 7H4z" />
+  </>,
+);
+export const Swords = icon(
+  <>
+    <path d="M14.5 17.5 3 6V3h3l11.5 11.5" />
+    <path d="m13 19 6-6" />
+    <path d="m16 16 4 4" />
+    <path d="m19 21 2-2" />
+    <path d="M14.5 6.5 18 3h3v3l-3.5 3.5" />
+    <path d="m5 14 4 4" />
+    <path d="m7 17-3 3" />
+    <path d="m3 19 2 2" />
+  </>,
+);
+export const ChevronRight = icon(<path d="m9 18 6-6-6-6" />);

@@ -65,27 +65,21 @@ export function ToursPanel({
           );
         })}
       </div>
-      {/* The way to a route of one's own: the lesson button on a place's card (lesson.ts). */}
-      {/* Not in a frame on another site, where the cards have no lesson button. */}
-      {!readUrl().embed &&
-        (lesson.length >= 2 ? (
-          // A lesson being built, here too: where the tours are, it starts like one.
-          <p className="mx-4 mt-2 flex flex-wrap items-baseline gap-x-3 border-t border-line pt-2 text-[13px]">
-            <span className="font-medium text-ink">
-              {t("lesson.count", { count: lesson.length })}
-            </span>
-            <a
-              href={lessonSearch(lesson, locale, readTitle())}
-              className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
-            >
-              {t("lesson.start")}
-            </a>
-          </p>
-        ) : (
-          <p className="mx-4 mt-2 border-t border-line pt-2 text-[12px] leading-snug text-ink-soft">
-            {t("lesson.hint")}
-          </p>
-        ))}
+      {/* A lesson being built (lesson.ts), here too: where the tours are, it starts like one.
+          Not in a frame on another site, where the cards have no lesson button. */}
+      {!readUrl().embed && lesson.length >= 2 && (
+        <p className="mx-4 mt-2 flex flex-wrap items-baseline gap-x-3 border-t border-line pt-2 text-[13px]">
+          <span className="font-medium text-ink">
+            {t("lesson.count", { count: lesson.length })}
+          </span>
+          <a
+            href={lessonSearch(lesson, locale, readTitle())}
+            className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
+          >
+            {t("lesson.start")}
+          </a>
+        </p>
+      )}
     </Section>
   );
 }

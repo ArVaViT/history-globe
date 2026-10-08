@@ -36,6 +36,21 @@ describe("viewPadding", () => {
     });
   });
 
+  it("gives the column's room back to the map when no panel is open", () => {
+    expect(viewPadding(1440, 900, false, 124, false, false, false)).toEqual({
+      top: 0,
+      bottom: 190,
+      left: 0,
+      right: 0,
+    });
+    // A card open with the column empty: only the card's edge is kept.
+    expect(viewPadding(1440, 900, false, 124, true, false, false)).toEqual({
+      top: 0,
+      bottom: 190,
+      left: 0,
+      right: 452,
+    });
+  });
   it("leaves no room for a column when embedded", () => {
     expect(viewPadding(1200, 800, true).left).toBe(0);
     expect(viewPadding(1200, 800).left).toBeGreaterThan(0);
