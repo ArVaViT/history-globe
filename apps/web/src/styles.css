@@ -666,3 +666,23 @@ summary {
     transition: none;
   }
 }
+
+/* The scale and the (i) on the map above the player: on the paper of the map's own labels,
+   the (i)'s note opening leftwards from the right edge. */
+.hg-map-float .maplibregl-ctrl-scale {
+  background: rgb(246 239 225 / 0.75);
+  backdrop-filter: blur(6px);
+}
+.hg-map-float .maplibregl-ctrl-attrib {
+  order: 0;
+  margin-right: 0 !important;
+}
+.hg-map-float .maplibregl-ctrl-attrib-button {
+  border-radius: 9999px;
+  background-color: rgb(246 239 225 / 0.75) !important;
+  backdrop-filter: blur(6px);
+}
+.hg-map-float .maplibregl-ctrl-attrib.maplibregl-compact-show .maplibregl-ctrl-attrib-inner {
+  left: auto;
+  right: 0;
+}
