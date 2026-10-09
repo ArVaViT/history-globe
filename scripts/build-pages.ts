@@ -4,7 +4,8 @@
  * previews find what the map holds: «где находился Вифсаида» lands on Bethsaida's page,
  * and its "Open on the map" button opens the globe there. The pages carry the place's
  * names, where it is today, its dates and events, its article, its verses (with their
- * text) and the tours through it. No script, no app bundle: they load at once.
+ * text) and the tours through it. No app bundle: they load at once (the indexes carry a
+ * few lines of script for their search, and work without it).
  *
  * With SITE_URL set (https://example.org, no trailing slash) the pages also get canonical
  * and hreflang links and Open Graph tags, and sitemap.xml is written; these need absolute
@@ -16,12 +17,18 @@
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import type { ContentRelease, PlaceLife } from "../packages/model/src/content.ts";
-import { formatRef, formatRefOr, NT_BOOKS } from "../packages/model/src/scripture.ts";
+import {
+  BOOKS,
+  canonicalPosition,
+  formatRef,
+  formatRefOr,
+  NT_BOOKS,
+} from "../packages/model/src/scripture.ts";
 import { sourcesOf } from "../packages/model/src/citation.ts";
 import { formatYear, LOCALE_NAMES, LOCALES, type SiteLocale } from "../packages/model/src/time.ts";
 import { esc, headMeta } from "./page-shell.ts";
 import { commonsPage, DOC_PAGES, docsPath } from "../packages/model/src/site.ts";
-import { LANDING, T } from "./page-words.ts";
+import { LANDING, LISTS, T } from "./page-words.ts";
 import { siteCertainty } from "../packages/model/src/sites.ts";
 import { placeSlugs } from "./slugs.ts";
 import { distanceKm, roundKm } from "../apps/web/src/distance.ts";
@@ -171,6 +178,9 @@ function lifeLine(life: PlaceLife | undefined, l: Lang): string {
 /** Line icons (Lucide, ISC) for the front page, as the documentation draws them. */
 const ICONS = {
   out: '<path d="M7 7h10v10"/><path d="M7 17 17 7"/>',
+  langs:
+    '<path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/>',
+  play: '<path d="M6 3.5v17l14-8.5z"/>',
   right: '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
   help: '<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>',
   data: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/>',
@@ -181,6 +191,9 @@ const ICONS = {
 function icon(name: keyof typeof ICONS): string {
   return `<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`;
 }
+
+/** The open sets every page credits, with their licences (the rest: the sources page). */
+const CREDITS = "OpenBible.info, Cliopatria, Itiner-e (CC BY 4.0), Pleiades (CC BY 3.0)";
 
 /** The page shell: the same look as the docs pages, light and without a script. */
 function page(o: {
@@ -210,11 +223,12 @@ function page(o: {
     image: o.image,
     ld: o.ld,
   });
+  // The other language as an icon apart from the lists, named on hover and to a screen reader.
   const langs = LANGS.filter((l) => l !== o.l)
-    .map(
-      (l) =>
-        `<a class="lang" href="${up}${paths[l]}" hreflang="${l}" lang="${l}">${LOCALE_NAMES[l]}</a>`,
-    )
+    .map((l) => {
+      const name = `${T[o.l].language}: ${LOCALE_NAMES[l]}`;
+      return `<a class="lang" href="${up}${paths[l]}" hreflang="${l}" title="${name}" aria-label="${name}">${icon("langs")}</a>`;
+    })
     .join("");
   return `<!doctype html>
 <html lang="${o.l}">
@@ -226,7 +240,14 @@ function page(o: {
     <link rel="icon" href="${up}favicon.svg" type="image/svg+xml" />
     <title>${esc(o.title)} | History Globe</title>${meta}${
       o.home
-        ? `\n    <link rel="preload" href="${up}docs/fonts/golos-text-${o.l === "ru" ? "cyrillic" : "latin"}-wght-normal.woff2" as="font" type="font/woff2" crossorigin />`
+        ? `\n    <link rel="preload" href="${up}docs/fonts/golos-text-${o.l === "ru" ? "cyrillic" : "latin"}-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <script>
+      // The entrance plays only for a reader who has not asked for less motion; without a
+      // script the page is simply all there (pages.css, public/landing.js).
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches)
+        document.documentElement.classList.add("anim");
+    </script>
+    <script defer src="${up}landing.js"></script>`
         : ""
     }
     <link rel="stylesheet" href="${up}pages.css" />
@@ -234,11 +255,12 @@ function page(o: {
   <body${o.home ? ' class="home"' : ""}>
     <a class="skip" href="#main">${T[o.l].skip}</a>
     <header class="bar">
-      <a class="brand" href="${up}?locale=${o.l}"><img src="${up}favicon.svg" alt="" width="22" height="22" />History Globe</a>
-      <nav aria-label="${T[o.l].sections}"><a href="${up}${o.l}/places/">${T[o.l].places}</a><a href="${up}${o.l}/tours/">${T[o.l].toursAll}</a><a href="${up}${o.l}/questions/">${T[o.l].questions}</a>${o.home ? `<a class="hide-s" href="${up}${docsPath(o.l)}">${LANDING[o.l].docs}</a>` : ""}${langs}${o.home ? `<a class="open" href="${up}?locale=${o.l}">${LANDING[o.l].open}${icon("out")}</a>` : ""}</nav>
+      <a class="brand" href="${up}${o.l}/"><img src="${up}favicon.svg" alt="" width="22" height="22" />History Globe</a>
+      <nav aria-label="${T[o.l].sections}"><a href="${up}${o.l}/places/">${T[o.l].places}</a><a href="${up}${o.l}/tours/">${T[o.l].toursAll}</a><a href="${up}${o.l}/questions/">${T[o.l].questions}</a>${o.home ? `<a class="hide-s" href="${up}${docsPath(o.l)}">${LANDING[o.l].docs}</a>` : ""}</nav>
+      <div class="bar-end">${langs}<a class="open" href="${up}?locale=${o.l}">${LANDING[o.l].open}${icon("out")}</a></div>
     </header>
 ${o.body}
-    <footer class="foot"><a href="${up}${docsPath(o.l)}">${T[o.l].about}</a> · <a href="${up}${docsPath(o.l, "privacy")}">${T[o.l].privacy}</a> · OpenBible.info, Cliopatria, Itiner-e (CC BY 4.0), Pleiades (CC BY 3.0) · <a href="${up}${docsPath(o.l, "sources")}">${T[o.l].allSources}</a></footer>
+    <footer class="foot"><nav aria-label="History Globe"><a href="${up}${o.l}/">History Globe</a><a href="${up}${docsPath(o.l)}">${T[o.l].about}</a><a href="${up}${docsPath(o.l, "privacy")}">${T[o.l].privacy}</a><a href="${up}${docsPath(o.l, "sources")}">${T[o.l].sources}</a></nav><p title="${T[o.l].data}: ${CREDITS}">${T[o.l].data}: ${CREDITS}</p></footer>
   </body>
 </html>
 `;
@@ -506,34 +528,7 @@ function questionPages(l: Lang): void {
       }),
     );
   }
-  if (questions.length > 0)
-    write(
-      `${l}/questions`,
-      page({
-        l,
-        title: T[l].questionsTitle,
-        desc: T[l].questionsTitle,
-        path: `${l}/questions/`,
-        depth: 2,
-        body: `    <main id="main" class="page">
-      <h1>${T[l].questionsTitle}</h1>
-      ${(["where", "when", "how", "who"] as const)
-        .map((g) => {
-          // By what is asked, read from the id (where-was-…, how-far-…); the rest are “where”.
-          const group = questions
-            .filter((q) => (/^(when|how|who)-/.exec(q.id)?.[1] ?? "where") === g)
-            .sort((a, b) => a.question[l].localeCompare(b.question[l], l));
-          return group.length
-            ? `<h2>${T[l].asks[g]} · ${String(group.length)}</h2>
-      <ul class="cards">${group
-        .map((q) => `<li><a href="../q/${q.id}/">${esc(q.question[l])}</a></li>`)
-        .join("")}</ul>`
-            : "";
-        })
-        .join("\n      ")}
-    </main>`,
-      }),
-    );
+  if (questions.length > 0) questionsIndex(l);
 }
 
 /** A page for every tour, its stops and the way between them. */
@@ -602,33 +597,165 @@ function tourPages(l: Lang): void {
   }
 }
 
-/** The indexes: all places (those with an article first) and all tours. */
-function indexPages(l: Lang): void {
-  const coll = new Intl.Collator(l);
-  const list = [...shown].sort((a, b) =>
-    coll.compare(nameOf(a.properties, l), nameOf(b.properties, l)),
+/**
+ * The search on the index pages, a progressive enhancement: without it every name is a link
+ * on the page, and the search box and the filter stay hidden. A name matches whatever the
+ * case, the accents or ё; a section with nothing left is hidden, and so is its jump link.
+ */
+const LIST_SCRIPT = `<script>
+(() => {
+  const m = document.querySelector("[data-list]");
+  const tools = m && m.querySelector("[data-tools]");
+  if (!tools) return;
+  tools.hidden = false;
+  const q = tools.querySelector("input");
+  const only = tools.querySelector("[aria-pressed]");
+  const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").replace(/\\s+/g, " ");
+  const items = [...m.querySelectorAll("[data-group] li")].map((e) => [e, norm(e.textContent)]);
+  const groups = [...m.querySelectorAll("[data-group]")];
+  const empty = m.querySelector("[data-empty]");
+  const run = () => {
+    const s = norm(q.value.trim());
+    const a = only && only.getAttribute("aria-pressed") === "true";
+    for (const [e, text] of items) e.hidden = !(text.includes(s) && (!a || e.classList.contains("art")));
+    let shown = 0;
+    for (const g of groups) {
+      const left = g.querySelectorAll("li:not([hidden])").length;
+      g.hidden = left === 0;
+      shown += left ? 1 : 0;
+      const j = m.querySelector('[href="#' + g.id + '"]');
+      if (j) j.classList.toggle("off", !left);
+      for (const c of [g.querySelector(".count"), j && j.querySelector("span")])
+        if (c) c.textContent = left.toLocaleString(document.documentElement.lang);
+    }
+    empty.hidden = shown > 0;
+  };
+  q.addEventListener("input", run);
+  if (only)
+    only.addEventListener("click", () => {
+      only.setAttribute("aria-pressed", String(only.getAttribute("aria-pressed") !== "true"));
+      run();
+    });
+  if (q.value) run();
+})();
+</script>`;
+
+/** The search box (and a filter, when given) above a list; shown by LIST_SCRIPT. */
+const listTools = (find: string, filter = "") =>
+  `<div class="list-tools" data-tools hidden><label class="list-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="${esc(find)}" aria-label="${esc(find)}" autocomplete="off" spellcheck="false" /></label>${filter}</div>`;
+
+type Tour = (typeof content.tours)[number];
+
+/**
+ * A tour's route as a small picture: its stops on an equirectangular plane (longitude
+ * scaled by the cosine of the mean latitude), fitted to the box; the legs sailed or untold
+ * dashed, and none drawn for a tour not travelled (its stops are a theme, not a way).
+ */
+function routeSvg(t: Tour): string {
+  const W = 120;
+  const H = 90;
+  const PAD = 12;
+  const pts = t.stops.flatMap((s) => {
+    const c = byId.get(s.place)?.geometry.coordinates;
+    return c ? [{ c, by: s.by }] : [];
+  });
+  if (pts.length === 0) return "";
+  const k = Math.cos((pts.reduce((sum, p) => sum + p.c[1], 0) / pts.length / 180) * Math.PI);
+  const xy = pts.map((p) => [p.c[0] * k, -p.c[1]] as const);
+  const xs = xy.map((p) => p[0]);
+  const ys = xy.map((p) => p[1]);
+  const [x0, x1, y0, y1] = [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)];
+  const scale = Math.min(
+    (W - 2 * PAD) / Math.max(x1 - x0, 1e-6),
+    (H - 2 * PAD) / Math.max(y1 - y0, 1e-6),
   );
-  // Places with an article first: the pages worth reading, not lost among 1200 names.
-  const withArticle = list.filter((f) => articles[f.properties.id]);
+  const ox = (W - (x1 - x0) * scale) / 2;
+  const oy = (H - (y1 - y0) * scale) / 2;
+  const at = (i: number) => {
+    const [x, y] = xy[i] ?? [0, 0];
+    return `${((x - x0) * scale + ox).toFixed(1)} ${((y - y0) * scale + oy).toFixed(1)}`;
+  };
+  const land: string[] = [];
+  const sea: string[] = [];
+  if (t.walked !== false)
+    for (let i = 1; i < pts.length; i++) (pts[i]?.by ? sea : land).push(`M${at(i - 1)}L${at(i)}`);
+  const seen = new Set<string>();
+  const dots = pts
+    .map((_, i) => at(i))
+    .filter((p) => !seen.has(p) && seen.add(p))
+    .map((p, i) => {
+      const [cx, cy] = p.split(" ");
+      return `<circle${i === 0 ? ' class="first"' : ""} cx="${cx ?? ""}" cy="${cy ?? ""}" r="${i === 0 ? "3.4" : "2.3"}"/>`;
+    })
+    .join("");
+  return `<svg class="route" viewBox="0 0 ${String(W)} ${String(H)}" aria-hidden="true">${land.length ? `<path class="land" d="${land.join("")}"/>` : ""}${sea.length ? `<path class="sea" d="${sea.join("")}"/>` : ""}${dots}</svg>`;
+}
+
+/**
+ * The chapters a tour reads from, by the order of the Bible: "Быт 11–25" in one book,
+ * "Мф 2 – Деян 1" across books (the Synodal numbers in Russian, as formatRef gives them).
+ */
+function tourSpan(t: Tour, l: Lang): string {
+  const ends = t.stops
+    .flatMap((s) => s.ref.split("-"))
+    .sort((a, b) => canonicalPosition(a) - canonicalPosition(b));
+  const [b1 = "", c1 = ""] = (ends[0] ?? "").split(".");
+  const [b2 = "", c2 = ""] = (ends.at(-1) ?? "").split(".");
+  const chapter = (b: string, c: string) => formatRefOr(`${b}.${c}`, l);
+  if (b1 !== b2) return `${chapter(b1, c1)} – ${chapter(b2, c2)}`;
+  if (c1 === c2) return chapter(b1, c1);
+  return `${chapter(b1, c1)}–${/\d+$/.exec(chapter(b2, c2))?.[0] ?? c2}`;
+}
+
+/** How far a tour goes, stop to stop in straight lines; nothing for a tour not travelled. */
+function tourKm(t: Tour): number | null {
+  if (t.walked === false) return null;
+  let km = 0;
+  for (let i = 1; i < t.stops.length; i++) {
+    const a = byId.get(t.stops[i - 1]?.place ?? "")?.geometry.coordinates;
+    const b = byId.get(t.stops[i]?.place ?? "")?.geometry.coordinates;
+    if (a && b) km += distanceKm(a, b);
+  }
+  return km >= 2 ? km : null;
+}
+
+/** The indexes: all places, by letter, and all tours, by testament. */
+function indexPages(l: Lang): void {
+  const W = LISTS[l];
+  const n = new Intl.NumberFormat(l);
+  const coll = new Intl.Collator(l);
   // Duplicate records keep their pages (old links) but are not listed twice.
-  const listed = list.filter((f) => !f.properties.dup);
+  const listed = shown.filter((f) => !f.properties.dup);
   // A place with an article is listed by the article's title: the land of Babylonia is
   // not the city, though the Synodal text calls both Вавилон.
-  const shownName = (f: (typeof list)[number]) =>
+  const shownName = (f: (typeof listed)[number]) =>
     articles[f.properties.id]?.title[l] ?? nameOf(f.properties, l);
-  // Namesakes in the index (two Antiochs) are told apart by where they are today.
   listed.sort((a, b) => coll.compare(shownName(a), shownName(b)));
+  // Namesakes in the index (two Antiochs) are told apart by where they are today.
   const named = new Map<string, number>();
-  for (const f of list)
-    if (!f.properties.dup) named.set(shownName(f), (named.get(shownName(f)) ?? 0) + 1);
-  const link = (f: (typeof list)[number]) => {
+  for (const f of listed) named.set(shownName(f), (named.get(shownName(f)) ?? 0) + 1);
+  const withArticle = listed.filter((f) => articles[f.properties.id]).length;
+  // By the first letter: Ё with Е as the collator sorts it, Latin letters without accents.
+  const letterOf = (name: string) => {
+    const ch = /\p{L}/u.exec(name)?.[0] ?? "#";
+    const up = (l === "ru" ? ch : (ch.normalize("NFD")[0] ?? ch)).toUpperCase();
+    return up === "Ё" ? "Е" : up;
+  };
+  const letters = new Map<string, typeof listed>();
+  for (const f of listed) {
+    const k = letterOf(shownName(f));
+    letters.set(k, [...(letters.get(k) ?? []), f]);
+  }
+  const anchor = (k: string) => `l-${k.toLowerCase()}`;
+  // Places with an article are marked: the pages worth reading, not lost among 1200 names.
+  const link = (f: (typeof listed)[number]) => {
     const name = shownName(f);
     const where = l === "ru" ? content.where_ru?.[f.properties.id] : f.properties.where;
     const tell =
       (named.get(name) ?? 0) > 1 && where && where !== name
         ? ` <span class="note">(${esc(where)})</span>`
         : "";
-    return `<li><a href="../place/${slugOf.get(f.properties.id) ?? f.properties.id}/">${esc(name)}</a>${tell}</li>`;
+    return `<li${articles[f.properties.id] ? ' class="art"' : ""}><a href="../place/${slugOf.get(f.properties.id) ?? f.properties.id}/">${esc(name)}</a>${tell}</li>`;
   };
   write(
     `${l}/places`,
@@ -638,18 +765,33 @@ function indexPages(l: Lang): void {
       desc: T[l].placesTitle,
       path: `${l}/places/`,
       depth: 2,
-      body: `    <main id="main" class="page">
+      body: `    <main id="main" class="page list" data-list>
       <h1>${T[l].placesTitle}</h1>
-      <h2>${T[l].articlesTitle} · ${String(withArticle.length)}</h2>
-      <ul class="columns">${[...withArticle]
-        .sort((a, b) => coll.compare(shownName(a), shownName(b)))
-        .map(link)
-        .join("")}</ul>
-      <h2>${T[l].allPlaces} · ${String(listed.length)}</h2>
-      <ul class="columns">${listed.map(link).join("")}</ul>
+      <p class="list-lead">${esc(W.placesLead(n.format(listed.length), listed.length, n.format(withArticle)))}</p>
+      ${listTools(W.findPlace, `<button type="button" class="list-chip" aria-pressed="false"><span class="art-dot" aria-hidden="true"></span>${esc(W.withArticle)}</button>`)}
+      <nav class="jump" aria-label="${esc(W.alphabet)}">${[...letters.keys()]
+        .map((k) => `<a href="#${anchor(k)}">${esc(k)}</a>`)
+        .join("")}</nav>
+      ${[...letters]
+        .map(
+          ([k, group]) =>
+            `<section class="letter" id="${anchor(k)}" data-group><h2>${esc(k)}</h2><ul class="names">${group.map(link).join("")}</ul></section>`,
+        )
+        .join("\n      ")}
+      <p class="list-empty" data-empty hidden>${esc(W.nothing)}</p>
+      ${LIST_SCRIPT}
     </main>`,
     }),
   );
+  const tourCard = (t: Tour) => {
+    const km = tourKm(t);
+    const meta = [
+      tourSpan(t, l),
+      W.stops(t.stops.length),
+      ...(km === null ? [] : [W.km(n.format(roundKm(km)))]),
+    ];
+    return `<li><a class="tour-card" href="../tour/${t.id}/">${routeSvg(t)}<span class="tour-text"><span class="tour-when">${esc(year({ year: t.year, approximate: t.approximate === true }, l))}</span><span class="tour-title">${esc(t.title[l])}</span><span class="tour-meta">${meta.map((x) => esc(x.replace(/ /g, "\u00a0"))).join(" · ")}</span></span></a></li>`;
+  };
   write(
     `${l}/tours`,
     page({
@@ -658,8 +800,9 @@ function indexPages(l: Lang): void {
       desc: T[l].toursTitle,
       path: `${l}/tours/`,
       depth: 2,
-      body: `    <main id="main" class="page">
+      body: `    <main id="main" class="page list">
       <h1>${T[l].toursTitle}</h1>
+      <p class="list-lead">${esc(W.toursLead(n.format(content.tours.length), content.tours.length))}</p>
       ${(["whole", "ot", "nt"] as const)
         .map((g) => {
           // By testament, as the app's list: a tour reading from both is the whole Bible's.
@@ -667,16 +810,79 @@ function indexPages(l: Lang): void {
             .filter((t) => testamentOf(t.stops) === g)
             .sort((a, b) => a.year - b.year);
           return group.length
-            ? `<h2>${T[l].testament[g]} · ${String(group.length)}</h2>
-      <ul class="cards">${group
-        .map(
-          (t) =>
-            `<li><a href="../tour/${t.id}/">${esc(t.title[l])} <span class="note">${esc(year({ year: t.year, approximate: t.approximate === true }, l))}</span></a></li>`,
-        )
-        .join("")}</ul>`
+            ? `<section class="tour-group" id="${g}"><h2>${T[l].testament[g]} <span class="count">${n.format(group.length)}</span></h2>
+      <ul class="tour-cards">${group.map(tourCard).join("")}</ul></section>`
             : "";
         })
         .join("\n      ")}
+    </main>`,
+    }),
+  );
+}
+
+/** The parts of the Bible, by the first book of each in its order. */
+const PARTS = [
+  ["torah", "Gen"],
+  ["history", "Josh"],
+  ["prophets", "Job"],
+  ["gospels", "Matt"],
+  ["acts", "Acts"],
+  ["letters", "Rom"],
+] as const;
+const BOOK_ORDER = Object.keys(BOOKS);
+/** The part of the Bible a reference is in; 1–2 Maccabees with the historical books. */
+const partOf = (osis: string) => {
+  const book = osis.split(".")[0] ?? "";
+  if (book === "1Macc" || book === "2Macc") return "history";
+  const i = BOOK_ORDER.indexOf(book);
+  return [...PARTS].reverse().find(([, first]) => i >= BOOK_ORDER.indexOf(first))?.[0] ?? "torah";
+};
+
+/** All questions, by the part of the Bible each is about, in the order of its verses. */
+function questionsIndex(l: Lang): void {
+  const W = LISTS[l];
+  const n = new Intl.NumberFormat(l);
+  // The verse the map opens on, or the first the answer cites.
+  const refOfQ = (q: (typeof questions)[number]) => q.map?.ref ?? q.scripture[0] ?? "";
+  const sorted = [...questions].sort(
+    (a, b) =>
+      canonicalPosition(refOfQ(a)) - canonicalPosition(refOfQ(b)) ||
+      a.question[l].localeCompare(b.question[l], l),
+  );
+  const groups = PARTS.map(
+    ([part]) => [part, sorted.filter((q) => partOf(refOfQ(q)) === part)] as const,
+  ).filter(([, g]) => g.length > 0);
+  write(
+    `${l}/questions`,
+    page({
+      l,
+      title: T[l].questionsTitle,
+      desc: T[l].questionsTitle,
+      path: `${l}/questions/`,
+      depth: 2,
+      body: `    <main id="main" class="page list narrow" data-list>
+      <h1>${T[l].questionsTitle}</h1>
+      <p class="list-lead">${esc(W.questionsLead(n.format(questions.length), questions.length))}</p>
+      ${listTools(W.findQuestion)}
+      <nav class="jump jump-parts" aria-label="${esc(T[l].sections)}">${groups
+        .map(
+          ([part, g]) =>
+            `<a href="#${part}">${esc(W.partsShort[part])} <span>${n.format(g.length)}</span></a>`,
+        )
+        .join("")}</nav>
+      ${groups
+        .map(
+          ([part, g]) =>
+            `<section class="q-group" id="${part}" data-group><h2>${esc(W.parts[part])} <span class="count">${n.format(g.length)}</span></h2><ul class="q-rows">${g
+              .map(
+                (q) =>
+                  `<li><a href="../q/${q.id}/"><span class="q-text">${esc(q.question[l])}</span><span class="q-ref">${esc(refOf(refOfQ(q), l))}</span></a></li>`,
+              )
+              .join("")}</ul></section>`,
+        )
+        .join("\n      ")}
+      <p class="list-empty" data-empty hidden>${esc(W.nothing)}</p>
+      ${LIST_SCRIPT}
     </main>`,
     }),
   );
@@ -694,6 +900,16 @@ for (const l of LANGS) {
 // each opens the globe: the same view, live. The pictures are the app's whole screen; the
 // tiles crop them towards the card at the right (CSS), so the card stays legible on a phone.
 const SHOTS = { time: "year=-700&camera=40,33,4.6,25,0" } as const;
+/**
+ * The hero's live globe (public/landing.js): the app in embed mode, loaded only when the
+ * reader asks for it, over the picture of the same view. A frame narrower than a desktop's
+ * gets a farther camera, so a phone still sees Tyre to Babylon.
+ */
+const LIVE = {
+  q: "embed=1&year=-700",
+  wide: "40,33,4.6,25,0",
+  narrow: "40.5,32.5,3.55,18,0",
+} as const;
 const ROWS = [
   { shot: "tour", q: "tour=paul-2&stop=4" },
   { shot: "place", q: "place=a15257a&year=30" },
@@ -717,7 +933,7 @@ for (const l of LANGS) {
   const tile = (i: number) => {
     const [eyebrow, h, text, link, alt] = L.rows[i] ?? L.rows[0];
     const row = ROWS[i] ?? ROWS[0];
-    return `<a class="tile tile-${row.shot}" href="${app(row.q)}">
+    return `<a class="tile tile-${row.shot}" href="${app(row.q)}" data-rv>
           <div class="tile-copy">
             <p class="eyebrow">${esc(eyebrow)}</p>
             <h2>${esc(h)}</h2>
@@ -746,18 +962,24 @@ for (const l of LANGS) {
       },
       body: `    <main id="main" class="landing">
       <section class="hero">
-        <p class="pill">${esc(L.kicker)}</p>
-        <h1>${esc(L.title)}</h1>
+        <p class="pill"><a href="tours/">${esc(L.kicker)}</a></p>
+        <h1>${L.h1
+          .split(" ")
+          .map((w, i) => `<span class="w" style="--i:${String(i)}"><span>${esc(w)}</span></span>`)
+          .join(" ")}</h1>
         <p class="lede">${esc(L.lede)}</p>
         <p class="actions-row"><a class="cta" href="${app("")}">${esc(L.open)}${icon("right")}</a><a class="ghost" href="tours/">${esc(L.tours)}</a></p>
       </section>
-      <figure class="shot">
-        <a href="${app(SHOTS.time)}"><img src="../shots/${l}-time.jpg" alt="${esc(L.heroAlt)}" width="1440" height="900" fetchpriority="high" /></a>
-        <figcaption><b>${esc(L.heroNote)}</b><span>${esc(L.live)}</span></figcaption>
+      <figure class="shot" data-live="${esc(app(LIVE.q))}" data-wide="${LIVE.wide}" data-narrow="${LIVE.narrow}" data-title="${esc(L.heroAlt)}">
+        <div class="stage">
+          <a class="poster" href="${esc(app(SHOTS.time))}"><img src="../shots/${l}-time.jpg" alt="${esc(L.heroAlt)}" width="1440" height="900" fetchpriority="high" /><span class="go">${icon("play")}<span>${esc(L.live)}</span></span></a>
+          <button class="done" type="button">${esc(L.liveClose)}</button>
+        </div>
+        <figcaption><b>${esc(L.heroNote)}</b><a href="${esc(app(SHOTS.time))}">${esc(L.full)}${icon("out")}</a></figcaption>
       </figure>
-      <ul class="numbers">${numbers
+      <ul class="numbers" data-rv>${numbers
         .map(([x, href], i) => {
-          const inner = `<b>${n.format(x)}</b><span>${esc(L.stats[i] ?? "")}</span>`;
+          const inner = `<b data-n="${String(x)}">${n.format(x)}</b><span>${esc(L.stats[i] ?? "")}</span>`;
           return `<li>${href ? `<a href="${href}">${inner}</a>` : inner}</li>`;
         })
         .join("")}</ul>
@@ -766,7 +988,7 @@ for (const l of LANGS) {
         ${tile(1)}
         ${tile(2)}
       </section>
-      <ul class="facts-row">${L.cards
+      <ul class="facts-row" data-rv>${L.cards
         .map(([h, text, link], i) => {
           const href =
             [`questions/`, `../${docsPath(l, "api")}`, `../${docsPath(l, "privacy")}`][i] ?? "";
@@ -774,13 +996,13 @@ for (const l of LANGS) {
           return `<li><span class="ic">${icon(ic)}</span><h2>${esc(h)}</h2><p>${esc(text)}</p><a href="${href}">${esc(link)}${icon("right")}</a></li>`;
         })
         .join("")}</ul>
-      <section class="sources">
+      <section class="sources" data-rv>
         <h2>${esc(L.trust)}</h2>
         <ul>${SOURCE_NAMES.map((x) => `<li>${x}</li>`).join("")}<li><a href="../${docsPath(l, "sources")}">${esc(L.sources)}${icon("right")}</a></li></ul>
         <p>${esc(L.trustText)}</p>
         <p class="method"><a href="../${docsPath(l, "methodology")}">${esc(L.method)}${icon("right")}</a></p>
       </section>
-      <section class="closing">
+      <section class="closing" data-rv>
         <img src="../shots/${l}-time.jpg" alt="" width="1440" height="900" loading="lazy" />
         <div>
           <h2>${esc(L.ctaTitle)}</h2>

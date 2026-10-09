@@ -120,7 +120,8 @@ summary:focus-visible {
   padding: 6px 10px;
 }
 
-/* The bar: the mark, then the lists and the other language. */
+/* The bar: the mark, the lists, then apart from them the other language (an icon) and the
+   way into the map. */
 .bar {
   position: sticky;
   top: 0;
@@ -150,8 +151,65 @@ summary:focus-visible {
 .bar nav {
   display: flex;
   gap: 4px;
+  min-width: 0;
+  margin-left: auto;
   overflow-x: auto;
   scrollbar-width: none;
+}
+.bar-end {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 8px;
+}
+/* A hairline between the lists and the controls. */
+.bar-end::before {
+  content: "";
+  width: 1px;
+  height: 20px;
+  margin-right: 4px;
+  background: var(--line);
+}
+.bar .lang {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+.bar .lang:hover {
+  color: var(--ink);
+  background: var(--paper-2);
+}
+.bar .lang svg {
+  width: 18px;
+  height: 18px;
+}
+.bar .open {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 13.5px;
+  font-weight: 550;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 160ms ease;
+}
+.bar .open:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.bar .open svg {
+  width: 14px;
+  height: 14px;
 }
 .bar nav a {
   padding: 6px 12px;
@@ -375,21 +433,457 @@ ul.cards a:hover {
   border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
   transform: translateY(-1px);
 }
-ul.columns {
-  columns: 3 180px;
+/* The index pages (all places, all tours, all questions): wider than a page to read, in the
+   one sans face of the front page and the docs; a search above, a bar to jump by. */
+.list {
+  max-width: 1080px;
+}
+.list.narrow {
+  max-width: 880px;
+}
+.list [hidden] {
+  display: none !important;
+}
+.list h1 {
+  font: 700 clamp(32px, 4.6vw, 52px) / 1.05 var(--sans);
+  letter-spacing: -0.035em;
+}
+.list .list-lead {
+  max-width: 40em;
+  margin: 14px 0 0;
+  color: var(--ink-soft);
+  font: 16px/1.55 var(--sans);
+}
+.list h2 {
+  font: 650 20px/1.3 var(--sans);
+  letter-spacing: -0.015em;
+}
+.list h2 .count {
+  margin-left: 4px;
+  color: var(--ink-faint);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.list-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+.list-search {
+  display: flex;
+  flex: 1 1 260px;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  max-width: 420px;
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--ink-faint);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+.list-search:focus-within {
+  border-color: color-mix(in srgb, var(--accent) 60%, var(--line));
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.list-search svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+}
+.list-search input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font: 16px var(--sans);
+}
+.list-search input::-webkit-search-cancel-button {
+  filter: grayscale(1);
+  opacity: 0.6;
+}
+.list-search input::placeholder {
+  color: var(--ink-faint);
+}
+.list-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  font: 500 14.5px var(--sans);
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+.list-chip:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
+}
+.list-chip[aria-pressed="true"] {
+  border-color: color-mix(in srgb, var(--accent) 60%, var(--line));
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.list-chip:focus-visible,
+.jump a:focus-visible,
+.tour-card:focus-visible,
+.q-rows a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.art-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.list .list-empty {
+  margin: 40px 0;
+  color: var(--ink-soft);
+  font: 16px var(--sans);
+}
+
+/* The bar to jump by: letters, or the parts of the Bible; it stays under the site's bar. */
+.jump {
+  position: sticky;
+  top: 68px;
+  z-index: 1;
+  display: flex;
+  gap: 2px;
+  margin: 16px 0 8px;
+  padding: 5px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--card) 86%, transparent);
+  backdrop-filter: saturate(1.4) blur(14px);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  box-shadow: 0 10px 24px -18px rgb(30 20 8 / 0.35);
+  scrollbar-width: none;
+}
+.jump::-webkit-scrollbar {
+  display: none;
+}
+.jump a {
+  display: grid;
+  flex: 1 0 auto;
+  place-items: center;
+  min-width: 32px;
+  height: 34px;
+  padding: 0 4px;
+  border-radius: 9px;
+  color: var(--ink-soft);
+  font-size: 14.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+.jump a:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.jump a.off {
+  opacity: 0.3;
+  pointer-events: none;
+}
+.jump-parts a {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: 550;
+  white-space: nowrap;
+}
+.jump-parts a span {
+  color: var(--ink-faint);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+/* All places, by letter: the letter at the left, the names in columns; those with an
+   article in bold, with the accent's dot hanging before them. */
+.letter {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 0 28px;
+  padding: 26px 0 18px;
+  scroll-margin-top: 124px;
+}
+.letter + .letter {
+  border-top: 1px solid var(--line);
+}
+.list .letter h2 {
+  position: sticky;
+  top: 132px;
+  align-self: start;
+  margin: 0;
+  color: var(--accent);
+  font: 700 34px/1 var(--sans);
+  letter-spacing: -0.02em;
+}
+.names {
+  columns: 4 180px;
   column-gap: 32px;
-  padding-left: 0;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
-ul.columns li {
-  margin: 2px 0;
+.names li {
+  position: relative;
+  margin: 0;
+  padding: 3px 0;
+  font-size: 15px;
+  line-height: 1.45;
   break-inside: avoid;
 }
-ul.columns a {
+.names a {
+  color: var(--ink);
   text-decoration: none;
 }
-ul.columns a:hover {
+.names a:hover {
+  color: var(--accent);
   text-decoration: underline;
+}
+.names li.art a {
+  font-weight: 600;
+}
+.names li.art::before {
+  content: "";
+  position: absolute;
+  left: -13px;
+  top: 0.8em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.names .note {
+  font-size: 13px;
+}
+
+/* All tours: a card each, with the route drawn from its stops. */
+.tour-group {
+  scroll-margin-top: 80px;
+}
+.tour-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tour-cards li {
+  margin: 0;
+}
+.tour-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 100%;
+  padding: 10px 16px 10px 10px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--card);
+  color: var(--ink);
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+.tour-card:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
+  box-shadow: 0 14px 30px -22px rgb(30 20 8 / 0.5);
+  transform: translateY(-1px);
+}
+.route {
+  flex: none;
+  width: 104px;
+  height: 78px;
+  border-radius: 10px;
+  background: var(--paper-2);
+}
+.route path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+.route .sea {
+  stroke-width: 1.3;
+  stroke-dasharray: 2.5 3;
+  opacity: 0.75;
+}
+.route circle {
+  fill: var(--card);
+  stroke: var(--accent);
+  stroke-width: 1.3;
+}
+.route circle.first {
+  fill: var(--accent);
+}
+.tour-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.tour-when {
+  color: var(--accent);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+}
+.tour-title {
+  font-size: 16.5px;
+  font-weight: 650;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.tour-card:hover .tour-title {
+  color: var(--accent);
+}
+.tour-meta {
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+/* All questions: rows in a frame, the verse at the right. */
+.q-group {
+  scroll-margin-top: 124px;
+}
+.q-rows {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--card);
+}
+.q-rows li {
+  margin: 0 0 -1px;
+  border-bottom: 1px solid var(--line);
+}
+.q-rows a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 18px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: background-color 120ms ease;
+}
+.q-rows a:hover {
+  background: var(--accent-soft);
+}
+.q-rows a:hover .q-text {
+  color: var(--accent);
+}
+.q-text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.q-ref {
+  flex: none;
+  color: var(--ink-faint);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .list .list-lead {
+    font-size: 15px;
+  }
+  .list-search {
+    flex-basis: 160px;
+    max-width: none;
+  }
+  /* The bar runs off the right edge: a fade there says it scrolls. */
+  .jump {
+    mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent);
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent);
+    padding-right: 32px;
+  }
+  .jump {
+    top: 60px;
+    margin: 16px -16px 4px;
+    border-width: 0 0 1px;
+    border-radius: 0;
+    padding: 5px 11px;
+    box-shadow: none;
+  }
+  .jump a {
+    flex: none;
+  }
+  .letter {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 0 14px;
+    padding: 20px 0 14px;
+    scroll-margin-top: 112px;
+  }
+  .list .letter h2 {
+    top: 120px;
+    font-size: 26px;
+  }
+  .names {
+    columns: 2 130px;
+    column-gap: 20px;
+  }
+  .names li {
+    font-size: 14.5px;
+  }
+  .names li.art::before {
+    left: -10px;
+    width: 5px;
+    height: 5px;
+  }
+  .tour-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .route {
+    width: 84px;
+    height: 63px;
+  }
+  .q-rows a {
+    flex-direction: column;
+    gap: 2px;
+    padding: 12px 14px;
+  }
+  .q-group,
+  .tour-group {
+    scroll-margin-top: 112px;
+  }
+}
+@media print {
+  .list-tools,
+  .jump {
+    display: none;
+  }
 }
 
 /* A tour's stops, numbered on a thread. */
@@ -453,11 +947,42 @@ ol.stops p {
   font-weight: 500;
 }
 
+/* The footer on one line: the site's own links, then the credits, cut with an ellipsis
+   (the whole line in its title) where the column is narrow. */
 .foot {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 28px;
   max-width: 760px;
   margin: 0 auto;
   padding: 20px 24px 48px;
   border-top: 1px solid var(--line);
+  white-space: nowrap;
+}
+.foot nav {
+  display: flex;
+  flex: none;
+  gap: 18px;
+}
+.foot a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.foot a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+.foot nav a:first-child {
+  color: var(--ink);
+  font-weight: 600;
+}
+.foot p {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  color: var(--ink-faint);
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 640px) {
@@ -467,12 +992,32 @@ ol.stops p {
   .bar {
     gap: 8px;
   }
-  /* The mark alone: the lists and the other language fit beside it. */
+  /* The mark alone: the lists and the other language fit beside it; the place and tour
+     pages carry their own way into the map. */
   .brand {
     font-size: 0;
   }
   .bar nav a {
     padding: 6px 8px;
+  }
+  .bar .open {
+    display: none;
+  }
+  .bar-end::before {
+    margin-right: 0;
+  }
+  /* On a phone the footer wraps, centred: the links on one line, the credits below. */
+  .foot {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 16px 40px;
+    text-align: center;
+    white-space: normal;
+  }
+  .foot nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 16px;
   }
   .page {
     padding: 32px 16px 56px;
@@ -517,6 +1062,9 @@ ol.stops p {
   .bar nav a {
     padding: 6px 5px;
     font-size: 12.5px;
+  }
+  .bar-end {
+    gap: 4px;
   }
 }
 
@@ -563,6 +1111,8 @@ ol.stops p {
     0 1px 2px rgb(31 26 19 / 0.05), 0 40px 80px -40px rgb(60 36 12 / 0.45),
     0 18px 36px -24px rgb(31 26 19 / 0.25);
   --wide: 1200px;
+  /* The motion's one curve: quick to start, long to settle. */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
   background: var(--paper);
   color: var(--ink-2);
   font-feature-settings: "ss01";
@@ -612,23 +1162,8 @@ ol.stops p {
   padding: 7px 12px;
   font-size: 14px;
 }
-.home .bar nav a.open {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-left: 8px;
-  padding: 7px 14px;
-  background: var(--ink);
-  color: var(--paper);
-  font-weight: 550;
-}
-.home .bar nav a.open:hover {
-  background: var(--accent);
-  color: #fff;
-}
-.home .bar nav a.open .i {
-  width: 14px;
-  height: 14px;
+.home .bar .open {
+  font-size: 14px;
 }
 
 .landing {
@@ -664,6 +1199,13 @@ ol.stops p {
   font-weight: 550;
   line-height: 1.4;
 }
+.pill a {
+  color: inherit;
+  text-decoration: none;
+}
+.pill:has(a:hover) {
+  border-color: var(--accent-line);
+}
 .pill::before {
   content: "";
   width: 7px;
@@ -674,8 +1216,19 @@ ol.stops p {
 }
 .hero h1 {
   margin: 24px 0 0;
-  font: 700 clamp(40px, 7.2vw, 84px) / 1 var(--sans);
+  font: 700 clamp(44px, 8vw, 96px) / 1 var(--sans);
   letter-spacing: -0.045em;
+}
+/* Each word in its own window, so it can rise into place; the window keeps descenders. */
+.hero h1 .w {
+  display: inline-block;
+  margin-bottom: -0.14em;
+  padding-bottom: 0.14em;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.hero h1 .w > span {
+  display: inline-block;
 }
 .hero .lede {
   max-width: 34em;
@@ -739,7 +1292,9 @@ ol.stops p {
   }
 }
 
-/* The globe in a quiet frame, the way a screen sits on a desk, a glow of the accent behind. */
+/* The globe in a quiet frame, the way a screen sits on a desk, a glow of the accent behind.
+   The picture is the poster of the live map (public/landing.js), which loads over it when
+   pressed. */
 .shot {
   position: relative;
   max-width: var(--wide);
@@ -748,37 +1303,157 @@ ol.stops p {
 .shot::before {
   content: "";
   position: absolute;
-  inset: -12% 6% 30%;
+  inset: -14% 4% 24%;
   z-index: -1;
-  background: radial-gradient(closest-side, var(--accent-soft), transparent);
-  filter: blur(20px);
+  background:
+    radial-gradient(closest-side at 35% 50%, var(--accent-soft), transparent),
+    radial-gradient(closest-side at 70% 45%, rgb(46 98 130 / 0.1), transparent);
+  filter: blur(24px);
 }
-.shot a {
-  display: block;
+.stage {
+  position: relative;
   padding: 8px;
   border: 1px solid var(--line);
   border-radius: 22px;
   background: color-mix(in srgb, var(--paper-2) 70%, transparent);
   box-shadow: var(--frame-shadow);
+  transform-origin: 50% 0;
 }
-.shot img {
+/* The frame lies back and rises upright as the page scrolls (--p from 0 to 1). */
+.tilt .stage {
+  transform: perspective(2000px) rotateX(calc((1 - var(--p, 1)) * 14deg))
+    scale(calc(0.94 + var(--p, 1) * 0.06));
+}
+.tilt .stage.live {
+  transition: transform 600ms var(--ease);
+}
+.poster {
+  position: relative;
+  z-index: 1;
+  display: block;
+  border-radius: 14px;
+  cursor: pointer;
+}
+.poster img,
+.stage iframe {
   display: block;
   width: 100%;
-  height: auto;
   border-radius: 14px;
+}
+.poster img {
+  height: auto;
+  transition: opacity 500ms var(--ease);
+}
+.stage iframe {
+  position: absolute;
+  inset: 8px;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  border: 0;
+  background: var(--paper-3);
+}
+/* The live map is there: the picture gives way to it; a press hands it the pointer. */
+.stage.ready .poster img {
+  opacity: 0;
+}
+.stage.ready.live .poster {
+  visibility: hidden;
+}
+/* The way in, over the middle of the picture. */
+.go {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px 12px 16px;
+  border: 1px solid rgb(255 255 255 / 0.22);
+  border-radius: 999px;
+  background: rgb(18 22 28 / 0.72);
+  backdrop-filter: blur(12px) saturate(1.3);
+  -webkit-backdrop-filter: blur(12px) saturate(1.3);
+  color: #fff;
+  font-size: 15.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 18px 40px -16px rgb(0 0 0 / 0.55);
+  transform: translate(-50%, -50%);
+  transition:
+    transform 240ms var(--ease),
+    background-color 240ms ease;
+}
+.go .i {
+  width: 14px;
+  height: 14px;
+  padding: 7px;
+  box-sizing: content-box;
+  border-radius: 50%;
+  background: var(--accent);
+  fill: #fff;
+  stroke: none;
+}
+.poster:hover .go {
+  background: rgb(18 22 28 / 0.86);
+  transform: translate(-50%, -50%) scale(1.04);
+}
+/* Pressed, the map still on its way: the button waits. */
+.stage.live:not(.ready) .go .i {
+  animation: wait 1s ease-in-out infinite alternate;
+}
+@keyframes wait {
+  to {
+    opacity: 0.35;
+  }
+}
+.done {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  z-index: 2;
+  display: none;
+  padding: 7px 16px;
+  border: 1px solid rgb(255 255 255 / 0.22);
+  border-radius: 999px;
+  background: rgb(18 22 28 / 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  font: 600 13.5px var(--sans);
+  cursor: pointer;
+  transform: translateX(-50%);
+}
+.stage.live.ready .done {
+  display: block;
 }
 .shot figcaption {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 4px 16px;
-  margin-top: 16px;
+  align-items: center;
+  gap: 4px 18px;
+  margin-top: 18px;
   color: var(--ink-faint);
   font-size: 13.5px;
 }
 .shot figcaption b {
   color: var(--ink-soft);
   font-weight: 550;
+}
+.shot figcaption a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--ink-faint);
+  font-weight: 550;
+  text-decoration: none;
+}
+.shot figcaption a:hover {
+  color: var(--accent-ink);
+}
+.shot figcaption .i {
+  width: 13px;
+  height: 13px;
 }
 
 /* The numbers, each a way into its list. */
@@ -1075,10 +1750,13 @@ ol.stops p {
 
 .home .foot {
   max-width: var(--wide);
-  padding: 24px 24px 48px;
-  border-top: 0;
-  color: var(--ink-faint);
-  text-align: center;
+  padding: 24px 0 48px;
+  margin: 0 24px;
+}
+@media (min-width: 1248px) {
+  .home .foot {
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 900px) {
@@ -1117,11 +1795,15 @@ ol.stops p {
     padding: 0 16px;
   }
   /* On a phone the bar holds the mark, the language and the way in; the lists are below. */
-  .home .bar nav a:not(.lang, .open) {
+  .home .bar nav,
+  .home .bar-end::before {
     display: none;
   }
-  .home .bar nav a.open {
-    margin-left: 4px;
+  .home .bar-end {
+    margin-left: auto;
+  }
+  .home .bar .open {
+    display: inline-flex;
   }
   .landing {
     padding: 0 16px;
@@ -1147,20 +1829,40 @@ ol.stops p {
   .shot {
     margin-top: 40px;
   }
-  .shot a {
+  .stage {
     padding: 5px;
     border-radius: 18px;
   }
+  .stage iframe {
+    inset: 5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+  }
   /* The whole screen of the app is too small to read on a phone: the middle of it. */
-  .shot img {
+  .poster img {
     aspect-ratio: 4 / 5;
     object-fit: cover;
     object-position: 45% 50%;
+  }
+  .poster img,
+  .stage iframe {
     border-radius: 13px;
   }
-  .shot figcaption {
-    flex-direction: column;
-    text-align: center;
+  .tilt .stage {
+    transform: perspective(1200px) rotateX(calc((1 - var(--p, 1)) * 10deg))
+      scale(calc(0.96 + var(--p, 1) * 0.04));
+  }
+  .go {
+    top: 58%;
+  }
+  .done {
+    top: 12px;
+    left: 12px;
+    transform: none;
+  }
+  .home .foot {
+    margin: 0 16px;
+    padding: 20px 0 40px;
   }
   .numbers {
     grid-template-columns: repeat(2, 1fr);
@@ -1216,9 +1918,120 @@ ol.stops p {
     font-size: 0;
   }
 }
+/* Motion (public/landing.js; `anim` is set in the head only for a reader who has not asked
+   for less). The hero rises in on load; blocks below come up as they enter the screen,
+   their parts one after another; the numbers count up; the closing picture settles. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+@keyframes word {
+  from {
+    transform: translateY(105%);
+  }
+}
+@keyframes glow {
+  50% {
+    transform: translate(3%, -4%) scale(1.06);
+    opacity: 0.75;
+  }
+}
+@keyframes settle {
+  from {
+    transform: scale(1.12);
+  }
+}
+@keyframes ring {
+  from {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.25, 1.6);
+  }
+}
+.anim .hero .pill {
+  animation: rise 800ms var(--ease) 60ms both;
+}
+.anim .hero h1 .w > span {
+  animation: word 1000ms var(--ease) both;
+  animation-delay: calc(140ms + var(--i) * 90ms);
+}
+.anim .hero .lede {
+  animation: rise 900ms var(--ease) 420ms both;
+}
+.anim .hero .actions-row {
+  animation: rise 900ms var(--ease) 520ms both;
+}
+.anim .shot {
+  animation: rise 1000ms var(--ease) 320ms both;
+}
+.anim .shot::before {
+  animation: glow 14s ease-in-out infinite;
+}
+/* A slow ring round the way in, until the map is pressed. */
+.anim .stage:not(.live) .go::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 1px solid rgb(255 255 255 / 0.5);
+  border-radius: inherit;
+  animation: ring 2.8s var(--ease) 2s infinite;
+  pointer-events: none;
+}
+.rv-on .tile:not(.now),
+.rv-on .sources:not(.now),
+.rv-on .closing:not(.now),
+.rv-on .numbers:not(.now) > li,
+.rv-on .facts-row:not(.now) > li {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 900ms var(--ease),
+    transform 1100ms var(--ease),
+    border-color 200ms ease;
+}
+.rv-on .tile:not(.now) .tile-shot {
+  transform: translate(28px, 28px);
+  transition: transform 1400ms var(--ease) 120ms;
+}
+.rv-on .numbers > li:nth-child(2),
+.rv-on .facts-row > li:nth-child(2),
+.rv-on .tile-place {
+  transition-delay: 90ms;
+}
+.rv-on .numbers > li:nth-child(3),
+.rv-on .facts-row > li:nth-child(3),
+.rv-on .tile-quiz {
+  transition-delay: 180ms;
+}
+.rv-on .numbers > li:nth-child(4) {
+  transition-delay: 270ms;
+}
+.rv-on .numbers > li:nth-child(5) {
+  transition-delay: 360ms;
+}
+.rv-on .tile.in,
+.rv-on .sources.in,
+.rv-on .closing.in,
+.rv-on .numbers.in > li,
+.rv-on .facts-row.in > li,
+.rv-on .tile.in .tile-shot {
+  opacity: 1;
+  transform: none;
+}
+.anim .closing.in:not(.now) img {
+  animation: settle 2600ms var(--ease) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .home *,
-  .home *::before {
+  .home *::before,
+  .home *::after {
     transition: none !important;
+    animation: none !important;
   }
 }
