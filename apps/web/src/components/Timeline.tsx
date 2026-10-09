@@ -570,13 +570,7 @@ export function Timeline({
             locale={locale}
             year={year}
             onView={setView}
-            onReset={() => {
-              setView(FULL_VIEW);
-              // The bar and its button go away: the focus moves to the slider, not the page.
-              range.current?.focus();
-            }}
             label={t("time.window")}
-            resetLabel={t("time.zoom_out")}
             zoomed={zoomed}
           />
         }
@@ -853,18 +847,14 @@ function Overview({
   locale,
   year,
   onView,
-  onReset,
   label,
-  resetLabel,
   zoomed,
 }: {
   view: TimeView;
   locale: Locale;
   year: number;
   onView: (v: TimeView) => void;
-  onReset: () => void;
   label: string;
-  resetLabel: string;
   /** Not zoomed, the window is the whole range and there is nothing to reset. */
   zoomed: boolean;
 }) {
@@ -929,16 +919,6 @@ function Overview({
           className={`absolute inset-y-0 min-w-2 rounded-full ring-1 ring-paper transition-colors ${zoomed ? "bg-ink/35" : "bg-ink/10"}`}
         />
       </div>
-      <button
-        onClick={onReset}
-        // Kept in place when not needed, so the bar's length never changes.
-        disabled={!zoomed}
-        aria-hidden={!zoomed}
-        tabIndex={zoomed ? 0 : -1}
-        className={`rounded-full px-2 text-[11.5px] text-ink-soft hover:bg-paper-2 hover:text-ink ${zoomed ? "" : "invisible"}`}
-      >
-        {resetLabel}
-      </button>
     </div>
   );
 }

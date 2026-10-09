@@ -40,10 +40,8 @@ export const T = {
     tour: "Экскурсия",
     toursAll: "Все экскурсии",
     placesTitle: "Места библейской истории",
-    articlesTitle: "Статьи о городах",
     disputed: "Место спорное",
     photoShows: (site: string) => `На снимке ${site} — одна из версий.`,
-    allPlaces: "Все места",
     toursTitle: "Экскурсии по библейской истории",
     questions: "Вопросы",
     questionsTitle: "Вопросы о местах и истории Библии",
@@ -51,7 +49,6 @@ export const T = {
     showMap: "Показать на карте",
     checkedQ: "Ответ сверен с источниками; историк его ещё не читал.",
     testament: { whole: "Вся Библия", ot: "Ветхий Завет", nt: "Новый Завет" },
-    asks: { where: "Где", when: "Когда", how: "Как далеко и как долго", who: "Кто" },
     stop: "Остановка",
     translation: "Синодальный перевод",
     circa: "ок.",
@@ -61,6 +58,9 @@ export const T = {
     about: "О проекте",
     privacy: "Конфиденциальность",
     allSources: "все источники",
+    data: "Данные",
+    // The other language's switch is an icon: «Язык: English» names it.
+    language: "Язык",
     photo: "Фото",
     pd: "общественное достояние",
   },
@@ -96,10 +96,8 @@ export const T = {
     tour: "Tour",
     toursAll: "All tours",
     placesTitle: "Places of biblical history",
-    articlesTitle: "City articles",
     disputed: "Location disputed",
     photoShows: (site: string) => `Shown: ${site}, one of the proposed sites.`,
-    allPlaces: "All places",
     toursTitle: "Tours of biblical history",
     questions: "Questions",
     questionsTitle: "Questions about the places and history of the Bible",
@@ -107,7 +105,6 @@ export const T = {
     showMap: "Show on the map",
     checkedQ: "Checked against its sources; not yet read by a historian.",
     testament: { whole: "The whole Bible", ot: "Old Testament", nt: "New Testament" },
-    asks: { where: "Where", when: "When", how: "How far and how long", who: "Who" },
     stop: "Stop",
     translation: "King James Version",
     circa: "c.",
@@ -117,6 +114,9 @@ export const T = {
     about: "About",
     privacy: "Privacy",
     allSources: "all sources",
+    data: "Data",
+    // The other language's switch is an icon; this names it for a pointer and a screen reader.
+    language: "Language",
     photo: "Photo",
     pd: "public domain",
   },
@@ -127,17 +127,22 @@ export const T = {
 // Short on purpose: the pictures show what the words would only describe.
 export const LANDING = {
   ru: {
-    title: "Библейская история на глобусе",
+    // The search title keeps the words people search for; the page itself leads with the
+    // globe, the Bible being its first collection, not its limit.
+    title: "История на глобусе — атлас библейской истории",
+    h1: "История на глобусе",
     desc: "Бесплатный атлас: места Библии на 3D-глобусе, государства вокруг них год за годом, экскурсии, статьи с источниками и инструменты для урока.",
-    kicker: "Бесплатный атлас библейской истории",
-    lede: "Места, о которых говорит Библия, на глобусе с рельефом. Передвиньте год — и вокруг них меняются царства, города и названия, от 3500 г. до н. э. до 1300 г. н. э.",
+    kicker: "Первая коллекция — библейская история",
+    lede: "Передвиньте год — и вокруг меняются царства, города и названия.",
     open: "Открыть глобус",
     tours: "Экскурсии",
     docs: "Документация",
     heroAlt:
       "Глобус в 701 г. до н. э.: Новоассирийское царство от Тира до Вавилона, Иерусалим, Дамаск, шкала времени",
-    heroNote: "701 г. до н. э.: Ассирия от Тира до Вавилона, Сеннахирим идёт на Иудею",
-    live: "Нажмите на картинку — откроется этот же вид",
+    heroNote: "701 г. до н. э.: Ассирия от Тира до Вавилона",
+    live: "Покрутить глобус",
+    full: "Во весь экран",
+    liveClose: "Готово",
     stats: ["мест", "экскурсий", "статей", "ответов на вопросы", "битв и осад"],
     rows: [
       [
@@ -188,17 +193,20 @@ export const LANDING = {
     ctaText: "Без регистрации, на телефоне и на компьютере, по-русски и по-английски.",
   },
   en: {
-    title: "Biblical history on a globe",
+    title: "History on a globe — an atlas of biblical history",
+    h1: "History on a globe",
     desc: "A free atlas: the places of the Bible on a 3D globe, the states around them year by year, tours, articles with sources and tools for a lesson.",
-    kicker: "A free atlas of biblical history",
-    lede: "The places the Bible names, on a globe with its relief. Move the year and the kingdoms, towns and names around them change, from 3500 BC to AD 1300.",
+    kicker: "First collection: biblical history",
+    lede: "Move the year and watch kingdoms, towns and names change.",
     open: "Open the globe",
     tours: "Tours",
     docs: "Docs",
     heroAlt:
       "The globe in 701 BC: the Neo-Assyrian Empire from Tyre to Babylon, Jerusalem, Damascus, the timeline",
-    heroNote: "701 BC: Assyria from Tyre to Babylon, Sennacherib marches on Judah",
-    live: "Press the picture to open this view live",
+    heroNote: "701 BC: Assyria from Tyre to Babylon",
+    live: "Explore the globe",
+    full: "Full screen",
+    liveClose: "Done",
     stats: ["places", "tours", "articles", "questions answered", "battles and sieges"],
     rows: [
       [
@@ -264,4 +272,95 @@ type SameWords<D extends Record<string, object>> = {
 export const WORDS_COMPLETE: SameWords<typeof T> & SameWords<typeof LANDING> = {
   ru: true,
   en: true,
+};
+
+/** A Russian noun for a count: one, few, many («1 место», «3 места», «5 мест»). */
+const ru = (n: number, one: string, few: string, many: string) => {
+  const rule = new Intl.PluralRules("ru").select(n);
+  return rule === "one" ? one : rule === "few" ? few : many;
+};
+const en = (n: number, one: string) => (n === 1 ? one : `${one}s`);
+
+/** The words of the three index pages: all places, all tours, all questions. */
+interface ListWords {
+  /** Under the title: how many there are; `n` is the number as written, `k` the count. */
+  placesLead: (n: string, k: number, articles: string) => string;
+  toursLead: (n: string, k: number) => string;
+  questionsLead: (n: string, k: number) => string;
+  all: string;
+  withArticle: string;
+  alphabet: string;
+  findPlace: string;
+  findQuestion: string;
+  nothing: string;
+  stops: (n: number) => string;
+  km: (n: string) => string;
+  /** The parts of the Bible the questions are grouped by, in its order. */
+  parts: Record<Part, string>;
+  /** The same, short, for the bar to jump by. */
+  partsShort: Record<Part, string>;
+}
+type Part = "torah" | "history" | "prophets" | "gospels" | "acts" | "letters";
+export const LISTS: Record<SiteLocale, ListWords> = {
+  ru: {
+    placesLead: (n, k, a) => `${n} ${ru(k, "место", "места", "мест")}, ${a} со статьёй`,
+    toursLead: (n, k) =>
+      `${n} ${ru(k, "экскурсия", "экскурсии", "экскурсий")}. Расстояние — по прямой между остановками.`,
+    questionsLead: (n, k) =>
+      `${n} ${ru(k, "вопрос", "вопроса", "вопросов")} с ответом на карте, в порядке книг Библии.`,
+    all: "Все",
+    withArticle: "Со статьёй",
+    alphabet: "По алфавиту",
+    findPlace: "Найти место",
+    findQuestion: "Найти вопрос",
+    nothing: "Ничего не нашлось",
+    stops: (n) => `${String(n)}\u00a0${ru(n, "остановка", "остановки", "остановок")}`,
+    km: (n) => `≈\u00a0${n}\u00a0км`,
+    parts: {
+      torah: "Пятикнижие",
+      history: "Исторические книги",
+      prophets: "Пророки и учительные книги",
+      gospels: "Евангелия",
+      acts: "Деяния апостолов",
+      letters: "Послания и Откровение",
+    },
+    partsShort: {
+      torah: "Пятикнижие",
+      history: "Исторические",
+      prophets: "Пророки",
+      gospels: "Евангелия",
+      acts: "Деяния",
+      letters: "Послания",
+    },
+  },
+  en: {
+    placesLead: (n, k, a) => `${n} ${en(k, "place")}, ${a} with an article`,
+    toursLead: (n, k) => `${n} ${en(k, "tour")}. Distances are straight lines between the stops.`,
+    questionsLead: (n, k) =>
+      `${n} ${en(k, "question")} answered on the map, in the order of the Bible's books.`,
+    all: "All",
+    withArticle: "With an article",
+    alphabet: "Alphabet",
+    findPlace: "Find a place",
+    findQuestion: "Find a question",
+    nothing: "Nothing found",
+    stops: (n) => `${String(n)}\u00a0${en(n, "stop")}`,
+    km: (n) => `≈\u00a0${n}\u00a0km`,
+    parts: {
+      torah: "The Pentateuch",
+      history: "The historical books",
+      prophets: "The prophets and wisdom books",
+      gospels: "The Gospels",
+      acts: "Acts of the Apostles",
+      letters: "The letters and Revelation",
+    },
+    partsShort: {
+      torah: "Pentateuch",
+      history: "History",
+      prophets: "Prophets",
+      gospels: "Gospels",
+      acts: "Acts",
+      letters: "Letters",
+    },
+  },
 };

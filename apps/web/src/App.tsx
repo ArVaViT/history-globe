@@ -139,6 +139,8 @@ export function App() {
   const timelineBox = useHeightVar("--hg-timeline-h");
   // The map's controls, moved from its corners into the player.
   const [scaleSlot, setScaleSlot] = useState<HTMLDivElement | null>(null);
+  // The scale and the sources' (i) stand on the map, just above the player.
+  const [mapSlot, setMapSlot] = useState<HTMLElement | null>(null);
   const { globe, error: mapError } = useGlobe(container, data, INITIAL);
   // A place's name in the reader's language.
   // Stable between renders: the people list memoises on them.
@@ -246,24 +248,29 @@ export function App() {
   useUrlSync(globe, data);
   const { ready, hover } = useMapFeed(globe);
   useEffect(() => {
-    // The map's own controls (scale, zoom and compass, the sources' (i)) move into the
-    // player: one bar at the bottom instead of pieces floating over the map.
+    // The map's own controls leave their corners: the zoom and compass go into the player,
+    // the scale and the sources' (i) onto the map just above it (in the player they crowded
+    // its buttons). Folded, the player is shorter and they follow it down.
     const root = container.current;
     const parts = [
-      [".maplibregl-ctrl-scale", ".maplibregl-ctrl-bottom-left"],
-      [".maplibregl-ctrl-bottom-right .maplibregl-ctrl-group", ".maplibregl-ctrl-bottom-right"],
-      [".maplibregl-ctrl-attrib", ".maplibregl-ctrl-bottom-right"],
-    ].flatMap(([what = "", home = ""]) => {
+      [".maplibregl-ctrl-attrib", ".maplibregl-ctrl-bottom-right", mapSlot],
+      [".maplibregl-ctrl-scale", ".maplibregl-ctrl-bottom-left", mapSlot],
+      [
+        ".maplibregl-ctrl-bottom-right .maplibregl-ctrl-group",
+        ".maplibregl-ctrl-bottom-right",
+        scaleSlot,
+      ],
+    ] as const;
+    const moved = parts.flatMap(([what, home, slot]) => {
       const el = root?.querySelector(what);
       const corner = root?.querySelector(home);
-      return el && corner ? [{ el, corner }] : [];
+      return el && corner && slot ? [{ el, corner, slot }] : [];
     });
-    if (!scaleSlot || parts.length === 0) return;
-    for (const { el } of parts) scaleSlot.append(el);
+    for (const { el, slot } of moved) slot.append(el);
     return () => {
-      for (const { el, corner } of parts) corner.append(el);
+      for (const { el, corner } of moved) corner.append(el);
     };
-  }, [globe, scaleSlot]);
+  }, [globe, scaleSlot, mapSlot]);
   useEmbed(globe?.renderer, engine, data, ready, EMBED);
   // Once the map is up, fetch the cards in the background: the first click opens at once.
   useEffect(() => {
@@ -1099,6 +1106,15 @@ export function App() {
             </Suspense>
           </section>
 
+          {!compact && (
+            <section
+              ref={setMapSlot}
+              aria-label={t("mapui.sources")}
+              // Folded, the player is a pill in the corner: the two sit on its line.
+              // With a card open they stand left of it; on a phone the card covers that spot.
+              className={`hg-map-slot hg-map-float pointer-events-auto absolute flex items-center gap-2 max-md:right-4 ${cardOpen ? "right-[456px] max-md:hidden" : "right-5"} ${folded ? "bottom-[27px] max-md:bottom-[23px]" : "bottom-[calc(var(--hg-timeline-h,124px)+24px)]"}`}
+            ></section>
+          )}
           <section
             aria-label={t("time.timeline")}
             ref={timelineBox}
