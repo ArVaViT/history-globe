@@ -1,4 +1,4 @@
-import { loadLanguage } from "./i18n";
+import { loadDictionary } from "./i18n";
 import { NT_FROM, type PlaceInfo, type Tour } from "@hg/core";
 import type {
   ChapterYears,
@@ -250,7 +250,7 @@ async function getJson<T>(file: string): Promise<T> {
 export async function loadData(): Promise<LoadedData> {
   // A lesson's default title is written in every language from the dictionaries: they
   // load beside the data, not before it.
-  const dictionaries = Promise.all(LOCALES.map((l) => loadLanguage(l)));
+  const dictionaries = Promise.all(LOCALES.map((l) => loadDictionary(l)));
   const [places, content, siteFc] = await Promise.all([
     getJson<LoadedData["places"]>("places.geojson"),
     getJson<ContentRelease>("content.json"),

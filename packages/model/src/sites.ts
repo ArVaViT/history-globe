@@ -1,3 +1,5 @@
+import { localeData } from "./locale-data.ts";
+
 /** A candidate site as the data build writes it (sites.geojson properties). */
 export interface SiteLabelParts {
   readonly label: string;
@@ -48,124 +50,6 @@ export function siteLabelRu(
   }
 }
 
-/** The same templates in the other languages: the name always in its plain form. */
-const SITE_WORDS: Readonly<
-  Record<
-    string,
-    {
-      same: (x: string) => string;
-      sameName: (x: string) => string;
-      within: (x: string, n: string, u: string) => string;
-      around: (x: string, n: string, u: string) => string;
-      region: (x: string) => string;
-      along: (x: string) => string;
-      km: string;
-      m: string;
-    }
-  >
-> = {
-  uk: {
-    same: (x) => `там само, де ${x}`,
-    sameName: (x) => `там само, де ${x} в інших віршах`,
-    within: (x, n, u) => `${x}, у радіусі ${n} ${u}`,
-    around: (x, n, u) => `${x}, у радіусі близько ${n} ${u}`,
-    region: (x) => `${x}, околиці`,
-    along: (x) => `уздовж: ${x}`,
-    km: "км",
-    m: "м",
-  },
-  es: {
-    same: (x) => `en el mismo lugar que ${x}`,
-    sameName: (x) => `en el mismo lugar que ${x} en otros versículos`,
-    within: (x, n, u) => `${x}, en un radio de ${n} ${u}`,
-    around: (x, n, u) => `${x}, en un radio de unos ${n} ${u}`,
-    region: (x) => `${x}, alrededores`,
-    along: (x) => `a lo largo de: ${x}`,
-    km: "km",
-    m: "m",
-  },
-  pt: {
-    same: (x) => `no mesmo lugar que ${x}`,
-    sameName: (x) => `no mesmo lugar que ${x} em outros versículos`,
-    within: (x, n, u) => `${x}, num raio de ${n} ${u}`,
-    around: (x, n, u) => `${x}, num raio de cerca de ${n} ${u}`,
-    region: (x) => `${x}, arredores`,
-    along: (x) => `ao longo de: ${x}`,
-    km: "km",
-    m: "m",
-  },
-  fr: {
-    same: (x) => `au même endroit que ${x}`,
-    sameName: (x) => `au même endroit que ${x} dans d’autres versets`,
-    within: (x, n, u) => `${x}, dans un rayon de ${n} ${u}`,
-    around: (x, n, u) => `${x}, dans un rayon d’environ ${n} ${u}`,
-    region: (x) => `${x}, environs`,
-    along: (x) => `le long de : ${x}`,
-    km: "km",
-    m: "m",
-  },
-  de: {
-    same: (x) => `am selben Ort wie ${x}`,
-    sameName: (x) => `am selben Ort wie ${x} in anderen Versen`,
-    within: (x, n, u) => `${x}, im Umkreis von ${n} ${u}`,
-    around: (x, n, u) => `${x}, im Umkreis von etwa ${n} ${u}`,
-    region: (x) => `${x}, Umgebung`,
-    along: (x) => `entlang: ${x}`,
-    km: "km",
-    m: "m",
-  },
-  it: {
-    same: (x) => `nello stesso luogo di ${x}`,
-    sameName: (x) => `nello stesso luogo di ${x} in altri versetti`,
-    within: (x, n, u) => `${x}, entro ${n} ${u}`,
-    around: (x, n, u) => `${x}, entro circa ${n} ${u}`,
-    region: (x) => `${x}, dintorni`,
-    along: (x) => `lungo: ${x}`,
-    km: "km",
-    m: "m",
-  },
-  nl: {
-    same: (x) => `op dezelfde plaats als ${x}`,
-    sameName: (x) => `op dezelfde plaats als ${x} in andere verzen`,
-    within: (x, n, u) => `${x}, binnen ${n} ${u}`,
-    around: (x, n, u) => `${x}, binnen ongeveer ${n} ${u}`,
-    region: (x) => `${x}, omgeving`,
-    along: (x) => `langs: ${x}`,
-    km: "km",
-    m: "m",
-  },
-  pl: {
-    same: (x) => `w tym samym miejscu co ${x}`,
-    sameName: (x) => `w tym samym miejscu co ${x} w innych wersetach`,
-    within: (x, n, u) => `${x}, w promieniu ${n} ${u}`,
-    around: (x, n, u) => `${x}, w promieniu około ${n} ${u}`,
-    region: (x) => `${x} i okolice`,
-    along: (x) => `trasa: ${x}`,
-    km: "km",
-    m: "m",
-  },
-  cs: {
-    same: (x) => `na stejném místě jako ${x}`,
-    sameName: (x) => `na stejném místě jako ${x} v jiných verších`,
-    within: (x, n, u) => `${x}, v okruhu ${n} ${u}`,
-    around: (x, n, u) => `${x}, v okruhu asi ${n} ${u}`,
-    region: (x) => `${x} a okolí`,
-    along: (x) => `trasa: ${x}`,
-    km: "km",
-    m: "m",
-  },
-  zh: {
-    same: (x) => `与${x}同地`,
-    sameName: (x) => `与其他经文中的${x}同地`,
-    within: (x, n, u) => `${x}，半径${n}${u}内`,
-    around: (x, n, u) => `${x}，半径约${n}${u}内`,
-    region: (x) => `${x}一带`,
-    along: (x) => `沿：${x}`,
-    km: "公里",
-    m: "米",
-  },
-};
-
 /**
  * siteLabelRu for another language (uk, es, pt, fr, de, it, nl, pl, cs, zh): the same templates, the name
  * as the language's names file gives it. Undefined where the language or the name is missing.
@@ -176,7 +60,7 @@ export function siteLabelIn(
   name: (placeId: string) => string | undefined,
   own?: string,
 ): string | undefined {
-  const w = SITE_WORDS[locale];
+  const w = localeData(locale)?.site;
   if (!w || !p.tpl || !p.ref || p.ref_text === undefined) return undefined;
   const x = name(p.ref);
   if (!x) return undefined;

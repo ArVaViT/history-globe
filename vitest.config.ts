@@ -8,5 +8,7 @@ export default defineConfig({
       "apps/*/src/**/*.test.ts",
       "apps/*/src/**/*.test.tsx",
     ],
+    // The tests read every language, as the build scripts do (locale-data.ts).
+    setupFiles: ["./vitest.setup.ts"],
   },
 });

@@ -40,6 +40,10 @@ import { YEAR_MAX, YEAR_MIN } from "../packages/core/src/engine.ts";
 import { inFocus } from "../packages/core/src/style.ts";
 import { canonicalPosition, refCovers } from "../packages/model/src/scripture.ts";
 import { siteLabelIn, siteLabelRu, type SiteLabelParts } from "../packages/model/src/sites.ts";
+import { loadAllLocaleData } from "../packages/model/src/locale-data.ts";
+
+// Every language is written here, so every language's words are loaded first.
+await loadAllLocaleData();
 
 const root = join(import.meta.dirname, "..");
 const out = join(root, "apps/web/public/data");
