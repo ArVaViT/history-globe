@@ -1,0 +1,112 @@
+---
+title: Offene Daten
+description: Die Orte, die Verse, die sie nennen, die Ereignisse und die Touren als JSON-Dateien, die jeder unter CC BY 4.0 nutzen darf – ohne Schlüssel, ohne Anmeldung.
+---
+
+<p class="lede">
+  Alles, was der Globus über Orte und Verse weiß, ist offen: schlichte JSON-Dateien, die Sie frei
+  auf einer anderen Website oder in einer anderen App unter CC BY 4.0 verwenden dürfen. Kein
+  Schlüssel, keine Anmeldung, keine Grenzen außer dem üblichen Caching.
+</p>
+
+<h2>Welche Orte ein Vers nennt</h2>
+<p>Eine Datei pro Buch der Bibel: jeder Vers, der einen Ort nennt, mit den IDs dieser Orte.</p>
+<pre><code>GET {{site}}/api/v1/verses/Acts.json
+
+{ "Acts.16.11": ["a6a7150", "a68750d", "a91c509"], "Acts.16.12": ["a69e1b8", "a49e1d0"], … }</code></pre>
+<p>
+  Die Orte selbst, mit Namen auf Englisch und Russisch, Art und Punkt, stehen in
+  <code>places.json</code>; verknüpfen Sie über <code>id</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/places.json
+
+[{ "id": "a49e1d0", "name": "Philippi", "name_ru": "Филиппы", "kind": "settlement",
+   "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "page": { "en": "/en/place/philippi/", "ru": "/ru/place/philippi/" } }, …]</code></pre>
+
+<h2>Alle Dateien</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Datei</th>
+        <th>Inhalt</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/v1/index.json</code></td>
+        <td>
+          die Liste der Dateien und Bücher, die Lizenz und die Quellenangaben, das Build-Datum
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/places.json</code></td>
+        <td>
+          jeder Ort: ID, Namen, Art, Punkt, wie viele Verse ihn nennen, seine Seite (für einen Ort,
+          den ein Vers nennt)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/verses/{Book}.json</code></td>
+        <td>
+          ein Vers → die Orte, die er nennt, eine Datei pro Buch (<code>Gen</code>,
+          <code>1Kgs</code>, <code>Acts</code> …)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/events.json</code></td>
+        <td>die datierten Ereignisse, mit <code>ref</code>, wo die Bibel das Ereignis erzählt</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/battles.json</code></td>
+        <td>
+          Schlachten und Belagerungen: Ort, Jahr, Parteien und Ausgang, mit <code>ref</code>, wo die
+          Bibel die Schlacht erzählt
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/questions.json</code></td>
+        <td>
+          Fragen, die Menschen stellen, in beiden Sprachen beantwortet, mit der Ansicht der Karte
+          und den Quellen
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/tours.json</code></td>
+        <td>
+          die Touren: ihre Stationen in der Reihenfolge, jede mit ihrer Textstelle und Anmerkung;
+          <code>by: "sea"</code> für eine Strecke zu Schiff und <code>sailed</code> (Tage und Vers),
+          wo der Text sagt, wie lange sie dauerte
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Konventionen</h2>
+<ul>
+  <li>
+    Verweise sind OSIS mit englischen Buchabkürzungen und der Zählung der King-James-Bibel:
+    <code>Gen.12.6</code>, <code>Acts.16.12-Acts.16.15</code>.
+  </li>
+  <li>Jahre sind astronomisch: 1 v. Chr. ist 0, 586 v. Chr. ist −585.</li>
+  <li>
+    Ein Ort, der in den Quelldaten zweimal unter einem Namen geführt wird, trägt
+    <code>"duplicate": true</code>; ein Ort, dessen Lage umstritten ist,
+    <code>"disputed": true</code>.
+  </li>
+  <li>
+    Die Dateien werden mit jeder Veröffentlichung der Daten neu erzeugt; <code>index.json</code>
+    nennt deren Datum.
+  </li>
+</ul>
+
+<h2>Lizenz und Quellenangabe</h2>
+<p>
+  Die Daten stehen unter <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+  Nutzen Sie sie, verändern Sie sie, verkaufen Sie, was Sie damit bauen; nennen Sie die Quellen, wo
+  Sie die Daten zeigen, so wie <code>index.json</code> sie aufführt: History Globe von Vadym Arnaut
+  sowie OpenBible.info für die Orte, die Verszuordnungen und die Punkte. Die russischen Namen wurden
+  aus der Synodalübersetzung gelesen, die gemeinfrei ist.
+</p>

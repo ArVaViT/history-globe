@@ -496,14 +496,21 @@ export class MapLibreRenderer implements Renderer {
     const seen = new Set<string>();
     const out: PolityName[] = [];
     for (const f of this.map.queryRenderedFeatures(point, { layers: ["polity-fill"] })) {
-      const p = f.properties as { name?: string; name_ru?: string; v?: string; v_ru?: string };
+      const p = f.properties as Record<string, unknown> & { name?: string; v?: string };
       if (!p.name || seen.has(p.name)) continue;
       seen.add(p.name);
+      // Every language's name_<code> and v_<code> the data carries.
+      const names: Record<string, string> = {};
+      const vassals: Record<string, string> = {};
+      for (const [k, v] of Object.entries(p)) {
+        if (typeof v !== "string") continue;
+        if (k.startsWith("name_")) names[k.slice(5)] = v;
+        else if (k.startsWith("v_")) vassals[k.slice(2)] = v;
+      }
       out.push({
         name: p.name,
-        ...(p.name_ru ? { nameRu: p.name_ru } : {}),
-        ...(p.v ? { vassal: p.v } : {}),
-        ...(p.v_ru ? { vassalRu: p.v_ru } : {}),
+        names,
+        ...(p.v ? { vassal: p.v, vassals } : {}),
       });
     }
     return out.length > 0 ? out : null;
@@ -595,12 +602,15 @@ export class MapLibreRenderer implements Renderer {
         type: "Feature",
         geometry: { type: "Point", coordinates: [+lng.toFixed(3), +lat.toFixed(3)] },
         properties: {
+          // The names and vassal lines in every language the state has them in.
+          ...Object.fromEntries(
+            Object.entries(p).filter(([k]) => k.startsWith("name_") || k.startsWith("v_")),
+          ),
           name,
-          name_ru: p.name_ru,
           y0: p.y0,
           y1: p.y1,
           size: 3.4,
-          ...(p.v ? { v: p.v, v_ru: p.v_ru } : {}),
+          ...(p.v ? { v: p.v } : {}),
         },
       });
     }
@@ -701,6 +711,11 @@ export class MapLibreRenderer implements Renderer {
         ? {
             en: p.en,
             ru: p.ru,
+            names: Object.fromEntries(
+              Object.entries(p).filter(
+                (e): e is [string, string] => /^[a-z]{2}$/.test(e[0]) && typeof e[1] === "string",
+              ),
+            ),
             from: p.from,
             to: p.to,
             approx: p.approx === true,

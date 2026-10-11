@@ -1,5 +1,5 @@
 import { YEAR_MAX, YEAR_MIN, type Engine, type Renderer } from "@hg/core";
-import { formatYear, medianYear, periodAt, placeName as nameOf, pick } from "@hg/model";
+import { formatYear, medianYear, periodAt, placeName as nameOf, periodName } from "@hg/model";
 import { BookOpen, ChevronDown, PencilRuler, Search, Settings, X } from "./components/icons";
 import type { Tool } from "./components/ToolsPanel";
 import {
@@ -1140,7 +1140,7 @@ export function App() {
                 </span>
                 {periodNow && (
                   <span className="text-[12.5px] text-ink-soft max-[360px]:hidden">
-                    {pick(periodNow.name, state.locale) ?? ""}
+                    {periodName(periodNow, state.locale)}
                   </span>
                 )}
                 <ChevronDown className="size-4 rotate-180 text-ink-soft" aria-hidden />

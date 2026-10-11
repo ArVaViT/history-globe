@@ -4,6 +4,11 @@ id: ruth
 title:
   en: "Ruth"
   ru: "Руфь"
+  uk: "Рут"
+  es: "Rut"
+  pt: "Rute"
+  de: "Rut"
+  fr: "Ruth"
 year: "1100 BC"
 people: ["Ruth@Rut.1.4-Mat"]
 approximate: true
@@ -13,13 +18,28 @@ stops:
     note:
       en: "In a famine a man of Bethlehem-judah goes with his wife and two sons to sojourn in the country of Moab."
       ru: "Во время голода человек из Вифлеема Иудейского уходит с женой и двумя сыновьями жить на полях Моавитских."
+      uk: "Під час голоду чоловік із Вифлеєму Юдиного йде з дружиною й двома синами пожити в краї Моавському."
+      es: "En una hambruna un hombre de Belén de Judá va con su mujer y sus dos hijos a residir en el país de Moab."
+      pt: "Numa fome, um homem de Belém de Judá vai com a mulher e os dois filhos viver como estrangeiro na terra de Moabe."
+      de: "In einer Hungersnot zieht ein Mann aus Bethlehem in Juda mit seiner Frau und seinen zwei Söhnen, um sich im Land Moab aufzuhalten."
+      fr: "Pendant une famine, un homme de Bethléhem de Juda part avec sa femme et ses deux fils faire un séjour dans le pays de Moab."
   - place: aa0b1d6 # Moab
     ref: Ruth.1.2-Ruth.1.18
     note:
       en: 'Widowed in Moab, Ruth will not leave Naomi: "whither thou goest, I will go."'
       ru: "Овдовев в Моаве, Руфь не оставляет Ноемини: «куда ты пойдешь, туда и я пойду»."
+      uk: "Овдовівши в Моаві, Рут не хоче залишити Ноемі: «куди підеш ти, туди й я піду»."
+      es: "Viuda en Moab, Rut no quiere dejar a Noemí: «donde quiera que tú fueres, iré yo»."
+      pt: "Viúva em Moabe, Rute não quer deixar Noemi: “aonde quer que você for, eu irei.”"
+      de: "Verwitwet in Moab, will Rut Naemi nicht verlassen: „Wo du hin gehst, da will ich auch hin gehen.“"
+      fr: "Veuve à Moab, Ruth ne veut pas quitter Naomi : « Où tu iras j’irai. »"
   - place: a112427 # Bethlehem
     ref: Ruth.1.19-Ruth.4.17
     note:
       en: "In Bethlehem she gleans in the field of Boaz and becomes his wife; her son Obed is the grandfather of David."
       ru: "В Вифлееме она подбирает колосья на поле Вооза и становится его женой; её сын Овид — дед Давида."
+      uk: "У Вифлеємі вона збирає колоски на полі Вооза й стає його дружиною; її син Овед — дід Давида."
+      es: "En Belén espiga en el campo de Booz y llega a ser su esposa; su hijo Obed es el abuelo de David."
+      pt: "Em Belém ela respiga no campo de Boaz e torna-se sua esposa; seu filho Obede é o avô de Davi."
+      de: "In Bethlehem liest sie auf dem Feld des Boas Ähren auf und wird seine Frau; ihr Sohn Obed ist der Großvater Davids."
+      fr: "À Bethléhem, elle glane dans le champ de Boaz et devient sa femme ; son fils Obed est le grand-père de David."

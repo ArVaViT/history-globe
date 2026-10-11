@@ -7,6 +7,11 @@ id: paul-rome
 title:
   en: "Paul's voyage to Rome"
   ru: "Путь Павла в Рим"
+  uk: "Плавання Павла до Рима"
+  es: "El viaje de Pablo a Roma"
+  pt: "A viagem de Paulo a Roma"
+  de: "Die Reise des Paulus nach Rom"
+  fr: "Le voyage de Paul vers Rome"
 year: "AD 60"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -18,73 +23,138 @@ stops:
     note:
       en: "Held at Caesarea, Paul sails for Italy as a prisoner."
       ru: "Из Кесарии, где его держали под стражей, Павел отплывает в Италию."
+      uk: "Утримуваний у Кесарії, Павло відпливає до Італії як в’язень."
+      es: "Retenido en Cesarea, Pablo zarpa para Italia como preso."
+      pt: "Detido em Cesareia, Paulo navega para a Itália como prisioneiro."
+      de: "In Caesarea in Haft, segelt Paulus als Gefangener nach Italien."
+      fr: "Détenu à Césarée, Paul s’embarque pour l’Italie comme prisonnier."
   - place: a98e4d7
     ref: Acts.27.3
     by: sea
     note:
       en: "Julius lets Paul visit friends."
       ru: "Юлий позволяет Павлу сходить к друзьям."
+      uk: "Юлій дозволяє Павлові відвідати друзів."
+      es: "Julio permite a Pablo visitar a sus amigos."
+      pt: "Júlio permite que Paulo visite amigos."
+      de: "Julius erlaubt Paulus, Freunde zu besuchen."
+      fr: "Julius permet à Paul d’aller chez des amis."
   - place: aa4b3e2
     ref: Acts.27.5-Acts.27.6
     by: sea
     note:
       en: "Transfer to a ship of Alexandria."
       ru: "Пересадка на александрийский корабль."
+      uk: "Пересадка на александрійський корабель."
+      es: "Trasbordo a una nave de Alejandría."
+      pt: "Transferência para um navio de Alexandria."
+      de: "Umstieg auf ein Schiff aus Alexandria."
+      fr: "Transfert sur un navire d’Alexandrie."
   - place: ab793ce
     ref: Acts.27.7
     by: sea
     note:
       en: "Slowly off Cnidus."
       ru: "Медленное плавание мимо Книда."
+      uk: "Повільно біля Кніда."
+      es: "Avanzan despacio frente a Gnido."
+      pt: "Lentamente diante de Cnido."
+      de: "Langsam vor Knidos."
+      fr: "Navigation lente au large de Cnide."
   - place: a1c44ea
     ref: Acts.27.7
     by: sea
     note:
       en: "Under the lee of Crete at Salmone."
       ru: "Под Критом у Салмоны."
+      uk: "Під захистом Криту біля Салмони."
+      es: "Al abrigo de Creta, junto a Salmona."
+      pt: "Ao abrigo de Creta, em Salmona."
+      de: "Im Schutz Kretas bei Salmone."
+      fr: "À l’abri de la Crète, vers Salmone."
   - place: aae626a
     ref: Acts.27.8-Acts.27.12
     by: sea
     note:
       en: 'Fair Havens; Paul warns that "this voyage will be with hurt and much damage, not only of the lading and ship, but also of our lives."'
       ru: "Хорошие Пристани; Павел предупреждает, что «плавание будет с затруднениями и с большим вредом не только для груза и корабля, но и для нашей жизни»."
+      uk: "Добрі Пристані; Павло застерігає: «з утратою і з великою шкодою, не тільки для тягару і для статку, та й для душ наших буде плаваннє»."
+      es: "Buenos Puertos; Pablo advierte que «con trabajo y mucho daño, no sólo de la cargazón y de la nave, mas aun de nuestras personas, habrá de ser la navegación»."
+      pt: "Bons Portos; Paulo adverte que “a viagem trará prejuízo e grande perda, não só da carga e do navio, mas também de nossas vidas.”"
+      de: "Schönhafen; Paulus warnt: „ich sehe, daß die Schiffahrt will mit Leid und großem Schaden ergehen, nicht allein der Last und des Schiffes sondern auch unsers Lebens“."
+      fr: "Beaux-Ports ; Paul avertit : « la navigation ne se fera pas sans péril et sans beaucoup de dommage, non seulement pour la cargaison et pour le navire, mais encore pour nos personnes »."
   - place: aca2b0a
     ref: Acts.27.14-Acts.27.17
     by: sea
     note:
       en: "The tempestuous wind Euroclydon drives the ship past Cauda."
       ru: "Бурный ветер эвроклидон несёт корабль мимо Клавды."
+      uk: "Бурхливий вітер Евроклідон несе корабель повз Клавду."
+      es: "El viento tempestuoso Euroclidón arrastra la nave más allá de Clauda."
+      pt: "O vento tempestuoso Euroclidão arrasta o navio além de Cauda."
+      de: "Der stürmische Wind Euroklydon treibt das Schiff an Kauda vorbei."
+      fr: "Le vent impétueux Euraquilon emporte le navire au-delà de Clauda."
   - place: a57835d
     ref: Acts.27.39-Acts.28.11
     by: sea
     note:
       en: "Shipwreck; three months on the island."
       ru: "Кораблекрушение; три месяца на острове."
+      uk: "Корабельна аварія; три місяці на острові."
+      es: "Naufragio; tres meses en la isla."
+      pt: "Naufrágio; três meses na ilha."
+      de: "Schiffbruch; drei Monate auf der Insel."
+      fr: "Naufrage ; trois mois dans l’île."
   - place: a1e3697
     ref: Acts.28.12
     by: sea
     note:
       en: "Three days at Syracuse."
       ru: "Три дня в Сиракузах."
+      uk: "Три дні в Сиракузах."
+      es: "Tres días en Siracusa."
+      pt: "Três dias em Siracusa."
+      de: "Drei Tage in Syrakus."
+      fr: "Trois jours à Syracuse."
   - place: a63bb26
     ref: Acts.28.13
     by: sea
     note:
       en: "Rhegium."
       ru: "Ригия."
+      uk: "Регій."
+      es: "Regio."
+      pt: "Régio."
+      de: "Rhegion."
+      fr: "Rhegium."
   - place: a4488e9
     ref: Acts.28.13-Acts.28.14
     by: sea
     note:
       en: "Seven days with the brothers."
       ru: "Семь дней у братьев."
+      uk: "Сім днів з братами."
+      es: "Siete días con los hermanos."
+      pt: "Sete dias com os irmãos."
+      de: "Sieben Tage bei den Brüdern."
+      fr: "Sept jours avec les frères."
   - place: a121d5e
     ref: Acts.28.15
     note:
       en: "Believers come out to meet Paul."
       ru: "Братья выходят навстречу Павлу."
+      uk: "Віруючі виходять назустріч Павлові."
+      es: "Los creyentes salen al encuentro de Pablo."
+      pt: "Os crentes saem ao encontro de Paulo."
+      de: "Gläubige kommen Paulus entgegen."
+      fr: "Des croyants viennent à la rencontre de Paul."
   - place: afc8e7a
     ref: Acts.28.16
     note:
       en: "Rome."
       ru: "Рим."
+      uk: "Рим."
+      es: "Roma."
+      pt: "Roma."
+      de: "Rom."
+      fr: "Rome."

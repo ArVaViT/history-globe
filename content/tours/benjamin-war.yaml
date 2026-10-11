@@ -11,6 +11,11 @@ id: benjamin-war
 title:
   en: "The war with Benjamin"
   ru: "Война с Вениамином"
+  uk: "Війна з Веніяміном"
+  es: "La guerra contra Benjamín"
+  pt: "A guerra contra Benjamim"
+  de: "Der Krieg gegen Benjamin"
+  fr: "La guerre contre Benjamin"
 year: "1150 BC"
 # Where the story happens, told of a Levite and then of all Israel: no time on foot.
 walked: false
@@ -21,43 +26,88 @@ stops:
     note:
       en: "A Levite of mount Ephraim goes to Bethlehem-judah to bring back his concubine; her father keeps him feasting for five days."
       ru: "Левит с горы Ефремовой идёт в Вифлеем Иудейский вернуть наложницу; её отец пять дней удерживает его угощением."
+      uk: "Левіт з гори Єфремової іде до Вифлеєму Юдиного, щоб повернути свою наложницю; її батько тримає його п’ять днів на бенкеті."
+      es: "Un levita del monte de Efraín va a Belén de Judá para recuperar a su concubina; el padre de ella lo retiene cinco días de banquete."
+      pt: "Um levita do monte Efraim vai a Belém de Judá para trazer de volta a sua concubina; o pai dela o retém em banquetes por cinco dias."
+      de: "Ein Levit vom Gebirge Ephraim geht nach Bethlehem in Juda, um seine Nebenfrau zurückzuholen; ihr Vater hält ihn fünf Tage lang bei Tisch fest."
+      fr: "Un Lévite de la montagne d’Éphraïm se rend à Bethléhem de Juda pour ramener sa concubine ; le père de celle-ci le retient cinq jours de festin."
   - place: a403c45 # Jebus
     ref: Judg.19.10-Judg.19.12
     note:
       en: "With the day far spent they reach Jebus, which is Jerusalem; the Levite will not lodge in a city of strangers and goes on to Gibeah."
       ru: "К вечеру они доходят до Иевуса, что ныне Иерусалим; левит не хочет ночевать в городе иноплеменников и идёт дальше, к Гиве."
+      uk: "Коли день уже хилиться, вони доходять до Євусу, тобто Єрусалима; левіт не хоче зупинятися в місті чужинців і йде далі до Гіви."
+      es: "Con el día ya avanzado llegan a Jebús, que es Jerusalén; el levita no quiere hospedarse en una ciudad de extranjeros y sigue hasta Gabaa."
+      pt: "Com o dia já avançado, chegam a Jebus, que é Jerusalém; o levita não quer pernoitar numa cidade de estrangeiros e segue para Gibeá."
+      de: "Als der Tag fast vorüber ist, erreichen sie Jebus, das ist Jerusalem; der Levit will nicht in einer Stadt von Fremden übernachten und zieht weiter nach Gibea."
+      fr: "Le jour étant fort avancé, ils arrivent à Jébus, qui est Jérusalem ; le Lévite refuse de loger dans une ville d’étrangers et poursuit jusqu’à Guibea."
   - place: ac24f5f # Gibeah
     ref: Judg.19.13-Judg.19.30
     note:
       en: "At Gibeah of Benjamin no one takes them in but an old man; the men of the city abuse the concubine through the night, and she dies at the door. The Levite cuts her body into twelve pieces and sends them through all the coasts of Israel."
       ru: "В Гиве Вениаминовой их не пускает в дом никто, кроме одного старика; мужчины города всю ночь насилуют наложницу, и она умирает у порога. Левит разрезает её тело на двенадцать частей и рассылает во все пределы Израилевы."
+      uk: "У Гіві Веніяминовій ніхто, окрім одного старого, не пускає їх до себе; чоловіки міста наруговуються над наложницею всю ніч, і вона вмирає біля дверей. Левіт розрізає її тіло на дванадцять частин і розсилає по всіх межах Ізраїлю."
+      es: "En Gabaa de Benjamín nadie los recoge, salvo un anciano; los hombres de la ciudad abusan de la concubina durante la noche, y ella muere a la puerta. El levita corta su cuerpo en doce pedazos y los envía por todos los confines de Israel."
+      pt: "Em Gibeá de Benjamim ninguém os recebe, a não ser um velho; os homens da cidade abusam da concubina durante a noite, e ela morre à porta. O levita corta o corpo dela em doze pedaços e os envia por todos os territórios de Israel."
+      de: "In Gibea in Benjamin nimmt sie niemand auf außer einem alten Mann; die Männer der Stadt missbrauchen die Nebenfrau die ganze Nacht hindurch, und sie stirbt an der Tür. Der Levit zerstückelt ihren Leichnam in zwölf Teile und sendet sie in alle Gebiete Israels."
+      fr: "À Guibea de Benjamin, personne ne les accueille sauf un vieillard ; les hommes de la ville abusent de la concubine toute la nuit, et elle meurt à la porte. Le Lévite coupe son corps en douze morceaux et les envoie dans tout le territoire d’Israël."
   - place: a736f6c # Mizpah
     ref: Judg.20.1-Judg.20.17
     note:
       en: 'All Israel, "from Dan even to Beer-sheba", gathers to the Lord at Mizpah; Benjamin refuses to give up the men of Gibeah.'
       ru: "Весь Израиль, «от Дана до Вирсавии», собирается пред Господа в Массифу; Вениамин отказывается выдать развращённых людей Гивы."
+      uk: "Увесь Ізраїль, «від Дана аж до Берсабиї», збирається до Господа в Міцпі; Веніямин відмовляється видати мужів Гіви."
+      es: "Todo Israel, «desde Dan hasta Beer-seba», se reúne ante el Señor en Mizpa; Benjamín se niega a entregar a los hombres de Gabaa."
+      pt: "Todo o Israel, “desde Dã até Berseba”, reúne-se perante o Senhor em Mispá; Benjamim recusa-se a entregar os homens de Gibeá."
+      de: "Ganz Israel versammelt sich „von Dan bis gen Beer-Seba“ bei dem Herrn in Mizpa; Benjamin weigert sich, die Männer von Gibea auszuliefern."
+      fr: "Tout Israël, « depuis Dan jusqu’à Beer-Schéba », se rassemble devant l’Éternel à Mitspa ; Benjamin refuse de livrer les hommes de Guibea."
   - place: a64f355 # Bethel
     ref: Judg.20.18-Judg.20.28
     note:
       en: "At the house of God, in Hebrew Beth-el and usually taken as the town of Bethel, Israel asks who shall go up first; twice beaten, they weep and fast before the ark, where Phinehas the son of Eleazar serves, and are told to go up once more."
       ru: "В доме Божием (по-еврейски Бет-Эль, обычно понимаемом как город Вефиль) Израиль вопрошает, кому идти первым; дважды разбитые, они плачут и постятся пред ковчегом, при котором служит Финеес, сын Елеазара, и получают повеление идти снова."
+      uk: "У домі Божому, івритом Бет-Ел, який зазвичай ототожнюють з містом Бет-Елом, Ізраїль питає, хто піде першим; двічі розбиті, вони плачуть і постять перед ковчегом, при якому служить Финеєс, син Елеазара, і чують веління вийти ще раз."
+      es: "En la casa de Dios, en hebreo Betel, que por lo común se toma por la ciudad de Betel, Israel pregunta quién subirá primero; derrotados dos veces, lloran y ayunan ante el arca, donde sirve Finees, hijo de Eleazar, y se les manda subir una vez más."
+      pt: "Na casa de Deus, em hebraico Betel e geralmente identificada com a cidade de Betel, Israel pergunta quem deve subir primeiro; derrotados duas vezes, choram e jejuam diante da arca, onde serve Finéias, filho de Eleazar, e são mandados subir mais uma vez."
+      de: "Am Haus Gottes, auf Hebräisch Beth-El und gewöhnlich als die Stadt Bethel verstanden, fragt Israel, wer zuerst hinaufziehen soll; zweimal geschlagen, weinen und fasten sie vor der Lade, bei der Pinhas, der Sohn Eleasars, dient, und es wird ihnen gesagt, noch einmal hinaufzuziehen."
+      fr: "À la maison de Dieu, en hébreu Béthel et ordinairement identifiée à la ville de Béthel, Israël demande qui montera le premier ; deux fois battu, il pleure et jeûne devant l’arche, où sert Phinées, fils d’Éléazar, et il reçoit l’ordre de monter encore une fois."
   - place: ac24f5f # Gibeah
     ref: Judg.20.29-Judg.20.44
     note:
       en: "An ambush is set round Gibeah; the city is taken and burned, and Benjamin is smitten: 25,100 men fall that day."
       ru: "Вокруг Гивы ставят засаду; город взят и сожжён, Вениамин разбит: в тот день падают двадцать пять тысяч сто человек."
+      uk: "Навколо Гіви влаштовують засідку; місто здобуто й спалено, а Веніямина розбито: того дня падає 25 100 чоловіків."
+      es: "Se tiende una emboscada alrededor de Gabaa; la ciudad es tomada e incendiada, y Benjamín es herido: aquel día caen 25 100 hombres."
+      pt: "Prepara-se uma emboscada ao redor de Gibeá; a cidade é tomada e incendiada, e Benjamim é ferido: caem 25.100 homens naquele dia."
+      de: "Rings um Gibea wird ein Hinterhalt gelegt; die Stadt wird eingenommen und verbrannt, und Benjamin wird geschlagen: 25 100 Mann fallen an diesem Tag."
+      fr: "Une embuscade est dressée autour de Guibea ; la ville est prise et incendiée, et Benjamin est battu : 25 100 hommes tombent ce jour-là."
   - place: a45acc3 # Rimmon
     ref: Judg.20.45-Judg.20.48
     note:
       en: "Six hundred men flee to the rock of Rimmon in the wilderness and stay there four months, all that is left of the tribe."
       ru: "Шестьсот человек бегут к скале Риммону в пустыне и остаются там четыре месяца, всё, что уцелело от колена."
+      uk: "Шістсот чоловіків тікають до скелі Риммон у пустелі й лишаються там чотири місяці — усе, що залишилося від коліна."
+      es: "Seiscientos hombres huyen a la peña de Rimón, en el desierto, y permanecen allí cuatro meses: es todo lo que queda de la tribu."
+      pt: "Seiscentos homens fogem para a rocha de Rimom, no deserto, e ficam ali quatro meses, tudo o que resta da tribo."
+      de: "Sechshundert Mann fliehen zum Felsen Rimmon in der Wüste und bleiben dort vier Monate, alles, was vom Stamm übrig ist."
+      fr: "Six cents hommes s’enfuient au rocher de Rimmon, dans le désert, et y restent quatre mois : tout ce qui reste de la tribu."
   - place: af92088 # Jabesh-gilead
     ref: Judg.21.1-Judg.21.14
     note:
       en: "Israel has sworn not to give Benjamin wives. Jabesh-gilead sent no one to Mizpah: twelve thousand men smite it and bring four hundred virgins to the camp at Shiloh."
       ru: "Израиль поклялся не отдавать дочерей Вениамину. Из Иависа Галаадского никто не приходил в Массифу: двенадцать тысяч поражают его и приводят четыреста девиц в стан в Силом."
+      uk: "Ізраїль поклявся не давати Веніяминові жінок. Явіс Гілеадський нікого не прислав до Міцпи: дванадцять тисяч чоловіків б’ють його й приводять чотириста дів до табору в Шіло."
+      es: "Israel ha jurado no dar mujeres a Benjamín. Jabes de Galaad no envió a nadie a Mizpa: doce mil hombres la hieren y llevan cuatrocientas vírgenes al campamento de Silo."
+      pt: "Israel jurou não dar mulheres a Benjamim. Jabes-Gileade não enviou ninguém a Mispá: doze mil homens a ferem e levam quatrocentas virgens ao acampamento em Siló."
+      de: "Israel hat geschworen, Benjamin keine Frauen zu geben. Jabesch in Gilead hat niemanden nach Mizpa gesandt: Zwölftausend Mann schlagen es und bringen vierhundert Jungfrauen ins Lager nach Silo."
+      fr: "Israël a juré de ne pas donner de femmes à Benjamin. Jabès en Galaad n’avait envoyé personne à Mitspa : douze mille hommes la frappent et amènent quatre cents vierges au camp de Silo."
   - place: aa4680a # Shiloh
     ref: Judg.21.15-Judg.21.25
     note:
       en: 'At the yearly feast of the Lord in Shiloh the Benjamites, hidden in the vineyards, catch wives from the daughters of Shiloh as they come out to dance. "In those days there was no king in Israel: every man did that which was right in his own eyes."'
       ru: "На ежегодном празднике Господнем в Силоме Вениамитяне, засев в виноградниках, хватают себе жён из девиц Силомских, вышедших плясать. «В те дни не было царя у Израиля; каждый делал то, что ему казалось справедливым»."
+      uk: "На щорічному святі Господа в Шіло веніяминяни, сховані у виноградниках, хапають собі жінок з-поміж дочок Шіло, коли ті виходять танцювати. «Того часу не було царя в Ізраїлї; кожен чинив, що йому здавалось добрим.»"
+      es: "En la fiesta anual del Señor en Silo, los benjamitas, ocultos en las viñas, arrebatan esposas de entre las hijas de Silo cuando salen a danzar. «En estos días no había rey en Israel: cada uno hacía lo recto delante de sus ojos»."
+      pt: "Na festa anual do Senhor em Siló, os benjamitas, escondidos nas vinhas, capturam esposas entre as filhas de Siló quando elas saem para dançar. “Naqueles dias não havia rei em Israel. Cada um fazia o que era certo aos seus próprios olhos.”"
+      de: "Beim jährlichen Fest des Herrn in Silo fangen die Benjaminiter, in den Weinbergen versteckt, sich Frauen unter den Töchtern Silos, als diese zum Tanz herauskommen. „Zu der Zeit war kein König in Israel; ein jeglicher tat, was ihn recht deuchte.“"
+      fr: "À la fête annuelle de l’Éternel à Silo, les Benjamites, cachés dans les vignes, enlèvent des femmes parmi les filles de Silo au moment où elles sortent pour danser. « En ce temps-là, il n’y avait point de roi en Israël. Chacun faisait ce qui lui semblait bon. »"

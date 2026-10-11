@@ -6,6 +6,11 @@ id: saul-king
 title:
   en: "Saul, the first king"
   ru: "Саул, первый царь"
+  uk: "Саул, перший цар"
+  es: "Saúl, el primer rey"
+  pt: "Saul, o primeiro rei"
+  de: "Saul, der erste König"
+  fr: "Saül, le premier roi"
 year: "1050 BC"
 people: ["Saul@1Sa.9.2-Act"]
 approximate: true
@@ -15,43 +20,88 @@ stops:
     note:
       en: "Looking for his father's lost asses, Saul comes to the land of Zuph, and there Samuel anoints him captain over the Lord's inheritance."
       ru: "Разыскивая пропавших ослиц отца, Саул приходит в землю Цуф, и там Самуил помазывает его в правителя наследия Господня."
+      uk: "Шукаючи загублених ослиць свого батька, Саул приходить до землі Цуф, і там Самуїл помазує його вождем над Господнім уділом."
+      es: "Buscando las asnas perdidas de su padre, Saúl llega a la tierra de Zuf, y allí Samuel lo unge caudillo sobre la heredad del Señor."
+      pt: "Procurando as jumentas perdidas de seu pai, Saul chega à terra de Zufe, e ali Samuel o unge comandante sobre a herança do Senhor."
+      de: "Auf der Suche nach den verlorenen Eseln seines Vaters kommt Saul in das Land Zuf, und dort salbt Samuel ihn zum Fürsten über das Erbteil des Herrn."
+      fr: "À la recherche des ânesses perdues de son père, Saül arrive au pays de Tsuph, et là Samuel l’oint chef sur l’héritage de l’Éternel."
   - place: a736f6c # Mizpah
     ref: 1Sam.10.17-1Sam.10.24
     note:
       en: 'At Mizpah the lot falls on Saul, hidden among the stuff, and the people shout: "God save the king."'
       ru: "В Массифе жребий указывает на Саула, скрывшегося в обозе, и народ восклицает: «да живет царь!»"
+      uk: "У Міцпі жереб падає на Саула, що сховався серед речей, і народ кричить: «Нехай жиє царь!»"
+      es: "En Mizpa la suerte cae sobre Saúl, escondido entre el bagaje, y el pueblo grita: «Viva el rey»."
+      pt: "Em Mispá a sorte cai sobre Saul, escondido no meio da bagagem, e o povo grita: “Viva o rei!”"
+      de: "In Mizpa trifft das Los Saul, der sich beim Gerät versteckt hat, und das Volk jauchzt: „Glück zu dem König!“"
+      fr: "À Mitspa, le sort tombe sur Saül, caché vers les bagages, et le peuple s’écrie : « Vive le roi ! »"
   - place: af92088 # Jabesh-gilead
     ref: 1Sam.11.1-1Sam.11.11
     note:
       en: "Nahash the Ammonite besieges Jabesh-gilead; Saul gathers Israel, breaks into their camp in the morning watch and smites the Ammonites."
       ru: "Наас Аммонитянин осаждает Иавис Галаадский; Саул собирает Израиль, в утреннюю стражу врывается в их стан и поражает Аммонитян."
+      uk: "Наас Аммонітянин облягає Явіс Гілеадський; Саул збирає Ізраїль, уривається в їхній табір під ранішню сторожу й розбиває аммонітян."
+      es: "Nahas el amonita sitia Jabes de Galaad; Saúl reúne a Israel, irrumpe en su campamento en la vigilia de la mañana y hiere a los amonitas."
+      pt: "Naás, o amonita, cerca Jabes-Gileade; Saul reúne Israel, irrompe no acampamento deles na vigília da manhã e fere os amonitas."
+      de: "Nahas, der Ammoniter, belagert Jabesch in Gilead; Saul versammelt Israel, bricht in der Morgenwache in ihr Lager ein und schlägt die Ammoniter."
+      fr: "Nachasch l’Ammonite assiège Jabès en Galaad ; Saül rassemble Israël, pénètre dans leur camp à la veille du matin et bat les Ammonites."
   - place: ab94aea # Gilgal
     ref: 1Sam.13.8-1Sam.13.14
     note:
       en: "At Gilgal, tired of waiting seven days for Samuel, Saul offers the burnt offering himself; Samuel tells him his kingdom shall not continue."
       ru: "В Галгале, не дождавшись Самуила за семь дней, Саул сам возносит всесожжение; Самуил говорит ему: «не устоять царствованию твоему»."
+      uk: "У Гілгалі, втомившись сім днів чекати Самуїла, Саул сам приносить цілопалення; Самуїл каже йому, що його царство не втримається."
+      es: "En Gilgal, cansado de esperar siete días a Samuel, Saúl mismo ofrece el holocausto; Samuel le dice que su reino no será duradero."
+      pt: "Em Gilgal, cansado de esperar sete dias por Samuel, Saul oferece ele mesmo o holocausto; Samuel lhe diz que o seu reino não continuará."
+      de: "In Gilgal, des siebentägigen Wartens auf Samuel müde, bringt Saul das Brandopfer selbst dar; Samuel sagt ihm, sein Königtum werde keinen Bestand haben."
+      fr: "À Guilgal, las d’attendre Samuel pendant sept jours, Saül offre lui-même l’holocauste ; Samuel lui dit que son royaume ne durera pas."
   - place: adea06c # Michmash
     ref: 1Sam.13.23-1Sam.14.15
     note:
       en: "At the passage of Michmash Jonathan and his armourbearer climb up to the Philistine garrison, and there is a very great trembling in their camp."
       ru: "У переправы Михмасской Ионафан с оруженосцем взбирается к отряду Филистимлян, и в их стане поднимается ужас великий от Господа."
+      uk: "На переході Міхмас Йонатан і його зброєносець видираються до філістимського гарнізону, і в їхньому таборі здіймається дуже великий трепет."
+      es: "En el paso de Micmas Jonatán y su escudero suben hasta la guarnición filistea, y hay un gran temblor en su campamento."
+      pt: "Na passagem de Micmás, Jônatas e o seu escudeiro sobem até o destacamento filisteu, e há um tremor muito grande no acampamento deles."
+      de: "Am Pass von Michmas klettern Jonatan und sein Waffenträger zur Besatzung der Philister hinauf, und ein sehr großes Zittern ergreift deren Lager."
+      fr: "Au défilé de Micmasch, Jonathan et son écuyer grimpent jusqu’au poste des Philistins, et une très grande terreur saisit leur camp."
   - place: ab94aea # Gilgal
     ref: 1Sam.15.12-1Sam.15.33
     note:
       en: 'Back in Gilgal from the war with Amalek, Saul has spared what he was told to destroy: "to obey is better than sacrifice," and the kingdom is torn from him.'
       ru: "Вернувшись в Галгал с войны с Амаликом, Саул пощадил то, что велено было истребить: «послушание лучше жертвы», и царство отторгнуто от него."
+      uk: "Знову в Гілгалі після війни з Амалеком Саул пощадив те, що було велено знищити: «покора лучша за жертви», і царство відібрано від нього."
+      es: "De vuelta en Gilgal de la guerra contra Amalec, Saúl ha perdonado lo que se le mandó destruir: «el obedecer es mejor que los sacrificios», y el reino le es arrebatado."
+      pt: "De volta a Gilgal, da guerra contra Amaleque, Saul poupou o que lhe fora mandado destruir: “a obediência é melhor do que o sacrifício”, e o reino lhe é arrancado."
+      de: "Zurück in Gilgal vom Krieg gegen Amalek, hat Saul verschont, was er vernichten sollte: „Gehorsam ist besser denn Opfer“, und das Königtum wird ihm entrissen."
+      fr: "De retour à Guilgal après la guerre contre Amalek, Saül a épargné ce qu’il avait reçu l’ordre de détruire : « l’obéissance vaut mieux que les sacrifices », et le royaume lui est arraché."
   - place: aca444b # En-dor
     ref: 1Sam.28.7-1Sam.28.25
     note:
       en: "Before the last battle, disguised, he goes by night to a woman with a familiar spirit at En-dor and hears that tomorrow he and his sons will be with Samuel."
       ru: "Перед последней битвой он, переодевшись, идёт ночью к волшебнице в Аэндор и слышит, что завтра он и сыновья его будут с Самуилом."
+      uk: "Перед останнім боєм, переодягнений, він іде вночі до жінки, що має дух ворожбитський, в Ен-Дорі й чує, що завтра він і його сини будуть із Самуїлом."
+      es: "Antes de la última batalla, disfrazado, va de noche a una mujer que tiene espíritu de adivinación en Endor y oye que mañana él y sus hijos estarán con Samuel."
+      pt: "Antes da última batalha, disfarçado, vai de noite a uma mulher com espírito familiar em En-Dor e ouve que, no dia seguinte, ele e os filhos estarão com Samuel."
+      de: "Vor der letzten Schlacht geht er verkleidet bei Nacht in En-Dor zu einer Frau, die einen Wahrsagegeist hat, und hört, dass er und seine Söhne morgen bei Samuel sein werden."
+      fr: "Avant la dernière bataille, déguisé, il va de nuit chez une femme qui évoque les esprits à En-Dor et apprend que le lendemain lui et ses fils seront avec Samuel."
   - place: a2a8df0 # Beth-shan
     ref: 1Sam.31.8-1Sam.31.10
     note:
       en: "The day after the battle the Philistines find Saul and his three sons fallen on Mount Gilboa and fasten his body to the wall of Beth-shan."
       ru: "На другой день после битвы Филистимляне находят Саула и трёх его сыновей, павших на горе Гелвуе, и вешают его тело на стене Беф-Сана."
+      uk: "Наступного дня після бою філістимляни знаходять Саула та трьох його синів полеглими на горі Гільбоа й прибивають його тіло до муру Бет-Шеана."
+      es: "Al día siguiente de la batalla los filisteos encuentran a Saúl y a sus tres hijos caídos en el Monte Gilboa y clavan su cuerpo en el muro de Bet-seán."
+      pt: "No dia seguinte à batalha, os filisteus encontram Saul e seus três filhos caídos no Monte Gilboa e prendem o seu corpo ao muro de Bete-Seã."
+      de: "Am Tag nach der Schlacht finden die Philister Saul und seine drei Söhne gefallen auf dem Gebirge Gilboa und heften seinen Leichnam an die Mauer von Bet-Schean."
+      fr: "Le lendemain de la bataille, les Philistins trouvent Saül et ses trois fils tombés sur le Mont Guilboa et attachent son corps au mur de Beth-Schean."
   - place: af92088 # Jabesh-gilead
     ref: 1Sam.31.11-1Sam.31.13
     note:
       en: "The valiant men of Jabesh-gilead, whom he once saved, go all night, take the bodies from the wall, and bury their bones under a tree at Jabesh."
       ru: "Сильные люди из Иависа Галаадского, которых он некогда спас, идут всю ночь, снимают тела со стены и погребают кости под дубом в Иависе."
+      uk: "Хоробрі мужі Явіс Гілеадського, яких він колись урятував, ідуть цілу ніч, знімають тіла з муру й ховають їхні кістки під деревом у Явісі."
+      es: "Los valientes de Jabes de Galaad, a quienes él salvó una vez, caminan toda la noche, bajan los cuerpos del muro y sepultan sus huesos bajo un árbol en Jabes."
+      pt: "Os homens valentes de Jabes-Gileade, a quem ele outrora salvou, caminham a noite toda, tiram os corpos do muro e sepultam os seus ossos debaixo de uma árvore em Jabes."
+      de: "Die tapferen Männer von Jabesch in Gilead, die er einst gerettet hatte, gehen die ganze Nacht, nehmen die Leichname von der Mauer und begraben ihre Gebeine unter einem Baum bei Jabesch."
+      fr: "Les vaillants hommes de Jabès en Galaad, qu’il avait jadis sauvés, marchent toute la nuit, enlèvent les corps du mur et enterrent leurs os sous un arbre à Jabès."

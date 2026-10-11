@@ -1,6 +1,6 @@
 /**
- * Writes the documentation site, apps/web/public/docs/ (English) and docs/ru/ (Russian),
- * from the page sources in content/docs/{en,ru}/*.html: what the globe is, how its data
+ * Writes the documentation site, apps/web/public/docs/ (English) and docs/<lang>/ (every
+ * other language), from the page sources in content/docs/<lang>/*.html: what the globe is, how its data
  * is made and checked, how to embed it, its sources and its author. Static pages with the
  * globe's font and colours and no app bundle: a menu in groups, a page outline, code
  * samples with their language and a copy button, and a search over the pages' sections
@@ -37,6 +37,7 @@ const out = join(pub, "docs");
 const site = process.env.SITE_URL?.replace(/\/+$/, "") ?? "";
 const REPO = "https://github.com/ArVaViT/history-globe";
 
+// The documentation is written in every language the site is published in.
 type Lang = SiteLocale;
 // English first: its pages sit at the root of docs/.
 const LANGS: readonly Lang[] = ["en", ...LOCALES.filter((l) => l !== "en")];
@@ -46,10 +47,54 @@ type Page = DocPage;
 
 /** The menu: the pages in groups, in the order they are read (and paged through). */
 const GROUPS: readonly { name: Readonly<Record<Lang, string>>; pages: readonly Page[] }[] = [
-  { name: { en: "Get started", ru: "Начало" }, pages: ["index"] },
-  { name: { en: "Developers", ru: "Разработчикам" }, pages: ["embedding", "api"] },
-  { name: { en: "Data", ru: "Данные" }, pages: ["methodology", "sources"] },
-  { name: { en: "About", ru: "О проекте" }, pages: ["author", "privacy"] },
+  {
+    name: {
+      en: "Get started",
+      ru: "Начало",
+      uk: "Початок",
+      es: "Primeros pasos",
+      pt: "Primeiros passos",
+      de: "Erste Schritte",
+      fr: "Premiers pas",
+    },
+    pages: ["index"],
+  },
+  {
+    name: {
+      en: "Developers",
+      ru: "Разработчикам",
+      uk: "Розробникам",
+      es: "Desarrolladores",
+      pt: "Desenvolvedores",
+      de: "Für Entwickler",
+      fr: "Développeurs",
+    },
+    pages: ["embedding", "api"],
+  },
+  {
+    name: {
+      en: "Data",
+      ru: "Данные",
+      uk: "Дані",
+      es: "Datos",
+      pt: "Dados",
+      de: "Daten",
+      fr: "Données",
+    },
+    pages: ["methodology", "sources"],
+  },
+  {
+    name: {
+      en: "About",
+      ru: "О проекте",
+      uk: "Про проєкт",
+      es: "Acerca de",
+      pt: "Sobre",
+      de: "Über das Projekt",
+      fr: "À propos",
+    },
+    pages: ["author", "privacy"],
+  },
 ];
 const PAGES: readonly Page[] = GROUPS.flatMap((g) => g.pages);
 if (PAGES.length !== DOC_PAGES.length || DOC_PAGES.some((p) => !PAGES.includes(p)))
@@ -58,6 +103,7 @@ const GROUP_OF = new Map(GROUPS.flatMap((g) => g.pages.map((p) => [p, g.name] as
 
 const T = {
   en: {
+    language: "Language",
     docs: "Docs",
     menu: "Documentation",
     onPage: "On this page",
@@ -78,6 +124,7 @@ const T = {
     overview: "Overview",
   },
   ru: {
+    language: "Язык",
     docs: "Документация",
     menu: "Документация",
     onPage: "На странице",
@@ -97,7 +144,112 @@ const T = {
     openMenu: "Меню",
     overview: "Обзор",
   },
-} as const;
+  uk: {
+    language: "Мова",
+    docs: "Документація",
+    menu: "Документація",
+    onPage: "На сторінці",
+    copy: "Копіювати",
+    copied: "Скопійовано",
+    updated: "Дані на",
+    open: "Відкрити глобус",
+    prev: "Назад",
+    next: "Далі",
+    data: "Дані під CC BY 4.0",
+    search: "Пошук у документації",
+    noResults: "Нічого не знайдено",
+    edit: "Редагувати сторінку",
+    report: "Повідомити про помилку",
+    source: "Вихідний код",
+    skip: "До змісту",
+    openMenu: "Меню",
+    overview: "Огляд",
+  },
+  es: {
+    language: "Idioma",
+    docs: "Documentación",
+    menu: "Documentación",
+    onPage: "En esta página",
+    copy: "Copiar",
+    copied: "Copiado",
+    updated: "Datos a",
+    open: "Abrir el globo",
+    prev: "Anterior",
+    next: "Siguiente",
+    data: "Datos bajo CC BY 4.0",
+    search: "Buscar en la documentación",
+    noResults: "No se encontró nada",
+    edit: "Editar esta página",
+    report: "Informar de un error",
+    source: "Código fuente",
+    skip: "Ir al contenido",
+    openMenu: "Menú",
+    overview: "Resumen",
+  },
+  pt: {
+    language: "Idioma",
+    docs: "Documentação",
+    menu: "Documentação",
+    onPage: "Nesta página",
+    copy: "Copiar",
+    copied: "Copiado",
+    updated: "Dados de",
+    open: "Abrir o globo",
+    prev: "Anterior",
+    next: "Próxima",
+    data: "Dados sob CC BY 4.0",
+    search: "Pesquisar na documentação",
+    noResults: "Nada encontrado",
+    edit: "Editar esta página",
+    report: "Relatar um erro",
+    source: "Código-fonte",
+    skip: "Ir para o conteúdo",
+    openMenu: "Menu",
+    overview: "Visão geral",
+  },
+  de: {
+    language: "Sprache",
+    docs: "Dokumentation",
+    menu: "Dokumentation",
+    onPage: "Auf dieser Seite",
+    copy: "Kopieren",
+    copied: "Kopiert",
+    updated: "Datenstand",
+    open: "Globus öffnen",
+    prev: "Zurück",
+    next: "Weiter",
+    data: "Daten unter CC BY 4.0",
+    search: "Dokumentation durchsuchen",
+    noResults: "Nichts gefunden",
+    edit: "Seite bearbeiten",
+    report: "Fehler melden",
+    source: "Quellcode",
+    skip: "Zum Inhalt",
+    openMenu: "Menü",
+    overview: "Überblick",
+  },
+  fr: {
+    language: "Langue",
+    docs: "Documentation",
+    menu: "Documentation",
+    onPage: "Sur cette page",
+    copy: "Copier",
+    copied: "Copié",
+    updated: "Données au",
+    open: "Ouvrir le globe",
+    prev: "Précédent",
+    next: "Suivant",
+    data: "Données sous CC BY 4.0",
+    search: "Rechercher dans la documentation",
+    noResults: "Aucun résultat",
+    edit: "Modifier cette page",
+    report: "Signaler une erreur",
+    source: "Code source",
+    skip: "Aller au contenu",
+    openMenu: "Menu",
+    overview: "Vue d’ensemble",
+  },
+} as const satisfies Record<Lang, Record<string, string>>;
 
 const read = (file: string): unknown =>
   existsSync(join(data, file)) ? JSON.parse(readFileSync(join(data, file), "utf8")) : undefined;
@@ -163,7 +315,7 @@ function parse(file: string): Source {
 function dateIn(iso: string, l: Lang): string {
   const d = new Date(`${iso}T12:00:00Z`);
   if (Number.isNaN(d.getTime())) return iso;
-  return new Intl.DateTimeFormat(l === "ru" ? "ru-RU" : "en-GB", {
+  return new Intl.DateTimeFormat(l === "en" ? "en-GB" : l, {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -171,10 +323,9 @@ function dateIn(iso: string, l: Lang): string {
   }).format(d);
 }
 
-/** The Russian form for a count by the language's own rules: 1 город, 2 города, 5 городов. */
-const RU_COUNT = new Intl.PluralRules("ru");
-function plural(n: number, one: string, few: string, many: string): string {
-  const form = RU_COUNT.select(n);
+/** A word's form for a count by the language's own rules: 1 город, 2 города, 5 городов. */
+function plural(l: Lang, n: number, one: string, few: string, many: string): string {
+  const form = new Intl.PluralRules(l).select(n);
   return form === "one" ? one : form === "few" ? few : many;
 }
 
@@ -183,14 +334,14 @@ function plural(n: number, one: string, few: string, many: string): string {
  * the count takes, `{{~name|…}}` with the word alone. An unknown name is an error, so a typo
  * cannot reach a page.
  */
-function fill(body: string, n: Record<string, string>, file: string): string {
+function fill(body: string, n: Record<string, string>, file: string, l: Lang): string {
   return body.replace(
     /\{\{(~?)(\w+)(?:\|([^|}]+)\|([^|}]+)\|([^|}]+))?\}\}/g,
     (_, bare: string, k: string, one?: string, few?: string, many?: string) => {
       const v = n[k];
       if (v === undefined) throw new Error(`${file}: unknown or unavailable {{${k}}}`);
       if (!one || !few || !many) return v;
-      const word = plural(Number(v), one, few, many);
+      const word = plural(l, Number(v), one, few, many);
       return bare ? word : `${v} ${word}`;
     },
   );
@@ -327,6 +478,64 @@ export function typesetEnglish(html: string): string {
     .join("");
 }
 
+/** The text of a page (not its tags, code or <pre>) run through `fix`. */
+const inText = (html: string, fix: (text: string) => string) =>
+  html
+    .split(/(<pre[\s\S]*?<\/pre>|<code[\s\S]*?<\/code>|<[^>]+>)/)
+    .map((part, i) => (i % 2 === 1 ? part : fix(part)))
+    .join("");
+
+/** Ukrainian, as the Russian: «586 р.», «до н. е.» whole, a dash keeps its word before it. */
+export function typesetUkrainian(html: string): string {
+  const NB = "\u00a0";
+  return inText(html, (t) =>
+    t
+      .replace(/(\d|[IVXLC]) (р\.|рр\.|ст\.|км|м(?![а-яіїєґ])|КБ|МБ)/g, `$1${NB}$2`)
+      .replace(/до н\. е\./g, `до${NB}н.${NB}е.`)
+      .replace(/н\. е\./g, `н.${NB}е.`)
+      .replace(/([^\s>]) — /g, `$1${NB}— `),
+  );
+}
+
+/**
+ * Spanish, Portuguese, German and French: a number keeps its unit and its era (586 a. C.,
+ * 586 v. Chr., 586 av. J.-C.); French also keeps « », : ; ! ? on their word with a thin
+ * no-break space.
+ */
+function typesetLatin(l: Lang): (html: string) => string {
+  const NB = "\u00a0";
+  const NNB = "\u202f";
+  return (html) =>
+    inText(html, (t) => {
+      let x = t
+        .replace(/(\d) (km|KB|MB|kB)\b/g, `$1${NB}$2`)
+        .replace(
+          /(\d) (a\. ?C\.|d\. ?C\.|v\. Chr\.|n\. Chr\.|av\. J\.-C\.|apr\. J\.-C\.)/g,
+          `$1${NB}$2`,
+        )
+        .replace(/\b(a|d|v|n|av|apr)\. (C\.|Chr\.|J\.-C\.)/g, `$1.${NB}$2`);
+      if (l === "fr")
+        x = x
+          .replace(/ ([:;!?»])/g, `${NNB}$1`)
+          .replace(/« /g, `«${NNB}`)
+          .replace(/(\S)([;!?])(?=\s|$)/g, `$1${NNB}$2`);
+      return x;
+    });
+}
+
+/** Each language's typography. */
+const TYPESET: Readonly<Record<Lang, (html: string) => string>> = {
+  en: typesetEnglish,
+  ru: typeset,
+  uk: typesetUkrainian,
+  es: typesetLatin("es"),
+  pt: typesetLatin("pt"),
+  de: typesetLatin("de"),
+  fr: typesetLatin("fr"),
+};
+/** The languages that preload the Cyrillic font. */
+const CYRILLIC: ReadonlySet<Lang> = new Set(["ru", "uk"]);
+
 /** A code sample's language, from its first line: markup, an HTTP request or JavaScript. */
 const langOf = (code: string) =>
   /^\s*&lt;/.test(code) ? "HTML" : /^GET /.test(code) ? "HTTP" : "JavaScript";
@@ -435,12 +644,12 @@ function page(o: {
     LANGS.map((x) => [x, `docs/${prefix(x)}${file(it.name)}`]),
   ) as Record<Lang, string>;
   const meta = headMeta({ site, title: it.src.title, desc: it.src.description, paths, l });
-  const langs = LANGS.filter((x) => x !== l)
-    .map(
-      (x) =>
-        `<a class="btn lang" href="${here(x, it.name)}" hreflang="${x}" lang="${x}" aria-label="${LOCALE_NAMES[x]}">${svg("globe")}<span>${LOCALE_NAMES[x]}</span></a>`,
-    )
-    .join("");
+  // The languages behind one button (seven no longer fit the bar): a list that opens
+  // without script, each language under its own name, the page's own marked.
+  const langs = `<details class="langs"><summary class="btn lang" title="${t.language}" aria-label="${t.language}: ${LOCALE_NAMES[l]}">${svg("globe")}<span>${LOCALE_NAMES[l]}</span></summary><ul>${LANGS.map(
+    (x) =>
+      `<li><a href="${here(x, it.name)}" hreflang="${x}" lang="${x}"${x === l ? ' aria-current="page"' : ""}>${LOCALE_NAMES[x]}</a></li>`,
+  ).join("")}</ul></details>`;
   // The outline: the page's h2 under its entry in the menu, for screens without the right column.
   const outline = (p: Page) =>
     p === it.name && it.toc.some((h) => h.level === 2)
@@ -503,7 +712,7 @@ function page(o: {
     <meta name="theme-color" content="#0c1218" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="${up}../favicon.svg" type="image/svg+xml" />
     <title>${it.name === "index" ? `History Globe ${t.menu}` : `${esc(it.src.title)} | History Globe ${t.docs}`}</title>${meta}
-    <link rel="preload" href="${up}fonts/golos-text-${l === "ru" ? "cyrillic" : "latin"}-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="${up}fonts/golos-text-${CYRILLIC.has(l) ? "cyrillic" : "latin"}-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="${up}docs.css" />
     <script>document.documentElement.className = "js";</script>
     <script defer src="${up}docs.js"></script>
@@ -714,7 +923,7 @@ const SCRIPT = `// History Globe docs: menu, search, outline, copy buttons. Buil
 
 const n = counts();
 rmSync(out, { recursive: true, force: true });
-mkdirSync(join(out, "ru"), { recursive: true });
+for (const l of LANGS) mkdirSync(join(out, prefix(l)), { recursive: true });
 mkdirSync(join(out, "fonts"), { recursive: true });
 for (const [pkg, file] of FONT_FILES)
   copyFileSync(join(FONTS, pkg, "files", file), join(out, "fonts", file));
@@ -732,10 +941,8 @@ for (const l of LANGS) {
     PAGES.map((p) => {
       const file = `content/docs/${l}/${p}.html`;
       const source = parse(join(root, file));
-      const filled = fill(source.body, n, file);
-      const { body, toc } = headings(
-        highlight(features(l === "ru" ? typeset(filled) : typesetEnglish(filled)), l),
-      );
+      const filled = fill(source.body, n, file, l);
+      const { body, toc } = headings(highlight(features(TYPESET[l](filled)), l));
       return [p, { name: p, src: source, body, toc }];
     }),
   ) as Record<Page, Built>;

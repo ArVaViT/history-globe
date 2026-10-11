@@ -144,7 +144,9 @@ describe("the site's languages", () => {
   it("knows its published locales and nothing else", () => {
     expect(isLocale("ru")).toBe(true);
     expect(isLocale("en")).toBe(true);
-    expect(isLocale("de")).toBe(false);
+    expect(isLocale("de")).toBe(true);
+    expect(isLocale("fr")).toBe(true);
+    expect(isLocale("zh")).toBe(false);
     expect(isLocale(null)).toBe(false);
   });
 });

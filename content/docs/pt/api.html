@@ -1,0 +1,113 @@
+---
+title: Dados abertos
+description: Os lugares, os versículos que os nomeiam, os acontecimentos e os roteiros como arquivos JSON que qualquer pessoa pode usar sob CC BY 4.0 — sem chave, sem cadastro.
+---
+
+<p class="lede">
+  Tudo o que o globo sabe sobre lugares e versículos é aberto: arquivos JSON simples, livres para
+  usar em outro site ou aplicativo sob CC BY 4.0. Sem chave, sem cadastro, sem limites além do cache
+  comum.
+</p>
+
+<h2>Quais lugares um versículo nomeia</h2>
+<p>
+  Um arquivo por livro da Bíblia: cada versículo que nomeia um lugar, com os ids desses lugares.
+</p>
+<pre><code>GET {{site}}/api/v1/verses/Acts.json
+
+{ "Acts.16.11": ["a6a7150", "a68750d", "a91c509"], "Acts.16.12": ["a69e1b8", "a49e1d0"], … }</code></pre>
+<p>
+  Os lugares em si, com nomes em inglês e em russo, tipo e ponto, estão em
+  <code>places.json</code>; faça a junção por <code>id</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/places.json
+
+[{ "id": "a49e1d0", "name": "Philippi", "name_ru": "Филиппы", "kind": "settlement",
+   "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "page": { "en": "/en/place/philippi/", "ru": "/ru/place/philippi/" } }, …]</code></pre>
+
+<h2>Todos os arquivos</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Arquivo</th>
+        <th>O que contém</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/v1/index.json</code></td>
+        <td>a lista de arquivos e livros, a licença e os créditos, a data da compilação</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/places.json</code></td>
+        <td>
+          todos os lugares: id, nomes, tipo, ponto, quantos versículos o nomeiam, sua página (para
+          um lugar que algum versículo nomeia)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/verses/{Book}.json</code></td>
+        <td>
+          um versículo → os lugares que ele nomeia, um arquivo por livro (<code>Gen</code>,
+          <code>1Kgs</code>, <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/events.json</code></td>
+        <td>
+          os acontecimentos datados, com <code>ref</code> quando a Bíblia conta o acontecimento
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/battles.json</code></td>
+        <td>
+          batalhas e cercos: lugar, ano, lados e desfecho, com <code>ref</code> quando a Bíblia
+          conta a batalha
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/questions.json</code></td>
+        <td>
+          perguntas que as pessoas fazem, respondidas nos dois idiomas, com a vista do mapa e as
+          fontes
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/tours.json</code></td>
+        <td>
+          os roteiros: suas paradas em ordem, cada uma com sua passagem e nota;
+          <code>by: "sea"</code> para um trecho feito por mar, e <code>sailed</code> (dias e
+          versículo) onde o texto diz quanto durou
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Convenções</h2>
+<ul>
+  <li>
+    As referências são OSIS, com abreviações inglesas dos livros e numeração da King James:
+    <code>Gen.12.6</code>, <code>Acts.16.12-Acts.16.15</code>.
+  </li>
+  <li>Os anos são astronômicos: 1 a.C. é 0, 586 a.C. é −585.</li>
+  <li>
+    Um lugar listado duas vezes com o mesmo nome nos dados de origem traz
+    <code>"duplicate": true</code>; um lugar de sítio disputado, <code>"disputed": true</code>.
+  </li>
+  <li>
+    Os arquivos são reconstruídos a cada versão dos dados; <code>index.json</code> informa a sua
+    data.
+  </li>
+</ul>
+
+<h2>Licença e crédito</h2>
+<p>
+  Os dados estão sob <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Use-os,
+  altere-os, venda o que construir com eles; nomeie as fontes onde os mostrar, como o
+  <code>index.json</code> as lista: History Globe, de Vadym Arnaut, e OpenBible.info pelos lugares,
+  pelas marcações de versículos e pelos pontos. Os nomes russos foram lidos da tradução Sinodal, que
+  está em domínio público.
+</p>

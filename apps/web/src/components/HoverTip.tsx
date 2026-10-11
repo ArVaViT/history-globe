@@ -1,8 +1,8 @@
-import { YEAR_MAX, type AncientSite, type PolityName, type Renderer } from "@hg/core";
+import { polityText, YEAR_MAX, type AncientSite, type PolityName, type Renderer } from "@hg/core";
 import { useEffect, useState } from "react";
 import { formatYear, formatYearRange, type Locale, placeName, pick } from "@hg/model";
 import { useTranslation } from "../i18n";
-import type { PlaceProps } from "../data";
+import { hasOwnName, whereIn, type PlaceProps } from "../data";
 
 /** Small label that follows the pointer over a place: name, its kind, and the other-language name. */
 export function HoverTip({
@@ -15,18 +15,15 @@ export function HoverTip({
   locale: Locale;
 }) {
   const { t } = useTranslation();
-  const ru = locale === "ru";
   const kindKey = `kind.${place.kind}`;
   const kind = t(kindKey) === kindKey ? "" : t(kindKey);
   const primary = placeName(place, locale);
-  const secondary =
-    ru && place.name_ru
-      ? place.name
-      : place.where !== place.name
-        ? ru
-          ? (place.where_ru ?? place.where)
-          : place.where
-        : "";
+  // Under a name of the reader's language, the English one; else where it is today.
+  const secondary = hasOwnName(place, locale)
+    ? place.name
+    : place.where !== place.name
+      ? (whereIn(place, locale) ?? place.where)
+      : "";
   return (
     <div
       className="pointer-events-none absolute z-10 -translate-y-full rounded-lg bg-ink/90 px-2.5 py-1.5 text-paper shadow-lg"
@@ -63,16 +60,17 @@ export function PolityTip({ renderer, locale }: { renderer: Renderer; locale: Lo
       className="pointer-events-none absolute z-10 -translate-y-full rounded-lg bg-ink/75 px-2.5 py-1 text-paper shadow"
       style={{ left: tip.at.x + 14, top: tip.at.y - 10 }}
     >
-      {tip.polities.slice(0, 3).map((p) => (
-        <div key={p.name} className="text-[12.5px] leading-snug">
-          {locale === "ru" ? (p.nameRu ?? p.name) : p.name}
-          {p.vassal && (
-            <span className="ml-1 tracking-normal normal-case opacity-80">
-              {locale === "ru" ? (p.vassalRu ?? p.vassal) : p.vassal}
-            </span>
-          )}
-        </div>
-      ))}
+      {tip.polities.slice(0, 3).map((p) => {
+        const { name, vassal } = polityText(p, locale);
+        return (
+          <div key={p.name} className="text-[12.5px] leading-snug">
+            {name}
+            {vassal && (
+              <span className="ml-1 tracking-normal normal-case opacity-80">{vassal}</span>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -155,7 +153,7 @@ export function AncientTip({ renderer, locale }: { renderer: Renderer; locale: L
       }
     >
       <div className="font-serif text-[14px] leading-tight">
-        {pick({ en: site.en, ru: site.ru }, locale) ?? site.en}
+        {site.names?.[locale] ?? pick({ en: site.en, ru: site.ru }, locale) ?? site.en}
         {kind && <span className="ml-1.5 font-sans text-[11px] text-paper/60">{kind}</span>}
       </div>
       <div className="text-[11px] text-paper/70">{years}</div>

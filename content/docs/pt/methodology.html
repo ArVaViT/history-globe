@@ -1,0 +1,195 @@
+---
+title: Dados e metodologia
+description: De onde vem cada lugar, fronteira, data e pessoa do History Globe, como foi conferido e o que ainda é incerto.
+---
+
+<p class="lede">
+  O globo é construído a partir de conjuntos de dados acadêmicos abertos, corrigidos e ampliados à
+  mão e verificados automaticamente a cada compilação. Esta página explica de onde vem cada camada,
+  o que mudamos e o que não sabemos.
+</p>
+
+<h2>Lugares da Bíblia</h2>
+<p>
+  Os {{places}} lugares e seus versículos vêm do
+  <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
+    >Bible Geocoding Data do OpenBible.info</a
+  >, que pondera as identificações propostas na literatura para cada lugar. Mantemos a identificação
+  preferida por ele e a sua estimativa da probabilidade de cada sítio candidato.
+</p>
+<ul>
+  <li>
+    <b>A certeza em palavras.</b> Quando nenhum segundo sítio sério é proposto, a pontuação do
+    OpenBible (0–1000) indica quão segura é a identificação: a partir de 800 ela é tratada como
+    estabelecida e a ficha não diz nada; abaixo disso, a ficha diz <i>mais provável</i> (a partir de
+    600) ou <i>provisório</i>. Um lugar é <i>em disputa</i> quando o segundo candidato tem uma
+    proporção significativa; todos os sítios candidatos são então mostrados com as suas proporções.
+  </li>
+  <li>
+    <b>Nenhuma coordenada do OpenStreetMap ou do Google.</b> O OpenBible registra de onde veio cada
+    coordenada. Os pontos que ele tomou do OpenStreetMap ou do Google são substituídos pelas
+    coordenadas do Wikidata (CC0), ou o lugar é deixado de fora ({{excluded}} lugares). Uma
+    verificação à parte faz a compilação falhar se algum desses pontos permanecer.
+  </li>
+  <li>
+    <b>Nomes tirados do texto.</b> Os nomes russos seguem a tradução Sinodal de 1876: para quase
+    todo nome, a compilação guarda um versículo em que ele ocorre e confere se o nome está nesse
+    versículo.
+  </li>
+</ul>
+
+<h2>Quando os lugares existiram</h2>
+<p>
+  Uma cidade no mapa é desenhada por inteiro apenas nos anos em que existiu. Para {{life}} lugares
+  da Bíblia, os anos de fundação, destruição e abandono são registrados à mão, cada um com suas
+  fontes (autores antigos, crônicas, inscrições, relatórios de escavações). Uma data disputada é
+  omitida em vez de adivinhada.
+</p>
+<p>
+  As {{ancient}} cidades do mundo antigo que a Bíblia não nomeia — capitais, portos e santuários
+  como Ugarit, Hattusa, Mari ou Delfos — foram escolhidas e datadas uma a uma, cada uma conferida em
+  duas fontes, com um identificador no <a href="https://pleiades.stoa.org">Pleiades</a> ou no
+  Wikidata e um ponto sobre o sítio antigo, e não sobre a cidade moderna.
+</p>
+
+<h2>Fronteiras</h2>
+<p>
+  Os estados e suas fronteiras ano a ano vêm do
+  <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatria</a> (Seshat Global History Databank,
+  v0.2.0), um conjunto de dados aberto das entidades políticas do mundo a partir de 3400 a.C. Foi
+  elaborado a partir de atlas históricos e é aproximado, sobretudo antes do primeiro milênio a.C.
+</p>
+<p>
+  Para as terras da Bíblia, corrigimos o conjunto onde as fontes discordam dele: {{overrides}}
+  correções no momento, cada uma com o seu motivo e as suas fontes. Judá permanece no mapa até 586
+  a.C., Israel começa com o reinado de Davi em 1010 a.C. e não em 1000 a.C., a Filístia fica
+  restrita à planície costeira das suas cinco cidades, e uma dinastia termina quando perde a sua
+  última sede de poder. O Levante e o Egito, a Mesopotâmia, a Anatólia e o Irã, o mundo greco-romano
+  do Novo Testamento e o Oriente Próximo até 1300 d.C. foram conferidos ano a ano, entre eles o
+  declínio e a recuperação da Assíria no século VIII a.C., a Babilônia sob Merodaque-Baladã, Pérgamo
+  legada a Roma em 133 a.C., a Macedônia depois de Pidna e a Trácia anexada em 46 d.C. Cada lote de
+  correções é primeiro testado contra as formas desenhadas e depois conferido de novo, de modo
+  independente, por um segundo revisor, com base nas fontes.
+</p>
+<p>
+  Um reino que pagava tributo a um império, ou que reinava como seu Estado cliente, é desenhado em
+  um tom mais claro da cor do império, com “sob a Assíria” ou “sob Roma” abaixo do seu nome: Judá
+  sob a Assíria, o Egito e a Babilônia; Israel e a Filístia sob a Assíria; a Judeia dos hasmoneus e
+  dos herodes sob Roma (e, por três anos, a Pártia); e os nabateus e a Comagena sob Roma. Estes
+  {{vassals}} períodos foram redigidos a partir das inscrições reais assírias, das Crônicas
+  Babilônicas, da Bíblia, de Josefo e de histórias modernas, e conferidos de novo em uma revisão à
+  parte; um ano conhecido apenas com precisão de uma década é marcado “c.” nos dados. Depois da
+  queda de Samaria em 722 a.C., a terra de Israel é desenhada como a província assíria em que se
+  tornou.
+</p>
+
+<h2>Pessoas</h2>
+<p>
+  As {{people}} pessoas da Bíblia e os seus vínculos familiares vêm do TIPNR do STEP Bible (Tyndale
+  House, Cambridge). Não aceitamos os vínculos sem conferir:
+</p>
+<ul>
+  <li>
+    os vínculos familiares das 1.200 pessoas que o texto mais nomeia, e as genealogias de 1
+    Crônicas, foram confrontados com os versículos; 153 vínculos que o texto não afirma foram
+    removidos — os irmãos de Jesus como filhos de José e Maria, Jezabel como mãe de Acazias — e os
+    vínculos ausentes da genealogia de Jesus foram acrescentados a partir do texto;
+  </li>
+  <li>
+    todos os 1.136 vínculos entre uma pessoa e um lugar em que ela tem papel central ou secundário
+    foram lidos versículo por versículo; 344 foram removidos (Moisés “em Canaã”, Abraão “em Sodoma”,
+    lugares de um filho atribuídos ao pai) e 94 receberam um versículo melhor;
+  </li>
+  <li>
+    os homônimos são distinguidos como o texto os distingue: “João Batista”, “João filho de
+    Zebedeu”, “Acazias, rei de Judá”.
+  </li>
+</ul>
+
+<h2>Acontecimentos, roteiros e artigos</h2>
+<p>
+  Os {{events}} acontecimentos, {{tours}} roteiros e {{articles}} artigos são redigidos com a ajuda
+  da IA sob a direção do autor e depois conferidos em revisões separadas com base nas fontes: o
+  texto bíblico para o que ele diz, autores antigos, crônicas e inscrições para as datas, e a
+  literatura acadêmica para os sítios. Cada afirmação cita a sua fonte. As citações vêm somente da
+  tradução Sinodal e da King James Version. Nenhum roteiro passou pela primeira revisão sem
+  alterações; cada um foi corrigido e conferido de novo. Essas revisões são feitas pela IA a partir
+  das fontes, não por estudiosos; um artigo que um historiador leu leva o nome do historiador.
+</p>
+<p>
+  A distância até uma parada é dada em linha reta. A partir de 312 a.C., quando começam as estradas
+  romanas, o caminho pelas estradas do Itiner-e é dado ao lado: o mais curto pela sua rede, a menos
+  que seja mais de duas vezes e meia a linha reta; um trecho feito por mar não é contado por
+  estrada. O tempo a pé é calculado a 30 km por dia, a estimativa usual da jornada de um dia na
+  Antiguidade, sem margem para clima, descansos ou cargas. No mar não se supõe velocidade alguma:
+  uma travessia informa os seus dias somente onde o texto o faz (Atos 20:6, “em cinco dias”), com
+  esse versículo e tão aproximadamente quanto o texto os dá. Onde o texto atravessa regiões inteiras
+  sem dar o caminho (Atos 20:1–3, Éfeso pela Macedônia e pela Grécia até Filipos), o trecho diz isso
+  e não dá tempo algum. O relevo de um trecho é lido nos dados de elevação do Copernicus (por meio
+  da Mapterhorn) ao longo dessa mesma estrada, ou, sem estrada, ao longo da linha reta; a legenda
+  sob o perfil diz qual dos dois.
+</p>
+
+<p>
+  As batalhas e cercos ({{battles}}) são os que a Bíblia conta, mais alguns de fora dela que
+  decidiram o destino de Israel. Cada um fica no lugar onde foi travado e aparece no mapa nos seus
+  anos. Os da Bíblia são datados como os roteiros datam as mesmas histórias; os demais não trazem
+  versículo, mas uma fonte antiga ou acadêmica. Uma segunda verificação, independente, confrontou o
+  rascunho com o texto Sinodal e a King James Version: de 58 entradas, 16 foram corrigidas e uma foi
+  descartada, porque o mapa não tem ponto para o seu sítio.
+</p>
+
+<p>
+  Os acontecimentos e batalhas dos macabeus citam 1–2 Macabeus, que a Bíblia Sinodal contém e o
+  cânon protestante não: cada citação desse tipo é marcada “deuterocanônico”, e o seu link abre um
+  texto que tem o livro.
+</p>
+
+<h2>Verificações a cada compilação</h2>
+<p>Nada é publicado se alguma verificação falhar:</p>
+<ul>
+  <li>
+    toda fonte traz uma licença permitida (sem compartilhamento pela mesma licença, sem dados não
+    comerciais);
+  </li>
+  <li>toda referência aponta para um livro, capítulo e versículo reais;</li>
+  <li>todo nome russo é encontrado no versículo indicado para ele;</li>
+  <li>
+    toda parada de roteiro é nomeada na sua passagem, ou a exceção é documentada com o seu motivo;
+  </li>
+  <li>toda correção das fronteiras e toda data de uma cidade tem fonte;</li>
+  <li>
+    os esquemas de conteúdo são estritos: um campo desconhecido ou com erro de grafia interrompe a
+    compilação.
+  </li>
+</ul>
+
+<h2>O que é incerto</h2>
+<ul>
+  <li>
+    As datas anteriores ao primeiro milênio a.C. são aproximadas, e algumas são disputadas; o mapa
+    as marca com “c.”.
+  </li>
+  <li>
+    As proporções do OpenBible entre sítios candidatos são uma estimativa, não um consenso
+    acadêmico.
+  </li>
+  <li>
+    As fronteiras antigas são desenhadas a partir de atlas modernos e simplificam uma realidade de
+    controle em constante mudança.
+  </li>
+  <li>
+    Muitos lugares menores ainda não têm anos registrados; são desenhados como existentes o tempo
+    todo (ou, para os lugares nomeados só no Novo Testamento, desde os tempos do Novo Testamento).
+  </li>
+</ul>
+
+<h2 id="report">Relatar um erro</h2>
+<p>
+  Toda ficha de lugar tem um link <i>Encontrou um erro?</i>. Ele abre uma issue no repositório
+  público com o lugar já preenchido; é preciso ter uma conta no GitHub. Você também pode abrir uma
+  diretamente:
+  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+    >github.com/ArVaViT/history-globe/issues</a
+  >.
+</p>

@@ -10,7 +10,7 @@ import type {
   PlacePhoto,
   PleiadesLink,
 } from "@hg/model";
-import { placeName, hasNameIn, namesOf, LOCALES } from "@hg/model";
+import { placeName, hasNameIn, namesOf, LOCALES, ALL_LOCALES } from "@hg/model";
 export { siteCertainty } from "@hg/model";
 import type { FeatureCollection, Point } from "geojson";
 
@@ -46,6 +46,8 @@ export interface PlaceProps {
   readonly where: string;
   /** Russian "where it is today", when it names another place ("Вавилон, в радиусе 250 км"). */
   readonly where_ru?: string;
+  /** The same names, duplicate marks and "where" lines in the other languages (name_uk, …). */
+  readonly [local: `name_${string}` | `dup_${string}` | `where_${string}`]: unknown;
   /** Set when `where` is a template ("within 5 km of X"), not a modern name. */
   readonly where_tpl?: string;
   /** The source's own short name of the site ("Antioch in Pisidia"), before any rewording. */
@@ -59,6 +61,8 @@ export interface Site {
   readonly label: string;
   /** Russian label where the content build could write one ("там же, где Авила"). */
   readonly labelRu?: string;
+  /** The label in the other languages: uk, es, … */
+  readonly labels?: Readonly<Record<string, string>>;
   /** null when OpenBible has rated none of the candidates. */
   readonly share: number | null;
   readonly at: readonly [number, number];
@@ -121,7 +125,9 @@ export interface LoadedData {
 // Under the app's base path, so it also works when served from a sub-path.
 export const DATA_URL = `${import.meta.env.BASE_URL}data`;
 
-type SiteProps = { place: string; label: string; label_ru?: string; share?: number };
+type SiteProps = { place: string; label: string; label_ru?: string; share?: number } & Readonly<
+  Record<`label_${string}`, unknown>
+>;
 
 export function groupSites(fc: FeatureCollection<Point, SiteProps>): Map<string, Site[]> {
   const sites = new Map<string, Site[]>();
@@ -129,9 +135,14 @@ export function groupSites(fc: FeatureCollection<Point, SiteProps>): Map<string,
     const [lon = 0, lat = 0] = f.geometry.coordinates;
     const list = sites.get(f.properties.place) ?? [];
     const { label, label_ru: labelRu } = f.properties;
+    const labels: Record<string, string> = {};
+    for (const [k, v] of Object.entries(f.properties))
+      if (k.startsWith("label_") && k !== "label_ru" && typeof v === "string")
+        labels[k.slice(6)] = v;
     list.push({
       label,
       ...(labelRu ? { labelRu } : {}),
+      labels,
       share: f.properties.share ?? null,
       at: [lon, lat],
     });
@@ -181,19 +192,36 @@ export function alsoHere(
 }
 
 /**
+ * Where a place is today in the reader's language: the English line, the Russian one, or
+ * another language's where it has one (a modern name; templates stay English for now).
+ */
+export function whereIn(p: PlaceProps, locale: string): string | undefined {
+  if (locale === "en") return p.where;
+  if (locale === "ru") return p.where_ru;
+  const own = p[`where_${locale}`];
+  return typeof own === "string" ? own : undefined;
+}
+
+/** Whether a place has its own name in a language other than English. */
+export const hasOwnName = (p: PlaceProps, locale: string): boolean =>
+  locale !== "en" && typeof p[`name_${locale}`] === "string";
+
+/**
  * Babylon, Babylonia and Babel share a point and the Russian name "Вавилон": only the most
  * mentioned keeps its label on the Russian map (`dup_ru`), as the pipeline does for
- * repeated English names (`dup`).
+ * repeated English names (`dup`). The same for every language's names (`dup_uk`, …).
  */
-export function markRussianDuplicates(
+export function markDuplicates(
   features: { geometry: Point; properties: PlaceProps }[],
+  locale: string = "ru",
 ): Set<string> {
   const marked = new Set<string>();
   const best = new Map<string, PlaceProps>();
   for (const f of features) {
-    const { name_ru: ru } = f.properties;
+    const ru = f.properties[`name_${locale}`];
+    if (typeof ru !== "string") continue;
     // A record already hidden as an English duplicate never keeps the Russian label.
-    if (!ru || f.properties.dup) continue;
+    if (f.properties.dup) continue;
     const key = `${f.geometry.coordinates.join(",")}|${ru}`;
     const kept = best.get(key);
     if (!kept) {
@@ -205,7 +233,7 @@ export function markRussianDuplicates(
     best.set(key, winner);
     const target = features.find((g) => g.properties === loser);
     if (target) {
-      target.properties = { ...loser, dup_ru: true };
+      target.properties = { ...loser, [`dup_${locale}`]: true };
       marked.add(loser.id);
     }
   }
@@ -235,9 +263,18 @@ export async function loadData(): Promise<LoadedData> {
     const entry = content.names[f.properties.id];
     const whereRu = content.where_ru?.[f.properties.id];
     const life = content.life?.[f.properties.id];
+    // name_ru, name_uk, … from the content's names; where_uk, … from its "where" lines.
+    const local: Record<string, string> = {};
+    for (const [l, v] of Object.entries(entry ?? {}))
+      if (l !== "osis" && typeof v === "string") local[`name_${l}`] = v;
+    for (const [l, by] of Object.entries(content.where_in ?? {})) {
+      const w = by[f.properties.id];
+      if (w) local[`where_${l}`] = w;
+    }
     const props: PlaceProps = {
       ...f.properties,
-      ...(entry ? { name_ru: entry.ru, ...(entry.osis ? { name_ru_osis: entry.osis } : {}) } : {}),
+      ...local,
+      ...(entry?.osis ? { name_ru_osis: entry.osis } : {}),
       ...(whereRu ? { where_ru: whereRu } : {}),
       ...(content.where_en?.[f.properties.id] ? { where: content.where_en[f.properties.id] } : {}),
       ...(life?.from ? { life_from: life.from.year } : {}),
@@ -273,18 +310,24 @@ export async function loadData(): Promise<LoadedData> {
     const lesson = lessonTour(window.location.search, byId, content.chapter_years ?? {});
     if (lesson) tours.unshift(lesson);
   }
-  const marked = markRussianDuplicates(places.features);
+  const marked = new Set(
+    LOCALES.flatMap((l) => (l === "en" ? [] : [...markDuplicates(places.features, l)])),
+  );
   for (const f of places.features) {
     const entry = byId.get(f.properties.id);
     if (entry && marked.has(f.properties.id))
       byId.set(f.properties.id, { ...entry, props: f.properties });
   }
-  const here = {
-    ru: alsoHere(places.features, "ru"),
-    en: alsoHere(places.features, "en"),
-    uk: alsoHere(places.features, "ru"),
-    de: alsoHere(places.features, "en"),
-  };
+  // Every language the code knows; one without names yet lists as English does.
+  const here = Object.fromEntries(
+    ALL_LOCALES.map((l) => [
+      l,
+      alsoHere(
+        places.features,
+        places.features.some((f) => typeof f.properties[`name_${l}`] === "string") ? l : "en",
+      ),
+    ]),
+  ) as Record<Locale, Map<string, string[]>>;
   return {
     places,
     byId,

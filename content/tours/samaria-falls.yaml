@@ -9,6 +9,11 @@ id: samaria-falls
 title:
   en: "The fall of Israel"
   ru: "Падение Израильского царства"
+  uk: "Падіння Ізраїлю"
+  es: "La caída de Israel"
+  pt: "A queda de Israel"
+  de: "Der Fall Israels"
+  fr: "La chute d’Israël"
 year: "732 BC"
 approximate: true
 stops:
@@ -17,25 +22,50 @@ stops:
     note:
       en: "In the days of Pekah, Tiglath-pileser king of Assyria takes Ijon, Abel-beth-maachah, Janoah, Kedesh, Hazor, Gilead and Galilee, all the land of Naphtali, and carries the people captive to Assyria."
       ru: "Во дни Факея Феглаффелласар, царь Ассирийский, берёт Ион, Авел-Беф-Мааху, Ианох, Кедес, Асор, Галаад и Галилею, всю землю Неффалимову, и переселяет жителей в Ассирию."
+      uk: "За днів Факея Тіглатпаласар, цар Ассирії, здобуває Іййон, Авел-Бет-Мааху, Яноах, Кедес, Гацор, Гілеад і Галілею, всю землю Нефталимову, і виводить народ у полон до Ассирії."
+      es: "En los días de Peka, Tiglat-pileser, rey de Asiria, toma Ijón, Abel-bet-maaca, Janoa, Cedes, Hazor, Galaad y Galilea, toda la tierra de Neftalí, y lleva cautivo al pueblo a Asiria."
+      pt: "Nos dias de Peca, Tiglate-Pileser, rei da Assíria, toma Ijom, Abel-Bete-Maaca, Janoa, Quedes, Hazor, Gileade e a Galileia, toda a terra de Naftali, e leva o povo cativo para a Assíria."
+      de: "In den Tagen Pekachs nimmt Tiglat-Pileser, der König von Assyrien, Ijon, Abel-Bet-Maacha, Janoach, Kedesch, Hazor, Gilead und Galiläa, das ganze Land Naftali, ein und führt das Volk gefangen nach Assyrien."
+      fr: "Du temps de Péka, Tiglath-Piléser, roi d’Assyrie, prend Ijjon, Abel-Beth-Maaca, Janoach, Kédesch, Hatsor, Galaad et la Galilée, tout le pays de Nephthali, et emmène le peuple captif en Assyrie."
   - place: a15257a # Jerusalem
     ref: 2Kgs.16.5-2Kgs.16.8
     note:
       en: 'Rezin of Syria and Pekah of Israel besiege Ahaz in Jerusalem; Ahaz sends the silver and gold of the Temple and of the king''s house to the king of Assyria: "I am thy servant and thy son."'
       ru: "Рецин Сирийский и Факей Израильский осаждают Ахаза в Иерусалиме; Ахаз посылает царю Ассирийскому серебро и золото из дома Господня и из сокровищниц царских: «раб твой и сын твой я»."
+      uk: "Рецін Сирійський і Факей Ізраїльський облягають Ахаза в Єрусалимі; Ахаз посилає срібло й золото з храму та з царського дому цареві Ассирії: «Я раб твій і син твій»."
+      es: "Rezín de Siria y Peka de Israel sitian a Acaz en Jerusalén; Acaz envía la plata y el oro del Templo y de la casa del rey al rey de Asiria: «Yo soy tu siervo y tu hijo»."
+      pt: "Rezim, da Síria, e Peca, de Israel, cercam Acaz em Jerusalém; Acaz envia ao rei da Assíria a prata e o ouro do Templo e da casa do rei: “Eu sou seu servo e seu filho.”"
+      de: "Rezin von Syrien und Pekach von Israel belagern Ahas in Jerusalem; Ahas schickt das Silber und Gold des Tempels und des Königshauses dem König von Assyrien: „Ich bin dein Knecht und dein Sohn.“"
+      fr: "Retsin de Syrie et Péka d’Israël assiègent Achaz dans Jérusalem ; Achaz envoie au roi d’Assyrie l’argent et l’or du temple et de la maison du roi : « Je suis ton serviteur et ton fils. »"
   - place: a69c1d4 # Damascus
     ref: 2Kgs.16.9-2Kgs.16.11
     note:
       en: "The king of Assyria takes Damascus, carries its people to Kir and slays Rezin; Ahaz meets him there and sends home the pattern of its altar."
       ru: "Царь Ассирийский берёт Дамаск, переселяет его жителей в Кир и умерщвляет Рецина; Ахаз встречает его там и посылает домой чертёж тамошнего жертвенника."
+      uk: "Цар Ассирії здобуває Дамаск, виводить його народ до Кіру й убиває Реціна; Ахаз зустрічає його там і посилає додому зразок його жертовника."
+      es: "El rey de Asiria toma Damasco, lleva a su pueblo a Kir y mata a Rezín; Acaz sale a su encuentro allí y envía a casa el modelo de su altar."
+      pt: "O rei da Assíria toma Damasco, leva o seu povo para Quir e mata Rezim; Acaz vai ao seu encontro ali e envia para casa o modelo do altar de lá."
+      de: "Der König von Assyrien nimmt Damaskus ein, führt sein Volk nach Kir und tötet Rezin; Ahas trifft ihn dort und schickt das Vorbild seines Altars heim."
+      fr: "Le roi d’Assyrie prend Damas, emmène son peuple à Kir et tue Retsin ; Achaz va à sa rencontre et envoie chez lui le modèle de son autel."
   - place: a041bb3 # Samaria
     ref: 2Kgs.17.3-2Kgs.17.5
     year: "725 BC"
     note:
       en: "Hoshea withholds tribute and sends to So king of Egypt; Shalmaneser king of Assyria shuts him up in prison and besieges Samaria three years."
       ru: "Осия перестаёт платить дань и посылает к Сигору, царю Египетскому; Салманассар, царь Ассирийский, заключает его в темницу и три года осаждает Самарию."
+      uk: "Осія затримує данину й посилає до Со, царя Єгипту; Салманассар, цар Ассирії, замикає його у в’язниці й облягає Самарію три роки."
+      es: "Oseas retiene el tributo y envía mensajeros a Sua, rey de Egipto; Salmanasar, rey de Asiria, lo encierra en prisión y sitia Samaria durante tres años."
+      pt: "Oseias retém o tributo e envia mensageiros a Sô, rei do Egito; Salmaneser, rei da Assíria, o prende e cerca Samaria por três anos."
+      de: "Hosea hält den Tribut zurück und sendet zu So, dem König von Ägypten; Salmanassar, der König von Assyrien, setzt ihn im Gefängnis fest und belagert Samaria drei Jahre lang."
+      fr: "Osée retient le tribut et envoie vers So, roi d’Égypte ; Salmanasar, roi d’Assyrie, le fait enfermer en prison et assiège Samarie pendant trois ans."
   - place: abf176f # Halah
     ref: 2Kgs.17.6
     year: "722 BC"
     note:
       en: "In Hoshea's ninth year Samaria is taken, and Israel is carried away into Assyria and placed in Halah and in Habor by the river of Gozan, and in the cities of the Medes."
       ru: "В девятый год Осии Самария взята, и Израильтян переселяют в Ассирию и поселяют в Халахе и в Хаворе, при реке Гозан, и в городах Мидийских."
+      uk: "На дев’ятий рік Осії Самарію здобувають, і Ізраїль виводять до Ассирії й поселяють у Халаху та в Хаворі над рікою Гозан і в містах мідян."
+      es: "En el año noveno de Oseas Samaria es tomada, e Israel es llevado a Asiria y establecido en Halah y en Habor, junto al río Gozán, y en las ciudades de los medos."
+      pt: "No nono ano de Oseias, Samaria é tomada, e Israel é levado cativo para a Assíria e colocado em Halá, junto a Habor, o rio de Gozã, e nas cidades dos medos."
+      de: "Im neunten Jahr Hoseas wird Samaria eingenommen, und Israel wird nach Assyrien weggeführt und in Halach und am Habor, dem Fluss von Gosan, und in den Städten der Meder angesiedelt."
+      fr: "La neuvième année d’Osée, Samarie est prise, et Israël est emmené captif en Assyrie et établi à Chalach, sur le Chabor, fleuve de Gozan, et dans les villes des Mèdes."

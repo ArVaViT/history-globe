@@ -12,16 +12,25 @@ export interface Camera {
 
 export interface PolityName {
   readonly name: string;
-  readonly nameRu?: string;
-  /** In the years it was a vassal or client: "under Assyria" (and in Russian). */
+  /** The name in each language the data has one in ("ru" → "Ассирия"). */
+  readonly names?: Readonly<Record<string, string>>;
+  /** In the years it was a vassal or client: "under Assyria". */
   readonly vassal?: string;
-  readonly vassalRu?: string;
+  readonly vassals?: Readonly<Record<string, string>>;
+}
+
+/** A state's name, and its vassal line, in the reader's language or English. */
+export function polityText(p: PolityName, locale: string): { name: string; vassal?: string } {
+  const vassal = p.vassals?.[locale] ?? p.vassal;
+  return { name: p.names?.[locale] ?? p.name, ...(vassal ? { vassal } : {}) };
 }
 
 /** A site of the ancient world layer (content/ancient-sites.json) under the pointer. */
 export interface AncientSite {
   readonly en: string;
   readonly ru: string;
+  /** Its name in the other languages that have one (uk, es, …). */
+  readonly names?: Readonly<Record<string, string>>;
   readonly from: number;
   readonly to: number;
   readonly approx: boolean;

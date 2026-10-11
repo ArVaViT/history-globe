@@ -5,6 +5,11 @@ id: judges
 title:
   en: "Deborah, Gideon, Samson"
   ru: "Девора, Гедеон, Самсон"
+  uk: "Дебора, Гедеон, Самсон"
+  es: "Débora, Gedeón, Sansón"
+  pt: "Débora, Gideão, Sansão"
+  de: "Debora, Gideon, Simson"
+  fr: "Débora, Gédéon, Samson"
 year: "1150 BC"
 approximate: true
 stops:
@@ -13,43 +18,88 @@ stops:
     note:
       en: "Deborah judges Israel under her palm tree between Ramah and Bethel."
       ru: "Девора судит Израиль под пальмою Девориною между Рамою и Вефилем."
+      uk: "Дебора судить Ізраїль під своєю пальмою між Рамою і Бет-Елом."
+      es: "Débora juzga a Israel bajo su palmera, entre Ramá y Betel."
+      pt: "Débora julga Israel debaixo da sua palmeira, entre Ramá e Betel."
+      de: "Debora richtet Israel unter ihrer Palme zwischen Rama und Bethel."
+      fr: "Débora juge Israël sous son palmier, entre Rama et Béthel."
   - place: acd63ee # Mount Tabor
     ref: Judg.4.12-Judg.4.16
     note:
       en: "Barak comes down from Mount Tabor with ten thousand men, and the Lord discomfits Sisera and all his chariots."
       ru: "Варак сходит с горы Фавора с десятью тысячами, и Господь приводит в замешательство Сисару и все колесницы его."
+      uk: "Варак сходить з гори Фавор з десятьма тисячами чоловіків, і Господь повергає в замішання Сісару та всі його колісниці."
+      es: "Barac baja del Monte Tabor con diez mil hombres, y el Señor desbarata a Sísara y a todos sus carros."
+      pt: "Baraque desce do Monte Tabor com dez mil homens, e o Senhor derrota Sísera e todos os seus carros."
+      de: "Barak zieht mit zehntausend Mann vom Berg Tabor hinab, und der Herr verwirrt Sisera und alle seine Wagen."
+      fr: "Barak descend du Mont Thabor avec dix mille hommes, et l’Éternel met en déroute Sisera et tous ses chars."
   - place: a5a6458 # Kishon
     ref: Judg.5.19-Judg.5.21
     note:
       en: 'Deborah''s song: "The river of Kishon swept them away."'
       ru: "Песнь Деворы: «Поток Киссон увлек их»."
+      uk: "Пісня Дебори: «Той Кисон, бурчак (потужний), різко рвав і нїс їх»."
+      es: "El cántico de Débora: «Barriólos el torrente de Cisón»."
+      pt: "O cântico de Débora: “O ribeiro de Quisom os arrastou.”"
+      de: "Deboras Lied: „Der Bach Kison wälzte sie.“"
+      fr: "Le cantique de Débora : « Le torrent de Kison les a entraînés. »"
   - place: abd637f # Ophrah
     ref: Judg.6.11-Judg.6.24
     note:
       en: "At Ophrah the angel of the Lord finds Gideon threshing wheat by the winepress."
       ru: "В Офре Ангел Господень находит Гедеона, выколачивающего пшеницу в точиле."
+      uk: "В Офрі ангел Господній застає Гедеона, що молотить пшеницю біля давильні."
+      es: "En Ofra el ángel del Señor encuentra a Gedeón trillando trigo junto al lagar."
+      pt: "Em Ofra, o anjo do Senhor encontra Gideão malhando trigo no lagar."
+      de: "In Ofra findet der Engel des Herrn Gideon, der in der Kelter Weizen ausklopft."
+      fr: "À Ophra, l’ange de l’Éternel trouve Gédéon battant du froment au pressoir."
   - place: ae3cace # Harod
     ref: Judg.7.1-Judg.7.22
     note:
       en: "Camped by the spring of Harod, Gideon keeps three hundred men who lapped the water, and Midian is routed."
       ru: "Расположившись станом у источника Харода, Гедеон оставляет триста человек, лакавших воду, и Мадианитяне обращены в бегство."
+      uk: "Стоячи табором біля джерела Харод, Гедеон залишає триста чоловіків, що лакали воду, і Мадіам розбито."
+      es: "Acampado junto a la fuente de Harod, Gedeón se queda con trescientos hombres que lamieron el agua, y Madián es puesto en fuga."
+      pt: "Acampado junto à fonte de Harode, Gideão fica com trezentos homens que lamberam a água, e Midiã é posta em fuga."
+      de: "An der Quelle Harod gelagert, behält Gideon dreihundert Mann, die das Wasser geleckt haben, und Midian wird in die Flucht geschlagen."
+      fr: "Campé près de la source de Harod, Gédéon garde trois cents hommes qui ont lapé l’eau, et Madian est mis en déroute."
   - place: a08174b # Zorah
     ref: Judg.13.2-Judg.13.25
     note:
       en: "In Zorah the angel of the Lord announces Samson's birth to Manoah's wife."
       ru: "В Цоре Ангел Господень возвещает жене Маноя о рождении Самсона."
+      uk: "У Цорі ангел Господній сповіщає дружині Маноя про народження Самсона."
+      es: "En Zora el ángel del Señor anuncia el nacimiento de Sansón a la mujer de Manoa."
+      pt: "Em Zorá, o anjo do Senhor anuncia à mulher de Manoá o nascimento de Sansão."
+      de: "In Zora kündigt der Engel des Herrn der Frau Manoachs die Geburt Simsons an."
+      fr: "À Tsorea, l’ange de l’Éternel annonce la naissance de Samson à la femme de Manoach."
   - place: a21f909 # Timnah
     ref: Judg.14.1-Judg.14.6
     note:
       en: "On the way to Timnah the Spirit of the Lord comes upon Samson and he tears a young lion apart."
       ru: "На пути в Фимнафу на Самсона сходит Дух Господень, и он растерзывает молодого льва."
+      uk: "Дорогою до Тімни Дух Господній сходить на Самсона, і він роздирає молодого лева."
+      es: "De camino a Timna el Espíritu del Señor viene sobre Sansón, y él despedaza a un león joven."
+      pt: "No caminho para Timna, o Espírito do Senhor vem sobre Sansão, e ele despedaça um leão novo."
+      de: "Auf dem Weg nach Timna kommt der Geist des Herrn über Simson, und er zerreißt einen jungen Löwen."
+      fr: "En allant à Thimna, l’Esprit de l’Éternel saisit Samson, et il déchire un jeune lion."
   - place: a339971 # Valley of Sorek
     ref: Judg.16.4-Judg.16.20
     note:
       en: "In the valley of Sorek he loves Delilah, who betrays the secret of his strength."
       ru: "В долине Сорек он любит Далиду, и та выдаёт тайну его силы."
+      uk: "У долині Сорек він кохає Далілу, яка видає таємницю його сили."
+      es: "En el valle de Sorec ama a Dalila, que traiciona el secreto de su fuerza."
+      pt: "No vale de Soreque ele ama Dalila, que trai o segredo da sua força."
+      de: "Im Tal Sorek liebt er Delila, die das Geheimnis seiner Kraft verrät."
+      fr: "Dans la vallée de Sorek, il aime Delila, qui trahit le secret de sa force."
   - place: aa8edd2 # Gaza
     ref: Judg.16.21-Judg.16.30
     note:
       en: "Blinded and bound in Gaza, he brings down the house on the lords of the Philistines."
       ru: "Ослеплённый и скованный в Газе, он обрушивает дом на владельцев Филистимских."
+      uk: "Осліплений і закутий у Газі, він обвалює дім на володарів філістимлян."
+      es: "Cegado y atado en Gaza, derriba la casa sobre los príncipes de los filisteos."
+      pt: "Cego e preso em Gaza, derruba a casa sobre os senhores dos filisteus."
+      de: "Geblendet und gefesselt in Gaza, bringt er das Haus über den Fürsten der Philister zum Einsturz."
+      fr: "Aveuglé et enchaîné à Gaza, il fait s’écrouler la maison sur les princes des Philistins."

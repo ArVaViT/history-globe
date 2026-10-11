@@ -1,0 +1,330 @@
+---
+title: Вбудовування
+description: Розмістіть глобус на власному сайті одним рядком — мапу розділу, місця, року чи екскурсії — і керуйте ним зі своєї сторінки.
+---
+
+<p class="lede">
+  Глобус працює всередині будь-якої сторінки як <code>iframe</code>. Один рядок показує мапу розділу
+  поруч з уривком на вашій сторінці; кілька повідомлень узгоджують їх між собою.
+</p>
+
+<h2>Швидкий початок</h2>
+<pre><code>&lt;iframe
+  src="{{site}}/embed/v1?ref=Acts.16&amp;locale=uk"
+  title="Мапа Дій 16"
+  style="width: 100%; height: 480px; border: 0; border-radius: 12px"
+  allow="fullscreen"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</code></pre>
+<ul>
+  <li>Мапа заповнює рамку й відкривається на місцях Дій 16 у рік його подій.</li>
+  <li>
+    <b>Угорі:</b> розділ. Виберіть його, щоб побачити список його місць у порядку, в якому їх
+    називає текст; виберіть місце, щоб відкрити його картку.
+  </li>
+  <li><b>Унизу:</b> рік. Виберіть його, щоб відкрити повзунок часу.</li>
+  <li>
+    Посилання відкриває той самий вигляд у повному глобусі в новій вкладці. Відомості про авторів
+    даних показано просто на мапі, як того вимагають ліцензії.
+  </li>
+  <li>Рамка працює до ширини телефона; достатньо висоти 480 px.</li>
+</ul>
+
+<h2>Розділ або уривок</h2>
+<p>
+  <code>ref</code> приймає посилання OSIS з англійськими скороченнями назв книг й англійською
+  нумерацією віршів:
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Значення</th>
+        <th>Показує</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Acts.16</code></td>
+        <td>розділ</td>
+      </tr>
+      <tr>
+        <td><code>Gen.12-Gen.13</code></td>
+        <td>до трьох розділів</td>
+      </tr>
+      <tr>
+        <td><code>Acts.16.11-Acts.16.15</code></td>
+        <td>уривок</td>
+      </tr>
+      <tr>
+        <td><code>Ruth</code></td>
+        <td>усю книгу</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Мапа переходить до року уривка: до записаного року його розділів (датовано розділи
+  {{chapter_books|книги|книг|книг}}), а якщо його немає — до року екскурсії, яка його охоплює; для
+  цілої книги береться рік екскурсії, що має в ній найбільше зупинок. Якщо немає ні того, ні іншого,
+  мапа лишає поточний рік.
+</p>
+
+<h2>Параметри</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Параметр</th>
+        <th>Приклад</th>
+        <th>Значення</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ref</code></td>
+        <td><code>Acts.16</code></td>
+        <td>розділ, уривок або книга (вище)</td>
+      </tr>
+      <tr>
+        <td><code>year</code></td>
+        <td><code>-999</code></td>
+        <td>
+          рік за астрономічною нумерацією: 1 р. до н. е. — це <code>0</code>, 1000 р. до н. е. — це
+          <code>-999</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>place</code></td>
+        <td><code>af2161c</code></td>
+        <td>відкрити місце (тут — Капернаум); ідентифікатори — з OpenBible</td>
+      </tr>
+      <tr>
+        <td><code>tour</code></td>
+        <td><code>paul-1</code></td>
+        <td>почати екскурсію</td>
+      </tr>
+      <tr>
+        <td><code>stop</code></td>
+        <td><code>3</code></td>
+        <td>разом із <code>tour</code>: відкрити її на цій зупинці</td>
+      </tr>
+      <tr>
+        <td><code>lesson</code></td>
+        <td><code>a15257a~30.a112427~30</code></td>
+        <td>
+          ваш власний урок, разом із <code>tour=lesson</code>: ідентифікатори місць по порядку,
+          кожен з роком, у який його показати (<code>~-585</code> для 586 р. до н. е.: як і в
+          <code>year</code>, 1 р. до н. е. — це 0); кожна зупинка отримує вірш місця, найближчий до
+          цього року, відстань, час пішки та рельєф. Кнопка «В урок» у картці місця створює такі
+          самі посилання
+        </td>
+      </tr>
+      <tr>
+        <td><code>title</code></td>
+        <td><code>Paul%20in%20Galatia</code></td>
+        <td>
+          разом із <code>lesson</code>: назва уроку, до 80 символів, на початку його екскурсії та
+          його друкованого аркуша
+        </td>
+      </tr>
+      <tr>
+        <td><code>locale</code></td>
+        <td><code>en</code></td>
+        <td>
+          мова: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>, <code>pt</code>,
+          <code>de</code> або <code>fr</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>camera</code></td>
+        <td><code>35.2,31.8,7,30,0</code></td>
+        <td>довгота, широта, масштаб, нахил, поворот</td>
+      </tr>
+      <tr>
+        <td><code>hide</code></td>
+        <td><code>relief,ancient</code></td>
+        <td>
+          шари, які слід вимкнути: <code>borders</code>, <code>places</code>, <code>relief</code>,
+          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="note">
+  Найпростіше створити вигляд так: налаштувати його на повному глобусі й скопіювати URL — ті самі
+  параметри працюють після <code>/embed/v1</code>.
+</p>
+
+<h2>Повідомлення</h2>
+<p>
+  Глобус і ваша сторінка спілкуються через <code>postMessage</code>. Кожне повідомлення — це об’єкт
+  із <code>type</code> і <code>v: 1</code>. Глобус надсилає лише те, що відбувається на мапі, і
+  ніколи нічого, що ідентифікує читача; повідомлення він приймає лише від сторінки, яка містить
+  рамку.
+</p>
+<h3>Від глобуса</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Тип</th>
+        <th>Вміст</th>
+        <th>Коли</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:ready</code></td>
+        <td><code>{ view }</code></td>
+        <td>мапу намальовано</td>
+      </tr>
+      <tr>
+        <td><code>hg:view-changed</code></td>
+        <td><code>{ view }</code></td>
+        <td>рік, місце, екскурсія чи камера змінилися й заспокоїлися</td>
+      </tr>
+      <tr>
+        <td><code>hg:verse-clicked</code></td>
+        <td><code>{ osis }</code></td>
+        <td>читач натиснув вірш, напр. <code>"Acts.16.12"</code></td>
+      </tr>
+      <tr>
+        <td><code>hg:error</code></td>
+        <td><code>{ code, message }</code></td>
+        <td>мапа або її дані не завантажилися</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <code>view</code> містить <code>year</code>, <code>locale</code> і <code>layers</code> та, якщо їх
+  задано, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> і
+  <code>camera</code>.
+</p>
+<h3>До глобуса</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Тип</th>
+        <th>Вміст</th>
+        <th>Дія</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:set-view</code></td>
+        <td><code>{ view }</code></td>
+        <td>
+          задати рік, розділ (<code>ref</code>), місце, шари чи камеру; з <code>tour</code> (і
+          <code>stop</code>) екскурсія починається, а інші поля ігноруються; мова змінюється лише
+          через <code>hg:set-locale</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:set-locale</code></td>
+        <td><code>{ locale }</code></td>
+        <td>перемкнути мову</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Приклад: мапа йде за вашим читачем</h2>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+
+// Читач відкрив розділ — показати його на мапі.
+function showChapter(osis) {
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+}
+
+// На мапі натиснули вірш — відкрити його у вашому тексті Біблії.
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
+});</code></pre>
+
+<h2 id="places">Місця в будь-якому тексті</h2>
+<p>
+  Ще один рядок пов’язує з глобусом біблійні місця, які називає ваш власний текст (стаття,
+  проповідь, план читання). Наведіть курсор на назву або торкніться її на телефоні, і картка покаже,
+  що це за місце, де воно сьогодні, у скількох віршах воно назване і де лежить на мапі; картка веде
+  на глобус.
+</p>
+<figure class="sample">
+  <div class="hgp-demo" lang="en">
+    <p>
+      Paul sailed from Caesarea to Cyprus, preached in Ephesus and Corinth, and wrote to Rome. Long
+      before, Abraham had come to Shechem and Hebron; Jesus was born in Bethlehem and grew up in
+      Nazareth, and John saw his visions on Patmos.
+    </p>
+  </div>
+  <figcaption>
+    Живий приклад англійською: ці назви пов’язав скрипт на цій сторінці (скрипт читає тексти
+    англійською та російською).
+  </figcaption>
+</figure>
+<pre><code>&lt;script src="{{site}}/hg-places.js" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Атрибут</th>
+        <th>Що робить</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>data-scope</code></td>
+        <td>де шукати, CSS-селектор; за замовчуванням уся сторінка</td>
+      </tr>
+      <tr>
+        <td><code>data-locale</code></td>
+        <td>
+          <code>en</code> або <code>ru</code>: мова тексту; за замовчуванням — <code>lang</code>
+          сторінки
+        </td>
+      </tr>
+      <tr>
+        <td><code>data-every</code></td>
+        <td>пов’язувати кожну згадку, а не лише першу для кожного місця</td>
+      </tr>
+      <tr>
+        <td><code>data-theme</code></td>
+        <td>
+          <code>light</code> або <code>dark</code> для картки; за замовчуванням — як у системі
+          читача
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Пов’язуються лише назви, що вказують на одне місце. Назва, спільна для двох місць (Антіохія —
+  Сирійська й Пісідійська), для місця й людини (Юда) або для місця й звичайного слова, лишається
+  простим текстом; так само лишається назва, яку самі вірші Біблії здебільшого вживають для чогось
+  іншого («Кадес» там — це Кадес-Варні, а не Кадес із бази даних). Назва місця, що є також особовим
+  ім’ям (Йордан, Шарон), поруч з іншим словом з великої літери не чіпається: Йордан Сміт — це
+  людина, а не річка. Російські назви знаходяться в усіх відмінках: «в Египте», «из Антиохии
+  Писидийской». Посилання, код, поля форм, кнопки й заголовки скрипт не чіпає.
+</p>
+<p class="note">
+  Скрипт не має залежностей і не встановлює cookie. Він читає з глобуса один файл назв (мережею
+  близько 25 КБ для англійської й 35 КБ для російської, плюс 7 КБ самого скрипта), не передаючи
+  адреси вашої сторінки як referrer, і змінює лише ті назви, які пов’язує. Він працює за суворої
+  політики безпеки вмісту (CSP), яка дозволяє адресу глобуса в <code>script-src</code> і
+  <code>connect-src</code>. Для тексту, який ваша сторінка додає пізніше, викличте
+  <code>HistoryGlobePlaces.scan(element)</code>, коли текст уже відтворено: скрипт розділяє текстові
+  вузли, тож на сторінці React чи Vue запускайте його на вмісті, який фреймворк більше не
+  перемальовує.
+</p>
+<script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
+
+<h2>Стабільність</h2>
+<p>
+  <code>/embed/v1</code> — це контракт: у межах v1 параметри та повідомлення лише додаються, ніколи
+  не змінюються й не вилучаються. Зміна, несумісна з попередніми версіями, вийде як
+  <code>/embed/v2</code>, а v1 і далі працюватиме.
+</p>

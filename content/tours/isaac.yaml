@@ -6,6 +6,11 @@ id: isaac
 title:
   en: "Isaac and the wells"
   ru: "Исаак и колодцы"
+  uk: "Ісаак і колодязі"
+  es: "Isaac y los pozos"
+  pt: "Isaque e os poços"
+  de: "Isaak und die Brunnen"
+  fr: "Isaac et les puits"
 year: "1850 BC"
 people: ["Isaac@Gen.17.19-Jas"]
 approximate: true
@@ -15,38 +20,78 @@ stops:
     note:
       en: "Coming from Beer-lahai-roi, Isaac meets Rebekah in the field at evening and takes her into his mother Sarah's tent."
       ru: "Придя из Беэр-лахай-рои, Исаак вечером в поле встречает Ревекку и вводит её в шатёр Сарры, матери своей."
+      uk: "Прибувши від Беер-Лахай-Рої, Ісаак зустрічає Ревеку в полі ввечері й вводить її в намет своєї матері Сарри."
+      es: "Al venir de Beer-lahai-roi, Isaac encuentra a Rebeca en el campo al atardecer y la lleva a la tienda de su madre Sara."
+      pt: "Vindo de Beer-Laai-Roi, Isaque encontra Rebeca no campo ao entardecer e a leva para a tenda de Sara, sua mãe."
+      de: "Von Beer-Lachai-Roï kommend, begegnet Isaak am Abend auf dem Feld Rebekka und führt sie in das Zelt seiner Mutter Sara."
+      fr: "Venant de Beer-Lachaï-Roï, Isaac rencontre Rebecca dans les champs au soir et la conduit dans la tente de sa mère Sara."
   - place: ae00861 # Machpelah
     ref: Gen.25.8-Gen.25.10
     note:
       en: "Isaac and Ishmael bury their father Abraham in the cave of Machpelah, beside Sarah."
       ru: "Исаак и Измаил погребают отца своего Авраама в пещере Махпела, рядом с Саррой."
+      uk: "Ісаак та Ізмаїл ховають свого батька Авраама в печері Махпела, поруч із Саррою."
+      es: "Isaac e Ismael sepultan a su padre Abraham en la cueva de Macpela, junto a Sara."
+      pt: "Isaque e Ismael sepultam o pai, Abraão, na caverna de Macpela, ao lado de Sara."
+      de: "Isaak und Ismael begraben ihren Vater Abraham in der Höhle Machpela, neben Sara."
+      fr: "Isaac et Ismaël ensevelissent leur père Abraham dans la caverne de Macpéla, à côté de Sara."
   - place: a3f5814 # Gerar
     ref: Gen.26.1-Gen.26.14
     note:
       en: "In a famine Isaac goes to Abimelech king of the Philistines at Gerar, calls Rebekah his sister, and reaps a hundredfold."
       ru: "Во время голода Исаак идёт к Авимелеху, царю Филистимскому, в Герар, называет Ревекку сестрой и получает урожай во сто крат."
+      uk: "У голод Ісаак іде до Авімелеха, царя філістимлян, у Герар, називає Ревеку сестрою й збирає стократний урожай."
+      es: "En una hambruna Isaac va a Gerar, a Abimelec, rey de los filisteos, dice que Rebeca es su hermana y cosecha el ciento por uno."
+      pt: "Numa fome, Isaque vai a Abimeleque, rei dos filisteus, em Gerar, chama Rebeca de sua irmã e colhe a cem por um."
+      de: "In einer Hungersnot geht Isaak zu Abimelech, dem König der Philister, nach Gerar, nennt Rebekka seine Schwester und erntet hundertfältig."
+      fr: "Pendant une famine, Isaac va chez Abimélec, roi des Philistins, à Guérar, appelle Rebecca sa sœur, et récolte le centuple."
   - place: a816ed9 # Valley of Gerar
     ref: Gen.26.15-Gen.26.19
     note:
       en: "Sent away, he camps in the Valley of Gerar and digs again the wells of his father Abraham, which the Philistines had stopped."
       ru: "Удалившись, он располагается в долине Герарской и вновь выкапывает колодцы отца своего Авраама, заваленные Филистимлянами."
+      uk: "Відісланий, він стає табором у Герарській долині й знову копає колодязі свого батька Авраама, які філістимляни позасипали."
+      es: "Despedido de allí, acampa en el Valle de Gerar y vuelve a cavar los pozos de su padre Abraham, que los filisteos habían cegado."
+      pt: "Mandado embora, acampa no Vale de Gerar e cava de novo os poços de seu pai Abraão, que os filisteus haviam entupido."
+      de: "Fortgeschickt, lagert er im Tal von Gerar und gräbt die Brunnen seines Vaters Abraham wieder auf, die die Philister zugestopft hatten."
+      fr: "Renvoyé, il campe dans la vallée de Guérar et creuse de nouveau les puits de son père Abraham, que les Philistins avaient comblés."
   - place: a43608b # Esek
     ref: Gen.26.20
     note:
       en: "The herdmen of Gerar strive with his over the water, and he calls the well Esek, contention."
       ru: "Пастухи Герарские спорят с его пастухами о воде, и он называет колодец Есек (спор)."
+      uk: "Пастухи Герара сперечаються з його пастухами через воду, і він називає колодязь Есек, чвара."
+      es: "Los pastores de Gerar riñen con los suyos por el agua, y él llama al pozo Esec, contienda."
+      pt: "Os pastores de Gerar discutem com os dele por causa da água, e ele chama o poço Eseque, contenda."
+      de: "Die Hirten von Gerar streiten mit seinen Hirten um das Wasser, und er nennt den Brunnen Esek, Streit."
+      fr: "Les bergers de Guérar se disputent avec les siens au sujet de l’eau, et il appelle le puits Ések, querelle."
   - place: aa454f7 # Sitnah
     ref: Gen.26.21
     note:
       en: "They strive over the next well too, and he calls it Sitnah, hatred."
       ru: "О следующем колодце тоже спорят, и он называет его Ситна (вражда)."
+      uk: "Вони сперечаються й про наступний колодязь, і він називає його Ситна, ворожнеча."
+      es: "También riñen por el siguiente pozo, y lo llama Sitna, enemistad."
+      pt: "Discutem também por causa do poço seguinte, e ele o chama Sitna, ódio."
+      de: "Auch um den nächsten Brunnen streiten sie, und er nennt ihn Sitna, Feindschaft."
+      fr: "Ils se disputent aussi pour le puits suivant, et il l’appelle Sitna, haine."
   - place: ab1d954 # Rehoboth
     ref: Gen.26.22
     note:
       en: 'Over a third well no one strives, and he names it Rehoboth: "For now the LORD hath made room for us".'
       ru: "О третьем колодце уже не спорят, и он называет его Реховоф: «теперь Господь дал нам пространное место»."
+      uk: "Через третій колодязь ніхто не сперечається, і він називає його Реховот: «Роспросторив Господь займище наше»."
+      es: "Por un tercer pozo nadie riñe, y lo llama Rehobot: «Porque ahora nos ha hecho ensanchar Jehová»."
+      pt: "Por um terceiro poço ninguém discute, e ele lhe dá o nome de Reobote: “Porque agora o SENHOR abriu espaço para nós”."
+      de: "Um einen dritten Brunnen streitet niemand, und er nennt ihn Rehobot: „Nun hat uns der HERR Raum gemacht“."
+      fr: "Pour un troisième puits, personne ne se dispute, et il le nomme Rehoboth : « l’Éternel nous a maintenant mis au large »."
   - place: a075d61 # Beersheba
     ref: Gen.26.23-Gen.26.33
     note:
       en: 'At Beersheba the Lord appears to him by night: "fear not, for I am with thee"; he builds an altar, makes peace with Abimelech, and his servants find water.'
       ru: "В Вирсавии ночью ему является Господь: «не бойся, ибо Я с тобою»; он устраивает жертвенник, заключает мир с Авимелехом, и рабы его находят воду."
+      uk: "У Беер-Шеві Господь являється йому вночі: «Не бійся, бо я з тобою»; він будує жертовник, мириться з Авімелехом, і його слуги знаходять воду."
+      es: "En Beerseba el Señor se le aparece de noche: «no temas, que yo soy contigo»; edifica un altar, hace las paces con Abimelec, y sus siervos hallan agua."
+      pt: "Em Berseba o Senhor lhe aparece de noite: “Não tenha medo, pois eu estou com você”; ele constrói um altar, faz as pazes com Abimeleque, e os seus servos encontram água."
+      de: "In Beerscheba erscheint ihm der Herr bei Nacht: „Fürchte dich nicht; denn ich bin mit dir“; er baut einen Altar, schließt Frieden mit Abimelech, und seine Knechte finden Wasser."
+      fr: "À Beer-Schéba, l’Éternel lui apparaît dans la nuit : « ne crains point, car je suis avec toi » ; il bâtit un autel, fait la paix avec Abimélec, et ses serviteurs trouvent de l’eau."

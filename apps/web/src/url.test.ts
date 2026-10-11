@@ -35,7 +35,7 @@ describe("readUrl", () => {
   });
 
   it("accepts only languages the interface speaks", () => {
-    expect(readUrl("?locale=uk").locale).toBeUndefined();
+    expect(readUrl("?locale=xx").locale).toBeUndefined();
   });
 });
 

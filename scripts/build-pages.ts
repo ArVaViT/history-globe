@@ -72,18 +72,35 @@ interface Article {
   reviewer?: string;
 }
 
+/**
+ * Every text in the content ({ en, ru, … }) in each site language: a language not yet
+ * translated there reads the English, so its pages are whole from the first day.
+ */
+function inEveryLanguage<T>(o: T): T {
+  if (Array.isArray(o)) for (const x of o) inEveryLanguage(x);
+  else if (o && typeof o === "object") {
+    const rec = o as Record<string, unknown>;
+    if ("en" in rec && "ru" in rec) {
+      for (const l of LANGS) if (rec[l] === undefined) rec[l] = rec.en;
+    } else for (const v of Object.values(rec)) inEveryLanguage(v);
+  }
+  return o;
+}
+
 const places = (
   JSON.parse(readFileSync(join(data, "places.geojson"), "utf8")) as {
     features: { geometry: { coordinates: [number, number] }; properties: Props }[];
   }
 ).features;
-const content = JSON.parse(readFileSync(join(data, "content.json"), "utf8")) as ContentRelease & {
+const content = inEveryLanguage(
+  JSON.parse(readFileSync(join(data, "content.json"), "utf8")),
+) as ContentRelease & {
   where_ru?: Record<string, string>;
 };
 /** What ancient authors say of places (content/ancient-authors.yaml, via build-content.ts). */
 const ancientAuthors = (
   existsSync(join(data, "ancient-authors.json"))
-    ? JSON.parse(readFileSync(join(data, "ancient-authors.json"), "utf8"))
+    ? inEveryLanguage(JSON.parse(readFileSync(join(data, "ancient-authors.json"), "utf8")))
     : {}
 ) as Record<
   string,
@@ -98,7 +115,7 @@ const ancientAuthors = (
 /** Questions people ask (content/questions, checked by build-content.ts). */
 const questions = (
   existsSync(join(data, "questions.json"))
-    ? JSON.parse(readFileSync(join(data, "questions.json"), "utf8"))
+    ? inEveryLanguage(JSON.parse(readFileSync(join(data, "questions.json"), "utf8")))
     : []
 ) as {
   id: string;
@@ -112,7 +129,10 @@ const questions = (
   reviewer?: string;
 }[];
 const articles = existsSync(join(data, "articles.json"))
-  ? (JSON.parse(readFileSync(join(data, "articles.json"), "utf8")) as Record<string, Article>)
+  ? (inEveryLanguage(JSON.parse(readFileSync(join(data, "articles.json"), "utf8"))) as Record<
+      string,
+      Article
+    >)
   : {};
 const ui = Object.fromEntries(
   LANGS.map((l) => [
@@ -143,7 +163,14 @@ function certaintyNote(p: Props, l: Lang): string {
 const clip = (s: string, n = 200) =>
   s.length <= n ? s : `${s.slice(0, s.lastIndexOf(" ", n - 1)).replace(/[,;:.\s]+$/, "")}…`;
 
-const nameOf = (p: Props, l: Lang) => (l === "ru" ? (content.names[p.id]?.ru ?? p.name) : p.name);
+const nameOf = (p: Props, l: Lang) => (l === "en" ? p.name : (content.names[p.id]?.[l] ?? p.name));
+/** "Where it is today" in the page's language, the English where it has none. */
+const whereOf = (id: string, english: string, l: Lang) =>
+  l === "en"
+    ? english
+    : l === "ru"
+      ? content.where_ru?.[id]
+      : (content.where_in?.[l]?.[id] ?? english);
 const refOf = (osis: string, l: Lang) => formatRefOr(osis, l);
 
 const verseTexts = new Map<string, Record<string, string>>();
@@ -223,13 +250,12 @@ function page(o: {
     image: o.image,
     ld: o.ld,
   });
-  // The other language as an icon apart from the lists, named on hover and to a screen reader.
-  const langs = LANGS.filter((l) => l !== o.l)
-    .map((l) => {
-      const name = `${T[o.l].language}: ${LOCALE_NAMES[l]}`;
-      return `<a class="lang" href="${up}${paths[l]}" hreflang="${l}" title="${name}" aria-label="${name}">${icon("langs")}</a>`;
-    })
-    .join("");
+  // The languages behind one icon, apart from the lists: a list that opens without script,
+  // each language under its own name, the page's own marked.
+  const langs = `<details class="langs"><summary class="lang" title="${T[o.l].language}" aria-label="${T[o.l].language}">${icon("langs")}</summary><ul>${LANGS.map(
+    (l) =>
+      `<li><a href="${up}${paths[l]}" hreflang="${l}" lang="${l}"${l === o.l ? ' aria-current="page"' : ""}>${LOCALE_NAMES[l]}</a></li>`,
+  ).join("")}</ul></details>`;
   return `<!doctype html>
 <html lang="${o.l}">
   <head>
@@ -240,7 +266,7 @@ function page(o: {
     <link rel="icon" href="${up}favicon.svg" type="image/svg+xml" />
     <title>${esc(o.title)} | History Globe</title>${meta}${
       o.home
-        ? `\n    <link rel="preload" href="${up}docs/fonts/golos-text-${o.l === "ru" ? "cyrillic" : "latin"}-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+        ? `\n    <link rel="preload" href="${up}docs/fonts/golos-text-${o.l === "ru" || o.l === "uk" ? "cyrillic" : "latin"}-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     <script>
       // The entrance plays only for a reader who has not asked for less motion; without a
       // script the page is simply all there (pages.css, public/landing.js).
@@ -275,7 +301,7 @@ function photoHtml(id: string, name: string, l: Lang): string {
   if (!ph || !hasPhoto(id)) return "";
   const page = commonsPage(ph.file);
   const lic = ph.license === "Public domain" ? T[l].pd : ph.license;
-  const shows = ph.shows && (l === "ru" ? (ph.shows.ru ?? ph.shows.en) : ph.shows.en);
+  const shows = ph.shows && ((ph.shows as Partial<Record<Lang, string>>)[l] ?? ph.shows.en);
   return `<figure class="photo"><img src="../../../data/photos/${id}.jpg" alt="${esc(name)}" loading="lazy" /><figcaption class="note">${shows ? `${esc(T[l].photoShows(shows))}<br />` : ""}<a href="${esc(page)}">${T[l].photo}: ${ph.author ? `${esc(ph.author)}, ` : ""}${esc(lic)}, Wikimedia Commons</a></figcaption></figure>`;
 }
 
@@ -356,7 +382,7 @@ function placePages(l: Lang): void {
     const p = f.properties;
     const name = nameOf(p, l);
     const kind = ui[l].kind[p.kind] ?? p.kind;
-    const where = l === "ru" ? content.where_ru?.[p.id] : p.where;
+    const where = whereOf(p.id, p.where, l);
     // The today line as the card has it; the title keeps the site's own name (namesakes).
     // Not when it only repeats the name (Philippi: «Где сегодня Филиппы»).
     const todayLine = l === "en" ? (content.where_en?.[p.id] ?? where) : where;
@@ -386,7 +412,7 @@ function placePages(l: Lang): void {
     const body = `    <main id="main" class="page">
       <p class="kicker">${esc(kind)}</p>
       <h1>${esc(name)}</h1>
-      <ul class="facts">${today ? `<li><span>${T[l].today}</span> ${esc(today)}</li>` : ""}${l === "ru" && name !== p.name ? `<li><span>${T[l].english}</span> <span lang="en">${esc(p.name)}</span></li>` : ""}${note ? `<li class="warn">${esc(note)}</li>` : ""}</ul>
+      <ul class="facts">${today ? `<li><span>${T[l].today}</span> ${esc(today)}</li>` : ""}${l !== "en" && name !== p.name ? `<li><span>${T[l].english}</span> <span lang="en">${esc(p.name)}</span></li>` : ""}${note ? `<li class="warn">${esc(note)}</li>` : ""}</ul>
       <p class="actions"><a class="button" href="../../../?place=${p.id}&amp;locale=${l}">${T[l].open} →</a></p>
       ${photoHtml(p.id, name, l)}
       ${lifeLine(content.life?.[p.id], l)}${
@@ -437,7 +463,7 @@ function placePages(l: Lang): void {
         tours.length
           ? `
       <h2>${T[l].tours}</h2>
-      <ul class="cards">${tours.map((t) => `<li><a href="../../tour/${t.id}/">${esc(t.title[l])} <span aria-hidden="true">→</span></a></li>`).join("")}</ul>`
+      <ul class="cards">${tours.map((t) => `<li><a href="../../tour/${t.id}/">${esc(t.title[l] ?? t.title.en)} <span aria-hidden="true">→</span></a></li>`).join("")}</ul>`
           : ""
       }
     </main>`;
@@ -563,7 +589,7 @@ function tourPages(l: Lang): void {
     return T[l].leg(num(d), road ? num(road) : null, sea);
   };
   for (const t of content.tours) {
-    const title = t.title[l];
+    const title = t.title[l] ?? t.title.en;
     const path = `${l}/tour/${t.id}`;
     const body = `    <main id="main" class="page">
       <p class="kicker">${T[l].tour} · ${esc(year({ year: t.year, approximate: t.approximate === true }, l))}</p>
@@ -578,7 +604,7 @@ function tourPages(l: Lang): void {
               ? `<a href="../../place/${slugOf.get(s.place) ?? s.place}/">${esc(n)}</a>`
               : esc(n);
           const leg = legOf(t, i);
-          return `<li><p class="stop"><b>${link}</b> <span class="ref">${esc(refOf(s.ref, l))}${leg ? ` · ${esc(leg)}` : ""}</span></p><p>${esc(s.note[l])}</p><a class="more" href="../../../?tour=${t.id}&amp;stop=${String(i + 1)}&amp;locale=${l}">${T[l].open} →</a></li>`;
+          return `<li><p class="stop"><b>${link}</b> <span class="ref">${esc(refOf(s.ref, l))}${leg ? ` · ${esc(leg)}` : ""}</span></p><p>${esc(s.note[l] ?? s.note.en)}</p><a class="more" href="../../../?tour=${t.id}&amp;stop=${String(i + 1)}&amp;locale=${l}">${T[l].open} →</a></li>`;
         })
         .join("\n        ")}</ol>
     </main>`;
@@ -738,7 +764,8 @@ function indexPages(l: Lang): void {
   // By the first letter: Ё with Е as the collator sorts it, Latin letters without accents.
   const letterOf = (name: string) => {
     const ch = /\p{L}/u.exec(name)?.[0] ?? "#";
-    const up = (l === "ru" ? ch : (ch.normalize("NFD")[0] ?? ch)).toUpperCase();
+    // Latin letters lose their accents (É under E); other scripts keep the letter.
+    const up = (/\p{Script=Latin}/u.test(ch) ? (ch.normalize("NFD")[0] ?? ch) : ch).toUpperCase();
     return up === "Ё" ? "Е" : up;
   };
   const letters = new Map<string, typeof listed>();
@@ -750,7 +777,7 @@ function indexPages(l: Lang): void {
   // Places with an article are marked: the pages worth reading, not lost among 1200 names.
   const link = (f: (typeof listed)[number]) => {
     const name = shownName(f);
-    const where = l === "ru" ? content.where_ru?.[f.properties.id] : f.properties.where;
+    const where = whereOf(f.properties.id, f.properties.where, l);
     const tell =
       (named.get(name) ?? 0) > 1 && where && where !== name
         ? ` <span class="note">(${esc(where)})</span>`
@@ -790,7 +817,7 @@ function indexPages(l: Lang): void {
       W.stops(t.stops.length),
       ...(km === null ? [] : [W.km(n.format(roundKm(km)))]),
     ];
-    return `<li><a class="tour-card" href="../tour/${t.id}/">${routeSvg(t)}<span class="tour-text"><span class="tour-when">${esc(year({ year: t.year, approximate: t.approximate === true }, l))}</span><span class="tour-title">${esc(t.title[l])}</span><span class="tour-meta">${meta.map((x) => esc(x.replace(/ /g, "\u00a0"))).join(" · ")}</span></span></a></li>`;
+    return `<li><a class="tour-card" href="../tour/${t.id}/">${routeSvg(t)}<span class="tour-text"><span class="tour-when">${esc(year({ year: t.year, approximate: t.approximate === true }, l))}</span><span class="tour-title">${esc(t.title[l] ?? t.title.en)}</span><span class="tour-meta">${meta.map((x) => esc(x.replace(/ /g, "\u00a0"))).join(" · ")}</span></span></a></li>`;
   };
   write(
     `${l}/tours`,

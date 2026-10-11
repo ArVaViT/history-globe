@@ -29,14 +29,17 @@ import {
   type PleiadesLink,
   type PlacePhoto,
   SourcesRuFile,
+  LocaleNamesFile,
+  NAME_LOCALES,
 } from "../packages/model/src/content.ts";
+import type { Locale } from "../packages/model/src/time.ts";
 import { inheritLife } from "../packages/model/src/place-life-links.ts";
 import { buildPolities } from "./build-polities.ts";
 import { packChapterYears } from "../packages/model/src/chapter-years.ts";
 import { YEAR_MAX, YEAR_MIN } from "../packages/core/src/engine.ts";
 import { inFocus } from "../packages/core/src/style.ts";
 import { canonicalPosition, refCovers } from "../packages/model/src/scripture.ts";
-import { siteLabelRu, type SiteLabelParts } from "../packages/model/src/sites.ts";
+import { siteLabelIn, siteLabelRu, type SiteLabelParts } from "../packages/model/src/sites.ts";
 
 const root = join(import.meta.dirname, "..");
 const out = join(root, "apps/web/public/data");
@@ -118,7 +121,7 @@ const SYNODAL_ONLY = new Set([
   "acd9137 Exod.1.11",
 ]);
 
-const names: Record<string, { ru: string; osis?: string }> = {};
+const names: Record<string, { ru: string; osis?: string } & Partial<Record<Locale, string>>> = {};
 const nameEntries = PlaceNamesFile.parse(load("content/place-names.yaml")).places;
 const seenIds = new Set<string>();
 for (const p of nameEntries) {
@@ -156,6 +159,25 @@ for (const p of nameEntries) {
       errors.push(`place-names: ${p.id} (${p.en}) evidence ${osis} is not a verse of this place`);
   }
   names[p.id] = p.evidence ? { ru: p.ru, osis: p.evidence.osis } : { ru: p.ru };
+}
+
+// The names in the other languages (content/names-<code>.yaml), where a language has its
+// file: every place with a Russian name needs one, as plain and capitalised as the Russian.
+const namesIn: Partial<Record<(typeof NAME_LOCALES)[number], LocaleNamesFile>> = {};
+for (const l of NAME_LOCALES) {
+  if (!existsSync(join(root, `content/names-${l}.yaml`))) continue;
+  const file = LocaleNamesFile.parse(load(`content/names-${l}.yaml`));
+  namesIn[l] = file;
+  for (const [id, n] of Object.entries(file.places)) {
+    const entry = names[id];
+    if (!entry) errors.push(`names-${l}: ${id} "${n}" has no Russian name (place-names.yaml)`);
+    else entry[l] = n;
+    if (/[()*[\]/]/.test(n)) errors.push(`names-${l}: ${id} "${n}" is not a plain name`);
+    if (n.charAt(0) !== n.charAt(0).toLocaleUpperCase(l))
+      errors.push(`names-${l}: ${id} "${n}" must start with a capital letter`);
+  }
+  for (const [id, e] of Object.entries(names))
+    if (!e[l] && !parked.has(id)) errors.push(`names-${l}: no name for ${id} "${e.ru}"`);
 }
 
 // Sanity of the data build itself.
@@ -280,7 +302,7 @@ for (const file of existsSync(articlesDir)
 }
 
 // The states (Cliopatria with our corrections): scripts/build-polities.ts.
-buildPolities({ out, load, places, errors, writes });
+buildPolities({ out, load, places, errors, writes, namesIn });
 
 // Russian forms of modern names (content/modern-names.yaml): "Tell es Sultan" →
 // «Телль-эс-Султан» in the today line and the candidate sites.
@@ -314,6 +336,33 @@ for (const f of places.features) {
     names[p.id]?.ru,
   );
   if (ru) whereRu[p.id] = ru;
+}
+
+// The today line in the other languages, by the same templates (siteLabelIn): "Tell
+// Balata", "within 5 km of X"; free English text stays English.
+const whereIn: Partial<Record<Locale, Record<string, string>>> = {};
+for (const [l, file] of Object.entries(namesIn)) {
+  const nameOf = (id: string) => names[id]?.[l as Locale] ?? file.modern[id];
+  const by: Record<string, string> = {};
+  for (const f of places.features) {
+    const p = f.properties;
+    if (!p.where_tpl) continue;
+    const text = siteLabelIn(
+      l,
+      {
+        label: p.where,
+        tpl: p.where_tpl,
+        ...(p.where_ref ? { ref: p.where_ref } : {}),
+        ...(p.where_ref_text !== undefined ? { ref_text: p.where_ref_text } : {}),
+        ...(p.where_n ? { n: p.where_n } : {}),
+        ...(p.where_unit ? { unit: p.where_unit } : {}),
+      },
+      nameOf,
+      names[p.id]?.[l as Locale],
+    );
+    if (text) by[p.id] = text;
+  }
+  whereIn[l as Locale] = by;
 }
 
 // The English today line anew where OpenBible's modern name repeats the ancient one.
@@ -388,6 +437,18 @@ for (const f of sites.features) {
     f.properties.label_ru = ru;
     sitesInRussian += 1;
   }
+  // label_uk, label_es, …: the same templates in each language with a names file.
+  for (const [l, file] of Object.entries(namesIn)) {
+    const key = `label_${l}`;
+    Reflect.deleteProperty(f.properties, key);
+    const text = siteLabelIn(
+      l,
+      f.properties,
+      (id) => names[id]?.[l as Locale] ?? file.modern[id],
+      names[f.properties.place]?.[l as Locale],
+    );
+    if (text) Reflect.set(f.properties, key, text);
+  }
 }
 // A translation nothing uses any more is stale: a free-text label on no candidate site
 // or today line, a modern id no place or candidate refers to (OpenBible renamed it).
@@ -414,8 +475,13 @@ for (const file of ["rivers.geojson", "river-labels.geojson"]) {
     features: { properties: { place?: string; name_ru?: string } }[];
   };
   for (const f of rivers.features) {
-    const ru = f.properties.place ? names[f.properties.place]?.ru : undefined;
-    if (ru) f.properties.name_ru = ru;
+    const entry = f.properties.place ? names[f.properties.place] : undefined;
+    if (entry?.ru) f.properties.name_ru = entry.ru;
+    // name_uk, name_es, … as the places have them.
+    for (const l of NAME_LOCALES) {
+      const n = entry?.[l];
+      if (n) (f.properties as Record<string, string>)[`name_${l}`] = n;
+    }
   }
   writes.push([path, JSON.stringify(rivers)]);
 }
@@ -487,6 +553,8 @@ writes.push([
         ...(b.approximate ? { approx: true } : {}),
         en: b.title.en,
         ru: b.title.ru,
+        // The map's label in every language it is written in (the style falls back to English).
+        ...Object.fromEntries(NAME_LOCALES.flatMap((l) => (b.title[l] ? [[l, b.title[l]]] : []))),
         ...(b.ref ? { ref: b.ref } : {}),
       },
       geometry: { type: "Point", coordinates: pointOf.get(b.place) ?? [0, 0] },
@@ -549,7 +617,18 @@ const photos: Record<string, PlacePhoto> = {};
         );
         if (!disputed) errors.push(`photos.yaml: place ${place} is not disputed; drop site`);
         else if (!c) errors.push(`photos.yaml: ${site} is not a candidate site of ${place}`);
-        else shows = { en: c.properties.label, ru: c.properties.label_ru };
+        else
+          shows = {
+            en: c.properties.label,
+            ru: c.properties.label_ru,
+            // label_uk, label_es, …: the candidate's label in each language with a names file.
+            ...Object.fromEntries(
+              Object.keys(namesIn).flatMap((l) => {
+                const text: unknown = Reflect.get(c.properties, `label_${l}`);
+                return typeof text === "string" ? [[l, text]] : [];
+              }),
+            ),
+          };
       }
       photos[place] = shows ? { ...photo, shows } : photo;
     }
@@ -597,6 +676,13 @@ if (existsSync("content/ancient-sites.json")) {
           id: s.id,
           en: s.en,
           ru: s.ru,
+          // uk, es, …: the site's name in each language that has a names file.
+          ...Object.fromEntries(
+            Object.entries(namesIn).flatMap(([l, f]) => {
+              const n = f.ancient?.[s.id];
+              return n ? [[l, n]] : [];
+            }),
+          ),
           from: s.from,
           to: s.to,
           rank: s.rank,
@@ -694,6 +780,7 @@ const release: ContentRelease = {
   tours,
   where_ru: whereRu,
   where_en: whereEn,
+  where_in: whereIn,
   life,
   events,
   battles,
@@ -702,9 +789,11 @@ const release: ContentRelease = {
   pleiades,
   chapter_years: chapterYears.table,
   // The card names a place's questions; their answers are the /q/ pages (build-pages.ts).
-  questions: questions.reduce<Record<string, { id: string; en: string; ru: string }[]>>((by, q) => {
-    if (q.map?.place)
-      (by[q.map.place] ??= []).push({ id: q.id, en: q.question.en, ru: q.question.ru });
+  // Each question in every language it is written in (the card falls back to English).
+  questions: questions.reduce<
+    Record<string, ({ id: string; en: string; ru: string } & Partial<Record<Locale, string>>)[]>
+  >((by, q) => {
+    if (q.map?.place) (by[q.map.place] ??= []).push({ id: q.id, ...q.question });
     return by;
   }, {}),
 };
@@ -714,6 +803,22 @@ writeFileSync(
   join(out, "articles.json"),
   JSON.stringify(Object.fromEntries(articlesOut.map((a) => [a.place, a]))),
 );
+// The people's names in the other languages go into people.json (pipeline/people), beside
+// the Russian slot: names.<code>.<TIPNR id>.
+const peoplePath = join(out, "people.json");
+if (existsSync(peoplePath)) {
+  const people = JSON.parse(readFileSync(peoplePath, "utf8")) as {
+    people: [string, ...unknown[]][];
+    names?: Record<string, Record<string, string>>;
+  };
+  const ids = new Set(people.people.map(([id]) => id));
+  people.names = {};
+  for (const [l, file] of Object.entries(namesIn)) {
+    // Only the people the site shows: the file may name more (the whole TIPNR list).
+    people.names[l] = Object.fromEntries(Object.entries(file.people).filter(([id]) => ids.has(id)));
+  }
+  writes.push([peoplePath, JSON.stringify(people)]);
+}
 for (const [path, text] of [...writes, ...ancientWrites]) writeFileSync(path, text);
 writeFileSync(join(out, "content.json"), JSON.stringify(release));
 console.log(

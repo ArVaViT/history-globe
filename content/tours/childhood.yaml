@@ -8,6 +8,11 @@ id: childhood
 title:
   en: "The childhood of Jesus, after Luke"
   ru: "Детство Иисуса, по Луке"
+  uk: "Дитинство Ісуса за Лукою"
+  es: "La infancia de Jesús, según Lucas"
+  pt: "A infância de Jesus, segundo Lucas"
+  de: "Die Kindheit Jesu nach Lukas"
+  fr: "L’enfance de Jésus, selon Luc"
 year: "5 BC"
 people: ["Jesus@Isa.7.14-Rev"]
 approximate: true
@@ -17,30 +22,60 @@ stops:
     note:
       en: 'In Nazareth the angel Gabriel is sent to Mary, and she answers: "Behold the handmaid of the Lord; be it unto me according to thy word."'
       ru: "В Назарет послан Ангел Гавриил к Марии, и Она отвечает: «се, Раба Господня; да будет Мне по слову твоему»."
+      uk: "У Назареті ангел Гавриїл посланий до Марії, і вона відповідає: «Се рабиня Господня: нехай станеть ся менї по слову твоєму»."
+      es: "En Nazaret el ángel Gabriel es enviado a María, y ella responde: «He aquí la sierva del Señor; hágase á mí conforme á tu palabra»."
+      pt: "Em Nazaré o anjo Gabriel é enviado a Maria, e ela responde: “Eis aqui a serva do Senhor; que se cumpra em mim segundo a sua palavra.”"
+      de: "In Nazareth wird der Engel Gabriel zu Maria gesandt, und sie antwortet: „Siehe ich bin des HERRN Magd; mir geschehe, wie du gesagt hast.“"
+      fr: "À Nazareth, l’ange Gabriel est envoyé à Marie, qui répond : « Je suis la servante du Seigneur ; qu’il me soit fait selon ta parole ! »"
   - place: a112427 # Bethlehem
     ref: Luke.2.4-Luke.2.20
     note:
       en: 'In Bethlehem, the city of David, Mary lays her firstborn in a manger; to shepherds in the fields a multitude of the heavenly host praises God: "Glory to God in the highest, and on earth peace, good will toward men."'
       ru: "В Вифлееме, городе Давидовом, Мария полагает Первенца в ясли; пастухам в поле является воинство небесное, славящее Бога: «слава в вышних Богу, и на земле мир, в человеках благоволение!»"
+      uk: "У Вифлеємі, місті Давида, Марія кладе свого первістка в ясла; пастухам у полі безліч небесного воїнства славить Бога: «Слава на вишинах Богу, а на землї впокій, між людьми благоволеннє»."
+      es: "En Belén, la ciudad de David, María acuesta a su primogénito en un pesebre; a unos pastores en el campo una multitud del ejército celestial alaba a Dios: «Gloria en las alturas á Dios, y en la tierra paz, buena voluntad para con los hombres»."
+      pt: "Em Belém, a cidade de Davi, Maria deita o seu primogênito numa manjedoura; a pastores nos campos uma multidão do exército celestial louva a Deus: “Glória a Deus nas maiores alturas, e paz na terra, boa vontade para com os homens.”"
+      de: "In Bethlehem, der Stadt Davids, legt Maria ihren erstgeborenen Sohn in eine Krippe; den Hirten auf dem Feld lobt die Menge der himmlischen Heerscharen Gott: „Ehre sei Gott in der Höhe und Frieden auf Erden und den Menschen ein Wohlgefallen.“"
+      fr: "À Bethléhem, la ville de David, Marie couche son premier-né dans une crèche ; à des bergers dans les champs, une multitude de l’armée céleste loue Dieu : « Gloire à Dieu dans les lieux très hauts, et paix sur la terre parmi les hommes qu’il agrée ! »"
   - place: a15257a # Jerusalem
     ref: Luke.2.22-Luke.2.38
     note:
       en: 'In the Temple at Jerusalem Simeon takes the child in his arms: "Lord, now lettest thou thy servant depart in peace"; Anna speaks of Him to all who look for redemption.'
       ru: "В храме в Иерусалиме Симеон берёт Младенца на руки: «Ныне отпускаешь раба Твоего, Владыко, по слову Твоему, с миром»; Анна говорит о Нём всем, ожидавшим избавления."
+      uk: "У храмі в Єрусалимі Симеон бере дитя на руки: «Нинї відпускаєш раба твого, Владико, по глаголу твоєму, з упокоєм»; Анна говорить про Нього всім, хто чекає визволення."
+      es: "En el Templo de Jerusalén Simeón toma al niño en sus brazos: «Ahora despides, Señor, á tu siervo, conforme á tu palabra, en paz»; Ana habla de él a todos los que esperaban la redención."
+      pt: "No Templo, em Jerusalém, Simeão toma o menino nos braços: “Agora despedes o teu servo, Soberano… em paz”; Ana fala dele a todos os que esperam a redenção."
+      de: "Im Tempel zu Jerusalem nimmt Simeon das Kind auf seine Arme: „HERR, nun läßt du deinen Diener in Frieden fahren“; Hanna spricht von ihm zu allen, die auf die Erlösung warten."
+      fr: "Dans le temple de Jérusalem, Siméon prend l’enfant dans ses bras : « Maintenant, Seigneur, tu laisses ton serviteur s’en aller en paix » ; Anne parle de lui à tous ceux qui attendent la délivrance."
   - place: af5884f # Nazareth
     ref: Luke.2.39-Luke.2.40
     note:
       en: "They return to Galilee, to their own city Nazareth, and the child grows, filled with wisdom."
       ru: "Они возвращаются в Галилею, в свой город Назарет, и Младенец возрастает, исполняясь премудрости."
+      uk: "Вони повертаються до Галілеї, до свого міста Назарета, і дитя росте, сповнюючись мудрості."
+      es: "Vuelven a Galilea, a su ciudad de Nazaret, y el niño crece, lleno de sabiduría."
+      pt: "Voltam à Galileia, à sua própria cidade, Nazaré, e o menino cresce, cheio de sabedoria."
+      de: "Sie kehren nach Galiläa zurück, in ihre Stadt Nazareth, und das Kind wächst, voller Weisheit."
+      fr: "Ils retournent en Galilée, dans leur ville de Nazareth, et l’enfant grandit, rempli de sagesse."
   - place: a15257a # Jerusalem
     ref: Luke.2.41-Luke.2.50
     year: "AD 8"
     note:
       en: 'At twelve He stays behind in Jerusalem after the Passover and is found in the Temple among the teachers: "wist ye not that I must be about my Father''s business?"'
       ru: "В двенадцать лет Он остаётся в Иерусалиме после Пасхи, и Его находят в храме посреди учителей: «или вы не знали, что Мне должно быть в том, что принадлежит Отцу Моему?»"
+      uk: "У дванадцять років Він залишається в Єрусалимі після Пасхи, і Його знаходять у храмі серед учителів: «хиба ж не знали, що в тому, що єсть Отця мого, треба бути менї?»"
+      es: "A los doce años se queda en Jerusalén después de la Pascua y lo encuentran en el Templo entre los doctores: «¿No sabíais que en los negocios de mi Padre me conviene estar?»"
+      pt: "Aos doze anos, Ele fica em Jerusalém depois da Páscoa e é encontrado no Templo entre os mestres: “Não sabiam que eu devo estar na casa de meu Pai?”"
+      de: "Mit zwölf Jahren bleibt er nach dem Passafest in Jerusalem zurück und wird im Tempel unter den Lehrern gefunden: „Wisset ihr nicht, daß ich sein muß in dem, das meines Vaters ist?“"
+      fr: "À douze ans, il reste à Jérusalem après la Pâque et on le trouve dans le temple au milieu des docteurs : « Ne saviez-vous pas qu’il faut que je m’occupe des affaires de mon Père ? »"
   - place: af5884f # Nazareth
     ref: Luke.2.51-Luke.2.52
     year: "AD 8"
     note:
       en: "He goes down with them to Nazareth and is subject unto them, and increases in wisdom and stature, and in favour with God and man."
       ru: "Он приходит с ними в Назарет и находится в повиновении у них, преуспевая в премудрости и возрасте и в любви у Бога и человеков."
+      uk: "Він іде з ними до Назарета й слухняний їм, і росте мудрістю й віком, і в ласці в Бога та людей."
+      es: "Baja con ellos a Nazaret y les está sujeto, y crece en sabiduría y en estatura, y en gracia ante Dios y ante los hombres."
+      pt: "Desce com eles a Nazaré e lhes é submisso, e cresce em sabedoria e estatura, e em graça diante de Deus e dos homens."
+      de: "Er geht mit ihnen nach Nazareth hinab und ist ihnen untertan und nimmt zu an Weisheit, Alter und Gnade bei Gott und den Menschen."
+      fr: "Il descend avec eux à Nazareth et leur est soumis, et il croît en sagesse, en stature et en grâce devant Dieu et devant les hommes."

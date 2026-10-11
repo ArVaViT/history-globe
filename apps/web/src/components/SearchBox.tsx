@@ -10,13 +10,19 @@ import {
   placeName,
   isYearInput,
   parseYearInput,
-  pick,
   namesOf,
 } from "@hg/model";
 import { useEffect, useMemo, useState, type RefObject } from "react";
 import { useTranslation } from "../i18n";
 import { chapterFocus, type ChapterFocus } from "../chapter";
-import { DATA_URL, foldName, searchPlaces, type LoadedData, type PlaceProps } from "../data";
+import {
+  DATA_URL,
+  foldName,
+  searchPlaces,
+  whereIn,
+  type LoadedData,
+  type PlaceProps,
+} from "../data";
 import { loadPeople, peopleNow, personName, type People } from "../people";
 import { Panel } from "./Panel";
 
@@ -50,7 +56,15 @@ export interface AncientSearchSite {
   readonly to: number;
   readonly lon: number;
   readonly lat: number;
+  /** The name in the other languages that have one: uk, es, … */
+  readonly [code: string]: string | number | boolean | undefined;
 }
+
+/** An ancient site's name in the reader's language, else English. */
+const siteName = (s: AncientSearchSite, l: string): string => {
+  const own = s[l];
+  return typeof own === "string" ? own : s.en;
+};
 
 let ancientLoad: Promise<AncientSearchSite[]> | null = null;
 /** ancient.geojson, fetched once when the search first opens (the map has it cached). */
@@ -58,11 +72,14 @@ function loadAncientSites(): Promise<AncientSearchSite[]> {
   ancientLoad ??= fetch(`${DATA_URL}/ancient.geojson`)
     .then((r) => (r.ok ? (r.json() as Promise<AncientFile>) : { features: [] }))
     .then((f) =>
-      f.features.map((x) => ({
-        ...x.properties,
-        lon: x.geometry.coordinates[0] ?? 0,
-        lat: x.geometry.coordinates[1] ?? 0,
-      })),
+      f.features.map(
+        (x) =>
+          ({
+            ...x.properties,
+            lon: x.geometry.coordinates[0] ?? 0,
+            lat: x.geometry.coordinates[1] ?? 0,
+          }) as AncientSearchSite,
+      ),
     )
     .catch(() => {
       // Tried again the next time the search opens.
@@ -74,7 +91,7 @@ function loadAncientSites(): Promise<AncientSearchSite[]> {
 type AncientFile = {
   features: {
     geometry: { coordinates: number[] };
-    properties: Omit<AncientSearchSite, "lon" | "lat">;
+    properties: Readonly<Record<string, string | number | boolean | undefined>>;
   }[];
 };
 
@@ -127,7 +144,8 @@ export function SearchBox({
   useEffect(() => {
     void loadAncientSites().then(setAncient);
   }, []);
-  const ru = i18n.language === "ru";
+  // Any language but English: the English line beside a name of its own says nothing.
+  const ru = i18n.language !== "en";
   // "Деян 16": the places whose verses include that chapter, offered above the names.
   // A place's own name before the number («Иерусалим 1», "Jericho 6") is not a book.
   const placeNames = useMemo(
@@ -177,8 +195,12 @@ export function SearchBox({
     if (year !== null || bibleOnly) return [];
     const q = foldName(query);
     if (q.length < 2) return [];
-    return ancient.filter((a) => [a.ru, a.en].some((n) => foldName(n).startsWith(q))).slice(0, 3);
-  }, [ancient, year, query, bibleOnly]);
+    return ancient
+      .filter((a) =>
+        [a.ru, a.en, siteName(a, i18n.language)].some((n) => foldName(n).startsWith(q)),
+      )
+      .slice(0, 3);
+  }, [ancient, year, query, bibleOnly, i18n.language]);
   // Tours by their title, in either language: "путешествие Павла", "Exodus".
   const tours = useMemo(() => {
     if (year !== null) return [];
@@ -203,10 +225,14 @@ export function SearchBox({
       text.split(/[\s\-\u2010-\u2015]+/).some((w) => foldName(w).startsWith(q));
     // Strong: the place's own name. A match on where it is today ("Adamah, at Tell
     // ed-Damiyeh near Hattin") is loose, and gives way to an ancient site named so.
-    const strong = found.filter(({ props: p }) => [p.name, p.name_ru].some(startsWord));
+    const strong = found.filter(({ props: p }) =>
+      [p.name, p.name_ru, p[`name_${i18n.language}`]].some(
+        (n) => typeof n === "string" && startsWord(n),
+      ),
+    );
     const anyStrong = strong.length > 0 || persons.length > 0 || sites.length > 0;
     return anyStrong && q.length >= 2 ? strong : found;
-  }, [found, persons, sites, query]);
+  }, [found, persons, sites, query, i18n.language]);
   // The chapter or the year, when there is one, is the first option; places, people, sites.
   const offset = chapter || year !== null ? 1 : 0;
   const total = offset + results.length + persons.length + sites.length + tours.length;
@@ -384,7 +410,7 @@ export function SearchBox({
               // English name beside the Russian, design review 3); what kind of place it is
               // when that says nothing new ("City of David — City of David").
               const kind = t(`kind.${props.kind}`, { defaultValue: "" });
-              const where = ru ? props.where_ru : props.where;
+              const where = whereIn(props, i18n.language);
               const secondary =
                 where && !sameWords(where, primary) && (namesake || !ru || !/[A-Za-z]/.test(where))
                   ? where
@@ -472,7 +498,7 @@ export function SearchBox({
                   className={`flex cursor-pointer items-baseline justify-between gap-3 px-4 py-1.5 ${j === 0 && results.length + persons.length > 0 ? "border-t border-line" : ""} ${i === active ? "bg-paper-2" : ""}`}
                 >
                   <span className="font-serif text-[15px] text-ink">
-                    {pick({ en: site.en, ru: site.ru }, i18n.language) ?? site.en}
+                    {siteName(site, i18n.language)}
                   </span>
                   <span className="truncate text-xs text-ink-soft">
                     {/* When it stood says more than "capital" (of what?) and sets it

@@ -126,6 +126,25 @@ describe("parseChapter", () => {
   });
 });
 
+describe("parseChapter in the other languages", () => {
+  it("reads a book's own full name or abbreviation and labels it the language's way", () => {
+    expect(parseChapter("Hechos 16", "es")).toEqual({ ref: "Acts.16", label: "Hch 16" });
+    expect(parseChapter("Atos 16", "pt")).toEqual({ ref: "Acts.16", label: "At 16" });
+    expect(parseChapter("Actes 16", "fr")).toEqual({ ref: "Acts.16", label: "Ac 16" });
+    expect(parseChapter("1. Mose 12", "de")).toEqual({ ref: "Gen.12", label: "1 Mo 12" });
+    expect(parseChapter("Дії 16", "uk")).toEqual({ ref: "Acts.16", label: "Дії 16" });
+    expect(parseChapter("Cantar de los Cantares 2", "es")?.ref).toBe("Song.2");
+  });
+  it("takes a name typed without its accents, and a verse after a comma", () => {
+    expect(parseChapter("Esaie 53", "fr")?.ref).toBe("Isa.53");
+    expect(parseChapter("genesis 12", "es")?.ref).toBe("Gen.12");
+    expect(parseChapter("Apg 16,12", "de")?.ref).toBe("Acts.16");
+  });
+  it("still reads the English names", () => {
+    expect(parseChapter("Acts 16", "de")).toEqual({ ref: "Acts.16", label: "Apg 16" });
+  });
+});
+
 describe("parseChapter: a whole book", () => {
   it("takes a book typed exactly, not the start of a place's name", () => {
     expect(parseChapter("Деян", "ru")).toEqual({ ref: "Acts", label: "Деян" });

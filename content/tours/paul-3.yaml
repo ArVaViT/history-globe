@@ -7,6 +7,11 @@ id: paul-3
 title:
   en: "Paul's third journey"
   ru: "Третье путешествие Павла"
+  uk: "Третя подорож Павла"
+  es: "El tercer viaje de Pablo"
+  pt: "A terceira viagem de Paulo"
+  de: "Die dritte Reise des Paulus"
+  fr: "Le troisième voyage de Paul"
 year: "AD 54"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -16,17 +21,32 @@ stops:
     note:
       en: "Paul sets out from Antioch again."
       ru: "Павел снова выходит из Антиохии."
+      uk: "Павло знову вирушає з Антіохії."
+      es: "Pablo parte de nuevo de Antioquía."
+      pt: "Paulo parte de Antioquia novamente."
+      de: "Paulus bricht wieder von Antiochia auf."
+      fr: "Paul repart d’Antioche."
   - place: a5feb15
     ref: Acts.19.1-Acts.20.1
     note:
       en: "About three years in Ephesus; the riot of Demetrius."
       ru: "Около трёх лет в Ефесе; мятеж Димитрия."
+      uk: "Близько трьох років в Ефесі; заколот Димитрія."
+      es: "Unos tres años en Éfeso; el tumulto de Demetrio."
+      pt: "Cerca de três anos em Éfeso; o tumulto de Demétrio."
+      de: "Etwa drei Jahre in Ephesus; der Aufruhr des Demetrius."
+      fr: "Environ trois ans à Éphèse ; l’émeute de Démétrius."
   - place: a49e1d0
     ref: Acts.20.1-Acts.20.6
     by: untold
     note:
       en: "Through Macedonia to Greece for three months, and back; after the days of unleavened bread they sail from Philippi."
       ru: "Через Македонию в Грецию на три месяца и обратно; после дней опресночных отплывают из Филипп."
+      uk: "Через Македонію до Еллади на три місяці й назад; після днів опрісноків вони відпливають з Філіпп."
+      es: "Por Macedonia hasta Grecia, tres meses, y de regreso; pasados los días de los panes sin levadura, zarpan de Filipos."
+      pt: "Pela Macedônia até a Grécia por três meses, e de volta; depois dos dias dos pães ázimos, navegam de Filipos."
+      de: "Durch Mazedonien nach Griechenland für drei Monate und zurück; nach den Tagen der ungesäuerten Brote segeln sie von Philippi ab."
+      fr: "Par la Macédoine jusqu’en Grèce pour trois mois, et retour ; après les jours des pains sans levain, ils s’embarquent à Philippes."
   - place: a91c509
     ref: Acts.20.6-Acts.20.12
     by: sea
@@ -34,17 +54,32 @@ stops:
     note:
       en: "Seven days in Troas; Eutychus."
       ru: "Семь дней в Троаде; Евтих."
+      uk: "Сім днів у Троаді; Євтих."
+      es: "Siete días en Troas; Eutico."
+      pt: "Sete dias em Trôade; Êutico."
+      de: "Sieben Tage in Troas; Eutychus."
+      fr: "Sept jours à Troas ; Eutychus."
   - place: a0a2ca7
     ref: Acts.20.13
     note:
       en: "Paul goes on foot to Assos."
       ru: "Павел идёт в Асс пешком."
+      uk: "Павло йде пішки до Ассоса."
+      es: "Pablo va a pie hasta Asón."
+      pt: "Paulo vai a pé até Assôs."
+      de: "Paulus geht zu Fuß nach Assos."
+      fr: "Paul se rend à pied à Assos."
   - place: a33910d
     ref: Acts.20.14
     by: sea
     note:
       en: "They come to Mitylene."
       ru: "Прибывают в Митилину."
+      uk: "Вони приходять до Мітилени."
+      es: "Llegan a Mitilene."
+      pt: "Chegam a Mitilene."
+      de: "Sie kommen nach Mitylene."
+      fr: "Ils arrivent à Mytilène."
   - place: a4c2c75
     ref: Acts.20.15
     by: sea
@@ -52,6 +87,11 @@ stops:
     note:
       en: "Opposite Chios."
       ru: "Против Хиоса."
+      uk: "Навпроти Хіоса."
+      es: "Frente a Quíos."
+      pt: "Defronte de Quios."
+      de: "Gegenüber von Chios."
+      fr: "En face de Chios."
   - place: acf6ec0
     ref: Acts.20.15
     by: sea
@@ -59,6 +99,11 @@ stops:
     note:
       en: "They touch at Samos."
       ru: "Приплывают в Самос."
+      uk: "Вони заходять до Самоса."
+      es: "Tocan en Samos."
+      pt: "Aportam em Samos."
+      de: "Sie legen in Samos an."
+      fr: "Ils abordent à Samos."
   - place: a55027d
     ref: Acts.20.17-Acts.20.38
     by: sea
@@ -66,12 +111,22 @@ stops:
     note:
       en: "Farewell to the elders of Ephesus."
       ru: "Прощание с пресвитерами Ефесской церкви."
+      uk: "Прощання зі старійшинами Ефеса."
+      es: "Despedida de los ancianos de Éfeso."
+      pt: "Despedida dos presbíteros de Éfeso."
+      de: "Abschied von den Ältesten von Ephesus."
+      fr: "Adieux aux anciens d’Éphèse."
   - place: a398e5d
     ref: Acts.21.1
     by: sea
     note:
       en: "A straight course to Cos."
       ru: "Прямым путём в Кос."
+      uk: "Прямим курсом до Коса."
+      es: "Rumbo directo a Cos."
+      pt: "Rumo direto a Cós."
+      de: "Auf geradem Kurs nach Kos."
+      fr: "Route directe vers Cos."
   - place: a4218ee
     ref: Acts.21.1
     by: sea
@@ -79,32 +134,62 @@ stops:
     note:
       en: "Rhodes."
       ru: "Родос."
+      uk: "Родос."
+      es: "Rodas."
+      pt: "Rodes."
+      de: "Rhodos."
+      fr: "Rhodes."
   - place: ade301b
     ref: Acts.21.1-Acts.21.2
     by: sea
     note:
       en: "At Patara they find a ship to Phoenicia."
       ru: "В Патаре находят корабль в Финикию."
+      uk: "У Патарі вони знаходять корабель до Фінікії."
+      es: "En Pátara hallan una nave que va a Fenicia."
+      pt: "Em Pátara encontram um navio para a Fenícia."
+      de: "In Patara finden sie ein Schiff nach Phönizien."
+      fr: "À Patara, ils trouvent un navire pour la Phénicie."
   - place: a160272
     ref: Acts.21.3-Acts.21.6
     by: sea
     note:
       en: "Seven days with the disciples at Tyre."
       ru: "Семь дней у учеников в Тире."
+      uk: "Сім днів з учнями в Тирі."
+      es: "Siete días con los discípulos en Tiro."
+      pt: "Sete dias com os discípulos em Tiro."
+      de: "Sieben Tage bei den Jüngern in Tyrus."
+      fr: "Sept jours avec les disciples à Tyr."
   - place: abc2af0
     ref: Acts.21.7
     by: sea
     note:
       en: "One day with the brothers at Ptolemais."
       ru: "Один день у братьев в Птолемаиде."
+      uk: "Один день з братами в Птолемаїді."
+      es: "Un día con los hermanos en Tolemaida."
+      pt: "Um dia com os irmãos em Ptolemaida."
+      de: "Ein Tag bei den Brüdern in Ptolemais."
+      fr: "Un jour avec les frères à Ptolémaïs."
   - place: a58735e
     ref: Acts.21.8-Acts.21.14
     by: sea
     note:
       en: "In the house of Philip; the prophecy of Agabus."
       ru: "В доме Филиппа; пророчество Агава."
+      uk: "У домі Пилипа; пророцтво Агава."
+      es: "En casa de Felipe; la profecía de Agabo."
+      pt: "Na casa de Filipe; a profecia de Ágabo."
+      de: "Im Haus des Philippus; die Weissagung des Agabus."
+      fr: "Dans la maison de Philippe ; la prophétie d’Agabus."
   - place: a15257a
     ref: Acts.21.15-Acts.21.17
     note:
       en: "The brothers in Jerusalem receive them gladly."
       ru: "Братья в Иерусалиме радушно принимают их."
+      uk: "Брати в Єрусалимі радо приймають їх."
+      es: "Los hermanos de Jerusalén los reciben con alegría."
+      pt: "Os irmãos em Jerusalém os recebem com alegria."
+      de: "Die Brüder in Jerusalem nehmen sie gern auf."
+      fr: "À Jérusalem, les frères les accueillent avec joie."

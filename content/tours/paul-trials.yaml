@@ -6,6 +6,11 @@ id: paul-trials
 title:
   en: "Paul's arrest and trials"
   ru: "Арест и суды Павла"
+  uk: "Арешт і суди над Павлом"
+  es: "Arresto y juicios de Pablo"
+  pt: "A prisão e os julgamentos de Paulo"
+  de: "Verhaftung und Prozesse des Paulus"
+  fr: "L’arrestation et les procès de Paul"
 year: "AD 57"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -15,20 +20,40 @@ stops:
     note:
       en: 'Seized in the Temple and bound with two chains, Paul speaks to the people and before the council; by night the Lord stands by him: "as thou hast testified of me in Jerusalem, so must thou bear witness also at Rome."'
       ru: "Схваченный в храме и скованный двумя цепями, Павел говорит к народу и перед синедрионом; ночью Господь, явившись ему, говорит: «как ты свидетельствовал о Мне в Иерусалиме, так надлежит тебе свидетельствовать и в Риме»."
+      uk: "Схоплений у храмі й закутий у два ланцюги, Павло говорить до народу й перед радою; уночі Господь стає біля нього: «як бо ти сьвідкував про мене в Єрусалимі, так ти маєш і в Римі сьвідкувати»."
+      es: "Apresado en el Templo y atado con dos cadenas, Pablo habla al pueblo y ante el concilio; de noche el Señor se le presenta: «como has testificado de mí en Jerusalem, así es menester testifiques también en Roma»."
+      pt: "Preso no Templo e atado com duas correntes, Paulo fala ao povo e diante do conselho; à noite o Senhor está ao seu lado: “assim como você testemunhou a meu respeito em Jerusalém, assim você deve testemunhar também em Roma.”"
+      de: "Im Tempel ergriffen und mit zwei Ketten gebunden, spricht Paulus zum Volk und vor dem Hohen Rat; in der Nacht steht der Herr ihm bei: „Sei getrost, Paulus! denn wie du von mir zu Jerusalem gezeugt hast, also mußt du auch zu Rom zeugen.“"
+      fr: "Saisi dans le temple et lié de deux chaînes, Paul parle au peuple et devant le sanhédrin ; la nuit, le Seigneur se tient près de lui : « de même que tu as rendu témoignage de moi dans Jérusalem, il faut aussi que tu rendes témoignage dans Rome »."
   - place: a58735e # Caesarea
     ref: Acts.23.23-Acts.24.27
     note:
       en: "Led out by night under guard by way of Antipatris to Caesarea, he answers before the governor Felix, who trembles as Paul reasons of righteousness and judgment to come, and keeps him bound two years."
       ru: "Ночью под стражей его уводят через Антипатриду в Кесарию; он отвечает перед правителем Феликсом, который приходит в страх от слов о правде и будущем суде и два года держит его в узах."
+      uk: "Виведений уночі під охороною через Антипатриду до Кесарії, він відповідає перед намісником Феликсом, який тремтить, коли Павло розмірковує про праведність і прийдешній суд, і тримає його в кайданах два роки."
+      es: "Conducido de noche bajo custodia por Antípatris hasta Cesarea, responde ante el gobernador Félix, que se estremece mientras Pablo discurre sobre la justicia y el juicio venidero, y lo mantiene atado dos años."
+      pt: "Levado de noite sob guarda, por Antipátris, a Cesareia, responde diante do governador Félix, que treme quando Paulo trata da justiça e do juízo vindouro, e o mantém preso por dois anos."
+      de: "Bei Nacht unter Bewachung über Antipatris nach Caesarea geführt, verantwortet er sich vor dem Statthalter Felix, der erschrickt, als Paulus von der Gerechtigkeit und dem künftigen Gericht redet, und ihn zwei Jahre lang in Haft hält."
+      fr: "Emmené de nuit sous escorte par Antipatris jusqu’à Césarée, il comparaît devant le gouverneur Félix, qui est effrayé quand Paul parle de la justice et du jugement à venir, et le garde enchaîné deux ans."
   - place: a15257a # Jerusalem
     ref: Acts.25.1-Acts.25.5
     year: "AD 59"
     note:
       en: "Festus, the new governor, goes up to Jerusalem, where the high priest and the chief of the Jews ask for Paul to be brought there, laying wait to kill him on the way."
       ru: "Новый правитель Фест приходит в Иерусалим, и первосвященник со знатнейшими из Иудеев просят вызвать Павла туда, злоумышляя убить его на дороге."
+      uk: "Фест, новий намісник, їде до Єрусалима, де первосвященик і старшини юдеїв просять привести туди Павла, підстерігаючи, щоб убити його дорогою."
+      es: "Festo, el nuevo gobernador, sube a Jerusalén, donde el sumo sacerdote y los principales de los judíos piden que Pablo sea llevado allá, tendiéndole una emboscada para matarlo en el camino."
+      pt: "Festo, o novo governador, sobe a Jerusalém, onde o sumo sacerdote e os principais dos judeus pedem que Paulo seja levado para lá, armando emboscada para matá-lo no caminho."
+      de: "Festus, der neue Statthalter, geht nach Jerusalem hinauf, wo der Hohepriester und die Vornehmsten der Juden darum bitten, Paulus dorthin kommen zu lassen, und ihm unterwegs auflauern, um ihn zu töten."
+      fr: "Festus, le nouveau gouverneur, monte à Jérusalem, où le grand-prêtre et les principaux des Juifs demandent que Paul y soit amené, lui dressant des embûches pour le tuer en chemin."
   - place: a58735e # Caesarea
     ref: Acts.25.6-Acts.26.32
     year: "AD 59"
     note:
       en: 'Back in Caesarea Paul appeals to Caesar, and before Agrippa tells of his conversion; Agrippa answers: "Almost thou persuadest me to be a Christian."'
       ru: "В Кесарии Павел требует суда кесарева и перед Агриппой рассказывает о своём обращении; Агриппа отвечает: «ты немного не убеждаешь меня сделаться Христианином»."
+      uk: "Повернувшись до Кесарії, Павло звертається до кесаря, а перед Агриппою розповідає про своє навернення; Агриппа відповідає: «О мало не вговорив єси мене бути Християнином»."
+      es: "De vuelta en Cesarea Pablo apela al César, y ante Agripa cuenta su conversión; Agripa responde: «Por poco me persuades á ser Cristiano»."
+      pt: "De volta a Cesareia, Paulo apela a César e diante de Agripa conta a sua conversão; Agripa responde: “Com um pouco de persuasão você está tentando me fazer cristão?”"
+      de: "Wieder in Caesarea beruft sich Paulus auf den Kaiser und erzählt vor Agrippa von seiner Bekehrung; Agrippa antwortet: „Es fehlt nicht viel, du überredest mich, daß ich ein Christ würde.“"
+      fr: "De retour à Césarée, Paul en appelle à César et, devant Agrippa, raconte sa conversion ; Agrippa répond : « Tu vas bientôt me persuader de devenir chrétien ! »"

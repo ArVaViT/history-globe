@@ -1,4 +1,4 @@
-import { formatYear, periodAt, pick, placeName, formatRefOr, escapeRegExp } from "@hg/model";
+import { formatYear, periodAt, periodName, placeName, formatRefOr, escapeRegExp } from "@hg/model";
 import { chapterLabel, firstVerseIn, readingOrder } from "./chapter";
 import { DATA_URL, type LoadedData } from "./data";
 import type { Globe } from "./useGlobe";
@@ -326,7 +326,7 @@ export async function printForClass({
     when: [
       blank ? translate(s.locale, "sheet.outline") : "",
       formatYear(s.year, s.locale),
-      period ? (pick(period.name, s.locale) ?? "") : "",
+      period ? periodName(period, s.locale) : "",
     ]
       .filter(Boolean)
       .join(" · "),
@@ -391,7 +391,8 @@ export function maskPlace(
   for (const name of names)
     for (const word of name.split(/\s+/)) {
       if (word.length < 3) continue;
-      const ru = locale === "ru";
+      // Russian and Ukrainian names take case endings: match their stem.
+      const ru = locale === "ru" || locale === "uk";
       const stem = ru && word.length > 4 ? word.slice(0, -2) : word;
       const esc = escapeRegExp(stem);
       // A short Russian name keeps its whole word and takes a case ending («до Дана»),

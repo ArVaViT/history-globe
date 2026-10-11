@@ -1,0 +1,201 @@
+---
+title: Daten und Methodik
+description: Woher jeder Ort, jede Grenze, jedes Datum und jede Person auf History Globe stammt, wie es geprüft wurde und was noch unsicher ist.
+---
+
+<p class="lede">
+  Der Globus wird aus offenen wissenschaftlichen Datensätzen gebaut, von Hand korrigiert und ergänzt
+  und bei jedem Build automatisch geprüft. Diese Seite erklärt, woher jede Ebene stammt, was wir
+  verändert haben und was wir nicht wissen.
+</p>
+
+<h2>Orte der Bibel</h2>
+<p>
+  Die {{places}} Orte und ihre Verse stammen aus
+  <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
+    >Bible Geocoding Data von OpenBible.info</a
+  >, das die in der Literatur vorgeschlagenen Identifikationen für jeden Ort abwägt. Wir behalten
+  seine bevorzugte Identifikation und seine Schätzung, wie wahrscheinlich jeder in Frage kommende
+  Ort ist.
+</p>
+<ul>
+  <li>
+    <b>Gewissheit in Worten.</b> Wo kein ernstzunehmender zweiter Ort vorgeschlagen wird, zeigt der
+    Wert von OpenBible (0–1000) an, wie sicher die Identifikation ist: Ab 800 gilt sie als gesichert
+    und die Karte sagt nichts dazu; darunter sagt die Karte <i>höchstwahrscheinlich</i> (ab 600)
+    oder <i>unsicher</i>. Ein Ort ist <i>umstritten</i>, wenn der zweite Kandidat einen bedeutenden
+    Anteil hat; dann werden alle in Frage kommenden Orte mit ihren Anteilen gezeigt.
+  </li>
+  <li>
+    <b>Keine Koordinaten aus OpenStreetMap oder Google.</b> OpenBible verzeichnet, woher jede
+    Koordinate stammt. Punkte, die es aus OpenStreetMap oder Google übernommen hat, werden durch die
+    Koordinaten von Wikidata (CC0) ersetzt, oder der Ort wird weggelassen ({{excluded}} Orte). Eine
+    eigene Prüfung lässt den Build scheitern, wenn noch ein solcher Punkt übrig ist.
+  </li>
+  <li>
+    <b>Namen aus dem Text.</b> Die russischen Namen folgen der Synodalübersetzung von 1876: Für fast
+    jeden Namen behält der Build einen Vers, in dem er vorkommt, und prüft, dass der Name in diesem
+    Vers steht.
+  </li>
+</ul>
+
+<h2>Wann Orte bestanden</h2>
+<p>
+  Eine Stadt auf der Karte wird nur in den Jahren vollständig gezeichnet, in denen sie bestand. Für
+  {{life}} Orte der Bibel sind die Jahre der Gründung, der Zerstörung und der Aufgabe von Hand
+  verzeichnet, jeweils mit ihren Quellen (antike Autoren, Chroniken, Inschriften, Grabungsberichte).
+  Ein umstrittenes Datum wird weggelassen, statt geraten zu werden.
+</p>
+<p>
+  Die {{ancient}} Städte der antiken Welt, die die Bibel nicht nennt – Hauptstädte, Häfen und
+  Heiligtümer wie Ugarit, Hattusa, Mari oder Delphi –, wurden einzeln ausgewählt und datiert, jede
+  an zwei Quellen geprüft, mit einer Kennung in <a href="https://pleiades.stoa.org">Pleiades</a>
+  oder Wikidata und einem Punkt auf der antiken Stätte statt auf der modernen Stadt.
+</p>
+
+<h2>Grenzen</h2>
+<p>
+  Staaten und ihre Grenzen, Jahr für Jahr, stammen aus
+  <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatria</a> (Seshat Global History Databank,
+  v0.2.0), einem offenen Datensatz der politischen Gebilde der Welt ab 3400 v. Chr. Er ist aus
+  historischen Atlanten gezeichnet und ungefähr, besonders vor dem 1. Jahrtausend v. Chr.
+</p>
+<p>
+  Für die Länder der Bibel korrigieren wir ihn, wo die Quellen ihm widersprechen: derzeit
+  {{overrides}} Korrekturen, jede mit ihrer Begründung und ihren Quellen. Juda bleibt bis 586 v.
+  Chr. auf der Karte, Israel beginnt mit der Herrschaft Davids 1010 v. Chr. statt 1000 v. Chr.,
+  Philistäa wird auf die Küstenebene seiner fünf Städte beschränkt, und eine Dynastie endet, wenn
+  sie ihren letzten Herrschaftssitz verliert. Die Levante und Ägypten, Mesopotamien, Anatolien und
+  Iran, die griechisch-römische Welt des Neuen Testaments und der Nahe Osten bis 1300 n. Chr. wurden
+  Jahr für Jahr geprüft, darunter der Niedergang und die Erholung Assyriens im 8. Jahrhundert v.
+  Chr., Babylon unter Merodach-Baladan, Pergamon, das 133 v. Chr. an Rom fiel, Makedonien nach Pydna
+  und das 46 n. Chr. annektierte Thrakien. Jede Gruppe von Korrekturen wird zuerst an den Formen
+  getestet und dann unabhängig von einem zweiten Prüfer an den Quellen noch einmal geprüft.
+</p>
+<p>
+  Ein Königreich, das einem Reich Tribut zahlte oder als dessen Vasall herrschte, wird in einem
+  helleren Farbton der Farbe des Reiches gezeichnet, mit „unter Assyrien“ oder „unter Rom“ unter
+  seinem Namen: Juda unter Assyrien, Ägypten und Babylon; Israel und Philistäa unter Assyrien; das
+  hasmonäische und das herodianische Judäa unter Rom (und drei Jahre lang unter den Parthern); und
+  die Nabatäer und Kommagene unter Rom. Diese {{vassals}} Zeiträume wurden aus den assyrischen
+  Königsinschriften, den Babylonischen Chroniken, der Bibel, Josephus und modernen Geschichtswerken
+  entworfen und in einem eigenen Prüfdurchgang erneut geprüft; ein Jahr, das nur auf ein Jahrzehnt
+  genau bekannt ist, ist in den Daten mit „ca.“ gekennzeichnet. Nach dem Fall Samarias 722 v. Chr.
+  wird das Land Israel als die assyrische Provinz gezeichnet, die es wurde.
+</p>
+
+<h2>Personen</h2>
+<p>
+  Die {{people}} Personen der Bibel und ihre Familienbeziehungen stammen aus TIPNR von STEP Bible
+  (Tyndale House, Cambridge). Wir haben die Beziehungen nicht auf Treu und Glauben übernommen:
+</p>
+<ul>
+  <li>
+    die Familienbeziehungen der 1.200 Personen, die der Text am häufigsten nennt, und die
+    Genealogien von 1 Chr wurden an den Versen gelesen; 153 Beziehungen, die der Text nicht nennt,
+    wurden entfernt – die Brüder Jesu als Söhne von Josef und Maria, Isebel als Mutter von Ahasja –,
+    und die fehlenden Glieder der Genealogie Jesu wurden aus dem Text ergänzt;
+  </li>
+  <li>
+    alle 1.136 Verknüpfungen zwischen einer Person und einem Ort, an dem sie eine zentrale oder
+    unterstützende Rolle spielt, wurden Vers für Vers gelesen; 344 wurden entfernt (Mose „in
+    Kanaan“, Abraham „in Sodom“, die Orte eines Sohnes, die seinem Vater zugeschrieben wurden), und
+    94 erhielten einen besseren Vers;
+  </li>
+  <li>
+    Namensvetter werden so unterschieden, wie der Text sie unterscheidet: „Johannes der Täufer“,
+    „Johannes, Sohn des Zebedäus“, „Ahasja, König von Juda“.
+  </li>
+</ul>
+
+<h2>Ereignisse, Touren und Artikel</h2>
+<p>
+  Die {{events}} Ereignisse, {{tours}} Touren und {{articles}} Artikel werden mit Hilfe von KI unter
+  der Leitung des Autors entworfen und dann in eigenen Prüfdurchgängen an den Quellen geprüft: am
+  Bibeltext für das, was er sagt, an antiken Autoren, Chroniken und Inschriften für Daten und an der
+  wissenschaftlichen Literatur für Orte. Jede Behauptung nennt ihre Quelle. Zitate stammen nur aus
+  der Synodalübersetzung und der King James Version. Keine Tour hat ihre erste Prüfung unverändert
+  bestanden; jede wurde korrigiert und erneut geprüft. Diese Prüfungen nimmt eine KI anhand der
+  Quellen vor, nicht Wissenschaftler; ein Artikel, den ein Historiker gelesen hat, trägt den Namen
+  des Historikers.
+</p>
+<p>
+  Die Entfernung zu einer Station wird in gerader Linie angegeben. Ab 312 v. Chr., wo die römischen
+  Straßen beginnen, steht daneben der Weg entlang der Straßen von Itiner-e: der kürzeste durch ihr
+  Netz, außer er ist mehr als zweieinhalbmal so lang wie die gerade Linie; eine Strecke zu Schiff
+  wird nicht über Straßen gerechnet. Die Gehzeit wird mit 30 km am Tag gerechnet, der üblichen
+  Schätzung für einen Reisetag in der Antike, ohne Rücksicht auf Wetter, Rast oder Lasten. Zur See
+  wird keine Geschwindigkeit angenommen: Eine Seereise nennt ihre Tage nur dort, wo der Text es tut
+  (Apg 20,6, „in fünf Tagen“), mit diesem Vers und so ungefähr, wie der Text sie angibt. Wo der Text
+  ganze Regionen ohne den Weg durchquert (Apg 20,1–3, Ephesus durch Makedonien und Griechenland nach
+  Philippi), sagt die Strecke das und gibt keine Zeit an. Das Relief einer Strecke wird aus den
+  Höhendaten von Copernicus (über Mapterhorn) entlang derselben Straße gelesen oder, wenn es keine
+  gibt, entlang der geraden Linie; die Bildunterschrift unter dem Profil sagt, welches.
+</p>
+
+<p>
+  Die Schlachten und Belagerungen ({{battles}}) sind die, die die Bibel erzählt, und einige
+  außerhalb von ihr, die über das Schicksal Israels entschieden. Jede steht an dem Ort, an dem
+  gekämpft wurde, und erscheint auf der Karte in ihren Jahren. Die biblischen sind so datiert, wie
+  die Touren dieselben Geschichten datieren; die anderen tragen keinen Vers, sondern eine antike
+  oder wissenschaftliche Quelle. Ein zweiter, unabhängiger Durchgang prüfte den Entwurf an der
+  Synodalübersetzung und der King James Version: Von 58 Einträgen wurden 16 korrigiert und einer
+  gestrichen, weil die Karte für seinen Ort keinen Punkt hat.
+</p>
+
+<p>
+  Die makkabäischen Ereignisse und Schlachten zitieren 1–2 Makkabäer, die die Synodalbibel enthält,
+  der protestantische Kanon aber nicht: Jedes solche Zitat ist als „deuterokanonisch“
+  gekennzeichnet, und sein Link öffnet einen Text, der das Buch enthält.
+</p>
+
+<h2>Prüfungen bei jedem Build</h2>
+<p>Nichts wird veröffentlicht, wenn nicht jede Prüfung bestanden wird:</p>
+<ul>
+  <li>
+    jede Quelle trägt eine zulässige Lizenz (keine Weitergabe unter gleichen Bedingungen, keine
+    nichtkommerziellen Daten);
+  </li>
+  <li>jeder Verweis zeigt auf ein echtes Buch, Kapitel und einen echten Vers;</li>
+  <li>jeder russische Name ist in dem Vers zu finden, der für ihn angegeben ist;</li>
+  <li>
+    jede Tourstation wird in ihrer Textstelle genannt, oder die Ausnahme ist mit ihrem Grund
+    dokumentiert;
+  </li>
+  <li>jede Korrektur der Grenzen und jedes Datum einer Stadt hat eine Quelle;</li>
+  <li>
+    die Inhaltsschemata sind streng: Ein unbekanntes oder falsch geschriebenes Feld stoppt den
+    Build.
+  </li>
+</ul>
+
+<h2>Was unsicher ist</h2>
+<ul>
+  <li>
+    Daten vor dem 1. Jahrtausend v. Chr. sind ungefähr, und einige sind umstritten; die Karte
+    kennzeichnet sie mit „ca.“.
+  </li>
+  <li>
+    Die Anteile von OpenBible zwischen in Frage kommenden Orten sind eine Schätzung, kein
+    wissenschaftlicher Konsens.
+  </li>
+  <li>
+    Antike Grenzen sind aus modernen Atlanten gezeichnet und vereinfachen eine Wirklichkeit
+    wechselnder Kontrolle.
+  </li>
+  <li>
+    Viele kleinere Orte haben noch keine verzeichneten Jahre; sie werden als durchgehend bestehend
+    gezeichnet (oder, bei Orten, die nur im Neuen Testament genannt werden, ab neutestamentlicher
+    Zeit).
+  </li>
+</ul>
+
+<h2 id="report">Einen Fehler melden</h2>
+<p>
+  Jede Ortskarte hat einen Link <i>Fehler gefunden?</i>. Er öffnet im öffentlichen Repository ein
+  Issue, in dem der Ort schon eingetragen ist; Sie brauchen ein GitHub-Konto. Sie können auch direkt
+  eines öffnen:
+  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+    >github.com/ArVaViT/history-globe/issues</a
+  >.
+</p>

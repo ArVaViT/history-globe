@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { checkRef } from "./verses.ts";
 import type { ChapterYears } from "./chapter-years.ts";
-import { parseLabel, toAstronomical } from "./time.ts";
+import { parseLabel, toAstronomical, type Locale } from "./time.ts";
 
 /** The single content schema (ADR 0007). Validation here is shape + meaning. */
 
@@ -48,13 +48,24 @@ const approxYear = z.string().transform((s, ctx) => {
  * translated. Any other key (a typo like `ua:`) is refused rather than dropped.
  */
 function inLanguages<T extends z.ZodType>(t: T) {
-  return z.strictObject({ en: t, ru: t, uk: t.optional(), de: t.optional() }).transform(
-    (o) =>
-      Object.fromEntries(Object.entries(o).filter(([, v]) => v !== undefined)) as {
-        en: z.output<T>;
-        ru: z.output<T>;
-      } & Record<string, z.output<T>>,
-  );
+  return z
+    .strictObject({
+      en: t,
+      ru: t,
+      uk: t.optional(),
+      de: t.optional(),
+      es: t.optional(),
+      pt: t.optional(),
+      fr: t.optional(),
+      zh: t.optional(),
+    })
+    .transform(
+      (o) =>
+        Object.fromEntries(Object.entries(o).filter(([, v]) => v !== undefined)) as {
+          en: z.output<T>;
+          ru: z.output<T>;
+        } & Record<string, z.output<T>>,
+    );
 }
 /** Every language of a text has as many paragraphs as the English. */
 const sameParagraphs = (b: Readonly<Record<string, readonly unknown[] | undefined>>) =>
@@ -82,6 +93,29 @@ const RussianLabel = z
   });
 
 /** Russian forms of modern place names (OpenBible's m… ids): «Телль-эс-Султан». */
+/**
+ * The names in one more language (content/names-<code>.yaml): biblical places by id, the
+ * states by their English name, modern names by OpenBible id, people by TIPNR id.
+ */
+export const LocaleNamesFile = z.strictObject({
+  places: z.record(z.string(), z.string().min(1)),
+  polities: z.record(z.string(), z.string().min(1)),
+  modern: z.record(z.string(), z.string().min(1)),
+  people: z.record(z.string(), z.string().min(1)),
+  /** The ancient world's sites (content/ancient-sites.json) by their id. */
+  ancient: z.record(z.string(), z.string().min(1)).optional(),
+});
+export type LocaleNamesFile = z.output<typeof LocaleNamesFile>;
+/** The languages whose names come from content/names-<code>.yaml (Russian has its own files). */
+export const NAME_LOCALES = [
+  "uk",
+  "de",
+  "es",
+  "pt",
+  "fr",
+  "zh",
+] as const satisfies readonly Locale[];
+
 export const ModernNamesFile = z.strictObject({
   names: z.record(z.string().regex(/^m[0-9a-f]{6}$/), RussianLabel),
   /** Candidate-site labels OpenBible writes as free text, by their English wording. */
@@ -401,7 +435,8 @@ export interface PlacePhoto {
   readonly license: string;
   readonly license_url?: string | undefined;
   /** For a disputed place: the candidate the photo shows, by language (en always). */
-  readonly shows?: { readonly en: string; readonly ru?: string | undefined } | undefined;
+  readonly shows?:
+    ({ readonly en: string } & Readonly<Partial<Record<string, string | undefined>>>) | undefined;
 }
 
 export const ArticleFile = z.strictObject({
@@ -477,12 +512,16 @@ export const AncientAuthorsFile = z.strictObject({
         /** As the standard edition numbers it: book.section (Josephus by Niese: "5.136-247"). */
         passage: z.string().regex(/^[0-9][0-9a-z.,:;–\- ]*$/),
         url: z.url({ protocol: /^https$/ }),
-        // Russian and Ukrainian run longer than English for the same summary.
+        // The other languages run longer than English for the same summary; Chinese far shorter.
         note: z.strictObject({
           en: z.string().min(20).max(320),
           ru: z.string().min(20).max(360),
           uk: z.string().min(20).max(360).optional(),
           de: z.string().min(20).max(360).optional(),
+          es: z.string().min(20).max(360).optional(),
+          pt: z.string().min(20).max(360).optional(),
+          fr: z.string().min(20).max(360).optional(),
+          zh: z.string().min(6).max(320).optional(),
         }),
       }),
     )
@@ -496,13 +535,23 @@ export type AncientMention = AncientAuthorsFile["mentions"][number];
 /** What the app loads: content.json in a data release. */
 export interface ContentRelease {
   readonly schema_version: 1;
-  /** Russian names; `osis` is the verse where the Synodal form was read, if recorded. */
-  readonly names: Readonly<Record<string, { readonly ru: string; readonly osis?: string }>>;
+  /**
+   * Names by language: `ru` always, others (`uk`, `es`, …) as they are translated; `osis` is
+   * the verse where the Synodal form was read, if recorded.
+   */
+  readonly names: Readonly<
+    Record<
+      string,
+      { readonly ru: string; readonly osis?: string } & Readonly<Partial<Record<Locale, string>>>
+    >
+  >;
   readonly tours: readonly TourFile[];
   /** Russian "where it is today" for places whose English one names another place. */
   readonly where_ru?: Readonly<Record<string, string>>;
   /** English "where it is today" where content/modern-names.yaml words it anew. */
   readonly where_en?: Readonly<Record<string, string>>;
+  /** "Where it is today" in the other languages: language → place id → text. */
+  readonly where_in?: Readonly<Partial<Record<Locale, Readonly<Record<string, string>>>>>;
   /** When places existed (content/place-life.yaml); `until` is the last year, inclusive. */
   readonly life?: Readonly<Record<string, PlaceLife>>;
   readonly events?: readonly HistoryEvent[];
@@ -518,7 +567,12 @@ export interface ContentRelease {
   readonly chapter_years?: ChapterYears;
   /** Questions answered with a place on the map (content/questions): place id → id, question. */
   readonly questions?: Readonly<
-    Record<string, readonly { readonly id: string; readonly en: string; readonly ru: string }[]>
+    Record<
+      string,
+      readonly ({ readonly id: string; readonly en: string; readonly ru: string } & Readonly<
+        Partial<Record<Locale, string>>
+      >)[]
+    >
   >;
 }
 

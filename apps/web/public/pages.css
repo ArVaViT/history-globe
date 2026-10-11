@@ -189,6 +189,45 @@ summary:focus-visible {
   width: 18px;
   height: 18px;
 }
+.bar .langs {
+  position: relative;
+}
+.bar .langs summary {
+  list-style: none;
+  cursor: pointer;
+}
+.bar .langs summary::-webkit-details-marker {
+  display: none;
+}
+.bar .langs ul {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  z-index: 30;
+  min-width: 160px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  box-shadow: 0 12px 30px -12px rgb(20 14 8 / 0.35);
+}
+.bar .langs li a {
+  display: block;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: var(--ink);
+  font-size: 14px;
+  text-decoration: none;
+}
+.bar .langs li a:hover {
+  background: var(--paper-2);
+}
+.bar .langs li a[aria-current="page"] {
+  color: var(--accent);
+  font-weight: 600;
+}
 .bar .open {
   display: inline-flex;
   align-items: center;

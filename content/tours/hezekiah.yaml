@@ -8,6 +8,11 @@ id: hezekiah
 title:
   en: "Hezekiah and Isaiah"
   ru: "Езекия и Исаия"
+  uk: "Єзекія та Ісая"
+  es: "Ezequías e Isaías"
+  pt: "Ezequias e Isaías"
+  de: "Hiskia und Jesaja"
+  fr: "Ézéchias et Ésaïe"
 year: "701 BC"
 # Where the story happens, told of several people: no time on foot.
 walked: false
@@ -19,34 +24,69 @@ stops:
     note:
       en: "Hezekiah removes the high places and breaks the bronze serpent Nehushtan; he trusts in the Lord."
       ru: "Езекия отменяет высоты и истребляет медного змея Нехуштан; он уповает на Господа."
+      uk: "Єзекія усуває жертовні висоти й розбиває мідного змія Нехуштана; він уповає на Господа."
+      es: "Ezequías quita los lugares altos y hace pedazos la serpiente de bronce Nehustán; confía en el Señor."
+      pt: "Ezequias remove os altos e despedaça a serpente de bronze Neustã; confia no Senhor."
+      de: "Hiskia beseitigt die Höhen und zerbricht die eherne Schlange Nehuschtan; er vertraut auf den Herrn."
+      fr: "Ézéchias supprime les hauts lieux et brise le serpent d’airain Nehuschtan ; il met sa confiance en l’Éternel."
   - place: a041bb3 # Samaria
     ref: 2Kgs.18.9-2Kgs.18.12
     year: "722 BC"
     note:
       en: "In Hezekiah's sixth year Samaria is taken by the king of Assyria and Israel is carried away."
       ru: "В шестой год Езекии Самария взята царём Ассирийским, и Израиль переселён."
+      uk: "На шостий рік Єзекії цар Ассирії здобуває Самарію, і Ізраїль виводять у полон."
+      es: "En el sexto año de Ezequías el rey de Asiria toma Samaria, e Israel es llevado cautivo."
+      pt: "No sexto ano de Ezequias, Samaria é tomada pelo rei da Assíria e Israel é levado cativo."
+      de: "In Hiskias sechstem Jahr wird Samaria vom König von Assyrien eingenommen, und Israel wird weggeführt."
+      fr: "La sixième année d’Ézéchias, Samarie est prise par le roi d’Assyrie et Israël est emmené en captivité."
   - place: a3cc590 # Lachish
     ref: 2Kgs.18.13-2Kgs.18.16
     note:
       en: 'Sennacherib takes the fortified cities of Judah; Hezekiah sends to him at Lachish, "I have offended", and pays the tribute laid on him.'
       ru: "Сеннахирим берёт укреплённые города Иуды; Езекия посылает к нему в Лахис: «виновен я», и платит наложенную дань."
+      uk: "Сінаххеріб здобуває укріплені міста Юди; Єзекія посилає до нього в Лахіш: «Я провинився» — і сплачує накладену на нього данину."
+      es: "Senaquerib toma las ciudades fortificadas de Judá; Ezequías le envía a Laquis este mensaje: «Yo he pecado», y paga el tributo que se le impone."
+      pt: "Senaqueribe toma as cidades fortificadas de Judá; Ezequias lhe envia mensageiros em Laquis: “Eu te ofendi”, e paga o tributo que lhe foi imposto."
+      de: "Sanherib nimmt die festen Städte Judas ein; Hiskia sendet zu ihm nach Lachisch: „Ich habe mich versündigt“, und zahlt den Tribut, der ihm auferlegt wird."
+      fr: "Sanchérib prend les villes fortes de Juda ; Ézéchias lui envoie dire à Lakis : « J’ai commis une faute », et paie le tribut qui lui est imposé."
   - place: a15257a # Jerusalem
     ref: 2Kgs.18.17-2Kgs.19.7
     note:
       en: 'At the upper pool the Rabshakeh mocks Hezekiah and the Lord before the people on the wall; Isaiah answers: "Be not afraid of the words which thou hast heard."'
       ru: "У верхнего пруда Рабсак поносит Бога и Езекию перед народом на стене; Исаия отвечает: «не бойся слов, которые ты слышал»."
+      uk: "Біля верхнього ставу Рабсак глузує з Єзекії та з Господа перед народом на мурі; Ісая відповідає: «Не лякайся тих речей, що чув єси»."
+      es: "En el estanque de arriba el Rabsaces se burla de Ezequías y del Señor ante el pueblo que está sobre el muro; Isaías responde: «No temas por las palabras que has oído»."
+      pt: "No tanque superior, o Rabsaqué zomba de Ezequias e do Senhor diante do povo que está na muralha; Isaías responde: “Não tenha medo das palavras que você ouviu.”"
+      de: "Am oberen Teich verhöhnt der Rabsake Hiskia und den Herrn vor dem Volk auf der Mauer; Jesaja antwortet: „Fürchte dich nicht vor den Worten, die du gehört hast“."
+      fr: "Près de l’étang supérieur, Rabschaké outrage Ézéchias et l’Éternel devant le peuple sur la muraille ; Ésaïe répond : « Ne t’effraie point des paroles que tu as entendues. »"
   - place: a97b595 # Libnah
     ref: 2Kgs.19.8
     note:
       en: "The Rabshakeh finds the king of Assyria warring against Libnah."
       ru: "Рабсак находит царя Ассирийского воюющим против Ливны."
+      uk: "Рабсак застає царя Ассирії в поході проти Лівни."
+      es: "El Rabsaces halla al rey de Asiria guerreando contra Libna."
+      pt: "O Rabsaqué encontra o rei da Assíria em guerra contra Libna."
+      de: "Der Rabsake trifft den König von Assyrien im Krieg gegen Libna an."
+      fr: "Rabschaké trouve le roi d’Assyrie en guerre contre Libna."
   - place: a15257a # Jerusalem
     ref: 2Kgs.19.14-2Kgs.19.34
     note:
       en: 'Hezekiah spreads the letter before the Lord and prays; Isaiah sends him the answer: "I will defend this city."'
       ru: "Езекия развертывает письмо пред Господом и молится; Исаия посылает ему ответ: «Я буду охранять город сей»."
+      uk: "Єзекія розкладає листа перед Господом і молиться; Ісая посилає йому відповідь: «Город сей я берегти му»."
+      es: "Ezequías extiende la carta ante el Señor y ora; Isaías le envía la respuesta: «yo ampararé á esta ciudad»."
+      pt: "Ezequias estende a carta diante do Senhor e ora; Isaías lhe envia a resposta: “eu defenderei esta cidade”."
+      de: "Hiskia breitet den Brief vor dem Herrn aus und betet; Jesaja sendet ihm die Antwort: „Ich will diese Stadt beschirmen“."
+      fr: "Ézéchias étale la lettre devant l’Éternel et prie ; Ésaïe lui envoie la réponse : « Je protégerai cette ville. »"
   - place: a70fd5d # Nineveh
     ref: 2Kgs.19.35-2Kgs.19.37
     note:
       en: "After the angel of the Lord strikes the Assyrian camp, Sennacherib goes home and dwells at Nineveh; later his sons slay him as he worships in the house of Nisroch his god."
       ru: "Когда Ангел Господень поражает стан Ассирийский, Сеннахирим возвращается и живёт в Ниневии; позже сыновья убивают его, когда он поклоняется в доме Нисроха, бога своего."
+      uk: "Після того як ангел Господній вражає ассирійський табір, Сінаххеріб повертається додому й оселяється в Ніневії; пізніше сини вбивають його, коли він поклоняється в домі свого бога Нісроха."
+      es: "Después de que el ángel del Señor hiere el campamento asirio, Senaquerib vuelve a su tierra y habita en Nínive; más tarde sus hijos lo matan mientras adora en la casa de Nisroc, su dios."
+      pt: "Depois que o anjo do Senhor fere o acampamento assírio, Senaqueribe volta para casa e habita em Nínive; mais tarde, seus filhos o matam enquanto ele adora na casa de Nisroque, seu deus."
+      de: "Nachdem der Engel des Herrn das assyrische Lager geschlagen hat, zieht Sanherib heim und bleibt in Ninive; später erschlagen ihn seine Söhne, als er im Haus Nisrochs, seines Gottes, anbetet."
+      fr: "Après que l’ange de l’Éternel a frappé le camp assyrien, Sanchérib s’en retourne et reste à Ninive ; plus tard ses fils le tuent pendant qu’il adore dans la maison de Nisroc, son dieu."

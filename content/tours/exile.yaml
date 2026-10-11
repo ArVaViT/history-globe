@@ -6,6 +6,11 @@ id: exile
 title:
   en: "The fall of Jerusalem and the exile"
   ru: "Падение Иерусалима и плен"
+  uk: "Падіння Єрусалима і вигнання"
+  es: "La caída de Jerusalén y el destierro"
+  pt: "A queda de Jerusalém e o exílio"
+  de: "Der Fall Jerusalems und das Exil"
+  fr: "La chute de Jérusalem et l’exil"
 year: "587 BC"
 approximate: true
 stops:
@@ -14,39 +19,79 @@ stops:
     note:
       en: "Nebuchadnezzar besieges Jerusalem until the famine prevails in the city."
       ru: "Навуходоносор осаждает Иерусалим, пока в городе не усиливается голод."
+      uk: "Навуходоносор облягає Єрусалим, поки в місті не посилюється голод."
+      es: "Nabucodonosor sitia Jerusalén hasta que el hambre se impone en la ciudad."
+      pt: "Nabucodonosor cerca Jerusalém até que a fome se agrave na cidade."
+      de: "Nebukadnezar belagert Jerusalem, bis der Hunger in der Stadt überhandnimmt."
+      fr: "Nebucadnetsar assiège Jérusalem jusqu’à ce que la famine l’emporte dans la ville."
   - place: a231f80 # Jericho
     ref: 2Kgs.25.4-2Kgs.25.5
     note:
       en: "King Zedekiah flees and is caught on the plains of Jericho."
       ru: "Царь Седекия бежит и схвачен на равнинах Иерихонских."
+      uk: "Цар Седекія тікає й потрапляє в полон на рівнинах Єрихону."
+      es: "El rey Sedequías huye y es capturado en los llanos de Jericó."
+      pt: "O rei Zedequias foge e é capturado nas planícies de Jericó."
+      de: "König Zedekia flieht und wird in den Ebenen von Jericho ergriffen."
+      fr: "Le roi Sédécias s’enfuit et est pris dans les plaines de Jéricho."
   - place: ab2bde8 # Riblah
     ref: 2Kgs.25.6-2Kgs.25.7
     note:
       en: "Judgement at Riblah: Zedekiah's sons are killed and he is blinded."
       ru: "Суд в Ривле: сыновья Седекии убиты, сам он ослеплён."
+      uk: "Суд у Рівлі: синів Седекії вбивають, а його осліплюють."
+      es: "Juicio en Ribla: los hijos de Sedequías son muertos y a él lo ciegan."
+      pt: "Julgamento em Ribla: os filhos de Zedequias são mortos e ele é cegado."
+      de: "Gericht in Ribla: Zedekias Söhne werden getötet, und er wird geblendet."
+      fr: "Jugement à Ribla : les fils de Sédécias sont mis à mort et lui-même est aveuglé."
   - place: a15257a # Jerusalem
     ref: 2Kgs.25.8-2Kgs.25.10
     note:
       en: "Nebuzar-adan burns the Temple, the palace and the city, and the army of the Chaldees pulls down the walls."
       ru: "Навузардан сжигает Храм, царский дом и город, а войско Халдейское разрушает стены."
+      uk: "Навузардан спалює храм, палац і місто, а військо халдеїв руйнує мури."
+      es: "Nabuzaradán incendia el Templo, el palacio y la ciudad, y el ejército de los caldeos derriba los muros."
+      pt: "Nebuzaradã queima o Templo, o palácio e a cidade, e o exército dos caldeus derruba as muralhas."
+      de: "Nebusaradan verbrennt den Tempel, den Palast und die Stadt, und das Heer der Chaldäer reißt die Mauern nieder."
+      fr: "Nebuzaradan incendie le temple, le palais et la ville, et l’armée des Chaldéens démolit les murailles."
   - place: a217d18 # Babylon
     ref: 2Kgs.25.11
     note:
       en: "The rest of the people left in the city are carried into exile to Babylon."
       ru: "Народ, остававшийся в городе, уведён в плен в Вавилон."
+      uk: "Решту народу, що залишилася в місті, виводять у вигнання до Вавилона."
+      es: "El resto del pueblo que quedaba en la ciudad es llevado al destierro, a Babilonia."
+      pt: "O restante do povo deixado na cidade é levado para o exílio na Babilônia."
+      de: "Der Rest des Volkes, der in der Stadt übrig geblieben ist, wird nach Babylon ins Exil geführt."
+      fr: "Le reste du peuple demeuré dans la ville est emmené en exil à Babylone."
   - place: a6d57ed # Ramah
     ref: Jer.40.1
     by: untold
     note:
       en: "At Ramah Jeremiah is set free from among the captives."
       ru: "В Раме Иеремия освобождён из числа пленников."
+      uk: "У Рамі Єремію звільняють з-поміж полонених."
+      es: "En Ramá Jeremías es puesto en libertad de entre los cautivos."
+      pt: "Em Ramá, Jeremias é libertado do meio dos cativos."
+      de: "In Rama wird Jeremia aus den Gefangenen freigelassen."
+      fr: "À Rama, Jérémie est libéré du milieu des captifs."
   - place: a736f6c # Mizpah
     ref: Jer.40.6
     note:
       en: "He stays with Gedaliah, the governor, at Mizpah."
       ru: "Он остаётся у правителя Годолии в Массифе."
+      uk: "Він залишається з Гедалією, намісником, у Міцпі."
+      es: "Se queda con Gedalías, el gobernador, en Mizpa."
+      pt: "Fica com Gedalias, o governador, em Mispá."
+      de: "Er bleibt bei Gedalja, dem Statthalter, in Mizpa."
+      fr: "Il demeure auprès de Guedalia, le gouverneur, à Mitspa."
   - place: adb008c # Tahpanhes
     ref: Jer.43.7
     note:
       en: "After Gedaliah's murder the remnant flees to Egypt, to Tahpanhes."
       ru: "После убийства Годолии остаток народа бежит в Египет, в Тафнис."
+      uk: "Після вбивства Гедалії залишок тікає до Єгипту, до Тафнісу."
+      es: "Tras el asesinato de Gedalías el remanente huye a Egipto, a Tafnes."
+      pt: "Depois do assassinato de Gedalias, o remanescente foge para o Egito, para Tafnes."
+      de: "Nach der Ermordung Gedaljas flieht der Rest nach Ägypten, nach Tachpanhes."
+      fr: "Après l’assassinat de Guedalia, le reste du peuple s’enfuit en Égypte, à Tachpanès."

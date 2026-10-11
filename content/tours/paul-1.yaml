@@ -5,6 +5,11 @@ id: paul-1
 title:
   en: "Paul's first journey"
   ru: "Первое путешествие Павла"
+  uk: "Перша подорож Павла"
+  es: "El primer viaje de Pablo"
+  pt: "A primeira viagem de Paulo"
+  de: "Die erste Reise des Paulus"
+  fr: "Le premier voyage de Paul"
 year: "AD 47"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -14,76 +19,151 @@ stops:
     note:
       en: At the word of the Holy Spirit, the church sets Barnabas and Saul apart for the work.
       ru: По слову Духа Святого церковь отделяет Варнаву и Савла на дело.
+      uk: "За словом Святого Духа церква відокремлює Варнаву й Савла для цього діла."
+      es: "Por palabra del Espíritu Santo, la iglesia aparta a Bernabé y a Saúl para la obra."
+      pt: "Por palavra do Espírito Santo, a igreja separa Barnabé e Saulo para a obra."
+      de: "Auf das Wort des Heiligen Geistes sondert die Gemeinde Barnabas und Saulus für das Werk aus."
+      fr: "Sur la parole du Saint-Esprit, l’Église met à part Barnabas et Saül pour l’œuvre."
   - place: a6d306d # Seleucia Pieria
     ref: Acts.13.4
     note:
       en: The port of Antioch; they sail for Cyprus.
       ru: Порт Антиохии, отплытие на Кипр.
+      uk: "Порт Антіохії; вони відпливають на Кіпр."
+      es: "El puerto de Antioquía; zarpan hacia Chipre."
+      pt: "O porto de Antioquia; navegam para Chipre."
+      de: "Der Hafen von Antiochia; sie segeln nach Zypern."
+      fr: "Le port d’Antioche ; ils s’embarquent pour Chypre."
   - place: afa863b # Salamis
     ref: Acts.13.5
     by: sea
     note:
       en: They proclaim the word in the synagogues of the Jews.
       ru: Проповедь в синагогах иудейских.
+      uk: "Вони проповідують слово в синагогах юдеїв."
+      es: "Proclaman la palabra en las sinagogas de los judíos."
+      pt: "Proclamam a palavra nas sinagogas dos judeus."
+      de: "Sie verkündigen das Wort in den Synagogen der Juden."
+      fr: "Ils annoncent la parole dans les synagogues des Juifs."
   - place: a314765 # Paphos
     ref: Acts.13.6-Acts.13.12
     note:
       en: The proconsul Sergius Paulus believes.
       ru: Проконсул Сергий Павел приходит к вере.
+      uk: "Проконсул Сергій Павло вірує."
+      es: "El procónsul Sergio Paulo cree."
+      pt: "O procônsul Sérgio Paulo crê."
+      de: "Der Prokonsul Sergius Paulus kommt zum Glauben."
+      fr: "Le proconsul Sergius Paulus croit."
   - place: aff04b8 # Perga
     ref: Acts.13.13
     by: sea
     note:
       en: John Mark returns to Jerusalem.
       ru: Иоанн Марк возвращается в Иерусалим.
+      uk: "Іван Марко повертається до Єрусалима."
+      es: "Juan Marcos regresa a Jerusalén."
+      pt: "João Marcos volta a Jerusalém."
+      de: "Johannes Markus kehrt nach Jerusalem zurück."
+      fr: "Jean-Marc retourne à Jérusalem."
   - place: a6c704a # Antioch in Pisidia
     ref: Acts.13.14-Acts.13.50
     note:
       en: Preaching in the synagogue; turning to the Gentiles.
       ru: Проповедь в синагоге; обращение к язычникам.
+      uk: "Проповідь у синагозі; звернення до язичників."
+      es: "Predicación en la sinagoga; vuelta hacia los gentiles."
+      pt: "Pregação na sinagoga; voltam-se para os gentios."
+      de: "Predigt in der Synagoge; Hinwendung zu den Heiden."
+      fr: "Prédication dans la synagogue ; tournant vers les païens."
   - place: ae425aa # Iconium
     ref: Acts.14.1-Acts.14.5
     note:
       en: Many believe; a plot to stone them.
       ru: Многие приходят к вере; замысел побить их камнями.
+      uk: "Багато хто вірує; задум побити їх камінням."
+      es: "Muchos creen; se trama apedrearlos."
+      pt: "Muitos creem; uma conspiração para apedrejá-los."
+      de: "Viele glauben; ein Anschlag, sie zu steinigen."
+      fr: "Beaucoup croient ; complot pour les lapider."
   - place: af0719d # Lystra
     ref: Acts.14.8-Acts.14.19
     note:
       en: A lame man is healed; Paul is stoned.
       ru: Исцеление хромого; Павла побивают камнями.
+      uk: "Кульгавого зцілено; Павла побито камінням."
+      es: "Se sana a un cojo; Pablo es apedreado."
+      pt: "Um coxo é curado; Paulo é apedrejado."
+      de: "Ein Lahmer wird geheilt; Paulus wird gesteinigt."
+      fr: "Un boiteux est guéri ; Paul est lapidé."
   - place: aa401a9 # Derbe
     ref: Acts.14.20-Acts.14.21
     note:
       en: They make many disciples.
       ru: Приобретают много учеников.
+      uk: "Вони здобувають багато учнів."
+      es: "Hacen muchos discípulos."
+      pt: "Fazem muitos discípulos."
+      de: "Sie machen viele zu Jüngern."
+      fr: "Ils font beaucoup de disciples."
   - place: af0719d # Lystra
     ref: Acts.14.21-Acts.14.22
     note:
       en: "Return leg: strengthening the disciples."
       ru: "Обратный путь: утверждают души учеников."
+      uk: "Зворотний шлях: зміцнення учнів."
+      es: "Tramo de regreso: fortalecen a los discípulos."
+      pt: "Trecho de volta: fortalecendo os discípulos."
+      de: "Rückweg: Stärkung der Jünger."
+      fr: "Trajet de retour : affermir les disciples."
   - place: ae425aa # Iconium
     ref: Acts.14.21
     note:
       en: Return leg.
       ru: Обратный путь.
+      uk: "Зворотний шлях."
+      es: "Tramo de regreso."
+      pt: "Trecho de volta."
+      de: "Rückweg."
+      fr: "Trajet de retour."
   - place: a6c704a # Antioch in Pisidia
     ref: Acts.14.21-Acts.14.23
     note:
       en: Elders appointed in every church.
       ru: Рукополагают пресвитеров к каждой церкви.
+      uk: "Старійшин поставлено в кожній церкві."
+      es: "Se designan ancianos en cada iglesia."
+      pt: "Presbíteros nomeados em cada igreja."
+      de: "In jeder Gemeinde werden Älteste eingesetzt."
+      fr: "Des anciens sont établis dans chaque Église."
   - place: aff04b8 # Perga
     ref: Acts.14.25
     note:
       en: They speak the word in Perga.
       ru: Проповедуют слово в Пергии.
+      uk: "Вони проповідують слово в Перге."
+      es: "Hablan la palabra en Perge."
+      pt: "Falam a palavra em Perge."
+      de: "Sie reden das Wort in Perge."
+      fr: "Ils annoncent la parole à Perge."
   - place: ac744c1 # Attalia
     ref: Acts.14.26
     note:
       en: They sail back to Antioch.
       ru: Отплывают в Антиохию.
+      uk: "Вони відпливають назад до Антіохії."
+      es: "Navegan de regreso a Antioquía."
+      pt: "Navegam de volta a Antioquia."
+      de: "Sie segeln zurück nach Antiochia."
+      fr: "Ils font voile de retour vers Antioche."
   - place: ae41ab4 # Antioch in Syria
     ref: Acts.14.27-Acts.14.28
     by: sea
     note:
       en: They report how God has opened a door of faith to the Gentiles.
       ru: Рассказывают, как Бог отверз дверь веры язычникам.
+      uk: "Вони розповідають, як Бог відчинив язичникам двері віри."
+      es: "Informan de cómo Dios ha abierto la puerta de la fe a los gentiles."
+      pt: "Relatam como Deus abriu aos gentios a porta da fé."
+      de: "Sie berichten, wie Gott den Heiden die Tür des Glaubens aufgetan hat."
+      fr: "Ils rapportent comment Dieu a ouvert aux païens la porte de la foi."
