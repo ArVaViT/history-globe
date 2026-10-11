@@ -14,6 +14,10 @@ title:
   pt: "A queda de Israel"
   de: "Der Fall Israels"
   fr: "La chute d’Israël"
+  pl: "Upadek Izraela"
+  it: "La caduta di Israele"
+  nl: "De val van Israël"
+  cs: "Pád Izraele"
 year: "732 BC"
 approximate: true
 stops:
@@ -27,6 +31,10 @@ stops:
       pt: "Nos dias de Peca, Tiglate-Pileser, rei da Assíria, toma Ijom, Abel-Bete-Maaca, Janoa, Quedes, Hazor, Gileade e a Galileia, toda a terra de Naftali, e leva o povo cativo para a Assíria."
       de: "In den Tagen Pekachs nimmt Tiglat-Pileser, der König von Assyrien, Ijon, Abel-Bet-Maacha, Janoach, Kedesch, Hazor, Gilead und Galiläa, das ganze Land Naftali, ein und führt das Volk gefangen nach Assyrien."
       fr: "Du temps de Péka, Tiglath-Piléser, roi d’Assyrie, prend Ijjon, Abel-Beth-Maaca, Janoach, Kédesch, Hatsor, Galaad et la Galilée, tout le pays de Nephthali, et emmène le peuple captif en Assyrie."
+      pl: "Za dni Pekacha Tiglat-Pileser, król Asyrii, zdobywa Ijjon, Abel-Bet-Maaka, Janoach, Kedesz, Chasor, Gilead i Galileę, całą ziemię Neftalego, i uprowadza lud w niewolę do Asyrii."
+      it: "Ai giorni di Pekach, Tiglat-Pilèser, re d’Assiria, prende Ion, Abel-Bet-Maacà, Ianoach, Kedes, Asor, Galaad e la Galilea, tutto il paese di Neftali, e deporta il popolo in Assiria."
+      nl: "In de dagen van Pekach neemt Tiglat-Pileser, de koning van Assyrië, Ijon, Abel-Beth-Maächa, Janoach, Kedes, Hazor, Gilead en Galilea in, het hele land Naftali, en voert het volk gevankelijk weg naar Assyrië."
+      cs: "Za dnů Pekacha dobývá Tiglatpilesar, král asyrský, Ijón, Ábel-bét-maaku, Janoach, Kedeš, Chacor, Gilead a Galileu, celou zemi Neftalí, a odvádí lid do zajetí do Asýrie."
   - place: a15257a # Jerusalem
     ref: 2Kgs.16.5-2Kgs.16.8
     note:
@@ -37,6 +45,10 @@ stops:
       pt: "Rezim, da Síria, e Peca, de Israel, cercam Acaz em Jerusalém; Acaz envia ao rei da Assíria a prata e o ouro do Templo e da casa do rei: “Eu sou seu servo e seu filho.”"
       de: "Rezin von Syrien und Pekach von Israel belagern Ahas in Jerusalem; Ahas schickt das Silber und Gold des Tempels und des Königshauses dem König von Assyrien: „Ich bin dein Knecht und dein Sohn.“"
       fr: "Retsin de Syrie et Péka d’Israël assiègent Achaz dans Jérusalem ; Achaz envoie au roi d’Assyrie l’argent et l’or du temple et de la maison du roi : « Je suis ton serviteur et ton fils. »"
+      pl: "Resin z Syrii i Pekach z Izraela oblegają Achaza w Jerozolimie; Achaz posyła srebro i złoto ze świątyni i z domu królewskiego królowi Asyrii: „Sługa twój i syn twój jestem.”"
+      it: "Resin di Siria e Pekach d’Israele assediano Acaz a Gerusalemme; Acaz manda al re d’Assiria l’argento e l’oro del Tempio e della casa del re: «Io son tuo servo e tuo figliuolo»."
+      nl: "Rezin van Syrië en Pekach van Israël belegeren Achaz in Jeruzalem; Achaz stuurt het zilver en goud van de tempel en van het huis van de koning naar de koning van Assyrië: “Ik ben uw knecht en uw zoon.”"
+      cs: "Resín Syrský a Pekach Izraelský oblehají Achaza v Jeruzalémě; Achaz posílá králi asyrskému stříbro a zlato z chrámu i z domu královského: „Služebník tvůj a syn tvůj jsem.“"
   - place: a69c1d4 # Damascus
     ref: 2Kgs.16.9-2Kgs.16.11
     note:
@@ -47,6 +59,10 @@ stops:
       pt: "O rei da Assíria toma Damasco, leva o seu povo para Quir e mata Rezim; Acaz vai ao seu encontro ali e envia para casa o modelo do altar de lá."
       de: "Der König von Assyrien nimmt Damaskus ein, führt sein Volk nach Kir und tötet Rezin; Ahas trifft ihn dort und schickt das Vorbild seines Altars heim."
       fr: "Le roi d’Assyrie prend Damas, emmène son peuple à Kir et tue Retsin ; Achaz va à sa rencontre et envoie chez lui le modèle de son autel."
+      pl: "Król Asyrii zdobywa Damaszek, uprowadza jego lud do Kir i zabija Resina; Achaz spotyka go tam i przesyła do domu wzór tamtejszego ołtarza."
+      it: "Il re d’Assiria prende Damasco, ne deporta il popolo a Kir e uccide Resin; Acaz lo incontra là e manda a casa il modello del suo altare."
+      nl: "De koning van Assyrië neemt Damascus in, voert het volk naar Kir en doodt Rezin; Achaz ontmoet hem daar en stuurt het model van zijn altaar naar huis."
+      cs: "Král asyrský dobývá Damašek, odvádí jeho lid do Kíru a zabíjí Resína; Achaz se s ním tam setkává a posílá domů vzor tamního oltáře."
   - place: a041bb3 # Samaria
     ref: 2Kgs.17.3-2Kgs.17.5
     year: "725 BC"
@@ -58,6 +74,10 @@ stops:
       pt: "Oseias retém o tributo e envia mensageiros a Sô, rei do Egito; Salmaneser, rei da Assíria, o prende e cerca Samaria por três anos."
       de: "Hosea hält den Tribut zurück und sendet zu So, dem König von Ägypten; Salmanassar, der König von Assyrien, setzt ihn im Gefängnis fest und belagert Samaria drei Jahre lang."
       fr: "Osée retient le tribut et envoie vers So, roi d’Égypte ; Salmanasar, roi d’Assyrie, le fait enfermer en prison et assiège Samarie pendant trois ans."
+      pl: "Ozeasz wstrzymuje daninę i wysyła posłów do So, króla Egiptu; Salmanasar, król Asyrii, zamyka go w więzieniu i oblega Samarię przez trzy lata."
+      it: "Osea rifiuta il tributo e manda messaggeri a So, re d’Egitto; Salmanàssar, re d’Assiria, lo rinchiude in prigione e assedia Samaria per tre anni."
+      nl: "Hosea houdt de schatting achter en zendt naar So, de koning van Egypte; Salmaneser, de koning van Assyrië, sluit hem op in de gevangenis en belegert Samaria drie jaar."
+      cs: "Hóšea zadržuje plat a posílá k Sevému, králi egyptskému; Salmanasar, král asyrský, ho dává uvěznit a obléhá Samaří tři roky."
   - place: abf176f # Halah
     ref: 2Kgs.17.6
     year: "722 BC"
@@ -69,3 +89,7 @@ stops:
       pt: "No nono ano de Oseias, Samaria é tomada, e Israel é levado cativo para a Assíria e colocado em Halá, junto a Habor, o rio de Gozã, e nas cidades dos medos."
       de: "Im neunten Jahr Hoseas wird Samaria eingenommen, und Israel wird nach Assyrien weggeführt und in Halach und am Habor, dem Fluss von Gosan, und in den Städten der Meder angesiedelt."
       fr: "La neuvième année d’Osée, Samarie est prise, et Israël est emmené captif en Assyrie et établi à Chalach, sur le Chabor, fleuve de Gozan, et dans les villes des Mèdes."
+      pl: "W dziewiątym roku Ozeasza Samaria zostaje zdobyta, a Izrael uprowadzony do Asyrii i osiedlony w Chalach i w Chabur nad rzeką Gozan oraz w miastach Medów."
+      it: "Nel nono anno di Osea Samaria è presa, e Israele è deportato in Assiria e collocato a Chelach e a Cabor, presso il fiume Gozan, e nelle città dei Medi."
+      nl: "In het negende jaar van Hosea wordt Samaria ingenomen, en Israël wordt weggevoerd naar Assyrië en gevestigd in Chalach en aan de Chabor, de rivier van Gozan, en in de steden van de Meden."
+      cs: "V devátém roce Hóšeově je Samaří dobyto a Izrael odveden do Asýrie a usazen v Chalachu a v Chabóru u řeky Gózan a v městech Médských."

@@ -11,6 +11,10 @@ title:
   pt: "Jonas"
   de: "Jona"
   fr: "Jonas"
+  pl: "Jonasz"
+  it: "Giona"
+  nl: "Jona"
+  cs: "Jonáš"
 year: "780 BC"
 people: ["Jonah@2Ki.14.25-Luk"]
 approximate: true
@@ -25,6 +29,10 @@ stops:
       pt: "Jonas, filho de Amitai, o profeta de Gate-Héfer."
       de: "Jona, der Sohn Amittais, der Prophet aus Gat-Hefer."
       fr: "Jonas, fils d’Amitthaï, le prophète de Gath-Hépher."
+      pl: "Jonasz, syn Amittaja, prorok z Gat-Chefer."
+      it: "Giona, figlio di Amittai, il profeta di Gat-Efer."
+      nl: "Jona, de zoon van Amittai, de profeet uit Gat-Chefer."
+      cs: "Jonáš, syn Amitajův, prorok z Gat-cheferu."
   - place: ae023a9 # Joppa
     ref: Jonah.1.3
     note:
@@ -35,6 +43,10 @@ stops:
       pt: "Fugindo da presença do Senhor, desce a Jope e encontra um navio com destino a Társis."
       de: "Auf der Flucht vor dem Angesicht des Herrn geht er nach Joppe hinab und findet ein Schiff, das nach Tarsis fährt."
       fr: "Fuyant la présence de l’Éternel, il descend à Joppé et trouve un navire en partance pour Tarsis."
+      pl: "Uciekając sprzed oblicza Pana, schodzi do Jafy i znajduje okręt płynący do Tarszisz."
+      it: "Fuggendo dalla presenza del Signore, scende a Giaffa e trova una nave diretta a Tarsis."
+      nl: "Op de vlucht voor het aangezicht van de HEER gaat hij af naar Joppe en vindt een schip dat naar Tarsis gaat."
+      cs: "Prchá před tváří Hospodinovou, sestupuje do Joppe a nalézá loď plující do Taršíše."
   - place: a70fd5d # Nineveh
     ref: Jonah.3.3-Jonah.4.11
     by: untold
@@ -46,3 +58,7 @@ stops:
       pt: "Prega em Nínive, o povo se desvia do seu mau caminho, e Deus poupa a grande cidade."
       de: "Er predigt in Ninive, das Volk kehrt um von seinem bösen Weg, und Gott verschont die große Stadt."
       fr: "Il prêche à Ninive, le peuple revient de sa mauvaise voie, et Dieu épargne la grande ville."
+      pl: "Głosi kazanie w Niniwie, lud odwraca się od swojej złej drogi, a Bóg oszczędza wielkie miasto."
+      it: "Predica a Ninive, il popolo si converte dalla sua via malvagia, e Dio risparmia la grande città."
+      nl: "Hij predikt in Nineve, het volk keert zich af van zijn boze weg, en God spaart de grote stad."
+      cs: "Káže v Ninive, lid se odvrací od své zlé cesty a Bůh šetří velké město."

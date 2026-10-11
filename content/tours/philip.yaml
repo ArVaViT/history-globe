@@ -9,6 +9,10 @@ title:
   pt: "Filipe, o evangelista"
   de: "Philippus der Evangelist"
   fr: "Philippe l’évangéliste"
+  pl: "Filip Ewangelista"
+  it: "Filippo l’evangelista"
+  nl: "Filippus de evangelist"
+  cs: "Filip evangelista"
 year: "AD 34"
 approximate: true
 stops:
@@ -22,6 +26,10 @@ stops:
       pt: "Em Jerusalém, Filipe é escolhido com Estêvão entre os sete para servir às mesas."
       de: "In Jerusalem wird Philippus mit Stephanus unter den Sieben erwählt, um die Tische zu bedienen."
       fr: "À Jérusalem, Philippe est choisi avec Étienne parmi les sept pour servir aux tables."
+      pl: "W Jerozolimie Filip zostaje wybrany wraz ze Szczepanem spośród siedmiu do posługi przy stołach."
+      it: "A Gerusalemme Filippo è scelto con Stefano fra i sette per servire alle mense."
+      nl: "In Jeruzalem wordt Filippus met Stefanus gekozen onder de zeven om de tafels te dienen."
+      cs: "V Jeruzalémě je Filip spolu se Štěpánem zvolen mezi sedm, aby posluhovali u stolů."
   - place: a282dce # Samaria (region)
     ref: Acts.8.5-Acts.8.13
     note:
@@ -32,6 +40,10 @@ stops:
       pt: "Desce à cidade de Samaria e prega a Cristo, e o povo, unânime, dá atenção a ele."
       de: "Er geht hinab in die Stadt Samaria und predigt Christus, und das Volk hört einmütig auf ihn."
       fr: "Il descend dans la ville de Samarie et prêche le Christ, et le peuple écoute Philippe d’un commun accord."
+      pl: "Schodzi do miasta Samarii i głosi Chrystusa, a lud jednomyślnie zważa na jego słowa."
+      it: "Scende nella città di Samaria e predica Cristo, e la folla ascolta unanime le sue parole."
+      nl: "Hij gaat af naar de stad Samaria en predikt Christus, en het volk slaat eensgezind acht op hem."
+      cs: "Sestupuje do města Samaří a káže Krista a lid jednomyslně dbá na jeho slova."
   - place: aa8edd2 # Gaza
     ref: Acts.8.26-Acts.8.39
     note:
@@ -42,6 +54,10 @@ stops:
       pt: "Na estrada deserta de Jerusalém a Gaza, batiza o eunuco etíope."
       de: "Auf der Wüstenstraße von Jerusalem nach Gaza tauft er den äthiopischen Kämmerer."
       fr: "Sur la route déserte de Jérusalem à Gaza, il baptise l’eunuque éthiopien."
+      pl: "Na pustynnej drodze z Jerozolimy do Gazy chrzci etiopskiego eunucha."
+      it: "Sulla via deserta da Gerusalemme a Gaza battezza l’eunuco etiope."
+      nl: "Op de woestijnweg van Jeruzalem naar Gaza doopt hij de Ethiopische kamerling."
+      cs: "Na pusté cestě z Jeruzaléma do Gazy křtí etiopského dvořana."
   - place: a30c937 # Ashdod (Azotus)
     ref: Acts.8.40
     note:
@@ -52,6 +68,10 @@ stops:
       pt: "Filipe é achado em Asdode (Azoto) e prega em todas as cidades do caminho até Cesareia."
       de: "Philippus wird in Aschdod (Azotus) gefunden und predigt in allen Städten auf dem Weg nach Caesarea."
       fr: "Philippe se retrouve à Asdod (Azot) et prêche dans toutes les villes jusqu’à Césarée."
+      pl: "Filip zostaje odnaleziony w Aszdod (Azot) i głosi we wszystkich miastach w drodze do Cezarei."
+      it: "Filippo si ritrova ad Asdod (Azoto) e predica in tutte le città lungo la via fino a Cesarea."
+      nl: "Filippus wordt gevonden te Asdod (Azotus) en predikt in alle steden op weg naar Caesarea."
+      cs: "Filip je nalezen v Ašdodu (Azot) a káže ve všech městech na cestě do Cesareje."
   - place: a58735e # Caesarea
     ref: Acts.21.8-Acts.21.9
     note:
@@ -62,3 +82,7 @@ stops:
       pt: "Anos depois, Paulo se hospeda em Cesareia na casa de Filipe, cujas quatro filhas profetizam."
       de: "Jahre später wohnt Paulus in Caesarea im Haus des Philippus, dessen vier Töchter weissagen."
       fr: "Des années plus tard, Paul séjourne à Césarée chez Philippe, dont les quatre filles prophétisent."
+      pl: "Lata później Paweł zatrzymuje się w Cezarei w domu Filipa, którego cztery córki prorokują."
+      it: "Anni dopo Paolo alloggia a Cesarea in casa di Filippo, le cui quattro figlie profetizzano."
+      nl: "Jaren later logeert Paulus te Caesarea in het huis van Filippus, wiens vier dochters profeteren."
+      cs: "O léta později se Pavel zastavuje v Cesareji v domě Filipově, jehož čtyři dcery prorokují."

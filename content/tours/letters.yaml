@@ -13,6 +13,10 @@ title:
   pt: "Para onde foram as cartas de Paulo"
   de: "Wohin die Briefe des Paulus gingen"
   fr: "Où allèrent les lettres de Paul"
+  pl: "Dokąd szły listy Pawła"
+  it: "Dove andarono le lettere di Paolo"
+  nl: "Waarheen de brieven van Paulus gingen"
+  cs: "Kam šly Pavlovy listy"
 year: "AD 55"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -29,6 +33,10 @@ stops:
       pt: "Aos santos em Roma: “não me envergonho do Evangelho de Cristo” (1:16)."
       de: "An die Heiligen in Rom: „ich schäme mich des Evangeliums von Christo nicht“ (1,16)."
       fr: "Aux saints de Rome : « Je n’ai point honte de l’Évangile » (1:16)."
+      pl: "Do świętych w Rzymie: „nie wstydzę się za Ewangieliję Chrystusową” (1,16)."
+      it: "Ai santi che sono a Roma: «io non mi vergogno dell’Evangelo» (1,16)."
+      nl: "Aan de heiligen te Rome: “ik schaam mij des Evangelies van Christus niet” (1:16)."
+      cs: "Svatým v Římě: „Neboť se nestydím za evangelium Kristovo“ (1,16)."
   - place: a6f437a # Corinth
     ref: 1Cor.1.2
     note:
@@ -39,6 +47,10 @@ stops:
       pt: "À igreja de Deus em Corinto: “agora permanecem a fé, a esperança e o amor — estes três. O maior destes é o amor” (13:13)."
       de: "An die Gemeinde Gottes in Korinth: „Nun aber bleibt Glaube, Hoffnung, Liebe, diese drei; aber die Liebe ist die größte unter ihnen“ (13,13)."
       fr: "À l’Église de Dieu à Corinthe : « Maintenant donc ces trois choses demeurent : la foi, l’espérance, la charité ; mais la plus grande de ces choses, c’est la charité » (13:13)."
+      pl: "Do Kościoła Bożego w Koryncie: „A teraz zostaje wiara, nadzieja, miłość, te trzy rzeczy; lecz z nich największa jest miłość” (13,13)."
+      it: "Alla chiesa di Dio che è a Corinto: «queste tre cose durano: fede, speranza, carità; ma la più grande di esse è la carità» (13,13)."
+      nl: "Aan de gemeente van God te Korinthe: “En nu blijft geloof, hoop en liefde, deze drie; doch de meeste van deze is de liefde” (13:13)."
+      cs: "Církvi Boží v Korintu: „Nyní pak zůstává víra, naděje, láska, to tré, ale největší z nich jestiť láska“ (13,13)."
   - place: a0f440a # Galatia
     ref: Gal.1.2
     note:
@@ -49,6 +61,10 @@ stops:
       pt: "Às igrejas da Galácia: “Permaneçam firmes, portanto, na liberdade que Cristo nos concedeu” (5:1)."
       de: "An die Gemeinden in Galatien: „So bestehet nun in der Freiheit, zu der uns Christus befreit hat“ (5,1)."
       fr: "Aux Églises de Galatie : « C’est pour la liberté que Christ nous a affranchis. Demeurez donc fermes » (5:1)."
+      pl: "Do Kościołów Galacji: „Stójcie tedy w tej wolności, którą nas Chrystus wolnymi uczynił” (5,1)."
+      it: "Alle chiese della Galazia: «Cristo ci ha affrancati perché fossimo liberi; state dunque saldi» (5,1)."
+      nl: "Aan de gemeenten van Galatië: “Staat dan in de vrijheid, met welke ons Christus vrijgemaakt heeft” (5:1)."
+      cs: "Církvím v Galacii: „Protož v svobodě, kterouž Kristus nás osvobodil, stůjte“ (5,1)."
   - place: a5feb15 # Ephesus
     ref: Eph.1.1
     note:
@@ -59,6 +75,10 @@ stops:
       pt: "Aos santos em Éfeso: “pela graça vocês foram salvos por meio da fé” (2:8)."
       de: "An die Heiligen in Ephesus: „aus Gnade seid ihr selig geworden durch den Glauben“ (2,8)."
       fr: "Aux saints d’Éphèse : « c’est par la grâce que vous êtes sauvés, par le moyen de la foi » (2:8)."
+      pl: "Do świętych w Efezie: „łaską jesteście zbawieni przez wiarę” (2,8)."
+      it: "Ai santi che sono a Efeso: «gli è per grazia che voi siete stati salvati, mediante la fede» (2,8)."
+      nl: "Aan de heiligen te Efeze: “Want uit genade zijt gij zalig geworden door het geloof” (2:8)."
+      cs: "Svatým v Efezu: „Nebo milostí spaseni jste skrze víru“ (2,8)."
   - place: a49e1d0 # Philippi
     ref: Phil.1.1
     note:
@@ -69,6 +89,10 @@ stops:
       pt: "Aos santos em Filipos: “Alegrem-se no Senhor sempre!” (4:4)."
       de: "An die Heiligen in Philippi: „Freuet euch in dem HERRN allewege!“ (4,4)."
       fr: "Aux saints de Philippes : « Réjouissez-vous toujours dans le Seigneur » (4:4)."
+      pl: "Do świętych w Filippi: „Radujcie się zawsze w Panu” (4,4)."
+      it: "Ai santi che sono a Filippi: «Rallegratevi del continuo nel Signore» (4,4)."
+      nl: "Aan de heiligen te Filippi: “Verblijdt u in den Heere te allen tijd” (4:4)."
+      cs: "Svatým ve Filipách: „Radujte se v Pánu vždycky“ (4,4)."
   - place: a4e5a69 # Colossae
     ref: Col.1.2
     note:
@@ -79,6 +103,10 @@ stops:
       pt: "Aos irmãos em Colossos: “Tudo o que fizerem, seja em palavra ou em ação, façam tudo em nome do Senhor Jesus” (3:17)."
       de: "An die Brüder in Kolossae: „alles, was ihr tut mit Worten oder mit Werken, das tut alles in dem Namen des HERRN Jesu“ (3,17)."
       fr: "Aux frères de Colosses : « quoi que vous fassiez, en parole ou en œuvre, faites tout au nom du Seigneur Jésus » (3:17)."
+      pl: "Do braci w Kolosach: „wszystko, cokolwiek czynicie w słowie albo w uczynku, wszystko czyńcie w imieniu Pana Jezusa” (3,17)."
+      it: "Ai fratelli di Colosse: «qualunque cosa facciate, in parola o in opera, fate ogni cosa nel nome del Signor Gesù» (3,17)."
+      nl: "Aan de broeders te Kolosse: “En al wat gij doet met woorden of met werken, doet het alles in den Naam van den Heere Jezus” (3:17)."
+      cs: "Bratřím v Kolosech: „všecko, cožkoli činíte v slovu nebo v skutku, všecko čiňte ve jménu Pána Ježíše“ (3,17)."
   - place: afa9d8e # Thessalonica
     ref: 1Thess.1.1
     note:
@@ -89,6 +117,10 @@ stops:
       pt: "À igreja dos tessalonicenses: “Orem sem cessar” (5:17)."
       de: "An die Gemeinde der Thessalonicher: „Betet ohne Unterlaß“ (5,17)."
       fr: "À l’Église des Thessaloniciens : « Priez sans cesse » (5:17)."
+      pl: "Do Kościoła Tesaloniczan: „Bez przestanku się módlcie” (5,17)."
+      it: "Alla chiesa dei Tessalonicesi: «non cessate mai di pregare» (5,17)."
+      nl: "Aan de gemeente van de Tessalonicenzen: “Bidt zonder ophouden” (5:17)."
+      cs: "Církvi Tesaloničanů: „Bez přestání se modlte“ (5,17)."
   - place: a26aa94 # Crete
     ref: Titus.1.5
     note:
@@ -99,3 +131,7 @@ stops:
       pt: "A Tito, deixado em Creta para pôr as coisas em ordem e estabelecer presbíteros em cada cidade."
       de: "An Titus, der auf Kreta zurückgelassen wurde, um zu ordnen, was noch fehlte, und in jeder Stadt Älteste einzusetzen."
       fr: "À Tite, laissé en Crète pour mettre en ordre ce qui restait à régler et établir des anciens dans chaque ville."
+      pl: "Do Tytusa, pozostawionego na Krecie, aby uporządkował sprawy i ustanowił starszych w każdym mieście."
+      it: "A Tito, lasciato a Creta per mettere ordine e stabilire degli anziani in ogni città."
+      nl: "Aan Titus, achtergelaten in Kreta om de dingen in orde te brengen en in elke stad oudsten aan te stellen."
+      cs: "Titovi, zanechanému na Krétě, aby uvedl věci do pořádku a ustanovil starší v každém městě."

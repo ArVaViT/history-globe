@@ -114,6 +114,11 @@ describe("labels and ids", () => {
     expect(formatYear(30, "en")).toBe("AD 30");
     expect(formatYear(-3, "uk")).toBe("4 р. до н. е.");
     expect(formatYear(70, "de")).toBe("70 n. Chr.");
+    expect(formatYear(-585, "it")).toBe("586 a.C.");
+    expect(formatYear(-585, "nl")).toBe("586 v.Chr.");
+    expect(formatYear(-585, "pl")).toBe("586 p.n.e.");
+    expect(formatYear(-585, "cs")).toBe("586 př. n. l.");
+    expect(formatYear(30, "cs")).toBe("30 n. l.");
   });
 });
 
@@ -146,6 +151,7 @@ describe("the site's languages", () => {
     expect(isLocale("en")).toBe(true);
     expect(isLocale("de")).toBe(true);
     expect(isLocale("fr")).toBe(true);
+    expect(isLocale("cs")).toBe(true);
     expect(isLocale("zh")).toBe(false);
     expect(isLocale(null)).toBe(false);
   });
@@ -178,6 +184,10 @@ describe("formatCentury in every language the code knows", () => {
   it("speaks the reader's language, not Russian by default", () => {
     expect(formatCentury(-585, "uk")).toBe("VI ст. до н. е.");
     expect(formatCentury(30, "de")).toBe("1. Jh. n. Chr.");
+    expect(formatCentury(-585, "it")).toBe("VI secolo a.C.");
+    expect(formatCentury(-585, "nl")).toBe("6e eeuw v.Chr.");
+    expect(formatCentury(-585, "pl")).toBe("VI w. p.n.e.");
+    expect(formatCentury(-585, "cs")).toBe("6. stol. př. n. l.");
   });
 });
 
@@ -185,5 +195,9 @@ describe("parseYearInput reads BC loosely", () => {
   it("takes «до нашей эры» and a cut-off «до н» as BC", () => {
     expect(parseYearInput("586 до нашей эры")).toBe(-585);
     expect(parseYearInput("586 до н")).toBe(-585);
+    expect(parseYearInput("586 p.n.e.")).toBe(-585);
+    expect(parseYearInput("586 př. n. l.")).toBe(-585);
+    expect(parseYearInput("586 v.Chr.")).toBe(-585);
+    expect(parseYearInput("30 n. l.")).toBe(30);
   });
 });

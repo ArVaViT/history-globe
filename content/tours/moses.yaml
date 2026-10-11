@@ -13,6 +13,10 @@ title:
   pt: "Moisés antes do Êxodo"
   de: "Mose vor dem Auszug"
   fr: "Moïse avant l’Exode"
+  pl: "Mojżesz przed wyjściem z Egiptu"
+  it: "Mosè prima dell’Esodo"
+  nl: "Mozes vóór de uittocht"
+  cs: "Mojžíš před Exodem"
 year: "1526 BC"
 people: ["Moses@Exo.2.10-Rev"]
 approximate: true
@@ -27,6 +31,10 @@ stops:
       pt: "Israel é posto a construir as cidades-armazéns de Pitom e Ramessés; um menino hebreu tirado das águas recebe o nome de Moisés."
       de: "Israel muss die Vorratsstädte Pitom und Ramses bauen; ein hebräischer Knabe, der aus dem Wasser gezogen wird, erhält den Namen Mose."
       fr: "Israël est employé à bâtir les villes servant de magasins, Pithom et Ramsès ; un garçon hébreu tiré des eaux reçoit le nom de Moïse."
+      pl: "Izrael zostaje zapędzony do budowy miast spichrzowych, Pitom i Ramses; hebrajski chłopiec wydobyty z wody otrzymuje imię Mojżesz."
+      it: "Israele è costretto a costruire le città-deposito di Pitom e Ramses; un bambino ebreo tratto dalle acque è chiamato Mosè."
+      nl: "Israël moet de voorraadsteden Pitom en Raämses bouwen; een Hebreeuws jongetje dat uit het water wordt getrokken, krijgt de naam Mozes."
+      cs: "Izrael je nucen stavět zásobní města Pitom a Ramesse; hebrejský chlapec vytažený z vody dostává jméno Mojžíš."
   - place: acc6d8e # Midian
     ref: Exod.2.11-Exod.2.22
     year: "1486 BC"
@@ -38,6 +46,10 @@ stops:
       pt: "Aos quarenta anos foge do Faraó para a terra de Midiã e se senta junto a um poço."
       de: "Mit vierzig flieht er vor dem Pharao ins Land Midian und setzt sich an einen Brunnen."
       fr: "À quarante ans, il fuit Pharaon au pays de Madian et s’assied près d’un puits."
+      pl: "W wieku czterdziestu lat ucieka przed Faraonem do ziemi Madian i siada przy studni."
+      it: "A quarant’anni fugge dal faraone nel paese di Madian e si siede presso un pozzo."
+      nl: "Op zijn veertigste vlucht hij voor Farao naar het land Midian en gaat bij een put zitten."
+      cs: "Ve čtyřiceti letech prchá před faraonem do země Midján a usedá u studny."
   - place: a9bb03e # Mount Horeb
     ref: Exod.3.1-Exod.4.17
     year: "1446 BC"
@@ -49,6 +61,10 @@ stops:
       pt: "Em Horebe, o monte de Deus, a sarça arde e não se consome: “EU SOU O QUE SOU.”"
       de: "Am Horeb, dem Berg Gottes, brennt der Busch und verbrennt nicht: „ICH WERDE SEIN, DER ICH SEIN WERDE.“"
       fr: "À Horeb, la montagne de Dieu, le buisson brûle sans se consumer : « Je suis celui qui suis. »"
+      pl: "Na Horebie, górze Bożej, krzew płonie i nie spala się: „Będę który Będę.”"
+      it: "All’Oreb, il monte di Dio, il roveto arde senza consumarsi: «Io sono quegli che sono»."
+      nl: "Op de Horeb, de berg van God, brandt de braamstruik en wordt niet verteerd: “IK ZAL ZIJN, DIE IK ZIJN ZAL!”"
+      cs: "Na Chorébu, hoře Boží, hoří keř a nehoří: „JSEM, KTERÝŽ JSEM.“"
   - place: af301ca # Egypt
     ref: Exod.4.18-Exod.5.1
     year: "1446 BC"
@@ -60,3 +76,7 @@ stops:
       pt: "De volta ao Egito, Moisés e Arão dizem ao Faraó: “Deixe o meu povo ir.”"
       de: "Wieder in Ägypten sagen Mose und Aaron zum Pharao: „Laß mein Volk ziehen“."
       fr: "De retour en Égypte, Moïse et Aaron disent à Pharaon : « Laisse aller mon peuple. »"
+      pl: "Z powrotem w Egipcie Mojżesz i Aaron mówią do Faraona: „Puść lud mój.”"
+      it: "Tornati in Egitto, Mosè e Aronne dicono al faraone: «Lascia andare il mio popolo»."
+      nl: "Terug in Egypte zeggen Mozes en Aäron tot Farao: “Laat Mijn volk trekken”."
+      cs: "Zpět v Egyptě říkají Mojžíš a Áron faraonovi: „Propusť lid můj.“"

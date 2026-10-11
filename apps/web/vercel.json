@@ -9,27 +9,27 @@
       "permanent": true
     },
     {
-      "source": "/docs/:lang(ru|uk|es|pt|de|fr)",
+      "source": "/docs/:lang(ru|uk|es|pt|de|fr|it|nl|pl|cs)",
       "destination": "/docs/:lang/",
       "permanent": true
     },
     {
-      "source": "/:lang(en|ru|uk|es|pt|de|fr)/place/moab-aa0b1d6",
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs)/place/moab-aa0b1d6",
       "destination": "/:lang/place/moab/",
       "permanent": true
     },
     {
-      "source": "/:lang(en|ru|uk|es|pt|de|fr)/place/moab-aa0b1d6/",
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs)/place/moab-aa0b1d6/",
       "destination": "/:lang/place/moab/",
       "permanent": true
     },
     {
-      "source": "/:lang(en|ru|uk|es|pt|de|fr)/place/moab-aca767b",
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs)/place/moab-aca767b",
       "destination": "/:lang/place/plains-of-moab/",
       "permanent": true
     },
     {
-      "source": "/:lang(en|ru|uk|es|pt|de|fr)/place/moab-aca767b/",
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs)/place/moab-aca767b/",
       "destination": "/:lang/place/plains-of-moab/",
       "permanent": true
     }

@@ -12,6 +12,10 @@ title:
   pt: "A viagem de Paulo a Roma"
   de: "Die Reise des Paulus nach Rom"
   fr: "Le voyage de Paul vers Rome"
+  pl: "Podróż Pawła do Rzymu"
+  it: "Il viaggio di Paolo verso Roma"
+  nl: "De reis van Paulus naar Rome"
+  cs: "Pavlova plavba do Říma"
 year: "AD 60"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -28,6 +32,10 @@ stops:
       pt: "Detido em Cesareia, Paulo navega para a Itália como prisioneiro."
       de: "In Caesarea in Haft, segelt Paulus als Gefangener nach Italien."
       fr: "Détenu à Césarée, Paul s’embarque pour l’Italie comme prisonnier."
+      pl: "Przetrzymywany w Cezarei, Paweł odpływa do Italii jako więzień."
+      it: "Trattenuto a Cesarea, Paolo salpa per l’Italia come prigioniero."
+      nl: "Vastgehouden te Caesarea vaart Paulus als gevangene naar Italië."
+      cs: "Držen v Cesareji, vyplouvá Pavel jako vězeň do Itálie."
   - place: a98e4d7
     ref: Acts.27.3
     by: sea
@@ -39,6 +47,10 @@ stops:
       pt: "Júlio permite que Paulo visite amigos."
       de: "Julius erlaubt Paulus, Freunde zu besuchen."
       fr: "Julius permet à Paul d’aller chez des amis."
+      pl: "Juliusz pozwala Pawłowi odwiedzić przyjaciół."
+      it: "Giulio permette a Paolo di visitare gli amici."
+      nl: "Julius staat Paulus toe vrienden te bezoeken."
+      cs: "Julius dovoluje Pavlovi navštívit přátele."
   - place: aa4b3e2
     ref: Acts.27.5-Acts.27.6
     by: sea
@@ -50,6 +62,10 @@ stops:
       pt: "Transferência para um navio de Alexandria."
       de: "Umstieg auf ein Schiff aus Alexandria."
       fr: "Transfert sur un navire d’Alexandrie."
+      pl: "Przesiadka na okręt aleksandryjski."
+      it: "Trasbordo su una nave di Alessandria."
+      nl: "Overstap op een schip van Alexandrië."
+      cs: "Přesedání na alexandrijskou loď."
   - place: ab793ce
     ref: Acts.27.7
     by: sea
@@ -61,6 +77,10 @@ stops:
       pt: "Lentamente diante de Cnido."
       de: "Langsam vor Knidos."
       fr: "Navigation lente au large de Cnide."
+      pl: "Powoli koło Knidos."
+      it: "Lentamente davanti a Cnido."
+      nl: "Langzaam voorbij Knidus."
+      cs: "Pomalu u Knidu."
   - place: a1c44ea
     ref: Acts.27.7
     by: sea
@@ -72,6 +92,10 @@ stops:
       pt: "Ao abrigo de Creta, em Salmona."
       de: "Im Schutz Kretas bei Salmone."
       fr: "À l’abri de la Crète, vers Salmone."
+      pl: "Pod osłoną Krety, koło Salmone."
+      it: "Al riparo di Creta, a Salmone."
+      nl: "Onder de wal van Kreta bij Salmone."
+      cs: "V závětří Kréty u Salmóné."
   - place: aae626a
     ref: Acts.27.8-Acts.27.12
     by: sea
@@ -83,6 +107,10 @@ stops:
       pt: "Bons Portos; Paulo adverte que “a viagem trará prejuízo e grande perda, não só da carga e do navio, mas também de nossas vidas.”"
       de: "Schönhafen; Paulus warnt: „ich sehe, daß die Schiffahrt will mit Leid und großem Schaden ergehen, nicht allein der Last und des Schiffes sondern auch unsers Lebens“."
       fr: "Beaux-Ports ; Paul avertit : « la navigation ne se fera pas sans péril et sans beaucoup de dommage, non seulement pour la cargaison et pour le navire, mais encore pour nos personnes »."
+      pl: "Piękne Przystanie; Paweł ostrzega, że „z ukrzywdzeniem i z wielką szkodą nie tylko towarów i okrętów, ale też i dusz naszych będzie to żeglowanie.”"
+      it: "Buoni Porti; Paolo avverte: «io veggo che la navigazione si farà con pericolo e grave danno, non solo del carico e della nave, ma anche delle nostre persone»."
+      nl: "Schone Havens; Paulus waarschuwt dat “de vaart zal geschieden met hinder en grote schade, niet alleen van de lading en van het schip, maar ook van ons leven.”"
+      cs: "Dobré přístavy; Pavel varuje, že „s velikým ublížením a s mnohou škodou netoliko nákladu a lodí, ale i životů našich toto plavení bude“."
   - place: aca2b0a
     ref: Acts.27.14-Acts.27.17
     by: sea
@@ -94,6 +122,10 @@ stops:
       pt: "O vento tempestuoso Euroclidão arrasta o navio além de Cauda."
       de: "Der stürmische Wind Euroklydon treibt das Schiff an Kauda vorbei."
       fr: "Le vent impétueux Euraquilon emporte le navire au-delà de Clauda."
+      pl: "Gwałtowny wiatr Euroklidon pędzi okręt obok Kauda."
+      it: "Il vento tempestoso Euraquilone spinge la nave oltre Cauda."
+      nl: "De stormwind Euroklydon drijft het schip voorbij Klauda."
+      cs: "Bouřlivý vítr Euroklydon žene loď kolem Kaudy."
   - place: a57835d
     ref: Acts.27.39-Acts.28.11
     by: sea
@@ -105,6 +137,10 @@ stops:
       pt: "Naufrágio; três meses na ilha."
       de: "Schiffbruch; drei Monate auf der Insel."
       fr: "Naufrage ; trois mois dans l’île."
+      pl: "Rozbicie okrętu; trzy miesiące na wyspie."
+      it: "Il naufragio; tre mesi sull’isola."
+      nl: "Schipbreuk; drie maanden op het eiland."
+      cs: "Ztroskotání; tři měsíce na ostrově."
   - place: a1e3697
     ref: Acts.28.12
     by: sea
@@ -116,6 +152,10 @@ stops:
       pt: "Três dias em Siracusa."
       de: "Drei Tage in Syrakus."
       fr: "Trois jours à Syracuse."
+      pl: "Trzy dni w Syrakuzach."
+      it: "Tre giorni a Siracusa."
+      nl: "Drie dagen te Syracuse."
+      cs: "Tři dny v Syrakusách."
   - place: a63bb26
     ref: Acts.28.13
     by: sea
@@ -127,6 +167,10 @@ stops:
       pt: "Régio."
       de: "Rhegion."
       fr: "Rhegium."
+      pl: "Regium."
+      it: "Reggio."
+      nl: "Regium."
+      cs: "Regium."
   - place: a4488e9
     ref: Acts.28.13-Acts.28.14
     by: sea
@@ -138,6 +182,10 @@ stops:
       pt: "Sete dias com os irmãos."
       de: "Sieben Tage bei den Brüdern."
       fr: "Sept jours avec les frères."
+      pl: "Siedem dni z braćmi."
+      it: "Sette giorni con i fratelli."
+      nl: "Zeven dagen bij de broeders."
+      cs: "Sedm dní s bratřími."
   - place: a121d5e
     ref: Acts.28.15
     note:
@@ -148,6 +196,10 @@ stops:
       pt: "Os crentes saem ao encontro de Paulo."
       de: "Gläubige kommen Paulus entgegen."
       fr: "Des croyants viennent à la rencontre de Paul."
+      pl: "Wierzący wychodzą naprzeciw Pawłowi."
+      it: "I credenti escono incontro a Paolo."
+      nl: "Gelovigen komen Paulus tegemoet."
+      cs: "Věřící vycházejí Pavlovi vstříc."
   - place: afc8e7a
     ref: Acts.28.16
     note:
@@ -158,3 +210,7 @@ stops:
       pt: "Roma."
       de: "Rom."
       fr: "Rome."
+      pl: "Rzym."
+      it: "Roma."
+      nl: "Rome."
+      cs: "Řím."

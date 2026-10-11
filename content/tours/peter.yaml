@@ -10,6 +10,10 @@ title:
   pt: "O apóstolo Pedro"
   de: "Der Apostel Petrus"
   fr: "L’apôtre Pierre"
+  pl: "Apostoł Piotr"
+  it: "L’apostolo Pietro"
+  nl: "De apostel Petrus"
+  cs: "Apoštol Petr"
 year: "AD 40"
 people: ["Peter@Mat.4.18-2Pe"]
 approximate: true
@@ -25,6 +29,10 @@ stops:
       pt: "No Pentecostes, Pedro se levanta com os onze e fala; cerca de três mil são batizados."
       de: "An Pfingsten tritt Petrus mit den Elfen auf und redet; etwa dreitausend lassen sich taufen."
       fr: "À la Pentecôte, Pierre se lève avec les onze et parle ; environ trois mille personnes sont baptisées."
+      pl: "W Pięćdziesiątnicę Piotr staje z jedenastoma i przemawia; około trzech tysięcy zostaje ochrzczonych."
+      it: "A Pentecoste Pietro si leva con gli undici e parla; circa tremila sono battezzati."
+      nl: "Met Pinksteren staat Petrus op met de elf en spreekt; ongeveer drieduizend worden gedoopt."
+      cs: "O Letnicích povstává Petr s jedenácti a mluví; pokřtěno je asi tři tisíce."
   - place: a282dce # Samaria (region)
     ref: Acts.8.14-Acts.8.25
     note:
@@ -35,6 +43,10 @@ stops:
       pt: "Enviado com João a Samaria, repreende Simão, que queria comprar o dom de Deus com dinheiro."
       de: "Mit Johannes nach Samaria gesandt, weist er Simon zurecht, der die Gabe Gottes mit Geld kaufen wollte."
       fr: "Envoyé avec Jean en Samarie, il reprend Simon, qui voulait acheter le don de Dieu avec de l’argent."
+      pl: "Posłany z Janem do Samarii, gani Szymona, który chciał kupić dar Boży za pieniądze."
+      it: "Mandato con Giovanni in Samaria, rimprovera Simone, che voleva comprare con denaro il dono di Dio."
+      nl: "Met Johannes naar Samaria gezonden berispt hij Simon, die de gave van God met geld wilde kopen."
+      cs: "Poslán s Janem do Samaří, kárá Šimona, který chtěl dar Boží koupit za peníze."
   - place: a2c5cc7 # Lydda
     ref: Acts.9.32-Acts.9.35
     note:
@@ -45,6 +57,10 @@ stops:
       pt: "Em Lida (Lod) cura Enéias, acamado havia oito anos."
       de: "In Lod (Lydda) heilt er Äneas, der acht Jahre lang bettlägerig war."
       fr: "À Lydde, il guérit Énée, couché depuis huit ans."
+      pl: "W Lod (Lyddzie) uzdrawia Eneasza, od ośmiu lat przykutego do łoża."
+      it: "A Lidda (Lod) guarisce Enea, paralitico da otto anni."
+      nl: "In Lydda geneest hij Aeneas, die acht jaar bedlegerig was."
+      cs: "V Lodu (Lydda) uzdravuje Ainéa, osm let upoutaného na lože."
   - place: ae023a9 # Joppa
     ref: Acts.9.36-Acts.10.23
     note:
@@ -55,6 +71,10 @@ stops:
       pt: "Em Jope ressuscita Tabita e, no terraço da casa, vê a visão do lençol."
       de: "In Joppe erweckt er Tabita und sieht auf dem Dach das Gesicht des Tuches."
       fr: "À Joppé, il ressuscite Tabitha, et sur le toit de la maison il voit la vision de la nappe."
+      pl: "W Jafie wskrzesza Tabitę, a na dachu domu ogląda widzenie płótna."
+      it: "A Giaffa risuscita Tabita e, sul tetto, ha la visione del lenzuolo."
+      nl: "In Joppe wekt hij Tabita op, en op het dak ziet hij het visioen van het kleed."
+      cs: "V Joppe křísí Tabitu a na střeše vidí vidění plátna."
   - place: a58735e # Caesarea
     ref: Acts.10.24-Acts.10.48
     note:
@@ -65,6 +85,10 @@ stops:
       pt: "Em Cesareia, enquanto Pedro fala na casa do centurião Cornélio, o Espírito Santo cai sobre todos os que ouvem a palavra."
       de: "In Caesarea fällt der Heilige Geist auf alle, die das Wort hören, als Petrus im Haus des Hauptmanns Kornelius redet."
       fr: "À Césarée, pendant que Pierre parle dans la maison du centurion Corneille, le Saint-Esprit descend sur tous ceux qui entendent la parole."
+      pl: "W Cezarei, gdy Piotr przemawia w domu setnika Korneliusza, Duch Święty zstępuje na wszystkich, którzy słuchają słowa."
+      it: "A Cesarea, mentre Pietro parla in casa del centurione Cornelio, lo Spirito Santo scende su tutti quelli che ascoltano la parola."
+      nl: "In Caesarea, terwijl Petrus spreekt in het huis van de hoofdman Cornelius, valt de Heilige Geest op allen die het woord horen."
+      cs: "V Cesareji, když Petr mluví v domě setníka Kornelia, padá Duch svatý na všechny, kdo slyší slovo."
   - place: a15257a # Jerusalem
     ref: Acts.11.2-Acts.12.17
     note:
@@ -75,6 +99,10 @@ stops:
       pt: "De volta a Jerusalém, conta à igreja sobre Cornélio; preso por Herodes, é conduzido para fora por um anjo."
       de: "Wieder in Jerusalem berichtet er der Gemeinde von Kornelius; von Herodes ins Gefängnis geworfen, wird er von einem Engel hinausgeführt."
       fr: "De retour à Jérusalem, il raconte à l’Église l’histoire de Corneille ; emprisonné par Hérode, il est conduit dehors par un ange."
+      pl: "Z powrotem w Jerozolimie opowiada Kościołowi o Korneliuszu; uwięziony przez Heroda, zostaje wyprowadzony przez anioła."
+      it: "Di nuovo a Gerusalemme racconta alla chiesa quanto è accaduto con Cornelio; imprigionato da Erode, è condotto fuori da un angelo."
+      nl: "Terug in Jeruzalem vertelt hij de gemeente over Cornelius; door Herodes gevangengezet wordt hij door een engel naar buiten geleid."
+      cs: "Zpět v Jeruzalémě vypráví církvi o Korneliovi; uvězněn Herodem, je andělem vyveden ven."
   - place: a58735e # Caesarea
     ref: Acts.12.19-Acts.12.23
     year: "AD 44"
@@ -86,3 +114,7 @@ stops:
       pt: "Em Cesareia, Herodes, que não deu a glória a Deus, é ferido pelo anjo do Senhor e morre."
       de: "In Caesarea wird Herodes, der Gott nicht die Ehre gab, vom Engel des Herrn geschlagen und stirbt."
       fr: "À Césarée, Hérode, qui n’avait pas donné gloire à Dieu, est frappé par l’ange du Seigneur et meurt."
+      pl: "W Cezarei Herod, który nie oddał Bogu chwały, zostaje uderzony przez anioła Pańskiego i umiera."
+      it: "A Cesarea Erode, che non diede gloria a Dio, è colpito dall’angelo del Signore e muore."
+      nl: "In Caesarea wordt Herodes, die God de eer niet gaf, door de engel van de Heer geslagen en sterft."
+      cs: "V Cesareji je Herodes, který nedal Bohu slávu, udeřen andělem Hospodinovým a umírá."

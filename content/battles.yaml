@@ -28,6 +28,10 @@ battles:
       pt: "A batalha dos reis no Vale de Sidim"
       de: "Die Schlacht der Könige im Tal Siddim"
       fr: "La bataille des rois dans la vallée de Siddim"
+      pl: "Bitwa królów w Dolinie Siddim"
+      it: "La battaglia dei re nella valle di Siddim"
+      nl: "De slag van de koningen in het Dal Siddim"
+      cs: "Bitva králů v Sidimském údolí"
     place: a4a5cce # Valley of Siddim
     ref: Gen.14.8-Gen.14.12
     sides:
@@ -38,6 +42,10 @@ battles:
       pt: "Quedorlaomer e três reis do oriente contra os cinco reis de Sodoma, Gomorra, Admá, Zeboim e Bela"
       de: "Kedorlaomer und drei Könige des Ostens gegen die fünf Könige von Sodom, Gomorra, Adma, Zeboim und Bela"
       fr: "Kedorlaomer et trois rois de l’Orient contre les cinq rois de Sodome, de Gomorrhe, d’Adma, de Tseboïm et de Béla"
+      pl: "Kedorlaomer i trzej królowie ze wschodu przeciw pięciu królom Sodomy, Gomory, Admy, Seboim i Beli"
+      it: "Chedorlaomer e tre re dell’oriente contro i cinque re di Sodoma, Gomorra, Adma, Zeboim e Bela"
+      nl: "Kedorlaomer en drie koningen uit het oosten tegen de vijf koningen van Sodom, Gomorra, Adma, Zeboïm en Bela"
+      cs: "Kedorlaomer a tři králové z východu proti pěti králům Sodomy, Gomory, Admy, Cebóímu a Bely"
     outcome:
       en: "The kings of Sodom and Gomorrah flee; the goods of the cities and Lot are carried off"
       ru: "Цари Содома и Гоморры бегут; имущество городов захвачено, Лот уведён в плен"
@@ -46,6 +54,10 @@ battles:
       pt: "Os reis de Sodoma e Gomorra fogem; os bens das cidades e Ló são levados"
       de: "Die Könige von Sodom und Gomorra fliehen; die Güter der Städte und Lot werden weggeführt"
       fr: "Les rois de Sodome et de Gomorrhe s’enfuient ; les biens des villes et Lot sont emmenés"
+      pl: "Królowie Sodomy i Gomory uciekają; dobytek miast oraz Lot zostają uprowadzeni"
+      it: "I re di Sodoma e di Gomorra fuggono; i beni delle città e Lot sono portati via"
+      nl: "De koningen van Sodom en Gomorra vluchten; de goederen van de steden en Lot worden weggevoerd"
+      cs: "Králové Sodomy a Gomory prchají; zboží měst i Lot jsou odvedeni"
     sources:
       - "Gen 14:1-12"
   - id: dan-abram
@@ -58,6 +70,10 @@ battles:
       pt: "Abrão resgata Ló em Dã"
       de: "Abram befreit Lot bei Dan"
       fr: "Abram délivre Lot à Dan"
+      pl: "Abram ratuje Lota pod Dan"
+      it: "Abramo libera Lot a Dan"
+      nl: "Abram redt Lot bij Dan"
+      cs: "Abram zachraňuje Lota u Danu"
     place: a513646 # Dan
     ref: Gen.14.14-Gen.14.16
     sides:
@@ -68,6 +84,10 @@ battles:
       pt: "Abrão, com 318 servos treinados, contra os quatro reis"
       de: "Abram mit 318 geübten Knechten gegen die vier Könige"
       fr: "Abram avec 318 serviteurs exercés contre les quatre rois"
+      pl: "Abram z 318 wyćwiczonymi sługami przeciw czterem królom"
+      it: "Abramo con 318 servi addestrati contro i quattro re"
+      nl: "Abram met 318 getrainde knechten tegen de vier koningen"
+      cs: "Abram s 318 vycvičenými služebníky proti čtyřem králům"
     outcome:
       en: "A night attack at Dan; the enemy is pursued to Hobah and Lot and the goods are brought back"
       ru: "Ночное нападение у Дана; неприятель преследуем до Ховы, Лот и имущество возвращены"
@@ -76,6 +96,10 @@ battles:
       pt: "Um ataque noturno em Dã; o inimigo é perseguido até Hobá, e Ló e os bens são trazidos de volta"
       de: "Ein nächtlicher Angriff bei Dan; der Feind wird bis Hoba verfolgt, und Lot und die Güter werden zurückgebracht"
       fr: "Attaque de nuit à Dan ; l’ennemi est poursuivi jusqu’à Choba, et Lot et les biens sont ramenés"
+      pl: "Nocny atak pod Dan; wróg jest ścigany aż do Choba, a Lot i dobytek zostają sprowadzeni z powrotem"
+      it: "Un attacco notturno a Dan; il nemico è inseguito fino a Coba, e Lot e i beni sono ricondotti indietro"
+      nl: "Een nachtelijke aanval bij Dan; de vijand wordt achtervolgd tot Choba en Lot en de goederen worden teruggebracht"
+      cs: "Noční útok u Danu; nepřítel je pronásledován až k Chobě a Lot i zboží jsou přivedeni zpět"
     sources:
       - "Gen 14:13-16"
 
@@ -90,6 +114,10 @@ battles:
       pt: "Amaleque ataca Israel em Refidim"
       de: "Amalek greift Israel bei Refidim an"
       fr: "Amalek attaque Israël à Rephidim"
+      pl: "Amalek atakuje Izraela w Refidim"
+      it: "Amalek attacca Israele a Refidim"
+      nl: "Amalek valt Israël aan bij Refidim"
+      cs: "Amalek útočí na Izrael v Refídimu"
     place: a05ebb7 # Rephidim
     ref: Exod.17.8-Exod.17.13
     sides:
@@ -100,6 +128,10 @@ battles:
       pt: "Israel sob Josué, com as mãos de Moisés sustentadas no monte, contra Amaleque"
       de: "Israel unter Josua, mit den auf dem Hügel emporgehaltenen Händen des Mose, gegen Amalek"
       fr: "Israël sous Josué, avec les mains de Moïse soutenues sur la colline, contre Amalek"
+      pl: "Izrael pod wodzą Jozuego, z rękami Mojżesza podtrzymywanymi na wzgórzu, przeciw Amalekowi"
+      it: "Israele sotto Giosuè, con le mani di Mosè sostenute sul colle, contro Amalek"
+      nl: "Israël onder Jozua, met de opgeheven handen van Mozes op de heuvel, tegen Amalek"
+      cs: "Izrael pod Jozuem, s Mojžíšovými rukami podpíranými na pahorku, proti Amalekovi"
     outcome:
       en: "Joshua defeats Amalek with the edge of the sword"
       ru: "Иисус низлагает Амалика остриём меча"
@@ -108,6 +140,10 @@ battles:
       pt: "Josué derrota Amaleque a fio de espada"
       de: "Josua schlägt Amalek mit der Schärfe des Schwerts"
       fr: "Josué défait Amalek par le tranchant de l’épée"
+      pl: "Jozue pokonuje Amaleka ostrzem miecza"
+      it: "Giosuè sconfigge Amalek a fil di spada"
+      nl: "Jozua verslaat Amalek met de scherpte van het zwaard"
+      cs: "Jozue porazí Amaleka ostřím meče"
     sources:
       - "Exod 17:8-16"
   - id: hormah-repulse
@@ -120,6 +156,10 @@ battles:
       pt: "Israel repelido em Hormá"
       de: "Israel wird bei Horma zurückgeschlagen"
       fr: "Israël repoussé à Horma"
+      pl: "Izrael odparty pod Hormą"
+      it: "Israele respinto a Corma"
+      nl: "Israël teruggeslagen bij Chorma"
+      cs: "Izrael odražen u Chormy"
     place: ada25df # Hormah
     ref: Num.14.40-Num.14.45
     sides:
@@ -130,6 +170,10 @@ battles:
       pt: "Israel, subindo contra a palavra de Moisés, contra os amalequitas e cananeus da região montanhosa"
       de: "Israel, das gegen das Wort des Mose hinaufzieht, gegen die Amalekiter und Kanaaniter des Gebirges"
       fr: "Israël, montant contre la parole de Moïse, contre les Amalécites et les Cananéens de la montagne"
+      pl: "Izrael, który wyrusza wbrew słowu Mojżesza, przeciw Amalekitom i Kananejczykom z gór"
+      it: "Israele, salito contro la parola di Mosè, contro gli Amalekiti e i Cananei della regione montuosa"
+      nl: "Israël, dat tegen het woord van Mozes in optrekt, tegen de Amalekieten en Kanaänieten van het bergland"
+      cs: "Izrael, který vytáhl proti Mojžíšovu slovu, proti Amalekovcům a Kenaancům z pohoří"
     outcome:
       en: "The Amalekites and Canaanites come down, smite them and chase them to Hormah"
       ru: "Амаликитяне и Хананеи сходят, разбивают их и гонят до Хормы"
@@ -138,6 +182,10 @@ battles:
       pt: "Os amalequitas e os cananeus descem, ferem-nos e os perseguem até Hormá"
       de: "Die Amalekiter und Kanaaniter kommen herab, schlagen sie und jagen sie bis nach Horma"
       fr: "Les Amalécites et les Cananéens descendent, les battent et les poursuivent jusqu’à Horma"
+      pl: "Amalekici i Kananejczycy schodzą, biją Izraelitów i gonią ich aż do Hormy"
+      it: "Gli Amalekiti e i Cananei scendono, li colpiscono e li inseguono fino a Corma"
+      nl: "De Amalekieten en Kanaänieten komen af, verslaan hen en achtervolgen hen tot Chorma"
+      cs: "Amalekovci a Kenaanci sestoupí, poráží je a pronásledují až k Chormě"
     sources:
       - "Num 14:39-45; Deut 1:41-44"
   - id: hormah
@@ -150,6 +198,10 @@ battles:
       pt: "Israel derrota o rei de Arade em Hormá"
       de: "Israel besiegt den König von Arad bei Horma"
       fr: "Israël bat le roi d’Arad à Horma"
+      pl: "Izrael pokonuje króla Aradu pod Hormą"
+      it: "Israele sconfigge il re di Arad a Corma"
+      nl: "Israël verslaat de koning van Arad bij Chorma"
+      cs: "Izrael poráží krále Aradu u Chormy"
     place: ada25df # Hormah
     ref: Num.21.1-Num.21.3
     sides:
@@ -160,6 +212,10 @@ battles:
       pt: "Israel contra o rei cananeu de Arade"
       de: "Israel gegen den kanaanitischen König von Arad"
       fr: "Israël contre le roi cananéen d’Arad"
+      pl: "Izrael przeciw kananejskiemu królowi Aradu"
+      it: "Israele contro il re cananeo di Arad"
+      nl: "Israël tegen de Kanaänitische koning van Arad"
+      cs: "Izrael proti kenaanskému králi Aradu"
     outcome:
       en: "The Canaanites and their cities are utterly destroyed; the place is named Hormah"
       ru: "Хананеи и их города преданы заклятию; место названо Хорма"
@@ -168,6 +224,10 @@ battles:
       pt: "Os cananeus e as suas cidades são totalmente destruídos; o lugar recebe o nome de Hormá"
       de: "Die Kanaaniter und ihre Städte werden vollständig vertilgt; der Ort wird Horma genannt"
       fr: "Les Cananéens et leurs villes sont entièrement détruits ; le lieu est appelé Horma"
+      pl: "Kananejczycy i ich miasta zostają całkowicie zniszczone; miejsce nazwano Horma"
+      it: "I Cananei e le loro città sono interamente distrutti; il luogo è chiamato Corma"
+      nl: "De Kanaänieten en hun steden worden volledig verwoest; de plaats wordt Chorma genoemd"
+      cs: "Kenaanci a jejich města jsou docela vyhlazeni; místo je nazváno Chorma"
     sources:
       - "Num 21:1-3"
   - id: jahaz
@@ -180,6 +240,10 @@ battles:
       pt: "Seom derrotado em Jaza"
       de: "Sihon wird bei Jahaz besiegt"
       fr: "Sihon vaincu à Jahats"
+      pl: "Sychon pokonany pod Jahaz"
+      it: "Sicon sconfitto a Iaaz"
+      nl: "Sihon verslagen bij Jahaz"
+      cs: "Sichon poražen u Jahace"
     place: ad9b1cd # Jahaz
     ref: Num.21.21-Num.21.25
     sides:
@@ -190,6 +254,10 @@ battles:
       pt: "Israel contra Seom, rei dos amorreus"
       de: "Israel gegen Sihon, den König der Amoriter"
       fr: "Israël contre Sihon, roi des Amoréens"
+      pl: "Izrael przeciw Sychonowi, królowi Amorytów"
+      it: "Israele contro Sicon, re degli Amorei"
+      nl: "Israël tegen Sihon, de koning van de Amorieten"
+      cs: "Izrael proti Sichonovi, králi Amorejských"
     outcome:
       en: "Sihon is slain and Israel takes his land from the Arnon to the Jabbok"
       ru: "Сигон поражён, Израиль берёт его землю от Арнона до Иавока"
@@ -198,6 +266,10 @@ battles:
       pt: "Seom é morto, e Israel toma a sua terra desde o Arnom até o Jaboque"
       de: "Sihon wird erschlagen, und Israel nimmt sein Land vom Arnon bis zum Jabbok ein"
       fr: "Sihon est tué et Israël prend son pays depuis l’Arnon jusqu’au Jabbok"
+      pl: "Sychon ginie, a Izrael zajmuje jego ziemię od Arnonu do Jabboku"
+      it: "Sicon è ucciso e Israele prende il suo paese dall’Arnon fino allo Iabbok"
+      nl: "Sihon wordt gedood en Israël neemt zijn land in van de Arnon tot de Jabbok"
+      cs: "Sichon je zabit a Izrael přebírá jeho zemi od Arnonu po Jabok"
     sources:
       - "Num 21:21-31; Deut 2:26-37"
   - id: edrei
@@ -210,6 +282,10 @@ battles:
       pt: "Ogue de Basã derrotado em Edrei"
       de: "Og von Baschan wird bei Edrei besiegt"
       fr: "Og de Basan vaincu à Édréi"
+      pl: "Og z Baszanu pokonany pod Edrei"
+      it: "Og di Basan sconfitto a Edrei"
+      nl: "Og van Basan verslagen bij Edrei"
+      cs: "Og Bášanský poražen u Edreje"
     place: aaa6f7a # Edrei
     ref: Num.21.33-Num.21.35
     sides:
@@ -220,6 +296,10 @@ battles:
       pt: "Israel contra Ogue, rei de Basã"
       de: "Israel gegen Og, den König von Baschan"
       fr: "Israël contre Og, roi de Basan"
+      pl: "Izrael przeciw Ogowi, królowi Baszanu"
+      it: "Israele contro Og, re di Basan"
+      nl: "Israël tegen Og, de koning van Basan"
+      cs: "Izrael proti Ogovi, králi Bášanu"
     outcome:
       en: "Og, his sons and all his people are smitten and Israel possesses his land"
       ru: "Ог, его сыновья и весь его народ поражены; Израиль овладевает его землёй"
@@ -228,6 +308,10 @@ battles:
       pt: "Ogue, seus filhos e todo o seu povo são feridos, e Israel possui a sua terra"
       de: "Og, seine Söhne und sein ganzes Volk werden geschlagen, und Israel nimmt sein Land in Besitz"
       fr: "Og, ses fils et tout son peuple sont battus, et Israël possède son pays"
+      pl: "Og, jego synowie i cały jego lud zostają pobici, a Izrael obejmuje w posiadanie jego ziemię"
+      it: "Og, i suoi figli e tutto il suo popolo sono colpiti, e Israele prende possesso del suo paese"
+      nl: "Og, zijn zonen en heel zijn volk worden verslagen en Israël neemt zijn land in bezit"
+      cs: "Og, jeho synové i všechen jeho lid jsou pobiti a Izrael se zmocňuje jeho země"
     sources:
       - "Num 21:33-35; Deut 3:1-11"
   - id: jericho
@@ -240,6 +324,10 @@ battles:
       pt: "A queda de Jericó"
       de: "Der Fall Jerichos"
       fr: "La chute de Jéricho"
+      pl: "Upadek Jerycha"
+      it: "La caduta di Gerico"
+      nl: "De val van Jericho"
+      cs: "Pád Jericha"
     place: a231f80 # Jericho
     ref: Josh.6.1-Josh.6.25
     sides:
@@ -250,6 +338,10 @@ battles:
       pt: "Israel sob Josué contra Jericó"
       de: "Israel unter Josua gegen Jericho"
       fr: "Israël sous Josué contre Jéricho"
+      pl: "Izrael pod wodzą Jozuego przeciw Jerychu"
+      it: "Israele sotto Giosuè contro Gerico"
+      nl: "Israël onder Jozua tegen Jericho"
+      cs: "Izrael pod Jozuem proti Jerichu"
     outcome:
       en: "The wall falls down flat; the city is taken and devoted to destruction, Rahab's house spared"
       ru: "Стена обрушивается; город взят и предан заклятию, дом Раав пощажён"
@@ -258,6 +350,10 @@ battles:
       pt: "O muro cai por terra; a cidade é tomada e votada à destruição, poupada a casa de Raabe"
       de: "Die Mauer fällt in sich zusammen; die Stadt wird eingenommen und dem Bann geweiht, Rahabs Haus wird verschont"
       fr: "La muraille s’écroule ; la ville est prise et vouée à l’interdit, la maison de Rahab épargnée"
+      pl: "Mur wali się do fundamentów; miasto zostaje zdobyte i obłożone klątwą, a dom Rachab oszczędzony"
+      it: "Le mura crollano; la città è presa e votata allo sterminio, la casa di Raab è risparmiata"
+      nl: "De muur valt plat neer; de stad wordt ingenomen en aan de ban gewijd, het huis van Rachab gespaard"
+      cs: "Hradba padá rovnou k zemi; město je dobyto a zasvěceno zkáze, Rachabin dům ušetřen"
     sources:
       - "Josh 6:1-27"
   - id: ai-repulse
@@ -270,6 +366,10 @@ battles:
       pt: "Israel repelido em Ai"
       de: "Israel wird bei Ai zurückgeschlagen"
       fr: "Israël repoussé devant Aï"
+      pl: "Izrael odparty pod Aj"
+      it: "Israele respinto ad Ai"
+      nl: "Israël teruggeslagen bij Ai"
+      cs: "Izrael odražen u Aje"
     place: a7e13e1 # Ai
     ref: Josh.7.2-Josh.7.5
     sides:
@@ -280,6 +380,10 @@ battles:
       pt: "Cerca de três mil de Israel contra os homens de Ai"
       de: "Etwa dreitausend Mann Israels gegen die Männer von Ai"
       fr: "Environ trois mille hommes d’Israël contre les hommes d’Aï"
+      pl: "Około trzech tysięcy Izraelitów przeciw mężom z Aj"
+      it: "Circa tremila uomini d’Israele contro gli uomini di Ai"
+      nl: "Ongeveer drieduizend man van Israël tegen de mannen van Ai"
+      cs: "Asi tři tisíce mužů z Izraele proti mužům z Aje"
     outcome:
       en: "Israel flees; about thirty-six men are killed in the pursuit to Shebarim"
       ru: "Израильтяне бегут; около тридцати шести человек убиты при преследовании до Севарим"
@@ -288,6 +392,10 @@ battles:
       pt: "Israel foge; cerca de trinta e seis homens são mortos na perseguição até Sebarim"
       de: "Israel flieht; etwa sechsunddreißig Mann werden auf der Verfolgung bis Schebarim getötet"
       fr: "Israël s’enfuit ; environ trente-six hommes sont tués dans la poursuite jusqu’à Schebarim"
+      pl: "Izrael ucieka; około trzydziestu sześciu mężów ginie w pościgu aż do Szebarim"
+      it: "Israele fugge; circa trentasei uomini sono uccisi nell’inseguimento fino a Sebarim"
+      nl: "Israël vlucht; ongeveer zesendertig man worden gedood bij de achtervolging tot Sebarim"
+      cs: "Izrael prchá; při pronásledování až k Ševarímu je zabito asi šestatřicet mužů"
     sources:
       - "Josh 7:2-5"
   - id: ai
@@ -300,6 +408,10 @@ battles:
       pt: "Josué toma Ai"
       de: "Josua erobert Ai"
       fr: "Josué prend Aï"
+      pl: "Jozue zdobywa Aj"
+      it: "Giosuè prende Ai"
+      nl: "Jozua neemt Ai in"
+      cs: "Jozue dobývá Aj"
     place: a7e13e1 # Ai
     ref: Josh.8.1-Josh.8.29
     sides:
@@ -310,6 +422,10 @@ battles:
       pt: "Israel sob Josué, com uma emboscada atrás da cidade, contra os homens de Ai"
       de: "Israel unter Josua, mit einem Hinterhalt hinter der Stadt, gegen die Männer von Ai"
       fr: "Israël sous Josué, avec une embuscade derrière la ville, contre les hommes d’Aï"
+      pl: "Izrael pod wodzą Jozuego, z zasadzką za miastem, przeciw mężom z Aj"
+      it: "Israele sotto Giosuè, con un’imboscata dietro la città, contro gli uomini di Ai"
+      nl: "Israël onder Jozua, met een hinderlaag achter de stad, tegen de mannen van Ai"
+      cs: "Izrael pod Jozuem se zálohou za městem proti mužům z Aje"
     outcome:
       en: "Ai is burned and its king hanged"
       ru: "Гай сожжён, его царь повешен"
@@ -318,6 +434,10 @@ battles:
       pt: "Ai é queimada e o seu rei enforcado"
       de: "Ai wird verbrannt und sein König gehängt"
       fr: "Aï est incendiée et son roi pendu"
+      pl: "Aj zostaje spalony, a jego król powieszony"
+      it: "Ai è incendiata e il suo re impiccato"
+      nl: "Ai wordt verbrand en zijn koning opgehangen"
+      cs: "Aj je vypálen a jeho král oběšen"
     sources:
       - "Josh 8:1-29"
   - id: gibeon
@@ -330,6 +450,10 @@ battles:
       pt: "A batalha de Gibeão e a descida de Bete-Horom"
       de: "Die Schlacht bei Gibeon und der Abstieg von Bet-Horon"
       fr: "La bataille de Gabaon et la descente de Beth-Horon"
+      pl: "Bitwa pod Gibeon i zbocze Bet-Choron"
+      it: "La battaglia di Gabaon e la discesa di Bet-Oron"
+      nl: "De slag bij Gibeon en de helling van Beth-Horon"
+      cs: "Bitva u Gibeonu a svah Bét-choronu"
     place: aede336 # Gibeon
     ref: Josh.10.6-Josh.10.14
     sides:
@@ -340,6 +464,10 @@ battles:
       pt: "Israel sob Josué, subindo de Gilgal durante a noite, contra os cinco reis amorreus que cercavam Gibeão"
       de: "Israel unter Josua, bei Nacht von Gilgal heraufgezogen, gegen die fünf amoritischen Könige, die Gibeon belagern"
       fr: "Israël sous Josué, monté de Guilgal pendant la nuit, contre les cinq rois amoréens qui assiègent Gabaon"
+      pl: "Izrael pod wodzą Jozuego, który nocą wyruszył z Gilgal, przeciw pięciu królom amoryckim oblegającym Gibeon"
+      it: "Israele sotto Giosuè, salito di notte da Gàlgala, contro i cinque re amorei che assediano Gabaon"
+      nl: "Israël onder Jozua, 's nachts opgetrokken uit Gilgal, tegen de vijf Amorietische koningen die Gibeon belegeren"
+      cs: "Izrael pod Jozuem, který v noci vystoupil z Gilgalu, proti pěti amorejským králům obléhajícím Gibeon"
     outcome:
       en: "The kings' armies flee down the descent of Beth-horon under hailstones; the sun stands still over Gibeon"
       ru: "Войска царей бегут по скату горы Вефоронской под градом камней; солнце останавливается над Гаваоном"
@@ -348,6 +476,10 @@ battles:
       pt: "Os exércitos dos reis fogem pela descida de Bete-Horom sob pedras de granizo; o sol se detém sobre Gibeão"
       de: "Die Heere der Könige fliehen unter Hagelsteinen den Abstieg von Bet-Horon hinab; die Sonne steht still über Gibeon"
       fr: "Les armées des rois fuient dans la descente de Beth-Horon sous une grêle de pierres ; le soleil s’arrête sur Gabaon"
+      pl: "Wojska królów uciekają zboczem Bet-Choron pod gradem kamieni; słońce zatrzymuje się nad Gibeon"
+      it: "Gli eserciti dei re fuggono lungo la discesa di Bet-Oron sotto una grandinata; il sole si ferma su Gabaon"
+      nl: "De legers van de koningen vluchten langs de helling van Beth-Horon onder hagelstenen; de zon staat stil boven Gibeon"
+      cs: "Vojska králů prchají dolů po svahu Bét-choronu pod kroupami; slunce se zastavuje nad Gibeonem"
     sources:
       - "Josh 10:1-15"
   - id: lachish-joshua
@@ -360,6 +492,10 @@ battles:
       pt: "Josué toma Laquis"
       de: "Josua erobert Lachisch"
       fr: "Josué prend Lakis"
+      pl: "Jozue zdobywa Lakisz"
+      it: "Giosuè prende Lachis"
+      nl: "Jozua neemt Lachis in"
+      cs: "Jozue dobývá Lachiš"
     place: a3cc590 # Lachish
     ref: Josh.10.31-Josh.10.33
     sides:
@@ -370,6 +506,10 @@ battles:
       pt: "Israel sob Josué contra Laquis e contra Horão, rei de Gezer, que vem em seu auxílio"
       de: "Israel unter Josua gegen Lachisch und gegen Horam, den König von Geser, der ihm zu Hilfe kommt"
       fr: "Israël sous Josué contre Lakis, et Horam, roi de Guézer, venu à son secours"
+      pl: "Izrael pod wodzą Jozuego przeciw Lakisz oraz Horamowi, królowi Gezer, który przychodzi mu z pomocą"
+      it: "Israele sotto Giosuè contro Lachis e Oram, re di Ghezer, che viene in suo aiuto"
+      nl: "Israël onder Jozua tegen Lachis, en Choram, de koning van Gezer, die het te hulp komt"
+      cs: "Izrael pod Jozuem proti Lachišu a Horamovi, králi Gezeru, který mu jde na pomoc"
     outcome:
       en: "Lachish is taken on the second day and its people put to the sword"
       ru: "Лахис взят на другой день, его жители поражены мечом"
@@ -378,6 +518,10 @@ battles:
       pt: "Laquis é tomada no segundo dia e o seu povo passado ao fio da espada"
       de: "Lachisch wird am zweiten Tag erobert und seine Bewohner werden mit der Schärfe des Schwerts geschlagen"
       fr: "Lakis est prise le deuxième jour et ses habitants passés au fil de l’épée"
+      pl: "Lakisz zostaje zdobyty drugiego dnia, a jego mieszkańcy wycięci mieczem"
+      it: "Lachis è presa il secondo giorno e il suo popolo passato a fil di spada"
+      nl: "Lachis wordt op de tweede dag ingenomen en zijn volk over de kling gejaagd"
+      cs: "Lachiš je dobyt druhého dne a jeho lid pobit mečem"
     sources:
       - "Josh 10:31-33"
   - id: merom
@@ -390,6 +534,10 @@ battles:
       pt: "A batalha junto às águas de Merom; Hazor queimada"
       de: "Die Schlacht an den Wassern von Merom; Hazor wird verbrannt"
       fr: "La bataille près des eaux de Mérom ; Hatsor incendiée"
+      pl: "Bitwa u wód Merom; spalenie Chasoru"
+      it: "La battaglia alle acque di Merom; Asor incendiata"
+      nl: "De slag bij het water van Merom; Hazor verbrand"
+      cs: "Bitva u vod Merom; Chacor vypálen"
     place: a6ee047 # Waters of Merom
     ref: Josh.11.1-Josh.11.11
     sides:
@@ -400,6 +548,10 @@ battles:
       pt: "Israel sob Josué contra Jabim, rei de Hazor, e os reis do norte"
       de: "Israel unter Josua gegen Jabin, den König von Hazor, und die Könige des Nordens"
       fr: "Israël sous Josué contre Jabin, roi de Hatsor, et les rois du nord"
+      pl: "Izrael pod wodzą Jozuego przeciw Jabinowi, królowi Chasoru, i królom północy"
+      it: "Israele sotto Giosuè contro Iabin, re di Asor, e i re del nord"
+      nl: "Israël onder Jozua tegen Jabin, de koning van Hazor, en de koningen van het noorden"
+      cs: "Izrael pod Jozuem proti Jabínovi, králi Chacoru, a králům severu"
     outcome:
       en: "The kings are routed and chased to Sidon; their horses houghed, their chariots burned; Hazor is taken and burned"
       ru: "Цари разбиты и преследуемы до Сидона; коням перерезаны жилы, колесницы сожжены; Асор взят и сожжён"
@@ -408,6 +560,10 @@ battles:
       pt: "Os reis são postos em fuga e perseguidos até Sidom; seus cavalos têm os tendões cortados, seus carros são queimados; Hazor é tomada e queimada"
       de: "Die Könige werden in die Flucht geschlagen und bis Sidon verfolgt; ihre Pferde werden gelähmt, ihre Wagen verbrannt; Hazor wird eingenommen und verbrannt"
       fr: "Les rois sont mis en déroute et poursuivis jusqu’à Sidon ; leurs chevaux jarretés, leurs chars brûlés ; Hatsor est prise et incendiée"
+      pl: "Królowie zostają rozgromieni i ścigani aż do Sydonu; ich koniom podcięto ścięgna, a rydwany spalono; Chasor zostaje zdobyty i spalony"
+      it: "I re sono messi in rotta e inseguiti fino a Sidone; i loro cavalli azzoppati, i loro carri bruciati; Asor è presa e incendiata"
+      nl: "De koningen worden verslagen en tot Sidon achtervolgd; hun paarden krijgen de pezen doorgesneden, hun wagens worden verbrand; Hazor wordt ingenomen en verbrand"
+      cs: "Králové jsou rozprášeni a pronásledováni až k Sidónu; jejich koně jsou podřezáni šlachy, jejich vozy spáleny; Chacor je dobyt a vypálen"
     sources:
       - "Josh 11:1-15"
 
@@ -423,6 +579,10 @@ battles:
       pt: "Débora e Baraque derrotam Sísera no Quisom"
       de: "Debora und Barak besiegen Sisera am Kischon"
       fr: "Débora et Barak battent Sisera près du Kison"
+      pl: "Debora i Barak pokonują Siserę nad Kiszonem"
+      it: "Debora e Barak sconfiggono Sisara al Kison"
+      nl: "Debora en Barak verslaan Sisera bij de Kison"
+      cs: "Debora a Bárak porážejí Siseru u Kíšonu"
     place: a5a6458 # Kishon
     ref: Judg.4.12-Judg.4.21
     sides:
@@ -433,6 +593,10 @@ battles:
       pt: "Os dez mil de Baraque, vindos do Monte Tabor, contra os novecentos carros de ferro de Sísera"
       de: "Baraks zehntausend Mann vom Tabor gegen Siseras neunhundert eiserne Wagen"
       fr: "Les dix mille hommes de Barak, venus du Mont Thabor, contre les neuf cents chars de fer de Sisera"
+      pl: "Dziesięć tysięcy Baraka z góry Tabor przeciw dziewięciuset żelaznym rydwanom Sisery"
+      it: "I diecimila di Barak dal Monte Tabor contro i novecento carri di ferro di Sisara"
+      nl: "De tienduizend van Barak vanaf de berg Tabor tegen de negenhonderd ijzeren wagens van Sisera"
+      cs: "Bárakových deset tisíc z hory Tábor proti Siserovým devíti stům železných vozů"
     outcome:
       en: "Sisera's host is destroyed to the last man; Sisera flees on foot and dies in Jael's tent"
       ru: "Войско Сисары истреблено до последнего человека; Сисара бежит пешим и гибнет в шатре Иаили"
@@ -441,6 +605,10 @@ battles:
       pt: "O exército de Sísera é destruído até o último homem; Sísera foge a pé e morre na tenda de Jael"
       de: "Siseras Heer wird bis auf den letzten Mann vernichtet; Sisera flieht zu Fuß und stirbt im Zelt der Jael"
       fr: "L’armée de Sisera est détruite jusqu’au dernier homme ; Sisera s’enfuit à pied et meurt dans la tente de Jaël"
+      pl: "Wojsko Sisery zostaje wytępione co do jednego; Sisera ucieka pieszo i ginie w namiocie Jael"
+      it: "L’esercito di Sisara è distrutto fino all’ultimo uomo; Sisara fugge a piedi e muore nella tenda di Giaele"
+      nl: "Het leger van Sisera wordt tot de laatste man vernietigd; Sisera vlucht te voet en sterft in de tent van Jaël"
+      cs: "Siserovo vojsko je vyhlazeno do posledního muže; Sisera prchá pěšky a umírá ve stanu Jáelině"
     sources:
       - "Judg 4:4-24; 5:19-21"
   - id: moreh
@@ -453,6 +621,10 @@ battles:
       pt: "Os trezentos de Gideão põem Midiã em fuga junto à colina de Moré"
       de: "Gideons dreihundert Mann schlagen Midian beim Hügel More in die Flucht"
       fr: "Les trois cents hommes de Gédéon mettent Madian en déroute près de la colline de Moré"
+      pl: "Trzystu ludzi Gedeona rozgromiło Madian koło wzgórza More"
+      it: "I trecento di Gedeone mettono in rotta Madian presso il colle di Morè"
+      nl: "Gideons driehonderd jagen Midian op de vlucht bij de heuvel More"
+      cs: "Gedeonových tři sta rozptyluje Midján u pahorku Móre"
     place: a772880 # Moreh
     ref: Judg.7.16-Judg.7.22
     sides:
@@ -463,6 +635,10 @@ battles:
       pt: "Os trezentos de Gideão contra o acampamento de Midiã, Amaleque e os filhos do oriente"
       de: "Gideons dreihundert Mann gegen das Lager Midians, Amaleks und der Söhne des Ostens"
       fr: "Les trois cents hommes de Gédéon contre le camp de Madian, d’Amalek et des fils de l’Orient"
+      pl: "Trzystu ludzi Gedeona przeciw obozowi Madianu, Amaleka i synów Wschodu"
+      it: "I trecento di Gedeone contro l’accampamento di Madian, di Amalek e dei figli dell’oriente"
+      nl: "Gideons driehonderd tegen het kamp van Midian, Amalek en de kinderen van het oosten"
+      cs: "Gedeonových tři sta proti táboru Midjánců, Amalekovců a synů východu"
     outcome:
       en: "At the trumpets and broken pitchers the host turns its swords on itself and flees toward the Jordan"
       ru: "Под звук труб и треск разбитых кувшинов войско обращает мечи друг на друга и бежит к Иордану"
@@ -471,6 +647,10 @@ battles:
       pt: "Ao som das trombetas e dos cântaros quebrados, o exército volta as espadas contra si mesmo e foge em direção ao Jordão"
       de: "Beim Schall der Posaunen und beim Zerbrechen der Krüge kehrt das Heer die Schwerter gegen sich selbst und flieht zum Jordan hin"
       fr: "Au son des trompettes et des cruches brisées, l’armée tourne ses épées contre elle-même et fuit vers le Jourdain"
+      pl: "Na dźwięk trąb i tłuczonych dzbanów wojsko zwraca miecze przeciw sobie i ucieka ku Jordanowi"
+      it: "Al suono delle trombe e al fracasso delle brocche spezzate l’esercito volge le spade contro se stesso e fugge verso il Giordano"
+      nl: "Bij het geluid van de bazuinen en het breken van de kruiken keert het leger zijn zwaarden tegen zichzelf en vlucht richting de Jordaan"
+      cs: "Při zvuku trub a rozbíjených džbánů obrací vojsko meče proti sobě a prchá k Jordánu"
     sources:
       - "Judg 7:1-25"
   - id: shechem-abimelech
@@ -483,6 +663,10 @@ battles:
       pt: "Abimeleque destrói Siquém"
       de: "Abimelech zerstört Sichem"
       fr: "Abimélec détruit Sichem"
+      pl: "Abimelek niszczy Sychem"
+      it: "Abimelech distrugge Sichem"
+      nl: "Abimelech verwoest Sichem"
+      cs: "Abimelek ničí Šekem"
     place: adf74d4 # Shechem
     ref: Judg.9.42-Judg.9.45
     sides:
@@ -493,6 +677,10 @@ battles:
       pt: "Abimeleque contra os homens de Siquém que se haviam levantado contra ele"
       de: "Abimelech gegen die Männer von Sichem, die sich gegen ihn erhoben hatten"
       fr: "Abimélec contre les hommes de Sichem qui s’étaient soulevés contre lui"
+      pl: "Abimelek przeciw mężom z Sychem, którzy powstali przeciw niemu"
+      it: "Abimelech contro gli uomini di Sichem che si erano sollevati contro di lui"
+      nl: "Abimelech tegen de mannen van Sichem die tegen hem waren opgestaan"
+      cs: "Abimelek proti mužům Šekemu, kteří se proti němu vzbouřili"
     outcome:
       en: "The city is taken, its people slain, and the site sown with salt"
       ru: "Город взят, жители перебиты, место засеяно солью"
@@ -501,6 +689,10 @@ battles:
       pt: "A cidade é tomada, o seu povo morto, e o local semeado com sal"
       de: "Die Stadt wird eingenommen, ihre Bewohner werden erschlagen, und der Ort wird mit Salz besät"
       fr: "La ville est prise, son peuple tué, et son emplacement semé de sel"
+      pl: "Miasto zostaje zdobyte, jego mieszkańcy wybici, a miejsce posiane solą"
+      it: "La città è presa, il suo popolo ucciso e il suo sito cosparso di sale"
+      nl: "De stad wordt ingenomen, haar volk gedood en de plaats met zout bezaaid"
+      cs: "Město je dobyto, jeho lid pobit a místo zasypáno solí"
     sources:
       - "Judg 9:22-49"
   - id: thebez
@@ -513,6 +705,10 @@ battles:
       pt: "Abimeleque morto na torre de Tebez"
       de: "Abimelech wird am Turm von Tebez getötet"
       fr: "Abimélec tué à la tour de Thébets"
+      pl: "Abimelek zabity przy wieży w Tebes"
+      it: "Abimelech ucciso alla torre di Tebes"
+      nl: "Abimelech gedood bij de toren van Tebez"
+      cs: "Abimelek zabit u věže Tebecu"
     place: a5d1690 # Thebez
     ref: Judg.9.50-Judg.9.55
     sides:
@@ -523,6 +719,10 @@ battles:
       pt: "Abimeleque contra o povo de Tebez, encerrado na torre"
       de: "Abimelech gegen die Leute von Tebez, die im Turm eingeschlossen sind"
       fr: "Abimélec contre les habitants de Thébets enfermés dans la tour"
+      pl: "Abimelek przeciw mieszkańcom Tebes zamkniętym w wieży"
+      it: "Abimelech contro gli abitanti di Tebes rinchiusi nella torre"
+      nl: "Abimelech tegen het volk van Tebez dat in de toren is opgesloten"
+      cs: "Abimelek proti obyvatelům Tebecu uzavřeným ve věži"
     outcome:
       en: "A woman drops a millstone on Abimelech's head; his armourbearer runs him through, and the army disperses"
       ru: "Женщина бросает на голову Авимелеха обломок жернова; оруженосец добивает его, войско расходится"
@@ -531,6 +731,10 @@ battles:
       pt: "Uma mulher deixa cair uma pedra de moinho sobre a cabeça de Abimeleque; seu escudeiro o trespassa, e o exército se dispersa"
       de: "Eine Frau wirft einen Mühlstein auf Abimelechs Kopf; sein Waffenträger durchbohrt ihn, und das Heer zerstreut sich"
       fr: "Une femme jette une meule de moulin sur la tête d’Abimélec ; son écuyer le transperce, et l’armée se disperse"
+      pl: "Kobieta zrzuca kamień młyński na głowę Abimeleka; jego giermek przebija go mieczem, a wojsko się rozprasza"
+      it: "Una donna lascia cadere una macina sulla testa di Abimelech; il suo scudiero lo trafigge, e l’esercito si disperde"
+      nl: "Een vrouw laat een molensteen op het hoofd van Abimelech vallen; zijn wapendrager steekt hem door, en het leger gaat uiteen"
+      cs: "Žena shodí na Abimelekovu hlavu žernov; jeho zbrojnoš ho probodne a vojsko se rozchází"
     sources:
       - "Judg 9:50-57"
   - id: aroer-jephthah
@@ -543,6 +747,10 @@ battles:
       pt: "Jefté derrota os amonitas desde Aroer até Minite"
       de: "Jeftah schlägt die Ammoniter von Aroër bis Minnit"
       fr: "Jephté bat les Ammonites depuis Aroër jusqu’à Minnith"
+      pl: "Jefte pokonuje Ammonitów od Aroeru do Minnit"
+      it: "Iefte sconfigge gli Ammoniti da Aroer a Minnit"
+      nl: "Jefta verslaat de Ammonieten van Aroër tot Minnit"
+      cs: "Jiftách poráží Amónce od Aroeru po Minit"
     place: af74969 # Aroer (Judg 11:33)
     ref: Judg.11.32-Judg.11.33
     sides:
@@ -553,6 +761,10 @@ battles:
       pt: "Jefté e Gileade contra os filhos de Amom"
       de: "Jeftah und Gilead gegen die Kinder Ammon"
       fr: "Jephté et Galaad contre les fils d’Ammon"
+      pl: "Jefte i Gilead przeciw synom Ammona"
+      it: "Iefte e Galaad contro i figli di Ammon"
+      nl: "Jefta en Gilead tegen de kinderen van Ammon"
+      cs: "Jiftách a Gilead proti synům Amónovým"
     outcome:
       en: "Twenty cities are smitten with a very great slaughter; Ammon is subdued"
       ru: "Поражены двадцать городов, поражение весьма великое; Аммонитяне смирились"
@@ -561,6 +773,10 @@ battles:
       pt: "Vinte cidades são feridas com uma grandíssima matança; Amom é subjugado"
       de: "Zwanzig Städte werden unter sehr großem Blutvergießen geschlagen; Ammon wird unterworfen"
       fr: "Vingt villes sont frappées d’une très grande défaite ; Ammon est humilié"
+      pl: "Dwadzieścia miast zostaje pobitych w bardzo wielkiej rzezi; Ammon zostaje ujarzmiony"
+      it: "Venti città sono colpite con una strage grandissima; Ammon è sottomesso"
+      nl: "Twintig steden worden geslagen met een zeer grote slachting; Ammon wordt onderworpen"
+      cs: "Dvacet měst je poraženo velkým pobitím; Amón je podmaněn"
     sources:
       - "Judg 11:29-33"
 
@@ -575,6 +791,10 @@ battles:
       pt: "Os filisteus tomam a arca em Ebenézer"
       de: "Die Philister erbeuten die Lade bei Eben-Eser"
       fr: "Les Philistins prennent l’arche à Ében-Ézer"
+      pl: "Filistyni zdobywają arkę pod Eben-Ezer"
+      it: "I Filistei prendono l’arca a Eben-Ezer"
+      nl: "De Filistijnen nemen de ark in bij Eben-Haëzer"
+      cs: "Pelištejci berou truhlu u Eben-ezeru"
     place: abfdefc # Ebenezer (1 Sam 4:1)
     ref: 1Sam.4.1-1Sam.4.11
     sides:
@@ -585,6 +805,10 @@ battles:
       pt: "Israel, acampado em Ebenézer com a arca, contra os filisteus em Afeque"
       de: "Israel, bei Eben-Eser mit der Lade gelagert, gegen die Philister bei Afek"
       fr: "Israël, campé à Ében-Ézer avec l’arche, contre les Philistins à Aphek"
+      pl: "Izrael, obozujący pod Eben-Ezer z arką, przeciw Filistynom pod Afek"
+      it: "Israele, accampato a Eben-Ezer con l’arca, contro i Filistei ad Afek"
+      nl: "Israël, gelegerd bij Eben-Haëzer met de ark, tegen de Filistijnen bij Afek"
+      cs: "Izrael utábořený u Eben-ezeru s truhlou proti Pelištejcům u Afeku"
     outcome:
       en: "Israel is beaten twice; thirty thousand fall, the ark is taken, Hophni and Phinehas are slain"
       ru: "Израиль разбит дважды; тридцать тысяч пали, ковчег взят, Офни и Финеес убиты"
@@ -593,6 +817,10 @@ battles:
       pt: "Israel é derrotado duas vezes; caem trinta mil, a arca é tomada, Hofni e Finéias são mortos"
       de: "Israel wird zweimal geschlagen; dreißigtausend fallen, die Lade wird genommen, Hofni und Pinhas werden erschlagen"
       fr: "Israël est battu deux fois ; trente mille hommes tombent, l’arche est prise, Hophni et Phinées sont tués"
+      pl: "Izrael zostaje dwukrotnie pobity; ginie trzydzieści tysięcy, arka zostaje zabrana, a Chofni i Pinchas polegają"
+      it: "Israele è sconfitto due volte; ne cadono trentamila, l’arca è presa, Ofni e Pincas sono uccisi"
+      nl: "Israël wordt tweemaal verslagen; dertigduizend sneuvelen, de ark wordt genomen, Chofni en Pinechas worden gedood"
+      cs: "Izrael je dvakrát poražen; padne třicet tisíc, truhla je vzata, Chofni a Pinchas jsou zabiti"
     sources:
       - "1 Sam 4:1-11"
   - id: mizpah
@@ -605,6 +833,10 @@ battles:
       pt: "Os filisteus postos em fuga em Mispá; a pedra Ebenézer"
       de: "Die Philister werden bei Mizpa in die Flucht geschlagen; der Stein Eben-Eser"
       fr: "Les Philistins mis en déroute à Mitspa ; la pierre d’Ében-Ézer"
+      pl: "Filistyni rozgromieni pod Mispą; kamień Eben-Ezer"
+      it: "I Filistei messi in rotta a Mizpa; la pietra di Eben-Ezer"
+      nl: "De Filistijnen verslagen bij Mizpa; de steen Eben-Haëzer"
+      cs: "Pelištejci rozprášeni u Micpy; kámen Eben-ezer"
     place: a736f6c # Mizpah
     ref: 1Sam.7.7-1Sam.7.12
     sides:
@@ -615,6 +847,10 @@ battles:
       pt: "Israel reunido em Mispá sob Samuel contra os príncipes dos filisteus"
       de: "Israel, unter Samuel bei Mizpa versammelt, gegen die Fürsten der Philister"
       fr: "Israël rassemblé à Mitspa sous Samuel contre les princes des Philistins"
+      pl: "Izrael zgromadzony w Mispie pod wodzą Samuela przeciw władcom Filistynów"
+      it: "Israele radunato a Mizpa sotto Samuele contro i principi dei Filistei"
+      nl: "Israël, verzameld te Mizpa onder Samuël, tegen de vorsten van de Filistijnen"
+      cs: "Izrael shromážděný v Micpě pod Samuelem proti pelištejským knížatům"
     outcome:
       en: "The Lord thunders on the Philistines; Israel pursues them below Beth-car, and Samuel sets up the stone Ebenezer"
       ru: "Господь гремит на Филистимлян; Израиль гонит их до Вефхора, Самуил ставит камень Авен-Езер"
@@ -623,6 +859,10 @@ battles:
       pt: "O Senhor troveja sobre os filisteus; Israel os persegue até abaixo de Bete-Car, e Samuel levanta a pedra Ebenézer"
       de: "Der Herr donnert über den Philistern; Israel verfolgt sie bis unterhalb von Bet-Kar, und Samuel richtet den Stein Eben-Eser auf"
       fr: "L’Éternel fait gronder son tonnerre sur les Philistins ; Israël les poursuit jusqu’au-dessous de Beth-Car, et Samuel dresse la pierre d’Ében-Ézer"
+      pl: "Pan grzmi na Filistynów; Izrael ściga ich aż poniżej Bet-Kar, a Samuel stawia kamień Eben-Ezer"
+      it: "Il Signore tuona sui Filistei; Israele li insegue fin sotto Bet-Car, e Samuele erige la pietra di Eben-Ezer"
+      nl: "De HEER dondert tegen de Filistijnen; Israël achtervolgt hen tot onder Beth-Kar, en Samuël richt de steen Eben-Haëzer op"
+      cs: "Hospodin hřmí nad Pelištejci; Izrael je pronásleduje až pod Bét-kar a Samuel staví kámen Eben-ezer"
     sources:
       - "1 Sam 7:3-14"
   - id: jabesh-gilead
@@ -635,6 +875,10 @@ battles:
       pt: "Saul socorre Jabes-Gileade"
       de: "Saul entsetzt Jabesch in Gilead"
       fr: "Saül délivre Jabès en Galaad"
+      pl: "Saul wyzwala Jabesz-Gilead"
+      it: "Saul libera Iabes di Galaad"
+      nl: "Saul ontzet Jabes in Gilead"
+      cs: "Saul osvobozuje Jabeš gileadský"
     place: af92088 # Jabesh-gilead
     ref: 1Sam.11.1-1Sam.11.11
     sides:
@@ -645,6 +889,10 @@ battles:
       pt: "Saul, com a convocação de Israel e de Judá, contra Naás, o amonita, que cercava Jabes"
       de: "Saul mit dem Aufgebot von Israel und Juda gegen Nahas, den Ammoniter, der Jabesch belagert"
       fr: "Saül avec la levée d’Israël et de Juda contre Nachasch l’Ammonite, qui assiège Jabès"
+      pl: "Saul z poborem Izraela i Judy przeciw Nachaszowi Ammonicie, który oblega Jabesz"
+      it: "Saul con la leva di Israele e di Giuda contro Naas l’Ammonita che assedia Iabes"
+      nl: "Saul met de lichting van Israël en Juda tegen Nachas, de Ammoniet, die Jabes belegert"
+      cs: "Saul s branci z Izraele a Judy proti Nachašovi Amónskému, který obléhá Jábeš"
     outcome:
       en: "Three companies strike the camp in the morning watch; the Ammonites are scattered, no two left together"
       ru: "Три отряда врываются в стан в утреннюю стражу; Аммонитяне рассеяны, не остаётся и двух вместе"
@@ -653,6 +901,10 @@ battles:
       pt: "Três companhias atacam o acampamento na vigília da manhã; os amonitas são dispersos, sem que restem dois juntos"
       de: "Drei Abteilungen greifen das Lager in der Morgenwache an; die Ammoniter werden zerstreut, keine zwei bleiben beisammen"
       fr: "Trois corps frappent le camp à la veille du matin ; les Ammonites sont dispersés, il n’en reste pas deux ensemble"
+      pl: "Trzy oddziały uderzają na obóz o straży porannej; Ammonici zostają rozproszeni tak, że nie zostaje dwóch razem"
+      it: "Tre schiere colpiscono l’accampamento alla veglia del mattino; gli Ammoniti sono dispersi, non ne restano due insieme"
+      nl: "Drie afdelingen vallen het kamp aan in de morgenwake; de Ammonieten worden verstrooid, zodat er geen twee bij elkaar blijven"
+      cs: "Tři oddíly udeří na tábor v jitřní hlídce; Amónci jsou rozptýleni, nezůstali dva pohromadě"
     sources:
       - "1 Sam 11:1-15"
   - id: michmash
@@ -665,6 +917,10 @@ battles:
       pt: "O feito de Jônatas em Micmás"
       de: "Jonatans Wagnis bei Michmas"
       fr: "L’exploit de Jonathan à Micmasch"
+      pl: "Wyczyn Jonatana pod Mikmas"
+      it: "L’impresa di Gionata a Micmas"
+      nl: "Het wapenfeit van Jonatan bij Michmas"
+      cs: "Jonatanův čin u Michmasu"
     place: adea06c # Michmash
     ref: 1Sam.14.1-1Sam.14.23
     sides:
@@ -675,6 +931,10 @@ battles:
       pt: "Jônatas e seu escudeiro, depois os seiscentos de Saul, contra o destacamento filisteu em Micmás"
       de: "Jonatan und sein Waffenträger, dann Sauls sechshundert Mann, gegen die Besatzung der Philister bei Michmas"
       fr: "Jonathan et son écuyer, puis les six cents hommes de Saül, contre le poste des Philistins à Micmasch"
+      pl: "Jonatan i jego giermek, a potem sześciuset ludzi Saula, przeciw filistyńskiej załodze w Mikmas"
+      it: "Gionata e il suo scudiero, poi i seicento di Saul, contro il presidio filisteo a Micmas"
+      nl: "Jonatan en zijn wapendrager, daarna de zeshonderd man van Saul, tegen de Filistijnse wachtpost bij Michmas"
+      cs: "Jonatan a jeho zbrojnoš, potom Saulových šest set, proti pelištejské posádce v Michmasu"
     outcome:
       en: "Panic and an earthquake in the Philistine camp; they fall on each other, and the battle passes over to Beth-aven"
       ru: "Смятение и землетрясение в стане Филистимлян; они обращают мечи друг на друга, сражение доходит до Беф-Авена"
@@ -683,6 +943,10 @@ battles:
       pt: "Pânico e um terremoto no acampamento filisteu; eles caem uns sobre os outros, e a batalha se estende até Bete-Áven"
       de: "Panik und ein Erdbeben im Lager der Philister; sie fallen übereinander her, und die Schlacht zieht hinüber nach Bet-Awen"
       fr: "Panique et tremblement de terre dans le camp philistin ; ils se frappent les uns les autres, et le combat se porte jusqu’à Beth-Aven"
+      pl: "Panika i trzęsienie ziemi w obozie filistyńskim; Filistyni rzucają się na siebie, a bitwa przenosi się do Bet-Awen"
+      it: "Panico e un terremoto nell’accampamento filisteo; si abbattono gli uni sugli altri, e la battaglia si sposta fino a Bet-Aven"
+      nl: "Paniek en een aardbeving in het kamp van de Filistijnen; zij vallen elkaar aan, en de strijd trekt door naar Beth-Awen"
+      cs: "Panika a zemětřesení v pelištejském táboře; bijí jeden druhého a bitva se přenáší k Bét-avenu"
     sources:
       - "1 Sam 13:5-7; 14:1-23"
   - id: elah
@@ -697,6 +961,10 @@ battles:
       pt: "Davi e Golias no Vale de Elá"
       de: "David und Goliat im Tal Ela"
       fr: "David et Goliath dans la vallée d’Éla"
+      pl: "Dawid i Goliat w Dolinie Ela"
+      it: "Davide e Golia nella Valle del Terebinto"
+      nl: "David en Goliat in het Dal van Ela"
+      cs: "David a Goliáš v Élském údolí"
     place: ab183f8 # Valley of Elah
     ref: 1Sam.17.38-1Sam.17.54
     sides:
@@ -707,6 +975,10 @@ battles:
       pt: "O exército de Saul com Davi contra os filisteus e o seu campeão Golias, de Gate"
       de: "Sauls Heer mit David gegen die Philister und ihren Kämpfer Goliat von Gat"
       fr: "L’armée de Saül avec David contre les Philistins et leur champion, Goliath de Gath"
+      pl: "Wojsko Saula z Dawidem przeciw Filistynom i ich wojownikowi Goliatowi z Gat"
+      it: "L’esercito di Saul con Davide contro i Filistei e il loro campione Golia di Gat"
+      nl: "Het leger van Saul met David tegen de Filistijnen en hun kampioen Goliat uit Gat"
+      cs: "Saulovo vojsko s Davidem proti Pelištejcům a jejich bojovníku Goliášovi z Gatu"
     outcome:
       en: "Goliath falls to a sling-stone and is beheaded; the Philistines are chased to Gath and Ekron"
       ru: "Голиаф сражён камнем из пращи и обезглавлен; Филистимлян гонят до Гефа и Аккарона"
@@ -715,6 +987,10 @@ battles:
       pt: "Golias cai por uma pedra de funda e é decapitado; os filisteus são perseguidos até Gate e Ecrom"
       de: "Goliat fällt durch einen Schleuderstein und wird enthauptet; die Philister werden bis Gat und Ekron verfolgt"
       fr: "Goliath tombe sous une pierre de fronde et est décapité ; les Philistins sont poursuivis jusqu’à Gath et Ékron"
+      pl: "Goliat pada od kamienia z procy i zostaje ścięty; Filistyni są ścigani do Gat i Ekronu"
+      it: "Golia cade colpito da una pietra di fionda ed è decapitato; i Filistei sono inseguiti fino a Gat ed Ekron"
+      nl: "Goliat valt door een steen uit een slinger en wordt onthoofd; de Filistijnen worden achtervolgd tot Gat en Ekron"
+      cs: "Goliáš padá ranou z praku a je mu setnuta hlava; Pelištejci jsou pronásledováni až do Gatu a Ekronu"
     sources:
       - "1 Sam 17:1-54"
   - id: ziklag
@@ -727,6 +1003,10 @@ battles:
       pt: "Davi recupera tudo dos amalequitas que queimaram Ziclague"
       de: "David holt von den Amalekitern, die Ziklag verbrannt hatten, alles zurück"
       fr: "David reprend tout aux Amalécites qui avaient incendié Tsiklag"
+      pl: "Dawid odzyskuje wszystko od Amalekitów, którzy spalili Siklag"
+      it: "Davide recupera tutto dagli Amalekiti che avevano incendiato Siclag"
+      nl: "David haalt alles terug van de Amalekieten die Ziklag hadden verbrand"
+      cs: "David si od Amalekovců, kteří vypálili Siklag, bere zpět vše"
     place: a0ed7ff # Ziklag
     ref: 1Sam.30.16-1Sam.30.20
     sides:
@@ -737,6 +1017,10 @@ battles:
       pt: "Davi com quatrocentos homens contra os saqueadores amalequitas"
       de: "David mit vierhundert Mann gegen die amalekitischen Plünderer"
       fr: "David avec quatre cents hommes contre les pillards amalécites"
+      pl: "Dawid z czterystoma mężami przeciw amalekickim najeźdźcom"
+      it: "Davide con quattrocento uomini contro i razziatori amalekiti"
+      nl: "David met vierhonderd man tegen de Amalekitische plunderaars"
+      cs: "David se čtyřmi sty muži proti amalekovským lupičům"
     outcome:
       en: "The raiders are cut down from twilight to the next evening; four hundred escape on camels; every captive and all the spoil are recovered"
       ru: "Нападавшие истреблены от сумерек до вечера следующего дня; четыреста спаслись на верблюдах; все пленные и вся добыча возвращены"
@@ -745,6 +1029,10 @@ battles:
       pt: "Os saqueadores são abatidos do crepúsculo até a tarde seguinte; quatrocentos escapam em camelos; todos os cativos e todo o despojo são recuperados"
       de: "Die Plünderer werden von der Dämmerung bis zum nächsten Abend niedergehauen; vierhundert entkommen auf Kamelen; alle Gefangenen und die ganze Beute werden zurückgewonnen"
       fr: "Les pillards sont taillés en pièces depuis le crépuscule jusqu’au soir du lendemain ; quatre cents s’échappent sur des chameaux ; tous les captifs et tout le butin sont recouvrés"
+      pl: "Najeźdźcy zostają wycięci od zmierzchu do wieczora następnego dnia; czterystu ucieka na wielbłądach; wszyscy jeńcy i cały łup zostają odzyskani"
+      it: "I razziatori sono abbattuti dal crepuscolo fino alla sera seguente; quattrocento fuggono su cammelli; ogni prigioniero e tutto il bottino sono recuperati"
+      nl: "De plunderaars worden neergehouwen van de schemering tot de volgende avond; vierhonderd ontkomen op kamelen; elke gevangene en de hele buit worden teruggewonnen"
+      cs: "Lupiči jsou sekáni od soumraku do příštího večera; čtyři sta jich uniká na velbloudech; všichni zajatci i celá kořist jsou získáni zpět"
     sources:
       - "1 Sam 30:1-20"
   - id: gilboa
@@ -757,6 +1045,10 @@ battles:
       pt: "Saul cai no Monte Gilboa"
       de: "Saul fällt auf dem Gebirge Gilboa"
       fr: "Saül tombe sur le Mont Guilboa"
+      pl: "Saul ginie na górze Gilboa"
+      it: "Saul cade sul Monte Gelboe"
+      nl: "Saul valt op de berg Gilboa"
+      cs: "Saul padá na hoře Gilboa"
     place: acf57c5 # Mount Gilboa
     ref: 1Sam.31.1-1Sam.31.7
     sides:
@@ -767,6 +1059,10 @@ battles:
       pt: "O Israel de Saul contra os filisteus reunidos em Afeque e Suném"
       de: "Sauls Israel gegen die Philister, die bei Afek und Schunem versammelt sind"
       fr: "L’Israël de Saül contre les Philistins rassemblés à Aphek et à Sunem"
+      pl: "Izrael Saula przeciw Filistynom zgromadzonym pod Afek i Szunem"
+      it: "L’Israele di Saul contro i Filistei radunati ad Afek e a Sunem"
+      nl: "Het Israël van Saul tegen de Filistijnen, verzameld bij Afek en Sunem"
+      cs: "Saulův Izrael proti Pelištejcům shromážděným u Afeku a Šúnemu"
     outcome:
       en: "Israel flees; Jonathan, Abinadab and Malchi-shua are slain, Saul falls on his sword, and the Philistines occupy the cities"
       ru: "Израильтяне бегут; Ионафан, Аминадав и Малхисуа убиты, Саул бросается на меч, Филистимляне занимают города"
@@ -775,6 +1071,10 @@ battles:
       pt: "Israel foge; Jônatas, Abinadabe e Malqui-Sua são mortos, Saul cai sobre a sua espada, e os filisteus ocupam as cidades"
       de: "Israel flieht; Jonatan, Abinadab und Malkischua werden erschlagen, Saul stürzt sich in sein Schwert, und die Philister besetzen die Städte"
       fr: "Israël s’enfuit ; Jonathan, Abinadab et Malki-Schua sont tués, Saül se jette sur son épée, et les Philistins occupent les villes"
+      pl: "Izrael ucieka; Jonatan, Abinadab i Malkiszua zostają zabici, Saul pada na swój miecz, a Filistyni zajmują miasta"
+      it: "Israele fugge; Gionata, Abinadab e Malchi-Sua sono uccisi, Saul cade sulla propria spada, e i Filistei occupano le città"
+      nl: "Israël vlucht; Jonatan, Abinadab en Malchi-Sua worden gedood, Saul valt in zijn zwaard, en de Filistijnen bezetten de steden"
+      cs: "Izrael prchá; Jonatan, Abinadab a Malkišua jsou zabiti, Saul padá do svého meče a Pelištejci obsazují města"
     sources:
       - "1 Sam 28:4; 29:1; 31:1-13; 1 Chr 10:1-12"
 
@@ -789,6 +1089,10 @@ battles:
       pt: "Abner e Joabe junto ao tanque de Gibeão"
       de: "Abner und Joab am Teich von Gibeon"
       fr: "Abner et Joab près de l’étang de Gabaon"
+      pl: "Abner i Joab nad sadzawką w Gibeon"
+      it: "Abner e Ioab alla piscina di Gabaon"
+      nl: "Abner en Joab bij de vijver van Gibeon"
+      cs: "Abner a Joáb u rybníka v Gibeonu"
     place: aede336 # Gibeon
     ref: 2Sam.2.12-2Sam.2.17
     sides:
@@ -799,6 +1103,10 @@ battles:
       pt: "Abner com os servos de Is-Bosete contra Joabe com os servos de Davi"
       de: "Abner mit den Knechten Isch-Boschets gegen Joab mit den Knechten Davids"
       fr: "Abner avec les serviteurs d’Isch-Boscheth contre Joab avec les serviteurs de David"
+      pl: "Abner ze sługami Isz-Boszeta przeciw Joabowi ze sługami Dawida"
+      it: "Abner con i servi di Is-Boset contro Ioab con i servi di Davide"
+      nl: "Abner met de knechten van Isboset tegen Joab met de knechten van David"
+      cs: "Abner se služebníky Íš-bošetovými proti Joábovi se služebníky Davidovými"
     outcome:
       en: "Twelve against twelve fall together; Abner is beaten in a very sore battle and Asahel dies in the pursuit"
       ru: "Двенадцать против двенадцати падают разом; Авенир разбит в жесточайшем сражении, Асаил гибнет при преследовании"
@@ -807,6 +1115,10 @@ battles:
       pt: "Doze contra doze caem juntos; Abner é derrotado numa batalha muito dura, e Asael morre na perseguição"
       de: "Zwölf gegen zwölf fallen zugleich; Abner wird in einer sehr harten Schlacht geschlagen, und Asaël stirbt auf der Verfolgung"
       fr: "Douze contre douze tombent ensemble ; Abner est battu dans un combat très acharné, et Asaël meurt dans la poursuite"
+      pl: "Dwunastu przeciw dwunastu pada razem; Abner zostaje pobity w bardzo ciężkiej bitwie, a Asahel ginie w pościgu"
+      it: "Dodici contro dodici cadono insieme; Abner è sconfitto in una battaglia durissima e Asael muore nell’inseguimento"
+      nl: "Twaalf tegen twaalf vallen samen; Abner wordt verslagen in een zeer zware strijd en Asaël sneuvelt bij de achtervolging"
+      cs: "Dvanáct proti dvanácti padá spolu; Abner je poražen v velmi těžké bitvě a Asael padá při pronásledování"
     sources:
       - "2 Sam 2:12-32"
   - id: jebus
@@ -821,6 +1133,10 @@ battles:
       pt: "Davi toma a fortaleza de Sião"
       de: "David erobert die Burg Zion"
       fr: "David prend la forteresse de Sion"
+      pl: "Dawid zdobywa twierdzę Syjon"
+      it: "Davide prende la fortezza di Sion"
+      nl: "David neemt de burcht Sion in"
+      cs: "David dobývá pevnost Sijón"
     place: a15257a # Jerusalem
     ref: 2Sam.5.6-2Sam.5.9
     sides:
@@ -831,6 +1147,10 @@ battles:
       pt: "Davi e os seus homens contra os jebuseus de Jerusalém"
       de: "David und seine Männer gegen die Jebusiter von Jerusalem"
       fr: "David et ses hommes contre les Jébusiens de Jérusalem"
+      pl: "Dawid i jego ludzie przeciw Jebusytom z Jerozolimy"
+      it: "Davide e i suoi uomini contro i Gebusei di Gerusalemme"
+      nl: "David en zijn mannen tegen de Jebusieten van Jeruzalem"
+      cs: "David a jeho muži proti Jebusejským v Jeruzalémě"
     outcome:
       en: "The stronghold is taken and becomes the city of David"
       ru: "Крепость взята и становится городом Давидовым"
@@ -839,6 +1159,10 @@ battles:
       pt: "A fortaleza é tomada e se torna a Cidade de Davi"
       de: "Die Burg wird eingenommen und wird zur Stadt Davids"
       fr: "La forteresse est prise et devient la Cité de David"
+      pl: "Twierdza zostaje zdobyta i staje się Miastem Dawida"
+      it: "La fortezza è presa e diventa la Città di Davide"
+      nl: "De burcht wordt ingenomen en wordt de Stad van David"
+      cs: "Pevnost je dobyta a stává se Městem Davidovým"
     sources:
       - "2 Sam 5:6-10; 1 Chr 11:4-9"
   - id: baal-perazim
@@ -851,6 +1175,10 @@ battles:
       pt: "Davi derrota os filisteus em Baal-Perazim"
       de: "David schlägt die Philister bei Baal-Perazim"
       fr: "David bat les Philistins à Baal-Peratsim"
+      pl: "Dawid rozbija Filistynów pod Baal-Perasim"
+      it: "Davide sbaraglia i Filistei a Baal-Perazim"
+      nl: "David verslaat de Filistijnen bij Baäl-Perazim"
+      cs: "David rozráží Pelištejce u Báal-perasimu"
     place: a6bf059 # Baal-perazim
     ref: 2Sam.5.17-2Sam.5.25
     sides:
@@ -861,6 +1189,10 @@ battles:
       pt: "Davi, recém-ungido rei sobre Israel, contra os filisteus espalhados no vale dos Refains"
       de: "David, eben zum König über Israel gesalbt, gegen die im Tal Refaïm ausgebreiteten Philister"
       fr: "David, nouvellement oint roi sur Israël, contre les Philistins répandus dans la vallée des Rephaïm"
+      pl: "Dawid, świeżo namaszczony na króla nad Izraelem, przeciw Filistynom rozlokowanym w Dolinie Refaitów"
+      it: "Davide, appena unto re d’Israele, contro i Filistei sparsi nella valle dei Refaim"
+      nl: "David, pas tot koning over Israël gezalfd, tegen de Filistijnen die zich over het dal van Refaïm hebben verspreid"
+      cs: "David, čerstvě pomazaný králem nad Izraelem, proti Pelištejcům rozloženým v Refájském údolí"
     outcome:
       en: "The Philistines are smitten at Baal-perazim and leave their images; a second time they are driven from Geba to Gezer"
       ru: "Филистимляне поражены при Ваал-Перациме и бросают своих истуканов; во второй раз их гонят от Гаваи до Газера"
@@ -869,6 +1201,10 @@ battles:
       pt: "Os filisteus são feridos em Baal-Perazim e deixam os seus ídolos; uma segunda vez são expulsos de Geba até Gezer"
       de: "Die Philister werden bei Baal-Perazim geschlagen und lassen ihre Götzenbilder zurück; ein zweites Mal werden sie von Geba bis Geser vertrieben"
       fr: "Les Philistins sont battus à Baal-Peratsim et abandonnent leurs idoles ; une seconde fois, ils sont chassés de Guéba jusqu’à Guézer"
+      pl: "Filistyni zostają pobici pod Baal-Perasim i zostawiają swoje posągi; po raz drugi są odpierani od Geba do Gezer"
+      it: "I Filistei sono colpiti a Baal-Perazim e abbandonano i loro idoli; una seconda volta sono scacciati da Gheba a Ghezer"
+      nl: "De Filistijnen worden geslagen bij Baäl-Perazim en laten hun beelden achter; een tweede keer worden zij verdreven van Geba tot Gezer"
+      cs: "Pelištejci jsou poraženi u Báal-perasimu a zanechávají své modly; podruhé jsou zahnáni od Geby ke Gezeru"
     sources:
       - "2 Sam 5:17-25; 1 Chr 14:8-17"
   - id: helam
@@ -883,6 +1219,10 @@ battles:
       pt: "Davi derrota os sírios de Hadadezer em Helã"
       de: "David besiegt die Syrer Hadadesers bei Helam"
       fr: "David bat à Hélam les Syriens de Hadadézer"
+      pl: "Dawid pokonuje Syryjczyków Hadadezera pod Chelam"
+      it: "Davide sconfigge i Siri di Adadezer a Chelam"
+      nl: "David verslaat de Syriërs van Hadadezer bij Chelam"
+      cs: "David poráží Syřany Hadadezera u Chelamu"
     place: aeb09c0 # Helam
     ref: 2Sam.10.15-2Sam.10.19
     sides:
@@ -893,6 +1233,10 @@ battles:
       pt: "Davi com todo o Israel contra os sírios de além do Rio sob Sobaque"
       de: "David mit ganz Israel gegen die Syrer von jenseits des Stroms unter Schobach"
       fr: "David avec tout Israël contre les Syriens d’au-delà du fleuve sous Schobac"
+      pl: "Dawid z całym Izraelem przeciw Syryjczykom zza rzeki pod wodzą Szobaka"
+      it: "Davide con tutto Israele contro i Siri d’oltre il fiume sotto Sobac"
+      nl: "David met heel Israël tegen de Syriërs van over de rivier onder Sobach"
+      cs: "David se vším Izraelem proti Syřanům zpoza řeky pod Šobakem"
     outcome:
       en: "The Syrians flee, Shobach is killed, and Hadadezer's vassal kings make peace with Israel"
       ru: "Сирийцы бегут, Совак убит, цари, подвластные Адраазару, заключают мир с Израилем"
@@ -901,6 +1245,10 @@ battles:
       pt: "Os sírios fogem, Sobaque é morto, e os reis vassalos de Hadadezer fazem paz com Israel"
       de: "Die Syrer fliehen, Schobach wird getötet, und Hadadesers Vasallenkönige schließen Frieden mit Israel"
       fr: "Les Syriens s’enfuient, Schobac est tué, et les rois vassaux de Hadadézer font la paix avec Israël"
+      pl: "Syryjczycy uciekają, Szobak zostaje zabity, a królowie-wasale Hadadezera zawierają pokój z Izraelem"
+      it: "I Siri fuggono, Sobac è ucciso e i re vassalli di Adadezer fanno pace con Israele"
+      nl: "De Syriërs vluchten, Sobach wordt gedood, en de vazalkoningen van Hadadezer sluiten vrede met Israël"
+      cs: "Syřané prchají, Šobak je zabit a vazalští králové Hadadezerovi uzavírají s Izraelem pokoj"
     sources:
       - "2 Sam 10:6-19; 1 Chr 19:6-19"
   - id: rabbah
@@ -913,6 +1261,10 @@ battles:
       pt: "Joabe e Davi tomam Rabá dos amonitas"
       de: "Joab und David erobern Rabba der Ammoniter"
       fr: "Joab et David prennent Rabba des Ammonites"
+      pl: "Joab i Dawid zdobywają Rabbę Ammonitów"
+      it: "Ioab e Davide prendono Rabba degli Ammoniti"
+      nl: "Joab en David nemen Rabba van de Ammonieten in"
+      cs: "Joáb a David dobývají Rabbu Amónských"
     place: ae067b5 # Rabbah
     ref: 2Sam.12.26-2Sam.12.31
     sides:
@@ -923,6 +1275,10 @@ battles:
       pt: "O exército de Joabe, depois Davi com todo o povo, contra Rabá"
       de: "Joabs Heer, dann David mit dem ganzen Volk gegen Rabba"
       fr: "L’armée de Joab, puis David avec tout le peuple, contre Rabba"
+      pl: "Wojsko Joaba, a potem Dawid z całym ludem przeciw Rabbie"
+      it: "L’esercito di Ioab, poi Davide con tutto il popolo, contro Rabba"
+      nl: "Het leger van Joab, daarna David met heel het volk, tegen Rabba"
+      cs: "Joábovo vojsko, potom David se vším lidem proti Rabbě"
     outcome:
       en: "The royal city falls; the king's crown is set on David's head and great spoil is carried out"
       ru: "Царственный город взят; венец царя возложен на голову Давида, добычи вынесено очень много"
@@ -931,6 +1287,10 @@ battles:
       pt: "A cidade real cai; a coroa do rei é posta na cabeça de Davi, e grande despojo é levado"
       de: "Die Königsstadt fällt; die Krone des Königs wird David aufs Haupt gesetzt, und große Beute wird hinausgetragen"
       fr: "La ville royale tombe ; la couronne du roi est placée sur la tête de David et un grand butin est emporté"
+      pl: "Miasto królewskie upada; korona króla zostaje włożona na głowę Dawida i wynosi się wielki łup"
+      it: "La città regale cade; la corona del re è posta sul capo di Davide e un grande bottino è portato via"
+      nl: "De koningsstad valt; de kroon van de koning wordt op het hoofd van David gezet en er wordt grote buit weggevoerd"
+      cs: "Královské město padá; králova koruna je vložena Davidovi na hlavu a vynáší se veliká kořist"
     sources:
       - "2 Sam 11:1; 12:26-31; 1 Chr 20:1-3"
   - id: wood-of-ephraim
@@ -943,6 +1303,10 @@ battles:
       pt: "O exército de Absalão derrotado no bosque de Efraim"
       de: "Absaloms Heer wird im Wald Ephraim besiegt"
       fr: "L’armée d’Absalom battue dans la forêt d’Éphraïm"
+      pl: "Wojsko Absaloma rozbite w lesie Efraim"
+      it: "L’esercito di Assalonne sconfitto nella foresta di Efraim"
+      nl: "Het leger van Absalom verslagen in het woud van Efraïm"
+      cs: "Abšalomovo vojsko poraženo v Efrajimském lese"
     place: aa24ad4 # Wood of Ephraim
     ref: 2Sam.18.6-2Sam.18.17
     sides:
@@ -953,6 +1317,10 @@ battles:
       pt: "Os homens de Davi sob Joabe, Abisai e Itai contra Israel sob Absalão"
       de: "Davids Männer unter Joab, Abisai und Ittai gegen Israel unter Absalom"
       fr: "Les hommes de David sous Joab, Abischaï et Ittaï contre Israël sous Absalom"
+      pl: "Ludzie Dawida pod wodzą Joaba, Abiszaja i Ittaja przeciw Izraelowi pod wodzą Absaloma"
+      it: "Gli uomini di Davide sotto Ioab, Abisai e Ittai contro Israele sotto Assalonne"
+      nl: "Davids mannen onder Joab, Abisai en Ittai tegen Israël onder Absalom"
+      cs: "Davidovi muži pod Joábem, Abišajem a Itajem proti Izraeli pod Abšalomem"
     outcome:
       en: "Twenty thousand fall and the wood devours more than the sword; Absalom, caught in an oak, is killed by Joab"
       ru: "Пали двадцать тысяч, лес погубил больше, чем меч; Авессалома, застрявшего в дубе, убивает Иоав"
@@ -961,6 +1329,10 @@ battles:
       pt: "Caem vinte mil, e o bosque devora mais do que a espada; Absalão, preso num carvalho, é morto por Joabe"
       de: "Zwanzigtausend fallen, und der Wald verschlingt mehr als das Schwert; Absalom, in einer Eiche verfangen, wird von Joab getötet"
       fr: "Vingt mille hommes tombent et la forêt dévore plus de monde que l’épée ; Absalom, pris dans un chêne, est tué par Joab"
+      pl: "Pada dwadzieścia tysięcy, a las pochłania więcej niż miecz; Absalom, uwięziony w dębie, zostaje zabity przez Joaba"
+      it: "Ventimila cadono e la foresta divora più della spada; Assalonne, impigliato in una quercia, è ucciso da Ioab"
+      nl: "Twintigduizend vallen en het woud verslindt meer dan het zwaard; Absalom, in een eik gevangen, wordt door Joab gedood"
+      cs: "Padne dvacet tisíc a les pozře víc než meč; Abšalom zachycený v dubu je zabit Joábem"
     sources:
       - "2 Sam 18:1-17"
 
@@ -976,6 +1348,10 @@ battles:
       pt: "Abias derrota Jeroboão no Monte Zemaraim"
       de: "Abija besiegt Jerobeam am Berg Zemarajim"
       fr: "Abija bat Jéroboam au Mont Tsemaraïm"
+      pl: "Abiasz pokonuje Jeroboama pod górą Semaraim"
+      it: "Abia sconfigge Geroboamo sul Monte Zemaraim"
+      nl: "Abia verslaat Jerobeam bij de berg Zemaraïm"
+      cs: "Abija poráží Jarobeáma na hoře Cemarajim"
     place: a5a92d1 # Mount Zemaraim
     ref: 2Chr.13.13-2Chr.13.20
     sides:
@@ -986,6 +1362,10 @@ battles:
       pt: "Abias de Judá contra Jeroboão de Israel, que arma uma emboscada atrás de Judá"
       de: "Abija von Juda gegen Jerobeam von Israel, der hinter Juda einen Hinterhalt legt"
       fr: "Abija de Juda contre Jéroboam d’Israël, qui dresse une embuscade derrière Juda"
+      pl: "Abiasz z Judy przeciw Jeroboamowi z Izraela, który zastawia zasadzkę za Judą"
+      it: "Abia di Giuda contro Geroboamo d’Israele, che tende un’imboscata alle spalle di Giuda"
+      nl: "Abia van Juda tegen Jerobeam van Israël, die een hinderlaag legt achter Juda"
+      cs: "Abija Judský proti Jarobeámovi Izraelskému, který nastražuje léčku za Judou"
     outcome:
       en: "Israel flees before Judah; Abijah takes Bethel, Jeshanah and Ephrain"
       ru: "Израильтяне бегут от Иудеев; Авия берёт Вефиль, Иешану и Ефрон"
@@ -994,6 +1374,10 @@ battles:
       pt: "Israel foge diante de Judá; Abias toma Betel, Jesana e Efrom"
       de: "Israel flieht vor Juda; Abija erobert Bethel, Jeschana und Efrajin"
       fr: "Israël s’enfuit devant Juda ; Abija prend Béthel, Jeschana et Éphron"
+      pl: "Izrael ucieka przed Judą; Abiasz zdobywa Betel, Jeszanę i Efrain"
+      it: "Israele fugge davanti a Giuda; Abia prende Betel, Iesana ed Efrain"
+      nl: "Israël vlucht voor Juda; Abia neemt Bethel, Jesana en Efraïn in"
+      cs: "Izrael prchá před Judou; Abija dobývá Bét-el, Ješanu a Efrajin"
     sources:
       - "2 Chr 13:1-20; cf. 1 Kgs 15:6-7"
   - id: mareshah
@@ -1007,6 +1391,10 @@ battles:
       pt: "Asa derrota Zera, o etíope, em Maressa"
       de: "Asa besiegt Serach, den Äthiopier, bei Maresa"
       fr: "Asa bat Zérach l’Éthiopien à Maréscha"
+      pl: "Asa pokonuje Zeracha Etiopczyka pod Mareszą"
+      it: "Asa sconfigge Zerach l’Etiope a Maresa"
+      nl: "Asa verslaat Zerach de Ethiopiër bij Maresa"
+      cs: "Asa poráží Etiopana Zeracha u Mareši"
     place: a5cda86 # Mareshah
     ref: 2Chr.14.9-2Chr.14.15
     sides:
@@ -1017,6 +1405,10 @@ battles:
       pt: "Asa de Judá contra Zera, o etíope, no vale de Zefatá"
       de: "Asa von Juda gegen Serach, den Äthiopier, im Tal Zefata"
       fr: "Asa de Juda contre Zérach l’Éthiopien dans la vallée de Tsephata"
+      pl: "Asa z Judy przeciw Zerachowi Etiopczykowi w dolinie Sefata"
+      it: "Asa di Giuda contro Zerach l’Etiope nella valle di Sefata"
+      nl: "Asa van Juda tegen Zerach de Ethiopiër in het dal van Sefata"
+      cs: "Asa Judský proti Etiopanu Zerachovi v údolí Cefata"
     outcome:
       en: "The Ethiopians flee and are pursued to Gerar; the cities around it are spoiled"
       ru: "Ефиопляне бегут, их преследуют до Герара; окрестные города разграблены"
@@ -1025,6 +1417,10 @@ battles:
       pt: "Os etíopes fogem e são perseguidos até Gerar; as cidades ao redor são saqueadas"
       de: "Die Äthiopier fliehen und werden bis Gerar verfolgt; die Städte ringsum werden geplündert"
       fr: "Les Éthiopiens s’enfuient et sont poursuivis jusqu’à Guérar ; les villes des environs sont pillées"
+      pl: "Etiopczycy uciekają i są ścigani aż do Gerar; okoliczne miasta zostają złupione"
+      it: "Gli Etiopi fuggono e sono inseguiti fino a Gerar; le città intorno sono saccheggiate"
+      nl: "De Ethiopiërs vluchten en worden achtervolgd tot Gerar; de steden eromheen worden geplunderd"
+      cs: "Etiopané prchají a jsou pronásledováni až ke Geraru; okolní města jsou vyloupena"
     sources:
       - "2 Chr 14:9-15"
   - id: tirzah
@@ -1038,6 +1434,10 @@ battles:
       pt: "Onri cerca Tirza; Zinri queima o palácio sobre si mesmo"
       de: "Omri belagert Tirza; Simri verbrennt den Palast über sich"
       fr: "Omri assiège Thirtsa ; Zimri incendie le palais sur lui-même"
+      pl: "Omri oblega Tirsę; Zimri spala pałac nad sobą"
+      it: "Omri assedia Tirza; Zimri dà fuoco al palazzo su di sé"
+      nl: "Omri belegert Tirza; Zimri steekt het paleis boven zich in brand"
+      cs: "Omrí obléhá Tirsu; Zimrí si zapaluje palác nad sebou"
     place: a80d317 # Tirzah
     ref: 1Kgs.16.15-1Kgs.16.18
     sides:
@@ -1048,6 +1448,10 @@ battles:
       pt: "Onri com todo o Israel, subido de Gibetom, contra Zinri em Tirza"
       de: "Omri mit ganz Israel, von Gibbeton heraufgezogen, gegen Simri in Tirza"
       fr: "Omri avec tout Israël, monté de Guibbethon, contre Zimri à Thirtsa"
+      pl: "Omri z całym Izraelem, wyruszywszy spod Gibbeton, przeciw Zimriemu w Tirsie"
+      it: "Omri con tutto Israele, salito da Ghibbeton, contro Zimri a Tirza"
+      nl: "Omri met heel Israël, opgetrokken vanuit Gibbeton, tegen Zimri in Tirza"
+      cs: "Omrí se vším Izraelem, který vytáhl od Gibetonu, proti Zimrímu v Tirse"
     outcome:
       en: "The city is taken; Zimri dies in the burning palace after seven days as king"
       ru: "Город взят; Замврий гибнет в горящем дворце после семи дней царствования"
@@ -1056,6 +1460,10 @@ battles:
       pt: "A cidade é tomada; Zinri morre no palácio em chamas depois de sete dias como rei"
       de: "Die Stadt wird eingenommen; Simri stirbt nach sieben Tagen als König im brennenden Palast"
       fr: "La ville est prise ; Zimri meurt dans le palais en flammes après sept jours de règne"
+      pl: "Miasto zostaje zdobyte; Zimri ginie w płonącym pałacu po siedmiu dniach panowania"
+      it: "La città è presa; Zimri muore nel palazzo in fiamme dopo sette giorni di regno"
+      nl: "De stad wordt ingenomen; Zimri sterft in het brandende paleis na zeven dagen als koning"
+      cs: "Město je dobyto; Zimrí umírá v hořícím paláci po sedmi dnech království"
     sources:
       - "1 Kgs 16:15-22"
   - id: samaria-ben-hadad
@@ -1069,6 +1477,10 @@ battles:
       pt: "O cerco de Ben-Hadade a Samaria é rompido"
       de: "Ben-Hadads Belagerung von Samaria wird gebrochen"
       fr: "Le siège de Samarie par Ben-Hadad brisé"
+      pl: "Oblężenie Samarii przez Ben-Hadada przełamane"
+      it: "L’assedio di Samaria da parte di Ben-Adad spezzato"
+      nl: "Het beleg van Samaria door Ben-Hadad doorbroken"
+      cs: "Obležení Samaří Ben-hadadem je prolomeno"
     place: a041bb3 # Samaria
     ref: 1Kgs.20.13-1Kgs.20.21
     sides:
@@ -1079,6 +1491,10 @@ battles:
       pt: "Acabe com os jovens dos chefes das províncias contra Ben-Hadade da Síria e trinta e dois reis"
       de: "Ahab mit den jungen Männern der Fürsten der Provinzen gegen Ben-Hadad von Syrien und zweiunddreißig Könige"
       fr: "Achab avec les jeunes gens des chefs des provinces contre Ben-Hadad de Syrie et trente-deux rois"
+      pl: "Achab ze sługami książąt powiatowych przeciw Ben-Hadadowi z Syrii i trzydziestu dwóm królom"
+      it: "Acab con i servi dei capi delle province contro Ben-Adad di Siria e trentadue re"
+      nl: "Achab met de jonge mannen van de vorsten der gewesten tegen Ben-Hadad van Syrië en tweeëndertig koningen"
+      cs: "Achab s mládenci knížat krajů proti Ben-hadadovi Syrskému a třiceti dvěma králům"
     outcome:
       en: "The Syrians flee and are slaughtered; Ben-hadad escapes on a horse"
       ru: "Сирияне бегут и разбиты; Венадад спасается на коне"
@@ -1087,6 +1503,10 @@ battles:
       pt: "Os sírios fogem e são massacrados; Ben-Hadade escapa a cavalo"
       de: "Die Syrer fliehen und werden niedergemetzelt; Ben-Hadad entkommt auf einem Pferd"
       fr: "Les Syriens s’enfuient et sont massacrés ; Ben-Hadad s’échappe à cheval"
+      pl: "Syryjczycy uciekają i są wycinani; Ben-Hadad ucieka na koniu"
+      it: "I Siri fuggono e sono massacrati; Ben-Adad scampa a cavallo"
+      nl: "De Syriërs vluchten en worden afgeslacht; Ben-Hadad ontkomt te paard"
+      cs: "Syřané prchají a jsou pobíjeni; Ben-hadad uniká na koni"
     sources:
       - "1 Kgs 20:1-21"
   - id: aphek-ahab
@@ -1099,6 +1519,10 @@ battles:
       pt: "Acabe derrota Ben-Hadade em Afeque"
       de: "Ahab besiegt Ben-Hadad bei Afek"
       fr: "Achab bat Ben-Hadad à Aphek"
+      pl: "Achab pokonuje Ben-Hadada pod Afek"
+      it: "Acab sconfigge Ben-Adad ad Afek"
+      nl: "Achab verslaat Ben-Hadad bij Afek"
+      cs: "Achab poráží Ben-hadada u Afeku"
     place: a6fc60d # Aphek (1 Kgs 20:26)
     ref: 1Kgs.20.26-1Kgs.20.34
     sides:
@@ -1109,6 +1533,10 @@ battles:
       pt: "Israel, como dois pequenos rebanhos de cabritos, contra os sírios que dizem que o Senhor é um deus dos montes"
       de: "Israel, gleich zwei kleinen Ziegenherden, gegen die Syrer, die sagen, der Herr sei ein Gott der Berge"
       fr: "Israël, pareil à deux petits troupeaux de chevreaux, contre les Syriens qui disent que l’Éternel est un dieu des montagnes"
+      pl: "Izrael, niczym dwa małe stadka kóz, przeciw Syryjczykom, którzy mówią, że Pan jest bogiem gór"
+      it: "Israele, simile a due piccoli greggi di capre, contro i Siri che dicono che il Signore è un dio dei monti"
+      nl: "Israël, als twee kleine kudden geiten, tegen de Syriërs die zeggen dat de HEER een God der bergen is"
+      cs: "Izrael, jako dvě malá stáda kůzlat, proti Syřanům, kteří říkají, že Hospodin je bůh hor"
     outcome:
       en: "A hundred thousand Syrians fall on the seventh day; a wall falls on the rest in Aphek, and Ben-hadad surrenders"
       ru: "На седьмой день пали сто тысяч Сириян; на остальных в Афеке рушится стена, Венадад сдаётся"
@@ -1117,6 +1545,10 @@ battles:
       pt: "Cem mil sírios caem no sétimo dia; um muro cai sobre os demais em Afeque, e Ben-Hadade se rende"
       de: "Hunderttausend Syrer fallen am siebten Tag; eine Mauer stürzt in Afek auf die übrigen, und Ben-Hadad ergibt sich"
       fr: "Cent mille Syriens tombent le septième jour ; une muraille s’écroule sur le reste à Aphek, et Ben-Hadad se rend"
+      pl: "Sto tysięcy Syryjczyków pada siódmego dnia; mur przygniata resztę w Afek, a Ben-Hadad się poddaje"
+      it: "Centomila Siri cadono il settimo giorno; un muro cade sui superstiti in Afek, e Ben-Adad si arrende"
+      nl: "Honderdduizend Syriërs vallen op de zevende dag; een muur valt op de rest in Afek, en Ben-Hadad geeft zich over"
+      cs: "Sedmého dne padne sto tisíc Syřanů; zeď padne na zbylé v Afeku a Ben-hadad se vzdává"
     sources:
       - "1 Kgs 20:22-34"
   - id: ramoth-gilead-ahab
@@ -1130,6 +1562,10 @@ battles:
       pt: "Acabe cai em Ramote-Gileade"
       de: "Ahab fällt bei Ramot in Gilead"
       fr: "Achab tombe à Ramoth en Galaad"
+      pl: "Achab ginie pod Ramot w Gileadzie"
+      it: "Acab cade a Ramot di Galaad"
+      nl: "Achab valt bij Ramot in Gilead"
+      cs: "Achab padá u Rámot v Gileadu"
     place: a2fe63c # Ramoth-gilead
     ref: 1Kgs.22.29-1Kgs.22.37
     sides:
@@ -1140,6 +1576,10 @@ battles:
       pt: "Acabe de Israel e Josafá de Judá contra os sírios"
       de: "Ahab von Israel und Josaphat von Juda gegen die Syrer"
       fr: "Achab d’Israël et Josaphat de Juda contre les Syriens"
+      pl: "Achab z Izraela i Jozafat z Judy przeciw Syryjczykom"
+      it: "Acab d’Israele e Giosafat di Giuda contro i Siri"
+      nl: "Achab van Israël en Josafat van Juda tegen de Syriërs"
+      cs: "Achab Izraelský a Jozafat Judský proti Syřanům"
     outcome:
       en: "Ahab, disguised, is struck by a chance arrow and dies at evening; the army disperses"
       ru: "Переодетый Ахав ранен случайной стрелой и умирает к вечеру; войско расходится"
@@ -1148,6 +1588,10 @@ battles:
       pt: "Acabe, disfarçado, é atingido por uma flecha ao acaso e morre ao entardecer; o exército se dispersa"
       de: "Ahab wird, verkleidet, von einem zufällig abgeschossenen Pfeil getroffen und stirbt am Abend; das Heer zerstreut sich"
       fr: "Achab, déguisé, est frappé par une flèche tirée au hasard et meurt le soir ; l’armée se disperse"
+      pl: "Achab, przebrany, zostaje trafiony przypadkową strzałą i umiera wieczorem; wojsko się rozprasza"
+      it: "Acab, travestito, è colpito da una freccia scoccata a caso e muore verso sera; l’esercito si disperde"
+      nl: "Achab, vermomd, wordt getroffen door een toevallige pijl en sterft 's avonds; het leger gaat uiteen"
+      cs: "Achab, přestrojený, je zasažen nahodilým šípem a večer umírá; vojsko se rozchází"
     sources:
       - "1 Kgs 22:1-40; 2 Chr 18"
   - id: tekoa
@@ -1163,6 +1607,10 @@ battles:
       pt: "Os inimigos de Josafá destroem uns aos outros no deserto de Tecoa"
       de: "Josaphats Feinde vernichten einander in der Wüste Tekoa"
       fr: "Les ennemis de Josaphat s’entre-détruisent dans le désert de Tekoa"
+      pl: "Wrogowie Jozafata niszczą się nawzajem na pustyni Tekoa"
+      it: "I nemici di Giosafat si distruggono a vicenda nel deserto di Tekoa"
+      nl: "De vijanden van Josafat vernietigen elkaar in de woestijn van Tekoa"
+      cs: "Nepřátelé Jozafatovi se na poušti Tekoa navzájem hubí"
     place: a2e3aa0 # Tekoa
     ref: 2Chr.20.20-2Chr.20.26
     sides:
@@ -1173,6 +1621,10 @@ battles:
       pt: "Judá sob Josafá, com cantores à frente do exército, contra Moabe, Amom e o monte Seir"
       de: "Juda unter Josaphat, Sänger vor dem Heer, gegen Moab, Ammon und das Gebirge Seir"
       fr: "Juda sous Josaphat, des chantres devant l’armée, contre Moab, Ammon et le Mont Séir"
+      pl: "Juda pod wodzą Jozafata, ze śpiewakami przed wojskiem, przeciw Moabowi, Ammonowi i górze Seir"
+      it: "Giuda sotto Giosafat, con i cantori davanti all’esercito, contro Moab, Ammon e il Monte Seir"
+      nl: "Juda onder Josafat, met zangers voor het leger uit, tegen Moab, Ammon en het gebergte Seïr"
+      cs: "Juda pod Jozafatem, zpěváci před vojskem, proti Moábu, Amónu a hoře Seír"
     outcome:
       en: "The invaders turn on each other and none escapes; Judah gathers the spoil for three days"
       ru: "Пришедшие обращают оружие друг на друга, никто не спасается; Иудеи три дня собирают добычу"
@@ -1181,6 +1633,10 @@ battles:
       pt: "Os invasores se voltam uns contra os outros e nenhum escapa; Judá recolhe o despojo por três dias"
       de: "Die Eindringlinge wenden sich gegeneinander, und keiner entkommt; Juda sammelt drei Tage lang die Beute"
       fr: "Les envahisseurs se retournent les uns contre les autres et aucun n’échappe ; Juda recueille le butin pendant trois jours"
+      pl: "Najeźdźcy zwracają się przeciw sobie i nikt nie uchodzi; Juda zbiera łupy przez trzy dni"
+      it: "Gli invasori si volgono gli uni contro gli altri e nessuno scampa; Giuda raccoglie il bottino per tre giorni"
+      nl: "De indringers keren zich tegen elkaar en niemand ontkomt; Juda verzamelt drie dagen lang de buit"
+      cs: "Vetřelci se obracejí jedni proti druhým a nikdo neuniká; Juda sbírá kořist tři dny"
     sources:
       - "2 Chr 20:1-30"
   - id: kir-hareseth
@@ -1195,6 +1651,10 @@ battles:
       pt: "Os três reis cercam Mesa em Quir-Haresete"
       de: "Die drei Könige belagern Mesa in Kir-Heres"
       fr: "Les trois rois assiègent Mescha à Kir-Haréseth"
+      pl: "Trzej królowie oblegają Meszę w Kir-Chareszet"
+      it: "I tre re assediano Mesa a Kir-Cheres"
+      nl: "De drie koningen belegeren Mesa in Kir-Hareset"
+      cs: "Tři králové obléhají Mešu v Kír-charesetu"
     place: ab55371 # Kir-hareseth
     ref: 2Kgs.3.21-2Kgs.3.27
     sides:
@@ -1205,6 +1665,10 @@ battles:
       pt: "Jeorão de Israel, Josafá de Judá e o rei de Edom contra Mesa, rei de Moabe"
       de: "Joram von Israel, Josaphat von Juda und der König von Edom gegen Mesa, den König von Moab"
       fr: "Joram d’Israël, Josaphat de Juda et le roi d’Édom contre Mescha, roi de Moab"
+      pl: "Joram z Izraela, Jozafat z Judy i król Edomu przeciw Meszy, królowi Moabu"
+      it: "Ioram d’Israele, Giosafat di Giuda e il re di Edom contro Mesa, re di Moab"
+      nl: "Joram van Israël, Josafat van Juda en de koning van Edom tegen Mesa, de koning van Moab"
+      cs: "Jehoram Izraelský, Jozafat Judský a král Edómu proti Mešovi, králi Moábu"
     outcome:
       en: "Moab's land is laid waste; Mesha offers his eldest son on the wall and the kings withdraw"
       ru: "Земля Моава опустошена; Меса приносит на стене в жертву своего первенца, и цари отступают"
@@ -1213,6 +1677,10 @@ battles:
       pt: "A terra de Moabe é devastada; Mesa oferece o filho primogênito sobre o muro, e os reis se retiram"
       de: "Moabs Land wird verwüstet; Mesa opfert seinen ältesten Sohn auf der Mauer, und die Könige ziehen ab"
       fr: "Le pays de Moab est dévasté ; Mescha offre son fils aîné sur la muraille et les rois se retirent"
+      pl: "Ziemia Moabu zostaje spustoszona; Mesza składa w ofierze swego najstarszego syna na murze i królowie się wycofują"
+      it: "Il paese di Moab è devastato; Mesa offre sul muro il suo primogenito e i re si ritirano"
+      nl: "Het land van Moab wordt verwoest; Mesa offert zijn oudste zoon op de muur en de koningen trekken zich terug"
+      cs: "Moábská země je zpustošena; Meša obětuje na hradbě svého prvorozeného syna a králové odtahují"
     sources:
       - "2 Kgs 3:4-27"
       - "The Mesha Stele (Moab's side of the war; c. 840 BC)"
@@ -1227,6 +1695,10 @@ battles:
       pt: "O cerco de fome a Samaria levantado durante a noite"
       de: "Die Belagerung Samarias mit Hungersnot wird über Nacht aufgehoben"
       fr: "Le siège de Samarie, ravagée par la famine, levé en une nuit"
+      pl: "Oblężenie Samarii i głód zakończone w ciągu jednej nocy"
+      it: "L’assedio di Samaria per fame tolto nel giro di una notte"
+      nl: "Het beleg van Samaria in de hongersnood 's nachts opgeheven"
+      cs: "Hladové obležení Samaří zrušeno přes noc"
     place: a041bb3 # Samaria
     ref: 2Kgs.6.24-2Kgs.7.16
     sides:
@@ -1237,6 +1709,10 @@ battles:
       pt: "Ben-Hadade da Síria cercando Samaria, onde Eliseu promete abundância para o dia seguinte"
       de: "Ben-Hadad von Syrien belagert Samaria, wo Elisa für den folgenden Tag Überfluss verheißt"
       fr: "Ben-Hadad de Syrie assiégeant Samarie, où Élisée promet l’abondance pour le lendemain"
+      pl: "Ben-Hadad z Syrii, który oblega Samarię, gdzie Elizeusz obiecuje obfitość na jutro"
+      it: "Ben-Adad di Siria assedia Samaria, dove Eliseo promette abbondanza per l’indomani"
+      nl: "Ben-Hadad van Syrië belegert Samaria, waar Elisa overvloed belooft voor de volgende dag"
+      cs: "Ben-hadad Syrský obléhá Samaří, kde Elíša slibuje hojnost na zítřek"
     outcome:
       en: "The Syrians hear a noise of a great host and flee at twilight, leaving their camp; four lepers find it empty"
       ru: "Сирийцы слышат шум большого войска и бегут в сумерки, бросив стан; четверо прокажённых находят его пустым"
@@ -1245,6 +1721,10 @@ battles:
       pt: "Os sírios ouvem o ruído de um grande exército e fogem ao crepúsculo, deixando o acampamento; quatro leprosos o encontram vazio"
       de: "Die Syrer hören das Getöse eines großen Heeres und fliehen in der Dämmerung und lassen ihr Lager zurück; vier Aussätzige finden es leer"
       fr: "Les Syriens entendent un bruit de grande armée et s’enfuient au crépuscule, laissant leur camp ; quatre lépreux le trouvent vide"
+      pl: "Syryjczycy słyszą odgłos wielkiego wojska i uciekają o zmierzchu, zostawiając obóz; czterech trędowatych zastaje go pustym"
+      it: "I Siri sentono un rumore di grande esercito e fuggono al crepuscolo, lasciando il loro accampamento; quattro lebbrosi lo trovano vuoto"
+      nl: "De Syriërs horen het geluid van een groot leger en vluchten in de schemering, hun kamp achterlatend; vier melaatsen vinden het leeg"
+      cs: "Syřané slyší hluk velikého vojska a za soumraku prchají, opouštějí svůj tábor; čtyři malomocní jej nacházejí prázdný"
     sources:
       - "2 Kgs 6:24-7:20"
   - id: ramoth-gilead-joram
@@ -1257,6 +1737,10 @@ battles:
       pt: "Jorão ferido em Ramote-Gileade; Jeú ungido ali"
       de: "Joram wird bei Ramot in Gilead verwundet; dort wird Jehu gesalbt"
       fr: "Joram blessé à Ramoth en Galaad ; Jéhu y est oint"
+      pl: "Joram ranny pod Ramot w Gileadzie; tam zostaje namaszczony Jehu"
+      it: "Ioram ferito a Ramot di Galaad; là è unto Ieu"
+      nl: "Joram gewond bij Ramot in Gilead; Jehu daar gezalfd"
+      cs: "Joram raněn u Rámot v Gileadu; tam je pomazán Jehú"
     place: a2fe63c # Ramoth-gilead
     ref: 2Kgs.8.28-2Kgs.9.6
     sides:
@@ -1267,6 +1751,10 @@ battles:
       pt: "Jorão de Israel e Acazias de Judá contra Hazael da Síria"
       de: "Joram von Israel und Ahasja von Juda gegen Hasaël von Syrien"
       fr: "Joram d’Israël et Achazia de Juda contre Hazaël de Syrie"
+      pl: "Joram z Izraela i Ochozjasz z Judy przeciw Chazaelowi z Syrii"
+      it: "Ioram d’Israele e Acazia di Giuda contro Cazaèl di Siria"
+      nl: "Joram van Israël en Achazia van Juda tegen Hazaël van Syrië"
+      cs: "Joram Izraelský a Achazjáš Judský proti Chazaelovi Syrskému"
     outcome:
       en: "Joram is wounded and goes back to Jezreel to be healed; Jehu is anointed at Ramoth-gilead and rides to Jezreel"
       ru: "Иорам ранен и возвращается лечиться в Изреель; Ииуй помазан в Рамофе и едет в Изреель"
@@ -1275,6 +1763,10 @@ battles:
       pt: "Jorão é ferido e volta a Jezreel para se curar; Jeú é ungido em Ramote-Gileade e cavalga até Jezreel"
       de: "Joram wird verwundet und kehrt nach Jesreel zurück, um sich heilen zu lassen; Jehu wird in Ramot in Gilead gesalbt und fährt nach Jesreel"
       fr: "Joram est blessé et retourne à Jizreel pour se faire soigner ; Jéhu est oint à Ramoth en Galaad et se rend à Jizreel"
+      pl: "Joram zostaje ranny i wraca do Jizreel, aby się leczyć; Jehu zostaje namaszczony w Ramot w Gileadzie i jedzie do Jizreel"
+      it: "Ioram è ferito e torna a Izreel per essere curato; Ieu è unto a Ramot di Galaad e cavalca verso Izreel"
+      nl: "Joram wordt gewond en keert terug naar Jizreël om te genezen; Jehu wordt gezalfd te Ramot in Gilead en rijdt naar Jizreël"
+      cs: "Joram je raněn a vrací se do Jizreelu k uzdravení; Jehú je v Rámot v Gileadu pomazán a jede do Jizreelu"
     sources:
       - "2 Kgs 8:28-9:16"
       - "Black Obelisk of Shalmaneser III (Jehu's tribute, 841 BC)"
@@ -1289,6 +1781,10 @@ battles:
       pt: "Jeoás de Israel derrota Amazias em Bete-Semes"
       de: "Joas von Israel besiegt Amazja bei Bet-Schemesch"
       fr: "Joas d’Israël bat Amatsia à Beth-Schémesch"
+      pl: "Joasz z Izraela pokonuje Amazjasza pod Bet-Szemesz"
+      it: "Ioas d’Israele sconfigge Amazia a Bet-Semes"
+      nl: "Joas van Israël verslaat Amazia bij Beth-Semes"
+      cs: "Joaš Izraelský poráží Amacjáše u Bét-šemeše"
     place: a3b5b53 # Beth-shemesh
     ref: 2Kgs.14.11-2Kgs.14.14
     sides:
@@ -1299,6 +1795,10 @@ battles:
       pt: "Jeoás de Israel contra Amazias de Judá"
       de: "Joas von Israel gegen Amazja von Juda"
       fr: "Joas d’Israël contre Amatsia de Juda"
+      pl: "Joasz z Izraela przeciw Amazjaszowi z Judy"
+      it: "Ioas d’Israele contro Amazia di Giuda"
+      nl: "Joas van Israël tegen Amazia van Juda"
+      cs: "Joaš Izraelský proti Amacjášovi Judskému"
     outcome:
       en: "Judah flees, Amaziah is taken, and Jehoash breaks down four hundred cubits of Jerusalem's wall and takes the Temple's gold"
       ru: "Иудеи бегут, Амасия взят в плен, Иоас разрушает четыреста локтей стены Иерусалима и забирает золото Храма"
@@ -1307,6 +1807,10 @@ battles:
       pt: "Judá foge, Amazias é capturado, e Jeoás derruba quatrocentos côvados do muro de Jerusalém e leva o ouro do Templo"
       de: "Juda flieht, Amazja wird gefangen genommen, und Joas bricht vierhundert Ellen der Mauer Jerusalems nieder und nimmt das Gold des Tempels"
       fr: "Juda s’enfuit, Amatsia est pris, et Joas démolit quatre cents coudées de la muraille de Jérusalem et prend l’or du temple"
+      pl: "Juda ucieka, Amazjasz dostaje się do niewoli, a Joasz burzy czterysta łokci muru Jerozolimy i zabiera złoto ze świątyni"
+      it: "Giuda fugge, Amazia è preso, e Ioas abbatte quattrocento cubiti delle mura di Gerusalemme e prende l’oro del Tempio"
+      nl: "Juda vlucht, Amazia wordt gevangengenomen, en Joas breekt vierhonderd el van de muur van Jeruzalem af en neemt het goud van de tempel"
+      cs: "Juda prchá, Amacjáš je zajat a Joaš boří čtyři sta loket jeruzalémské hradby a bere zlato z chrámu"
     sources:
       - "2 Kgs 14:8-14; 2 Chr 25:17-24"
   - id: jerusalem-rezin-pekah
@@ -1320,6 +1824,10 @@ battles:
       pt: "Rezim e Peca cercam Acaz em Jerusalém"
       de: "Rezin und Pekach belagern Ahas in Jerusalem"
       fr: "Retsin et Péka assiègent Achaz dans Jérusalem"
+      pl: "Resin i Pekach oblegają Achaza w Jerozolimie"
+      it: "Resin e Pekach assediano Acaz a Gerusalemme"
+      nl: "Rezin en Pekach belegeren Achaz in Jeruzalem"
+      cs: "Resín a Pekach obléhají Achaza v Jeruzalémě"
     place: a15257a # Jerusalem
     ref: 2Kgs.16.5
     sides:
@@ -1330,6 +1838,10 @@ battles:
       pt: "Rezim da Síria e Peca de Israel contra Acaz de Judá"
       de: "Rezin von Syrien und Pekach von Israel gegen Ahas von Juda"
       fr: "Retsin de Syrie et Péka d’Israël contre Achaz de Juda"
+      pl: "Resin z Syrii i Pekach z Izraela przeciw Achazowi z Judy"
+      it: "Resin di Siria e Pekach d’Israele contro Acaz di Giuda"
+      nl: "Rezin van Syrië en Pekach van Israël tegen Achaz van Juda"
+      cs: "Resín Syrský a Pekach Izraelský proti Achazovi Judskému"
     outcome:
       en: "They cannot overcome him; Ahaz buys the help of Tiglath-pileser, who takes Damascus"
       ru: "Одолеть его не могут; Ахаз покупает помощь Феглаффелласара, который берёт Дамаск"
@@ -1338,6 +1850,10 @@ battles:
       pt: "Não conseguem vencê-lo; Acaz compra a ajuda de Tiglate-Pileser, que toma Damasco"
       de: "Sie können ihn nicht bezwingen; Ahas erkauft die Hilfe Tiglat-Pilesers, der Damaskus erobert"
       fr: "Ils ne peuvent le vaincre ; Achaz achète l’aide de Tiglath-Piléser, qui prend Damas"
+      pl: "Nie mogą go pokonać; Achaz kupuje pomoc Tiglat-Pilesera, który zdobywa Damaszek"
+      it: "Non riescono a vincerlo; Acaz compra l’aiuto di Tiglat-Pilèser, che prende Damasco"
+      nl: "Zij kunnen hem niet overweldigen; Achaz koopt de hulp van Tiglat-Pileser, die Damascus inneemt"
+      cs: "Nemohou ho přemoci; Achaz kupuje pomoc Tiglatpilesara, který dobývá Damašek"
     sources:
       - "2 Kgs 16:5-9; Isa 7:1-9; 2 Chr 28:5-8"
       - "Tiglath-pileser III, Summary Inscription 7 (Ahaz's tribute); Eponym Chronicle 733-732 BC"
@@ -1351,6 +1867,10 @@ battles:
       pt: "Samaria cai após um cerco de três anos"
       de: "Samaria fällt nach dreijähriger Belagerung"
       fr: "Samarie tombe après un siège de trois ans"
+      pl: "Samaria upada po trzyletnim oblężeniu"
+      it: "Samaria cade dopo un assedio di tre anni"
+      nl: "Samaria valt na een beleg van drie jaar"
+      cs: "Samaří padá po tříletém obléhání"
     place: a041bb3 # Samaria
     ref: 2Kgs.17.5-2Kgs.17.6
     sides:
@@ -1361,6 +1881,10 @@ battles:
       pt: "Salmaneser V da Assíria contra Oseias em Samaria"
       de: "Salmanassar V. von Assyrien gegen Hosea in Samaria"
       fr: "Salmanasar V d’Assyrie contre Osée à Samarie"
+      pl: "Salmanasar V z Asyrii przeciw Ozeaszowi w Samarii"
+      it: "Salmanàssar V d’Assiria contro Osea a Samaria"
+      nl: "Salmaneser V van Assyrië tegen Hosea in Samaria"
+      cs: "Salmanasar V. Asyrský proti Hóšeovi v Samaří"
     outcome:
       en: "The city is taken in Hoshea's ninth year and Israel is carried to Halah, Habor and the cities of the Medes"
       ru: "Город взят в девятый год Осии; Израиль переселён в Халах, Хавор и города Мидийские"
@@ -1369,6 +1893,10 @@ battles:
       pt: "A cidade é tomada no nono ano de Oseias, e Israel é levado para Halá, Habor e as cidades dos medos"
       de: "Die Stadt wird im neunten Jahr Hoseas eingenommen, und Israel wird nach Halach, an den Habor und in die Städte der Meder geführt"
       fr: "La ville est prise la neuvième année d’Osée, et Israël est emmené à Chalach, sur le Chabor et dans les villes des Mèdes"
+      pl: "Miasto zostaje zdobyte w dziewiątym roku Ozeasza, a Izrael uprowadzony do Chalach, Chabur i miast Medów"
+      it: "La città è presa nel nono anno di Osea e Israele è deportato a Chelach, a Cabor e nelle città dei Medi"
+      nl: "De stad wordt ingenomen in het negende jaar van Hosea en Israël wordt weggevoerd naar Chalach, Chabor en de steden van de Meden"
+      cs: "Město je dobyto v devátém roce Hóšeově a Izrael je odveden do Chalachu, Chabóru a do měst Médských"
     sources:
       - "2 Kgs 17:3-6; 18:9-11"
       - "Babylonian Chronicle, ABC 1 i 28 (Shalmaneser V)"
@@ -1382,6 +1910,10 @@ battles:
       pt: "Senaqueribe toma Laquis"
       de: "Sanherib erobert Lachisch"
       fr: "Sanchérib prend Lakis"
+      pl: "Sennacheryb zdobywa Lakisz"
+      it: "Sennacherib prende Lachis"
+      nl: "Sanherib neemt Lachis in"
+      cs: "Senacherib dobývá Lachiš"
     place: a3cc590 # Lachish
     ref: 2Kgs.18.13-2Kgs.18.14
     sides:
@@ -1392,6 +1924,10 @@ battles:
       pt: "Senaqueribe da Assíria, com o seu acampamento diante de Laquis, contra as cidades fortificadas de Judá"
       de: "Sanherib von Assyrien, mit seinem Lager vor Lachisch, gegen die festen Städte Judas"
       fr: "Sanchérib d’Assyrie, avec son camp devant Lakis, contre les villes fortes de Juda"
+      pl: "Sennacheryb z Asyrii, z obozem pod Lakisz, przeciw warownym miastom Judy"
+      it: "Sennacherib d’Assiria, con il suo campo davanti a Lachis, contro le città fortificate di Giuda"
+      nl: "Sanherib van Assyrië, met zijn kamp voor Lachis, tegen de versterkte steden van Juda"
+      cs: "Senacherib Asyrský, s táborem před Lachišem, proti hrazeným městům Judským"
     outcome:
       en: "The fortified cities are taken; from Lachish Sennacherib receives Hezekiah's tribute and sends his army to Jerusalem"
       ru: "Укреплённые города взяты; у Лахиса Сеннахирим принимает дань Езекии и посылает войско к Иерусалиму"
@@ -1400,6 +1936,10 @@ battles:
       pt: "As cidades fortificadas são tomadas; de Laquis Senaqueribe recebe o tributo de Ezequias e envia o seu exército a Jerusalém"
       de: "Die festen Städte werden eingenommen; von Lachisch aus empfängt Sanherib Hiskias Tribut und sendet sein Heer nach Jerusalem"
       fr: "Les villes fortes sont prises ; de Lakis, Sanchérib reçoit le tribut d’Ézéchias et envoie son armée à Jérusalem"
+      pl: "Warowne miasta zostają zdobyte; spod Lakisz Sennacheryb przyjmuje daninę Ezechiasza i wysyła swoje wojsko do Jerozolimy"
+      it: "Le città fortificate sono prese; da Lachis Sennacherib riceve il tributo di Ezechia e manda il suo esercito a Gerusalemme"
+      nl: "De versterkte steden worden ingenomen; vanuit Lachis ontvangt Sanherib de schatting van Chizkia en stuurt zijn leger naar Jeruzalem"
+      cs: "Hrazená města jsou dobyta; od Lachiše přijímá Senacherib Chizkijášův tribut a posílá své vojsko k Jeruzalému"
     sources:
       - "2 Kgs 18:13-17; 2 Chr 32:9"
       - "The Lachish reliefs from Sennacherib's palace at Nineveh (British Museum)"
@@ -1414,6 +1954,10 @@ battles:
       pt: "O exército de Senaqueribe diante de Jerusalém"
       de: "Sanheribs Heer vor Jerusalem"
       fr: "L’armée de Sanchérib devant Jérusalem"
+      pl: "Wojsko Sennacheryba pod Jerozolimą"
+      it: "L’esercito di Sennacherib davanti a Gerusalemme"
+      nl: "Het leger van Sanherib voor Jeruzalem"
+      cs: "Senacheribovo vojsko před Jeruzalémem"
     place: a15257a # Jerusalem
     ref: 2Kgs.19.32-2Kgs.19.36
     sides:
@@ -1424,6 +1968,10 @@ battles:
       pt: "O exército assírio sob Tartã, Rabe-Saris e Rabsaqué contra Ezequias em Jerusalém"
       de: "Das assyrische Heer unter Tartan, Rabsaris und Rabsake gegen Hiskia in Jerusalem"
       fr: "L’armée assyrienne sous Tharthan, Rab-Saris et Rabschaké contre Ézéchias à Jérusalem"
+      pl: "Wojsko asyryjskie pod wodzą Tartana, Rabsarisa i Rabszake przeciw Ezechiaszowi w Jerozolimie"
+      it: "L’esercito assiro sotto Tartan, Rabsaris e Rabsache contro Ezechia a Gerusalemme"
+      nl: "Het Assyrische leger onder Tartan, Rabsaris en Rabsake tegen Chizkia in Jeruzalem"
+      cs: "Asyrské vojsko pod Tartanem, Rab-sarisem a Rab-šake proti Chizkijášovi v Jeruzalémě"
     outcome:
       en: "The angel of the Lord smites 185,000 in the camp; Sennacherib goes home to Nineveh"
       ru: "Ангел Господень поражает в стане 185 000; Сеннахирим уходит в Ниневию"
@@ -1432,6 +1980,10 @@ battles:
       pt: "O anjo do Senhor fere 185.000 no acampamento; Senaqueribe volta para Nínive"
       de: "Der Engel des Herrn schlägt 185 000 Mann im Lager; Sanherib zieht heim nach Ninive"
       fr: "L’ange de l’Éternel frappe 185 000 hommes dans le camp ; Sanchérib retourne à Ninive"
+      pl: "Anioł Pański zabija w obozie 185 000; Sennacheryb wraca do domu, do Niniwy"
+      it: "L’angelo del Signore colpisce 185.000 uomini nell’accampamento; Sennacherib torna a casa, a Ninive"
+      nl: "De engel van de HEER slaat 185.000 man in het kamp; Sanherib gaat naar huis, naar Nineve"
+      cs: "Anděl Hospodinův pobíjí v táboře 185 000; Senacherib se vrací domů do Ninive"
     sources:
       - "2 Kgs 18:17-19:37; Isa 36-37; 2 Chr 32:1-23"
       - "Sennacherib's Annals (Hezekiah shut up in Jerusalem 'like a bird in a cage'; no capture claimed)"
@@ -1445,6 +1997,10 @@ battles:
       pt: "Josias morto em Megido pelo Faraó Neco"
       de: "Josia wird bei Megiddo von Pharao Necho getötet"
       fr: "Josias tué à Meguiddo par le pharaon Néco"
+      pl: "Jozjasz zabity pod Megiddo przez faraona Necho"
+      it: "Giosia ucciso a Meghiddo dal faraone Necao"
+      nl: "Josia gedood bij Megiddo door Farao Necho"
+      cs: "Jošijáš zabit u Megida faraonem Nekem"
     place: a8554e3 # Megiddo
     ref: 2Kgs.23.29-2Kgs.23.30
     sides:
@@ -1455,6 +2011,10 @@ battles:
       pt: "Josias de Judá contra o Faraó Neco, que marchava para o Eufrates"
       de: "Josia von Juda gegen Pharao Necho, der zum Euphrat zieht"
       fr: "Josias de Juda contre le pharaon Néco, qui marche vers l’Euphrate"
+      pl: "Jozjasz z Judy przeciw faraonowi Necho, który zmierza nad Eufrat"
+      it: "Giosia di Giuda contro il faraone Necao in marcia verso l’Eufrate"
+      nl: "Josia van Juda tegen Farao Necho, die naar de Eufraat optrekt"
+      cs: "Jošijáš Judský proti faraonu Nekovi, který táhne k Eufratu"
     outcome:
       en: "Josiah is slain; his servants carry him dead in a chariot to Jerusalem"
       ru: "Иосия убит; слуги везут его тело на колеснице в Иерусалим"
@@ -1463,6 +2023,10 @@ battles:
       pt: "Josias é morto; seus servos o levam morto num carro a Jerusalém"
       de: "Josia wird erschlagen; seine Knechte bringen ihn tot auf einem Wagen nach Jerusalem"
       fr: "Josias est tué ; ses serviteurs le ramènent mort sur un char à Jérusalem"
+      pl: "Jozjasz ginie; jego słudzy wiozą go martwego na rydwanie do Jerozolimy"
+      it: "Giosia è ucciso; i suoi servi lo portano morto su un carro a Gerusalemme"
+      nl: "Josia wordt gedood; zijn knechten brengen hem dood op een wagen naar Jeruzalem"
+      cs: "Jošijáš je zabit; jeho služebníci ho mrtvého vezou na voze do Jeruzaléma"
     sources:
       - "2 Kgs 23:29-30; 2 Chr 35:20-24"
       - "Babylonian Chronicle, ABC 3 (the seventeenth year of Nabopolassar, 609 BC)"
@@ -1476,6 +2040,10 @@ battles:
       pt: "Nabucodonosor derrota o Egito em Carquemis"
       de: "Nebukadnezar besiegt Ägypten bei Karkemisch"
       fr: "Nebucadnetsar bat l’Égypte à Carkemisch"
+      pl: "Nabuchodonozor pokonuje Egipt pod Karkemisz"
+      it: "Nabucodonosor sconfigge l’Egitto a Carchemis"
+      nl: "Nebukadnessar verslaat Egypte bij Karkemis"
+      cs: "Nebukadnesar poráží Egypt u Karkemíše"
     place: af6c730 # Carchemish
     ref: Jer.46.2
     sides:
@@ -1486,6 +2054,10 @@ battles:
       pt: "Nabucodonosor, príncipe herdeiro da Babilônia, contra o exército do Faraó Neco"
       de: "Nebukadnezar, der Kronprinz von Babylon, gegen das Heer des Pharao Necho"
       fr: "Nebucadnetsar, prince héritier de Babylone, contre l’armée du pharaon Néco"
+      pl: "Nabuchodonozor, następca tronu Babilonu, przeciw wojsku faraona Necho"
+      it: "Nabucodonosor, principe ereditario di Babilonia, contro l’esercito del faraone Necao"
+      nl: "Nebukadnessar, kroonprins van Babylon, tegen het leger van Farao Necho"
+      cs: "Nebukadnesar, babylónský korunní princ, proti vojsku faraona Neka"
     outcome:
       en: "The Egyptian army is smitten in the fourth year of Jehoiakim; Babylon takes the west"
       ru: "Египетское войско разбито в четвёртый год Иоакима; запад переходит к Вавилону"
@@ -1494,6 +2066,10 @@ battles:
       pt: "O exército egípcio é derrotado no quarto ano de Jeoaquim; a Babilônia toma o ocidente"
       de: "Das ägyptische Heer wird im vierten Jahr Jojakims geschlagen; Babylon nimmt den Westen"
       fr: "L’armée égyptienne est battue la quatrième année de Jojakim ; Babylone prend l’Occident"
+      pl: "Wojsko egipskie zostaje rozgromione w czwartym roku Jojakima; Babilon zajmuje zachód"
+      it: "L’esercito egiziano è sconfitto nel quarto anno di Ioiakim; Babilonia prende l’ovest"
+      nl: "Het Egyptische leger wordt verslagen in het vierde jaar van Jojakim; Babylon neemt het westen in"
+      cs: "Egyptské vojsko je poraženo ve čtvrtém roce Jójakimově; Babylón přebírá západ"
     sources:
       - "Jer 46:2-12; 2 Kgs 24:7"
       - "Babylonian Chronicle, ABC 5 obv. 1-8"
@@ -1507,6 +2083,10 @@ battles:
       pt: "Jerusalém se rende a Nabucodonosor; Joaquim é exilado"
       de: "Jerusalem ergibt sich Nebukadnezar; Jojachin wird ins Exil geführt"
       fr: "Jérusalem se rend à Nebucadnetsar ; Jojakin est exilé"
+      pl: "Jerozolima poddaje się Nabuchodonozorowi; Jojakin na wygnaniu"
+      it: "Gerusalemme si arrende a Nabucodonosor; Ioiachin in esilio"
+      nl: "Jeruzalem geeft zich over aan Nebukadnessar; Jojachin in ballingschap"
+      cs: "Jeruzalém se vzdává Nebukadnesarovi; Jójakín jde do vyhnanství"
     place: a15257a # Jerusalem
     ref: 2Kgs.24.10-2Kgs.24.17
     sides:
@@ -1517,6 +2097,10 @@ battles:
       pt: "Os servos de Nabucodonosor, depois o próprio rei, contra Joaquim em Jerusalém"
       de: "Nebukadnezars Knechte, dann der König selbst, gegen Jojachin in Jerusalem"
       fr: "Les serviteurs de Nebucadnetsar, puis le roi lui-même, contre Jojakin à Jérusalem"
+      pl: "Słudzy Nabuchodonozora, a potem sam król, przeciw Jojakinowi w Jerozolimie"
+      it: "I servi di Nabucodonosor, poi il re stesso, contro Ioiachin a Gerusalemme"
+      nl: "De knechten van Nebukadnessar, daarna de koning zelf, tegen Jojachin in Jeruzalem"
+      cs: "Nebukadnesarovi služebníci, potom sám král, proti Jójakínovi v Jeruzalémě"
     outcome:
       en: "Jehoiachin goes out to the king of Babylon; the treasures and ten thousand captives are carried away, and Zedekiah is made king"
       ru: "Иехония выходит к царю Вавилонскому; сокровища и десять тысяч пленных уведены, царём поставлен Седекия"
@@ -1525,6 +2109,10 @@ battles:
       pt: "Joaquim sai ao encontro do rei da Babilônia; os tesouros e dez mil cativos são levados, e Zedequias é feito rei"
       de: "Jojachin geht zum König von Babylon hinaus; die Schätze und zehntausend Gefangene werden weggeführt, und Zedekia wird zum König gemacht"
       fr: "Jojakin sort vers le roi de Babylone ; les trésors et dix mille captifs sont emmenés, et Sédécias est fait roi"
+      pl: "Jojakin wychodzi do króla Babilonu; skarby i dziesięć tysięcy jeńców zostaje uprowadzonych, a Sedekiasz zostaje ustanowiony królem"
+      it: "Ioiachin esce incontro al re di Babilonia; i tesori e diecimila prigionieri sono portati via, e Sedecia è fatto re"
+      nl: "Jojachin gaat naar buiten naar de koning van Babylon; de schatten en tienduizend gevangenen worden weggevoerd, en Zedekia wordt koning gemaakt"
+      cs: "Jójakín vychází k babylónskému králi; poklady a deset tisíc zajatců jsou odvlečeny a králem je ustanoven Sidkijáš"
     sources:
       - "2 Kgs 24:10-17; 2 Chr 36:9-10"
       - "Babylonian Chronicle, ABC 5 rev. 11-13 (2 Adar, 597 BC)"
@@ -1538,6 +2126,10 @@ battles:
       pt: "O exército de Nabucodonosor cerca Laquis e Azeca"
       de: "Nebukadnezars Heer belagert Lachisch und Aseka"
       fr: "L’armée de Nebucadnetsar assiège Lakis et Azéka"
+      pl: "Wojsko Nabuchodonozora oblega Lakisz i Azekę"
+      it: "L’esercito di Nabucodonosor assedia Lachis e Azeka"
+      nl: "Het leger van Nebukadnessar belegert Lachis en Azeka"
+      cs: "Nebukadnesarovo vojsko obléhá Lachiš a Azeku"
     place: a3cc590 # Lachish
     ref: Jer.34.7
     sides:
@@ -1548,6 +2140,10 @@ battles:
       pt: "O exército do rei da Babilônia contra as últimas cidades fortificadas de Judá"
       de: "Das Heer des Königs von Babylon gegen die letzten festen Städte Judas"
       fr: "L’armée du roi de Babylone contre les dernières villes fortes de Juda"
+      pl: "Wojsko króla Babilonu przeciw ostatnim warownym miastom Judy"
+      it: "L’esercito del re di Babilonia contro le ultime città fortificate di Giuda"
+      nl: "Het leger van de koning van Babylon tegen de laatste versterkte steden van Juda"
+      cs: "Vojsko krále babylónského proti posledním hrazeným městům Judským"
     outcome:
       en: "Lachish and Azekah are the only fortified cities of Judah still holding out"
       ru: "Лахис и Азека — последние уцелевшие укреплённые города Иудеи"
@@ -1556,6 +2152,10 @@ battles:
       pt: "Laquis e Azeca são as únicas cidades fortificadas de Judá que ainda resistem"
       de: "Lachisch und Aseka sind die einzigen festen Städte Judas, die noch standhalten"
       fr: "Lakis et Azéka sont les seules villes fortes de Juda qui résistent encore"
+      pl: "Lakisz i Azeka to jedyne warowne miasta Judy, które jeszcze się trzymają"
+      it: "Lachis e Azeka sono le sole città fortificate di Giuda che ancora resistono"
+      nl: "Lachis en Azeka zijn de enige versterkte steden van Juda die nog standhouden"
+      cs: "Lachiš a Azeka jsou jediná hrazená města Judska, která ještě vzdorují"
     sources:
       - "Jer 34:6-7"
       - "Lachish Letter 4 (ostracon: 'we can no longer see the signals of Azekah')"
@@ -1570,6 +2170,10 @@ battles:
       pt: "Nabucodonosor toma e queima Jerusalém"
       de: "Nebukadnezar erobert und verbrennt Jerusalem"
       fr: "Nebucadnetsar prend et incendie Jérusalem"
+      pl: "Nabuchodonozor zdobywa i pali Jerozolimę"
+      it: "Nabucodonosor prende e incendia Gerusalemme"
+      nl: "Nebukadnessar neemt Jeruzalem in en verbrandt het"
+      cs: "Nebukadnesar dobývá a pálí Jeruzalém"
     place: a15257a # Jerusalem
     ref: 2Kgs.25.1-2Kgs.25.10
     sides:
@@ -1580,6 +2184,10 @@ battles:
       pt: "Nabucodonosor e todo o seu exército contra Zedequias em Jerusalém"
       de: "Nebukadnezar und sein ganzes Heer gegen Zedekia in Jerusalem"
       fr: "Nebucadnetsar et toute son armée contre Sédécias à Jérusalem"
+      pl: "Nabuchodonozor i całe jego wojsko przeciw Sedekiaszowi w Jerozolimie"
+      it: "Nabucodonosor e tutto il suo esercito contro Sedecia a Gerusalemme"
+      nl: "Nebukadnessar en heel zijn leger tegen Zedekia in Jeruzalem"
+      cs: "Nebukadnesar a všechno jeho vojsko proti Sidkijášovi v Jeruzalémě"
     outcome:
       en: "After eighteen months the wall is breached; Zedekiah is caught near Jericho and blinded, the Temple and city are burned, the walls broken down"
       ru: "Через полтора года стена проломлена; Седекия схвачен у Иерихона и ослеплён, Храм и город сожжены, стены разрушены"
@@ -1588,6 +2196,10 @@ battles:
       pt: "Após dezoito meses o muro é rompido; Zedequias é capturado perto de Jericó e cegado, o Templo e a cidade são queimados, os muros derrubados"
       de: "Nach achtzehn Monaten wird die Mauer durchbrochen; Zedekia wird bei Jericho ergriffen und geblendet, der Tempel und die Stadt werden verbrannt, die Mauern niedergerissen"
       fr: "Après dix-huit mois, la muraille est ouverte ; Sédécias est pris près de Jéricho et aveuglé, le temple et la ville sont incendiés, les murailles démolies"
+      pl: "Po osiemnastu miesiącach mur zostaje przebity; Sedekiasz zostaje schwytany koło Jerycha i oślepiony, świątynia i miasto spalone, a mury zburzone"
+      it: "Dopo diciotto mesi le mura sono sfondate; Sedecia è preso presso Gerico e accecato, il Tempio e la città sono incendiati, le mura abbattute"
+      nl: "Na achttien maanden wordt de muur doorbroken; Zedekia wordt bij Jericho gegrepen en verblind, de tempel en de stad worden verbrand, de muren afgebroken"
+      cs: "Po osmnácti měsících je hradba prolomena; Sidkijáš je dopaden u Jericha a oslepen, chrám a město jsou vypáleny, hradby zbořeny"
     sources:
       - "2 Kgs 25:1-21; Jer 39:1-10; 52:4-30"
 
@@ -1602,6 +2214,10 @@ battles:
       pt: "O cerco de Alexandre a Tiro"
       de: "Alexanders Belagerung von Tyrus"
       fr: "Le siège de Tyr par Alexandre"
+      pl: "Oblężenie Tyru przez Aleksandra"
+      it: "L’assedio di Tiro da parte di Alessandro"
+      nl: "Het beleg van Tyrus door Alexander"
+      cs: "Alexandrovo obléhání Týru"
     place: a160272 # Tyre
     sides:
       en: "Alexander the Great, building a mole from the mainland, against the island city of Tyre"
@@ -1611,6 +2227,10 @@ battles:
       pt: "Alexandre, o Grande, construindo um aterro a partir do continente, contra a cidade insular de Tiro"
       de: "Alexander der Große, der vom Festland einen Damm baut, gegen die Inselstadt Tyrus"
       fr: "Alexandre le Grand, construisant une digue à partir de la terre ferme, contre la ville insulaire de Tyr"
+      pl: "Aleksander Wielki, który buduje groblę od lądu, przeciw wyspiarskiemu miastu Tyr"
+      it: "Alessandro Magno, che costruisce un molo dalla terraferma, contro la città insulare di Tiro"
+      nl: "Alexander de Grote, die vanaf het vasteland een dam aanlegt, tegen de eilandstad Tyrus"
+      cs: "Alexandr Veliký, budující hráz od pevniny, proti ostrovnímu městu Týru"
     outcome:
       en: "After seven months the city is stormed; Alexander goes on to Gaza and Egypt"
       ru: "Через семь месяцев город взят штурмом; Александр идёт на Газу и в Египет"
@@ -1619,6 +2239,10 @@ battles:
       pt: "Após sete meses a cidade é tomada de assalto; Alexandre segue para Gaza e o Egito"
       de: "Nach sieben Monaten wird die Stadt im Sturm genommen; Alexander zieht weiter nach Gaza und Ägypten"
       fr: "Après sept mois, la ville est prise d’assaut ; Alexandre poursuit vers Gaza et l’Égypte"
+      pl: "Po siedmiu miesiącach miasto zostaje zdobyte szturmem; Aleksander idzie dalej na Gazę i do Egiptu"
+      it: "Dopo sette mesi la città è presa d’assalto; Alessandro prosegue verso Gaza e l’Egitto"
+      nl: "Na zeven maanden wordt de stad bestormd; Alexander trekt verder naar Gaza en Egypte"
+      cs: "Po sedmi měsících je město dobyto útokem; Alexandr pokračuje do Gazy a Egypta"
     sources:
       - "Arrian, Anabasis 2.16-24"
       - "Diodorus Siculus 17.40-46"
@@ -1632,6 +2256,10 @@ battles:
       pt: "Batalha de Pânio: a Judeia passa aos selêucidas"
       de: "Schlacht von Panion: Judäa geht an die Seleukiden über"
       fr: "Bataille de Panion : la Judée passe aux Séleucides"
+      pl: "Bitwa pod Panion: Judea przechodzi pod władzę Seleucydów"
+      it: "Battaglia di Panion: la Giudea passa ai Seleucidi"
+      nl: "Slag bij Panium: Judea gaat over op de Seleuciden"
+      cs: "Bitva u Paneia: Judsko přechází k Seleukovcům"
     place: ab7bf48 # Caesarea Philippi (Panias)
     sides:
       en: "Antiochus III against the Ptolemaic army under Scopas"
@@ -1641,6 +2269,10 @@ battles:
       pt: "Antíoco III contra o exército ptolomaico sob Escopas"
       de: "Antiochos III. gegen das ptolemäische Heer unter Skopas"
       fr: "Antiochus III contre l’armée ptolémaïque de Scopas"
+      pl: "Antioch III przeciw wojsku Ptolemeuszów pod wodzą Skopasa"
+      it: "Antioco III contro l’esercito tolemaico sotto Scopa"
+      nl: "Antiochus III tegen het Ptolemaeïsche leger onder Scopas"
+      cs: "Antiochos III. proti ptolemaiovskému vojsku pod Skopem"
     outcome:
       en: "Scopas is defeated; Coele-Syria and Judea pass from the Ptolemies to the Seleucids"
       ru: "Скопас разбит; Келесирия и Иудея переходят от Птолемеев к Селевкидам"
@@ -1649,6 +2281,10 @@ battles:
       pt: "Escopas é derrotado; a Celessíria e a Judeia passam dos ptolomeus aos selêucidas"
       de: "Skopas wird besiegt; Koilesyrien und Judäa gehen von den Ptolemäern an die Seleukiden über"
       fr: "Scopas est vaincu ; la Cœlé-Syrie et la Judée passent des Ptolémées aux Séleucides"
+      pl: "Skopas zostaje pokonany; Celesyria i Judea przechodzą od Ptolemeuszów do Seleucydów"
+      it: "Scopa è sconfitto; la Celesiria e la Giudea passano dai Tolomei ai Seleucidi"
+      nl: "Scopas wordt verslagen; Coelesyrië en Judea gaan van de Ptolemaeën over op de Seleuciden"
+      cs: "Skopas je poražen; Koilé Sýrie a Judsko přecházejí od Ptolemaiovců k Seleukovcům"
     sources:
       - "Polybius 16.18-19"
       - "Josephus, Antiquities 12.132-133"
@@ -1662,6 +2298,10 @@ battles:
       pt: "Judas Macabeu derrota Séron em Bete-Horom"
       de: "Judas Makkabäus besiegt Seron bei Bet-Horon"
       fr: "Judas Maccabée bat Séron à Beth-Horon"
+      pl: "Juda Machabeusz pokonuje Serona pod Bet-Choron"
+      it: "Giuda Maccabeo sconfigge Seron a Bet-Oron"
+      nl: "Judas Makkabeüs verslaat Seron bij Beth-Horon"
+      cs: "Juda Makabejský poráží Serona u Bét-choronu"
     place: a75b45e # Beth-horon
     sides:
       en: "Judas Maccabeus with a small band against Seron, commander of the Syrian army"
@@ -1671,6 +2311,10 @@ battles:
       pt: "Judas Macabeu, com um pequeno grupo, contra Séron, comandante do exército sírio"
       de: "Judas Makkabäus mit einer kleinen Schar gegen Seron, den Befehlshaber des syrischen Heeres"
       fr: "Judas Maccabée avec une petite troupe contre Séron, chef de l’armée syrienne"
+      pl: "Juda Machabeusz z małym oddziałem przeciw Seronowi, dowódcy wojska syryjskiego"
+      it: "Giuda Maccabeo con un piccolo drappello contro Seron, comandante dell’esercito siro"
+      nl: "Judas Makkabeüs met een kleine groep tegen Seron, de bevelhebber van het Syrische leger"
+      cs: "Juda Makabejský s malou družinou proti Seronovi, veliteli syrského vojska"
     outcome:
       en: "Seron's army is broken on the ascent of Beth-horon and chased to the plain; about eight hundred fall"
       ru: "Войско Сирона разбито на подъёме Беф-Орона и гонимо на равнину; пало около восьмисот"
@@ -1679,6 +2323,10 @@ battles:
       pt: "O exército de Séron é desfeito na subida de Bete-Horom e perseguido até a planície; caem cerca de oitocentos"
       de: "Serons Heer wird am Anstieg von Bet-Horon zerschlagen und bis in die Ebene gejagt; etwa achthundert fallen"
       fr: "L’armée de Séron est brisée dans la montée de Beth-Horon et poursuivie jusqu’à la plaine ; environ huit cents hommes tombent"
+      pl: "Wojsko Serona zostaje rozbite na wzniesieniu Bet-Choron i ścigane aż do równiny; ginie około ośmiuset"
+      it: "L’esercito di Seron è spezzato sulla salita di Bet-Oron e inseguito fino alla pianura; cadono circa ottocento uomini"
+      nl: "Het leger van Seron wordt gebroken op de helling van Beth-Horon en tot in de vlakte achtervolgd; ongeveer achthonderd man sneuvelen"
+      cs: "Seronovo vojsko je rozdrceno na svahu Bét-choronu a pronásledováno do roviny; padne asi osm set mužů"
     ref: 1Macc.3.13-1Macc.3.24
     sources:
       - "1 Macc 3:13-24"
@@ -1693,6 +2341,10 @@ battles:
       pt: "Nicanor cai em Adasa"
       de: "Nikanor fällt bei Adasa"
       fr: "Nicanor tombe à Adasa"
+      pl: "Nikanor ginie pod Adasą"
+      it: "Nicanore cade ad Adasa"
+      nl: "Nicanor valt bij Adasa"
+      cs: "Nikanór padá u Adasy"
     place: a6e831d # Adasa
     sides:
       en: "Judas Maccabeus against Nicanor, the Seleucid governor who had threatened the Temple"
@@ -1702,6 +2354,10 @@ battles:
       pt: "Judas Macabeu contra Nicanor, o governador selêucida que ameaçara o Templo"
       de: "Judas Makkabäus gegen Nikanor, den seleukidischen Statthalter, der dem Tempel gedroht hatte"
       fr: "Judas Maccabée contre Nicanor, le gouverneur séleucide qui avait menacé le temple"
+      pl: "Juda Machabeusz przeciw Nikanorowi, seleucydzkiemu namiestnikowi, który groził świątyni"
+      it: "Giuda Maccabeo contro Nicanore, il governatore seleucide che aveva minacciato il Tempio"
+      nl: "Judas Makkabeüs tegen Nicanor, de Seleucidische stadhouder die de tempel had bedreigd"
+      cs: "Juda Makabejský proti Nikanórovi, seleukovskému správci, který hrozil chrámu"
     outcome:
       en: "Nicanor is the first to fall and his army flees to Gazara; the day, 13 Adar, is kept as a feast"
       ru: "Никанор падает первым, войско его бежит к Газару; день 13 адара установлен праздником"
@@ -1710,6 +2366,10 @@ battles:
       pt: "Nicanor é o primeiro a cair e seu exército foge para Gazara; o dia, 13 de Adar, é guardado como festa"
       de: "Nikanor fällt als Erster, und sein Heer flieht nach Gazara; der Tag, der 13. Adar, wird als Fest begangen"
       fr: "Nicanor tombe le premier et son armée s’enfuit à Gazara ; ce jour, le 13 adar, est célébré comme une fête"
+      pl: "Nikanor pada pierwszy, a jego wojsko ucieka do Gazary; ten dzień, 13 adar, obchodzi się jako święto"
+      it: "Nicanore è il primo a cadere e il suo esercito fugge a Gazara; il giorno, il 13 di Adar, è celebrato come festa"
+      nl: "Nicanor is de eerste die valt en zijn leger vlucht naar Gazara; de dag, 13 Adar, wordt als feest gehouden"
+      cs: "Nikanór padá první a jeho vojsko prchá ke Gazaře; den, 13. adar, se slaví jako svátek"
     ref: 1Macc.7.39-1Macc.7.50
     sources:
       - "1 Macc 7:39-50; 2 Macc 15:20-36"
@@ -1724,6 +2384,10 @@ battles:
       pt: "Pompeu toma o monte do Templo"
       de: "Pompeius erobert den Tempelberg"
       fr: "Pompée prend le mont du Temple"
+      pl: "Pompejusz zdobywa Wzgórze Świątynne"
+      it: "Pompeo prende il monte del Tempio"
+      nl: "Pompeius neemt de tempelberg in"
+      cs: "Pompeius dobývá Chrámovou horu"
     place: a15257a # Jerusalem
     sides:
       en: "Pompey's legions, admitted to the city by Hyrcanus's party, against Aristobulus's men holding the Temple"
@@ -1733,6 +2397,10 @@ battles:
       pt: "As legiões de Pompeu, admitidas na cidade pelo partido de Hircano, contra os homens de Aristóbulo que guardavam o Templo"
       de: "Die Legionen des Pompeius, von der Partei des Hyrkanos in die Stadt eingelassen, gegen die Männer des Aristobul, die den Tempel halten"
       fr: "Les légions de Pompée, introduites dans la ville par le parti d’Hyrcan, contre les hommes d’Aristobule qui tiennent le temple"
+      pl: "Legiony Pompejusza, wpuszczone do miasta przez stronników Hirkana, przeciw ludziom Arystobula, którzy bronią świątyni"
+      it: "Le legioni di Pompeo, introdotte in città dal partito di Ircano, contro gli uomini di Aristobulo che tengono il Tempio"
+      nl: "De legioenen van Pompeius, door de partij van Hyrcanus in de stad toegelaten, tegen de mannen van Aristobulus die de tempel bezet houden"
+      cs: "Pompeiovy legie, vpuštěné do města stranou Hyrkanovou, proti Aristobúlovým mužům držícím chrám"
     outcome:
       en: "After three months the Temple is stormed on a fast day; Pompey enters the Holy of Holies, and Judea comes under Rome"
       ru: "Через три месяца Храм взят штурмом в день поста; Помпей входит во Святое святых, Иудея попадает под власть Рима"
@@ -1741,6 +2409,10 @@ battles:
       pt: "Após três meses o Templo é tomado de assalto num dia de jejum; Pompeu entra no Santo dos Santos, e a Judeia passa ao domínio de Roma"
       de: "Nach drei Monaten wird der Tempel an einem Fasttag im Sturm genommen; Pompeius betritt das Allerheiligste, und Judäa kommt unter Rom"
       fr: "Après trois mois, le temple est pris d’assaut un jour de jeûne ; Pompée entre dans le Saint des saints, et la Judée passe sous Rome"
+      pl: "Po trzech miesiącach świątynia zostaje wzięta szturmem w dzień postu; Pompejusz wchodzi do Miejsca Najświętszego, a Judea dostaje się pod władzę Rzymu"
+      it: "Dopo tre mesi il Tempio è preso d’assalto in un giorno di digiuno; Pompeo entra nel Santo dei Santi, e la Giudea passa sotto Roma"
+      nl: "Na drie maanden wordt de tempel bestormd op een vastendag; Pompeius betreedt het Heilige der Heiligen, en Judea komt onder Rome"
+      cs: "Po třech měsících je chrám dobyt útokem v den půstu; Pompeius vstupuje do Nejsvětější svatyně a Judsko připadá Římu"
     sources:
       - "Josephus, Antiquities 14.58-73; Jewish War 1.141-154"
       - "Cassius Dio, Roman History 37.15-17"
@@ -1754,6 +2426,10 @@ battles:
       pt: "Tito toma Jerusalém; o Templo queima"
       de: "Titus erobert Jerusalem; der Tempel brennt"
       fr: "Titus prend Jérusalem ; le temple brûle"
+      pl: "Tytus zdobywa Jerozolimę; świątynia płonie"
+      it: "Tito prende Gerusalemme; il Tempio brucia"
+      nl: "Titus neemt Jeruzalem in; de tempel brandt"
+      cs: "Titus dobývá Jeruzalém; chrám hoří"
     place: a15257a # Jerusalem
     sides:
       en: "Four Roman legions under Titus against the Jewish factions of John of Gischala and Simon bar Giora"
@@ -1763,6 +2439,10 @@ battles:
       pt: "Quatro legiões romanas sob Tito contra as facções judaicas de João de Giscala e Simão bar Giora"
       de: "Vier römische Legionen unter Titus gegen die jüdischen Parteien des Johannes von Gischala und des Simon bar Giora"
       fr: "Quatre légions romaines sous Titus contre les factions juives de Jean de Gischala et de Simon bar Giora"
+      pl: "Cztery legiony rzymskie pod wodzą Tytusa przeciw żydowskim stronnictwom Jana z Giszali i Szymona bar Giory"
+      it: "Quattro legioni romane sotto Tito contro le fazioni giudaiche di Giovanni di Giscala e di Simone bar Giora"
+      nl: "Vier Romeinse legioenen onder Titus tegen de Joodse facties van Johannes van Gischala en Simon bar Giora"
+      cs: "Čtyři římské legie pod Titem proti židovským stranám Jana z Gischaly a Šimona bar Giory"
     outcome:
       en: "After a siege from spring to late summer the Temple burns on 10 Loos (Av) and the Upper City falls a month later; the city is razed"
       ru: "После осады с весны до конца лета Храм сгорает 10-го числа месяца ава (у Флавия — лооса), Верхний город падает месяцем позже; город разрушен"
@@ -1771,6 +2451,10 @@ battles:
       pt: "Após um cerco da primavera até o final do verão, o Templo queima no dia 10 de Loos (Av) e a Cidade Alta cai um mês depois; a cidade é arrasada"
       de: "Nach einer Belagerung vom Frühjahr bis zum Spätsommer brennt der Tempel am 10. Loos (Av), und die Oberstadt fällt einen Monat später; die Stadt wird dem Erdboden gleichgemacht"
       fr: "Après un siège du printemps à la fin de l’été, le temple brûle le 10 Loos (Av) et la Ville haute tombe un mois plus tard ; la ville est rasée"
+      pl: "Po oblężeniu trwającym od wiosny do późnego lata świątynia płonie 10 Loos (Aw), a Górne Miasto pada miesiąc później; miasto zostaje zrównane z ziemią"
+      it: "Dopo un assedio dalla primavera alla fine dell’estate il Tempio brucia il 10 di Loos (Av) e la Città Alta cade un mese dopo; la città è rasa al suolo"
+      nl: "Na een beleg van het voorjaar tot de late zomer brandt de tempel op 10 Loos (Av) en valt de Bovenstad een maand later; de stad wordt met de grond gelijk gemaakt"
+      cs: "Po obléhání od jara do pozdního léta chrám hoří 10. loos (av) a Horní město padá o měsíc později; město je srovnáno se zemí"
     sources:
       - "Josephus, Jewish War 5.39-6.434 (the siege), 6.249-266 (the Temple burned), 6.392-434 (the Upper City)"
       - "Cassius Dio, Roman History 66.4-7"

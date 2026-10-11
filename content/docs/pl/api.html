@@ -1,0 +1,109 @@
+---
+title: Otwarte dane
+description: Miejsca, wymieniające je wersety, wydarzenia i trasy jako pliki JSON dostępne dla każdego na licencji CC BY 4.0 — bez klucza i bez rejestracji.
+---
+
+<p class="lede">
+  Wszystko, co globus wie o miejscach i wersetach, jest otwarte: zwykłe pliki JSON, które można
+  swobodnie wykorzystać na innej stronie lub w aplikacji na licencji CC BY 4.0. Bez klucza, bez
+  rejestracji, bez limitów poza zwykłym buforowaniem.
+</p>
+
+<h2>Jakie miejsca wymienia werset</h2>
+<p>
+  Jeden plik na księgę Biblii: każdy werset, który wymienia miejsce, z identyfikatorami tych miejsc.
+</p>
+<pre><code>GET {{site}}/api/v1/verses/Acts.json
+
+{ "Acts.16.11": ["a6a7150", "a68750d", "a91c509"], "Acts.16.12": ["a69e1b8", "a49e1d0"], … }</code></pre>
+<p>
+  Same miejsca, z nazwami po angielsku i rosyjsku, rodzajem i punktem, są w
+  <code>places.json</code>; łączy się je po <code>id</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/places.json
+
+[{ "id": "a49e1d0", "name": "Philippi", "name_ru": "Филиппы", "kind": "settlement",
+   "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "page": { "en": "/en/place/philippi/", "ru": "/ru/place/philippi/" } }, …]</code></pre>
+
+<h2>Wszystkie pliki</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Plik</th>
+        <th>Co zawiera</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/v1/index.json</code></td>
+        <td>listę plików i ksiąg, licencję i informacje o źródłach, datę kompilacji</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/places.json</code></td>
+        <td>
+          każde miejsce: identyfikator, nazwy, rodzaj, punkt, liczbę wersetów, które je wymieniają,
+          jego stronę (dla miejsca, które wymienia jakiś werset)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/verses/{Book}.json</code></td>
+        <td>
+          werset → miejsca, które wymienia, jeden plik na księgę (<code>Gen</code>,
+          <code>1Kgs</code>, <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/events.json</code></td>
+        <td>wydarzenia z datami, z <code>ref</code> tam, gdzie Biblia opowiada o wydarzeniu</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/battles.json</code></td>
+        <td>
+          bitwy i oblężenia: miejsce, rok, strony i wynik, z <code>ref</code> tam, gdzie Biblia
+          opowiada o bitwie
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/questions.json</code></td>
+        <td>
+          pytania, które zadają ludzie, z odpowiedziami w obu językach, widokiem mapy i źródłami
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/tours.json</code></td>
+        <td>
+          trasy: ich przystanki po kolei, każdy z fragmentem i notatką;
+          <code>by: "sea"</code> dla odcinka pokonanego statkiem oraz <code>sailed</code> (dni i
+          werset) tam, gdzie tekst podaje, jak długo to trwało
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Konwencje</h2>
+<ul>
+  <li>
+    Odwołania są w formacie OSIS z angielskimi skrótami ksiąg i numeracją King James:
+    <code>Gen.12.6</code>, <code>Acts.16.12-Acts.16.15</code>.
+  </li>
+  <li>Lata są astronomiczne: 1 p.n.e. to 0, 586 p.n.e. to −585.</li>
+  <li>
+    Miejsce wymienione w danych źródłowych dwa razy pod jedną nazwą ma
+    <code>"duplicate": true</code>; miejsce o spornym stanowisku ma <code>"disputed": true</code>.
+  </li>
+  <li>
+    Pliki są odbudowywane przy każdym wydaniu danych; <code>index.json</code> podaje jego datę.
+  </li>
+</ul>
+
+<h2>Licencja i uznanie autorstwa</h2>
+<p>
+  Dane są objęte licencją <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+  Używaj ich, zmieniaj je, sprzedawaj to, co z nich zbudujesz; wskaż źródła tam, gdzie je
+  pokazujesz, tak jak wymienia je <code>index.json</code>: History Globe autorstwa Vadyma Arnauta
+  oraz OpenBible.info za miejsca, znaczniki wersetów i punkty. Rosyjskie nazwy odczytano z przekładu
+  synodalnego, który należy do domeny publicznej.
+</p>

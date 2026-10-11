@@ -1,0 +1,334 @@
+---
+title: Insluiten
+description: Zet de wereldbol met één regel op je eigen site — de kaart van een hoofdstuk, een plaats, een jaar of een route — en bestuur hem vanaf je pagina.
+---
+
+<p class="lede">
+  De wereldbol draait in elke pagina als een <code>iframe</code>. Eén regel toont de kaart van een
+  hoofdstuk naast de passage op je pagina; een paar berichten houden de twee gelijk.
+</p>
+
+<h2>Snel aan de slag</h2>
+<pre><code>&lt;iframe
+  src="{{site}}/embed/v1?ref=Acts.16&amp;locale=nl"
+  title="Kaart van Handelingen 16"
+  style="width: 100%; height: 480px; border: 0; border-radius: 12px"
+  allow="fullscreen"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</code></pre>
+<ul>
+  <li>
+    De kaart vult het kader en opent op de plaatsen van Handelingen 16, in het jaar van de
+    gebeurtenissen.
+  </li>
+  <li>
+    <b>Boven:</b> het hoofdstuk. Kies het om zijn plaatsen te tonen in de volgorde waarin de tekst
+    ze noemt; kies een plaats om haar kaart te openen.
+  </li>
+  <li><b>Onder:</b> het jaar. Kies het om de tijdschuif te openen.</li>
+  <li>
+    Een link opent hetzelfde beeld in de volledige wereldbol in een nieuw tabblad. De bronvermelding
+    staat op de kaart zelf, zoals de gegevenslicenties vereisen.
+  </li>
+  <li>Het kader werkt tot op de breedte van een telefoon; een hoogte van 480 px is genoeg.</li>
+</ul>
+
+<h2>Een hoofdstuk of een passage</h2>
+<p>
+  <code>ref</code> neemt een OSIS-verwijzing met Engelse boekafkortingen en Engelse versnummering:
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Waarde</th>
+        <th>Toont</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Acts.16</code></td>
+        <td>een hoofdstuk</td>
+      </tr>
+      <tr>
+        <td><code>Gen.12-Gen.13</code></td>
+        <td>tot drie hoofdstukken</td>
+      </tr>
+      <tr>
+        <td><code>Acts.16.11-Acts.16.15</code></td>
+        <td>een passage</td>
+      </tr>
+      <tr>
+        <td><code>Ruth</code></td>
+        <td>een heel boek</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  De kaart gaat naar het jaar van de passage: het vastgelegde jaar van haar hoofdstukken (van
+  hoofdstukken in {{chapter_books}} boeken is het jaar bekend), of anders het jaar van de route die
+  haar omvat; een heel boek krijgt het jaar van de route met de meeste haltes daarin. Een passage
+  zonder een van beide houdt het huidige jaar van de kaart.
+</p>
+
+<h2>Parameters</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Voorbeeld</th>
+        <th>Betekenis</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ref</code></td>
+        <td><code>Acts.16</code></td>
+        <td>hoofdstuk, passage of boek (zie boven)</td>
+      </tr>
+      <tr>
+        <td><code>year</code></td>
+        <td><code>-999</code></td>
+        <td>
+          jaar, in astronomische telling: 1 v.Chr. is <code>0</code>, 1000 v.Chr. is
+          <code>-999</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>place</code></td>
+        <td><code>af2161c</code></td>
+        <td>een plaats openen (hier Kafarnaüm); de id’s zijn die van OpenBible</td>
+      </tr>
+      <tr>
+        <td><code>tour</code></td>
+        <td><code>paul-1</code></td>
+        <td>een begeleide route starten</td>
+      </tr>
+      <tr>
+        <td><code>stop</code></td>
+        <td><code>3</code></td>
+        <td>met <code>tour</code>: openen bij die halte</td>
+      </tr>
+      <tr>
+        <td><code>lesson</code></td>
+        <td><code>a15257a~30.a112427~30</code></td>
+        <td>
+          je eigen les, met <code>tour=lesson</code>: plaats-id’s op volgorde, elk met het jaar
+          waarin de plaats moet worden getoond (<code>~-585</code> voor 586 v.Chr.: net als bij
+          <code>year</code> is 1 v.Chr. gelijk aan 0); elke halte krijgt het vers van de plaats dat
+          het dichtst bij dat jaar ligt, de afstand, de tijd te voet en het reliëf. De knop “Aan een
+          les toevoegen” op een plaatskaart bouwt dezelfde links
+        </td>
+      </tr>
+      <tr>
+        <td><code>title</code></td>
+        <td><code>Paul%20in%20Galatia</code></td>
+        <td>
+          met <code>lesson</code>: de naam van de les, maximaal 80 tekens, boven aan haar route en
+          haar afgedrukte blad
+        </td>
+      </tr>
+      <tr>
+        <td><code>locale</code></td>
+        <td><code>nl</code></td>
+        <td>
+          taal: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>, <code>pt</code>,
+          <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>, <code>pl</code> of
+          <code>cs</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>camera</code></td>
+        <td><code>35.2,31.8,7,30,0</code></td>
+        <td>lengtegraad, breedtegraad, zoom, kantelhoek, richting</td>
+      </tr>
+      <tr>
+        <td><code>hide</code></td>
+        <td><code>relief,ancient</code></td>
+        <td>
+          lagen om uit te zetten: <code>borders</code>, <code>places</code>, <code>relief</code>,
+          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="note">
+  Het makkelijkst bouw je een beeld door het op de volledige wereldbol in te stellen en de URL te
+  kopiëren: dezelfde parameters werken na <code>/embed/v1</code>.
+</p>
+
+<h2>Berichten</h2>
+<p>
+  De wereldbol en je pagina communiceren via <code>postMessage</code>. Elk bericht is een object met
+  <code>type</code> en <code>v: 1</code>. De wereldbol stuurt alleen wat er op de kaart gebeurt en
+  nooit iets wat de lezer identificeert; hij accepteert alleen berichten van de pagina die het kader
+  bevat.
+</p>
+<h3>Van de wereldbol</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Payload</th>
+        <th>Wanneer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:ready</code></td>
+        <td><code>{ view }</code></td>
+        <td>de kaart is getekend</td>
+      </tr>
+      <tr>
+        <td><code>hg:view-changed</code></td>
+        <td><code>{ view }</code></td>
+        <td>het jaar, de plaats, de route of de camera is veranderd en tot rust gekomen</td>
+      </tr>
+      <tr>
+        <td><code>hg:verse-clicked</code></td>
+        <td><code>{ osis }</code></td>
+        <td>de lezer heeft op een vers geklikt, bijv. <code>"Acts.16.12"</code></td>
+      </tr>
+      <tr>
+        <td><code>hg:error</code></td>
+        <td><code>{ code, message }</code></td>
+        <td>de kaart of haar gegevens konden niet worden geladen</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <code>view</code> bevat <code>year</code>, <code>locale</code> en <code>layers</code> en, indien
+  ingesteld, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> en
+  <code>camera</code>.
+</p>
+<h3>Naar de wereldbol</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Payload</th>
+        <th>Effect</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:set-view</code></td>
+        <td><code>{ view }</code></td>
+        <td>
+          het jaar, het hoofdstuk (<code>ref</code>), de plaats, de lagen of de camera instellen;
+          met <code>tour</code> (en <code>stop</code>) start de route en worden de andere velden
+          genegeerd; de taal verandert alleen met <code>hg:set-locale</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:set-locale</code></td>
+        <td><code>{ locale }</code></td>
+        <td>de taal wisselen</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Voorbeeld: de kaart volgt je lezer</h2>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+
+// When your reader opens a chapter, show it on the map.
+function showChapter(osis) {
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+}
+
+// When a verse is clicked on the map, open it in your reader.
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
+});</code></pre>
+
+<h2 id="places">Plaatsen in elke tekst</h2>
+<p>
+  Nog één regel koppelt de bijbelse plaatsen die je eigen tekst noemt (een artikel, een preek, een
+  leesrooster) aan de wereldbol. Wijs een naam aan, of tik erop op een telefoon, en een kaart toont
+  wat de plaats is, waar ze nu ligt, door hoeveel verzen ze wordt genoemd en waar ze op de kaart
+  ligt; de kaart leidt naar de wereldbol.
+</p>
+<figure class="sample">
+  <div class="hgp-demo" lang="en">
+    <p>
+      Paul sailed from Caesarea to Cyprus, preached in Ephesus and Corinth, and wrote to Rome. Long
+      before, Abraham had come to Shechem and Hebron; Jesus was born in Bethlehem and grew up in
+      Nazareth, and John saw his visions on Patmos.
+    </p>
+  </div>
+  <figcaption>
+    Een live voorbeeld in het Engels: deze namen zijn gekoppeld door het script op deze pagina (het
+    script leest teksten in het Engels en het Russisch).
+  </figcaption>
+</figure>
+<pre><code>&lt;script src="{{site}}/hg-places.js" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Attribuut</th>
+        <th>Wat het doet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>data-scope</code></td>
+        <td>waar te zoeken, als CSS-selector; standaard de hele pagina</td>
+      </tr>
+      <tr>
+        <td><code>data-locale</code></td>
+        <td>
+          <code>en</code> of <code>ru</code>: de taal van de tekst; standaard de <code>lang</code>
+          van de pagina
+        </td>
+      </tr>
+      <tr>
+        <td><code>data-every</code></td>
+        <td>elke vermelding koppelen, niet alleen de eerste van elke plaats</td>
+      </tr>
+      <tr>
+        <td><code>data-theme</code></td>
+        <td>
+          <code>light</code> of <code>dark</code> voor de kaart; standaard volgt ze het systeem van
+          de lezer
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Alleen namen die naar één plaats verwijzen worden gekoppeld. Een naam die twee plaatsen delen
+  (Antiochië in Syrië en in Pisidië), een plaats en een persoon (Juda), of een plaats en een gewoon
+  woord, blijft gewone tekst, en dat geldt ook voor een naam die de verzen van de Bijbel zelf
+  meestal voor iets anders gebruiken (“Kades” is daar Kades-Barnea, niet de Kades uit de database).
+  De naam van een plaats die ook een voornaam is (Jordan, Sharon) blijft met rust naast een ander
+  woord met hoofdletter: Jordan Smith is een persoon, niet de rivier. Russische namen worden in al
+  hun naamvallen gevonden: «в Египте», «из Антиохии Писидийской». Links, code, formuliervelden,
+  knoppen en koppen blijven met rust.
+</p>
+<p class="note">
+  Het script heeft geen afhankelijkheden en plaatst geen cookies. Het leest één bestand met namen
+  van de wereldbol (ongeveer 25 KB in het Engels en 35 KB in het Russisch over het netwerk, plus 7
+  KB script), zonder het adres van je pagina als referrer, en verandert alleen de namen die het
+  koppelt. Het werkt onder een strikt Content Security Policy dat het adres van de wereldbol
+  toestaat in <code>script-src</code> en <code>connect-src</code>. Voor tekst die je pagina later
+  toevoegt, roep je <code>HistoryGlobePlaces.scan(element)</code> aan zodra de tekst is getekend:
+  het script splitst tekstknooppunten, dus draai het in een React- of Vue-pagina op inhoud die het
+  framework niet meer opnieuw tekent.
+</p>
+<script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
+
+<h2>Stabiliteit</h2>
+<p>
+  <code>/embed/v1</code> is een contract: binnen v1 worden parameters en berichten alleen
+  toegevoegd, nooit gewijzigd of verwijderd. Een brekende wijziging verschijnt als
+  <code>/embed/v2</code>, en v1 blijft werken.
+</p>

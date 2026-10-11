@@ -1,0 +1,107 @@
+---
+title: Otevřená data
+description: Místa, verše, které je jmenují, události a trasy jako soubory JSON, které smí kdokoli používat pod licencí CC BY 4.0 — bez klíče, bez registrace.
+---
+
+<p class="lede">
+  Vše, co glóbus ví o místech a verších, je otevřené: prosté soubory JSON, které lze zdarma použít
+  na jiném webu nebo v aplikaci pod licencí CC BY 4.0. Bez klíče, bez registrace, bez jiných omezení
+  než běžného cachování.
+</p>
+
+<h2>Která místa verš jmenuje</h2>
+<p>Jeden soubor na knihu Bible: každý verš, který jmenuje místo, s identifikátory těchto míst.</p>
+<pre><code>GET {{site}}/api/v1/verses/Acts.json
+
+{ "Acts.16.11": ["a6a7150", "a68750d", "a91c509"], "Acts.16.12": ["a69e1b8", "a49e1d0"], … }</code></pre>
+<p>
+  Samotná místa s názvy v angličtině a ruštině, druhem a bodem jsou v
+  <code>places.json</code>; spojují se podle <code>id</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/places.json
+
+[{ "id": "a49e1d0", "name": "Philippi", "name_ru": "Филиппы", "kind": "settlement",
+   "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "page": { "en": "/en/place/philippi/", "ru": "/ru/place/philippi/" } }, …]</code></pre>
+
+<h2>Všechny soubory</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Soubor</th>
+        <th>Co obsahuje</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/v1/index.json</code></td>
+        <td>seznam souborů a knih, licenci a uvedení autorů, datum sestavení</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/places.json</code></td>
+        <td>
+          každé místo: id, názvy, druh, bod, kolik veršů je jmenuje, jeho stránku (u místa, které
+          nějaký verš jmenuje)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/verses/{Book}.json</code></td>
+        <td>
+          verš → místa, která jmenuje, jeden soubor na knihu (<code>Gen</code>, <code>1Kgs</code>,
+          <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/events.json</code></td>
+        <td>datované události, s <code>ref</code> tam, kde událost vypráví Bible</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/battles.json</code></td>
+        <td>
+          bitvy a obležení: místo, rok, strany a výsledek, s <code>ref</code> tam, kde bitvu vypráví
+          Bible
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/questions.json</code></td>
+        <td>
+          otázky, které lidé kladou, zodpovězené v obou jazycích, s pohledem na mapu a prameny
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/tours.json</code></td>
+        <td>
+          trasy: jejich zastávky v pořadí, každá s pasáží a poznámkou;
+          <code>by: "sea"</code> pro úsek plavby po moři a <code>sailed</code> (dny a verš), kde
+          text říká, jak dlouho plavba trvala
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Konvence</h2>
+<ul>
+  <li>
+    Odkazy jsou ve formátu OSIS s anglickými zkratkami knih a číslováním podle King James:
+    <code>Gen.12.6</code>, <code>Acts.16.12-Acts.16.15</code>.
+  </li>
+  <li>Roky jsou astronomické: 1 př. n. l. je 0, 586 př. n. l. je −585.</li>
+  <li>
+    Místo uvedené ve zdrojových datech dvakrát pod jedním názvem nese
+    <code>"duplicate": true</code>; místo se sporným umístěním <code>"disputed": true</code>.
+  </li>
+  <li>
+    Soubory se znovu sestavují s každým vydáním dat; <code>index.json</code> uvádí jeho datum.
+  </li>
+</ul>
+
+<h2>Licence a uvedení autorů</h2>
+<p>
+  Data jsou pod licencí <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+  Používejte je, upravujte je, prodávejte, co z nich vytvoříte; uveďte prameny tam, kde je
+  zobrazujete, tak, jak je uvádí <code>index.json</code>: History Globe od Vadyma Arnauta a
+  OpenBible.info za místa, značky veršů a body. Ruské názvy byly přečteny ze synodního překladu,
+  který je volným dílem.
+</p>

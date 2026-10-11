@@ -1,0 +1,198 @@
+---
+title: Gegevens en methode
+description: Waar elke plaats, grens, datum en persoon op History Globe vandaan komt, hoe dat is gecontroleerd en wat nog onzeker is.
+---
+
+<p class="lede">
+  De wereldbol is gebouwd uit open wetenschappelijke datasets, met de hand gecorrigeerd en
+  uitgebreid, en bij elke build automatisch gecontroleerd. Deze pagina legt uit waar elke laag
+  vandaan komt, wat we hebben veranderd en wat we niet weten.
+</p>
+
+<h2>Plaatsen uit de Bijbel</h2>
+<p>
+  De {{places}} plaatsen en hun verzen komen uit
+  <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
+    >de Bible Geocoding Data van OpenBible.info</a
+  >, die de in de literatuur voorgestelde identificaties van elke plaats tegen elkaar afweegt. We
+  houden de voorkeursidentificatie aan en de schatting van hoe waarschijnlijk elke kandidaatlocatie
+  is.
+</p>
+<ul>
+  <li>
+    <b>Zekerheid in woorden.</b> Wanneer er geen serieuze tweede locatie wordt voorgesteld, geeft de
+    score van OpenBible (0–1000) aan hoe zeker de identificatie is: bij 800 of hoger geldt ze als
+    vaststaand en zegt de kaart niets; daaronder staat er <i>meest waarschijnlijk</i> (600 of hoger)
+    of <i>voorlopig</i>. Een plaats is <i>omstreden</i> wanneer de tweede kandidaat een aanzienlijk
+    aandeel heeft; dan worden alle kandidaatlocaties met hun aandelen getoond.
+  </li>
+  <li>
+    <b>Geen coördinaten van OpenStreetMap of Google.</b> OpenBible legt vast waar elke coördinaat
+    vandaan kwam. Punten die het uit OpenStreetMap of Google heeft overgenomen, worden vervangen
+    door de coördinaten van Wikidata (CC0), of de plaats wordt weggelaten ({{excluded}} plaatsen).
+    Een aparte controle laat de build mislukken als zo’n punt overblijft.
+  </li>
+  <li>
+    <b>Namen uit de tekst.</b> De Russische namen volgen de synodale vertaling van 1876: voor bijna
+    elke naam bewaart de build een vers waarin ze voorkomt en controleert ze dat de naam in dat vers
+    staat.
+  </li>
+</ul>
+
+<h2>Wanneer plaatsen bestonden</h2>
+<p>
+  Een stad op de kaart wordt alleen in de jaren dat ze bestond volledig getekend. Voor {{life}}
+  plaatsen uit de Bijbel zijn de jaren van stichting, verwoesting en verlating met de hand
+  vastgelegd, elk met zijn bronnen (antieke schrijvers, kronieken, inscripties,
+  opgravingsverslagen). Een datum die omstreden is, wordt weggelaten in plaats van geraden.
+</p>
+<p>
+  De {{ancient}} steden van de oude wereld die de Bijbel niet noemt — hoofdsteden, havens en
+  heiligdommen zoals Ugarit, Hattusa, Mari of Delphi — zijn een voor een gekozen en gedateerd, elk
+  getoetst aan twee bronnen, met een identificatiecode in
+  <a href="https://pleiades.stoa.org">Pleiades</a> of Wikidata en een punt op de antieke vindplaats
+  in plaats van op de moderne stad.
+</p>
+
+<h2>Grenzen</h2>
+<p>
+  Staten en hun grenzen, jaar na jaar, komen uit
+  <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatria</a> (Seshat Global History Databank,
+  v0.2.0), een open dataset van de staatsvormen van de wereld vanaf 3400 v.Chr. Ze is getekend naar
+  historische atlassen en is bij benadering, vooral vóór het eerste millennium v.Chr.
+</p>
+<p>
+  Voor de bijbelse landen corrigeren we haar waar de bronnen er niet mee overeenstemmen: momenteel
+  {{overrides}} correcties, elk met zijn reden en bronnen. Juda blijft op de kaart tot 586 v.Chr.,
+  Israël begint met de regering van David in 1010 v.Chr. in plaats van 1000 v.Chr., Filistea blijft
+  beperkt tot de kustvlakte van zijn vijf steden, en een dynastie eindigt wanneer ze haar laatste
+  zetel van macht verliest. De Levant en Egypte, Mesopotamië, Anatolië en Iran, de Grieks-Romeinse
+  wereld van het Nieuwe Testament en het Nabije Oosten tot 1300 n.Chr. zijn jaar voor jaar
+  nagelopen, onder meer de neergang en het herstel van Assyrië in de achtste eeuw v.Chr., Babylon
+  onder Merodach-Baladan, Pergamon dat in 133 v.Chr. aan Rome werd nagelaten, Macedonië na Pydna en
+  Thracië dat in 46 n.Chr. werd geannexeerd. Elke reeks correcties wordt eerst aan de vormen
+  getoetst en daarna door een tweede beoordelaar onafhankelijk opnieuw aan de bronnen gecontroleerd.
+</p>
+<p>
+  Een koninkrijk dat een rijk schatting betaalde of als zijn vazal regeerde, wordt getekend in een
+  lichtere tint van de kleur van het rijk, met “onder Assyrië” of “onder Rome” onder zijn naam: Juda
+  onder Assyrië, Egypte en Babylon; Israël en Filistea onder Assyrië; het Hasmonese en Herodiaanse
+  Judea onder Rome (en, drie jaar lang, Parthië); en de Nabateeën en Commagene onder Rome. Deze
+  {{vassals}} perioden zijn opgesteld aan de hand van de Assyrische koninklijke inscripties, de
+  Babylonische kronieken, de Bijbel, Flavius Josephus en moderne geschiedwerken, en in een
+  afzonderlijke beoordelingsronde opnieuw gecontroleerd; een jaar dat slechts op een decennium
+  nauwkeurig bekend is, wordt in de gegevens met “ca.” gemarkeerd. Na de val van Samaria in 722
+  v.Chr. wordt het land Israël getekend als de Assyrische provincie die het werd.
+</p>
+
+<h2>Personen</h2>
+<p>
+  De {{people}} personen uit de Bijbel en hun familiebanden komen uit de TIPNR van STEP Bible
+  (Tyndale House, Cambridge). We hebben de banden niet zomaar overgenomen:
+</p>
+<ul>
+  <li>
+    de familiebanden van de 1.200 personen die de tekst het vaakst noemt, en de geslachtsregisters
+    van 1 Kronieken, zijn naast de verzen gelegd; 153 banden die de tekst niet noemt zijn verwijderd
+    — de broers van Jezus als zonen van Jozef en Maria, Izebel als moeder van Ahazia — en de
+    ontbrekende banden van het geslachtsregister van Jezus zijn uit de tekst aangevuld;
+  </li>
+  <li>
+    alle 1.136 banden tussen een persoon en een plaats waar die een centrale of ondersteunende rol
+    speelt, zijn vers voor vers gelezen; 344 zijn verwijderd (Mozes “in Kanaän”, Abraham “in Sodom”,
+    de plaatsen van een zoon aan zijn vader toegewezen) en 94 kregen een beter vers;
+  </li>
+  <li>
+    naamgenoten worden onderscheiden zoals de tekst ze onderscheidt: “Johannes de Doper”, “Johannes,
+    zoon van Zebedeüs”, “Ahazia, koning van Juda”.
+  </li>
+</ul>
+
+<h2>Gebeurtenissen, routes en artikelen</h2>
+<p>
+  De {{events}} gebeurtenissen, {{tours}} routes en {{articles}} artikelen zijn met behulp van AI
+  opgesteld onder leiding van de auteur en daarna in afzonderlijke beoordelingsrondes aan de bronnen
+  getoetst: de bijbeltekst voor wat die zegt, antieke schrijvers, kronieken en inscripties voor
+  data, en de wetenschappelijke literatuur voor locaties. Elke bewering noemt haar bron. Citaten
+  komen alleen uit de synodale vertaling en de King James Version. Geen enkele route heeft haar
+  eerste beoordeling ongewijzigd doorstaan; elke is gecorrigeerd en opnieuw gecontroleerd. Deze
+  beoordelingen worden gedaan door AI op basis van de bronnen, niet door onderzoekers; een artikel
+  dat een historicus heeft gelezen, draagt de naam van die historicus.
+</p>
+<p>
+  De afstand tot een halte wordt hemelsbreed gegeven. Vanaf 312 v.Chr., wanneer de Romeinse wegen
+  beginnen, staat de weg langs de wegen van Itiner-e ernaast: de kortste door hun netwerk, tenzij
+  die meer dan tweeëneenhalf keer de hemelsbrede lijn bedraagt; een traject dat over zee is
+  afgelegd, wordt niet als weg geteld. De tijd te voet is berekend op 30 km per dag, de
+  gebruikelijke schatting van een dagreis in de oudheid, zonder rekening te houden met weer,
+  rustpauzes of lasten. Op zee wordt geen snelheid aangenomen: een zeereis geeft alleen dagen waar
+  de tekst dat doet (Handelingen 20:6, “in vijf dagen”), met dat vers, en zo ruw als de tekst ze
+  geeft. Waar de tekst hele streken doorkruist zonder de weg te noemen (Handelingen 20:1–3, Efeze
+  via Macedonië en Griekenland naar Filippi), zegt het traject dat en geeft het geen tijd. Het
+  reliëf van een traject wordt afgelezen uit de hoogtegegevens van Copernicus (via Mapterhorn) langs
+  diezelfde weg, of zonder weg langs de rechte lijn; het onderschrift onder het profiel zegt welke.
+</p>
+
+<p>
+  De veldslagen en belegeringen ({{battles}}) zijn die welke de Bijbel vertelt, en enkele daarbuiten
+  die het lot van Israël bepaalden. Elke staat op de plaats waar ze werd uitgevochten en verschijnt
+  op de kaart in haar jaren. Die van de Bijbel zijn gedateerd zoals de routes dezelfde verhalen
+  dateren; de andere dragen geen vers, maar een antieke of wetenschappelijke bron. Een tweede,
+  onafhankelijke ronde heeft het concept getoetst aan de synodale tekst en de King James Version:
+  van 58 items zijn er 16 gecorrigeerd en is er één geschrapt, omdat de kaart geen punt heeft voor
+  zijn locatie.
+</p>
+
+<p>
+  De Makkabeeënse gebeurtenissen en veldslagen verwijzen naar 1–2 Makkabeeën, die de synodale Bijbel
+  bevat en de protestantse canon niet: elke zo’n verwijzing is gemarkeerd als “deuterocanoniek”, en
+  haar link opent een tekst die het boek heeft.
+</p>
+
+<h2>Controles bij elke build</h2>
+<p>Er wordt niets gepubliceerd tenzij elke controle slaagt:</p>
+<ul>
+  <li>
+    elke bron draagt een toegestane licentie (geen share-alike, geen niet-commerciële gegevens);
+  </li>
+  <li>elke verwijzing wijst naar een bestaand boek, hoofdstuk en vers;</li>
+  <li>elke Russische naam komt voor in het vers dat ervoor is opgegeven;</li>
+  <li>
+    elke routehalte wordt in zijn passage genoemd, of de uitzondering is met reden gedocumenteerd;
+  </li>
+  <li>elke correctie van de grenzen en elke datum van een stad heeft een bron;</li>
+  <li>
+    de inhoudsschema’s zijn strikt: een onbekend of verkeerd gespeld veld laat de build mislukken.
+  </li>
+</ul>
+
+<h2>Wat onzeker is</h2>
+<ul>
+  <li>
+    Data vóór het eerste millennium v.Chr. zijn bij benadering, en sommige zijn omstreden; de kaart
+    markeert ze met “ca.”.
+  </li>
+  <li>
+    De aandelen van OpenBible tussen kandidaatlocaties zijn een schatting, geen wetenschappelijke
+    consensus.
+  </li>
+  <li>
+    Antieke grenzen zijn getekend naar moderne atlassen en vereenvoudigen een werkelijkheid van
+    wisselende controle.
+  </li>
+  <li>
+    Veel kleinere plaatsen hebben nog geen vastgelegde jaren; ze worden getekend als bestaand
+    gedurende de hele periode (of, voor plaatsen die alleen in het Nieuwe Testament worden genoemd,
+    vanaf de tijd van het Nieuwe Testament).
+  </li>
+</ul>
+
+<h2 id="report">Een fout melden</h2>
+<p>
+  Elke plaatskaart heeft een link <i>Een fout gevonden?</i>. Die opent een issue in de openbare
+  repository met de plaats al ingevuld; je hebt een GitHub-account nodig. Je kunt er ook
+  rechtstreeks een openen:
+  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+    >github.com/ArVaViT/history-globe/issues</a
+  >.
+</p>

@@ -114,6 +114,46 @@ const SITE_WORDS: Readonly<
     km: "km",
     m: "m",
   },
+  it: {
+    same: (x) => `nello stesso luogo di ${x}`,
+    sameName: (x) => `nello stesso luogo di ${x} in altri versetti`,
+    within: (x, n, u) => `${x}, entro ${n} ${u}`,
+    around: (x, n, u) => `${x}, entro circa ${n} ${u}`,
+    region: (x) => `${x}, dintorni`,
+    along: (x) => `lungo: ${x}`,
+    km: "km",
+    m: "m",
+  },
+  nl: {
+    same: (x) => `op dezelfde plaats als ${x}`,
+    sameName: (x) => `op dezelfde plaats als ${x} in andere verzen`,
+    within: (x, n, u) => `${x}, binnen ${n} ${u}`,
+    around: (x, n, u) => `${x}, binnen ongeveer ${n} ${u}`,
+    region: (x) => `${x}, omgeving`,
+    along: (x) => `langs: ${x}`,
+    km: "km",
+    m: "m",
+  },
+  pl: {
+    same: (x) => `w tym samym miejscu co ${x}`,
+    sameName: (x) => `w tym samym miejscu co ${x} w innych wersetach`,
+    within: (x, n, u) => `${x}, w promieniu ${n} ${u}`,
+    around: (x, n, u) => `${x}, w promieniu około ${n} ${u}`,
+    region: (x) => `${x} i okolice`,
+    along: (x) => `trasa: ${x}`,
+    km: "km",
+    m: "m",
+  },
+  cs: {
+    same: (x) => `na stejném místě jako ${x}`,
+    sameName: (x) => `na stejném místě jako ${x} v jiných verších`,
+    within: (x, n, u) => `${x}, v okruhu ${n} ${u}`,
+    around: (x, n, u) => `${x}, v okruhu asi ${n} ${u}`,
+    region: (x) => `${x} a okolí`,
+    along: (x) => `trasa: ${x}`,
+    km: "km",
+    m: "m",
+  },
   zh: {
     same: (x) => `与${x}同地`,
     sameName: (x) => `与其他经文中的${x}同地`,
@@ -127,7 +167,7 @@ const SITE_WORDS: Readonly<
 };
 
 /**
- * siteLabelRu for another language (uk, es, pt, fr, de, zh): the same templates, the name
+ * siteLabelRu for another language (uk, es, pt, fr, de, it, nl, pl, cs, zh): the same templates, the name
  * as the language's names file gives it. Undefined where the language or the name is missing.
  */
 export function siteLabelIn(

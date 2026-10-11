@@ -12,6 +12,10 @@ title:
   pt: "A jornada de Abraão"
   de: "Abrahams Reise"
   fr: "Le voyage d’Abraham"
+  pl: "Wędrówka Abrahama"
+  it: "Il viaggio di Abramo"
+  nl: "De reis van Abraham"
+  cs: "Abrahamova cesta"
 year: "1900 BC"
 people: ["Abraham@Gen.11.26-1Pe"]
 approximate: true
@@ -26,6 +30,10 @@ stops:
       pt: "Terá tira Abrão e a sua família de Ur dos Caldeus."
       de: "Tarach führt Abram und seine Familie aus Ur in Chaldäa hinaus."
       fr: "Térach emmène Abram et sa famille hors d’Ur en Chaldée."
+      pl: "Terach wyprowadza Abrama i jego rodzinę z Ur Chaldejskiego."
+      it: "Tarach conduce Abramo e la sua famiglia fuori da Ur dei Caldei."
+      nl: "Tarach voert Abram en zijn gezin weg uit Ur der Chaldeeën."
+      cs: "Tarach vyvádí Abrama a jeho rodinu z Uru Chaldejských."
   - place: a6d9af3 # Haran
     ref: Gen.11.31-Gen.11.32
     note:
@@ -36,6 +44,10 @@ stops:
       pt: "Eles se estabelecem em Harã, onde Terá morre."
       de: "Sie lassen sich in Haran nieder, wo Tarach stirbt."
       fr: "Ils s’établissent à Haran, où Térach meurt."
+      pl: "Osiedlają się w Charanie, gdzie umiera Terach."
+      it: "Si stabiliscono a Carran, dove Tarach muore."
+      nl: "Zij vestigen zich in Haran, waar Tarach sterft."
+      cs: "Usazují se v Cháranu, kde Tarach umírá."
   - place: adf74d4 # Shechem
     ref: Gen.12.6-Gen.12.7
     note:
@@ -46,6 +58,10 @@ stops:
       pt: "Em Canaã, o Senhor aparece a Abrão em Siquém."
       de: "In Kanaan erscheint der Herr Abram bei Sichem."
       fr: "En Canaan, le Seigneur apparaît à Abram à Sichem."
+      pl: "W Kanaanie Pan ukazuje się Abramowi w Sychem."
+      it: "In Canaan il Signore appare ad Abramo a Sichem."
+      nl: "In Kanaän verschijnt de HEER aan Abram bij Sichem."
+      cs: "V Kanaánu se Hospodin zjevuje Abramovi v Šekemu."
   - place: a64f355 # Bethel
     ref: Gen.12.8
     note:
@@ -56,6 +72,10 @@ stops:
       pt: "Arma a sua tenda entre Betel e Ai e constrói um altar."
       de: "Er schlägt sein Zelt zwischen Bethel und Ai auf und baut einen Altar."
       fr: "Il dresse sa tente entre Béthel et Aï et y bâtit un autel."
+      pl: "Rozbija namiot między Betel a Aj i buduje ołtarz."
+      it: "Pianta la tenda tra Betel e Ai e vi costruisce un altare."
+      nl: "Hij slaat zijn tent op tussen Bethel en Ai en bouwt een altaar."
+      cs: "Rozbíjí stan mezi Bét-elem a Aj a staví oltář."
   - place: af301ca # Egypt
     ref: Gen.12.10
     note:
@@ -66,6 +86,10 @@ stops:
       pt: "A fome o faz descer ao Egito."
       de: "Hungersnot treibt ihn nach Ägypten hinab."
       fr: "La famine le pousse à descendre en Égypte."
+      pl: "Głód zmusza go do zejścia do Egiptu."
+      it: "La carestia lo fa scendere in Egitto."
+      nl: "Een hongersnood drijft hem naar Egypte."
+      cs: "Hlad ho žene dolů do Egypta."
   - place: a85151a # Hebron
     ref: Gen.13.18
     note:
@@ -76,6 +100,10 @@ stops:
       pt: "Estabelece-se junto aos carvalhos de Manre, em Hebrom."
       de: "Er lässt sich bei den Eichen von Mamre in Hebron nieder."
       fr: "Il s’établit près des chênes de Mamré, à Hébron."
+      pl: "Osiada przy dębach Mamre w Hebronie."
+      it: "Si stabilisce presso le querce di Mamre, a Ebron."
+      nl: "Hij vestigt zich bij de eiken van Mamre, bij Hebron."
+      cs: "Usazuje se u dubů v Mamre u Hebronu."
   - place: a513646 # Dan
     ref: Gen.14.14
     note:
@@ -86,6 +114,10 @@ stops:
       pt: "Persegue até Dã os reis que levaram Ló."
       de: "Er verfolgt die Könige, die Lot gefangen genommen haben, bis nach Dan."
       fr: "Il poursuit jusqu’à Dan les rois qui avaient emmené Lot."
+      pl: "Ściga królów, którzy uprowadzili Lota, aż do Dan."
+      it: "Insegue fino a Dan i re che avevano preso Lot."
+      nl: "Hij achtervolgt de koningen die Lot hebben meegevoerd tot aan Dan."
+      cs: "Pronásleduje krále, kteří odvedli Lota, až k Danu."
   - place: aad7e4e # Salem
     ref: Gen.14.18
     note:
@@ -96,6 +128,10 @@ stops:
       pt: "Melquisedeque, rei de Salém, traz pão e vinho."
       de: "Melchisedek, der König von Salem, bringt Brot und Wein heraus."
       fr: "Melchisédek, roi de Salem, apporte du pain et du vin."
+      pl: "Melchizedek, król Salemu, wynosi chleb i wino."
+      it: "Melchisedek, re di Salem, porta fuori pane e vino."
+      nl: "Melchizedek, de koning van Salem, brengt brood en wijn naar buiten."
+      cs: "Melchisedek, král Šalému, vynáší chléb a víno."
   - place: a3f5814 # Gerar
     ref: Gen.20.1
     note:
@@ -106,6 +142,10 @@ stops:
       pt: "Permanece por algum tempo em Gerar."
       de: "Er hält sich eine Zeit lang in Gerar auf."
       fr: "Il séjourne quelque temps à Guérar."
+      pl: "Przez pewien czas przebywa w Gerarze."
+      it: "Si ferma per un tempo a Gerar."
+      nl: "Hij verblijft enige tijd in Gerar."
+      cs: "Nějakou dobu pobývá v Geraru."
   - place: a075d61 # Beersheba
     ref: Gen.21.31
     note:
@@ -116,6 +156,10 @@ stops:
       pt: "Abraão e Abimeleque fazem um juramento, e o lugar é chamado Berseba."
       de: "Abraham und Abimelech schwören einander einen Eid, und der Ort heißt Beerscheba."
       fr: "Abraham et Abimélec prêtent serment, et le lieu est appelé Beer-Schéba."
+      pl: "Abraham i Abimelek składają sobie przysięgę, a miejsce nazwano Beer-Szeba."
+      it: "Abramo e Abimelech si scambiano un giuramento, e il luogo è chiamato Bersabea."
+      nl: "Abraham en Abimelech zweren een eed, en de plaats wordt Berseba genoemd."
+      cs: "Abraham a Abimelek si přísahají a místo se nazývá Beer-šeba."
   - place: adaf385 # Moriah
     ref: Gen.22.2-Gen.22.13
     note:
@@ -126,6 +170,10 @@ stops:
       pt: "Isaque é amarrado para o sacrifício num monte da terra de Moriá."
       de: "Die Bindung Isaaks auf einem Berg im Land Morija."
       fr: "La ligature d’Isaac sur une montagne du pays de Morija."
+      pl: "Związanie Izaaka na górze w ziemi Moria."
+      it: "Il sacrificio di Isacco su un monte nel paese di Moria."
+      nl: "De binding van Isaak op een berg in het land Moria."
+      cs: "Svázání Izáka na hoře v zemi Moria."
   - place: ae00861 # Machpelah
     ref: Gen.23.19
     note:
@@ -136,3 +184,7 @@ stops:
       pt: "Sara é sepultada na caverna de Macpela; mais tarde, também Abraão (Gn 25:9)."
       de: "Sara wird in der Höhle Machpela begraben, später auch Abraham (1. Mose 25,9)."
       fr: "Sara est ensevelie dans la caverne de Macpéla ; plus tard Abraham y est aussi enseveli (Gn 25:9)."
+      pl: "Sara zostaje pochowana w jaskini Makpela; później także Abraham (Rdz 25,9)."
+      it: "Sara è sepolta nella caverna di Macpela; più tardi vi sarà sepolto anche Abramo (Gen 25,9)."
+      nl: "Sara wordt begraven in de spelonk van Machpela; later ook Abraham (Gen. 25:9)."
+      cs: "Sára je pohřbena v jeskyni Makpela; později i Abraham (Gn 25,9)."

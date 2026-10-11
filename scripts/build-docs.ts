@@ -56,6 +56,10 @@ const GROUPS: readonly { name: Readonly<Record<Lang, string>>; pages: readonly P
       pt: "Primeiros passos",
       de: "Erste Schritte",
       fr: "Premiers pas",
+      it: "Per iniziare",
+      nl: "Aan de slag",
+      pl: "Pierwsze kroki",
+      cs: "Začínáme",
     },
     pages: ["index"],
   },
@@ -68,6 +72,10 @@ const GROUPS: readonly { name: Readonly<Record<Lang, string>>; pages: readonly P
       pt: "Desenvolvedores",
       de: "Für Entwickler",
       fr: "Développeurs",
+      it: "Sviluppatori",
+      nl: "Voor ontwikkelaars",
+      pl: "Dla programistów",
+      cs: "Pro vývojáře",
     },
     pages: ["embedding", "api"],
   },
@@ -80,6 +88,10 @@ const GROUPS: readonly { name: Readonly<Record<Lang, string>>; pages: readonly P
       pt: "Dados",
       de: "Daten",
       fr: "Données",
+      it: "Dati",
+      nl: "Gegevens",
+      pl: "Dane",
+      cs: "Data",
     },
     pages: ["methodology", "sources"],
   },
@@ -92,6 +104,10 @@ const GROUPS: readonly { name: Readonly<Record<Lang, string>>; pages: readonly P
       pt: "Sobre",
       de: "Über das Projekt",
       fr: "À propos",
+      it: "Il progetto",
+      nl: "Over het project",
+      pl: "O projekcie",
+      cs: "O projektu",
     },
     pages: ["author", "privacy"],
   },
@@ -248,6 +264,90 @@ const T = {
     skip: "Aller au contenu",
     openMenu: "Menu",
     overview: "Vue d’ensemble",
+  },
+  it: {
+    language: "Lingua",
+    docs: "Documentazione",
+    menu: "Documentazione",
+    onPage: "In questa pagina",
+    copy: "Copia",
+    copied: "Copiato",
+    updated: "Dati al",
+    open: "Apri il globo",
+    prev: "Precedente",
+    next: "Successiva",
+    data: "Dati con licenza CC BY 4.0",
+    search: "Cerca nella documentazione",
+    noResults: "Nessun risultato",
+    edit: "Modifica questa pagina",
+    report: "Segnala un errore",
+    source: "Codice sorgente",
+    skip: "Vai al contenuto",
+    openMenu: "Menu",
+    overview: "Panoramica",
+  },
+  nl: {
+    language: "Taal",
+    docs: "Documentatie",
+    menu: "Documentatie",
+    onPage: "Op deze pagina",
+    copy: "Kopiëren",
+    copied: "Gekopieerd",
+    updated: "Gegevens van",
+    open: "Open de globe",
+    prev: "Vorige",
+    next: "Volgende",
+    data: "Gegevens onder CC BY 4.0",
+    search: "Zoeken in de documentatie",
+    noResults: "Geen resultaten",
+    edit: "Deze pagina bewerken",
+    report: "Een fout melden",
+    source: "Broncode",
+    skip: "Naar de inhoud",
+    openMenu: "Menu",
+    overview: "Overzicht",
+  },
+  pl: {
+    language: "Język",
+    docs: "Dokumentacja",
+    menu: "Dokumentacja",
+    onPage: "Na tej stronie",
+    copy: "Kopiuj",
+    copied: "Skopiowano",
+    updated: "Dane z dnia",
+    open: "Otwórz globus",
+    prev: "Poprzednia",
+    next: "Następna",
+    data: "Dane na licencji CC BY 4.0",
+    search: "Szukaj w dokumentacji",
+    noResults: "Brak wyników",
+    edit: "Edytuj tę stronę",
+    report: "Zgłoś błąd",
+    source: "Kod źródłowy",
+    skip: "Przejdź do treści",
+    openMenu: "Menu",
+    overview: "Przegląd",
+  },
+  cs: {
+    language: "Jazyk",
+    docs: "Dokumentace",
+    menu: "Dokumentace",
+    onPage: "Na této stránce",
+    copy: "Kopírovat",
+    copied: "Zkopírováno",
+    updated: "Data ke dni",
+    open: "Otevřít glóbus",
+    prev: "Předchozí",
+    next: "Další",
+    data: "Data pod licencí CC BY 4.0",
+    search: "Hledat v dokumentaci",
+    noResults: "Žádné výsledky",
+    edit: "Upravit tuto stránku",
+    report: "Nahlásit chybu",
+    source: "Zdrojový kód",
+    skip: "Přejít na obsah",
+    openMenu: "Menu",
+    overview: "Přehled",
   },
 } as const satisfies Record<Lang, Record<string, string>>;
 
@@ -498,7 +598,7 @@ export function typesetUkrainian(html: string): string {
 }
 
 /**
- * Spanish, Portuguese, German and French: a number keeps its unit and its era (586 a. C.,
+ * Spanish, Portuguese, German, French, Italian, Dutch, Polish and Czech: a number keeps its unit and its era (586 a. C.,
  * 586 v. Chr., 586 av. J.-C.); French also keeps « », : ; ! ? on their word with a thin
  * no-break space.
  */
@@ -510,10 +610,15 @@ function typesetLatin(l: Lang): (html: string) => string {
       let x = t
         .replace(/(\d) (km|KB|MB|kB)\b/g, `$1${NB}$2`)
         .replace(
-          /(\d) (a\. ?C\.|d\. ?C\.|v\. Chr\.|n\. Chr\.|av\. J\.-C\.|apr\. J\.-C\.)/g,
+          /(\d) (a\. ?C\.|d\. ?C\.|v\. ?Chr\.|n\. ?Chr\.|av\. J\.-C\.|apr\. J\.-C\.|p\.n\.e\.|n\.e\.|př\. n\. l\.|n\. l\.)/g,
           `$1${NB}$2`,
         )
-        .replace(/\b(a|d|v|n|av|apr)\. (C\.|Chr\.|J\.-C\.)/g, `$1.${NB}$2`);
+        .replace(/\b(a|d|v|n|av|apr)\. (C\.|Chr\.|J\.-C\.)/g, `$1.${NB}$2`)
+        .replace(/př\. n\. l\./g, `př.${NB}n.${NB}l.`)
+        .replace(/\bn\. l\./g, `n.${NB}l.`);
+      // Polish and Czech keep a one-letter word on the next line's word: "w Egipcie", "v Egyptě".
+      if (l === "pl" || l === "cs")
+        x = x.replace(/(^|[\s(„])([aiouwzkvsAIOUWZKVS]) /g, `$1$2${NB}`);
       if (l === "fr")
         x = x
           .replace(/ ([:;!?»])/g, `${NNB}$1`)
@@ -532,6 +637,10 @@ const TYPESET: Readonly<Record<Lang, (html: string) => string>> = {
   pt: typesetLatin("pt"),
   de: typesetLatin("de"),
   fr: typesetLatin("fr"),
+  it: typesetLatin("it"),
+  nl: typesetLatin("nl"),
+  pl: typesetLatin("pl"),
+  cs: typesetLatin("cs"),
 };
 /** The languages that preload the Cyrillic font. */
 const CYRILLIC: ReadonlySet<Lang> = new Set(["ru", "uk"]);

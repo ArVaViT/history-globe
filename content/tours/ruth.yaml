@@ -9,6 +9,10 @@ title:
   pt: "Rute"
   de: "Rut"
   fr: "Ruth"
+  pl: "Rut"
+  it: "Rut"
+  nl: "Ruth"
+  cs: "Rut"
 year: "1100 BC"
 people: ["Ruth@Rut.1.4-Mat"]
 approximate: true
@@ -23,6 +27,10 @@ stops:
       pt: "Numa fome, um homem de Belém de Judá vai com a mulher e os dois filhos viver como estrangeiro na terra de Moabe."
       de: "In einer Hungersnot zieht ein Mann aus Bethlehem in Juda mit seiner Frau und seinen zwei Söhnen, um sich im Land Moab aufzuhalten."
       fr: "Pendant une famine, un homme de Bethléhem de Juda part avec sa femme et ses deux fils faire un séjour dans le pays de Moab."
+      pl: "Podczas głodu pewien mąż z Betlejem Judzkiego udaje się z żoną i dwoma synami, aby przebywać w kraju Moabu."
+      it: "Durante una carestia un uomo di Betlemme di Giuda va con la moglie e i due figli a soggiornare nel paese di Moab."
+      nl: "Tijdens een hongersnood trekt een man uit Bethlehem in Juda met zijn vrouw en twee zonen naar het land Moab om er te verblijven."
+      cs: "Za hladu odchází muž z Betléma Judova s manželkou a dvěma syny pobývat do země Moáb."
   - place: aa0b1d6 # Moab
     ref: Ruth.1.2-Ruth.1.18
     note:
@@ -33,6 +41,10 @@ stops:
       pt: "Viúva em Moabe, Rute não quer deixar Noemi: “aonde quer que você for, eu irei.”"
       de: "Verwitwet in Moab, will Rut Naemi nicht verlassen: „Wo du hin gehst, da will ich auch hin gehen.“"
       fr: "Veuve à Moab, Ruth ne veut pas quitter Naomi : « Où tu iras j’irai. »"
+      pl: "Owdowiała w Moabie Rut nie chce opuścić Noemi: „gdziekolwiek pójdziesz, z tobą pójdę.”"
+      it: "Rimasta vedova in Moab, Rut non vuole lasciare Noemi: «dove andrai tu, andrò anch’io»."
+      nl: "Als weduwe in Moab wil Ruth Naomi niet verlaten: “waar gij zult heengaan, zal ik ook heengaan.”"
+      cs: "Rut, ovdovělá v Moábu, neopouští Noemi: „kamž se koli obrátíš, půjdu“."
   - place: a112427 # Bethlehem
     ref: Ruth.1.19-Ruth.4.17
     note:
@@ -43,3 +55,7 @@ stops:
       pt: "Em Belém ela respiga no campo de Boaz e torna-se sua esposa; seu filho Obede é o avô de Davi."
       de: "In Bethlehem liest sie auf dem Feld des Boas Ähren auf und wird seine Frau; ihr Sohn Obed ist der Großvater Davids."
       fr: "À Bethléhem, elle glane dans le champ de Boaz et devient sa femme ; son fils Obed est le grand-père de David."
+      pl: "W Betlejem zbiera kłosy na polu Booza i zostaje jego żoną; jej syn Obed jest dziadem Dawida."
+      it: "A Betlemme spigola nel campo di Booz e ne diventa la moglie; suo figlio Obed è il nonno di Davide."
+      nl: "In Bethlehem raapt zij aren op het veld van Boaz en wordt zijn vrouw; haar zoon Obed is de grootvader van David."
+      cs: "V Betlémě sbírá klasy na poli Bóazově a stává se jeho ženou; její syn Obéd je dědem Davidovým."

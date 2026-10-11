@@ -1,0 +1,110 @@
+---
+title: Dati aperti
+description: I luoghi, i versetti che li nominano, gli eventi e gli itinerari come file JSON che chiunque può usare sotto CC BY 4.0 — senza chiave, senza registrazione.
+---
+
+<p class="lede">
+  Tutto ciò che il globo sa dei luoghi e dei versetti è aperto: semplici file JSON, liberi da usare
+  in un altro sito o app sotto CC BY 4.0. Nessuna chiave, nessuna registrazione, nessun limite oltre
+  alla normale memorizzazione in cache.
+</p>
+
+<h2>Quali luoghi nomina un versetto</h2>
+<p>
+  Un file per ogni libro della Bibbia: ogni versetto che nomina un luogo, con gli id di quei luoghi.
+</p>
+<pre><code>GET {{site}}/api/v1/verses/Acts.json
+
+{ "Acts.16.11": ["a6a7150", "a68750d", "a91c509"], "Acts.16.12": ["a69e1b8", "a49e1d0"], … }</code></pre>
+<p>
+  I luoghi stessi, con i nomi in inglese e in russo, il tipo e il punto, sono in
+  <code>places.json</code>; il collegamento avviene tramite <code>id</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/places.json
+
+[{ "id": "a49e1d0", "name": "Philippi", "name_ru": "Филиппы", "kind": "settlement",
+   "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "page": { "en": "/en/place/philippi/", "ru": "/ru/place/philippi/" } }, …]</code></pre>
+
+<h2>Tutti i file</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>File</th>
+        <th>Che cosa contiene</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/v1/index.json</code></td>
+        <td>l’elenco dei file e dei libri, la licenza e i crediti, la data della build</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/places.json</code></td>
+        <td>
+          ogni luogo: id, nomi, tipo, punto, quanti versetti lo nominano, la sua pagina (per un
+          luogo nominato da qualche versetto)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/verses/{Book}.json</code></td>
+        <td>
+          un versetto → i luoghi che nomina, un file per libro (<code>Gen</code>,
+          <code>1Kgs</code>, <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/events.json</code></td>
+        <td>gli eventi datati, con <code>ref</code> dove la Bibbia racconta l’evento</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/battles.json</code></td>
+        <td>
+          battaglie e assedi: luogo, anno, schieramenti ed esito, con <code>ref</code> dove la
+          Bibbia racconta la battaglia
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/questions.json</code></td>
+        <td>
+          le domande che le persone pongono, con risposta in entrambe le lingue, la vista della
+          mappa e le fonti
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/tours.json</code></td>
+        <td>
+          gli itinerari: le loro tappe in ordine, ciascuna con il suo brano e la sua nota;
+          <code>by: "sea"</code> per un tratto percorso per mare, e <code>sailed</code> (giorni e
+          versetto) dove il testo dice quanto durò
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Convenzioni</h2>
+<ul>
+  <li>
+    I riferimenti sono in OSIS con le abbreviazioni inglesi dei libri e la numerazione della King
+    James: <code>Gen.12.6</code>, <code>Acts.16.12-Acts.16.15</code>.
+  </li>
+  <li>Gli anni sono astronomici: l’1 a.C. è 0, il 586 a.C. è −585.</li>
+  <li>
+    Un luogo elencato due volte con lo stesso nome nei dati di origine porta
+    <code>"duplicate": true</code>; un luogo il cui sito è discusso, <code>"disputed": true</code>.
+  </li>
+  <li>
+    I file vengono ricostruiti a ogni rilascio dei dati; <code>index.json</code> ne indica la data.
+  </li>
+</ul>
+
+<h2>Licenza e crediti</h2>
+<p>
+  I dati sono sotto <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Usali,
+  modificali, vendi ciò che costruisci con essi; cita le fonti dove li mostri, come le elenca
+  <code>index.json</code>: History Globe di Vadym Arnaut, e OpenBible.info per i luoghi, le
+  etichette dei versetti e i punti. I nomi russi sono stati letti dalla traduzione sinodale, che è
+  di pubblico dominio.
+</p>

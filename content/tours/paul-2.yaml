@@ -11,6 +11,10 @@ title:
   pt: "A segunda viagem de Paulo"
   de: "Die zweite Reise des Paulus"
   fr: "Le deuxième voyage de Paul"
+  pl: "Druga podróż Pawła"
+  it: "Il secondo viaggio di Paolo"
+  nl: "De tweede reis van Paulus"
+  cs: "Druhá Pavlova cesta"
 year: "AD 50"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -25,6 +29,10 @@ stops:
       pt: "Paulo e Silas partem de Antioquia."
       de: "Paulus und Silas brechen von Antiochia auf."
       fr: "Paul et Silas quittent Antioche."
+      pl: "Paweł i Sylas wyruszają z Antiochii."
+      it: "Paolo e Sila partono da Antiochia."
+      nl: "Paulus en Silas vertrekken uit Antiochië."
+      cs: "Pavel a Silas vyrážejí z Antiochie."
   - place: aa401a9
     ref: Acts.16.1
     note:
@@ -35,6 +43,10 @@ stops:
       pt: "Derbe de novo."
       de: "Wieder Derbe."
       fr: "Derbe de nouveau."
+      pl: "Znów Derbe."
+      it: "Di nuovo Derbe."
+      nl: "Weer Derbe."
+      cs: "Opět Derbe."
   - place: af0719d
     ref: Acts.16.2-Acts.16.3
     note:
@@ -45,6 +57,10 @@ stops:
       pt: "Timóteo junta-se a eles."
       de: "Timotheus schließt sich ihnen an."
       fr: "Timothée se joint à eux."
+      pl: "Dołącza do nich Tymoteusz."
+      it: "Timoteo si unisce a loro."
+      nl: "Timoteüs voegt zich bij hen."
+      cs: "Připojuje se k nim Timoteus."
   - place: a91c509
     ref: Acts.16.8-Acts.16.10
     note:
@@ -55,6 +71,10 @@ stops:
       pt: "A visão do homem da Macedônia."
       de: "Das Gesicht des Mannes aus Mazedonien."
       fr: "La vision de l’homme de Macédoine."
+      pl: "Widzenie męża Macedończyka."
+      it: "La visione dell’uomo di Macedonia."
+      nl: "Het visioen van de man uit Macedonië."
+      cs: "Vidění muže z Makedonie."
   - place: a68750d
     ref: Acts.16.11
     by: sea
@@ -66,6 +86,10 @@ stops:
       pt: "Rumo direto a Samotrácia."
       de: "Auf geradem Kurs nach Samothrake."
       fr: "Route directe vers Samothrace."
+      pl: "Prosta droga do Samotraki."
+      it: "Rotta diretta verso Samotracia."
+      nl: "Een rechte koers naar Samothrake."
+      cs: "Přímá plavba na Samothráké."
   - place: a6a7150
     ref: Acts.16.11
     by: sea
@@ -78,6 +102,10 @@ stops:
       pt: "Desembarque em Neápolis."
       de: "Landung in Neapolis."
       fr: "Débarquement à Néapolis."
+      pl: "Przybicie do Neapolis."
+      it: "Sbarco a Neapoli."
+      nl: "Landing te Neapolis."
+      cs: "Přistání v Neapoli."
   - place: a49e1d0
     ref: Acts.16.12-Acts.16.40
     note:
@@ -88,6 +116,10 @@ stops:
       pt: "Lídia; Paulo e Silas na prisão."
       de: "Lydia; Paulus und Silas im Gefängnis."
       fr: "Lydie ; Paul et Silas en prison."
+      pl: "Lidia; Paweł i Sylas w więzieniu."
+      it: "Lidia; Paolo e Sila in prigione."
+      nl: "Lydia; Paulus en Silas in de gevangenis."
+      cs: "Lýdie; Pavel a Silas ve vězení."
   - place: a4bdea7
     ref: Acts.17.1
     note:
@@ -98,6 +130,10 @@ stops:
       pt: "Passando por Anfípolis."
       de: "Durch Amphipolis."
       fr: "Par Amphipolis."
+      pl: "Przez Amfipolis."
+      it: "Attraverso Anfipoli."
+      nl: "Door Amfipolis."
+      cs: "Přes Amfipolis."
   - place: ab20df9
     ref: Acts.17.1
     note:
@@ -108,6 +144,10 @@ stops:
       pt: "Passando por Apolônia."
       de: "Durch Apollonia."
       fr: "Par Apollonie."
+      pl: "Przez Apollonię."
+      it: "Attraverso Apollonia."
+      nl: "Door Apollonia."
+      cs: "Přes Apollonii."
   - place: afa9d8e
     ref: Acts.17.1-Acts.17.9
     note:
@@ -118,6 +158,10 @@ stops:
       pt: "Pregação na sinagoga; o tumulto."
       de: "Predigt in der Synagoge; der Aufruhr."
       fr: "Prédication dans la synagogue ; le tumulte."
+      pl: "Nauczanie w synagodze; rozruch."
+      it: "Predicazione nella sinagoga; il tumulto."
+      nl: "Prediking in de synagoge; de opschudding."
+      cs: "Kázání v synagoze; pobouření."
   - place: a62fe31
     ref: Acts.17.10-Acts.17.14
     note:
@@ -128,6 +172,10 @@ stops:
       pt: "Os bereanos examinam as Escrituras diariamente."
       de: "Die Beröer forschen täglich in der Schrift."
       fr: "Les Béréens examinent chaque jour les Écritures."
+      pl: "Berejczycy codziennie badają Pisma."
+      it: "I Berei esaminano ogni giorno le Scritture."
+      nl: "De Bereeërs onderzoeken dagelijks de Schriften."
+      cs: "Beroijští denně zkoumají Písma."
   - place: a1fe6e7
     ref: Acts.17.15-Acts.17.34
     note:
@@ -138,6 +186,10 @@ stops:
       pt: "Paulo no Areópago."
       de: "Paulus auf dem Areopag."
       fr: "Paul à l’Aréopage."
+      pl: "Paweł na Areopagu."
+      it: "Paolo all’Areòpago."
+      nl: "Paulus op de Areopagus."
+      cs: "Pavel na Areopagu."
   - place: a6f437a
     ref: Acts.18.1-Acts.18.17
     note:
@@ -148,6 +200,10 @@ stops:
       pt: "Áquila e Priscila; um ano e seis meses."
       de: "Aquila und Priscilla; ein Jahr und sechs Monate."
       fr: "Aquilas et Priscille ; un an et six mois."
+      pl: "Akwila i Pryscylla; rok i sześć miesięcy."
+      it: "Aquila e Priscilla; un anno e sei mesi."
+      nl: "Aquila en Priscilla; een jaar en zes maanden."
+      cs: "Akvila a Priscilla; rok a šest měsíců."
   - place: aa31dd3
     ref: Acts.18.18
     note:
@@ -158,6 +214,10 @@ stops:
       pt: "Cencreia, o porto de Corinto."
       de: "Kenchreä, der Hafen von Korinth."
       fr: "Cenchrées, le port de Corinthe."
+      pl: "Kenchrea, port Koryntu."
+      it: "Cencre, il porto di Corinto."
+      nl: "Kenchreeën, de haven van Korinthe."
+      cs: "Kenchreje, přístav Korintu."
   - place: a5feb15
     ref: Acts.18.19-Acts.18.21
     by: sea
@@ -169,6 +229,10 @@ stops:
       pt: "Uma curta estadia em Éfeso."
       de: "Ein kurzer Aufenthalt in Ephesus."
       fr: "Court séjour à Éphèse."
+      pl: "Krótki pobyt w Efezie."
+      it: "Una breve sosta a Efeso."
+      nl: "Een kort verblijf in Efeze."
+      cs: "Krátký pobyt v Efezu."
   - place: a58735e
     ref: Acts.18.22
     by: sea
@@ -180,6 +244,10 @@ stops:
       pt: "Desembarque em Cesareia."
       de: "Landung in Caesarea."
       fr: "Débarquement à Césarée."
+      pl: "Przybicie do Cezarei."
+      it: "Sbarco a Cesarea."
+      nl: "Landing te Caesarea."
+      cs: "Přistání v Cesareji."
   - place: a15257a
     ref: Acts.18.22
     note:
@@ -190,6 +258,10 @@ stops:
       pt: "Paulo saúda a igreja."
       de: "Paulus grüßt die Gemeinde."
       fr: "Paul salue l’Église."
+      pl: "Paweł pozdrawia Kościół."
+      it: "Paolo saluta la chiesa."
+      nl: "Paulus groet de gemeente."
+      cs: "Pavel zdraví církev."
   - place: ae41ab4
     ref: Acts.18.22
     note:
@@ -200,3 +272,7 @@ stops:
       pt: "De volta a Antioquia."
       de: "Zurück nach Antiochia."
       fr: "Retour à Antioche."
+      pl: "Powrót do Antiochii."
+      it: "Di nuovo ad Antiochia."
+      nl: "Terug naar Antiochië."
+      cs: "Zpět do Antiochie."

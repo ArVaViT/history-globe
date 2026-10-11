@@ -1,0 +1,181 @@
+---
+title: Data a metodika
+description: Odkud na History Globe pochází každé místo, hranice, datum a osoba, jak to bylo ověřeno a co zůstává nejisté.
+---
+
+<p class="lede">
+  Glóbus je sestaven z otevřených vědeckých datových sad, ručně opravených a doplněných, a při
+  každém sestavení se automaticky kontroluje. Tato stránka vysvětluje, odkud pochází jednotlivé
+  vrstvy, co jsme změnili a co nevíme.
+</p>
+
+<h2>Místa Bible</h2>
+<p>
+  Místa Bible ({{places}}) a jejich verše pocházejí z
+  <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
+    >Bible Geocoding Data projektu OpenBible.info</a
+  >, který u každého místa posuzuje lokalizace navrhované v odborné literatuře. Ponecháváme jeho
+  preferovanou lokalizaci a jeho odhad pravděpodobnosti každé navrhované lokality.
+</p>
+<ul>
+  <li>
+    <b>Jistota slovy.</b> Pokud se nenavrhuje žádná vážná druhá lokalita, ukazuje skóre OpenBible
+    (0–1000), jak spolehlivá lokalizace je: od 800 se považuje za ustálenou a karta nic nedodává;
+    pod touto hranicí karta uvádí <i>nejpravděpodobnější</i> (od 600) nebo <i>nejisté</i>. Místo je
+    <i>sporné</i>, když má druhý kandidát významný podíl; potom se zobrazí všechny kandidátské
+    lokality s jejich podíly.
+  </li>
+  <li>
+    <b>Žádné souřadnice z OpenStreetMap ani Googlu.</b> OpenBible zaznamenává, odkud pochází každá
+    souřadnice. Body převzaté z OpenStreetMap nebo Googlu jsou nahrazeny souřadnicemi z Wikidat
+    (CC0), nebo je místo vynecháno ({{excluded}} míst). Samostatná kontrola zastaví sestavení,
+    jestli takový bod zůstane.
+  </li>
+  <li>
+    <b>Názvy podle textu.</b> Ruské názvy vycházejí ze synodního překladu z roku 1876: téměř u
+    každého názvu si sestavení uchovává verš, ve kterém se vyskytuje, a ověřuje, že tam skutečně je.
+  </li>
+</ul>
+
+<h2>Kdy místa stála</h2>
+<p>
+  Město se na mapě kreslí celé jen v letech, kdy stálo. U {{life}} míst Bible jsou roky založení,
+  zničení a opuštění zaznamenány ručně, každý s prameny (antičtí autoři, kroniky, nápisy, zprávy o
+  vykopávkách). Sporné datum raději vynecháváme, než abychom ho odhadovali.
+</p>
+<p>
+  Města starověkého světa, která Bible nejmenuje ({{ancient}}) — hlavní města, přístavy a svatyně
+  jako Ugarit, Chattusa, Mari nebo Delfy — byla vybrána a datována jedno po druhém, každé je ověřeno
+  podle dvou pramenů, má identifikátor v <a href="https://pleiades.stoa.org">Pleiades</a> nebo ve
+  Wikidatech a bod leží na starověkém sídlišti, nikoli v dnešním městě.
+</p>
+
+<h2>Hranice</h2>
+<p>
+  Státy a jejich hranice rok po roce pocházejí z
+  <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatrie</a> (Seshat Global History Databank,
+  v0.2.0), otevřené datové sady o státních celcích světa od roku 3400 př. n. l. Je sestavena z
+  historických atlasů a je přibližná, zvláště před 1. tisíciletím př. n. l.
+</p>
+<p>
+  Pro biblické země ji opravujeme tam, kde s ní prameny nesouhlasí: v současnosti je {{overrides}}
+  oprav, každá s důvodem a prameny. Judské království zůstává na mapě do roku 586 př. n. l.,
+  Izraelské království začíná vládou Davida v roce 1010 př. n. l., nikoli 1000 př. n. l., Pelištie
+  je omezena na pobřežní rovinu jejích pěti měst a dynastie končí ve chvíli, kdy ztratí své poslední
+  sídlo moci. Rok po roce byly zkontrolovány Levanta a Egypt, Mezopotámie, Anatolie a Írán,
+  řecko-římský svět Nového zákona a Přední východ do roku 1300 n. l., mimo jiné úpadek a obnova
+  Asýrie v 8. století př. n. l., Babylon za Merodach-baladana, Pergamon odkázaný Římu roku 133 př.
+  n. l., Makedonie po Pydně a Thrákie připojená roku 46 n. l. Každá dávka oprav se nejprve ověří na
+  obrysech a poté ji nezávisle znovu zkontroluje podle pramenů druhý recenzent.
+</p>
+<p>
+  Království, které platilo říši tribut nebo jí vládlo jako vazal, je vykresleno světlejším odstínem
+  barvy říše a pod názvem má popisek „pod Asýrií“ nebo „pod Římem“: Judsko pod Asýrií, Egyptem a
+  Babylonem; Izrael a Pelištie pod Asýrií; Judsko Hasmonovců a Herodovců pod Římem (a po tři roky
+  pod Parthií); Nabatejci a Kommagéna pod Římem. Tato období ({{vassals}}) byla sestavena podle
+  asyrských královských nápisů, babylonských kronik, Bible, Josepha Flavia a moderních dějin a v
+  samostatném průchodu znovu ověřena; rok známý jen s přesností na desetiletí je v datech označen
+  „asi“. Po pádu Samaří roku 722 př. n. l. je izraelská země vykreslena jako asyrská provincie,
+  kterou se stala.
+</p>
+
+<h2>Osoby</h2>
+<p>
+  Osoby Bible ({{people}}) a jejich rodinné vazby pocházejí z TIPNR projektu STEP Bible (Tyndale
+  House, Cambridge). Tyto vazby jsme nepřevzali bez ověření:
+</p>
+<ul>
+  <li>
+    rodinné vazby 1200 osob, které text jmenuje nejčastěji, a rodokmeny z První knihy letopisů byly
+    porovnány s verši; 153 vazeb, které text neuvádí, bylo odstraněno — bratři Ježíšovi jako synové
+    Josefa a Marie, Jezábel jako matka Achazjáše — a chybějící články rodokmenu Ježíšova byly
+    doplněny z textu;
+  </li>
+  <li>
+    všech 1136 vazeb mezi osobou a místem, kde hraje ústřední nebo významnou roli, bylo přečteno
+    verš po verši; 344 jich bylo odstraněno (Mojžíš „v Kanaánu“, Abraham „v Sodomě“, místa syna
+    přisouzená otci) a 94 dostalo lepší verš;
+  </li>
+  <li>
+    jmenovci se rozlišují tak, jak je rozlišuje text: „Jan Křtitel“, „Jan Zebedeův“, „Achazjáš,
+    judský král“.
+  </li>
+</ul>
+
+<h2>Události, trasy a články</h2>
+<p>
+  Události ({{events}}), trasy ({{tours}}) a články ({{articles}}) vznikají s pomocí umělé
+  inteligence pod vedením autora a poté se v samostatných kontrolních průchodech ověřují podle
+  pramenů: biblický text pro to, co říká, antičtí autoři, kroniky a nápisy pro data a odborná
+  literatura pro lokality. Každé tvrzení uvádí svůj pramen. Citace pocházejí jen ze synodního
+  překladu a z King James Version. Žádná trasa neprošla první kontrolou beze změny; každá byla
+  opravena a ověřena znovu. Tyto kontroly provádí umělá inteligence podle pramenů, nikoli učenci;
+  článek, který přečetl historik, nese jeho jméno.
+</p>
+<p>
+  Vzdálenost k zastávce je uvedena vzdušnou čarou. Od roku 312 př. n. l., kdy začínají římské
+  silnice, je vedle ní uvedena cesta po silnicích Itiner-e: nejkratší jejich sítí, pokud není delší
+  než dvapůlkrát vzdušná čára; úsek plavby po moři se po silnicích nepočítá. Čas pěšky se počítá 30
+  km denně, což je obvyklý odhad denního pochodu ve starověku, bez ohledu na počasí, odpočinek nebo
+  zátěž. Na moři se žádná rychlost nepředpokládá: plavba uvádí své dny jen tam, kde je uvádí text
+  (Sk 20,6, „za pět dní“), s tímto veršem a jen tak přibližně, jak je podává text. Kde text přechází
+  celé oblasti bez popisu cesty (Sk 20,1–3, z Efezu přes Makedonii a Řecko do Filip), úsek to uvádí
+  a čas neudává. Reliéf úseku se čte z výškových dat Copernicus (přes Mapterhorn) podél téže
+  silnice, případně, není-li silnice, podél vzdušné čáry; popisek pod profilem říká, který případ
+  nastal.
+</p>
+
+<p>
+  Bitvy a obležení ({{battles}}) jsou ty, které vypráví Bible, a několik mimobiblických, jež
+  rozhodly o osudu Izraele. Každá stojí na místě, kde se bojovalo, a na mapě se zobrazuje ve svých
+  letech. Biblické jsou datovány tak, jak trasy datují tytéž příběhy; ostatní nemají verš, ale
+  antický nebo odborný pramen. Druhý, nezávislý průchod ověřil návrh podle synodního textu a King
+  James Version: z 58 záznamů bylo 16 opraveno a jeden vypuštěn, protože na mapě není bod pro jeho
+  lokalitu.
+</p>
+
+<p>
+  Makabejské události a bitvy citují 1.–2. knihu Makabejských, kterou synodní Bible obsahuje a
+  protestantský kánon ne: každá taková citace je označena „deuterokanonická“ a její odkaz otevře
+  text, který tuto knihu má.
+</p>
+
+<h2>Kontroly při každém sestavení</h2>
+<p>Nic se nezveřejní, dokud neprojdou všechny kontroly:</p>
+<ul>
+  <li>
+    každý pramen má povolenou licenci (žádné sdílení za stejných podmínek, žádná nekomerční data);
+  </li>
+  <li>každý odkaz ukazuje na skutečnou knihu, kapitolu a verš;</li>
+  <li>každý ruský název se nachází ve verši uvedeném pro něj;</li>
+  <li>
+    každá zastávka trasy je jmenována ve své pasáži, nebo je výjimka zdokumentována s důvodem;
+  </li>
+  <li>každá oprava hranic a každé datum města má pramen;</li>
+  <li>schémata obsahu jsou přísná: neznámé nebo chybně napsané pole zastaví sestavení.</li>
+</ul>
+
+<h2>Co zůstává nejisté</h2>
+<ul>
+  <li>
+    Data před 1. tisíciletím př. n. l. jsou přibližná a některá sporná; mapa je označuje „asi“.
+  </li>
+  <li>Podíly OpenBible mezi kandidátskými lokalitami jsou odhad, nikoli shoda badatelů.</li>
+  <li>
+    Starověké hranice jsou kresleny podle moderních atlasů a zjednodušují skutečnost proměnlivé moci
+    nad územím.
+  </li>
+  <li>
+    Mnoho menších míst dosud nemá zaznamenané roky; kreslí se jako stojící po celou dobu (nebo, u
+    míst jmenovaných jen v Novém zákoně, od novozákonní doby).
+  </li>
+</ul>
+
+<h2 id="report">Nahlásit chybu</h2>
+<p>
+  Na kartě každého místa je odkaz <i>Našli jste chybu?</i> Otevře hlášení ve veřejném repozitáři s
+  již vyplněným místem; potřebujete účet na GitHubu. Hlášení můžete otevřít i přímo:
+  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+    >github.com/ArVaViT/history-globe/issues</a
+  >.
+</p>

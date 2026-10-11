@@ -11,6 +11,10 @@ title:
   pt: "A prisão e os julgamentos de Paulo"
   de: "Verhaftung und Prozesse des Paulus"
   fr: "L’arrestation et les procès de Paul"
+  pl: "Pojmanie i procesy Pawła"
+  it: "L’arresto e i processi di Paolo"
+  nl: "De gevangenneming en de processen van Paulus"
+  cs: "Pavlovo zatčení a soudy"
 year: "AD 57"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -25,6 +29,10 @@ stops:
       pt: "Preso no Templo e atado com duas correntes, Paulo fala ao povo e diante do conselho; à noite o Senhor está ao seu lado: “assim como você testemunhou a meu respeito em Jerusalém, assim você deve testemunhar também em Roma.”"
       de: "Im Tempel ergriffen und mit zwei Ketten gebunden, spricht Paulus zum Volk und vor dem Hohen Rat; in der Nacht steht der Herr ihm bei: „Sei getrost, Paulus! denn wie du von mir zu Jerusalem gezeugt hast, also mußt du auch zu Rom zeugen.“"
       fr: "Saisi dans le temple et lié de deux chaînes, Paul parle au peuple et devant le sanhédrin ; la nuit, le Seigneur se tient près de lui : « de même que tu as rendu témoignage de moi dans Jérusalem, il faut aussi que tu rendes témoignage dans Rome »."
+      pl: "Schwytany w świątyni i skuty dwoma łańcuchami, Paweł przemawia do ludu i przed radą; w nocy Pan staje przy nim: „jakoś o mnie świadczył w Jeruzalemie, tak musisz świadczyć i w Rzymie.”"
+      it: "Preso nel Tempio e legato con due catene, Paolo parla al popolo e davanti al sinedrio; di notte il Signore gli sta accanto: «come hai reso testimonianza di me a Gerusalemme, così bisogna che tu la renda anche a Roma»."
+      nl: "In de tempel gegrepen en met twee ketenen gebonden, spreekt Paulus tot het volk en voor de Raad; 's nachts staat de Heere hem bij: “gelijk gij te Jeruzalem van Mij betuigd hebt alzo moet gij ook te Rome getuigen.”"
+      cs: "Pavel, chycen v chrámě a spoután dvěma řetězy, mluví k lidu i před radou; v noci u něho stojí Pán: „jakož jsi svědčil o mně v Jeruzalémě, tak musíš svědčiti i v Římě“."
   - place: a58735e # Caesarea
     ref: Acts.23.23-Acts.24.27
     note:
@@ -35,6 +43,10 @@ stops:
       pt: "Levado de noite sob guarda, por Antipátris, a Cesareia, responde diante do governador Félix, que treme quando Paulo trata da justiça e do juízo vindouro, e o mantém preso por dois anos."
       de: "Bei Nacht unter Bewachung über Antipatris nach Caesarea geführt, verantwortet er sich vor dem Statthalter Felix, der erschrickt, als Paulus von der Gerechtigkeit und dem künftigen Gericht redet, und ihn zwei Jahre lang in Haft hält."
       fr: "Emmené de nuit sous escorte par Antipatris jusqu’à Césarée, il comparaît devant le gouverneur Félix, qui est effrayé quand Paul parle de la justice et du jugement à venir, et le garde enchaîné deux ans."
+      pl: "Wyprowadzony nocą pod strażą przez Antypatris do Cezarei, broni się przed namiestnikiem Feliksem, który drży, gdy Paweł rozprawia o sprawiedliwości i przyszłym sądzie, i przetrzymuje go w więzach dwa lata."
+      it: "Condotto fuori di notte sotto scorta per Antipatride fino a Cesarea, risponde davanti al governatore Felice, che trema quando Paolo parla di giustizia e di giudizio futuro, e lo tiene in catene per due anni."
+      nl: "'s Nachts onder bewaking via Antipatris naar Caesarea gebracht, verantwoordt hij zich voor stadhouder Felix, die beeft als Paulus spreekt over rechtvaardigheid en het komende oordeel, en hem twee jaar gebonden houdt."
+      cs: "Veden v noci pod stráží přes Antipatridu do Cesareje, odpovídá před správcem Felixem, který se zděsí, když Pavel mluví o spravedlnosti a budoucím soudu, a drží ho spoutaného dva roky."
   - place: a15257a # Jerusalem
     ref: Acts.25.1-Acts.25.5
     year: "AD 59"
@@ -46,6 +58,10 @@ stops:
       pt: "Festo, o novo governador, sobe a Jerusalém, onde o sumo sacerdote e os principais dos judeus pedem que Paulo seja levado para lá, armando emboscada para matá-lo no caminho."
       de: "Festus, der neue Statthalter, geht nach Jerusalem hinauf, wo der Hohepriester und die Vornehmsten der Juden darum bitten, Paulus dorthin kommen zu lassen, und ihm unterwegs auflauern, um ihn zu töten."
       fr: "Festus, le nouveau gouverneur, monte à Jérusalem, où le grand-prêtre et les principaux des Juifs demandent que Paul y soit amené, lui dressant des embûches pour le tuer en chemin."
+      pl: "Festus, nowy namiestnik, udaje się do Jerozolimy, gdzie arcykapłan i przedniejsi Żydzi proszą, aby Pawła tam sprowadzono, czyhając na to, by zabić go w drodze."
+      it: "Festo, il nuovo governatore, sale a Gerusalemme, dove il sommo sacerdote e i principali dei Giudei chiedono che Paolo vi sia portato, tendendogli un agguato per ucciderlo lungo la via."
+      nl: "Festus, de nieuwe stadhouder, gaat naar Jeruzalem, waar de hogepriester en de leiders van de Joden vragen dat Paulus daarheen wordt gebracht, terwijl zij op de weg een hinderlaag leggen om hem te doden."
+      cs: "Festus, nový správce, jde do Jeruzaléma, kde nejvyšší kněz a přední Židé žádají, aby byl Pavel přiveden tam, a číhají, aby ho cestou zabili."
   - place: a58735e # Caesarea
     ref: Acts.25.6-Acts.26.32
     year: "AD 59"
@@ -57,3 +73,7 @@ stops:
       pt: "De volta a Cesareia, Paulo apela a César e diante de Agripa conta a sua conversão; Agripa responde: “Com um pouco de persuasão você está tentando me fazer cristão?”"
       de: "Wieder in Caesarea beruft sich Paulus auf den Kaiser und erzählt vor Agrippa von seiner Bekehrung; Agrippa antwortet: „Es fehlt nicht viel, du überredest mich, daß ich ein Christ würde.“"
       fr: "De retour à Césarée, Paul en appelle à César et, devant Agrippa, raconte sa conversion ; Agrippa répond : « Tu vas bientôt me persuader de devenir chrétien ! »"
+      pl: "Z powrotem w Cezarei Paweł odwołuje się do cesarza, a przed Agryppą opowiada o swoim nawróceniu; Agryppa odpowiada: „Mało byś mnie nie namówił, żebym został chrześcijaninem.”"
+      it: "Di nuovo a Cesarea Paolo si appella a Cesare e davanti ad Agrippa racconta la sua conversione; Agrippa risponde: «Per poco non mi persuadi a diventar cristiano»."
+      nl: "Terug in Caesarea doet Paulus een beroep op de keizer en vertelt voor Agrippa over zijn bekering; Agrippa antwoordt: “Gij beweegt mij bijna een Christen te worden.”"
+      cs: "Zpět v Cesareji se Pavel odvolává k císaři a před Agrippou vypráví o svém obrácení; Agrippa odpovídá: „Téměř bys mne k tomu naklonil, abych byl křesťanem.“"

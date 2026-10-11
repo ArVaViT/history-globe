@@ -134,11 +134,19 @@ describe("parseChapter in the other languages", () => {
     expect(parseChapter("1. Mose 12", "de")).toEqual({ ref: "Gen.12", label: "1 Mo 12" });
     expect(parseChapter("Дії 16", "uk")).toEqual({ ref: "Acts.16", label: "Дії 16" });
     expect(parseChapter("Cantar de los Cantares 2", "es")?.ref).toBe("Song.2");
+    expect(parseChapter("Atti 16", "it")).toEqual({ ref: "Acts.16", label: "At 16" });
+    expect(parseChapter("Handelingen 16", "nl")).toEqual({ ref: "Acts.16", label: "Hand 16" });
+    expect(parseChapter("Dzieje Apostolskie 16", "pl")).toEqual({ ref: "Acts.16", label: "Dz 16" });
+    expect(parseChapter("Skutky 16", "cs")).toEqual({ ref: "Acts.16", label: "Sk 16" });
+    expect(parseChapter("Księga Rodzaju 12", "pl")?.ref).toBe("Gen.12");
+    expect(parseChapter("1 Mojžíšova 12", "cs")?.ref).toBe("Gen.12");
   });
   it("takes a name typed without its accents, and a verse after a comma", () => {
     expect(parseChapter("Esaie 53", "fr")?.ref).toBe("Isa.53");
     expect(parseChapter("genesis 12", "es")?.ref).toBe("Gen.12");
     expect(parseChapter("Apg 16,12", "de")?.ref).toBe("Acts.16");
+    expect(parseChapter("Giosue 10", "it")?.ref).toBe("Josh.10");
+    expect(parseChapter("Sk 16,9", "cs")?.ref).toBe("Acts.16");
   });
   it("still reads the English names", () => {
     expect(parseChapter("Acts 16", "de")).toEqual({ ref: "Acts.16", label: "Apg 16" });

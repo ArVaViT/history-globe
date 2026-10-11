@@ -1,0 +1,6710 @@
+# Names in it for History Globe: biblical places (by id), states (by English name),
+# modern names (by OpenBible id), people (by STEP Bible TIPNR id). Drafted by machine
+# translation with a glossary, 2026-10-11; not yet reviewed by a native speaker.
+places:
+  a15257a: Gerusalemme
+  a9cf1e8: Galilea
+  a149f13: Giudea
+  af5884f: Nazaret
+  af301ca: Egitto
+  a69e1b8: Macedonia
+  a197f19: Asia
+  a5feb15: Efeso
+  ae41ab4: Antiochia
+  a58735e: Cesarea
+  af2161c: Cafarnao
+  a69c1d4: Damasco
+  ae686c9: Giordano
+  afc8e7a: Roma
+  a282dce: Samaria
+  a4f35bc: Betania
+  ac2c4c5: Monte degli Ulivi
+  a98e4d7: Sidone
+  a160272: Tiro
+  a6f437a: Corinto
+  a0aa664: Sodoma
+  aef4242: Acaia
+  a112427: Betlemme
+  ae023a9: Giaffa
+  ab60a74: Santo
+  afa9d8e: Tessalonica
+  ad63819: Cilicia
+  a26aa94: Creta
+  a2e7601: Cipro
+  a890adf: Siria
+  a81cdb5: Cirene
+  a562fcc: Lago di Tiberiade
+  a1fe6e7: Atene
+  a3f0756: Babilonia
+  a62fe31: Berea
+  a0f440a: Galazia
+  ae425aa: Icònio
+  a83fb1e: Laodicea
+  af0719d: Listra
+  abfba2a: Monte Sinai
+  a91c509: Troade
+  aa401a9: Derbe
+  aa572e2: Gomorra
+  aaf03fa: Gerico
+  aa95188: Panfilia
+  a666ea0: Tarso
+  af20c46: Sion
+  aee7248: Alessandria
+  a6c704a: Antiochia di Pisidia
+  af3d9fc: Arimatea
+  a217d18: Babilonia
+  a91b732: Betsaida
+  a031bda: Cana
+  ab0b2dd: Oriente
+  a631d35: Golgota
+  a7184a7: Italia
+  a9acaaf: Santo dei Santi
+  a49e1d0: Filippi
+  a33d53e: Fenicia
+  a94b661: Tiatira
+  a815d89: Areòpago
+  abff59d: Betfage
+  a9fc13a: Betsaida
+  a581f0c: Canaan
+  ae733a2: Decapoli
+  ae7274b: Emmaus
+  a7de69e: Gennesaret
+  ada6b64: Gerasa
+  a4492a0: Grecia
+  a2c5cc7: Lidda
+  a55027d: Mileto
+  a70fd5d: Ninive
+  aff04b8: Perge
+  ab8ae56: Frigia
+  a83a43e: Ponto
+  aab4a5f: Sardi
+  a294859: Siloe
+  a47c817: Portico di Salomone
+  a040ba5: Acheldamà
+  a0f4ea8: Arabia
+  aa0b1d6: Moab
+  ae73b90: Galaad
+  aa7a40a: Basan
+  a62dec4: Eufrate
+  aa805fb: Mare Grande
+  ab95484: Amalek
+  ad2f6c2: Bersabea
+  abed304: Mar Morto
+  a9bba61: Kiriat-Iearim
+  a9bb03e: Monte Oreb
+  a341fe8: Monte Ermon
+  a264254: Gheba
+  a095b6e: Iazer
+  ac87d4c: Ascalona
+  a37c8e6: Valle di Innom
+  ad2fadf: Media
+  a0d784a: Dibon
+  a046454: Beeròt
+  acd63ee: Monte Tabor
+  a871210: Bosra
+  abf8e4e: Makkeda
+  af2ca0c: Azeka
+  a8e53d5: Ezion-Gheber
+  afdda14: Nob
+  a173c40: Arpad
+  a1b6474: Cazerot
+  ac644e9: Izreel
+  ae1c9ea: Naiot
+  aa10f27: Sibma
+  a68aa8f: Porta dell'Angolo
+  af4f21c: Màdaba
+  abd637f: Ofra
+  aaaaead: Tubal
+  a9b852f: Zif
+  a76f7b7: Baal-Meon
+  addba2a: Bet-Zur
+  a4e8401: Porta Orientale
+  ab05a42: Gaas
+  a321cb8: Kedes
+  a8e843f: Monte di Esaù
+  ab71288: Recob
+  ad27e17: Senir
+  af58391: Torre di Cananeèl
+  a5a1bdd: Abel-Mecolà
+  a8754c4: Ariel
+  a70e842: Beer-Lacai-Roi
+  a529e92: Città delle Palme
+  af4e985: Efrata
+  a6df20a: Gilo
+  a8819e0: Colon
+  acc7184: Iutta
+  a65db0f: Meriba
+  ac69561: Naalal
+  acd48d6: Tema
+  a324c4d: Uz
+  af536fb: Aruma
+  ac744c1: Attalia
+  ab8fdbc: Babele
+  a7abec7: Bet-Eked
+  af66b89: Bet-Nimra
+  a5c0cb0: Bitinia
+  a7be664: Calne
+  ae28fc7: Dinaba
+  a3c4559: Elteche
+  a5db1a6: Uruk
+  ad3e63c: Gosen
+  a0e8903: Auran
+  a1ab517: Chetlon
+  acf6e00: Iogbeà
+  a4f650b: Kenat
+  a38776a: Lud
+  aa6d1bd: Migdol
+  a62fa2d: Monte Or
+  accdd09: Nebo
+  aa32a17: Pelusio
+  a9ecc26: Punon
+  af04ad9: Rissa
+  af8ce6a: Sela
+  a072bae: Simron
+  a0e11c1: Telassar
+  a7cdf52: Tibcat
+  ac2192b: Valle del Libano
+  aab92ca: Zedad
+  abf4481: Adada
+  ae16cf5: Adoraim
+  a2a145b: Aner
+  ab20df9: Apollonia
+  a919ab0: Atarot
+  af3ccdf: Aven
+  abc1b7c: Baalat
+  a66136c: Baal-Tamar
+  a520374: Beer
+  a14b9f1: Berota
+  a367677: Bet-Gamul
+  a78580c: Bet-Meon
+  a92de65: Betul
+  abde10e: Boses
+  aee80af: Calne
+  acf2fac: Chesil
+  a0ff819: Chitlis
+  a398e5d: Coo
+  ae8badb: Dibon
+  ab9580e: Fonte del Drago
+  acd9b19: Ebes
+  aacbcf0: Eglaim
+  a0e33a3: En-Akkore
+  aa24ad4: Foresta di Efraim
+  aa21f26: Etam
+  ab33b54: Gat-Rimmon
+  a52e310: Gedera
+  a1c28f1: Gerut-Chimam
+  ae87a54: Gidom
+  a858723: Gog
+  a785680: Cadasa
+  a62236c: Cammon
+  a887a2d: Casason-Tamar
+  a3cb036: Chelba
+  ad5c4a1: Chesron
+  a2feddf: Cosa
+  ad161d1: Iim
+  ad6cc26: Ir-Semes
+  abff89f: Iabneel
+  aa0ef78: Ieud
+  ab2e402: Iokmeam
+  a804aeb: Camon
+  a6536c9: Kattat
+  ae8f9cf: Kina
+  a62aa3a: Lacmas
+  ac3ac4e: Lebaot
+  ae60c0c: Maarat
+  ac041e2: Magbis
+  a6e2c95: Manaat
+  a8bc4e3: Meroz
+  a571ca0: Migdal-Gad
+  afc2466: Mizpa
+  ac2b4ef: Monte Baalà
+  a3587ba: Monte Iearim
+  a884255: Monte Salmon
+  a179865: Naara
+  ab571de: Neièl
+  a8518f1: Nimrod
+  a1f2174: Ofni
+  a6f94a6: Porta dei figli del popolo
+  abc2af0: Tolemaide
+  a204528: Rakkat
+  ab049cf: Ramot
+  ae259d9: Remet
+  a0009b3: Ruma
+  a68750d: Samotracia
+  a6d306d: Seleucia
+  a488856: Saaraim
+  aa4e69f: Saròn
+  a78f72b: Sen
+  ae20466: Simron-Meron
+  a077262: Sifmot
+  ad797fe: Tadmor
+  a559399: Il Signore provvede
+  a23a2e6: Token
+  a57ea5f: Uzzen-Seera
+  a375f5a: Valle di Ebron
+  adec54b: Vaheb
+  a5e1150: Zenan
+  a31a510: Zeret-Saar
+  a041bb3: Samaria
+  a64f355: Betel
+  a84f426: Città di Davide
+  aede336: Gabaon
+  ab94aea: Gàlgala
+  a3cc590: Lachis
+  af92088: Iabes di Galaad
+  ab34789: Anatòt
+  a5f43dd: Tarsis
+  a553110: Cedron
+  a80d317: Tirza
+  ad2048e: Debir
+  a8ec7ba: Paddan-Aram
+  ada25df: Corma
+  a21f909: Timna
+  a244d8f: Eglon
+  a7559e6: Valle dei Refaim
+  a75b45e: Bet-Oron
+  a403c45: Gebus
+  adb008c: Tafni
+  a51df0e: En-Ghedi
+  ae00861: Macpela
+  a9674fc: Tebe
+  a6f048c: Ghibbeton
+  a5a6458: Kison
+  aa5cc66: Monte Ebal
+  a40647c: Piraton
+  aa516c2: Valle di Izreel
+  a3f8916: Bet-Araba
+  a2e5054: Chefira
+  a7b6270: Porta di Efraim
+  abf176f: Chelach
+  a878d66: Ibleam
+  ad05040: Nafat-Dor
+  a8da370: Rimmon
+  a0f54e4: Sin
+  a81b7b1: Porta della Valle
+  a6c3859: Aava
+  a8f6a28: Asmon
+  a696a95: Bet-Aven
+  a7409b9: Eden
+  a2fc4c4: Porta della Fonte
+  a28a7df: Chechilà
+  a2d84de: Keriot
+  a694ea2: Mizpa
+  a9ba60c: Sefam
+  a6e6528: Timnat-Cheres
+  a4a5cce: Valle di Siddim
+  a72a1ff: Abdon
+  aeb052c: Almon-Diblataim
+  a0a2ca7: Asso
+  a99875b: Baalat
+  a577c27: Bamot-Baal
+  a30f9a0: Bet-Cherem
+  ad44b24: Bet-Recob
+  a58252b: Boscat
+  ab635e4: Dotan
+  a8eae19: En-Gannim
+  aae626a: Buoni Porti
+  a33cfcc: Gheba
+  a2f0f05: Gabaa
+  aa9c505: Camat
+  aeb09c0: Chelam
+  a878481: India
+  a765bd8: Kain
+  ac9f98d: Valle del Re
+  a91d516: Luchit
+  a033373: Mattana
+  af693b8: Monte Paran
+  aa85961: Porta Nuova
+  a75d2c1: Pergamo
+  ae4cd38: Recob
+  a7d0e71: Roghelim
+  a28da66: Saaraim
+  a50eea4: Torre dei Cento
+  a816ed9: Valle di Gerar
+  a6ee047: Acque di Merom
+  ab5161f: Zered
+  a549c0f: Abiezer
+  afe1143: Adama
+  adc77fb: Mare Adriatico
+  a89511f: Ain
+  ada3369: Almon
+  a4bdea7: Anfipoli
+  ac4f712: Afek
+  a4cea2a: Arad
+  a0e21ff: Atach
+  a6d7a41: Avvim
+  a304bb7: Baal-Amon
+  a8ac29f: Bala
+  a293fbf: Beesterà
+  aafc721: Beten
+  a5f4608: Bet-Car
+  a587ea0: Bet-Emek
+  a3bb26d: Bet-Semes
+  a206291: Bezec
+  ab41e6b: Chezib
+  ac4ff01: Città delle Palme
+  a65c305: Danna
+  a0a6365: Duma
+  a71d65f: Elisa
+  a774e50: Emek-Keziz
+  ab28e2e: En-Rimmon
+  a1230e5: Efron
+  a16596e: Eter
+  ae14b1d: Gheba
+  ac36af4: Ghederotaim
+  aed8df9: Gàlgala
+  a80bf37: Gomer
+  ae1d208: Elef
+  a5e2c12: Sala del Trono
+  a154d7b: Camona
+  ad7e819: Avila
+  ae5657c: Asor
+  a6779cd: Coba
+  a5c4318: Cuccok
+  a67bd13: Iftach
+  ac333a2: Itnan
+  a175f4b: Ianum
+  a5f5b06: Iesana
+  a45dd20: Iokteel
+  adb5ae4: Kedes
+  a8f428d: Kiriataim
+  abe5dde: Lakkum
+  ab6bb68: Lebona
+  ab3fd96: Macane-Dan
+  a0a52ec: Metteg-Amma
+  ade6a96: Migron
+  ac702f1: Mizpa
+  aac759d: Monte Basan
+  a597123: Monte Misar
+  af35635: Mosa
+  aff43ac: Nacor
+  aafe3bd: Nezib
+  a9ee958: Fenice
+  a664d03: Rama
+  a54ef72: Ramataim-Zofim
+  aaf5fef: Recob
+  a4218ee: Rodi
+  afa863b: Salamina
+  a3cae2c: Sefar
+  a25f8e2: Salisa
+  a86d49f: Save-Kiriataim
+  ac6b338: Sicor-Libnat
+  aa3bc1e: Soa
+  aa454f7: Sitna
+  a2e9e40: Tappuach
+  ac9adc9: Tiberiade
+  a85a60a: Traconitide
+  a0c71dc: Valle di Aven
+  ae32196: Valle di Mizpa
+  a207807: Via Santa
+  a93ed69: Salmon
+  a061538: Zer
+  a2735ff: Edom
+  a231f80: Gerico
+  ac24f5f: Gabaa
+  a18873f: Gat
+  a7e13e1: Ai
+  a513646: Dan
+  ac71e65: Filistea
+  a2fe63c: Ramot di Galaad
+  a3e21c6: Monte Carmelo
+  a7e3a59: Elam
+  a8394b8: Babilonia
+  a2e3aa0: Tekoa
+  ae50cf1: Deserto del Sinai
+  a8554e3: Meghiddo
+  af6c325: Ghesur
+  ab2bde8: Ribla
+  a104820: Ofir
+  ad9b1cd: Iaaz
+  aacfcda: Soar
+  a355b6e: Estaol
+  a0b5c50: Zin
+  a3a2a75: Dedan
+  a5f9092: Mesec
+  ac31fee: Tanis
+  af9cfc9: En-Roghel
+  a539e01: Iarmut
+  aeb9e97: Mamre
+  a282c15: Sefarvaim
+  aa8275b: Abarim
+  a924b16: Gozan
+  a094036: Bet-Oron di sotto
+  a30e967: Monte Garizim
+  a079b21: Ramses
+  af936bd: Valle del Sale
+  a42a5b2: Argob
+  a03cb21: Bet-Aven
+  a2bb265: Chinnerèt
+  ad68510: Estemoa
+  a2f3001: Terra di Cam
+  a5c92e1: Iokneam
+  a376eed: Lo-Debar
+  a0ef1e1: Obot
+  ac3bc41: Salca
+  a39a6b9: Soco
+  a38ecff: Valle di Escol
+  afb265c: Ain
+  aabd0ba: Bet-Cogla
+  a5709da: Eltolad
+  a046c70: Gat-Rimmon
+  a044272: Adid
+  ac12af9: Libia
+  a6ac675: Morèset-Gat
+  a939939: Torre di Sichem
+  a84c559: Campo del Lavandaio
+  a32397f: Alus
+  a2f186d: Atad
+  a03cc2d: Baalat-Beer
+  a5c37fd: Porta Bella
+  a4590cd: Bet-Aram
+  a85cbab: Bet-Semes
+  ab0d85b: Muro Largo
+  abfdefc: Eben-Ezer
+  a34e870: En-Semes
+  ac10bcf: Gallim
+  a55d681: Gheder
+  a6399b3: Gàlgala
+  ab6a417: Camat-Zoba
+  a8687ff: Cheleph
+  a7adb01: Iabneel
+  ac0f6e7: Cartà
+  a20364a: Kision
+  aa5f658: Mitka
+  a39fe14: Monte Sefer
+  a53b82d: Ofra
+  aa9e754: Petor
+  a17e154: Recobot
+  ab5b542: Sarid
+  af6476f: Samir
+  a3f0f69: Spagna
+  a2b5ee9: Tel-Mela
+  a721f7f: Torre dei Forni
+  a2109c3: Valle di Camon-Gog
+  ae11a0d: Deserto di Maon
+  a190097: Zin
+  a112fe3: Enon
+  adbc931: Ain
+  a2f1fa1: Amad
+  ac07206: Anacarat
+  a4cf129: Afek
+  a3c7b44: Aram-Naharàim
+  a1e3eff: Asna
+  a366989: Baal-Asor
+  ae83378: Bene-Berak
+  aa2fea1: Bet-Anot
+  a561af4: Bet-Dagon
+  a0aa8cf: Betesda
+  a95a37b: Bet-Le-Afra
+  ac959b2: Ibleam
+  a7ed00e: Cabbon
+  aca2b0a: Cauda
+  a961693: Chilmad
+  acc1702: Città del Sale
+  a74ee0d: Cus
+  ad334c4: Debir
+  ac17675: Dimona
+  ab80fa1: Torre di Eder
+  ad44943: En-Eglaim
+  a43608b: Esek
+  a2ca712: Et-Kazin
+  a59b2e2: Biblo
+  ac25f34: Gabaa
+  a84a509: Gàlgala
+  a81a10a: Gosen
+  a7a5f29: Cam
+  abf97ba: Canes
+  a3f301c: Cazar-Addar
+  a4d3e40: Asor
+  ac722b9: Chelkat-Azzurim
+  a2a444a: Colon
+  a5a846f: Cumta
+  a6c0a5f: Ir-Moab
+  aa9e265: Iturea
+  a4f2291: Ianoach
+  ab8473d: Ieshua
+  a0415e8: Karkor
+  a48191b: Kedes di Neftali
+  aeb19d6: Kiriat-Cusot
+  a56788c: Lasea
+  a1ae20f: Vasca Inferiore
+  a73a74f: Madmen
+  a67325d: Macane-Dan
+  aec139c: Middin
+  a772880: Colle di Morè
+  a75aff4: Monte Efron
+  aac1fcf: Monte Moria
+  aa9e65f: Porta dell'Ispezione
+  aee679c: Nain
+  ad96dd4: Nibsan
+  aed6b0e: Nofa
+  a28d652: Rabba
+  a010244: Rama
+  a601121: Ramat-Lechi
+  ab1d954: Recobot
+  a86e0b0: Salim
+  af74b9f: Secacà
+  a0a98de: Sefarad
+  a5d4629: Shallechet
+  ae44746: Saba
+  afd2396: Siccaron
+  ad16b1e: Sual
+  ac9c090: Soco
+  aadfb8f: Sur
+  acfcf28: Tarala
+  ae3f164: Timna
+  a71f834: Valle di Beracà
+  a402ee4: Valle di Save
+  afe28fe: Zanoa
+  ac2907d: Zior
+  a6046fa: Ammon
+  a85151a: Ebron
+  abf2fc1: Chesbon
+  a736f6c: Mizpa
+  abd9596: Monte Sion
+  a30c937: Asdod
+  a033b84: Susa
+  a97b595: Libna
+  ad9df93: Keila
+  a0ed7ff: Siclag
+  aca767b: Pianure di Moab
+  a60f092: Gosen
+  a08174b: Zorea
+  a0905b5: Succot
+  a68d1a9: Kedar
+  a1c600b: Aialon
+  aa54aa4: Valle del Giordano
+  aa6b19b: Paran
+  a38ad07: Ar
+  aaa6f7a: Edrei
+  a43f60f: Mesopotamia
+  abffcaa: Abel-Bet-Maaca
+  a2a303c: Ghicon
+  ad6eb0b: Iattir
+  a5cda86: Maresa
+  a83fd43: Saròn
+  a41a054: Adma
+  ad3970d: Mara
+  ae6bfe2: Ono
+  a05ebb7: Refidim
+  a0293ff: Porta delle Acque
+  ab5175f: Asan
+  a30f37b: Bet-Iesimòt
+  a70c56b: Dor
+  a27d0e0: Etam
+  a1ce1b7: Cazar-Enan
+  a2715db: Cabseel
+  a97cb23: Mefaat
+  ababfd2: Pi-Achirot
+  aad7e4e: Salem
+  aa28709: Succot
+  a6fc60d: Afek
+  ae12e43: Baal-Gad
+  a53f299: Bet-Millo
+  aca444b: Endor
+  a9a2541: Biblo
+  a3088c2: Asor
+  ae3d487: Magog
+  ab682e6: Bet-Oron di sopra
+  a50057d: Deserto di Zif
+  a2270e4: Aczib
+  a234727: Anab
+  abc9a1d: Atarot
+  a3d6e81: Baal-Peor
+  ab1a343: Betlemme
+  a263e60: Bet-Togarma
+  ab7bf48: Cesarea di Filippo
+  a593a48: Corazin
+  ad6b2b7: En-Tappuach
+  a2fa712: Porta Vecchia
+  a728f1b: Ghederòt
+  ab98f8c: Ghittaim
+  a1d1918: Chelkat
+  a662eed: Kedes
+  a8661e2: Madmanna
+  a2f0a70: Micmetat
+  a38ad9f: Querce di Morè
+  a2d9bc8: Misia
+  a1c7cc1: Filadelfia
+  aefdac1: Resef
+  a1aff30: Seirat
+  ab58876: Sesac
+  a028191: Taberà
+  a3e0180: Valle di Iftach-El
+  aea17b7: Abana
+  a8b7a6b: Accad
+  aaee94d: Addar
+  ad4ad26: Alemet
+  a3e2b20: Amam
+  ae46bcd: Afeka
+  a105543: Armaghedon
+  a9a57b7: Asna
+  a979444: Baal-Ermon
+  a14325e: Bealot
+  a882ef5: Beon
+  a0cc925: Bet-Dagon
+  a0a178b: Bet-Ezel
+  a289a5b: Bet-Lebaot
+  adac973: Bet-Tappuach
+  a978a24: Cabul
+  a2cb16b: Chefar-Ammonì
+  a4c2c75: Chio
+  ab793ce: Cnido
+  ac6416d: Debir
+  a0dc90b: Quercia degli Indovini
+  a6bb890: Piazza Orientale
+  a1b30e1: Eder
+  ae180d8: Elon
+  abe5f95: En-Gannim
+  a507da9: Efraim
+  acd9498: Esan
+  a121d5e: Foro di Appio
+  a753c3b: Porta del Fondamento
+  aa9be2b: Ghedor
+  a45b692: Gabaa di Dio
+  a5dd9e3: Gimzo
+  a878fea: Gur
+  afca9ce: Calcul
+  a2d6bfc: Cammat
+  a412c43: Cannaton
+  a7672d8: Cazar-Gadda
+  ae9b9bc: Asor
+  a7df136: Foresta di Cheret
+  a9cdd53: Corem
+  ae8fac6: Idala
+  ad94cc9: Izreel
+  ae5cc46: Kitron
+  a422a1f: Luz
+  a67297a: Madmena
+  abee1b4: Porta di Mezzo
+  a33910d: Mitilene
+  adaf385: Moria
+  a954735: Monte Galaad
+  a991067: Monte Perazim
+  aa4b3e2: Mira
+  a6a7150: Neapoli
+  af43cde: Nicopoli
+  ade301b: Patara
+  a3870fe: Pitom
+  a13ffd4: Rabbit
+  aaa4c6e: Rama
+  a63c954: Ramat-Mizpe
+  a260ff1: Recobot-Ir
+  a813f22: Rimmon
+  a1c44ea: Salmone
+  a8bb3d8: Pietra del Serpente
+  a846a2a: Samir
+  ac53696: Sebarim
+  a8fe47a: Silchim
+  ab5d319: Sibraim
+  a64ff72: Soco
+  a27b472: Sicar
+  af614df: Tabor
+  a10147d: Tel-Abib
+  aab8f2d: Tifsach
+  afa792e: Umma
+  a49037e: Valle della Decisione
+  a339971: Valle di Sorek
+  a6dc035: Zereda
+  aab3ff0: Zif
+  a730058: Libano
+  adf74d4: Sichem
+  aa4680a: Silo
+  ae0bf4a: Izreel
+  ac2cef0: Kades-Barnea
+  ac62cbc: Camat
+  ac5a1ec: Etiopia
+  a3b5b53: Bet-Semes
+  ae5bfe9: Maanaim
+  a053f15: Carmelo
+  ae46f2e: Aroer
+  a4cc324: Arnon
+  a6f33c5: Asor
+  a075d61: Bersabea
+  af82614: Adullam
+  a505743: Meriba
+  a2a8df0: Beth-Shean
+  acae7cb: Maaca
+  a9ef72b: Peor
+  a6fea11: Astarot
+  ab45bd3: Etiopia
+  ab5bd29: Nebo
+  a59f6f5: Arabia
+  a26c8f2: Avvot-Iair
+  a734b66: Millo
+  acdbce0: Sur
+  ae7836a: Kibrot-Taava
+  a296e06: Massa
+  af96edd: Ofel
+  af64fb3: Sittim
+  abfbfb9: Zeboim
+  a874951: Assur
+  af3ce34: Bet-Peor
+  a1611b6: Porta del Letame
+  a6057f5: Porta dei Pesci
+  a89005a: Cazar-Sual
+  a416b43: Chedemot
+  a03a5d0: Molada
+  a95147f: Ramot
+  a5ab519: Secondo Quartiere
+  aaff3e1: Tob
+  a6fa2d3: Sarepta
+  abc358b: Arad
+  a22663b: Baal-Zefon
+  af6c730: Carchemis
+  aafd7c4: Efes-Dammim
+  a0c9a06: Gelilot
+  a7384d7: Iotbata
+  a6845b1: Maon
+  ac0d1a5: Monte Efraim
+  a03be2e: Tappuach
+  a532b99: Vasca Superiore
+  a28f432: Zanoa
+  ad0d82f: Aczib
+  af74969: Aroer
+  a2bf0f8: Atarot-Addar
+  a6bf059: Baal-Perazim
+  ae6cef8: Bet-Anat
+  a87f8f5: Bet-Marcabot
+  ae1f807: Calach
+  af6c09e: Efrata
+  a2e1bc0: Gat
+  af054ba: Ghedor
+  a2ebe1c: Efer
+  a116c5c: Iavan
+  aacc081: Gullot di Sotto
+  a6c2936: Madon
+  a411283: Migdol
+  a11fadd: Monte Calak
+  a55aded: Pisidia
+  a305f43: Sicor
+  a5d1690: Tebes
+  a324282: Valle di Giosafat
+  ab49753: Zafon
+  a957c5b: Abel-Cheramim
+  a5f4dfc: Acco
+  a845493: Aditaim
+  ad053dd: Aiat
+  a84cafa: Allammelech
+  ad13f27: Anem
+  a012133: Afek
+  a1b9ca6: Aroer
+  afe4be0: Astarot-Karnaim
+  afdb74b: Atrot-Sofan
+  a9fd165: Aznot-Tabor
+  aa3ff18: Bered
+  a2da675: Bet-Arbel
+  ac99af3: Bet-Diblataim
+  a308715: Betlemme
+  a08144e: Cabul
+  a42c452: Chesalon
+  a898f06: Chislot-Tabor
+  a4e5a69: Colosse
+  a411151: Dabbeset
+  a3d1c99: Dibon
+  afcb77d: Di-Zaab
+  aadaf09: Eben-Ezer
+  a85eb38: Edrei
+  a009e7d: En-Cadda
+  ad14500: Efraim
+  a47f86c: Etam
+  aec23b1: Gabbata
+  a4eb961: Porta della Guardia
+  a12012d: Gedera
+  a47678a: Ghedor
+  a97126d: Colle dei Prepuzi
+  a5627a3: Goa
+  a79d6a5: Cali
+  a9d4f8e: Cammon
+  a6309c7: Afaraim
+  a4d6a38: Casason-Tamar
+  acce8c8: Cazor-Cadatta
+  ad2d29f: Chesmon
+  a2517a0: Idumea
+  a21b934: Irpeel
+  a1eb300: Iarmut
+  a56cad5: Iokdeam
+  a4959d5: Cartan
+  a5187a4: Kibzaim
+  afe6972: Coa
+  a57835d: Malta
+  a5f0bc3: Migdal-El
+  aad0fa0: Mizpa
+  aeea26d: Monte Cheres
+  a36c283: Monte Seir
+  ae7bd8b: Naama
+  a314731: Nimra
+  a51e3b0: Vasca Vecchia
+  a8f60f3: Patmos
+  a70e895: Porta dei Cocci
+  a75be6f: Rama
+  ada2a0b: Ramot
+  a1b5486: Rekem
+  a655b28: Rimmono
+  acf6ec0: Samo
+  ab6f1f0: Saalim
+  a55136c: Sema
+  ae71673: Siloe
+  a2d4170: Negheb
+  a1e3697: Siracusa
+  a8530e9: Quercia del Tabor
+  a012194: Il Signore è là
+  abf2443: Tifsach
+  a8c579d: Valle di Gabaon
+  aaa2177: Valle di Zered
+  a78b87e: Ireon
+  a811a10: Zemaraim
+  adf05b8: Zifron
+  a3d1321: Assiria
+  ae981db: Monte Seir
+  aa8edd2: Gaza
+  a3fc47a: Ekron
+  ae067b5: Rabba
+  a6d57ed: Rama
+  aed6538: Ghezer
+  a90f6e1: Rama
+  a6d9af3: Carran
+  adea06c: Micmas
+  ad8027f: Monte Or
+  a3f5814: Gerar
+  ac86af5: Sunem
+  a3d2f0a: Chebar
+  a8ec269: Menfi
+  af725b1: Sennaar
+  a9ed5a4: Bacurim
+  aca7bd9: Iabbok
+  a6f05f6: Taanach
+  af0ac29: Elat
+  a397042: Luz
+  a8a9ff9: Penuel
+  a831506: Teman
+  a5ccd34: Eleale
+  ad54201: Kiriataim
+  a0f8af9: Mizpa
+  aab30ec: Patros
+  a31492f: Valle di Acor
+  a7b2e63: Afek
+  ae04aa8: Porta di Beniamino
+  a0cd098: Beser
+  a2410c1: Elim
+  abb5c1e: Golan
+  a9dd823: Coronaim
+  ab92800: Kir
+  a45acc3: Rimmon
+  aa3d425: Porta delle Pecore
+  a6cf75c: Ur
+  a8ce5c4: Acsaf
+  a3d7871: Azmàvet
+  a57df09: Besor
+  a6a5e97: Daberat
+  a573b95: Esem
+  af19252: Cabor
+  af8b51e: Porta dei Cavalli
+  ad74690: Kedes
+  a93f8b6: Miscal
+  ae89331: Saalbim
+  a17c178: Timna
+  ab183f8: Valle del Terebinto
+  afa84ca: Sartan
+  afbf1b5: Arvad
+  aae8a95: Avit
+  a1db553: Bamot
+  abcc0cf: Betel
+  ac4b767: Bet-Pelet
+  a859268: Bochim
+  a33fbde: Cappadocia
+  a070c7b: Dofka
+  a59fdf2: Enaim
+  ae05348: Etam
+  ac51cec: Gat-Efer
+  a42418f: Getsemani
+  ab270f6: Cazar-Susa
+  ae4d198: Immer
+  ab86a69: Giudea
+  a057d59: Strada del Re
+  a359997: Lidia
+  a57e0a0: Masreka
+  a15973c: Migdol
+  aefaa2d: Monte Nebo
+  ac1fef1: Neftoach
+  ae67841: Perez-Uzza
+  ad27541: Rama
+  a2e73ba: Ritma
+  a2e65fb: Smirne
+  a6ef6a9: Telem
+  a38ebfd: Tigri
+  adfab55: Uzza
+  aa24fbf: Valle di Succot
+  a597dd0: Zela
+  adc31c7: Adam
+  a2e7975: Aialon
+  a8e4a15: Amma
+  ac22b90: Anim
+  adbc03e: Arab
+  a30e7ea: Arubbot
+  aaf998e: Atarot
+  a4b500d: Avva
+  ae5ede9: Babilonia
+  a280f83: Beerot-Bene-Iaakan
+  a942d07: Berotai
+  af623fd: Bet-Biri
+  aeb5f24: Betel
+  aea5552: Bet-Gilgal
+  ac814fb: Bet-Pazzez
+  a079478: Betonim
+  a8adc43: Bosra
+  ae83efa: Canne
+  ac3d92d: Chesullot
+  adca4b1: Città della Distruzione
+  a44cac9: Cozeba
+  ae86cd7: Dalmazia
+  aecc492: Dilean
+  a75d2ab: Duma
+  a728e07: Ebron
+  a26cd81: Eltekon
+  a156070: En-Asor
+  a82f7b4: Eter
+  ac66d7a: Gia
+  a19ec8c: Galaad
+  a3cefc6: Goim
+  a3e8d63: Adrac
+  a493f37: Portico delle Colonne
+  a7d3e84: Cammot-Dor
+  ae3cace: Carod
+  aae18d7: Cazer-Ticon
+  a901903: Cuccoc
+  ac405c0: Illirico
+  abf8060: Itla
+  a907232: Iagur
+  a8ccbf2: Deserto di Ieruel
+  aaa8b2e: Iokmeam
+  ac3233c: Cana
+  a4fa255: Kedes
+  a1a57d0: Kir-Moab
+  a7e39d2: Laisa
+  a6b4fb2: Mesa
+  a4335ba: Migron
+  a67990c: Mizpa
+  ac8955e: Monte Baal-Ermon
+  ac54760: Monte Libano
+  a5a92d1: Monte Zemaraim
+  a9f5289: Naaran
+  aa23a3e: Nobach
+  a2ec6b7: Para
+  a8d054a: Parpar
+  aa3e5ae: Rakkon
+  ad42cdc: Rama
+  a53c3ce: Reca
+  a63bb26: Reggio
+  aeedde4: Sansanna
+  a311f80: Sene
+  a887d36: Saruchen
+  a475518: Sicor
+  a03f6cf: Sion
+  a63b8c7: Sira
+  af23dbb: Via Diritta
+  afef438: Tre Taverne
+  a7ecf6c: Tofel
+  a2e6de9: Valle di Aialon
+  ac9a77c: Valle di Gerico
+  a70e38b: Acque di Gerico
+  a74c453: Zair
+  a6163e0: Sefat
+  a8248e0: Siddim
+  a4d0250: Terra di Suf
+  aa884e2: Aia
+  a620b14: Aroer
+  a15bdfd: Rama
+  a32a4f8: Caldea
+  a3e66cd: Aram
+  ac6b210: Naama
+  a63c70b: Ai
+  a4e39f6: Galilea
+  a2d3ca1: Gheba
+  ad0520f: Put
+  a81ab85: Saba
+  acd9137: Eliopoli
+  a7e3823: Zeboim
+  a159fa4: Siria
+  acc6d8e: Madian
+  ab9696f: Persia
+  a3d18b2: Mar Rosso
+  ad64d75: Mar Rosso
+  a3ba698: Mar Rosso
+  a4aa78a: Zoba
+  a5eb047: Entrata di Camat
+  af4c2cd: Torrente Arnon
+  a7a59b4: Torrente d'Egitto
+  ad81b79: Tofet
+  acf57c5: Monte Gelboe
+  a9ad5ae: Netofa
+  afd9259: Pisga
+  a966bdf: Palazzo della Foresta del Libano
+  ad41f6e: Iesimon
+  a329990: Caftor
+  ab55371: Kir-Cheres
+  ab89be9: Ararat
+  aeeaca0: Lechi
+  a39267b: Akrabbim
+  aab9a5e: Ena
+  a9ac5f9: Ivva
+  a5e36e6: Cor-Ghidgad
+  a062b95: Ion
+  a0574da: Iie-Abarim
+  a88331e: Moserot
+  a8a6a5b: Siene
+  a7560c2: Abrona
+  acf8790: Adummim
+  a0fe2be: Bene-Iaakan
+  af48fdd: Bezec
+  aa31dd3: Cencre
+  aa7bee8: Cherit
+  a538831: Cuta
+  a6f4a6d: Ellasar
+  aea4530: Gob
+  a73af5f: Carada
+  aaa8a88: Asmona
+  a373106: Torrente di Cana
+  aeb46a8: Kittim
+  af133c0: Que
+  a3e94bd: Libna
+  a3668b6: Licaonia
+  ac1fbba: Makelot
+  a222545: Minnit
+  a5bf0bd: Misrefot-Maim
+  a2a77d2: Nea
+  ace3edc: Nimrim
+  a314765: Pafo
+  a880de2: Pau
+  ac79b33: Rimmon-Peres
+  a98b02e: Sela
+  abe40d1: Tacat
+  a0c97c0: Tel-Carsa
+  a944b90: Tarach
+  af55829: Ufaz
+  a0c4f5e: Zaananim
+  a1c6a50: Salmona
+  a51d1fa: Abel-Sittim
+  a2c780b: Adami-Nekeb
+  a36348c: Acleb
+  af9a894: Quercia del Pianto
+  a70ac98: Abel-Misraim
+  abf0690: Valle degli Artigiani
+  af7eb92: Eglat-Selisia
+  ab428de: Amana
+  a79606b: Anania
+  aec9225: Aschenàz
+  a2c34ce: Atarim
+  ad041dd: Asel
+  a66f19c: Baala di Giuda
+  ad3d9fc: Baal-Salisa
+  a800159: Bealot
+  a656cb6: Beer
+  ac401ea: Beer-Elim
+  a6e060d: Betania oltre il Giordano
+  a0d1977: Bet-Bara
+  a83d789: Bet-Sitta
+  a55cec0: Betuel
+  ab624f3: Cor-Asan
+  a087a14: Buz
+  addb84c: Casifia
+  a70f9d3: Cun
+  ae8d09d: Dalmanuta
+  a971a54: Dimna
+  a3bcd66: Dura
+  a212ef7: Ecbatana
+  a30b045: El-Betel
+  a738bf1: El-Paran
+  ac25afc: Efa
+  ad4607c: Colle di Gareb
+  a58df35: Ghebim
+  a71d79b: Ghicon
+  a763368: Gur-Baal
+  ac5e5c4: Avila
+  a1d9047: Avila
+  a8a8e54: Chelbon
+  a11bbbe: Gerapoli
+  aedf531: Iabes
+  ab15bb3: Iafia
+  adbbb54: Iotba
+  ad763b1: Laban
+  adaef13: Lesa
+  a19fd03: Licia
+  a3b7885: Macbena
+  ac2bb0c: Makaz
+  ad04336: Maraala
+  a1ba491: Marot
+  a8c3105: Meara
+  aa87ef6: Meconà
+  a7d1972: Me-Iarkon
+  a8dafd6: Nacaliel
+  acd682e: Neballat
+  a9bf50d: Nobach
+  a938779: Parvaim
+  a2cd991: Pi-Beset
+  a19b076: Pison
+  a4488e9: Pozzuoli
+  a57bb2e: Raama
+  a446973: Racal
+  ac95bd8: Ribla
+  a897bdb: Roccia della Separazione
+  a702ab6: Mare d'Egitto
+  ad259d1: Mare di Iazer
+  a6343cc: Sela
+  a5b01f4: Sacazima
+  a7b3f5d: Safir
+  ab56451: Silla
+  af725bb: Suf
+  a5d37f9: Taanat-Silo
+  a6f61d3: Trogilio
+  a217cc5: Uzal
+  a7c5927: Valle di Zeboim
+  a6bf8d4: Valle di Sefata
+  a07ae2d: Zereda
+  a0bccbd: Zerera
+  a5bbf9c: Zimri
+  a4446f1: Ziz
+  a0f88fb: Torrente dei Salici
+  a3bba31: Colle di Pincas
+  a26921e: Enam
+  a5947d7: Tamar
+  a32d25a: Keelata
+  a662bda: Meronot
+  a0bcd48: Ianoach
+  a55c970: Via del Mar Rosso
+  aaa3eca: Gullot-Maim
+  a380434: Gullot di Sopra
+  a8c2deb: Sala del Giudizio
+  a31913c: Ir-Nacas
+  a4b9865: Pekod
+  a498faa: Abilene
+  a5eafe1: Etruria
+  a2d7b73: Lidia
+  a8d18cf: Scizia
+  a249453: Batanea
+  a737810: Punt
+  a4b8b4d: Hatti
+  a01769f: Valle di Sittim
+  ad14067: Magdala
+  a012705: Nilo
+  a1cb244: Negheb
+  a2bb5ef: Araba
+  af084cf: Sefela
+  a88310a: Oltre il Fiume
+  a78e845: Monte Zafon
+  afd8b40: Carod
+  afed46a: Gadara
+  ae1054e: Minni
+  adf5c7b: Karnaim
+  adc9b5a: Kades
+  ad36371: Sirte
+  abaa030: Bat-Rabbim
+  a8fe6a4: Iaar
+  a2b389a: Iorkeam
+  a221d82: Elkos
+  a184f3a: Adramitto
+  af75e9e: Magdala
+  adeff6d: Charcar
+  adb1dcf: Kumidi
+  ad1c917: Hilakku
+  acfe0a6: Tegarama
+  acea44c: Merom
+  abb1e21: Uqnu
+  ab7c40f: Adulis
+  ab66f81: Nuhashe
+  ab56b36: Gat-Padalla
+  aac5280: Tisbe
+  aabf84a: Gergesa
+  aab527c: Tjaru
+  aa56bd1: Cartagine
+  aa4fca2: Tapsaco
+  a8778a3: Laash
+  a86d7c7: Tartesso
+  a7aafda: Sparta
+  a72ca28: Palazzo di Erode
+  a72819f: Umman-manda
+  a6e831d: Adasa
+  a6c8205: Beter
+  a6bd641: Arsinoe
+  a654e6d: Gutium
+  a63c21e: Pitru
+  a542fc2: Eracleopoli Magna
+  a527d04: Calcide
+  a4c6f72: Eridu
+  a49cd82: Salona
+  a818a40: Abila
+  a276d01: Abila di Lisania
+  a95b373: Addon
+  a00de1e: Allon
+  a8527ba: Ama
+  adc3294: Amatu
+  ac5cab3: Amaw
+  a576db3: Arbela
+  a03afe1: Atrot-Bet-Ioab
+  aba3717: Aia
+  ac2f5ea: Baala
+  a2b2564: Belamon
+  ac0254c: Casa di Asbea
+  a84c5a4: Bet-Eden
+  aaa2f54: Bet-Agan
+  a5983ec: Torrente dell'Araba
+  a08d4af: Carmande
+  ab3ad14: Cherub
+  a567e0e: Cusan
+  a8e6824: Elon-Bet-Canan
+  a9a6f72: Efron
+  a764256: Gamad
+  a0ac467: Gat
+  a0a5b78: Gedera
+  a2fc530: Ghedor
+  a607415: Chefirim
+  a1d5a28: Calacha
+  a553fe6: Armon
+  ab5f357: Chelech
+  acd64ca: Eracleopoli Parva
+  a23db8d: Choresh
+  a159029: Coronaim
+  a54fdd6: Cusa
+  adb6f6b: Ianua
+  af66926: Keriot-Chesron
+  a8bbf2b: Lassaron
+  a9de8b7: Leb-Kamai
+  a5e9c87: Maare-Gheba
+  abf5daf: Madiama
+  a0d1a62: Magdalsenna
+  ad876c2: Magdolo
+  a8eaad5: Merataim
+  abcd5f2: Mortaio
+  ac6cefa: Nahuru
+  aaa0f54: Netaim
+  aa4589b: Porta Settentrionale
+  ab1d701: Parbar
+  a9664ba: Ragmat
+  a8c207b: Rodi
+  a669096: Eufrate
+  af9e903: Sahar
+  acf15b3: Saparda
+  a9042c4: Saparre
+  a4052df: Seku
+  a1303a4: Saalbon
+  a092025: Porta Meridionale
+  a88bcb2: Sufa
+  abef753: Sutu
+  a5948b2: Tabbur-Erez
+  ab066d7: Tamar
+  a2ebfdf: Telme
+  ade3503: Upu
+  aa01373: Ur
+  a78592e: Ura
+  a61d405: Porta Occidentale
+  adea7b0: Rocce dei Camosci
+  a4e7fa8: Zaanan
+  ae7f7b5: Zofim
+  aac6cda: Angolo
+  a244929: Regno del Nord
+  a1c0469: Regno del Sud
+  a422f1c: Sud
+  a3bb384: Fiume
+polities:
+  Abbasid Caliphate: Califfato abbaside
+  Abbasid Caliphate/Buyid Dynasty: Califfato abbaside sotto i Buyidi
+  Achaean League: Lega achea
+  Achaemenid Empire: Impero achemenide
+  Aetolian League: Lega etolica
+  Aghlabid Dynasty: Aghlabidi
+  Akkadian Empire: Impero accadico
+  Alans: Alani
+  Almohad Caliphate: Califfato almohade
+  Almoravid Dynasty: Almoravidi
+  Alodia: Alodia
+  Angevin Empire: Impero angioino
+  Angevins: Angioini
+  Ankhwennefer: Ankhuennefer
+  Antigonid Dynasty: Dinastia antigonide
+  Antigonid Macedonia: Macedonia antigonide
+  Aquitaine: Aquitania
+  Armenian Kingdom of Cilicia: Regno armeno di Cilicia
+  Assyria: Assiria
+  Assyrian Egypt: Egitto assiro
+  Athenian Coalition: Coalizione ateniese
+  Atropatene: Atropatene
+  Avar Khaganate: Khaganato degli Avari
+  Ayyubid Sultanate: Sultanato ayyubide
+  Babylonia: Babilonia
+  Bagratid Armenia: Armenia bagratide
+  Bahrani Dynasty: Dinastia bahrani
+  Balasagan: Balasagan
+  Banate of Bosnia: Banato di Bosnia
+  Barghawata Conference: Confederazione dei Barghawata
+  Bavarians: Bavari
+  Breton Kingdoms: Regni bretoni
+  Brythons: Britanni
+  Burgundian Kingdom: Regno dei Burgundi
+  Burgundians: Burgundi
+  Buyid Dynasty: Buyidi
+  Byzantine Empire: Impero bizantino
+  Caliphate of Córdoba: Califfato di Cordova
+  Cao Wei: Cao Wei
+  Capetian House of Anjou: Casa d'Angiò
+  Carantania: Carantania
+  Carolingian Empire: Impero carolingio
+  Carthage: Cartagine
+  Caucasian Albania: Albania caucasica
+  Caucasian Iberia: Iberia caucasica
+  Chagatai Khanate: Khanato Chagatai
+  Chalukya Dynasty: Chalukya
+  Chauhan Dynasty: Chauhan
+  Chaulukya Dynasty: Chaulukya
+  Chola Empire: Impero Chola
+  Cimmerian Bosporus: Regno del Bosforo Cimmerio
+  Colchis: Colchide
+  Comtat Venaissin: Contado Venassino
+  Cornwall: Cornovaglia
+  County of Ampuria: Contea di Empúries
+  County of Anjou: Contea d'Angiò
+  County of Aragon: Contea d'Aragona
+  County of Armagnac: Contea d'Armagnac
+  County of Auvergne: Contea d'Alvernia
+  County of Barcelona: Contea di Barcellona
+  County of Berga: Contea di Berga
+  County of Besalú: Contea di Besalú
+  County of Blôis: Contea di Blois
+  County of Champagne: Contea di Champagne
+  County of Edessa: Contea di Edessa
+  County of Flanders: Contea delle Fiandre
+  County of Foix: Contea di Foix
+  County of Maine: Contea del Maine
+  County of Nevers: Contea di Nevers
+  County of Osona: Contea di Osona
+  County of Pallars: Contea di Pallars
+  County of Pallars Jussà: Contea di Pallars Jussà
+  County of Pallars Sobirà: Contea di Pallars Sobirà
+  County of Poitou: Contea di Poitou
+  County of Portugal: Contea di Portogallo
+  County of Périgord: Contea di Périgord
+  County of Ribagorza: Contea di Ribagorza
+  County of Rosellón: Contea del Rossiglione
+  County of Rouergue: Contea di Rouergue
+  County of Savoy: Contea di Savoia
+  County of Toulouse: Contea di Tolosa
+  County of Touraine: Contea di Turenna
+  County of Tripoli: Contea di Tripoli
+  County of Urgell: Contea d'Urgell
+  County of Vermandois: Contea di Vermandois
+  County of Vexin: Contea del Vexin
+  Crown of Aragon: Corona d'Aragona
+  Crown of Castile: Corona di Castiglia
+  Cuman-Kipchak Confederation: Confederazione cumano-kipčaka
+  Cyprus Condominium: Condominio di Cipro
+  Cyrenaica: Cirenaica
+  Dabuyid Dynasty: Dabuyidi
+  Danishmendids: Danishmendidi
+  Dauphiné: Delfinato
+  Denmark-England: Danimarca-Inghilterra
+  Despotate of Epirus: Despotato d'Epiro
+  Domain of Rhodes: Dominio di Rodi
+  Duchy of Aquitaine: Ducato d'Aquitania
+  Duchy of Athens: Ducato di Atene
+  Duchy of Bavaria: Ducato di Baviera
+  Duchy of Benevento: Ducato di Benevento
+  Duchy of Bohemia: Ducato di Boemia
+  Duchy of Brittany: Ducato di Bretagna
+  Duchy of Burgundy: Ducato di Borgogna
+  Duchy of Croatia: Ducato di Croazia
+  Duchy of Gascony: Ducato di Guascogna
+  Duchy of Greater Poland: Ducato della Grande Polonia
+  Duchy of Masovia: Ducato di Masovia
+  Duchy of Naples: Ducato di Napoli
+  Duchy of Normandy: Ducato di Normandia
+  Duchy of Opole: Ducato di Opole
+  Duchy of Racibórz: Ducato di Racibórz
+  Duchy of Sandomierz: Ducato di Sandomierz
+  Duchy of Silesia: Ducato di Slesia
+  Duchy of Spoleto: Ducato di Spoleto
+  Duchy of Styria: Ducato di Stiria
+  Duchy of the Archipelago: Ducato dell'Arcipelago
+  Duchy of Thuringia: Ducato di Turingia
+  Duchy of Tuscia: Ducato di Tuscia
+  Duchy of Wrocław: Ducato di Breslavia
+  Dumnonia: Dumnonia
+  Early Dynastic Period of Egypt: Periodo protodinastico dell'Egitto
+  East Franks: Franchi orientali
+  Eastern Kara-Khanids: Karakhanidi orientali
+  Eastern Kushans: Kushana orientali
+  Eastern Roman Empire: Impero romano d'Oriente
+  Elam: Elam
+  Emirate of Crete: Emirato di Creta
+  Emirate of Córdoba: Emirato di Cordova
+  Emirate of Granada: Emirato di Granada
+  Emirate of Nekor: Emirato di Nekor
+  Emirate of Sicily: Emirato di Sicilia
+  Empire of Kanem: Impero del Kanem
+  Empire of Thessalonica: Impero di Tessalonica
+  Empire of Trebizond: Impero di Trebisonda
+  Ethiopian Empire: Impero d'Etiopia
+  Etruscans: Etruschi
+  Fatimid Caliphate: Califfato fatimide
+  Fifteenth Dynasty of Egypt: XV dinastia egizia
+  Fihrids: Fihridi
+  First Bulgarian Empire: Primo impero bulgaro
+  First Sealand Dynasty: Prima dinastia del Paese del Mare
+  Frisia Kingdom: Regno di Frisia
+  Galatia: Galazia
+  Galicia-Volhynia: Galizia-Volinia
+  Gallic Empire: Impero delle Gallie
+  Georgia: Georgia
+  Ghana Empire: Impero del Ghana
+  Ghassanids: Ghassanidi
+  Ghaznavid Empire: Impero ghaznavide
+  Ghurid Dynasty: Ghuridi
+  Giudicato of Arborea: Giudicato d'Arborea
+  Giudicato of Cagliari: Giudicato di Cagliari
+  Giudicato of Gallura: Giudicato di Gallura
+  Giudicato of Logudoro: Giudicato di Torres
+  Golden Horde: Orda d'Oro
+  Gothia: Gotia
+  Goths: Goti
+  Grand Duchy of Kraków: Granducato di Cracovia
+  Grand Principality of Serbia: Gran principato di Serbia
+  Great Moravia: Grande Moravia
+  Great Principality of Duklja: Gran principato di Doclea
+  Great Seljuk Empire: Grande impero selgiuchide
+  Great Yuan: Dayuan
+  Greco-Bactrian Kingdom: Regno greco-battriano
+  Greek City-States: Città-Stato greche
+  Greek Colonies: Colonie greche
+  Greek Dark Ages: Medioevo ellenico
+  Gupta Empire: Impero Gupta
+  Gurjara-Pratihara Dynasty: Gurjara-Pratihara
+  Gutian Dynasty: Dinastia dei Gutei
+  Göktürk Khaganate: Khaganato dei Göktürk
+  Hadhramaut: Hadramawt
+  Hafsid Dynasty: Dinastia hafside
+  Halych-Volhynia occupation: Steppa cumana
+  Hamdanid Emirates: Emirati hamdanidi
+  Hammadid Dynasty: Hammadidi
+  Han Dynasty: Dinastia Han
+  Harsha's Empire: Impero di Harsha
+  Himyarite Kingdom: Regno himyarita
+  Hittites: Ittiti
+  Holy Roman Empire: Sacro Romano Impero
+  Holy Roman Empire Minor States: Stati minori del Sacro Romano Impero
+  House of Anjou-Sicily: Casa d'Angiò-Sicilia
+  House of Habsburg: Casa d'Asburgo
+  House of Hohenstaufen: Casa di Hohenstaufen
+  House of Luxembourg: Casa di Lussemburgo
+  House of Wittelsbach: Casa di Wittelsbach
+  Hoysala Kingdom: Impero Hoysala
+  Hunnic Empire: Impero unno
+  Huns: Unni
+  Hyksos: Hyksos
+  Idrisids: Idrisidi
+  Ifat Sultanate: Sultanato di Ifat
+  Ilkhanate: Ilkhanato
+  Illyrian Kingdom: Regno illirico
+  Indo-Greeks: Regno indo-greco
+  Indo-Parthians: Regno indo-partico
+  Indo-Sasanian Empire: Impero indo-sasanide
+  Indo-Scythians: Indo-sciti
+  Indus Valley Civilization: Civiltà della valle dell'Indo
+  Italian City-States: Alleati italici
+  Janapada of Gandhāra: Janapada del Gandhara
+  Janapada of Kamboja: Janapada del Kamboja
+  Judea: Giudea
+  Kadamba Empire: Impero Kadamba
+  Kannauj-Varman Dynasty: Dinastia Varman di Kannauj
+  Kara-Khanids: Karakhanidi
+  Kara-Khitans: Kara Khitay
+  Karkota Dynasty: Dinastia Karkota
+  Kashmir: Kashmir
+  Khalji Dynasty: Dinastia Khalji
+  Kharijites: Kharigiti
+  Khazaria: Cazaria
+  Khwarezmid Dynasty: Dinastia corasmia
+  Khwarezmid Empire: Impero corasmio
+  Kidarites: Kidariti
+  Kievan Rus': Rus' di Kiev
+  Kimek-Kipchak confederation: Confederazione kimek-kipčaka
+  Kingdom of Adiabene: Regno di Adiabene
+  Kingdom of Africa: Regno d'Africa
+  Kingdom of Alamannia: Regno d'Alemannia
+  Kingdom of Aragon: Regno d'Aragona
+  Kingdom of Arles: Regno di Arles
+  Kingdom of Armenia: Regno d'Armenia
+  Kingdom of Asturias: Regno delle Asturie
+  Kingdom of Axum: Regno di Axum
+  Kingdom of Bithynia: Regno di Bitinia
+  Kingdom of Bohemia: Regno di Boemia
+  Kingdom of Brittany: Regno di Bretagna
+  Kingdom of Cappadocia: Regno di Cappadocia
+  Kingdom of Castile: Regno di Castiglia
+  Kingdom of Commagene: Regno di Commagene
+  Kingdom of Croatia: Regno di Croazia
+  Kingdom of Cyprus: Regno di Cipro
+  Kingdom of Duklja: Regno di Doclea
+  Kingdom of England: Regno d'Inghilterra
+  Kingdom of France: Regno di Francia
+  Kingdom of Galicia: Regno di Galizia
+  Kingdom of Georgia: Regno di Georgia
+  Kingdom of Germany: Regno di Germania
+  Kingdom of Gordyene: Regno di Gordiene
+  Kingdom of Hungary: Regno d'Ungheria
+  Kingdom of Israel: Regno d'Israele
+  Kingdom of Italy: Regno d'Italia
+  Kingdom of Jerusalem: Regno di Gerusalemme
+  Kingdom of Judah: Regno di Giuda
+  Kingdom of Khotan: Regno di Khotan
+  Kingdom of Kush: Regno di Kush
+  Kingdom of Lazica: Regno di Lazica
+  Kingdom of León: Regno di León
+  Kingdom of Lower Burgundy: Regno di Bassa Borgogna
+  Kingdom of Lysimachus: Regno di Lisimaco
+  Kingdom of Majorca: Regno di Maiorca
+  Kingdom of Naples: Regno di Napoli
+  Kingdom of Navarre: Regno di Navarra
+  Kingdom of Neustria: Regno di Neustria
+  Kingdom of Numidia: Regno di Numidia
+  Kingdom of Osroene: Regno di Osroene
+  Kingdom of Pamplona: Regno di Pamplona
+  Kingdom of Pergamon: Regno di Pergamo
+  Kingdom of Poland: Regno di Polonia
+  Kingdom of Pontus: Regno del Ponto
+  Kingdom of Portugal: Regno del Portogallo
+  Kingdom of Serbia: Regno di Serbia
+  Kingdom of Sicily: Regno di Sicilia
+  Kingdom of Sobrarbe: Regno di Sobrarbe
+  Kingdom of Soissons: Regno di Soissons
+  Kingdom of Sophene: Regno di Sofene
+  Kingdom of Syrmia: Regno di Sirmia
+  Kingdom of the Franks: Regno dei Franchi
+  Kingdom of the Gepids: Regno dei Gepidi
+  Kingdom of the Iberians: Regno degli Iberi del Caucaso
+  Kingdom of the Suebi: Regno degli Svevi
+  Kingdom of Thessalonica: Regno di Tessalonica
+  Kingdom of Thuringia: Regno di Turingia
+  Kingdom of Urartu: Regno di Urartu
+  Kingdom of Vaspurakan: Regno di Vaspurakan
+  Kushan Empire: Impero kushana
+  Lakhmid Kingdom: Regno lakhmide
+  Laomedon: Laomedonte
+  Latin Empire: Impero latino
+  Lazica: Lazica
+  Lohara Dynasty: Dinastia Lohara
+  Lombards: Longobardi
+  Lower Burgundy: Bassa Borgogna
+  Lower Egypt: Basso Egitto
+  Lydia: Lidia
+  Macedonian Empire: Impero macedone
+  Magadha - Shaishunaga dynasty: Magadha sotto gli Shishunaga
+  Magyars: Magiari
+  Mahameghavahana Dynasty: Dinastia Mahameghavahana
+  Mahdids: Mahdidi
+  Maitraka Dynasty: Dinastia Maitraka
+  Makuria: Makuria
+  Mali Empire: Impero del Mali
+  Mamertines: Mamertini
+  Mamluk Dynasty: Dinastia mamelucca di Delhi
+  Mamluk Sultanate: Sultanato mamelucco
+  Marinid Sultanate: Sultanato merinide
+  Mauretania: Mauretania
+  Maurya Empire: Impero Maurya
+  Median Kingdom: Regno dei Medi
+  Merovingian Empire: Regno merovingio
+  Middle Franks: Franchi di mezzo
+  Middle Kingdom of Egypt: Medio Regno egizio
+  Minaeans: Minei
+  Minoan civilization: Civiltà minoica
+  Mitanni: Mitanni
+  Molossians: Molossi
+  Mongol Empire: Impero mongolo
+  Mycenaean Greece: Grecia micenea
+  Nabataeans: Nabatei
+  Nabhani Dynasty: Dinastia nabhanide
+  Najahid Dynasty: Dinastia najahide
+  Nanda Empire: Impero Nanda
+  Negroponte: Negroponte
+  Neo-Assyrian Empire: Impero neo-assiro
+  Neo-Babylonian Empire: Impero neo-babilonese
+  Neo-Hittite states: Stati neo-ittiti
+  New Kingdom of Egypt: Nuovo Regno egizio
+  Egypt of the Third Intermediate Period: Egitto del Terzo periodo intermedio
+  Nicaean Empire: Impero di Nicea
+  Nitra: Nitra
+  Nobatia: Nobazia
+  Norman England: Inghilterra normanna
+  Norman Italy: Italia normanna
+  North Sea Empire: Impero del Mare del Nord
+  Odrysian Kingdom: Regno degli Odrisi
+  Oghuz Turks: Turchi oghuz
+  Old Great Bulgaria: Antica Grande Bulgaria
+  Old Kingdom of Egypt: Antico Regno egizio
+  Ostrogothic Kingdom: Regno ostrogoto
+  Ostrogoths: Ostrogoti
+  Pala Empire: Impero Pala
+  Palmyrene Empire: Impero di Palmira
+  Pandya Empire: Impero Pandya
+  Papal States: Stato Pontificio
+  Paphlagonia: Paflagonia
+  Paramara Dynasty: Dinastia Paramara
+  Parthian Empire: Impero partico
+  Patriarchate of Aquileia: Patriarcato di Aquileia
+  Peloponnesian League: Lega peloponnesiaca
+  Perdiccas: Perdicca
+  Philistia: Filistea
+  Phoenicia: Fenicia
+  Phoenician Colonies: Colonie fenicie
+  Phoenician Empire: Impero fenicio
+  Phrygia: Frigia
+  Polyperchon: Poliperconte
+  Principality of Achaea: Principato d'Acaia
+  Principality of Antioch: Principato d'Antiochia
+  Principality of Capua: Principato di Capua
+  Principality of Galicia-Volhynia: Principato di Galizia-Volinia
+  Principality of Halych: Principato di Halyč
+  Principality of Hungary: Principato d'Ungheria
+  Principality of Iberia: Principato d'Iberia
+  Principality of Kiev: Principato di Kiev
+  Principality of Nitra: Principato di Nitra
+  Principality of Orange: Principato d'Orange
+  Principality of Peremyshl: Principato di Peremyšl'
+  Principality of Pereyaslavl: Principato di Perejaslav
+  Principality of Salerno: Principato di Salerno
+  Principality of Serbia: Principato di Serbia
+  Principality of Terebovlia: Principato di Terebovlja
+  Protectorate of the Western Regions: Protettorato delle Regioni Occidentali
+  Ptolemaic Kingdom: Regno tolemaico
+  Qarlugs: Qarluqi
+  Qarmatians: Carmati
+  Qataban: Qataban
+  Rashidun Caliphate: Califfato dei Rashidun
+  Rashtrakuta Dynasty: Dinastia Rashtrakuta
+  Rasulid Dynasty: Dinastia rasulide
+  Republic of Amalfi: Repubblica di Amalfi
+  Republic of Florence: Repubblica di Firenze
+  Republic of Genoa: Repubblica di Genova
+  Republic of Pisa: Repubblica di Pisa
+  Republic of Venice: Repubblica di Venezia
+  Rhodes: Rodi
+  Ripuarian Franks: Franchi ripuari
+  Roman Empire: Impero romano
+  Roman Kingdom: Regno di Roma
+  Roman Republic: Repubblica romana
+  Rugiland: Rugilandia
+  Rustamid dynasty: Dinastia rustamide
+  Sabaeans: Sabei
+  Sacred Band of Thebes: Battaglione sacro di Tebe
+  Saffarid Dynasty: Dinastia saffaride
+  Sajid Dynasty: Dinastia sagide
+  Salian Franks: Franchi salii
+  Samanid Empire: Impero samanide
+  Samo's Empire: Impero di Samo
+  Sasanian Empire: Impero sasanide
+  Satavahana Dynasty: Dinastia Satavahana
+  Scythia: Scizia
+  Second Athenian League: Seconda lega ateniese
+  Second Bulgarian Empire: Secondo impero bulgaro
+  Seleucid Empire: Impero seleucide
+  Seljuk Dynasty: Dinastia selgiuchide
+  Seventeenth Dynasty of Egypt: XVII dinastia egizia
+  Shirvan: Shirvan
+  Sind-Habbari Dynasty: Dinastia Habbari del Sindh
+  Sixteenth Dynasty of Egypt: XVI dinastia egizia
+  Sosso Empire: Impero Sosso
+  Sulayhid Dynasty: Dinastia sulayhide
+  Sultanate of Rum: Sultanato di Rum
+  Sumerian City-States: Città-Stato sumere
+  Swiss Confederation: Confederazione svizzera
+  Tabal Kingdom: Regno di Tabal
+  Taifa of Albarracín: Taifa di Albarracín
+  Taifa of Algeciras: Taifa di Algeciras
+  Taifa of Almería: Taifa di Almería
+  Taifa of Alpuente: Taifa di Alpuente
+  Taifa of Arcos: Taifa di Arcos
+  Taifa of Badajoz: Taifa di Badajoz
+  Taifa of Carmona: Taifa di Carmona
+  Taifa of Ceuta: Taifa di Ceuta
+  Taifa of Córdoba: Taifa di Cordova
+  Taifa of Dénia: Taifa di Denia
+  Taifa of Granada: Taifa di Granada
+  Taifa of Morón: Taifa di Morón
+  Taifa of Murcia: Taifa di Murcia
+  Taifa of Niebla: Taifa di Niebla
+  Taifa of Ronda: Taifa di Ronda
+  Taifa of Saltés and Huelva: Taifa di Saltés e Huelva
+  Taifa of Santa Maria do Algarve: Taifa di Santa Maria dell'Algarve
+  Taifa of Seville: Taifa di Siviglia
+  Taifa of Silves: Taifa di Silves
+  Taifa of Tejada: Taifa di Tejada
+  Taifa of Toledo: Taifa di Toledo
+  Taifa of Tortosa: Taifa di Tortosa
+  Taifa of Valencia: Taifa di Valencia
+  Taifa of Zaragoza: Taifa di Saragozza
+  Takrur: Tekrur
+  Tang Dynasty: Dinastia Tang
+  Thebans: Tebani
+  Thessaly: Tessaglia
+  Thirtieth Dynasty of Egypt: XXX dinastia egizia
+  Thracian Kingdom: Regno di Tracia
+  Thuringian states: Stati turingi
+  Tibetan Empire: Impero tibetano
+  Tulunids: Tulunidi
+  Turk Shahis: Turchi Shahi
+  Turks: Turchi
+  Twenty-second Dynasty of Egypt: XXII dinastia egizia
+  Twenty-sixth Dynasty of Egypt: XXVI dinastia egizia
+  Twenty-third Dynasty of Egypt: XXIII dinastia egizia
+  Türgesh: Türgesh
+  Umayyad Caliphate: Califfato omayyade
+  Upper Burgundy: Alta Borgogna
+  Upper Burgundy and Italy: Alta Borgogna e Italia
+  Upper Egypt: Alto Egitto
+  Utpala Dynasty: Dinastia Utpala
+  Uyghur Khaganate: Khaganato uiguro
+  Uyunid Emirate: Emirato uyunide
+  Vakataka Kingdom: Regno Vakataka
+  Vandal Kingdom: Regno dei Vandali
+  Vandals: Vandali
+  Viking settlements: Insediamenti vichinghi
+  Visigothic Kingdom: Regno visigoto
+  Visigoths: Visigoti
+  West Franks: Franchi occidentali
+  Western Chalukya Empire: Impero Chalukya occidentale
+  Western Göktürks: Göktürk occidentali
+  Western Jin: Jin occidentali
+  Western Karakhanid Khanate: Khanato karakhanide occidentale
+  Western Kushans: Kushana occidentali
+  Western Roman Empire: Impero romano d'Occidente
+  Western Satraps: Satrapi occidentali
+  White Huns: Unni bianchi
+  Wusun: Wusun
+  Xin Dynasty: Dinastia Xin
+  Xiongnu: Xiongnu
+  Xionites: Chioniti
+  Yadava Dynasty: Dinastia Yadava
+  Yaudheya Republic: Repubblica Yaudheya
+  Yuezhi: Yuezhi
+  Zagwe dynasty: Dinastia Zagwe
+  Zaydi Alid dynasties: Dinastie alidi zaidite
+  Zayyanid dynasty: Dinastia zayyanide
+  Zengid dynasty: Dinastia zengide
+  Zirid dynasty: Dinastia ziride
+  Ziyadid dynasty: Dinastia ziyadide
+  Ziyarid dynasty: Dinastia ziaride
+  Zurayid dynasty: Dinastia zurayide
+  Third Dynasty of Ur: Terza dinastia di Ur
+  Principality of Armenia: Principato d'Armenia
+modern:
+  m66c5b8: Gerusalemme
+  md561de: Babilonia
+  me7edbd: Giordano
+  me64af8: Sebastia
+  m39393a: Canaan
+  me58522: Beitin
+  mf8c29c: Galilea
+  m11c602: Tiro
+  m95349d: Tell es-Sultan
+  m86f941: Tel Rumeida
+  m878978: Damasco
+  m88819c: Tel el-Ful
+  m9b8daa: Betlemme
+  m28d167: Tell es-Safi
+  mebf05c: Città di Davide
+  m12c75e: Tell Hesban
+  m91acfa: Nilo
+  m657590: Tell Balatah
+  mc07de7: Eufrate
+  mf55105: El-Jib
+  m681aef: Jebel esh-Shera
+  ma342c0: Khirbat al-Mafjar
+  m902bcf: Et-Tell
+  mfe37a0: Tell en-Nasbeh
+  mb374b4: Monte di Mosè
+  m12f296: Khirbet Seilun
+  mfccaed: Sidone
+  me7cb2d: Mar Mediterraneo
+  m392188: Tel Beer Sheva
+  mec75f5: Golfo di Suez
+  mb3f688: Nazaret
+  m489f67: Tell esh-Sharia
+  m52bd87: Ninive
+  m6da23a: Ain el-Qudeirat
+  mb1da27: Jaba
+  mda3bc1: Tel Yizre'el
+  mba2ff1: Tall er-Rumeith
+  m234519: Tell el-Maqlub
+  mb61c67: Tel Dan
+  mfcf08d: Araba
+  m67501d: Al-Ram
+  m0252b4: Monte Sion
+  me5a5eb: Macedonia
+  mcd11f7: Tel Masos
+  ma54af7: Tell Bornat
+  m780cf1: Ras el-Kharruba
+  m66efd0: Tell Hum
+  m185801: Tell edh-Dhahab el-Gharbi
+  mb5cfe4: Tell Harube
+  m31bdd9: Tell ed-Duweir
+  maaf3b2: Tel Haror
+  ma2bedf: Tel Miqne
+  mf32c7d: Tel Ashdod
+  m3c5a04: Asia
+  m653490: Hama
+  m7d469b: Mar Morto
+  m84025e: Efeso
+  m9cb1d4: Susa
+  ma06d55: Khirbet Rabud
+  m37a078: Tall el-Hammam
+  m60ab56: Deir el-Azar
+  m6cfb9a: Sefela
+  mc73188: Tell Eton
+  mebe332: Al-Bira
+  mbe432b: Antiochia
+  m11da12: Cesarea
+  mf9b7d7: Monte Carmelo
+  me461ba: Monte degli Ulivi
+  m06de45: Yemen
+  mf176a6: Khirbet Sara
+  mb2b340: Khirbet el-Medeiyineh
+  mdfc4a9: Khirbet al-Mukhayyat
+  m7c5f02: Tel Bet Shemesh
+  m666a45: Ras Abu Hamid
+  m0c1bc5: Amman
+  m79536a: Tel Nagila
+  m227592: Al-Eizariya
+  mc78c4d: Monte Ermon
+  mfa3426: Tel Halif
+  m9c42da: Numeira
+  m713b74: Bab edh-Dhra
+  m2b72a1: Tel Goded
+  mb4a1d5: Labweh
+  m41fa55: Mukhmas
+  m17b4ff: Nabi Samwil
+  m6cb30d: Tell Beit Mirsim
+  mb65966: Khirbet Qila
+  mb083bc: Roma
+  m496ea5: Nippur
+  mb2507f: Tell Defenneh
+  m74a4ea: Khirbet el-Kirmil
+  mcd1a5c: Tel Gezer
+  mcb49f3: Giaffa
+  ma5f44f: Valle del Cedron
+  m24a982: Khirbet Teku'a
+  ma056cd: Khirbet Haiyan
+  m4ec2d3: Valle di Innom
+  mcbd477: Wadi al-Arish
+  m54d9cf: Arair
+  mcfd3eb: Khirbet Asan
+  m8d753d: Khirbet el-Burj
+  m700b87: Har Zin
+  m224548: Arabia sudoccidentale
+  m1123d9: Tell Deir Alla
+  ma594e8: Tell el-Far'ah settentrionale
+  mc8e6e1: Tel Erani
+  m222ca7: Tell edh-Dhahab esh-Sherqiyeh
+  mc95e22: Wadi Mujib
+  m0a9529: Tel Ashkelon
+  me751fb: Cipro
+  mc9a69d: Carran
+  mf52435: Tel Megiddo
+  m07d05e: Rujm Siyaghah
+  m2d769d: Khirbet esh-Sheikh Madhkur
+  m6d98ed: Ras Tumeim
+  mc7f587: Tel Batash
+  m28cd4b: Al-Safi
+  m1dd2b9: Khirbet Deir Shubeib
+  m3c0a28: Khirbet el-Qom
+  ma80c62: Golfo di Aqaba
+  mfd46de: Ramo pelusiaco del Nilo
+  m8cb9fa: Jel'ad
+  ma96621: Tall Jalul
+  m77f703: Ramat Rahel
+  m56a432: Tall Iktanu
+  me0518f: Corinto
+  m6429cf: Tel Hazor
+  me46ed1: Rableh
+  m3c1506: Tel Tzora
+  m574ccc: Yalo
+  m960e84: Rantis
+  m83ef94: Shatt en-Nil
+  m2ed468: Ein Qedeis
+  mf10950: Khirbet el-Qaryatein
+  m6b366e: Khirbet Ayun Musa
+  m22cdaa: Tell el-Herr
+  mbf99a2: Aleiyan
+  m0cfe50: Tell Bir el-Gharbi
+  m99eed8: Tell es-Sa'idiyeh
+  m402935: Acaia
+  m122dcf: Tall Dhiban
+  m0438ff: Lago di Tiberiade
+  me990f8: Khirbet al-Balua
+  mb1c0e5: Isola del Faraone
+  m09483e: Ras el-Mesharif
+  m92dbfa: Sorgente di Ghicon
+  md4d924: Qarn al-Qubish
+  m43eab9: Valle della Beqaa
+  m942792: Tell Maryam
+  mf93341: Creta
+  m8e169f: Monte Tabor
+  mcff45c: Farata
+  m5f63a8: Sulam
+  mdadcc0: Salonicco
+  mc013b6: Tanis
+  mdabd6c: Tel Arad
+  m27a1e0: En Hazeva
+  m9398f2: Ain Muweileh
+  mcbaccd: Kerak
+  m432f6a: Tall al-Umayri
+  md7c132: Tel Regev
+  m40394a: Tell Melat
+  mf20d69: Tell el-Maskhuta
+  m8a3087: Khirbet Attir
+  m48684e: Tel Kedesh
+  m3b3ebc: Khirbet Nisieh
+  med32df: Aqaba
+  m628173: Bir Ayub
+  mcfc88c: Ain el-Khadra
+  ma832c2: Tel Ira
+  m94f792: Ramat el-Khalil
+  m2635fb: Or Yehuda
+  m58175b: Afula
+  m15a08e: Ar-Ruwaysat
+  m325c72: Hadita
+  m2af7af: Tel Bet Shean
+  m6b0cf5: Buseira
+  m8fcc34: Valle del Giordano
+  m02ea33: Menfi
+  m1232ec: Monte Gelboe
+  m66ea0c: Khirbet Badd Faluh
+  md3087e: Paran
+  ma24f3f: Valle dei Refaim
+  m3ba5c8: Deserto di Zin
+  m11a95b: Tall Kafrayn
+  m0d7bb1: Ramallah
+  ma9cf6e: Tel Malhata
+  m639fec: Moza
+  m888945: El-'Unuq
+  m7d00ce: Umm ar-Rasas
+  m112962: Khirbet el-Waten
+  m14a95e: Bir es-Seba
+  m1ec77e: At-Tell
+  m518f8e: Banias
+  mdc9182: Ein Weibeh
+  m857981: Ras et-Tahuneh
+  m69a064: Nahal HaBesor
+  m7bf4f1: Tel Maresha
+  m0d6ead: Tall al-Meqbarah
+  mc4242d: Wadi Qelt
+  m3d8db3: Corni di Hattin
+  mdbdac8: Tell Ashtara
+  m933d05: Tel Azekah
+  m7e1954: Umm el-Amad
+  me649fd: Cirene
+  me6a184: Al-Khuraybah
+  ma09e9a: Dar'a
+  m0feee2: Tel Gerisa
+  m8920d8: Fiume Zarqa
+  m3eb278: Erweis el-Ebeirig
+  mbcae83: Fiume Kison
+  m286edc: Isawiya
+  m2b1a3a: Lod
+  md8dd4a: Ain Hawarah
+  m942643: Gordio
+  m53b227: Qantir
+  md06df2: Wadi Rufaiyil
+  m8e8c6d: Tell Ta'anakh
+  m099496: Al-Buqay'ah
+  m3f98a9: Es-Sebkha
+  m74c680: Iraq al-Amir
+  m2d73de: Tell Ahmar
+  mbb4e1d: Monti a sudovest del Mar Morto
+  m51eef7: Sela
+  mcf60ee: Khirbet el-Muhatta
+  m60a34b: Al-Qurayyat
+  m482f98: Tell el-Jurn
+  m2c7da0: Suwwanet eth-Thaniya
+  m956ef3: Khirbet en-Nitleh
+  m590c60: Taybeh
+  maeb1dc: Khirbet el-Maqatir
+  ma3d35b: Khirbet Ibn Baraq
+  m12c649: Tell Abu Qedeis
+  m7d8664: Tel el-Beida
+  m933319: Al-Haditha
+  md254e8: Laghi Amari
+  m46be7f: Tell Keisan
+  m0431fc: Khirbet Erha
+  m1d43c6: Tel Abel Beth Maacah
+  m9ed9ce: Penisola arabica
+  m388fd5: Tell Rifat
+  md70ac9: Atene
+  ma5019d: Berea
+  m0ba7d9: Ein Gedi
+  m7e7545: Galazia
+  mbdb4ea: Husan
+  m5ff141: Konya
+  mb00c2d: Tel Yarmuth
+  m597755: Rovine presso Denizli
+  ma6f6dc: Collina presso Hatunsaray
+  mb956fb: Tomba dei Patriarchi
+  m010fd0: Piana di Saron
+  mf51729: Luxor
+  mf8cbc7: Rovine presso Dalyan
+  m383ade: Sleikhat
+  m0cc900: Har Karkom
+  m1bfeb1: Jebel Sin Bishar
+  m5e6c65: Ras es-Safsafeh
+  mb78572: Jebel Serbal
+  me89f58: Monte Santa Caterina
+  m9cc606: Horbat Uza
+  m601c7a: Horbat Sefan
+  mcd60ca: Beit Rima
+  mfd4ced: Tell Abu Sus
+  m08a591: Altopiano armeno
+  m053067: Ain el-Gharabeh
+  mcf8dbb: Tell Azeimeh
+  m7c7d60: Horbat Qana
+  ma29c5f: Tel Kinrot
+  ma0ce5d: Horvat Devora
+  md37ab1: Wadi Gharandal
+  mdcf59e: Basilica del Santo Sepolcro
+  m9f20df: Al-Qaryatayn
+  m38734c: El-Iraq
+  mef1743: Khirbet Hora
+  m5bef14: Der
+  m5c006c: Khirbet es-Siyyagh
+  m26533b: Tel Dover
+  m5ebf84: Shufat
+  mf177df: Grotta di el-Jai
+  mc53c05: Debbet er-Ramleh
+  m43153c: Et-Tayibeh
+  ma10bc8: Khirbet Qeiyafa
+  ma11565: Khirbet Libb
+  m51f61c: Khirbet Aro'er
+  m52fd08: Tel Alil
+  m9dbf94: Khirbet et-Taiyiba
+  me57a9a: Ez-Zara
+  mef067e: Wadi al-Hasa
+  meea17f: Khirbet Khureise
+  mfe8eb2: Khirbet Belameh
+  m9d59ae: Tel Yeshua
+  m6653cf: Baalbek
+  m3cab9d: Kathrabba
+  m207993: Abarim
+  mc076de: Kerti Höyük
+  m495fa6: Al-'Al
+  mb69a90: Ain Shams
+  mdf4652: Tell el-Alayiq
+  m946fef: Khirbet Qedish
+  m1de942: Beit Ur al-Tahta
+  m035ff3: Madaba
+  mc1032c: Monte Ebal
+  m846c1f: Monte Garizim
+  m17d528: Ofel
+  m734ef6: Panfilia
+  ma16f57: Alto Egitto
+  m068207: Piscina di Siloe
+  mc9df1a: Tarso
+  m97a528: Tabal
+  m2b7883: Valle di Izreel
+  m2baf82: Tell Zif
+  m39f75d: Tell Jenin
+  m0edba0: Tel Zayit
+  md54909: Tell Rekhesh
+  m5c5bc6: Wadi al-Fara
+  med2628: Tel al-Mazar
+  mf4bdf8: Fiume Yarkon
+  mdb97ba: Horbat Rumah
+  mcffb24: Khirbet Anab es-Seghireh
+  mb6076b: Tel Afek
+  mbdd01a: Khirbet Atara
+  m77a636: Tell es-Saqati
+  mf937bb: Deir ed-Domeh
+  m34d981: Jiljilyya
+  m7e420c: Khirbet Yanun
+  m1b71cf: Fiume Litani
+  mfe591e: Tel Raqqat
+  mea83bf: Kokab el-Hawa
+  m88e0f9: Tall al-Ajjul
+  m2ce754: Ma'ale Akrabbim
+  me8ca72: Tel Ein Gev
+  mcc3d1b: Hizma
+  mf5b38d: Deir Hajla
+  m6bd6bd: Et-Tur
+  m28e9df: Khirbet es-Safsafa
+  m80e219: Khirbet Damun
+  m220d13: Araq ed-Deir
+  m6fa94d: Ana
+  m6df964: Khirbet Alin
+  m4aa3c1: Wadi Khadakhid
+  m15bc95: Tell Dibbine
+  m37903f: Kafr Aya
+  me95c9a: Medeineh
+  m743a5d: Taba
+  m612cff: Qanawat
+  m5d99f8: Khirbet Tatrit
+  m97b90d: Salbit
+  mf8bf50: Tell Hejaj
+  md6d253: Khirbet Mehna
+  mac1117: Et-Taiyibeh
+  ma4d11e: Dumat al-Jandal
+  m0d73da: Rodi
+  mf9ae18: Lago Timsah
+  m857530: Laghi Ballah
+  m0af4d6: Ghedera
+  m363196: Alessandria
+  m93f901: Rovine presso Yalvaç
+  m97d53f: Tel Afek
+  m24a920: Assur
+  mbc7ae2: Main
+  m1b2999: Khirbet et-Tubeiqa
+  m6703bb: Khirbet el-Kefireh
+  m13789b: Tel Dor
+  m322922: As-Samu
+  ma43757: Kefr Kenna
+  m641784: Saham al-Jawlan
+  m5fdc60: Tel Yokneam
+  mec5201: Filippi
+  m6badf8: Tell er-Retaba
+  me01c5c: Salkhad
+  md2430d: Tel Socho
+  m4e3e3e: Akhisar
+  mf569cb: Fortezza Antonia
+  m8eda70: Strada tra il Mar Morto e il Golfo di Aqaba
+  m5d9754: Sarafand
+  mc7ecc2: Tel Hasi
+  md98d47: Khirbet et-Tell
+  md42a9f: Tell Abu el-Kharaz
+  m1fb191: Ar-Ramtha
+  mae0f0a: As-Salt
+  m3bbe68: Tall al-Husun
+  m092d12: Al-Shaykh Saad
+  macb7a7: Horbat Anim
+  mea9d16: Haluza
+  m2f9843: Dahriya
+  m0052f9: Kom Yajuz
+  me0e0b1: Tel Sharuhen
+  m4ee7bd: Birein
+  mc8b658: Duleilat esh-Sharqiyeh
+  m6d8f34: Aynata
+  m927319: Bani Naim
+  m3ddc20: Khirbet Shifat
+  m0a99ab: Khirbet Hamideh
+  m315baa: Transgiordania
+  ma76eac: Anata
+  mc33ba8: Khirbet Deir es-Sidd
+  m51f0e2: Khirbet Minyeh
+  mfce9f4: Tell el-Kheleifeh
+  m31d269: Er-Remeil
+  m500952: Tel Adami
+  m394045: Umm el-Umdan
+  m52be1c: Khirbet al-Hadab
+  m1e912f: Khirbet Udena
+  m88b428: Khirbet Urmah
+  ma2bc43: Ez-Zuhur
+  m9f794c: Ras et-Tawil
+  m740e01: Khirbet el-Quweiqiyeh
+  md56681: Brital
+  m914c65: Safad el-Battikh
+  m64c4ca: Beit Qad
+  m7cc2d3: Tall Bleibel
+  m2de4c4: Sheikh esh-Shamsawi
+  me2704a: Tel Rosh
+  mfa2f28: Wadi Kofrein
+  m058079: Tell Tayinat
+  m266be5: Wadi al-Yabis
+  mae4fc5: Khirbet Umm al-Baqar
+  m9c3ada: Qumran
+  m6494e7: Khirbet Zanuta
+  m8774a2: Tel Dotan
+  mf0b0ed: Izbet Sartah
+  md543e2: Tel Shalaf
+  mf81851: Khirbet Umm Jina
+  mecc3c0: Khirbet Beit Jann
+  m6b1e6b: Khirbet Kakul
+  mcf3b52: Tel Gat Hefer
+  m896140: Jedireh
+  m14421f: Burj el-Bardawil
+  mabe7ea: Tel Hanaton
+  m00c3f3: Wadi Lussan
+  ma68969: Khirbet el-Harazan
+  mce9265: Alma
+  m14fc12: Tel Qashish
+  m008aaf: Tell el-Muhaffar
+  m87cf6c: Haitla
+  mfbdf61: Yavne
+  mb4119d: Khirbet Jubeiha
+  m96bbc3: Wadi Qana
+  m629bdb: Confluenza della valle del Cedron e della valle di Innom
+  m81b743: Tell Qisyon
+  mf18b52: Khirbet Qutteina
+  m98a6fe: Wadi el-Beidha
+  mf517cf: Dimnah
+  mf81ba4: Kuntillet Ajrud
+  m45592a: Khirbet en-Nabi
+  m99a8a8: Umm el-Hanafish
+  mcc38e2: Nimrin
+  m6b442d: Nuba
+  m182c86: Wadi en-Numeirah
+  m16aeb0: Wadi Fai
+  m701cd0: Ras Rihab
+  m4b3ec6: Resafa
+  m97c628: Rumana
+  m249c41: Naqb al-Biyar
+  mcc5f77: Sharma
+  ma064a5: Wadi Ratamah
+  mb277f4: Zaharet
+  m01c51b: Monti di Efraim
+  mf5e945: Khirbet es-Sira
+  m743096: El-Karm
+  m15d67c: Tel Shimron
+  m012b38: Sufeh
+  m23ba30: Bayt Nattif
+  m4ff96d: Tubas
+  m436462: Sana'a
+  mf10467: Wadi el-Melek
+  m1d647a: En Meron
+  m33ae26: Hanot Taggarim
+  m76cfaf: Wadi es-Salmaneh
+  m951680: Sadad
+  m934b82: Khirbet Salah
+  mf717ad: Huwwarin
+  me1eff3: Wadi Hasasah
+  m52f985: Tel Nahal
+  md6ea3b: Khirbet Tarrama
+  m134a42: Et-Taba
+  m2bcf45: Tel Avdon
+  m9ce4af: Khirbet Ataruz
+  m8f74a0: Ed-Dawaimeh
+  mdc8fda: Har Zevi
+  m4f28ee: Khirbet Bani Dar
+  m0ad6d5: Lifta
+  m8dec05: Jebel Nebi Harun
+  m7869a6: Wadi al-Aghaydira
+  mb291ec: Tell er-Reheil
+  m77308e: Rammun
+  m9f8a0e: Sardegna
+  m0c70c9: Cadice
+  ma9c898: Areopago
+  mc6835c: Jarabulus
+  m59ce29: Decapoli
+  mf937a6: Biblo
+  m6ee789: El-Ghuweir
+  m23c9bd: Gerasa
+  m09c5ef: Fiume Khabur
+  mf42fe6: Zahrat al-Kula
+  m161c59: Yatta
+  m8bd1e6: Tel Main
+  mcf7752: Mileto
+  me63472: Perge
+  m76ec6b: Frigia
+  m220f70: Ponto
+  mb0ee42: Sardi
+  m726943: Assuan
+  m94367d: Tell Abu Zarad
+  ma06c71: Tayma
+  me233de: Khirbet Tibnah
+  mdfba66: Beit Ur al-Fauqa
+  ma86896: Valle del Terebinto
+  m3edbe2: A sud della penisola di Lisan
+  ma12137: Khirbet Zanu
+  mbfa260: Jebel Aqra
+  mc40778: Tel Kabri
+  m843146: Khanazir
+  maa94ef: Feifa
+  m59af06: Nahal Gerar
+  mc7c3c3: Wadi Sudr
+  m8f0036: Gharandal
+  m64cdb6: Tell el-Kokah
+  mda9727: Eshtaol
+  mfcf75f: Uyun Musa
+  me1373f: Hartuv
+  me34143: Tell ed-Damiyeh
+  m6f1b7f: Eilat
+  m0c88eb: Al-Qantarah
+  mefdada: Khirbet Jazzir
+  m5e9487: Khirbet es-Sireh
+  md6cdbf: Yajuz
+  m020ed9: Khirbet a-Ra'i
+  me06e95: Khirbet Zuheiliqah
+  mffb2d6: Khirbet el-Medeineh
+  mf8005e: Khirbet Marjame
+  m73c038: Tel Haraqim
+  m73ed74: Khirbet Makhaz
+  m12013f: French Hill
+  mc1d54c: Tell el-Hamme
+  mc1b445: El-Mess'adiyye
+  me2a356: Khirbet Ai
+  mf838ec: Es-Saliyeh
+  m0432ec: Tell el-Khirbeh
+  m4b6ab1: Tall Nimrin
+  m7fba7d: Khirbet el-Qureiye
+  mbfc6a2: Fiume Karun
+  m4433dc: Sahab
+  m4ba77e: Alla foce del Giordano
+  m15dbe7: Tell Sheshubar
+  m2797e4: Tel el-Butmeh
+  m7624ff: Khirbet Ayun
+  m71a823: Khirbet Almit
+  mdaf25b: Be'er Nevatim
+  m702acc: Jebel Zabadani
+  m6cc8f5: Tra Aleppo e Carchemis
+  m0e49d8: Khirbet el-Hamam
+  m62a3cc: Islin
+  m64ba44: Idhna
+  m3b580c: Kafr Aqab
+  meb6b16: Strada tra Kades-Barnea e Arad
+  mbf104b: Rujm Ataruz
+  me6ce5d: Nahal Azal
+  m0c03bf: Al-Maghar
+  mcde611: Khirbet Sirisye
+  m8f1639: El-Bira
+  me36d66: Al-Khayriyya
+  mef8a69: Khirbet Ibtin
+  ma7c5ee: Khirbet Beit Anun
+  m6b5d69: Al-Maghtas
+  m2e40b3: Tall Irbid
+  m64de18: Jebel el-Biri
+  md7e418: Khirbet Dajun
+  m7bc13e: Khirbet Jelameh
+  mb63cde: Tel Emek
+  m8b46cd: Tel Salwim
+  mf2c1fd: Khirbet Ibziq
+  me99efe: Tra Dedan e Kedar
+  m5370b8: Khirbet Kafr Ana
+  m642313: Iksal
+  mede9e6: Ras Baalbek
+  mfa6017: Khan el-Hatrur
+  m17c007: Ad-Duhaybah
+  mda5d88: Tulul Dura
+  m626d73: Ain el-Habus
+  me05cc2: Khirbet es-Siyar el-Ghanam
+  m64a773: Rujm el-Jilimeh
+  m67fb06: El-Kauzeh
+  m553f4d: Khirbet ed-Deir
+  m07bd90: Mutraba
+  m710dd6: Khirbet el-Ater
+  m4c5498: Tra il Mar Morto e Petra
+  m3b782e: Khirbet Judraya
+  m2804fc: Jimzu
+  m0049f9: Khirbet en-Najjar
+  m76fa4c: Tell Afis
+  m5b2a6f: Hammat Tiberias
+  m30e667: Har Hezron
+  mdfba8c: Kharas
+  md2e197: Hoba
+  me84cc9: Tell Rachidiyeh
+  m9c165a: Khirbet el-Jemeijimeh
+  m988bed: Deir al-Ghawi
+  me08090: Tarqumiyeh
+  mab0d53: Dayr Nakhkhas
+  me42258: Rafat
+  md7dd73: Tel Yin'am
+  ma5abe3: Yanouh
+  mdfc63b: Yafa
+  md31523: Yehud
+  mee0e2f: Khirbet er-Raqqa
+  m32c21d: Tell Nebi Mend
+  ma1df2b: Qamm
+  mebc591: Al-Qarqar
+  mcbfe77: Khirbet el-Qureiyeh
+  m5f08dc: Horbat Lehem
+  mb35901: Horbat Kush
+  m2ae686: Khan el-Lubban
+  mde4c72: Luweizeh
+  m50ec84: Khirbet Qufin
+  me2fd7b: Khirbet el-Makhbiyeh
+  m411129: Deir Muheisin
+  m25d7b7: El-Malha
+  me83b88: Tell Thorah
+  mcf48ef: Jezzine
+  m1a9619: Khirbet Marus
+  mb1aeb3: Khirbet Abu Tabaq
+  m637584: Majdel Selem
+  m813647: Khirbet el-Mejdeleh
+  ma56250: El-Mugar
+  m656d70: Wadi Zerqa Main
+  m056b9b: Khirbet Yanin
+  mf63dc1: Khirbet en-Nuweiti
+  m7c1213: Khirbet el-Maqari
+  mda9249: Jifna
+  m629d7c: Khirbet Ein Fara
+  m8e724c: Farwah
+  m6dfa22: Fiume Awaj
+  m297f75: Finikas
+  m81b8c3: Wadi Baysh
+  mf8282c: Tell er-Reqqeit
+  m669e21: Ramyah
+  m92f044: Khirbet Zeitun er-Rameh
+  m925533: Tell el-Balat
+  mcaea80: Arbin
+  m860ae3: Tel Shalem
+  m222887: Khirbet esh-Shamsaniyat
+  m771704: Khirbet es-Samrah
+  m82e254: Khirbet Sumara
+  m876cb0: Tell as-Sawafir
+  m8ad145: Foce del Kison
+  m6129e7: Tell el-Ful
+  m346d1b: Sirin
+  m9a6508: Ain Sarah
+  mb04b16: Askar
+  mb1e1d7: Khirbet Tana el-Fauqa
+  m2558cc: Tafila
+  mdff682: Fiume Karkheh
+  m14e1a5: Wadi el-Arrub
+  m87e5dd: Wadi en-Nar
+  mf71f00: Wadi Abu ed-Diba
+  m54d17d: Wadi Safiyeh
+  m3f8658: Ein as-Sultan
+  m1dc3a0: Jebel Druze
+  m633a44: Khirbet Beit Amra
+  mb3789f: Deir Ghassaneh
+  m192131: Hattin
+  m51dd81: Khirbet ez-Zeifeh
+  m6924bf: Tila as-Safa
+  mea51a2: Isole dell'Egeo
+  mfcf16e: Khirbet er-Rasuni
+  mcb28e1: Khirbet el-Hara el-Fawqa
+  m468f4d: Jebel Abu Hasa
+  mbae631: Tell Feddan
+  m9f46c4: Tel Achziv
+  m9a12db: Adummim
+  m0b0e06: Acheldamà
+  m6dddbb: Wadi el-Esh
+  m18c2ee: Arabia Petrea
+  maf746a: Arvad
+  mce3faf: Asso
+  m5e72ac: Antalya
+  mf84eaf: Rujum al-Juththa
+  m29b4f7: Bitinia
+  m3da284: Muro Largo
+  maa532c: Nimrud
+  m6e1e42: Cappadocia
+  mf07963: Cencre
+  m4e5f05: Khirbet Karraza
+  m0b7a33: Tell Ibrahim
+  m14916e: Serabit el-Khadim
+  md512fb: Ein Haud
+  me2d27e: Uruk
+  m3f310c: Kali Limenes
+  m835caa: Getsemani
+  m276e13: Asia Minore
+  m5ebd3e: Hauran
+  mfac68f: Khirbet Irbadeh
+  m8bc671: Ionia
+  mb3f336: Strada del Re
+  m0a8dbd: Adana
+  m4b7659: Licaonia
+  mf3eae1: Jebel el-Musraq
+  m026471: Jebel Halaq
+  m25a76c: Monte Nebo
+  m58cfaf: Misia
+  m039ea4: Pafo
+  m6da49d: Tell el-Farama
+  m16099a: Bergama
+  m91dd93: Alaşehir
+  mfed480: Khirbet Faynan
+  m4381c8: Tel Shadud
+  m1876bb: Smirne
+  m6581f3: Hispania
+  mc49ef3: Tigri
+  mc620e5: Valle di Giosafat
+  mbbfbf9: Tabgha
+  mfaa53d: Umm ed-Debar
+  m1a0069: Tell el-Meleiha
+  m662b52: Tell el-Ajjul
+  mee9587: Khirbet Umm er-Rammamin
+  m5ed9eb: Khirbet Kuseife
+  m2564c2: Imaret el-Khureisheh
+  ma33762: Jebel es-Sabha
+  mabd3be: Jebel el-Hamrah
+  m1864ac: Poovar
+  m076642: Sofala
+  m2aae23: Sri Lanka
+  m6acc08: Goa
+  md51198: Tell el-Ekhsas
+  m28e80a: Khirbet Id el-Minya
+  m58ed36: Jebel Umm el-Bared
+  mbcd830: Biddu
+  mcd7d18: Tel Zeton
+  m1a53ab: Ain Hajlah
+  mfa9786: Alta valle di Hula
+  m63c810: Tell Umm Hamad
+  me867d9: Khirbet Salhab
+  mb94c78: Abu Ghosh
+  m538ee9: Tal'at ed-Damm
+  m010604: Tell Tuweiyil
+  m3f6c55: Tell Jemmeh
+  ma43a68: Jebel Araif en-Nakah
+  mabdf1d: Khirbet Bism
+  m339461: Khirbet Iskander
+  m70b396: Khirbet Umm el-Idham
+  m51d3ee: Tell Simadi
+  m7dace6: Wadi Sirhan
+  m003c09: Valle di Beit Netofa
+  md91e52: Wadi Ghuwayr
+  m0e5df3: Horbat Timna
+  mae3962: Khirbet et-Tabbaneh
+  mb397de: Tell al-Sheikh Isa
+  m63b310: Foce del Wadi Mujib
+  mb58c5d: Tawahin el-Sukkar
+  mbd8b3e: Hit
+  mf65c37: Khirbet Beit Maqdum
+  m6d35b1: Khirbet Bessum
+  mcae10f: Duleilat el-Gharbiyeh
+  md1381e: Khirbet Anab al-Kabir
+  m3b4f65: Khirbet Raddana
+  m4afea7: Beer Yeroham
+  mc853b5: Ein Karim
+  mf403c9: Hariss
+  m47cd69: Armenia
+  m93008b: Tell Bezqa
+  m0da21a: Khirbet ed-Dir
+  m28dc0a: Horbat Avimor
+  m65eaec: Mashhad
+  mb7457d: Khirbet Hirsha
+  m62d2f9: Khirbet Ibn Naser
+  m3f1a1b: Al-Burj
+  m9ccfee: Tell Safut
+  m18a77f: Khirbet Umm ed-Demineh
+  m602d3b: Umm el-Bayyara
+  mddda6a: Tall el-Mazar
+  ma3a2f4: Tell ed-Der
+  mde7fdc: Salim
+  m8c21f0: Sahel Geba
+  me7e68b: Khirbet Kan'an
+  m771405: Misna
+  m10d1d8: Rabba
+  m26e38a: Khirbet Wadi Illin
+  m87a302: Ein Umm esh-Sharayit
+  m4f3527: Tell esh-Sheikh Dhiab
+  me8b945: Ein Samia
+  m9a6aa4: Khirbet Buqei Dan
+  m4e728c: Wadi eth-Themed
+  m33c7a1: Tel Far
+  m48c2f6: Tell Umm Betin
+  m31c72e: Sheikh Mazghith
+  ma1b417: Khirbet Beit Lei
+  m349db7: Salman Pak
+  m034c0f: Khirbet Bir Zeit
+  m05f542: Khirbet er-Ras
+  m67b92b: Ain el-Ghuweir
+  m4813c9: Khirbet al-Simia
+  m52836d: Haraziya
+  mc399ee: Horbat Tayyav
+  m467962: En haYadid
+  m92876b: Ain Feshkah
+  m8f16f8: Khirbet Judeira
+  md0d53c: Hermel
+  m435836: Horbat Beer Shama
+  m4a75c5: Fiume Ayalon
+  m949860: Maroun al-Ras
+  mebf30f: Qashr el-Yahud
+  m54e816: Nahal Mikhmash
+  m9b1ea2: Tell el-Askar
+  m9fd5a0: Ras ez-Zemara
+  m36b854: Ras Umm et-Tala
+  mb74ba8: Rameh
+  m3b3c28: Sair
+  m516e72: Majdal
+  m22ee15: Dibseh
+  mc06f57: Khirbet el-Aujah el-Foqa
+  mccae46: Ain el-Madauwerah
+  m0021a3: Ain Sebta
+  mb3b1ec: Khirbet Nimreh
+  mfaa3c4: Struttura a gradini in pietra
+  mf1495c: Tell Abu Habba
+  ma7c343: Wadi as-Sakriyat
+  m329feb: Sumia
+  meb4627: Tawilan
+  m39ac0b: Fiume Barada
+  mac4103: Tel Akko
+  m6b0e6d: Dura
+  m904265: Mari Adriatico e Ionio
+  m8b49f2: Khirbet al-Mahalib
+  m7aac33: Anfipoli
+  m035790: Afqa
+  md0824c: Apollonia
+  m3542bf: Khirbet er-Rabiyeh
+  m8c6a25: Tel Govel
+  m8136bc: Jebel Asur
+  m48007f: Piscina di Betesda
+  m8d7caa: Deir al-Asal al-Fauqa
+  m108e64: Jumaiyil
+  ma3ac8b: Beit Lehem HaGlilit
+  me36c0a: Taffuh
+  m5b9e13: Khirbet Batneh
+  m651138: Kabul
+  m9e1f27: Gaudo
+  mb905e4: Kesla
+  mf3ab86: Chio
+  m259892: Cnido
+  m3f820b: Colosse
+  md321d4: Coo
+  m307896: Tel Shem
+  me8c716: Dalmazia
+  m6d408e: Hamadan
+  mdeec8e: Khirbet el-Khokh
+  m4241cc: Forum Appii
+  m18bec1: Umm Qais
+  meeeda4: Halhul
+  m90b454: Tell Ham
+  m8b5f56: Umm el-Awamid
+  m630b1d: Nahavand
+  m6851a6: Sorgente di Carod
+  m69a95d: Halbun
+  me32616: Gerapoli
+  meea8c6: Khirbet el-Huwarah
+  mff1fdf: Mesudat Har Hemet
+  mfde99e: Yamun
+  ma7df4b: Burj el-Isaneh
+  mea50a6: Qana
+  mb61e8a: Lasea
+  m9f6e4f: Licia
+  mcf2b79: Khirbat al-Beiyudat
+  m2672d3: Malta
+  md8e887: Qalaichi
+  m29fa9d: Teatro antico di Mitilene
+  m43ae95: Givat Ha More
+  m90275b: Al-Qastal
+  m846f8b: Catena del Libano
+  m6a8ed6: Monte del Tempio
+  m3918d8: Shoresh
+  m189d38: Demre
+  m0b02a7: Nein
+  m156588: Kavala
+  mb0b80f: Beit Nabala
+  me70c0c: Khirbet Beit Nesib esh-Sharqiyyeh
+  ma7fa5c: Nicopoli
+  mcb8622: Patara
+  m5c4548: Patmos
+  m518e57: Tell Basteh
+  mc58154: Acri
+  m45cb10: Pozzuoli
+  m984753: Ruheibeh
+  m366576: Reggio Calabria
+  m322666: Wadi Malaqi
+  m521458: Sakhl as-Sakhra
+  md31e56: Salamina
+  mf98a4e: Capo Sidero
+  m509072: Samo
+  md84660: Samotracia
+  ma386d1: Tra Gabaa e Rama
+  m094b0c: Rovine presso Samandağ
+  m9f98b7: Zafar
+  mbd896c: Khirbet Shuweikah
+  m6c43bf: Khirbet Shuweikat er-Ras
+  mb2d6b9: Via Diritta
+  m4f5a82: Siracusa
+  m0c0286: Golfo della Sirte
+  m6d87c0: Palmira
+  m8996a4: Tre Taverne
+  mc8c3f1: Tiberiade
+  m555d8f: Lajat
+  mbbc4a4: Capo Micale
+  m3f93dc: Valle di Ayalon
+  m845f5a: Fiume Sorek
+  mf00bed: Yarun
+  mb7e1e6: Khirbet Sabiyeh
+  mebc554: Scarpanto
+  m6efad3: Aqir
+  m80cdfd: Qibya
+  m790bc8: Wadi Sa'l
+  mbcb68c: Nahal Tabor
+  me8880b: Bir Mara
+  mc42132: Suf
+  m71af3b: Or Yehuda
+  me4950b: Khirbet Taiyibeh
+  m664dd9: Silat ad-Dhahr
+  ma868d6: Tell el-Daba
+  m26cac6: Wadi Feiran
+  m229fd6: Wadi el-Sheikh
+  m574018: Jebel Khuweiti
+  m4f87fb: Tell Matabi
+  m76d958: Wadi el-Milh
+  ma7c659: Wadi Arabah
+  m88cf7d: Tall Mustah
+  m0382c1: Khirbet Muleh
+  m2c4507: Rujm el-Bahr
+  mdc7c58: Tell Muhalhal
+  mc678e7: Burqa
+  m40c3db: Khirbet Suweimeh
+  m00b3ac: Al-Araj
+  m375464: Ain Qana
+  meb169c: El-Tor
+  me00c08: Wadi ar-Raynah
+  m4c3dce: Ismailia
+  m3f130c: Khirbet esh-Shuna
+  m92a579: Calvario di Taylor
+  m9282d4: Calvario di Gordon
+  m9277c7: Hader
+  ma17f5d: Ed-Deir
+  meab671: Khirbet Dhubab
+  m7ecccc: Khirbet Meidan
+  mce313b: Kasr ez-Zaferan
+  mfd0df0: Fiume Kura
+  m61f1c0: Valle di Amuq
+  mc2b727: Tell Meskene
+  mc4b280: Bayt Itab
+  ma6009a: Ibdar
+  m765dcc: Khirbet Hamid
+  m3a800c: Tell el-Mughanniya
+  m09cf7c: Tell Jawah
+  ma6ae0f: Khirbet Nefaah
+  m854cf3: Jebel el-Na'ameh
+  me3cdde: Pianura presso il monte Jineifa
+  mb02dce: Khirbet Da'uk
+  ma88b1e: Wadi Rummananeh
+  mac7629: Altopiano a est di Rammun
+  m488d9e: El-Marka
+  m679b51: El-Qaa
+  md89371: Jebel Maryam
+  m240af5: Şanlıurfa
+  m4c90cf: Porta di Giaffa
+  m6b8113: Burj el-Haska
+  mde1ac7: Ain Eshkali
+  m309c4d: Tell el-Hilu
+  m400b59: Ras el-Kharube
+  m67252f: Opis
+  m29c6b3: Tell Ishnayt
+  m1a17f8: Jebel Umm al-Aqarib
+  m22ecef: Fiq
+  ma3b16c: Tell Soreg
+  m5fab39: Ras Zukeir
+  mdc7fbf: Tell Haush
+  m728795: Hasbaya
+  m8e8c01: Ain Jedeideh
+  mbba0a8: Zahr al-Qais
+  m770e08: Al-Mahamdiyah
+  m6e08ca: Jebel Ataka
+  mf34f22: Jebel al-Murr
+  m9ad5c9: Wadi Umm Rajil
+  m108f0b: Abu Dis
+  mde0649: Khirbet Erqa Saqra
+  m77574e: Emmaus Nicopoli
+  md414e6: El-Qubeibeh
+  m7539ea: Artas
+  mbc6d8b: Khirbet Khamasa
+  m6ccac9: Khirbet Jadurah
+  m23435b: Indur
+  m354756: Khirbet Beit Fasal
+  m11f1d4: Umm el-Azam
+  maffe87: El-Khirbeh
+  mef7914: Khan el-Ahmar
+  m9584c0: Khirbet Kafr Jul
+  m471112: Khirbet Jala
+  m6af844: En Orahot
+  m4f224b: Marjaayoun
+  md1c5ba: Imma
+  m40f9b6: Muhayy
+  m0a0e06: Ein Yotvata
+  md4a2ba: Avdat
+  mc76c1b: Ma'alul
+  m886d32: Mezad Tamar
+  m749812: Mura settentrionali di Gerusalemme
+  mb01d09: Qa'an Naqb
+  mcf7f60: Umm Sweiwineh
+  m32279c: Erjan
+  m436ab5: Abu Tor
+  m1f6a45: Gilo
+  m6beb29: Mar Elias
+  m207212: Givat Ram
+  mfaeab5: Jebel Ataruz
+  m14060a: Bi'ina
+  m849e0d: Hinah
+  m66fe59: Kafr Rai
+  ma33a49: Erodion
+  m53b1e2: Tall er-Rama
+  m79b6a2: Margaliot
+  meb2c94: Kullan Köy
+  mb93e31: Çatalhöyük
+  mcd525c: Khirbet Fasayil
+  m92cd57: Wadi Rajib
+  m27dba0: Wadi Ajlun
+  m33f0d3: Migdal Tzedek
+  m9cad98: Alişar Höyük
+  mbc4b77: Hasankeyf
+  m10da0a: Nahal Yarmut
+  m31fd25: Ein et-Tuta
+  m6ef353: Jilya
+  mf3d94c: Tel Agra
+  m97dd72: Wadi esh-Shellal
+  m324585: Nes Ziona
+  m841f6c: Jab'a
+  mf5e563: Ramla
+  m9f38df: Jebel Aradeh
+  ma36bc2: Qoseimeh
+  m89ea7f: Foce del Wadi Jirafi
+  m24eba2: Wadi Umm Hashim
+  ma5c80b: Sbalat Abu Susein
+  m4badb5: Aleppo
+  m7ff2c3: Tell Amr
+  m5d4348: Tel Hefer
+  md09b31: Adlun
+  md62f3e: Yavne Yam
+  m7672b5: Yanun
+  ma725ef: Bab en-Naqb
+  m066eb7: Khirbet Marah el-Inab
+  m919c2c: Tell Miska
+  m9c2d3a: Athlit
+  ma66725: Wadi al-Joz
+  m1e3a5b: Tripoli
+  m7e4070: Medinet er-Ras
+  m95f21e: Minieh
+  m7470bc: Khirbet Madin
+  m7a849a: Beitunia
+  mf2e013: Monte Kabir
+  m566c41: Wadi Bedan
+  m30171a: Tell Qedua
+  m08bab0: Tell el-Borg
+  mc9b6df: Tell Ahmar
+  mda62fe: Khirbet Hamzeh
+  m6d0c02: Khirbet el-Yadudeh
+  m082a19: Ain Mesherfi
+  mc3372d: Khirbet el-Musheirifeh
+  ma2f3b8: Srifa
+  m191987: Rosh HaNikra
+  m13e189: Wadi abu Taqiya
+  mec700a: Jebel Akkar
+  m656236: Ras Shaqqa
+  m7aba95: Jebel Osha
+  mda25cf: Tell el-Wawiyat
+  m1d55ca: Wadi Nimrin
+  mdc66d1: Khirbet Musrab
+  m60da9d: Al-Rahba
+  meb41de: Resafa
+  mc92826: Wadi er-Rummun
+  m8a4637: Kuntilet el-Jerafi
+  mc8cf64: Wadi Abu Retemat
+  m977e59: Wadi er-Retame
+  m1359e9: Ain Rathmah
+  m3bbdc4: Bir es-Sawra
+  m4aa2b6: Wadi Rihab
+  me8dae9: Tell Barsina
+  meb51a3: Khirbet Samara
+  m0cf140: Til Assuri
+  mbc637b: Tal Afar
+  m5c4b2e: Tell Bashir
+  md20614: Wadi Abbelin
+  mb68774: Birket Hafour el-Ahmar
+  m9547d7: Nahal Arbel
+  mcfd44e: Nahal Amud
+  m4c17f6: Biar es-Sukker
+  m9c0974: Wadi Meiron
+  m5305fd: Lejjun
+  mc7de3d: Shajarat el-Kalb
+  m707927: Rujm Talat az-Zalma
+  mafdc8d: Wadi Umran
+  m34312e: Bir Madhkur
+  ma3078f: Tell el-Qos
+  m30e76f: Khirbet Buweib
+  mba5378: Khirbet Serada
+  md02dab: Khirbet Shab Salah
+  m1d589c: Naur
+  me5d4ed: Khirbet es-Suq
+  m49c3d8: Dhuluiya
+  m8970e8: Qadisiyah
+  m310ad8: Tell Muhammad
+  m0c93b5: Hajar ed-Damm
+  m39107b: Khirbet esh-Shiba
+  mbd0d86: Khirbet Idma
+  mc04a32: Khirbet el-Hadatha
+  m3a5f36: Khirbet Einun
+  mb1a2b2: Khirbet Khishash ed-Deir
+  ma29530: Khirbet el-Lon
+  m71c96a: Khirbet Dufnah
+  mec7389: Ain ez-Zarqa
+  m4e0815: Umm al-Amad
+  m1824ed: Nahal Yattir 205
+  m81d48b: Bir el-Esani
+  m6fa42d: Monte Amana
+  mc059af: Na'ura
+  m5ba7b5: Beit Hanina
+  m63c688: Khirbet Anim
+  m941775: Olam
+  m3348d5: Khirbet Ghuweina el-Fauqa
+  m738ed2: Khirbet el-Marajim
+  m3a7f35: Tel Esdar
+  mb60db9: Arraba
+  ma338f2: Batn Umm Nari
+  m6b2add: Tel Esur
+  mb6a27e: Pardes Hanna Karkur
+  ma365e4: Khirbet el-Ghashina
+  md1c4b3: Bir ed-Deir
+  m9e6f48: Ein Arik
+  md36a50: Strada tra il Mar Morto e Arad
+  mdcad79: Turmus Ayya
+  m991597: Kafr Thulth
+  m1e60f2: Sahre al-Gibiyeh
+  ma464b9: Fortezza di Nahal Avnon
+  ma7cea6: Beirut
+  m790eb4: Ain Bourdai
+  m283cb0: Ghantur
+  mf9827e: Khirbet Ras at-Tawil
+  mb89a0b: Ein esh-Shallala
+  m756fb4: Bayt Dajan
+  mcc3e37: Beit Shearim
+  m8b07e3: Khirbet Buseima
+  m1f0e6a: Khirbet et-Teim
+  m016ac4: Khirbet Abu Mudawwar
+  mdb9dc3: Wadi el-Ghafar
+  m6fd012: El-Abeidiyeh
+  m1d80b6: Shatta
+  m53aaf8: Khirbet ar-Ras
+  m7aee43: Tel Kelekh
+  maccbcf: Barazen
+  m0a1b7f: Azraq
+  mb4d8a2: Al-Ahsa
+  m5b3c96: Khirbet Hebra
+  m1faf41: Tell Ingharra
+  m4e816f: Bir Ali
+  m65e64e: Nusaybin
+  m16b26f: El-Muneitrah
+  ma69156: Yabrud
+  m6b3f60: Tell Jindaris
+  m902faf: Horbat Gluma
+  mf863e1: Tell Kilkis
+  m552c9f: Tell el-Yahudiye
+  ma726cc: Ein et-Turaba
+  m384043: Khirbet ed-Dilb
+  ma7acf2: Khirbet Kuweiziba
+  m173aa0: Khirbet Deir esh-Shams
+  m552789: Sograt ed-Debr
+  m558be2: Wadi ed-Debr
+  mc4b938: Tel Qeshet
+  m53c8b9: Khirbet edh-Dheiba
+  mff2983: Horbat Deragot
+  m27bf86: Hare Dimona 18
+  mc070bb: Dahab
+  m2ac933: Tall al-Lahm
+  m780e56: Horvat Ukkal
+  m2813c9: Khirbet el-Bira
+  m605ffe: Horbat Adar
+  m0b376e: Aitaroun
+  me0517f: Mazra
+  m58f5a3: Khirbet Jaljul
+  mf59ccc: Enkomi
+  me81f9f: Lissos
+  m370d20: Alqosh
+  m7b9c77: Tel Zelafon
+  m1a2cc7: Khirbet el-Rujm
+  me79fbd: Alein
+  m4f0971: Beit Anan
+  mb2786f: Ayl
+  m99f73c: Nekhel
+  mdeb751: Zona a nordest del Golfo di Aqaba
+  m1b9a63: Khirbet el-Udeise
+  m4a0a5b: Khirbet el-'Id
+  m497b7a: Wadi el-Kaziz
+  ma31a83: Khirbet Beit Ika
+  m165f71: Khirbet en-Nabi Bulus
+  m0acbcf: Khirbet el-Alya
+  m16ec79: Beit Jimal
+  mc16e40: Khirbet Umm edh-Dhiyab
+  m12bf64: Khirbet Judeida
+  m0d7f01: Ayun Qara
+  m4ed9a3: Horbat Hadran
+  me836d9: Khirbet Khallat Sam'a
+  mb0b198: Lubya
+  mb10309: Convento delle Suore di Sion
+  m85c404: Jiljuliyeh
+  m43a154: Rummanah
+  m6b34d9: Bath el-Battash
+  m600bb7: Khirbet ed-Dawwara
+  m10cac8: Khirbet Jedireh
+  m746d56: Jibiya
+  m5575e4: Awarta
+  m9c6cd5: Nilo Bianco
+  m4f8928: Fiume Diyala
+  mc70a1b: Tel Sheqef
+  m3a88d4: Homs
+  m71585a: Tel Alil occidentale
+  m896c2c: Tel Parur
+  m5f50c8: Zeila
+  md387f1: Ha'il
+  m64cc7d: Mesudat Ein Qedeis
+  ma40e88: Khirbet el-Qudeirat
+  m7ee55a: Mezudat Sheluhat Qadesh Barnea
+  m88807a: Masada
+  me405e1: Horbat HaRoah
+  m3ed4be: Monte Avnon
+  mfbfdc1: Tell el-Salihiye
+  m0784ed: Lahun
+  mc23d2c: Khirbet el-Hos
+  m67fe04: Kefr Yasif
+  m3ee2bc: Yaquq
+  mcb809c: Jebel Salih
+  m05288e: Atar Nehusha
+  mf594c1: Khirbet en-Nahas
+  m6234da: Bayt Thul
+  m41f9ee: Shilta
+  mb432b3: Horbat Yamma
+  me0e6bf: Yanuh
+  m6b2506: Khirbet Niha
+  mb066ed: Givat Ha Shoket
+  mb8e6c2: Tel Na'ama
+  me16f87: Azor
+  m7ef92e: Khirbet Fattuh
+  m303628: Qusin
+  m02b936: Karm er-Ras
+  m51ee32: Umm el-Ghozlan
+  me4d2f1: Hanzir
+  m47272b: Qumeim
+  m71114a: Al-Baqa'a
+  m4124c8: Wadi el-Qeini
+  m484d0f: El-Keryeh
+  m9678eb: Tel Abu Seleimeh
+  mba0fc3: Sheikh ez-Zuweid
+  m1e99db: Rasm el-Kushukliya
+  ma8cf35: Khirbet el-Mansurah
+  m4a7dca: Khirbet Sarona
+  mf7330e: Lubban Sherqujeh
+  m5e4e24: Beit Ummar
+  m7bf7d6: Sponda orientale del Mare di Galilea
+  mda572b: Khirbet Qanan Mugheimis
+  m8224e7: Neve Ilan
+  mcb0fbb: Khirbet el-Mukheizin
+  m40fd5b: Tell el-Ghaltah
+  m9c1486: Wadi Ara
+  m5c32ee: El-Mghairiye
+  m3deaee: En Iron
+  ma5b0a8: Khirbet 'Ara
+  m31f719: Tell Qasile
+  ma9a0ef: Mocha
+  m09d033: Mesena
+  mf746d4: Khirbet el-Mird
+  m8cf678: Torre israelita
+  m2119be: Khirbet el-Mejdel
+  m6e6e9b: Khirbet el-Qubba
+  m0ef9e3: Makrun
+  m79cc55: Fortezza di Nimrod
+  meafcb4: Arnah
+  m4897ac: Marjayoun
+  m96f630: Metula
+  m932e27: Khirbet Safiyeh
+  me622ed: Rujm el-Meshrefeh
+  mf620ab: Batn Harashe
+  meb16ed: Za'ura
+  mae4ba9: Wadi Za'arah
+  m4fc803: Jebel el-Kabir
+  mdea236: Jebel Salman
+  m4905aa: Khirbet Beit Mizza
+  mfdde01: Horbat Bet Elem
+  m9ca372: Al-Na'ani
+  m6a7f72: Khirbet Fered
+  m426f79: Wadi al-Wala
+  me4f7c8: Khirbet Abu Musarrah
+  m463f45: Khirbet Tarafayn
+  meb4f0d: Sak el-Farwein
+  m3a5cfe: Fiume Barbar
+  mf29181: Fiume Tora
+  m53a930: Loutro
+  m777895: Golfo Persico
+  m0978af: Wadi Bishah
+  m4dbf93: Wadi al-Rummah
+  mfae3ed: Gange
+  m20ca99: Sharjah
+  m395706: Horbat Darban
+  m6f51f7: Raba
+  m136387: Arabbuna
+  mbca505: Khirbet el-Fuliya
+  m6ae651: Er-Rameh
+  m1774fc: Khirbet el-Qar'a
+  mdcac4a: Tell er-Rahb
+  md73762: Horbat Kenesiyya
+  m002fb4: Sito 43 di Feldstein et al.
+  m204e7f: Sito 34 di Feldstein et al.
+  mfc8ad3: Acropoli di Rodi
+  m1aff9e: Wadi Saleim
+  m17c001: Bosforo
+  m051570: Khirbet al-Bira
+  me45184: Khirbet Fuqeiqis
+  m101cb4: Altopiano di Màdaba
+  m6152fc: Tell Abu Hawam
+  m8bb3e9: Paludi di Kebara
+  m99e9c8: Nahal Daliyya
+  mfb5941: Nahal Taninim
+  m1b66b9: Aseret
+  m1b0675: Ayun esh-Sha'in
+  m4a302d: Khirbet Mugheir
+  m7454a1: Serit el-Bella
+  m76e9d9: Sutnet er-Ruheibeh
+  m1ee8b0: Khirbet Tana et-Tahta
+  m2adb90: Khirbet Tililiya
+  mf43e77: Beit Irza
+  mc7cf8a: Rujm al-Hamri
+  m81f259: Tell Tuwani
+  m99eb3d: Khirbet Tafsah
+  mfd02fc: Izalla
+  mc750ee: Azalla
+  me12462: Tur Abdin
+  m5e0641: Azal
+  mf3710d: Az-Zu'alla
+  mcb263d: Beit Sira
+  m8ded6d: Khirbet Bereikut
+  mcbb4ce: Wadi ar-Rashrash
+  mb8f222: Wadi al-Juththa
+  m191379: Wadi Shaqq ad-Dab
+  mf4a85f: Wadi el-Feranj
+  m52acf7: Khirbet es-Samra
+  mfe4d03: Khirbet el-Mazari'a
+  m52bb94: Iraq el-Kharab
+  m68e2d1: Ain Seridah
+  m4b29ef: Khirbet Banat Barr
+  mf3284e: Surdah
+  mf06c0c: Ez-Zarat
+  m63822c: Lago di Urmia
+  m5dd1f8: Mezad Refed
+  mb3d1e9: Zifran
+  m54cf31: Al-Zaafaraniyah
+  me7b1fa: Merj Ekke
+  m917b6c: Souq Wadi Barada
+  mbbf7eb: Khirbet Adasa
+  m63c98b: Adulis
+  m974608: Horbat Arbel
+  m0288d5: Khirbet al-Yahud
+  m8f3972: Cartagine
+  m2ed2a7: Anjar
+  m108001: Tell Abu Shahrain
+  mda592c: Etruria
+  md11454: Jett
+  m7767c8: Kursi
+  m38cb91: Al-Abbasiyah
+  m2abfe7: Ihnasiyyah al-Madinah
+  m96cadb: Tell Belim
+  mecccdd: Palazzo di Erode a Gerusalemme
+  m3b4604: Kamid el-Loz
+  m963bb7: Al-Bad
+  me0b42d: Najran
+  m232ed8: Salona
+  me25924: Sparta
+  mf63b4b: Foce del Tigri
+  m910aae: Huelva
+  m81af16: Gürün
+  m2f36e0: Es-Samawa
+  mff5782: Tel Habuwa
+  m297af3: Tell el-Muqayyar
+  m428846: Bayburt
+  m771c29: Kibrit
+  m874804: Tall al-Qulzum
+  mf7135b: Fayid
+  m4b41ea: Sanandaj
+  md377f5: Anin
+  mcaedc7: Bint Jbeil
+  m605d72: Khirbet el-Biar
+  m1de7f8: Tell Aushariye
+people:
+  Aaron@Exo.4.14-Heb: Aronne
+  Abagtha@Est.1.10: Abagta
+  Abda@1Ki.4.6: Abda
+  Abdeel@Jer.36.26: Abdeèl
+  Abdi@1Ch.6.44: Abdi
+  Abdi@2Ch.29.12: Abdi
+  Abdi@Ezr.10.26: Abdi
+  Abdiel@1Ch.5.15: Abdiel
+  Abdon@1Ch.8.23: Abdon
+  Abdon@1Ch.8.30-: Abdon
+  Abdon@Jdg.12.13-: Abdon
+  Abel@Gen.4.2-Heb: Abele
+  Abi-albon@2Sa.23.31-1Ch: Abialbon
+  Abi@2Ki.18.2-2Ch: Abia
+  Abiah@1Ch.2.24: Abia
+  Abiathar@1Sa.22.20-Mrk: Abiatar
+  Abida@Gen.25.4-1Ch: Abida
+  Abidan@Num.1.11-: Abidan
+  Abiel@1Sa.9.1-1Ch: Abiel
+  Abiezer@1Ch.7.18: Abiezer
+  Abiezer@2Sa.23.27-1Ch: Abiezer
+  Abiezer@Num.26.30-Jdg: Abiezer
+  Abigail@1Sa.25.3-1Ch: Abigail
+  Abigail@2Sa.17.25-1Ch: Abigail
+  Abihail@1Ch.2.29: Abicàil
+  Abihail@1Ch.5.14: Abicàil
+  Abihail@2Ch.11.18: Abicàil
+  Abihail@Est.2.15-: Abicàil
+  Abihail@Num.3.35: Abicàil
+  Abihu@Exo.6.23-1Ch: Abiu
+  Abihud@1Ch.8.3: Abiud
+  Abijah@1Ch.24.10-Luk: Abia
+  Abijah@1Ch.7.8: Abia
+  Abijah@1Ki.14.1: Abia
+  Abijah@1Ki.14.31-Mat: Abia
+  Abijah@1Sa.8.2-1Ch: Abia
+  Abijah@Neh.10.7-: Abia
+  Abimael@Gen.10.28-1Ch: Abimaèl
+  Abimelech@Gen.20.2-: Abimelech
+  Abimelech@Jdg.8.31-2Sa: Abimelech
+  Abinadab@1Ki.4.11: Abinadab
+  Abinadab@1Sa.14.49-1Ch: Abinadab
+  Abinadab@1Sa.16.8-1Ch: Abinadab
+  Abinadab@1Sa.7.1-1Ch: Abinadab
+  Abinoam@Jdg.4.6-: Abinoam
+  Abiram@1Ki.16.34: Abiram
+  Abiram@Num.16.1-Psa: Abiram
+  Abishag@1Ki.1.3-: Abisag
+  Abishai@1Sa.26.6-1Ch: Abisai
+  Abishua@1Ch.6.4-Ezr: Abisua
+  Abishua@1Ch.8.4: Abisua
+  Abishur@1Ch.2.28-: Abisur
+  Abital@2Sa.3.4-1Ch: Abitàl
+  Abitub@1Ch.8.11: Abitub
+  Abiud@Mat.1.13: Abiùd
+  Abner@1Sa.14.50-1Ch: Abner
+  Abraham@Gen.11.26-1Pe: Abramo
+  Absalom@2Sa.3.3-Psa: Assalonne
+  Achaicus@1Co.16.17-: Acaico
+  Achan@Jos.7.1-1Ch: Acan
+  Achbor@2Ki.22.12-Jer: Acbor
+  Achbor@Gen.36.38-1Ch: Acbor
+  Achim@Mat.1.14: Achim
+  Achish@1Sa.21.10-Psa: Achis
+  Achsah@1Ch.2.49: Acsa
+  Achsah@Jos.15.16-Jdg: Acsa
+  Adah@Gen.26.34-: Ada
+  Adaiah@1Ch.8.21: Adaia
+  Adaiah@1Ch.9.12-Neh: Adaia
+  Adaiah@2Ch.23.1: Adaia
+  Adaiah@2Ki.22.1: Adaia
+  Adaiah@Ezr.10.29: Adaia
+  Adaiah@Ezr.10.39: Adaia
+  Adaiah@Neh.11.5: Adaia
+  Adalia@Est.9.8: Adalia
+  Adam@Gen.2.19-Jud: Adamo
+  Adbeel@Gen.25.13-1Ch: Adbeel
+  Addar@1Ch.8.3: Addar
+  Addi@Luk.3.28: Addi
+  Adiel@1Ch.27.25: Adiel
+  Adiel@1Ch.4.36: Adiel
+  Adiel@1Ch.9.12-Neh: Adiel
+  Adin@Ezr.2.15-Neh: Adin
+  Adin@Neh.10.16: Adin
+  Adina@1Ch.11.42: Adina
+  Adino@2Sa.23.8: Adino
+  Adlai@1Ch.27.29: Adlai
+  Admatha@Est.1.14: Admata
+  Adna@Ezr.10.30: Adna
+  Adna@Neh.12.15: Adna
+  Adnah@1Ch.12.20: Adna
+  Adnah@2Ch.17.14: Adna
+  Adoni-bezek@Jdg.1.5-: Adoni-Bezek
+  Adoni-zedek@Jos.10.1-: Adoni-Sedek
+  Adonijah@2Ch.17.8: Adonia
+  Adonijah@2Sa.3.4-1Ch: Adonia
+  Adonijah@Neh.10.16: Adonia
+  Adonikam@Ezr.2.13-Neh: Adonikam
+  Adoram@2Sa.20.24-2Ch: Adoram
+  Adrammelech@2Ki.17.31: Adrammelech
+  Adrammelech@2Ki.19.37-Isa: Adrammelech
+  Adriel@1Sa.18.19-2Sa: Adriel
+  Aeneas@Act.9.33-: Enea
+  Agabus@Act.11.28-: Agabo
+  Agag@1Sa.15.8-Est: Agag
+  Agag@Num.24.7: Agag
+  Agee@2Sa.23.11: Age
+  Agrippa@Act.25.13-: Agrippa
+  Agur@Pro.30.1: Agur
+  Ahab@1Ki.16.28-Mic: Acab
+  Ahab@Jer.29.21-: Acab
+  Aharhel@1Ch.4.8: Acarcel
+  Ahasbai@2Sa.23.34: Acasbai
+  Ahasuerus@Ezr.4.6-Dan: Assuero
+  Ahaz@1Ch.8.35-: Acaz
+  Ahaz@2Ki.15.38-Mat: Acaz
+  Ahaziah@1Ki.22.40-2Ch: Acazia
+  Ahaziah@2Ki.8.24-2Ch: Acazia
+  Ahban@1Ch.2.29: Acban
+  Aher@1Ch.7.12: Acher
+  Ahi@1Ch.5.15: Achi
+  Ahi@1Ch.7.34: Achi
+  Ahiah@Neh.10.26: Achia
+  Ahiam@2Sa.23.33-1Ch: Achiam
+  Ahian@1Ch.7.19: Achian
+  Ahiezer@1Ch.12.3: Achiezer
+  Ahiezer@Num.1.12-: Achiezer
+  Ahihud@1Ch.8.7: Achiud
+  Ahihud@Num.34.27: Achiud
+  Ahijah@1Ch.11.36: Achia
+  Ahijah@1Ch.2.25: Achia
+  Ahijah@1Ch.8.7: Achia
+  Ahijah@1Ki.11.29-2Ch: Achia
+  Ahijah@1Ki.15.27-2Ki: Achia
+  Ahijah@1Ki.4.3: Achia
+  Ahikam@2Ki.22.12-Jer: Achikam
+  Ahilud@2Sa.8.16-1Ch: Achilud
+  Ahimaaz@1Ki.4.15: Achimaas
+  Ahimaaz@1Sa.14.50: Achimaas
+  Ahimaaz@2Sa.15.27-1Ch: Achimaas
+  Ahiman@1Ch.9.17: Achiman
+  Ahiman@Num.13.22-Jdg: Achiman
+  Ahimelech@1Sa.14.3-Psa: Achimelech
+  Ahimelech@1Sa.26.6: Achimelech
+  Ahimelech@2Sa.8.17-1Ch: Achimelech
+  Ahimoth@1Ch.6.25-: Achimot
+  Ahinadab@1Ki.4.14: Achinadab
+  Ahinoam@1Sa.14.50: Achinoam
+  Ahinoam@1Sa.25.43-1Ch: Achinoam
+  Ahio@1Ch.8.14: Achio
+  Ahio@1Ch.8.31-: Achio
+  Ahio@2Sa.6.3-1Ch: Achio
+  Ahira@Num.1.15-: Achira
+  Ahisamach@Exo.31.6-: Achisamach
+  Ahishahar@1Ch.7.10: Achisacar
+  Ahishar@1Ki.4.6: Achisar
+  Ahithophel@2Sa.15.12-1Ch: Achitofel
+  Ahitub@1Ch.6.11-Ezr: Achitub
+  Ahitub@1Sa.14.3-: Achitub
+  Ahitub@2Sa.8.17-1Ch: Achitub
+  Ahlai@1Ch.11.41: Achlai
+  Ahlai@1Ch.2.31: Achlai
+  Ahoah@2Sa.23.9-1Ch: Acoa
+  Ahumai@1Ch.4.2: Acumai
+  Ahuzzam@1Ch.4.6: Acuzzam
+  Ahuzzath@Gen.26.26: Acuzzat
+  Aiah@2Sa.3.7-: Aia
+  Aiah@Gen.36.24-1Ch: Aia
+  Akan@Gen.36.27-1Ch: Acan
+  Akkub@1Ch.3.24: Akkub
+  Akkub@1Ch.9.17-Neh: Akkub
+  Akkub@Ezr.2.45: Akkub
+  Akkub@Neh.8.7: Akkub
+  Alemeth@1Ch.7.8: Alemet
+  Alemeth@1Ch.8.36-: Alemet
+  Alexander@1Ti.1.20-2Ti: Alessandro
+  Alexander@Act.19.33: Alessandro
+  Alexander@Act.4.6: Alessandro
+  Alexander@Mrk.15.21: Alessandro
+  Allon@1Ch.4.37: Allon
+  Almodad@Gen.10.26-1Ch: Almodad
+  Alphaeus@Mat.10.3-Act: Alfeo
+  Alvah@Gen.36.40-1Ch: Alva
+  Alvan@Gen.36.23-1Ch: Alvan
+  Amal@1Ch.7.35: Amal
+  Amalek@Gen.36.12-: Amalek
+  Amariah@1Ch.23.19-: Amaria
+  Amariah@1Ch.6.11-Ezr: Amaria
+  Amariah@1Ch.6.7-: Amaria
+  Amariah@2Ch.19.11: Amaria
+  Amariah@2Ch.31.15: Amaria
+  Amariah@Ezr.10.42: Amaria
+  Amariah@Neh.10.3-: Amaria
+  Amariah@Neh.11.4: Amaria
+  Amariah@Zep.1.1: Amaria
+  Amasa@2Ch.28.12: Amasa
+  Amasa@2Sa.17.25-1Ch: Amasa
+  Amasai@1Ch.12.18: Amasai
+  Amasai@1Ch.15.24: Amasai
+  Amasai@1Ch.6.25-: Amasai
+  Amasai@2Ch.29.12: Amasai
+  Amasiah@2Ch.17.16: Amasia
+  Amaziah@1Ch.4.34: Amazia
+  Amaziah@1Ch.6.45: Amazia
+  Amaziah@2Ki.12.21-2Ch: Amazia
+  Amaziah@Amo.7.10-: Amazia
+  Ami@Ezr.2.57-Neh: Ami
+  Amittai@2Ki.14.25-Jon: Amittai
+  Ammiel@1Ch.26.5: Ammiel
+  Ammiel@2Sa.9.4-: Ammiel
+  Ammiel@Num.13.12: Ammiel
+  Ammihud@1Ch.9.4: Ammiud
+  Ammihud@2Sa.13.37: Ammiud
+  Ammihud@Num.1.10-1Ch: Ammiud
+  Ammihud@Num.34.20: Ammiud
+  Ammihud@Num.34.28: Ammiud
+  Amminadab@1Ch.15.10-: Amminadab
+  Amminadab@Exo.6.23-Luk: Amminadab
+  Ammishaddai@Num.1.12-: Ammisaddai
+  Ammizabad@1Ch.27.6: Ammizabad
+  Amnon@1Ch.4.20: Amnon
+  Amnon@2Sa.3.2-1Ch: Amnon
+  Amok@Neh.12.7-: Amok
+  Amon@1Ki.22.26-2Ch: Amon
+  Amon@2Ki.21.18-Mat: Amon
+  Amos@Amo.1.1-: Amos
+  Amos@Luk.3.25: Amos
+  Amoz@2Ki.19.2-Isa: Amoz
+  Ampliatus@Rom.16.8: Ampliato
+  Amram@Exo.6.18-1Ch: Amram
+  Amram@Ezr.10.34: Amram
+  Amraphel@Gen.14.1-: Amrafel
+  Amzi@1Ch.6.46: Amsi
+  Amzi@Neh.11.12: Amsi
+  Anah@Gen.36.2-1Ch: Ana
+  Anaiah@Neh.10.22: Anaia
+  Anaiah@Neh.8.4: Anaia
+  Anak@Num.13.22-Jdg: Anak
+  Anammelech@2Ki.17.31: Anammelech
+  Anan@Neh.10.26: Anan
+  Anani@1Ch.3.24: Anani
+  Ananiah@Neh.3.23: Anania
+  Ananias@Act.23.2-: Anania
+  Ananias@Act.5.1-: Anania
+  Ananias@Act.9.10-: Anania
+  Anath@Jdg.3.31-: Anat
+  Anathoth@1Ch.7.8: Anatòt
+  Anathoth@Neh.10.19: Anatòt
+  Andrew@Mat.4.18-Act: Andrea
+  Andronicus@Rom.16.7: Andronico
+  Aner@Gen.14.13-: Aner
+  Aniam@1Ch.7.19: Aniam
+  Anna@Luk.2.36: Anna
+  Annas@Luk.3.2-Act: Anna
+  Anthothijah@1Ch.8.24: Antotia
+  Antipas@Rev.2.13: Antipa
+  Anub@1Ch.4.8: Anub
+  Apelles@Rom.16.10: Apelle
+  Aphiah@1Sa.9.1: Afia
+  Apollos@Act.18.24-Tit: Apollo
+  Apphia@Phm.1.2: Apfia
+  Aquila@Act.18.2-2Ti: Aquila
+  Ara@1Ch.7.38: Ara
+  Arad@1Ch.8.15: Arad
+  Arah@1Ch.7.39: Arach
+  Arah@Ezr.2.5-Neh: Arach
+  Arah@Neh.6.18: Arach
+  Aram@1Ch.7.34: Aram
+  Aram@Gen.10.22-1Ch: Aram
+  Aram@Gen.22.21: Aram
+  Aramitess@1Ch.7.14: Aramea
+  Aran@Gen.36.28-1Ch: Aran
+  Arba@Jos.14.15-: Arba
+  Archelaus@Mat.2.22: Archelao
+  Archippus@Col.4.17-Phm: Archippo
+  Ard@Gen.46.21: Ard
+  Ard@Num.26.40: Ard
+  Ardon@1Ch.2.18: Ardon
+  Areli@Gen.46.16-Num: Areli
+  Aretas@2Co.11.32: Areta
+  Argob@2Ki.15.25: Argob
+  Aridai@Est.9.9: Aridai
+  Aridatha@Est.9.8: Aridata
+  Arieh@2Ki.15.25: Arie
+  Ariel@Ezr.8.16: Ariel
+  Arioch@Dan.2.14-: Arioc
+  Arioch@Gen.14.1-: Arioc
+  Arisai@Est.9.9: Arisai
+  Aristarchus@Act.19.29-Phm: Aristarco
+  Aristobulus@Rom.16.10: Aristobulo
+  Armoni@2Sa.21.8: Armoni
+  Arnan@1Ch.3.21: Arnan
+  Arod@Gen.46.16-Num: Arodi
+  Arpachshad@Gen.10.22-Luk: Arfacsad
+  Artaxerxes@Ezr.4.7-Neh: Artaserse
+  Artemas@Tit.3.12: Artema
+  Arza@1Ki.16.9: Arza
+  Asa@1Ch.9.16: Asa
+  Asa@1Ki.15.8-Mat: Asa
+  Asahel@2Ch.17.8: Asael
+  Asahel@2Ch.31.13: Asael
+  Asahel@2Sa.2.18-1Ch: Asael
+  Asahel@Ezr.10.15: Asael
+  Asaiah@1Ch.15.6-: Asaia
+  Asaiah@1Ch.4.36: Asaia
+  Asaiah@1Ch.6.30: Asaia
+  Asaiah@1Ch.9.5: Asaia
+  Asaiah@2Ki.22.12-2Ch: Asaia
+  Asaph@1Ch.6.39-Psa: Asaf
+  Asaph@1Ch.9.15-Neh: Asaf
+  Asaph@2Ki.18.18-Isa: Asaf
+  Asaph@Neh.2.8: Asaf
+  Asarel@1Ch.4.16: Asareel
+  Asenath@Gen.41.45-: Asenat
+  Asharelah@1Ch.25.2-: Asarela
+  Ashbel@Gen.46.21-1Ch: Asbel
+  Asher@Gen.30.13-Rev: Aser
+  Ashhur@1Ch.2.24-: Asur
+  Ashkenaz@Gen.10.3-1Ch: Aschenàz
+  Ashpenaz@Dan.1.3: Aspenaz
+  Ashvath@1Ch.7.33: Asvat
+  Asiel@1Ch.4.35: Asiel
+  Asnah@Ezr.2.50: Asna
+  Aspatha@Est.9.7: Aspata
+  Asriel@1Ch.7.14: Asriel
+  Asriel@Num.26.31-Jos: Asriel
+  Asshur@Gen.10.22-1Ch: Assur
+  Assir@1Ch.6.23-: Assir
+  Assir@Exo.6.24-1Ch: Assir
+  Asyncritus@Rom.16.14: Asincrito
+  Atarah@1Ch.2.26: Atara
+  Ater@Ezr.2.16-Neh: Ater
+  Ater@Ezr.2.42-Neh: Ater
+  Ater@Neh.10.17: Ater
+  Athaiah@Neh.11.4: Ataia
+  Athaliah@1Ch.8.26: Atalia
+  Athaliah@2Ki.8.26-2Ch: Atalia
+  Athaliah@Ezr.8.7: Atalia
+  Athlai@Ezr.10.28: Atlai
+  Attai@1Ch.12.11: Attai
+  Attai@1Ch.2.35-: Attai
+  Attai@2Ch.11.20: Attai
+  Augustus@Luk.2.1-Act: Augusto
+  Azaliah@2Ki.22.3-2Ch: Asalia
+  Azaniah@Neh.10.9: Azania
+  Azarel@1Ch.12.6: Azareel
+  Azarel@1Ch.27.22: Azareel
+  Azarel@Ezr.10.41: Azareel
+  Azarel@Neh.12.36: Azareel
+  Azariah@1Ch.2.38-: Azaria
+  Azariah@1Ch.2.8: Azaria
+  Azariah@1Ch.6.10-Ezr: Azaria
+  Azariah@1Ch.6.13-Ezr: Azaria
+  Azariah@1Ki.4.2-1Ch: Azaria
+  Azariah@1Ki.4.5: Azaria
+  Azariah@2Ch.15.1: Azaria
+  Azariah@2Ch.21.2: Azaria
+  Azariah@2Ch.23.1a: Azaria
+  Azariah@2Ch.23.1b: Azaria
+  Azariah@2Ch.26.17-: Azaria
+  Azariah@2Ch.28.12: Azaria
+  Azariah@2Ch.29.12a: Azaria
+  Azariah@2Ch.29.12b: Azaria
+  Azariah@2Ch.31.10-: Azaria
+  Azariah@Dan.1.6-: Abdenego
+  Azariah@Neh.3.23-: Azaria
+  Azariah@Neh.7.7-: Azaria
+  Azariah@Neh.8.7: Azaria
+  Azariahu@2Ch.21.2: Azaria
+  Azaz@1Ch.5.8: Azaz
+  Azaziah@1Ch.15.21: Azazia
+  Azaziah@1Ch.27.20: Azazia
+  Azaziah@2Ch.31.13: Azazia
+  Azbuk@Neh.3.16: Azbuk
+  Azel@1Ch.8.37-: Asel
+  Azgad@Ezr.2.12-Neh: Azgad
+  Azgad@Neh.10.15: Azgad
+  Aziza@Ezr.10.27: Aziza
+  Azmaveth@1Ch.12.3: Azmàvet
+  Azmaveth@1Ch.27.25: Azmàvet
+  Azmaveth@1Ch.8.36-: Azmàvet
+  Azmaveth@2Sa.23.31-1Ch: Azmàvet
+  Azor@Mat.1.13-: Azor
+  Azriel@1Ch.27.19: Azriel
+  Azriel@1Ch.5.24: Azriel
+  Azriel@Jer.36.26: Azriel
+  Azrikam@1Ch.3.23: Azrikam
+  Azrikam@1Ch.8.38-: Azrikam
+  Azrikam@1Ch.9.14-Neh: Azrikam
+  Azrikam@2Ch.28.7: Azrikam
+  Azubah@1Ch.2.18-: Azuba
+  Azubah@1Ki.22.42-2Ch: Azuba
+  Azzan@Num.34.26: Azzan
+  Azzur@Ezk.11.1: Azzur
+  Azzur@Jer.28.1: Azzur
+  Azzur@Neh.10.17: Azzur
+  Baal-hanan@1Ch.27.28: Baal-Canan
+  Baal-hanan@Gen.36.38-1Ch: Baal-Canan
+  Baal-zebub@2Ki.1.2-: Baal-Zebub
+  Baal@1Ch.5.5: Baal
+  Baal@1Ch.8.30-: Baal
+  Baalis@Jer.40.14: Baalis
+  Baana@1Ki.4.12: Baana
+  Baana@1Ki.4.16: Baana
+  Baana@Neh.3.4: Baana
+  Baanah@2Sa.23.29-1Ch: Baana
+  Baanah@2Sa.4.2-: Baana
+  Baanah@Ezr.2.2-Neh: Baana
+  Baanah@Neh.10.27: Baana
+  Baara@1Ch.8.8: Baara
+  Baaseiah@1Ch.6.40: Baaseia
+  Baasha@1Ki.15.16-Jer: Baasa
+  Bakbakkar@1Ch.9.15: Bakbakar
+  Bakbuk@Ezr.2.51-Neh: Bakbuk
+  Bakbukiah@Neh.11.17-: Bakbukia
+  Balaam@Num.22.5-Rev: Balaam
+  Baladan@2Ki.20.12-Isa: Baladan
+  Balak@Num.22.2-Rev: Balak
+  Bani@1Ch.6.46: Bani
+  Bani@1Ch.9.4: Bani
+  Bani@2Sa.23.36: Bani
+  Bani@Ezr.10.34: Bani
+  Bani@Ezr.10.38: Bani
+  Bani@Ezr.2.10-Neh: Bani
+  Bani@Neh.10.14: Bani
+  Bani@Neh.11.22: Bani
+  Bani@Neh.3.17: Bani
+  Bani@Neh.9.4b-: Bani
+  Bar-jesus@Act.13.6-: Bar-Gesù
+  Barabbas@Mat.27.16-Jhn: Barabba
+  Barachel@Job.32.2-: Barachel
+  Barak@Jdg.4.6-Heb: Barak
+  Bariah@1Ch.3.22: Bariach
+  Barkos@Ezr.2.53-Neh: Barkos
+  Barnabas@Act.4.36-Col: Barnaba
+  Bartholomew@Mat.10.3-Act: Bartolomeo
+  Bartimaeus@Mrk.10.46: Bartimeo
+  Baruch@Jer.32.12-: Baruc
+  Baruch@Neh.10.6: Baruc
+  Baruch@Neh.11.5: Baruc
+  Baruch@Neh.3.20: Baruc
+  Barzillai@2Sa.17.27-Neh: Barzillai
+  Barzillai@2Sa.21.8: Barzillai
+  Barzillai@Ezr.2.61-Neh: Barzillai
+  Basemath@1Ki.4.15: Basemat
+  Bath-shua@Gen.38.2-1Ch: Bat-Sua
+  Bathsheba@2Sa.11.3-Psa: Betsabea
+  Bavvai@Neh.3.18: Bavvai
+  Bazluth@Ezr.2.52-Neh: Baslut
+  Bealiah@1Ch.12.5: Bealia
+  Bebai@Ezr.2.11-Neh: Bebai
+  Bebai@Ezr.8.11: Bebai
+  Bebai@Neh.10.15: Bebai
+  Becher@Gen.46.21-1Ch: Beker
+  Becher@Num.26.35: Beker
+  Becorath@1Sa.9.1: Becorat
+  Bedad@Gen.36.35-1Ch: Bedad
+  Bedan@1Ch.7.17: Bedan
+  Bedeiah@Ezr.10.35: Bedia
+  Beera@1Ch.7.37: Beera
+  Beerah@1Ch.5.6: Beera
+  Beeri@Gen.26.34: Beeri
+  Beeri@Hos.1.1: Beeri
+  Bela@1Ch.5.8: Bela
+  Bela@Gen.36.32-1Ch: Bela
+  Bela@Gen.46.21-1Ch: Bela
+  Belshazzar@Dan.5.1-: Baldassarre
+  Ben-Geber@1Ki.4.13: Ben-Gheber
+  Ben-abinadab@1Ki.4.11: Ben-Abinadab
+  Ben-ammi@Gen.19.38: Ben-Ammi
+  Ben-deker@1Ki.4.9: Ben-Deker
+  Ben-hadad@1Ki.15.18-Jer: Ben-Adad
+  Ben-hadad@2Ki.13.3-Amo: Ben-Adad
+  Ben-hadad@2Ki.6.24-: Ben-Adad
+  Ben-hail@2Ch.17.7: Ben-Cail
+  Ben-hanan@1Ch.4.20: Ben-Canan
+  Ben-hesed@1Ki.4.10: Ben-Chesed
+  Ben-hur@1Ki.4.8: Ben-Cur
+  Ben-zoheth@1Ch.4.20: Ben-Zochet
+  Ben@1Ch.15.18: Ben
+  Benaiah@1Ch.15.18-: Benaia
+  Benaiah@1Ch.27.34: Benaia
+  Benaiah@1Ch.4.36: Benaia
+  Benaiah@2Ch.20.14: Benaia
+  Benaiah@2Ch.31.13: Benaia
+  Benaiah@2Sa.23.30-1Ch: Benaia
+  Benaiah@2Sa.8.18-1Ch: Benaia
+  Benaiah@Ezk.11.1-: Benaia
+  Benaiah@Ezr.10.25: Benaia
+  Benaiah@Ezr.10.30: Benaia
+  Benaiah@Ezr.10.35: Benaia
+  Benaiah@Ezr.10.43: Benaia
+  Beninu@Neh.10.13: Beninu
+  Benjamin@1Ch.7.10: Beniamino
+  Benjamin@Ezr.10.32: Beniamino
+  Benjamin@Gen.35.18-Rev: Beniamino
+  Benjamin@Neh.12.34: Beniamino
+  Benjamin@Neh.3.23: Beniamino
+  Beno@1Ch.24.26-: Beno
+  Beor@Gen.36.32-1Ch: Beor
+  Beor@Num.22.5-2Pe: Beor
+  Bera@Gen.14.2: Bera
+  Beracah@1Ch.12.3: Beraca
+  Beraiah@1Ch.8.21: Beraia
+  Berechiah@1Ch.3.20: Berechia
+  Berechiah@1Ch.6.39-: Berechia
+  Berechiah@1Ch.9.16: Berechia
+  Berechiah@2Ch.28.12: Berechia
+  Berechiah@Neh.3.4-: Berechia
+  Berechiah@Zec.1.1-: Berechia
+  Bered@1Ch.7.20: Bered
+  Beriah@1Ch.23.10-: Beria
+  Beriah@1Ch.7.23: Beria
+  Beriah@1Ch.8.13-: Beria
+  Bernice@Act.25.13-: Berenice
+  Besai@Ezr.2.49-Neh: Besai
+  Besodeiah@Neh.3.6: Besodia
+  Beth-rapha@1Ch.4.12: Bet-Rafa
+  Bethuel@Gen.22.22-: Betuel
+  Bezai@Ezr.2.17-Neh: Besai
+  Bezai@Neh.10.18: Besai
+  Bezalel@Exo.31.2-2Ch: Besaleel
+  Bezalel@Ezr.10.30: Besaleel
+  Bezer@1Ch.7.37: Beser
+  Bichri@2Sa.20.1-: Bicri
+  Bidkar@2Ki.9.25: Bidkar
+  Bigtha@Est.1.10: Bigta
+  Bigvai@Ezr.2.14-Neh: Bigvai
+  Bigvai@Ezr.2.2-Neh: Bigvai
+  Bigvai@Neh.10.16: Bigvai
+  Bildad@Job.2.11-: Bildad
+  Bilgah@1Ch.24.14: Bilga
+  Bilgah@Neh.10.8-: Bilga
+  Bilhah@Gen.29.29-1Ch: Bila
+  Bilhan@1Ch.7.10: Bilan
+  Bilhan@Gen.36.27-1Ch: Bilan
+  Bilshan@Ezr.2.2-Neh: Bilsan
+  Bimhal@1Ch.7.33: Bimcal
+  Binea@1Ch.8.37-: Binea
+  Binnui@Ezr.10.30: Binnui
+  Binnui@Ezr.10.38: Binnui
+  Binnui@Ezr.8.33: Binnui
+  Binnui@Neh.3.24: Binnui
+  Birsha@Gen.14.2: Birsa
+  Birzaith@1Ch.7.31: Birzait
+  Bishlam@Ezr.4.7: Bislam
+  Bithiah@1Ch.4.18: Bitia
+  Biztha@Est.1.10: Bizta
+  Blastus@Act.12.20: Blasto
+  Boaz@Rut.2.1-Luk: Booz
+  Bocheru@1Ch.8.38-: Bocru
+  Bohan@Jos.15.6-: Bohan
+  Bukki@1Ch.6.5-Ezr: Bukki
+  Bukki@Num.34.22: Bukki
+  Bukkiah@1Ch.25.4-: Bukkia
+  Bunah@1Ch.2.25: Buna
+  Bunni@Neh.10.15: Bunni
+  Bunni@Neh.11.15: Bunni
+  Bunni@Neh.9.4: Bunni
+  Buz@1Ch.5.14: Buz
+  Buz@Gen.22.21: Buz
+  Buzi@Ezk.1.3: Buzi
+  Caiaphas@Mat.26.3-Act: Caifa
+  Cain@Gen.4.1-Jud: Caino
+  Cainan@Luk.3.36: Cainan
+  Calcol@1Ch.2.6: Calcol
+  Calcol@1Ki.4.31: Calcol
+  Caleb@1Ch.2.9-: Caleb
+  Caleb@Num.13.6-1Ch: Caleb
+  Canaan@Gen.9.18-1Ch: Canaan
+  Canaanite_woman@Gen.46.10-Exo: Donna cananea
+  Carkas@Est.1.10: Carcas
+  Carmi@Gen.46.9-1Ch: Carmi
+  Carmi@Jos.7.1-1Ch: Carmi
+  Carpus@2Ti.4.13: Carpo
+  Carshena@Est.1.14: Carsena
+  Chedorlaomer@Gen.14.1-: Chedorlaomer
+  Chelal@Ezr.10.30: Chelal
+  Chelub@1Ch.27.26: Chelub
+  Chelub@1Ch.4.11: Chelub
+  Cheluhi@Ezr.10.35: Cheluì
+  Chenaanah@1Ch.7.10: Chenaana
+  Chenaanah@1Ki.22.11-2Ch: Chenaana
+  Chenani@Neh.9.4: Chenani
+  Chenaniah@1Ch.15.22-: Chenania
+  Cheran@Gen.36.26-1Ch: Cheran
+  Chesed@Gen.22.22: Chesed
+  Chileab@2Sa.3.3-1Ch: Chileab
+  Chilion@Rut.1.2-: Chilion
+  Chimham@2Sa.19.37-: Chimam
+  Chislon@Num.34.21: Chislon
+  Chloe@1Co.1.11: Cloe
+  Chuza@Luk.8.3: Cuza
+  Claudia@2Ti.4.21: Claudia
+  Claudius@Act.11.28-: Claudio
+  Clement@Php.4.3: Clemente
+  Col-hozeh@Neh.11.5: Col-Cozeh
+  Col-hozeh@Neh.3.15: Col-Cozeh
+  Conaniah@2Ch.31.12-: Conania
+  Cornelius@Act.10.1-: Cornelio
+  Cosam@Luk.3.28: Cosam
+  Cozbi@Num.25.15-: Cozbi
+  Crescens@2Ti.4.10: Crescente
+  Crispus@Act.18.8-1Co: Crispo
+  Cush@Gen.10.6-1Ch: Cus
+  Cushan-rishathaim@Jdg.3.8-: Cusan-Rishataim
+  Cushi@Jer.36.14: Cusi
+  Cushi@Zep.1.1: Cusi
+  Cyrus@2Ch.36.22-Dan: Ciro
+  Dalphon@Est.9.7: Dalfon
+  Damaris@Act.17.34: Damaris
+  Dan@Gen.30.6-1Ch: Dan
+  Daniel@Ezk.14.14-Mrk: Daniele
+  Daniel@Ezr.8.2-Neh: Daniele
+  Dara@1Ch.2.6: Dara
+  Darda@1Ki.4.31: Darda
+  Darius@Dan.5.31-: Dario
+  Darius@Ezr.4.5-Zec: Dario
+  Darius@Neh.12.22: Dario
+  Darkon@Ezr.2.56-Neh: Darkon
+  Dathan@Num.16.1-Psa: Datan
+  David@Rut.4.17-Rev: Davide
+  Debir@Jos.10.3: Debir
+  Deborah@Gen.35.8: Debora
+  Deborah@Jdg.4.4-: Debora
+  Dedan@Gen.10.7-1Ch: Dedan
+  Dedan@Gen.25.3-1Ch: Dedan
+  Deker@1Ki.4.9: Deker
+  Delaiah@1Ch.24.18: Delaia
+  Delaiah@1Ch.3.24: Delaia
+  Delaiah@Ezr.2.60-Neh: Delaia
+  Delaiah@Jer.36.12-: Delaia
+  Delaiah@Neh.6.10: Delaia
+  Delilah@Jdg.16.4-: Dalila
+  Demas@Col.4.14-Phm: Dema
+  Demetrius@Act.19.24-3Jn: Demetrio
+  Deuel@Num.1.14-: Deuel
+  Diblaim@Hos.1.3: Diblaim
+  Dibri@Lev.24.11: Dibri
+  Diklah@Gen.10.27-1Ch: Dikla
+  Dinah@Gen.30.21-: Dina
+  Dinaites@Ezr.4.9: Dinaiti
+  Dionysius@Act.17.34: Dionigi
+  Diotrephes@3Jn.1.9: Diotrefe
+  Dishan@Gen.36.21-1Ch: Disan
+  Dishon@Gen.36.21-1Ch: Dison
+  Dishon@Gen.36.25-1Ch: Dison
+  Dodavahu@2Ch.20.37: Dodava
+  Dodo@2Sa.23.24-1Ch: Dodo
+  Dodo@2Sa.23.9-1Ch: Dodo
+  Dodo@Jdg.10.1: Dodo
+  Doeg@1Sa.21.7-Psa: Doeg
+  Drusilla@Act.24.24: Drusilla
+  Dumah@Gen.25.14-1Ch: Duma
+  Ebal@Gen.36.23-1Ch: Ebal
+  Ebed-melech@Jer.38.7-: Ebed-Melech
+  Ebed@Ezr.8.6: Ebed
+  Ebed@Jdg.9.26-: Ebed
+  Eber@1Ch.5.13: Eber
+  Eber@1Ch.8.12: Eber
+  Eber@1Ch.8.22: Eber
+  Eber@Gen.10.21-Luk: Eber
+  Eber@Neh.12.20: Eber
+  Eden@2Ch.29.12: Eden
+  Eden@2Ch.31.15: Eden
+  Eder@1Ch.23.23-: Eder
+  Eder@1Ch.8.15: Eder
+  Eglah@2Sa.3.5-1Ch: Egla
+  Eglon@Jdg.3.12-: Eglon
+  Egypt@Gen.10.6-1Ch: Mizraim
+  Ehud@1Ch.7.10: Eud
+  Ehud@Jdg.3.15-1Ch: Eud
+  Eker@1Ch.2.27: Eker
+  Ela@1Ki.4.18: Ela
+  Elah@1Ch.4.15: Ela
+  Elah@1Ch.9.8: Ela
+  Elah@1Ki.16.6-: Ela
+  Elah@2Ki.15.30-: Ela
+  Elah@Gen.36.41-1Ch: Ela
+  Elam@1Ch.26.3: Elam
+  Elam@1Ch.8.24: Elam
+  Elam@Ezr.2.7-Neh: Elam
+  Elam@Gen.10.22-1Ch: Elam
+  Elam@Neh.10.14: Elam
+  Elam@Neh.12.42: Elam
+  Elasah@Ezr.10.22: Elasa
+  Elasah@Jer.29.3: Elasa
+  Eldaah@Gen.25.4-1Ch: Eldaa
+  Eldad@Num.11.26-: Eldad
+  Elead@1Ch.7.21: Elead
+  Eleadah@1Ch.7.20: Eleada
+  Eleasah@1Ch.2.39-: Eleasa
+  Eleasah@1Ch.8.37-: Eleasa
+  Eleazar@1Ch.23.21-: Eleazaro
+  Eleazar@1Sa.7.1: Eleazaro
+  Eleazar@2Sa.23.9-1Ch: Eleazaro
+  Eleazar@Exo.6.23-Ezr: Eleazaro
+  Eleazar@Ezr.10.25: Eleazaro
+  Eleazar@Ezr.8.33: Eleazaro
+  Eleazar@Mat.1.15: Eleazaro
+  Eleazar@Neh.12.42: Eleazaro
+  Elhanan@2Sa.21.19-1Ch: Elcanan
+  Elhanan@2Sa.23.24-1Ch: Elcanan
+  Eli@1Sa.1.3-1Ki: Eli
+  Eliab@1Ch.12.9: Eliab
+  Eliab@1Ch.15.18-: Eliab
+  Eliab@1Sa.16.6-2Ch: Eliab
+  Eliab@Num.1.9-: Eliab
+  Eliab@Num.16.1-Deu: Eliab
+  Eliada@1Ki.11.23: Eliada
+  Eliada@2Ch.17.17: Eliada
+  Eliada@2Sa.5.16-1Ch: Eliada
+  Eliahba@2Sa.23.32-1Ch: Eliacba
+  Eliakim@2Ki.18.18-Isa: Eliakim
+  Eliakim@Luk.3.30: Eliakim
+  Eliakim@Mat.1.13: Eliakim
+  Eliakim@Neh.12.41: Eliakim
+  Eliam@2Sa.11.3-1Ch: Eliam
+  Eliam@2Sa.23.34: Eliam
+  Eliasaph@Num.1.14-: Eliasaf
+  Eliasaph@Num.3.24: Eliasaf
+  Eliashib@1Ch.24.12: Eliasib
+  Eliashib@1Ch.3.24: Eliasib
+  Eliashib@Ezr.10.24: Eliasib
+  Eliashib@Ezr.10.27: Eliasib
+  Eliashib@Ezr.10.36: Eliasib
+  Eliashib@Ezr.10.6: Eliasib
+  Eliashib@Neh.12.10-: Eliasib
+  Eliashib@Neh.13.4-: Eliasib
+  Eliashib@Neh.3.1-: Eliasib
+  Eliathah@1Ch.25.4-: Eliata
+  Elidad@Num.34.21: Elidad
+  Eliehoenai@1Ch.26.3: Elioenai
+  Eliehoenai@Ezr.8.4: Elioenai
+  Eliel@1Ch.11.46: Eliel
+  Eliel@1Ch.11.47: Eliel
+  Eliel@1Ch.12.11: Eliel
+  Eliel@1Ch.15.9-: Eliel
+  Eliel@1Ch.5.24: Eliel
+  Eliel@1Ch.8.20: Eliel
+  Eliel@1Ch.8.22: Eliel
+  Eliel@2Ch.31.13: Eliel
+  Elienai@1Ch.8.20: Elienai
+  Eliezer@1Ch.15.24: Eliezer
+  Eliezer@1Ch.27.16: Eliezer
+  Eliezer@1Ch.7.8: Eliezer
+  Eliezer@2Ch.20.37: Eliezer
+  Eliezer@Exo.18.4-1Ch: Eliezer
+  Eliezer@Ezr.10.18: Eliezer
+  Eliezer@Ezr.10.23: Eliezer
+  Eliezer@Ezr.10.31: Eliezer
+  Eliezer@Ezr.8.16: Eliezer
+  Eliezer@Gen.15.2: Eliezer
+  Eliezer@Luk.3.29: Eliezer
+  Elihoreph@1Ki.4.3: Elicoref
+  Elihu@1Ch.12.20: Eliu
+  Elihu@1Ch.26.7: Eliu
+  Elihu@1Ch.27.18: Eliu
+  Elihu@1Sa.1.1-1Ch: Eliu
+  Elihu@Job.32.2-: Eliu
+  Elijah@1Ch.8.27: Elia
+  Elijah@1Ki.17.1-Jas: Elia
+  Elijah@Ezr.10.21: Elia
+  Elijah@Ezr.10.26: Elia
+  Elika@2Sa.23.25: Elika
+  Elimelech@Rut.1.2-: Elimelech
+  Elioenai@1Ch.3.23-: Elioenai
+  Elioenai@1Ch.4.36: Elioenai
+  Elioenai@1Ch.7.8: Elioenai
+  Elioenai@Ezr.10.22: Elioenai
+  Elioenai@Ezr.10.27: Elioenai
+  Elioenai@Neh.12.41: Elioenai
+  Eliphal@1Ch.11.35: Elifal
+  Eliphaz@Gen.36.4-1Ch: Elifaz
+  Eliphaz@Job.2.11-: Elifaz
+  Eliphelehu@1Ch.15.18-: Elifelehu
+  Eliphelet@1Ch.8.39: Elifelet
+  Eliphelet@2Sa.23.34: Elifelet
+  Eliphelet@2Sa.5.16-1Ch: Elifelet
+  Eliphelet@Ezr.10.33: Elifelet
+  Eliphelet@Ezr.8.13: Elifelet
+  Elisha@1Ki.19.16-Luk: Eliseo
+  Elishah@Gen.10.4-1Ch: Elisa
+  Elishama@1Ch.2.41: Elisama
+  Elishama@2Ch.17.8: Elisama
+  Elishama@2Ki.25.25-Jer: Elisama
+  Elishama@2Sa.5.16-1Ch: Elisama
+  Elishama@Jer.36.12-: Elisama
+  Elishama@Num.1.10-1Ch: Elisama
+  Elishaphat@2Ch.23.1: Elisafat
+  Elisheba@Exo.6.23: Elisabetta
+  Elishua@2Sa.5.15-1Ch: Elisua
+  Eliud@Mat.1.14-: Eliud
+  Elizabeth@Luk.1.5-: Elisabetta
+  Elizaphan@Exo.6.22-2Ch: Elisafan
+  Elizaphan@Num.34.25: Elisafan
+  Elizur@Num.1.5-: Elisur
+  Elkanah@1Ch.12.6: Elkana
+  Elkanah@1Ch.15.23: Elkana
+  Elkanah@1Ch.6.25-: Elkana
+  Elkanah@1Ch.6.26-: Elkana
+  Elkanah@1Ch.9.16: Elkana
+  Elkanah@1Sa.1.1-1Ch: Elkana
+  Elkanah@2Ch.28.7: Elkana
+  Elkanah@Exo.6.24-1Ch: Elkana
+  Elmadam@Luk.3.28: Elmadam
+  Elnaam@1Ch.11.46: Elnaam
+  Elnathan@2Ki.24.8: Elnatan
+  Elnathan@Ezr.8.16a: Elnatan
+  Elnathan@Ezr.8.16b: Elnatan
+  Elnathan@Ezr.8.16c: Elnatan
+  Elnathan@Jer.26.22-: Elnatan
+  Elon@Gen.26.34-: Elon
+  Elon@Gen.46.14-Num: Elon
+  Elon@Jdg.12.11-: Elon
+  Elpaal@1Ch.8.11-: Elpaal
+  Elpelet@1Ch.3.6-: Elpelet
+  Eluzai@1Ch.12.5: Eluzai
+  Elzabad@1Ch.12.12: Elzabad
+  Elzabad@1Ch.26.7: Elzabad
+  Enan@Num.1.15-: Enan
+  Enoch@Gen.4.17-: Enoc
+  Enoch@Gen.5.18-Jud: Enoc
+  Enosh@Gen.4.26-Luk: Enos
+  Epaenetus@Rom.16.5: Epeneto
+  Epaphras@Col.1.7-Phm: Epafra
+  Epaphroditus@Php.2.25-: Epafrodito
+  Ephah@1Ch.2.46: Efa
+  Ephah@1Ch.2.47: Efa
+  Ephah@Gen.25.4-1Ch: Efa
+  Ephai@Jer.40.8: Efai
+  Epher@1Ch.4.17: Efer
+  Epher@1Ch.5.24: Efer
+  Epher@Gen.25.4-1Ch: Efer
+  Ephlal@1Ch.2.37: Eflal
+  Ephraim@Gen.41.52-Zec: Efraim
+  Ephrathah@Rut.1.2-1Ch: Efrata
+  Ephron@Gen.23.8-: Efron
+  Er@1Ch.4.21: Er
+  Er@Gen.38.3-1Ch: Er
+  Er@Luk.3.28: Er
+  Eran@Num.26.36: Eran
+  Erastus@Act.19.22-2Ti: Erasto
+  Eri@Gen.46.16-Num: Eri
+  Esarhaddon@2Ki.19.37-Isa: Assaraddon
+  Esau@Gen.25.25-Heb: Esaù
+  Eshban@Gen.36.26-1Ch: Esban
+  Eshcol@Gen.14.13-: Escol
+  Eshton@1Ch.4.11-: Estòn
+  Esli@Luk.3.25: Esli
+  Esther@Est.2.7-: Ester
+  Ethan@1Ch.2.6-: Etan
+  Ethan@1Ki.4.31-Psa: Etan
+  Ethbaal@1Ki.16.31: Et-Baal
+  Ethnan@1Ch.4.7: Etnan
+  Eubulus@2Ti.4.21: Eubulo
+  Eunice@2Ti.1.5: Eunice
+  Euodia@Php.4.2: Evodia
+  Eutychus@Act.20.9: Eutico
+  Eve@Gen.3.20-1Ti: Eva
+  Evi@Num.31.8-Jos: Evi
+  Evil-merodach@2Ki.25.27-Jer: Evil-Merodac
+  Ezbai@1Ch.11.37: Ezbai
+  Ezbon@1Ch.7.7: Esbon
+  Ezbon@Gen.46.16-Num: Esbon
+  Ezekiel@Ezk.1.3-: Ezechiele
+  Ezer@1Ch.12.9: Ezer
+  Ezer@1Ch.4.4: Ezer
+  Ezer@1Ch.7.21: Ezer
+  Ezer@Gen.36.21-1Ch: Ezer
+  Ezer@Neh.12.42: Ezer
+  Ezer@Neh.3.19: Ezer
+  Ezra@Ezr.7.1-Neh: Esdra
+  Ezra@Neh.12.1-: Esdra
+  Ezrah@1Ch.4.17: Ezra
+  Ezri@1Ch.27.26: Ezri
+  Felix@Act.23.24-: Felice
+  Festus@Act.24.27-: Festo
+  Fortunatus@1Co.16.17-: Fortunato
+  Gaal@Jdg.9.26-: Gaal
+  Gabbai@Neh.11.8: Gabbai
+  Gad@1Sa.22.5-2Ch: Gad
+  Gad@Gen.30.11-Rev: Gad
+  Gaddi@Num.13.11: Gaddi
+  Gaddiel@Num.13.10: Gaddiel
+  Gadi@2Ki.15.14-: Gadi
+  Gaham@Gen.22.24: Gacam
+  Gahar@Ezr.2.47-Neh: Gacar
+  Gaius@3Jn.1.1: Gaio
+  Gaius@Act.19.29: Gaio
+  Gaius@Act.20.4: Gaio
+  Gaius@Rom.16.23-1Co: Gaio
+  Galal@1Ch.9.15: Galal
+  Galal@1Ch.9.16-Neh: Galal
+  Gallio@Act.18.12-: Gallione
+  Gamaliel@Act.5.34-: Gamaliele
+  Gamaliel@Num.1.10-: Gamaliele
+  Gamul@1Ch.24.17: Gamul
+  Gareb@2Sa.23.38-1Ch: Gareb
+  Gatam@Gen.36.11-1Ch: Gatam
+  Gazez@1Ch.2.46a: Gazez
+  Gazez@1Ch.2.46b: Gazez
+  Gazzam@Ezr.2.48-Neh: Gazzam
+  Geber@1Ki.4.19: Gheber
+  Gedaliah@1Ch.25.3-: Godolia
+  Gedaliah@2Ki.25.22-Jer: Godolia
+  Gedaliah@Ezr.10.18: Godolia
+  Gedaliah@Jer.38.1: Godolia
+  Gedaliah@Zep.1.1: Godolia
+  Gedor@1Ch.8.31-: Ghedor
+  Gehazi@2Ki.4.12-: Giezi
+  Gemalli@Num.13.12: Gemalli
+  Gemariah@Jer.29.3: Gemaria
+  Gemariah@Jer.36.10-: Gemaria
+  Genubath@1Ki.11.20: Genubat
+  Gera@1Ch.8.3: Gera
+  Gera@1Ch.8.7: Gera
+  Gera@2Sa.16.5-1Ki: Gera
+  Gera@Gen.46.21-1Ch: Gera
+  Gershom@Exo.2.22-1Ch: Gherson
+  Gershom@Ezr.8.2: Gherson
+  Gershon@Gen.46.11-2Ch: Gherson
+  Geshan@1Ch.2.47: Ghesan
+  Geshem@Neh.2.19-: Geshem
+  Gether@Gen.10.23-1Ch: Gheter
+  Geuel@Num.13.15: Geuel
+  Gibea@1Ch.2.49: Gabaa
+  Giddalti@1Ch.25.4-: Giddalti
+  Giddel@Ezr.2.47-Neh: Giddel
+  Giddel@Ezr.2.56-Neh: Giddel
+  Gideon@Jdg.6.11-Heb: Gedeone
+  Gideoni@Num.1.11-: Ghedeoni
+  Gilalai@Neh.12.36: Gilalai
+  Gilead@1Ch.5.14: Galaad
+  Gilead@Jdg.11.1-: Galaad
+  Gilead@Num.26.29-1Ch: Galaad
+  Ginath@1Ki.16.21-: Ginat
+  Ginnethon@Neh.10.6-: Ginneton
+  Gishpa@Neh.11.21: Gispa
+  Gog@1Ch.5.4: Gog
+  Goliath@1Sa.17.4-1Ch: Golia
+  Gomer@Gen.10.2-Ezk: Gomer
+  Gomer@Hos.1.3: Gomer
+  Guni@1Ch.5.15: Guni
+  Guni@Gen.46.24-1Ch: Guni
+  Haahashtari@1Ch.4.6: Acastari
+  Habaiah@Ezr.2.61-Neh: Cabaia
+  Habakkuk@Hab.1.1-: Abacuc
+  Habazziniah@Jer.35.3: Cabazzinia
+  Hacaliah@Neh.1.1-: Cacalia
+  Hachmoni@1Ch.27.32: Cacmoni
+  Hadad@1Ki.11.14-: Adad
+  Hadad@Gen.25.15-1Ch: Adad
+  Hadad@Gen.36.35-1Ch: Adad
+  Hadad@Gen.36.39-1Ch: Adad
+  Hadadezer@2Sa.8.3-1Ch: Adadezer
+  Hadlai@2Ch.28.12: Adlai
+  Hadoram@Gen.10.27-1Ch: Adoram
+  Hagab@Ezr.2.46: Agab
+  Hagabah@Ezr.2.45-Neh: Agaba
+  Hagar@Gen.16.1-Gal: Agar
+  Haggai@Ezr.5.1-Hag: Aggeo
+  Haggedolim@Neh.11.14: Ghedolim
+  Haggi@Gen.46.16-Num: Aggi
+  Haggiah@1Ch.6.30: Aggia
+  Haggith@2Sa.3.4-1Ch: Agghit
+  Hakkatan@Ezr.8.12: Akkatan
+  Hakkoz@1Ch.24.10: Akkoz
+  Hakkoz@Ezr.2.61-Neh: Akkoz
+  Hakkoz@Neh.3.4-: Akkoz
+  Hakupha@Ezr.2.51-Neh: Cupa
+  Hallohesh@Neh.3.12-: Alloches
+  Ham@Gen.5.32-1Ch: Cam
+  Haman@Est.3.1-: Aman
+  Hammath@1Ch.2.55: Cammat
+  Hammedatha@Est.3.1-: Ammedata
+  Hammelech@Jer.36.26-: Ammelech
+  Hammolecheth@1Ch.7.18: Ammolechet
+  Hammuel@1Ch.4.26: Cammuel
+  Hamor@Gen.33.19-Act: Camor
+  Hamul@Gen.46.12-1Ch: Camul
+  Hamutal@2Ki.23.31-Jer: Camutal
+  Hanamel@Jer.32.7-: Canamel
+  Hanan@1Ch.11.43: Canan
+  Hanan@1Ch.8.23: Canan
+  Hanan@1Ch.8.38-: Canan
+  Hanan@Ezr.2.46-Neh: Canan
+  Hanan@Jer.35.4: Canan
+  Hanan@Neh.10.22: Canan
+  Hanan@Neh.10.26: Canan
+  Hanan@Neh.13.13: Canan
+  Hanan@Neh.8.7-: Canan
+  Hanani@1Ch.25.4-: Canani
+  Hanani@1Ki.16.1-2Ch: Canani
+  Hanani@Ezr.10.20: Canani
+  Hanani@Neh.1.2-: Canani
+  Hanani@Neh.12.36: Canani
+  Hananiah@1Ch.25.4-: Anania
+  Hananiah@1Ch.3.19-: Anania
+  Hananiah@1Ch.8.24: Anania
+  Hananiah@2Ch.26.11: Anania
+  Hananiah@Dan.1.6-: Sadrac
+  Hananiah@Ezr.10.28: Anania
+  Hananiah@Jer.28.1-: Anania
+  Hananiah@Jer.36.12: Anania
+  Hananiah@Jer.37.13: Anania
+  Hananiah@Neh.10.23: Anania
+  Hananiah@Neh.12.12: Anania
+  Hananiah@Neh.12.41: Anania
+  Hananiah@Neh.3.30: Anania
+  Hananiah@Neh.3.8: Anania
+  Hananiah@Neh.7.2: Anania
+  Hannah@1Sa.1.2-: Anna
+  Hanniel@1Ch.7.39: Annièl
+  Hanniel@Num.34.23: Annièl
+  Hanoch@Gen.25.4-1Ch: Enoc
+  Hanoch@Gen.46.9-1Ch: Enoc
+  Hanun@2Sa.10.1-1Ch: Canun
+  Hanun@Neh.3.13: Canun
+  Hanun@Neh.3.30: Canun
+  Happizzez@1Ch.24.15: Appisses
+  Haran@1Ch.2.46: Aran
+  Haran@1Ch.23.9: Aran
+  Haran@Gen.11.26-: Aran
+  Harbona@Est.1.10-: Carbonà
+  Hareph@1Ch.2.51: Caref
+  Harhaiah@Neh.3.8: Carcaia
+  Harhas@2Ki.22.14-2Ch: Carcas
+  Harhur@Ezr.2.51-Neh: Carcur
+  Harim@1Ch.24.8-Neh: Carim
+  Harim@Ezr.2.32-Neh: Carim
+  Harim@Neh.10.27: Carim
+  Harim@Neh.3.11: Carim
+  Hariph@Neh.10.19: Carif
+  Harnepher@1Ch.7.36: Carnefer
+  Haroeh@1Ch.2.52-: Aroe
+  Harsha@Ezr.2.52-Neh: Carsa
+  Harum@1Ch.4.8: Carum
+  Harumaph@Neh.3.10: Carumaf
+  Haruz@2Ki.21.19: Caruz
+  Hasadiah@1Ch.3.20: Casadia
+  Hashabiah@1Ch.25.3-: Casabia
+  Hashabiah@1Ch.26.30: Casabia
+  Hashabiah@1Ch.27.17: Casabia
+  Hashabiah@1Ch.6.45: Casabia
+  Hashabiah@1Ch.9.14-Neh: Casabia
+  Hashabiah@2Ch.35.9: Casabia
+  Hashabiah@Ezr.8.19-Neh: Casabia
+  Hashabiah@Neh.11.22: Casabia
+  Hashabiah@Neh.12.21: Casabia
+  Hashabiah@Neh.3.17: Casabia
+  Hashabnah@Neh.10.25: Casabna
+  Hashabneiah@Neh.3.10: Casabneia
+  Hashabneiah@Neh.9.5: Casabneia
+  Hashbaddanah@Neh.8.4: Casbaddana
+  Hashubah@1Ch.3.20: Casuba
+  Hashum@Ezr.2.19-Neh: Casum
+  Hashum@Neh.10.18: Casum
+  Hashum@Neh.8.4: Casum
+  Hasshub@1Ch.9.14-Neh: Cassub
+  Hasshub@Neh.10.23: Cassub
+  Hasshub@Neh.3.11: Cassub
+  Hasshub@Neh.3.23: Cassub
+  Hasupha@Ezr.2.43-Neh: Casufa
+  Hathach@Est.4.5-: Atac
+  Hathath@1Ch.4.13: Catat
+  Hatipha@Ezr.2.54-Neh: Catifa
+  Hatita@Ezr.2.42-Neh: Catita
+  Hattil@Ezr.2.57-Neh: Cattil
+  Hattush@1Ch.3.22: Cattus
+  Hattush@Ezr.8.2: Cattus
+  Hattush@Neh.10.4-: Cattus
+  Hattush@Neh.3.10: Cattus
+  Havilah@Gen.10.29-1Ch: Avila
+  Havilah@Gen.10.7-1Ch: Avila
+  Hazael@1Ki.19.15-Amo: Cazaèl
+  Hazaiah@Neh.11.5: Cazaia
+  Hazarmaveth@Gen.10.26-1Ch: Cazarmàvet
+  Haziel@1Ch.23.9: Caziel
+  Hazo@Gen.22.22: Cazo
+  Hazzelelponi@1Ch.4.3: Elelponi
+  Heber@1Ch.4.18: Cheber
+  Heber@1Ch.8.17: Cheber
+  Heber@Gen.46.17-1Ch: Cheber
+  Heber@Jdg.4.11-: Cheber
+  Hebron@1Ch.2.42-: Ebron
+  Hebron@Exo.6.18-1Ch: Ebron
+  Hegai@Est.2.3-: Egai
+  Helah@1Ch.4.5-: Cela
+  Heldai@Zec.6.10-: Cheldai
+  Helek@Num.26.30-Jos: Chelek
+  Helez@1Ch.2.39: Cheles
+  Helez@2Sa.23.26-1Ch: Cheles
+  Heli@Luk.3.23: Eli
+  Helkai@Neh.12.15: Chelkai
+  Helon@Num.1.9-: Elon
+  Hemam@Gen.36.22-1Ch: Eman
+  Heman@1Ch.2.6: Eman
+  Heman@1Ch.6.33-2Ch: Eman
+  Heman@1Ki.4.31-Psa: Eman
+  Hemdan@Gen.36.26-1Ch: Chemdan
+  Henadad@Ezr.3.9-Neh: Chenadad
+  Henadad@Neh.3.18: Chenadad
+  Henadad@Neh.3.24: Chenadad
+  Hepher@1Ch.11.36: Efer
+  Hepher@1Ch.4.6: Efer
+  Hepher@Num.26.32-Jos: Efer
+  Hephzibah@2Ki.21.1: Chefsiba
+  Heresh@1Ch.9.15: Cheres
+  Hermas@Rom.16.14b: Erma
+  Hermes@Rom.16.14a: Erme
+  Hermogenes@2Ti.1.15: Ermogene
+  Herod@Act.12.1-: Erode
+  Herod@Mat.14.1-Act: Erode
+  Herod@Mat.2.1-Act: Erode
+  Herodias@Mat.14.3-Luk: Erodiade
+  Herodion@Rom.16.11: Erodione
+  Hesed@1Ki.4.10: Chesed
+  Heth@Gen.10.15-Ezk: Chet
+  Hezekiah@2Ki.16.20-Mat: Ezechia
+  Hezekiah@Ezr.2.16-Neh: Ezechia
+  Hezekiah@Neh.10.17: Ezechia
+  Hezekiah@Zep.1.1: Ezechia
+  Hezion@1Ki.15.18: Chezion
+  Hezir@1Ch.24.15: Chezir
+  Hezir@Neh.10.20: Chezir
+  Hezro@2Sa.23.35-1Ch: Chezrai
+  Hezron@Gen.46.12-Luk: Chesron
+  Hezron@Gen.46.9-1Ch: Chesron
+  Hiddai@2Sa.23.30-1Ch: Iddai
+  Hiel@1Ki.16.34: Chiel
+  Hilkiah@1Ch.26.11: Chelkia
+  Hilkiah@1Ch.6.45: Chelkia
+  Hilkiah@2Ki.18.18-Isa: Chelkia
+  Hilkiah@2Ki.22.4-Jer: Chelkia
+  Hilkiah@Jer.1.1: Chelkia
+  Hilkiah@Neh.12.7-: Chelkia
+  Hilkiah@Neh.8.4: Chelkia
+  Hillel@Jdg.12.13-: Illel
+  Hirah@Gen.38.1-: Chira
+  Hiram@1Ki.7.13-2Ch: Chiram
+  Hiram@2Sa.5.11-2Ch: Chiram
+  Hizki@1Ch.8.17: Chizki
+  Hizkiah@1Ch.3.23: Ezechia
+  Hobab@Num.10.29-Jdg: Cobab
+  Hodaviah@1Ch.3.24: Odavia
+  Hodaviah@1Ch.5.24: Odavia
+  Hodaviah@1Ch.9.7: Odavia
+  Hodesh@1Ch.8.9: Codes
+  Hodiah@1Ch.4.19: Odia
+  Hodiah@Neh.10.13: Odia
+  Hodiah@Neh.10.18: Odia
+  Hodiah@Neh.8.7-: Odia
+  Hoglah@Num.26.33-Jos: Cogla
+  Hoham@Jos.10.3: Oam
+  Hophni@1Sa.1.3-: Ofni
+  Hophra@Jer.37.5-Ezk: Cofra
+  Horam@Jos.10.33: Oram
+  Hori@Gen.14.6-1Ch: Ori
+  Hori@Num.13.5: Ori
+  Hosah@1Ch.16.38-: Cosa
+  Hosea@Hos.1.1-Rom: Osea
+  Hoshaiah@Jer.42.1-: Osaia
+  Hoshaiah@Neh.12.32: Osaia
+  Hoshama@1Ch.3.18: Osama
+  Hoshea@1Ch.27.20: Osea
+  Hoshea@2Ki.15.30-: Osea
+  Hoshea@Neh.10.23: Osea
+  Hotham@1Ch.11.44: Cotam
+  Hotham@1Ch.7.32-: Cotam
+  Hothir@1Ch.25.4-: Otir
+  Hul@Gen.10.23-1Ch: Cul
+  Huldah@2Ki.22.14-2Ch: Culda
+  Huppah@1Ch.24.13: Cuppa
+  Huppim@1Ch.7.12-: Cuppim
+  Hur@1Ki.4.8: Cur
+  Hur@Exo.17.10-2Ch: Cur
+  Hur@Neh.3.9: Cur
+  Hur@Num.31.8-Jos: Cur
+  Huri@1Ch.5.14: Curi
+  Hushah@1Ch.4.4: Cusa
+  Hushai@2Sa.15.32-1Ch: Cusai
+  Husham@Gen.36.34-1Ch: Cusam
+  Hushim@1Ch.7.12: Cusim
+  Hushim@1Ch.8.8-: Cusim
+  Hushim@Gen.46.23-Num: Cusim
+  Hymenaeus@1Ti.1.20-2Ti: Imeneo
+  Ibhar@2Sa.5.15-1Ch: Ibcar
+  Ibneiah@1Ch.9.8: Ibneia
+  Ibnijah@1Ch.9.8: Ibnia
+  Ibri@1Ch.24.27: Ibri
+  Ibsam@1Ch.7.2: Ibsam
+  Ibzan@Jdg.12.8-: Ibsan
+  Ichabod@1Sa.4.21-: Icabod
+  Idbash@1Ch.4.3: Idbas
+  Iddo@1Ch.27.21: Iddo
+  Iddo@1Ch.6.21-: Iddo
+  Iddo@1Ki.4.14: Iddo
+  Iddo@2Ch.9.29-: Iddo
+  Iddo@Ezr.5.1-Zec: Iddo
+  Iddo@Ezr.8.17: Iddo
+  Iddo@Neh.12.4-: Iddo
+  Igal@1Ch.3.22: Igal
+  Igal@2Sa.23.36: Igal
+  Igal@Num.13.7: Igal
+  Igdaliah@Jer.35.4: Igdalia
+  Ikkesh@2Sa.23.26-1Ch: Ikkes
+  Imlah@1Ki.22.8-2Ch: Imla
+  Immer@1Ch.24.14-Jer: Immer
+  Immer@1Ch.9.12-Neh: Immer
+  Immer@Neh.3.29: Immer
+  Imna@1Ch.7.35: Imna
+  Imnah@2Ch.31.14: Imna
+  Imnah@Gen.46.17-1Ch: Imna
+  Imrah@1Ch.7.36: Imra
+  Imri@1Ch.9.4: Imri
+  Imri@Neh.3.2: Imri
+  Iphdeiah@1Ch.8.25: Ifdia
+  Ir@1Ch.7.12: Ir
+  Ira@2Sa.20.26: Ira
+  Ira@2Sa.23.26-1Ch: Ira
+  Ira@2Sa.23.38-1Ch: Ira
+  Irad@Gen.4.18: Irad
+  Iram@Gen.36.43-1Ch: Iram
+  Iri@1Ch.7.7: Iri
+  Irijah@Jer.37.13-: Ireia
+  Iru@1Ch.4.15: Iru
+  Isaac@Gen.17.19-Jas: Isacco
+  Isaiah@2Ki.19.2-Rom: Isaia
+  Iscah@Gen.11.29: Isca
+  Ish-bosheth@2Sa.2.8-1Ch: Is-Baal
+  Ishbah@1Ch.4.17: Isba
+  Ishbak@Gen.25.2-1Ch: Isbak
+  Ishbi-benob@2Sa.21.16: Isbi-Benob
+  Ishhod@1Ch.7.18: Ishod
+  Ishi@1Ch.2.31: Isi
+  Ishi@1Ch.4.20: Isi
+  Ishi@1Ch.4.42: Isi
+  Ishi@1Ch.5.24: Isi
+  Ishma@1Ch.4.3: Isma
+  Ishmael@1Ch.8.38-: Ismaele
+  Ishmael@2Ch.19.11: Ismaele
+  Ishmael@2Ch.23.1: Ismaele
+  Ishmael@2Ki.25.23-Jer: Ismaele
+  Ishmael@Ezr.10.22: Ismaele
+  Ishmael@Gen.16.11-Psa: Ismaele
+  Ishmaiah@1Ch.12.4: Ismaia
+  Ishmaiah@1Ch.27.19: Ismaia
+  Ishmerai@1Ch.8.18: Ismerai
+  Ishpah@1Ch.8.16: Ispa
+  Ishpan@1Ch.8.22: Ispan
+  Ishvah@Gen.46.17-1Ch: Isva
+  Ishvi@Gen.46.17-1Ch: Isvi
+  Ismachiah@2Ch.31.13: Ismachia
+  Israel@Gen.25.26-Rev: Israele
+  Issachar@1Ch.26.5: Issacar
+  Issachar@Gen.30.18-Rev: Issacar
+  Isshiah@1Ch.12.6: Issia
+  Isshiah@1Ch.23.20-: Issia
+  Isshiah@1Ch.24.21-: Issia
+  Isshiah@1Ch.7.3: Issia
+  Isshijah@Ezr.10.31: Issia
+  Ithamar@Exo.6.23-Ezr: Itamar
+  Ithiel@Neh.11.7: Itiel
+  Ithiel@Pro.30.1: Itiel
+  Ithmah@1Ch.11.46: Itma
+  Ithran@1Ch.7.37-: Itran
+  Ithran@Gen.36.26-1Ch: Itran
+  Ithream@2Sa.3.5-1Ch: Itream
+  Ittai@2Sa.15.19-: Ittai
+  Ittai@2Sa.23.29-1Ch: Ittai
+  Izhar@1Ch.4.7: Isear
+  Izhar@Exo.6.18-1Ch: Isear
+  Izliah@1Ch.8.18: Izlia
+  Izrahiah@1Ch.7.3: Izrachia
+  Izziah@Ezr.10.25: Izzia
+  Jaakobah@1Ch.4.36: Iaakoba
+  Jaalah@Ezr.2.56-Neh: Iaala
+  Jaare-oregim@2Sa.21.19-1Ch: Iaare-Oreghim
+  Jaareshiah@1Ch.8.27: Iaareshia
+  Jaasiel@1Ch.11.47: Iaasiel
+  Jaasiel@1Ch.27.21: Iaasiel
+  Jaasu@Ezr.10.37: Iaasu
+  Jaazaniah@Ezk.11.1: Iaazania
+  Jaazaniah@Ezk.8.11: Iaazania
+  Jaazaniah@Jer.35.3: Iaazania
+  Jaaziah@1Ch.24.26-: Iaazia
+  Jabal@Gen.4.20: Iabal
+  Jabesh@2Ki.15.10-: Iabes
+  Jabez@1Ch.4.9-: Iabes
+  Jabin@Jdg.4.2-Psa: Iabin
+  Jabin@Jos.11.1: Iabin
+  Jacan@1Ch.5.13: Iaakan
+  Jachin@1Ch.24.17: Iachin
+  Jachin@1Ch.9.10-Neh: Iachin
+  Jachin@Gen.46.10-1Ch: Iachin
+  Jacob@Mat.1.15-: Giacobbe
+  Jada@1Ch.2.28-: Iada
+  Jaddai@Ezr.10.43: Iaddai
+  Jaddua@Neh.10.21: Iaddua
+  Jaddua@Neh.12.11-: Iaddua
+  Jadon@Neh.3.7: Iadon
+  Jael@Jdg.4.17-: Giaele
+  Jahath@1Ch.23.10-: Iacat
+  Jahath@1Ch.24.22: Iacat
+  Jahath@1Ch.4.2: Iacat
+  Jahath@2Ch.34.12: Iacat
+  Jahaziel@1Ch.12.4: Iacaziel
+  Jahaziel@1Ch.16.6: Iacaziel
+  Jahaziel@1Ch.23.19-: Iacaziel
+  Jahaziel@2Ch.20.14: Iacaziel
+  Jahaziel@Ezr.8.5: Iacaziel
+  Jahdai@1Ch.2.47: Iaddai
+  Jahdiel@1Ch.5.24: Iacdiel
+  Jahdo@1Ch.5.14: Iacdo
+  Jahleel@Gen.46.14-Num: Iacleel
+  Jahmai@1Ch.7.2: Iacmai
+  Jahzeel@Gen.46.24-1Ch: Iacseel
+  Jahzeiah@Ezr.10.15: Iacazia
+  Jahzerah@1Ch.9.12: Iacsera
+  Jair@Est.2.5: Iair
+  Jair@Jdg.10.3-: Iair
+  Jair@Num.32.41-1Ch: Iair
+  Jairus@Mrk.5.22-Luk: Giairo
+  Jakeh@Pro.30.1: Iakeh
+  Jakim@1Ch.24.12: Iakim
+  Jakim@1Ch.8.19: Iakim
+  Jalam@Gen.36.5-1Ch: Ialam
+  Jalon@1Ch.4.17: Ialon
+  Jambres@2Ti.3.8: Iambre
+  James@Mat.13.55-Jud: Giacomo
+  James@Mat.4.21-Act: Giacomo
+  Jamin@1Ch.2.27: Iamin
+  Jamin@Gen.46.10-1Ch: Iamin
+  Jamin@Neh.8.7: Iamin
+  Jamlech@1Ch.4.34: Iamlech
+  Janai@1Ch.5.12: Ianai
+  Jannai@Luk.3.24: Iannai
+  Jannes@2Ti.3.8: Ianne
+  Japheth@Gen.5.32-1Ch: Iafet
+  Japhia@2Sa.5.15-1Ch: Iafia
+  Japhia@Jos.10.3: Iafia
+  Japhlet@Jos.16.3-1Ch: Iaflet
+  Jared@Gen.5.15-Luk: Iared
+  Jarha@1Ch.2.34-: Iarca
+  Jarib@Ezr.10.18: Iarib
+  Jarib@Ezr.8.16: Iarib
+  Jaroah@1Ch.5.14: Iaroa
+  Jashen@2Sa.23.32-1Ch: Iasen
+  Jashobeam@1Ch.12.6: Iasobeam
+  Jashub@Ezr.10.29: Iasub
+  Jashub@Gen.46.13-1Ch: Iasub
+  Jason@Act.17.5-Rom: Giasone
+  Jathniel@1Ch.26.2: Iatniel
+  Javan@Gen.10.2-Col: Iavan
+  Jaziz@1Ch.27.31: Iaziz
+  Jeatherai@1Ch.6.21-: Ieteri
+  Jeberechiah@Isa.8.2: Ieberechia
+  Jecoliah@2Ki.15.2-2Ch: Iecolia
+  Jedaiah@1Ch.24.7-Neh: Iedaia
+  Jedaiah@1Ch.4.37: Iedaia
+  Jedaiah@1Ch.9.10-Neh: Iedaia
+  Jedaiah@Neh.12.7-: Iedaia
+  Jedaiah@Neh.3.10: Iedaia
+  Jedaiah@Zec.6.10-: Iedaia
+  Jediael@1Ch.11.45: Iediael
+  Jediael@1Ch.12.20: Iediael
+  Jediael@1Ch.26.2: Iediael
+  Jediael@1Ch.7.6-: Iediael
+  Jedidah@2Ki.22.1: Iedida
+  Jeduthun@1Ch.6.44-Psa: Iedutun
+  Jeduthun@1Ch.9.16-Neh: Iedutun
+  Jehallelel@1Ch.4.16: Iaalelel
+  Jehallelel@2Ch.29.12: Iaalelel
+  Jehdeiah@1Ch.24.20: Iecdeia
+  Jehdeiah@1Ch.27.30: Iecdeia
+  Jehezkel@1Ch.24.16: Ezechiele
+  Jehiel@1Ch.15.18-: Iechiel
+  Jehiel@1Ch.27.32: Iechiel
+  Jehiel@2Ch.21.2: Iechiel
+  Jehiel@2Ch.31.13: Iechiel
+  Jehiel@2Ch.35.8: Iechiel
+  Jehiel@Ezr.10.2: Iechiel
+  Jehiel@Ezr.10.21: Iechiel
+  Jehiel@Ezr.10.26: Iechiel
+  Jehiel@Ezr.8.9: Iechiel
+  Jehizkiah@2Ch.28.12: Ezechia
+  Jehoaddah@1Ch.8.36-: Ioadda
+  Jehoaddan@2Ki.14.2-2Ch: Ioaddan
+  Jehoahaz@2Ki.10.35-2Ch: Ioacaz
+  Jehoahaz@2Ki.23.30-2Ch: Ioacaz
+  Jehohanan@1Ch.26.3: Ioanan
+  Jehohanan@2Ch.17.15: Ioanan
+  Jehohanan@2Ch.23.1: Ioanan
+  Jehohanan@Ezr.10.28: Ioanan
+  Jehohanan@Ezr.10.6: Ioanan
+  Jehohanan@Neh.12.13: Ioanan
+  Jehohanan@Neh.12.42: Ioanan
+  Jehohanan@Neh.6.18: Ioanan
+  Jehoiachin@2Ki.24.6-Mat: Ioiachin
+  Jehoiada@1Ch.27.34: Ioiada
+  Jehoiada@2Ki.11.4-Mat: Ioiada
+  Jehoiada@2Sa.8.18-1Ch: Ioiada
+  Jehoiada@Jer.29.26: Ioiada
+  Jehoiakim@2Ki.23.34-Dan: Ioiakim
+  Jehoiarib@1Ch.24.7: Ioiarib
+  Jehonathan@2Ch.17.8: Gionata
+  Jehonathan@Neh.12.18: Gionata
+  Jehoram@1Ki.22.50-Mat: Ioram
+  Jehoram@2Ch.17.8: Ioram
+  Jehoshaphat@1Ki.15.24-Mat: Giosafat
+  Jehoshaphat@1Ki.4.17: Giosafat
+  Jehoshaphat@2Ki.9.2-: Giosafat
+  Jehoshaphat@2Sa.8.16-1Ch: Giosafat
+  Jehosheba@2Ki.11.2-2Ch: Ioseba
+  Jehozabad@1Ch.26.4: Iozabad
+  Jehozabad@2Ch.17.18: Iozabad
+  Jehozabad@2Ki.12.21-2Ch: Iozabad
+  Jehozadak@1Ch.6.14-Zec: Iosadak
+  Jehu@1Ch.12.3: Ieu
+  Jehu@1Ch.2.38: Ieu
+  Jehu@1Ch.4.35: Ieu
+  Jehu@1Ki.16.1-2Ch: Ieu
+  Jehu@1Ki.19.16-Hos: Ieu
+  Jehubbah@1Ch.7.34: Ieubba
+  Jehucal@Jer.37.3-: Iucal
+  Jehudi@Jer.36.14-: Iudi
+  Jehudijah@1Ch.4.18: Iudia
+  Jehuel@2Ch.29.14: Ieiel
+  Jeiel@1Ch.11.44: Ieiel
+  Jeiel@1Ch.15.18-: Ieiel
+  Jeiel@1Ch.5.7: Ieiel
+  Jeiel@2Ch.20.14: Ieiel
+  Jeiel@2Ch.26.11: Ieiel
+  Jeiel@2Ch.35.9: Ieiel
+  Jeiel@Ezr.10.43: Ieiel
+  Jekameam@1Ch.23.19-: Iekameam
+  Jekamiah@1Ch.2.41: Iekamia
+  Jekuthiel@1Ch.4.18: Iekutiel
+  Jemimah@Job.42.14: Iemima
+  Jemuel@Gen.46.10-1Ch: Iemuel
+  Jephthah@Jdg.11.1-Heb: Iefte
+  Jephunneh@1Ch.7.38: Iefunne
+  Jephunneh@Num.13.6-1Ch: Iefunne
+  Jerah@Gen.10.26-1Ch: Ierach
+  Jerahmeel@1Ch.24.29: Ierameel
+  Jerahmeel@1Sa.27.10-1Ch: Ierameel
+  Jerahmeel@Jer.36.26: Ierameel
+  Jered@1Ch.4.18: Iered
+  Jeremai@Ezr.10.33: Ieremai
+  Jeremiah@1Ch.12.10: Geremia
+  Jeremiah@1Ch.12.13: Geremia
+  Jeremiah@1Ch.12.4: Geremia
+  Jeremiah@1Ch.5.24: Geremia
+  Jeremiah@2Ch.35.25-Mat: Geremia
+  Jeremiah@2Ki.23.31-Jer: Geremia
+  Jeremiah@Jer.35.3: Geremia
+  Jeremiah@Neh.10.2-: Geremia
+  Jeremoth@1Ch.7.8: Ierimot
+  Jeremoth@1Ch.8.14: Ierimot
+  Jeremoth@Ezr.10.26: Ierimot
+  Jeremoth@Ezr.10.27: Ierimot
+  Jeremoth@Ezr.10.29: Ierimot
+  Jeriah@1Ch.23.19-: Ieria
+  Jeribai@1Ch.11.46: Ieribai
+  Jeriel@1Ch.7.2: Ieriel
+  Jerijah@1Ch.26.31: Ieria
+  Jerimoth@1Ch.12.5: Ierimot
+  Jerimoth@1Ch.23.23-: Ierimot
+  Jerimoth@1Ch.25.4-: Ierimot
+  Jerimoth@1Ch.27.19: Ierimot
+  Jerimoth@1Ch.7.7: Ierimot
+  Jerimoth@2Ch.11.18: Ierimot
+  Jerimoth@2Ch.31.13: Ierimot
+  Jerioth@1Ch.2.18: Ieriot
+  Jeroboam@1Ki.11.26-2Ch: Geroboamo
+  Jeroboam@2Ki.13.13-Amo: Geroboamo
+  Jeroham@1Ch.12.7: Ierocam
+  Jeroham@1Ch.27.22: Ierocam
+  Jeroham@1Ch.8.27: Ierocam
+  Jeroham@1Ch.9.12-Neh: Ierocam
+  Jeroham@1Ch.9.8: Ierocam
+  Jeroham@1Sa.1.1-1Ch: Ierocam
+  Jeroham@2Ch.23.1: Ierocam
+  Jerusalem_wives@2Sa.5.13: Mogli di Gerusalemme
+  Jerusha@2Ki.15.33-2Ch: Ierusa
+  Jeshaiah@1Ch.25.3-: Isaia
+  Jeshaiah@1Ch.3.21: Isaia
+  Jeshaiah@Ezr.8.19: Isaia
+  Jeshaiah@Ezr.8.7: Isaia
+  Jeshaiah@Neh.11.7: Isaia
+  Jeshebeab@1Ch.24.13: Iesebeab
+  Jesher@1Ch.2.18: Ieser
+  Jeshishai@1Ch.5.14: Ieshishai
+  Jeshohaiah@1Ch.4.36: Iesocaia
+  Jeshua@1Ch.24.11-Neh: Giosuè
+  Jeshua@2Ch.31.15: Giosuè
+  Jeshua@Ezr.2.40-Neh: Giosuè
+  Jeshua@Ezr.2.6-Neh: Giosuè
+  Jeshua@Neh.12.24: Giosuè
+  Jeshua@Neh.3.19: Giosuè
+  Jesimiel@1Ch.4.36: Iesimiel
+  Jesse@Rut.4.17-Rom: Iesse
+  Jesus@Isa.7.14-Rev: Gesù
+  Jether@1Ch.2.32: Ieter
+  Jether@1Ch.4.17: Ieter
+  Jether@2Sa.17.25-1Ch: Ieter
+  Jether@Jdg.8.20: Ieter
+  Jetheth@Gen.36.40-1Ch: Ietet
+  Jethro@Exo.2.18-Num: Ietro
+  Jetur@Gen.25.15-1Ch: Ietur
+  Jeuel@1Ch.9.6: Ieuel
+  Jeuel@2Ch.29.13: Ieuel
+  Jeuel@Ezr.8.13: Ieuel
+  Jeush@1Ch.23.10-: Ieus
+  Jeush@1Ch.7.10: Ieus
+  Jeush@1Ch.8.39: Ieus
+  Jeush@2Ch.11.19: Ieus
+  Jeush@Gen.36.5-1Ch: Ieus
+  Jeuz@1Ch.8.10: Ieuz
+  Jezaniah@2Ki.25.23-Jer: Ezania
+  Jezebel@1Ki.16.31-Rev: Gezabele
+  Jezer@Gen.46.24-1Ch: Ieser
+  Jeziel@1Ch.12.3: Ieziel
+  Jezrahiah@Neh.12.42: Izrachia
+  Jezreel@1Ch.4.3: Izreel
+  Jezreel@Hos.1.4: Izreel
+  Jidlaph@Gen.22.22: Idlaf
+  Joab@1Ch.4.14: Ioab
+  Joab@1Sa.26.6-Psa: Ioab
+  Joab@Ezr.2.6-Neh: Ioab
+  Joab@Ezr.8.9: Ioab
+  Joah@1Ch.26.4: Ioach
+  Joah@1Ch.6.21-: Ioach
+  Joah@2Ch.29.12a: Ioach
+  Joah@2Ch.29.12b: Ioach
+  Joah@2Ch.34.8: Ioach
+  Joah@2Ki.18.18-Isa: Ioach
+  Joahaz@2Ch.34.8: Ioacaz
+  Joanan@Luk.3.27: Ioanan
+  Joanna@Luk.8.3-: Giovanna
+  Joash@1Ch.12.3: Ioas
+  Joash@1Ch.27.28: Ioas
+  Joash@1Ch.4.22: Ioas
+  Joash@1Ch.7.8: Ioas
+  Joash@1Ki.22.26-2Ch: Ioas
+  Joash@2Ki.11.2-2Ch: Ioas
+  Joash@2Ki.13.9-Amo: Ioas
+  Joash@Jdg.6.11-: Ioas
+  Job@Job.1.1-Jas: Giobbe
+  Jobab@1Ch.8.18: Iobab
+  Jobab@1Ch.8.9: Iobab
+  Jobab@Gen.10.29-1Ch: Iobab
+  Jobab@Gen.36.33-1Ch: Iobab
+  Jobab@Jos.11.1: Iobab
+  Jochebed@Exo.6.20-Num: Iochebed
+  Joda@Luk.3.26: Ioda
+  Joed@Neh.11.7: Ioed
+  Joel@1Ch.11.38: Gioele
+  Joel@1Ch.15.7-: Gioele
+  Joel@1Ch.23.8-: Gioele
+  Joel@1Ch.27.20: Gioele
+  Joel@1Ch.4.35: Gioele
+  Joel@1Ch.5.12: Gioele
+  Joel@1Ch.5.4: Gioele
+  Joel@1Ch.5.8: Gioele
+  Joel@1Ch.7.3: Gioele
+  Joel@1Sa.8.2-1Ch: Gioele
+  Joel@2Ch.29.12: Gioele
+  Joel@Ezr.10.43: Gioele
+  Joel@Jol.1.1-Act: Gioele
+  Joel@Neh.11.9: Gioele
+  Joelah@1Ch.12.7: Ioela
+  Joezer@1Ch.12.6: Ioezer
+  Jogli@Num.34.22: Iogli
+  Joha@1Ch.11.45: Ioca
+  Joha@1Ch.8.16: Ioca
+  Johanan@1Ch.12.12: Ioanan
+  Johanan@1Ch.12.4: Ioanan
+  Johanan@1Ch.3.24: Ioanan
+  Johanan@1Ch.6.9-: Ioanan
+  Johanan@2Ch.28.12: Ioanan
+  Johanan@2Ki.25.23-Jer: Ioanan
+  Johanan@Ezr.8.12: Ioanan
+  Johanan@Neh.12.11-: Ioanan
+  John@Act.4.6: Giovanni
+  John@Mat.16.17-Jhn: Giovanni
+  John@Mat.3.1-Act: Giovanni
+  John@Mat.4.21-Rev: Giovanni
+  Joiada@Neh.12.10-: Ioiada
+  Joiada@Neh.3.6: Ioiada
+  Joiakim@Neh.12.10-: Ioiakim
+  Joiarib@1Ch.9.10-Neh: Ioiarib
+  Joiarib@Ezr.8.16: Ioiarib
+  Joiarib@Neh.11.5: Ioiarib
+  Jokim@1Ch.4.22: Iokim
+  Jokshan@Gen.25.2-1Ch: Iocsan
+  Joktan@Gen.10.25-1Ch: Ioktan
+  Jonadab@2Ki.10.15-Jer: Ionadab
+  Jonadab@2Sa.13.3-1Ch: Ionadab
+  Jonah@2Ki.14.25-Luk: Giona
+  Jonam@Luk.3.30: Ionam
+  Jonathan@1Ch.2.32-: Gionata
+  Jonathan@1Ch.27.25: Gionata
+  Jonathan@1Sa.13.2-1Ch: Gionata
+  Jonathan@2Sa.15.27-1Ki: Gionata
+  Jonathan@2Sa.23.32-1Ch: Gionata
+  Jonathan@Ezr.10.15: Gionata
+  Jonathan@Ezr.8.6: Gionata
+  Jonathan@Jdg.18.30: Gionata
+  Jonathan@Jer.37.15-: Gionata
+  Jonathan@Jer.40.8: Gionata
+  Jonathan@Neh.12.14: Gionata
+  Jonathan@Neh.12.35: Gionata
+  Jorah@Ezr.2.18-Neh: Iora
+  Jorai@1Ch.5.13: Iorai
+  Joram@1Ch.26.25: Ioram
+  Joram@2Ki.1.17-2Ch: Ioram
+  Joram@2Sa.8.10-1Ch: Ioram
+  Jorim@Luk.3.29: Iorim
+  Jorkeam@1Ch.2.44: Iorkeam
+  Josech@Luk.3.26: Iosec
+  Joseph@1Ch.25.2-: Giuseppe
+  Joseph@Act.1.23: Giuseppe
+  Joseph@Ezr.10.42: Giuseppe
+  Joseph@Gen.30.24-Rev: Giuseppe
+  Joseph@Luk.3.24: Giuseppe
+  Joseph@Luk.3.30: Giuseppe
+  Joseph@Mat.1.16-Jhn: Giuseppe
+  Joseph@Mat.27.57-Jhn: Giuseppe
+  Joseph@Neh.12.14: Giuseppe
+  Joseph@Num.13.7: Giuseppe
+  Joses@Mat.13.55-Mrk: Giuseppe
+  Joses@Mat.27.56-Mrk: Giuseppe
+  Joshah@1Ch.4.34: Iosa
+  Joshaphat@1Ch.11.43: Iosafat
+  Joshaphat@1Ch.15.24: Iosafat
+  Joshaviah@1Ch.11.46: Iosavia
+  Joshbekashah@1Ch.25.4-: Ioshbekasa
+  Joshibiah@1Ch.4.35: Iosibia
+  Joshua@1Sa.6.14-: Giosuè
+  Joshua@2Ki.23.8: Giosuè
+  Joshua@Exo.17.9-Heb: Giosuè
+  Joshua@Ezr.2.2-Zec: Giosuè
+  Joshua@Luk.3.29: Gesù
+  Josiah@1Ki.13.2-Mat: Giosia
+  Josiah@Zec.6.10-: Giosia
+  Josiphiah@Ezr.8.10: Iosifia
+  Jotham@1Ch.2.47: Iotam
+  Jotham@2Ki.15.5-Mat: Iotam
+  Jotham@Jdg.9.5-: Iotam
+  Jozabad@1Ch.12.20a: Iozabad
+  Jozabad@1Ch.12.20b: Iozabad
+  Jozabad@1Ch.12.4: Iozabad
+  Jozabad@2Ch.31.13: Iozabad
+  Jozabad@2Ch.35.9: Iozabad
+  Jozabad@Ezr.10.22: Iozabad
+  Jozabad@Ezr.10.23: Iozabad
+  Jozabad@Ezr.8.33: Iozabad
+  Jozabad@Neh.11.16: Iozabad
+  Jozabad@Neh.8.7: Iozabad
+  Jozacar@2Ki.12.21-2Ch: Iozacar
+  Jozadak@Ezr.10.18: Iosadak
+  Jubal@Gen.4.21: Iubal
+  Judah@Ezr.10.23: Giuda
+  Judah@Gen.29.35-Rev: Giuda
+  Judah@Luk.3.30: Giuda
+  Judah@Neh.11.9: Giuda
+  Judah@Neh.12.36: Giuda
+  Judah@Neh.12.8-: Giuda
+  Judas@Act.15.22-: Giuda
+  Judas@Act.5.37: Giuda
+  Judas@Act.9.11: Giuda
+  Judas@Mat.10.3-Act: Giuda
+  Judas@Mat.10.4-Act: Giuda
+  Jude@Mat.13.55-Jud: Giuda
+  Judith@Gen.26.34: Giuditta
+  Julia@Rom.16.15: Giulia
+  Julius@Act.27.1-: Giulio
+  Junia@Rom.16.7: Giunia
+  Jushab-hesed@1Ch.3.20: Iusab-Chesed
+  Justus@Act.18.7: Giusto
+  Justus@Col.4.11: Giusto
+  Kadmiel@Ezr.2.40-Neh: Kadmiel
+  Kallai@Neh.12.20: Kallai
+  Kareah@2Ki.25.23-Jer: Careà
+  Kedar@Gen.25.13-Ezk: Kedar
+  Kedemah@Gen.25.15-1Ch: Kedema
+  Kelaiah@Ezr.10.23: Kelaia
+  Kelita@Neh.8.7-: Kelita
+  Kemuel@1Ch.27.17: Kemuel
+  Kemuel@Gen.22.21: Kemuel
+  Kemuel@Num.34.24: Kemuel
+  Kenan@Gen.5.9-Luk: Kenan
+  Kenaz@1Ch.4.15: Kenaz
+  Kenaz@Gen.36.11-1Ch: Kenaz
+  Kenaz@Num.32.12-1Ch: Kenaz
+  Keren-happuch@Job.42.14: Keren-Happuc
+  Keros@Ezr.2.44-Neh: Keros
+  Keturah@Gen.25.1-1Ch: Chetura
+  Keziah@Job.42.14: Chezia
+  Kish@1Ch.23.21-: Kis
+  Kish@1Sa.9.1-Act: Kis
+  Kish@2Ch.29.12: Kis
+  Kish@Est.2.5: Kis
+  Kishi@1Ch.6.44-: Kisi
+  Kohath@Gen.46.11-2Ch: Keat
+  Kolaiah@Jer.29.21: Kolaia
+  Kolaiah@Neh.11.7: Kolaia
+  Korah@1Ch.2.43: Core
+  Korah@Exo.6.21-Jud: Core
+  Korah@Gen.36.16: Core
+  Korah@Gen.36.5-1Ch: Core
+  Kore@1Ch.9.19-: Core
+  Kore@2Ch.31.14: Core
+  Koz@1Ch.4.8: Koz
+  Laadah@1Ch.4.21: Laada
+  Laban@Gen.24.29-: Làbano
+  Ladan@1Ch.7.26: Ladan
+  Lael@Num.3.24: Lael
+  Lahad@1Ch.4.2: Lacad
+  Lahmi@2Sa.21.16-1Ch: Lacmi
+  Laish@1Sa.25.44-2Sa: Lais
+  Lamech@Gen.4.18-: Lamech
+  Lamech@Gen.5.25-Luk: Lamech
+  Lappidoth@Jdg.4.4: Lappidot
+  Lazarus@Jhn.11.1-: Lazzaro
+  Lazarus@Luk.16.20-: Lazzaro
+  Leah@Gen.29.16-Rut: Lia
+  Lebanah@Ezr.2.45-Neh: Lebana
+  Lecah@1Ch.4.21: Leca
+  Lemuel@Pro.31.1-: Lemuel
+  Levi@Gen.29.34-Rev: Levi
+  Levi@Luk.3.24: Levi
+  Levi@Luk.3.29: Levi
+  Libni@1Ch.6.29: Libni
+  Libni@Exo.6.17-1Ch: Libni
+  Likhi@1Ch.7.19: Likchi
+  Linus@2Ti.4.21: Lino
+  Lo-ammi@Hos.1.9: Lo-Ammi
+  Lo-ruhamah@Hos.1.6-: Lo-Ruama
+  Lois@2Ti.1.5: Loide
+  Lot@Gen.11.27-2Pe: Lot
+  Lotan@Gen.36.20-1Ch: Lotan
+  Lucius@Act.13.1-Rom: Lucio
+  Lud@Gen.10.22-Ezk: Lud
+  Luke@2Co.13.13-Phm: Luca
+  Lydia@Act.16.14-: Lidia
+  Lysanias@Luk.3.1: Lisania
+  Lysias@Act.23.26-: Lisia
+  Maacah@1Ch.11.43: Maaca
+  Maacah@1Ch.2.48: Maaca
+  Maacah@1Ch.27.16: Maaca
+  Maacah@1Ch.7.15-: Maaca
+  Maacah@1Ch.8.29-: Maaca
+  Maacah@1Ki.15.2-2Ch: Maaca
+  Maacah@2Sa.3.3-1Ch: Maaca
+  Maacah@Gen.22.24: Maaca
+  Maadai@Ezr.10.34: Maadai
+  Maai@Neh.12.36: Maai
+  Maasai@1Ch.9.12-Neh: Maasai
+  Maaseiah@1Ch.15.18-: Maaseia
+  Maaseiah@2Ch.23.1: Maaseia
+  Maaseiah@2Ch.26.11: Maaseia
+  Maaseiah@2Ch.28.7: Maaseia
+  Maaseiah@2Ch.34.8: Maaseia
+  Maaseiah@Ezr.10.18: Maaseia
+  Maaseiah@Ezr.10.21: Maaseia
+  Maaseiah@Ezr.10.22: Maaseia
+  Maaseiah@Ezr.10.30: Maaseia
+  Maaseiah@Jer.21.1-: Maaseia
+  Maaseiah@Jer.29.21: Maaseia
+  Maaseiah@Jer.35.4: Maaseia
+  Maaseiah@Neh.10.25: Maaseia
+  Maaseiah@Neh.11.5: Maaseia
+  Maaseiah@Neh.11.7: Maaseia
+  Maaseiah@Neh.12.41: Maaseia
+  Maaseiah@Neh.12.42: Maaseia
+  Maaseiah@Neh.3.23: Maaseia
+  Maaseiah@Neh.8.4: Maaseia
+  Maaseiah@Neh.8.7: Maaseia
+  Maath@Luk.3.26: Maat
+  Maaz@1Ch.2.27: Maas
+  Maaziah@1Ch.24.18: Maazia
+  Machbannai@1Ch.12.13: Makbannai
+  Machbenah@1Ch.2.49: Makbena
+  Machi@Num.13.15: Maki
+  Machir@2Sa.9.4-: Machir
+  Machir@Gen.50.23-1Ch: Machir
+  Machnadebai@Ezr.10.40: Maknadebai
+  Madai@Gen.10.2-1Ch: Madai
+  Madmannah@1Ch.2.49: Madmanna
+  Magdiel@Gen.36.43-1Ch: Magdiel
+  Magog@Gen.10.2-1Ch: Magog
+  Magpiash@Neh.10.20: Magpias
+  Mahalalel@Gen.5.12-Luk: Maalaleel
+  Mahalalel@Neh.11.4: Maalaleel
+  Mahalath@2Ch.11.18: Macalat
+  Mahalath@Gen.28.9-: Macalat
+  Maharai@2Sa.23.28-1Ch: Maarai
+  Mahath@2Ch.29.12: Maat
+  Mahath@2Ch.31.13: Maat
+  Mahazioth@1Ch.25.4-: Maaziot
+  Maher-shalal-hash-baz@Isa.8.1-: Maher-Salal-Cas-Baz
+  Mahlah@1Ch.7.18: Macla
+  Mahlah@Num.26.33-Jos: Macla
+  Mahli@1Ch.6.47-: Macli
+  Mahli@Exo.6.19-Ezr: Macli
+  Mahlon@Rut.1.2-: Maclon
+  Mahol@1Ki.4.31: Macol
+  Mahseiah@Jer.32.12-: Maaseia
+  Malachi@Mal.1.1: Malachia
+  Malcam@1Ch.8.9: Malcam
+  Malchi-shua@1Sa.14.49-1Ch: Malkisua
+  Malchiah@Jer.21.1-: Malchia
+  Malchiel@Gen.46.17-1Ch: Malchiel
+  Malchijah@1Ch.24.9: Malchia
+  Malchijah@1Ch.6.40: Malchia
+  Malchijah@1Ch.9.12-Neh: Malchia
+  Malchijah@Ezr.10.25a: Malchia
+  Malchijah@Ezr.10.25b: Malchia
+  Malchijah@Ezr.10.31: Malchia
+  Malchijah@Neh.10.3: Malchia
+  Malchijah@Neh.12.42: Malchia
+  Malchijah@Neh.3.11: Malchia
+  Malchijah@Neh.3.14: Malchia
+  Malchijah@Neh.3.31: Malchia
+  Malchijah@Neh.8.4: Malchia
+  Malchiram@1Ch.3.18: Malchiram
+  Malchus@Jhn.18.10: Malco
+  Mallothi@1Ch.25.4-: Mallotì
+  Malluch@1Ch.6.44: Malluc
+  Malluch@Ezr.10.29: Malluc
+  Malluch@Ezr.10.32: Malluc
+  Malluch@Neh.10.27: Malluc
+  Malluch@Neh.10.4-: Malluc
+  Mamre@Gen.14.13: Mamre
+  Manaen@Act.13.1: Manaen
+  Manahath@Gen.36.23-1Ch: Manaat
+  Manasseh@2Ki.20.21-Mat: Manasse
+  Manasseh@Ezr.10.30: Manasse
+  Manasseh@Ezr.10.33: Manasse
+  Manasseh@Gen.41.51-Rev: Manasse
+  Manoah@Jdg.13.2-: Manoach
+  Maoch@1Sa.27.2-1Ki: Maoc
+  Maon@1Ch.2.45: Maon
+  Mareshah@1Ch.2.42: Maresa
+  Mareshah@1Ch.4.21: Maresa
+  Mark@Act.12.12-1Pe: Marco
+  Marsena@Est.1.14: Marsena
+  Martha@Luk.10.38-Jhn: Marta
+  Mary@Act.12.12: Maria
+  Mary@Luk.10.39-Jhn: Maria
+  Mary@Mat.1.16-Act: Maria
+  Mary@Mat.27.56-Jhn: Maria
+  Mary@Rom.16.6: Maria
+  Mary_Magdalene@Mat.27.56-Jhn: Maria Maddalena
+  Mash@Gen.10.23-1Ch: Mas
+  Massa@Gen.25.14-1Ch: Massa
+  Matred@Gen.36.39-1Ch: Matred
+  Matri@1Sa.10.21: Matri
+  Mattan@2Ki.11.18-2Ch: Mattan
+  Mattan@Jer.38.1: Mattan
+  Mattaniah@1Ch.25.4-: Mattania
+  Mattaniah@1Ch.9.15-Neh: Mattania
+  Mattaniah@2Ch.20.14: Mattania
+  Mattaniah@2Ch.29.13: Mattania
+  Mattaniah@Ezr.10.26: Mattania
+  Mattaniah@Ezr.10.27: Mattania
+  Mattaniah@Ezr.10.30: Mattania
+  Mattaniah@Ezr.10.37: Mattania
+  Mattaniah@Neh.11.22-: Mattania
+  Mattaniah@Neh.13.13: Mattania
+  Mattatha@Luk.3.31: Mattata
+  Mattathias@Luk.3.25: Mattatia
+  Mattathias@Luk.3.26: Mattatia
+  Mattattah@Ezr.10.33: Mattatta
+  Mattenai@Ezr.10.33: Mattenai
+  Mattenai@Ezr.10.37: Mattenai
+  Mattenai@Neh.12.19: Mattenai
+  Matthan@Mat.1.15: Mattan
+  Matthat@Luk.3.24: Mattat
+  Matthat@Luk.3.29: Mattat
+  Matthew@Mat.9.9-Act: Matteo
+  Matthias@Act.1.23-: Mattia
+  Mattithiah@1Ch.15.18-: Mattitia
+  Mattithiah@1Ch.9.31: Mattitia
+  Mattithiah@Ezr.10.43: Mattitia
+  Mattithiah@Neh.8.4: Mattitia
+  Medad@Num.11.26-: Medad
+  Medan@Gen.25.2-1Ch: Medan
+  Mehetabel@Gen.36.39-1Ch: Mecetabeel
+  Mehetabel@Neh.6.10: Mecetabeel
+  Mehida@Ezr.2.52-Neh: Mechida
+  Mehir@1Ch.4.11: Mechir
+  Mehujael@Gen.4.18: Mecuiael
+  Mehuman@Est.1.10: Mecuman
+  Melatiah@Neh.3.7: Melatia
+  Melchi@Luk.3.24: Melchi
+  Melchi@Luk.3.28: Melchi
+  Melchizedek@Gen.14.18-Heb: Melchisedek
+  Melea@Luk.3.31: Melea
+  Melech@1Ch.8.35-: Melech
+  Melzar@Dan.1.11-: Melsar
+  Memucan@Est.1.14-: Memucan
+  Menahem@2Ki.15.14-: Menachem
+  Menna@Luk.3.31: Menna
+  Meonothai@1Ch.4.14: Meonotai
+  Mephibosheth@2Sa.21.8: Mefiboset
+  Mephibosheth@2Sa.4.4-1Ch: Mefiboset
+  Merab@1Sa.14.49-2Sa: Merab
+  Meraiah@Neh.12.12: Meraia
+  Meraioth@1Ch.6.6-Neh: Meraiot
+  Merari@Gen.46.11-Ezr: Merari
+  Mered@1Ch.4.17-: Mered
+  Meremoth@Ezr.10.36: Meremot
+  Meremoth@Ezr.8.33-Neh: Meremot
+  Meres@Est.1.14: Meres
+  Merodach-baladan@2Ki.20.12-Isa: Merodac-Baladan
+  Mesha@1Ch.2.42: Mesa
+  Mesha@1Ch.8.9: Mesa
+  Mesha@2Ki.3.4: Mesa
+  Meshech@Gen.10.2-1Ch: Mesec
+  Meshelemiah@1Ch.9.21-: Meselemia
+  Meshezabel@Neh.10.21: Mesezabeel
+  Meshezabel@Neh.11.24: Mesezabeel
+  Meshezabel@Neh.3.4: Mesezabeel
+  Meshillemith@1Ch.9.12-Neh: Meshillemit
+  Meshillemoth@2Ch.28.12: Meshillemot
+  Meshobab@1Ch.4.34: Mesobab
+  Meshullam@1Ch.3.19: Mesullam
+  Meshullam@1Ch.5.13: Mesullam
+  Meshullam@1Ch.8.17: Mesullam
+  Meshullam@1Ch.9.12-Neh: Mesullam
+  Meshullam@1Ch.9.7: Mesullam
+  Meshullam@1Ch.9.8: Mesullam
+  Meshullam@2Ch.34.12: Mesullam
+  Meshullam@2Ki.22.3: Mesullam
+  Meshullam@Ezr.10.15: Mesullam
+  Meshullam@Ezr.10.29: Mesullam
+  Meshullam@Ezr.8.16: Mesullam
+  Meshullam@Neh.10.20: Mesullam
+  Meshullam@Neh.10.7-: Mesullam
+  Meshullam@Neh.11.7: Mesullam
+  Meshullam@Neh.12.13: Mesullam
+  Meshullam@Neh.12.16: Mesullam
+  Meshullam@Neh.12.25: Mesullam
+  Meshullam@Neh.3.4-: Mesullam
+  Meshullam@Neh.3.6: Mesullam
+  Meshullam@Neh.8.4: Mesullam
+  Meshullemeth@2Ki.21.19: Mesullemet
+  Methuselah@Gen.5.21-Luk: Matusalemme
+  Methushael@Gen.4.18: Metusaele
+  Mezahab@Gen.36.39-1Ch: Mezaab
+  Mibhar@1Ch.11.38: Mibcar
+  Mibsam@1Ch.4.25: Mibsam
+  Mibsam@Gen.25.13-1Ch: Mibsam
+  Mibzar@Gen.36.42-1Ch: Mibsar
+  Mica@1Ch.9.15-Neh: Mica
+  Mica@Neh.10.11: Mica
+  Mica@Neh.11.22-: Mica
+  Micah@1Ch.23.20-: Michea
+  Micah@1Ch.5.5: Michea
+  Micah@2Sa.9.12-1Ch: Michea
+  Micah@Jdg.17.1-: Michea
+  Micah@Jer.26.18-Mic: Michea
+  Micaiah@1Ki.22.8-2Ch: Michea
+  Micaiah@2Ch.17.7: Michea
+  Micaiah@2Ki.22.12-2Ch: Michea
+  Micaiah@Jer.36.11-: Michea
+  Micaiah@Neh.12.41: Michea
+  Michael@1Ch.12.20: Michele
+  Michael@1Ch.27.18: Michele
+  Michael@1Ch.5.13: Michele
+  Michael@1Ch.5.14: Michele
+  Michael@1Ch.6.40: Michele
+  Michael@1Ch.7.3: Michele
+  Michael@1Ch.8.16: Michele
+  Michael@2Ch.21.2: Michele
+  Michael@Dan.10.13-Rev: Michele
+  Michael@Ezr.8.8: Michele
+  Michael@Num.13.13: Michele
+  Michal@1Sa.14.49-1Ch: Mical
+  Michri@1Ch.9.8: Micri
+  Midian@Gen.25.2-1Ch: Madian
+  Mijamin@1Ch.24.9: Miiamin
+  Mijamin@Ezr.10.25: Miiamin
+  Mijamin@Neh.10.7-: Miiamin
+  Mikloth@1Ch.27.4: Miklot
+  Mikloth@1Ch.8.32-: Miklot
+  Mikneiah@1Ch.15.18-: Mikneia
+  Milalai@Neh.12.36: Milalai
+  Milcah@Gen.11.29-: Milca
+  Milcah@Num.26.33-Jos: Milca
+  Miniamin@2Ch.31.15: Miniamin
+  Miniamin@Neh.12.41: Miniamin
+  Miriam@1Ch.4.17: Maria
+  Miriam@Exo.15.20-Mic: Maria
+  Mirmah@1Ch.8.10: Mirma
+  Mishael@Dan.1.6-: Mesac
+  Mishael@Exo.6.22-Lev: Misaele
+  Mishael@Neh.8.4: Misaele
+  Misham@1Ch.8.12: Misam
+  Mishma@1Ch.4.25-: Misma
+  Mishma@Gen.25.14-1Ch: Misma
+  Mishmannah@1Ch.12.10: Mismanna
+  Mispar@Ezr.2.2-Neh: Mispar
+  Mithredath@Ezr.1.8: Mitredat
+  Mithredath@Ezr.4.7: Mitredat
+  Mizzah@Gen.36.13-1Ch: Mizza
+  Mnason@Act.21.16: Mnasone
+  Moab@Gen.19.37a: Moab
+  Molid@1Ch.2.29: Molid
+  Mordecai@Est.2.5-: Mardocheo
+  Mordecai@Ezr.2.2-Neh: Mardocheo
+  Moses@Exo.2.10-Rev: Mosè
+  Moza@1Ch.2.46: Moza
+  Moza@1Ch.8.36-: Moza
+  Mushi@Exo.6.19-1Ch: Musi
+  Naam@1Ch.4.15: Naam
+  Naamah@1Ki.14.21-2Ch: Naama
+  Naamah@Gen.4.22: Naama
+  Naaman@1Ch.8.7: Naaman
+  Naaman@2Ki.5.1-Luk: Naaman
+  Naaman@Gen.46.21-1Ch: Naaman
+  Naaman@Num.26.40-1Ch: Naaman
+  Naarah@1Ch.4.5-: Naara
+  Naarai@1Ch.11.37: Naarai
+  Nabal@1Sa.25.3-2Sa: Nabal
+  Naboth@1Ki.21.1-2Ki: Nabot
+  Nacon@2Sa.6.6-1Ch: Nacon
+  Nadab@1Ch.2.28-: Nadab
+  Nadab@1Ch.8.30-: Nadab
+  Nadab@1Ki.14.20-: Nadab
+  Nadab@Exo.6.23-1Ch: Nadab
+  Naggai@Luk.3.25: Naggai
+  Naham@1Ch.4.19: Naam
+  Nahamani@Neh.7.7: Nacamani
+  Naharai@2Sa.23.37-1Ch: Naarai
+  Nahash@1Sa.11.1-: Naas
+  Nahash@2Sa.10.2-1Ch: Naas
+  Nahash@2Sa.17.25: Naas
+  Nahash@2Sa.17.27: Naas
+  Nahath@2Ch.31.13: Nacat
+  Nahath@Gen.36.13-1Ch: Nacat
+  Nahbi@Num.13.14: Nacbi
+  Nahor@Gen.11.22-Luk: Nacor
+  Nahor@Gen.11.26-: Nacor
+  Nahshon@Exo.6.23-Luk: Naasson
+  Nahum@Luk.3.25: Naum
+  Nahum@Nam.1.1: Naum
+  Naomi@Rut.1.2-: Noemi
+  Naphish@Gen.25.15-1Ch: Nafis
+  Naphtali@Gen.30.8-Rev: Neftali
+  Narcissus@Rom.16.11: Narciso
+  Nathan-melech@2Ki.23.11: Natan-Melech
+  Nathan@1Ch.2.36: Natan
+  Nathan@2Sa.23.36-1Ch: Natan
+  Nathan@2Sa.5.14-Luk: Natan
+  Nathan@2Sa.7.2-Psa: Natan
+  Nathan@Ezr.10.39: Natan
+  Nathan@Ezr.8.16: Natan
+  Nathanael@Jhn.1.45-: Natanaele
+  Neariah@1Ch.3.22-: Nearia
+  Neariah@1Ch.4.42: Nearia
+  Nebai@Neh.10.19: Nebai
+  Nebaioth@Gen.25.13-Isa: Nebaiot
+  Nebat@1Ki.11.26-2Ch: Nebat
+  Nebu-sar-sekim@Jer.39.3: Nebo-Sarsechim
+  Nebuchadnezzar@2Ki.24.1-Dan: Nabucodonosor
+  Nebushazban@Jer.39.13: Nebusazban
+  Nebuzaradan@2Ki.25.8-Jer: Nebuzaradan
+  Neco@2Ki.23.29-Jer: Necao
+  Nehemiah@Ezr.2.2-Neh: Neemia
+  Nehemiah@Neh.1.1-: Neemia
+  Nehemiah@Neh.3.16: Neemia
+  Nehushta@2Ki.24.8: Necusta
+  Nekoda@Ezr.2.48-Neh: Nekoda
+  Nekoda@Ezr.2.60-Neh: Nekoda
+  Nemuel@Num.26.9: Nemuel
+  Nepheg@2Sa.5.15-1Ch: Nefeg
+  Nepheg@Exo.6.21: Nefeg
+  Ner@1Sa.14.50-1Ch: Ner
+  Nereus@Rom.16.15: Nereo
+  Nergal-sar-ezer@Jer.39.3a: Nergal-Sarezer
+  Nergal-sar-ezer@Jer.39.3b-: Nergal-Sarezer
+  Neri@Luk.3.27: Neri
+  Neriah@Jer.32.12-: Neria
+  Nethanel@1Ch.15.24: Netaneel
+  Nethanel@1Ch.2.14: Netaneel
+  Nethanel@1Ch.24.6: Netaneel
+  Nethanel@1Ch.26.4: Netaneel
+  Nethanel@2Ch.17.7: Netaneel
+  Nethanel@2Ch.35.9: Netaneel
+  Nethanel@Ezr.10.22: Netaneel
+  Nethanel@Neh.12.21: Netaneel
+  Nethanel@Neh.12.36: Netaneel
+  Nethanel@Num.1.8-: Netaneel
+  Nethaniah@1Ch.25.2-: Netania
+  Nethaniah@2Ch.17.8: Netania
+  Nethaniah@2Ki.25.23-Jer: Netania
+  Nethaniah@Jer.36.14: Netania
+  Neziah@Ezr.2.54-Neh: Nesia
+  Nicanor@Act.6.5: Nicanore
+  Nicodemus@Jhn.3.1-: Nicodemo
+  Nicolaus@Act.6.5: Nicola
+  Nimrod@Gen.10.8-Mic: Nimrod
+  Nimshi@1Ki.19.16-2Ch: Nimsi
+  Noadiah@Ezr.8.33: Noadia
+  Noadiah@Neh.6.14: Noadia
+  Noah@Gen.5.29-2Pe: Noè
+  Noah@Num.26.33-Jos: Noa
+  Nobah@Num.32.42: Nobach
+  Nogah@1Ch.3.7-: Noga
+  Nun@Exo.33.11-Neh: Nun
+  Nympha@Col.4.15: Ninfa
+  Obadiah@1Ch.12.9: Abdia
+  Obadiah@1Ch.27.19: Abdia
+  Obadiah@1Ch.3.21: Abdia
+  Obadiah@1Ch.7.3: Abdia
+  Obadiah@1Ch.8.38-: Abdia
+  Obadiah@1Ch.9.16-Neh: Abdia
+  Obadiah@1Ki.18.3-: Abdia
+  Obadiah@2Ch.17.7: Abdia
+  Obadiah@2Ch.34.12: Abdia
+  Obadiah@Ezr.8.9: Abdia
+  Obadiah@Neh.10.5: Abdia
+  Obadiah@Oba.1.1: Abdia
+  Obal@Gen.10.28-1Ch: Ebal
+  Obed-edom@2Sa.6.10-2Ch: Obed-Edom
+  Obed@1Ch.11.47: Obed
+  Obed@1Ch.2.37-: Obed
+  Obed@1Ch.26.7: Obed
+  Obed@2Ch.23.1: Obed
+  Obed@Rut.4.17-Luk: Obed
+  Obil@1Ch.27.30: Obil
+  Ochran@Num.1.13-: Ocran
+  Oded@2Ch.15.1-: Oded
+  Oded@2Ch.28.9: Oded
+  Og@Num.21.33-Psa: Og
+  Ohad@Gen.46.10-Exo: Oad
+  Ohel@1Ch.3.20: Oel
+  Oholah@Ezk.23.4-: Ola
+  Oholiab@Exo.31.6-: Oliab
+  Oholibah@Ezk.23.4-: Oliba
+  Oholibamah@Gen.36.2-1Ch: Olibama
+  Olympas@Rom.16.15: Olimpa
+  Omar@Gen.36.11-1Ch: Omar
+  Omri@1Ch.27.18: Omri
+  Omri@1Ch.7.8: Omri
+  Omri@1Ch.9.4: Omri
+  Omri@1Ki.16.16-Mic: Omri
+  Onam@1Ch.2.26-: Onam
+  Onam@Gen.36.23-1Ch: Onam
+  Onan@Gen.38.4-1Ch: Onan
+  Onesimus@Col.4.9-Phm: Onesimo
+  Onesiphorus@2Ti.1.16-: Onesiforo
+  Ophir@Gen.10.29-1Ch: Ofir
+  Ophrah@1Ch.4.14: Ofra
+  Oreb@Jdg.7.25-Isa: Oreb
+  Oren@1Ch.2.25: Oren
+  Ornan@2Sa.24.16-2Ch: Ornan
+  Orpah@Rut.1.4-: Orpa
+  Osnappar@Ezr.4.10: Asnappar
+  Othni@1Ch.26.7: Otni
+  Othniel@Jos.15.17-1Ch: Otniel
+  Ozem@1Ch.2.15: Ozem
+  Ozem@1Ch.2.25: Ozem
+  Paarai@2Sa.23.35: Paarai
+  Padon@Ezr.2.44-Neh: Padon
+  Pagiel@Num.1.13-: Pagiel
+  Pahath-moab@Ezr.2.6-Neh: Paat-Moab
+  Pahath-moab@Neh.10.14: Paat-Moab
+  Pahath-moab@Neh.3.11: Paat-Moab
+  Palal@Neh.3.25: Palal
+  Pallu@Gen.46.9-1Ch: Pallu
+  Palti@1Sa.25.44-2Sa: Palti
+  Palti@Num.13.9: Palti
+  Paltiel@Num.34.26: Paltiel
+  Parmashta@Est.9.9: Parmasta
+  Parmenas@Act.6.5: Parmena
+  Parnach@Num.34.25: Parnac
+  Parosh@Ezr.2.3-Neh: Pareos
+  Parosh@Ezr.8.3: Pareos
+  Parosh@Neh.10.14: Pareos
+  Parosh@Neh.3.25: Pareos
+  Parshandatha@Est.9.7: Parsandata
+  Paruah@1Ki.4.17: Paruach
+  Pasach@1Ch.7.33: Pasac
+  Paseah@1Ch.4.12: Paseach
+  Paseah@Ezr.2.49-Neh: Paseach
+  Paseah@Neh.3.6: Paseach
+  Pashhur@1Ch.9.12-Neh: Pascur
+  Pashhur@Jer.20.1-: Pascur
+  Pashhur@Jer.21.1-: Pascur
+  Pashhur@Jer.38.1: Pascur
+  Pashhur@Neh.10.3: Pascur
+  Patrobas@Rom.16.14: Patroba
+  Paul@Act.7.58-2Pe: Paolo
+  Pedahel@Num.34.28: Pedael
+  Pedahzur@Num.1.10-: Pedasur
+  Pedaiah@1Ch.27.20: Pedaia
+  Pedaiah@1Ch.3.18-: Pedaia
+  Pedaiah@2Ki.23.36: Pedaia
+  Pedaiah@Neh.11.7: Pedaia
+  Pedaiah@Neh.13.13: Pedaia
+  Pedaiah@Neh.3.25: Pedaia
+  Pedaiah@Neh.8.4: Pedaia
+  Pekah@2Ki.15.25-Isa: Pekach
+  Pekahiah@2Ki.15.22-: Pekachia
+  Pelaiah@1Ch.3.24: Pelaia
+  Pelaiah@Neh.8.7-: Pelaia
+  Pelaliah@Neh.11.12: Pelalia
+  Pelatiah@1Ch.3.21: Pelatia
+  Pelatiah@1Ch.4.42: Pelatia
+  Pelatiah@Ezk.11.1-: Pelatia
+  Pelatiah@Neh.10.22: Pelatia
+  Peleg@Gen.10.25-Luk: Peleg
+  Pelet@1Ch.12.3: Pelet
+  Pelet@1Ch.2.47: Pelet
+  Peleth@1Ch.2.33: Pelet
+  Peleth@Num.16.1: Pelet
+  Peninnah@1Sa.1.2-: Peninna
+  Penuel@1Ch.4.4: Penuel
+  Penuel@1Ch.8.25: Penuel
+  Peresh@1Ch.7.16: Peres
+  Perez@Gen.38.29-Luk: Peres
+  Persis@Rom.16.12: Perside
+  Peruda@Ezr.2.55-Neh: Peruda
+  Peter@Mat.4.18-2Pe: Pietro
+  Pethahiah@1Ch.24.16: Petachia
+  Pethahiah@Ezr.10.23: Petachia
+  Pethahiah@Neh.11.24: Petachia
+  Pethahiah@Neh.9.5: Petachia
+  Pethuel@Jol.1.1: Petuel
+  Peullethai@1Ch.26.5: Peulletai
+  Phanuel@Luk.2.36: Fanuele
+  Pharaoh@1Ch.4.18: Faraone
+  Pharaoh@1Ki.3.1-Sng: Faraone
+  Pharaoh@2Ki.18.21-Isa: Faraone
+  Pharaoh@Exo.1.11-Heb: Faraone
+  Pharaoh@Exo.3.10-Rom: Faraone
+  Pharaoh@Gen.12.15-: Faraone
+  Pharaoh@Gen.37.36-Act: Faraone
+  Pharaoh@Jer.25.19: Faraone
+  Phicol@Gen.21.22-: Picol
+  Philemon@Phm.1.1-: Filemone
+  Philetus@2Ti.2.17: Fileto
+  Philip@Act.6.5-: Filippo
+  Philip@Luk.3.1: Filippo
+  Philip@Mat.10.3-Act: Filippo
+  Philip@Mat.14.3-Luk: Filippo
+  Philistine@Gen.10.14-1Ch: Filisteo
+  Philologus@Rom.16.15: Filologo
+  Phinehas@1Sa.1.3-: Pincas
+  Phinehas@Exo.6.25-Psa: Pincas
+  Phinehas@Ezr.8.33: Pincas
+  Phlegon@Rom.16.14: Flegonte
+  Phoebe@Rom.16.1-: Febe
+  Phygelus@2Ti.1.15: Fìgelo
+  Pilate@Mat.27.2-1Ti: Pilato
+  Pildash@Gen.22.22: Pildas
+  Pilha@Neh.10.24: Pilca
+  Piltai@Neh.12.17: Piltai
+  Pinon@Gen.36.41-1Ch: Pinon
+  Piram@Jos.10.3: Piram
+  Pispa@1Ch.7.38: Pispa
+  Pithon@1Ch.8.35-: Piton
+  Pochereth-hazzebaim@Ezr.2.57-Neh: Pocheret-Azzebaim
+  Poratha@Est.9.8: Porata
+  Potiphar@Gen.37.36-: Potifar
+  Potiphera@Gen.41.45-: Potifera
+  Priscilla@Act.18.2-2Ti: Priscilla
+  Prochorus@Act.6.5: Procoro
+  Puah@Exo.1.15: Pua
+  Puah@Gen.46.13-1Ch: Pua
+  Puah@Jdg.10.1: Pua
+  Publius@Act.28.7-: Publio
+  Pudens@2Ti.4.21: Pudente
+  Purah@Jdg.7.10-: Pura
+  Put@Gen.10.6-1Ch: Put
+  Putiel@Exo.6.25: Putiel
+  Pyrrhus@Act.20.4: Pirro
+  Quartus@Rom.16.23: Quarto
+  Quirinius@Luk.2.2: Quirinio
+  Raamah@Gen.10.7-1Ch: Raama
+  Rab-saris@2Ki.18.17: Rabsaris
+  Rab-saris@Jer.39.3-: Rabsaris
+  Rabshakeh@2Ki.18.17-Isa: Rabsache
+  Rachel@Gen.29.6-Mat: Rachele
+  Raddai@1Ch.2.14: Raddai
+  Rahab@Jos.2.1-Jas: Raab
+  Raham@1Ch.2.44: Racam
+  Rakem@1Ch.7.16: Rekem
+  Ram@1Ch.2.25-: Ram
+  Ram@Job.32.2: Ram
+  Ram@Rut.4.19-Luk: Ram
+  Ramiah@Ezr.10.25: Ramia
+  Rapha@2Sa.21.16-1Ch: Rafa
+  Raphah@1Ch.8.37-: Rafa
+  Raphu@Num.13.9: Rafu
+  Reaiah@1Ch.5.5: Reaia
+  Reaiah@Ezr.2.47-Neh: Reaia
+  Reba@Num.31.8-Jos: Reba
+  Rebekah@Gen.22.23-Rom: Rebecca
+  Rechab@2Ki.10.15-Jer: Recab
+  Rechab@2Sa.4.2-: Recab
+  Rechab@Neh.3.14: Recab
+  Reelaiah@Ezr.2.2-Neh: Reelaia
+  Regem-melech@Zec.7.2: Reghem-Melech
+  Regem@1Ch.2.47: Reghem
+  Rehabiah@1Ch.23.17-: Recabia
+  Rehob@2Sa.8.3-: Recob
+  Rehob@Neh.10.11: Recob
+  Rehoboam@1Ki.11.43-Mat: Roboamo
+  Rehum@Ezr.4.8-: Reum
+  Rehum@Neh.10.25: Reum
+  Rehum@Neh.3.17: Reum
+  Rei@1Ki.1.8: Rei
+  Rekem@1Ch.2.43-: Rekem
+  Rekem@Num.31.8-Jos: Rekem
+  Remaliah@2Ki.15.25-Isa: Romelia
+  Rephael@1Ch.26.7: Refael
+  Rephah@1Ch.7.25: Refa
+  Rephaiah@1Ch.3.21: Refaia
+  Rephaiah@1Ch.4.42: Refaia
+  Rephaiah@1Ch.7.2: Refaia
+  Rephaiah@Neh.3.9: Refaia
+  Resheph@1Ch.7.25: Resef
+  Reu@Gen.11.18-Luk: Reu
+  Reuben@Gen.29.32-Rev: Ruben
+  Reuel@1Ch.9.8: Reuel
+  Reuel@Gen.36.4-1Ch: Reuel
+  Reumah@Gen.22.24: Reuma
+  Rezin@2Ki.15.37-Isa: Resin
+  Rezin@Ezr.2.48-Neh: Resin
+  Rezon@1Ki.11.23: Rezon
+  Rhesa@Luk.3.27: Resa
+  Ribai@2Sa.23.29-1Ch: Ribai
+  Rimmon@2Sa.4.2-: Rimmon
+  Rinnah@1Ch.4.20: Rinna
+  Riphath@Gen.10.3-1Ch: Rifat
+  Rizia@1Ch.7.39: Risia
+  Rizpah@2Sa.3.7-: Rizpa
+  Rohgah@1Ch.7.34: Roga
+  Romamti-ezer@1Ch.25.4-: Romamti-Ezer
+  Rosh@Gen.46.21-1Ch: Rosh
+  Rufus@Mrk.15.21: Rufo
+  Rufus@Rom.16.13: Rufo
+  Ruth@Rut.1.4-Mat: Rut
+  Sabtah@Gen.10.7-1Ch: Sabta
+  Sabteca@Gen.10.7-1Ch: Sabteca
+  Sachar@1Ch.26.4: Sacar
+  Sachia@1Ch.8.10: Sachia
+  Sallai@Neh.11.8: Sallai
+  Sallu@1Ch.9.7: Sallu
+  Sallu@Neh.11.7: Sallu
+  Sallu@Neh.12.7-: Sallu
+  Salma@1Ch.2.51-: Salma
+  Salmon@Rut.4.20-Luk: Salmon
+  Salome@Mat.20.20-Mrk: Salome
+  Salu@Num.25.14: Salu
+  Samgar@Jer.39.3: Samgar
+  Samlah@Gen.36.36-1Ch: Samla
+  Samson@Jdg.13.24-Heb: Sansone
+  Samuel@1Sa.1.20-Heb: Samuele
+  Sanballat@Neh.2.10-: Sanballàt
+  Saph@2Sa.21.18-1Ch: Saf
+  Sapphira@Act.5.1: Saffira
+  Sarah@Gen.11.29-1Pe: Sara
+  Saraph@1Ch.4.22: Saraf
+  Saul@1Sa.9.2-Act: Saul
+  Sceva@Act.19.14: Sceva
+  Seba@Gen.10.7-1Ch: Seba
+  Secundus@Act.20.4: Secondo
+  Segub@1Ch.2.21-: Segub
+  Segub@1Ki.16.34: Segub
+  Seir@Gen.36.20-1Ch: Seir
+  Seled@1Ch.2.30: Seled
+  Semachiah@1Ch.26.7: Semachia
+  Semein@Luk.3.26: Semein
+  Sennacherib@2Ki.18.13-Isa: Sennacherib
+  Seorim@1Ch.24.8: Seorim
+  Serah@Gen.46.17-1Ch: Serach
+  Seraiah@1Ch.4.13-: Seraia
+  Seraiah@1Ch.4.35: Seraia
+  Seraiah@2Ki.25.18-Jer: Seraia
+  Seraiah@2Ki.25.23-Jer: Seraia
+  Seraiah@2Sa.8.17-1Ch: Seraia
+  Seraiah@Ezr.2.2-Neh: Seraia
+  Seraiah@Jer.36.26: Seraia
+  Seraiah@Jer.51.59-: Seraia
+  Sered@Gen.46.14-Num: Sered
+  Sergius_Paulus@Act.13.7: Sergio Paolo
+  Serug@Gen.11.20-Luk: Serug
+  Seth@Gen.4.25-Luk: Set
+  Sethur@Num.13.13: Setur
+  Shaaph@1Ch.2.47: Saaf
+  Shaaph@1Ch.2.49: Saaf
+  Shaashgaz@Est.2.14: Saasgaz
+  Shabbethai@Ezr.10.15: Sabbetai
+  Shabbethai@Neh.11.16: Sabbetai
+  Shabbethai@Neh.8.7: Sabbetai
+  Shaharaim@1Ch.8.8: Saaraim
+  Shallum@1Ch.2.40-: Sallum
+  Shallum@1Ch.3.15: Sallum
+  Shallum@1Ch.4.25: Sallum
+  Shallum@1Ch.6.12-Neh: Sallum
+  Shallum@1Ch.9.17-Neh: Sallum
+  Shallum@2Ch.28.12: Sallum
+  Shallum@2Ki.15.10-: Sallum
+  Shallum@2Ki.22.14-2Ch: Sallum
+  Shallum@Ezr.10.24: Sallum
+  Shallum@Ezr.10.42: Sallum
+  Shallum@Jer.32.7: Sallum
+  Shallum@Jer.35.4: Sallum
+  Shallum@Neh.3.12: Sallum
+  Shallum@Neh.3.15: Sallum
+  Shalmai@Ezr.2.46-Neh: Salmai
+  Shalmaneser@2Ki.17.3-Hos: Salmanàssar
+  Shama@1Ch.11.44: Sama
+  Shamgar@Jdg.3.31-: Samgar
+  Shamhuth@1Ch.27.8: Samhut
+  Shamir@1Ch.24.24: Samir
+  Shamma@1Ch.7.37: Samma
+  Shammah@2Sa.23.11: Samma
+  Shammah@2Sa.23.25-1Ch: Samma
+  Shammah@2Sa.23.33-1Ch: Samma
+  Shammah@Gen.36.13-1Ch: Samma
+  Shammai@1Ch.2.28-: Sammai
+  Shammai@1Ch.2.44-: Sammai
+  Shammai@1Ch.4.17: Sammai
+  Shammua@2Sa.5.14-1Ch: Sammua
+  Shammua@Neh.12.18: Sammua
+  Shammua@Num.13.4: Sammua
+  Shamsherai@1Ch.8.26: Samserai
+  Shapham@1Ch.5.12: Safam
+  Shaphan@2Ki.22.3-Jer: Safan
+  Shaphan@Ezk.8.11: Safan
+  Shaphat@1Ch.27.29: Safat
+  Shaphat@1Ch.3.22: Safat
+  Shaphat@1Ch.5.12: Safat
+  Shaphat@1Ki.19.16-2Ki: Safat
+  Shaphat@Num.13.5: Safat
+  Sharai@Ezr.10.40: Sarai
+  Sharar@2Sa.23.33-1Ch: Sarar
+  Sharezer@2Ki.19.37-Isa: Sarezer
+  Sharezer@Zec.7.2: Sarezer
+  Shashai@Ezr.10.40: Sasai
+  Shashak@1Ch.8.14-: Sasak
+  Shaul@1Ch.6.24-: Saul
+  Shaul@Gen.36.37-1Ch: Saul
+  Shaul@Gen.46.10-1Ch: Saul
+  Sheal@Ezr.10.29: Seal
+  Shealtiel@1Ch.3.17-Mat: Sealtiel
+  Shealtiel@Luk.3.27: Sealtiel
+  Shear-jashub@Isa.7.3: Seariasub
+  Sheariah@1Ch.8.38-: Searia
+  Sheba@1Ch.5.13: Seba
+  Sheba@2Sa.20.1-: Seba
+  Sheba@Gen.10.28-1Ch: Saba
+  Sheba@Gen.10.7-Jol: Saba
+  Sheba@Gen.25.3-1Ch: Saba
+  Shebaniah@1Ch.15.24: Sebania
+  Shebaniah@Neh.10.12: Sebania
+  Shebaniah@Neh.10.4-: Sebania
+  Shebaniah@Neh.9.4-: Sebania
+  Sheber@1Ch.2.48: Seber
+  Shebna@2Ki.18.18-Isa: Sebna
+  Shebuel@1Ch.23.16-: Sebuel
+  Shebuel@1Ch.25.4-: Sebuel
+  Shecaniah@1Ch.24.11: Secania
+  Shecaniah@1Ch.3.21-: Secania
+  Shecaniah@2Ch.31.15: Secania
+  Shecaniah@Ezr.10.2-Neh: Secania
+  Shecaniah@Ezr.8.3: Secania
+  Shecaniah@Ezr.8.5: Secania
+  Shecaniah@Neh.6.18: Secania
+  Shechem@1Ch.7.19: Sichem
+  Shechem@Gen.33.19-: Sichem
+  Shechem@Num.26.31-Jos: Sichem
+  Shedeur@Num.1.5-: Sedeur
+  Sheerah@1Ch.7.24: Seera
+  Shehariah@1Ch.8.26: Seharia
+  Shelah@Gen.10.24-Luk: Sela
+  Shelah@Gen.38.5-1Ch: Sela
+  Shelemiah@Ezr.10.39: Selemia
+  Shelemiah@Ezr.10.41: Selemia
+  Shelemiah@Jer.36.14: Selemia
+  Shelemiah@Jer.36.26: Selemia
+  Shelemiah@Jer.37.13: Selemia
+  Shelemiah@Jer.37.3-: Selemia
+  Shelemiah@Neh.13.13: Selemia
+  Shelemiah@Neh.3.30: Selemia
+  Sheleph@Gen.10.26-1Ch: Selef
+  Shelesh@1Ch.7.35: Seles
+  Shelomi@Num.34.27: Selomi
+  Shelomith@1Ch.23.18-: Selomit
+  Shelomith@1Ch.3.19: Selomit
+  Shelomith@2Ch.11.20: Selomit
+  Shelomith@Ezr.8.10: Selomit
+  Shelomith@Lev.24.11: Selomit
+  Shelomoth@1Ch.23.9: Selomot
+  Shelomoth@1Ch.26.25-: Selomot
+  Shelumiel@Num.1.6-: Selumiel
+  Shem@Gen.5.32-Luk: Sem
+  Shema@1Ch.2.43-: Sema
+  Shema@1Ch.5.8: Sema
+  Shema@1Ch.8.13: Sema
+  Shema@Neh.8.4: Sema
+  Shemaah@1Ch.12.3: Semaa
+  Shemaiah@1Ch.15.8-: Semaia
+  Shemaiah@1Ch.24.6: Semaia
+  Shemaiah@1Ch.26.4-: Semaia
+  Shemaiah@1Ch.3.22: Semaia
+  Shemaiah@1Ch.4.37: Semaia
+  Shemaiah@1Ch.5.4: Semaia
+  Shemaiah@1Ch.9.14-Neh: Semaia
+  Shemaiah@1Ch.9.16-Neh: Semaia
+  Shemaiah@1Ki.12.22-2Ch: Semaia
+  Shemaiah@2Ch.17.8: Semaia
+  Shemaiah@2Ch.29.14: Semaia
+  Shemaiah@2Ch.31.15: Semaia
+  Shemaiah@2Ch.35.9: Semaia
+  Shemaiah@Ezr.10.21: Semaia
+  Shemaiah@Ezr.10.31: Semaia
+  Shemaiah@Ezr.8.13: Semaia
+  Shemaiah@Ezr.8.16: Semaia
+  Shemaiah@Jer.26.20: Semaia
+  Shemaiah@Jer.29.24-: Semaia
+  Shemaiah@Jer.36.12: Semaia
+  Shemaiah@Neh.10.8-: Semaia
+  Shemaiah@Neh.12.35: Semaia
+  Shemaiah@Neh.12.36: Semaia
+  Shemaiah@Neh.12.42: Semaia
+  Shemaiah@Neh.3.29: Semaia
+  Shemaiah@Neh.6.10: Semaia
+  Shemariah@1Ch.12.5: Semaria
+  Shemariah@2Ch.11.19: Semaria
+  Shemariah@Ezr.10.32: Semaria
+  Shemariah@Ezr.10.41: Semaria
+  Shemeber@Gen.14.2: Semeber
+  Shemed@1Ch.8.12: Semed
+  Shemer@1Ch.6.46: Semer
+  Shemer@1Ki.16.24: Semer
+  Shemida@Num.26.32-1Ch: Semida
+  Shemiramoth@1Ch.15.18-: Semiramot
+  Shemiramoth@2Ch.17.8: Semiramot
+  Shemuel@1Ch.7.2: Samuele
+  Shemuel@Num.34.20: Samuele
+  Shenazzar@1Ch.3.18: Senazzar
+  Shephatiah@1Ch.12.5: Sefatia
+  Shephatiah@1Ch.27.16: Sefatia
+  Shephatiah@1Ch.9.8: Sefatia
+  Shephatiah@2Ch.21.2: Sefatia
+  Shephatiah@2Sa.3.4-1Ch: Sefatia
+  Shephatiah@Ezr.2.4-Neh: Sefatia
+  Shephatiah@Ezr.2.57-Neh: Sefatia
+  Shephatiah@Jer.38.1: Sefatia
+  Shephatiah@Neh.11.4: Sefatia
+  Shepho@Gen.36.23-1Ch: Sefo
+  Sherebiah@Ezr.8.18-Neh: Serebia
+  Sherebiah@Neh.10.12-: Serebia
+  Sheresh@1Ch.7.16: Seres
+  Sheshai@Num.13.22-Jdg: Sesai
+  Sheshan@1Ch.2.31-: Sesan
+  Shethar-bozenai@Ezr.5.3-: Setar-Boznai
+  Shethar@Est.1.14: Setar
+  Sheva@1Ch.2.49: Seva
+  Shilhi@1Ki.22.42-2Ch: Silchi
+  Shillem@Gen.46.24-1Ch: Sillem
+  Shilshah@1Ch.7.37: Silsa
+  Shimea@1Ch.6.30: Simea
+  Shimea@1Ch.6.39: Simea
+  Shimeah@1Ch.8.32-: Simea
+  Shimeah@1Sa.16.9-1Ch: Samma
+  Shimeath@2Ki.12.21-2Ch: Simeat
+  Shimei@1Ch.27.27: Simei
+  Shimei@1Ch.3.19: Simei
+  Shimei@1Ch.4.26-: Simei
+  Shimei@1Ch.5.4: Simei
+  Shimei@1Ch.6.29: Simei
+  Shimei@1Ch.6.42-: Simei
+  Shimei@1Ch.8.21: Simei
+  Shimei@1Ki.1.8-: Simei
+  Shimei@2Ch.29.14: Simei
+  Shimei@2Ch.31.12-: Simei
+  Shimei@2Sa.16.5-1Ki: Simei
+  Shimei@Est.2.5: Simei
+  Shimei@Exo.6.17-Zec: Simei
+  Shimei@Ezr.10.23: Simei
+  Shimei@Ezr.10.33: Simei
+  Shimei@Ezr.10.38: Simei
+  Shimeon@Ezr.10.31: Simeone
+  Shimon@1Ch.4.20: Simone
+  Shimrath@1Ch.8.21: Simrat
+  Shimri@1Ch.11.45: Simri
+  Shimri@1Ch.26.10: Simri
+  Shimri@1Ch.4.37: Simri
+  Shimri@2Ch.29.13: Simri
+  Shimron@Gen.46.13-1Ch: Simron
+  Shimshai@Ezr.4.8-: Simsai
+  Shinab@Gen.14.2: Sinab
+  Shiphi@1Ch.4.37: Sifi
+  Shiphrah@Exo.1.15: Sifra
+  Shiphtan@Num.34.24: Siftan
+  Shishak@1Ki.11.40-2Ch: Sisak
+  Shitrai@1Ch.27.29: Sitrai
+  Shiza@1Ch.11.42: Siza
+  Shobab@1Ch.2.18: Sobab
+  Shobab@2Sa.5.14-1Ch: Sobab
+  Shobach@2Sa.10.16-1Ch: Sobac
+  Shobai@Ezr.2.42-Neh: Sobai
+  Shobal@1Ch.2.50-: Sobal
+  Shobal@Gen.36.20-1Ch: Sobal
+  Shobek@Neh.10.24: Sobek
+  Shobi@2Sa.17.27: Sobi
+  Shoham@1Ch.24.27: Soam
+  Shomer@1Ch.7.32-: Semer
+  Shomer@2Ki.12.21-2Ch: Semer
+  Shua@1Ch.7.32: Sua
+  Shua@Gen.38.2-1Ch: Sua
+  Shuah@Gen.25.2-1Ch: Sua
+  Shual@1Ch.7.36-: Sual
+  Shuhah@1Ch.4.11: Succa
+  Shuni@Gen.46.16-Num: Suni
+  Shuppim@1Ch.26.16: Suppim
+  Shuppim@1Ch.7.12-: Suppim
+  Shuthelah@1Ch.7.21: Sutela
+  Shuthelah@Num.26.35-1Ch: Sutela
+  Siaha@Ezr.2.44-Neh: Sia
+  Sibbecai@2Sa.21.18-1Ch: Sibbecai
+  Sidon@Gen.10.15-1Ch: Sidone
+  Sihon@Num.21.21-Jer: Sicon
+  Silas@Act.15.22-1Pe: Sila
+  Simeon@Act.13.1: Simeone
+  Simeon@Gen.29.33-Rev: Simeone
+  Simeon@Luk.2.25-: Simeone
+  Simeon@Luk.3.30: Simeone
+  Simon@Act.8.13-: Simone
+  Simon@Act.8.9-: Simone
+  Simon@Jhn.6.71-: Simone
+  Simon@Mat.10.4-Act: Simone
+  Simon@Mat.13.55-Mrk: Simone
+  Simon@Mat.26.6-Luk: Simone
+  Simon@Mat.27.32-Luk: Simone
+  Sisera@Ezr.2.53-Neh: Sisara
+  Sisera@Jdg.4.2-Psa: Sisara
+  Sismai@1Ch.2.40: Sismai
+  Sithri@Exo.6.22: Sitri
+  So@2Ki.17.4: So
+  Soco@1Ch.4.18: Soco
+  Sodi@Num.13.10: Sodi
+  Solomon@2Sa.5.14-Act: Salomone
+  Sopater@Act.20.4-Rom: Sopatro
+  Sophereth@Ezr.2.55-Neh: Sofèret
+  Sosthenes@Act.18.17-1Co: Sostene
+  Sotai@Ezr.2.55-Neh: Sotai
+  Stachys@Rom.16.9: Stachi
+  Stephanas@1Co.1.16-: Stefana
+  Stephen@Act.6.5-: Stefano
+  Suah@1Ch.7.36: Sua
+  Susanna@Luk.8.3: Susanna
+  Susi@Num.13.11: Susi
+  Syntyche@Php.4.2: Sintiche
+  Tabbaoth@Ezr.2.43-Neh: Tabbaot
+  Tabeal@Isa.7.6: Tabeel
+  Tabeel@Ezr.4.7: Tabeel
+  Tabitha@Act.9.36-: Tabita
+  Tabrimmon@1Ki.15.18: Tabrimmon
+  Tahan@1Ch.7.25: Tacan
+  Tahan@Num.26.35: Tacan
+  Tahash@Gen.22.24: Tacas
+  Tahath@1Ch.6.24-: Tacat
+  Tahath@1Ch.7.20a: Tacat
+  Tahath@1Ch.7.20b: Tacat
+  Tahpenes@1Ki.11.19-: Tacpenes
+  Talmai@2Sa.3.3-1Ch: Talmai
+  Talmai@Num.13.22-Jdg: Talmai
+  Talmon@1Ch.9.17-Neh: Talmon
+  Tamar@2Sa.13.1-1Ch: Tamar
+  Tamar@2Sa.14.27: Tamar
+  Tamar@Gen.38.6-Mat: Tamar
+  Tanhumeth@2Ki.25.23-Jer: Tanumet
+  Taphath@1Ki.4.11: Tafat
+  Tappuah@1Ch.2.43: Tappuach
+  Tarea@1Ch.8.35-: Tarea
+  Tarshish@1Ch.7.10: Tarsis
+  Tarshish@Est.1.14: Tarsis
+  Tarshish@Gen.10.4-1Ch: Tarsis
+  Tartan@2Ki.18.17-Isa: Tartan
+  Tattenai@Ezr.5.3-: Tattenai
+  Tebah@Gen.22.24: Tebach
+  Tebaliah@1Ch.26.11: Tebalia
+  Tehinnah@1Ch.4.12: Techinna
+  Telah@1Ch.7.25: Tela
+  Telem@Ezr.10.24: Telem
+  Tema@Gen.25.15-1Ch: Tema
+  Temah@Ezr.2.53-Neh: Tema
+  Teman@Gen.36.11-Job: Teman
+  Temeni@1Ch.4.6: Temeni
+  Terah@Gen.11.24-Luk: Terach
+  Teresh@Est.2.21-: Teres
+  Tertius@Rom.16.22: Terzio
+  Tertullus@Act.24.1-: Tertullo
+  Theophilus@Luk.1.3-Act: Teofilo
+  Theudas@Act.5.36: Teuda
+  Thomas@Mat.10.3-Act: Tommaso
+  Tiberius@Mat.22.17-Jhn: Tiberio
+  Tibni@1Ki.16.21-: Tibni
+  Tidal@Gen.14.1-: Tideal
+  Tiglath-pileser@2Ki.15.19-Hos: Tiglat-Pilèser
+  Tikvah@2Ki.22.14-2Ch: Tikva
+  Tikvah@Ezr.10.15: Tikva
+  Tilon@1Ch.4.20: Tilon
+  Timaeus@Mrk.10.46: Timeo
+  Timna@Gen.36.12-1Ch: Timna
+  Timon@Act.6.5: Timone
+  Timothy@Act.16.1-Heb: Timoteo
+  Tiras@Gen.10.2-1Ch: Tiras
+  Tirhakah@2Ki.19.9-Isa: Tiraka
+  Tirhanah@1Ch.2.48: Tircana
+  Tiria@1Ch.4.16: Tiria
+  Tirzah@Num.26.33-Jos: Tirza
+  Titus@2Co.2.13-Tit: Tito
+  Tobadonijah@2Ch.17.8: Tob-Adonia
+  Tobiah@Ezr.2.60-Neh: Tobia
+  Tobiah@Neh.2.10-: Tobia
+  Tobijah@2Ch.17.8: Tobia
+  Tobijah@Zec.6.10-: Tobia
+  Togarmah@Gen.10.3-1Ch: Togarma
+  Tohu@1Sa.1.1-1Ch: Toach
+  Toi@2Sa.8.9-1Ch: Toi
+  Tola@Gen.46.13-1Ch: Tola
+  Tola@Jdg.10.1: Tola
+  Trophimus@Act.20.4-2Ti: Trofimo
+  Tryphaena@Rom.16.12: Trifena
+  Tryphosa@Rom.16.12: Trifosa
+  Tubal-cain@Gen.4.22: Tubal-Kain
+  Tubal@Gen.10.2-1Ch: Tubal
+  Tychicus@Act.20.4-Tit: Tichico
+  Tyrannus@Act.19.9: Tiranno
+  Ucal@Pro.30.1: Ucal
+  Uel@Ezr.10.34: Uel
+  Ulam@1Ch.7.16-: Ulam
+  Ulam@1Ch.8.39-: Ulam
+  Unni@1Ch.15.18-: Unni
+  Unni@Neh.12.9: Unni
+  Ur@1Ch.11.35: Ur
+  Urbanus@Rom.16.9: Urbano
+  Uri@1Ki.4.19: Uri
+  Uri@Exo.31.2-2Ch: Uri
+  Uri@Ezr.10.24: Uri
+  Uriah@2Ki.16.10-Isa: Uria
+  Uriah@2Sa.11.3-Mat: Uria
+  Uriah@Ezr.8.33-Neh: Uria
+  Uriah@Jer.26.20-: Uria
+  Uriah@Neh.8.4: Uria
+  Uriel@1Ch.15.5-: Uriel
+  Uriel@1Ch.6.24-: Uriel
+  Uriel@2Ch.13.2: Uriel
+  Uthai@1Ch.9.4: Utai
+  Uthai@Ezr.8.14: Utai
+  Uz@Gen.10.23-1Ch: Uz
+  Uz@Gen.22.21: Uz
+  Uz@Gen.36.28-1Ch: Uz
+  Uzai@Neh.3.25: Uzai
+  Uzal@Gen.10.27-1Ch: Uzal
+  Uzza@1Ch.8.7: Uzza
+  Uzza@Ezr.2.49-Neh: Uzza
+  Uzzah@1Ch.6.29: Uzza
+  Uzzah@2Sa.6.3-1Ch: Uzza
+  Uzzi@1Ch.6.5-Ezr: Uzzi
+  Uzzi@1Ch.7.2-: Uzzi
+  Uzzi@1Ch.7.7: Uzzi
+  Uzzi@1Ch.9.8: Uzzi
+  Uzzi@Neh.11.22: Uzzi
+  Uzzi@Neh.12.19: Uzzi
+  Uzzi@Neh.12.42: Uzzi
+  Uzzia@1Ch.11.44: Uzzia
+  Uzziah@1Ch.27.25: Ozia
+  Uzziah@1Ch.6.24-: Ozia
+  Uzziah@2Ki.14.21-Mat: Ozia
+  Uzziah@Ezr.10.21: Ozia
+  Uzziah@Neh.11.4: Ozia
+  Uzziel@1Ch.25.4-: Uzziel
+  Uzziel@1Ch.4.42: Uzziel
+  Uzziel@1Ch.7.7: Uzziel
+  Uzziel@2Ch.29.14: Uzziel
+  Uzziel@Exo.6.18-1Ch: Uzziel
+  Uzziel@Neh.3.8: Uzziel
+  Vaizatha@Est.9.9: Vaizata
+  Vaniah@Ezr.10.36: Vania
+  Vashti@Est.1.9-: Vasti
+  Vophsi@Num.13.14: Vofsi
+  Zaavan@Gen.36.27-1Ch: Zaavan
+  Zabad@1Ch.11.41: Zabad
+  Zabad@1Ch.2.36-: Zabad
+  Zabad@1Ch.7.21: Zabad
+  Zabad@Ezr.10.27: Zabad
+  Zabad@Ezr.10.33: Zabad
+  Zabad@Ezr.10.43: Zabad
+  Zabbai@Ezr.10.28: Zabbai
+  Zabbai@Neh.3.20: Zabbai
+  Zabdi@1Ch.27.27: Zabdi
+  Zabdi@1Ch.8.19: Zabdi
+  Zabdi@Jos.7.1-1Ch: Zabdi
+  Zabdiel@1Ch.27.2: Zabdiel
+  Zabdiel@Neh.11.14: Zabdiel
+  Zabud@1Ki.4.5: Zabud
+  Zaccai@Ezr.2.9-Neh: Zaccai
+  Zacchaeus@Luk.19.2-: Zaccheo
+  Zaccur@1Ch.24.27: Zaccur
+  Zaccur@1Ch.25.2-Neh: Zaccur
+  Zaccur@1Ch.4.26: Zaccur
+  Zaccur@Ezr.8.14: Zabbud
+  Zaccur@Neh.10.12: Zaccur
+  Zaccur@Neh.13.13: Zaccur
+  Zaccur@Neh.3.2: Zaccur
+  Zaccur@Num.13.4: Zaccur
+  Zadok@1Ch.6.12-Neh: Zadok
+  Zadok@2Ki.15.33-2Ch: Zadok
+  Zadok@2Sa.8.17-Ezk: Zadok
+  Zadok@Mat.1.14: Zadok
+  Zadok@Neh.10.21: Zadok
+  Zadok@Neh.13.13: Zadok
+  Zadok@Neh.3.29: Zadok
+  Zadok@Neh.3.4: Zadok
+  Zaham@2Ch.11.19: Zaam
+  Zalaph@Neh.3.30: Salaf
+  Zalmon@2Sa.23.28-1Ch: Salmon
+  Zalmunna@Jdg.8.5-Psa: Zalmunna
+  Zattu@Ezr.2.8-Neh: Zattu
+  Zattu@Neh.10.14: Zattu
+  Zaza@1Ch.2.33: Zaza
+  Zebadiah@1Ch.12.7: Zebadia
+  Zebadiah@1Ch.26.2: Zebadia
+  Zebadiah@1Ch.27.7: Zebadia
+  Zebadiah@1Ch.8.15: Zebadia
+  Zebadiah@1Ch.8.17: Zebadia
+  Zebadiah@2Ch.17.8: Zebadia
+  Zebadiah@2Ch.19.11: Zebadia
+  Zebadiah@Ezr.10.20: Zebadia
+  Zebadiah@Ezr.8.8: Zebadia
+  Zebah@Jdg.8.5-Psa: Zebach
+  Zebedee@Mat.4.21-Jhn: Zebedeo
+  Zebidah@2Ki.23.36: Zebuda
+  Zebina@Ezr.10.43: Zebina
+  Zebul@Jdg.9.28-: Zebul
+  Zebulun@Gen.30.20-Rev: Zabulon
+  Zechariah@1Ch.24.25: Zaccaria
+  Zechariah@1Ch.26.11: Zaccaria
+  Zechariah@1Ch.27.21: Zaccaria
+  Zechariah@1Ch.5.7: Zaccaria
+  Zechariah@1Ch.9.21-: Zaccaria
+  Zechariah@2Ch.17.7: Zaccaria
+  Zechariah@2Ch.20.14: Zaccaria
+  Zechariah@2Ch.21.2: Zaccaria
+  Zechariah@2Ch.24.20-Luk: Zaccaria
+  Zechariah@2Ch.26.5: Zaccaria
+  Zechariah@2Ch.29.13: Zaccaria
+  Zechariah@2Ch.34.12: Zaccaria
+  Zechariah@2Ch.35.8: Zaccaria
+  Zechariah@2Ki.14.29-: Zaccaria
+  Zechariah@2Ki.18.2-2Ch: Zaccaria
+  Zechariah@Ezr.10.26: Zaccaria
+  Zechariah@Ezr.5.1-Zec: Zaccaria
+  Zechariah@Ezr.8.11: Zaccaria
+  Zechariah@Ezr.8.16: Zaccaria
+  Zechariah@Ezr.8.3: Zaccaria
+  Zechariah@Isa.8.2: Zaccaria
+  Zechariah@Luk.1.5-: Zaccaria
+  Zechariah@Neh.11.12: Zaccaria
+  Zechariah@Neh.11.4: Zaccaria
+  Zechariah@Neh.11.5: Zaccaria
+  Zechariah@Neh.12.16: Zaccaria
+  Zechariah@Neh.12.35: Zaccaria
+  Zechariah@Neh.12.41: Zaccaria
+  Zechariah@Neh.8.4: Zaccaria
+  Zecher@1Ch.8.31-: Zeker
+  Zedekiah@1Ch.3.16: Sedecia
+  Zedekiah@1Ki.22.11-2Ch: Sedecia
+  Zedekiah@2Ki.24.17-Jer: Sedecia
+  Zedekiah@Jer.29.21-: Sedecia
+  Zedekiah@Jer.36.12: Sedecia
+  Zedekiah@Neh.10.1: Sedecia
+  Zeeb@Jdg.7.25-Psa: Zeeb
+  Zelek@2Sa.23.37-1Ch: Selek
+  Zelophehad@Num.26.33-1Ch: Selofcad
+  Zemirah@1Ch.7.8: Zemira
+  Zenas@Tit.3.13: Zena
+  Zephaniah@2Ki.25.18-Jer: Sofonia
+  Zephaniah@Zec.6.10-: Sofonia
+  Zephaniah@Zep.1.1: Sofonia
+  Zepho@Gen.36.11-1Ch: Zefo
+  Zerah@1Ch.6.21-: Zerach
+  Zerah@2Ch.14.9: Zerach
+  Zerah@Gen.36.13-1Ch: Zerach
+  Zerah@Gen.36.33-1Ch: Zerach
+  Zerah@Gen.38.30-Mat: Zerach
+  Zerah@Gen.46.10-1Ch: Zocar
+  Zerahiah@Ezr.8.4: Zerachia
+  Zeresh@Est.5.10-: Zeres
+  Zereth@1Ch.4.7: Seret
+  Zeri@1Ch.25.3-: Zeri
+  Zeror@1Sa.9.1: Zeror
+  Zeruah@1Ki.11.26: Zerua
+  Zerubbabel@1Ch.3.19-Mat: Zorobabele
+  Zerubbabel@Luk.3.27: Zorobabele
+  Zeruiah@1Sa.26.6-1Ch: Zeruia
+  Zetham@1Ch.23.8-: Zetam
+  Zethan@1Ch.7.10: Zetan
+  Zethar@Est.1.10: Zetar
+  Zia@1Ch.5.13: Zia
+  Ziba@2Sa.9.2-: Siba
+  Zibeon@Gen.36.2-1Ch: Zibeon
+  Zibia@1Ch.8.9: Zibia
+  Zibiah@2Ki.12.1-2Ch: Zibia
+  Zichri@1Ch.26.25: Zicri
+  Zichri@1Ch.27.16: Zicri
+  Zichri@1Ch.8.19: Zicri
+  Zichri@1Ch.8.23: Zicri
+  Zichri@1Ch.8.27: Zicri
+  Zichri@1Ch.9.15-Neh: Zicri
+  Zichri@2Ch.17.16: Zicri
+  Zichri@2Ch.23.1: Zicri
+  Zichri@2Ch.28.7: Zicri
+  Zichri@Exo.6.21: Zicri
+  Zichri@Neh.11.9: Zicri
+  Zichri@Neh.12.17: Zicri
+  Ziha@Ezr.2.43-Neh: Zica
+  Ziha@Neh.11.21: Zica
+  Zillah@Gen.4.19-: Zilla
+  Zillethai@1Ch.12.20: Zillètai
+  Zillethai@1Ch.8.20: Zillètai
+  Zilpah@Gen.29.24-: Zilpa
+  Zimmah@1Ch.6.20-: Zimma
+  Zimmah@2Ch.29.12: Zimma
+  Zimran@Gen.25.2-1Ch: Zimran
+  Zimri@1Ch.8.36-: Zimri
+  Zimri@1Ki.16.9-2Ki: Zimri
+  Zimri@Num.25.14: Zimri
+  Ziph@1Ch.4.16: Zif
+  Ziphah@1Ch.4.16: Zifa
+  Ziphion@Gen.46.16-Num: Zifion
+  Zippor@Num.22.2-Jdg: Sippor
+  Zipporah@Exo.2.21-: Zippora
+  Ziza@1Ch.4.37: Ziza
+  Ziza@2Ch.11.20: Ziza
+  Zizah@1Ch.23.10-: Ziza
+  Zobebah@1Ch.4.8: Zobeba
+  Zohar@Gen.23.8-: Zocar
+  Zoheth@1Ch.4.20: Zochet
+  Zophah@1Ch.7.35-: Zofa
+  Zophar@Job.2.11-: Zofar
+  Zuar@Num.1.8-: Zuar
+  Zuph@1Sa.1.1-1Ch: Zuf
+  Zur@1Ch.8.30-: Zur
+  Zur@Num.25.15: Zur
+  Zur@Num.31.8-Jos: Zur
+  Zuriel@Num.3.35: Zuriel
+  Zurishaddai@Num.1.6-: Zurisaddai
+ancient:
+  "29501": Bam
+  "29540": Dahan-e Gholaman
+  "29762": Siraf
+  "29766": Sohar
+  "29783": Tepe Yahya
+  "39264": Sumhuram
+  "39269": Aden
+  "39300": Baraqish
+  "39303": Axum
+  "39355": Qana
+  "39379": Marib
+  "39430": Timna
+  "59669": Kandahar
+  "59672": Alessandria Eschate
+  "59694": Ghazni
+  "59915": Samarcanda
+  "59993": Pushkalavati
+  "60083": Taxila
+  "60476": Bamiyan
+  "108894": Augusta Treverorum
+  "108945": Durocortorum
+  "109126": Lutezia
+  "109169": Mogontiacum
+  "118580": Augusta Vindelicorum
+  "128376": Carnunto
+  "128537": Vindobona
+  "138248": Burdigala
+  "148127": Massalia
+  "148142": Nemausus
+  "148217": Arelate
+  "167717": Lugdunum
+  "177434": Alesia
+  "177473": Bibracte
+  "187290": Aquileia
+  "187406": Hallstatt
+  "197130": Aquincum
+  "197448": Pola
+  "197524": Palazzo di Diocleziano
+  "207303": Naisso
+  "207425": Sarmizegetusa Regia
+  "207439": Serdica
+  "207443": Singidunum
+  "207447": Sirmio
+  "207527": Ulpia Traiana Sarmizegetusa
+  "207549": Viminacium
+  "216706": Apollonia Pontica
+  "216839": Histria
+  "216882": Mesembria
+  "216904": Odesso
+  "216927": Filippopoli
+  "217016": Tomi
+  "226546": Olbia
+  "226564": Chersoneso
+  "226695": Neapoli Scitica
+  "246344": Cesaraugusta
+  "246347": Narbona
+  "246349": Tarraco
+  "246382": Emporion
+  "246523": Numanzia
+  "246694": Tolosa
+  "256128": Cordova
+  "256155": Emerita Augusta
+  "256177": Gades
+  "256210": Hispalis
+  "256231": Italica
+  "256338": Olisipo
+  "265849": Cartagena
+  "265883": Ebusus
+  "265921": Granada
+  "266021": Sagunto
+  "266066": Toledo
+  "275666": Lixus
+  "275696": Sala
+  "275736": Tingi
+  "275740": Volubilis
+  "295279": Cesarea di Mauretania
+  "295363": Tipasa
+  "305064": Cirta
+  "305068": Cuicul
+  "305090": Ippona
+  "315050": Kerkouane
+  "315223": Thugga
+  "315233": Tunisi
+  "315248": Utica
+  "324716": Adrumeto
+  "324816": Sufetula
+  "324835": Thysdrus
+  "334570": Lambesi
+  "334636": Timgad
+  "344282": Sabratha
+  "344448": Leptis Magna
+  "344456": Oea
+  "354115": Garama
+  "373732": Apollonia di Cirenaica
+  "373786": Euesperide
+  "373879": Tolemaide di Cirenaica
+  "383706": Mediolanum
+  "383816": Verona
+  "393480": Ravenna
+  "403253": Pisa
+  "413138": Florentia
+  "413332": Tarquinia
+  "422995": Ostia
+  "423116": Veio
+  "432721": Benevento
+  "432754": Capua
+  "432808": Cuma
+  "432873": Ercolano
+  "433014": Napoli
+  "433032": Pompei
+  "442509": Brindisi
+  "442733": Paestum
+  "442810": Taranto
+  "452317": Crotone
+  "452457": Sibari
+  "462086": Agrigento
+  "462214": Gela
+  "462270": Catania
+  "462373": Mozia
+  "462410": Palermo
+  "462487": Segesta
+  "462489": Selinunte
+  "462538": Messina
+  "471899": Carales
+  "471979": Nora
+  "472032": Tharros
+  "472048": Aleria
+  "481728": Apollonia d'Illiria
+  "481818": Durazzo
+  "481900": Lichnido
+  "491512": Ege
+  "491572": Dion
+  "491678": Olinto
+  "491687": Pella
+  "501323": Abdera
+  "501325": Abido sull'Ellesponto
+  "501570": Lampsaco
+  "501634": Taso
+  "511218": Cizico
+  "511268": Nicea
+  "511337": Nicomedia
+  "511384": Prusa
+  "520988": Calcedonia
+  "520998": Bisanzio
+  "530824": Butrinto
+  "530834": Corcira
+  "530843": Dodona
+  "540703": Calcide
+  "540726": Delfi
+  "540789": Gla
+  "540905": Larissa
+  "540909": Lefkandi
+  "540987": Orcomeno
+  "541138": Tebe di Beozia
+  "550506": Cime
+  "550535": Eritre
+  "550595": Troia
+  "550650": Clazomene
+  "550823": Focea
+  "550913": Teo
+  "570106": Argo
+  "570124": Asine
+  "570424": Lerna
+  "570468": Megara
+  "570477": Menelaion
+  "570479": Messene
+  "570485": Midea
+  "570491": Micene
+  "570504": Nemea
+  "570531": Olimpia
+  "570740": Tirinto
+  "579853": Egina
+  "579920": Eleusi
+  "579925": Eretria
+  "580062": Il Pireo
+  "580119": Torico
+  "589690": Kommos
+  "589796": Gortina
+  "589836": Camiro
+  "589872": Cnosso
+  "589886": Cidonia
+  "589913": Lindo
+  "589922": Malia
+  "589987": Festo
+  "599478": Akrotiri
+  "599577": Colofone
+  "599587": Delo
+  "599593": Didima
+  "599636": Alicarnasso
+  "599641": Heraion di Samo
+  "599719": Claro
+  "599778": Magnesia al Meandro
+  "599905": Priene
+  "599987": Tralle
+  "609302": Amorio
+  "609367": Dorileo
+  "609393": Gordio
+  "609500": Pessinunte
+  "609570": Città di Mida
+  "619103": Ancira
+  "619244": Kerkenes
+  "629035": Cesarea di Cappadocia
+  "629075": Sebastea
+  "638753": Afrodisia
+  "638776": Aspendo
+  "638796": Cauno
+  "638958": Letoon
+  "639051": Faselide
+  "639087": Sagalasso
+  "639105": Side
+  "639139": Termesso
+  "639166": Xanto
+  "648771": Seleucia al Calicadno
+  "648781": Soli di Cilicia
+  "648801": Tiana
+  "658369": Ain Dara
+  "658378": Anazarbo
+  "658399": Hadatu
+  "658409": Aleppo
+  "658457": Edessa
+  "658538": Mopsuestia
+  "658544": Nemrut Dağı
+  "658587": Samosata
+  "658636": Zeugma
+  "668198": Arqa
+  "668261": Emesa
+  "668262": Ras Ibn Hani
+  "668290": Laodicea sul mare
+  "668306": Amrit
+  "668318": Raqqa
+  "668335": Apamea
+  "668394": Tripoli
+  "678060": Berito
+  "678073": Bosra
+  "678179": Baalbek
+  "678326": Pella
+  "678332": Filippopoli d'Arabia
+  "678387": Sefforis
+  "687887": Avdat
+  "687968": Masada
+  "697700": Macheronte
+  "697725": Petra
+  "707462": Amatunte
+  "707519": Idalion
+  "707534": Cizio
+  "707549": Curio
+  "707555": Lapethos
+  "707574": Marion
+  "707596": Paleopafo
+  "707624": Soli
+  "707628": Tamasso
+  "716520": Siwa
+  "727078": Athribis
+  "727082": Fustat
+  "727094": Buto
+  "727097": Canopo
+  "727130": Behbeit el-Hagar
+  "727146": Leontopoli
+  "727156": Mendes
+  "727169": Naucrati
+  "727217": Sais
+  "727227": Sebennito
+  "736918": Hawara
+  "736932": Karanis
+  "736948": Crocodilopoli
+  "736953": El-Lahun
+  "736958": Meidum
+  "736972": Medinet Madi
+  "736983": Ossirinco
+  "737053": Soknopaiou Nesos
+  "737063": Dahshur
+  "737072": Tebtunis
+  "746825": Valle di Timna
+  "756512": Abido
+  "756518": Antinopoli
+  "756574": Ermopoli
+  "756593": Asyut
+  "756613": Panopoli
+  "776181": Hibis
+  "776189": Kellis
+  "785974": Edfu
+  "785975": Qus
+  "785986": Berenice Troglodytica
+  "786010": Copto
+  "786036": Armant
+  "786037": Ieracompoli
+  "786059": Esna
+  "786069": Myos Hormos
+  "786079": Kom Ombo
+  "786084": Gebelein
+  "786089": File
+  "786127": Dendera
+  "786132": Tod
+  "795838": Faras
+  "795856": Semna
+  "795863": Soleb
+  "798093": Qasr Ibrim
+  "805623": El-Kurru
+  "805630": Meroe
+  "805632": Musawwarat es-Sufra
+  "805634": Napata
+  "805635": Naqa
+  "805640": Nuri
+  "805647": Kawa
+  "814675": Hegra
+  "814688": Medina
+  "825397": Tanai
+  "844944": Eraclea Pontica
+  "854687": Tmutarakan'
+  "854719": Panticapeo
+  "854724": Fanagoria
+  "857018": Amasea
+  "857024": Amiso
+  "857107": Dioscuriade
+  "857275": Fasi
+  "857321": Sinope
+  "857359": Trebisonda
+  "863739": Ani
+  "863745": Argishtihinili
+  "863780": Dvin
+  "863785": Erebuni
+  "863815": Vagharshapat
+  "863822": Teishebaini
+  "863840": Mtskheta
+  "863911": Derbent
+  "863918": Vani
+  "874298": Amida
+  "874316": Altintepe
+  "874341": Arbela
+  "874361": Artaxata
+  "874373": Teodosiopoli
+  "874396": Bastam
+  "874444": Dara
+  "874458": Dur-Sharrukin
+  "874502": Hasanlu
+  "874623": Nisibi
+  "874730": Tell Arbid
+  "874732": Kahat
+  "874735": Tell Brak
+  "874739": Guzana
+  "874741": Tell Hammam et-Turkman
+  "874754": Tell Taban
+  "874771": Tushpa
+  "884109": Takht-e Soleyman
+  "893941": Arrapha
+  "893952": Baghdad
+  "893964": Borsippa
+  "893976": Ctesifonte
+  "893987": Dilbat
+  "893988": Dur-Kurigalzu
+  "893990": Dura Europos
+  "893991": Dur-Katlimmu
+  "894004": Hatra
+  "894027": Kilizu
+  "894028": Kish
+  "894042": Me-Turan
+  "894054": Nuzi
+  "894082": Samarra
+  "894084": Seleucia al Tigri
+  "894089": Sippar
+  "894158": Terqa
+  "894185": Zenobia
+  "902990": Isfahan
+  "903002": Bisotun
+  "903013": Der
+  "903035": Godin Tepe
+  "903054": Kangavar
+  "903104": Rage
+  "903131": Nush-i Jan
+  "906027": Shabwa
+  "912800": Al-Hira
+  "912808": Kufa
+  "912821": Bassora
+  "912829": Choqa Mish
+  "912851": Failaka
+  "912855": Girsu
+  "912868": Isin
+  "912872": Charax Spasinu
+  "912873": Gundeshapur
+  "912897": Larsa
+  "912901": Marad
+  "912909": Nigin
+  "912941": Shushtar
+  "912950": Abu Salabikh
+  "922617": Gor
+  "922662": Istakhr
+  "922685": Naqsh-e Rostam
+  "922693": Pasargade
+  "922695": Persepoli
+  "922706": Shiraz
+  "922740": Bishapur
+  "932474": Ed-Dur
+  "932478": Qal'at al-Bahrain
+  "932483": Thaj
+  "942276": Ecatompilo
+  "942329": Tepe Hissar
+  "952092": Nishapur
+  "952093": Nisa
+  "952108": Tus
+  "961873": Merv
+  "961874": Herat
+  "961886": Battra
+  "971693": Ai-Khanum
+  "971886": Termez
+  "13818291": Enkomi
+  "25078867": Arslantepe
+  "30774368": Tarbisu
+  "44626252": Umma
+  "45016677": Qaryat al-Faw
+  "54417737": Tuna el-Gebel
+  "56861725": Beycesultan
+  "58129442": Kanesh
+  "62131047": Ggantija
+  "65661952": Montecassino
+  "89966224": Tell al-Rimah
+  "90720956": Eshnunna
+  "93441396": Harappa
+  "112509596": Beni Hasan
+  "117143016": Sarissa
+  "122458792": Konar Sandal
+  "133411593": Maşat Höyük
+  "149576487": Tell el-Amarna
+  "156116232": Pilo
+  "164651500": Mersa Gawasis
+  "171585551": Tell Agrab
+  "192555966": Sam'al
+  "195443086": Abusir
+  "223856813": Shubat-Enlil
+  "237391811": Shibaniba
+  "243245493": Abu Rawash
+  "260976011": Urkesh
+  "269070833": Yeha
+  "271535243": Norşuntepe
+  "279984092": Emar
+  "280341406": Filacopi
+  "283602441": Hattusa
+  "286681704": Mari
+  "291059528": Sesebi
+  "326150788": Shuruppak
+  "334217804": Hamoukar
+  "339709658": Tell al-Ubaid
+  "349388313": Tell Tweini
+  "357565832": Ishchali
+  "359215729": Puzrish-Dagan
+  "362094923": Panjakent
+  "377547413": Shahr-i Sokhta
+  "379202545": Rusahinili
+  "379400932": Haft Tepe
+  "391537222": Gonur Depe
+  "403627899": Matara
+  "403627900": Lalibela
+  "410216618": Madinat al-Zahra
+  "412342122": Qatna
+  "420811320": Wadi al-Jarf
+  "422676686": Poliochni
+  "423885388": Nabada
+  "430344980": Kar-Tukulti-Ninurta
+  "434181559": Tell Sukas
+  "440947682": El Kab
+  "442962448": Giza
+  "447680269": Tilmen Höyük
+  "459393126": Choqa Zanbil
+  "464208937": Tepe Sialk
+  "480215077": Chagar Bazar
+  "484415170": Inandıktepe
+  "490043590": Tutub
+  "494400039": Shusharra
+  "497538154": Eflatun Pınar
+  "517771600": Metsamor
+  "541446935": Qusayr Amra
+  "546227067": Jawa
+  "574198887": Tell Taya
+  "580312478": Lothal
+  "590230980": Dholavira
+  "609518824": Tepe Giyan
+  "641191183": Khinis
+  "650309285": Alişar Höyük
+  "650881089": Zacro
+  "655074659": Umm el-Marra
+  "656082517": Kul-e Farah
+  "668140349": Tell es-Sweyhat
+  "674031361": Gebel el-Silsila
+  "677382294": Tell Chuera
+  "678637578": Tell Uqair
+  "702110865": Tell Hadidi
+  "703315102": Ekalte
+  "715980704": Mashkan-shapir
+  "717880824": Caere
+  "721417202": Abu Simbel
+  "722596019": Ayanis
+  "731893155": Preslav
+  "733910291": Jemdet Nasr
+  "748292753": Medamud
+  "762205391": Bukhara
+  "771100776": Gurnia
+  "771224406": Bad-tibira
+  "785959742": Nerik
+  "787747618": Adab
+  "790744210": Hala Sultan Tekke
+  "796289136": Saqqara
+  "797093165": Kisurra
+  "797229144": Ity-Tawy
+  "804216207": Acemhöyük
+  "818739154": Venezia
+  "819123409": Samuha
+  "825333700": Sardurihinili
+  "865674318": Antica Dongola
+  "869702586": Ebla
+  "869993028": Karatepe
+  "902113570": Mohenjo-daro
+  "921099766": Zabalam
+  "923122730": Habuba Kabira
+  "924247288": Imgur-Enlil
+  "932138411": Shahdad
+  "948291971": Su Nuraxi
+  "959120263": Lagash
+  "964671598": Sapinuwa
+  "976360689": Garni
+  "979582397": Titriş Höyük
+  "991964195": Alacahöyük
+  "995644788": Epidauro
+  Q85: Il Cairo
+  Q16869: Costantinopoli
+  Q5806: La Mecca
+  Q191369: Ugarit
+  Q569107: Ansan
+  Q80985: Fez
+  Q179570: Kairouan
+  Q1107569: Kerma
+  Q101625: Marrakech
+  Q14314: Santiago di Compostela
+  Q454756: Amara West
+  Q25496: Bat
+  Q1002656: Buhen
+  Q220301: Cluny
+  Q16892306: Hili
+  Q1237572: Kaman-Kalehöyük
+  Q48472: Kunya-Urgench
+  Q1579766: Los Millares
+  Q466054: Mahdia
+  Q1001413: Mleiha
+  Q959859: Naqada
+  Q20191087: Nashshan
+  Q956911: Otrar
+  Q842869: Partav
+  Q318889: Pliska
+  Q1068190: Sarkel
+  Q1334331: Sijilmasa
+  Q130254: Sirwah
+  Q1247214: Soba
+  Q173474: Tărnovo
+  Q2538648: Wad ban Naqa
+  Q1462261: Wasit
