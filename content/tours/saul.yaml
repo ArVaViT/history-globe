@@ -7,6 +7,11 @@ id: saul
 title:
   en: "The conversion of Saul"
   ru: "Обращение Савла"
+  uk: "Навернення Савла"
+  es: "La conversión de Saúl"
+  pt: "A conversão de Saulo"
+  de: "Die Bekehrung des Saulus"
+  fr: "La conversion de Saül"
 year: "AD 34"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -16,43 +21,88 @@ stops:
     note:
       en: "Saul is born in Tarsus of Cilicia and brought up in Jerusalem at the feet of Gamaliel."
       ru: "Савл, уроженец Тарса Киликийского, воспитывается в Иерусалиме при ногах Гамалиила."
+      uk: "Савл народжується в Тарсі Кілікійському й виховується в Єрусалимі при ногах Гамаліїла."
+      es: "Saúl nace en Tarso de Cilicia y se cría en Jerusalén a los pies de Gamaliel."
+      pt: "Saulo nasce em Tarso, na Cilícia, e é criado em Jerusalém aos pés de Gamaliel."
+      de: "Saulus wird in Tarsus in Kilikien geboren und in Jerusalem zu den Füßen Gamaliëls erzogen."
+      fr: "Saül naît à Tarse en Cilicie et est élevé à Jérusalem aux pieds de Gamaliel."
   - place: a15257a # Jerusalem
     ref: Acts.7.58-Acts.8.3
     note:
       en: "The witnesses who stone Stephen lay their clothes at Saul's feet; he approves, and persecutes the church."
       ru: "Свидетели, побивающие Стефана, кладут одежды у ног Савла; он одобряет убиение и гонит церковь."
+      uk: "Свідки, що кидають каміння в Стефана, кладуть свою одежу до ніг Савла; він схвалює це й переслідує церкву."
+      es: "Los testigos que apedrean a Esteban dejan sus ropas a los pies de Saúl; él consiente y persigue a la iglesia."
+      pt: "As testemunhas que apedrejam Estêvão depõem as suas vestes aos pés de Saulo; ele aprova e persegue a igreja."
+      de: "Die Zeugen, die Stephanus steinigen, legen ihre Kleider zu den Füßen des Saulus nieder; er billigt es und verfolgt die Gemeinde."
+      fr: "Les témoins qui lapident Étienne déposent leurs vêtements aux pieds de Saül ; il approuve et persécute l’Église."
   - place: a69c1d4 # Damascus
     ref: Acts.9.1-Acts.9.20
     note:
       en: "Near Damascus a light from heaven; in the street called Straight, Ananias lays hands on him, and he is baptised."
       ru: "У Дамаска его осиявает свет с неба; на улице, называемой Прямой, Анания возлагает на него руки, и он крестится."
+      uk: "Біля Дамаска світло з неба; на вулиці, що зветься Пряма, Ананія покладає на нього руки, і він приймає хрещення."
+      es: "Cerca de Damasco, una luz del cielo; en la calle llamada Derecha, Ananías le impone las manos, y es bautizado."
+      pt: "Perto de Damasco, uma luz do céu; na rua chamada Direita, Ananias impõe as mãos sobre ele, e ele é batizado."
+      de: "Bei Damaskus ein Licht vom Himmel; in der Straße, die „die Gerade“ heißt, legt Hananias ihm die Hände auf, und er wird getauft."
+      fr: "Près de Damas, une lumière du ciel ; dans la rue appelée la rue Droite, Ananias lui impose les mains, et il est baptisé."
   - place: a0f4ea8 # Arabia
     ref: Gal.1.17
     note:
       en: "He goes away into Arabia, and then returns to Damascus."
       ru: "Он уходит в Аравию и затем возвращается в Дамаск."
+      uk: "Він іде в Аравію, а потім повертається до Дамаска."
+      es: "Se va a Arabia y luego vuelve a Damasco."
+      pt: "Parte para a Arábia e depois volta a Damasco."
+      de: "Er zieht fort nach Arabien und kehrt dann nach Damaskus zurück."
+      fr: "Il s’en va en Arabie, puis retourne à Damas."
   - place: a69c1d4 # Damascus
     ref: Acts.9.22-Acts.9.25
     note:
       en: "When the Jews plot to kill him, the disciples let him down over the wall in a basket."
       ru: "Когда иудеи сговариваются убить его, ученики спускают его по стене в корзине."
+      uk: "Коли юдеї замишляють убити його, учні спускають його через мур у кошику."
+      es: "Cuando los judíos traman matarlo, los discípulos lo descuelgan por el muro en una canasta."
+      pt: "Quando os judeus conspiram para matá-lo, os discípulos o descem pelo muro num cesto."
+      de: "Als die Juden einen Anschlag auf sein Leben planen, lassen die Jünger ihn in einem Korb über die Mauer hinab."
+      fr: "Quand les Juifs complotent de le tuer, les disciples le descendent par la muraille dans une corbeille."
   - place: a15257a # Jerusalem
     ref: Acts.9.26-Acts.9.29
     note:
       en: "In Jerusalem the disciples fear him until Barnabas brings him to the apostles."
       ru: "В Иерусалиме ученики боятся его, пока Варнава не приводит его к Апостолам."
+      uk: "В Єрусалимі учні бояться його, поки Варнава не приводить його до апостолів."
+      es: "En Jerusalén los discípulos le temen hasta que Bernabé lo lleva a los apóstoles."
+      pt: "Em Jerusalém os discípulos o temem, até que Barnabé o leva aos apóstolos."
+      de: "In Jerusalem fürchten ihn die Jünger, bis Barnabas ihn zu den Aposteln bringt."
+      fr: "À Jérusalem, les disciples le craignent jusqu’à ce que Barnabas l’amène aux apôtres."
   - place: a58735e # Caesarea
     ref: Acts.9.30
     note:
       en: "The brothers bring him down to Caesarea and send him off to Tarsus."
       ru: "Братья отводят его в Кесарию и отправляют в Тарс."
+      uk: "Брати відводять його до Кесарії й відсилають до Тарса."
+      es: "Los hermanos lo bajan a Cesarea y lo envían a Tarso."
+      pt: "Os irmãos o levam até Cesareia e o enviam a Tarso."
+      de: "Die Brüder geleiten ihn hinab nach Caesarea und schicken ihn nach Tarsus."
+      fr: "Les frères le conduisent à Césarée et le font partir pour Tarse."
   - place: a666ea0 # Tarsus
     ref: Acts.11.25
     note:
       en: "Years later Barnabas goes to Tarsus to look for Saul."
       ru: "Спустя годы Варнава идёт в Тарс искать Савла."
+      uk: "Роками пізніше Варнава йде до Тарса шукати Савла."
+      es: "Años después Bernabé va a Tarso a buscar a Saúl."
+      pt: "Anos depois, Barnabé vai a Tarso procurar Saulo."
+      de: "Jahre später geht Barnabas nach Tarsus, um Saulus zu suchen."
+      fr: "Des années plus tard, Barnabas va à Tarse chercher Saül."
   - place: ae41ab4 # Antioch
     ref: Acts.11.26
     note:
       en: "A whole year they teach in Antioch, where the disciples are first called Christians."
       ru: "Целый год они учат в Антиохии, где учеников впервые начинают называть христианами."
+      uk: "Цілий рік вони навчають в Антіохії, де учнів уперше названо християнами."
+      es: "Todo un año enseñan en Antioquía, donde los discípulos son llamados cristianos por primera vez."
+      pt: "Durante um ano inteiro ensinam em Antioquia, onde os discípulos são chamados cristãos pela primeira vez."
+      de: "Ein ganzes Jahr lehren sie in Antiochia, wo die Jünger zuerst Christen genannt werden."
+      fr: "Toute une année, ils enseignent à Antioche, où les disciples sont appelés chrétiens pour la première fois."

@@ -6,6 +6,11 @@ id: jonah
 title:
   en: "Jonah"
   ru: "Пророк Иона"
+  uk: "Йона"
+  es: "Jonás"
+  pt: "Jonas"
+  de: "Jona"
+  fr: "Jonas"
 year: "780 BC"
 people: ["Jonah@2Ki.14.25-Luk"]
 approximate: true
@@ -15,14 +20,29 @@ stops:
     note:
       en: "Jonah son of Amittai, the prophet from Gath-hepher."
       ru: "Иона, сын Амафиин, пророк из Гафхефера."
+      uk: "Йона, син Амафії, пророк з Гат-Хефера."
+      es: "Jonás, hijo de Amitai, el profeta de Gat-hefer."
+      pt: "Jonas, filho de Amitai, o profeta de Gate-Héfer."
+      de: "Jona, der Sohn Amittais, der Prophet aus Gat-Hefer."
+      fr: "Jonas, fils d’Amitthaï, le prophète de Gath-Hépher."
   - place: ae023a9 # Joppa
     ref: Jonah.1.3
     note:
       en: "Fleeing from the presence of the Lord, he goes down to Joppa and finds a ship bound for Tarshish."
       ru: "Убегая от лица Господня, он приходит в Иоппию и находит корабль, идущий в Фарсис."
+      uk: "Тікаючи від лиця Господнього, він сходить до Яффи й знаходить корабель, що йде до Тарсису."
+      es: "Huyendo de la presencia del Señor, baja a Jope y encuentra una nave que va a Tarsis."
+      pt: "Fugindo da presença do Senhor, desce a Jope e encontra um navio com destino a Társis."
+      de: "Auf der Flucht vor dem Angesicht des Herrn geht er nach Joppe hinab und findet ein Schiff, das nach Tarsis fährt."
+      fr: "Fuyant la présence de l’Éternel, il descend à Joppé et trouve un navire en partance pour Tarsis."
   - place: a70fd5d # Nineveh
     ref: Jonah.3.3-Jonah.4.11
     by: untold
     note:
       en: "He preaches in Nineveh, the people turn from their evil way, and God spares the great city."
       ru: "Он проповедует в Ниневии, жители обращаются от злого пути, и Бог щадит великий город."
+      uk: "Він проповідує в Ніневії, народ відвертається від свого лихого шляху, і Бог милує велике місто."
+      es: "Predica en Nínive, el pueblo se aparta de su mal camino, y Dios perdona a la gran ciudad."
+      pt: "Prega em Nínive, o povo se desvia do seu mau caminho, e Deus poupa a grande cidade."
+      de: "Er predigt in Ninive, das Volk kehrt um von seinem bösen Weg, und Gott verschont die große Stadt."
+      fr: "Il prêche à Ninive, le peuple revient de sa mauvaise voie, et Dieu épargne la grande ville."

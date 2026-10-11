@@ -1,0 +1,334 @@
+---
+title: Incrustación
+description: Pon el globo en tu propio sitio con una sola línea (el mapa de un capítulo, un lugar, un año o una ruta) y contrólalo desde tu página.
+---
+
+<p class="lede">
+  El globo funciona dentro de cualquier página como un <code>iframe</code>. Una línea muestra el
+  mapa de un capítulo junto al pasaje de tu página; unos pocos mensajes mantienen ambos
+  sincronizados.
+</p>
+
+<h2>Inicio rápido</h2>
+<pre><code>&lt;iframe
+  src="{{site}}/embed/v1?ref=Acts.16&amp;locale=es"
+  title="Mapa de Hechos 16"
+  style="width: 100%; height: 480px; border: 0; border-radius: 12px"
+  allow="fullscreen"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</code></pre>
+<ul>
+  <li>
+    El mapa llena el marco y se abre sobre los lugares de Hechos 16, en el año de sus
+    acontecimientos.
+  </li>
+  <li>
+    <b>Arriba:</b> el capítulo. Selecciónalo para ver la lista de sus lugares en el orden en que el
+    texto los nombra; selecciona un lugar para abrir su ficha.
+  </li>
+  <li><b>Abajo:</b> el año. Selecciónalo para abrir el control deslizante del tiempo.</li>
+  <li>
+    Un enlace abre la misma vista en el globo completo en una pestaña nueva. Los créditos se
+    muestran en el propio mapa, como exigen las licencias de los datos.
+  </li>
+  <li>El marco funciona hasta el ancho de un teléfono; basta una altura de 480 px.</li>
+</ul>
+
+<h2>Un capítulo o un pasaje</h2>
+<p>
+  <code>ref</code> admite una referencia OSIS con abreviaturas inglesas de los libros y numeración
+  inglesa de los versículos:
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Valor</th>
+        <th>Muestra</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Acts.16</code></td>
+        <td>un capítulo</td>
+      </tr>
+      <tr>
+        <td><code>Gen.12-Gen.13</code></td>
+        <td>hasta tres capítulos</td>
+      </tr>
+      <tr>
+        <td><code>Acts.16.11-Acts.16.15</code></td>
+        <td>un pasaje</td>
+      </tr>
+      <tr>
+        <td><code>Ruth</code></td>
+        <td>un libro entero</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  El mapa se desplaza al año del pasaje: el año registrado de sus capítulos (están fechados los
+  capítulos de {{chapter_books}} libros) o, si no, el año de la ruta que lo abarca; un libro entero
+  toma el año de la ruta con más paradas en él. Un pasaje sin ninguna de las dos cosas conserva el
+  año actual del mapa.
+</p>
+
+<h2>Parámetros</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Parámetro</th>
+        <th>Ejemplo</th>
+        <th>Significado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ref</code></td>
+        <td><code>Acts.16</code></td>
+        <td>capítulo, pasaje o libro (arriba)</td>
+      </tr>
+      <tr>
+        <td><code>year</code></td>
+        <td><code>-999</code></td>
+        <td>
+          año, en numeración astronómica: el 1 a.C. es <code>0</code>, el 1000 a.C. es
+          <code>-999</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>place</code></td>
+        <td><code>af2161c</code></td>
+        <td>abre un lugar (aquí, Cafarnaúm); los ID son los de OpenBible</td>
+      </tr>
+      <tr>
+        <td><code>tour</code></td>
+        <td><code>paul-1</code></td>
+        <td>inicia una ruta guiada</td>
+      </tr>
+      <tr>
+        <td><code>stop</code></td>
+        <td><code>3</code></td>
+        <td>con <code>tour</code>: la abre en esa parada</td>
+      </tr>
+      <tr>
+        <td><code>lesson</code></td>
+        <td><code>a15257a~30.a112427~30</code></td>
+        <td>
+          tu propia lección, con <code>tour=lesson</code>: los ID de los lugares en orden, cada uno
+          con el año en que se muestra (<code>~-585</code> para el 586 a.C.: igual que
+          <code>year</code>, el 1 a.C. es 0); cada parada recibe el versículo del lugar más cercano
+          a ese año, la distancia, el tiempo a pie y el relieve. El botón «Añadir a una lección» de
+          la ficha de un lugar construye los mismos enlaces
+        </td>
+      </tr>
+      <tr>
+        <td><code>title</code></td>
+        <td><code>Paul%20in%20Galatia</code></td>
+        <td>
+          con <code>lesson</code>: el nombre de la lección, de hasta 80 caracteres, que encabeza su
+          ruta y su hoja impresa
+        </td>
+      </tr>
+      <tr>
+        <td><code>locale</code></td>
+        <td><code>es</code></td>
+        <td>
+          idioma: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
+          <code>pt</code>, <code>de</code> o <code>fr</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>camera</code></td>
+        <td><code>35.2,31.8,7,30,0</code></td>
+        <td>longitud, latitud, zoom, inclinación, rumbo</td>
+      </tr>
+      <tr>
+        <td><code>hide</code></td>
+        <td><code>relief,ancient</code></td>
+        <td>
+          capas que se desactivan: <code>borders</code>, <code>places</code>, <code>relief</code>,
+          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="note">
+  La manera más fácil de construir una vista es prepararla en el globo completo y copiar la URL: los
+  mismos parámetros funcionan después de <code>/embed/v1</code>.
+</p>
+
+<h2>Mensajes</h2>
+<p>
+  El globo y tu página se comunican mediante <code>postMessage</code>. Cada mensaje es un objeto con
+  <code>type</code> y <code>v: 1</code>. El globo envía solo lo que ocurre en el mapa y nunca nada
+  que identifique al lector; solo acepta mensajes de la página que contiene el marco.
+</p>
+<h3>Del globo</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Contenido</th>
+        <th>Cuándo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:ready</code></td>
+        <td><code>{ view }</code></td>
+        <td>el mapa ya está dibujado</td>
+      </tr>
+      <tr>
+        <td><code>hg:view-changed</code></td>
+        <td><code>{ view }</code></td>
+        <td>el año, el lugar, la ruta o la cámara han cambiado y se han estabilizado</td>
+      </tr>
+      <tr>
+        <td><code>hg:verse-clicked</code></td>
+        <td><code>{ osis }</code></td>
+        <td>el lector hizo clic en un versículo, p. ej. <code>"Acts.16.12"</code></td>
+      </tr>
+      <tr>
+        <td><code>hg:error</code></td>
+        <td><code>{ code, message }</code></td>
+        <td>no se pudo cargar el mapa o sus datos</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <code>view</code> contiene <code>year</code>, <code>locale</code> y <code>layers</code> y, cuando
+  están definidos, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> y
+  <code>camera</code>.
+</p>
+<h3>Al globo</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Contenido</th>
+        <th>Efecto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:set-view</code></td>
+        <td><code>{ view }</code></td>
+        <td>
+          establece el año, el capítulo (<code>ref</code>), el lugar, las capas o la cámara; con
+          <code>tour</code> (y <code>stop</code>), la ruta se inicia y los demás campos se ignoran;
+          el idioma solo cambia con <code>hg:set-locale</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:set-locale</code></td>
+        <td><code>{ locale }</code></td>
+        <td>cambia el idioma</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Ejemplo: el mapa sigue a tu lector</h2>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+
+// When your reader opens a chapter, show it on the map.
+function showChapter(osis) {
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+}
+
+// When a verse is clicked on the map, open it in your reader.
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
+});</code></pre>
+
+<h2 id="places">Lugares en cualquier texto</h2>
+<p>
+  Una línea más enlaza con el globo los lugares bíblicos que nombra tu propio texto (un artículo, un
+  sermón, un plan de lectura). Señala un nombre, o tócalo en un teléfono, y una ficha muestra qué es
+  el lugar, dónde está hoy, cuántos versículos lo nombran y dónde se encuentra en el mapa; la ficha
+  lleva al globo.
+</p>
+<figure class="sample">
+  <div class="hgp-demo" lang="en">
+    <p>
+      Paul sailed from Caesarea to Cyprus, preached in Ephesus and Corinth, and wrote to Rome. Long
+      before, Abraham had come to Shechem and Hebron; Jesus was born in Bethlehem and grew up in
+      Nazareth, and John saw his visions on Patmos.
+    </p>
+  </div>
+  <figcaption>
+    Un ejemplo en vivo, en inglés: el script de esta página enlazó estos nombres (el script lee
+    textos en inglés y en ruso).
+  </figcaption>
+</figure>
+<pre><code>&lt;script src="{{site}}/hg-places.js" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Atributo</th>
+        <th>Qué hace</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>data-scope</code></td>
+        <td>dónde buscar, como selector CSS; por defecto, toda la página</td>
+      </tr>
+      <tr>
+        <td><code>data-locale</code></td>
+        <td>
+          <code>en</code> o <code>ru</code>: el idioma del texto; por defecto, el
+          <code>lang</code> de la página
+        </td>
+      </tr>
+      <tr>
+        <td><code>data-every</code></td>
+        <td>enlaza cada mención, no solo la primera de cada lugar</td>
+      </tr>
+      <tr>
+        <td><code>data-theme</code></td>
+        <td>
+          <code>light</code> o <code>dark</code> para la ficha; por defecto sigue el sistema del
+          lector
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Solo se enlazan los nombres que apuntan a un único lugar. Un nombre compartido por dos lugares
+  (Antioquía, la de Siria y la de Pisidia), por un lugar y una persona (Judá) o por un lugar y una
+  palabra corriente queda como texto normal, y lo mismo ocurre con un nombre que los propios
+  versículos de la Biblia usan sobre todo para otra cosa («Cades» allí es Cades-barnea, no la Cades
+  de la base de datos). El nombre de un lugar que también es nombre de pila (Jordan, Sharon) se deja
+  tal cual junto a otra palabra con mayúscula: Jordan Smith es una persona, no el río. Los nombres
+  rusos se encuentran en todos sus casos: «в Египте», «из Антиохии Писидийской». Los enlaces, el
+  código, los campos de formulario, los botones y los encabezados se dejan intactos.
+</p>
+<p class="note">
+  El script no tiene dependencias y no instala cookies. Lee del globo un archivo de nombres (unos 25
+  KB en inglés y 35 KB en ruso por la red, más 7 KB del script), sin enviar la dirección de tu
+  página como referente, y solo cambia los nombres que enlaza. Funciona bajo una política de
+  seguridad de contenido (CSP) estricta que permita la dirección del globo en
+  <code>script-src</code> y <code>connect-src</code>. Para el texto que tu página añada más tarde,
+  llama a <code>HistoryGlobePlaces.scan(element)</code> una vez que el texto esté renderizado: el
+  script divide los nodos de texto, así que en una página React o Vue ejecútalo sobre contenido que
+  el framework ya no vuelva a renderizar.
+</p>
+<script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
+
+<h2>Estabilidad</h2>
+<p>
+  <code>/embed/v1</code> es un contrato: dentro de v1, los parámetros y los mensajes solo se añaden,
+  nunca se cambian ni se eliminan. Un cambio incompatible se publicará como <code>/embed/v2</code>,
+  y v1 seguirá funcionando.
+</p>

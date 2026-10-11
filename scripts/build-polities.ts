@@ -22,9 +22,20 @@ export interface PolityBuild {
   };
   readonly errors: string[];
   readonly writes: [path: string, text: string][];
+  /** The states' names in the other languages (content/names-<code>.yaml), by language. */
+  readonly namesIn?: Readonly<
+    Record<string, { readonly polities: Readonly<Record<string, string>> }>
+  >;
 }
 
-export function buildPolities({ out, load, places, errors, writes }: PolityBuild): void {
+export function buildPolities({
+  out,
+  load,
+  places,
+  errors,
+  writes,
+  namesIn = {},
+}: PolityBuild): void {
   // Our corrections to Cliopatria (content/polity-overrides.yaml): a polity's last shape and
   // labels are copied forward to its real end. Idempotent: earlier copies are dropped first.
   type PolityFeature = {
@@ -81,7 +92,7 @@ export function buildPolities({ out, load, places, errors, writes }: PolityBuild
       p.c = p.vc;
       delete p.vc;
       delete p.v;
-      delete p.v_ru;
+      for (const k of Object.keys(p)) if (k.startsWith("v_")) Reflect.deleteProperty(p, k);
       delete (p as { vin?: boolean }).vin;
     }
     // The pipeline's tier of a label, kept apart: the tiers are given again below, and a
@@ -645,7 +656,9 @@ export function buildPolities({ out, load, places, errors, writes }: PolityBuild
         if (p.c !== undefined) p.vc = p.c;
         p.c = lord.properties.c;
         p.v = v.label.en;
-        p.v_ru = v.label.ru;
+        // The second line in every language it is written in: v_ru, v_uk, …
+        for (const [l, text] of Object.entries(v.label))
+          if (l !== "en" && text) (p as Record<string, unknown>)[`v_${l}`] = text;
       }
     }
     // Where the overlord's own shape already covers the vassal in those years (Cliopatria
@@ -828,6 +841,22 @@ export function buildPolities({ out, load, places, errors, writes }: PolityBuild
     else missing.add(f.properties.name);
   }
   for (const name of missing) errors.push(`polity-names: no Russian name for "${name}"`);
+  // The other languages' names (content/names-<code>.yaml): every label needs one too.
+  for (const [l, file] of Object.entries(namesIn)) {
+    const lost = new Set<string>();
+    for (const f of labels.features) {
+      const n = file.polities[f.properties.name];
+      if (n) (f.properties as Record<string, string>)[`name_${l}`] = n;
+      else lost.add(f.properties.name);
+    }
+    for (const name of lost) errors.push(`names-${l}: no name for the state "${name}"`);
+    for (const f of polities.features as {
+      properties: Record<string, unknown> & { name: string };
+    }[]) {
+      const n = file.polities[f.properties.name];
+      if (n) f.properties[`name_${l}`] = n;
+    }
+  }
   // The shapes carry the name too: the map names a territory under the pointer.
   for (const f of polities.features as { properties: { name: string; name_ru?: string } }[]) {
     const ru = polityNames[f.properties.name];

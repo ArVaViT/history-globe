@@ -1,0 +1,332 @@
+---
+title: Intégration
+description: Placez le globe sur votre propre site en une ligne — la carte d’un chapitre, d’un lieu, d’une année ou d’un parcours — et pilotez-le depuis votre page.
+---
+
+<p class="lede">
+  Le globe fonctionne dans n’importe quelle page sous forme d’<code>iframe</code>. Une ligne affiche
+  la carte d’un chapitre à côté du passage de votre page ; quelques messages les tiennent en phase.
+</p>
+
+<h2>Démarrage rapide</h2>
+<pre><code>&lt;iframe
+  src="{{site}}/embed/v1?ref=Acts.16&amp;locale=fr"
+  title="Carte d’Actes 16"
+  style="width: 100%; height: 480px; border: 0; border-radius: 12px"
+  allow="fullscreen"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</code></pre>
+<ul>
+  <li>
+    La carte remplit le cadre et s’ouvre sur les lieux d’Actes 16, à l’année de ses événements.
+  </li>
+  <li>
+    <b>En haut :</b> le chapitre. Sélectionnez-le pour lister ses lieux dans l’ordre où le texte les
+    nomme ; sélectionnez un lieu pour ouvrir sa fiche.
+  </li>
+  <li><b>En bas :</b> l’année. Sélectionnez-la pour ouvrir le curseur du temps.</li>
+  <li>
+    Un lien ouvre la même vue dans le globe complet, dans un nouvel onglet. Les crédits sont
+    affichés sur la carte elle-même, comme l’exigent les licences des données.
+  </li>
+  <li>Le cadre fonctionne jusqu’à la largeur d’un téléphone ; une hauteur de 480 px suffit.</li>
+</ul>
+
+<h2>Un chapitre ou un passage</h2>
+<p>
+  <code>ref</code> accepte une référence OSIS, avec les abréviations anglaises des livres et la
+  numérotation anglaise des versets :
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Valeur</th>
+        <th>Affiche</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Acts.16</code></td>
+        <td>un chapitre</td>
+      </tr>
+      <tr>
+        <td><code>Gen.12-Gen.13</code></td>
+        <td>jusqu’à trois chapitres</td>
+      </tr>
+      <tr>
+        <td><code>Acts.16.11-Acts.16.15</code></td>
+        <td>un passage</td>
+      </tr>
+      <tr>
+        <td><code>Ruth</code></td>
+        <td>un livre entier</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  La carte se place sur l’année du passage : l’année consignée de ses chapitres (les chapitres de
+  {{chapter_books}} livres sont datés), ou à défaut l’année du parcours qui le couvre ; un livre
+  entier prend l’année du parcours qui y compte le plus d’étapes. Un passage sans l’un ni l’autre
+  garde l’année en cours de la carte.
+</p>
+
+<h2>Paramètres</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Paramètre</th>
+        <th>Exemple</th>
+        <th>Signification</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ref</code></td>
+        <td><code>Acts.16</code></td>
+        <td>chapitre, passage ou livre (voir ci-dessus)</td>
+      </tr>
+      <tr>
+        <td><code>year</code></td>
+        <td><code>-999</code></td>
+        <td>
+          année, en numérotation astronomique : 1 av. J.-C. est <code>0</code>, 1000 av. J.-C. est
+          <code>-999</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>place</code></td>
+        <td><code>af2161c</code></td>
+        <td>ouvre un lieu (ici, Capernaüm) ; les identifiants sont ceux d’OpenBible</td>
+      </tr>
+      <tr>
+        <td><code>tour</code></td>
+        <td><code>paul-1</code></td>
+        <td>lance un parcours guidé</td>
+      </tr>
+      <tr>
+        <td><code>stop</code></td>
+        <td><code>3</code></td>
+        <td>avec <code>tour</code> : l’ouvre à cette étape</td>
+      </tr>
+      <tr>
+        <td><code>lesson</code></td>
+        <td><code>a15257a~30.a112427~30</code></td>
+        <td>
+          votre propre leçon, avec <code>tour=lesson</code> : les identifiants de lieux dans
+          l’ordre, chacun avec l’année où l’afficher (<code>~-585</code> pour 586 av. J.-C. : comme
+          pour <code>year</code>, 1 av. J.-C. est 0) ; chaque étape reçoit le verset du lieu le plus
+          proche de cette année, la distance, le temps à pied et le relief. Le bouton « Ajouter à
+          une leçon » d’une fiche de lieu construit les mêmes liens
+        </td>
+      </tr>
+      <tr>
+        <td><code>title</code></td>
+        <td><code>Paul%20en%20Galatie</code></td>
+        <td>
+          avec <code>lesson</code> : le nom de la leçon, jusqu’à 80 caractères, en tête de son
+          parcours et de sa feuille imprimée
+        </td>
+      </tr>
+      <tr>
+        <td><code>locale</code></td>
+        <td><code>fr</code></td>
+        <td>
+          langue : <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
+          <code>pt</code>, <code>de</code> ou <code>fr</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>camera</code></td>
+        <td><code>35.2,31.8,7,30,0</code></td>
+        <td>longitude, latitude, zoom, inclinaison, orientation</td>
+      </tr>
+      <tr>
+        <td><code>hide</code></td>
+        <td><code>relief,ancient</code></td>
+        <td>
+          couches à désactiver : <code>borders</code>, <code>places</code>, <code>relief</code>,
+          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="note">
+  Le plus simple pour construire une vue est de la régler sur le globe complet et de copier l’URL :
+  les mêmes paramètres fonctionnent après <code>/embed/v1</code>.
+</p>
+
+<h2>Messages</h2>
+<p>
+  Le globe et votre page communiquent par <code>postMessage</code>. Chaque message est un objet avec
+  <code>type</code> et <code>v: 1</code>. Le globe n’envoie que ce qui se passe sur la carte, jamais
+  rien qui identifie le lecteur ; il n’accepte de messages que de la page qui contient le cadre.
+</p>
+<h3>Du globe</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Contenu</th>
+        <th>Quand</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:ready</code></td>
+        <td><code>{ view }</code></td>
+        <td>la carte est dessinée</td>
+      </tr>
+      <tr>
+        <td><code>hg:view-changed</code></td>
+        <td><code>{ view }</code></td>
+        <td>l’année, le lieu, le parcours ou la caméra a changé et s’est stabilisé</td>
+      </tr>
+      <tr>
+        <td><code>hg:verse-clicked</code></td>
+        <td><code>{ osis }</code></td>
+        <td>le lecteur a cliqué sur un verset, par exemple <code>"Acts.16.12"</code></td>
+      </tr>
+      <tr>
+        <td><code>hg:error</code></td>
+        <td><code>{ code, message }</code></td>
+        <td>la carte ou ses données n’ont pas pu se charger</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <code>view</code> contient <code>year</code>, <code>locale</code> et <code>layers</code> et, s’ils
+  sont définis, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> et
+  <code>camera</code>.
+</p>
+<h3>Vers le globe</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Contenu</th>
+        <th>Effet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:set-view</code></td>
+        <td><code>{ view }</code></td>
+        <td>
+          règle l’année, le chapitre (<code>ref</code>), le lieu, les couches ou la caméra ; avec
+          <code>tour</code> (et <code>stop</code>), le parcours démarre et les autres champs sont
+          ignorés ; la langue ne change qu’avec <code>hg:set-locale</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:set-locale</code></td>
+        <td><code>{ locale }</code></td>
+        <td>change la langue</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Exemple : la carte suit votre lecteur</h2>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+
+// Quand votre lecteur ouvre un chapitre, l’afficher sur la carte.
+function showChapter(osis) {
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+}
+
+// Quand on clique sur un verset de la carte, l’ouvrir dans votre lecteur.
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
+});</code></pre>
+
+<h2 id="places">Les lieux dans n’importe quel texte</h2>
+<p>
+  Une ligne de plus relie au globe les lieux bibliques que nomme votre propre texte (un article, un
+  sermon, un plan de lecture). Pointez un nom, ou touchez-le sur un téléphone : une fiche montre ce
+  qu’est le lieu, où il se trouve aujourd’hui, combien de versets le nomment et où il se situe sur
+  la carte ; la fiche conduit au globe.
+</p>
+<figure class="sample">
+  <div class="hgp-demo" lang="en">
+    <p>
+      Paul sailed from Caesarea to Cyprus, preached in Ephesus and Corinth, and wrote to Rome. Long
+      before, Abraham had come to Shechem and Hebron; Jesus was born in Bethlehem and grew up in
+      Nazareth, and John saw his visions on Patmos.
+    </p>
+  </div>
+  <figcaption>
+    Un exemple en direct, en anglais : ces noms ont été reliés par le script de cette page (le
+    script lit les textes en anglais et en russe).
+  </figcaption>
+</figure>
+<pre><code>&lt;script src="{{site}}/hg-places.js" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Attribut</th>
+        <th>Ce qu’il fait</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>data-scope</code></td>
+        <td>où chercher, sous forme de sélecteur CSS ; toute la page par défaut</td>
+      </tr>
+      <tr>
+        <td><code>data-locale</code></td>
+        <td>
+          <code>en</code> ou <code>ru</code> : la langue du texte ; par défaut, le
+          <code>lang</code> de la page
+        </td>
+      </tr>
+      <tr>
+        <td><code>data-every</code></td>
+        <td>relie chaque mention, et pas seulement la première de chaque lieu</td>
+      </tr>
+      <tr>
+        <td><code>data-theme</code></td>
+        <td>
+          <code>light</code> ou <code>dark</code> pour la fiche ; par défaut, elle suit le système
+          du lecteur
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Seuls les noms qui désignent un seul lieu sont reliés. Un nom partagé par deux lieux (Antioche, de
+  Syrie et de Pisidie), par un lieu et un personnage (Juda) ou par un lieu et un mot ordinaire reste
+  du texte simple ; il en va de même d’un nom que les versets de la Bible emploient surtout pour
+  autre chose (« Kadesh » y désigne Kadesh-Barnéa, non le Kadesh de la base de données). Le nom d’un
+  lieu qui est aussi un prénom (Jordan, Sharon) est laissé de côté à côté d’un autre mot à
+  majuscule : Jordan Smith est une personne, non le fleuve. Les noms russes sont repérés dans tous
+  leurs cas : « в Египте », « из Антиохии Писидийской ». Les liens, le code, les champs de
+  formulaire, les boutons et les titres sont laissés tels quels.
+</p>
+<p class="note">
+  Le script n’a aucune dépendance et ne dépose aucun cookie. Il lit sur le globe un fichier de noms
+  (environ 25 Ko en anglais et 35 Ko en russe sur le réseau, plus 7 Ko de script), sans transmettre
+  l’adresse de votre page comme référent, et ne modifie que les noms qu’il relie. Il fonctionne sous
+  une Content Security Policy stricte qui autorise l’adresse du globe dans
+  <code>script-src</code> et <code>connect-src</code>. Pour le texte que votre page ajoute plus
+  tard, appelez <code>HistoryGlobePlaces.scan(element)</code> une fois le texte affiché : le script
+  découpe les nœuds de texte ; dans une page React ou Vue, lancez-le donc sur un contenu que le
+  framework ne réaffiche plus.
+</p>
+<script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
+
+<h2>Stabilité</h2>
+<p>
+  <code>/embed/v1</code> est un contrat : dans la v1, les paramètres et les messages ne font que
+  s’ajouter, jamais être modifiés ni supprimés. Un changement incompatible sortira sous
+  <code>/embed/v2</code>, et la v1 continuera de fonctionner.
+</p>

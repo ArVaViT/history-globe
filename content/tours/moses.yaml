@@ -8,6 +8,11 @@ id: moses
 title:
   en: "Moses before the Exodus"
   ru: "Моисей до Исхода"
+  uk: "Мойсей до Виходу"
+  es: "Moisés antes del Éxodo"
+  pt: "Moisés antes do Êxodo"
+  de: "Mose vor dem Auszug"
+  fr: "Moïse avant l’Exode"
 year: "1526 BC"
 people: ["Moses@Exo.2.10-Rev"]
 approximate: true
@@ -17,21 +22,41 @@ stops:
     note:
       en: "Israel is set to build the store cities Pithom and Rameses; a Hebrew boy drawn out of the water is named Moses."
       ru: "Израиля заставляют строить города для запасов Пифом и Раамсес; еврейского младенца, вынутого из воды, нарекают Моисеем."
+      uk: "Ізраїль ставлять будувати міста-сховища Пітом і Раамсес; єврейського хлопчика, витягнутого з води, нарікають Мойсеєм."
+      es: "A Israel se le pone a edificar las ciudades de almacenaje Pitón y Ramesés; un niño hebreo sacado del agua recibe el nombre de Moisés."
+      pt: "Israel é posto a construir as cidades-armazéns de Pitom e Ramessés; um menino hebreu tirado das águas recebe o nome de Moisés."
+      de: "Israel muss die Vorratsstädte Pitom und Ramses bauen; ein hebräischer Knabe, der aus dem Wasser gezogen wird, erhält den Namen Mose."
+      fr: "Israël est employé à bâtir les villes servant de magasins, Pithom et Ramsès ; un garçon hébreu tiré des eaux reçoit le nom de Moïse."
   - place: acc6d8e # Midian
     ref: Exod.2.11-Exod.2.22
     year: "1486 BC"
     note:
       en: "At forty he flees from Pharaoh to the land of Midian and sits down by a well."
       ru: "В сорок лет он убегает от фараона в землю Мадиамскую и садится у колодезя."
+      uk: "У сорок років він тікає від фараона до землі Мадіам і сідає біля колодязя."
+      es: "A los cuarenta años huye del Faraón a la tierra de Madián y se sienta junto a un pozo."
+      pt: "Aos quarenta anos foge do Faraó para a terra de Midiã e se senta junto a um poço."
+      de: "Mit vierzig flieht er vor dem Pharao ins Land Midian und setzt sich an einen Brunnen."
+      fr: "À quarante ans, il fuit Pharaon au pays de Madian et s’assied près d’un puits."
   - place: a9bb03e # Mount Horeb
     ref: Exod.3.1-Exod.4.17
     year: "1446 BC"
     note:
       en: 'At Horeb, the mountain of God, the bush burns and is not consumed: "I AM THAT I AM."'
       ru: "У Хорива, горы Божией, куст горит и не сгорает: «Я есмь Сущий»."
+      uk: "На Хориві, горі Божій, кущ горить і не згоряє: «Я той, хто єсть»."
+      es: "En Horeb, el monte de Dios, la zarza arde y no se consume: «YO SOY EL QUE SOY»."
+      pt: "Em Horebe, o monte de Deus, a sarça arde e não se consome: “EU SOU O QUE SOU.”"
+      de: "Am Horeb, dem Berg Gottes, brennt der Busch und verbrennt nicht: „ICH WERDE SEIN, DER ICH SEIN WERDE.“"
+      fr: "À Horeb, la montagne de Dieu, le buisson brûle sans se consumer : « Je suis celui qui suis. »"
   - place: af301ca # Egypt
     ref: Exod.4.18-Exod.5.1
     year: "1446 BC"
     note:
       en: 'Back in Egypt Moses and Aaron say to Pharaoh: "Let my people go."'
       ru: "Вернувшись в Египет, Моисей и Аарон говорят фараону: «отпусти народ Мой»."
+      uk: "Знову в Єгипті Мойсей і Аарон кажуть фараонові: «Відпусти люде мої»."
+      es: "De vuelta en Egipto, Moisés y Aarón dicen al Faraón: «Deja ir á mi pueblo»."
+      pt: "De volta ao Egito, Moisés e Arão dizem ao Faraó: “Deixe o meu povo ir.”"
+      de: "Wieder in Ägypten sagen Mose und Aaron zum Pharao: „Laß mein Volk ziehen“."
+      fr: "De retour en Égypte, Moïse et Aaron disent à Pharaon : « Laisse aller mon peuple. »"

@@ -25,7 +25,7 @@
  * Usage: node scripts/build-text-places.ts  (after build-content; build-verses supplies
  * the text for the lower-case check, and without it only the other checks apply)
  */
-import { LOCALES, type SiteLocale } from "../packages/model/src/time.ts";
+import type { SiteLocale } from "../packages/model/src/time.ts";
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { siteCertainty } from "../packages/model/src/sites.ts";
@@ -36,9 +36,10 @@ import { placeSlugs } from "./slugs.ts";
 const root = join(import.meta.dirname, "..");
 const data = join(root, "apps/web/public/data");
 
-type Lang = SiteLocale;
+// Built for English and Russian, whose Bibles and stems the index knows.
+type Lang = Extract<SiteLocale, "en" | "ru">;
 // English first: the Russian pass reads what the English one found.
-const LANGS: readonly Lang[] = ["en", ...LOCALES.filter((l) => l !== "en")];
+const LANGS: readonly Lang[] = ["en", "ru"];
 /** How much more a place must be named than its namesakes, and than a person. */
 const OVER_PLACES = 5;
 const OVER_PEOPLE = 3;

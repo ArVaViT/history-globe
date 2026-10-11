@@ -5,6 +5,11 @@ id: samuel
 title:
   en: "Samuel and the ark"
   ru: "Самуил и ковчег"
+  uk: "Самуїл і ковчег"
+  es: "Samuel y el arca"
+  pt: "Samuel e a arca"
+  de: "Samuel und die Lade"
+  fr: "Samuel et l’arche"
 year: "1070 BC"
 people: ["Samuel@1Sa.1.20-Heb"]
 approximate: true
@@ -14,45 +19,90 @@ stops:
     note:
       en: "At Ramah Hannah bears a son and names him Samuel: asked of the Lord."
       ru: "В Раме Анна рождает сына и нарекает ему имя Самуил: от Господа испросила его."
+      uk: "У Рамі Анна народжує сина й дає йому ім’я Самуїл: випрошений у Господа."
+      es: "En Ramá Ana da a luz un hijo y lo llama Samuel: pedido al Señor."
+      pt: "Em Ramá, Ana dá à luz um filho e lhe dá o nome de Samuel: pedido ao Senhor."
+      de: "In Rama gebiert Hanna einen Sohn und nennt ihn Samuel: vom Herrn erbeten."
+      fr: "À Rama, Anne met au monde un fils et l’appelle Samuel : demandé à l’Éternel."
   - place: aa4680a # Shiloh
     ref: 1Sam.1.24-1Sam.3.21
     note:
       en: 'Brought to the house of the Lord at Shiloh, the boy answers: "Speak; for thy servant heareth."'
       ru: "Приведённый в дом Господень в Силоме, отрок отвечает: «говори, ибо слышит раб Твой»."
+      uk: "Приведений до дому Господнього в Шіло, хлопець відповідає: «Глаголи, твій раб чує»."
+      es: "Llevado a la casa del Señor en Silo, el niño responde: «Habla, que tu siervo oye»."
+      pt: "Levado à casa do Senhor em Siló, o menino responde: “Fala, porque o teu servo ouve.”"
+      de: "In das Haus des Herrn nach Silo gebracht, antwortet der Knabe: „Rede, denn dein Knecht hört.“"
+      fr: "Amené à la maison de l’Éternel à Silo, l’enfant répond : « Parle, car ton serviteur écoute. »"
   - place: abfdefc # Ebenezer
     ref: 1Sam.4.1-1Sam.4.11
     note:
       en: "At Ebenezer the Philistines take the ark of God; Hophni and Phinehas die."
       ru: "У Авен-Езера Филистимляне берут ковчег Божий; Офни и Финеес умирают."
+      uk: "В Авен-Езері філістимляни забирають ковчег Божий; Офні і Финеєс гинуть."
+      es: "En Ebenezer los filisteos toman el arca de Dios; Ofni y Finees mueren."
+      pt: "Em Ebenézer, os filisteus tomam a arca de Deus; Hofni e Finéias morrem."
+      de: "Bei Eben-Eser nehmen die Philister die Lade Gottes; Hofni und Pinhas sterben."
+      fr: "À Ében-Ézer, les Philistins prennent l’arche de Dieu ; Hophni et Phinées meurent."
   - place: a30c937 # Ashdod
     ref: 1Sam.5.1-1Sam.5.7
     note:
       en: "In the temple of Dagon at Ashdod the idol falls on its face before the ark of the Lord."
       ru: "В храме Дагона в Азоте идол падает лицом к земле пред ковчегом Господним."
+      uk: "У храмі Дагона в Ашдоді ідол падає обличчям перед ковчегом Господнім."
+      es: "En el templo de Dagón, en Asdod, el ídolo cae de bruces ante el arca del Señor."
+      pt: "No templo de Dagom, em Asdode, o ídolo cai de rosto diante da arca do Senhor."
+      de: "Im Tempel Dagons in Aschdod fällt das Götzenbild vor der Lade des Herrn auf sein Angesicht."
+      fr: "Dans le temple de Dagon à Asdod, l’idole tombe face contre terre devant l’arche de l’Éternel."
   - place: a3b5b53 # Beth-shemesh
     ref: 1Sam.6.12-1Sam.6.20
     note:
       en: "Two cows carry the ark straight along the road to Beth-shemesh."
       ru: "Две коровы везут ковчег прямо по дороге к Вефсамису."
+      uk: "Дві корови несуть ковчег прямо дорогою до Бет-Шемеша."
+      es: "Dos vacas llevan el arca derecho por el camino a Bet-semes."
+      pt: "Duas vacas levam a arca em linha reta pelo caminho até Bete-Semes."
+      de: "Zwei Kühe bringen die Lade geradewegs auf der Straße nach Bet-Schemesch."
+      fr: "Deux vaches portent l’arche tout droit sur la route de Beth-Schémesch."
   - place: a9bba61 # Kiriath-jearim
     ref: 1Sam.7.1-1Sam.7.2
     note:
       en: "The men of Kiriath-jearim bring the ark into the house of Abinadab; twenty years pass, and all Israel laments after the Lord."
       ru: "Жители Кириаф-Иарима вносят ковчег в дом Аминадава; проходит лет двадцать, и весь дом Израилев обращается к Господу."
+      uk: "Мужі Кіріят-Єарима вносять ковчег до дому Авінадава; минає двадцять років, і весь Ізраїль тужить за Господом."
+      es: "Los hombres de Quiriat-jearim llevan el arca a la casa de Abinadab; pasan veinte años, y todo Israel lamenta en pos del Señor."
+      pt: "Os homens de Quiriate-Jearim levam a arca para a casa de Abinadabe; passam-se vinte anos, e todo o Israel se lamenta, buscando o Senhor."
+      de: "Die Männer von Kirjat-Jearim bringen die Lade in das Haus Abinadabs; zwanzig Jahre vergehen, und ganz Israel klagt dem Herrn nach."
+      fr: "Les hommes de Kirjath-Jearim amènent l’arche dans la maison d’Abinadab ; vingt ans passent, et tout Israël soupire après l’Éternel."
   - place: a736f6c # Mizpah
     ref: 1Sam.7.5-1Sam.7.12
     note:
       en: 'At Mizpah Samuel prays and Israel prevails; between Mizpah and Shen Samuel sets up a stone: "Hitherto hath the LORD helped us."'
       ru: "В Массифе Самуил молится, и Израиль побеждает; между Массифою и Сеном Самуил ставит камень: «до сего места помог нам Господь»."
+      uk: "У Міцпі Самуїл молиться, і Ізраїль перемагає; між Міцпою і Сеном Самуїл ставить камінь: «Ось поки Господь дав нам підмогу!»"
+      es: "En Mizpa Samuel ora e Israel prevalece; entre Mizpa y Sen Samuel levanta una piedra: «Hasta aquí nos ayudó Jehová»."
+      pt: "Em Mispá, Samuel ora e Israel prevalece; entre Mispá e Sem, Samuel levanta uma pedra: “Até aqui o SENHOR nos ajudou.”"
+      de: "In Mizpa betet Samuel, und Israel siegt; zwischen Mizpa und Schen richtet Samuel einen Stein auf: „Bis hierher hat uns der HERR geholfen.“"
+      fr: "À Mitspa, Samuel prie et Israël l’emporte ; entre Mitspa et Schen, Samuel dresse une pierre : « Jusqu’ici l’Éternel nous a secourus. »"
   - place: ab94aea # Gilgal
     ref: 1Sam.11.14-1Sam.11.15
     year: "1050 BC"
     note:
       en: "At Gilgal the people make Saul king before the Lord."
       ru: "В Галгале народ поставляет Саула царём пред Господом."
+      uk: "У Гілгалі народ ставить Саула царем перед Господом."
+      es: "En Gilgal el pueblo hace rey a Saúl delante del Señor."
+      pt: "Em Gilgal o povo faz Saul rei perante o Senhor."
+      de: "In Gilgal machen die Leute Saul vor dem Herrn zum König."
+      fr: "À Guilgal, le peuple établit Saül roi devant l’Éternel."
   - place: a90f6e1 # Ramah
     ref: 1Sam.25.1
     year: "1015 BC"
     note:
       en: "Samuel dies, and all Israel mourns him and buries him at his house in Ramah."
       ru: "Самуил умирает; весь Израиль плачет о нём и погребает его в доме его, в Раме."
+      uk: "Самуїл помирає, і весь Ізраїль оплакує його й ховає його в його домі в Рамі."
+      es: "Samuel muere, y todo Israel hace duelo por él y lo sepulta en su casa de Ramá."
+      pt: "Samuel morre, e todo o Israel o pranteia e o sepulta em sua casa, em Ramá."
+      de: "Samuel stirbt, und ganz Israel hält die Totenklage um ihn und begräbt ihn in seinem Haus in Rama."
+      fr: "Samuel meurt, et tout Israël le pleure et l’enterre dans sa demeure à Rama."

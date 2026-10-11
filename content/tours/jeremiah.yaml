@@ -7,6 +7,11 @@ id: jeremiah
 title:
   en: "Jeremiah the prophet"
   ru: "Пророк Иеремия"
+  uk: "Пророк Єремія"
+  es: "El profeta Jeremías"
+  pt: "Jeremias, o profeta"
+  de: "Der Prophet Jeremia"
+  fr: "Jérémie le prophète"
 year: "627 BC"
 people: ["Jeremiah@2Ch.35.25-Mat"]
 approximate: true
@@ -16,44 +21,84 @@ stops:
     note:
       en: 'Jeremiah, of the priests in Anathoth, is called a prophet to the nations and answers, "I cannot speak: for I am a child."'
       ru: "Иеремия, из священников в Анафофе, поставлен пророком для народов и отвечает: «я не умею говорить, ибо я еще молод»."
+      uk: "Єремія, зі священиків в Анатоті, покликаний бути пророком для народів і відповідає: «я ж не вмію говорити, бо ще молодий»."
+      es: "Jeremías, de los sacerdotes de Anatot, es llamado profeta a las naciones y responde: «no sé hablar, porque soy niño»."
+      pt: "Jeremias, dos sacerdotes de Anatote, é chamado profeta para as nações e responde: “não sei falar; pois sou um menino.”"
+      de: "Jeremia, aus den Priestern in Anatot, wird zum Propheten für die Völker berufen und antwortet: „ich tauge nicht, zu predigen; denn ich bin zu jung“."
+      fr: "Jérémie, d’entre les sacrificateurs d’Anathoth, est appelé prophète pour les nations et répond : « je ne sais point parler, car je suis un enfant »."
   - place: a37c8e6 # Valley of Hinnom
     ref: Jer.19.1-Jer.19.11
     note:
       en: "The Lord sends him to the Valley of Hinnom to break a potter's earthen bottle before the elders: so He will break this people and this city."
       ru: "Господь посылает его в долину Еннома разбить перед старейшинами глиняный кувшин: так Он сокрушит народ сей и город сей."
+      uk: "Господь посилає його до долини Гінном розбити перед старійшинами гончарну глиняну пляшку: так Він розіб’є цей народ і це місто."
+      es: "El Señor lo envía al Valle de Hinnom a romper ante los ancianos una vasija de barro de alfarero: así quebrantará a este pueblo y a esta ciudad."
+      pt: "O Senhor o envia ao Vale de Hinom para quebrar diante dos anciãos o jarro de barro de um oleiro: assim Ele quebrará este povo e esta cidade."
+      de: "Der Herr sendet ihn ins Hinnomtal, um vor den Ältesten den irdenen Krug eines Töpfers zu zerbrechen: So wird er dieses Volk und diese Stadt zerbrechen."
+      fr: "L’Éternel l’envoie à la vallée de Hinnom pour briser devant les anciens un vase de terre du potier : ainsi il brisera ce peuple et cette ville."
   - place: a15257a # Jerusalem
     ref: Jer.26.1-Jer.26.19
     year: "609 BC"
     note:
       en: 'For his words in the court of the Temple the priests and the prophets would have him die; the elders recall Micah: "Jerusalem shall become heaps."'
       ru: "За слова во дворе храма священники и пророки требуют его смерти; старейшины вспоминают пророчество Михея: «Иерусалим сделается грудою развалин»."
+      uk: "За слова на дворі храму священики й пророки хочуть, щоб він умер; старійшини згадують Михея: «Ерусалим обернеться в купу розвалин»."
+      es: "Por sus palabras en el atrio del Templo, los sacerdotes y los profetas quieren que muera; los ancianos recuerdan a Miqueas: «Jerusalem vendrá á ser montones»."
+      pt: "Por suas palavras no átrio do Templo, os sacerdotes e os profetas querem que ele morra; os anciãos lembram Miqueias: “Jerusalém se tornará um amontoado de ruínas.”"
+      de: "Wegen seiner Worte im Vorhof des Tempels wollen die Priester und Propheten ihn sterben lassen; die Ältesten erinnern an Micha: „Jerusalem wird zum Steinhaufen werden“."
+      fr: "Pour ses paroles dans le parvis du temple, les sacrificateurs et les prophètes voudraient le faire mourir ; les anciens rappellent Michée : « Jérusalem deviendra un monceau de pierres »."
   - place: ab34789 # Anathoth
     ref: Jer.32.1-Jer.32.15
     year: "588 BC"
     note:
       en: 'Shut up in the court of the prison while the army of the king of Babylon besieges Jerusalem, he buys his cousin''s field in Anathoth: "Houses and fields and vineyards shall be possessed again in this land."'
       ru: "Заключённый во дворе стражи, когда войско царя Вавилонского осаждает Иерусалим, он покупает поле двоюродного брата в Анафофе: «домы и поля и виноградники будут снова покупаемы в земле сей»."
+      uk: "Замкнений на дворі в’язниці, поки військо царя Вавилона облягає Єрусалим, він купує поле свого двоюрідного брата в Анатоті: «Будуть колись ізнов купуватись доми й поля й виноградники в сїй землї»."
+      es: "Encerrado en el patio de la cárcel mientras el ejército del rey de Babilonia sitia Jerusalén, compra el campo de su primo en Anatot: «Aun se comprarán casas, y heredades, y viñas en esta tierra»."
+      pt: "Preso no pátio da guarda enquanto o exército do rei da Babilônia cerca Jerusalém, compra o campo de seu primo em Anatote: “Casas, campos e vinhas ainda serão comprados novamente nesta terra.”"
+      de: "Im Vorhof des Gefängnisses eingeschlossen, während das Heer des Königs von Babylon Jerusalem belagert, kauft er den Acker seines Vetters in Anatot: „Noch soll man Häuser, Äcker und Weinberge kaufen in diesem Lande.“"
+      fr: "Enfermé dans la cour de la prison pendant que l’armée du roi de Babylone assiège Jérusalem, il achète le champ de son cousin à Anathoth : « On achètera encore des maisons, des champs et des vignes, dans ce pays. »"
   - place: a15257a # Jerusalem
     ref: Jer.38.6-Jer.38.28
     year: "587 BC"
     note:
       en: "Thrown into a dungeon in the court of the prison, he sinks in the mire; Ebed-melech the Ethiopian draws him out with cords, and he stays in the court of the prison until the day Jerusalem is taken."
       ru: "Брошенный в яму во дворе стражи, он погружается в грязь; Авдемелех Ефиоплянин вытаскивает его на верёвках, и он остаётся во дворе стражи до того дня, когда взят Иерусалим."
+      uk: "Кинутий до рову на дворі в’язниці, він грузне в багнюці; ефіоп Ебед-Мелех витягає його мотузками, і він залишається на дворі в’язниці до дня, коли Єрусалим буде взято."
+      es: "Arrojado a un calabozo en el patio de la cárcel, se hunde en el lodo; Ebed-melec el etíope lo saca con cuerdas, y permanece en el patio de la cárcel hasta el día en que Jerusalén es tomada."
+      pt: "Lançado numa masmorra no pátio da guarda, afunda na lama; Ebede-Meleque, o etíope, o tira com cordas, e ele permanece no pátio da guarda até o dia em que Jerusalém é tomada."
+      de: "In ein Verlies im Vorhof des Gefängnisses geworfen, versinkt er im Schlamm; Ebed-Melech, der Äthiopier, zieht ihn mit Stricken heraus, und er bleibt im Vorhof des Gefängnisses bis zu dem Tag, an dem Jerusalem eingenommen wird."
+      fr: "Jeté dans une citerne de la cour de la prison, il s’enfonce dans la boue ; Ébed-Mélec l’Éthiopien le fait remonter avec des cordes, et il reste dans la cour de la prison jusqu’au jour où Jérusalem est prise."
   - place: a6d57ed # Ramah
     ref: Jer.40.1-Jer.40.5
     year: "587 BC"
     note:
       en: "At Ramah, among the captives in chains bound for Babylon, Nebuzar-adan sets him free to go where he will."
       ru: "В Раме, среди скованных пленников, которых ведут в Вавилон, Навузардан освобождает его и отпускает, куда он захочет."
+      uk: "У Рамі, серед полонених у кайданах, що йдуть до Вавилона, Навузардан звільняє його йти, куди він схоче."
+      es: "En Ramá, entre los cautivos encadenados rumbo a Babilonia, Nabuzaradán lo deja libre para que vaya adonde quiera."
+      pt: "Em Ramá, entre os cativos acorrentados a caminho da Babilônia, Nebuzaradã o liberta para ir aonde quiser."
+      de: "In Rama, unter den gefesselten Gefangenen auf dem Weg nach Babylon, lässt Nebusaradan ihn frei, damit er gehen kann, wohin er will."
+      fr: "À Rama, parmi les captifs enchaînés en route vers Babylone, Nebuzaradan le met en liberté d’aller où il voudra."
   - place: a736f6c # Mizpah
     ref: Jer.40.6
     year: "587 BC"
     note:
       en: "He stays with Gedaliah at Mizpah, among the people left in the land."
       ru: "Он остаётся с Годолией в Массифе, среди народа, оставшегося в стране."
+      uk: "Він залишається з Гедалією в Міцпі, серед людей, що лишилися в краї."
+      es: "Se queda con Gedalías en Mizpa, entre la gente que ha quedado en el país."
+      pt: "Fica com Gedalias em Mispá, entre o povo deixado na terra."
+      de: "Er bleibt bei Gedalja in Mizpa unter dem Volk, das im Land zurückgeblieben ist."
+      fr: "Il demeure auprès de Guedalia à Mitspa, parmi le peuple resté dans le pays."
   - place: adb008c # Tahpanhes
     ref: Jer.43.5-Jer.43.13
     year: "587 BC"
     note:
       en: "Taken down to Egypt against his word, at Tahpanhes he is told to hide great stones at the entry of Pharaoh's house: Nebuchadnezzar will set his throne upon them."
       ru: "Уведённый в Египет вопреки его слову, в Тафнисе ему велено скрыть большие камни при входе в дом фараона: на них Навуходоносор поставит свой престол."
+      uk: "Відведений до Єгипту всупереч своєму слову, у Тафнісі він отримує веління сховати великі камені при вході до дому фараона: на них Навуходоносор поставить свій престол."
+      es: "Llevado a Egipto contra su palabra, en Tafnes recibe la orden de esconder grandes piedras a la entrada de la casa del Faraón: Nabucodonosor pondrá su trono sobre ellas."
+      pt: "Levado ao Egito contra a sua palavra, em Tafnes recebe a ordem de esconder grandes pedras à entrada da casa do Faraó: Nabucodonosor porá nelas o seu trono."
+      de: "Gegen sein Wort nach Ägypten hinabgeführt, wird ihm in Tachpanhes gesagt, große Steine am Eingang des Hauses des Pharao zu verbergen: Nebukadnezar wird seinen Thron darauf aufstellen."
+      fr: "Emmené en Égypte contre sa parole, il reçoit à Tachpanès l’ordre de cacher de grandes pierres à l’entrée de la maison de Pharaon : Nebucadnetsar y placera son trône."

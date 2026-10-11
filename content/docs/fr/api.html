@@ -1,0 +1,116 @@
+---
+title: Données ouvertes
+description: Les lieux, les versets qui les nomment, les événements et les parcours, en fichiers JSON que chacun peut utiliser sous licence CC BY 4.0 — sans clé, sans inscription.
+---
+
+<p class="lede">
+  Tout ce que le globe sait des lieux et des versets est ouvert : de simples fichiers JSON, libres
+  d’emploi sur un autre site ou dans une autre application sous licence CC BY 4.0. Pas de clé, pas
+  d’inscription, pas d’autre limite que la mise en cache ordinaire.
+</p>
+
+<h2>Quels lieux un verset nomme-t-il</h2>
+<p>
+  Un fichier par livre de la Bible : chaque verset qui nomme un lieu, avec les identifiants de ces
+  lieux.
+</p>
+<pre><code>GET {{site}}/api/v1/verses/Acts.json
+
+{ "Acts.16.11": ["a6a7150", "a68750d", "a91c509"], "Acts.16.12": ["a69e1b8", "a49e1d0"], … }</code></pre>
+<p>
+  Les lieux eux-mêmes, avec leurs noms en anglais et en russe, leur nature et leur point, se
+  trouvent dans <code>places.json</code> ; la jointure se fait sur <code>id</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/places.json
+
+[{ "id": "a49e1d0", "name": "Philippi", "name_ru": "Филиппы", "kind": "settlement",
+   "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "page": { "en": "/en/place/philippi/", "ru": "/ru/place/philippi/" } }, …]</code></pre>
+
+<h2>Tous les fichiers</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Fichier</th>
+        <th>Contenu</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/v1/index.json</code></td>
+        <td>
+          la liste des fichiers et des livres, la licence et les crédits, la date de construction
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/places.json</code></td>
+        <td>
+          chaque lieu : identifiant, noms, nature, point, nombre de versets qui le nomment, sa page
+          (pour un lieu que nomme un verset)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/verses/{Book}.json</code></td>
+        <td>
+          un verset → les lieux qu’il nomme, un fichier par livre (<code>Gen</code>,
+          <code>1Kgs</code>, <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/events.json</code></td>
+        <td>les événements datés, avec <code>ref</code> lorsque la Bible rapporte l’événement</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/battles.json</code></td>
+        <td>
+          batailles et sièges : lieu, année, camps et issue, avec <code>ref</code> lorsque la Bible
+          rapporte la bataille
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/questions.json</code></td>
+        <td>
+          les questions que posent les gens, avec leurs réponses dans les deux langues, la vue de la
+          carte et les sources
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/tours.json</code></td>
+        <td>
+          les parcours : leurs étapes dans l’ordre, chacune avec son passage et sa note ;
+          <code>by: "sea"</code> pour un trajet par mer, et <code>sailed</code> (jours et verset)
+          lorsque le texte dit combien de temps il a duré
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Conventions</h2>
+<ul>
+  <li>
+    Les références sont en OSIS, avec les abréviations anglaises des livres et la numérotation de la
+    version du roi Jacques (King James) : <code>Gen.12.6</code>, <code>Acts.16.12-Acts.16.15</code>.
+  </li>
+  <li>Les années sont astronomiques : 1 av. J.-C. est 0, 586 av. J.-C. est −585.</li>
+  <li>
+    Un lieu inscrit deux fois sous un même nom dans les données sources porte
+    <code>"duplicate": true</code> ; un lieu dont l’emplacement est contesté,
+    <code>"disputed": true</code>.
+  </li>
+  <li>
+    Les fichiers sont reconstruits à chaque publication des données ; <code>index.json</code> en
+    donne la date.
+  </li>
+</ul>
+
+<h2>Licence et crédits</h2>
+<p>
+  Les données sont sous licence
+  <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a>. Utilisez-les,
+  modifiez-les, vendez ce que vous construisez avec elles ; citez les sources là où vous les
+  montrez, telles que les énumère <code>index.json</code> : History Globe par Vadym Arnaut, et
+  OpenBible.info pour les lieux, les étiquettes de versets et les points. Les noms russes ont été
+  relevés dans la traduction synodale, qui appartient au domaine public.
+</p>

@@ -6,6 +6,11 @@ id: daniel
 title:
   en: "Daniel"
   ru: "Пророк Даниил"
+  uk: "Даниїл"
+  es: "Daniel"
+  pt: "Daniel"
+  de: "Daniel"
+  fr: "Daniel"
 year: "605 BC"
 people: ["Daniel@Ezk.14.14-Mrk"]
 approximate: true
@@ -15,12 +20,22 @@ stops:
     note:
       en: "In the third year of Jehoiakim Nebuchadnezzar besieges Jerusalem and carries off some of the vessels of the house of God."
       ru: "В третий год Иоакима Навуходоносор осаждает Иерусалим и уносит часть сосудов дома Божия."
+      uk: "На третій рік Йоакима Навуходоносор облягає Єрусалим і забирає частину посуду з дому Божого."
+      es: "En el tercer año de Joacim, Nabucodonosor sitia Jerusalén y se lleva parte de los vasos de la casa de Dios."
+      pt: "No terceiro ano de Jeoaquim, Nabucodonosor cerca Jerusalém e leva alguns dos utensílios da casa de Deus."
+      de: "Im dritten Jahr Jojakims belagert Nebukadnezar Jerusalem und führt einen Teil der Geräte des Hauses Gottes fort."
+      fr: "La troisième année de Jojakim, Nebucadnetsar assiège Jérusalem et emporte une partie des objets de la maison de Dieu."
   - place: a217d18 # Babylon
     ref: Dan.1.3-Dan.6.28
     year: "539 BC"
     note:
       en: 'In Babylon: the king''s dream, the fiery furnace, the writing on the wall ("MENE, MENE, TEKEL, UPHARSIN"), the lions'' den.'
       ru: "В Вавилоне: сон царя, печь огненная, надпись на стене («мене, мене, текел, упарсин»), ров львиный."
+      uk: "У Вавилоні: сон царя, вогненна піч, напис на стіні («Мене, мене, текел, упарсин»), рів зі львами."
+      es: "En Babilonia: el sueño del rey, el horno de fuego, la escritura en la pared («MENE, MENE, TEKEL, UPHARSIN»), el foso de los leones."
+      pt: "Na Babilônia: o sonho do rei, a fornalha ardente, a escrita na parede (“MENE, MENE, TEQUEL, UFARSIM”), a cova dos leões."
+      de: "In Babylon: der Traum des Königs, der Feuerofen, die Schrift an der Wand („Mene, mene, Tekel, U-pharsin“), die Löwengrube."
+      fr: "À Babylone : le songe du roi, la fournaise ardente, l’écriture sur le mur (« Compté, compté, pesé, et divisé »), la fosse aux lions."
   - place: a033b84 # Susa
     ref: Dan.8.1-Dan.8.27
     by: untold
@@ -28,6 +43,11 @@ stops:
     note:
       en: "In the third year of Belshazzar Daniel sees in a vision that he is at Susa, by the river Ulai."
       ru: "В третий год Валтасара Даниил видит себя в видении в Сузах, у реки Улая."
+      uk: "На третій рік Валтасара Даниїл бачить у видінні, що він у Сузах, біля ріки Улай."
+      es: "En el tercer año de Belsasar, Daniel ve en una visión que está en Susa, junto al río Ulai."
+      pt: "No terceiro ano de Belsazar, Daniel vê em visão que está em Susã, junto ao rio Ulai."
+      de: "Im dritten Jahr Belsazars sieht Daniel in einem Gesicht, dass er in Susa am Fluss Ulai ist."
+      fr: "La troisième année de Belschatsar, Daniel voit en vision qu’il est à Suse, près du fleuve Ulaï."
   - place: a38ebfd # Tigris
     ref: Dan.10.1-Dan.10.21
     by: untold
@@ -35,3 +55,8 @@ stops:
     note:
       en: "In the third year of Cyrus, on the bank of the great river Tigris, a man clothed in linen appears to him."
       ru: "В третий год Кира на берегу большой реки Тигра ему является муж, облечённый в льняную одежду."
+      uk: "На третій рік Кіра, на березі великої ріки Тигру, йому являється чоловік у льняному вбранні."
+      es: "En el tercer año de Ciro, a orillas del gran río Tigris, se le aparece un hombre vestido de lino."
+      pt: "No terceiro ano de Ciro, à margem do grande rio Tigre, um homem vestido de linho aparece a ele."
+      de: "Im dritten Jahr des Kyrus erscheint ihm am Ufer des großen Stromes Tigris ein Mann in Leinwand."
+      fr: "La troisième année de Cyrus, au bord du grand fleuve du Tigre, un homme vêtu de lin lui apparaît."

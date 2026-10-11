@@ -1,6 +1,6 @@
 /**
  * Every link and image of the documentation and the static place and tour pages
- * (apps/web/public/docs, apps/web/public/{ru,en}) leads to a file that is there, spelt with
+ * (apps/web/public/docs, apps/web/public/<lang>) leads to a file that is there, spelt with
  * the same case. Links out
  * of the site and to the app itself (`../../../?place=…`, served by the app's own
  * index.html) are not checked.
@@ -9,6 +9,7 @@
  */
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join, normalize, relative } from "node:path";
+import { LOCALES } from "../packages/model/src/time.ts";
 
 const pub = join(import.meta.dirname, "..", "apps/web/public");
 const pages = (dir: string): string[] =>
@@ -22,7 +23,7 @@ const pages = (dir: string): string[] =>
       )
     : [];
 
-const files = ["docs", "ru", "en"].flatMap((d) => pages(join(pub, d)));
+const files = ["docs", ...LOCALES].flatMap((d) => pages(join(pub, d)));
 /** The file is there with this very spelling: the host is case-sensitive, a Mac is not. */
 const listings = new Map<string, Set<string>>();
 const exact = (path: string) => {

@@ -6,6 +6,11 @@ id: ezekiel
 title:
   en: "Ezekiel among the exiles"
   ru: "Иезекииль в плену"
+  uk: "Єзекіїль серед вигнанців"
+  es: "Ezequiel entre los desterrados"
+  pt: "Ezequiel entre os exilados"
+  de: "Hesekiel unter den Verbannten"
+  fr: "Ézéchiel parmi les exilés"
 year: "593 BC"
 # He is carried “in the visions of God” (8:3, 11:24) and the news comes to him (33:21): no time on foot.
 walked: false
@@ -17,26 +22,51 @@ stops:
     note:
       en: "Among the captives by the river Chebar the heavens open, and Ezekiel sees visions of God."
       ru: "Среди переселенцев при реке Ховаре отверзаются небеса, и Иезекииль видит видения Божии."
+      uk: "Серед полонених біля ріки Хебар відкриваються небеса, і Єзекіїль бачить видіння Боже."
+      es: "Entre los cautivos, junto al río Quebar, se abren los cielos, y Ezequiel ve visiones de Dios."
+      pt: "Entre os cativos junto ao rio Quebar os céus se abrem, e Ezequiel vê visões de Deus."
+      de: "Unter den Gefangenen am Fluss Kebar tut sich der Himmel auf, und Hesekiel sieht Gesichte Gottes."
+      fr: "Parmi les captifs, près du fleuve Kebar, les cieux s’ouvrent, et Ézéchiel a des visions de Dieu."
   - place: a10147d # Tel-abib
     ref: Ezek.3.15
     note:
       en: "He comes to the exiles at Tel-abib and sits among them seven days, astonished."
       ru: "Он приходит к переселенцам в Тел-Авив и семь дней проводит среди них в изумлении."
+      uk: "Він приходить до вигнанців у Тел-Авіві й сидить серед них сім днів, остовпілий."
+      es: "Llega a los desterrados de Tel-abib y se sienta entre ellos siete días, atónito."
+      pt: "Chega aos exilados em Tel-Abibe e fica sentado entre eles sete dias, atônito."
+      de: "Er kommt zu den Verbannten in Tel-Abib und sitzt sieben Tage bestürzt unter ihnen."
+      fr: "Il vient auprès des exilés à Tel-Abib et reste sept jours assis au milieu d’eux, stupéfait."
   - place: a15257a # Jerusalem
     ref: Ezek.8.1-Ezek.8.4
     year: "592 BC"
     note:
       en: "In the sixth year the Spirit lifts him up and brings him in visions of God to Jerusalem, to the door of the inner gate."
       ru: "В шестом году дух поднимает его и приносит в видениях Божиих в Иерусалим, ко входу внутренних ворот."
+      uk: "На шостий рік Дух підносить його й приводить у видіннях Божих до Єрусалима, до входу внутрішньої брами."
+      es: "En el sexto año el Espíritu lo levanta y lo lleva en visiones de Dios a Jerusalén, a la entrada de la puerta interior."
+      pt: "No sexto ano o Espírito o levanta e o leva, em visões de Deus, a Jerusalém, à entrada da porta interior."
+      de: "Im sechsten Jahr hebt ihn der Geist empor und bringt ihn in Gesichten Gottes nach Jerusalem, an den Eingang des inneren Tores."
+      fr: "La sixième année, l’Esprit l’enlève et le transporte en visions divines à Jérusalem, à l’entrée de la porte intérieure."
   - place: a32a4f8 # Chaldea
     ref: Ezek.11.24-Ezek.11.25
     year: "592 BC"
     note:
       en: "The Spirit brings him back to the captives in Chaldea, and he tells them all the Lord has shown him."
       ru: "Дух приносит его обратно в Халдею к переселенцам, и он пересказывает им всё, что показал ему Господь."
+      uk: "Дух повертає його до полонених у Халдеї, і він розповідає їм усе, що показав йому Господь."
+      es: "El Espíritu lo devuelve a los cautivos en Caldea, y él les cuenta todo lo que el Señor le ha mostrado."
+      pt: "O Espírito o traz de volta aos cativos na Caldeia, e ele lhes conta tudo o que o Senhor lhe mostrou."
+      de: "Der Geist bringt ihn zu den Gefangenen in Chaldäa zurück, und er erzählt ihnen alles, was der Herr ihn hat sehen lassen."
+      fr: "L’Esprit le ramène vers les captifs en Chaldée, et il leur raconte tout ce que l’Éternel lui a montré."
   - place: a15257a # Jerusalem
     ref: Ezek.33.21-Ezek.33.22
     year: "585 BC"
     note:
       en: 'Among the exiles, in the twelfth year of the captivity, one who escaped from Jerusalem comes to him: "The city is smitten."'
       ru: "Среди переселенцев, в двенадцатом году переселения, к нему приходит спасшийся из Иерусалима: «разрушен город!»"
+      uk: "Серед вигнанців, на дванадцятий рік полону, до нього приходить той, хто врятувався з Єрусалима: «Збурено місто»."
+      es: "Entre los desterrados, en el año duodécimo del cautiverio, llega a él uno que escapó de Jerusalén: «La ciudad ha sido herida»."
+      pt: "Entre os exilados, no décimo segundo ano do cativeiro, vem a ele um que escapou de Jerusalém: “A cidade foi derrotada!”"
+      de: "Unter den Verbannten kommt im zwölften Jahr der Gefangenschaft einer, der aus Jerusalem entronnen ist, zu ihm: „Die Stadt ist geschlagen.“"
+      fr: "Parmi les exilés, la douzième année de la captivité, un homme qui s’était échappé de Jérusalem vient à lui : « La ville a été prise ! »"
