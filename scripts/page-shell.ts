@@ -17,8 +17,8 @@ export function headMeta(o: {
   site: string;
   title: string;
   desc: string;
-  /** The page's path from the site root, in each language. */
-  paths: Readonly<Record<SiteLocale, string>>;
+  /** The page's path from the site root, in each language it exists in (English always). */
+  paths: Readonly<Partial<Record<SiteLocale, string>>> & { readonly en: string };
   l: SiteLocale;
   /** The preview image, from the site root. */
   image?: string | undefined;
@@ -27,20 +27,21 @@ export function headMeta(o: {
   const desc = `\n    <meta name="description" content="${esc(o.desc)}" />`;
   if (!o.site) return desc;
   const abs = (p: string) => `${o.site}/${p}`;
-  const alternates = LOCALES.map(
-    (l) => `\n    <link rel="alternate" hreflang="${l}" href="${abs(o.paths[l])}" />`,
-  ).join("");
+  const alternates = LOCALES.flatMap((l) => {
+    const p = o.paths[l];
+    return p ? [`\n    <link rel="alternate" hreflang="${l}" href="${abs(p)}" />`] : [];
+  }).join("");
   const ld = o.ld
     ? `\n    <script type="application/ld+json">${JSON.stringify(o.ld).replace(/</g, "\\u003c")}</script>`
     : "";
   return `${desc}
-    <link rel="canonical" href="${abs(o.paths[o.l])}" />${alternates}
+    <link rel="canonical" href="${abs(o.paths[o.l] ?? o.paths.en)}" />${alternates}
     <link rel="alternate" hreflang="x-default" href="${abs(o.paths.en)}" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="History Globe" />
     <meta property="og:title" content="${esc(o.title)}" />
     <meta property="og:description" content="${esc(o.desc)}" />
-    <meta property="og:url" content="${abs(o.paths[o.l])}" />
+    <meta property="og:url" content="${abs(o.paths[o.l] ?? o.paths.en)}" />
     <meta property="og:image" content="${abs(o.image ?? "og.jpg")}" />
     <meta name="twitter:card" content="summary_large_image" />${ld}
     <script defer src="/_vercel/insights/script.js"></script>`;

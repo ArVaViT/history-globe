@@ -7,6 +7,11 @@ id: ehud-jephthah
 title:
   en: "Ehud and Jephthah"
   ru: "Аод и Иеффай"
+  uk: "Егуд і Єфтай"
+  es: "Aod y Jefté"
+  pt: "Eúde e Jefté"
+  de: "Ehud und Jeftah"
+  fr: "Éhud et Jephté"
 year: "1150 BC"
 people: ["Ehud@Jdg.3.15-1Ch", "Jephthah@Jdg.11.1-Heb"]
 approximate: true
@@ -16,38 +21,78 @@ stops:
     note:
       en: "Eglon king of Moab, with Ammon and Amalek, smites Israel and takes the city of palm trees; Israel serves him eighteen years."
       ru: "Еглон, царь Моавитский, с Аммонитянами и Амаликитянами поражает Израиль и овладевает Городом Пальм; Израиль служит ему восемнадцать лет."
+      uk: "Еглон, цар Моаву, разом з Аммоном і Амалеком б’є Ізраїль і бере місто пальм; Ізраїль служить йому вісімнадцять років."
+      es: "Eglón, rey de Moab, con Amón y Amalec, hiere a Israel y toma la ciudad de las palmeras; Israel le sirve dieciocho años."
+      pt: "Eglom, rei de Moabe, com Amom e Amaleque, fere Israel e toma a cidade das palmeiras; Israel o serve dezoito anos."
+      de: "Eglon, der König von Moab, schlägt mit Ammon und Amalek Israel und nimmt die Palmenstadt ein; Israel dient ihm achtzehn Jahre."
+      fr: "Églon, roi de Moab, avec Ammon et Amalek, bat Israël et prend la ville des palmiers ; Israël le sert dix-huit ans."
   - place: ab94aea # Gilgal
     ref: Judg.3.15-Judg.3.25
     note:
       en: "Ehud the left-handed brings Israel's present, turns back from the quarries by Gilgal with a secret errand for the king, and thrusts his dagger into Eglon's belly."
       ru: "Левша Аод приносит дары Израиля, возвращается от истуканов, которые в Галгале, с тайным словом к царю и вонзает меч в чрево Еглона."
+      uk: "Лівша Егуд приносить Ізраїлеву данину, повертається від каменоломень біля Гілгала з таємним дорученням до царя й устромляє свій кинджал у черево Еглона."
+      es: "Aod, el zurdo, lleva el presente de Israel, regresa desde las canteras junto a Gilgal con un recado secreto para el rey, y hunde su daga en el vientre de Eglón."
+      pt: "Eúde, o canhoto, leva o presente de Israel, volta das pedreiras junto a Gilgal com uma missão secreta para o rei e enterra o seu punhal no ventre de Eglom."
+      de: "Der linkshändige Ehud bringt Israels Geschenk, kehrt bei den Steinbrüchen von Gilgal um, angeblich mit einem geheimen Auftrag für den König, und stößt Eglon den Dolch in den Bauch."
+      fr: "Éhud le gaucher apporte le présent d’Israël, revient des carrières près de Guilgal avec un message secret pour le roi, et lui plonge son poignard dans le ventre."
   - place: a1aff30 # Seirah
     ref: Judg.3.26-Judg.3.30
     note:
       en: "He escapes to Seirah, blows a trumpet in mount Ephraim, and Israel takes the fords of the Jordan toward Moab; the land has rest eighty years."
       ru: "Он спасается в Сеираф, трубит на горе Ефремовой, и Израиль перехватывает переправу через Иордан к Моаву; земля покоится восемьдесят лет."
+      uk: "Він утікає до Сеїри, сурмить у сурму на горі Єфремовій, і Ізраїль захоплює броди Йордану в бік Моаву; земля має спокій вісімдесят років."
+      es: "Escapa a Seirat, toca la trompeta en el monte de Efraín, e Israel toma los vados del Jordán hacia Moab; la tierra tiene reposo ochenta años."
+      pt: "Escapa para Seira, toca a trombeta no monte Efraim, e Israel toma os vaus do Jordão rumo a Moabe; a terra tem descanso por oitenta anos."
+      de: "Er entkommt nach Seïra, stößt im Gebirge Ephraim in die Posaune, und Israel besetzt die Furten des Jordan gegen Moab; das Land hat achtzig Jahre Ruhe."
+      fr: "Il s’enfuit à Séira, sonne de la trompette dans la montagne d’Éphraïm, et Israël s’empare des gués du Jourdain du côté de Moab ; le pays est en repos pendant quatre-vingts ans."
   - place: aaff3e1 # Tob
     ref: Judg.11.1-Judg.11.3
     note:
       en: "Jephthah the Gileadite, driven out by his brothers, flees to the land of Tob, where vain men gather to him."
       ru: "Иеффай Галаадитянин, изгнанный братьями, убегает в землю Тов, и к нему собираются праздные люди."
+      uk: "Єфтай Гілеадянин, вигнаний братами, тікає до землі Тов, де до нього збираються пусті люди."
+      es: "Jefté el galaadita, expulsado por sus hermanos, huye a la tierra de Tob, donde se juntan con él hombres ociosos."
+      pt: "Jefté, o gileadita, expulso pelos irmãos, foge para a terra de Tobe, onde homens vadios se juntam a ele."
+      de: "Jeftah, der Gileaditer, von seinen Brüdern vertrieben, flieht ins Land Tob, wo sich lose Männer um ihn sammeln."
+      fr: "Jephté le Galaadite, chassé par ses frères, s’enfuit au pays de Tob, où des vauriens se rassemblent auprès de lui."
   - place: a0f8af9 # Mizpah
     ref: Judg.11.4-Judg.11.11
     note:
       en: "When Ammon makes war, the elders of Gilead fetch him; the people make him head and captain, and he utters all his words before the Lord in Mizpeh."
       ru: "Когда Аммонитяне начинают войну, старейшины Галаада призывают его; народ ставит его начальником и вождём, и в Массифе он произносит все слова свои пред лицом Господа."
+      uk: "Коли Аммон починає війну, старійшини Гілеаду приводять його; народ ставить його головою й проводирем, і він викладає всі свої слова перед Господом у Міцпі."
+      es: "Cuando Amón hace la guerra, los ancianos de Galaad van a buscarlo; el pueblo lo hace cabeza y capitán, y él expone todas sus palabras ante el Señor en Mizpa."
+      pt: "Quando Amom faz guerra, os anciãos de Gileade vão buscá-lo; o povo o faz chefe e comandante, e ele profere todas as suas palavras perante o Senhor em Mispá."
+      de: "Als Ammon Krieg führt, holen ihn die Ältesten von Gilead; das Volk macht ihn zum Haupt und Obersten, und er trägt alle seine Worte vor dem Herrn in Mizpe vor."
+      fr: "Quand Ammon fait la guerre, les anciens de Galaad vont le chercher ; le peuple l’établit chef et commandant, et il prononce toutes ses paroles devant l’Éternel à Mitspé."
   - place: af74969 # Aroer
     ref: Judg.11.29-Judg.11.33
     note:
       en: "He vows that whatever comes out of his doors to meet him shall be the Lord's, and smites Ammon from Aroer to Minnith, twenty cities."
       ru: "Он даёт обет: что выйдет из ворот дома его навстречу ему, будет Господу, и поражает Аммонитян от Ароера до Минифа, двадцать городов."
+      uk: "Він обіцяє, що все, що вийде з дверей його дому назустріч йому, буде Господнє, і б’є Аммон від Ароера до Мініту, двадцять міст."
+      es: "Hace voto de que lo que salga de las puertas de su casa a recibirlo será del Señor, e hiere a Amón desde Aroer hasta Minit, veinte ciudades."
+      pt: "Faz voto de que aquilo que sair das portas de sua casa ao seu encontro será do Senhor, e fere Amom desde Aroer até Minite, vinte cidades."
+      de: "Er gelobt, was ihm aus seiner Tür entgegenkomme, solle dem Herrn gehören, und schlägt Ammon von Aroër bis Minnit, zwanzig Städte."
+      fr: "Il fait le vœu que celui qui sortira des portes de sa maison à sa rencontre sera consacré à l’Éternel, et il bat Ammon depuis Aroër jusque vers Minnith, vingt villes."
   - place: a0f8af9 # Mizpah
     ref: Judg.11.34-Judg.11.40
     note:
       en: 'At Mizpeh his only daughter comes out to meet him with timbrels and dances: "Alas, my daughter! thou hast brought me very low."'
       ru: "В Массифе навстречу ему выходит с тимпанами и ликами его единственная дочь: «ах, дочь моя! ты сразила меня»."
+      uk: "У Міцпі назустріч йому з бубнами й танцями виходить його єдина донька: «Ой доненько ж моя! як ти пригнула мене к земли!»"
+      es: "En Mizpa su hija única sale a recibirlo con adufes y danzas: «¡Ay, hija mía! de verdad me has abatido»."
+      pt: "Em Mispá, sua filha única sai ao seu encontro com tamborins e danças: “Ah, minha filha! Você me prostrou profundamente.”"
+      de: "In Mizpe kommt ihm seine einzige Tochter mit Pauken und Reigen entgegen: „Ach, meine Tochter, wie beugst du mich und betrübst mich!“"
+      fr: "À Mitspé, sa fille unique sort à sa rencontre avec des tambourins et des danses : « Ah ! ma fille ! Tu me jettes dans l’abattement. »"
   - place: ae686c9 # Jordan
     ref: Judg.12.1-Judg.12.6
     note:
       en: 'At the passages of Jordan the men of Gilead know the men of Ephraim by one word: "Say now Shibboleth."'
       ru: "У переправы через Иордан Галаадитяне узнают Ефремлян по одному слову: «скажи: шибболет»."
+      uk: "На переправах через Йордан мужі Гілеаду пізнають мужів Єфрема за одним словом: «А скажи ж: Шибболет»."
+      es: "En los vados del Jordán los hombres de Galaad reconocen a los de Efraín por una sola palabra: «Ahora pues, di, Shiboleth»."
+      pt: "Nos vaus do Jordão, os homens de Gileade reconhecem os homens de Efraim por uma só palavra: “Agora diga ‘Chibolete’.”"
+      de: "An den Furten des Jordan erkennen die Männer von Gilead die Männer von Ephraim an einem einzigen Wort: „hießen sie ihn sprechen: Schiboleth“."
+      fr: "Aux gués du Jourdain, les hommes de Galaad reconnaissent les hommes d’Éphraïm à un seul mot : « Hé bien, dis Schibboleth. »"

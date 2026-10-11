@@ -9,6 +9,11 @@ id: amos
 title:
   en: "Amos: the words against the nations"
   ru: "Амос: слово против народов"
+  uk: "Амос: слова проти народів"
+  es: "Amós: las palabras contra las naciones"
+  pt: "Amós: as palavras contra as nações"
+  de: "Amos: die Worte gegen die Völker"
+  fr: "Amos : les paroles contre les nations"
 year: "760 BC"
 # Where the words were aimed, not a journey: no time on foot. Only Tekoa and Bethel are
 # the prophet's own places.
@@ -20,58 +25,118 @@ stops:
     note:
       en: '"The words of Amos, who was among the herdmen of Tekoa": a shepherd of Judah sent to Israel, two years before the earthquake.'
       ru: "«Слова Амоса, одного из пастухов Фекойских»: пастух из Иудеи, посланный к Израилю, за два года перед землетрясением."
+      uk: "«Слова Амосові, що був ізміж Текойських скотарів»: вівчар з Юди, посланий до Ізраїлю за два роки до землетрусу."
+      es: "«Las palabras de Amós, que fué entre los pastores de Tecoa»: un pastor de Judá enviado a Israel, dos años antes del terremoto."
+      pt: "“As palavras de Amós, que estava entre os pastores de Tecoa”: um pastor de Judá enviado a Israel, dois anos antes do terremoto."
+      de: "„Dies ist's, was Amos, der unter den Hirten zu Thekoa war, gesehen hat“: ein Hirte aus Juda, nach Israel gesandt, zwei Jahre vor dem Erdbeben."
+      fr: "« Paroles d’Amos, l’un des bergers de Tekoa » : un berger de Juda envoyé à Israël, deux ans avant le tremblement de terre."
   - place: a69c1d4 # Damascus
     ref: Amos.1.3-Amos.1.5
     note:
       en: '"For three transgressions of Damascus, and for four": they threshed Gilead with iron; the people of Syria shall go captive to Kir.'
       ru: "«за три преступления Дамаска и за четыре»: они молотили Галаад железными молотилами; народ Арамейский пойдёт в плен в Кир."
+      uk: "«За три й чотирі (за многі) проступки» Дамаска: вони молотили Гілеад залізними молотильними возами; народ Сирії піде в полон до Кіру."
+      es: "«Por tres pecados de Damasco, y por el cuarto»: trillaron a Galaad con trillos de hierro; el pueblo de Siria será llevado cautivo a Kir."
+      pt: "“Por três transgressões de Damasco, sim, por quatro”: trilharam Gileade com trilhos de ferro; o povo da Síria irá em cativeiro para Quir."
+      de: "„Um drei und vier Frevel willen der Damasker“: Sie haben Gilead mit eisernen Zacken gedroschen; das Volk in Syrien soll gen Kir weggeführt werden."
+      fr: "« À cause de trois crimes de Damas, même de quatre » : ils ont foulé Galaad sous des traîneaux de fer ; le peuple de Syrie ira en captivité à Kir."
   - place: aa8edd2 # Gaza
     ref: Amos.1.6-Amos.1.8
     note:
       en: "Gaza carried a whole people away captive to deliver them up to Edom: fire on its wall, and the remnant of the Philistines shall perish."
       ru: "Газа вывела всех в плен, чтобы предать их Едому: огонь в стены её, и остаток Филистимлян погибнет."
+      uk: "Газа відвела в полон цілий народ, щоб видати його Едомові: вогонь на її стіну, і останок філістимлян загине."
+      es: "Gaza llevó cautivo a un pueblo entero para entregarlo a Edom: fuego sobre su muro, y el resto de los filisteos perecerá."
+      pt: "Gaza levou cativo um povo inteiro para entregá-lo a Edom: fogo sobre a sua muralha, e o restante dos filisteus perecerá."
+      de: "Gaza führte ein ganzes Volk gefangen weg, um es an Edom auszuliefern: Feuer an seiner Mauer, und der Rest der Philister wird umkommen."
+      fr: "Gaza a fait captif tout un peuple pour le livrer à Édom : le feu sur sa muraille, et le reste des Philistins périra."
   - place: a160272 # Tyre
     ref: Amos.1.9-Amos.1.10
     note:
       en: "Tyre delivered up captives to Edom and remembered not the brotherly covenant."
       ru: "Тир передал пленных Едому и не вспомнил братского союза."
+      uk: "Тір видав полонених Едомові й не згадав про братній союз."
+      es: "Tiro entregó cautivos a Edom y no se acordó del pacto fraterno."
+      pt: "Tiro entregou cativos a Edom e não se lembrou da aliança fraterna."
+      de: "Tyrus lieferte Gefangene an Edom aus und dachte nicht an den Bund unter Brüdern."
+      fr: "Tyr a livré des captifs à Édom, sans se souvenir de l’alliance fraternelle."
   - place: a871210 # Bozrah
     ref: Amos.1.11-Amos.1.12
     note:
       en: 'Edom pursued his brother with the sword: "I will send a fire upon Teman, which shall devour the palaces of Bozrah."'
       ru: "Едом преследовал брата своего мечом: «пошлю огонь на Феман, и пожрет чертоги Восора»."
+      uk: "Едом гнався за своїм братом з мечем: «Я пошлю огонь на Теман, нехай пожере в Босрі будівлї»."
+      es: "Edom persiguió a su hermano con la espada: «Y meteré fuego en Temán, y consumirá los palacios de Bosra»."
+      pt: "Edom perseguiu o seu irmão com a espada: “enviarei fogo sobre Temã, e ele devorará os palácios de Bozra.”"
+      de: "Edom verfolgte seinen Bruder mit dem Schwert: „Ich will ein Feuer schicken gen Theman, das soll die Paläste zu Bozra verzehren.“"
+      fr: "Édom a poursuivi son frère avec l’épée : « J’enverrai le feu dans Théman, et il dévorera les palais de Botsra. »"
   - place: ae067b5 # Rabbah
     ref: Amos.1.13-Amos.1.15
     note:
       en: "The Ammonites ripped up the women of Gilead to enlarge their border: fire in the wall of Rabbah, and their king goes into captivity."
       ru: "Аммонитяне рассекали беременных в Галааде, чтобы расширить пределы свои: огонь в стенах Раввы, и царь их пойдёт в плен."
+      uk: "Аммонити розпороли жінок Гілеаду, щоб розширити свій кордон: вогонь на стіні Рабби, і їхній цар іде в полон."
+      es: "Los amonitas abrieron el vientre a las mujeres de Galaad para ensanchar su territorio: fuego en el muro de Rabá, y su rey va al cautiverio."
+      pt: "Os amonitas rasgaram o ventre das mulheres de Gileade para alargar a sua fronteira: fogo na muralha de Rabá, e o seu rei vai para o cativeiro."
+      de: "Die Ammoniter schlitzten die Schwangeren in Gilead auf, um ihr Gebiet zu erweitern: Feuer an der Mauer von Rabba, und ihr König wandert in die Gefangenschaft."
+      fr: "Les Ammonites ont éventré les femmes de Galaad pour agrandir leur territoire : le feu dans la muraille de Rabba, et leur roi s’en ira en captivité."
   - place: a2d84de # Kerioth
     ref: Amos.2.1-Amos.2.3
     note:
       en: "Moab burned the bones of the king of Edom into lime: fire shall devour the palaces of Kerioth."
       ru: "Моав пережёг кости царя Едомского в известь: огонь пожрёт чертоги Кериофа."
+      uk: "Моав спалив кості царя Едому на вапно: вогонь пожере палати Керіота."
+      es: "Moab quemó los huesos del rey de Edom hasta reducirlos a cal: el fuego devorará los palacios de Queriot."
+      pt: "Moabe queimou até virar cal os ossos do rei de Edom: o fogo devorará os palácios de Queriote."
+      de: "Moab verbrannte die Gebeine des Königs von Edom zu Kalk: Feuer wird die Paläste von Kerijot verzehren."
+      fr: "Moab a brûlé, calciné les os du roi d’Édom : le feu dévorera les palais de Kerioth."
   - place: a15257a # Jerusalem
     ref: Amos.2.4-Amos.2.5
     note:
       en: 'Judah too: they despised the law of the Lord; "I will send a fire upon Judah, and it shall devour the palaces of Jerusalem."'
       ru: "И Иуда: отвергли закон Господень; «пошлю огонь на Иуду, и пожрет чертоги Иерусалима»."
+      uk: "Юда теж: вони зневажили закон Господа; «Я пошлю огонь на Юду, й пожере він палати в Ерусалимі»."
+      es: "También Judá: menospreciaron la ley del Señor; «Meteré por tanto fuego en Judá, el cual consumirá los palacios de Jerusalem»."
+      pt: "Também Judá: desprezaram a lei do Senhor; “enviarei fogo sobre Judá, e ele devorará os palácios de Jerusalém.”"
+      de: "Auch Juda: Sie haben das Gesetz des Herrn verachtet; „ich will ein Feuer nach Juda schicken, das soll die Paläste zu Jerusalem verzehren“."
+      fr: "Juda aussi : ils ont méprisé la loi de l’Éternel ; « J’enverrai le feu dans Juda, et il dévorera les palais de Jérusalem. »"
   - place: a041bb3 # Samaria
     ref: Amos.2.6-Amos.4.3
     note:
       en: 'Last and longest, Israel: they sell the righteous for silver and the poor for a pair of shoes. The nations are called to the mountains of Samaria to see its oppressions, and the "kine of Bashan" shall be led away with hooks.'
       ru: "Последним и дольше всех обличается Израиль: продают правого за серебро и бедного за пару сандалий. Народы зовут на горы Самарии посмотреть на притеснения в ней, и «телицы Васанские» будут уведены крюками."
+      uk: "Останній і найдовший — Ізраїль: вони продають праведного за срібло, а вбогого за пару взуття. Народи кличуть на гори Самарії побачити її утиски, а «Базанські телицї» поведуть на гаках."
+      es: "Por último, y más largamente, Israel: venden al justo por plata y al pobre por un par de zapatos. Se convoca a las naciones a los montes de Samaria para ver sus opresiones, y las «vacas de Basán» serán llevadas con anzuelos."
+      pt: "Por último e mais longamente, Israel: vendem o justo por prata e o pobre por um par de sandálias. As nações são convocadas aos montes de Samaria para ver as suas opressões, e as “vacas de Basã” serão levadas com ganchos."
+      de: "Zuletzt und am ausführlichsten Israel: Sie verkaufen die Gerechten um Geld und die Armen um ein Paar Schuhe. Die Völker werden auf die Berge Samarias gerufen, um dessen Bedrückungen zu sehen, und die „fetten Kühe“ werden an Haken weggeführt."
+      fr: "Enfin, et le plus longuement, Israël : ils vendent le juste pour de l’argent et le pauvre pour une paire de souliers. Les nations sont appelées sur les montagnes de Samarie pour voir ses oppressions, et les « génisses de Basan » seront emmenées avec des crochets."
   - place: ab94aea # Gilgal
     ref: Amos.4.4-Amos.4.13
     note:
       en: "The sacrifices at Bethel and Gilgal only multiply transgression; famine, drought, blight and plague did not bring Israel back. Prepare to meet thy God."
       ru: "Жертвы в Вефиле и Галгале лишь умножают преступления; голод, засуха, ржа и мор не вернули Израиль. Приготовься к сретению Бога твоего."
+      uk: "Жертви у Бет-Елі й Гілгалі лише множать беззаконня; ні голод, ні посуха, ні ураження хлібів, ні мор не повернули Ізраїль. Приготуйся зустріти свого Бога."
+      es: "Los sacrificios en Betel y Gilgal solo multiplican la transgresión; el hambre, la sequía, el tizón y la peste no hicieron volver a Israel. Prepárate para venir al encuentro de tu Dios."
+      pt: "Os sacrifícios em Betel e Gilgal apenas multiplicam a transgressão; fome, seca, ferrugem e peste não fizeram Israel voltar. Prepare-se para encontrar o seu Deus."
+      de: "Die Opfer in Bethel und Gilgal mehren nur die Übertretung; Hunger, Dürre, Brand und Pest haben Israel nicht zur Umkehr gebracht. „Schicke dich, Israel, und begegne deinem Gott.“"
+      fr: "Les sacrifices de Béthel et de Guilgal ne font que multiplier le crime ; la famine, la sécheresse, la rouille et la peste n’ont pas ramené Israël. Prépare-toi à la rencontre de ton Dieu."
   - place: ad2f6c2 # Beersheba
     ref: Amos.5.1-Amos.5.27
     note:
       en: 'A lament over the virgin of Israel: "seek not Beth-el, nor enter into Gilgal, and pass not to Beer-sheba"; seek the Lord, and let judgment run down as waters.'
       ru: "Плач о деве Израилевой: «Не ищите Вефиля и не ходите в Галгал, и в Вирсавию не странствуйте»; ищите Господа, и пусть, как вода, течёт суд."
+      uk: "Плач над дівою Ізраїлю: «Не шукайте собі Бетелю, в Галгал не ходїте; та й в Версаву не вчащайте»; шукайте Господа, і нехай суд тече, як води."
+      es: "Una endecha por la virgen de Israel: «no busquéis á Beth-el ni entréis en Gilgal, ni paséis á Beer-seba»; buscad al Señor, y que el juicio corra como las aguas."
+      pt: "Um lamento sobre a virgem de Israel: “não busquem a Betel, nem entrem em Gilgal, e não passem para Berseba”; busquem o Senhor, e que o juízo corra como as águas."
+      de: "Ein Klagelied über die Jungfrau Israel: „Suchet nicht Beth-El und kommet nicht gen Gilgal und gehet nicht gen Beer-Seba“; sucht den Herrn, und das Recht ströme wie Wasser."
+      fr: "Une complainte sur la vierge d’Israël : « Ne cherchez pas Béthel, n’allez pas à Guilgal, ne passez pas à Beer-Schéba » ; cherchez l’Éternel, et que la droiture soit comme un courant d’eau."
   - place: a64f355 # Bethel
     ref: Amos.7.10-Amos.7.17
     note:
       en: 'Amaziah the priest of Bethel reports Amos to Jeroboam and sends him away to Judah: "prophesy not again any more at Beth-el: for it is the king''s chapel". Amos answers that he was no prophet nor a prophet''s son, but the Lord took him from the flock.'
       ru: "Амасия, священник Вефильский, доносит на Амоса Иеровоаму и гонит его в Иудею: «в Вефиле больше не пророчествуй, ибо он святыня царя». Амос отвечает: «я не пророк и не сын пророка», но Господь взял его от овец."
+      uk: "Амасія, священик Бет-Елу, доносить на Амоса Єровоамові й відсилає його до Юди: «А в Бетелї перестань пророкувати: тут бо царська сьвятиня». Амос відповідає, що він не був ні пророком, ні сином пророка, але Господь узяв його від отари."
+      es: "Amasías, sacerdote de Betel, denuncia a Amós ante Jeroboam y lo despide a Judá: «no profetices más en Beth-el, porque es santuario del rey». Amós responde que no era profeta ni hijo de profeta, sino que el Señor lo tomó de detrás del ganado."
+      pt: "Amazias, sacerdote de Betel, denuncia Amós a Jeroboão e o manda embora para Judá: “não profetize nunca mais em Betel; pois é o santuário do rei”. Amós responde que não era profeta nem filho de profeta, mas que o Senhor o tirou do rebanho."
+      de: "Amazja, der Priester von Bethel, meldet Amos bei Jerobeam und schickt ihn nach Juda fort: „Weissage nicht mehr zu Beth-El; denn es ist des Königs Heiligtum“. Amos antwortet, er sei kein Prophet und keines Propheten Sohn, doch der Herr habe ihn von der Herde genommen."
+      fr: "Amatsia, prêtre de Béthel, dénonce Amos à Jéroboam et le renvoie en Juda : « ne continue pas à prophétiser à Béthel, car c’est un sanctuaire du roi ». Amos répond qu’il n’était ni prophète ni fils de prophète, mais que l’Éternel l’a pris derrière le troupeau."

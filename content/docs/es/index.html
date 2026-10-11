@@ -1,0 +1,137 @@
+---
+title: History Globe
+description: Un globo 3D de la historia bíblica: los lugares que nombra la Biblia, vinculados a sus versículos, y los Estados que los rodeaban, año por año.
+---
+
+<p class="lede">
+  Un globo 3D de la historia bíblica: los lugares que nombra la Biblia, los Estados que los rodeaban
+  año por año, del 3500 a.C. al 1300 d.C., y las ciudades, los caminos y los acontecimientos del
+  mundo antiguo. Los lugares de la Biblia vienen con sus versículos, y cada fecha, cada frontera y
+  cada ubicación vienen con su fuente.
+</p>
+
+<figure class="hero">
+  <iframe
+    src="../../embed/v1?ref=Acts.16&amp;locale=es"
+    title="En vivo: Hechos 16 en el globo. Arrastra, acerca y pulsa un lugar."
+    loading="lazy"
+    allow="fullscreen"
+  ></iframe>
+  <figcaption>En vivo: Hechos 16 en el globo. Arrastra, acerca y pulsa un lugar.</figcaption>
+</figure>
+
+<ul class="figures">
+  <li><b>{{places}}</b>lugares nombrados en la Biblia</li>
+  <li><b>{{ancient}}</b>otras ciudades del mundo antiguo</li>
+  <li><b>{{people}}</b>personas de la Biblia</li>
+  <li><b>{{events}}</b>acontecimientos fechados</li>
+  <li><b>{{tours}}</b>rutas guiadas</li>
+  <li><b>{{articles}}</b>artículos sobre lugares</li>
+</ul>
+
+<h2>Explora la documentación</h2>
+<nav class="cards"></nav>
+
+<h2>Qué puedes hacer</h2>
+<ul class="features">
+  <li data-icon="chapter">
+    <b>Ver un capítulo en el mapa.</b> Escribe «Hechos 16» o «Gn 12» en el cuadro de búsqueda; el
+    mapa se desplaza al año del capítulo y muestra sus lugares. El enlace de la página conserva esta
+    vista, así que se puede compartir.
+  </li>
+  <li data-icon="time">
+    <b>Moverte por el tiempo.</b> El control deslizante cambia el año; las fronteras, las ciudades y
+    los caminos lo siguen. Una ciudad aparece el año en que se fundó y se desvanece el año en que
+    fue destruida. Las espadas cruzadas señalan batallas y asedios en sus años. Los ajustes permiten
+    limitar el mapa a lo que cuenta la Biblia.
+  </li>
+  <li data-icon="route">
+    <b>Seguir una ruta.</b> Una ruta te lleva por una historia parada a parada (Abraham, el éxodo,
+    los viajes de Pablo) con el pasaje, el año, la distancia, el tiempo a pie y el relieve del
+    camino: por las calzadas romanas en época romana, y en línea recta antes de ellas.
+  </li>
+  <li data-icon="verse">
+    <b>Leer los versículos.</b> La ficha de cada lugar enumera los versículos que lo nombran;
+    selecciona uno para leerlo.
+  </li>
+  <li data-icon="person">
+    <b>Buscar a una persona.</b> La ficha de una persona muestra su familia tal como la recoge el
+    texto, los lugares centrales de su historia y las rutas que siguen su recorrido (los viajes de
+    Pablo), y lleva el mapa a su época.
+  </li>
+  <li data-icon="teach">
+    <b>Enseñar con él.</b> Las Herramientas (el lápiz y la regla, arriba) sirven para armar tu
+    propia lección: abre lugares y se suman al recorrido; luego compártela como enlace. Ahí también
+    están la distancia entre dos lugares y un cuestionario sobre cualquier ruta («¿dónde ocurrió?»,
+    en pantalla con la respuesta en el mapa, o en una hoja A4). El menú de la cronología (⋯) imprime
+    una hoja A4 con el mapa y los versículos o un mapa mudo para los alumnos, guarda el mapa como
+    imagen o lo muestra en un proyector.
+  </li>
+  <li data-icon="offline">
+    <b>Trabajar sin conexión.</b> En los ajustes, «Guardar» descarga el mapa, los datos, las fotos y
+    el relieve del Próximo Oriente; después el globo se abre sin red, en un aula o de camino.
+  </li>
+  <li data-icon="embed">
+    <b>Incrustarlo.</b> Una línea pone el mapa de un capítulo en otro sitio:
+    <a href="embedding.html">Incrustación</a>.
+  </li>
+  <li data-icon="data">
+    <b>Llevarte los datos.</b> Qué lugares nombra cada versículo, los lugares con sus puntos, los
+    acontecimientos y las rutas, en archivos JSON con licencia CC BY 4.0:
+    <a href="api.html">Datos abiertos</a>.
+  </li>
+  <li data-icon="link">
+    <b>Enlazar tus propios textos.</b> Una línea en tu sitio convierte los lugares bíblicos que
+    nombran tus artículos y sermones en enlaces con ficha:
+    <a href="embedding.html#places">Lugares en cualquier texto</a>.
+  </li>
+</ul>
+
+<h2>Cómo leer el mapa</h2>
+<ul>
+  <li>
+    <b>Años.</b> «ca.» indica un año aproximado. Cuando la fecha es discutida (el éxodo, los
+    patriarcas), el año de la ruta es solo un punto de referencia para el mapa y también se marca
+    «ca.».
+  </li>
+  <li>
+    <b>Un lugar atenuado</b> aún no se había construido, estaba en ruinas o ya no existía en el año
+    elegido; la ficha da las fechas y sus fuentes. Los lugares nombrados solo en el Nuevo Testamento
+    aparecen atenuados antes de sus acontecimientos.
+  </li>
+  <li>
+    <b>Un marcador hueco</b> indica que la ubicación es incierta: los especialistas proponen más de
+    un emplazamiento, o el único propuesto es provisional. En un lugar disputado, la ficha muestra
+    cada emplazamiento propuesto con su proporción según OpenBible (una estimación, no un consenso
+    académico); en uno provisional, lo dice.
+  </li>
+  <li>
+    <b>Los nombres en gris</b> marcan lugares del mundo antiguo que la Biblia no nombra (Ugarit,
+    Hattusa, Mari), mostrados solo en los años en que existieron.
+  </li>
+  <li>
+    <b>La Escritura habla por sí misma.</b> Las fechas y los nombres del mapa no pretenden zanjar
+    las discusiones académicas sobre el texto; la ficha señala cuándo una cuestión sigue abierta.
+  </li>
+</ul>
+
+<h2>Principios</h2>
+<ul>
+  <li>
+    <b>Cada fecha, frontera y ubicación tiene una fuente</b>, y las fuentes están enumeradas:
+    <a href="methodology.html">Datos y metodología</a>.
+  </li>
+  <li>
+    <b>Precisión antes que cantidad.</b> Las fechas dudosas se omiten en lugar de adivinarse, y los
+    emplazamientos inciertos se marcan como inciertos.
+  </li>
+  <li><b>Gratis, sin cuenta y sin cookies</b> (<a href="privacy.html">privacidad</a>).</li>
+</ul>
+
+<h2>Páginas de lugares y de rutas</h2>
+<p>
+  Cada <a href="../../es/places/">lugar</a> y cada <a href="../../es/tours/">ruta</a> tiene además
+  una página sencilla con su historia, sus acontecimientos, sus versículos y un botón que la abre en
+  el mapa. Las <a href="../../es/questions/">preguntas</a> frecuentes (dónde estaba un lugar, a qué
+  distancia, cuándo) tienen respuestas breves con sus fuentes y la vista del mapa.
+</p>

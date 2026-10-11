@@ -18,7 +18,14 @@ import { ArrowLeft, MapPin, Ruler, X, ZoomIn } from "./icons";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "../i18n";
 import { loadArticle, type Article } from "../articles";
-import { beforeItsTime, DATA_URL, siteCertainty, type PlaceProps, type Site } from "../data";
+import {
+  beforeItsTime,
+  DATA_URL,
+  siteCertainty,
+  whereIn,
+  type PlaceProps,
+  type Site,
+} from "../data";
 import { mapsUrl, verseUrl } from "../links";
 import { loadVerse } from "../verses";
 import { LessonToggle, useLesson } from "./LessonRow";
@@ -31,7 +38,7 @@ import { Photo } from "./Photo";
 import { notifyVerse } from "../embed";
 import { Panel } from "./Panel";
 import { loadPeople, peopleNow, personName, type People } from "../people";
-import type { PolityName } from "@hg/core";
+import { polityText, type PolityName } from "@hg/core";
 
 const VERSES_SHOWN = 24;
 const EVENTS_SHOWN = 8;
@@ -188,9 +195,9 @@ export function PlaceCard({
   // In Russian an English line stands in only where it names something else (never «Argob»).
   const todayText = !place.where
     ? ""
-    : ru
-      ? (place.where_ru ?? (place.where !== place.name ? place.where : ""))
-      : place.where;
+    : locale === "en"
+      ? place.where
+      : (whereIn(place, locale) ?? (place.where !== place.name ? place.where : ""));
   const today = todayText && todayText !== title ? todayText : null;
   // A version OpenBible rates at 0 % (Khirbet Minyeh for Capernaum) is noise beside a
   // settled site: listed only while it has a share.
@@ -368,8 +375,7 @@ export function PlaceCard({
           {ruled.states
             .slice(0, 2)
             .map((p) => {
-              const name = ru ? (p.nameRu ?? p.name) : p.name;
-              const vassal = ru ? (p.vassalRu ?? p.vassal) : p.vassal;
+              const { name, vassal } = polityText(p, locale);
               return vassal ? `${name}, ${vassal}` : name;
             })
             .join(" · ")}
@@ -524,7 +530,7 @@ export function PlaceCard({
                     className="flex w-full items-center gap-2 rounded-md px-1 py-0.5 text-left hover:bg-paper-2"
                   >
                     <span className="min-w-0 flex-1 truncate text-[13.5px] text-ink">
-                      {ru ? (s.labelRu ?? s.label) : s.label}
+                      {ru ? (s.labelRu ?? s.label) : (s.labels?.[locale] ?? s.label)}
                     </span>
                     {s.share !== null && (
                       <>
@@ -954,7 +960,13 @@ function VerseText({
       <figcaption className="mt-1 flex flex-wrap items-baseline gap-x-2 text-[12px] text-ink-soft">
         <span>
           {formatRefOr(osis, locale)} ·{" "}
-          {t(locale === "ru" ? "place.verse_synodal" : "place.verse_kjv")}
+          {t(
+            locale === "ru"
+              ? "place.verse_synodal"
+              : locale === "en"
+                ? "place.verse_kjv"
+                : "place.verse_own",
+          )}
         </span>
         <a
           href={verseUrl(osis, locale)}

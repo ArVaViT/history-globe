@@ -1,0 +1,336 @@
+---
+title: Einbetten
+description: Setzen Sie den Globus mit einer Zeile auf Ihre eigene Website – die Karte eines Kapitels, eines Ortes, eines Jahres oder einer Tour – und steuern Sie ihn von Ihrer Seite aus.
+---
+
+<p class="lede">
+  Der Globus läuft als <code>iframe</code> in jeder beliebigen Seite. Eine Zeile zeigt die Karte
+  eines Kapitels neben der Textstelle auf Ihrer Seite; ein paar Nachrichten halten beide im
+  Gleichschritt.
+</p>
+
+<h2>Schnellstart</h2>
+<pre><code>&lt;iframe
+  src="{{site}}/embed/v1?ref=Acts.16&amp;locale=de"
+  title="Map of Acts 16"
+  style="width: 100%; height: 480px; border: 0; border-radius: 12px"
+  allow="fullscreen"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</code></pre>
+<ul>
+  <li>
+    Die Karte füllt den Rahmen und öffnet sich auf den Orten von Apg 16, im Jahr seiner Ereignisse.
+  </li>
+  <li>
+    <b>Oben:</b> das Kapitel. Wählen Sie es aus, um seine Orte in der Reihenfolge aufzulisten, in
+    der der Text sie nennt; wählen Sie einen Ort aus, um seine Karte zu öffnen.
+  </li>
+  <li><b>Unten:</b> das Jahr. Wählen Sie es aus, um den Zeitregler zu öffnen.</li>
+  <li>
+    Ein Link öffnet dieselbe Ansicht im vollständigen Globus in einem neuen Tab. Die Quellenangaben
+    stehen auf der Karte selbst, wie es die Datenlizenzen verlangen.
+  </li>
+  <li>Der Rahmen funktioniert bis hinunter zur Breite eines Smartphones; 480 px Höhe genügen.</li>
+</ul>
+
+<h2>Ein Kapitel oder eine Textstelle</h2>
+<p>
+  <code>ref</code> nimmt einen OSIS-Verweis mit englischen Buchabkürzungen und englischer
+  Verszählung:
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Wert</th>
+        <th>Zeigt</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Acts.16</code></td>
+        <td>ein Kapitel</td>
+      </tr>
+      <tr>
+        <td><code>Gen.12-Gen.13</code></td>
+        <td>bis zu drei Kapitel</td>
+      </tr>
+      <tr>
+        <td><code>Acts.16.11-Acts.16.15</code></td>
+        <td>eine Textstelle</td>
+      </tr>
+      <tr>
+        <td><code>Ruth</code></td>
+        <td>ein ganzes Buch</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Die Karte springt in das Jahr der Textstelle: das verzeichnete Jahr ihrer Kapitel (die Kapitel von
+  {{chapter_books}} Büchern sind datiert) oder sonst das Jahr der Tour, die sie abdeckt; ein ganzes
+  Buch übernimmt das Jahr der Tour mit den meisten Stationen darin. Eine Textstelle ohne beides
+  behält das aktuelle Jahr der Karte.
+</p>
+
+<h2>Parameter</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Beispiel</th>
+        <th>Bedeutung</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ref</code></td>
+        <td><code>Acts.16</code></td>
+        <td>Kapitel, Textstelle oder Buch (siehe oben)</td>
+      </tr>
+      <tr>
+        <td><code>year</code></td>
+        <td><code>-999</code></td>
+        <td>
+          Jahr in astronomischer Zählung: 1 v. Chr. ist <code>0</code>, 1000 v. Chr. ist
+          <code>-999</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>place</code></td>
+        <td><code>af2161c</code></td>
+        <td>einen Ort öffnen (hier Kapernaum); die IDs stammen von OpenBible</td>
+      </tr>
+      <tr>
+        <td><code>tour</code></td>
+        <td><code>paul-1</code></td>
+        <td>eine geführte Tour starten</td>
+      </tr>
+      <tr>
+        <td><code>stop</code></td>
+        <td><code>3</code></td>
+        <td>zusammen mit <code>tour</code>: sie an dieser Station öffnen</td>
+      </tr>
+      <tr>
+        <td><code>lesson</code></td>
+        <td><code>a15257a~30.a112427~30</code></td>
+        <td>
+          Ihre eigene Lektion, zusammen mit <code>tour=lesson</code>: Orts-IDs in der Reihenfolge,
+          jede mit dem Jahr, in dem sie gezeigt werden soll (<code>~-585</code> für 586 v. Chr.: wie
+          bei <code>year</code> ist 1 v. Chr. gleich 0); jede Station erhält den Vers des Ortes, der
+          diesem Jahr am nächsten liegt, die Entfernung, die Gehzeit und das Relief. Die
+          Schaltfläche „Zu einer Lektion hinzufügen“ auf einer Ortskarte erzeugt dieselben Links
+        </td>
+      </tr>
+      <tr>
+        <td><code>title</code></td>
+        <td><code>Paul%20in%20Galatia</code></td>
+        <td>
+          zusammen mit <code>lesson</code>: der Name der Lektion, bis zu 80 Zeichen, am Kopf ihrer
+          Tour und ihres gedruckten Blattes
+        </td>
+      </tr>
+      <tr>
+        <td><code>locale</code></td>
+        <td><code>de</code></td>
+        <td>
+          Sprache: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
+          <code>pt</code>, <code>de</code> oder <code>fr</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>camera</code></td>
+        <td><code>35.2,31.8,7,30,0</code></td>
+        <td>Längengrad, Breitengrad, Zoom, Neigung, Ausrichtung</td>
+      </tr>
+      <tr>
+        <td><code>hide</code></td>
+        <td><code>relief,ancient</code></td>
+        <td>
+          auszublendende Ebenen: <code>borders</code>, <code>places</code>, <code>relief</code>,
+          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="note">
+  Am einfachsten baut man eine Ansicht, indem man sie im vollständigen Globus einrichtet und die URL
+  kopiert: Dieselben Parameter funktionieren nach <code>/embed/v1</code>.
+</p>
+
+<h2>Nachrichten</h2>
+<p>
+  Der Globus und Ihre Seite kommunizieren über <code>postMessage</code>. Jede Nachricht ist ein
+  Objekt mit <code>type</code> und <code>v: 1</code>. Der Globus sendet nur, was auf der Karte
+  geschieht, und nie etwas, das den Leser identifiziert; er nimmt Nachrichten nur von der Seite an,
+  die den Rahmen enthält.
+</p>
+<h3>Vom Globus</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Typ</th>
+        <th>Nutzdaten</th>
+        <th>Wann</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:ready</code></td>
+        <td><code>{ view }</code></td>
+        <td>die Karte ist gezeichnet</td>
+      </tr>
+      <tr>
+        <td><code>hg:view-changed</code></td>
+        <td><code>{ view }</code></td>
+        <td>
+          das Jahr, der Ort, die Tour oder die Kamera hat sich geändert und ist zur Ruhe gekommen
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:verse-clicked</code></td>
+        <td><code>{ osis }</code></td>
+        <td>der Leser hat einen Vers angeklickt, z. B. <code>"Acts.16.12"</code></td>
+      </tr>
+      <tr>
+        <td><code>hg:error</code></td>
+        <td><code>{ code, message }</code></td>
+        <td>die Karte oder ihre Daten konnten nicht geladen werden</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <code>view</code> enthält <code>year</code>, <code>locale</code> und <code>layers</code> und, wenn
+  gesetzt, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> und
+  <code>camera</code>.
+</p>
+<h3>An den Globus</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Typ</th>
+        <th>Nutzdaten</th>
+        <th>Wirkung</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:set-view</code></td>
+        <td><code>{ view }</code></td>
+        <td>
+          das Jahr, das Kapitel (<code>ref</code>), den Ort, die Ebenen oder die Kamera setzen; mit
+          <code>tour</code> (und <code>stop</code>) startet die Tour, und die übrigen Felder werden
+          ignoriert; die Sprache ändert sich nur mit <code>hg:set-locale</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:set-locale</code></td>
+        <td><code>{ locale }</code></td>
+        <td>die Sprache wechseln</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Beispiel: Die Karte folgt Ihrem Leser</h2>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+
+// When your reader opens a chapter, show it on the map.
+function showChapter(osis) {
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+}
+
+// When a verse is clicked on the map, open it in your reader.
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
+});</code></pre>
+
+<h2 id="places">Orte in jedem Text</h2>
+<p>
+  Eine weitere Zeile verknüpft die Orte der Bibel, die Ihr eigener Text nennt (ein Artikel, eine
+  Predigt, ein Leseplan), mit dem Globus. Zeigen Sie auf einen Namen oder tippen Sie ihn auf dem
+  Smartphone an, und eine Karte zeigt, was der Ort ist, wo er heute liegt, wie viele Verse ihn
+  nennen und wo er auf der Karte liegt; die Karte führt zum Globus.
+</p>
+<figure class="sample">
+  <div class="hgp-demo" lang="en">
+    <p>
+      Paul sailed from Caesarea to Cyprus, preached in Ephesus and Corinth, and wrote to Rome. Long
+      before, Abraham had come to Shechem and Hebron; Jesus was born in Bethlehem and grew up in
+      Nazareth, and John saw his visions on Patmos.
+    </p>
+  </div>
+  <figcaption>
+    Ein Live-Beispiel auf Englisch: Diese Namen hat das Skript auf dieser Seite verlinkt (das Skript
+    liest Texte auf Englisch und Russisch).
+  </figcaption>
+</figure>
+<pre><code>&lt;script src="{{site}}/hg-places.js" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Attribut</th>
+        <th>Was es bewirkt</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>data-scope</code></td>
+        <td>wo gesucht wird, als CSS-Selektor; standardmäßig die ganze Seite</td>
+      </tr>
+      <tr>
+        <td><code>data-locale</code></td>
+        <td>
+          <code>en</code> oder <code>ru</code>: die Sprache des Textes; standardmäßig das
+          <code>lang</code> der Seite
+        </td>
+      </tr>
+      <tr>
+        <td><code>data-every</code></td>
+        <td>jede Erwähnung verlinken, nicht nur die erste je Ort</td>
+      </tr>
+      <tr>
+        <td><code>data-theme</code></td>
+        <td>
+          <code>light</code> oder <code>dark</code> für die Karte; standardmäßig folgt sie dem
+          System des Lesers
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Verlinkt werden nur Namen, die auf einen einzigen Ort zeigen. Ein Name, den sich zwei Orte teilen
+  (Antiochia in Syrien und in Pisidien), ein Ort und eine Person (Juda) oder ein Ort und ein
+  gewöhnliches Wort, bleibt einfacher Text, ebenso ein Name, den die Verse der Bibel meist für etwas
+  anderes verwenden („Kadesch“ ist dort Kadesch-Barnea, nicht das Kadesch der Datenbank). Der Name
+  eines Ortes, der zugleich ein Vorname ist (Jordan, Saron), bleibt neben einem anderen
+  großgeschriebenen Wort unberührt: Jordan Smith ist eine Person, nicht der Fluss. Russische Namen
+  werden in allen ihren Fällen gefunden: «в Египте», «из Антиохии Писидийской». Links, Code,
+  Formularfelder, Schaltflächen und Überschriften bleiben unberührt.
+</p>
+<p class="note">
+  Das Skript hat keine Abhängigkeiten und setzt keine Cookies. Es liest eine Namensdatei vom Globus
+  (etwa 25 KB auf Englisch und 35 KB auf Russisch über das Netz, dazu 7 KB Skript), ohne die Adresse
+  Ihrer Seite als Referrer, und ändert nur die Namen, die es verlinkt. Es funktioniert mit einer
+  strengen Content Security Policy, die die Adresse des Globus in <code>script-src</code> und
+  <code>connect-src</code> erlaubt. Für Text, den Ihre Seite später hinzufügt, rufen Sie
+  <code>HistoryGlobePlaces.scan(element)</code> auf, sobald der Text gerendert ist: Das Skript teilt
+  Textknoten, daher führen Sie es auf einer React- oder Vue-Seite für Inhalte aus, die das Framework
+  nicht mehr neu rendert.
+</p>
+<script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
+
+<h2>Stabilität</h2>
+<p>
+  <code>/embed/v1</code> ist ein Vertrag: Innerhalb von v1 werden Parameter und Nachrichten nur
+  hinzugefügt, nie geändert oder entfernt. Eine inkompatible Änderung erscheint als
+  <code>/embed/v2</code>, und v1 funktioniert weiter.
+</p>

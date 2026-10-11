@@ -9,7 +9,8 @@ const books = new Map<string, Promise<Readonly<Record<string, string>>>>();
  * undefined when the text is not shipped (a few Synodal chapters numbered otherwise).
  */
 export function loadVerse(osis: string, locale: Locale): Promise<string | undefined> {
-  const lang = locale === "ru" ? "ru" : "en";
+  // Every language the code knows ships its own Bible's verses (scripts/build-verses.ts).
+  const lang = locale;
   const book = osis.split(".")[0] ?? "";
   const key = `${lang}/${book}`;
   let verses = books.get(key);

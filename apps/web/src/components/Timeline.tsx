@@ -7,7 +7,9 @@ import {
   type Locale,
   type PlaceLife,
   parseYearInput,
-  pick,
+  periodName,
+  periodDisputed,
+  ageName,
 } from "@hg/model";
 import { ChevronDown, ChevronLeft, ChevronRight, Ellipsis, Pause, Play } from "./icons";
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
@@ -199,7 +201,7 @@ export function Timeline({
   const near = hover
     ? events.filter((e) => Math.abs(e.year - hover.year) <= Math.max(span / 100, 1)).slice(0, 3)
     : [];
-  const periodName = period ? (pick(period.name, locale) ?? "") : "";
+  const periodLabel = period ? periodName(period, locale) : "";
   const track = useRef<HTMLDivElement>(null);
   const group = useRef<HTMLDivElement>(null);
   const range = useRef<HTMLInputElement>(null);
@@ -286,12 +288,12 @@ export function Timeline({
           style={{ left: `calc(1.5rem + (100% - 3rem) * ${String(hover.x / 100)})` }}
           className={`pointer-events-none absolute bottom-full mb-2 rounded-lg bg-ink px-2.5 py-1.5 text-[12px] leading-tight whitespace-nowrap text-paper shadow-lg ${hover.x < 15 ? "" : hover.x > 85 ? "-translate-x-full" : "-translate-x-1/2"}`}
         >
-          <div className="font-medium">{pick(hovered.name, locale) ?? ""}</div>
+          <div className="font-medium">{periodName(hovered, locale)}</div>
           <div className="text-paper/75 tabular-nums">
             {formatPeriodRange(hovered.range, locale)}
           </div>
           {hovered.disputed && (
-            <div className="mt-0.5 text-gold">{pick(hovered.disputed, locale) ?? ""}</div>
+            <div className="mt-0.5 text-gold">{periodDisputed(hovered, locale)}</div>
           )}
           {!zoomed && <div className="mt-1 text-paper/60">{t("time.zoom_hint")}</div>}
           {near.map((e) => (
@@ -431,7 +433,7 @@ export function Timeline({
                 const from = Math.max(a.from, view.from);
                 const to = Math.min(a.to, view.to + 1);
                 if (to <= from) return [];
-                const name = pick({ en: a.en, ru: a.ru }, locale) ?? a.en;
+                const name = ageName(a, locale);
                 const x0 = (pct(from) / 100) * trackWidth;
                 const x1 = (pct(to) / 100) * trackWidth;
                 const w = labelWidth(name);
@@ -502,7 +504,7 @@ export function Timeline({
             aria-keyshortcuts="Plus = -"
             aria-label={t("time.year")}
             aria-valuetext={
-              periodName ? `${formatYear(year, locale)}, ${periodName}` : formatYear(year, locale)
+              periodLabel ? `${formatYear(year, locale)}, ${periodLabel}` : formatYear(year, locale)
             }
             // Zoomed away from the year, the thumb waits at the edge, faded.
             data-away={year < view.from || year > view.to ? "" : undefined}

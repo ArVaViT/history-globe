@@ -5,6 +5,11 @@ id: solomon
 title:
   en: "Solomon"
   ru: "Царь Соломон"
+  uk: "Соломон"
+  es: "Salomón"
+  pt: "Salomão"
+  de: "Salomo"
+  fr: "Salomon"
 year: "970 BC"
 # Solomon's deeds where they were done, not a journey: no time on foot.
 walked: false
@@ -16,40 +21,80 @@ stops:
     note:
       en: 'At Gihon Zadok anoints Solomon, and all the people say: "God save king Solomon."'
       ru: "У Гиона Садок помазывает Соломона, и весь народ восклицает: «да живет царь Соломон!»"
+      uk: "У Гіхоні Садок помазує Соломона, і весь народ каже: «Нехай живе царь Соломон!»"
+      es: "En Gihón Sadoc unge a Salomón, y todo el pueblo dice: «¡Viva el rey Salomón!»"
+      pt: "Em Giom, Zadoque unge Salomão, e todo o povo diz: “Viva o rei Salomão!”"
+      de: "Am Gihon salbt Zadok Salomo, und alles Volk spricht: „Glück dem König Salomo!“"
+      fr: "À Guihon, Tsadok oint Salomon, et tout le peuple dit : « Vive le roi Salomon ! »"
   - place: aede336 # Gibeon
     ref: 1Kgs.3.4-1Kgs.3.15
     note:
       en: "At Gibeon the Lord appears to him in a dream, and he asks for an understanding heart."
       ru: "В Гаваоне Господь является ему во сне, и он просит сердце разумное."
+      uk: "У Гаваоні Господь являється йому уві сні, і він просить розумного серця."
+      es: "En Gabaón el Señor se le aparece en sueños, y él pide un corazón entendido."
+      pt: "Em Gibeão o Senhor lhe aparece em sonho, e ele pede um coração entendido."
+      de: "In Gibeon erscheint ihm der Herr im Traum, und er bittet um ein verständiges Herz."
+      fr: "À Gabaon, l’Éternel lui apparaît en songe, et il demande un cœur intelligent."
   - place: a160272 # Tyre
     ref: 1Kgs.5.1-1Kgs.5.12
     note:
       en: "Hiram king of Tyre sends cedar for the Temple, and the two make a treaty."
       ru: "Хирам, царь Тирский, даёт кедры для Храма, и они заключают союз."
+      uk: "Хірам, цар Тіру, посилає кедр для храму, і вони складають угоду."
+      es: "Hiram, rey de Tiro, envía cedro para el Templo, y los dos hacen un tratado."
+      pt: "Hirão, rei de Tiro, envia cedro para o Templo, e os dois fazem um tratado."
+      de: "Hiram, der König von Tyrus, sendet Zedernholz für den Tempel, und die beiden schließen einen Vertrag."
+      fr: "Hiram, roi de Tyr, envoie du cèdre pour le temple, et les deux concluent un traité."
   - place: a15257a # Jerusalem
     ref: 1Kgs.6.1-1Kgs.8.11
     year: "966 BC"
     note:
       en: "In his fourth year he begins the Temple; at its dedication the cloud fills the house of the Lord."
       ru: "В четвёртый год царствования он начинает строить Храм; при освящении облако наполняет дом Господень."
+      uk: "На четвертий рік свого царювання він починає будувати храм; при його освяченні хмара наповнює дім Господній."
+      es: "En su cuarto año comienza el Templo; en su dedicación la nube llena la casa del Señor."
+      pt: "No seu quarto ano ele começa o Templo; na sua dedicação, a nuvem enche a casa do Senhor."
+      de: "In seinem vierten Jahr beginnt er den Tempel; bei dessen Einweihung erfüllt die Wolke das Haus des Herrn."
+      fr: "La quatrième année de son règne, il commence le temple ; à sa dédicace, la nuée remplit la maison de l’Éternel."
   - place: a8554e3 # Megiddo
     ref: 1Kgs.9.15
     note:
       en: "With the levy he raises he builds the wall of Jerusalem, Hazor, Megiddo and Gezer."
       ru: "Наложив подать, он строит стену Иерусалимскую, Гацор, Мегиддо и Газер."
+      uk: "З данини, яку він збирає, він будує мур Єрусалима, Гацор, Мегіддо і Гезер."
+      es: "Con el tributo que levanta edifica el muro de Jerusalén, Hazor, Meguido y Gezer."
+      pt: "Com o trabalho forçado que recruta, edifica o muro de Jerusalém, Hazor, Megido e Gezer."
+      de: "Mit dem Frondienst, den er aushebt, baut er die Mauer Jerusalems, Hazor, Megiddo und Geser."
+      fr: "Avec les hommes de corvée qu’il lève, il bâtit la muraille de Jérusalem, Hatsor, Meguiddo et Guézer."
   - place: a8e53d5 # Ezion-geber
     ref: 1Kgs.9.26-1Kgs.9.28
     note:
       en: "At Ezion-geber on the Red Sea he builds ships, and his servants and Hiram's sailors bring gold from Ophir."
       ru: "В Ецион-Гавере на берегу Чермного моря он строит корабль, и его подданные вместе с моряками Хирама привозят золото из Офира."
+      uk: "В Еціон-Гевері на Червоному морі він будує кораблі, і його слуги та моряки Хірама привозять золото з Офіру."
+      es: "En Ezión-geber, junto al Mar Rojo, construye naves, y sus siervos y los marineros de Hiram traen oro de Ofir."
+      pt: "Em Eziom-Geber, no Mar Vermelho, constrói navios, e seus servos e os marinheiros de Hirão trazem ouro de Ofir."
+      de: "In Ezjon-Geber am Roten Meer baut er Schiffe, und seine Knechte und Hirams Seeleute bringen Gold aus Ofir."
+      fr: "À Etsjon-Guéber, sur la Mer Rouge, il construit des navires, et ses serviteurs et les matelots de Hiram rapportent de l’or d’Ophir."
   - place: a81ab85 # Sheba
     ref: 1Kgs.10.1-1Kgs.10.13
     note:
       en: "The queen of Sheba hears of his fame and comes to test him with hard questions."
       ru: "Царица Савская, услышав о славе Соломона, приходит испытать его загадками."
+      uk: "Цариця Савська чує про його славу й приходить випробувати його важкими питаннями."
+      es: "La reina de Seba oye de su fama y viene a probarlo con preguntas difíciles."
+      pt: "A rainha de Sabá ouve falar da sua fama e vem testá-lo com perguntas difíceis."
+      de: "Die Königin von Scheba hört von seinem Ruhm und kommt, ihn mit schweren Fragen zu prüfen."
+      fr: "La reine de Schéba apprend sa renommée et vient l’éprouver par des énigmes."
   - place: a15257a # Jerusalem
     ref: 1Kgs.11.42-1Kgs.11.43
     year: "931 BC"
     note:
       en: "After forty years' reign in Jerusalem Solomon dies and is buried in the city of David."
       ru: "Процарствовав в Иерусалиме сорок лет, Соломон умирает и погребён в городе Давида."
+      uk: "Після сорока років царювання в Єрусалимі Соломон помирає і його ховають у Місті Давида."
+      es: "Tras cuarenta años de reinado en Jerusalén, Salomón muere y es sepultado en la Ciudad de David."
+      pt: "Depois de quarenta anos de reinado em Jerusalém, Salomão morre e é sepultado na Cidade de Davi."
+      de: "Nach vierzig Jahren Herrschaft in Jerusalem stirbt Salomo und wird in der Stadt Davids begraben."
+      fr: "Après quarante ans de règne à Jérusalem, Salomon meurt et est enseveli dans la Cité de David."

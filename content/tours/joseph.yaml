@@ -6,6 +6,11 @@ id: joseph
 title:
   en: "Joseph in Egypt"
   ru: "Иосиф в Египте"
+  uk: "Йосип у Єгипті"
+  es: "José en Egipto"
+  pt: "José no Egito"
+  de: "Josef in Ägypten"
+  fr: "Joseph en Égypte"
 year: "1700 BC"
 people: ["Joseph@Gen.30.24-Rev"]
 approximate: true
@@ -15,38 +20,78 @@ stops:
     note:
       en: "Israel sends Joseph from the valley of Hebron to see how his brothers are."
       ru: "Израиль посылает Иосифа из долины Хевронской узнать, здоровы ли братья."
+      uk: "Ізраїль посилає Йосипа з Хевронської долини побачити, як поживають його брати."
+      es: "Israel envía a José desde el valle de Hebrón para ver cómo están sus hermanos."
+      pt: "Israel envia José do vale de Hebrom para ver como estão os seus irmãos."
+      de: "Israel sendet Josef aus dem Tal von Hebron, um nachzusehen, wie es seinen Brüdern geht."
+      fr: "Israël envoie Joseph de la vallée d’Hébron voir comment vont ses frères."
   - place: adf74d4 # Shechem
     ref: Gen.37.14-Gen.37.16
     note:
       en: "He comes to Shechem and wanders in the field looking for them."
       ru: "Он приходит в Сихем и блуждает в поле, ища их."
+      uk: "Він приходить до Сихема й блукає полем, шукаючи їх."
+      es: "Llega a Siquem y anda errante por el campo buscándolos."
+      pt: "Chega a Siquém e vaga pelo campo à procura deles."
+      de: "Er kommt nach Sichem und irrt auf dem Feld umher, um sie zu suchen."
+      fr: "Il arrive à Sichem et erre dans la campagne à leur recherche."
   - place: ab635e4 # Dothan
     ref: Gen.37.17-Gen.37.28
     note:
       en: "At Dothan his brothers throw him into a pit and sell him to the Ishmaelites for twenty pieces of silver."
       ru: "В Дофане братья бросают его в ров и продают Измаильтянам за двадцать сребренников."
+      uk: "У Дофані брати кидають його в яму й продають ізмаїльтянам за двадцять срібняків."
+      es: "En Dotán sus hermanos lo echan en una cisterna y lo venden a los ismaelitas por veinte piezas de plata."
+      pt: "Em Dotã, os irmãos o lançam numa cisterna e o vendem aos ismaelitas por vinte peças de prata."
+      de: "In Dotan werfen seine Brüder ihn in eine Grube und verkaufen ihn für zwanzig Silberstücke an die Ismaeliter."
+      fr: "À Dothan, ses frères le jettent dans une citerne et le vendent aux Ismaélites pour vingt pièces d’argent."
   - place: af301ca # Egypt
     ref: Gen.39.1-Gen.39.6
     note:
       en: "In Egypt Potiphar, the captain of Pharaoh's guard, buys him, and the Lord is with Joseph."
       ru: "В Египте его покупает Потифар, начальник телохранителей фараона, и Господь с Иосифом."
+      uk: "У Єгипті Потіфар, начальник охорони фараона, купує його, і Господь з Йосипом."
+      es: "En Egipto lo compra Potifar, capitán de la guardia del Faraón, y el Señor está con José."
+      pt: "No Egito, Potifar, capitão da guarda do Faraó, o compra, e o Senhor está com José."
+      de: "In Ägypten kauft ihn Potiphar, der Oberste der Leibwache des Pharao, und der Herr ist mit Josef."
+      fr: "En Égypte, Potiphar, chef des gardes de Pharaon, l’achète, et l’Éternel est avec Joseph."
   - place: acd9137 # Heliopolis (On)
     ref: Gen.41.41-Gen.41.45
     note:
       en: "Set over all the land of Egypt, he is given Asenath, daughter of Poti-pherah, priest of On, that is Heliopolis."
       ru: "Поставленный над всею землёю Египетскою, он получает в жёны Асенефу, дочь Потифера, жреца Илиопольского."
+      uk: "Поставлений над усією землею Єгипту, він отримує Асенефу, дочку Потіфери, священика Она, тобто Геліополя."
+      es: "Puesto sobre toda la tierra de Egipto, recibe por mujer a Asenat, hija de Potifera, sacerdote de On, es decir, Heliópolis."
+      pt: "Posto sobre toda a terra do Egito, recebe Asenate, filha de Potífera, sacerdote de Om, isto é, Heliópolis."
+      de: "Über das ganze Land Ägypten gesetzt, erhält er Asnat zur Frau, die Tochter Potiferas, des Priesters von On, das ist Heliopolis."
+      fr: "Établi sur tout le pays d’Égypte, il reçoit pour femme Asnath, fille de Poti-Phéra, prêtre d’On, c’est-à-dire Héliopolis."
   - place: a60f092 # Goshen
     ref: Gen.46.28-Gen.46.30
     note:
       en: "In Goshen he meets his father Israel, falls on his neck and weeps a long while."
       ru: "В Гесеме он встречает отца своего Израиля, падает ему на шею и долго плачет."
+      uk: "У Гошені він зустрічає свого батька Ізраїля, падає йому на шию й довго плаче."
+      es: "En Gosén se encuentra con su padre Israel, se echa sobre su cuello y llora largo rato."
+      pt: "Em Gósen encontra seu pai Israel, lança-se ao seu pescoço e chora por muito tempo."
+      de: "In Goschen trifft er seinen Vater Israel, fällt ihm um den Hals und weint lange."
+      fr: "À Gosen, il rencontre son père Israël, se jette à son cou et pleure longtemps."
   - place: a2f186d # Atad
     ref: Gen.50.10-Gen.50.11
     note:
       en: "At the threshing floor of Atad beyond the Jordan they mourn Jacob seven days."
       ru: "У Горен-гаатада при Иордане семь дней плачут по Иакову."
+      uk: "На току Горен-га-Атад за Йорданом вони оплакують Якова сім днів."
+      es: "En la era de Atad, al otro lado del Jordán, hacen duelo por Jacob siete días."
+      pt: "Na eira de Atade, além do Jordão, pranteiam Jacó por sete dias."
+      de: "An der Tenne Atad jenseits des Jordan halten sie sieben Tage lang die Trauer um Jakob."
+      fr: "À l’aire d’Athad, au-delà du Jourdain, ils font le deuil de Jacob pendant sept jours."
   - place: ae00861 # Machpelah
     ref: Gen.50.12-Gen.50.13
     note:
       en: "Jacob is buried in the cave of the field of Machpelah, which Abraham bought."
       ru: "Иакова погребают в пещере на поле Махпела, которую купил Авраам."
+      uk: "Якова ховають у печері поля Махпела, яке купив Авраам."
+      es: "Jacob es sepultado en la cueva del campo de Macpela, que Abraham compró."
+      pt: "Jacó é sepultado na caverna do campo de Macpela, que Abraão comprou."
+      de: "Jakob wird in der Höhle auf dem Feld Machpela begraben, das Abraham gekauft hatte."
+      fr: "Jacob est enseveli dans la caverne du champ de Macpéla, qu’Abraham avait achetée."

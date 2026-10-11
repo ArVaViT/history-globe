@@ -6,6 +6,11 @@ id: john-jerusalem
 title:
   en: "Jesus in Jerusalem, after John"
   ru: "Иисус в Иерусалиме, по Иоанну"
+  uk: "Ісус у Єрусалимі за Іваном"
+  es: "Jesús en Jerusalén, según Juan"
+  pt: "Jesus em Jerusalém, segundo João"
+  de: "Jesus in Jerusalem nach Johannes"
+  fr: "Jésus à Jérusalem, selon Jean"
 year: "AD 30"
 people: ["Jesus@Isa.7.14-Rev"]
 approximate: true
@@ -15,38 +20,78 @@ stops:
     note:
       en: 'At the Passover He drives the traders from the Temple: "make not my Father''s house an house of merchandise."'
       ru: "На Пасху Он изгоняет торгующих из храма: «дома Отца Моего не делайте домом торговли»."
+      uk: "На Пасху Він виганяє торговців із храму: «не робіть дому Отця мого домом торговим»."
+      es: "En la Pascua expulsa del Templo a los mercaderes: «no hagáis la casa de mi Padre casa de mercado»."
+      pt: "Na Páscoa, Ele expulsa os mercadores do Templo: “Não façam da casa de meu Pai um mercado!”"
+      de: "Zum Passafest treibt er die Händler aus dem Tempel: „macht nicht meines Vaters Haus zum Kaufhause!“"
+      fr: "À la Pâque, il chasse les marchands du temple : « ne faites pas de la maison de mon Père une maison de trafic »."
   - place: a0aa8cf # Bethesda
     ref: John.5.2-John.5.9
     note:
       en: 'At the pool of Bethesda by the sheep market He heals a man who had an infirmity thirty-eight years: "Rise, take up thy bed, and walk."'
       ru: "У купальни Вифезда при Овечьих воротах Он исцеляет человека, болевшего тридцать восемь лет: «встань, возьми постель твою и ходи»."
+      uk: "Біля купелі Віфезда, поблизу овечого ринку, Він зцілює чоловіка, що тридцять вісім років був недужий: «Устань, візьми постїль твою, та й ходи!»"
+      es: "En el estanque de Betesda, junto a la puerta del ganado, sana a un hombre que llevaba treinta y ocho años enfermo: «Levántate, toma tu lecho, y anda»."
+      pt: "No tanque de Betesda, junto ao mercado de ovelhas, Ele cura um homem enfermo havia trinta e oito anos: “Levante-se, pegue a sua maca e ande.”"
+      de: "Am Teich Betesda beim Schaftor heilt er einen Mann, der achtunddreißig Jahre lang krank war: „Stehe auf, nimm dein Bett und gehe hin!“"
+      fr: "À la piscine de Béthesda, près de la porte des Brebis, il guérit un homme malade depuis trente-huit ans : « Lève-toi, prends ton lit, et marche. »"
   - place: a294859 # Siloam
     ref: John.9.1-John.9.25
     note:
       en: 'A man born blind washes in the pool of Siloam and comes back seeing: "whereas I was blind, now I see."'
       ru: "Слепорождённый умывается в купальне Силоам и приходит зрячим: «я был слеп, а теперь вижу»."
+      uk: "Чоловік, сліпий від народження, умивається в купелі Сілоам і повертається зрячим: «слїпим бувши, тепер бачу»."
+      es: "Un hombre ciego de nacimiento se lava en el estanque de Siloé y vuelve viendo: «habiendo yo sido ciego, ahora veo»."
+      pt: "Um homem cego de nascença se lava no tanque de Siloé e volta enxergando: “eu era cego e agora vejo.”"
+      de: "Ein Blindgeborener wäscht sich im Teich Siloah und kommt sehend zurück: „daß ich blind war und bin nun sehend“."
+      fr: "Un aveugle de naissance se lave à la piscine de Siloé et revient voyant : « j’étais aveugle et maintenant je vois »."
   - place: a47c817 # Solomon's Portico
     ref: John.10.22-John.10.30
     note:
       en: 'At the feast of dedication, in Solomon’s Portico: "I and my Father are one."'
       ru: "В праздник обновления, в притворе Соломоновом: «Я и Отец — одно»."
+      uk: "На свято оновлення, у Соломоновому портику: «Я і Отець одно»."
+      es: "En la fiesta de la dedicación, en el Pórtico de Salomón: «Yo y el Padre una cosa somos»."
+      pt: "Na festa da Dedicação, no Pórtico de Salomão: “Eu e o Pai somos um.”"
+      de: "Beim Fest der Tempelweihe, in der Halle Salomos: „Ich und der Vater sind eins.“"
+      fr: "À la fête de la Dédicace, dans le Portique de Salomon : « Moi et le Père nous sommes un. »"
   - place: a4f35bc # Bethany
     ref: John.11.1-John.11.44
     note:
       en: 'At Bethany, near Jerusalem, He raises Lazarus: "I am the resurrection, and the life."'
       ru: "В Вифании, близ Иерусалима, Он воскрешает Лазаря: «Я есмь воскресение и жизнь»."
+      uk: "У Віфанії, поблизу Єрусалима, Він воскрешає Лазаря: «Я воскресеннє і життє»."
+      es: "En Betania, cerca de Jerusalén, resucita a Lázaro: «Yo soy la resurrección y la vida»."
+      pt: "Em Betânia, perto de Jerusalém, Ele ressuscita Lázaro: “Eu sou a ressurreição e a vida.”"
+      de: "In Bethanien bei Jerusalem erweckt er Lazarus: „Ich bin die Auferstehung und das Leben.“"
+      fr: "À Béthanie, près de Jérusalem, il ressuscite Lazare : « Je suis la résurrection et la vie. »"
   - place: a553110 # Kidron
     ref: John.18.1-John.18.12
     note:
       en: "Across the brook Kidron, in the garden, He is arrested."
       ru: "За потоком Кедрон, в саду, Его берут под стражу."
+      uk: "За потоком Кедрон, у саду, Його заарештовують."
+      es: "Al otro lado del torrente Cedrón, en el huerto, es arrestado."
+      pt: "Do outro lado do ribeiro de Cedrom, no jardim, Ele é preso."
+      de: "Jenseits des Baches Kidron wird er im Garten gefangen genommen."
+      fr: "Au-delà du torrent du Cédron, dans le jardin, il est arrêté."
   - place: aec23b1 # Gabbatha
     ref: John.19.13-John.19.16
     note:
       en: "Pilate sits in the judgment seat at the place called the Pavement, in Hebrew Gabbatha."
       ru: "Пилат садится на судилище, на месте, называемом Лифостротон, а по-еврейски Гаввафа."
+      uk: "Пилат сидить на судилищі в місці, що зветься Литостротос, івритом Габбата."
+      es: "Pilato se sienta en el tribunal, en el lugar llamado el Enlosado, en hebreo Gábata."
+      pt: "Pilatos se assenta no tribunal, no lugar chamado Pavimento, em hebraico Gabatá."
+      de: "Pilatus sitzt auf dem Richtstuhl an dem Ort, der Pflaster heißt, auf Hebräisch Gabbata."
+      fr: "Pilate siège sur le tribunal, au lieu appelé le Pavé, en hébreu Gabbatha."
   - place: a631d35 # Golgotha
     ref: John.19.17-John.19.30
     note:
       en: 'At Golgotha He is crucified: "It is finished."'
       ru: "На Голгофе Его распинают: «совершилось!»"
+      uk: "На Голгофі Його розпинають: «Звершилось»."
+      es: "En el Gólgota es crucificado: «Consumado es»."
+      pt: "No Gólgota Ele é crucificado: “Está consumado!”"
+      de: "Auf Golgatha wird er gekreuzigt: „Es ist vollbracht!“"
+      fr: "Au Golgotha, il est crucifié : « Tout est accompli. »"

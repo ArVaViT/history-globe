@@ -11,6 +11,11 @@ id: ahab-jehoshaphat
 title:
   en: "Ahab and Jehoshaphat"
   ru: "Ахав и Иосафат"
+  uk: "Ахав і Йосафат"
+  es: "Acab y Josafat"
+  pt: "Acabe e Josafá"
+  de: "Ahab und Josaphat"
+  fr: "Achab et Josaphat"
 year: "853 BC"
 # Where the story happens, told of two kings: no time on foot.
 walked: false
@@ -23,53 +28,108 @@ stops:
     note:
       en: "Jehoshaphat king of Judah strengthens the land and in his third year sends princes and Levites with the book of the law to teach in all the cities of Judah."
       ru: "Иосафат, царь Иудейский, укрепляет страну и в третий год посылает князей и левитов с книгой закона учить народ по всем городам Иудеи."
+      uk: "Йосафат, цар Юди, зміцнює країну й на третій рік свого царювання посилає князів і левітів з книгою закону навчати по всіх містах Юди."
+      es: "Josafat, rey de Judá, fortalece el país y en su tercer año envía príncipes y levitas con el libro de la ley para enseñar en todas las ciudades de Judá."
+      pt: "Josafá, rei de Judá, fortalece a terra e, no seu terceiro ano, envia príncipes e levitas com o livro da lei para ensinar em todas as cidades de Judá."
+      de: "Josaphat, der König von Juda, stärkt das Land und sendet im dritten Jahr Oberste und Leviten mit dem Gesetzbuch aus, um in allen Städten Judas zu lehren."
+      fr: "Josaphat, roi de Juda, fortifie le pays et, la troisième année de son règne, envoie des chefs et des Lévites avec le livre de la loi enseigner dans toutes les villes de Juda."
   - place: a041bb3 # Samaria
     ref: 1Kgs.20.1-1Kgs.20.21
     note:
       en: 'Ben-hadad of Syria with thirty-two kings besieges Samaria; a prophet tells Ahab, "I will deliver it into thine hand this day", and the young men of the princes of the provinces rout the Syrians.'
       ru: "Венадад Сирийский с тридцатью двумя царями осаждает Самарию; пророк говорит Ахаву: «Я сегодня предам его в руку твою», и слуги областных начальников обращают Сириян в бегство."
+      uk: "Бен-Гадад Сирійський із тридцятьма двома царями облягає Самарію; пророк каже Ахавові: «Я сьогоднї подам її тобі в руки», і слуги князів областей розбивають сирійців."
+      es: "Ben-adad de Siria, con treinta y dos reyes, sitia Samaria; un profeta dice a Acab: «he aquí yo te la entregaré hoy en tu mano», y los jóvenes de los príncipes de las provincias derrotan a los sirios."
+      pt: "Ben-Hadade, da Síria, com trinta e dois reis, cerca Samaria; um profeta diz a Acabe: “hoje a entregarei nas suas mãos”, e os jovens dos chefes das províncias põem os sírios em fuga."
+      de: "Ben-Hadad von Syrien belagert mit zweiunddreißig Königen Samaria; ein Prophet sagt Ahab: „Ich will ihn heute in deine Hand geben“, und die jungen Männer der Fürsten der Provinzen schlagen die Syrer in die Flucht."
+      fr: "Ben-Hadad de Syrie, avec trente-deux rois, assiège Samarie ; un prophète dit à Achab : « Je vais la livrer aujourd’hui entre tes mains », et les jeunes gens des chefs des provinces mettent les Syriens en déroute."
   - place: a6fc60d # Aphek
     ref: 1Kgs.20.26-1Kgs.20.34
     note:
       en: "A year later Ben-hadad comes up to Aphek, the Syrians saying the Lord is a God of the hills and not of the valleys; Israel smites them, a wall falls on 27,000 in Aphek, and Ahab lets Ben-hadad go for a covenant."
       ru: "Через год Венадад выступает к Афеку: Сирияне говорят, что Господь есть Бог гор, а не Бог долин; Израиль поражает их, в Афеке стена падает на двадцать семь тысяч, и Ахав отпускает Венадада, заключив договор."
+      uk: "Через рік Бен-Гадад приходить до Афека, а сирійці кажуть, що Господь — Бог гір, а не долин; Ізраїль розбиває їх, у Афеку стіна падає на 27 000 чоловіків, і Ахав відпускає Бен-Гадада за угоду."
+      es: "Un año después Ben-adad sube a Afec, pues los sirios dicen que el Señor es un dios de los montes y no de los valles; Israel los derrota, un muro cae sobre 27 000 en Afec, y Acab deja ir a Ben-adad a cambio de un pacto."
+      pt: "Um ano depois, Ben-Hadade sobe a Afeque, dizendo os sírios que o Senhor é um Deus dos montes e não dos vales; Israel os fere, um muro cai sobre 27.000 homens em Afeque, e Acabe deixa Ben-Hadade partir em troca de uma aliança."
+      de: "Ein Jahr später zieht Ben-Hadad nach Afek herauf, wobei die Syrer sagen, der Herr sei ein Gott der Berge und nicht der Täler; Israel schlägt sie, in Afek stürzt eine Mauer auf 27 000 Mann, und Ahab lässt Ben-Hadad gegen einen Bund frei."
+      fr: "Un an plus tard, Ben-Hadad monte à Aphek, les Syriens disant que l’Éternel est un dieu des montagnes et non un dieu des vallées ; Israël les bat, une muraille s’écroule sur 27 000 hommes à Aphek, et Achab laisse partir Ben-Hadad en échange d’une alliance."
   - place: a041bb3 # Samaria
     ref: 1Kgs.22.1-1Kgs.22.28
     note:
       en: 'In the third year without war Jehoshaphat comes down to Ahab and agrees to go up with him to Ramoth-gilead. At the gate of Samaria some four hundred prophets promise victory; Micaiah alone sees Israel scattered "as sheep that have not a shepherd", and is put in prison.'
       ru: "На третий год без войны Иосафат приходит к Ахаву и соглашается идти с ним на Рамоф Галаадский. У ворот Самарии около четырёхсот пророков сулят победу; один Михей видит Израильтян, рассеянных «как овец, у которых нет пастыря», и его сажают в темницу."
+      uk: "На третій рік без війни Йосафат приходить до Ахава й погоджується піти з ним на Рамот Гілеадський. Біля брами Самарії близько чотирьохсот пророків обіцяють перемогу; лише Михей бачить Ізраїль розсіяним, «наче вівцї, що нема в їх пастуха», і його кидають до в’язниці."
+      es: "En el tercer año sin guerra Josafat baja a ver a Acab y acepta subir con él a Ramot de Galaad. A la puerta de Samaria unos cuatrocientos profetas prometen la victoria; solo Micaías ve a Israel esparcido «como ovejas que no tienen pastor», y es metido en la cárcel."
+      pt: "No terceiro ano sem guerra, Josafá desce até Acabe e concorda em subir com ele a Ramote-Gileade. À porta de Samaria, cerca de quatrocentos profetas prometem vitória; somente Micaías vê Israel espalhado “como ovelhas que não têm pastor”, e é lançado na prisão."
+      de: "Im dritten Jahr ohne Krieg kommt Josaphat zu Ahab hinab und willigt ein, mit ihm nach Ramot in Gilead hinaufzuziehen. Am Tor von Samaria verheißen etwa vierhundert Propheten den Sieg; allein Michaja sieht Israel zerstreut „wie die Schafe, die keinen Hirten haben“, und wird ins Gefängnis geworfen."
+      fr: "La troisième année sans guerre, Josaphat descend chez Achab et accepte de monter avec lui à Ramoth en Galaad. À la porte de Samarie, quelque quatre cents prophètes promettent la victoire ; Michée seul voit Israël dispersé « comme des brebis qui n’ont point de berger », et il est jeté en prison."
   - place: a2fe63c # Ramoth-gilead
     ref: 1Kgs.22.29-1Kgs.22.36
     note:
       en: "At Ramoth-gilead Ahab goes into the battle disguised; a bow drawn at a venture strikes him between the joints of the harness, and he dies at even in his chariot."
       ru: "У Рамофа Галаадского Ахав идёт в бой переодетым; случайно пущенная стрела ранит его сквозь швы лат, и вечером он умирает в колеснице."
+      uk: "Під Рамотом Гілеадським Ахав іде в бій перевдягнений; стріла, пущена навмання, влучає в нього між частинами обладунку, і він помирає ввечері у своїй колісниці."
+      es: "En Ramot de Galaad Acab entra en la batalla disfrazado; una flecha lanzada al azar lo hiere entre las junturas de la armadura, y muere al atardecer en su carro."
+      pt: "Em Ramote-Gileade, Acabe entra na batalha disfarçado; um arco disparado ao acaso o fere entre as juntas da armadura, e ele morre ao entardecer em seu carro."
+      de: "Bei Ramot in Gilead zieht Ahab verkleidet in die Schlacht; ein aufs Geratewohl gespannter Bogen trifft ihn zwischen Panzer und Schurz, und am Abend stirbt er in seinem Wagen."
+      fr: "À Ramoth en Galaad, Achab entre dans la bataille déguisé ; un homme tire de son arc au hasard et le frappe entre les jointures de la cuirasse, et il meurt le soir dans son char."
   - place: a041bb3 # Samaria
     ref: 1Kgs.22.37-1Kgs.22.40
     note:
       en: "The king is brought to Samaria and buried; the chariot is washed in the pool of Samaria, and the dogs lick up his blood, according to the word of the Lord (1 Kgs 21:19)."
       ru: "Царя привозят в Самарию и хоронят; колесницу обмывают на пруде Самарийском, и псы лижут его кровь, по слову Господа (3 Цар 21:19)."
+      uk: "Царя привозять до Самарії й ховають; колісницю миють у самарійському ставку, і пси злизують його кров за словом Господа (1 Цар 21:19)."
+      es: "El rey es llevado a Samaria y sepultado; el carro se lava en el estanque de Samaria, y los perros lamen su sangre, conforme a la palabra del Señor (1 R 21:19)."
+      pt: "O rei é levado a Samaria e sepultado; o carro é lavado no tanque de Samaria, e os cães lambem o seu sangue, conforme a palavra do Senhor (1Rs 21:19)."
+      de: "Der König wird nach Samaria gebracht und begraben; der Wagen wird am Teich von Samaria gewaschen, und die Hunde lecken sein Blut, nach dem Wort des Herrn (1. Kön 21,19)."
+      fr: "Le roi est ramené à Samarie et enseveli ; on lave le char à l’étang de Samarie, et les chiens lèchent son sang, selon la parole de l’Éternel (1 R 21:19)."
   - place: a15257a # Jerusalem
     ref: 2Chr.19.1-2Chr.19.11
     note:
       en: 'Jehoshaphat returns in peace to Jerusalem; Jehu the son of Hanani rebukes him: "Shouldest thou help the ungodly?" The king sets judges in the fortified cities and in Jerusalem.'
       ru: "Иосафат возвращается с миром в Иерусалим; Ииуй, сын Анании, обличает его: «следовало ли тебе помогать нечестивцу?» Царь ставит судей по укреплённым городам и в Иерусалиме."
+      uk: "Йосафат з миром повертається до Єрусалима; Єгу, син Ханані, докоряє йому: «Чи слїд було тобі помагати нечестивцеві?» Цар ставить суддів по укріплених містах і в Єрусалимі."
+      es: "Josafat vuelve en paz a Jerusalén; Jehú, hijo de Hanani, lo reprende: «¿Al impío das ayuda, y amas á los que aborrecen á Jehová?» El rey pone jueces en las ciudades fortificadas y en Jerusalén."
+      pt: "Josafá volta em paz a Jerusalém; Jeú, filho de Hanani, o repreende: “Você deveria ajudar os ímpios?” O rei estabelece juízes nas cidades fortificadas e em Jerusalém."
+      de: "Josaphat kehrt in Frieden nach Jerusalem zurück; Jehu, der Sohn Hananis, tadelt ihn: „Sollst du so dem Gottlosen helfen?“ Der König setzt Richter in den festen Städten und in Jerusalem ein."
+      fr: "Josaphat revient en paix à Jérusalem ; Jéhu, fils de Hanani, le reprend : « Doit-on secourir le méchant ? » Le roi établit des juges dans les villes fortes et à Jérusalem."
   - place: a51df0e # Engedi
     ref: 2Chr.20.1-2Chr.20.19
     note:
       en: 'Moab, Ammon and mount Seir come against Judah and stand at Hazazon-tamar, which is En-gedi. Jehoshaphat proclaims a fast and prays, "neither know we what to do: but our eyes are upon thee"; Jahaziel answers, "the battle is not yours, but God''s".'
       ru: "Моавитяне, Аммонитяне и жители горы Сеира идут на Иудею и стоят у Ен-Гадди, в Хацацон-Фамаре. Иосафат объявляет пост и молится: «мы не знаем, что делать, но к Тебе очи наши!»; Иозиил отвечает: «не ваша война, а Божия»."
+      uk: "Моав, Аммон і гора Сеір виступають проти Юди й стають у Хацацон-Тамарі, тобто в Ен-Геді. Йосафат оголошує піст і молиться: «ми не відаємо, що робити, а тілько до тебе очі наші»; Яхазіїл відповідає: «не ваша се війна, а Божа»."
+      es: "Moab, Amón y el Monte Seir marchan contra Judá y se detienen en Hazezon-tamar, que es Engadi. Josafat proclama un ayuno y ora: «no sabemos lo que hemos de hacer, mas á ti volvemos nuestros ojos»; Jahaziel responde: «no es vuestra la guerra, sino de Dios»."
+      pt: "Moabe, Amom e o monte Seir marcham contra Judá e param em Hazazom-Tamar, que é En-Gedi. Josafá proclama um jejum e ora: “Não sabemos o que fazer, mas os nossos olhos estão postos em ti”; Jaaziel responde: “a batalha não é de vocês, mas de Deus”."
+      de: "Moab, Ammon und das Gebirge Seir ziehen gegen Juda und lagern bei Hazezon-Tamar, das ist En-Gedi. Josaphat ruft ein Fasten aus und betet: „Wir wissen nicht, was wir tun sollen; sondern unsre Augen sehen nach dir“; Jahasiël antwortet: „ihr streitet nicht, sondern Gott“."
+      fr: "Moab, Ammon et le Mont Séir marchent contre Juda et sont à Hatsatson-Thamar, qui est En-Guédi. Josaphat proclame un jeûne et prie : « nous ne savons que faire, mais nos yeux sont sur toi » ; Jachaziel répond : « ce ne sera pas vous qui combattrez, ce sera Dieu »."
   - place: a2e3aa0 # Tekoa
     ref: 2Chr.20.20-2Chr.20.25
     note:
       en: 'Early in the morning Judah goes out to the wilderness of Tekoa with singers before the army, "Praise the Lord; for his mercy endureth for ever"; the enemies destroy one another, and the spoil takes three days to gather.'
       ru: "Рано утром Иудеи выходят в пустыню Фекойскую с певцами впереди войска: «славьте Господа, ибо вовек милость Его!»; враги истребляют друг друга, и добычу собирают три дня."
+      uk: "Рано-вранці Юда виходить до пустелі Текоя, а перед військом ідуть співці: «хвалїте Господа, бо віковічна милость його!»; вороги винищують одне одного, і здобич збирають три дні."
+      es: "De mañana Judá sale al desierto de Tecoa con cantores delante del ejército: «Glorificad á Jehová, porque su misericordia es para siempre»; los enemigos se destruyen unos a otros, y el despojo tarda tres días en recogerse."
+      pt: "De manhã cedo, Judá sai para o deserto de Tecoa com cantores à frente do exército: “Deem graças ao SENHOR, pois a sua misericórdia dura para sempre”; os inimigos destroem uns aos outros, e o despojo leva três dias para ser recolhido."
+      de: "Früh am Morgen zieht Juda zur Wüste Tekoa hinaus, Sänger vor dem Heer, die sprechen: „Danket dem HERRN; denn sein Barmherzigkeit währet ewiglich“; die Feinde vernichten einander, und das Einsammeln der Beute dauert drei Tage."
+      fr: "De bon matin, Juda sort vers le désert de Tekoa, des chantres marchant devant l’armée : « Louez l’Éternel, car sa miséricorde dure à toujours ! » ; les ennemis s’entre-détruisent, et il faut trois jours pour recueillir le butin."
   - place: a71f834 # Valley of Beracah
     ref: 2Chr.20.26-2Chr.20.30
     note:
       en: "On the fourth day they bless the Lord in a valley called from then the valley of Berachah, Blessing, and return to Jerusalem with psalteries, harps and trumpets."
       ru: "В четвёртый день они благословляют Господа в долине, которую с тех пор зовут долиною благословения, и возвращаются в Иерусалим с псалтирями, цитрами и трубами."
+      uk: "На четвертий день вони благословляють Господа в долині, яку відтоді називають долиною Берахи, тобто благословення, і повертаються до Єрусалима з псалтирями, арфами й сурмами."
+      es: "Al cuarto día bendicen al Señor en un valle que desde entonces se llama valle de Beraca, es decir, Bendición, y vuelven a Jerusalén con salterios, arpas y trompetas."
+      pt: "No quarto dia bendizem o Senhor num vale chamado desde então Vale de Beraca, Bênção, e voltam a Jerusalém com saltérios, harpas e trombetas."
+      de: "Am vierten Tag loben sie den Herrn in einem Tal, das seither Tal Beracha, Lob, heißt, und kehren mit Psaltern, Harfen und Trompeten nach Jerusalem zurück."
+      fr: "Le quatrième jour, ils s’assemblent et bénissent l’Éternel dans une vallée qui s’appelle depuis lors vallée de Beraca, c’est-à-dire de la bénédiction, puis rentrent à Jérusalem avec des luths, des harpes et des trompettes."
   - place: a8e53d5 # Ezion-geber
     ref: 2Chr.20.35-2Chr.20.37
     note:
       en: "At the last Jehoshaphat joins Ahaziah, Ahab's son, to build ships at Ezion-geber for Tarshish; Eliezer of Mareshah prophesies against the alliance, and the ships are broken."
       ru: "Под конец Иосафат вступает в союз с Охозией, сыном Ахава, чтобы строить в Ецион-Гавере корабли для Фарсиса; Елиезер из Мареши пророчествует против союза, и корабли разбиваются."
+      uk: "Наприкінці Йосафат об’єднується з Охозією, сином Ахава, щоб збудувати кораблі в Еціон-Гевері для Тарсису; Еліезер з Мареші пророкує проти цього союзу, і кораблі розбиваються."
+      es: "Al final Josafat se une a Ocozías, hijo de Acab, para construir naves en Ezión-geber con destino a Tarsis; Eliezer de Maresa profetiza contra la alianza, y las naves se destrozan."
+      pt: "No fim, Josafá se associa a Acazias, filho de Acabe, para construir navios em Eziom-Geber com destino a Társis; Eliézer, de Maressa, profetiza contra a aliança, e os navios se quebram."
+      de: "Zuletzt tut sich Josaphat mit Ahasja, Ahabs Sohn, zusammen, um in Ezjon-Geber Schiffe für Tarsis zu bauen; Elieser von Maresa weissagt gegen das Bündnis, und die Schiffe zerbrechen."
+      fr: "À la fin, Josaphat s’associe à Achazia, fils d’Achab, pour construire à Etsjon-Guéber des navires destinés à Tarsis ; Éliézer, de Maréscha, prophétise contre cette alliance, et les navires sont brisés."

@@ -4,6 +4,11 @@ id: philip
 title:
   en: "Philip the evangelist"
   ru: "Филипп благовестник"
+  uk: "Пилип-євангеліст"
+  es: "Felipe el evangelista"
+  pt: "Filipe, o evangelista"
+  de: "Philippus der Evangelist"
+  fr: "Philippe l’évangéliste"
 year: "AD 34"
 approximate: true
 stops:
@@ -12,23 +17,48 @@ stops:
     note:
       en: "In Jerusalem Philip is chosen with Stephen among the seven to serve the tables."
       ru: "В Иерусалиме Филипп избран вместе со Стефаном в число семи, чтобы пещись о столах."
+      uk: "В Єрусалимі Пилипа обирають разом зі Стефаном серед семи служити при столах."
+      es: "En Jerusalén Felipe es elegido con Esteban entre los siete para servir a las mesas."
+      pt: "Em Jerusalém, Filipe é escolhido com Estêvão entre os sete para servir às mesas."
+      de: "In Jerusalem wird Philippus mit Stephanus unter den Sieben erwählt, um die Tische zu bedienen."
+      fr: "À Jérusalem, Philippe est choisi avec Étienne parmi les sept pour servir aux tables."
   - place: a282dce # Samaria (region)
     ref: Acts.8.5-Acts.8.13
     note:
       en: "He goes down to the city of Samaria and preaches Christ, and the people with one accord give heed to him."
       ru: "Он приходит в город Самарийский и проповедует Христа, и народ единодушно внимает ему."
+      uk: "Він сходить до міста Самарії й проповідує Христа, і народ однодушно слухає його."
+      es: "Baja a la ciudad de Samaria y predica a Cristo, y el pueblo, de común acuerdo, presta atención a lo que dice."
+      pt: "Desce à cidade de Samaria e prega a Cristo, e o povo, unânime, dá atenção a ele."
+      de: "Er geht hinab in die Stadt Samaria und predigt Christus, und das Volk hört einmütig auf ihn."
+      fr: "Il descend dans la ville de Samarie et prêche le Christ, et le peuple écoute Philippe d’un commun accord."
   - place: aa8edd2 # Gaza
     ref: Acts.8.26-Acts.8.39
     note:
       en: "On the desert road from Jerusalem to Gaza he baptises the Ethiopian eunuch."
       ru: "На пустынной дороге из Иерусалима в Газу он крестит евнуха-ефиоплянина."
+      uk: "На пустельній дорозі з Єрусалима до Гази він хрестить ефіопського скопця."
+      es: "En el camino desierto de Jerusalén a Gaza bautiza al eunuco etíope."
+      pt: "Na estrada deserta de Jerusalém a Gaza, batiza o eunuco etíope."
+      de: "Auf der Wüstenstraße von Jerusalem nach Gaza tauft er den äthiopischen Kämmerer."
+      fr: "Sur la route déserte de Jérusalem à Gaza, il baptise l’eunuque éthiopien."
   - place: a30c937 # Ashdod (Azotus)
     ref: Acts.8.40
     note:
       en: "Philip is found at Ashdod (Azotus) and preaches in all the towns on the way to Caesarea."
       ru: "Филипп оказывается в Азоте и благовествует всем городам на пути в Кесарию."
+      uk: "Пилипа знаходять в Ашдоді (Азот), і він проповідує по всіх містах на шляху до Кесарії."
+      es: "Felipe es hallado en Asdod (Azoto) y predica en todas las ciudades de camino a Cesarea."
+      pt: "Filipe é achado em Asdode (Azoto) e prega em todas as cidades do caminho até Cesareia."
+      de: "Philippus wird in Aschdod (Azotus) gefunden und predigt in allen Städten auf dem Weg nach Caesarea."
+      fr: "Philippe se retrouve à Asdod (Azot) et prêche dans toutes les villes jusqu’à Césarée."
   - place: a58735e # Caesarea
     ref: Acts.21.8-Acts.21.9
     note:
       en: "Years later Paul stays in Caesarea at the house of Philip, whose four daughters prophesy."
       ru: "Спустя годы Павел останавливается в Кесарии в доме Филиппа, чьи четыре дочери пророчествуют."
+      uk: "Роками пізніше Павло зупиняється в Кесарії в домі Пилипа, чотири доньки якого пророкують."
+      es: "Años después Pablo se hospeda en Cesarea en casa de Felipe, cuyas cuatro hijas profetizan."
+      pt: "Anos depois, Paulo se hospeda em Cesareia na casa de Filipe, cujas quatro filhas profetizam."
+      de: "Jahre später wohnt Paulus in Caesarea im Haus des Philippus, dessen vier Töchter weissagen."
+      fr: "Des années plus tard, Paul séjourne à Césarée chez Philippe, dont les quatre filles prophétisent."

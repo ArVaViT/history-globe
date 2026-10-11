@@ -10,6 +10,8 @@ export interface Person {
   readonly name: string;
   /** The Synodal form, when it was read from the Russian text (content/people-ru.json). */
   readonly ru: string | null;
+  /** The name in the other languages (content/names-<code>.yaml): "uk" → "Мойсей". */
+  readonly names?: Readonly<Record<string, string>>;
   readonly female: boolean;
   readonly fathers: readonly number[];
   readonly mothers: readonly number[];
@@ -70,6 +72,7 @@ export function loadPeople(): Promise<People> {
           people: Row[];
           places: Record<string, [number, number, string][]>;
           credit: string;
+          names?: Record<string, Record<string, string>>;
         }>;
       })
       .then((raw) => {
@@ -79,6 +82,9 @@ export function loadPeople(): Promise<People> {
             index,
             name,
             ru,
+            names: Object.fromEntries(
+              Object.entries(raw.names ?? {}).flatMap(([l, by]) => (by[id] ? [[l, by[id]]] : [])),
+            ),
             female: g === "f",
             fathers,
             mothers,
@@ -114,5 +120,5 @@ export function loadPeople(): Promise<People> {
 
 /** A person's name in the reader's language: the Synodal form in Russian when known. */
 export function personName(p: Person, locale: Locale): string {
-  return pick({ en: p.name, ru: p.ru }, locale) ?? p.name;
+  return p.names?.[locale] ?? pick({ en: p.name, ru: p.ru }, locale) ?? p.name;
 }

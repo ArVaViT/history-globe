@@ -6,6 +6,11 @@ id: paul-2
 title:
   en: "Paul's second journey"
   ru: "Второе путешествие Павла"
+  uk: "Друга подорож Павла"
+  es: "El segundo viaje de Pablo"
+  pt: "A segunda viagem de Paulo"
+  de: "Die zweite Reise des Paulus"
+  fr: "Le deuxième voyage de Paul"
 year: "AD 50"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -15,27 +20,52 @@ stops:
     note:
       en: "Paul and Silas set out from Antioch."
       ru: "Павел и Сила выходят из Антиохии."
+      uk: "Павло й Сила вирушають з Антіохії."
+      es: "Pablo y Silas parten de Antioquía."
+      pt: "Paulo e Silas partem de Antioquia."
+      de: "Paulus und Silas brechen von Antiochia auf."
+      fr: "Paul et Silas quittent Antioche."
   - place: aa401a9
     ref: Acts.16.1
     note:
       en: "Derbe again."
       ru: "Снова Дервия."
+      uk: "Знову Дервія."
+      es: "De nuevo Derbe."
+      pt: "Derbe de novo."
+      de: "Wieder Derbe."
+      fr: "Derbe de nouveau."
   - place: af0719d
     ref: Acts.16.2-Acts.16.3
     note:
       en: "Timothy joins them."
       ru: "К ним присоединяется Тимофей."
+      uk: "До них приєднується Тимофій."
+      es: "Timoteo se une a ellos."
+      pt: "Timóteo junta-se a eles."
+      de: "Timotheus schließt sich ihnen an."
+      fr: "Timothée se joint à eux."
   - place: a91c509
     ref: Acts.16.8-Acts.16.10
     note:
       en: "The vision of the man of Macedonia."
       ru: "Видение мужа Македонянина."
+      uk: "Видіння македонянина."
+      es: "La visión del varón macedonio."
+      pt: "A visão do homem da Macedônia."
+      de: "Das Gesicht des Mannes aus Mazedonien."
+      fr: "La vision de l’homme de Macédoine."
   - place: a68750d
     ref: Acts.16.11
     by: sea
     note:
       en: "A straight course to Samothrace."
       ru: "Прямым путём к Самофракии."
+      uk: "Прямим курсом до Самотракії."
+      es: "Rumbo directo a Samotracia."
+      pt: "Rumo direto a Samotrácia."
+      de: "Auf geradem Kurs nach Samothrake."
+      fr: "Route directe vers Samothrace."
   - place: a6a7150
     ref: Acts.16.11
     by: sea
@@ -43,65 +73,130 @@ stops:
     note:
       en: "Landing at Neapolis."
       ru: "Высадка в Неаполе."
+      uk: "Висадка в Неаполі."
+      es: "Desembarcan en Neápolis."
+      pt: "Desembarque em Neápolis."
+      de: "Landung in Neapolis."
+      fr: "Débarquement à Néapolis."
   - place: a49e1d0
     ref: Acts.16.12-Acts.16.40
     note:
       en: "Lydia; Paul and Silas in prison."
       ru: "Лидия; Павел и Сила в темнице."
+      uk: "Лідія; Павло й Сила у в’язниці."
+      es: "Lidia; Pablo y Silas en la cárcel."
+      pt: "Lídia; Paulo e Silas na prisão."
+      de: "Lydia; Paulus und Silas im Gefängnis."
+      fr: "Lydie ; Paul et Silas en prison."
   - place: a4bdea7
     ref: Acts.17.1
     note:
       en: "Through Amphipolis."
       ru: "Через Амфиполь."
+      uk: "Через Амфіполіс."
+      es: "Pasan por Anfípolis."
+      pt: "Passando por Anfípolis."
+      de: "Durch Amphipolis."
+      fr: "Par Amphipolis."
   - place: ab20df9
     ref: Acts.17.1
     note:
       en: "Through Apollonia."
       ru: "Через Аполлонию."
+      uk: "Через Аполлонію."
+      es: "Pasan por Apolonia."
+      pt: "Passando por Apolônia."
+      de: "Durch Apollonia."
+      fr: "Par Apollonie."
   - place: afa9d8e
     ref: Acts.17.1-Acts.17.9
     note:
       en: "Preaching in the synagogue; the uproar."
       ru: "Проповедь в синагоге; волнение в городе."
+      uk: "Проповідь у синагозі; заколот."
+      es: "Predicación en la sinagoga; el tumulto."
+      pt: "Pregação na sinagoga; o tumulto."
+      de: "Predigt in der Synagoge; der Aufruhr."
+      fr: "Prédication dans la synagogue ; le tumulte."
   - place: a62fe31
     ref: Acts.17.10-Acts.17.14
     note:
       en: "The Bereans search the Scriptures daily."
       ru: "Верийцы ежедневно разбирают Писания."
+      uk: "Береяни щодня досліджують Писання."
+      es: "Los de Berea escudriñan cada día las Escrituras."
+      pt: "Os bereanos examinam as Escrituras diariamente."
+      de: "Die Beröer forschen täglich in der Schrift."
+      fr: "Les Béréens examinent chaque jour les Écritures."
   - place: a1fe6e7
     ref: Acts.17.15-Acts.17.34
     note:
       en: "Paul at the Areopagus."
       ru: "Павел в Ареопаге."
+      uk: "Павло на Ареопазі."
+      es: "Pablo en el Areópago."
+      pt: "Paulo no Areópago."
+      de: "Paulus auf dem Areopag."
+      fr: "Paul à l’Aréopage."
   - place: a6f437a
     ref: Acts.18.1-Acts.18.17
     note:
       en: "Aquila and Priscilla; a year and six months."
       ru: "Акила и Прискилла; год и шесть месяцев."
+      uk: "Акила й Прискилла; рік і шість місяців."
+      es: "Aquila y Priscila; un año y seis meses."
+      pt: "Áquila e Priscila; um ano e seis meses."
+      de: "Aquila und Priscilla; ein Jahr und sechs Monate."
+      fr: "Aquilas et Priscille ; un an et six mois."
   - place: aa31dd3
     ref: Acts.18.18
     note:
       en: "Cenchreae, the port of Corinth."
       ru: "Кенхреи, порт Коринфа."
+      uk: "Кенхреї, порт Коринта."
+      es: "Cencrea, el puerto de Corinto."
+      pt: "Cencreia, o porto de Corinto."
+      de: "Kenchreä, der Hafen von Korinth."
+      fr: "Cenchrées, le port de Corinthe."
   - place: a5feb15
     ref: Acts.18.19-Acts.18.21
     by: sea
     note:
       en: "A short stay in Ephesus."
       ru: "Недолгое пребывание в Ефесе."
+      uk: "Короткий побут в Ефесі."
+      es: "Breve estancia en Éfeso."
+      pt: "Uma curta estadia em Éfeso."
+      de: "Ein kurzer Aufenthalt in Ephesus."
+      fr: "Court séjour à Éphèse."
   - place: a58735e
     ref: Acts.18.22
     by: sea
     note:
       en: "Landing at Caesarea."
       ru: "Высадка в Кесарии."
+      uk: "Висадка в Кесарії."
+      es: "Desembarco en Cesarea."
+      pt: "Desembarque em Cesareia."
+      de: "Landung in Caesarea."
+      fr: "Débarquement à Césarée."
   - place: a15257a
     ref: Acts.18.22
     note:
       en: "Paul greets the church."
       ru: "Павел приветствует церковь."
+      uk: "Павло вітає церкву."
+      es: "Pablo saluda a la iglesia."
+      pt: "Paulo saúda a igreja."
+      de: "Paulus grüßt die Gemeinde."
+      fr: "Paul salue l’Église."
   - place: ae41ab4
     ref: Acts.18.22
     note:
       en: "Back to Antioch."
       ru: "Возвращение в Антиохию."
+      uk: "Назад до Антіохії."
+      es: "De vuelta a Antioquía."
+      pt: "De volta a Antioquia."
+      de: "Zurück nach Antiochia."
+      fr: "Retour à Antioche."

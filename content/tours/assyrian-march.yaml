@@ -9,6 +9,11 @@ id: assyrian-march
 title:
   en: "The Assyrian comes: Isaiah 10"
   ru: "Идёт Ассириянин: Исаия 10"
+  uk: "Прихід ассирійця: Ісая 10"
+  es: "Viene el asirio: Isaías 10"
+  pt: "O assírio vem: Isaías 10"
+  de: "Der Assyrer kommt: Jesaja 10"
+  fr: "L’Assyrien approche : Ésaïe 10"
 year: "701 BC"
 walked: false
 approximate: true
@@ -18,63 +23,128 @@ stops:
     note:
       en: '"He is come to Aiath": the Assyrian enters Benjamin from the north, at the Ai of old.'
       ru: "«Он идет на Аиаф»: Ассириянин входит в землю Вениамина с севера, у древнего Гая."
+      uk: "«Ось він ійде на Аїят»: ассирієць входить у землю Веніяминову з півночі, до давнього Гаю."
+      es: "«Vino hasta Ajad»: el asirio entra en Benjamín desde el norte, por el antiguo Hai."
+      pt: "“Ele chegou a Aiate”: o assírio entra em Benjamim vindo do norte, no antigo Ai."
+      de: "„Er kommt gen Ajath“: Der Assyrer dringt von Norden in Benjamin ein, beim Ai der alten Zeit."
+      fr: "« Il marche sur Ajjath » : l’Assyrien entre en Benjamin par le nord, à l’Aï d’autrefois."
   - place: ade6a96 # Migron
     ref: Isa.10.28
     note:
       en: '"He is passed to Migron."'
       ru: "«проходит Мигрон»."
+      uk: "«Проходить Мигрон»."
+      es: "«Pasó hasta Migrón»."
+      pt: "“Ele passou por Migrom.”"
+      de: "„Er zieht durch Migron.“"
+      fr: "« Il traverse Migron. »"
   - place: adea06c # Michmash
     ref: Isa.10.28
     note:
       en: '"At Michmash he hath laid up his carriages": the baggage is left before the pass.'
       ru: "«в Михмасе складывает свои запасы»: обоз оставлен перед теснинами."
+      uk: "«В Михмасї покидає тягарі свої»: обоз залишають перед проходом."
+      es: "«En Michmas contará su ejército»: el bagaje queda atrás, ante el desfiladero."
+      pt: "“Em Micmás ele guarda a sua bagagem”: a bagagem é deixada diante do desfiladeiro."
+      de: "„Er mustert sein Gerät zu Michmas“: Das Gepäck wird vor dem Engpass zurückgelassen."
+      fr: "« Il laisse ses bagages à Micmasch » : les bagages sont laissés avant le défilé."
   - place: a264254 # Geba
     ref: Isa.10.29
     note:
       en: '"They are gone over the passage": the pass of Michmash, where Jonathan once climbed; at Geba they lodge for the night.'
       ru: "«Проходят теснины»: теснины Михмаса, где когда-то поднимался Ионафан; «в Геве ночлег их»."
+      uk: "«Переходять тїснини»: михмаський прохід, де колись видерся Йонатан; у Гебі вони ночують."
+      es: "«Pasaron el vado»: el paso de Micmas, por donde Jonatán subió en otro tiempo; en Geba pasan la noche."
+      pt: "“Eles atravessaram o desfiladeiro”: o desfiladeiro de Micmás, por onde Jônatas subiu outrora; em Geba passam a noite."
+      de: "„Sie ziehen durch den engen Weg“: der Pass von Michmas, wo einst Jonatan hinaufkletterte; in Geba übernachten sie."
+      fr: "« Ils passent le défilé » : le défilé de Micmasch, où Jonathan avait jadis grimpé ; à Guéba, ils passent la nuit."
   - place: a6d57ed # Ramah
     ref: Isa.10.29
     note:
       en: '"Ramah is afraid."'
       ru: "«Рама трясется»."
+      uk: "«Рама тремтить»."
+      es: "«Ramá tembló»."
+      pt: "“Ramá treme.”"
+      de: "„Rama erschrickt.“"
+      fr: "« Rama tremble. »"
   - place: ac24f5f # Gibeah
     ref: Isa.10.29
     note:
       en: '"Gibeah of Saul is fled": the first king''s town empties before them.'
       ru: "«Гива Саулова разбежалась»: город первого царя пустеет перед ними."
+      uk: "«Гива Саулова розбіглась»: місто першого царя порожніє перед ними."
+      es: "«Gabaa de Saúl huyó»: la ciudad del primer rey se vacía ante ellos."
+      pt: "“Gibeá de Saul fugiu”: a cidade do primeiro rei se esvazia diante deles."
+      de: "„Gibea Sauls flieht“: Die Stadt des ersten Königs leert sich vor ihnen."
+      fr: "« Guibea de Saül prend la fuite » : la ville du premier roi se vide devant eux."
   - place: ac10bcf # Gallim
     ref: Isa.10.30
     note:
       en: '"Lift up thy voice, O daughter of Gallim."'
       ru: "«Вой голосом твоим, дочь Галима»."
+      uk: "«Гукай голосно, дочко Галиму»."
+      es: "«Grita en alta voz, hija de Galim»."
+      pt: "“Clame em alta voz, filha de Galim!”"
+      de: "„Du Tochter Gallim, schreie laut!“"
+      fr: "« Fais éclater ta voix, fille de Gallim ! »"
   - place: a7e39d2 # Laishah
     ref: Isa.10.30
     note:
       en: '"Cause it to be heard unto Laish."'
       ru: "«пусть услышит тебя Лаис»."
+      uk: "«Нехай почують тебе Лаїс»."
+      es: "«Haz que se oiga hacia Lais»."
+      pt: "“Ouça, Laís!”"
+      de: "„merke auf, Laisa“"
+      fr: "« Prends garde, Laïs ! »"
   - place: ab34789 # Anathoth
     ref: Isa.10.30
     note:
       en: '"O poor Anathoth": the town Jeremiah will later come from (Jer 1:1).'
       ru: "«бедный Анафоф!»: городок, из которого позже выйдет Иеремия (Иер 1:1)."
+      uk: "«Анатот бідний!»: місто, з якого згодом вийде Єремія (Єр 1:1)."
+      es: "«Pobrecilla Anathoth»: la ciudad de la que saldrá más tarde Jeremías (Jer 1:1)."
+      pt: "“Pobre Anatote!”: a cidade de onde Jeremias virá mais tarde (Jr 1:1)."
+      de: "„du elendes Anathoth“: die Stadt, aus der später Jeremia stammen wird (Jer 1,1)."
+      fr: "« Malheur à toi, Anathoth ! » : la ville d’où viendra plus tard Jérémie (Jr 1:1)."
   - place: a67297a # Madmenah
     ref: Isa.10.31
     note:
       en: '"Madmenah is removed."'
       ru: "«Мадмена разбежалась»."
+      uk: "«Мадмена розбіглась»."
+      es: "«Madmena se alborotó»."
+      pt: "“Madmena é fugitiva.”"
+      de: "„Madmena weicht.“"
+      fr: "« Madména se disperse. »"
   - place: a58df35 # Gebim
     ref: Isa.10.31
     note:
       en: '"The inhabitants of Gebim gather themselves to flee."'
       ru: "«жители Гевима спешат уходить»."
+      uk: "«З Гевиму осадники сквапно утїкають»."
+      es: "«Los moradores de Gebim se juntarán»."
+      pt: "“Os habitantes de Gebim fogem em busca de segurança.”"
+      de: "„die Bürger zu Gebim werden flüchtig.“"
+      fr: "« Les habitants de Guébim sont en fuite. »"
   - place: afdda14 # Nob
     ref: Isa.10.32
     note:
       en: '"As yet shall he remain at Nob that day": at the priests'' town (1 Sam 22:19), within sight of Jerusalem.'
       ru: "«Еще день простоит он в Нове»: в Номве, городе священников (1 Цар 22:19), в виду Иерусалима."
+      uk: "«Ще лиш день простоїть він у Нобі»: у місті священиків (1 Сам 22:19), на виду в Єрусалима."
+      es: "«Aún vendrá día cuando reposará en Nob»: en la ciudad de los sacerdotes (1 S 22:19), a la vista de Jerusalén."
+      pt: "“Ainda hoje ele fará uma parada em Nobe”: na cidade dos sacerdotes (1Sm 22:19), à vista de Jerusalém."
+      de: "„Man bleibt vielleicht einen Tag zu Nob“: in der Priesterstadt (1. Sam 22,19), in Sichtweite von Jerusalem."
+      fr: "« Encore un jour de halte à Nob » : à la ville des sacrificateurs (1 S 22:19), en vue de Jérusalem."
   - place: a15257a # Jerusalem
     ref: Isa.10.32-Isa.10.34
     note:
       en: 'He shakes his hand against "the mount of the daughter of Zion, the hill of Jerusalem": here the picture ends. The Lord of hosts lops the bough with terror, the high ones of stature are hewn down, and Lebanon falls by a mighty one.'
       ru: "Он «грозит рукою своею горе Сиону, холму Иерусалимскому»: здесь картина обрывается. Господь Саваоф страшною силою сорвёт ветви, величающиеся ростом будут срублены, и Ливан падёт от Всемогущего."
+      uk: "Він погрожує рукою «Сионові, узгіррю Ерусалимському»: тут картина закінчується. Господь Саваот обтинає віття жахом, високі на зріст зрубані, і Ліван падає від могутнього."
+      es: "Alza su mano «al monte de la hija de Sión, al collado de Jerusalem»: aquí termina la imagen. El Señor de los ejércitos desgaja el ramo con terror, los de gran altura son cortados, y el Líbano cae ante un poderoso."
+      pt: "Ele sacode a mão contra “o monte da filha de Sião, a colina de Jerusalém”: aqui termina o quadro. O Senhor dos Exércitos corta o ramo com terror, os de alta estatura são derrubados, e o Líbano cai pela mão de um poderoso."
+      de: "Er regt seine Hand „wider den Berg der Tochter Zion, wider den Hügel Jerusalems“: Hier endet das Bild. Der Herr Zebaoth verhaut die Äste mit Macht, die Hochgewachsenen werden gefällt, und der Libanon fällt durch einen Mächtigen."
+      fr: "Il menace de sa main « la montagne de la fille de Sion, la colline de Jérusalem » : ici s’arrête le tableau. L’Éternel des armées brise les rameaux avec violence, les plus grands sont coupés, et le Liban tombe sous le Puissant."

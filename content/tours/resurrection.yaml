@@ -7,6 +7,11 @@ id: resurrection
 title:
   en: "The resurrection and the appearances"
   ru: "Воскресение и явления"
+  uk: "Воскресіння і явлення"
+  es: "La resurrección y las apariciones"
+  pt: "A ressurreição e as aparições"
+  de: "Die Auferstehung und die Erscheinungen"
+  fr: "La résurrection et les apparitions"
 year: "AD 30"
 people: ["Jesus@Isa.7.14-Rev"]
 approximate: true
@@ -16,28 +21,58 @@ stops:
     note:
       en: "In the garden by the place of the crucifixion the tomb is empty, and Mary Magdalene sees the risen Lord."
       ru: "В саду у места распятия гроб пуст, и Мария Магдалина видит воскресшего Господа."
+      uk: "У саду біля місця розп’яття гріб порожній, і Марія Магдалина бачить воскреслого Господа."
+      es: "En el huerto junto al lugar de la crucifixión el sepulcro está vacío, y María Magdalena ve al Señor resucitado."
+      pt: "No jardim junto ao lugar da crucificação, o túmulo está vazio, e Maria Madalena vê o Senhor ressuscitado."
+      de: "Im Garten bei der Kreuzigungsstätte ist das Grab leer, und Maria Magdalena sieht den auferstandenen Herrn."
+      fr: "Dans le jardin près du lieu de la crucifixion, le tombeau est vide, et Marie-Madeleine voit le Seigneur ressuscité."
   - place: ae7274b # Emmaus
     ref: Luke.24.13-Luke.24.32
     note:
       en: "On the way to Emmaus two disciples walk with Him without knowing Him; at the table they know Him in the breaking of bread."
       ru: "По пути в Эммаус двое учеников идут с Ним, не узнавая Его; за трапезой они узнают Его при преломлении хлеба."
+      uk: "По дорозі до Еммауса двоє учнів ідуть з Ним, не впізнаючи Його; за столом вони пізнають Його при переломленні хліба."
+      es: "En el camino de Emaús dos discípulos caminan con él sin reconocerlo; a la mesa lo reconocen al partir el pan."
+      pt: "A caminho de Emaús, dois discípulos andam com Ele sem o reconhecer; à mesa o reconhecem no partir do pão."
+      de: "Auf dem Weg nach Emmaus gehen zwei Jünger mit ihm, ohne ihn zu erkennen; bei Tisch erkennen sie ihn am Brechen des Brotes."
+      fr: "Sur le chemin d’Emmaüs, deux disciples marchent avec lui sans le reconnaître ; à table, ils le reconnaissent à la fraction du pain."
   - place: a15257a # Jerusalem
     ref: Luke.24.33-Luke.24.43
     note:
       en: 'In Jerusalem Jesus stands among the disciples: "Peace be unto you."'
       ru: "В Иерусалиме Иисус становится посреди учеников: «мир вам»."
+      uk: "В Єрусалимі Ісус стає посеред учнів: «Упокій вам»."
+      es: "En Jerusalén Jesús se pone en medio de los discípulos: «Paz á vosotros»."
+      pt: "Em Jerusalém, Jesus se põe no meio dos discípulos: “Paz seja com vocês.”"
+      de: "In Jerusalem tritt Jesus mitten unter die Jünger: „Friede sei mit euch!“"
+      fr: "À Jérusalem, Jésus se tient au milieu des disciples : « La paix soit avec vous ! »"
   - place: a562fcc # Sea of Galilee
     ref: John.21.1-John.21.17
     note:
       en: 'By the Sea of Galilee He asks Peter three times: "lovest thou me?"'
       ru: "При море Галилейском Он трижды спрашивает Петра: «любишь ли ты Меня?»"
+      uk: "Біля Галілейського моря Він тричі питає Петра: «чи любиш мене?»"
+      es: "Junto al Mar de Galilea pregunta tres veces a Pedro: «¿me amas?»"
+      pt: "Junto ao Mar da Galileia, pergunta três vezes a Pedro: “você me ama?”"
+      de: "Am See Genezareth fragt er Petrus dreimal: „Hast du mich lieb?“"
+      fr: "Au bord de la Mer de Galilée, il demande trois fois à Pierre : « m’aimes-tu ? »"
   - place: a9cf1e8 # Galilee
     ref: Matt.28.16-Matt.28.20
     note:
       en: 'On a mountain in Galilee He sends the eleven: "teach all nations."'
       ru: "На горе в Галилее Он посылает одиннадцать: «научите все народы»."
+      uk: "На горі в Галілеї Він посилає одинадцятьох: «навчайте всї народи»."
+      es: "En un monte de Galilea envía a los once: «doctrinad á todos los Gentiles»."
+      pt: "Num monte da Galileia, envia os onze: “façam discípulos de todas as nações.”"
+      de: "Auf einem Berg in Galiläa sendet er die Elf aus: „lehret alle Völker“."
+      fr: "Sur une montagne de Galilée, il envoie les onze : « faites de toutes les nations des disciples »."
   - place: ac2c4c5 # Mount of Olives
     ref: Acts.1.6-Acts.1.12
     note:
       en: 'From the Mount of Olives He is taken up: "ye shall be witnesses unto me."'
       ru: "С горы Елеонской Он возносится: «будете Мне свидетелями»."
+      uk: "З Оливкової гори Його піднесено: «будете менї сьвідками»."
+      es: "Desde el Monte de los Olivos es elevado: «me sereís testigos»."
+      pt: "Do Monte das Oliveiras é elevado ao céu: “serão minhas testemunhas.”"
+      de: "Vom Ölberg wird er aufgenommen: „werdet meine Zeugen sein“."
+      fr: "Du Mont des Oliviers, il est enlevé : « vous serez mes témoins »."

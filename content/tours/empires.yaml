@@ -24,6 +24,11 @@ id: empires
 title:
   en: "Empires of the biblical world"
   ru: "Империи библейского мира"
+  uk: "Імперії біблійного світу"
+  es: "Los imperios del mundo bíblico"
+  pt: "Impérios do mundo bíblico"
+  de: "Reiche der biblischen Welt"
+  fr: "Les empires du monde biblique"
 year: "2100 BC"
 # Capitals in the order of history, not a way travelled: no time on foot.
 walked: false
@@ -34,51 +39,96 @@ stops:
     note:
       en: 'Around 2100 BC Ur on the lower Euphrates is the capital of the Third Dynasty, which rules Sumer and Akkad. Genesis begins Abram''s road here, by the usual identification of Ur of the Chaldees: Terah takes his family "from Ur of the Chaldees, to go into the land of Canaan".'
       ru: "Около 2100 г. до н. э. Ур на нижнем Евфрате — столица III династии, правящей Шумером и Аккадом. Здесь, по обычному отождествлению Ура Халдейского, в книге Бытия начинается путь Аврама: Фарра выходит с семьёй «из Ура Халдейского, чтобы идти в землю Ханаанскую»."
+      uk: "Близько 2100 р. до н. е. Ур на нижньому Євфраті — столиця Третьої династії, що править Шумером і Аккадом. За звичайним ототожненням Ура Халдейського, саме тут починається в Книзі Буття шлях Аврама: Тара забирає свою родину «із Ура Халдейського, щоб ійти в землю Канаанську»."
+      es: "Hacia 2100 a. C. Ur, en el curso bajo del Éufrates, es la capital de la Tercera dinastía, que gobierna Sumer y Acad. El Génesis hace comenzar aquí el camino de Abram, según la identificación habitual de Ur de los caldeos: Tara saca a su familia «de Ur de los Caldeos, para ir á la tierra de Canaán»."
+      pt: "Por volta de 2100 a.C., Ur, no baixo Eufrates, é a capital da Terceira Dinastia de Ur, que governa Sumer e Acade. O Gênesis inicia aqui o caminho de Abrão, segundo a identificação habitual de Ur dos Caldeus: Terá leva a sua família “de Ur dos Caldeus para ir à terra de Canaã”."
+      de: "Um 2100 v. Chr. ist Ur am unteren Euphrat die Hauptstadt der Dritten Dynastie, die über Sumer und Akkad herrscht. Nach der üblichen Gleichsetzung von Ur in Chaldäa beginnt hier Abrams Weg im Buch Genesis: Tarach führt seine Familie „aus Ur in Chaldäa, daß er ins Land Kanaan zöge“."
+      fr: "Vers 2100 av. J.-C., Ur, sur le cours inférieur de l’Euphrate, est la capitale de la Troisième dynastie, qui règne sur Sumer et Akkad. La Genèse y fait commencer la route d’Abram, selon l’identification habituelle d’Ur en Chaldée : Térach emmène sa famille « d’Ur en Chaldée, pour aller au pays de Canaan »."
   - place: ab8fdbc # Babel
     ref: Gen.10.10
     year: "1760 BC"
     note:
       en: 'Under Hammurabi, Babel (Babylon) becomes the capital of a kingdom uniting southern Mesopotamia. Genesis names it first among the cities of Nimrod: "the beginning of his kingdom was Babel".'
       ru: "При Хаммурапи Вавилон становится столицей царства, объединившего юг Месопотамии. Книга Бытия называет его первым среди городов Нимрода: «Царство его вначале составляли: Вавилон, Эрех, Аккад и Халне»."
+      uk: "За Хаммурапі Вавилон (Бабель) стає столицею царства, що об’єднує південну Месопотамію. Книга Буття називає його першим серед міст Німрода: «Царюваннє ж його роспростерлось на Бабилон, і Ерех, і Аккад…»"
+      es: "Bajo Hammurabi, Babel (Babilonia) se convierte en la capital de un reino que une el sur de Mesopotamia. El Génesis la nombra la primera entre las ciudades de Nimrod: «fué la cabecera de su reino Babel»."
+      pt: "Sob Hamurabi, Babel (Babilônia) torna-se a capital de um reino que une o sul da Mesopotâmia. O Gênesis a nomeia em primeiro lugar entre as cidades de Ninrode: “O princípio do seu reino foi Babel”."
+      de: "Unter Hammurapi wird Babel (Babylon) die Hauptstadt eines Reiches, das Südmesopotamien vereint. Genesis nennt es als Erstes unter den Städten Nimrods: „der Anfang seines Reiches war Babel“."
+      fr: "Sous Hammurabi, Babel (Babylone) devient la capitale d’un royaume unissant la Mésopotamie méridionale. La Genèse la nomme en premier parmi les villes de Nimrod : « Il régna d’abord sur Babel »."
   - place: a9674fc # Thebes
     ref: Nah.3.8-Nah.3.10
     year: "1450 BC"
     note:
       en: 'Under Thutmose III Thebes, the city of Amon, is the heart of the New Kingdom, whose rule reaches the Euphrates. The Bible knows it as No: Nahum recalls its sack by the Assyrians about 663 BC, "populous No, that was situate among the rivers".'
       ru: "При Тутмосе III Но (египетские Фивы), город бога Амона, — сердце Нового царства, власть которого доходит до Евфрата. Наум вспоминает его разорение ассирийцами около 663 г. до н. э.: «Разве ты лучше Но-Аммона, находящегося между реками»."
+      uk: "За Тутмоса III Фіви, місто Амона, — серце Нового царства, влада якого сягає Євфрату. Біблія знає їх як Но: Наум згадує про їхній розгром ассирійцями близько 663 р. до н. е.: «Но-Аммон, що розложився між ріками»."
+      es: "Bajo Tutmosis III, Tebas, la ciudad de Amón, es el corazón del Reino Nuevo, cuyo dominio llega hasta el Éufrates. La Biblia la conoce como No: Nahum recuerda su saqueo por los asirios hacia 663 a. C., «No-amón, que estaba asentada entre ríos»."
+      pt: "Sob Tutmés III, Tebas, a cidade de Amom, é o coração do Novo Império, cujo domínio alcança o Eufrates. A Bíblia a conhece como Nô: Naum recorda o seu saque pelos assírios por volta de 663 a.C., “Nô-Amom, que estava situada entre os rios”."
+      de: "Unter Thutmosis III. ist Theben, die Stadt Amons, das Herz des Neuen Reiches, dessen Herrschaft bis zum Euphrat reicht. Die Bibel kennt es als No: Nahum erinnert an seine Plünderung durch die Assyrer um 663 v. Chr., „No-Amon, die da lag an den Wassern“."
+      fr: "Sous Thoutmosis III, Thèbes, la ville d’Amon, est le cœur du Nouvel Empire, dont l’autorité atteint l’Euphrate. La Bible la connaît sous le nom de No : Nahum rappelle son sac par les Assyriens vers 663 av. J.-C., « No-Amon, qui était assise au milieu des fleuves »."
   - place: a70fd5d # Nineveh
     ref: 2Kgs.19.36
     year: "701 BC"
     note:
       en: 'Sennacherib has made Nineveh the capital of Assyria, the power that took Samaria and now wars against Judah. After his campaign he "departed, and went and returned, and dwelt at Nineveh."'
       ru: "Сеннахирим сделал Ниневию столицей Ассирии — державы, взявшей Самарию и теперь воюющей с Иудеей. После похода «отправился, и пошел, и возвратился Сеннахирим, царь Ассирийский, и жил в Ниневии»."
+      uk: "Сінаххеріб зробив Ніневію столицею Ассирії, держави, що взяла Самарію й тепер воює проти Юди. Після свого походу він «рушив … та й пійшов і вернувсь, та й седїв у Ниневиї»."
+      es: "Senaquerib ha hecho de Nínive la capital de Asiria, la potencia que tomó Samaria y ahora guerrea contra Judá. Tras su campaña «se partió, y se fué y tornó á Nínive, donde se estuvo»."
+      pt: "Senaqueribe fez de Nínive a capital da Assíria, o poder que tomou Samaria e agora guerreia contra Judá. Depois da sua campanha, ele “partiu, voltou para casa e viveu em Nínive”."
+      de: "Sanherib hat Ninive zur Hauptstadt Assyriens gemacht, der Macht, die Samaria genommen hat und nun gegen Juda Krieg führt. Nach seinem Feldzug „zog [er] weg und kehrte um und blieb zu Ninive“."
+      fr: "Sanchérib a fait de Ninive la capitale de l’Assyrie, la puissance qui a pris Samarie et qui fait maintenant la guerre à Juda. Après sa campagne, il « leva son camp, partit et s’en retourna ; et il resta à Ninive »."
   - place: a217d18 # Babylon
     ref: Dan.4.30
     year: "580 BC"
     note:
       en: 'Nebuchadnezzar has made Babylon the capital of an empire from the Persian Gulf to the border of Egypt, with the exiles of Judah in it. In Daniel he boasts: "Is not this great Babylon, that I have built for the house of the kingdom by the might of my power".'
       ru: "Навуходоносор сделал Вавилон столицей державы от Персидского залива до границ Египта; здесь живут изгнанники из Иудеи. В книге Даниила царь говорит: «это ли не величественный Вавилон, который построил я в дом царства силою моего могущества»."
+      uk: "Навуходоносор зробив Вавилон столицею імперії від Перської затоки до кордону Єгипту, з вигнанцями Юди в ній. У Книзі Даниїла він хвалиться: «Чи ж не великий сей Вавилон, що я встроїв його на дім царства силою моєї потуги»."
+      es: "Nabucodonosor ha hecho de Babilonia la capital de un imperio que va del golfo Pérsico a la frontera de Egipto, con los desterrados de Judá en ella. En Daniel se jacta: «¿No es ésta la gran Babilonia, que yo edifiqué para casa del reino, con la fuerza de mi poder…?»"
+      pt: "Nabucodonosor fez da Babilônia a capital de um império que vai do golfo Pérsico até a fronteira do Egito, com os exilados de Judá dentro dele. Em Daniel ele se gaba: “Não é esta a grande Babilônia, que eu construí para a residência real, pela força do meu poder”."
+      de: "Nebukadnezar hat Babylon zur Hauptstadt eines Reiches vom Persischen Golf bis an die Grenze Ägyptens gemacht, mit den Verbannten Judas darin. Im Buch Daniel rühmt er sich: „Das ist die große Babel, die ich erbaut habe zum königlichen Hause durch meine große Macht“."
+      fr: "Nebucadnetsar a fait de Babylone la capitale d’un empire allant du golfe Persique à la frontière de l’Égypte, avec les exilés de Juda. Dans Daniel, il se vante : « N’est-ce pas ici Babylone la grande, que j’ai bâtie, comme résidence royale, par la puissance de ma force »."
   - place: a033b84 # Susa
     ref: Esth.1.1-Esth.1.3
     year: "483 BC"
     note:
       en: 'Susa is a royal seat of the Persian king, who reigns "from India even unto Ethiopia" from his throne in "Shushan the palace". In the third year of his reign Ahasuerus, usually identified with Xerxes I, holds a great feast here.'
       ru: "Сузы — резиденция персидского царя, который царствует «от Индии и до Ефиопии». В третий год своего царствования он устраивает здесь пир; книга Есфирь называет его Артаксерксом, обычно его отождествляют с Ксерксом I."
+      uk: "Сузи — царська резиденція перського царя, що править «від Индиї до Етиопиї» зі свого престолу «в Сузах, престольному містї». На третій рік свого царювання Артаксеркс, якого зазвичай ототожнюють з Ксерксом I, влаштовує тут великий бенкет."
+      es: "Susa es residencia real del rey persa, que reina «desde la India hasta la Etiopía» desde su trono en «Susán capital del reino». En el tercer año de su reinado Asuero, que suele identificarse con Jerjes I, celebra aquí un gran banquete."
+      pt: "Susã é uma sede real do rei persa, que reina “desde a Índia até a Etiópia” a partir do seu trono no “palácio de Susã”. No terceiro ano do seu reinado, Assuero, geralmente identificado com Xerxes I, dá aqui uma grande festa."
+      de: "Susa ist ein Königssitz des persischen Königs, der „von Indien bis an Mohrenland“ regiert, von seinem Thron in „Schloß Susan“ aus. Im dritten Jahr seiner Herrschaft hält Ahasveros, gewöhnlich mit Xerxes I. gleichgesetzt, hier ein großes Mahl."
+      fr: "Suse est une résidence royale du roi de Perse, qui règne « depuis l’Inde jusqu’en Éthiopie » depuis son trône « à Suse, dans la capitale ». La troisième année de son règne, Assuérus, habituellement identifié à Xerxès Ier, y donne un grand festin."
   - place: aee7248 # Alexandria
     ref: Acts.18.24
     year: "250 BC"
     note:
       en: 'Alexandria is the capital of Ptolemaic Egypt, where the Torah is being translated into Greek (the Septuagint). The Bible names the city only three centuries later, in Acts: Apollos is "born at Alexandria, an eloquent man, and mighty in the scriptures".'
       ru: "Александрия — столица Египта Птолемеев; здесь Пятикнижие переводят на греческий (Септуагинта). Библия называет город лишь три века спустя, в Деяниях: Аполлос — «родом из Александрии, муж красноречивый и сведущий в Писаниях»."
+      uk: "Александрія — столиця Єгипту Птолемеїв, де Тору перекладають грецькою (Септуагінта). Біблія називає це місто лише через три століття, у Діях: Аполлос — «родом Александриєць, чоловік вимовний і сильний у писаннях»."
+      es: "Alejandría es la capital del Egipto ptolemaico, donde se está traduciendo la Torá al griego (la Septuaginta). La Biblia nombra la ciudad solo tres siglos más tarde, en Hechos: Apolos es «natural de Alejandría, varón elocuente, poderoso en las Escrituras»."
+      pt: "Alexandria é a capital do Egito ptolomaico, onde a Torá está sendo traduzida para o grego (a Septuaginta). A Bíblia nomeia a cidade apenas três séculos depois, em Atos: Apolo é “natural de Alexandria, homem de grande eloquência… poderoso nas Escrituras”."
+      de: "Alexandria ist die Hauptstadt des ptolemäischen Ägypten, wo die Tora ins Griechische übersetzt wird (die Septuaginta). Die Bibel nennt die Stadt erst drei Jahrhunderte später, in der Apostelgeschichte: Apollos ist „von Geburt aus Alexandrien, ein beredter Mann und mächtig in der Schrift“."
+      fr: "Alexandrie est la capitale de l’Égypte ptolémaïque, où la Torah est traduite en grec (la Septante). La Bible ne nomme la ville que trois siècles plus tard, dans les Actes : Apollos est « originaire d’Alexandrie, homme éloquent et versé dans les Écritures »."
   - place: ae41ab4 # Antioch
     ref: Acts.11.26
     year: "AD 43"
     note:
       en: 'Once the Seleucid capital, Antioch is now the seat of the Roman governor of Syria and one of the largest cities of the empire. Barnabas and Saul teach here a whole year, "and the disciples were called Christians first in Antioch."'
       ru: "Бывшая столица Селевкидов, Антиохия теперь — резиденция римского наместника Сирии и один из крупнейших городов империи. Варнава и Савл целый год учат здесь, «и ученики в Антиохии в первый раз стали называться Христианами»."
+      uk: "Колись столиця Селевкідів, Антіохія тепер — резиденція римського намісника Сирії та одне з найбільших міст імперії. Варнава й Саул навчають тут цілий рік, «і ученики в Антиохиї стали найперш звати ся Християнами»."
+      es: "Antes capital seléucida, Antioquía es ahora sede del gobernador romano de Siria y una de las mayores ciudades del imperio. Bernabé y Saúl enseñan aquí todo un año, «y los discípulos fueron llamados Cristianos primeramente en Antioquía»."
+      pt: "Outrora capital selêucida, Antioquia é agora a sede do governador romano da Síria e uma das maiores cidades do império. Barnabé e Saulo ensinam aqui um ano inteiro, e “em Antioquia, os discípulos foram chamados cristãos pela primeira vez”."
+      de: "Einst die Hauptstadt der Seleukiden, ist Antiochia jetzt der Sitz des römischen Statthalters von Syrien und eine der größten Städte des Reiches. Barnabas und Saulus lehren hier ein ganzes Jahr, „daher die Jünger am ersten zu Antiochien Christen genannt wurden“."
+      fr: "Jadis capitale séleucide, Antioche est maintenant le siège du gouverneur romain de Syrie et l’une des plus grandes villes de l’empire. Barnabas et Saül y enseignent toute une année, et « ce fut à Antioche que, pour la première fois, les disciples furent appelés chrétiens »."
   - place: afc8e7a # Rome
     ref: Acts.28.16
     year: "AD 60"
     note:
       en: 'Rome under Nero rules the whole Mediterranean, Judea with it. Paul arrives as a prisoner: "when we came to Rome, the centurion delivered the prisoners to the captain of the guard".'
       ru: "Рим при Нероне владеет всем Средиземноморьем, и Иудеей тоже. Павел приходит сюда узником: «Когда же пришли мы в Рим, то сотник передал узников военачальнику»."
+      uk: "Рим за Нерона править усім Середземномор’ям, а з ним і Юдеєю. Павло прибуває як в’язень: «Як же прийшли ми в Рим, сотник передав вязників воїводї»."
+      es: "Roma, bajo Nerón, gobierna todo el Mediterráneo, y con él Judea. Pablo llega como preso: «como llegamos á Roma, el centurión entregó los presos al prefecto de los ejércitos»."
+      pt: "Roma, sob Nero, governa todo o Mediterrâneo, e com ele a Judeia. Paulo chega como prisioneiro: “Quando entramos em Roma, o centurião entregou os prisioneiros ao capitão da guarda”."
+      de: "Rom beherrscht unter Nero das ganze Mittelmeer, Judäa mit ihm. Paulus kommt als Gefangener an: „Da wir aber gen Rom kamen, überantwortete der Unterhauptmann die Gefangenen dem obersten Hauptmann“."
+      fr: "Rome, sous Néron, domine toute la Méditerranée, et la Judée avec elle. Paul y arrive prisonnier : à l’arrivée à Rome, le centurion remet les prisonniers au chef des gardes."

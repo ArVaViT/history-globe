@@ -7,6 +7,11 @@ id: jesus
 title:
   en: "The life of Jesus"
   ru: "Земная жизнь Иисуса"
+  uk: "Життя Ісуса"
+  es: "La vida de Jesús"
+  pt: "A vida de Jesus"
+  de: "Das Leben Jesu"
+  fr: "La vie de Jésus"
 year: "AD 30"
 people: ["Jesus@Isa.7.14-Rev"]
 approximate: true
@@ -17,85 +22,170 @@ stops:
     note:
       en: "Jesus is born in Bethlehem of Judea in the days of Herod."
       ru: "Иисус рождается в Вифлееме Иудейском во дни царя Ирода."
+      uk: "Ісус народжується у Вифлеємі Юдейському за днів Ірода."
+      es: "Jesús nace en Belén de Judea en los días de Herodes."
+      pt: "Jesus nasce em Belém da Judeia nos dias de Herodes."
+      de: "Jesus wird zur Zeit des Herodes in Bethlehem in Judäa geboren."
+      fr: "Jésus naît à Bethléhem de Judée, du temps d’Hérode."
   - place: af301ca # Egypt
     ref: Matt.2.13-Matt.2.15
     year: "5 BC"
     note:
       en: "Joseph takes the child and his mother to Egypt."
       ru: "Иосиф уводит Младенца и Матерь Его в Египет."
+      uk: "Йосип забирає дитя та його матір до Єгипту."
+      es: "José lleva a Egipto al niño y a su madre."
+      pt: "José leva o menino e a mãe dele ao Egito."
+      de: "Josef nimmt das Kind und seine Mutter mit nach Ägypten."
+      fr: "Joseph emmène l’enfant et sa mère en Égypte."
   - place: af5884f # Nazareth
     ref: Matt.2.23
     year: "4 BC"
     note:
       en: "The family settles in Nazareth."
       ru: "Семья поселяется в Назарете."
+      uk: "Родина оселяється в Назареті."
+      es: "La familia se establece en Nazaret."
+      pt: "A família se estabelece em Nazaré."
+      de: "Die Familie lässt sich in Nazareth nieder."
+      fr: "La famille s’établit à Nazareth."
   - place: a6e060d # Bethany beyond the Jordan
     ref: John.1.28
     note:
       en: "John baptises at Bethabara (Bethany) beyond the Jordan."
       ru: "Иоанн крестит в Вифаваре при Иордане."
+      uk: "Іван хрестить у Віфаварі (Віфанії) за Йорданом."
+      es: "Juan bautiza en Betábara (Betania), al otro lado del Jordán."
+      pt: "João batiza em Betábara (Betânia), além do Jordão."
+      de: "Johannes tauft in Bethabara (Bethanien) jenseits des Jordan."
+      fr: "Jean baptise à Béthabara (Béthanie), au-delà du Jourdain."
   - place: a031bda # Cana
     ref: John.2.1-John.2.11
     note:
       en: "The wedding at Cana: water becomes wine."
       ru: "Брак в Кане Галилейской: вода становится вином."
+      uk: "Весілля в Кані: вода стає вином."
+      es: "Las bodas de Caná: el agua se convierte en vino."
+      pt: "O casamento em Caná: a água se torna vinho."
+      de: "Die Hochzeit zu Kana: Wasser wird zu Wein."
+      fr: "Les noces de Cana de Galilée : l’eau devient du vin."
   - place: a27b472 # Sychar
     ref: John.4.5-John.4.42
     note:
       en: "At Jacob's well he speaks with the Samaritan woman."
       ru: "У колодца Иакова — беседа с самарянкой."
+      uk: "Біля Якового колодязя Він розмовляє з самарянкою."
+      es: "En el pozo de Jacob habla con la mujer samaritana."
+      pt: "No poço de Jacó, fala com a mulher samaritana."
+      de: "Am Jakobsbrunnen spricht er mit der samaritischen Frau."
+      fr: "Au puits de Jacob, il s’entretient avec la Samaritaine."
   - place: af2161c # Capernaum
     ref: Matt.4.13
     note:
       en: "He leaves Nazareth and makes his home in Capernaum."
       ru: "Оставив Назарет, Он поселяется в Капернауме."
+      uk: "Він залишає Назарет і оселяється в Капернаумі."
+      es: "Deja Nazaret y se establece en Cafarnaúm."
+      pt: "Deixa Nazaré e fixa residência em Cafarnaum."
+      de: "Er verlässt Nazareth und nimmt seinen Wohnsitz in Kapernaum."
+      fr: "Il quitte Nazareth et s’établit à Capernaüm."
   - place: aee679c # Nain
     ref: Luke.7.11-Luke.7.17
     note:
       en: "He raises the widow's son at Nain."
       ru: "В Наине воскрешает сына вдовы."
+      uk: "Він воскрешає сина вдови в Наїні."
+      es: "Resucita al hijo de la viuda en Naín."
+      pt: "Ressuscita o filho da viúva em Naim."
+      de: "Er erweckt den Sohn der Witwe in Nain."
+      fr: "Il ressuscite le fils de la veuve à Naïn."
   - place: a9fc13a # Bethsaida
     ref: Mark.8.22-Mark.8.26
     note:
       en: "He heals a blind man at Bethsaida."
       ru: "В Вифсаиде исцеляет слепого."
+      uk: "Він зцілює сліпого у Віфсаїді."
+      es: "Sana a un ciego en Betsaida."
+      pt: "Cura um cego em Betsaida."
+      de: "Er heilt einen Blinden in Betsaida."
+      fr: "Il guérit un aveugle à Bethsaïda."
   - place: ab7bf48 # Caesarea Philippi
     ref: Matt.16.13-Matt.16.20
     note:
       en: 'Peter confesses: "Thou art the Christ."'
       ru: "Исповедание Петра: «Ты — Христос»."
+      uk: "Петро визнає: «Ти єси Христос»."
+      es: "Pedro confiesa: «Tú eres el Cristo»."
+      pt: "Pedro confessa: “Tu és o Cristo.”"
+      de: "Petrus bekennt: „Du bist Christus.“"
+      fr: "Pierre confesse : « Tu es le Christ. »"
   - place: aaf03fa # Jericho
     ref: Luke.19.1-Luke.19.10
     note:
       en: "On the way to Jerusalem, Zacchaeus at Jericho."
       ru: "По пути в Иерусалим — Закхей в Иерихоне."
+      uk: "На шляху до Єрусалима — Закхей в Єрихоні."
+      es: "De camino a Jerusalén, Zaqueo en Jericó."
+      pt: "A caminho de Jerusalém, Zaqueu em Jericó."
+      de: "Auf dem Weg nach Jerusalem: Zachäus in Jericho."
+      fr: "En route vers Jérusalem, Zachée à Jéricho."
   - place: a4f35bc # Bethany
     ref: John.12.1-John.12.8
     note:
       en: "Six days before the Passover, a supper at Bethany."
       ru: "За шесть дней до Пасхи — вечеря в Вифании."
+      uk: "За шість днів до Пасхи — вечеря у Віфанії."
+      es: "Seis días antes de la Pascua, una cena en Betania."
+      pt: "Seis dias antes da Páscoa, uma ceia em Betânia."
+      de: "Sechs Tage vor dem Passafest ein Mahl in Bethanien."
+      fr: "Six jours avant la Pâque, un repas à Béthanie."
   - place: a15257a # Jerusalem
     ref: Matt.21.1-Matt.21.11
     note:
       en: "The entry into Jerusalem."
       ru: "Вход Господень в Иерусалим."
+      uk: "В’їзд до Єрусалима."
+      es: "La entrada en Jerusalén."
+      pt: "A entrada em Jerusalém."
+      de: "Der Einzug in Jerusalem."
+      fr: "L’entrée dans Jérusalem."
   - place: a42418f # Gethsemane
     ref: Matt.26.36-Matt.26.56
     note:
       en: "Prayer and arrest in Gethsemane."
       ru: "Молитва и взятие под стражу в Гефсимании."
+      uk: "Молитва й арешт у Гетсиманії."
+      es: "Oración y arresto en Getsemaní."
+      pt: "Oração e prisão no Getsêmani."
+      de: "Gebet und Gefangennahme in Gethsemane."
+      fr: "La prière et l’arrestation à Gethsémané."
   - place: a631d35 # Golgotha
     ref: Matt.27.33-Matt.27.56
     note:
       en: "The crucifixion at Golgotha."
       ru: "Распятие на Голгофе."
+      uk: "Розп’яття на Голгофі."
+      es: "La crucifixión en el Gólgota."
+      pt: "A crucificação no Gólgota."
+      de: "Die Kreuzigung auf Golgatha."
+      fr: "La crucifixion au Golgotha."
   - place: ae7274b # Emmaus
     ref: Luke.24.13-Luke.24.35
     note:
       en: "The risen Lord on the road to Emmaus."
       ru: "Воскресший Господь на пути в Эммаус."
+      uk: "Воскреслий Господь на дорозі до Еммауса."
+      es: "El Señor resucitado en el camino de Emaús."
+      pt: "O Senhor ressuscitado no caminho de Emaús."
+      de: "Der auferstandene Herr auf dem Weg nach Emmaus."
+      fr: "Le Seigneur ressuscité sur le chemin d’Emmaüs."
   - place: a4f35bc # Bethany
     ref: Luke.24.50-Luke.24.53
     note:
       en: "The Ascension, near Bethany."
       ru: "Вознесение близ Вифании."
+      uk: "Вознесіння, поблизу Віфанії."
+      es: "La Ascensión, cerca de Betania."
+      pt: "A Ascensão, perto de Betânia."
+      de: "Die Himmelfahrt, nahe bei Bethanien."
+      fr: "L’ascension, près de Béthanie."

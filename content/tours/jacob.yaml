@@ -5,6 +5,11 @@ id: jacob
 title:
   en: "Jacob"
   ru: "Иаков"
+  uk: "Яків"
+  es: "Jacob"
+  pt: "Jacó"
+  de: "Jakob"
+  fr: "Jacob"
 year: "1800 BC"
 people: ["Israel@Gen.25.26-Rev"]
 approximate: true
@@ -14,60 +19,120 @@ stops:
     note:
       en: "Jacob leaves Beersheba and sets out for Haran."
       ru: "Иаков выходит из Вирсавии и идёт в Харран."
+      uk: "Яків залишає Беер-Шеву й вирушає до Харану."
+      es: "Jacob sale de Beerseba y emprende el camino hacia Harán."
+      pt: "Jacó deixa Berseba e parte para Harã."
+      de: "Jakob verlässt Beerscheba und macht sich auf nach Haran."
+      fr: "Jacob quitte Beer-Schéba et part pour Haran."
   - place: a64f355 # Bethel
     ref: Gen.28.11-Gen.28.19
     note:
       en: 'He dreams of a ladder reaching to heaven: "Surely the LORD is in this place; and I knew it not."'
       ru: "Ему снится лестница до неба: «истинно Господь присутствует на месте сем; а я не знал!»"
+      uk: "Йому сниться драбина до неба: «Певно єсть Господь на врочищі сьому, а я й не знав»."
+      es: "Sueña con una escala que llega al cielo: «Ciertamente Jehová está en este lugar, y yo no lo sabía»."
+      pt: "Sonha com uma escada que chega ao céu: “Certamente o SENHOR está neste lugar, e eu não sabia.”"
+      de: "Ihm träumt von einer Leiter, die bis an den Himmel reicht: „Gewiß ist der HERR an diesem Ort, und ich wußte es nicht“."
+      fr: "Il rêve d’une échelle qui touche le ciel : « Certainement, l’Éternel est en ce lieu, et moi, je ne le savais pas ! »"
   - place: a6d9af3 # Haran
     ref: Gen.29.4-Gen.29.30
     note:
       en: "In Haran he serves seven years for Rachel, and they seem to him but a few days."
       ru: "В Харране он служит за Рахиль семь лет, и они кажутся ему за несколько дней."
+      uk: "У Харані він служить сім років за Рахіль, і вони здаються йому кількома днями."
+      es: "En Harán sirve siete años por Raquel, y le parecen pocos días."
+      pt: "Em Harã serve sete anos por Raquel, e lhe parecem apenas poucos dias."
+      de: "In Haran dient er sieben Jahre um Rahel, und sie kommen ihm vor wie wenige Tage."
+      fr: "À Haran, il sert sept ans pour Rachel, et ils lui semblent n’être que quelques jours."
   - place: ae5bfe9 # Mahanaim
     ref: Gen.32.1-Gen.32.2
     note:
       en: 'The angels of God meet him: "This is God''s host."'
       ru: "Его встречают Ангелы Божии: «это ополчение Божие»."
+      uk: "Ангели Божі зустрічають його: «Се Божий полк»."
+      es: "Los ángeles de Dios le salen al encuentro: «El campo de Dios es este»."
+      pt: "Os anjos de Deus o encontram: “Este é o exército de Deus.”"
+      de: "Die Engel Gottes begegnen ihm: „Es sind Gottes Heere.“"
+      fr: "Les anges de Dieu viennent à sa rencontre : « C’est le camp de Dieu ! »"
   - place: a8a9ff9 # Penuel
     ref: Gen.32.24-Gen.32.31
     note:
       en: 'He wrestles until daybreak, is named Israel, and calls the place Penuel: "I have seen God face to face."'
       ru: "Он борется до зари, получает имя Израиль и называет место Пенуэл: «я видел Бога лицем к лицу»."
+      uk: "Він б’ється до світанку, дістає ім’я Ізраїль і називає те місце Пенуел: «бачив бо я Бога лицем до лиця»."
+      es: "Lucha hasta el amanecer, recibe el nombre de Israel y llama al lugar Peniel: «vi á Dios cara á cara»."
+      pt: "Luta até o romper do dia, recebe o nome Israel e chama o lugar Peniel: “Vi a Deus face a face.”"
+      de: "Er ringt bis zum Anbruch der Morgenröte, wird Israel genannt und nennt den Ort Penuel: „denn ich habe Gott von Angesicht gesehen“."
+      fr: "Il lutte jusqu’au lever du jour, reçoit le nom d’Israël et appelle le lieu Peniel : « j’ai vu Dieu face à face »."
   - place: a0905b5 # Succoth
     ref: Gen.33.17
     note:
       en: "At Succoth he builds a house and booths for his cattle."
       ru: "В Сокхофе он строит себе дом и шалаши для скота."
+      uk: "У Сокхоті він будує дім і колиби для своєї худоби."
+      es: "En Sucot edifica una casa y cabañas para su ganado."
+      pt: "Em Sucote constrói uma casa e cabanas para o seu gado."
+      de: "In Sukkot baut er sich ein Haus und Hütten für sein Vieh."
+      fr: "À Succoth, il bâtit une maison et fait des cabanes pour son bétail."
   - place: adf74d4 # Shechem
     ref: Gen.33.18-Gen.33.20
     note:
       en: "He comes safely to Shechem in the land of Canaan and sets up an altar."
       ru: "Он благополучно приходит в Сихем в земле Ханаанской и ставит там жертвенник."
+      uk: "Він благополучно приходить до Сихема в землі Ханаан і ставить жертовник."
+      es: "Llega sano y salvo a Siquem, en la tierra de Canaán, y levanta un altar."
+      pt: "Chega em segurança a Siquém, na terra de Canaã, e levanta um altar."
+      de: "Er kommt wohlbehalten nach Sichem im Land Kanaan und errichtet einen Altar."
+      fr: "Il arrive sain et sauf à Sichem, dans le pays de Canaan, et dresse un autel."
   - place: a64f355 # Bethel
     ref: Gen.35.6-Gen.35.15
     note:
       en: "Back at Bethel God appears to him again and confirms the name Israel."
       ru: "В Вефиле Бог снова является ему и подтверждает имя Израиль."
+      uk: "Знову в Бет-Елі Бог являється йому ще раз і підтверджує ім’я Ізраїль."
+      es: "De nuevo en Betel, Dios se le aparece otra vez y confirma el nombre de Israel."
+      pt: "De volta a Betel, Deus lhe aparece de novo e confirma o nome Israel."
+      de: "Wieder in Bethel erscheint ihm Gott noch einmal und bestätigt den Namen Israel."
+      fr: "De retour à Béthel, Dieu lui apparaît de nouveau et confirme le nom d’Israël."
   - place: a112427 # Bethlehem
     ref: Gen.35.16-Gen.35.20
     note:
       en: "On the way to Ephrath, that is Bethlehem, Rachel dies giving birth, and Jacob sets a pillar on her grave."
       ru: "На дороге в Ефрафу, то есть Вифлеем, умирает Рахиль, родив сына, и Иаков ставит памятник над её гробом."
+      uk: "Дорогою до Ефрати, тобто Вифлеєма, Рахіль помирає, народжуючи, і Яків ставить стовп на її гробі."
+      es: "De camino a Efrata, que es Belén, Raquel muere al dar a luz, y Jacob pone una columna sobre su sepultura."
+      pt: "No caminho para Efrata, isto é, Belém, Raquel morre ao dar à luz, e Jacó levanta uma coluna sobre o seu túmulo."
+      de: "Auf dem Weg nach Efrata, das ist Bethlehem, stirbt Rahel bei der Geburt, und Jakob richtet ein Mal auf ihrem Grab auf."
+      fr: "Sur le chemin d’Éphrata, c’est-à-dire Bethléhem, Rachel meurt en mettant au monde un enfant, et Jacob dresse un monument sur sa tombe."
   - place: a85151a # Hebron
     ref: Gen.35.27-Gen.35.29
     note:
       en: "He comes to his father Isaac at Mamre, which is Hebron; Isaac dies, and Esau and Jacob bury him."
       ru: "Он приходит к отцу своему Исааку в Мамре, то есть Хеврон; Исаак умирает, и Исав с Иаковом погребают его."
+      uk: "Він приходить до свого батька Ісаака в Мамре, тобто Хеврон; Ісаак помирає, і Ісав та Яків ховають його."
+      es: "Llega junto a su padre Isaac, en Mamre, que es Hebrón; Isaac muere, y Esaú y Jacob lo sepultan."
+      pt: "Chega a seu pai Isaque em Manre, que é Hebrom; Isaque morre, e Esaú e Jacó o sepultam."
+      de: "Er kommt zu seinem Vater Isaak nach Mamre, das ist Hebron; Isaak stirbt, und Esau und Jakob begraben ihn."
+      fr: "Il arrive chez son père Isaac à Mamré, qui est Hébron ; Isaac meurt, et Ésaü et Jacob l’ensevelissent."
   - place: a075d61 # Beersheba
     ref: Gen.46.1-Gen.46.4
     year: "1700 BC"
     note:
       en: 'At Beersheba God speaks to him: "Fear not to go down into Egypt."'
       ru: "В Вирсавии Бог говорит ему: «не бойся идти в Египет»."
+      uk: "У Беер-Шеві Бог говорить до нього: «Не опасуйся спуститись у Египет»."
+      es: "En Beerseba Dios le habla: «no temas de descender á Egipto»."
+      pt: "Em Berseba, Deus lhe fala: “Não tenha medo de descer ao Egito.”"
+      de: "In Beerscheba spricht Gott zu ihm: „fürchte dich nicht, nach Ägypten hinabzuziehen“."
+      fr: "À Beer-Schéba, Dieu lui parle : « Ne crains point de descendre en Égypte. »"
   - place: af301ca # Egypt
     ref: Gen.46.5-Gen.46.7
     year: "1700 BC"
     note:
       en: "Jacob and all his family come into Egypt."
       ru: "Иаков и весь род его приходят в Египет."
+      uk: "Яків і вся його родина приходять до Єгипту."
+      es: "Jacob y toda su familia entran en Egipto."
+      pt: "Jacó e toda a sua família entram no Egito."
+      de: "Jakob und seine ganze Familie kommen nach Ägypten."
+      fr: "Jacob et toute sa famille entrent en Égypte."

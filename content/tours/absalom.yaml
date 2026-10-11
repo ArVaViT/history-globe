@@ -7,6 +7,11 @@ id: absalom
 title:
   en: "Absalom's revolt"
   ru: "Восстание Авессалома"
+  uk: "Повстання Авесалома"
+  es: "La rebelión de Absalón"
+  pt: "A revolta de Absalão"
+  de: "Absaloms Aufstand"
+  fr: "La révolte d’Absalom"
 year: "980 BC"
 people: ["Absalom@2Sa.3.3-Psa"]
 approximate: true
@@ -16,38 +21,78 @@ stops:
     note:
       en: 'Absalom goes to Hebron as if to pay a vow, and sends spies through the tribes: at the sound of the trumpet they are to say, "Absalom reigneth in Hebron."'
       ru: "Авессалом уходит в Хеврон будто бы исполнить обет и рассылает по коленам лазутчиков: по звуку трубы говорить «Авессалом воцарился в Хевроне»."
+      uk: "Авесалом іде до Хеврона нібито виконати обітницю й розсилає по колінах шпигунів: за сурмою вони мають говорити: «Абессалом зробився царем у Гебронї!»"
+      es: "Absalón va a Hebrón como para cumplir un voto y envía espías por las tribus: al sonido de la trompeta deben decir: «Absalom reina en Hebrón»."
+      pt: "Absalão vai a Hebrom como para cumprir um voto e envia espiões por entre as tribos: ao som da trombeta, devem dizer: “Absalão é rei em Hebrom!”"
+      de: "Absalom geht nach Hebron, angeblich um ein Gelübde zu erfüllen, und sendet Kundschafter durch die Stämme: Beim Schall der Posaune sollen sie sagen: „Absalom ist König geworden zu Hebron.“"
+      fr: "Absalom se rend à Hébron sous prétexte d’accomplir un vœu et envoie des espions dans les tribus : au son de la trompette, ils devront dire : « Absalom règne à Hébron. »"
   - place: a553110 # Kidron
     ref: 2Sam.15.13-2Sam.15.23
     note:
       en: "David flees Jerusalem, and the king and all the people pass over the brook Kidron toward the wilderness, all the country weeping."
       ru: "Давид уходит из Иерусалима, и царь и весь народ переходят поток Кедрон по дороге к пустыне, и плачет вся земля."
+      uk: "Давид тікає з Єрусалима, і цар та весь народ переходять потік Кедрон дорогою до пустелі, а вся земля плаче."
+      es: "David huye de Jerusalén, y el rey y todo el pueblo cruzan el torrente Cedrón camino del desierto, mientras todo el país llora."
+      pt: "Davi foge de Jerusalém, e o rei e todo o povo atravessam o ribeiro de Cedrom em direção ao deserto, enquanto todo o país chora."
+      de: "David flieht aus Jerusalem, und der König und das ganze Volk ziehen über den Bach Kidron zur Wüste hin, und das ganze Land weint."
+      fr: "David fuit Jérusalem, et le roi et tout le peuple passent le torrent du Cédron en direction du désert, tout le pays pleurant."
   - place: ac2c4c5 # Mount of Olives
     ref: 2Sam.15.30-2Sam.15.37
     note:
       en: "He goes up the Mount of Olives weeping, barefoot and with his head covered, and sends Hushai back to Jerusalem."
       ru: "Он восходит на гору Елеонскую, плача, босой, с покрытой головой, и отправляет Хусия назад в Иерусалим."
+      uk: "Він сходить на Оливкову гору, плачучи, босий і з покритою головою, і відсилає Хусія назад до Єрусалима."
+      es: "Sube llorando el Monte de los Olivos, descalzo y con la cabeza cubierta, y envía de vuelta a Jerusalén a Husai."
+      pt: "Sobe o Monte das Oliveiras chorando, descalço e com a cabeça coberta, e manda Husai de volta a Jerusalém."
+      de: "Weinend, barfuß und mit verhülltem Haupt steigt er den Ölberg hinauf und sendet Huschai nach Jerusalem zurück."
+      fr: "Il gravit le Mont des Oliviers en pleurant, nu-pieds et la tête couverte, et renvoie Huschaï à Jérusalem."
   - place: a9ed5a4 # Bahurim
     ref: 2Sam.16.5-2Sam.16.14
     note:
       en: 'At Bahurim Shimei of the house of Saul curses him and throws stones; David will not have him killed: "let him curse."'
       ru: "В Бахуриме Семей из дома Саулова злословит его и бросает камнями; Давид не даёт убить его: «пусть он злословит»."
+      uk: "У Бахурімі Шимей з дому Саула проклинає його й кидає в нього каміння; Давид не дозволяє його вбити: «Нехай він проклинає»."
+      es: "En Bahurim, Simei, de la casa de Saúl, lo maldice y le arroja piedras; David no consiente que lo maten: «Dejadle que maldiga»."
+      pt: "Em Baurim, Simei, da família de Saul, o amaldiçoa e atira pedras; Davi não permite que o matem: “deixem-no amaldiçoar”."
+      de: "In Bahurim verflucht ihn Schimi aus dem Haus Sauls und wirft mit Steinen; David lässt ihn nicht töten: „Laßt ihn fluchen.“"
+      fr: "À Bachurim, Schimeï, de la maison de Saül, le maudit et lui jette des pierres ; David refuse qu’on le tue : « Laissez-le, et qu’il maudisse. »"
   - place: a15257a # Jerusalem
     ref: 2Sam.16.15-2Sam.16.23
     note:
       en: "Absalom enters Jerusalem and, on Ahithophel's counsel, goes in to his father's concubines before all Israel."
       ru: "Авессалом вступает в Иерусалим и по совету Ахитофела входит к наложницам отца пред глазами всего Израиля."
+      uk: "Авесалом входить до Єрусалима і за порадою Ахітофела входить до наложниць свого батька на очах усього Ізраїлю."
+      es: "Absalón entra en Jerusalén y, por consejo de Ahitofel, se une a las concubinas de su padre a la vista de todo Israel."
+      pt: "Absalão entra em Jerusalém e, por conselho de Aitofel, une-se às concubinas do pai à vista de todo o Israel."
+      de: "Absalom zieht in Jerusalem ein und geht auf den Rat Ahitofels vor ganz Israel zu den Nebenfrauen seines Vaters."
+      fr: "Absalom entre dans Jérusalem et, sur le conseil d’Achitophel, s’unit aux concubines de son père aux yeux de tout Israël."
   - place: aa24ad4 # Wood of Ephraim
     ref: 2Sam.18.6-2Sam.18.17
     note:
       en: "In the wood of Ephraim Absalom's army is beaten; his head caught in an oak, he hangs there, and Joab thrusts three darts into his heart while he is yet alive; Joab's young men slay him."
       ru: "В лесу Ефремовом войско Авессалома разбито; запутавшись волосами в ветвях дуба, он висит, ещё живой, когда Иоав вонзает три стрелы в его сердце, и оруженосцы Иоава добивают его."
+      uk: "У лісі Єфремовому військо Авесалома розбито; його голова застрягає в дубі, і він повисає, а Йоав устромляє три стріли в його серце, поки той ще живий; зброєносці Йоава добивають його."
+      es: "En el bosque de Efraín el ejército de Absalón es derrotado; su cabeza queda prendida en una encina y allí cuelga, y Joab le clava tres dardos en el corazón cuando aún está vivo; los jóvenes de Joab lo matan."
+      pt: "No bosque de Efraim o exército de Absalão é derrotado; com a cabeça presa num carvalho, ele fica pendurado ali, e Joabe crava-lhe três dardos no coração quando ainda está vivo; os jovens de Joabe o matam."
+      de: "Im Wald Ephraim wird Absaloms Heer geschlagen; sein Haupt verfängt sich in einer Eiche, er bleibt hängen, und Joab stößt ihm drei Spieße ins Herz, während er noch lebt; Joabs Waffenträger erschlagen ihn."
+      fr: "Dans la forêt d’Éphraïm, l’armée d’Absalom est battue ; sa tête prise dans un chêne, il reste suspendu, et Joab lui enfonce trois javelots dans le cœur alors qu’il est encore vivant ; les jeunes gens de Joab l’achèvent."
   - place: ae5bfe9 # Mahanaim
     ref: 2Sam.18.19-2Sam.18.33
     note:
       en: 'At Mahanaim, sitting between the two gates, David hears the news and weeps: "O my son Absalom, my son, my son Absalom!"'
       ru: "В Маханаиме, сидя между двумя воротами, Давид получает весть и плачет: «сын мой Авессалом! сын мой, сын мой Авессалом!»"
+      uk: "У Маханаїмі, сидячи між двома брамами, Давид чує вістку й плаче: «Сину мій Абессаломе! Сину мій, сину мій Абессаломе!»"
+      es: "En Mahanaim, sentado entre las dos puertas, David recibe la noticia y llora: «¡Hijo mío Absalom, hijo mío, hijo mío Absalom!»"
+      pt: "Em Maanaim, sentado entre as duas portas, Davi recebe a notícia e chora: “Meu filho Absalão! Meu filho, meu filho Absalão!”"
+      de: "In Mahanajim hört David, zwischen den beiden Toren sitzend, die Nachricht und weint: „Mein Sohn Absalom! mein Sohn, mein Sohn Absalom!“"
+      fr: "À Mahanaïm, assis entre les deux portes, David apprend la nouvelle et pleure : « Mon fils Absalom ! Mon fils, mon fils Absalom ! »"
   - place: ab94aea # Gilgal
     ref: 2Sam.19.15-2Sam.19.40
     note:
       en: "The men of Judah come to Gilgal to bring the king back over the Jordan."
       ru: "Иудеи приходят в Галгал встретить царя и перевезти его через Иордан."
+      uk: "Мужі Юди приходять до Гілгала, щоб привести царя назад через Йордан."
+      es: "Los hombres de Judá llegan a Gilgal para hacer volver al rey al otro lado del Jordán."
+      pt: "Os homens de Judá vão a Gilgal para trazer o rei de volta através do Jordão."
+      de: "Die Männer von Juda kommen nach Gilgal, um den König über den Jordan zurückzuführen."
+      fr: "Les hommes de Juda viennent à Guilgal pour ramener le roi au-delà du Jourdain."

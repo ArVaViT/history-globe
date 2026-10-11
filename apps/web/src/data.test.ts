@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   alsoHere,
-  markRussianDuplicates,
+  markDuplicates,
   beforeItsTime,
   groupSites,
   foldName,
@@ -241,7 +241,7 @@ describe("alsoHere", () => {
   });
 });
 
-describe("markRussianDuplicates", () => {
+describe("markDuplicates", () => {
   it("keeps the most mentioned of one Russian name on one point", () => {
     const features = [
       {
@@ -257,7 +257,7 @@ describe("markRussianDuplicates", () => {
         properties: place("b9", "Babel", "Вавилон", 3, 1),
       },
     ];
-    expect([...markRussianDuplicates(features)]).toEqual(["b4"]);
+    expect([...markDuplicates(features)]).toEqual(["b4"]);
     // A record already hidden as an English duplicate never keeps the Russian label.
     const lydia = [
       {
@@ -269,7 +269,7 @@ describe("markRussianDuplicates", () => {
         properties: place("l2", "Lydia", "Лидия", 3, 0),
       },
     ];
-    expect([...markRussianDuplicates(lydia)]).toEqual([]);
+    expect([...markDuplicates(lydia)]).toEqual([]);
     expect(features.map((f) => Boolean(f.properties.dup_ru))).toEqual([true, false, false]);
   });
 });

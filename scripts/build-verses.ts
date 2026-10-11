@@ -35,7 +35,54 @@ const SOURCES = {
     file: "eng-kjv2006_usfm.zip",
     license: "public domain (Crown copyright in the UK)",
   },
+  // The other languages: classic public-domain editions, eBible.org.
+  uk: {
+    name: "Ukrainian Bible, P. Kulish (eBible.org ukr1871)",
+    url: "https://ebible.org/Scriptures/ukr1871_usfm.zip",
+    file: "ukr1871_usfm.zip",
+    license: "public domain",
+  },
+  es: {
+    name: "Reina-Valera 1909 (eBible.org spaRV1909)",
+    url: "https://ebible.org/Scriptures/spaRV1909_usfm.zip",
+    file: "spaRV1909_usfm.zip",
+    license: "public domain",
+  },
+  pt: {
+    name: "World Portuguese Bible (eBible.org porbrbsl)",
+    url: "https://ebible.org/Scriptures/porbrbsl_usfm.zip",
+    file: "porbrbsl_usfm.zip",
+    license: "public domain",
+  },
+  fr: {
+    name: "Louis Segond 1910 (eBible.org fraLSG)",
+    url: "https://ebible.org/Scriptures/fraLSG_usfm.zip",
+    file: "fraLSG_usfm.zip",
+    license: "public domain",
+  },
+  de: {
+    name: "Luther Bible 1912 (eBible.org deu1912)",
+    url: "https://ebible.org/Scriptures/deu1912_usfm.zip",
+    file: "deu1912_usfm.zip",
+    license: "public domain",
+  },
+  zh: {
+    name: "Chinese Union Version, simplified (eBible.org cmn-cu89s)",
+    url: "https://ebible.org/Scriptures/cmn-cu89s_usfm.zip",
+    file: "cmn-cu89s_usfm.zip",
+    license: "public domain",
+  },
 } as const;
+
+/** Verses per chapter ("Ps.51" → 19) of an edition, to compare its numbering with the KJV. */
+function chapterSizes(bible: Map<string, string>): Map<string, number> {
+  const sizes = new Map<string, number>();
+  for (const ref of bible.keys()) {
+    const ch = ref.split(".").slice(0, 2).join(".");
+    sizes.set(ch, (sizes.get(ch) ?? 0) + 1);
+  }
+  return sizes;
+}
 
 /** Chapters (English numbering) whose Synodal verses toSynodal keeps as they are, though
  * the Synodal text merges or adds verses in them (see synodal.ts). */
@@ -76,8 +123,10 @@ const cited = [...new Set(places.features.flatMap((f) => f.properties.osis))].so
 const next = `${out}.next`;
 rmSync(next, { recursive: true, force: true });
 const counts: Record<string, { verses: number; missing: number; uncertain: number }> = {};
+const kjvSizes = chapterSizes(readBible(fetchSource(SOURCES.en)));
 for (const [locale, src] of Object.entries(SOURCES)) {
   const bible = readBible(fetchSource(src));
+  const sizes = chapterSizes(bible);
   const byBook = new Map<string, Record<string, string>>();
   let missing = 0;
   let uncertain = 0;
@@ -91,6 +140,11 @@ for (const [locale, src] of Object.entries(SOURCES)) {
       }
       const s = toSynodal(book, Number(ch), Number(v));
       text = bible.get(`${book}.${String(s.chapter)}.${String(s.verse)}`);
+    } else if (locale !== "en" && sizes.get(`${book}.${ch}`) !== kjvSizes.get(`${book}.${ch}`)) {
+      // Numbered otherwise than the KJV (a psalm's title counted as verse 1, Malachi 3-4):
+      // left out rather than show a neighbouring verse; the link remains.
+      uncertain++;
+      continue;
     } else text = bible.get(ref);
     if (!text) {
       missing++;
@@ -99,7 +153,13 @@ for (const [locale, src] of Object.entries(SOURCES)) {
     if (text.includes("\\")) throw new Error(`USFM markup left in ${locale} ${ref}: ${text}`);
     const verses = byBook.get(book) ?? {};
     // The digital Synodal text sets its dashes as hyphens: « - » → « — ».
-    verses[ref] = locale === "ru" ? text.replaceAll(" - ", " — ") : text;
+    verses[ref] =
+      locale === "ru"
+        ? text.replaceAll(" - ", " — ")
+        : locale === "zh"
+          ? // The Union Version marks names with a space before them: Chinese has none.
+            text.replace(/\s+(?=[\u4e00-\u9fff])/g, "")
+          : text;
     byBook.set(book, verses);
   }
   mkdirSync(join(next, locale), { recursive: true });

@@ -9,6 +9,11 @@ id: second-temple
 title:
   en: "The first return and the second Temple"
   ru: "Первое возвращение и второй Храм"
+  uk: "Перше повернення і другий храм"
+  es: "El primer retorno y el segundo Templo"
+  pt: "O primeiro retorno e o segundo Templo"
+  de: "Die erste Rückkehr und der zweite Tempel"
+  fr: "Le premier retour et le second temple"
 year: "538 BC"
 # Where the work and the letters were, not a journey: no time on foot.
 walked: false
@@ -19,26 +24,51 @@ stops:
     note:
       en: 'Cyrus king of Persia proclaims: "he hath charged me to build him an house at Jerusalem"; he gives back the vessels of the Temple, and the exiles go up from Babylon.'
       ru: "Кир, царь Персидский, объявляет: «Он повелел мне построить Ему дом в Иерусалиме»; он возвращает сосуды дома Господня, и переселенцы выходят из Вавилона."
+      uk: "Кір, цар Перський, оголошує: «звелїв менї збудувати йому дім в Ерусалимі»; він повертає посуд храму, і вигнанці виходять із Вавилона."
+      es: "Ciro, rey de Persia, proclama: «me ha mandado que le edifique casa en Jerusalem»; devuelve los vasos del Templo, y los desterrados suben de Babilonia."
+      pt: "Ciro, rei da Pérsia, proclama: “ele me ordenou que lhe edificasse uma casa em Jerusalém”; devolve os utensílios do Templo, e os exilados sobem da Babilônia."
+      de: "Kyrus, der König von Persien, lässt ausrufen, der Herr „hat mir befohlen, ihm ein Haus zu bauen zu Jerusalem in Juda“; er gibt die Geräte des Tempels zurück, und die Verbannten ziehen aus Babylon hinauf."
+      fr: "Cyrus, roi de Perse, proclame : « il m’a commandé de lui bâtir une maison à Jérusalem » ; il rend les objets du temple, et les exilés montent de Babylone."
   - place: ae023a9 # Joppa
     ref: Ezra.3.7
     note:
       en: "Cedar is brought from Lebanon by sea to Joppa for the house of God, by leave of Cyrus."
       ru: "Кедровый лес с Ливана доставляют по морю в Яфу (Иоппию) для дома Божия, с дозволения Кира."
+      uk: "За дозволом Кіра кедр везуть з Лівану морем до Яффи для дому Божого."
+      es: "Se trae cedro del Líbano por mar a Jope para la casa de Dios, con permiso de Ciro."
+      pt: "Cedro é trazido do Líbano por mar até Jope para a casa de Deus, com a permissão de Ciro."
+      de: "Mit Erlaubnis des Kyrus wird Zedernholz für das Haus Gottes vom Libanon über das Meer nach Joppe gebracht."
+      fr: "Du cèdre est amené du Liban par mer jusqu’à Joppé pour la maison de Dieu, avec l’autorisation de Cyrus."
   - place: a15257a # Jerusalem
     ref: Ezra.3.8-Ezra.3.13
     year: "536 BC"
     note:
       en: 'The foundation of the Temple is laid with trumpets and song, "for his mercy endureth for ever toward Israel"; old men who had seen the first house weep aloud.'
       ru: "Основание храма полагают с трубами и пением: «ибо вовек милость Его к Израилю»; старики, видевшие прежний храм, громко плачут."
+      uk: "Основу храму закладають під сурми й спів, «бо добрий, бо віковічня ласка його до Ізраїля»; старі, що бачили перший дім, голосно плачуть."
+      es: "Se echa el cimiento del Templo con trompetas y cantos, «porque para siempre es su misericordia sobre Israel»; los ancianos que habían visto la primera casa lloran en alta voz."
+      pt: "O alicerce do Templo é lançado com trombetas e canto, “porque a sua misericórdia dura para sempre sobre Israel”; velhos que tinham visto a primeira casa choram em alta voz."
+      de: "Der Grund des Tempels wird unter Posaunen und Gesang gelegt, „daß er gütig ist und seine Barmherzigkeit ewiglich währet über Israel“; alte Männer, die das erste Haus gesehen hatten, weinen laut."
+      fr: "Les fondements du temple sont posés au son des trompettes et des chants, « car sa miséricorde pour Israël dure à toujours » ; les vieillards qui avaient vu la première maison pleurent à haute voix."
   - place: a212ef7 # Ecbatana
     ref: Ezra.4.24-Ezra.6.12
     year: "520 BC"
     note:
       en: "In the second year of Darius the builders begin again, with the prophets Haggai and Zechariah helping them; asked by the governor, Darius has the archives searched, a scroll with Cyrus's decree is found at Ecbatana in Media, and he orders the work to go on."
       ru: "Во второй год Дария строители снова начинают работу, и пророки Аггей и Захария подкрепляют их; по донесению заречного областеначальника Дарий велит искать в книгохранилище; в Екбатане, в области Мидии, находят свиток с повелением Кира о доме Божием, и Дарий велит продолжать работу."
+      uk: "На другий рік Дарія будівничі починають знову, а їм допомагають пророки Аггей і Захарія; на запит намісника Дарій наказує пошукати в архівах, сувій із указом Кіра знаходять в Екбатані в Мідії, і він наказує продовжувати роботу."
+      es: "En el segundo año de Darío los constructores reanudan la obra, con la ayuda de los profetas Hageo y Zacarías; a petición del gobernador, Darío manda buscar en los archivos, se halla en Ecbatana, en Media, un rollo con el decreto de Ciro, y ordena que la obra continúe."
+      pt: "No segundo ano de Dario, os construtores recomeçam, ajudados pelos profetas Ageu e Zacarias; interrogado pelo governador, Dario manda pesquisar os arquivos, um rolo com o decreto de Ciro é encontrado em Ecbatana, na Média, e ele ordena que a obra continue."
+      de: "Im zweiten Jahr des Darius beginnen die Bauleute von neuem, unterstützt von den Propheten Haggai und Sacharja; vom Statthalter befragt, lässt Darius die Archive durchsuchen, in Ekbatana in Medien wird eine Schriftrolle mit dem Erlass des Kyrus gefunden, und er befiehlt, das Werk fortzusetzen."
+      fr: "La deuxième année de Darius, les bâtisseurs reprennent l’ouvrage, aidés par les prophètes Aggée et Zacharie ; interrogé par le gouverneur, Darius fait chercher dans les archives, un rouleau portant le décret de Cyrus est trouvé à Ecbatane en Médie, et il ordonne que l’ouvrage continue."
   - place: a15257a # Jerusalem
     ref: Ezra.6.15-Ezra.6.22
     year: "516 BC"
     note:
       en: "The house is finished in the sixth year of Darius and dedicated with joy, and those come again out of the captivity keep the Passover."
       ru: "Дом окончен в шестой год Дария и освящён с радостью, и возвратившиеся из плена совершают пасху."
+      uk: "Дім завершено на шостий рік Дарія й освячено з радістю, а ті, що повернулися з полону, відзначають Пасху."
+      es: "La casa se termina en el sexto año de Darío y se dedica con alegría, y los que han vuelto del cautiverio celebran la Pascua."
+      pt: "A casa é concluída no sexto ano de Dario e dedicada com alegria, e os que voltaram do cativeiro celebram a Páscoa."
+      de: "Das Haus wird im sechsten Jahr des Darius vollendet und mit Freuden geweiht, und die aus der Gefangenschaft Zurückgekehrten feiern das Passa."
+      fr: "La maison est achevée la sixième année de Darius et dédiée dans la joie, et ceux qui sont revenus de la captivité célèbrent la Pâque."
