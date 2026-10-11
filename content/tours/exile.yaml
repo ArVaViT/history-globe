@@ -11,6 +11,10 @@ title:
   pt: "A queda de Jerusalém e o exílio"
   de: "Der Fall Jerusalems und das Exil"
   fr: "La chute de Jérusalem et l’exil"
+  pl: "Upadek Jerozolimy i wygnanie"
+  it: "La caduta di Gerusalemme e l’esilio"
+  nl: "De val van Jeruzalem en de ballingschap"
+  cs: "Pád Jeruzaléma a vyhnanství"
 year: "587 BC"
 approximate: true
 stops:
@@ -24,6 +28,10 @@ stops:
       pt: "Nabucodonosor cerca Jerusalém até que a fome se agrave na cidade."
       de: "Nebukadnezar belagert Jerusalem, bis der Hunger in der Stadt überhandnimmt."
       fr: "Nebucadnetsar assiège Jérusalem jusqu’à ce que la famine l’emporte dans la ville."
+      pl: "Nabuchodonozor oblega Jerozolimę, aż głód zwycięża w mieście."
+      it: "Nabucodonosor assedia Gerusalemme finché la fame prevale nella città."
+      nl: "Nebukadnessar belegert Jeruzalem totdat de honger de overhand krijgt in de stad."
+      cs: "Nebukadnesar obléhá Jeruzalém, dokud ve městě nezvítězí hlad."
   - place: a231f80 # Jericho
     ref: 2Kgs.25.4-2Kgs.25.5
     note:
@@ -34,6 +42,10 @@ stops:
       pt: "O rei Zedequias foge e é capturado nas planícies de Jericó."
       de: "König Zedekia flieht und wird in den Ebenen von Jericho ergriffen."
       fr: "Le roi Sédécias s’enfuit et est pris dans les plaines de Jéricho."
+      pl: "Król Sedekiasz ucieka i zostaje schwytany na równinach Jerycha."
+      it: "Il re Sedecia fugge e viene preso nelle pianure di Gerico."
+      nl: "Koning Zedekia slaat op de vlucht en wordt gegrepen op de vlakten van Jericho."
+      cs: "Král Sidkijáš utíká a je dopaden na pláních u Jericha."
   - place: ab2bde8 # Riblah
     ref: 2Kgs.25.6-2Kgs.25.7
     note:
@@ -44,6 +56,10 @@ stops:
       pt: "Julgamento em Ribla: os filhos de Zedequias são mortos e ele é cegado."
       de: "Gericht in Ribla: Zedekias Söhne werden getötet, und er wird geblendet."
       fr: "Jugement à Ribla : les fils de Sédécias sont mis à mort et lui-même est aveuglé."
+      pl: "Wyrok w Ribli: synowie Sedekiasza zostają zabici, a on sam oślepiony."
+      it: "Il giudizio a Ribla: i figli di Sedecia sono uccisi ed egli è accecato."
+      nl: "Oordeel te Ribla: de zonen van Zedekia worden gedood en hij wordt verblind."
+      cs: "Soud v Rible: Sidkijášovi synové jsou zabiti a on je oslepen."
   - place: a15257a # Jerusalem
     ref: 2Kgs.25.8-2Kgs.25.10
     note:
@@ -54,6 +70,10 @@ stops:
       pt: "Nebuzaradã queima o Templo, o palácio e a cidade, e o exército dos caldeus derruba as muralhas."
       de: "Nebusaradan verbrennt den Tempel, den Palast und die Stadt, und das Heer der Chaldäer reißt die Mauern nieder."
       fr: "Nebuzaradan incendie le temple, le palais et la ville, et l’armée des Chaldéens démolit les murailles."
+      pl: "Nebuzaradan pali świątynię, pałac i miasto, a wojsko Chaldejczyków burzy mury."
+      it: "Nebuzaradan incendia il Tempio, il palazzo e la città, e l’esercito dei Caldei abbatte le mura."
+      nl: "Nebuzaradan verbrandt de tempel, het paleis en de stad, en het leger van de Chaldeeën breekt de muren af."
+      cs: "Nebuzaradan pálí chrám, palác i město a vojsko Chaldejců boří hradby."
   - place: a217d18 # Babylon
     ref: 2Kgs.25.11
     note:
@@ -64,6 +84,10 @@ stops:
       pt: "O restante do povo deixado na cidade é levado para o exílio na Babilônia."
       de: "Der Rest des Volkes, der in der Stadt übrig geblieben ist, wird nach Babylon ins Exil geführt."
       fr: "Le reste du peuple demeuré dans la ville est emmené en exil à Babylone."
+      pl: "Reszta ludu pozostawiona w mieście zostaje uprowadzona na wygnanie do Babilonu."
+      it: "Il resto del popolo rimasto nella città è condotto in esilio a Babilonia."
+      nl: "De rest van het volk dat in de stad is achtergebleven, wordt in ballingschap naar Babylon weggevoerd."
+      cs: "Zbytek lidu, který zůstal ve městě, je odvlečen do vyhnanství do Babylóna."
   - place: a6d57ed # Ramah
     ref: Jer.40.1
     by: untold
@@ -75,6 +99,10 @@ stops:
       pt: "Em Ramá, Jeremias é libertado do meio dos cativos."
       de: "In Rama wird Jeremia aus den Gefangenen freigelassen."
       fr: "À Rama, Jérémie est libéré du milieu des captifs."
+      pl: "W Ramie Jeremiasz zostaje uwolniony spośród jeńców."
+      it: "A Rama Geremia è messo in libertà di mezzo ai prigionieri."
+      nl: "Te Rama wordt Jeremia uit de gevangenen vrijgelaten."
+      cs: "V Rámě je Jeremjáš propuštěn z řad zajatců."
   - place: a736f6c # Mizpah
     ref: Jer.40.6
     note:
@@ -85,6 +113,10 @@ stops:
       pt: "Fica com Gedalias, o governador, em Mispá."
       de: "Er bleibt bei Gedalja, dem Statthalter, in Mizpa."
       fr: "Il demeure auprès de Guedalia, le gouverneur, à Mitspa."
+      pl: "Zatrzymuje się u Gedaliasza, namiestnika, w Mispie."
+      it: "Rimane con Godolia, il governatore, a Mizpa."
+      nl: "Hij blijft bij Gedalja, de stadhouder, te Mizpa."
+      cs: "Zůstává u správce Gedaljáše v Micpě."
   - place: adb008c # Tahpanhes
     ref: Jer.43.7
     note:
@@ -95,3 +127,7 @@ stops:
       pt: "Depois do assassinato de Gedalias, o remanescente foge para o Egito, para Tafnes."
       de: "Nach der Ermordung Gedaljas flieht der Rest nach Ägypten, nach Tachpanhes."
       fr: "Après l’assassinat de Guedalia, le reste du peuple s’enfuit en Égypte, à Tachpanès."
+      pl: "Po zabójstwie Gedaliasza reszta ludu ucieka do Egiptu, do Tachpanches."
+      it: "Dopo l’uccisione di Godolia il resto del popolo fugge in Egitto, a Tafni."
+      nl: "Na de moord op Gedalja vlucht het overblijfsel naar Egypte, naar Tachpanhes."
+      cs: "Po Gedaljášově vraždě prchá zbytek do Egypta, do Tachpanchés."

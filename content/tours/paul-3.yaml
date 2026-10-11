@@ -12,6 +12,10 @@ title:
   pt: "A terceira viagem de Paulo"
   de: "Die dritte Reise des Paulus"
   fr: "Le troisième voyage de Paul"
+  pl: "Trzecia podróż Pawła"
+  it: "Il terzo viaggio di Paolo"
+  nl: "De derde reis van Paulus"
+  cs: "Třetí Pavlova cesta"
 year: "AD 54"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -26,6 +30,10 @@ stops:
       pt: "Paulo parte de Antioquia novamente."
       de: "Paulus bricht wieder von Antiochia auf."
       fr: "Paul repart d’Antioche."
+      pl: "Paweł znów wyrusza z Antiochii."
+      it: "Paolo parte di nuovo da Antiochia."
+      nl: "Paulus vertrekt opnieuw uit Antiochië."
+      cs: "Pavel opět vyráží z Antiochie."
   - place: a5feb15
     ref: Acts.19.1-Acts.20.1
     note:
@@ -36,6 +44,10 @@ stops:
       pt: "Cerca de três anos em Éfeso; o tumulto de Demétrio."
       de: "Etwa drei Jahre in Ephesus; der Aufruhr des Demetrius."
       fr: "Environ trois ans à Éphèse ; l’émeute de Démétrius."
+      pl: "Około trzech lat w Efezie; rozruchy wywołane przez Demetriusza."
+      it: "Circa tre anni a Efeso; il tumulto di Demetrio."
+      nl: "Ongeveer drie jaar in Efeze; het oproer van Demetrius."
+      cs: "Asi tři roky v Efezu; vzpoura Démétriova."
   - place: a49e1d0
     ref: Acts.20.1-Acts.20.6
     by: untold
@@ -47,6 +59,10 @@ stops:
       pt: "Pela Macedônia até a Grécia por três meses, e de volta; depois dos dias dos pães ázimos, navegam de Filipos."
       de: "Durch Mazedonien nach Griechenland für drei Monate und zurück; nach den Tagen der ungesäuerten Brote segeln sie von Philippi ab."
       fr: "Par la Macédoine jusqu’en Grèce pour trois mois, et retour ; après les jours des pains sans levain, ils s’embarquent à Philippes."
+      pl: "Przez Macedonię do Grecji na trzy miesiące i z powrotem; po dniach przaśników odpływają z Filippi."
+      it: "Attraverso la Macedonia fino in Grecia per tre mesi, e ritorno; dopo i giorni degli azzimi salpano da Filippi."
+      nl: "Door Macedonië naar Griekenland voor drie maanden, en terug; na de dagen van de ongezuurde broden zeilen zij vanuit Filippi."
+      cs: "Přes Makedonii do Řecka na tři měsíce a zpět; po dnech nekvašených chlebů vyplouvají z Filip."
   - place: a91c509
     ref: Acts.20.6-Acts.20.12
     by: sea
@@ -59,6 +75,10 @@ stops:
       pt: "Sete dias em Trôade; Êutico."
       de: "Sieben Tage in Troas; Eutychus."
       fr: "Sept jours à Troas ; Eutychus."
+      pl: "Siedem dni w Troadzie; Eutych."
+      it: "Sette giorni a Troade; Eutico."
+      nl: "Zeven dagen in Troas; Eutychus."
+      cs: "Sedm dní v Troadě; Eutychos."
   - place: a0a2ca7
     ref: Acts.20.13
     note:
@@ -69,6 +89,10 @@ stops:
       pt: "Paulo vai a pé até Assôs."
       de: "Paulus geht zu Fuß nach Assos."
       fr: "Paul se rend à pied à Assos."
+      pl: "Paweł idzie pieszo do Assos."
+      it: "Paolo va a piedi fino ad Asso."
+      nl: "Paulus gaat te voet naar Assos."
+      cs: "Pavel jde pěšky do Assu."
   - place: a33910d
     ref: Acts.20.14
     by: sea
@@ -80,6 +104,10 @@ stops:
       pt: "Chegam a Mitilene."
       de: "Sie kommen nach Mitylene."
       fr: "Ils arrivent à Mytilène."
+      pl: "Przybywają do Mityleny."
+      it: "Giungono a Mitilene."
+      nl: "Zij komen te Mitylene."
+      cs: "Přicházejí do Mitylén."
   - place: a4c2c75
     ref: Acts.20.15
     by: sea
@@ -92,6 +120,10 @@ stops:
       pt: "Defronte de Quios."
       de: "Gegenüber von Chios."
       fr: "En face de Chios."
+      pl: "Naprzeciw Chios."
+      it: "Di fronte a Chio."
+      nl: "Tegenover Chios."
+      cs: "Naproti Chiu."
   - place: acf6ec0
     ref: Acts.20.15
     by: sea
@@ -104,6 +136,10 @@ stops:
       pt: "Aportam em Samos."
       de: "Sie legen in Samos an."
       fr: "Ils abordent à Samos."
+      pl: "Zawijają do Samos."
+      it: "Fanno scalo a Samo."
+      nl: "Zij leggen aan bij Samos."
+      cs: "Připlouvají k Samu."
   - place: a55027d
     ref: Acts.20.17-Acts.20.38
     by: sea
@@ -116,6 +152,10 @@ stops:
       pt: "Despedida dos presbíteros de Éfeso."
       de: "Abschied von den Ältesten von Ephesus."
       fr: "Adieux aux anciens d’Éphèse."
+      pl: "Pożegnanie ze starszymi z Efezu."
+      it: "L’addio agli anziani di Efeso."
+      nl: "Afscheid van de oudsten van Efeze."
+      cs: "Rozloučení se staršími z Efezu."
   - place: a398e5d
     ref: Acts.21.1
     by: sea
@@ -127,6 +167,10 @@ stops:
       pt: "Rumo direto a Cós."
       de: "Auf geradem Kurs nach Kos."
       fr: "Route directe vers Cos."
+      pl: "Prosta droga do Kos."
+      it: "Rotta diretta verso Coo."
+      nl: "Een rechte koers naar Kos."
+      cs: "Přímá plavba do Kósu."
   - place: a4218ee
     ref: Acts.21.1
     by: sea
@@ -139,6 +183,10 @@ stops:
       pt: "Rodes."
       de: "Rhodos."
       fr: "Rhodes."
+      pl: "Rodos."
+      it: "Rodi."
+      nl: "Rhodos."
+      cs: "Rhodos."
   - place: ade301b
     ref: Acts.21.1-Acts.21.2
     by: sea
@@ -150,6 +198,10 @@ stops:
       pt: "Em Pátara encontram um navio para a Fenícia."
       de: "In Patara finden sie ein Schiff nach Phönizien."
       fr: "À Patara, ils trouvent un navire pour la Phénicie."
+      pl: "W Patara znajdują okręt do Fenicji."
+      it: "A Patara trovano una nave per la Fenicia."
+      nl: "Te Patara vinden zij een schip naar Fenicië."
+      cs: "V Patarech nacházejí loď do Fénicie."
   - place: a160272
     ref: Acts.21.3-Acts.21.6
     by: sea
@@ -161,6 +213,10 @@ stops:
       pt: "Sete dias com os discípulos em Tiro."
       de: "Sieben Tage bei den Jüngern in Tyrus."
       fr: "Sept jours avec les disciples à Tyr."
+      pl: "Siedem dni z uczniami w Tyrze."
+      it: "Sette giorni con i discepoli a Tiro."
+      nl: "Zeven dagen bij de discipelen te Tyrus."
+      cs: "Sedm dní s učedníky v Týru."
   - place: abc2af0
     ref: Acts.21.7
     by: sea
@@ -172,6 +228,10 @@ stops:
       pt: "Um dia com os irmãos em Ptolemaida."
       de: "Ein Tag bei den Brüdern in Ptolemais."
       fr: "Un jour avec les frères à Ptolémaïs."
+      pl: "Jeden dzień z braćmi w Ptolemaidzie."
+      it: "Un giorno con i fratelli a Tolemaide."
+      nl: "Een dag bij de broeders te Ptolemaïs."
+      cs: "Jeden den s bratřími v Ptolemaidě."
   - place: a58735e
     ref: Acts.21.8-Acts.21.14
     by: sea
@@ -183,6 +243,10 @@ stops:
       pt: "Na casa de Filipe; a profecia de Ágabo."
       de: "Im Haus des Philippus; die Weissagung des Agabus."
       fr: "Dans la maison de Philippe ; la prophétie d’Agabus."
+      pl: "W domu Filipa; proroctwo Agabosa."
+      it: "In casa di Filippo; la profezia di Agabo."
+      nl: "In het huis van Filippus; de profetie van Agabus."
+      cs: "V domě Filipově; proroctví Agabovo."
   - place: a15257a
     ref: Acts.21.15-Acts.21.17
     note:
@@ -193,3 +257,7 @@ stops:
       pt: "Os irmãos em Jerusalém os recebem com alegria."
       de: "Die Brüder in Jerusalem nehmen sie gern auf."
       fr: "À Jérusalem, les frères les accueillent avec joie."
+      pl: "Bracia w Jerozolimie przyjmują ich z radością."
+      it: "I fratelli di Gerusalemme li accolgono con gioia."
+      nl: "De broeders in Jeruzalem ontvangen hen met vreugde."
+      cs: "Bratří v Jeruzalémě je přijímají s radostí."

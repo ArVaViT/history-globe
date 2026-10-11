@@ -13,6 +13,10 @@ title:
   pt: "As seis cidades de refúgio"
   de: "Die sechs Freistädte"
   fr: "Les six villes de refuge"
+  pl: "Sześć miast ucieczki"
+  it: "Le sei città di rifugio"
+  nl: "De zes vrijsteden"
+  cs: "Šest útočištných měst"
 year: "1406 BC"
 # Where the cities were, not a journey: no time on foot.
 walked: false
@@ -28,6 +32,10 @@ stops:
       pt: "Moisés separa três cidades a leste do Jordão, “para que o homicida pudesse fugir para lá, aquele que matasse o seu próximo sem intenção”: primeiro Bezer, no deserto, na planície, dos rubenitas."
       de: "Mose sondert drei Städte östlich des Jordan aus, „daß dahin flöhe, wer seinen Nächsten totschlägt unversehens“: zuerst Bezer in der Wüste, im ebenen Land, im Gebiet Rubens."
       fr: "Moïse met à part trois villes à l’orient du Jourdain, « afin qu’elles servissent de refuge au meurtrier qui aurait involontairement tué son prochain » : d’abord Betser, dans le désert, dans la plaine, chez les Rubénites."
+      pl: "Mojżesz wyznacza trzy miasta na wschód od Jordanu, „aby tam uciekał mężobójca, któryby zabił bliźniego swego z nieobaczenia”: najpierw Beser na pustyni, na równinie, w ziemi Rubena."
+      it: "Mosè mette da parte tre città a est del Giordano, «perché servissero di rifugio all’omicida che avesse ucciso il suo prossimo involontariamente»: prima Beser, nel deserto, sull’altopiano, per Ruben."
+      nl: "Mozes zondert drie steden ten oosten van de Jordaan af, “Opdat daarheen vlood de doodslager, die zijn naaste onwetende doodslaat”: eerst Bezer in de woestijn, in het vlakke land, van Ruben."
+      cs: "Mojžíš odděluje tři města na východ od Jordánu, „aby utekl do nich vražedlník, kterýž by zabil bližního svého nechtě“: nejprve Beser na poušti, na rovině, v území Rúbenově."
   - place: a95147f # Ramoth
     ref: Deut.4.43
     note:
@@ -38,6 +46,10 @@ stops:
       pt: "Ramote em Gileade, dos gaditas: Ramote-Gileade, onde Acabe cairia."
       de: "Ramot in Gilead im Gebiet der Gaditer: das Ramot in Gilead, wo Ahab fallen sollte."
       fr: "Ramoth en Galaad, chez les Gadites : Ramoth en Galaad, où Achab devait tomber."
+      pl: "Ramot w Gileadzie, w ziemi Gadytów: to Ramot w Gileadzie, gdzie padnie Achab."
+      it: "Ramot in Galaad, per i Gaditi: Ramot di Galaad, dove cadrà Acab."
+      nl: "Ramot in Gilead, van de Gadieten, waar Achab zou vallen."
+      cs: "Rámot v Gileadu, v území Gádově: Rámot v Gileadu, kde padne Achab."
   - place: abb5c1e # Golan
     ref: Deut.4.43
     note:
@@ -48,6 +60,10 @@ stops:
       pt: "Golã em Basã, de Manassés, a mais setentrional das três."
       de: "Golan in Baschan im Gebiet Manasses, die nördlichste der drei."
       fr: "Golan en Basan, chez les Manassites, la plus septentrionale des trois."
+      pl: "Golan w Baszanie, w ziemi Manassesa, najdalej na północ spośród tych trzech."
+      it: "Golan in Basan, per Manasse, la più settentrionale delle tre."
+      nl: "Golan in Basan, van Manasse, de noordelijkste van de drie."
+      cs: "Golán v Bášanu, v území Manasesově, nejsevernější ze tří."
   - place: a662eed # Kedesh
     ref: Josh.20.1-Josh.20.7
     note:
@@ -58,6 +74,10 @@ stops:
       pt: "Depois da conquista, a terra a oeste do Jordão recebe as suas três, “para que o homicida que matar qualquer pessoa acidentalmente ou sem intenção possa fugir para lá”: primeiro Quedes, na Galileia, no monte Naftali."
       de: "Nach der Eroberung erhält das Land westlich des Jordan seine drei, „dahin fliehen möge ein Totschläger, der eine Seele unversehens und unwissend schlägt“: zuerst Kedesch in Galiläa auf dem Gebirge Naftali."
       fr: "Après la conquête, le pays à l’occident du Jourdain reçoit les siennes, « où pourra s’enfuir le meurtrier qui aura tué quelqu’un involontairement, sans intention » : d’abord Kédesch en Galilée, dans la montagne de Nephthali."
+      pl: "Po podboju ziemia na zachód od Jordanu otrzymuje swoje trzy, „aby tam uciekł mężobójca, coby zabił człowieka nie chcąc, z niewiadomości”: najpierw Kedesz w Galilei, w górach Neftalego."
+      it: "Dopo la conquista il paese a ovest del Giordano riceve le sue tre, «affinché l’omicida che avrà ucciso qualcuno senza averne l’intenzione, possa ricoverarvisi»: prima Kedes in Galilea, sui monti di Neftali."
+      nl: "Na de verovering krijgt het land ten westen van de Jordaan zijn drie, “Dat daarhenen vliede de doodslager, die een ziel door dwaling, niet met wetenschap, verslaat”: eerst Kedes in Galilea in het gebergte Naftali."
+      cs: "Po dobytí země dostává tři města i země západně od Jordánu, „aby tam utekl vražedlník, kterýž by zabil člověka nechtě a z nevědomí“: nejprve Kedeš v Galileji na pohoří Neftalí."
   - place: adf74d4 # Shechem
     ref: Josh.20.7
     note:
@@ -68,6 +88,10 @@ stops:
       pt: "Siquém, no monte Efraim, entre Ebal e Gerizim, onde Josué renovará a aliança."
       de: "Sichem auf dem Gebirge Ephraim, zwischen Ebal und Garizim, wo Josua den Bund erneuern wird."
       fr: "Sichem dans la montagne d’Éphraïm, entre l’Ébal et le Garizim, où Josué renouvellera l’alliance."
+      pl: "Sychem w górach Efraima, między Ebal a Garizim, gdzie Jozue odnowi przymierze."
+      it: "Sichem sul monte Efraim, tra l’Ebal e il Gherizim, dove Giosuè rinnoverà l’alleanza."
+      nl: "Sichem in het Bergland van Efraïm, tussen Ebal en Gerizim, waar Jozua het verbond zal vernieuwen."
+      cs: "Šekem na pohoří Efrajim, mezi Ébalem a Gerizimem, kde Jozue obnoví smlouvu."
   - place: a85151a # Hebron
     ref: Josh.20.7-Josh.20.9
     note:
@@ -78,3 +102,7 @@ stops:
       pt: "Quiriate-Arba, que é Hebrom, na região montanhosa de Judá. As cidades são “para todos os filhos de Israel, e para o estrangeiro que vive entre eles”, até que o homicida compareça perante a congregação."
       de: "Kirjat-Arba, das ist Hebron, auf dem Gebirge Juda. Die Städte sind „allen Kindern Israel und den Fremdlingen, die unter ihnen wohnten“ bestimmt, bis der Totschläger vor der Gemeinde steht."
       fr: "Kirjath-Arba, qui est Hébron, dans la montagne de Juda. Ces villes sont « pour tous les enfants d’Israël et pour l’étranger en séjour au milieu d’eux », jusqu’à ce que le meurtrier comparaisse devant l’assemblée."
+      pl: "Kiriat-Arba, czyli Hebron, w górach Judy. Miasta służą „wszystkim synom Izraelskim, i cudzoziemcom, którzy mieszkali w pośrodku ich”, dopóki mężobójca nie stanie przed zgromadzeniem."
+      it: "Kiriat-Arba, cioè Ebron, sui monti di Giuda. Le città sono assegnate «a tutti i figliuoli d’Israele e allo straniero dimorante fra loro», finché l’omicida compaia davanti alla comunità."
+      nl: "Kirjat-Arba, dat is Hebron, in het gebergte van Juda. De steden zijn “voor al de kinderen Israëls, en voor den vreemdeling, die in het midden van henlieden verkeert”, totdat de doodslager voor de vergadering staat."
+      cs: "Kirjat-arba, to jest Hebron, na pohoří Juda. Města jsou „všechněm synům Izraelským, i příchozímu, kterýž pohostinu jest mezi nimi“, dokud vrah nestane před shromážděním."

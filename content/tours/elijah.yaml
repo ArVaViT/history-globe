@@ -9,6 +9,10 @@ title:
   pt: "Elias, o profeta"
   de: "Der Prophet Elia"
   fr: "Élie le prophète"
+  pl: "Prorok Eliasz"
+  it: "Il profeta Elia"
+  nl: "De profeet Elia"
+  cs: "Prorok Elijáš"
 year: "860 BC"
 people: ["Elijah@1Ki.17.1-Jas"]
 approximate: true
@@ -23,6 +27,10 @@ stops:
       pt: "Elias prediz a seca e se esconde junto ao ribeiro de Querite, onde corvos lhe trazem pão e carne."
       de: "Elia kündigt die Dürre an und verbirgt sich am Bach Krit, wo Raben ihm Brot und Fleisch bringen."
       fr: "Élie annonce la sécheresse et se cache près du torrent de Kerith, où des corbeaux lui apportent du pain et de la viande."
+      pl: "Eliasz zapowiada suszę i ukrywa się nad potokiem Kerit, dokąd kruki przynoszą mu chleb i mięso."
+      it: "Elia predice la siccità e si nasconde presso il torrente Cherit, dove i corvi gli portano pane e carne."
+      nl: "Elia kondigt de droogte aan en verbergt zich bij de beek Kerit, waar raven hem brood en vlees brengen."
+      cs: "Elijáš předpovídá sucho a skrývá se u potoka Kerít, kde mu havrani nosí chléb a maso."
   - place: a6fa2d3 # Zarephath
     ref: 1Kgs.17.8-1Kgs.17.24
     note:
@@ -33,6 +41,10 @@ stops:
       pt: "Em Sarepta de Sidom, a vasilha de farinha da viúva não se esgota nem o seu jarro de azeite falta, e o filho dela é trazido de volta à vida."
       de: "In Sarepta bei Sidon geht der Mehltopf der Witwe nicht aus, und ihr Ölkrug versiegt nicht, und ihr Sohn wird wieder lebendig."
       fr: "À Sarepta de Sidon, la farine de la veuve ne s’épuise pas et l’huile de sa cruche ne manque pas, et son fils est rendu à la vie."
+      pl: "W Sarepcie sydońskiej dzban mąki wdowy nie wyczerpuje się, a w jej baryłce nie ubywa oliwy, i jej syn zostaje przywrócony do życia."
+      it: "A Sarepta di Sidone il vaso della farina della vedova non si esaurisce né manca l’orcio dell’olio, e suo figlio è riportato in vita."
+      nl: "Te Sarefat bij Sidon raakt de meelbus van de weduwe niet leeg en de oliekruik niet op, en haar zoon wordt weer tot leven gebracht."
+      cs: "V Sarepťe Sidonské se vdově nespotřebuje mouka v kbelíku ani neubývá oleje v nádobce a její syn je přiveden zpět k životu."
   - place: a3e21c6 # Mount Carmel
     ref: 1Kgs.18.19-1Kgs.18.40
     note:
@@ -43,6 +55,10 @@ stops:
       pt: "No Monte Carmelo, o fogo do Senhor cai sobre o sacrifício diante dos profetas de Baal."
       de: "Auf dem Karmel fällt das Feuer des Herrn vor den Propheten Baals auf das Opfer."
       fr: "Sur le Mont Carmel, le feu de l’Éternel tombe sur le sacrifice devant les prophètes de Baal."
+      pl: "Na Karmelu ogień Pański spada na ofiarę wobec proroków Baala."
+      it: "Sul Monte Carmelo il fuoco del Signore scende sul sacrificio davanti ai profeti di Baal."
+      nl: "Op de Karmel valt het vuur van de HEER op het offer, voor de ogen van de profeten van Baäl."
+      cs: "Na hoře Karmel padá oheň Hospodinův na oběť před proroky Baalovými."
   - place: ae0bf4a # Jezreel
     ref: 1Kgs.18.41-1Kgs.18.46
     note:
@@ -53,6 +69,10 @@ stops:
       pt: "Vem a chuva, e Elias corre diante de Acabe até a entrada de Jezreel."
       de: "Der Regen kommt, und Elia läuft vor Ahab her bis zum Eingang von Jesreel."
       fr: "La pluie vient, et Élie court devant Achab jusqu’à l’entrée de Jizreel."
+      pl: "Przychodzi deszcz, a Eliasz biegnie przed Achabem aż do wejścia do Jizreel."
+      it: "Viene la pioggia, ed Elia corre davanti ad Acab fino all’ingresso di Izreel."
+      nl: "De regen komt, en Elia rent voor Achab uit tot aan de ingang van Jizreël."
+      cs: "Přichází déšť a Elijáš běží před Achabem až ke vjezdu do Jizreelu."
   - place: ad2f6c2 # Beersheba
     ref: 1Kgs.19.1-1Kgs.19.4
     note:
@@ -63,6 +83,10 @@ stops:
       pt: "Fugindo de Jezabel, chega a Berseba e segue deserto adentro."
       de: "Auf der Flucht vor Isebel kommt er nach Beerscheba und zieht weiter in die Wüste."
       fr: "Fuyant Jézabel, il arrive à Beer-Schéba et poursuit son chemin dans le désert."
+      pl: "Uciekając przed Izebel, dociera do Beer-Szeby i idzie dalej na pustynię."
+      it: "Fuggendo da Gezabele, giunge a Bersabea e prosegue nel deserto."
+      nl: "Op de vlucht voor Izebel komt hij te Berseba en trekt verder de woestijn in."
+      cs: "Prchá před Jezábel, dochází do Beer-šeby a pokračuje dál na poušť."
   - place: a9bb03e # Mount Horeb
     ref: 1Kgs.19.8-1Kgs.19.15
     note:
@@ -73,6 +97,10 @@ stops:
       pt: "Em Horebe, o monte de Deus, o Senhor não está no vento, no terremoto nem no fogo; depois do fogo vem uma voz mansa e delicada."
       de: "Am Horeb, dem Berg Gottes, ist der Herr nicht im Wind, nicht im Erdbeben und nicht im Feuer; nach dem Feuer kommt ein stilles, sanftes Sausen."
       fr: "À Horeb, la montagne de Dieu, l’Éternel n’est ni dans le vent, ni dans le tremblement de terre, ni dans le feu ; après le feu vient un murmure doux et léger."
+      pl: "Na Horebie, górze Bożej, Pana nie ma w wichrze, w trzęsieniu ziemi ani w ogniu; po ogniu przychodzi głos cichy i łagodny."
+      it: "All’Oreb, il monte di Dio, il Signore non è nel vento, nel terremoto né nel fuoco; dopo il fuoco viene un suono dolce e sommesso."
+      nl: "Op de Horeb, de berg van God, is de HEER niet in de wind, de aardbeving of het vuur; na het vuur komt een stil, zacht suizen."
+      cs: "Na Chorébu, hoře Boží, Hospodin není ve vichru, zemětřesení ani v ohni; po ohni přichází tichý a jemný hlas."
   - place: a5a1bdd # Abel-meholah
     ref: 1Kgs.19.16-1Kgs.19.21
     note:
@@ -83,6 +111,10 @@ stops:
       pt: "Eliseu, filho de Safate, de Abel-Meolá, é chamado do arado para seguir Elias."
       de: "Elisa, der Sohn Schafats, aus Abel-Mehola, wird vom Pflügen weg gerufen, um Elia zu folgen."
       fr: "Élisée, fils de Schaphat, d’Abel-Mehola, est appelé de derrière la charrue pour suivre Élie."
+      pl: "Elizeusz, syn Szafata, z Abel-Mechola, zostaje powołany od pługa, by pójść za Eliaszem."
+      it: "Eliseo, figlio di Safat, di Abel-Mecolà, è chiamato dall’aratro a seguire Elia."
+      nl: "Elisa, de zoon van Safat, uit Abel-Mehola, wordt van de ploeg geroepen om Elia te volgen."
+      cs: "Elíša, syn Šafatův z Ábel-mecholy, je od pluhu povolán, aby následoval Elijáše."
   - place: ae0bf4a # Jezreel
     ref: 1Kgs.21.1-1Kgs.21.24
     note:
@@ -93,6 +125,10 @@ stops:
       pt: "A vinha de Nabote em Jezreel: Elias pronuncia juízo sobre Acabe e Jezabel."
       de: "Nabots Weinberg in Jesreel: Elia spricht das Gericht über Ahab und Isebel aus."
       fr: "La vigne de Naboth à Jizreel : Élie prononce le jugement sur Achab et Jézabel."
+      pl: "Winnica Nabota w Jizreel: Eliasz ogłasza wyrok na Achaba i Izebel."
+      it: "La vigna di Nabot a Izreel: Elia pronuncia il giudizio su Acab e Gezabele."
+      nl: "De wijngaard van Nabot in Jizreël: Elia spreekt het oordeel uit over Achab en Izebel."
+      cs: "Nábotův vinohrad v Jizreelu: Elijáš vyslovuje soud nad Achabem a Jezábel."
   - place: a6399b3 # Gilgal
     ref: 2Kgs.2.1
     note:
@@ -103,6 +139,10 @@ stops:
       pt: "Quando o Senhor está para levá-lo, Elias parte de Gilgal com Eliseu."
       de: "Als der Herr Elia aufnehmen will, bricht dieser mit Elisa von Gilgal auf."
       fr: "Au moment où l’Éternel va l’enlever, Élie part de Guilgal avec Élisée."
+      pl: "Gdy Pan ma go wziąć do góry, Eliasz wyrusza z Gilgal razem z Elizeuszem."
+      it: "Quando il Signore sta per rapirlo in cielo, Elia parte da Gàlgala con Eliseo."
+      nl: "Als de HEER Elia wil opnemen, vertrekt hij met Elisa uit Gilgal."
+      cs: "Když chce Hospodin Elijáše vzít vzhůru, vychází Elijáš z Gilgalu s Elíšou."
   - place: a64f355 # Bethel
     ref: 2Kgs.2.2-2Kgs.2.3
     note:
@@ -113,6 +153,10 @@ stops:
       pt: "Eliseu não o deixa: descem a Betel."
       de: "Elisa will ihn nicht verlassen: Sie gehen hinab nach Bethel."
       fr: "Élisée ne veut pas le quitter : ils descendent à Béthel."
+      pl: "Elizeusz nie chce go opuścić: schodzą do Betel."
+      it: "Eliseo non vuole lasciarlo: scendono a Betel."
+      nl: "Elisa wil hem niet verlaten: zij gaan af naar Bethel."
+      cs: "Elíša ho neopouští: sestupují do Bét-elu."
   - place: a231f80 # Jericho
     ref: 2Kgs.2.4-2Kgs.2.5
     note:
@@ -123,6 +167,10 @@ stops:
       pt: "Depois a Jericó, onde os filhos dos profetas vão até Eliseu."
       de: "Dann nach Jericho, wo die Prophetenjünger zu Elisa kommen."
       fr: "Puis à Jéricho, où les fils des prophètes viennent trouver Élisée."
+      pl: "Potem do Jerycha, gdzie synowie proroków przychodzą do Elizeusza."
+      it: "Poi a Gerico, dove i figli dei profeti vengono da Eliseo."
+      nl: "Dan naar Jericho, waar de profetenzonen naar Elisa toe komen."
+      cs: "Potom do Jericha, kde přicházejí k Elíšovi synové proroků."
   - place: ae686c9 # Jordan
     ref: 2Kgs.2.6-2Kgs.2.14
     note:
@@ -133,3 +181,7 @@ stops:
       pt: "Elias divide o Jordão com o seu manto; um carro de fogo separa os dois; Elias sobe num redemoinho ao céu, e Eliseu toma o manto dele."
       de: "Elia teilt den Jordan mit seinem Mantel; ein feuriger Wagen trennt die beiden; Elia fährt in einem Wirbelsturm in den Himmel auf, und Elisa hebt seinen Mantel auf."
       fr: "Élie divise le Jourdain avec son manteau ; un char de feu les sépare ; Élie monte au ciel dans un tourbillon, et Élisée ramasse son manteau."
+      pl: "Eliasz rozdziela Jordan swoim płaszczem; rydwan ognisty rozdziela obu; Eliasz wstępuje w wichrze do nieba, a Elizeusz podnosi jego płaszcz."
+      it: "Elia divide il Giordano con il suo mantello; un carro di fuoco separa i due; Elia sale al cielo in un turbine, ed Eliseo raccoglie il suo mantello."
+      nl: "Elia splijt de Jordaan met zijn mantel; een wagen van vuur scheidt de twee; Elia stijgt in een wervelwind op naar de hemel, en Elisa raapt zijn mantel op."
+      cs: "Elijáš rozdělí Jordán svým pláštěm; ohnivý vůz je od sebe odloučí; Elijáš vystupuje ve vichru do nebe a Elíša zvedá jeho plášť."

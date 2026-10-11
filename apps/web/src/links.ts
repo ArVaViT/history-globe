@@ -13,6 +13,10 @@ const GATEWAY_VERSION: Readonly<Partial<Record<Locale, string>>> = {
   pt: "ARC",
   fr: "LSG",
   de: "LUTH1545",
+  it: "NR2006",
+  nl: "HTB",
+  pl: "UBG",
+  cs: "B21",
   zh: "CUVS",
 };
 

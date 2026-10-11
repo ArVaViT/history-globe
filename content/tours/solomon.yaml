@@ -10,6 +10,10 @@ title:
   pt: "Salomão"
   de: "Salomo"
   fr: "Salomon"
+  pl: "Salomon"
+  it: "Salomone"
+  nl: "Salomo"
+  cs: "Šalomoun"
 year: "970 BC"
 # Solomon's deeds where they were done, not a journey: no time on foot.
 walked: false
@@ -26,6 +30,10 @@ stops:
       pt: "Em Giom, Zadoque unge Salomão, e todo o povo diz: “Viva o rei Salomão!”"
       de: "Am Gihon salbt Zadok Salomo, und alles Volk spricht: „Glück dem König Salomo!“"
       fr: "À Guihon, Tsadok oint Salomon, et tout le peuple dit : « Vive le roi Salomon ! »"
+      pl: "W Gichon Sadok namaszcza Salomona, a cały lud woła: „Niech żyje król Salomon!”"
+      it: "A Ghicon Zadok unge Salomone, e tutto il popolo dice: «Viva il re Salomone!»"
+      nl: "Te Gihon zalft Sadok Salomo, en heel het volk zegt: “De koning Salomo leve!”"
+      cs: "U Gichónu pomazává Sádok Šalomouna a všechen lid říká: „Živ buď král Šalomoun.“"
   - place: aede336 # Gibeon
     ref: 1Kgs.3.4-1Kgs.3.15
     note:
@@ -36,6 +44,10 @@ stops:
       pt: "Em Gibeão o Senhor lhe aparece em sonho, e ele pede um coração entendido."
       de: "In Gibeon erscheint ihm der Herr im Traum, und er bittet um ein verständiges Herz."
       fr: "À Gabaon, l’Éternel lui apparaît en songe, et il demande un cœur intelligent."
+      pl: "W Gibeon Pan ukazuje mu się we śnie, a on prosi o serce rozumne."
+      it: "A Gabaon il Signore gli appare in sogno, ed egli chiede un cuore intelligente."
+      nl: "Te Gibeon verschijnt de HEER hem in een droom, en hij vraagt om een verstandig hart."
+      cs: "V Gibeonu se mu Hospodin zjevuje ve snu a on prosí o srdce rozumné."
   - place: a160272 # Tyre
     ref: 1Kgs.5.1-1Kgs.5.12
     note:
@@ -46,6 +58,10 @@ stops:
       pt: "Hirão, rei de Tiro, envia cedro para o Templo, e os dois fazem um tratado."
       de: "Hiram, der König von Tyrus, sendet Zedernholz für den Tempel, und die beiden schließen einen Vertrag."
       fr: "Hiram, roi de Tyr, envoie du cèdre pour le temple, et les deux concluent un traité."
+      pl: "Hiram, król Tyru, przysyła cedr na świątynię i obaj zawierają układ."
+      it: "Chiram, re di Tiro, manda cedro per il Tempio, e i due stringono un trattato."
+      nl: "Hiram, de koning van Tyrus, zendt ceder voor de tempel, en de twee sluiten een verdrag."
+      cs: "Chíram, král Týru, posílá cedry pro chrám a oba uzavírají smlouvu."
   - place: a15257a # Jerusalem
     ref: 1Kgs.6.1-1Kgs.8.11
     year: "966 BC"
@@ -57,6 +73,10 @@ stops:
       pt: "No seu quarto ano ele começa o Templo; na sua dedicação, a nuvem enche a casa do Senhor."
       de: "In seinem vierten Jahr beginnt er den Tempel; bei dessen Einweihung erfüllt die Wolke das Haus des Herrn."
       fr: "La quatrième année de son règne, il commence le temple ; à sa dédicace, la nuée remplit la maison de l’Éternel."
+      pl: "W czwartym roku swego panowania zaczyna budowę świątyni; podczas jej poświęcenia obłok napełnia dom Pański."
+      it: "Nel suo quarto anno inizia il Tempio; alla sua dedicazione la nuvola riempie la casa del Signore."
+      nl: "In zijn vierde jaar begint hij de tempel te bouwen; bij de inwijding vult de wolk het huis van de HEER."
+      cs: "Ve čtvrtém roce začíná stavět chrám; při jeho posvěcení naplňuje dům Hospodinův oblak."
   - place: a8554e3 # Megiddo
     ref: 1Kgs.9.15
     note:
@@ -67,6 +87,10 @@ stops:
       pt: "Com o trabalho forçado que recruta, edifica o muro de Jerusalém, Hazor, Megido e Gezer."
       de: "Mit dem Frondienst, den er aushebt, baut er die Mauer Jerusalems, Hazor, Megiddo und Geser."
       fr: "Avec les hommes de corvée qu’il lève, il bâtit la muraille de Jérusalem, Hatsor, Meguiddo et Guézer."
+      pl: "Z pracy przymusowej, którą nakłada, buduje mur Jerozolimy, Chasor, Megiddo i Gezer."
+      it: "Con la comandata che arruola costruisce il muro di Gerusalemme, Asor, Meghiddo e Ghezer."
+      nl: "Met de heffing die hij opbrengt bouwt hij de muur van Jeruzalem, Hazor, Megiddo en Gezer."
+      cs: "Z nucených prací, které vybírá, staví jeruzalémskou hradbu, Chacor, Megido a Gezer."
   - place: a8e53d5 # Ezion-geber
     ref: 1Kgs.9.26-1Kgs.9.28
     note:
@@ -77,6 +101,10 @@ stops:
       pt: "Em Eziom-Geber, no Mar Vermelho, constrói navios, e seus servos e os marinheiros de Hirão trazem ouro de Ofir."
       de: "In Ezjon-Geber am Roten Meer baut er Schiffe, und seine Knechte und Hirams Seeleute bringen Gold aus Ofir."
       fr: "À Etsjon-Guéber, sur la Mer Rouge, il construit des navires, et ses serviteurs et les matelots de Hiram rapportent de l’or d’Ophir."
+      pl: "W Esjon-Geber nad Morzem Czerwonym buduje okręty, a jego słudzy i marynarze Hirama sprowadzają złoto z Ofiru."
+      it: "A Ezion-Gheber, sul Mar Rosso, costruisce navi, e i suoi servi e i marinai di Chiram portano oro da Ofir."
+      nl: "Te Ezeon-Geber aan de Rode Zee bouwt hij schepen, en zijn knechten en de zeelieden van Hiram brengen goud uit Ofir."
+      cs: "V Ecjon-geberu při Rudém moři staví lodi a jeho služebníci i Chíramovi námořníci vozí zlato z Ofíru."
   - place: a81ab85 # Sheba
     ref: 1Kgs.10.1-1Kgs.10.13
     note:
@@ -87,6 +115,10 @@ stops:
       pt: "A rainha de Sabá ouve falar da sua fama e vem testá-lo com perguntas difíceis."
       de: "Die Königin von Scheba hört von seinem Ruhm und kommt, ihn mit schweren Fragen zu prüfen."
       fr: "La reine de Schéba apprend sa renommée et vient l’éprouver par des énigmes."
+      pl: "Królowa Szeby słyszy o jego sławie i przybywa, by wypróbować go trudnymi pytaniami."
+      it: "La regina di Saba sente parlare della sua fama e viene a metterlo alla prova con domande difficili."
+      nl: "De koningin van Seba hoort van zijn roem en komt hem met moeilijke vragen op de proef stellen."
+      cs: "Královna ze Šeby slyší o jeho slávě a přichází ho zkoušet těžkými otázkami."
   - place: a15257a # Jerusalem
     ref: 1Kgs.11.42-1Kgs.11.43
     year: "931 BC"
@@ -98,3 +130,7 @@ stops:
       pt: "Depois de quarenta anos de reinado em Jerusalém, Salomão morre e é sepultado na Cidade de Davi."
       de: "Nach vierzig Jahren Herrschaft in Jerusalem stirbt Salomo und wird in der Stadt Davids begraben."
       fr: "Après quarante ans de règne à Jérusalem, Salomon meurt et est enseveli dans la Cité de David."
+      pl: "Po czterdziestu latach panowania w Jerozolimie Salomon umiera i zostaje pochowany w Mieście Dawida."
+      it: "Dopo quarant’anni di regno a Gerusalemme Salomone muore ed è sepolto nella Città di Davide."
+      nl: "Na veertig jaar regeren in Jeruzalem sterft Salomo en wordt begraven in de Stad van David."
+      cs: "Po čtyřiceti letech kralování v Jeruzalémě Šalomoun umírá a je pochován ve Městě Davidově."

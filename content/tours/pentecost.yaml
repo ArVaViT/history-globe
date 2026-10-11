@@ -13,6 +13,10 @@ title:
   pt: "Pentecostes: de onde vieram os peregrinos"
   de: "Pfingsten: Woher die Pilger kamen"
   fr: "La Pentecôte : d’où venaient les pèlerins"
+  pl: "Pięćdziesiątnica: skąd przybyli pielgrzymi"
+  it: "Pentecoste: da dove venivano i pellegrini"
+  nl: "Pinksteren: waar de pelgrims vandaan kwamen"
+  cs: "Letnice: odkud přišli poutníci"
 year: "AD 30"
 # The lands of a list, not a journey: no time on foot.
 walked: false
@@ -28,6 +32,10 @@ stops:
       pt: "No dia de Pentecostes o Espírito vem com um som do céu e línguas como de fogo; judeus piedosos “de todas as nações sob o céu” ouvem os galileus, cada um em sua própria língua."
       de: "Am Pfingsttag kommt der Geist mit einem Brausen vom Himmel und mit Zungen wie von Feuer; gottesfürchtige Juden „aus allerlei Volk, das unter dem Himmel ist“ hören die Galiläer, jeder in seiner eigenen Sprache."
       fr: "Le jour de la Pentecôte, l’Esprit vient avec un bruit du ciel et des langues semblables à du feu ; des Juifs pieux « de toutes les nations qui sont sous le ciel » entendent les Galiléens, chacun dans sa propre langue."
+      pl: "W dzień Pięćdziesiątnicy Duch przychodzi z szumem z nieba i w językach jakby ognistych; pobożni Żydzi „z każdego narodu tych, którzy są pod niebem” słyszą Galilejczyków, każdy w swoim języku."
+      it: "Il giorno di Pentecoste lo Spirito scende con un suono dal cielo e lingue come di fuoco; Giudei religiosi «d’ogni nazione di sotto il cielo» sentono parlare i Galilei, ciascuno nella propria lingua."
+      nl: "Op de dag van Pinksteren komt de Geest met een geluid uit de hemel en tongen als van vuur; vrome Joden “van allen volke dergenen, die onder den hemel zijn” horen de Galileeërs, ieder in zijn eigen taal."
+      cs: "V den Letnic přichází Duch se zvukem z nebe a jazyky jako z ohně; zbožní Židé „ze všelikého národu, kterýž pod nebem jest“ slyší Galilejské, každý ve svém jazyce."
   - place: a43f60f # Mesopotamia
     ref: Acts.2.9
     note:
@@ -38,6 +46,10 @@ stops:
       pt: "Primeiro o oriente: partos, medos, elamitas e os habitantes da Mesopotâmia, onde havia judeus desde o exílio."
       de: "Zuerst der Osten: Parther, Meder, Elamiter und die Bewohner Mesopotamiens, wo seit dem Exil Juden lebten."
       fr: "D’abord l’Orient : Parthes, Mèdes, Élamites et les habitants de la Mésopotamie, où des Juifs vivaient depuis l’exil."
+      pl: "Najpierw wschód: Partowie, Medowie, Elamici i mieszkańcy Mezopotamii, gdzie Żydzi mieszkali od czasów wygnania."
+      it: "Prima l’oriente: Parti, Medi, Elamiti e gli abitanti della Mesopotamia, dove i Giudei vivevano fin dall’esilio."
+      nl: "Eerst het oosten: Parthen, Meden, Elamieten en de bewoners van Mesopotamië, waar sinds de ballingschap Joden hadden gewoond."
+      cs: "Nejprve východ: Parthové, Médové, Elamité a obyvatelé Mezopotámie, kde Židé žili od vyhnanství."
   - place: a33fbde # Cappadocia
     ref: Acts.2.9
     note:
@@ -48,6 +60,10 @@ stops:
       pt: "A Capadócia, no coração da Ásia Menor: Pedro escreverá a sua carta às igrejas dela (1Pe 1:1)."
       de: "Kappadokien, im Herzen Kleinasiens: Petrus wird seinen Brief an dessen Gemeinden schreiben (1. Petr 1,1)."
       fr: "La Cappadoce, au cœur de l’Asie Mineure : Pierre écrira sa lettre à ses Églises (1 P 1:1)."
+      pl: "Kapadocja, w sercu Azji Mniejszej: Piotr napisze swój list do jej Kościołów (1 P 1,1)."
+      it: "La Cappadocia, nel cuore dell’Asia Minore: Pietro scriverà la sua lettera alle chiese di quella regione (1 Pt 1,1)."
+      nl: "Cappadocië, in het hart van Klein-Azië: Petrus zal zijn brief aan de gemeenten daar schrijven (1 Petr. 1:1)."
+      cs: "Kappadokie, v srdci Malé Asie: Petr napíše svůj list jejím církvím (1 Pt 1,1)."
   - place: a83a43e # Pontus
     ref: Acts.2.9
     note:
@@ -58,6 +74,10 @@ stops:
       pt: "O Ponto, no Mar Negro, terra de Áquila, que Paulo encontrará em Corinto (At 18:2)."
       de: "Pontus am Schwarzen Meer, die Heimat des Aquila, den Paulus in Korinth treffen wird (Apg 18,2)."
       fr: "Le Pont, sur la mer Noire, patrie d’Aquilas, que Paul rencontrera à Corinthe (Ac 18:2)."
+      pl: "Pont nad Morzem Czarnym, ojczyzna Akwili, którego Paweł spotka w Koryncie (Dz 18,2)."
+      it: "Il Ponto, sul Mar Nero, patria di Aquila, che Paolo incontrerà a Corinto (At 18,2)."
+      nl: "Pontus aan de Zwarte Zee, de woonplaats van Aquila, die Paulus te Korinthe zal ontmoeten (Hand. 18:2)."
+      cs: "Pontus při Černém moři, domov Akvily, s nímž se Pavel setká v Korintu (Sk 18,2)."
   - place: a197f19 # Asia
     ref: Acts.2.9
     note:
@@ -68,6 +88,10 @@ stops:
       pt: "A Ásia, a província de Éfeso, onde Paulo ensinará por três anos e onde se erguerão as sete igrejas do Apocalipse."
       de: "Asia, die Provinz von Ephesus, wo Paulus drei Jahre lehren wird und wo die sieben Gemeinden der Offenbarung stehen werden."
       fr: "L’Asie, la province d’Éphèse, où Paul enseignera pendant trois ans et où se dresseront les sept Églises de l’Apocalypse."
+      pl: "Azja, prowincja Efezu, gdzie Paweł będzie nauczał przez trzy lata i gdzie staną siedem Kościołów z Apokalipsy."
+      it: "L’Asia, la provincia di Efeso, dove Paolo insegnerà per tre anni e dove sorgeranno le sette chiese dell’Apocalisse."
+      nl: "Asia, de provincie van Efeze, waar Paulus drie jaar zal onderwijzen en waar de zeven gemeenten van Openbaring zullen staan."
+      cs: "Asie, provincie s Efezem, kde bude Pavel tři roky učit a kde budou stát sedm církví Zjevení."
   - place: ab8ae56 # Phrygia
     ref: Acts.2.10
     note:
@@ -78,6 +102,10 @@ stops:
       pt: "A Frígia, no interior, que Paulo atravessará duas vezes em suas viagens."
       de: "Phrygien im Binnenland, das Paulus auf seinen Reisen zweimal durchqueren wird."
       fr: "La Phrygie, à l’intérieur des terres, que Paul traversera deux fois au cours de ses voyages."
+      pl: "Frygia w głębi lądu, którą Paweł przemierzy dwukrotnie w swoich podróżach."
+      it: "La Frigia, nell’entroterra, che Paolo attraverserà due volte nei suoi viaggi."
+      nl: "Frygië in het binnenland, dat Paulus op zijn reizen tweemaal zal doortrekken."
+      cs: "Frygie ve vnitrozemí, kterou Pavel na svých cestách dvakrát projde."
   - place: aa95188 # Pamphylia
     ref: Acts.2.10
     note:
@@ -88,6 +116,10 @@ stops:
       pt: "A Panfília, na costa sul, com Perge, onde João Marcos voltará atrás (At 13:13)."
       de: "Pamphylien an der Südküste, mit Perge, wo Johannes Markus umkehren wird (Apg 13,13)."
       fr: "La Pamphylie, sur la côte sud, avec Perge, où Jean-Marc fera demi-tour (Ac 13:13)."
+      pl: "Pamfilia na południowym wybrzeżu, z Perge, gdzie Jan Marek zawróci (Dz 13,13)."
+      it: "La Panfilia, sulla costa meridionale, con Perge, dove Giovanni Marco tornerà indietro (At 13,13)."
+      nl: "Pamfylië aan de zuidkust, met Perge, waar Johannes Marcus zal terugkeren (Hand. 13:13)."
+      cs: "Pamfylie na jižním pobřeží s Perge, odkud se Jan Marek vrátí (Sk 13,13)."
   - place: af301ca # Egypt
     ref: Acts.2.10
     note:
@@ -98,6 +130,10 @@ stops:
       pt: "O Egito, com a grande comunidade judaica de Alexandria, a cidade de Apolo (At 18:24)."
       de: "Ägypten, mit der großen jüdischen Gemeinde von Alexandria, der Stadt des Apollos (Apg 18,24)."
       fr: "L’Égypte, avec la grande communauté juive d’Alexandrie, la ville d’Apollos (Ac 18:24)."
+      pl: "Egipt, z wielką wspólnotą żydowską Aleksandrii, miastem Apollosa (Dz 18,24)."
+      it: "L’Egitto, con la grande comunità giudaica di Alessandria, la città di Apollo (At 18,24)."
+      nl: "Egypte, met de grote Joodse gemeenschap van Alexandrië, de stad van Apollos (Hand. 18:24)."
+      cs: "Egypt s velkou židovskou obcí v Alexandrii, městě Apollově (Sk 18,24)."
   - place: a81cdb5 # Cyrene
     ref: Acts.2.10
     note:
@@ -108,6 +144,10 @@ stops:
       pt: "“As partes da Líbia próximas a Cirene”: Simão, que carregou a cruz, era de Cirene, e homens de Chipre e de Cirene pregarão o Senhor Jesus aos gregos em Antioquia (At 11:20)."
       de: "„an den Enden von Lybien bei Kyrene“: Simon, der das Kreuz trug, war aus Kyrene, und Männer aus Zypern und Kyrene werden in Antiochia den Griechen den Herrn Jesus predigen (Apg 11,20)."
       fr: "« Le territoire de la Libye voisine de Cyrène » : Simon qui porta la croix était de Cyrène, et des hommes de Chypre et de Cyrène annonceront le Seigneur Jésus aux Grecs à Antioche (Ac 11:20)."
+      pl: "„w stronach Libii, która jest podle Cyreny”: Szymon, który niósł krzyż, pochodził z Cyreny, a mężowie z Cypru i Cyreny będą głosić Pana Jezusa Grekom w Antiochii (Dz 11,20)."
+      it: "«Le parti della Libia Cirenaica»: Simone che portò la croce era di Cirene, e uomini di Cipro e di Cirene annunceranno il Signore Gesù ai Greci ad Antiochia (At 11,20)."
+      nl: "“De delen van Libië, hetwelk bij Cyrene ligt”: Simon, die het kruis droeg, was van Cyrene, en mannen uit Cyprus en Cyrene zullen de Heere Jezus aan de Grieken te Antiochië verkondigen (Hand. 11:20)."
+      cs: "„v krajinách Libye, kteráž jest vedle Cyrénu“: Šimon, který nesl kříž, byl z Kyrény a muži z Kypru a Kyrény budou v Antiochii hlásat Pána Ježíše Řekům (Sk 11,20)."
   - place: afc8e7a # Rome
     ref: Acts.2.10
     note:
@@ -118,6 +158,10 @@ stops:
       pt: "“Visitantes de Roma, tanto judeus como prosélitos”, os mais ocidentais da lista; cretenses e árabes a encerram."
       de: "„Ausländer von Rom, Juden und Judengenossen“, die westlichsten der Liste; Kreter und Araber beschließen sie."
       fr: "« Ceux qui sont venus de Rome, Juifs et prosélytes », les plus occidentaux de la liste ; les Crétois et les Arabes la ferment."
+      pl: "„przychodniowie Rzymscy; Żydowie, i nowonawróceni”, najdalej na zachód na liście; Kreteńczycy i Arabowie ją zamykają."
+      it: "«Avventizi Romani, tanto Giudei che proseliti», l’estremo occidente dell’elenco; Cretesi e Arabi lo chiudono."
+      nl: "“Uitlandse Romeinen, beiden Joden en Jodengenoten”, het westelijkste van de lijst; Kretenzen en Arabieren sluiten die af."
+      cs: "„hosté Římané, Židé, i vnově na víru obrácení“, nejzápadnější z výčtu; Kretští a Arabští jej uzavírají."
   - place: a15257a # Jerusalem
     ref: Acts.2.14-Acts.2.47
     note:
@@ -128,3 +172,7 @@ stops:
       pt: "Pedro se levanta com os onze: isto é o que Joel predisse, e Jesus, a quem vocês crucificaram, Deus ressuscitou. Cerca de três mil são batizados, “e o Senhor acrescentava à igreja, dia a dia, os que iam sendo salvos”."
       de: "Petrus tritt mit den Elfen auf: Das ist, was Joel vorhergesagt hat, und Jesus, den ihr gekreuzigt habt, hat Gott auferweckt. Etwa dreitausend lassen sich taufen, „Der HERR aber tat hinzu täglich, die da selig wurden, zu der Gemeinde“."
       fr: "Pierre se lève avec les onze : c’est ce que Joël avait annoncé, et Jésus que vous avez crucifié, Dieu l’a ressuscité. Environ trois mille personnes sont baptisées, et « le Seigneur ajoutait chaque jour à l’Église ceux qui étaient sauvés »."
+      pl: "Piotr powstaje z jedenastoma: to jest to, co zapowiedział Joel, a Jezusa, którego ukrzyżowaliście, Bóg wskrzesił. Około trzech tysięcy zostaje ochrzczonych, „a Pan przydawał zborowi na każdy dzień tych, którzy mieli być zbawieni”."
+      it: "Pietro si leva in piedi con gli undici: questo è ciò che Gioele aveva predetto, e Dio ha risuscitato Gesù, che voi avete crocifisso. Circa tremila sono battezzati, «e il Signore aggiungeva ogni giorno alla loro comunità quelli che erano sulla via della salvazione»."
+      nl: "Petrus staat op met de elf: dit is wat Joël heeft voorzegd, en Jezus, die gij gekruisigd hebt, heeft God opgewekt. Ongeveer drieduizend worden gedoopt, “En de Heere deed dagelijks tot de Gemeente, die zalig werden”."
+      cs: "Petr povstává s jedenácti: to je, co předpověděl Joel, a Ježíše, kterého jste ukřižovali, Bůh vzkřísil. Pokřtěno je asi tři tisíce, „Pán pak přidával církvi na každý den těch, kteříž by spaseni byli“."

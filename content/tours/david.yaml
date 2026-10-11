@@ -10,6 +10,10 @@ title:
   pt: "A vida de Davi"
   de: "Das Leben Davids"
   fr: "La vie de David"
+  pl: "Życie Dawida"
+  it: "La vita di Davide"
+  nl: "Het leven van David"
+  cs: "Život Davidův"
 year: "1010 BC"
 people: ["David@Rut.4.17-Rev"]
 approximate: true
@@ -24,6 +28,10 @@ stops:
       pt: "Em Belém, Samuel unge o filho mais novo de Jessé, e o Espírito do Senhor vem sobre Davi."
       de: "In Bethlehem salbt Samuel den jüngsten Sohn Isais, und der Geist des Herrn kommt über David."
       fr: "À Bethléhem, Samuel oint le plus jeune fils d’Isaï, et l’Esprit de l’Éternel vient sur David."
+      pl: "W Betlejem Samuel namaszcza najmłodszego syna Jessego i Duch Pański zstępuje na Dawida."
+      it: "A Betlemme Samuele unge il figlio più giovane di Iesse, e lo Spirito del Signore scende su Davide."
+      nl: "Te Bethlehem zalft Samuël de jongste zoon van Isaï, en de Geest van de HEER komt over David."
+      cs: "V Betlémě Samuel pomazává nejmladšího Jišajova syna a Duch Hospodinův přichází na Davida."
   - place: ab183f8 # Valley of Elah
     ref: 1Sam.17.2-1Sam.17.51
     note:
@@ -34,6 +42,10 @@ stops:
       pt: "No Vale de Elá, Davi mata Golias com uma funda e uma pedra."
       de: "Im Tal Ela tötet David Goliat mit Schleuder und Stein."
       fr: "Dans la vallée d’Éla, David tue Goliath avec une fronde et une pierre."
+      pl: "W Dolinie Ela Dawid zabija Goliata procą i kamieniem."
+      it: "Nella Valle del Terebinto Davide uccide Golia con una fionda e una pietra."
+      nl: "In het Dal van Ela doodt David Goliat met een slinger en een steen."
+      cs: "V Élském údolí zabíjí David Goliáše prakem a kamenem."
   - place: ae1c9ea # Naioth
     ref: 1Sam.19.18-1Sam.19.24
     note:
@@ -44,6 +56,10 @@ stops:
       pt: "Fugindo de Saul, Davi vai a Samuel e fica com ele em Naiote, em Ramá."
       de: "Auf der Flucht vor Saul kommt David zu Samuel und bleibt bei ihm in Najot in Rama."
       fr: "Fuyant Saül, David vient chez Samuel et reste auprès de lui à Najoth, à Rama."
+      pl: "Uciekając przed Saulem, Dawid przychodzi do Samuela i zatrzymuje się u niego w Najot w Ramie."
+      it: "Fuggendo da Saul, Davide giunge da Samuele e rimane con lui a Naiot, presso Rama."
+      nl: "Op de vlucht voor Saul komt David bij Samuël en verblijft bij hem te Najot in Rama."
+      cs: "David prchá před Saulem k Samuelovi a zůstává u něho v Najotu v Rámě."
   - place: afdda14 # Nob
     ref: 1Sam.21.1-1Sam.21.9
     note:
@@ -54,6 +70,10 @@ stops:
       pt: "Em Nobe, o sacerdote Aimeleque lhe dá o pão sagrado e a espada de Golias."
       de: "In Nob gibt ihm der Priester Ahimelech das heilige Brot und das Schwert Goliats."
       fr: "À Nob, le sacrificateur Achimélec lui donne le pain consacré et l’épée de Goliath."
+      pl: "W Nob kapłan Achimelek daje mu chleby święte i miecz Goliata."
+      it: "A Nob il sacerdote Achimelech gli dà il pane sacro e la spada di Golia."
+      nl: "Te Nob geeft de priester Achimelech hem het heilige brood en het zwaard van Goliat."
+      cs: "V Nobu mu kněz Achimelek dává svatý chléb a Goliášův meč."
   - place: a18873f # Gath
     ref: 1Sam.21.10-1Sam.21.15
     note:
@@ -64,6 +84,10 @@ stops:
       pt: "Diante de Aquis, rei de Gate, finge-se de louco."
       de: "Vor Achis, dem König von Gat, stellt er sich wahnsinnig."
       fr: "Devant Akisch, roi de Gath, il feint la folie."
+      pl: "Przed Achiszem, królem Gat, udaje szaleńca."
+      it: "Davanti ad Achis, re di Gat, finge di essere pazzo."
+      nl: "Voor Achis, de koning van Gat, doet hij alsof hij gek is."
+      cs: "Před Achišem, králem Gatu, předstírá šílenství."
   - place: af82614 # Adullam
     ref: 1Sam.22.1-1Sam.22.2
     note:
@@ -74,6 +98,10 @@ stops:
       pt: "Na caverna de Adulão, a sua família e cerca de quatrocentos homens se reúnem em torno dele."
       de: "In der Höhle Adullam sammeln sich seine Familie und etwa vierhundert Mann um ihn."
       fr: "Dans la caverne d’Adullam, sa famille et quelque quatre cents hommes se rassemblent autour de lui."
+      pl: "W jaskini Adullam gromadzą się wokół niego jego rodzina i około czterystu mężów."
+      it: "Nella caverna di Adullam si radunano intorno a lui la sua famiglia e circa quattrocento uomini."
+      nl: "In de spelonk van Adullam verzamelen zijn familie en zo'n vierhonderd man zich om hem."
+      cs: "V jeskyni Adulam se kolem něho shromažďuje jeho rodina a asi čtyři sta mužů."
   - place: a51df0e # Engedi
     ref: 1Sam.24.1-1Sam.24.22
     note:
@@ -84,6 +112,10 @@ stops:
       pt: "No deserto de En-Gedi, poupa Saul na caverna, cortando apenas a orla do seu manto."
       de: "In der Wüste En-Gedi verschont er Saul in der Höhle und schneidet nur den Zipfel seines Mantels ab."
       fr: "Dans le désert d’En-Guédi, il épargne Saül dans la caverne, ne coupant que le pan de son manteau."
+      pl: "Na pustyni En-Gedi oszczędza Saula w jaskini, odcinając tylko skraj jego płaszcza."
+      it: "Nel deserto di En-Ghedi risparmia Saul nella caverna, tagliandogli soltanto un lembo del mantello."
+      nl: "In de woestijn van En-Gedi spaart hij Saul in de spelonk en snijdt alleen de rand van zijn mantel af."
+      cs: "Na poušti Én-gedi ušetří v jeskyni Saula, jemuž odřízne jen cíp pláště."
   - place: a0ed7ff # Ziklag
     ref: 1Sam.27.5-1Sam.27.7
     note:
@@ -94,6 +126,10 @@ stops:
       pt: "Aquis lhe dá Ziclague, onde vive entre os filisteus."
       de: "Achis gibt ihm Ziklag, wo er unter den Philistern wohnt."
       fr: "Akisch lui donne Tsiklag, où il vit parmi les Philistins."
+      pl: "Achisz daje mu Siklag, gdzie mieszka wśród Filistynów."
+      it: "Achis gli dà Siclag, dove egli vive fra i Filistei."
+      nl: "Achis geeft hem Ziklag, waar hij onder de Filistijnen woont."
+      cs: "Achiš mu dává Siklag, kde žije mezi Pelištejci."
   - place: acf57c5 # Mount Gilboa
     ref: 1Sam.31.1-1Sam.31.6
     note:
@@ -104,6 +140,10 @@ stops:
       pt: "No Monte Gilboa, Saul e seus três filhos caem em batalha contra os filisteus."
       de: "Auf dem Gebirge Gilboa fallen Saul und seine drei Söhne in der Schlacht gegen die Philister."
       fr: "Sur le Mont Guilboa, Saül et ses trois fils tombent dans la bataille contre les Philistins."
+      pl: "Na górze Gilboa Saul i jego trzej synowie giną w bitwie z Filistynami."
+      it: "Sul monte Gelboe Saul e i suoi tre figli cadono in battaglia contro i Filistei."
+      nl: "Op de berg Gilboa vallen Saul en zijn drie zonen in de strijd met de Filistijnen."
+      cs: "Na hoře Gilboa padá v boji s Pelištejci Saul a jeho tři synové."
   - place: a85151a # Hebron
     ref: 2Sam.2.1-2Sam.2.4
     note:
@@ -114,6 +154,10 @@ stops:
       pt: "Em Hebrom, os homens de Judá ungem Davi rei sobre a casa de Judá."
       de: "In Hebron salben die Männer von Juda David zum König über das Haus Juda."
       fr: "À Hébron, les hommes de Juda oignent David roi sur la maison de Juda."
+      pl: "W Hebronie mężowie z Judy namaszczają Dawida na króla nad domem Judy."
+      it: "A Ebron gli uomini di Giuda ungono Davide re sulla casa di Giuda."
+      nl: "Te Hebron zalven de mannen van Juda David tot koning over het huis van Juda."
+      cs: "V Hebronu pomazávají judští muži Davida za krále nad domem Judovým."
   - place: a15257a # Jerusalem
     ref: 2Sam.5.6-2Sam.5.9
     note:
@@ -124,6 +168,10 @@ stops:
       pt: "Toma a fortaleza de Sião e a chama Cidade de Davi."
       de: "Er erobert die Burg Zion und nennt sie Stadt Davids."
       fr: "Il prend la forteresse de Sion et l’appelle Cité de David."
+      pl: "Zdobywa twierdzę Syjon i nazywa ją Miastem Dawida."
+      it: "Conquista la fortezza di Sion e la chiama Città di Davide."
+      nl: "Hij neemt de burcht Sion in en noemt die de Stad van David."
+      cs: "Dobývá pevnost Sijón a nazývá ji Město Davidovo."
   - place: ae5bfe9 # Mahanaim
     ref: 2Sam.17.24-2Sam.17.29
     note:
@@ -134,6 +182,10 @@ stops:
       pt: "Fugindo de Absalão, atravessa o Jordão até Maanaim."
       de: "Auf der Flucht vor Absalom überschreitet er den Jordan nach Mahanajim."
       fr: "Fuyant Absalom, il passe le Jourdain jusqu’à Mahanaïm."
+      pl: "Uciekając przed Absalomem, przeprawia się przez Jordan do Mahanaim."
+      it: "Fuggendo da Assalonne, attraversa il Giordano e si reca a Maanaim."
+      nl: "Op de vlucht voor Absalom steekt hij de Jordaan over naar Machanaïm."
+      cs: "Prchá před Abšalomem a přechází Jordán do Machanajimu."
   - place: a15257a # Jerusalem
     ref: 1Kgs.2.10-1Kgs.2.11
     year: "970 BC"
@@ -145,3 +197,7 @@ stops:
       pt: "Davi morre e é sepultado na Cidade de Davi, depois de quarenta anos de reinado: sete em Hebrom, trinta e três em Jerusalém."
       de: "David stirbt und wird in der Stadt Davids begraben, nach vierzig Jahren als König: sieben in Hebron, dreiunddreißig in Jerusalem."
       fr: "David meurt et est enseveli dans la Cité de David, après quarante ans de règne : sept à Hébron, trente-trois à Jérusalem."
+      pl: "Dawid umiera i zostaje pochowany w Mieście Dawida po czterdziestu latach panowania: siedem w Hebronie i trzydzieści trzy w Jerozolimie."
+      it: "Davide muore ed è sepolto nella Città di Davide, dopo quarant’anni di regno: sette a Ebron, trentatré a Gerusalemme."
+      nl: "David sterft en wordt begraven in de Stad van David, na veertig jaar als koning: zeven in Hebron, drieëndertig in Jeruzalem."
+      cs: "David umírá a je pohřben ve Městě Davidově po čtyřiceti letech kralování: sedmi v Hebronu a třiatřiceti v Jeruzalémě."
