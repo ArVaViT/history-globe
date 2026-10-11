@@ -1048,14 +1048,16 @@ for (const l of LANGS) {
   const base = site || "https://historyglobe.app";
   const text = `# History Globe
 
-> A free 3D atlas of biblical history in Russian and English: ${String(shown.length)} places the Bible names, each linked to its verses, the states around them year by year from 3500 BC to AD 1300, ${String(content.tours.length)} tours, ${String(Object.keys(articles).length)} place articles and ${String(questions.length)} short answers, every fact with its sources.
+> A free 3D atlas of biblical history in ${String(LOCALES.length)} languages (${LOCALES.map((l) => LOCALE_NAMES[l]).join(", ")}): ${String(shown.length)} places the Bible names, each linked to its verses, the states around them year by year from 3500 BC to AD 1300, ${String(content.tours.length)} tours, ${String(Object.keys(articles).length)} place articles and ${String(questions.length)} short answers, every fact with its sources.
 
-The map is an app at ${base}/ (state lives in the address: ?year=, ?place=, ?tour=, ?locale=ru|en). Every place, tour and question also has a plain HTML page, listed below. The data is open under CC BY 4.0: credit "History Globe by Vadym Arnaut" and the sources the API index names (OpenBible.info and others). The code is all rights reserved. Articles are drafted with AI help and checked against their sources in a separate pass; they have not been reviewed by scholars, and the site says so.
+The map is an app at ${base}/ (state lives in the address: ?year=, ?place=, ?tour=, ?locale=${LOCALES.join("|")}). Every place, tour and question also has a plain HTML page, listed below. The data is open under CC BY 4.0: credit "History Globe by Vadym Arnaut" and the sources the API index names (OpenBible.info and others). The code is all rights reserved. Articles are drafted with AI help and checked against their sources in a separate pass; they have not been reviewed by scholars, and the site says so.
 
 ## Start here
 
-- [About the globe (English)](${base}/en/): what it is and what it does
-- [О глобусе (по-русски)](${base}/ru/)
+- [About the globe (English)](${base}/en/): what it is and what it does; the same in
+  ${LOCALES.filter((l) => l !== "en")
+    .map((l) => `[${LOCALE_NAMES[l]}](${base}/${l}/)`)
+    .join(", ")}
 - [Methodology](${base}/docs/methodology.html): where the data comes from and how it is checked
 - [Sources and licences](${base}/docs/sources.html)
 - [Privacy](${base}/docs/privacy.html)
@@ -1064,7 +1066,7 @@ The map is an app at ${base}/ (state lives in the address: ?year=, ?place=, ?tou
 
 - [API documentation](${base}/docs/api.html): static JSON, no key, CC BY 4.0
 - [API index](${base}/api/v1/index.json)
-- [Places](${base}/api/v1/places.json): ids, names in both languages, coordinates, certainty
+- [Places](${base}/api/v1/places.json): ids, names in English and Russian, coordinates, certainty
 - Verses to places: ${base}/api/v1/verses/{Book}.json (OSIS book ids, e.g. Acts)
 - [Tours](${base}/api/v1/tours.json), [events](${base}/api/v1/events.json), [battles](${base}/api/v1/battles.json), [questions](${base}/api/v1/questions.json)
 - [Embedding the globe](${base}/docs/embedding.html)

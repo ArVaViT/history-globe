@@ -12,6 +12,10 @@ title:
   pt: "A vida de Jesus"
   de: "Das Leben Jesu"
   fr: "La vie de Jésus"
+  pl: "Życie Jezusa"
+  it: "La vita di Gesù"
+  nl: "Het leven van Jezus"
+  cs: "Život Ježíšův"
 year: "AD 30"
 people: ["Jesus@Isa.7.14-Rev"]
 approximate: true
@@ -27,6 +31,10 @@ stops:
       pt: "Jesus nasce em Belém da Judeia nos dias de Herodes."
       de: "Jesus wird zur Zeit des Herodes in Bethlehem in Judäa geboren."
       fr: "Jésus naît à Bethléhem de Judée, du temps d’Hérode."
+      pl: "Jezus rodzi się w Betlejem judzkim za dni Heroda."
+      it: "Gesù nasce a Betlemme di Giudea ai giorni di Erode."
+      nl: "Jezus wordt geboren in Bethlehem in Judea in de dagen van Herodes."
+      cs: "Ježíš se rodí v Betlémě Judském za dnů Heroda."
   - place: af301ca # Egypt
     ref: Matt.2.13-Matt.2.15
     year: "5 BC"
@@ -38,6 +46,10 @@ stops:
       pt: "José leva o menino e a mãe dele ao Egito."
       de: "Josef nimmt das Kind und seine Mutter mit nach Ägypten."
       fr: "Joseph emmène l’enfant et sa mère en Égypte."
+      pl: "Józef zabiera dziecię i jego matkę do Egiptu."
+      it: "Giuseppe porta in Egitto il bambino e sua madre."
+      nl: "Jozef neemt het kind en zijn moeder mee naar Egypte."
+      cs: "Josef bere dítě i jeho matku do Egypta."
   - place: af5884f # Nazareth
     ref: Matt.2.23
     year: "4 BC"
@@ -49,6 +61,10 @@ stops:
       pt: "A família se estabelece em Nazaré."
       de: "Die Familie lässt sich in Nazareth nieder."
       fr: "La famille s’établit à Nazareth."
+      pl: "Rodzina osiada w Nazarecie."
+      it: "La famiglia si stabilisce a Nazaret."
+      nl: "Het gezin vestigt zich in Nazareth."
+      cs: "Rodina se usazuje v Nazaretě."
   - place: a6e060d # Bethany beyond the Jordan
     ref: John.1.28
     note:
@@ -59,6 +75,10 @@ stops:
       pt: "João batiza em Betábara (Betânia), além do Jordão."
       de: "Johannes tauft in Bethabara (Bethanien) jenseits des Jordan."
       fr: "Jean baptise à Béthabara (Béthanie), au-delà du Jourdain."
+      pl: "Jan chrzci w Betabarze (Betanii) za Jordanem."
+      it: "Giovanni battezza a Betabara (Betania), al di là del Giordano."
+      nl: "Johannes doopt te Bethabara (Bethanië) aan de overzijde van de Jordaan."
+      cs: "Jan křtí v Betabaře (Betanii) za Jordánem."
   - place: a031bda # Cana
     ref: John.2.1-John.2.11
     note:
@@ -69,6 +89,10 @@ stops:
       pt: "O casamento em Caná: a água se torna vinho."
       de: "Die Hochzeit zu Kana: Wasser wird zu Wein."
       fr: "Les noces de Cana de Galilée : l’eau devient du vin."
+      pl: "Wesele w Kanie: woda staje się winem."
+      it: "Le nozze di Cana: l’acqua diventa vino."
+      nl: "De bruiloft te Kana: water wordt wijn."
+      cs: "Svatba v Káně: voda se mění ve víno."
   - place: a27b472 # Sychar
     ref: John.4.5-John.4.42
     note:
@@ -79,6 +103,10 @@ stops:
       pt: "No poço de Jacó, fala com a mulher samaritana."
       de: "Am Jakobsbrunnen spricht er mit der samaritischen Frau."
       fr: "Au puits de Jacob, il s’entretient avec la Samaritaine."
+      pl: "U studni Jakuba rozmawia z Samarytanką."
+      it: "Al pozzo di Giacobbe parla con la donna samaritana."
+      nl: "Bij de put van Jakob spreekt Hij met de Samaritaanse vrouw."
+      cs: "U Jákobovy studny mluví se Samaritánkou."
   - place: af2161c # Capernaum
     ref: Matt.4.13
     note:
@@ -89,6 +117,10 @@ stops:
       pt: "Deixa Nazaré e fixa residência em Cafarnaum."
       de: "Er verlässt Nazareth und nimmt seinen Wohnsitz in Kapernaum."
       fr: "Il quitte Nazareth et s’établit à Capernaüm."
+      pl: "Opuszcza Nazaret i zamieszkuje w Kafarnaum."
+      it: "Lascia Nazaret e fissa la sua dimora a Cafarnao."
+      nl: "Hij verlaat Nazareth en gaat in Kafarnaüm wonen."
+      cs: "Opouští Nazaret a usazuje se v Kafarnaum."
   - place: aee679c # Nain
     ref: Luke.7.11-Luke.7.17
     note:
@@ -99,6 +131,10 @@ stops:
       pt: "Ressuscita o filho da viúva em Naim."
       de: "Er erweckt den Sohn der Witwe in Nain."
       fr: "Il ressuscite le fils de la veuve à Naïn."
+      pl: "Wskrzesza syna wdowy w Nain."
+      it: "Risuscita il figlio della vedova a Nain."
+      nl: "Hij wekt de zoon van de weduwe op te Nain."
+      cs: "V Naimu křísí syna vdovy."
   - place: a9fc13a # Bethsaida
     ref: Mark.8.22-Mark.8.26
     note:
@@ -109,6 +145,10 @@ stops:
       pt: "Cura um cego em Betsaida."
       de: "Er heilt einen Blinden in Betsaida."
       fr: "Il guérit un aveugle à Bethsaïda."
+      pl: "Uzdrawia niewidomego w Betsaidzie."
+      it: "Guarisce un cieco a Betsaida."
+      nl: "Hij geneest een blinde te Bethsaïda."
+      cs: "V Betsaidě uzdravuje slepého."
   - place: ab7bf48 # Caesarea Philippi
     ref: Matt.16.13-Matt.16.20
     note:
@@ -119,6 +159,10 @@ stops:
       pt: "Pedro confessa: “Tu és o Cristo.”"
       de: "Petrus bekennt: „Du bist Christus.“"
       fr: "Pierre confesse : « Tu es le Christ. »"
+      pl: "Piotr wyznaje: „Tyś jest Chrystus.”"
+      it: "Pietro confessa: «Tu sei il Cristo»."
+      nl: "Petrus belijdt: “Gij zijt de Christus.”"
+      cs: "Petr vyznává: „Ty jsi Kristus.“"
   - place: aaf03fa # Jericho
     ref: Luke.19.1-Luke.19.10
     note:
@@ -129,6 +173,10 @@ stops:
       pt: "A caminho de Jerusalém, Zaqueu em Jericó."
       de: "Auf dem Weg nach Jerusalem: Zachäus in Jericho."
       fr: "En route vers Jérusalem, Zachée à Jéricho."
+      pl: "W drodze do Jerozolimy, Zacheusz w Jerychu."
+      it: "Sulla via di Gerusalemme, Zaccheo a Gerico."
+      nl: "Op weg naar Jeruzalem: Zacheüs te Jericho."
+      cs: "Na cestě do Jeruzaléma Zacheus v Jerichu."
   - place: a4f35bc # Bethany
     ref: John.12.1-John.12.8
     note:
@@ -139,6 +187,10 @@ stops:
       pt: "Seis dias antes da Páscoa, uma ceia em Betânia."
       de: "Sechs Tage vor dem Passafest ein Mahl in Bethanien."
       fr: "Six jours avant la Pâque, un repas à Béthanie."
+      pl: "Sześć dni przed Paschą, wieczerza w Betanii."
+      it: "Sei giorni prima della Pasqua, una cena a Betania."
+      nl: "Zes dagen vóór het Pascha een maaltijd te Bethanië."
+      cs: "Šest dní před velikonocemi večeře v Betanii."
   - place: a15257a # Jerusalem
     ref: Matt.21.1-Matt.21.11
     note:
@@ -149,6 +201,10 @@ stops:
       pt: "A entrada em Jerusalém."
       de: "Der Einzug in Jerusalem."
       fr: "L’entrée dans Jérusalem."
+      pl: "Wjazd do Jerozolimy."
+      it: "L’ingresso in Gerusalemme."
+      nl: "De intocht in Jeruzalem."
+      cs: "Vjezd do Jeruzaléma."
   - place: a42418f # Gethsemane
     ref: Matt.26.36-Matt.26.56
     note:
@@ -159,6 +215,10 @@ stops:
       pt: "Oração e prisão no Getsêmani."
       de: "Gebet und Gefangennahme in Gethsemane."
       fr: "La prière et l’arrestation à Gethsémané."
+      pl: "Modlitwa i pojmanie w Getsemani."
+      it: "La preghiera e l’arresto nel Getsemani."
+      nl: "Gebed en gevangenneming in Getsemane."
+      cs: "Modlitba a zatčení v Getsemane."
   - place: a631d35 # Golgotha
     ref: Matt.27.33-Matt.27.56
     note:
@@ -169,6 +229,10 @@ stops:
       pt: "A crucificação no Gólgota."
       de: "Die Kreuzigung auf Golgatha."
       fr: "La crucifixion au Golgotha."
+      pl: "Ukrzyżowanie na Golgocie."
+      it: "La crocifissione al Golgota."
+      nl: "De kruisiging op Golgota."
+      cs: "Ukřižování na Golgotě."
   - place: ae7274b # Emmaus
     ref: Luke.24.13-Luke.24.35
     note:
@@ -179,6 +243,10 @@ stops:
       pt: "O Senhor ressuscitado no caminho de Emaús."
       de: "Der auferstandene Herr auf dem Weg nach Emmaus."
       fr: "Le Seigneur ressuscité sur le chemin d’Emmaüs."
+      pl: "Zmartwychwstały Pan w drodze do Emaus."
+      it: "Il Signore risorto sulla via di Emmaus."
+      nl: "De verrezen Heer op de weg naar Emmaüs."
+      cs: "Vzkříšený Pán na cestě do Emauz."
   - place: a4f35bc # Bethany
     ref: Luke.24.50-Luke.24.53
     note:
@@ -189,3 +257,7 @@ stops:
       pt: "A Ascensão, perto de Betânia."
       de: "Die Himmelfahrt, nahe bei Bethanien."
       fr: "L’ascension, près de Béthanie."
+      pl: "Wniebowstąpienie, w pobliżu Betanii."
+      it: "L’Ascensione, presso Betania."
+      nl: "De hemelvaart, bij Bethanië."
+      cs: "Nanebevstoupení u Betanie."

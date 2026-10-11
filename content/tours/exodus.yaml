@@ -13,6 +13,10 @@ title:
   pt: "O Êxodo"
   de: "Der Auszug"
   fr: "L’Exode"
+  pl: "Wyjście z Egiptu"
+  it: "L’Esodo"
+  nl: "De uittocht"
+  cs: "Exodus"
 year: "1446 BC"
 people: ["Moses@Exo.2.10-Rev"]
 approximate: true
@@ -27,6 +31,10 @@ stops:
       pt: "Os israelitas partem de Ramessés, cerca de seiscentos mil homens a pé."
       de: "Die Israeliten brechen von Ramses auf, etwa sechshunderttausend Mann zu Fuß."
       fr: "Les Israélites partent de Ramsès, environ six cent mille hommes à pied."
+      pl: "Izraelici wyruszają z Ramses, około sześciuset tysięcy mężów pieszych."
+      it: "Gli Israeliti partono da Ramses, circa seicentomila uomini a piedi."
+      nl: "De Israëlieten breken op uit Raämses, zo'n zeshonderdduizend man te voet."
+      cs: "Izraelci vycházejí z Ramesse, asi šest set tisíc mužů pěšky."
   - place: aa28709 # Succoth (in Egypt)
     ref: Num.33.5
     note:
@@ -37,6 +45,10 @@ stops:
       pt: "O primeiro acampamento é em Sucote."
       de: "Ihr erstes Lager ist in Sukkot."
       fr: "Leur premier campement est à Succoth."
+      pl: "Ich pierwszy obóz znajduje się w Sukkot."
+      it: "Il loro primo accampamento è a Succot."
+      nl: "Hun eerste kamp is bij Sukkot."
+      cs: "Jejich první tábor je v Sukotu."
   - place: a27d0e0 # Etham
     ref: Exod.13.20-Exod.13.22
     note:
@@ -47,6 +59,10 @@ stops:
       pt: "Acampam em Etã, na orla do deserto; o Senhor vai adiante deles numa coluna de nuvem e de fogo."
       de: "Sie lagern in Etam am Rand der Wüste; der Herr zieht vor ihnen her in einer Wolkensäule und einer Feuersäule."
       fr: "Ils campent à Étham, à l’extrémité du désert ; l’Éternel marche devant eux dans une colonne de nuée et de feu."
+      pl: "Rozbijają obóz w Etam, na skraju pustyni; Pan idzie przed nimi w słupie obłoku i ognia."
+      it: "Si accampano a Etam, ai margini del deserto; il Signore li precede in una colonna di nuvola e di fuoco."
+      nl: "Zij slaan hun kamp op bij Etam, aan de rand van de woestijn; de HEER gaat voor hen uit in een wolkkolom en een vuurkolom."
+      cs: "Utábořují se v Etamu na okraji pouště; Hospodin jde před nimi v oblakovém a ohnivém sloupu."
   - place: ababfd2 # Pi-hahiroth
     ref: Exod.14.2
     note:
@@ -57,6 +73,10 @@ stops:
       pt: "Voltam atrás e acampam diante de Pi-Hairote, entre Migdol e o mar."
       de: "Sie wenden um und lagern vor Pi-Hahirot, zwischen Migdol und dem Meer."
       fr: "Ils font demi-tour et campent devant Pi-Hahiroth, entre Migdol et la mer."
+      pl: "Zawracają i rozbijają obóz przed Pi-Hachirot, między Migdol a morzem."
+      it: "Tornano indietro e si accampano di fronte a Pi-Achirot, tra Migdol e il mare."
+      nl: "Zij keren terug en slaan hun kamp op voor Pi-Hachirot, tussen Migdol en de zee."
+      cs: "Obracejí se a utábořují se před Pi-hachirótem, mezi Migdolem a mořem."
   - place: a3d18b2 # Red Sea
     ref: Exod.14.21-Exod.15.4
     note:
@@ -67,6 +87,10 @@ stops:
       pt: "As águas se dividem e Israel atravessa em terra seca; o exército do Faraó se afoga no Mar Vermelho."
       de: "Das Wasser teilt sich, und Israel zieht auf trockenem Boden hindurch; das Heer des Pharao ertrinkt im Roten Meer."
       fr: "Les eaux se séparent et Israël traverse à sec ; l’armée du pharaon est engloutie dans la Mer Rouge."
+      pl: "Wody się rozstępują i Izrael przechodzi po suchej ziemi; wojsko Faraona tonie w Morzu Czerwonym."
+      it: "Le acque si dividono e Israele passa all’asciutto; l’esercito del faraone è sommerso nel Mar Rosso."
+      nl: "De wateren splijten en Israël trekt over op het droge; het leger van Farao verdrinkt in de Rode Zee."
+      cs: "Vody se rozestupují a Izrael přechází po suchu; faraonovo vojsko se utopí v Rudém moři."
   - place: ad3970d # Marah
     ref: Exod.15.23-Exod.15.25
     note:
@@ -77,6 +101,10 @@ stops:
       pt: "Em Mara a água é amarga, e uma árvore lançada nela a torna doce."
       de: "In Mara ist das Wasser bitter, und ein Holz, das man hineinwirft, macht es süß."
       fr: "À Mara, l’eau est amère, et un bois jeté dedans la rend douce."
+      pl: "W Marze woda jest gorzka, a drzewo wrzucone do niej czyni ją słodką."
+      it: "A Mara l’acqua è amara, e un legno gettato in essa la rende dolce."
+      nl: "Te Mara is het water bitter, en een stuk hout dat erin wordt geworpen maakt het zoet."
+      cs: "V Máře je voda hořká a dřevo do ní vhozené ji činí sladkou."
   - place: a2410c1 # Elim
     ref: Exod.15.27
     note:
@@ -87,6 +115,10 @@ stops:
       pt: "Em Elim há doze fontes de água e setenta palmeiras."
       de: "In Elim gibt es zwölf Wasserquellen und siebzig Palmbäume."
       fr: "À Élim, il y a douze sources d’eau et soixante-dix palmiers."
+      pl: "W Elim jest dwanaście źródeł wody i siedemdziesiąt palm."
+      it: "A Elim ci sono dodici sorgenti d’acqua e settanta palme."
+      nl: "Te Elim zijn twaalf waterbronnen en zeventig palmbomen."
+      cs: "V Élimu je dvanáct pramenů vody a sedmdesát palem."
   - place: a05ebb7 # Rephidim
     ref: Exod.17.1-Exod.17.13
     note:
@@ -97,6 +129,10 @@ stops:
       pt: "Água da rocha, e a batalha contra Amaleque enquanto Moisés mantém as mãos erguidas."
       de: "Wasser aus dem Felsen und der Kampf mit Amalek, während Mose seine Hände emporhält."
       fr: "L’eau jaillie du rocher, et le combat contre Amalek pendant que Moïse tient les mains levées."
+      pl: "Woda ze skały i bitwa z Amalekiem, gdy Mojżesz trzyma wzniesione ręce."
+      it: "L’acqua dalla roccia, e la battaglia contro Amalek mentre Mosè tiene alzate le mani."
+      nl: "Water uit de rots, en de strijd met Amalek terwijl Mozes zijn handen omhoog houdt."
+      cs: "Voda ze skály a bitva s Amalekem, zatímco Mojžíš drží zvednuté ruce."
   - place: abfba2a # Mount Sinai
     ref: Exod.19.16-Exod.20.17
     note:
@@ -107,6 +143,10 @@ stops:
       pt: "O Senhor desce sobre o Monte Sinai e chama Moisés ao cume: a entrega da Lei."
       de: "Der Herr steigt auf den Berg Sinai herab und ruft Mose auf den Gipfel: die Gabe des Gesetzes."
       fr: "L’Éternel descend sur le Mont Sinaï et appelle Moïse au sommet : le don de la Loi."
+      pl: "Pan zstępuje na górę Synaj i wzywa Mojżesza na jej szczyt: nadanie Prawa."
+      it: "Il Signore scende sul Monte Sinai e chiama Mosè sulla cima: il dono della Legge."
+      nl: "De HEER daalt neer op de berg Sinaï en roept Mozes naar de top: het geven van de wet."
+      cs: "Hospodin sestupuje na horu Sinaj a volá Mojžíše na vrchol: dání Zákona."
   - place: ae7836a # Kibroth-hattaavah
     ref: Num.11.31-Num.11.34
     year: "1445 BC"
@@ -118,6 +158,10 @@ stops:
       pt: "As codornizes, e as sepulturas do povo que cobiçou carne: Quibrote-Hataavá."
       de: "Die Wachteln und die Gräber des Volkes, das nach Fleisch gelüstete: Kibrot-Taawa."
       fr: "Les cailles, et les tombeaux de ceux qui avaient convoité de la viande : Kibroth-Hattaava."
+      pl: "Przepiórki i groby ludzi, którzy łakomili się mięsa: Kibrot-Hattaawa."
+      it: "Le quaglie, e le tombe del popolo che aveva bramato la carne: Kibrot-Taava."
+      nl: "De kwakkels, en de graven van het volk dat naar vlees verlangde: Kibrot-Hattaäva."
+      cs: "Křepelky a hroby lidu, který dychtil po mase: Kibrót-hataava."
   - place: ac2cef0 # Kadesh-barnea
     ref: Num.13.26-Num.14.34
     year: "1445 BC"
@@ -129,6 +173,10 @@ stops:
       pt: "Os espias voltam a Cades; o povo se recusa a subir e é condenado a quarenta anos no deserto."
       de: "Die Kundschafter kehren nach Kadesch zurück; das Volk weigert sich hinaufzuziehen und wird zu vierzig Jahren in der Wüste verurteilt."
       fr: "Les espions reviennent à Qadesh ; le peuple refuse de monter et est condamné à quarante ans dans le désert."
+      pl: "Zwiadowcy wracają do Kadesz; lud odmawia wyruszenia i zostaje skazany na czterdzieści lat na pustyni."
+      it: "Gli esploratori tornano a Kades; il popolo rifiuta di salire ed è condannato a quarant’anni nel deserto."
+      nl: "De verspieders keren terug te Kades; het volk weigert op te trekken en wordt veroordeeld tot veertig jaar in de woestijn."
+      cs: "Zvědové se vracejí do Kádeše; lid odmítá vytáhnout a je odsouzen ke čtyřiceti letům na poušti."
   - place: ad8027f # Mount Hor
     ref: Num.20.22-Num.20.29
     year: "1407 BC"
@@ -140,6 +188,10 @@ stops:
       pt: "Arão morre no cume do Monte Hor; as suas vestes são postas sobre Eleazar, seu filho."
       de: "Aaron stirbt auf dem Gipfel des Berges Hor; seine Kleider werden seinem Sohn Eleasar angelegt."
       fr: "Aaron meurt au sommet du Mont Hor ; ses vêtements sont mis sur Éléazar, son fils."
+      pl: "Aaron umiera na szczycie góry Hor; jego szaty zostają włożone na Eleazara, jego syna."
+      it: "Aronne muore sulla cima del Monte Or; le sue vesti sono messe addosso a Eleazaro, suo figlio."
+      nl: "Aäron sterft op de top van de berg Hor; zijn gewaden worden zijn zoon Eleazar aangedaan."
+      cs: "Áron umírá na vrcholu hory Hor; jeho roucho se oblékne Eleazarovi, jeho synu."
   - place: abf2fc1 # Heshbon
     ref: Num.21.21-Num.21.26
     year: "1407 BC"
@@ -151,6 +203,10 @@ stops:
       pt: "Seom, rei dos amorreus, é derrotado, e Israel toma Hesbom."
       de: "Sihon, der König der Amoriter, wird besiegt, und Israel nimmt Heschbon ein."
       fr: "Sihon, roi des Amoréens, est vaincu, et Israël prend Hesbon."
+      pl: "Sychon, król Amorytów, zostaje pokonany, a Izrael zajmuje Cheszbon."
+      it: "Sicon, re degli Amorei, è sconfitto, e Israele prende Chesbon."
+      nl: "Sihon, de koning van de Amorieten, wordt verslagen, en Israël neemt Chesbon in."
+      cs: "Sichon, král Amorejských, je poražen a Izrael dobývá Chešbón."
   - place: aefaa2d # Mount Nebo
     ref: Deut.34.1-Deut.34.5
     year: "1406 BC"
@@ -162,6 +218,10 @@ stops:
       pt: "Do Monte Nebo o Senhor mostra a Moisés toda a terra; Moisés morre ali, na terra de Moabe."
       de: "Vom Berg Nebo zeigt der Herr Mose das ganze Land; Mose stirbt dort, im Land Moab."
       fr: "Du Mont Nebo, l’Éternel fait voir à Moïse tout le pays ; Moïse y meurt, dans le pays de Moab."
+      pl: "Z góry Nebo Pan ukazuje Mojżeszowi cały kraj; Mojżesz umiera tam, w ziemi Moabu."
+      it: "Dal Monte Nebo il Signore mostra a Mosè tutto il paese; Mosè muore là, nel paese di Moab."
+      nl: "Vanaf de berg Nebo toont de HEER Mozes het hele land; Mozes sterft daar, in het land Moab."
+      cs: "Z hory Nebo ukazuje Hospodin Mojžíšovi celou zemi; Mojžíš tam umírá v moábské zemi."
   - place: af64fb3 # Shittim
     ref: Josh.3.1
     year: "1406 BC"
@@ -173,6 +233,10 @@ stops:
       pt: "Josué e o povo deixam Sitim e chegam ao Jordão."
       de: "Josua und das Volk brechen von Schittim auf und kommen an den Jordan."
       fr: "Josué et le peuple quittent Sittim et arrivent au Jourdain."
+      pl: "Jozue i lud opuszczają Szittim i dochodzą do Jordanu."
+      it: "Giosuè e il popolo lasciano Sittim e giungono al Giordano."
+      nl: "Jozua en het volk vertrekken uit Sittim en komen aan de Jordaan."
+      cs: "Jozue a lid odcházejí ze Šitimu a přicházejí k Jordánu."
   - place: ab94aea # Gilgal
     ref: Josh.4.19
     year: "1406 BC"
@@ -184,6 +248,10 @@ stops:
       pt: "Do outro lado do Jordão, o primeiro acampamento na terra é em Gilgal, a leste de Jericó."
       de: "Jenseits des Jordan liegt das erste Lager im Land bei Gilgal, östlich von Jericho."
       fr: "De l’autre côté du Jourdain, le premier campement dans le pays est à Guilgal, à l’orient de Jéricho."
+      pl: "Za Jordanem pierwszy obóz w kraju znajduje się w Gilgal, na wschód od Jerycha."
+      it: "Al di là del Giordano, il primo accampamento nel paese è a Gàlgala, a oriente di Gerico."
+      nl: "Aan de overkant van de Jordaan ligt het eerste kamp in het land te Gilgal, ten oosten van Jericho."
+      cs: "Za Jordánem je první tábor v zemi v Gilgalu, východně od Jericha."
   - place: a231f80 # Jericho
     ref: Josh.6.1-Josh.6.20
     year: "1406 BC"
@@ -195,3 +263,7 @@ stops:
       pt: "Sete dias ao redor de Jericó, e o seu muro cai."
       de: "Sieben Tage um Jericho, und seine Mauer fällt um."
       fr: "Sept jours autour de Jéricho, et sa muraille s’écroule."
+      pl: "Siedem dni wokół Jerycha i jego mur się wali."
+      it: "Sette giorni attorno a Gerico, e le sue mura crollano."
+      nl: "Zeven dagen rond Jericho, en de muur valt neer."
+      cs: "Sedm dní kolem Jericha a jeho hradba padá."

@@ -1,0 +1,111 @@
+---
+title: Open data
+description: De plaatsen, de verzen die ze noemen, de gebeurtenissen en de routes als JSON-bestanden die iedereen onder CC BY 4.0 mag gebruiken — zonder sleutel, zonder aanmelding.
+---
+
+<p class="lede">
+  Alles wat de wereldbol over plaatsen en verzen weet, is open: gewone JSON-bestanden die je gratis
+  op een andere site of in een andere app mag gebruiken onder CC BY 4.0. Geen sleutel, geen
+  aanmelding, geen beperkingen behalve gewone caching.
+</p>
+
+<h2>Welke plaatsen een vers noemt</h2>
+<p>Eén bestand per bijbelboek: elk vers dat een plaats noemt, met de id’s van die plaatsen.</p>
+<pre><code>GET {{site}}/api/v1/verses/Acts.json
+
+{ "Acts.16.11": ["a6a7150", "a68750d", "a91c509"], "Acts.16.12": ["a69e1b8", "a49e1d0"], … }</code></pre>
+<p>
+  De plaatsen zelf, met namen in het Engels en het Russisch, soort en coördinaten, staan in
+  <code>places.json</code>; koppel op <code>id</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/places.json
+
+[{ "id": "a49e1d0", "name": "Philippi", "name_ru": "Филиппы", "kind": "settlement",
+   "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "page": { "en": "/en/place/philippi/", "ru": "/ru/place/philippi/" } }, …]</code></pre>
+
+<h2>Alle bestanden</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Bestand</th>
+        <th>Wat erin staat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/v1/index.json</code></td>
+        <td>de lijst met bestanden en boeken, de licentie en de bronvermelding, de bouwdatum</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/places.json</code></td>
+        <td>
+          elke plaats: id, namen, soort, coördinaten, door hoeveel verzen ze wordt genoemd, haar
+          pagina (voor een plaats die in een vers voorkomt)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/verses/{Book}.json</code></td>
+        <td>
+          een vers → de plaatsen die het noemt, één bestand per boek (<code>Gen</code>,
+          <code>1Kgs</code>, <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/events.json</code></td>
+        <td>
+          de gedateerde gebeurtenissen, met <code>ref</code> waar de Bijbel de gebeurtenis vertelt
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/battles.json</code></td>
+        <td>
+          veldslagen en belegeringen: plaats, jaar, partijen en uitkomst, met <code>ref</code> waar
+          de Bijbel de veldslag vertelt
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/questions.json</code></td>
+        <td>
+          vragen die mensen stellen, beantwoord in beide talen, met het kaartbeeld en de bronnen
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/tours.json</code></td>
+        <td>
+          de routes: hun haltes op volgorde, elk met zijn passage en toelichting;
+          <code>by: "sea"</code> voor een over zee afgelegd traject, en <code>sailed</code>
+          (dagen en vers) waar de tekst zegt hoe lang het duurde
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Afspraken</h2>
+<ul>
+  <li>
+    Verwijzingen zijn OSIS met Engelse boekafkortingen en King James-nummering:
+    <code>Gen.12.6</code>, <code>Acts.16.12-Acts.16.15</code>.
+  </li>
+  <li>Jaren zijn astronomisch: 1 v.Chr. is 0, 586 v.Chr. is −585.</li>
+  <li>
+    Een plaats die in de brongegevens twee keer onder één naam staat, draagt
+    <code>"duplicate": true</code>; een plaats waarvan de locatie omstreden is,
+    <code>"disputed": true</code>.
+  </li>
+  <li>
+    De bestanden worden bij elke release van de gegevens opnieuw gebouwd; <code>index.json</code>
+    geeft de datum.
+  </li>
+</ul>
+
+<h2>Licentie en bronvermelding</h2>
+<p>
+  De gegevens vallen onder <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+  Gebruik ze, wijzig ze, verkoop wat je ermee bouwt; noem de bronnen waar je ze toont, zoals
+  <code>index.json</code> ze opsomt: History Globe door Vadym Arnaut, en OpenBible.info voor de
+  plaatsen, de koppelingen aan verzen en de coördinaten. De Russische namen zijn gelezen uit de
+  synodale vertaling, die in het publiek domein is.
+</p>

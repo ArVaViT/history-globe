@@ -13,6 +13,10 @@ title:
   pt: "Ezequias e Isaías"
   de: "Hiskia und Jesaja"
   fr: "Ézéchias et Ésaïe"
+  pl: "Ezechiasz i Izajasz"
+  it: "Ezechia e Isaia"
+  nl: "Chizkia en Jesaja"
+  cs: "Chizkijáš a Izajáš"
 year: "701 BC"
 # Where the story happens, told of several people: no time on foot.
 walked: false
@@ -29,6 +33,10 @@ stops:
       pt: "Ezequias remove os altos e despedaça a serpente de bronze Neustã; confia no Senhor."
       de: "Hiskia beseitigt die Höhen und zerbricht die eherne Schlange Nehuschtan; er vertraut auf den Herrn."
       fr: "Ézéchias supprime les hauts lieux et brise le serpent d’airain Nehuschtan ; il met sa confiance en l’Éternel."
+      pl: "Ezechiasz usuwa wyżyny i kruszy miedzianego węża Nehusztana; ufa Panu."
+      it: "Ezechia elimina gli alti luoghi e fa a pezzi il serpente di rame Nechustan; confida nel Signore."
+      nl: "Chizkia ruimt de offerhoogten op en breekt de koperen slang Nechustan; hij vertrouwt op de HEER."
+      cs: "Chizkijáš odstraňuje výsosti a láme měděného hada Nechuštana; doufá v Hospodina."
   - place: a041bb3 # Samaria
     ref: 2Kgs.18.9-2Kgs.18.12
     year: "722 BC"
@@ -40,6 +48,10 @@ stops:
       pt: "No sexto ano de Ezequias, Samaria é tomada pelo rei da Assíria e Israel é levado cativo."
       de: "In Hiskias sechstem Jahr wird Samaria vom König von Assyrien eingenommen, und Israel wird weggeführt."
       fr: "La sixième année d’Ézéchias, Samarie est prise par le roi d’Assyrie et Israël est emmené en captivité."
+      pl: "W szóstym roku Ezechiasza Samaria zostaje zdobyta przez króla Asyrii, a Izrael uprowadzony."
+      it: "Nel sesto anno di Ezechia Samaria è presa dal re d’Assiria e Israele è deportato."
+      nl: "In het zesde jaar van Chizkia wordt Samaria ingenomen door de koning van Assyrië en wordt Israël weggevoerd."
+      cs: "V šestém roce Chizkijášově dobývá Samaří král asyrský a Izrael je odveden."
   - place: a3cc590 # Lachish
     ref: 2Kgs.18.13-2Kgs.18.16
     note:
@@ -50,6 +62,10 @@ stops:
       pt: "Senaqueribe toma as cidades fortificadas de Judá; Ezequias lhe envia mensageiros em Laquis: “Eu te ofendi”, e paga o tributo que lhe foi imposto."
       de: "Sanherib nimmt die festen Städte Judas ein; Hiskia sendet zu ihm nach Lachisch: „Ich habe mich versündigt“, und zahlt den Tribut, der ihm auferlegt wird."
       fr: "Sanchérib prend les villes fortes de Juda ; Ézéchias lui envoie dire à Lakis : « J’ai commis une faute », et paie le tribut qui lui est imposé."
+      pl: "Sennacheryb zajmuje warowne miasta Judy; Ezechiasz posyła do niego do Lakisz: „Zgrzeszyłem”, i płaci nałożoną na niego daninę."
+      it: "Sennacherib prende le città fortificate di Giuda; Ezechia manda a dirgli a Lachis: «Ho mancato», e paga il tributo che gli viene imposto."
+      nl: "Sanherib neemt de versterkte steden van Juda in; Chizkia stuurt hem te Lachis de boodschap: “Ik heb gezondigd”, en betaalt de schatting die hem wordt opgelegd."
+      cs: "Senacherib dobývá hrazená města Judská; Chizkijáš k němu posílá do Lachiše: „Zhřešilť jsem“, a platí uložený plat."
   - place: a15257a # Jerusalem
     ref: 2Kgs.18.17-2Kgs.19.7
     note:
@@ -60,6 +76,10 @@ stops:
       pt: "No tanque superior, o Rabsaqué zomba de Ezequias e do Senhor diante do povo que está na muralha; Isaías responde: “Não tenha medo das palavras que você ouviu.”"
       de: "Am oberen Teich verhöhnt der Rabsake Hiskia und den Herrn vor dem Volk auf der Mauer; Jesaja antwortet: „Fürchte dich nicht vor den Worten, die du gehört hast“."
       fr: "Près de l’étang supérieur, Rabschaké outrage Ézéchias et l’Éternel devant le peuple sur la muraille ; Ésaïe répond : « Ne t’effraie point des paroles que tu as entendues. »"
+      pl: "U górnej sadzawki Rabszake szydzi z Ezechiasza i z Pana wobec ludu na murze; Izajasz odpowiada: „Nie bój się tych słów, któreś słyszał”."
+      it: "Presso lo stagno superiore Rabsache schernisce Ezechia e il Signore davanti al popolo sulle mura; Isaia risponde: «Non ti spaventare per le parole che hai udite»."
+      nl: "Bij de bovenste vijver bespot de Rabsake Chizkia en de HEER voor het volk op de muur; Jesaja antwoordt: “Vrees niet voor de woorden, die gij gehoord hebt.”"
+      cs: "U horního rybníka se Rab-šake posmívá Chizkijášovi i Hospodinu před lidem na hradbě; Izajáš odpovídá: „Nestrachuj se slov těch, kteráž jsi slyšel.“"
   - place: a97b595 # Libnah
     ref: 2Kgs.19.8
     note:
@@ -70,6 +90,10 @@ stops:
       pt: "O Rabsaqué encontra o rei da Assíria em guerra contra Libna."
       de: "Der Rabsake trifft den König von Assyrien im Krieg gegen Libna an."
       fr: "Rabschaké trouve le roi d’Assyrie en guerre contre Libna."
+      pl: "Rabszake zastaje króla Asyrii walczącego przeciw Libnie."
+      it: "Rabsache trova il re d’Assiria in guerra contro Libna."
+      nl: "De Rabsake treft de koning van Assyrië aan terwijl hij oorlog voert tegen Libna."
+      cs: "Rab-šake nalézá krále asyrského, jak válčí proti Libně."
   - place: a15257a # Jerusalem
     ref: 2Kgs.19.14-2Kgs.19.34
     note:
@@ -80,6 +104,10 @@ stops:
       pt: "Ezequias estende a carta diante do Senhor e ora; Isaías lhe envia a resposta: “eu defenderei esta cidade”."
       de: "Hiskia breitet den Brief vor dem Herrn aus und betet; Jesaja sendet ihm die Antwort: „Ich will diese Stadt beschirmen“."
       fr: "Ézéchias étale la lettre devant l’Éternel et prie ; Ésaïe lui envoie la réponse : « Je protégerai cette ville. »"
+      pl: "Ezechiasz rozkłada list przed Panem i modli się; Izajasz przesyła mu odpowiedź: „będę bronił miasta tego”."
+      it: "Ezechia spiega la lettera davanti al Signore e prega; Isaia gli manda la risposta: «Io proteggerò questa città affin di salvarla»."
+      nl: "Chizkia spreidt de brief voor de HEER uit en bidt; Jesaja stuurt hem het antwoord: “Want Ik zal deze stad beschermen.”"
+      cs: "Chizkijáš rozprostírá list před Hospodinem a modlí se; Izajáš mu posílá odpověď: „chrániti budu města tohoto“."
   - place: a70fd5d # Nineveh
     ref: 2Kgs.19.35-2Kgs.19.37
     note:
@@ -90,3 +118,7 @@ stops:
       pt: "Depois que o anjo do Senhor fere o acampamento assírio, Senaqueribe volta para casa e habita em Nínive; mais tarde, seus filhos o matam enquanto ele adora na casa de Nisroque, seu deus."
       de: "Nachdem der Engel des Herrn das assyrische Lager geschlagen hat, zieht Sanherib heim und bleibt in Ninive; später erschlagen ihn seine Söhne, als er im Haus Nisrochs, seines Gottes, anbetet."
       fr: "Après que l’ange de l’Éternel a frappé le camp assyrien, Sanchérib s’en retourne et reste à Ninive ; plus tard ses fils le tuent pendant qu’il adore dans la maison de Nisroc, son dieu."
+      pl: "Gdy anioł Pański uderza na obóz asyryjski, Sennacheryb wraca do domu i mieszka w Niniwie; później jego synowie zabijają go, gdy oddaje cześć w domu Nisroka, swego boga."
+      it: "Dopo che l’angelo del Signore ha colpito l’accampamento assiro, Sennacherib torna a casa e abita a Ninive; più tardi i suoi figli lo uccidono mentre adora nella casa di Nisroc, suo dio."
+      nl: "Nadat de engel van de HEER het Assyrische kamp heeft geslagen, gaat Sanherib naar huis en blijft te Nineve; later doden zijn zonen hem terwijl hij zich neerbuigt in het huis van Nisroch, zijn god."
+      cs: "Poté, co anděl Hospodinův udeří na asyrský tábor, se Senacherib vrací domů a bydlí v Ninive; později ho synové zabijí, když se klaní v domě svého boha Nisroka."

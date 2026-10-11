@@ -15,6 +15,10 @@ title:
   pt: "O recenseamento de Israel por Joabe"
   de: "Joabs Volkszählung in Israel"
   fr: "Le dénombrement de Joab en Israël"
+  pl: "Spis Izraela przeprowadzony przez Joaba"
+  it: "Il censimento di Ioab in Israele"
+  nl: "De volkstelling van Joab in Israël"
+  cs: "Joábovo sčítání Izraele"
 year: "975 BC"
 people: ["Joab@1Sa.26.6-Psa"]
 approximate: true
@@ -29,6 +33,10 @@ stops:
       pt: "Davi diz a Joabe: “Agora percorra todas as tribos de Israel, desde Dã até Berseba, e conte o povo”; os comandantes atravessam o Jordão e acampam em Aroer."
       de: "David sagt zu Joab: „Gehe umher in allen Stämmen Israels von Dan an bis gen Beer-Seba und zähle das Volk“; die Hauptleute gehen über den Jordan und lagern sich bei Aroër."
       fr: "David dit à Joab : « Parcours toutes les tribus d’Israël, depuis Dan jusqu’à Beer-Schéba ; qu’on fasse le dénombrement du peuple » ; les chefs passent le Jourdain et campent à Aroër."
+      pl: "Dawid mówi Joabowi: „Przebież zaraz wszystkie pokolenia Izraelskie od Dan aż do Beerseba, a policzcie lud”; dowódcy przeprawiają się przez Jordan i rozbijają obóz w Aroer."
+      it: "Davide dice a Ioab: «Va’ attorno per tutte le tribù d’Israele, da Dan fino a Beer-Sheba, e fate il censimento del popolo»; i capi attraversano il Giordano e si accampano ad Aroer."
+      nl: "David zegt tot Joab: “Trek nu om, door alle stammen van Israël, van Dan tot Ber-seba toe, en tel het volk”; de legeroversten steken de Jordaan over en slaan hun kamp op bij Aroër."
+      cs: "David říká Joábovi: „Projdi i hned všecka pokolení Izraelská od Dan až k Bersabé, a sečtěte lid“; velitelé přecházejí Jordán a rozbíjejí tábor u Aroeru."
   - place: a095b6e # Jazer
     ref: 2Sam.24.5
     note:
@@ -39,6 +47,10 @@ stops:
       pt: "De Aroer o caminho leva a Jazer, na terra de Gade."
       de: "Von Aroër führt der Weg nach Jaser im Land Gad."
       fr: "D’Aroër, le chemin mène vers Jaezer, dans le pays de Gad."
+      pl: "Z Aroer droga prowadzi ku Jazer, w ziemi Gad."
+      it: "Da Aroer la via conduce verso Iazer, nel paese di Gad."
+      nl: "Vanaf Aroër leidt de weg naar Jaëzer, in het land van Gad."
+      cs: "Od Aroeru vede cesta k Jazeru v zemi Gádově."
   - place: ae73b90 # Gilead
     ref: 2Sam.24.6
     note:
@@ -49,6 +61,10 @@ stops:
       pt: "Chegam a Gileade e à terra de Tatim-Hodsi."
       de: "Sie kommen nach Gilead und in das Land Tahtim-Hodschi."
       fr: "Ils arrivent en Galaad et dans le pays de Thachthim-Hodschi."
+      pl: "Docierają do Gileadu i do ziemi Tachtim-Chodszi."
+      it: "Giungono in Galaad e nel paese di Tahtim-Hodshi."
+      nl: "Zij komen in Gilead en in het land Tachtim-Chodsi."
+      cs: "Přicházejí do Gileadu a do země Tachtim-chodši."
   - place: a513646 # Dan
     ref: 2Sam.24.6
     note:
@@ -59,6 +75,10 @@ stops:
       pt: "Chegam a Dã-Jaã, geralmente identificada com Dã, a extremidade norte da terra."
       de: "Sie kommen nach Dan-Jaan, gewöhnlich als Dan verstanden, das nördliche Ende des Landes."
       fr: "Ils arrivent à Dan-Jaan, ordinairement identifiée à Dan, l’extrémité nord du pays."
+      pl: "Docierają do Dan-Jaan, zwykle utożsamianego z Dan, północnym krańcem kraju."
+      it: "Giungono a Dan-Iaan, di solito identificata con Dan, all’estremità settentrionale del paese."
+      nl: "Zij komen te Dan-Jaän, gewoonlijk opgevat als Dan, het noordelijke eind van het land."
+      cs: "Přicházejí do Dan-jaanu, což se obvykle považuje za Dan, severní konec země."
   - place: a98e4d7 # Sidon
     ref: 2Sam.24.6
     note:
@@ -69,6 +89,10 @@ stops:
       pt: "Dão a volta até Sidom."
       de: "Sie ziehen im Bogen bis nach Sidon."
       fr: "Ils font le tour jusqu’à Sidon."
+      pl: "Obchodzą kraj aż do Sydonu."
+      it: "Girano intorno fino a Sidone."
+      nl: "Zij trekken rond tot Sidon."
+      cs: "Obcházejí až k Sidónu."
   - place: a160272 # Tyre
     ref: 2Sam.24.7
     note:
@@ -79,6 +103,10 @@ stops:
       pt: "Chegam à fortaleza de Tiro e a todas as cidades dos heveus e dos cananeus."
       de: "Sie kommen zur Festung Tyrus und zu allen Städten der Hiwiter und der Kanaaniter."
       fr: "Ils arrivent à la forteresse de Tyr et dans toutes les villes des Héviens et des Cananéens."
+      pl: "Docierają do warowni Tyru i do wszystkich miast Chiwwitów i Kananejczyków."
+      it: "Giungono alla fortezza di Tiro e a tutte le città degli Evei e dei Cananei."
+      nl: "Zij komen bij de vesting van Tyrus en bij alle steden van de Hevieten en de Kanaänieten."
+      cs: "Přicházejí k pevnosti Týru a ke všem městům Chivejců a Kenaanců."
   - place: ad2f6c2 # Beersheba
     ref: 2Sam.24.7
     note:
@@ -89,6 +117,10 @@ stops:
       pt: "Saem para o sul de Judá, até Berseba."
       de: "Sie ziehen hinaus in den Süden Judas, nach Beerscheba."
       fr: "Ils sortent vers le midi de Juda, à Beer-Schéba."
+      pl: "Wychodzą na południe Judy, do Beer-Szeby."
+      it: "Escono verso il mezzogiorno di Giuda, a Bersabea."
+      nl: "Zij trekken uit naar het zuiden van Juda, naar Berseba."
+      cs: "Vycházejí na jih Judy, do Beer-šeby."
   - place: a15257a # Jerusalem
     ref: 2Sam.24.8-2Sam.24.25
     note:
@@ -99,3 +131,7 @@ stops:
       pt: "Depois de nove meses e vinte dias chegam a Jerusalém: 800.000 homens em Israel, 500.000 em Judá. O coração de Davi o fere; ele escolhe a praga em vez da mão do homem, morrem 70.000 de Dã a Berseba, e o Senhor detém a mão do anjo junto à eira de Araúna, o jebuseu, que Davi compra e sobre a qual constrói um altar."
       de: "Nach neun Monaten und zwanzig Tagen kommen sie nach Jerusalem: 800 000 Mann in Israel, 500 000 in Juda. Davids Herz schlägt ihm; er wählt lieber die Pest als die Hand der Menschen, 70 000 sterben von Dan bis Beerscheba, und der Herr hält die Hand des Engels bei der Tenne Araunas, des Jebusiters, zurück, die David kauft und auf der er einen Altar baut."
       fr: "Après neuf mois et vingt jours, ils arrivent à Jérusalem : 800 000 hommes en Israël, 500 000 en Juda. Le cœur de David le frappe ; il choisit la peste plutôt que la main des hommes, 70 000 hommes meurent depuis Dan jusqu’à Beer-Schéba, et l’Éternel arrête la main de l’ange près de l’aire d’Aravna le Jébusien, que David achète pour y bâtir un autel."
+      pl: "Po dziewięciu miesiącach i dwudziestu dniach docierają do Jerozolimy: 800 000 mężów w Izraelu, 500 000 w Judzie. Serce Dawida smaga go wyrzutami; wybiera zarazę zamiast ręki ludzkiej, umiera 70 000 ludzi od Dan do Beer-Szeby, a Pan powstrzymuje rękę anioła przy klepisku Arauny Jebusyty, które Dawid kupuje i buduje tam ołtarz."
+      it: "Dopo nove mesi e venti giorni giungono a Gerusalemme: 800.000 uomini in Israele, 500.000 in Giuda. Il cuore di Davide lo rimorde; egli sceglie la peste piuttosto che la mano degli uomini, ne muoiono 70.000 da Dan a Bersabea, e il Signore ferma la mano dell’angelo presso l’aia di Araunà il Gebuseo, che Davide compra, e vi costruisce un altare."
+      nl: "Na negen maanden en twintig dagen komen zij te Jeruzalem: 800.000 man in Israël, 500.000 in Juda. Davids hart slaat hem; hij kiest de pest liever dan de hand van mensen, 70.000 sterven van Dan tot Berseba, en de HEER houdt de hand van de engel tegen bij de dorsvloer van Arauna, de Jebusiet, die David koopt en waarop hij een altaar bouwt."
+      cs: "Po devíti měsících a dvaceti dnech přicházejí do Jeruzaléma: 800 000 mužů v Izraeli, 500 000 v Judovi. Davida zasáhne výčitka srdce; volí raději mor než ruku člověka, od Danu po Beer-šebu umírá 70 000 a Hospodin zadrží ruku anděla u humna Aravny Jebusejského, které David kupuje a staví na něm oltář."

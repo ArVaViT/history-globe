@@ -79,7 +79,8 @@ export function parseLabel(text: string): YearLabel {
 }
 
 /** The languages the code can format years and references in. */
-export type Locale = "en" | "ru" | "uk" | "de" | "es" | "pt" | "fr" | "zh";
+export type Locale =
+  "en" | "ru" | "uk" | "de" | "es" | "pt" | "fr" | "it" | "nl" | "pl" | "cs" | "zh";
 
 /** Every language the code can format, published or not. */
 export const ALL_LOCALES = [
@@ -90,6 +91,10 @@ export const ALL_LOCALES = [
   "es",
   "pt",
   "fr",
+  "it",
+  "nl",
+  "pl",
+  "cs",
   "zh",
 ] as const satisfies readonly Locale[];
 
@@ -106,10 +111,18 @@ export const LOCALES = [
   "pt",
   "de",
   "fr",
+  "it",
+  "nl",
+  "pl",
+  "cs",
 ] as const satisfies readonly Locale[];
 export type SiteLocale = (typeof LOCALES)[number];
 /** Each language by its own name, for the language switch. */
 export const LOCALE_NAMES: Readonly<Record<SiteLocale, string>> = {
+  cs: "Čeština",
+  pl: "Polski",
+  nl: "Nederlands",
+  it: "Italiano",
   fr: "Français",
   de: "Deutsch",
   pt: "Português",
@@ -136,6 +149,14 @@ export function formatYear(year: number, locale: Locale): string {
       return era === "AD" ? `${y} d.C.` : `${y} a.C.`;
     case "fr":
       return era === "AD" ? `${y} apr. J.-C.` : `${y} av. J.-C.`;
+    case "it":
+      return era === "AD" ? `${y} d.C.` : `${y} a.C.`;
+    case "nl":
+      return era === "AD" ? `${y} n.Chr.` : `${y} v.Chr.`;
+    case "pl":
+      return era === "AD" ? `${y} n.e.` : `${y} p.n.e.`;
+    case "cs":
+      return era === "AD" ? `${y} n. l.` : `${y} př. n. l.`;
     case "zh":
       return era === "AD" ? `公元${y}年` : `公元前${y}年`;
     case "en":
@@ -182,6 +203,14 @@ export function formatCentury(year: number, locale: Locale): string {
       return `século ${roman(n)}${era === "BC" ? " a.C." : " d.C."}`;
     case "fr":
       return `${roman(n)}${n === 1 ? "er" : "e"} siècle${era === "BC" ? " av. J.-C." : " apr. J.-C."}`;
+    case "it":
+      return `${roman(n)} secolo${era === "BC" ? " a.C." : " d.C."}`;
+    case "nl":
+      return `${String(n)}e eeuw${era === "BC" ? " v.Chr." : " n.Chr."}`;
+    case "pl":
+      return `${roman(n)} w.${era === "BC" ? " p.n.e." : " n.e."}`;
+    case "cs":
+      return `${String(n)}. stol.${era === "BC" ? " př. n. l." : " n. l."}`;
     case "zh":
       return `${era === "BC" ? "公元前" : "公元"}${String(n)}世纪`;
     default:
@@ -216,8 +245,8 @@ export const POLITY_SPLIT_YEAR = 500;
  * formats: до н. э. / до н. е. / до Р. Х., BC / BCE / B.C., v. Chr.; н. э. / н. е., AD,
  * n. Chr.
  */
-const BC_WORDS = String.raw`до\s*н\.?\s*[эе]\.?|до\s*р\.?\s*х\.?|b\.?\s*c\.?\s*e?\.?|v\.\s*chr\.?|a\.\s*c\.?|av\.?\s*j\.?-?c\.?`;
-const AD_WORDS = String.raw`н\.?\s*[эе]\.?|a\.?\s*d\.?|n\.\s*chr\.?|d\.\s*c\.?|apr\.?\s*j\.?-?c\.?`;
+const BC_WORDS = String.raw`до\s*н\.?\s*[эе]\.?|до\s*р\.?\s*х\.?|b\.?\s*c\.?\s*e?\.?|v\.\s*chr\.?|a\.\s*c\.?|av\.?\s*j\.?-?c\.?|p\.\s*n\.\s*e\.?|př\.\s*n\.\s*l\.?`;
+const AD_WORDS = String.raw`н\.?\s*[эе]\.?|a\.?\s*d\.?|n\.\s*chr\.?|d\.\s*c\.?|apr\.?\s*j\.?-?c\.?|n\.\s*e\.?|n\.\s*l\.?`;
 
 /**
  * A year as a reader types it, as an astronomical year: "586 до н. э.", "586 BC", "-586"
@@ -231,7 +260,8 @@ export function parseYearInput(text: string): number | null {
   if (n === 0) return null;
   // Loose on purpose: «586 до нашей эры», «586 до н» are BC too.
   const bc =
-    t.startsWith("-") || /до\s*н|до\s*р|b\.?\s*c|v\.\s*chr|a\.\s*c|av\.?\s*j|公元前/.test(t);
+    t.startsWith("-") ||
+    /до\s*н|до\s*р|b\.?\s*c|v\.\s*chr|a\.\s*c|av\.?\s*j|p\.\s*n\.\s*e|př\.\s*n|公元前/.test(t);
   return bc ? 1 - n : n;
 }
 

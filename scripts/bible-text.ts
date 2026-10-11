@@ -4,6 +4,7 @@
  * places cite and by build-text-places.ts to tell names from ordinary words.
  */
 import { execFileSync } from "node:child_process";
+import { inflateSync } from "node:zlib";
 
 /** USFM book codes → OSIS. */
 export const OSIS: Record<string, string> = {
@@ -129,6 +130,71 @@ export function readBible(zip: string): Map<string, string> {
         verses.set(key, `${verses.get(key) ?? ""} ${plain(rest)}`.trim());
       }
     }
+  }
+  return verses;
+}
+
+/**
+ * The whole Bible from a CrossWire SWORD zText module zip (pipeline/.cache), for an edition
+ * eBible.org does not carry. The module's verse index follows the KJV versification, so the
+ * chapter sizes come from the KJV (`kjv`, as readBible returns it): each testament opens with
+ * two header entries, each book with one, each chapter with one, then its verses.
+ */
+export function readSword(zip: string, kjv: Map<string, string>): Map<string, string> {
+  const sizes = new Map<string, number>();
+  for (const ref of kjv.keys()) {
+    const ch = ref.split(".").slice(0, 2).join(".");
+    sizes.set(ch, (sizes.get(ch) ?? 0) + 1);
+  }
+  const books = Object.values(OSIS);
+  const files = execFileSync("unzip", ["-Z1", zip], { encoding: "utf8" }).split("\n");
+  const read = (suffix: string): Buffer => {
+    const name = files.find((f) => f.endsWith(suffix));
+    if (!name) throw new Error(`${zip}: no ${suffix}`);
+    return execFileSync("unzip", ["-p", zip, name], { maxBuffer: 1 << 27 });
+  };
+  const verses = new Map<string, string>();
+  for (const [testament, list] of [
+    ["ot", books.slice(0, 39)],
+    ["nt", books.slice(39)],
+  ] as const) {
+    const bzs = read(`${testament}.bzs`);
+    const bzv = read(`${testament}.bzv`);
+    const bzz = read(`${testament}.bzz`);
+    const blocks = new Map<number, Buffer>();
+    const block = (i: number): Buffer => {
+      let b = blocks.get(i);
+      if (!b) {
+        const at = bzs.readUInt32LE(i * 12);
+        b = inflateSync(bzz.subarray(at, at + bzs.readUInt32LE(i * 12 + 4)));
+        blocks.set(i, b);
+      }
+      return b;
+    };
+    let index = 2;
+    for (const book of list) {
+      index++;
+      for (let c = 1; sizes.has(`${book}.${String(c)}`); c++) {
+        index++;
+        const n = sizes.get(`${book}.${String(c)}`) ?? 0;
+        for (let v = 1; v <= n; v++, index++) {
+          const size = bzv.readUInt16LE(index * 10 + 8);
+          if (!size) continue;
+          const at = bzv.readUInt32LE(index * 10 + 4);
+          const osis = block(bzv.readUInt32LE(index * 10))
+            .subarray(at, at + size)
+            .toString("utf8");
+          const text = osis
+            .replace(/<(note|title)\b[^>]*>[\s\S]*?<\/\1>/g, "")
+            .replace(/<[^>]+>/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+          if (text) verses.set(`${book}.${String(c)}.${String(v)}`, text);
+        }
+      }
+    }
+    if (index * 10 !== bzv.length)
+      throw new Error(`${zip}: ${testament} index does not fit the KJV`);
   }
   return verses;
 }

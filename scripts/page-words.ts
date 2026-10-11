@@ -812,7 +812,659 @@ const LISTS_FR: ListWords = {
   },
 };
 
+// Italiano (drafted by machine translation; not yet read by a native speaker).
+/** An Italian noun for a count: one or other («1 luogo», «5 luoghi», «1 milione di luoghi»). */
+const it = (n: number, one: string, other: string, many: string = other) => {
+  const r = new Intl.PluralRules("it").select(n);
+  return r === "one" ? one : r === "many" ? many : other;
+};
+
+const T_IT = {
+  site: "History Globe — mappa della storia biblica",
+  open: "Apri sulla mappa",
+  tour_open: "Percorri l’itinerario sulla mappa",
+  // The sea as the stop says it: «, per mare» or «, per mare, 5 giorni (At 20,6)».
+  leg: (km: string, road: string | null, sea: string) =>
+    `≈\u00a0${km}\u00a0km in linea retta${road ? `, ≈\u00a0${road}\u00a0km su\u00a0strade\u00a0romane` : ""}${sea}`,
+  sea: (days?: number, ref?: string, about?: boolean) =>
+    days
+      ? `, per mare, ${about ? "≈\u00a0" : ""}${String(days)}\u00a0${it(days, "giorno", "giorni", "di giorni")} (${ref ?? ""})`
+      : ", per mare",
+  today: "Dov’è oggi",
+  english: "In inglese",
+  ancient: "Negli autori antichi",
+  untold: ", il percorso non è raccontato nel testo",
+  life: "Periodo di esistenza",
+  ruins: "In rovina",
+  events: "Eventi",
+  battles: "Battaglie e assedi",
+  article: "Storia",
+  scripture: "Scrittura",
+  sources: "Fonti",
+  checked: "Articolo verificato sulle fonti; non ancora letto da uno storico.",
+  reviewed: "Articolo letto da uno storico",
+  verses: (n: number) => `Versetti (${String(n)})`,
+  more: (n: number) => `altri ${String(n)} sulla mappa`,
+  tours: "Itinerari che passano da questo luogo",
+  places: "Tutti i luoghi",
+  skip: "Vai al contenuto",
+  sections: "Sezioni",
+  tour: "Itinerario",
+  toursAll: "Tutti gli itinerari",
+  placesTitle: "Luoghi della storia biblica",
+  disputed: "Luogo discusso",
+  photoShows: (site: string) => `Nella foto: ${site}, uno dei siti proposti.`,
+  toursTitle: "Itinerari nella storia biblica",
+  questions: "Domande",
+  questionsTitle: "Domande sui luoghi e sulla storia della Bibbia",
+  question: "Domanda",
+  showMap: "Mostra sulla mappa",
+  checkedQ: "Risposta verificata sulle fonti; non ancora letta da uno storico.",
+  testament: { whole: "Tutta la Bibbia", ot: "Antico Testamento", nt: "Nuovo Testamento" },
+  stop: "Tappa",
+  translation: "Riveduta 1927",
+  circa: "ca.",
+  title: (n: string) => `${n} — dov’è, storia, versetti della Bibbia`,
+  desc: (n: string, k: string, v: number) =>
+    `${n} (${k}) sulla mappa della storia biblica: dov’è oggi questo luogo, la sua storia e i versetti della Bibbia che lo nominano (${String(v)}).`,
+  about: "Il progetto",
+  privacy: "Privacy",
+  allSources: "tutte le fonti",
+  data: "Dati",
+  // The language switch is an icon: «Lingua: English» names it for a pointer and a screen reader.
+  language: "Lingua",
+  photo: "Foto",
+  pd: "pubblico dominio",
+} as const;
+
+const LANDING_IT = {
+  title: "La storia su un globo — atlante di storia biblica",
+  h1: "La storia su un globo",
+  desc: "Un atlante gratuito: i luoghi della Bibbia su un globo 3D, gli stati intorno a loro anno per anno, itinerari, articoli con fonti e strumenti per una lezione.",
+  kicker: "Prima raccolta: storia biblica",
+  lede: "Sposta l’anno e guarda cambiare regni, città e nomi.",
+  open: "Apri il globo",
+  tours: "Itinerari",
+  docs: "Documentazione",
+  heroAlt:
+    "Il globo nel 701 a.C.: l’impero neoassiro da Tiro a Babilonia, Gerusalemme, Damasco, la linea del tempo",
+  heroNote: "701 a.C.: l’Assiria da Tiro a Babilonia",
+  live: "Esplora il globo",
+  full: "Schermo intero",
+  liveClose: "Fatto",
+  stats: ["luoghi", "itinerari", "articoli", "domande con risposta", "battaglie e assedi"],
+  rows: [
+    [
+      "Itinerari",
+      "Percorsi lungo le strade e il rilievo",
+      "Abramo, l’Esodo, i viaggi di Paolo: tappa per tappa, con il versetto, una foto, la distanza e i giorni di cammino.",
+      "Il secondo viaggio di Paolo",
+      "La tappa di Troade nel secondo viaggio di Paolo: l’Egeo sulla mappa, il percorso, il profilo della strada, una foto delle rovine",
+    ],
+    [
+      "Luoghi",
+      "Ogni luogo con i suoi versetti e le sue fonti",
+      "Dov’è oggi, a chi apparteneva nell’anno scelto e tutti i versetti che lo nominano. Ciò che è discusso viene detto discusso.",
+      "Apri Gerusalemme",
+      "La scheda di Gerusalemme: una foto, il suo stato nel 30 d.C., l’articolo; intorno i monti della Giudea con decine di luoghi biblici",
+    ],
+    [
+      "Per la lezione",
+      "Un quiz, la tua lezione, un foglio A4",
+      "Un quiz «Dove è successo?» su qualsiasi itinerario, la tua lezione in un solo link, mappe da stampare su A4.",
+      "Apri l’Esodo",
+      "Un quiz sull’Esodo: una domanda con un versetto e quattro risposte, il percorso sulla mappa",
+    ],
+  ],
+  cards: [
+    [
+      "Domande di contesto",
+      "Dov’era Ninive? Quanto impiegò Paolo ad arrivare a Roma? Risposte con la mappa e i versetti.",
+      "Tutte le domande",
+    ],
+    [
+      "Dati aperti",
+      "CC BY 4.0, un’API da versetto a luoghi senza chiave e un globo da incorporare.",
+      "API e incorporamento",
+    ],
+    [
+      "Senza account",
+      "Senza registrazione, senza cookie, senza pubblicità. La mappa si può salvare per usarla offline.",
+      "Privacy",
+    ],
+  ],
+  trust: "Costruito su dati aperti",
+  trustText:
+    "Gli articoli sono redatti con l’aiuto dell’IA e verificati sulle fonti in un passaggio a parte; gli studiosi non li hanno ancora rivisti, e il sito lo dichiara.",
+  method: "Come si verificano i dati",
+  sources: "Tutte le fonti",
+  ctaTitle: "Parti da un anno qualsiasi",
+  ctaText: "Senza account, su telefono o computer, in più lingue.",
+} as const;
+
+const LISTS_IT: ListWords = {
+  placesLead: (n, k, a) => `${n} ${it(k, "luogo", "luoghi", "di luoghi")}, ${a} con articolo`,
+  toursLead: (n, k) =>
+    `${n} ${it(k, "itinerario", "itinerari", "di itinerari")}. Le distanze sono linee rette tra le tappe.`,
+  questionsLead: (n, k) =>
+    `${n} ${it(k, "domanda con risposta", "domande con risposta", "di domande con risposta")} sulla mappa, nell’ordine dei libri della Bibbia.`,
+  all: "Tutti",
+  withArticle: "Con articolo",
+  alphabet: "Alfabetico",
+  findPlace: "Cerca un luogo",
+  findQuestion: "Cerca una domanda",
+  nothing: "Nessun risultato",
+  stops: (n) => `${String(n)}\u00a0${it(n, "tappa", "tappe", "di tappe")}`,
+  km: (n) => `≈\u00a0${n}\u00a0km`,
+  parts: {
+    torah: "Il Pentateuco",
+    history: "I libri storici",
+    prophets: "I profeti e i libri sapienziali",
+    gospels: "I Vangeli",
+    acts: "Atti degli Apostoli",
+    letters: "Le lettere e l’Apocalisse",
+  },
+  partsShort: {
+    torah: "Pentateuco",
+    history: "Storici",
+    prophets: "Profeti",
+    gospels: "Vangeli",
+    acts: "Atti",
+    letters: "Lettere",
+  },
+};
+
+// Nederlands (drafted by machine translation; not yet read by a native speaker).
+/** A Dutch noun for a count: one or other («1 plaats», «5 plaatsen»). */
+const nl = (n: number, one: string, other: string) =>
+  new Intl.PluralRules("nl").select(n) === "one" ? one : other;
+
+const T_NL = {
+  site: "History Globe — een kaart van de bijbelse geschiedenis",
+  open: "Openen op de kaart",
+  tour_open: "De route volgen op de kaart",
+  // The sea as the stop says it: «, over zee» or «, over zee, 5 dagen (Hand. 20:6)».
+  leg: (km: string, road: string | null, sea: string) =>
+    `≈\u00a0${km}\u00a0km hemelsbreed${road ? `, ≈\u00a0${road}\u00a0km over\u00a0Romeinse\u00a0wegen` : ""}${sea}`,
+  sea: (days?: number, ref?: string, about?: boolean) =>
+    days
+      ? `, over zee, ${about ? "≈\u00a0" : ""}${String(days)}\u00a0${nl(days, "dag", "dagen")} (${ref ?? ""})`
+      : ", over zee",
+  today: "Waar het nu ligt",
+  english: "In het Engels",
+  ancient: "Bij antieke schrijvers",
+  untold: ", de weg wordt niet beschreven",
+  life: "Bestaansperiode",
+  ruins: "Ruïne",
+  events: "Gebeurtenissen",
+  battles: "Veldslagen en belegeringen",
+  article: "Geschiedenis",
+  scripture: "Schrift",
+  sources: "Bronnen",
+  checked: "Getoetst aan de bronnen; nog niet gelezen door een historicus.",
+  reviewed: "Gelezen door een historicus",
+  verses: (n: number) => `Verzen (${String(n)})`,
+  more: (n: number) => `nog ${String(n)} op de kaart`,
+  tours: "Routes langs deze plaats",
+  places: "Alle plaatsen",
+  skip: "Naar de inhoud",
+  sections: "Onderdelen",
+  tour: "Route",
+  toursAll: "Alle routes",
+  placesTitle: "Plaatsen uit de bijbelse geschiedenis",
+  disputed: "Omstreden plaats",
+  photoShows: (site: string) => `Op de foto: ${site}, een van de voorgestelde locaties.`,
+  toursTitle: "Routes door de bijbelse geschiedenis",
+  questions: "Vragen",
+  questionsTitle: "Vragen over de plaatsen en de geschiedenis van de Bijbel",
+  question: "Vraag",
+  showMap: "Tonen op de kaart",
+  checkedQ: "Antwoord getoetst aan de bronnen; nog niet gelezen door een historicus.",
+  testament: { whole: "De hele Bijbel", ot: "Oude Testament", nt: "Nieuwe Testament" },
+  stop: "Halte",
+  translation: "Statenvertaling, editie 1917",
+  circa: "ca.",
+  title: (n: string) => `${n} — waar het lag, geschiedenis, Bijbelverzen`,
+  desc: (n: string, k: string, v: number) =>
+    `${n} (${k}) op de kaart van de bijbelse geschiedenis: waar deze plaats nu ligt, haar geschiedenis en de Bijbelverzen die haar noemen (${String(v)}).`,
+  about: "Over het project",
+  privacy: "Privacy",
+  allSources: "alle bronnen",
+  data: "Gegevens",
+  // The language switch is an icon: «Taal: English» names it for a pointer and a screen reader.
+  language: "Taal",
+  photo: "Foto",
+  pd: "publiek domein",
+} as const;
+
+const LANDING_NL = {
+  title: "Geschiedenis op een wereldbol — atlas van de bijbelse geschiedenis",
+  h1: "Geschiedenis op een wereldbol",
+  desc: "Een gratis atlas: de plaatsen uit de Bijbel op een 3D-wereldbol, de staten eromheen jaar na jaar, routes, artikelen met bronnen en hulpmiddelen voor een les.",
+  kicker: "Eerste collectie: bijbelse geschiedenis",
+  lede: "Verschuif het jaar en zie koninkrijken, steden en namen veranderen.",
+  open: "De wereldbol openen",
+  tours: "Routes",
+  docs: "Documentatie",
+  heroAlt:
+    "De wereldbol in 701 v.Chr.: het Nieuw-Assyrische Rijk van Tyrus tot Babylon, Jeruzalem, Damascus, de tijdlijn",
+  heroNote: "701 v.Chr.: Assyrië van Tyrus tot Babylon",
+  live: "De wereldbol verkennen",
+  full: "Volledig scherm",
+  liveClose: "Klaar",
+  stats: ["plaatsen", "routes", "artikelen", "beantwoorde vragen", "veldslagen en belegeringen"],
+  rows: [
+    [
+      "Routes",
+      "Reizen langs de wegen en het reliëf",
+      "Abraham, de uittocht, de reizen van Paulus: halte voor halte, met het vers, een foto van de plek, de afstand en het aantal dagen onderweg.",
+      "De tweede reis van Paulus",
+      "De halte Troas op de tweede reis van Paulus: de Egeïsche Zee op de kaart, de route, het profiel van de weg, een foto van de ruïnes",
+    ],
+    [
+      "Plaatsen",
+      "Elke plaats met haar verzen en bronnen",
+      "Waar ze nu ligt, van wie ze was in het gekozen jaar en alle verzen die haar noemen. Wat omstreden is, heet omstreden.",
+      "Jeruzalem openen",
+      "De kaart van Jeruzalem: een foto, de toestand in 30 n.Chr., het artikel; eromheen het Judese bergland met tientallen bijbelse plaatsen",
+    ],
+    [
+      "Voor de les",
+      "Een quiz, je eigen les, een A4-blad",
+      "Een quiz ‘Waar gebeurde het?’ bij elke route, je eigen les als één link, kaarten om op A4 af te drukken.",
+      "De uittocht openen",
+      "Een quiz over de uittocht: een vraag met een vers en vier antwoorden, de route op de kaart",
+    ],
+  ],
+  cards: [
+    [
+      "Vragen over de context",
+      "Waar lag Nineve? Hoe lang reisde Paulus naar Rome? Antwoorden met de kaart en de verzen.",
+      "Alle vragen",
+    ],
+    [
+      "Open gegevens",
+      "CC BY 4.0, een API van vers naar plaatsen zonder sleutel en een wereldbol om in te sluiten.",
+      "API en insluiten",
+    ],
+    [
+      "Geen account",
+      "Geen registratie, geen cookies, geen advertenties. De kaart kan worden opgeslagen voor offline gebruik.",
+      "Privacy",
+    ],
+  ],
+  trust: "Gebouwd op open gegevens",
+  trustText:
+    "De artikelen worden met hulp van AI opgesteld en in een aparte ronde aan de bronnen getoetst; wetenschappers hebben ze nog niet beoordeeld, en de site zegt dat.",
+  method: "Hoe de gegevens worden gecontroleerd",
+  sources: "Alle bronnen",
+  ctaTitle: "Begin bij elk jaar",
+  ctaText: "Zonder account, op een telefoon of een computer, in meerdere talen.",
+} as const;
+
+const LISTS_NL: ListWords = {
+  placesLead: (n, k, a) => `${n} ${nl(k, "plaats", "plaatsen")}, ${a} met een artikel`,
+  toursLead: (n, k) =>
+    `${n} ${nl(k, "route", "routes")}. Afstanden zijn hemelsbreed tussen de haltes.`,
+  questionsLead: (n, k) =>
+    `${n} ${nl(k, "beantwoorde vraag", "beantwoorde vragen")} op de kaart, in de volgorde van de Bijbelboeken.`,
+  all: "Alle",
+  withArticle: "Met artikel",
+  alphabet: "Alfabetisch",
+  findPlace: "Een plaats zoeken",
+  findQuestion: "Een vraag zoeken",
+  nothing: "Niets gevonden",
+  stops: (n) => `${String(n)}\u00a0${nl(n, "halte", "haltes")}`,
+  km: (n) => `≈\u00a0${n}\u00a0km`,
+  parts: {
+    torah: "De Pentateuch",
+    history: "De geschiedkundige boeken",
+    prophets: "De profeten en de wijsheidsboeken",
+    gospels: "De evangeliën",
+    acts: "Handelingen van de apostelen",
+    letters: "De brieven en Openbaring",
+  },
+  partsShort: {
+    torah: "Pentateuch",
+    history: "Geschiedenis",
+    prophets: "Profeten",
+    gospels: "Evangeliën",
+    acts: "Handelingen",
+    letters: "Brieven",
+  },
+};
+
+// Polski (drafted by machine translation; not yet read by a native speaker).
+/** A Polish noun for a count: one, few, many («1 miejsce», «3 miejsca», «5 miejsc»). */
+const pl = (n: number, one: string, few: string, many: string) => {
+  const r = new Intl.PluralRules("pl").select(n);
+  return r === "one" ? one : r === "few" ? few : many;
+};
+
+const T_PL = {
+  site: "History Globe — mapa historii biblijnej",
+  open: "Otwórz na mapie",
+  tour_open: "Przejdź trasę na mapie",
+  // The sea as the stop says it: «, morzem» or «, morzem, 5 dni (Dz 20,6)».
+  leg: (km: string, road: string | null, sea: string) =>
+    `≈\u00a0${km}\u00a0km w linii prostej${road ? `, ≈\u00a0${road}\u00a0km drogami\u00a0rzymskimi` : ""}${sea}`,
+  sea: (days?: number, ref?: string, about?: boolean) =>
+    days
+      ? `, morzem, ${about ? "≈\u00a0" : ""}${String(days)}\u00a0${pl(days, "dzień", "dni", "dni")} (${ref ?? ""})`
+      : ", morzem",
+  today: "Dziś",
+  english: "Po angielsku",
+  ancient: "U autorów starożytnych",
+  untold: ", droga nie jest opisana w tekście",
+  life: "Czas istnienia",
+  ruins: "W ruinie",
+  events: "Wydarzenia",
+  battles: "Bitwy i oblężenia",
+  article: "Historia",
+  scripture: "Pismo Święte",
+  sources: "Źródła",
+  checked: "Artykuł sprawdzony ze źródłami; historyk jeszcze go nie czytał.",
+  reviewed: "Artykuł przeczytał historyk",
+  verses: (n: number) => `Wersety (${String(n)})`,
+  more: (n: number) => `jeszcze ${String(n)} na mapie`,
+  tours: "Trasy przez to miejsce",
+  places: "Wszystkie miejsca",
+  skip: "Przejdź do treści",
+  sections: "Sekcje",
+  tour: "Trasa",
+  toursAll: "Wszystkie trasy",
+  placesTitle: "Miejsca historii biblijnej",
+  disputed: "Położenie sporne",
+  photoShows: (site: string) => `Na zdjęciu: ${site}, jedna z proponowanych lokalizacji.`,
+  toursTitle: "Trasy po historii biblijnej",
+  questions: "Pytania",
+  questionsTitle: "Pytania o miejsca i historię Biblii",
+  question: "Pytanie",
+  showMap: "Pokaż na mapie",
+  checkedQ: "Odpowiedź sprawdzona ze źródłami; historyk jeszcze jej nie czytał.",
+  testament: { whole: "Cała Biblia", ot: "Stary Testament", nt: "Nowy Testament" },
+  stop: "Przystanek",
+  translation: "Biblia Gdańska 1881",
+  circa: "ok.",
+  title: (n: string) => `${n} — gdzie to było, historia, wersety Biblii`,
+  desc: (n: string, k: string, v: number) =>
+    `${n} (${k}) na mapie historii biblijnej: gdzie to miejsce leży dziś, jego historia i wzmianki w Biblii (${String(v)}).`,
+  about: "O projekcie",
+  privacy: "Prywatność",
+  allSources: "wszystkie źródła",
+  data: "Dane",
+  // The language switch is an icon: «Język: English» names it for a pointer and a screen reader.
+  language: "Język",
+  photo: "Zdjęcie",
+  pd: "domena publiczna",
+} as const;
+
+const LANDING_PL = {
+  title: "Historia na globusie — atlas historii biblijnej",
+  h1: "Historia na globusie",
+  desc: "Bezpłatny atlas: miejsca z Biblii na globusie 3D, państwa wokół nich rok po roku, trasy, artykuły ze źródłami i narzędzia na lekcję.",
+  kicker: "Pierwsza kolekcja: historia biblijna",
+  lede: "Przesuń rok, a królestwa, miasta i nazwy wokół zaczną się zmieniać.",
+  open: "Otwórz globus",
+  tours: "Trasy",
+  docs: "Dokumentacja",
+  heroAlt:
+    "Globus w roku 701 p.n.e.: państwo nowoasyryjskie od Tyru po Babilon, Jerozolima, Damaszek, oś czasu",
+  heroNote: "701 p.n.e.: Asyria od Tyru po Babilon",
+  live: "Obracaj globus",
+  full: "Pełny ekran",
+  liveClose: "Gotowe",
+  stats: ["miejsc", "tras", "artykułów", "odpowiedzi na pytania", "bitew i oblężeń"],
+  rows: [
+    [
+      "Trasy",
+      "Szlaki po drogach i rzeźbie terenu",
+      "Abraham, Wyjście, podróże Pawła: przystanek po przystanku, z wersetem, zdjęciem miejsca, odległością i dniami drogi.",
+      "Druga podróż Pawła",
+      "Przystanek w Troadzie podczas drugiej podróży Pawła: Morze Egejskie na mapie, trasa, profil drogi, zdjęcie ruin",
+    ],
+    [
+      "Miejsca",
+      "Każde miejsce z wersetami i źródłami",
+      "Gdzie leży dziś, do kogo należało w wybranym roku i wszystkie wersety, które je wymieniają. To, co sporne, zostaje nazwane spornym.",
+      "Otwórz Jerozolimę",
+      "Karta Jerozolimy: zdjęcie, państwo w roku 30 n.e., artykuł; wokół góry Judei z dziesiątkami miejsc biblijnych",
+    ],
+    [
+      "Na lekcję",
+      "Quiz, własna lekcja, arkusz A4",
+      "Quiz „Gdzie to się stało?” do każdej trasy, własna lekcja w jednym linku, mapy do wydruku w A4.",
+      "Otwórz Wyjście z Egiptu",
+      "Quiz o Wyjściu: pytanie z wersetem i cztery odpowiedzi, trasa na mapie",
+    ],
+  ],
+  cards: [
+    [
+      "Pytania o kontekst",
+      "Gdzie leżała Niniwa? Jak długo Paweł wędrował do Rzymu? Odpowiedzi z mapą i wersetami.",
+      "Wszystkie pytania",
+    ],
+    [
+      "Otwarte dane",
+      "CC BY 4.0, API „werset → miejsca” bez klucza i globus do osadzenia.",
+      "API i osadzanie",
+    ],
+    [
+      "Bez konta",
+      "Bez rejestracji, bez plików cookie, bez reklam. Mapę można zapisać do pracy offline.",
+      "Prywatność",
+    ],
+  ],
+  trust: "Oparte na otwartych danych",
+  trustText:
+    "Artykuły powstają z pomocą AI i są sprawdzane ze źródłami w osobnym przebiegu; uczeni jeszcze ich nie zrecenzowali i strona mówi o tym otwarcie.",
+  method: "Jak sprawdzamy dane",
+  sources: "Wszystkie źródła",
+  ctaTitle: "Zacznij od dowolnego roku",
+  ctaText: "Bez konta, na telefonie i na komputerze, w wielu językach.",
+} as const;
+
+const LISTS_PL: ListWords = {
+  placesLead: (n, k, a) => `${n} ${pl(k, "miejsce", "miejsca", "miejsc")}, w tym ${a} z artykułem`,
+  toursLead: (n, k) =>
+    `${n} ${pl(k, "trasa", "trasy", "tras")}. Odległości to linie proste między przystankami.`,
+  questionsLead: (n, k) =>
+    `${n} ${pl(k, "pytanie", "pytania", "pytań")} z odpowiedzią na mapie, w kolejności ksiąg Biblii.`,
+  all: "Wszystkie",
+  withArticle: "Z artykułem",
+  alphabet: "Alfabetycznie",
+  findPlace: "Znajdź miejsce",
+  findQuestion: "Znajdź pytanie",
+  nothing: "Nic nie znaleziono",
+  stops: (n) => `${String(n)}\u00a0${pl(n, "przystanek", "przystanki", "przystanków")}`,
+  km: (n) => `≈\u00a0${n}\u00a0km`,
+  parts: {
+    torah: "Pięcioksiąg",
+    history: "Księgi historyczne",
+    prophets: "Prorocy i księgi mądrościowe",
+    gospels: "Ewangelie",
+    acts: "Dzieje Apostolskie",
+    letters: "Listy i Apokalipsa",
+  },
+  partsShort: {
+    torah: "Pięcioksiąg",
+    history: "Historyczne",
+    prophets: "Prorocy",
+    gospels: "Ewangelie",
+    acts: "Dzieje",
+    letters: "Listy",
+  },
+};
+
+// Čeština (drafted by machine translation; not yet read by a native speaker).
+/** A Czech noun for a count: one, few, other («1 místo», «3 místa», «5 míst»); fractions take the genitive. */
+const cs = (n: number, one: string, few: string, other: string) => {
+  const r = new Intl.PluralRules("cs").select(n);
+  return r === "one" ? one : r === "few" ? few : other;
+};
+
+const CS_DAYS: Partial<Record<Intl.LDMLPluralRule, string>> = { one: "den", few: "dny" };
+
+const T_CS = {
+  site: "History Globe — mapa biblických dějin",
+  open: "Otevřít na mapě",
+  tour_open: "Projít trasu na mapě",
+  // The sea as the stop says it: «, po moři» or «, po moři, 5 dní (Sk 20,6)».
+  leg: (km: string, road: string | null, sea: string) =>
+    `≈\u00a0${km}\u00a0km vzdušnou čarou${road ? `, ≈\u00a0${road}\u00a0km po\u00a0římských\u00a0silnicích` : ""}${sea}`,
+  sea: (days?: number, ref?: string, about?: boolean) =>
+    days
+      ? `, po moři, ${about ? "≈\u00a0" : ""}${String(days)}\u00a0${CS_DAYS[new Intl.PluralRules("cs").select(days)] ?? "dní"} (${ref ?? ""})`
+      : ", po moři",
+  today: "Kde je dnes",
+  english: "Anglicky",
+  ancient: "U antických autorů",
+  untold: ", cesta v textu není popsána",
+  life: "Doba existence",
+  ruins: "V troskách",
+  events: "Události",
+  battles: "Bitvy a obléhání",
+  article: "Dějiny",
+  scripture: "Písmo",
+  sources: "Prameny",
+  checked: "Článek ověřen podle pramenů; historik jej ještě nečetl.",
+  reviewed: "Článek přečetl historik",
+  verses: (n: number) => `Verše (${String(n)})`,
+  more: (n: number) => `další: ${String(n)} — na mapě`,
+  tours: "Trasy přes toto místo",
+  places: "Všechna místa",
+  skip: "Přeskočit na obsah",
+  sections: "Oddíly",
+  tour: "Trasa",
+  toursAll: "Všechny trasy",
+  placesTitle: "Místa biblických dějin",
+  disputed: "Sporné místo",
+  photoShows: (site: string) => `Na snímku: ${site}, jedna z navrhovaných lokalit.`,
+  toursTitle: "Trasy biblickými dějinami",
+  questions: "Otázky",
+  questionsTitle: "Otázky o místech a dějinách Bible",
+  question: "Otázka",
+  showMap: "Ukázat na mapě",
+  checkedQ: "Odpověď ověřena podle pramenů; historik ji ještě nečetl.",
+  testament: { whole: "Celá Bible", ot: "Starý zákon", nt: "Nový zákon" },
+  stop: "Zastávka",
+  translation: "Bible kralická 1613",
+  circa: "asi",
+  title: (n: string) => `${n} — kde to bylo, dějiny, biblické verše`,
+  desc: (n: string, k: string, v: number) =>
+    `${n} (${k}) na mapě biblických dějin: kde toto místo leží dnes, jeho dějiny a zmínky v Bibli (${String(v)}).`,
+  about: "O projektu",
+  privacy: "Soukromí",
+  allSources: "všechny prameny",
+  data: "Data",
+  // The language switch is an icon: «Jazyk: English» names it for a pointer and a screen reader.
+  language: "Jazyk",
+  photo: "Foto",
+  pd: "volné dílo",
+} as const;
+
+const LANDING_CS = {
+  title: "Dějiny na glóbu — atlas biblických dějin",
+  h1: "Dějiny na glóbu",
+  desc: "Bezplatný atlas: místa Bible na 3D glóbu, okolní státy rok za rokem, trasy, články s prameny a nástroje pro výuku.",
+  kicker: "První sbírka: biblické dějiny",
+  lede: "Posuňte rok a uvidíte, jak se mění království, města i jména.",
+  open: "Otevřít glóbus",
+  tours: "Trasy",
+  docs: "Dokumentace",
+  heroAlt:
+    "Glóbus v roce 701 př. n. l.: Novoasyrská říše od Týru po Babylon, Jeruzalém, Damašek, časová osa",
+  heroNote: "701 př. n. l.: Asýrie od Týru po Babylon",
+  live: "Prozkoumat glóbus",
+  full: "Celá obrazovka",
+  liveClose: "Hotovo",
+  stats: ["míst", "tras", "článků", "zodpovězených otázek", "bitev a obléhání"],
+  rows: [
+    [
+      "Trasy",
+      "Cesty po silnicích a krajině",
+      "Abraham, exodus, Pavlovy cesty: zastávku po zastávce, s veršem, fotografií místa, vzdáleností a počtem dní cesty.",
+      "Pavlova druhá cesta",
+      "Zastávka v Troadě na Pavlově druhé cestě: Egejské moře na mapě, trasa, profil cesty, fotografie zřícenin",
+    ],
+    [
+      "Místa",
+      "Každé místo s verši a prameny",
+      "Kde leží dnes, komu patřilo ve zvoleném roce a všechny verše, které je jmenují. Co je sporné, je jako sporné označeno.",
+      "Otevřít Jeruzalém",
+      "Karta Jeruzaléma: fotografie, jeho stav v roce 30 n. l., článek; kolem Judských hor s desítkami biblických míst",
+    ],
+    [
+      "Pro výuku",
+      "Kvíz, vlastní lekce, list A4",
+      "Kvíz „Kde se to stalo?“ k libovolné trase, vlastní lekce na jediném odkazu, mapy k vytištění na A4.",
+      "Otevřít exodus",
+      "Kvíz o exodu: otázka s veršem a čtyři odpovědi, trasa na mapě",
+    ],
+  ],
+  cards: [
+    [
+      "Otázky k souvislostem",
+      "Kde leželo Ninive? Jak dlouho cestoval Pavel do Říma? Odpovědi s mapou a verši.",
+      "Všechny otázky",
+    ],
+    [
+      "Otevřená data",
+      "CC BY 4.0, API „verš → místa“ bez klíče a glóbus k vložení do stránky.",
+      "API a vložení",
+    ],
+    [
+      "Bez účtu",
+      "Bez registrace, bez cookies, bez reklam. Mapu lze uložit a používat offline.",
+      "Soukromí",
+    ],
+  ],
+  trust: "Postaveno na otevřených datech",
+  trustText:
+    "Články vznikají s pomocí umělé inteligence a v samostatném průchodu se ověřují podle pramenů; odborníci je zatím nerecenzovali a stránka to říká otevřeně.",
+  method: "Jak se data ověřují",
+  sources: "Všechny prameny",
+  ctaTitle: "Začněte kterýmkoli rokem",
+  ctaText: "Bez účtu, v telefonu i v počítači, v několika jazycích.",
+} as const;
+
+const LISTS_CS: ListWords = {
+  placesLead: (n, k, a) => `${n} ${cs(k, "místo", "místa", "míst")}, z toho ${a} s článkem`,
+  toursLead: (n, k) =>
+    `${n} ${cs(k, "trasa", "trasy", "tras")}. Vzdálenosti jsou vzdušnou čarou mezi zastávkami.`,
+  questionsLead: (n, k) =>
+    `${n} ${cs(k, "zodpovězená otázka", "zodpovězené otázky", "zodpovězených otázek")} na mapě, v pořadí biblických knih.`,
+  all: "Vše",
+  withArticle: "S článkem",
+  alphabet: "Abecedně",
+  findPlace: "Najít místo",
+  findQuestion: "Najít otázku",
+  nothing: "Nic nenalezeno",
+  stops: (n) => `${String(n)}\u00a0${cs(n, "zastávka", "zastávky", "zastávek")}`,
+  km: (n) => `≈\u00a0${n}\u00a0km`,
+  parts: {
+    torah: "Pentateuch",
+    history: "Historické knihy",
+    prophets: "Proroci a knihy moudrosti",
+    gospels: "Evangelia",
+    acts: "Skutky apoštolů",
+    letters: "Listy a Zjevení",
+  },
+  partsShort: {
+    torah: "Pentateuch",
+    history: "Historické",
+    prophets: "Proroci",
+    gospels: "Evangelia",
+    acts: "Skutky",
+    letters: "Listy",
+  },
+};
+
 export const T = {
+  cs: T_CS,
+  pl: T_PL,
+  nl: T_NL,
+  it: T_IT,
   fr: T_FR,
   de: T_DE,
   pt: T_PT,
@@ -937,6 +1589,10 @@ export const T = {
 // from a search or a link, with the way into the map. The map itself stays at the root.
 // Short on purpose: the pictures show what the words would only describe.
 export const LANDING = {
+  cs: LANDING_CS,
+  pl: LANDING_PL,
+  nl: LANDING_NL,
+  it: LANDING_IT,
   fr: LANDING_FR,
   de: LANDING_DE,
   pt: LANDING_PT,
@@ -1086,6 +1742,10 @@ type SameWords<D extends Record<string, object>> = {
     : never;
 };
 export const WORDS_COMPLETE: SameWords<typeof T> & SameWords<typeof LANDING> = {
+  cs: true,
+  pl: true,
+  nl: true,
+  it: true,
   fr: true,
   de: true,
   pt: true,
@@ -1123,6 +1783,10 @@ interface ListWords {
 }
 type Part = "torah" | "history" | "prophets" | "gospels" | "acts" | "letters";
 export const LISTS: Record<SiteLocale, ListWords> = {
+  cs: LISTS_CS,
+  pl: LISTS_PL,
+  nl: LISTS_NL,
+  it: LISTS_IT,
   fr: LISTS_FR,
   de: LISTS_DE,
   pt: LISTS_PT,

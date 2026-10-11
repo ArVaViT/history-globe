@@ -2,7 +2,7 @@
  * Writes apps/web/public/data/verses/<locale>/<Book>.json: the text of every verse the
  * places cite, keyed by its English (OSIS) reference, so the place card can show a
  * verse without sending the reader away. Russian is the Synodal text, English the KJV,
- * both public domain, from eBible.org's USFM editions (downloaded once into
+ * both public domain, from eBible.org's USFM editions (Polish from CrossWire's SWORD module) (downloaded once into
  * pipeline/.cache, their sha256 written to verses/sources.json).
  *
  * Russian verses come through toSynodal (Ps 68:15 → 67:16). Chapters whose Synodal
@@ -16,7 +16,7 @@ import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { toSynodal } from "../packages/model/src/synodal.ts";
-import { readBible } from "./bible-text.ts";
+import { readBible, readSword } from "./bible-text.ts";
 
 const root = join(import.meta.dirname, "..");
 const cache = join(root, "pipeline/.cache");
@@ -66,6 +66,31 @@ const SOURCES = {
     file: "deu1912_usfm.zip",
     license: "public domain",
   },
+  it: {
+    name: "Riveduta 1927 (eBible.org ita1927)",
+    url: "https://ebible.org/Scriptures/ita1927_usfm.zip",
+    file: "ita1927_usfm.zip",
+    license: "public domain",
+  },
+  nl: {
+    name: "Statenvertaling, 1917 edition (eBible.org nld)",
+    url: "https://ebible.org/Scriptures/nld_usfm.zip",
+    file: "nld_usfm.zip",
+    license: "public domain",
+  },
+  // Not on eBible.org: CrossWire's SWORD module of the Gdańsk Bible.
+  pl: {
+    name: "Biblia Gdańska 1881 (CrossWire PolGdanska)",
+    url: "https://www.crosswire.org/ftpmirror/pub/sword/packages/rawzip/PolGdanska.zip",
+    file: "PolGdanska.zip",
+    license: "public domain",
+  },
+  cs: {
+    name: "Bible kralická 1613 (eBible.org ces1613)",
+    url: "https://ebible.org/Scriptures/ces1613_usfm.zip",
+    file: "ces1613_usfm.zip",
+    license: "public domain",
+  },
   zh: {
     name: "Chinese Union Version, simplified (eBible.org cmn-cu89s)",
     url: "https://ebible.org/Scriptures/cmn-cu89s_usfm.zip",
@@ -73,6 +98,41 @@ const SOURCES = {
     license: "public domain",
   },
 } as const;
+
+/**
+ * Characters the digital editions garbled, mended before a verse is shown: the Kralice
+ * text has its capital Č and Ď in the wrong code page (È, Ï), and the Gdańsk module a
+ * handful of misread letters.
+ */
+const REPAIRS: Readonly<
+  Partial<Record<keyof typeof SOURCES, readonly (readonly [RegExp, string])[]>>
+> = {
+  cs: [
+    [/È/g, "Č"],
+    [/Ï/g, "Ď"],
+  ],
+  pl: [
+    [/byÜi/g, "byli"],
+    [/spłodzi×/g, "spłodził"],
+    [/urodzi×a/g, "urodziła"],
+    [/(narod|talent)íw/g, "$1ów"],
+    [/Çwiczy/g, "Ćwiczy"],
+    [/mójâ/g, "mój!"],
+    [/sií/g, "się"],
+    [/őwiczenie/g, "ćwiczenie"],
+    // The 1881 word for the Cushites is a slur today: the cards say Etiopczyk, as modern Polish Bibles do.
+    [/Murzyn(owie|i)\b/g, "Etiopczycy"],
+    [/Murzynka\b/g, "Etiopka"],
+    [/Murzynk([ięa])\b/g, "Etiopk$1"],
+    [/Murzyn(a|ów|om|ami|ach)\b/g, "Etiopczyk$1"],
+    [/Murzynie\b/g, "Etiopczyku"],
+    [/Murzyn\b/g, "Etiopczyk"],
+    [/Murzyńsk/g, "Etiopsk"],
+    [/murzyńsk/g, "etiopsk"],
+  ],
+};
+const repair = (locale: string, text: string): string =>
+  (REPAIRS[locale as keyof typeof SOURCES] ?? []).reduce((t, [re, to]) => t.replace(re, to), text);
 
 /** Verses per chapter ("Ps.51" → 19) of an edition, to compare its numbering with the KJV. */
 function chapterSizes(bible: Map<string, string>): Map<string, number> {
@@ -119,13 +179,34 @@ const places = JSON.parse(
 ) as { features: { properties: { osis: string[] } }[] };
 const cited = [...new Set(places.features.flatMap((f) => f.properties.osis))].sort();
 
+/**
+ * A SWORD module files its verses into the KJV's slots whatever its own numbering, so a
+ * chapter numbered otherwise looks complete. The Gdańsk Bible numbers as the KJV except
+ * that a psalm's title is its verse 1 and a few chapters start or end a verse off; such
+ * a chapter leaves a slot empty (Num 12:16, its verse being 13:1), shifting the rest of it
+ * and the chapter after. All psalms, those chapters and Rev 12 (whose 12:18 the KJV has as
+ * 13:1) are left out rather than show a neighbouring verse.
+ */
+function swordShifted(bible: Map<string, string>, book: string, ch: number): boolean {
+  if (book === "Ps" || `${book}.${String(ch)}` === "Rev.12") return true;
+  const gap = (c: number) => {
+    const n = kjvSizes.get(`${book}.${String(c)}`) ?? 0;
+    for (let v = 1; v <= n; v++) if (!bible.has(`${book}.${String(c)}.${String(v)}`)) return true;
+    return false;
+  };
+  return gap(ch) || (ch > 1 && gap(ch - 1));
+}
+
 // Built beside the old texts and swapped in at the end: a failed build leaves them be.
 const next = `${out}.next`;
 rmSync(next, { recursive: true, force: true });
 const counts: Record<string, { verses: number; missing: number; uncertain: number }> = {};
-const kjvSizes = chapterSizes(readBible(fetchSource(SOURCES.en)));
+const kjv = readBible(fetchSource(SOURCES.en));
+const kjvSizes = chapterSizes(kjv);
 for (const [locale, src] of Object.entries(SOURCES)) {
-  const bible = readBible(fetchSource(src));
+  const bible = src.file.endsWith("_usfm.zip")
+    ? readBible(fetchSource(src))
+    : readSword(fetchSource(src), kjv);
   const sizes = chapterSizes(bible);
   const byBook = new Map<string, Record<string, string>>();
   let missing = 0;
@@ -140,7 +221,13 @@ for (const [locale, src] of Object.entries(SOURCES)) {
       }
       const s = toSynodal(book, Number(ch), Number(v));
       text = bible.get(`${book}.${String(s.chapter)}.${String(s.verse)}`);
-    } else if (locale !== "en" && sizes.get(`${book}.${ch}`) !== kjvSizes.get(`${book}.${ch}`)) {
+    } else if (
+      locale !== "en" &&
+      (sizes.get(`${book}.${ch}`) !== kjvSizes.get(`${book}.${ch}`) ||
+        (src.file.endsWith(".zip") &&
+          !src.file.endsWith("_usfm.zip") &&
+          swordShifted(bible, book, Number(ch))))
+    ) {
       // Numbered otherwise than the KJV (a psalm's title counted as verse 1, Malachi 3-4):
       // left out rather than show a neighbouring verse; the link remains.
       uncertain++;
@@ -151,6 +238,7 @@ for (const [locale, src] of Object.entries(SOURCES)) {
       continue;
     }
     if (text.includes("\\")) throw new Error(`USFM markup left in ${locale} ${ref}: ${text}`);
+    text = repair(locale, text);
     const verses = byBook.get(book) ?? {};
     // The digital Synodal text sets its dashes as hyphens: « - » → « — ».
     verses[ref] =

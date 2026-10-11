@@ -10,6 +10,10 @@ title:
   pt: "A primeira viagem de Paulo"
   de: "Die erste Reise des Paulus"
   fr: "Le premier voyage de Paul"
+  pl: "Pierwsza podróż Pawła"
+  it: "Il primo viaggio di Paolo"
+  nl: "De eerste reis van Paulus"
+  cs: "První Pavlova cesta"
 year: "AD 47"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -24,6 +28,10 @@ stops:
       pt: "Por palavra do Espírito Santo, a igreja separa Barnabé e Saulo para a obra."
       de: "Auf das Wort des Heiligen Geistes sondert die Gemeinde Barnabas und Saulus für das Werk aus."
       fr: "Sur la parole du Saint-Esprit, l’Église met à part Barnabas et Saül pour l’œuvre."
+      pl: "Na słowo Ducha Świętego Kościół wyznacza Barnabę i Saula do dzieła."
+      it: "Per parola dello Spirito Santo, la chiesa mette da parte Barnaba e Saulo per l’opera."
+      nl: "Op het woord van de Heilige Geest zondert de gemeente Barnabas en Saulus af voor het werk."
+      cs: "Na slovo Ducha svatého církev odděluje Barnabáše a Saula k dílu."
   - place: a6d306d # Seleucia Pieria
     ref: Acts.13.4
     note:
@@ -34,6 +42,10 @@ stops:
       pt: "O porto de Antioquia; navegam para Chipre."
       de: "Der Hafen von Antiochia; sie segeln nach Zypern."
       fr: "Le port d’Antioche ; ils s’embarquent pour Chypre."
+      pl: "Port Antiochii; odpływają na Cypr."
+      it: "Il porto di Antiochia; salpano per Cipro."
+      nl: "De haven van Antiochië; zij varen naar Cyprus."
+      cs: "Přístav Antiochie; plují na Kypr."
   - place: afa863b # Salamis
     ref: Acts.13.5
     by: sea
@@ -45,6 +57,10 @@ stops:
       pt: "Proclamam a palavra nas sinagogas dos judeus."
       de: "Sie verkündigen das Wort in den Synagogen der Juden."
       fr: "Ils annoncent la parole dans les synagogues des Juifs."
+      pl: "Głoszą słowo w synagogach żydowskich."
+      it: "Annunciano la parola nelle sinagoghe dei Giudei."
+      nl: "Zij verkondigen het woord in de synagogen van de Joden."
+      cs: "Hlásají slovo v synagogách Židů."
   - place: a314765 # Paphos
     ref: Acts.13.6-Acts.13.12
     note:
@@ -55,6 +71,10 @@ stops:
       pt: "O procônsul Sérgio Paulo crê."
       de: "Der Prokonsul Sergius Paulus kommt zum Glauben."
       fr: "Le proconsul Sergius Paulus croit."
+      pl: "Prokonsul Sergiusz Paweł wierzy."
+      it: "Il proconsole Sergio Paolo crede."
+      nl: "De proconsul Sergius Paulus komt tot geloof."
+      cs: "Prokonzul Sergius Paulus uvěří."
   - place: aff04b8 # Perga
     ref: Acts.13.13
     by: sea
@@ -66,6 +86,10 @@ stops:
       pt: "João Marcos volta a Jerusalém."
       de: "Johannes Markus kehrt nach Jerusalem zurück."
       fr: "Jean-Marc retourne à Jérusalem."
+      pl: "Jan Marek wraca do Jerozolimy."
+      it: "Giovanni Marco torna a Gerusalemme."
+      nl: "Johannes Marcus keert terug naar Jeruzalem."
+      cs: "Jan Marek se vrací do Jeruzaléma."
   - place: a6c704a # Antioch in Pisidia
     ref: Acts.13.14-Acts.13.50
     note:
@@ -76,6 +100,10 @@ stops:
       pt: "Pregação na sinagoga; voltam-se para os gentios."
       de: "Predigt in der Synagoge; Hinwendung zu den Heiden."
       fr: "Prédication dans la synagogue ; tournant vers les païens."
+      pl: "Nauczanie w synagodze; zwrot ku poganom."
+      it: "Predicazione nella sinagoga; ci si volge ai Gentili."
+      nl: "Prediking in de synagoge; de wending naar de heidenen."
+      cs: "Kázání v synagoze; obrácení k pohanům."
   - place: ae425aa # Iconium
     ref: Acts.14.1-Acts.14.5
     note:
@@ -86,6 +114,10 @@ stops:
       pt: "Muitos creem; uma conspiração para apedrejá-los."
       de: "Viele glauben; ein Anschlag, sie zu steinigen."
       fr: "Beaucoup croient ; complot pour les lapider."
+      pl: "Wielu wierzy; spisek, by ich ukamienować."
+      it: "Molti credono; si trama per lapidarli."
+      nl: "Velen komen tot geloof; een complot om hen te stenigen."
+      cs: "Mnozí uvěří; spiknutí, že budou ukamenováni."
   - place: af0719d # Lystra
     ref: Acts.14.8-Acts.14.19
     note:
@@ -96,6 +128,10 @@ stops:
       pt: "Um coxo é curado; Paulo é apedrejado."
       de: "Ein Lahmer wird geheilt; Paulus wird gesteinigt."
       fr: "Un boiteux est guéri ; Paul est lapidé."
+      pl: "Chromy zostaje uzdrowiony; Paweł zostaje ukamienowany."
+      it: "Uno zoppo è guarito; Paolo è lapidato."
+      nl: "Een lamme wordt genezen; Paulus wordt gestenigd."
+      cs: "Uzdravení chromého; Pavel je ukamenován."
   - place: aa401a9 # Derbe
     ref: Acts.14.20-Acts.14.21
     note:
@@ -106,6 +142,10 @@ stops:
       pt: "Fazem muitos discípulos."
       de: "Sie machen viele zu Jüngern."
       fr: "Ils font beaucoup de disciples."
+      pl: "Pozyskują wielu uczniów."
+      it: "Fanno molti discepoli."
+      nl: "Zij maken veel discipelen."
+      cs: "Získávají mnoho učedníků."
   - place: af0719d # Lystra
     ref: Acts.14.21-Acts.14.22
     note:
@@ -116,6 +156,10 @@ stops:
       pt: "Trecho de volta: fortalecendo os discípulos."
       de: "Rückweg: Stärkung der Jünger."
       fr: "Trajet de retour : affermir les disciples."
+      pl: "Droga powrotna: umacnianie uczniów."
+      it: "Tappa del ritorno: rafforzano i discepoli."
+      nl: "De terugreis: de discipelen worden gesterkt."
+      cs: "Zpáteční cesta: utvrzování učedníků."
   - place: ae425aa # Iconium
     ref: Acts.14.21
     note:
@@ -126,6 +170,10 @@ stops:
       pt: "Trecho de volta."
       de: "Rückweg."
       fr: "Trajet de retour."
+      pl: "Droga powrotna."
+      it: "Tappa del ritorno."
+      nl: "De terugreis."
+      cs: "Zpáteční cesta."
   - place: a6c704a # Antioch in Pisidia
     ref: Acts.14.21-Acts.14.23
     note:
@@ -136,6 +184,10 @@ stops:
       pt: "Presbíteros nomeados em cada igreja."
       de: "In jeder Gemeinde werden Älteste eingesetzt."
       fr: "Des anciens sont établis dans chaque Église."
+      pl: "Starsi ustanowieni w każdym Kościele."
+      it: "Si stabiliscono anziani in ogni chiesa."
+      nl: "In elke gemeente worden oudsten aangesteld."
+      cs: "V každé církvi jsou ustanoveni starší."
   - place: aff04b8 # Perga
     ref: Acts.14.25
     note:
@@ -146,6 +198,10 @@ stops:
       pt: "Falam a palavra em Perge."
       de: "Sie reden das Wort in Perge."
       fr: "Ils annoncent la parole à Perge."
+      pl: "Głoszą słowo w Perge."
+      it: "Annunciano la parola a Perge."
+      nl: "Zij spreken het woord te Perge."
+      cs: "Mluví slovo v Perge."
   - place: ac744c1 # Attalia
     ref: Acts.14.26
     note:
@@ -156,6 +212,10 @@ stops:
       pt: "Navegam de volta a Antioquia."
       de: "Sie segeln zurück nach Antiochia."
       fr: "Ils font voile de retour vers Antioche."
+      pl: "Odpływają z powrotem do Antiochii."
+      it: "Si imbarcano per tornare ad Antiochia."
+      nl: "Zij varen terug naar Antiochië."
+      cs: "Plují zpět do Antiochie."
   - place: ae41ab4 # Antioch in Syria
     ref: Acts.14.27-Acts.14.28
     by: sea
@@ -167,3 +227,7 @@ stops:
       pt: "Relatam como Deus abriu aos gentios a porta da fé."
       de: "Sie berichten, wie Gott den Heiden die Tür des Glaubens aufgetan hat."
       fr: "Ils rapportent comment Dieu a ouvert aux païens la porte de la foi."
+      pl: "Zdają sprawę, jak Bóg otworzył poganom drzwi wiary."
+      it: "Riferiscono come Dio abbia aperto ai Gentili la porta della fede."
+      nl: "Zij vertellen hoe God de heidenen een deur van het geloof heeft geopend."
+      cs: "Podávají zprávu, jak Bůh otevřel pohanům dveře víry."
