@@ -213,7 +213,7 @@ export const hasOwnName = (p: PlaceProps, locale: string): boolean =>
  */
 export function markDuplicates(
   features: { geometry: Point; properties: PlaceProps }[],
-  locale: string = "ru",
+  locale: string,
 ): Set<string> {
   const marked = new Set<string>();
   const best = new Map<string, PlaceProps>();

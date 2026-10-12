@@ -2,6 +2,7 @@ import type { LocaleData } from "../locale-data.ts";
 
 /** Spanish: fetched with the language (locale-data.ts). */
 const data: LocaleData = {
+  deutero: "deuterocanónico",
   books: {
     Gen: "Gn",
     Exod: "Éx",

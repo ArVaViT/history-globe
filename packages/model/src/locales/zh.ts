@@ -2,6 +2,7 @@ import type { LocaleData } from "../locale-data.ts";
 
 /** Chinese (Simplified): fetched with the language (locale-data.ts). */
 const data: LocaleData = {
+  deutero: "次经",
   periods: {
     periods: {
       eb1: "早期青铜时代 I",

@@ -2,6 +2,7 @@ import type { LocaleData } from "../locale-data.ts";
 
 /** Italian: fetched with the language (locale-data.ts). */
 const data: LocaleData = {
+  deutero: "deuterocanonico",
   books: {
     Gen: "Gen",
     Exod: "Es",

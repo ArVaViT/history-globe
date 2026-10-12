@@ -24,21 +24,21 @@ const MoreMenuPanel = lazy(() =>
 
 const SPAN = YEAR_MAX - YEAR_MIN;
 /**
- * The ages named on the track: the eras grouped so that a name fits its band in either
+ * The ages named on the track: the eras grouped so that a name fits its band in every
  * language («Железный век IIB» did not, nor most Russian names); the era itself is in the
- * line above the track.
+ * line above the track. In English; the other languages' are in their data (ageName).
  */
-const AGES: readonly { first: string; last: string; en: string; ru: string }[] = [
-  { first: "eb1", last: "eb4", en: "Early Bronze", ru: "Ранняя бронза" },
-  { first: "mb2", last: "mb2", en: "Middle Bronze", ru: "Средняя бронза" },
-  { first: "lb", last: "lb", en: "Late Bronze", ru: "Поздняя бронза" },
-  { first: "iron1", last: "iron2c", en: "Iron Age", ru: "Железный век" },
-  { first: "babylonian", last: "babylonian", en: "Babylonian", ru: "Вавилон" },
-  { first: "persian", last: "persian", en: "Persian", ru: "Персия" },
-  { first: "hellenistic", last: "hasmonean", en: "Hellenistic", ru: "Эллинизм" },
-  { first: "early-roman", last: "late-roman", en: "Roman", ru: "Рим" },
-  { first: "byzantine", last: "byzantine", en: "Byzantine", ru: "Византия" },
-  { first: "early-islamic", last: "mamluk", en: "Middle Ages", ru: "Средние века" },
+const AGES: readonly { first: string; last: string; en: string }[] = [
+  { first: "eb1", last: "eb4", en: "Early Bronze" },
+  { first: "mb2", last: "mb2", en: "Middle Bronze" },
+  { first: "lb", last: "lb", en: "Late Bronze" },
+  { first: "iron1", last: "iron2c", en: "Iron Age" },
+  { first: "babylonian", last: "babylonian", en: "Babylonian" },
+  { first: "persian", last: "persian", en: "Persian" },
+  { first: "hellenistic", last: "hasmonean", en: "Hellenistic" },
+  { first: "early-roman", last: "late-roman", en: "Roman" },
+  { first: "byzantine", last: "byzantine", en: "Byzantine" },
+  { first: "early-islamic", last: "mamluk", en: "Middle Ages" },
 ];
 const AGE_SPANS = AGES.flatMap((a) => {
   const from = PERIODS.find((p) => p.id === a.first)?.range.from;

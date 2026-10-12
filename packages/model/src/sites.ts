@@ -12,47 +12,12 @@ export interface SiteLabelParts {
 }
 
 /**
- * The Russian label of a candidate site, or undefined to keep the English one. The ref is
- * translated when it has a Russian form: a biblical place by its Synodal name, a modern
- * one by content/modern-names.yaml; otherwise the whole English label stays, so no label
- * mixes the two languages. The name stands in the nominative, so no Russian case endings
- * are needed: "Вавилон, в радиусе 250 км".
- */
-export function siteLabelRu(
-  p: SiteLabelParts,
-  ruName: (placeId: string) => string | undefined,
-  /** The Russian name of the place the label belongs to: "там же, где Гай" on Гай
-   * says nothing, so it reads as the place's own name in other verses. */
-  ownRu?: string,
-): string | undefined {
-  if (!p.tpl || !p.ref || p.ref_text === undefined) return undefined;
-  // The ref is a biblical place (a…, its Synodal name) or a modern one (m…, its Russian
-  // form from content/modern-names.yaml); either way the lookup decides.
-  const x = ruName(p.ref);
-  if (!x) return undefined;
-  const unit = p.unit === "m" ? "м" : "км";
-  switch (p.tpl) {
-    case "same":
-      return x === ownRu ? `там же, где ${x} в других стихах` : `там же, где ${x}`;
-    case "same_name":
-      return `там же, где ${x} в других стихах`;
-    case "within":
-      return `${x}, в радиусе ${p.n ?? ""} ${unit}`;
-    case "around":
-      return `${x}, в радиусе около ${p.n ?? ""} ${unit}`;
-    case "region":
-      return `${x}, окрестности`;
-    case "along":
-      return `вдоль: ${x}`;
-    case "at":
-    case "name":
-      return x;
-  }
-}
-
-/**
- * siteLabelRu for another language (uk, es, pt, fr, de, it, nl, pl, cs, zh): the same templates, the name
- * as the language's names file gives it. Undefined where the language or the name is missing.
+ * A candidate site's label in a language other than English, from the language's templates
+ * (locale-data.ts) and the name its names file gives the ref: a biblical place, or a modern
+ * one. Undefined where the language or the name is missing, so the whole English label
+ * stays and no label mixes two languages. The name stands in the nominative, so no case
+ * endings are needed: "Вавилон, в радиусе 250 км". `own` is the name of the place the label
+ * belongs to: "там же, где Гай" on Гай says nothing, so it reads as its name in other verses.
  */
 export function siteLabelIn(
   locale: string,

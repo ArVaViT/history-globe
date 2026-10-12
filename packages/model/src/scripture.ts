@@ -3,77 +3,78 @@ import type { Locale } from "./time.ts";
 import { toSynodal } from "./synodal.ts";
 import { VERSES } from "./versification.ts";
 
-/** OSIS book id → [Russian Synodal abbreviation, English abbreviation]. */
-export const BOOKS: Readonly<Record<string, readonly [string, string]>> = {
-  Gen: ["Быт", "Gen"],
-  Exod: ["Исх", "Exod"],
-  Lev: ["Лев", "Lev"],
-  Num: ["Чис", "Num"],
-  Deut: ["Втор", "Deut"],
-  Josh: ["Нав", "Josh"],
-  Judg: ["Суд", "Judg"],
-  Ruth: ["Руф", "Ruth"],
-  "1Sam": ["1 Цар", "1 Sam"],
-  "2Sam": ["2 Цар", "2 Sam"],
-  "1Kgs": ["3 Цар", "1 Kgs"],
-  "2Kgs": ["4 Цар", "2 Kgs"],
-  "1Chr": ["1 Пар", "1 Chr"],
-  "2Chr": ["2 Пар", "2 Chr"],
-  Ezra: ["Езд", "Ezra"],
-  Neh: ["Неем", "Neh"],
-  Esth: ["Есф", "Esth"],
-  Job: ["Иов", "Job"],
-  Ps: ["Пс", "Ps"],
-  Prov: ["Притч", "Prov"],
-  Eccl: ["Еккл", "Eccl"],
-  Song: ["Песн", "Song"],
-  Isa: ["Ис", "Isa"],
-  Jer: ["Иер", "Jer"],
-  Lam: ["Плач", "Lam"],
-  Ezek: ["Иез", "Ezek"],
-  Dan: ["Дан", "Dan"],
-  Hos: ["Ос", "Hos"],
-  Joel: ["Иоил", "Joel"],
-  Amos: ["Ам", "Amos"],
-  Obad: ["Авд", "Obad"],
-  Jonah: ["Ион", "Jonah"],
-  Mic: ["Мих", "Mic"],
-  Nah: ["Наум", "Nah"],
-  Hab: ["Авв", "Hab"],
-  Zeph: ["Соф", "Zeph"],
-  Hag: ["Агг", "Hag"],
-  Zech: ["Зах", "Zech"],
-  Mal: ["Мал", "Mal"],
+/** OSIS book id → its English abbreviation; the canon's order. Other languages' own
+ * abbreviations are in their data (locale-data.ts). */
+export const BOOKS: Readonly<Record<string, string>> = {
+  Gen: "Gen",
+  Exod: "Exod",
+  Lev: "Lev",
+  Num: "Num",
+  Deut: "Deut",
+  Josh: "Josh",
+  Judg: "Judg",
+  Ruth: "Ruth",
+  "1Sam": "1 Sam",
+  "2Sam": "2 Sam",
+  "1Kgs": "1 Kgs",
+  "2Kgs": "2 Kgs",
+  "1Chr": "1 Chr",
+  "2Chr": "2 Chr",
+  Ezra: "Ezra",
+  Neh: "Neh",
+  Esth: "Esth",
+  Job: "Job",
+  Ps: "Ps",
+  Prov: "Prov",
+  Eccl: "Eccl",
+  Song: "Song",
+  Isa: "Isa",
+  Jer: "Jer",
+  Lam: "Lam",
+  Ezek: "Ezek",
+  Dan: "Dan",
+  Hos: "Hos",
+  Joel: "Joel",
+  Amos: "Amos",
+  Obad: "Obad",
+  Jonah: "Jonah",
+  Mic: "Mic",
+  Nah: "Nah",
+  Hab: "Hab",
+  Zeph: "Zeph",
+  Hag: "Hag",
+  Zech: "Zech",
+  Mal: "Mal",
   // In the Synodal Bible, not in the Protestant canon: marked wherever cited (DEUTEROCANON).
-  "1Macc": ["1 Мак", "1 Macc"],
-  "2Macc": ["2 Мак", "2 Macc"],
-  Matt: ["Мф", "Matt"],
-  Mark: ["Мк", "Mark"],
-  Luke: ["Лк", "Luke"],
-  John: ["Ин", "John"],
-  Acts: ["Деян", "Acts"],
-  Rom: ["Рим", "Rom"],
-  "1Cor": ["1 Кор", "1 Cor"],
-  "2Cor": ["2 Кор", "2 Cor"],
-  Gal: ["Гал", "Gal"],
-  Eph: ["Еф", "Eph"],
-  Phil: ["Флп", "Phil"],
-  Col: ["Кол", "Col"],
-  "1Thess": ["1 Фес", "1 Thess"],
-  "2Thess": ["2 Фес", "2 Thess"],
-  "1Tim": ["1 Тим", "1 Tim"],
-  "2Tim": ["2 Тим", "2 Tim"],
-  Titus: ["Тит", "Titus"],
-  Phlm: ["Флм", "Phlm"],
-  Heb: ["Евр", "Heb"],
-  Jas: ["Иак", "Jas"],
-  "1Pet": ["1 Пет", "1 Pet"],
-  "2Pet": ["2 Пет", "2 Pet"],
-  "1John": ["1 Ин", "1 John"],
-  "2John": ["2 Ин", "2 John"],
-  "3John": ["3 Ин", "3 John"],
-  Jude: ["Иуд", "Jude"],
-  Rev: ["Откр", "Rev"],
+  "1Macc": "1 Macc",
+  "2Macc": "2 Macc",
+  Matt: "Matt",
+  Mark: "Mark",
+  Luke: "Luke",
+  John: "John",
+  Acts: "Acts",
+  Rom: "Rom",
+  "1Cor": "1 Cor",
+  "2Cor": "2 Cor",
+  Gal: "Gal",
+  Eph: "Eph",
+  Phil: "Phil",
+  Col: "Col",
+  "1Thess": "1 Thess",
+  "2Thess": "2 Thess",
+  "1Tim": "1 Tim",
+  "2Tim": "2 Tim",
+  Titus: "Titus",
+  Phlm: "Phlm",
+  Heb: "Heb",
+  Jas: "Jas",
+  "1Pet": "1 Pet",
+  "2Pet": "2 Pet",
+  "1John": "1 John",
+  "2John": "2 John",
+  "3John": "3 John",
+  Jude: "Jude",
+  Rev: "Rev",
 };
 
 /** Books the Synodal Bible carries outside the Hebrew canon: a citation says so. */
@@ -154,24 +155,15 @@ export function formatRefOr(osis: string, locale: Locale): string {
 }
 
 /**
- * A book's short name as a reader of `locale` reads it: the Synodal form in Russian, the
- * language's own abbreviation where its data has one (locale-data.ts), the English
+ * A book's short name as a reader of `locale` reads it: the language's own abbreviation
+ * where its data has one (locale-data.ts; in Russian the Synodal form), the English
  * otherwise. Undefined for an unknown book.
  */
 export function bookName(book: string, locale: Locale): string | undefined {
-  const names = BOOKS[book];
-  if (!names) return undefined;
-  const own = localeData(locale)?.books?.[book];
-  if (own) return own;
-  return locale === "ru" ? names[0] : names[1];
+  const en = BOOKS[book];
+  if (en === undefined) return undefined;
+  return localeData(locale)?.books?.[book] ?? en;
 }
-
-/** How a book outside the Hebrew canon is marked, by language. */
-const DEUTERO_MARK: Readonly<Partial<Record<Locale, string>>> = {
-  en: "deuterocanonical",
-  ru: "неканоническая книга",
-  uk: "неканонічна книга",
-};
 
 /**
  * "Acts.13.4" → "Деян 13:4"; "Acts.13.4-Acts.14.26" → "Деян 13:4–14:26".
@@ -190,7 +182,9 @@ export function formatRef(osis: string, locale: Locale): string {
   const head = `${name} ${from.chapter}${from.verse === null ? "" : `:${from.verse}`}`;
   // A book outside the Hebrew canon (1-2 Maccabees) says so wherever it is cited.
   const mark = (s: string) =>
-    DEUTEROCANON.has(start.book) ? `${s} (${DEUTERO_MARK[locale] ?? DEUTERO_MARK.en ?? ""})` : s;
+    DEUTEROCANON.has(start.book)
+      ? `${s} (${localeData(locale)?.deutero ?? "deuterocanonical"})`
+      : s;
   if (endText === undefined) return mark(head);
   const end = parseOne(endText);
   if (end.book !== start.book) throw new SyntaxError(`cross-book range: "${osis}"`);
@@ -224,30 +218,12 @@ export function refCovers(ref: string, verses: ReadonlySet<string>): boolean {
   });
 }
 
-/** Full names readers type that do not start with the abbreviation (Иоанн, Матфей). */
 /**
- * Book names as people type them, beyond the abbreviations: the Gospels in the genitive
- * («от Иоанна», «Матфея 5»). A key matches the word or the word with up to two more
- * letters (a case ending).
+ * English book names that do not start with the abbreviation ("1 Kings" against "1 Kgs");
+ * a language's own are in its data (locale-data.ts: the Russian Gospels in the genitive).
+ * A key matches the word or the word with up to two more letters (a case ending).
  */
 const BOOK_ALIASES: Readonly<Record<string, string>> = {
-  матфе: "Matt",
-  матф: "Matt",
-  марк: "Mark",
-  лук: "Luke",
-  иоанн: "John",
-  псалом: "Ps",
-  псалтирь: "Ps",
-  "иисус навин": "Josh",
-  "иисуса навина": "Josh",
-  иисус: "Josh",
-  есфирь: "Esth",
-  экклесиаст: "Eccl",
-  екклесиаст: "Eccl",
-  песнь: "Song",
-  исаи: "Isa",
-  иезекиил: "Ezek",
-  // English names that do not start with the abbreviation ("1 Kings" against "1 Kgs").
   "1 kings": "1Kgs",
   "2 kings": "2Kgs",
   "1 ki": "1Kgs",
@@ -257,12 +233,18 @@ const BOOK_ALIASES: Readonly<Record<string, string>> = {
   songs: "Song",
 };
 
-const aliasOf = (word: string): string | undefined => {
-  if (BOOK_ALIASES[word]) return BOOK_ALIASES[word];
-  const key = Object.keys(BOOK_ALIASES)
+const aliasesIn = (locale: Locale): Readonly<Record<string, string>> => {
+  const own = localeData(locale)?.aliases;
+  return own ? { ...BOOK_ALIASES, ...own } : BOOK_ALIASES;
+};
+
+const aliasOf = (word: string, locale: Locale): string | undefined => {
+  const aliases = aliasesIn(locale);
+  if (aliases[word]) return aliases[word];
+  const key = Object.keys(aliases)
     .filter((k) => word.startsWith(k) && word.length - k.length <= 2)
     .sort((x, y) => y.length - x.length)[0];
-  return key === undefined ? undefined : BOOK_ALIASES[key];
+  return key === undefined ? undefined : aliases[key];
 };
 
 const norm = (s: string) =>
@@ -276,13 +258,12 @@ const plain = (s: string) =>
     .normalize("NFC");
 
 /**
- * The forms a book is typed as in `locale`: its Russian and English names, its OSIS code,
- * and in the other languages their own abbreviation and full names.
+ * The forms a book is typed as in `locale`: its English abbreviation and OSIS code, which
+ * work in every language, and the language's own abbreviation and full names.
  */
-const formsIn = (osis: string, ru: string, en: string, locale: Locale): string[] => {
+const formsIn = (osis: string, en: string, locale: Locale): string[] => {
   const data = localeData(locale);
   return [
-    norm(ru),
     norm(en),
     norm(osis.replace(/^(\d)/, "$1 ")),
     ...[data?.books?.[osis], ...(data?.bookNames?.[osis] ?? [])].flatMap((x) =>
@@ -298,14 +279,13 @@ const formsIn = (osis: string, ru: string, en: string, locale: Locale): string[]
  */
 function parseBook(typed: string, locale: Locale): { ref: string; label: string } | null {
   const word = typed.replace(/^(\d) ?/, "$1 ").trim();
-  let book: string | undefined = BOOK_ALIASES[word];
+  let book: string | undefined = aliasesIn(locale)[word];
   if (!book) {
-    for (const [osis, [ru, en]] of Object.entries(BOOKS)) {
-      if (formsIn(osis, ru, en, locale).includes(word)) book = osis;
+    for (const [osis, en] of Object.entries(BOOKS)) {
+      if (formsIn(osis, en, locale).includes(word)) book = osis;
     }
   }
-  const names = book === undefined ? undefined : BOOKS[book];
-  if (!book || !names) return null;
+  if (!book || BOOKS[book] === undefined) return null;
   return { ref: book, label: bookName(book, locale) ?? book };
 }
 
@@ -330,11 +310,11 @@ export function parseChapter(text: string, locale: Locale): { ref: string; label
   if (!m) return null;
   const word = (m[1] ?? "").replace(/^(\d) ?/, "$1 ").trim();
   const n = Number(m[2]);
-  let book: string | undefined = aliasOf(word);
+  let book: string | undefined = aliasOf(word, locale);
   let best = 0;
   if (!book) {
-    for (const [osis, [ru, en]] of Object.entries(BOOKS)) {
-      for (const abbr of formsIn(osis, ru, en, locale)) {
+    for (const [osis, en] of Object.entries(BOOKS)) {
+      for (const abbr of formsIn(osis, en, locale)) {
         const fits = word === abbr || (abbr.length >= 2 && word.startsWith(abbr));
         if (fits && abbr.length > best) {
           best = abbr.length;
@@ -347,8 +327,8 @@ export function parseChapter(text: string, locale: Locale): { ref: string; label
   const lengths = book === undefined ? undefined : VERSES[book];
   if (!book || !books || !lengths) return null;
   const label = `${bookName(book, locale) ?? book} ${String(n)}`;
-  // A book named in English ("Psalm 23") is counted the English way, in either language:
-  // the label then gives the Synodal number («Пс 22»).
+  // Outside Russian, and a book named in English in Russian ("Psalm 23"), the chapter is
+  // counted the English way; in Russian the label then gives the Synodal number («Пс 22»).
   if (locale !== "ru" || /[a-z]/.test(word)) {
     if (n < 1 || n > lengths.length) return null;
     const ru = `${bookName(book, "ru") ?? book} ${String(toSynodal(book, n, 1).chapter)}`;

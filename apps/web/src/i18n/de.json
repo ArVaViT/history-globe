@@ -319,7 +319,14 @@
     "km": "{{n}} km",
     "quiz_intro": "Quiz: Wo geschah es? Die Stelle finden und einen Buchstaben einkreisen.",
     "answers": "Antworten",
-    "letters": "A B C D"
+    "letters": "A B C D",
+    "distance": "≈ {{km}} km Luftlinie",
+    "distance_road": "≈ {{km}} km auf Römerstraßen",
+    "credit_modified": "bearbeitet",
+    "credit_ancient": "Antike Orte",
+    "credit_roads": "Römerstraßen",
+    "credit_terrain": "Gelände",
+    "credit_et_al": "u. a."
   },
   "tools": {
     "title": "Werkzeuge",

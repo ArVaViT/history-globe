@@ -319,7 +319,14 @@
     "km": "{{n}} km",
     "quiz_intro": "Quiz: waar gebeurde het? Zoek de passage en omcirkel een letter.",
     "answers": "Antwoorden",
-    "letters": "A B C D"
+    "letters": "A B C D",
+    "distance": "≈ {{km}} km hemelsbreed",
+    "distance_road": "≈ {{km}} km langs Romeinse wegen",
+    "credit_modified": "bewerkt",
+    "credit_ancient": "Antieke plaatsen",
+    "credit_roads": "Romeinse wegen",
+    "credit_terrain": "Reliëf",
+    "credit_et_al": "e.a."
   },
   "tools": {
     "title": "Hulpmiddelen",

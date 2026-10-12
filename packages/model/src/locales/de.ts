@@ -2,6 +2,7 @@ import type { LocaleData } from "../locale-data.ts";
 
 /** German: fetched with the language (locale-data.ts). */
 const data: LocaleData = {
+  deutero: "deuterokanonisch",
   books: {
     Gen: "1 Mo",
     Exod: "2 Mo",

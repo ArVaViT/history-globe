@@ -90,11 +90,12 @@ Eleven languages brought the first frame to 438.5 of 440 kB: the book abbreviati
 names, the eras' names and the site-label templates of every language were in the entry
 chunk, so each language added cost every reader. They now live one file per language
 (`packages/model/src/locales`) and come with that language's dictionary
-(`apps/web/src/i18n`); English and Russian stay in the code. The first frame is 429.3 kB,
-and a language added no longer grows it. The build scripts and the tests load every
+(`apps/web/src/i18n`); English stays in the code as the fallback, and Russian has its file
+like the others (ADR 0015). The first frame is 428.5 kB, and a language added no longer
+grows it. The build scripts and the tests load every
 language first (`loadAllLocaleData`); the generated pages, data and API were checked to be
 byte for byte the same.
 
 The ceiling on all JS (560 kB) still counts every language's files, though a reader fetches
 one language's data (and every dictionary, for the lessons' default titles): it stands at
-535.6 kB, room for about three more languages. How it should count them is for the product owner.
+537.1 kB, room for about three more languages. How it should count them is for the product owner.

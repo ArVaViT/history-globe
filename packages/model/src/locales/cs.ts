@@ -2,6 +2,7 @@ import type { LocaleData } from "../locale-data.ts";
 
 /** Czech: fetched with the language (locale-data.ts). */
 const data: LocaleData = {
+  deutero: "deuterokanonická",
   books: {
     Gen: "Gn",
     Exod: "Ex",

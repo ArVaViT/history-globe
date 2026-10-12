@@ -2,6 +2,7 @@ import type { LocaleData } from "../locale-data.ts";
 
 /** Ukrainian: fetched with the language (locale-data.ts). */
 const data: LocaleData = {
+  deutero: "неканонічна книга",
   books: {
     Gen: "Бут",
     Exod: "Вих",

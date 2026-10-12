@@ -2,6 +2,7 @@ import type { LocaleData } from "../locale-data.ts";
 
 /** Dutch: fetched with the language (locale-data.ts). */
 const data: LocaleData = {
+  deutero: "deuterocanoniek",
   books: {
     Gen: "Gen",
     Exod: "Ex",
