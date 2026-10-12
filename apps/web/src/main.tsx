@@ -9,8 +9,7 @@ import { ErrorBoundary } from "./components/ErrorBoundary";
 import { i18n } from "./i18n";
 import { registerOffline } from "./offline";
 import { countVisits } from "./visits";
-import { readUrl } from "./url";
-import { DEFAULT_STATE } from "@hg/core";
+import { readUrl, startLocale } from "./url";
 
 // A tab opened before a deploy asks for a chunk the new build no longer has: load the new
 // build once instead of the error screen (the flag stops a reload loop).
@@ -40,7 +39,7 @@ countVisits();
 const root = document.getElementById("root");
 if (!root) throw new Error("#root is missing");
 // The page's language is in before the first frame, so its words never flash in English.
-void i18n.changeLanguage(readUrl().locale ?? DEFAULT_STATE.locale).finally(() => {
+void i18n.changeLanguage(startLocale(readUrl())).finally(() => {
   createRoot(root).render(
     <StrictMode>
       <ErrorBoundary>

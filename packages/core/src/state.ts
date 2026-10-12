@@ -42,7 +42,7 @@ export interface GlobeState {
 export const DEFAULT_STATE: GlobeState = {
   year: 30,
   selectedPlace: null,
-  locale: "ru",
+  locale: "en",
   layers: {
     borders: true,
     places: true,

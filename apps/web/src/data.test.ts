@@ -257,7 +257,7 @@ describe("markDuplicates", () => {
         properties: place("b9", "Babel", "Вавилон", 3, 1),
       },
     ];
-    expect([...markDuplicates(features)]).toEqual(["b4"]);
+    expect([...markDuplicates(features, "ru")]).toEqual(["b4"]);
     // A record already hidden as an English duplicate never keeps the Russian label.
     const lydia = [
       {
@@ -269,7 +269,7 @@ describe("markDuplicates", () => {
         properties: place("l2", "Lydia", "Лидия", 3, 0),
       },
     ];
-    expect([...markDuplicates(lydia)]).toEqual([]);
+    expect([...markDuplicates(lydia, "ru")]).toEqual([]);
     expect(features.map((f) => Boolean(f.properties.dup_ru))).toEqual([true, false, false]);
   });
 });

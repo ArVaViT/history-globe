@@ -20,7 +20,7 @@ export function headMeta(o: {
   /** The page's path from the site root, in each language it exists in (English always). */
   paths: Readonly<Partial<Record<SiteLocale, string>>> & { readonly en: string };
   l: SiteLocale;
-  /** The preview image, from the site root. */
+  /** The preview image, from the site root; else the map in the page's language (og/<l>.jpg). */
   image?: string | undefined;
   ld?: object | undefined;
 }): string {
@@ -42,7 +42,7 @@ export function headMeta(o: {
     <meta property="og:title" content="${esc(o.title)}" />
     <meta property="og:description" content="${esc(o.desc)}" />
     <meta property="og:url" content="${abs(o.paths[o.l] ?? o.paths.en)}" />
-    <meta property="og:image" content="${abs(o.image ?? "og.jpg")}" />
+    <meta property="og:image" content="${abs(o.image ?? `og/${o.l}.jpg`)}" />
     <meta name="twitter:card" content="summary_large_image" />${ld}
     <script defer src="/_vercel/insights/script.js"></script>`;
 }

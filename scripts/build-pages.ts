@@ -30,9 +30,13 @@ import { esc, headMeta } from "./page-shell.ts";
 import { commonsPage, DOC_PAGES, docsPath } from "../packages/model/src/site.ts";
 import { LANDING, LISTS, T } from "./page-words.ts";
 import { siteCertainty } from "../packages/model/src/sites.ts";
+import { loadAllLocaleData } from "../packages/model/src/locale-data.ts";
 import { placeSlugs } from "./slugs.ts";
 import { distanceKm, roundKm } from "../apps/web/src/distance.ts";
 import { splitPlaces, textPlacesFrom, type TextPlaces } from "../apps/web/src/text-places-core.ts";
+
+// Every language is written here, so every language's words are loaded first.
+await loadAllLocaleData();
 
 const root = join(import.meta.dirname, "..");
 

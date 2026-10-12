@@ -15,14 +15,16 @@ description: De plaatsen, de verzen die ze noemen, de gebeurtenissen en de route
 
 { "Acts.16.11": ["a6a7150", "a68750d", "a91c509"], "Acts.16.12": ["a69e1b8", "a49e1d0"], … }</code></pre>
 <p>
-  De plaatsen zelf, met namen in het Engels en het Russisch, soort en coördinaten, staan in
-  <code>places.json</code>; koppel op <code>id</code>.
+  De plaatsen zelf, met namen in alle talen van de site, soort en coördinaten, staan in
+  <code>places.json</code>; koppel op <code>id</code>. Het veld <code>name_ru</code> uit de eerste
+  versie blijft bestaan, gelijk aan <code>names.ru</code>.
 </p>
 <pre><code>GET {{site}}/api/v1/places.json
 
-[{ "id": "a49e1d0", "name": "Philippi", "name_ru": "Филиппы", "kind": "settlement",
-   "lon": 24.28458, "lat": 41.01207, "verses": 4,
-   "page": { "en": "/en/place/philippi/", "ru": "/ru/place/philippi/" } }, …]</code></pre>
+[{ "id": "a49e1d0", "name": "Philippi",
+   "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
+   "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
 
 <h2>Alle bestanden</h2>
 <div class="table">
@@ -107,5 +109,6 @@ description: De plaatsen, de verzen die ze noemen, de gebeurtenissen en de route
   Gebruik ze, wijzig ze, verkoop wat je ermee bouwt; noem de bronnen waar je ze toont, zoals
   <code>index.json</code> ze opsomt: History Globe door Vadym Arnaut, en OpenBible.info voor de
   plaatsen, de koppelingen aan verzen en de coördinaten. De Russische namen zijn gelezen uit de
-  synodale vertaling, die in het publiek domein is.
+  synodale vertaling, die in het publiek domein is. De namen in de andere talen zijn van History
+  Globe.
 </p>

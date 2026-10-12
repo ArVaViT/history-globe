@@ -329,7 +329,14 @@
     "km": "{{n}} km",
     "quiz_intro": "Quiz: dove è successo? Trova il brano e cerchia una lettera.",
     "answers": "Risposte",
-    "letters": "A B C D"
+    "letters": "A B C D",
+    "distance": "≈ {{km}} km in linea retta",
+    "distance_road": "≈ {{km}} km lungo le strade romane",
+    "credit_modified": "modificato",
+    "credit_ancient": "Siti antichi",
+    "credit_roads": "Strade romane",
+    "credit_terrain": "Rilievo",
+    "credit_et_al": "et al."
   },
   "tools": {
     "title": "Strumenti",

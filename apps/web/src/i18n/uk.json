@@ -329,7 +329,14 @@
     "km": "{{n}} км",
     "quiz_intro": "Вікторина: де це було? Знайдіть уривок і обведіть літеру.",
     "answers": "Відповіді",
-    "letters": "А Б В Г"
+    "letters": "А Б В Г",
+    "distance": "≈ {{km}} км по прямій",
+    "distance_road": "≈ {{km}} км римськими дорогами",
+    "credit_modified": "зі змінами",
+    "credit_ancient": "Стародавні міста",
+    "credit_roads": "Римські дороги",
+    "credit_terrain": "Рельєф",
+    "credit_et_al": "та ін."
   },
   "tools": {
     "title": "Інструменти",

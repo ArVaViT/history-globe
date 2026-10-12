@@ -339,7 +339,14 @@
     "km": "{{n}} km",
     "quiz_intro": "Kvíz: kde se to stalo? Najděte pasáž a zakroužkujte písmeno.",
     "answers": "Odpovědi",
-    "letters": "A B C D"
+    "letters": "A B C D",
+    "distance": "≈ {{km}} km vzdušnou čarou",
+    "distance_road": "≈ {{km}} km po římských silnicích",
+    "credit_modified": "upraveno",
+    "credit_ancient": "Starověká místa",
+    "credit_roads": "Římské silnice",
+    "credit_terrain": "Reliéf",
+    "credit_et_al": "a kol."
   },
   "tools": {
     "title": "Nástroje",

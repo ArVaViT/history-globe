@@ -18,14 +18,16 @@ description: Los lugares, los versículos que los nombran, los acontecimientos y
 
 { "Acts.16.11": ["a6a7150", "a68750d", "a91c509"], "Acts.16.12": ["a69e1b8", "a49e1d0"], … }</code></pre>
 <p>
-  Los lugares en sí, con sus nombres en inglés y ruso, su tipo y su punto, están en
-  <code>places.json</code>; únelos por <code>id</code>.
+  Los lugares en sí, con sus nombres en todos los idiomas del sitio, su tipo y su punto, están en
+  <code>places.json</code>; únelos por <code>id</code>. El campo <code>name_ru</code> de la primera
+  versión sigue ahí, igual que <code>names.ru</code>.
 </p>
 <pre><code>GET {{site}}/api/v1/places.json
 
-[{ "id": "a49e1d0", "name": "Philippi", "name_ru": "Филиппы", "kind": "settlement",
-   "lon": 24.28458, "lat": 41.01207, "verses": 4,
-   "page": { "en": "/en/place/philippi/", "ru": "/ru/place/philippi/" } }, …]</code></pre>
+[{ "id": "a49e1d0", "name": "Philippi",
+   "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
+   "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
 
 <h2>Todos los archivos</h2>
 <div class="table">
@@ -109,5 +111,6 @@ description: Los lugares, los versículos que los nombran, los acontecimientos y
   Úsalos, modifícalos, vende lo que construyas con ellos; cita las fuentes allí donde los muestres,
   tal como las enumera <code>index.json</code>: History Globe, de Vadym Arnaut, y OpenBible.info
   para los lugares, las etiquetas de versículos y los puntos. Los nombres rusos se leyeron de la
-  traducción sinodal, que es de dominio público.
+  traducción sinodal, que es de dominio público. Los nombres en los demás idiomas son de History
+  Globe.
 </p>

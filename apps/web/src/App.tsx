@@ -80,7 +80,7 @@ import {
 } from "./app-hooks";
 import { chapterFocus, chapterLabel } from "./chapter";
 import { useEmbed, useEmbedError } from "./embed";
-import { readUrl } from "./url";
+import { readUrl, rememberLocale, startLocale } from "./url";
 import { loadPeople, personName, type People } from "./people";
 import {
   setCompactFrame,
@@ -90,7 +90,9 @@ import {
   useGlobeState,
 } from "./useGlobe";
 
-const INITIAL = readUrl();
+const FROM_URL = readUrl();
+/** The view to open, its language settled (startLocale). */
+const INITIAL = { ...FROM_URL, locale: startLocale(FROM_URL) };
 /** Inside another site's page: the map, the card and the slider, no column. */
 const EMBED = INITIAL.embed === true;
 // Inside another site, the map's controls are trimmed (styles.css: no scale bar; no zoom
@@ -240,7 +242,8 @@ export function App() {
     // The map's own words come from the dictionary, which a first switch to a language
     // loads: the map is relabelled once it is in.
     void i18n.changeLanguage(state.locale).then(() => {
-      globe?.renderer.setLocale(state.locale);
+      // A quicker switch since then has the last word: no older language relabels the map.
+      if (i18n.language === state.locale) globe?.renderer.setLocale(state.locale);
     });
     document.documentElement.lang = state.locale;
   }, [i18n, state.locale, globe]);
@@ -793,7 +796,10 @@ export function App() {
                       setSettingsOpen(false);
                     }}
                     locale={state.locale}
-                    onLocale={engine.setLocale}
+                    onLocale={(l) => {
+                      rememberLocale(l);
+                      engine.setLocale(l);
+                    }}
                     layers={state.layers}
                     onLayer={engine.setLayer}
                     bibleOnly={bibleOnly}

@@ -16,6 +16,7 @@ export type {
 } from "./content.ts";
 export * from "./periods.ts";
 export * from "./period-names.ts";
+export { loadAllLocaleData, loadLocaleData } from "./locale-data.ts";
 export * from "./sites.ts";
 export * from "./citation.ts";
 export * from "./site.ts";

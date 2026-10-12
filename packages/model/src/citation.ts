@@ -3,7 +3,7 @@ import type { Locale } from "./time.ts";
 
 const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 // English abbreviation → OSIS book, longest first ("1 John" before "John").
-const BY_ABBR = new Map(Object.entries(BOOKS).map(([osis, [, en]]) => [en, osis]));
+const BY_ABBR = new Map(Object.entries(BOOKS).map(([osis, en]) => [en, osis]));
 const VERSE_REF = new RegExp(
   `\\b(${[...BY_ABBR.keys()]
     .sort((a, b) => b.length - a.length)

@@ -329,7 +329,14 @@
     "km": "{{n}} км",
     "quiz_intro": "Викторина: где это было? Найдите отрывок и обведите букву.",
     "answers": "Ответы",
-    "letters": "А Б В Г"
+    "letters": "А Б В Г",
+    "distance": "≈ {{km}} км по прямой",
+    "distance_road": "≈ {{km}} км по римским дорогам",
+    "credit_modified": "с изменениями",
+    "credit_ancient": "Древние города",
+    "credit_roads": "Римские дороги",
+    "credit_terrain": "Рельеф",
+    "credit_et_al": "и др."
   },
   "tools": {
     "title": "Инструменты",

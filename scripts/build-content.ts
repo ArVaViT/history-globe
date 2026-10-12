@@ -39,7 +39,11 @@ import { packChapterYears } from "../packages/model/src/chapter-years.ts";
 import { YEAR_MAX, YEAR_MIN } from "../packages/core/src/engine.ts";
 import { inFocus } from "../packages/core/src/style.ts";
 import { canonicalPosition, refCovers } from "../packages/model/src/scripture.ts";
-import { siteLabelIn, siteLabelRu, type SiteLabelParts } from "../packages/model/src/sites.ts";
+import { siteLabelIn, type SiteLabelParts } from "../packages/model/src/sites.ts";
+import { loadAllLocaleData } from "../packages/model/src/locale-data.ts";
+
+// Every language is written here, so every language's words are loaded first.
+await loadAllLocaleData();
 
 const root = join(import.meta.dirname, "..");
 const out = join(root, "apps/web/public/data");
@@ -323,7 +327,8 @@ for (const f of places.features) {
     if (ru) whereRu[p.id] = ru;
     continue;
   }
-  const ru = siteLabelRu(
+  const ru = siteLabelIn(
+    "ru",
     {
       label: p.where,
       tpl,
@@ -431,7 +436,7 @@ let sitesInRussian = 0;
 for (const f of sites.features) {
   delete f.properties.label_ru;
   const ru =
-    siteLabelRu(f.properties, ruOf, names[f.properties.place]?.ru) ??
+    siteLabelIn("ru", f.properties, ruOf, names[f.properties.place]?.ru) ??
     (f.properties.tpl === undefined ? freeLabel[f.properties.label] : undefined);
   if (ru) {
     f.properties.label_ru = ru;

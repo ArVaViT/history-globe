@@ -6,6 +6,7 @@
  * It replaces i18next and react-i18next, which cost 16 kB gzip before the first frame
  * for these three features (ADR 0010).
  */
+import { loadLocaleData } from "@hg/model";
 import { useCallback, useSyncExternalStore } from "react";
 import en from "./en.json";
 
@@ -25,12 +26,21 @@ let wanted = "en";
 const listeners = new Set<() => void>();
 
 /** Fetches a language's dictionary once; false for a language without one. */
-export async function loadLanguage(lng: string): Promise<boolean> {
+export async function loadDictionary(lng: string): Promise<boolean> {
   if (lng in DICTS) return true;
   const load = LAZY[`./${lng}.json`];
   if (!load) return false;
   DICTS[lng] = (await load()).default;
   return true;
+}
+
+/**
+ * A language to show: its dictionary and the model's words for it (book names, eras, site
+ * labels: @hg/model locale-data), which only the language shown needs.
+ */
+async function loadLanguage(lng: string): Promise<boolean> {
+  const [ok] = await Promise.all([loadDictionary(lng), loadLocaleData(lng)]);
+  return ok;
 }
 
 export const i18n = {

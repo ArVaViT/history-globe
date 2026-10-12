@@ -1,6 +1,6 @@
 import { formatYear, periodAt, periodName, placeName, formatRefOr, escapeRegExp } from "@hg/model";
 import { chapterLabel, firstVerseIn, readingOrder } from "./chapter";
-import { DATA_URL, type LoadedData } from "./data";
+import { DATA_URL, whereIn, type LoadedData } from "./data";
 import type { Globe } from "./useGlobe";
 import { loadVerse } from "./verses";
 import { translate } from "./i18n";
@@ -180,7 +180,6 @@ export async function printForClass({
   blank?: boolean;
 }): Promise<void> {
   const s = globe.engine.store.get();
-  const ru = s.locale === "ru";
   const nameOf = (id: string) => {
     const p = data.byId.get(id)?.props;
     return p ? placeName(p, s.locale) : id;
@@ -305,9 +304,12 @@ export async function printForClass({
     const n = new Intl.NumberFormat(s.locale).format(roundKm(d));
     const road = byRoad(i);
     const by = road ? new Intl.NumberFormat(s.locale).format(roundKm(road)) : "";
-    return ru
-      ? `≈\u00a0${n}\u00a0км по прямой${by ? `, ≈\u00a0${by}\u00a0км по\u00a0римским\u00a0дорогам` : ""}`
-      : `≈\u00a0${n}\u00a0km in a straight line${by ? `, ≈\u00a0${by}\u00a0km by\u00a0Roman\u00a0roads` : ""}`;
+    // The number keeps its sign and its unit on its line (a thousands separator included);
+    // the way by road stays whole.
+    const nb = (x: string) => x.replace(/^≈ /, "≈\u00a0").replace(/(\d) (?=\p{L})/u, "$1\u00a0");
+    const line = nb(translate(s.locale, "sheet.distance", { km: n }));
+    const way = translate(s.locale, "sheet.distance_road", { km: by }).replace(/ /g, "\u00a0");
+    return by ? `${line}, ${way}` : line;
   };
   await printSheet({
     locale: s.locale,
@@ -355,19 +357,20 @@ export async function printForClass({
           })
         : [],
     // The credits in the sheet's language (the Copernicus notice stays as worded).
-    attribution: ru
-      ? shot.attribution
-          .replace(/, modified/g, ", с изменениями")
-          .replace("Ancient sites:", "Древние города:")
-          .replace("Roman roads:", "Римские дороги:")
-          .replace("Terrain:", "Рельеф:")
-          .replace(" et al.", " и др.")
-      : shot.attribution,
+    attribution: shot.attribution
+      .replace(/, modified/g, `, ${translate(s.locale, "sheet.credit_modified")}`)
+      .replace("Ancient sites:", `${translate(s.locale, "sheet.credit_ancient")}:`)
+      .replace("Roman roads:", `${translate(s.locale, "sheet.credit_roads")}:`)
+      .replace("Terrain:", `${translate(s.locale, "sheet.credit_terrain")}:`)
+      .replace(" et al.", ` ${translate(s.locale, "sheet.credit_et_al")}`),
     // A short address a class can type: what is shown, not the camera's decimals.
     // A person's view is not in the address: that one keeps the camera as it is.
     url: s.focus?.ref.startsWith("person:") ? window.location.href : shortUrl(),
   });
 }
+
+/** The languages whose names take case endings («в Иерусалиме», "w Jerozolimie", "v Jeruzalémě"). */
+const DECLINED: ReadonlySet<string> = new Set(["ru", "uk", "pl", "cs"]);
 
 /** A stop's text with its place taken out, for a quiz: every mention, in any case. */
 export function maskPlace(
@@ -375,7 +378,7 @@ export function maskPlace(
   index: { readonly pattern: RegExp; readonly forms: Readonly<Record<string, string>> } | null,
   placeId: string,
   names: readonly string[],
-  locale = "ru",
+  locale: string,
 ): string {
   const gap = "______";
   let out = text;
@@ -391,8 +394,8 @@ export function maskPlace(
   for (const name of names)
     for (const word of name.split(/\s+/)) {
       if (word.length < 3) continue;
-      // Russian and Ukrainian names take case endings: match their stem.
-      const ru = locale === "ru" || locale === "uk";
+      // Names in the languages with cases take endings: match their stem.
+      const ru = DECLINED.has(locale);
       const stem = ru && word.length > 4 ? word.slice(0, -2) : word;
       const esc = escapeRegExp(stem);
       // A short Russian name keeps its whole word and takes a case ending («до Дана»),
@@ -527,8 +530,13 @@ export async function buildQuiz({
     const n = plain[i] ?? "";
     const twin = tour.stops.some((o, k) => plain[k] === n && o.placeId !== st.placeId);
     const p = data.byId.get(st.placeId)?.props;
-    // In English the source's short name ("Antioch in Pisidia"), not the long today line.
-    const where = ru ? (p?.where_ru ?? p?.where) : (p?.where_ref_text ?? p?.where);
+    // In English the source's short name ("Antioch in Pisidia"), not the long today line;
+    // in the other languages their own line where it has one.
+    const where = !p
+      ? undefined
+      : s.locale === "en"
+        ? (p.where_ref_text ?? p.where)
+        : (whereIn(p, s.locale) ?? p.where);
     return twin && where && where !== n ? `${n} (${where})` : n;
   });
   // A tour of two or three places (Ruth) borrows choices from places its chapters name, the

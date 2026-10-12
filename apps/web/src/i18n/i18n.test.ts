@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it } from "vitest";
 import en from "./en.json";
-import { loadLanguage, translate } from "./index";
+import { loadDictionary, translate } from "./index";
 import ru from "./ru.json";
 
 function keys(obj: object, prefix = ""): string[] {
@@ -17,7 +17,7 @@ function baseKeys(obj: object): string[] {
 }
 
 beforeAll(async () => {
-  await loadLanguage("ru");
+  await loadDictionary("ru");
 });
 
 /** Every dictionary there is: a new language joins these checks by its file alone. */
@@ -85,8 +85,8 @@ describe("i18n dictionaries", () => {
 
 describe("loading a language", () => {
   it("fetches a dictionary once and refuses a language without one", async () => {
-    expect(await loadLanguage("ru")).toBe(true);
-    expect(await loadLanguage("xx")).toBe(false);
+    expect(await loadDictionary("ru")).toBe(true);
+    expect(await loadDictionary("xx")).toBe(false);
     expect(translate("xx", "loading")).toBe(translate("en", "loading"));
   });
 });

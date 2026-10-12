@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { readUrl, viewSearch } from "./url";
+import { isLocale } from "@hg/model";
+import { preferredLocale, readUrl, startLocale, viewSearch } from "./url";
 
 describe("readUrl", () => {
   it("reads a full view", () => {
@@ -158,5 +159,37 @@ describe("layers and tour in the link", () => {
     expect(readUrl("?embed=yes").embed).toBeUndefined();
     expect(readUrl("?year=30", "/").embed).toBeUndefined();
     expect(readUrl("?ref=Acts.16", "/embed/v1").embed).toBe(true);
+  });
+});
+
+describe("preferredLocale", () => {
+  const none = () => null;
+  it("follows the browser to a published language, by its base tag", () => {
+    expect(preferredLocale(["pt-BR", "en"], none)).toBe("pt");
+    expect(preferredLocale(["ja", "de-AT"], none)).toBe("de");
+    expect(preferredLocale(["ru-RU"], none)).toBe("ru");
+  });
+  it("opens in English when no language of the browser is published", () => {
+    expect(preferredLocale(["ja", "ko"], none)).toBe("en");
+    expect(preferredLocale([], none)).toBe("en");
+  });
+  it("keeps the language the reader picked, over the browser's", () => {
+    expect(preferredLocale(["en-US"], () => "pl")).toBe("pl");
+    expect(preferredLocale(["en-US"], () => "xx")).toBe("en");
+    const blocked = () => {
+      throw new Error("storage off");
+    };
+    expect(preferredLocale(["fr-CA"], blocked)).toBe("fr");
+  });
+});
+
+describe("startLocale", () => {
+  it("opens in the link's language when it names one", () => {
+    expect(startLocale({ locale: "pl" })).toBe("pl");
+    expect(startLocale({ locale: "ru", embed: true })).toBe("ru");
+  });
+  it("opens a map without one in a published language", () => {
+    expect(isLocale(startLocale({}))).toBe(true);
+    expect(isLocale(startLocale({ embed: true }))).toBe(true);
   });
 });

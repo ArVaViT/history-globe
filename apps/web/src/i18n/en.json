@@ -319,7 +319,14 @@
     "km": "{{n}} km",
     "quiz_intro": "Quiz: where did it happen? Find the passage and circle a letter.",
     "answers": "Answers",
-    "letters": "A B C D"
+    "letters": "A B C D",
+    "distance": "≈ {{km}} km in a straight line",
+    "distance_road": "≈ {{km}} km by Roman roads",
+    "credit_modified": "modified",
+    "credit_ancient": "Ancient sites",
+    "credit_roads": "Roman roads",
+    "credit_terrain": "Terrain",
+    "credit_et_al": "et al."
   },
   "tools": {
     "title": "Tools",

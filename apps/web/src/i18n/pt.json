@@ -319,7 +319,14 @@
     "km": "{{n}} km",
     "quiz_intro": "Quiz: onde aconteceu? Encontre a passagem e circule uma letra.",
     "answers": "Respostas",
-    "letters": "A B C D"
+    "letters": "A B C D",
+    "distance": "≈ {{km}} km em linha reta",
+    "distance_road": "≈ {{km}} km pelas estradas romanas",
+    "credit_modified": "modificado",
+    "credit_ancient": "Cidades antigas",
+    "credit_roads": "Estradas romanas",
+    "credit_terrain": "Relevo",
+    "credit_et_al": "et al."
   },
   "tools": {
     "title": "Ferramentas",

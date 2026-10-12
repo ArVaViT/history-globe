@@ -5,6 +5,9 @@ import type { LoadedData } from "./data";
 import { DATA_URL } from "./data";
 import { MAP_FONTS } from "./fonts";
 import type { UrlView } from "./url";
+
+/** The view the map opens on: the link's, its language always settled (App.tsx). */
+export type StartView = UrlView & { readonly locale: NonNullable<UrlView["locale"]> };
 import { viewPadding } from "./view-padding.ts";
 import { TERRAIN_TILES } from "./offline";
 import { translate } from "./i18n";
@@ -36,7 +39,7 @@ export interface Globe {
 export function useGlobe(
   container: RefObject<HTMLDivElement | null>,
   data: LoadedData | null,
-  initial: UrlView,
+  initial: StartView,
 ): { globe: Globe | null; error: string | null } {
   const [globe, setGlobe] = useState<Globe | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -99,7 +102,7 @@ function createGlobe(
   Renderer: typeof MapLibreRenderer,
   el: HTMLDivElement,
   data: LoadedData,
-  init: UrlView,
+  init: StartView,
 ): Globe {
   // The padding asks whether a card is open; the engine comes after the renderer.
   let cardOpen = () => true;
@@ -114,11 +117,11 @@ function createGlobe(
     // The credits' "Sources" link opens the docs in the language the map opened in.
     terrainAttribution: TERRAIN.attribution.replace(
       'href="docs/sources.html"',
-      `href="${docsPath(init.locale ?? "en", "sources")}"`,
+      `href="${docsPath(init.locale, "sources")}"`,
     ),
     fonts: MAP_FONTS,
     initialYear: init.year ?? DEFAULT_STATE.year,
-    initialLocale: init.locale ?? DEFAULT_STATE.locale,
+    initialLocale: init.locale,
     mapUi: (l) => ({
       km: translate(l, "mapui.km"),
       m: translate(l, "mapui.m"),
@@ -145,7 +148,7 @@ function createGlobe(
     tours: data.tours,
     initial: {
       ...(init.year === undefined ? {} : { year: init.year }),
-      ...(init.locale === undefined ? {} : { locale: init.locale }),
+      locale: init.locale,
       ...(init.place === undefined ? {} : { selectedPlace: init.place }),
       ...(init.layers === undefined ? {} : { layers: init.layers }),
     },

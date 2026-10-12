@@ -1,24 +1,26 @@
 /**
  * The open data as static JSON, for other sites and apps (docs/…/api.html): which places a
- * verse names, the places with their coordinates and Russian names, the dated events with
- * the passage that tells them, and the tours. Written to apps/web/public/api/v1/, served
+ * verse names, the places with their coordinates and names in every language of the site,
+ * the dated events with the passage that tells them, and the tours. Written to apps/web/public/api/v1/, served
  * as files with `Access-Control-Allow-Origin: *` (vercel.json); no server, no key.
  *
  *   index.json           what is here, the licence and the credits it asks for
- *   places.json          every place: id, names, kind, point, how many verses name it
+ *   places.json          every place: id, names in each language, kind, point, how many verses
+ *                        name it, its page in each language
  *   verses/<Book>.json   "Gen.12.6" → the ids of the places that verse names, one file a book
  *   events.json          dated events, with `ref` where the Bible tells the event
  *   battles.json         battles and sieges: place, year, sides, outcome, `ref` where told
  *   tours.json           the tours: their stops in order, each with its passage and note
  *   questions.json       questions people ask, answered (the /q/ pages), with their sources
  *   ancient.json         what ancient writers outside the Bible say of a place: the passage,
- *                        a free text of it, and a summary in English and Russian
+ *                        a free text of it, and a summary in each language
  *
  * Usage: node scripts/build-api.ts  (after the data and content builds)
  */
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { placeSlugs } from "./slugs.ts";
+import { LOCALES } from "../packages/model/src/time.ts";
 
 const root = join(import.meta.dirname, "..");
 const data = join(root, "apps/web/public/data");
@@ -45,7 +47,8 @@ const places = (
   JSON.parse(readFileSync(join(data, "places.geojson"), "utf8")) as { features: Place[] }
 ).features;
 const content = JSON.parse(readFileSync(join(data, "content.json"), "utf8")) as {
-  names: Record<string, { ru: string }>;
+  /** Each place's names in the languages other than English ("ru", "uk", …), and `osis`. */
+  names: Record<string, Record<string, string>>;
   events?: {
     id: string;
     year: number;
@@ -90,6 +93,7 @@ const CREDIT = [
   "History Globe by Vadym Arnaut (https://historyglobe.app), CC BY 4.0",
   "Places, verse tags and points: OpenBible.info Bible Geocoding Data (CC BY 4.0, modified); some points from Wikidata (CC0)",
   "Russian names: read from the Russian Synodal translation (public domain)",
+  "Names in the other languages: History Globe (CC BY 4.0)",
   "Third-party parts keep their own licences: https://historyglobe.app/docs/sources.html",
 ];
 
@@ -101,12 +105,21 @@ const write = (file: string, value: unknown) => {
 };
 
 const slugs = placeSlugs(places.map((f) => f.properties));
+// A page in every language the site is published in, under the same path.
+const pages = (path: string) => Object.fromEntries(LOCALES.map((l) => [l, `/${l}/${path}`]));
+/** A place's names in the languages other than English, in the order of LOCALES. */
+const namesOf = (id: string): Record<string, string> => {
+  const own = content.names[id] ?? {};
+  return Object.fromEntries(LOCALES.flatMap((l) => (l !== "en" && own[l] ? [[l, own[l]]] : [])));
+};
 write(
   "places.json",
   places.map(({ properties: p, geometry: g }) => ({
     id: p.id,
     name: p.name,
-    ...(content.names[p.id] ? { name_ru: content.names[p.id]?.ru } : {}),
+    ...(content.names[p.id] ? { names: namesOf(p.id) } : {}),
+    // The first version's field, the same as names.ru: kept for the sites that read it.
+    ...(content.names[p.id]?.ru ? { name_ru: content.names[p.id]?.ru } : {}),
     kind: p.kind,
     lon: g.coordinates[0],
     lat: g.coordinates[1],
@@ -115,14 +128,7 @@ write(
     ...(p.dup ? { duplicate: true } : {}),
     verses: p.verses,
     // A page only for a place some verse names (scripts/build-pages.ts writes no other).
-    ...(p.verses > 0
-      ? {
-          page: {
-            en: `/en/place/${slugs.get(p.id) ?? p.id}/`,
-            ru: `/ru/place/${slugs.get(p.id) ?? p.id}/`,
-          },
-        }
-      : {}),
+    ...(p.verses > 0 ? { page: pages(`place/${slugs.get(p.id) ?? p.id}/`) } : {}),
   })),
 );
 
@@ -225,7 +231,7 @@ write(
       : {}),
     scripture: q.scripture,
     sources: q.sources,
-    page: { en: `/en/q/${q.id}/`, ru: `/ru/q/${q.id}/` },
+    page: pages(`q/${q.id}/`),
   })),
 );
 
@@ -243,12 +249,13 @@ write("index.json", {
   years: "astronomical: 1 BC is 0, 586 BC is -585",
   refs: "OSIS with English book abbreviations and KJV numbering: Gen.12.6, Acts.16.12-Acts.16.15",
   files: {
-    "places.json": "every place: id, name, name_ru, kind, lon, lat, verses, page",
+    "places.json":
+      "every place: id, name (English), names (each other language: ru, uk, …), kind, lon, lat, verses, page (each language); name_ru, the same as names.ru, is kept for the first version's readers",
     "verses/{Book}.json": "a verse (OSIS) → the ids of the places it names; one file a book",
     "events.json": "dated events; ref where the Bible tells the event",
     "battles.json": "battles and sieges: place, year, sides, outcome; ref where the Bible tells it",
     "questions.json":
-      "questions people ask, answered in English and Russian, with the map's view and sources",
+      "questions people ask, answered in each language, with the map's view and sources",
     "ancient.json":
       "place id → what ancient writers outside the Bible say of it: author, work, passage, url, summary",
     "tours.json":
