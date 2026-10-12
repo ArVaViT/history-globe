@@ -9,7 +9,8 @@
  *
  * Options, as attributes of the script tag:
  *   data-scope=".post"   where to look (a CSS selector; the whole page by default)
- *   data-locale="ru"     the text's language, ru or en (by default the page's lang)
+ *   data-locale="pl"     the text's language: cs, de, en, es, fr, it, nl, pl, pt, ru or uk
+ *                        (by default the page's lang; English for any other)
  *   data-every           link every mention, not only the first of each place
  *   data-theme="dark"    the card's colours, light or dark (by default the reader's system)
  *
@@ -31,11 +32,12 @@
   const me = document.currentScript;
   const base = new URL(".", (me && me.src) || location.href);
   const attr = (k) => (me ? me.getAttribute(k) : null);
-  const lang = (attr("data-locale") || document.documentElement.lang || "en")
+  // The languages the globe is published in (packages/model/src/time.ts LOCALES).
+  const LANGS = ["cs", "de", "en", "es", "fr", "it", "nl", "pl", "pt", "ru", "uk"];
+  const asked = (attr("data-locale") || document.documentElement.lang || "en")
     .toLowerCase()
-    .startsWith("ru")
-    ? "ru"
-    : "en";
+    .split("-")[0];
+  const lang = LANGS.includes(asked) ? asked : "en";
   const every = me ? me.hasAttribute("data-every") : false;
 
   // Text that is not prose, already a link, or a control stays as it is.
@@ -256,6 +258,12 @@ transition:opacity .16s ease,transform .16s ease,visibility 0s .16s;pointer-even
   };
 
   const plural = (n) => {
+    // "{{count}} verses" by the language's plural rules, where the index gives them.
+    const p = index.text.plural;
+    if (p && typeof Intl !== "undefined" && Intl.PluralRules) {
+      const f = p[new Intl.PluralRules(lang).select(n)] || p.other || p.many || p.one;
+      if (f) return f.replace("{{count}}", n.toLocaleString(lang));
+    }
     const f = index.text.verses;
     if (lang !== "ru") return (n === 1 ? f[0] : f[2]).replace("{{count}}", n);
     const m10 = n % 10;
@@ -309,11 +317,18 @@ transition:opacity .16s ease,transform .16s ease,visibility 0s .16s;pointer-even
       facts.append(li);
     };
     const ru = lang === "ru";
-    if (where) fact(ru ? "\u0421\u0435\u0433\u043e\u0434\u043d\u044f" : "Today", where);
-    fact(ru ? "\u0412 \u0411\u0438\u0431\u043b\u0438\u0438" : "In the Bible", plural(verses));
+    // The labels in the index's language; an index of the first version had none.
+    const t = index.text;
+    if (where)
+      fact(t.today || (ru ? "\u0421\u0435\u0433\u043e\u0434\u043d\u044f" : "Today"), where);
+    fact(
+      t.inBible || (ru ? "\u0412 \u0411\u0438\u0431\u043b\u0438\u0438" : "In the Bible"),
+      plural(verses),
+    );
     if (sure)
       fact(
-        ru ? "\u041b\u043e\u043a\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u044f" : "Location",
+        t.location ||
+          (ru ? "\u041b\u043e\u043a\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u044f" : "Location"),
         sure === "disputed"
           ? index.text.disputed
           : sure === "likely"
