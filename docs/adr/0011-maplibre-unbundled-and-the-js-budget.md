@@ -96,6 +96,9 @@ grows it. The build scripts and the tests load every
 language first (`loadAllLocaleData`); the generated pages, data and API were checked to be
 byte for byte the same.
 
-The ceiling on all JS (560 kB) still counts every language's files, though a reader fetches
-one language's data (and every dictionary, for the lessons' default titles): it stands at
-537.1 kB, room for about three more languages. How it should count them is for the product owner.
+The ceiling on all JS (560 kB) counted every language's files, though a reader fetches one
+language, and it had room for about three more. With the product owner's agreement
+(11.10.2026) it counts what a reader can fetch: the shared code and one language, the
+heaviest (`scripts/check-budget.ts` tells a language's chunks by their source maps). The app
+also stopped fetching every dictionary for the lessons' default titles: a reader now fetches
+the one language shown. All JS stands at 478.1 kB, and a language added does not grow it.

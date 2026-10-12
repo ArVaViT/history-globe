@@ -24,7 +24,8 @@ if (!js.some((f) => f.endsWith("maplibre-gl-worker.mjs")))
 // Before the first frame: the entry chunk and every chunk it imports statically, the
 // renderer chunk the app imports at once (useGlobe.ts) with its own static imports, and
 // MapLibre's files. A chunk loaded later by `import()` (a panel opened on demand) is not
-// on that path: it counts toward the total for everything, which has its own ceiling.
+// on that path: it counts toward the total for everything, which has its own ceiling, and
+// counts there once per reader, not once per language (ADR 0011, update of 11.10.2026).
 const TOTAL_KB = 560;
 const html = readFileSync(join(dist, "index.html"), "utf8");
 const entry = [...html.matchAll(/<script[^>]+src="\/(assets\/[^"]+\.js)"/g)].map((m) => m[1] ?? "");
@@ -46,18 +47,48 @@ for (const f of js) {
   if (rel.startsWith("vendor/") || /^assets\/maplibre-renderer-/.test(rel)) visit(rel);
 }
 
+/**
+ * The language a chunk belongs to, when all it holds is one language's words: its UI
+ * dictionary (apps/web/src/i18n/<l>.json) or its model data (packages/model/src/locales/<l>.ts),
+ * as the chunk's source map says. A reader fetches only the language shown.
+ */
+const languageOf = (file: string): string | undefined => {
+  let sources: string[];
+  try {
+    sources = (JSON.parse(readFileSync(`${file}.map`, "utf8")) as { sources: string[] }).sources;
+  } catch {
+    return undefined;
+  }
+  const langs = new Set(
+    sources.map((s) => /(?:\/i18n\/|\/locales\/)([a-z]{2})\.(?:json|ts)$/.exec(s)?.[1] ?? "-"),
+  );
+  const [lang] = langs;
+  return langs.size === 1 && lang !== "-" ? lang : undefined;
+};
+
 let total = 0;
-let all = 0;
+let shared = 0;
+const perLanguage = new Map<string, number>();
 for (const f of js) {
   const rel = relative(dist, f);
   const kb = gzipSync(readFileSync(f)).length / 1000;
-  all += kb;
+  const lang = first.has(rel) ? undefined : languageOf(f);
+  if (lang) perLanguage.set(lang, (perLanguage.get(lang) ?? 0) + kb);
+  else shared += kb;
   const now = first.has(rel);
   if (now) total += kb;
-  console.log(`${rel.padEnd(56)} ${kb.toFixed(1)} kB gzip${now ? "" : "  (on demand)"}`);
+  console.log(
+    `${rel.padEnd(56)} ${kb.toFixed(1)} kB gzip${now ? "" : lang ? `  (on demand, ${lang})` : "  (on demand)"}`,
+  );
 }
+// Everything a reader can fetch: the shared code and one language, the heaviest. Each
+// language added is a file of its own that the readers of the others never fetch.
+const [heaviest = "", heaviestKb = 0] = [...perLanguage].sort((a, b) => b[1] - a[1])[0] ?? [];
+const all = shared + heaviestKb;
 console.log(`total ${total.toFixed(1)} kB gzip, budget ${String(BUDGET_KB)} kB`);
-console.log(`all JS ${all.toFixed(1)} kB gzip, ceiling ${String(TOTAL_KB)} kB`);
+console.log(
+  `all JS ${all.toFixed(1)} kB gzip (one language: ${heaviest}, ${heaviestKb.toFixed(1)} kB; ${String(perLanguage.size)} languages), ceiling ${String(TOTAL_KB)} kB`,
+);
 if (total > BUDGET_KB) {
   console.error(`over the JS budget by ${(total - BUDGET_KB).toFixed(1)} kB (ADR 0010)`);
   process.exit(1);
