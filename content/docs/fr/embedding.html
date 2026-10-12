@@ -285,8 +285,10 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          <code>en</code> ou <code>ru</code> : la langue du texte ; par défaut, le
-          <code>lang</code> de la page
+          la langue du texte, l’une des langues du site : <code>cs</code>, <code>de</code>,
+          <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
+          <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>uk</code> ; par défaut, le
+          <code>lang</code> de la page ; l’anglais pour toute autre langue
         </td>
       </tr>
       <tr>
@@ -309,13 +311,14 @@ window.addEventListener("message", (e) =&gt; {
   du texte simple ; il en va de même d’un nom que les versets de la Bible emploient surtout pour
   autre chose (« Kadesh » y désigne Kadesh-Barnéa, non le Kadesh de la base de données). Le nom d’un
   lieu qui est aussi un prénom (Jordan, Sharon) est laissé de côté à côté d’un autre mot à
-  majuscule : Jordan Smith est une personne, non le fleuve. Les noms russes sont repérés dans tous
-  leurs cas : « в Египте », « из Антиохии Писидийской ». Les liens, le code, les champs de
-  formulaire, les boutons et les titres sont laissés tels quels.
+  majuscule : Jordan Smith est une personne, non le fleuve. En russe, en ukrainien, en polonais et
+  en tchèque, les noms sont repérés dans leurs formes déclinées (« в Египте », « w Jerozolimie »,
+  « v Jeruzalémě »), et en allemand, également au génitif (« Jerusalems »). Les liens, le code, les
+  champs de formulaire, les boutons et les titres sont laissés tels quels.
 </p>
 <p class="note">
   Le script n’a aucune dépendance et ne dépose aucun cookie. Il lit sur le globe un fichier de noms
-  (environ 25 Ko en anglais et 35 Ko en russe sur le réseau, plus 7 Ko de script), sans transmettre
+  (de 20 à 35 Ko environ sur le réseau selon la langue, plus 7 Ko de script), sans transmettre
   l’adresse de votre page comme référent, et ne modifie que les noms qu’il relie. Il fonctionne sous
   une Content Security Policy stricte qui autorise l’adresse du globe dans
   <code>script-src</code> et <code>connect-src</code>. Pour le texte que votre page ajoute plus

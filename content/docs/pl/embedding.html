@@ -284,7 +284,10 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          <code>en</code> lub <code>ru</code>: język tekstu; domyślnie <code>lang</code> strony
+          język tekstu, jeden z języków serwisu: <code>cs</code>, <code>de</code>, <code>en</code>,
+          <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>, <code>pl</code>,
+          <code>pt</code>, <code>ru</code>, <code>uk</code>; domyślnie <code>lang</code> strony; dla
+          innych języków angielski
         </td>
       </tr>
       <tr>
@@ -307,14 +310,15 @@ window.addEventListener("message", (e) =&gt; {
   zwykłym tekstem, podobnie jak nazwa, której same wersety Biblii używają przeważnie w innym
   znaczeniu („Kadesz” oznacza tam Kadesz-Barnea, a nie Kadesz z bazy danych). Nazwa miejsca, która
   jest też imieniem (Jordan, Szaron), nie jest wiązana obok innego słowa pisanego wielką literą:
-  Jordan Smith to osoba, a nie rzeka. Rosyjskie nazwy są znajdowane we wszystkich przypadkach: „в
-  Египте”, „из Антиохии Писидийской”. Linki, kod, pola formularzy, przyciski i nagłówki są pomijane.
+  Jordan Smith to osoba, a nie rzeka. W języku rosyjskim, ukraińskim, polskim i czeskim nazwy są
+  znajdowane w różnych przypadkach („в Египте”, „w Jerozolimie”, „v Jeruzalémě”), a w niemieckim
+  także w dopełniaczu („Jerusalems”). Linki, kod, pola formularzy, przyciski i nagłówki są pomijane.
 </p>
 <p class="note">
-  Skrypt nie ma zależności i nie ustawia plików cookie. Czyta z globusa jeden plik nazw (około 25 KB
-  dla angielskiego i 35 KB dla rosyjskiego przez sieć, plus 7 KB samego skryptu), bez przekazywania
-  adresu Twojej strony jako referera, i zmienia tylko te nazwy, które wiąże. Działa przy ścisłej
-  polityce bezpieczeństwa treści (Content Security Policy), która zezwala na adres globusa w
+  Skrypt nie ma zależności i nie ustawia plików cookie. Czyta z globusa jeden plik nazw (od 20 do 35
+  KB przez sieć, zależnie od języka, plus 7 KB samego skryptu), bez przekazywania adresu Twojej
+  strony jako referera, i zmienia tylko te nazwy, które wiąże. Działa przy ścisłej polityce
+  bezpieczeństwa treści (Content Security Policy), która zezwala na adres globusa w
   <code>script-src</code> i <code>connect-src</code>. Dla tekstu, który Twoja strona doda później,
   wywołaj <code>HistoryGlobePlaces.scan(element)</code>, gdy tekst zostanie wyrenderowany: skrypt
   dzieli węzły tekstowe, więc na stronie React lub Vue uruchamiaj go na treści, której framework już

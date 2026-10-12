@@ -53,6 +53,9 @@ of its names. Each is a property of the language, as the Kralice Bible is of Cze
   there) and its preview picture.
 - The content is still written in Russian and English first and translated from English;
   that is how the texts are made, not something a reader sees.
-- Text places (`hg-places.js`) and the place links in article text still know only English
-  and Russian forms; the other languages need their own forms (and case endings in Polish,
-  Czech and Ukrainian) before they get them.
+- Text places (`hg-places.js`, the cards' verses, the static pages) know every language
+  since 11.10.2026: each language's names, their case forms in Ukrainian, Polish and Czech
+  and the German genitive (`scripts/inflected-forms.ts`), checked against that language's
+  Bible and read by eye by a reviewer of the language (`scripts/build-text-places.ts`). The
+  old Bibles the verse cards quote spell some names the old way (Gdańsk «Filipowa»), so
+  those verses link fewer places than a modern text does.

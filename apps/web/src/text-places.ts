@@ -1,4 +1,4 @@
-import type { Locale } from "@hg/model";
+import { isLocale, type Locale } from "@hg/model";
 import { DATA_URL } from "./data";
 import { textPlacesFrom, type TextPlaces } from "./text-places-core";
 
@@ -11,7 +11,8 @@ const loaded = new Map<Locale, Promise<TextPlaces>>();
 export function loadTextPlaces(locale: Locale): Promise<TextPlaces> {
   let got = loaded.get(locale);
   if (!got) {
-    got = fetch(`${DATA_URL}/text-places.${locale === "ru" ? "ru" : "en"}.json`)
+    // Every published language has its index; any other reads the English one.
+    got = fetch(`${DATA_URL}/text-places.${isLocale(locale) ? locale : "en"}.json`)
       .then((r) => {
         if (!r.ok) throw new Error(`text-places: ${String(r.status)}`);
         return r.json() as Promise<{ forms: Record<string, string>; names?: string[] }>;

@@ -27,6 +27,11 @@ describe("the static pages", () => {
     expect(JSON.parse(docs)).toEqual(LOCALES.filter((l) => l !== "en"));
   });
 
+  it("let the text-places script read every language", () => {
+    const listed = /const LANGS = (\[[^\]]*\])/.exec(read("public/hg-places.js"))?.[1] ?? "[]";
+    expect(JSON.parse(listed)).toEqual([...LOCALES].sort());
+  });
+
   it("give the installed app an English name", () => {
     const manifest = JSON.parse(read("public/manifest.webmanifest")) as { lang: string };
     expect(manifest.lang).toBe("en");
