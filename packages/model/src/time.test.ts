@@ -7,6 +7,8 @@ import {
   formatYear,
   formatCentury,
   isLocale,
+  LOCALE_NAMES,
+  LOCALES,
   isYearInput,
   parseYearInput,
   pick,
@@ -199,5 +201,12 @@ describe("parseYearInput reads BC loosely", () => {
     expect(parseYearInput("586 př. n. l.")).toBe(-585);
     expect(parseYearInput("586 v.Chr.")).toBe(-585);
     expect(parseYearInput("30 n. l.")).toBe(30);
+  });
+});
+
+describe("LOCALES", () => {
+  it("runs in the order of the languages' own names, none first for being the site's own", () => {
+    const names = LOCALES.map((l) => LOCALE_NAMES[l]);
+    expect(names).toEqual([...names].sort((a, b) => a.localeCompare(b, "en")));
   });
 });

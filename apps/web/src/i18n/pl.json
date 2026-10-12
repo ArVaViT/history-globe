@@ -339,7 +339,14 @@
     "km": "{{n}} km",
     "quiz_intro": "Quiz: gdzie to się stało? Znajdź fragment i zakreśl literę.",
     "answers": "Odpowiedzi",
-    "letters": "A B C D"
+    "letters": "A B C D",
+    "distance": "≈ {{km}} km w linii prostej",
+    "distance_road": "≈ {{km}} km drogami rzymskimi",
+    "credit_modified": "zmodyfikowano",
+    "credit_ancient": "Starożytne miejsca",
+    "credit_roads": "Drogi rzymskie",
+    "credit_terrain": "Rzeźba terenu",
+    "credit_et_al": "i in."
   },
   "tools": {
     "title": "Narzędzia",

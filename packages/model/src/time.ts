@@ -100,35 +100,37 @@ export const ALL_LOCALES = [
 
 /**
  * The languages the site is published in: the app's language switch, the static pages, the
- * documentation and the text-places script follow this list. A language joins it with its
+ * documentation and the text-places script follow this list. In the order of their own names
+ * (Čeština, Deutsch, English … Русский, Українська): no language comes first for being the
+ * site's own. A language joins it with its
  * interface file (apps/web/src/i18n) and its names and texts in the content.
  */
 export const LOCALES = [
-  "ru",
-  "en",
-  "uk",
-  "es",
-  "pt",
+  "cs",
   "de",
+  "en",
+  "es",
   "fr",
   "it",
   "nl",
   "pl",
-  "cs",
+  "pt",
+  "ru",
+  "uk",
 ] as const satisfies readonly Locale[];
 export type SiteLocale = (typeof LOCALES)[number];
 /** Each language by its own name, for the language switch. */
 export const LOCALE_NAMES: Readonly<Record<SiteLocale, string>> = {
   cs: "Čeština",
-  pl: "Polski",
-  nl: "Nederlands",
-  it: "Italiano",
-  fr: "Français",
   de: "Deutsch",
-  pt: "Português",
-  es: "Español",
-  ru: "Русский",
   en: "English",
+  es: "Español",
+  fr: "Français",
+  it: "Italiano",
+  nl: "Nederlands",
+  pl: "Polski",
+  pt: "Português",
+  ru: "Русский",
   uk: "Українська",
 };
 export const isLocale = (s: unknown): s is SiteLocale =>

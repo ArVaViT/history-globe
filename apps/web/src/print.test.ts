@@ -23,11 +23,11 @@ describe("a quiz", () => {
   };
   it("takes the place out of the text, every mention and case, the others kept", () => {
     expect(
-      maskPlace("Из Иерусалима в Вифлеем, и снова в Иерусалиме.", index, "a1", ["Иерусалим"]),
+      maskPlace("Из Иерусалима в Вифлеем, и снова в Иерусалиме.", index, "a1", ["Иерусалим"], "ru"),
     ).toBe("Из ______ в Вифлеем, и снова в ______.");
   });
   it("takes a short Russian name in any case, but not a longer name it begins", () => {
-    expect(maskPlace("Колено идёт до Дана; в Дане живёт Даниил.", null, "x", ["Дан"])).toBe(
+    expect(maskPlace("Колено идёт до Дана; в Дане живёт Даниил.", null, "x", ["Дан"], "ru")).toBe(
       "Колено идёт до ______; в ______ живёт Даниил.",
     );
   });
@@ -38,16 +38,24 @@ describe("a quiz", () => {
     expect(maskPlace("Daniel goes to Dan.", null, "x", ["Dan"], "en")).toBe(
       "Daniel goes to ______.",
     );
-    expect(maskPlace("требую суда кесарева в Кесарии", null, "x", ["Кесария"])).toBe(
+    expect(maskPlace("требую суда кесарева в Кесарии", null, "x", ["Кесария"], "ru")).toBe(
       "требую суда кесарева в ______",
     );
   });
   it("takes out a name the index does not know, by its stem", () => {
-    expect(maskPlace("Отплывают из Антиохии.", null, "x", ["Антиохия"])).toBe(
+    expect(maskPlace("Отплывают из Антиохии.", null, "x", ["Антиохия"], "ru")).toBe(
       "Отплывают из ______.",
     );
-    expect(maskPlace("В Антиохии Писидийской.", null, "x", ["Антиохия Писидийская"])).toBe(
+    expect(maskPlace("В Антиохии Писидийской.", null, "x", ["Антиохия Писидийская"], "ru")).toBe(
       "В ______.",
+    );
+  });
+  it("takes out Polish and Czech names with their case endings", () => {
+    expect(maskPlace("Paweł płynie z Antiochii.", null, "x", ["Antiochia"], "pl")).toBe(
+      "Paweł płynie z ______.",
+    );
+    expect(maskPlace("Pavel byl v Jeruzalémě.", null, "x", ["Jeruzalém"], "cs")).toBe(
+      "Pavel byl v ______.",
     );
   });
   it("offers the answer and three others, once each, in name order", () => {

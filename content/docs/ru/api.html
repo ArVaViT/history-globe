@@ -15,14 +15,16 @@ description: Места, стихи, в которых они названы, с
 
 { "Acts.16.11": ["a6a7150", "a68750d", "a91c509"], "Acts.16.12": ["a69e1b8", "a49e1d0"], … }</code></pre>
 <p>
-  Сами места — с названиями по-английски и по-русски, видом и точкой — в
-  <code>places.json</code>; связывать по <code>id</code>.
+  Сами места — с названиями на всех языках сайта, видом и точкой — в
+  <code>places.json</code>; связывать по <code>id</code>. Поле первой версии
+  <code>name_ru</code> осталось и совпадает с <code>names.ru</code>.
 </p>
 <pre><code>GET {{site}}/api/v1/places.json
 
-[{ "id": "a49e1d0", "name": "Philippi", "name_ru": "Филиппы", "kind": "settlement",
-   "lon": 24.28458, "lat": 41.01207, "verses": 4,
-   "page": { "en": "/en/place/philippi/", "ru": "/ru/place/philippi/" } }, …]</code></pre>
+[{ "id": "a49e1d0", "name": "Philippi",
+   "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
+   "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
 
 <h2>Все файлы</h2>
 <div class="table">
@@ -98,5 +100,6 @@ description: Места, стихи, в которых они названы, с
   можно использовать, менять и продавать то, что на них построено; там, где данные показаны, нужно
   назвать источники, как они перечислены в <code>index.json</code>: History Globe Вадима Арнаута и
   OpenBible.info — за места, разметку стихов и точки. Русские названия взяты из Синодального
-  перевода, который находится в общественном достоянии.
+  перевода, который находится в общественном достоянии. Названия на остальных языках составлены
+  History Globe.
 </p>

@@ -14,14 +14,16 @@ description: The places, the verses that name them, the events and the tours as 
 
 { "Acts.16.11": ["a6a7150", "a68750d", "a91c509"], "Acts.16.12": ["a69e1b8", "a49e1d0"], … }</code></pre>
 <p>
-  The places themselves, with names in English and Russian, kind and point, are in
-  <code>places.json</code>; join on <code>id</code>.
+  The places themselves, with their names in every language of the site, kind and point, are in
+  <code>places.json</code>; join on <code>id</code>. The first version’s <code>name_ru</code> is
+  still there, the same as <code>names.ru</code>.
 </p>
 <pre><code>GET {{site}}/api/v1/places.json
 
-[{ "id": "a49e1d0", "name": "Philippi", "name_ru": "Филиппы", "kind": "settlement",
-   "lon": 24.28458, "lat": 41.01207, "verses": 4,
-   "page": { "en": "/en/place/philippi/", "ru": "/ru/place/philippi/" } }, …]</code></pre>
+[{ "id": "a49e1d0", "name": "Philippi",
+   "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
+   "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
 
 <h2>All the files</h2>
 <div class="table">
@@ -102,5 +104,5 @@ description: The places, the verses that name them, the events and the tours as 
   change it, sell what you build with it; name the sources where you show it, as
   <code>index.json</code> lists them: History Globe by Vadym Arnaut, and OpenBible.info for the
   places, the verse tags and the points. The Russian names were read from the Synodal translation,
-  which is in the public domain.
+  which is in the public domain. The names in the other languages are History Globe’s own.
 </p>

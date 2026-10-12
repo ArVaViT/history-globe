@@ -1,5 +1,5 @@
 import { YEAR_MAX, YEAR_MIN, type Camera, type LayerVisibility } from "@hg/core";
-import { isLocale, type Locale } from "@hg/model";
+import { isLocale, type Locale, type SiteLocale } from "@hg/model";
 
 /** The shareable view (ADR 0006): everything needed to reopen the same scene. */
 export interface UrlView {
@@ -33,7 +33,54 @@ const layersWhere = (on: (layer: (typeof LAYERS)[number]) => boolean): LayerVisi
   battles: on("battles"),
 });
 
-/** Only languages with a UI dictionary; uk and de join when theirs exist. */
+const LOCALE_KEY = "hg:locale";
+
+/** Keeps the language a reader picked in the settings, for links that name none. */
+export function rememberLocale(locale: string): void {
+  if (!isLocale(locale)) return;
+  try {
+    localStorage.setItem(LOCALE_KEY, locale);
+  } catch {
+    // Storage off (a private window): the browser's language will choose next time.
+  }
+}
+
+/**
+ * The language to open in when the link names none: the one the reader picked before, else
+ * the first of the browser's languages the site is published in ("pt-BR" → pt), else
+ * English. No language is the site's own: Russian is one of the eleven.
+ */
+export function preferredLocale(
+  // Old web views have no navigator.languages, only navigator.language.
+  languages: readonly string[] = typeof navigator === "undefined"
+    ? []
+    : "languages" in navigator && navigator.languages.length > 0
+      ? navigator.languages
+      : [navigator.language],
+  saved: () => string | null = () => localStorage.getItem(LOCALE_KEY),
+): SiteLocale {
+  try {
+    const picked = saved();
+    if (isLocale(picked)) return picked;
+  } catch {
+    // Storage off: the browser's languages decide.
+  }
+  for (const tag of languages) {
+    const base = tag.toLowerCase().split("-")[0];
+    if (isLocale(base)) return base;
+  }
+  return "en";
+}
+
+/**
+ * The language a view opens in: the link's, else the reader's (preferredLocale). A map
+ * embedded in another site without one takes the browser's language, not the one the reader
+ * picked on this site: the host's page decides what its readers see.
+ */
+export function startLocale(view: UrlView): SiteLocale {
+  if (view.locale && isLocale(view.locale)) return view.locale;
+  return view.embed ? preferredLocale(undefined, () => null) : preferredLocale();
+}
 
 const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
 /** Into [-180, 180): the same meridian however many turns the link adds. */
