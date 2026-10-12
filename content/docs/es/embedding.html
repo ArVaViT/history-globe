@@ -287,8 +287,10 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          <code>en</code> o <code>ru</code>: el idioma del texto; por defecto, el
-          <code>lang</code> de la página
+          el idioma del texto, uno de los idiomas del sitio: <code>cs</code>, <code>de</code>,
+          <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
+          <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>uk</code>; por defecto, el
+          <code>lang</code> de la página; para cualquier otro, inglés
         </td>
       </tr>
       <tr>
@@ -311,15 +313,16 @@ window.addEventListener("message", (e) =&gt; {
   palabra corriente queda como texto normal, y lo mismo ocurre con un nombre que los propios
   versículos de la Biblia usan sobre todo para otra cosa («Cades» allí es Cades-barnea, no la Cades
   de la base de datos). El nombre de un lugar que también es nombre de pila (Jordan, Sharon) se deja
-  tal cual junto a otra palabra con mayúscula: Jordan Smith es una persona, no el río. Los nombres
-  rusos se encuentran en todos sus casos: «в Египте», «из Антиохии Писидийской». Los enlaces, el
+  tal cual junto a otra palabra con mayúscula: Jordan Smith es una persona, no el río. En ruso,
+  ucraniano, polaco y checo, los nombres se encuentran en sus distintos casos («в Египте», «w
+  Jerozolimie», «v Jeruzalémě»), y en alemán, también en genitivo («Jerusalems»). Los enlaces, el
   código, los campos de formulario, los botones y los encabezados se dejan intactos.
 </p>
 <p class="note">
-  El script no tiene dependencias y no instala cookies. Lee del globo un archivo de nombres (unos 25
-  KB en inglés y 35 KB en ruso por la red, más 7 KB del script), sin enviar la dirección de tu
-  página como referente, y solo cambia los nombres que enlaza. Funciona bajo una política de
-  seguridad de contenido (CSP) estricta que permita la dirección del globo en
+  El script no tiene dependencias y no instala cookies. Lee del globo un archivo de nombres (entre
+  20 y 35 KB por la red según el idioma, más 7 KB del script), sin enviar la dirección de tu página
+  como referente, y solo cambia los nombres que enlaza. Funciona bajo una política de seguridad de
+  contenido (CSP) estricta que permita la dirección del globo en
   <code>script-src</code> y <code>connect-src</code>. Para el texto que tu página añada más tarde,
   llama a <code>HistoryGlobePlaces.scan(element)</code> una vez que el texto esté renderizado: el
   script divide los nodos de texto, así que en una página React o Vue ejecútalo sobre contenido que

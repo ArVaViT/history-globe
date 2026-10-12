@@ -1,7 +1,8 @@
 /**
- * The index for places in any text (apps/web/public/hg-places.js): the forms of each
- * place's name a reader meets in running text, in Russian and English, each tied to one
- * place, with what the place's card shows. Written to public/data/text-places.json.
+ * The index for places in any text (apps/web/public/hg-places.js, the place cards' verses and
+ * the static pages): the forms of each place's name a reader meets in running text, in every
+ * language of the site, each tied to one place, with what the place's card shows. Written to
+ * public/data/text-places.<language>.json.
  *
  * Only names that point to one place are kept, since a wrong place on someone else's page
  * is worse than none:
@@ -15,31 +16,37 @@
  *   capitalised is a word, not a name («Села», "On"); so is any form two places share;
  * - the verses: of the cited verses that use a form, at least half must be the place's
  *   own. "Tiberias" in John is the lake, «Иудеи» in Acts the Jews;
- * - a short list read by eye: modern meanings (Media, Philadelphia, «Тире»).
+ * - a short list read by eye: modern meanings (Media, Philadelphia, «Тире»). A place
+ *   stopped in English or Russian is stopped in every language; each language adds its own.
  * Names that are also first names (Jordan, «Нил») are listed for the script, which leaves
  * them alone next to another capitalised word.
  *
- * Russian names are declined (Иерусалим → Иерусалима, Иерусалиме…) by the ending of a
- * one-word name; names of several words are matched as written.
+ * Names are declined by the ending of a one-word name: Russian (Иерусалим → Иерусалима,
+ * Иерусалиме…; russian-forms.ts), Ukrainian, Polish and Czech, and the German genitive
+ * (inflected-forms.ts); names of several words are matched as written. Each language is
+ * checked against its own Bible, the one its verse cards quote (build-verses.ts).
  *
  * Usage: node scripts/build-text-places.ts  (after build-content; build-verses supplies
  * the text for the lower-case check, and without it only the other checks apply)
  */
-import type { SiteLocale } from "../packages/model/src/time.ts";
+import { LOCALES, type SiteLocale } from "../packages/model/src/time.ts";
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { siteCertainty } from "../packages/model/src/sites.ts";
-import { readBible } from "./bible-text.ts";
+import { readBible, readSword } from "./bible-text.ts";
+import { inflectedForms } from "./inflected-forms.ts";
 import { plain, russianForms, russianHeads } from "./russian-forms.ts";
 import { placeSlugs } from "./slugs.ts";
 
 const root = join(import.meta.dirname, "..");
 const data = join(root, "apps/web/public/data");
 
-// Built for English and Russian, whose Bibles and stems the index knows.
-type Lang = Extract<SiteLocale, "en" | "ru">;
-// English first: the Russian pass reads what the English one found.
-const LANGS: readonly Lang[] = ["en", "ru"];
+type Lang = SiteLocale;
+// Every language of the site, English first.
+const LANGS: readonly Lang[] = ["en", ...LOCALES.filter((l) => l !== "en")];
+/** The languages whose stop lists were read by eye name by name; the others start from
+ * theirs, by place (`stoppedIds`), and add their own below. */
+type Base = "en" | "ru";
 /** How much more a place must be named than its namesakes, and than a person. */
 const OVER_PLACES = 5;
 const OVER_PEOPLE = 3;
@@ -56,7 +63,7 @@ const LONG_NAME = 6;
  * Tel Aviv: Ezekiel's Tel-abib is in Babylonia) or a phrase of sermons ("The Lord will
  * provide"). Checked by reading every name by eye; a Russian entry stands for all its cases.
  */
-const STOP: Record<Lang, readonly string[]> = {
+const STOP: Record<Base, readonly string[]> = {
   en: [
     ...["Dan", "Media", "Asia", "Ar", "Ono", "Phoenix", "Mortar", "Madmen", "Harmon"],
     ...["Philadelphia", "Second Quarter", "City of Destruction"],
@@ -74,17 +81,153 @@ const STOP: Record<Lang, readonly string[]> = {
  * Single forms with another meaning: «Иудеи» and «Халдеи» are the peoples (the Synodal
  * text capitalises them), «Тире» a dash, «Колосс» a giant, «Ливны» a Russian town.
  */
-const FORM_STOP: Record<Lang, readonly string[]> = {
+const FORM_STOP: Partial<Record<Lang, readonly string[]>> = {
   en: [],
   ru: ["Иудеи", "Халдеи", "Тире", "Колосс", "Ливны"],
+  uk: ["Раббі", "Філіпп", "Колоси", "Колосами"],
+  cs: ["Lodě", "Libně", "Kolos"],
+  de: ["Nils", "Zins"],
+  pl: ["Mary", "Suzy", "Suzie", "Kolos", "Kusza", "Jordana", "Nila", "Szarona", "Tyra"],
+};
+/**
+ * The other languages' own names with a modern meaning, read by eye by a reviewer of each
+ * language (11.10.2026), as STOP: a common word (pl «Syn», de "Winkel"), another place
+ * (fr «Sion» stays: Zion; it «Alessandria» goes: Piedmont), a generic gate or hall a town
+ * has too (cs «Stará brána», nl "Westpoort"), modern Ethiopia for Cush. A modern country on
+ * the same ground (Italia, Griekenland) stays linked, as in English.
+ */
+const STOP_IN: Partial<Record<Lang, readonly string[]>> = {
+  es: ["Etiopía", "Sefarad", "Mara", "Milo", "Salamina", "Tolemaida", "Abilene", "Apolonia"],
+  it: [
+    "Etiopia",
+    "Ramses",
+    "Ieshua",
+    "Mara",
+    "Cusa",
+    "Araba",
+    "Salmone",
+    "Macedonia",
+    "Put",
+    "Rabbit",
+    "Porta Vecchia",
+    "Sala del Trono",
+    "Regno del Sud",
+    "Regno del Nord",
+    "Alessandria",
+    "Reggio",
+    "Susa",
+    "Salamina",
+  ],
+  pt: ["Gerar", "Mara", "Remete", "Querube", "Estrada Real", "Rua Direita", "Três Vendas"],
+  nl: [
+    "Rabbit",
+    "Ethiopië",
+    "Magadan",
+    "Rechtszaal",
+    "Troonzaal",
+    "Westpoort",
+    "Oostpoort",
+    "Zuidpoort",
+    "Waterpoort",
+    "Vispoort",
+    "Koningsweg",
+    "Oostplein",
+  ],
+  fr: ["Emmaüs", "Ramsès", "Icone", "Qadesh", "Salamine", "Rue Droite", "Éthiopie"],
+  uk: ["Південь", "Кут", "Святилище", "Сава", "Церера", "Ефіопія"],
+  cs: [
+    "Havran",
+    "Araba",
+    "Mára",
+    "Magadan",
+    "Bosra",
+    "Královská cesta",
+    "Koňská brána",
+    "Soudní síň",
+    "Trůnní síň",
+    "Horní nádrž",
+    "Dolní nádrž",
+    "Stará nádrž",
+    "Nová brána",
+    "Stará brána",
+    "Severní brána",
+    "Jižní brána",
+    "Západní brána",
+    "Východní brána",
+    "Střední brána",
+    "Vodní brána",
+  ],
+  de: [
+    "Heiligtum",
+    "Allerheiligstes",
+    "Säulenhalle",
+    "Gerichtshalle",
+    "Thronhalle",
+    "Winkel",
+    "Silo",
+    "Mara",
+    "Ramses",
+    "Elischa",
+    "Put",
+    "Rabbit",
+    "Derbe",
+    "Salamis",
+    "Magadan",
+    "Dimona",
+    "Äthiopien",
+    "Königsstraße",
+    "Salzstadt",
+    "Weidenbach",
+    "Ostplatz",
+    "Nordtor",
+    "Südtor",
+    "Osttor",
+    "Westtor",
+    "Altes Tor",
+    "Neues Tor",
+    "Wassertor",
+    "Oberer Teich",
+    "Unterer Teich",
+    "Alter Teich",
+  ],
+  pl: [
+    "Syn",
+    "Araba",
+    "Cherub",
+    "Tygrys",
+    "Narożnik",
+    "Szafir",
+    "Sora",
+    "Magadan",
+    "Rabbit",
+    "Jeszua",
+    "Salamina",
+    "Droga Królewska",
+    "Sala Kolumnowa",
+    "Sala Tronowa",
+    "Ulica Prosta",
+    "Etiopia",
+  ],
 };
 /**
  * Names that are also first names (Jordan Peterson, Sharon Stone, «Нил Сорский»): the
  * script leaves them alone next to a capitalised word, the other half of a person's name.
  */
-const FIRST_NAMES: Record<Lang, readonly string[]> = {
+const FIRST_NAMES: Record<Base, readonly string[]> = {
   en: ["Jordan", "Sharon", "Bethany", "Shiloh", "Zion", "Moriah", "Eden", "Rhodes", "Ai"],
   ru: ["Нил", "Сава"],
+};
+/** The other languages' first names (and surnames) among place names, by their reviewers. */
+const FIRST_NAMES_IN: Partial<Record<Lang, readonly string[]>> = {
+  es: ["Belén", "Nazaret", "Betania", "Jordán", "Nilo", "Maceda"],
+  it: ["Giordano", "Nilo", "Betania", "Apollonia", "Filippi"],
+  pt: ["Nazaré", "Tarso", "Hadasa", "Nilo", "Jordão", "Betânia"],
+  nl: ["Jordaan", "Tirza"],
+  fr: ["Jourdain", "Rhodes", "Béthanie", "Hadassa", "Siloé"],
+  uk: ["Шарон", "Ніл", "Йордан", "Арпад"],
+  cs: ["Šaron", "Arpád", "Betanie"],
+  de: ["Jordan", "Scharon", "Bethel", "Bethanien", "Tirza", "Zora", "Apollonia", "Saba"],
+  pl: ["Jordan", "Szaron", "Ofir", "Mara", "Ramses"],
 };
 
 interface Props {
@@ -104,25 +247,44 @@ const places = (
   }
 ).features;
 const content = JSON.parse(readFileSync(join(data, "content.json"), "utf8")) as {
-  names: Record<string, { ru?: string }>;
+  /** A place's names in the languages other than English. */
+  names: Record<string, Partial<Record<Lang, string>>>;
   where_ru?: Record<string, string>;
+  where_in?: Partial<Record<Lang, Record<string, string>>>;
 };
-const people = (
-  JSON.parse(readFileSync(join(data, "people.json"), "utf8")) as {
-    people: [string, string, string | null, ...unknown[]][];
-  }
-).people;
+const peopleFile = JSON.parse(readFileSync(join(data, "people.json"), "utf8")) as {
+  people: [string, string, string | null, ...unknown[]][];
+  /** A person's name in the languages beyond English and Russian, by id. */
+  names?: Partial<Record<Lang, Record<string, string>>>;
+};
+const people = peopleFile.people;
+interface Ui {
+  kind: Record<string, string>;
+  place: Record<string, string>;
+  tours: Record<string, string>;
+}
 const ui = Object.fromEntries(
   LANGS.map((l) => [
     l,
-    JSON.parse(readFileSync(join(root, `apps/web/src/i18n/${l}.json`), "utf8")) as {
-      kind: Record<string, string>;
-      place: Record<string, string>;
-    },
+    JSON.parse(readFileSync(join(root, `apps/web/src/i18n/${l}.json`), "utf8")) as Ui,
   ]),
-) as Record<Lang, { kind: Record<string, string>; place: Record<string, string> }>;
+) as Record<Lang, Ui>;
 
-const formsOf = (name: string, l: Lang) => (l === "ru" ? russianForms(name) : [name]);
+/**
+ * «monte Sinai», «mar Morto», «porta das Ovelhas»: running text and the Bibles write the
+ * common word of a name small, as Russian does («гора Синай»); the name stays capitalised.
+ * Not in German, which capitalises every noun.
+ */
+const smallFirst = (form: string, l: Lang) =>
+  l !== "de" && /^\p{Lu}\p{Ll}+\s.*\p{Lu}/u.test(form)
+    ? [form, form.charAt(0).toLowerCase() + form.slice(1)]
+    : [form];
+const formsOf = (name: string, l: Lang) =>
+  l === "ru"
+    ? russianForms(name)
+    : l === "en"
+      ? [name]
+      : inflectedForms(name, l).flatMap((f) => smallFirst(f, l));
 /** The English counterpart of `russianHeads`: "Carmel" for Mount Carmel, "Kadesh" for
  * Kadesh-barnea, "Caesarea" for Caesarea Philippi. */
 const englishHeads = (name: string): string[] => {
@@ -136,19 +298,60 @@ const englishHeads = (name: string): string[] => {
   const two = /^(\p{Lu}\p{Ll}+) \p{Lu}\p{Ll}+$/u.exec(name);
   return two?.[1] ? [two[1]] : [];
 };
+/**
+ * In the other languages, any capitalised word of a longer name, and the first part of a
+ * hyphenated one: "Karmel" for «Góra Karmel». More than a reader would use, which only makes
+ * a namesake give way more often.
+ */
+const otherHeads = (name: string): string[] => {
+  const words = name.split(/\s+/);
+  const hyphen = /^(\p{Lu}\p{Ll}+)-\p{L}/u.exec(name);
+  return [
+    ...(words.length > 1 ? words.filter((w) => /^\p{Lu}\p{Ll}/u.test(w)) : []),
+    ...(words.length === 1 && hyphen?.[1] ? [hyphen[1]] : []),
+  ];
+};
 const headsOf = (name: string, l: Lang) =>
-  (l === "ru" ? russianHeads(name) : englishHeads(name)).flatMap((h) => formsOf(h, l));
+  (l === "ru" ? russianHeads(name) : l === "en" ? englishHeads(name) : otherHeads(name)).flatMap(
+    (h) => formsOf(h, l),
+  );
 
 // How often each word of the Bible is written with a small first letter and how often with
 // a capital: the whole KJV and Synodal text when the pipeline has them (pipeline/.cache),
 // else the verses the places cite. A form written small at least as often as capitalised
 // is an ordinary word («Восток», «Села»), which a sentence may start with; one the text
 // mostly capitalises stays a name (Lebanon, though the Synodal text calls incense «ливан»).
-const BIBLES: Record<Lang, string> = { en: "eng-kjv2006_usfm.zip", ru: "russyn_usfm.zip" };
-const seen: Record<Lang, Map<string, number>> = { en: new Map(), ru: new Map() };
-const whole: Record<Lang, string> = { en: "", ru: "" };
+// The editions the verse cards quote (build-verses.ts SOURCES); Polish from a SWORD module.
+const BIBLES: Record<Lang, string> = {
+  en: "eng-kjv2006_usfm.zip",
+  ru: "russyn_usfm.zip",
+  uk: "ukr1871_usfm.zip",
+  es: "spaRV1909_usfm.zip",
+  pt: "porbrbsl_usfm.zip",
+  fr: "fraLSG_usfm.zip",
+  de: "deu1912_usfm.zip",
+  it: "ita1927_usfm.zip",
+  nl: "nld_usfm.zip",
+  pl: "PolGdanska.zip",
+  cs: "ces1613_usfm.zip",
+};
+const perLang = <T>(make: () => T) =>
+  Object.fromEntries(LANGS.map((l) => [l, make()])) as Record<Lang, T>;
+const seen = perLang(() => new Map<string, number>());
+const whole = perLang(() => "");
 /** The verses the places cite, by OSIS reference: what the names are checked against. */
-const cited: Record<Lang, Map<string, string>> = { en: new Map(), ru: new Map() };
+const cited = perLang(() => new Map<string, string>());
+const kjvZip = join(root, "pipeline/.cache", BIBLES.en);
+const bibleOf = (l: Lang, zip: string) => {
+  if (zip.endsWith("_usfm.zip")) {
+    const bible = readBible(zip);
+    // eBible's Kralice writes Č and Ď as È and Ï (build-verses.ts REPAIRS).
+    if (l === "cs")
+      for (const [k, v] of bible) bible.set(k, v.replace(/È/g, "Č").replace(/Ï/g, "Ď"));
+    return bible;
+  }
+  return readSword(zip, readBible(kjvZip));
+};
 let corpus: "bible" | "cited" | "none" = "bible";
 for (const l of LANGS) {
   const dir = join(data, "verses", l);
@@ -159,7 +362,7 @@ for (const l of LANGS) {
       ))
         cited[l].set(k, plain(text));
   const zip = join(root, "pipeline/.cache", BIBLES[l]);
-  const texts = existsSync(zip) ? [...readBible(zip).values()] : [...cited[l].values()];
+  const texts = existsSync(zip) ? [...bibleOf(l, zip).values()] : [...cited[l].values()];
   if (!existsSync(zip)) corpus = cited[l].size ? "cited" : "none";
   whole[l] = texts.map(plain).join("\n");
   // Whole words only: "Beth-ammon" is one word, not "ammon".
@@ -185,7 +388,24 @@ const aWord = (form: string, l: Lang) => {
 
 const shown = places.filter((f) => f.properties.verses > 0 && !f.properties.dup);
 const byId = new Map(shown.map((f) => [f.properties.id, f]));
-const nameIn = (p: Props, l: Lang) => (l === "ru" ? (content.names[p.id]?.ru ?? "") : p.name);
+const nameIn = (p: Props, l: Lang) => (l === "en" ? p.name : (content.names[p.id]?.[l] ?? ""));
+/** The places stopped by hand in English or Russian: stopped in every language. */
+const stoppedIds = new Set(
+  shown
+    .filter(
+      ({ properties: p }) =>
+        STOP.en.includes(p.name) || STOP.ru.includes(plain(content.names[p.id]?.ru ?? "")),
+    )
+    .map((f) => f.properties.id),
+);
+const stopped = (id: string, name: string, l: Lang) =>
+  l === "en" || l === "ru"
+    ? STOP[l].includes(name)
+    : stoppedIds.has(id) || (STOP_IN[l] ?? []).includes(name);
+// A place that is a first name in English is seldom one elsewhere (Shiloh, Bethany): each
+// language lists its own.
+const firstNames = (l: Lang): string[] =>
+  l === "en" || l === "ru" ? [...FIRST_NAMES[l]] : [...(FIRST_NAMES_IN[l] ?? [])];
 /** Two records of one site (Zion and Mount Zion, the two Rhodes) are no rivals. */
 const NEAR_KM = 5;
 const near = (a: string, b: string) => {
@@ -242,7 +462,7 @@ for (const l of LANGS) {
     for (const form of headsOf(name, l)) claim(form).heads.set(p.id, p.verses);
   }
   for (const row of people) {
-    const name = row[l === "ru" ? 2 : 1];
+    const name = l === "en" ? row[1] : l === "ru" ? row[2] : peopleFile.names?.[l]?.[row[0]];
     if (!name) continue;
     const verses = row[row.length - 1] as number;
     for (const form of formsOf(name, l)) if (claims.has(form)) claim(form).people += verses;
@@ -262,7 +482,7 @@ for (const l of LANGS) {
     const why =
       verses < MIN_VERSES && name.length < LONG_NAME
         ? "rare"
-        : STOP[l].includes(name) || FORM_STOP[l].includes(form)
+        : stopped(best, name, l) || (FORM_STOP[l] ?? []).includes(form)
           ? "stop"
           : rest > 0 && verses < OVER_PLACES * rest
             ? "places"
@@ -296,7 +516,11 @@ const cardsIn = (l: Lang) => {
     cards[p.id] = [
       nameIn(p, l) || p.name,
       ui[l].kind[p.kind] ?? p.kind,
-      (l === "ru" ? content.where_ru?.[p.id] : p.where) ?? "",
+      (l === "en"
+        ? p.where
+        : l === "ru"
+          ? content.where_ru?.[p.id]
+          : content.where_in?.[l]?.[p.id]) ?? "",
       p.verses,
       geometry.coordinates.map((x) => Math.round(x * 100) / 100),
       slug.get(p.id) ?? p.id,
@@ -353,25 +577,135 @@ for (const line of coast.features.flatMap((f) => f.geometry.coordinates)) {
   path += pts.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(1)} ${y.toFixed(1)}`).join("");
 }
 
-const words = {
-  ru: {
-    verses: ["{{count}} стих", "{{count}} стиха", "{{count}} стихов"],
-    // Under the card's label «Локализация».
-    disputed: "спорная",
-    likely: "основная из версий",
-    tentative: "предположительная",
-    open: "Открыть на глобусе",
-    page: "О месте",
-  },
+/**
+ * The card's words. "{{count}} verses" by the language's plural rules, from its dictionary
+ * (place.verse_count_*): `plural` by Intl.PluralRules category, and `verses` as the first
+ * script read it (one, few, many). The labels the dictionary has (place.today,
+ * tours.about_place) come from it; the rest are here.
+ */
+const LABELS: Record<
+  Lang,
+  {
+    inBible: string;
+    location: string;
+    disputed: string;
+    likely: string;
+    tentative: string;
+    open: string;
+    /** Where the dictionary's tours.about_place does not suit a link on a card. */
+    page?: string;
+  }
+> = {
   en: {
-    verses: ["{{count}} verse", "{{count}} verses", "{{count}} verses"],
+    inBible: "In the Bible",
+    location: "Location",
     // Under the card's label "Location".
     disputed: "disputed",
     likely: "the likeliest of the candidates",
     tentative: "tentative",
     open: "Open on the globe",
-    page: "About the place",
   },
+  ru: {
+    inBible: "В Библии",
+    location: "Локализация",
+    disputed: "спорная",
+    likely: "основная из версий",
+    tentative: "предположительная",
+    open: "Открыть на глобусе",
+  },
+  uk: {
+    inBible: "У Біблії",
+    location: "Локалізація",
+    disputed: "спірна",
+    likely: "найімовірніша з версій",
+    tentative: "орієнтовна",
+    open: "Відкрити на глобусі",
+  },
+  es: {
+    inBible: "En la Biblia",
+    location: "Ubicación",
+    disputed: "discutida",
+    likely: "la más probable de las candidatas",
+    tentative: "tentativa",
+    open: "Abrir en el globo",
+  },
+  pt: {
+    inBible: "Na Bíblia",
+    location: "Localização",
+    disputed: "disputada",
+    likely: "a mais provável das candidatas",
+    tentative: "provisória",
+    open: "Abrir no globo",
+  },
+  de: {
+    inBible: "In der Bibel",
+    location: "Lage",
+    disputed: "umstritten",
+    likely: "wahrscheinlichste Lage",
+    tentative: "vermutet",
+    open: "Auf dem Globus öffnen",
+  },
+  fr: {
+    inBible: "Dans la Bible",
+    location: "Localisation",
+    disputed: "discutée",
+    likely: "la plus probable parmi plusieurs sites",
+    tentative: "hypothétique",
+    open: "Ouvrir sur le globe",
+  },
+  it: {
+    inBible: "Nella Bibbia",
+    location: "Localizzazione",
+    disputed: "discussa",
+    likely: "la più probabile delle candidate",
+    tentative: "ipotetica",
+    page: "Scheda del luogo",
+    open: "Apri sul globo",
+  },
+  nl: {
+    inBible: "In de Bijbel",
+    location: "Ligging",
+    disputed: "omstreden",
+    likely: "de waarschijnlijkste van de kandidaten",
+    tentative: "voorlopig",
+    open: "Openen op de globe",
+    page: "Over deze plaats",
+  },
+  pl: {
+    inBible: "W Biblii",
+    location: "Lokalizacja",
+    disputed: "sporna",
+    likely: "najbardziej prawdopodobna z propozycji",
+    tentative: "przypuszczalna",
+    open: "Otwórz na globusie",
+  },
+  cs: {
+    inBible: "V Bibli",
+    location: "Lokalizace",
+    disputed: "sporná",
+    likely: "nejpravděpodobnější z návrhů",
+    tentative: "předběžná",
+    open: "Otevřít na glóbu",
+  },
+};
+const wordsIn = (l: Lang) => {
+  const p = ui[l].place;
+  const plural = Object.fromEntries(
+    (["zero", "one", "two", "few", "many", "other"] as const).flatMap((c) => {
+      const f = p[`verse_count_${c}`];
+      return f ? [[c, f]] : [];
+    }),
+  ) as Record<string, string>;
+  // The first script's three forms: for 1, 2 and 5 verses.
+  const pick = (n: number) =>
+    plural[new Intl.PluralRules(l).select(n)] ?? plural.other ?? plural.one ?? "{{count}}";
+  return {
+    plural,
+    verses: [pick(1), pick(2), pick(5)],
+    today: p.today ?? "",
+    page: ui[l].tours.about_place ?? "",
+    ...LABELS[l],
+  };
 };
 const locator = { w: W, h: H, frame: FRAME, path };
 for (const l of LANGS)
@@ -380,15 +714,17 @@ for (const l of LANGS)
     JSON.stringify({
       v: 1,
       forms: index[l],
-      names: FIRST_NAMES[l].flatMap((n) => formsOf(n, l)).filter((f) => index[l][f]),
+      names: firstNames(l)
+        .flatMap((n) => formsOf(n, l))
+        .filter((f) => index[l][f]),
       places: cardsIn(l),
-      text: words[l],
+      text: wordsIn(l),
       locator,
     }),
   );
 const count = (l: Lang, why: string) => dropped[l].filter((d) => d.why === why).length;
 console.log(
-  `text places: forms en ${String(Object.keys(index.en).length)}, ru ${String(Object.keys(index.ru).length)}; ` +
+  `text places: forms ${LANGS.map((l) => `${l} ${String(Object.keys(index[l]).length)}`).join(", ")}; ` +
     LANGS.map(
       (l) =>
         `${l} dropped ${String(count(l, "places"))} namesakes, ${String(count(l, "person"))} people, ${String(count(l, "word"))} words, ${String(count(l, "rare"))} rare, ${String(count(l, "stop"))} by hand, ${String(count(l, "verses"))} by the verses`,

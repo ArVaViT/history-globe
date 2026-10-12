@@ -289,8 +289,10 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          <code>en</code> oder <code>ru</code>: die Sprache des Textes; standardmäßig das
-          <code>lang</code> der Seite
+          die Sprache des Textes, eine der Sprachen der Website: <code>cs</code>, <code>de</code>,
+          <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
+          <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>uk</code>; standardmäßig das
+          <code>lang</code> der Seite; bei jeder anderen Englisch
         </td>
       </tr>
       <tr>
@@ -313,15 +315,16 @@ window.addEventListener("message", (e) =&gt; {
   gewöhnliches Wort, bleibt einfacher Text, ebenso ein Name, den die Verse der Bibel meist für etwas
   anderes verwenden („Kadesch“ ist dort Kadesch-Barnea, nicht das Kadesch der Datenbank). Der Name
   eines Ortes, der zugleich ein Vorname ist (Jordan, Saron), bleibt neben einem anderen
-  großgeschriebenen Wort unberührt: Jordan Smith ist eine Person, nicht der Fluss. Russische Namen
-  werden in allen ihren Fällen gefunden: «в Египте», «из Антиохии Писидийской». Links, Code,
-  Formularfelder, Schaltflächen und Überschriften bleiben unberührt.
+  großgeschriebenen Wort unberührt: Jordan Smith ist eine Person, nicht der Fluss. Im Russischen,
+  Ukrainischen, Polnischen und Tschechischen werden Namen in ihren gebeugten Formen gefunden („в
+  Египте“, „w Jerozolimie“, „v Jeruzalémě“), deutsche Namen auch im Genitiv („Jerusalems“). Links,
+  Code, Formularfelder, Schaltflächen und Überschriften bleiben unberührt.
 </p>
 <p class="note">
   Das Skript hat keine Abhängigkeiten und setzt keine Cookies. Es liest eine Namensdatei vom Globus
-  (etwa 25 KB auf Englisch und 35 KB auf Russisch über das Netz, dazu 7 KB Skript), ohne die Adresse
-  Ihrer Seite als Referrer, und ändert nur die Namen, die es verlinkt. Es funktioniert mit einer
-  strengen Content Security Policy, die die Adresse des Globus in <code>script-src</code> und
+  (je nach Sprache etwa 20 bis 35 KB über das Netz, dazu 7 KB Skript), ohne die Adresse Ihrer Seite
+  als Referrer, und ändert nur die Namen, die es verlinkt. Es funktioniert mit einer strengen
+  Content Security Policy, die die Adresse des Globus in <code>script-src</code> und
   <code>connect-src</code> erlaubt. Für Text, den Ihre Seite später hinzufügt, rufen Sie
   <code>HistoryGlobePlaces.scan(element)</code> auf, sobald der Text gerendert ist: Das Skript teilt
   Textknoten, daher führen Sie es auf einer React- oder Vue-Seite für Inhalte aus, die das Framework

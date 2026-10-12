@@ -279,8 +279,10 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          <code>en</code> or <code>ru</code>: the language of the text; by default the page's
-          <code>lang</code>
+          the language of the text, one of the site's languages: <code>cs</code>, <code>de</code>,
+          <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
+          <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>uk</code>; by default the page's
+          <code>lang</code>; any other language falls back to English
         </td>
       </tr>
       <tr>
@@ -303,12 +305,13 @@ window.addEventListener("message", (e) =&gt; {
   and so does a name the Bible’s own verses mostly use for something else (“Kadesh” there is
   Kadesh-barnea, not the Kadesh of the database). A place’s name that is also a first name (Jordan,
   Sharon) is left alone next to another capitalised word: Jordan Smith is a person, not the river.
-  Russian names are found in all their cases: «в Египте», «из Антиохии Писидийской». Links, code,
+  In Russian, Ukrainian, Polish and Czech, names are found in their inflected forms (“в Египте”, “w
+  Jerozolimie”, “v Jeruzalémě”), and German names in the genitive too (“Jerusalems”). Links, code,
   form fields, buttons and headings are left alone.
 </p>
 <p class="note">
   The script has no dependencies and sets no cookies. It reads one file of names from the globe
-  (about 25 KB in English and 35 KB in Russian over the network, plus 7 KB of script), without your
+  (about 20 to 35 KB over the network depending on the language, plus 7 KB of script), without your
   page's address as referrer, and changes only the names it links. It works under a strict Content
   Security Policy that allows the globe's address in <code>script-src</code> and
   <code>connect-src</code>. For text your page adds later, call

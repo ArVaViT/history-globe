@@ -283,8 +283,10 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          <code>en</code> o <code>ru</code>: la lingua del testo; per impostazione predefinita il
-          <code>lang</code> della pagina
+          la lingua del testo, una delle lingue del sito: <code>cs</code>, <code>de</code>,
+          <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
+          <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>uk</code>; per impostazione
+          predefinita il <code>lang</code> della pagina; l’inglese per qualsiasi altra
         </td>
       </tr>
       <tr>
@@ -307,13 +309,14 @@ window.addEventListener("message", (e) =&gt; {
   comune resta testo semplice, e lo stesso vale per un nome che i versetti stessi della Bibbia usano
   per lo più per un’altra cosa («Cades» lì è Cades-Barnea, non la Cades del database). Il nome di un
   luogo che è anche un nome di persona (Giordano, Saron) viene lasciato stare accanto a un’altra
-  parola maiuscola: Giordano Bruno è una persona, non il fiume. I nomi russi vengono trovati in
-  tutti i loro casi: «в Египте», «из Антиохии Писидийской». Link, codice, campi di moduli, pulsanti
-  e titoli vengono lasciati stare.
+  parola maiuscola: Giordano Bruno è una persona, non il fiume. In russo, ucraino, polacco e ceco i
+  nomi vengono trovati nelle loro forme declinate («в Египте», «w Jerozolimie», «v Jeruzalémě»), e
+  in tedesco anche al genitivo («Jerusalems»). Link, codice, campi di moduli, pulsanti e titoli
+  vengono lasciati stare.
 </p>
 <p class="note">
-  Lo script non ha dipendenze e non imposta cookie. Legge dal globo un solo file di nomi (circa 25
-  KB in inglese e 35 KB in russo in rete, più 7 KB di script), senza l’indirizzo della tua pagina
+  Lo script non ha dipendenze e non imposta cookie. Legge dal globo un solo file di nomi (circa da
+  20 a 35 KB in rete a seconda della lingua, più 7 KB di script), senza l’indirizzo della tua pagina
   come referrer, e modifica solo i nomi che collega. Funziona con una Content Security Policy
   rigorosa che consenta l’indirizzo del globo in <code>script-src</code> e <code>connect-src</code>.
   Per il testo che la tua pagina aggiunge in seguito, chiama

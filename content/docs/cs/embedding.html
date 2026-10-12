@@ -281,8 +281,10 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          <code>en</code> nebo <code>ru</code>: jazyk textu; ve výchozím stavu <code>lang</code>
-          stránky
+          jazyk textu, jeden z jazyků webu: <code>cs</code>, <code>de</code>, <code>en</code>,
+          <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>, <code>pl</code>,
+          <code>pt</code>, <code>ru</code>, <code>uk</code>; ve výchozím stavu
+          <code>lang</code> stránky; pro jakýkoli jiný angličtina
         </td>
       </tr>
       <tr>
@@ -304,18 +306,19 @@ window.addEventListener("message", (e) =&gt; {
   a pisidská), místem a osobou (Juda) nebo místem a běžným slovem zůstává prostým textem, stejně
   jako název, který verše samotné Bible používají většinou pro něco jiného („Kádeš“ tam je
   Kádeš-barnea, nikoli Kádeš z databáze). Název místa, který je zároveň křestním jménem (Jordán,
-  Šaron), se vedle jiného slova s velkým písmenem nechává být: Jordan Smith je osoba, nikoli řeka.
-  Ruské názvy se nacházejí ve všech pádech: „в Египте“, „из Антиохии Писидийской“. Odkazy, kód, pole
+  Šaron), se vedle jiného slova s velkým písmenem nechává být: Jordan Smith je osoba, nikoli řeka. V
+  ruštině, ukrajinštině, polštině a češtině se názvy nacházejí v různých pádech („в Египте“, „w
+  Jerozolimie“, „v Jeruzalémě“), v němčině také v genitivu („Jerusalems“). Odkazy, kód, pole
   formulářů, tlačítka a nadpisy se nechávají beze změny.
 </p>
 <p class="note">
-  Skript nemá žádné závislosti a nenastavuje cookies. Čte z glóbu jeden soubor názvů (po síti asi 25
-  KB pro angličtinu a 35 KB pro ruštinu, plus 7 KB skriptu), bez adresy vaší stránky jako referreru,
-  a mění jen názvy, které propojuje. Funguje i při přísné Content Security Policy, která povoluje
-  adresu glóbu v <code>script-src</code> a <code>connect-src</code>. Pro text, který vaše stránka
-  přidá později, zavolejte <code>HistoryGlobePlaces.scan(element)</code>, jakmile je text vykreslen:
-  skript dělí textové uzly, takže na stránce v Reactu nebo Vue ho spouštějte na obsahu, který
-  framework už znovu nevykresluje.
+  Skript nemá žádné závislosti a nenastavuje cookies. Čte z glóbu jeden soubor názvů (po síti asi 20
+  až 35 KB podle jazyka, plus 7 KB skriptu), bez adresy vaší stránky jako referreru, a mění jen
+  názvy, které propojuje. Funguje i při přísné Content Security Policy, která povoluje adresu glóbu
+  v <code>script-src</code> a <code>connect-src</code>. Pro text, který vaše stránka přidá později,
+  zavolejte <code>HistoryGlobePlaces.scan(element)</code>, jakmile je text vykreslen: skript dělí
+  textové uzly, takže na stránce v Reactu nebo Vue ho spouštějte na obsahu, který framework už znovu
+  nevykresluje.
 </p>
 <script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
 

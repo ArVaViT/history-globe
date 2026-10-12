@@ -286,8 +286,10 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          <code>en</code> of <code>ru</code>: de taal van de tekst; standaard de <code>lang</code>
-          van de pagina
+          de taal van de tekst, een van de talen van de site: <code>cs</code>, <code>de</code>,
+          <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
+          <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>uk</code>; standaard de
+          <code>lang</code> van de pagina; voor elke andere taal Engels
         </td>
       </tr>
       <tr>
@@ -310,14 +312,15 @@ window.addEventListener("message", (e) =&gt; {
   woord, blijft gewone tekst, en dat geldt ook voor een naam die de verzen van de Bijbel zelf
   meestal voor iets anders gebruiken (“Kades” is daar Kades-Barnea, niet de Kades uit de database).
   De naam van een plaats die ook een voornaam is (Jordan, Sharon) blijft met rust naast een ander
-  woord met hoofdletter: Jordan Smith is een persoon, niet de rivier. Russische namen worden in al
-  hun naamvallen gevonden: «в Египте», «из Антиохии Писидийской». Links, code, formuliervelden,
+  woord met hoofdletter: Jordan Smith is een persoon, niet de rivier. In het Russisch, Oekraïens,
+  Pools en Tsjechisch worden namen in hun verbogen vormen gevonden (“в Египте”, “w Jerozolimie”, “v
+  Jeruzalémě”), en in het Duits ook in de genitief (“Jerusalems”). Links, code, formuliervelden,
   knoppen en koppen blijven met rust.
 </p>
 <p class="note">
   Het script heeft geen afhankelijkheden en plaatst geen cookies. Het leest één bestand met namen
-  van de wereldbol (ongeveer 25 KB in het Engels en 35 KB in het Russisch over het netwerk, plus 7
-  KB script), zonder het adres van je pagina als referrer, en verandert alleen de namen die het
+  van de wereldbol (ongeveer 20 tot 35 KB over het netwerk, afhankelijk van de taal, plus 7 KB
+  script), zonder het adres van je pagina als referrer, en verandert alleen de namen die het
   koppelt. Het werkt onder een strikt Content Security Policy dat het adres van de wereldbol
   toestaat in <code>script-src</code> en <code>connect-src</code>. Voor tekst die je pagina later
   toevoegt, roep je <code>HistoryGlobePlaces.scan(element)</code> aan zodra de tekst is getekend:
