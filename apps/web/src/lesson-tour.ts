@@ -13,6 +13,20 @@ export interface LessonTour {
 import { LESSON, lessonStops, lessonTitle } from "./lesson";
 
 /**
+ * "Lesson" in each language, read when shown: by then the language's dictionary is in, so
+ * no dictionary is fetched for the languages the reader never opens.
+ */
+function defaultTitle(): Words {
+  const title = {} as Words;
+  for (const l of LOCALES)
+    Object.defineProperty(title, l, {
+      enumerable: true,
+      get: () => translate(l, "lesson.default_title"),
+    });
+  return title;
+}
+
+/**
  * The tour of a lesson in the address (lesson.ts): its places in order, each at the year it
  * was picked in, with the place's verse nearest that year; null under two places.
  */
@@ -52,11 +66,7 @@ export function lessonTour(
       30,
     title: lessonTitle(search)
       ? { en: lessonTitle(search), ru: lessonTitle(search) }
-      : {
-          ...Object.fromEntries(LOCALES.map((l) => [l, translate(l, "lesson.default_title")])),
-          en: translate("en", "lesson.default_title"),
-          ru: translate("ru", "lesson.default_title"),
-        },
+      : defaultTitle(),
     stops,
   };
 }
