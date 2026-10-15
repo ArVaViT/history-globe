@@ -31,7 +31,6 @@
   "tours": {
     "distance_from": "≈ {{km}} km hemelsbreed vanaf de vorige halte",
     "distance_total": "Route ≈ {{km}} km hemelsbreed tussen de haltes",
-    "title": "Routes",
     "stop": "Halte {{n}} van {{total}}",
     "prev": "Terug",
     "next": "Volgende",
@@ -127,7 +126,6 @@
     "timeline": "Tijdlijn",
     "speed": "Snelheid",
     "window": "Getoonde periode",
-    "zoom_out": "Alles tonen",
     "more": "Meer: snelheid, volledig scherm, kaartafbeelding, afdrukken",
     "fullscreen": "Volledig scherm",
     "picture": "Kaartafbeelding opslaan",
@@ -209,14 +207,10 @@
     "ancient": "stad buiten de Bijbel",
     "roman_road": "Romeinse weg"
   },
-  "articles": {
-    "title": "Stadsartikelen"
-  },
   "events": {
     "founded": "{{name}} gesticht",
     "destroyed": "{{name}} verwoest",
-    "rebuilt": "{{name}} herbouwd",
-    "title": "Gebeurtenissen"
+    "rebuilt": "{{name}} herbouwd"
   },
   "map_label": "Kaart",
   "details_label": "Details",
