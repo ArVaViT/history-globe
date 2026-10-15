@@ -42,9 +42,51 @@
         }
       }
     </script>
+    <link rel="preconnect" href="https://tiles.mapterhorn.com" crossorigin />
+    <!-- Inside another site's frame there is no title bar: the first screen below stays hidden. -->
+    <script>
+      if (/[?&]embed=1(&|$)/.test(location.search) || /\/embed\/v1\/?$/.test(location.pathname))
+        document.documentElement.classList.add("hg-framed");
+    </script>
+    <!-- Without scripts the bar would cover the list below, and nothing would ever take it away. -->
+    <noscript>
+      <style>
+        #hg-shell {
+          display: none;
+        }
+        noscript p {
+          margin: 16px;
+          color: #f6efe1;
+        }
+        noscript a {
+          color: inherit;
+          text-decoration: underline;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
     <div id="root"></div>
+    <!-- The first screen: the title bar, drawn by the HTML and the stylesheet alone, while the
+         scripts, the data and the map load. It has no words but the name, the same in every
+         language; App.tsx removes it once its own bar is drawn in the same place. -->
+    <div id="hg-shell" class="pointer-events-none fixed inset-0 font-sans" aria-hidden="true">
+      <div
+        class="absolute top-4 left-4 -m-4 flex flex-col gap-3 p-4 pr-5 max-md:inset-x-3 max-md:top-3 max-md:pr-4"
+      >
+        <div
+          class="relative z-10 flex w-[360px] items-center gap-0.5 rounded-[20px] border border-line bg-paper/92 px-1.5 py-1.5 shadow-[0_12px_32px_-16px_rgba(20,14,8,0.45),0_2px_6px_-2px_rgba(20,14,8,0.12)] backdrop-blur-xl backdrop-saturate-150 max-md:w-full"
+        >
+          <span class="size-9 shrink-0"></span>
+          <div class="flex-1 pl-1 font-serif text-[19px] font-semibold tracking-tight text-ink">
+            History Globe
+          </div>
+          <span class="size-9 shrink-0"></span>
+          <span class="size-9 shrink-0"></span>
+          <span class="size-9 shrink-0"></span>
+        </div>
+      </div>
+    </div>
     <noscript>
       <p>
         History Globe — an atlas of biblical history. The map needs JavaScript, but every place and

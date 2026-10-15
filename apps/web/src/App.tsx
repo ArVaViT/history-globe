@@ -7,6 +7,7 @@ import {
   Suspense,
   useCallback,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -65,6 +66,7 @@ const QuizPanel = lazy(() =>
   import("./components/QuizPanel").then((m) => ({ default: m.QuizPanel })),
 );
 import { loadData, type LoadedData } from "./data";
+import { firstPaint } from "./first-paint";
 import { offerAgentTools } from "./webmcp";
 import {
   useHeightVar,
@@ -171,6 +173,12 @@ export function App() {
   const state = useGlobeState(engine);
   // A large frame on another site gets the whole interface; a reader's column (under
   // 900 x 600) the compact one: the chapter's chip, the card, the year folded.
+  // The first screen of index.html holds the title bar until the column is drawn in its
+  // place (in the same frame, so it never blinks), or until an error takes the screen.
+  const shellDone = EMBED || error !== null || (data !== null && engine !== undefined);
+  useLayoutEffect(() => {
+    if (shellDone) document.getElementById("hg-shell")?.remove();
+  }, [shellDone]);
   const bigFrame = useMedia("(min-width: 900px) and (min-height: 600px)");
   const compact = EMBED && !bigFrame;
   useEffect(() => {
@@ -234,9 +242,12 @@ export function App() {
   }, [engine]);
 
   useEffect(() => {
-    loadData().then(setData, (e: unknown) => {
-      setDataError(String(e));
-    });
+    // After the first screen is drawn (first-paint.ts).
+    firstPaint()
+      .then(loadData)
+      .then(setData, (e: unknown) => {
+        setDataError(String(e));
+      });
   }, []);
   // WebMCP, an experiment (webmcp.ts): read-only tools for an AI agent in the reader's
   // browser, once the data is in. Without WebMCP in the browser nothing is loaded.
