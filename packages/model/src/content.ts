@@ -283,6 +283,17 @@ export const EventsFile = z.strictObject({
         .optional(),
       /** Or a site of the ancient world (content/ancient-sites.json) the Bible does not name. */
       site: z.string().min(1).optional(),
+      /**
+       * Or the field of a battle that no gazetteer here holds as a place (Gaugamela, Issus):
+       * a point from Pleiades or Wikidata and the page it comes from. Drawn with the battles.
+       */
+      battlefield: z
+        .strictObject({
+          lon: z.number().min(-180).max(180),
+          lat: z.number().min(-90).max(90),
+          source: z.url(),
+        })
+        .optional(),
       /** The passage that tells it, when Scripture itself narrates the event. */
       ref: osis.optional(),
       sources: z.array(z.string().min(1)).min(1),
@@ -340,6 +351,12 @@ export const PlaceLifeFile = z.strictObject({
         until: approxYear.optional(),
         /** Years it lay in ruins between two lives: first and last year of the gap. */
         gap: z.strictObject({ from: approxYear, until: approxYear }).optional(),
+        /**
+         * An older town of the same name stood nearby before `from` (Ephesus by the
+         * Artemision, Old Smyrna across the bay): the point is the later city's, and the
+         * card says so instead of "not yet built".
+         */
+        older: z.literal(true).optional(),
         note: localized,
         sources: z.array(z.string().min(1)).min(1),
       })
@@ -608,6 +625,8 @@ export interface HistoryEvent {
     readonly lat: number;
     readonly rank: number;
   };
+  /** Or where a battle was fought, at no place or site (EventsFile). */
+  readonly battlefield?: { readonly lon: number; readonly lat: number };
   /** The passage that tells it: the event is told in the Bible. */
   readonly ref?: string;
   readonly sources: readonly string[];
@@ -626,6 +645,8 @@ export interface PlaceLife {
   readonly sources_ru?: readonly string[];
   /** Taken over from the city it lies in: says nothing of when the place itself began. */
   readonly inherited?: true;
+  /** An older town of the same name stood nearby before `from` (PlaceLifeFile). */
+  readonly older?: true;
 }
 
 /**

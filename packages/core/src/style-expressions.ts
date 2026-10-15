@@ -359,7 +359,9 @@ export const minZoomByRank: ExpressionSpecification = [
 export const visibleAtZoom: ExpressionSpecification = [
   "any",
   [">=", ["zoom"], minZoomByRank],
-  ["all", IN_TOUR, [">=", ["zoom"], 3]],
+  // A tour's or a chapter's places from a continent's view: Acts 27 on a phone frames
+  // Italy to Sidon below zoom 3, and its places were not drawn at all.
+  ["all", IN_TOUR, [">=", ["zoom"], 2]],
   ["all", IS_SELECTED, [">=", ["zoom"], 5]],
 ];
 
@@ -388,10 +390,17 @@ export const PICKED: ExpressionSpecification = ["any", IS_SELECTED, IN_TOUR];
  */
 export const STOPS_SHOWN: ExpressionSpecification = ["boolean", ["global-state", "stops"], false];
 
-/** A mark's opacity: none under a tour's stop disc, else faded as its place's name is. */
+/** The places the drawn stops stand at (a tour's, or a chapter's way). */
+const AT_A_STOP: ExpressionSpecification = [
+  "in",
+  ["get", "id"],
+  ["coalesce", ["global-state", "stopPlaces"], ["literal", []]],
+];
+
+/** A mark's opacity: none under a stop's disc, else faded as its place's name is. */
 export const markOpacity = (faded: number): ExpressionSpecification => [
   "case",
-  ["all", IN_TOUR, STOPS_SHOWN],
+  ["all", AT_A_STOP, STOPS_SHOWN],
   0,
   fadeBeforeNT(faded),
 ];

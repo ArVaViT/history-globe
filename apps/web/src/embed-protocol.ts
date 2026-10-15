@@ -1,6 +1,6 @@
 import { isLocale } from "@hg/model";
 import type { Camera, Engine } from "@hg/core";
-import { chapterFocus } from "./chapter";
+import { chapterFocus, withoutYear } from "./chapter";
 import type { LoadedData } from "./data";
 import type { EmbedView } from "./embed";
 
@@ -84,8 +84,7 @@ export function attachEmbed(
     }
     if (typeof v.ref === "string" && v.ref !== s.focus?.ref) {
       const focus = chapterFocus(data, v.ref);
-      if (focus)
-        engine.focusPlaces(year !== undefined ? { ref: focus.ref, places: focus.places } : focus);
+      if (focus) engine.focusPlaces(year !== undefined ? withoutYear(focus) : focus);
     }
     if (typeof v.place === "string" && v.place !== s.selectedPlace && data.byId.has(v.place))
       engine.selectPlace(v.place);

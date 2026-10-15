@@ -43,8 +43,13 @@ export function viewPadding(
               right: 0,
             }
           : !card
-            ? // No card open (a chapter, the map alone): only the column and the timeline.
-              { top, bottom, left: column, right: 0 }
+            ? // No card open (a chapter, the map alone): only the column and the timeline;
+              // on a short screen with no panel (a phone on its side), the header and the
+              // chapter's chip over the map's top-left too: Acts 16 went under them.
+              !embed && column === 0 && h < 600
+              ? // Its timeline's own height below (folded on a short screen), not a desktop's.
+                { top: 64 + (chip ? 56 : 0), bottom: timeline + 24, left: 0, right: 0 }
+              : { top, bottom, left: column, right: 0 }
             : beside >= 400 || h < 600
               ? { top, bottom, left: column, right: cardEdge }
               : { top: 360, bottom, left: column, right: 0 };
