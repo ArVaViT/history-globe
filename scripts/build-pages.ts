@@ -31,7 +31,7 @@ import { commonsPage, DOC_PAGES, docsPath } from "../packages/model/src/site.ts"
 import { LANDING, LISTS, T } from "./page-words.ts";
 import { siteCertainty } from "../packages/model/src/sites.ts";
 import { loadAllLocaleData } from "../packages/model/src/locale-data.ts";
-import { placeSlugs } from "./slugs.ts";
+import { placeSlugs } from "../packages/model/src/slugs.ts";
 import { distanceKm, roundKm } from "../apps/web/src/distance.ts";
 import { splitPlaces, textPlacesFrom, type TextPlaces } from "../apps/web/src/text-places-core.ts";
 
@@ -492,8 +492,13 @@ function placePages(l: Lang): void {
           "@context": "https://schema.org",
           "@type": "Place",
           name,
-          ...(where ? { description: where } : {}),
+          // Where it is today, as the page says it: not when that only repeats the name.
+          ...(today ? { description: today } : {}),
           geo: { "@type": "GeoCoordinates", latitude: lat, longitude: lon },
+          // This page, and the globe opened on the place (structured data is written only
+          // with SITE_URL, so both are absolute).
+          url: `${site}/${path}/`,
+          hasMap: `${site}/?place=${p.id}&locale=${l}`,
         },
       }),
     );
@@ -1047,44 +1052,51 @@ for (const l of LANGS) {
 }
 
 // llms.txt (llmstxt.org): the site in a page for language models and agents that read it on
-// someone's behalf — what it is, where the data and its licence are, how to cite it.
+// someone's behalf — what it is, where the data and its licence are, how to cite it. Every
+// list runs through the languages in their order (ADR 0015): none comes first.
 {
   const base = site || "https://historyglobe.app";
+  /** The same page in each language, by the language's own name. */
+  const inEach = (path: (l: Lang) => string) =>
+    LOCALES.map((l) => `[${LOCALE_NAMES[l]}](${base}/${path(l)})`).join(", ");
   const text = `# History Globe
 
 > A free 3D atlas of biblical history in ${String(LOCALES.length)} languages (${LOCALES.map((l) => LOCALE_NAMES[l]).join(", ")}): ${String(shown.length)} places the Bible names, each linked to its verses, the states around them year by year from 3500 BC to AD 1300, ${String(content.tours.length)} tours, ${String(Object.keys(articles).length)} place articles and ${String(questions.length)} short answers, every fact with its sources.
 
-The map is an app at ${base}/ (state lives in the address: ?year=, ?place=, ?tour=, ?locale=${LOCALES.join("|")}). Every place, tour and question also has a plain HTML page, listed below. The data is open under CC BY 4.0: credit "History Globe by Vadym Arnaut" and the sources the API index names (OpenBible.info and others). The code is all rights reserved. Articles are drafted with AI help and checked against their sources in a separate pass; they have not been reviewed by scholars, and the site says so.
+The map is an app at ${base}/ (state lives in the address: ?year=, ?place=, ?tour=, ?locale=${LOCALES.join("|")}). Every place, tour and question also has a plain HTML page in every language, listed below. The data is open under CC BY 4.0: credit "History Globe by Vadym Arnaut" and the sources the API index names (OpenBible.info and others). The code is all rights reserved. Articles are drafted with AI help and checked against their sources in a separate pass; they have not been reviewed by scholars, and the site says so.
 
 ## Start here
 
-- [About the globe (English)](${base}/en/): what it is and what it does; the same in
-  ${LOCALES.filter((l) => l !== "en")
-    .map((l) => `[${LOCALE_NAMES[l]}](${base}/${l}/)`)
-    .join(", ")}
-- [Methodology](${base}/docs/methodology.html): where the data comes from and how it is checked
-- [Sources and licences](${base}/docs/sources.html)
-- [Privacy](${base}/docs/privacy.html)
+- About the globe: what it is and what it does, in ${inEach((l) => `${l}/`)}
+- Methodology, where the data comes from and how it is checked: ${inEach((l) => docsPath(l, "methodology"))}
+- Sources and licences: ${inEach((l) => docsPath(l, "sources"))}
+- Privacy: ${inEach((l) => docsPath(l, "privacy"))}
 
 ## Data and API
 
-- [API documentation](${base}/docs/api.html): static JSON, no key, CC BY 4.0
+- API documentation, static JSON with no key, CC BY 4.0: ${inEach((l) => docsPath(l, "api"))}
 - [API index](${base}/api/v1/index.json)
-- [Places](${base}/api/v1/places.json): ids, names in English and Russian, coordinates, certainty
+- [Places](${base}/api/v1/places.json): ids, names in every language, kind, coordinates, how many verses name each, its page in every language
 - Verses to places: ${base}/api/v1/verses/{Book}.json (OSIS book ids, e.g. Acts)
-- [Tours](${base}/api/v1/tours.json), [events](${base}/api/v1/events.json), [battles](${base}/api/v1/battles.json), [questions](${base}/api/v1/questions.json)
-- [Embedding the globe](${base}/docs/embedding.html)
+- [Tours](${base}/api/v1/tours.json), [events](${base}/api/v1/events.json), [battles](${base}/api/v1/battles.json), [questions](${base}/api/v1/questions.json), [ancient writers](${base}/api/v1/ancient.json)
+- Embedding the globe in another site: ${inEach((l) => docsPath(l, "embedding"))}
+- Places in any text, one script that links the Bible places a page names: ${base}/hg-places.js
 
 ## Pages
 
-- [All places, English](${base}/en/places/), [все места](${base}/ru/places/)
-- [Tours](${base}/en/tours/), [экскурсии](${base}/ru/tours/)
-- [Questions](${base}/en/questions/), [вопросы](${base}/ru/questions/)
+- All places: ${inEach((l) => `${l}/places/`)}
+- Tours: ${inEach((l) => `${l}/tours/`)}
+- Questions: ${inEach((l) => `${l}/questions/`)}
+- A place: ${base}/{language}/place/{slug}/ (the slugs are in places.json, "page")
 - [Sitemap](${base}/sitemap.xml)
+
+## Agents in a browser
+
+- Where the browser offers WebMCP, the map at ${base}/ registers two read-only tools: search_places(query, lang?) finds places by name in any of the languages; get_place(place, lang?) gives a place's names, kind, where it is today, coordinates, verses and article, with its page and the map opened on it. They read the data the map has loaded and change nothing.
 
 ## Optional
 
-- [Author](${base}/docs/author.html); errors: historyglobe.vadym@gmail.com
+- Author: ${inEach((l) => docsPath(l, "author"))}; errors: historyglobe.vadym@gmail.com
 `;
   writeFileSync(join(pub, "llms.txt"), text);
 }

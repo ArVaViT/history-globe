@@ -36,7 +36,7 @@ import { siteCertainty } from "../packages/model/src/sites.ts";
 import { readBible, readSword } from "./bible-text.ts";
 import { inflectedForms } from "./inflected-forms.ts";
 import { plain, russianForms, russianHeads } from "./russian-forms.ts";
-import { placeSlugs } from "./slugs.ts";
+import { placeSlugs } from "../packages/model/src/slugs.ts";
 
 const root = join(import.meta.dirname, "..");
 const data = join(root, "apps/web/public/data");
