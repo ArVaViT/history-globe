@@ -21,3 +21,4 @@ export * from "./sites.ts";
 export * from "./citation.ts";
 export * from "./site.ts";
 export * from "./chapter-years.ts";
+export * from "./slugs.ts";

@@ -91,6 +91,12 @@ launch), **owner** (needs the owner's decision or account).
   assistants; the default `robots.txt` allows all crawlers. If the owner prefers to keep
   the content out of AI training, `robots.txt` can disallow GPTBot, ClaudeBot, CCBot,
   Google-Extended and similar while leaving search engines in.
+- **Agents (done 2026-10-14).** `llms.txt` lists every language's pages, docs and the API;
+  the place pages carry `Place` structured data with their address and the map. In a
+  browser with WebMCP (Chrome's origin trial), the map registers two read-only tools,
+  `search_places` and `get_place` (`apps/web/src/agent-tools.ts`), loaded only there. A
+  trial token, when the owner registers one, is given to the build as
+  `WEBMCP_ORIGIN_TRIAL`; none is in the code.
 - **No AI chat in the product** (competitor review, 2026-10-01): every newcomer has one
   and none is better for it; it would also add cost, moderation and accuracy risk.
 
@@ -111,7 +117,9 @@ launch), **owner** (needs the owner's decision or account).
    then carry canonical and hreflang links and Open Graph tags (`og.jpg`), and
    `sitemap.xml` is written; add `Sitemap: https://<domain>/sitemap.xml` to `robots.txt`
    (with the owner's AI-crawler choice applied). Submit the sitemap in Google Search
-   Console and Yandex Webmaster.
+   Console and Yandex Webmaster. IndexNow (Bing, Yandex, Seznam, Naver) needs no account:
+   the key file is in `public/`, and `.github/workflows/indexnow.yml` sends the pages whose
+   hash in `page-hashes.json` changed, daily or by hand (`gh workflow run indexnow.yml`).
 5. HTTPS, HSTS; `404.html` is in place (absolute links: the site must sit at the domain root, so the build's `BASE_URL` stays `/`).
 6. Tell the data sources (OpenBible, Cliopatria, Mapterhorn) the project is live, with
    the link and how we credit them.

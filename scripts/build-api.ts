@@ -19,7 +19,7 @@
  */
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { placeSlugs } from "./slugs.ts";
+import { placeSlugs } from "../packages/model/src/slugs.ts";
 import { LOCALES } from "../packages/model/src/time.ts";
 
 const root = join(import.meta.dirname, "..");
