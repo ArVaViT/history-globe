@@ -38,6 +38,8 @@ export interface PlaceProps {
   readonly gap_until?: number;
   /** Set when the place's own years are known (a curated record, not the city's). */
   readonly life_own?: boolean;
+  /** An older town of the same name stood nearby before life_from (place-life.yaml). */
+  readonly life_older?: boolean;
   readonly verses: number;
   readonly nt: number;
   readonly ot: number;
@@ -276,6 +278,7 @@ export async function loadData(): Promise<LoadedData> {
       ...(life?.until ? { life_until: life.until.year + 1 } : {}),
       ...(life?.gap ? { gap_from: life.gap.from.year, gap_until: life.gap.until.year + 1 } : {}),
       ...(life && !life.inherited ? { life_own: true } : {}),
+      ...(life?.older ? { life_older: true } : {}),
     };
     f.properties = props;
     const [lon = 0, lat = 0] = f.geometry.coordinates;

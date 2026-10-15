@@ -24,7 +24,8 @@
     "e2e": "node e2e/flows.mjs",
     "e2e:a11y": "node e2e/a11y.mjs",
     "sources": "node scripts/sources.ts",
-    "licenses": "node scripts/third-party-licenses.ts"
+    "licenses": "node scripts/third-party-licenses.ts",
+    "tour-images": "node scripts/tour-images.mjs"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",

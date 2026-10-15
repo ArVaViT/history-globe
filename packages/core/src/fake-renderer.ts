@@ -49,8 +49,18 @@ export class FakeRenderer implements Renderer {
     // A real flight ends with a settled camera; the fake settles at once.
     for (const h of this.handlers.cameraChanged) h(this.camera);
   }
-  setRoute(coordinates: readonly LonLat[], currentIndex: number): void {
-    this.calls.push({ op: "route", points: coordinates.length, current: currentIndex });
+  setRoute(
+    coordinates: readonly LonLat[],
+    currentIndex: number,
+    options?: { readonly placeIds?: readonly string[]; readonly still?: boolean },
+  ): void {
+    this.calls.push({
+      op: "route",
+      points: coordinates.length,
+      current: currentIndex,
+      ...(options?.placeIds ? { stops: options.placeIds.length } : {}),
+      ...(options?.still ? { still: true } : {}),
+    });
   }
   setTourPlaces(placeIds: readonly string[]): void {
     this.calls.push({ op: "tourPlaces", count: placeIds.length });

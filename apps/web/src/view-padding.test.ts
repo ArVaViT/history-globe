@@ -51,6 +51,15 @@ describe("viewPadding", () => {
       right: 452,
     });
   });
+  it("keeps a short screen's chapter clear of the header and its chip", () => {
+    // A phone on its side, no panel, a chapter: header and chip above, the timeline below.
+    const p = viewPadding(844, 390, false, 124, false, true, false);
+    expect(p.top).toBeGreaterThan(80);
+    expect(p.top + p.bottom).toBeLessThan(390 - 60);
+    // A tall screen keeps the whole top: the header sits over a corner of a large map.
+    expect(viewPadding(1440, 900, false, 124, false, true, false).top).toBe(0);
+  });
+
   it("leaves no room for a column when embedded", () => {
     expect(viewPadding(1200, 800, true).left).toBe(0);
     expect(viewPadding(1200, 800).left).toBeGreaterThan(0);

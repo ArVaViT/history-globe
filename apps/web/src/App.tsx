@@ -81,7 +81,7 @@ import {
   useTimelineMarks,
   usePrintSheet,
 } from "./app-hooks";
-import { chapterFocus, chapterLabel } from "./chapter";
+import { chapterFocus, chapterLabel, withoutYear } from "./chapter";
 import { useEmbed, useEmbedError } from "./embed";
 import { readUrl, rememberLocale, startLocale } from "./url";
 import { loadPeople, personName, type People } from "./people";
@@ -384,7 +384,7 @@ export function App() {
     if (focus) {
       // A shared view keeps its own camera and open place; a bare chapter link is framed.
       engine.focusPlaces(
-        INITIAL.year === undefined ? focus : { ref: focus.ref, places: focus.places },
+        INITIAL.year === undefined ? focus : withoutYear(focus),
         !INITIAL.camera && !INITIAL.place,
       );
     }
@@ -446,6 +446,19 @@ export function App() {
   // The Bible alone (a setting): the events it tells, no ancient world around them.
   const [bibleOnly, setBibleOnly] = useBibleOnly();
   const { events, timelineEvents } = useTimelineMarks(data, bibleOnly, state.locale, t);
+  // The events with the battles, in their years (under the Bible alone, those it tells): the
+  // overview's list and the search offer the same ones.
+  const eventsAndBattles = useMemo(
+    () =>
+      [
+        ...events,
+        ...(data?.battles ?? [])
+          .filter((b) => !bibleOnly || b.ref !== undefined)
+          // Their own ids: a battle may share one with an event (Carchemish).
+          .map((b) => ({ ...b, id: `battle:${b.id}`, battle: true })),
+      ].sort((a, b) => a.year - b.year),
+    [events, data, bibleOnly],
+  );
   useEffect(() => {
     globe?.renderer.setBibleOnly(bibleOnly);
   }, [globe, bibleOnly]);
@@ -671,6 +684,11 @@ export function App() {
                           onTour={(id) => {
                             setPlaying(false);
                             engine.startTour(id);
+                          }}
+                          events={eventsAndBattles}
+                          onEvent={(ev) => {
+                            setPlaying(false);
+                            goToEvent(engine, globe.renderer, state.layers.ancient, ev);
                           }}
                           onAncient={(site) => {
                             setPlaying(false);
@@ -910,23 +928,12 @@ export function App() {
                           ),
                           events: (
                             <EventsPanel
-                              // With the battles, in their years (under the Bible alone, those it tells).
-                              events={[
-                                ...events,
-                                ...data.battles
-                                  .filter((b) => !bibleOnly || b.ref !== undefined)
-                                  // Their own ids: a battle may share one with an event (Carchemish).
-                                  .map((b) => ({ ...b, id: `battle:${b.id}`, battle: true })),
-                              ].sort((a, b) => a.year - b.year)}
+                              events={eventsAndBattles}
                               year={state.year}
                               locale={state.locale}
                               onPick={(e) => {
                                 setPlaying(false);
-                                engine.stopTour();
-                                engine.setYear(e.year);
-                                if (e.place) engine.selectPlace(e.place, { fly: true });
-                                else if (e.site)
-                                  flyToSite(engine, globe.renderer, state.layers.ancient, e.site);
+                                goToEvent(engine, globe.renderer, state.layers.ancient, e);
                               }}
                             />
                           ),
@@ -1247,11 +1254,7 @@ export function App() {
                 }
                 onEvent={(ev) => {
                   setPlaying(false);
-                  engine.stopTour();
-                  engine.setYear(ev.year);
-                  if (ev.place) engine.selectPlace(ev.place, { fly: true });
-                  else if (ev.site)
-                    flyToSite(engine, globe.renderer, state.layers.ancient, ev.site);
+                  goToEvent(engine, globe.renderer, state.layers.ancient, ev);
                 }}
                 onYear={engine.setYear}
                 onPlay={() => {
@@ -1332,6 +1335,33 @@ function HeaderButton({
  * flight ends on an empty spot), and the zoom is one at which the site is drawn (the
  * least of them from zoom 8, style.ts).
  */
+/**
+ * An event or a battle picked (the list, the slider's marks, the search): the map goes to its
+ * year and to where it happened, its place's card open, else its site or its field.
+ */
+function goToEvent(
+  engine: Engine,
+  renderer: Renderer,
+  ancientOn: boolean,
+  ev: {
+    readonly year: number;
+    readonly place?: string;
+    readonly site?: { readonly lon: number; readonly lat: number; readonly rank?: number };
+    readonly battlefield?: { readonly lon: number; readonly lat: number };
+  },
+): void {
+  engine.stopTour();
+  engine.setYear(ev.year);
+  if (ev.place) engine.selectPlace(ev.place, { fly: true });
+  else if (ev.site) flyToSite(engine, renderer, ancientOn, ev.site);
+  else if (ev.battlefield) {
+    engine.selectPlace(null);
+    // The battles layer is on by default; its mark stands on the field in this year.
+    if (!engine.store.get().layers.battles) engine.setLayer("battles", true);
+    renderer.flyTo({ center: [ev.battlefield.lon, ev.battlefield.lat], zoom: 7 }, 1400);
+  }
+}
+
 function flyToSite(
   engine: Engine,
   renderer: Renderer,

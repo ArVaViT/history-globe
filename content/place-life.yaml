@@ -444,6 +444,7 @@ places:
   - id: a2e65fb
     en: Smyrna
     from: "c. 300 BC"
+    older: true
     note:
       en: "The Smyrna of Revelation was built anew on the slopes of Mount Pagos about 300 BC, begun by Antigonus and finished by Lysimachus; the older city had stood across the bay at Bayrakli."
       ru: "Смирна из Откровения была заново построена на склонах горы Пагос около 300 г. до н. э.: начал Антигон, закончил Лисимах; прежний город стоял на другой стороне залива, у Байраклы."
@@ -1119,6 +1120,7 @@ places:
     # settling there the people of Lebedus and Colophon; 7.3.4-5 repeats it. Lysimachus
     # took Ephesus c. 294 BC; the move is dated c. 294-289 BC, so "c. 290".
     from: "c. 290 BC"
+    older: true
     note:
       en: "The Ephesus of Acts and Revelation is the city Lysimachus built between Mount Pion and Mount Coressus about 290 BC: he walled the new site and, Strabo says, flooded the old town by the temple of Artemis by blocking its drains until its people moved; he settled there the people of Lebedus and Colophon; for a time it bore his wife's name, Arsinoeia."
       ru: "Ефес Деяний и Откровения — город, построенный Лисимахом между горами Пион и Коресс около 290 г. до н. э.: он обнёс стеной новое место и, по словам Страбона, затопил старый город у храма Артемиды, заложив его стоки, пока жители не переселились; он поселил там жителей Лебедоса и Колофона; некоторое время город носил имя его жены — Арсиноя."
@@ -1306,3 +1308,37 @@ places:
       - "R. Cohen and Y. Yisrael, 'The Iron Age Fortresses at En Haseva', Biblical Archaeologist 58.4 (1995), strata 6-1"
       - "R. Cohen and Y. Yisrael, 'Smashing the Idols: Piecing Together an Edomite Shrine in Judah', Biblical Archaeology Review 22.4 (1996), pp. 40-51"
       - "C. D. Bowman, 'Biblical Tamar (aka Ein Hazeva): Renewed Excavations 2005-2009', The Bible and Interpretation, Stratum 5"
+  # ---------- 2026-10-15: towns long abandoned by NT times (researched, then checked) ----------
+  - id: ac2cef0
+    en: Kadesh-barnea
+    # Why firm: the point stands on Tell el-Qudeirat (Ain el-Qudeirat), the site of
+    # R. Cohen's 1976-1982 excavations. Faust's review of the final report (AJA 113.2,
+    # 2009, https://www.ajaonline.org/book-review/608): the last fortress "was destroyed in
+    # the late seventh or early sixth century B.C.E., probably by the Babylonians", and
+    # "later occupations were unearthed in a few places, and these were dated mainly,
+    # though not solely, to the Persian period". Finkelstein, Tel Aviv 37 (2010), abstract
+    # (https://cris.haifa.ac.il/en/publications/kadesh-barnea-a-reevaluation-of-its-archaeology-and-history/):
+    # "the finds at the site cover the entire sequence of the Iron Age and later, up to
+    # the Persian period". No Hellenistic, Roman or Byzantine stratum is reported on the
+    # mound. The end is the last fortress's destruction, "ca. 600 BCE" in Finkelstein's
+    # abstract and "late seventh or early sixth century" in Faust's review (Cohen: 586 BC).
+    # The scattered Persian-period remains above it do not extend its life, as the small
+    # settlement left at Nineveh does not (612 BC). Every verse naming Kadesh falls long
+    # before this. Eusebius' Kadesh near Petra is a different (traditional) location and
+    # does not bear on this mound. Checked independently on 2026-10-15.
+    until: "c. 600 BC"
+    note:
+      en: "Tell el-Qudeirat, excavated by Rudolph Cohen in 1976–1982, held a series of Iron Age fortresses (whether Judah built them is debated); the last was destroyed in the late 7th or early 6th century BC, probably by the Babylonians. Above its ruins only scattered later remains were found, mostly of the Persian period."
+      ru: "На Телль-эль-Кудейрате, раскопанном Рудольфом Коэном в 1976–1982 гг., одна за другой стояли крепости железного века (построила ли их Иудея — вопрос спорный); последняя была разрушена в конце VII или начале VI в. до н. э., вероятно вавилонянами. Над её руинами нашлись лишь разрозненные более поздние остатки, в основном персидского времени."
+      uk: "На Телль-ель-Кудейраті, розкопаному Рудольфом Коеном у 1976–1982 рр., одна за одною стояли фортеці залізної доби (чи збудувала їх Юдея, сперечаються); останню зруйновано наприкінці VII або на початку VI ст. до н. е., імовірно вавилонянами. Над її руїнами знайшлися лише розпорошені пізніші рештки, здебільшого перського часу."
+      es: "En Tell el-Qudeirat, excavado por Rudolph Cohen en 1976–1982, se sucedieron fortalezas de la Edad del Hierro (se discute si las construyó Judá); la última fue destruida a fines del siglo VII o comienzos del VI a. C., probablemente por los babilonios. Sobre sus ruinas solo se hallaron restos posteriores dispersos, sobre todo del período persa."
+      pt: "Em Tell el-Qudeirat, escavado por Rudolph Cohen em 1976–1982, sucederam-se fortalezas da Idade do Ferro (discute-se se foram construídas por Judá); a última foi destruída no fim do século VII ou início do VI a.C., provavelmente pelos babilônios. Sobre as suas ruínas encontraram-se apenas vestígios posteriores esparsos, sobretudo do período persa."
+      de: "Auf dem Tell el-Qudeirat, den Rudolph Cohen 1976–1982 ausgrub, standen nacheinander eisenzeitliche Festungen (ob Juda sie baute, ist umstritten); die letzte wurde im späten 7. oder frühen 6. Jahrhundert v. Chr. zerstört, wahrscheinlich von den Babyloniern. Über ihren Ruinen fanden sich nur vereinzelte spätere Reste, meist aus persischer Zeit."
+      fr: "Sur Tell el-Qudeirat, fouillé par Rudolph Cohen en 1976–1982, se succédèrent des forteresses de l’âge du Fer (on discute si Juda les a bâties) ; la dernière fut détruite à la fin du VIIe ou au début du VIe siècle av. J.-C., probablement par les Babyloniens. Au-dessus de ses ruines, on n’a trouvé que des vestiges postérieurs épars, surtout d’époque perse."
+      pl: "Na Tell el-Kudejrat, odkopanym przez Rudolpha Cohena w latach 1976–1982, stały kolejno twierdze z epoki żelaza (czy zbudowało je Królestwo Judy, jest kwestią sporną); ostatnia została zniszczona pod koniec VII lub na początku VI wieku p.n.e., prawdopodobnie przez Babilończyków. Nad jej ruinami znaleziono tylko rozproszone późniejsze pozostałości, głównie z okresu perskiego."
+      it: "Su Tell el-Qudeirat, scavato da Rudolph Cohen nel 1976–1982, si succedettero fortezze dell’età del Ferro (è discusso se le abbia costruite Giuda); l’ultima fu distrutta alla fine del VII o all’inizio del VI secolo a.C., probabilmente dai Babilonesi. Sopra le sue rovine si sono trovati solo resti posteriori sparsi, per lo più di età persiana."
+      nl: "Op Tell el-Qudeirat, in 1976–1982 opgegraven door Rudolph Cohen, stonden achtereenvolgens vestingen uit de IJzertijd (of Juda ze bouwde, is omstreden); de laatste werd eind 7e of begin 6e eeuw v.Chr. verwoest, waarschijnlijk door de Babyloniërs. Boven de ruïnes werden alleen verspreide latere resten gevonden, vooral uit de Perzische tijd."
+      cs: "Na Tell el-Kudejrátu, který v letech 1976–1982 zkoumal Rudolph Cohen, stály postupně pevnosti z doby železné (zda je postavilo Judské království, je sporné); poslední byla zničena koncem 7. nebo počátkem 6. století př. n. l., pravděpodobně Babylóňany. Nad jejími troskami se našly jen roztroušené pozdější pozůstatky, většinou z perského období."
+    sources:
+      - "R. Cohen and H. Bernick-Greenberg, Excavations at Kadesh Barnea (Tell el-Qudeirat) 1976-1982 (Israel Antiquities Authority), reviewed by A. Faust, American Journal of Archaeology 113.2 (2009)"
+      - "I. Finkelstein, 'Kadesh Barnea: A Reevaluation of Its Archaeology and History', Tel Aviv 37 (2010), pp. 111-125"

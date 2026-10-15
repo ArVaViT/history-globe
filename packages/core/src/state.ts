@@ -1,5 +1,5 @@
 import type { Locale } from "@hg/model";
-import type { Camera } from "./renderer.ts";
+import type { Camera, LonLat } from "./renderer.ts";
 
 export interface LayerVisibility {
   readonly borders: boolean;
@@ -31,7 +31,14 @@ export interface GlobeState {
    * steps back as during a tour. A tour, once started, takes over. `ref` names the chapter
    * (OSIS, `Acts.16`): the link keeps it and the interface shows it in its language.
    */
-  readonly focus: { readonly ref: string; readonly places: readonly string[] } | null;
+  readonly focus: {
+    readonly ref: string;
+    readonly places: readonly string[];
+    /** The way the chapter's stops were travelled (a tour's legs that read it), if any. */
+    readonly route?: readonly LonLat[];
+    /** The places of the way's stops. */
+    readonly routePlaces?: readonly string[];
+  } | null;
   /**
    * The settled view, as the renderer reports it after each move. It flows one way,
    * renderer → store: the camera is moved by commands (selectPlace, lookAt, tours).

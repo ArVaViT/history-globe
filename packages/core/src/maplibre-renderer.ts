@@ -11,7 +11,12 @@ import { drawIcon } from "./icons.ts";
 import { thinMajors } from "./majors.ts";
 import { WheelClassifier } from "./wheel.ts";
 
-const READY_FALLBACK_MS = 8000;
+/**
+ * The loading pill goes at the latest this long after the map is made. The sea, the states
+ * and the relief are drawn by about 4 s on a desktop; the pill waited for the places' tiles,
+ * which queue behind the relief's in the worker, and stayed up until 8 s over a finished map.
+ */
+const READY_FALLBACK_MS = 4500;
 
 /** The Via Appia, 312 BC: Roman roads are drawn from then on (style.ts). */
 const ROADS_FROM = -311;
@@ -355,7 +360,24 @@ export class MapLibreRenderer implements Renderer {
             | undefined)
         : undefined;
     this.map.on("click", (e: MapMouseEvent) => {
-      const id = battleAt(e)?.place ?? (placeAt(e)?.properties as { id?: string } | undefined)?.id;
+      const battle = battleAt(e);
+      // A battle fought at no place (Gaugamela, events.yaml): no card to open, so a click or
+      // a tap names it, as hovering does (a phone has no hover).
+      if (battle && !battle.place && battle.en) {
+        this.battleShown = true;
+        for (const h of this.handlers.hoverBattle)
+          h(
+            {
+              en: battle.en,
+              ru: battle.ru ?? battle.en,
+              year: battle.year ?? 0,
+              approx: battle.approx === true,
+            },
+            { x: e.point.x, y: e.point.y },
+          );
+        return;
+      }
+      const id = battle?.place ?? (placeAt(e)?.properties as { id?: string } | undefined)?.id;
       if (id) {
         this.hideAncient();
         // A tap on a phone also "hovers": its tip would stay over the card it opens.
@@ -1302,7 +1324,12 @@ export class MapLibreRenderer implements Renderer {
    * A tour's route: the way walked so far (to the current stop) drawn solid, the rest of
    * it faint, every stop with its number; the lights run along the last leg walked.
    */
-  setRoute(coordinates: readonly LonLat[], currentIndex: number): void {
+  setRoute(
+    coordinates: readonly LonLat[],
+    currentIndex: number,
+    options?: { readonly placeIds?: readonly string[]; readonly still?: boolean },
+  ): void {
+    const still = options?.still === true;
     this.whenLoaded(() => {
       const features: Feature[] = [];
       const line = (part: readonly LonLat[], ahead: boolean) => {
@@ -1336,7 +1363,7 @@ export class MapLibreRenderer implements Renderer {
         features.push({
           type: "Feature",
           properties: {
-            current: shown === currentIndex,
+            current: !still && shown === currentIndex,
             ahead: shown > currentIndex,
             n: shown + 1,
             ...(others.length > 0 ? { also: others.join(" · ") } : {}),
@@ -1349,8 +1376,11 @@ export class MapLibreRenderer implements Renderer {
         features,
       });
       this.stops.route = coordinates.length > 0;
+      // Only the stops' own marks hide under their discs: a chapter's place named but not
+      // walked (Thyatira in Acts 16) keeps its mark.
+      this.map.setGlobalStateProperty("stopPlaces", [...(options?.placeIds ?? [])]);
       this.showStops();
-      this.runPulses(walked);
+      this.runPulses(still ? [] : walked);
     });
   }
 

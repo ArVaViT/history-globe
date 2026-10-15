@@ -368,6 +368,17 @@ figure.photo img {
 figcaption {
   margin-top: 8px;
 }
+/* A tour's way, drawn once for every language (tour-images.mjs): the map's own picture. */
+figure.route-map {
+  margin: 8px 0 24px;
+}
+figure.route-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 24px 48px -32px rgb(30 20 8 / 0.6);
+}
 .callout {
   margin: 24px 0;
   padding: 14px 18px;

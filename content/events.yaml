@@ -382,6 +382,8 @@ events:
       it: "Battaglia di Qarqar: Acab fra i re che si oppongono all’Assiria"
       nl: "Slag bij Qarqar: Achab onder de koningen tegen Assyrië"
       cs: "Bitva u Karkaru: Achab mezi králi proti Asýrii"
+    # The field: Tell Qarqur on the west bank of the Orontes, Ghab plain, northwestern Syria (approximate).
+    battlefield: { lon: 36.331, lat: 35.742, source: "https://pleiades.stoa.org/places/995604669" }
     sources:
       - "Kurkh Monolith of Shalmaneser III (RIMA 3 A.0.102.2 ii 78-102: the campaign in the eponymy of Dayyan-Ashur, 853 BC; 'Ahab the Israelite' among the twelve kings at Qarqar, ii 91-92)"
   - id: jehu-tribute
@@ -2419,6 +2421,8 @@ events:
       it: "Gli Arabi sconfiggono l’esercito bizantino sul fiume Yarmuk"
       nl: "De Arabieren verslaan het Byzantijnse leger aan de Yarmuk"
       cs: "Arabové porážejí byzantské vojsko na Jarmúku"
+    # The field: Plateau north of the Yarmuk river by the Wadi al-Ruqqad, southeast of the Sea of Galilee (approximate).
+    battlefield: { lon: 35.955, lat: 32.814, source: "https://www.wikidata.org/wiki/Q194226" }
     sources:
       - "Theophanes, Chronicle, AM 6126"
       - "al-Baladhuri, The Conquest of the Lands (Futuh al-buldan), on the Yarmuk"
@@ -2852,6 +2856,8 @@ events:
       it: "Il sultano selgiuchide Alp Arslan sconfigge e cattura Romano IV a Manzicerta"
       nl: "De Seltsjoekse sultan Alp Arslan verslaat Romanos IV bij Manzikert en neemt hem gevangen"
       cs: "Seldžucký sultán Alp Arslan poráží a zajímá Romana IV. u Manzikertu"
+    # The field: Malazgirt plain near Manzikert (Malazgirt), Muş Province, eastern Turkey (approximate).
+    battlefield: { lon: 42.59, lat: 39.1, source: "https://www.wikidata.org/wiki/Q200032" }
     sources:
       - "Michael Attaleiates, History (the campaign of 1071)"
       - "Michael Psellos, Chronographia 7"
@@ -3076,6 +3082,8 @@ events:
       it: "Saladino sconfigge l’esercito del Regno di Gerusalemme a Hattin"
       nl: "Saladin verslaat het leger van het Koninkrijk Jeruzalem bij Hattin"
       cs: "Saladin poráží vojsko Jeruzalémského království u Hattínu"
+    # The field: Horns of Hattin, twin-peaked hill west of Tiberias, Lower Galilee (firm).
+    battlefield: { lon: 35.46, lat: 32.798, source: "https://www.wikidata.org/wiki/Q233568" }
     sources:
       - "Ibn al-Athir, The Complete History, year 583 AH"
       - "De expugnatione Terrae Sanctae per Saladinum libellus"
@@ -4301,6 +4309,8 @@ events:
       it: "Sargon II sconfigge Hanunu di Gaza e gli Egiziani a Rafia"
       nl: "Sargon II verslaat Hanunu van Gaza en de Egyptenaren bij Rafia"
       cs: "Sargon II. poráží Hanuna z Gazy a Egypťany u Rafie"
+    # The field: Raphia (Tell Rafah), on the coast road at the southern edge of the Gaza Strip (approximate).
+    battlefield: { lon: 34.243, lat: 31.291, source: "https://pleiades.stoa.org/places/688015" }
     sources:
       - "Khorsabad Annals of Sargon II, second regnal year (RINAP 2, Sargon II 1, lines 53-57)"
       - "Great Display Inscription of Sargon II (RINAP 2, Sargon II 7, lines 25b-26)"
@@ -4739,6 +4749,8 @@ events:
       it: "Gli Ateniesi sconfiggono i Persiani a Maratona"
       nl: "De Atheners verslaan de Perzen bij Marathon"
       cs: "Athéňané porážejí Peršany u Marathónu"
+    # The field: Plain of Marathon, northeastern Attica, by the Athenian burial mound (Soros) (firm).
+    battlefield: { lon: 23.978, lat: 38.118, source: "https://www.wikidata.org/wiki/Q31900" }
     sources:
       - "Herodotus 6.102-117"
       - "Livius.org, 'Marathon (490 BCE)'"
@@ -4756,6 +4768,8 @@ events:
       it: "Leonida, i suoi Spartani e i Tespiesi cadono alle Termopili"
       nl: "Leonidas, zijn Spartanen en de Thespiërs sneuvelen bij Thermopylae"
       cs: "Leonidás, jeho Sparťané a Thespijští padají u Thermopyl"
+    # The field: Pass of Thermopylae between Mount Kallidromo and the Malian Gulf, central Greece (firm).
+    battlefield: { lon: 22.544, lat: 38.796, source: "https://pleiades.stoa.org/places/541140" }
     sources:
       - "Herodotus 7.201-233"
       - "Livius.org, 'Thermopylae (480 BCE)' (Leonidas, 300 Spartiates and 700 Thespians fell)"
@@ -4792,6 +4806,8 @@ events:
       it: "La flotta greca sconfigge Serse a Salamina"
       nl: "De Griekse vloot verslaat Xerxes bij Salamis"
       cs: "Řecká flotila poráží Xerxa u Salamíny"
+    # The field: Strait between Salamis island and the Attic mainland, west of Piraeus (firm).
+    battlefield: { lon: 23.567, lat: 37.951, source: "https://www.wikidata.org/wiki/Q178850" }
     sources:
       - "Herodotus 8.83-96"
       - "Aeschylus, The Persians"
@@ -4885,6 +4901,8 @@ events:
       it: "Filippo II di Macedonia sconfigge Atene e Tebe a Cheronea"
       nl: "Filips II van Macedonië verslaat Athene en Thebe bij Chaeronea"
       cs: "Filip II. Makedonský poráží Atény a Théby u Chairóneie"
+    # The field: Chaeronea in western Boeotia, on the road from Thermopylae to Thebes (firm).
+    battlefield: { lon: 22.841, lat: 38.494, source: "https://pleiades.stoa.org/places/540701" }
     sources:
       - "Diodorus 16.84-88 (the battle 16.85-86)"
       - "Livius.org, 'Chaeronea (338 BCE)' (August 338)"
@@ -4921,6 +4939,8 @@ events:
       it: "Alessandro sconfigge i Persiani sul fiume Granico"
       nl: "Alexander verslaat de Perzen aan de rivier de Granicus"
       cs: "Alexandr poráží Peršany u řeky Granikos"
+    # The field: Lower Granicus (Biga Çayı) near Biga, northwestern Turkey (approximate).
+    battlefield: { lon: 27.242, lat: 40.228, source: "https://www.wikidata.org/wiki/Q192938" }
     sources:
       - "Arrian, Anabasis 1.13-16"
       - "Livius.org, 'Granicus (334 BCE)'"
@@ -4938,6 +4958,8 @@ events:
       it: "Alessandro sconfigge Dario III a Isso"
       nl: "Alexander verslaat Darius III bij Issus"
       cs: "Alexandr poráží Dareia III. u Issu"
+    # The field: Lower Payas river (ancient Pinarus), about 15 km south of Issus, Gulf of Iskenderun (approximate).
+    battlefield: { lon: 36.192, lat: 36.754, source: "https://www.wikidata.org/wiki/Q6977866" }
     sources:
       - "Arrian, Anabasis 2.6-11"
       - "Livius.org, 'Issus (333 BCE)' (5 or 6 November 333)"
@@ -4955,6 +4977,8 @@ events:
       it: "Alessandro sconfigge Dario III a Gaugamela"
       nl: "Alexander verslaat Darius III bij Gaugamela"
       cs: "Alexandr poráží Dareia III. u Gaugamél"
+    # The field: the village of Gaugamela (Pleiades); the field itself is disputed between Tell Gomel and Karamleis, about 30 km apart in the same plain (approximate).
+    battlefield: { lon: 43.494, lat: 36.573, source: "https://pleiades.stoa.org/places/874478" }
     sources:
       - "Arrian, Anabasis 3.8-15"
       - "Babylonian Astronomical Diary AD -330 (the lunar eclipse eleven days before the battle; the battle itself)"
@@ -5047,6 +5071,8 @@ events:
       it: "I re alleati sconfiggono Antigono a Ipso; l’impero di Alessandro si frantuma definitivamente"
       nl: "De verbonden koningen verslaan Antigonus bij Ipsus; het rijk van Alexander valt voorgoed uiteen"
       cs: "Spojenečtí králové porážejí Antigona u Ipsu; Alexandrova říše se definitivně rozpadá"
+    # The field: Ipsus in Phrygia, northeast of modern Afyonkarahisar (approximate).
+    battlefield: { lon: 30.549, lat: 38.856, source: "https://pleiades.stoa.org/places/609415" }
     sources:
       - "Plutarch, Demetrius 28-30"
       - "Livius.org, 'The battle of Ipsus' (301; Antigonus and Demetrius defeated by Lysimachus, Cassander and Seleucus)"
@@ -5084,6 +5110,8 @@ events:
       it: "Tolomeo IV sconfigge Antioco III a Rafia"
       nl: "Ptolemaeus IV verslaat Antiochus III bij Rafia"
       cs: "Ptolemaios IV. poráží Antiocha III. u Rafie"
+    # The field: Raphia (Tell Rafah), on the coast road at the southern edge of the Gaza Strip (approximate).
+    battlefield: { lon: 34.243, lat: 31.291, source: "https://pleiades.stoa.org/places/688015" }
     sources:
       - "Polybius 5.79-86"
       - "Livius.org, 'Antiochus III the Great' (217, June: the Seleucid army defeated at Raphia)"
@@ -5122,6 +5150,8 @@ events:
       it: "I Romani sconfiggono Antioco III a Magnesia"
       nl: "De Romeinen verslaan Antiochus III bij Magnesia"
       cs: "Římané porážejí Antiocha III. u Magnésie"
+    # The field: Magnesia ad Sipylum (Manisa), Hermus valley, western Turkey (approximate).
+    battlefield: { lon: 27.433, lat: 38.613, source: "https://pleiades.stoa.org/places/550706" }
     sources:
       - "Livy 37.37-44"
       - "Appian, Syrian Wars 30-36"
@@ -5140,6 +5170,8 @@ events:
       it: "I Romani sconfiggono Perseo di Macedonia a Pidna"
       nl: "De Romeinen verslaan Perseus van Macedonië bij Pydna"
       cs: "Římané porážejí Persea Makedonského u Pydny"
+    # The field: Plain south of Pydna near Katerini, Pieria, northern Greece (approximate).
+    battlefield: { lon: 22.474, lat: 40.251, source: "https://www.wikidata.org/wiki/Q504739" }
     sources:
       - "Livy 44.36-42"
       - "1 Macc 8:5 (Perseus, king of the Kittim)"
@@ -5517,6 +5549,8 @@ events:
       it: "Ottaviano sconfigge Antonio e Cleopatra ad Azio"
       nl: "Octavianus verslaat Antonius en Cleopatra bij Actium"
       cs: "Octavianus poráží Antonia a Kleopatru u Actia"
+    # The field: Ionian Sea off the mouth of the Ambracian Gulf at Actium, near Preveza (firm).
+    battlefield: { lon: 20.725, lat: 38.925, source: "https://www.wikidata.org/wiki/Q160387" }
     sources:
       - "Cassius Dio 50.31-35"
       - "Plutarch, Antony 61-68"
@@ -5912,6 +5946,8 @@ events:
       it: "Costantino sconfigge Licinio e diventa unico sovrano dell’impero"
       nl: "Constantijn verslaat Licinius en wordt alleenheerser van het rijk"
       cs: "Konstantin poráží Licinia a stává se jediným vládcem říše"
+    # The field: Chrysopolis (Üsküdar) on the Asian shore of the Bosporus, opposite Byzantium (approximate).
+    battlefield: { lon: 29.013, lat: 41.021, source: "https://pleiades.stoa.org/places/520995" }
     sources:
       - "Eusebius, Life of Constantine 2.16-18"
       - "Livius.org, 'Licinius' (abdicated 19 September 324)"
@@ -5967,6 +6003,8 @@ events:
       it: "I Goti sconfiggono i Romani ad Adrianopoli; l’imperatore Valente è ucciso"
       nl: "De Goten verslaan de Romeinen bij Adrianopel; keizer Valens komt om"
       cs: "Gótové porážejí Římany u Hadrianopole; císař Valens je zabit"
+    # The field: Büyükdöllük, 13 km north of Adrianople (Livius: 'The two armies met thirteen kilometers north of the city') (approximate).
+    battlefield: { lon: 26.602, lat: 41.758, source: "https://www.wikidata.org/wiki/Q6823011" }
     sources:
       - "Ammianus Marcellinus 31.12-13"
       - "Livius.org, 'Valens' (378: killed in battle)"
