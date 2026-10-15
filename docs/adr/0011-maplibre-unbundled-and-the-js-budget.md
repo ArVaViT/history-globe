@@ -102,3 +102,24 @@ language, and it had room for about three more. With the product owner's agreeme
 heaviest (`scripts/check-budget.ts` tells a language's chunks by their source maps). The app
 also stopped fetching every dictionary for the lessons' default titles: a reader now fetches
 the one language shown. All JS stands at 478.1 kB, and a language added does not grow it.
+
+## Update, 15.10.2026: the first screen comes before the first frame
+
+On a phone the largest paint of `/` was the title in the left column, and the column was
+drawn only once the data were in and the map made: Lighthouse 13.5 (mobile, simulated
+4G) put it at 27 s on a local build and 9.4 s on the site. Three changes, none of them
+in the budget's count:
+
+- `index.html` draws the title bar itself (`#hg-shell`): the stylesheet and the name, no
+  other words, so it is the same in every language (ADR 0015). App.tsx removes it once its
+  own bar is drawn in the same place; in another site's frame it is hidden from the start.
+  The title's font, Literata's Latin file, is preloaded (`vite.config.ts`, `titleFont`).
+- The data and MapLibre are fetched once that first screen is painted
+  (`apps/web/src/first-paint.ts`, at most two seconds later). MapLibre's start-up holds
+  the main thread and the GPU for a second or more, and started first it kept the screen
+  blank; on a slow network the first paint comes before the scripts anyway.
+- The relief's tile host is preconnected.
+
+The same measurement after: largest paint 2.6 s, performance 33 → 56 (the rest is the
+map's own work, total blocking time, which a software-rendered WebGL in the test browser
+overstates). The JS before the first frame is 428.6 kB.

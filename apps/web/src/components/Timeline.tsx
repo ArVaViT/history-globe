@@ -308,13 +308,15 @@ export function Timeline({
         </div>
       )}
       {onCollapse && (
-        // A small tab on the panel's top edge, in the middle: out of the controls' way.
+        // A small tab on the panel's top edge, in the middle: out of the controls' way. Its
+        // target reaches 8px above the edge, onto the map, for the 24px of WCAG 2.5.8; the
+        // chevron stays where it was.
         <button
           onClick={onCollapse}
           aria-expanded
           aria-label={t("time.collapse")}
           title={t("time.collapse")}
-          className="group absolute top-0 left-1/2 z-10 grid h-4 w-12 -translate-x-1/2 place-items-center rounded-b-lg text-ink-soft/50 transition hover:text-ink focus-visible:text-ink"
+          className="group absolute -top-2 left-1/2 z-10 grid h-6 w-12 -translate-x-1/2 place-items-center rounded-b-lg pt-2 text-ink-soft/50 transition hover:text-ink focus-visible:text-ink"
         >
           <ChevronDown
             className="size-3.5 transition-transform duration-150 group-hover:scale-[1.35]"
