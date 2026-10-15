@@ -44,6 +44,110 @@ function sameWords(a: string, b: string): boolean {
   );
 }
 
+/** A dated event or a battle (events.yaml, battles.yaml), as the search offers it. */
+export interface SearchEvent {
+  readonly id: string;
+  readonly year: number;
+  readonly approximate: boolean;
+  readonly title: Readonly<Record<string, string>>;
+  readonly place?: string;
+  readonly site?: { readonly lon: number; readonly lat: number; readonly rank?: number };
+  readonly battlefield?: { readonly lon: number; readonly lat: number };
+}
+
+/**
+ * The events whose title, in the reader's language or in English, holds every word typed
+ * (three letters at least in all): each word starts a word of the title, a long one also
+ * in another case («Гавгамелы» finds «при Гавгамелах», «Фермопилы» «при Фермопилах»).
+ * The first three, in order of year.
+ */
+/**
+ * Words a search for a battle carries that its title need not ("battle of Marathon",
+ * «битва при Гавгамелах»): left out of the match, in the site's languages.
+ */
+const BY_THE_WAY = new Set(
+  [
+    "the",
+    "of",
+    "at",
+    "in",
+    "battle",
+    "siege",
+    "битва",
+    "сражение",
+    "осада",
+    "при",
+    "под",
+    "у",
+    "битва",
+    "облога",
+    "під",
+    "біля",
+    "batalla",
+    "de",
+    "del",
+    "sitio",
+    "batalha",
+    "cerco",
+    "da",
+    "do",
+    "schlacht",
+    "bei",
+    "von",
+    "der",
+    "die",
+    "belagerung",
+    "bataille",
+    "du",
+    "la",
+    "siège",
+    "battaglia",
+    "di",
+    "assedio",
+    "slag",
+    "bij",
+    "van",
+    "het",
+    "beleg",
+    "bitwa",
+    "pod",
+    "oblężenie",
+    "bitva",
+    "u",
+    "obléhání",
+  ].map(foldName),
+);
+
+export function eventsMatching(
+  events: readonly SearchEvent[],
+  query: string,
+  language: string,
+): SearchEvent[] {
+  const words = query
+    .split(/\s+/)
+    .map(foldName)
+    .filter((w) => w && !BY_THE_WAY.has(w));
+  if (words.join("").length < 3) return [];
+  // A word of five letters or more loses its ending: one letter, two from seven on.
+  const stems = words.map((w) =>
+    w.length >= 7 ? w.slice(0, -2) : w.length >= 5 ? w.slice(0, -1) : w,
+  );
+  const split = (title: string) =>
+    title
+      .split(/[\s\-\u2010-\u2015,.:;«»"“”()]+/)
+      .map(foldName)
+      .filter(Boolean);
+  return events
+    .filter((ev) =>
+      [ev.title[language], ev.title.en].some((title) => {
+        if (title === undefined) return false;
+        const own = split(title);
+        return stems.every((s) => own.some((w) => w.startsWith(s)));
+      }),
+    )
+    .slice(0, 3);
+}
+
 /** A site of the ancient world layer, as the search offers it. */
 export interface AncientSearchSite {
   readonly id: string;
@@ -110,6 +214,8 @@ export function SearchBox({
   onPerson,
   onAncient,
   onTour,
+  events = [],
+  onEvent,
   onClose,
 }: {
   data: LoadedData;
@@ -129,6 +235,10 @@ export function SearchBox({
   onAncient: (site: AncientSearchSite) => void;
   /** A tour found by its title ("путешествие Павла"): it starts. */
   onTour: (id: string) => void;
+  /** The events and battles the search may offer ("Гавгамелы"), in order of year. */
+  events?: readonly SearchEvent[];
+  /** An event found by a word of its title: the map goes to its year and where it happened. */
+  onEvent?: (event: SearchEvent) => void;
   /** `focusBack`: Esc or a choice hands the focus back to the magnifier; a click away does not. */
   onClose: (focusBack: boolean) => void;
 }) {
@@ -216,6 +326,12 @@ export function SearchBox({
       )
       .slice(0, 3);
   }, [data, year, query, persons]);
+  // Events and battles by a word of their title: "Гавгамелы" for «Александр разбивает
+  // Дария III при Гавгамелах». After everything else: a place or a person is meant first.
+  const eventsFound = useMemo(
+    () => (year !== null || chapter ? [] : eventsMatching(events, query, i18n.language)),
+    [events, year, chapter, query, i18n.language],
+  );
   // A place found only by a loose match (a case form, a stem) gives way when anything
   // starts with what was typed: "Хатт" offers Hatti and Hattusa, not Dinhabah.
   const results = useMemo(() => {
@@ -235,10 +351,13 @@ export function SearchBox({
   }, [found, persons, sites, query, i18n.language]);
   // The chapter or the year, when there is one, is the first option; places, people, sites.
   const offset = chapter || year !== null ? 1 : 0;
-  const total = offset + results.length + persons.length + sites.length + tours.length;
+  const total =
+    offset + results.length + persons.length + sites.length + tours.length + eventsFound.length;
   const personAt = (i: number) => persons[i - offset - results.length];
   const siteAt = (i: number) => sites[i - offset - results.length - persons.length];
   const tourAt = (i: number) => tours[i - offset - results.length - persons.length - sites.length];
+  const eventAt = (i: number) =>
+    eventsFound[i - offset - results.length - persons.length - sites.length - tours.length];
   const activeId =
     chapter && active === 0
       ? "search-chapter"
@@ -252,7 +371,9 @@ export function SearchBox({
               ? `search-site-${siteAt(active)?.id ?? ""}`
               : tourAt(active)
                 ? `search-tour-${tourAt(active)?.id ?? ""}`
-                : undefined;
+                : eventAt(active)
+                  ? `search-event-${eventAt(active)?.id ?? ""}`
+                  : undefined;
   const open = query.trim().length >= 2;
   const nameOf = (p: PlaceProps) => placeName(p, i18n.language);
 
@@ -268,6 +389,11 @@ export function SearchBox({
   };
   const chooseTour = (id: string) => {
     onTour(id);
+    setQuery("");
+    onClose(true);
+  };
+  const chooseEvent = (ev: SearchEvent) => {
+    onEvent?.(ev);
     setQuery("");
     onClose(true);
   };
@@ -323,6 +449,9 @@ export function SearchBox({
               if (site) chooseSite(site);
             } else if (e.key === "Enter" && tourAt(active)) {
               chooseTour(tourAt(active)?.id ?? "");
+            } else if (e.key === "Enter" && eventAt(active)) {
+              const ev = eventAt(active);
+              if (ev) chooseEvent(ev);
             } else if (e.key === "Escape") {
               setQuery("");
               onClose(true);
@@ -396,6 +525,7 @@ export function SearchBox({
               persons.length === 0 &&
               sites.length === 0 &&
               tours.length === 0 &&
+              eventsFound.length === 0 &&
               !chapter &&
               year === null && (
                 <li className="px-4 py-2 text-sm text-ink-soft">{t("search.empty")}</li>
@@ -537,6 +667,33 @@ export function SearchBox({
                     {tour.title[locale] ?? tour.title.en}
                   </span>
                   <span className="shrink-0 text-xs text-ink-soft">{t("search.tour")}</span>
+                </li>
+              );
+            })}
+            {eventsFound.map((ev, j) => {
+              const i = offset + results.length + persons.length + sites.length + tours.length + j;
+              const above = results.length + persons.length + sites.length + tours.length;
+              return (
+                <li
+                  key={ev.id}
+                  id={`search-event-${ev.id}`}
+                  role="option"
+                  aria-selected={i === active}
+                  onMouseEnter={() => {
+                    setActive(i);
+                  }}
+                  onMouseDown={(e) => {
+                    e.preventDefault();
+                    chooseEvent(ev);
+                  }}
+                  className={`flex cursor-pointer items-baseline justify-between gap-3 px-4 py-1.5 ${j === 0 && above > 0 ? "border-t border-line" : ""} ${i === active ? "bg-paper-2" : ""}`}
+                >
+                  <span className="min-w-0 font-serif text-[15px] text-ink">
+                    {ev.title[locale] ?? ev.title.en}
+                  </span>
+                  <span className="shrink-0 text-xs text-ink-soft tabular-nums">
+                    {(ev.approximate ? `${t("place.circa")} ` : "") + formatYear(ev.year, locale)}
+                  </span>
                 </li>
               );
             })}

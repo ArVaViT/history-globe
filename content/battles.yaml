@@ -2460,15 +2460,14 @@ battles:
       - "Cassius Dio, Roman History 66.4-7"
 
 # Left out (no fitting place on the map, or doubtful):
-#   - Qarqar, 853 BC (Kurkh Monolith; Ahab among the twelve kings): no Qarqar on the map;
-#     Hamath (ac62cbc) is some 40 km off. A place at Tell Qarqur (c. 36.33 E, 35.74 N)
-#     would carry it; events.yaml already has the event without a place.
-#   - Issus, 333 BC: no place on the map.
+#   - Qarqar, 853 BC, and Issus, 333 BC: no place on the map; both are drawn from
+#     events.yaml at their `battlefield` (Tell Qarqur; the Payas, the ancient Pinarus).
 #   - Judas at Emmaus, 165 BC (1 Macc 3:40-4:25): fought at Emmaus-Nicopolis ('Amwas), in
 #     the plain; the map's Emmaus is Luke's, in the hills near Jerusalem.
 #   - Masada, c. AD 73-74: events.yaml says "Masada is not on the map" (it carries a site id).
-#   - Gaugamela, 331 BC; Raphia, 217 BC; Beth-zechariah, 162 BC; Elasa, 160 BC; Jotapata
-#     and Gamala, AD 67: no place.
+#   - Beth-zechariah, 162 BC; Elasa, 160 BC; Jotapata and Gamala, AD 67: no place. (Gaugamela,
+#     Raphia 217 BC and the other battles outside the Bible are drawn from events.yaml,
+#     each at its `battlefield`.)
 #   - The Benjamite war at Gibeah (Judg 20): Gibeah (ac24f5f) exists, but the story carries
 #     no tour date and Phinehas son of Eleazar (20:28) puts it a generation after Joshua,
 #     not at the Judges tour's 1150 BC; left for a dating decision.

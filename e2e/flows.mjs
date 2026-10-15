@@ -299,6 +299,18 @@ await step("an ancient site found by name flies the map there in a year it stood
   expect(Math.abs(cam[0] - 34.6) < 0.5 && Math.abs(cam[1] - 40.0) < 0.5, `camera=${cam}`);
 });
 
+await step("a battle found by a word of its title goes to its year and its field", async () => {
+  await page.goto(BASE + "?locale=ru&year=30");
+  await mapReady(page);
+  await page.getByRole("button", { name: /^Поиск/ }).click();
+  await page.locator("input[role=combobox]").fill("Гавгамел");
+  await page.locator('[id^="search-event-"]').first().dispatchEvent("mousedown", { timeout: 8000 });
+  await page.waitForTimeout(2500);
+  expect(search().get("year") === "-330", `year=${search().get("year")}`);
+  const cam = (search().get("camera") ?? "").split(",").map(Number);
+  expect(Math.abs(cam[0] - 43.5) < 0.5 && Math.abs(cam[1] - 36.6) < 0.5, `camera=${cam}`);
+});
+
 await step("a person without places on the map (Noah) is found and opens their card", async () => {
   await page.goto(BASE + "?locale=ru&year=30");
   await mapReady(page);

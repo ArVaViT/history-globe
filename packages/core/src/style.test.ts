@@ -660,8 +660,11 @@ describe("marks and names never pile up (8.10.2026)", () => {
         { selected: false },
       ) as number;
     };
-    expect(opacity({ tourPlaces: ["a0"], stops: true })).toBe(0);
+    expect(opacity({ tourPlaces: ["a0"], stopPlaces: ["a0"], stops: true })).toBe(0);
     // A chapter or a person in focus has no discs: the picked places keep their marks.
     expect(opacity({ tourPlaces: ["a0"], stops: false })).toBe(1);
+    // A chapter's way: a place it names but does not walk (Thyatira in Acts 16) has no
+    // disc over it, and keeps its mark.
+    expect(opacity({ tourPlaces: ["a0", "b1"], stopPlaces: ["b1"], stops: true })).toBe(1);
   });
 });

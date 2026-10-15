@@ -1027,7 +1027,7 @@ exports[`style > is built as before 1`] = `
               [
                 "zoom",
               ],
-              3,
+              2,
             ],
           ],
           [
@@ -1141,7 +1141,7 @@ exports[`style > is built as before 1`] = `
                   [
                     "zoom",
                   ],
-                  3,
+                  2,
                 ],
               ],
               [
@@ -1607,7 +1607,7 @@ exports[`style > is built as before 1`] = `
                   [
                     "zoom",
                   ],
-                  3,
+                  2,
                 ],
               ],
               [
@@ -2196,7 +2196,7 @@ exports[`style > is built as before 1`] = `
                 "coalesce",
                 [
                   "global-state",
-                  "tourPlaces",
+                  "stopPlaces",
                 ],
                 [
                   "literal",
@@ -2453,7 +2453,7 @@ exports[`style > is built as before 1`] = `
                 [
                   "zoom",
                 ],
-                3,
+                2,
               ],
             ],
             [
@@ -2576,7 +2576,7 @@ exports[`style > is built as before 1`] = `
                     [
                       "zoom",
                     ],
-                    3,
+                    2,
                   ],
                 ],
                 [
@@ -3818,7 +3818,7 @@ exports[`style > is built as before 1`] = `
                 "coalesce",
                 [
                   "global-state",
-                  "tourPlaces",
+                  "stopPlaces",
                 ],
                 [
                   "literal",
@@ -4077,7 +4077,7 @@ exports[`style > is built as before 1`] = `
                   [
                     "zoom",
                   ],
-                  3,
+                  2,
                 ],
               ],
               [
@@ -5480,7 +5480,7 @@ exports[`style > is built as before 1`] = `
                 "coalesce",
                 [
                   "global-state",
-                  "tourPlaces",
+                  "stopPlaces",
                 ],
                 [
                   "literal",
@@ -6237,7 +6237,7 @@ exports[`style > is built as before 1`] = `
               [
                 "zoom",
               ],
-              3,
+              2,
             ],
           ],
           [
@@ -7105,7 +7105,7 @@ exports[`style > is built as before 1`] = `
               [
                 "zoom",
               ],
-              3,
+              2,
             ],
           ],
           [
@@ -7750,7 +7750,7 @@ exports[`style > is built as before 1`] = `
                 "coalesce",
                 [
                   "global-state",
-                  "tourPlaces",
+                  "stopPlaces",
                 ],
                 [
                   "literal",
@@ -8020,7 +8020,7 @@ exports[`style > is built as before 1`] = `
               [
                 "zoom",
               ],
-              3,
+              2,
             ],
           ],
           [
@@ -8906,7 +8906,7 @@ exports[`style > is built as before 1`] = `
                 "coalesce",
                 [
                   "global-state",
-                  "tourPlaces",
+                  "stopPlaces",
                 ],
                 [
                   "literal",
@@ -9985,7 +9985,7 @@ exports[`style > is built as before 1`] = `
                 [
                   "zoom",
                 ],
-                3,
+                2,
               ],
             ],
             [
@@ -10108,7 +10108,7 @@ exports[`style > is built as before 1`] = `
                     [
                       "zoom",
                     ],
-                    3,
+                    2,
                   ],
                 ],
                 [
@@ -11347,7 +11347,7 @@ exports[`style > is built as before 1`] = `
                 "coalesce",
                 [
                   "global-state",
-                  "tourPlaces",
+                  "stopPlaces",
                 ],
                 [
                   "literal",
@@ -11637,7 +11637,7 @@ exports[`style > is built as before 1`] = `
               [
                 "zoom",
               ],
-              3,
+              2,
             ],
           ],
           [
@@ -12265,7 +12265,7 @@ exports[`style > is built as before 1`] = `
                   [
                     "zoom",
                   ],
-                  3,
+                  2,
                 ],
               ],
               [
@@ -13665,7 +13665,7 @@ exports[`style > is built as before 1`] = `
                 "coalesce",
                 [
                   "global-state",
-                  "tourPlaces",
+                  "stopPlaces",
                 ],
                 [
                   "literal",
@@ -14861,7 +14861,7 @@ exports[`style > is built as before 1`] = `
               [
                 "zoom",
               ],
-              3,
+              2,
             ],
           ],
           [
@@ -15626,7 +15626,7 @@ exports[`style > is built as before 1`] = `
                 "coalesce",
                 [
                   "global-state",
-                  "tourPlaces",
+                  "stopPlaces",
                 ],
                 [
                   "literal",
@@ -16183,7 +16183,7 @@ exports[`style > is built as before 1`] = `
               [
                 "zoom",
               ],
-              3,
+              2,
             ],
           ],
           [
@@ -16986,7 +16986,7 @@ exports[`style > is built as before 1`] = `
                 "coalesce",
                 [
                   "global-state",
-                  "tourPlaces",
+                  "stopPlaces",
                 ],
                 [
                   "literal",
@@ -17564,7 +17564,7 @@ exports[`style > is built as before 1`] = `
               [
                 "zoom",
               ],
-              3,
+              2,
             ],
           ],
           [
@@ -18262,7 +18262,7 @@ exports[`style > is built as before 1`] = `
                 "coalesce",
                 [
                   "global-state",
-                  "tourPlaces",
+                  "stopPlaces",
                 ],
                 [
                   "literal",
@@ -20226,6 +20226,9 @@ exports[`style > is built as before 1`] = `
     },
     "selected": {
       "default": "",
+    },
+    "stopPlaces": {
+      "default": [],
     },
     "stops": {
       "default": false,

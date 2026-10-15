@@ -93,4 +93,14 @@ describe("PlaceLifeFile", () => {
       PlaceLifeFile.parse({ places: [{ ...entry, from: "AD 20", until: "10 BC" }] }),
     ).toThrow();
   });
+
+  it("marks a city rebuilt beside an older town of its name", () => {
+    const got = PlaceLifeFile.parse({ places: [{ ...entry, from: "c. 290 BC", older: true }] })
+      .places[0];
+    expect(got?.older).toBe(true);
+    // Only true: "older: false" says nothing and is refused rather than read as a claim.
+    expect(() =>
+      PlaceLifeFile.parse({ places: [{ ...entry, from: "c. 290 BC", older: false }] }),
+    ).toThrow();
+  });
 });

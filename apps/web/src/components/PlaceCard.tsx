@@ -365,7 +365,9 @@ export function PlaceCard({
                 year >= place.gap_from &&
                 year < (place.gap_until ?? Infinity)
               ? t("place.in_ruins")
-              : t(year < (place.life_from ?? -Infinity) ? "place.not_yet" : "place.no_longer")}
+              : year < (place.life_from ?? -Infinity)
+                ? t(place.life_older ? "place.not_yet_older" : "place.not_yet")
+                : t("place.no_longer")}
         </div>
       )}
 

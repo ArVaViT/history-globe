@@ -297,6 +297,8 @@ ${o.body}
 }
 
 const hasPhoto = (id: string) => existsSync(join(data, "photos", `${id}.jpg`));
+// The tours' route pictures sit beside the data, in public/og/tour (tour-images.mjs).
+const hasTourImage = (id: string) => existsSync(join(data, "..", "og", "tour", `${id}.jpg`));
 
 /** The place's photo with its credit (content/photos.yaml), or nothing. */
 function photoHtml(id: string, name: string, l: Lang): string {
@@ -600,10 +602,17 @@ function tourPages(l: Lang): void {
   for (const t of content.tours) {
     const title = t.title[l] ?? t.title.en;
     const path = `${l}/tour/${t.id}`;
+    // The way drawn (tour-images.mjs): the picture a search shows and a link previews.
+    const image = hasTourImage(t.id) ? `og/tour/${t.id}.jpg` : undefined;
     const body = `    <main id="main" class="page">
       <p class="kicker">${T[l].tour} · ${esc(year({ year: t.year, approximate: t.approximate === true }, l))}</p>
       <h1>${esc(title)}</h1>
-      <p class="actions"><a class="button" href="../../../?tour=${t.id}&amp;locale=${l}">${T[l].tour_open} →</a></p>
+      <p class="actions"><a class="button" href="../../../?tour=${t.id}&amp;locale=${l}">${T[l].tour_open} →</a></p>${
+        image
+          ? `
+      <figure class="route-map"><img src="../../../${image}" alt="${esc(T[l].route_alt(title))}" width="1200" height="630" /></figure>`
+          : ""
+      }
       <ol class="stops">${t.stops
         .map((s, i) => {
           const f = byId.get(s.place);
@@ -622,11 +631,13 @@ function tourPages(l: Lang): void {
       path,
       page({
         l,
-        title,
+        // "Paul's first journey — map": what people search for, and what the page is.
+        title: `${title} — ${T[l].tour_map}`,
         desc: clip(`${title}: ${first}`),
         path: `${path}/`,
         body,
         depth: 3,
+        ...(image ? { image } : {}),
       }),
     );
   }

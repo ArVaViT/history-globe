@@ -21,6 +21,9 @@ const T_UK = {
   site: "History Globe — мапа біблійної історії",
   open: "Відкрити на мапі",
   tour_open: "Пройти екскурсію на мапі",
+  // A tour page's title in search results: "Paul's first journey — map".
+  tour_map: "мапа",
+  route_alt: (title: string) => `Мапа маршруту: ${title}`,
   // The sea as the stop says it: «, морем» or «, морем, 5 днів (Дії 20:6)».
   leg: (km: string, road: string | null, sea: string) =>
     `≈\u00a0${km}\u00a0км по прямій${road ? `, ≈\u00a0${road}\u00a0км по\u00a0римських\u00a0дорогах` : ""}${sea}`,
@@ -181,6 +184,9 @@ const T_ES = {
   site: "History Globe — mapa de la historia bíblica",
   open: "Abrir en el mapa",
   tour_open: "Recorrer la ruta en el mapa",
+  // A tour page's title in search results: "Paul's first journey — map".
+  tour_map: "mapa",
+  route_alt: (title: string) => `Mapa del recorrido: ${title}`,
   // The sea as the stop says it: «, por mar» or «, por mar, 5 días (Hch 20:6)».
   leg: (km: string, road: string | null, sea: string) =>
     `≈\u00a0${km}\u00a0km en línea recta${road ? `, ≈\u00a0${road}\u00a0km por\u00a0calzadas\u00a0romanas` : ""}${sea}`,
@@ -341,6 +347,9 @@ const T_PT = {
   site: "History Globe — mapa da história bíblica",
   open: "Abrir no mapa",
   tour_open: "Percorrer o roteiro no mapa",
+  // A tour page's title in search results: "Paul's first journey — map".
+  tour_map: "mapa",
+  route_alt: (title: string) => `Mapa do roteiro: ${title}`,
   // The sea as the stop says it: «, por mar» or «, por mar, 5 dias (At 20:6)».
   leg: (km: string, road: string | null, sea: string) =>
     `≈\u00a0${km}\u00a0km em linha reta${road ? `, ≈\u00a0${road}\u00a0km por\u00a0estradas\u00a0romanas` : ""}${sea}`,
@@ -501,6 +510,9 @@ const T_DE = {
   site: "History Globe — eine Karte der biblischen Geschichte",
   open: "Auf der Karte öffnen",
   tour_open: "Die Tour auf der Karte verfolgen",
+  // A tour page's title in search results: "Paul's first journey — map".
+  tour_map: "Karte",
+  route_alt: (title: string) => `Karte der Route: ${title}`,
   // The sea as the stop says it: «, zur See» or «, zur See, 5 Tage (Apg 20,6)».
   leg: (km: string, road: string | null, sea: string) =>
     `≈\u00a0${km}\u00a0km Luftlinie${road ? `, ≈\u00a0${road}\u00a0km auf\u00a0Römerstraßen` : ""}${sea}`,
@@ -661,6 +673,9 @@ const T_FR = {
   site: "History Globe\u202f—\u202fcarte de l’histoire biblique",
   open: "Ouvrir sur la carte",
   tour_open: "Suivre le parcours sur la carte",
+  // A tour page's title in search results: "Paul's first journey — map".
+  tour_map: "carte",
+  route_alt: (title: string) => `Carte du parcours : ${title}`,
   // The sea as the stop says it: «, par mer» or «, par mer, 5 jours (Ac 20:6)».
   leg: (km: string, road: string | null, sea: string) =>
     `≈\u00a0${km}\u00a0km à vol d’oiseau${road ? `, ≈\u00a0${road}\u00a0km par\u00a0voies\u00a0romaines` : ""}${sea}`,
@@ -823,6 +838,9 @@ const T_IT = {
   site: "History Globe — mappa della storia biblica",
   open: "Apri sulla mappa",
   tour_open: "Percorri l’itinerario sulla mappa",
+  // A tour page's title in search results: "Paul's first journey — map".
+  tour_map: "mappa",
+  route_alt: (title: string) => `Mappa dell’itinerario: ${title}`,
   // The sea as the stop says it: «, per mare» or «, per mare, 5 giorni (At 20,6)».
   leg: (km: string, road: string | null, sea: string) =>
     `≈\u00a0${km}\u00a0km in linea retta${road ? `, ≈\u00a0${road}\u00a0km su\u00a0strade\u00a0romane` : ""}${sea}`,
@@ -983,6 +1001,9 @@ const T_NL = {
   site: "History Globe — een kaart van de bijbelse geschiedenis",
   open: "Openen op de kaart",
   tour_open: "De route volgen op de kaart",
+  // A tour page's title in search results: "Paul's first journey — map".
+  tour_map: "kaart",
+  route_alt: (title: string) => `Kaart van de route: ${title}`,
   // The sea as the stop says it: «, over zee» or «, over zee, 5 dagen (Hand. 20:6)».
   leg: (km: string, road: string | null, sea: string) =>
     `≈\u00a0${km}\u00a0km hemelsbreed${road ? `, ≈\u00a0${road}\u00a0km over\u00a0Romeinse\u00a0wegen` : ""}${sea}`,
@@ -1145,6 +1166,9 @@ const T_PL = {
   site: "History Globe — mapa historii biblijnej",
   open: "Otwórz na mapie",
   tour_open: "Przejdź trasę na mapie",
+  // A tour page's title in search results: "Paul's first journey — map".
+  tour_map: "mapa",
+  route_alt: (title: string) => `Mapa trasy: ${title}`,
   // The sea as the stop says it: «, morzem» or «, morzem, 5 dni (Dz 20,6)».
   leg: (km: string, road: string | null, sea: string) =>
     `≈\u00a0${km}\u00a0km w linii prostej${road ? `, ≈\u00a0${road}\u00a0km drogami\u00a0rzymskimi` : ""}${sea}`,
@@ -1309,6 +1333,9 @@ const T_CS = {
   site: "History Globe — mapa biblických dějin",
   open: "Otevřít na mapě",
   tour_open: "Projít trasu na mapě",
+  // A tour page's title in search results: "Paul's first journey — map".
+  tour_map: "mapa",
+  route_alt: (title: string) => `Mapa trasy: ${title}`,
   // The sea as the stop says it: «, po moři» or «, po moři, 5 dní (Sk 20,6)».
   leg: (km: string, road: string | null, sea: string) =>
     `≈\u00a0${km}\u00a0km vzdušnou čarou${road ? `, ≈\u00a0${road}\u00a0km po\u00a0římských\u00a0silnicích` : ""}${sea}`,
@@ -1474,6 +1501,9 @@ export const T = {
     site: "History Globe — карта библейской истории",
     open: "Открыть на карте",
     tour_open: "Пройти экскурсию на карте",
+    // A tour page's title in search results: "Paul's first journey — map".
+    tour_map: "карта",
+    route_alt: (title: string) => `Карта маршрута: ${title}`,
     // The sea as the stop says it: «, по морю» or «, по морю, 5 дней (Деян 20:6)».
     leg: (km: string, road: string | null, sea: string) =>
       `≈\u00a0${km}\u00a0км по прямой${road ? `, ≈\u00a0${road}\u00a0км по\u00a0римским\u00a0дорогам` : ""}${sea}`,
@@ -1531,6 +1561,9 @@ export const T = {
     site: "History Globe — a map of biblical history",
     open: "Open on the map",
     tour_open: "Take the tour on the map",
+    // A tour page's title in search results: "Paul's first journey — map".
+    tour_map: "map",
+    route_alt: (title: string) => `Map of the route: ${title}`,
     leg: (km: string, road: string | null, sea: string) =>
       `≈\u00a0${km}\u00a0km in a straight line${road ? `, ≈\u00a0${road}\u00a0km by\u00a0Roman\u00a0roads` : ""}${sea}`,
     sea: (days?: number, ref?: string, about?: boolean) =>

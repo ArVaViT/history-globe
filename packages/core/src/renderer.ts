@@ -82,7 +82,16 @@ export interface Renderer {
   reveal?(at: LonLat): void;
   /** The Bible alone (a setting): what it does not tell steps off the map. */
   setBibleOnly?(on: boolean): void;
-  setRoute(coordinates: readonly LonLat[], currentIndex: number): void;
+  setRoute(
+    coordinates: readonly LonLat[],
+    currentIndex: number,
+    options?: {
+      /** The places the stops stand at: their own marks lie under the stops' discs. */
+      readonly placeIds?: readonly string[];
+      /** A way shown whole (a chapter's), not one being walked: no lights, no current stop. */
+      readonly still?: boolean;
+    },
+  ): void;
   /** The places of the running tour (empty when none): the rest of the map steps back. */
   setTourPlaces(placeIds: readonly string[]): void;
   /** Frame these points (a chapter's places), clear of the interface. */

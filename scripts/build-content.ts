@@ -409,6 +409,7 @@ for (const p of PlaceLifeFile.parse(load("content/place-life.yaml")).places) {
     ...(p.from ? { from: p.from } : {}),
     ...(p.until ? { until: p.until } : {}),
     ...(p.gap ? { gap: p.gap } : {}),
+    ...(p.older ? { older: true as const } : {}),
     note: p.note,
     sources: p.sources,
   };
@@ -507,6 +508,8 @@ for (const e of EventsFile.parse(load("content/events.yaml")).events) {
   if (e.site !== undefined && !site)
     errors.push(`events: ${e.id} points at ancient site ${e.site}, not in ancient-sites.json`);
   if (e.site !== undefined && e.place) errors.push(`events: ${e.id} has both a place and a site`);
+  if (e.battlefield && (e.place || e.site !== undefined))
+    errors.push(`events: ${e.id} has a battlefield and a place or a site`);
   if (site && (e.year.year < site.from || e.year.year > site.to))
     errors.push(`events: ${e.id} (${String(e.year.year)}) is outside ${site.en}'s years`);
   if (events.some((x) => x.id === e.id)) errors.push(`events: ${e.id} is listed twice`);
@@ -517,6 +520,7 @@ for (const e of EventsFile.parse(load("content/events.yaml")).events) {
     title: e.title,
     ...(e.place ? { place: e.place } : {}),
     ...(site ? { site: { id: site.id, lon: site.lon, lat: site.lat, rank: site.rank } } : {}),
+    ...(e.battlefield ? { battlefield: { lon: e.battlefield.lon, lat: e.battlefield.lat } } : {}),
     ...(e.ref ? { ref: e.ref } : {}),
     sources: e.sources,
   });
@@ -549,21 +553,45 @@ writes.push([
   join(out, "battles.geojson"),
   JSON.stringify({
     type: "FeatureCollection",
-    features: battles.map((b) => ({
-      type: "Feature",
-      properties: {
-        id: b.id,
-        place: b.place,
-        year: b.year,
-        ...(b.approximate ? { approx: true } : {}),
-        en: b.title.en,
-        ru: b.title.ru,
-        // The map's label in every language it is written in (the style falls back to English).
-        ...Object.fromEntries(NAME_LOCALES.flatMap((l) => (b.title[l] ? [[l, b.title[l]]] : []))),
-        ...(b.ref ? { ref: b.ref } : {}),
-      },
-      geometry: { type: "Point", coordinates: pointOf.get(b.place) ?? [0, 0] },
-    })),
+    features: [
+      ...battles.map((b) => ({
+        type: "Feature",
+        properties: {
+          id: b.id,
+          place: b.place,
+          year: b.year,
+          ...(b.approximate ? { approx: true } : {}),
+          en: b.title.en,
+          ru: b.title.ru,
+          // The map's label in every language it is written in (the style falls back to English).
+          ...Object.fromEntries(NAME_LOCALES.flatMap((l) => (b.title[l] ? [[l, b.title[l]]] : []))),
+          ...(b.ref ? { ref: b.ref } : {}),
+        },
+        geometry: { type: "Point", coordinates: pointOf.get(b.place) ?? [0, 0] },
+      })),
+      // The battles of events.yaml fought at no place of the data build (Gaugamela): their
+      // mark on the field, in their years, with the same name on hover; no card to open.
+      ...events.flatMap((e) =>
+        e.battlefield
+          ? [
+              {
+                type: "Feature",
+                properties: {
+                  id: `event:${e.id}`,
+                  year: e.year,
+                  ...(e.approximate ? { approx: true } : {}),
+                  en: e.title.en,
+                  ru: e.title.ru,
+                  ...Object.fromEntries(
+                    NAME_LOCALES.flatMap((l) => (e.title[l] ? [[l, e.title[l]]] : [])),
+                  ),
+                },
+                geometry: { type: "Point", coordinates: [e.battlefield.lon, e.battlefield.lat] },
+              },
+            ]
+          : [],
+      ),
+    ],
   }),
 ]);
 

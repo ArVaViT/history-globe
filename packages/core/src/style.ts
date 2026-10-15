@@ -1081,6 +1081,7 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       selected: { default: "" },
       tourPlaces: { default: [] },
       stops: { default: false },
+      stopPlaces: { default: [] },
       bibleOnly: { default: false },
       hiddenNames: { default: [] },
     },

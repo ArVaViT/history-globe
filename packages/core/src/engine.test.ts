@@ -115,9 +115,10 @@ describe("engine", () => {
     const { engine, renderer } = setup();
     engine.startTour("paul-1");
     expect(engine.store.get().year).toBe(47);
-    expect(renderer.last("route")).toEqual({ op: "route", points: 2, current: 0 });
+    // The tour's stops' places told with it: their marks lie under the discs.
+    expect(renderer.last("route")).toEqual({ op: "route", points: 2, current: 0, stops: 2 });
     engine.goToStop(1);
-    expect(renderer.last("route")).toEqual({ op: "route", points: 2, current: 1 });
+    expect(renderer.last("route")).toEqual({ op: "route", points: 2, current: 1, stops: 2 });
     expect(engine.store.get().selectedPlace).toBeNull();
     // A stop with its own year moves the slider; back at a stop without one, the tour's.
     expect(engine.store.get().year).toBe(48);
@@ -125,7 +126,7 @@ describe("engine", () => {
     expect(engine.store.get().year).toBe(47);
     engine.goToStop(1);
     engine.stopTour();
-    expect(renderer.last("route")).toEqual({ op: "route", points: 0, current: -1 });
+    expect(renderer.last("route")).toMatchObject({ op: "route", points: 0, current: -1, stops: 0 });
   });
 
   it("focuses a chapter's known places, at its year, and a tour clears it", () => {
@@ -147,6 +148,40 @@ describe("engine", () => {
     expect(engine.store.get().focus?.ref).toBe("Acts.13");
     engine.startTour("paul-1");
     expect(engine.store.get().focus).toBeNull();
+  });
+
+  it("draws a chapter's way and frames its own places with it", () => {
+    const { engine, renderer } = setup();
+    engine.focusPlaces({
+      ref: "Acts.13",
+      places: ["antioch", "galilee"],
+      frame: ["antioch"],
+      route: [
+        [36, 36],
+        [33, 35],
+      ],
+      routePlaces: ["antioch", "antioch"],
+    });
+    expect(engine.store.get().focus?.route).toHaveLength(2);
+    // Whole and still, its stops' places told (only their marks hide under the discs).
+    expect(renderer.last("route")).toEqual({
+      op: "route",
+      points: 2,
+      current: 1,
+      stops: 2,
+      still: true,
+    });
+    // One place framed, plus the two points of the way.
+    expect(renderer.last("fitTo")).toEqual({ op: "fitTo", count: 3 });
+    // A tour takes over the route; leaving the chapter clears it.
+    engine.focusPlaces(null);
+    expect(renderer.last("route")).toEqual({
+      op: "route",
+      points: 0,
+      current: -1,
+      stops: 0,
+      still: true,
+    });
   });
 
   it("starts a tour at a given stop and tells the renderer its places", () => {

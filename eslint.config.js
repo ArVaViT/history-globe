@@ -28,9 +28,10 @@ export default tseslint.config(
     },
   },
   { files: ["*.js"], ...tseslint.configs.disableTypeChecked },
-  // The browser checks: plain JavaScript run by Node, the page's code inside `evaluate`.
+  // The browser checks and the scripts that drive a browser (tour-images.mjs): plain
+  // JavaScript run by Node, the page's code inside `evaluate`.
   {
-    files: ["e2e/**/*.mjs"],
+    files: ["e2e/**/*.mjs", "scripts/*.mjs"],
     ...tseslint.configs.disableTypeChecked,
     languageOptions: {
       globals: { ...globals.node, ...globals.browser },

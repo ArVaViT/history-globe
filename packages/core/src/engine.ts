@@ -65,7 +65,17 @@ export interface Engine {
   readonly stopTour: () => void;
   /** Show these places alone (a chapter's), at the year given if any; null shows all. */
   readonly focusPlaces: (
-    focus: { ref: string; places: readonly string[]; year?: number } | null,
+    focus: {
+      ref: string;
+      places: readonly string[];
+      year?: number;
+      /** The places to frame, when not all of them (a region or a sea named in passing). */
+      frame?: readonly string[];
+      /** The way travelled in the chapter, drawn as a tour's route is. */
+      route?: readonly LonLat[];
+      /** The places of the way's stops, in its order (their marks lie under the discs). */
+      routePlaces?: readonly string[];
+    } | null,
     /** Fly to frame them; false keeps the camera (a shared link brings its own). */
     frame?: boolean,
   ) => void;
@@ -114,13 +124,24 @@ export function createEngine(options: {
       const tour = s.tour ? tours.get(s.tour.id) : undefined;
       renderer.setTourPlaces(tour ? tour.stops.map((st) => st.placeId) : (s.focus?.places ?? []));
     }
-    if (!prev || s.tour !== prev.tour) {
+    if (!prev || s.tour !== prev.tour || s.focus !== prev.focus) {
       const tour = s.tour ? tours.get(s.tour.id) : undefined;
-      renderer.setRoute(
+      if (tour && s.tour)
         // The whole route: the stops ahead are drawn faint, so the way is seen from the start.
-        tour && s.tour ? tour.stops.map((st) => st.at) : [],
-        s.tour?.step ?? -1,
-      );
+        renderer.setRoute(
+          tour.stops.map((st) => st.at),
+          s.tour.step,
+          { placeIds: tour.stops.map((st) => st.placeId) },
+        );
+      else {
+        // A chapter's way, whole and still: the reader has the chapter before them, not a
+        // tour under way.
+        const route = s.focus?.route ?? [];
+        renderer.setRoute(route, route.length - 1, {
+          placeIds: s.focus?.routePlaces ?? [],
+          still: true,
+        });
+      }
     }
   };
   sync(store.get(), null);
@@ -207,12 +228,26 @@ export function createEngine(options: {
     },
     focusPlaces: (focus, frame = true) => {
       const known = focus ? focus.places.filter((id) => places.has(id)) : [];
+      const route = focus?.route && focus.route.length > 1 ? focus.route : undefined;
       store.set({
-        focus: focus && known.length > 0 ? { ref: focus.ref, places: known } : null,
+        focus:
+          focus && known.length > 0
+            ? {
+                ref: focus.ref,
+                places: known,
+                ...(route ? { route, routePlaces: focus.routePlaces ?? [] } : {}),
+              }
+            : null,
         ...(focus?.year === undefined ? {} : { year: clampYear(focus.year) }),
       });
-      if (frame && known.length > 0)
-        renderer.fitTo(known.map((id) => places.get(id)?.at ?? [0, 0]));
+      if (!frame || known.length === 0) return;
+      // The places that make the chapter's map, and its way: a region or a sea named in
+      // passing (Italy, the Adriatic) would pull the frame out to half a continent.
+      const framed = (focus?.frame ?? known).filter((id) => places.has(id));
+      const points = (framed.length > 0 ? framed : known).map(
+        (id): LonLat => places.get(id)?.at ?? [0, 0],
+      );
+      renderer.fitTo([...points, ...(route ?? [])]);
     },
     stopTour: () => {
       store.set({ tour: null });
