@@ -31,7 +31,6 @@
   "tours": {
     "distance_from": "≈ {{km}} km in a straight line from the previous stop",
     "distance_total": "Route ≈ {{km}} km in straight lines between the stops",
-    "title": "Tours",
     "stop": "Stop {{n}} of {{total}}",
     "prev": "Back",
     "next": "Next",
@@ -127,7 +126,6 @@
     "timeline": "Timeline",
     "speed": "Speed",
     "window": "Shown span of time",
-    "zoom_out": "Show all",
     "more": "More: speed, full screen, map image, print",
     "fullscreen": "Full screen",
     "picture": "Save a map image",
@@ -209,14 +207,10 @@
     "ancient": "city outside the Bible",
     "roman_road": "Roman road"
   },
-  "articles": {
-    "title": "City articles"
-  },
   "events": {
     "founded": "{{name}} founded",
     "destroyed": "{{name}} destroyed",
-    "rebuilt": "{{name}} rebuilt",
-    "title": "Events"
+    "rebuilt": "{{name}} rebuilt"
   },
   "map_label": "Map",
   "details_label": "Details",

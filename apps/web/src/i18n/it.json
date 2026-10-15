@@ -32,7 +32,6 @@
   "tours": {
     "distance_from": "≈ {{km}} km in linea retta dalla tappa precedente",
     "distance_total": "Percorso ≈ {{km}} km in linea retta tra le tappe",
-    "title": "Itinerari",
     "stop": "Tappa {{n}} di {{total}}",
     "prev": "Indietro",
     "next": "Avanti",
@@ -133,7 +132,6 @@
     "timeline": "Cronologia",
     "speed": "Velocità",
     "window": "Intervallo di tempo mostrato",
-    "zoom_out": "Mostra tutto",
     "more": "Altro: velocità, schermo intero, immagine della mappa, stampa",
     "fullscreen": "Schermo intero",
     "picture": "Salva un’immagine della mappa",
@@ -215,14 +213,10 @@
     "ancient": "città non biblica",
     "roman_road": "strada romana"
   },
-  "articles": {
-    "title": "Articoli sulle città"
-  },
   "events": {
     "founded": "Fondazione di {{name}}",
     "destroyed": "Distruzione di {{name}}",
-    "rebuilt": "Ricostruzione di {{name}}",
-    "title": "Eventi"
+    "rebuilt": "Ricostruzione di {{name}}"
   },
   "map_label": "Mappa",
   "details_label": "Dettagli",

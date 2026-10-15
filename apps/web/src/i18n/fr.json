@@ -31,7 +31,6 @@
   "tours": {
     "distance_from": "≈ {{km}} km à vol d’oiseau depuis l’étape précédente",
     "distance_total": "Parcours ≈ {{km}} km en ligne droite entre les étapes",
-    "title": "Parcours",
     "stop": "Étape {{n}} sur {{total}}",
     "prev": "Précédent",
     "next": "Suivant",
@@ -127,7 +126,6 @@
     "timeline": "Chronologie",
     "speed": "Vitesse",
     "window": "Période affichée",
-    "zoom_out": "Tout afficher",
     "more": "Plus : vitesse, plein écran, image de la carte, impression",
     "fullscreen": "Plein écran",
     "picture": "Enregistrer une image de la carte",
@@ -209,14 +207,10 @@
     "ancient": "ville hors de la Bible",
     "roman_road": "voie romaine"
   },
-  "articles": {
-    "title": "Articles sur les villes"
-  },
   "events": {
     "founded": "Fondation : {{name}}",
     "destroyed": "Destruction : {{name}}",
-    "rebuilt": "Reconstruction : {{name}}",
-    "title": "Événements"
+    "rebuilt": "Reconstruction : {{name}}"
   },
   "map_label": "Carte",
   "details_label": "Détails",

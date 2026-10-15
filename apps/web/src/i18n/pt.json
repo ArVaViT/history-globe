@@ -31,7 +31,6 @@
   "tours": {
     "distance_from": "≈ {{km}} km em linha reta desde a parada anterior",
     "distance_total": "Percurso ≈ {{km}} km em linhas retas entre as paradas",
-    "title": "Roteiros",
     "stop": "Parada {{n}} de {{total}}",
     "prev": "Voltar",
     "next": "Avançar",
@@ -127,7 +126,6 @@
     "timeline": "Linha do tempo",
     "speed": "Velocidade",
     "window": "Período exibido",
-    "zoom_out": "Mostrar tudo",
     "more": "Mais: velocidade, tela cheia, imagem do mapa, impressão",
     "fullscreen": "Tela cheia",
     "picture": "Salvar uma imagem do mapa",
@@ -209,14 +207,10 @@
     "ancient": "cidade fora da Bíblia",
     "roman_road": "estrada romana"
   },
-  "articles": {
-    "title": "Artigos sobre cidades"
-  },
   "events": {
     "founded": "{{name}} fundada",
     "destroyed": "{{name}} destruída",
-    "rebuilt": "{{name}} reconstruída",
-    "title": "Eventos"
+    "rebuilt": "{{name}} reconstruída"
   },
   "map_label": "Mapa",
   "details_label": "Detalhes",

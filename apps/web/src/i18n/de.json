@@ -31,7 +31,6 @@
   "tours": {
     "distance_from": "≈ {{km}} km Luftlinie vom vorigen Halt",
     "distance_total": "Route ≈ {{km}} km Luftlinie zwischen den Halten",
-    "title": "Touren",
     "stop": "Halt {{n}} von {{total}}",
     "prev": "Zurück",
     "next": "Weiter",
@@ -127,7 +126,6 @@
     "timeline": "Zeitleiste",
     "speed": "Tempo",
     "window": "Angezeigter Zeitraum",
-    "zoom_out": "Alles zeigen",
     "more": "Mehr: Tempo, Vollbild, Kartenbild, Drucken",
     "fullscreen": "Vollbild",
     "picture": "Kartenbild speichern",
@@ -209,14 +207,10 @@
     "ancient": "Stadt außerhalb der Bibel",
     "roman_road": "Römerstraße"
   },
-  "articles": {
-    "title": "Stadtartikel"
-  },
   "events": {
     "founded": "{{name}} gegründet",
     "destroyed": "{{name}} zerstört",
-    "rebuilt": "{{name}} wiederaufgebaut",
-    "title": "Ereignisse"
+    "rebuilt": "{{name}} wiederaufgebaut"
   },
   "map_label": "Karte",
   "details_label": "Details",

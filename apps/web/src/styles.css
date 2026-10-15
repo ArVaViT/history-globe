@@ -686,3 +686,8 @@ summary {
   left: auto;
   right: 0;
 }
+
+/* The first screen of index.html: not in another site's frame, where the bar may not show. */
+.hg-framed #hg-shell {
+  display: none;
+}

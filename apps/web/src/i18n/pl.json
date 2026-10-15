@@ -33,7 +33,6 @@
   "tours": {
     "distance_from": "≈ {{km}} km w linii prostej od poprzedniego przystanku",
     "distance_total": "Trasa ≈ {{km}} km w liniach prostych między przystankami",
-    "title": "Trasy",
     "stop": "Przystanek {{n}} z {{total}}",
     "prev": "Wstecz",
     "next": "Dalej",
@@ -139,7 +138,6 @@
     "timeline": "Oś czasu",
     "speed": "Prędkość",
     "window": "Pokazany przedział czasu",
-    "zoom_out": "Pokaż wszystko",
     "more": "Więcej: prędkość, pełny ekran, obraz mapy, wydruk",
     "fullscreen": "Pełny ekran",
     "picture": "Zapisz obraz mapy",
@@ -221,14 +219,10 @@
     "ancient": "miasto spoza Biblii",
     "roman_road": "droga rzymska"
   },
-  "articles": {
-    "title": "Artykuły o miastach"
-  },
   "events": {
     "founded": "Założenie: {{name}}",
     "destroyed": "Zburzenie: {{name}}",
-    "rebuilt": "Odbudowa: {{name}}",
-    "title": "Wydarzenia"
+    "rebuilt": "Odbudowa: {{name}}"
   },
   "map_label": "Mapa",
   "details_label": "Szczegóły",

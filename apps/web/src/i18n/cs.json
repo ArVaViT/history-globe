@@ -33,7 +33,6 @@
   "tours": {
     "distance_from": "≈ {{km}} km vzdušnou čarou od předchozí zastávky",
     "distance_total": "Trasa ≈ {{km}} km vzdušnou čarou mezi zastávkami",
-    "title": "Trasy",
     "stop": "Zastávka {{n}} z {{total}}",
     "prev": "Zpět",
     "next": "Další",
@@ -139,7 +138,6 @@
     "timeline": "Časová osa",
     "speed": "Rychlost",
     "window": "Zobrazené období",
-    "zoom_out": "Zobrazit vše",
     "more": "Více: rychlost, celá obrazovka, obrázek mapy, tisk",
     "fullscreen": "Celá obrazovka",
     "picture": "Uložit obrázek mapy",
@@ -221,14 +219,10 @@
     "ancient": "město mimo Bibli",
     "roman_road": "římská silnice"
   },
-  "articles": {
-    "title": "Články o městech"
-  },
   "events": {
     "founded": "{{name}} založeno",
     "destroyed": "{{name}} zničeno",
-    "rebuilt": "{{name}} znovu vybudováno",
-    "title": "Události"
+    "rebuilt": "{{name}} znovu vybudováno"
   },
   "map_label": "Mapa",
   "details_label": "Podrobnosti",

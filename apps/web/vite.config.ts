@@ -125,6 +125,44 @@ function offlineList(): Plugin {
   };
 }
 
+// The first screen (index.html) sets the title in Literata, Latin in every language: its
+// font is asked for with the page, not once the stylesheet has been read, so the title is
+// drawn in its own face from the first frame, not in Georgia first and again a moment later.
+function titleFont(): Plugin {
+  let base = "/";
+  return {
+    name: "title-font",
+    apply: "build",
+    configResolved(config) {
+      base = config.base;
+    },
+    transformIndexHtml: {
+      order: "post",
+      handler(_html, ctx) {
+        const font = Object.values(ctx.bundle ?? {}).find(
+          (f) =>
+            f.type === "asset" &&
+            /^assets\/literata-latin-wght-normal-[^/]+\.woff2$/.test(f.fileName),
+        );
+        if (!font) throw new Error("title-font: Literata's Latin font is not in the build");
+        return [
+          {
+            tag: "link",
+            attrs: {
+              rel: "preload",
+              href: `${base}${font.fileName}`,
+              as: "font",
+              type: "font/woff2",
+              crossorigin: true,
+            },
+            injectTo: "head",
+          },
+        ];
+      },
+    },
+  };
+}
+
 // WebMCP's origin trial (src/webmcp.ts): a token given to the build in WEBMCP_ORIGIN_TRIAL
 // goes into the app's page; without one the page carries none. Never written in the code.
 function originTrial(): Plugin {
@@ -151,6 +189,7 @@ export default defineConfig({
     maplibreVendor(),
     publicFolderIndex(),
     offlineList(),
+    titleFont(),
     originTrial(),
   ],
   build: {

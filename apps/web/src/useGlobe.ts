@@ -9,6 +9,7 @@ import type { UrlView } from "./url";
 /** The view the map opens on: the link's, its language always settled (App.tsx). */
 export type StartView = UrlView & { readonly locale: NonNullable<UrlView["locale"]> };
 import { viewPadding } from "./view-padding.ts";
+import { firstPaint } from "./first-paint";
 import { TERRAIN_TILES } from "./offline";
 import { translate } from "./i18n";
 import { docsPath } from "@hg/model";
@@ -27,9 +28,10 @@ const TERRAIN = {
     'Terrain: <a href="https://mapterhorn.com/attribution">Mapterhorn</a>, Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the EU and ESA · <a href="docs/sources.html">Sources</a>',
 };
 
-// MapLibre is most of the JavaScript. It is a separate chunk that starts downloading at
-// once, in parallel with the data, while the panels render without waiting for it.
-const rendererModule = import("@hg/core/maplibre");
+// MapLibre is most of the JavaScript. It is a separate chunk, fetched in parallel with the
+// data while the panels render without waiting for it, once the first screen (index.html)
+// is on the screen (first-paint.ts).
+const rendererModule = firstPaint().then(() => import("@hg/core/maplibre"));
 
 export interface Globe {
   readonly engine: Engine;
