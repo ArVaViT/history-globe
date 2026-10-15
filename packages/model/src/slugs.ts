@@ -2,7 +2,8 @@
  * A place page's slug from the English name. It must not move when the data is rebuilt,
  * so it depends on names only: a name held by one place (its duplicates aside) is the
  * plain slug ("jerusalem"); namesakes and duplicates add their id ("aphek-a4cf129").
- * Shared by the place pages and the places-in-any-text index, which links to them.
+ * Shared by the place pages, the places-in-any-text index and the open API, which link to
+ * them, and by the map's WebMCP tools (apps/web/src/agent-tools.ts).
  */
 export function placeSlugs(
   places: readonly { readonly id: string; readonly name: string; readonly dup?: boolean }[],

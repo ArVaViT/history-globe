@@ -65,6 +65,7 @@ const QuizPanel = lazy(() =>
   import("./components/QuizPanel").then((m) => ({ default: m.QuizPanel })),
 );
 import { loadData, type LoadedData } from "./data";
+import { offerAgentTools } from "./webmcp";
 import {
   useHeightVar,
   useKeys,
@@ -237,6 +238,20 @@ export function App() {
       setDataError(String(e));
     });
   }, []);
+  // WebMCP, an experiment (webmcp.ts): read-only tools for an AI agent in the reader's
+  // browser, once the data is in. Without WebMCP in the browser nothing is loaded.
+  useEffect(
+    () =>
+      data
+        ? offerAgentTools({
+            data,
+            site: new URL(import.meta.env.BASE_URL, window.location.origin).href,
+            language: () => i18n.language,
+            article: (id) => import("./articles").then((m) => m.loadArticle(id)),
+          })
+        : undefined,
+    [data, i18n],
+  );
 
   useEffect(() => {
     // The map's own words come from the dictionary, which a first switch to a language

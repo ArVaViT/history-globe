@@ -125,8 +125,34 @@ function offlineList(): Plugin {
   };
 }
 
+// WebMCP's origin trial (src/webmcp.ts): a token given to the build in WEBMCP_ORIGIN_TRIAL
+// goes into the app's page; without one the page carries none. Never written in the code.
+function originTrial(): Plugin {
+  const token = process.env.WEBMCP_ORIGIN_TRIAL?.trim();
+  return {
+    name: "origin-trial",
+    transformIndexHtml: () =>
+      token
+        ? [
+            {
+              tag: "meta",
+              attrs: { "http-equiv": "origin-trial", content: token },
+              injectTo: "head-prepend",
+            },
+          ]
+        : [],
+  };
+}
+
 export default defineConfig({
-  plugins: [react(), tailwindcss(), maplibreVendor(), publicFolderIndex(), offlineList()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    maplibreVendor(),
+    publicFolderIndex(),
+    offlineList(),
+    originTrial(),
+  ],
   build: {
     target: "es2023",
     sourcemap: true,

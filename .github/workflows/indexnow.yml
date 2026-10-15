@@ -1,0 +1,62 @@
+# IndexNow: after a production deploy, tell the search engines that share the protocol
+# (Bing, Yandex, Seznam, Naver, …) which pages changed. scripts/indexnow.ts reads the live
+# site's sitemap and page-hashes.json and sends only new, changed and removed pages; the
+# hashes it sent are kept in the Actions cache between runs. Network errors never fail it.
+#
+# Deploys are made with `vercel deploy --prebuilt` (ADR 0012), which does not report a
+# GitHub deployment; so besides `deployment_status` (for a Vercel Git integration, if one is
+# ever connected) it runs by hand (`gh workflow run indexnow.yml`) and once a day, when it
+# sends nothing unless a deploy changed something.
+name: IndexNow
+
+on:
+  deployment_status:
+  workflow_dispatch:
+    inputs:
+      all:
+        description: Send every page in the sitemap, not only the changed ones
+        type: boolean
+        default: false
+  schedule:
+    - cron: "23 7 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    if: >-
+      github.event_name != 'deployment_status' ||
+      (github.event.deployment_status.state == 'success' &&
+      github.event.deployment.environment == 'Production')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          sparse-checkout: scripts
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - name: Restore what was sent last time
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .indexnow
+          key: indexnow-${{ github.run_id }}
+          restore-keys: indexnow-
+      - name: Send the changed pages
+        env:
+          SITE_URL: https://historyglobe.app
+          ALL: ${{ inputs.all && '--all' || '' }}
+        run: node scripts/indexnow.ts --state .indexnow/sent.json $ALL
+      - name: Keep what was sent
+        if: always() && hashFiles('.indexnow/sent.json') != ''
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .indexnow
+          key: indexnow-${{ github.run_id }}
