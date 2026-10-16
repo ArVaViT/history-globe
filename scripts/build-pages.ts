@@ -296,6 +296,13 @@ ${o.body}
 `;
 }
 
+// The places-in-any-text script's released versions (hg-places-release.test.ts).
+const HG_PLACES = JSON.parse(
+  readFileSync(join(root, "scripts/hg-places-releases.json"), "utf8"),
+) as {
+  latest: string;
+  versions: Record<string, string>;
+};
 const hasPhoto = (id: string) => existsSync(join(data, "photos", `${id}.jpg`));
 // The tours' route pictures sit beside the data, in public/og/tour (tour-images.mjs).
 const hasTourImage = (id: string) => existsSync(join(data, "..", "og", "tour", `${id}.jpg`));
@@ -1091,7 +1098,7 @@ The map is an app at ${base}/ (state lives in the address: ?year=, ?place=, ?tou
 - Verses to places: ${base}/api/v1/verses/{Book}.json (OSIS book ids, e.g. Acts)
 - [Tours](${base}/api/v1/tours.json), [events](${base}/api/v1/events.json), [battles](${base}/api/v1/battles.json), [questions](${base}/api/v1/questions.json), [ancient writers](${base}/api/v1/ancient.json)
 - Embedding the globe in another site: ${inEach((l) => docsPath(l, "embedding"))}
-- Places in any text, one script that links the Bible places a page names: ${base}/hg-places.js
+- Places in any text, one script that links the Bible places a page names: ${base}/hg-places-${HG_PLACES.latest}.js (integrity ${HG_PLACES.versions[HG_PLACES.latest] ?? ""})
 
 ## Pages
 

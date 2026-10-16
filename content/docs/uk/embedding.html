@@ -267,7 +267,11 @@ window.addEventListener("message", (e) =&gt; {
     англійською та російською).
   </figcaption>
 </figure>
-<pre><code>&lt;script src="{{site}}/hg-places.js" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<p>
+  В адресі стоїть версія, а хеш цілісності закріплює її точний вміст: браузер виконає скрипт, лише
+  якщо це саме той файл. Нова версія отримує нову адресу; старі лишаються як є.
+</p>
 <div class="table">
   <table>
     <thead>

@@ -268,7 +268,12 @@ window.addEventListener("message", (e) =&gt; {
     script lit les textes en anglais et en russe).
   </figcaption>
 </figure>
-<pre><code>&lt;script src="{{site}}/hg-places.js" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<p>
+  L’adresse porte une version, et le hachage d’intégrité en fixe le contenu exact : le navigateur
+  n’exécute le script que s’il s’agit précisément de ce fichier. Une nouvelle version reçoit une
+  nouvelle adresse ; les anciennes restent telles quelles.
+</p>
 <div class="table">
   <table>
     <thead>

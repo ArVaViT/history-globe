@@ -270,7 +270,12 @@ window.addEventListener("message", (e) =&gt; {
     textos en inglés y en ruso).
   </figcaption>
 </figure>
-<pre><code>&lt;script src="{{site}}/hg-places.js" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<p>
+  La dirección lleva una versión, y el hash de integridad fija su contenido exacto: el navegador
+  ejecuta el script solo si es justo ese archivo. Una versión nueva recibe una dirección nueva; las
+  antiguas quedan como están.
+</p>
 <div class="table">
   <table>
     <thead>

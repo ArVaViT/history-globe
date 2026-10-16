@@ -1,0 +1,25 @@
+# Dependency updates (security audit, 15.10.2026). A weekly look, grouped so a week is one PR
+# per ecosystem; security fixes come as soon as they are published, whatever the schedule.
+# Every PR still passes `pnpm gate` before it is merged (AGENTS.md).
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      dev-tools:
+        dependency-type: development
+      app:
+        dependency-type: production
+    ignore:
+      # Pinned on purpose (ADR 0004): an upgrade is a PR of its own that passes the visual suite.
+      - dependency-name: maplibre-gl
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ["*"]

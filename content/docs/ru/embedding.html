@@ -263,7 +263,11 @@ window.addEventListener("message", (e) =&gt; {
   </div>
   <figcaption>Живой пример: эти названия связал скрипт на этой странице.</figcaption>
 </figure>
-<pre><code>&lt;script src="{{site}}/hg-places.js" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<p>
+  В адресе стоит версия, а хеш целостности закрепляет её точное содержимое: браузер выполнит скрипт,
+  только если это ровно тот самый файл. Новая версия получает новый адрес; старые остаются как есть.
+</p>
 <div class="table">
   <table>
     <thead>

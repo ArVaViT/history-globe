@@ -267,7 +267,12 @@ window.addEventListener("message", (e) =&gt; {
     teksty po angielsku i rosyjsku).
   </figcaption>
 </figure>
-<pre><code>&lt;script src="{{site}}/hg-places.js" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<p>
+  Adres zawiera wersję, a skrót integralności utrwala jej dokładną zawartość: przeglądarka wykona
+  skrypt tylko wtedy, gdy jest to dokładnie ten plik. Nowa wersja dostaje nowy adres; stare
+  pozostają bez zmian.
+</p>
 <div class="table">
   <table>
     <thead>
