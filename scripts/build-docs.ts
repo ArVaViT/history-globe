@@ -388,6 +388,13 @@ function counts(): Record<string, string> {
   for (const [k, v] of Object.entries(n)) if (v !== undefined) out[k] = String(v);
   out.built = manifest?.built_at?.slice(0, 10) ?? "";
   out.site = site || "https://&lt;globe-host&gt;";
+  // The places-in-any-text script as other sites load it: its newest version's own address
+  // and the hash that pins its content (scripts/hg-places-releases.json).
+  const releases = JSON.parse(
+    readFileSync(join(root, "scripts/hg-places-releases.json"), "utf8"),
+  ) as { latest: string; versions: Record<string, string> };
+  out.hgPlacesSrc = `${out.site}/hg-places-${releases.latest}.js`;
+  out.hgPlacesIntegrity = releases.versions[releases.latest] ?? "";
   return out;
 }
 

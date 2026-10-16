@@ -264,7 +264,11 @@ window.addEventListener("message", (e) =&gt; {
     angličtině a ruštině).
   </figcaption>
 </figure>
-<pre><code>&lt;script src="{{site}}/hg-places.js" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<p>
+  Adresa nese verzi a otisk integrity pevně určuje její přesný obsah: prohlížeč skript spustí, jen
+  když jde přesně o ten soubor. Nová verze dostane novou adresu; staré zůstávají, jak jsou.
+</p>
 <div class="table">
   <table>
     <thead>

@@ -262,7 +262,12 @@ window.addEventListener("message", (e) =&gt; {
   </div>
   <figcaption>A live example: these names were linked by the script on this page.</figcaption>
 </figure>
-<pre><code>&lt;script src="{{site}}/hg-places.js" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<p>
+  The address carries a version, and the integrity hash pins its exact content: the browser runs the
+  script only if it is that very file. A new version gets a new address; the old ones stay as they
+  are.
+</p>
 <div class="table">
   <table>
     <thead>

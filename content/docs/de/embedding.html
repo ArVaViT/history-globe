@@ -272,7 +272,12 @@ window.addEventListener("message", (e) =&gt; {
     liest Texte auf Englisch und Russisch).
   </figcaption>
 </figure>
-<pre><code>&lt;script src="{{site}}/hg-places.js" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<p>
+  Die Adresse trägt eine Version, und der Integritäts-Hash legt ihren genauen Inhalt fest: Der
+  Browser führt das Skript nur aus, wenn es genau diese Datei ist. Eine neue Version bekommt eine
+  neue Adresse; die alten bleiben, wie sie sind.
+</p>
 <div class="table">
   <table>
     <thead>
