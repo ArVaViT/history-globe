@@ -240,6 +240,8 @@ function page(o: {
   image?: string;
   /** The front page: the documentation's palette and one sans face, the way into the map in the bar. */
   home?: boolean;
+  /** A thin page (a place with no article yet): open to readers, kept out of search. */
+  noindex?: boolean;
 }): string {
   const up = "../".repeat(o.depth);
   // The same page in every language: the path after the language.
@@ -268,7 +270,7 @@ function page(o: {
     <meta name="theme-color" content="${o.home ? "#fcfbf8" : "#fbf8f2"}" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="${o.home ? "#0c1218" : "#0f141b"}" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="${up}favicon.svg" type="image/svg+xml" />
-    <title>${esc(o.title)} | History Globe</title>${meta}${
+    <title>${esc(o.title)} | History Globe</title>${o.noindex ? '\n    <meta name="robots" content="noindex, follow" />' : ""}${meta}${
       o.home
         ? `\n    <link rel="preload" href="${up}docs/fonts/golos-text-${o.l === "ru" || o.l === "uk" ? "cyrillic" : "latin"}-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     <script>
@@ -377,11 +379,13 @@ const VERSES_ON_PAGE = 30;
 // Files are rewritten only when they change, and stale ones removed at the end: a full
 // rewrite of 2500 pages on every build kept Spotlight reindexing them (mds_stores).
 const urls: string[] = [];
-const write = (path: string, html: string) => {
+/** Pages kept out of the sitemap (thin ones, marked noindex) but still written and kept. */
+const unlisted: string[] = [];
+const write = (path: string, html: string, listed = true) => {
   const file = join(pub, path, "index.html");
   mkdirSync(join(pub, path), { recursive: true });
   if (!existsSync(file) || readFileSync(file, "utf8") !== html) writeFileSync(file, html);
-  urls.push(`${path}/`);
+  (listed ? urls : unlisted).push(`${path}/`);
 };
 
 /** A page for every place with verses: its card as a page, with its article and photo. */
@@ -509,7 +513,9 @@ function placePages(l: Lang): void {
           url: `${site}/${path}/`,
           hasMap: `${site}/?place=${p.id}&locale=${l}`,
         },
+        noindex: !art,
       }),
+      !!art,
     );
   }
 }
@@ -1120,7 +1126,7 @@ The map is an app at ${base}/ (state lives in the address: ?year=, ?place=, ?tou
 }
 
 // Pages of places or tours that are gone.
-const kept = new Set(urls.map((u) => u.replace(/\/$/, "")));
+const kept = new Set([...urls, ...unlisted].map((u) => u.replace(/\/$/, "")));
 for (const l of LANGS)
   for (const kind of ["place", "tour"]) {
     const dir = join(pub, l, kind);
@@ -1142,5 +1148,5 @@ ${["", ...LANGS.flatMap((l) => DOC_PAGES.map((p) => docsPath(l, p))), ...urls].m
   );
 } else rmSync(sitemap, { force: true });
 console.log(
-  `pages: ${String(urls.length)} (${String(shown.length)} places and ${String(content.tours.length)} tours in ${String(LANGS.length)} languages)${site ? ", sitemap.xml" : "; no SITE_URL, so no sitemap or canonical links"}`,
+  `pages: ${String(urls.length + unlisted.length)}, ${String(unlisted.length)} of them thin and kept out of search (${String(shown.length)} places and ${String(content.tours.length)} tours in ${String(LANGS.length)} languages)${site ? ", sitemap.xml" : "; no SITE_URL, so no sitemap or canonical links"}`,
 );
