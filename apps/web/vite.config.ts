@@ -122,51 +122,110 @@ function publicFolderIndex(): Plugin {
   };
 }
 
-// What a reader's "save for use offline" fetches (public/sw.js): the app itself, MapLibre,
-// the data and the photos, with their size; not the static pages, docs or API, which are
-// for search engines and other sites. Written once the bundle and the vendor files are out.
+/**
+ * The files a reader's "save for use offline" fetches besides the build itself (public/sw.js,
+ * src/offline.ts): the data and the photos, the app's manifest and icons, with their size.
+ * Not the static pages, docs or API, which are for search engines and other sites.
+ */
+export function savedFiles(publicDir: string): { files: string[]; bytes: number } {
+  const files: string[] = [];
+  let bytes = 0;
+  const walk = (dir: string) => {
+    for (const name of readdirSync(dir).sort()) {
+      const path = join(dir, name);
+      if (statSync(path).isDirectory()) walk(path);
+      // The states' later half (*-late) is kept only to rebuild the data: the app reads
+      // polities-all instead (docs/data-release.md).
+      else if (!name.endsWith(".map") && !name.includes("-late.")) {
+        files.push(relative(publicDir, path).split("\\").join("/"));
+        bytes += statSync(path).size;
+      }
+    }
+  };
+  if (existsSync(join(publicDir, "data"))) walk(join(publicDir, "data"));
+  for (const name of ["manifest.webmanifest", "favicon.svg", "icon-192.png"])
+    if (existsSync(join(publicDir, name))) {
+      files.push(name);
+      bytes += statSync(join(publicDir, name)).size;
+    }
+  return { files, bytes };
+}
+
+const OFFLINE_FILES = "virtual:offline-files";
+
+/**
+ * The list of those files as a module, `import("virtual:offline-files")` in src/offline.ts:
+ * a chunk of its own, fetched when a reader opens the save, not a file at a known address.
+ * The build's own files (assets/, vendor/) are not in it, since their names are not known
+ * until the bundle is written: the worker carries them (offlineList below).
+ */
+export function offlineFiles(): Plugin {
+  let publicDir = "public";
+  return {
+    name: "offline-files",
+    configResolved(config) {
+      publicDir = config.publicDir;
+    },
+    resolveId(id) {
+      return id === OFFLINE_FILES ? `\0${OFFLINE_FILES}` : undefined;
+    },
+    load(id) {
+      if (id !== `\0${OFFLINE_FILES}`) return undefined;
+      const { files, bytes } = savedFiles(publicDir);
+      return `export const bytes = ${String(bytes)};\nexport const files = ${JSON.stringify(files)};\n`;
+    },
+  };
+}
+
+/**
+ * The worker (public/sw.js) gets the build's own files written into it once the bundle and
+ * the vendor files are out: what a save keeps with the data, and what it keeps of an
+ * earlier deploy's files (prune). It also gets the build's id: a deploy changes the
+ * worker's bytes, so browsers install it anew.
+ */
 function offlineList(): Plugin {
   let outDir = "dist";
+  let publicDir = "public";
   return {
     name: "offline-list",
     apply: "build",
     configResolved(config) {
       outDir = resolve(config.root, config.build.outDir);
+      publicDir = config.publicDir;
     },
     closeBundle() {
-      const files: string[] = [];
+      const built: string[] = [];
       let bytes = 0;
       const walk = (dir: string) => {
-        for (const name of readdirSync(dir)) {
+        for (const name of readdirSync(dir).sort()) {
           const path = join(dir, name);
           if (statSync(path).isDirectory()) walk(path);
-          // The states' later half (*-late) is kept only to rebuild the data: the app reads
-          // polities-all instead (docs/data-release.md).
-          else if (!name.endsWith(".map") && !name.includes("-late.")) {
-            files.push(relative(outDir, path).split("\\").join("/"));
+          else if (!name.endsWith(".map")) {
+            built.push(relative(outDir, path).split("\\").join("/"));
             bytes += statSync(path).size;
           }
         }
       };
-      for (const dir of ["assets", "vendor", "data"])
+      for (const dir of ["assets", "vendor"])
         if (existsSync(join(outDir, dir))) walk(join(outDir, dir));
-      for (const name of ["manifest.webmanifest", "favicon.svg", "icon-192.png"])
-        if (existsSync(join(outDir, name))) {
-          files.push(name);
-          bytes += statSync(join(outDir, name)).size;
-        }
-      const list = JSON.stringify({ bytes, files });
-      writeFileSync(join(outDir, "offline.json"), list);
-      // The worker carries the build's id: a deploy changes its bytes, so browsers install it
-      // anew and it drops the built files of the deploy before (public/sw.js prune).
       const sw = join(outDir, "sw.js");
-      if (existsSync(sw)) {
-        const id = createHash("sha256").update(list).digest("hex").slice(0, 12);
-        writeFileSync(
-          sw,
-          readFileSync(sw, "utf8").replace('const BUILD = "dev";', `const BUILD = "${id}";`),
-        );
+      if (!existsSync(sw)) return;
+      const saved = savedFiles(publicDir);
+      const id = createHash("sha256")
+        .update(JSON.stringify([built, saved.files, bytes + saved.bytes]))
+        .digest("hex")
+        .slice(0, 12);
+      let text = readFileSync(sw, "utf8");
+      const lines: [string, string][] = [
+        ['const BUILD = "dev";', `const BUILD = "${id}";`],
+        ["const BUILT = [];", `const BUILT = ${JSON.stringify(built)};`],
+        ["const BUILT_BYTES = 0;", `const BUILT_BYTES = ${String(bytes)};`],
+      ];
+      for (const [from, to] of lines) {
+        if (!text.includes(from)) throw new Error(`offline-list: sw.js has no "${from}"`);
+        text = text.replace(from, to);
       }
+      writeFileSync(sw, text);
     },
   };
 }
@@ -235,6 +294,7 @@ export default defineConfig({
     maplibreVendor(),
     sourceMapsAside(),
     publicFolderIndex(),
+    offlineFiles(),
     offlineList(),
     titleFont(),
     originTrial(),

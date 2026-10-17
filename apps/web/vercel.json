@@ -63,7 +63,7 @@
       ]
     },
     {
-      "source": "/(sw.js|offline.json)",
+      "source": "/sw.js",
       "headers": [
         {
           "key": "Cache-Control",
