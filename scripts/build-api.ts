@@ -28,6 +28,8 @@ import { openApi, violations } from "./api-openapi.ts";
 
 const root = join(import.meta.dirname, "..");
 const data = join(root, "apps/web/public/data");
+/** The questions in every language in one file (build-content.ts). */
+const build = join(root, "apps/web/build");
 const out = join(root, "apps/web/public/api/v1");
 
 if (!existsSync(join(data, "places.geojson")) || !existsSync(join(data, "content.json"))) {
@@ -102,6 +104,8 @@ const CREDIT = [
   // Added with people.json and the gazetteer ids (2026-10): appended, the earlier lines unmoved.
   "People and the verses that name them: STEPBible TIPNR by Tyndale House Cambridge (www.STEPBible.org), CC BY 4.0, modified",
   "Pleiades ids: Pleiades (https://pleiades.stoa.org), CC BY 3.0; Wikidata ids: Wikidata (CC0), as OpenBible links them",
+  // The one file under another licence (ADR 0016): appended, the earlier lines unmoved.
+  "Except questions.json: the answers are History Globe's own texts, CC BY-NC-ND 4.0 (https://creativecommons.org/licenses/by-nc-nd/4.0/): quote and link them with credit, do not change, translate or republish them",
 ];
 
 // Fresh each build: a book or file that is gone must not linger.
@@ -244,8 +248,8 @@ write(
 );
 
 // The questions (content/questions, checked by build-content.ts): the /q/ pages as data.
-const questions = existsSync(join(data, "questions.json"))
-  ? (JSON.parse(readFileSync(join(data, "questions.json"), "utf8")) as {
+const questions = existsSync(join(build, "questions.json"))
+  ? (JSON.parse(readFileSync(join(build, "questions.json"), "utf8")) as {
       id: string;
       question: Record<string, string>;
       answer: Record<string, string[]>;
@@ -427,7 +431,7 @@ write("index.json", {
     "events.json": "dated events; ref where the Bible tells the event",
     "battles.json": "battles and sieges: place, year, sides, outcome; ref where the Bible tells it",
     "questions.json":
-      "questions people ask, answered in each language, with the map's view and sources",
+      "questions people ask, answered in each language, with the map's view and sources; the answers are CC BY-NC-ND 4.0, not CC BY (see credit)",
     "ancient.json":
       "place id → what ancient writers outside the Bible say of it: author, work, passage, url, summary",
     "tours.json":

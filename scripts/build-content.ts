@@ -5,7 +5,7 @@
  *
  * Usage: node scripts/build-content.ts  (after `python3 pipeline/build_data.py`)
  */
-import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { parse } from "yaml";
 import {
@@ -32,7 +32,7 @@ import {
   LocaleNamesFile,
   NAME_LOCALES,
 } from "../packages/model/src/content.ts";
-import type { Locale } from "../packages/model/src/time.ts";
+import { LOCALES, type Locale } from "../packages/model/src/time.ts";
 import { inheritLife } from "../packages/model/src/place-life-links.ts";
 import { buildPolities } from "./build-polities.ts";
 import { packChapterYears } from "../packages/model/src/chapter-years.ts";
@@ -47,6 +47,15 @@ await loadAllLocaleData();
 
 const root = join(import.meta.dirname, "..");
 const out = join(root, "apps/web/public/data");
+/**
+ * The build's working files, never served (apps/web/build is outside public/): the articles
+ * and the questions with every language in one file, for the pages (build-pages.ts), the
+ * API (build-api.ts) and the database export (export-db.ts). The app reads the articles one
+ * language a file (data/articles/<language>.json, src/articles.ts): a reader fetches the
+ * language shown (ADR 0015), and the whole book is not one file at a known address.
+ */
+const build = join(root, "apps/web/build");
+mkdirSync(build, { recursive: true });
 
 function load(path: string): unknown {
   return parse(readFileSync(join(root, path), "utf8"));
@@ -830,12 +839,38 @@ const release: ContentRelease = {
     return by;
   }, {}),
 };
-writeFileSync(join(out, "questions.json"), JSON.stringify(questionsOut));
+writeFileSync(join(build, "questions.json"), JSON.stringify(questionsOut));
 writeFileSync(join(out, "ancient-authors.json"), JSON.stringify(ancientByPlace));
 writeFileSync(
-  join(out, "articles.json"),
+  join(build, "articles.json"),
   JSON.stringify(Object.fromEntries(articlesOut.map((a) => [a.place, a]))),
 );
+// One language a file for the app: the article's title and body in that language, or in
+// English where the language has none (the card falls back to English as before); the
+// Russian source lines only with the Russian.
+const inLanguage = <T>(texts: Readonly<Record<string, T>>, l: Locale): Record<string, T> =>
+  texts[l] === undefined ? { en: texts.en as T } : { [l]: texts[l] };
+rmSync(join(out, "articles"), { recursive: true, force: true });
+mkdirSync(join(out, "articles"));
+for (const l of LOCALES)
+  writeFileSync(
+    join(out, "articles", `${l}.json`),
+    JSON.stringify(
+      Object.fromEntries(
+        articlesOut.map(({ sources_ru, ...a }) => [
+          a.place,
+          {
+            ...a,
+            title: inLanguage(a.title, l),
+            body: inLanguage(a.body, l),
+            ...(l === "ru" ? { sources_ru } : {}),
+          },
+        ]),
+      ),
+    ),
+  );
+// Written to the data by earlier builds, whole: not served any more.
+for (const name of ["articles.json", "questions.json"]) rmSync(join(out, name), { force: true });
 // The people's names in the other languages go into people.json (pipeline/people), beside
 // the Russian slot: names.<code>.<TIPNR id>.
 const peoplePath = join(out, "people.json");

@@ -48,7 +48,8 @@ in the repository and off third-party hosts as the product grows ("избавл�
   Vercel token kept in 1Password and passed with `op run`. Moving the release to Supabase Storage or R2 later
   changes only `DATA_URL`.
 - The build runs with `SITE_URL=https://historyglobe.app`, so the static pages carry
-  canonical links and a sitemap. The offline worker (`sw.js`) and its list (`offline.json`)
-  are served with `no-cache`, so a deploy reaches readers who saved the globe.
+  canonical links and a sitemap. The offline worker (`sw.js`) is served with `no-cache`, so
+  a deploy reaches readers who saved the globe; the list of files a save fetches is a chunk
+  of the build, not a file of its own (vite.config.ts, `offlineFiles`).
 - Before every deploy: the production smoke check (`vite preview` + the map draws and
   "In view" fills, ADR 0011) on the very build that is deployed.

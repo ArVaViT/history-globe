@@ -63,7 +63,7 @@
       ]
     },
     {
-      "source": "/(sw.js|offline.json)",
+      "source": "/sw.js",
       "headers": [
         {
           "key": "Cache-Control",
@@ -133,6 +133,10 @@
         {
           "key": "Permissions-Policy",
           "value": "camera=(), microphone=(), geolocation=(), payment=()"
+        },
+        {
+          "key": "tdm-reservation",
+          "value": "1"
         }
       ]
     },

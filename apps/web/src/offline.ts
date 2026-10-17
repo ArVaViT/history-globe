@@ -55,14 +55,52 @@ export function reliefTiles(template = TERRAIN_TILES): string[] {
   return [...urls];
 }
 
-/** The size of a save, in bytes: the files the build lists, and the relief at its average. */
+/** The worker in control of the page, or null when none registers (a private window). */
+async function activeWorker(): Promise<ServiceWorker | null> {
+  // A worker that never registered leaves `ready` pending for good.
+  const registration = await Promise.race([
+    navigator.serviceWorker.ready,
+    new Promise<null>((resolve) => {
+      setTimeout(() => {
+        resolve(null);
+      }, 5000);
+    }),
+  ]);
+  return registration?.active ?? null;
+}
+
+/**
+ * The files a save fetches besides the build itself (the data, the photos, the manifest),
+ * with their size: a chunk of its own, written by the build (vite.config.ts, offlineFiles)
+ * and fetched only here.
+ */
+const savedFiles = () => import("virtual:offline-files");
+
+/** The size of the build's own files, which only the worker knows (public/sw.js). */
+function builtSize(worker: ServiceWorker): Promise<number> {
+  return new Promise((resolve, reject) => {
+    const channel = new MessageChannel();
+    channel.port1.onmessage = (e: MessageEvent<{ bytes?: number }>) => {
+      resolve(e.data.bytes ?? 0);
+    };
+    setTimeout(() => {
+      reject(new Error("the worker did not answer"));
+    }, 5000);
+    worker.postMessage({ type: "size" }, [channel.port2]);
+  });
+}
+
+/**
+ * The size of a save, in bytes: the build's own files, the files the build lists, and the
+ * relief at its average.
+ */
 export async function saveSize(): Promise<number | null> {
   try {
-    const r = await fetch(`${import.meta.env.BASE_URL}offline.json`, { cache: "no-store" });
-    if (!r.ok) return null;
-    const { bytes } = (await r.json()) as { bytes: number };
+    const worker = await activeWorker();
+    if (!worker) return null;
+    const [{ bytes }, built] = await Promise.all([savedFiles(), builtSize(worker)]);
     // About 130 kB a tile: 221 of the 224 came back, 29 MB; three are open sea (404).
-    return bytes + reliefTiles().length * 130_000;
+    return built + bytes + reliefTiles().length * 130_000;
   } catch {
     return null;
   }
@@ -75,17 +113,12 @@ export type SaveProgress =
 
 /** Asks the worker to save everything; progress comes back until it is done. */
 export async function saveOffline(onProgress: (p: SaveProgress) => void): Promise<void> {
-  // A worker that never registered (a private window) leaves `ready` pending for good.
-  const registration = await Promise.race([
-    navigator.serviceWorker.ready,
-    new Promise<null>((resolve) =>
-      setTimeout(() => {
-        resolve(null);
-      }, 5000),
-    ),
-  ]);
-  const worker = registration?.active;
-  if (!worker) {
+  const worker = await activeWorker();
+  const files = await savedFiles().then(
+    (m) => m.files,
+    () => null,
+  );
+  if (!worker || !files) {
     onProgress({ state: "error" });
     return;
   }
@@ -105,6 +138,6 @@ export async function saveOffline(onProgress: (p: SaveProgress) => void): Promis
       }
     };
     navigator.serviceWorker.addEventListener("message", listen);
-    worker.postMessage({ type: "save", tiles: reliefTiles() });
+    worker.postMessage({ type: "save", files, tiles: reliefTiles() });
   });
 }

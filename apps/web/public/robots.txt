@@ -1,7 +1,11 @@
-# History Globe: a free educational site with open data (CC BY 4.0). Every crawler is
-# welcome, search engines and AI assistants alike (docs/launch-readiness.md, section 4).
-# The AI crawlers are named so that their welcome is explicit, not left to a default;
-# to keep the content out of AI training, change their Allow to Disallow.
+# History Globe: a free educational site. Search engines and the AI assistants that answer
+# with a citation are welcome; the crawlers that gather text to train models are not
+# (owner's decision of 2026-10-17, docs/launch-readiness.md, section 4): readers may reach
+# the content through an assistant that cites the site, but the articles and their
+# translations (CC BY-NC-ND 4.0, LICENSE) are not training data. The Content-Signal line
+# is Cloudflare's content signals (contentsignals.org): search and answer engines yes,
+# training no. It is the machine-readable form of the text-and-data-mining reservation
+# in LICENSE (Article 4(3) of EU Directive 2019/790).
 
 # Search and answer engines that cite their sources.
 User-agent: OAI-SearchBot
@@ -12,22 +16,38 @@ User-agent: PerplexityBot
 User-agent: Perplexity-User
 User-agent: DuckAssistBot
 User-agent: MistralAI-User
+User-agent: Meta-ExternalFetcher
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 
 # Crawlers that gather text for training models.
 User-agent: GPTBot
 User-agent: ClaudeBot
 User-agent: anthropic-ai
+User-agent: Claude-Web
 User-agent: Google-Extended
 User-agent: Applebot-Extended
 User-agent: CCBot
 User-agent: meta-externalagent
+User-agent: FacebookBot
 User-agent: Amazonbot
 User-agent: cohere-ai
-Allow: /
+User-agent: Bytespider
+User-agent: Diffbot
+User-agent: AI2Bot
+User-agent: omgili
+User-agent: omgilibot
+User-agent: Webzio-Extended
+User-agent: PanguBot
+User-agent: Timpibot
+User-agent: ImagesiftBot
+User-agent: Kangaroo Bot
+User-agent: ICC-Crawler
+Disallow: /
 
 # Everyone else.
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 
 Sitemap: https://historyglobe.app/sitemap.xml

@@ -13,6 +13,8 @@ import { join } from "node:path";
 
 const root = join(import.meta.dirname, "..");
 const data = join(root, "apps/web/public/data");
+/** The articles in every language in one file (build-content.ts). */
+const build = join(root, "apps/web/build");
 const out = join(root, "db/seed");
 mkdirSync(out, { recursive: true });
 
@@ -257,7 +259,9 @@ table(
 );
 
 // --- articles, events, tours ---------------------------------------------------------
-const articles = Object.values(read<Record<string, Json>>("articles.json"));
+const articles = Object.values(
+  JSON.parse(readFileSync(join(build, "articles.json"), "utf8")) as Record<string, Json>,
+);
 table(
   "article",
   ["id", "place_id", "status", "sources"],

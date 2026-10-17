@@ -90,7 +90,7 @@ export function openApi(version: string): object {
       }),
       "/questions.json": get(
         "Questions people ask",
-        "Answered in every language, with the view of the map that shows the answer.",
+        "Answered in every language, with the view of the map that shows the answer. The answers are History Globe's own texts under CC BY-NC-ND 4.0 (https://creativecommons.org/licenses/by-nc-nd/4.0/), not CC BY: quote and link them with credit; do not change, translate or republish them.",
         { type: "array", items: ref("Question") },
       ),
       "/ancient.json": get(

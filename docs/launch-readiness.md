@@ -87,12 +87,19 @@ launch), **owner** (needs the owner's decision or account).
   ("checked" vs "reviewed by a scholar") keeps the line honest.
 - **Quotations come from public-domain texts only** (Synodal, KJV), never from a
   copyrighted translation, and are verified word for word by the fact-check passes.
-- **AI crawlers (owner).** A public, free educational site gains from being cited by AI
-  assistants. `robots.txt` names the AI crawlers explicitly (2026-10-17) and allows them
-  all, in two groups: answer engines that cite their sources (OAI-SearchBot, Claude-SearchBot,
-  PerplexityBot, …) and crawlers that gather training text (GPTBot, ClaudeBot, CCBot,
-  Google-Extended, …). If the owner prefers to keep the content out of AI training, the
-  second group's `Allow` becomes `Disallow`, leaving search and answer engines in.
+- **AI crawlers (owner, 2026-10-17).** A public, free educational site gains from being
+  cited by AI assistants, and the owner's line is: the content reaches readers through the
+  site and through assistants that cite it, and it is not training data. `robots.txt` names
+  the AI crawlers explicitly in two groups: answer engines that cite their sources
+  (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, …) are
+  allowed; crawlers that gather training text (GPTBot, ClaudeBot, CCBot, Google-Extended,
+  Applebot-Extended, meta-externalagent, Amazonbot, Bytespider, …) are disallowed. The
+  `Content-Signal: search=yes, ai-input=yes, ai-train=no` line (Cloudflare's content
+  signals) says the same to crawlers that read it, and with the `tdm-reservation` header
+  (`vercel.json`) is the machine-readable form of the text-and-data-mining reservation in
+  `LICENSE` (ADR 0016). Google's search and Bing are not affected: Googlebot and bingbot
+  are not in either group. A crawler that ignores `robots.txt` is not stopped by it; the
+  firewall is the next step (ADR 0016, consequences).
 - **Agents (done 2026-10-14).** `llms.txt` lists every language's pages, docs and the API;
   the place pages carry `Place` structured data with their address and the map. In a
   browser with WebMCP (Chrome's origin trial), the map registers two read-only tools,
