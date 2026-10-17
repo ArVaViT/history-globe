@@ -457,8 +457,11 @@ def place_kind(types: list[str] | None) -> str:
     of the alphabet, not of weight, so "island" comes first for Elath and Ophir, where the
     Bible's "isles" are far coastlands: a place that is a settlement too is not called an
     island (Crete, Cyprus, Patmos are islands alone, Caphtor an island or a land): it is
-    the land it names, or else the town."""
-    t = types or ["place"]
+    the land it names, or else the town. "special" is not a kind: OpenBible adds it when one
+    identification reads the name as no place at all ("not a place (symbolic)", "not a
+    proper name"), and it sorts before "spring" and "valley": En-hakkore is a spring and the
+    Valley of Salt a valley, whatever else is said of them."""
+    t = [k for k in types or [] if k != "special"] or ["place"]
     if t[0] == "island" and "settlement" in t:
         return "region" if "region" in t else "settlement"
     return t[0]

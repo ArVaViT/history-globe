@@ -200,6 +200,14 @@ class PlaceKindTest(unittest.TestCase):
         self.assertEqual(place_kind(["island"]), "island")
         self.assertEqual(place_kind(None), "place")
 
+    def test_special_is_not_a_kind(self):
+        self.assertEqual(place_kind(["special", "spring"]), "spring")
+        self.assertEqual(place_kind(["special", "valley"]), "valley")
+        self.assertEqual(place_kind(["settlement", "special"]), "settlement")
+        self.assertEqual(place_kind(["special", "stone heap"]), "stone heap")
+        self.assertEqual(place_kind(["island", "region", "settlement", "special"]), "region")
+        self.assertEqual(place_kind(["special"]), "place")
+
 
 if __name__ == "__main__":
     unittest.main()
