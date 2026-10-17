@@ -28,6 +28,8 @@ import { openApi, violations } from "./api-openapi.ts";
 
 const root = join(import.meta.dirname, "..");
 const data = join(root, "apps/web/public/data");
+/** The questions in every language in one file (build-content.ts). */
+const build = join(root, "apps/web/build");
 const out = join(root, "apps/web/public/api/v1");
 
 if (!existsSync(join(data, "places.geojson")) || !existsSync(join(data, "content.json"))) {
@@ -244,8 +246,8 @@ write(
 );
 
 // The questions (content/questions, checked by build-content.ts): the /q/ pages as data.
-const questions = existsSync(join(data, "questions.json"))
-  ? (JSON.parse(readFileSync(join(data, "questions.json"), "utf8")) as {
+const questions = existsSync(join(build, "questions.json"))
+  ? (JSON.parse(readFileSync(join(build, "questions.json"), "utf8")) as {
       id: string;
       question: Record<string, string>;
       answer: Record<string, string[]>;

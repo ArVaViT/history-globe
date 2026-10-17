@@ -258,7 +258,7 @@ export function App() {
             data,
             site: new URL(import.meta.env.BASE_URL, window.location.origin).href,
             language: () => i18n.language,
-            article: (id) => import("./articles").then((m) => m.loadArticle(id)),
+            article: (id, l) => import("./articles").then((m) => m.loadArticle(id, l)),
           })
         : undefined,
     [data, i18n],

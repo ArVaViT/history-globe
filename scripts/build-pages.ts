@@ -48,6 +48,8 @@ const testamentOf = (stops: readonly { readonly ref: string }[]): "whole" | "ot"
 };
 const pub = join(root, "apps/web/public");
 const data = join(pub, "data");
+/** The articles and questions in every language, one file each (build-content.ts). */
+const build = join(root, "apps/web/build");
 const site = process.env.SITE_URL?.replace(/\/+$/, "") ?? "";
 
 type Lang = SiteLocale;
@@ -119,8 +121,8 @@ const ancientAuthors = (
 >;
 /** Questions people ask (content/questions, checked by build-content.ts). */
 const questions = (
-  existsSync(join(data, "questions.json"))
-    ? inEveryLanguage(JSON.parse(readFileSync(join(data, "questions.json"), "utf8")))
+  existsSync(join(build, "questions.json"))
+    ? inEveryLanguage(JSON.parse(readFileSync(join(build, "questions.json"), "utf8")))
     : []
 ) as {
   id: string;
@@ -133,8 +135,8 @@ const questions = (
   status: "checked" | "reviewed";
   reviewer?: string;
 }[];
-const articles = existsSync(join(data, "articles.json"))
-  ? (inEveryLanguage(JSON.parse(readFileSync(join(data, "articles.json"), "utf8"))) as Record<
+const articles = existsSync(join(build, "articles.json"))
+  ? (inEveryLanguage(JSON.parse(readFileSync(join(build, "articles.json"), "utf8"))) as Record<
       string,
       Article
     >)

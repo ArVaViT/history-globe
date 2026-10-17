@@ -41,7 +41,8 @@ export interface AgentContext {
   readonly site: string;
   /** The language the map is shown in: the answer's language when the agent names none. */
   readonly language: () => string;
-  readonly article: (placeId: string) => Promise<Article | undefined>;
+  /** The place's article in that language (English where it has none). */
+  readonly article: (placeId: string, locale: SiteLocale) => Promise<Article | undefined>;
 }
 
 const SEARCH_LIMIT = 10;
@@ -134,7 +135,7 @@ export async function placeResult(ctx: AgentContext, input: Record<string, unkno
   if (!p) return { error: `No place "${key}": find its id with search_places` };
   // The book names of the language asked for (fetched once, as for a reader of it).
   await loadLocaleData(l);
-  const art = await ctx.article(p.id).catch(() => undefined);
+  const art = await ctx.article(p.id, l).catch(() => undefined);
   const body = art ? (art.body[l] ?? art.body.en) : undefined;
   return {
     id: p.id,
