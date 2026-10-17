@@ -4,6 +4,8 @@ import {
   mkdirSync,
   readdirSync,
   readFileSync,
+  renameSync,
+  rmSync,
   statSync,
   writeFileSync,
 } from "node:fs";
@@ -17,7 +19,7 @@ import { defineConfig, type Plugin } from "vite";
 // MapLibre 6 ships three ES modules: the library, its worker, and a module both share.
 // It finds the worker next to its own file through a URL computed at run time, which a
 // bundler cannot follow: bundled, the worker was a 404 in production and nothing was
-// ever drawn. So the build ships MapLibre's own files unchanged under vendor/ and the
+// ever drawn. So the build ships MapLibre's own files as they are under vendor/ and the
 // app imports the library from there; the shared module then loads once, for the page
 // and the worker alike. In development Vite serves them from node_modules as they are.
 const require = createRequire(import.meta.url);
@@ -39,10 +41,54 @@ function maplibreVendor(): Plugin {
     writeBundle() {
       const to = join(outDir, VENDOR);
       mkdirSync(to, { recursive: true });
-      // The source maps too: each file ends with a sourceMappingURL.
-      for (const f of [...FILES, ...FILES.map((name) => `${name}.map`)])
-        copyFileSync(join(maplibreDist, f), join(to, f));
+      // Without their source maps (sourceMapsAside below): each file ends with a
+      // sourceMappingURL line, dropped so that no browser asks for a map that is not there.
+      for (const f of FILES)
+        writeFileSync(
+          join(to, f),
+          readFileSync(join(maplibreDist, f), "utf8").replace(
+            /\n\/\/# sourceMappingURL=\S+\s*$/,
+            "\n",
+          ),
+        );
       copyFileSync(join(maplibreDist, "../LICENSE.txt"), join(to, "LICENSE.txt"));
+    },
+  };
+}
+
+/**
+ * The source maps are not published: the code is all rights reserved (ADR 0014), and a map
+ * is the source with its comments. `build.sourcemap: "hidden"` writes them without a
+ * sourceMappingURL in the chunks; this moves them out of dist/ to apps/web/maps/ (not in
+ * git), where scripts/check-budget.ts reads which language a chunk belongs to.
+ */
+function sourceMapsAside(): Plugin {
+  let outDir = "dist";
+  let mapsDir = "maps";
+  return {
+    name: "source-maps-aside",
+    apply: "build",
+    configResolved(config) {
+      outDir = resolve(config.root, config.build.outDir);
+      mapsDir = resolve(config.root, "maps");
+    },
+    closeBundle: {
+      order: "pre",
+      handler() {
+        rmSync(mapsDir, { recursive: true, force: true });
+        const walk = (dir: string) => {
+          for (const name of readdirSync(dir)) {
+            const path = join(dir, name);
+            if (statSync(path).isDirectory()) walk(path);
+            else if (name.endsWith(".map")) {
+              const to = join(mapsDir, relative(outDir, path));
+              mkdirSync(dirname(to), { recursive: true });
+              renameSync(path, to);
+            }
+          }
+        };
+        walk(outDir);
+      },
     },
   };
 }
@@ -187,6 +233,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     maplibreVendor(),
+    sourceMapsAside(),
     publicFolderIndex(),
     offlineList(),
     titleFont(),
@@ -194,7 +241,8 @@ export default defineConfig({
   ],
   build: {
     target: "es2023",
-    sourcemap: true,
+    // Written for check-budget.ts, never published (sourceMapsAside).
+    sourcemap: "hidden",
     rollupOptions: {
       external: ["maplibre-gl"],
       // Relative to the chunk in assets/, so the app works under any base path.
