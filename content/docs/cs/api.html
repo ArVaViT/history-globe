@@ -24,7 +24,18 @@ description: Místa, verše, které je jmenují, události a trasy jako soubory 
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "wikidata": "Q379652", "pleiades": "501482",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
+
+<h2>Kdo a kde v kapitole</h2>
+<p>
+  Jeden soubor na knihu: každá kapitola s místy a lidmi, které jmenuje. Lidé jsou určeni jako v
+  TIPNR od STEPBible; jejich jména a první verš jsou v <code>people.json</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/chapters/Acts.json
+
+{ "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
+               "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
 <h2>Všechny soubory</h2>
 <div class="table">
@@ -44,7 +55,8 @@ description: Místa, verše, které je jmenují, události a trasy jako soubory 
         <td><code>/api/v1/places.json</code></td>
         <td>
           každé místo: id, názvy, druh, bod, kolik veršů je jmenuje, jeho stránku (u místa, které
-          nějaký verš jmenuje)
+          nějaký verš jmenuje); <code>wikidata</code> a <code>pleiades</code>, totéž místo v těchto
+          rejstřících, kde je známo
         </td>
       </tr>
       <tr>
@@ -52,6 +64,17 @@ description: Místa, verše, které je jmenují, události a trasy jako soubory 
         <td>
           verš → místa, která jmenuje, jeden soubor na knihu (<code>Gen</code>, <code>1Kgs</code>,
           <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/chapters/{Book}.json</code></td>
+        <td>kapitola → místa a lidé, které jmenuje, jeden soubor na knihu</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/people.json</code></td>
+        <td>
+          lidé, které jmenuje Bible: id podle TIPNR, jméno, jména v dalších jazycích tam, kde je web
+          má, pohlaví, kolik veršů je jmenuje, první z nich
         </td>
       </tr>
       <tr>
@@ -79,6 +102,16 @@ description: Místa, verše, které je jmenují, události a trasy jako soubory 
           text říká, jak dlouho plavba trvala
         </td>
       </tr>
+      <tr>
+        <td><code>/api/v1/ancient.json</code></td>
+        <td>
+          co o místě říkají autoři mimo Bibli: autor, dílo, pasáž, odkaz na volný text, shrnutí
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/openapi.json</code></td>
+        <td>to vše popsané v OpenAPI 3.1, pro generátory kódu a agenty</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -97,6 +130,10 @@ description: Místa, verše, které je jmenují, události a trasy jako soubory 
   <li>
     Soubory se znovu sestavují s každým vydáním dat; <code>index.json</code> uvádí jeho datum.
   </li>
+  <li>
+    Verze 1 jen roste: pole a soubory se přidávají, nikdy nepřejmenovávají ani neodebírají. Pole,
+    které neznáte, ignorujte.
+  </li>
 </ul>
 
 <h2>Licence a uvedení autorů</h2>
@@ -104,6 +141,7 @@ description: Místa, verše, které je jmenují, události a trasy jako soubory 
   Data jsou pod licencí <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
   Používejte je, upravujte je, prodávejte, co z nich vytvoříte; uveďte prameny tam, kde je
   zobrazujete, tak, jak je uvádí <code>index.json</code>: History Globe od Vadyma Arnauta a
-  OpenBible.info za místa, značky veršů a body. Ruské názvy byly přečteny ze synodního překladu,
-  který je volným dílem. Názvy v ostatních jazycích sestavil History Globe.
+  OpenBible.info za místa, značky veršů a body a TIPNR od STEPBible za lidi. Ruské názvy byly
+  přečteny ze synodního překladu, který je volným dílem. Názvy v ostatních jazycích sestavil History
+  Globe.
 </p>

@@ -26,7 +26,19 @@ description: Os lugares, os versículos que os nomeiam, os acontecimentos e os r
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "wikidata": "Q379652", "pleiades": "501482",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
+
+<h2>Quem e onde em um capítulo</h2>
+<p>
+  Um arquivo por livro: cada capítulo, com os lugares e as pessoas que ele nomeia. As pessoas são
+  identificadas como no TIPNR do STEPBible; seus nomes e o primeiro versículo estão em
+  <code>people.json</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/chapters/Acts.json
+
+{ "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
+               "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
 <h2>Todos os arquivos</h2>
 <div class="table">
@@ -46,7 +58,8 @@ description: Os lugares, os versículos que os nomeiam, os acontecimentos e os r
         <td><code>/api/v1/places.json</code></td>
         <td>
           todos os lugares: id, nomes, tipo, ponto, quantos versículos o nomeiam, sua página (para
-          um lugar que algum versículo nomeia)
+          um lugar que algum versículo nomeia); <code>wikidata</code> e <code>pleiades</code>, o
+          mesmo lugar nesses repertórios, quando é conhecido
         </td>
       </tr>
       <tr>
@@ -54,6 +67,17 @@ description: Os lugares, os versículos que os nomeiam, os acontecimentos e os r
         <td>
           um versículo → os lugares que ele nomeia, um arquivo por livro (<code>Gen</code>,
           <code>1Kgs</code>, <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/chapters/{Book}.json</code></td>
+        <td>um capítulo → os lugares e as pessoas que ele nomeia, um arquivo por livro</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/people.json</code></td>
+        <td>
+          as pessoas que a Bíblia nomeia: id do TIPNR, nome, nomes nos outros idiomas onde o site os
+          tem, sexo, quantos versículos as nomeiam, o primeiro
         </td>
       </tr>
       <tr>
@@ -84,6 +108,17 @@ description: Os lugares, os versículos que os nomeiam, os acontecimentos e os r
           versículo) onde o texto diz quanto durou
         </td>
       </tr>
+      <tr>
+        <td><code>/api/v1/ancient.json</code></td>
+        <td>
+          o que escritores de fora da Bíblia dizem de um lugar: autor, obra, passagem, um link para
+          um texto livre, um resumo
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/openapi.json</code></td>
+        <td>tudo isso descrito em OpenAPI 3.1, para geradores de código e agentes</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -103,6 +138,10 @@ description: Os lugares, os versículos que os nomeiam, os acontecimentos e os r
     Os arquivos são reconstruídos a cada versão dos dados; <code>index.json</code> informa a sua
     data.
   </li>
+  <li>
+    A versão 1 só cresce: campos e arquivos são acrescentados, nunca renomeados nem removidos.
+    Ignore um campo que você não conhece.
+  </li>
 </ul>
 
 <h2>Licença e crédito</h2>
@@ -110,6 +149,7 @@ description: Os lugares, os versículos que os nomeiam, os acontecimentos e os r
   Os dados estão sob <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Use-os,
   altere-os, venda o que construir com eles; nomeie as fontes onde os mostrar, como o
   <code>index.json</code> as lista: History Globe, de Vadym Arnaut, e OpenBible.info pelos lugares,
-  pelas marcações de versículos e pelos pontos. Os nomes russos foram lidos da tradução Sinodal, que
-  está em domínio público. Os nomes nos outros idiomas são do History Globe.
+  pelas marcações de versículos e pelos pontos, e o TIPNR do STEPBible pelas pessoas. Os nomes
+  russos foram lidos da tradução Sinodal, que está em domínio público. Os nomes nos outros idiomas
+  são do History Globe.
 </p>
