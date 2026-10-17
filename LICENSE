@@ -1,26 +1,54 @@
 Copyright (c) 2026 Vadym Arnaut.
 
-This repository has two parts under two licences.
+This repository has three parts under three licences.
 
-1. The data: CC BY 4.0
+1. The articles and the questions: CC BY-NC-ND 4.0
 
-   The curated content in content/ (place names, tours, events, battles, articles,
-   questions, ancient-author notes and the rest) and the data the build makes from it
-   (apps/web/public/data/ and the open API in apps/web/public/api/) are licensed under
-   the Creative Commons Attribution 4.0 International licence:
+   The place articles (content/articles/), the questions and their answers
+   (content/questions/), in every language they are written or translated in, and the
+   files the build makes of them (apps/web/public/data/articles/, the article text on the
+   place pages, the question pages, api/v1/questions.json) are licensed under the
+   Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International licence:
+   https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+   You may read them, quote them, link to them and share them as they are, with credit
+   and not for money. You may not change them, translate them, or put them into
+   another site, dataset or product. Credit: "History Globe (Vadym Arnaut),
+   CC BY-NC-ND 4.0", with a link to the page.
+
+   Until 2026-10-17 these texts were offered under CC BY 4.0. Copies made under that
+   licence keep it (a Creative Commons licence cannot be revoked); what is published
+   from that date on is under this one.
+
+2. The data: CC BY 4.0
+
+   The rest of the curated content in content/ (place names in every language, tours,
+   events, battles, when towns stood, ancient-author notes, photo records and the rest)
+   and the data the build makes from it (apps/web/public/data/ except articles/, and the
+   open API in apps/web/public/api/ except questions.json) are licensed under the
+   Creative Commons Attribution 4.0 International licence:
    https://creativecommons.org/licenses/by/4.0/
 
    Credit: "History Globe (Vadym Arnaut), CC BY 4.0", with a link to the source where
    the medium allows.
 
-2. Everything else: all rights reserved
+3. Everything else: all rights reserved
 
    The source code (apps/, packages/, scripts/, pipeline/, e2e/), the documentation,
    and the design are proprietary. Being able to read them publicly does not grant any
    right to use them. No licence is granted to use, copy, modify, distribute, or create
    derivative works of them without prior written permission from the copyright holder.
 
+Text and data mining. The copyright holder expressly reserves the right to reproduce
+and extract the contents of this repository and of historyglobe.app for text and data
+mining, within the meaning of Article 4(3) of Directive (EU) 2019/790, including for
+the training, fine-tuning or evaluation of machine-learning models. This reservation
+covers parts 1 and 3 above; the data in part 2 is governed by the CC BY 4.0 licence,
+which asks for credit whatever the use. Its machine-readable form is the robots.txt of
+historyglobe.app (the Disallow lines for training crawlers and the Content-Signal line,
+"ai-train=no") and the "tdm-reservation: 1" header the site sends with every page.
+
 Third-party data, images and software included or referenced here remain under their
 own licences (OpenBible.info, Cliopatria, Pleiades, Itiner-e, Natural Earth, Wikimedia
 Commons photos and others); see docs/ATTRIBUTIONS.md. Those are not relicensed by the
-above: the CC BY 4.0 grant covers this project's own contribution.
+above: the grants in parts 1 and 2 cover this project's own contribution.

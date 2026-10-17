@@ -5,8 +5,10 @@ borders, cities, roads, journeys; open a place to read what it was in that centu
 every place links to the Scripture that names it. **[historyglobe.app](https://historyglobe.app)**
 
 The data is open: the curated content and the data built from it, served as an open
-API, are under CC BY 4.0. The code is source-available, not open source: public to read,
-all rights reserved. See `LICENSE` and ADR 0014.
+API, are under CC BY 4.0. The place articles and the answered questions, in every
+language, are under CC BY-NC-ND 4.0: read, quote and link them, do not republish or
+retrain on them. The code is source-available, not open source: public to read, all
+rights reserved. See `LICENSE`, ADR 0014 and ADR 0016.
 
 ## Status
 

@@ -1,6 +1,6 @@
 # 0014. Open data, closed code
 
-- Status: accepted
+- Status: accepted; amended by ADR 0016 (the articles and the questions are CC BY-NC-ND)
 - Date: 2026-10-03
 
 ## Context

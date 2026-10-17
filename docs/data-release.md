@@ -39,8 +39,9 @@ OpenBible places and identifications CC BY 4.0 (points copied from OpenStreetMap
 Google left out, ADR 0008); Cliopatria states CC BY 4.0; STEP Bible TIPNR people CC BY
 4.0; Itiner-e roads CC BY 4.0; Pleiades CC BY 3.0; Wikidata CC0; Natural Earth public
 domain; photos from Wikimedia Commons, public domain, CC0 or CC BY only, each credited;
-the text written for this project (names checked against the Synodal text, events,
-articles, tours, notes) is the project's own and not licensed for reuse yet.
+the text written for this project is the project's own: the names in every language,
+events, tours and notes under CC BY 4.0, the place articles and the answered questions
+under CC BY-NC-ND 4.0 (`LICENSE`, ADR 0016).
 
 ## If a source goes away
 
