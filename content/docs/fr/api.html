@@ -27,7 +27,19 @@ description: Les lieux, les versets qui les nomment, les événements et les par
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "wikidata": "Q379652", "pleiades": "501482",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
+
+<h2>Qui et où dans un chapitre</h2>
+<p>
+  Un fichier par livre : chaque chapitre, avec les lieux et les personnes qu’il nomme. Les personnes
+  sont identifiées comme dans le TIPNR de STEPBible ; leurs noms et leur premier verset se trouvent
+  dans <code>people.json</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/chapters/Acts.json
+
+{ "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
+               "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
 <h2>Tous les fichiers</h2>
 <div class="table">
@@ -49,7 +61,8 @@ description: Les lieux, les versets qui les nomment, les événements et les par
         <td><code>/api/v1/places.json</code></td>
         <td>
           chaque lieu : identifiant, noms, nature, point, nombre de versets qui le nomment, sa page
-          (pour un lieu que nomme un verset)
+          (pour un lieu que nomme un verset) ; <code>wikidata</code> et <code>pleiades</code>, le
+          même lieu dans ces répertoires, lorsqu’il est connu
         </td>
       </tr>
       <tr>
@@ -57,6 +70,17 @@ description: Les lieux, les versets qui les nomment, les événements et les par
         <td>
           un verset → les lieux qu’il nomme, un fichier par livre (<code>Gen</code>,
           <code>1Kgs</code>, <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/chapters/{Book}.json</code></td>
+        <td>un chapitre → les lieux et les personnes qu’il nomme, un fichier par livre</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/people.json</code></td>
+        <td>
+          les personnes que nomme la Bible : identifiant TIPNR, nom, noms dans les autres langues là
+          où le site les a, sexe, nombre de versets qui les nomment, le premier
         </td>
       </tr>
       <tr>
@@ -85,6 +109,17 @@ description: Les lieux, les versets qui les nomment, les événements et les par
           lorsque le texte dit combien de temps il a duré
         </td>
       </tr>
+      <tr>
+        <td><code>/api/v1/ancient.json</code></td>
+        <td>
+          ce que des auteurs extérieurs à la Bible disent d’un lieu : auteur, œuvre, passage, lien
+          vers un texte libre, résumé
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/openapi.json</code></td>
+        <td>tout cela décrit en OpenAPI 3.1, pour les générateurs de code et les agents</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -105,6 +140,10 @@ description: Les lieux, les versets qui les nomment, les événements et les par
     Les fichiers sont reconstruits à chaque publication des données ; <code>index.json</code> en
     donne la date.
   </li>
+  <li>
+    La version 1 ne fait que croître : des champs et des fichiers s’ajoutent, jamais renommés ni
+    supprimés. Ignorez un champ que vous ne connaissez pas.
+  </li>
 </ul>
 
 <h2>Licence et crédits</h2>
@@ -113,7 +152,7 @@ description: Les lieux, les versets qui les nomment, les événements et les par
   <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">CC BY 4.0</a>. Utilisez-les,
   modifiez-les, vendez ce que vous construisez avec elles ; citez les sources là où vous les
   montrez, telles que les énumère <code>index.json</code> : History Globe par Vadym Arnaut, et
-  OpenBible.info pour les lieux, les étiquettes de versets et les points. Les noms russes ont été
-  relevés dans la traduction synodale, qui appartient au domaine public. Les noms dans les autres
-  langues sont ceux de History Globe.
+  OpenBible.info pour les lieux, les étiquettes de versets et les points, et TIPNR de STEPBible pour
+  les personnes. Les noms russes ont été relevés dans la traduction synodale, qui appartient au
+  domaine public. Les noms dans les autres langues sont ceux de History Globe.
 </p>

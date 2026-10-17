@@ -23,7 +23,18 @@ description: The places, the verses that name them, the events and the tours as 
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "wikidata": "Q379652", "pleiades": "501482",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
+
+<h2>Who and where in a chapter</h2>
+<p>
+  One file per book: each chapter, with the places and the people it names. People are identified as
+  in STEPBible’s TIPNR; their names and first verse are in <code>people.json</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/chapters/Acts.json
+
+{ "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
+               "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
 <h2>All the files</h2>
 <div class="table">
@@ -43,7 +54,8 @@ description: The places, the verses that name them, the events and the tours as 
         <td><code>/api/v1/places.json</code></td>
         <td>
           every place: id, names, kind, point, how many verses name it, its page (for a place some
-          verse names)
+          verse names); <code>wikidata</code> and <code>pleiades</code>, the same place in those
+          gazetteers, where it is known
         </td>
       </tr>
       <tr>
@@ -51,6 +63,17 @@ description: The places, the verses that name them, the events and the tours as 
         <td>
           a verse → the places it names, one file a book (<code>Gen</code>, <code>1Kgs</code>,
           <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/chapters/{Book}.json</code></td>
+        <td>a chapter → the places and the people it names, one file a book</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/people.json</code></td>
+        <td>
+          the people the Bible names: TIPNR id, name, names in the other languages where the site
+          has them, sex, how many verses name them, the first
         </td>
       </tr>
       <tr>
@@ -78,6 +101,17 @@ description: The places, the verses that name them, the events and the tours as 
           the text says how long
         </td>
       </tr>
+      <tr>
+        <td><code>/api/v1/ancient.json</code></td>
+        <td>
+          what writers outside the Bible say of a place: author, work, passage, a link to a free
+          text, a summary
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/openapi.json</code></td>
+        <td>all of this described in OpenAPI 3.1, for code generators and agents</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -96,6 +130,10 @@ description: The places, the verses that name them, the events and the tours as 
   <li>
     The files are rebuilt with every release of the data; <code>index.json</code> gives its date.
   </li>
+  <li>
+    Version 1 only grows: fields and files are added, never renamed or removed. Ignore a field you
+    do not know.
+  </li>
 </ul>
 
 <h2>Licence and credit</h2>
@@ -103,6 +141,7 @@ description: The places, the verses that name them, the events and the tours as 
   The data is under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Use it,
   change it, sell what you build with it; name the sources where you show it, as
   <code>index.json</code> lists them: History Globe by Vadym Arnaut, and OpenBible.info for the
-  places, the verse tags and the points. The Russian names were read from the Synodal translation,
-  which is in the public domain. The names in the other languages are History Globe’s own.
+  places, the verse tags and the points, and STEPBible’s TIPNR for the people. The Russian names
+  were read from the Synodal translation, which is in the public domain. The names in the other
+  languages are History Globe’s own.
 </p>

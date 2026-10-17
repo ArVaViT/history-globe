@@ -18,6 +18,7 @@ from build_data import (
     label_anchors,
     lead_anchor,
     place_kind,
+    qid,
     rank_of,
     site_label,
 )
@@ -212,3 +213,13 @@ class PlaceKindTest(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 
+
+
+class Qid(unittest.TestCase):
+    def test_plain_link(self) -> None:
+        self.assertEqual(qid({"linked_data": {"s7cc8b2": {"id": "Q379652"}}}), "Q379652")
+
+    def test_link_marked_not_or_modern_is_no_link(self) -> None:
+        # OpenBible, Adamah: {"id": "Q2605670", "modifier": "not"}; Iconium: "modern" (Konya).
+        self.assertIsNone(qid({"linked_data": {"s7cc8b2": {"id": "Q2605670", "modifier": "not"}}}))
+        self.assertIsNone(qid({"linked_data": {"s7cc8b2": {"id": "Q79857", "modifier": "modern"}}}))

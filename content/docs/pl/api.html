@@ -26,7 +26,18 @@ description: Miejsca, wymieniające je wersety, wydarzenia i trasy jako pliki JS
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "wikidata": "Q379652", "pleiades": "501482",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
+
+<h2>Kto i gdzie w rozdziale</h2>
+<p>
+  Jeden plik na księgę: każdy rozdział, z miejscami i osobami, które wymienia. Osoby są oznaczone
+  tak jak w TIPNR od STEPBible; ich imiona i pierwszy werset są w <code>people.json</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/chapters/Acts.json
+
+{ "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
+               "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
 <h2>Wszystkie pliki</h2>
 <div class="table">
@@ -46,7 +57,8 @@ description: Miejsca, wymieniające je wersety, wydarzenia i trasy jako pliki JS
         <td><code>/api/v1/places.json</code></td>
         <td>
           każde miejsce: identyfikator, nazwy, rodzaj, punkt, liczbę wersetów, które je wymieniają,
-          jego stronę (dla miejsca, które wymienia jakiś werset)
+          jego stronę (dla miejsca, które wymienia jakiś werset); <code>wikidata</code> i
+          <code>pleiades</code>, to samo miejsce w tych rejestrach, tam gdzie jest znane
         </td>
       </tr>
       <tr>
@@ -54,6 +66,17 @@ description: Miejsca, wymieniające je wersety, wydarzenia i trasy jako pliki JS
         <td>
           werset → miejsca, które wymienia, jeden plik na księgę (<code>Gen</code>,
           <code>1Kgs</code>, <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/chapters/{Book}.json</code></td>
+        <td>rozdział → miejsca i osoby, które wymienia, jeden plik na księgę</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/people.json</code></td>
+        <td>
+          osoby wymienione w Biblii: identyfikator TIPNR, imię, imiona w pozostałych językach tam,
+          gdzie serwis je ma, płeć, liczbę wersetów, które je wymieniają, pierwszy z nich
         </td>
       </tr>
       <tr>
@@ -81,6 +104,17 @@ description: Miejsca, wymieniające je wersety, wydarzenia i trasy jako pliki JS
           werset) tam, gdzie tekst podaje, jak długo to trwało
         </td>
       </tr>
+      <tr>
+        <td><code>/api/v1/ancient.json</code></td>
+        <td>
+          co o miejscu mówią autorzy spoza Biblii: autor, dzieło, fragment, link do wolnego tekstu,
+          streszczenie
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/openapi.json</code></td>
+        <td>to wszystko opisane w OpenAPI 3.1, dla generatorów kodu i agentów</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -99,6 +133,10 @@ description: Miejsca, wymieniające je wersety, wydarzenia i trasy jako pliki JS
   <li>
     Pliki są odbudowywane przy każdym wydaniu danych; <code>index.json</code> podaje jego datę.
   </li>
+  <li>
+    Wersja 1 tylko rośnie: pola i pliki są dodawane, nigdy nie przemianowywane ani nie usuwane.
+    Nieznane pole po prostu pomiń.
+  </li>
 </ul>
 
 <h2>Licencja i uznanie autorstwa</h2>
@@ -106,7 +144,7 @@ description: Miejsca, wymieniające je wersety, wydarzenia i trasy jako pliki JS
   Dane są objęte licencją <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
   Używaj ich, zmieniaj je, sprzedawaj to, co z nich zbudujesz; wskaż źródła tam, gdzie je
   pokazujesz, tak jak wymienia je <code>index.json</code>: History Globe autorstwa Vadyma Arnauta
-  oraz OpenBible.info za miejsca, znaczniki wersetów i punkty. Rosyjskie nazwy odczytano z przekładu
-  synodalnego, który należy do domeny publicznej. Nazwy w pozostałych językach opracował History
-  Globe.
+  oraz OpenBible.info za miejsca, znaczniki wersetów i punkty, a TIPNR od STEPBible za osoby.
+  Rosyjskie nazwy odczytano z przekładu synodalnego, który należy do domeny publicznej. Nazwy w
+  pozostałych językach opracował History Globe.
 </p>

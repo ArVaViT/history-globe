@@ -24,7 +24,19 @@ description: De plaatsen, de verzen die ze noemen, de gebeurtenissen en de route
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "wikidata": "Q379652", "pleiades": "501482",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
+
+<h2>Wie en waar in een hoofdstuk</h2>
+<p>
+  Eén bestand per bijbelboek: elk hoofdstuk, met de plaatsen en de mensen die het noemt. Mensen
+  worden aangeduid zoals in het TIPNR van STEPBible; hun namen en hun eerste vers staan in
+  <code>people.json</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/chapters/Acts.json
+
+{ "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
+               "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
 <h2>Alle bestanden</h2>
 <div class="table">
@@ -44,7 +56,8 @@ description: De plaatsen, de verzen die ze noemen, de gebeurtenissen en de route
         <td><code>/api/v1/places.json</code></td>
         <td>
           elke plaats: id, namen, soort, coördinaten, door hoeveel verzen ze wordt genoemd, haar
-          pagina (voor een plaats die in een vers voorkomt)
+          pagina (voor een plaats die in een vers voorkomt); <code>wikidata</code> en
+          <code>pleiades</code>, dezelfde plaats in die plaatsenregisters, waar bekend
         </td>
       </tr>
       <tr>
@@ -52,6 +65,17 @@ description: De plaatsen, de verzen die ze noemen, de gebeurtenissen en de route
         <td>
           een vers → de plaatsen die het noemt, één bestand per boek (<code>Gen</code>,
           <code>1Kgs</code>, <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/chapters/{Book}.json</code></td>
+        <td>een hoofdstuk → de plaatsen en de mensen die het noemt, één bestand per boek</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/people.json</code></td>
+        <td>
+          de mensen die de Bijbel noemt: TIPNR-id, naam, namen in de andere talen waar de site ze
+          heeft, geslacht, door hoeveel verzen ze worden genoemd, het eerste
         </td>
       </tr>
       <tr>
@@ -81,6 +105,17 @@ description: De plaatsen, de verzen die ze noemen, de gebeurtenissen en de route
           (dagen en vers) waar de tekst zegt hoe lang het duurde
         </td>
       </tr>
+      <tr>
+        <td><code>/api/v1/ancient.json</code></td>
+        <td>
+          wat schrijvers buiten de Bijbel over een plaats zeggen: auteur, werk, passage, een link
+          naar een vrije tekst, een samenvatting
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/openapi.json</code></td>
+        <td>dit alles beschreven in OpenAPI 3.1, voor codegeneratoren en agents</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -101,6 +136,10 @@ description: De plaatsen, de verzen die ze noemen, de gebeurtenissen en de route
     De bestanden worden bij elke release van de gegevens opnieuw gebouwd; <code>index.json</code>
     geeft de datum.
   </li>
+  <li>
+    Versie 1 groeit alleen: velden en bestanden komen erbij, nooit hernoemd of verwijderd. Negeer
+    een veld dat je niet kent.
+  </li>
 </ul>
 
 <h2>Licentie en bronvermelding</h2>
@@ -108,7 +147,7 @@ description: De plaatsen, de verzen die ze noemen, de gebeurtenissen en de route
   De gegevens vallen onder <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
   Gebruik ze, wijzig ze, verkoop wat je ermee bouwt; noem de bronnen waar je ze toont, zoals
   <code>index.json</code> ze opsomt: History Globe door Vadym Arnaut, en OpenBible.info voor de
-  plaatsen, de koppelingen aan verzen en de coördinaten. De Russische namen zijn gelezen uit de
-  synodale vertaling, die in het publiek domein is. De namen in de andere talen zijn van History
-  Globe.
+  plaatsen, de koppelingen aan verzen en de coördinaten, en het TIPNR van STEPBible voor de mensen.
+  De Russische namen zijn gelezen uit de synodale vertaling, die in het publiek domein is. De namen
+  in de andere talen zijn van History Globe.
 </p>

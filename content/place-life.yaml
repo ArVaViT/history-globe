@@ -1342,3 +1342,32 @@ places:
     sources:
       - "R. Cohen and H. Bernick-Greenberg, Excavations at Kadesh Barnea (Tell el-Qudeirat) 1976-1982 (Israel Antiquities Authority), reviewed by A. Faust, American Journal of Archaeology 113.2 (2009)"
       - "I. Finkelstein, 'Kadesh Barnea: A Reevaluation of Its Archaeology and History', Tel Aviv 37 (2010), pp. 111-125"
+  - id: a0905b5
+    en: Succoth
+    # The point stands on Tell Deir Alla in the Jordan valley (OpenBible's leading
+    # candidate; the identification is not certain, and the place stays marked disputed).
+    # Ibrahim and van der Kooij's phase list for the tell (ADAJ 23, 1979): phase V "5th/early
+    # 4th c. B.C.", phase III, the last building on the summit, "not earlier than the 4th
+    # cent. B.C.", phase I "the medieval arabic graveyard on top of the tell". Franken: the
+    # tell was inhabited "from the Bronze Age until late Persian times". The end is taken at
+    # the close of the Persian period, approximately; whichever reading of phase III holds,
+    # no town stood here in the Roman period, when the map showed it among Herod's cities.
+    # Every verse naming Succoth falls long before this. Checked on 2026-10-17 against
+    # https://deadseaquake.info/EarthquakeCatalogOfTheDeadSea/Sites/Archaeo/DeirAlla.html,
+    # which quotes the excavation reports.
+    until: "c. 300 BC"
+    note:
+      en: "On Tell Deir Alla, where many place Succoth, people lived from the Bronze Age into the late Persian period; the last building on its summit dates to the 4th century BC at the earliest. Later the top of the mound served as a graveyard."
+      ru: "На Телль-Дейр-Алла, где многие помещают Сокхоф, жили с бронзового века до конца персидского времени; последнее здание на его вершине построено не раньше IV в. до н. э. Позднее верх холма служил кладбищем."
+      uk: "На Телль-Дейр-Алла, де багато хто розміщує Сокхот, жили від бронзової доби до кінця перського часу; остання будівля на його вершині зведена не раніше IV ст. до н. е. Пізніше верх пагорба слугував кладовищем."
+      es: "En Tell Deir Alla, donde muchos sitúan Sucot, se vivió desde la Edad del Bronce hasta el final del período persa; el último edificio de su cima no es anterior al siglo IV a. C. Más tarde la cima del montículo sirvió de cementerio."
+      pt: "Em Tell Deir Alla, onde muitos situam Sucote, viveu-se desde a Idade do Bronze até o fim do período persa; o último edifício do seu topo não é anterior ao século IV a.C. Mais tarde o alto do monte serviu de cemitério."
+      de: "Auf dem Tell Deir Alla, wo viele Sukkot ansetzen, lebten Menschen von der Bronzezeit bis in die späte Perserzeit; das letzte Gebäude auf seiner Kuppe stammt frühestens aus dem 4. Jahrhundert v. Chr. Später diente die Kuppe des Hügels als Friedhof."
+      fr: "Sur Tell Deir Alla, où beaucoup situent Succoth, on vécut de l’âge du Bronze jusqu’à la fin de l’époque perse ; le dernier bâtiment de son sommet ne date pas d’avant le IVe siècle av. J.-C. Plus tard, le sommet du tell servit de cimetière."
+      pl: "Na Tell Deir Alla, gdzie wielu umieszcza Sukkot, mieszkano od epoki brązu do końca okresu perskiego; ostatni budynek na jego szczycie powstał nie wcześniej niż w IV wieku p.n.e. Później szczyt wzgórza służył za cmentarz."
+      it: "Su Tell Deir Alla, dove molti collocano Succot, si visse dall’età del Bronzo fino alla tarda età persiana; l’ultimo edificio sulla sua sommità non è anteriore al IV secolo a.C. Più tardi la cima del tell servì da cimitero."
+      nl: "Op Tell Deir Alla, waar velen Sukkoth plaatsen, woonden mensen van de Bronstijd tot in de late Perzische tijd; het laatste gebouw op de top dateert op zijn vroegst uit de 4e eeuw v.Chr. Later diende de top van de heuvel als begraafplaats."
+      cs: "Na Tell Deir Alla, kam mnozí kladou Sukót, se žilo od doby bronzové až do konce perského období; poslední stavba na jeho vrcholu nevznikla dříve než ve 4. století př. n. l. Později sloužil vrchol pahorku jako hřbitov."
+    sources:
+      - "M. M. Ibrahim and G. van der Kooij, 'Excavations at Tell Deir 'Alla, Season 1979', Annual of the Department of Antiquities of Jordan 23 (1979), pp. 41-50"
+      - "H. J. Franken, 'Deir 'Alla, Tell', in E. M. Meyers (ed.), The Oxford Encyclopedia of Archaeology in the Near East (1997)"

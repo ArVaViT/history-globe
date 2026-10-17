@@ -138,8 +138,11 @@ def wikidata_coords(qids: list[str]) -> dict[str, list[float]]:
 
 
 def qid(record: dict) -> str | None:
+    """The record's Wikidata item. OpenBible marks some links "not" (the item is another
+    place: Adamah, New Gate) or "modern" (today's town on the site: Konya for Iconium); their
+    coordinates are not the ancient place's, so only a plain link counts."""
     for v in (record.get("linked_data") or {}).values():
-        if isinstance(v, dict) and str(v.get("id", "")).startswith("Q"):
+        if isinstance(v, dict) and str(v.get("id", "")).startswith("Q") and not v.get("modifier"):
             return str(v["id"])
     return None
 

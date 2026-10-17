@@ -2,7 +2,8 @@
  * page-hashes.json: a short hash of every page the sitemap lists, by its path from the site
  * root ("de/place/jerusalem/" → "3f9c0a1b2c4d"), published with the site. IndexNow
  * (scripts/indexnow.ts) compares it with what it sent last time and sends only the pages
- * that changed: the sitemap has no <lastmod>, and sending all 16 000 pages on every deploy
+ * that changed: <lastmod> in the sitemap follows the source files, not the built page, and
+ * sending all 16 000 pages on every deploy
  * is what the protocol asks sites not to do.
  *
  * The app's own page (the sitemap's first address) is built later by Vite and is not

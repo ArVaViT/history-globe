@@ -726,6 +726,13 @@ export function buildPolities({
   // (style.ts places them first), so at a region's view the kingdoms went unnamed. Their
   // label moves to the point of the shape farthest from any place named by zoom 6 (rank 2
   // or less), at least 0.12° inside the border. Deterministic: a rerun keeps the point.
+  // A state whose shape takes in conquered land keeps its label near its own heartland:
+  // Hasmonean and Herodian Judea in Cliopatria includes Idumea and the Negev, and the
+  // emptiest point of that shape lay in the Negev, far south of Judea proper (the hill
+  // country of Jerusalem and Hebron). Its label is searched within 0.3° of Jerusalem.
+  const HEARTLAND: Record<string, { at: [number, number]; radius: number }> = {
+    Judea: { at: [35.21, 31.72], radius: 0.3 },
+  };
   {
     const LEVANT = { w: 33.5, s: 28.5, e: 38, n: 35 };
     const cos = Math.cos((32 * Math.PI) / 180);
@@ -756,6 +763,34 @@ export function buildPolities({
       }
       return isIn;
     };
+    // Never on water: the shapes run over the Dead Sea and the coast, and a label there
+    // reads as the sea's name. The outer rings of water.geojson, cut to the Levant.
+    const waterPath = join(out, "water.geojson");
+    const water: Ring[] = existsSync(waterPath)
+      ? (
+          JSON.parse(readFileSync(waterPath, "utf8")) as {
+            features: { geometry: { type: string; coordinates: unknown } }[];
+          }
+        ).features
+          .flatMap(({ geometry: g }) =>
+            g.type === "Polygon"
+              ? [(g.coordinates as Ring[])[0] ?? []]
+              : (g.coordinates as Ring[][]).map((poly) => poly[0] ?? []),
+          )
+          .filter((r) =>
+            r.some(([x, y]) => x > LEVANT.w && x < LEVANT.e && y > LEVANT.s && y < LEVANT.n),
+          )
+      : [];
+    const boxes = water.map((r) => {
+      const xs = r.map(([x]) => x);
+      const ys = r.map(([, y]) => y);
+      return [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)] as const;
+    });
+    const onWater = (c: [number, number]) =>
+      water.some((r, k) => {
+        const [w, s, e, n] = boxes[k] ?? [0, 0, 0, 0];
+        return c[0] >= w && c[0] <= e && c[1] >= s && c[1] <= n && inside(c, r);
+      });
     for (const f of polityLabels.features as {
       geometry: { coordinates: [number, number] };
       properties: PolityFeature["properties"] & { tier?: number; size?: number };
@@ -797,10 +832,12 @@ export function buildPolities({
       });
       const part = parts.sort((p1, p2) => p2.area - p1.area)[0];
       if (!part || part.ring.length < 4 || !Number.isFinite(part.mid[0])) continue;
-      const { ring, mid } = part;
+      const { ring } = part;
+      const home = HEARTLAND[p.name];
+      const mid = home?.at ?? part.mid;
       const xs = ring.map(([x]) => x);
       const ys = ring.map(([, y]) => y);
-      const RADIUS = 0.5;
+      const RADIUS = home?.radius ?? 0.5;
       let best: [number, number] | null = null;
       let score = -1;
       for (let x = Math.min(...xs); x <= Math.max(...xs); x += 0.04)
@@ -809,7 +846,8 @@ export function buildPolities({
           if (Math.hypot((c[0] - mid[0]) * cos, c[1] - mid[1]) > RADIUS) continue;
           if (!inside(c, ring) || toEdge(c, ring) < 0.12) continue;
           const d = near(c);
-          if (d > score + 1e-9) {
+          // The water test is the costly one: only for a point that would win.
+          if (d > score + 1e-9 && !onWater(c)) {
             score = d;
             best = c;
           }
