@@ -98,9 +98,10 @@ const CREDIT = [
   "Places, verse tags and points: OpenBible.info Bible Geocoding Data (CC BY 4.0, modified); some points from Wikidata (CC0)",
   "Russian names: read from the Russian Synodal translation (public domain)",
   "Names in the other languages: History Globe (CC BY 4.0)",
-  "People and the verses that name them: STEPBible TIPNR (www.STEPBible.org), CC BY 4.0",
-  "Pleiades ids: Pleiades (https://pleiades.stoa.org), CC BY 3.0; Wikidata ids: Wikidata (CC0), as OpenBible links them",
   "Third-party parts keep their own licences: https://historyglobe.app/docs/sources.html",
+  // Added with people.json and the gazetteer ids (2026-10): appended, the earlier lines unmoved.
+  "People and the verses that name them: STEPBible TIPNR by Tyndale House Cambridge (www.STEPBible.org), CC BY 4.0, modified",
+  "Pleiades ids: Pleiades (https://pleiades.stoa.org), CC BY 3.0; Wikidata ids: Wikidata (CC0), as OpenBible links them",
 ];
 
 // Fresh each build: a book or file that is gone must not linger.
@@ -331,7 +332,40 @@ if (existsSync(TIPNR)) {
       !(base.slice(0, 1) === base.slice(0, 1).toLowerCase() || /_(wives|woman)$/.test(base))
     );
   });
+  // The people build's own reading of each record (pipeline/people/build.py): which are
+  // unnamed ("Unnamed#3"), and which are eponyms. An eponym whose name is also a tribe's or a
+  // nation's (Jacob-Israel, Judah, Ephraim, Heth: TIPNR has a Group form for them; and
+  // Jacob's sons) keeps only the verses about the man: Genesis, Exodus 1-6 and the
+  // genealogies (1 Chr 1-2, Matt 1, Luke 3); "the Jews" in Gal 2 or Israel in Amos are the
+  // people. Abraham, Isaac or Sarah, eponyms of no nation, keep every verse.
+  const built = join(root, "pipeline/.cache/people/tipnr-people.json");
+  const reading = new Map(
+    (existsSync(built)
+      ? (
+          JSON.parse(readFileSync(built, "utf8")) as {
+            people: { id: string; anonymous: boolean; life_refs_note: string | null }[];
+          }
+        ).people
+      : []
+    ).map((p) => [p.id, p]),
+  );
+  const TRIBES = new Set(["Dan", "Gad", "Issachar", "Naphtali", "Simeon", "Joseph"]);
+  const ownLife = (ref: string) => {
+    const [book = "", chapter = 0] = ref.split(".").map((x, i) => (i === 1 ? Number(x) : x));
+    return (
+      book === "Gen" ||
+      (book === "Exod" && Number(chapter) <= 6) ||
+      (book === "1Chr" && Number(chapter) <= 2) ||
+      (book === "Matt" && chapter === 1) ||
+      (book === "Luke" && chapter === 3)
+    );
+  };
   const people = records.flatMap((r) => {
+    const read = reading.get(r.key);
+    if (read?.anonymous) return [];
+    const eponym =
+      (read?.life_refs_note?.startsWith("eponym") ?? false) &&
+      ((r.forms ?? []).some((f) => f.significance === "Group") || TRIBES.has(r.name));
     // Only where the text names the person: not where TIPNR tags the people called after
     // them (Javan for "Greek", Judah for "Jews"), a form with another meaning, or the LXX.
     const named = (r.forms ?? []).filter(
@@ -339,8 +373,8 @@ if (existsSync(TIPNR)) {
         NAMED_FORMS.has(f.significance) ||
         (f.significance === "Greek" && f.translated.split(/[ =,]/)[0] === r.name),
     );
-    const refs = [...new Set(named.flatMap((f) => f.refs ?? []))].filter((ref) =>
-      /^[1-3]?[A-Z][A-Za-z]+\.\d+\.\d+/.test(ref),
+    const refs = [...new Set(named.flatMap((f) => f.refs ?? []))].filter(
+      (ref) => /^[1-3]?[A-Z][A-Za-z]+\.\d+\.\d+/.test(ref) && (!eponym || ownLife(ref)),
     );
     if (refs.length === 0) return [];
     for (const ref of refs) chapterOf(ref).people.add(r.key);

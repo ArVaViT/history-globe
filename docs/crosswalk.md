@@ -16,7 +16,8 @@ Built on 2026-10-17 from open files only (no accounts); the method is in each ro
   OpenBible, Pleiades and Wikidata while matching, each with its record and evidence, and the
   places where we were wrong (fixed here) or may be.
 
-Theographic Bible Metadata is CC BY-SA 4.0: this crosswalk carries only its record ids and a
+The two CSV files are open data under CC BY 4.0, like the API (credit: History Globe by
+Vadym Arnaut, with the sources below). Theographic Bible Metadata is CC BY-SA 4.0: this crosswalk carries only its record ids and a
 few quoted values as evidence, none of its data (ADR 0008). The rest is CC BY 4.0 (OpenBible,
 TIPNR), CC BY 3.0 (Pleiades) or CC0 (Wikidata), as `docs/ATTRIBUTIONS.md` lists. Low
 `confidence` rows are guesses kept for review, not links to rely on.

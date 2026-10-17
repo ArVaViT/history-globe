@@ -184,7 +184,7 @@ export function openApi(version: string): object {
             pleiades: { type: "string", pattern: "^\\d+$", description: "Pleiades place id" },
             page: ref("Pages"),
           },
-          required: ["id", "name", "kind", "lon", "lat", "verses"],
+          required: ["id", "name", "names", "name_ru", "kind", "lon", "lat", "verses"],
         },
         Chapter: {
           type: "object",

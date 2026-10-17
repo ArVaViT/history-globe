@@ -405,6 +405,13 @@ const unlisted: string[] = [];
  */
 const changed = new Map<string, string>();
 try {
+  // A shallow clone knows only its last commits: every page would get the same date.
+  const shallow = execFileSync("git", ["rev-parse", "--is-shallow-repository"], {
+    cwd: root,
+    encoding: "utf8",
+    stdio: ["ignore", "pipe", "ignore"],
+  }).trim();
+  if (shallow !== "false") throw new Error("shallow clone");
   let date = "";
   for (const line of execFileSync(
     "git",
@@ -554,7 +561,9 @@ function placePages(l: Lang): void {
           ...(today ? { description: today } : {}),
           // Its names in the site's other languages, each tagged with its language.
           ...(() => {
-            const other = LANGS.filter((o) => o !== l)
+            // English first, so a name several languages share is tagged as English.
+            const other = [...LANGS.filter((o) => o === "en"), ...LANGS.filter((o) => o !== "en")]
+              .filter((o) => o !== l)
               .map((o) => ({ "@value": nameOf(p, o), "@language": o }))
               .filter(
                 (n, i, all) =>
