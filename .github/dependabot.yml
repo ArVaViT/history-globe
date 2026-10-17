@@ -16,6 +16,10 @@ updates:
     ignore:
       # Pinned on purpose (ADR 0004): an upgrade is a PR of its own that passes the visual suite.
       - dependency-name: maplibre-gl
+      # typescript-eslint does not support TypeScript 7 yet (PR #24 failed the gate on it).
+      # Lift this once it does.
+      - dependency-name: typescript
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
