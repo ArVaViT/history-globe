@@ -27,7 +27,19 @@ description: Los lugares, los versículos que los nombran, los acontecimientos y
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "wikidata": "Q379652", "pleiades": "501482",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
+
+<h2>Quién y dónde en un capítulo</h2>
+<p>
+  Un archivo por libro: cada capítulo, con los lugares y las personas que nombra. Las personas se
+  identifican como en el TIPNR de STEPBible; sus nombres y su primer versículo están en
+  <code>people.json</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/chapters/Acts.json
+
+{ "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
+               "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
 <h2>Todos los archivos</h2>
 <div class="table">
@@ -47,7 +59,8 @@ description: Los lugares, los versículos que los nombran, los acontecimientos y
         <td><code>/api/v1/places.json</code></td>
         <td>
           todos los lugares: id, nombres, tipo, punto, cuántos versículos lo nombran y su página
-          (para un lugar que algún versículo nombra)
+          (para un lugar que algún versículo nombra); <code>wikidata</code> y <code>pleiades</code>,
+          el mismo lugar en esos repertorios, cuando se conoce
         </td>
       </tr>
       <tr>
@@ -55,6 +68,17 @@ description: Los lugares, los versículos que los nombran, los acontecimientos y
         <td>
           un versículo → los lugares que nombra, un archivo por libro (<code>Gen</code>,
           <code>1Kgs</code>, <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/chapters/{Book}.json</code></td>
+        <td>un capítulo → los lugares y las personas que nombra, un archivo por libro</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/people.json</code></td>
+        <td>
+          las personas que nombra la Biblia: id del TIPNR, nombre, nombres en los demás idiomas
+          donde el sitio los tiene, sexo, cuántos versículos las nombran, el primero
         </td>
       </tr>
       <tr>
@@ -83,6 +107,17 @@ description: Los lugares, los versículos que los nombran, los acontecimientos y
           cuando el texto dice cuánto duró
         </td>
       </tr>
+      <tr>
+        <td><code>/api/v1/ancient.json</code></td>
+        <td>
+          lo que dicen de un lugar escritores ajenos a la Biblia: autor, obra, pasaje, un enlace a
+          un texto libre, un resumen
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/openapi.json</code></td>
+        <td>todo esto descrito en OpenAPI 3.1, para generadores de código y agentes</td>
+      </tr>
     </tbody>
   </table>
 </div>
@@ -103,6 +138,10 @@ description: Los lugares, los versículos que los nombran, los acontecimientos y
     Los archivos se regeneran con cada versión de los datos; <code>index.json</code> indica su
     fecha.
   </li>
+  <li>
+    La versión 1 solo crece: se añaden campos y archivos, nunca se renombran ni se eliminan. Ignora
+    un campo que no conozcas.
+  </li>
 </ul>
 
 <h2>Licencia y créditos</h2>
@@ -110,7 +149,7 @@ description: Los lugares, los versículos que los nombran, los acontecimientos y
   Los datos están bajo <a href="https://creativecommons.org/licenses/by/4.0/deed.es">CC BY 4.0</a>.
   Úsalos, modifícalos, vende lo que construyas con ellos; cita las fuentes allí donde los muestres,
   tal como las enumera <code>index.json</code>: History Globe, de Vadym Arnaut, y OpenBible.info
-  para los lugares, las etiquetas de versículos y los puntos. Los nombres rusos se leyeron de la
-  traducción sinodal, que es de dominio público. Los nombres en los demás idiomas son de History
-  Globe.
+  para los lugares, las etiquetas de versículos y los puntos, y el TIPNR de STEPBible para las
+  personas. Los nombres rusos se leyeron de la traducción sinodal, que es de dominio público. Los
+  nombres en los demás idiomas son de History Globe.
 </p>

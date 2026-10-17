@@ -14,6 +14,7 @@
  * Usage: node scripts/build-pages.ts  (after build-content; verse texts are used when
  * build-verses has run)
  */
+import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import type { ContentRelease, PlaceLife } from "../packages/model/src/content.ts";
@@ -167,6 +168,21 @@ function certaintyNote(p: Props, l: Lang): string {
 const clip = (s: string, n = 200) =>
   s.length <= n ? s : `${s.slice(0, s.lastIndexOf(" ", n - 1)).replace(/[,;:.\s]+$/, "")}…`;
 
+/**
+ * The place's records in the gazetteers, for `sameAs` in its structured data: Wikidata
+ * (content/wikidata.json, OpenBible's links) and Pleiades (content/pleiades.json).
+ */
+const wikidata = (
+  JSON.parse(readFileSync(join(root, "content/wikidata.json"), "utf8")) as {
+    places: Record<string, string>;
+  }
+).places;
+const sameAs = (id: string): string[] => [
+  ...(wikidata[id] ? [`https://www.wikidata.org/wiki/${wikidata[id]}`] : []),
+  ...(content.pleiades?.[id]
+    ? [`https://pleiades.stoa.org/places/${content.pleiades[id].id}`]
+    : []),
+];
 const nameOf = (p: Props, l: Lang) => (l === "en" ? p.name : (content.names[p.id]?.[l] ?? p.name));
 /** "Where it is today" in the page's language, the English where it has none. */
 const whereOf = (id: string, english: string, l: Lang) =>
@@ -381,11 +397,40 @@ const VERSES_ON_PAGE = 30;
 const urls: string[] = [];
 /** Pages kept out of the sitemap (thin ones, marked noindex) but still written and kept. */
 const unlisted: string[] = [];
-const write = (path: string, html: string, listed = true) => {
+/**
+ * When each file in content/ last changed: the date of the newest commit that touched it
+ * (git, one pass). A page's <lastmod> in the sitemap is that of its own text: the article,
+ * tour, question or documentation page it is written from. Outside a git checkout, or for
+ * a page with no single source (the lists), there is no <lastmod>: a wrong one is worse.
+ */
+const changed = new Map<string, string>();
+try {
+  let date = "";
+  for (const line of execFileSync(
+    "git",
+    ["log", "--format=%x00%cs", "--name-only", "--", "content"],
+    {
+      cwd: root,
+      encoding: "utf8",
+      maxBuffer: 1 << 28,
+      stdio: ["ignore", "pipe", "ignore"],
+    },
+  ).split("\n")) {
+    if (line.startsWith("\0")) date = line.slice(1);
+    else if (line && !changed.has(line)) changed.set(line, date);
+  }
+} catch {
+  // Not a checkout (or no git): the sitemap goes without dates.
+}
+/** Sitemap path ("de/tour/exodus/") → the date its source last changed. */
+const lastmod = new Map<string, string>();
+const write = (path: string, html: string, listed = true, src?: string) => {
   const file = join(pub, path, "index.html");
   mkdirSync(join(pub, path), { recursive: true });
   if (!existsSync(file) || readFileSync(file, "utf8") !== html) writeFileSync(file, html);
   (listed ? urls : unlisted).push(`${path}/`);
+  const date = src ? changed.get(src) : undefined;
+  if (listed && date) lastmod.set(`${path}/`, date);
 };
 
 /** A page for every place with verses: its card as a page, with its article and photo. */
@@ -507,7 +552,18 @@ function placePages(l: Lang): void {
           name,
           // Where it is today, as the page says it: not when that only repeats the name.
           ...(today ? { description: today } : {}),
+          // Its names in the site's other languages, each tagged with its language.
+          ...(() => {
+            const other = LANGS.filter((o) => o !== l)
+              .map((o) => ({ "@value": nameOf(p, o), "@language": o }))
+              .filter(
+                (n, i, all) =>
+                  n["@value"] !== name && all.findIndex((m) => m["@value"] === n["@value"]) === i,
+              );
+            return other.length ? { alternateName: other } : {};
+          })(),
           geo: { "@type": "GeoCoordinates", latitude: lat, longitude: lon },
+          ...(sameAs(p.id).length ? { sameAs: sameAs(p.id) } : {}),
           // This page, and the globe opened on the place (structured data is written only
           // with SITE_URL, so both are absolute).
           url: `${site}/${path}/`,
@@ -516,6 +572,7 @@ function placePages(l: Lang): void {
         noindex: !art,
       }),
       !!art,
+      content.articles?.[p.id] ? `content/articles/${content.articles[p.id]}.yaml` : undefined,
     );
   }
 }
@@ -576,6 +633,8 @@ function questionPages(l: Lang): void {
           ],
         },
       }),
+      true,
+      `content/questions/${q.id}.yaml`,
     );
   }
   if (questions.length > 0) questionsIndex(l);
@@ -652,6 +711,8 @@ function tourPages(l: Lang): void {
         depth: 3,
         ...(image ? { image } : {}),
       }),
+      true,
+      `content/tours/${t.id}.yaml`,
     );
   }
 }
@@ -1100,8 +1161,10 @@ The map is an app at ${base}/ (state lives in the address: ?year=, ?place=, ?tou
 
 - API documentation, static JSON with no key, CC BY 4.0: ${inEach((l) => docsPath(l, "api"))}
 - [API index](${base}/api/v1/index.json)
-- [Places](${base}/api/v1/places.json): ids, names in every language, kind, coordinates, how many verses name each, its page in every language
+- [OpenAPI 3.1 description](${base}/api/v1/openapi.json)
+- [Places](${base}/api/v1/places.json): ids, names in every language, kind, coordinates, how many verses name each, its page in every language, its Wikidata and Pleiades ids
 - Verses to places: ${base}/api/v1/verses/{Book}.json (OSIS book ids, e.g. Acts)
+- Chapters to places and people: ${base}/api/v1/chapters/{Book}.json; [people](${base}/api/v1/people.json) (STEPBible TIPNR ids)
 - [Tours](${base}/api/v1/tours.json), [events](${base}/api/v1/events.json), [battles](${base}/api/v1/battles.json), [questions](${base}/api/v1/questions.json), [ancient writers](${base}/api/v1/ancient.json)
 - Embedding the globe in another site: ${inEach((l) => docsPath(l, "embedding"))}
 - Places in any text, one script that links the Bible places a page names: ${base}/hg-places-${HG_PLACES.latest}.js (integrity ${HG_PLACES.versions[HG_PLACES.latest] ?? ""})
@@ -1137,12 +1200,24 @@ for (const l of LANGS)
   }
 
 const sitemap = join(pub, "sitemap.xml");
+/** A documentation page's date: its source, content/docs/<language>/<page>.html. */
+function docDate(u: string): string | undefined {
+  for (const l of LANGS)
+    for (const p of DOC_PAGES)
+      if (docsPath(l, p) === u) return changed.get(`content/docs/${l}/${p}.html`);
+  return undefined;
+}
 if (site) {
   writeFileSync(
     sitemap,
     `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${["", ...LANGS.flatMap((l) => DOC_PAGES.map((p) => docsPath(l, p))), ...urls].map((u) => `  <url><loc>${esc(`${site}/${u}`)}</loc></url>`).join("\n")}
+${["", ...LANGS.flatMap((l) => DOC_PAGES.map((p) => docsPath(l, p))), ...urls]
+  .map((u) => {
+    const date = lastmod.get(u) ?? docDate(u);
+    return `  <url><loc>${esc(`${site}/${u}`)}</loc>${date ? `<lastmod>${date}</lastmod>` : ""}</url>`;
+  })
+  .join("\n")}
 </urlset>
 `,
   );

@@ -88,9 +88,11 @@ launch), **owner** (needs the owner's decision or account).
 - **Quotations come from public-domain texts only** (Synodal, KJV), never from a
   copyrighted translation, and are verified word for word by the fact-check passes.
 - **AI crawlers (owner).** A public, free educational site gains from being cited by AI
-  assistants; the default `robots.txt` allows all crawlers. If the owner prefers to keep
-  the content out of AI training, `robots.txt` can disallow GPTBot, ClaudeBot, CCBot,
-  Google-Extended and similar while leaving search engines in.
+  assistants. `robots.txt` names the AI crawlers explicitly (2026-10-17) and allows them
+  all, in two groups: answer engines that cite their sources (OAI-SearchBot, Claude-SearchBot,
+  PerplexityBot, …) and crawlers that gather training text (GPTBot, ClaudeBot, CCBot,
+  Google-Extended, …). If the owner prefers to keep the content out of AI training, the
+  second group's `Allow` becomes `Disallow`, leaving search and answer engines in.
 - **Agents (done 2026-10-14).** `llms.txt` lists every language's pages, docs and the API;
   the place pages carry `Place` structured data with their address and the map. In a
   browser with WebMCP (Chrome's origin trial), the map registers two read-only tools,
