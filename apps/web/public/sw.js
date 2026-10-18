@@ -38,8 +38,15 @@ self.addEventListener("activate", (event) => {
   );
 });
 
+// Data files that earlier deploys served and this one does not (ADR 0016): the file list and
+// the articles in one file, which a worker of before kept in the data cache.
+const GONE = ["offline.json", "data/articles.json", "data/questions.json"];
+
 /** Built files of earlier deploys are dropped: only the current build's stay. */
 async function prune() {
+  const data = await caches.open(DATA);
+  for (const f of GONE)
+    await data.delete(new URL(f, self.registration.scope).href, { ignoreVary: true });
   // A worker the build did not write (the dev server) knows no files: it drops none.
   if (BUILT.length === 0) return;
   const keep = new Set(BUILT.map((f) => new URL(f, self.registration.scope).href));
@@ -158,7 +165,14 @@ self.addEventListener("message", (event) => {
   }
   if (m?.type !== "save") return;
   const client = event.source;
-  event.waitUntil(save(m.files ?? [], m.tiles ?? [], client));
+  // A page of an earlier deploy, still open, sends no files: it read them from offline.json.
+  // Saving only this build's files would keep no data and report success; it is told to fail,
+  // and a reload brings the page that sends them.
+  if (!Array.isArray(m.files)) {
+    client?.postMessage({ type: "save-error" });
+    return;
+  }
+  event.waitUntil(save(m.files, m.tiles ?? [], client));
 });
 
 async function save(files, tiles, client) {
