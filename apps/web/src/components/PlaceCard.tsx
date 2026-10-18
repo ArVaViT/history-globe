@@ -853,6 +853,18 @@ function ArticleSection({ placeId, locale }: { placeId: string; locale: Locale }
             ? t("place.article_reviewed", { name: article.reviewer })
             : t("place.article_checked")}
         </div>
+        {/* The article is the site's own text, under its own licence (ADR 0016). */}
+        <div className="mt-1">
+          {t("place.article_licence")},{" "}
+          <a
+            href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+            target="_blank"
+            rel="license noopener noreferrer"
+            className="underline decoration-dotted underline-offset-2 hover:text-ink"
+          >
+            CC BY-NC-ND 4.0
+          </a>
+        </div>
       </div>
     </section>
   );

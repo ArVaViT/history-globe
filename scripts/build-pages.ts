@@ -243,6 +243,8 @@ function icon(name: keyof typeof ICONS): string {
 
 /** The open sets every page credits, with their licences (the rest: the sources page). */
 const CREDITS = "OpenBible.info, Cliopatria, Itiner-e (CC BY 4.0), Pleiades (CC BY 3.0)";
+/** The licence of the site's own texts, the articles and the answers (ADR 0016). */
+const NC_ND = "https://creativecommons.org/licenses/by-nc-nd/4.0/";
 
 /** The page shell: the same look as the docs pages, light and without a script. */
 function page(o: {
@@ -260,6 +262,8 @@ function page(o: {
   home?: boolean;
   /** A thin page (a place with no article yet): open to readers, kept out of search. */
   noindex?: boolean;
+  /** The page carries the site's own text under CC BY-NC-ND (ADR 0016): an article or an answer. */
+  licence?: "article" | "answer";
 }): string {
   const up = "../".repeat(o.depth);
   // The same page in every language: the path after the language.
@@ -288,7 +292,7 @@ function page(o: {
     <meta name="theme-color" content="${o.home ? "#fcfbf8" : "#fbf8f2"}" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="${o.home ? "#0c1218" : "#0f141b"}" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="${up}favicon.svg" type="image/svg+xml" />
-    <title>${esc(o.title)} | History Globe</title>${o.noindex ? '\n    <meta name="robots" content="noindex, follow" />' : ""}${meta}${
+    <title>${esc(o.title)} | History Globe</title>${o.noindex ? '\n    <meta name="robots" content="noindex, follow" />' : ""}${meta}${o.licence ? `\n    <link rel="license" href="${NC_ND}" />` : ""}${
       o.home
         ? `\n    <link rel="preload" href="${up}docs/fonts/golos-text-${o.l === "ru" || o.l === "uk" ? "cyrillic" : "latin"}-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     <script>
@@ -310,7 +314,7 @@ function page(o: {
       <div class="bar-end">${langs}<a class="open" href="${up}?locale=${o.l}">${LANDING[o.l].open}${icon("out")}</a></div>
     </header>
 ${o.body}
-    <footer class="foot"><nav aria-label="History Globe"><a href="${up}${o.l}/">History Globe</a><a href="${up}${docsPath(o.l)}">${T[o.l].about}</a><a href="${up}${docsPath(o.l, "privacy")}">${T[o.l].privacy}</a><a href="${up}${docsPath(o.l, "sources")}">${T[o.l].sources}</a></nav><p title="${T[o.l].data}: ${CREDITS}">${T[o.l].data}: ${CREDITS}</p></footer>
+    <footer class="foot"><nav aria-label="History Globe"><a href="${up}${o.l}/">History Globe</a><a href="${up}${docsPath(o.l)}">${T[o.l].about}</a><a href="${up}${docsPath(o.l, "privacy")}">${T[o.l].privacy}</a><a href="${up}${docsPath(o.l, "sources")}">${T[o.l].sources}</a></nav><p title="${T[o.l].data}: ${CREDITS}">${T[o.l].data}: ${CREDITS}</p>${o.licence ? `<p class="lic">${o.licence === "article" ? T[o.l].licArticle : T[o.l].licAnswer}, <a rel="license" href="${NC_ND}">CC BY-NC-ND 4.0</a></p>` : ""}</footer>
   </body>
 </html>
 `;
@@ -581,6 +585,7 @@ function placePages(l: Lang): void {
           hasMap: `${site}/?place=${p.id}&locale=${l}`,
         },
         noindex: !art,
+        ...(art ? { licence: "article" as const } : {}),
       }),
       !!art,
       content.articles?.[p.id] ? `content/articles/${content.articles[p.id]}.yaml` : undefined,
@@ -643,6 +648,7 @@ function questionPages(l: Lang): void {
             },
           ],
         },
+        licence: "answer",
       }),
       true,
       `content/questions/${q.id}.yaml`,
