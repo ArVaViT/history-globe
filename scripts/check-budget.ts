@@ -13,6 +13,8 @@ import { gzipSync } from "node:zlib";
 
 const BUDGET_KB = 440;
 const dist = join(import.meta.dirname, "../apps/web/dist");
+// The source maps, moved out of the build by vite.config.ts (sourceMapsAside): not published.
+const maps = join(import.meta.dirname, "../apps/web/maps");
 const js = readdirSync(dist, { recursive: true, encoding: "utf8" })
   .filter((f) => /^(assets|vendor)\//.test(f) && /\.m?js$/.test(f))
   .map((f) => join(dist, f));
@@ -50,12 +52,16 @@ for (const f of js) {
 /**
  * The language a chunk belongs to, when all it holds is one language's words: its UI
  * dictionary (apps/web/src/i18n/<l>.json) or its model data (packages/model/src/locales/<l>.ts),
- * as the chunk's source map says. A reader fetches only the language shown.
+ * as the chunk's source map (apps/web/maps) says. A reader fetches only the language shown.
  */
 const languageOf = (file: string): string | undefined => {
   let sources: string[];
   try {
-    sources = (JSON.parse(readFileSync(`${file}.map`, "utf8")) as { sources: string[] }).sources;
+    sources = (
+      JSON.parse(readFileSync(join(maps, `${relative(dist, file)}.map`), "utf8")) as {
+        sources: string[];
+      }
+    ).sources;
   } catch {
     return undefined;
   }

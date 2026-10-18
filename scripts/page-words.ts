@@ -76,6 +76,8 @@ const T_UK = {
   language: "Мова",
   photo: "Фото",
   pd: "суспільне надбання",
+  licArticle: "Текст статті: © History Globe",
+  licAnswer: "Текст відповіді: © History Globe",
 } as const;
 
 const LANDING_UK = {
@@ -239,6 +241,8 @@ const T_ES = {
   language: "Idioma",
   photo: "Foto",
   pd: "dominio público",
+  licArticle: "Texto del artículo: © History Globe",
+  licAnswer: "Texto de la respuesta: © History Globe",
 } as const;
 
 const LANDING_ES = {
@@ -402,6 +406,8 @@ const T_PT = {
   language: "Idioma",
   photo: "Foto",
   pd: "domínio público",
+  licArticle: "Texto do artigo: © History Globe",
+  licAnswer: "Texto da resposta: © History Globe",
 } as const;
 
 const LANDING_PT = {
@@ -565,6 +571,8 @@ const T_DE = {
   language: "Sprache",
   photo: "Foto",
   pd: "gemeinfrei",
+  licArticle: "Artikeltext: © History Globe",
+  licAnswer: "Antworttext: © History Globe",
 } as const;
 
 const LANDING_DE = {
@@ -728,6 +736,8 @@ const T_FR = {
   language: "Langue",
   photo: "Photo",
   pd: "domaine public",
+  licArticle: "Texte de l’article : © History Globe",
+  licAnswer: "Texte de la réponse : © History Globe",
 } as const;
 
 const LANDING_FR = {
@@ -893,6 +903,8 @@ const T_IT = {
   language: "Lingua",
   photo: "Foto",
   pd: "pubblico dominio",
+  licArticle: "Testo dell’articolo: © History Globe",
+  licAnswer: "Testo della risposta: © History Globe",
 } as const;
 
 const LANDING_IT = {
@@ -1056,6 +1068,8 @@ const T_NL = {
   language: "Taal",
   photo: "Foto",
   pd: "publiek domein",
+  licArticle: "Tekst van het artikel: © History Globe",
+  licAnswer: "Tekst van het antwoord: © History Globe",
 } as const;
 
 const LANDING_NL = {
@@ -1221,6 +1235,8 @@ const T_PL = {
   language: "Język",
   photo: "Zdjęcie",
   pd: "domena publiczna",
+  licArticle: "Tekst artykułu: © History Globe",
+  licAnswer: "Tekst odpowiedzi: © History Globe",
 } as const;
 
 const LANDING_PL = {
@@ -1388,6 +1404,8 @@ const T_CS = {
   language: "Jazyk",
   photo: "Foto",
   pd: "volné dílo",
+  licArticle: "Text článku: © History Globe",
+  licAnswer: "Text odpovědi: © History Globe",
 } as const;
 
 const LANDING_CS = {
@@ -1556,6 +1574,8 @@ export const T = {
     language: "Язык",
     photo: "Фото",
     pd: "общественное достояние",
+    licArticle: "Текст статьи: © History Globe",
+    licAnswer: "Текст ответа: © History Globe",
   },
   en: {
     site: "History Globe — a map of biblical history",
@@ -1615,6 +1635,9 @@ export const T = {
     language: "Language",
     photo: "Photo",
     pd: "public domain",
+    // The site's own texts (ADR 0016); the footer adds the licence, linked.
+    licArticle: "Article text: © History Globe",
+    licAnswer: "Answer text: © History Globe",
   },
 } as const;
 

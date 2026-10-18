@@ -10,12 +10,15 @@
  *                                                          the saved relief kept apart, never dropped
  *
  * Data goes to the network first even when it is cached: a deploy changes data and code
- * together, and new code must not read old data. offline.json (written by the build, see
- * vite.config.ts) lists the files a save fetches; the relief to save is sent by the page.
- * The build writes its id below, so each deploy installs this worker anew and drops the
- * built files of the one before.
+ * together, and new code must not read old data. A save fetches the build's own files,
+ * written below by the build (vite.config.ts, offlineList), and the data files and the
+ * relief sent by the page (src/offline.ts). The build writes its id below too, so each
+ * deploy installs this worker anew and drops the built files of the one before.
  */
 const BUILD = "dev";
+// The build's files under assets/ and vendor/, with their size, as the build wrote them.
+const BUILT = [];
+const BUILT_BYTES = 0;
 const SHELL = "hg-shell";
 const DATA = "hg-data";
 const TILES = "hg-tiles";
@@ -35,13 +38,18 @@ self.addEventListener("activate", (event) => {
   );
 });
 
+// Data files that earlier deploys served and this one does not (ADR 0016): the file list and
+// the articles in one file, which a worker of before kept in the data cache.
+const GONE = ["offline.json", "data/articles.json", "data/questions.json"];
+
 /** Built files of earlier deploys are dropped: only the current build's stay. */
 async function prune() {
-  const list = await fetch("offline.json", { cache: "no-store" })
-    .then((r) => (r.ok ? r.json() : null))
-    .catch(() => null);
-  if (!list) return;
-  const keep = new Set(list.files.map((f) => new URL(f, self.registration.scope).href));
+  const data = await caches.open(DATA);
+  for (const f of GONE)
+    await data.delete(new URL(f, self.registration.scope).href, { ignoreVary: true });
+  // A worker the build did not write (the dev server) knows no files: it drops none.
+  if (BUILT.length === 0) return;
+  const keep = new Set(BUILT.map((f) => new URL(f, self.registration.scope).href));
   const cache = await caches.open(SHELL);
   for (const request of await cache.keys())
     if (/\/(assets|vendor)\//.test(request.url) && !keep.has(request.url))
@@ -143,22 +151,36 @@ async function trimTiles(cache) {
 }
 
 /**
- * A save, asked by the page: { type: "save", tiles: [urls] }. Progress goes back as
- * { type: "save", done, total } and ends with { type: "saved", failed } or { type: "save-error" }.
+ * Asked by the page (src/offline.ts):
+ *   { type: "size" }, with a port: the size of the build's own files goes back on the port.
+ *   { type: "save", files: [paths], tiles: [urls] }: a save of the build's files, the files
+ *   named (the data) and the relief tiles. Progress goes back as { type: "save", done, total }
+ *   and ends with { type: "saved", failed } or { type: "save-error" }.
  */
 self.addEventListener("message", (event) => {
-  if (event.data?.type !== "save") return;
+  const m = event.data;
+  if (m?.type === "size") {
+    event.ports[0]?.postMessage({ type: "size", bytes: BUILT_BYTES });
+    return;
+  }
+  if (m?.type !== "save") return;
   const client = event.source;
-  event.waitUntil(save(event.data.tiles ?? [], client));
+  // A page of an earlier deploy, still open, sends no files: it read them from offline.json.
+  // Saving only this build's files would keep no data and report success; it is told to fail,
+  // and a reload brings the page that sends them.
+  if (!Array.isArray(m.files)) {
+    client?.postMessage({ type: "save-error" });
+    return;
+  }
+  event.waitUntil(save(m.files, m.tiles ?? [], client));
 });
 
-async function save(tiles, client) {
+async function save(files, tiles, client) {
   const post = (message) => client?.postMessage(message);
   try {
-    const list = await fetch("offline.json", { cache: "no-store" }).then((r) => r.json());
     const scope = self.registration.scope;
     const jobs = [
-      ...list.files.map((f) => {
+      ...[...BUILT, ...files].map((f) => {
         const url = new URL(f, scope);
         return { url: url.href, cache: built(url) ? SHELL : DATA };
       }),

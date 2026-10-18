@@ -586,7 +586,7 @@ export interface ContentRelease {
   readonly events?: readonly HistoryEvent[];
   /** Battles and sieges (content/battles.yaml), in order of year. */
   readonly battles?: readonly HistoryBattle[];
-  /** Places with an article: place id → article id; the texts load from articles.json. */
+  /** Places with an article: place id → article id; the texts load from articles/<language>.json. */
   readonly articles?: Readonly<Record<string, string>>;
   /** Photos by place id; the image itself is data/photos/<place id>.jpg. */
   readonly photos?: Readonly<Record<string, PlacePhoto>>;

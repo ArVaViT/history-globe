@@ -418,6 +418,27 @@ await step("a place's card links the questions answered with it on the map", asy
   expect(href?.endsWith("/ru/q/where-was-nineveh/") === true, `href=${String(href)}`);
 });
 
+await step("the article and answer pages name their licence; a thin page does not", async () => {
+  // ADR 0016: the site's own texts are CC BY-NC-ND, in the head and at the foot.
+  const lic = 'link[rel="license"][href="https://creativecommons.org/licenses/by-nc-nd/4.0/"]';
+  for (const [path, words] of [
+    ["ru/place/jerusalem/", "Текст статьи: © History Globe"],
+    ["ru/q/where-was-nineveh/", "Текст ответа: © History Globe"],
+  ]) {
+    await page.goto(BASE + path);
+    expect((await page.locator(`head ${lic}`).count()) === 1, `${path}: no licence in the head`);
+    const foot = (await page.locator("footer .lic").textContent()) ?? "";
+    expect(foot.startsWith(words) && foot.endsWith("CC BY-NC-ND 4.0"), `${path}: «${foot}»`);
+  }
+  await page.goto(BASE + "en/places/");
+  const thin = await page
+    .locator("ul li:not(.art) a[href^='../place/']")
+    .first()
+    .getAttribute("href");
+  await page.goto(BASE + "en/places/" + String(thin));
+  expect((await page.locator("footer .lic").count()) === 0, `${String(thin)} has a licence line`);
+});
+
 await step(
   "the quiz plays on screen: a choice shows the right place, the end the score",
   async () => {

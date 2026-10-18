@@ -804,7 +804,7 @@ function ArticleSection({ placeId, locale }: { placeId: string; locale: Locale }
   useEffect(() => {
     let live = true;
     // A failed load leaves the card without the article; the next card tries again.
-    loadArticle(placeId).then(
+    loadArticle(placeId, locale).then(
       (a) => {
         if (live) setArticle(a ?? null);
       },
@@ -815,7 +815,7 @@ function ArticleSection({ placeId, locale }: { placeId: string; locale: Locale }
     return () => {
       live = false;
     };
-  }, [placeId]);
+  }, [placeId, locale]);
   // The tab is open while the article loads, or if it failed: say so rather than show nothing.
   if (article === undefined) return <p className="px-5 pt-3 text-[13px] text-ink-soft">…</p>;
   if (article === null)
@@ -852,6 +852,18 @@ function ArticleSection({ placeId, locale }: { placeId: string; locale: Locale }
           {article.status === "reviewed" && article.reviewer
             ? t("place.article_reviewed", { name: article.reviewer })
             : t("place.article_checked")}
+        </div>
+        {/* The article is the site's own text, under its own licence (ADR 0016). */}
+        <div className="mt-1">
+          {t("place.article_licence")},{" "}
+          <a
+            href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+            target="_blank"
+            rel="license noopener noreferrer"
+            className="underline decoration-dotted underline-offset-2 hover:text-ink"
+          >
+            CC BY-NC-ND 4.0
+          </a>
         </div>
       </div>
     </section>

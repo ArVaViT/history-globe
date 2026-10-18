@@ -29,7 +29,7 @@ URL, snapshot date and SHA-256. The credits shipped with the map are in
 | `roads-major.geojson`, `roads-minor.geojson`        | from 312 BC and zoom 4.5 / 6.5               | Roman roads (Itiner-e, CC BY 4.0): `name`, `type`, `cert` (certain, conjectured, hypothetical)                                                                                                                                     |
 | `ancient.geojson`                                   | once the map has loaded                      | the ancient world outside the Bible (ADR 0013): `id` (Pleiades or Wikidata), `en`, `ru`, `from`, `to`, `approx`, `kind`, `rank`                                                                                                    |
 | `people.json`                                       | a card's People tab, the search              | `people`: rows `[id, name, ru, "m"/"f", fathers, mothers, spouses, children, verses]` with family as row indexes and the number of verses naming them; `places`: place id → `[person, tier, key verse]` (tier 0 central … 3 named) |
-| `articles.json`                                     | an article opened                            | place id → `{id, title, body, sources, status, scripture}`, title and body per language                                                                                                                                            |
+| `articles/<lang>.json`                              | an article opened                            | place id → `{id, title, body, sources, status, scripture}`, title and body in that language (English where it has none); the Russian file also `sources_ru`                                                                        |
 | `verses/<lang>/…`                                   | a verse opened                               | the Synodal and KJV text by chapter                                                                                                                                                                                                |
 | `photos/<place id>.jpg`                             | a card with a photo                          | credit and licence in `content.json` → `photos`                                                                                                                                                                                    |
 
@@ -39,8 +39,9 @@ OpenBible places and identifications CC BY 4.0 (points copied from OpenStreetMap
 Google left out, ADR 0008); Cliopatria states CC BY 4.0; STEP Bible TIPNR people CC BY
 4.0; Itiner-e roads CC BY 4.0; Pleiades CC BY 3.0; Wikidata CC0; Natural Earth public
 domain; photos from Wikimedia Commons, public domain, CC0 or CC BY only, each credited;
-the text written for this project (names checked against the Synodal text, events,
-articles, tours, notes) is the project's own and not licensed for reuse yet.
+the text written for this project is the project's own: the names in every language,
+events, tours and notes under CC BY 4.0, the place articles and the answered questions
+under CC BY-NC-ND 4.0 (`LICENSE`, ADR 0016).
 
 ## If a source goes away
 

@@ -4,7 +4,8 @@
  * changes without a new hash would stop running it in production and nowhere else (the dev
  * server sends no such header), so this check runs on the build: every inline script of
  * every page in apps/web/dist has its hash in every policy, and no policy keeps a hash
- * nothing uses. It prints the hashes to paste when it fails.
+ * nothing uses. It prints the hashes to paste when it fails. Every policy also has a
+ * default-src, so that what no directive names is not allowed from anywhere.
  *
  * Usage: node scripts/check-csp.ts  (after the build)
  */
@@ -47,6 +48,8 @@ const policies = vercel.headers.flatMap((h) =>
 const errors: string[] = [];
 if (policies.length === 0) errors.push("vercel.json has no Content-Security-Policy");
 for (const p of policies) {
+  // What no directive names falls back to default-src: without it, anything is allowed.
+  if (!/(^|;)\s*default-src\s/.test(p.value)) errors.push(`${p.source}: no default-src`);
   const scriptSrc = /script-src([^;]*)/.exec(p.value)?.[1];
   if (scriptSrc === undefined) {
     errors.push(`${p.source}: no script-src`);
