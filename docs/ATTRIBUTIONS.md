@@ -101,7 +101,8 @@ Software
   React, react-dom, scheduler (MIT) and the Golos Text and Literata fonts (OFL 1.1):
   licence texts in apps/web/public/licenses/third-party.txt, written by
   scripts/third-party-licenses.ts and linked from the About page.
-  The MapLibre files are shipped unchanged, with their LICENSE.txt, under
+  The MapLibre files are shipped as published (only the source-map pointer at the
+  end of each is dropped, with the maps), with their LICENSE.txt, under
   vendor/maplibre-gl-<version>/ in the build.
   Lucide icons — Copyright (c) 2026 Lucide Icons and Contributors, ISC; nine of
   the fifteen icons derive from Feather, Copyright (c) 2013-present Cole Bemis, MIT.

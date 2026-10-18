@@ -4,6 +4,8 @@ import {
   mkdirSync,
   readdirSync,
   readFileSync,
+  renameSync,
+  rmSync,
   statSync,
   writeFileSync,
 } from "node:fs";
@@ -17,7 +19,7 @@ import { defineConfig, type Plugin } from "vite";
 // MapLibre 6 ships three ES modules: the library, its worker, and a module both share.
 // It finds the worker next to its own file through a URL computed at run time, which a
 // bundler cannot follow: bundled, the worker was a 404 in production and nothing was
-// ever drawn. So the build ships MapLibre's own files unchanged under vendor/ and the
+// ever drawn. So the build ships MapLibre's own files as they are under vendor/ and the
 // app imports the library from there; the shared module then loads once, for the page
 // and the worker alike. In development Vite serves them from node_modules as they are.
 const require = createRequire(import.meta.url);
@@ -39,10 +41,54 @@ function maplibreVendor(): Plugin {
     writeBundle() {
       const to = join(outDir, VENDOR);
       mkdirSync(to, { recursive: true });
-      // The source maps too: each file ends with a sourceMappingURL.
-      for (const f of [...FILES, ...FILES.map((name) => `${name}.map`)])
-        copyFileSync(join(maplibreDist, f), join(to, f));
+      // Without their source maps (sourceMapsAside below): each file ends with a
+      // sourceMappingURL line, dropped so that no browser asks for a map that is not there.
+      for (const f of FILES)
+        writeFileSync(
+          join(to, f),
+          readFileSync(join(maplibreDist, f), "utf8").replace(
+            /\n\/\/# sourceMappingURL=\S+\s*$/,
+            "\n",
+          ),
+        );
       copyFileSync(join(maplibreDist, "../LICENSE.txt"), join(to, "LICENSE.txt"));
+    },
+  };
+}
+
+/**
+ * The source maps are not published: the code is all rights reserved (ADR 0014), and a map
+ * is the source with its comments. `build.sourcemap: "hidden"` writes them without a
+ * sourceMappingURL in the chunks; this moves them out of dist/ to apps/web/maps/ (not in
+ * git), where scripts/check-budget.ts reads which language a chunk belongs to.
+ */
+function sourceMapsAside(): Plugin {
+  let outDir = "dist";
+  let mapsDir = "maps";
+  return {
+    name: "source-maps-aside",
+    apply: "build",
+    configResolved(config) {
+      outDir = resolve(config.root, config.build.outDir);
+      mapsDir = resolve(config.root, "maps");
+    },
+    closeBundle: {
+      order: "pre",
+      handler() {
+        rmSync(mapsDir, { recursive: true, force: true });
+        const walk = (dir: string) => {
+          for (const name of readdirSync(dir)) {
+            const path = join(dir, name);
+            if (statSync(path).isDirectory()) walk(path);
+            else if (name.endsWith(".map")) {
+              const to = join(mapsDir, relative(outDir, path));
+              mkdirSync(dirname(to), { recursive: true });
+              renameSync(path, to);
+            }
+          }
+        };
+        walk(outDir);
+      },
     },
   };
 }
@@ -76,51 +122,110 @@ function publicFolderIndex(): Plugin {
   };
 }
 
-// What a reader's "save for use offline" fetches (public/sw.js): the app itself, MapLibre,
-// the data and the photos, with their size; not the static pages, docs or API, which are
-// for search engines and other sites. Written once the bundle and the vendor files are out.
+/**
+ * The files a reader's "save for use offline" fetches besides the build itself (public/sw.js,
+ * src/offline.ts): the data and the photos, the app's manifest and icons, with their size.
+ * Not the static pages, docs or API, which are for search engines and other sites.
+ */
+export function savedFiles(publicDir: string): { files: string[]; bytes: number } {
+  const files: string[] = [];
+  let bytes = 0;
+  const walk = (dir: string) => {
+    for (const name of readdirSync(dir).sort()) {
+      const path = join(dir, name);
+      if (statSync(path).isDirectory()) walk(path);
+      // The states' later half (*-late) is kept only to rebuild the data: the app reads
+      // polities-all instead (docs/data-release.md).
+      else if (!name.endsWith(".map") && !name.includes("-late.")) {
+        files.push(relative(publicDir, path).split("\\").join("/"));
+        bytes += statSync(path).size;
+      }
+    }
+  };
+  if (existsSync(join(publicDir, "data"))) walk(join(publicDir, "data"));
+  for (const name of ["manifest.webmanifest", "favicon.svg", "icon-192.png"])
+    if (existsSync(join(publicDir, name))) {
+      files.push(name);
+      bytes += statSync(join(publicDir, name)).size;
+    }
+  return { files, bytes };
+}
+
+const OFFLINE_FILES = "virtual:offline-files";
+
+/**
+ * The list of those files as a module, `import("virtual:offline-files")` in src/offline.ts:
+ * a chunk of its own, fetched when a reader opens the save, not a file at a known address.
+ * The build's own files (assets/, vendor/) are not in it, since their names are not known
+ * until the bundle is written: the worker carries them (offlineList below).
+ */
+export function offlineFiles(): Plugin {
+  let publicDir = "public";
+  return {
+    name: "offline-files",
+    configResolved(config) {
+      publicDir = config.publicDir;
+    },
+    resolveId(id) {
+      return id === OFFLINE_FILES ? `\0${OFFLINE_FILES}` : undefined;
+    },
+    load(id) {
+      if (id !== `\0${OFFLINE_FILES}`) return undefined;
+      const { files, bytes } = savedFiles(publicDir);
+      return `export const bytes = ${String(bytes)};\nexport const files = ${JSON.stringify(files)};\n`;
+    },
+  };
+}
+
+/**
+ * The worker (public/sw.js) gets the build's own files written into it once the bundle and
+ * the vendor files are out: what a save keeps with the data, and what it keeps of an
+ * earlier deploy's files (prune). It also gets the build's id: a deploy changes the
+ * worker's bytes, so browsers install it anew.
+ */
 function offlineList(): Plugin {
   let outDir = "dist";
+  let publicDir = "public";
   return {
     name: "offline-list",
     apply: "build",
     configResolved(config) {
       outDir = resolve(config.root, config.build.outDir);
+      publicDir = config.publicDir;
     },
     closeBundle() {
-      const files: string[] = [];
+      const built: string[] = [];
       let bytes = 0;
       const walk = (dir: string) => {
-        for (const name of readdirSync(dir)) {
+        for (const name of readdirSync(dir).sort()) {
           const path = join(dir, name);
           if (statSync(path).isDirectory()) walk(path);
-          // The states' later half (*-late) is kept only to rebuild the data: the app reads
-          // polities-all instead (docs/data-release.md).
-          else if (!name.endsWith(".map") && !name.includes("-late.")) {
-            files.push(relative(outDir, path).split("\\").join("/"));
+          else if (!name.endsWith(".map")) {
+            built.push(relative(outDir, path).split("\\").join("/"));
             bytes += statSync(path).size;
           }
         }
       };
-      for (const dir of ["assets", "vendor", "data"])
+      for (const dir of ["assets", "vendor"])
         if (existsSync(join(outDir, dir))) walk(join(outDir, dir));
-      for (const name of ["manifest.webmanifest", "favicon.svg", "icon-192.png"])
-        if (existsSync(join(outDir, name))) {
-          files.push(name);
-          bytes += statSync(join(outDir, name)).size;
-        }
-      const list = JSON.stringify({ bytes, files });
-      writeFileSync(join(outDir, "offline.json"), list);
-      // The worker carries the build's id: a deploy changes its bytes, so browsers install it
-      // anew and it drops the built files of the deploy before (public/sw.js prune).
       const sw = join(outDir, "sw.js");
-      if (existsSync(sw)) {
-        const id = createHash("sha256").update(list).digest("hex").slice(0, 12);
-        writeFileSync(
-          sw,
-          readFileSync(sw, "utf8").replace('const BUILD = "dev";', `const BUILD = "${id}";`),
-        );
+      if (!existsSync(sw)) return;
+      const saved = savedFiles(publicDir);
+      const id = createHash("sha256")
+        .update(JSON.stringify([built, saved.files, bytes + saved.bytes]))
+        .digest("hex")
+        .slice(0, 12);
+      let text = readFileSync(sw, "utf8");
+      const lines: [string, string][] = [
+        ['const BUILD = "dev";', `const BUILD = "${id}";`],
+        ["const BUILT = [];", `const BUILT = ${JSON.stringify(built)};`],
+        ["const BUILT_BYTES = 0;", `const BUILT_BYTES = ${String(bytes)};`],
+      ];
+      for (const [from, to] of lines) {
+        if (!text.includes(from)) throw new Error(`offline-list: sw.js has no "${from}"`);
+        text = text.replace(from, to);
       }
+      writeFileSync(sw, text);
     },
   };
 }
@@ -187,14 +292,17 @@ export default defineConfig({
     react(),
     tailwindcss(),
     maplibreVendor(),
+    sourceMapsAside(),
     publicFolderIndex(),
+    offlineFiles(),
     offlineList(),
     titleFont(),
     originTrial(),
   ],
   build: {
     target: "es2023",
-    sourcemap: true,
+    // Written for check-budget.ts, never published (sourceMapsAside).
+    sourcemap: "hidden",
     rollupOptions: {
       external: ["maplibre-gl"],
       // Relative to the chunk in assets/, so the app works under any base path.

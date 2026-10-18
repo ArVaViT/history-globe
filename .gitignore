@@ -48,5 +48,8 @@ apps/web/public/api/
 apps/web/public/docs/
 db/seed/
 
+# The source maps of the build, kept out of dist/ (vite.config.ts, sourceMapsAside)
+apps/web/maps/
+
 # Vercel CLI (project link and local builds; deploys are prebuilt, ADR 0012)
 .vercel/

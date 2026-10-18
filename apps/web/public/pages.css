@@ -998,9 +998,11 @@ ol.stops p {
 }
 
 /* The footer on one line: the site's own links, then the credits, cut with an ellipsis
-   (the whole line in its title) where the column is narrow. */
+   (the whole line in its title) where the column is narrow. A page with the site's own
+   text adds its licence on a line of its own, under the credits. */
 .foot {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
   gap: 6px 28px;
@@ -1033,6 +1035,15 @@ ol.stops p {
   overflow: hidden;
   color: var(--ink-faint);
   text-overflow: ellipsis;
+}
+.foot nav + p {
+  flex: 1 1 0;
+  text-align: right;
+}
+.foot .lic {
+  flex-basis: 100%;
+  margin-top: -2px;
+  text-align: right;
 }
 
 @media (max-width: 640px) {
@@ -1068,6 +1079,12 @@ ol.stops p {
     flex-wrap: wrap;
     justify-content: center;
     gap: 4px 16px;
+  }
+  .foot nav + p,
+  .foot .lic {
+    flex: none;
+    margin-top: 0;
+    text-align: center;
   }
   .page {
     padding: 32px 16px 56px;
