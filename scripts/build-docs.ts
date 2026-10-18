@@ -486,6 +486,9 @@ function headings(body: string): { body: string; toc: Heading[] } {
 
 const FONTS = join(root, "apps/web/node_modules/@fontsource-variable");
 const FONT_FILES = [
+  ["literata", "literata-latin-wght-normal.woff2"],
+  ["literata", "literata-latin-ext-wght-normal.woff2"],
+  ["literata", "literata-cyrillic-wght-normal.woff2"],
   ["golos-text", "golos-text-latin-wght-normal.woff2"],
   ["golos-text", "golos-text-latin-ext-wght-normal.woff2"],
   ["golos-text", "golos-text-cyrillic-wght-normal.woff2"],
