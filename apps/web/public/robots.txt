@@ -6,6 +6,11 @@
 # is Cloudflare's content signals (contentsignals.org): search and answer engines yes,
 # training no. It is the machine-readable form of the text-and-data-mining reservation
 # in LICENSE (Article 4(3) of EU Directive 2019/790).
+#
+# /data/ is what the map loads (the articles one language a file among it); the pages that
+# search engines index read none of it but the photos, which stay open, as do the place
+# lists that hg-places.js reads on the sites that use it. The open data is /api/v1/,
+# documented and open to every crawler.
 
 # Search and answer engines that cite their sources.
 User-agent: OAI-SearchBot
@@ -19,6 +24,9 @@ User-agent: MistralAI-User
 User-agent: Meta-ExternalFetcher
 Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
+Disallow: /data/
+Allow: /data/photos/
+Allow: /data/text-places.
 
 # Crawlers that gather text for training models.
 User-agent: GPTBot
@@ -49,5 +57,8 @@ Disallow: /
 User-agent: *
 Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
+Disallow: /data/
+Allow: /data/photos/
+Allow: /data/text-places.
 
 Sitemap: https://historyglobe.app/sitemap.xml

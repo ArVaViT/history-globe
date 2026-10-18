@@ -32,6 +32,9 @@ reaches readers through the site and through the assistants that cite it.
   training text and carries `Content-Signal: search=yes, ai-input=yes, ai-train=no`; every
   page is sent with `tdm-reservation: 1` (`vercel.json`). Search engines and the
   assistants that answer with a citation stay allowed (`docs/launch-readiness.md`, section 4).
+  Every crawler is kept out of `/data/`, the files the map loads, but for `/data/photos/`
+  (the only files of it the indexed pages read) and `/data/text-places.*` (what
+  `hg-places.js` reads on the sites that use it); the open data is `/api/v1/`.
 - **Copies already made keep their licence.** A Creative Commons licence is not revocable:
   what was taken under CC BY before 2026-10-17 stays under CC BY. The new licence applies to
   what is published from that date on, which is why it is applied now, while copies are few.
