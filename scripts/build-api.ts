@@ -26,6 +26,7 @@ import { placeSlugs } from "../packages/model/src/slugs.ts";
 import { LOCALES } from "../packages/model/src/time.ts";
 import { openApi, violations } from "./api-openapi.ts";
 import { NOTICE } from "../packages/model/src/notice.ts";
+import { Canaries } from "./canary.ts";
 
 const root = join(import.meta.dirname, "..");
 const data = join(root, "apps/web/public/data");
@@ -147,6 +148,8 @@ const write = (file: string, value: unknown) => {
 };
 
 const slugs = placeSlugs(places.map((f) => f.properties));
+// The marks a copy can be told by (scripts/canary.ts): none without HG_CANARY_SEED.
+const canaries = new Canaries();
 // A page in every language the site is published in, under the same path.
 const pages = (path: string) => Object.fromEntries(LOCALES.map((l) => [l, `/${l}/${path}`]));
 /** A place's names in the languages other than English, in the order of LOCALES. */
@@ -156,25 +159,29 @@ const namesOf = (id: string): Record<string, string> => {
 };
 write(
   "places.json",
-  places.map(({ properties: p, geometry: g }) => ({
-    id: p.id,
-    name: p.name,
-    ...(content.names[p.id] ? { names: namesOf(p.id) } : {}),
-    // The first version's field, the same as names.ru: kept for the sites that read it.
-    ...(content.names[p.id]?.ru ? { name_ru: content.names[p.id]?.ru } : {}),
-    kind: p.kind,
-    lon: g.coordinates[0],
-    lat: g.coordinates[1],
-    ...(p.disputed ? { disputed: true } : {}),
-    // Another record of the same place under a repeated name (OpenBible keeps both).
-    ...(p.dup ? { duplicate: true } : {}),
-    verses: p.verses,
-    // The same place in the gazetteers (added in version 1: readers ignore a new field).
-    ...(wikidata[p.id] ? { wikidata: wikidata[p.id] } : {}),
-    ...(pleiades[p.id]?.id ? { pleiades: pleiades[p.id]?.id } : {}),
-    // A page only for a place some verse names (scripts/build-pages.ts writes no other).
-    ...(p.verses > 0 ? { page: pages(`place/${slugs.get(p.id) ?? p.id}/`) } : {}),
-  })),
+  canaries
+    .swap("api/v1/places.json", places, (f) => f.properties.id)
+    .map(({ properties: p, geometry: g }) =>
+      canaries.keys("api/v1/places.json", p.id, {
+        id: p.id,
+        name: p.name,
+        ...(content.names[p.id] ? { names: namesOf(p.id) } : {}),
+        // The first version's field, the same as names.ru: kept for the sites that read it.
+        ...(content.names[p.id]?.ru ? { name_ru: content.names[p.id]?.ru } : {}),
+        kind: p.kind,
+        lon: g.coordinates[0],
+        lat: g.coordinates[1],
+        ...(p.disputed ? { disputed: true } : {}),
+        // Another record of the same place under a repeated name (OpenBible keeps both).
+        ...(p.dup ? { duplicate: true } : {}),
+        verses: p.verses,
+        // The same place in the gazetteers (added in version 1: readers ignore a new field).
+        ...(wikidata[p.id] ? { wikidata: wikidata[p.id] } : {}),
+        ...(pleiades[p.id]?.id ? { pleiades: pleiades[p.id]?.id } : {}),
+        // A page only for a place some verse names (scripts/build-pages.ts writes no other).
+        ...(p.verses > 0 ? { page: pages(`place/${slugs.get(p.id) ?? p.id}/`) } : {}),
+      }),
+    ),
 );
 
 // Verse → places, a file per book: "Acts.16.12" → ["a49e1d0", …], in the order of the data.
@@ -192,11 +199,13 @@ for (const [book, verses] of books)
   write(
     `verses/${book}.json`,
     Object.fromEntries(
-      [...verses].sort(([a], [b]) => {
-        const [ca = 0, va = 0] = at(a);
-        const [cb = 0, vb = 0] = at(b);
-        return ca - cb || va - vb;
-      }),
+      [...verses]
+        .sort(([a], [b]) => {
+          const [ca = 0, va = 0] = at(a);
+          const [cb = 0, vb = 0] = at(b);
+          return ca - cb || va - vb;
+        })
+        .map(([ref, ids]) => [ref, canaries.ids(`api/v1/verses/${book}.json`, ref, ids)]),
     ),
   );
 
@@ -453,6 +462,7 @@ write("index.json", {
 });
 
 write("openapi.json", openApi("1"));
+canaries.report("api");
 if (apiErrors.length) {
   console.error(
     `api: the files break their description:\n  ${apiErrors.slice(0, 20).join("\n  ")}`,

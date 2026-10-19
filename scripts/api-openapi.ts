@@ -51,13 +51,13 @@ export function openApi(version: string): object {
         "The licence and the credit lines it asks for, the files, and the books with verse data.",
         ref("Index"),
       ),
-      "/places.json": get("Every place", "Every place record, in the order of the data.", {
+      "/places.json": get("Every place", "Every place record; join on id, no order is promised.", {
         type: "array",
         items: ref("Place"),
       }),
       "/verses/{book}.json": get(
         "Verses to places, one book",
-        "A verse (OSIS) to the ids of the places it names, in the order of the book.",
+        "A verse (OSIS) to the ids of the places it names; the verses in the order of the book, the ids in none.",
         {
           type: "object",
           additionalProperties: { type: "array", items: { type: "string" } },
