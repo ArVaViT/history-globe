@@ -167,9 +167,17 @@ function certaintyNote(p: Props, l: Lang): string {
 }
 
 /** Text for the page, safe in HTML. */
+/**
+ * A text with its spaces single: a canary mark (scripts/canary.ts) is one space more in a
+ * built text, which HTML folds in a paragraph but not in an attribute or in structured data,
+ * and which would move the cut of a description by a character.
+ */
+const plain = (s: string) => s.replace(/ {2,}/g, " ");
 /** A description cut at a word under `n` characters, with an ellipsis when cut. */
-const clip = (s: string, n = 200) =>
-  s.length <= n ? s : `${s.slice(0, s.lastIndexOf(" ", n - 1)).replace(/[,;:.\s]+$/, "")}…`;
+const clip = (text: string, n = 200) => {
+  const s = plain(text);
+  return s.length <= n ? s : `${s.slice(0, s.lastIndexOf(" ", n - 1)).replace(/[,;:.\s]+$/, "")}…`;
+};
 
 /**
  * The place's records in the gazetteers, for `sameAs` in its structured data: Wikidata
@@ -646,7 +654,7 @@ function questionPages(l: Lang): void {
             {
               "@type": "Question",
               name: title,
-              acceptedAnswer: { "@type": "Answer", text: q.answer[l].join(" ") },
+              acceptedAnswer: { "@type": "Answer", text: plain(q.answer[l].join(" ")) },
             },
           ],
         },
