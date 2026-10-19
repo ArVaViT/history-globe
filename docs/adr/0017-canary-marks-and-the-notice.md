@@ -58,3 +58,46 @@ statement of what may be taken and how, before it decides.
   for none: the three-run determinism check of the content build still holds.
 - A reader of `places.json` that relied on its order, against the description, now reads
   the ids. None is known.
+
+## Addendum (2026-10-19): the beacon and the honeypot
+
+The marks above prove a copy once it is found. Two more things make a copy, and a crawler
+that ignores `robots.txt`, show up by themselves, with nothing new to run or pay for: the
+host's firewall (Vercel WAF, custom rules in log mode) is the only place the signals go.
+
+- **The beacon** (`packages/model/src/beacon.ts`). A short script, without imports, stands
+  inline at the end of every page: the app's (`vite.config.ts`, so that the bytes are the
+  built pages' own and one hash in the Content-Security-Policy allows it everywhere) and the
+  built place, tour, question and documentation pages (`scripts/page-shell.ts`, `bodyEnd`).
+  On `historyglobe.app`, on `localhost` and on the project's previews
+  (`history-globe*.vercel.app`) it does nothing; a page opened from a file does nothing
+  either. From any other host it asks `https://historyglobe.app/origin/<host>` for an image
+  (there is no such file: the answer is the 404 page, which the image never shows) and puts
+  one line on the page, "Original: historyglobe.app", a link. The request carries the
+  copy's host and nothing else: no query, no cookie (the site sets none), nothing of the
+  reader, who reaches the site as with any request to it. The policy's `img-src` names
+  `https://historyglobe.app`, the site's own origin, so a copy that kept the headers still
+  sends it. A globe framed by another site is not a copy: `/embed/v1` and `?embed=1` are
+  served by the site, so their hostname is its own; `hg-places.js`, which runs on other
+  sites by design, does not carry the script. A copier who reads the HTML can cut the
+  script; the beacon is for the many copies made by a tool, not for the careful one.
+- **The honeypot** (`packages/model/src/honeypot.ts`). `/export/` is disallowed in
+  `robots.txt` for every crawler, and every page links to it with a link no reader sees
+  (`hidden`, `aria-hidden`, out of the tab order, `rel="nofollow"`). A search engine reads
+  `robots.txt` and never asks for it; whoever asks has read the HTML and ignored both. The
+  page that is there says so, links only to the API and the Build page, and asks not to be
+  indexed; it is not in the sitemap. Should a search console ever list the address as
+  "indexed, though blocked by robots.txt", the link comes off the built pages and stays on
+  the app's page alone.
+- **Where the signals are read.** Two firewall rules, both in log mode and prepared outside
+  the repository with the rate limits of the same day: "origin beacon" (path starts with
+  `/origin/`) and "honeypot" (path starts with `/export/`). The firewall's overview, by rule
+  and then by path, lists the copies' hosts and the addresses that asked for the honeypot,
+  with their IP, network and user agent; the host's request logs list the same requests by
+  path. After a week of logs the honeypot's rule may deny or challenge; the beacon's rule
+  stays in log mode, since its requests come from readers of a copy, not from the copier.
+  No rule is applied by the code: that is the owner's step, and reversible.
+- **What is not done.** No server, no function and no analytics event receives the beacon:
+  a static file host and its firewall are enough, and nothing new keeps data. The privacy
+  page says, in every language, what a copy sends. The seed and the registry of the marks,
+  and the firewall's logs, stay outside the repository as before.

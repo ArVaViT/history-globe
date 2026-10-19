@@ -99,7 +99,10 @@ launch), **owner** (needs the owner's decision or account).
   (`vercel.json`) is the machine-readable form of the text-and-data-mining reservation in
   `LICENSE` (ADR 0016). Google's search and Bing are not affected: Googlebot and bingbot
   are not in either group. A crawler that ignores `robots.txt` is not stopped by it; the
-  firewall is the next step (ADR 0016, consequences).
+  firewall is the next step (ADR 0016, consequences). Since 2026-10-19 such a crawler shows
+  itself: every page links, invisibly, to `/export/`, which `robots.txt` disallows, and a
+  page of the site that runs from another host asks the site for `/origin/<host>`; the
+  firewall's log rules list both (ADR 0017, addendum).
 - **Agents (done 2026-10-14).** `llms.txt` lists every language's pages, docs and the API;
   the place pages carry `Place` structured data with their address and the map. In a
   browser with WebMCP (Chrome's origin trial), the map registers two read-only tools,
