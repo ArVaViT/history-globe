@@ -1,5 +1,5 @@
 {
-  "_source": "Places put on another OpenBible record's point (pipeline/build_data.py, move_points). OpenBible calls each of these 'another name for' the other record, but resolves the two one hop apart, to different candidate sites (docs/crosswalk/their-errors.md, O6): one place, one point. Checked by hand on 2026-10-19; Zer (a061538) and Ramoth 2 (ab049cf) were taken out again the same day on review: the named record's own point fits their verses worse (docs/crosswalk/their-errors.md, O6).",
+  "_source": "Places whose point is chosen by hand (pipeline/build_data.py, move_points and pick_site). `same_as`: the place sits on another OpenBible record's point. OpenBible calls each of these 'another name for' the other record, but resolves the two one hop apart, to different candidate sites (docs/crosswalk/their-errors.md, O6): one place, one point; a chain (Bealoth -> Baalath-beer -> Ramah 6) is followed to its end. `site`: one of OpenBible's modern locations for the place, shown in place of its first identification, with its point, its confidence and its 'where it is today' line; the candidates on the card are unchanged. Chosen where the majority of the atlases and reference works (Pleiades and the Barrington Atlas, Wikidata, OpenBible's count of sources) holds another candidate than OpenBible's recent-trend weighting (docs/crosswalk/their-errors.md, the last section, 'decided by the majority on 2026-10-19'). Checked by hand on 2026-10-19; Zer (a061538) was taken out again the same day on review: the named record's own point fits its verses worse (O6).",
   "places": {
     "ac17675": {
       "same_as": "a3d1c99",
@@ -28,6 +28,30 @@
     "a5c4318": {
       "same_as": "a1d1918",
       "why": "Hukok (1 Chr 6:75): another name for Helkath, resolved 8 km from it."
+    },
+    "a901903": {
+      "site": "m3ee2bc",
+      "why": "Hukkok (Josh 19:34): Yaquq (Huqoq), where the name survives, is the identification of most reference works (OpenBible: 15 sources to 12, 202 votes to 174) and of Wikidata Q18608506, which our record links; Khirbet el-Jemeijimeh is Gal's proposal and OpenBible's first only by its recent-trend weighting. Decided by the majority, 2026-10-19."
+    },
+    "a6bd641": {
+      "site": "m874804",
+      "why": "Arsinoe (no verse): Pleiades 727101 Clysma, alias Arsinoe (the Barrington Atlas Directory: Kum el-Qolzum/Suez), Wikidata Q3623994, Sidebotham and Mackay put it at Tall al Qulzum by Suez, 0.9 km from Pleiades' point; OpenBible's three candidates have one vote each and its resolver took the first, Ismailia on Lake Timsah, 77 km north. Decided by the majority, 2026-10-19."
+    },
+    "aaa4c6e": {
+      "site": "m9cc606",
+      "why": "Ramah of the Negeb (Josh 19:8; Ramoth of the Negeb of 1 Sam 30:27; Ramat-negeb of Arad ostracon 24): Horbat Uza (Khirbet Ghazzeh), Aharoni's identification and the one most sources and the Zondervan Atlas of the Bible (2010) hold (OpenBible: 6 sources to 4 for Tel Ira, Beit-Arieh's); OpenBible resolved it through 'another name for Baalath-beer' to Beer Yeroham, 34 km south-west, where Ramoth 2 did not follow. Decided by the majority, 2026-10-19."
+    },
+    "a03cc2d": {
+      "same_as": "aaa4c6e",
+      "why": "Baalath-beer (Josh 19:8, 'Baalath-beer, Ramah of the south'): one place with Ramah of the Negeb, as the verse reads and most take it; its own sites (Beer Yeroham, Tel Malhata, Tel Masos, Tel Ira) have two to four sources each. Decided by the majority, 2026-10-19."
+    },
+    "a14325e": {
+      "same_as": "a03cc2d",
+      "why": "Bealoth (Josh 15:24): another name for Baalath-beer (OpenBible's first, 16 sources); follows it."
+    },
+    "ab049cf": {
+      "same_as": "aaa4c6e",
+      "why": "Ramoth of the Negeb (1 Sam 30:27): another name for Ramah of the Negeb (OpenBible's only identification, 10 sources); already resolved to Horbat Uza, kept with it."
     }
   }
 }
