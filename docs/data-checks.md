@@ -18,6 +18,11 @@ the data first (`pnpm data`).
 - **Candidate sites:** shares are normalised over the candidates shown; a place is
   `disputed` when the runner-up has at least `DISPUTED_MIN_SHARE` %. OpenBible's English
   templates ("another name for X", "within 5 km of X") are kept with the referenced id.
+- **Points chosen by hand** (`content/place-points.json`): `same_as` puts a place on another
+  record's point (a chain is followed to its end; a circle stops the build); `site` shows one
+  of OpenBible's other modern locations for the place, with its point, confidence and today
+  line. A record or location not in the build, or a point the licence filter would drop,
+  stops the build. The reasons are in the file and in `docs/crosswalk/their-errors.md`.
 - **Water has no holes.** Islands are joined to the sea's outline by zero-width cuts
   (`join_holes`), and the style draws the water unsimplified (`tolerance: 0`), so the cuts
   stay closed. A hole near a shore crossed the simplified coast in MapLibre's low-zoom tiles
