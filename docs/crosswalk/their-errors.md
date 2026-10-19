@@ -10,6 +10,8 @@ Checked 2026-10-17. Sources, all downloaded the same night:
 
 Added 2026-10-19 (T14 to T22, O5, O6, the TIPNR section and items 4, 7, 9 to 11 of the last section), from the same kinds of sources: Theographic `json/places.json` (master, that day), the Pleiades dump of that day, live Wikidata, OpenBible's `ancient.jsonl` and `source.jsonl` from `pipeline/.cache` and GitHub, and STEPBible TIPNR commit b99716b (`pipeline/.cache/tipnr.txt`).
 
+Added later on 2026-10-19 (O7, W7 to W9, the Pleiades and Wikidata "to check" items marked with that date, and items 13 to 15 of the last section): every settlement of ours compared with the point of its linked Pleiades record (`reprLat/reprLong` of the dump, `locationPrecision` "precise" only) and with its Wikidata item's P625 (`wbgetentities`, that day; a preferred-rank value over normal ones). Twenty settlements are more than 20 km from one of them; eight were already here (Zoan, Tegarama, Thapsacus and Tiphsah, Libnah, Tartessos, Aenon, Aroer, Sharuhen), the rest are below. The rivers and regions were skimmed only for links to the wrong record (Habor, Kidron).
+
 Distances are haversine (great-circle) distances. Severity: **high** means the record points at the wrong place or the wrong country; **medium** means it misleads a map or a join; **low** is cosmetic or a completeness gap.
 "Confirmed" means I opened the record and the evidence myself. Anything less certain is in "To check".
 
@@ -195,6 +197,11 @@ Achzib `a2270e4` Q54991090→Q1323297; Allammelech `a84cafa` Q28220401→Q657322
   - The mutual pairs with two points: Cabbon and Machbenah (23 km), Elon and Elonbeth-hanan (11 km), Enaim and Enam (5 km). Each is "another name for" the other and each sits on the other's second-best candidate; neither record is canonical, so we left both (OpenBible: to check).
 - "Within": `a86d49f` Shaveh-kiriathaim is "within 1 km of Kiriathaim 1" and resolves 24 km from Kiriathaim 1's own point (Kiriathaim's third candidate); `a991067` Mount Perazim is "within 250 m of Baal-perazim" and 5 km from it. Not changed.
 
+### O7. Two Wikidata links name an item that is not the place. Severity: medium
+
+- `a6fc60d` Aphek 3 (1Kgs.20.26, 1Kgs.20.30, 2Kgs.13.17, the Aphek of Aram; OpenBible resolves it to Tel Ein Gev, 32.7837, 35.6373) → `Q4779536`. That item's English article is "Aphek (biblical)", which opens "The name Aphek or Aphec refers to one of several locations", and its P625 (32.0833, 34.8833) is the Aphek of the Sharon, 105 km away, which OpenBible links separately as `a7b2e63` → `Q682612` Antipatris. The other Apheks have items of their own (`ac4f712` → `Q4779601`, `a4cf129` → `Q383537`); this one carries the article for the name.
+- `adb5ae4` Kedesh 3 (1Chr.6.72, the Levitical town of Issachar; OpenBible's top identification is "another name for Kishion", `a20364a`, Josh.21.28 in the parallel list, at Tel Qishyon, 32.6614, 35.3931) → `Q6601333` "Tell Abu Qedeis", described as "mountain in Israel" (P31 tell, mountain; no Wikipedia article), at 32.5595, 35.2160: OpenBible's own second candidate, 20 km away. The link is to a modern tell, the kind OpenBible marks "modern" elsewhere, and to the runner-up identification rather than the one it resolves.
+
 ## OpenBible: to check
 
 - The mutual pairs of O6 with two sites: Cabbon `a7ed00e` and Machbenah `a3b7885`; Elon `ae180d8` and Elonbeth-hanan `a8e6824`; Enaim `a59fdf2` and Enam `a26921e`. The data says "the same place" and gives two points; which point, if either, is a question for the identification, not the resolver.
@@ -234,11 +241,31 @@ Achzib `a2270e4` Q54991090→Q1323297; Allammelech `a84cafa` Q28220401→Q657322
 
 - P625 = 36.6858, 27.375 (Tekir). P1584 = 599576 "Cnidus (Burgaz)" at 36.7356, 27.6994, 29 km away. Pleiades 599575 "Cnidus (Tekir)" matches the item's coordinates, and Pleiades says the centre moved to Tekir in the later 4th century BCE. The coordinate and the Pleiades link describe two different sites. The item should carry 599575, possibly in addition to 599576.
 
+### W7. Kidron Valley (Q860532) has P1584 = 687905, which is Gedros near Yavne. Severity: high
+
+- The item's own P625 is 31.7770, 35.2390, east of the Old City of Jerusalem. Pleiades 687905 "Gedros" (BAtlas 70 F2) is a settlement in the coastal plain at 31.8261, 34.7759, 44 km west: the Kedron of 1 Maccabees 15:39. The dump has no record for the Kidron at all (titles and descriptions searched for Kidron, Kedron and Cedron: only the Silwan necropolis and Mar Saba mention the valley).
+- The same coordinate is Theographic's Kidron (T2), and it was our Pleiades link too (item 13 below): both look like this P1584 followed blindly.
+
+### W8. Khabur River (Q685344) has P1584 = 874565, the Lesser Khabur of Kurdistan. Severity: high
+
+- The item's P625 is 35.1425, 40.4308, where the Khabur joins the Euphrates at Circesium, and its description is "river in Syria and Turkey". Pleiades 874565 "Lesser Khabur R." (BAtlas 89 E3) is a tributary of the Tigris in northern Iraq (37.2037, 42.9212, 321 km away), attested by Pleiades only from 1700. The Khabur of Syria is Pleiades 893928 "Aborras/Chaboras (river)" (BAtlas 91 B2, 36.3439, 40.3871).
+
+### W9. Golan (Q2400848) P625 is 32 km from where its own article puts the town. Severity: medium
+
+- P625 = 32.9479, 35.6612 (two statements with the same value), on the western edge of the Golan above the Jordan. The item's English article says "most researchers localize it at Sahm el-Jaulān in Syria's Daraa Governorate"; Sahm el-Jaulan is 32.7811, 35.9347, where OpenBible and we are (OpenBible's one identification, 29 votes).
+
 ## Wikidata: to check
 
 - **Aenon (Q5977371)**: 31.8375, 35.5494, near Bethany beyond the Jordan. OpenBible and Pleiades 678003 put it near Salim, 61 km north. The location is genuinely disputed (the Madaba map supports the southern site), so this is not an error.
 - **Thapsacus (Q1284954)**: 35.156, 40.428. OpenBible has 35.95, 38.17, 223 km away. Pleiades 674270 marks the place as "unlocated" with a rough point. The location is unknown.
 - **Sharuhen (Q1548392)**: its preferred P625 is Tell el-Far'ah (South), which is one of three candidate identifications. It is 22 km from the OpenBible/Pleiades point. Disputed, not an error.
+- **Jotbathah (Q15229779)**, 2026-10-19: P625 29.8956, 35.06, the Yotvata oasis ('Ain Ghadian). OpenBible and we are at Taba by Eilat (29.4925, 34.8969), 47 km south; OpenBible's votes are 12 for Taba and 5 for Ein Yotvata. Deut 10:7 ("Jotbath, a land of rivers of waters") is claimed for both. Disputed, not an error.
+- **Achshaph (Q4157407)**, 2026-10-19: P625 32.9518, 35.1738, in the plain north of Acre. OpenBible and we are at Tel Regev (32.7589, 35.0903), 23 km south; Tell Keisan is OpenBible's close runner-up (20 votes to 18). Disputed.
+- **Zaretan (Q147911)**, 2026-10-19: P625 32.0958, 35.4614, west of the Jordan. The article itself names Glueck's Tell es-Sa'idiyeh, where OpenBible and we are (32.2677, 35.5772, 22 km), and Tell el-Mazar as the newer proposal. Disputed.
+- **Huqoq (Q18608506)**, 2026-10-19: the item is the Roman-period village at Yaquq (32.8847, 35.4789), which its article identifies with Hukkok of Josh.19.34. OpenBible and we are at Khirbet el-Jemeijimeh (32.8643, 35.2634), 20 km west, OpenBible's top candidate by trend (Yaquq has more votes in all, 202 to 174). Not an error of theirs; our record contradicts itself (item 15).
+- **Etham (Q5402858)**, 2026-10-19: P625 30.0333, 32.55, by Suez. OpenBible resolves Etham as "another name for Pithom", so we sit on Pithom (Tell el-Retabeh, 30.5475, 31.9636), 80 km away. The station's site is unknown.
+- **Kibroth Hattaavah (Q6404073)**, 2026-10-19: P625 28.9167, 34.4833. OpenBible and we are at Erweis el-Ebeirig (28.7887, 34.2754), 25 km. Unknown.
+- **Arsinoe (Q3623994)**, 2026-10-19: P625 29.8975, 32.4606 and P1584 = 727101 "Clysma" (alias Arsinoe; the Barrington Atlas Directory: "Kum el-Qolzum/Suez"), at Suez. OpenBible's three top candidates have one vote each (the region between Maghfar and Lake Timsah, Kabret, Tall al Qulzum), and its comment cites Sidebotham and Mackay for Qulzum, Guthe for Fayed and Cohen for Kabret; the resolver took the first, so we are at 30.5667, 32.2667, 77 km north of Pleiades and Wikidata. No verse names the place. Disputed among named scholars; whether to follow Pleiades is for the owner.
 
 ## Pleiades: confirmed
 
@@ -247,6 +274,7 @@ None. Every Pleiades id I looked up in depth resolved and matched its descriptio
 ## Pleiades: to check
 
 - **674270 Thapsacus**: `locationPrecision` is "rough", the place is tagged "unlocated", and the representative point is 31.5, 44.5 in southern Iraq. Its own description says the city "lay on the western bank of the Euphrates" and that the site is unknown. Anyone who uses `reprLat/reprLong` blindly will put Thapsacus about 770 km from where most proposals place it.
+- **678086 Chalcis sub Libano**, 2026-10-19: the Barrington Atlas Directory note is "Husn esh-Shadur?" (BAtlas 69 D2), and the record's only location is DARMC's point from it (33.9577, 36.2416, in the Anti-Lebanon), with no description or connections of its own. OpenBible and we are at Anjar in the Beqaa (33.7258, 35.9297), 39 km away, the other proposal for the city. No verse names it. Disputed, not an error.
 
 ---
 
@@ -264,3 +292,6 @@ None. Every Pleiades id I looked up in depth resolved and matched its descriptio
 10. **Our points inherited O6**: nine places that OpenBible calls another name for a record sat 8 to 63 km from that record. **Fixed 2026-10-19 for seven: content/place-points.json puts each on the named record's point** (Dimonah, Bethul, Chesil, Canneh, Sea of Jazer, Ir-moab, Hukok; the reasons are in the file). Zer and Ramoth 2 were moved and taken back the same day on review: the named record's point fits their verses worse (O6). The mutual pairs and the Sea of Egypt are left as OpenBible has them.
 11. **Our `tipnr` column** carried OpenBible's 2021 links as they were (O5): 763 of our 1128 did not match a current TIPNR unique name, 8 named the wrong record. **Fixed 2026-10-19: content/tipnr.json (scripts/tipnr-links.ts) follows each link to the current record; api/v1/places.json now carries it as `tipnr`, and places.csv keeps OpenBible's link as `openbible_tipnr`.** Beyond the River (`a88310a`) has no TIPNR record and no id.
 12. **Ramah 6 `aaa4c6e` and Baalath-beer `a03cc2d`** (Josh.19.8 "Baalath-beer, Ramah of the Negeb"; 1Chr.4.33 "Baal") sit at Beer Yeroham (30.9910, 34.9113), the point OpenBible resolves for Baalath-beer, 34 km from Ramoth 2 (`ab049cf`), the same place under its 1Sam.30.27 name, at Horbat Uza (item 10, O6). Which site, if either, is for the owner.
+13. **Habor `af19252` and Kidron `a553110`**: our `pleiades` ids came through Wikidata's P1584 (W7, W8). Habor (2Kgs.17.6, "Habor the river of Gozan"; our point is at its mouth by Circesium, and our article says it is the Khabur, "the largest tributary of the Euphrates in Syria") linked 874565, the Lesser Khabur of the Tigris, 321 km away; Kidron linked 687905 Gedros near Yavne, 44 km from Jerusalem. **Fixed 2026-10-19: content/pleiades.json gives Habor 893928 "Aborras/Chaboras (river)" and has no Kidron entry**, since Pleiades has no record of the valley.
+14. **Aphek 3 `a6fc60d` and Kedesh 3 `adb5ae4`**: our `wikidata` carried OpenBible's links (O7): the article for all the Apheks, placed at the Aphek of Sharon, and the tell Tell Abu Qedeis, OpenBible's runner-up for a place it resolves to Kishion. **Fixed 2026-10-19: both left out in scripts/wikidata-links.ts.** Our points stay: Aphek of Aram at Tel Ein Gev east of the Sea of Galilee, where 1Kgs.20.26 and 2Kgs.13.17 put the wars with Aram, and Kedesh of Issachar on Kishion (Josh.21.28 and 1Chr.6.72 are the same Levitical list). Whether Kedesh of Issachar is rather Tell Abu Qedeis is for the owner, as with item 5.
+15. **Settlements more than 20 km from their Pleiades or Wikidata point, left as they are** (2026-10-19): Golan 32 km (Wikidata is wrong, W9); Jotbathah 47, Chalcis 39 (Pleiades), Achshaph 23, Zarethan 22, Hukkok 20 and Arsinoe 77 (two or three named proposals each; ours is one of them: the "to check" items above); Etham 80 and Kibroth-hattaavah 25 (unlocated stations). Our point was shown wrong in none. Two records assert one candidate by their link and another by their point, like Ramathaim-zophim (item 5): Hukkok (`Q18608506` is Yaquq; our point is Khirbet el-Jemeijimeh) and, before item 14, Kedesh 3. Hukkok's link is kept, since the item's article is also the biblical town's; which site is right is for the owner.
