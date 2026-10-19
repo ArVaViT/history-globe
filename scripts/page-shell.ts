@@ -4,6 +4,8 @@
  * (hreflang, with English as the default), the preview for shared links, the structured
  * data and the visit counter. One place, so the two sets of pages cannot drift apart.
  */
+import { BEACON_TAG } from "../packages/model/src/beacon.ts";
+import { honeypotLink } from "../packages/model/src/honeypot.ts";
 import { LOCALES, type SiteLocale } from "../packages/model/src/time.ts";
 
 export const esc = (s: string) =>
@@ -46,3 +48,12 @@ export function headMeta(o: {
     <meta name="twitter:card" content="summary_large_image" />${ld}
     <script defer src="/_vercel/insights/script.js"></script>`;
 }
+
+/**
+ * What every built page ends its body with (ADR 0017, addendum): the link no reader sees to
+ * the address robots.txt disallows, and the script that tells the site when the page runs
+ * from another address. `root` is the path from the page up to the site's root.
+ */
+export const bodyEnd = (root: string): string =>
+  `    ${honeypotLink(root)}
+    ${BEACON_TAG}`;

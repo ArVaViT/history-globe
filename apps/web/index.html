@@ -101,6 +101,9 @@
         <a href="uk/" lang="uk">Українська</a>.
       </p>
     </noscript>
+    <!-- The address robots.txt disallows, linked for the programs that ignore it (ADR 0017);
+         no reader sees it. The build adds the beacon's script after the app's (vite.config.ts). -->
+    <a href="export/" rel="nofollow" aria-hidden="true" tabindex="-1" hidden>Export</a>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

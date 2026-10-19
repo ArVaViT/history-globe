@@ -15,6 +15,7 @@ import { dirname, join, relative, resolve } from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig, type Plugin } from "vite";
+import { BEACON_TAG } from "../../packages/model/src/beacon.ts";
 
 // MapLibre 6 ships three ES modules: the library, its worker, and a module both share.
 // It finds the worker next to its own file through a URL computed at run time, which a
@@ -287,6 +288,19 @@ function originTrial(): Plugin {
   };
 }
 
+// The beacon (packages/model/src/beacon.ts) at the end of the app's page, the very bytes the
+// built pages carry (scripts/page-shell.ts), so that one hash in the Content-Security-Policy
+// allows it everywhere. Written here, not in index.html, where a formatter would reflow it.
+function beacon(): Plugin {
+  return {
+    name: "beacon",
+    transformIndexHtml: {
+      order: "post",
+      handler: (html) => html.replace("\n  </body>", `\n    ${BEACON_TAG}\n  </body>`),
+    },
+  };
+}
+
 export default defineConfig({
   plugins: [
     react(),
@@ -298,6 +312,7 @@ export default defineConfig({
     offlineList(),
     titleFont(),
     originTrial(),
+    beacon(),
   ],
   build: {
     target: "es2023",
