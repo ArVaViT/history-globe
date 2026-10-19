@@ -54,7 +54,7 @@
       ]
     },
     {
-      "source": "/data/((?!articles/).*)",
+      "source": "/data/((?!articles/|photos/).*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -63,6 +63,15 @@
         {
           "key": "Link",
           "value": "<https://creativecommons.org/licenses/by/4.0/>; rel=\"license\""
+        }
+      ]
+    },
+    {
+      "source": "/data/photos/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, no-cache"
         }
       ]
     },
