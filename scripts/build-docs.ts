@@ -125,6 +125,7 @@ const T = {
     docs: "Docs",
     menu: "Documentation",
     onPage: "On this page",
+    pages: "All pages",
     copy: "Copy",
     copied: "Copied",
     updated: "Data as of",
@@ -146,6 +147,7 @@ const T = {
     docs: "Документация",
     menu: "Документация",
     onPage: "На странице",
+    pages: "Все страницы",
     copy: "Копировать",
     copied: "Скопировано",
     updated: "Данные на",
@@ -167,6 +169,7 @@ const T = {
     docs: "Документація",
     menu: "Документація",
     onPage: "На сторінці",
+    pages: "Усі сторінки",
     copy: "Копіювати",
     copied: "Скопійовано",
     updated: "Дані на",
@@ -188,6 +191,7 @@ const T = {
     docs: "Documentación",
     menu: "Documentación",
     onPage: "En esta página",
+    pages: "Todas las páginas",
     copy: "Copiar",
     copied: "Copiado",
     updated: "Datos a",
@@ -209,6 +213,7 @@ const T = {
     docs: "Documentação",
     menu: "Documentação",
     onPage: "Nesta página",
+    pages: "Todas as páginas",
     copy: "Copiar",
     copied: "Copiado",
     updated: "Dados de",
@@ -230,6 +235,7 @@ const T = {
     docs: "Dokumentation",
     menu: "Dokumentation",
     onPage: "Auf dieser Seite",
+    pages: "Alle Seiten",
     copy: "Kopieren",
     copied: "Kopiert",
     updated: "Datenstand",
@@ -251,6 +257,7 @@ const T = {
     docs: "Documentation",
     menu: "Documentation",
     onPage: "Sur cette page",
+    pages: "Toutes les pages",
     copy: "Copier",
     copied: "Copié",
     updated: "Données au",
@@ -272,6 +279,7 @@ const T = {
     docs: "Documentazione",
     menu: "Documentazione",
     onPage: "In questa pagina",
+    pages: "Tutte le pagine",
     copy: "Copia",
     copied: "Copiato",
     updated: "Dati al",
@@ -293,6 +301,7 @@ const T = {
     docs: "Documentatie",
     menu: "Documentatie",
     onPage: "Op deze pagina",
+    pages: "Alle pagina's",
     copy: "Kopiëren",
     copied: "Gekopieerd",
     updated: "Gegevens van",
@@ -314,6 +323,7 @@ const T = {
     docs: "Dokumentacja",
     menu: "Dokumentacja",
     onPage: "Na tej stronie",
+    pages: "Wszystkie strony",
     copy: "Kopiuj",
     copied: "Skopiowano",
     updated: "Dane z dnia",
@@ -335,6 +345,7 @@ const T = {
     docs: "Dokumentace",
     menu: "Dokumentace",
     onPage: "Na této stránce",
+    pages: "Všechny stránky",
     copy: "Kopírovat",
     copied: "Zkopírováno",
     updated: "Data ke dni",
@@ -694,7 +705,8 @@ function highlight(body: string, l: Lang): string {
                   ? `<span class="k">${kw}</span>`
                   : m,
     );
-    return `<div class="code"><div class="code-bar"><span>${langOf(code)}</span><button type="button" class="copy" data-done="${T[l].copied}" hidden>${svg("copy")}<span>${T[l].copy}</span></button></div><pre><code>${out}</code></pre></div>`;
+    // A wide sample scrolls sideways: the keyboard reaches it through the tabindex.
+    return `<div class="code"><div class="code-bar"><span>${langOf(code)}</span><button type="button" class="copy" data-done="${T[l].copied}" hidden>${svg("copy")}<span>${T[l].copy}</span></button></div><pre tabindex="0"><code>${out}</code></pre></div>`;
   });
 }
 
@@ -817,7 +829,7 @@ function page(o: {
   // The overview's cards: every other page, with its description.
   const body = it.body.replace(
     '<nav class="cards"></nav>',
-    `<nav class="cards" aria-label="${t.menu}">${PAGES.filter((p) => p !== "index")
+    `<nav class="cards" aria-label="${t.pages}">${PAGES.filter((p) => p !== "index")
       .map(
         (p) =>
           `<a href="${here(l, p)}"><span class="kicker">${GROUP_OF.get(p)?.[l] ?? ""}</span><b>${esc(o.titles[p])}</b><span>${esc(o.all[p].src.description)}</span></a>`,
@@ -845,7 +857,7 @@ function page(o: {
       <button type="button" class="btn icon-btn menu-btn" aria-controls="side" aria-expanded="false" aria-label="${t.openMenu}">${svg("menu")}</button>
       <a class="brand" href="${here(l, "index")}"><img src="${up}../favicon.svg" alt="" width="24" height="24" /><span>History Globe</span><span class="tag">${t.docs}</span></a>
       <form class="search" role="search" hidden>
-        <label>${svg("search")}<span class="sr">${t.search}</span><input type="search" placeholder="${t.search}" autocomplete="off" spellcheck="false" aria-controls="search-results" aria-expanded="false" data-index="${up}${prefix(l)}search.json" data-none="${t.noResults}" /><kbd>/</kbd></label>
+        <label>${svg("search")}<span class="sr">${t.search}</span><input type="search" role="combobox" aria-autocomplete="list" aria-haspopup="listbox" placeholder="${t.search}" autocomplete="off" spellcheck="false" aria-controls="search-results" aria-expanded="false" data-index="${up}${prefix(l)}search.json" data-none="${t.noResults}" /><kbd>/</kbd></label>
         <ul id="search-results" class="results" role="listbox" hidden></ul>
       </form>
       <span class="bar-end">
