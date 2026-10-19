@@ -77,14 +77,16 @@ for (const [url, act] of [
   ["?locale=ru", "person"],
   ["?locale=ru", "people"],
   ["?locale=ru&year=-1300&camera=36.5,35.5,6,20,0"],
-  // The documentation: static pages, no map to wait for.
+  // The documentation and the honeypot: static pages, no map to wait for.
   ["docs/"],
   ["docs/ru/"],
   ["docs/ru/api.html"],
   ["docs/ru/embedding.html"],
+  ["docs/ru/build.html"],
+  ["export/"],
 ]) {
   await p.goto(BASE + url);
-  if (!url.startsWith("docs/")) {
+  if (!/^(docs|export)\//.test(url)) {
     await mapReady(p);
     await p.waitForTimeout(1500);
   }
