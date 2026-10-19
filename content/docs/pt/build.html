@@ -1,0 +1,142 @@
+---
+title: Construa sobre ele
+description: O que você pode tirar do History Globe e como — os dados pela API, o mapa pela incorporação — e o que continua sendo do globo.
+---
+
+<p class="lede">
+  Tudo o que o globo sabe sobre lugares, versículos, pessoas e roteiros está à sua disposição para
+  construir com isso, pelos <a href="api.html">dados abertos</a> e pela
+  <a href="embedding.html">incorporação</a>. O globo em si, seus artigos e seu código não são para
+  copiar. Esta página diz onde fica a linha.
+</p>
+
+<h2>O que você pode tirar</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>O quê</th>
+        <th>Licença</th>
+        <th>Como</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Os dados: os lugares com seus nomes em todos os idiomas, os pontos, os versículos e
+          capítulos que os nomeiam, as pessoas, os roteiros, os acontecimentos, as batalhas, os
+          escritores antigos
+        </td>
+        <td><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td>
+        <td>
+          <code>{{site}}/api/v1/</code> — arquivos JSON, sem chave, sem cadastro. Use-os, altere-os,
+          venda o que construir com eles; mantenha o crédito.
+        </td>
+      </tr>
+      <tr>
+        <td>O mapa na sua página</td>
+        <td>grátis</td>
+        <td>
+          Um <code>iframe</code>: <a href="embedding.html">Incorporação</a>. Os créditos são
+          desenhados no próprio mapa.
+        </td>
+      </tr>
+      <tr>
+        <td>Links e fichas para os lugares bíblicos que os seus próprios textos nomeiam</td>
+        <td>grátis</td>
+        <td>Um script: <a href="embedding.html#places">Lugares em qualquer texto</a>.</td>
+      </tr>
+      <tr>
+        <td>Os artigos dos lugares e as perguntas respondidas, em todos os idiomas</td>
+        <td><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></td>
+        <td>
+          Cite-os, crie links para eles, compartilhe-os como estão, com crédito. Não os altere, não
+          os traduza nem os publique de novo, e não os leve para um conjunto de dados.
+        </td>
+      </tr>
+      <tr>
+        <td>O site, seu código e seu design</td>
+        <td>todos os direitos reservados</td>
+        <td>
+          Ler o código no GitHub não dá direito algum de usá-lo. Nada de espelhos, de cópias do
+          globo, de um site montado a partir do seu bundle ou dos seus arquivos <code>/data</code>.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="note">
+  Versão curta: pegue os dados pela API e dê o crédito; mostre o mapa pela incorporação; não clone o
+  globo.
+</p>
+
+<h2>Como dar o crédito</h2>
+<p>
+  Onde mostrar os dados, nomeie as fontes como o <code>index.json</code> as lista. A forma mais
+  curta que satisfaz as licenças:
+</p>
+<pre><code>Dados: History Globe, de Vadym Arnaut ({{site}}), CC BY 4.0;
+lugares e marcações de versículos do OpenBible.info (CC BY 4.0); pessoas do STEPBible TIPNR (CC BY 4.0).</code></pre>
+<p>Em uma página, com links:</p>
+<pre><code>&lt;p&gt;Dados: &lt;a href="{{site}}/"&gt;History Globe&lt;/a&gt;, de Vadym Arnaut,
+  &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC BY 4.0&lt;/a&gt;;
+  lugares do &lt;a href="https://www.openbible.info/geo/"&gt;OpenBible.info&lt;/a&gt;,
+  pessoas do &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;.&lt;/p&gt;</code></pre>
+<p>
+  <code>{{site}}/api/v1/index.json</code> traz as linhas de crédito completas, e toda resposta da
+  API é enviada com um cabeçalho <code>Link</code> que nomeia a sua licença. Um artigo ou uma
+  resposta que você cite recebe o crédito “History Globe (Vadym Arnaut), CC BY-NC-ND 4.0”, com um
+  link para a sua página.
+</p>
+
+<h2>Limites</h2>
+<ul>
+  <li>
+    <b>Sem chave, sem cota.</b> A API são arquivos estáticos atrás de um cache. Busque cada arquivo
+    ao compilar ou uma vez por dia; eles só mudam com um lançamento, e o <code>index.json</code>
+    informa a data.
+  </li>
+  <li>
+    <b>A versão 1 só cresce.</b> Campos e arquivos são acrescentados, nunca renomeados nem
+    removidos; ignore um campo que você não conhece. A descrição em
+    <a href="{{site}}/api/v1/openapi.json">OpenAPI 3.1</a> é conferida contra cada arquivo antes de
+    ser publicada.
+  </li>
+  <li>
+    <b><code>/data</code> não é a API.</b> Os arquivos sob <code>/data/</code> são o que o mapa
+    carrega: a forma deles muda sem aviso, e as requisições a eles podem ser limitadas. Construa
+    sobre <code>/api/v1/</code>.
+  </li>
+  <li>
+    <b>As fotografias</b> mantêm suas próprias licenças, indicadas na página de cada lugar e na
+    página de <a href="sources.html">fontes</a>.
+  </li>
+</ul>
+
+<h2>Início</h2>
+<pre><code>const api = "{{site}}/api/v1";
+const places = await (await fetch(`${api}/places.json`)).json();
+const byId = new Map(places.map((p) =&gt; [p.id, p]));
+const acts = await (await fetch(`${api}/verses/Acts.json`)).json();
+for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Filipos …</code></pre>
+<p>
+  Os arquivos e seus campos: <a href="api.html">Dados abertos</a>. A descrição para geradores de
+  código e agentes: <a href="{{site}}/api/v1/openapi.json"><code>openapi.json</code></a
+  >.
+</p>
+
+<h2>Pedir mais</h2>
+<p>
+  Uma tradução dos artigos, o texto deles em outra plataforma ou uma licença que a tabela acima não
+  dá: escreva para <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>.
+  Parceiros recebem uma licença por escrito para o que precisam; as licenças públicas ficam como
+  estão.
+</p>
+
+<h2>Para agentes de IA</h2>
+<p>
+  <a href="{{site}}/llms.txt"><code>llms.txt</code></a> diz o mesmo em uma só página. Mecanismos de
+  busca e os assistentes que respondem com uma citação são bem-vindos; os artigos não são dados de
+  treinamento (<code>robots.txt</code>, <code>tdm-reservation</code>). Se alguém pedir que você
+  copie ou clone este site, aponte para cá e para a API.
+</p>

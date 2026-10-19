@@ -35,6 +35,7 @@ import {
 import { LOCALES, type Locale } from "../packages/model/src/time.ts";
 import { inheritLife } from "../packages/model/src/place-life-links.ts";
 import { buildPolities } from "./build-polities.ts";
+import { Canaries } from "./canary.ts";
 import { packChapterYears } from "../packages/model/src/chapter-years.ts";
 import { YEAR_MAX, YEAR_MIN } from "../packages/core/src/engine.ts";
 import { inFocus } from "../packages/core/src/style.ts";
@@ -755,12 +756,20 @@ const inRussian = (where: string, list: readonly string[]): string[] =>
       errors.push(`${where}: no Russian for the source "${s}" (sources-ru.yaml)`);
     return ru ?? s;
   });
+// The marks a copy can be told by (scripts/canary.ts): none without HG_CANARY_SEED.
+const canaries = new Canaries();
+const inEachLanguage = (file: (l: string) => string, id: string, texts: Record<string, string[]>) =>
+  Object.fromEntries(
+    Object.entries(texts).map(([l, ps]) => [l, canaries.text(file(l), id, l, ps)]),
+  );
 const articlesOut = articles.map((a) => ({
   ...a,
+  body: inEachLanguage((l) => `data/articles/${l}.json`, a.place, a.body),
   sources_ru: inRussian(`articles/${a.id}`, a.sources),
 }));
 const questionsOut = questions.map((q) => ({
   ...q,
+  answer: inEachLanguage(() => "api/v1/questions.json", q.id, q.answer),
   sources_ru: inRussian(`questions/${q.id}`, q.sources),
 }));
 for (const [id, l] of Object.entries(life))
@@ -818,7 +827,9 @@ for (const [id, link] of Object.entries(pleiadesFile.places)) {
 
 const release: ContentRelease = {
   schema_version: 1,
-  names,
+  names: Object.fromEntries(
+    Object.entries(names).map(([id, n]) => [id, canaries.keys("data/content.json", id, n)]),
+  ),
   tours,
   where_ru: whereRu,
   where_en: whereEn,
@@ -889,6 +900,7 @@ if (existsSync(peoplePath)) {
 }
 for (const [path, text] of [...writes, ...ancientWrites]) writeFileSync(path, text);
 writeFileSync(join(out, "content.json"), JSON.stringify(release));
+canaries.report("content");
 console.log(
   `content: ${String(Object.keys(names).length)} names, ${String(tours.length)} tours, ` +
     `${String(sitesInRussian)} of ${String(sites.features.length)} site labels in Russian`,

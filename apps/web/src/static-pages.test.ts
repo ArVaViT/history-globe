@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { LOCALES } from "@hg/model";
+import { LOCALES, NOTICE_COMMENT } from "@hg/model";
 import { describe, expect, it } from "vitest";
 
 const web = join(import.meta.dirname, "..");
@@ -15,6 +15,11 @@ describe("the static pages", () => {
       for (const l of LOCALES)
         expect(html, `${file}: ${l}`).toContain(`href="${file === "index.html" ? "" : "/"}${l}/"`);
     }
+  });
+
+  it("carry the notice to the programs that read them, as the built pages do", () => {
+    for (const file of ["index.html", "public/404.html"])
+      expect(read(file), file).toContain(`<head>\n    ${NOTICE_COMMENT}\n`);
   });
 
   it("declare every language to search engines", () => {
