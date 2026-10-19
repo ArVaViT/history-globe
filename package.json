@@ -23,6 +23,7 @@
     "content": "node scripts/build-content.ts && node scripts/build-road-legs.ts && node scripts/build-text-places.ts && node scripts/build-pages.ts && node scripts/build-api.ts && node scripts/build-docs.ts && node scripts/build-page-hashes.ts",
     "e2e": "node e2e/flows.mjs",
     "e2e:a11y": "node e2e/a11y.mjs",
+    "e2e:copies": "node e2e/copies.mjs",
     "sources": "node scripts/sources.ts",
     "licenses": "node scripts/third-party-licenses.ts",
     "tour-images": "node scripts/tour-images.mjs"

@@ -27,7 +27,7 @@ import {
 } from "../packages/model/src/scripture.ts";
 import { sourcesOf } from "../packages/model/src/citation.ts";
 import { formatYear, LOCALE_NAMES, LOCALES, type SiteLocale } from "../packages/model/src/time.ts";
-import { esc, headMeta } from "./page-shell.ts";
+import { bodyEnd, esc, headMeta } from "./page-shell.ts";
 import { NOTICE_COMMENT } from "../packages/model/src/notice.ts";
 import { commonsPage, DOC_PAGES, docsPath } from "../packages/model/src/site.ts";
 import { LANDING, LISTS, T } from "./page-words.ts";
@@ -325,6 +325,7 @@ function page(o: {
     </header>
 ${o.body}
     <footer class="foot"><nav aria-label="History Globe"><a href="${up}${o.l}/">History Globe</a><a href="${up}${docsPath(o.l)}">${T[o.l].about}</a><a href="${up}${docsPath(o.l, "privacy")}">${T[o.l].privacy}</a><a href="${up}${docsPath(o.l, "sources")}">${T[o.l].sources}</a></nav><p title="${T[o.l].data}: ${CREDITS}">${T[o.l].data}: ${CREDITS}</p>${o.licence ? `<p class="lic">${o.licence === "article" ? T[o.l].licArticle : T[o.l].licAnswer}, <a rel="license" href="${NC_ND}">CC BY-NC-ND 4.0</a></p>` : ""}</footer>
+${bodyEnd(up)}
   </body>
 </html>
 `;
