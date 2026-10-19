@@ -1,5 +1,5 @@
 {
-  "_source": "Pleiades: A Gazetteer of Past Places (https://pleiades.stoa.org), CC BY 3.0, data downloaded 2026-10-02; matched to our places by OpenBible links, Wikidata P1584 and coordinates (high and medium confidence only). from/to: the span of the periods in which Pleiades attests the place, not a founding or an end.",
+  "_source": "Pleiades: A Gazetteer of Past Places (https://pleiades.stoa.org), CC BY 3.0, data downloaded 2026-10-02; matched to our places by OpenBible links, Wikidata P1584 and coordinates (high and medium confidence only). Two links that came through a wrong Wikidata P1584 were corrected by hand on 2026-10-19 (docs/crosswalk/their-errors.md, W7 and W8): Habor is the Chaboras (893928), not the Lesser Khabur, and Kidron has no Pleiades record (687905 is Gedros near Yavne). from/to: the span of the periods in which Pleiades attests the place, not a founding or an end.",
   "places": {
     "a0009b3": {
       "from": -1199,
@@ -514,11 +514,6 @@
       "from": -1749,
       "id": "599799",
       "to": 1300
-    },
-    "a553110": {
-      "from": -329,
-      "id": "687905",
-      "to": 640
     },
     "a55aded": {
       "from": -549,
@@ -1524,7 +1519,7 @@
       "to": -539
     },
     "af19252": {
-      "id": "874565"
+      "id": "893928"
     },
     "af2161c": {
       "from": -329,

@@ -15,12 +15,18 @@ const root = join(import.meta.dirname, "..");
 const WIKIDATA = "s7cc8b2"; // OpenBible's source id for Wikidata (data/source.jsonl)
 
 /**
- * Links checked against Wikidata on 2026-10-17 (docs/crosswalk/their-errors.md). Left out: the
- * item is a disambiguation page, or another place (Madmenah of Isaiah 10:31 linked to
- * Madmannah of Joshua 15:31). Followed: items since merged into another (a redirect).
+ * Links checked against Wikidata on 2026-10-17 and 2026-10-19 (docs/crosswalk/their-errors.md).
+ * Left out: the item is a disambiguation page, another place (Madmenah of Isaiah 10:31 linked
+ * to Madmannah of Joshua 15:31), the article for several places of one name whose coordinate
+ * is another of them (Aphek of Aram), or a modern tell that is only one candidate for the
+ * place (Kedesh of Issachar). Followed: items since merged into another (a redirect).
  */
 const NOT_THE_PLACE: Readonly<Partial<Record<string, string>>> = {
   a67297a: "Q6728293 is Madmannah (Josh 15:31), not Madmenah (Isa 10:31)",
+  a6fc60d:
+    "Q4779536 is the article for all the Apheks ('one of several locations'); its coordinate is the Aphek of Sharon, 105 km from Aphek of Aram (1 Kgs 20:26)",
+  adb5ae4:
+    "Q6601333 is the tell Tell Abu Qedeis (P31 mountain), OpenBible's runner-up candidate for Kedesh of Issachar (1 Chr 6:72), which sits on Kishion's point (Josh 21:28)",
   ad4ad26: "Q4716077 is a disambiguation page",
   ad68510: "Q5397937 is a disambiguation page",
   a9ef72b: "Q61862532 is a disambiguation page",
