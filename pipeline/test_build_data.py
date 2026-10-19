@@ -17,6 +17,7 @@ from build_data import (
     ensure_low_tier,
     label_anchors,
     lead_anchor,
+    move_points,
     place_kind,
     qid,
     rank_of,
@@ -55,6 +56,25 @@ class CoordBanned(unittest.TestCase):
 
     def test_wikidata_point_is_fine(self) -> None:
         self.assertFalse(coord_banned(res("m_wd", "35.3,31.3"), MODERN, BANNED))
+
+
+class MovePoints(unittest.TestCase):
+    def feats(self) -> list[dict]:
+        return [
+            {"geometry": {"coordinates": [35.78, 31.50]}, "properties": {"id": "dimonah", "coord": "openbible"}},
+            {"geometry": {"coordinates": [35.16, 31.30]}, "properties": {"id": "dibon", "coord": "wikidata"}},
+        ]
+
+    def test_takes_the_other_record_point_and_its_source(self) -> None:
+        feats = self.feats()
+        self.assertEqual(move_points(feats, {"dimonah": "dibon"}), 1)
+        self.assertEqual(feats[0]["geometry"]["coordinates"], [35.16, 31.30])
+        self.assertEqual(feats[0]["properties"]["coord"], "wikidata")
+        self.assertEqual(feats[1]["geometry"]["coordinates"], [35.16, 31.30])
+
+    def test_a_place_outside_the_build_stops_it(self) -> None:
+        with self.assertRaises(SystemExit):
+            move_points(self.feats(), {"dimonah": "left-out"})
 
 
 class Rank(unittest.TestCase):

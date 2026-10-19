@@ -106,6 +106,8 @@ const CREDIT = [
   // Added with people.json and the gazetteer ids (2026-10): appended, the earlier lines unmoved.
   "People and the verses that name them: STEPBible TIPNR by Tyndale House Cambridge (www.STEPBible.org), CC BY 4.0, modified",
   "Pleiades ids: Pleiades (https://pleiades.stoa.org), CC BY 3.0; Wikidata ids: Wikidata (CC0), as OpenBible links them",
+  // Added with the places' TIPNR ids (2026-10-19): appended, the earlier lines unmoved.
+  "TIPNR ids of the places: STEPBible TIPNR (CC BY 4.0), as OpenBible links them, brought to the current TIPNR names",
   // The one file under another licence (ADR 0016): appended, the earlier lines unmoved.
   "Except questions.json: the answers are History Globe's own texts, CC BY-NC-ND 4.0 (https://creativecommons.org/licenses/by-nc-nd/4.0/): quote and link them with credit, do not change, translate or republish them",
 ];
@@ -125,6 +127,13 @@ const pleiades =
       pleiades?: Record<string, { id: string }>;
     }
   ).pleiades ?? {};
+// The places' records in STEPBible's TIPNR (OpenBible's links followed to the current
+// names, content/tipnr.json): the same ids people.json and the chapters use for people.
+const tipnr = (
+  JSON.parse(readFileSync(join(root, "content/tipnr.json"), "utf8")) as {
+    places: Record<string, string>;
+  }
+).places;
 // Every file is checked against the API's own description (scripts/api-openapi.ts) before
 // it is written: a field renamed or dropped would break the sites that import the data
 // (AO Lab's Free Use Bible API reads places.json and verses/).
@@ -178,6 +187,7 @@ write(
         // The same place in the gazetteers (added in version 1: readers ignore a new field).
         ...(wikidata[p.id] ? { wikidata: wikidata[p.id] } : {}),
         ...(pleiades[p.id]?.id ? { pleiades: pleiades[p.id]?.id } : {}),
+        ...(tipnr[p.id] ? { tipnr: tipnr[p.id] } : {}),
         // A page only for a place some verse names (scripts/build-pages.ts writes no other).
         ...(p.verses > 0 ? { page: pages(`place/${slugs.get(p.id) ?? p.id}/`) } : {}),
       }),
@@ -456,7 +466,7 @@ write("index.json", {
   },
   fields_added: {
     "places.json":
-      "wikidata (Wikidata item, as OpenBible links it) and pleiades (Pleiades id), 2026-10",
+      "wikidata (Wikidata item, as OpenBible links it) and pleiades (Pleiades id), 2026-10; tipnr (STEPBible TIPNR unique name, the id people.json uses), 2026-10-19",
     "index.json": "notice (what may be taken and how), 2026-10",
   },
   books: [...books.keys()],

@@ -272,8 +272,29 @@ def rank_of(weighted_mentions: int) -> int:
     return 0 if weighted_mentions >= 40 else 1 if weighted_mentions >= 10 else 2 if weighted_mentions >= 3 else 3
 
 
+def move_points(feats: list[dict], same_as: dict[str, str]) -> int:
+    """Put a place on another record's point (content/place-points.json, `same_as`).
+
+    OpenBible says the place is "another name for" the other, but resolves each record one
+    hop, to the other's best modern candidate, so the two end on different sites (Dimonah
+    63 km from Dibon of Judah, in Moab; docs/crosswalk/their-errors.md, O6). One place, one
+    point: the other record's, which passed the licence filter like any shipped point.
+    """
+    by_id = {f["properties"]["id"]: f for f in feats}
+    for pid, target in same_as.items():
+        if pid not in by_id or target not in by_id:
+            raise SystemExit(f"place-points: {pid} or its same_as {target} is not in the build")
+        by_id[pid]["geometry"]["coordinates"] = list(by_id[target]["geometry"]["coordinates"])
+        by_id[pid]["properties"]["coord"] = by_id[target]["properties"]["coord"]
+    return len(same_as)
+
+
 def build_places(
-    records: list[dict], modern: dict[str, dict], sites_per_place: dict[str, tuple[int, bool]], river_places: set[str]
+    records: list[dict],
+    modern: dict[str, dict],
+    sites_per_place: dict[str, tuple[int, bool]],
+    river_places: set[str],
+    same_as: dict[str, str] | None = None,
 ) -> tuple[dict, dict, list[str]]:
     def top_point(r: dict) -> dict | None:
         ids = r.get("identifications") or []
@@ -338,6 +359,7 @@ def build_places(
                 **({"line": True} if r["id"] in river_places else {}),
             },
         })
+    moved = move_points(feats, same_as or {})
     # OpenBible splits one location into several records by referent (Bethel 1 and 2 on one
     # point). On the map they would print the same name twice: only the most mentioned of
     # each name at a point keeps its label; the others are marked `dup` and keep their dot.
@@ -355,6 +377,7 @@ def build_places(
         "banned_points_replaced_from_wikidata": replaced,
         "excluded_banned_coordinates": len(excluded),
         "without_point": no_point,
+        "points_moved_to_same_place": moved,
     }
     return {"type": "FeatureCollection", "features": feats}, stats, excluded
 
@@ -1033,7 +1056,11 @@ def main() -> None:
     sites, sites_per_place, site_stats = build_sites(records, modern)
     rivers, river_labels, river_stats = build_rivers()
     river_places = {f["properties"]["place"] for f in rivers["features"] if "place" in f["properties"]}
-    places, place_stats, excluded_places = build_places(records, modern, sites_per_place, river_places)
+    same_as = {
+        pid: o["same_as"]
+        for pid, o in json.loads((ROOT / "content" / "place-points.json").read_text(encoding="utf-8"))["places"].items()
+    }
+    places, place_stats, excluded_places = build_places(records, modern, sites_per_place, river_places, same_as)
     # Candidates of a place left out (licence) would be sites of nothing.
     shipped = {f["properties"]["id"] for f in places["features"]}
     sites["features"] = [f for f in sites["features"] if f["properties"]["place"] in shipped]

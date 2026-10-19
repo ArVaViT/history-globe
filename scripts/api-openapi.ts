@@ -187,6 +187,13 @@ export function openApi(version: string): object {
               description: "Wikidata item, as OpenBible links it",
             },
             pleiades: { type: "string", pattern: "^\\d+$", description: "Pleiades place id" },
+            tipnr: {
+              type: "string",
+              pattern: "^[^@]+@[^@]+$",
+              description:
+                "STEPBible TIPNR unique name of the place (name@first verse, -last book), as OpenBible links it, brought to the current TIPNR: always a TIPNR place record (a place named after a person, Dedan, Edom, Teman, carries the place record, not the person's); the same id scheme as people.json",
+              example: "Philippi@Act.16.12-Php",
+            },
             page: ref("Pages"),
           },
           required: ["id", "name", "names", "name_ru", "kind", "lon", "lat", "verses"],
