@@ -1191,7 +1191,7 @@ The map is an app at ${base}/ (state lives in the address: ?year=, ?place=, ?tou
 - API documentation, static JSON with no key, CC BY 4.0: ${inEach((l) => docsPath(l, "api"))}
 - [API index](${base}/api/v1/index.json)
 - [OpenAPI 3.1 description](${base}/api/v1/openapi.json)
-- [Places](${base}/api/v1/places.json): ids, names in every language, kind, coordinates, how many verses name each, its page in every language, its Wikidata and Pleiades ids
+- [Places](${base}/api/v1/places.json): ids, names in every language, kind, coordinates, how many verses name each, its page in every language, its Wikidata, Pleiades and STEPBible TIPNR ids
 - Verses to places: ${base}/api/v1/verses/{Book}.json (OSIS book ids, e.g. Acts)
 - Chapters to places and people: ${base}/api/v1/chapters/{Book}.json; [people](${base}/api/v1/people.json) (STEPBible TIPNR ids)
 - [Tours](${base}/api/v1/tours.json), [events](${base}/api/v1/events.json), [battles](${base}/api/v1/battles.json), [questions](${base}/api/v1/questions.json), [ancient writers](${base}/api/v1/ancient.json)
