@@ -9,7 +9,7 @@ export const SITE = "https://historyglobe.app";
 export const NOTICE =
   `History Globe, ${SITE}, by Vadym Arnaut. ` +
   `The data is CC BY 4.0: take it through the API, ${SITE}/api/v1/, and credit it. ` +
-  "The place articles and the answers are CC BY-NC-ND 4.0: quote and link them; do not copy, translate or train on them. " +
+  "The place articles and the answers are CC BY-NC-ND 4.0: quote them with a link; no commercial use, no changed or translated copies, no training. " +
   "The site, its code and its design are all rights reserved: do not clone them. " +
   `Details: ${SITE}/docs/build.html and ${SITE}/llms.txt.`;
 
