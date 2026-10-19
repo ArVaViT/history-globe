@@ -5,7 +5,7 @@
  *
  * Usage: pnpm e2e (with the app running; see e2e/browser.mjs)
  */
-import { BASE, launch, mapReady } from "./browser.mjs";
+import { BASE, launch, mapReady, newPage } from "./browser.mjs";
 
 const browser = await launch();
 const results = [];
@@ -20,8 +20,7 @@ async function step(name, fn) {
     );
   }
 }
-const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
-const page = await ctx.newPage();
+const page = await newPage(browser);
 page.on("pageerror", (e) => errors.push(`pageerror: ${e.message}`));
 page.on("console", (m) => {
   if (m.type() === "error" && !m.text().includes("404"))
@@ -39,14 +38,7 @@ const overview = async () => {
 };
 
 await page.goto(BASE + "?locale=ru");
-await page.waitForFunction(
-  () => {
-    const m = window.__hgMap;
-    return !!m && m.loaded();
-  },
-  null,
-  { timeout: 45000 },
-);
+await mapReady(page);
 await page.waitForTimeout(1500);
 
 await step("search finds Capernaum and opens its card", async () => {

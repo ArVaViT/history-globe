@@ -51,7 +51,7 @@
   --syn-tag: #a1401f;
   --syn-attr: #7d5c14;
   --syn-str: #2f6b40;
-  --syn-com: #847a6a;
+  --syn-com: #746b5c;
   --syn-key: #7a3f96;
   --shadow: 0 1px 2px rgb(31 26 19 / 0.04), 0 8px 24px -12px rgb(31 26 19 / 0.12);
   --sans: "Golos Text", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -81,7 +81,7 @@
     --syn-tag: #ee9f78;
     --syn-attr: #d4bf8a;
     --syn-str: #a7c98c;
-    --syn-com: #7f7868;
+    --syn-com: #908878;
     --syn-key: #d7a0d4;
     --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 12px 32px -16px rgb(0 0 0 / 0.6);
   }
@@ -816,7 +816,8 @@ code {
   padding: 0 8px 0 16px;
   border-bottom: 1px solid var(--line);
   background: var(--code-bar);
-  color: var(--ink-faint);
+  /* Not the faint ink: on the bar's own background it fell short of 4.5:1. */
+  color: var(--ink-soft);
   font-size: 12.5px;
   font-weight: 550;
 }
@@ -829,7 +830,7 @@ code {
   border: 0;
   border-radius: 6px;
   background: none;
-  color: var(--ink-faint);
+  color: var(--ink-soft);
   font: 500 12.5px var(--sans);
   cursor: pointer;
 }
