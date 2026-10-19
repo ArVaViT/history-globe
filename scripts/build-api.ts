@@ -25,6 +25,7 @@ import { join } from "node:path";
 import { placeSlugs } from "../packages/model/src/slugs.ts";
 import { LOCALES } from "../packages/model/src/time.ts";
 import { openApi, violations } from "./api-openapi.ts";
+import { NOTICE } from "../packages/model/src/notice.ts";
 
 const root = join(import.meta.dirname, "..");
 const data = join(root, "apps/web/public/data");
@@ -422,6 +423,8 @@ write("index.json", {
   license: LICENSE,
   license_url: "https://creativecommons.org/licenses/by/4.0/",
   credit: CREDIT,
+  // Added 2026-10: the same words a page's head and llms.txt carry.
+  notice: NOTICE,
   years: "astronomical: 1 BC is 0, 586 BC is -585",
   refs: "OSIS with English book abbreviations and KJV numbering: Gen.12.6, Acts.16.12-Acts.16.15",
   files: {

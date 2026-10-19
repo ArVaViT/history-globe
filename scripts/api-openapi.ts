@@ -137,6 +137,11 @@ export function openApi(version: string): object {
             license: { type: "string" },
             license_url: { type: "string", format: "uri" },
             credit: { type: "array", items: { type: "string" } },
+            notice: {
+              type: "string",
+              description:
+                "What may be taken and how, in a few sentences: the same notice every page and llms.txt carry (added 2026-10)",
+            },
             years: { type: "string" },
             refs: { type: "string" },
             files: { type: "object", additionalProperties: { type: "string" } },

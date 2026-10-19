@@ -54,11 +54,28 @@
       ]
     },
     {
-      "source": "/data/(.*)",
+      "source": "/data/((?!articles/).*)",
       "headers": [
         {
           "key": "Cache-Control",
           "value": "public, no-cache"
+        },
+        {
+          "key": "Link",
+          "value": "<https://creativecommons.org/licenses/by/4.0/>; rel=\"license\""
+        }
+      ]
+    },
+    {
+      "source": "/data/articles/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, no-cache"
+        },
+        {
+          "key": "Link",
+          "value": "<https://creativecommons.org/licenses/by-nc-nd/4.0/>; rel=\"license\""
         }
       ]
     },
@@ -72,7 +89,7 @@
       ]
     },
     {
-      "source": "/api/(.*)",
+      "source": "/api/((?!v1/questions\\.json).*)",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
@@ -81,6 +98,27 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=3600"
+        },
+        {
+          "key": "Link",
+          "value": "<https://creativecommons.org/licenses/by/4.0/>; rel=\"license\", <https://historyglobe.app/api/v1/openapi.json>; rel=\"service-desc\", <https://historyglobe.app/docs/build.html>; rel=\"service-doc\""
+        }
+      ]
+    },
+    {
+      "source": "/api/v1/questions.json",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        },
+        {
+          "key": "Link",
+          "value": "<https://creativecommons.org/licenses/by-nc-nd/4.0/>; rel=\"license\", <https://historyglobe.app/api/v1/openapi.json>; rel=\"service-desc\", <https://historyglobe.app/docs/build.html>; rel=\"service-doc\""
         }
       ]
     },

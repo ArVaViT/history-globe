@@ -28,6 +28,7 @@ import {
 import { sourcesOf } from "../packages/model/src/citation.ts";
 import { formatYear, LOCALE_NAMES, LOCALES, type SiteLocale } from "../packages/model/src/time.ts";
 import { esc, headMeta } from "./page-shell.ts";
+import { NOTICE_COMMENT } from "../packages/model/src/notice.ts";
 import { commonsPage, DOC_PAGES, docsPath } from "../packages/model/src/site.ts";
 import { LANDING, LISTS, T } from "./page-words.ts";
 import { siteCertainty } from "../packages/model/src/sites.ts";
@@ -287,6 +288,7 @@ function page(o: {
   return `<!doctype html>
 <html lang="${o.l}">
   <head>
+    ${NOTICE_COMMENT}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="${o.home ? "#fcfbf8" : "#fbf8f2"}" media="(prefers-color-scheme: light)" />

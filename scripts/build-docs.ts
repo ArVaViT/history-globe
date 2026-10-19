@@ -18,6 +18,7 @@
 import { LOCALE_NAMES, LOCALES, type SiteLocale } from "../packages/model/src/time.ts";
 import { esc, headMeta } from "./page-shell.ts";
 import { hitHtml } from "./docs-script.ts";
+import { NOTICE_COMMENT } from "../packages/model/src/notice.ts";
 import { DOC_PAGES, type DocPage } from "../packages/model/src/site.ts";
 import {
   copyFileSync,
@@ -826,6 +827,7 @@ function page(o: {
   return `<!doctype html>
 <html lang="${l}" class="no-js">
   <head>
+    ${NOTICE_COMMENT}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fcfbf8" media="(prefers-color-scheme: light)" />
