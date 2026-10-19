@@ -457,6 +457,7 @@ write("index.json", {
   fields_added: {
     "places.json":
       "wikidata (Wikidata item, as OpenBible links it) and pleiades (Pleiades id), 2026-10",
+    "index.json": "notice (what may be taken and how), 2026-10",
   },
   books: [...books.keys()],
 });
