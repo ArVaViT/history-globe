@@ -191,7 +191,7 @@ export function openApi(version: string): object {
               type: "string",
               pattern: "^[^@]+@[^@]+$",
               description:
-                "STEPBible TIPNR unique name of the place (name@first verse, -last book), as OpenBible links it, brought to the current TIPNR; the same ids as people.json",
+                "STEPBible TIPNR unique name of the place (name@first verse, -last book), as OpenBible links it, brought to the current TIPNR: always a TIPNR place record (a place named after a person, Dedan, Edom, Teman, carries the place record, not the person's); the same id scheme as people.json",
               example: "Philippi@Act.16.12-Php",
             },
             page: ref("Pages"),
