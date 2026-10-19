@@ -1,10 +1,11 @@
 /**
  * The beacon and the honeypot (ADR 0017, addendum) in a real browser, against a build of the
- * site (vite preview). The site itself, its embed and a preview send no beacon and show no
- * line; the honeypot's link is in the page and no reader sees it; a copy of the app's page
- * and of a built page on another host, served with the site's own Content-Security-Policy,
- * asks historyglobe.app for /origin/<host> and shows where the original is. The other
- * hosts are played by routes: nothing leaves the machine.
+ * site (vite preview). The site itself, its embed, a preview and Google Translate's proxy
+ * send no beacon and show no line; the honeypot's link is in the page and no reader sees it;
+ * a copy of the app's page and of a built page on another host, served with the site's own
+ * Content-Security-Policy, asks historyglobe.app for /origin/<host>, without a referrer, and
+ * shows where the original is. The other hosts are played by routes: nothing leaves the
+ * machine.
  *
  * Usage: HG_URL=http://localhost:4173/ pnpm e2e:copies (with `vite preview` of a build
  * running; see e2e/browser.mjs for PLAYWRIGHT)
@@ -39,8 +40,12 @@ const ctx = await browser.newContext({
 });
 /** What the beacon asked historyglobe.app for, by the page that asked. */
 const beacons = [];
+/** The Referer headers those requests carried; the beacon must send none. */
+const referers = [];
 await ctx.route("https://historyglobe.app/**", (route) => {
   beacons.push(new URL(route.request().url()).pathname);
+  const referer = route.request().headers().referer;
+  if (referer !== undefined) referers.push(referer);
   route.fulfill({ status: 404, body: "" });
 });
 await ctx.route("https://tiles.mapterhorn.com/**", (route) => route.abort());
@@ -54,7 +59,8 @@ async function playHost(host) {
     await route.fulfill({ status: r.status(), headers, body: await r.body() });
   });
 }
-await playHost("history-globe-git-main-arvavit.vercel.app");
+await playHost("history-globe-git-main-vadyms-projects-dfb6f76f.vercel.app");
+await playHost("historyglobe-app.translate.goog");
 await playHost("copy.example");
 
 const page = await ctx.newPage();
@@ -120,8 +126,13 @@ await step("embedded (?embed=1 and /embed/v1/): no beacon, no line", async () =>
 });
 
 await step("a preview of the project: no beacon, no line", async () => {
-  await silent("https://history-globe-git-main-arvavit.vercel.app/");
+  await silent("https://history-globe-git-main-vadyms-projects-dfb6f76f.vercel.app/");
   expect((await violations()).length === 0, `CSP: ${(await violations()).join(", ")}`);
+});
+
+await step("through Google Translate's proxy: no beacon, no line", async () => {
+  await silent("https://historyglobe-app.translate.goog/");
+  await silent("https://historyglobe-app.translate.goog/en/places/");
 });
 
 for (const path of ["", "en/places/"]) {
@@ -129,6 +140,7 @@ for (const path of ["", "en/places/"]) {
     `a copy on another host, /${path}: the beacon names the host, the line names the original`,
     async () => {
       beacons.length = 0;
+      referers.length = 0;
       await page.goto(`https://copy.example/${path}`, { waitUntil: "domcontentloaded" });
       await page.waitForFunction(
         () => document.querySelector('a[href="https://historyglobe.app/"]'),
@@ -140,6 +152,7 @@ for (const path of ["", "en/places/"]) {
       await page.waitForTimeout(500);
       expect(beacons.includes("/origin/copy.example"), `beacons: ${beacons.join(" ") || "none"}`);
       expect(beacons.length === 1, `${beacons.length} beacons`);
+      expect(referers.length === 0, `the beacon carried a Referer: ${referers.join(" ")}`);
       expect(await original().isVisible(), "the original's line is not shown");
       expect((await violations()).length === 0, `CSP: ${(await violations()).join(", ")}`);
     },

@@ -69,13 +69,18 @@ host's firewall (Vercel WAF, custom rules in log mode) is the only place the sig
   inline at the end of every page: the app's (`vite.config.ts`, so that the bytes are the
   built pages' own and one hash in the Content-Security-Policy allows it everywhere) and the
   built place, tour, question and documentation pages (`scripts/page-shell.ts`, `bodyEnd`).
-  On `historyglobe.app`, on `localhost` and on the project's previews
-  (`history-globe*.vercel.app`) it does nothing; a page opened from a file does nothing
-  either. From any other host it asks `https://historyglobe.app/origin/<host>` for an image
-  (there is no such file: the answer is the 404 page, which the image never shows) and puts
-  one line on the page, "Original: historyglobe.app", a link. The request carries the
-  copy's host and nothing else: no query, no cookie (the site sets none), nothing of the
-  reader, who reaches the site as with any request to it. The policy's `img-src` names
+  On `historyglobe.app`, on `localhost`, on a `.local` name or a private network address
+  (a developer's machine seen from a phone; a classroom's own mirror) and on the project's
+  previews (`history-globe*.vercel.app`) it does nothing; a page opened from a file does
+  nothing either. Nor on Google Translate's proxy (`*.translate.goog`) or the Wayback
+  Machine (`web.archive.org`): a page shown through a translator or an archive is not a
+  copy, both name the original themselves, and a line from us there would be clutter to
+  the reader and noise in the log. From any other host it asks
+  `https://historyglobe.app/origin/<host>` for an image (there is no such file: the answer
+  is the 404 page, which the image never shows) and puts one line on the page, "Original:
+  historyglobe.app", a link. The request carries the copy's host and nothing else: no
+  query, no referrer (`referrerPolicy: no-referrer`), no cookie (the site sets none),
+  nothing of the reader, who reaches the site as with any request to it. The policy's `img-src` names
   `https://historyglobe.app`, the site's own origin, so a copy that kept the headers still
   sends it. A globe framed by another site is not a copy: `/embed/v1` and `?embed=1` are
   served by the site, so their hostname is its own; `hg-places.js`, which runs on other
