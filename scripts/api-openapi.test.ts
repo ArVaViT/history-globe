@@ -18,6 +18,7 @@ const philippi = {
   verses: 4,
   wikidata: "Q379652",
   pleiades: "501482",
+  tipnr: "Philippi@Act.16.12-Php",
   page: { en: "/en/place/philippi/", ru: "/ru/place/philippi/" },
 };
 
@@ -58,6 +59,13 @@ describe("the API description", () => {
     expect(
       violations(
         { ...philippi, wikidata: "379652" },
+        { $ref: "#/components/schemas/Place" },
+        schemas,
+      ),
+    ).toHaveLength(1);
+    expect(
+      violations(
+        { ...philippi, tipnr: "Philippi" },
         { $ref: "#/components/schemas/Place" },
         schemas,
       ),

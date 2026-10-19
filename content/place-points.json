@@ -1,0 +1,33 @@
+{
+  "_source": "Places put on another OpenBible record's point (pipeline/build_data.py, move_points). OpenBible calls each of these 'another name for' the other record, but resolves the two one hop apart, to different candidate sites (docs/crosswalk/their-errors.md, O6): one place, one point. Checked by hand on 2026-10-19; Zer (a061538) and Ramoth 2 (ab049cf) were taken out again the same day on review: the named record's own point fits their verses worse (docs/crosswalk/their-errors.md, O6).",
+  "places": {
+    "ac17675": {
+      "same_as": "a3d1c99",
+      "why": "Dimonah (Josh 15:22) is Dibon of Judah (Neh 11:25), in the Negeb list of Josh 15:21-32; OpenBible's resolution lands on Dibon of Moab, 63 km away."
+    },
+    "a92de65": {
+      "same_as": "a55cec0",
+      "why": "Bethul (Josh 19:4): another name for Bethuel, which sits with Bethel 2 at Khirbet el-Qaryatein; resolved to Bethuel's second candidate, 23 km west."
+    },
+    "acf2fac": {
+      "same_as": "a55cec0",
+      "why": "Chesil (Josh 15:30): another name for Bethuel; the same resolution as Bethul."
+    },
+    "ae83efa": {
+      "same_as": "a7be664",
+      "why": "Canneh (Ezek 27:23): another name for Calneh 2, resolved 74 km from it."
+    },
+    "a6c0a5f": {
+      "same_as": "a38ad07",
+      "why": "Ir-moab (Num 22:36): another name for Ar, resolved 9 km from it."
+    },
+    "ad259d1": {
+      "same_as": "a095b6e",
+      "why": "Sea of Jazer (Jer 48:32): another name for Jazer, resolved 11 km from it."
+    },
+    "a5c4318": {
+      "same_as": "a1d1918",
+      "why": "Hukok (1 Chr 6:75): another name for Helkath, resolved 8 km from it."
+    }
+  }
+}
