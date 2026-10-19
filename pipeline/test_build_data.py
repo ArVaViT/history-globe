@@ -1,5 +1,6 @@
 """Licence rules of the pipeline (ADR 0008). Run: python3 -m unittest discover pipeline"""
 
+import pathlib
 import unittest
 
 from build_data import (
@@ -7,6 +8,9 @@ from build_data import (
     COAST_BBOX,
     banned_lonlats,
     build_coast,
+    build_places,
+    load_place_points,
+    pick_site,
     clip_ring,
     join_holes,
     ring_area,
@@ -75,6 +79,92 @@ class MovePoints(unittest.TestCase):
     def test_a_place_outside_the_build_stops_it(self) -> None:
         with self.assertRaises(SystemExit):
             move_points(self.feats(), {"dimonah": "left-out"})
+
+    def test_follows_a_chain_whatever_the_order(self) -> None:
+        feats = self.feats() + [
+            {"geometry": {"coordinates": [34.91, 30.99]}, "properties": {"id": "bealoth", "coord": "openbible"}}
+        ]
+        self.assertEqual(move_points(feats, {"bealoth": "dimonah", "dimonah": "dibon"}), 2)
+        self.assertEqual(feats[2]["geometry"]["coordinates"], [35.16, 31.30])
+        self.assertEqual(feats[2]["properties"]["coord"], "wikidata")
+
+    def test_a_circle_stops_it(self) -> None:
+        with self.assertRaises(SystemExit):
+            move_points(self.feats(), {"dimonah": "dibon", "dibon": "dimonah"})
+
+
+def ident(modern_id: str, lonlat: str, score: float, description: str | None = None) -> dict:
+    return {
+        "id": modern_id,
+        "id_source": "modern",
+        "description": description or f'<modern id="{modern_id}">{modern_id}</modern>',
+        "score": {"time_total": score},
+        "resolutions": [res("m_wd", lonlat)],
+    }
+
+
+HUKKOK = {
+    "id": "hukkok",
+    "friendly_id": "Hukkok",
+    "types": ["settlement"],
+    "verses": [{"osis": "Josh.19.34"}],
+    "identifications": [ident("m_jem", "35.26,32.86", 283), ident("m_yaquq", "35.48,32.88", 142)],
+}
+
+
+class PickSite(unittest.TestCase):
+    def test_nothing_chosen_means_none(self) -> None:
+        self.assertIsNone(pick_site(HUKKOK, None))
+        self.assertIsNone(pick_site(HUKKOK, {"other": "m_yaquq"}))
+
+    def test_picks_the_named_modern_location(self) -> None:
+        self.assertEqual(pick_site(HUKKOK, {"hukkok": "m_yaquq"})["id"], "m_yaquq")
+
+    def test_a_location_openbible_does_not_list_stops_it(self) -> None:
+        with self.assertRaises(SystemExit):
+            pick_site(HUKKOK, {"hukkok": "m_elsewhere"})
+
+    def test_an_ancient_record_is_not_a_site(self) -> None:
+        record = dict(HUKKOK, identifications=[{"id": "a1", "id_source": "ancient", "resolutions": [res("m_wd", "35.48,32.88")]}])
+        with self.assertRaises(SystemExit):
+            pick_site(record, {"hukkok": "a1"})
+
+
+class BuildPlacesWithChosenSite(unittest.TestCase):
+    def test_point_confidence_and_today_line_follow_the_chosen_site(self) -> None:
+        places, _, _ = build_places([HUKKOK], MODERN, {}, set(), None, {"hukkok": "m_yaquq"})
+        p = places["features"][0]
+        self.assertEqual(p["geometry"]["coordinates"], [35.48, 32.88])
+        self.assertEqual(p["properties"]["confidence"], 142)
+        self.assertEqual((p["properties"]["where"], p["properties"]["where_ref"]), ("m_yaquq", "m_yaquq"))
+
+    def test_without_a_choice_the_first_identification_is_shown(self) -> None:
+        places, _, _ = build_places([HUKKOK], MODERN, {}, set())
+        p = places["features"][0]
+        self.assertEqual(p["geometry"]["coordinates"], [35.26, 32.86])
+        self.assertEqual(p["properties"]["confidence"], 283)
+
+    def test_a_banned_point_is_refused_rather_than_dropped(self) -> None:
+        record = dict(HUKKOK, identifications=[ident("m_jem", "35.26,32.86", 283), ident("m_osm", "35.1,31.1", 1)])
+        with self.assertRaises(SystemExit):
+            build_places([record], MODERN, {}, set(), None, {"hukkok": "m_osm"})
+
+
+class LoadPlacePoints(unittest.TestCase):
+    def test_splits_same_as_from_site_and_refuses_both_or_neither(self) -> None:
+        import json
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as d:
+            path = pathlib.Path(d) / "place-points.json"
+            path.write_text(json.dumps({"places": {"a": {"same_as": "b"}, "c": {"site": "m1", "why": "…"}}}))
+            self.assertEqual(load_place_points(path), ({"a": "b"}, {"c": "m1"}))
+            path.write_text(json.dumps({"places": {"a": {"same_as": "b", "site": "m1"}}}))
+            with self.assertRaises(SystemExit):
+                load_place_points(path)
+            path.write_text(json.dumps({"places": {"a": {"why": "…"}}}))
+            with self.assertRaises(SystemExit):
+                load_place_points(path)
 
 
 class Rank(unittest.TestCase):
