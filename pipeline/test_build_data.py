@@ -223,3 +223,64 @@ class Qid(unittest.TestCase):
         # OpenBible, Adamah: {"id": "Q2605670", "modifier": "not"}; Iconium: "modern" (Konya).
         self.assertIsNone(qid({"linked_data": {"s7cc8b2": {"id": "Q2605670", "modifier": "not"}}}))
         self.assertIsNone(qid({"linked_data": {"s7cc8b2": {"id": "Q79857", "modifier": "modern"}}}))
+
+
+class FetchChecksThePin(unittest.TestCase):
+    """A source is read at a pinned commit and must hash as pipeline/sources.json says."""
+
+    def setUp(self) -> None:
+        import hashlib
+        import pathlib
+        import tempfile
+        from unittest import mock
+
+        self.tmp = pathlib.Path(tempfile.mkdtemp())
+        self.upstream = self.tmp / "upstream.txt"
+        self.upstream.write_text("the file at the pinned commit\n", encoding="utf-8")
+        self.cache = self.tmp / "cache"
+        self.patch = mock.patch("build_data.CACHE", self.cache)
+        self.patch.start()
+        self.sources = {"x": {"file": "x.txt", "url": self.upstream.as_uri(), "license": "PD", "credit": ""}}
+        self.good = hashlib.sha256(self.upstream.read_bytes()).hexdigest()
+
+    def tearDown(self) -> None:
+        import shutil
+
+        self.patch.stop()
+        shutil.rmtree(self.tmp)
+
+    def test_downloads_and_keeps_a_file_that_hashes_as_pinned(self) -> None:
+        from build_data import fetch
+
+        path = fetch("x", self.sources, {"x": {"sha256": self.good}})
+        self.assertEqual(path.read_bytes(), self.upstream.read_bytes())
+        # A second call reads the cache and checks it again.
+        self.assertEqual(fetch("x", self.sources, {"x": {"sha256": self.good}}), path)
+
+    def test_removes_a_download_that_does_not_hash_so_and_stops(self) -> None:
+        from build_data import fetch
+
+        with self.assertRaises(SystemExit) as stop:
+            fetch("x", self.sources, {"x": {"sha256": "0" * 64}})
+        self.assertIn("sources.json", str(stop.exception))
+        self.assertFalse((self.cache / "x.txt").exists())
+
+    def test_removes_a_cached_file_that_was_changed(self) -> None:
+        from build_data import fetch
+
+        fetch("x", self.sources, {"x": {"sha256": self.good}})
+        (self.cache / "x.txt").write_text("changed on disk\n", encoding="utf-8")
+        with self.assertRaises(SystemExit):
+            fetch("x", self.sources, {"x": {"sha256": self.good}})
+        self.assertFalse((self.cache / "x.txt").exists())
+
+    def test_every_source_of_the_build_is_pinned_with_a_hash(self) -> None:
+        from build_data import PINS, SOURCES
+
+        for name, src in SOURCES.items():
+            if src.get("generated"):
+                continue
+            self.assertIn(name, PINS, name)
+            self.assertRegex(PINS[name]["commit"], r"^[0-9a-f]{40}$")
+            self.assertRegex(PINS[name]["sha256"], r"^[0-9a-f]{64}$")
+            self.assertIn(PINS[name]["commit"], src["url"])

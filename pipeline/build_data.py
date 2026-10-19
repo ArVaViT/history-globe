@@ -27,10 +27,22 @@ OUT = ROOT / "apps" / "web" / "public" / "data"
 
 ALLOWED_LICENSES = {"CC0-1.0", "PD", "CC-BY-3.0", "CC-BY-4.0", "ODC-BY-1.0"}
 
+# The upstream files are read at one commit each, with the hash of what is read
+# (pipeline/sources.json): a change upstream, or on the way, never reaches a release
+# unnoticed. `python3 pipeline/pin_sources.py` moves a pin to the latest commit.
+PINS_FILE = ROOT / "pipeline" / "sources.json"
+PINS: dict[str, dict] = {k: v for k, v in json.loads(PINS_FILE.read_text(encoding="utf-8")).items() if k != "_"}
+
+
+def pinned_url(name: str) -> str:
+    p = PINS[name]
+    return f"https://raw.githubusercontent.com/{p['repo']}/{p['commit']}/{p['path']}"
+
+
 SOURCES = {
     "openbible": {
         "file": "openbible-ancient.jsonl",
-        "url": "https://raw.githubusercontent.com/openbibleinfo/Bible-Geocoding-Data/main/data/ancient.jsonl",
+        "url": pinned_url("openbible"),
         "license": "CC-BY-4.0",
         "credit": "OpenBible.info Bible Geocoding Data, CC BY 4.0",
     },
@@ -38,14 +50,14 @@ SOURCES = {
     # came from, so that points copied from OSM or Google can be dropped (ADR 0008).
     "openbible_modern": {
         "file": "openbible-modern.jsonl",
-        "url": "https://raw.githubusercontent.com/openbibleinfo/Bible-Geocoding-Data/main/data/modern.jsonl",
+        "url": pinned_url("openbible_modern"),
         "license": "CC-BY-4.0",
         "credit": "OpenBible.info Bible Geocoding Data, CC BY 4.0",
     },
     "cliopatria": {
         "file": "cliopatria_polities_only.geojson",
-        "url": "https://github.com/Seshat-Global-History-Databank/cliopatria/raw/main/cliopatria.geojson.zip",
-        "zip_member": "cliopatria_polities_only.geojson",
+        "url": pinned_url("cliopatria"),
+        "zip_member": PINS["cliopatria"]["zip_member"],
         "license": "CC-BY-4.0",
         "credit": "Cliopatria, Seshat Global History Databank, CC BY 4.0",
     },
@@ -58,25 +70,25 @@ SOURCES = {
     },
     "natural_earth_ocean": {
         "file": "ne_50m_ocean.geojson",
-        "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_ocean.geojson",
+        "url": pinned_url("natural_earth_ocean"),
         "license": "PD",
         "credit": "Made with Natural Earth",
     },
     "natural_earth_ocean_10m": {
         "file": "ne_10m_ocean.geojson",
-        "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_ocean.geojson",
+        "url": pinned_url("natural_earth_ocean_10m"),
         "license": "PD",
         "credit": "Made with Natural Earth",
     },
     "natural_earth_lakes": {
         "file": "ne_50m_lakes.geojson",
-        "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_lakes.geojson",
+        "url": pinned_url("natural_earth_lakes"),
         "license": "PD",
         "credit": "Made with Natural Earth",
     },
     "natural_earth_rivers": {
         "file": "ne_10m_rivers.geojson",
-        "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_rivers_lake_centerlines.geojson",
+        "url": pinned_url("natural_earth_rivers"),
         "license": "PD",
         "credit": "Made with Natural Earth",
     },
@@ -147,8 +159,12 @@ def qid(record: dict) -> str | None:
     return None
 
 
-def fetch(name: str) -> pathlib.Path:
-    src = SOURCES[name]
+def fetch(name: str, sources: dict | None = None, pins: dict | None = None) -> pathlib.Path:
+    """The cached file of a source, downloaded at its pinned commit when absent, and checked
+    against its pinned hash either way: a file that does not hash so is removed and stops
+    the build, whether it came from the network just now or sat in the cache."""
+    src = (sources or SOURCES)[name]
+    pin = (pins if pins is not None else PINS).get(name)
     if src["license"] not in ALLOWED_LICENSES:
         raise SystemExit(f"{name}: licence {src['license']} is not on the allowlist (ADR 0008)")
     path = CACHE / src["file"]
@@ -165,6 +181,13 @@ def fetch(name: str) -> pathlib.Path:
             tmp.unlink()
         else:
             tmp.rename(path)
+    if pin and (got := sha256(path)) != pin["sha256"]:
+        path.unlink()
+        raise SystemExit(
+            f"{name}: {path.name} hashes to {got[:12]}…, pipeline/sources.json expects "
+            f"{pin['sha256'][:12]}…; the file is removed. If upstream has changed on purpose, "
+            f"run `python3 pipeline/pin_sources.py {name}` and review the data checks."
+        )
     return path
 
 
@@ -1042,6 +1065,7 @@ def main() -> None:
                 "license": v["license"],
                 "credit": v["credit"],
                 "url": v["url"],
+                **({"commit": PINS[k]["commit"]} if k in PINS else {}),
                 "sha256": sha256(CACHE / v["file"]),
                 "snapshot": dt.date.fromtimestamp((CACHE / v["file"]).stat().st_mtime).isoformat(),
             }

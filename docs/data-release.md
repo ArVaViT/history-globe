@@ -8,7 +8,11 @@ OpenBible's (`a` and six hex digits), tour, event and article ids come from `con
 people's from STEP Bible's TIPNR.
 
 `manifest.json` records when the release was built and every source with its licence,
-URL, snapshot date and SHA-256. The credits shipped with the map are in
+URL, snapshot date and SHA-256. The upstream files are read at one commit each
+(`pipeline/sources.json`: repository, path, commit, SHA-256), so a build fetches the same
+bytes whatever has happened upstream since, and refuses a file that hashes otherwise;
+`python3 pipeline/pin_sources.py` shows what has moved upstream and `--write` moves the
+pins (then `pnpm data` and the data checks, ADR 0007). The credits shipped with the map are in
 `docs/ATTRIBUTIONS.md` and on the About page; keep them with any copy of the data.
 
 ## Loaded for the first frame
