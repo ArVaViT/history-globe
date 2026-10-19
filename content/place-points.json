@@ -1,5 +1,5 @@
 {
-  "_source": "Places put on another OpenBible record's point (pipeline/build_data.py, move_points). OpenBible calls each of these 'another name for' the other record, but resolves the two one hop apart, to different candidate sites (docs/crosswalk/their-errors.md, O6): one place, one point. Checked by hand on 2026-10-19.",
+  "_source": "Places put on another OpenBible record's point (pipeline/build_data.py, move_points). OpenBible calls each of these 'another name for' the other record, but resolves the two one hop apart, to different candidate sites (docs/crosswalk/their-errors.md, O6): one place, one point. Checked by hand on 2026-10-19; Zer (a061538) and Ramoth 2 (ab049cf) were taken out again the same day on review: the named record's own point fits their verses worse (docs/crosswalk/their-errors.md, O6).",
   "places": {
     "ac17675": {
       "same_as": "a3d1c99",
@@ -17,10 +17,6 @@
       "same_as": "a7be664",
       "why": "Canneh (Ezek 27:23): another name for Calneh 2, resolved 74 km from it."
     },
-    "a061538": {
-      "same_as": "a6c2936",
-      "why": "Zer (Josh 19:35): another name for Madon, resolved 31 km from it."
-    },
     "a6c0a5f": {
       "same_as": "a38ad07",
       "why": "Ir-moab (Num 22:36): another name for Ar, resolved 9 km from it."
@@ -32,10 +28,6 @@
     "a5c4318": {
       "same_as": "a1d1918",
       "why": "Hukok (1 Chr 6:75): another name for Helkath, resolved 8 km from it."
-    },
-    "ab049cf": {
-      "same_as": "aaa4c6e",
-      "why": "Ramoth of the Negeb (1 Sam 30:27): another name for Ramah of the Negeb (Josh 19:8), resolved 34 km from it."
     }
   }
 }
