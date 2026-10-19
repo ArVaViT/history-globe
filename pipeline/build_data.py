@@ -278,15 +278,53 @@ def move_points(feats: list[dict], same_as: dict[str, str]) -> int:
     OpenBible says the place is "another name for" the other, but resolves each record one
     hop, to the other's best modern candidate, so the two end on different sites (Dimonah
     63 km from Dibon of Judah, in Moab; docs/crosswalk/their-errors.md, O6). One place, one
-    point: the other record's, which passed the licence filter like any shipped point.
+    point: the other record's, which passed the licence filter like any shipped point. A
+    target that is itself moved is followed to the end of the chain (Bealoth → Baalath-beer
+    → Ramah of the Negeb), so the order of the file does not matter.
     """
     by_id = {f["properties"]["id"]: f for f in feats}
     for pid, target in same_as.items():
+        seen = {pid}
+        while target in same_as:
+            if target in seen:
+                raise SystemExit(f"place-points: same_as of {pid} runs in a circle")
+            seen.add(target)
+            target = same_as[target]
         if pid not in by_id or target not in by_id:
             raise SystemExit(f"place-points: {pid} or its same_as {target} is not in the build")
         by_id[pid]["geometry"]["coordinates"] = list(by_id[target]["geometry"]["coordinates"])
         by_id[pid]["properties"]["coord"] = by_id[target]["properties"]["coord"]
     return len(same_as)
+
+
+def pick_site(record: dict, sites: dict[str, str] | None) -> dict | None:
+    """The identification to show for a place (content/place-points.json, `site`).
+
+    `site` names one of OpenBible's modern locations for the place, chosen over its first
+    identification where the majority of the atlases and reference works is elsewhere
+    (docs/crosswalk/their-errors.md, "decided by the majority"). The point, its confidence
+    and the "where it is today" line all come from that identification, so the card stays
+    consistent; the candidates of sites.geojson are unchanged. A location OpenBible does not
+    list for the place stops the build: the file is a choice among its candidates, not a
+    coordinate of our own.
+    """
+    want = (sites or {}).get(record["id"])
+    if want is None:
+        return None
+    for ident in record.get("identifications") or []:
+        if ident.get("id_source") == "modern" and ident.get("id") == want and first_point(ident):
+            return ident
+    raise SystemExit(f"place-points: {record['id']} has no identification with the modern location {want}")
+
+
+def load_place_points(path: pathlib.Path) -> tuple[dict[str, str], dict[str, str]]:
+    """`same_as` and `site` of content/place-points.json: one of the two per place."""
+    same_as, sites = {}, {}
+    for pid, o in json.loads(path.read_text(encoding="utf-8"))["places"].items():
+        if ("same_as" in o) == ("site" in o):
+            raise SystemExit(f"place-points: {pid} needs exactly one of same_as and site")
+        (same_as if "same_as" in o else sites)[pid] = o.get("same_as", o.get("site"))
+    return same_as, sites
 
 
 def build_places(
@@ -295,23 +333,30 @@ def build_places(
     sites_per_place: dict[str, tuple[int, bool]],
     river_places: set[str],
     same_as: dict[str, str] | None = None,
+    sites: dict[str, str] | None = None,
 ) -> tuple[dict, dict, list[str]]:
-    def top_point(r: dict) -> dict | None:
+    def shown(r: dict) -> dict | None:
         ids = r.get("identifications") or []
-        return first_point(ids[0]) if ids else None
+        return pick_site(r, sites) or (ids[0] if ids else None)
+
+    def top_point(r: dict) -> dict | None:
+        ident = shown(r)
+        return first_point(ident) if ident else None
 
     banned = banned_lonlats(modern)
     banned_qids = [q for r in records if (res := top_point(r)) and coord_banned(res, modern, banned) and (q := qid(r))]
     replacements = wikidata_coords(banned_qids)
     feats, excluded, replaced, no_point = [], [], 0, 0
     for r in records:
-        ids = r.get("identifications") or []
         res = top_point(r)
         if res is None:
             no_point += 1
             continue
+        ident = shown(r)
         coord_source = "openbible"
         if coord_banned(res, modern, banned):
+            if r["id"] in (sites or {}):
+                raise SystemExit(f"place-points: the site chosen for {r['id']} is a point we may not ship (ADR 0008)")
             q = qid(r)
             # A Wikidata coordinate identical to the banned one was copied from it: drop too.
             if q and q in replacements and tuple(replacements[q]) not in banned:
@@ -341,7 +386,7 @@ def build_places(
                 "disputed": sites_per_place.get(r["id"], (0, False))[1],
                 # OpenBible's score of the identification shown, 0–1000: how sure the card
                 # may sound about a place that is not disputed.
-                **({"confidence": c} if (c := identification_confidence(ids[0])) is not None else {}),
+                **({"confidence": c} if (c := identification_confidence(ident)) is not None else {}),
                 "verses": len(verses),
                 "nt": nt,
                 "ot": len(verses) - nt,
@@ -351,7 +396,7 @@ def build_places(
                 "rank": rank_of(len(verses) - nt + 3 * nt),
                 # Where it is today, as the best identification words it. "Same place as X"
                 # says nothing a reader can use there: the card lists the candidates.
-                **where_props(site_label(ids[0].get("description", ""), base)),
+                **where_props(site_label(ident.get("description", ""), base)),
                 # Every verse: the card opens the full list on demand ("N more").
                 "osis": [v["osis"] for v in verses],
                 "coord": coord_source,
@@ -1056,11 +1101,10 @@ def main() -> None:
     sites, sites_per_place, site_stats = build_sites(records, modern)
     rivers, river_labels, river_stats = build_rivers()
     river_places = {f["properties"]["place"] for f in rivers["features"] if "place" in f["properties"]}
-    same_as = {
-        pid: o["same_as"]
-        for pid, o in json.loads((ROOT / "content" / "place-points.json").read_text(encoding="utf-8"))["places"].items()
-    }
-    places, place_stats, excluded_places = build_places(records, modern, sites_per_place, river_places, same_as)
+    same_as, chosen_sites = load_place_points(ROOT / "content" / "place-points.json")
+    places, place_stats, excluded_places = build_places(
+        records, modern, sites_per_place, river_places, same_as, chosen_sites
+    )
     # Candidates of a place left out (licence) would be sites of nothing.
     shipped = {f["properties"]["id"] for f in places["features"]}
     sites["features"] = [f for f in sites["features"] if f["properties"]["place"] in shipped]
