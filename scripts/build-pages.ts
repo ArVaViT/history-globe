@@ -1176,6 +1176,7 @@ The map is an app at ${base}/ (state lives in the address: ?year=, ?place=, ?tou
 
 ## Data and API
 
+- Build on it, what may be taken, how to credit it and what may not: ${inEach((l) => docsPath(l, "build"))}
 - API documentation, static JSON with no key, CC BY 4.0: ${inEach((l) => docsPath(l, "api"))}
 - [API index](${base}/api/v1/index.json)
 - [OpenAPI 3.1 description](${base}/api/v1/openapi.json)

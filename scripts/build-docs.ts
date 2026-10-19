@@ -77,7 +77,7 @@ const GROUPS: readonly { name: Readonly<Record<Lang, string>>; pages: readonly P
       pl: "Dla programistów",
       cs: "Pro vývojáře",
     },
-    pages: ["embedding", "api"],
+    pages: ["build", "embedding", "api"],
   },
   {
     name: {
