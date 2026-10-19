@@ -8,6 +8,7 @@ import { isLocale } from "./time.ts";
 export const DOC_PAGES = [
   "index",
   "methodology",
+  "build",
   "embedding",
   "api",
   "sources",

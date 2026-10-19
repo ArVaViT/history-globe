@@ -20,5 +20,6 @@ export { loadAllLocaleData, loadLocaleData } from "./locale-data.ts";
 export * from "./sites.ts";
 export * from "./citation.ts";
 export * from "./site.ts";
+export * from "./notice.ts";
 export * from "./chapter-years.ts";
 export * from "./slugs.ts";

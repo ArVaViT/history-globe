@@ -17,6 +17,8 @@
  */
 import { LOCALE_NAMES, LOCALES, type SiteLocale } from "../packages/model/src/time.ts";
 import { esc, headMeta } from "./page-shell.ts";
+import { hitHtml } from "./docs-script.ts";
+import { NOTICE_COMMENT } from "../packages/model/src/notice.ts";
 import { DOC_PAGES, type DocPage } from "../packages/model/src/site.ts";
 import {
   copyFileSync,
@@ -77,7 +79,7 @@ const GROUPS: readonly { name: Readonly<Record<Lang, string>>; pages: readonly P
       pl: "Dla programistów",
       cs: "Pro vývojáře",
     },
-    pages: ["embedding", "api"],
+    pages: ["build", "embedding", "api"],
   },
   {
     name: {
@@ -825,6 +827,7 @@ function page(o: {
   return `<!doctype html>
 <html lang="${l}" class="no-js">
   <head>
+    ${NOTICE_COMMENT}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#fcfbf8" media="(prefers-color-scheme: light)" />
@@ -960,20 +963,14 @@ const SCRIPT = `// History Globe docs: menu, search, outline, copy buttons. Buil
     (index ??= fetch(input.dataset.index).then((r) => r.json()).catch(() => []));
   const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").replace(/ё/g, "е");
   const esc = (s) => s.replace(/[&<>"]/g, (c) => "&#" + c.charCodeAt(0) + ";");
+  const hitHtml = ${hitHtml.toString().replace(/ {2,}/g, " ").replace(/ +\n/g, "\n")};
   const show = (open) => {
     list.hidden = !open;
     input.setAttribute("aria-expanded", String(open));
   };
   const paint = () => {
     list.innerHTML = hits.length
-      ? hits
-          .map(
-            (h, i) =>
-              '<li role="option" id="hit-' + i + '"' + (i === at ? ' aria-selected="true"' : "") +
-              '><a href="' + h.u + '"><b' + (h.c ? ' class="mono"' : "") + ">" + esc(h.t) + "</b>" +
-              (h.p ? "<span>" + esc(h.p) + "</span>" : "") + "</a></li>",
-          )
-          .join("")
+      ? hits.map((h, i) => hitHtml(h, i, i === at, esc)).join("")
       : '<li class="none">' + esc(input.dataset.none) + "</li>";
     input.setAttribute("aria-activedescendant", hits.length ? "hit-" + at : "");
   };
