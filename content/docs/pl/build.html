@@ -84,8 +84,7 @@ miejsca i znaczniki wersetów z OpenBible.info (CC BY 4.0); osoby ze STEPBible T
 <p>
   <code>{{site}}/api/v1/index.json</code> zawiera pełne informacje o źródłach, a każda odpowiedź API
   jest wysyłana z nagłówkiem <code>Link</code>, który podaje jej licencję. Cytowany artykuł lub
-  odpowiedź opatruje się źródłem „History Globe (Vadym Arnaut), CC BY-NC-ND 4.0” z linkiem do jego
-  strony.
+  odpowiedź podpisuje się „History Globe (Vadym Arnaut), CC BY-NC-ND 4.0” z linkiem do jego strony.
 </p>
 
 <h2>Ograniczenia</h2>
@@ -117,7 +116,7 @@ miejsca i znaczniki wersetów z OpenBible.info (CC BY 4.0); osoby ze STEPBible T
 const places = await (await fetch(`${api}/places.json`)).json();
 const byId = new Map(places.map((p) =&gt; [p.id, p]));
 const acts = await (await fetch(`${api}/verses/Acts.json`)).json();
-for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Filippi …</code></pre>
+for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi …</code></pre>
 <p>
   Pliki i ich pola: <a href="api.html">Otwarte dane</a>. Opis dla generatorów kodu i agentów:
   <a href="{{site}}/api/v1/openapi.json"><code>openapi.json</code></a
