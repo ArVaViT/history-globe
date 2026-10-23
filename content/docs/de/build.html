@@ -34,7 +34,7 @@ description: Was Sie von History Globe übernehmen dürfen und wie – die Daten
       </tr>
       <tr>
         <td>Die Karte auf Ihrer Seite</td>
-        <td>frei</td>
+        <td>kostenlos</td>
         <td>
           Ein <code>iframe</code>: <a href="embedding.html">Einbetten</a>. Die Quellenangaben stehen
           auf der Karte selbst.
@@ -42,7 +42,7 @@ description: Was Sie von History Globe übernehmen dürfen und wie – die Daten
       </tr>
       <tr>
         <td>Links und Karten für die Orte der Bibel, die Ihre eigenen Texte nennen</td>
-        <td>frei</td>
+        <td>kostenlos</td>
         <td>Ein Skript: <a href="embedding.html#places">Orte in jedem Text</a>.</td>
       </tr>
       <tr>
@@ -87,7 +87,7 @@ Orte und Verszuordnungen von OpenBible.info (CC BY 4.0); Personen von STEPBible 
   <code>{{site}}/api/v1/index.json</code> enthält die vollständigen Quellenangaben, und jede Antwort
   der API wird mit einem <code>Link</code>-Header gesendet, der ihre Lizenz nennt. Ein zitierter
   Artikel oder eine zitierte Antwort wird als „History Globe (Vadym Arnaut), CC BY-NC-ND 4.0“
-  angegeben, mit einem Link zu seiner Seite.
+  angegeben, mit einem Link zur jeweiligen Seite.
 </p>
 
 <h2>Grenzen</h2>
@@ -105,7 +105,7 @@ Orte und Verszuordnungen von OpenBible.info (CC BY 4.0); Personen von STEPBible 
   </li>
   <li>
     <b><code>/data</code> ist nicht die API.</b> Die Dateien unter <code>/data/</code> sind das, was
-    die Karte lädt: Ihre Form ändert sich ohne Ankündigung, und Anfragen an sie können begrenzt
+    die Karte lädt; ihre Form ändert sich ohne Ankündigung, und Anfragen an sie können begrenzt
     werden. Bauen Sie auf <code>/api/v1/</code> auf.
   </li>
   <li>
@@ -114,7 +114,7 @@ Orte und Verszuordnungen von OpenBible.info (CC BY 4.0); Personen von STEPBible 
   </li>
 </ul>
 
-<h2>Anfang</h2>
+<h2>Einstieg</h2>
 <pre><code>const api = "{{site}}/api/v1";
 const places = await (await fetch(`${api}/places.json`)).json();
 const byId = new Map(places.map((p) =&gt; [p.id, p]));
@@ -126,7 +126,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   >.
 </p>
 
-<h2>Nach mehr fragen</h2>
+<h2>Wenn Sie mehr brauchen</h2>
 <p>
   Eine Übersetzung der Artikel, ihr Text auf einer anderen Plattform oder eine Lizenz, die die
   Tabelle oben nicht vorsieht: Schreiben Sie an

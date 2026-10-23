@@ -118,6 +118,12 @@ const BY_HAND: Readonly<Record<string, string>> = {
   ab92800: "Kir@2Ki.16.9-Amo",
   aeb5f24: "Bethel@Jos.19.4-1Ch",
   a8da370: "Rimmon@Jos.15.32-1Ch",
+  // Ramah of the Negeb (Josh 19:8, "Baalath-beer, Ramah of the south"; one place with
+  // Baalath-beer, content/place-points.json) linked to Ramah@Jos.18.25, the Ramah of Benjamin.
+  // TIPNR itself files Josh.19.8 under that record, so name and verse would follow the link
+  // there; the town's record is Baalath-beer@Jos.15.24-1Ch, which carries its other names
+  // (Bealoth, Baal, Ramoth of 1 Sam 30:27). Checked 2026-10-23, their-errors.md O5.
+  aaa4c6e: "Baalath-beer@Jos.15.24-1Ch",
 };
 const LEFT_OUT: Readonly<Record<string, string>> = {
   a88310a: "Beyond_the_River@Ezr.4.10 is no longer a TIPNR record",

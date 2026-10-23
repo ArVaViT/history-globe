@@ -118,7 +118,7 @@ lugares e marcações de versículos do OpenBible.info (CC BY 4.0); pessoas do S
 const places = await (await fetch(`${api}/places.json`)).json();
 const byId = new Map(places.map((p) =&gt; [p.id, p]));
 const acts = await (await fetch(`${api}/verses/Acts.json`)).json();
-for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Filipos …</code></pre>
+for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi …</code></pre>
 <p>
   Os arquivos e seus campos: <a href="api.html">Dados abertos</a>. A descrição para geradores de
   código e agentes: <a href="{{site}}/api/v1/openapi.json"><code>openapi.json</code></a
