@@ -113,7 +113,7 @@ místa a značky veršů z OpenBible.info (CC BY 4.0); lidé ze STEPBible TIPNR 
 const places = await (await fetch(`${api}/places.json`)).json();
 const byId = new Map(places.map((p) =&gt; [p.id, p]));
 const acts = await (await fetch(`${api}/verses/Acts.json`)).json();
-for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Filipy …</code></pre>
+for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi …</code></pre>
 <p>
   Soubory a jejich pole: <a href="api.html">Otevřená data</a>. Popis pro generátory kódu a agenty:
   <a href="{{site}}/api/v1/openapi.json"><code>openapi.json</code></a
