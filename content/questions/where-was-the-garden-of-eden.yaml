@@ -15,6 +15,7 @@ question:
   nb: "Hvor lå Edens hage?"
   tl: "Nasaan ang Halamanan ng Eden?"
   da: "Hvor lå Edens Have?"
+  sr: "Где је био Еденски врт?"
 answer:
   en:
     - "Nobody knows, and the map does not place it. Genesis gives only one clue: a river flowed out of Eden and divided into four, the Pishon, the Gihon, the Hiddekel, which is the Tigris, and the Euphrates. Two of the four are real rivers of Mesopotamia; the other two have never been identified with certainty, so every proposal rests on how they are read."
@@ -76,6 +77,10 @@ answer:
     - "Ingen ved det, og kortet placerer den ikke. Første Mosebog giver kun ét spor: En flod gik ud fra Eden og delte sig i fire, Pisjon, Gihon, Hiddekel, som er Tigris, og Eufrat. To af de fire er virkelige floder i Mesopotamien; de to andre er aldrig blevet identificeret med sikkerhed, så ethvert forslag hviler på, hvordan de læses."
     - "Første Mosebog siger: »Og Gud Herren plantede en Have udi Eden mod Østen«, og: »Og der gik en Flod ud fra Eden til at vande Haven, og derfra deltes den og blev til fire Hovedstrømme.« Pisjon »løber om det ganske Land Havila, hvor der er Guld«, og Gihon »løber om det ganske Land Kus«, på hebraisk Kusj. Josefus tog Pisjon for Ganges og Gihon for Nilen, og det gjorde mange efter ham; andre har søgt Havila og Kusj i Arabien eller i Babylonien, hvilket giver meget forskellige kort."
     - "To egne foreslås oftest. Den ene er bunden af Den Persiske Bugt, hvor Tigris og Eufrat mødes: Her læste E. A. Speiser de fire hovedstrømme som floder, der løber sammen i én, og senere forfattere tog Pisjon for et udtørret flodleje fra Hijaz tværs over Arabien til Kuwait og Gihon for Karun fra Iran. Den anden er højlandet i Armenien i det østlige Tyrkiet, hvor Tigris og Eufrat har deres udspring, og de fire hovedstrømme læses som kilder. Mange forskere hævder, at beretningen beskriver en hellig geografi, som aldrig var tænkt til at blive opmålt, og kortet opregner Pisjon og Gihon blandt sine omstridte steder."
+  sr:
+    - "Нико не зна, а карта га не смешта. Постање даје само један траг: река је истицала из Едена и делила се на четири, Фисон, Гион, Хидекел, то јест Тигар, и Еуфрат. Две од четири су стварне реке Месопотамије; друге две никад нису поуздано поистовећене, па сваки предлог почива на томе како се оне читају."
+    - "Постање каже: „И насади Господ Бог врт у Едему на истоку“, и: „А вода течаше из Едема натапајући врт, и оданде се делише у четири реке.“ Фисон „она тече око целе земље евилске, а онде има злата“, а Гион „она тече око целе земље хуске“, на хебрејском Куш. Јосиф Флавије је Фисон узео за Ганг, а Гион за Нил, као и многи после њега; други су Евилу и Куш тражили у Арабији или у Вавилонији, што даје веома различите карте."
+    - "Најчешће се предлажу две области. Једна је горњи крај Персијског залива, где се Тигар и Еуфрат сустичу: овде је Е. А. Спајзер читао четири главе као реке које се сливају у једну, а каснији писци узимали су Фисон за исушено речно корито које иде од Хиџаза преко Арабије до Кувајта, а Гион за Карун из Ирана. Друга је јерменско горје у источној Турској, где извиру Тигар и Еуфрат, а четири главе читају се као извори. Многи научници држе да прича описује свету географију која никад није била замишљена да се премери, а карта наводи Фисон и Гион међу својим спорним местима."
 map:
   ref: Gen.2.10
 scripture: [Gen.2.8-Gen.2.14, Gen.3.23-Gen.3.24, Ezek.28.13, Ezek.31.8-Ezek.31.9]

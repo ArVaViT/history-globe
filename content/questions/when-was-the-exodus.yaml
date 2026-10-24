@@ -15,6 +15,7 @@ question:
   nb: "Når var uttoget?"
   tl: "Kailan ang Exodo?"
   da: "Hvornår var udvandringen?"
+  sr: "Када је био Излазак?"
 answer:
   en:
     - "The date is disputed. Two answers are defended: about 1446 BC, in the fifteenth century, which follows the Bible's own arithmetic and is the year the map uses, and the thirteenth century BC, in the reign of Ramesses II, which follows the name of the store city Rameses and the archaeology of Egypt and Canaan. Some scholars hold that the event cannot be dated at all."
@@ -76,6 +77,10 @@ answer:
     - "Dateringen er omstridt. To svar forsvares: omkring 1446 f.Kr., i 1400-tallet, som følger Bibelens egen regning og er det år, kortet bruger, og 1200-tallet f.Kr., under Ramses II, som følger navnet på forrådsbyen Ramses og arkæologien i Egypten og Kana'an. Nogle forskere mener, at begivenheden slet ikke kan dateres."
     - "Den tidlige datering hviler på 1 Kongebog: Salomo begyndte Templet »i det fire Hundrede og firsindstyvende Aar, efter at Israels Børn vare udgangne af Ægyptens Land, i det fjerde Aar … efter at Salomo var bleven Konge over Israel«. Hans fjerde år sættes sædvanligvis til 966 f.Kr., hvilket giver 1446 f.Kr.; Jeftas tre hundrede år for Israel i Transjordan og opholdet på »fire Hundrede Aar og tredive Aar« i Egypten læses på samme måde. Den sene datering tager udgangspunkt i 2 Mos 1,11: »man byggede Farao Forraadsstæder, nemlig Pithom og Raamses«, og Pi-Ramesse, Deltaets hovedstad ved Qantir, blev bygget af Ramses II, der regerede fra 1279 til 1213 f.Kr. Ifølge denne læsning er de 480 år tolv generationer à fyrre, et rundt tal."
     - "Den ældste omtale af Israel uden for Bibelen er stelen af Merneptah, søn af Ramses II, som opregner Israel blandt de folk, der blev besejret i Kana'an omkring 1208 f.Kr.; så Israel var i landet på det tidspunkt efter begge dateringer. Ødelæggelseslagene i kana'anæiske byer, fraværet af egyptiske optegnelser om begivenheden og den sene datering af mange ørkenlokaliteter bruges som argumenter fra begge sider. Kortet beholder 1446 f.Kr. som et konventionelt punkt og markerer det som omtrentligt."
+  sr:
+    - "Датум је спорен. Бране се два одговора: око 1446. п. н. е., у 15. веку, који следи библијску аритметику и годину коју користи карта, и 13. век п. н. е., за владавине Рамзеса II, који следи име града-складишта Рамесе и археологију Египта и Ханана. Неки научници држе да се догађај уопште не може датирати."
+    - "Рани датум почива на Првој књизи о царевима: Соломун је почео градити Храм „Четири стотине и осамдесете године по изласку синова Израиљевих из земље мисирске, четврте године царовања Соломуновог над Израиљем“. Његова четврта година обично се ставља у 966. п. н. е., што даје 1446. п. н. е.; Јефтајеве три стотине година Израиља у Трансјорданији и боравак од „четири стотине и тридесет година“ у Египту читају се на исти начин. Касни датум полази од Изласка 1,11: о Израиљцима стоји „грађаше народ Израиљев Фараону градове Питом и Рамесу“, а Пи-Рамзес, престоница у делти код Кантира, саграђен је за Рамзеса II, који је владао од 1279. до 1213. п. н. е. По том читању 480 година је дванаест нараштаја од по четрдесет, округла бројка."
+    - "Најстарији помен Израиља изван Библије је стела Мернептаха, сина Рамзеса II, која наводи Израиљ међу народима побеђеним у Ханану око 1208. п. н. е.; дакле Израиљ је тада био у земљи по оба датума. Слојеви разарања ханаанских градова, одсуство египатских записа о догађају и касни датум многих пустињских налазишта расправљају се с обе стране. Карта задржава 1446. п. н. е. као условну тачку и означава је као приближну."
 map:
   place: a079b21
   year: "c. 1446 BC"

@@ -141,6 +141,7 @@ export const LOCALES = [
   "sv",
   "tl",
   "ru",
+  "sr",
   "uk",
 ] as const satisfies readonly Locale[];
 export type SiteLocale = (typeof LOCALES)[number];
@@ -160,6 +161,7 @@ export const LOCALE_NAMES: Readonly<Record<SiteLocale, string>> = {
   sv: "Svenska",
   tl: "Tagalog",
   ru: "Русский",
+  sr: "Српски",
   uk: "Українська",
 };
 export const isLocale = (s: unknown): s is SiteLocale =>

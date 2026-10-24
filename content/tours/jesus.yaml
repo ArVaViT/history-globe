@@ -20,6 +20,7 @@ title:
   nb: "Jesu liv"
   tl: "Ang buhay ni Jesus"
   da: "Jesu liv"
+  sr: "Живот Исусов"
 year: "AD 30"
 people: ["Jesus@Isa.7.14-Rev"]
 approximate: true
@@ -43,6 +44,7 @@ stops:
       nb: "Jesus blir født i Betlehem i Judea i Herodes' dager."
       tl: "Ipinanganak si Jesus sa Bethlehem ng Judea sa mga araw ni Herodes."
       da: "Jesus fødes i Betlehem i Judæa i Herodes' dage."
+      sr: "Исус се рађа у Витлејему јудејском у дане Иродове."
   - place: af301ca # Egypt
     ref: Matt.2.13-Matt.2.15
     year: "5 BC"
@@ -62,6 +64,7 @@ stops:
       nb: "Josef tar barnet og dets mor med til Egypt."
       tl: "Dinala ni Jose ang bata at ang kaniyang ina sa Egipto."
       da: "Josef tager barnet og dets mor med til Egypten."
+      sr: "Јосиф води дете и његову мајку у Египат."
   - place: af5884f # Nazareth
     ref: Matt.2.23
     year: "4 BC"
@@ -81,6 +84,7 @@ stops:
       nb: "Familien bosetter seg i Nasaret."
       tl: "Tumira ang pamilya sa Nazaret."
       da: "Familien bosætter sig i Nazaret."
+      sr: "Породица се настањује у Назарету."
   - place: a6e060d # Bethany beyond the Jordan
     ref: John.1.28
     note:
@@ -99,6 +103,7 @@ stops:
       nb: "Johannes døper i Betabara (Betania) på hin side Jordan."
       tl: "Nagbabautismo si Juan sa Bethabara (Betania) sa dako pa roon ng Jordan."
       da: "Johannes døber i Betabara (Betania) hinsides Jordan."
+      sr: "Јован крштава у Витавари (Витанији) преко Јордана."
   - place: a031bda # Cana
     ref: John.2.1-John.2.11
     note:
@@ -117,6 +122,7 @@ stops:
       nb: "Bryllupet i Kana: vann blir til vin."
       tl: "Ang kasalan sa Cana: ang tubig ay naging alak."
       da: "Brylluppet i Kana: vand bliver til vin."
+      sr: "Свадба у Кани: вода постаје вино."
   - place: a27b472 # Sychar
     ref: John.4.5-John.4.42
     note:
@@ -135,6 +141,7 @@ stops:
       nb: "Ved Jakobs brønn taler han med den samaritanske kvinnen."
       tl: "Sa balon ni Jacob ay nakipag-usap siya sa babaing Samaritana."
       da: "Ved Jakobs brønd taler han med den samaritanske kvinde."
+      sr: "На Јаковљевом студенцу разговара са Самарјанком."
   - place: af2161c # Capernaum
     ref: Matt.4.13
     note:
@@ -153,6 +160,7 @@ stops:
       nb: "Han forlater Nasaret og tar bolig i Kapernaum."
       tl: "Iniwan niya ang Nazaret at nanirahan sa Capernaum."
       da: "Han forlader Nazaret og tager bolig i Kapernaum."
+      sr: "Напушта Назарет и настањује се у Капернауму."
   - place: aee679c # Nain
     ref: Luke.7.11-Luke.7.17
     note:
@@ -171,6 +179,7 @@ stops:
       nb: "Han oppvekker enkens sønn i Nain."
       tl: "Binuhay niya ang anak ng babaing balo sa Nain."
       da: "Han opvækker enkens søn i Nain."
+      sr: "Васкрсава удовичиног сина у Наину."
   - place: a9fc13a # Bethsaida
     ref: Mark.8.22-Mark.8.26
     note:
@@ -189,6 +198,7 @@ stops:
       nb: "Han helbreder en blind mann i Betsaida."
       tl: "Pinagaling niya ang isang bulag sa Bethsaida."
       da: "Han helbreder en blind i Betsajda."
+      sr: "Исцељује слепога у Витсаиди."
   - place: ab7bf48 # Caesarea Philippi
     ref: Matt.16.13-Matt.16.20
     note:
@@ -207,6 +217,7 @@ stops:
       nb: "Peter bekjenner: «Du er Messias.»"
       tl: "Ipinahayag ni Pedro: “Ikaw ang Cristo.”"
       da: "Peter bekender: »Du er Kristus.«"
+      sr: "Петар исповеда: „Ти си Христос.“"
   - place: aaf03fa # Jericho
     ref: Luke.19.1-Luke.19.10
     note:
@@ -225,6 +236,7 @@ stops:
       nb: "På veien til Jerusalem, Sakkeus i Jeriko."
       tl: "Sa daan patungong Jerusalem, si Zaqueo sa Jerico."
       da: "På vejen til Jerusalem, Zakæus i Jeriko."
+      sr: "На путу у Јерусалим, Закхеј у Јерихону."
   - place: a4f35bc # Bethany
     ref: John.12.1-John.12.8
     note:
@@ -243,6 +255,7 @@ stops:
       nb: "Seks dager før påsken, et måltid i Betania."
       tl: "Anim na araw bago ang Paskua, isang hapunan sa Betania."
       da: "Seks dage før påsken, en nadver i Betania."
+      sr: "Шест дана пре Пасхе, вечера у Витанији."
   - place: a15257a # Jerusalem
     ref: Matt.21.1-Matt.21.11
     note:
@@ -261,6 +274,7 @@ stops:
       nb: "Inntoget i Jerusalem."
       tl: "Ang pagpasok sa Jerusalem."
       da: "Indtoget i Jerusalem."
+      sr: "Улазак у Јерусалим."
   - place: a42418f # Gethsemane
     ref: Matt.26.36-Matt.26.56
     note:
@@ -279,6 +293,7 @@ stops:
       nb: "Bønn og pågripelse i Getsemane."
       tl: "Panalangin at pagkadakip sa Getsemani."
       da: "Bøn og pågribelse i Getsemane."
+      sr: "Молитва и хапшење у Гетсиманском врту."
   - place: a631d35 # Golgotha
     ref: Matt.27.33-Matt.27.56
     note:
@@ -297,6 +312,7 @@ stops:
       nb: "Korsfestelsen på Golgata."
       tl: "Ang pagpapako sa krus sa Golgota."
       da: "Korsfæstelsen på Golgata."
+      sr: "Распеће на Голготи."
   - place: ae7274b # Emmaus
     ref: Luke.24.13-Luke.24.35
     note:
@@ -315,6 +331,7 @@ stops:
       nb: "Den oppstandne Herre på veien til Emmaus."
       tl: "Ang nabuhay na Panginoon sa daan patungong Emaus."
       da: "Den opstandne Herre på vejen til Emmaus."
+      sr: "Васкрсли Господ на путу за Емаус."
   - place: a4f35bc # Bethany
     ref: Luke.24.50-Luke.24.53
     note:
@@ -333,3 +350,4 @@ stops:
       nb: "Himmelfarten, nær Betania."
       tl: "Ang Pag-akyat sa langit, malapit sa Betania."
       da: "Himmelfarten, nær Betania."
+      sr: "Вазнесење, близу Витаније."

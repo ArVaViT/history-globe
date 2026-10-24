@@ -19,6 +19,7 @@ title:
   nb: "Esekiel blant de landflyktige"
   tl: "Si Ezekiel sa gitna ng mga ipinatapon"
   da: "Ezekiel blandt de landflygtige"
+  sr: "Језекиљ међу прогнанима"
 year: "593 BC"
 # He is carried “in the visions of God” (8:3, 11:24) and the news comes to him (33:21): no time on foot.
 walked: false
@@ -43,6 +44,7 @@ stops:
       nb: "Blant fangene ved elven Kebar åpner himlene seg, og Esekiel ser Guds syner."
       tl: "Sa gitna ng mga bihag sa tabi ng ilog Chebar, nabubuksan ang langit, at nakakakita si Ezekiel ng mga pangitain mula sa Dios."
       da: "Blandt de bortførte ved floden Kebar åbner himlene sig, og Ezekiel ser Guds syner."
+      sr: "Међу робљем на реци Хевару отварају се небеса, и Језекиљ види виђења Божја."
   - place: a10147d # Tel-abib
     ref: Ezek.3.15
     note:
@@ -61,6 +63,7 @@ stops:
       nb: "Han kommer til de landflyktige i Tel-Abib og sitter blant dem sju dager, forferdet."
       tl: "Pumaparoon siya sa mga ipinatapon sa Tel-abib at umuupo sa gitna nila nang pitong araw, natitigilan."
       da: "Han kommer til de landflygtige i Tel-Abib og sidder syv dage blandt dem, forfærdet."
+      sr: "Долази прогнаницима у Телавив и седи међу њима седам дана, запрепашћен."
   - place: a15257a # Jerusalem
     ref: Ezek.8.1-Ezek.8.4
     year: "592 BC"
@@ -80,6 +83,7 @@ stops:
       nb: "I det sjette året løfter Ånden ham opp og fører ham i Guds syner til Jerusalem, til døren til den indre port."
       tl: "Sa ikaanim na taon, itinataas siya ng Espiritu at dinadala sa mga pangitain mula sa Dios sa Jerusalem, sa pintuan ng pinakaloob na pintuang-daan."
       da: "I det sjette år løfter Ånden ham op og fører ham i Guds syner til Jerusalem, til døren til den indre port."
+      sr: "Шесте године Дух га подиже и у виђењима Божјим доноси у Јерусалим, до врата унутрашњих."
   - place: a32a4f8 # Chaldea
     ref: Ezek.11.24-Ezek.11.25
     year: "592 BC"
@@ -99,6 +103,7 @@ stops:
       nb: "Ånden fører ham tilbake til fangene i Kaldea, og han forteller dem alt det Herren har vist ham."
       tl: "Ibinabalik siya ng Espiritu sa mga bihag sa Caldea, at isinasalaysay niya sa kanila ang lahat ng ipinakita ng Panginoon."
       da: "Ånden fører ham tilbage til de bortførte i Kaldæa, og han fortæller dem alt, hvad Herren har vist ham."
+      sr: "Дух га враћа робљу у Халдеји, и он им казује све што му је Господ показао."
   - place: a15257a # Jerusalem
     ref: Ezek.33.21-Ezek.33.22
     year: "585 BC"
@@ -118,3 +123,4 @@ stops:
       nb: "Blant de landflyktige, i det tolvte året av fangenskapet, kommer en som har sluppet unna fra Jerusalem, til ham: «Staden er inntatt.»"
       tl: "Sa gitna ng mga ipinatapon, sa ikalabindalawang taon ng pagkabihag, may lumalapit sa kaniyang isang nakatakas mula sa Jerusalem: “Ang bayan ay nasaktan.”"
       da: "Blandt de landflygtige, i det tolvte år af bortførelsen, kommer en, der er sluppet bort fra Jerusalem, til ham: »Staden er indtagen.«"
+      sr: "Међу прогнанима, дванаесте године робовања, долази му један који је утекао из Јерусалима: „Узе се град.“"

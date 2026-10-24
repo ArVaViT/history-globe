@@ -23,6 +23,7 @@ title:
   nb: "Joabs folketelling i Israel"
   tl: "Ang sensus ni Joab sa Israel"
   da: "Joabs folketælling i Israel"
+  sr: "Јоавово пребројавање Израиља"
 year: "975 BC"
 people: ["Joab@1Sa.26.6-Psa"]
 approximate: true
@@ -45,6 +46,7 @@ stops:
       nb: "David sier til Joab: «Dra omkring i alle Israels stammer fra Dan like til Be'erseba og mønstre folket»; hærførerne går over Jordan og slår leir ved Aroer."
       tl: "Sinabi ni David kay Joab, “Magparoo't parito ka nga sa lahat ng mga lipi ng Israel, mula sa Dan hanggang sa Beer-seba, at bilangin ninyo ang bayan”; tumawid ng Jordan ang mga kapitan at nagkampo sa Aroer."
       da: "David siger til Joab: »Kære, gak omkring i alle Israels Stammer, fra Dan og indtil Beersaba, og tæller Folket«; hærførerne går over Jordan og slår lejr ved Aroer."
+      sr: "Давид говори Јоаву: „Прођи по свим племенима Израиљевим од Дана до Вирсавеје, и избројте народ“; војводе прелазе Јордан и логоре се код Ароира."
   - place: a095b6e # Jazer
     ref: 2Sam.24.5
     note:
@@ -63,6 +65,7 @@ stops:
       nb: "Fra Aroer fører veien mot Jaser, i Gads land."
       tl: "Mula sa Aroer, ang daan ay patungo sa Jazer, sa lupain ng Gad."
       da: "Fra Aroer går vejen mod Jazer i Gads land."
+      sr: "Од Ароира пут води према Јазиру, у земљи Гадовој."
   - place: ae73b90 # Gilead
     ref: 2Sam.24.6
     note:
@@ -81,6 +84,7 @@ stops:
       nb: "De kommer til Gilead og til landet Tahtim-Hodsji."
       tl: "Dumating sila sa Gilead at sa lupain ng Tatimhodsi."
       da: "De kommer til Gilead og til Tahtim-Hodsjis land."
+      sr: "Долазе у Галад и у земљу Тахтим-Ходси."
   - place: a513646 # Dan
     ref: 2Sam.24.6
     note:
@@ -99,6 +103,7 @@ stops:
       nb: "De kommer til Dan-Jaan, vanligvis forstått som Dan, landets nordlige ende."
       tl: "Dumating sila sa Dan-jaan, na karaniwang itinuturing na Dan, ang hilagang dulo ng lupain."
       da: "De kommer til Dan-Jaan, sædvanligvis opfattet som Dan, landets nordlige ende."
+      sr: "Долазе у Дан-Јаан, који се обично схвата као Дан, северни крај земље."
   - place: a98e4d7 # Sidon
     ref: 2Sam.24.6
     note:
@@ -117,6 +122,7 @@ stops:
       nb: "De drar omkring til Sidon."
       tl: "Umikot sila hanggang sa Sidon."
       da: "De drager omkring til Sidon."
+      sr: "Обилазе до Сидона."
   - place: a160272 # Tyre
     ref: 2Sam.24.7
     note:
@@ -135,6 +141,7 @@ stops:
       nb: "De kommer til festningen Tyros og til alle hevittenes og kanaaneernes byer."
       tl: "Dumating sila sa katibayan ng Tiro at sa lahat ng mga bayan ng mga Heveo at ng mga Cananeo."
       da: "De kommer til Tyrus' fæstning og til alle hivvitternes og kana'anæernes byer."
+      sr: "Долазе до тврдог града Тира и до свих градова Јевејеваца и Хананеја."
   - place: ad2f6c2 # Beersheba
     ref: 2Sam.24.7
     note:
@@ -153,6 +160,7 @@ stops:
       nb: "De drar ut mot Judas sørlige del, til Beer-Sjeba."
       tl: "Lumabas sila sa timog ng Juda, sa Beer-seba."
       da: "De drager ud til Judas sydlige del, til Beersheba."
+      sr: "Излазе на југ Јудин, у Вирсавеју."
   - place: a15257a # Jerusalem
     ref: 2Sam.24.8-2Sam.24.25
     note:
@@ -171,3 +179,4 @@ stops:
       nb: "Etter ni måneder og tyve dager kommer de til Jerusalem: 800 000 mann i Israel, 500 000 i Juda. Davids hjerte slår ham; han velger pesten fremfor menneskers hånd, 70 000 dør fra Dan til Beer-Sjeba, og Herren holder engelens hånd tilbake ved jebusitten Aravnas treskeplass, som David kjøper og bygger et alter på."
       tl: "Pagkaraan ng siyam na buwan at dalawampung araw ay dumating sila sa Jerusalem: 800,000 lalaki sa Israel, 500,000 sa Juda. Nasaktan ang puso ni David; pinili niya ang salot kaysa sa kamay ng tao, 70,000 ang namatay mula sa Dan hanggang sa Beer-seba, at pinigil ng Panginoon ang kamay ng anghel sa giikan ni Arauna na Jebuseo, na binili ni David at pinagtayuan niya ng dambana."
       da: "Efter ni måneder og tyve dage kommer de til Jerusalem: 800.000 mand i Israel, 500.000 i Juda. Davids hjerte slår ham; han vælger pesten frem for menneskets hånd, 70.000 dør fra Dan til Beersheba, og Herren holder englens hånd tilbage ved jebusitten Aravnas tærskeplads, som David køber og bygger et alter på."
+      sr: "После девет месеци и двадесет дана долазе у Јерусалим: осам стотина хиљада људи у Израиљу, пет стотина хиљада у Јуди. Давида боде срце; бира помор радије него руку људску, умире седамдесет хиљада од Дана до Вирсавеје, и Господ задржава руку анђелу код гумна Орне Јевусејина, које Давид купује и на њему подиже жртвеник."

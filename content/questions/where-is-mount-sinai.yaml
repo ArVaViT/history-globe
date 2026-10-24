@@ -15,6 +15,7 @@ question:
   nb: "Hvor ligger Sinai?"
   tl: "Nasaan ang Bundok Sinai?"
   da: "Hvor ligger Sinajbjerget?"
+  sr: "Где је гора Синај?"
 answer:
   en:
     - 'The site of Mount Sinai is disputed: the traditional mountain is Jebel Musa ("Mount of Moses") in the south of the Sinai Peninsula, Egypt, and that is where the map places it, but the Bible gives no location that can be fixed, and several other mountains have been proposed.'
@@ -76,6 +77,10 @@ answer:
     - "Sinajbjergets sted er omstridt: det traditionelle bjerg er Jebel Musa (»Moses' bjerg«) i den sydlige del af Sinaihalvøen, Egypten, og det er dér, kortet placerer det, men Bibelen giver ingen placering, der kan fastlægges, og flere andre bjerge er blevet foreslået."
     - "Anden Mosebog siger, at Israel nåede bjerget i den tredje måned efter udtoget af Egypten: de »kom til Sinai Ørk og lejrede sig i Ørken, og der lejrede Israel sig lige for Bjerget«. Det samme bjerg kaldes Horeb, Guds bjerg, hvor Moses så den brændende tornebusk, og Femte Mosebog regner »elleve Dages Rejse fra Horeb til Seirs Bjerge, indtil Kades-Barnea«. Fra Jebel Musa til det sædvanlige sted for Kadesj-Barnea er der omkring 240 km i luftlinje, omkring 8 dage til fods med 30 km om dagen."
     - "Kandidaterne på kortet ved siden af Jebel Musa er dens nabotoppe Ras es-Safsafeh og Jebel Katherina, Jebel Serbal omkring 35 km mod vest, Jebel Sin Bishar i den vestlige del af halvøen og Har Karkom i Negev, omkring 210 km mod nordnordøst; nogle skribenter søger også bjerget i det nordvestlige Arabien. Kristne munke slog sig ned under Jebel Musa i 300-tallet, og Sankt Katharina-klosteret står stadig ved dets fod. Ingen af forslagene er bevist, så kortet viser det traditionelle sted og opregner de andre på stedets kort."
+  sr:
+    - "Место горе Синај је спорно: традиционална гора је Џебел Муса („Мојсијева гора“) на југу Синајског полуострва, у Египту, и ту је карта поставља, али Библија не даје положај који би се могао утврдити, а предложено је неколико других планина."
+    - "Излазак каже да је Израиљ стигао до горе у трећем месецу после изласка из Египта: „дођоше у пустињу синајску, и стадоше у логор у пустињи, а логор начинише Израиљци онде под гором“. Иста гора зове се Хорив, гора Божија, где је Мојсије видео купину која гори, а Поновљени закони рачунају „једанаест дана хода од Хорива преко горе Сира до Кадис-Варније“. Од Џебел Мусе до уобичајеног места Кадис-Варније има око 240 км правом линијом, око 8 дана пешке уз 30 км дневно."
+    - "Кандидати на карти, поред Џебел Мусе, јесу њени суседни врхови Рас ес Сафсафа и Џебел Катерина, Џебел Сербал око 35 км на западу, Џебел Син Бишар на западу полуострва, и Хар Каркум у Негеву, око 210 км северно-североисточно; неки писци гору траже и у северозападној Арабији. Хришћански монаси населили су се испод Џебел Мусе до 4. века, а манастир Свете Катарине још стоји у њеном подножју. Ниједан од предлога није доказан, па карта приказује традиционално место, а остала наводи на картици места."
 map:
   place: abfba2a
   year: "1446 BC"

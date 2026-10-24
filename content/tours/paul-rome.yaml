@@ -20,6 +20,7 @@ title:
   nb: "Paulus' sjøreise til Roma"
   tl: "Ang paglalayag ni Pablo patungong Roma"
   da: "Paulus' sejlads til Rom"
+  sr: "Павлово путовање у Рим"
 year: "AD 60"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -44,6 +45,7 @@ stops:
       nb: "Holdt i Cæsarea seiler Paulus som fange til Italia."
       tl: "Hawak sa Cesarea, naglayag si Pablo patungong Italia bilang bilanggo."
       da: "Fastholdt i Cæsarea sejler Paulus som fange til Italien."
+      sr: "Задржан у Цезареји, Павле као сужањ плови у Италију."
   - place: a98e4d7
     ref: Acts.27.3
     by: sea
@@ -63,6 +65,7 @@ stops:
       nb: "Julius lar Paulus besøke venner."
       tl: "Pinahintulutan ni Julio si Pablo na dalawin ang mga kaibigan."
       da: "Julius lader Paulus besøge venner."
+      sr: "Јулије допушта Павлу да посети пријатеље."
   - place: aa4b3e2
     ref: Acts.27.5-Acts.27.6
     by: sea
@@ -82,6 +85,7 @@ stops:
       nb: "Overføring til et skip fra Aleksandria."
       tl: "Lumipat sa isang sasakyang taga-Alejandria."
       da: "Overflytning til et skib fra Alexandria."
+      sr: "Прелазак на лађу александријску."
   - place: ab793ce
     ref: Acts.27.7
     by: sea
@@ -101,6 +105,7 @@ stops:
       nb: "Langsomt ut for Knidos."
       tl: "Marahang paglalakbay sa tapat ng Gnido."
       da: "Langsomt ud for Knidos."
+      sr: "Споро код Книда."
   - place: a1c44ea
     ref: Acts.27.7
     by: sea
@@ -120,6 +125,7 @@ stops:
       nb: "I le av Kreta ved Salmone."
       tl: "Sa lukob ng Creta sa tapat ng Salmon."
       da: "I læ af Kreta ved Salmone."
+      sr: "Под заветрином Крита код Салмоне."
   - place: aae626a
     ref: Acts.27.8-Acts.27.12
     by: sea
@@ -139,6 +145,7 @@ stops:
       nb: "Godhavn; Paulus advarer om at «sjøferden vil være et vågestykke og medføre stor skade, ikke bare for ladning og skib, men også for vårt liv»."
       tl: "Mabubuting Daongan; nagbabala si Pablo na “ang paglalayag na ito ay makapipinsala at magiging malaking kapahamakan, hindi lamang sa lulan at sa daong, kundi naman sa ating mga buhay.”"
       da: "Gode Havne; Paulus advarer: »I Mænd! jeg ser, at Sejladsen vil medføre Ulykke og megen Skade, ikke alene paa Ladning og Skib, men ogsaa paa vort Liv.«"
+      sr: "Добра пристаништа; Павле упозорава: „Људи! Видим да ће пловљење бити с муком и великом штетом не само товара и лађе него и душа наших.“"
   - place: aca2b0a
     ref: Acts.27.14-Acts.27.17
     by: sea
@@ -158,6 +165,7 @@ stops:
       nb: "Den stormfulle vinden Eurakylon driver skipet forbi Kauda."
       tl: "Itinatangay ng mabagsik na hangin na Euroclydon ang daong lampas sa Clauda."
       da: "Den hæftige storm Eurakvilo driver skibet forbi Kauda."
+      sr: "Бурни ветар Евроклидон носи лађу мимо Клауде."
   - place: a57835d
     ref: Acts.27.39-Acts.28.11
     by: sea
@@ -177,6 +185,7 @@ stops:
       nb: "Skipbrudd; tre måneder på øya."
       tl: "Pagkawasak ng daong; tatlong buwan sa pulo."
       da: "Skibbrud; tre måneder på øen."
+      sr: "Бродолом; три месеца на острву."
   - place: a1e3697
     ref: Acts.28.12
     by: sea
@@ -196,6 +205,7 @@ stops:
       nb: "Tre dager i Syrakus."
       tl: "Tatlong araw sa Siracusa."
       da: "Tre dage i Syrakus."
+      sr: "Три дана у Сиракузи."
   - place: a63bb26
     ref: Acts.28.13
     by: sea
@@ -215,6 +225,7 @@ stops:
       nb: "Regium."
       tl: "Regio."
       da: "Regium."
+      sr: "Ригија."
   - place: a4488e9
     ref: Acts.28.13-Acts.28.14
     by: sea
@@ -234,6 +245,7 @@ stops:
       nb: "Sju dager med brødrene."
       tl: "Pitong araw na kasama ang mga kapatid."
       da: "Syv dage hos brødrene."
+      sr: "Седам дана с браћом."
   - place: a121d5e
     ref: Acts.28.15
     note:
@@ -252,6 +264,7 @@ stops:
       nb: "De troende kommer ut for å møte Paulus."
       tl: "Lumalabas ang mga mananampalataya upang salubungin si Pablo."
       da: "Troende kommer Paulus i møde."
+      sr: "Верници излазе у сусрет Павлу."
   - place: afc8e7a
     ref: Acts.28.16
     note:
@@ -270,3 +283,4 @@ stops:
       nb: "Roma."
       tl: "Roma."
       da: "Rom."
+      sr: "Рим."

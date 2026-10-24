@@ -19,6 +19,7 @@ title:
   nb: "Erobringen av Kanaan"
   tl: "Ang pananakop sa Canaan"
   da: "Erobringen af Kana'an"
+  sr: "Освајање Ханана"
 year: "1406 BC"
 people: ["Joshua@Exo.17.9-Heb"]
 approximate: true
@@ -41,6 +42,7 @@ stops:
       nb: "Folket roper, basunene lyder, og Jerikos mur faller."
       tl: "Sumigaw ang bayan, humihip ang mga pakakak, at gumuho ang pader ng Jerico."
       da: "Folket råber, trompeterne lyder, og Jerikos mur falder."
+      sr: "Народ виче, трубе трубе, и зид Јерихона пада."
   - place: a7e13e1 # Ai
     ref: Josh.8.1-Josh.8.29
     note:
@@ -59,6 +61,7 @@ stops:
       nb: "Ai blir inntatt ved et bakhold og brent, og ligger for alltid som en ruinhaug."
       tl: "Nasakop ang Hai sa pamamagitan ng pananambang at sinunog, at ginawang bunton ng kagibaan magpakailan man."
       da: "Aj indtages ved baghold og brændes og efterlades som en evig ruinhob."
+      sr: "Гај бива освојен заседом и спаљен, и остављен као гомила рушевина довека."
   - place: aa5cc66 # Mount Ebal
     ref: Josh.8.30-Josh.8.35
     note:
@@ -77,6 +80,7 @@ stops:
       nb: "På Ebal bygger Josva et alter og skriver en avskrift av Moses' lov på stenene."
       tl: "Sa Bundok Ebal ay nagtayo si Josue ng dambana at isinulat sa mga bato ang isang sipi ng kautusan ni Moises."
       da: "På Ebal-bjerget bygger Josva et alter og skriver en afskrift af Moses' lov på stenene."
+      sr: "На гори Гевалу Исус подиже жртвеник и пише на камењу препис закона Мојсијевог."
   - place: aede336 # Gibeon
     ref: Josh.9.3-Josh.9.27
     note:
@@ -95,6 +99,7 @@ stops:
       nb: "Mennene fra Gibeon, som later som de kommer langveis fra, oppnår en pakt."
       tl: "Ang mga tao ng Gabaon, na nagkunwaring galing sa malayo, ay nagkamit ng kasunduan."
       da: "Gibeons mænd, der foregiver at komme langvejs fra, får en traktat."
+      sr: "Људи из Гаваона, претварајући се да долазе издалека, добијају савез."
   - place: a75b45e # Beth-horon
     ref: Josh.10.10-Josh.10.11
     note:
@@ -113,6 +118,7 @@ stops:
       nb: "Mens amorittene flykter ned skråningen fra Bet-Horon, kaster Herren store hagelsten over dem."
       tl: "Habang tumatakas ang mga Amorrheo sa babaan sa Beth-horon, binagsakan sila ng Panginoon ng malalaking batong granizo."
       da: "Mens amoritterne flygter ned ad skråningen ved Bet-Horon, lader Herren store hagl falde på dem."
+      sr: "Док Аморејци беже низ стрмен пут од Вет-Орона, Господ баца на њих велико камење с неба."
   - place: a2e6de9 # Valley of Aijalon
     ref: Josh.10.12-Josh.10.14
     note:
@@ -131,6 +137,7 @@ stops:
       nb: "«Stå stille, sol, i Gibeon, og du måne, i Ajalons dal!»"
       tl: "“Araw, tumigil ka sa Gabaon; At ikaw, Buwan, sa libis ng Ajalon.”"
       da: "»Sol, staa stille i Gibeon, og Maane, i Ajalons Dal!«"
+      sr: "„Стани сунце над Гаваоном, и месече над долином елонском.“"
   - place: abf8e4e # Makkedah
     ref: Josh.10.16-Josh.10.27
     note:
@@ -149,6 +156,7 @@ stops:
       nb: "De fem kongene gjemmer seg i hulen ved Makkeda og blir ført ut."
       tl: "Nagtago ang limang hari sa yungib sa Maceda at inilabas."
       da: "De fem konger skjuler sig i hulen ved Makkeda og bringes ud."
+      sr: "Пет царева крије се у пећини у Макиди и бивају изведени."
   - place: a3cc590 # Lachish
     ref: Josh.10.31-Josh.10.32
     note:
@@ -167,6 +175,7 @@ stops:
       nb: "Lakisj blir inntatt den andre dagen."
       tl: "Nasakop ang Lachis sa ikalawang araw."
       da: "Lakisj indtages på den anden dag."
+      sr: "Лахис бива освојен другог дана."
   - place: a6f33c5 # Hazor
     ref: Josh.11.10-Josh.11.11
     note:
@@ -185,6 +194,7 @@ stops:
       nb: "Hasor, som en gang var hodet for alle disse rikene, blir inntatt og brent opp med ild."
       tl: "Ang Hasor, na dating pangulo ng lahat ng kahariang yaon, ay nasakop at sinunog ng apoy."
       da: "Hazor, engang hovedet for alle disse riger, indtages og brændes med ild."
+      sr: "Асор, некада глава свих тих царстава, бива освојен и спаљен огњем."
   - place: aa4680a # Shiloh
     ref: Josh.18.1
     year: "1400 BC"
@@ -204,6 +214,7 @@ stops:
       nb: "Hele menigheten samles i Sjilo og reiser tabernaklet der."
       tl: "Nagkatipon ang buong kapulungan sa Shiloh at itinayo roon ang tabernakulo."
       da: "Hele menigheden samles i Silo og rejser Åbenbaringsteltet der."
+      sr: "Сав збор окупља се у Силу и ту подиже скинију."
   - place: adf74d4 # Shechem
     ref: Josh.24.1-Josh.24.28
     year: "1400 BC"
@@ -223,3 +234,4 @@ stops:
       nb: "I Sikem fornyer Josva pakten: «velg idag hvem I vil tjene»."
       tl: "Sa Sichem ay binago ni Josue ang tipan: “piliin ninyo sa araw na ito kung sino ang inyong paglilingkuran.”"
       da: "I Sikem fornyer Josva pagten: »udvælger eder i Dag, hvem I ville tjene«."
+      sr: "У Сихему Исус обнавља савез: „изаберите себи данас коме ћете служити.“"

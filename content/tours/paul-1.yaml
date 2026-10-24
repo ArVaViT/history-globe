@@ -18,6 +18,7 @@ title:
   nb: "Paulus' første reise"
   tl: "Ang unang paglalakbay ni Pablo"
   da: "Paulus' første rejse"
+  sr: "Павлово прво путовање"
 year: "AD 47"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -40,6 +41,7 @@ stops:
       nb: "På Den hellige ånds ord setter menigheten Barnabas og Saul til side for gjerningen."
       tl: "Sa salita ng Espiritu Santo, itinalaga ng iglesia sina Bernabe at Saul para sa gawain."
       da: "På Helligåndens ord udskiller menigheden Barnabas og Saul til værket."
+      sr: "По речи Духа Светога црква одваја Варнаву и Савла за дело."
   - place: a6d306d # Seleucia Pieria
     ref: Acts.13.4
     note:
@@ -58,6 +60,7 @@ stops:
       nb: "Antiokias havneby; de seiler til Kypros."
       tl: "Ang daungan ng Antioquia; naglayag sila patungong Chipre."
       da: "Antiokias havn; de sejler til Cypern."
+      sr: "Пристаниште Антиохије; отпловљавају на Кипар."
   - place: afa863b # Salamis
     ref: Acts.13.5
     by: sea
@@ -77,6 +80,7 @@ stops:
       nb: "De forkynner ordet i jødenes synagoger."
       tl: "Ipinahahayag nila ang salita sa mga sinagoga ng mga Judio."
       da: "De forkynder ordet i jødernes synagoger."
+      sr: "Проповедају реч у синагогама јеврејским."
   - place: a314765 # Paphos
     ref: Acts.13.6-Acts.13.12
     note:
@@ -95,6 +99,7 @@ stops:
       nb: "Prokonsulen Sergius Paulus kommer til tro."
       tl: "Sumasampalataya ang prokonsul na si Sergio Paulo."
       da: "Prokonsul Sergius Paulus kommer til tro."
+      sr: "Намесник Сергије Павле поверује."
   - place: aff04b8 # Perga
     ref: Acts.13.13
     by: sea
@@ -114,6 +119,7 @@ stops:
       nb: "Johannes Markus vender tilbake til Jerusalem."
       tl: "Bumabalik si Juan Marcos sa Jerusalem."
       da: "Johannes Markus vender tilbage til Jerusalem."
+      sr: "Јован Марко се враћа у Јерусалим."
   - place: a6c704a # Antioch in Pisidia
     ref: Acts.13.14-Acts.13.50
     note:
@@ -132,6 +138,7 @@ stops:
       nb: "Forkynnelse i synagogen; vendingen til hedningene."
       tl: "Pangangaral sa sinagoga; pagbaling sa mga Gentil."
       da: "Forkyndelse i synagogen; vending mod hedningerne."
+      sr: "Проповед у синагоги; окретање незнабошцима."
   - place: ae425aa # Iconium
     ref: Acts.14.1-Acts.14.5
     note:
@@ -150,6 +157,7 @@ stops:
       nb: "Mange kommer til tro; en sammensvergelse for å steine dem."
       tl: "Maraming sumasampalataya; may banta ng pagbato sa kanila."
       da: "Mange kommer til tro; et anslag om at stene dem."
+      sr: "Многи поверују; заседа да их засу камењем."
   - place: af0719d # Lystra
     ref: Acts.14.8-Acts.14.19
     note:
@@ -168,6 +176,7 @@ stops:
       nb: "En lam mann blir helbredet; Paulus blir steinet."
       tl: "Gumagaling ang isang pilay; binabato si Pablo."
       da: "En lam mand helbredes; Paulus stenes."
+      sr: "Хроми човек бива исцељен; Павле бива засут камењем."
   - place: aa401a9 # Derbe
     ref: Acts.14.20-Acts.14.21
     note:
@@ -186,6 +195,7 @@ stops:
       nb: "De gjør mange til disipler."
       tl: "Gumagawa sila ng maraming alagad."
       da: "De gør mange til disciple."
+      sr: "Чине многе ученике."
   - place: af0719d # Lystra
     ref: Acts.14.21-Acts.14.22
     note:
@@ -204,6 +214,7 @@ stops:
       nb: "Tilbakeveien: de styrker disiplene."
       tl: "Pabalik na biyahe: pinalalakas ang mga alagad."
       da: "Hjemturen: de styrker disciplene."
+      sr: "На повратку: утврђују ученике."
   - place: ae425aa # Iconium
     ref: Acts.14.21
     note:
@@ -222,6 +233,7 @@ stops:
       nb: "Tilbakeveien."
       tl: "Pabalik na biyahe."
       da: "Hjemturen."
+      sr: "На повратку."
   - place: a6c704a # Antioch in Pisidia
     ref: Acts.14.21-Acts.14.23
     note:
@@ -240,6 +252,7 @@ stops:
       nb: "Eldste blir innsatt i hver menighet."
       tl: "Nagtatalaga ng mga matanda sa bawat iglesia."
       da: "Der indsættes ældste i hver menighed."
+      sr: "Старешине постављене у свакој цркви."
   - place: aff04b8 # Perga
     ref: Acts.14.25
     note:
@@ -258,6 +271,7 @@ stops:
       nb: "De taler ordet i Perge."
       tl: "Sinasalita nila ang salita sa Perga."
       da: "De taler ordet i Perge."
+      sr: "Говоре реч у Перге."
   - place: ac744c1 # Attalia
     ref: Acts.14.26
     note:
@@ -276,6 +290,7 @@ stops:
       nb: "De seiler tilbake til Antiokia."
       tl: "Naglalayag sila pabalik sa Antioquia."
       da: "De sejler tilbage til Antiokia."
+      sr: "Отпловљавају натраг у Антиохију."
   - place: ae41ab4 # Antioch in Syria
     ref: Acts.14.27-Acts.14.28
     by: sea
@@ -295,3 +310,4 @@ stops:
       nb: "De forteller hvordan Gud har åpnet troens dør for hedningene."
       tl: "Ibinabalita nila kung paanong binuksan ng Dios ang pinto ng pananampalataya sa mga Gentil."
       da: "De beretter, hvordan Gud har åbnet hedningerne troens dør."
+      sr: "Извештавају како је Бог отворио незнабошцима врата вере."

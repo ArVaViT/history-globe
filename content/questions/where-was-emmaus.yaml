@@ -15,6 +15,7 @@ question:
   nb: "Hvor lå Emmaus?"
   tl: "Nasaan ang Emaus?"
   da: "Hvor lå Emmaus?"
+  sr: "Где се налазио Емаус?"
 answer:
   en:
     - 'The site of Emmaus is disputed. Luke places it "about threescore furlongs" (sixty stadia, about 11 km) from Jerusalem, and four places are most often named: Emmaus-Nicopolis (Imwas) near Latrun, Abu Ghosh, el-Qubeibeh and Motza (Qalunya), where the map point stands.'
@@ -76,6 +77,10 @@ answer:
     - "Emmaus’ beliggenhed er omstridt. Lukas placerer byen »tresindstyve Stadier fra Jerusalem« (tres stadier, ca. 11 km), og fire steder nævnes oftest: Emmaus-Nikopolis (Imwas) nær Latrun, Abu Ghosh, el-Qubeibeh og Motza (Qalunya), hvor punktet på kortet står."
     - "De fleste håndskrifter af Lukasevangeliet har tres stadier; nogle, blandt dem Codex Sinaiticus, har 160, ca. 30 km. Emmaus-Nikopolis, ca. 25 km vest for Jerusalem i fugleflugt, var Emmaus under de makkabæiske og romerske krige og i oldkirken: Eusebius regnede det for Kleopas’ hjemby, og resterne af en byzantinsk kirke står der stadig, men det passer kun med den længere læsemåde. Abu Ghosh, ca. 12 km mod vest på vejen til kysten, blev regnet for Emmaus fra 1100-tallet, og el-Qubeibeh, ca. 12 km mod nordvest, fra senmiddelalderen."
     - "Motza, vest for Jerusalem, ligger ca. 8 km væk ad den romerske vej på kortet. Josefus fortæller, at Vespasian efter krigen bosatte 800 veteraner på et sted kaldet Ammaus, tredive stadier fra Jerusalem i den gængse tekst (nogle håndskrifter har tres); mange sætter det lig med Motza, Mosa på Josvas liste, hvis senere navn Qalunya menes at minde om latinsk colonia. Punktet på kortet står ved Motza, og stedets kort opregner de øvrige steder; ingen af dem kan kaldes sikker."
+  sr:
+    - "Положај Емауса је спорен. Лука га смешта на „шездесет потркалишта“ од Јерусалима (шездесет стадија, око 11 км), а најчешће се наводе четири места: Емаус-Никопољ (Имвас) код Латруна, Абу Гош, ел-Кубејба и Моца (Калуња), где стоји тачка на карти."
+    - "Већина рукописа Лукиног јеванђеља има шездесет стадија; неки, међу њима Синајски кодекс, имају 160, око 30 км. Емаус-Никопољ, око 25 км западно од Јерусалима ваздушном линијом, био је Емаус макавејских и римских ратова и Емаус древне цркве: Јевсевије га је сматрао Клеопиним завичајем, а остаци византијске цркве и данас тамо стоје, али он одговара само дужем читању. Абу Гош, око 12 км западно на путу ка обали, сматран је Емаусом од дванаестог века, а ел-Кубејба, око 12 км северозападно, од позног средњег века."
+    - "Моца, западно од Јерусалима, удаљена је око 8 км римским путем на карти. Јосиф Флавије каже да је Веспазијан после рата населио 800 ветерана на месту званом Амаус, тридесет стадија од Јерусалима у уобичајеном тексту (неки рукописи имају шездесет); многи га поистовећују са Моцом, Мосом из списка у Књизи Исуса Навина, чије се потоње име Калуња сматра сећањем на латинску реч колонија. Тачка на карти стоји код Моце, а картица места наводи остала места; ниједно се не може назвати извесним."
 map:
   place: ae7274b
   year: "AD 30"

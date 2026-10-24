@@ -15,6 +15,7 @@ question:
   nb: "Hvor lå Judea?"
   tl: "Nasaan ang Judea?"
   da: "Hvor lå Judæa?"
+  sr: "Где је била Јудеја?"
 answer:
   en:
     - "Judea was the land of Judah around Jerusalem: the southern hill country from about Bethel to Hebron and Beersheba, with the wilderness falling east to the Dead Sea and the low hills of the Shephelah sloping west, most of it in today's West Bank and southern Israel. The map point stands on Jerusalem, its capital. It was small: Bethel to Beersheba is about 85 km in a straight line, and Bethlehem lies only 8 km south of Jerusalem, Hebron about 31 km."
@@ -76,6 +77,10 @@ answer:
     - "Judæa var Judas land omkring Jerusalem: det sydlige bjergland fra omkring Betel til Hebron og Beersheba, med ørkenen faldende mod øst til Det Døde Hav og Sjefelas lave højdedrag skrånende mod vest, det meste af det i nutidens Vestbred og det sydlige Israel. Kortets punkt står på Jerusalem, dets hovedstad. Det var lille: Fra Betel til Beersheba er der ca. 85 km i fugleflugt, og Betlehem ligger kun 8 km syd for Jerusalem, Hebron ca. 31 km."
     - "Dets størrelse skiftede med dets herskere. Under perserne var det den lille provins Yehud, Ezras »Landskab Juda«, knap større end højderne omkring Jerusalem; hasmonæerne udvidede det til et kongerige fra Galilæa til Idumæa. I evangelierne er Judæa én region ved siden af Galilæa og Samaria: Jesus er født »i Bethlehem i Judæa«, Johannes prædiker »i Judæas Ørken«, og nyheden om Johannes’ fødsel rygtes »over hele Judæas Bjergegn«. Når Lukas skriver »Pontius Pilatus var Landshøvding i Judæa«, omfattede den romerske provins også Samaria og Idumæa og blev styret fra Cæsarea ved kysten."
     - "Efter Bar Kokhba-oprøret i 132-135 e.Kr. omdøbte Hadrian provinsen til Syria Palæstina, og Judæa gik ud af den officielle brug. Judæas bjerge og ørken ligger i dag for størstedelens vedkommende på Vestbredden, med Betlehem og Hebron; Israel kalder området Judæa og Samaria."
+  sr:
+    - "Јудеја је била земља Јудина око Јерусалима: јужно брдско подручје отприлике од Ветиља до Хеврона и Вирсавеје, са пустињом која пада на исток ка Мртвом мору и ниским брдима Сефеле која се спуштају на запад, већим делом у данашњој Западној обали и јужном Израелу. Тачка на карти стоји на Јерусалиму, њеној престоници. Била је мала: од Ветиља до Вирсавеје има око 85 км ваздушном линијом, а Витлејем лежи само 8 км јужно од Јерусалима, Хеврон око 31 км."
+    - "Њена величина мењала се са њеним владарима. Под Персијанцима била је мала провинција Јехуд, Јездрина „јудејска земља“, једва већа од брда око Јерусалима; Хасмонејци су је развили у краљевство од Галилеје до Идумеје. У јеванђељима је Јудеја једна област поред Галилеје и Самарије: Исус се рађа „у Витлејему јудејском“, Јован проповеда „у пустињи јудејској“, а вест о Јовановом рођењу шири се „по свој горњој Јудеји“. Кад Лука пише „Понтије Пилат судија у Јудеји“, римска провинција обухватала је и Самарију и Идумеју, а њоме се управљало из Цезареје на обали."
+    - "После Бар Кохбиног устанка 132–135. н. е. Хадријан је провинцију преименовао у Сирија Палестина, а Јудеја је ишчезла из службене употребе. Јудејска брда и пустиња данас су већином у Западној обали, са Витлејемом и Хевроном; Израел ту област назива Јудеја и Самарија."
 map:
   place: a149f13
   year: "AD 28"

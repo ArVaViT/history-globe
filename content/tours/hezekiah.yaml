@@ -21,6 +21,7 @@ title:
   nb: "Hiskia og Jesaja"
   tl: "Si Ezechias at si Isaias"
   da: "Hizkija og Esajas"
+  sr: "Језекија и Исаија"
 year: "701 BC"
 # Where the story happens, told of several people: no time on foot.
 walked: false
@@ -45,6 +46,7 @@ stops:
       nb: "Hiskia fjerner offerhaugene og knuser kobberslangen Nehustan; han setter sin lit til Herren."
       tl: "Inaalis ni Ezechias ang mga mataas na dako at pinagputolputol ang ahas na tanso na tinatawag na Nehustan; nagtitiwala siya sa Panginoon."
       da: "Hizkija fjerner offerhøjene og knuser kobberslangen Nehustan; han stoler på Herren."
+      sr: "Језекија уклања висине и ломи бронзану змију Неустан; уздаје се у Господа."
   - place: a041bb3 # Samaria
     ref: 2Kgs.18.9-2Kgs.18.12
     year: "722 BC"
@@ -64,6 +66,7 @@ stops:
       nb: "I Hiskias sjette år blir Samaria inntatt av kongen i Assyria, og Israel blir bortført."
       tl: "Sa ikaanim na taon ni Ezechias, nasasakop ng hari sa Asiria ang Samaria at dinadalang bihag ang Israel."
       da: "I Hizkijas sjette år indtages Samaria af Assyriens konge, og Israel føres bort."
+      sr: "Шесте године Језекијине цар асирски осваја Самарију и Израиљ бива одведен."
   - place: a3cc590 # Lachish
     ref: 2Kgs.18.13-2Kgs.18.16
     note:
@@ -82,6 +85,7 @@ stops:
       nb: "Sankerib inntar Judas befestede byer; Hiskia sender bud til ham i Lakisj: «Jeg har syndet», og betaler den skatt som blir lagt på ham."
       tl: "Sinasakop ni Sennacherib ang mga bayang may kuta ng Juda; nagsusugo si Ezechias sa kaniya sa Lachis: “Ako'y nagkasala”, at binabayaran ang buwis na ipinataw sa kaniya."
       da: "Sankerib indtager Judas befæstede byer; Hizkija sender bud til ham i Lakisj: »Jeg har syndet«, og betaler den told, der pålægges ham."
+      sr: "Сенахирим осваја утврђене градове Јудине; Језекија шаље к њему у Лахис поруку: „Згрешио сам“, и плаћа наметнути данак."
   - place: a15257a # Jerusalem
     ref: 2Kgs.18.17-2Kgs.19.7
     note:
@@ -100,6 +104,7 @@ stops:
       nb: "Ved den øvre dam håner Rabsjake Hiskia og Herren for folket på muren; Jesaja svarer: «Frykt ikke for de ord du hørte»."
       tl: "Sa Mataas na Tangke, tinutuya ng Rabsaces si Ezechias at ang Panginoon sa harap ng bayan sa pader; sumasagot si Isaias: “Huwag kang matakot sa mga salita na iyong narinig.”"
       da: "Ved den øvre dam håner Rabsjake Hizkija og Herren for folket på muren; Esajas svarer: »Frygt ikke for de Ord, som du hørte«."
+      sr: "Код горње баре Равсак се руга Језекији и Господу пред народом на зиду; Исаија одговара: „Не плаши се од речи које си чуо.“"
   - place: a97b595 # Libnah
     ref: 2Kgs.19.8
     note:
@@ -118,6 +123,7 @@ stops:
       nb: "Rabsjake finner kongen i Assyria i krig mot Libna."
       tl: "Natatagpuan ng Rabsaces ang hari sa Asiria na nakikipagdigma laban sa Libna."
       da: "Rabsjake finder Assyriens konge i krig mod Libna."
+      sr: "Равсак налази цара асирског где ратује против Ливне."
   - place: a15257a # Jerusalem
     ref: 2Kgs.19.14-2Kgs.19.34
     note:
@@ -136,6 +142,7 @@ stops:
       nb: "Hiskia legger brevet frem for Herren og ber; Jesaja sender ham svaret: «Jeg vil verne denne by»."
       tl: "Inilalatag ni Ezechias ang sulat sa harap ng Panginoon at nananalangin; ipinadadala sa kaniya ni Isaias ang sagot: “aking ipagsasanggalang ang bayang ito upang iligtas.”"
       da: "Hizkija breder brevet ud for Herren og beder; Esajas sender ham svaret: »Thi jeg vil beskærme denne Stad«."
+      sr: "Језекија развија писмо пред Господом и моли се; Исаија му шаље одговор: „Јер ћу бранити тај град.“"
   - place: a70fd5d # Nineveh
     ref: 2Kgs.19.35-2Kgs.19.37
     note:
@@ -154,3 +161,4 @@ stops:
       nb: "Etter at Herrens engel har slått den assyriske leiren, drar Sankerib hjem og bor i Ninive; senere dreper hans sønner ham mens han tilber i sin guds Nisroks hus."
       tl: "Pagkatapos na saktan ng anghel ng Panginoon ang kampo ng mga Asirio, umuuwi si Sennacherib at tumatahan sa Ninive; pagkaraan, pinapatay siya ng kaniyang mga anak habang sumasamba sa bahay ni Nisroch na kaniyang dios."
       da: "Efter at Herrens engel har slået den assyriske lejr, vender Sankerib hjem og bor i Nineve; senere dræber hans sønner ham, mens han tilbeder i sin gud Nisroks hus."
+      sr: "Пошто анђео Господњи удари у логор асирски, Сенахирим се враћа кући и пребива у Ниневији; касније га синови његови убијају док се клања у дому Нисрока, бога свог."

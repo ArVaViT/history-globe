@@ -15,6 +15,7 @@ question:
   nb: "Hvor lå landet Us?"
   tl: "Nasaan ang lupain ng Uz?"
   da: "Hvor lå Uz’ land?"
+  sr: "Где је била земља Уз?"
 answer:
   en:
     - "The land of Uz, Job's home, is not located by the Bible, and two regions compete: Edom and the desert south-east of the Dead Sea, where the map point stands, about 120 km from Jerusalem in a straight line, and the Hauran south of Damascus, on the edge of the Syrian desert, where the tomb of Job was shown in antiquity."
@@ -76,6 +77,10 @@ answer:
     - "Uz’ land, Jobs hjem, lokaliseres ikke af Bibelen, og to egne konkurrerer: Edom og ørkenen sydøst for Det Døde Hav, hvor kortets punkt står, ca. 120 km fra Jerusalem i fugleflugt, og Hauran syd for Damaskus, ved kanten af den syriske ørken, hvor Jobs grav blev vist i antikken."
     - "Bogen åbner: »Der var en Mand i Uz Land, hans Navn var Job.« Argumentet for Edom fremføres af Klagesangene, som tiltaler »Edoms Datter! du, som bor i Landet Uz«, af Uz, der er sønnesøn af horiten Se’ir i 1 Mos 36, og af Jobs ven Elifaz, som kommer fra Teman, et distrikt i Edom. Argumentet for nord fremføres af Uz, der er søn af Aram i 1 Mos 10 og nevø til Abraham i Nahors slægt i 1 Mos 22, begge pegende på det aramæiske land; Josefus siger, at Uz grundlagde Trakonitis og Damaskus."
     - "Jeremias opregner »alle Konger i Landet Uz« mellem Egypten og filisterne, hvilket hjælper lidt. Røverne i Jobs beretning, sabæerne og kaldæerne, peger på Arabien og Mesopotamien og kunne nå begge egne. I slutningen af 300-tallet besøgte pilgrimmen Egeria Jobs grav ved Karneas i Hauran, sædvanligvis placeret ved Sheikh Saad, hvor en helligdom for Job stadig står. Kortet viser Edom efter Klagesangene og opregner den anden læsning på stedets kort; Jobs Bog selv giver ingen datering."
+  sr:
+    - "Земља Уз, Јовов дом, није одређена у Библији, а такмиче се две области: Едом и пустиња југоисточно од Мртвог мора, где стоји тачка на карти, око 120 км од Јерусалима ваздушном линијом, и Авран јужно од Дамаска, на ободу сиријске пустиње, где се у старо доба показивао Јовов гроб."
+    - "Књига почиње: „Беше човек у земљи Узу по имену Јов.“ За Едом говоре Тужбалице, које се обраћају „кћери едомска, која живиш у земљи Узу“, Уз који је унук Сира Хорејца у Постању 36 и Јовов пријатељ Елифас, који долази из Темана, области Едома. За север говори Уз који је син Арамов у Постању 10 и братанац Аврамов из породице Нахорове у Постању 22, оба упућујући на арамејску земљу; Јосиф Флавије каже да је Уз основао Трахонитску област и Дамаск."
+    - "Јеремија набраја „све цареве земље Уза“ између Египта и Филистеја, што мало помаже. Пљачкаши из Јовове приче, Савејци и Халдејци, указују на Арабију и Месопотамију и могли су доћи до обе области. Крајем четвртог века ходочасница Егерија посетила је Јовов гроб у Карнеасу у Авраму, који се обично смешта у Шеик Сад, где и данас стоји Јовова светиња. Карта приказује Едом, следећи Тужбалице, а друго читање наводи на картици места; сама Књига о Јову не даје датум."
 map:
   place: a324c4d
   ref: Job.1.1

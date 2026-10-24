@@ -22,6 +22,7 @@ title:
   nb: "Den første hjemkomsten og det andre tempel"
   tl: "Ang unang pagbabalik at ang ikalawang Templo"
   da: "Den første hjemkomst og det andet tempel"
+  sr: "Први повратак и други храм"
 year: "538 BC"
 # Where the work and the letters were, not a journey: no time on foot.
 walked: false
@@ -45,6 +46,7 @@ stops:
       nb: "Kyros, kongen i Persia, kunngjør at Herren «har pålagt mig å bygge ham et hus i Jerusalem»; han gir tilbake templets kar, og de landflyktige drar opp fra Babylon."
       tl: "Ipinahayag ni Ciro na hari ng Persia: “ibinilin niya sa akin na ipagtayo ko siya ng isang bahay sa Jerusalem”; ibinalik niya ang mga sisidlan ng Templo, at umahon ang mga tapon mula sa Babilonia."
       da: "Kyros, Persiens konge, udråber: »han har befalet mig at bygge sig et Hus i Jerusalem«; han giver templets kar tilbage, og de landflygtige drager op fra Babylon."
+      sr: "Кир, цар персијски, оглашава: „Он ми је заповедио да Му сазидам дом у Јерусалиму“; враћа посуђе храма, и прогнаници одлазе из Вавилона."
   - place: ae023a9 # Joppa
     ref: Ezra.3.7
     note:
@@ -63,6 +65,7 @@ stops:
       nb: "Sedertre blir ført fra Libanon sjøveien til Jaffa for Guds hus, med Kyros' tillatelse."
       tl: "Dinala ang sedro mula sa Libano sa dagat patungong Joppa para sa bahay ng Diyos, sa pahintulot ni Ciro."
       da: "Der føres cedertræ fra Libanon til søs til Joppe til Guds hus, med Kyros' tilladelse."
+      sr: "Кедар се доноси из Ливана морем у Јопу за дом Божји, уз допуштење Кирово."
   - place: a15257a # Jerusalem
     ref: Ezra.3.8-Ezra.3.13
     year: "536 BC"
@@ -82,6 +85,7 @@ stops:
       nb: "Templets grunnvoll blir lagt med basuner og sang, «hans miskunnhet mot Israel varer evindelig»; gamle menn som hadde sett det første hus, gråter høyt."
       tl: "Inilatag ang pundasyon ng Templo na may mga trumpeta at awit, “ang kaniyang kaawaan ay magpakailan man sa Israel”; ang matatandang nakakita sa unang bahay ay umiyak nang malakas."
       da: "Templets grundvold lægges med trompeter og sang, »at hans Miskundhed er evindelig over Israel«; gamle mænd, som havde set det første hus, græder højt."
+      sr: "Темељ храма поставља се уз трубе и песму, „Јер је до века милост Његова над Израиљем“; старци који су видели први дом гласно плачу."
   - place: a212ef7 # Ecbatana
     ref: Ezra.4.24-Ezra.6.12
     year: "520 BC"
@@ -101,6 +105,7 @@ stops:
       nb: "I Dareios' andre år begynner byggherrene på ny, med profetene Haggai og Sakarja til hjelp; på landshøvdingens forespørsel lar Dareios arkivene gjennomsøke, en bokrull med Kyros' påbud blir funnet i Ekbatana i Media, og han befaler at arbeidet skal fortsette."
       tl: "Sa ikalawang taon ni Dario, muling nagsimula ang mga tagapagtayo, na tinutulungan ng mga propetang sina Haggeo at Zacharias; nang tanungin ng gobernador, ipinasaliksik ni Dario ang mga talaan, natagpuan sa Achmetta sa Media ang isang balumbon na may kautusan ni Ciro, at ipinag-utos niyang ituloy ang gawain."
       da: "I Darius' andet år begynder bygmestrene påny, med profeterne Haggaj og Zakarias som hjælpere; spurgt af landshøvdingen lader Darius arkiverne gennemsøge, en skriftrulle med Kyros' dekret findes i Ekbatana i Medien, og han befaler, at arbejdet skal fortsætte."
+      sr: "Друге године Даријеве градитељи опет почињу, а помажу им пророци Агеј и Захарија; на упит намесника Дарије налаже да се претраже записи, свитак с Кировом наредбом налази се у Екбатани у Мидији, и он наређује да се посао настави."
   - place: a15257a # Jerusalem
     ref: Ezra.6.15-Ezra.6.22
     year: "516 BC"
@@ -120,3 +125,4 @@ stops:
       nb: "Huset blir ferdig i Dareios' sjette år og innviet med glede, og de som var vendt tilbake fra fangenskapet, holder påske."
       tl: "Natapos ang bahay sa ikaanim na taon ni Dario at itinalaga nang may kagalakan, at ang mga bumalik mula sa pagkabihag ay nagdiwang ng Paskua."
       da: "Huset færdiggøres i Darius' sjette år og indvies med glæde, og de, der er vendt tilbage fra landflygtigheden, holder påske."
+      sr: "Дом је довршен шесте године Даријеве и с радошћу посвећен, а они који су се вратили из ропства држе Пасху."

@@ -20,6 +20,7 @@ title:
   nb: "Paulus' tredje reise"
   tl: "Ang ikatlong paglalakbay ni Pablo"
   da: "Paulus' tredje rejse"
+  sr: "Павлово треће путовање"
 year: "AD 54"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -42,6 +43,7 @@ stops:
       nb: "Paulus bryter opp fra Antiokia igjen."
       tl: "Muling umalis si Pablo mula sa Antioquia."
       da: "Paulus bryder påny op fra Antiokia."
+      sr: "Павле поново полази из Антиохије."
   - place: a5feb15
     ref: Acts.19.1-Acts.20.1
     note:
@@ -60,6 +62,7 @@ stops:
       nb: "Omkring tre år i Efesos; Demetrios' opptøyer."
       tl: "Mga tatlong taon sa Efeso; ang kaguluhan ni Demetrio."
       da: "Omkring tre år i Efesos; Demetrius' opstand."
+      sr: "Око три године у Ефесу; буна Димитријева."
   - place: a49e1d0
     ref: Acts.20.1-Acts.20.6
     by: untold
@@ -79,6 +82,7 @@ stops:
       nb: "Gjennom Makedonia til Hellas i tre måneder, og tilbake; etter de usyrede brøds dager seiler de fra Filippi."
       tl: "Sa Macedonia patungong Grecia nang tatlong buwan, at pabalik; pagkatapos ng mga araw ng tinapay na walang lebadura, naglayag sila mula sa Filipos."
       da: "Gennem Makedonien til Grækenland i tre måneder og tilbage; efter de usyrede brøds dage sejler de fra Filippi."
+      sr: "Кроз Македонију у Грчку на три месеца, и натраг; после дана бесквасних хлебова отпловљавају из Филипа."
   - place: a91c509
     ref: Acts.20.6-Acts.20.12
     by: sea
@@ -99,6 +103,7 @@ stops:
       nb: "Sju dager i Troas; Evtykos."
       tl: "Pitong araw sa Troas; si Eutico."
       da: "Syv dage i Troas; Eutykus."
+      sr: "Седам дана у Троади; Евтих."
   - place: a0a2ca7
     ref: Acts.20.13
     note:
@@ -117,6 +122,7 @@ stops:
       nb: "Paulus går til fots til Assos."
       tl: "Naglakad si Pablo patungong Ason."
       da: "Paulus går til fods til Assos."
+      sr: "Павле иде пешке у Асос."
   - place: a33910d
     ref: Acts.20.14
     by: sea
@@ -136,6 +142,7 @@ stops:
       nb: "De kommer til Mitylene."
       tl: "Dumating sila sa Mitilene."
       da: "De kommer til Mitylene."
+      sr: "Долазе у Митилину."
   - place: a4c2c75
     ref: Acts.20.15
     by: sea
@@ -156,6 +163,7 @@ stops:
       nb: "Ut for Khios."
       tl: "Sa tapat ng Chio."
       da: "Ud for Chios."
+      sr: "Према Хиосу."
   - place: acf6ec0
     ref: Acts.20.15
     by: sea
@@ -176,6 +184,7 @@ stops:
       nb: "De legger til ved Samos."
       tl: "Dumaong sila sa Samos."
       da: "De lægger til ved Samos."
+      sr: "Пристају код Самоса."
   - place: a55027d
     ref: Acts.20.17-Acts.20.38
     by: sea
@@ -196,6 +205,7 @@ stops:
       nb: "Avskjed med de eldste fra Efesos."
       tl: "Pamamaalam sa mga matanda ng Efeso."
       da: "Afsked med de ældste fra Efesos."
+      sr: "Опроштај од старешина ефеских."
   - place: a398e5d
     ref: Acts.21.1
     by: sea
@@ -215,6 +225,7 @@ stops:
       nb: "Rett kurs til Kos."
       tl: "Tuwirang paglalayag patungong Coos."
       da: "Ret kurs mod Kos."
+      sr: "Пловидба право до Коса."
   - place: a4218ee
     ref: Acts.21.1
     by: sea
@@ -235,6 +246,7 @@ stops:
       nb: "Rhodos."
       tl: "Rodas."
       da: "Rhodos."
+      sr: "Родос."
   - place: ade301b
     ref: Acts.21.1-Acts.21.2
     by: sea
@@ -254,6 +266,7 @@ stops:
       nb: "I Patara finner de et skip til Fønikia."
       tl: "Sa Patara ay nakasumpong sila ng sasakyang patungong Fenicia."
       da: "I Patara finder de et skib til Fønikien."
+      sr: "У Патари налазе лађу за Феникију."
   - place: a160272
     ref: Acts.21.3-Acts.21.6
     by: sea
@@ -273,6 +286,7 @@ stops:
       nb: "Sju dager med disiplene i Tyros."
       tl: "Pitong araw na kasama ang mga alagad sa Tiro."
       da: "Syv dage hos disciplene i Tyrus."
+      sr: "Седам дана с ученицима у Тиру."
   - place: abc2af0
     ref: Acts.21.7
     by: sea
@@ -292,6 +306,7 @@ stops:
       nb: "En dag med brødrene i Ptolemais."
       tl: "Isang araw na kasama ang mga kapatid sa Tolemaida."
       da: "En dag hos brødrene i Ptolemais."
+      sr: "Један дан с браћом у Птолемаиди."
   - place: a58735e
     ref: Acts.21.8-Acts.21.14
     by: sea
@@ -311,6 +326,7 @@ stops:
       nb: "I Filips hus; Agabus' profeti."
       tl: "Sa bahay ni Felipe; ang hula ni Agabo."
       da: "I Filips hus; Agabus' profeti."
+      sr: "У кући Филиповој; пророштво Агавово."
   - place: a15257a
     ref: Acts.21.15-Acts.21.17
     note:
@@ -329,3 +345,4 @@ stops:
       nb: "Brødrene i Jerusalem tar glad imot dem."
       tl: "Masayang tinanggap sila ng mga kapatid sa Jerusalem."
       da: "Brødrene i Jerusalem tager glade imod dem."
+      sr: "Браћа у Јерусалиму радосно их примају."
