@@ -3,7 +3,7 @@
 Our places and people matched to the open datasets others use, so a site that already keys
 its data to one of them can join ours, and so their maintainers can see where we differ.
 Built on 2026-10-17 from open files only (no accounts); the method is in each row. Our side
-of the places table is refreshed from the build (2026-10-19, see below).
+of the places table is refreshed from the build (2026-10-24, see below).
 
 - [`crosswalk/places.csv`](crosswalk/places.csv): every place in `api/v1/places.json` (our id
   is OpenBible.info's ancient id) with its OpenBible page, Wikidata item, Pleiades id and

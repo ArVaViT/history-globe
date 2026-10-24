@@ -38,12 +38,12 @@
       "why": "Arsinoe (no verse): Pleiades 727101 Clysma, alias Arsinoe (the Barrington Atlas Directory: Kum el-Qolzum/Suez), Wikidata Q3623994, Sidebotham and Mackay put it at Tall al Qulzum by Suez, 0.9 km from Pleiades' point; OpenBible's three candidates have one vote each and its resolver took the first, Ismailia on Lake Timsah, 77 km north. Decided by the majority, 2026-10-19."
     },
     "aaa4c6e": {
-      "site": "m9cc606",
-      "why": "Ramah of the Negeb (Josh 19:8; Ramoth of the Negeb of 1 Sam 30:27; Ramat-negeb of Arad ostracon 24): Horbat Uza (Khirbet Ghazzeh), Aharoni's identification and the one most sources and the Zondervan Atlas of the Bible (2010) hold (OpenBible: 6 sources to 4 for Tel Ira, Beit-Arieh's); OpenBible resolved it through 'another name for Baalath-beer' to Beer Yeroham, 34 km south-west, where Ramoth 2 did not follow. Decided by the majority, 2026-10-19."
+      "site": "ma832c2",
+      "why": "Ramah of the Negeb (Josh 19:8; Ramoth of the Negeb of 1 Sam 30:27; Ramat-negeb of Arad ostracon 24): Tel Ira (Khirbet Gharra), where Lemaire, Na'aman and Rainey put it, and OpenBible's time-weighted first (226 to 176). Horbat Uza (Khirbet Ghazzeh), Aharoni's identification and the one most older reference works hold (6 sources to 4), was the choice of 2026-10-19; taken back 2026-10-24: ostracon 24 sends men from Arad and from Kinah to Ramat-negeb, so the two are different forts, and Horbat Uza is Kinah to OpenBible (7 sources, first by its score) and to the Biblical Archaeology Society's site list and already Kinah's point on our map. OpenBible resolved Ramah through 'another name for Baalath-beer' to Beer Yeroham, 34 km south-west. Tel Ira is also Jagur's point (OpenBible's only candidate, 14 sources, half of them rating it only possible); docs/crosswalk/their-errors.md, item 16."
     },
     "a03cc2d": {
       "same_as": "aaa4c6e",
-      "why": "Baalath-beer (Josh 19:8, 'Baalath-beer, Ramah of the south'): one place with Ramah of the Negeb, as the verse reads and most take it; its own sites (Beer Yeroham, Tel Malhata, Tel Masos, Tel Ira) have two to four sources each. Decided by the majority, 2026-10-19."
+      "why": "Baalath-beer (Josh 19:8, 'Baalath-beer, Ramah of the south'): one place with Ramah of the Negeb, as the verse reads and most take it; its own sites (Beer Yeroham, Tel Malhata, Tel Masos, Tel Ira) have two to four sources each. Decided by the majority, 2026-10-19; on Tel Ira with Ramah since 2026-10-24."
     },
     "a14325e": {
       "same_as": "a03cc2d",
@@ -51,11 +51,11 @@
     },
     "ab049cf": {
       "same_as": "aaa4c6e",
-      "why": "Ramoth of the Negeb (1 Sam 30:27): another name for Ramah of the Negeb (OpenBible's only identification, 10 sources); already resolved to Horbat Uza, kept with it."
+      "why": "Ramoth of the Negeb (1 Sam 30:27): another name for Ramah of the Negeb (OpenBible's only identification, 10 sources); OpenBible resolved it to Horbat Uza, it follows Ramah to Tel Ira."
     },
     "a800159": {
       "same_as": "a14325e",
-      "why": "Bealoth 2 (1 Kgs 4:16): another name for Bealoth 1 (OpenBible's only identification, 6 sources), resolved one hop to Bealoth 1's first site, Beer Yeroham (O6). Follows Bealoth 1 to Horbat Uza: one place, one point, and the two Bealoths stay one dot on the map, so the place page keeps its address (/place/bealoth/)."
+      "why": "Bealoth 2 (1 Kgs 4:16): another name for Bealoth 1 (OpenBible's only identification, 6 sources), resolved one hop to Bealoth 1's first site, Beer Yeroham (O6). Follows Bealoth 1 to Ramah's point: one place, one point, and the two Bealoths stay one dot on the map, so the place page keeps its address (/place/bealoth/)."
     }
   }
 }

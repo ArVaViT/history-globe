@@ -166,6 +166,23 @@ class LoadPlacePoints(unittest.TestCase):
             with self.assertRaises(SystemExit):
                 load_place_points(path)
 
+    def test_the_real_file_loads_and_every_choice_says_why(self) -> None:
+        import json
+
+        path = pathlib.Path(__file__).resolve().parent.parent / "content" / "place-points.json"
+        same_as, sites = load_place_points(path)
+        places = json.loads(path.read_text(encoding="utf-8"))["places"]
+        self.assertEqual(len(same_as) + len(sites), len(places))
+        for pid, o in places.items():
+            self.assertTrue(o.get("why", "").strip(), f"{pid} has no why")
+        # A same_as chain ends at a record that stands on its own point (move_points follows it).
+        for pid, target in same_as.items():
+            seen = {pid}
+            while target in same_as:
+                self.assertNotIn(target, seen, f"same_as of {pid} runs in a circle")
+                seen.add(target)
+                target = same_as[target]
+
 
 class Rank(unittest.TestCase):
     def test_thresholds(self) -> None:
