@@ -17,6 +17,7 @@ title:
   nl: "De profeet Jeremia"
   cs: "Prorok Jeremjáš"
   sv: "Profeten Jeremia"
+  nb: "Profeten Jeremia"
 year: "627 BC"
 people: ["Jeremiah@2Ch.35.25-Mat"]
 approximate: true
@@ -36,6 +37,7 @@ stops:
       nl: "Jeremia, uit de priesters te Anatot, wordt geroepen tot profeet voor de volken en antwoordt: “ik kan niet spreken, want ik ben jong.”"
       cs: "Jeremjáš z kněží v Anatótu je povolán za proroka národům a odpovídá: „neumím mluviti, nebo dítě jsem“."
       sv: "Jeremia, en av prästerna i Anatot, kallas till profet för folken och svarar: ”jag förstår icke att tala, ty jag är för ung.”"
+      nb: "Jeremia, av prestene i Anatot, blir kalt til profet for folkene og svarer: «jeg forstår ikke å tale; for jeg er ung»."
   - place: a37c8e6 # Valley of Hinnom
     ref: Jer.19.1-Jer.19.11
     note:
@@ -51,6 +53,7 @@ stops:
       nl: "De HEER zendt hem naar het Dal van Hinnom om voor de oudsten een aarden kruik van een pottenbakker te breken: zo zal Hij dit volk en deze stad breken."
       cs: "Hospodin ho posílá do Hinómova údolí, aby před staršími rozbil hliněnou láhev hrnčířovu: tak rozbije tento lid i toto město."
       sv: "Herren sänder honom till Hinnoms dal för att krossa en krukmakares lerflaska inför de äldste: så ska han krossa detta folk och denna stad."
+      nb: "Herren sender ham til Hinnom-dalen for å knuse en pottemakers leirkrukke for de eldste: slik vil han knuse dette folk og denne by."
   - place: a15257a # Jerusalem
     ref: Jer.26.1-Jer.26.19
     year: "609 BC"
@@ -67,6 +70,7 @@ stops:
       nl: "Om zijn woorden in het voorhof van de tempel willen de priesters en de profeten hem laten sterven; de oudsten herinneren aan Micha: “Sion zal als een akker geploegd, en Jeruzalem tot steen hopen worden.”"
       cs: "Pro jeho slova v nádvoří chrámu ho kněží a proroci chtějí usmrtit; starší připomínají Micheáše: „Sion jako pole orán bude, a Jeruzalém jako hromady“."
       sv: "För sina ord i templets förgård vill prästerna och profeterna döda honom; de äldste påminner om Mika: ”Jerusalem skall bliva en stenhop.”"
+      nb: "For sine ord i tempelgården vil prestene og profetene ha ham drept; de eldste minner om Mika: «Jerusalem bli til grusdynger»."
   - place: ab34789 # Anathoth
     ref: Jer.32.1-Jer.32.15
     year: "588 BC"
@@ -83,6 +87,7 @@ stops:
       nl: "Opgesloten in het voorhof van de gevangenis terwijl het leger van de koning van Babylon Jeruzalem belegert, koopt hij het veld van zijn neef te Anatot: “Er zullen nog huizen, en velden, en wijngaarden in dit land gekocht worden.”"
       cs: "Zavřen v nádvoří stráže, zatímco vojsko krále babylonského obléhá Jeruzalém, kupuje pole svého bratrance v Anatótu: „Ještěť kupováni budou domové, a rolí, i vinice v zemi této.“"
       sv: "Instängd i fängelsegården medan den babyloniske kungens här belägrar Jerusalem köper han sin kusins åker i Anatot: ”Ännu en gång skall man komma att i detta land köpa hus och åkrar och vingårdar.”"
+      nb: "Innestengt i fengselsgården mens kongen av Babylons hær kringsetter Jerusalem, kjøper han sin fetters mark i Anatot: «Ennu en gang skal det kjøpes hus og marker og vingårder i dette land.»"
   - place: a15257a # Jerusalem
     ref: Jer.38.6-Jer.38.28
     year: "587 BC"
@@ -99,6 +104,7 @@ stops:
       nl: "In een kerker in het voorhof van de gevangenis geworpen zakt hij weg in de modder; Ebed-Melech, de Ethiopiër, trekt hem met touwen omhoog, en hij blijft in het voorhof van de gevangenis tot de dag dat Jeruzalem wordt ingenomen."
       cs: "Vržen do žaláře v nádvoří stráže, vězí v bahně; Eved-melek Etiopan ho vytahuje provazy a on zůstává v nádvoří stráže až do dne dobytí Jeruzaléma."
       sv: "Nedkastad i en fängelsehåla i fängelsegården sjunker han i dyn; etiopiern Eved-Melek drar upp honom med rep, och han blir kvar i fängelsegården till den dag då Jerusalem intas."
+      nb: "Kastet i en brønn i fengselsgården synker han ned i dyndet; Ebed-Melek, etiopieren, drar ham opp med rep, og han blir i fengselsgården til den dag Jerusalem blir inntatt."
   - place: a6d57ed # Ramah
     ref: Jer.40.1-Jer.40.5
     year: "587 BC"
@@ -115,6 +121,7 @@ stops:
       nl: "Te Rama, onder de gevangenen in boeien op weg naar Babylon, laat Nebuzaradan hem vrij om te gaan waarheen hij wil."
       cs: "V Rámě, mezi spoutanými zajatci na cestě do Babylóna, ho Nebuzaradan propouští, aby šel, kam chce."
       sv: "I Rama, bland de fjättrade fångarna på väg till Babylon, sätter Nebusaradan honom fri att gå vart han vill."
+      nb: "I Rama, blant fangene i lenker på vei til Babylon, setter Nebusaradan ham fri til å gå hvor han vil."
   - place: a736f6c # Mizpah
     ref: Jer.40.6
     year: "587 BC"
@@ -131,6 +138,7 @@ stops:
       nl: "Hij blijft bij Gedalja te Mizpa, onder het volk dat in het land is achtergebleven."
       cs: "Zůstává u Gedaljáše v Micpě mezi lidem, který v zemi zbyl."
       sv: "Han stannar hos Gedalja i Mispa, bland dem som lämnats kvar i landet."
+      nb: "Han blir hos Gedalja i Mispa, blant folket som var igjen i landet."
   - place: adb008c # Tahpanhes
     ref: Jer.43.5-Jer.43.13
     year: "587 BC"
@@ -147,3 +155,4 @@ stops:
       nl: "Tegen zijn woord in naar Egypte gebracht, krijgt hij te Tachpanhes de opdracht grote stenen te verbergen bij de ingang van het huis van Farao: Nebukadnessar zal er zijn troon op zetten."
       cs: "Navzdory svému slovu odvlečen do Egypta, je v Tachpanchés poučen, aby u vchodu do faraonova domu ukryl veliké kameny: Nebukadnesar na nich postaví svůj trůn."
       sv: "Bortförd till Egypten mot sitt ord får han i Tachpanches order att gömma stora stenar vid ingången till faraos hus: Nebukadnessar ska sätta sin tron på dem."
+      nb: "Ført ned til Egypt mot sitt ord får han i Tahpanhes befaling om å skjule store stener ved inngangen til Faraos hus: Nebukadnesar skal sette sin trone over dem."

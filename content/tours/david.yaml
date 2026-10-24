@@ -15,6 +15,7 @@ title:
   nl: "Het leven van David"
   cs: "Život Davidův"
   sv: "Davids liv"
+  nb: "Davids liv"
 year: "1010 BC"
 people: ["David@Rut.4.17-Rev"]
 approximate: true
@@ -34,6 +35,7 @@ stops:
       nl: "Te Bethlehem zalft Samuël de jongste zoon van Isaï, en de Geest van de HEER komt over David."
       cs: "V Betlémě Samuel pomazává nejmladšího Jišajova syna a Duch Hospodinův přichází na Davida."
       sv: "I Betlehem smörjer Samuel Isais yngste son, och Herrens Ande kommer över David."
+      nb: "I Betlehem salver Samuel Isais yngste sønn, og Herrens Ånd kommer over David."
   - place: ab183f8 # Valley of Elah
     ref: 1Sam.17.2-1Sam.17.51
     note:
@@ -49,6 +51,7 @@ stops:
       nl: "In het Dal van Ela doodt David Goliat met een slinger en een steen."
       cs: "V Élském údolí zabíjí David Goliáše prakem a kamenem."
       sv: "I Terebintdalen dödar David Goljat med en slunga och en sten."
+      nb: "I Ela-dalen dreper David Goliat med en slynge og en sten."
   - place: ae1c9ea # Naioth
     ref: 1Sam.19.18-1Sam.19.24
     note:
@@ -64,6 +67,7 @@ stops:
       nl: "Op de vlucht voor Saul komt David bij Samuël en verblijft bij hem te Najot in Rama."
       cs: "David prchá před Saulem k Samuelovi a zůstává u něho v Najotu v Rámě."
       sv: "På flykt undan Saul kommer David till Samuel och stannar hos honom i Najot i Rama."
+      nb: "På flukt fra Saul kommer David til Samuel og blir hos ham i Najot i Rama."
   - place: afdda14 # Nob
     ref: 1Sam.21.1-1Sam.21.9
     note:
@@ -79,6 +83,7 @@ stops:
       nl: "Te Nob geeft de priester Achimelech hem het heilige brood en het zwaard van Goliat."
       cs: "V Nobu mu kněz Achimelek dává svatý chléb a Goliášův meč."
       sv: "I Nob ger prästen Achimelek honom det heliga brödet och Goljats svärd."
+      nb: "I Nob gir presten Ahimelek ham det hellige brødet og Goliats sverd."
   - place: a18873f # Gath
     ref: 1Sam.21.10-1Sam.21.15
     note:
@@ -94,6 +99,7 @@ stops:
       nl: "Voor Achis, de koning van Gat, doet hij alsof hij gek is."
       cs: "Před Achišem, králem Gatu, předstírá šílenství."
       sv: "Inför Akish, kung av Gat, låtsas han vara galen."
+      nb: "For Akisj, kongen i Gat, later han som om han er gal."
   - place: af82614 # Adullam
     ref: 1Sam.22.1-1Sam.22.2
     note:
@@ -109,6 +115,7 @@ stops:
       nl: "In de spelonk van Adullam verzamelen zijn familie en zo'n vierhonderd man zich om hem."
       cs: "V jeskyni Adulam se kolem něho shromažďuje jeho rodina a asi čtyři sta mužů."
       sv: "I Adullams grotta samlas hans familj och omkring fyra hundra man kring honom."
+      nb: "I Adullam-hulen samler hans slekt og omkring fire hundre menn seg om ham."
   - place: a51df0e # Engedi
     ref: 1Sam.24.1-1Sam.24.22
     note:
@@ -124,6 +131,7 @@ stops:
       nl: "In de woestijn van En-Gedi spaart hij Saul in de spelonk en snijdt alleen de rand van zijn mantel af."
       cs: "Na poušti Én-gedi ušetří v jeskyni Saula, jemuž odřízne jen cíp pláště."
       sv: "I En-Gedis öken skonar han Saul i grottan och skär bara av kanten på hans mantel."
+      nb: "I En-Gedis ørken skåner han Saul i hulen og skjærer bare av kanten av hans kappe."
   - place: a0ed7ff # Ziklag
     ref: 1Sam.27.5-1Sam.27.7
     note:
@@ -139,6 +147,7 @@ stops:
       nl: "Achis geeft hem Ziklag, waar hij onder de Filistijnen woont."
       cs: "Achiš mu dává Siklag, kde žije mezi Pelištejci."
       sv: "Akish ger honom Siklag, där han bor bland filistéerna."
+      nb: "Akisj gir ham Siklag, hvor han bor blant filisterne."
   - place: acf57c5 # Mount Gilboa
     ref: 1Sam.31.1-1Sam.31.6
     note:
@@ -154,6 +163,7 @@ stops:
       nl: "Op de berg Gilboa vallen Saul en zijn drie zonen in de strijd met de Filistijnen."
       cs: "Na hoře Gilboa padá v boji s Pelištejci Saul a jeho tři synové."
       sv: "På berget Gilboa faller Saul och hans tre söner i strid mot filistéerna."
+      nb: "På Gilboa-fjellet faller Saul og hans tre sønner i kamp med filisterne."
   - place: a85151a # Hebron
     ref: 2Sam.2.1-2Sam.2.4
     note:
@@ -169,6 +179,7 @@ stops:
       nl: "Te Hebron zalven de mannen van Juda David tot koning over het huis van Juda."
       cs: "V Hebronu pomazávají judští muži Davida za krále nad domem Judovým."
       sv: "I Hebron smörjer Judas män David till kung över Judas hus."
+      nb: "I Hebron salver mennene fra Juda David til konge over Judas hus."
   - place: a15257a # Jerusalem
     ref: 2Sam.5.6-2Sam.5.9
     note:
@@ -184,6 +195,7 @@ stops:
       nl: "Hij neemt de burcht Sion in en noemt die de Stad van David."
       cs: "Dobývá pevnost Sijón a nazývá ji Město Davidovo."
       sv: "Han intar fästningen Sion och kallar den Davids stad."
+      nb: "Han inntar Sions borg og kaller den Davidsbyen."
   - place: ae5bfe9 # Mahanaim
     ref: 2Sam.17.24-2Sam.17.29
     note:
@@ -199,6 +211,7 @@ stops:
       nl: "Op de vlucht voor Absalom steekt hij de Jordaan over naar Machanaïm."
       cs: "Prchá před Abšalomem a přechází Jordán do Machanajimu."
       sv: "På flykt undan Absalom går han över Jordan till Mahanajim."
+      nb: "På flukt fra Absalom går han over Jordan til Mahanajim."
   - place: a15257a # Jerusalem
     ref: 1Kgs.2.10-1Kgs.2.11
     year: "970 BC"
@@ -215,3 +228,4 @@ stops:
       nl: "David sterft en wordt begraven in de Stad van David, na veertig jaar als koning: zeven in Hebron, drieëndertig in Jeruzalem."
       cs: "David umírá a je pohřben ve Městě Davidově po čtyřiceti letech kralování: sedmi v Hebronu a třiatřiceti v Jeruzalémě."
       sv: "David dör och begravs i Davids stad, efter fyrtio år som kung: sju i Hebron, trettiotre i Jerusalem."
+      nb: "David dør og blir gravlagt i Davidsbyen etter førti år som konge: sju i Hebron, tre og tretti i Jerusalem."

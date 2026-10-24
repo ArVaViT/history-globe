@@ -12,6 +12,7 @@ question:
   cs: "Kde ležela země Úc?"
   nl: "Waar lag het land Uz?"
   sv: "Var låg landet Us?"
+  nb: "Hvor lå landet Us?"
 answer:
   en:
     - "The land of Uz, Job's home, is not located by the Bible, and two regions compete: Edom and the desert south-east of the Dead Sea, where the map point stands, about 120 km from Jerusalem in a straight line, and the Hauran south of Damascus, on the edge of the Syrian desert, where the tomb of Job was shown in antiquity."
@@ -61,6 +62,10 @@ answer:
     - "Landet Us, Jobs hemland, lokaliseras inte av Bibeln, och två regioner tävlar: Edom och öknen sydost om Döda havet, där kartpunkten står, omkring 120 km från Jerusalem i fågelvägen, och Hauran söder om Damaskus, i utkanten av den syriska öknen, där Jobs grav visades i antiken."
     - "Boken inleds: ”I Us’ land levde en man som hette Job.” Argumentet för Edom framförs av Klagovisorna, som vänder sig till ”du dotter Edom, du som bor i Us’ land”, av Us, som är sonson till horiten Seir i 1 Mos 36, och av Jobs vän Elifas, som kommer från Teman, ett distrikt i Edom. Argumentet för norr framförs av Us, son till Aram i 1 Mos 10 och brorson till Abraham i Nachors släkt i 1 Mos 22, som båda pekar på det arameiska landet; Josefus säger att Us grundade Trachonitis och Damaskus."
     - "Jeremia förtecknar ”alla konungar i Us’ land” mellan Egypten och filistéerna, vilket hjälper föga. Plundrarna i Jobs berättelse, sabéer och kaldéer, pekar mot Arabien och Mesopotamien och kunde nå vilken som helst av regionerna. I slutet av 300-talet besökte pilgrimen Egeria Jobs grav vid Karneas i Hauran, vanligen förlagd till Sheikh Saad, där en helgedom för Job fortfarande står. Kartan visar Edom, efter Klagovisorna, och förtecknar den andra läsningen på platskortet; själva Jobs bok anger ingen datering."
+  nb:
+    - "Landet Us, Jobs hjem, lokaliseres ikke av Bibelen, og to regioner konkurrerer: Edom og ørkenen sørøst for Dødehavet, der kartpunktet står, omtrent 120 km fra Jerusalem i luftlinje, og Havran sør for Damaskus, i utkanten av den syriske ørkenen, der Jobs grav ble vist i antikken."
+    - "Boken åpner: «I landet Us var det en mann som hette Job.» Argumentet for Edom føres av Klagesangene, som taler til «Edoms datter, du som bor i landet Us», av Us som er et barnebarn av Se’ir horitten i 1 Mos 36, og av Jobs venn Elifas, som kommer fra Teman, et distrikt i Edom. Argumentet for nord føres av Us som er en sønn av Aram i 1 Mos 10 og en nevø av Abraham i Nahors slekt i 1 Mos 22, begge peker mot det arameiske landet; Josefus sier at Us grunnla Trakonitis og Damaskus."
+    - "Jeremia oppregner «alle kongene i landet Us» mellom Egypt og filistrene, noe som hjelper lite. Røverne i Jobs fortelling, sabeerne og kaldeerne, peker mot Arabia og Mesopotamia og kunne nå begge regioner. Sent på 300-tallet besøkte pilegrimen Egeria Jobs grav ved Karnaim i Havran, vanligvis plassert ved Sheikh Saad, der en Job-helligdom fortsatt står. Kartet viser Edom, etter Klagesangene, og oppfører den andre lesningen på stedskortet; Jobs bok selv oppgir ingen datering."
 map:
   place: a324c4d
   ref: Job.1.1

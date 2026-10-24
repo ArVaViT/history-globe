@@ -12,6 +12,7 @@ question:
   cs: "Kde ležely Emauzy?"
   nl: "Waar lag Emmaüs?"
   sv: "Var låg Emmaus?"
+  nb: "Hvor lå Emmaus?"
 answer:
   en:
     - 'The site of Emmaus is disputed. Luke places it "about threescore furlongs" (sixty stadia, about 11 km) from Jerusalem, and four places are most often named: Emmaus-Nicopolis (Imwas) near Latrun, Abu Ghosh, el-Qubeibeh and Motza (Qalunya), where the map point stands.'
@@ -61,6 +62,10 @@ answer:
     - "Platsen för Emmaus är omstridd. Lukas placerar den ”sextio stadiers väg från Jerusalem” (sextio stadier, omkring 11 km), och fyra platser nämns oftast: Emmaus-Nikopolis (Imwas) nära Latrun, Abu Ghosh, el-Qubeibeh och Motza (Qalunya), där kartpunkten står."
     - "De flesta handskrifter av Lukas ger sextio stadier; några, bland dem Codex Sinaiticus, ger 160, omkring 30 km. Emmaus-Nikopolis, omkring 25 km väster om Jerusalem i fågelvägen, var Emmaus under mackabeerkrigen och de romerska krigen och den gamla kyrkans Emmaus: Eusebios höll det för Kleopas hemort, och resterna av en bysantinsk kyrka står kvar där, men det passar bara med den längre läsarten. Abu Ghosh, omkring 12 km västerut på vägen mot kusten, ansågs vara Emmaus från 1100-talet, och el-Qubeibeh, omkring 12 km nordväst, från senare delen av medeltiden."
     - "Motza, väster om Jerusalem, ligger omkring 8 km bort längs den romerska vägen på kartan. Josefus säger att Vespasianus efter kriget lät bosätta 800 veteraner på en plats som hette Ammaus, trettio stadier från Jerusalem enligt standardtexten (några handskrifter har sextio); många identifierar den med Motza, Mosa i Josuas lista, vars senare namn Qalunya tros påminna om latinets colonia. Kartpunkten står vid Motza, och platskortet förtecknar de andra platserna; ingen av dem kan sägas vara säker."
+  nb:
+    - "Hvor Emmaus lå, er omstridt. Lukas plasserer byen «seksti stadier fra Jerusalem» (omtrent 11 km), og fire steder nevnes oftest: Emmaus-Nikopolis (Imwas) ved Latrun, Abu Ghosh, el-Qubeibeh og Motza (Qalunya), der kartpunktet står."
+    - "De fleste håndskrifter av Lukas har seksti stadier; noen, blant dem Codex Sinaiticus, har 160, omtrent 30 km. Emmaus-Nikopolis, omtrent 25 km vest for Jerusalem i luftlinje, var Emmaus under makkabeerkrigene og de romerske krigene og Emmaus i oldkirken: Eusebius mente det var Kleopas’ hjemsted, og restene av en bysantinsk kirke står der ennå, men stedet passer bare med den lengre lesemåten. Abu Ghosh, omtrent 12 km mot vest på veien til kysten, ble regnet som Emmaus fra 1100-tallet, og el-Qubeibeh, omtrent 12 km mot nordvest, fra senmiddelalderen."
+    - "Motza, vest for Jerusalem, ligger omtrent 8 km unna langs den romerske veien på kartet. Josefus sier at Vespasian etter krigen bosatte 800 veteraner på et sted som het Ammaus, tretti stadier fra Jerusalem i standardteksten (noen håndskrifter har seksti); mange identifiserer det med Motza, Mosa i Josvas liste, hvis senere navn Qalunya antas å minne om det latinske colonia. Kartpunktet står ved Motza, og stedskortet oppfører de andre stedene; ingen av dem kan kalles sikker."
 map:
   place: ae7274b
   year: "AD 30"

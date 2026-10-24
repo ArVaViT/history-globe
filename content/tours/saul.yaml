@@ -17,6 +17,7 @@ title:
   nl: "De bekering van Saulus"
   cs: "Obrácení Saulovo"
   sv: "Sauls omvändelse"
+  nb: "Sauls omvendelse"
 year: "AD 34"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -36,6 +37,7 @@ stops:
       nl: "Saulus wordt geboren in Tarsus in Cilicië en in Jeruzalem opgevoed aan de voeten van Gamaliël."
       cs: "Saul se rodí v Tarsu v Kilikii a je vychován v Jeruzalémě u nohou Gamalielových."
       sv: "Saul föds i Tarsos i Kilikien och fostras i Jerusalem vid Gamaliels fötter."
+      nb: "Saul blir født i Tarsos i Kilikia og vokser opp i Jerusalem ved Gamaliels føtter."
   - place: a15257a # Jerusalem
     ref: Acts.7.58-Acts.8.3
     note:
@@ -51,6 +53,7 @@ stops:
       nl: "De getuigen die Stefanus stenigen, leggen hun kleren neer aan de voeten van Saulus; hij keurt het goed en vervolgt de gemeente."
       cs: "Svědkové, kteří kamenují Štěpána, kladou svá roucha k nohám Saulovým; on s tím souhlasí a pronásleduje církev."
       sv: "Vittnena som stenar Stefanos lägger sina kläder vid Sauls fötter; han ger sitt bifall och förföljer församlingen."
+      nb: "Vitnene som steiner Stefanus, legger sine klær ved Sauls føtter; han samtykker og forfølger menigheten."
   - place: a69c1d4 # Damascus
     ref: Acts.9.1-Acts.9.20
     note:
@@ -66,6 +69,7 @@ stops:
       nl: "Bij Damascus een licht uit de hemel; in de straat die de Rechte heet, legt Ananias hem de handen op, en hij wordt gedoopt."
       cs: "U Damašku světlo z nebe; v ulici zvané Přímá vkládá na něho Ananiáš ruce a on je pokřtěn."
       sv: "Nära Damaskus ett ljus från himmelen; i gatan som kallas Raka gatan lägger Ananias händerna på honom, och han döps."
+      nb: "Nær Damaskus kommer et lys fra himmelen; i gaten som kalles Den rette, legger Ananias hendene på ham, og han blir døpt."
   - place: a0f4ea8 # Arabia
     ref: Gal.1.17
     note:
@@ -81,6 +85,7 @@ stops:
       nl: "Hij gaat weg naar Arabië en keert dan terug naar Damascus."
       cs: "Odchází do Arábie a potom se vrací do Damašku."
       sv: "Han drar bort till Arabien och återvänder sedan till Damaskus."
+      nb: "Han drar bort til Arabia og vender så tilbake til Damaskus."
   - place: a69c1d4 # Damascus
     ref: Acts.9.22-Acts.9.25
     note:
@@ -96,6 +101,7 @@ stops:
       nl: "Als de Joden samenspannen om hem te doden, laten de discipelen hem in een mand over de muur neer."
       cs: "Když Židé kují úklady, aby ho zabili, spouštějí ho učedníci v koši přes hradbu."
       sv: "När judarna sammansvär sig för att döda honom firar lärjungarna ner honom över muren i en korg."
+      nb: "Da jødene legger planer om å drepe ham, firer disiplene ham ned over muren i en kurv."
   - place: a15257a # Jerusalem
     ref: Acts.9.26-Acts.9.29
     note:
@@ -111,6 +117,7 @@ stops:
       nl: "In Jeruzalem zijn de discipelen bang voor hem tot Barnabas hem bij de apostelen brengt."
       cs: "V Jeruzalémě se ho učedníci bojí, dokud ho Barnabáš nepřivede k apoštolům."
       sv: "I Jerusalem är lärjungarna rädda för honom tills Barnabas för honom till apostlarna."
+      nb: "I Jerusalem er disiplene redde for ham, til Barnabas fører ham til apostlene."
   - place: a58735e # Caesarea
     ref: Acts.9.30
     note:
@@ -126,6 +133,7 @@ stops:
       nl: "De broeders brengen hem af naar Caesarea en sturen hem weg naar Tarsus."
       cs: "Bratří ho vedou dolů do Cesareje a posílají ho do Tarsu."
       sv: "Bröderna för honom ner till Caesarea och skickar iväg honom till Tarsos."
+      nb: "Brødrene fører ham ned til Cæsarea og sender ham av sted til Tarsos."
   - place: a666ea0 # Tarsus
     ref: Acts.11.25
     note:
@@ -141,6 +149,7 @@ stops:
       nl: "Jaren later gaat Barnabas naar Tarsus om Saulus te zoeken."
       cs: "O léta později jde Barnabáš do Tarsu hledat Saula."
       sv: "År senare reser Barnabas till Tarsos för att söka upp Saul."
+      nb: "År senere drar Barnabas til Tarsos for å lete etter Saul."
   - place: ae41ab4 # Antioch
     ref: Acts.11.26
     note:
@@ -156,3 +165,4 @@ stops:
       nl: "Een heel jaar onderwijzen zij in Antiochië, waar de discipelen voor het eerst Christenen worden genoemd."
       cs: "Celý rok učí v Antiochii, kde jsou učedníci poprvé nazváni křesťany."
       sv: "Ett helt år undervisar de i Antiochia, där lärjungarna först kallas kristna."
+      nb: "Et helt år underviser de i Antiokia, hvor disiplene først blir kalt kristne."

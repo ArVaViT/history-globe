@@ -18,6 +18,7 @@ title:
   nl: "De zes vrijsteden"
   cs: "Šest útočištných měst"
   sv: "De sex tillflyktsstäderna"
+  nb: "De seks tilfluktsbyene"
 year: "1406 BC"
 # Where the cities were, not a journey: no time on foot.
 walked: false
@@ -38,6 +39,7 @@ stops:
       nl: "Mozes zondert drie steden ten oosten van de Jordaan af, “Opdat daarheen vlood de doodslager, die zijn naaste onwetende doodslaat”: eerst Bezer in de woestijn, in het vlakke land, van Ruben."
       cs: "Mojžíš odděluje tři města na východ od Jordánu, „aby utekl do nich vražedlník, kterýž by zabil bližního svého nechtě“: nejprve Beser na poušti, na rovině, v území Rúbenově."
       sv: "Mose avskiljer tre städer öster om Jordan, ”till vilka en dråpare skulle kunna fly, om han hade dräpt någon utan vett och vilja”: först Beser i öknen, på slättlandet, för Rubens stam."
+      nb: "Moses utskiller tre byer øst for Jordan, «en manndraper som hadde slått sin næste ihjel av vanvare og uten før å ha båret hat til ham, kunde fly dit»: først Beser i ørkenen, på sletten, for Ruben."
   - place: a95147f # Ramoth
     ref: Deut.4.43
     note:
@@ -53,6 +55,7 @@ stops:
       nl: "Ramot in Gilead, van de Gadieten, waar Achab zou vallen."
       cs: "Rámot v Gileadu, v území Gádově: Rámot v Gileadu, kde padne Achab."
       sv: "Ramot i Gilead, för gaditerna: Ramot i Gilead, där Achav skulle falla."
+      nb: "Ramot i Gilead, for gadittene: Ramot-Gilead, hvor Akab skulle falle."
   - place: abb5c1e # Golan
     ref: Deut.4.43
     note:
@@ -68,6 +71,7 @@ stops:
       nl: "Golan in Basan, van Manasse, de noordelijkste van de drie."
       cs: "Golán v Bášanu, v území Manasesově, nejsevernější ze tří."
       sv: "Golan i Bashan, för Manasse stam, den nordligaste av de tre."
+      nb: "Golan i Basan, for Manasse, den nordligste av de tre."
   - place: a662eed # Kedesh
     ref: Josh.20.1-Josh.20.7
     note:
@@ -83,6 +87,7 @@ stops:
       nl: "Na de verovering krijgt het land ten westen van de Jordaan zijn drie, “Dat daarhenen vliede de doodslager, die een ziel door dwaling, niet met wetenschap, verslaat”: eerst Kedes in Galilea in het gebergte Naftali."
       cs: "Po dobytí země dostává tři města i země západně od Jordánu, „aby tam utekl vražedlník, kterýž by zabil člověka nechtě a z nevědomí“: nejprve Kedeš v Galileji na pohoří Neftalí."
       sv: "Efter erövringen får landet väster om Jordan sina tre, ”de städer till vilka en dråpare som ouppsåtligen, utan vett och vilja, har dödat någon må kunna fly”: först Kedesh i Galileen, i Naftalis bergsbygd."
+      nb: "Etter erobringen får landet vest for Jordan sine tre, «en manndraper som av vanvare, uten å ville det, slår nogen ihjel, kan fly dit»: først Kedesj i Galilea i Naftali-fjellene."
   - place: adf74d4 # Shechem
     ref: Josh.20.7
     note:
@@ -98,6 +103,7 @@ stops:
       nl: "Sichem in het Bergland van Efraïm, tussen Ebal en Gerizim, waar Jozua het verbond zal vernieuwen."
       cs: "Šekem na pohoří Efrajim, mezi Ébalem a Gerizimem, kde Jozue obnoví smlouvu."
       sv: "Shekem i Efraims bergsbygd, mellan Ebal och Gerizim, där Josua ska förnya förbundet."
+      nb: "Sikem i Efraims fjell, mellom Ebal og Gerisim, hvor Josva skal fornye pakten."
   - place: a85151a # Hebron
     ref: Josh.20.7-Josh.20.9
     note:
@@ -113,3 +119,4 @@ stops:
       nl: "Kirjat-Arba, dat is Hebron, in het gebergte van Juda. De steden zijn “voor al de kinderen Israëls, en voor den vreemdeling, die in het midden van henlieden verkeert”, totdat de doodslager voor de vergadering staat."
       cs: "Kirjat-arba, to jest Hebron, na pohoří Juda. Města jsou „všechněm synům Izraelským, i příchozímu, kterýž pohostinu jest mezi nimi“, dokud vrah nestane před shromážděním."
       sv: "Kirjat-Arba, det vill säga Hebron, i Judas bergsbygd. Städerna gäller ”för alla Israels barn, och för de främlingar som bodde ibland dem”, tills dråparen står inför menigheten."
+      nb: "Kirjat-Arba, det er Hebron, i Judas fjell. Byene er «for alle Israels barn og for de fremmede som opholder sig blandt dem», til manndraperen står frem for menigheten."

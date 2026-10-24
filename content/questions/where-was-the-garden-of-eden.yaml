@@ -12,6 +12,7 @@ question:
   cs: "Kde byla zahrada Eden?"
   nl: "Waar lag de hof van Eden?"
   sv: "Var låg Edens lustgård?"
+  nb: "Hvor lå Edens hage?"
 answer:
   en:
     - "Nobody knows, and the map does not place it. Genesis gives only one clue: a river flowed out of Eden and divided into four, the Pishon, the Gihon, the Hiddekel, which is the Tigris, and the Euphrates. Two of the four are real rivers of Mesopotamia; the other two have never been identified with certainty, so every proposal rests on how they are read."
@@ -61,6 +62,10 @@ answer:
     - "Ingen vet, och kartan placerar den inte. Första Moseboken ger bara en ledtråd: en flod gick ut från Eden och delade sig i fyra, Pishon, Gihon, Hiddekel, som är Tigris, och Eufrat. Två av de fyra är verkliga floder i Mesopotamien; de andra två har aldrig kunnat identifieras med säkerhet, så varje förslag vilar på hur de läses."
     - "Första Moseboken säger: ”Och HERREN Gud planterade en lustgård i Eden österut”, och: ”Och från Eden gick en flod ut, som vattnade lustgården; sedan delade den sig i fyra grenar.” Pishon ”flyter omkring hela landet Havila, där guld finnes”, och Gihon ”flyter omkring hela landet Kus”, på hebreiska Kush. Josefus tog Pishon för Ganges och Gihon för Nilen, och det gjorde många efter honom; andra har sökt Havila och Kush i Arabien eller i Babylonien, vilket ger mycket olika kartor."
     - "Två regioner föreslås oftast. Den ena är Persiska vikens innersta del, där Tigris och Eufrat möts: här läste E. A. Speiser de fyra grenarna som floder som flyter samman till en, och senare författare tog Pishon för en uttorkad flodbädd som löper från Hijaz över Arabien till Kuwait och Gihon för Karun från Iran. Den andra är Armeniens högland i östra Turkiet, där Tigris och Eufrat har sina källor och där de fyra grenarna läses som källflöden. Många forskare menar att berättelsen beskriver en helig geografi som aldrig var avsedd att kartläggas, och kartan förtecknar Pishon och Gihon bland sina omstridda platser."
+  nb:
+    - "Ingen vet det, og kartet plasserer den ikke. Første Mosebok gir bare ett spor: en elv rant ut av Eden og delte seg i fire, Pisjon, Gihon, Hiddekel, som er Tigris, og Eufrat. To av de fire er virkelige elver i Mesopotamia; de to andre er aldri blitt identifisert med sikkerhet, så hvert forslag hviler på hvordan de leses."
+    - "Første Mosebok sier: «Og Gud Herren plantet en have i Eden, i Østen», og: «Og det gikk en elv ut fra Eden og vannet haven; og siden delte den sig i fire strømmer.» Pisjon «løper omkring hele landet Havila, der hvor det er gull», og Gihon «løper omkring hele landet Kus», som på hebraisk heter Kusj og i King James-oversettelsen Etiopia. Josefus tok Pisjon for Ganges og Gihon for Nilen, og det gjorde mange etter ham; andre har lett etter Havila og Kusj i Arabia eller Babylonia, noe som gir svært ulike kart."
+    - "To områder foreslås oftest. Det ene er den innerste delen av Persiagulfen, der Tigris og Eufrat møtes: her leste E. A. Speiser de fire strømmene som elver som løper sammen til én, og senere forfattere tok Pisjon for et uttørket elveleie fra Hijaz tvers over Arabia til Kuwait og Gihon for Karun fra Iran. Det andre er høylandet i Armenia i Øst-Tyrkia, der Tigris og Eufrat har sine kilder, og de fire strømmene leses som kilder. Mange forskere mener at fortellingen beskriver en hellig geografi som aldri var ment å måles opp, og kartet oppfører Pisjon og Gihon blant sine omstridte steder."
 map:
   ref: Gen.2.10
 scripture: [Gen.2.8-Gen.2.14, Gen.3.23-Gen.3.24, Ezek.28.13, Ezek.31.8-Ezek.31.9]

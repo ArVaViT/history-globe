@@ -1,0 +1,185 @@
+---
+title: Data og metode
+description: Hvor hvert sted, hver grense, dato og person på History Globe kommer fra, hvordan det er kontrollert, og hva som fortsatt er usikkert.
+---
+
+<p class="lede">
+  Globusen er bygd på åpne vitenskapelige datasett, rettet og utvidet for hånd og kontrollert
+  automatisk ved hver bygging. Denne siden forklarer hvor hvert lag kommer fra, hva vi har endret og
+  hva vi ikke vet.
+</p>
+
+<h2>Bibelens steder</h2>
+<p>
+  De {{places}} stedene og versene deres kommer fra
+  <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
+    >Bible Geocoding Data fra OpenBible.info</a
+  >, som veier mot hverandre identifikasjonene som er foreslått i litteraturen for hvert sted. Vi
+  beholder dens foretrukne identifikasjon og dens anslag over hvor sannsynlig hvert kandidatsted er.
+</p>
+<ul>
+  <li>
+    <b>Sikkerhet i ord.</b> Når ingen alvorlig alternativ lokalisering er foreslått, viser
+    OpenBibles poengsum (0–1000) hvor sikker identifikasjonen er: ved 800 eller mer regnes den som
+    avklart, og kortet sier ingenting; under det står det på kortet <i>mest sannsynlig</i> (600
+    eller mer) eller <i>usikkert</i>. Et sted er <i>omstridt</i> når den nest beste kandidaten har
+    en betydelig andel; da vises alle kandidatstedene med andelene sine.
+  </li>
+  <li>
+    <b>Ingen koordinater fra OpenStreetMap eller Google.</b> OpenBible registrerer hvor hver
+    koordinat kommer fra. Punkter hentet fra OpenStreetMap eller Google erstattes med koordinater
+    fra Wikidata (CC0), eller stedet utelates ({{excluded}} steder). En egen kontroll stopper
+    byggingen hvis et slikt punkt er igjen.
+  </li>
+  <li>
+    <b>Navn fra teksten.</b> De russiske navnene følger synodaloversettelsen fra 1876: for nesten
+    hvert navn beholder byggingen et vers der det forekommer, og kontrollerer at navnet står i det
+    verset.
+  </li>
+</ul>
+
+<h2>Når stedene fantes</h2>
+<p>
+  En by på kartet tegnes fullt ut bare i årene den fantes. For {{life}} steder i Bibelen er årene
+  for grunnleggelse, ødeleggelse og forlatelse registrert for hånd, hver med sine kilder (antikke
+  forfattere, krøniker, innskrifter, utgravingsrapporter). En omstridt dato utelates i stedet for å
+  gjettes.
+</p>
+<p>
+  De {{ancient}} byene i den antikke verden som Bibelen ikke nevner — hovedsteder, havner og
+  helligdommer som Ugarit, Hattusa, Mari eller Delfi — er valgt ut og datert én for én, hver
+  kontrollert mot to kilder, med en identifikator i <a href="https://pleiades.stoa.org">Pleiades</a>
+  eller Wikidata og et punkt på det antikke stedet i stedet for på dagens by.
+</p>
+
+<h2>Grenser</h2>
+<p>
+  Statene og grensene deres år for år kommer fra
+  <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatria</a> (Seshat Global History Databank,
+  v0.2.0), et åpent datasett over verdens politiske enheter fra 3400 f.Kr. og framover. Det er
+  tegnet etter historiske atlas og er omtrentlig, særlig før det første årtusen f.Kr.
+</p>
+<p>
+  For Bibelens land retter vi det der kildene er uenige med det: for tiden {{overrides}} rettelser,
+  hver med begrunnelse og kilder. Juda blir stående på kartet til 586 f.Kr., Israel begynner med
+  Davids regjeringstid i 1010 f.Kr. i stedet for 1000 f.Kr., Filistea holdes til kystsletten med de
+  fem byene sine, og et dynasti tar slutt når det mister sitt siste maktsete. Levanten og Egypt,
+  Mesopotamia, Anatolia og Iran, den gresk-romerske verdenen i Det nye testamentet og Midtøsten fram
+  til 1300 e.Kr. er gjennomgått år for år, blant annet Assyrias tilbakegang og gjenreisning på
+  700-tallet f.Kr., Babylon under Merodak-Baladan, Pergamon som ble overlatt til Roma i 133 f.Kr.,
+  Makedonia etter Pydna og Thrakia, som ble innlemmet i 46 e.Kr. Hver rettelsesrunde prøves først
+  mot formene og kontrolleres deretter på nytt, uavhengig, av en annen gjennomleser mot kildene.
+</p>
+<p>
+  Et kongerike som betalte skatt til et imperium eller styrte som dets lydstat, tegnes i en lysere
+  nyanse av imperiets farge, med «under Assyria» eller «under Roma» under navnet: Juda under
+  Assyria, Egypt og Babylon; Israel og Filistea under Assyria; Judea under hasmoneerne og herodes’
+  slekt under Roma (og i tre år Parthia); og nabateerne og Kommagene under Roma. Disse {{vassals}}
+  periodene er utarbeidet etter de assyriske kongeinnskriftene, de babylonske krønikene, Bibelen,
+  Josefus og moderne historieverk, og kontrollert på nytt i en egen gjennomgang; et år som bare er
+  kjent på et tiår nær, er merket «ca.» i dataene. Etter at Samaria falt i 722 f.Kr., tegnes Israels
+  land som den assyriske provinsen det ble.
+</p>
+
+<h2>Personer</h2>
+<p>
+  De {{people}} personene i Bibelen og slektsbåndene deres kommer fra TIPNR i STEP Bible (Tyndale
+  House, Cambridge). Vi tok ikke båndene for gitt:
+</p>
+<ul>
+  <li>
+    slektsbåndene til de 1 200 personene teksten nevner oftest, og slektsregistrene i 1. Krønikebok,
+    ble lest mot versene; 153 bånd som teksten ikke oppgir, ble fjernet — Jesu brødre som sønner av
+    Josef og Maria, Jesabel som mor til Ahasja — og de manglende leddene i Jesu slektsregister ble
+    føyd til etter teksten;
+  </li>
+  <li>
+    alle 1 136 koblinger mellom en person og et sted der vedkommende har en sentral eller
+    understøttende rolle, ble lest vers for vers; 344 ble fjernet (Moses «i Kanaan», Abraham «i
+    Sodoma», en sønns steder gitt til faren) og 94 fikk et bedre vers;
+  </li>
+  <li>
+    navnebrødre skilles slik teksten skiller dem: «Døperen Johannes», «Johannes, Sebedeus’ sønn»,
+    «Ahasja, kongen av Juda».
+  </li>
+</ul>
+
+<h2>Hendelser, ruter og artikler</h2>
+<p>
+  De {{events}} hendelsene, {{tours}} rutene og {{articles}} artiklene er utarbeidet med hjelp av KI
+  under forfatterens ledelse og deretter kontrollert i egne gjennomganger mot kildene: bibelteksten
+  for det den sier, antikke forfattere, krøniker og innskrifter for datoer, og den faglige
+  litteraturen for steder. Hver påstand oppgir kilden sin. Sitater kommer bare fra
+  synodaloversettelsen og King James Version. Ingen rute har kommet gjennom første gjennomgang
+  uendret; hver ble rettet og kontrollert på nytt. Disse gjennomgangene gjøres av KI som arbeider ut
+  fra kildene, ikke av forskere; en artikkel som en historiker har lest, bærer historikerens navn.
+</p>
+<p>
+  Avstanden til et stopp oppgis i luftlinje. Fra 312 f.Kr., da de romerske veiene begynner, oppgis
+  også veien langs Itiner-e-veiene ved siden av: den korteste gjennom nettverket, med mindre den er
+  mer enn to og en halv gang luftlinjen; en etappe til sjøs regnes ikke som vei. Tiden til fots er
+  regnet med 30 km om dagen, det vanlige anslaget for en dagsreise i antikken, uten tillegg for vær,
+  hvile eller bører. Til sjøs antas ingen fart: en sjøreise oppgir dager bare der teksten gjør det
+  (Apg 20,6, «på fem dager»), med det verset, og så omtrentlig som teksten sier det. Der teksten
+  krysser hele regioner uten å beskrive veien (Apg 20,1–3, Efesos gjennom Makedonia og Hellas til
+  Filippi), sier etappen fra om det og oppgir ingen tid. Relieffet på en etappe er lest ut fra
+  høydedataene til Copernicus (via Mapterhorn) langs den samme veien, eller uten vei langs
+  luftlinjen; teksten under profilen sier hvilket.
+</p>
+
+<p>
+  Slagene og beleiringene ({{battles}}) er dem Bibelen forteller om, og noen få utenfor den som
+  avgjorde Israels skjebne. Hvert ligger på stedet der det ble utkjempet og vises på kartet i sine
+  år. Bibelens er datert slik rutene daterer de samme fortellingene; de andre har ikke noe vers, men
+  en antikk eller faglig kilde. En ny, uavhengig gjennomgang kontrollerte utkastet mot
+  synodalteksten og King James Version: av 58 oppføringer ble 16 rettet, og én ble fjernet, fordi
+  kartet ikke har noe punkt for stedet.
+</p>
+
+<p>
+  Hendelsene og slagene fra makkabeertiden viser til 1–2 Makkabeerbok, som synodalbibelen har og den
+  protestantiske kanon ikke har: hvert slikt sitat er merket «deuterokanonisk», og lenken åpner en
+  tekst som har boken.
+</p>
+
+<h2>Kontroller ved hver bygging</h2>
+<p>Ingenting publiseres med mindre alle kontrollene består:</p>
+<ul>
+  <li>
+    hver kilde har en tillatt lisens (ingen share-alike, ingen data til ikke-kommersiell bruk);
+  </li>
+  <li>hver henvisning peker på en faktisk bok, et faktisk kapittel og vers;</li>
+  <li>hvert russisk navn finnes i verset som er oppgitt for det;</li>
+  <li>
+    hvert stopp på en rute er nevnt i teksten sin, eller unntaket er dokumentert med begrunnelse;
+  </li>
+  <li>hver rettelse av grensene og hver datering av en by har en kilde;</li>
+  <li>innholdsskjemaene er strenge: et ukjent eller feilstavet felt stopper byggingen.</li>
+</ul>
+
+<h2>Hva som er usikkert</h2>
+<ul>
+  <li>
+    Datoer før det første årtusen f.Kr. er omtrentlige, og noen er omstridt; kartet merker dem
+    «ca.».
+  </li>
+  <li>OpenBibles andeler mellom kandidatsteder er et anslag, ikke en faglig konsensus.</li>
+  <li>
+    Antikke grenser er tegnet etter moderne atlas og forenkler en virkelighet med skiftende
+    kontroll.
+  </li>
+  <li>
+    Mange mindre steder har fortsatt ingen registrerte år; de tegnes som om de fantes hele tiden
+    (eller, for steder som bare nevnes i Det nye testamentet, fra den nytestamentlige tiden og
+    framover).
+  </li>
+</ul>
+
+<h2 id="report">Meld fra om en feil</h2>
+<p>
+  Hvert stedskort har en lenke <i>Funnet en feil?</i> Den åpner en sak i det offentlige arkivet med
+  stedet allerede utfylt; du trenger en GitHub-konto. Du kan også åpne en direkte:
+  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+    >github.com/ArVaViT/history-globe/issues</a
+  >.
+</p>

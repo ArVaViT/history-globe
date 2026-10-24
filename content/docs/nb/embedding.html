@@ -1,0 +1,330 @@
+---
+title: Innbygging
+description: Sett globusen inn på ditt eget nettsted med én linje — kartet over et kapittel, et sted, et år eller en rute — og styr den fra siden din.
+---
+
+<p class="lede">
+  Globusen kjører inne i en hvilken som helst side som en <code>iframe</code>. Én linje viser kartet
+  over et kapittel ved siden av teksten på siden din; noen få meldinger holder de to i takt.
+</p>
+
+<h2>Kom raskt i gang</h2>
+<pre><code>&lt;iframe
+  src="{{site}}/embed/v1?ref=Acts.16&amp;locale=nb"
+  title="Map of Acts 16"
+  style="width: 100%; height: 480px; border: 0; border-radius: 12px"
+  allow="fullscreen"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</code></pre>
+<ul>
+  <li>Kartet fyller rammen og åpner på stedene i Apg 16, i året for hendelsene der.</li>
+  <li>
+    <b>Øverst:</b> kapittelet. Velg det for å liste stedene i den rekkefølgen teksten nevner dem;
+    velg et sted for å åpne kortet.
+  </li>
+  <li><b>Nederst:</b> året. Velg det for å åpne tidsglideren.</li>
+  <li>
+    En lenke åpner den samme visningen i den fulle globusen i en ny fane. Kildene vises på selve
+    kartet, slik datalisensene krever.
+  </li>
+  <li>Rammen fungerer helt ned til bredden på en telefon; en høyde på 480 px er nok.</li>
+</ul>
+
+<h2>Et kapittel eller en tekst</h2>
+<p>
+  <code>ref</code> tar en OSIS-henvisning med engelske bokforkortelser og engelsk versnummerering:
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Verdi</th>
+        <th>Viser</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Acts.16</code></td>
+        <td>et kapittel</td>
+      </tr>
+      <tr>
+        <td><code>Gen.12-Gen.13</code></td>
+        <td>opptil tre kapitler</td>
+      </tr>
+      <tr>
+        <td><code>Acts.16.11-Acts.16.15</code></td>
+        <td>en tekst</td>
+      </tr>
+      <tr>
+        <td><code>Ruth</code></td>
+        <td>en hel bok</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Kartet flytter seg til årstallet for teksten: det registrerte året for kapitlene (kapitler i
+  {{chapter_books}} bøker er datert), ellers året for ruten som dekker den; en hel bok får året for
+  ruten med flest stopp i den. En tekst uten noen av delene beholder kartets nåværende år.
+</p>
+
+<h2>Parametere</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Eksempel</th>
+        <th>Betydning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ref</code></td>
+        <td><code>Acts.16</code></td>
+        <td>kapittel, tekst eller bok (se over)</td>
+      </tr>
+      <tr>
+        <td><code>year</code></td>
+        <td><code>-999</code></td>
+        <td>
+          år, i astronomisk tellemåte: 1 f.Kr. er <code>0</code>, 1000 f.Kr. er <code>-999</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>place</code></td>
+        <td><code>af2161c</code></td>
+        <td>åpne et sted (her Kapernaum); id-ene er fra OpenBible</td>
+      </tr>
+      <tr>
+        <td><code>tour</code></td>
+        <td><code>paul-1</code></td>
+        <td>start en guidet rute</td>
+      </tr>
+      <tr>
+        <td><code>stop</code></td>
+        <td><code>3</code></td>
+        <td>sammen med <code>tour</code>: åpne den ved det stoppet</td>
+      </tr>
+      <tr>
+        <td><code>lesson</code></td>
+        <td><code>a15257a~30.a112427~30</code></td>
+        <td>
+          din egen leksjon, sammen med <code>tour=lesson</code>: sted-id-er i rekkefølge, hver med
+          året stedet skal vises i (<code>~-585</code> for 586 f.Kr.: som for <code>year</code> er 1
+          f.Kr. lik 0); hvert stopp får stedets vers nærmest det året, avstanden, tiden til fots og
+          relieffet. Knappen «Legg til i en leksjon» på et stedskort lager de samme lenkene
+        </td>
+      </tr>
+      <tr>
+        <td><code>title</code></td>
+        <td><code>Paul%20in%20Galatia</code></td>
+        <td>
+          sammen med <code>lesson</code>: navnet på leksjonen, opptil 80 tegn, øverst på ruten og på
+          det utskrevne arket
+        </td>
+      </tr>
+      <tr>
+        <td><code>locale</code></td>
+        <td><code>en</code></td>
+        <td>
+          språk: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
+          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
+          <code>pl</code> eller <code>cs</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>camera</code></td>
+        <td><code>35.2,31.8,7,30,0</code></td>
+        <td>lengdegrad, breddegrad, zoom, helning, retning</td>
+      </tr>
+      <tr>
+        <td><code>hide</code></td>
+        <td><code>relief,ancient</code></td>
+        <td>
+          lag som skal slås av: <code>borders</code>, <code>places</code>, <code>relief</code>,
+          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="note">
+  Den enkleste måten å lage en visning på er å stille den inn på den fulle globusen og kopiere
+  adressen: de samme parameterne virker etter <code>/embed/v1</code>.
+</p>
+
+<h2>Meldinger</h2>
+<p>
+  Globusen og siden din kommuniserer gjennom <code>postMessage</code>. Hver melding er et objekt med
+  <code>type</code> og <code>v: 1</code>. Globusen sender bare det som skjer på kartet, og aldri noe
+  som identifiserer leseren; den tar bare imot meldinger fra siden som har rammen.
+</p>
+<h3>Fra globusen</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Innhold</th>
+        <th>Når</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:ready</code></td>
+        <td><code>{ view }</code></td>
+        <td>kartet er tegnet</td>
+      </tr>
+      <tr>
+        <td><code>hg:view-changed</code></td>
+        <td><code>{ view }</code></td>
+        <td>året, stedet, ruten eller kameraet er endret og har falt til ro</td>
+      </tr>
+      <tr>
+        <td><code>hg:verse-clicked</code></td>
+        <td><code>{ osis }</code></td>
+        <td>leseren klikket på et vers, f.eks. <code>"Acts.16.12"</code></td>
+      </tr>
+      <tr>
+        <td><code>hg:error</code></td>
+        <td><code>{ code, message }</code></td>
+        <td>kartet eller dataene kunne ikke lastes</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <code>view</code> inneholder <code>year</code>, <code>locale</code> og <code>layers</code> og, når
+  de er satt, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> og
+  <code>camera</code>.
+</p>
+<h3>Til globusen</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Innhold</th>
+        <th>Virkning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:set-view</code></td>
+        <td><code>{ view }</code></td>
+        <td>
+          sett året, kapittelet (<code>ref</code>), stedet, lagene eller kameraet; med
+          <code>tour</code> (og <code>stop</code>) starter ruten og de andre feltene ignoreres;
+          språket endres bare med <code>hg:set-locale</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:set-locale</code></td>
+        <td><code>{ locale }</code></td>
+        <td>bytt språk</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Eksempel: kartet følger leseren</h2>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+
+// Når leseren åpner et kapittel, vis det på kartet.
+function showChapter(osis) {
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+}
+
+// Når et vers klikkes på kartet, åpne det i lesevisningen din.
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
+});</code></pre>
+
+<h2 id="places">Steder i en hvilken som helst tekst</h2>
+<p>
+  Én linje til knytter bibelstedene som din egen tekst nevner (en artikkel, en preken, en leseplan),
+  til globusen. Pek på et navn, eller trykk på det på en telefon, så viser et kort hva stedet er,
+  hvor det ligger i dag, hvor mange vers som nevner det og hvor det ligger på kartet; kortet leder
+  videre til globusen.
+</p>
+<figure class="sample">
+  <div class="hgp-demo">
+    <p>
+      Paulus seilte fra Cæsarea til Kypros, forkynte i Efesos og Korint og skrev til Roma. Lenge før
+      det hadde Abraham kommet til Sikem og Hebron; Jesus ble født i Betlehem og vokste opp i
+      Nasaret, og Johannes så synene sine på Patmos.
+    </p>
+  </div>
+  <figcaption>Et levende eksempel: disse navnene er lenket av skriptet på denne siden.</figcaption>
+</figure>
+<pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<p>
+  Adressen har et versjonsnummer, og integritetshashen låser det nøyaktige innholdet: nettleseren
+  kjører skriptet bare hvis det er akkurat den filen. En ny versjon får en ny adresse; de gamle
+  forblir som de er.
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Attributt</th>
+        <th>Hva det gjør</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>data-scope</code></td>
+        <td>hvor det skal letes, som en CSS-velger; hele siden som standard</td>
+      </tr>
+      <tr>
+        <td><code>data-locale</code></td>
+        <td>
+          språket i teksten, ett av nettstedets språk: <code>cs</code>, <code>de</code>,
+          <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
+          <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>uk</code>; som standard
+          <code>lang</code> på siden; alle andre språk faller tilbake til engelsk
+        </td>
+      </tr>
+      <tr>
+        <td><code>data-every</code></td>
+        <td>lenk hver omtale, ikke bare den første av hvert sted</td>
+      </tr>
+      <tr>
+        <td><code>data-theme</code></td>
+        <td>
+          <code>light</code> eller <code>dark</code> for kortet; som standard følger det leserens
+          system
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Bare navn som peker på ett sted, lenkes. Et navn som deles av to steder (Antiokia i Syria og i
+  Pisidia), av et sted og en person (Juda) eller av et sted og et vanlig ord, blir stående som ren
+  tekst, det samme gjelder et navn som Bibelens egne vers for det meste bruker om noe annet
+  («Kadesj» der er Kadesj-Barnea, ikke Kadesj i databasen). Et stedsnavn som også er et fornavn
+  (Jordan, Sharon), blir latt i fred ved siden av et annet ord med stor forbokstav: Jordan Smith er
+  en person, ikke elven. På russisk, ukrainsk, polsk og tsjekkisk finnes navn i bøyde former («в
+  Египте», «w Jerozolimie», «v Jeruzalémě»), og tyske navn også i genitiv («Jerusalems»). Lenker,
+  kode, skjemafelt, knapper og overskrifter blir latt i fred.
+</p>
+<p class="note">
+  Skriptet har ingen avhengigheter og setter ingen informasjonskapsler. Det leser én fil med navn
+  fra globusen (omtrent 20 til 35 KB over nettverket avhengig av språk, pluss 7 KB skript), uten
+  adressen til siden din som referent, og endrer bare navnene det lenker. Det fungerer under en
+  streng Content Security Policy som tillater globusens adresse i <code>script-src</code> og
+  <code>connect-src</code>. For tekst som siden din legger til senere, kall
+  <code>HistoryGlobePlaces.scan(element)</code> når teksten er tegnet: skriptet deler tekstnoder, så
+  på en React- eller Vue-side kjører du det på innhold som rammeverket ikke lenger tegner på nytt.
+</p>
+<script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
+
+<h2>Stabilitet</h2>
+<p>
+  <code>/embed/v1</code> er en kontrakt: innenfor v1 legges det bare til parametere og meldinger,
+  aldri endres eller fjernes noe. En brytende endring kommer som <code>/embed/v2</code>, og v1
+  fortsetter å virke.
+</p>

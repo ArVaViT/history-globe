@@ -18,6 +18,7 @@ title:
   nl: "De jeugd van Jezus, volgens Lukas"
   cs: "Dětství Ježíšovo podle Lukáše"
   sv: "Jesu barndom, enligt Lukas"
+  nb: "Jesu barndom, etter Lukas"
 year: "5 BC"
 people: ["Jesus@Isa.7.14-Rev"]
 approximate: true
@@ -37,6 +38,7 @@ stops:
       nl: "Te Nazareth wordt de engel Gabriël naar Maria gezonden, en zij antwoordt: “Zie, de dienstmaagd des Heeren; mij geschiede naar uw woord.”"
       cs: "V Nazaretu je k Marii poslán anděl Gabriel a ona odpovídá: „Aj, služebnice Páně, staniž mi se podle slova tvého.“"
       sv: "I Nasaret sänds ängeln Gabriel till Maria, och hon svarar: ”Se, jag är Herrens tjänarinna; ske mig såsom du har sagt.”"
+      nb: "I Nasaret blir engelen Gabriel sendt til Maria, og hun svarer: «Se, jeg er Herrens tjenerinne; mig skje efter ditt ord!»"
   - place: a112427 # Bethlehem
     ref: Luke.2.4-Luke.2.20
     note:
@@ -52,6 +54,7 @@ stops:
       nl: "In Bethlehem, de stad van David, legt Maria haar eerstgeborene in een kribbe; aan herders in het veld looft een menigte van het hemelse heir God: “Ere zij God in de hoogste hemelen, en vrede op aarde, in de mensen een welbehagen.”"
       cs: "V Betlémě, městě Davidově, Marie klade svého prvorozeného do jeslí; pastýřům na polích chválí Boha zástup nebeského vojska: „Sláva na výsostech Bohu, a na zemi pokoj, lidem dobrá vůle.“"
       sv: "I Betlehem, Davids stad, lägger Maria sin förstfödde son i en krubba; för herdarna på marken lovar en stor hop av den himmelska härskaran Gud: ”Ära vare Gud i höjden, och frid på jorden, bland människor till vilka han har behag!”"
+      nb: "I Betlehem, Davids by, legger Maria sin førstefødte i en krybbe; for gjeterne på marken priser en himmelsk hærskare Gud: «Ære være Gud i det høieste, og fred på jorden, i mennesker hans velbehag!»"
   - place: a15257a # Jerusalem
     ref: Luke.2.22-Luke.2.38
     note:
@@ -67,6 +70,7 @@ stops:
       nl: "In de tempel te Jeruzalem neemt Simeon het kind in zijn armen: “Nu laat Gij, Heere! Uw dienstknecht gaan in vrede”; Anna spreekt over Hem tot allen die op verlossing wachten."
       cs: "V chrámě v Jeruzalémě bere Simeon dítě do náručí: „Nyní propouštíš služebníka svého, Pane, podle slova svého v pokoji“; Anna o něm mluví všem, kdo očekávají vykoupení."
       sv: "I templet i Jerusalem tar Simeon barnet i sin famn: ”Herre, nu låter du din tjänare fara hädan i frid”; Hanna talar om honom för alla som väntar på förlossning."
+      nb: "I templet i Jerusalem tar Simeon barnet i sine armer: «Herre! nu lar du din tjener fare herfra i fred»; Anna taler om ham til alle som venter på forløsning."
   - place: af5884f # Nazareth
     ref: Luke.2.39-Luke.2.40
     note:
@@ -82,6 +86,7 @@ stops:
       nl: "Zij keren terug naar Galilea, naar hun eigen stad Nazareth, en het kind groeit op, vervuld van wijsheid."
       cs: "Vracejí se do Galileje, do svého města Nazareta, a dítě roste, naplněno moudrostí."
       sv: "De vänder tillbaka till Galileen, till sin egen stad Nasaret, och barnet växer upp, fyllt av vishet."
+      nb: "De vender tilbake til Galilea, til sin egen by Nasaret, og barnet vokser og fylles med visdom."
   - place: a15257a # Jerusalem
     ref: Luke.2.41-Luke.2.50
     year: "AD 8"
@@ -98,6 +103,7 @@ stops:
       nl: "Op zijn twaalfde blijft Hij na het Pascha achter in Jeruzalem en wordt in de tempel gevonden te midden van de leraars: “Wist gij niet, dat Ik moet zijn in de dingen Mijns Vaders?”"
       cs: "Ve dvanácti letech zůstává po velikonocích v Jeruzalémě a je nalezen v chrámě mezi učiteli: „Zdaliž jste nevěděli, že v těch věcech, kteréž jsou Otce mého, musím já býti?“"
       sv: "Vid tolv års ålder stannar han kvar i Jerusalem efter påsken och återfinns i templet bland lärarna: ”Vissten I då icke att jag bör vara där min Fader bor?”"
+      nb: "Som tolvåring blir han igjen i Jerusalem etter påsken og blir funnet i templet blant lærerne: «Visste I ikke at jeg må være i min Faders hus?»"
   - place: af5884f # Nazareth
     ref: Luke.2.51-Luke.2.52
     year: "AD 8"
@@ -114,3 +120,4 @@ stops:
       nl: "Hij gaat met hen mee naar Nazareth en is hun onderdanig, en neemt toe in wijsheid en grootte, en in genade bij God en de mensen."
       cs: "Sestupuje s nimi do Nazareta a je jim poddán a prospívá moudrostí i věkem a milostí u Boha i u lidí."
       sv: "Han följer med dem ner till Nasaret och är dem underdånig, och han växer till i ålder och vishet och nåd inför Gud och människor."
+      nb: "Han drar ned med dem til Nasaret og er dem lydig, og han vokser til i visdom og vekst og i nåde hos Gud og mennesker."

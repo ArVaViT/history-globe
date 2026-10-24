@@ -16,6 +16,7 @@ title:
   nl: "De gevangenneming en de processen van Paulus"
   cs: "Pavlovo zatčení a soudy"
   sv: "Paulus’ gripande och rättegångar"
+  nb: "Paulus' pågripelse og rettergang"
 year: "AD 57"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -35,6 +36,7 @@ stops:
       nl: "In de tempel gegrepen en met twee ketenen gebonden, spreekt Paulus tot het volk en voor de Raad; 's nachts staat de Heere hem bij: “gelijk gij te Jeruzalem van Mij betuigd hebt alzo moet gij ook te Rome getuigen.”"
       cs: "Pavel, chycen v chrámě a spoután dvěma řetězy, mluví k lidu i před radou; v noci u něho stojí Pán: „jakož jsi svědčil o mně v Jeruzalémě, tak musíš svědčiti i v Římě“."
       sv: "Gripen i templet och bunden med två kedjor talar Paulus till folket och inför rådet; om natten står Herren hos honom: ”såsom du har vittnat om mig i Jerusalem, så måste du ock vittna i Rom.”"
+      nb: "Grepet i templet og bundet med to lenker taler Paulus til folket og for rådet; om natten står Herren ham bi: «likesom du vidnet om mig i Jerusalem, således skal du også vidne i Rom.»"
   - place: a58735e # Caesarea
     ref: Acts.23.23-Acts.24.27
     note:
@@ -50,6 +52,7 @@ stops:
       nl: "'s Nachts onder bewaking via Antipatris naar Caesarea gebracht, verantwoordt hij zich voor stadhouder Felix, die beeft als Paulus spreekt over rechtvaardigheid en het komende oordeel, en hem twee jaar gebonden houdt."
       cs: "Veden v noci pod stráží přes Antipatridu do Cesareje, odpovídá před správcem Felixem, který se zděsí, když Pavel mluví o spravedlnosti a budoucím soudu, a drží ho spoutaného dva roky."
       sv: "Förd ut om natten under bevakning via Antipatris till Caesarea svarar han inför ståthållaren Felix, som blir förskräckt när Paulus talar om rättfärdighet och den tillstundande domen, och som håller honom bunden i två år."
+      nb: "Ført ut om natten under bevoktning, via Antipatris til Cæsarea, forsvarer han seg for landshøvdingen Feliks, som blir forferdet da Paulus taler om rettferd og den kommende dom, og som holder ham bundet i to år."
   - place: a15257a # Jerusalem
     ref: Acts.25.1-Acts.25.5
     year: "AD 59"
@@ -66,6 +69,7 @@ stops:
       nl: "Festus, de nieuwe stadhouder, gaat naar Jeruzalem, waar de hogepriester en de leiders van de Joden vragen dat Paulus daarheen wordt gebracht, terwijl zij op de weg een hinderlaag leggen om hem te doden."
       cs: "Festus, nový správce, jde do Jeruzaléma, kde nejvyšší kněz a přední Židé žádají, aby byl Pavel přiveden tam, a číhají, aby ho cestou zabili."
       sv: "Festus, den nye ståthållaren, drar upp till Jerusalem, där översteprästen och judarnas främsta begär att Paulus ska föras dit, medan de lurpassar på att döda honom på vägen."
+      nb: "Festus, den nye landshøvdingen, drar opp til Jerusalem, hvor yppersteprestene og jødenes første menn ber om at Paulus må føres dit, mens de lurer på å drepe ham underveis."
   - place: a58735e # Caesarea
     ref: Acts.25.6-Acts.26.32
     year: "AD 59"
@@ -82,3 +86,4 @@ stops:
       nl: "Terug in Caesarea doet Paulus een beroep op de keizer en vertelt voor Agrippa over zijn bekering; Agrippa antwoordt: “Gij beweegt mij bijna een Christen te worden.”"
       cs: "Zpět v Cesareji se Pavel odvolává k císaři a před Agrippou vypráví o svém obrácení; Agrippa odpovídá: „Téměř bys mne k tomu naklonil, abych byl křesťanem.“"
       sv: "Åter i Caesarea vädjar Paulus till kejsaren och berättar inför Agrippa om sin omvändelse; Agrippa svarar: ”Föga fattas att du övertalar mig och gör mig till kristen.”"
+      nb: "Tilbake i Cæsarea appellerer Paulus til keiseren, og for Agrippa forteller han om sin omvendelse; Agrippa svarer: «Det mangler lite i at du overtaler mig til å bli en kristen.»"

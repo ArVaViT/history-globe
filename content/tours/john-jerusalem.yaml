@@ -16,6 +16,7 @@ title:
   nl: "Jezus in Jeruzalem, volgens Johannes"
   cs: "Ježíš v Jeruzalémě podle Jana"
   sv: "Jesus i Jerusalem, enligt Johannes"
+  nb: "Jesus i Jerusalem, etter Johannes"
 year: "AD 30"
 people: ["Jesus@Isa.7.14-Rev"]
 approximate: true
@@ -35,6 +36,7 @@ stops:
       nl: "Met het Pascha drijft Hij de handelaars uit de tempel: “maakt niet het huis Mijns Vaders tot een huis van koophandel.”"
       cs: "O velikonocích vyhání z chrámu obchodníky: „nečiňte domu Otce mého domem kupeckým“."
       sv: "Vid påsken driver han ut köpmännen ur templet: ”Gören icke min Faders hus till ett marknadshus.”"
+      nb: "Ved påsken driver han kjøpmennene ut av templet: «gjør ikke min Faders hus til en handelsbod!»"
   - place: a0aa8cf # Bethesda
     ref: John.5.2-John.5.9
     note:
@@ -50,6 +52,7 @@ stops:
       nl: "Bij de vijver van Bethesda, bij de Schaapspoort, geneest Hij een man die achtendertig jaar ziek was: “Sta op, neem uw beddeken op, en wandel.”"
       cs: "U rybníka Bethesda u Brány bravné uzdravuje člověka, který byl osm a třicet let nemocen: „Vstaň, vezmi lože své a choď.“"
       sv: "Vid dammen Betesda vid Fårporten botar han en man som varit sjuk i trettioåtta år: ”Stå upp, tag din säng och gå.”"
+      nb: "Ved dammen Betesda ved fåremarkedet helbreder han en mann som hadde vært syk i åtte og tretti år: «Stå op, ta din seng og gå!»"
   - place: a294859 # Siloam
     ref: John.9.1-John.9.25
     note:
@@ -65,6 +68,7 @@ stops:
       nl: "Een blindgeborene wast zich in de vijver van Siloam en komt ziende terug: “een ding weet ik, dat ik blind was, en nu zie.”"
       cs: "Slepý od narození se umývá v rybníku Siloe a vrací se vida: „byv slepý, již nyní vidím“."
       sv: "En man född blind tvättar sig i dammen Siloa och kommer tillbaka seende: ”ett vet jag: att jag, som var blind, nu kan se.”"
+      nb: "En mann som var født blind, vasker seg i dammen Siloa og kommer tilbake seende: «jeg som var blind, nu ser»."
   - place: a47c817 # Solomon's Portico
     ref: John.10.22-John.10.30
     note:
@@ -80,6 +84,7 @@ stops:
       nl: "Op het feest van de inwijding, in de Zuilengang van Salomo: “Ik en de Vader zijn een.”"
       cs: "Na slavnost posvěcení chrámu, v Šalomounově podloubí: „Já a Otec jedno jsme.“"
       sv: "Vid tempelinvigningens högtid, i Salomos pelarhall: ”Jag och Fadern äro ett.”"
+      nb: "Ved tempelvielsens fest, i Salomos søylegang: «jeg og Faderen, vi er ett.»"
   - place: a4f35bc # Bethany
     ref: John.11.1-John.11.44
     note:
@@ -95,6 +100,7 @@ stops:
       nl: "Te Bethanië, bij Jeruzalem, wekt Hij Lazarus op: “Ik ben de Opstanding en het Leven.”"
       cs: "V Betanii u Jeruzaléma křísí Lazara: „Já jsem vzkříšení i život.“"
       sv: "I Betania, nära Jerusalem, uppväcker han Lasaros: ”Jag är uppståndelsen och livet.”"
+      nb: "I Betania, nær Jerusalem, oppvekker han Lasarus: «Jeg er opstandelsen og livet.»"
   - place: a553110 # Kidron
     ref: John.18.1-John.18.12
     note:
@@ -110,6 +116,7 @@ stops:
       nl: "Over de beek Kidron, in de hof, wordt Hij gevangengenomen."
       cs: "Za potokem Kidron, v zahradě, je zatčen."
       sv: "På andra sidan bäcken Kidron, i trädgården, grips han."
+      nb: "Over bekken Kedron, i hagen, blir han pågrepet."
   - place: aec23b1 # Gabbatha
     ref: John.19.13-John.19.16
     note:
@@ -125,6 +132,7 @@ stops:
       nl: "Pilatus zit op de rechterstoel op de plaats die het Plaveisel heet, in het Hebreeuws Gabbata."
       cs: "Pilát sedí na soudné stolici na místě zvaném Dlažba, hebrejsky Gabata."
       sv: "Pilatus sitter på domarsätet på platsen som kallas Stenläggningen, på hebreiska Gabbata."
+      nb: "Pilatus setter seg på dommersetet på det sted som kalles Stenlagt, på hebraisk Gabbata."
   - place: a631d35 # Golgotha
     ref: John.19.17-John.19.30
     note:
@@ -140,3 +148,4 @@ stops:
       nl: "Op Golgota wordt Hij gekruisigd: “Het is volbracht!”"
       cs: "Na Golgotě je ukřižován: „Dokonánoť jest.“"
       sv: "På Golgota korsfästs han: ”Det är fullbordat.”"
+      nb: "På Golgata blir han korsfestet: «Det er fullbragt.»"

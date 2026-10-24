@@ -14,6 +14,7 @@ title:
   nl: "Filippus de evangelist"
   cs: "Filip evangelista"
   sv: "Evangelisten Filippos"
+  nb: "Evangelisten Filip"
 year: "AD 34"
 approximate: true
 stops:
@@ -32,6 +33,7 @@ stops:
       nl: "In Jeruzalem wordt Filippus met Stefanus gekozen onder de zeven om de tafels te dienen."
       cs: "V Jeruzalémě je Filip spolu se Štěpánem zvolen mezi sedm, aby posluhovali u stolů."
       sv: "I Jerusalem utses Filippos tillsammans med Stefanos bland de sju för att tjäna vid borden."
+      nb: "I Jerusalem blir Filip valgt sammen med Stefanus blant de sju til å tjene ved bordene."
   - place: a282dce # Samaria (region)
     ref: Acts.8.5-Acts.8.13
     note:
@@ -47,6 +49,7 @@ stops:
       nl: "Hij gaat af naar de stad Samaria en predikt Christus, en het volk slaat eensgezind acht op hem."
       cs: "Sestupuje do města Samaří a káže Krista a lid jednomyslně dbá na jeho slova."
       sv: "Han går ner till staden Samaria och predikar Kristus, och folket lyssnar enigt till honom."
+      nb: "Han drar ned til byen Samaria og forkynner Kristus, og folket gir enstemmig akt på ham."
   - place: aa8edd2 # Gaza
     ref: Acts.8.26-Acts.8.39
     note:
@@ -62,6 +65,7 @@ stops:
       nl: "Op de woestijnweg van Jeruzalem naar Gaza doopt hij de Ethiopische kamerling."
       cs: "Na pusté cestě z Jeruzaléma do Gazy křtí etiopského dvořana."
       sv: "På ökenvägen från Jerusalem till Gaza döper han den etiopiske eunucken."
+      nb: "På ørkenveien fra Jerusalem til Gasa døper han den etiopiske hoffmannen."
   - place: a30c937 # Ashdod (Azotus)
     ref: Acts.8.40
     note:
@@ -77,6 +81,7 @@ stops:
       nl: "Filippus wordt gevonden te Asdod (Azotus) en predikt in alle steden op weg naar Caesarea."
       cs: "Filip je nalezen v Ašdodu (Azot) a káže ve všech městech na cestě do Cesareje."
       sv: "Filippos påträffas i Ashdod (Azotus) och förkunnar i alla städer på vägen till Caesarea."
+      nb: "Filip blir funnet i Asjdod (Asotos) og forkynner i alle byene på veien til Cæsarea."
   - place: a58735e # Caesarea
     ref: Acts.21.8-Acts.21.9
     note:
@@ -92,3 +97,4 @@ stops:
       nl: "Jaren later logeert Paulus te Caesarea in het huis van Filippus, wiens vier dochters profeteren."
       cs: "O léta později se Pavel zastavuje v Cesareji v domě Filipově, jehož čtyři dcery prorokují."
       sv: "År senare bor Paulus i Caesarea i Filippos’ hus, vars fyra döttrar profeterar."
+      nb: "År senere tar Paulus inn i Cæsarea hos Filip, hvis fire døtre profeterer."

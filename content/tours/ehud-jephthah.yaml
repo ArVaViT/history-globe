@@ -17,6 +17,7 @@ title:
   nl: "Ehud en Jefta"
   cs: "Ehúd a Jiftách"
   sv: "Ehud och Jefta"
+  nb: "Ehud og Jefta"
 year: "1150 BC"
 people: ["Ehud@Jdg.3.15-1Ch", "Jephthah@Jdg.11.1-Heb"]
 approximate: true
@@ -36,6 +37,7 @@ stops:
       nl: "Eglon, de koning van Moab, slaat met Ammon en Amalek Israël en neemt de palmstad in; Israël dient hem achttien jaar."
       cs: "Eglon, král Moábu, s Amónem a Amalekem poráží Izrael a dobývá město palmové; Izrael mu slouží osmnáct let."
       sv: "Eglon, kung av Moab, slår tillsammans med Ammon och Amalek Israel och intar palmstaden; Israel tjänar honom i arton år."
+      nb: "Eglon, Moabs konge, slår, sammen med Ammon og Amalek, Israel og inntar palmebyen; Israel tjener ham i atten år."
   - place: ab94aea # Gilgal
     ref: Judg.3.15-Judg.3.25
     note:
@@ -51,6 +53,7 @@ stops:
       nl: "De linkshandige Ehud brengt het geschenk van Israël, keert bij de steengroeven bij Gilgal terug met een geheime boodschap voor de koning, en steekt zijn dolk in Eglons buik."
       cs: "Levoruký Ehúd přináší Izraelův dar, vrací se od lomů u Gilgalu s tajnou věcí pro krále a vráží dýku do Eglonova břicha."
       sv: "Den vänsterhänte Ehud bär fram Israels gåva, vänder om från stenbrotten vid Gilgal med ett hemligt ärende till kungen och stöter sin dolk i Eglons buk."
+      nb: "Venstrehåndsmannen Ehud bringer Israels gave, vender om ved steinbruddene ved Gilgal med et hemmelig ærend til kongen og støter sin dolk i Eglons buk."
   - place: a1aff30 # Seirah
     ref: Judg.3.26-Judg.3.30
     note:
@@ -66,6 +69,7 @@ stops:
       nl: "Hij ontkomt naar Seïra, blaast de bazuin in het Bergland van Efraïm, en Israël bezet de voorden van de Jordaan richting Moab; het land heeft tachtig jaar rust."
       cs: "Uniká do Seiry, troubí na polnici na pohoří Efrajim a Izrael obsazuje jordánské brody směrem k Moábu; země má pokoj osmdesát let."
       sv: "Han undkommer till Seira, blåser i basun i Efraims bergsbygd, och Israel besätter Jordans vadställen mot Moab; landet får ro i åttio år."
+      nb: "Han slipper unna til Seira, støter i basun i Efraims fjell, og Israel besetter vadestedene ved Jordan mot Moab; landet har ro i åtti år."
   - place: aaff3e1 # Tob
     ref: Judg.11.1-Judg.11.3
     note:
@@ -81,6 +85,7 @@ stops:
       nl: "Jefta, de Gileadiet, door zijn broers verdreven, vlucht naar het land Tob, waar nietsnutten zich bij hem voegen."
       cs: "Gileadský Jiftách, vyhnaný svými bratry, prchá do země Tób, kde se k němu shromažďují lehkomyslní muži."
       sv: "Jefta från Gilead, bortdriven av sina bröder, flyr till landet Tov, där löst folk samlas kring honom."
+      nb: "Gileaditten Jefta, jaget bort av sine brødre, flykter til Tobs land, hvor løse menn samler seg om ham."
   - place: a0f8af9 # Mizpah
     ref: Judg.11.4-Judg.11.11
     note:
@@ -96,6 +101,7 @@ stops:
       nl: "Als Ammon oorlog voert, halen de oudsten van Gilead hem terug; het volk maakt hem tot hoofd en overste, en hij spreekt al zijn woorden uit voor het aangezicht van de HEER te Mizpa."
       cs: "Když Amón začíná válku, pro něho jdou gileadští starší; lid ho ustanovuje za vůdce a knížete a on mluví všechna svá slova před Hospodinem v Micpe."
       sv: "När Ammon för krig hämtar Gileads äldste honom; folket gör honom till huvudman och anförare, och han framför alla sina ord inför Herren i Mispe."
+      nb: "Da Ammon fører krig, henter Gileads eldste ham; folket gjør ham til overhode og anfører, og han legger frem alle sine ord for Herren i Mispe."
   - place: af74969 # Aroer
     ref: Judg.11.29-Judg.11.33
     note:
@@ -111,6 +117,7 @@ stops:
       nl: "Hij belooft dat wat hem uit zijn deuren tegemoet komt, de HEER zal toebehoren, en slaat Ammon van Aroër tot Minnit, twintig steden."
       cs: "Slibuje, že cokoli vyjde ze dveří jeho domu naproti němu, bude Hospodinovo, a bije Amón od Aroeru až po Minit, dvacet měst."
       sv: "Han lovar att det som kommer ut genom hans dörrar för att möta honom ska tillhöra Herren, och slår Ammon från Aroer till Minnit, tjugo städer."
+      nb: "Han lover at det som kommer ut av hans dører for å møte ham, skal tilhøre Herren, og slår Ammon fra Aroer til Minnit, tyve byer."
   - place: a0f8af9 # Mizpah
     ref: Judg.11.34-Judg.11.40
     note:
@@ -126,6 +133,7 @@ stops:
       nl: "Te Mizpa komt zijn enige dochter hem tegemoet met tamboerijnen en reidansen: “Ach, mijn dochter! gij hebt mij ganselijk nedergebogen.”"
       cs: "V Micpe mu vychází vstříc jeho jediná dcera s bubny a v tanci: „Ach, dcero má, velices mne ponížila.“"
       sv: "I Mispe kommer hans enda dotter ut för att möta honom med pukor och dans: ”Ve mig, min dotter, du kommer mig att sjunka till jorden.”"
+      nb: "I Mispe kommer hans eneste datter ut for å møte ham med tamburiner og dans: «Akk, min datter, hvilken sorg du volder mig, hvilken ulykke du fører over mig!»"
   - place: ae686c9 # Jordan
     ref: Judg.12.1-Judg.12.6
     note:
@@ -141,3 +149,4 @@ stops:
       nl: "Bij de overgangen van de Jordaan herkennen de mannen van Gilead de mannen van Efraïm aan één woord: “Zeg nu Schibboleth.”"
       cs: "U jordánských brodů poznávají gileadští muži Efrajimce podle jediného slova: „Rci hned Šibolet.“"
       sv: "Vid Jordans vadställen känner Gileads män igen Efraims män på ett enda ord: ”Säg ’schibbolet’.”"
+      nb: "Ved Jordans overganger kjenner Gileads menn Efraims menn på ett ord: «Si sjibbolet!»"

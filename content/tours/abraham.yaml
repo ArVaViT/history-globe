@@ -17,6 +17,7 @@ title:
   nl: "De reis van Abraham"
   cs: "Abrahamova cesta"
   sv: "Abrahams färd"
+  nb: "Abrahams ferd"
 year: "1900 BC"
 people: ["Abraham@Gen.11.26-1Pe"]
 approximate: true
@@ -36,6 +37,7 @@ stops:
       nl: "Tarach voert Abram en zijn gezin weg uit Ur der Chaldeeën."
       cs: "Tarach vyvádí Abrama a jeho rodinu z Uru Chaldejských."
       sv: "Tera för Abram och hans familj ut från Ur i Kaldeen."
+      nb: "Tarah fører Abram og hans familie ut fra Ur i Kaldea."
   - place: a6d9af3 # Haran
     ref: Gen.11.31-Gen.11.32
     note:
@@ -51,6 +53,7 @@ stops:
       nl: "Zij vestigen zich in Haran, waar Tarach sterft."
       cs: "Usazují se v Cháranu, kde Tarach umírá."
       sv: "De bosätter sig i Harran, där Tera dör."
+      nb: "De slår seg ned i Harran, hvor Tarah dør."
   - place: adf74d4 # Shechem
     ref: Gen.12.6-Gen.12.7
     note:
@@ -66,6 +69,7 @@ stops:
       nl: "In Kanaän verschijnt de HEER aan Abram bij Sichem."
       cs: "V Kanaánu se Hospodin zjevuje Abramovi v Šekemu."
       sv: "I Kanaan visar sig Herren för Abram vid Shekem."
+      nb: "I Kanaan viser Herren seg for Abram ved Sikem."
   - place: a64f355 # Bethel
     ref: Gen.12.8
     note:
@@ -81,6 +85,7 @@ stops:
       nl: "Hij slaat zijn tent op tussen Bethel en Ai en bouwt een altaar."
       cs: "Rozbíjí stan mezi Bét-elem a Aj a staví oltář."
       sv: "Han slår upp sitt tält mellan Betel och Ai och bygger ett altare."
+      nb: "Han slår opp teltet sitt mellom Betel og Ai og bygger et alter."
   - place: af301ca # Egypt
     ref: Gen.12.10
     note:
@@ -96,6 +101,7 @@ stops:
       nl: "Een hongersnood drijft hem naar Egypte."
       cs: "Hlad ho žene dolů do Egypta."
       sv: "Hungersnöd driver honom ner till Egypten."
+      nb: "Hungersnød driver ham ned til Egypt."
   - place: a85151a # Hebron
     ref: Gen.13.18
     note:
@@ -111,6 +117,7 @@ stops:
       nl: "Hij vestigt zich bij de eiken van Mamre, bij Hebron."
       cs: "Usazuje se u dubů v Mamre u Hebronu."
       sv: "Han bosätter sig vid Mamres ekar i Hebron."
+      nb: "Han bosetter seg ved Mamres eiker i Hebron."
   - place: a513646 # Dan
     ref: Gen.14.14
     note:
@@ -126,6 +133,7 @@ stops:
       nl: "Hij achtervolgt de koningen die Lot hebben meegevoerd tot aan Dan."
       cs: "Pronásleduje krále, kteří odvedli Lota, až k Danu."
       sv: "Han förföljer de kungar som tog Lot till fånga, ända till Dan."
+      nb: "Han forfølger kongene som hadde tatt Lot, helt til Dan."
   - place: aad7e4e # Salem
     ref: Gen.14.18
     note:
@@ -141,6 +149,7 @@ stops:
       nl: "Melchizedek, de koning van Salem, brengt brood en wijn naar buiten."
       cs: "Melchisedek, král Šalému, vynáší chléb a víno."
       sv: "Melkisedek, kung av Salem, bär fram bröd och vin."
+      nb: "Melkisedek, konge av Salem, bærer frem brød og vin."
   - place: a3f5814 # Gerar
     ref: Gen.20.1
     note:
@@ -156,6 +165,7 @@ stops:
       nl: "Hij verblijft enige tijd in Gerar."
       cs: "Nějakou dobu pobývá v Geraru."
       sv: "Han stannar en tid i Gerar."
+      nb: "Han oppholder seg en tid i Gerar."
   - place: a075d61 # Beersheba
     ref: Gen.21.31
     note:
@@ -171,6 +181,7 @@ stops:
       nl: "Abraham en Abimelech zweren een eed, en de plaats wordt Berseba genoemd."
       cs: "Abraham a Abimelek si přísahají a místo se nazývá Beer-šeba."
       sv: "Abraham och Avimelek svär en ed, och platsen kallas Beer Sheva."
+      nb: "Abraham og Abimelek sverger en ed, og stedet kalles Beer-Sjeba."
   - place: adaf385 # Moriah
     ref: Gen.22.2-Gen.22.13
     note:
@@ -186,6 +197,7 @@ stops:
       nl: "De binding van Isaak op een berg in het land Moria."
       cs: "Svázání Izáka na hoře v zemi Moria."
       sv: "Isaks bindning på ett berg i Moria land."
+      nb: "Isaks offerbinding på et fjell i Moria land."
   - place: ae00861 # Machpelah
     ref: Gen.23.19
     note:
@@ -201,3 +213,4 @@ stops:
       nl: "Sara wordt begraven in de spelonk van Machpela; later ook Abraham (Gen. 25:9)."
       cs: "Sára je pohřbena v jeskyni Makpela; později i Abraham (Gn 25,9)."
       sv: "Sara begravs i grottan i Makpela; senare även Abraham (1 Mos 25:9)."
+      nb: "Sara blir gravlagt i Makpela-hulen; senere også Abraham (1 Mos 25,9)."

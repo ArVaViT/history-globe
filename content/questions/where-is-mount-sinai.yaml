@@ -12,6 +12,7 @@ question:
   nl: "Waar ligt de berg Sinaï?"
   cs: "Kde je hora Sinaj?"
   sv: "Var ligger Sinaiberget?"
+  nb: "Hvor ligger Sinai?"
 answer:
   en:
     - 'The site of Mount Sinai is disputed: the traditional mountain is Jebel Musa ("Mount of Moses") in the south of the Sinai Peninsula, Egypt, and that is where the map places it, but the Bible gives no location that can be fixed, and several other mountains have been proposed.'
@@ -61,6 +62,10 @@ answer:
     - "Sinaibergets läge är omstritt: det traditionella berget är Jebel Musa (”Moses berg”) i södra Sinaihalvön i Egypten, och dit placerar kartan det, men Bibeln ger ingen plats som kan fastställas, och flera andra berg har föreslagits."
     - "2 Mosebok säger att Israel nådde berget i tredje månaden efter uttåget ur Egypten: de ”kommo så till Sinais öken och lägrade sig i öknen; Israel lägrade sig där mitt emot berget”. Samma berg kallas Horeb, Guds berg, där Mose såg den brinnande busken, och 5 Mosebok räknar ”elva dagsresor från Horeb, åt Seirs bergsbygd till, fram till Kades-Barnea”. Från Jebel Musa till den vanliga platsen för Kadesh-Barnea är det omkring 240 km fågelvägen, omkring 8 dagar till fots med 30 km om dagen."
     - "Kandidaterna på kartan, förutom Jebel Musa, är dess grannar Ras es-Safsafeh och Jebel Katherina, Jebel Serbal omkring 35 km åt väster, Jebel Sin Bishar i västra delen av halvön och Har Karkom i Negev, omkring 210 km åt nord-nordost; några skribenter söker också berget i nordvästra Arabien. Kristna munkar bosatte sig under Jebel Musa på 300-talet, och Sankta Katarinas kloster står ännu vid dess fot. Inget av förslagen har bevisats, så kartan visar den traditionella platsen och förtecknar de övriga på platskortet."
+  nb:
+    - "Sinais beliggenhet er omstridt: det tradisjonelle fjellet er Jebel Musa («Moses' fjell») i den sørlige delen av Sinai-halvøya i Egypt, og dit plasserer kartet det, men Bibelen gir ingen beliggenhet som kan fastsettes, og flere andre fjell er foreslått."
+    - "2 Mosebok sier at Israel nådde fjellet i den tredje måneden etter at de forlot Egypt: de «kom til Sinai ørken og slo leir i ørkenen, og Israel leiret sig der midt imot fjellet.» Det samme fjellet kalles Horeb, Guds berg, der Moses så den brennende tornebusken, og 5 Mosebok teller «elleve dagsreiser fra Horeb efter den vei som fører til Se'ir-fjellene, til Kades-Barnea». Fra Jebel Musa til det vanlige stedet for Kadesj-Barnea er det omtrent 240 km i luftlinje, omtrent 8 dager til fots med 30 km om dagen."
+    - "Kandidatene på kartet, ved siden av Jebel Musa, er nabotoppene Ras es-Safsafeh og Jebel Katherina, Jebel Serbal omtrent 35 km mot vest, Jebel Sin Bishar i den vestlige delen av halvøya og Har Karkom i Negev, omtrent 210 km mot nord-nordøst; noen forfattere søker også fjellet i det nordvestlige Arabia. Kristne munker slo seg ned under Jebel Musa på 300-tallet, og Sankt Katarina-klosteret står fortsatt ved foten. Ingen av forslagene er bevist, så kartet viser det tradisjonelle stedet og lister de andre på stedskortet."
 map:
   place: abfba2a
   year: "1446 BC"
