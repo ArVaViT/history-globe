@@ -176,7 +176,7 @@ const data: LocaleData = {
       eb1: "Maagang Tanso",
       mb2: "Gitnang Tanso",
       lb: "Huling Tanso",
-      iron1: "Panahon ng Bakal",
+      iron1: "Bakal",
       babylonian: "Babilonia",
       persian: "Persia",
       hellenistic: "Helenismo",

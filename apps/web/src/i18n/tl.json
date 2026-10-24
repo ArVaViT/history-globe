@@ -21,7 +21,7 @@
   "layers": {
     "title": "Mga patong",
     "relief": "Anyo ng lupa",
-    "borders": "Mga hangganan ng mga estado",
+    "borders": "Mga hangganan",
     "places": "Mga lugar sa Biblia",
     "routes": "Mga ruta",
     "roads": "Mga daang Romano",
@@ -136,7 +136,7 @@
     "go_to_hint": "Halimbawa: 586 BK o 30 AD, pagkatapos Enter",
     "go_to_bad": "Taon mula 3500 BK hanggang 1300 AD",
     "life_of": "Kung kailan nakatayo ang {{name}}",
-    "opacity": "Transparency ng panel",
+    "opacity": "Linaw ng panel",
     "collapse": "Itago ang slider ng panahon",
     "expand": "Ipakita ang slider ng panahon",
     "print": "I-print para sa klase (A4)",
@@ -246,7 +246,7 @@
     "title": "Mga setting",
     "language": "Wika",
     "help": "Tulong at mga sanggunian",
-    "privacy": "Privacy"
+    "privacy": "Pagkapribado"
   },
   "more": "Pangkalahatang-ideya: mga paglalakbay, pangyayari, tao, artikulo",
   "close": "Isara",

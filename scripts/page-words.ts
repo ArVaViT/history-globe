@@ -2214,11 +2214,11 @@ const T_TL = {
   verses: (n: number) => `Mga talata (${String(n)})`,
   more: (n: number) => `${String(n)} pa sa mapa`,
   tours: "Mga paglalakbay na dumaraan sa lugar na ito",
-  places: "Lahat ng lugar",
+  places: "Mga lugar",
   skip: "Lumaktaw sa nilalaman",
   sections: "Mga bahagi",
   tour: "Paglalakbay",
-  toursAll: "Lahat ng paglalakbay",
+  toursAll: "Mga paglalakbay",
   placesTitle: "Mga lugar ng kasaysayan ng Biblia",
   disputed: "Pinagtatalunan ang kinaroroonan",
   photoShows: (site: string) => `Sa larawan: ${site}, isa sa mga iminumungkahing pook.`,
@@ -2236,7 +2236,7 @@ const T_TL = {
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) sa mapa ng kasaysayan ng Biblia: saan ito ngayon, ang kasaysayan nito at ang mga talata ng Biblia na bumabanggit dito (${String(v)}).`,
   about: "Tungkol sa proyekto",
-  privacy: "Privacy",
+  privacy: "Pagkapribado",
   allSources: "lahat ng sanggunian",
   data: "Datos",
   // The language switch is an icon: «Wika: English» names it for a pointer and a screen reader.
@@ -2300,7 +2300,7 @@ const LANDING_TL = {
     [
       "Walang account",
       "Walang pagrerehistro, walang cookies, walang patalastas. Maaaring i-save ang mapa at gamitin offline.",
-      "Privacy",
+      "Pagkapribado",
     ],
   ],
   trust: "Nakabatay sa bukas na datos",
