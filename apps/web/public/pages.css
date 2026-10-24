@@ -191,6 +191,7 @@ summary:focus-visible {
 }
 .bar .langs {
   position: relative;
+  margin: 0;
 }
 .bar .langs summary {
   list-style: none;
@@ -997,9 +998,9 @@ ol.stops p {
   font-weight: 500;
 }
 
-/* The footer on one line: the site's own links, then the credits, cut with an ellipsis
-   (the whole line in its title) where the column is narrow. A page with the site's own
-   text adds its licence on a line of its own, under the credits. */
+/* The footer: the site's own links, then the credits beside them where they fit, else on a
+   line of their own under them, whole. A page with the site's own text adds its licence on
+   a line of its own, under the credits. */
 .foot {
   display: flex;
   flex-wrap: wrap;
@@ -1010,12 +1011,12 @@ ol.stops p {
   margin: 0 auto;
   padding: 20px 24px 48px;
   border-top: 1px solid var(--line);
-  white-space: nowrap;
 }
 .foot nav {
   display: flex;
   flex: none;
   gap: 18px;
+  white-space: nowrap;
 }
 .foot a {
   color: var(--ink-soft);
@@ -1032,18 +1033,55 @@ ol.stops p {
 .foot p {
   min-width: 0;
   margin: 0;
-  overflow: hidden;
   color: var(--ink-faint);
-  text-overflow: ellipsis;
 }
 .foot nav + p {
-  flex: 1 1 0;
-  text-align: right;
+  margin-left: auto;
 }
 .foot .lic {
   flex-basis: 100%;
   margin-top: -2px;
   text-align: right;
+}
+
+/* Where the lists no longer fit beside the mark and its name (16 languages, «Todos os
+   roteiros» among them): the mark alone, then the lists on a row of their own under it.
+   The home page's bar leaves out the documentation, then the lists, which its page carries
+   anyway. */
+@media (max-width: 1023px) {
+  .bar nav .hide-s {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  body:not(.home) .brand {
+    font-size: 0;
+  }
+  .bar nav a {
+    padding: 6px 8px;
+  }
+}
+@media (max-width: 720px) {
+  body:not(.home) .bar {
+    flex-wrap: wrap;
+    row-gap: 2px;
+    height: auto;
+    padding-top: 8px;
+    padding-bottom: 6px;
+  }
+  body:not(.home) .bar nav {
+    order: 1;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    margin: 0 -8px;
+    overflow: visible;
+  }
+  body:not(.home) .bar-end::before {
+    display: none;
+  }
+  body:not(.home) .jump {
+    top: 92px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1083,7 +1121,7 @@ ol.stops p {
   .foot nav + p,
   .foot .lic {
     flex: none;
-    margin-top: 0;
+    margin: 0;
     text-align: center;
   }
   .page {
@@ -1233,8 +1271,10 @@ ol.stops p {
   font-size: 14px;
 }
 
+/* Clipped across: the frame's tilt, as it rises, reaches past the edges of a narrow screen. */
 .landing {
   padding: 0 24px;
+  overflow-x: clip;
 }
 .landing h1,
 .landing h2 {
@@ -1857,17 +1897,20 @@ ol.stops p {
     border-left: 0;
   }
 }
-@media (max-width: 640px) {
-  .home .bar {
-    padding: 0 16px;
-  }
-  /* On a phone the bar holds the mark, the language and the way in; the lists are below. */
+/* On a tablet or a phone the bar holds the mark, the language and the way in; the lists
+   are below. */
+@media (max-width: 880px) {
   .home .bar nav,
   .home .bar-end::before {
     display: none;
   }
   .home .bar-end {
     margin-left: auto;
+  }
+}
+@media (max-width: 640px) {
+  .home .bar {
+    padding: 0 16px;
   }
   .home .bar .open {
     display: inline-flex;

@@ -14,6 +14,11 @@ title:
   it: "Samuele e l’arca"
   nl: "Samuël en de ark"
   cs: "Samuel a truhla"
+  sv: "Samuel och arken"
+  nb: "Samuel og arken"
+  tl: "Si Samuel at ang kaban"
+  da: "Samuel og arken"
+  sr: "Самуило и ковчег"
 year: "1070 BC"
 people: ["Samuel@1Sa.1.20-Heb"]
 approximate: true
@@ -32,6 +37,11 @@ stops:
       it: "A Rama Anna partorisce un figlio e lo chiama Samuele: chiesto al Signore."
       nl: "Te Rama baart Hanna een zoon en noemt hem Samuël: van de HEER verzocht."
       cs: "V Rámě rodí Chana syna a dává mu jméno Samuel: vyprošený od Hospodina."
+      sv: "I Rama föder Hanna en son och ger honom namnet Samuel: utbedd av Herren."
+      nb: "I Rama føder Hanna en sønn og kaller ham Samuel: utbedt av Herren."
+      tl: "Sa Rama, nanganak si Ana ng isang lalaki at pinangalanan siyang Samuel: hiningi sa Panginoon."
+      da: "I Rama føder Hanna en søn og kalder ham Samuel: bedt af Herren."
+      sr: "У Рами Ана рађа сина и даје му име Самуило: измољен од Господа."
   - place: aa4680a # Shiloh
     ref: 1Sam.1.24-1Sam.3.21
     note:
@@ -46,6 +56,11 @@ stops:
       it: "Condotto alla casa del Signore a Silo, il ragazzo risponde: «Parla, poiché il tuo servo ascolta»."
       nl: "Naar het huis van de HEER te Silo gebracht, antwoordt de jongen: “Spreek, want Uw knecht hoort.”"
       cs: "Přivedený do domu Hospodinova v Šílu odpovídá chlapec: „Mluv, nebo slyší služebník tvůj.“"
+      sv: "Förd till Herrens hus i Shilo svarar gossen: ”Tala, din tjänare hör.”"
+      nb: "Ført til Herrens hus i Sjilo svarer gutten: «Tal, din tjener hører!»"
+      tl: "Dinala sa bahay ng Panginoon sa Shiloh, sumagot ang bata: “Magsalita ka; sapagka't dinirinig ng iyong lingkod.”"
+      da: "Bragt til Herrens hus i Silo svarer drengen: »Tal, thi din Tjener hører.«"
+      sr: "Доведен у дом Господњи у Силу, дечак одговара: „Говори, чује слуга твој.“"
   - place: abfdefc # Ebenezer
     ref: 1Sam.4.1-1Sam.4.11
     note:
@@ -60,6 +75,11 @@ stops:
       it: "A Eben-Ezer i Filistei prendono l’arca di Dio; Ofni e Pincas muoiono."
       nl: "Te Eben-Haëzer nemen de Filistijnen de ark van God; Chofni en Pinechas sterven."
       cs: "U Eben-ezeru berou Pelištejci truhlu Boží; Chofni a Pinchas umírají."
+      sv: "Vid Even-Haeser tar filistéerna Guds ark; Hofni och Pinechas dör."
+      nb: "Ved Eben-Eser tar filisterne Guds ark; Hofni og Pinhas dør."
+      tl: "Sa Ebenezer, kinuha ng mga Filisteo ang kaban ng Diyos; namatay sina Ophni at Phinees."
+      da: "Ved Eben-Ezer tager filistrene Guds ark; Hofni og Pinehas dør."
+      sr: "Код Евен-Езера Филистеји узимају ковчег Божји; Офније и Финес гину."
   - place: a30c937 # Ashdod
     ref: 1Sam.5.1-1Sam.5.7
     note:
@@ -74,6 +94,11 @@ stops:
       it: "Nel tempio di Dagon ad Asdod l’idolo cade con la faccia a terra davanti all’arca del Signore."
       nl: "In de tempel van Dagon te Asdod valt het beeld op zijn aangezicht neer voor de ark van de HEER."
       cs: "V chrámě Dágonově v Ašdodu padá modla před truhlou Hospodinovou na tvář."
+      sv: "I Dagons tempel i Ashdod faller avguden på sitt ansikte inför Herrens ark."
+      nb: "I Dagons tempel i Asjdod faller avgudsbildet på sitt ansikt for Herrens ark."
+      tl: "Sa bahay ni Dagon sa Asdod, ang diyus-diyosan ay nabuwal na nakadapa sa harap ng kaban ng Panginoon."
+      da: "I Dagons tempel i Asdod falder afgudsbilledet på sit ansigt for Herrens ark."
+      sr: "У храму Дагоновом у Азоту идол пада ничице пред ковчегом Господњим."
   - place: a3b5b53 # Beth-shemesh
     ref: 1Sam.6.12-1Sam.6.20
     note:
@@ -88,6 +113,11 @@ stops:
       it: "Due vacche portano l’arca dritte lungo la strada verso Bet-Semes."
       nl: "Twee koeien brengen de ark rechtstreeks over de weg naar Beth-Semes."
       cs: "Dvě krávy nesou truhlu přímo po cestě do Bét-šemeše."
+      sv: "Två kor drar arken rakt fram längs vägen till Bet-Shemesh."
+      nb: "To kyr drar arken rett frem langs veien til Bet-Sjemesj."
+      tl: "Dalawang baka ang nagdala ng kaban nang tuwid sa daan patungong Beth-semes."
+      da: "To køer fører arken ret ad vejen til Bet-Sjemesj."
+      sr: "Две краве носе ковчег право путем у Вет-Семес."
   - place: a9bba61 # Kiriath-jearim
     ref: 1Sam.7.1-1Sam.7.2
     note:
@@ -102,6 +132,11 @@ stops:
       it: "Gli uomini di Kiriat-Iearim portano l’arca nella casa di Abinadab; passano vent’anni, e tutto Israele sospira dietro al Signore."
       nl: "De mannen van Kirjat-Jearim brengen de ark in het huis van Abinadab; twintig jaar gaan voorbij, en heel Israël klaagt naar de HEER."
       cs: "Muži z Kirjat-jearímu přenášejí truhlu do domu Abinadabova; uplyne dvacet let a celý Izrael lká za Hospodinem."
+      sv: "Männen i Kirjat-Jearim för arken in i Avinadavs hus; tjugo år går, och hela Israel klagar efter Herren."
+      nb: "Mennene fra Kirjat-Jearim fører arken inn i Abinadabs hus; tyve år går, og hele Israel klager etter Herren."
+      tl: "Dinala ng mga tao ng Kiriath-jearim ang kaban sa bahay ni Abinadab; lumipas ang dalawampung taon, at ang buong Israel ay nanangis sa Panginoon."
+      da: "Mændene fra Kirjat-Jearim bringer arken ind i Abinadabs hus; tyve år går, og hele Israel sukker efter Herren."
+      sr: "Људи из Киријат-Јарима уносе ковчег у дом Авинадавов; пролази двадесет година, и сав Израиљ тужи за Господом."
   - place: a736f6c # Mizpah
     ref: 1Sam.7.5-1Sam.7.12
     note:
@@ -116,6 +151,11 @@ stops:
       it: "A Mizpa Samuele prega e Israele prevale; tra Mizpa e Sen Samuele erige una pietra: «Fin qui l’Eterno ci ha soccorsi»."
       nl: "Te Mizpa bidt Samuël en Israël behaalt de overwinning; tussen Mizpa en Sen richt Samuël een steen op: “Tot hiertoe heeft de HEERE ons geholpen.”"
       cs: "V Micpě se Samuel modlí a Izrael vítězí; mezi Micpou a Šenem staví Samuel kámen: „Až potud pomáhal nám Hospodin.“"
+      sv: "I Mispa ber Samuel och Israel segrar; mellan Mispa och Shen reser Samuel en sten: ”Allt härintill har HERREN hjälpt oss.”"
+      nb: "I Mispa ber Samuel og Israel seirer; mellom Mispa og Sjen reiser Samuel en sten: «Hittil har Herren hjulpet oss.»"
+      tl: "Sa Mizpa ay nanalangin si Samuel at nanaig ang Israel; sa pagitan ng Mizpa at Sen ay naglagay si Samuel ng isang bato: “Hanggang dito'y tinulungan tayo ng Panginoon.”"
+      da: "I Mispa beder Samuel, og Israel sejrer; mellem Mispa og Sjen rejser Samuel en sten: »Hidindtil har Herren hjulpet os.«"
+      sr: "У Масфи Самуило се моли и Израиљ побеђује; између Масфе и Сена Самуило подиже камен: „Довде нам Господ поможе.“"
   - place: ab94aea # Gilgal
     ref: 1Sam.11.14-1Sam.11.15
     year: "1050 BC"
@@ -131,6 +171,11 @@ stops:
       it: "A Gàlgala il popolo fa re Saul davanti al Signore."
       nl: "Te Gilgal maakt het volk Saul tot koning voor het aangezicht van de HEER."
       cs: "V Gilgalu ustanovuje lid Saula králem před Hospodinem."
+      sv: "I Gilgal gör folket Saul till kung inför Herren."
+      nb: "I Gilgal gjør folket Saul til konge for Herrens åsyn."
+      tl: "Sa Gilgal, ginawang hari ng bayan si Saul sa harap ng Panginoon."
+      da: "I Gilgal gør folket Saul til konge for Herrens ansigt."
+      sr: "У Галгалу народ чини Саула царем пред Господом."
   - place: a90f6e1 # Ramah
     ref: 1Sam.25.1
     year: "1015 BC"
@@ -146,3 +191,8 @@ stops:
       it: "Samuele muore, e tutto Israele lo piange e lo seppellisce nella sua casa a Rama."
       nl: "Samuël sterft, en heel Israël rouwt om hem en begraaft hem in zijn huis te Rama."
       cs: "Samuel umírá, celý Izrael ho oplakává a pochovává ho v jeho domě v Rámě."
+      sv: "Samuel dör, och hela Israel sörjer honom och begraver honom i hans hus i Rama."
+      nb: "Samuel dør, og hele Israel sørger over ham og gravlegger ham ved hans hus i Rama."
+      tl: "Namatay si Samuel, at ang buong Israel ay nagdalamhati sa kaniya at inilibing siya sa kaniyang bahay sa Rama."
+      da: "Samuel dør, og hele Israel sørger over ham og begraver ham i hans hus i Rama."
+      sr: "Самуило умире, и сав Израиљ га оплакује и сахрањује га у његовој кући у Рами."

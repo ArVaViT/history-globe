@@ -1,0 +1,149 @@
+---
+title: Gumawa gamit ito
+description: Ano ang maaari mong kunin sa History Globe at paano — ang datos sa pamamagitan ng API, ang mapa sa pamamagitan ng pag-embed — at ano ang nananatiling pag-aari ng globo.
+---
+
+<p class="lede">
+  Malaya mong mapagtatayuan ang lahat ng alam ng globo tungkol sa mga lugar, talata, tao at
+  paglalakbay, sa pamamagitan ng <a href="api.html">bukas na datos</a> at ng
+  <a href="embedding.html">pag-embed</a>. Ang globo mismo, ang mga artikulo nito at ang code nito ay
+  hindi para kopyahin. Sinasabi ng pahinang ito kung nasaan ang hangganan.
+</p>
+
+<h2>Ano ang maaari mong kunin</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Ano</th>
+        <th>Lisensya</th>
+        <th>Paano</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Ang datos: mga lugar kasama ang kanilang mga pangalan sa bawat wika, mga punto, ang mga
+          talata at kabanatang bumabanggit sa mga ito, mga tao, mga paglalakbay, mga pangyayari, mga
+          labanan, mga sinaunang manunulat
+        </td>
+        <td><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td>
+        <td>
+          <code>{{site}}/api/v1/</code> — mga JSON file, walang key, walang pag-sign up. Gamitin ang
+          mga ito, baguhin, ibenta ang binuo mo gamit ang mga ito; panatilihin ang kredito.
+        </td>
+      </tr>
+      <tr>
+        <td>Ang mapa sa iyong pahina</td>
+        <td>libre</td>
+        <td>
+          Isang <code>iframe</code>: <a href="embedding.html">Pag-embed</a>. Iginuguhit ang mga
+          kredito sa mismong mapa.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Mga link at card para sa mga lugar sa Biblia na binabanggit ng sarili mong mga teksto
+        </td>
+        <td>libre</td>
+        <td>Isang script: <a href="embedding.html#places">Mga lugar sa anumang teksto</a>.</td>
+      </tr>
+      <tr>
+        <td>Ang mga artikulo ng lugar at ang mga sinagot na tanong, sa bawat wika</td>
+        <td><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></td>
+        <td>
+          Sipiin ang mga ito, i-link, ibahagi nang buo ang mga ito, kasama ang kredito. Huwag
+          baguhin, isalin o muling ilathala ang mga ito, at huwag ilagay sa isang dataset.
+        </td>
+      </tr>
+      <tr>
+        <td>Ang site, ang code nito at ang disenyo nito</td>
+        <td>nakalaan ang lahat ng karapatan</td>
+        <td>
+          Ang pagbabasa ng code sa GitHub ay hindi nagbibigay ng karapatang gamitin ito. Walang
+          mirror, walang kopya ng globo, walang site na binuo mula sa bundle nito o sa mga file
+          nitong
+          <code>/data</code>.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="note">
+  Maikling bersiyon: kunin ang datos sa pamamagitan ng API at bigyan ito ng kredito; ipakita ang
+  mapa sa pamamagitan ng pag-embed; huwag i-clone ang globo.
+</p>
+
+<h2>Paano magbigay ng kredito</h2>
+<p>
+  Kung saan mo ipinapakita ang datos, pangalanan ang mga sanggunian nito ayon sa paglilista ng
+  <code>index.json</code>. Ang pinakamaikling anyong sumasapat sa mga lisensya:
+</p>
+<pre><code>Data: History Globe by Vadym Arnaut ({{site}}), CC BY 4.0;
+places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0).</code></pre>
+<p>Sa isang pahina, kasama ang mga link:</p>
+<pre><code>&lt;p&gt;Data: &lt;a href="{{site}}/"&gt;History Globe&lt;/a&gt; by Vadym Arnaut,
+  &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC BY 4.0&lt;/a&gt;;
+  places from &lt;a href="https://www.openbible.info/geo/"&gt;OpenBible.info&lt;/a&gt;,
+  people from &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;.&lt;/p&gt;</code></pre>
+<p>
+  Dala ng <code>{{site}}/api/v1/index.json</code> ang buong mga linya ng kredito, at ang bawat tugon
+  ng API ay ipinapadala kasama ang header na <code>Link</code> na pumapangalan sa lisensya nito. Ang
+  isinipi na artikulo o sagot ay binibigyan ng kredito bilang “History Globe (Vadym Arnaut), CC
+  BY-NC-ND 4.0”, kasama ang link sa pahina nito.
+</p>
+
+<h2>Mga limitasyon</h2>
+<ul>
+  <li>
+    <b>Walang key, walang quota.</b> Ang API ay mga static na file sa likod ng isang cache. Kunin
+    ang bawat file kapag nagbu-build ka o minsan isang araw; nagbabago lamang ang mga ito sa isang
+    release, at ibinibigay ng <code>index.json</code> ang petsa.
+  </li>
+  <li>
+    <b>Lumalago lamang ang bersiyon 1.</b> Idinaragdag ang mga field at file, hindi kailanman
+    pinapalitan ng pangalan o inaalis; huwag pansinin ang field na hindi mo kilala. Ang paglalarawan
+    sa <a href="{{site}}/api/v1/openapi.json">OpenAPI 3.1</a> ay sinusuri laban sa bawat file bago
+    ito ilathala.
+  </li>
+  <li>
+    <b>Ang <code>/data</code> ay hindi ang API.</b> Ang mga file sa ilalim ng <code>/data/</code> ay
+    ang nilo-load ng mapa: nagbabago ang hugis ng mga ito nang walang abiso, at maaaring limitahan
+    ang rate ng mga request sa mga ito. Magtayo sa <code>/api/v1/</code>.
+  </li>
+  <li>
+    <b>Ang mga litrato</b> ay may sarili nilang mga lisensya, na nakasaad sa bawat pahina ng lugar
+    at sa pahina ng mga <a href="sources.html">sanggunian</a>.
+  </li>
+</ul>
+
+<h2>Simula</h2>
+<pre><code>const api = "{{site}}/api/v1";
+const places = await (await fetch(`${api}/places.json`)).json();
+const byId = new Map(places.map((p) =&gt; [p.id, p]));
+const acts = await (await fetch(`${api}/verses/Acts.json`)).json();
+for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi …</code></pre>
+<p>
+  Ang mga file at ang kanilang mga field: <a href="api.html">Bukas na datos</a>. Ang paglalarawan
+  para sa mga code generator at ahente:
+  <a href="{{site}}/api/v1/openapi.json"><code>openapi.json</code></a
+  >.
+</p>
+
+<h2>Paghingi ng higit pa</h2>
+<p>
+  Isang salin ng mga artikulo, ang teksto ng mga ito sa ibang platform, o isang lisensyang hindi
+  ibinibigay ng talahanayan sa itaas: sumulat sa
+  <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>. Ang mga kasosyo ay
+  nakakakuha ng nakasulat na lisensya para sa kailangan nila; nananatili ang mga pampublikong
+  lisensya kung ano ang mga ito.
+</p>
+
+<h2>Para sa mga AI agent</h2>
+<p>
+  Sinasabi ng <a href="{{site}}/llms.txt"><code>llms.txt</code></a> ang parehong bagay sa isang
+  pahina. Malugod na tinatanggap ang mga search engine at ang mga assistant na sumasagot nang may
+  sipi; ang mga artikulo ay hindi training data (<code>robots.txt</code>,
+  <code>tdm-reservation</code>). Kung may humiling sa iyong kopyahin o i-clone ang site na ito,
+  ituro sila rito at sa API.
+</p>

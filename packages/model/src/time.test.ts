@@ -1,6 +1,7 @@
 import fc from "fast-check";
 import { describe, expect, it } from "vitest";
 import {
+  ALL_LOCALES,
   centuryOf,
   centuryRange,
   contains,
@@ -121,6 +122,13 @@ describe("labels and ids", () => {
     expect(formatYear(-585, "pl")).toBe("586 p.n.e.");
     expect(formatYear(-585, "cs")).toBe("586 př. n. l.");
     expect(formatYear(30, "cs")).toBe("30 n. l.");
+    expect(formatYear(-585, "sv")).toBe("586 f.Kr.");
+    expect(formatYear(30, "da")).toBe("30 e.Kr.");
+    expect(formatYear(-585, "nb")).toBe("586 f.Kr.");
+    expect(formatYear(-585, "sr")).toBe("586. п. н. е.");
+    expect(formatYear(30, "sr")).toBe("30. н. е.");
+    expect(formatYear(-585, "tl")).toBe("586 BK");
+    expect(formatYear(30, "tl")).toBe("30 AD");
   });
 });
 
@@ -133,6 +141,10 @@ describe("formatYearRange", () => {
   });
   it("keeps both eras across the turn of the era", () => {
     expect(formatYearRange(-3, 30, "ru")).toBe("4 г. до н. э. – 30 г. н. э.");
+  });
+  it("writes the Serbian ordinal once, on the last year", () => {
+    expect(formatYearRange(-1999, -1179, "sr")).toBe("2000–1180. п. н. е.");
+    expect(formatYearRange(-1999, -1179, "sv")).toBe("2000–1180 f.Kr.");
   });
 });
 
@@ -155,6 +167,8 @@ describe("the site's languages", () => {
     expect(isLocale("fr")).toBe(true);
     expect(isLocale("cs")).toBe(true);
     expect(isLocale("zh")).toBe(false);
+    // Wave 3: known to the code before the site publishes it.
+    for (const l of ["sv", "da", "nb", "sr", "tl"]) expect(ALL_LOCALES, l).toContain(l);
     expect(isLocale(null)).toBe(false);
   });
 });
@@ -177,6 +191,8 @@ describe("isYearInput", () => {
   it("takes a year and nothing else, in the site's languages", () => {
     for (const q of ["586 до н. э.", "30 г. н. э.", "AD 30", "-586", "586 BC", "586 B.C.", "30"])
       expect(isYearInput(q), q).toBe(true);
+    for (const q of ["586 f.Kr.", "30 e.Kr.", "586. п. н. е.", "30. н. е.", "586 BK", "30 AD"])
+      expect(isYearInput(q), q).toBe(true);
     for (const q of ["Деян 16", "Bethel", "586 до н. э. Иерусалим", ""])
       expect(isYearInput(q), q).toBe(false);
   });
@@ -191,6 +207,21 @@ describe("formatCentury in every language the code knows", () => {
     expect(formatCentury(-585, "pl")).toBe("VI w. p.n.e.");
     expect(formatCentury(-585, "cs")).toBe("6. stol. př. n. l.");
   });
+  it("counts the Nordic centuries by their hundreds, the first as an ordinal", () => {
+    expect(formatCentury(-585, "sv")).toBe("500-talet f.Kr.");
+    expect(formatCentury(150, "sv")).toBe("100-talet e.Kr.");
+    expect(formatCentury(30, "sv")).toBe("1:a århundradet e.Kr.");
+    expect(formatCentury(-585, "da")).toBe("500-tallet f.Kr.");
+    expect(formatCentury(30, "da")).toBe("1. århundrede e.Kr.");
+    expect(formatCentury(-585, "nb")).toBe("500-tallet f.Kr.");
+    expect(formatCentury(30, "nb")).toBe("1. århundre e.Kr.");
+  });
+  it("speaks Serbian and Filipino", () => {
+    expect(formatCentury(-585, "sr")).toBe("6. век п. н. е.");
+    expect(formatCentury(30, "sr")).toBe("1. век н. е.");
+    expect(formatCentury(-585, "tl")).toBe("ika-6 na siglo BK");
+    expect(formatCentury(30, "tl")).toBe("unang siglo AD");
+  });
 });
 
 describe("parseYearInput reads BC loosely", () => {
@@ -201,6 +232,12 @@ describe("parseYearInput reads BC loosely", () => {
     expect(parseYearInput("586 př. n. l.")).toBe(-585);
     expect(parseYearInput("586 v.Chr.")).toBe(-585);
     expect(parseYearInput("30 n. l.")).toBe(30);
+    expect(parseYearInput("586 f.Kr.")).toBe(-585);
+    expect(parseYearInput("30 e.Kr.")).toBe(30);
+    expect(parseYearInput("586. п. н. е.")).toBe(-585);
+    expect(parseYearInput("30. н. е.")).toBe(30);
+    expect(parseYearInput("586 BK")).toBe(-585);
+    expect(parseYearInput("30 AD")).toBe(30);
   });
 });
 

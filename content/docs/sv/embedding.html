@@ -1,0 +1,335 @@
+---
+title: Inbäddning
+description: Lägg globen på din egen webbplats med en enda rad – kartan över ett kapitel, en plats, ett år eller en rundtur – och styr den från din sida.
+---
+
+<p class="lede">
+  Globen fungerar på vilken sida som helst som en <code>iframe</code>. En enda rad visar kartan över
+  ett kapitel bredvid bibelstället på din sida; några få meddelanden håller de två i takt.
+</p>
+
+<h2>Snabbstart</h2>
+<pre><code>&lt;iframe
+  src="{{site}}/embed/v1?ref=Acts.16&amp;locale=sv"
+  title="Karta över Apg 16"
+  style="width: 100%; height: 480px; border: 0; border-radius: 12px"
+  allow="fullscreen"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</code></pre>
+<ul>
+  <li>
+    Kartan fyller ramen och öppnas på platserna i Apg 16, det år då kapitlets händelser ägde rum.
+  </li>
+  <li>
+    <b>Överst:</b> kapitlet. Välj det för att lista dess platser i den ordning texten nämner dem;
+    välj en plats för att öppna dess kort.
+  </li>
+  <li><b>Nederst:</b> året. Välj det för att öppna tidsreglaget.</li>
+  <li>
+    En länk öppnar samma vy i den fullständiga globen i en ny flik. Källhänvisningarna visas på
+    själva kartan, så som datalicenserna kräver.
+  </li>
+  <li>Ramen fungerar ner till en telefons bredd; en höjd på 480 px räcker.</li>
+</ul>
+
+<h2>Ett kapitel eller ett avsnitt</h2>
+<p>
+  <code>ref</code> tar en OSIS-referens med engelska bokförkortningar och engelsk versnumrering:
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Värde</th>
+        <th>Visar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Acts.16</code></td>
+        <td>ett kapitel</td>
+      </tr>
+      <tr>
+        <td><code>Gen.12-Gen.13</code></td>
+        <td>upp till tre kapitel</td>
+      </tr>
+      <tr>
+        <td><code>Acts.16.11-Acts.16.15</code></td>
+        <td>ett avsnitt</td>
+      </tr>
+      <tr>
+        <td><code>Ruth</code></td>
+        <td>en hel bok</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Kartan flyttas till avsnittets år: det antecknade året för dess kapitel (kapitlen i
+  {{chapter_books}} böcker är daterade), eller annars året för den rundtur som täcker det; en hel
+  bok får året för den rundtur som har flest stopp i den. Ett avsnitt utan någotdera behåller
+  kartans nuvarande år.
+</p>
+
+<h2>Parametrar</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Exempel</th>
+        <th>Betydelse</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ref</code></td>
+        <td><code>Acts.16</code></td>
+        <td>kapitel, avsnitt eller bok (ovan)</td>
+      </tr>
+      <tr>
+        <td><code>year</code></td>
+        <td><code>-999</code></td>
+        <td>
+          år, i astronomisk räkning: 1 f.Kr. är <code>0</code>, 1000 f.Kr. är <code>-999</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>place</code></td>
+        <td><code>af2161c</code></td>
+        <td>öppna en plats (här Kafarnaum); id:n är OpenBibles</td>
+      </tr>
+      <tr>
+        <td><code>tour</code></td>
+        <td><code>paul-1</code></td>
+        <td>starta en guidad rundtur</td>
+      </tr>
+      <tr>
+        <td><code>stop</code></td>
+        <td><code>3</code></td>
+        <td>tillsammans med <code>tour</code>: öppna den vid det stoppet</td>
+      </tr>
+      <tr>
+        <td><code>lesson</code></td>
+        <td><code>a15257a~30.a112427~30</code></td>
+        <td>
+          din egen lektion, tillsammans med <code>tour=lesson</code>: platsernas id:n i ordning, var
+          och en med det år den ska visas vid (<code>~-585</code> för 586 f.Kr.: precis som för
+          <code>year</code> är 1 f.Kr. 0); varje stopp får den vers för platsen som ligger närmast
+          det året, avståndet, gångtiden och reliefen. Knappen ”Lägg till i en lektion” på ett
+          platskort bygger samma länkar
+        </td>
+      </tr>
+      <tr>
+        <td><code>title</code></td>
+        <td><code>Paul%20in%20Galatia</code></td>
+        <td>
+          tillsammans med <code>lesson</code>: lektionens namn, högst 80 tecken, överst i dess
+          rundtur och på dess utskrivna ark
+        </td>
+      </tr>
+      <tr>
+        <td><code>locale</code></td>
+        <td><code>sv</code></td>
+        <td>
+          språk: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
+          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
+          <code>pl</code>, <code>cs</code> eller <code>sv</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>camera</code></td>
+        <td><code>35.2,31.8,7,30,0</code></td>
+        <td>longitud, latitud, zoom, lutning, riktning</td>
+      </tr>
+      <tr>
+        <td><code>hide</code></td>
+        <td><code>relief,ancient</code></td>
+        <td>
+          lager som ska stängas av: <code>borders</code>, <code>places</code>, <code>relief</code>,
+          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="note">
+  Det enklaste sättet att bygga en vy är att ställa in den på den fullständiga globen och kopiera
+  adressen: samma parametrar fungerar efter <code>/embed/v1</code>.
+</p>
+
+<h2>Meddelanden</h2>
+<p>
+  Globen och din sida kommunicerar genom <code>postMessage</code>. Varje meddelande är ett objekt
+  med <code>type</code> och <code>v: 1</code>. Globen skickar bara det som händer på kartan och
+  aldrig något som identifierar läsaren; den tar bara emot meddelanden från den sida som håller
+  ramen.
+</p>
+<h3>Från globen</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Typ</th>
+        <th>Innehåll</th>
+        <th>När</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:ready</code></td>
+        <td><code>{ view }</code></td>
+        <td>kartan är ritad</td>
+      </tr>
+      <tr>
+        <td><code>hg:view-changed</code></td>
+        <td><code>{ view }</code></td>
+        <td>året, platsen, rundturen eller kameran har ändrats och har lugnat sig</td>
+      </tr>
+      <tr>
+        <td><code>hg:verse-clicked</code></td>
+        <td><code>{ osis }</code></td>
+        <td>läsaren klickade på en vers, t.ex. <code>"Acts.16.12"</code></td>
+      </tr>
+      <tr>
+        <td><code>hg:error</code></td>
+        <td><code>{ code, message }</code></td>
+        <td>kartan eller dess data kunde inte läsas in</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <code>view</code> innehåller <code>year</code>, <code>locale</code> och <code>layers</code> och,
+  när de är satta, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> och
+  <code>camera</code>.
+</p>
+<h3>Till globen</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Typ</th>
+        <th>Innehåll</th>
+        <th>Verkan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:set-view</code></td>
+        <td><code>{ view }</code></td>
+        <td>
+          ställer in året, kapitlet (<code>ref</code>), platsen, lagren eller kameran; med
+          <code>tour</code> (och <code>stop</code>) startar rundturen och de övriga fälten
+          ignoreras; språket ändras bara med <code>hg:set-locale</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:set-locale</code></td>
+        <td><code>{ locale }</code></td>
+        <td>byter språk</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Exempel: kartan följer din läsare</h2>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+
+// Läsaren öppnar ett kapitel – visa det på kartan.
+function showChapter(osis) {
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+}
+
+// En vers klickas på kartan – öppna den i din läsare.
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
+});</code></pre>
+
+<h2 id="places">Platser i vilken text som helst</h2>
+<p>
+  Ytterligare en rad länkar de bibliska platser som din egen text nämner (en artikel, en predikan,
+  en läsplan) till globen. Peka på ett namn, eller tryck på det på en telefon, så visar ett kort vad
+  platsen är, var den ligger i dag, hur många verser som nämner den och var den ligger på kartan;
+  kortet leder vidare till globen.
+</p>
+<figure class="sample">
+  <div class="hgp-demo">
+    <p>
+      Paulus seglade från Caesarea till Cypern, predikade i Efesos och Korinth och skrev till Rom.
+      Långt tidigare hade Abraham kommit till Sikem och Hebron; Jesus föddes i Betlehem och växte
+      upp i Nasaret, och Johannes såg sina syner på Patmos.
+    </p>
+  </div>
+  <figcaption>Ett levande exempel: de här namnen länkades av skriptet på den här sidan.</figcaption>
+</figure>
+<pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<p>
+  Adressen bär en version, och integritetshashen låser dess exakta innehåll: webbläsaren kör
+  skriptet bara om det är just den filen. En ny version får en ny adress; de gamla förblir som de
+  är.
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Attribut</th>
+        <th>Vad det gör</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>data-scope</code></td>
+        <td>var skriptet ska leta, som en CSS-selektor; som standard hela sidan</td>
+      </tr>
+      <tr>
+        <td><code>data-locale</code></td>
+        <td>
+          textens språk, ett av webbplatsens språk: <code>cs</code>, <code>de</code>,
+          <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
+          <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>sv</code>, <code>uk</code>; som
+          standard sidans <code>lang</code>; varje annat språk faller tillbaka på engelska
+        </td>
+      </tr>
+      <tr>
+        <td><code>data-every</code></td>
+        <td>länka varje omnämnande, inte bara det första av varje plats</td>
+      </tr>
+      <tr>
+        <td><code>data-theme</code></td>
+        <td>
+          <code>light</code> eller <code>dark</code> för kortet; som standard följer det läsarens
+          system
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Bara namn som pekar på en enda plats länkas. Ett namn som delas av två platser (Antiochia i Syrien
+  och i Pisidien), av en plats och en person (Juda) eller av en plats och ett vanligt ord förblir
+  vanlig text, och det gäller också ett namn som Bibelns egna verser mestadels använder för något
+  annat (”Kadesh” där är Kadesh-Barnea, inte det Kadesh som finns i databasen). Ett platsnamn som
+  också är ett förnamn (Jordan, Sharon) lämnas ifred bredvid ett annat ord med stor bokstav: Jordan
+  Smith är en person, inte floden. På ryska, ukrainska, polska och tjeckiska hittas namnen i sina
+  böjda former (”в Египте”, ”w Jerozolimie”, ”v Jeruzalémě”), och tyska namn också i genitiv
+  (”Jerusalems”). Länkar, kod, formulärfält, knappar och rubriker lämnas ifred.
+</p>
+<p class="note">
+  Skriptet har inga beroenden och sätter inga kakor. Det läser en enda fil med namn från globen
+  (ungefär 20 till 35 KB över nätverket beroende på språk, plus 7 KB skript), utan din sidas adress
+  som referent, och ändrar bara de namn det länkar. Det fungerar under en strikt Content Security
+  Policy som tillåter globens adress i <code>script-src</code> och <code>connect-src</code>. För
+  text som din sida lägger till senare, anropa <code>HistoryGlobePlaces.scan(element)</code> när
+  texten har renderats: skriptet delar upp textnoder, så på en React- eller Vue-sida ska du köra det
+  på innehåll som ramverket inte längre renderar om.
+</p>
+<script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
+
+<h2>Stabilitet</h2>
+<p>
+  <code>/embed/v1</code> är ett kontrakt: inom v1 läggs parametrar och meddelanden bara till, aldrig
+  ändras eller tas bort. En brytande ändring levereras som <code>/embed/v2</code>, och v1 fortsätter
+  att fungera.
+</p>

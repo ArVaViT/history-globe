@@ -13,6 +13,11 @@ title:
   it: "Rut"
   nl: "Ruth"
   cs: "Rut"
+  sv: "Rut"
+  nb: "Rut"
+  tl: "Ruth"
+  da: "Ruth"
+  sr: "Рута"
 year: "1100 BC"
 people: ["Ruth@Rut.1.4-Mat"]
 approximate: true
@@ -31,6 +36,11 @@ stops:
       it: "Durante una carestia un uomo di Betlemme di Giuda va con la moglie e i due figli a soggiornare nel paese di Moab."
       nl: "Tijdens een hongersnood trekt een man uit Bethlehem in Juda met zijn vrouw en twee zonen naar het land Moab om er te verblijven."
       cs: "Za hladu odchází muž z Betléma Judova s manželkou a dvěma syny pobývat do země Moáb."
+      sv: "Under en hungersnöd drar en man från Betlehem i Juda med sin hustru och två söner för att leva som främling i Moabs land."
+      nb: "I en hungersnød drar en mann fra Betlehem i Juda med sin hustru og to sønner for å bo en tid i Moabs land."
+      tl: "Sa isang taggutom, ang isang lalaki ng Bethlehem-juda ay pumaroon, kasama ang kaniyang asawa at dalawang anak na lalaki, upang makipamayan sa lupain ng Moab."
+      da: "I en hungersnød drager en mand fra Betlehem i Juda med sin hustru og to sønner for at tage ophold i Moabs land."
+      sr: "У глади један човек из Витлејема Јудиног одлази са женом и два сина да живи као дошљак у земљи моавској."
   - place: aa0b1d6 # Moab
     ref: Ruth.1.2-Ruth.1.18
     note:
@@ -45,6 +55,11 @@ stops:
       it: "Rimasta vedova in Moab, Rut non vuole lasciare Noemi: «dove andrai tu, andrò anch’io»."
       nl: "Als weduwe in Moab wil Ruth Naomi niet verlaten: “waar gij zult heengaan, zal ik ook heengaan.”"
       cs: "Rut, ovdovělá v Moábu, neopouští Noemi: „kamž se koli obrátíš, půjdu“."
+      sv: "Rut, änka i Moab, vill inte lämna Noomi: ”dit du går vill ock jag gå.”"
+      nb: "Rut, enke i Moab, vil ikke forlate Noomi: «dit du går, vil jeg gå»."
+      tl: "Balo na sa Moab, hindi iniwan ni Ruth si Noemi: “kung saan ka pumaroon, ay paroroon ako.”"
+      da: "Som enke i Moab vil Ruth ikke forlade Noomi: »hvor du gaar hen, der vil jeg gaa hen.«"
+      sr: "Постала удовица у Моаву, Рута неће да остави Нојемин: „куда год ти идеш, идем и ја.“"
   - place: a112427 # Bethlehem
     ref: Ruth.1.19-Ruth.4.17
     note:
@@ -59,3 +74,8 @@ stops:
       it: "A Betlemme spigola nel campo di Booz e ne diventa la moglie; suo figlio Obed è il nonno di Davide."
       nl: "In Bethlehem raapt zij aren op het veld van Boaz en wordt zijn vrouw; haar zoon Obed is de grootvader van David."
       cs: "V Betlémě sbírá klasy na poli Bóazově a stává se jeho ženou; její syn Obéd je dědem Davidovým."
+      sv: "I Betlehem plockar hon ax på Boas’ åker och blir hans hustru; hennes son Oved är farfar till David."
+      nb: "I Betlehem sanker hun aks på Boas' mark og blir hans hustru; hennes sønn Obed er Davids bestefar."
+      tl: "Sa Bethlehem, nagtipon siya ng mga uhay sa bukid ni Booz at naging asawa nito; ang kanilang anak na si Obed ay lolo ni David."
+      da: "I Betlehem sanker hun aks på Boaz' mark og bliver hans hustru; hendes søn Obed er Davids bedstefar."
+      sr: "У Витлејему купи класје на њиви Возовој и постаје његова жена; њен син Овид је деда Давидов."

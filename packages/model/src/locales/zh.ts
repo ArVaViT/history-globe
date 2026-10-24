@@ -55,6 +55,10 @@ const data: LocaleData = {
     km: "公里",
     m: "米",
   },
+  years: {
+    year: (y, bc) => `${bc ? "公元前" : "公元"}${String(y)}年`,
+    century: (n, bc) => `${bc ? "公元前" : "公元"}${String(n)}世纪`,
+  },
 };
 
 export default data;

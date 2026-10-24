@@ -17,6 +17,11 @@ title:
   it: "Ezechia e Isaia"
   nl: "Chizkia en Jesaja"
   cs: "Chizkijáš a Izajáš"
+  sv: "Hiskia och Jesaja"
+  nb: "Hiskia og Jesaja"
+  tl: "Si Ezechias at si Isaias"
+  da: "Hizkija og Esajas"
+  sr: "Језекија и Исаија"
 year: "701 BC"
 # Where the story happens, told of several people: no time on foot.
 walked: false
@@ -37,6 +42,11 @@ stops:
       it: "Ezechia elimina gli alti luoghi e fa a pezzi il serpente di rame Nechustan; confida nel Signore."
       nl: "Chizkia ruimt de offerhoogten op en breekt de koperen slang Nechustan; hij vertrouwt op de HEER."
       cs: "Chizkijáš odstraňuje výsosti a láme měděného hada Nechuštana; doufá v Hospodina."
+      sv: "Hiskia avskaffar offerhöjderna och krossar kopparormen Nehustan; han förtröstar på Herren."
+      nb: "Hiskia fjerner offerhaugene og knuser kobberslangen Nehustan; han setter sin lit til Herren."
+      tl: "Inaalis ni Ezechias ang mga mataas na dako at pinagputolputol ang ahas na tanso na tinatawag na Nehustan; nagtitiwala siya sa Panginoon."
+      da: "Hizkija fjerner offerhøjene og knuser kobberslangen Nehustan; han stoler på Herren."
+      sr: "Језекија уклања висине и ломи бронзану змију Неустан; уздаје се у Господа."
   - place: a041bb3 # Samaria
     ref: 2Kgs.18.9-2Kgs.18.12
     year: "722 BC"
@@ -52,6 +62,11 @@ stops:
       it: "Nel sesto anno di Ezechia Samaria è presa dal re d’Assiria e Israele è deportato."
       nl: "In het zesde jaar van Chizkia wordt Samaria ingenomen door de koning van Assyrië en wordt Israël weggevoerd."
       cs: "V šestém roce Chizkijášově dobývá Samaří král asyrský a Izrael je odveden."
+      sv: "I Hiskias sjätte år intas Samaria av Assyriens kung, och Israel förs bort."
+      nb: "I Hiskias sjette år blir Samaria inntatt av kongen i Assyria, og Israel blir bortført."
+      tl: "Sa ikaanim na taon ni Ezechias, nasasakop ng hari sa Asiria ang Samaria at dinadalang bihag ang Israel."
+      da: "I Hizkijas sjette år indtages Samaria af Assyriens konge, og Israel føres bort."
+      sr: "Шесте године Језекијине цар асирски осваја Самарију и Израиљ бива одведен."
   - place: a3cc590 # Lachish
     ref: 2Kgs.18.13-2Kgs.18.16
     note:
@@ -66,6 +81,11 @@ stops:
       it: "Sennacherib prende le città fortificate di Giuda; Ezechia manda a dirgli a Lachis: «Ho mancato», e paga il tributo che gli viene imposto."
       nl: "Sanherib neemt de versterkte steden van Juda in; Chizkia stuurt hem te Lachis de boodschap: “Ik heb gezondigd”, en betaalt de schatting die hem wordt opgelegd."
       cs: "Senacherib dobývá hrazená města Judská; Chizkijáš k němu posílá do Lachiše: „Zhřešilť jsem“, a platí uložený plat."
+      sv: "Sanherib intar Judas befästa städer; Hiskia sänder bud till honom i Lakish: ”Jag har försyndat mig”, och betalar den tribut som läggs på honom."
+      nb: "Sankerib inntar Judas befestede byer; Hiskia sender bud til ham i Lakisj: «Jeg har syndet», og betaler den skatt som blir lagt på ham."
+      tl: "Sinasakop ni Sennacherib ang mga bayang may kuta ng Juda; nagsusugo si Ezechias sa kaniya sa Lachis: “Ako'y nagkasala”, at binabayaran ang buwis na ipinataw sa kaniya."
+      da: "Sankerib indtager Judas befæstede byer; Hizkija sender bud til ham i Lakisj: »Jeg har syndet«, og betaler den told, der pålægges ham."
+      sr: "Сенахирим осваја утврђене градове Јудине; Језекија шаље к њему у Лахис поруку: „Згрешио сам“, и плаћа наметнути данак."
   - place: a15257a # Jerusalem
     ref: 2Kgs.18.17-2Kgs.19.7
     note:
@@ -80,6 +100,11 @@ stops:
       it: "Presso lo stagno superiore Rabsache schernisce Ezechia e il Signore davanti al popolo sulle mura; Isaia risponde: «Non ti spaventare per le parole che hai udite»."
       nl: "Bij de bovenste vijver bespot de Rabsake Chizkia en de HEER voor het volk op de muur; Jesaja antwoordt: “Vrees niet voor de woorden, die gij gehoord hebt.”"
       cs: "U horního rybníka se Rab-šake posmívá Chizkijášovi i Hospodinu před lidem na hradbě; Izajáš odpovídá: „Nestrachuj se slov těch, kteráž jsi slyšel.“"
+      sv: "Vid övre dammen hånar Rab-Shake Hiskia och Herren inför folket på muren; Jesaja svarar: ”Frukta icke för de ord som du har hört.”"
+      nb: "Ved den øvre dam håner Rabsjake Hiskia og Herren for folket på muren; Jesaja svarer: «Frykt ikke for de ord du hørte»."
+      tl: "Sa Mataas na Tangke, tinutuya ng Rabsaces si Ezechias at ang Panginoon sa harap ng bayan sa pader; sumasagot si Isaias: “Huwag kang matakot sa mga salita na iyong narinig.”"
+      da: "Ved den øvre dam håner Rabsjake Hizkija og Herren for folket på muren; Esajas svarer: »Frygt ikke for de Ord, som du hørte«."
+      sr: "Код горње баре Равсак се руга Језекији и Господу пред народом на зиду; Исаија одговара: „Не плаши се од речи које си чуо.“"
   - place: a97b595 # Libnah
     ref: 2Kgs.19.8
     note:
@@ -94,6 +119,11 @@ stops:
       it: "Rabsache trova il re d’Assiria in guerra contro Libna."
       nl: "De Rabsake treft de koning van Assyrië aan terwijl hij oorlog voert tegen Libna."
       cs: "Rab-šake nalézá krále asyrského, jak válčí proti Libně."
+      sv: "Rab-Shake finner Assyriens kung i krig mot Livna."
+      nb: "Rabsjake finner kongen i Assyria i krig mot Libna."
+      tl: "Natatagpuan ng Rabsaces ang hari sa Asiria na nakikipagdigma laban sa Libna."
+      da: "Rabsjake finder Assyriens konge i krig mod Libna."
+      sr: "Равсак налази цара асирског где ратује против Ливне."
   - place: a15257a # Jerusalem
     ref: 2Kgs.19.14-2Kgs.19.34
     note:
@@ -108,6 +138,11 @@ stops:
       it: "Ezechia spiega la lettera davanti al Signore e prega; Isaia gli manda la risposta: «Io proteggerò questa città affin di salvarla»."
       nl: "Chizkia spreidt de brief voor de HEER uit en bidt; Jesaja stuurt hem het antwoord: “Want Ik zal deze stad beschermen.”"
       cs: "Chizkijáš rozprostírá list před Hospodinem a modlí se; Izajáš mu posílá odpověď: „chrániti budu města tohoto“."
+      sv: "Hiskia breder ut brevet inför Herren och ber; Jesaja sänder honom svaret: ”jag skall beskärma och frälsa denna stad”."
+      nb: "Hiskia legger brevet frem for Herren og ber; Jesaja sender ham svaret: «Jeg vil verne denne by»."
+      tl: "Inilalatag ni Ezechias ang sulat sa harap ng Panginoon at nananalangin; ipinadadala sa kaniya ni Isaias ang sagot: “aking ipagsasanggalang ang bayang ito upang iligtas.”"
+      da: "Hizkija breder brevet ud for Herren og beder; Esajas sender ham svaret: »Thi jeg vil beskærme denne Stad«."
+      sr: "Језекија развија писмо пред Господом и моли се; Исаија му шаље одговор: „Јер ћу бранити тај град.“"
   - place: a70fd5d # Nineveh
     ref: 2Kgs.19.35-2Kgs.19.37
     note:
@@ -122,3 +157,8 @@ stops:
       it: "Dopo che l’angelo del Signore ha colpito l’accampamento assiro, Sennacherib torna a casa e abita a Ninive; più tardi i suoi figli lo uccidono mentre adora nella casa di Nisroc, suo dio."
       nl: "Nadat de engel van de HEER het Assyrische kamp heeft geslagen, gaat Sanherib naar huis en blijft te Nineve; later doden zijn zonen hem terwijl hij zich neerbuigt in het huis van Nisroch, zijn god."
       cs: "Poté, co anděl Hospodinův udeří na asyrský tábor, se Senacherib vrací domů a bydlí v Ninive; později ho synové zabijí, když se klaní v domě svého boha Nisroka."
+      sv: "Sedan Herrens ängel har slagit Assyriens läger drar Sanherib hem och stannar i Nineve; senare dräper hans söner honom när han tillber i sin gud Nisroks tempel."
+      nb: "Etter at Herrens engel har slått den assyriske leiren, drar Sankerib hjem og bor i Ninive; senere dreper hans sønner ham mens han tilber i sin guds Nisroks hus."
+      tl: "Pagkatapos na saktan ng anghel ng Panginoon ang kampo ng mga Asirio, umuuwi si Sennacherib at tumatahan sa Ninive; pagkaraan, pinapatay siya ng kaniyang mga anak habang sumasamba sa bahay ni Nisroch na kaniyang dios."
+      da: "Efter at Herrens engel har slået den assyriske lejr, vender Sankerib hjem og bor i Nineve; senere dræber hans sønner ham, mens han tilbeder i sin gud Nisroks hus."
+      sr: "Пошто анђео Господњи удари у логор асирски, Сенахирим се враћа кући и пребива у Ниневији; касније га синови његови убијају док се клања у дому Нисрока, бога свог."

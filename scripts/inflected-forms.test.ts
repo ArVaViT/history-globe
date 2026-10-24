@@ -36,6 +36,24 @@ describe("inflectedForms", () => {
     has("Galilea", "cs", "Galileje", "Galileji", "Galileou");
     has("Rama", "cs", "Ramy", "Ramě", "Ramu", "Ramou");
   });
+  it("declines Serbian names", () => {
+    has("Јерусалим", "sr", "Јерусалима", "Јерусалиму", "Јерусалимом");
+    has("Галилеја", "sr", "Галилеје", "Галилеји", "Галилеју", "Галилејом");
+    has("Самарија", "sr", "Самарије", "Самарији", "Самарију");
+    has("Рама", "sr", "Раме", "Рами", "Раму", "Рамом");
+    has("Египат", "sr", "Египта", "Египту");
+    has("Филипи", "sr", "Филипима");
+    has("Коринт", "sr", "Коринту", "Коринтом");
+    expect(inflectedForms("Јерусалим", "sr")).not.toContain("Јерусалимем");
+  });
+  it("gives the Nordic genitive", () => {
+    has("Jerusalem", "sv", "Jerusalems");
+    has("Egypten", "sv", "Egyptens");
+    has("Betlehem", "da", "Betlehems");
+    has("Jeriko", "nb", "Jerikos");
+    expect(inflectedForms("Damaskus", "sv")).toEqual(["Damaskus"]);
+    expect(inflectedForms("Efesos", "nb")).toEqual(["Efesos"]);
+  });
   it("gives the German genitive", () => {
     has("Jerusalem", "de", "Jerusalems");
     expect(inflectedForms("Damaskus", "de")).toEqual(["Damaskus"]);
@@ -48,6 +66,7 @@ describe("inflectedForms", () => {
   it("matches names of several words, and other languages, as written", () => {
     expect(inflectedForms("Góra Karmel", "pl")).toEqual(["Góra Karmel"]);
     expect(inflectedForms("Jerusalén", "es")).toEqual(["Jerusalén"]);
+    expect(inflectedForms("Jerusalem", "tl")).toEqual(["Jerusalem"]);
     expect(inflectedForms("Ai", "pl")).toEqual(["Ai"]);
   });
 });

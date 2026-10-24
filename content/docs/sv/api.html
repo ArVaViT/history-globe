@@ -1,0 +1,152 @@
+---
+title: Öppna data
+description: Platserna, de verser som nämner dem, händelserna och rundturerna som JSON-filer som vem som helst får använda under CC BY 4.0 – ingen nyckel, ingen registrering.
+---
+
+<p class="lede">
+  Allt som globen vet om platser och verser är öppet: vanliga JSON-filer som fritt får användas på
+  en annan webbplats eller i en annan app under CC BY 4.0. Ingen nyckel, ingen registrering, inga
+  gränser utöver vanlig cachning.
+</p>
+
+<h2>Vilka platser en vers nämner</h2>
+<p>En fil per bok i Bibeln: varje vers som nämner en plats, med id:n för de platserna.</p>
+<pre><code>GET {{site}}/api/v1/verses/Acts.json
+
+{ "Acts.16.11": ["a6a7150", "a68750d", "a91c509"], "Acts.16.12": ["a69e1b8", "a49e1d0"], … }</code></pre>
+<p>
+  Själva platserna, med sina namn på alla webbplatsens språk, sin typ och sin punkt, finns i
+  <code>places.json</code>; koppla ihop dem via <code>id</code>. Den första versionens
+  <code>name_ru</code> finns kvar, identiskt med <code>names.ru</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/places.json
+
+[{ "id": "a49e1d0", "name": "Philippi",
+   "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
+   "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "wikidata": "Q379652", "pleiades": "501482",
+   "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
+
+<h2>Vem och var i ett kapitel</h2>
+<p>
+  En fil per bok: varje kapitel, med de platser och de personer det nämner. Personerna identifieras
+  som i STEPBibles TIPNR; deras namn och första vers finns i <code>people.json</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/chapters/Acts.json
+
+{ "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
+               "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
+
+<h2>Alla filer</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Fil</th>
+        <th>Vad den innehåller</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/v1/index.json</code></td>
+        <td>förteckningen över filer och böcker, licensen och källhänvisningarna, byggdatumet</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/places.json</code></td>
+        <td>
+          varje plats: id, namn, typ, punkt, hur många verser som nämner den, dess sida (för en
+          plats som någon vers nämner); <code>wikidata</code> och <code>pleiades</code>, samma plats
+          i de ortnamnsregistren, där den är känd
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/verses/{Book}.json</code></td>
+        <td>
+          en vers → de platser den nämner, en fil per bok (<code>Gen</code>, <code>1Kgs</code>,
+          <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/chapters/{Book}.json</code></td>
+        <td>ett kapitel → de platser och personer det nämner, en fil per bok</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/people.json</code></td>
+        <td>
+          personerna som Bibeln nämner: TIPNR-id, namn, namn på de andra språken där webbplatsen har
+          dem, kön, hur många verser som nämner dem, den första
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/events.json</code></td>
+        <td>de daterade händelserna, med <code>ref</code> där Bibeln berättar händelsen</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/battles.json</code></td>
+        <td>
+          strider och belägringar: plats, år, parter och utgång, med <code>ref</code> där Bibeln
+          berättar striden
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/questions.json</code></td>
+        <td>
+          frågor som människor ställer, besvarade på båda språken, med kartans vy och källorna
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/tours.json</code></td>
+        <td>
+          rundturerna: deras stopp i ordning, vart och ett med sitt bibelställe och sin anteckning;
+          <code>by: "sea"</code> för en sträcka som seglats, och <code>sailed</code> (dagar och
+          vers) där texten anger hur lång tid det tog
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/ancient.json</code></td>
+        <td>
+          vad skribenter utanför Bibeln säger om en plats: författare, verk, textställe, en länk
+          till en fri text, en sammanfattning
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/openapi.json</code></td>
+        <td>allt detta beskrivet i OpenAPI 3.1, för kodgeneratorer och agenter</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Konventioner</h2>
+<ul>
+  <li>
+    Referenser är OSIS med engelska bokförkortningar och King James-numrering:
+    <code>Gen.12.6</code>, <code>Acts.16.12-Acts.16.15</code>.
+  </li>
+  <li>Årtal är astronomiska: 1 f.Kr. är 0, 586 f.Kr. är −585.</li>
+  <li>
+    En plats som i källdatan står två gånger under samma namn har <code>"duplicate": true</code>; en
+    plats vars läge är omstritt har <code>"disputed": true</code>.
+  </li>
+  <li>Filerna byggs om med varje utgåva av datan; <code>index.json</code> anger dess datum.</li>
+  <li>
+    Version 1 växer bara: fält och filer läggs till, aldrig byter namn eller tas bort. Ignorera ett
+    fält som du inte känner till.
+  </li>
+</ul>
+
+<h2>Licens och källhänvisning</h2>
+<p>
+  Datan ligger under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Använd
+  den, ändra den, sälj det du bygger med den; ange källorna där du visar den, så som
+  <code>index.json</code> förtecknar dem: History Globe av Vadym Arnaut, och OpenBible.info för
+  platserna, versmärkningen och punkterna, samt STEPBibles TIPNR för personerna. De ryska namnen
+  lästes ur Synodalöversättningen, som är allmän egendom. Namnen på de andra språken är History
+  Globes egna.
+</p>
+<p>
+  Svaren på frågorna (<code>questions.json</code>) är History Globes egna texter och ligger under
+  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>: citera och länka
+  dem, med angivande av källa; ändra dem inte, översätt dem inte och lägg dem inte på en annan
+  webbplats eller i en annan datamängd. Detsamma gäller platsartiklarna, som API:et inte innehåller.
+</p>

@@ -1,0 +1,346 @@
+---
+title: Pag-embed
+description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng isang kabanata, lugar, taon o paglalakbay — at kontrolin ito mula sa iyong pahina.
+---
+
+<p class="lede">
+  Tumatakbo ang globo sa loob ng anumang pahina bilang isang <code>iframe</code>. Isang linya ang
+  nagpapakita ng mapa ng isang kabanata sa tabi ng sipi sa iyong pahina; ilang mensahe ang
+  nagpapanatili ng pagkakasabay ng dalawa.
+</p>
+
+<h2>Mabilis na simula</h2>
+<pre><code>&lt;iframe
+  src="{{site}}/embed/v1?ref=Acts.16&amp;locale=en"
+  title="Map of Acts 16"
+  style="width: 100%; height: 480px; border: 0; border-radius: 12px"
+  allow="fullscreen"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</code></pre>
+<ul>
+  <li>
+    Pinupuno ng mapa ang frame at bumubukas sa mga lugar ng Gawa 16, sa taon ng mga pangyayari nito.
+  </li>
+  <li>
+    <b>Itaas:</b> ang kabanata. Piliin ito para ilista ang mga lugar nito ayon sa pagkakasunod na
+    binabanggit ng teksto; pumili ng lugar para buksan ang card nito.
+  </li>
+  <li><b>Ibaba:</b> ang taon. Piliin ito para buksan ang slider ng panahon.</li>
+  <li>
+    Binubuksan ng isang link ang parehong tanawin sa buong globo sa bagong tab. Ipinapakita ang mga
+    kredito sa mismong mapa, ayon sa hinihingi ng mga lisensya ng datos.
+  </li>
+  <li>Gumagana ang frame hanggang sa lapad ng isang telepono; sapat na ang taas na 480 px.</li>
+</ul>
+
+<h2>Isang kabanata o isang sipi</h2>
+<p>
+  Tumatanggap ang <code>ref</code> ng reperensiyang OSIS na may mga pinaikling pangalan ng aklat sa
+  Ingles at bilang ng talata sa Ingles:
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Halaga</th>
+        <th>Ipinapakita</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Acts.16</code></td>
+        <td>isang kabanata</td>
+      </tr>
+      <tr>
+        <td><code>Gen.12-Gen.13</code></td>
+        <td>hanggang tatlong kabanata</td>
+      </tr>
+      <tr>
+        <td><code>Acts.16.11-Acts.16.15</code></td>
+        <td>isang sipi</td>
+      </tr>
+      <tr>
+        <td><code>Ruth</code></td>
+        <td>isang buong aklat</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Lumilipat ang mapa sa taon ng sipi: ang naitalang taon ng mga kabanata nito (may petsa ang mga
+  kabanata ng {{chapter_books}} aklat), o kung wala, ang taon ng paglalakbay na sumasaklaw dito; ang
+  isang buong aklat ay kinukuha ang taon ng paglalakbay na may pinakamaraming hintuan dito. Ang sipi
+  na walang alinman sa dalawa ay pinananatili ang kasalukuyang taon ng mapa.
+</p>
+
+<h2>Mga parameter</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Halimbawa</th>
+        <th>Kahulugan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ref</code></td>
+        <td><code>Acts.16</code></td>
+        <td>kabanata, sipi o aklat (sa itaas)</td>
+      </tr>
+      <tr>
+        <td><code>year</code></td>
+        <td><code>-999</code></td>
+        <td>
+          taon, sa astronomikal na pagbibilang: ang 1 BK ay <code>0</code>, ang 1000 BK ay
+          <code>-999</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>place</code></td>
+        <td><code>af2161c</code></td>
+        <td>magbukas ng lugar (dito, ang Capernaum); mula sa OpenBible ang mga ID</td>
+      </tr>
+      <tr>
+        <td><code>tour</code></td>
+        <td><code>paul-1</code></td>
+        <td>simulan ang isang paglalakbay na may gabay</td>
+      </tr>
+      <tr>
+        <td><code>stop</code></td>
+        <td><code>3</code></td>
+        <td>kasama ng <code>tour</code>: buksan ito sa hintuang iyon</td>
+      </tr>
+      <tr>
+        <td><code>lesson</code></td>
+        <td><code>a15257a~30.a112427~30</code></td>
+        <td>
+          ang sarili mong aralin, kasama ng <code>tour=lesson</code>: mga ID ng lugar ayon sa
+          pagkakasunod, bawat isa ay may taon kung kailan ito ipapakita (<code>~-585</code> para sa
+          586 BK: tulad ng <code>year</code>, ang 1 BK ay 0); bawat hintuan ay nakakakuha ng talata
+          ng lugar na pinakamalapit sa taong iyon, ang layo, ang oras kung lalakarin at ang anyo ng
+          lupa. Ang button na “Idagdag sa aralin” sa card ng lugar ay bumubuo ng parehong mga link
+        </td>
+      </tr>
+      <tr>
+        <td><code>title</code></td>
+        <td><code>Paul%20in%20Galatia</code></td>
+        <td>
+          kasama ng <code>lesson</code>: ang pangalan ng aralin, hanggang 80 character, sa ulo ng
+          paglalakbay nito at ng naka-print nitong papel
+        </td>
+      </tr>
+      <tr>
+        <td><code>locale</code></td>
+        <td><code>en</code></td>
+        <td>
+          wika: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>, <code>pt</code>,
+          <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>, <code>pl</code> o
+          <code>cs</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>camera</code></td>
+        <td><code>35.2,31.8,7,30,0</code></td>
+        <td>longhitud, latitud, zoom, pitch, bearing</td>
+      </tr>
+      <tr>
+        <td><code>hide</code></td>
+        <td><code>relief,ancient</code></td>
+        <td>
+          mga patong na papatayin: <code>borders</code>, <code>places</code>, <code>relief</code>,
+          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="note">
+  Ang pinakamadaling paraan para bumuo ng tanawin ay ihanda ito sa buong globo at kopyahin ang URL:
+  gumagana ang parehong mga parameter pagkatapos ng <code>/embed/v1</code>.
+</p>
+
+<h2>Mga mensahe</h2>
+<p>
+  Nag-uusap ang globo at ang iyong pahina sa pamamagitan ng <code>postMessage</code>. Bawat mensahe
+  ay isang object na may <code>type</code> at <code>v: 1</code>. Ang ipinapadala lamang ng globo ay
+  ang nangyayari sa mapa, at hindi kailanman anumang makakakilala sa mambabasa; tumatanggap lamang
+  ito ng mga mensahe mula sa pahinang may hawak ng frame.
+</p>
+<h3>Mula sa globo</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Payload</th>
+        <th>Kailan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:ready</code></td>
+        <td><code>{ view }</code></td>
+        <td>naiguhit na ang mapa</td>
+      </tr>
+      <tr>
+        <td><code>hg:view-changed</code></td>
+        <td><code>{ view }</code></td>
+        <td>nagbago at tumigil na ang taon, lugar, paglalakbay o camera</td>
+      </tr>
+      <tr>
+        <td><code>hg:verse-clicked</code></td>
+        <td><code>{ osis }</code></td>
+        <td>nag-click ang mambabasa ng isang talata, hal. <code>"Acts.16.12"</code></td>
+      </tr>
+      <tr>
+        <td><code>hg:error</code></td>
+        <td><code>{ code, message }</code></td>
+        <td>hindi nai-load ang mapa o ang datos nito</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Naglalaman ang <code>view</code> ng <code>year</code>, <code>locale</code> at
+  <code>layers</code> at, kung itinakda, ng <code>place</code>, <code>tour</code>,
+  <code>stop</code>, <code>ref</code> at <code>camera</code>.
+</p>
+<h3>Papunta sa globo</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Payload</th>
+        <th>Epekto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:set-view</code></td>
+        <td><code>{ view }</code></td>
+        <td>
+          itakda ang taon, kabanata (<code>ref</code>), lugar, mga patong o camera; kapag may
+          <code>tour</code> (at <code>stop</code>), magsisimula ang paglalakbay at hindi papansinin
+          ang iba pang field; nagbabago lamang ang wika sa pamamagitan ng
+          <code>hg:set-locale</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:set-locale</code></td>
+        <td><code>{ locale }</code></td>
+        <td>palitan ang wika</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Halimbawa: sinusundan ng mapa ang iyong mambabasa</h2>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+
+// When your reader opens a chapter, show it on the map.
+function showChapter(osis) {
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+}
+
+// When a verse is clicked on the map, open it in your reader.
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
+});</code></pre>
+
+<h2 id="places">Mga lugar sa anumang teksto</h2>
+<p>
+  Isa pang linya ang nag-uugnay sa globo ng mga lugar sa Biblia na binabanggit ng sarili mong teksto
+  (isang artikulo, isang sermon, isang plano sa pagbabasa). Ituro ang isang pangalan, o i-tap ito sa
+  telepono, at ipapakita ng isang card kung ano ang lugar, nasaan ito ngayon, ilang talata ang
+  bumabanggit dito at kung saan ito matatagpuan sa mapa; dinadala ng card ang mambabasa sa globo.
+</p>
+<figure class="sample">
+  <div class="hgp-demo">
+    <p>
+      Naglayag si Pablo mula sa Cesarea patungong Chipre, nangaral sa Efeso at sa Corinto, at
+      sumulat sa Roma. Matagal na bago nito, dumating si Abraham sa Sichem at sa Hebron; isinilang
+      si Jesus sa Bethlehem at lumaki sa Nazaret, at nakita ni Juan ang kanyang mga pangitain sa
+      Patmos.
+    </p>
+  </div>
+  <figcaption>
+    Isang buhay na halimbawa: ang mga pangalang ito ay iniugnay ng script sa pahinang ito.
+  </figcaption>
+</figure>
+<pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<p>
+  May bersiyon ang address, at ang integrity hash ang nagtatakda ng eksaktong nilalaman nito:
+  tatakbo lamang ng browser ang script kung iyon mismo ang file. Ang bagong bersiyon ay may bagong
+  address; nananatili ang mga luma kung ano ang mga ito.
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Ano ang ginagawa nito</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>data-scope</code></td>
+        <td>kung saan hahanapin, bilang CSS selector; ang buong pahina bilang default</td>
+      </tr>
+      <tr>
+        <td><code>data-locale</code></td>
+        <td>
+          ang wika ng teksto, isa sa mga wika ng site: <code>cs</code>, <code>de</code>,
+          <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
+          <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>uk</code>; bilang default, ang
+          <code>lang</code> ng pahina; anumang ibang wika ay babalik sa Ingles
+        </td>
+      </tr>
+      <tr>
+        <td><code>data-every</code></td>
+        <td>iugnay ang bawat banggit, hindi lamang ang una sa bawat lugar</td>
+      </tr>
+      <tr>
+        <td><code>data-theme</code></td>
+        <td>
+          <code>light</code> o <code>dark</code> para sa card; bilang default, sinusunod nito ang
+          sistema ng mambabasa
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Ang mga pangalang tumuturo lamang sa isang lugar ang iniuugnay. Ang pangalang pinagsasaluhan ng
+  dalawang lugar (Antioquia sa Siria at Antioquia sa Pisidia), ng isang lugar at isang tao (Juda), o
+  ng isang lugar at isang karaniwang salita ay nananatiling payak na teksto, gayundin ang pangalang
+  kadalasang ginagamit ng mismong mga talata ng Biblia para sa ibang bagay (ang “Kades” doon ay
+  Kades-barnea, hindi ang Kades ng database). Ang pangalan ng lugar na pangalan din ng isang tao
+  (Jordan, Saron) ay hindi ginagalaw kapag katabi ito ng isa pang salitang may malaking titik: ang
+  Jordan Smith ay isang tao, hindi ang ilog. Sa Ruso, Ukrainiano, Polako at Czech, natatagpuan ang
+  mga pangalan sa kanilang mga binagong anyo (“в Египте”, “w Jerozolimie”, “v Jeruzalémě”), at ang
+  mga pangalang Aleman ay sa genitive din (“Jerusalems”). Hindi ginagalaw ang mga link, code, field
+  ng form, button at heading.
+</p>
+<p class="note">
+  Walang dependency ang script at hindi ito nagtatakda ng cookie. Binabasa nito ang isang file ng
+  mga pangalan mula sa globo (mga 20 hanggang 35 KB sa network depende sa wika, dagdag ang 7 KB ng
+  script), nang hindi ipinapadala ang address ng iyong pahina bilang referrer, at binabago lamang
+  nito ang mga pangalang iniuugnay nito. Gumagana ito sa ilalim ng mahigpit na Content Security
+  Policy na pinahihintulutan ang address ng globo sa <code>script-src</code> at
+  <code>connect-src</code>. Para sa tekstong idinaragdag ng iyong pahina nang mas huli, tawagin ang
+  <code>HistoryGlobePlaces.scan(element)</code> kapag na-render na ang teksto: hinahati ng script
+  ang mga text node, kaya sa isang pahinang React o Vue, patakbuhin ito sa nilalamang hindi na
+  muling nire-render ng framework.
+</p>
+<script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
+
+<h2>Katatagan</h2>
+<p>
+  Ang <code>/embed/v1</code> ay isang kontrata: sa loob ng v1, mga parameter at mensahe ay
+  idinaragdag lamang, hindi kailanman binabago o inaalis. Ang pagbabagong makakasira ay ilalabas
+  bilang <code>/embed/v2</code>, at patuloy na gagana ang v1.
+</p>

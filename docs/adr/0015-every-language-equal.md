@@ -23,7 +23,8 @@ which no language ranks above another.
   (`startLocale`): the host's page decides. English is the fallback because it is
   the language most readers of other languages read, not the site's own.
 - **Words per language, Russian among them.** Book abbreviations and names, era names, the
-  site-label templates and the Maccabees mark of every language but English live in
+  site-label templates, the year and century formats (since 2026-10-23) and the Maccabees
+  mark of every language but English live in
   `packages/model/src/locales/<code>.ts`, fetched with that language
   (`locale-data.ts`, ADR 0011). English is in the code, as the words the others fall back to.
 - **No first language in lists.** `LOCALES` runs in the order of the languages' own names

@@ -14,6 +14,11 @@ title:
   it: "Il primo viaggio di Paolo"
   nl: "De eerste reis van Paulus"
   cs: "První Pavlova cesta"
+  sv: "Paulus’ första resa"
+  nb: "Paulus' første reise"
+  tl: "Ang unang paglalakbay ni Pablo"
+  da: "Paulus' første rejse"
+  sr: "Павлово прво путовање"
 year: "AD 47"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -32,6 +37,11 @@ stops:
       it: "Per parola dello Spirito Santo, la chiesa mette da parte Barnaba e Saulo per l’opera."
       nl: "Op het woord van de Heilige Geest zondert de gemeente Barnabas en Saulus af voor het werk."
       cs: "Na slovo Ducha svatého církev odděluje Barnabáše a Saula k dílu."
+      sv: "På den helige Andes ord avskiljer församlingen Barnabas och Saul för uppgiften."
+      nb: "På Den hellige ånds ord setter menigheten Barnabas og Saul til side for gjerningen."
+      tl: "Sa salita ng Espiritu Santo, itinalaga ng iglesia sina Bernabe at Saul para sa gawain."
+      da: "På Helligåndens ord udskiller menigheden Barnabas og Saul til værket."
+      sr: "По речи Духа Светога црква одваја Варнаву и Савла за дело."
   - place: a6d306d # Seleucia Pieria
     ref: Acts.13.4
     note:
@@ -46,6 +56,11 @@ stops:
       it: "Il porto di Antiochia; salpano per Cipro."
       nl: "De haven van Antiochië; zij varen naar Cyprus."
       cs: "Přístav Antiochie; plují na Kypr."
+      sv: "Antiochias hamn; de seglar mot Cypern."
+      nb: "Antiokias havneby; de seiler til Kypros."
+      tl: "Ang daungan ng Antioquia; naglayag sila patungong Chipre."
+      da: "Antiokias havn; de sejler til Cypern."
+      sr: "Пристаниште Антиохије; отпловљавају на Кипар."
   - place: afa863b # Salamis
     ref: Acts.13.5
     by: sea
@@ -61,6 +76,11 @@ stops:
       it: "Annunciano la parola nelle sinagoghe dei Giudei."
       nl: "Zij verkondigen het woord in de synagogen van de Joden."
       cs: "Hlásají slovo v synagogách Židů."
+      sv: "De förkunnar ordet i judarnas synagogor."
+      nb: "De forkynner ordet i jødenes synagoger."
+      tl: "Ipinahahayag nila ang salita sa mga sinagoga ng mga Judio."
+      da: "De forkynder ordet i jødernes synagoger."
+      sr: "Проповедају реч у синагогама јеврејским."
   - place: a314765 # Paphos
     ref: Acts.13.6-Acts.13.12
     note:
@@ -75,6 +95,11 @@ stops:
       it: "Il proconsole Sergio Paolo crede."
       nl: "De proconsul Sergius Paulus komt tot geloof."
       cs: "Prokonzul Sergius Paulus uvěří."
+      sv: "Prokonsuln Sergius Paulus kommer till tro."
+      nb: "Prokonsulen Sergius Paulus kommer til tro."
+      tl: "Sumasampalataya ang prokonsul na si Sergio Paulo."
+      da: "Prokonsul Sergius Paulus kommer til tro."
+      sr: "Намесник Сергије Павле поверује."
   - place: aff04b8 # Perga
     ref: Acts.13.13
     by: sea
@@ -90,6 +115,11 @@ stops:
       it: "Giovanni Marco torna a Gerusalemme."
       nl: "Johannes Marcus keert terug naar Jeruzalem."
       cs: "Jan Marek se vrací do Jeruzaléma."
+      sv: "Johannes Markus vänder tillbaka till Jerusalem."
+      nb: "Johannes Markus vender tilbake til Jerusalem."
+      tl: "Bumabalik si Juan Marcos sa Jerusalem."
+      da: "Johannes Markus vender tilbage til Jerusalem."
+      sr: "Јован Марко се враћа у Јерусалим."
   - place: a6c704a # Antioch in Pisidia
     ref: Acts.13.14-Acts.13.50
     note:
@@ -104,6 +134,11 @@ stops:
       it: "Predicazione nella sinagoga; ci si volge ai Gentili."
       nl: "Prediking in de synagoge; de wending naar de heidenen."
       cs: "Kázání v synagoze; obrácení k pohanům."
+      sv: "Förkunnelse i synagogan; vändningen till hedningarna."
+      nb: "Forkynnelse i synagogen; vendingen til hedningene."
+      tl: "Pangangaral sa sinagoga; pagbaling sa mga Gentil."
+      da: "Forkyndelse i synagogen; vending mod hedningerne."
+      sr: "Проповед у синагоги; окретање незнабошцима."
   - place: ae425aa # Iconium
     ref: Acts.14.1-Acts.14.5
     note:
@@ -118,6 +153,11 @@ stops:
       it: "Molti credono; si trama per lapidarli."
       nl: "Velen komen tot geloof; een complot om hen te stenigen."
       cs: "Mnozí uvěří; spiknutí, že budou ukamenováni."
+      sv: "Många kommer till tro; ett anslag för att stena dem."
+      nb: "Mange kommer til tro; en sammensvergelse for å steine dem."
+      tl: "Maraming sumasampalataya; may banta ng pagbato sa kanila."
+      da: "Mange kommer til tro; et anslag om at stene dem."
+      sr: "Многи поверују; заседа да их засу камењем."
   - place: af0719d # Lystra
     ref: Acts.14.8-Acts.14.19
     note:
@@ -132,6 +172,11 @@ stops:
       it: "Uno zoppo è guarito; Paolo è lapidato."
       nl: "Een lamme wordt genezen; Paulus wordt gestenigd."
       cs: "Uzdravení chromého; Pavel je ukamenován."
+      sv: "En halt man botas; Paulus stenas."
+      nb: "En lam mann blir helbredet; Paulus blir steinet."
+      tl: "Gumagaling ang isang pilay; binabato si Pablo."
+      da: "En lam mand helbredes; Paulus stenes."
+      sr: "Хроми човек бива исцељен; Павле бива засут камењем."
   - place: aa401a9 # Derbe
     ref: Acts.14.20-Acts.14.21
     note:
@@ -146,6 +191,11 @@ stops:
       it: "Fanno molti discepoli."
       nl: "Zij maken veel discipelen."
       cs: "Získávají mnoho učedníků."
+      sv: "De gör många till lärjungar."
+      nb: "De gjør mange til disipler."
+      tl: "Gumagawa sila ng maraming alagad."
+      da: "De gør mange til disciple."
+      sr: "Чине многе ученике."
   - place: af0719d # Lystra
     ref: Acts.14.21-Acts.14.22
     note:
@@ -160,6 +210,11 @@ stops:
       it: "Tappa del ritorno: rafforzano i discepoli."
       nl: "De terugreis: de discipelen worden gesterkt."
       cs: "Zpáteční cesta: utvrzování učedníků."
+      sv: "Återvägen: de styrker lärjungarna."
+      nb: "Tilbakeveien: de styrker disiplene."
+      tl: "Pabalik na biyahe: pinalalakas ang mga alagad."
+      da: "Hjemturen: de styrker disciplene."
+      sr: "На повратку: утврђују ученике."
   - place: ae425aa # Iconium
     ref: Acts.14.21
     note:
@@ -174,6 +229,11 @@ stops:
       it: "Tappa del ritorno."
       nl: "De terugreis."
       cs: "Zpáteční cesta."
+      sv: "Återvägen."
+      nb: "Tilbakeveien."
+      tl: "Pabalik na biyahe."
+      da: "Hjemturen."
+      sr: "На повратку."
   - place: a6c704a # Antioch in Pisidia
     ref: Acts.14.21-Acts.14.23
     note:
@@ -188,6 +248,11 @@ stops:
       it: "Si stabiliscono anziani in ogni chiesa."
       nl: "In elke gemeente worden oudsten aangesteld."
       cs: "V každé církvi jsou ustanoveni starší."
+      sv: "Äldste utses i varje församling."
+      nb: "Eldste blir innsatt i hver menighet."
+      tl: "Nagtatalaga ng mga matanda sa bawat iglesia."
+      da: "Der indsættes ældste i hver menighed."
+      sr: "Старешине постављене у свакој цркви."
   - place: aff04b8 # Perga
     ref: Acts.14.25
     note:
@@ -202,6 +267,11 @@ stops:
       it: "Annunciano la parola a Perge."
       nl: "Zij spreken het woord te Perge."
       cs: "Mluví slovo v Perge."
+      sv: "De talar ordet i Perge."
+      nb: "De taler ordet i Perge."
+      tl: "Sinasalita nila ang salita sa Perga."
+      da: "De taler ordet i Perge."
+      sr: "Говоре реч у Перге."
   - place: ac744c1 # Attalia
     ref: Acts.14.26
     note:
@@ -216,6 +286,11 @@ stops:
       it: "Si imbarcano per tornare ad Antiochia."
       nl: "Zij varen terug naar Antiochië."
       cs: "Plují zpět do Antiochie."
+      sv: "De seglar tillbaka till Antiochia."
+      nb: "De seiler tilbake til Antiokia."
+      tl: "Naglalayag sila pabalik sa Antioquia."
+      da: "De sejler tilbage til Antiokia."
+      sr: "Отпловљавају натраг у Антиохију."
   - place: ae41ab4 # Antioch in Syria
     ref: Acts.14.27-Acts.14.28
     by: sea
@@ -231,3 +306,8 @@ stops:
       it: "Riferiscono come Dio abbia aperto ai Gentili la porta della fede."
       nl: "Zij vertellen hoe God de heidenen een deur van het geloof heeft geopend."
       cs: "Podávají zprávu, jak Bůh otevřel pohanům dveře víry."
+      sv: "De berättar hur Gud har öppnat en dörr till tro för hedningarna."
+      nb: "De forteller hvordan Gud har åpnet troens dør for hedningene."
+      tl: "Ibinabalita nila kung paanong binuksan ng Dios ang pinto ng pananampalataya sa mga Gentil."
+      da: "De beretter, hvordan Gud har åbnet hedningerne troens dør."
+      sr: "Извештавају како је Бог отворио незнабошцима врата вере."

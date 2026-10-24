@@ -17,6 +17,11 @@ title:
   it: "Pentecoste: da dove venivano i pellegrini"
   nl: "Pinksteren: waar de pelgrims vandaan kwamen"
   cs: "Letnice: odkud přišli poutníci"
+  sv: "Pingst: varifrån pilgrimerna kom"
+  nb: "Pinse: hvor pilegrimene kom fra"
+  tl: "Pentecostes: saan nanggaling ang mga peregrino"
+  da: "Pinse: hvor pilgrimmene kom fra"
+  sr: "Педесетница: одакле су дошли ходочасници"
 year: "AD 30"
 # The lands of a list, not a journey: no time on foot.
 walked: false
@@ -36,6 +41,11 @@ stops:
       it: "Il giorno di Pentecoste lo Spirito scende con un suono dal cielo e lingue come di fuoco; Giudei religiosi «d’ogni nazione di sotto il cielo» sentono parlare i Galilei, ciascuno nella propria lingua."
       nl: "Op de dag van Pinksteren komt de Geest met een geluid uit de hemel en tongen als van vuur; vrome Joden “van allen volke dergenen, die onder den hemel zijn” horen de Galileeërs, ieder in zijn eigen taal."
       cs: "V den Letnic přichází Duch se zvukem z nebe a jazyky jako z ohně; zbožní Židé „ze všelikého národu, kterýž pod nebem jest“ slyší Galilejské, každý ve svém jazyce."
+      sv: "På pingstdagen kommer Anden med ett dån från himmelen och tungor såsom av eld; fromma judiska män ”från allahanda folk under himmelen” hör galileerna, var och en på sitt eget språk."
+      nb: "På pinsedagen kommer Ånden med en lyd fra himmelen og tunger som av ild; fromme jøder «fra alle folkeslag under himmelen» hører galileerne, hver på sitt eget språk."
+      tl: "Sa araw ng Pentecostes, bumababa ang Espiritu na may tunog mula sa langit at mga dilang tulad ng apoy; naririnig ng mga relihiosong Judio “buhat sa bawa't bansa sa ilalim ng langit” ang mga taga-Galilea, bawat isa sa sarili niyang wika."
+      da: "På pinsedagen kommer Ånden med en lyd fra himlen og tunger som af ild; gudfrygtige jøder »af alle Folkeslag under Himmelen« hører galilæerne, hver på sit eget sprog."
+      sr: "На дан Педесетнице Дух силази уз шум с неба и језике као огњене; побожни Јевреји „из сваког народа који је под небом“ чују Галилејце, сваки на свом језику."
   - place: a43f60f # Mesopotamia
     ref: Acts.2.9
     note:
@@ -50,6 +60,11 @@ stops:
       it: "Prima l’oriente: Parti, Medi, Elamiti e gli abitanti della Mesopotamia, dove i Giudei vivevano fin dall’esilio."
       nl: "Eerst het oosten: Parthen, Meden, Elamieten en de bewoners van Mesopotamië, waar sinds de ballingschap Joden hadden gewoond."
       cs: "Nejprve východ: Parthové, Médové, Elamité a obyvatelé Mezopotámie, kde Židé žili od vyhnanství."
+      sv: "Först öster: parter, meder, elamiter och de som bor i Mesopotamien, där judar hade bott sedan landsflykten."
+      nb: "Først øst: partere, medere, elamitter og de som bor i Mesopotamia, hvor jøder hadde bodd siden landflyktigheten."
+      tl: "Una ang silangan: mga Parto, mga Medo, mga Elamita at ang mga naninirahan sa Mesopotamia, kung saan nanirahan ang mga Judio mula pa sa pagkabihag."
+      da: "Først øst: parthere, medere, elamitter og dem, der bor i Mesopotamien, hvor jøder havde boet siden landflygtigheden."
+      sr: "Најпре исток: Парти, Миђани, Еламљани и становници Месопотамије, где су Јевреји живели од прогонства."
   - place: a33fbde # Cappadocia
     ref: Acts.2.9
     note:
@@ -64,6 +79,11 @@ stops:
       it: "La Cappadocia, nel cuore dell’Asia Minore: Pietro scriverà la sua lettera alle chiese di quella regione (1 Pt 1,1)."
       nl: "Cappadocië, in het hart van Klein-Azië: Petrus zal zijn brief aan de gemeenten daar schrijven (1 Petr. 1:1)."
       cs: "Kappadokie, v srdci Malé Asie: Petr napíše svůj list jejím církvím (1 Pt 1,1)."
+      sv: "Kappadokien, mitt i Mindre Asien: Petrus ska skriva sitt brev till dess församlingar (1 Petr 1:1)."
+      nb: "Kappadokia, i hjertet av Lilleasia: Peter skal skrive sitt brev til menighetene der (1 Pet 1,1)."
+      tl: "Capadocia, sa gitna ng Asia Minor: isusulat ni Pedro ang kaniyang sulat sa mga iglesia nito (1 Ped 1:1)."
+      da: "Kappadokien, i hjertet af Lilleasien: Peter skal skrive sit brev til dets menigheder (1 Pet 1,1)."
+      sr: "Кападокија, у срцу Мале Азије: Петар ће писати своју посланицу њеним црквама (1. Пет 1,1)."
   - place: a83a43e # Pontus
     ref: Acts.2.9
     note:
@@ -78,6 +98,11 @@ stops:
       it: "Il Ponto, sul Mar Nero, patria di Aquila, che Paolo incontrerà a Corinto (At 18,2)."
       nl: "Pontus aan de Zwarte Zee, de woonplaats van Aquila, die Paulus te Korinthe zal ontmoeten (Hand. 18:2)."
       cs: "Pontus při Černém moři, domov Akvily, s nímž se Pavel setká v Korintu (Sk 18,2)."
+      sv: "Pontos vid Svarta havet, hemland för Aquila, som Paulus ska möta i Korinth (Apg 18:2)."
+      nb: "Pontos ved Svartehavet, Akvilas' hjemland, som Paulus skal møte i Korint (Apg 18,2)."
+      tl: "Ponto sa Dagat Itim, ang tahanan ni Aquila, na makikilala ni Pablo sa Corinto (Gawa 18:2)."
+      da: "Pontus ved Sortehavet, Akvilas hjemland, som Paulus skal møde i Korinth (ApG 18,2)."
+      sr: "Понт на Црном мору, домовина Акиле, кога ће Павле срести у Коринту (Дап 18,2)."
   - place: a197f19 # Asia
     ref: Acts.2.9
     note:
@@ -92,6 +117,11 @@ stops:
       it: "L’Asia, la provincia di Efeso, dove Paolo insegnerà per tre anni e dove sorgeranno le sette chiese dell’Apocalisse."
       nl: "Asia, de provincie van Efeze, waar Paulus drie jaar zal onderwijzen en waar de zeven gemeenten van Openbaring zullen staan."
       cs: "Asie, provincie s Efezem, kde bude Pavel tři roky učit a kde budou stát sedm církví Zjevení."
+      sv: "Asien, Efesos’ provins, där Paulus ska undervisa i tre år och där Uppenbarelsebokens sju församlingar ska ligga."
+      nb: "Asia, provinsen med Efesos, hvor Paulus skal undervise i tre år og Johannes' Åpenbarings sju menigheter skal stå."
+      tl: "Asia, ang lalawigan ng Efeso, kung saan magtuturo si Pablo nang tatlong taon at kung saan itatayo ang pitong iglesia ng Apocalipsis."
+      da: "Asia, Efesos' provins, hvor Paulus skal undervise i tre år, og hvor Johannes' Åbenbarings syv menigheder skal ligge."
+      sr: "Азија, провинција Ефеса, где ће Павле поучавати три године и где ће стајати седам цркава из Откривења."
   - place: ab8ae56 # Phrygia
     ref: Acts.2.10
     note:
@@ -106,6 +136,11 @@ stops:
       it: "La Frigia, nell’entroterra, che Paolo attraverserà due volte nei suoi viaggi."
       nl: "Frygië in het binnenland, dat Paulus op zijn reizen tweemaal zal doortrekken."
       cs: "Frygie ve vnitrozemí, kterou Pavel na svých cestách dvakrát projde."
+      sv: "Frygien i inlandet, som Paulus ska färdas genom två gånger på sina resor."
+      nb: "Frygia inne i landet, som Paulus skal krysse to ganger på sine reiser."
+      tl: "Frigia sa kalooban ng lupain, na dalawang beses na daraanan ni Pablo sa kaniyang mga paglalakbay."
+      da: "Frygien inde i landet, som Paulus skal krydse to gange på sine rejser."
+      sr: "Фригија у унутрашњости, коју ће Павле двапут прећи на својим путовањима."
   - place: aa95188 # Pamphylia
     ref: Acts.2.10
     note:
@@ -120,6 +155,11 @@ stops:
       it: "La Panfilia, sulla costa meridionale, con Perge, dove Giovanni Marco tornerà indietro (At 13,13)."
       nl: "Pamfylië aan de zuidkust, met Perge, waar Johannes Marcus zal terugkeren (Hand. 13:13)."
       cs: "Pamfylie na jižním pobřeží s Perge, odkud se Jan Marek vrátí (Sk 13,13)."
+      sv: "Pamfylien vid sydkusten, med Perge, där Johannes Markus ska vända om (Apg 13:13)."
+      nb: "Pamfylia på sørkysten, med Perge, hvor Johannes Markus skal snu (Apg 13,13)."
+      tl: "Pamfilia sa katimugang baybayin, kasama ang Perga, kung saan babalik si Juan Marcos (Gawa 13:13)."
+      da: "Pamfylien på sydkysten, med Perge, hvor Johannes Markus vender om (ApG 13,13)."
+      sr: "Памфилија на јужној обали, с Перге, где ће се Јован Марко вратити (Дап 13,13)."
   - place: af301ca # Egypt
     ref: Acts.2.10
     note:
@@ -134,6 +174,11 @@ stops:
       it: "L’Egitto, con la grande comunità giudaica di Alessandria, la città di Apollo (At 18,24)."
       nl: "Egypte, met de grote Joodse gemeenschap van Alexandrië, de stad van Apollos (Hand. 18:24)."
       cs: "Egypt s velkou židovskou obcí v Alexandrii, městě Apollově (Sk 18,24)."
+      sv: "Egypten, med den stora judiska församlingen i Alexandria, Apollos’ stad (Apg 18:24)."
+      nb: "Egypt, med Aleksandrias store jødiske samfunn, Apollos' by (Apg 18,24)."
+      tl: "Egipto, na may dakilang pamayanang Judio ng Alejandria, ang lungsod ni Apolos (Gawa 18:24)."
+      da: "Egypten, med det store jødiske samfund i Alexandria, Apollos' by (ApG 18,24)."
+      sr: "Египат, с великом јеврејском заједницом Александрије, градом Аполовим (Дап 18,24)."
   - place: a81cdb5 # Cyrene
     ref: Acts.2.10
     note:
@@ -148,6 +193,11 @@ stops:
       it: "«Le parti della Libia Cirenaica»: Simone che portò la croce era di Cirene, e uomini di Cipro e di Cirene annunceranno il Signore Gesù ai Greci ad Antiochia (At 11,20)."
       nl: "“De delen van Libië, hetwelk bij Cyrene ligt”: Simon, die het kruis droeg, was van Cyrene, en mannen uit Cyprus en Cyrene zullen de Heere Jezus aan de Grieken te Antiochië verkondigen (Hand. 11:20)."
       cs: "„v krajinách Libye, kteráž jest vedle Cyrénu“: Šimon, který nesl kříž, byl z Kyrény a muži z Kypru a Kyrény budou v Antiochii hlásat Pána Ježíše Řekům (Sk 11,20)."
+      sv: "”Libyens bygder, åt Cyrene till”: Simon som bar korset var från Kyrene, och män från Cypern och Kyrene ska förkunna Herren Jesus för grekerna i Antiochia (Apg 11:20)."
+      nb: "«landskapene i Libya ved Kyrene»: Simon som bar korset, var fra Kyrene, og menn fra Kypros og Kyrene skal forkynne Herren Jesus for grekerne i Antiokia (Apg 11,20)."
+      tl: "“Mga sakop ng Libia na karatig ng Cirene”: si Simon na nagpasan ng krus ay taga-Cirene, at ang mga lalaking taga-Chipre at Cirene ay mangangaral ng Panginoong Jesus sa mga Griego sa Antioquia (Gawa 11:20)."
+      da: "»Libyens Egne ved Kyrene«: Simon, der bar korset, var fra Kyrene, og mænd fra Cypern og Kyrene skal prædike Herren Jesus for grækerne i Antiokia (ApG 11,20)."
+      sr: "„Крајева ливијских код Кирине“: Симон који је носио крст био је из Кирене, а људи с Кипра и из Кирене проповедаће Господа Исуса Грцима у Антиохији (Дап 11,20)."
   - place: afc8e7a # Rome
     ref: Acts.2.10
     note:
@@ -162,6 +212,11 @@ stops:
       it: "«Avventizi Romani, tanto Giudei che proseliti», l’estremo occidente dell’elenco; Cretesi e Arabi lo chiudono."
       nl: "“Uitlandse Romeinen, beiden Joden en Jodengenoten”, het westelijkste van de lijst; Kretenzen en Arabieren sluiten die af."
       cs: "„hosté Římané, Židé, i vnově na víru obrácení“, nejzápadnější z výčtu; Kretští a Arabští jej uzavírají."
+      sv: "”hitflyttade främlingar från Rom”, judar och proselyter, den västligaste i uppräkningen; kretenser och araber avslutar den."
+      nb: "«vi tilreisende fra Rom, både jøder og tilhengere av jødenes tro», det vestligste i listen; kretere og arabere avslutter den."
+      tl: "“Mga nakikipamayang galing sa Roma, mga Judio, at gayon din ang mga naging Judio”, ang pinakakanluran sa talaan; sinasarhan ito ng mga taga-Creta at mga Arabe."
+      da: "»vi her boende Romere, Jøder og Proselyter«, listens vestligste; kretere og arabere afslutter den."
+      sr: "„Путници из Рима, и Јудејци и дошљаци“, најзападнији на списку; Крићани и Арапи га затварају."
   - place: a15257a # Jerusalem
     ref: Acts.2.14-Acts.2.47
     note:
@@ -176,3 +231,8 @@ stops:
       it: "Pietro si leva in piedi con gli undici: questo è ciò che Gioele aveva predetto, e Dio ha risuscitato Gesù, che voi avete crocifisso. Circa tremila sono battezzati, «e il Signore aggiungeva ogni giorno alla loro comunità quelli che erano sulla via della salvazione»."
       nl: "Petrus staat op met de elf: dit is wat Joël heeft voorzegd, en Jezus, die gij gekruisigd hebt, heeft God opgewekt. Ongeveer drieduizend worden gedoopt, “En de Heere deed dagelijks tot de Gemeente, die zalig werden”."
       cs: "Petr povstává s jedenácti: to je, co předpověděl Joel, a Ježíše, kterého jste ukřižovali, Bůh vzkřísil. Pokřtěno je asi tři tisíce, „Pán pak přidával církvi na každý den těch, kteříž by spaseni byli“."
+      sv: "Petrus står upp med de elva: detta är vad Joel förutsade, och Jesus som ni korsfäste har Gud uppväckt. Omkring tre tusen döps, ”och Herren ökade församlingen, dag efter dag, med dem som läto sig frälsas”."
+      nb: "Peter står frem sammen med de elleve: dette er det Joel forutsa, og Jesus, som dere korsfestet, har Gud oppreist. Omkring tre tusen blir døpt, og «Herren la hver dag dem som lot sig frelse, til menigheten»."
+      tl: "Tumatayo si Pedro kasama ang labing-isa: ito ang inihula ni Joel, at si Jesus na ipinako ninyo sa krus ay muling binuhay ng Dios. Mga tatlong libo ang nabautismuhan, at “idinaragdag sa kanila ng Panginoon araw-araw yaong nangaliligtas”."
+      da: "Peter står op sammen med de elleve: dette er, hvad Joel forudsagde, og Jesus, som I korsfæstede, har Gud opvakt. Omkring tre tusind lader sig døbe, »Herren føjede daglig til dem nogle, som lode sig frelse«."
+      sr: "Петар стаје са једанаесторицом: ово је оно што је прорекао Јоило, а Исуса кога сте распели Бог је подигао. Око три хиљаде се крштава, „а Господ сваки дан умножаваше друштво оних који се спасаваху“."

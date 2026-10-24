@@ -35,6 +35,19 @@ const layersWhere = (on: (layer: (typeof LAYERS)[number]) => boolean): LayerVisi
 
 const LOCALE_KEY = "hg:locale";
 
+/**
+ * Browser language tags whose language the site publishes under another code: any Norwegian
+ * (`no`, `nn`, `nb-NO`) opens the Bokmål, Filipino (`fil`, `fil-PH`) the Tagalog. Serbian in
+ * any script or country (`sr-Cyrl`, `sr-RS`) is `sr` by its base tag already.
+ */
+const TAG_ALIASES: Readonly<Record<string, string>> = { no: "nb", nn: "nb", fil: "tl" };
+
+/** The site's code for a browser language tag ("pt-BR" → pt, "fil-PH" → tl), published or not. */
+export function localeOfTag(tag: string): string {
+  const base = tag.toLowerCase().split("-")[0] ?? "";
+  return TAG_ALIASES[base] ?? base;
+}
+
 /** Keeps the language a reader picked in the settings, for links that name none. */
 export function rememberLocale(locale: string): void {
   if (!isLocale(locale)) return;
@@ -47,8 +60,8 @@ export function rememberLocale(locale: string): void {
 
 /**
  * The language to open in when the link names none: the one the reader picked before, else
- * the first of the browser's languages the site is published in ("pt-BR" → pt), else
- * English. No language is the site's own: Russian is one of the eleven.
+ * the first of the browser's languages the site is published in ("pt-BR" → pt, localeOfTag),
+ * else English. No language is the site's own: Russian is one of many.
  */
 export function preferredLocale(
   // Old web views have no navigator.languages, only navigator.language.
@@ -66,8 +79,8 @@ export function preferredLocale(
     // Storage off: the browser's languages decide.
   }
   for (const tag of languages) {
-    const base = tag.toLowerCase().split("-")[0];
-    if (isLocale(base)) return base;
+    const code = localeOfTag(tag);
+    if (isLocale(code)) return code;
   }
   return "en";
 }

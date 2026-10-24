@@ -16,6 +16,11 @@ title:
   it: "Il ritorno: Esdra e Neemia"
   nl: "De terugkeer: Ezra en Nehemia"
   cs: "Návrat: Ezdráš a Nehemjáš"
+  sv: "Återvändandet: Esra och Nehemja"
+  nb: "Hjemkomsten: Esra og Nehemja"
+  tl: "Ang pagbabalik: Ezra at Nehemias"
+  da: "Hjemkomsten: Ezra og Nehemias"
+  sr: "Повратак: Јездра и Немија"
 year: "458 BC"
 people: ["Ezra@Ezr.7.1-Neh", "Nehemiah@Neh.1.1-"]
 approximate: true
@@ -36,6 +41,11 @@ stops:
       it: "Lasciando Babilonia, Esdra e gli esuli si radunano presso il fiume che scorre verso Aava, digiunano e pregano per un viaggio sicuro."
       nl: "Ezra en de ballingen verlaten Babylon en verzamelen zich bij de rivier die naar Ahava loopt, vasten en bidden om een veilige reis."
       cs: "Při odchodu z Babylóna se Ezdráš a vyhnanci shromažďují u řeky, která teče k Ahavě, postí se a modlí za bezpečnou cestu."
+      sv: "Esra och de landsflyktiga lämnar Babylon och samlas vid floden som rinner till Ahava, där de fastar och ber om en trygg resa."
+      nb: "Esra og de landflyktige forlater Babylon og samles ved elven som renner til Ahava, faster og ber om en trygg reise."
+      tl: "Sa pag-alis sa Babilonia, nagtipon sina Ezra at ang mga tapon sa tabi ng ilog na patungo sa Ahava, nag-ayuno at nanalangin para sa ligtas na paglalakbay."
+      da: "Ved afrejsen fra Babylon samles Ezra og de landflygtige ved floden, der løber til Ahava, faster og beder om en lykkelig rejse."
+      sr: "Остављајући Вавилон, Јездра и прогнаници се окупљају крај реке која тече к Ави, посте и моле се за срећан пут."
   - place: a15257a # Jerusalem
     ref: Ezra.8.31-Ezra.8.32
     note:
@@ -50,6 +60,11 @@ stops:
       it: "Giungono a Gerusalemme e si riposano tre giorni."
       nl: "Zij bereiken Jeruzalem en rusten er drie dagen."
       cs: "Dorazí do Jeruzaléma a tři dny odpočívají."
+      sv: "De når Jerusalem och vilar i tre dagar."
+      nb: "De når Jerusalem og hviler i tre dager."
+      tl: "Dumating sila sa Jerusalem at nagpahinga ng tatlong araw."
+      da: "De når til Jerusalem og hviler i tre dage."
+      sr: "Стижу у Јерусалим и одмарају се три дана."
   - place: a033b84 # Susa
     ref: Neh.1.1-Neh.1.4
     year: "445 BC"
@@ -65,6 +80,11 @@ stops:
       it: "A Susa Neemia apprende che le mura di Gerusalemme sono in rovina."
       nl: "Te Susa hoort Nehemia dat de muren van Jeruzalem in puin liggen."
       cs: "V Susách se Nehemjáš dozvídá, že jeruzalémské hradby leží v rozvalinách."
+      sv: "I Susa får Nehemja höra att Jerusalems murar ligger nedbrutna."
+      nb: "I Susa hører Nehemja at Jerusalems murer ligger nedbrutt."
+      tl: "Sa Susan, narinig ni Nehemias na wasak ang mga pader ng Jerusalem."
+      da: "I Susa hører Nehemias, at Jerusalems mure ligger nedbrudt."
+      sr: "У Суси Немија чује да зидови јерусалимски леже порушени."
   - place: a15257a # Jerusalem
     ref: Neh.2.11-Neh.2.18
     year: "445 BC"
@@ -80,6 +100,11 @@ stops:
       it: "Neemia ispeziona le mura di notte e comincia la ricostruzione."
       nl: "Nehemia inspecteert 's nachts de muren en de herbouw begint."
       cs: "Nehemjáš v noci obhlíží hradby a začíná stavba."
+      sv: "Nehemja inspekterar murarna om natten, och återuppbyggnaden börjar."
+      nb: "Nehemja undersøker murene om natten, og gjenreisningen begynner."
+      tl: "Nilibot ni Nehemias ang mga pader nang gabi at nagsimula ang muling pagtatayo."
+      da: "Nehemias besigtiger murene om natten, og genopbygningen begynder."
+      sr: "Немија ноћу обилази зидове и почиње обнова."
   - place: ae6bfe2 # Ono
     ref: Neh.6.1-Neh.6.4
     year: "445 BC"
@@ -95,6 +120,11 @@ stops:
       it: "Sanballàt e Geshem lo invitano a incontrarli nella pianura di Ono, con l’intenzione di fargli del male; egli risponde: «Io sto facendo un gran lavoro, e non posso scendere»."
       nl: "Sanballat en Gesem nodigen hem uit voor een ontmoeting in de vlakte van Ono, met kwade bedoelingen; hij antwoordt: “Ik doe een groot werk, zodat ik niet zal kunnen afkomen.”"
       cs: "Sanbalat a Gešem ho zvou na setkání na rovině Onó se zlým úmyslem; odpovídá: „Dílo veliké dělám, protož nemohu odjíti.“"
+      sv: "Sanballat och Geshem kallar honom till ett möte på Onos dal i avsikt att skada honom; han svarar: ”Jag har ett stort arbete för händer och kan icke komma ned.”"
+      nb: "Sanballat og Gesjem kaller ham til et møte på Ono-sletten i ond hensikt; han svarer: «Jeg holder på med et stort arbeid og kan ikke komme ned»."
+      tl: "Tinawag siya nina Sanballat at Gesem upang makipagkita sa kanila sa kapatagan ng Ono, na may masamang layon sa kaniya; sumagot siya: “Ako'y gumagawa ng dakilang gawain, na anopa't hindi ako makababa.”"
+      da: "Sanballat og Gesjem kalder ham til møde med sig på Onos slette i ond hensigt; han svarer: »Jeg har et stort Arbejde at udrette og kan ikke komme ned«."
+      sr: "Санавалат и Гисем зову га да се састану с њима у равници Оно, мислећи му зло; он одговара: „У послу сам великом, зато не могу доћи.“"
   - place: a0293ff # Water Gate
     ref: Neh.8.1-Neh.8.8
     year: "445 BC"
@@ -110,6 +140,11 @@ stops:
       it: "Nel settimo mese tutto il popolo si raduna nella piazza davanti alla Porta delle Acque; Esdra legge il libro della legge dal mattino fino a mezzogiorno, i Leviti ne spiegano il senso e il popolo comprende la lettura."
       nl: "In de zevende maand verzamelt heel het volk zich op het plein voor de Waterpoort; Ezra leest het wetboek voor van de morgen tot de middag, de Levieten geven de zin, en het volk begrijpt wat er gelezen wordt."
       cs: "V sedmém měsíci se všechen lid shromažďuje na prostranství před Vodní branou; Ezdráš čte knihu zákona od rána do poledne, levité vykládají smysl a lid čtení rozumí."
+      sv: "I den sjunde månaden samlas allt folket på den öppna platsen framför Vattenporten; Esra läser ur lagboken från morgon till middag, leviterna utlägger meningen, och folket förstår det som läses."
+      nb: "I den sjuende måned samles hele folket på plassen foran Vannporten; Esra leser lovboken fra morgen til middag, levittene forklarer meningen, og folket forstår det som leses."
+      tl: "Sa ikapitong buwan, nagtipon ang buong bayan sa lansangan sa harap ng Pintuang-bayan ng Tubig; binasa ni Ezra ang aklat ng kautusan mula umaga hanggang tanghali, ipinaliwanag ito ng mga Levita, at naunawaan ng bayan ang binasa."
+      da: "I den syvende måned samles hele folket på pladsen foran Vandporten; Ezra læser lovbogen op fra morgen til middag, levitterne giver forklaringen, og folket forstår oplæsningen."
+      sr: "Седмог месеца сав народ се окупља на тргу пред Воденом капијом; Јездра чита књигу закона од јутра до подне, левити дају смисао, и народ разуме читање."
   - place: a15257a # Jerusalem
     ref: Neh.12.27-Neh.12.43
     year: "445 BC"
@@ -125,3 +160,8 @@ stops:
       it: "Alla dedicazione delle mura due grandi cori le percorrono in direzioni opposte, e «la gioia di Gerusalemme si sentiva di lontano»."
       nl: "Bij de inwijding van de muur gaan twee grote koren er in tegenovergestelde richting overheen, “zodat de vrolijkheid van Jeruzalem tot van verre gehoord werd.”"
       cs: "Při posvěcení hradby po ní jdou dva veliké sbory opačnými směry, „tak že bylo slyšáno veselí Jeruzaléma opodál“."
+      sv: "Vid murens invigning går två stora körer längs den i motsatta riktningar. ”Och glädjen från Jerusalem hördes vida omkring.”"
+      nb: "Ved murens innvielse går to store sangkor langs den i hver sin retning, så «jubelen i Jerusalem hørtes lang vei»."
+      tl: "Sa pagtatalaga ng pader, dalawang malaking koro ang lumakad sa ibabaw nito sa magkabilang direksiyon, “na anopa't ang kagalakan ng Jerusalem ay narinig hanggang sa malayo.”"
+      da: "Ved murens indvielse går to store kor langs den i hver sin retning, »saa at Jerusalems Glæde blev hørt indtil langt borte.«"
+      sr: "При посвећењу зида два велика хора иду по њему у супротним смеровима, и „весеље јерусалимско чујаше се далеко.“"

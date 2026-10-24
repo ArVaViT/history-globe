@@ -369,8 +369,8 @@ export async function printForClass({
   });
 }
 
-/** The languages whose names take case endings («в Иерусалиме», "w Jerozolimie", "v Jeruzalémě"). */
-const DECLINED: ReadonlySet<string> = new Set(["ru", "uk", "pl", "cs"]);
+/** The languages whose names take case endings («в Иерусалиме», "w Jerozolimie", "v Jeruzalémě", «у Јерусалиму»). */
+const DECLINED: ReadonlySet<string> = new Set(["ru", "uk", "pl", "cs", "sr"]);
 
 /** A stop's text with its place taken out, for a quiz: every mention, in any case. */
 export function maskPlace(

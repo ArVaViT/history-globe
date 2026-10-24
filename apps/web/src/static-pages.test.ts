@@ -5,6 +5,9 @@ import { describe, expect, it } from "vitest";
 
 const web = join(import.meta.dirname, "..");
 const read = (file: string) => readFileSync(join(web, file), "utf8");
+/** The language codes of a list written in a page, on one line or as prettier wraps it. */
+const codes = (list: string | undefined) =>
+  [...(list ?? "").matchAll(/"([a-z]{2})"/g)].map((m) => m[1]);
 
 // The hand-written pages name the languages themselves: a language added must be added there.
 describe("the static pages", () => {
@@ -23,18 +26,18 @@ describe("the static pages", () => {
   });
 
   it("declare every language to search engines", () => {
-    const declared = /"inLanguage": (\[[^\]]*\])/.exec(read("index.html"))?.[1] ?? "[]";
-    expect([...(JSON.parse(declared) as string[])].sort()).toEqual([...LOCALES].sort());
+    const declared = /"inLanguage": (\[[^\]]*\])/.exec(read("index.html"))?.[1];
+    expect(codes(declared).sort()).toEqual([...LOCALES].sort());
   });
 
   it("send an old About link to every language's documentation", () => {
-    const docs = /const docs = (\[[^\]]*\])/.exec(read("public/about.html"))?.[1] ?? "[]";
-    expect(JSON.parse(docs)).toEqual(LOCALES.filter((l) => l !== "en"));
+    const docs = /const docs = (\[[^\]]*\])/.exec(read("public/about.html"))?.[1];
+    expect(codes(docs)).toEqual(LOCALES.filter((l) => l !== "en"));
   });
 
   it("let the text-places script read every language", () => {
-    const listed = /const LANGS = (\[[^\]]*\])/.exec(read("public/hg-places.js"))?.[1] ?? "[]";
-    expect(JSON.parse(listed)).toEqual([...LOCALES].sort());
+    const listed = /const LANGS = (\[[^\]]*\])/.exec(read("public/hg-places.js"))?.[1];
+    expect(codes(listed)).toEqual([...LOCALES].sort());
   });
 
   it("give the installed app an English name", () => {

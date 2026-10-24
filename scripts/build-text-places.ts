@@ -22,18 +22,18 @@
  * them alone next to another capitalised word.
  *
  * Names are declined by the ending of a one-word name: Russian (Иерусалим → Иерусалима,
- * Иерусалиме…; russian-forms.ts), Ukrainian, Polish and Czech, and the German genitive
- * (inflected-forms.ts); names of several words are matched as written. Each language is
- * checked against its own Bible, the one its verse cards quote (build-verses.ts).
+ * Иерусалиме…; russian-forms.ts), Ukrainian, Polish, Czech and Serbian, and the German and
+ * Nordic genitive (inflected-forms.ts); names of several words are matched as written. Each
+ * language is checked against its own Bible, the one its verse cards quote (bible-text.ts).
  *
  * Usage: node scripts/build-text-places.ts  (after build-content; build-verses supplies
  * the text for the lower-case check, and without it only the other checks apply)
  */
-import { LOCALES, type SiteLocale } from "../packages/model/src/time.ts";
+import { type Locale, LOCALES, type SiteLocale } from "../packages/model/src/time.ts";
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { siteCertainty } from "../packages/model/src/sites.ts";
-import { readBible, readSword } from "./bible-text.ts";
+import { isUsfm, readBible, readSword, repair, SOURCES } from "./bible-text.ts";
 import { inflectedForms } from "./inflected-forms.ts";
 import { plain, russianForms, russianHeads } from "./russian-forms.ts";
 import { placeSlugs } from "../packages/model/src/slugs.ts";
@@ -88,6 +88,7 @@ const FORM_STOP: Partial<Record<Lang, readonly string[]>> = {
   cs: ["Lodě", "Libně", "Kolos"],
   de: ["Nils", "Zins"],
   pl: ["Mary", "Suzy", "Suzie", "Kolos", "Kusza", "Jordana", "Nila", "Szarona", "Tyra"],
+  sr: ["Гат"],
 };
 /**
  * The other languages' own names with a modern meaning, read by eye by a reviewer of each
@@ -208,6 +209,227 @@ const STOP_IN: Partial<Record<Lang, readonly string[]>> = {
     "Ulica Prosta",
     "Etiopia",
   ],
+  sv: [
+    "Vinkeln",
+    "Vinkelns",
+    "Etiopien",
+    "Etiopiens",
+    "Magadan",
+    "Magadans",
+    "Det heliga",
+    "Herren är där",
+    "Herren utser",
+    "Stora havet",
+    "Nya staden",
+    "Raka gatan",
+    "Breda muren",
+    "Östra torget",
+    "Landet på andra sidan floden",
+    "Goda hamnarna",
+    "Den heliga vägen",
+    "Vägen mot Röda havet",
+    "vägen mot Röda havet",
+    "Nordlandets",
+    "Östra porten",
+    "Norra porten",
+    "Södra porten",
+    "Västra porten",
+    "Gamla porten",
+    "Nya porten",
+    "Mellersta porten",
+    "Gamla dammen",
+    "Nedre dammen",
+    "Övre dammen",
+    "Pelarhallen",
+    "Pelarhallens",
+    "Tronsalen",
+    "Tronsalens",
+    "Domsalens",
+    "Kungsvägen",
+    "Kungsvägens",
+    "Spåmännens ek",
+  ],
+  nb: [
+    "Vinkelen",
+    "Etiopia",
+    "Abilene",
+    "Godhavn",
+    "Storhavet",
+    "Det aller helligste",
+    "Det hellige",
+    "Den hellige veien",
+    "Den rette gate",
+    "Kongeveien",
+    "Kongedalen",
+    "Domshallen",
+    "Søylehallen",
+    "Tronhallen",
+    "Fagerporten",
+    "Østporten",
+    "Nordporten",
+    "Sørporten",
+    "Vestporten",
+    "Midtporten",
+    "Dalporten",
+    "Nyporten",
+    "Vannporten",
+    "Kildeporten",
+    "Fiskeporten",
+    "Hesteporten",
+    "Saueporten",
+    "Folkeporten",
+    "Vaktporten",
+    "Hjørneporten",
+  ],
+  da: [
+    "Abilene",
+    "Dalporten",
+    "Den Anden Bydel",
+    "Den Brede Mur",
+    "Den Gamle Dam",
+    "Den Gamle Port",
+    "Den Hellige Vej",
+    "Den Lige Gade",
+    "Den Nedre Dam",
+    "Den Nye Port",
+    "Den Skønne Port",
+    "Den Øvre Dam",
+    "Det Allerhelligste",
+    "Det Hellige",
+    "Det Store Hav",
+    "Domhallen",
+    "Etiopien",
+    "Gode Havne",
+    "Herren er der",
+    "Herren ser",
+    "Hinsides Floden",
+    "Hjørneporten",
+    "Hjørnet",
+    "Hjørnets",
+    "Kildeporten",
+    "Kongevejen",
+    "Landets Navle",
+    "Magadan",
+    "Mellemporten",
+    "Nordens Rige",
+    "Nordporten",
+    "Palmebyen",
+    "Saltbyen",
+    "Sydens Rige",
+    "Sydlandet",
+    "Sydporten",
+    "Søjlehallen",
+    "Tronsalen",
+    "Vandporten",
+    "Vaskerens Mark",
+    "Vestporten",
+    "den Anden Bydel",
+    "den Brede Mur",
+    "den Gamle Dam",
+    "den Gamle Port",
+    "den Hellige Vej",
+    "den Lige Gade",
+    "den Nedre Dam",
+    "den Nye Port",
+    "den Skønne Port",
+    "den Øvre Dam",
+    "det Allerhelligste",
+    "det Hellige",
+    "det Store Hav",
+    "gode Havne",
+    "hinsides Floden",
+    "landets Navle",
+    "nordens Rige",
+    "sydens Rige",
+    "vaskerens Mark",
+    "Østporten",
+  ],
+  tl: [
+    "Pintuang-bayan sa Silangan",
+    "Pintuang-bayan sa Hilaga",
+    "Pintuang-bayan sa Timog",
+    "Pintuang-bayan sa Kanluran",
+    "Gitnang Pintuang-bayan",
+    "gitnang Pintuang-bayan",
+    "Bagong Pintuang-bayan",
+    "bagong Pintuang-bayan",
+    "Lumang Pintuang-bayan",
+    "lumang Pintuang-bayan",
+    "Pintuang-bayan sa Sulok",
+    "Pintuang-bayan ng Bayan",
+    "Portiko ng Luklukan",
+    "portiko ng Luklukan",
+    "Portiko ng Kahatulan",
+    "portiko ng Kahatulan",
+    "Portiko ng mga Haligi",
+    "portiko ng mga Haligi",
+    "Malaking Dagat",
+    "malaking Dagat",
+    "Dakong Banal",
+    "dakong Banal",
+    "Kabanal-banalang Dako",
+    "Ikalawang Purok",
+    "ikalawang Purok",
+    "Lansangang Matuwid",
+    "lansangang Matuwid",
+    "Daang-hari",
+    "Daan ng Kabanalan",
+    "daan ng Kabanalan",
+    "Mababang Tangke",
+    "mababang Tangke",
+    "Mataas na Tangke",
+    "mataas na Tangke",
+    "Lumang Tangke",
+    "lumang Tangke",
+    "Silangang Liwasan",
+    "silangang Liwasan",
+    "Mabubuting Daongan",
+    "mabubuting Daongan",
+    "Etiopia",
+    "Magadan",
+    "Rabbit",
+    "Cherub",
+  ],
+  sr: [
+    "Етиопија",
+    "Мисија",
+    "Ливна",
+    "Танах",
+    "Преко реке",
+    "Красна врата",
+    "Угаона капија",
+    "Ђубрена капија",
+    "Источна капија",
+    "Источни трг",
+    "Стара капија",
+    "Нова капија",
+    "Северна капија",
+    "Јужна капија",
+    "Западна капија",
+    "Средња капија",
+    "Овчја капија",
+    "Коњска капија",
+    "Рибља капија",
+    "Водена капија",
+    "Капија тамничка",
+    "Капија изворска",
+    "Капија долинска",
+    "Стубни трем",
+    "Трем са престолом",
+    "Права улица",
+    "Широки зид",
+    "Старо језеро",
+    "Доње језеро",
+    "Горње језеро",
+    "Доњи изводи",
+    "Горњи изводи",
+    "Добра пристаништа",
+    "Три гостионице",
+    "Стене дивљих коза",
+    "Поље перачко",
+    "Царство северног цара",
+    "Царство јужног цара",
+  ],
 };
 /**
  * Names that are also first names (Jordan Peterson, Sharon Stone, «Нил Сорский»): the
@@ -228,6 +450,33 @@ const FIRST_NAMES_IN: Partial<Record<Lang, readonly string[]>> = {
   cs: ["Šaron", "Arpád", "Betanie"],
   de: ["Jordan", "Scharon", "Bethel", "Bethanien", "Tirza", "Zora", "Apollonia", "Saba"],
   pl: ["Jordan", "Szaron", "Ofir", "Mara", "Ramses"],
+  sv: [
+    "Jordan",
+    "Jordans",
+    "Mara",
+    "Maras",
+    "Sif",
+    "Betania",
+    "Betanias",
+    "Apollonia",
+    "Apollonias",
+  ],
+  nb: ["Mara", "Sif", "Jordan", "Tirsa", "Hadasja", "Betania", "Apollonia", "Saba"],
+  da: ["Jordan", "Zora", "Arpad", "Hadasja", "Tirsa"],
+  tl: [
+    "Mara",
+    "Maceda",
+    "Nilo",
+    "Jordan",
+    "Shiloh",
+    "Hadasa",
+    "Susan",
+    "Betania",
+    "Nazaret",
+    "Apolonia",
+    "Tarso",
+  ],
+  sr: ["Јордан", "Нил", "Лида", "Мелита", "Хадаса", "Филипи"],
 };
 
 interface Props {
@@ -321,36 +570,18 @@ const headsOf = (name: string, l: Lang) =>
 // else the verses the places cite. A form written small at least as often as capitalised
 // is an ordinary word («Восток», «Села»), which a sentence may start with; one the text
 // mostly capitalises stays a name (Lebanon, though the Synodal text calls incense «ливан»).
-// The editions the verse cards quote (build-verses.ts SOURCES); Polish from a SWORD module.
-const BIBLES: Record<Lang, string> = {
-  en: "eng-kjv2006_usfm.zip",
-  ru: "russyn_usfm.zip",
-  uk: "ukr1871_usfm.zip",
-  es: "spaRV1909_usfm.zip",
-  pt: "porbrbsl_usfm.zip",
-  fr: "fraLSG_usfm.zip",
-  de: "deu1912_usfm.zip",
-  it: "ita1927_usfm.zip",
-  nl: "nld_usfm.zip",
-  pl: "PolGdanska.zip",
-  cs: "ces1613_usfm.zip",
-};
 const perLang = <T>(make: () => T) =>
   Object.fromEntries(LANGS.map((l) => [l, make()])) as Record<Lang, T>;
 const seen = perLang(() => new Map<string, number>());
 const whole = perLang(() => "");
 /** The verses the places cite, by OSIS reference: what the names are checked against. */
 const cited = perLang(() => new Map<string, string>());
-const kjvZip = join(root, "pipeline/.cache", BIBLES.en);
+// The editions the verse cards quote (bible-text.ts SOURCES), mended as the cards are (REPAIRS).
+const kjvZip = join(root, "pipeline/.cache", SOURCES.en.file);
 const bibleOf = (l: Lang, zip: string) => {
-  if (zip.endsWith("_usfm.zip")) {
-    const bible = readBible(zip);
-    // eBible's Kralice writes Č and Ď as È and Ï (build-verses.ts REPAIRS).
-    if (l === "cs")
-      for (const [k, v] of bible) bible.set(k, v.replace(/È/g, "Č").replace(/Ï/g, "Ď"));
-    return bible;
-  }
-  return readSword(zip, readBible(kjvZip));
+  const bible = isUsfm(SOURCES[l]) ? readBible(zip) : readSword(zip, readBible(kjvZip));
+  for (const [k, v] of bible) bible.set(k, repair(l, v));
+  return bible;
 };
 let corpus: "bible" | "cited" | "none" = "bible";
 for (const l of LANGS) {
@@ -361,7 +592,7 @@ for (const l of LANGS) {
         JSON.parse(readFileSync(join(dir, f), "utf8")) as Record<string, string>,
       ))
         cited[l].set(k, plain(text));
-  const zip = join(root, "pipeline/.cache", BIBLES[l]);
+  const zip = join(root, "pipeline/.cache", SOURCES[l].file);
   const texts = existsSync(zip) ? [...bibleOf(l, zip).values()] : [...cited[l].values()];
   if (!existsSync(zip)) corpus = cited[l].size ? "cited" : "none";
   whole[l] = texts.map(plain).join("\n");
@@ -581,21 +812,20 @@ for (const line of coast.features.flatMap((f) => f.geometry.coordinates)) {
  * The card's words. "{{count}} verses" by the language's plural rules, from its dictionary
  * (place.verse_count_*): `plural` by Intl.PluralRules category, and `verses` as the first
  * script read it (one, few, many). The labels the dictionary has (place.today,
- * tours.about_place) come from it; the rest are here.
+ * tours.about_place) come from it; the rest are here, a language's still waiting to join the
+ * site among them.
  */
-const LABELS: Record<
-  Lang,
-  {
-    inBible: string;
-    location: string;
-    disputed: string;
-    likely: string;
-    tentative: string;
-    open: string;
-    /** Where the dictionary's tours.about_place does not suit a link on a card. */
-    page?: string;
-  }
-> = {
+interface Labels {
+  inBible: string;
+  location: string;
+  disputed: string;
+  likely: string;
+  tentative: string;
+  open: string;
+  /** Where the dictionary's tours.about_place does not suit a link on a card. */
+  page?: string;
+}
+const LABELS: Record<Lang, Labels> & Partial<Record<Locale, Labels>> = {
   en: {
     inBible: "In the Bible",
     location: "Location",
@@ -686,6 +916,46 @@ const LABELS: Record<
     likely: "nejpravděpodobnější z návrhů",
     tentative: "předběžná",
     open: "Otevřít na glóbu",
+  },
+  sv: {
+    inBible: "I Bibeln",
+    location: "Läge",
+    disputed: "omtvistat",
+    likely: "det mest sannolika av förslagen",
+    tentative: "osäkert",
+    open: "Öppna på globen",
+  },
+  da: {
+    inBible: "I Bibelen",
+    location: "Placering",
+    disputed: "omstridt",
+    likely: "den mest sandsynlige af forslagene",
+    tentative: "usikker",
+    open: "Åbn på globussen",
+  },
+  nb: {
+    inBible: "I Bibelen",
+    location: "Beliggenhet",
+    disputed: "omstridt",
+    likely: "den mest sannsynlige av forslagene",
+    tentative: "usikker",
+    open: "Åpne på globusen",
+  },
+  sr: {
+    inBible: "У Библији",
+    location: "Локација",
+    disputed: "спорна",
+    likely: "највероватнија од претпоставки",
+    tentative: "претпостављена",
+    open: "Отвори на глобусу",
+  },
+  tl: {
+    inBible: "Sa Bibliya",
+    location: "Kinaroroonan",
+    disputed: "pinagtatalunan",
+    likely: "ang pinakamalamang sa mga mungkahi",
+    tentative: "hindi tiyak",
+    open: "Buksan sa globo",
   },
 };
 const wordsIn = (l: Lang) => {

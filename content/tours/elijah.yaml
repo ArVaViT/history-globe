@@ -13,6 +13,11 @@ title:
   it: "Il profeta Elia"
   nl: "De profeet Elia"
   cs: "Prorok Elijáš"
+  sv: "Profeten Elia"
+  nb: "Profeten Elia"
+  tl: "Ang propetang si Elias"
+  da: "Profeten Elija"
+  sr: "Пророк Илија"
 year: "860 BC"
 people: ["Elijah@1Ki.17.1-Jas"]
 approximate: true
@@ -31,6 +36,11 @@ stops:
       it: "Elia predice la siccità e si nasconde presso il torrente Cherit, dove i corvi gli portano pane e carne."
       nl: "Elia kondigt de droogte aan en verbergt zich bij de beek Kerit, waar raven hem brood en vlees brengen."
       cs: "Elijáš předpovídá sucho a skrývá se u potoka Kerít, kde mu havrani nosí chléb a maso."
+      sv: "Elia förutsäger torkan och gömmer sig vid bäcken Kerit, där korpar bär bröd och kött till honom."
+      nb: "Elia forutsier tørken og skjuler seg ved bekken Kerit, hvor ravner bringer ham brød og kjøtt."
+      tl: "Inihula ni Elias ang tagtuyot at nagtago sa batis ng Cherith, kung saan dinalhan siya ng mga uwak ng tinapay at karne."
+      da: "Elija forudsiger tørken og skjuler sig ved Kerit-bækken, hvor ravne bringer ham brød og kød."
+      sr: "Илија прориче сушу и скрива се код потока Хората, где му гавранови носе хлеб и месо."
   - place: a6fa2d3 # Zarephath
     ref: 1Kgs.17.8-1Kgs.17.24
     note:
@@ -45,6 +55,11 @@ stops:
       it: "A Sarepta di Sidone il vaso della farina della vedova non si esaurisce né manca l’orcio dell’olio, e suo figlio è riportato in vita."
       nl: "Te Sarefat bij Sidon raakt de meelbus van de weduwe niet leeg en de oliekruik niet op, en haar zoon wordt weer tot leven gebracht."
       cs: "V Sarepťe Sidonské se vdově nespotřebuje mouka v kbelíku ani neubývá oleje v nádobce a její syn je přiveden zpět k životu."
+      sv: "I Sarefat i Sidon tar inte änkans mjöl i krukan slut och inte heller oljan i hennes kruka, och hennes son väcks till liv igen."
+      nb: "I Sarepta i Sidon tar ikke enkens mel i krukken slutt og oljen i kolben forsvinner ikke, og hennes sønn blir kalt tilbake til livet."
+      tl: "Sa Sarepta ng Sidon, hindi nasaid ang bariles ng harina ng babaing balo ni nagkulang ang kaniyang sisidlan ng langis, at ibinalik sa buhay ang kaniyang anak."
+      da: "I Sarepta ved Sidon slipper enkens mel i krukken ikke op, og hendes oliekrukke svigter ikke, og hendes søn kaldes tilbage til livet."
+      sr: "У Сарепти сидонској удовичино брашно у судини не нестаје нити јој уље у крчагу понестаје, и њен син бива враћен у живот."
   - place: a3e21c6 # Mount Carmel
     ref: 1Kgs.18.19-1Kgs.18.40
     note:
@@ -59,6 +74,11 @@ stops:
       it: "Sul Monte Carmelo il fuoco del Signore scende sul sacrificio davanti ai profeti di Baal."
       nl: "Op de Karmel valt het vuur van de HEER op het offer, voor de ogen van de profeten van Baäl."
       cs: "Na hoře Karmel padá oheň Hospodinův na oběť před proroky Baalovými."
+      sv: "På Karmel faller Herrens eld över offret inför Baals profeter."
+      nb: "På Karmel faller Herrens ild over offeret for Baals profeter."
+      tl: "Sa Bundok Carmel, bumaba ang apoy ng Panginoon sa handog sa harap ng mga propeta ni Baal."
+      da: "På Karmel falder Herrens ild på ofret for Ba'als profeters øjne."
+      sr: "На Кармилу огањ Господњи пада на жртву пред пророцима Валовим."
   - place: ae0bf4a # Jezreel
     ref: 1Kgs.18.41-1Kgs.18.46
     note:
@@ -73,6 +93,11 @@ stops:
       it: "Viene la pioggia, ed Elia corre davanti ad Acab fino all’ingresso di Izreel."
       nl: "De regen komt, en Elia rent voor Achab uit tot aan de ingang van Jizreël."
       cs: "Přichází déšť a Elijáš běží před Achabem až ke vjezdu do Jizreelu."
+      sv: "Regnet kommer, och Elia springer framför Achav till ingången till Jisreel."
+      nb: "Regnet kommer, og Elia løper foran Akab til inngangen til Jisreel."
+      tl: "Dumating ang ulan, at tumakbo si Elias sa unahan ni Achab hanggang sa pasukan ng Jezreel."
+      da: "Regnen kommer, og Elija løber foran Akab til indgangen til Jizre'el."
+      sr: "Долази киша, и Илија трчи пред Ахавом до улаза у Језраел."
   - place: ad2f6c2 # Beersheba
     ref: 1Kgs.19.1-1Kgs.19.4
     note:
@@ -87,6 +112,11 @@ stops:
       it: "Fuggendo da Gezabele, giunge a Bersabea e prosegue nel deserto."
       nl: "Op de vlucht voor Izebel komt hij te Berseba en trekt verder de woestijn in."
       cs: "Prchá před Jezábel, dochází do Beer-šeby a pokračuje dál na poušť."
+      sv: "På flykt undan Isebel kommer han till Beer Sheva och går vidare ut i öknen."
+      nb: "På flukt fra Jesabel kommer han til Beer-Sjeba og drar videre ut i ørkenen."
+      tl: "Sa pagtakas kay Jezabel, dumating siya sa Beer-seba at nagpatuloy sa ilang."
+      da: "Han flygter for Jezabel, kommer til Beersheba og går videre ud i ørkenen."
+      sr: "Бежећи од Језавеље, долази у Вирсавеју и иде даље у пустињу."
   - place: a9bb03e # Mount Horeb
     ref: 1Kgs.19.8-1Kgs.19.15
     note:
@@ -101,6 +131,11 @@ stops:
       it: "All’Oreb, il monte di Dio, il Signore non è nel vento, nel terremoto né nel fuoco; dopo il fuoco viene un suono dolce e sommesso."
       nl: "Op de Horeb, de berg van God, is de HEER niet in de wind, de aardbeving of het vuur; na het vuur komt een stil, zacht suizen."
       cs: "Na Chorébu, hoře Boží, Hospodin není ve vichru, zemětřesení ani v ohni; po ohni přichází tichý a jemný hlas."
+      sv: "Vid Horeb, Guds berg, är Herren inte i vinden, jordbävningen eller elden; efter elden kommer ljudet av en sakta susning."
+      nb: "Ved Horeb, Guds fjell, er Herren ikke i vinden, jordskjelvet eller ilden; etter ilden kommer en stille, mild susing."
+      tl: "Sa Horeb, ang bundok ng Diyos, wala ang Panginoon sa hangin, sa lindol o sa apoy; pagkatapos ng apoy ay dumating ang isang marahang bulong na tinig."
+      da: "På Horeb, Guds bjerg, er Herren ikke i stormen, jordskælvet eller ilden; efter ilden kommer en sagte, stille susen."
+      sr: "На Хориву, гори Божјој, Господа нема у ветру, у трусу ни у огњу; после огња долази глас тих и танак."
   - place: a5a1bdd # Abel-meholah
     ref: 1Kgs.19.16-1Kgs.19.21
     note:
@@ -115,6 +150,11 @@ stops:
       it: "Eliseo, figlio di Safat, di Abel-Mecolà, è chiamato dall’aratro a seguire Elia."
       nl: "Elisa, de zoon van Safat, uit Abel-Mehola, wordt van de ploeg geroepen om Elia te volgen."
       cs: "Elíša, syn Šafatův z Ábel-mecholy, je od pluhu povolán, aby následoval Elijáše."
+      sv: "Elisha, Shafats son, från Avel-Mehola, kallas från plogen att följa Elia."
+      nb: "Elisja, Sjafats sønn, fra Abel-Mehola, blir kalt fra plogen til å følge Elia."
+      tl: "Si Eliseo na anak ni Saphat, na taga-Abelmehola, ay tinawag mula sa pag-aararo upang sumunod kay Elias."
+      da: "Elisa, Sjafats søn, fra Abel-Mehola, kaldes fra ploven til at følge Elija."
+      sr: "Јелисије син Сафатов, из Авел-Меоле, бива позван од рала да иде за Илијом."
   - place: ae0bf4a # Jezreel
     ref: 1Kgs.21.1-1Kgs.21.24
     note:
@@ -129,6 +169,11 @@ stops:
       it: "La vigna di Nabot a Izreel: Elia pronuncia il giudizio su Acab e Gezabele."
       nl: "De wijngaard van Nabot in Jizreël: Elia spreekt het oordeel uit over Achab en Izebel."
       cs: "Nábotův vinohrad v Jizreelu: Elijáš vyslovuje soud nad Achabem a Jezábel."
+      sv: "Navots vingård i Jisreel: Elia uttalar dom över Achav och Isebel."
+      nb: "Nabots vingård i Jisreel: Elia kunngjør dom over Akab og Jesabel."
+      tl: "Ubasan ni Naboth sa Jezreel: ipinahayag ni Elias ang hatol kina Achab at Jezabel."
+      da: "Nabots vingård i Jizre'el: Elija udtaler dom over Akab og Jezabel."
+      sr: "Навутејев виноград у Језраелу: Илија изриче суд над Ахавом и Језавељом."
   - place: a6399b3 # Gilgal
     ref: 2Kgs.2.1
     note:
@@ -143,6 +188,11 @@ stops:
       it: "Quando il Signore sta per rapirlo in cielo, Elia parte da Gàlgala con Eliseo."
       nl: "Als de HEER Elia wil opnemen, vertrekt hij met Elisa uit Gilgal."
       cs: "Když chce Hospodin Elijáše vzít vzhůru, vychází Elijáš z Gilgalu s Elíšou."
+      sv: "När Herren ska ta honom upp bryter Elia upp från Gilgal tillsammans med Elisha."
+      nb: "Da Herren er i ferd med å ta ham opp, drar Elia ut fra Gilgal sammen med Elisja."
+      tl: "Nang malapit nang isampa ng Panginoon si Elias, umalis siya mula sa Gilgal kasama ni Eliseo."
+      da: "Da Herren er ved at tage ham op, drager Elija fra Gilgal sammen med Elisa."
+      sr: "Кад Господ хоће да га узме горе, Илија креће из Галгала са Јелисијем."
   - place: a64f355 # Bethel
     ref: 2Kgs.2.2-2Kgs.2.3
     note:
@@ -157,6 +207,11 @@ stops:
       it: "Eliseo non vuole lasciarlo: scendono a Betel."
       nl: "Elisa wil hem niet verlaten: zij gaan af naar Bethel."
       cs: "Elíša ho neopouští: sestupují do Bét-elu."
+      sv: "Elisha vill inte lämna honom: de går ner till Betel."
+      nb: "Elisja vil ikke forlate ham: de går ned til Betel."
+      tl: "Ayaw iwan ni Eliseo si Elias: bumaba sila sa Beth-el."
+      da: "Elisa vil ikke forlade ham: de går ned til Betel."
+      sr: "Јелисије неће да га остави: силазе у Ветиљ."
   - place: a231f80 # Jericho
     ref: 2Kgs.2.4-2Kgs.2.5
     note:
@@ -171,6 +226,11 @@ stops:
       it: "Poi a Gerico, dove i figli dei profeti vengono da Eliseo."
       nl: "Dan naar Jericho, waar de profetenzonen naar Elisa toe komen."
       cs: "Potom do Jericha, kde přicházejí k Elíšovi synové proroků."
+      sv: "Sedan till Jeriko, där profetlärjungarna kommer till Elisha."
+      nb: "Så til Jeriko, hvor profetsønnene kommer til Elisja."
+      tl: "Pagkatapos ay sa Jerico, kung saan lumalapit kay Eliseo ang mga anak ng mga propeta."
+      da: "Så til Jeriko, hvor profeternes sønner kommer hen til Elisa."
+      sr: "Затим у Јерихон, где синови пророчки долазе к Јелисију."
   - place: ae686c9 # Jordan
     ref: 2Kgs.2.6-2Kgs.2.14
     note:
@@ -185,3 +245,8 @@ stops:
       it: "Elia divide il Giordano con il suo mantello; un carro di fuoco separa i due; Elia sale al cielo in un turbine, ed Eliseo raccoglie il suo mantello."
       nl: "Elia splijt de Jordaan met zijn mantel; een wagen van vuur scheidt de twee; Elia stijgt in een wervelwind op naar de hemel, en Elisa raapt zijn mantel op."
       cs: "Elijáš rozdělí Jordán svým pláštěm; ohnivý vůz je od sebe odloučí; Elijáš vystupuje ve vichru do nebe a Elíša zvedá jeho plášť."
+      sv: "Elia delar Jordan med sin mantel; en eldvagn skiljer de två åt; Elia far upp i en stormvind till himlen, och Elisha tar upp hans mantel."
+      nb: "Elia deler Jordan med kappen sin; en ildvogn skiller de to; Elia farer opp til himmelen i en stormvind, og Elisja tar opp kappen hans."
+      tl: "Hinahati ni Elias ang Jordan sa pamamagitan ng kaniyang balabal; isang karong apoy ang naghihiwalay sa dalawa; sumasampa si Elias sa langit sa isang ipoipo, at kinukuha ni Eliseo ang kaniyang balabal."
+      da: "Elija deler Jordan med sin kappe; en ildvogn skiller de to ad; Elija farer op i en hvirvelvind til himlen, og Elisa tager hans kappe op."
+      sr: "Илија плаштем раздваја Јордан; кола огњена раздвајају њих двојицу; Илија одлази у вихору на небо, а Јелисије узима његов плашт."

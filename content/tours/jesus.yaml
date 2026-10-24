@@ -16,6 +16,11 @@ title:
   it: "La vita di Gesù"
   nl: "Het leven van Jezus"
   cs: "Život Ježíšův"
+  sv: "Jesu liv"
+  nb: "Jesu liv"
+  tl: "Ang buhay ni Jesus"
+  da: "Jesu liv"
+  sr: "Живот Исусов"
 year: "AD 30"
 people: ["Jesus@Isa.7.14-Rev"]
 approximate: true
@@ -35,6 +40,11 @@ stops:
       it: "Gesù nasce a Betlemme di Giudea ai giorni di Erode."
       nl: "Jezus wordt geboren in Bethlehem in Judea in de dagen van Herodes."
       cs: "Ježíš se rodí v Betlémě Judském za dnů Heroda."
+      sv: "Jesus föds i Betlehem i Judeen på Herodes’ tid."
+      nb: "Jesus blir født i Betlehem i Judea i Herodes' dager."
+      tl: "Ipinanganak si Jesus sa Bethlehem ng Judea sa mga araw ni Herodes."
+      da: "Jesus fødes i Betlehem i Judæa i Herodes' dage."
+      sr: "Исус се рађа у Витлејему јудејском у дане Иродове."
   - place: af301ca # Egypt
     ref: Matt.2.13-Matt.2.15
     year: "5 BC"
@@ -50,6 +60,11 @@ stops:
       it: "Giuseppe porta in Egitto il bambino e sua madre."
       nl: "Jozef neemt het kind en zijn moeder mee naar Egypte."
       cs: "Josef bere dítě i jeho matku do Egypta."
+      sv: "Josef tar barnet och dess moder med till Egypten."
+      nb: "Josef tar barnet og dets mor med til Egypt."
+      tl: "Dinala ni Jose ang bata at ang kaniyang ina sa Egipto."
+      da: "Josef tager barnet og dets mor med til Egypten."
+      sr: "Јосиф води дете и његову мајку у Египат."
   - place: af5884f # Nazareth
     ref: Matt.2.23
     year: "4 BC"
@@ -65,6 +80,11 @@ stops:
       it: "La famiglia si stabilisce a Nazaret."
       nl: "Het gezin vestigt zich in Nazareth."
       cs: "Rodina se usazuje v Nazaretě."
+      sv: "Familjen bosätter sig i Nasaret."
+      nb: "Familien bosetter seg i Nasaret."
+      tl: "Tumira ang pamilya sa Nazaret."
+      da: "Familien bosætter sig i Nazaret."
+      sr: "Породица се настањује у Назарету."
   - place: a6e060d # Bethany beyond the Jordan
     ref: John.1.28
     note:
@@ -79,6 +99,11 @@ stops:
       it: "Giovanni battezza a Betabara (Betania), al di là del Giordano."
       nl: "Johannes doopt te Bethabara (Bethanië) aan de overzijde van de Jordaan."
       cs: "Jan křtí v Betabaře (Betanii) za Jordánem."
+      sv: "Johannes döper i Betabara (Betania) på andra sidan Jordan."
+      nb: "Johannes døper i Betabara (Betania) på hin side Jordan."
+      tl: "Nagbabautismo si Juan sa Bethabara (Betania) sa dako pa roon ng Jordan."
+      da: "Johannes døber i Betabara (Betania) hinsides Jordan."
+      sr: "Јован крштава у Витавари (Витанији) преко Јордана."
   - place: a031bda # Cana
     ref: John.2.1-John.2.11
     note:
@@ -93,6 +118,11 @@ stops:
       it: "Le nozze di Cana: l’acqua diventa vino."
       nl: "De bruiloft te Kana: water wordt wijn."
       cs: "Svatba v Káně: voda se mění ve víno."
+      sv: "Bröllopet i Kana: vatten blir vin."
+      nb: "Bryllupet i Kana: vann blir til vin."
+      tl: "Ang kasalan sa Cana: ang tubig ay naging alak."
+      da: "Brylluppet i Kana: vand bliver til vin."
+      sr: "Свадба у Кани: вода постаје вино."
   - place: a27b472 # Sychar
     ref: John.4.5-John.4.42
     note:
@@ -107,6 +137,11 @@ stops:
       it: "Al pozzo di Giacobbe parla con la donna samaritana."
       nl: "Bij de put van Jakob spreekt Hij met de Samaritaanse vrouw."
       cs: "U Jákobovy studny mluví se Samaritánkou."
+      sv: "Vid Jakobs brunn talar han med den samaritiska kvinnan."
+      nb: "Ved Jakobs brønn taler han med den samaritanske kvinnen."
+      tl: "Sa balon ni Jacob ay nakipag-usap siya sa babaing Samaritana."
+      da: "Ved Jakobs brønd taler han med den samaritanske kvinde."
+      sr: "На Јаковљевом студенцу разговара са Самарјанком."
   - place: af2161c # Capernaum
     ref: Matt.4.13
     note:
@@ -121,6 +156,11 @@ stops:
       it: "Lascia Nazaret e fissa la sua dimora a Cafarnao."
       nl: "Hij verlaat Nazareth en gaat in Kafarnaüm wonen."
       cs: "Opouští Nazaret a usazuje se v Kafarnaum."
+      sv: "Han lämnar Nasaret och slår sig ner i Kafarnaum."
+      nb: "Han forlater Nasaret og tar bolig i Kapernaum."
+      tl: "Iniwan niya ang Nazaret at nanirahan sa Capernaum."
+      da: "Han forlader Nazaret og tager bolig i Kapernaum."
+      sr: "Напушта Назарет и настањује се у Капернауму."
   - place: aee679c # Nain
     ref: Luke.7.11-Luke.7.17
     note:
@@ -135,6 +175,11 @@ stops:
       it: "Risuscita il figlio della vedova a Nain."
       nl: "Hij wekt de zoon van de weduwe op te Nain."
       cs: "V Naimu křísí syna vdovy."
+      sv: "Han uppväcker änkans son i Nain."
+      nb: "Han oppvekker enkens sønn i Nain."
+      tl: "Binuhay niya ang anak ng babaing balo sa Nain."
+      da: "Han opvækker enkens søn i Nain."
+      sr: "Васкрсава удовичиног сина у Наину."
   - place: a9fc13a # Bethsaida
     ref: Mark.8.22-Mark.8.26
     note:
@@ -149,6 +194,11 @@ stops:
       it: "Guarisce un cieco a Betsaida."
       nl: "Hij geneest een blinde te Bethsaïda."
       cs: "V Betsaidě uzdravuje slepého."
+      sv: "Han botar en blind man i Betsaida."
+      nb: "Han helbreder en blind mann i Betsaida."
+      tl: "Pinagaling niya ang isang bulag sa Bethsaida."
+      da: "Han helbreder en blind i Betsajda."
+      sr: "Исцељује слепога у Витсаиди."
   - place: ab7bf48 # Caesarea Philippi
     ref: Matt.16.13-Matt.16.20
     note:
@@ -163,6 +213,11 @@ stops:
       it: "Pietro confessa: «Tu sei il Cristo»."
       nl: "Petrus belijdt: “Gij zijt de Christus.”"
       cs: "Petr vyznává: „Ty jsi Kristus.“"
+      sv: "Petrus bekänner: ”Du är Messias.”"
+      nb: "Peter bekjenner: «Du er Messias.»"
+      tl: "Ipinahayag ni Pedro: “Ikaw ang Cristo.”"
+      da: "Peter bekender: »Du er Kristus.«"
+      sr: "Петар исповеда: „Ти си Христос.“"
   - place: aaf03fa # Jericho
     ref: Luke.19.1-Luke.19.10
     note:
@@ -177,6 +232,11 @@ stops:
       it: "Sulla via di Gerusalemme, Zaccheo a Gerico."
       nl: "Op weg naar Jeruzalem: Zacheüs te Jericho."
       cs: "Na cestě do Jeruzaléma Zacheus v Jerichu."
+      sv: "På väg till Jerusalem: Sackeus i Jeriko."
+      nb: "På veien til Jerusalem, Sakkeus i Jeriko."
+      tl: "Sa daan patungong Jerusalem, si Zaqueo sa Jerico."
+      da: "På vejen til Jerusalem, Zakæus i Jeriko."
+      sr: "На путу у Јерусалим, Закхеј у Јерихону."
   - place: a4f35bc # Bethany
     ref: John.12.1-John.12.8
     note:
@@ -191,6 +251,11 @@ stops:
       it: "Sei giorni prima della Pasqua, una cena a Betania."
       nl: "Zes dagen vóór het Pascha een maaltijd te Bethanië."
       cs: "Šest dní před velikonocemi večeře v Betanii."
+      sv: "Sex dagar före påsken, en måltid i Betania."
+      nb: "Seks dager før påsken, et måltid i Betania."
+      tl: "Anim na araw bago ang Paskua, isang hapunan sa Betania."
+      da: "Seks dage før påsken, en nadver i Betania."
+      sr: "Шест дана пре Пасхе, вечера у Витанији."
   - place: a15257a # Jerusalem
     ref: Matt.21.1-Matt.21.11
     note:
@@ -205,6 +270,11 @@ stops:
       it: "L’ingresso in Gerusalemme."
       nl: "De intocht in Jeruzalem."
       cs: "Vjezd do Jeruzaléma."
+      sv: "Intåget i Jerusalem."
+      nb: "Inntoget i Jerusalem."
+      tl: "Ang pagpasok sa Jerusalem."
+      da: "Indtoget i Jerusalem."
+      sr: "Улазак у Јерусалим."
   - place: a42418f # Gethsemane
     ref: Matt.26.36-Matt.26.56
     note:
@@ -219,6 +289,11 @@ stops:
       it: "La preghiera e l’arresto nel Getsemani."
       nl: "Gebed en gevangenneming in Getsemane."
       cs: "Modlitba a zatčení v Getsemane."
+      sv: "Bön och gripande i Getsemane."
+      nb: "Bønn og pågripelse i Getsemane."
+      tl: "Panalangin at pagkadakip sa Getsemani."
+      da: "Bøn og pågribelse i Getsemane."
+      sr: "Молитва и хапшење у Гетсиманском врту."
   - place: a631d35 # Golgotha
     ref: Matt.27.33-Matt.27.56
     note:
@@ -233,6 +308,11 @@ stops:
       it: "La crocifissione al Golgota."
       nl: "De kruisiging op Golgota."
       cs: "Ukřižování na Golgotě."
+      sv: "Korsfästelsen på Golgota."
+      nb: "Korsfestelsen på Golgata."
+      tl: "Ang pagpapako sa krus sa Golgota."
+      da: "Korsfæstelsen på Golgata."
+      sr: "Распеће на Голготи."
   - place: ae7274b # Emmaus
     ref: Luke.24.13-Luke.24.35
     note:
@@ -247,6 +327,11 @@ stops:
       it: "Il Signore risorto sulla via di Emmaus."
       nl: "De verrezen Heer op de weg naar Emmaüs."
       cs: "Vzkříšený Pán na cestě do Emauz."
+      sv: "Den uppståndne Herren på vägen till Emmaus."
+      nb: "Den oppstandne Herre på veien til Emmaus."
+      tl: "Ang nabuhay na Panginoon sa daan patungong Emaus."
+      da: "Den opstandne Herre på vejen til Emmaus."
+      sr: "Васкрсли Господ на путу за Емаус."
   - place: a4f35bc # Bethany
     ref: Luke.24.50-Luke.24.53
     note:
@@ -261,3 +346,8 @@ stops:
       it: "L’Ascensione, presso Betania."
       nl: "De hemelvaart, bij Bethanië."
       cs: "Nanebevstoupení u Betanie."
+      sv: "Himmelsfärden, nära Betania."
+      nb: "Himmelfarten, nær Betania."
+      tl: "Ang Pag-akyat sa langit, malapit sa Betania."
+      da: "Himmelfarten, nær Betania."
+      sr: "Вазнесење, близу Витаније."

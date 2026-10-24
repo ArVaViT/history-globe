@@ -195,6 +195,10 @@ const data: LocaleData = {
     km: "км",
     m: "м",
   },
+  years: {
+    year: (y, bc) => `${String(y)} р. ${bc ? "до н. е." : "н. е."}`,
+    century: (_n, bc, roman) => `${roman} ст. ${bc ? "до н. е." : "н. е."}`,
+  },
 };
 
 export default data;

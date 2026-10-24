@@ -26,7 +26,13 @@ import {
   NT_BOOKS,
 } from "../packages/model/src/scripture.ts";
 import { sourcesOf } from "../packages/model/src/citation.ts";
-import { formatYear, LOCALE_NAMES, LOCALES, type SiteLocale } from "../packages/model/src/time.ts";
+import {
+  formatYear,
+  type Locale,
+  LOCALE_NAMES,
+  LOCALES,
+  type SiteLocale,
+} from "../packages/model/src/time.ts";
 import { bodyEnd, esc, headMeta } from "./page-shell.ts";
 import { NOTICE_COMMENT } from "../packages/model/src/notice.ts";
 import { commonsPage, DOC_PAGES, docsPath } from "../packages/model/src/site.ts";
@@ -55,6 +61,8 @@ const site = process.env.SITE_URL?.replace(/\/+$/, "") ?? "";
 
 type Lang = SiteLocale;
 const LANGS: readonly Lang[] = LOCALES;
+/** The languages written in Cyrillic, which preload that font (build-docs.ts the same). */
+const CYRILLIC: ReadonlySet<Locale> = new Set(["ru", "uk", "sr"]);
 
 interface Props {
   id: string;
@@ -304,7 +312,7 @@ function page(o: {
     <link rel="icon" href="${up}favicon.svg" type="image/svg+xml" />
     <title>${esc(o.title)} | History Globe</title>${o.noindex ? '\n    <meta name="robots" content="noindex, follow" />' : ""}${meta}${o.licence ? `\n    <link rel="license" href="${NC_ND}" />` : ""}${
       o.home
-        ? `\n    <link rel="preload" href="${up}docs/fonts/golos-text-${o.l === "ru" || o.l === "uk" ? "cyrillic" : "latin"}-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+        ? `\n    <link rel="preload" href="${up}docs/fonts/golos-text-${CYRILLIC.has(o.l) ? "cyrillic" : "latin"}-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     <script>
       // The entrance plays only for a reader who has not asked for less motion; without a
       // script the page is simply all there (pages.css, public/landing.js).
@@ -324,7 +332,7 @@ function page(o: {
       <div class="bar-end">${langs}<a class="open" href="${up}?locale=${o.l}">${LANDING[o.l].open}${icon("out")}</a></div>
     </header>
 ${o.body}
-    <footer class="foot"><nav aria-label="History Globe"><a href="${up}${o.l}/">History Globe</a><a href="${up}${docsPath(o.l)}">${T[o.l].about}</a><a href="${up}${docsPath(o.l, "privacy")}">${T[o.l].privacy}</a><a href="${up}${docsPath(o.l, "sources")}">${T[o.l].sources}</a></nav><p title="${T[o.l].data}: ${CREDITS}">${T[o.l].data}: ${CREDITS}</p>${o.licence ? `<p class="lic">${o.licence === "article" ? T[o.l].licArticle : T[o.l].licAnswer}, <a rel="license" href="${NC_ND}">CC BY-NC-ND 4.0</a></p>` : ""}</footer>
+    <footer class="foot"><nav aria-label="History Globe"><a href="${up}${o.l}/">History Globe</a><a href="${up}${docsPath(o.l)}">${T[o.l].about}</a><a href="${up}${docsPath(o.l, "privacy")}">${T[o.l].privacy}</a><a href="${up}${docsPath(o.l, "sources")}">${T[o.l].sources}</a></nav><p>${T[o.l].data}: ${CREDITS}</p>${o.licence ? `<p class="lic">${o.licence === "article" ? T[o.l].licArticle : T[o.l].licAnswer}, <a rel="license" href="${NC_ND}">CC BY-NC-ND 4.0</a></p>` : ""}</footer>
 ${bodyEnd(up)}
   </body>
 </html>

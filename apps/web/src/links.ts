@@ -18,6 +18,11 @@ const GATEWAY_VERSION: Readonly<Partial<Record<Locale, string>>> = {
   pl: "UBG",
   cs: "B21",
   zh: "CUVS",
+  sv: "SFB15",
+  da: "DN1933",
+  nb: "DNB1930",
+  sr: "NSP",
+  tl: "MBBTAG",
 };
 
 export function verseUrl(osis: string, locale: Locale): string {

@@ -6,7 +6,10 @@
  * writes the files it describes and checks each against it (`violations`) before writing.
  */
 
-const LANGS = ["en", "ru", "uk", "es", "pt", "de", "fr", "it", "pl", "cs", "nl"] as const;
+import { LOCALES } from "../packages/model/src/time.ts";
+
+/** The site's languages, as the texts' keys: a language joins the description with the site. */
+const LANGS = LOCALES;
 
 const ref = (name: string) => ({ $ref: `#/components/schemas/${name}` });
 const json = (schema: object, description: string) => ({

@@ -1,0 +1,331 @@
+---
+title: Уграђивање
+description: Поставите глобус на свој сајт једном линијом — мапу главе, места, године или туре — и управљајте њиме са своје странице.
+---
+
+<p class="lede">
+  Глобус ради унутар сваке странице као <code>iframe</code>. Једна линија приказује мапу главе уз
+  одломак на вашој страници, а неколико порука држи једно и друго усклађеним.
+</p>
+
+<h2>Брзи почетак</h2>
+<pre><code>&lt;iframe
+  src="{{site}}/embed/v1?ref=Acts.16&amp;locale=sr"
+  title="Мапа: Дап 16"
+  style="width: 100%; height: 480px; border: 0; border-radius: 12px"
+  allow="fullscreen"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</code></pre>
+<ul>
+  <li>Мапа испуњава оквир и отвара се на местима из Дап 16, у години њених догађаја.</li>
+  <li>
+    <b>Горе:</b> глава. Изаберите је да бисте добили списак њених места оним редом којим их текст
+    помиње; изаберите место да бисте отворили његову картицу.
+  </li>
+  <li><b>Доле:</b> година. Изаберите је да бисте отворили временски клизач.</li>
+  <li>
+    Веза отвара исти приказ на целом глобусу у новој картици. Извори су приказани на самој мапи,
+    како лиценце података захтевају.
+  </li>
+  <li>Оквир ради и на ширини телефона; довољна је висина од 480 px.</li>
+</ul>
+
+<h2>Глава или одломак</h2>
+<p>
+  <code>ref</code> прима OSIS референцу са енглеским скраћеницама књига и енглеском нумерацијом
+  стихова:
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Вредност</th>
+        <th>Приказује</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Acts.16</code></td>
+        <td>једну главу</td>
+      </tr>
+      <tr>
+        <td><code>Gen.12-Gen.13</code></td>
+        <td>до три главе</td>
+      </tr>
+      <tr>
+        <td><code>Acts.16.11-Acts.16.15</code></td>
+        <td>један одломак</td>
+      </tr>
+      <tr>
+        <td><code>Ruth</code></td>
+        <td>целу књигу</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Мапа прелази на годину одломка: забележену годину његових глава (датиране су главе у
+  {{chapter_books}} књига), а ако ње нема, годину туре која га обухвата; цела књига узима годину
+  туре која у њој има највише станица. Одломак који нема ни једно ни друго задржава тренутну годину
+  мапе.
+</p>
+
+<h2>Параметри</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Параметар</th>
+        <th>Пример</th>
+        <th>Значење</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ref</code></td>
+        <td><code>Acts.16</code></td>
+        <td>глава, одломак или књига (изнад)</td>
+      </tr>
+      <tr>
+        <td><code>year</code></td>
+        <td><code>-999</code></td>
+        <td>
+          година у астрономском бројању: 1. п. н. е. је <code>0</code>, 1000. п. н. е. је
+          <code>-999</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>place</code></td>
+        <td><code>af2161c</code></td>
+        <td>отвара место (овде Капернаум); ИД-ови су из OpenBible-а</td>
+      </tr>
+      <tr>
+        <td><code>tour</code></td>
+        <td><code>paul-1</code></td>
+        <td>започиње вођену туру</td>
+      </tr>
+      <tr>
+        <td><code>stop</code></td>
+        <td><code>3</code></td>
+        <td>уз <code>tour</code>: отвара је на тој станици</td>
+      </tr>
+      <tr>
+        <td><code>lesson</code></td>
+        <td><code>a15257a~30.a112427~30</code></td>
+        <td>
+          ваш сопствени час, уз <code>tour=lesson</code>: ИД-ови места по реду, сваки са годином у
+          којој се приказује (<code>~-585</code> за 586. п. н. е.: као код <code>year</code>, 1. п.
+          н. е. је 0); свака станица добија стих о месту који је најближи тој години, растојање,
+          време хода пешке и рељеф. Дугме „Додај у час“ на картици места гради исте везе
+        </td>
+      </tr>
+      <tr>
+        <td><code>title</code></td>
+        <td><code>Paul%20in%20Galatia</code></td>
+        <td>
+          уз <code>lesson</code>: назив часа, до 80 знакова, на челу његове туре и његовог штампаног
+          листа
+        </td>
+      </tr>
+      <tr>
+        <td><code>locale</code></td>
+        <td><code>en</code></td>
+        <td>
+          језик: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
+          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
+          <code>pl</code> или <code>cs</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>camera</code></td>
+        <td><code>35.2,31.8,7,30,0</code></td>
+        <td>географска дужина, географска ширина, увећање, нагиб, азимут</td>
+      </tr>
+      <tr>
+        <td><code>hide</code></td>
+        <td><code>relief,ancient</code></td>
+        <td>
+          слојеви који се искључују: <code>borders</code>, <code>places</code>, <code>relief</code>,
+          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="note">
+  Најлакше је да приказ подесите на пуном глобусу и копирате адресу: исти параметри раде и после
+  <code>/embed/v1</code>.
+</p>
+
+<h2>Поруке</h2>
+<p>
+  Глобус и ваша страница комуницирају преко <code>postMessage</code>. Свака порука је објекат са
+  <code>type</code> и <code>v: 1</code>. Глобус шаље само оно што се догађа на мапи и никада ништа
+  што идентификује читаоца; поруке прима само од странице која држи оквир.
+</p>
+<h3>Од глобуса</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Тип</th>
+        <th>Садржај</th>
+        <th>Када</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:ready</code></td>
+        <td><code>{ view }</code></td>
+        <td>мапа је исцртана</td>
+      </tr>
+      <tr>
+        <td><code>hg:view-changed</code></td>
+        <td><code>{ view }</code></td>
+        <td>година, место, тура или камера су се променили и умирили</td>
+      </tr>
+      <tr>
+        <td><code>hg:verse-clicked</code></td>
+        <td><code>{ osis }</code></td>
+        <td>читалац је кликнуо на стих, нпр. <code>"Acts.16.12"</code></td>
+      </tr>
+      <tr>
+        <td><code>hg:error</code></td>
+        <td><code>{ code, message }</code></td>
+        <td>мапа или њени подаци нису могли да се учитају</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <code>view</code> садржи <code>year</code>, <code>locale</code> и <code>layers</code> и, када су
+  постављени, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> и
+  <code>camera</code>.
+</p>
+<h3>Ка глобусу</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Тип</th>
+        <th>Садржај</th>
+        <th>Дејство</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:set-view</code></td>
+        <td><code>{ view }</code></td>
+        <td>
+          поставља годину, главу (<code>ref</code>), место, слојеве или камеру; уз
+          <code>tour</code> (и <code>stop</code>) тура почиње, а остала поља се занемарују; језик се
+          мења само поруком <code>hg:set-locale</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:set-locale</code></td>
+        <td><code>{ locale }</code></td>
+        <td>мења језик</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Пример: мапа прати вашег читаоца</h2>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+
+// When your reader opens a chapter, show it on the map.
+function showChapter(osis) {
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+}
+
+// When a verse is clicked on the map, open it in your reader.
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
+});</code></pre>
+
+<h2 id="places">Места у било ком тексту</h2>
+<p>
+  Још једна линија повезује са глобусом библијска места која помиње ваш сопствени текст (чланак,
+  проповед, план читања). Покажите на назив или га додирните на телефону, и картица приказује шта је
+  то место, где је данас, колико га стихова помиње и где лежи на мапи; картица води на глобус.
+</p>
+<figure class="sample">
+  <div class="hgp-demo">
+    <p>
+      Павле је отпловио из Цезареје на Кипар, проповедао у Ефесу и Коринту и писао у Рим. Давно пре
+      тога Авраам је дошао у Сихем и Хеврон; Исус је рођен у Витлејему и одрастао у Назарету, а
+      Јован је своја виђења имао на Патмосу.
+    </p>
+  </div>
+  <figcaption>Пример уживо: ове називе је повезала скрипта на овој страници.</figcaption>
+</figure>
+<pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<p>
+  Адреса носи верзију, а хеш интегритета учвршћује њен тачан садржај: прегледач извршава скрипту
+  само ако је то управо та датотека. Нова верзија добија нову адресу; старе остају какве јесу.
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Атрибут</th>
+        <th>Шта ради</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>data-scope</code></td>
+        <td>где да тражи, као CSS селектор; подразумевано цела страница</td>
+      </tr>
+      <tr>
+        <td><code>data-locale</code></td>
+        <td>
+          језик текста, један од језика сајта: <code>cs</code>, <code>de</code>, <code>en</code>,
+          <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>, <code>pl</code>,
+          <code>pt</code>, <code>ru</code>, <code>uk</code>; подразумевано
+          <code>lang</code> странице; сваки други језик се замењује енглеским
+        </td>
+      </tr>
+      <tr>
+        <td><code>data-every</code></td>
+        <td>повезује свако помињање, а не само прво за свако место</td>
+      </tr>
+      <tr>
+        <td><code>data-theme</code></td>
+        <td>
+          <code>light</code> или <code>dark</code> за картицу; подразумевано прати систем читаоца
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Повезују се само називи који указују на једно место. Назив који деле два места (Антиохија Сирска и
+  Антиохија Писидијска), место и личност (Јуда) или место и обична реч остаје обичан текст, као и
+  назив који стихови саме Библије претежно користе за нешто друго („Кадес“ је тамо Кадес-Варни, а не
+  Кадес из базе). Назив места који је уједно и лично име (Јордан, Сарон) остаје нетакнут поред друге
+  речи писане великим словом: Јордан Смит је личност, а не река. На руском, украјинском, пољском и
+  чешком називи се проналазе у својим измењеним облицима („в Египте“, „w Jerozolimie“, „v
+  Jeruzalémě“), а немачки и у генитиву („Jerusalems“). Везе, код, поља образаца, дугмад и наслови
+  остају нетакнути.
+</p>
+<p class="note">
+  Скрипта нема зависности и не поставља колачиће. Она чита са глобуса једну датотеку назива (око 20
+  до 35 KB преко мреже, зависно од језика, плус 7 KB саме скрипте), без адресе ваше странице као
+  референта, и мења само називе које повезује. Ради и под строгом политиком безбедности садржаја
+  (Content Security Policy) која дозвољава адресу глобуса у <code>script-src</code> и
+  <code>connect-src</code>. За текст који ваша страница дода касније позовите
+  <code>HistoryGlobePlaces.scan(element)</code> када је текст већ исцртан: скрипта дели текстуалне
+  чворове, па је на страници са React-ом или Vue-ом покрећите на садржају који оквир више не поново
+  исцртава.
+</p>
+<script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
+
+<h2>Стабилност</h2>
+<p>
+  <code>/embed/v1</code> је уговор: унутар v1 параметри и поруке се само додају, никада не мењају
+  нити уклањају. Промена која нарушава компатибилност изаћи ће као <code>/embed/v2</code>, а v1 ће
+  наставити да ради.
+</p>

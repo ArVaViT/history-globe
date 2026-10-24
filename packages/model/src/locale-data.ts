@@ -1,4 +1,4 @@
-import { ALL_LOCALES, type Locale } from "./time.ts";
+import { ALL_LOCALES, type Locale, setYearWords, type YearWords } from "./time.ts";
 
 /** The words siteLabelIn builds a label from: the name always in its plain form. */
 export interface SiteWords {
@@ -48,6 +48,8 @@ export interface LocaleData {
   };
   /** The templates of siteLabelIn in the language. */
   readonly site?: SiteWords;
+  /** How it writes a year and a century (time.ts formatYear, formatCentury). */
+  readonly years?: YearWords;
 }
 
 const LOADED = new Map<string, LocaleData>();
@@ -66,6 +68,7 @@ export async function loadLocaleData(locale: string): Promise<boolean> {
     default: LocaleData;
   };
   LOADED.set(locale, mod.default);
+  if (mod.default.years) setYearWords(locale as Locale, mod.default.years);
   return true;
 }
 

@@ -15,7 +15,7 @@
  *
  * Usage: node scripts/build-docs.ts  (after build-content; counts read public/data)
  */
-import { LOCALE_NAMES, LOCALES, type SiteLocale } from "../packages/model/src/time.ts";
+import { type Locale, LOCALE_NAMES, LOCALES, type SiteLocale } from "../packages/model/src/time.ts";
 import { bodyEnd, esc, headMeta } from "./page-shell.ts";
 import { hitHtml } from "./docs-script.ts";
 import { NOTICE_COMMENT } from "../packages/model/src/notice.ts";
@@ -39,8 +39,10 @@ const out = join(pub, "docs");
 const site = process.env.SITE_URL?.replace(/\/+$/, "") ?? "";
 const REPO = "https://github.com/ArVaViT/history-globe";
 
-// The documentation is written in every language the site is published in.
+// The documentation is written in every language the site is published in; the words of a
+// language still waiting to join (Locale) are here before it.
 type Lang = SiteLocale;
+type Words<T> = Readonly<Record<Lang, T>> & Readonly<Partial<Record<Locale, T>>>;
 // English first: its pages sit at the root of docs/.
 const LANGS: readonly Lang[] = ["en", ...LOCALES.filter((l) => l !== "en")];
 /** A language's folder under docs/: English at the root. */
@@ -48,7 +50,7 @@ const prefix = (l: Lang) => (l === "en" ? "" : `${l}/`);
 type Page = DocPage;
 
 /** The menu: the pages in groups, in the order they are read (and paged through). */
-const GROUPS: readonly { name: Readonly<Record<Lang, string>>; pages: readonly Page[] }[] = [
+const GROUPS: readonly { name: Words<string>; pages: readonly Page[] }[] = [
   {
     name: {
       en: "Get started",
@@ -62,6 +64,11 @@ const GROUPS: readonly { name: Readonly<Record<Lang, string>>; pages: readonly P
       nl: "Aan de slag",
       pl: "Pierwsze kroki",
       cs: "Začínáme",
+      sv: "Kom igång",
+      da: "Kom i gang",
+      nb: "Kom i gang",
+      sr: "Почетак",
+      tl: "Pagsisimula",
     },
     pages: ["index"],
   },
@@ -78,6 +85,11 @@ const GROUPS: readonly { name: Readonly<Record<Lang, string>>; pages: readonly P
       nl: "Voor ontwikkelaars",
       pl: "Dla programistów",
       cs: "Pro vývojáře",
+      sv: "För utvecklare",
+      da: "For udviklere",
+      nb: "For utviklere",
+      sr: "За програмере",
+      tl: "Para sa mga developer",
     },
     pages: ["build", "embedding", "api"],
   },
@@ -94,6 +106,11 @@ const GROUPS: readonly { name: Readonly<Record<Lang, string>>; pages: readonly P
       nl: "Gegevens",
       pl: "Dane",
       cs: "Data",
+      sv: "Data",
+      da: "Data",
+      nb: "Data",
+      sr: "Подаци",
+      tl: "Datos",
     },
     pages: ["methodology", "sources"],
   },
@@ -110,6 +127,11 @@ const GROUPS: readonly { name: Readonly<Record<Lang, string>>; pages: readonly P
       nl: "Over het project",
       pl: "O projekcie",
       cs: "O projektu",
+      sv: "Om projektet",
+      da: "Om projektet",
+      nb: "Om prosjektet",
+      sr: "О пројекту",
+      tl: "Tungkol sa proyekto",
     },
     pages: ["author", "privacy"],
   },
@@ -362,7 +384,117 @@ const T = {
     openMenu: "Menu",
     overview: "Přehled",
   },
-} as const satisfies Record<Lang, Record<string, string>>;
+  sv: {
+    language: "Språk",
+    docs: "Dokumentation",
+    menu: "Dokumentation",
+    onPage: "På den här sidan",
+    pages: "Alla sidor",
+    copy: "Kopiera",
+    copied: "Kopierat",
+    updated: "Data per",
+    open: "Öppna globen",
+    prev: "Föregående",
+    next: "Nästa",
+    data: "Data under CC BY 4.0",
+    search: "Sök i dokumentationen",
+    noResults: "Inget hittades",
+    edit: "Redigera sidan",
+    report: "Rapportera ett fel",
+    source: "Källkod",
+    skip: "Hoppa till innehållet",
+    openMenu: "Meny",
+    overview: "Översikt",
+  },
+  da: {
+    language: "Sprog",
+    docs: "Dokumentation",
+    menu: "Dokumentation",
+    onPage: "På denne side",
+    pages: "Alle sider",
+    copy: "Kopiér",
+    copied: "Kopieret",
+    updated: "Data pr.",
+    open: "Åbn globussen",
+    prev: "Forrige",
+    next: "Næste",
+    data: "Data under CC BY 4.0",
+    search: "Søg i dokumentationen",
+    noResults: "Intet fundet",
+    edit: "Redigér siden",
+    report: "Rapportér en fejl",
+    source: "Kildekode",
+    skip: "Gå til indholdet",
+    openMenu: "Menu",
+    overview: "Oversigt",
+  },
+  nb: {
+    language: "Språk",
+    docs: "Dokumentasjon",
+    menu: "Dokumentasjon",
+    onPage: "På denne siden",
+    pages: "Alle sider",
+    copy: "Kopier",
+    copied: "Kopiert",
+    updated: "Data per",
+    open: "Åpne globusen",
+    prev: "Forrige",
+    next: "Neste",
+    data: "Data under CC BY 4.0",
+    search: "Søk i dokumentasjonen",
+    noResults: "Ingenting funnet",
+    edit: "Rediger siden",
+    report: "Rapporter en feil",
+    source: "Kildekode",
+    skip: "Hopp til innholdet",
+    openMenu: "Meny",
+    overview: "Oversikt",
+  },
+  sr: {
+    language: "Језик",
+    docs: "Документација",
+    menu: "Документација",
+    onPage: "На овој страници",
+    pages: "Све странице",
+    copy: "Копирај",
+    copied: "Копирано",
+    updated: "Подаци од",
+    open: "Отвори глобус",
+    prev: "Претходна",
+    next: "Следећа",
+    data: "Подаци под лиценцом CC BY 4.0",
+    search: "Претражи документацију",
+    noResults: "Ништа није пронађено",
+    edit: "Уреди ову страницу",
+    report: "Пријави грешку",
+    source: "Изворни код",
+    skip: "Пређи на садржај",
+    openMenu: "Мени",
+    overview: "Преглед",
+  },
+  tl: {
+    language: "Wika",
+    docs: "Dokumentasyon",
+    menu: "Dokumentasyon",
+    onPage: "Sa pahinang ito",
+    pages: "Lahat ng pahina",
+    copy: "Kopyahin",
+    copied: "Nakopya",
+    updated: "Datos noong",
+    open: "Buksan ang globo",
+    prev: "Nakaraan",
+    next: "Susunod",
+    data: "Datos sa ilalim ng CC BY 4.0",
+    search: "Hanapin sa dokumentasyon",
+    noResults: "Walang nahanap",
+    edit: "I-edit ang pahinang ito",
+    report: "Mag-ulat ng mali",
+    source: "Source code",
+    skip: "Lumaktaw sa nilalaman",
+    openMenu: "Menu",
+    overview: "Pangkalahatang-ideya",
+  },
+} as const satisfies Words<Record<string, string>>;
 
 const read = (file: string): unknown =>
   existsSync(join(data, file)) ? JSON.parse(readFileSync(join(data, file), "utf8")) : undefined;
@@ -621,11 +753,28 @@ export function typesetUkrainian(html: string): string {
 }
 
 /**
- * Spanish, Portuguese, German, French, Italian, Dutch, Polish and Czech: a number keeps its unit and its era (586 a. C.,
- * 586 v. Chr., 586 av. J.-C.); French also keeps « », : ; ! ? on their word with a thin
- * no-break space.
+ * Serbian, as the Ukrainian: «586. п. н. е.» and «6. век» whole, a one-letter word («у», «с»)
+ * on the next word, a dash keeps its word before it.
  */
-function typesetLatin(l: Lang): (html: string) => string {
+export function typesetSerbian(html: string): string {
+  const NB = "\u00a0";
+  return inText(html, (t) =>
+    t
+      .replace(/(\d\.?|[IVXLC]) (век|км|м(?![а-шђјљњћџ])|КБ|МБ)/g, `$1${NB}$2`)
+      .replace(/п\. н\. е\./g, `п.${NB}н.${NB}е.`)
+      .replace(/н\. е\./g, `н.${NB}е.`)
+      .replace(/(\d\.?) (?=п\.\u00a0н|н\.\u00a0е)/g, `$1${NB}`)
+      .replace(/(^|[\s(„])([уУсСкКоОаАиИ]) /g, `$1$2${NB}`)
+      .replace(/([^\s>]) — /g, `$1${NB}— `),
+  );
+}
+
+/**
+ * The languages in Latin script beyond English: a number keeps its unit and its era (586 a. C.,
+ * 586 v. Chr., 586 av. J.-C., 586 f.Kr., 1200 BK); French also keeps « », : ; ! ? on their
+ * word with a thin no-break space.
+ */
+function typesetLatin(l: Locale): (html: string) => string {
   const NB = "\u00a0";
   const NNB = "\u202f";
   return (html) =>
@@ -633,7 +782,7 @@ function typesetLatin(l: Lang): (html: string) => string {
       let x = t
         .replace(/(\d) (km|KB|MB|kB)\b/g, `$1${NB}$2`)
         .replace(
-          /(\d) (a\. ?C\.|d\. ?C\.|v\. ?Chr\.|n\. ?Chr\.|av\. J\.-C\.|apr\. J\.-C\.|p\.n\.e\.|n\.e\.|př\. n\. l\.|n\. l\.)/g,
+          /(\d) (a\. ?C\.|d\. ?C\.|v\. ?Chr\.|n\. ?Chr\.|av\. J\.-C\.|apr\. J\.-C\.|p\.n\.e\.|n\.e\.|př\. n\. l\.|n\. l\.|f\.Kr\.|e\.Kr\.|BK|AD)/g,
           `$1${NB}$2`,
         )
         .replace(/\b(a|d|v|n|av|apr)\. (C\.|Chr\.|J\.-C\.)/g, `$1.${NB}$2`)
@@ -652,7 +801,7 @@ function typesetLatin(l: Lang): (html: string) => string {
 }
 
 /** Each language's typography. */
-const TYPESET: Readonly<Record<Lang, (html: string) => string>> = {
+const TYPESET: Words<(html: string) => string> = {
   en: typesetEnglish,
   ru: typeset,
   uk: typesetUkrainian,
@@ -664,9 +813,14 @@ const TYPESET: Readonly<Record<Lang, (html: string) => string>> = {
   nl: typesetLatin("nl"),
   pl: typesetLatin("pl"),
   cs: typesetLatin("cs"),
+  sv: typesetLatin("sv"),
+  da: typesetLatin("da"),
+  nb: typesetLatin("nb"),
+  sr: typesetSerbian,
+  tl: typesetLatin("tl"),
 };
 /** The languages that preload the Cyrillic font. */
-const CYRILLIC: ReadonlySet<Lang> = new Set(["ru", "uk"]);
+const CYRILLIC: ReadonlySet<Locale> = new Set(["ru", "uk", "sr"]);
 
 /** A code sample's language, from its first line: markup, an HTTP request or JavaScript. */
 const langOf = (code: string) =>

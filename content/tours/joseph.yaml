@@ -15,6 +15,11 @@ title:
   it: "Giuseppe in Egitto"
   nl: "Jozef in Egypte"
   cs: "Josef v Egyptě"
+  sv: "Josef i Egypten"
+  nb: "Josef i Egypt"
+  tl: "Si Jose sa Egipto"
+  da: "Josef i Egypten"
+  sr: "Јосиф у Египту"
 year: "1700 BC"
 people: ["Joseph@Gen.30.24-Rev"]
 approximate: true
@@ -33,6 +38,11 @@ stops:
       it: "Israele manda Giuseppe dalla valle di Ebron a vedere come stanno i suoi fratelli."
       nl: "Israël zendt Jozef uit het dal van Hebron om te zien hoe het met zijn broers gaat."
       cs: "Izrael posílá Josefa z údolí Hebronu, aby se podíval, jak se mají jeho bratři."
+      sv: "Israel sänder Josef från Hebrons dal för att se hur det står till med hans bröder."
+      nb: "Israel sender Josef fra Hebrons dal for å se hvordan det står til med brødrene."
+      tl: "Sinugo ni Israel si Jose mula sa libis ng Hebron upang alamin kung kumusta ang kaniyang mga kapatid."
+      da: "Israel sender Josef fra Hebrons dal for at se, hvordan det står til med hans brødre."
+      sr: "Израиљ шаље Јосифа из долине хевронске да види како су његова браћа."
   - place: adf74d4 # Shechem
     ref: Gen.37.14-Gen.37.16
     note:
@@ -47,6 +57,11 @@ stops:
       it: "Giunge a Sichem e vaga per i campi cercandoli."
       nl: "Hij komt te Sichem en dwaalt in het veld rond op zoek naar hen."
       cs: "Přichází do Šekemu a bloudí po poli a hledá je."
+      sv: "Han kommer till Shekem och irrar omkring på marken och söker efter dem."
+      nb: "Han kommer til Sikem og farer omkring på marken og leter etter dem."
+      tl: "Dumating siya sa Sichem at gumala sa bukid na hinahanap sila."
+      da: "Han kommer til Sikem og vandrer rundt på marken for at lede efter dem."
+      sr: "Долази у Сихем и лута по пољу тражећи их."
   - place: ab635e4 # Dothan
     ref: Gen.37.17-Gen.37.28
     note:
@@ -61,6 +76,11 @@ stops:
       it: "A Dotan i suoi fratelli lo gettano in una cisterna e lo vendono agli Ismaeliti per venti pezzi d’argento."
       nl: "Te Dotan gooien zijn broers hem in een put en verkopen hem voor twintig zilverstukken aan de Ismaëlieten."
       cs: "V Dótanu ho bratři vhazují do jámy a prodávají Jišmaelcům za dvacet stříbrných."
+      sv: "I Dotan kastar hans bröder honom i en grop och säljer honom till ismaeliterna för tjugo silverpenningar."
+      nb: "I Dotan kaster brødrene ham i en brønn og selger ham til ismaelittene for tyve sølvstykker."
+      tl: "Sa Dotan ay inihagis siya ng kaniyang mga kapatid sa isang balon at ipinagbili sa mga Ismaelita sa halagang dalawampung putol na pilak."
+      da: "I Dotan kaster hans brødre ham i en cisterne og sælger ham til ismaelitterne for tyve sølvstykker."
+      sr: "У Дотаиму га браћа бацају у јаму и продају Исмаилићанима за двадесет сребрњака."
   - place: af301ca # Egypt
     ref: Gen.39.1-Gen.39.6
     note:
@@ -75,6 +95,11 @@ stops:
       it: "In Egitto Potifar, capo delle guardie del faraone, lo compra, e il Signore è con Giuseppe."
       nl: "In Egypte koopt Potifar, de overste van de lijfwacht van Farao, hem, en de HEER is met Jozef."
       cs: "V Egyptě ho kupuje Potifar, velitel faraonovy stráže, a Hospodin je s Josefem."
+      sv: "I Egypten köper Potifar, befälhavare för faraos livvakt, honom, och Herren är med Josef."
+      nb: "I Egypt kjøper Potifar, Faraos livvaktsjef, ham, og Herren er med Josef."
+      tl: "Sa Egipto ay binili siya ni Potiphar, ang kapitan ng bantay ni Faraon, at ang Panginoon ay sumasa kay Jose."
+      da: "I Egypten køber Potifar, øverste for Faraos livvagt, ham, og Herren er med Josef."
+      sr: "У Египту га купује Петефрије, заповедник фараонове страже, и Господ је с Јосифом."
   - place: acd9137 # Heliopolis (On)
     ref: Gen.41.41-Gen.41.45
     note:
@@ -89,6 +114,11 @@ stops:
       it: "Posto a capo di tutto il paese d’Egitto, riceve in moglie Asenat, figlia di Potifera, sacerdote di On, cioè Eliopoli."
       nl: "Aangesteld over heel Egypte krijgt hij Asnat, de dochter van Potifera, priester van On, dat is Heliopolis."
       cs: "Ustanoven nad celou egyptskou zemí, dostává za ženu Asenat, dceru Poti-fery, kněze v On, to jest v Héliopoli."
+      sv: "Satt över hela Egyptens land får han Asenat, dotter till Potifera, präst i On, det vill säga Heliopolis."
+      nb: "Satt over hele Egypt får han Asenat, datter av Potifera, presten i On, det vil si Heliopolis."
+      tl: "Itinalaga sa buong lupain ng Egipto, ibinigay sa kaniya si Asenath, anak ni Potiphera, saserdote sa On, na siyang Heliopolis."
+      da: "Sat over hele Egyptens land får han Asenat, datter af Potifera, præst i On, det er Heliopolis."
+      sr: "Постављен над целом земљом египатском, добија Асенету, кћер Потифере, свештеника онског, то јест Хелиополиса."
   - place: a60f092 # Goshen
     ref: Gen.46.28-Gen.46.30
     note:
@@ -103,6 +133,11 @@ stops:
       it: "A Gosen incontra suo padre Israele, gli si getta al collo e piange a lungo."
       nl: "In Gosen ontmoet hij zijn vader Israël, valt hem om de hals en weent lange tijd."
       cs: "V Gošenu se setkává se svým otcem Izraelem, padá mu kolem krku a dlouho pláče."
+      sv: "I Goshen möter han sin fader Israel, faller honom om halsen och gråter länge."
+      nb: "I Gosen møter han sin far Israel, faller ham om halsen og gråter lenge."
+      tl: "Sa Gosen ay sinalubong niya ang kaniyang amang si Israel, yumakap sa leeg nito at umiyak nang matagal."
+      da: "I Gosjen møder han sin far Israel, falder ham om halsen og græder længe."
+      sr: "У Гесему среће оца свог Израиља, пада му око врата и дуго плаче."
   - place: a2f186d # Atad
     ref: Gen.50.10-Gen.50.11
     note:
@@ -117,6 +152,11 @@ stops:
       it: "All’aia di Atad, al di là del Giordano, fanno lutto per Giacobbe per sette giorni."
       nl: "Bij de dorsvloer van Atad aan de overzijde van de Jordaan rouwen zij zeven dagen om Jakob."
       cs: "Na humně Atad za Jordánem oplakávají Jákoba sedm dní."
+      sv: "Vid Atads tröskplats på andra sidan Jordan sörjer de Jakob i sju dagar."
+      nb: "Ved treskeplassen Goren-Haatad på hin side Jordan sørger de over Jakob i sju dager."
+      tl: "Sa giikan ni Atad sa dako pa roon ng Jordan ay ipinagluksa nila si Jacob nang pitong araw."
+      da: "Ved Atads tærskeplads hinsides Jordan sørger de over Jakob i syv dage."
+      sr: "На гумну Хатадовом преко Јордана оплакују Јакова седам дана."
   - place: ae00861 # Machpelah
     ref: Gen.50.12-Gen.50.13
     note:
@@ -131,3 +171,8 @@ stops:
       it: "Giacobbe è sepolto nella caverna del campo di Macpela, che Abramo aveva comprato."
       nl: "Jakob wordt begraven in de spelonk van het veld van Machpela, dat Abraham heeft gekocht."
       cs: "Jákob je pohřben v jeskyni na poli Makpela, které koupil Abraham."
+      sv: "Jakob begravs i grottan på Makpelas åker, som Abraham köpte."
+      nb: "Jakob blir gravlagt i hulen på Makpela-marken, som Abraham kjøpte."
+      tl: "Inilibing si Jacob sa yungib ng bukid ng Macpela, na binili ni Abraham."
+      da: "Jakob bliver begravet i hulen på Makpelas mark, som Abraham købte."
+      sr: "Јаков је сахрањен у пећини на њиви Макпели, коју је купио Аврам."
