@@ -26,7 +26,13 @@ import {
   NT_BOOKS,
 } from "../packages/model/src/scripture.ts";
 import { sourcesOf } from "../packages/model/src/citation.ts";
-import { formatYear, LOCALE_NAMES, LOCALES, type SiteLocale } from "../packages/model/src/time.ts";
+import {
+  formatYear,
+  type Locale,
+  LOCALE_NAMES,
+  LOCALES,
+  type SiteLocale,
+} from "../packages/model/src/time.ts";
 import { bodyEnd, esc, headMeta } from "./page-shell.ts";
 import { NOTICE_COMMENT } from "../packages/model/src/notice.ts";
 import { commonsPage, DOC_PAGES, docsPath } from "../packages/model/src/site.ts";
@@ -55,6 +61,8 @@ const site = process.env.SITE_URL?.replace(/\/+$/, "") ?? "";
 
 type Lang = SiteLocale;
 const LANGS: readonly Lang[] = LOCALES;
+/** The languages written in Cyrillic, which preload that font (build-docs.ts the same). */
+const CYRILLIC: ReadonlySet<Locale> = new Set(["ru", "uk", "sr"]);
 
 interface Props {
   id: string;
@@ -304,7 +312,7 @@ function page(o: {
     <link rel="icon" href="${up}favicon.svg" type="image/svg+xml" />
     <title>${esc(o.title)} | History Globe</title>${o.noindex ? '\n    <meta name="robots" content="noindex, follow" />' : ""}${meta}${o.licence ? `\n    <link rel="license" href="${NC_ND}" />` : ""}${
       o.home
-        ? `\n    <link rel="preload" href="${up}docs/fonts/golos-text-${o.l === "ru" || o.l === "uk" ? "cyrillic" : "latin"}-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+        ? `\n    <link rel="preload" href="${up}docs/fonts/golos-text-${CYRILLIC.has(o.l) ? "cyrillic" : "latin"}-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     <script>
       // The entrance plays only for a reader who has not asked for less motion; without a
       // script the page is simply all there (pages.css, public/landing.js).

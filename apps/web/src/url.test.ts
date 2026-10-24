@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { isLocale } from "@hg/model";
-import { preferredLocale, readUrl, startLocale, viewSearch } from "./url";
+import { localeOfTag, preferredLocale, readUrl, startLocale, viewSearch } from "./url";
 
 describe("readUrl", () => {
   it("reads a full view", () => {
@@ -172,6 +172,15 @@ describe("preferredLocale", () => {
   it("opens in English when no language of the browser is published", () => {
     expect(preferredLocale(["ja", "ko"], none)).toBe("en");
     expect(preferredLocale([], none)).toBe("en");
+  });
+  it("knows the site's code for a browser tag: Norwegian is the Bokmål, Filipino the Tagalog", () => {
+    for (const tag of ["no", "nn", "nb-NO", "NB"]) expect(localeOfTag(tag), tag).toBe("nb");
+    for (const tag of ["fil", "fil-PH", "tl"]) expect(localeOfTag(tag), tag).toBe("tl");
+    for (const tag of ["sr", "sr-Cyrl", "sr-RS", "sr-Latn-RS"])
+      expect(localeOfTag(tag), tag).toBe("sr");
+    expect(localeOfTag("pt-BR")).toBe("pt");
+    // Nynorsk opens the Bokmål once it is published; until then the browser's next language.
+    expect(preferredLocale(["nn-NO", "de"], none)).toBe(isLocale("nb") ? "nb" : "de");
   });
   it("keeps the language the reader picked, over the browser's", () => {
     expect(preferredLocale(["en-US"], () => "pl")).toBe("pl");
