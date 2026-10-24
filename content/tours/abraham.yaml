@@ -19,6 +19,7 @@ title:
   sv: "Abrahams färd"
   nb: "Abrahams ferd"
   tl: "Ang paglalakbay ni Abraham"
+  da: "Abrahams rejse"
 year: "1900 BC"
 people: ["Abraham@Gen.11.26-1Pe"]
 approximate: true
@@ -40,6 +41,7 @@ stops:
       sv: "Tera för Abram och hans familj ut från Ur i Kaldeen."
       nb: "Tarah fører Abram og hans familie ut fra Ur i Kaldea."
       tl: "Inilalabas ni Tara si Abram at ang kaniyang pamilya sa Ur ng mga Caldeo."
+      da: "Tera fører Abram og hans familie ud af Ur i Kaldæa."
   - place: a6d9af3 # Haran
     ref: Gen.11.31-Gen.11.32
     note:
@@ -57,6 +59,7 @@ stops:
       sv: "De bosätter sig i Harran, där Tera dör."
       nb: "De slår seg ned i Harran, hvor Tarah dør."
       tl: "Nanunuluyan sila sa Haran, at doon namamatay si Tara."
+      da: "De bosætter sig i Karan, hvor Tera dør."
   - place: adf74d4 # Shechem
     ref: Gen.12.6-Gen.12.7
     note:
@@ -74,6 +77,7 @@ stops:
       sv: "I Kanaan visar sig Herren för Abram vid Shekem."
       nb: "I Kanaan viser Herren seg for Abram ved Sikem."
       tl: "Sa Canaan, napakikita ang Panginoon kay Abram sa Sichem."
+      da: "I Kana'an viser Herren sig for Abram ved Sikem."
   - place: a64f355 # Bethel
     ref: Gen.12.8
     note:
@@ -91,6 +95,7 @@ stops:
       sv: "Han slår upp sitt tält mellan Betel och Ai och bygger ett altare."
       nb: "Han slår opp teltet sitt mellom Betel og Ai og bygger et alter."
       tl: "Itinatayo niya ang kaniyang tolda sa pagitan ng Beth-el at Hai at nagtatayo ng isang dambana."
+      da: "Han slår sit telt op mellem Betel og Aj og bygger et alter."
   - place: af301ca # Egypt
     ref: Gen.12.10
     note:
@@ -108,6 +113,7 @@ stops:
       sv: "Hungersnöd driver honom ner till Egypten."
       nb: "Hungersnød driver ham ned til Egypt."
       tl: "Dahil sa taggutom ay napipilitan siyang lumusong sa Egipto."
+      da: "Hungersnød driver ham ned til Egypten."
   - place: a85151a # Hebron
     ref: Gen.13.18
     note:
@@ -125,6 +131,7 @@ stops:
       sv: "Han bosätter sig vid Mamres ekar i Hebron."
       nb: "Han bosetter seg ved Mamres eiker i Hebron."
       tl: "Nanunuluyan siya sa mga ensina ng Mamre sa Hebron."
+      da: "Han bosætter sig ved Mamres egelunde i Hebron."
   - place: a513646 # Dan
     ref: Gen.14.14
     note:
@@ -142,6 +149,7 @@ stops:
       sv: "Han förföljer de kungar som tog Lot till fånga, ända till Dan."
       nb: "Han forfølger kongene som hadde tatt Lot, helt til Dan."
       tl: "Hinahabol niya hanggang sa Dan ang mga haring bumihag kay Lot."
+      da: "Han forfølger de konger, der havde ført Lot bort, lige til Dan."
   - place: aad7e4e # Salem
     ref: Gen.14.18
     note:
@@ -159,6 +167,7 @@ stops:
       sv: "Melkisedek, kung av Salem, bär fram bröd och vin."
       nb: "Melkisedek, konge av Salem, bærer frem brød og vin."
       tl: "Naglalabas ng tinapay at alak si Melquisedec, na hari sa Salem."
+      da: "Melkisedek, Salems konge, bringer brød og vin frem."
   - place: a3f5814 # Gerar
     ref: Gen.20.1
     note:
@@ -176,6 +185,7 @@ stops:
       sv: "Han stannar en tid i Gerar."
       nb: "Han oppholder seg en tid i Gerar."
       tl: "Nananatili siya nang ilang panahon sa Gerar."
+      da: "Han opholder sig en tid i Gerar."
   - place: a075d61 # Beersheba
     ref: Gen.21.31
     note:
@@ -193,6 +203,7 @@ stops:
       sv: "Abraham och Avimelek svär en ed, och platsen kallas Beer Sheva."
       nb: "Abraham og Abimelek sverger en ed, og stedet kalles Beer-Sjeba."
       tl: "Nanunumpa sina Abraham at Abimelech, at ang dako ay tinatawag na Beer-seba."
+      da: "Abraham og Abimelek aflægger ed, og stedet kaldes Beersheba."
   - place: adaf385 # Moriah
     ref: Gen.22.2-Gen.22.13
     note:
@@ -210,6 +221,7 @@ stops:
       sv: "Isaks bindning på ett berg i Moria land."
       nb: "Isaks offerbinding på et fjell i Moria land."
       tl: "Ang paggapos kay Isaac sa isang bundok sa lupain ng Moria."
+      da: "Bindingen af Isak på et bjerg i Morijas land."
   - place: ae00861 # Machpelah
     ref: Gen.23.19
     note:
@@ -227,3 +239,4 @@ stops:
       sv: "Sara begravs i grottan i Makpela; senare även Abraham (1 Mos 25:9)."
       nb: "Sara blir gravlagt i Makpela-hulen; senere også Abraham (1 Mos 25,9)."
       tl: "Inililibing si Sara sa yungib ng Macpela; at kalaunan ay si Abraham din (Gen 25:9)."
+      da: "Sara bliver begravet i Makpelas hule; senere også Abraham (1 Mos 25,9)."

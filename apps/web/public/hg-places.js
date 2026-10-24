@@ -9,7 +9,7 @@
  *
  * Options, as attributes of the script tag:
  *   data-scope=".post"   where to look (a CSS selector; the whole page by default)
- *   data-locale="pl"     the text's language: cs, de, en, es, fr, it, nb, nl, pl, pt, ru, sv, tl or uk
+ *   data-locale="pl"     the text's language: cs, da, de, en, es, fr, it, nb, nl, pl, pt, ru, sv, tl or uk
  *                        (by default the page's lang; English for any other)
  *   data-every           link every mention, not only the first of each place
  *   data-theme="dark"    the card's colours, light or dark (by default the reader's system)
@@ -35,6 +35,7 @@
   // The languages the globe is published in (packages/model/src/time.ts LOCALES).
   const LANGS = [
     "cs",
+    "da",
     "de",
     "en",
     "es",

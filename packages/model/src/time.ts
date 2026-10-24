@@ -128,6 +128,7 @@ export const ALL_LOCALES = [
  */
 export const LOCALES = [
   "cs",
+  "da",
   "de",
   "en",
   "es",
@@ -146,6 +147,7 @@ export type SiteLocale = (typeof LOCALES)[number];
 /** Each language by its own name, for the language switch. */
 export const LOCALE_NAMES: Readonly<Record<SiteLocale, string>> = {
   cs: "Čeština",
+  da: "Dansk",
   de: "Deutsch",
   en: "English",
   es: "Español",

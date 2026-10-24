@@ -19,6 +19,7 @@ title:
   sv: "Ehud och Jefta"
   nb: "Ehud og Jefta"
   tl: "Si Aod at si Jephte"
+  da: "Ehud og Jefta"
 year: "1150 BC"
 people: ["Ehud@Jdg.3.15-1Ch", "Jephthah@Jdg.11.1-Heb"]
 approximate: true
@@ -40,6 +41,7 @@ stops:
       sv: "Eglon, kung av Moab, slår tillsammans med Ammon och Amalek Israel och intar palmstaden; Israel tjänar honom i arton år."
       nb: "Eglon, Moabs konge, slår, sammen med Ammon og Amalek, Israel og inntar palmebyen; Israel tjener ham i atten år."
       tl: "Sinaktan ni Eglon na hari ng Moab, kasama ang Ammon at Amalec, ang Israel at sinakop ang lungsod ng mga puno ng palma; naglingkod ang Israel sa kaniya nang labingwalong taon."
+      da: "Eglon, Moabs konge, slår, sammen med Ammon og Amalek, Israel og indtager Palmebyen; Israel tjener ham i atten år."
   - place: ab94aea # Gilgal
     ref: Judg.3.15-Judg.3.25
     note:
@@ -57,6 +59,7 @@ stops:
       sv: "Den vänsterhänte Ehud bär fram Israels gåva, vänder om från stenbrotten vid Gilgal med ett hemligt ärende till kungen och stöter sin dolk i Eglons buk."
       nb: "Venstrehåndsmannen Ehud bringer Israels gave, vender om ved steinbruddene ved Gilgal med et hemmelig ærend til kongen og støter sin dolk i Eglons buk."
       tl: "Dinala ni Aod na kaliwete ang handog ng Israel, bumalik mula sa mga tibagan malapit sa Gilgal na may lihim na sadya sa hari, at isinaksak ang kaniyang punyal sa tiyan ni Eglon."
+      da: "Venstrehåndede Ehud bringer Israels gave, vender om ved stenbruddene ved Gilgal med et hemmeligt ærinde til kongen og støder sin dolk i Eglons bug."
   - place: a1aff30 # Seirah
     ref: Judg.3.26-Judg.3.30
     note:
@@ -74,6 +77,7 @@ stops:
       sv: "Han undkommer till Seira, blåser i basun i Efraims bergsbygd, och Israel besätter Jordans vadställen mot Moab; landet får ro i åttio år."
       nb: "Han slipper unna til Seira, støter i basun i Efraims fjell, og Israel besetter vadestedene ved Jordan mot Moab; landet har ro i åtti år."
       tl: "Tumakas siya sa Seirath, humihip ng trumpeta sa bundok ng Ephraim, at sinakop ng Israel ang mga tawiran ng Jordan patungo sa Moab; nagkaroon ng kapahingahan ang lupain sa loob ng walumpung taon."
+      da: "Han undslipper til Se'ira, støder i horn i Efraims bjergland, og Israel besætter Jordans vadesteder mod Moab; landet har ro i firs år."
   - place: aaff3e1 # Tob
     ref: Judg.11.1-Judg.11.3
     note:
@@ -91,6 +95,7 @@ stops:
       sv: "Jefta från Gilead, bortdriven av sina bröder, flyr till landet Tov, där löst folk samlas kring honom."
       nb: "Gileaditten Jefta, jaget bort av sine brødre, flykter til Tobs land, hvor løse menn samler seg om ham."
       tl: "Si Jephte na taga-Gilead, pinalayas ng kaniyang mga kapatid, ay tumakas sa lupain ng Tob, kung saan nagtipon sa kaniya ang mga taong walang kabuluhan."
+      da: "Gileaditten Jefta, fordrevet af sine brødre, flygter til Tobs land, hvor ørkesløse mænd slutter sig til ham."
   - place: a0f8af9 # Mizpah
     ref: Judg.11.4-Judg.11.11
     note:
@@ -108,6 +113,7 @@ stops:
       sv: "När Ammon för krig hämtar Gileads äldste honom; folket gör honom till huvudman och anförare, och han framför alla sina ord inför Herren i Mispe."
       nb: "Da Ammon fører krig, henter Gileads eldste ham; folket gjør ham til overhode og anfører, og han legger frem alle sine ord for Herren i Mispe."
       tl: "Nang makipagdigma ang Ammon, sinundo siya ng mga matanda ng Gilead; ginawa siyang pinuno at kapitan ng bayan, at sinabi niya ang lahat ng kaniyang mga salita sa harap ng Panginoon sa Mizpe."
+      da: "Da Ammon fører krig, henter Gileads ældste ham; folket gør ham til høvding og anfører, og han fremsiger alle sine ord for Herrens ansigt i Mispe."
   - place: af74969 # Aroer
     ref: Judg.11.29-Judg.11.33
     note:
@@ -125,6 +131,7 @@ stops:
       sv: "Han lovar att det som kommer ut genom hans dörrar för att möta honom ska tillhöra Herren, och slår Ammon från Aroer till Minnit, tjugo städer."
       nb: "Han lover at det som kommer ut av hans dører for å møte ham, skal tilhøre Herren, og slår Ammon fra Aroer til Minnit, tyve byer."
       tl: "Nanata siya na ang anumang lumabas sa kaniyang mga pintuan upang salubungin siya ay magiging sa Panginoon, at sinaktan niya ang Ammon mula sa Aroer hanggang sa Minnith, dalawampung lungsod."
+      da: "Han aflægger det løfte, at det, der kommer ud af hans dør for at møde ham, skal tilhøre Herren, og slår Ammon fra Aroer til Minnit, tyve byer."
   - place: a0f8af9 # Mizpah
     ref: Judg.11.34-Judg.11.40
     note:
@@ -142,6 +149,7 @@ stops:
       sv: "I Mispe kommer hans enda dotter ut för att möta honom med pukor och dans: ”Ve mig, min dotter, du kommer mig att sjunka till jorden.”"
       nb: "I Mispe kommer hans eneste datter ut for å møte ham med tamburiner og dans: «Akk, min datter, hvilken sorg du volder mig, hvilken ulykke du fører over mig!»"
       tl: "Sa Mizpe, lumabas ang kaniyang bugtong na anak na babae upang salubungin siya na may mga pandereta at sayawan: “Sa aba ko, aking anak! pinapakumbaba mo akong lubos.”"
+      da: "I Mispe kommer hans eneste datter ham i møde med tamburiner og dans: »Ak, min Datter! du har nedbøjet mig saare«."
   - place: ae686c9 # Jordan
     ref: Judg.12.1-Judg.12.6
     note:
@@ -159,3 +167,4 @@ stops:
       sv: "Vid Jordans vadställen känner Gileads män igen Efraims män på ett enda ord: ”Säg ’schibbolet’.”"
       nb: "Ved Jordans overganger kjenner Gileads menn Efraims menn på ett ord: «Si sjibbolet!»"
       tl: "Sa mga tawiran ng Jordan, nakilala ng mga lalaki ng Gilead ang mga lalaki ng Ephraim sa isang salita: “Sabihin mong Shiboleth.”"
+      da: "Ved Jordans overgange kender Gileads mænd Efraims mænd på ét ord: »Kære, sig: Sjibboleth«."

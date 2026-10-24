@@ -16,6 +16,7 @@ title:
   sv: "Evangelisten Filippos"
   nb: "Evangelisten Filip"
   tl: "Felipe na ebanghelista"
+  da: "Evangelisten Filip"
 year: "AD 34"
 approximate: true
 stops:
@@ -36,6 +37,7 @@ stops:
       sv: "I Jerusalem utses Filippos tillsammans med Stefanos bland de sju för att tjäna vid borden."
       nb: "I Jerusalem blir Filip valgt sammen med Stefanus blant de sju til å tjene ved bordene."
       tl: "Sa Jerusalem, si Felipe ay pinili kasama ni Esteban sa pito upang maglingkod sa mga hapag."
+      da: "I Jerusalem udvælges Filip sammen med Stefanus blandt de syv til at tjene ved bordene."
   - place: a282dce # Samaria (region)
     ref: Acts.8.5-Acts.8.13
     note:
@@ -53,6 +55,7 @@ stops:
       sv: "Han går ner till staden Samaria och predikar Kristus, och folket lyssnar enigt till honom."
       nb: "Han drar ned til byen Samaria og forkynner Kristus, og folket gir enstemmig akt på ham."
       tl: "Bumaba siya sa lungsod ng Samaria at ipinangaral si Cristo, at sa isang pagkakaisa ay dininig siya ng mga tao."
+      da: "Han går ned til Samarias by og prædiker Kristus, og folket lytter enigt til ham."
   - place: aa8edd2 # Gaza
     ref: Acts.8.26-Acts.8.39
     note:
@@ -70,6 +73,7 @@ stops:
       sv: "På ökenvägen från Jerusalem till Gaza döper han den etiopiske eunucken."
       nb: "På ørkenveien fra Jerusalem til Gasa døper han den etiopiske hoffmannen."
       tl: "Sa daan sa ilang mula Jerusalem patungong Gaza, binautismuhan niya ang bating na taga-Etiopia."
+      da: "På ørkenvejen fra Jerusalem til Gaza døber han den etiopiske hofmand."
   - place: a30c937 # Ashdod (Azotus)
     ref: Acts.8.40
     note:
@@ -87,6 +91,7 @@ stops:
       sv: "Filippos påträffas i Ashdod (Azotus) och förkunnar i alla städer på vägen till Caesarea."
       nb: "Filip blir funnet i Asjdod (Asotos) og forkynner i alle byene på veien til Cæsarea."
       tl: "Si Felipe ay nasumpungan sa Asdod (Azoto) at ipinangaral ang ebanghelyo sa lahat ng bayan hanggang sa Cesarea."
+      da: "Filip findes i Asdod (Azotus) og prædiker i alle byerne på vejen til Cæsarea."
   - place: a58735e # Caesarea
     ref: Acts.21.8-Acts.21.9
     note:
@@ -104,3 +109,4 @@ stops:
       sv: "År senare bor Paulus i Caesarea i Filippos’ hus, vars fyra döttrar profeterar."
       nb: "År senere tar Paulus inn i Cæsarea hos Filip, hvis fire døtre profeterer."
       tl: "Pagkaraan ng maraming taon, tumuloy si Pablo sa Cesarea sa bahay ni Felipe, na ang apat na anak na dalaga ay nagsisipanghula."
+      da: "År senere bor Paulus i Cæsarea i Filips hus, hvis fire døtre profeterer."

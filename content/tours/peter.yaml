@@ -17,6 +17,7 @@ title:
   sv: "Aposteln Petrus"
   nb: "Apostelen Peter"
   tl: "Ang apostol na si Pedro"
+  da: "Apostlen Peter"
 year: "AD 40"
 people: ["Peter@Mat.4.18-2Pe"]
 approximate: true
@@ -39,6 +40,7 @@ stops:
       sv: "Vid pingst står Petrus upp med de elva och talar; omkring tre tusen döps."
       nb: "På pinsedagen står Peter frem sammen med de elleve og taler; omkring tre tusen blir døpt."
       tl: "Sa Pentecostes, tumatayo si Pedro kasama ang labing-isa at nagsasalita; mga tatlong libo ang nabautismuhan."
+      da: "Ved pinse står Peter sammen med de elleve og taler; omkring tre tusind lader sig døbe."
   - place: a282dce # Samaria (region)
     ref: Acts.8.14-Acts.8.25
     note:
@@ -56,6 +58,7 @@ stops:
       sv: "Sänd med Johannes till Samarien tillrättavisar han Simon, som ville köpa Guds gåva för pengar."
       nb: "Sendt med Johannes til Samaria refser han Simon, som ville kjøpe Guds gave med penger."
       tl: "Isinugo kasama ni Juan sa Samaria, sinasaway niya si Simon, na nais bumili ng kaloob ng Dios sa pamamagitan ng salapi."
+      da: "Sendt sammen med Johannes til Samaria irettesætter han Simon, som ville købe Guds gave for penge."
   - place: a2c5cc7 # Lydda
     ref: Acts.9.32-Acts.9.35
     note:
@@ -73,6 +76,7 @@ stops:
       sv: "I Lod (Lydda) botar han Aineas, som legat sängliggande i åtta år."
       nb: "I Lod (Lydda) helbreder han Æneas, som hadde ligget syk til sengs i åtte år."
       tl: "Sa Lod (Lida) ay pinagagaling niya si Eneas, na walong taon nang nakaratay."
+      da: "I Lydda (Lod) helbreder han Æneas, der havde ligget til sengs i otte år."
   - place: ae023a9 # Joppa
     ref: Acts.9.36-Acts.10.23
     note:
@@ -90,6 +94,7 @@ stops:
       sv: "I Joppe uppväcker han Tabita, och på taket ser han synen av duken."
       nb: "I Jaffa oppvekker han Tabita, og på hustaket ser han synet med duken."
       tl: "Sa Joppa ay binubuhay niya si Tabita, at sa bubungan ay nakikita ang pangitain ng kumot."
+      da: "I Joppe opvækker han Tabita, og på taget ser han synet af dugen."
   - place: a58735e # Caesarea
     ref: Acts.10.24-Acts.10.48
     note:
@@ -107,6 +112,7 @@ stops:
       sv: "I Caesarea, medan Petrus talar i hundrahövitsmannen Cornelius’ hus, faller den helige Ande över alla som hör ordet."
       nb: "I Cæsarea, mens Peter taler i høvedsmannen Kornelius' hus, faller Den hellige ånd over alle som hører ordet."
       tl: "Sa Cesarea, habang nagsasalita si Pedro sa bahay ng senturyon na si Cornelio, bumababa ang Espiritu Santo sa lahat ng nakikinig ng salita."
+      da: "I Cæsarea, mens Peter taler i høvedsmanden Kornelius' hus, falder Helligånden over alle, der hører ordet."
   - place: a15257a # Jerusalem
     ref: Acts.11.2-Acts.12.17
     note:
@@ -124,6 +130,7 @@ stops:
       sv: "Åter i Jerusalem berättar han för församlingen om Cornelius; fängslad av Herodes förs han ut av en ängel."
       nb: "Tilbake i Jerusalem forteller han menigheten om Kornelius; satt i fengsel av Herodes blir han ført ut av en engel."
       tl: "Pagbalik sa Jerusalem, isinasalaysay niya sa iglesya ang tungkol kay Cornelio; ibinilanggo ni Herodes, inilabas siya ng isang anghel."
+      da: "Tilbage i Jerusalem fortæller han menigheden om Kornelius; fængslet af Herodes føres han ud af en engel."
   - place: a58735e # Caesarea
     ref: Acts.12.19-Acts.12.23
     year: "AD 44"
@@ -142,3 +149,4 @@ stops:
       sv: "I Caesarea slås Herodes, som inte gav Gud äran, av Herrens ängel och dör."
       nb: "I Cæsarea blir Herodes, som ikke gav Gud æren, slått av Herrens engel og dør."
       tl: "Sa Cesarea, si Herodes, na hindi nagbigay ng kaluwalhatian sa Diyos, ay sinaktan ng anghel ng Panginoon at namatay."
+      da: "I Cæsarea bliver Herodes, som ikke gav Gud æren, ramt af Herrens engel og dør."

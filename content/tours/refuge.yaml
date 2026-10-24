@@ -20,6 +20,7 @@ title:
   sv: "De sex tillflyktsstäderna"
   nb: "De seks tilfluktsbyene"
   tl: "Ang anim na lungsod na kanlungan"
+  da: "De seks tilflugtsbyer"
 year: "1406 BC"
 # Where the cities were, not a journey: no time on foot.
 walked: false
@@ -42,6 +43,7 @@ stops:
       sv: "Mose avskiljer tre städer öster om Jordan, ”till vilka en dråpare skulle kunna fly, om han hade dräpt någon utan vett och vilja”: först Beser i öknen, på slättlandet, för Rubens stam."
       nb: "Moses utskiller tre byer øst for Jordan, «en manndraper som hadde slått sin næste ihjel av vanvare og uten før å ha båret hat til ham, kunde fly dit»: først Beser i ørkenen, på sletten, for Ruben."
       tl: "Ibinukod ni Moises ang tatlong lungsod sa silangan ng Jordan, “upang ang nakamatay ng tao ay tumakas doon, na nakamatay sa kaniyang kapuwa na hindi sinasadya”: una ang Beser sa ilang, sa kapatagan, ng Ruben."
+      da: "Moses udskiller tre byer øst for Jordan, »for at en Manddraber, som slaar sin Næste ihjel af Vanvare og uden at han hadede ham tilforn, kunde fly derhen«: først Beser i ørkenen, på sletten, hos Ruben."
   - place: a95147f # Ramoth
     ref: Deut.4.43
     note:
@@ -59,6 +61,7 @@ stops:
       sv: "Ramot i Gilead, för gaditerna: Ramot i Gilead, där Achav skulle falla."
       nb: "Ramot i Gilead, for gadittene: Ramot-Gilead, hvor Akab skulle falle."
       tl: "Ang Ramoth sa Gilead, ng mga Gadita: ang Ramoth-galaad, kung saan mabubuwal si Achab."
+      da: "Ramot i Gilead, hos gaditterne: Ramot i Gilead, hvor Akab skulle falde."
   - place: abb5c1e # Golan
     ref: Deut.4.43
     note:
@@ -76,6 +79,7 @@ stops:
       sv: "Golan i Bashan, för Manasse stam, den nordligaste av de tre."
       nb: "Golan i Basan, for Manasse, den nordligste av de tre."
       tl: "Ang Golan sa Basan, ng Manases, ang pinakahilaga sa tatlo."
+      da: "Golan i Basan, hos Manasse, den nordligste af de tre."
   - place: a662eed # Kedesh
     ref: Josh.20.1-Josh.20.7
     note:
@@ -93,6 +97,7 @@ stops:
       sv: "Efter erövringen får landet väster om Jordan sina tre, ”de städer till vilka en dråpare som ouppsåtligen, utan vett och vilja, har dödat någon må kunna fly”: först Kedesh i Galileen, i Naftalis bergsbygd."
       nb: "Etter erobringen får landet vest for Jordan sine tre, «en manndraper som av vanvare, uten å ville det, slår nogen ihjel, kan fly dit»: først Kedesj i Galilea i Naftali-fjellene."
       tl: "Pagkatapos ng pananakop, ang lupain sa kanluran ng Jordan ay nagkaroon ng tatlo nito, “upang matakasan ng nakamatay, na nakapatay sa sinoman na hindi sinasadya at hindi kusa”: una ang Cedes sa Galilea sa lupaing maburol ng Nephtali."
+      da: "Efter erobringen får landet vest for Jordan sine tre, »at en Manddraber, som af Vaade, uforsætlig slaar en Person ihjel, kan fly derhen«: først Kedesj i Galilæa i Naftalis bjerge."
   - place: adf74d4 # Shechem
     ref: Josh.20.7
     note:
@@ -110,6 +115,7 @@ stops:
       sv: "Shekem i Efraims bergsbygd, mellan Ebal och Gerizim, där Josua ska förnya förbundet."
       nb: "Sikem i Efraims fjell, mellom Ebal og Gerisim, hvor Josva skal fornye pakten."
       tl: "Ang Sichem sa lupaing maburol ng Ephraim, sa pagitan ng Ebal at Gerizim, kung saan babaguhin ni Josue ang tipan."
+      da: "Sikem i Efraims bjergland, mellem Ebal og Gerizim, hvor Josva skal fornye pagten."
   - place: a85151a # Hebron
     ref: Josh.20.7-Josh.20.9
     note:
@@ -127,3 +133,4 @@ stops:
       sv: "Kirjat-Arba, det vill säga Hebron, i Judas bergsbygd. Städerna gäller ”för alla Israels barn, och för de främlingar som bodde ibland dem”, tills dråparen står inför menigheten."
       nb: "Kirjat-Arba, det er Hebron, i Judas fjell. Byene er «for alle Israels barn og for de fremmede som opholder sig blandt dem», til manndraperen står frem for menigheten."
       tl: "Ang Chiriath-arba, na siyang Hebron, sa lupaing maburol ng Juda. Ang mga bayan ay “sa lahat ng mga anak ni Israel, at sa taga ibang lupa na tumatahan sa gitna nila”, hanggang sa humarap ang nakamatay sa kapisanan."
+      da: "Kirjat-Arba, det er Hebron, på Judas bjerge. Byerne er »for alle Israels Børn og for den fremmede, som var fremmed midt iblandt dem«, indtil manddraberen har stået for menighedens ansigt."

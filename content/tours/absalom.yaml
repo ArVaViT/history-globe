@@ -19,6 +19,7 @@ title:
   sv: "Absaloms uppror"
   nb: "Absaloms opprør"
   tl: "Ang paghihimagsik ni Absalom"
+  da: "Absalons oprør"
 year: "980 BC"
 people: ["Absalom@2Sa.3.3-Psa"]
 approximate: true
@@ -40,6 +41,7 @@ stops:
       sv: "Absalom beger sig till Hebron som för att infria ett löfte och sänder spejare genom stammarna: när basunen ljuder ska de säga: ”Nu har Absalom blivit konung i Hebron.”"
       nb: "Absalom drar til Hebron, tilsynelatende for å innfri et løfte, og sender speidere omkring i stammene: når basunen lyder, skal de si: «Absalom er blitt konge i Hebron.»"
       tl: "Pumupunta si Absalom sa Hebron na waring tutupad ng panata, at nagsusugo ng mga tiktik sa mga lipi: pagkarinig ng tunog ng pakakak ay sasabihin nila, “Si Absalom ay hari sa Hebron.”"
+      da: "Absalon tager til Hebron, som for at indfri et løfte, og sender spejdere ud til stammerne: Ved trompetens lyd skal de sige: »Absalom er bleven Konge i Hebron.«"
   - place: a553110 # Kidron
     ref: 2Sam.15.13-2Sam.15.23
     note:
@@ -57,6 +59,7 @@ stops:
       sv: "David flyr från Jerusalem, och kungen och allt folket går över bäcken Kidron mot öknen, medan hela landet gråter."
       nb: "David flykter fra Jerusalem, og kongen og alt folket går over bekken Kedron mot ørkenen, mens hele landet gråter."
       tl: "Tumatakas si David mula sa Jerusalem, at ang hari at ang buong bayan ay tumatawid sa batis ng Cedron patungo sa ilang, na ang buong lupain ay tumatangis."
+      da: "David flygter fra Jerusalem, og kongen og hele folket går over Kedron-bækken mod ørkenen, mens hele landet græder."
   - place: ac2c4c5 # Mount of Olives
     ref: 2Sam.15.30-2Sam.15.37
     note:
@@ -74,6 +77,7 @@ stops:
       sv: "Han går gråtande upp för Olivberget, barfota och med höljt huvud, och sänder Hushaj tillbaka till Jerusalem."
       nb: "Han går opp på Oljeberget under gråt, barfotet og med tildekket hode, og sender Husjai tilbake til Jerusalem."
       tl: "Umaahon siya sa Bundok ng mga Olibo na umiiyak, walang suot ang paa at may takip ang ulo, at ibinabalik si Husai sa Jerusalem."
+      da: "Han går grædende op ad Oliebjerget, barfodet og med tildækket hoved, og sender Husjaj tilbage til Jerusalem."
   - place: a9ed5a4 # Bahurim
     ref: 2Sam.16.5-2Sam.16.14
     note:
@@ -91,6 +95,7 @@ stops:
       sv: "I Bahurim förbannar Shimi av Sauls hus honom och kastar stenar; David vill inte låta döda honom: ”Låten honom vara, må han förbanna.”"
       nb: "I Bahurim banner Sjimi av Sauls hus ham og kaster sten; David vil ikke la ham drepe: «La ham bare banne!»"
       tl: "Sa Bahurim, isinusumpa siya ni Simi na sambahayan ni Saul at binabato siya; hindi pumapayag si David na patayin ito: “bayaan ninyo siya at manumpa siya.”"
+      da: "I Bahurim forbander Sjimi af Sauls hus ham og kaster med sten; David vil ikke lade ham dræbe: »lader ham bande«."
   - place: a15257a # Jerusalem
     ref: 2Sam.16.15-2Sam.16.23
     note:
@@ -108,6 +113,7 @@ stops:
       sv: "Absalom tågar in i Jerusalem och går, på Achitofels inrådan, in till sin fars bihustrur inför hela Israel."
       nb: "Absalom drar inn i Jerusalem og går, etter Ahitofels råd, inn til sin fars medhustruer for øynene av hele Israel."
       tl: "Pumapasok si Absalom sa Jerusalem at, ayon sa payo ni Achitophel, sumisiping sa mga babaing kinakasama ng kaniyang ama sa harap ng buong Israel."
+      da: "Absalon drager ind i Jerusalem og går, på Akitofels råd, ind til sin fars medhustruer for øjnene af hele Israel."
   - place: aa24ad4 # Wood of Ephraim
     ref: 2Sam.18.6-2Sam.18.17
     note:
@@ -125,6 +131,7 @@ stops:
       sv: "I Efraims skog blir Absaloms här slagen; han fastnar med huvudet i en ek och hänger där, och Joav stöter tre spjut i hans hjärta medan han ännu lever; Joavs unga män dräper honom."
       nb: "I Efraims skog blir Absaloms hær slått; hodet hans henger fast i en eik, og han blir hengende der, og Joab støter tre spyd i hans hjerte mens han ennå lever; Joabs unge menn slår ham i hjel."
       tl: "Sa gubat ng Ephraim ay natatalo ang hukbo ni Absalom; nasasabit ang kaniyang ulo sa isang ensina at siya'y nakabitin doon, at tatlong pana ang pinalalagpas ni Joab sa kaniyang puso samantalang siya'y buhay pa; pinapatay siya ng mga bataan ni Joab."
+      da: "I Efraims skov bliver Absalons hær slået; hans hoved filtres fast i en eg, så han hænger der, og Joab støder tre spyd ind i hans hjerte, mens han endnu er i live; Joabs væbnere dræber ham."
   - place: ae5bfe9 # Mahanaim
     ref: 2Sam.18.19-2Sam.18.33
     note:
@@ -142,6 +149,7 @@ stops:
       sv: "I Mahanajim, där David sitter mellan de båda portarna, får han beskedet och gråter: ”Min son Absalom, min son, min son Absalom!”"
       nb: "I Mahanajim, hvor han sitter mellom de to portene, får David budskapet og gråter: «Min sønn Absalom! Min sønn, min sønn Absalom!»"
       tl: "Sa Mahanaim, na nakaupo sa pagitan ng dalawang pintuang-bayan, napakikinggan ni David ang balita at tumatangis: “Oh anak kong Absalom, anak ko, anak kong Absalom!”"
+      da: "I Mahanajim, siddende mellem de to porte, hører David nyheden og græder: »Min Søn Absalom! min Søn, min Søn Absalom!«"
   - place: ab94aea # Gilgal
     ref: 2Sam.19.15-2Sam.19.40
     note:
@@ -159,3 +167,4 @@ stops:
       sv: "Judas män kommer till Gilgal för att föra kungen tillbaka över Jordan."
       nb: "Mennene fra Juda kommer til Gilgal for å føre kongen tilbake over Jordan."
       tl: "Pumupunta sa Gilgal ang mga lalaki ng Juda upang ihatid pabalik ang hari sa kabila ng Jordan."
+      da: "Judas mænd kommer til Gilgal for at føre kongen tilbage over Jordan."

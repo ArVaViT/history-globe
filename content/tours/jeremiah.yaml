@@ -19,6 +19,7 @@ title:
   sv: "Profeten Jeremia"
   nb: "Profeten Jeremia"
   tl: "Ang propetang si Jeremias"
+  da: "Profeten Jeremias"
 year: "627 BC"
 people: ["Jeremiah@2Ch.35.25-Mat"]
 approximate: true
@@ -40,6 +41,7 @@ stops:
       sv: "Jeremia, en av prästerna i Anatot, kallas till profet för folken och svarar: ”jag förstår icke att tala, ty jag är för ung.”"
       nb: "Jeremia, av prestene i Anatot, blir kalt til profet for folkene og svarer: «jeg forstår ikke å tale; for jeg er ung»."
       tl: "Si Jeremias, na mula sa mga saserdote sa Anathoth, ay tinawag na propeta sa mga bansa at sumagot, “hindi ako marunong magsalita: sapagka't ako'y bata.”"
+      da: "Jeremias, af præsterne i Anatot, kaldes til profet for folkeslagene og svarer: »se, jeg forstaar ikke at tale, thi jeg er ung.«"
   - place: a37c8e6 # Valley of Hinnom
     ref: Jer.19.1-Jer.19.11
     note:
@@ -57,6 +59,7 @@ stops:
       sv: "Herren sänder honom till Hinnoms dal för att krossa en krukmakares lerflaska inför de äldste: så ska han krossa detta folk och denna stad."
       nb: "Herren sender ham til Hinnom-dalen for å knuse en pottemakers leirkrukke for de eldste: slik vil han knuse dette folk og denne by."
       tl: "Sinugo siya ng Panginoon sa Libis ng Hinnom upang basagin sa harap ng matatanda ang sisidlang lupa ng magpapalayok: ganito babasagin ng Panginoon ang bayang ito at ang lungsod na ito."
+      da: "Herren sender ham til Hinnoms Dal for at knuse en pottemagers lerkrukke for de ældste: således vil han knuse dette folk og denne by."
   - place: a15257a # Jerusalem
     ref: Jer.26.1-Jer.26.19
     year: "609 BC"
@@ -75,6 +78,7 @@ stops:
       sv: "För sina ord i templets förgård vill prästerna och profeterna döda honom; de äldste påminner om Mika: ”Jerusalem skall bliva en stenhop.”"
       nb: "For sine ord i tempelgården vil prestene og profetene ha ham drept; de eldste minner om Mika: «Jerusalem bli til grusdynger»."
       tl: "Dahil sa kaniyang mga salita sa looban ng Templo, nais ng mga saserdote at ng mga propeta na siya'y mamatay; naalala ng matatanda si Mikas: “ang Jerusalem ay magiging mga bunton.”"
+      da: "For hans ord i templets forgård vil præsterne og profeterne have ham dræbt; de ældste mindes Mika: »Jerusalem [skal] blive til Stenhobe«."
   - place: ab34789 # Anathoth
     ref: Jer.32.1-Jer.32.15
     year: "588 BC"
@@ -93,6 +97,7 @@ stops:
       sv: "Instängd i fängelsegården medan den babyloniske kungens här belägrar Jerusalem köper han sin kusins åker i Anatot: ”Ännu en gång skall man komma att i detta land köpa hus och åkrar och vingårdar.”"
       nb: "Innestengt i fengselsgården mens kongen av Babylons hær kringsetter Jerusalem, kjøper han sin fetters mark i Anatot: «Ennu en gang skal det kjøpes hus og marker og vingårder i dette land.»"
       tl: "Nakakulong sa looban ng bantay habang kinukubkob ng hukbo ng hari ng Babilonia ang Jerusalem, binili niya ang bukid ng kaniyang pinsan sa Anathoth: “Mga bahay, at mga parang, at mga ubasan ay mangabibili pa uli sa lupaing ito.”"
+      da: "Spærret inde i fængslets forgård, mens Babylons konges hær belejrer Jerusalem, køber han sin fætters mark i Anatot: »Endnu skal der købes Huse og Agre og Vingaarde i dette Land.«"
   - place: a15257a # Jerusalem
     ref: Jer.38.6-Jer.38.28
     year: "587 BC"
@@ -111,6 +116,7 @@ stops:
       sv: "Nedkastad i en fängelsehåla i fängelsegården sjunker han i dyn; etiopiern Eved-Melek drar upp honom med rep, och han blir kvar i fängelsegården till den dag då Jerusalem intas."
       nb: "Kastet i en brønn i fengselsgården synker han ned i dyndet; Ebed-Melek, etiopieren, drar ham opp med rep, og han blir i fengselsgården til den dag Jerusalem blir inntatt."
       tl: "Inihagis sa isang hukay sa looban ng bantay, lumubog siya sa burak; iniahon siya ni Ebed-melec na taga-Etiopia sa pamamagitan ng mga lubid, at nanatili siya sa looban ng bantay hanggang sa araw na masakop ang Jerusalem."
+      da: "Kastet i en cisterne i fængslets forgård synker han ned i dyndet; etiopieren Ebed-Melek trækker ham op med reb, og han bliver i fængslets forgård til den dag, Jerusalem indtages."
   - place: a6d57ed # Ramah
     ref: Jer.40.1-Jer.40.5
     year: "587 BC"
@@ -129,6 +135,7 @@ stops:
       sv: "I Rama, bland de fjättrade fångarna på väg till Babylon, sätter Nebusaradan honom fri att gå vart han vill."
       nb: "I Rama, blant fangene i lenker på vei til Babylon, setter Nebusaradan ham fri til å gå hvor han vil."
       tl: "Sa Rama, sa gitna ng mga bihag na nakagapos na patungong Babilonia, pinalaya siya ni Nabuzaradan upang pumaroon kung saan niya naisin."
+      da: "I Rama, blandt de lænkede fanger på vej til Babylon, sætter Nebuzaradan ham fri til at gå, hvorhen han vil."
   - place: a736f6c # Mizpah
     ref: Jer.40.6
     year: "587 BC"
@@ -147,6 +154,7 @@ stops:
       sv: "Han stannar hos Gedalja i Mispa, bland dem som lämnats kvar i landet."
       nb: "Han blir hos Gedalja i Mispa, blant folket som var igjen i landet."
       tl: "Nanatili siya kay Gedalias sa Mizpa, sa gitna ng mga taong naiwan sa lupain."
+      da: "Han bliver hos Gedalja i Mispa, blandt det folk, der er blevet tilbage i landet."
   - place: adb008c # Tahpanhes
     ref: Jer.43.5-Jer.43.13
     year: "587 BC"
@@ -165,3 +173,4 @@ stops:
       sv: "Bortförd till Egypten mot sitt ord får han i Tachpanches order att gömma stora stenar vid ingången till faraos hus: Nebukadnessar ska sätta sin tron på dem."
       nb: "Ført ned til Egypt mot sitt ord får han i Tahpanhes befaling om å skjule store stener ved inngangen til Faraos hus: Nebukadnesar skal sette sin trone over dem."
       tl: "Dinala sa Egipto laban sa kaniyang salita, sa Taphnes ay sinabihan siyang magtago ng malalaking bato sa pasukan ng bahay ni Faraon: ilalagay doon ni Nabucodonosor ang kaniyang luklukan."
+      da: "Ført ned til Egypten mod sit ord får han i Takpanes besked om at skjule store sten ved indgangen til Faraos hus: Nebukadnezar skal sætte sin trone på dem."
