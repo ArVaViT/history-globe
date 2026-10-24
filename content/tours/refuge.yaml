@@ -19,6 +19,7 @@ title:
   cs: "Šest útočištných měst"
   sv: "De sex tillflyktsstäderna"
   nb: "De seks tilfluktsbyene"
+  tl: "Ang anim na lungsod na kanlungan"
 year: "1406 BC"
 # Where the cities were, not a journey: no time on foot.
 walked: false
@@ -40,6 +41,7 @@ stops:
       cs: "Mojžíš odděluje tři města na východ od Jordánu, „aby utekl do nich vražedlník, kterýž by zabil bližního svého nechtě“: nejprve Beser na poušti, na rovině, v území Rúbenově."
       sv: "Mose avskiljer tre städer öster om Jordan, ”till vilka en dråpare skulle kunna fly, om han hade dräpt någon utan vett och vilja”: först Beser i öknen, på slättlandet, för Rubens stam."
       nb: "Moses utskiller tre byer øst for Jordan, «en manndraper som hadde slått sin næste ihjel av vanvare og uten før å ha båret hat til ham, kunde fly dit»: først Beser i ørkenen, på sletten, for Ruben."
+      tl: "Ibinukod ni Moises ang tatlong lungsod sa silangan ng Jordan, “upang ang nakamatay ng tao ay tumakas doon, na nakamatay sa kaniyang kapuwa na hindi sinasadya”: una ang Beser sa ilang, sa kapatagan, ng Ruben."
   - place: a95147f # Ramoth
     ref: Deut.4.43
     note:
@@ -56,6 +58,7 @@ stops:
       cs: "Rámot v Gileadu, v území Gádově: Rámot v Gileadu, kde padne Achab."
       sv: "Ramot i Gilead, för gaditerna: Ramot i Gilead, där Achav skulle falla."
       nb: "Ramot i Gilead, for gadittene: Ramot-Gilead, hvor Akab skulle falle."
+      tl: "Ang Ramoth sa Gilead, ng mga Gadita: ang Ramoth-galaad, kung saan mabubuwal si Achab."
   - place: abb5c1e # Golan
     ref: Deut.4.43
     note:
@@ -72,6 +75,7 @@ stops:
       cs: "Golán v Bášanu, v území Manasesově, nejsevernější ze tří."
       sv: "Golan i Bashan, för Manasse stam, den nordligaste av de tre."
       nb: "Golan i Basan, for Manasse, den nordligste av de tre."
+      tl: "Ang Golan sa Basan, ng Manases, ang pinakahilaga sa tatlo."
   - place: a662eed # Kedesh
     ref: Josh.20.1-Josh.20.7
     note:
@@ -88,6 +92,7 @@ stops:
       cs: "Po dobytí země dostává tři města i země západně od Jordánu, „aby tam utekl vražedlník, kterýž by zabil člověka nechtě a z nevědomí“: nejprve Kedeš v Galileji na pohoří Neftalí."
       sv: "Efter erövringen får landet väster om Jordan sina tre, ”de städer till vilka en dråpare som ouppsåtligen, utan vett och vilja, har dödat någon må kunna fly”: först Kedesh i Galileen, i Naftalis bergsbygd."
       nb: "Etter erobringen får landet vest for Jordan sine tre, «en manndraper som av vanvare, uten å ville det, slår nogen ihjel, kan fly dit»: først Kedesj i Galilea i Naftali-fjellene."
+      tl: "Pagkatapos ng pananakop, ang lupain sa kanluran ng Jordan ay nagkaroon ng tatlo nito, “upang matakasan ng nakamatay, na nakapatay sa sinoman na hindi sinasadya at hindi kusa”: una ang Cedes sa Galilea sa lupaing maburol ng Nephtali."
   - place: adf74d4 # Shechem
     ref: Josh.20.7
     note:
@@ -104,6 +109,7 @@ stops:
       cs: "Šekem na pohoří Efrajim, mezi Ébalem a Gerizimem, kde Jozue obnoví smlouvu."
       sv: "Shekem i Efraims bergsbygd, mellan Ebal och Gerizim, där Josua ska förnya förbundet."
       nb: "Sikem i Efraims fjell, mellom Ebal og Gerisim, hvor Josva skal fornye pakten."
+      tl: "Ang Sichem sa lupaing maburol ng Ephraim, sa pagitan ng Ebal at Gerizim, kung saan babaguhin ni Josue ang tipan."
   - place: a85151a # Hebron
     ref: Josh.20.7-Josh.20.9
     note:
@@ -120,3 +126,4 @@ stops:
       cs: "Kirjat-arba, to jest Hebron, na pohoří Juda. Města jsou „všechněm synům Izraelským, i příchozímu, kterýž pohostinu jest mezi nimi“, dokud vrah nestane před shromážděním."
       sv: "Kirjat-Arba, det vill säga Hebron, i Judas bergsbygd. Städerna gäller ”för alla Israels barn, och för de främlingar som bodde ibland dem”, tills dråparen står inför menigheten."
       nb: "Kirjat-Arba, det er Hebron, i Judas fjell. Byene er «for alle Israels barn og for de fremmede som opholder sig blandt dem», til manndraperen står frem for menigheten."
+      tl: "Ang Chiriath-arba, na siyang Hebron, sa lupaing maburol ng Juda. Ang mga bayan ay “sa lahat ng mga anak ni Israel, at sa taga ibang lupa na tumatahan sa gitna nila”, hanggang sa humarap ang nakamatay sa kapisanan."

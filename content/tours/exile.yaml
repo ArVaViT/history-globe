@@ -17,6 +17,7 @@ title:
   cs: "Pád Jeruzaléma a vyhnanství"
   sv: "Jerusalems fall och landsflykten"
   nb: "Jerusalems fall og landflyktigheten"
+  tl: "Ang pagbagsak ng Jerusalem at ang pagkatapon"
 year: "587 BC"
 approximate: true
 stops:
@@ -36,6 +37,7 @@ stops:
       cs: "Nebukadnesar obléhá Jeruzalém, dokud ve městě nezvítězí hlad."
       sv: "Nebukadnessar belägrar Jerusalem tills hungern tar överhand i staden."
       nb: "Nebukadnesar kringsetter Jerusalem til hungersnøden tar overhånd i byen."
+      tl: "Kinukubkob ni Nabucodonosor ang Jerusalem hanggang sa lumala ang taggutom sa bayan."
   - place: a231f80 # Jericho
     ref: 2Kgs.25.4-2Kgs.25.5
     note:
@@ -52,6 +54,7 @@ stops:
       cs: "Král Sidkijáš utíká a je dopaden na pláních u Jericha."
       sv: "Kung Sidkia flyr och grips på Jerikos slätter."
       nb: "Kong Sidkia flykter og blir grepet på Jerikos sletter."
+      tl: "Tumatakas si Haring Sedecias at inaabutan sa mga kapatagan ng Jerico."
   - place: ab2bde8 # Riblah
     ref: 2Kgs.25.6-2Kgs.25.7
     note:
@@ -68,6 +71,7 @@ stops:
       cs: "Soud v Rible: Sidkijášovi synové jsou zabiti a on je oslepen."
       sv: "Dom i Rivla: Sidkias söner dödas och han förblindas."
       nb: "Dom i Ribla: Sidkias sønner blir drept, og han blir blindet."
+      tl: "Ang paghatol sa Ribla: pinapatay ang mga anak ni Sedecias at binubulag siya."
   - place: a15257a # Jerusalem
     ref: 2Kgs.25.8-2Kgs.25.10
     note:
@@ -84,6 +88,7 @@ stops:
       cs: "Nebuzaradan pálí chrám, palác i město a vojsko Chaldejců boří hradby."
       sv: "Nebusaradan bränner templet, palatset och staden, och kaldeernas här river ner murarna."
       nb: "Nebusaradan brenner templet, palasset og byen, og kaldeernes hær river ned murene."
+      tl: "Sinusunog ni Nabuzaradan ang Templo, ang palasyo at ang bayan, at ibinabagsak ng hukbo ng mga Caldeo ang mga kuta."
   - place: a217d18 # Babylon
     ref: 2Kgs.25.11
     note:
@@ -100,6 +105,7 @@ stops:
       cs: "Zbytek lidu, který zůstal ve městě, je odvlečen do vyhnanství do Babylóna."
       sv: "Den återstående delen av folket i staden förs bort i landsflykt till Babylon."
       nb: "Resten av folket som var igjen i byen, blir ført i landflyktighet til Babylon."
+      tl: "Ang nalabi sa bayan na naiwan sa lungsod ay dinadalang bihag sa Babilonia."
   - place: a6d57ed # Ramah
     ref: Jer.40.1
     by: untold
@@ -117,6 +123,7 @@ stops:
       cs: "V Rámě je Jeremjáš propuštěn z řad zajatců."
       sv: "I Rama blir Jeremia frigiven bland de fångna."
       nb: "I Rama blir Jeremia satt fri blant fangene."
+      tl: "Sa Rama, pinalalaya si Jeremias mula sa mga bihag."
   - place: a736f6c # Mizpah
     ref: Jer.40.6
     note:
@@ -133,6 +140,7 @@ stops:
       cs: "Zůstává u správce Gedaljáše v Micpě."
       sv: "Han stannar hos ståthållaren Gedalja i Mispa."
       nb: "Han blir hos guvernøren Gedalja i Mispa."
+      tl: "Tumitira siyang kasama ni Gedalias, ang tagapamahala, sa Mizpa."
   - place: adb008c # Tahpanhes
     ref: Jer.43.7
     note:
@@ -149,3 +157,4 @@ stops:
       cs: "Po Gedaljášově vraždě prchá zbytek do Egypta, do Tachpanchés."
       sv: "Efter Gedaljas mord flyr kvarlevan till Egypten, till Tachpanches."
       nb: "Etter Gedaljas drap flykter levningen til Egypt, til Tahpanhes."
+      tl: "Pagkatapos paslangin si Gedalias, ang nalabi ay tumatakas patungong Egipto, sa Taphnes."

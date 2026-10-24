@@ -19,6 +19,7 @@ title:
   cs: "Mojžíš před Exodem"
   sv: "Mose före uttåget"
   nb: "Moses før utgangen"
+  tl: "Si Moises bago ang Exodo"
 year: "1526 BC"
 people: ["Moses@Exo.2.10-Rev"]
 approximate: true
@@ -39,6 +40,7 @@ stops:
       cs: "Izrael je nucen stavět zásobní města Pitom a Ramesse; hebrejský chlapec vytažený z vody dostává jméno Mojžíš."
       sv: "Israel sätts att bygga förrådsstäderna Pitom och Rameses; en hebreisk gosse som dras upp ur vattnet får namnet Mose."
       nb: "Israel settes til å bygge forrådsbyene Pitom og Ramses; en hebraisk gutt som blir dradd opp av vannet, får navnet Moses."
+      tl: "Inatasan ang Israel na magtayo ng mga lungsod na imbakan, ang Phithom at Rameses; ang batang Hebreo na iniahon mula sa tubig ay pinangalanang Moises."
   - place: acc6d8e # Midian
     ref: Exod.2.11-Exod.2.22
     year: "1486 BC"
@@ -56,6 +58,7 @@ stops:
       cs: "Ve čtyřiceti letech prchá před faraonem do země Midján a usedá u studny."
       sv: "Vid fyrtio års ålder flyr han från Farao till Midjans land och sätter sig vid en brunn."
       nb: "Som førtiåring flykter han fra Farao til Midjans land og setter seg ned ved en brønn."
+      tl: "Sa edad na apatnapu ay tumakas siya kay Faraon patungo sa lupain ng Midian at naupo sa tabi ng isang balon."
   - place: a9bb03e # Mount Horeb
     ref: Exod.3.1-Exod.4.17
     year: "1446 BC"
@@ -73,6 +76,7 @@ stops:
       cs: "Na Chorébu, hoře Boží, hoří keř a nehoří: „JSEM, KTERÝŽ JSEM.“"
       sv: "Vid Horeb, Guds berg, brinner busken utan att förtäras: ”Jag är den jag är.”"
       nb: "Ved Horeb, Guds fjell, brenner tornebusken og blir ikke fortært: «Jeg er den jeg er.»"
+      tl: "Sa Horeb, ang bundok ng Dios, nagniningas ang mababang punong kahoy at hindi nasusunog: “AKO YAONG AKO NGA.”"
   - place: af301ca # Egypt
     ref: Exod.4.18-Exod.5.1
     year: "1446 BC"
@@ -90,3 +94,4 @@ stops:
       cs: "Zpět v Egyptě říkají Mojžíš a Áron faraonovi: „Propusť lid můj.“"
       sv: "Åter i Egypten säger Mose och Aron till Farao: ”Släpp mitt folk.”"
       nb: "Tilbake i Egypt sier Moses og Aron til Farao: «La mitt folk fare.»"
+      tl: "Pagbalik sa Egipto, sinabi nina Moises at Aaron kay Faraon: “Bayaan mong ang aking bayan ay yumaon.”"

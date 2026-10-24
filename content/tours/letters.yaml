@@ -19,6 +19,7 @@ title:
   cs: "Kam šly Pavlovy listy"
   sv: "Dit Paulus’ brev gick"
   nb: "Hvor Paulus' brev gikk"
+  tl: "Saan nagtungo ang mga sulat ni Pablo"
 year: "AD 55"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -41,6 +42,7 @@ stops:
       cs: "Svatým v Římě: „Neboť se nestydím za evangelium Kristovo“ (1,16)."
       sv: "Till de heliga i Rom: ”jag blyges icke för evangelium” (1:16)."
       nb: "Til de hellige i Roma: «jeg skammer mig ikke ved evangeliet» (1,16)."
+      tl: "Sa mga banal sa Roma: “hindi ko ikinahihiya ang evangelio” (1:16)."
   - place: a6f437a # Corinth
     ref: 1Cor.1.2
     note:
@@ -57,6 +59,7 @@ stops:
       cs: "Církvi Boží v Korintu: „Nyní pak zůstává víra, naděje, láska, to tré, ale největší z nich jestiť láska“ (13,13)."
       sv: "Till Guds församling i Korinth: ”Så bliva de då beståndande, tron, hoppet, kärleken, dessa tre; men störst bland dem är kärleken” (13:13)."
       nb: "Til Guds menighet i Korint: «nu blir de stående disse tre, tro, håp, kjærlighet, og størst blandt dem er kjærligheten» (13,13)."
+      tl: "Sa iglesia ng Dios sa Corinto: “nanatili ang tatlong ito: ang pananampalataya, ang pagasa, at ang pagibig; nguni't ang pinakadakila sa mga ito ay ang pagibig” (13:13)."
   - place: a0f440a # Galatia
     ref: Gal.1.2
     note:
@@ -73,6 +76,7 @@ stops:
       cs: "Církvím v Galacii: „Protož v svobodě, kterouž Kristus nás osvobodil, stůjte“ (5,1)."
       sv: "Till församlingarna i Galatien: ”För att vi skola vara fria, har Kristus frigjort oss. Stån därför fasta” (5:1)."
       nb: "Til menighetene i Galatia: «Til frihet har Kristus frigjort oss; stå derfor fast» (5,1)."
+      tl: "Sa mga iglesia ng Galacia: “Sa kalayaan ay pinalaya tayo ni Cristo: magsitibay nga kayo” (5:1)."
   - place: a5feb15 # Ephesus
     ref: Eph.1.1
     note:
@@ -89,6 +93,7 @@ stops:
       cs: "Svatým v Efezu: „Nebo milostí spaseni jste skrze víru“ (2,8)."
       sv: "Till de heliga i Efesos: ”av nåden ären I frälsta genom tro” (2:8)."
       nb: "Til de hellige i Efesos: «av nåde er I frelst, ved tro» (2,8)."
+      tl: "Sa mga banal sa Efeso: “sa biyaya kayo'y nangaligtas sa pamamagitan ng pananampalataya” (2:8)."
   - place: a49e1d0 # Philippi
     ref: Phil.1.1
     note:
@@ -105,6 +110,7 @@ stops:
       cs: "Svatým ve Filipách: „Radujte se v Pánu vždycky“ (4,4)."
       sv: "Till de heliga i Filippi: ”Glädjen eder i Herren alltid” (4:4)."
       nb: "Til de hellige i Filippi: «Gled eder i Herren alltid!» (4,4)."
+      tl: "Sa mga banal sa Filipos: “Mangagalak kayong lagi sa Panginoon” (4:4)."
   - place: a4e5a69 # Colossae
     ref: Col.1.2
     note:
@@ -121,6 +127,7 @@ stops:
       cs: "Bratřím v Kolosech: „všecko, cožkoli činíte v slovu nebo v skutku, všecko čiňte ve jménu Pána Ježíše“ (3,17)."
       sv: "Till bröderna i Kolossai: ”allt, vadhelst I företagen eder i ord eller gärning, gören det allt i Herren Jesu namn” (3:17)."
       nb: "Til brødrene i Kolossai: «alt som I gjør i ord eller i gjerning, gjør det alt i den Herre Jesu navn» (3,17)."
+      tl: "Sa mga kapatid sa Colosas: “anomang inyong ginagawa, sa salita, o sa gawa, gawin ninyong lahat sa pangalan ng Panginoong Jesus” (3:17)."
   - place: afa9d8e # Thessalonica
     ref: 1Thess.1.1
     note:
@@ -137,6 +144,7 @@ stops:
       cs: "Církvi Tesaloničanů: „Bez přestání se modlte“ (5,17)."
       sv: "Till tessalonikernas församling: ”Bedjen oavlåtligen” (5:17)."
       nb: "Til tessalonikernes menighet: «bed uavlatelig» (5,17)."
+      tl: "Sa iglesia ng mga taga-Tesalonica: “Magsipanalangin kayong walang patid” (5:17)."
   - place: a26aa94 # Crete
     ref: Titus.1.5
     note:
@@ -153,3 +161,4 @@ stops:
       cs: "Titovi, zanechanému na Krétě, aby uvedl věci do pořádku a ustanovil starší v každém městě."
       sv: "Till Titus, kvarlämnad på Kreta för att ordna det som återstod och tillsätta äldste i varje stad."
       nb: "Til Titus, som ble latt igjen på Kreta for å sette det i rette skikk og innsette eldste i hver by."
+      tl: "Kay Tito, na iniwan sa Creta upang ayusin ang mga bagay at magtalaga ng mga matanda sa bawat bayan."

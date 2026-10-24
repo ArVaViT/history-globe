@@ -17,6 +17,7 @@ title:
   cs: "Ježíš v Jeruzalémě podle Jana"
   sv: "Jesus i Jerusalem, enligt Johannes"
   nb: "Jesus i Jerusalem, etter Johannes"
+  tl: "Si Jesus sa Jerusalem, ayon kay Juan"
 year: "AD 30"
 people: ["Jesus@Isa.7.14-Rev"]
 approximate: true
@@ -37,6 +38,7 @@ stops:
       cs: "O velikonocích vyhání z chrámu obchodníky: „nečiňte domu Otce mého domem kupeckým“."
       sv: "Vid påsken driver han ut köpmännen ur templet: ”Gören icke min Faders hus till ett marknadshus.”"
       nb: "Ved påsken driver han kjøpmennene ut av templet: «gjør ikke min Faders hus til en handelsbod!»"
+      tl: "Sa Paskua ay pinalayas niya ang mga mangangalakal sa Templo: “huwag ninyong gawin ang bahay ng aking Ama na bahay-kalakal.”"
   - place: a0aa8cf # Bethesda
     ref: John.5.2-John.5.9
     note:
@@ -53,6 +55,7 @@ stops:
       cs: "U rybníka Bethesda u Brány bravné uzdravuje člověka, který byl osm a třicet let nemocen: „Vstaň, vezmi lože své a choď.“"
       sv: "Vid dammen Betesda vid Fårporten botar han en man som varit sjuk i trettioåtta år: ”Stå upp, tag din säng och gå.”"
       nb: "Ved dammen Betesda ved fåremarkedet helbreder han en mann som hadde vært syk i åtte og tretti år: «Stå op, ta din seng og gå!»"
+      tl: "Sa tangke ng Betesda sa tabi ng pamilihan ng mga tupa ay pinagaling niya ang isang taong may sakit na tatlumpu't walong taon: “Magtindig ka, buhatin mo ang iyong higaan, at lumakad ka.”"
   - place: a294859 # Siloam
     ref: John.9.1-John.9.25
     note:
@@ -69,6 +72,7 @@ stops:
       cs: "Slepý od narození se umývá v rybníku Siloe a vrací se vida: „byv slepý, již nyní vidím“."
       sv: "En man född blind tvättar sig i dammen Siloa och kommer tillbaka seende: ”ett vet jag: att jag, som var blind, nu kan se.”"
       nb: "En mann som var født blind, vasker seg i dammen Siloa og kommer tilbake seende: «jeg som var blind, nu ser»."
+      tl: "Ang isang taong ipinanganak na bulag ay naghugas sa tangke ng Siloe at bumalik na nakakakita: “bagaman ako'y naging bulag, ngayo'y nakakakita ako.”"
   - place: a47c817 # Solomon's Portico
     ref: John.10.22-John.10.30
     note:
@@ -85,6 +89,7 @@ stops:
       cs: "Na slavnost posvěcení chrámu, v Šalomounově podloubí: „Já a Otec jedno jsme.“"
       sv: "Vid tempelinvigningens högtid, i Salomos pelarhall: ”Jag och Fadern äro ett.”"
       nb: "Ved tempelvielsens fest, i Salomos søylegang: «jeg og Faderen, vi er ett.»"
+      tl: "Sa kapistahan ng pagtatalaga, sa Portiko ni Salomon: “Ako at ang Ama ay iisa.”"
   - place: a4f35bc # Bethany
     ref: John.11.1-John.11.44
     note:
@@ -101,6 +106,7 @@ stops:
       cs: "V Betanii u Jeruzaléma křísí Lazara: „Já jsem vzkříšení i život.“"
       sv: "I Betania, nära Jerusalem, uppväcker han Lasaros: ”Jag är uppståndelsen och livet.”"
       nb: "I Betania, nær Jerusalem, oppvekker han Lasarus: «Jeg er opstandelsen og livet.»"
+      tl: "Sa Betania, malapit sa Jerusalem, binuhay niya si Lazaro: “Ako ang pagkabuhay na maguli, at ang kabuhayan.”"
   - place: a553110 # Kidron
     ref: John.18.1-John.18.12
     note:
@@ -117,6 +123,7 @@ stops:
       cs: "Za potokem Kidron, v zahradě, je zatčen."
       sv: "På andra sidan bäcken Kidron, i trädgården, grips han."
       nb: "Over bekken Kedron, i hagen, blir han pågrepet."
+      tl: "Sa dako pa roon ng batis ng Cedron, sa halamanan, siya'y dinakip."
   - place: aec23b1 # Gabbatha
     ref: John.19.13-John.19.16
     note:
@@ -133,6 +140,7 @@ stops:
       cs: "Pilát sedí na soudné stolici na místě zvaném Dlažba, hebrejsky Gabata."
       sv: "Pilatus sitter på domarsätet på platsen som kallas Stenläggningen, på hebreiska Gabbata."
       nb: "Pilatus setter seg på dommersetet på det sted som kalles Stenlagt, på hebraisk Gabbata."
+      tl: "Naupo si Pilato sa hukuman sa dakong tinatawag na Pavimento, sa Hebreo ay Gabbatha."
   - place: a631d35 # Golgotha
     ref: John.19.17-John.19.30
     note:
@@ -149,3 +157,4 @@ stops:
       cs: "Na Golgotě je ukřižován: „Dokonánoť jest.“"
       sv: "På Golgota korsfästs han: ”Det är fullbordat.”"
       nb: "På Golgata blir han korsfestet: «Det er fullbragt.»"
+      tl: "Sa Golgota ay ipinako siya sa krus: “Naganap na.”"

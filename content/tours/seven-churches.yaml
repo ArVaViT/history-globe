@@ -16,6 +16,7 @@ title:
   cs: "Sedm církví Zjevení"
   sv: "Uppenbarelsebokens sju församlingar"
   nb: "De sju menigheter i Johannes' Åpenbaring"
+  tl: "Ang pitong iglesya ng Apocalipsis"
 year: "AD 95"
 approximate: true
 stops:
@@ -35,6 +36,7 @@ stops:
       cs: "Na ostrově zvaném Patmos je Janovi řečeno, aby napsal, co vidí, a poslal to sedmi církvím v Asii."
       sv: "På ön som heter Patmos får Johannes befallning att skriva upp vad han ser och sända det till de sju församlingarna i Asien."
       nb: "På øya som kalles Patmos, får Johannes beskjed om å skrive det han ser, og sende det til de sju menigheter i Asia."
+      tl: "Sa pulong tinatawag na Patmos, sinabihan si Juan na isulat ang kaniyang nakikita at ipadala ito sa pitong iglesya sa Asia."
   - place: a5feb15 # Ephesus
     ref: Rev.2.1-Rev.2.7
     by: sea
@@ -52,6 +54,7 @@ stops:
       cs: "Efez: „jsi tu první lásku svou opustil“."
       sv: "Efesos: ”du har övergivit din första kärlek.”"
       nb: "Efesos: «du har forlatt din første kjærlighet»."
+      tl: "Efeso: “iniwan ang iyong unang pagibig.”"
   - place: a2e65fb # Smyrna
     ref: Rev.2.8-Rev.2.11
     note:
@@ -68,6 +71,7 @@ stops:
       cs: "Smyrna: „Budiž věrný až do smrti, a dámť korunu života.“"
       sv: "Smyrna: ”Var trogen intill döden, så skall jag giva dig livets krona.”"
       nb: "Smyrna: «Vær tro inntil døden, så vil jeg gi dig livsens krone!»"
+      tl: "Smirna: “Magtapat ka hanggang sa kamatayan, at bibigyan kita ng putong ng buhay.”"
   - place: a75d2c1 # Pergamum
     ref: Rev.2.12-Rev.2.17
     note:
@@ -84,6 +88,7 @@ stops:
       cs: "Pergamon, kde je stolice satanova a kde byl zabit Antipas, věrný svědek."
       sv: "Pergamon, ”där varest Satan har sin tron” och där Antipas, ”mitt vittne, min trogne tjänare”, blev dräpt."
       nb: "Pergamon, hvor Satans trone står og Antipas, det trofaste vitne, ble slått ihjel."
+      tl: "Ang Pergamo, kung saan naroon ang luklukan ni Satanas at kung saan pinatay si Antipas, ang tapat na martir."
   - place: a94b661 # Thyatira
     ref: Rev.2.18-Rev.2.29
     note:
@@ -100,6 +105,7 @@ stops:
       cs: "Tyatira: její poslední skutky jsou větší než první, ale snáší ženu Jezábel."
       sv: "Tyatira: dess sista gärningar är flera än de första, men den tolererar kvinnan Isebel."
       nb: "Tyatira: dets siste gjerninger er flere enn de første, men det tåler kvinnen Jesabel."
+      tl: "Tiatira: ang huli nitong mga gawa ay higit kaysa una, ngunit pinahihintulutan nito ang babaing si Jezabel."
   - place: aab4a5f # Sardis
     ref: Rev.3.1-Rev.3.6
     note:
@@ -116,6 +122,7 @@ stops:
       cs: "Sardy: „máš jméno, že jsi živ, ale jsi mrtvý“."
       sv: "Sardes: ”Du har det namnet om dig, att du lever, men du är död.”"
       nb: "Sardes: «du har navn av at du lever, og du er død»."
+      tl: "Sardis: “ikaw ay may pangalang ikaw ay nabubuhay, at ikaw ay patay.”"
   - place: a1c7cc1 # Philadelphia
     ref: Rev.3.7-Rev.3.13
     note:
@@ -132,6 +139,7 @@ stops:
       cs: "Filadelfie: „postavil jsem před tebou dveře otevřené, a žádnýť jich nemůže zavříti“."
       sv: "Filadelfia: ”Se, jag har låtit dig finna en öppen dörr, som ingen kan tillsluta.”"
       nb: "Filadelfia: «se, jeg har satt foran dig en åpnet dør, og ingen kan lukke den til»."
+      tl: "Filadelfia: “narito, inilagay ko sa harapan mo ang isang pintuang bukas, na di mailalapat ng sinoman.”"
   - place: a83fb1e # Laodicea
     ref: Rev.3.14-Rev.3.22
     note:
@@ -148,3 +156,4 @@ stops:
       cs: "Laodikeia, ani studená, ani horká: „stojímť u dveří, a tluku“."
       sv: "Laodikeia, varken kall eller varm: ”Se, jag står för dörren och klappar.”"
       nb: "Laodikea, hverken kald eller varm: «Se, jeg står for døren og banker.»"
+      tl: "Laodicea, na hindi malamig ni mainit: “Narito ako'y nakatayo sa pintuan at tumutuktok.”"

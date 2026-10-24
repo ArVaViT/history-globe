@@ -19,6 +19,7 @@ title:
   cs: "Exodus"
   sv: "Uttåget"
   nb: "Utgangen fra Egypt"
+  tl: "Ang Exodo"
 year: "1446 BC"
 people: ["Moses@Exo.2.10-Rev"]
 approximate: true
@@ -39,6 +40,7 @@ stops:
       cs: "Izraelci vycházejí z Ramesse, asi šest set tisíc mužů pěšky."
       sv: "Israeliterna bryter upp från Rameses, omkring sex hundra tusen man till fots."
       nb: "Israelittene bryter opp fra Ramses, omkring seks hundre tusen mann til fots."
+      tl: "Naglalakbay ang mga Israelita mula sa Rameses, humigit-kumulang anim na raang libong lalaking naglalakad."
   - place: aa28709 # Succoth (in Egypt)
     ref: Num.33.5
     note:
@@ -55,6 +57,7 @@ stops:
       cs: "Jejich první tábor je v Sukotu."
       sv: "Deras första läger är i Suckot."
       nb: "Deres første leir er ved Sukkot."
+      tl: "Ang kanilang unang kampamento ay sa Succoth."
   - place: a27d0e0 # Etham
     ref: Exod.13.20-Exod.13.22
     note:
@@ -71,6 +74,7 @@ stops:
       cs: "Utábořují se v Etamu na okraji pouště; Hospodin jde před nimi v oblakovém a ohnivém sloupu."
       sv: "De slår läger i Etam, vid öknens kant; Herren går framför dem i en molnstod och en eldstod."
       nb: "De slår leir ved Etam, ved kanten av ørkenen; Herren går foran dem i en skystøtte og en ildsøyle."
+      tl: "Humahantong sila sa Etham, sa gilid ng ilang; ang Panginoon ay nangunguna sa kanila sa isang haliging ulap at apoy."
   - place: ababfd2 # Pi-hahiroth
     ref: Exod.14.2
     note:
@@ -87,6 +91,7 @@ stops:
       cs: "Obracejí se a utábořují se před Pi-hachirótem, mezi Migdolem a mořem."
       sv: "De vänder om och slår läger framför Pi-Hachirot, mellan Migdol och havet."
       nb: "De snur og slår leir foran Pi-Hakirot, mellom Migdol og havet."
+      tl: "Bumabalik sila at humahantong sa tapat ng Pi-hahiroth, sa pagitan ng Migdol at ng dagat."
   - place: a3d18b2 # Red Sea
     ref: Exod.14.21-Exod.15.4
     note:
@@ -103,6 +108,7 @@ stops:
       cs: "Vody se rozestupují a Izrael přechází po suchu; faraonovo vojsko se utopí v Rudém moři."
       sv: "Vattnet delar sig och Israel går över på torr mark; faraos här drunknar i Sävhavet."
       nb: "Vannet deler seg, og Israel går over på tørr grunn; Faraos hær drukner i Rødehavet."
+      tl: "Nahahati ang tubig at tumatawid ang Israel sa tuyong lupa; nalulunod sa Dagat na Pula ang hukbo ni Faraon."
   - place: ad3970d # Marah
     ref: Exod.15.23-Exod.15.25
     note:
@@ -119,6 +125,7 @@ stops:
       cs: "V Máře je voda hořká a dřevo do ní vhozené ji činí sladkou."
       sv: "I Mara är vattnet bittert, och ett träd som kastas däri gör det sött."
       nb: "I Mara er vannet bittert, og et tre som blir kastet i det, gjør det søtt."
+      tl: "Sa Mara, mapait ang tubig, at pinatatamis ito ng isang punong kahoy na inihagis doon."
   - place: a2410c1 # Elim
     ref: Exod.15.27
     note:
@@ -135,6 +142,7 @@ stops:
       cs: "V Élimu je dvanáct pramenů vody a sedmdesát palem."
       sv: "I Elim finns tolv vattenkällor och sjuttio palmer."
       nb: "I Elim er det tolv vannkilder og sytti palmer."
+      tl: "Sa Elim ay may labingdalawang bukal ng tubig at pitumpung puno ng palma."
   - place: a05ebb7 # Rephidim
     ref: Exod.17.1-Exod.17.13
     note:
@@ -151,6 +159,7 @@ stops:
       cs: "Voda ze skály a bitva s Amalekem, zatímco Mojžíš drží zvednuté ruce."
       sv: "Vatten ur klippan, och striden mot Amalek medan Mose håller upp sina händer."
       nb: "Vann av klippen, og slaget med Amalek mens Moses holder sine hender oppe."
+      tl: "Tubig mula sa bato, at ang labanan kay Amalec habang itinataas ni Moises ang kaniyang mga kamay."
   - place: abfba2a # Mount Sinai
     ref: Exod.19.16-Exod.20.17
     note:
@@ -167,6 +176,7 @@ stops:
       cs: "Hospodin sestupuje na horu Sinaj a volá Mojžíše na vrchol: dání Zákona."
       sv: "Herren stiger ner på Sinaiberget och kallar Mose till toppen: lagens givande."
       nb: "Herren stiger ned på Sinai og kaller Moses opp til toppen: lovgivningen."
+      tl: "Bumababa ang Panginoon sa Bundok Sinai at tinatawag si Moises sa taluktok: ang pagbibigay ng Kautusan."
   - place: ae7836a # Kibroth-hattaavah
     ref: Num.11.31-Num.11.34
     year: "1445 BC"
@@ -184,6 +194,7 @@ stops:
       cs: "Křepelky a hroby lidu, který dychtil po mase: Kibrót-hataava."
       sv: "Vaktlarna, och gravarna för folket som åtrådde kött: Kivrot-Hattaava."
       nb: "Vaktlene, og gravene til folket som hadde begjær etter kjøtt: Kibrot-Hattaava."
+      tl: "Ang mga pugo, at ang mga libingan ng bayang naghangad ng karne: Kibroth-hattaavah."
   - place: ac2cef0 # Kadesh-barnea
     ref: Num.13.26-Num.14.34
     year: "1445 BC"
@@ -201,6 +212,7 @@ stops:
       cs: "Zvědové se vracejí do Kádeše; lid odmítá vytáhnout a je odsouzen ke čtyřiceti letům na poušti."
       sv: "Spejarna återvänder till Kadesh; folket vägrar att dra upp och döms till fyrtio år i öknen."
       nb: "Spionene vender tilbake til Kadesj; folket nekter å dra opp og blir dømt til førti år i ørkenen."
+      tl: "Bumabalik ang mga tiktik sa Cades; ayaw sumampa ng bayan, at hinahatulan ng apatnapung taon sa ilang."
   - place: ad8027f # Mount Hor
     ref: Num.20.22-Num.20.29
     year: "1407 BC"
@@ -218,6 +230,7 @@ stops:
       cs: "Áron umírá na vrcholu hory Hor; jeho roucho se oblékne Eleazarovi, jeho synu."
       sv: "Aron dör på toppen av berget Hor; hans kläder läggs på hans son Eleasar."
       nb: "Aron dør på toppen av Hor-fjellet; hans klær blir lagt på Eleasar, hans sønn."
+      tl: "Namamatay si Aaron sa taluktok ng Bundok Hor; isinusuot kay Eleazar na kaniyang anak ang kaniyang mga damit."
   - place: abf2fc1 # Heshbon
     ref: Num.21.21-Num.21.26
     year: "1407 BC"
@@ -235,6 +248,7 @@ stops:
       cs: "Sichon, král Amorejských, je poražen a Izrael dobývá Chešbón."
       sv: "Sichon, amoréernas kung, besegras, och Israel intar Heshbon."
       nb: "Sihon, amorittenes konge, blir slått, og Israel inntar Hesjbon."
+      tl: "Natatalo si Sehon na hari ng mga Amorrheo, at sinasakop ng Israel ang Hesbon."
   - place: aefaa2d # Mount Nebo
     ref: Deut.34.1-Deut.34.5
     year: "1406 BC"
@@ -252,6 +266,7 @@ stops:
       cs: "Z hory Nebo ukazuje Hospodin Mojžíšovi celou zemi; Mojžíš tam umírá v moábské zemi."
       sv: "Från berget Nebo visar Herren Mose hela landet; Mose dör där, i Moabs land."
       nb: "Fra Nebo viser Herren Moses hele landet; Moses dør der, i Moabs land."
+      tl: "Mula sa Bundok Nebo, ipinakikita ng Panginoon kay Moises ang buong lupain; doon namamatay si Moises, sa lupain ng Moab."
   - place: af64fb3 # Shittim
     ref: Josh.3.1
     year: "1406 BC"
@@ -269,6 +284,7 @@ stops:
       cs: "Jozue a lid odcházejí ze Šitimu a přicházejí k Jordánu."
       sv: "Josua och folket bryter upp från Shittim och kommer till Jordan."
       nb: "Josva og folket bryter opp fra Sjittim og kommer til Jordan."
+      tl: "Umaalis si Josue at ang bayan sa Sittim at dumarating sa Jordan."
   - place: ab94aea # Gilgal
     ref: Josh.4.19
     year: "1406 BC"
@@ -286,6 +302,7 @@ stops:
       cs: "Za Jordánem je první tábor v zemi v Gilgalu, východně od Jericha."
       sv: "På andra sidan Jordan ligger det första lägret i landet, i Gilgal, öster om Jeriko."
       nb: "Over Jordan er den første leiren i landet ved Gilgal, øst for Jeriko."
+      tl: "Sa kabila ng Jordan, ang unang kampamento sa lupain ay sa Gilgal, sa silangan ng Jerico."
   - place: a231f80 # Jericho
     ref: Josh.6.1-Josh.6.20
     year: "1406 BC"
@@ -303,3 +320,4 @@ stops:
       cs: "Sedm dní kolem Jericha a jeho hradba padá."
       sv: "Sju dagar runt Jeriko, och dess mur faller ner."
       nb: "Sju dager omkring Jeriko, og dens mur faller."
+      tl: "Pitong araw sa palibot ng Jerico, at bumabagsak ang pader nito."

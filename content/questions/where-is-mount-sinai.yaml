@@ -13,6 +13,7 @@ question:
   cs: "Kde je hora Sinaj?"
   sv: "Var ligger Sinaiberget?"
   nb: "Hvor ligger Sinai?"
+  tl: "Nasaan ang Bundok Sinai?"
 answer:
   en:
     - 'The site of Mount Sinai is disputed: the traditional mountain is Jebel Musa ("Mount of Moses") in the south of the Sinai Peninsula, Egypt, and that is where the map places it, but the Bible gives no location that can be fixed, and several other mountains have been proposed.'
@@ -66,6 +67,10 @@ answer:
     - "Sinais beliggenhet er omstridt: det tradisjonelle fjellet er Jebel Musa («Moses' fjell») i den sørlige delen av Sinai-halvøya i Egypt, og dit plasserer kartet det, men Bibelen gir ingen beliggenhet som kan fastsettes, og flere andre fjell er foreslått."
     - "2 Mosebok sier at Israel nådde fjellet i den tredje måneden etter at de forlot Egypt: de «kom til Sinai ørken og slo leir i ørkenen, og Israel leiret sig der midt imot fjellet.» Det samme fjellet kalles Horeb, Guds berg, der Moses så den brennende tornebusken, og 5 Mosebok teller «elleve dagsreiser fra Horeb efter den vei som fører til Se'ir-fjellene, til Kades-Barnea». Fra Jebel Musa til det vanlige stedet for Kadesj-Barnea er det omtrent 240 km i luftlinje, omtrent 8 dager til fots med 30 km om dagen."
     - "Kandidatene på kartet, ved siden av Jebel Musa, er nabotoppene Ras es-Safsafeh og Jebel Katherina, Jebel Serbal omtrent 35 km mot vest, Jebel Sin Bishar i den vestlige delen av halvøya og Har Karkom i Negev, omtrent 210 km mot nord-nordøst; noen forfattere søker også fjellet i det nordvestlige Arabia. Kristne munker slo seg ned under Jebel Musa på 300-tallet, og Sankt Katarina-klosteret står fortsatt ved foten. Ingen av forslagene er bevist, så kartet viser det tradisjonelle stedet og lister de andre på stedskortet."
+  tl:
+    - "Pinagtatalunan ang pook ng Bundok Sinai: ang tradisyonal na bundok ay ang Jebel Musa (“Bundok ni Moises”) sa timog ng Tangway ng Sinai, Egipto, at doon ito inilalagay ng mapa, ngunit walang ibinibigay ang Biblia na lokasyong matitiyak, at maraming ibang bundok ang iminungkahi."
+    - "Sinasabi ng Exodo na narating ng Israel ang bundok sa ikatlong buwan pagkaalis sa Egipto: “dumating sa ilang ng Sinai, ay humantong sila sa ilang; at doo'y humantong ang Israel sa harap ng bundok.” Tinatawag din ang parehong bundok na Horeb, ang bundok ng Dios, kung saan nakita ni Moises ang nagniningas na palumpong, at binibilang ng Deuteronomio ang “labing isang araw na lakbayin mula sa Horeb kung dadaan ng bundok ng Seir hanggang sa Cades-barnea”. Mula sa Jebel Musa hanggang sa karaniwang pook ng Cades-barnea ay mga 240 km sa tuwid na guhit, mga 8 araw na lakad sa 30 km kada araw."
+    - "Ang mga kandidato sa mapa, bukod sa Jebel Musa, ay ang mga katabing tuktok nito na Ras es-Safsafeh at Jebel Katherina, ang Jebel Serbal mga 35 km sa kanluran, ang Jebel Sin Bishar sa kanluran ng tangway, at ang Har Karkom sa Negev, mga 210 km sa hilaga-hilagang-silangan; hinahanap din ng ilang manunulat ang bundok sa hilagang-kanlurang Arabia. Nanirahan na ang mga monghe na Kristiyano sa ibaba ng Jebel Musa pagsapit ng ikaapat na siglo, at nakatayo pa rin sa paanan nito ang monasteryo ni Santa Catalina. Wala sa mga mungkahi ang napatunayan, kaya ipinakikita ng mapa ang tradisyonal na pook at inililista ang iba sa kard ng lugar."
 map:
   place: abfba2a
   year: "1446 BC"

@@ -16,6 +16,7 @@ title:
   cs: "Samuel a truhla"
   sv: "Samuel och arken"
   nb: "Samuel og arken"
+  tl: "Si Samuel at ang kaban"
 year: "1070 BC"
 people: ["Samuel@1Sa.1.20-Heb"]
 approximate: true
@@ -36,6 +37,7 @@ stops:
       cs: "V Rámě rodí Chana syna a dává mu jméno Samuel: vyprošený od Hospodina."
       sv: "I Rama föder Hanna en son och ger honom namnet Samuel: utbedd av Herren."
       nb: "I Rama føder Hanna en sønn og kaller ham Samuel: utbedt av Herren."
+      tl: "Sa Rama, nanganak si Ana ng isang lalaki at pinangalanan siyang Samuel: hiningi sa Panginoon."
   - place: aa4680a # Shiloh
     ref: 1Sam.1.24-1Sam.3.21
     note:
@@ -52,6 +54,7 @@ stops:
       cs: "Přivedený do domu Hospodinova v Šílu odpovídá chlapec: „Mluv, nebo slyší služebník tvůj.“"
       sv: "Förd till Herrens hus i Shilo svarar gossen: ”Tala, din tjänare hör.”"
       nb: "Ført til Herrens hus i Sjilo svarer gutten: «Tal, din tjener hører!»"
+      tl: "Dinala sa bahay ng Panginoon sa Shiloh, sumagot ang bata: “Magsalita ka; sapagka't dinirinig ng iyong lingkod.”"
   - place: abfdefc # Ebenezer
     ref: 1Sam.4.1-1Sam.4.11
     note:
@@ -68,6 +71,7 @@ stops:
       cs: "U Eben-ezeru berou Pelištejci truhlu Boží; Chofni a Pinchas umírají."
       sv: "Vid Even-Haeser tar filistéerna Guds ark; Hofni och Pinechas dör."
       nb: "Ved Eben-Eser tar filisterne Guds ark; Hofni og Pinhas dør."
+      tl: "Sa Ebenezer, kinuha ng mga Filisteo ang kaban ng Diyos; namatay sina Ophni at Phinees."
   - place: a30c937 # Ashdod
     ref: 1Sam.5.1-1Sam.5.7
     note:
@@ -84,6 +88,7 @@ stops:
       cs: "V chrámě Dágonově v Ašdodu padá modla před truhlou Hospodinovou na tvář."
       sv: "I Dagons tempel i Ashdod faller avguden på sitt ansikte inför Herrens ark."
       nb: "I Dagons tempel i Asjdod faller avgudsbildet på sitt ansikt for Herrens ark."
+      tl: "Sa bahay ni Dagon sa Asdod, ang diyus-diyosan ay nabuwal na nakadapa sa harap ng kaban ng Panginoon."
   - place: a3b5b53 # Beth-shemesh
     ref: 1Sam.6.12-1Sam.6.20
     note:
@@ -100,6 +105,7 @@ stops:
       cs: "Dvě krávy nesou truhlu přímo po cestě do Bét-šemeše."
       sv: "Två kor drar arken rakt fram längs vägen till Bet-Shemesh."
       nb: "To kyr drar arken rett frem langs veien til Bet-Sjemesj."
+      tl: "Dalawang baka ang nagdala ng kaban nang tuwid sa daan patungong Beth-semes."
   - place: a9bba61 # Kiriath-jearim
     ref: 1Sam.7.1-1Sam.7.2
     note:
@@ -116,6 +122,7 @@ stops:
       cs: "Muži z Kirjat-jearímu přenášejí truhlu do domu Abinadabova; uplyne dvacet let a celý Izrael lká za Hospodinem."
       sv: "Männen i Kirjat-Jearim för arken in i Avinadavs hus; tjugo år går, och hela Israel klagar efter Herren."
       nb: "Mennene fra Kirjat-Jearim fører arken inn i Abinadabs hus; tyve år går, og hele Israel klager etter Herren."
+      tl: "Dinala ng mga tao ng Kiriath-jearim ang kaban sa bahay ni Abinadab; lumipas ang dalawampung taon, at ang buong Israel ay nanangis sa Panginoon."
   - place: a736f6c # Mizpah
     ref: 1Sam.7.5-1Sam.7.12
     note:
@@ -132,6 +139,7 @@ stops:
       cs: "V Micpě se Samuel modlí a Izrael vítězí; mezi Micpou a Šenem staví Samuel kámen: „Až potud pomáhal nám Hospodin.“"
       sv: "I Mispa ber Samuel och Israel segrar; mellan Mispa och Shen reser Samuel en sten: ”Allt härintill har HERREN hjälpt oss.”"
       nb: "I Mispa ber Samuel og Israel seirer; mellom Mispa og Sjen reiser Samuel en sten: «Hittil har Herren hjulpet oss.»"
+      tl: "Sa Mizpa ay nanalangin si Samuel at nanaig ang Israel; sa pagitan ng Mizpa at Sen ay naglagay si Samuel ng isang bato: “Hanggang dito'y tinulungan tayo ng Panginoon.”"
   - place: ab94aea # Gilgal
     ref: 1Sam.11.14-1Sam.11.15
     year: "1050 BC"
@@ -149,6 +157,7 @@ stops:
       cs: "V Gilgalu ustanovuje lid Saula králem před Hospodinem."
       sv: "I Gilgal gör folket Saul till kung inför Herren."
       nb: "I Gilgal gjør folket Saul til konge for Herrens åsyn."
+      tl: "Sa Gilgal, ginawang hari ng bayan si Saul sa harap ng Panginoon."
   - place: a90f6e1 # Ramah
     ref: 1Sam.25.1
     year: "1015 BC"
@@ -166,3 +175,4 @@ stops:
       cs: "Samuel umírá, celý Izrael ho oplakává a pochovává ho v jeho domě v Rámě."
       sv: "Samuel dör, och hela Israel sörjer honom och begraver honom i hans hus i Rama."
       nb: "Samuel dør, og hele Israel sørger over ham og gravlegger ham ved hans hus i Rama."
+      tl: "Namatay si Samuel, at ang buong Israel ay nagdalamhati sa kaniya at inilibing siya sa kaniyang bahay sa Rama."

@@ -24,6 +24,7 @@ events:
       cs: "Saul je v Gilgalu prohlášen králem"
       sv: "Saul görs till kung i Gilgal"
       nb: "Saul blir gjort til konge i Gilgal"
+      tl: "Ginawang hari si Saul sa Gilgal"
     place: ab94aea
     ref: 1Sam.11.14-1Sam.11.15
     sources:
@@ -44,6 +45,7 @@ events:
       cs: "David je v Hebronu pomazán králem nad Judou"
       sv: "David smörjs till kung över Juda i Hebron"
       nb: "David blir salvet til konge over Juda i Hebron"
+      tl: "Pinahiran si David bilang hari ng Juda sa Hebron"
     place: a85151a
     ref: 2Sam.2.1-2Sam.2.4
     sources:
@@ -64,6 +66,7 @@ events:
       cs: "Šalomoun začíná stavět chrám"
       sv: "Salomo påbörjar bygget av templet"
       nb: "Salomo begynner å bygge templet"
+      tl: "Sinimulan ni Salomon ang pagtatayo ng Templo"
     place: a15257a
     ref: 1Kgs.6.1
     sources:
@@ -84,6 +87,7 @@ events:
       cs: "Království se dělí: Izrael a Juda"
       sv: "Riket delas: Israel och Juda"
       nb: "Riket deles: Israel og Juda"
+      tl: "Nahati ang kaharian: ang Israel at ang Juda"
     place: adf74d4
     ref: 1Kgs.12.16-1Kgs.12.20
     sources:
@@ -104,6 +108,7 @@ events:
       cs: "Samaří padá do rukou Asýrie"
       sv: "Samaria faller för Assyrien"
       nb: "Samaria faller til Assyria"
+      tl: "Bumagsak ang Samaria sa Asiria"
     place: a041bb3
     ref: 2Kgs.17.5-2Kgs.17.6
     sources:
@@ -125,6 +130,7 @@ events:
       cs: "Senacherib obléhá Lachiš a Jeruzalém"
       sv: "Sanherib belägrar Lakish och Jerusalem"
       nb: "Sankerib kringsetter Lakisj og Jerusalem"
+      tl: "Kinubkob ni Sennacherib ang Lachis at ang Jerusalem"
     place: a3cc590
     ref: 2Kgs.18.13-2Kgs.18.17
     sources:
@@ -146,6 +152,7 @@ events:
       cs: "Ninive padá"
       sv: "Nineve faller"
       nb: "Ninive faller"
+      tl: "Bumagsak ang Ninive"
     place: a70fd5d
     sources:
       - "Babylonian Chronicle, ABC 3"
@@ -165,6 +172,7 @@ events:
       cs: "Jeruzalém a chrám jsou zničeny; vyhnanství do Babylóna"
       sv: "Jerusalem och templet förstörs; landsflykt till Babylon"
       nb: "Jerusalem og templet blir ødelagt; landflyktighet i Babylon"
+      tl: "Nawasak ang Jerusalem at ang Templo; pagkatapon sa Babilonia"
     place: a15257a
     ref: 2Kgs.25.8-2Kgs.25.11
     sources:
@@ -185,6 +193,7 @@ events:
       cs: "Kýros dovoluje vyhnancům návrat"
       sv: "Kyros låter de landsflyktiga återvända"
       nb: "Kyros lar de landflyktige vende tilbake"
+      tl: "Pinahintulutan ni Ciro na bumalik ang mga tapon"
     place: a217d18
     ref: Ezra.1.1-Ezra.1.4
     sources:
@@ -206,6 +215,7 @@ events:
       cs: "Druhý chrám je dokončen a vysvěcen"
       sv: "Det andra templet fullbordas och invigs"
       nb: "Det andre tempel blir fullført og innviet"
+      tl: "Natapos at itinalaga ang Ikalawang Templo"
     place: a15257a
     ref: Ezra.6.15-Ezra.6.16
     sources:
@@ -226,6 +236,7 @@ events:
       cs: "Nehemjáš obnovuje jeruzalémské hradby"
       sv: "Nehemja bygger upp Jerusalems murar"
       nb: "Nehemja gjenreiser Jerusalems murer"
+      tl: "Muling itinayo ni Nehemias ang mga pader ng Jerusalem"
     place: a15257a
     ref: Neh.6.15
     sources:
@@ -246,6 +257,7 @@ events:
       cs: "Alexandr dobývá Týr a Gazu"
       sv: "Alexander intar Tyros och Gaza"
       nb: "Aleksander inntar Tyros og Gasa"
+      tl: "Kinuha ni Alejandro ang Tiro at Gaza"
     place: a160272
     sources:
       - "Arrian, Anabasis 2.24; 2.27"
@@ -265,6 +277,7 @@ events:
       cs: "Juda Makabejský znovu světí chrám"
       sv: "Judas Mackabeus återinviger templet"
       nb: "Judas Makkabeus innvier templet på nytt"
+      tl: "Muling itinalaga ni Judas Macabeo ang Templo"
     place: a15257a
     ref: 1Macc.4.36-1Macc.4.59
     sources:
@@ -286,6 +299,7 @@ events:
       cs: "Pompeius dobývá Jeruzalém: začíná římská vláda"
       sv: "Pompejus intar Jerusalem: det romerska väldet börjar"
       nb: "Pompeius inntar Jerusalem: romersk herredømme begynner"
+      tl: "Kinuha ni Pompeyo ang Jerusalem: nagsimula ang pamamahala ng Roma"
     place: a15257a
     sources:
       - "Josephus, Antiquities 14.54-79"
@@ -305,6 +319,7 @@ events:
       cs: "Herodes Veliký dobývá Jeruzalém"
       sv: "Herodes den store intar Jerusalem"
       nb: "Herodes den store inntar Jerusalem"
+      tl: "Kinuha ni Herodes na Dakila ang Jerusalem"
     place: a15257a
     sources:
       - "Josephus, Antiquities 14.465-491"
@@ -324,6 +339,7 @@ events:
       cs: "Narození Ježíšovo"
       sv: "Jesu födelse"
       nb: "Jesu fødsel"
+      tl: "Kapanganakan ni Jesus"
     place: a112427
     ref: Luke.2.1-Luke.2.7
     sources:
@@ -344,6 +360,7 @@ events:
       cs: "Ukřižování a vzkříšení"
       sv: "Korsfästelsen och uppståndelsen"
       nb: "Korsfestelsen og oppstandelsen"
+      tl: "Pagpapako sa krus at Muling Pagkabuhay"
     place: a631d35
     ref: Luke.23.33
     sources:
@@ -365,6 +382,7 @@ events:
       cs: "Jeruzalémský koncil"
       sv: "Apostlamötet i Jerusalem"
       nb: "Apostelmøtet i Jerusalem"
+      tl: "Ang Konseho ng Jerusalem"
     place: a15257a
     ref: Acts.15.6-Acts.15.11
     sources:
@@ -385,6 +403,7 @@ events:
       cs: "Titus ničí Jeruzalém a chrám"
       sv: "Titus förstör Jerusalem och templet"
       nb: "Titus ødelegger Jerusalem og templet"
+      tl: "Winasak ni Tito ang Jerusalem at ang Templo"
     place: a15257a
     sources:
       - "Josephus, Jewish War 6.249-266 (the Temple burned); 7.1-3 (Caesar orders the whole city and Temple razed)"
@@ -404,6 +423,7 @@ events:
       cs: "Šíšak Egyptský vede tažení do Judska a Izraele"
       sv: "Shishak av Egypten för krig i Juda och Israel"
       nb: "Sjisjak av Egypt fører felttog i Juda og Israel"
+      tl: "Nangampanya si Sisac ng Egipto sa Juda at Israel"
     ref: 1Kgs.14.25-1Kgs.14.26
     sources:
       - "1 Kgs 14:25-26 (the fifth year of Rehoboam); Thiele's chronology"
@@ -424,6 +444,7 @@ events:
       cs: "Bitva u Karkaru: Achab mezi králi proti Asýrii"
       sv: "Slaget vid Karkar: Achav bland kungarna mot Assyrien"
       nb: "Slaget ved Karkar: Akab blant kongene mot Assyria"
+      tl: "Labanan sa Qarqar: kasama si Achab sa mga hari laban sa Asiria"
     # The field: Tell Qarqur on the west bank of the Orontes, Ghab plain, northwestern Syria (approximate).
     battlefield: { lon: 36.331, lat: 35.742, source: "https://pleiades.stoa.org/places/995604669" }
     sources:
@@ -444,6 +465,7 @@ events:
       cs: "Jehú platí tribut Salmanasarovi III."
       sv: "Jehu betalar tribut till Salmanassar III"
       nb: "Jehu betaler skatt til Salmanassar III"
+      tl: "Nagbayad ng tributo si Jehu kay Salmanasar III"
     sources:
       - "Black Obelisk of Shalmaneser III (the Jehu panel, RIMA 3 A.0.102.88)"
       - "Annals of Shalmaneser III for his eighteenth year (RIMA 3 A.0.102.8, .10)"
@@ -463,6 +485,7 @@ events:
       cs: "Jošijáš je smrtelně raněn u Megida faraonem Nekem"
       sv: "Josia dödligt sårad vid Megiddo av farao Neko"
       nb: "Josjia blir dødelig såret i Megiddo av farao Neko"
+      tl: "Nasugatan nang malubha si Josias sa Megiddo ni Faraon Nechao"
     place: a8554e3
     ref: 2Kgs.23.29-2Kgs.23.30
     sources:
@@ -484,6 +507,7 @@ events:
       cs: "Nebukadnesar poráží Egypt u Karkemíše"
       sv: "Nebukadnessar besegrar Egypten vid Karkemish"
       nb: "Nebukadnesar beseirer Egypt ved Karkemisj"
+      tl: "Tinalo ni Nabucodonosor ang Egipto sa Carchemis"
     place: af6c730
     ref: Jer.46.2
     sources:
@@ -505,6 +529,7 @@ events:
       cs: "Jeruzalém se vzdává; Jójakín je odvlečen do Babylóna"
       sv: "Jerusalem kapitulerar; Jojakin förs till Babylon"
       nb: "Jerusalem overgir seg; Jojakin blir ført til Babylon"
+      tl: "Sumuko ang Jerusalem; dinala si Joachin sa Babilonia"
     place: a15257a
     ref: 2Kgs.24.10-2Kgs.24.15
     sources:
@@ -526,6 +551,7 @@ events:
       cs: "Antiochos IV. znesvěcuje chrám"
       sv: "Antiochos IV vanhelgar templet"
       nb: "Antiokos IV vanhelliger templet"
+      tl: "Nilapastangan ni Antioco IV ang Templo"
     place: a15257a
     ref: 1Macc.1.54
     sources:
@@ -547,6 +573,7 @@ events:
       cs: "Herodes Veliký umírá v Jerichu"
       sv: "Herodes den store dör i Jeriko"
       nb: "Herodes den store dør i Jeriko"
+      tl: "Namatay si Herodes na Dakila sa Jerico"
     place: aaf03fa
     ref: Matt.2.19-Matt.2.20
     sources:
@@ -567,6 +594,7 @@ events:
       cs: "Judsko se stává římskou provincií"
       sv: "Judeen blir en romersk provins"
       nb: "Judea blir en romersk provins"
+      tl: "Naging lalawigang Romano ang Judea"
     place: a15257a
     sources:
       - "Josephus, Antiquities 17.355; 18.1-2"
@@ -586,6 +614,7 @@ events:
       cs: "Pontius Pilát se stává prefektem Judska"
       sv: "Pontius Pilatus blir prefekt över Judeen"
       nb: "Pontius Pilatus blir prefekt i Judea"
+      tl: "Naging prepekto ng Judea si Poncio Pilato"
     place: a58735e
     sources:
       - "Josephus, Antiquities 18.35 (after Gratus's eleven years), 18.89 (ten years in office)"
@@ -606,6 +635,7 @@ events:
       cs: "Herodes Agrippa I. umírá v Cesareji"
       sv: "Herodes Agrippa I dör i Caesarea"
       nb: "Herodes Agrippa I dør i Cæsarea"
+      tl: "Namatay si Herodes Agripa I sa Cesarea"
     place: a58735e
     ref: Acts.12.21-Acts.12.23
     sources:
@@ -627,6 +657,7 @@ events:
       cs: "Klaudius vyhání Židy z Říma"
       sv: "Claudius utvisar judarna från Rom"
       nb: "Klaudius utviser jødene fra Roma"
+      tl: "Pinaalis ni Claudio ang mga Judio sa Roma"
     place: afc8e7a
     ref: Acts.18.2
     sources:
@@ -648,6 +679,7 @@ events:
       cs: "Gallión, prokonzul Achaje, v Korintu"
       sv: "Gallio, prokonsul i Achaia, i Korinth"
       nb: "Gallio, prokonsul i Akaia, i Korint"
+      tl: "Si Galion, prokonsul ng Acaya, sa Corinto"
     place: a6f437a
     ref: Acts.18.12-Acts.18.17
     sources:
@@ -669,6 +701,7 @@ events:
       cs: "Požár Říma; Nero pronásleduje křesťany"
       sv: "Branden i Rom; Nero förföljer de kristna"
       nb: "Brannen i Roma; Nero forfølger de kristne"
+      tl: "Ang sunog sa Roma; pinag-usig ni Nero ang mga Kristiyano"
     place: afc8e7a
     sources:
       - "Tacitus, Annals 15.38-44"
@@ -688,6 +721,7 @@ events:
       cs: "Tiglatpilesar III. dobývá Damašek"
       sv: "Tiglat-Pileser III intar Damaskus"
       nb: "Tiglat-Pileser III inntar Damaskus"
+      tl: "Kinuha ni Tiglath-pileser III ang Damasco"
     place: a69c1d4
     ref: 2Kgs.16.9
     sources:
@@ -709,6 +743,7 @@ events:
       cs: "Kýros dobývá Babylón"
       sv: "Kyros intar Babylon"
       nb: "Kyros inntar Babylon"
+      tl: "Kinuha ni Ciro ang Babilonia"
     place: a217d18
     ref: Dan.5.30-Dan.5.31
     sources:
@@ -730,6 +765,7 @@ events:
       cs: "Bitva u Paneia: Judsko přechází od Ptolemaiovců k Seleukovcům"
       sv: "Slaget vid Panion: Judeen går från ptoleméerna till seleukiderna"
       nb: "Slaget ved Panion: Judea går fra ptolemeerne til seleukidene"
+      tl: "Labanan sa Panium: ang Judea ay napunta mula sa mga Ptolomeo tungo sa mga Seleucida"
     place: ab7bf48
     sources:
       - "Polybius 16.18-19"
@@ -752,6 +788,7 @@ events:
       cs: "Horní a Dolní Egypt jsou sjednoceny za první dynastie"
       sv: "Övre och Nedre Egypten förenas under första dynastin"
       nb: "Øvre og Nedre Egypt forenes under første dynasti"
+      tl: "Nagkaisa ang Mataas at Mababang Egipto sa ilalim ng Unang Dinastiya"
     place: a8ec269
     sources:
       - "The Narmer Palette (Egyptian Museum, Cairo, JE 32169)"
@@ -774,6 +811,7 @@ events:
       cs: "Sargon Akkadský, sjednotitel Mezopotámie, se stává králem"
       sv: "Sargon av Akkad, som enade Mesopotamien, blir kung"
       nb: "Sargon av Akkad, Mesopotamias samler, blir konge"
+      tl: "Naging hari si Sargon ng Akkad, ang nagkaisa sa Mesopotamia"
     sources:
       - "Sumerian King List (ETCSL 2.1.1, ll. 266-296: 'In Agade, Sargon ... became king ... he ruled for 56 years')"
       - "CDLI Wiki, 'Rulers of Mesopotamia' (middle chronology: Sargon 2334-2279 BC)"
@@ -794,6 +832,7 @@ events:
       cs: "Ur-Nammu zakládá Třetí dynastii z Uru"
       sv: "Ur-Nammu grundar Urs tredje dynasti"
       nb: "Ur-Nammu grunnlegger Tredje dynasti i Ur"
+      tl: "Itinatag ni Ur-Nammu ang Ikatlong Dinastiya ng Ur"
     place: a6cf75c
     sources:
       - "Sumerian King List (ETCSL 2.1.1, ll. 341-354: in Urim Ur-Namma became king; he ruled for 18 years)"
@@ -814,6 +853,7 @@ events:
       cs: "Élamité dobývají Ur: konec Třetí dynastie"
       sv: "Elamiterna intar Ur: Urs tredje dynasti upphör"
       nb: "Elamittene inntar Ur: slutten på Tredje dynasti"
+      tl: "Kinuha ng mga Elamita ang Ur: ang wakas ng Ikatlong Dinastiya"
     place: a6cf75c
     sources:
       - "Lament for Sumer and Ur"
@@ -836,6 +876,7 @@ events:
       cs: "Bar Kochbovo povstání je potlačeno; Židům je zakázán vstup do Jeruzaléma, nyní Aelie Capitoliny"
       sv: "Bar Kochbas uppror slås ned; judar utestängs från Jerusalem, nu Aelia Capitolina"
       nb: "Bar Kokhba-opprøret blir slått ned; jødene får forbud mot å komme til Jerusalem, nå Aelia Capitolina"
+      tl: "Nadurog ang paghihimagsik ni Bar Kokhba; ipinagbawal sa mga Judio ang Jerusalem, na ngayon ay Aelia Capitolina"
     place: a15257a
     sources:
       - "Cassius Dio, Roman History 69.12-14"
@@ -856,6 +897,7 @@ events:
       cs: "Je vysvěcen chrám Božího hrobu"
       sv: "Den heliga gravens kyrka invigs"
       nb: "Gravkirken blir innviet"
+      tl: "Itinalaga ang Simbahan ng Banal na Libingan"
     place: a631d35
     sources:
       - "Eusebius, Life of Constantine 3.25-40; 4.40-47"
@@ -875,6 +917,7 @@ events:
       cs: "Juliánův pokus o obnovu chrámu v Jeruzalémě selhává"
       sv: "Julianus försök att återuppbygga templet i Jerusalem misslyckas"
       nb: "Julians forsøk på å gjenreise templet i Jerusalem mislykkes"
+      tl: "Nabigo ang tangka ni Juliano na muling itayo ang Templo sa Jerusalem"
     place: a15257a
     sources:
       - "Ammianus Marcellinus 23.1.2-3"
@@ -896,6 +939,7 @@ events:
       cs: "Jeroným dokončuje v Betlémě svůj latinský překlad Starého zákona z hebrejštiny"
       sv: "Hieronymus slutför sin latinska översättning av Gamla testamentet från hebreiskan i Betlehem"
       nb: "Hieronymus fullfører sin latinske oversettelse av Det gamle testamente fra hebraisk i Betlehem"
+      tl: "Tinapos ni Jerónimo sa Bethlehem ang kaniyang saling Latin ng Matandang Tipan mula sa Hebreo"
     place: a112427
     sources:
       - "Jerome, Preface to Joshua, Judges and Ruth (after Paula's death in 404; NPNF2 6)"
@@ -916,6 +960,7 @@ events:
       cs: "Alarichovi Vizigóti vyplení Řím"
       sv: "Alariks visigoter plundrar Rom"
       nb: "Alarics vestgotere plyndrer Roma"
+      tl: "Sinamsam ng mga Visigodo ni Alarico ang Roma"
     place: afc8e7a
     sources:
       - "Orosius, History against the Pagans 7.39-40"
@@ -939,6 +984,7 @@ events:
       cs: "Alexandr zakládá v Egyptě Alexandrii"
       sv: "Alexander grundar Alexandria i Egypten"
       nb: "Aleksander grunnlegger Aleksandria i Egypt"
+      tl: "Itinatag ni Alejandro ang Alejandria sa Egipto"
     place: aee7248
     sources:
       - "Arrian, Anabasis 3.1"
@@ -958,6 +1004,7 @@ events:
       cs: "Alexandr Veliký umírá v Babylóně"
       sv: "Alexander den store dör i Babylon"
       nb: "Aleksander den store dør i Babylon"
+      tl: "Namatay si Alejandro na Dakila sa Babilonia"
     place: a217d18
     sources:
       - "Plutarch, Alexander 75-76 (the Royal Diaries: the 28th of Daesius, 76.9; Aristobulus: the 30th, 75.6)"
@@ -981,6 +1028,7 @@ events:
       cs: "Seleukos I. znovu dobývá Babylón; začíná seleukovská éra"
       sv: "Seleukos I återtar Babylon; den seleukidiska tideräkningen börjar"
       nb: "Seleukos I vinner Babylon tilbake; den seleukidiske tidsregning begynner"
+      tl: "Muling nakuha ni Seleuco I ang Babilonia; nagsimula ang panahon ng mga Seleucida"
     place: a217d18
     sources:
       - "Diodorus Siculus 19.77 (archonship of Polemon), 19.90-92"
@@ -1001,6 +1049,7 @@ events:
       cs: "Seleukos I. zakládá Antiochii nad Orontem"
       sv: "Seleukos I grundar Antiochia vid Orontes"
       nb: "Seleukos I grunnlegger Antiokia ved Orontes"
+      tl: "Itinatag ni Seleuco I ang Antioquia sa Orontes"
     place: ae41ab4
     sources:
       - "Strabo, Geography 16.2.4"
@@ -1024,6 +1073,7 @@ events:
       cs: "Tóra je v Alexandrii přeložena do řečtiny (Septuaginta)"
       sv: "Toran översätts till grekiska i Alexandria (Septuaginta)"
       nb: "Toraen blir oversatt til gresk i Aleksandria (Septuaginta)"
+      tl: "Isinalin sa Griyego ang Torah sa Alejandria (ang Septuagint)"
     place: aee7248
     sources:
       - "Letter of Aristeas 9-11, 46-50 (the tradition)"
@@ -1045,6 +1095,7 @@ events:
       cs: "Matatiáš zvedá v Modeinu povstání"
       sv: "Mattatias reser upproret i Modin"
       nb: "Mattatias reiser opprøret i Modin"
+      tl: "Pinasimulan ni Matatias ang paghihimagsik sa Modein"
     ref: 1Macc.2.1-1Macc.2.28
     sources:
       - "1 Macc 2:1, 2:15-28, 2:70 (year 146 of the Seleucids)"
@@ -1065,6 +1116,7 @@ events:
       cs: "Za Šimona je Judsko osvobozeno od seleukovského tributu"
       sv: "Under Simon befrias Judeen från seleukidisk tribut"
       nb: "Under Simon blir Judea fritatt for seleukidisk skatt"
+      tl: "Sa ilalim ni Simon, napalaya ang Judea mula sa tributo sa mga Seleucida"
     place: a15257a
     ref: 1Macc.13.41-1Macc.13.42
     sources:
@@ -1088,6 +1140,7 @@ events:
       cs: "Herodes začíná přestavovat chrám"
       sv: "Herodes börjar bygga om templet"
       nb: "Herodes begynner å gjenreise templet"
+      tl: "Sinimulan ni Herodes ang muling pagtatayo ng Templo"
     place: a15257a
     sources:
       - "Josephus, Antiquities 15.380 (the eighteenth year of his reign); cf. Jewish War 1.401"
@@ -1109,6 +1162,7 @@ events:
       cs: "Římané dobývají Masadu"
       sv: "Romarna intar Masada"
       nb: "Romerne inntar Masada"
+      tl: "Kinuha ng mga Romano ang Masada"
     site: "687968"
     sources:
       - "Josephus, Jewish War 7.252-406 (15 Xanthicus, 7.401)"
@@ -1131,6 +1185,7 @@ events:
       cs: "V Judsku začíná Bar Kochbovo povstání"
       sv: "Bar Kochbas uppror bryter ut i Judeen"
       nb: "Bar Kokhba-opprøret begynner i Judea"
+      tl: "Nagsimula ang paghihimagsik ni Bar Kokhba sa Judea"
     sources:
       - "Cassius Dio, Roman History 69.12-13"
       - "Eusebius, Church History 4.6.2 (Barcocheba)"
@@ -1151,6 +1206,7 @@ events:
       cs: "Órigenés opouští Alexandrii a odchází do Cesareje"
       sv: "Origenes lämnar Alexandria för Caesarea"
       nb: "Origenes forlater Aleksandria for Cæsarea"
+      tl: "Umalis si Origenes sa Alejandria patungong Cesarea"
     place: a58735e
     sources:
       - "Eusebius, Church History 6.26 (the tenth year of Alexander Severus, 231/232)"
@@ -1170,6 +1226,7 @@ events:
       cs: "Decius nařizuje oběti v celé říši: první všeobecné pronásledování"
       sv: "Decius befaller offer i hela riket: den första allmänna förföljelsen"
       nb: "Decius påbyr ofring i hele riket: den første allmenne forfølgelse"
+      tl: "Ipinag-utos ni Decio ang paghahain sa buong imperyo: ang unang pangkalahatang pag-uusig"
     sources:
       - "Eusebius, Church History 6.39-41"
       - "J. B. Rives, 'The Decree of Decius and the Religion of Empire', Journal of Roman Studies 89 (1999), 135-154"
@@ -1190,6 +1247,7 @@ events:
       cs: "Diocletianův edikt proti církvím: začíná Velké pronásledování"
       sv: "Diocletianus edikt mot kyrkorna: den stora förföljelsen börjar"
       nb: "Diokletians edikt mot kirkene: den store forfølgelse begynner"
+      tl: "Ang kautusan ni Diocleciano laban sa mga iglesya: nagsimula ang Dakilang Pag-uusig"
     sources:
       - "Lactantius, On the Deaths of the Persecutors 12-13 (the Terminalia, in the eighth consulship of Diocletian)"
       - "Eusebius, Church History 8.2.4 (the nineteenth year of Diocletian, the month Dystrus)"
@@ -1209,6 +1267,7 @@ events:
       cs: "Konstantin poráží Maxentia u Milvijského mostu"
       sv: "Konstantin besegrar Maxentius vid Mulviska bron"
       nb: "Konstantin beseirer Maxentius ved Den milviske bro"
+      tl: "Tinalo ni Constantino si Majencio sa Tulay ng Milvio"
     place: afc8e7a
     sources:
       - "Lactantius, On the Deaths of the Persecutors 44"
@@ -1230,6 +1289,7 @@ events:
       cs: "Konstantin a Licinius dávají křesťanům svobodu uctívání (Milánský edikt)"
       sv: "Konstantin och Licinius ger de kristna religionsfrihet (Milanoediktet)"
       nb: "Konstantin og Licinius gir de kristne religionsfrihet (Milano-ediktet)"
+      tl: "Ipinagkaloob nina Constantino at Licinio sa mga Kristiyano ang kalayaan sa pagsamba (ang Kautusan ng Milan)"
     sources:
       - "Lactantius, On the Deaths of the Persecutors 48"
       - "Eusebius, Church History 10.5"
@@ -1249,6 +1309,7 @@ events:
       cs: "První nikajský koncil"
       sv: "Det första konciliet i Nicaea"
       nb: "Det første kirkemøtet i Nikea"
+      tl: "Ang Unang Konseho ng Nicea"
     site: "511268"
     sources:
       - "Eusebius, Life of Constantine 3.6-14"
@@ -1272,6 +1333,7 @@ events:
       cs: "Konstantin zasvěcuje Konstantinopol, Nový Řím"
       sv: "Konstantin invigar Konstantinopel, det nya Rom"
       nb: "Konstantin innvier Konstantinopel, det nye Roma"
+      tl: "Itinalaga ni Constantino ang Constantinopla, ang Bagong Roma"
     site: "Q16869"
     sources:
       - "Socrates, Church History 1.16"
@@ -1293,6 +1355,7 @@ events:
       cs: "První konstantinopolský koncil"
       sv: "Det första konciliet i Konstantinopel"
       nb: "Det første kirkemøtet i Konstantinopel"
+      tl: "Ang Unang Konseho ng Constantinopla"
     site: "Q16869"
     sources:
       - "Socrates, Church History 5.8 (May, the consulate of Eucharius and Evagrius)"
@@ -1313,6 +1376,7 @@ events:
       cs: "Efezský koncil sesazuje Nestoria"
       sv: "Konciliet i Efesos avsätter Nestorios"
       nb: "Kirkemøtet i Efesos avsetter Nestorios"
+      tl: "Pinatalsik ng Konseho ng Efeso si Nestorio"
     place: a5feb15
     sources:
       - "Socrates, Church History 7.34 (28 June, the consulate of Bassus and Antiochus)"
@@ -1332,6 +1396,7 @@ events:
       cs: "Chalkedonský koncil"
       sv: "Konciliet i Chalkedon"
       nb: "Kirkemøtet i Kalkedon"
+      tl: "Ang Konseho ng Calcedonia"
     site: "520988"
     sources:
       - "Evagrius, Church History 2.2-4"
@@ -1356,6 +1421,7 @@ events:
       cs: "Nejstarší známé mezopotámské písmo: protoklínopisné tabulky z Uruku"
       sv: "Mesopotamiens äldsta kända skrift: protokilskriftstavlor i Uruk"
       nb: "Den eldste kjente skrift i Mesopotamia: proto-kileskrifttavler i Uruk"
+      tl: "Ang pinakamaagang kilalang pagsulat sa Mesopotamia: mga tableta ng proto-cuneiform sa Uruk"
     place: a5db1a6
     sources:
       - "The archaic texts of Uruk IV from the Eanna precinct (H. J. Nissen, P. Damerow, R. K. Englund, Archaic Bookkeeping, 1993)"
@@ -1376,6 +1442,7 @@ events:
       cs: "Chammurapi se stává králem Babylónu"
       sv: "Hammurabi blir kung av Babylon"
       nb: "Hammurabi blir konge av Babylon"
+      tl: "Naging hari ng Babilonia si Hammurabi"
     place: a217d18
     sources:
       - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016) (middle chronology: 1792-1750 BC)"
@@ -1397,6 +1464,7 @@ events:
       cs: "Chetité plení Babylón a ukončují Chammurapiho dynastii"
       sv: "Hettiterna plundrar Babylon och gör slut på Hammurabis dynasti"
       nb: "Hettittene plyndrer Babylon og gjør slutt på Hammurabis dynasti"
+      tl: "Sinamsam ng mga Heteo ang Babilonia, na tumapos sa dinastiya ni Hammurabi"
     place: a217d18
     sources:
       - "Chronicle of Early Kings (ABC 20) B rev. 11' ('At the time of Samsuditana the Hittites marched against Akkad')"
@@ -1417,6 +1485,7 @@ events:
       cs: "Thutmose III. poráží krále Kádeše a jeho spojence u Megida"
       sv: "Thutmosis III besegrar kungen av Kadesh och hans bundsförvanter vid Megiddo"
       nb: "Tutmosis III beseirer kongen av Kadesj og hans allierte ved Megiddo"
+      tl: "Tinalo ni Thutmose III ang hari ng Cades at ang kaniyang mga kaalyado sa Megiddo"
     place: a8554e3
     sources:
       - "Annals of Thutmose III at Karnak, first campaign, year 23 (Breasted, Ancient Records of Egypt II, §§408 ff.; the battle §430)"
@@ -1439,6 +1508,7 @@ events:
       cs: "Abdi-Heba z Jeruzaléma píše faraonovi (amarnské listy)"
       sv: "Abdi-Heba av Jerusalem skriver till farao (Amarnabreven)"
       nb: "Abdi-Heba av Jerusalem skriver til farao (Amarna-brevene)"
+      tl: "Sumulat si Abdi-Heba ng Jerusalem sa Faraon (ang mga liham ng Amarna)"
     place: a15257a
     sources:
       - "Amarna letters EA 285-290 (Knudtzon, Die El-Amarna-Tafeln I (1915), nos. 285-290, headed 'Abdihiba von Jerusalem an den König')"
@@ -1459,6 +1529,7 @@ events:
       cs: "Ramesse II. bojuje s Chetity u Kádeše"
       sv: "Ramses II strider mot hettiterna vid Kadesh"
       nb: "Ramesses II kjemper mot hettittene ved Kadesj"
+      tl: "Nakipaglaban si Ramesses II sa mga Heteo sa Cades"
     place: adc9b5a
     sources:
       - "The Poem and the Bulletin of the battle of Kadesh, year 5 of Ramesses II (Breasted, Ancient Records of Egypt III, the Poem from §305, year 5 at §307; the Bulletin from §316, dated year 5 at §317)"
@@ -1480,6 +1551,7 @@ events:
       cs: "Merneptahova vítězná stéla jmenuje Izrael"
       sv: "Merneptahs segerstele nämner Israel"
       nb: "Merneptahs seiersstele nevner Israel"
+      tl: "Pinangalanan ng estela ng tagumpay ni Merneptah ang Israel"
     sources:
       - "Merneptah's 'Israel stele', year 5 (Egyptian Museum, Cairo, JE 31408; Breasted, Ancient Records of Egypt III, year 5 at §607; Israel in §617)"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Merneptah from 1213 BC)"
@@ -1499,6 +1571,7 @@ events:
       cs: "Ramesse III. odráží Mořské národy"
       sv: "Ramses III slår tillbaka havsfolken"
       nb: "Ramesses III slår sjøfolkene tilbake"
+      tl: "Pinaurong ni Ramesses III ang Mga Bayang-Dagat"
     sources:
       - "Medinet Habu, inscription of year 8 of Ramesses III (Breasted, Ancient Records of Egypt IV, §§59-82; the Peleset among the invaders §64)"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Ramesses III from 1184 BC)"
@@ -1518,6 +1591,7 @@ events:
       cs: "Meša, král Moábu, staví svou stélu v Dibonu"
       sv: "Mesha, kung av Moab, reser sin stele i Dibon"
       nb: "Mesa, kongen av Moab, reiser sin stele i Dibon"
+      tl: "Itinayo ni Mesa, hari ng Moab, ang kaniyang estela sa Dibon"
     place: a0d784a
     sources:
       - "2 Kgs 3:4-5"
@@ -1540,6 +1614,7 @@ events:
       cs: "Menachem platí tribut Pulovi (Tiglatpilesaru III.)"
       sv: "Menachem betalar tribut till Pul (Tiglat-Pileser III)"
       nb: "Menahem betaler skatt til Pul (Tiglat-Pileser III)"
+      tl: "Nagbayad ng tributo si Manahem kay Pul (Tiglath-pileser III)"
     ref: 2Kgs.15.19-2Kgs.15.20
     sources:
       - "2 Kgs 15:19-20"
@@ -1563,6 +1638,7 @@ events:
       cs: "Asýrie za Sargona II. dobývá Ašdod"
       sv: "Assyrien under Sargon II intar Ashdod"
       nb: "Assyria under Sargon II inntar Asjdod"
+      tl: "Kinuha ng Asiria sa ilalim ni Sargon II ang Asdod"
     place: a30c937
     ref: Isa.20.1
     sources:
@@ -1585,6 +1661,7 @@ events:
       cs: "Asarhadón dobývá Memfis"
       sv: "Esarhaddon intar Memfis"
       nb: "Asarhaddon inntar Memfis"
+      tl: "Kinuha ni Esar-hadon ang Memfis"
     place: a8ec269
     sources:
       - "Babylonian Chronicle, ABC 1 iv 23-28 (the tenth year of Esarhaddon: 'Memphis, the royal city, was captured')"
@@ -1604,6 +1681,7 @@ events:
       cs: "Aššurbanipal plení Théby (No-Amon)"
       sv: "Assurbanipal plundrar Thebe (No-Amon)"
       nb: "Assurbanipal plyndrer Teben (No-Amon)"
+      tl: "Sinamsam ni Ashurbanipal ang Thebes (No-amon)"
     place: a9674fc
     sources:
       - "Nah 3:8-10"
@@ -1624,6 +1702,7 @@ events:
       cs: "Nabopolasar se stává králem Babylónu"
       sv: "Nabopolassar blir kung av Babylon"
       nb: "Nabopolassar blir konge av Babylon"
+      tl: "Naging hari ng Babilonia si Nabopolassar"
     place: a217d18
     sources:
       - "Babylonian Chronicle, ABC 2 lines 14-15 (26 Arahsamnu: 23 November 626 BC)"
@@ -1643,6 +1722,7 @@ events:
       cs: "Nebukadnesarovo vojsko obléhá Lachiš a Azeku"
       sv: "Nebukadnessars här belägrar Lakish och Aseka"
       nb: "Nebukadnesars hær kringsetter Lakisj og Aseka"
+      tl: "Kinubkob ng hukbo ni Nabucodonosor ang Lachis at Azeca"
     place: a3cc590
     ref: Jer.34.7
     sources:
@@ -1664,6 +1744,7 @@ events:
       cs: "Nebukadnesar začíná třináctiletě obléhat Týr"
       sv: "Nebukadnessar inleder en tretton år lång belägring av Tyros"
       nb: "Nebukadnesar begynner en tretten år lang beleiring av Tyros"
+      tl: "Sinimulan ni Nabucodonosor ang labintatlong taóng pagkubkob sa Tiro"
     place: a160272
     sources:
       - "Ezek 29:18"
@@ -1684,6 +1765,7 @@ events:
       cs: "Evil-merodak propouští Jójakína z vězení"
       sv: "Evil-Merodak släpper Jojakin ur fängelset"
       nb: "Evil-Merodak slipper Jojakin ut av fengslet"
+      tl: "Pinalaya ni Evil-merodach si Joachin mula sa bilangguan"
     place: a217d18
     ref: 2Kgs.25.27-2Kgs.25.30
     sources:
@@ -1705,6 +1787,7 @@ events:
       cs: "Nabonid se stahuje do Témy v Arábii"
       sv: "Nabonid drar sig tillbaka till Tema i Arabien"
       nb: "Nabonid trekker seg tilbake til Tema i Arabia"
+      tl: "Umatras si Nabonido sa Tema sa Arabia"
     place: acd48d6
     sources:
       - "Nabonidus Chronicle (ABC 7) ii 5, 10, 19, 23 (the king in Tema in his 7th, 9th, 10th and 11th years)"
@@ -1725,6 +1808,7 @@ events:
       cs: "Kýros poráží Astyaga a dobývá Ekbatanu"
       sv: "Kyros besegrar Astyages och intar Ekbatana"
       nb: "Kyros beseirer Astyages og inntar Ekbatana"
+      tl: "Tinalo ni Ciro si Astiages at kinuha ang Achmetta"
     place: a212ef7
     sources:
       - "Nabonidus Chronicle (ABC 7) ii 1-4 (the sixth year of Nabonidus, 550/549 BC)"
@@ -1747,6 +1831,7 @@ events:
       cs: "Kambýsés poráží Egypťany u Pelúsia a dobývá Egypt"
       sv: "Kambyses besegrar egyptierna vid Pelusium och erövrar Egypten"
       nb: "Kambyses beseirer egypterne ved Pelusium og erobrer Egypt"
+      tl: "Tinalo ni Cambises ang mga Egipcio sa Pelusium at sinakop ang Egipto"
     place: aa32a17
     sources:
       - "Herodotus 3.10-13 (Psammenitos encamped at the Pelusian mouth of the Nile; the battle; Memphis besieged and surrendered)"
@@ -1768,6 +1853,7 @@ events:
       cs: "Dareios I. se stává perským králem"
       sv: "Dareios I blir kung av Persien"
       nb: "Dareios I blir konge av Persia"
+      tl: "Naging hari ng Persia si Dario I"
     sources:
       - "Behistun inscription, Old Persian text, DB i 53-61, §13b (Gaumata slain on 10 Bagayadi: 29 September 522 BC)"
       - "Ezra 4:24; Hag 1:1 (the second year of Darius)"
@@ -1790,6 +1876,7 @@ events:
       cs: "Xerxés I. se stává perským králem"
       sv: "Xerxes I blir kung av Persien"
       nb: "Xerxes I blir konge av Persia"
+      tl: "Naging hari ng Persia si Jerjes I"
     sources:
       - "Herodotus 7.4-5 (Darius dies after a reign of 36 years; the royal power passes to Xerxes)"
       - "R. A. Parker and W. H. Dubberstein, Babylonian Chronology 626 B.C.-A.D. 75 (1956)"
@@ -1812,6 +1899,7 @@ events:
       cs: "Artaxerxés I. se stává perským králem"
       sv: "Artaxerxes I blir kung av Persien"
       nb: "Artaxerxes I blir konge av Persia"
+      tl: "Naging hari ng Persia si Artajerjes I"
     sources:
       - "Diodorus 11.69.1-6 (under the archon Lysitheus, 465/464 BC: Artabanus kills Xerxes; Artaxerxes takes the throne)"
       - "R. A. Parker and W. H. Dubberstein, Babylonian Chronology 626 B.C.-A.D. 75 (1956)"
@@ -1833,6 +1921,7 @@ events:
       cs: "Antiochos IV. Epifanés se stává králem seleukovské říše"
       sv: "Antiochos IV Epifanes blir kung över seleukidernas rike"
       nb: "Antiokos IV Epifanes blir konge i seleukidenes rike"
+      tl: "Naging hari ng kaharian ng mga Seleucida si Antioco IV Epiphanes"
     ref: 1Macc.1.10
     sources:
       - "1 Macc 1:10 (he reigned in the 137th year of the kingdom of the Greeks)"
@@ -1853,6 +1942,7 @@ events:
       cs: "Octavianus dobývá Alexandrii; Egypt se stává římským"
       sv: "Oktavianus intar Alexandria; Egypten blir romerskt"
       nb: "Octavian inntar Aleksandria; Egypt blir romersk"
+      tl: "Kinuha ni Octavio ang Alejandria; naging Romano ang Egipto"
     place: aee7248
     sources:
       - "Plutarch, Antony 80.1 (Caesar drives into the city), 85-86 (Cleopatra's death)"
@@ -1874,6 +1964,7 @@ events:
       cs: "Senát uděluje Octavianovi jméno Augustus"
       sv: "Senaten ger Oktavianus namnet Augustus"
       nb: "Senatet gir Octavian navnet Augustus"
+      tl: "Pinangalanan ng Senado si Octavio na Augusto"
     place: afc8e7a
     sources:
       - "Res Gestae Divi Augusti 34 (in his sixth and seventh consulships; named Augustus by decree of the senate)"
@@ -1897,6 +1988,7 @@ events:
       cs: "Tiberius nastupuje po Augustovi"
       sv: "Tiberius efterträder Augustus"
       nb: "Tiberius etterfølger Augustus"
+      tl: "Humalili si Tiberio kay Augusto"
     place: afc8e7a
     sources:
       - "Suetonius, Augustus 100.1 (Augustus dies on 19 August AD 14); Tiberius 24.1"
@@ -1918,6 +2010,7 @@ events:
       cs: "Klaudius je prohlášen císařem"
       sv: "Claudius utropas till kejsare"
       nb: "Klaudius blir utropt til keiser"
+      tl: "Ipinroklama si Claudio bilang emperador"
     place: afc8e7a
     sources:
       - "Suetonius, Claudius 10.1-4 (after Gaius' murder the soldiers swear allegiance to him)"
@@ -1943,6 +2036,7 @@ events:
       cs: "Židé v Egyptě, Kyréně a na Kypru se vzpírají"
       sv: "Judarna i Egypten, Kyrene och Cypern gör uppror"
       nb: "Jødene i Egypt, Kyrene og Kypros reiser seg i opprør"
+      tl: "Naghimagsik ang mga Judio ng Egipto, Cirene at Chipre"
     sources:
       - "Eusebius, Church History 4.2.1-2 (in the eighteenth year of Trajan, in Alexandria, the rest of Egypt and Cyrene)"
       - "Cassius Dio 68.32.1-3 (Cyrene under Andreas, Egypt, Cyprus under Artemion)"
@@ -1967,6 +2061,7 @@ events:
       cs: "Chufu (Cheops), stavitel Velké pyramidy v Gíze, se stává králem"
       sv: "Cheops (Khufu), byggare av den stora pyramiden i Giza, blir kung"
       nb: "Khufu (Keops), byggeren av den store pyramiden i Giza, blir konge"
+      tl: "Naging hari si Khufu (Keops), ang nagtayo ng Dakilang Piramide sa Giza"
     site: "442962448"
     sources:
       - "Herodotus 2.124 (Cheops and the building of the pyramid)"
@@ -1991,6 +2086,7 @@ events:
       cs: "Mentuhotep II. se stává králem v Thébách: začátek Střední říše"
       sv: "Mentuhotep II blir kung i Thebe: Mellersta rikets början"
       nb: "Mentuhotep II blir konge i Teben: begynnelsen på Midtre rike"
+      tl: "Naging hari si Mentuhotep II sa Thebes: ang simula ng Gitnang Kaharian"
     place: a9674fc
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), G. Callender, 'The Middle Kingdom Renaissance (c. 2055-1650 BC)' (Mentuhotep II, the reunification later in his reign); chronology (Mentuhotep II 2055-2004 BC)"
@@ -2013,6 +2109,7 @@ events:
       cs: "Chammurapi Babylónský dobývá Mari"
       sv: "Hammurabi av Babylon erövrar Mari"
       nb: "Hammurabi av Babylon erobrer Mari"
+      tl: "Sinakop ni Hammurabi ng Babilonia ang Mari"
     site: "286681704"
     sources:
       - "Year names of Hammurabi 33 ('overthrew in battle the army of Mari and Malgium') and 35a ('destroyed the city walls of Mari and Malgium') (RlA 2, 180)"
@@ -2037,6 +2134,7 @@ events:
       cs: "Ahmose I. dobývá Avaris a vyhání Hyksósy z Egypta"
       sv: "Ahmose I intar Avaris och driver hyksos ut ur Egypten"
       nb: "Ahmose I inntar Avaris og driver hyksosene ut av Egypt"
+      tl: "Kinuha ni Ahmose I ang Avaris at pinalayas ang mga Hyksos mula sa Egipto"
     sources:
       - "Biography of Ahmose son of Ebana, El-Kab (Breasted, Ancient Records of Egypt II, the capture of Avaris §12, the siege of Sharuhen §13)"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), J. Bourriau, 'The Second Intermediate Period (c. 1650-1550 BC)' (Avaris taken between Ahmose's years 18 and 20); chronology (Ahmose 1550-1525 BC)"
@@ -2059,6 +2157,7 @@ events:
       cs: "Achnaton zakládá nové hlavní město Achetaton (Amarna)"
       sv: "Echnaton grundar en ny huvudstad, Achetaten (Amarna)"
       nb: "Akhenaton grunnlegger en ny hovedstad, Akhetaton (Amarna)"
+      tl: "Nagtatag si Akhenaten ng bagong kabisera, ang Akhetaten (Amarna)"
     site: "149576487"
     sources:
       - "The boundary stelae of Akhetaten (Breasted, Ancient Records of Egypt II, §§949-972; the earlier stelae K and X §§952-953; the year-6 date §959)"
@@ -2082,6 +2181,7 @@ events:
       cs: "Ramesse II. a chetitský král Chattušili III. uzavírají mír smlouvou"
       sv: "Ramses II och den hettitiske kungen Hattusili III sluter fred genom ett fördrag"
       nb: "Ramesses II og den hettittiske kongen Hattusili III slutter fred ved traktat"
+      tl: "Nagkasundo sa kapayapaan sina Ramesses II at ang haring Heteo na si Hattusili III sa pamamagitan ng kasunduan"
     sources:
       - "The treaty in the Karnak and Ramesseum copy, dated year 21 (Breasted, Ancient Records of Egypt III, §§367-391; the date §370)"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), J. van Dijk, 'The Amarna Period and the Later New Kingdom' (the treaty in year 21); chronology (Ramesses II from 1279 BC)"
@@ -2103,6 +2203,7 @@ events:
       cs: "Tukulti-Ninurta I. Asyrský dobývá Babylón a odvádí Mardukovu sochu"
       sv: "Tukulti-Ninurta I av Assyrien intar Babylon och för bort Marduks staty"
       nb: "Tukulti-Ninurta I av Assyria inntar Babylon og fører bort Marduks statue"
+      tl: "Kinuha ni Tukulti-Ninurta I ng Asiria ang Babilonia at dinala ang rebulto ni Marduk"
     place: a217d18
     sources:
       - "Chronicle P (ABC 22) iv 3'-6' (the wall of Babylon destroyed, the statue of Marduk sent to Assyria)"
@@ -2128,6 +2229,7 @@ events:
       cs: "Ugarit je zničen"
       sv: "Ugarit förstörs"
       nb: "Ugarit blir ødelagt"
+      tl: "Winasak ang Ugarit"
     site: "Q191369"
     sources:
       - "D. Kaniewski et al., 'The Sea Peoples, from Cuneiform Tablets to Carbon Dating', PLoS ONE 6.6 (2011), e20232 (abstract and discussion: the destructions in the northern Levant 1192-1190 BC; the letter of Bay, RS 86.2230, the last record of the living kingdom)"
@@ -2150,6 +2252,7 @@ events:
       cs: "Šutruk-Nachunte z Élamu odváží Naram-Sínovu stélu ze Sipparu do Sus"
       sv: "Shutruk-Nahhunte av Elam för Naram-Sins stele från Sippar till Susa"
       nb: "Sjutruk-Nahhunte av Elam fører Naram-Sins stele fra Sippar til Susa"
+      tl: "Dinala ni Shutruk-Nahhunte ng Elam ang estela ni Naram-Sin mula sa Sippar patungong Susan"
     place: a033b84
     sources:
       - "The victory stele of Naram-Sin (Louvre, Sb 4): Shutruk-Nahhunte's Middle Elamite inscription on the mountain says he brought it from Sippar; found on the acropolis of Susa"
@@ -2173,6 +2276,7 @@ events:
       cs: "Nová říše končí: Smendes zakládá tanisskou Jednadvacátou dynastii"
       sv: "Nya riket upphör: Smendes grundar den tanitiska tjugoförsta dynastin"
       nb: "Det nye riket tar slutt: Smendes grunnlegger det tanittiske tjueførste dynasti"
+      tl: "Natapos ang Bagong Kaharian: itinatag ni Smendes ang Ikadalawampu't isang Dinastiyang Tanita"
     place: ac31fee
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), J. Taylor, 'The Third Intermediate Period (1069-664 BC)' (Smendes founds the northern dynasty, based at Tanis); chronology (Smendes 1069-1043 BC)"
@@ -2197,6 +2301,7 @@ events:
       cs: "Džoser, stavitel Stupňovité pyramidy v Sakkáře, se stává králem"
       sv: "Djoser, byggare av trappstegspyramiden i Sakkara, blir kung"
       nb: "Djoser, byggeren av trinnpyramiden i Saqqara, blir konge"
+      tl: "Naging hari si Djoser, ang nagtayo ng Piramideng Baitang sa Saqqara"
     site: "796289136"
     sources:
       - "Manetho, fr. 11 (Africanus, in Syncellus): under Tosorthros lived Imuthes (Imhotep), 'the inventor of the art of building with hewn stone' (Waddell, Loeb 1940, pp. 41-43)"
@@ -2220,6 +2325,7 @@ events:
       cs: "Omrí buduje Samaří jako hlavní město Izraele"
       sv: "Omri bygger Samaria som Israels huvudstad"
       nb: "Omri bygger Samaria som hovedstad i Israel"
+      tl: "Itinayo ni Omri ang Samaria bilang kabisera ng Israel"
     place: a041bb3
     ref: 1Kgs.16.24
     sources:
@@ -2244,6 +2350,7 @@ events:
       cs: "Aššurnasirpal II. činí z Kalachu (Kalchu) hlavní město Asýrie"
       sv: "Assurnasirpal II gör Kalach (Kalhu) till Assyriens huvudstad"
       nb: "Assurnasirpal II gjør Kalah (Kalhu) til hovedstad i Assyria"
+      tl: "Ginawa ni Ashurnasirpal II na kabisera ng Asiria ang Calah (Kalhu)"
     place: ae1f807
     sources:
       - "Annals of Ashurnasirpal II (RIMA 2 A.0.101.1 ii 86b-135: the campaign of 879, then 'I reorganized the city Kalhu'; iii 1: in 878 'I moved from the city Kalhu')"
@@ -2267,6 +2374,7 @@ events:
       cs: "Salmanasar III. poráží Chazaela a zavírá ho v Damašku"
       sv: "Salmanassar III besegrar Hasael och spärrar in honom i Damaskus"
       nb: "Salmanassar III beseirer Hasael og stenger ham inne i Damaskus"
+      tl: "Tinalo ni Salmanasar III si Hazael at ikinulong siya sa Damasco"
     place: a69c1d4
     sources:
       - "Annals of Shalmaneser III for his eighteenth year (RIMA 3 A.0.102.8, lines 1''-17'': 'I imprisoned him in Damascus, his royal city', l. 16'')"
@@ -2291,6 +2399,7 @@ events:
       cs: "Adad-nárárí III. vybírá tribut od Damašku a od Joaše Samařského"
       sv: "Adad-nirari III tar emot tribut från Damaskus och från Joas av Samaria"
       nb: "Adad-nirari III krever skatt av Damaskus og av Joasj av Samaria"
+      tl: "Tumanggap si Adad-nirari III ng tributo mula sa Damasco at kay Joas ng Samaria"
     place: a69c1d4
     sources:
       - "The Tell al-Rimah stele of Adad-nirari III (RIMA 3 A.0.104.7, lines 4-8: 'the payment of Joash of the land Samaria')"
@@ -2313,6 +2422,7 @@ events:
       cs: "Zatmění Slunce v roce Bur-Saggile: opora asyrského datování"
       sv: "En solförmörkelse under Bur-Sagales år: ankaret för de assyriska dateringarna"
       nb: "En solformørkelse i Bur-Saggiles år: ankeret for de assyriske dateringene"
+      tl: "Isang eklipse ng araw sa taon ni Bur-Saggile: ang sandigan ng mga petsa ng Asiria"
     sources:
       - "Eponym Chronicle for 763 BC (Bur-Saggile, governor of Guzana: 'in Simanu eclipse of the sun', 15 June 763)"
       - "NASA Eclipse Web Site (F. Espenak), Besselian elements of the total solar eclipse of -762 June 15 (= 15 June 763 BC)"
@@ -2334,6 +2444,7 @@ events:
       cs: "Tiglatpilesar III. se stává králem Asýrie"
       sv: "Tiglat-Pileser III blir kung av Assyrien"
       nb: "Tiglat-Pileser III blir konge av Assyria"
+      tl: "Naging hari ng Asiria si Tiglath-pileser III"
     sources:
       - "Eponym Chronicle for 745 BC ('in Ajaru, the thirteenth, Tiglath-pileser ascended the throne')"
       - "Babylonian Chronicle, ABC 1 i 1-2 (the third year of Nabonassar)"
@@ -2357,6 +2468,7 @@ events:
       cs: "Zemětřesení a požár ničí Antiochii"
       sv: "En jordbävning och en brand förstör Antiochia"
       nb: "Et jordskjelv og en brann ødelegger Antiokia"
+      tl: "Winasak ng lindol at sunog ang Antioquia"
     place: ae41ab4
     sources:
       - "John Malalas, Chronicle, book 17 (the reign of Justin I; late May, in the seventh year of Justin)"
@@ -2379,6 +2491,7 @@ events:
       cs: "Samaritánské povstání Juliana ben Sabara"
       sv: "Julian ben Sabars samaritiska uppror"
       nb: "Det samaritanske opprøret under Julian ben Sabar"
+      tl: "Ang paghihimagsik ng mga Samaritano ni Juliano ben Sabar"
     sources:
       - "John Malalas, Chronicle, book 18 (the reign of Justinian)"
       - "Cyril of Scythopolis, Life of Sabas"
@@ -2400,6 +2513,7 @@ events:
       cs: "Justinianus zakazuje vyučování filozofie v Aténách"
       sv: "Justinianus förbjuder undervisning i filosofi i Aten"
       nb: "Justinian forbyr undervisning i filosofi i Aten"
+      tl: "Ipinagbawal ni Justiniano ang pagtuturo ng pilosopiya sa Atenas"
     place: a1fe6e7
     sources:
       - "John Malalas, Chronicle, book 18 (the consulship of Decius, 529)"
@@ -2420,6 +2534,7 @@ events:
       cs: "Justinianus vysvěcuje novou Hagii Sofii v Konstantinopoli"
       sv: "Justinianus invigar den nya Hagia Sofia i Konstantinopel"
       nb: "Justinian innvier den nye Hagia Sofia i Konstantinopel"
+      tl: "Itinalaga ni Justiniano ang bagong Hagia Sophia sa Constantinopla"
     site: "Q16869"
     sources:
       - "Procopius, Buildings 1.1.20-78"
@@ -2440,6 +2555,7 @@ events:
       cs: "Chosrau I. Perský plení Antiochii"
       sv: "Khosrau I av Persien plundrar Antiochia"
       nb: "Khosrau I av Persia plyndrer Antiokia"
+      tl: "Sinamsam ni Cosroes I ng Persia ang Antioquia"
     place: ae41ab4
     sources:
       - "Procopius, Wars 2.8-9"
@@ -2461,6 +2577,7 @@ events:
       cs: "V egyptském Pelúsiu propuká mor a šíří se po celé říši"
       sv: "Pesten bryter ut i Pelusium i Egypten och sprider sig över riket"
       nb: "Pest bryter ut i Pelusium i Egypt og sprer seg over hele riket"
+      tl: "Sumiklab ang salot sa Pelusium sa Egipto at kumalat sa buong imperyo"
     place: aa32a17
     sources:
       - "Procopius, Wars 2.22-23 (2.22.6: it started at Pelusium)"
@@ -2482,6 +2599,7 @@ events:
       cs: "V Jeruzalémě je vysvěcen Justinianův Nový kostel Matky Boží (Nea)"
       sv: "Justinianus Nya kyrka för Guds moder (Nea) invigs i Jerusalem"
       nb: "Justinians Nea-kirke (Guds mors nye kirke) blir innviet i Jerusalem"
+      tl: "Itinalaga sa Jerusalem ang Bagong Simbahan ng Ina ng Diyos (ang Nea) ni Justiniano"
     place: a15257a
     sources:
       - "Procopius, Buildings 5.6"
@@ -2503,6 +2621,7 @@ events:
       cs: "Druhý konstantinopolský koncil"
       sv: "Det andra konciliet i Konstantinopel"
       nb: "Det andre kirkemøtet i Konstantinopel"
+      tl: "Ang Ikalawang Konseho ng Constantinopla"
     site: "Q16869"
     sources:
       - "Evagrius, Church History 4.38"
@@ -2525,6 +2644,7 @@ events:
       cs: "V kostele v Madabě je položena mozaiková mapa Svaté země"
       sv: "Mosaikkartan över det heliga landet läggs i en kyrka i Madaba"
       nb: "Kartet i mosaikk over Det hellige land legges i en kirke i Madaba"
+      tl: "Inilatag ang mosaikong mapa ng Banal na Lupain sa isang simbahan sa Madaba"
     place: af4f21c
     sources:
       - "H. Donner, The Mosaic Map of Madaba: An Introductory Guide (1992)"
@@ -2547,6 +2667,7 @@ events:
       cs: "Při úpatí hory Sinaj je postaven Justinianův opevněný klášter (klášter sv. Kateřiny)"
       sv: "Justinianus befästa kloster byggs vid foten av Sinaiberget (S:ta Katarina)"
       nb: "Justinians befestede kloster bygges ved foten av Sinai (Katarinaklosteret)"
+      tl: "Itinayo ang may-kutang monasteryo ni Justiniano sa paanan ng Bundok Sinai (ni Santa Catalina)"
     place: abfba2a
     sources:
       - "Procopius, Buildings 5.8"
@@ -2567,6 +2688,7 @@ events:
       cs: "Řehoř Veliký se stává římským biskupem"
       sv: "Gregorius den store blir biskop av Rom"
       nb: "Gregor den store blir biskop av Roma"
+      tl: "Naging obispo ng Roma si Gregorio Magno"
     place: afc8e7a
     sources:
       - "Gregory of Tours, History of the Franks 10.1"
@@ -2589,6 +2711,7 @@ events:
       cs: "Peršané dobývají Jeruzalém a odvážejí relikvii Kříže"
       sv: "Perserna intar Jerusalem och för bort korsreliken"
       nb: "Perserne inntar Jerusalem og fører bort Korsrelikvien"
+      tl: "Kinuha ng mga Persiano ang Jerusalem at dinala ang relikya ng Krus"
     place: a15257a
     sources:
       - "Antiochus Strategos, The Capture of Jerusalem by the Persians in 614"
@@ -2611,6 +2734,7 @@ events:
       cs: "Mohamed se z Mekky stěhuje do Mediny (hidžra), první rok islámského kalendáře"
       sv: "Muhammed flyttar från Mecka till Medina (hijra), år ett i den islamiska tideräkningen"
       nb: "Muhammed utvandrer fra Mekka til Medina (hidjra), år én i den islamske tidsregning"
+      tl: "Lumikas si Muhammad mula sa Mecca patungong Medina (ang Hijra), unang taon ng kalendaryong Islamiko"
     site: "814688"
     sources:
       - "Ibn Ishaq, Life of the Messenger of God (tr. A. Guillaume, The Life of Muhammad, 1955)"
@@ -2631,6 +2755,7 @@ events:
       cs: "Herakleios poráží Peršany u Ninive"
       sv: "Herakleios besegrar perserna nära Nineve"
       nb: "Herakleios beseirer perserne ved Ninive"
+      tl: "Tinalo ni Heraclio ang mga Persiano malapit sa Ninive"
     place: a70fd5d
     sources:
       - "Theophanes, Chronicle, AM 6118 (12 December)"
@@ -2652,6 +2777,7 @@ events:
       cs: "Herakleios přináší relikvii Kříže zpět do Jeruzaléma"
       sv: "Herakleios för korsreliken tillbaka till Jerusalem"
       nb: "Herakleios bringer Korsrelikvien tilbake til Jerusalem"
+      tl: "Ibinalik ni Heraclio ang relikya ng Krus sa Jerusalem"
     place: a15257a
     sources:
       - "Theophanes, Chronicle, AM 6120"
@@ -2675,6 +2801,7 @@ events:
       cs: "Arabové porážejí byzantské vojsko na Jarmúku"
       sv: "Araberna besegrar den bysantinska hären vid Yarmuk"
       nb: "Araberne beseirer den bysantinske hæren ved Yarmuk"
+      tl: "Tinalo ng mga Arabe ang hukbong Bizantino sa Yarmuk"
     # The field: Plateau north of the Yarmuk river by the Wadi al-Ruqqad, southeast of the Sea of Galilee (approximate).
     battlefield: { lon: 35.955, lat: 32.814, source: "https://www.wikidata.org/wiki/Q194226" }
     sources:
@@ -2698,6 +2825,7 @@ events:
       cs: "Jeruzalém se vzdává chalífovi Umarovi"
       sv: "Jerusalem kapitulerar för kalifen Umar"
       nb: "Jerusalem overgir seg til kalifen Umar"
+      tl: "Sumuko ang Jerusalem sa kalipa na si Umar"
     place: a15257a
     sources:
       - "Theophanes, Chronicle, AM 6127 (Sophronius and Umar)"
@@ -2721,6 +2849,7 @@ events:
       cs: "Po dlouhém obléhání Arabové dobývají Cesareu, hlavní město byzantské Palestiny"
       sv: "Efter en lång belägring intar araberna Caesarea, det bysantinska Palestinas huvudstad"
       nb: "Etter en lang beleiring inntar araberne Cæsarea, hovedstaden i bysantinsk Palestina"
+      tl: "Pagkaraan ng mahabang pagkubkob, kinuha ng mga Arabe ang Cesarea, ang kabisera ng Palestinang Bizantino"
     place: a58735e
     sources:
       - "al-Baladhuri, The Conquest of the Lands (Futuh al-buldan), on Caesarea"
@@ -2742,6 +2871,7 @@ events:
       cs: "Poslední byzantští vojáci opouštějí Alexandrii; Egypt přechází na Araby"
       sv: "De sista bysantinska trupperna lämnar Alexandria; Egypten övergår till araberna"
       nb: "De siste bysantinske troppene forlater Aleksandria; Egypt går over til araberne"
+      tl: "Umalis ang huling tropang Bizantino sa Alejandria; napunta ang Egipto sa mga Arabe"
     place: aee7248
     sources:
       - "John of Nikiu, Chronicle 120.72 (Theodore and his troops sail for Cyprus)"
@@ -2762,6 +2892,7 @@ events:
       cs: "Otevírá se Třetí konstantinopolský koncil"
       sv: "Det tredje konciliet i Konstantinopel öppnas"
       nb: "Det tredje kirkemøtet i Konstantinopel åpner"
+      tl: "Nagbukas ang Ikatlong Konseho ng Constantinopla"
     site: "Q16869"
     sources:
       - "Theophanes, Chronicle, AM 6172"
@@ -2786,6 +2917,7 @@ events:
       cs: "Na Chrámové hoře je postaven Skalní dóm"
       sv: "Klippdomen byggs på Tempelberget"
       nb: "Klippedomen blir bygget på Tempelhøyden"
+      tl: "Itinayo ang Simboryo ng Bato sa Bundok ng Templo"
     place: a15257a
     sources:
       - "The mosaic inscription of the inner octagon (AH 72), in O. Grabar, The Dome of the Rock (2006)"
@@ -2806,6 +2938,7 @@ events:
       cs: "Začíná arabské obléhání Konstantinopole; příští rok je zrušeno"
       sv: "Arabernas belägring av Konstantinopel börjar; den hävs året därpå"
       nb: "Arabernes beleiring av Konstantinopel begynner; den oppheves året etter"
+      tl: "Nagsimula ang pagkubkob ng mga Arabe sa Constantinopla; inalis ito sa sumunod na taon"
     site: "Q16869"
     sources:
       - "Theophanes, Chronicle, AM 6209-6210"
@@ -2828,6 +2961,7 @@ events:
       cs: "Zemětřesení pustoší Skythopolis (Bét-šan), Pellu, Gadaru a Tiberias"
       sv: "En jordbävning lägger Skytopolis (Bet-Shean), Pella, Gadara och Tiberias i ruiner"
       nb: "Et jordskjelv ødelegger Skytopolis (Bet-Sjean), Pella, Gadara og Tiberias"
+      tl: "Winasak ng isang lindol ang Scythopolis (Beth-san), Pella, Gadara at Tiberias"
     place: a2a8df0
     sources:
       - "Theophanes, Chronicle, AM 6238"
@@ -2848,6 +2982,7 @@ events:
       cs: "Abbásovci svrhávají umajjovský chalífát"
       sv: "Abbasiderna störtar umayyadkalifatet"
       nb: "Abbasidene styrter umayyade-kalifatet"
+      tl: "Pinabagsak ng mga Abbasida ang kalipatong Umayyad"
     sources:
       - "al-Tabari, History, years 132-133 AH"
       - "H. Kennedy, The Prophet and the Age of the Caliphates (3rd ed., 2016)"
@@ -2867,6 +3002,7 @@ events:
       cs: "Chalífa al-Mansúr zakládá Bagdád"
       sv: "Kalifen al-Mansur grundar Bagdad"
       nb: "Kalifen al-Mansur grunnlegger Bagdad"
+      tl: "Itinatag ng kalipa na si al-Mansur ang Baghdad"
     site: "893952"
     sources:
       - "al-Tabari, History, year 145 AH"
@@ -2887,6 +3023,7 @@ events:
       cs: "Druhý nikajský koncil obnovuje uctívání ikon"
       sv: "Det andra konciliet i Nicaea återställer vördnaden för ikoner"
       nb: "Det andre kirkemøtet i Nikea gjeninnfører ikonvørdelsen"
+      tl: "Ibinalik ng Ikalawang Konseho ng Nicea ang paggalang sa mga icono"
     site: "511268"
     sources:
       - "Theophanes, Chronicle, AM 6280"
@@ -2907,6 +3044,7 @@ events:
       cs: "Papež Lev III. korunuje v Římě Karla Velikého císařem"
       sv: "Påve Leo III kröner Karl den store till kejsare i Rom"
       nb: "Pave Leo III kroner Karl den store til keiser i Roma"
+      tl: "Kinoronahan ni Papa Leon III si Carlomagno bilang emperador sa Roma"
     place: afc8e7a
     sources:
       - "Royal Frankish Annals, s.a. 801 (Christmas Day, with which their year begins)"
@@ -2927,6 +3065,7 @@ events:
       cs: "Koncil v Konstantinopoli navždy obnovuje ikony (Triumf pravoslaví)"
       sv: "Ett koncilium i Konstantinopel återinför ikonerna för gott (ortodoxins triumf)"
       nb: "Et kirkemøte i Konstantinopel gjeninnfører ikonene for godt (ortodoksiens triumf)"
+      tl: "Tuluyang ibinalik ng isang konseho sa Constantinopla ang mga icono (ang Tagumpay ng Ortodoksiya)"
     site: "Q16869"
     sources:
       - "Theophanes Continuatus, book 4 (the reign of Michael III)"
@@ -2949,6 +3088,7 @@ events:
       cs: "Arabská flotila pod Lvem z Tripolisu plení Soluň"
       sv: "En arabisk flotta under Leo av Tripoli plundrar Tessalonike"
       nb: "En arabisk flåte under Leo av Tripoli plyndrer Tessalonika"
+      tl: "Sinamsam ng isang hukbong-dagat ng mga Arabe sa ilalim ni Leon ng Tripoli ang Tesalonica"
     place: afa9d8e
     sources:
       - "John Kaminiates, The Capture of Thessaloniki"
@@ -2971,6 +3111,7 @@ events:
       cs: "V Tiberiadě je napsán Aleppský kodex, vzorová masoretská Bible"
       sv: "Aleppokodex, förebilden för den masoretiska bibeln, skrivs i Tiberias"
       nb: "Aleppo-kodeksen, mønsterutgaven av den masoretiske bibel, blir skrevet i Tiberias"
+      tl: "Isinulat sa Tiberias ang Codex ng Aleppo, ang huwarang Bibliyang Masoretiko"
     place: ac9adc9
     sources:
       - "Maimonides, Mishneh Torah, Laws of the Torah Scroll 8.4 (the codex of Ben Asher)"
@@ -2991,6 +3132,7 @@ events:
       cs: "Nikéforos Fókas dobývá Chandax a vrací Krétu Byzanci"
       sv: "Nikeforos Fokas intar Chandax och återlämnar Kreta till Bysans"
       nb: "Nikeforos Fokas inntar Chandax og gir Kreta tilbake til Bysants"
+      tl: "Kinuha ni Nicéforo Focas ang Chandax at ibinalik ang Creta sa Bizancio"
     place: a26aa94
     sources:
       - "Leo the Deacon, History, books 1-2"
@@ -3011,6 +3153,7 @@ events:
       cs: "Tarsos se vzdává Nikéforu II. Fókovi"
       sv: "Tarsos kapitulerar för Nikeforos II Fokas"
       nb: "Tarsos overgir seg til Nikeforos II Fokas"
+      tl: "Sumuko ang Tarso kay Nicéforo II Focas"
     place: a666ea0
     sources:
       - "Leo the Deacon, History (tr. A.-M. Talbot and D. F. Sullivan, 2005)"
@@ -3031,6 +3174,7 @@ events:
       cs: "Fátimovci dobývají Egypt; vedle Fustátu je založena Káhira"
       sv: "Fatimiderna intar Egypten; Kairo grundas intill Fustat"
       nb: "Fatimidene inntar Egypt; Kairo grunnlegges ved siden av Fustat"
+      tl: "Kinuha ng mga Fatimida ang Egipto; itinatag ang Cairo sa tabi ng Fustat"
     place: af301ca
     sources:
       - "al-Maqrizi, Itti'az al-hunafa', year 358 AH"
@@ -3051,6 +3195,7 @@ events:
       cs: "Byzantinci znovu dobývají Antiochii"
       sv: "Bysantinerna återtar Antiochia"
       nb: "Bysantinerne gjenerobrer Antiokia"
+      tl: "Muling nakuha ng mga Bizantino ang Antioquia"
     place: ae41ab4
     sources:
       - "Leo the Deacon, History, book 5"
@@ -3075,6 +3220,7 @@ events:
       cs: "V Káhiře je opsán Leningradský kodex, nejstarší úplná hebrejská Bible"
       sv: "Leningradkodex, den äldsta kompletta hebreiska bibeln, avskrivs i Kairo"
       nb: "Leningrad-kodeksen, den eldste fullstendige hebraiske bibel, blir kopiert i Kairo"
+      tl: "Kinopya sa Cairo ang Codex ng Leningrad, ang pinakamatandang kumpletong Bibliyang Hebreo"
     place: af301ca
     sources:
       - "The colophon of the codex (National Library of Russia, St Petersburg, Firkovich B 19 A)"
@@ -3095,6 +3241,7 @@ events:
       cs: "Chalífa al-Hákim nařizuje zničit chrám Božího hrobu"
       sv: "Kalifen al-Hakim befaller att Den heliga gravens kyrka ska förstöras"
       nb: "Kalifen al-Hakim befaler at Gravkirken skal rives"
+      tl: "Ipinag-utos ng kalipa na si al-Hakim na wasakin ang Simbahan ng Banal na Libingan"
     place: a631d35
     sources:
       - "Yahya of Antioch, Chronicle, under 400 AH"
@@ -3115,6 +3262,7 @@ events:
       cs: "Chrám Božího hrobu je přestavěn s pomocí Konstantina IX."
       sv: "Den heliga gravens kyrka byggs upp igen med Konstantin IX:s hjälp"
       nb: "Gravkirken blir gjenreist med støtte fra Konstantin IX"
+      tl: "Muling itinayo ang Simbahan ng Banal na Libingan sa tulong ni Constantino IX"
     place: a631d35
     sources:
       - "William of Tyre, Chronicle 1.4-6 (1.6: rebuilt in 1048)"
@@ -3135,6 +3283,7 @@ events:
       cs: "Papežští legáti a patriarcha Michael Kerullarios se v Konstantinopoli navzájem exkomunikují"
       sv: "Påvliga legater och patriarken Mikael Kerularios bannlyser varandra i Konstantinopel"
       nb: "Pavelige legater og patriarken Mikael Kerularios bannlyser hverandre i Konstantinopel"
+      tl: "Nagpataw ng ekskomunyon sa isa't isa ang mga lehado ng papa at ang patriyarkang si Miguel Cerulario sa Constantinopla"
     site: "Q16869"
     sources:
       - "Humbert of Silva Candida, Brief and Succinct Account (Commemoratio brevis), with the bull of 16 July"
@@ -3156,6 +3305,7 @@ events:
       cs: "Seldžucký sultán Alp Arslan poráží a zajímá Romana IV. u Manzikertu"
       sv: "Seldjukernas sultan Alp Arslan besegrar och tillfångatar Romanos IV vid Manzikert"
       nb: "Seldsjukk-sultanen Alp Arslan beseirer og tar Romanos IV til fange ved Manzikert"
+      tl: "Tinalo at binihag ng sultang Seljuk na si Alp Arslan si Romano IV sa Manzikert"
     # The field: Malazgirt plain near Manzikert (Malazgirt), Muş Province, eastern Turkey (approximate).
     battlefield: { lon: 42.59, lat: 39.1, source: "https://www.wikidata.org/wiki/Q200032" }
     sources:
@@ -3178,6 +3328,7 @@ events:
       cs: "První křížová výprava dobývá Antiochii po dlouhém obléhání"
       sv: "Det första korståget intar Antiochia efter en lång belägring"
       nb: "Det første korstog inntar Antiokia etter en lang beleiring"
+      tl: "Kinuha ng Unang Krusada ang Antioquia pagkaraan ng mahabang pagkubkob"
     place: ae41ab4
     sources:
       - "Gesta Francorum 8.20"
@@ -3198,6 +3349,7 @@ events:
       cs: "První křížová výprava dobývá Jeruzalém"
       sv: "Det första korståget intar Jerusalem"
       nb: "Det første korstog inntar Jerusalem"
+      tl: "Kinuha ng Unang Krusada ang Jerusalem"
     place: a15257a
     sources:
       - "Gesta Francorum 10.38"
@@ -3219,6 +3371,7 @@ events:
       cs: "Balduin I. je v Betlémě korunován prvním jeruzalémským králem"
       sv: "Balduin I kröns till Jerusalems förste kung i Betlehem"
       nb: "Balduin I blir kronet til Jerusalems første konge i Betlehem"
+      tl: "Kinoronahan si Balduino I bilang unang hari ng Jerusalem sa Bethlehem"
     place: a112427
     sources:
       - "Fulcher of Chartres, History of the Expedition to Jerusalem, book 2 (Christmas Day)"
@@ -3243,6 +3396,7 @@ events:
       cs: "Balduin I. dobývá Akko s janovskou flotilou"
       sv: "Balduin I intar Akko med en genuesisk flotta"
       nb: "Balduin I inntar Akko med en genovesisk flåte"
+      tl: "Kinuha ni Balduino I ang Acre sa tulong ng isang hukbong-dagat ng mga Genoves"
     place: abc2af0
     sources:
       - "Fulcher of Chartres, History of the Expedition to Jerusalem, book 2"
@@ -3263,6 +3417,7 @@ events:
       cs: "Týr se vzdává Jeruzalémskému království a Benátčanům"
       sv: "Tyros kapitulerar för Kungariket Jerusalem och venetianerna"
       nb: "Tyros overgir seg til Kongeriket Jerusalem og venetianerne"
+      tl: "Sumuko ang Tiro sa Kaharian ng Jerusalem at sa mga Veneciano"
     place: a160272
     sources:
       - "Fulcher of Chartres, History of the Expedition to Jerusalem, book 3"
@@ -3284,6 +3439,7 @@ events:
       cs: "Zengí dobývá Edessu, hlavní město prvního křižáckého státu"
       sv: "Zengi intar Edessa, den första korsfararstatens huvudstad"
       nb: "Zengi inntar Edessa, hovedstaden i den første korsfarerstaten"
+      tl: "Kinuha ni Zengi ang Edessa, ang kabisera ng unang estado ng mga Krusado"
     site: "658457"
     sources:
       - "William of Tyre, Chronicle 16.4-5"
@@ -3304,6 +3460,7 @@ events:
       cs: "Druhá křížová výprava selhává před Damaškem"
       sv: "Det andra korståget misslyckas inför Damaskus"
       nb: "Det andre korstog mislykkes foran Damaskus"
+      tl: "Nabigo ang Ikalawang Krusada sa harap ng Damasco"
     place: a69c1d4
     sources:
       - "William of Tyre, Chronicle 17.2-7"
@@ -3324,6 +3481,7 @@ events:
       cs: "Přestavěný chrám Božího hrobu je vysvěcen"
       sv: "Den heliga gravens kyrka, nu ombyggd, invigs"
       nb: "Den gjenoppbygde Gravkirken blir viet"
+      tl: "Itinalaga ang muling itinayong Simbahan ng Banal na Libingan"
     place: a631d35
     sources:
       - "D. Pringle, The Churches of the Crusader Kingdom of Jerusalem, vol. 3 (2007) (15 July 1149)"
@@ -3343,6 +3501,7 @@ events:
       cs: "Balduin III. dobývá Aškelon, poslední fátimidskou pevnost na pobřeží Palestiny"
       sv: "Balduin III intar Askalon, den sista fatimidiska fästningen på Palestinas kust"
       nb: "Balduin III inntar Askalon, den siste fatimidiske festning på Palestinas kyst"
+      tl: "Kinuha ni Balduino III ang Ascalon, ang huling kutang Fatimida sa baybayin ng Palestina"
     place: ac87d4c
     sources:
       - "William of Tyre, Chronicle 17.21-30"
@@ -3363,6 +3522,7 @@ events:
       cs: "Saladin ukončuje fátimský chalífát v Egyptě"
       sv: "Saladin gör slut på fatimidkalifatet i Egypten"
       nb: "Saladin gjør slutt på fatimide-kalifatet i Egypt"
+      tl: "Tinapos ni Saladino ang kalipatong Fatimida sa Egipto"
     place: af301ca
     sources:
       - "Ibn al-Athir, The Complete History, year 567 AH"
@@ -3384,6 +3544,7 @@ events:
       cs: "Maimonides dokončuje v Egyptě Mišne Tora"
       sv: "Maimonides slutför Mishne Tora i Egypten"
       nb: "Maimonides fullfører Mishneh Torah i Egypt"
+      tl: "Tinapos ni Maimonides ang Mishneh Torah sa Egipto"
     place: af301ca
     sources:
       - "I. Twersky, Introduction to the Code of Maimonides (Mishneh Torah) (1980)"
@@ -3406,6 +3567,7 @@ events:
       cs: "Saladin poráží vojsko Jeruzalémského království u Hattínu"
       sv: "Saladin besegrar Kungariket Jerusalems här vid Hattin"
       nb: "Saladin beseirer hæren til Kongeriket Jerusalem ved Hattin"
+      tl: "Tinalo ni Saladino ang hukbo ng Kaharian ng Jerusalem sa Hattin"
     # The field: Horns of Hattin, twin-peaked hill west of Tiberias, Lower Galilee (firm).
     battlefield: { lon: 35.46, lat: 32.798, source: "https://www.wikidata.org/wiki/Q233568" }
     sources:
@@ -3428,6 +3590,7 @@ events:
       cs: "Jeruzalém se vzdává Saladinovi"
       sv: "Jerusalem kapitulerar för Saladin"
       nb: "Jerusalem overgir seg til Saladin"
+      tl: "Sumuko ang Jerusalem kay Saladino"
     place: a15257a
     sources:
       - "Imad al-Din al-Isfahani, The Conquest of Jerusalem (al-Fath al-qussi)"
@@ -3448,6 +3611,7 @@ events:
       cs: "Richard I. Anglický dobývá Kypr na cestě do Svaté země"
       sv: "Rikard I av England intar Cypern på väg till det heliga landet"
       nb: "Richard I av England inntar Kypros på vei til Det hellige land"
+      tl: "Kinuha ni Ricardo I ng Inglatera ang Chipre patungo sa Banal na Lupain"
     place: a2e7601
     sources:
       - "Itinerarium Peregrinorum et Gesta Regis Ricardi, book 2"
@@ -3467,6 +3631,7 @@ events:
       cs: "Třetí křížová výprava znovu dobývá Akko po dvouletém obléhání"
       sv: "Det tredje korståget återtar Akko efter en två år lång belägring"
       nb: "Det tredje korstog gjenerobrer Akko etter en toårig beleiring"
+      tl: "Muling nakuha ng Ikatlong Krusada ang Acre pagkaraan ng dalawang taóng pagkubkob"
     place: abc2af0
     sources:
       - "Itinerarium Peregrinorum et Gesta Regis Ricardi, book 3"
@@ -3489,6 +3654,7 @@ events:
       cs: "Richard I. a Saladin uzavírají tříleté příměří (Jaffská smlouva); poutníci smějí navštívit Jeruzalém"
       sv: "Rikard I och Saladin sluter ett treårigt vapenstillestånd (fördraget i Jaffa); pilgrimer får besöka Jerusalem"
       nb: "Richard I og Saladin slutter en treårig våpenhvile (Jaffa-traktaten); pilegrimer kan besøke Jerusalem"
+      tl: "Nagkasundo sina Ricardo I at Saladino sa tatlong taóng tigil-putukan (ang Kasunduan ng Jaffa); maaaring dumalaw ang mga peregrino sa Jerusalem"
     place: ae023a9
     sources:
       - "Baha al-Din Ibn Shaddad, The Rare and Excellent History of Saladin (tr. D. S. Richards, 2001)"
@@ -3511,6 +3677,7 @@ events:
       cs: "Čtvrtá křížová výprava dobývá a plení Konstantinopol"
       sv: "Det fjärde korståget intar och plundrar Konstantinopel"
       nb: "Det fjerde korstog inntar og plyndrer Konstantinopel"
+      tl: "Kinuha at sinamsam ng Ikaapat na Krusada ang Constantinopla"
     site: "Q16869"
     sources:
       - "Niketas Choniates, History (O City of Byzantium, tr. H. J. Magoulias, 1984)"
@@ -3531,6 +3698,7 @@ events:
       cs: "Smlouvou s al-Kámilem získává Fridrich II. Jeruzalém zpět bez bitvy"
       sv: "Genom ett fördrag med al-Kamil återvinner Fredrik II Jerusalem utan strid"
       nb: "Ved en traktat med al-Kamil får Frederik II Jerusalem tilbake uten kamp"
+      tl: "Sa pamamagitan ng kasunduan kay al-Kamil, nabawi ni Federico II ang Jerusalem nang walang labanan"
     place: a15257a
     sources:
       - "Roger of Wendover, Flowers of History, s.a. 1229 (Frederick's letter)"
@@ -3551,6 +3719,7 @@ events:
       cs: "Chórezmské oddíly dobývají a plení Jeruzalém"
       sv: "Khwarezmiska trupper intar och plundrar Jerusalem"
       nb: "Khwarazmiske tropper inntar og plyndrer Jerusalem"
+      tl: "Kinuha at sinamsam ng mga tropang Khwarazmiano ang Jerusalem"
     place: a15257a
     sources:
       - "Matthew Paris, Chronica Majora, s.a. 1244"
@@ -3570,6 +3739,7 @@ events:
       cs: "Mamlúkové přebírají moc v Egyptě"
       sv: "Mamlukerna tar makten i Egypten"
       nb: "Mamelukkene tar makten i Egypt"
+      tl: "Nakuha ng mga Mamluk ang kapangyarihan sa Egipto"
     place: af301ca
     sources:
       - "Jean de Joinville, Life of Saint Louis"
@@ -3591,6 +3761,7 @@ events:
       cs: "Mongolové pod Hülegüem dobývají Bagdád; abbásovský chalífát končí"
       sv: "Mongolerna under Hülegü intar Bagdad; abbasidkalifatet upphör"
       nb: "Mongolene under Hülegü inntar Bagdad; abbasidenes kalifat tar slutt"
+      tl: "Kinuha ng mga Mongol sa ilalim ni Hülegü ang Baghdad; natapos ang kalipatong Abbasida"
     site: "893952"
     sources:
       - "Rashid al-Din, Compendium of Chronicles (Jami' al-tawarikh), the reign of Hülegü"
@@ -3612,6 +3783,7 @@ events:
       cs: "Mamlúkové porážejí Mongoly u Ajn Džalútu (pramen Charod)"
       sv: "Mamlukerna besegrar mongolerna vid Ajin Jalut (Harods källa)"
       nb: "Mamelukkene beseirer mongolene ved Ain Jalut (Harod-kilden)"
+      tl: "Tinalo ng mga Mamluk ang mga Mongol sa Ain Jalut (ang bukal ng Harod)"
     place: ae3cace
     sources:
       - "al-Maqrizi, Kitab al-suluk, year 658 AH"
@@ -3632,6 +3804,7 @@ events:
       cs: "Nikajské vojsko Michaela VIII. Palaiologa znovu dobývá Konstantinopol"
       sv: "Den nikeanska hären under Mikael VIII Palaiologos återtar Konstantinopel"
       nb: "Den nikenske hæren til Mikael VIII Palaiologos gjenerobrer Konstantinopel"
+      tl: "Muling nakuha ng hukbong Niceno ni Miguel VIII Paleologo ang Constantinopla"
     site: "Q16869"
     sources:
       - "George Akropolites, The History (tr. R. Macrides, 2007), the recovery of 1261"
@@ -3651,6 +3824,7 @@ events:
       cs: "Bajbars dobývá Cesareu a rozboří ji"
       sv: "Baybars intar Caesarea och jämnar det med marken"
       nb: "Baybars inntar Cæsarea og jevner den med jorden"
+      tl: "Kinuha ni Baybars ang Cesarea at winasak ito"
     place: a58735e
     sources:
       - "Ibn Abd al-Zahir, Life of Baybars (al-Rawd al-zahir)"
@@ -3671,6 +3845,7 @@ events:
       cs: "Nachmanides přichází do Jeruzaléma a obnovuje synagogu"
       sv: "Nachmanides anländer till Jerusalem och återställer en synagoga"
       nb: "Nahmanides kommer til Jerusalem og gjenoppretter en synagoge"
+      tl: "Dumating si Nahmanides sa Jerusalem at ipinaayos ang isang sinagoga"
     place: a15257a
     sources:
       - "Nahmanides, Letter to his son Nahman from Jerusalem"
@@ -3690,6 +3865,7 @@ events:
       cs: "Bajbars dobývá Antiochii"
       sv: "Baybars intar Antiochia"
       nb: "Baybars inntar Antiokia"
+      tl: "Kinuha ni Baybars ang Antioquia"
     place: ae41ab4
     sources:
       - "Ibn Abd al-Zahir, Life of Baybars (al-Rawd al-zahir), with Baybars' letter to Bohemond VI"
@@ -3710,6 +3886,7 @@ events:
       cs: "Mamlúkové dobývají Akko, poslední velkou křižáckou pevnost ve Svaté zemi"
       sv: "Mamlukerna intar Akko, den sista stora korsfararfästningen i det heliga landet"
       nb: "Mamelukkene inntar Akko, den siste store korsfarerfestningen i Det hellige land"
+      tl: "Kinuha ng mga Mamluk ang Acre, ang huling dakilang muog ng mga Krusado sa Banal na Lupain"
     place: abc2af0
     sources:
       - "The Templar of Tyre, Gestes des Chiprois, part 3"
@@ -3735,6 +3912,7 @@ events:
       cs: "Královské hřbitovy v Uru: Puabi a další vládci jsou pohřbeni se svým doprovodem"
       sv: "Urs kungagravplats: Puabi och andra härskare begravs med sitt följe"
       nb: "Kongegravplassen i Ur: Puabi og andre herskere blir gravlagt med sitt følge"
+      tl: "Ang Maharlikang Sementeryo ng Ur: inilibing sina Puabi at iba pang pinuno kasama ang kanilang mga tagapaglingkod"
     place: a6cf75c
     sources:
       - "C. L. Woolley, Ur Excavations II: The Royal Cemetery (1934)"
@@ -3755,6 +3933,7 @@ events:
       cs: "Eannatum z Lagaše poráží Ummu a staví Supí stélu"
       sv: "Eannatum av Lagash besegrar Umma och reser Gamstelen"
       nb: "Eannatum av Lagasj beseirer Umma og reiser Gribbestelen"
+      tl: "Tinalo ni Eannatum ng Lagash ang Umma at itinayo ang Estela ng mga Buwitre"
     site: "959120263"
     sources:
       - "The Stele of the Vultures (Louvre AO 50, AO 16109 and other fragments; RIME 1.9.3.1)"
@@ -3776,6 +3955,7 @@ events:
       cs: "Urukagina z Lagaše vyhlašuje své reformy"
       sv: "Uruinimgina av Lagash utropar sina reformer"
       nb: "Uruinimgina av Lagasj kunngjør sine reformer"
+      tl: "Ipinahayag ni Uruinimgina ng Lagash ang kaniyang mga pagbabago"
     site: "959120263"
     sources:
       - "The reform text of Uruinimgina (RIME 1.9.9.1)"
@@ -3797,6 +3977,7 @@ events:
       cs: "Naram-Sín Akkadský se stává králem; později se nechává nazývat bohem"
       sv: "Naram-Sin av Akkad blir kung; senare låter han kalla sig gud"
       nb: "Naram-Sin av Akkad blir konge; senere lar han seg kalle gud"
+      tl: "Naging hari si Naram-Sin ng Akkad; kalaunan ay ipinatawag niya ang sarili bilang diyos"
     sources:
       - "The Bassetki statue inscription (RIME 2.1.4.10: the people of Akkade asked for him as god of their city)"
       - "CDLI Wiki, 'Rulers of Mesopotamia' (middle chronology: Naram-Sin 2254-2218 BC)"
@@ -3816,6 +3997,7 @@ events:
       cs: "Akkadská dynastie končí"
       sv: "Akkads dynasti upphör"
       nb: "Akkad-dynastiet tar slutt"
+      tl: "Natapos ang dinastiya ng Akkad"
     sources:
       - "Sumerian King List (ETCSL 2.1.1: 'Then Agade was defeated and the kingship was taken to Unug')"
       - "CDLI Wiki, 'Rulers of Mesopotamia' (middle chronology)"
@@ -3836,6 +4018,7 @@ events:
       cs: "Zákony Ur-Nammua, nejstarší známá sbírka zákonů"
       sv: "Ur-Nammus lagar, den äldsta kända lagsamlingen"
       nb: "Ur-Nammus lover, den eldste kjente lovsamlingen"
+      tl: "Ang Mga Batas ni Ur-Nammu, ang pinakamatandang kilalang koleksiyon ng mga batas"
     sources:
       - "Laws of Ur-Namma (RIME 3/2.1.1.20)"
       - "M. T. Roth, Law Collections from Mesopotamia and Asia Minor (2nd ed., 1997)"
@@ -3855,6 +4038,7 @@ events:
       cs: "Ur-Nammu staví zikkurat v Uru"
       sv: "Ur-Nammu bygger Urs ziggurat"
       nb: "Ur-Nammu bygger zigguraten i Ur"
+      tl: "Itinayo ni Ur-Nammu ang ziggurat ng Ur"
     place: a6cf75c
     sources:
       - "C. L. Woolley, Ur Excavations V: The Ziggurat and its Surroundings (1939)"
@@ -3876,6 +4060,7 @@ events:
       cs: "Asyrští obchodníci obchodují v Kaneši v Anatolii"
       sv: "Assyriska köpmän bedriver handel i Kanesh i Anatolien"
       nb: "Assyriske kjøpmenn driver handel i Kanesj i Anatolia"
+      tl: "Nakipagkalakalan ang mga mangangalakal na Asirio sa Kanesh sa Anatolia"
     site: "58129442"
     sources:
       - "G. Barjamovic, T. Hertel, M. T. Larsen, Ups and Downs at Kanesh (2012)"
@@ -3896,6 +4081,7 @@ events:
       cs: "Sumu-abum zakládá První babylónskou dynastii"
       sv: "Sumu-abum grundar Babylons första dynasti"
       nb: "Sumu-abum grunnlegger Babylons første dynasti"
+      tl: "Itinatag ni Sumu-abum ang Unang Dinastiya ng Babilonia"
     place: a217d18
     sources:
       - "Encyclopaedia Britannica, 'Babylon' (kingdom founded 1894 BC by Sumuabum)"
@@ -3916,6 +4102,7 @@ events:
       cs: "Šamši-Adad I. dobývá Aššur a buduje království v Horní Mezopotámii"
       sv: "Shamshi-Adad I intar Assur och bygger upp ett rike i Övre Mesopotamien"
       nb: "Samsi-Adad I inntar Assur og bygger et rike i Øvre Mesopotamia"
+      tl: "Kinuha ni Shamshi-Adad I ang Assur at nagtayo ng kaharian sa Mataas na Mesopotamia"
     place: a874951
     sources:
       - "Assyrian King List § 39 (takes Ekallatum, three years later Assur; reigns 33 years)"
@@ -3936,6 +4123,7 @@ events:
       cs: "Chammurapi dobývá Larsu a poráží Rim-Sína"
       sv: "Hammurabi erövrar Larsa och besegrar Rim-Sin"
       nb: "Hammurabi erobrer Larsa og beseirer Rim-Sin"
+      tl: "Sinakop ni Hammurabi ang Larsa at tinalo si Rim-Sin"
     site: "912897"
     sources:
       - "Year name of Hammurabi 31 ('destroyed the troops of Emutbal and subjugated its king Rim-Sin')"
@@ -3956,6 +4144,7 @@ events:
       cs: "Chammurapi nechává své zákony vytesat na stélu"
       sv: "Hammurabi låter inrista sina lagar på en stele"
       nb: "Hammurabi lar sine lover innrisse på en stele"
+      tl: "Ipinasulat ni Hammurabi ang kaniyang mga batas sa isang estela"
     sources:
       - "The Code of Hammurabi (Louvre, Sb 8)"
       - "M. T. Roth, Law Collections from Mesopotamia and Asia Minor (2nd ed., 1997)"
@@ -3976,6 +4165,7 @@ events:
       cs: "Chattušili I. činí z Chattuši hlavní město chetitského království"
       sv: "Hattusili I gör Hattusa till huvudstad i det hettitiska riket"
       nb: "Hattusili I gjør Hattusa til hovedstad i hettittenes rike"
+      tl: "Ginawa ni Hattusili I na kabisera ng kahariang Heteo ang Hattusa"
     site: "283602441"
     sources:
       - "T. Bryce, The Kingdom of the Hittites (new ed., 2005), ch. 4"
@@ -3995,6 +4185,7 @@ events:
       cs: "Thutmose III. překračuje Eufrat proti Mitanni"
       sv: "Thutmosis III går över Eufrat mot Mitanni"
       nb: "Tutmosis III krysser Eufrat mot Mitanni"
+      tl: "Tumawid si Thutmose III sa Eufrates laban sa Mitanni"
     sources:
       - "Annals of Thutmose III at Karnak, eighth campaign, year 33 (Breasted, Ancient Records of Egypt II, §§476 ff.)"
       - "Encyclopaedia Britannica, 'Thutmose III' (reigned 1479-1425 BC)"
@@ -4014,6 +4205,7 @@ events:
       cs: "Aššur-uballit I. se stává králem: Asýrie vzrůstá ve velkou mocnost"
       sv: "Assur-uballit I blir kung: Assyrien stiger fram som stormakt"
       nb: "Assur-uballit I blir konge: Assyria stiger frem som stormakt"
+      tl: "Naging hari si Ashur-uballit I: umangat ang Asiria bilang dakilang kapangyarihan"
     place: a874951
     sources:
       - "Amarna letters EA 15-16 (Ashur-uballit to the king of Egypt)"
@@ -4035,6 +4227,7 @@ events:
       cs: "Šuppiluliuma I. plení Waššukanni, hlavní město Mitanni"
       sv: "Suppiluliuma I plundrar Washshukanni, Mitannis huvudstad"
       nb: "Suppiluliuma I plyndrer Vasjsjukanni, hovedstaden i Mitanni"
+      tl: "Sinamsam ni Suppiluliuma I ang Washshukanni, ang kabisera ng Mitanni"
     sources:
       - "Treaty of Suppiluliuma I with Shattiwaza (CTH 51)"
       - "T. Bryce, The Kingdom of the Hittites (new ed., 2005), ch. 7"
@@ -4057,6 +4250,7 @@ events:
       cs: "Šuppiluliuma I. dobývá Karkemíš"
       sv: "Suppiluliuma I intar Karkemish"
       nb: "Suppiluliuma I inntar Karkemisj"
+      tl: "Kinuha ni Suppiluliuma I ang Carchemis"
     place: af6c730
     sources:
       - "The Deeds of Suppiluliuma (CTH 40)"
@@ -4077,6 +4271,7 @@ events:
       cs: "Chattuša je opuštěna a vypálena: konec chetitské říše"
       sv: "Hattusa överges och bränns: slutet för det hettitiska riket"
       nb: "Hattusa blir forlatt og brent: slutten på hettittenes rike"
+      tl: "Iniwan at sinunog ang Hattusa: ang wakas ng imperyong Heteo"
     site: "283602441"
     sources:
       - "T. Bryce, The Kingdom of the Hittites (new ed., 2005), ch. 13"
@@ -4097,6 +4292,7 @@ events:
       cs: "Nebukadnesar I., který přivezl Mardukovu sochu zpět z Élamu, se stává králem Babylónu"
       sv: "Nebukadnessar I, som förde Marduks staty tillbaka från Elam, blir kung av Babylon"
       nb: "Nebukadnesar I, som førte Marduks statue tilbake fra Elam, blir konge av Babylon"
+      tl: "Naging hari ng Babilonia si Nabucodonosor I, na nagbalik ng rebulto ni Marduk mula sa Elam"
     place: a217d18
     sources:
       - "CDLI Wiki, 'Rulers of Mesopotamia' (Nebuchadnezzar I 1126-1105 BC)"
@@ -4117,6 +4313,7 @@ events:
       cs: "Tiglatpilesar I., který vedl asyrské vojsko až ke Středozemnímu moři, se stává králem"
       sv: "Tiglat-Pileser I, som förde Assyriens här till Medelhavet, blir kung"
       nb: "Tiglat-Pileser I, som førte Assyrias hær til Middelhavet, blir konge"
+      tl: "Naging hari si Tiglath-pileser I, na nanguna sa hukbo ng Asiria hanggang sa Dagat Mediteraneo"
     sources:
       - "Inscriptions of Tiglath-pileser I (RIMA 2 A.0.87.3, line 16: in boats of the people of Arvad, a nahiru killed at sea)"
       - "CDLI Wiki, 'Rulers of Mesopotamia' (Tiglath-pileser I 1114-1076 BC)"
@@ -4136,6 +4333,7 @@ events:
       cs: "Adad-nárárí II. se stává králem Asýrie: začíná novoasyrské období"
       sv: "Adad-nirari II blir kung av Assyrien: den nyassyriska perioden börjar"
       nb: "Adad-nirari II blir konge av Assyria: den nyassyriske tid begynner"
+      tl: "Naging hari ng Asiria si Adad-nirari II: nagsimula ang panahon ng Neo-Asirio"
     sources:
       - "A. K. Grayson, RIMA 2 (1991), Adad-nirari II (911-891 BC)"
       - "Assyrian Eponym List"
@@ -4156,6 +4354,7 @@ events:
       cs: "Venis, v jehož pyramidě byly poprvé vytesány Texty pyramid, se stává králem"
       sv: "Unas, i vars pyramid pyramidtexterna först ristades, blir kung"
       nb: "Unas, i hvis pyramide pyramidetekstene først ble innhugget, blir konge"
+      tl: "Naging hari si Unas, na sa kaniyang piramide unang inukit ang mga Tekstong Piramide"
     sources:
       - "J. P. Allen, The Ancient Egyptian Pyramid Texts (2005)"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Unas 2375-2345 BC)"
@@ -4175,6 +4374,7 @@ events:
       cs: "Stará říše končí: Egypt se rozpadá mezi soupeřící vládce"
       sv: "Gamla riket upphör: Egypten splittras mellan rivaliserande härskare"
       nb: "Det gamle riket tar slutt: Egypt splittes mellom rivaliserende herskere"
+      tl: "Natapos ang Lumang Kaharian: nahati ang Egipto sa mga magkakaribal na pinuno"
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), S. Seidlmayer, 'The First Intermediate Period'; chronology (First Intermediate Period 2160-2055 BC)"
   - id: amenemhat-i
@@ -4193,6 +4393,7 @@ events:
       cs: "Amenemhat I. zakládá Dvanáctou dynastii"
       sv: "Amenemhat I grundar tolfte dynastin"
       nb: "Amenemhet I grunnlegger det tolvte dynasti"
+      tl: "Itinatag ni Amenemhat I ang Ikalabindalawang Dinastiya"
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Amenemhat I 1985-1956 BC)"
   # The scene is dated to year 6 of Senusret II (1877 + 5 in Shaw).
@@ -4212,6 +4413,7 @@ events:
       cs: "Hrob Chnumhotepa II. v Beni Hasan zaznamenává příchod 37 Asiatů vedených Abišajem"
       sv: "Khnumhoteps II grav i Beni Hasan upptecknar ankomsten av 37 asiater under ledning av Abisha"
       nb: "Khnumhoteps II grav i Beni Hasan opptegner ankomsten av 37 asiater under ledelse av Abisja"
+      tl: "Itinala ng libingan ni Khnumhotep II sa Beni Hasan ang pagdating ng 37 Asyatiko sa pangunguna ni Abisha"
     site: "112509596"
     sources:
       - "P. E. Newberry, Beni Hasan I (1893), pls. 28, 30-31 (dated year 6 of Senusret II)"
@@ -4234,6 +4436,7 @@ events:
       cs: "Egyptské klatební texty jmenují Jeruzalém (Rušalimum)"
       sv: "Egyptiska förbannelsetexter nämner Jerusalem (Rushalimum)"
       nb: "Egyptiske forbannelsestekster nevner Jerusalem (Rusjalimum)"
+      tl: "Pinangalanan ng mga tekstong sumpa ng mga Egipcio ang Jerusalem (Rushalimum)"
     place: a15257a
     sources:
       - "K. Sethe, Die Ächtung feindlicher Fürsten (1926)"
@@ -4254,6 +4457,7 @@ events:
       cs: "Hyksósové přebírají moc v Dolním Egyptě a vládnou z Avaridy"
       sv: "Hyksos tar makten i Nedre Egypten och regerar från Avaris"
       nb: "Hyksosene tar makten i Nedre Egypt og hersker fra Avaris"
+      tl: "Nakuha ng mga Hyksos ang kapangyarihan sa Mababang Egipto at namahala mula sa Avaris"
     sources:
       - "Manetho, in Josephus, Against Apion 1.75-90"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), J. Bourriau, 'The Second Intermediate Period'; chronology (15th Dynasty 1650-1550 BC)"
@@ -4274,6 +4478,7 @@ events:
       cs: "Hatšepsut přijímá královské tituly"
       sv: "Hatshepsut tar kungatitlar"
       nb: "Hatsjepsut tar kongelige titler"
+      tl: "Kinuha ni Hatshepsut ang mga titulo ng hari"
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Hatshepsut 1473-1458 BC)"
   - id: amenhotep-iii
@@ -4292,6 +4497,7 @@ events:
       cs: "Amenhotep III. se stává králem Egypta"
       sv: "Amenhotep III blir kung av Egypten"
       nb: "Amenhotep III blir konge av Egypt"
+      tl: "Naging hari ng Egipto si Amenhotep III"
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Amenhotep III 1390-1352 BC)"
   # The Restoration Stela is dated year 1 or 4 (damaged), so the title does not put
@@ -4312,6 +4518,7 @@ events:
       cs: "Tutanchamon se stává králem; za něho jsou obnoveni staří bohové"
       sv: "Tutankhamon blir kung; under honom återupprättas de gamla gudarna"
       nb: "Tutankhamon blir konge; under ham blir de gamle gudene gjeninnsatt"
+      tl: "Naging hari si Tutankhamun; sa ilalim niya ay ibinalik ang mga lumang diyos"
     sources:
       - "The Restoration Stela of Tutankhamun (Egyptian Museum, Cairo, CG 34183)"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Tutankhamun 1336-1327 BC)"
@@ -4331,6 +4538,7 @@ events:
       cs: "Sethos I. vede tažení v Kanaánu a staví vítěznou stélu v Bét-šanu"
       sv: "Seti I för krig i Kanaan och reser en segerstele i Bet-Shean"
       nb: "Seti I fører felttog i Kanaan og reiser en seiersstele i Bet-Sjean"
+      tl: "Nangampanya si Seti I sa Canaan at nagtayo ng estela ng tagumpay sa Beth-san"
     place: a2a8df0
     sources:
       - "The first Beth-shan stele of Seti I, year 1 (Rockefeller Archaeological Museum, Jerusalem, S.884)"
@@ -4351,6 +4559,7 @@ events:
       cs: "Ramesse II. se stává králem Egypta"
       sv: "Ramses II blir kung av Egypten"
       nb: "Ramesses II blir konge av Egypt"
+      tl: "Naging hari ng Egipto si Ramesses II"
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Ramesses II 1279-1213 BC)"
   - id: tomb-workers-strike
@@ -4369,6 +4578,7 @@ events:
       cs: "Dělníci královských hrobek v Thébách stávkují kvůli nevyplaceným dávkám"
       sv: "Arbetarna i kungagravarna i Thebe strejkar på grund av obetalda ransoner"
       nb: "Arbeiderne i kongegravene i Teben streiker på grunn av uteblitte rasjoner"
+      tl: "Nagwelga ang mga manggagawa ng mga maharlikang libingan sa Thebes dahil sa hindi nabayarang rasyon"
     place: a9674fc
     sources:
       - "The Turin Strike Papyrus (Turin, Cat. 1880), year 29 of Ramesses III"
@@ -4390,6 +4600,7 @@ events:
       cs: "Šošenk I. (Šíšak) zakládá Dvacátou druhou dynastii"
       sv: "Shoshenq I (Shishak) grundar tjugoandra dynastin"
       nb: "Sjosjenk I (Sjisjak) grunnlegger det tjueandre dynasti"
+      tl: "Itinatag ni Shoshenq I (Sisac) ang Ikadalawampu't dalawang Dinastiya"
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), J. Taylor, 'The Third Intermediate Period'; chronology (Shoshenq I 945-924 BC)"
   - id: piye-conquest
@@ -4408,6 +4619,7 @@ events:
       cs: "Pije z Kúše dobývá Egypt a obsazuje Memfis"
       sv: "Piye av Kush erövrar Egypten och intar Memfis"
       nb: "Pije av Kusj erobrer Egypt og inntar Memfis"
+      tl: "Sinakop ni Piye ng Kush ang Egipto at kinuha ang Memfis"
     place: a8ec269
     sources:
       - "The victory stela of Piye, dated year 21, recording the campaign of year 20 (Egyptian Museum, Cairo, JE 48862)"
@@ -4430,6 +4642,7 @@ events:
       cs: "Taharka (Tirhaka) se stává králem Egypta a Kúše"
       sv: "Taharqa (Tirhaka) blir kung av Egypten och Kush"
       nb: "Taharka (Tirhaka) blir konge av Egypt og Kusj"
+      tl: "Naging hari ng Egipto at Kush si Taharqa (Thiraca)"
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Taharqo 690-664 BC)"
   - id: psamtik-i
@@ -4448,6 +4661,7 @@ events:
       cs: "Psammetichos I. zakládá Dvacátou šestou (sajskou) dynastii"
       sv: "Psamtik I grundar tjugosjätte (saitiska) dynastin"
       nb: "Psammetik I grunnlegger det tjueseksende (saittiske) dynasti"
+      tl: "Itinatag ni Psamtik I ang Ikadalawampu't anim (Saita) na Dinastiya"
     sources:
       - "Herodotus 2.151-157"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Psamtek I 664-610 BC)"
@@ -4467,6 +4681,7 @@ events:
       cs: "Necho II. se stává králem Egypta"
       sv: "Neko II blir kung av Egypten"
       nb: "Neko II blir konge av Egypt"
+      tl: "Naging hari ng Egipto si Nechao II"
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Nekau II 610-595 BC)"
   - id: babylon-egypt-clash
@@ -4485,6 +4700,7 @@ events:
       cs: "Nebukadnesar a Egypťané svádějí krvavou bitvu na hranici Egypta"
       sv: "Nebukadnessar och egyptierna utkämpar ett blodigt slag vid Egyptens gräns"
       nb: "Nebukadnesar og egypterne utkjemper et blodig slag ved Egypts grense"
+      tl: "Nagkaroon ng madugong labanan sina Nabucodonosor at ang mga Egipcio sa hangganan ng Egipto"
     sources:
       - "Babylonian Chronicle, ABC 5 rev. 5'-7' (the fourth year of Nebuchadnezzar)"
   - id: apries-overthrown
@@ -4503,6 +4719,7 @@ events:
       cs: "Amasis svrhává Apriese (Chofru)"
       sv: "Amasis störtar Apries (Hofra)"
       nb: "Amasis styrter Apries (Hofra)"
+      tl: "Pinabagsak ni Amasis si Apries (Hophra)"
     sources:
       - "Herodotus 2.161-169"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Apries 589-570 BC)"
@@ -4526,6 +4743,7 @@ events:
       cs: "Jehú se zmocňuje izraelského trůnu v Jizreelu"
       sv: "Jehu griper tronen i Israel vid Jisreel"
       nb: "Jehu griper tronen i Israel i Jisreel"
+      tl: "Inagaw ni Jehu ang trono ng Israel sa Jezreel"
     place: ae0bf4a
     ref: 2Kgs.9.21-2Kgs.9.24
     sources:
@@ -4549,6 +4767,7 @@ events:
       cs: "Stéla aramejského krále v Danu jmenuje dům Davidův"
       sv: "En arameisk kungs stele i Dan nämner Davids hus"
       nb: "En arameisk konges stele i Dan nevner Davids hus"
+      tl: "Pinangalanan ng estela ng isang haring Arameo sa Dan ang sambahayan ni David"
     place: a513646
     sources:
       - "A. Biran and J. Naveh, 'An Aramaic Stele Fragment from Tel Dan', Israel Exploration Journal 43 (1993); 'The Tel Dan Inscription: A New Fragment', IEJ 45 (1995)"
@@ -4568,6 +4787,7 @@ events:
       cs: "Achaz Judský platí tribut Tiglatpilesarovi III."
       sv: "Achas av Juda betalar tribut till Tiglat-Pileser III"
       nb: "Ahas av Juda betaler skatt til Tiglat-Pileser III"
+      tl: "Nagbayad ng tributo si Achaz ng Juda kay Tiglath-pileser III"
     ref: 2Kgs.16.7-2Kgs.16.8
     sources:
       - "2 Kgs 16:7-8"
@@ -4588,6 +4808,7 @@ events:
       cs: "Tiglatpilesar III. dobývá Chacor a Galileu a odvádí jejich lid do Asýrie"
       sv: "Tiglat-Pileser III intar Hasor och Galileen och för deras folk till Assyrien"
       nb: "Tiglat-Pileser III inntar Hasor og Galilea og fører folket bort til Assyria"
+      tl: "Kinuha ni Tiglath-pileser III ang Hasor at Galilea at ipinatapon ang kanilang mga tao sa Asiria"
     place: a6f33c5
     ref: 2Kgs.15.29
     sources:
@@ -4609,6 +4830,7 @@ events:
       cs: "Chizkijášův tunel přivádí vody Gichónu do města (nápis ze Siloe)"
       sv: "Hiskias tunnel leder Gihons vatten in i staden (Siloa-inskriften)"
       nb: "Hiskias tunnel fører vannet fra Gihon inn i byen (Siloa-innskriften)"
+      tl: "Dinala ng lagusan ni Ezechias ang tubig ng Gihon sa loob ng lungsod (ang inskripsiyon ng Siloe)"
     place: a2a303c
     ref: 2Chr.32.30
     sources:
@@ -4631,6 +4853,7 @@ events:
       cs: "Jeremjáš je povolán za proroka"
       sv: "Jeremia kallas till profet"
       nb: "Jeremia blir kalt til profet"
+      tl: "Tinawag si Jeremias upang maging propeta"
     ref: Jer.1.4-Jer.1.10
     sources:
       - "Jer 1:2 (the thirteenth year of Josiah); Thiele's chronology (Josiah 640-609 BC)"
@@ -4650,6 +4873,7 @@ events:
       cs: "V chrámě je nalezena kniha zákona; Jošijášova reforma"
       sv: "Lagboken återfinns i templet; Josias reform"
       nb: "Lovboken blir funnet i templet; Josjias reform"
+      tl: "Natagpuan ang aklat ng kautusan sa Templo; ang pagbabago ni Josias"
     place: a15257a
     ref: 2Kgs.22.8-2Kgs.22.11
     sources:
@@ -4670,6 +4894,7 @@ events:
       cs: "Stříbrné amulety z Ketef Hinnom nesou kněžské požehnání, nejstarší známý text Bible"
       sv: "Silveramuletter från Ketef Hinnom bär den prästerliga välsignelsen, den äldsta kända bibeltexten"
       nb: "Sølvamuletter fra Ketef Hinnom bærer den prestelige velsignelse, den eldste kjente bibeltekst"
+      tl: "Taglay ng mga pilak na anting-anting mula sa Ketef Hinnom ang basbas ng mga saserdote, ang pinakamatandang kilalang teksto ng Biblia"
     place: a15257a
     sources:
       - "Num 6:24-26"
@@ -4690,6 +4915,7 @@ events:
       cs: "Ezechiel vidí své první vidění u řeky Kebar"
       sv: "Hesekiel ser sin första syn vid floden Kebar"
       nb: "Esekiel ser sitt første syn ved elven Kebar"
+      tl: "Nakita ni Ezekiel ang kaniyang unang pangitain sa tabi ng ilog Chebar"
     place: a3d2f0a
     ref: Ezek.1.1-Ezek.1.3
     sources:
@@ -4710,6 +4936,7 @@ events:
       cs: "Nebuzaradan odvádí do vyhnanství dalších 745 Judejců"
       sv: "Nebusaradan för ytterligare 745 judéer i landsflykt"
       nb: "Nebusaradan fører 745 judeere til i landflyktighet"
+      tl: "Dinala ni Nabuzaradan ang 745 pang taga-Juda sa pagkatapon"
     ref: Jer.52.30
     sources:
       - "Jer 52:30 (the twenty-third year of Nebuchadnezzar)"
@@ -4730,6 +4957,7 @@ events:
       cs: "Sargon II. se stává králem Asýrie"
       sv: "Sargon II blir kung av Assyrien"
       nb: "Sargon II blir konge av Assyria"
+      tl: "Naging hari ng Asiria si Sargon II"
     sources:
       - "Babylonian Chronicle, ABC 1 i 31"
       - "Isa 20:1 (names Sargon)"
@@ -4749,6 +4977,7 @@ events:
       cs: "Merodach-baladan se zmocňuje babylónského trůnu"
       sv: "Merodak-Baladan tar Babylons tron"
       nb: "Merodak-Baladan tar Babylons trone"
+      tl: "Inagaw ni Merodach-baladan ang trono ng Babilonia"
     place: a217d18
     sources:
       - "Babylonian Chronicle, ABC 1 i 32"
@@ -4769,6 +4998,7 @@ events:
       cs: "Sargon II. poráží Hanuna z Gazy a Egypťany u Rafie"
       sv: "Sargon II besegrar Hanunu av Gaza och egyptierna vid Rafia"
       nb: "Sargon II beseirer Hanunu av Gasa og egypterne ved Rafia"
+      tl: "Tinalo ni Sargon II si Hanunu ng Gaza at ang mga Egipcio sa Raphia"
     # The field: Raphia (Tell Rafah), on the coast road at the southern edge of the Gaza Strip (approximate).
     battlefield: { lon: 34.243, lat: 31.291, source: "https://pleiades.stoa.org/places/688015" }
     sources:
@@ -4790,6 +5020,7 @@ events:
       cs: "Sargon II. připojuje Karkemíš"
       sv: "Sargon II annekterar Karkemish"
       nb: "Sargon II innlemmer Karkemisj"
+      tl: "Isinanib ni Sargon II ang Carchemis"
     place: af6c730
     sources:
       - "Khorsabad Annals of Sargon II, fifth regnal year (RINAP 2, Sargon II 1, lines 72-76)"
@@ -4810,6 +5041,7 @@ events:
       cs: "Sargon II. poráží Rusu z Urartu (Ararat)"
       sv: "Sargon II besegrar Rusa av Urartu (Ararat)"
       nb: "Sargon II beseirer Rusa av Urartu (Ararat)"
+      tl: "Tinalo ni Sargon II si Rusa ng Urartu (Ararat)"
     sources:
       - "Sargon's Letter to Ashur, the eighth campaign (RINAP 2, Sargon II 65; TCL 3; line 430: in the eponymy of Ishtar-duri, 714 BC)"
       - "Eponym Chronicle for 714 BC"
@@ -4829,6 +5061,7 @@ events:
       cs: "Sargon II. padá v bitvě; králem se stává Senacherib"
       sv: "Sargon II stupar i strid; Sanherib blir kung"
       nb: "Sargon II faller i kamp; Sankerib blir konge"
+      tl: "Nabuwal si Sargon II sa labanan; naging hari si Sennacherib"
     sources:
       - "Eponym Chronicle for 705 BC"
   - id: babylon-destroyed-689
@@ -4847,6 +5080,7 @@ events:
       cs: "Senacherib ničí Babylón"
       sv: "Sanherib förstör Babylon"
       nb: "Sankerib ødelegger Babylon"
+      tl: "Winasak ni Sennacherib ang Babilonia"
     place: a217d18
     sources:
       - "Bavian inscription of Sennacherib (RINAP 3, Sennacherib 223, lines 43-54)"
@@ -4869,6 +5103,7 @@ events:
       cs: "Senacherib je zavražděn; králem se stává Asarhadón"
       sv: "Sanherib mördas; Esarhaddon blir kung"
       nb: "Sankerib blir myrdet; Asarhaddon blir konge"
+      tl: "Pinatay si Sennacherib; naging hari si Esar-hadon"
     ref: 2Kgs.19.37
     sources:
       - "2 Kgs 19:37"
@@ -4889,6 +5124,7 @@ events:
       cs: "Aššurbanipal se stává králem Asýrie"
       sv: "Assurbanipal blir kung av Assyrien"
       nb: "Assurbanipal blir konge av Assyria"
+      tl: "Naging hari ng Asiria si Ashurbanipal"
     sources:
       - "Babylonian Chronicle, ABC 1 iv 30-33 (Esarhaddon dies on campaign in Arahsamnu)"
   - id: babylon-648
@@ -4907,6 +5143,7 @@ events:
       cs: "Aššurbanipal dobývá Babylón po vzpouře svého bratra Šamaš-šum-ukína"
       sv: "Assurbanipal intar Babylon efter sin bror Shamash-shum-ukins uppror"
       nb: "Assurbanipal inntar Babylon etter opprøret til sin bror Sjamasj-sjum-ukin"
+      tl: "Kinuha ni Ashurbanipal ang Babilonia pagkatapos ng paghihimagsik ng kaniyang kapatid na si Shamash-shum-ukin"
     place: a217d18
     sources:
       - "Prism A of Ashurbanipal (RINAP 5, Ashurbanipal 11 iii 128-iv 109)"
@@ -4926,6 +5163,7 @@ events:
       cs: "Aššurbanipal plení Susy"
       sv: "Assurbanipal plundrar Susa"
       nb: "Assurbanipal plyndrer Susa"
+      tl: "Sinamsam ni Ashurbanipal ang Susan"
     place: a033b84
     sources:
       - "Prism A of Ashurbanipal (RINAP 5, Ashurbanipal 11 v 126-vi 106)"
@@ -4945,6 +5183,7 @@ events:
       cs: "Médové dobývají Aššur"
       sv: "Mederna intar Assur"
       nb: "Mederne inntar Assur"
+      tl: "Kinuha ng mga Medo ang Assur"
     place: a874951
     sources:
       - "Babylonian Chronicle, ABC 3 lines 24-30 (the twelfth year of Nabopolassar; line numbers as in C. J. Gadd, The Fall of Nineveh, 1923)"
@@ -4964,6 +5203,7 @@ events:
       cs: "Babylóňané a Médové dobývají Cháran od posledního asyrského krále"
       sv: "Babylonierna och mederna tar Harran från den siste assyriske kungen"
       nb: "Babylonerne og mederne inntar Harran fra den siste assyriske konge"
+      tl: "Kinuha ng mga Babilonio at ng mga Medo ang Haran mula sa huling haring Asirio"
     place: a6d9af3
     sources:
       - "Babylonian Chronicle, ABC 3 lines 58-65 (the sixteenth year of Nabopolassar; line numbers as in C. J. Gadd, The Fall of Nineveh, 1923)"
@@ -4984,6 +5224,7 @@ events:
       cs: "Nebukadnesar II. se stává králem Babylónu"
       sv: "Nebukadnessar II blir kung av Babylon"
       nb: "Nebukadnesar II blir konge av Babylon"
+      tl: "Naging hari ng Babilonia si Nabucodonosor II"
     place: a217d18
     sources:
       - "Babylonian Chronicle, ABC 5 obv. 10-11 (1 Ulul, 605 BC)"
@@ -5003,6 +5244,7 @@ events:
       cs: "Nebukadnesar dobývá a ničí Aškelon"
       sv: "Nebukadnessar intar och förstör Askalon"
       nb: "Nebukadnesar inntar og ødelegger Asjkelon"
+      tl: "Kinuha at winasak ni Nabucodonosor ang Ascalon"
     place: ac87d4c
     sources:
       - "Babylonian Chronicle, ABC 5 obv. 18-20 (Kislev of his first year)"
@@ -5025,6 +5267,7 @@ events:
       cs: "Nebukadnesar buduje babylónskou Ištařinu bránu"
       sv: "Nebukadnessar bygger Babylons Ishtarport"
       nb: "Nebukadnesar bygger Babylons Ishtar-port"
+      tl: "Itinayo ni Nabucodonosor ang Pintuang Ishtar ng Babilonia"
     place: a217d18
     sources:
       - "R. Koldewey, Das Ischtar-Tor in Babylon (1918)"
@@ -5046,6 +5289,7 @@ events:
       cs: "Zatmění Slunce zastavuje bitvu Médů s Lýdy"
       sv: "En solförmörkelse avbryter slaget mellan mederna och lydierna"
       nb: "En solformørkelse stanser slaget mellom mederne og lydierne"
+      tl: "Pinahinto ng eklipse ng araw ang labanan ng mga Medo at ng mga Lidio"
     sources:
       - "Herodotus 1.74"
       - "NASA Eclipse Web Site (F. Espenak): the total solar eclipse of -584 May 28 (= 28 May 585 BC)"
@@ -5065,6 +5309,7 @@ events:
       cs: "Nabonid se stává králem Babylónu"
       sv: "Nabonid blir kung av Babylon"
       nb: "Nabonid blir konge av Babylon"
+      tl: "Naging hari ng Babilonia si Nabonido"
     place: a217d18
     sources:
       - "R. A. Parker and W. H. Dubberstein, Babylonian Chronology 626 B.C.-A.D. 75 (1956)"
@@ -5085,6 +5330,7 @@ events:
       cs: "Kýros II. se stává králem Anšanu"
       sv: "Kyros II blir kung av Anshan"
       nb: "Kyros II blir konge av Anshan"
+      tl: "Naging hari ng Anshan si Ciro II"
     site: "Q569107"
     sources:
       - "Herodotus 1.214 (Cyrus reigned twenty-nine years)"
@@ -5108,6 +5354,7 @@ events:
       cs: "Kýros poráží Kroisa a dobývá Sardy"
       sv: "Kyros besegrar Kroisos och intar Sardes"
       nb: "Kyros beseirer Kroisos og inntar Sardes"
+      tl: "Tinalo ni Ciro si Creso at kinuha ang Sardis"
     place: aab4a5f
     sources:
       - "Herodotus 1.76-84"
@@ -5128,6 +5375,7 @@ events:
       cs: "Kýros Veliký umírá; králem se stává Kambýsés"
       sv: "Kyros den store dör; Kambyses blir kung"
       nb: "Kyros den store dør; Kambyses blir konge"
+      tl: "Namatay si Ciro na Dakila; naging hari si Cambises"
     sources:
       - "Herodotus 1.214"
       - "R. A. Parker and W. H. Dubberstein, Babylonian Chronology 626 B.C.-A.D. 75 (1956)"
@@ -5147,6 +5395,7 @@ events:
       cs: "Ageus a Zacharjáš vybízejí k obnově chrámu; práce se obnovují"
       sv: "Haggai och Sakarja manar till att templet byggs upp; arbetet återupptas"
       nb: "Haggai og Sakarja oppfordrer til gjenoppbygging av templet; arbeidet gjenopptas"
+      tl: "Hinimok nina Haggeo at Zacharias ang muling pagtatayo ng Templo; ipinagpatuloy ang gawain"
     place: a15257a
     ref: Ezra.5.1-Ezra.5.2
     sources:
@@ -5167,6 +5416,7 @@ events:
       cs: "Dareios I. nechává vytesat své činy do skály v Behistunu"
       sv: "Dareios I låter rista sina gärningar på klippan i Behistun"
       nb: "Dareios I lar sine gjerninger hugge inn i fjellveggen ved Behistun"
+      tl: "Ipinaukit ni Dario I ang kaniyang mga ginawa sa bangin ng Behistun"
     site: "903002"
     sources:
       - "R. Schmitt, 'Bisotun iii. Darius's Inscriptions', Encyclopaedia Iranica"
@@ -5186,6 +5436,7 @@ events:
       cs: "Dareios I. začíná stavět Persepolis"
       sv: "Dareios I börjar bygga Persepolis"
       nb: "Dareios I begynner å bygge Persepolis"
+      tl: "Sinimulan ni Dario I ang pagtatayo ng Persepolis"
     site: "922695"
     sources:
       - "A. Sh. Shahbazi, 'Persepolis', Encyclopaedia Iranica"
@@ -5216,6 +5467,7 @@ events:
       cs: "Iónové s athénskou a eretrijskou pomocí vypalují Sardy"
       sv: "Jonerna bränner Sardes med hjälp av Aten och Eretria"
       nb: "Jonerne brenner Sardes, med hjelp fra Aten og Eretria"
+      tl: "Sinunog ng mga Ionio, sa tulong ng mga Ateniense at Eretrio, ang Sardis"
     place: aab4a5f
     sources:
       - "Herodotus 5.99-102"
@@ -5237,6 +5489,7 @@ events:
       cs: "Peršané dobývají Milét: iónské povstání je potlačeno"
       sv: "Perserna intar Miletos: det joniska upproret slås ned"
       nb: "Perserne inntar Milet: det joniske opprøret blir knust"
+      tl: "Kinuha ng mga Persiano ang Mileto: nadurog ang paghihimagsik ng mga Ionio"
     place: a55027d
     sources:
       - "Herodotus 6.6-21"
@@ -5257,6 +5510,7 @@ events:
       cs: "Athéňané porážejí Peršany u Marathónu"
       sv: "Atenarna besegrar perserna vid Marathon"
       nb: "Athenerne beseirer perserne ved Marathon"
+      tl: "Tinalo ng mga Ateniense ang mga Persiano sa Marathon"
     # The field: Plain of Marathon, northeastern Attica, by the Athenian burial mound (Soros) (firm).
     battlefield: { lon: 23.978, lat: 38.118, source: "https://www.wikidata.org/wiki/Q31900" }
     sources:
@@ -5278,6 +5532,7 @@ events:
       cs: "Leonidás, jeho Sparťané a Thespijští padají u Thermopyl"
       sv: "Leonidas, hans spartaner och thespierna faller vid Thermopyle"
       nb: "Leonidas, hans spartanere og thespierne faller ved Thermopylene"
+      tl: "Nabuwal si Leonidas, ang kaniyang mga Espartano at ang mga Tespio sa Thermopylae"
     # The field: Pass of Thermopylae between Mount Kallidromo and the Malian Gulf, central Greece (firm).
     battlefield: { lon: 22.544, lat: 38.796, source: "https://pleiades.stoa.org/places/541140" }
     sources:
@@ -5299,6 +5554,7 @@ events:
       cs: "Xerxés dobývá Atény a pálí Akropoli"
       sv: "Xerxes intar Aten och bränner Akropolis"
       nb: "Xerxes inntar Aten og brenner Akropolis"
+      tl: "Kinuha ni Jerjes ang Atenas at sinunog ang Acropolis"
     place: a1fe6e7
     sources:
       - "Herodotus 8.50-55 (the Acropolis taken and burned, 8.52-53)"
@@ -5320,6 +5576,7 @@ events:
       cs: "Řecká flotila poráží Xerxa u Salamíny"
       sv: "Den grekiska flottan besegrar Xerxes vid Salamis"
       nb: "Den greske flåten beseirer Xerxes ved Salamis"
+      tl: "Tinalo ng hukbong-dagat ng mga Griyego si Jerjes sa Salamina"
     # The field: Strait between Salamis island and the Attic mainland, west of Piraeus (firm).
     battlefield: { lon: 23.567, lat: 37.951, source: "https://www.wikidata.org/wiki/Q178850" }
     sources:
@@ -5345,6 +5602,7 @@ events:
       cs: "Židé z Elefantiny prosí Bagoa, správce Judska, o obnovu svého chrámu"
       sv: "Judarna på Elefantine vädjar till Bagohi, Judeens ståthållare, om att få bygga upp sitt tempel"
       nb: "Jødene på Elefantine ber Bagohi, guvernør i Judea, om å få gjenreise sitt tempel"
+      tl: "Hiniling ng mga Judio ng Elephantine kay Bagohi, gobernador ng Judea, na muling itayo ang kanilang templo"
     sources:
       - "Elephantine papyri, TAD A4.7 (Cowley 30): 20 Marheshwan, year 17 of Darius II"
       - "Encyclopaedia Judaica, 'Bagohi' (Jewish Virtual Library) (governor of Judah; the Elephantine Jews ask his help to rebuild their temple)"
@@ -5365,6 +5623,7 @@ events:
       cs: "Egypt se odpoutává od Persie pod Amyrtaiem"
       sv: "Egypten bryter sig loss från Persien under Amyrtaios"
       nb: "Egypt bryter løs fra Persia under Amyrtaios"
+      tl: "Humiwalay ang Egipto sa Persia sa ilalim ni Amyrtaeus"
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (28th Dynasty: Amyrtaios 404-399 BC)"
       - "Encyclopaedia Iranica, 'Amyrtaeus' (king of Egypt from 404; Elephantine still dated by Artaxerxes II in 401)"
@@ -5384,6 +5643,7 @@ events:
       cs: "Artaxerxés II. poráží svého bratra Kýra Mladšího u Kunaxy"
       sv: "Artaxerxes II besegrar sin bror Kyros den yngre vid Kunaxa"
       nb: "Artaxerxes II beseirer sin bror Kyros den yngre ved Kunaksa"
+      tl: "Tinalo ni Artajerjes II ang kaniyang kapatid na si Ciro na Nakababata sa Cunaxa"
     sources:
       - "Xenophon, Anabasis 1.8-10"
       - "Plutarch, Artaxerxes 7-13"
@@ -5405,6 +5665,7 @@ events:
       cs: "Artaxerxés III. znovu dobývá Egypt"
       sv: "Artaxerxes III återerövrar Egypten"
       nb: "Artaxerxes III erobrer Egypt på nytt"
+      tl: "Muling nasakop ni Artajerjes III ang Egipto"
     sources:
       - "Diodorus 16.40-51"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Second Persian Period 343-332 BC)"
@@ -5425,6 +5686,7 @@ events:
       cs: "Filip II. Makedonský poráží Atény a Théby u Chairóneie"
       sv: "Filip II av Makedonien besegrar Aten och Thebe vid Chaironeia"
       nb: "Filip II av Makedonia beseirer Aten og Teben ved Khaironeia"
+      tl: "Tinalo ni Felipe II ng Macedonia ang Atenas at Thebes sa Chaeronea"
     # The field: Chaeronea in western Boeotia, on the road from Thermopylae to Thebes (firm).
     battlefield: { lon: 22.841, lat: 38.494, source: "https://pleiades.stoa.org/places/540701" }
     sources:
@@ -5447,6 +5709,7 @@ events:
       cs: "Filip II. je zavražděn; makedonským králem se stává Alexandr"
       sv: "Filip II mördas; Alexander blir kung av Makedonien"
       nb: "Filip II blir myrdet; Aleksander blir konge av Makedonia"
+      tl: "Pinatay si Felipe II; naging hari ng Macedonia si Alejandro"
     sources:
       - "Diodorus 16.91-95; 17.2"
       - "Arrian, Anabasis 1.1.1"
@@ -5467,6 +5730,7 @@ events:
       cs: "Alexandr poráží Peršany u řeky Granikos"
       sv: "Alexander besegrar perserna vid floden Granikos"
       nb: "Aleksander beseirer perserne ved elven Granikos"
+      tl: "Tinalo ni Alejandro ang mga Persiano sa ilog Granicus"
     # The field: Lower Granicus (Biga Çayı) near Biga, northwestern Turkey (approximate).
     battlefield: { lon: 27.242, lat: 40.228, source: "https://www.wikidata.org/wiki/Q192938" }
     sources:
@@ -5488,6 +5752,7 @@ events:
       cs: "Alexandr poráží Dareia III. u Issu"
       sv: "Alexander besegrar Dareios III vid Issos"
       nb: "Aleksander beseirer Dareios III ved Issos"
+      tl: "Tinalo ni Alejandro si Dario III sa Issus"
     # The field: Lower Payas river (ancient Pinarus), about 15 km south of Issus, Gulf of Iskenderun (approximate).
     battlefield: { lon: 36.192, lat: 36.754, source: "https://www.wikidata.org/wiki/Q6977866" }
     sources:
@@ -5509,6 +5774,7 @@ events:
       cs: "Alexandr poráží Dareia III. u Gaugamél"
       sv: "Alexander besegrar Dareios III vid Gaugamela"
       nb: "Aleksander beseirer Dareios III ved Gaugamela"
+      tl: "Tinalo ni Alejandro si Dario III sa Gaugamela"
     # The field: the village of Gaugamela (Pleiades); the field itself is disputed between Tell Gomel and Karamleis, about 30 km apart in the same plain (approximate).
     battlefield: { lon: 43.494, lat: 36.573, source: "https://pleiades.stoa.org/places/874478" }
     sources:
@@ -5532,6 +5798,7 @@ events:
       cs: "Alexandr pálí paláce v Persepoli"
       sv: "Alexander bränner palatsen i Persepolis"
       nb: "Aleksander brenner palassene i Persepolis"
+      tl: "Sinunog ni Alejandro ang mga palasyo ng Persepolis"
     site: "922695"
     sources:
       - "Arrian, Anabasis 3.18.10-12"
@@ -5554,6 +5821,7 @@ events:
       cs: "Béssos zavraždí Dareia III., když se Alexandr blíží"
       sv: "Bessos mördar Dareios III när Alexander närmar sig"
       nb: "Bessos myrder Dareios III idet Aleksander nærmer seg"
+      tl: "Pinatay ni Bessus si Dario III habang papalapit si Alejandro"
     sources:
       - "Arrian, Anabasis 3.21-22"
       - "Livius.org, 'Darius III Codomannus' (330, July: death of Darius III; Bessus king)"
@@ -5573,6 +5841,7 @@ events:
       cs: "Alexandr poráží Póra u řeky Hydaspés"
       sv: "Alexander besegrar Poros vid floden Hydaspes"
       nb: "Aleksander beseirer Poros ved elven Hydaspes"
+      tl: "Tinalo ni Alejandro si Porus sa ilog Hydaspes"
     sources:
       - "Arrian, Anabasis 5.8-19"
       - "Livius.org, 'Hydaspes (326 BCE)' (May 326)"
@@ -5593,6 +5862,7 @@ events:
       cs: "Ptolemaios a Seleukos porážejí Démétria u Gazy"
       sv: "Ptolemaios och Seleukos besegrar Demetrios vid Gaza"
       nb: "Ptolemaios og Seleukos beseirer Demetrios ved Gasa"
+      tl: "Tinalo nina Ptolomeo at Seleuco si Demetrio sa Gaza"
     place: aa8edd2
     sources:
       - "Diodorus 19.80-85"
@@ -5613,6 +5883,7 @@ events:
       cs: "Spojenečtí králové porážejí Antigona u Ipsu; Alexandrova říše se definitivně rozpadá"
       sv: "De allierade kungarna besegrar Antigonos vid Ipsos; Alexanders välde splittras för gott"
       nb: "De allierte kongene beseirer Antigonos ved Ipsos; Aleksanders rike går i oppløsning for godt"
+      tl: "Tinalo ng mga magkakaalyadong hari si Antigono sa Ipsus; tuluyang nabuwag ang imperyo ni Alejandro"
     # The field: Ipsus in Phrygia, northeast of modern Afyonkarahisar (approximate).
     battlefield: { lon: 30.549, lat: 38.856, source: "https://pleiades.stoa.org/places/609415" }
     sources:
@@ -5636,6 +5907,7 @@ events:
       cs: "Galaťané (Keltové) přecházejí do Malé Asie"
       sv: "Galaterna (kelterna) går över till Mindre Asien"
       nb: "Galaterne (keltere) krysser over til Lilleasia"
+      tl: "Tumawid ang mga Galata (mga Celta) sa Asia Minor"
     sources:
       - "Livy 38.16 (Leonnorius and Lutarius)"
       - "Livius.org, 'Ancyra (Ankara)' (the Galatian tribes had crossed into Asia in the years before 275)"
@@ -5656,6 +5928,7 @@ events:
       cs: "Ptolemaios IV. poráží Antiocha III. u Rafie"
       sv: "Ptolemaios IV besegrar Antiochos III vid Rafia"
       nb: "Ptolemaios IV beseirer Antiokos III ved Rafia"
+      tl: "Tinalo ni Ptolomeo IV si Antioco III sa Raphia"
     # The field: Raphia (Tell Rafah), on the coast road at the southern edge of the Gaza Strip (approximate).
     battlefield: { lon: 34.243, lat: 31.291, source: "https://pleiades.stoa.org/places/688015" }
     sources:
@@ -5678,6 +5951,7 @@ events:
       cs: "Kněží v Memfidě schvalují dekret na počest Ptolemaia V. (Rosettská deska)"
       sv: "Prästerna i Memfis beslutar om hedersbetygelser åt Ptolemaios V (Rosettastenen)"
       nb: "Prestene i Memfis vedtar æresbevisninger for Ptolemaios V (Rosettasteinen)"
+      tl: "Nagpasya ang mga saserdote sa Memfis na parangalan si Ptolomeo V (ang Bato ng Rosetta)"
     place: a8ec269
     sources:
       - "The Rosetta Stone (British Museum, EA 24; OGIS 90): 4 Xandikos = 18 Mekhir, year 9 of Ptolemy V"
@@ -5700,6 +5974,7 @@ events:
       cs: "Římané porážejí Antiocha III. u Magnésie"
       sv: "Romarna besegrar Antiochos III vid Magnesia"
       nb: "Romerne beseirer Antiokos III ved Magnesia"
+      tl: "Tinalo ng mga Romano si Antioco III sa Magnesia"
     # The field: Magnesia ad Sipylum (Manisa), Hermus valley, western Turkey (approximate).
     battlefield: { lon: 27.433, lat: 38.613, source: "https://pleiades.stoa.org/places/550706" }
     sources:
@@ -5722,6 +5997,7 @@ events:
       cs: "Římané porážejí Persea Makedonského u Pydny"
       sv: "Romarna besegrar Perseus av Makedonien vid Pydna"
       nb: "Romerne beseirer Perseus av Makedonia ved Pydna"
+      tl: "Tinalo ng mga Romano si Perseus ng Macedonia sa Pydna"
     # The field: Plain south of Pydna near Katerini, Pieria, northern Greece (approximate).
     battlefield: { lon: 22.474, lat: 40.251, source: "https://www.wikidata.org/wiki/Q504739" }
     sources:
@@ -5745,6 +6021,7 @@ events:
       cs: "Římané ničí Kartágo"
       sv: "Romarna förstör Kartago"
       nb: "Romerne ødelegger Kartago"
+      tl: "Winasak ng mga Romano ang Cartago"
     place: aa56bd1
     sources:
       - "Appian, Punic Wars 127-135"
@@ -5765,6 +6042,7 @@ events:
       cs: "Římané ničí Korint"
       sv: "Romarna förstör Korinth"
       nb: "Romerne ødelegger Korint"
+      tl: "Winasak ng mga Romano ang Corinto"
     place: a6f437a
     sources:
       - "Pausanias 7.16.7-10"
@@ -5785,6 +6063,7 @@ events:
       cs: "Attalos III. odkazuje království Pergamon Římu"
       sv: "Attalos III testamenterar riket Pergamon till Rom"
       nb: "Attalos III testamenterer kongeriket Pergamon til Roma"
+      tl: "Ipinamana ni Attalo III ang kaharian ng Pergamo sa Roma"
     place: a75d2c1
     sources:
       - "Strabo 13.4.2"
@@ -5807,6 +6086,7 @@ events:
       cs: "Velekněz Jasón staví v Jeruzalémě gymnasion"
       sv: "Översteprästen Jason bygger ett gymnasion i Jerusalem"
       nb: "Øverstepresten Jason bygger et gymnasion i Jerusalem"
+      tl: "Nagtayo ng gymnasium sa Jerusalem ang mataas na saserdoteng si Jason"
     place: a15257a
     ref: 2Macc.4.7-2Macc.4.15
     sources:
@@ -5828,6 +6108,7 @@ events:
       cs: "Římský vyslanec Popillius Laenas nutí Antiocha IV. odtáhnout z Egypta"
       sv: "Den romerske sändebudet Popillius Laenas tvingar Antiochos IV att dra sig tillbaka från Egypten"
       nb: "Den romerske utsendingen Popillius Laenas får Antiokos IV til å trekke seg ut av Egypt"
+      tl: "Pinaatras ng sugong Romano na si Popillius Laenas si Antioco IV mula sa Egipto"
     sources:
       - "Polybius 29.27"
       - "Livy 45.12"
@@ -5850,6 +6131,7 @@ events:
       cs: "Antiochos IV. Epifanés umírá na tažení na východě"
       sv: "Antiochos IV Epifanes dör under ett fälttåg i öster"
       nb: "Antiokos IV Epifanes dør på felttog i øst"
+      tl: "Namatay si Antioco IV Epiphanes sa kampanya sa silangan"
     ref: 1Macc.6.1-1Macc.6.16
     sources:
       - "1 Macc 6:1-16"
@@ -5872,6 +6154,7 @@ events:
       cs: "Juda Makabejský uzavírá s Římem smlouvu o přátelství"
       sv: "Judas Mackabeus sluter ett vänskapsfördrag med Rom"
       nb: "Judas Makkabeus slutter en vennskapsavtale med Roma"
+      tl: "Gumawa si Judas Macabeo ng kasunduan ng pakikipagkaibigan sa Roma"
     place: afc8e7a
     ref: 1Macc.8.17-1Macc.8.32
     sources:
@@ -5894,6 +6177,7 @@ events:
       cs: "Juda Makabejský padá v bitvě proti Bakchidovi"
       sv: "Judas Mackabeus stupar i strid mot Bakchides"
       nb: "Judas Makkabeus faller i kamp mot Bakkides"
+      tl: "Nabuwal si Judas Macabeo sa labanan laban kay Bacchides"
     ref: 1Macc.9.3-1Macc.9.18
     sources:
       - "1 Macc 9:3-18 (the first month of year 152 of the Seleucids)"
@@ -5914,6 +6198,7 @@ events:
       cs: "Jonatan se stává veleknězem"
       sv: "Jonatan blir överstepräst"
       nb: "Jonatan blir øversteprest"
+      tl: "Naging mataas na saserdote si Jonathan"
     place: a15257a
     ref: 1Macc.10.18-1Macc.10.21
     sources:
@@ -5936,6 +6221,7 @@ events:
       cs: "Ptolemaios, syn Abubův, zavraždí Šimona; nastupuje po něm Jan Hyrkanos"
       sv: "Ptolemaios, Abubus son, mördar Simon; Johannes Hyrkanos efterträder honom"
       nb: "Ptolemaios, Abubos' sønn, myrder Simon; Johannes Hyrkanos etterfølger ham"
+      tl: "Pinatay ni Ptolomeo na anak ni Abubus si Simon; humalili sa kaniya si Juan Hyrcano"
     ref: 1Macc.16.11-1Macc.16.24
     sources:
       - "1 Macc 16:11-24 (Shebat of year 177)"
@@ -5957,6 +6243,7 @@ events:
       cs: "Salome Alexandra se stává královnou Judska"
       sv: "Salome Alexandra blir drottning av Judeen"
       nb: "Salome Alexandra blir dronning av Judea"
+      tl: "Naging reyna ng Judea si Salome Alexandra"
     sources:
       - "Josephus, Antiquities 13.405-432"
   - id: crassus-temple
@@ -5975,6 +6262,7 @@ events:
       cs: "Crassus drancuje chrámové poklady"
       sv: "Crassus plundrar templets skatter"
       nb: "Crassus plyndrer templets skatter"
+      tl: "Sinamsam ni Crassus ang mga kayamanan ng Templo"
     place: a15257a
     sources:
       - "Josephus, Antiquities 14.105-109; Jewish War 1.179"
@@ -5997,6 +6285,7 @@ events:
       cs: "Parthové rozdrtí Crassa u Karrh (Cháran); brzy poté je zabit při jednání"
       sv: "Parterna slår Crassus på flykten nära Karrhai (Harran); han dödas strax därefter vid en förhandling"
       nb: "Partherne slår Crassus ved Karrhai (Harran); han blir drept kort etter under en forhandling"
+      tl: "Dinurog ng mga Parto si Crassus malapit sa Carrhae (Haran); napatay siya pagkaraan sa isang usapan"
     place: a6d9af3
     sources:
       - "Plutarch, Crassus 23-31"
@@ -6017,6 +6306,7 @@ events:
       cs: "Caesar překračuje Rubikon: začíná občanská válka"
       sv: "Caesar går över Rubicon: inbördeskriget börjar"
       nb: "Cæsar krysser Rubicon: borgerkrigen begynner"
+      tl: "Tumawid si Cesar sa Rubicon: nagsimula ang digmaang sibil"
     sources:
       - "Suetonius, Julius 31-33"
       - "Plutarch, Caesar 32"
@@ -6038,6 +6328,7 @@ events:
       cs: "Poražen u Farsálu, Pompeius je zabit v Pelúsiu"
       sv: "Slagen vid Farsalos dödas Pompejus vid Pelusium"
       nb: "Slått ved Farsalos blir Pompeius drept ved Pelusium"
+      tl: "Natalo sa Pharsalus, napatay si Pompeyo sa Pelusium"
     place: aa32a17
     sources:
       - "Caesar, Civil War 3.88-104"
@@ -6058,6 +6349,7 @@ events:
       cs: "Spiklenci zavraždí Julia Caesara v Římě"
       sv: "Sammansvurna mördar Julius Caesar i Rom"
       nb: "Sammensvorne myrder Julius Cæsar i Roma"
+      tl: "Pinatay ng mga nagsabwatan si Julio Cesar sa Roma"
     place: afc8e7a
     sources:
       - "Suetonius, Julius 80-82"
@@ -6078,6 +6370,7 @@ events:
       cs: "Antonius a Octavianus porážejí Bruta a Cassia u Filip"
       sv: "Antonius och Oktavianus besegrar Brutus och Cassius vid Filippi"
       nb: "Antonius og Octavian beseirer Brutus og Cassius ved Filippi"
+      tl: "Tinalo nina Antonio at Octavio sina Bruto at Cassio sa Filipos"
     place: a49e1d0
     sources:
       - "Appian, Civil Wars 4.105-131"
@@ -6099,6 +6392,7 @@ events:
       cs: "Parthové dobývají Jeruzalém a dosazují Antigona za krále"
       sv: "Parterna intar Jerusalem och gör Antigonos till kung"
       nb: "Partherne inntar Jerusalem og gjør Antigonos til konge"
+      tl: "Kinuha ng mga Parto ang Jerusalem at ginawang hari si Antigono"
     place: a15257a
     sources:
       - "Josephus, Antiquities 14.330-369; Jewish War 1.248-273"
@@ -6120,6 +6414,7 @@ events:
       cs: "Římský senát prohlašuje Heroda za krále Judska"
       sv: "Romerska senaten utropar Herodes till kung av Judeen"
       nb: "Det romerske senat erklærer Herodes for konge av Judea"
+      tl: "Idineklara ng Senadong Romano si Herodes na hari ng Judea"
     place: afc8e7a
     sources:
       - "Josephus, Antiquities 14.381-389 (the consulship of Calvinus and Pollio); Jewish War 1.282-285"
@@ -6141,6 +6436,7 @@ events:
       cs: "Octavianus poráží Antonia a Kleopatru u Actia"
       sv: "Oktavianus besegrar Antonius och Kleopatra vid Aktion"
       nb: "Octavian beseirer Antonius og Kleopatra ved Aktion"
+      tl: "Tinalo ni Octavio sina Antonio at Cleopatra sa Actium"
     # The field: Ionian Sea off the mouth of the Ambracian Gulf at Actium, near Preveza (firm).
     battlefield: { lon: 20.725, lat: 38.925, source: "https://www.wikidata.org/wiki/Q160387" }
     sources:
@@ -6164,6 +6460,7 @@ events:
       cs: "Herodes přestavuje Samaří a nazývá je Sebaste"
       sv: "Herodes bygger upp Samaria och ger det namnet Sebaste"
       nb: "Herodes gjenoppbygger Samaria og gir den navnet Sebaste"
+      tl: "Muling itinayo ni Herodes ang Samaria at pinangalanan itong Sebaste"
     place: a041bb3
     sources:
       - "Josephus, Antiquities 15.292-298; Jewish War 1.403"
@@ -6185,6 +6482,7 @@ events:
       cs: "Herodes zasvěcuje Cesareu a její nový přístav"
       sv: "Herodes invigar Caesarea och dess nya hamn"
       nb: "Herodes innvier Cæsarea og dets nye havn"
+      tl: "Itinalaga ni Herodes ang Cesarea at ang bago nitong daungan"
     place: a58735e
     sources:
       - "Josephus, Antiquities 16.136-141 (the twenty-eighth year of his reign)"
@@ -6207,6 +6505,7 @@ events:
       cs: "Herodes Antipas zakládá Tiberias"
       sv: "Herodes Antipas grundar Tiberias"
       nb: "Herodes Antipas grunnlegger Tiberias"
+      tl: "Itinatag ni Herodes Antipas ang Tiberias"
     place: ac9adc9
     sources:
       - "Josephus, Antiquities 18.36-38"
@@ -6228,6 +6527,7 @@ events:
       cs: "Vitellius posílá Piláta do Říma, aby se zodpovídal ze své vlády"
       sv: "Vitellius sänder Pilatus till Rom för att stå till svars för sitt styre"
       nb: "Vitellius sender Pilatus til Roma for å stå til ansvar for sitt styre"
+      tl: "Ipinadala ni Vitelio si Pilato sa Roma upang managot sa kaniyang pamamahala"
     sources:
       - "Josephus, Antiquities 18.85-89"
       - "Livius.org, 'Pontius Pilate' (36: Vitellius orders Pilate to Rome)"
@@ -6248,6 +6548,7 @@ events:
       cs: "Caligula nařizuje postavit svou sochu v jeruzalémském chrámu"
       sv: "Caligula befaller att hans staty ska sättas upp i templet i Jerusalem"
       nb: "Caligula befaler at hans statue skal settes opp i templet i Jerusalem"
+      tl: "Ipinag-utos ni Caligula na ilagay ang kaniyang rebulto sa Templo sa Jerusalem"
     sources:
       - "Philo, Embassy to Gaius 188-348"
       - "Josephus, Antiquities 18.261-309"
@@ -6268,6 +6569,7 @@ events:
       cs: "Velekněz Ananos nechává ukamenovat Jakuba, bratra Páně"
       sv: "Översteprästen Ananus låter stena Jakob, Herrens broder"
       nb: "Øverstepresten Ananus lar Jakob, Herrens bror, steine"
+      tl: "Ipinabato ng mataas na saserdoteng si Ananus si Santiago, ang kapatid ng Panginoon"
     place: a15257a
     sources:
       - "Josephus, Antiquities 20.197-203 (between the death of Festus and the arrival of Albinus)"
@@ -6289,6 +6591,7 @@ events:
       cs: "Začíná povstání proti Římu; Cestius Gallus je rozprášen u Bét-choronu"
       sv: "Upproret mot Rom börjar; Cestius Gallus slås på flykten vid Bet-Horon"
       nb: "Opprøret mot Roma begynner; Cestius Gallus blir slått ved Bet-Horon"
+      tl: "Nagsimula ang paghihimagsik laban sa Roma; natalo si Cestius Gallus sa Beth-horon"
     place: a75b45e
     sources:
       - "Josephus, Jewish War 2.284 (Artemisius, the twelfth year of Nero); 2.499-555 (Cestius' retreat, 8 Dios)"
@@ -6309,6 +6612,7 @@ events:
       cs: "Legie Egypta a Judska prohlašují Vespasiana císařem"
       sv: "Legionerna i Egypten och Judeen utropar Vespasianus till kejsare"
       nb: "Legionene i Egypt og Judea utroper Vespasian til keiser"
+      tl: "Ipinroklama ng mga legiyon ng Egipto at Judea si Vespasiano bilang emperador"
     sources:
       - "Tacitus, Histories 2.79-81"
       - "Suetonius, Vespasian 6"
@@ -6330,6 +6634,7 @@ events:
       cs: "Senát vztyčuje v Římě Titův oblouk, zobrazující kořist z chrámu"
       sv: "Senaten reser Titusbågen i Rom, som visar templets krigsbyte"
       nb: "Senatet reiser Titusbuen i Roma, som viser byttet fra templet"
+      tl: "Itinayo ng Senado sa Roma ang Arko ni Tito, na nagpapakita ng mga samsam mula sa Templo"
     place: afc8e7a
     sources:
       - "The inscription of the arch, CIL VI 945 (to the deified Titus)"
@@ -6351,6 +6656,7 @@ events:
       cs: "Josephus dokončuje v Římě Židovské starožitnosti"
       sv: "Josefus slutför Judiska fornminnen i Rom"
       nb: "Josefus fullfører Jødenes oldtid i Roma"
+      tl: "Tinapos ni Josefo sa Roma ang Mga Antigüedades ng mga Judio"
     place: afc8e7a
     sources:
       - "Josephus, Antiquities 20.267 (the thirteenth year of Domitian, the fifty-sixth of his life)"
@@ -6372,6 +6678,7 @@ events:
       cs: "Traianus činí z nabatejského království provincii Arábii"
       sv: "Trajanus gör det nabatéiska riket till provinsen Arabia"
       nb: "Trajan gjør det nabateiske kongeriket til provinsen Arabia"
+      tl: "Ginawa ni Trajano na lalawigan ng Arabia ang kaharian ng mga Nabateo"
     sources:
       - "Cassius Dio 68.14.5"
       - "Livius.org, 'Petra' (106: the Nabataean kingdom annexed; Bostra capital of Arabia)"
@@ -6392,6 +6699,7 @@ events:
       cs: "Plinius Mladší se ptá Traiana, jak naložit s křesťany"
       sv: "Plinius den yngre frågar Trajanus hur han ska förfara med de kristna"
       nb: "Plinius den yngre spør Trajan hvordan de kristne skal behandles"
+      tl: "Tinanong ni Plinio na Nakababata si Trajano kung paano haharapin ang mga Kristiyano"
     sources:
       - "Pliny, Letters 10.96-97"
       - "Livius.org, 'Pliny the Younger' (governor of Bithynia-Pontus)"
@@ -6413,6 +6721,7 @@ events:
       cs: "Markión se rozchází s církví v Římě"
       sv: "Marcion bryter med kyrkan i Rom"
       nb: "Markion bryter med kirken i Roma"
+      tl: "Humiwalay si Marcion sa iglesya sa Roma"
     place: afc8e7a
     sources:
       - "Tertullian, Against Marcion 1.19"
@@ -6434,6 +6743,7 @@ events:
       cs: "Prefekt Rusticus nechává v Římě popravit Justina Mučedníka"
       sv: "Prefekten Rusticus låter avrätta Justinus martyren i Rom"
       nb: "Prefekten Rusticus lar Justin Martyr henrette i Roma"
+      tl: "Ipinapatay ng prepektong si Rusticus si Justino Martir sa Roma"
     place: afc8e7a
     sources:
       - "The Acts of Justin and his Companions (before Rusticus, prefect of Rome)"
@@ -6455,6 +6765,7 @@ events:
       cs: "Juda ha-Nasi dává Mišně konečnou podobu"
       sv: "Juda ha-Nasi ger Mishna dess slutliga form"
       nb: "Juda ha-Nasi gir Mishna dens endelige form"
+      tl: "Ibinigay ni Judah ha-Nasi sa Mishnah ang huling anyo nito"
     sources:
       - "Epistle of Sherira Gaon"
       - "Encyclopaedia Judaica, 'Mishnah' (Jewish Virtual Library) (redacted by Judah ha-Nasi at the beginning of the third century)"
@@ -6475,6 +6786,7 @@ events:
       cs: "Ardašír I. poráží posledního parthského krále: začíná sásánovská říše"
       sv: "Ardashir I besegrar den siste partiske kungen: det sasanidiska riket börjar"
       nb: "Ardashir I beseirer den siste partherkongen: det sasanidiske riket begynner"
+      tl: "Tinalo ni Ardashir I ang huling haring Parto: nagsimula ang imperyong Sasanida"
     sources:
       - "Cassius Dio 80.3.1-2"
       - "World History Encyclopedia, 'Ardashir I' (224: the battle of Hormozgan, Artabanus IV defeated)"
@@ -6496,6 +6808,7 @@ events:
       cs: "Synagoga v Dura-Europu je přestavěna; její stěny jsou pomalovány výjevy z Písma"
       sv: "Synagogan i Dura-Europos byggs om; dess väggar målas med scener ur Skriften"
       nb: "Synagogen i Dura-Europos blir gjenreist; veggene males med scener fra Skriften"
+      tl: "Muling itinayo ang sinagoga sa Dura-Europos; pininturahan ang mga pader nito ng mga tagpo mula sa Kasulatan"
     site: "893990"
     sources:
       - "The Aramaic building inscription of the synagogue (year 556 of the Seleucids)"
@@ -6515,6 +6828,7 @@ events:
       cs: "Prokonzul nechává popravit Cypriána, biskupa kartaginského"
       sv: "Prokonsuln låter avrätta Cyprianus, biskop av Kartago"
       nb: "Prokonsulen lar Cyprian, biskop av Kartago, henrette"
+      tl: "Ipinapatay ng prokonsul si Cipriano, obispo ng Cartago"
     place: aa56bd1
     sources:
       - "The Proconsular Acts of Cyprian (14 September)"
@@ -6537,6 +6851,7 @@ events:
       cs: "Aurelianus poráží Zenobii a dobývá Palmýru (Tadmor)"
       sv: "Aurelianus besegrar Zenobia och intar Palmyra (Tadmor)"
       nb: "Aurelian beseirer Zenobia og inntar Palmyra (Tadmor)"
+      tl: "Tinalo ni Aureliano si Zenobia at kinuha ang Palmyra (Tadmor)"
     place: ad797fe
     sources:
       - "Zosimus 1.50-56"
@@ -6560,6 +6875,7 @@ events:
       cs: "Galerius vydává edikt o toleranci vůči křesťanům"
       sv: "Galerius utfärdar ett toleransedikt för de kristna"
       nb: "Galerius utsteder et toleranse-edikt for de kristne"
+      tl: "Naglabas si Galerio ng kautusan ng pagpaparaya para sa mga Kristiyano"
     sources:
       - "Lactantius, On the Deaths of the Persecutors 34-35"
       - "Eusebius, Church History 8.17"
@@ -6580,6 +6896,7 @@ events:
       cs: "Konstantin poráží Licinia a stává se jediným vládcem říše"
       sv: "Konstantin besegrar Licinius och blir ensam härskare över riket"
       nb: "Konstantin beseirer Licinius og blir enehersker i riket"
+      tl: "Tinalo ni Constantino si Licinio at naging nag-iisang pinuno ng imperyo"
     # The field: Chrysopolis (Üsküdar) on the Asian shore of the Bosporus, opposite Byzantium (approximate).
     battlefield: { lon: 29.013, lat: 41.021, source: "https://pleiades.stoa.org/places/520995" }
     sources:
@@ -6602,6 +6919,7 @@ events:
       cs: "Helena, Konstantinova matka, zakládá kostely v Betlémě a na Olivové hoře"
       sv: "Helena, Konstantins mor, grundar kyrkor i Betlehem och på Olivberget"
       nb: "Helena, Konstantins mor, grunnlegger kirker i Betlehem og på Oljeberget"
+      tl: "Itinatag ni Helena, ina ni Constantino, ang mga iglesya sa Bethlehem at sa Bundok ng mga Olibo"
     place: a112427
     sources:
       - "Eusebius, Life of Constantine 3.41-47"
@@ -6622,6 +6940,7 @@ events:
       cs: "Athanasiův velikonoční list uvádí dvacet sedm knih Nového zákona"
       sv: "Athanasios’ påskbrev förtecknar Nya testamentets tjugosju böcker"
       nb: "Athanasios' påskebrev lister opp Det nye testamentes tjuesju bøker"
+      tl: "Itinala ng liham ng Pasko ng Pagkabuhay ni Atanasio ang dalawampu't pitong aklat ng Bagong Tipan"
     place: aee7248
     sources:
       - "Athanasius, Festal Letter 39"
@@ -6643,6 +6962,7 @@ events:
       cs: "Gótové porážejí Římany u Hadrianopole; císař Valens je zabit"
       sv: "Goterna besegrar romarna vid Adrianopel; kejsar Valens dödas"
       nb: "Goterne beseirer romerne ved Adrianopel; keiser Valens blir drept"
+      tl: "Tinalo ng mga Goth ang mga Romano sa Adrianople; napatay ang emperador na si Valente"
     # The field: Büyükdöllük, 13 km north of Adrianople (Livius: 'The two armies met thirteen kilometers north of the city') (approximate).
     battlefield: { lon: 26.602, lat: 41.758, source: "https://www.wikidata.org/wiki/Q6823011" }
     sources:
@@ -6665,6 +6985,7 @@ events:
       cs: "Theodosius I. nařizuje všem svým národům držet nikajskou víru (Soluňský edikt)"
       sv: "Theodosius I befaller alla sina folk att hålla fast vid den nikenska tron (Tessalonike-ediktet)"
       nb: "Theodosius I befaler alle sine folk å holde fast ved den nikenske tro (Tessalonika-ediktet)"
+      tl: "Ipinag-utos ni Teodosio I sa lahat ng kaniyang mga bayan na panghawakan ang pananampalatayang Niceno (ang Kautusan ng Tesalonica)"
     place: afa9d8e
     sources:
       - "Theodosian Code 16.1.2 (27 February 380, at Thessalonica)"
@@ -6686,6 +7007,7 @@ events:
       cs: "Theodosius zakazuje oběti a návštěvy chrámů v Římě"
       sv: "Theodosius förbjuder offer och besök i tempel i Rom"
       nb: "Theodosius forbyr ofringer og besøk i templer i Roma"
+      tl: "Ipinagbawal ni Teodosio ang mga hain at ang pagdalaw sa mga templo sa Roma"
     place: afc8e7a
     sources:
       - "Theodosian Code 16.10.10 (24 February 391, at Milan, to Albinus, prefect of the city)"
@@ -6707,6 +7029,7 @@ events:
       cs: "Theodosius umírá; říše je rozdělena mezi Arcadia a Honoria"
       sv: "Theodosius dör; riket delas mellan Arcadius och Honorius"
       nb: "Theodosius dør; riket deles mellom Arcadius og Honorius"
+      tl: "Namatay si Teodosio; hinati ang imperyo sa pagitan nina Arcadio at Honorio"
     sources:
       - "Socrates, Church History 5.26"
       - "Zosimus 4.59"
@@ -6729,6 +7052,7 @@ events:
       cs: "Koncil v Kartágu potvrzuje seznam knih Písma"
       sv: "Ett koncilium i Kartago bekräftar förteckningen över Skriftens böcker"
       nb: "Et kirkemøte i Kartago stadfester listen over Skriftens bøker"
+      tl: "Pinagtibay ng isang konseho sa Cartago ang talaan ng mga aklat ng Kasulatan"
     place: aa56bd1
     sources:
       - "Code of Canons of the African Church, canon 24 (NPNF2 14)"
@@ -6750,6 +7074,7 @@ events:
       cs: "Mudrci Izraelské země dávají Jeruzalémskému talmudu konečnou podobu"
       sv: "De lärde i Israels land ger Jerusalemtalmud dess slutliga form"
       nb: "De vise i Israels land gir Jerusalem-talmud dens endelige form"
+      tl: "Dinala ng mga pantas ng Lupain ng Israel ang Talmud ng Jerusalem sa huling anyo nito"
     sources:
       - "Encyclopaedia Judaica, 'Talmud, Jerusalem' (Jewish Virtual Library) (redacted about 400)"
   # The consuls give 415 (March); counted from Cyril's consecration the "fourth year"
@@ -6770,6 +7095,7 @@ events:
       cs: "Křesťanský dav zabíjí Hypatii v Alexandrii"
       sv: "En kristen pöbel dödar Hypatia i Alexandria"
       nb: "En kristen pøbel dreper Hypatia i Aleksandria"
+      tl: "Pinatay ng isang pulutong ng mga Kristiyano si Hypatia sa Alejandria"
     place: aee7248
     sources:
       - "Socrates, Church History 7.15 (the tenth consulship of Honorius and the sixth of Theodosius)"
@@ -6791,6 +7117,7 @@ events:
       cs: "Augustin umírá v Hippu, obleženém Vandaly"
       sv: "Augustinus dör i Hippo, som belägras av vandalerna"
       nb: "Augustin dør i Hippo, beleiret av vandalene"
+      tl: "Namatay si Agustin sa Hippo, na kinubkob ng mga Vandalo"
     sources:
       - "Possidius, Life of Augustine 28-31"
       - "Catholic Encyclopedia, 'St. Augustine of Hippo' (New Advent) (died in the third month of the siege)"
@@ -6812,6 +7139,7 @@ events:
       cs: "Gaisérichovi Vandalové plení Řím"
       sv: "Geiserik och hans vandaler plundrar Rom"
       nb: "Geiseriks vandaler plyndrer Roma"
+      tl: "Sinamsam ng mga Vandalo ni Gaiseric ang Roma"
     place: afc8e7a
     sources:
       - "Procopius, Wars 3.5.1-5"
@@ -6834,6 +7162,7 @@ events:
       cs: "Odoaker sesazuje Romula Augustula: Západořímská říše zaniká"
       sv: "Odoaker avsätter Romulus Augustulus: Västromerska riket upphör"
       nb: "Odoaker avsetter Romulus Augustulus: Vestromerriket tar slutt"
+      tl: "Pinatalsik ni Odoacer si Romulus Augustulus: natapos ang Imperyong Romano sa Kanluran"
     sources:
       - "Anonymus Valesianus 8.37-38"
       - "Marcellinus Comes, Chronicle, a. 476"

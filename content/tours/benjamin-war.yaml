@@ -22,6 +22,7 @@ title:
   cs: "Válka s Benjamínem"
   sv: "Kriget mot Benjamin"
   nb: "Krigen mot Benjamin"
+  tl: "Ang digmaan laban sa Benjamin"
 year: "1150 BC"
 # Where the story happens, told of a Levite and then of all Israel: no time on foot.
 walked: false
@@ -43,6 +44,7 @@ stops:
       cs: "Levita z pohoří Efrajim jde do Betléma Judského, aby přivedl zpět svou ženinu; její otec ho zdržuje při hodování pět dní."
       sv: "En levit från Efraims bergsbygd drar till Betlehem i Juda för att hämta tillbaka sin bihustru; hennes far håller kvar honom i fem dagar av festande."
       nb: "En levitt fra Efraims fjell drar til Betlehem i Juda for å hente tilbake sin medhustru; hennes far holder ham der med fest i fem dager."
+      tl: "Isang Levita sa lupaing maburol ng Ephraim ay pumupunta sa Bethlehem-juda upang bawiin ang kaniyang kinakasama; pinipigil siya ng ama nito na nagpipiging sa loob ng limang araw."
   - place: a403c45 # Jebus
     ref: Judg.19.10-Judg.19.12
     note:
@@ -59,6 +61,7 @@ stops:
       cs: "Když se den chýlí, docházejí k Jebúsu, což je Jeruzalém; Levita nechce přenocovat v cizím městě a jde dál do Gibeje."
       sv: "När dagen är långt framskriden når de Jevus, det vill säga Jerusalem; leviten vill inte övernatta i en främlingarnas stad och fortsätter till Giva."
       nb: "Da dagen er langt på vei, kommer de til Jebus, det er Jerusalem; levitten vil ikke ta herberge i en fremmed by og drar videre til Gibea."
+      tl: "Nang malapit nang lumubog ang araw ay umaabot sila sa Jebus, na siyang Jerusalem; ayaw tumuloy ng Levita sa bayan ng mga dayuhan at nagpapatuloy sa Gibea."
   - place: ac24f5f # Gibeah
     ref: Judg.19.13-Judg.19.30
     note:
@@ -75,6 +78,7 @@ stops:
       cs: "V Gibeji Benjamínově je nikdo nepřijme než jeden stařec; muži města týrají ženinu celou noc a ona umírá u dveří. Levita rozsekává její tělo na dvanáct kusů a rozesílá je do všech končin Izraele."
       sv: "I Giva i Benjamin tar ingen emot dem utom en gammal man; stadens män misshandlar bihustrun hela natten, och hon dör vid dörren. Leviten styckar hennes kropp i tolv delar och sänder dem genom hela Israels område."
       nb: "I Benjamins Gibea er det ingen som tar dem inn unntatt en gammel mann; mennene i byen misbruker medhustruen natten igjennom, og hun dør ved døren. Levitten skjærer kroppen hennes i tolv stykker og sender dem rundt i hele Israels land."
+      tl: "Sa Gibea ng Benjamin ay walang tumatanggap sa kanila kundi isang matanda; inaabuso ng mga lalaki ng bayan ang kinakasama sa buong magdamag, at namamatay siya sa pintuan. Pinuputol ng Levita ang kaniyang bangkay sa labindalawang piraso at ipinadadala sa lahat ng hangganan ng Israel."
   - place: a736f6c # Mizpah
     ref: Judg.20.1-Judg.20.17
     note:
@@ -91,6 +95,7 @@ stops:
       cs: "Celý Izrael, „od Dan až do Bersabé“, se shromažďuje k Hospodinu v Micpě; Benjamín odmítá vydat muže z Gibeje."
       sv: "Hela Israel, ”från Dan ända till Beer-Seba”, samlas inför Herren i Mispa; Benjamin vägrar att lämna ut männen i Giva."
       nb: "Hele Israel, «like fra Dan og til Be'erseba», samles for Herren i Mispa; Benjamin nekter å utlevere mennene fra Gibea."
+      tl: "Ang buong Israel, “mula sa Dan hanggang sa Beer-seba”, ay nagtipon sa Panginoon sa Mizpa; tumangging ibigay ng Benjamin ang mga lalaki ng Gibea."
   - place: a64f355 # Bethel
     ref: Judg.20.18-Judg.20.28
     note:
@@ -107,6 +112,7 @@ stops:
       cs: "V domě Božím, hebrejsky Bét-el, což se obvykle považuje za město Bét-el, se Izrael ptá, kdo má vytáhnout první; dvakrát poražení pláčou a postí se před truhlou, u níž slouží Pinchas, syn Eleazarův, a dostávají pokyn vytáhnout ještě jednou."
       sv: "Vid Guds hus, på hebreiska Betel och vanligen uppfattat som staden Betel, frågar Israel vem som ska gå upp först; två gånger slagna gråter och fastar de inför arken, där Pinechas, Eleasars son, tjänstgör, och får beskedet att gå upp ännu en gång."
       nb: "Ved Guds hus, på hebraisk Betel og vanligvis forstått som byen Betel, spør Israel hvem som skal dra opp først; to ganger slått gråter og faster de foran arken, hvor Pinhas, Eleasars sønn, gjør tjeneste, og får beskjed om å dra opp enda en gang."
+      tl: "Sa bahay ng Diyos, na sa Hebreo ay Beth-el at karaniwang itinuturing na bayan ng Beth-el, nagtanong ang Israel kung sino ang unang aahon; dalawang beses na natalo, umiyak at nag-ayuno sila sa harap ng kaban, na pinaglilingkuran ni Phinees na anak ni Eleazar, at sinabihan silang umahon muli."
   - place: ac24f5f # Gibeah
     ref: Judg.20.29-Judg.20.44
     note:
@@ -123,6 +129,7 @@ stops:
       cs: "Kolem Gibeje je nastražena léčka; město je dobyto a vypáleno a Benjamín poražen: toho dne padne 25 100 mužů."
       sv: "Ett bakhåll läggs runt Giva; staden intas och bränns, och Benjamin slås: 25 100 män faller den dagen."
       nb: "Det legges et bakhold rundt Gibea; byen blir inntatt og brent, og Benjamin blir slått: 25 100 mann faller den dagen."
+      tl: "Naglagay ng pananambang sa palibot ng Gibea; nasakop at nasunog ang lungsod, at nasaktan ang Benjamin: 25,100 lalaki ang nabuwal sa araw na iyon."
   - place: a45acc3 # Rimmon
     ref: Judg.20.45-Judg.20.48
     note:
@@ -139,6 +146,7 @@ stops:
       cs: "Šest set mužů prchá ke skále Rimmon na poušti a zůstává tam čtyři měsíce, vše, co z kmene zbylo."
       sv: "Sex hundra man flyr till Rimmons klippa i öknen och stannar där i fyra månader, allt som finns kvar av stammen."
       nb: "Seks hundre mann flykter til Rimmons klippe i ørkenen og blir der i fire måneder, alt som er igjen av stammen."
+      tl: "Anim na raang lalaki ang tumakas patungo sa bato ng Rimmon sa ilang at nanatili roon nang apat na buwan, ang lahat ng natira sa lipi."
   - place: af92088 # Jabesh-gilead
     ref: Judg.21.1-Judg.21.14
     note:
@@ -155,6 +163,7 @@ stops:
       cs: "Izrael přísahal, že Benjamínovi nedá ženy. Jabeš gileadský neposlal nikoho do Micpy: dvanáct tisíc mužů jej poráží a přivádí do tábora v Šílu čtyři sta panen."
       sv: "Israel har svurit att inte ge Benjamin några hustrur. Javesh-Gilead sände ingen till Mispa: tolv tusen man slår staden och för fyra hundra jungfrur till lägret i Shilo."
       nb: "Israel har sverget å ikke gi Benjamin hustruer. Jabesj-Gilead sendte ingen til Mispa: tolv tusen mann slår byen og fører fire hundre jomfruer til leiren i Sjilo."
+      tl: "Sumumpa ang Israel na hindi magbibigay ng mga asawa sa Benjamin. Walang ipinadala ang Jabes-galaad sa Mizpa: labindalawang libong lalaki ang sumalakay rito at nagdala ng apat na raang dalaga sa kampo sa Shiloh."
   - place: aa4680a # Shiloh
     ref: Judg.21.15-Judg.21.25
     note:
@@ -171,3 +180,4 @@ stops:
       cs: "Při každoroční slavnosti Hospodinově v Šílu chytají Benjamínovci, ukrytí ve vinicích, manželky z dcer Šílo, když vycházejí tančit. „Těch dnů nebylo krále v Izraeli, ale každý, což se mu vidělo, to činil.“"
       sv: "Vid Herrens årliga fest i Shilo fångar benjaminiterna, gömda i vingårdarna, sig hustrur bland Shilos döttrar när de kommer ut för att dansa. ”På den tiden fanns ingen konung i Israel; var och en gjorde vad honom behagade.”"
       nb: "Ved Herrens årlige fest i Sjilo fanger benjaminittene, skjult i vingårdene, hustruer blant Sjilos døtre når disse kommer ut for å danse. «I de dager var det ingen konge i Israel; hver mann gjorde hvad rett var i hans øine.»"
+      tl: "Sa taunang kapistahan ng Panginoon sa Shiloh, ang mga Benjamita, na nagtago sa mga ubasan, ay humuli ng mga asawa mula sa mga anak na babae ng Shiloh nang lumabas ang mga ito upang sumayaw. “Nang mga araw na yao'y walang hari sa Israel: ginagawa ng bawa't isa ang matuwid sa kaniyang sariling mga mata.”"

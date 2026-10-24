@@ -34,6 +34,7 @@ battles:
       cs: "Bitva králů v Sidimském údolí"
       sv: "Kungarnas slag i Siddimdalen"
       nb: "Kongenes slag i Siddim-dalen"
+      tl: "Ang labanan ng mga hari sa Libis ng Sidim"
     place: a4a5cce # Valley of Siddim
     ref: Gen.14.8-Gen.14.12
     sides:
@@ -50,6 +51,7 @@ battles:
       cs: "Kedorlaomer a tři králové z východu proti pěti králům Sodomy, Gomory, Admy, Cebóímu a Bely"
       sv: "Kedorlaomer och tre kungar från öster mot de fem kungarna i Sodom, Gomorra, Adma, Sevojim och Bela"
       nb: "Kedorlaomer og tre konger fra øst mot de fem kongene i Sodoma, Gomorra, Adma, Sebojim og Bela"
+      tl: "Si Chedorlaomer at tatlong hari sa silangan laban sa limang hari ng Sodoma, Gomorra, Adma, Zeboim at Bela"
     outcome:
       en: "The kings of Sodom and Gomorrah flee; the goods of the cities and Lot are carried off"
       ru: "Цари Содома и Гоморры бегут; имущество городов захвачено, Лот уведён в плен"
@@ -64,6 +66,7 @@ battles:
       cs: "Králové Sodomy a Gomory prchají; zboží měst i Lot jsou odvedeni"
       sv: "Kungarna av Sodom och Gomorra flyr; städernas gods och Lot förs bort"
       nb: "Kongene i Sodoma og Gomorra flykter; byenes eiendeler og Lot blir ført bort"
+      tl: "Tumakas ang mga hari ng Sodoma at Gomorra; dinala ang mga ari-arian ng mga lungsod at si Lot"
     sources:
       - "Gen 14:1-12"
   - id: dan-abram
@@ -82,6 +85,7 @@ battles:
       cs: "Abram zachraňuje Lota u Danu"
       sv: "Abram räddar Lot vid Dan"
       nb: "Abram redder Lot ved Dan"
+      tl: "Iniligtas ni Abram si Lot sa Dan"
     place: a513646 # Dan
     ref: Gen.14.14-Gen.14.16
     sides:
@@ -98,6 +102,7 @@ battles:
       cs: "Abram s 318 vycvičenými služebníky proti čtyřem králům"
       sv: "Abram med 318 tränade tjänare mot de fyra kungarna"
       nb: "Abram med 318 veløvede tjenere mot de fire kongene"
+      tl: "Si Abram na may 318 sinanay na lingkod laban sa apat na hari"
     outcome:
       en: "A night attack at Dan; the enemy is pursued to Hobah and Lot and the goods are brought back"
       ru: "Ночное нападение у Дана; неприятель преследуем до Ховы, Лот и имущество возвращены"
@@ -112,6 +117,7 @@ battles:
       cs: "Noční útok u Danu; nepřítel je pronásledován až k Chobě a Lot i zboží jsou přivedeni zpět"
       sv: "Ett nattligt anfall vid Dan; fienden förföljs till Hova, och Lot och godset förs tillbaka"
       nb: "Et nattlig angrep ved Dan; fienden blir forfulgt til Hoba, og Lot og godset blir brakt tilbake"
+      tl: "Isang pagsalakay sa gabi sa Dan; hinabol ang kaaway hanggang sa Hobah at ibinalik si Lot at ang mga ari-arian"
     sources:
       - "Gen 14:13-16"
 
@@ -132,6 +138,7 @@ battles:
       cs: "Amalek útočí na Izrael v Refídimu"
       sv: "Amalek anfaller Israel i Refidim"
       nb: "Amalek angriper Israel i Refidim"
+      tl: "Sinalakay ng Amalec ang Israel sa Rephidim"
     place: a05ebb7 # Rephidim
     ref: Exod.17.8-Exod.17.13
     sides:
@@ -148,6 +155,7 @@ battles:
       cs: "Izrael pod Jozuem, s Mojžíšovými rukami podpíranými na pahorku, proti Amalekovi"
       sv: "Israel under Josua, medan Moses’ händer hålls uppe på kullen, mot Amalek"
       nb: "Israel under Josva, med Moses' hender holdt oppe på høyden, mot Amalek"
+      tl: "Ang Israel sa ilalim ni Josue, na ang mga kamay ni Moises ay itinaas sa burol, laban sa Amalec"
     outcome:
       en: "Joshua defeats Amalek with the edge of the sword"
       ru: "Иисус низлагает Амалика остриём меча"
@@ -162,6 +170,7 @@ battles:
       cs: "Jozue porazí Amaleka ostřím meče"
       sv: "Josua slår Amalek med svärdsegg"
       nb: "Josva slår Amalek med sverdets egg"
+      tl: "Tinalo ni Josue ang Amalec sa talim ng tabak"
     sources:
       - "Exod 17:8-16"
   - id: hormah-repulse
@@ -180,6 +189,7 @@ battles:
       cs: "Izrael odražen u Chormy"
       sv: "Israel slås tillbaka vid Horma"
       nb: "Israel blir slått tilbake ved Horma"
+      tl: "Napaurong ang Israel sa Horma"
     place: ada25df # Hormah
     ref: Num.14.40-Num.14.45
     sides:
@@ -196,6 +206,7 @@ battles:
       cs: "Izrael, který vytáhl proti Mojžíšovu slovu, proti Amalekovcům a Kenaancům z pohoří"
       sv: "Israel, som drar upp i strid med Moses’ ord, mot amalekiterna och kananeerna i bergsbygden"
       nb: "Israel, som drar opp mot Moses' ord, mot amalekittene og kanaaneerne i fjellbygdene"
+      tl: "Ang Israel, na umahon laban sa salita ni Moises, laban sa mga Amalecita at mga Cananeo sa lupaing maburol"
     outcome:
       en: "The Amalekites and Canaanites come down, smite them and chase them to Hormah"
       ru: "Амаликитяне и Хананеи сходят, разбивают их и гонят до Хормы"
@@ -210,6 +221,7 @@ battles:
       cs: "Amalekovci a Kenaanci sestoupí, poráží je a pronásledují až k Chormě"
       sv: "Amalekiterna och kananeerna kommer ner, slår dem och jagar dem till Horma"
       nb: "Amalekittene og kanaaneerne kommer ned, slår dem og forfølger dem til Horma"
+      tl: "Bumaba ang mga Amalecita at mga Cananeo, sinalakay sila at hinabol hanggang sa Horma"
     sources:
       - "Num 14:39-45; Deut 1:41-44"
   - id: hormah
@@ -228,6 +240,7 @@ battles:
       cs: "Izrael poráží krále Aradu u Chormy"
       sv: "Israel besegrar kungen av Arad vid Horma"
       nb: "Israel beseirer kongen av Arad ved Horma"
+      tl: "Tinalo ng Israel ang hari ng Arad sa Horma"
     place: ada25df # Hormah
     ref: Num.21.1-Num.21.3
     sides:
@@ -244,6 +257,7 @@ battles:
       cs: "Izrael proti kenaanskému králi Aradu"
       sv: "Israel mot den kananeiske kungen av Arad"
       nb: "Israel mot den kanaaneiske kongen av Arad"
+      tl: "Ang Israel laban sa haring Cananeo ng Arad"
     outcome:
       en: "The Canaanites and their cities are utterly destroyed; the place is named Hormah"
       ru: "Хананеи и их города преданы заклятию; место названо Хорма"
@@ -258,6 +272,7 @@ battles:
       cs: "Kenaanci a jejich města jsou docela vyhlazeni; místo je nazváno Chorma"
       sv: "Kananeerna och deras städer förintas fullständigt; platsen får namnet Horma"
       nb: "Kanaaneerne og deres byer blir fullstendig lagt øde; stedet får navnet Horma"
+      tl: "Lubusang winasak ang mga Cananeo at ang kanilang mga lungsod; ang pook ay tinawag na Horma"
     sources:
       - "Num 21:1-3"
   - id: jahaz
@@ -276,6 +291,7 @@ battles:
       cs: "Sichon poražen u Jahace"
       sv: "Sichon besegras vid Jahas"
       nb: "Sihon blir slått ved Jahas"
+      tl: "Natalo si Sehon sa Jahaz"
     place: ad9b1cd # Jahaz
     ref: Num.21.21-Num.21.25
     sides:
@@ -292,6 +308,7 @@ battles:
       cs: "Izrael proti Sichonovi, králi Amorejských"
       sv: "Israel mot Sichon, amoréernas kung"
       nb: "Israel mot Sihon, amorittenes konge"
+      tl: "Ang Israel laban kay Sehon na hari ng mga Amorreo"
     outcome:
       en: "Sihon is slain and Israel takes his land from the Arnon to the Jabbok"
       ru: "Сигон поражён, Израиль берёт его землю от Арнона до Иавока"
@@ -306,6 +323,7 @@ battles:
       cs: "Sichon je zabit a Izrael přebírá jeho zemi od Arnonu po Jabok"
       sv: "Sichon dräps, och Israel tar hans land från Arnon till Jabbok"
       nb: "Sihon blir drept, og Israel inntar hans land fra Arnon til Jabbok"
+      tl: "Napatay si Sehon at kinuha ng Israel ang kaniyang lupain mula sa Arnon hanggang sa Jaboc"
     sources:
       - "Num 21:21-31; Deut 2:26-37"
   - id: edrei
@@ -324,6 +342,7 @@ battles:
       cs: "Og Bášanský poražen u Edreje"
       sv: "Og av Bashan besegras vid Edrei"
       nb: "Og av Basan blir slått ved Edrei"
+      tl: "Natalo si Og ng Basan sa Edrei"
     place: aaa6f7a # Edrei
     ref: Num.21.33-Num.21.35
     sides:
@@ -340,6 +359,7 @@ battles:
       cs: "Izrael proti Ogovi, králi Bášanu"
       sv: "Israel mot Og, kung av Bashan"
       nb: "Israel mot Og, kongen av Basan"
+      tl: "Ang Israel laban kay Og na hari ng Basan"
     outcome:
       en: "Og, his sons and all his people are smitten and Israel possesses his land"
       ru: "Ог, его сыновья и весь его народ поражены; Израиль овладевает его землёй"
@@ -354,6 +374,7 @@ battles:
       cs: "Og, jeho synové i všechen jeho lid jsou pobiti a Izrael se zmocňuje jeho země"
       sv: "Og, hans söner och allt hans folk slås, och Israel tar hans land i besittning"
       nb: "Og, hans sønner og hele hans folk blir slått, og Israel tar hans land i eie"
+      tl: "Nilupig si Og, ang kaniyang mga anak at ang lahat ng kaniyang bayan, at inari ng Israel ang kaniyang lupain"
     sources:
       - "Num 21:33-35; Deut 3:1-11"
   - id: jericho
@@ -372,6 +393,7 @@ battles:
       cs: "Pád Jericha"
       sv: "Jerikos fall"
       nb: "Jerikos fall"
+      tl: "Ang pagbagsak ng Jerico"
     place: a231f80 # Jericho
     ref: Josh.6.1-Josh.6.25
     sides:
@@ -388,6 +410,7 @@ battles:
       cs: "Izrael pod Jozuem proti Jerichu"
       sv: "Israel under Josua mot Jeriko"
       nb: "Israel under Josva mot Jeriko"
+      tl: "Ang Israel sa ilalim ni Josue laban sa Jerico"
     outcome:
       en: "The wall falls down flat; the city is taken and devoted to destruction, Rahab's house spared"
       ru: "Стена обрушивается; город взят и предан заклятию, дом Раав пощажён"
@@ -402,6 +425,7 @@ battles:
       cs: "Hradba padá rovnou k zemi; město je dobyto a zasvěceno zkáze, Rachabin dům ušetřen"
       sv: "Muren faller platt; staden intas och vigs åt förintelse, Rachavs hus skonas"
       nb: "Muren faller helt sammen; byen blir inntatt og viet til ødeleggelse, Rahabs hus blir spart"
+      tl: "Bumagsak nang patag ang pader; nakuha ang lungsod at itinalaga sa pagkawasak, ngunit pinaligtas ang bahay ni Rahab"
     sources:
       - "Josh 6:1-27"
   - id: ai-repulse
@@ -420,6 +444,7 @@ battles:
       cs: "Izrael odražen u Aje"
       sv: "Israel slås tillbaka vid Ai"
       nb: "Israel blir slått tilbake ved Ai"
+      tl: "Napaurong ang Israel sa Hai"
     place: a7e13e1 # Ai
     ref: Josh.7.2-Josh.7.5
     sides:
@@ -436,6 +461,7 @@ battles:
       cs: "Asi tři tisíce mužů z Izraele proti mužům z Aje"
       sv: "Omkring tre tusen av Israel mot männen i Ai"
       nb: "Omkring tre tusen mann fra Israel mot mennene i Ai"
+      tl: "Mga tatlong libo ng Israel laban sa mga tao ng Hai"
     outcome:
       en: "Israel flees; about thirty-six men are killed in the pursuit to Shebarim"
       ru: "Израильтяне бегут; около тридцати шести человек убиты при преследовании до Севарим"
@@ -450,6 +476,7 @@ battles:
       cs: "Izrael prchá; při pronásledování až k Ševarímu je zabito asi šestatřicet mužů"
       sv: "Israel flyr; omkring trettiosex man dödas under förföljelsen till Shevarim"
       nb: "Israel flykter; omkring seks og tretti mann blir drept under forfølgelsen til Sjebarim"
+      tl: "Tumakas ang Israel; mga tatlumpu't anim na lalaki ang napatay sa paghabol hanggang sa Sebarim"
     sources:
       - "Josh 7:2-5"
   - id: ai
@@ -468,6 +495,7 @@ battles:
       cs: "Jozue dobývá Aj"
       sv: "Josua intar Ai"
       nb: "Josva inntar Ai"
+      tl: "Kinuha ni Josue ang Hai"
     place: a7e13e1 # Ai
     ref: Josh.8.1-Josh.8.29
     sides:
@@ -484,6 +512,7 @@ battles:
       cs: "Izrael pod Jozuem se zálohou za městem proti mužům z Aje"
       sv: "Israel under Josua, med ett bakhåll bakom staden, mot männen i Ai"
       nb: "Israel under Josva, med et bakhold bak byen, mot mennene i Ai"
+      tl: "Ang Israel sa ilalim ni Josue, na may pananambang sa likod ng lungsod, laban sa mga tao ng Hai"
     outcome:
       en: "Ai is burned and its king hanged"
       ru: "Гай сожжён, его царь повешен"
@@ -498,6 +527,7 @@ battles:
       cs: "Aj je vypálen a jeho král oběšen"
       sv: "Ai bränns och dess kung hängs"
       nb: "Ai blir brent og dens konge hengt"
+      tl: "Sinunog ang Hai at binitay ang hari nito"
     sources:
       - "Josh 8:1-29"
   - id: gibeon
@@ -516,6 +546,7 @@ battles:
       cs: "Bitva u Gibeonu a svah Bét-choronu"
       sv: "Slaget vid Gibeon och sluttningen vid Bet-Horon"
       nb: "Slaget ved Gibeon og skråningen ned fra Bet-Horon"
+      tl: "Ang labanan sa Gabaon at ang pagbaba ng Beth-horon"
     place: aede336 # Gibeon
     ref: Josh.10.6-Josh.10.14
     sides:
@@ -532,6 +563,7 @@ battles:
       cs: "Izrael pod Jozuem, který v noci vystoupil z Gilgalu, proti pěti amorejským králům obléhajícím Gibeon"
       sv: "Israel under Josua, som har dragit upp om natten från Gilgal, mot de fem amoreiska kungarna som belägrar Gibeon"
       nb: "Israel under Josva, kommet opp om natten fra Gilgal, mot de fem amorittiske kongene som kringsetter Gibeon"
+      tl: "Ang Israel sa ilalim ni Josue, na umahon nang gabi mula sa Gilgal, laban sa limang haring Amorreo na kumubkob sa Gabaon"
     outcome:
       en: "The kings' armies flee down the descent of Beth-horon under hailstones; the sun stands still over Gibeon"
       ru: "Войска царей бегут по скату горы Вефоронской под градом камней; солнце останавливается над Гаваоном"
@@ -546,6 +578,7 @@ battles:
       cs: "Vojska králů prchají dolů po svahu Bét-choronu pod kroupami; slunce se zastavuje nad Gibeonem"
       sv: "Kungarnas härar flyr nedför sluttningen vid Bet-Horon under hagel; solen står stilla över Gibeon"
       nb: "Kongenes hærer flykter ned skråningen fra Bet-Horon under hagelsten; solen står stille over Gibeon"
+      tl: "Tumakas ang mga hukbo ng mga hari pababa sa Beth-horon sa ilalim ng pagbuhos ng mga graniso; huminto ang araw sa ibabaw ng Gabaon"
     sources:
       - "Josh 10:1-15"
   - id: lachish-joshua
@@ -564,6 +597,7 @@ battles:
       cs: "Jozue dobývá Lachiš"
       sv: "Josua intar Lakish"
       nb: "Josva inntar Lakisj"
+      tl: "Kinuha ni Josue ang Lachis"
     place: a3cc590 # Lachish
     ref: Josh.10.31-Josh.10.33
     sides:
@@ -580,6 +614,7 @@ battles:
       cs: "Izrael pod Jozuem proti Lachišu a Horamovi, králi Gezeru, který mu jde na pomoc"
       sv: "Israel under Josua mot Lakish, och Horam, kung av Geser, som kommer det till hjälp"
       nb: "Israel under Josva mot Lakisj, og Horam, kongen av Geser, som kommer byen til hjelp"
+      tl: "Ang Israel sa ilalim ni Josue laban sa Lachis, at kay Horam na hari ng Gezer na dumating upang tulungan ito"
     outcome:
       en: "Lachish is taken on the second day and its people put to the sword"
       ru: "Лахис взят на другой день, его жители поражены мечом"
@@ -594,6 +629,7 @@ battles:
       cs: "Lachiš je dobyt druhého dne a jeho lid pobit mečem"
       sv: "Lakish intas på andra dagen och dess folk slås med svärdsegg"
       nb: "Lakisj blir inntatt den andre dagen, og dens folk blir slått ned med sverdet"
+      tl: "Nakuha ang Lachis sa ikalawang araw at pinatay sa talim ng tabak ang mga tao nito"
     sources:
       - "Josh 10:31-33"
   - id: merom
@@ -612,6 +648,7 @@ battles:
       cs: "Bitva u vod Merom; Chacor vypálen"
       sv: "Slaget vid Merons vatten; Hasor bränns"
       nb: "Slaget ved Merom-vannet; Hasor brent"
+      tl: "Ang labanan sa tubig ng Merom; sinunog ang Hasor"
     place: a6ee047 # Waters of Merom
     ref: Josh.11.1-Josh.11.11
     sides:
@@ -628,6 +665,7 @@ battles:
       cs: "Izrael pod Jozuem proti Jabínovi, králi Chacoru, a králům severu"
       sv: "Israel under Josua mot Javin, kung av Hasor, och kungarna i norr"
       nb: "Israel under Josva mot Jabin, kongen av Hasor, og kongene i nord"
+      tl: "Ang Israel sa ilalim ni Josue laban kay Jabin na hari ng Hasor at sa mga hari sa hilaga"
     outcome:
       en: "The kings are routed and chased to Sidon; their horses houghed, their chariots burned; Hazor is taken and burned"
       ru: "Цари разбиты и преследуемы до Сидона; коням перерезаны жилы, колесницы сожжены; Асор взят и сожжён"
@@ -642,6 +680,7 @@ battles:
       cs: "Králové jsou rozprášeni a pronásledováni až k Sidónu; jejich koně jsou podřezáni šlachy, jejich vozy spáleny; Chacor je dobyt a vypálen"
       sv: "Kungarna slås på flykten och förföljs till Sidon; deras hästar lamslås, deras vagnar bränns; Hasor intas och bränns"
       nb: "Kongene blir slått på flukt og jaget til Sidon; deres hester får hasene avskåret, deres vogner blir brent; Hasor blir inntatt og brent"
+      tl: "Natalo ang mga hari at hinabol hanggang sa Sidon; pinutulan ng litid ang kanilang mga kabayo at sinunog ang kanilang mga karo; nakuha at sinunog ang Hasor"
     sources:
       - "Josh 11:1-15"
 
@@ -663,6 +702,7 @@ battles:
       cs: "Debora a Bárak porážejí Siseru u Kíšonu"
       sv: "Debora och Barak besegrar Sisera vid Kison"
       nb: "Debora og Barak beseirer Sisera ved Kisjon"
+      tl: "Tinalo nina Debora at Barac si Sisara sa Cison"
     place: a5a6458 # Kishon
     ref: Judg.4.12-Judg.4.21
     sides:
@@ -679,6 +719,7 @@ battles:
       cs: "Bárakových deset tisíc z hory Tábor proti Siserovým devíti stům železných vozů"
       sv: "Baraks tio tusen från berget Tabor mot Siseras nio hundra järnvagnar"
       nb: "Baraks ti tusen fra Tabor mot Siseras ni hundre jernvogner"
+      tl: "Ang sampung libo ni Barac mula sa Bundok Thabor laban sa siyam na raang karong bakal ni Sisara"
     outcome:
       en: "Sisera's host is destroyed to the last man; Sisera flees on foot and dies in Jael's tent"
       ru: "Войско Сисары истреблено до последнего человека; Сисара бежит пешим и гибнет в шатре Иаили"
@@ -693,6 +734,7 @@ battles:
       cs: "Siserovo vojsko je vyhlazeno do posledního muže; Sisera prchá pěšky a umírá ve stanu Jáelině"
       sv: "Siseras här förintas till sista man; Sisera flyr till fots och dör i Jaels tält"
       nb: "Siseras hær blir tilintetgjort til siste mann; Sisera flykter til fots og dør i Jaels telt"
+      tl: "Nalipol ang hukbo ni Sisara hanggang sa huling tao; tumakas si Sisara nang lakad at namatay sa tolda ni Jael"
     sources:
       - "Judg 4:4-24; 5:19-21"
   - id: moreh
@@ -711,6 +753,7 @@ battles:
       cs: "Gedeonových tři sta rozptyluje Midján u pahorku Móre"
       sv: "Gideons tre hundra slår Midjan vid Mores höjd"
       nb: "Gideons tre hundre slår Midjan på flukt ved More-høyden"
+      tl: "Pinalis ng tatlong daan ni Gedeon ang Midian sa tabi ng burol ng Moreh"
     place: a772880 # Moreh
     ref: Judg.7.16-Judg.7.22
     sides:
@@ -727,6 +770,7 @@ battles:
       cs: "Gedeonových tři sta proti táboru Midjánců, Amalekovců a synů východu"
       sv: "Gideons tre hundra mot lägret av Midjan, Amalek och österlandets barn"
       nb: "Gideons tre hundre mot leiren til Midjan, Amalek og Østens barn"
+      tl: "Ang tatlong daan ni Gedeon laban sa kampo ng Midian, Amalec at ng mga anak ng silangan"
     outcome:
       en: "At the trumpets and broken pitchers the host turns its swords on itself and flees toward the Jordan"
       ru: "Под звук труб и треск разбитых кувшинов войско обращает мечи друг на друга и бежит к Иордану"
@@ -741,6 +785,7 @@ battles:
       cs: "Při zvuku trub a rozbíjených džbánů obrací vojsko meče proti sobě a prchá k Jordánu"
       sv: "Vid trumpeterna och de krossade krukorna vänder hären sina svärd mot varandra och flyr mot Jordan"
       nb: "Ved basunene og de sønderslåtte krukkene vender hæren sine sverd mot hverandre og flykter mot Jordan"
+      tl: "Sa mga trumpeta at mga basag na banga, ibinaling ng hukbo ang kanilang mga tabak sa isa't isa at tumakas patungo sa Jordan"
     sources:
       - "Judg 7:1-25"
   - id: shechem-abimelech
@@ -759,6 +804,7 @@ battles:
       cs: "Abimelek ničí Šekem"
       sv: "Avimelek förstör Shekem"
       nb: "Abimelek ødelegger Sikem"
+      tl: "Winasak ni Abimelech ang Sichem"
     place: adf74d4 # Shechem
     ref: Judg.9.42-Judg.9.45
     sides:
@@ -775,6 +821,7 @@ battles:
       cs: "Abimelek proti mužům Šekemu, kteří se proti němu vzbouřili"
       sv: "Avimelek mot Shekems män som hade rest sig mot honom"
       nb: "Abimelek mot mennene i Sikem, som hadde reist seg mot ham"
+      tl: "Si Abimelech laban sa mga tao ng Sichem na naghimagsik laban sa kaniya"
     outcome:
       en: "The city is taken, its people slain, and the site sown with salt"
       ru: "Город взят, жители перебиты, место засеяно солью"
@@ -789,6 +836,7 @@ battles:
       cs: "Město je dobyto, jeho lid pobit a místo zasypáno solí"
       sv: "Staden intas, dess folk dräps, och platsen beströs med salt"
       nb: "Byen blir inntatt, dens folk drept, og stedet strødd med salt"
+      tl: "Nakuha ang lungsod, pinatay ang mga tao nito, at binudburan ng asin ang pook"
     sources:
       - "Judg 9:22-49"
   - id: thebez
@@ -807,6 +855,7 @@ battles:
       cs: "Abimelek zabit u věže Tebecu"
       sv: "Avimelek dödas vid tornet i Tebes"
       nb: "Abimelek blir drept ved tårnet i Tebes"
+      tl: "Napatay si Abimelech sa moog ng Thebes"
     place: a5d1690 # Thebez
     ref: Judg.9.50-Judg.9.55
     sides:
@@ -823,6 +872,7 @@ battles:
       cs: "Abimelek proti obyvatelům Tebecu uzavřeným ve věži"
       sv: "Avimelek mot folket i Tebes, som har stängt in sig i tornet"
       nb: "Abimelek mot folket i Tebes, som er innestengt i tårnet"
+      tl: "Si Abimelech laban sa mga taga-Thebes na nagkulong sa moog"
     outcome:
       en: "A woman drops a millstone on Abimelech's head; his armourbearer runs him through, and the army disperses"
       ru: "Женщина бросает на голову Авимелеха обломок жернова; оруженосец добивает его, войско расходится"
@@ -837,6 +887,7 @@ battles:
       cs: "Žena shodí na Abimelekovu hlavu žernov; jeho zbrojnoš ho probodne a vojsko se rozchází"
       sv: "En kvinna släpper en kvarnsten på Avimeleks huvud; hans vapendragare genomborrar honom, och hären skingras"
       nb: "En kvinne kaster en kvernstein på Abimeleks hode; hans våpenbærer stikker ham ned, og hæren går fra hverandre"
+      tl: "Ibinagsak ng isang babae ang isang gilingang bato sa ulo ni Abimelech; tinusok siya ng kaniyang tagapagdala ng sandata, at nagkawatak-watak ang hukbo"
     sources:
       - "Judg 9:50-57"
   - id: aroer-jephthah
@@ -855,6 +906,7 @@ battles:
       cs: "Jiftách poráží Amónce od Aroeru po Minit"
       sv: "Jefta besegrar ammoniterna från Aroer till Minnit"
       nb: "Jefta beseirer ammonittene fra Aroer til Minnit"
+      tl: "Tinalo ni Jephte ang mga Ammonita mula sa Aroer hanggang sa Minnith"
     place: af74969 # Aroer (Judg 11:33)
     ref: Judg.11.32-Judg.11.33
     sides:
@@ -871,6 +923,7 @@ battles:
       cs: "Jiftách a Gilead proti synům Amónovým"
       sv: "Jefta och Gilead mot Ammons barn"
       nb: "Jefta og Gilead mot Ammons barn"
+      tl: "Si Jephte at ang Gilead laban sa mga anak ni Ammon"
     outcome:
       en: "Twenty cities are smitten with a very great slaughter; Ammon is subdued"
       ru: "Поражены двадцать городов, поражение весьма великое; Аммонитяне смирились"
@@ -885,6 +938,7 @@ battles:
       cs: "Dvacet měst je poraženo velkým pobitím; Amón je podmaněn"
       sv: "Tjugo städer slås i en mycket stor slakt; Ammon underkuvas"
       nb: "Tyve byer blir slått med et overmåte stort slag; Ammon blir underlagt"
+      tl: "Dalawampung lungsod ang sinalanta ng napakalaking pagpatay; napasuko ang Ammon"
     sources:
       - "Judg 11:29-33"
 
@@ -905,6 +959,7 @@ battles:
       cs: "Pelištejci berou truhlu u Eben-ezeru"
       sv: "Filistéerna tar arken vid Even-Haeser"
       nb: "Filisterne tar arken ved Eben-Eser"
+      tl: "Kinuha ng mga Filisteo ang kaban sa Ebenezer"
     place: abfdefc # Ebenezer (1 Sam 4:1)
     ref: 1Sam.4.1-1Sam.4.11
     sides:
@@ -921,6 +976,7 @@ battles:
       cs: "Izrael utábořený u Eben-ezeru s truhlou proti Pelištejcům u Afeku"
       sv: "Israel, lägrat vid Even-Haeser med arken, mot filistéerna vid Afek"
       nb: "Israel, i leir ved Eben-Eser med arken, mot filisterne ved Afek"
+      tl: "Ang Israel, na nagkampo sa Ebenezer kasama ang kaban, laban sa mga Filisteo sa Aphec"
     outcome:
       en: "Israel is beaten twice; thirty thousand fall, the ark is taken, Hophni and Phinehas are slain"
       ru: "Израиль разбит дважды; тридцать тысяч пали, ковчег взят, Офни и Финеес убиты"
@@ -935,6 +991,7 @@ battles:
       cs: "Izrael je dvakrát poražen; padne třicet tisíc, truhla je vzata, Chofni a Pinchas jsou zabiti"
       sv: "Israel slås två gånger; trettio tusen faller, arken tas, Hofni och Pinechas dräps"
       nb: "Israel blir slått to ganger; tretti tusen faller, arken blir tatt, Hofni og Pinhas blir drept"
+      tl: "Dalawang beses natalo ang Israel; tatlumpung libo ang nabuwal, nakuha ang kaban, at napatay sina Ophni at Phinees"
     sources:
       - "1 Sam 4:1-11"
   - id: mizpah
@@ -953,6 +1010,7 @@ battles:
       cs: "Pelištejci rozprášeni u Micpy; kámen Eben-ezer"
       sv: "Filistéerna slås på flykten vid Mispa; stenen Even-Haeser"
       nb: "Filisterne blir slått på flukt ved Mispa; steinen Eben-Eser"
+      tl: "Natalo ang mga Filisteo sa Mizpa; ang batong Ebenezer"
     place: a736f6c # Mizpah
     ref: 1Sam.7.7-1Sam.7.12
     sides:
@@ -969,6 +1027,7 @@ battles:
       cs: "Izrael shromážděný v Micpě pod Samuelem proti pelištejským knížatům"
       sv: "Israel, samlat i Mispa under Samuel, mot filistéernas furstar"
       nb: "Israel samlet i Mispa under Samuel mot filisterfyrstene"
+      tl: "Ang Israel na natipon sa Mizpa sa ilalim ni Samuel laban sa mga panginoon ng mga Filisteo"
     outcome:
       en: "The Lord thunders on the Philistines; Israel pursues them below Beth-car, and Samuel sets up the stone Ebenezer"
       ru: "Господь гремит на Филистимлян; Израиль гонит их до Вефхора, Самуил ставит камень Авен-Езер"
@@ -983,6 +1042,7 @@ battles:
       cs: "Hospodin hřmí nad Pelištejci; Izrael je pronásleduje až pod Bét-kar a Samuel staví kámen Eben-ezer"
       sv: "Herren dundrar över filistéerna; Israel förföljer dem till nedanför Bet-Kar, och Samuel reser stenen Even-Haeser"
       nb: "Herren tordner over filisterne; Israel forfølger dem til under Bet-Kar, og Samuel reiser steinen Eben-Eser"
+      tl: "Kumulog ang Panginoon laban sa mga Filisteo; hinabol sila ng Israel hanggang sa ibaba ng Beth-car, at itinayo ni Samuel ang batong Ebenezer"
     sources:
       - "1 Sam 7:3-14"
   - id: jabesh-gilead
@@ -1001,6 +1061,7 @@ battles:
       cs: "Saul osvobozuje Jabeš gileadský"
       sv: "Saul undsätter Javesh-Gilead"
       nb: "Saul fører Jabesj-Gilead til unnsetning"
+      tl: "Iniligtas ni Saul ang Jabes-galaad"
     place: af92088 # Jabesh-gilead
     ref: 1Sam.11.1-1Sam.11.11
     sides:
@@ -1017,6 +1078,7 @@ battles:
       cs: "Saul s branci z Izraele a Judy proti Nachašovi Amónskému, který obléhá Jábeš"
       sv: "Saul med uppbådet av Israel och Juda mot ammoniten Nachash, som belägrar Javesh"
       nb: "Saul med utbudet fra Israel og Juda mot Nahasj, ammonitten, som kringsetter Jabesj"
+      tl: "Si Saul na may hukbo ng Israel at Juda laban kay Naas na Ammonita na kumubkob sa Jabes"
     outcome:
       en: "Three companies strike the camp in the morning watch; the Ammonites are scattered, no two left together"
       ru: "Три отряда врываются в стан в утреннюю стражу; Аммонитяне рассеяны, не остаётся и двух вместе"
@@ -1031,6 +1093,7 @@ battles:
       cs: "Tři oddíly udeří na tábor v jitřní hlídce; Amónci jsou rozptýleni, nezůstali dva pohromadě"
       sv: "Tre skaror anfaller lägret vid morgonväkten; ammoniterna skingras, så att inte två blir kvar tillsammans"
       nb: "Tre flokker angriper leiren i morgenvakten; ammonittene blir spredt, ikke to blir igjen sammen"
+      tl: "Sinalakay ng tatlong pulutong ang kampo sa pagbabantay sa umaga; nagkawatak-watak ang mga Ammonita, at wala silang naiwang dalawang magkasama"
     sources:
       - "1 Sam 11:1-15"
   - id: michmash
@@ -1049,6 +1112,7 @@ battles:
       cs: "Jonatanův čin u Michmasu"
       sv: "Jonatans bragd vid Mikmas"
       nb: "Jonatans bragd ved Mikmas"
+      tl: "Ang magiting na gawa ni Jonathan sa Michmas"
     place: adea06c # Michmash
     ref: 1Sam.14.1-1Sam.14.23
     sides:
@@ -1065,6 +1129,7 @@ battles:
       cs: "Jonatan a jeho zbrojnoš, potom Saulových šest set, proti pelištejské posádce v Michmasu"
       sv: "Jonatan och hans vapendragare, sedan Sauls sex hundra, mot filistéernas postering vid Mikmas"
       nb: "Jonatan og hans våpenbærer, så Sauls seks hundre, mot filisternes vaktpost ved Mikmas"
+      tl: "Si Jonathan at ang kaniyang tagapagdala ng sandata, at pagkatapos ay ang anim na raan ni Saul, laban sa pulutong ng mga Filisteo sa Michmas"
     outcome:
       en: "Panic and an earthquake in the Philistine camp; they fall on each other, and the battle passes over to Beth-aven"
       ru: "Смятение и землетрясение в стане Филистимлян; они обращают мечи друг на друга, сражение доходит до Беф-Авена"
@@ -1079,6 +1144,7 @@ battles:
       cs: "Panika a zemětřesení v pelištejském táboře; bijí jeden druhého a bitva se přenáší k Bét-avenu"
       sv: "Panik och en jordbävning i filistéernas läger; de faller över varandra, och striden flyttar sig till Bet-Aven"
       nb: "Redsel og jordskjelv i filisternes leir; de faller over hverandre, og slaget flytter seg til Bet-Aven"
+      tl: "Lumaganap ang takot at lindol sa kampo ng mga Filisteo; nagsalpukan sila, at ang labanan ay lumipat sa Bethaven"
     sources:
       - "1 Sam 13:5-7; 14:1-23"
   - id: elah
@@ -1099,6 +1165,7 @@ battles:
       cs: "David a Goliáš v Élském údolí"
       sv: "David och Goljat i Terebintdalen"
       nb: "David og Goliat i Ela-dalen"
+      tl: "Sina David at Goliath sa Libis ng Ela"
     place: ab183f8 # Valley of Elah
     ref: 1Sam.17.38-1Sam.17.54
     sides:
@@ -1115,6 +1182,7 @@ battles:
       cs: "Saulovo vojsko s Davidem proti Pelištejcům a jejich bojovníku Goliášovi z Gatu"
       sv: "Sauls här med David mot filistéerna och deras kämpe Goljat från Gat"
       nb: "Sauls hær med David mot filisterne og deres kjempe Goliat fra Gat"
+      tl: "Ang hukbo ni Saul kasama si David laban sa mga Filisteo at sa kanilang kampeon na si Goliath ng Gath"
     outcome:
       en: "Goliath falls to a sling-stone and is beheaded; the Philistines are chased to Gath and Ekron"
       ru: "Голиаф сражён камнем из пращи и обезглавлен; Филистимлян гонят до Гефа и Аккарона"
@@ -1129,6 +1197,7 @@ battles:
       cs: "Goliáš padá ranou z praku a je mu setnuta hlava; Pelištejci jsou pronásledováni až do Gatu a Ekronu"
       sv: "Goljat faller för en slungsten och halshuggs; filistéerna jagas till Gat och Ekron"
       nb: "Goliat faller for en slyngestein og blir halshugget; filisterne blir jaget til Gat og Ekron"
+      tl: "Nabuwal si Goliath sa batong tirador at pinugutan ng ulo; hinabol ang mga Filisteo hanggang sa Gath at Ecron"
     sources:
       - "1 Sam 17:1-54"
   - id: ziklag
@@ -1147,6 +1216,7 @@ battles:
       cs: "David si od Amalekovců, kteří vypálili Siklag, bere zpět vše"
       sv: "David återvinner allt från amalekiterna som brände Siklag"
       nb: "David henter alt tilbake fra amalekittene som brente Siklag"
+      tl: "Nabawi ni David ang lahat mula sa mga Amalecita na sumunog sa Siclag"
     place: a0ed7ff # Ziklag
     ref: 1Sam.30.16-1Sam.30.20
     sides:
@@ -1163,6 +1233,7 @@ battles:
       cs: "David se čtyřmi sty muži proti amalekovským lupičům"
       sv: "David med fyra hundra man mot amalekiternas plundrare"
       nb: "David med fire hundre mann mot amalekittenes plyndrere"
+      tl: "Si David na may apat na raang lalaki laban sa mga mananalakay na Amalecita"
     outcome:
       en: "The raiders are cut down from twilight to the next evening; four hundred escape on camels; every captive and all the spoil are recovered"
       ru: "Нападавшие истреблены от сумерек до вечера следующего дня; четыреста спаслись на верблюдах; все пленные и вся добыча возвращены"
@@ -1177,6 +1248,7 @@ battles:
       cs: "Lupiči jsou sekáni od soumraku do příštího večera; čtyři sta jich uniká na velbloudech; všichni zajatci i celá kořist jsou získáni zpět"
       sv: "Plundrarna huggs ned från skymningen till nästa afton; fyra hundra undkommer på kameler; alla fångar och allt byte återvinns"
       nb: "Plyndrerne blir hugget ned fra skumringen til neste aften; fire hundre slipper unna på kameler; hver fange og alt byttet blir hentet tilbake"
+      tl: "Pinagpapatay ang mga mananalakay mula sa takipsilim hanggang sa kinabukasan ng hapon; apat na raan ang nakatakas sa mga kamelyo; nabawi ang bawat bihag at ang lahat ng samsam"
     sources:
       - "1 Sam 30:1-20"
   - id: gilboa
@@ -1195,6 +1267,7 @@ battles:
       cs: "Saul padá na hoře Gilboa"
       sv: "Saul stupar på berget Gilboa"
       nb: "Saul faller på Gilboa"
+      tl: "Nabuwal si Saul sa Bundok Gilboa"
     place: acf57c5 # Mount Gilboa
     ref: 1Sam.31.1-1Sam.31.7
     sides:
@@ -1211,6 +1284,7 @@ battles:
       cs: "Saulův Izrael proti Pelištejcům shromážděným u Afeku a Šúnemu"
       sv: "Sauls Israel mot filistéerna samlade vid Afek och Shunem"
       nb: "Sauls Israel mot filisterne, samlet ved Afek og Sjunem"
+      tl: "Ang Israel ni Saul laban sa mga Filisteo na natipon sa Aphec at Sunem"
     outcome:
       en: "Israel flees; Jonathan, Abinadab and Malchi-shua are slain, Saul falls on his sword, and the Philistines occupy the cities"
       ru: "Израильтяне бегут; Ионафан, Аминадав и Малхисуа убиты, Саул бросается на меч, Филистимляне занимают города"
@@ -1225,6 +1299,7 @@ battles:
       cs: "Izrael prchá; Jonatan, Abinadab a Malkišua jsou zabiti, Saul padá do svého meče a Pelištejci obsazují města"
       sv: "Israel flyr; Jonatan, Avinadav och Malki-Shua dräps, Saul faller på sitt svärd, och filistéerna intar städerna"
       nb: "Israel flykter; Jonatan, Abinadab og Malkisjua blir drept, Saul faller på sitt sverd, og filisterne besetter byene"
+      tl: "Tumakas ang Israel; napatay sina Jonathan, Abinadab at Melchi-sua, nabuwal si Saul sa kaniyang tabak, at sinakop ng mga Filisteo ang mga lungsod"
     sources:
       - "1 Sam 28:4; 29:1; 31:1-13; 1 Chr 10:1-12"
 
@@ -1245,6 +1320,7 @@ battles:
       cs: "Abner a Joáb u rybníka v Gibeonu"
       sv: "Avner och Joav vid dammen i Gibeon"
       nb: "Abner og Joab ved dammen i Gibeon"
+      tl: "Sina Abner at Joab sa tabi ng tangke ng Gabaon"
     place: aede336 # Gibeon
     ref: 2Sam.2.12-2Sam.2.17
     sides:
@@ -1261,6 +1337,7 @@ battles:
       cs: "Abner se služebníky Íš-bošetovými proti Joábovi se služebníky Davidovými"
       sv: "Avner med Ish-Boshets tjänare mot Joav med Davids tjänare"
       nb: "Abner med Isjbosjets tjenere mot Joab med Davids tjenere"
+      tl: "Si Abner na kasama ang mga lingkod ni Is-boseth laban kay Joab na kasama ang mga lingkod ni David"
     outcome:
       en: "Twelve against twelve fall together; Abner is beaten in a very sore battle and Asahel dies in the pursuit"
       ru: "Двенадцать против двенадцати падают разом; Авенир разбит в жесточайшем сражении, Асаил гибнет при преследовании"
@@ -1275,6 +1352,7 @@ battles:
       cs: "Dvanáct proti dvanácti padá spolu; Abner je poražen v velmi těžké bitvě a Asael padá při pronásledování"
       sv: "Tolv mot tolv faller tillsammans; Avner slås i en mycket hård strid, och Asael dör under förföljelsen"
       nb: "Tolv mot tolv faller sammen; Abner blir slått i et meget hardt slag, og Asael dør under forfølgelsen"
+      tl: "Labindalawa laban sa labindalawa ang sabay na nabuwal; natalo si Abner sa napakatinding labanan at namatay si Asael sa paghabol"
     sources:
       - "2 Sam 2:12-32"
   - id: jebus
@@ -1295,6 +1373,7 @@ battles:
       cs: "David dobývá pevnost Sijón"
       sv: "David intar Sions fäste"
       nb: "David inntar Sions borg"
+      tl: "Kinuha ni David ang kutang Sion"
     place: a15257a # Jerusalem
     ref: 2Sam.5.6-2Sam.5.9
     sides:
@@ -1311,6 +1390,7 @@ battles:
       cs: "David a jeho muži proti Jebusejským v Jeruzalémě"
       sv: "David och hans män mot jebusiterna i Jerusalem"
       nb: "David og hans menn mot jebusittene i Jerusalem"
+      tl: "Si David at ang kaniyang mga tauhan laban sa mga Jebuseo ng Jerusalem"
     outcome:
       en: "The stronghold is taken and becomes the city of David"
       ru: "Крепость взята и становится городом Давидовым"
@@ -1325,6 +1405,7 @@ battles:
       cs: "Pevnost je dobyta a stává se Městem Davidovým"
       sv: "Fästet intas och blir Davids stad"
       nb: "Borgen blir inntatt og blir Davidsbyen"
+      tl: "Nakuha ang kuta at naging bayan ni David"
     sources:
       - "2 Sam 5:6-10; 1 Chr 11:4-9"
   - id: baal-perazim
@@ -1343,6 +1424,7 @@ battles:
       cs: "David rozráží Pelištejce u Báal-perasimu"
       sv: "David krossar filistéerna vid Baal-Perasim"
       nb: "David slår filisterne ved Baal-Perasim"
+      tl: "Dinurog ni David ang mga Filisteo sa Baal-perasim"
     place: a6bf059 # Baal-perazim
     ref: 2Sam.5.17-2Sam.5.25
     sides:
@@ -1359,6 +1441,7 @@ battles:
       cs: "David, čerstvě pomazaný králem nad Izraelem, proti Pelištejcům rozloženým v Refájském údolí"
       sv: "David, nysmord till kung över Israel, mot filistéerna som har spritt ut sig i Refaims dal"
       nb: "David, nylig salvet til konge over Israel, mot filisterne utbredt i Refaim-dalen"
+      tl: "Si David, na bagong pinahiran bilang hari sa Israel, laban sa mga Filisteo na kumalat sa libis ng Rephaim"
     outcome:
       en: "The Philistines are smitten at Baal-perazim and leave their images; a second time they are driven from Geba to Gezer"
       ru: "Филистимляне поражены при Ваал-Перациме и бросают своих истуканов; во второй раз их гонят от Гаваи до Газера"
@@ -1373,6 +1456,7 @@ battles:
       cs: "Pelištejci jsou poraženi u Báal-perasimu a zanechávají své modly; podruhé jsou zahnáni od Geby ke Gezeru"
       sv: "Filistéerna slås vid Baal-Perasim och lämnar sina avgudabilder; andra gången drivs de från Geba till Geser"
       nb: "Filisterne blir slått ved Baal-Perasim og etterlater sine avgudsbilder; annen gang blir de jaget fra Geba til Geser"
+      tl: "Natalo ang mga Filisteo sa Baal-perasim at iniwan ang kanilang mga diyus-diyosan; sa ikalawang pagkakataon ay itinaboy sila mula sa Geba hanggang sa Gezer"
     sources:
       - "2 Sam 5:17-25; 1 Chr 14:8-17"
   - id: helam
@@ -1393,6 +1477,7 @@ battles:
       cs: "David poráží Syřany Hadadezera u Chelamu"
       sv: "David besegrar Hadadesers syrier vid Helam"
       nb: "David beseirer Hadadesers syrere ved Helam"
+      tl: "Tinalo ni David ang mga Siryo ni Hadadezer sa Helam"
     place: aeb09c0 # Helam
     ref: 2Sam.10.15-2Sam.10.19
     sides:
@@ -1409,6 +1494,7 @@ battles:
       cs: "David se vším Izraelem proti Syřanům zpoza řeky pod Šobakem"
       sv: "David med hela Israel mot syrierna från andra sidan floden under Shovak"
       nb: "David med hele Israel mot syrerne fra hin side elven under Sjobak"
+      tl: "Si David na kasama ang buong Israel laban sa mga Siryo mula sa kabila ng ilog sa ilalim ni Sobach"
     outcome:
       en: "The Syrians flee, Shobach is killed, and Hadadezer's vassal kings make peace with Israel"
       ru: "Сирийцы бегут, Совак убит, цари, подвластные Адраазару, заключают мир с Израилем"
@@ -1423,6 +1509,7 @@ battles:
       cs: "Syřané prchají, Šobak je zabit a vazalští králové Hadadezerovi uzavírají s Izraelem pokoj"
       sv: "Syrierna flyr, Shovak dödas, och Hadadesers lydkungar sluter fred med Israel"
       nb: "Syrerne flykter, Sjobak blir drept, og Hadadesers vasallkonger slutter fred med Israel"
+      tl: "Tumakas ang mga Siryo, napatay si Sobach, at nakipagpayapaan sa Israel ang mga haring basalyo ni Hadadezer"
     sources:
       - "2 Sam 10:6-19; 1 Chr 19:6-19"
   - id: rabbah
@@ -1441,6 +1528,7 @@ battles:
       cs: "Joáb a David dobývají Rabbu Amónských"
       sv: "Joav och David intar ammoniternas Rabba"
       nb: "Joab og David inntar Rabba, ammonittenes by"
+      tl: "Kinuha nina Joab at David ang Rabba ng mga Ammonita"
     place: ae067b5 # Rabbah
     ref: 2Sam.12.26-2Sam.12.31
     sides:
@@ -1457,6 +1545,7 @@ battles:
       cs: "Joábovo vojsko, potom David se vším lidem proti Rabbě"
       sv: "Joavs här, sedan David med allt folket, mot Rabba"
       nb: "Joabs hær, så David med hele folket, mot Rabba"
+      tl: "Ang hukbo ni Joab, at pagkatapos ay si David na kasama ang buong bayan, laban sa Rabba"
     outcome:
       en: "The royal city falls; the king's crown is set on David's head and great spoil is carried out"
       ru: "Царственный город взят; венец царя возложен на голову Давида, добычи вынесено очень много"
@@ -1471,6 +1560,7 @@ battles:
       cs: "Královské město padá; králova koruna je vložena Davidovi na hlavu a vynáší se veliká kořist"
       sv: "Huvudstaden faller; kungens krona sätts på Davids huvud och stort byte förs ut"
       nb: "Kongsbyen faller; kongens krone blir satt på Davids hode, og stort bytte blir båret ut"
+      tl: "Bumagsak ang lungsod-hari; inilagay ang korona ng hari sa ulo ni David at maraming samsam ang dinala"
     sources:
       - "2 Sam 11:1; 12:26-31; 1 Chr 20:1-3"
   - id: wood-of-ephraim
@@ -1489,6 +1579,7 @@ battles:
       cs: "Abšalomovo vojsko poraženo v Efrajimském lese"
       sv: "Absaloms här slås i Efraims skog"
       nb: "Absaloms hær blir slått i Efraims skog"
+      tl: "Natalo ang hukbo ni Absalom sa gubat ng Ephraim"
     place: aa24ad4 # Wood of Ephraim
     ref: 2Sam.18.6-2Sam.18.17
     sides:
@@ -1505,6 +1596,7 @@ battles:
       cs: "Davidovi muži pod Joábem, Abišajem a Itajem proti Izraeli pod Abšalomem"
       sv: "Davids män under Joav, Avishaj och Ittaj mot Israel under Absalom"
       nb: "Davids menn under Joab, Abisjai og Ittai mot Israel under Absalom"
+      tl: "Ang mga tauhan ni David sa ilalim nina Joab, Abisai at Ittai laban sa Israel sa ilalim ni Absalom"
     outcome:
       en: "Twenty thousand fall and the wood devours more than the sword; Absalom, caught in an oak, is killed by Joab"
       ru: "Пали двадцать тысяч, лес погубил больше, чем меч; Авессалома, застрявшего в дубе, убивает Иоав"
@@ -1519,6 +1611,7 @@ battles:
       cs: "Padne dvacet tisíc a les pozře víc než meč; Abšalom zachycený v dubu je zabit Joábem"
       sv: "Tjugo tusen faller och skogen sluker fler än svärdet; Absalom, fast i en ek, dödas av Joav"
       nb: "Tyve tusen faller, og skogen sluker flere enn sverdet; Absalom, fanget i en eik, blir drept av Joab"
+      tl: "Dalawampung libo ang nabuwal at higit pa ang nilamon ng gubat kaysa ng tabak; si Absalom, na nasabit sa isang encina, ay pinatay ni Joab"
     sources:
       - "2 Sam 18:1-17"
 
@@ -1540,6 +1633,7 @@ battles:
       cs: "Abija poráží Jarobeáma na hoře Cemarajim"
       sv: "Avia besegrar Jerobeam vid berget Semarajim"
       nb: "Abia beseirer Jeroboam ved Semaraim-fjellet"
+      tl: "Tinalo ni Abias si Jeroboam sa Bundok Samaraim"
     place: a5a92d1 # Mount Zemaraim
     ref: 2Chr.13.13-2Chr.13.20
     sides:
@@ -1556,6 +1650,7 @@ battles:
       cs: "Abija Judský proti Jarobeámovi Izraelskému, který nastražuje léčku za Judou"
       sv: "Avia av Juda mot Jerobeam av Israel, som lägger ett bakhåll bakom Juda"
       nb: "Abia av Juda mot Jeroboam av Israel, som legger et bakhold bak Juda"
+      tl: "Si Abias ng Juda laban kay Jeroboam ng Israel, na naglagay ng pananambang sa likod ng Juda"
     outcome:
       en: "Israel flees before Judah; Abijah takes Bethel, Jeshanah and Ephrain"
       ru: "Израильтяне бегут от Иудеев; Авия берёт Вефиль, Иешану и Ефрон"
@@ -1570,6 +1665,7 @@ battles:
       cs: "Izrael prchá před Judou; Abija dobývá Bét-el, Ješanu a Efrajin"
       sv: "Israel flyr inför Juda; Avia intar Betel, Jeshana och Efrajin"
       nb: "Israel flykter for Juda; Abia inntar Betel, Jesjana og Efron"
+      tl: "Tumakas ang Israel sa harap ng Juda; kinuha ni Abias ang Beth-el, Jesana at Ephrain"
     sources:
       - "2 Chr 13:1-20; cf. 1 Kgs 15:6-7"
   - id: mareshah
@@ -1589,6 +1685,7 @@ battles:
       cs: "Asa poráží Etiopana Zeracha u Mareši"
       sv: "Asa besegrar etiopiern Serach vid Maresha"
       nb: "Asa beseirer etiopieren Serah ved Maresja"
+      tl: "Tinalo ni Asa si Zera na Etiope sa Maresa"
     place: a5cda86 # Mareshah
     ref: 2Chr.14.9-2Chr.14.15
     sides:
@@ -1605,6 +1702,7 @@ battles:
       cs: "Asa Judský proti Etiopanu Zerachovi v údolí Cefata"
       sv: "Asa av Juda mot etiopiern Serach i Sefatas dal"
       nb: "Asa av Juda mot etiopieren Serah i Sefata-dalen"
+      tl: "Si Asa ng Juda laban kay Zera na Etiope sa libis ng Sephath"
     outcome:
       en: "The Ethiopians flee and are pursued to Gerar; the cities around it are spoiled"
       ru: "Ефиопляне бегут, их преследуют до Герара; окрестные города разграблены"
@@ -1619,6 +1717,7 @@ battles:
       cs: "Etiopané prchají a jsou pronásledováni až ke Geraru; okolní města jsou vyloupena"
       sv: "Etiopierna flyr och förföljs till Gerar; städerna däromkring plundras"
       nb: "Etiopierne flykter og blir forfulgt til Gerar; byene omkring blir plyndret"
+      tl: "Tumakas ang mga Etiope at hinabol hanggang sa Gerar; sinamsam ang mga lungsod sa paligid nito"
     sources:
       - "2 Chr 14:9-15"
   - id: tirzah
@@ -1638,6 +1737,7 @@ battles:
       cs: "Omrí obléhá Tirsu; Zimrí si zapaluje palác nad sebou"
       sv: "Omri belägrar Tirsa; Simri bränner upp palatset över sig"
       nb: "Omri kringsetter Tirsa; Simri brenner palasset over seg selv"
+      tl: "Kinubkob ni Omri ang Tirsa; sinunog ni Zimri ang palasyo sa ibabaw ng kaniyang sarili"
     place: a80d317 # Tirzah
     ref: 1Kgs.16.15-1Kgs.16.18
     sides:
@@ -1654,6 +1754,7 @@ battles:
       cs: "Omrí se vším Izraelem, který vytáhl od Gibetonu, proti Zimrímu v Tirse"
       sv: "Omri med hela Israel, uppdragen från Gibbeton, mot Simri i Tirsa"
       nb: "Omri med hele Israel, kommet opp fra Gibbeton, mot Simri i Tirsa"
+      tl: "Si Omri na kasama ang buong Israel, na umahon mula sa Gibbethon, laban kay Zimri sa Tirsa"
     outcome:
       en: "The city is taken; Zimri dies in the burning palace after seven days as king"
       ru: "Город взят; Замврий гибнет в горящем дворце после семи дней царствования"
@@ -1668,6 +1769,7 @@ battles:
       cs: "Město je dobyto; Zimrí umírá v hořícím paláci po sedmi dnech království"
       sv: "Staden intas; Simri dör i det brinnande palatset efter sju dagar som kung"
       nb: "Byen blir inntatt; Simri dør i det brennende palasset etter sju dager som konge"
+      tl: "Nakuha ang lungsod; namatay si Zimri sa nasusunog na palasyo pagkaraan ng pitong araw bilang hari"
     sources:
       - "1 Kgs 16:15-22"
   - id: samaria-ben-hadad
@@ -1687,6 +1789,7 @@ battles:
       cs: "Obležení Samaří Ben-hadadem je prolomeno"
       sv: "Ben-Hadads belägring av Samaria bryts"
       nb: "Ben-Hadads beleiring av Samaria blir brutt"
+      tl: "Nabasag ang pagkubkob ni Ben-adad sa Samaria"
     place: a041bb3 # Samaria
     ref: 1Kgs.20.13-1Kgs.20.21
     sides:
@@ -1703,6 +1806,7 @@ battles:
       cs: "Achab s mládenci knížat krajů proti Ben-hadadovi Syrskému a třiceti dvěma králům"
       sv: "Achav med provinsfurstarnas unga män mot Ben-Hadad av Syrien och trettiotvå kungar"
       nb: "Akab med de unge mennene hos fyrstene over landsdelene mot Ben-Hadad av Syria og to og tretti konger"
+      tl: "Si Achab na kasama ang mga kabataang lalaki ng mga prinsipe ng mga lalawigan laban kay Ben-adad ng Siria at sa tatlumpu't dalawang hari"
     outcome:
       en: "The Syrians flee and are slaughtered; Ben-hadad escapes on a horse"
       ru: "Сирияне бегут и разбиты; Венадад спасается на коне"
@@ -1717,6 +1821,7 @@ battles:
       cs: "Syřané prchají a jsou pobíjeni; Ben-hadad uniká na koni"
       sv: "Syrierna flyr och nedhuggs; Ben-Hadad undkommer på en häst"
       nb: "Syrerne flykter og blir nedslaktet; Ben-Hadad slipper unna på en hest"
+      tl: "Tumakas ang mga Siryo at pinagpapatay; nakatakas si Ben-adad sa isang kabayo"
     sources:
       - "1 Kgs 20:1-21"
   - id: aphek-ahab
@@ -1735,6 +1840,7 @@ battles:
       cs: "Achab poráží Ben-hadada u Afeku"
       sv: "Achav besegrar Ben-Hadad vid Afek"
       nb: "Akab beseirer Ben-Hadad ved Afek"
+      tl: "Tinalo ni Achab si Ben-adad sa Aphec"
     place: a6fc60d # Aphek (1 Kgs 20:26)
     ref: 1Kgs.20.26-1Kgs.20.34
     sides:
@@ -1751,6 +1857,7 @@ battles:
       cs: "Izrael, jako dvě malá stáda kůzlat, proti Syřanům, kteří říkají, že Hospodin je bůh hor"
       sv: "Israel, likt två små killingflockar, mot syrierna som säger att Herren är en bergsgud"
       nb: "Israel, lik to små flokker kje, mot syrerne som sier at Herren er en Gud for fjellene"
+      tl: "Ang Israel, na gaya ng dalawang maliit na kawan ng kambing, laban sa mga Siryong nagsasabing ang Panginoon ay diyos ng mga burol"
     outcome:
       en: "A hundred thousand Syrians fall on the seventh day; a wall falls on the rest in Aphek, and Ben-hadad surrenders"
       ru: "На седьмой день пали сто тысяч Сириян; на остальных в Афеке рушится стена, Венадад сдаётся"
@@ -1765,6 +1872,7 @@ battles:
       cs: "Sedmého dne padne sto tisíc Syřanů; zeď padne na zbylé v Afeku a Ben-hadad se vzdává"
       sv: "Hundra tusen syrier faller på den sjunde dagen; en mur faller över de övriga i Afek, och Ben-Hadad kapitulerar"
       nb: "Hundre tusen syrere faller på den sjuende dagen; en mur faller over resten i Afek, og Ben-Hadad overgir seg"
+      tl: "Isang daang libong Siryo ang nabuwal sa ikapitong araw; isang pader ang bumagsak sa nalabi sa Aphec, at sumuko si Ben-adad"
     sources:
       - "1 Kgs 20:22-34"
   - id: ramoth-gilead-ahab
@@ -1784,6 +1892,7 @@ battles:
       cs: "Achab padá u Rámot v Gileadu"
       sv: "Achav stupar vid Ramot i Gilead"
       nb: "Akab faller ved Ramot-Gilead"
+      tl: "Nabuwal si Achab sa Ramoth-galaad"
     place: a2fe63c # Ramoth-gilead
     ref: 1Kgs.22.29-1Kgs.22.37
     sides:
@@ -1800,6 +1909,7 @@ battles:
       cs: "Achab Izraelský a Jozafat Judský proti Syřanům"
       sv: "Achav av Israel och Josafat av Juda mot syrierna"
       nb: "Akab av Israel og Josjafat av Juda mot syrerne"
+      tl: "Si Achab ng Israel at si Josaphat ng Juda laban sa mga Siryo"
     outcome:
       en: "Ahab, disguised, is struck by a chance arrow and dies at evening; the army disperses"
       ru: "Переодетый Ахав ранен случайной стрелой и умирает к вечеру; войско расходится"
@@ -1814,6 +1924,7 @@ battles:
       cs: "Achab, přestrojený, je zasažen nahodilým šípem a večer umírá; vojsko se rozchází"
       sv: "Achav, förklädd, träffas av en pil som avlossats på måfå och dör om aftonen; hären skingras"
       nb: "Akab, forkledd, blir truffet av en tilfeldig pil og dør mot aftenen; hæren går fra hverandre"
+      tl: "Si Achab, na nagbalatkayo, ay tinamaan ng isang palasong ligaw at namatay nang hapon; nagkawatak-watak ang hukbo"
     sources:
       - "1 Kgs 22:1-40; 2 Chr 18"
   - id: tekoa
@@ -1835,6 +1946,7 @@ battles:
       cs: "Nepřátelé Jozafatovi se na poušti Tekoa navzájem hubí"
       sv: "Josafats fiender förgör varandra i Tekoas öken"
       nb: "Josjafats fiender tilintetgjør hverandre i Tekoa-ørkenen"
+      tl: "Nagpatayan ang mga kaaway ni Josaphat sa ilang ng Tecoa"
     place: a2e3aa0 # Tekoa
     ref: 2Chr.20.20-2Chr.20.26
     sides:
@@ -1851,6 +1963,7 @@ battles:
       cs: "Juda pod Jozafatem, zpěváci před vojskem, proti Moábu, Amónu a hoře Seír"
       sv: "Juda under Josafat, med sångare framför hären, mot Moab, Ammon och Seirs berg"
       nb: "Juda under Josjafat, med sangere foran hæren, mot Moab, Ammon og Se'ir-fjellet"
+      tl: "Ang Juda sa ilalim ni Josaphat, na may mga mang-aawit sa harap ng hukbo, laban sa Moab, Ammon at Bundok Seir"
     outcome:
       en: "The invaders turn on each other and none escapes; Judah gathers the spoil for three days"
       ru: "Пришедшие обращают оружие друг на друга, никто не спасается; Иудеи три дня собирают добычу"
@@ -1865,6 +1978,7 @@ battles:
       cs: "Vetřelci se obracejí jedni proti druhým a nikdo neuniká; Juda sbírá kořist tři dny"
       sv: "Inkräktarna vänder sig mot varandra och ingen undkommer; Juda samlar in bytet i tre dagar"
       nb: "Inntrengerne vender seg mot hverandre, og ingen slipper unna; Juda samler byttet i tre dager"
+      tl: "Nagpatayan ang mga mananalakay at walang nakatakas; tatlong araw na nagtipon ng samsam ang Juda"
     sources:
       - "2 Chr 20:1-30"
   - id: kir-hareseth
@@ -1885,6 +1999,7 @@ battles:
       cs: "Tři králové obléhají Mešu v Kír-charesetu"
       sv: "De tre kungarna belägrar Mesha i Kir-Hareset"
       nb: "De tre kongene kringsetter Mesa i Kir-Hareset"
+      tl: "Kinubkob ng tatlong hari si Mesa sa Cir-hareseth"
     place: ab55371 # Kir-hareseth
     ref: 2Kgs.3.21-2Kgs.3.27
     sides:
@@ -1901,6 +2016,7 @@ battles:
       cs: "Jehoram Izraelský, Jozafat Judský a král Edómu proti Mešovi, králi Moábu"
       sv: "Joram av Israel, Josafat av Juda och Edoms kung mot Mesha, kung av Moab"
       nb: "Joram av Israel, Josjafat av Juda og kongen av Edom mot Mesa, kongen av Moab"
+      tl: "Si Joram ng Israel, si Josaphat ng Juda at ang hari ng Edom laban kay Mesa na hari ng Moab"
     outcome:
       en: "Moab's land is laid waste; Mesha offers his eldest son on the wall and the kings withdraw"
       ru: "Земля Моава опустошена; Меса приносит на стене в жертву своего первенца, и цари отступают"
@@ -1915,6 +2031,7 @@ battles:
       cs: "Moábská země je zpustošena; Meša obětuje na hradbě svého prvorozeného syna a králové odtahují"
       sv: "Moabs land förödes; Mesha offrar sin äldste son på muren, och kungarna drar sig tillbaka"
       nb: "Moabs land blir lagt øde; Mesa ofrer sin eldste sønn på muren, og kongene trekker seg tilbake"
+      tl: "Winasak ang lupain ng Moab; inihandog ni Mesa ang kaniyang panganay na anak sa ibabaw ng pader at umurong ang mga hari"
     sources:
       - "2 Kgs 3:4-27"
       - "The Mesha Stele (Moab's side of the war; c. 840 BC)"
@@ -1935,6 +2052,7 @@ battles:
       cs: "Hladové obležení Samaří zrušeno přes noc"
       sv: "Hungerbelägringen av Samaria hävs över natten"
       nb: "Hungerbeleiringen av Samaria hevet over natten"
+      tl: "Inalis sa isang gabi ang pagkubkob sa Samaria dahil sa taggutom"
     place: a041bb3 # Samaria
     ref: 2Kgs.6.24-2Kgs.7.16
     sides:
@@ -1951,6 +2069,7 @@ battles:
       cs: "Ben-hadad Syrský obléhá Samaří, kde Elíša slibuje hojnost na zítřek"
       sv: "Ben-Hadad av Syrien, som belägrar Samaria, där Elisha lovar överflöd i morgon"
       nb: "Ben-Hadad av Syria, som kringsetter Samaria, hvor Elisja lover overflod i morgen"
+      tl: "Si Ben-adad ng Siria na kumukubkob sa Samaria, kung saan nangako si Eliseo ng kasaganaan kinabukasan"
     outcome:
       en: "The Syrians hear a noise of a great host and flee at twilight, leaving their camp; four lepers find it empty"
       ru: "Сирийцы слышат шум большого войска и бегут в сумерки, бросив стан; четверо прокажённых находят его пустым"
@@ -1965,6 +2084,7 @@ battles:
       cs: "Syřané slyší hluk velikého vojska a za soumraku prchají, opouštějí svůj tábor; čtyři malomocní jej nacházejí prázdný"
       sv: "Syrierna hör ett larm av en stor här och flyr i skymningen och lämnar sitt läger; fyra spetälska finner det tomt"
       nb: "Syrerne hører larmen av en stor hær og flykter i skumringen og lar leiren stå; fire spedalske finner den tom"
+      tl: "Narinig ng mga Siryo ang ingay ng isang malaking hukbo at tumakas sa takipsilim, iniwan ang kanilang kampo; nasumpungan ito ng apat na ketongin na walang laman"
     sources:
       - "2 Kgs 6:24-7:20"
   - id: ramoth-gilead-joram
@@ -1983,6 +2103,7 @@ battles:
       cs: "Joram raněn u Rámot v Gileadu; tam je pomazán Jehú"
       sv: "Joram sårad vid Ramot i Gilead; Jehu smörjs där"
       nb: "Joram såret ved Ramot-Gilead; Jehu salvet der"
+      tl: "Nasugatan si Joram sa Ramoth-galaad; doon pinahiran si Jehu"
     place: a2fe63c # Ramoth-gilead
     ref: 2Kgs.8.28-2Kgs.9.6
     sides:
@@ -1999,6 +2120,7 @@ battles:
       cs: "Joram Izraelský a Achazjáš Judský proti Chazaelovi Syrskému"
       sv: "Joram av Israel och Achasja av Juda mot Hasael av Syrien"
       nb: "Joram av Israel og Ahasja av Juda mot Hasael av Syria"
+      tl: "Si Joram ng Israel at si Ochozias ng Juda laban kay Hazael ng Siria"
     outcome:
       en: "Joram is wounded and goes back to Jezreel to be healed; Jehu is anointed at Ramoth-gilead and rides to Jezreel"
       ru: "Иорам ранен и возвращается лечиться в Изреель; Ииуй помазан в Рамофе и едет в Изреель"
@@ -2013,6 +2135,7 @@ battles:
       cs: "Joram je raněn a vrací se do Jizreelu k uzdravení; Jehú je v Rámot v Gileadu pomazán a jede do Jizreelu"
       sv: "Joram blir sårad och drar tillbaka till Jisreel för att läkas; Jehu smörjs i Ramot i Gilead och rider till Jisreel"
       nb: "Joram blir såret og drar tilbake til Jisreel for å bli lege; Jehu blir salvet i Ramot-Gilead og rir til Jisreel"
+      tl: "Nasugatan si Joram at bumalik sa Jezreel upang pagalingin; pinahiran si Jehu sa Ramoth-galaad at sumakay patungong Jezreel"
     sources:
       - "2 Kgs 8:28-9:16"
       - "Black Obelisk of Shalmaneser III (Jehu's tribute, 841 BC)"
@@ -2033,6 +2156,7 @@ battles:
       cs: "Joaš Izraelský poráží Amacjáše u Bét-šemeše"
       sv: "Joas av Israel besegrar Amasja vid Bet-Shemesh"
       nb: "Joasj av Israel beseirer Amasja ved Bet-Sjemesj"
+      tl: "Tinalo ni Joas ng Israel si Amasias sa Beth-semes"
     place: a3b5b53 # Beth-shemesh
     ref: 2Kgs.14.11-2Kgs.14.14
     sides:
@@ -2049,6 +2173,7 @@ battles:
       cs: "Joaš Izraelský proti Amacjášovi Judskému"
       sv: "Joas av Israel mot Amasja av Juda"
       nb: "Joasj av Israel mot Amasja av Juda"
+      tl: "Si Joas ng Israel laban kay Amasias ng Juda"
     outcome:
       en: "Judah flees, Amaziah is taken, and Jehoash breaks down four hundred cubits of Jerusalem's wall and takes the Temple's gold"
       ru: "Иудеи бегут, Амасия взят в плен, Иоас разрушает четыреста локтей стены Иерусалима и забирает золото Храма"
@@ -2063,6 +2188,7 @@ battles:
       cs: "Juda prchá, Amacjáš je zajat a Joaš boří čtyři sta loket jeruzalémské hradby a bere zlato z chrámu"
       sv: "Juda flyr, Amasja grips, och Joas river ner fyra hundra alnar av Jerusalems mur och tar templets guld"
       nb: "Juda flykter, Amasja blir tatt til fange, og Joasj river ned fire hundre alen av Jerusalems mur og tar templets gull"
+      tl: "Tumakas ang Juda, nabihag si Amasias, at ibinagsak ni Joas ang apat na raang siko ng pader ng Jerusalem at kinuha ang ginto ng Templo"
     sources:
       - "2 Kgs 14:8-14; 2 Chr 25:17-24"
   - id: jerusalem-rezin-pekah
@@ -2082,6 +2208,7 @@ battles:
       cs: "Resín a Pekach obléhají Achaza v Jeruzalémě"
       sv: "Resin och Pekach belägrar Achas i Jerusalem"
       nb: "Resin og Peka kringsetter Ahas i Jerusalem"
+      tl: "Kinubkob nina Rezin at Peka si Achaz sa Jerusalem"
     place: a15257a # Jerusalem
     ref: 2Kgs.16.5
     sides:
@@ -2098,6 +2225,7 @@ battles:
       cs: "Resín Syrský a Pekach Izraelský proti Achazovi Judskému"
       sv: "Resin av Syrien och Pekach av Israel mot Achas av Juda"
       nb: "Resin av Syria og Peka av Israel mot Ahas av Juda"
+      tl: "Si Rezin ng Siria at si Peka ng Israel laban kay Achaz ng Juda"
     outcome:
       en: "They cannot overcome him; Ahaz buys the help of Tiglath-pileser, who takes Damascus"
       ru: "Одолеть его не могут; Ахаз покупает помощь Феглаффелласара, который берёт Дамаск"
@@ -2112,6 +2240,7 @@ battles:
       cs: "Nemohou ho přemoci; Achaz kupuje pomoc Tiglatpilesara, který dobývá Damašek"
       sv: "De kan inte övervinna honom; Achas köper Tiglat-Pilesers hjälp, och han intar Damaskus"
       nb: "De kan ikke overvinne ham; Ahas kjøper Tiglat-Pilesers hjelp, og han inntar Damaskus"
+      tl: "Hindi nila siya magapi; binili ni Achaz ang tulong ni Tiglath-pileser, na kumuha sa Damasco"
     sources:
       - "2 Kgs 16:5-9; Isa 7:1-9; 2 Chr 28:5-8"
       - "Tiglath-pileser III, Summary Inscription 7 (Ahaz's tribute); Eponym Chronicle 733-732 BC"
@@ -2131,6 +2260,7 @@ battles:
       cs: "Samaří padá po tříletém obléhání"
       sv: "Samaria faller efter en tre år lång belägring"
       nb: "Samaria faller etter en treårig beleiring"
+      tl: "Bumagsak ang Samaria pagkatapos ng tatlong taóng pagkubkob"
     place: a041bb3 # Samaria
     ref: 2Kgs.17.5-2Kgs.17.6
     sides:
@@ -2147,6 +2277,7 @@ battles:
       cs: "Salmanasar V. Asyrský proti Hóšeovi v Samaří"
       sv: "Salmanassar V av Assyrien mot Hosea i Samaria"
       nb: "Salmanassar V av Assyria mot Hosea i Samaria"
+      tl: "Si Salmanasar V ng Asiria laban kay Oseas sa Samaria"
     outcome:
       en: "The city is taken in Hoshea's ninth year and Israel is carried to Halah, Habor and the cities of the Medes"
       ru: "Город взят в девятый год Осии; Израиль переселён в Халах, Хавор и города Мидийские"
@@ -2161,6 +2292,7 @@ battles:
       cs: "Město je dobyto v devátém roce Hóšeově a Izrael je odveden do Chalachu, Chabóru a do měst Médských"
       sv: "Staden intas i Hoseas nionde år, och Israel förs till Halach, Habor och Mediens städer"
       nb: "Byen blir inntatt i Hoseas niende år, og Israel blir ført til Halah, Habor og mederes byer"
+      tl: "Nakuha ang lungsod sa ikasiyam na taon ni Oseas at dinala ang Israel sa Hala, Habor at sa mga lungsod ng mga Medo"
     sources:
       - "2 Kgs 17:3-6; 18:9-11"
       - "Babylonian Chronicle, ABC 1 i 28 (Shalmaneser V)"
@@ -2180,6 +2312,7 @@ battles:
       cs: "Senacherib dobývá Lachiš"
       sv: "Sanherib intar Lakish"
       nb: "Sankerib inntar Lakisj"
+      tl: "Kinuha ni Sennacherib ang Lachis"
     place: a3cc590 # Lachish
     ref: 2Kgs.18.13-2Kgs.18.14
     sides:
@@ -2196,6 +2329,7 @@ battles:
       cs: "Senacherib Asyrský, s táborem před Lachišem, proti hrazeným městům Judským"
       sv: "Sanherib av Assyrien, med sitt läger framför Lakish, mot Judas befästa städer"
       nb: "Sankerib av Assyria, med sin leir foran Lakisj, mot Judas befestede byer"
+      tl: "Si Sennacherib ng Asiria, na may kampo sa harap ng Lachis, laban sa mga lungsod na may kuta ng Juda"
     outcome:
       en: "The fortified cities are taken; from Lachish Sennacherib receives Hezekiah's tribute and sends his army to Jerusalem"
       ru: "Укреплённые города взяты; у Лахиса Сеннахирим принимает дань Езекии и посылает войско к Иерусалиму"
@@ -2210,6 +2344,7 @@ battles:
       cs: "Hrazená města jsou dobyta; od Lachiše přijímá Senacherib Chizkijášův tribut a posílá své vojsko k Jeruzalému"
       sv: "De befästa städerna intas; från Lakish tar Sanherib emot Hiskias tribut och sänder sin här till Jerusalem"
       nb: "De befestede byene blir inntatt; fra Lakisj mottar Sankerib Hiskias skatt og sender sin hær mot Jerusalem"
+      tl: "Nakuha ang mga lungsod na may kuta; mula sa Lachis ay tinanggap ni Sennacherib ang tributo ni Ezechias at ipinadala ang kaniyang hukbo sa Jerusalem"
     sources:
       - "2 Kgs 18:13-17; 2 Chr 32:9"
       - "The Lachish reliefs from Sennacherib's palace at Nineveh (British Museum)"
@@ -2230,6 +2365,7 @@ battles:
       cs: "Senacheribovo vojsko před Jeruzalémem"
       sv: "Sanheribs här framför Jerusalem"
       nb: "Sankeribs hær foran Jerusalem"
+      tl: "Ang hukbo ni Sennacherib sa harap ng Jerusalem"
     place: a15257a # Jerusalem
     ref: 2Kgs.19.32-2Kgs.19.36
     sides:
@@ -2246,6 +2382,7 @@ battles:
       cs: "Asyrské vojsko pod Tartanem, Rab-sarisem a Rab-šake proti Chizkijášovi v Jeruzalémě"
       sv: "Den assyriska hären under Tartan, Rab-Saris och Rab-Shake mot Hiskia i Jerusalem"
       nb: "Den assyriske hæren under Tartan, Rabsaris og Rabsjake mot Hiskia i Jerusalem"
+      tl: "Ang hukbong Asirio sa ilalim nina Thartan, Rabsaris at Rabsaces laban kay Ezechias sa Jerusalem"
     outcome:
       en: "The angel of the Lord smites 185,000 in the camp; Sennacherib goes home to Nineveh"
       ru: "Ангел Господень поражает в стане 185 000; Сеннахирим уходит в Ниневию"
@@ -2260,6 +2397,7 @@ battles:
       cs: "Anděl Hospodinův pobíjí v táboře 185 000; Senacherib se vrací domů do Ninive"
       sv: "Herrens ängel slår 185 000 man i lägret; Sanherib drar hem till Nineve"
       nb: "Herrens engel slår 185 000 i leiren; Sankerib drar hjem til Ninive"
+      tl: "Pinatay ng anghel ng Panginoon ang 185,000 sa kampo; umuwi si Sennacherib sa Ninive"
     sources:
       - "2 Kgs 18:17-19:37; Isa 36-37; 2 Chr 32:1-23"
       - "Sennacherib's Annals (Hezekiah shut up in Jerusalem 'like a bird in a cage'; no capture claimed)"
@@ -2279,6 +2417,7 @@ battles:
       cs: "Jošijáš zabit u Megida faraonem Nekem"
       sv: "Josia dödas vid Megiddo av farao Neko"
       nb: "Josjia blir drept i Megiddo av farao Neko"
+      tl: "Napatay si Josias sa Megiddo ni Faraon Nechao"
     place: a8554e3 # Megiddo
     ref: 2Kgs.23.29-2Kgs.23.30
     sides:
@@ -2295,6 +2434,7 @@ battles:
       cs: "Jošijáš Judský proti faraonu Nekovi, který táhne k Eufratu"
       sv: "Josia av Juda mot farao Neko, som tågar mot Eufrat"
       nb: "Josjia av Juda mot farao Neko, som marsjerer til Eufrat"
+      tl: "Si Josias ng Juda laban kay Faraon Nechao na patungo sa Eufrates"
     outcome:
       en: "Josiah is slain; his servants carry him dead in a chariot to Jerusalem"
       ru: "Иосия убит; слуги везут его тело на колеснице в Иерусалим"
@@ -2309,6 +2449,7 @@ battles:
       cs: "Jošijáš je zabit; jeho služebníci ho mrtvého vezou na voze do Jeruzaléma"
       sv: "Josia dräps; hans tjänare för honom död i en vagn till Jerusalem"
       nb: "Josjia blir drept; hans tjenere fører ham død på en vogn til Jerusalem"
+      tl: "Napatay si Josias; dinala siyang patay ng kaniyang mga lingkod sa isang karo patungong Jerusalem"
     sources:
       - "2 Kgs 23:29-30; 2 Chr 35:20-24"
       - "Babylonian Chronicle, ABC 3 (the seventeenth year of Nabopolassar, 609 BC)"
@@ -2328,6 +2469,7 @@ battles:
       cs: "Nebukadnesar poráží Egypt u Karkemíše"
       sv: "Nebukadnessar besegrar Egypten vid Karkemish"
       nb: "Nebukadnesar beseirer Egypt ved Karkemisj"
+      tl: "Tinalo ni Nabucodonosor ang Egipto sa Carchemis"
     place: af6c730 # Carchemish
     ref: Jer.46.2
     sides:
@@ -2344,6 +2486,7 @@ battles:
       cs: "Nebukadnesar, babylónský korunní princ, proti vojsku faraona Neka"
       sv: "Nebukadnessar, Babylons kronprins, mot farao Nekos här"
       nb: "Nebukadnesar, kronprins av Babylon, mot farao Nekos hær"
+      tl: "Si Nabucodonosor, prinsipeng tagapagmana ng Babilonia, laban sa hukbo ni Faraon Nechao"
     outcome:
       en: "The Egyptian army is smitten in the fourth year of Jehoiakim; Babylon takes the west"
       ru: "Египетское войско разбито в четвёртый год Иоакима; запад переходит к Вавилону"
@@ -2358,6 +2501,7 @@ battles:
       cs: "Egyptské vojsko je poraženo ve čtvrtém roce Jójakimově; Babylón přebírá západ"
       sv: "Den egyptiska hären slås i Jojakims fjärde år; Babylon lägger under sig områdena i väster"
       nb: "Den egyptiske hæren blir slått i Jojakims fjerde år; Babylon tar vesten"
+      tl: "Nilupig ang hukbong Egipcio sa ikaapat na taon ni Joacim; kinuha ng Babilonia ang kanluran"
     sources:
       - "Jer 46:2-12; 2 Kgs 24:7"
       - "Babylonian Chronicle, ABC 5 obv. 1-8"
@@ -2377,6 +2521,7 @@ battles:
       cs: "Jeruzalém se vzdává Nebukadnesarovi; Jójakín jde do vyhnanství"
       sv: "Jerusalem kapitulerar för Nebukadnessar; Jojakin förs i landsflykt"
       nb: "Jerusalem overgir seg til Nebukadnesar; Jojakin føres i landflyktighet"
+      tl: "Sumuko ang Jerusalem kay Nabucodonosor; ipinatapon si Joachin"
     place: a15257a # Jerusalem
     ref: 2Kgs.24.10-2Kgs.24.17
     sides:
@@ -2393,6 +2538,7 @@ battles:
       cs: "Nebukadnesarovi služebníci, potom sám král, proti Jójakínovi v Jeruzalémě"
       sv: "Nebukadnessars tjänare, sedan kungen själv, mot Jojakin i Jerusalem"
       nb: "Nebukadnesars tjenere, så kongen selv, mot Jojakin i Jerusalem"
+      tl: "Ang mga lingkod ni Nabucodonosor, at pagkatapos ay ang hari mismo, laban kay Joachin sa Jerusalem"
     outcome:
       en: "Jehoiachin goes out to the king of Babylon; the treasures and ten thousand captives are carried away, and Zedekiah is made king"
       ru: "Иехония выходит к царю Вавилонскому; сокровища и десять тысяч пленных уведены, царём поставлен Седекия"
@@ -2407,6 +2553,7 @@ battles:
       cs: "Jójakín vychází k babylónskému králi; poklady a deset tisíc zajatců jsou odvlečeny a králem je ustanoven Sidkijáš"
       sv: "Jojakin går ut till Babylons kung; skatterna och tio tusen fångar förs bort, och Sidkia görs till kung"
       nb: "Jojakin går ut til kongen av Babylon; skattene og ti tusen fanger blir ført bort, og Sidkia blir gjort til konge"
+      tl: "Lumabas si Joachin sa hari ng Babilonia; dinala ang mga kayamanan at sampung libong bihag, at ginawang hari si Sedecias"
     sources:
       - "2 Kgs 24:10-17; 2 Chr 36:9-10"
       - "Babylonian Chronicle, ABC 5 rev. 11-13 (2 Adar, 597 BC)"
@@ -2426,6 +2573,7 @@ battles:
       cs: "Nebukadnesarovo vojsko obléhá Lachiš a Azeku"
       sv: "Nebukadnessars här belägrar Lakish och Aseka"
       nb: "Nebukadnesars hær kringsetter Lakisj og Aseka"
+      tl: "Kinubkob ng hukbo ni Nabucodonosor ang Lachis at Azeca"
     place: a3cc590 # Lachish
     ref: Jer.34.7
     sides:
@@ -2442,6 +2590,7 @@ battles:
       cs: "Vojsko krále babylónského proti posledním hrazeným městům Judským"
       sv: "Babylons kungs här mot Judas sista befästa städer"
       nb: "Hæren til kongen av Babylon mot Judas siste befestede byer"
+      tl: "Ang hukbo ng hari ng Babilonia laban sa huling mga lungsod na may kuta ng Juda"
     outcome:
       en: "Lachish and Azekah are the only fortified cities of Judah still holding out"
       ru: "Лахис и Азека — последние уцелевшие укреплённые города Иудеи"
@@ -2456,6 +2605,7 @@ battles:
       cs: "Lachiš a Azeka jsou jediná hrazená města Judska, která ještě vzdorují"
       sv: "Lakish och Aseka är de enda befästa städerna i Juda som ännu håller stånd"
       nb: "Lakisj og Aseka er de eneste befestede byene i Juda som ennå holder stand"
+      tl: "Ang Lachis at Azeca na lamang ang mga lungsod na may kuta ng Juda na nananatili pa"
     sources:
       - "Jer 34:6-7"
       - "Lachish Letter 4 (ostracon: watching for the signals of Lachish, 'for we cannot see Azekah')"
@@ -2476,6 +2626,7 @@ battles:
       cs: "Nebukadnesar dobývá a pálí Jeruzalém"
       sv: "Nebukadnessar intar och bränner Jerusalem"
       nb: "Nebukadnesar inntar og brenner Jerusalem"
+      tl: "Kinuha at sinunog ni Nabucodonosor ang Jerusalem"
     place: a15257a # Jerusalem
     ref: 2Kgs.25.1-2Kgs.25.10
     sides:
@@ -2492,6 +2643,7 @@ battles:
       cs: "Nebukadnesar a všechno jeho vojsko proti Sidkijášovi v Jeruzalémě"
       sv: "Nebukadnessar och hela hans här mot Sidkia i Jerusalem"
       nb: "Nebukadnesar og hele hans hær mot Sidkia i Jerusalem"
+      tl: "Si Nabucodonosor at ang lahat niyang hukbo laban kay Sedecias sa Jerusalem"
     outcome:
       en: "After eighteen months the wall is breached; Zedekiah is caught near Jericho and blinded, the Temple and city are burned, the walls broken down"
       ru: "Через полтора года стена проломлена; Седекия схвачен у Иерихона и ослеплён, Храм и город сожжены, стены разрушены"
@@ -2506,6 +2658,7 @@ battles:
       cs: "Po osmnácti měsících je hradba prolomena; Sidkijáš je dopaden u Jericha a oslepen, chrám a město jsou vypáleny, hradby zbořeny"
       sv: "Efter arton månader bryts muren; Sidkia grips nära Jeriko och förblindas, templet och staden bränns, murarna rivs"
       nb: "Etter atten måneder blir muren brutt gjennom; Sidkia blir grepet nær Jeriko og blindet, templet og byen blir brent, murene revet ned"
+      tl: "Pagkaraan ng labingwalong buwan ay nabutas ang kuta; nahuli si Sedecias malapit sa Jerico at binulag, sinunog ang Templo at ang lungsod, at ibinagsak ang mga pader"
     sources:
       - "2 Kgs 25:1-21; Jer 39:1-10; 52:4-30"
 
@@ -2526,6 +2679,7 @@ battles:
       cs: "Alexandrovo obléhání Týru"
       sv: "Alexanders belägring av Tyros"
       nb: "Aleksanders beleiring av Tyros"
+      tl: "Ang pagkubkob ni Alejandro sa Tiro"
     place: a160272 # Tyre
     sides:
       en: "Alexander the Great, building a mole from the mainland, against the island city of Tyre"
@@ -2541,6 +2695,7 @@ battles:
       cs: "Alexandr Veliký, budující hráz od pevniny, proti ostrovnímu městu Týru"
       sv: "Alexander den store, som bygger en vall från fastlandet, mot ö-staden Tyros"
       nb: "Aleksander den store, som bygger en molo fra fastlandet, mot øybyen Tyros"
+      tl: "Si Alejandro Magno, na nagtatayo ng pilapil mula sa kalupaan, laban sa lungsod-pulo ng Tiro"
     outcome:
       en: "After seven months the city is stormed; Alexander goes on to Gaza and Egypt"
       ru: "Через семь месяцев город взят штурмом; Александр идёт на Газу и в Египет"
@@ -2555,6 +2710,7 @@ battles:
       cs: "Po sedmi měsících je město dobyto útokem; Alexandr pokračuje do Gazy a Egypta"
       sv: "Efter sju månader stormas staden; Alexander drar vidare till Gaza och Egypten"
       nb: "Etter sju måneder blir byen stormet; Aleksander drar videre til Gasa og Egypt"
+      tl: "Pagkaraan ng pitong buwan ay sinalakay at nakuha ang lungsod; nagpatuloy si Alejandro sa Gaza at Egipto"
     sources:
       - "Arrian, Anabasis 2.16-24"
       - "Diodorus Siculus 17.40-46"
@@ -2574,6 +2730,7 @@ battles:
       cs: "Bitva u Paneia: Judsko přechází k Seleukovcům"
       sv: "Slaget vid Panion: Judeen går över till seleukiderna"
       nb: "Slaget ved Panion: Judea går over til seleukidene"
+      tl: "Labanan sa Panium: ang Judea ay napunta sa mga Seleucida"
     place: ab7bf48 # Caesarea Philippi (Panias)
     sides:
       en: "Antiochus III against the Ptolemaic army under Scopas"
@@ -2589,6 +2746,7 @@ battles:
       cs: "Antiochos III. proti ptolemaiovskému vojsku pod Skopem"
       sv: "Antiochos III mot den ptolemaiska hären under Skopas"
       nb: "Antiokos III mot den ptolemeiske hæren under Skopas"
+      tl: "Si Antioco III laban sa hukbong Ptolemaico sa ilalim ni Escopas"
     outcome:
       en: "Scopas is defeated; Coele-Syria and Judea pass from the Ptolemies to the Seleucids"
       ru: "Скопас разбит; Келесирия и Иудея переходят от Птолемеев к Селевкидам"
@@ -2603,6 +2761,7 @@ battles:
       cs: "Skopas je poražen; Koilé Sýrie a Judsko přecházejí od Ptolemaiovců k Seleukovcům"
       sv: "Skopas besegras; Koilesyrien och Judeen går från ptoleméerna till seleukiderna"
       nb: "Skopas blir slått; Koilesyria og Judea går fra ptolemeerne til seleukidene"
+      tl: "Natalo si Escopas; ang Coele-Siria at Judea ay napunta mula sa mga Ptolomeo tungo sa mga Seleucida"
     sources:
       - "Polybius 16.18-19"
       - "Josephus, Antiquities 12.132-133"
@@ -2622,6 +2781,7 @@ battles:
       cs: "Juda Makabejský poráží Serona u Bét-choronu"
       sv: "Judas Mackabeus besegrar Seron vid Bet-Horon"
       nb: "Judas Makkabeus beseirer Seron ved Bet-Horon"
+      tl: "Tinalo ni Judas Macabeo si Seron sa Beth-horon"
     place: a75b45e # Beth-horon
     sides:
       en: "Judas Maccabeus with a small band against Seron, commander of the Syrian army"
@@ -2637,6 +2797,7 @@ battles:
       cs: "Juda Makabejský s malou družinou proti Seronovi, veliteli syrského vojska"
       sv: "Judas Mackabeus med en liten skara mot Seron, befälhavare för den syriska hären"
       nb: "Judas Makkabeus med en liten flokk mot Seron, den syriske hærens sjef"
+      tl: "Si Judas Macabeo na may maliit na pangkat laban kay Seron, pinuno ng hukbong Siryo"
     outcome:
       en: "Seron's army is broken on the ascent of Beth-horon and chased to the plain; about eight hundred fall"
       ru: "Войско Сирона разбито на подъёме Беф-Орона и гонимо на равнину; пало около восьмисот"
@@ -2651,6 +2812,7 @@ battles:
       cs: "Seronovo vojsko je rozdrceno na svahu Bét-choronu a pronásledováno do roviny; padne asi osm set mužů"
       sv: "Serons här krossas vid uppstigningen till Bet-Horon och jagas ner till slätten; omkring åtta hundra faller"
       nb: "Serons hær blir slått ved oppstigningen til Bet-Horon og jaget ned til sletten; omkring åtte hundre faller"
+      tl: "Nabasag ang hukbo ni Seron sa pag-akyat ng Beth-horon at hinabol hanggang sa kapatagan; mga walong daan ang nabuwal"
     ref: 1Macc.3.13-1Macc.3.24
     sources:
       - "1 Macc 3:13-24"
@@ -2671,6 +2833,7 @@ battles:
       cs: "Nikanór padá u Adasy"
       sv: "Nikanor stupar vid Adasa"
       nb: "Nikanor faller ved Adasa"
+      tl: "Nabuwal si Nicanor sa Adasa"
     place: a6e831d # Adasa
     sides:
       en: "Judas Maccabeus against Nicanor, the Seleucid governor who had threatened the Temple"
@@ -2686,6 +2849,7 @@ battles:
       cs: "Juda Makabejský proti Nikanórovi, seleukovskému správci, který hrozil chrámu"
       sv: "Judas Mackabeus mot Nikanor, den seleukidiske ståthållaren som hade hotat templet"
       nb: "Judas Makkabeus mot Nikanor, den seleukidiske guvernøren som hadde truet templet"
+      tl: "Si Judas Macabeo laban kay Nicanor, ang gobernador ng mga Seleucida na nagbanta sa Templo"
     outcome:
       en: "Nicanor is the first to fall and his army flees to Gazara; the day, 13 Adar, is kept as a feast"
       ru: "Никанор падает первым, войско его бежит к Газару; день 13 адара установлен праздником"
@@ -2700,6 +2864,7 @@ battles:
       cs: "Nikanór padá první a jeho vojsko prchá ke Gazaře; den, 13. adar, se slaví jako svátek"
       sv: "Nikanor är den förste som faller och hans här flyr till Gazara; dagen, den 13 adar, firas som en festdag"
       nb: "Nikanor er den første som faller, og hans hær flykter til Gazara; dagen, 13. adar, holdes som festdag"
+      tl: "Si Nicanor ang unang nabuwal at tumakas ang kaniyang hukbo patungong Gazara; ang araw, 13 Adar, ay ipinagdiriwang bilang kapistahan"
     ref: 1Macc.7.39-1Macc.7.50
     sources:
       - "1 Macc 7:39-50; 2 Macc 15:20-36"
@@ -2720,6 +2885,7 @@ battles:
       cs: "Pompeius dobývá Chrámovou horu"
       sv: "Pompejus intar tempelberget"
       nb: "Pompeius inntar Tempelhøyden"
+      tl: "Sinakop ni Pompeyo ang bundok ng Templo"
     place: a15257a # Jerusalem
     sides:
       en: "Pompey's legions, admitted to the city by Hyrcanus's party, against Aristobulus's men holding the Temple"
@@ -2735,6 +2901,7 @@ battles:
       cs: "Pompeiovy legie, vpuštěné do města stranou Hyrkanovou, proti Aristobúlovým mužům držícím chrám"
       sv: "Pompejus’ legioner, insläppta i staden av Hyrkanos’ parti, mot Aristobulos’ män som håller templet"
       nb: "Pompeius' legioner, sluppet inn i byen av Hyrkanos' parti, mot Aristobulos' menn som holder templet"
+      tl: "Ang mga legiyon ni Pompeyo, na pinapasok sa lungsod ng pangkat ni Hyrcano, laban sa mga tauhan ni Aristobulo na humahawak sa Templo"
     outcome:
       en: "After three months the Temple is stormed on a fast day; Pompey enters the Holy of Holies, and Judea comes under Rome"
       ru: "Через три месяца Храм взят штурмом в день поста; Помпей входит во Святое святых, Иудея попадает под власть Рима"
@@ -2749,6 +2916,7 @@ battles:
       cs: "Po třech měsících je chrám dobyt útokem v den půstu; Pompeius vstupuje do Nejsvětější svatyně a Judsko připadá Římu"
       sv: "Efter tre månader stormas templet på en fastedag; Pompejus går in i det allra heligaste, och Judeen hamnar under Rom"
       nb: "Etter tre måneder blir templet stormet på en fastedag; Pompeius går inn i det aller helligste, og Judea kommer under Roma"
+      tl: "Pagkaraan ng tatlong buwan ay sinalakay ang Templo sa isang araw ng pag-aayuno; pumasok si Pompeyo sa Kabanal-banalang Dako, at ang Judea ay napasailalim ng Roma"
     sources:
       - "Josephus, Antiquities 14.58-73; Jewish War 1.141-154"
       - "Cassius Dio, Roman History 37.15-17"
@@ -2768,6 +2936,7 @@ battles:
       cs: "Titus dobývá Jeruzalém; chrám hoří"
       sv: "Titus intar Jerusalem; templet brinner"
       nb: "Titus inntar Jerusalem; templet brenner"
+      tl: "Kinuha ni Tito ang Jerusalem; nasunog ang Templo"
     place: a15257a # Jerusalem
     sides:
       en: "Four Roman legions under Titus against the Jewish factions of John of Gischala and Simon bar Giora"
@@ -2783,6 +2952,7 @@ battles:
       cs: "Čtyři římské legie pod Titem proti židovským stranám Jana z Gischaly a Šimona bar Giory"
       sv: "Fyra romerska legioner under Titus mot de judiska fraktionerna under Johannes från Gischala och Simon bar Giora"
       nb: "Fire romerske legioner under Titus mot de jødiske fraksjonene til Johannes fra Gisjala og Simon bar Giora"
+      tl: "Apat na legiyong Romano sa ilalim ni Tito laban sa mga pangkat ng mga Judio na pinamumunuan nina Juan ng Gischala at Simon bar Giora"
     outcome:
       en: "After a siege from spring to late summer the Temple burns on 10 Loos (Av) and the Upper City falls a month later; the city is razed"
       ru: "После осады с весны до конца лета Храм сгорает 10-го числа месяца ава (у Флавия — лооса), Верхний город падает месяцем позже; город разрушен"
@@ -2797,6 +2967,7 @@ battles:
       cs: "Po obléhání od jara do pozdního léta chrám hoří 10. loos (av) a Horní město padá o měsíc později; město je srovnáno se zemí"
       sv: "Efter en belägring från våren till sen sommar brinner templet den 10 loos (av) och Övre staden faller en månad senare; staden jämnas med marken"
       nb: "Etter en beleiring fra våren til sensommeren brenner templet den 10. loos (ab), og Øvre by faller en måned senere; byen blir jevnet med jorden"
+      tl: "Pagkaraan ng pagkubkob mula tagsibol hanggang huling bahagi ng tag-araw, nasunog ang Templo noong 10 Loos (Av) at bumagsak ang Itaas na Lungsod pagkaraan ng isang buwan; winasak ang lungsod"
     sources:
       - "Josephus, Jewish War 5.39-6.434 (the siege), 6.249-266 (the Temple burned), 6.392-434 (the Upper City)"
       - "Cassius Dio, Roman History 66.4-7"

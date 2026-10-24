@@ -17,6 +17,7 @@ title:
   cs: "Saul, první král"
   sv: "Saul, den förste kungen"
   nb: "Saul, den første konge"
+  tl: "Si Saul, ang unang hari"
 year: "1050 BC"
 people: ["Saul@1Sa.9.2-Act"]
 approximate: true
@@ -37,6 +38,7 @@ stops:
       cs: "Saul hledá ztracené oslice svého otce, přichází do země Súf a tam ho Samuel pomazává za vůdce nad dědictvím Hospodinovým."
       sv: "På jakt efter sin fars bortkomna åsnor kommer Saul till Sufs land, och där smörjer Samuel honom till furste över Herrens arvedel."
       nb: "På leting etter sin fars bortkomne esler kommer Saul til Sufs land, og der salver Samuel ham til fyrste over Herrens arv."
+      tl: "Habang hinahanap ang nawalang mga asno ng kaniyang ama, dumating si Saul sa lupain ng Suph, at doon pinahiran siya ni Samuel bilang pinuno sa mana ng Panginoon."
   - place: a736f6c # Mizpah
     ref: 1Sam.10.17-1Sam.10.24
     note:
@@ -53,6 +55,7 @@ stops:
       cs: "V Micpě padá los na Saula, skrytého mezi nádobím, a lid zvolá: „Živ buď král!“"
       sv: "I Mispa träffar lotten Saul, som gömmer sig bland trossen, och folket ropar: ”Leve konungen!”"
       nb: "I Mispa faller loddet på Saul, som har gjemt seg blant bagasjen, og folket roper: «Kongen leve!»"
+      tl: "Sa Mizpa, nahulog ang palad kay Saul, na nakatago sa mga kagamitan, at sumigaw ang bayan: “Mabuhay ang hari.”"
   - place: af92088 # Jabesh-gilead
     ref: 1Sam.11.1-1Sam.11.11
     note:
@@ -69,6 +72,7 @@ stops:
       cs: "Nachaš Amónský obléhá Jabeš gileadský; Saul svolává Izrael, v jitřní hlídce vniká do jejich tábora a bije Amónce."
       sv: "Ammoniten Nachash belägrar Javesh-Gilead; Saul samlar Israel, bryter in i deras läger vid morgonväkten och slår ammoniterna."
       nb: "Nahasj ammonitten kringsetter Jabesj-Gilead; Saul samler Israel, bryter inn i deres leir i morgenvakten og slår ammonittene."
+      tl: "Kinubkob ni Naas na Ammonita ang Jabes-galaad; tinipon ni Saul ang Israel, sinalakay ang kanilang kampo sa pagbabantay sa umaga at pinatay ang mga Ammonita."
   - place: ab94aea # Gilgal
     ref: 1Sam.13.8-1Sam.13.14
     note:
@@ -85,6 +89,7 @@ stops:
       cs: "V Gilgalu, unaven sedmidenním čekáním na Samuele, přináší Saul zápalnou oběť sám; Samuel mu říká, že jeho království nezůstane."
       sv: "I Gilgal, trött på att vänta sju dagar på Samuel, offrar Saul brännoffret själv; Samuel säger honom att hans kungadöme inte ska bestå."
       nb: "I Gilgal, lei av å vente sju dager på Samuel, ofrer Saul brennofferet selv; Samuel sier ham at hans kongedømme ikke skal bestå."
+      tl: "Sa Gilgal, na pagod sa paghihintay ng pitong araw kay Samuel, inihandog mismo ni Saul ang handog na susunugin; sinabi sa kaniya ni Samuel na hindi magpapatuloy ang kaniyang kaharian."
   - place: adea06c # Michmash
     ref: 1Sam.13.23-1Sam.14.15
     note:
@@ -101,6 +106,7 @@ stops:
       cs: "U michmaského průsmyku vystupují Jonatan a jeho zbrojnoš k pelištejské posádce a v jejich táboře nastává velmi veliký třas."
       sv: "Vid passet i Mikmas klättrar Jonatan och hans vapendragare upp till filistéernas postering, och en mycket stor skräck griper deras läger."
       nb: "Ved skaret ved Mikmas klatrer Jonatan og hans våpenbærer opp til filisternes vaktpost, og det blir en meget stor skjelving i deres leir."
+      tl: "Sa daanan ng Michmas, umakyat sina Jonathan at ang kaniyang tagapagdala ng sandata sa pulutong ng mga Filisteo, at nagkaroon ng napakalaking panginginig sa kanilang kampo."
   - place: ab94aea # Gilgal
     ref: 1Sam.15.12-1Sam.15.33
     note:
@@ -117,6 +123,7 @@ stops:
       cs: "Zpět v Gilgalu z války s Amalekem; Saul ušetřil, co mu bylo přikázáno zničit: „poslouchati lépe jest, nežli obětovati“, a království je od něho odtrženo."
       sv: "Åter i Gilgal från kriget mot Amalek har Saul skonat det han blivit befalld att förgöra: ”lydnad är bättre än offer”, och kungadömet rivs ifrån honom."
       nb: "Tilbake i Gilgal fra krigen mot Amalek har Saul spart det han var blitt befalt å ødelegge: «lydighet er bedre enn slaktoffer», og kongedømmet blir revet fra ham."
+      tl: "Pagbalik sa Gilgal mula sa digmaan sa Amalec, iniligtas ni Saul ang iniutos na wasakin: “ang pagsunod ay maigi kay sa hain,” at inagaw sa kaniya ang kaharian."
   - place: aca444b # En-dor
     ref: 1Sam.28.7-1Sam.28.25
     note:
@@ -133,6 +140,7 @@ stops:
       cs: "Před poslední bitvou jde přestrojen v noci k ženě s duchem věštícím v Én-dóru a slyší, že zítra bude on i jeho synové se Samuelem."
       sv: "Före den sista striden går han förklädd om natten till en kvinna med spådomsande i En-Dor och får höra att han och hans söner i morgon ska vara hos Samuel."
       nb: "Før det siste slaget går han forkledd om natten til en kvinne som manet frem ånder, i En-Dor, og hører at i morgen skal han og hans sønner være hos Samuel."
+      tl: "Bago ang huling labanan, nagbalatkayo siya at pumunta nang gabi sa isang babaing may espiritu ng pagsanib sa En-dor, at narinig na bukas ay makakasama niya at ng kaniyang mga anak si Samuel."
   - place: a2a8df0 # Beth-shan
     ref: 1Sam.31.8-1Sam.31.10
     note:
@@ -149,6 +157,7 @@ stops:
       cs: "Den po bitvě nalézají Pelištejci Saula a jeho tři syny padlé na hoře Gilboa a přibíjejí jeho tělo ke zdi Bét-šanu."
       sv: "Dagen efter striden finner filistéerna Saul och hans tre söner stupade på berget Gilboa och fäster hans kropp vid muren i Bet-Shean."
       nb: "Dagen etter slaget finner filisterne Saul og hans tre sønner falt på Gilboa og fester hans lik til muren i Bet-Sjean."
+      tl: "Kinabukasan ng labanan, natagpuan ng mga Filisteo si Saul at ang kaniyang tatlong anak na nabuwal sa Bundok Gilboa at ipinako ang kaniyang bangkay sa pader ng Beth-san."
   - place: af92088 # Jabesh-gilead
     ref: 1Sam.31.11-1Sam.31.13
     note:
@@ -165,3 +174,4 @@ stops:
       cs: "Stateční muži z Jabeše gileadského, které kdysi zachránil, jdou celou noc, snímají těla ze zdi a pochovávají jejich kosti pod stromem v Jábeši."
       sv: "De tappra männen i Javesh-Gilead, som han en gång räddade, går hela natten, tar ner kropparna från muren och begraver deras ben under ett träd i Javesh."
       nb: "De djerve mennene fra Jabesj-Gilead, som han en gang reddet, drar gjennom hele natten, tar likene ned fra muren og begraver deres ben under et tre i Jabesj."
+      tl: "Ang mga matapang na lalaki ng Jabes-galaad, na minsan ay iniligtas niya, ay naglakbay buong gabi, kinuha ang mga bangkay sa pader, at inilibing ang kanilang mga buto sa ilalim ng isang punungkahoy sa Jabes."

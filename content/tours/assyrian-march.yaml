@@ -20,6 +20,7 @@ title:
   cs: "Přichází Asyřan: Izajáš 10"
   sv: "Assyriern kommer: Jesaja 10"
   nb: "Assyreren kommer: Jesaja 10"
+  tl: "Dumarating ang Asiryano: Isaias 10"
 year: "701 BC"
 walked: false
 approximate: true
@@ -40,6 +41,7 @@ stops:
       cs: "„Přitáhne do Aiat“: Asyřan vstupuje od severu do území Benjamínova, k někdejšímu Aj."
       sv: "”Han kommer över Ajat”: assyriern tågar in i Benjamin från norr, vid det forna Ai."
       nb: "«Han kommer over Ajat»: assyreren går inn i Benjamin fra nord, ved det gamle Ai."
+      tl: "“Siya'y dumating sa Ajad”: pumapasok ang Asiryano sa Benjamin mula sa hilaga, sa Hai noong una."
   - place: ade6a96 # Migron
     ref: Isa.10.28
     note:
@@ -56,6 +58,7 @@ stops:
       cs: "„přejde přes Migron“."
       sv: "”Han drager fram genom Migron.”"
       nb: "«drar frem gjennem Migron»."
+      tl: "“siya'y nagdaan sa Migron.”"
   - place: adea06c # Michmash
     ref: Isa.10.28
     note:
@@ -72,6 +75,7 @@ stops:
       cs: "„v Michmas složí nádobí svá“: zavazadla zůstávají před průsmykem."
       sv: "”I Mikmas lämnar han sin tross”: trossen lämnas kvar framför passet."
       nb: "«i Mikmas lar han sitt tren bli igjen»: trosset blir igjen foran skaret."
+      tl: "“sa Michmas inilalapag niya ang kaniyang mga daladalahan”: naiiwan ang mga bagahe bago ang daanan."
   - place: a264254 # Geba
     ref: Isa.10.29
     note:
@@ -88,6 +92,7 @@ stops:
       cs: "„Projdou průchod“: michmaský průsmyk, kde kdysi vystoupil Jonatan; v Gebě přenocují."
       sv: "”De draga fram över passet”: Mikmaspasset, där Jonatan en gång klättrade upp; i Geba tar de nattkvarter."
       nb: "«De drar gjennem skaret»: skaret ved Mikmas, hvor Jonatan en gang klatret opp; ved Geba tar de natteleie."
+      tl: "“Sila'y nangagdaraan sa landas”: ang daanan ng Michmas, na minsa'y inakyat ni Jonathan; sa Geba sila nagpapalipas ng gabi."
   - place: a6d57ed # Ramah
     ref: Isa.10.29
     note:
@@ -104,6 +109,7 @@ stops:
       cs: "„ulekne se Ráma“."
       sv: "”Rama bävar.”"
       nb: "«Rama bever.»"
+      tl: "“ang Rama ay nanginginig.”"
   - place: ac24f5f # Gibeah
     ref: Isa.10.29
     note:
@@ -120,6 +126,7 @@ stops:
       cs: "„Gabaa Saulovo uteče“: město prvního krále se před nimi vyprazdňuje."
       sv: "”Sauls Gibea flyr”: den förste kungens stad töms inför dem."
       nb: "«Sauls Gibea flyr»: den første kongens by tømmes foran dem."
+      tl: "“ang Gabaa ni Saul ay tumakas”: nawawalan ng tao sa harap nila ang bayan ng unang hari."
   - place: ac10bcf # Gallim
     ref: Isa.10.30
     note:
@@ -136,6 +143,7 @@ stops:
       cs: "„Naříkej hlasem svým, město Gallim“."
       sv: "”Ropa högt, du dotter Gallim.”"
       nb: "«Skrik høit, du Gallims datter!»"
+      tl: "“Humiyaw kang malakas ng iyong tinig, Oh anak na babae ng Galim!”"
   - place: a7e39d2 # Laishah
     ref: Isa.10.30
     note:
@@ -152,6 +160,7 @@ stops:
       cs: "„ať se slyší v Lais“."
       sv: "”Giv akt, du Laisa.”"
       nb: "«Gi akt, Laisa!»"
+      tl: "“duminig ka, Oh Lais!”"
   - place: ab34789 # Anathoth
     ref: Isa.10.30
     note:
@@ -168,6 +177,7 @@ stops:
       cs: "„Ach, ubohá Anatot“: město, z něhož později pochází Jeremjáš (Jr 1,1)."
       sv: "”Arma Anatot!”: staden som Jeremia senare ska komma från (Jer 1:1)."
       nb: "«Arme Anatot!»: byen som Jeremia senere skal komme fra (Jer 1,1)."
+      tl: "“Oh ikaw na kaawaawang Anathoth!”: ang bayang pagmumulan ni Jeremias kalaunan (Jer 1:1)."
   - place: a67297a # Madmenah
     ref: Isa.10.31
     note:
@@ -184,6 +194,7 @@ stops:
       cs: "„Pohne se Madmena“."
       sv: "”Madmena flyktar.”"
       nb: "«Madmena flyr.»"
+      tl: "“Madmena ay palaboy.”"
   - place: a58df35 # Gebim
     ref: Isa.10.31
     note:
@@ -200,6 +211,7 @@ stops:
       cs: "„obyvatelé Gábim schopí se“."
       sv: "”Gebims invånare bärga sitt gods.”"
       nb: "«Gebims innbyggere flytter sitt gods i hast.»"
+      tl: "“ang mga nananahan sa Gebim ay nagtitipon upang magsitakas.”"
   - place: afdda14 # Nob
     ref: Isa.10.32
     note:
@@ -216,6 +228,7 @@ stops:
       cs: "„Ještě téhož dne zastavě se v Nobe“: ve městě kněží (1 S 22,19), na dohled od Jeruzaléma."
       sv: "”Ännu samma dag står han i Nob”: i prästernas stad (1 Sam 22:19), inom synhåll från Jerusalem."
       nb: "«Allerede samme dag står han i Nob»: ved prestebyen (1 Sam 22,19), innen syne av Jerusalem."
+      tl: "“Sa araw ding ito ay titigil siya sa Nob”: sa bayan ng mga saserdote (1 Sam 22:19), na natatanaw na ang Jerusalem."
   - place: a15257a # Jerusalem
     ref: Isa.10.32-Isa.10.34
     note:
@@ -232,3 +245,4 @@ stops:
       cs: "Hrozí rukou „hoře dcery Sionské, pahrbku Jeruzalémskému“: tady obraz končí. Hospodin zástupů s hrůzou ořezává ratolest, ti, kdo jsou vysokého zrostu, jsou podťati a Libanon padne rukou mocného."
       sv: "Han lyfter sin hand mot ”dottern Sions berg, mot Jerusalems höjd”: här slutar bilden. Herren Sebaot avhugger den lummiga kronan med förskräckande makt, de resliga stammarna fälls, och Libanon faller för den väldige."
       nb: "Han svinger sin hånd mot «Sions datters berg, mot Jerusalem-haugen»: her slutter bildet. Hærskarenes Herre hugger av grenene med forferdelse, de høyvokste blir felt, og Libanon faller for en mektig."
+      tl: "Iniuunat niya ang kaniyang kamay laban sa “bundok ng anak na babae ng Sion, na burol ng Jerusalem”: dito nagtatapos ang larawan. Puputulin ng Panginoon ng mga hukbo ang mga sanga nang may kakilakilabot, ibubuwal ang mga mataas sa anyo, at ang Libano ay mawawasak sa pamamagitan ng isang makapangyarihan."

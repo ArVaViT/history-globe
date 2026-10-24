@@ -20,6 +20,7 @@ title:
   cs: "Amos: slova proti národům"
   sv: "Amos: orden mot folken"
   nb: "Amos: ordene mot folkene"
+  tl: "Amos: ang mga salita laban sa mga bansa"
 year: "760 BC"
 # Where the words were aimed, not a journey: no time on foot. Only Tekoa and Bethel are
 # the prophet's own places.
@@ -42,6 +43,7 @@ stops:
       cs: "„Slova Amosova, (kterýž byl mezi pastýři) z Tekoa“: judský pastýř, poslaný k Izraeli, dva roky před zemětřesením."
       sv: "”Detta är vad som talades av Amos, en bland herdarna från Tekoa”: en herde från Juda, sänd till Israel, två år före jordbävningen."
       nb: "«De ord som Amos, en av hyrdene fra Tekoa, mottok»: en gjeter fra Juda, sendt til Israel, to år før jordskjelvet."
+      tl: "“Ang mga salita ni Amos, na nasa gitna ng mga pastor sa Tecoa”: isang pastor ng Juda na isinugo sa Israel, dalawang taon bago lumindol."
   - place: a69c1d4 # Damascus
     ref: Amos.1.3-Amos.1.5
     note:
@@ -58,6 +60,7 @@ stops:
       cs: "„Pro troji nešlechetnost Damašku, ovšem pro čtveru“: mlátili Gilead okovanými cepy; syrský lid půjde do zajetí do Kír."
       sv: "”Eftersom Damaskus har trefalt förbrutit sig, ja, fyrfalt”: de tröskade Gilead med tröskvagnar av järn; Syriens folk ska bortföras till Kir."
       nb: "«For tre misgjerninger av Damaskus, ja for fire»: de tresket Gilead med jern; Syrias folk skal bortføres til Kir."
+      tl: "“Dahil sa tatlong pagsalangsang ng Damasco, oo, dahil sa apat”: giniik nila ang Gilead ng panggiik na bakal; ang bayan ng Siria ay papasok sa pagkabihag hanggang sa Cir."
   - place: aa8edd2 # Gaza
     ref: Amos.1.6-Amos.1.8
     note:
@@ -74,6 +77,7 @@ stops:
       cs: "Gaza odváděla do zajetí celý lid, aby jej vydala Edómu: oheň na její hradbu a zbytek Pelištejců zahyne."
       sv: "Gaza förde ett helt folk bort i fångenskap för att utlämna det till Edom: eld mot dess mur, och filistéernas kvarleva ska förgöras."
       nb: "Gasa bortførte et helt folk som fanger for å overgi dem til Edom: ild over muren, og resten av filisterne skal gå til grunne."
+      tl: "Dinalang bihag ng Gaza ang buong bayan upang ibigay sa Edom: apoy sa kuta nito, at malilipol ang nalabi sa mga Filisteo."
   - place: a160272 # Tyre
     ref: Amos.1.9-Amos.1.10
     note:
@@ -90,6 +94,7 @@ stops:
       cs: "Týr vydával zajatce Edómu a nepamatoval na bratrskou smlouvu."
       sv: "Tyros utlämnade fångar till Edom och kom inte ihåg det broderliga förbundet."
       nb: "Tyros overgav fanger til Edom og husket ikke brorpakten."
+      tl: "Ibinigay ng Tiro ang mga bihag sa Edom at hindi inalaala ang tipan ng pagkakapatiran."
   - place: a871210 # Bozrah
     ref: Amos.1.11-Amos.1.12
     note:
@@ -106,6 +111,7 @@ stops:
       cs: "Edóm pronásledoval svého bratra mečem: „Ale pošli oheň na Teman, kterýžto zžíře paláce v Bozra.“"
       sv: "Edom förföljde sin broder med svärd: ”Jag skall sända en eld mot Teman, och den skall förtära Bosras palatser.”"
       nb: "Edom forfulgte sin bror med sverdet: «jeg vil sende ild mot Teman, og den skal fortære Bosras palasser.»"
+      tl: "Hinabol ng Edom ang kaniyang kapatid ng tabak: “magsusugo ako ng isang apoy sa Teman, at susupukin niyaon ang mga palacio sa Bozra.”"
   - place: ae067b5 # Rabbah
     ref: Amos.1.13-Amos.1.15
     note:
@@ -122,6 +128,7 @@ stops:
       cs: "Amónci rozpárali gileadské ženy, aby rozšířili své hranice: oheň na hradbu Raby a jejich král půjde do zajetí."
       sv: "Ammoniterna sprättade upp kvinnorna i Gilead för att vidga sitt område: eld i Rabbas mur, och deras kung går i fångenskap."
       nb: "Ammonittene oppskar kvinnene i Gilead for å utvide sitt landområde: ild over Rabbas mur, og deres konge går i fangenskap."
+      tl: "Pinaluwa ng mga Ammonita ang bituka ng mga babae ng Gilead upang mapalapad ang kanilang hangganan: apoy sa kuta ng Rabba, at ang kanilang hari ay papasok sa pagkabihag."
   - place: a2d84de # Kerioth
     ref: Amos.2.1-Amos.2.3
     note:
@@ -138,6 +145,7 @@ stops:
       cs: "Moáb spálil kosti edómského krále na vápno: oheň pozře paláce Keriótu."
       sv: "Moab brände den edomitiske kungens ben till kalk: eld ska förtära Keriots palatser."
       nb: "Moab brant benene av Edoms konge til kalk: ild skal fortære Kerijots palasser."
+      tl: "Sinunog ng Moab ang mga buto ng hari sa Edom na pinapaging apog: susupukin ng apoy ang mga palacio ng Cherioth."
   - place: a15257a # Jerusalem
     ref: Amos.2.4-Amos.2.5
     note:
@@ -154,6 +162,7 @@ stops:
       cs: "I Juda: pohrdali zákonem Hospodinovým; „Ale pošli oheň na Judu, kterýžto zžíře paláce Jeruzalémské.“"
       sv: "Också Juda: de föraktade Herrens lag; ”Jag skall sända en eld mot Juda, och den skall förtära Jerusalems palatser.”"
       nb: "Også Juda: de foraktet Herrens lov; «jeg vil sende ild mot Juda, og den skal fortære Jerusalems palasser.»"
+      tl: "Ang Juda rin: itinakuwil nila ang kautusan ng Panginoon; “magsusugo ako ng isang apoy sa Juda; at susupukin niyaon ang mga palacio ng Jerusalem.”"
   - place: a041bb3 # Samaria
     ref: Amos.2.6-Amos.4.3
     note:
@@ -170,6 +179,7 @@ stops:
       cs: "Poslední a nejdelší je Izrael: prodávají spravedlivého za peníze a nuzného za pár střevíců. Národy jsou svolány na hory Samaří, aby viděly jeho útisk, a „krávy Bázanské“ budou odvedeny na hácích."
       sv: "Sist och längst, Israel: de säljer den rättfärdige för silver och den fattige för ett par skor. Folken kallas till Samarias berg för att se dess förtryck, och ”Basans-kor” ska föras bort med krokar."
       nb: "Sist og lengst Israel: de selger den rettferdige for sølv og den fattige for et par sko. Folkene blir kalt til Samarias fjell for å se dets undertrykkelser, og «Basan-kyr» skal føres bort med kroker."
+      tl: "Sa huli at pinakamahaba, ang Israel: ipinagbibili nila ang matuwid dahil sa pilak at ang mapagkailangan sa dalawang paang panyapak. Tinatawag ang mga bansa sa mga bundok ng Samaria upang masdan ang mga paniniil doon, at ang “mga baka ng Basan” ay dadalhing palayo sa pamamagitan ng mga bingwit."
   - place: ab94aea # Gilgal
     ref: Amos.4.4-Amos.4.13
     note:
@@ -186,6 +196,7 @@ stops:
       cs: "Oběti v Bét-elu a Gilgalu jen množí přestoupení; hlad, sucho, plíseň a mor Izraele nenavrátily. Připrav se vstříc svému Bohu."
       sv: "Offren i Betel och Gilgal ökar bara överträdelserna; svält, torka, sädesbrand och pest förde inte Israel tillbaka. ”Bered dig, Israel, att möta din Gud.”"
       nb: "Ofrene i Betel og Gilgal øker bare synden; hungersnød, tørke, kornbrann og pest førte ikke Israel tilbake. Gjør deg klar til å møte din Gud."
+      tl: "Ang mga hain sa Beth-el at Gilgal ay nagpaparami lamang ng pagsalangsang; ang taggutom, tagtuyot, amag at salot ay hindi nagbalik sa Israel. Humanda kang salubungin mo ang iyong Dios."
   - place: ad2f6c2 # Beersheba
     ref: Amos.5.1-Amos.5.27
     note:
@@ -202,6 +213,7 @@ stops:
       cs: "Nářek nad pannou Izraelskou: „nehledejte Bethel, aniž choďte do Galgala, a do Bersabé se nesmýkejte“; hledejte Hospodina a nechť se soud valí jako voda."
       sv: "En klagosång över Israels jungfru: ”söken icke Betel, kommen icke till Gilgal, och dragen ej bort till Beer-Seba”; sök Herren, och ”må rätten flöda fram såsom vatten”."
       nb: "En klagesang over Israels jomfru: «Søk ikke til Betel og kom ikke til Gilgal og dra ikke over til Be'erseba!» Søk Herren, og la rett strømme som vann."
+      tl: "Isang panaghoy para sa dalaga ng Israel: “huwag ninyong hanapin ang Beth-el, ni magsipasok man sa Gilgal, at huwag kayong magsidaan sa Beer-seba”; hanapin ang Panginoon, at bumugso ang katarungan na parang tubig."
   - place: a64f355 # Bethel
     ref: Amos.7.10-Amos.7.17
     note:
@@ -218,3 +230,4 @@ stops:
       cs: "Amacjáš, kněz v Bét-elu, udává Amose u Jarobeáma a posílá ho pryč do Judska: „v Bethel již více neprorokuj, nebo ono svatyně králova i dům královský jest“. Amos odpovídá, že nebyl prorokem ani synem prorockým, ale Hospodin ho vzal od stáda."
       sv: "Prästen Amasja i Betel anger Amos hos Jerobeam och skickar bort honom till Juda: ”i Betel får du icke vidare profetera, ty det är en konungslig helgedom”. Amos svarar att han varken var profet eller profetlärjunge, utan att Herren tog honom från hjorden."
       nb: "Presten Amasja i Betel angir Amos for Jeroboam og sender ham bort til Juda: «i Betel skal du ikke mere holde på å profetere; for det er en kongelig helligdom». Amos svarer at han ikke var profet og ikke profetsønn, men at Herren tok ham fra hjorden."
+      tl: "Isinusumbong ni Amasias na saserdote sa Beth-el si Amos kay Jeroboam at pinaaalis siya patungong Juda: “huwag ka nang manghula pa sa Beth-el: sapagka't siyang santuario ng hari”. Sumasagot si Amos na hindi siya propeta, ni anak ng propeta, kundi kinuha siya ng Panginoon mula sa kawan."

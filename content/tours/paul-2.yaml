@@ -17,6 +17,7 @@ title:
   cs: "Druhá Pavlova cesta"
   sv: "Paulus’ andra resa"
   nb: "Paulus' andre reise"
+  tl: "Ang ikalawang paglalakbay ni Pablo"
 year: "AD 50"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -37,6 +38,7 @@ stops:
       cs: "Pavel a Silas vyrážejí z Antiochie."
       sv: "Paulus och Silas bryter upp från Antiochia."
       nb: "Paulus og Silas bryter opp fra Antiokia."
+      tl: "Umalis sina Pablo at Silas mula sa Antioquia."
   - place: aa401a9
     ref: Acts.16.1
     note:
@@ -53,6 +55,7 @@ stops:
       cs: "Opět Derbe."
       sv: "Derbe igen."
       nb: "Derbe igjen."
+      tl: "Muli sa Derbe."
   - place: af0719d
     ref: Acts.16.2-Acts.16.3
     note:
@@ -69,6 +72,7 @@ stops:
       cs: "Připojuje se k nim Timoteus."
       sv: "Timoteus ansluter sig till dem."
       nb: "Timoteus slutter seg til dem."
+      tl: "Sumasama sa kanila si Timoteo."
   - place: a91c509
     ref: Acts.16.8-Acts.16.10
     note:
@@ -85,6 +89,7 @@ stops:
       cs: "Vidění muže z Makedonie."
       sv: "Synen av mannen från Makedonien."
       nb: "Synet av mannen fra Makedonia."
+      tl: "Ang pangitain ng lalaking taga-Macedonia."
   - place: a68750d
     ref: Acts.16.11
     by: sea
@@ -102,6 +107,7 @@ stops:
       cs: "Přímá plavba na Samothráké."
       sv: "Rak kurs till Samothrake."
       nb: "Rett kurs til Samotrake."
+      tl: "Tuwirang paglalayag patungong Samotracia."
   - place: a6a7150
     ref: Acts.16.11
     by: sea
@@ -120,6 +126,7 @@ stops:
       cs: "Přistání v Neapoli."
       sv: "Landstigning i Neapolis."
       nb: "Landgang i Neapolis."
+      tl: "Dumaong sa Neapolis."
   - place: a49e1d0
     ref: Acts.16.12-Acts.16.40
     note:
@@ -136,6 +143,7 @@ stops:
       cs: "Lýdie; Pavel a Silas ve vězení."
       sv: "Lydia; Paulus och Silas i fängelse."
       nb: "Lydia; Paulus og Silas i fengsel."
+      tl: "Si Lidia; sina Pablo at Silas sa bilangguan."
   - place: a4bdea7
     ref: Acts.17.1
     note:
@@ -152,6 +160,7 @@ stops:
       cs: "Přes Amfipolis."
       sv: "Genom Amfipolis."
       nb: "Gjennom Amfipolis."
+      tl: "Dumaan sa Amfipolis."
   - place: ab20df9
     ref: Acts.17.1
     note:
@@ -168,6 +177,7 @@ stops:
       cs: "Přes Apollonii."
       sv: "Genom Apollonia."
       nb: "Gjennom Apollonia."
+      tl: "Dumaan sa Apolonia."
   - place: afa9d8e
     ref: Acts.17.1-Acts.17.9
     note:
@@ -184,6 +194,7 @@ stops:
       cs: "Kázání v synagoze; pobouření."
       sv: "Förkunnelse i synagogan; upploppet."
       nb: "Forkynnelse i synagogen; opptøyet."
+      tl: "Pangangaral sa sinagoga; ang kaguluhan."
   - place: a62fe31
     ref: Acts.17.10-Acts.17.14
     note:
@@ -200,6 +211,7 @@ stops:
       cs: "Beroijští denně zkoumají Písma."
       sv: "Beroiaborna rannsakar skrifterna varje dag."
       nb: "Berøerne gransker skriftene daglig."
+      tl: "Sinasaliksik araw-araw ng mga taga-Berea ang mga Kasulatan."
   - place: a1fe6e7
     ref: Acts.17.15-Acts.17.34
     note:
@@ -216,6 +228,7 @@ stops:
       cs: "Pavel na Areopagu."
       sv: "Paulus på Areopagen."
       nb: "Paulus på Areopagos."
+      tl: "Si Pablo sa Areopago."
   - place: a6f437a
     ref: Acts.18.1-Acts.18.17
     note:
@@ -232,6 +245,7 @@ stops:
       cs: "Akvila a Priscilla; rok a šest měsíců."
       sv: "Aquila och Priscilla; ett år och sex månader."
       nb: "Akvilas og Priskilla; et år og seks måneder."
+      tl: "Sina Aquila at Priscila; isang taon at anim na buwan."
   - place: aa31dd3
     ref: Acts.18.18
     note:
@@ -248,6 +262,7 @@ stops:
       cs: "Kenchreje, přístav Korintu."
       sv: "Kenchreai, Korinths hamn."
       nb: "Kenkreae, Korints havn."
+      tl: "Cencrea, ang daungan ng Corinto."
   - place: a5feb15
     ref: Acts.18.19-Acts.18.21
     by: sea
@@ -265,6 +280,7 @@ stops:
       cs: "Krátký pobyt v Efezu."
       sv: "Ett kort uppehåll i Efesos."
       nb: "Et kort opphold i Efesos."
+      tl: "Maikling pananatili sa Efeso."
   - place: a58735e
     ref: Acts.18.22
     by: sea
@@ -282,6 +298,7 @@ stops:
       cs: "Přistání v Cesareji."
       sv: "Landstigning i Caesarea."
       nb: "Landgang i Cæsarea."
+      tl: "Dumaong sa Cesarea."
   - place: a15257a
     ref: Acts.18.22
     note:
@@ -298,6 +315,7 @@ stops:
       cs: "Pavel zdraví církev."
       sv: "Paulus hälsar församlingen."
       nb: "Paulus hilser menigheten."
+      tl: "Binabati ni Pablo ang iglesia."
   - place: ae41ab4
     ref: Acts.18.22
     note:
@@ -314,3 +332,4 @@ stops:
       cs: "Zpět do Antiochie."
       sv: "Tillbaka till Antiochia."
       nb: "Tilbake til Antiokia."
+      tl: "Pabalik sa Antioquia."

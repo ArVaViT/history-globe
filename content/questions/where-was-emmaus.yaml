@@ -13,6 +13,7 @@ question:
   nl: "Waar lag Emmaüs?"
   sv: "Var låg Emmaus?"
   nb: "Hvor lå Emmaus?"
+  tl: "Nasaan ang Emaus?"
 answer:
   en:
     - 'The site of Emmaus is disputed. Luke places it "about threescore furlongs" (sixty stadia, about 11 km) from Jerusalem, and four places are most often named: Emmaus-Nicopolis (Imwas) near Latrun, Abu Ghosh, el-Qubeibeh and Motza (Qalunya), where the map point stands.'
@@ -66,6 +67,10 @@ answer:
     - "Hvor Emmaus lå, er omstridt. Lukas plasserer byen «seksti stadier fra Jerusalem» (omtrent 11 km), og fire steder nevnes oftest: Emmaus-Nikopolis (Imwas) ved Latrun, Abu Ghosh, el-Qubeibeh og Motza (Qalunya), der kartpunktet står."
     - "De fleste håndskrifter av Lukas har seksti stadier; noen, blant dem Codex Sinaiticus, har 160, omtrent 30 km. Emmaus-Nikopolis, omtrent 25 km vest for Jerusalem i luftlinje, var Emmaus under makkabeerkrigene og de romerske krigene og Emmaus i oldkirken: Eusebius mente det var Kleopas’ hjemsted, og restene av en bysantinsk kirke står der ennå, men stedet passer bare med den lengre lesemåten. Abu Ghosh, omtrent 12 km mot vest på veien til kysten, ble regnet som Emmaus fra 1100-tallet, og el-Qubeibeh, omtrent 12 km mot nordvest, fra senmiddelalderen."
     - "Motza, vest for Jerusalem, ligger omtrent 8 km unna langs den romerske veien på kartet. Josefus sier at Vespasian etter krigen bosatte 800 veteraner på et sted som het Ammaus, tretti stadier fra Jerusalem i standardteksten (noen håndskrifter har seksti); mange identifiserer det med Motza, Mosa i Josvas liste, hvis senere navn Qalunya antas å minne om det latinske colonia. Kartpunktet står ved Motza, og stedskortet oppfører de andre stedene; ingen av dem kan kalles sikker."
+  tl:
+    - "Pinagtatalunan ang kinaroroonan ng Emaus. Inilalagay ito ni Lucas na “may anim na pung estadio ang layo sa Jerusalem” (animnapung estadio, mga 11 km), at apat na lugar ang pinakamadalas banggitin: ang Emaus-Nicopolis (Imwas) malapit sa Latrun, ang Abu Ghosh, ang el-Qubeibeh at ang Motza (Qalunya), kung saan nakatayo ang punto sa mapa."
+    - "Karamihan ng mga manuskrito ni Lucas ay may animnapung estadio; may ilan, kabilang ang Codex Sinaiticus, na may 160, mga 30 km. Ang Emaus-Nicopolis, mga 25 km sa kanluran ng Jerusalem sa tuwid na guhit, ay ang Emaus ng mga digmaang Macabeo at Romano at ang Emaus ng sinaunang iglesia: itinuring ito ni Eusebio na tahanan ni Cleopas, at nakatayo pa roon ang mga labi ng isang simbahang Bizantino, ngunit ang mas mahabang pagbasa lamang ang angkop dito. Ang Abu Ghosh, mga 12 km sa kanluran sa daang patungong baybayin, ay itinuring na Emaus mula pa noong ika-12 siglo, at ang el-Qubeibeh, mga 12 km sa hilagang-kanluran, mula pa sa huling bahagi ng Gitnang Panahon."
+    - "Ang Motza, sa kanluran ng Jerusalem, ay mga 8 km ang layo sa daang Romano na nasa mapa. Ayon kay Josephus, pagkatapos ng digmaan ay pinatira ni Vespasiano ang 800 beterano sa isang lugar na tinatawag na Ammaus, tatlumpung estadio mula sa Jerusalem sa karaniwang teksto (animnapu ang nasa ilang manuskrito); marami ang nagkikilala rito sa Motza, ang Moza sa talaan ni Josue, na ang huling pangalan nitong Qalunya ay inaakalang nagpapaalala sa Latin na colonia. Nasa Motza ang punto sa mapa, at inililista ng kard ng lugar ang iba pang pook; wala sa mga ito ang masasabing tiyak."
 map:
   place: ae7274b
   year: "AD 30"

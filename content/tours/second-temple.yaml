@@ -20,6 +20,7 @@ title:
   cs: "První návrat a druhý chrám"
   sv: "Den första återkomsten och det andra templet"
   nb: "Den første hjemkomsten og det andre tempel"
+  tl: "Ang unang pagbabalik at ang ikalawang Templo"
 year: "538 BC"
 # Where the work and the letters were, not a journey: no time on foot.
 walked: false
@@ -41,6 +42,7 @@ stops:
       cs: "Kýros, král perský, vyhlašuje: „on mi poručil, abych mu vystavěl dům v Jeruzalémě“; vydává nádoby chrámu a vyhnanci odcházejí z Babylóna."
       sv: "Kyros, kung av Persien, kungör: ”han har anbefallt mig att bygga honom ett hus i Jerusalem i Juda”; han ger tillbaka templets kärl, och de landsflyktiga drar upp från Babylon."
       nb: "Kyros, kongen i Persia, kunngjør at Herren «har pålagt mig å bygge ham et hus i Jerusalem»; han gir tilbake templets kar, og de landflyktige drar opp fra Babylon."
+      tl: "Ipinahayag ni Ciro na hari ng Persia: “ibinilin niya sa akin na ipagtayo ko siya ng isang bahay sa Jerusalem”; ibinalik niya ang mga sisidlan ng Templo, at umahon ang mga tapon mula sa Babilonia."
   - place: ae023a9 # Joppa
     ref: Ezra.3.7
     note:
@@ -57,6 +59,7 @@ stops:
       cs: "Z Libanonu je po moři do Joppe dovezeno cedrové dříví pro dům Boží se svolením Kýrovým."
       sv: "Ceder förs från Libanon sjövägen till Joppe för Guds hus, med Kyros’ tillstånd."
       nb: "Sedertre blir ført fra Libanon sjøveien til Jaffa for Guds hus, med Kyros' tillatelse."
+      tl: "Dinala ang sedro mula sa Libano sa dagat patungong Joppa para sa bahay ng Diyos, sa pahintulot ni Ciro."
   - place: a15257a # Jerusalem
     ref: Ezra.3.8-Ezra.3.13
     year: "536 BC"
@@ -74,6 +77,7 @@ stops:
       cs: "Základ chrámu se zakládá za zvuku trub a zpěvu, „na věky trvá milosrdenství jeho nad Izraelem“; staří muži, kteří viděli první dům, hlasitě pláčou."
       sv: "Templets grund läggs under trumpetstötar och sång, ”hans nåd varar evinnerligen över Israel”; gamla män som hade sett det första huset gråter högt."
       nb: "Templets grunnvoll blir lagt med basuner og sang, «hans miskunnhet mot Israel varer evindelig»; gamle menn som hadde sett det første hus, gråter høyt."
+      tl: "Inilatag ang pundasyon ng Templo na may mga trumpeta at awit, “ang kaniyang kaawaan ay magpakailan man sa Israel”; ang matatandang nakakita sa unang bahay ay umiyak nang malakas."
   - place: a212ef7 # Ecbatana
     ref: Ezra.4.24-Ezra.6.12
     year: "520 BC"
@@ -91,6 +95,7 @@ stops:
       cs: "Ve druhém roce Dareiově začínají stavitelé znovu a pomáhají jim proroci Ageus a Zacharjáš; na dotaz správce nechává Dareios prohledat archivy, svitek s Kýrovým výnosem je nalezen v Ekbatanách v Médii a Dareios nařizuje, aby se v díle pokračovalo."
       sv: "I Dareios’ andra år tar byggarna upp arbetet igen, med profeterna Haggai och Sakarja som hjälp; på ståthållarens fråga låter Dareios söka i arkiven, en bokrulle med Kyros’ påbud återfinns i Ekbatana i Medien, och han befaller att arbetet ska fortsätta."
       nb: "I Dareios' andre år begynner byggherrene på ny, med profetene Haggai og Sakarja til hjelp; på landshøvdingens forespørsel lar Dareios arkivene gjennomsøke, en bokrull med Kyros' påbud blir funnet i Ekbatana i Media, og han befaler at arbeidet skal fortsette."
+      tl: "Sa ikalawang taon ni Dario, muling nagsimula ang mga tagapagtayo, na tinutulungan ng mga propetang sina Haggeo at Zacharias; nang tanungin ng gobernador, ipinasaliksik ni Dario ang mga talaan, natagpuan sa Achmetta sa Media ang isang balumbon na may kautusan ni Ciro, at ipinag-utos niyang ituloy ang gawain."
   - place: a15257a # Jerusalem
     ref: Ezra.6.15-Ezra.6.22
     year: "516 BC"
@@ -108,3 +113,4 @@ stops:
       cs: "Dům je dokončen v šestém roce Dareiově a s radostí posvěcen; ti, kteří se vrátili ze zajetí, slaví pesach."
       sv: "Huset blir färdigt i Dareios’ sjätte år och invigs med glädje, och de som har kommit tillbaka ur fångenskapen firar påsk."
       nb: "Huset blir ferdig i Dareios' sjette år og innviet med glede, og de som var vendt tilbake fra fangenskapet, holder påske."
+      tl: "Natapos ang bahay sa ikaanim na taon ni Dario at itinalaga nang may kagalakan, at ang mga bumalik mula sa pagkabihag ay nagdiwang ng Paskua."

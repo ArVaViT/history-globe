@@ -35,6 +35,7 @@ title:
   cs: "Říše biblického světa"
   sv: "Imperier i den bibliska världen"
   nb: "Imperier i den bibelske verden"
+  tl: "Mga imperyo ng daigdig ng Biblia"
 year: "2100 BC"
 # Capitals in the order of history, not a way travelled: no time on foot.
 walked: false
@@ -56,6 +57,7 @@ stops:
       cs: "Kolem roku 2100 př. n. l. je Ur na dolním Eufratu hlavním městem třetí dynastie, která vládne Sumeru a Akkadu. Podle obvyklého ztotožnění Uru Chaldejských tu začíná Abramova cesta: Tarach bere svou rodinu a vycházejí „z Ur Kaldejských, aby se brali do země Kananejské“."
       sv: "Omkring 2100 f.Kr. är Ur vid nedre Eufrat huvudstad i den tredje dynastin, som styr Sumer och Akkad. Första Moseboken låter Abrams väg börja här, enligt den vanliga identifieringen av Ur i Kaldeen: Tera tar sin familj ”ut från det kaldeiska Ur på väg till Kanaans land”."
       nb: "Omkring 2100 f.Kr. er Ur ved nedre Eufrat hovedstad for det tredje dynastiet, som hersker over Sumer og Akkad. 1 Mosebok lar Abrams vei begynne her, etter den vanlige identifiseringen av Ur i Kaldea: Tarah fører sin familie «fra Ur i Kaldea for å reise til Kana'ans land»."
+      tl: "Mga 2100 BK, ang Ur sa ibabang Eufrates ang kabisera ng Ikatlong Dinastiya, na namumuno sa Sumer at Akkad. Dito nagsisimula ang paglalakbay ni Abram ayon sa Genesis, batay sa karaniwang pagkakakilanlan sa Ur ng mga Caldeo: dinadala ni Tara ang kaniyang pamilya “mula sa Ur ng mga Caldeo upang magsipasok sa lupain ng Canaan”."
   - place: ab8fdbc # Babel
     ref: Gen.10.10
     year: "1760 BC"
@@ -73,6 +75,7 @@ stops:
       cs: "Za Chamurapiho se Babel (Babylón) stává hlavním městem království, které sjednocuje jižní Mezopotámii. Genesis ho jmenuje jako první z měst Nimrodových: „Počátek pak jeho království byl Babylon“."
       sv: "Under Hammurabi blir Babel (Babylon) huvudstad i ett rike som förenar södra Mesopotamien. Första Moseboken nämner den först bland Nimrods städer: ”Och hans rike hade sin begynnelse i Babel”."
       nb: "Under Hammurabi blir Babel (Babylon) hovedstad i et rike som forener Sør-Mesopotamia. 1 Mosebok nevner den først blant Nimrods byer: «Først hersket han over Babel»."
+      tl: "Sa ilalim ni Hammurabi, ang Babel (Babilonia) ay nagiging kabisera ng isang kahariang nagsasama sa timog Mesopotamia. Ito ang unang binabanggit ng Genesis sa mga lungsod ni Nimrod: “ang pinagsimulan ng kaniyang kaharian ay ang Babel”."
   - place: a9674fc # Thebes
     ref: Nah.3.8-Nah.3.10
     year: "1450 BC"
@@ -90,6 +93,7 @@ stops:
       cs: "Za Thutmose III. jsou Théby, město Amonovo, srdcem Nové říše, jejíž vláda sahá k Eufratu. Bible je zná jako No: Nachum připomíná jeho vyplenění Asyřany kolem roku 663 př. n. l.: „Což by se tobě lépe díti mělo, nežli No lidnému, kteréž sedělo mezi řekami“."
       sv: "Under Thutmosis III är Thebe, Amons stad, hjärtat i Nya riket, vars välde når Eufrat. Bibeln känner den som No: Nahum erinrar om att assyrierna intog den omkring 663 f.Kr., ”No-Amon, hon som tronade vid Nilens strömmar”."
       nb: "Under Tutmosis III er Teben, Amons by, hjertet i det nye riket, hvis herredømme når til Eufrat. Bibelen kjenner den som No: Nahum minner om assyrernes plyndring av den omkring 663 f.Kr., «No-Amon, som tronte mellem Nilens strømmer»."
+      tl: "Sa ilalim ni Thutmose III, ang Thebes, ang lungsod ni Amon, ang puso ng Bagong Kaharian, na ang kapangyarihan ay umaabot hanggang sa Eufrates. Kilala ito ng Biblia bilang Noamon: ginugunita ni Nahum ang pagbagsak nito sa mga Asirio noong mga 663 BK: “Noamon, na natatayo sa gitna ng mga ilog”."
   - place: a70fd5d # Nineveh
     ref: 2Kgs.19.36
     year: "701 BC"
@@ -107,6 +111,7 @@ stops:
       cs: "Senacherib učinil z Ninive hlavní město Asýrie, mocnosti, která dobyla Samaří a nyní válčí proti Judovi. Po svém tažení „odjel a utekl … a navrátiv se, bydlil v Ninive“."
       sv: "Sanherib har gjort Nineve till huvudstad i Assyrien, den makt som intog Samaria och nu för krig mot Juda. Efter sitt fälttåg heter det: ”Då bröt Sanherib, konungen i Assyrien, upp och tågade tillbaka; och han stannade sedan i Nineve.”"
       nb: "Sankerib har gjort Ninive til hovedstad i Assyria, stormakten som tok Samaria og nå fører krig mot Juda. Etter felttoget «drog han bort og vendte tilbake; og siden holdt han sig i ro i Ninive»."
+      tl: "Ginawa ni Sennacherib ang Ninive na kabisera ng Asiria, ang kapangyarihang bumihag sa Samaria at ngayon ay nakikipagdigma sa Juda. Pagkatapos ng kaniyang kampanya, “umalis... at yumaon, at bumalik, at tumahan sa Ninive.”"
   - place: a217d18 # Babylon
     ref: Dan.4.30
     year: "580 BC"
@@ -124,6 +129,7 @@ stops:
       cs: "Nebukadnesar učinil z Babylóna hlavní město říše od Perského zálivu k hranici Egypta, s judskými vyhnanci v ní. V Danielovi se chlubí: „Zdaliž toto není ten Babylon veliký, kterýž jsem já vystavěl mocí síly své“."
       sv: "Nebukadnessar har gjort Babylon till huvudstad i ett imperium från Persiska viken till Egyptens gräns, med Judas landsflyktiga i det. I Daniel skryter han: ”Se, detta är det stora Babel, som jag har byggt upp till ett konungasäte genom min väldiga makt”."
       nb: "Nebukadnesar har gjort Babylon til hovedstad i et imperium fra Persiabukta til grensen mot Egypt, med Judas landflyktige i det. I Daniel roser han seg: «Er ikke dette det store Babel, som jeg har bygget til kongesete ved min veldige makt»."
+      tl: "Ginawa ni Nabucodonosor ang Babilonia na kabisera ng isang imperyo mula sa Golpo ng Persia hanggang sa hangganan ng Egipto, kasama ang mga ipinatapon ng Juda. Sa Daniel, ipinagmamalaki niya: “Hindi baga ito ang dakilang Babilonia na aking itinayo na pinaka tahanang hari, sa pamamagitan ng lakas ng aking kapangyarihan”."
   - place: a033b84 # Susa
     ref: Esth.1.1-Esth.1.3
     year: "483 BC"
@@ -141,6 +147,7 @@ stops:
       cs: "Susy jsou sídlem perského krále, který kraluje „od Indie až k Mouřenínské zemi“ a sedí na stolici „v Susan, městě královském“. Ve třetím roce svého kralování tu Achašveroš, obvykle ztotožňovaný s Xerxem I., pořádá velké hody."
       sv: "Susa är en kunglig residens för den persiske kungen, som regerar ”från Indien ända till Etiopien” från sin tron i ”Susans borg”. I sitt tredje regeringsår håller Ahasveros, vanligen identifierad med Xerxes I, ett stort gästabud här."
       nb: "Susa er det persiske kongens residens, han som regjerer «fra India like til Etiopia» fra sin trone i «borgen Susan». I det tredje året av sin regjering holder Ahasverus, vanligvis identifisert med Xerxes I, en stor fest her."
+      tl: "Ang Susan ay isa sa mga luklukan ng hari ng Persia, na naghahari “mula sa India hanggang sa Etiopia” mula sa kaniyang luklukan sa “Susan na bahay-hari”. Sa ikatlong taon ng kaniyang paghahari, nagdaraos dito ng isang malaking handaan si Assuero, na karaniwang kinikilalang si Jerjes I."
   - place: aee7248 # Alexandria
     ref: Acts.18.24
     year: "250 BC"
@@ -158,6 +165,7 @@ stops:
       cs: "Alexandrie je hlavním městem ptolemaiovského Egypta, kde se Tóra překládá do řečtiny (Septuaginta). Bible toto město jmenuje až o tři století později ve Skutcích: Apollos je „rodem z Alexandrie, muž výmluvný … učený v Písmě“."
       sv: "Alexandria är huvudstad i det ptolemaiska Egypten, där Toran översätts till grekiska (Septuaginta). Bibeln nämner staden först tre århundraden senare, i Apostlagärningarna: Apollos är ”bördig från Alexandria, en lärd man, mycket förfaren i skrifterna”."
       nb: "Aleksandria er hovedstad i ptolemeernes Egypt, hvor Toraen blir oversatt til gresk (Septuaginta). Bibelen nevner byen først tre hundre år senere, i Apostlenes gjerninger: Apollos er «født i Aleksandria, en vel talende mann» som «var sterk i skriftene»."
+      tl: "Ang Alejandria ang kabisera ng Egipto ng mga Ptolomeo, kung saan isinasalin sa Griyego ang Torah (ang Septuaginta). Tatlong siglo pagkaraan lamang binabanggit ng Biblia ang lungsod, sa Mga Gawa: si Apolos ay “isang Alejandrino sa lahi, at taong marikit mangusap... makapangyarihan ukol sa mga kasulatan”."
   - place: ae41ab4 # Antioch
     ref: Acts.11.26
     year: "AD 43"
@@ -175,6 +183,7 @@ stops:
       cs: "Antiochie, kdysi seleukovské hlavní město, je nyní sídlem římského správce Sýrie a jedním z největších měst říše. Barnabáš a Saul tu učí celý rok, „takže nejprv tu v Antiochii učedlníci nazváni jsou křesťané“."
       sv: "Antiochia, en gång seleukidernas huvudstad, är nu säte för den romerske ståthållaren i Syrien och en av imperiets största städer. Barnabas och Saul undervisar här ett helt år, och ”det var i Antiokia som lärjungarna först begynte kallas ’kristna’”."
       nb: "Antiokia, en gang seleukidenes hovedstad, er nå sete for den romerske guvernøren i Syria og en av rikets største byer. Barnabas og Saul underviser her et helt år, og «i Antiokia fikk disiplene først navnet kristne»."
+      tl: "Dating kabisera ng mga Seleucida, ang Antioquia ay ngayon ang luklukan ng gobernador ng Roma sa Siria at isa sa pinakamalalaking lungsod ng imperyo. Dito nagtuturo sina Bernabe at Saul sa loob ng isang buong taon, “at ang mga alagad ay pinasimulang tawaging mga Cristiano, sa Antioquia.”"
   - place: afc8e7a # Rome
     ref: Acts.28.16
     year: "AD 60"
@@ -192,3 +201,4 @@ stops:
       cs: "Řím za Nerona vládne celému Středomoří, a s ním i Judsku. Pavel přichází jako vězeň: „A když jsme přišli do Říma, setník dal vězně v moc hejtmanu vojska“."
       sv: "Rom under Nero behärskar hela Medelhavet, och därmed Judeen. Paulus kommer som fånge: ”Och då vi hade kommit in i Rom, tillstaddes det Paulus att bo för sig själv, med den krigsman som skulle bevaka honom.”"
       nb: "Roma under Nero behersker hele Middelhavet, og Judea med det. Paulus kommer som fange: «Da vi nu var kommet til Rom, overgav høvedsmannen fangene til høvdingen for livvakten»."
+      tl: "Ang Roma sa ilalim ni Nero ay namumuno sa buong Mediteraneo, kasama ang Judea. Dumarating si Pablo bilang isang bilanggo: “nang mangakapasok kami sa Roma, si Pablo ay pinahintulutang mamahay na magisa na kasama ng kawal na sa kaniya'y nagbabantay.”"

@@ -16,6 +16,7 @@ title:
   cs: "Šalomoun"
   sv: "Salomo"
   nb: "Salomo"
+  tl: "Salomon"
 year: "970 BC"
 # Solomon's deeds where they were done, not a journey: no time on foot.
 walked: false
@@ -38,6 +39,7 @@ stops:
       cs: "U Gichónu pomazává Sádok Šalomouna a všechen lid říká: „Živ buď král Šalomoun.“"
       sv: "Vid Gihon smörjer Sadok Salomo, och allt folket ropar: ”Leve konung Salomo!”"
       nb: "Ved Gihon salver Sadok Salomo, og alt folket roper: «Leve kong Salomo!»"
+      tl: "Sa Gihon ay pinahiran ni Sadoc si Salomon, at sinabi ng buong bayan: “Mabuhay ang haring si Salomon.”"
   - place: aede336 # Gibeon
     ref: 1Kgs.3.4-1Kgs.3.15
     note:
@@ -54,6 +56,7 @@ stops:
       cs: "V Gibeonu se mu Hospodin zjevuje ve snu a on prosí o srdce rozumné."
       sv: "I Gibeon visar sig Herren för honom i en dröm, och han ber om ett förståndigt hjärta."
       nb: "I Gibeon viser Herren seg for ham i en drøm, og han ber om et forstandig hjerte."
+      tl: "Sa Gabaon ay napakita sa kaniya ang Panginoon sa isang panaginip, at humingi siya ng pusong marunong umunawa."
   - place: a160272 # Tyre
     ref: 1Kgs.5.1-1Kgs.5.12
     note:
@@ -70,6 +73,7 @@ stops:
       cs: "Chíram, král Týru, posílá cedry pro chrám a oba uzavírají smlouvu."
       sv: "Hiram, kung av Tyros, sänder cederträ till templet, och de två sluter ett fördrag."
       nb: "Hiram, kongen i Tyros, sender sedertre til templet, og de to slutter en pakt."
+      tl: "Nagpadala si Hiram na hari ng Tiro ng sedro para sa Templo, at nagkasundo ang dalawa."
   - place: a15257a # Jerusalem
     ref: 1Kgs.6.1-1Kgs.8.11
     year: "966 BC"
@@ -87,6 +91,7 @@ stops:
       cs: "Ve čtvrtém roce začíná stavět chrám; při jeho posvěcení naplňuje dům Hospodinův oblak."
       sv: "I sitt fjärde år påbörjar han templet; vid invigningen fyller molnet Herrens hus."
       nb: "I sitt fjerde år begynner han på templet; ved dets innvielse fyller skyen Herrens hus."
+      tl: "Sa ikaapat na taon niya ay sinimulan niya ang Templo; sa pagtatalaga nito ay pinuno ng ulap ang bahay ng Panginoon."
   - place: a8554e3 # Megiddo
     ref: 1Kgs.9.15
     note:
@@ -103,6 +108,7 @@ stops:
       cs: "Z nucených prací, které vybírá, staví jeruzalémskou hradbu, Chacor, Megido a Gezer."
       sv: "Med det arbetsfolk han bådar upp bygger han Jerusalems mur, Hasor, Megiddo och Geser."
       nb: "Med pliktarbeidet han utskriver, bygger han muren i Jerusalem, Hasor, Megiddo og Geser."
+      tl: "Sa pamamagitan ng sapilitang paggawang kaniyang inipon ay itinayo niya ang pader ng Jerusalem, ang Hasor, Megiddo at Gezer."
   - place: a8e53d5 # Ezion-geber
     ref: 1Kgs.9.26-1Kgs.9.28
     note:
@@ -119,6 +125,7 @@ stops:
       cs: "V Ecjon-geberu při Rudém moři staví lodi a jeho služebníci i Chíramovi námořníci vozí zlato z Ofíru."
       sv: "Vid Esjon-Geber vid Sävhavet bygger han skepp, och hans tjänare och Hirams sjömän hämtar guld från Ofir."
       nb: "I Esjon-Geber ved Rødehavet bygger han skip, og hans tjenere og Hirams sjøfolk henter gull fra Ofir."
+      tl: "Sa Esion-geber sa Dagat na Pula ay gumawa siya ng mga sasakyang-dagat, at ang kaniyang mga lingkod at ang mga mandaragat ni Hiram ay nagdala ng ginto mula sa Ophir."
   - place: a81ab85 # Sheba
     ref: 1Kgs.10.1-1Kgs.10.13
     note:
@@ -135,6 +142,7 @@ stops:
       cs: "Královna ze Šeby slyší o jeho slávě a přichází ho zkoušet těžkými otázkami."
       sv: "Drottningen av Saba får höra om hans rykte och kommer för att sätta honom på prov med svåra frågor."
       nb: "Dronningen av Sjeba hører om hans ry og kommer for å sette ham på prøve med vanskelige spørsmål."
+      tl: "Narinig ng reyna ng Seba ang kaniyang katanyagan at dumating upang subukin siya ng mahihirap na tanong."
   - place: a15257a # Jerusalem
     ref: 1Kgs.11.42-1Kgs.11.43
     year: "931 BC"
@@ -152,3 +160,4 @@ stops:
       cs: "Po čtyřiceti letech kralování v Jeruzalémě Šalomoun umírá a je pochován ve Městě Davidově."
       sv: "Efter fyrtio års regering i Jerusalem dör Salomo och begravs i Davids stad."
       nb: "Etter førti års regjering i Jerusalem dør Salomo og blir gravlagt i Davidsbyen."
+      tl: "Pagkaraan ng apatnapung taóng paghahari sa Jerusalem ay namatay si Salomon at inilibing sa bayan ni David."

@@ -1,0 +1,170 @@
+---
+title: Bukas na datos
+description: Ang mga lugar, ang mga talatang bumabanggit sa mga ito, ang mga pangyayari at ang mga paglalakbay bilang mga JSON file na magagamit ng sinuman sa ilalim ng CC BY 4.0 — walang key, walang pag-sign up.
+---
+
+<p class="lede">
+  Bukas ang lahat ng alam ng globo tungkol sa mga lugar at talata: mga payak na JSON file, malayang
+  gamitin sa ibang site o app sa ilalim ng CC BY 4.0. Walang key, walang pag-sign up, walang
+  limitasyon maliban sa karaniwang caching.
+</p>
+
+<h2>Aling mga lugar ang binabanggit ng isang talata</h2>
+<p>
+  Isang file bawat aklat ng Biblia: bawat talatang bumabanggit ng lugar, kasama ang mga id ng mga
+  lugar na iyon.
+</p>
+<pre><code>GET {{site}}/api/v1/verses/Acts.json
+
+{ "Acts.16.11": ["a6a7150", "a68750d", "a91c509"], "Acts.16.12": ["a69e1b8", "a49e1d0"], … }</code></pre>
+<p>
+  Ang mga lugar mismo, kasama ang kanilang mga pangalan sa bawat wika ng site, uri at punto, ay nasa
+  <code>places.json</code>; i-join sa <code>id</code>. Naroon pa rin ang <code>name_ru</code> ng
+  unang bersiyon, kapareho ng <code>names.ru</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/places.json
+
+[{ "id": "a49e1d0", "name": "Philippi",
+   "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
+   "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "wikidata": "Q379652", "pleiades": "501482",
+   "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
+
+<h2>Sino at saan sa isang kabanata</h2>
+<p>
+  Isang file bawat aklat: bawat kabanata, kasama ang mga lugar at mga taong binabanggit nito.
+  Kinikilala ang mga tao gaya sa TIPNR ng STEPBible; nasa <code>people.json</code> ang kanilang mga
+  pangalan at unang talata.
+</p>
+<pre><code>GET {{site}}/api/v1/chapters/Acts.json
+
+{ "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
+               "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
+
+<h2>Lahat ng mga file</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>File</th>
+        <th>Ano ang laman nito</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/v1/index.json</code></td>
+        <td>
+          ang listahan ng mga file at aklat, ang lisensya at ang mga kredito, ang petsa ng build
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/places.json</code></td>
+        <td>
+          bawat lugar: id, mga pangalan, uri, punto, ilang talata ang bumabanggit dito, ang pahina
+          nito (para sa lugar na binabanggit ng ilang talata); <code>wikidata</code> at
+          <code>pleiades</code>, ang parehong lugar sa mga gazetteer na iyon, kung kilala
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/verses/{Book}.json</code></td>
+        <td>
+          isang talata → ang mga lugar na binabanggit nito, isang file bawat aklat
+          (<code>Gen</code>,
+          <code>1Kgs</code>, <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/chapters/{Book}.json</code></td>
+        <td>
+          isang kabanata → ang mga lugar at mga taong binabanggit nito, isang file bawat aklat
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/people.json</code></td>
+        <td>
+          ang mga taong binabanggit ng Biblia: TIPNR id, pangalan, mga pangalan sa ibang wika kung
+          mayroon ang site, kasarian, ilang talata ang bumabanggit sa kanila, ang una
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/events.json</code></td>
+        <td>
+          ang mga pangyayaring may petsa, kasama ang <code>ref</code> kung isinasalaysay ng Biblia
+          ang pangyayari
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/battles.json</code></td>
+        <td>
+          mga labanan at pagkubkob: lugar, taon, mga panig at kinalabasan, kasama ang
+          <code>ref</code> kung isinasalaysay ng Biblia ang labanan
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/questions.json</code></td>
+        <td>
+          mga tanong na itinatanong ng mga tao, sinagot sa dalawang wika, kasama ang tanawin ng mapa
+          at ang mga sanggunian
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/tours.json</code></td>
+        <td>
+          ang mga paglalakbay: ang kanilang mga hintuan ayon sa pagkakasunod, bawat isa ay may sipi
+          at tala; <code>by: "sea"</code> para sa bahaging sinakyan sa dagat, at
+          <code>sailed</code> (mga araw at talata) kung sinasabi ng teksto kung gaano katagal
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/ancient.json</code></td>
+        <td>
+          ang sinasabi ng mga manunulat sa labas ng Biblia tungkol sa isang lugar: may-akda, akda,
+          sipi, link sa isang libreng teksto, buod
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/openapi.json</code></td>
+        <td>lahat ng ito ay inilarawan sa OpenAPI 3.1, para sa mga code generator at ahente</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Mga kumbensiyon</h2>
+<ul>
+  <li>
+    Ang mga reperensiya ay OSIS na may mga pinaikling pangalan ng aklat sa Ingles at pagnunumero ng
+    King James: <code>Gen.12.6</code>, <code>Acts.16.12-Acts.16.15</code>.
+  </li>
+  <li>Astronomikal ang mga taon: ang 1 BK ay 0, ang 586 BK ay −585.</li>
+  <li>
+    Ang lugar na dalawang beses nakalista sa ilalim ng iisang pangalan sa pinagmulang datos ay may
+    <code>"duplicate": true</code>; ang lugar na pinagtatalunan ang pook,
+    <code>"disputed": true</code>.
+  </li>
+  <li>
+    Muling binubuo ang mga file sa bawat release ng datos; ibinibigay ng <code>index.json</code> ang
+    petsa nito.
+  </li>
+  <li>
+    Lumalago lamang ang bersiyon 1: idinaragdag ang mga field at file, hindi kailanman pinapalitan
+    ng pangalan o inaalis. Huwag pansinin ang field na hindi mo kilala.
+  </li>
+</ul>
+
+<h2>Lisensya at kredito</h2>
+<p>
+  Nasa ilalim ng <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> ang datos.
+  Gamitin ito, baguhin ito, ibenta ang binuo mo gamit ito; pangalanan ang mga sanggunian kung saan
+  mo ito ipinapakita, ayon sa paglilista ng <code>index.json</code>: History Globe ni Vadym Arnaut,
+  at OpenBible.info para sa mga lugar, mga tag ng talata at mga punto, at TIPNR ng STEPBible para sa
+  mga tao. Ang mga pangalang Ruso ay binasa mula sa saling Sinodal, na nasa pampublikong dominyo.
+  Ang mga pangalan sa ibang wika ay sariling gawa ng History Globe.
+</p>
+<p>
+  Ang mga sagot sa mga tanong (<code>questions.json</code>) ay sariling mga teksto ng History Globe
+  at nasa ilalim ng
+  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>: sipiin at i-link
+  ang mga ito, kasama ang kredito; huwag baguhin, isalin o ilagay sa ibang site o dataset. Ganoon
+  din ang mga artikulo ng lugar, na hindi dala ng API.
+</p>

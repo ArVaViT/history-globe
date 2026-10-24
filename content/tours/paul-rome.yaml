@@ -18,6 +18,7 @@ title:
   cs: "Pavlova plavba do Říma"
   sv: "Paulus’ sjöresa till Rom"
   nb: "Paulus' sjøreise til Roma"
+  tl: "Ang paglalayag ni Pablo patungong Roma"
 year: "AD 60"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -40,6 +41,7 @@ stops:
       cs: "Držen v Cesareji, vyplouvá Pavel jako vězeň do Itálie."
       sv: "Fången i Caesarea seglar Paulus som fånge mot Italien."
       nb: "Holdt i Cæsarea seiler Paulus som fange til Italia."
+      tl: "Hawak sa Cesarea, naglayag si Pablo patungong Italia bilang bilanggo."
   - place: a98e4d7
     ref: Acts.27.3
     by: sea
@@ -57,6 +59,7 @@ stops:
       cs: "Julius dovoluje Pavlovi navštívit přátele."
       sv: "Julius låter Paulus besöka vänner."
       nb: "Julius lar Paulus besøke venner."
+      tl: "Pinahintulutan ni Julio si Pablo na dalawin ang mga kaibigan."
   - place: aa4b3e2
     ref: Acts.27.5-Acts.27.6
     by: sea
@@ -74,6 +77,7 @@ stops:
       cs: "Přesedání na alexandrijskou loď."
       sv: "Överflyttning till ett skepp från Alexandria."
       nb: "Overføring til et skip fra Aleksandria."
+      tl: "Lumipat sa isang sasakyang taga-Alejandria."
   - place: ab793ce
     ref: Acts.27.7
     by: sea
@@ -91,6 +95,7 @@ stops:
       cs: "Pomalu u Knidu."
       sv: "Långsamt fram utanför Knidos."
       nb: "Langsomt ut for Knidos."
+      tl: "Marahang paglalakbay sa tapat ng Gnido."
   - place: a1c44ea
     ref: Acts.27.7
     by: sea
@@ -108,6 +113,7 @@ stops:
       cs: "V závětří Kréty u Salmóné."
       sv: "I lä av Kreta vid Salmone."
       nb: "I le av Kreta ved Salmone."
+      tl: "Sa lukob ng Creta sa tapat ng Salmon."
   - place: aae626a
     ref: Acts.27.8-Acts.27.12
     by: sea
@@ -125,6 +131,7 @@ stops:
       cs: "Dobré přístavy; Pavel varuje, že „s velikým ublížením a s mnohou škodou netoliko nákladu a lodí, ale i životů našich toto plavení bude“."
       sv: "Goda hamnarna; Paulus varnar: ”jag ser att denna sjöresa kommer att medföra vedervärdigheter och stor olycka, icke allenast för last och skepp, utan ock för våra liv.”"
       nb: "Godhavn; Paulus advarer om at «sjøferden vil være et vågestykke og medføre stor skade, ikke bare for ladning og skib, men også for vårt liv»."
+      tl: "Mabubuting Daongan; nagbabala si Pablo na “ang paglalayag na ito ay makapipinsala at magiging malaking kapahamakan, hindi lamang sa lulan at sa daong, kundi naman sa ating mga buhay.”"
   - place: aca2b0a
     ref: Acts.27.14-Acts.27.17
     by: sea
@@ -142,6 +149,7 @@ stops:
       cs: "Bouřlivý vítr Euroklydon žene loď kolem Kaudy."
       sv: "Den våldsamma stormvinden, den så kallade nordostorkanen, driver skeppet förbi Kauda."
       nb: "Den stormfulle vinden Eurakylon driver skipet forbi Kauda."
+      tl: "Itinatangay ng mabagsik na hangin na Euroclydon ang daong lampas sa Clauda."
   - place: a57835d
     ref: Acts.27.39-Acts.28.11
     by: sea
@@ -159,6 +167,7 @@ stops:
       cs: "Ztroskotání; tři měsíce na ostrově."
       sv: "Skeppsbrott; tre månader på ön."
       nb: "Skipbrudd; tre måneder på øya."
+      tl: "Pagkawasak ng daong; tatlong buwan sa pulo."
   - place: a1e3697
     ref: Acts.28.12
     by: sea
@@ -176,6 +185,7 @@ stops:
       cs: "Tři dny v Syrakusách."
       sv: "Tre dagar i Syrakusa."
       nb: "Tre dager i Syrakus."
+      tl: "Tatlong araw sa Siracusa."
   - place: a63bb26
     ref: Acts.28.13
     by: sea
@@ -193,6 +203,7 @@ stops:
       cs: "Regium."
       sv: "Rhegion."
       nb: "Regium."
+      tl: "Regio."
   - place: a4488e9
     ref: Acts.28.13-Acts.28.14
     by: sea
@@ -210,6 +221,7 @@ stops:
       cs: "Sedm dní s bratřími."
       sv: "Sju dagar hos bröderna."
       nb: "Sju dager med brødrene."
+      tl: "Pitong araw na kasama ang mga kapatid."
   - place: a121d5e
     ref: Acts.28.15
     note:
@@ -226,6 +238,7 @@ stops:
       cs: "Věřící vycházejí Pavlovi vstříc."
       sv: "De troende kommer ut för att möta Paulus."
       nb: "De troende kommer ut for å møte Paulus."
+      tl: "Lumalabas ang mga mananampalataya upang salubungin si Pablo."
   - place: afc8e7a
     ref: Acts.28.16
     note:
@@ -242,3 +255,4 @@ stops:
       cs: "Řím."
       sv: "Rom."
       nb: "Roma."
+      tl: "Roma."
