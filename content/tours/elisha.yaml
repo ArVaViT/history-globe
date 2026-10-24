@@ -15,6 +15,11 @@ title:
   it: "Il profeta Eliseo"
   nl: "De profeet Elisa"
   cs: "Prorok Elíša"
+  sv: "Profeten Elisha"
+  nb: "Profeten Elisja"
+  tl: "Ang propetang si Eliseo"
+  da: "Profeten Elisa"
+  sr: "Пророк Јелисије"
 year: "850 BC"
 people: ["Elisha@1Ki.19.16-Luk"]
 approximate: true
@@ -33,6 +38,11 @@ stops:
       it: "A Gerico i figli dei profeti vedono che lo spirito di Elia riposa su Eliseo; egli getta del sale nella sorgente e ne risana l’acqua."
       nl: "Te Jericho zien de profetenzonen dat de geest van Elia op Elisa rust; hij werpt zout in de bron en maakt het water gezond."
       cs: "V Jerichu vidí synové proroků, že duch Elijášův spočívá na Elíšovi; ten vhazuje sůl do pramene a uzdravuje jeho vodu."
+      sv: "I Jeriko ser profetlärjungarna att Elias ande vilar över Elisha; han kastar salt i källan och gör dess vatten friskt."
+      nb: "I Jeriko ser profetsønnene at Elias ånd hviler over Elisja; han kaster salt i kilden og gjør vannet sunt."
+      tl: "Sa Jerico, nakikita ng mga anak ng mga propeta na ang espiritu ni Elias ay nasa kay Eliseo; naglalagay siya ng asin sa bukal at pinagagaling ang tubig nito."
+      da: "I Jeriko ser profeternes sønner, at Elijas ånd hviler over Elisa; han kaster salt i kilden og gør dens vand sundt."
+      sr: "У Јерихону синови пророчки виде да дух Илијин почива на Јелисију; он баца со у извор и лечи му воду."
   - place: a64f355 # Bethel
     ref: 2Kgs.2.23-2Kgs.2.24
     note:
@@ -47,6 +57,11 @@ stops:
       it: "Sulla strada di Betel dei ragazzini lo scherniscono: «Sali calvo!», e due orse escono dal bosco."
       nl: "Op de weg naar Bethel bespotten kleine kinderen hem: “Kaalkop, ga op”, en twee berinnen komen uit het woud."
       cs: "Na cestě do Bét-elu se mu posmívají malé děti: „Jdi lysý, jdi lysý!“ a z lesa vyběhnou „dvě nedvědice“."
+      sv: "På vägen till Betel gör småbarn narr av honom: ”Upp med dig, du flintskalle!”, och två björninnor kommer ut ur skogen."
+      nb: "På veien til Betel spotter små gutter ham: «Kom her op, din snauskalle!», og to hunnbjørner kommer ut av skogen."
+      tl: "Sa daan patungong Beth-el, tinutuya siya ng mga munting bata: “Umahon ka, ikaw na kalbo ang ulo”, at dalawang osong babae ang lumalabas mula sa gubat."
+      da: "På vejen til Betel spotter små drenge ham: »Kom op, du skaldede!«, og to hunbjørne kommer ud af skoven."
+      sr: "На путу у Ветиљ ругају му се мала деца: „Ходи, ћело!“, и две медведице излазе из шуме."
   - place: ac86af5 # Shunem
     ref: 2Kgs.4.8-2Kgs.4.17
     note:
@@ -61,6 +76,11 @@ stops:
       it: "A Sunem una donna gli prepara una piccola camera sul muro, ed egli le annuncia che avrà un figlio."
       nl: "Te Sunem maakt een vrouw voor hem een kleine kamer op de muur, en hij zegt haar dat zij een zoon zal krijgen."
       cs: "V Šúnemu pro něho žena udělá malý pokojík na zdi a on jí říká, že bude mít syna."
+      sv: "I Shunem bygger en kvinna ett litet rum åt honom på muren, och han säger henne att hon ska få en son."
+      nb: "I Sjunem gjør en kvinne i stand et lite rom på muren for ham, og han sier til henne at hun skal få en sønn."
+      tl: "Sa Sunem, ipinagpapagawa siya ng isang babae ng maliit na silid sa pader, at sinasabi niya rito na magkakaanak ito ng lalaki."
+      da: "I Sjunem indretter en kvinde et lille kammer på muren til ham, og han siger til hende, at hun skal få en søn."
+      sr: "У Сунаму једна жена му прави малу клет на зиду, и он јој каже да ће имати сина."
   - place: a3e21c6 # Mount Carmel
     ref: 2Kgs.4.18-2Kgs.4.37
     note:
@@ -75,6 +95,11 @@ stops:
       it: "Quando il ragazzo muore, sua madre cavalca fino a Eliseo sul Monte Carmelo e non vuole lasciarlo; egli torna con lei a Sunem e risuscita il ragazzo."
       nl: "Als de jongen sterft, rijdt zijn moeder naar Elisa op de Karmel en wil hem niet verlaten; hij gaat met haar terug naar Sunem en wekt de jongen op."
       cs: "Když chlapec umírá, jede jeho matka k Elíšovi na horu Karmel a nechce ho opustit; vrací se s ní do Šúnemu a chlapce křísí."
+      sv: "När pojken dör rider hans mor till Elisha på Karmel och vill inte lämna honom; han går tillbaka med henne till Shunem och uppväcker pojken."
+      nb: "Da gutten dør, rider hans mor til Elisja på Karmel og vil ikke gi slipp på ham; han drar tilbake med henne til Sjunem og vekker gutten til live."
+      tl: "Nang mamatay ang bata, sumasakay ang kaniyang ina patungo kay Eliseo sa Bundok Carmel at ayaw siyang iwan; bumabalik si Eliseo na kasama niya sa Sunem at binubuhay ang bata."
+      da: "Da drengen dør, rider hans mor til Elisa på Karmel og vil ikke forlade ham; han vender tilbage med hende til Sjunem og opvækker drengen."
+      sr: "Кад дечак умре, мајка јаше к Јелисију на Кармил и неће да га остави; он се с њом враћа у Сунам и подиже дечака."
   - place: a6399b3 # Gilgal
     ref: 2Kgs.4.38-2Kgs.4.41
     note:
@@ -89,6 +114,11 @@ stops:
       it: "A Gàlgala, durante una carestia, i figli dei profeti gridano: «C’è la morte, nella marmitta, o uomo di Dio!»; egli vi getta della farina ed essa non fa più male."
       nl: "Te Gilgal roepen de profetenzonen in een hongersnood: “Man Gods, de dood is in den pot!”; hij werpt er meel in en het is onschadelijk."
       cs: "V Gilgalu za hladu synové proroků křičí: „Smrt v hrnci, muži Boží!“; on do hrnce nasype mouku a nic zlého v něm není."
+      sv: "I Gilgal, under en hungersnöd, ropar profetlärjungarna: ”Döden är i grytan, du gudsman!”; han kastar i mjöl, och det blir ofarligt."
+      nb: "I Gilgal, under en hungersnød, roper profetsønnene: «Det er død i gryten, du Guds mann!» Han kaster inn mel, og det blir uskadelig."
+      tl: "Sa Gilgal, sa panahon ng taggutom, sumisigaw ang mga anak ng mga propeta: “Oh lalake ng Dios, may kamatayan sa palayok”; naglalagay siya ng harina, at hindi na nakasasama ang pagkain."
+      da: "I Gilgal, i en hungersnød, råber profeternes sønner: »Døden er i Gryden, du Guds Mand!«; han kaster mel i, og det er ikke længere skadeligt."
+      sr: "У Галгалу, у глади, синови пророчки вичу: „Смрт је у лонцу, човече Божји!“; он баца брашно, и јело није штетно."
   - place: ae686c9 # Jordan
     ref: 2Kgs.5.1-2Kgs.5.14
     note:
@@ -103,6 +133,11 @@ stops:
       it: "Naaman, capo dell’esercito del re di Siria, si immerge sette volte nel Giordano alla parola di Eliseo ed è purificato dalla lebbra."
       nl: "Naäman, de legeroverste van de koning van Syrië, dompelt zich op het woord van Elisa zevenmaal onder in de Jordaan en wordt van zijn melaatsheid gereinigd."
       cs: "Námán, velitel vojska krále syrského, se na Elíšovo slovo sedmkrát ponoří v Jordánu a je očištěn od svého malomocenství."
+      sv: "Naaman, överste för den syriske kungens här, doppar sig sju gånger i Jordan på Elishas ord och renas från sin spetälska."
+      nb: "Naaman, hærfører for kongen i Syria, dypper seg syv ganger i Jordan på Elisjas ord og blir renset for sin spedalskhet."
+      tl: "Si Naaman, ang kapitan ng hukbo ng hari ng Siria, ay sumusugbong nang makapito sa Jordan ayon sa salita ni Eliseo at gumagaling sa kaniyang ketong."
+      da: "Na'aman, hærfører for Syriens konge, dypper sig syv gange i Jordan på Elisas ord og renses for sin spedalskhed."
+      sr: "Наман, војвода цара сирског, по речи Јелисијевој седам пута се умива у Јордану и чисти се од губе."
   - place: ab635e4 # Dothan
     ref: 2Kgs.6.13-2Kgs.6.18
     note:
@@ -117,6 +152,11 @@ stops:
       it: "A Dotan i Siri circondano la città; il servo di Eliseo vede il monte pieno di cavalli e di carri di fuoco."
       nl: "Te Dotan omsingelen de Syriërs de stad; de dienaar van Elisa ziet de berg vol paarden en wagens van vuur."
       cs: "V Dótanu Syřané obkličují město; Elíšův služebník vidí horu plnou ohnivých koní a vozů."
+      sv: "I Dotan omringar syrierna staden; Elishas tjänare ser berget fullt av hästar och eldvagnar."
+      nb: "I Dotan omringer syrerne byen; Elisjas tjener ser fjellet fullt av hester og ildvogner."
+      tl: "Sa Dotan, pinalilibutan ng mga taga-Siria ang bayan; nakikita ng lingkod ni Eliseo na ang bundok ay puno ng mga kabayo at mga karo ng apoy."
+      da: "I Dotan omringer syrerne byen; Elisas tjener ser bjerget fyldt med heste og ildvogne."
+      sr: "У Дотаиму Сиријци опкољавају град; Јелисијев слуга види гору пуну коња и кола огњених."
   - place: a041bb3 # Samaria
     ref: 2Kgs.6.24-2Kgs.7.1
     note:
@@ -131,6 +171,11 @@ stops:
       it: "Ben-Adad assedia Samaria e la città soffre la fame; Eliseo dice che l’indomani alla sua porta una misura di fior di farina si venderà per un siclo."
       nl: "Ben-Hadad belegert Samaria en de stad lijdt honger; Elisa zegt dat morgen een maat fijn meel voor een sikkel bij haar poort zal worden verkocht."
       cs: "Ben-hadad obléhá Samaří a město hladoví; Elíša říká, že zítra se u jeho brány bude prodávat míra jemné mouky za šekel."
+      sv: "Ben-Hadad belägrar Samaria, och staden svälter; Elisha säger att i morgon ska ett mått fint mjöl säljas för en sikel i stadens port."
+      nb: "Ben-Hadad kringsetter Samaria, og byen sulter; Elisja sier at i morgen skal et mål fint mel selges for en sekel i byens port."
+      tl: "Kinukubkob ni Ben-adad ang Samaria at nagugutom ang bayan; sinasabi ni Eliseo na bukas ay ipagbibili ang isang takal ng mainam na harina sa halagang isang siklo sa pintuang-bayan nito."
+      da: "Ben-Hadad belejrer Samaria, og byen sulter; Elisa siger, at et mål fint mel i morgen vil blive solgt for en sekel i dens port."
+      sr: "Вен-Адад опседа Самарију, и град гладује; Јелисије каже да ће сутра на њеним вратима мера белог брашна бити продавана за сикл."
   - place: a69c1d4 # Damascus
     ref: 2Kgs.8.7-2Kgs.8.15
     note:
@@ -145,3 +190,8 @@ stops:
       it: "A Damasco, dove Ben-Adad giace malato, Eliseo piange davanti a Cazaèl, che sarà re di Siria."
       nl: "Te Damascus, waar Ben-Hadad ziek ligt, weent Elisa voor Hazaël, die koning van Syrië zal worden."
       cs: "V Damašku, kde Ben-hadad leží nemocen, pláče Elíša před Chazaelem, který bude králem Sýrie."
+      sv: "I Damaskus, där Ben-Hadad ligger sjuk, gråter Elisha inför Hasael, som ska bli kung över Syrien."
+      nb: "I Damaskus, hvor Ben-Hadad ligger syk, gråter Elisja foran Hasael, som skal bli konge i Syria."
+      tl: "Sa Damasco, kung saan may sakit si Ben-adad, umiiyak si Eliseo sa harap ni Hazael, na magiging hari sa Siria."
+      da: "I Damaskus, hvor Ben-Hadad ligger syg, græder Elisa foran Hazael, som skal blive konge over Syrien."
+      sr: "У Дамаску, где Вен-Адад лежи болестан, Јелисије плаче пред Азаилом, који ће бити цар сирски."

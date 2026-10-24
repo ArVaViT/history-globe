@@ -11,6 +11,14 @@ describe("links", () => {
     );
   });
 
+  it("open a verse in each language's own edition, the ESV for one without", () => {
+    expect(verseUrl("Acts.16.9", "sv")).toContain("version=SFB15");
+    expect(verseUrl("Acts.16.9", "da")).toContain("version=DN1933");
+    expect(verseUrl("Acts.16.9", "nb")).toContain("version=DNB1930");
+    expect(verseUrl("Acts.16.9", "sr")).toContain("version=NSP");
+    expect(verseUrl("Acts.16.9", "tl")).toContain("version=MBBTAG");
+  });
+
   it("open 1-2 Maccabees where they are: the Synodal at Azbyka, an English Bible with the Apocrypha", () => {
     expect(verseUrl("1Macc.4.36-1Macc.4.59", "ru")).toBe("https://azbyka.ru/biblia/?1Mac.4:36-59");
     expect(verseUrl("2Macc.4.7-2Macc.5.2", "ru")).toBe("https://azbyka.ru/biblia/?2Mac.4:7-5:2");

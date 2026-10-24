@@ -1,0 +1,152 @@
+---
+title: Åbne data
+description: Stederne, de vers der nævner dem, begivenhederne og turene som JSON-filer, som enhver må bruge under CC BY 4.0 – uden nøgle og uden tilmelding.
+---
+
+<p class="lede">
+  Alt, hvad globussen ved om steder og vers, er åbent: almindelige JSON-filer, som frit kan bruges
+  på et andet websted eller i en anden app under CC BY 4.0. Ingen nøgle, ingen tilmelding, ingen
+  grænser ud over almindelig caching.
+</p>
+
+<h2>Hvilke steder nævner et vers</h2>
+<p>Én fil pr. bog i Bibelen: hvert vers, der nævner et sted, med id’erne på de steder.</p>
+<pre><code>GET {{site}}/api/v1/verses/Acts.json
+
+{ "Acts.16.11": ["a6a7150", "a68750d", "a91c509"], "Acts.16.12": ["a69e1b8", "a49e1d0"], … }</code></pre>
+<p>
+  Selve stederne med deres navne på alle webstedets sprog, art og punkt findes i
+  <code>places.json</code>; sammenkobl på <code>id</code>. Den første versions
+  <code>name_ru</code> er der stadig, den samme som <code>names.ru</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/places.json
+
+[{ "id": "a49e1d0", "name": "Philippi",
+   "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
+   "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "wikidata": "Q379652", "pleiades": "501482",
+   "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
+
+<h2>Hvem og hvor i et kapitel</h2>
+<p>
+  Én fil pr. bog: hvert kapitel med de steder og personer, det nævner. Personer identificeres som i
+  STEPBibles TIPNR; deres navne og første vers findes i <code>people.json</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/chapters/Acts.json
+
+{ "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
+               "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
+
+<h2>Alle filerne</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Fil</th>
+        <th>Hvad den indeholder</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/v1/index.json</code></td>
+        <td>listen over filer og bøger, licensen og kildeangivelserne, bygningsdatoen</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/places.json</code></td>
+        <td>
+          hvert sted: id, navne, art, punkt, hvor mange vers der nævner det, dets side (for et sted,
+          som et vers nævner); <code>wikidata</code> og <code>pleiades</code>, det samme sted i de
+          stedsregistre, hvor det er kendt
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/verses/{Book}.json</code></td>
+        <td>
+          et vers → de steder, det nævner, én fil pr. bog (<code>Gen</code>, <code>1Kgs</code>,
+          <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/chapters/{Book}.json</code></td>
+        <td>et kapitel → de steder og personer, det nævner, én fil pr. bog</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/people.json</code></td>
+        <td>
+          de personer, Bibelen nævner: TIPNR-id, navn, navne på de andre sprog, hvor webstedet har
+          dem, køn, hvor mange vers der nævner dem, det første
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/events.json</code></td>
+        <td>de daterede begivenheder, med <code>ref</code> hvor Bibelen fortæller begivenheden</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/battles.json</code></td>
+        <td>
+          slag og belejringer: sted, år, parter og udfald, med <code>ref</code> hvor Bibelen
+          fortæller om slaget
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/questions.json</code></td>
+        <td>spørgsmål, folk stiller, besvaret på begge sprog, med kortets visning og kilderne</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/tours.json</code></td>
+        <td>
+          turene: deres stop i rækkefølge, hvert med sit skriftsted og sin note;
+          <code>by: "sea"</code> for en strækning, der sejles, og <code>sailed</code> (dage og
+          vers), hvor teksten angiver, hvor længe
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/ancient.json</code></td>
+        <td>
+          hvad forfattere uden for Bibelen siger om et sted: forfatter, værk, passage, et link til
+          en fri tekst, et resumé
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/openapi.json</code></td>
+        <td>alt dette beskrevet i OpenAPI 3.1, til kodegeneratorer og agenter</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Konventioner</h2>
+<ul>
+  <li>
+    Henvisninger er OSIS med engelske bogforkortelser og King James-nummerering:
+    <code>Gen.12.6</code>, <code>Acts.16.12-Acts.16.15</code>.
+  </li>
+  <li>År er astronomiske: 1 f.Kr. er 0, 586 f.Kr. er −585.</li>
+  <li>
+    Et sted, der i kildedataene står to gange under ét navn, har <code>"duplicate": true</code>; et
+    sted, hvis lokalitet er omstridt, har <code>"disputed": true</code>.
+  </li>
+  <li>
+    Filerne bygges forfra ved hver udgivelse af dataene; <code>index.json</code> angiver dens dato.
+  </li>
+  <li>
+    Version 1 vokser kun: felter og filer tilføjes, men omdøbes eller fjernes aldrig. Ignorér et
+    felt, du ikke kender.
+  </li>
+</ul>
+
+<h2>Licens og kildeangivelse</h2>
+<p>
+  Dataene er under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Brug dem,
+  ændr dem, sælg det, du bygger med dem; angiv kilderne, hvor du viser dem, som
+  <code>index.json</code> oplister dem: History Globe af Vadym Arnaut og OpenBible.info for
+  stederne, versmærkningerne og punkterne samt STEPBibles TIPNR for personerne. De russiske navne er
+  læst fra synodaloversættelsen, som er i det fri (public domain). Navnene på de andre sprog er
+  History Globes egne.
+</p>
+<p>
+  Svarene på spørgsmålene (<code>questions.json</code>) er History Globes egne tekster og er under
+  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>: citér og link
+  til dem med angivelse af kilden; ændr dem ikke, oversæt dem ikke, og læg dem ikke ind på et andet
+  websted eller i et andet datasæt. Det samme gælder stedartiklerne, som API’et ikke indeholder.
+</p>

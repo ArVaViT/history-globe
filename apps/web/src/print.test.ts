@@ -57,6 +57,9 @@ describe("a quiz", () => {
     expect(maskPlace("Pavel byl v Jeruzalémě.", null, "x", ["Jeruzalém"], "cs")).toBe(
       "Pavel byl v ______.",
     );
+    expect(maskPlace("Павле је у Јерусалиму.", null, "x", ["Јерусалим"], "sr")).toBe(
+      "Павле је у ______.",
+    );
   });
   it("offers the answer and three others, once each, in name order", () => {
     const o = quizOptions("Листра", ["Дервия", "Листра", "Икония", "Дервия", "Пергия", "Паф"], 3);

@@ -1,13 +1,14 @@
 /**
  * The forms of a place name in running text in the languages beyond Russian
  * (scripts/build-text-places.ts; Russian is scripts/russian-forms.ts): the cases of a
- * one-word Ukrainian, Polish or Czech name («Єрусалима», "w Jerozolimie", "v Jeruzalémě") and
- * the German genitive ("Jerusalems"). Rules by ending only, no dictionary: a form never met
- * in a text costs nothing, a missed one leaves a name unlinked, and a form that is also an
- * ordinary word is dropped by the index's checks. Names of several words are matched as
- * written; so are names in a vowel these rules do not know (Мегіддо, Hebrón).
+ * one-word Ukrainian, Polish, Czech or Serbian name («Єрусалима», "w Jerozolimie",
+ * "v Jeruzalémě", «у Јерусалиму») and the German and Nordic genitive ("Jerusalems"). Rules by
+ * ending only, no dictionary: a form never met in a text costs nothing, a missed one leaves a
+ * name unlinked, and a form that is also an ordinary word is dropped by the index's checks.
+ * Names of several words are matched as written; so are names in a vowel these rules do not
+ * know (Мегіддо, Hebrón).
  */
-import type { SiteLocale } from "../packages/model/src/time.ts";
+import type { Locale } from "../packages/model/src/time.ts";
 
 const ends = (stem: string, e: readonly string[]): string[] => e.map((x) => stem + x);
 const uniq = (xs: readonly string[]) => [...new Set(xs)];
@@ -173,16 +174,55 @@ const portuguese = (w: string): string[] =>
 const german = (w: string): string[] =>
   /(s|ß|x|z|ce|e|stadt|burg|furt|heit|keit|ung|schaft)$/i.test(w) ? [w] : [w, `${w}s`];
 
-const BY_LANGUAGE: Partial<Record<SiteLocale, (w: string) => string[]>> = {
+/**
+ * "Jerusalems murar", "Egyptens konung": the Nordic genitive, which a name in -s does without
+ * (Damaskus, Efesos).
+ */
+const nordic = (w: string): string[] => (/[sxz]$/i.test(w) ? [w] : [w, `${w}s`]);
+
+// Serbian (Cyrillic): the cases of a one-word name, as in Ukrainian.
+const SR_SPECIAL: Record<string, readonly string[]> = {
+  // A vowel that drops out: «у Египту», «из Египта».
+  Египат: ["Египат", "Египта", "Египту", "Египтом"],
+};
+function serbian(w: string): string[] {
+  const special = SR_SPECIAL[w];
+  if (special) return [...special];
+  if (tooShort(w)) return [w];
+  const s = (k: number) => w.slice(0, -k);
+  // Самарија, Галилеја, Јудеја: Самарије, Самарији, Самарију, Самаријом.
+  if (w.endsWith("ја")) return ends(s(1), ["а", "е", "и", "у", "ом"]);
+  if (w.endsWith("а")) {
+    if (vowelA(w)) return [w];
+    const stem = s(1);
+    // «Рама» → «у Рами»; к, г, х become ц, з, с before и.
+    const dat = stem.replace(/к$/, "ц").replace(/г$/, "з").replace(/х$/, "с");
+    return uniq([w, `${stem}е`, `${dat}и`, `${stem}у`, `${stem}ом`]);
+  }
+  // Plural names: Филипи → Филипа, Филипима.
+  if (w.endsWith("и")) return ends(s(1), ["и", "а", "има"]);
+  if (/[бвгдђжзјклљмнњпрстћфхцчшџ]$/.test(w)) {
+    // After a soft consonant the instrumental is -ем: «Коринтом», but «Сионом», «Сихемом»; «Нојем».
+    const ins = /[јљњћђчџшжц]$/.test(w) ? "ем" : "ом";
+    return ends(w, ["", "а", "у", ins]);
+  }
+  return [w];
+}
+
+const BY_LANGUAGE: Partial<Record<Locale, (w: string) => string[]>> = {
   uk: ukrainian,
   pl: polish,
   cs: czech,
   de: german,
   pt: portuguese,
+  sr: serbian,
+  sv: nordic,
+  da: nordic,
+  nb: nordic,
 };
 
 /** The forms of a place name in a language other than Russian and English. */
-export function inflectedForms(name: string, l: SiteLocale): string[] {
+export function inflectedForms(name: string, l: Locale): string[] {
   const forms = BY_LANGUAGE[l];
   if (!forms) return [name];
   // Names of several words: Portuguese spellings only, the words as written.

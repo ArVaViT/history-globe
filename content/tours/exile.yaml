@@ -15,6 +15,11 @@ title:
   it: "La caduta di Gerusalemme e l’esilio"
   nl: "De val van Jeruzalem en de ballingschap"
   cs: "Pád Jeruzaléma a vyhnanství"
+  sv: "Jerusalems fall och landsflykten"
+  nb: "Jerusalems fall og landflyktigheten"
+  tl: "Ang pagbagsak ng Jerusalem at ang pagkatapon"
+  da: "Jerusalems fald og landflygtigheden"
+  sr: "Пад Јерусалима и прогонство"
 year: "587 BC"
 approximate: true
 stops:
@@ -32,6 +37,11 @@ stops:
       it: "Nabucodonosor assedia Gerusalemme finché la fame prevale nella città."
       nl: "Nebukadnessar belegert Jeruzalem totdat de honger de overhand krijgt in de stad."
       cs: "Nebukadnesar obléhá Jeruzalém, dokud ve městě nezvítězí hlad."
+      sv: "Nebukadnessar belägrar Jerusalem tills hungern tar överhand i staden."
+      nb: "Nebukadnesar kringsetter Jerusalem til hungersnøden tar overhånd i byen."
+      tl: "Kinukubkob ni Nabucodonosor ang Jerusalem hanggang sa lumala ang taggutom sa bayan."
+      da: "Nebukadnezar belejrer Jerusalem, til hungersnøden tager overhånd i byen."
+      sr: "Навуходоносор опседа Јерусалим док глад не надјача у граду."
   - place: a231f80 # Jericho
     ref: 2Kgs.25.4-2Kgs.25.5
     note:
@@ -46,6 +56,11 @@ stops:
       it: "Il re Sedecia fugge e viene preso nelle pianure di Gerico."
       nl: "Koning Zedekia slaat op de vlucht en wordt gegrepen op de vlakten van Jericho."
       cs: "Král Sidkijáš utíká a je dopaden na pláních u Jericha."
+      sv: "Kung Sidkia flyr och grips på Jerikos slätter."
+      nb: "Kong Sidkia flykter og blir grepet på Jerikos sletter."
+      tl: "Tumatakas si Haring Sedecias at inaabutan sa mga kapatagan ng Jerico."
+      da: "Kong Zedekias flygter og indhentes på Jerikos sletter."
+      sr: "Цар Седекија бежи и бива ухваћен у пољима јерихонским."
   - place: ab2bde8 # Riblah
     ref: 2Kgs.25.6-2Kgs.25.7
     note:
@@ -60,6 +75,11 @@ stops:
       it: "Il giudizio a Ribla: i figli di Sedecia sono uccisi ed egli è accecato."
       nl: "Oordeel te Ribla: de zonen van Zedekia worden gedood en hij wordt verblind."
       cs: "Soud v Rible: Sidkijášovi synové jsou zabiti a on je oslepen."
+      sv: "Dom i Rivla: Sidkias söner dödas och han förblindas."
+      nb: "Dom i Ribla: Sidkias sønner blir drept, og han blir blindet."
+      tl: "Ang paghatol sa Ribla: pinapatay ang mga anak ni Sedecias at binubulag siya."
+      da: "Dom i Ribla: Zedekias' sønner dræbes, og han selv blindes."
+      sr: "Суд у Ривли: Седекијини синови бивају убијени, а њему се вађају очи."
   - place: a15257a # Jerusalem
     ref: 2Kgs.25.8-2Kgs.25.10
     note:
@@ -74,6 +94,11 @@ stops:
       it: "Nebuzaradan incendia il Tempio, il palazzo e la città, e l’esercito dei Caldei abbatte le mura."
       nl: "Nebuzaradan verbrandt de tempel, het paleis en de stad, en het leger van de Chaldeeën breekt de muren af."
       cs: "Nebuzaradan pálí chrám, palác i město a vojsko Chaldejců boří hradby."
+      sv: "Nebusaradan bränner templet, palatset och staden, och kaldeernas här river ner murarna."
+      nb: "Nebusaradan brenner templet, palasset og byen, og kaldeernes hær river ned murene."
+      tl: "Sinusunog ni Nabuzaradan ang Templo, ang palasyo at ang bayan, at ibinabagsak ng hukbo ng mga Caldeo ang mga kuta."
+      da: "Nebuzaradan brænder templet, paladset og byen, og kaldæernes hær river murene ned."
+      sr: "Невузардан пали храм, двор и град, а војска халдејска руши зидове."
   - place: a217d18 # Babylon
     ref: 2Kgs.25.11
     note:
@@ -88,6 +113,11 @@ stops:
       it: "Il resto del popolo rimasto nella città è condotto in esilio a Babilonia."
       nl: "De rest van het volk dat in de stad is achtergebleven, wordt in ballingschap naar Babylon weggevoerd."
       cs: "Zbytek lidu, který zůstal ve městě, je odvlečen do vyhnanství do Babylóna."
+      sv: "Den återstående delen av folket i staden förs bort i landsflykt till Babylon."
+      nb: "Resten av folket som var igjen i byen, blir ført i landflyktighet til Babylon."
+      tl: "Ang nalabi sa bayan na naiwan sa lungsod ay dinadalang bihag sa Babilonia."
+      da: "Resten af folket, som var blevet tilbage i byen, føres i landflygtighed til Babylon."
+      sr: "Остатак народа, остао у граду, одводи се у прогонство у Вавилон."
   - place: a6d57ed # Ramah
     ref: Jer.40.1
     by: untold
@@ -103,6 +133,11 @@ stops:
       it: "A Rama Geremia è messo in libertà di mezzo ai prigionieri."
       nl: "Te Rama wordt Jeremia uit de gevangenen vrijgelaten."
       cs: "V Rámě je Jeremjáš propuštěn z řad zajatců."
+      sv: "I Rama blir Jeremia frigiven bland de fångna."
+      nb: "I Rama blir Jeremia satt fri blant fangene."
+      tl: "Sa Rama, pinalalaya si Jeremias mula sa mga bihag."
+      da: "I Rama sættes Jeremias fri blandt de bortførte."
+      sr: "У Рами Јеремија бива пуштен на слободу из реда заробљеника."
   - place: a736f6c # Mizpah
     ref: Jer.40.6
     note:
@@ -117,6 +152,11 @@ stops:
       it: "Rimane con Godolia, il governatore, a Mizpa."
       nl: "Hij blijft bij Gedalja, de stadhouder, te Mizpa."
       cs: "Zůstává u správce Gedaljáše v Micpě."
+      sv: "Han stannar hos ståthållaren Gedalja i Mispa."
+      nb: "Han blir hos guvernøren Gedalja i Mispa."
+      tl: "Tumitira siyang kasama ni Gedalias, ang tagapamahala, sa Mizpa."
+      da: "Han bliver hos landshøvdingen Gedalja i Mispa."
+      sr: "Остаје код Годолије, намесника, у Масфи."
   - place: adb008c # Tahpanhes
     ref: Jer.43.7
     note:
@@ -131,3 +171,8 @@ stops:
       it: "Dopo l’uccisione di Godolia il resto del popolo fugge in Egitto, a Tafni."
       nl: "Na de moord op Gedalja vlucht het overblijfsel naar Egypte, naar Tachpanhes."
       cs: "Po Gedaljášově vraždě prchá zbytek do Egypta, do Tachpanchés."
+      sv: "Efter Gedaljas mord flyr kvarlevan till Egypten, till Tachpanches."
+      nb: "Etter Gedaljas drap flykter levningen til Egypt, til Tahpanhes."
+      tl: "Pagkatapos paslangin si Gedalias, ang nalabi ay tumatakas patungong Egipto, sa Taphnes."
+      da: "Efter mordet på Gedalja flygter levningen til Egypten, til Takpanes."
+      sr: "После Годолијиног убиства остатак бежи у Египат, у Тафнес."

@@ -317,13 +317,13 @@ export async function loadData(): Promise<LoadedData> {
       byId.set(f.properties.id, { ...entry, props: f.properties });
   }
   // Every language the code knows; one without names yet lists as English does.
+  const english = alsoHere(places.features, "en");
   const here = Object.fromEntries(
     ALL_LOCALES.map((l) => [
       l,
-      alsoHere(
-        places.features,
-        places.features.some((f) => typeof f.properties[`name_${l}`] === "string") ? l : "en",
-      ),
+      places.features.some((f) => typeof f.properties[`name_${l}`] === "string")
+        ? alsoHere(places.features, l)
+        : english,
     ]),
   ) as Record<Locale, Map<string, string[]>>;
   return {

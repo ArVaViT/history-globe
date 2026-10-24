@@ -15,7 +15,7 @@ import {
   formatRefOr,
 } from "@hg/model";
 import { ArrowLeft, MapPin, Ruler, X, ZoomIn } from "./icons";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useTranslation } from "../i18n";
 import { loadArticle, type Article } from "../articles";
 import {
@@ -71,7 +71,10 @@ function writeTab(tab: PlaceTab): void {
   }
 }
 
-/** Other records on the same point shown before "and N more". */
+/**
+ * Other records on the same point shown before "and N more", at most: fewer where one line
+ * does not hold them.
+ */
 const ALSO_SHOWN = 3;
 
 export function PlaceCard({
@@ -163,6 +166,17 @@ export function PlaceCard({
     focusVerse.current = null;
   }, [versesShown]);
   const [allAlso, setAllAlso] = useState(false);
+  // Folded, the names keep to one line: as many of them as it holds, from three down to one,
+  // and the count of the rest beside them («Landet på andra sidan floden» took a second line,
+  // which pushed the tabs under the fold of a phone's card).
+  const [alsoShown, setAlsoShown] = useState(ALSO_SHOWN);
+  const folded = !allAlso && alsoHere.length > alsoShown;
+  const alsoRef = useRef<HTMLSpanElement>(null);
+  useLayoutEffect(() => {
+    const line = alsoRef.current;
+    if (folded && line && alsoShown > 1 && line.scrollWidth > line.clientWidth)
+      setAlsoShown(alsoShown - 1);
+  }, [folded, alsoShown]);
   const titleRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
     if (focusTitle) titleRef.current?.focus();
@@ -407,23 +421,25 @@ export function PlaceCard({
       </div>
 
       {alsoHere.length > 0 && (
-        <div className="px-5 pt-2 text-[13px] leading-snug text-ink">
-          <span className="text-ink-soft">{t("place.also_here")}:</span>{" "}
-          {alsoHere.slice(0, allAlso ? undefined : ALSO_SHOWN).map((p, i) => (
-            <span key={p.id}>
-              {i > 0 && ", "}
-              <button
-                onClick={() => {
-                  onSelect(p.id);
-                }}
-                className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
-              >
-                {nameOf(p, locale)}
-              </button>
-            </span>
-          ))}
-          {!allAlso && alsoHere.length > ALSO_SHOWN && (
-            <>
+        <div className={`px-5 pt-2 text-[13px] leading-snug text-ink ${folded ? "flex" : ""}`}>
+          <span ref={alsoRef} className={folded ? "min-w-0 truncate" : ""}>
+            <span className="text-ink-soft">{t("place.also_here")}:</span>{" "}
+            {alsoHere.slice(0, allAlso ? undefined : alsoShown).map((p, i) => (
+              <span key={p.id}>
+                {i > 0 && ", "}
+                <button
+                  onClick={() => {
+                    onSelect(p.id);
+                  }}
+                  className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
+                >
+                  {nameOf(p, locale)}
+                </button>
+              </span>
+            ))}
+          </span>
+          {folded && (
+            <span className="shrink-0 whitespace-pre">
               {" · "}
               <button
                 onClick={() => {
@@ -431,9 +447,9 @@ export function PlaceCard({
                 }}
                 className="text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
               >
-                {t("place.more", { count: alsoHere.length - ALSO_SHOWN })}
+                {t("place.more", { count: alsoHere.length - alsoShown })}
               </button>
-            </>
+            </span>
           )}
         </div>
       )}
@@ -442,7 +458,7 @@ export function PlaceCard({
       <div
         role="tablist"
         aria-label={title}
-        className="sticky top-0 z-10 mt-3 flex gap-1 overflow-x-auto border-b border-line bg-paper/95 px-4 pt-2 backdrop-blur [scrollbar-width:none]"
+        className="sticky top-0 z-10 mt-3 flex overflow-x-auto border-b border-line bg-paper/95 px-3 pt-2 backdrop-blur [scrollbar-width:none]"
         onKeyDown={(e) => {
           const i = tabs.indexOf(tab);
           const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
@@ -469,7 +485,7 @@ export function PlaceCard({
             onClick={() => {
               pickTab(id);
             }}
-            className={`-mb-px border-b-2 px-2.5 pb-2 text-[13.5px] whitespace-nowrap ${
+            className={`-mb-px border-b-2 px-1.5 pb-2 text-[13px] whitespace-nowrap ${
               tab === id
                 ? "border-accent font-medium text-ink"
                 : "border-transparent text-ink-soft hover:text-ink"
@@ -482,7 +498,7 @@ export function PlaceCard({
                 : id === "people"
                   ? t("place.tab_people")
                   : id === "sites"
-                    ? `${t("place.tab_sites")} · ${String(versions.length)}`
+                    ? t("place.tab_sites")
                     : t("place.tab_verses")}
           </button>
         ))}

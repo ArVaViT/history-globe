@@ -146,6 +146,10 @@ const data: LocaleData = {
     m: "м",
   },
   deutero: "неканоническая книга",
+  years: {
+    year: (y, bc) => `${String(y)} г. ${bc ? "до н. э." : "н. э."}`,
+    century: (_n, bc, roman) => `${roman} в. ${bc ? "до н. э." : "н. э."}`,
+  },
 };
 
 export default data;

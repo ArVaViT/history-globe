@@ -140,6 +140,21 @@ describe("parseChapter in the other languages", () => {
     expect(parseChapter("Skutky 16", "cs")).toEqual({ ref: "Acts.16", label: "Sk 16" });
     expect(parseChapter("Księga Rodzaju 12", "pl")?.ref).toBe("Gen.12");
     expect(parseChapter("1 Mojžíšova 12", "cs")?.ref).toBe("Gen.12");
+    // Wave 3, known to the code before the site publishes it.
+    expect(parseChapter("Apostlagärningarna 16", "sv")).toEqual({
+      ref: "Acts.16",
+      label: "Apg 16",
+    });
+    expect(parseChapter("Apostlenes Gerninger 16", "da")).toEqual({
+      ref: "Acts.16",
+      label: "ApG 16",
+    });
+    expect(parseChapter("Første Mosebok 12", "nb")?.ref).toBe("Gen.12");
+    expect(parseChapter("Дела апостолска 16", "sr")).toEqual({ ref: "Acts.16", label: "Дап 16" });
+    expect(parseChapter("1. Мојсијева 12", "sr")?.ref).toBe("Gen.12");
+    expect(parseChapter("Mga Gawa 16", "tl")).toEqual({ ref: "Acts.16", label: "Gawa 16" });
+    expect(parseChapter("Awit 23", "tl")?.ref).toBe("Ps.23");
+    expect(parseChapter("1 Mga Hari 17", "tl")?.ref).toBe("1Kgs.17");
   });
   it("takes a name typed without its accents, and a verse after a comma", () => {
     expect(parseChapter("Esaie 53", "fr")?.ref).toBe("Isa.53");

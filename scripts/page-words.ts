@@ -3,7 +3,7 @@
  * joins the site with its block here: the types make the compiler ask for every word, and
  * the counted ones (days at sea, verses) choose their plural form by the language's rules.
  */
-import type { SiteLocale } from "../packages/model/src/time.ts";
+import type { Locale, SiteLocale } from "../packages/model/src/time.ts";
 const RU_DAYS: Partial<Record<Intl.LDMLPluralRule, string>> = { one: "день", few: "дня" };
 
 // Ukrainian (drafted 2026-10-10 by machine translation; not yet read by a native speaker).
@@ -1505,7 +1505,851 @@ const LISTS_CS: ListWords = {
   },
 };
 
+// Wave 3, ready before the site publishes these languages: their pages are built once
+// they join LOCALES (packages/model/src/time.ts).
+// Svenska (drafted by machine translation; not yet read by a native speaker).
+/** A Swedish noun for a count: one or other («1 plats», «5 platser»). */
+const sv = (n: number, one: string, other: string) =>
+  new Intl.PluralRules("sv").select(n) === "one" ? one : other;
+
+const T_SV = {
+  site: "History Globe — en karta över Bibelns historia",
+  open: "Öppna på kartan",
+  tour_open: "Följ rundturen på kartan",
+  // A tour page's title in search results: "Paul's first journey — map".
+  tour_map: "karta",
+  route_alt: (title: string) => `Karta över rutten: ${title}`,
+  // The sea as the stop says it: «, sjövägen» or «, sjövägen, 5 dagar (Apg 20:6)».
+  leg: (km: string, road: string | null, sea: string) =>
+    `≈\u00a0${km}\u00a0km fågelvägen${road ? `, ≈\u00a0${road}\u00a0km längs\u00a0romerska\u00a0vägar` : ""}${sea}`,
+  sea: (days?: number, ref?: string, about?: boolean) =>
+    days
+      ? `, sjövägen, ${about ? "≈\u00a0" : ""}${String(days)}\u00a0${sv(days, "dag", "dagar")} (${ref ?? ""})`
+      : ", sjövägen",
+  today: "I dag",
+  english: "På engelska",
+  ancient: "Hos antika författare",
+  untold: ", vägen nämns inte i texten",
+  life: "När platsen fanns",
+  ruins: "I ruiner",
+  events: "Händelser",
+  battles: "Strider och belägringar",
+  article: "Historia",
+  scripture: "Skriften",
+  sources: "Källor",
+  checked: "Artikeln är kontrollerad mot källorna; ingen historiker har läst den ännu.",
+  reviewed: "Läst av en historiker",
+  verses: (n: number) => `Verser (${String(n)})`,
+  more: (n: number) => `${String(n)} till på kartan`,
+  tours: "Rundturer genom den här platsen",
+  places: "Alla platser",
+  skip: "Hoppa till innehållet",
+  sections: "Avsnitt",
+  tour: "Rundtur",
+  toursAll: "Alla rundturer",
+  placesTitle: "Platser i Bibelns historia",
+  disputed: "Omtvistat läge",
+  photoShows: (site: string) => `På bilden: ${site}, en av de föreslagna platserna.`,
+  toursTitle: "Rundturer genom Bibelns historia",
+  questions: "Frågor",
+  questionsTitle: "Frågor om Bibelns platser och historia",
+  question: "Fråga",
+  showMap: "Visa på kartan",
+  checkedQ: "Svaret är kontrollerat mot källorna; ingen historiker har läst det ännu.",
+  testament: { whole: "Hela Bibeln", ot: "Gamla testamentet", nt: "Nya testamentet" },
+  stop: "Stopp",
+  translation: "Bibeln 1917",
+  circa: "ca",
+  title: (n: string) => `${n} — var platsen låg, historia, bibelverser`,
+  desc: (n: string, k: string, v: number) =>
+    `${n} (${k}) på kartan över Bibelns historia: var platsen ligger i dag, dess historia och omnämnanden i Bibeln (${String(v)}).`,
+  about: "Om projektet",
+  privacy: "Integritet",
+  allSources: "alla källor",
+  data: "Data",
+  // The language switch is an icon: «Språk: English» names it for a pointer and a screen reader.
+  language: "Språk",
+  photo: "Foto",
+  pd: "upphovsrättsfri",
+  licArticle: "Artikeltext: © History Globe",
+  licAnswer: "Svarstext: © History Globe",
+} as const;
+
+const LANDING_SV = {
+  title: "Historia på en glob — en atlas över Bibelns historia",
+  h1: "Historia på en glob",
+  desc: "En gratis atlas: Bibelns platser på en 3D-glob, staterna runt dem år för år, rundturer, artiklar med källor och verktyg för lektionen.",
+  kicker: "Första samlingen: Bibelns historia",
+  lede: "Flytta året och se hur riken, städer och namn förändras.",
+  open: "Öppna globen",
+  tours: "Rundturer",
+  docs: "Dokumentation",
+  heroAlt:
+    "Globen år 701 f.Kr.: det nyassyriska riket från Tyros till Babylon, Jerusalem, Damaskus, tidslinjen",
+  heroNote: "701 f.Kr.: Assyrien från Tyros till Babylon",
+  live: "Utforska globen",
+  full: "Helskärm",
+  liveClose: "Klar",
+  stats: ["platser", "rundturer", "artiklar", "besvarade frågor", "strider och belägringar"],
+  rows: [
+    [
+      "Rundturer",
+      "Rutter längs vägarna och terrängen",
+      "Abraham, uttåget, Paulus resor: stopp för stopp, med versen, ett foto av platsen, avståndet och dagarna på vägen.",
+      "Paulus andra resa",
+      "Stoppet Troas på Paulus andra resa: Egeiska havet på kartan, rutten, vägens höjdprofil, ett foto av ruinerna",
+    ],
+    [
+      "Platser",
+      "Varje plats med sina verser och källor",
+      "Var den ligger i dag, vem den tillhörde det valda året och alla verser som nämner den. Det omtvistade kallas omtvistat.",
+      "Öppna Jerusalem",
+      "Jerusalems kort: foto, dess tillstånd år 30 e.Kr., artikeln; runt omkring Judeens berg med tiotals bibliska platser",
+    ],
+    [
+      "För lektionen",
+      "Frågesport, egen lektion, A4-ark",
+      "Frågesporten ”Var hände det?” på valfri rundtur, en egen lektion som en enda länk, kartor att skriva ut på A4.",
+      "Öppna uttåget",
+      "Frågesport om uttåget: en fråga med en vers och fyra svar, rutten på kartan",
+    ],
+  ],
+  cards: [
+    [
+      "Frågor om sammanhanget",
+      "Var låg Nineve? Hur länge reste Paulus till Rom? Svar med karta och verser.",
+      "Alla frågor",
+    ],
+    [
+      "Öppna data",
+      "CC BY 4.0, ett API ”vers → platser” utan nyckel och en glob att bädda in på en sida.",
+      "API och inbäddning",
+    ],
+    [
+      "Inget konto",
+      "Ingen registrering, inga cookies, ingen reklam. Kartan kan sparas och användas offline.",
+      "Integritet",
+    ],
+  ],
+  trust: "Byggd på öppna data",
+  trustText:
+    "Artiklarna skrivs med hjälp av AI och kontrolleras mot källorna i ett separat steg; forskare har inte granskat dem ännu, och sidan säger det öppet.",
+  method: "Hur data kontrolleras",
+  sources: "Alla källor",
+  ctaTitle: "Börja med vilket år som helst",
+  ctaText: "Utan konto, på telefon och dator, på flera språk.",
+} as const;
+
+const LISTS_SV: ListWords = {
+  placesLead: (n, k, a) => `${n} ${sv(k, "plats", "platser")}, varav ${a} med artikel`,
+  toursLead: (n, k) =>
+    `${n} ${sv(k, "rundtur", "rundturer")}. Avstånden är fågelvägen mellan stoppen.`,
+  questionsLead: (n, k) =>
+    `${n} ${sv(k, "besvarad fråga", "besvarade frågor")} på kartan, i Bibelns bokordning.`,
+  all: "Alla",
+  withArticle: "Med artikel",
+  alphabet: "Alfabetiskt",
+  findPlace: "Hitta en plats",
+  findQuestion: "Hitta en fråga",
+  nothing: "Inget hittades",
+  stops: (n) => `${String(n)}\u00a0${sv(n, "stopp", "stopp")}`,
+  km: (n) => `≈\u00a0${n}\u00a0km`,
+  parts: {
+    torah: "Moseböckerna",
+    history: "De historiska böckerna",
+    prophets: "Profeterna och vishetsböckerna",
+    gospels: "Evangelierna",
+    acts: "Apostlagärningarna",
+    letters: "Breven och Uppenbarelseboken",
+  },
+  partsShort: {
+    torah: "Mose",
+    history: "Historia",
+    prophets: "Profeterna",
+    gospels: "Evangelierna",
+    acts: "Apg",
+    letters: "Breven",
+  },
+};
+
+// Dansk (drafted by machine translation; not yet read by a native speaker).
+/** A Danish noun for a count: one, other («1 sted», «5 steder»); fractions with a zero integer take the singular. */
+const da = (n: number, one: string, other: string) =>
+  new Intl.PluralRules("da").select(n) === "one" ? one : other;
+
+const DA_DAYS: Partial<Record<Intl.LDMLPluralRule, string>> = { one: "dag" };
+
+const T_DA = {
+  site: "History Globe — et kort over bibelsk historie",
+  open: "Åbn på kortet",
+  tour_open: "Følg turen på kortet",
+  // A tour page's title in search results: "Paul's first journey — map".
+  tour_map: "kort",
+  route_alt: (title: string) => `Kort over ruten: ${title}`,
+  // The sea as the stop says it: «, ad søvejen» or «, ad søvejen, 5 dage (ApG 20,6)».
+  leg: (km: string, road: string | null, sea: string) =>
+    `≈\u00a0${km}\u00a0km i luftlinje${road ? `, ≈\u00a0${road}\u00a0km ad\u00a0romerske\u00a0veje` : ""}${sea}`,
+  sea: (days?: number, ref?: string, about?: boolean) =>
+    days
+      ? `, ad søvejen, ${about ? "≈\u00a0" : ""}${String(days)}\u00a0${DA_DAYS[new Intl.PluralRules("da").select(days)] ?? "dage"} (${ref ?? ""})`
+      : ", ad søvejen",
+  today: "Hvor det ligger i dag",
+  english: "På engelsk",
+  ancient: "Hos antikke forfattere",
+  untold: ", vejen er ikke beskrevet",
+  life: "Levetid",
+  ruins: "I ruiner",
+  events: "Begivenheder",
+  battles: "Slag og belejringer",
+  article: "Historie",
+  scripture: "Skriften",
+  sources: "Kilder",
+  checked: "Artiklen er kontrolleret mod kilderne; en historiker har endnu ikke læst den.",
+  reviewed: "Artiklen er læst af en historiker",
+  verses: (n: number) => `Vers (${String(n)})`,
+  more: (n: number) => `${String(n)} flere på kortet`,
+  tours: "Ture via dette sted",
+  places: "Alle steder",
+  skip: "Gå til indholdet",
+  sections: "Afsnit",
+  tour: "Tur",
+  toursAll: "Alle ture",
+  placesTitle: "Steder i bibelsk historie",
+  disputed: "Omstridt placering",
+  photoShows: (site: string) => `På billedet: ${site}, en af de foreslåede lokaliteter.`,
+  toursTitle: "Ture gennem bibelsk historie",
+  questions: "Spørgsmål",
+  questionsTitle: "Spørgsmål om Bibelens steder og historie",
+  question: "Spørgsmål",
+  showMap: "Vis på kortet",
+  checkedQ: "Svaret er kontrolleret mod kilderne; en historiker har endnu ikke læst det.",
+  testament: { whole: "Hele Bibelen", ot: "Det Gamle Testamente", nt: "Det Nye Testamente" },
+  stop: "Stop",
+  translation: "Bibelen 1871/1907",
+  circa: "ca.",
+  title: (n: string) => `${n} — hvor det lå, historie, bibelvers`,
+  desc: (n: string, k: string, v: number) =>
+    `${n} (${k}) på kortet over bibelsk historie: hvor stedet ligger i dag, dets historie og omtaler i Bibelen (${String(v)}).`,
+  about: "Om projektet",
+  privacy: "Privatliv",
+  allSources: "alle kilder",
+  data: "Data",
+  // The language switch is an icon: «Sprog: English» names it for a pointer and a screen reader.
+  language: "Sprog",
+  photo: "Foto",
+  pd: "public domain",
+  licArticle: "Artiklens tekst: © History Globe",
+  licAnswer: "Svarets tekst: © History Globe",
+} as const;
+
+const LANDING_DA = {
+  title: "Historien på en globus — et atlas over bibelsk historie",
+  h1: "Historien på en globus",
+  desc: "Et gratis atlas: Bibelens steder på en 3D-globus, staterne omkring dem år for år, ture, artikler med kilder og værktøjer til undervisningen.",
+  kicker: "Første samling: bibelsk historie",
+  lede: "Flyt året, og se kongeriger, byer og navne skifte.",
+  open: "Åbn globussen",
+  tours: "Ture",
+  docs: "Dokumentation",
+  heroAlt:
+    "Globussen i 701 f.Kr.: Det Nyassyriske Rige fra Tyrus til Babylon, Jerusalem, Damaskus, tidslinjen",
+  heroNote: "701 f.Kr.: Assyrien fra Tyrus til Babylon",
+  live: "Udforsk globussen",
+  full: "Fuld skærm",
+  liveClose: "Færdig",
+  stats: ["steder", "ture", "artikler", "besvarede spørgsmål", "slag og belejringer"],
+  rows: [
+    [
+      "Ture",
+      "Ruter langs vejene og over terrænet",
+      "Abraham, udvandringen, Paulus' rejser: stop for stop, med vers, foto, afstand og dage undervejs.",
+      "Paulus' anden rejse",
+      "Stoppet i Troas på Paulus' anden rejse: Det Ægæiske Hav på kortet, ruten, vejens højdeprofil, foto af ruinerne",
+    ],
+    [
+      "Steder",
+      "Hvert sted med sine vers og kilder",
+      "Hvor det ligger i dag, hvem det tilhørte i det valgte år, og alle de vers, der nævner det. Det omstridte kaldes omstridt.",
+      "Åbn Jerusalem",
+      "Panelet for Jerusalem: foto, byens tilstand i 30 e.Kr., artiklen; rundt om det Judæas bjerge med snesevis af bibelske steder",
+    ],
+    [
+      "Til undervisningen",
+      "Quiz, egen lektion, A4-ark",
+      "Quizzen »Hvor skete det?« til enhver tur, din egen lektion som ét link, kort til udskrift på A4.",
+      "Åbn udvandringen",
+      "Quiz om udvandringen: et spørgsmål med vers og fire svar, ruten på kortet",
+    ],
+  ],
+  cards: [
+    [
+      "Spørgsmål om sammenhængen",
+      "Hvor lå Nineve? Hvor længe rejste Paulus til Rom? Svar med kort og vers.",
+      "Alle spørgsmål",
+    ],
+    [
+      "Åbne data",
+      "CC BY 4.0, et API »vers → steder« uden nøgle og en globus til indlejring.",
+      "API og indlejring",
+    ],
+    [
+      "Uden konto",
+      "Ingen tilmelding, ingen cookies, ingen reklamer. Kortet kan gemmes til brug offline.",
+      "Privatliv",
+    ],
+  ],
+  trust: "Bygget på åbne data",
+  trustText:
+    "Artiklerne skrives med hjælp fra kunstig intelligens og kontrolleres mod kilderne i en særskilt gennemgang; forskere har endnu ikke gennemgået dem, og det siger siden åbent.",
+  method: "Sådan kontrolleres dataene",
+  sources: "Alle kilder",
+  ctaTitle: "Begynd med et hvilket som helst år",
+  ctaText: "Uden konto, på telefon og computer, på flere sprog.",
+} as const;
+
+const LISTS_DA: ListWords = {
+  placesLead: (n, k, a) => `${n} ${da(k, "sted", "steder")}, heraf ${a} med artikel`,
+  toursLead: (n, k) =>
+    `${n} ${da(k, "tur", "ture")}. Afstandene er målt i luftlinje mellem stoppene.`,
+  questionsLead: (n, k) =>
+    `${n} ${da(k, "besvaret spørgsmål", "besvarede spørgsmål")} på kortet, i Bibelens bogrækkefølge.`,
+  all: "Alle",
+  withArticle: "Med artikel",
+  alphabet: "Alfabetisk",
+  findPlace: "Find et sted",
+  findQuestion: "Find et spørgsmål",
+  nothing: "Intet fundet",
+  stops: (n) => `${String(n)}\u00a0${da(n, "stop", "stop")}`,
+  km: (n) => `≈\u00a0${n}\u00a0km`,
+  parts: {
+    torah: "Mosebøgerne",
+    history: "De historiske bøger",
+    prophets: "Profeterne og visdomsbøgerne",
+    gospels: "Evangelierne",
+    acts: "Apostlenes Gerninger",
+    letters: "Brevene og Åbenbaringen",
+  },
+  partsShort: {
+    torah: "Mosebøgerne",
+    history: "Historie",
+    prophets: "Profeterne",
+    gospels: "Evangelierne",
+    acts: "ApG",
+    letters: "Brevene",
+  },
+};
+
+// Norsk bokmål (drafted by machine translation; not yet read by a native speaker).
+/** A Norwegian Bokmål noun for a count: one, other («1 sted», «5 steder»). */
+const nb = (n: number, one: string, other: string) =>
+  new Intl.PluralRules("nb").select(n) === "one" ? one : other;
+
+const NB_DAYS: Partial<Record<Intl.LDMLPluralRule, string>> = { one: "dag" };
+
+const T_NB = {
+  site: "History Globe — et kart over bibelhistorien",
+  open: "Åpne på kartet",
+  tour_open: "Følg ruten på kartet",
+  // A tour page's title in search results: "Paul's first journey — map".
+  tour_map: "kart",
+  route_alt: (title: string) => `Kart over ruten: ${title}`,
+  // The sea as the stop says it: «, sjøveien» or «, sjøveien, 5 dager (Apg 20,6)».
+  leg: (km: string, road: string | null, sea: string) =>
+    `≈\u00a0${km}\u00a0km i luftlinje${road ? `, ≈\u00a0${road}\u00a0km langs\u00a0romerske\u00a0veier` : ""}${sea}`,
+  sea: (days?: number, ref?: string, about?: boolean) =>
+    days
+      ? `, sjøveien, ${about ? "≈\u00a0" : ""}${String(days)}\u00a0${NB_DAYS[new Intl.PluralRules("nb").select(days)] ?? "dager"} (${ref ?? ""})`
+      : ", sjøveien",
+  today: "Hvor det er i dag",
+  english: "På engelsk",
+  ancient: "Hos antikke forfattere",
+  untold: ", veien er ikke beskrevet i teksten",
+  life: "Levetid",
+  ruins: "I ruiner",
+  events: "Hendelser",
+  battles: "Slag og beleiringer",
+  article: "Historie",
+  scripture: "Skriften",
+  sources: "Kilder",
+  checked: "Artikkelen er kontrollert mot kildene; en historiker har ennå ikke lest den.",
+  reviewed: "Lest av en historiker",
+  verses: (n: number) => `Vers (${String(n)})`,
+  more: (n: number) => `${String(n)} til på kartet`,
+  tours: "Ruter som går gjennom dette stedet",
+  places: "Alle steder",
+  skip: "Hopp til innholdet",
+  sections: "Avsnitt",
+  tour: "Rute",
+  toursAll: "Alle ruter",
+  placesTitle: "Steder i bibelhistorien",
+  disputed: "Omstridt beliggenhet",
+  photoShows: (site: string) => `På bildet: ${site}, et av de foreslåtte stedene.`,
+  toursTitle: "Ruter gjennom bibelhistorien",
+  questions: "Spørsmål",
+  questionsTitle: "Spørsmål om Bibelens steder og historie",
+  question: "Spørsmål",
+  showMap: "Vis på kartet",
+  checkedQ: "Svaret er kontrollert mot kildene; en historiker har ennå ikke lest det.",
+  testament: { whole: "Hele Bibelen", ot: "Det gamle testamentet", nt: "Det nye testamentet" },
+  stop: "Stopp",
+  translation: "Bibelen 1930",
+  circa: "ca.",
+  title: (n: string) => `${n} — hvor det ligger, historien, bibelvers`,
+  desc: (n: string, k: string, v: number) =>
+    `${n} (${k}) på kartet over bibelhistorien: hvor stedet ligger i dag, dets historie og omtalene i Bibelen (${String(v)}).`,
+  about: "Om prosjektet",
+  privacy: "Personvern",
+  allSources: "alle kilder",
+  data: "Data",
+  // The language switch is an icon: «Språk: English» names it for a pointer and a screen reader.
+  language: "Språk",
+  photo: "Foto",
+  pd: "offentlig eie",
+  licArticle: "Artikkeltekst: © History Globe",
+  licAnswer: "Svartekst: © History Globe",
+} as const;
+
+const LANDING_NB = {
+  title: "Historien på en globus — et atlas over bibelhistorien",
+  h1: "Historien på en globus",
+  desc: "Et gratis atlas: Bibelens steder på en 3D-globus, statene rundt dem år for år, ruter, artikler med kilder og verktøy for undervisning.",
+  kicker: "Første samling: bibelhistorien",
+  lede: "Flytt året, og se hvordan riker, byer og navn skifter.",
+  open: "Åpne globusen",
+  tours: "Ruter",
+  docs: "Dokumentasjon",
+  heroAlt:
+    "Globusen i år 701 f.Kr.: Det nyassyriske riket fra Tyrus til Babylon, Jerusalem, Damaskus, tidslinjen",
+  heroNote: "701 f.Kr.: Assyria fra Tyrus til Babylon",
+  live: "Utforsk globusen",
+  full: "Fullskjerm",
+  liveClose: "Ferdig",
+  stats: ["steder", "ruter", "artikler", "besvarte spørsmål", "slag og beleiringer"],
+  rows: [
+    [
+      "Ruter",
+      "Reiser langs veiene og terrenget",
+      "Abraham, utgangen fra Egypt, Paulus' reiser: stopp for stopp, med verset, et bilde av stedet, avstanden og dagene underveis.",
+      "Paulus' andre reise",
+      "Stoppet i Troas på Paulus' andre reise: Egeerhavet på kartet, ruten, veiens høydeprofil, et bilde av ruinene",
+    ],
+    [
+      "Steder",
+      "Hvert sted med sine vers og kilder",
+      "Hvor det ligger i dag, hvem det tilhørte i det valgte året, og alle versene som nevner det. Det som er omstridt, kalles omstridt.",
+      "Åpne Jerusalem",
+      "Kortet for Jerusalem: et bilde, hvem byen tilhørte i år 30 e.Kr., artikkelen; rundt byen ligger fjellene i Judea med titalls bibelske steder",
+    ],
+    [
+      "For undervisning",
+      "Quiz, egen leksjon, et A4-ark",
+      "Quizen «Hvor skjedde det?» til en hvilken som helst rute, din egen leksjon som én lenke, kart som skrives ut på A4.",
+      "Åpne utgangen fra Egypt",
+      "Quiz om utgangen fra Egypt: et spørsmål med vers og fire svar, ruten på kartet",
+    ],
+  ],
+  cards: [
+    [
+      "Spørsmål om bakgrunnen",
+      "Hvor lå Ninive? Hvor lenge reiste Paulus til Roma? Svar med kart og vers.",
+      "Alle spørsmål",
+    ],
+    [
+      "Åpne data",
+      "CC BY 4.0, et API «vers → steder» uten nøkkel og en globus til å bygge inn.",
+      "API og innbygging",
+    ],
+    [
+      "Uten konto",
+      "Ingen registrering, ingen cookies, ingen reklame. Kartet kan lagres og brukes frakoblet.",
+      "Personvern",
+    ],
+  ],
+  trust: "Bygd på åpne data",
+  trustText:
+    "Artiklene skrives ved hjelp av kunstig intelligens og kontrolleres mot kildene i en egen gjennomgang; fagfolk har ennå ikke vurdert dem, og nettstedet sier det åpent.",
+  method: "Hvordan dataene kontrolleres",
+  sources: "Alle kilder",
+  ctaTitle: "Begynn med et hvilket som helst år",
+  ctaText: "Uten konto, på telefon og datamaskin, på flere språk.",
+} as const;
+
+const LISTS_NB: ListWords = {
+  placesLead: (n, k, a) => `${n} ${nb(k, "sted", "steder")}, ${a} av dem med artikkel`,
+  toursLead: (n, k) => `${n} ${nb(k, "rute", "ruter")}. Avstandene er i luftlinje mellom stoppene.`,
+  questionsLead: (n, k) =>
+    `${n} ${nb(k, "besvart spørsmål", "besvarte spørsmål")} på kartet, i bibelbøkenes rekkefølge.`,
+  all: "Alle",
+  withArticle: "Med artikkel",
+  alphabet: "Alfabetisk",
+  findPlace: "Finn et sted",
+  findQuestion: "Finn et spørsmål",
+  nothing: "Ingenting funnet",
+  stops: (n) => `${String(n)}\u00a0${nb(n, "stopp", "stopp")}`,
+  km: (n) => `≈\u00a0${n}\u00a0km`,
+  parts: {
+    torah: "Mosebøkene",
+    history: "De historiske bøkene",
+    prophets: "Profetene og visdomsbøkene",
+    gospels: "Evangeliene",
+    acts: "Apostlenes gjerninger",
+    letters: "Brevene og Åpenbaringen",
+  },
+  partsShort: {
+    torah: "Mosebøkene",
+    history: "Historiske",
+    prophets: "Profetene",
+    gospels: "Evangeliene",
+    acts: "Gjerningene",
+    letters: "Brevene",
+  },
+};
+
+// Српски (drafted by machine translation; not yet read by a native speaker).
+/** A Serbian noun for a count: one, few, other («1 место», «3 места», «5 места»). */
+const sr = (n: number, one: string, few: string, other: string) => {
+  const r = new Intl.PluralRules("sr").select(n);
+  return r === "one" ? one : r === "few" ? few : other;
+};
+
+const SR_DAYS: Partial<Record<Intl.LDMLPluralRule, string>> = { one: "дан", few: "дана" };
+
+const T_SR = {
+  site: "History Globe — мапа библијске историје",
+  open: "Отвори на мапи",
+  tour_open: "Прођи туру на мапи",
+  // A tour page's title in search results: "Paul's first journey — map".
+  tour_map: "мапа",
+  route_alt: (title: string) => `Мапа маршруте: ${title}`,
+  // The sea as the stop says it: «, морем» or «, морем, 5 дана (Дап 20,6)».
+  leg: (km: string, road: string | null, sea: string) =>
+    `≈\u00a0${km}\u00a0км ваздушном линијом${road ? `, ≈\u00a0${road}\u00a0км римским\u00a0путевима` : ""}${sea}`,
+  sea: (days?: number, ref?: string, about?: boolean) =>
+    days
+      ? `, морем, ${about ? "≈\u00a0" : ""}${String(days)}\u00a0${SR_DAYS[new Intl.PluralRules("sr").select(days)] ?? "дана"} (${ref ?? ""})`
+      : ", морем",
+  today: "Где је данас",
+  english: "На енглеском",
+  ancient: "Код античких писаца",
+  untold: ", пут није описан",
+  life: "Време постојања",
+  ruins: "У рушевинама",
+  events: "Догађаји",
+  battles: "Битке и опсаде",
+  article: "Историја",
+  scripture: "Свето писмо",
+  sources: "Извори",
+  checked: "Чланак је проверен према изворима; историчар га још није прочитао.",
+  reviewed: "Чланак је прочитао историчар",
+  verses: (n: number) => `Стихови (${String(n)})`,
+  more: (n: number) => `још ${String(n)} на мапи`,
+  tours: "Туре кроз ово место",
+  places: "Сва места",
+  skip: "Пређи на садржај",
+  sections: "Одељци",
+  tour: "Тура",
+  toursAll: "Све туре",
+  placesTitle: "Места библијске историје",
+  disputed: "Спорна локација",
+  photoShows: (site: string) => `На слици: ${site}, једна од предложених локација.`,
+  toursTitle: "Туре кроз библијску историју",
+  questions: "Питања",
+  questionsTitle: "Питања о местима и историји Библије",
+  question: "Питање",
+  showMap: "Прикажи на мапи",
+  checkedQ: "Одговор је проверен према изворима; историчар га још није прочитао.",
+  testament: { whole: "Цела Библија", ot: "Стари завет", nt: "Нови завет" },
+  stop: "Станица",
+  translation: "Превод Даничић–Караџић (1865/1868)",
+  circa: "око",
+  title: (n: string) => `${n} — где се налази, историја, стихови Библије`,
+  desc: (n: string, k: string, v: number) =>
+    `${n} (${k}) на мапи библијске историје: где је то место данас, његова историја и стихови Библије који га помињу (${String(v)}).`,
+  about: "О пројекту",
+  privacy: "Приватност",
+  allSources: "сви извори",
+  data: "Подаци",
+  // The language switch is an icon: «Језик: English» names it for a pointer and a screen reader.
+  language: "Језик",
+  photo: "Фотографија",
+  pd: "јавно власништво",
+  licArticle: "Текст чланка: © History Globe",
+  licAnswer: "Текст одговора: © History Globe",
+} as const;
+
+const LANDING_SR = {
+  title: "Историја на глобусу — атлас библијске историје",
+  h1: "Историја на глобусу",
+  desc: "Бесплатан атлас: библијска места на 3D глобусу, околне државе из године у годину, туре, чланци са изворима и алатке за наставу.",
+  kicker: "Прва збирка: библијска историја",
+  lede: "Померите годину и гледајте како се мењају царства, градови и имена.",
+  open: "Отвори глобус",
+  tours: "Туре",
+  docs: "Документација",
+  heroAlt:
+    "Глобус 701. године п. н. е.: Новоасирско царство од Тира до Вавилона, Јерусалим, Дамаск, временска линија",
+  heroNote: "701. п. н. е.: Асирија од Тира до Вавилона",
+  live: "Истражи глобус",
+  full: "Цео екран",
+  liveClose: "Готово",
+  stats: ["места", "тура", "чланака", "одговорених питања", "битака и опсада"],
+  rows: [
+    [
+      "Туре",
+      "Путовања путевима и рељефом",
+      "Авраам, Излазак, Павлова путовања: станицу по станици, са стихом, фотографијом места, растојањем и бројем дана пута.",
+      "Друго Павлово путовање",
+      "Станица Троада на другом Павловом путовању: Егејско море на мапи, маршрута, профил пута, фотографија рушевина",
+    ],
+    [
+      "Места",
+      "Свако место са стиховима и изворима",
+      "Где је данас, чије је било у изабраној години и сви стихови који га помињу. Што је спорно, означено је као спорно.",
+      "Отвори Јерусалим",
+      "Картица Јерусалима: фотографија, стање 30. године н. е., чланак; око њега Јудејске горе са десетинама библијских места",
+    ],
+    [
+      "За наставу",
+      "Квиз, сопствени час, лист А4",
+      "Квиз „Где се то догодило?“ за било коју туру, сопствени час у једној вези, мапе за штампу на А4.",
+      "Отвори Излазак",
+      "Квиз о Изласку: питање са стихом и четири одговора, маршрута на мапи",
+    ],
+  ],
+  cards: [
+    [
+      "Питања о контексту",
+      "Где је била Ниневија? Колико је Павле путовао до Рима? Одговори са мапом и стиховима.",
+      "Сва питања",
+    ],
+    [
+      "Отворени подаци",
+      "CC BY 4.0, API „стих → места“ без кључа и глобус за уградњу у страницу.",
+      "API и уградња",
+    ],
+    [
+      "Без налога",
+      "Без регистрације, без колачића, без реклама. Мапа се може сачувати и користити без интернета.",
+      "Приватност",
+    ],
+  ],
+  trust: "Засновано на отвореним подацима",
+  trustText:
+    "Чланци настају уз помоћ вештачке интелигенције и у засебном пролазу проверавају се према изворима; стручњаци их још нису рецензирали и сајт то отворено каже.",
+  method: "Како се подаци проверавају",
+  sources: "Сви извори",
+  ctaTitle: "Почните од било које године",
+  ctaText: "Без налога, на телефону и на рачунару, на више језика.",
+} as const;
+
+const LISTS_SR: ListWords = {
+  placesLead: (n, k, a) => `${n} ${sr(k, "место", "места", "места")}, од тога ${a} са чланком`,
+  toursLead: (n, k) =>
+    `${n} ${sr(k, "тура", "туре", "тура")}. Растојања су ваздушном линијом између станица.`,
+  questionsLead: (n, k) =>
+    `${n} ${sr(k, "одговорено питање", "одговорена питања", "одговорених питања")} на мапи, по редоследу библијских књига.`,
+  all: "Све",
+  withArticle: "Са чланком",
+  alphabet: "По азбуци",
+  findPlace: "Нађи место",
+  findQuestion: "Нађи питање",
+  nothing: "Ништа није пронађено",
+  stops: (n) => `${String(n)}\u00a0${sr(n, "станица", "станице", "станица")}`,
+  km: (n) => `≈\u00a0${n}\u00a0км`,
+  parts: {
+    torah: "Петокњижје",
+    history: "Историјске књиге",
+    prophets: "Пророци и књиге мудрости",
+    gospels: "Јеванђеља",
+    acts: "Дела апостолска",
+    letters: "Посланице и Откривење",
+  },
+  partsShort: {
+    torah: "Петокњижје",
+    history: "Историјске",
+    prophets: "Пророци",
+    gospels: "Јеванђеља",
+    acts: "Дела",
+    letters: "Посланице",
+  },
+};
+
+// Tagalog (drafted by machine translation; not yet read by a native speaker).
+/**
+ * A Tagalog noun for a count: one, other («1 lugar», «5 lugar»). Tagalog nouns do not change
+ * after a numeral, so both forms are usually the same word; the rule is kept for the shape.
+ */
+const tl = (n: number, one: string, other: string) =>
+  new Intl.PluralRules("tl").select(n) === "one" ? one : other;
+
+const TL_DAYS: Partial<Record<Intl.LDMLPluralRule, string>> = { one: "araw", other: "araw" };
+
+const T_TL = {
+  site: "History Globe — mapa ng kasaysayan ng Biblia",
+  open: "Buksan sa mapa",
+  tour_open: "Tahakin ang paglalakbay sa mapa",
+  // A tour page's title in search results: "Paul's first journey — map".
+  tour_map: "mapa",
+  route_alt: (title: string) => `Mapa ng ruta: ${title}`,
+  // The sea as the stop says it: «, sa dagat» or «, sa dagat, 5 araw (Gawa 20:6)».
+  leg: (km: string, road: string | null, sea: string) =>
+    `≈\u00a0${km}\u00a0km sa tuwid na linya${road ? `, ≈\u00a0${road}\u00a0km sa\u00a0mga\u00a0daang\u00a0Romano` : ""}${sea}`,
+  sea: (days?: number, ref?: string, about?: boolean) =>
+    days
+      ? `, sa dagat, ${about ? "≈\u00a0" : ""}${String(days)}\u00a0${TL_DAYS[new Intl.PluralRules("tl").select(days)] ?? "araw"} (${ref ?? ""})`
+      : ", sa dagat",
+  today: "Saan ito ngayon",
+  english: "Sa Ingles",
+  ancient: "Sa mga sinaunang manunulat",
+  untold: ", hindi binanggit ang daan",
+  life: "Panahong nakatayo",
+  ruins: "Guho",
+  events: "Mga pangyayari",
+  battles: "Mga labanan at pagkubkob",
+  article: "Kasaysayan",
+  scripture: "Kasulatan",
+  sources: "Mga sanggunian",
+  checked: "Sinuri ayon sa mga sanggunian; hindi pa nababasa ng isang istoryador.",
+  reviewed: "Binasa ng isang istoryador",
+  verses: (n: number) => `Mga talata (${String(n)})`,
+  more: (n: number) => `${String(n)} pa sa mapa`,
+  tours: "Mga paglalakbay na dumaraan sa lugar na ito",
+  places: "Mga lugar",
+  skip: "Lumaktaw sa nilalaman",
+  sections: "Mga bahagi",
+  tour: "Paglalakbay",
+  toursAll: "Mga paglalakbay",
+  placesTitle: "Mga lugar ng kasaysayan ng Biblia",
+  disputed: "Pinagtatalunan ang kinaroroonan",
+  photoShows: (site: string) => `Sa larawan: ${site}, isa sa mga iminumungkahing pook.`,
+  toursTitle: "Mga paglalakbay sa kasaysayan ng Biblia",
+  questions: "Mga tanong",
+  questionsTitle: "Mga tanong tungkol sa mga lugar at kasaysayan ng Biblia",
+  question: "Tanong",
+  showMap: "Ipakita sa mapa",
+  checkedQ: "Sinuri ang sagot ayon sa mga sanggunian; hindi pa nababasa ng isang istoryador.",
+  testament: { whole: "Ang buong Biblia", ot: "Lumang Tipan", nt: "Bagong Tipan" },
+  stop: "Hintuan",
+  translation: "Ang Biblia 1905",
+  circa: "mga",
+  title: (n: string) => `${n} — saan ito matatagpuan, kasaysayan, mga talata ng Biblia`,
+  desc: (n: string, k: string, v: number) =>
+    `${n} (${k}) sa mapa ng kasaysayan ng Biblia: saan ito ngayon, ang kasaysayan nito at ang mga talata ng Biblia na bumabanggit dito (${String(v)}).`,
+  about: "Tungkol sa proyekto",
+  privacy: "Pagkapribado",
+  allSources: "lahat ng sanggunian",
+  data: "Datos",
+  // The language switch is an icon: «Wika: English» names it for a pointer and a screen reader.
+  language: "Wika",
+  photo: "Larawan",
+  pd: "pampublikong dominyo",
+  licArticle: "Teksto ng artikulo: © History Globe",
+  licAnswer: "Teksto ng sagot: © History Globe",
+} as const;
+
+const LANDING_TL = {
+  title: "Kasaysayan sa globo — atlas ng kasaysayan ng Biblia",
+  h1: "Kasaysayan sa globo",
+  desc: "Libreng atlas: ang mga lugar ng Biblia sa 3D na globo, ang mga estado sa paligid nila taon-taon, mga paglalakbay, mga artikulong may sanggunian at mga kasangkapan para sa aralin.",
+  kicker: "Unang koleksiyon: kasaysayan ng Biblia",
+  lede: "Ilipat ang taon at panoorin kung paano nagbabago ang mga kaharian, bayan at pangalan.",
+  open: "Buksan ang globo",
+  tours: "Mga paglalakbay",
+  docs: "Dokumentasyon",
+  heroAlt:
+    "Ang globo sa 701 BK: ang Imperyong Neo-Asiryano mula Tiro hanggang Babilonia, Jerusalem, Damasco, ang linya ng panahon",
+  heroNote: "701 BK: Asiria mula Tiro hanggang Babilonia",
+  live: "Galugarin ang globo",
+  full: "Buong screen",
+  liveClose: "Tapos",
+  stats: ["lugar", "paglalakbay", "artikulo", "nasagot na tanong", "labanan at pagkubkob"],
+  rows: [
+    [
+      "Mga paglalakbay",
+      "Mga ruta sa mga daan at anyo ng lupa",
+      "Abraham, ang Exodo, ang mga paglalakbay ni Pablo: hintuan sa hintuan, may talata, larawan ng lugar, layo at bilang ng araw sa daan.",
+      "Ikalawang paglalakbay ni Pablo",
+      "Ang hintuan sa Troas sa ikalawang paglalakbay ni Pablo: ang Dagat Aegeo sa mapa, ang ruta, ang taas ng daan, larawan ng mga guho",
+    ],
+    [
+      "Mga lugar",
+      "Bawat lugar na may mga talata at sanggunian",
+      "Saan ito ngayon, kaninong lupain ito sa piniling taon, at lahat ng talatang bumabanggit dito. Ang pinagtatalunan ay tinatawag na pinagtatalunan.",
+      "Buksan ang Jerusalem",
+      "Ang card ng Jerusalem: larawan, ang estado nito noong 30 AD, ang artikulo; sa paligid ang mga burol ng Judea na may dose-dosenang lugar sa Biblia",
+    ],
+    [
+      "Para sa aralin",
+      "Pagsusulit, sariling aralin, pahinang A4",
+      "Pagsusulit na “Saan ito nangyari?” sa alinmang paglalakbay, sariling aralin sa iisang link, mga mapang maaaring i-print sa A4.",
+      "Buksan ang Exodo",
+      "Pagsusulit tungkol sa Exodo: tanong na may talata at apat na sagot, ang ruta sa mapa",
+    ],
+  ],
+  cards: [
+    [
+      "Mga tanong tungkol sa konteksto",
+      "Saan ang Nineve? Gaano katagal naglakbay si Pablo patungong Roma? Mga sagot na may mapa at talata.",
+      "Lahat ng tanong",
+    ],
+    [
+      "Bukas na datos",
+      "CC BY 4.0, API na “talata → mga lugar” nang walang key, at globong maaaring ilagay sa pahina.",
+      "API at pag-embed",
+    ],
+    [
+      "Walang account",
+      "Walang pagrerehistro, walang cookies, walang patalastas. Maaaring i-save ang mapa at gamitin offline.",
+      "Pagkapribado",
+    ],
+  ],
+  trust: "Nakabatay sa bukas na datos",
+  trustText:
+    "Isinusulat ang mga artikulo sa tulong ng AI at sinusuri ayon sa mga sanggunian sa hiwalay na hakbang; hindi pa nasusuri ng mga iskolar, at hayagang sinasabi iyon ng site.",
+  method: "Paano sinusuri ang datos",
+  sources: "Lahat ng sanggunian",
+  ctaTitle: "Magsimula sa alinmang taon",
+  ctaText: "Walang account, sa telepono o sa computer, sa ilang wika.",
+} as const;
+
+const LISTS_TL: ListWords = {
+  placesLead: (n, k, a) => `${n} ${tl(k, "lugar", "lugar")}, ${a} ang may artikulo`,
+  toursLead: (n, k) =>
+    `${n} ${tl(k, "paglalakbay", "paglalakbay")}. Ang mga layo ay tuwid na linya sa pagitan ng mga hintuan.`,
+  questionsLead: (n, k) =>
+    `${n} ${tl(k, "tanong", "tanong")} na nasagot sa mapa, sa pagkakasunod ng mga aklat ng Biblia.`,
+  all: "Lahat",
+  withArticle: "May artikulo",
+  alphabet: "Alpabetiko",
+  findPlace: "Hanapin ang lugar",
+  findQuestion: "Hanapin ang tanong",
+  nothing: "Walang nahanap",
+  stops: (n) => `${String(n)}\u00a0${tl(n, "hintuan", "hintuan")}`,
+  km: (n) => `≈\u00a0${n}\u00a0km`,
+  parts: {
+    torah: "Pentateuko",
+    history: "Mga aklat ng kasaysayan",
+    prophets: "Mga propeta at aklat ng karunungan",
+    gospels: "Mga Ebanghelyo",
+    acts: "Mga Gawa ng mga Apostol",
+    letters: "Mga sulat at Pahayag",
+  },
+  partsShort: {
+    torah: "Pentateuko",
+    history: "Kasaysayan",
+    prophets: "Mga propeta",
+    gospels: "Mga Ebanghelyo",
+    acts: "Mga Gawa",
+    letters: "Mga sulat",
+  },
+};
+
 export const T = {
+  sv: T_SV,
+  da: T_DA,
+  nb: T_NB,
+  sr: T_SR,
+  tl: T_TL,
   cs: T_CS,
   pl: T_PL,
   nl: T_NL,
@@ -1645,6 +2489,11 @@ export const T = {
 // from a search or a link, with the way into the map. The map itself stays at the root.
 // Short on purpose: the pictures show what the words would only describe.
 export const LANDING = {
+  sv: LANDING_SV,
+  da: LANDING_DA,
+  nb: LANDING_NB,
+  sr: LANDING_SR,
+  tl: LANDING_TL,
   cs: LANDING_CS,
   pl: LANDING_PL,
   nl: LANDING_NL,
@@ -1787,17 +2636,25 @@ export const LANDING = {
 } as const;
 
 /**
- * Compiled, never run: every site language has a block, and each block names every word the
- * English one does and no other. A missing or extra word fails the typecheck.
+ * Compiled, never run: every site language has a block, and each block (a language's still
+ * waiting to join among them) names every word the English one does and no other. A missing
+ * or extra word fails the typecheck.
  */
 type SameWords<D extends Record<string, object>> = {
-  [L in SiteLocale]: keyof D["en"] extends keyof D[L]
-    ? keyof D[L] extends keyof D["en"]
-      ? true
+  [L in SiteLocale | (keyof D & Locale)]: L extends keyof D
+    ? keyof D["en"] extends keyof D[L]
+      ? keyof D[L] extends keyof D["en"]
+        ? true
+        : never
       : never
     : never;
 };
 export const WORDS_COMPLETE: SameWords<typeof T> & SameWords<typeof LANDING> = {
+  sv: true,
+  da: true,
+  nb: true,
+  sr: true,
+  tl: true,
   cs: true,
   pl: true,
   nl: true,
@@ -1838,7 +2695,12 @@ interface ListWords {
   partsShort: Record<Part, string>;
 }
 type Part = "torah" | "history" | "prophets" | "gospels" | "acts" | "letters";
-export const LISTS: Record<SiteLocale, ListWords> = {
+export const LISTS: Record<SiteLocale, ListWords> & Partial<Record<Locale, ListWords>> = {
+  sv: LISTS_SV,
+  da: LISTS_DA,
+  nb: LISTS_NB,
+  sr: LISTS_SR,
+  tl: LISTS_TL,
   cs: LISTS_CS,
   pl: LISTS_PL,
   nl: LISTS_NL,

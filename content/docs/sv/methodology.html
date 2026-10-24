@@ -1,0 +1,188 @@
+---
+title: Data och metod
+description: Varifrån varje plats, gräns, årtal och person på History Globe kommer, hur det har kontrollerats och vad som fortfarande är osäkert.
+---
+
+<p class="lede">
+  Globen bygger på öppna vetenskapliga datamängder som har rättats och utökats för hand och som
+  kontrolleras automatiskt vid varje bygge. Den här sidan förklarar varifrån varje lager kommer, vad
+  vi har ändrat och vad vi inte vet.
+</p>
+
+<h2>Bibelns platser</h2>
+<p>
+  De {{places}} platserna och deras verser kommer från
+  <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
+    >OpenBible.infos Bible Geocoding Data</a
+  >, som väger de identifieringar som föreslagits i litteraturen för varje plats. Vi behåller dess
+  föredragna identifiering och dess uppskattning av hur sannolik varje kandidatplats är.
+</p>
+<ul>
+  <li>
+    <b>Säkerheten i ord.</b> När ingen allvarligt menad andra plats föreslås anger OpenBibles poäng
+    (0–1000) hur säker identifieringen är: vid 800 eller mer anses den vara fastställd och kortet
+    säger ingenting; under det står det <i>mest sannolikt</i> (600 eller mer) eller <i>osäkert</i>.
+    En plats är <i>omtvistad</i> när den andra kandidaten har en betydande andel; alla
+    kandidatplatser visas då med sina andelar.
+  </li>
+  <li>
+    <b>Inga koordinater från OpenStreetMap eller Google.</b> OpenBible antecknar varifrån varje
+    koordinat kom. Punkter som hämtats från OpenStreetMap eller Google ersätts med Wikidatas
+    koordinater (CC0), eller så utelämnas platsen ({{excluded}} platser). En särskild kontroll låter
+    bygget misslyckas om någon sådan punkt finns kvar.
+  </li>
+  <li>
+    <b>Namn från texten.</b> De ryska namnen följer Synodalöversättningen från 1876: för nästan
+    varje namn behåller bygget en vers där det förekommer och kontrollerar att namnet står i den
+    versen.
+  </li>
+</ul>
+
+<h2>När platserna fanns</h2>
+<p>
+  En stad på kartan ritas fullt ut bara under de år den fanns. För {{life}} av Bibelns platser har
+  årtalen för grundande, förstörelse och övergivande förts in för hand, vart och ett med sina källor
+  (antika författare, krönikor, inskrifter, utgrävningsrapporter). Ett omstritt årtal utelämnas
+  hellre än gissas.
+</p>
+<p>
+  De {{ancient}} städerna i antikens värld som Bibeln inte nämner – huvudstäder, hamnar och
+  helgedomar som Ugarit, Hattusa, Mari eller Delfi – har valts ut och daterats en och en, var och en
+  kontrollerad mot två källor, med en identifierare i
+  <a href="https://pleiades.stoa.org">Pleiades</a> eller Wikidata och en punkt på den antika platsen
+  i stället för på dagens stad.
+</p>
+
+<h2>Gränser</h2>
+<p>
+  Stater och deras gränser år för år kommer från
+  <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatria</a> (Seshat Global History Databank,
+  v0.2.0), en öppen datamängd över världens statsbildningar från 3400 f.Kr. och framåt. Den är
+  hämtad ur historiska atlaser och är approximativ, särskilt före det första årtusendet f.Kr.
+</p>
+<p>
+  För Bibelns länder rättar vi den där källorna säger emot den: just nu {{overrides}} rättelser, var
+  och en med sin motivering och sina källor. Juda finns kvar på kartan till 586 f.Kr., Israel börjar
+  med Davids regering år 1010 f.Kr. i stället för 1000 f.Kr., Filisteen hålls till kustslätten med
+  sina fem städer, och en dynasti upphör när den förlorar sitt sista maktcentrum. Levanten och
+  Egypten, Mesopotamien, Anatolien och Iran, den grekisk-romerska världen i Nya testamentet och
+  Främre Orienten fram till 1300 e.Kr. har kontrollerats år för år, bland annat Assyriens nedgång
+  och återhämtning på 700-talet f.Kr., Babylon under Merodak-Baladan, Pergamon som testamenterades
+  till Rom 133 f.Kr., Makedonien efter Pydna och Thrakien som annekterades 46 e.Kr. Varje omgång
+  rättelser prövas först mot gränsernas form och kontrolleras sedan en gång till, oberoende, av en
+  andra granskare mot källorna.
+</p>
+<p>
+  Ett kungarike som betalade tribut till ett imperium, eller styrde som dess lydstat, ritas i en
+  ljusare nyans av imperiets färg, med ”under Assyrien” eller ”under Rom” under namnet: Juda under
+  Assyrien, Egypten och Babylon; Israel och Filisteen under Assyrien; det hasmoneiska och
+  herodianska Judeen under Rom (och, under tre år, Parthien); samt nabatéerna och Kommagene under
+  Rom. Dessa {{vassals}} perioder utarbetades utifrån de assyriska kungainskrifterna, de babyloniska
+  krönikorna, Bibeln, Josefus och moderna historieverk, och kontrollerades på nytt i en separat
+  granskningsomgång; ett år som bara är känt med ett årtiondes noggrannhet markeras ”ca” i datan.
+  Efter Samarias fall 722 f.Kr. ritas Israels land som den assyriska provins det blev.
+</p>
+
+<h2>Personer</h2>
+<p>
+  De {{people}} personerna i Bibeln och deras släktband kommer från STEP Bibles TIPNR (Tyndale
+  House, Cambridge). Vi tog inte banden för givna:
+</p>
+<ul>
+  <li>
+    släktbanden för de 1 200 personer som texten nämner oftast, och släkttavlorna i 1 Krönikeboken,
+    lästes mot verserna; 153 band som texten inte anger togs bort – Jesu bröder som söner till Josef
+    och Maria, Isebel som Ahasjas mor – och de saknade leden i Jesu släkttavla lades till utifrån
+    texten;
+  </li>
+  <li>
+    alla 1 136 band mellan en person och en plats där personen har en central eller stödjande roll
+    lästes vers för vers; 344 togs bort (Mose ”i Kanaan”, Abraham ”i Sodom”, en sons platser
+    tillskrivna hans far) och 94 fick en bättre vers;
+  </li>
+  <li>
+    namnbröder och namnsystrar hålls isär så som texten håller isär dem: ”Johannes Döparen”,
+    ”Johannes, Sebedeus son”, ”Ahasja, Judas kung”.
+  </li>
+</ul>
+
+<h2>Händelser, rundturer och artiklar</h2>
+<p>
+  De {{events}} händelserna, {{tours}} rundturerna och {{articles}} artiklarna utarbetas med hjälp
+  av AI under författarens ledning och kontrolleras sedan i separata granskningsomgångar mot
+  källorna: bibeltexten för vad den säger, antika författare, krönikor och inskrifter för årtal, och
+  den vetenskapliga litteraturen för platser. Varje påstående anger sin källa. Citat hämtas bara
+  från Synodalöversättningen och King James Version. Ingen rundtur har klarat sin första granskning
+  oförändrad; var och en rättades och kontrollerades på nytt. Den senaste fullständiga genomgången,
+  avslutad den 17 oktober 2026, läste om alla 746 artiklar mot källorna, ungefär 210 av dem två
+  gånger, och gjorde 1 088 rättelser, var och en förd in i alla 11 språk; rena fel hittades i 157
+  artiklar. Granskningarna görs av AI utifrån källorna, inte av forskare; en artikel som en
+  historiker har läst bär historikerns namn.
+</p>
+<p>
+  Avståndet till ett stopp anges fågelvägen. Från 312 f.Kr., då de romerska vägarna börjar, anges
+  bredvid det också sträckan längs Itiner-e-vägarna: den kortaste genom deras nät, om den inte är
+  mer än två och en halv gånger längre än fågelvägen; en sträcka som seglats räknas inte som
+  landväg. Gångtiden räknas med 30 km om dagen, den vanliga uppskattningen av en dagsetapp i
+  antiken, utan hänsyn till väder, vila eller last. Till sjöss antas ingen hastighet: en sjöresa
+  anger sina dagar bara där texten gör det (Apg 20:6, ”inom fem dagar”), med den versen, och lika
+  ungefärligt som texten anger dem. Där texten passerar hela regioner utan att nämna vägen (Apg
+  20:1–3, Efesos genom Makedonien och Grekland till Filippi) säger sträckan det och anger ingen tid.
+  En sträckas relief läses ur Copernicus höjddata (via Mapterhorn) längs just den vägen, eller, om
+  det inte finns någon väg, längs fågelvägen; bildtexten under profilen anger vilket.
+</p>
+
+<p>
+  Striderna och belägringarna ({{battles}}) är de som Bibeln berättar om, och några utanför den som
+  avgjorde Israels öde. Var och en ligger på den plats där den utkämpades och syns på kartan under
+  sina år. Bibelns är daterade så som rundturerna daterar samma berättelser; de övriga har ingen
+  vers utan en antik eller vetenskaplig källa. En andra, oberoende omgång kontrollerade utkastet mot
+  Synodaltexten och King James Version: av 58 poster rättades 16, och en togs bort, eftersom kartan
+  saknar punkt för dess plats.
+</p>
+
+<p>
+  De mackabeiska händelserna och striderna hänvisar till 1–2 Mackabeerboken, som Synodalbibeln
+  innehåller men som den protestantiska kanon inte gör: varje sådan hänvisning är märkt
+  ”deuterokanonisk”, och dess länk öppnar en text som har boken.
+</p>
+
+<h2>Kontroller vid varje bygge</h2>
+<p>Ingenting publiceras om inte varje kontroll godkänns:</p>
+<ul>
+  <li>
+    varje källa har en tillåten licens (ingen share-alike, inga data för icke-kommersiellt bruk);
+  </li>
+  <li>varje hänvisning pekar på en verklig bok, ett verkligt kapitel och en verklig vers;</li>
+  <li>varje ryskt namn finns i den vers som anges för det;</li>
+  <li>
+    varje rundturstopp nämns i sitt bibelställe, eller så är undantaget dokumenterat med sin orsak;
+  </li>
+  <li>varje rättelse av gränserna och varje årtal för en stad har en källa;</li>
+  <li>innehållsschemana är strikta: ett okänt eller felstavat fält stoppar bygget.</li>
+</ul>
+
+<h2>Vad som är osäkert</h2>
+<ul>
+  <li>
+    Årtal före det första årtusendet f.Kr. är approximativa, och en del är omstridda; kartan
+    markerar dem med ”ca”.
+  </li>
+  <li>OpenBibles andelar mellan kandidatplatser är en uppskattning, inte forskarnas samsyn.</li>
+  <li>
+    Antika gränser ritas efter moderna atlaser och förenklar en verklighet av växlande kontroll.
+  </li>
+  <li>
+    Många mindre platser saknar fortfarande antecknade år; de ritas som om de fanns hela tiden
+    (eller, för platser som bara nämns i Nya testamentet, från Nya testamentets tid och framåt).
+  </li>
+</ul>
+
+<h2 id="report">Anmäl ett fel</h2>
+<p>
+  Varje platskort har en länk <i>Hittat ett fel?</i> Den öppnar ett ärende i det offentliga arkivet
+  med platsen redan ifylld; du behöver ett GitHub-konto. Du kan också öppna ett direkt:
+  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+    >github.com/ArVaViT/history-globe/issues</a
+  >.
+</p>

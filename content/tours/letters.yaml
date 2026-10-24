@@ -17,6 +17,11 @@ title:
   it: "Dove andarono le lettere di Paolo"
   nl: "Waarheen de brieven van Paulus gingen"
   cs: "Kam šly Pavlovy listy"
+  sv: "Dit Paulus’ brev gick"
+  nb: "Hvor Paulus' brev gikk"
+  tl: "Saan nagtungo ang mga sulat ni Pablo"
+  da: "Hvor Paulus' breve gik hen"
+  sr: "Куда су ишле Павлове посланице"
 year: "AD 55"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -37,6 +42,11 @@ stops:
       it: "Ai santi che sono a Roma: «io non mi vergogno dell’Evangelo» (1,16)."
       nl: "Aan de heiligen te Rome: “ik schaam mij des Evangelies van Christus niet” (1:16)."
       cs: "Svatým v Římě: „Neboť se nestydím za evangelium Kristovo“ (1,16)."
+      sv: "Till de heliga i Rom: ”jag blyges icke för evangelium” (1:16)."
+      nb: "Til de hellige i Roma: «jeg skammer mig ikke ved evangeliet» (1,16)."
+      tl: "Sa mga banal sa Roma: “hindi ko ikinahihiya ang evangelio” (1:16)."
+      da: "Til de hellige i Rom: »jeg skammer mig ikke ved Evangeliet« (1,16)."
+      sr: "Светима у Риму: „Јер се не стидим јеванђеља Христовог“ (1,16)."
   - place: a6f437a # Corinth
     ref: 1Cor.1.2
     note:
@@ -51,6 +61,11 @@ stops:
       it: "Alla chiesa di Dio che è a Corinto: «queste tre cose durano: fede, speranza, carità; ma la più grande di esse è la carità» (13,13)."
       nl: "Aan de gemeente van God te Korinthe: “En nu blijft geloof, hoop en liefde, deze drie; doch de meeste van deze is de liefde” (13:13)."
       cs: "Církvi Boží v Korintu: „Nyní pak zůstává víra, naděje, láska, to tré, ale největší z nich jestiť láska“ (13,13)."
+      sv: "Till Guds församling i Korinth: ”Så bliva de då beståndande, tron, hoppet, kärleken, dessa tre; men störst bland dem är kärleken” (13:13)."
+      nb: "Til Guds menighet i Korint: «nu blir de stående disse tre, tro, håp, kjærlighet, og størst blandt dem er kjærligheten» (13,13)."
+      tl: "Sa iglesia ng Dios sa Corinto: “nanatili ang tatlong ito: ang pananampalataya, ang pagasa, at ang pagibig; nguni't ang pinakadakila sa mga ito ay ang pagibig” (13:13)."
+      da: "Til Guds menighed i Korinth: »Saa bliver da Tro, Haab, Kærlighed, disse tre; men størst iblandt disse er Kærligheden« (13,13)."
+      sr: "Цркви Божјој у Коринту: „А сад остаје вера, нада, љубав, ово троје; али је љубав највећа међу њима“ (13,13)."
   - place: a0f440a # Galatia
     ref: Gal.1.2
     note:
@@ -65,6 +80,11 @@ stops:
       it: "Alle chiese della Galazia: «Cristo ci ha affrancati perché fossimo liberi; state dunque saldi» (5,1)."
       nl: "Aan de gemeenten van Galatië: “Staat dan in de vrijheid, met welke ons Christus vrijgemaakt heeft” (5:1)."
       cs: "Církvím v Galacii: „Protož v svobodě, kterouž Kristus nás osvobodil, stůjte“ (5,1)."
+      sv: "Till församlingarna i Galatien: ”För att vi skola vara fria, har Kristus frigjort oss. Stån därför fasta” (5:1)."
+      nb: "Til menighetene i Galatia: «Til frihet har Kristus frigjort oss; stå derfor fast» (5,1)."
+      tl: "Sa mga iglesia ng Galacia: “Sa kalayaan ay pinalaya tayo ni Cristo: magsitibay nga kayo” (5:1)."
+      da: "Til menighederne i Galatien: »Til Friheden har Kristus frigjort os. Saa staar nu fast« (5,1)."
+      sr: "Црквама галатијским: „Стојте дакле у слободи којом нас Христос ослободи“ (5,1)."
   - place: a5feb15 # Ephesus
     ref: Eph.1.1
     note:
@@ -79,6 +99,11 @@ stops:
       it: "Ai santi che sono a Efeso: «gli è per grazia che voi siete stati salvati, mediante la fede» (2,8)."
       nl: "Aan de heiligen te Efeze: “Want uit genade zijt gij zalig geworden door het geloof” (2:8)."
       cs: "Svatým v Efezu: „Nebo milostí spaseni jste skrze víru“ (2,8)."
+      sv: "Till de heliga i Efesos: ”av nåden ären I frälsta genom tro” (2:8)."
+      nb: "Til de hellige i Efesos: «av nåde er I frelst, ved tro» (2,8)."
+      tl: "Sa mga banal sa Efeso: “sa biyaya kayo'y nangaligtas sa pamamagitan ng pananampalataya” (2:8)."
+      da: "Til de hellige i Efesos: »af Naaden ere I frelste ved Tro« (2,8)."
+      sr: "Светима у Ефесу: „Јер сте благодаћу спасени кроз веру“ (2,8)."
   - place: a49e1d0 # Philippi
     ref: Phil.1.1
     note:
@@ -93,6 +118,11 @@ stops:
       it: "Ai santi che sono a Filippi: «Rallegratevi del continuo nel Signore» (4,4)."
       nl: "Aan de heiligen te Filippi: “Verblijdt u in den Heere te allen tijd” (4:4)."
       cs: "Svatým ve Filipách: „Radujte se v Pánu vždycky“ (4,4)."
+      sv: "Till de heliga i Filippi: ”Glädjen eder i Herren alltid” (4:4)."
+      nb: "Til de hellige i Filippi: «Gled eder i Herren alltid!» (4,4)."
+      tl: "Sa mga banal sa Filipos: “Mangagalak kayong lagi sa Panginoon” (4:4)."
+      da: "Til de hellige i Filippi: »Glæder eder i Herren altid« (4,4)."
+      sr: "Светима у Филипима: „Радујте се свагда у Господу“ (4,4)."
   - place: a4e5a69 # Colossae
     ref: Col.1.2
     note:
@@ -107,6 +137,11 @@ stops:
       it: "Ai fratelli di Colosse: «qualunque cosa facciate, in parola o in opera, fate ogni cosa nel nome del Signor Gesù» (3,17)."
       nl: "Aan de broeders te Kolosse: “En al wat gij doet met woorden of met werken, doet het alles in den Naam van den Heere Jezus” (3:17)."
       cs: "Bratřím v Kolosech: „všecko, cožkoli činíte v slovu nebo v skutku, všecko čiňte ve jménu Pána Ježíše“ (3,17)."
+      sv: "Till bröderna i Kolossai: ”allt, vadhelst I företagen eder i ord eller gärning, gören det allt i Herren Jesu namn” (3:17)."
+      nb: "Til brødrene i Kolossai: «alt som I gjør i ord eller i gjerning, gjør det alt i den Herre Jesu navn» (3,17)."
+      tl: "Sa mga kapatid sa Colosas: “anomang inyong ginagawa, sa salita, o sa gawa, gawin ninyong lahat sa pangalan ng Panginoong Jesus” (3:17)."
+      da: "Til brødrene i Kolossæ: »alt, hvad I gøre i Ord eller i Handling, det gører alt i den Herres Jesu Navn« (3,17)."
+      sr: "Браћи у Колосима: „И све шта год чините речју или делом, све чините у име Господа Исуса Христа“ (3,17)."
   - place: afa9d8e # Thessalonica
     ref: 1Thess.1.1
     note:
@@ -121,6 +156,11 @@ stops:
       it: "Alla chiesa dei Tessalonicesi: «non cessate mai di pregare» (5,17)."
       nl: "Aan de gemeente van de Tessalonicenzen: “Bidt zonder ophouden” (5:17)."
       cs: "Církvi Tesaloničanů: „Bez přestání se modlte“ (5,17)."
+      sv: "Till tessalonikernas församling: ”Bedjen oavlåtligen” (5:17)."
+      nb: "Til tessalonikernes menighet: «bed uavlatelig» (5,17)."
+      tl: "Sa iglesia ng mga taga-Tesalonica: “Magsipanalangin kayong walang patid” (5:17)."
+      da: "Til tessalonikernes menighed: »beder uafladelig« (5,17)."
+      sr: "Цркви Солуњана: „Молите се Богу без престанка“ (5,17)."
   - place: a26aa94 # Crete
     ref: Titus.1.5
     note:
@@ -135,3 +175,8 @@ stops:
       it: "A Tito, lasciato a Creta per mettere ordine e stabilire degli anziani in ogni città."
       nl: "Aan Titus, achtergelaten in Kreta om de dingen in orde te brengen en in elke stad oudsten aan te stellen."
       cs: "Titovi, zanechanému na Krétě, aby uvedl věci do pořádku a ustanovil starší v každém městě."
+      sv: "Till Titus, kvarlämnad på Kreta för att ordna det som återstod och tillsätta äldste i varje stad."
+      nb: "Til Titus, som ble latt igjen på Kreta for å sette det i rette skikk og innsette eldste i hver by."
+      tl: "Kay Tito, na iniwan sa Creta upang ayusin ang mga bagay at magtalaga ng mga matanda sa bawat bayan."
+      da: "Til Titus, efterladt på Kreta for at bringe orden i tingene og indsætte ældste i hver by."
+      sr: "Титу, оставеном на Криту да доврши што је недовршено и постави старешине по свим градовима."

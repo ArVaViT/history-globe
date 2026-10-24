@@ -1,0 +1,210 @@
+---
+title: Datos at metodolohiya
+description: Kung saan nagmula ang bawat lugar, hangganan, petsa at tao sa History Globe, paano ito sinuri, at ano ang hindi pa tiyak.
+---
+
+<p class="lede">
+  Binuo ang globo mula sa mga bukas na datasets ng mga iskolar, itinama at dinagdagan nang
+  mano-mano, at awtomatikong sinusuri sa bawat build. Ipinaliliwanag ng pahinang ito kung saan
+  nagmula ang bawat patong, ano ang binago namin at ano ang hindi namin alam.
+</p>
+
+<h2>Mga lugar sa Biblia</h2>
+<p>
+  Ang {{places}} lugar at ang kanilang mga talata ay galing sa
+  <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
+    >Bible Geocoding Data ng OpenBible.info</a
+  >, na tinitimbang ang mga pagkilalang iminungkahi sa literatura para sa bawat lugar. Pinananatili
+  namin ang piniling pagkilala nito at ang pagtaya nito kung gaano kalamang ang bawat kandidatong
+  pook.
+</p>
+<ul>
+  <li>
+    <b>Katiyakan sa mga salita.</b> Kapag walang seryosong ikalawang pook na iminumungkahi, ang
+    marka ng OpenBible (0–1000) ang nagsasabi kung gaano katatag ang pagkilala: sa 800 pataas,
+    itinuturing itong tiyak at walang sinasabi ang card; sa ibaba nito, sinasabi ng card na
+    <i>pinakamalamang</i> (600 pataas) o <i>tentatibo</i>. <i>Pinagtatalunan</i> ang isang lugar
+    kapag may malaking bahagi ang ikalawang kandidato; ipinapakita noon ang lahat ng kandidatong
+    pook kasama ang kanilang mga bahagi.
+  </li>
+  <li>
+    <b>Walang koordinato mula sa OpenStreetMap o Google.</b> Itinatala ng OpenBible kung saan
+    nagmula ang bawat koordinato. Ang mga puntong kinuha nito sa OpenStreetMap o Google ay
+    pinapalitan ng mga koordinato ng Wikidata (CC0), o hindi isinasama ang lugar ({{excluded}}
+    lugar). Pinapabagsak ng hiwalay na pagsusuri ang build kung may natirang ganoong punto.
+  </li>
+  <li>
+    <b>Mga pangalan mula sa teksto.</b> Ang mga pangalang Ruso ay ayon sa saling Sinodal ng 1876: sa
+    halos bawat pangalan, itinatago ng build ang isang talata kung saan ito lumilitaw at sinusuri
+    kung nasa talatang iyon ang pangalan.
+  </li>
+</ul>
+
+<h2>Kailan nakatayo ang mga lugar</h2>
+<p>
+  Ang isang lungsod sa mapa ay iginuguhit nang buo lamang sa mga taong nakatayo ito. Para sa
+  {{life}} lugar sa Biblia, mano-manong itinatala ang mga taon ng pagkakatatag, pagkawasak at
+  pag-iwan, bawat isa ay may sanggunian (mga sinaunang manunulat, mga kronika, mga inskripsiyon, mga
+  ulat ng paghuhukay). Iniiwan ang pinagtatalunang petsa sa halip na hulaan.
+</p>
+<p>
+  Ang {{ancient}} lungsod ng sinaunang daigdig na hindi binabanggit ng Biblia — mga kabisera,
+  daungan at santuwaryo gaya ng Ugarit, Hattusa, Mari o Delfos — ay pinili at pinetsahan nang
+  isa-isa, bawat isa ay sinuri sa dalawang sanggunian, na may identifier sa
+  <a href="https://pleiades.stoa.org">Pleiades</a> o Wikidata at isang punto sa sinaunang pook sa
+  halip na sa makabagong bayan.
+</p>
+
+<h2>Mga hangganan</h2>
+<p>
+  Ang mga estado at ang kanilang mga hangganan taon-taon ay galing sa
+  <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatria</a> (Seshat Global History Databank,
+  v0.2.0), isang bukas na dataset ng mga polity ng daigdig mula 3400 BK pataas. Hango ito sa mga
+  makasaysayang atlas at tinatayang lamang, lalo na bago ang unang milenyo BK.
+</p>
+<p>
+  Para sa mga lupain ng Biblia, itinatama namin ito kung saan hindi sumasang-ayon dito ang mga
+  sanggunian: {{overrides}} pagtatama sa ngayon, bawat isa ay may dahilan at mga sanggunian.
+  Nananatili ang Juda sa mapa hanggang 586 BK, nagsisimula ang Israel sa paghahari ni David noong
+  1010 BK sa halip na 1000 BK, nililimitahan ang Filistia sa kapatagang baybayin ng limang lungsod
+  nito, at nagtatapos ang isang dinastiya kapag nawala ang huli nitong luklukan ng kapangyarihan.
+  Ang Levant at Egipto, Mesopotamia, Anatolia at Iran, ang daigdig na Greco-Romano ng Bagong Tipan
+  at ang Malapit na Silangan hanggang 1300 AD ay sinuri taon-taon, kabilang ang pagbagsak at
+  pagbangon ng Asiria sa ika-8 na siglo BK, ang Babilonia sa ilalim ni Merodach-baladan, ang Pergamo
+  na iniwan sa Roma noong 133 BK, ang Macedonia pagkatapos ng Pidna at ang Tracia na isinanib noong
+  46 AD. Ang bawat grupo ng mga pagtatama ay unang sinusubok laban sa mga hugis, saka sinusuring
+  muli, nang hiwalay, ng ikalawang tagasuri laban sa mga sanggunian.
+</p>
+<p>
+  Ang isang kaharian na nagbayad ng tributo sa isang imperyo, o namuno bilang kliyente nito, ay
+  iginuguhit sa mas maputlang lilim ng kulay ng imperyo, na may “sa ilalim ng Asiria” o “sa ilalim
+  ng Roma” sa ilalim ng pangalan nito: ang Juda sa ilalim ng Asiria, Egipto at Babilonia; ang Israel
+  at Filistia sa ilalim ng Asiria; ang Judea ng mga Hasmoneo at ng mga Herodes sa ilalim ng Roma
+  (at, sa loob ng tatlong taon, ng Partia); at ang mga Nabateo at ang Commagene sa ilalim ng Roma.
+  Ang {{vassals}} panahong ito ay binuo mula sa mga maharlikang inskripsiyon ng Asiria, ang mga
+  Kronika ng Babilonia, ang Biblia, si Josephus at mga makabagong kasaysayan, at sinuring muli sa
+  hiwalay na pagsusuri; ang taong alam lamang sa loob ng isang dekada ay minamarkahan ng “mga” sa
+  datos. Matapos bumagsak ang Samaria noong 722 BK, iginuguhit ang lupain ng Israel bilang lalawigan
+  ng Asiria na naging ito.
+</p>
+
+<h2>Mga tao</h2>
+<p>
+  Ang {{people}} tao sa Biblia at ang kanilang mga ugnayang pampamilya ay galing sa TIPNR ng STEP
+  Bible (Tyndale House, Cambridge). Hindi namin basta pinagkatiwalaan ang mga ugnayan:
+</p>
+<ul>
+  <li>
+    ang mga ugnayang pampamilya ng 1,200 taong pinakamadalas pangalanan ng teksto, at ang mga
+    talaangkanan sa 1 Cronica, ay binasa laban sa mga talata; 153 ugnayang hindi sinasabi ng teksto
+    ang inalis — ang mga kapatid ni Jesus bilang mga anak nina Jose at Maria, si Jezabel bilang ina
+    ni Ochozias — at idinagdag mula sa teksto ang mga nawawalang ugnayan sa talaangkanan ni Jesus;
+  </li>
+  <li>
+    lahat ng 1,136 ugnayan sa pagitan ng isang tao at isang lugar kung saan may sentral o pantulong
+    siyang papel ay binasa talata sa talata; 344 ang inalis (si Moises “sa Canaan”, si Abraham “sa
+    Sodoma”, ang mga lugar ng anak na iniugnay sa kanyang ama) at 94 ang binigyan ng mas mabuting
+    talata;
+  </li>
+  <li>
+    pinag-iiba ang mga magkakapangalan kung paano sila pinag-iiba ng teksto: “Juan Bautista”, “Juan
+    na anak ni Zebedeo”, “Ochozias, hari ng Juda”.
+  </li>
+</ul>
+
+<h2>Mga pangyayari, paglalakbay at artikulo</h2>
+<p>
+  Ang {{events}} pangyayari, {{tours}} paglalakbay at {{articles}} artikulo ay binubuo sa tulong ng
+  AI sa ilalim ng pamamahala ng may-akda at pagkatapos ay sinusuri sa hiwalay na mga pagsusuri laban
+  sa mga sanggunian: ang tekstong biblikal para sa sinasabi nito, ang mga sinaunang manunulat,
+  kronika at inskripsiyon para sa mga petsa, at ang literaturang pang-iskolar para sa mga pook.
+  Bawat pahayag ay may sinisipi na sanggunian. Ang mga sipi ay mula lamang sa saling Sinodal at sa
+  King James Version. Walang paglalakbay na nakapasa sa unang pagsusuri nito nang hindi nagbabago;
+  bawat isa ay itinama at sinuring muli. Ang huling buong pagsusuri, natapos noong 17 Oktubre 2026,
+  ay muling bumasa sa lahat ng 746 artikulo laban sa mga sanggunian, mga 210 sa mga ito ay dalawang
+  beses, at gumawa ng 1,088 pagwawasto, bawat isa ay dinala sa lahat ng 11 wika; may mga tahasang
+  pagkakamali sa 157 artikulo. Ang mga pagsusuring ito ay ginagawa ng AI mula sa mga sanggunian,
+  hindi ng mga iskolar; ang artikulong binasa ng isang istoryador ay may pangalan ng istoryador.
+</p>
+<p>
+  Ang layo sa isang hintuan ay ibinibigay sa tuwid na linya. Mula 312 BK, kung kailan nagsisimula
+  ang mga daang Romano, ibinibigay sa tabi nito ang daan sa mga daan ng Itiner-e: ang pinakamaikli
+  sa kanilang network, maliban kung higit ito sa dalawa't kalahating beses ng tuwid na linya; hindi
+  binibilang sa daan ang bahaging sinakyan sa dagat. Ang oras kung lalakarin ay kinukuwenta sa 30 km
+  bawat araw, ang karaniwang pagtaya sa isang araw na biyahe noong unang panahon, nang walang
+  isinasaalang-alang na panahon, pahinga o pasan. Sa dagat, walang ipinapalagay na bilis: ibinibigay
+  lamang ng isang paglalayag ang mga araw nito kung ibinibigay ito ng teksto (Gawa 20:6, “sa loob ng
+  limang araw”), kasama ang talatang iyon, at kasingtaya lamang ng pagbibigay ng teksto. Kung
+  tinatawid ng teksto ang buong mga rehiyon nang hindi binabanggit ang daan (Gawa 20:1–3, Efeso
+  patungong Filipos sa pamamagitan ng Macedonia at Grecia), sinasabi iyon ng bahagi ng paglalakbay
+  at hindi nagbibigay ng oras. Ang anyo ng lupa ng isang bahagi ay binabasa mula sa datos ng taas ng
+  Copernicus (sa pamamagitan ng Mapterhorn) sa mismong daan ding iyon, o kung walang daan, sa tuwid
+  na linya; sinasabi ng caption sa ilalim ng profil kung alin.
+</p>
+
+<p>
+  Ang mga labanan at pagkubkob ({{battles}}) ay ang mga isinasalaysay ng Biblia, at ilan sa labas
+  nito na nagpasya sa kapalaran ng Israel. Bawat isa ay nasa lugar kung saan ito nilabanan at
+  lumilitaw sa mapa sa kani-kanilang taon. Ang mga nasa Biblia ay pinepetsahan kung paano
+  pinepetsahan ng mga paglalakbay ang parehong kuwento; ang iba ay walang talata kundi sinaunang o
+  pang-iskolar na sanggunian. Sinuri ng ikalawa, hiwalay na pagsusuri ang burador laban sa tekstong
+  Sinodal at sa King James Version: sa 58 entrada, 16 ang itinama, at isa ang inalis dahil walang
+  punto ang mapa para sa pook nito.
+</p>
+
+<p>
+  Ang mga pangyayari at labanan ng panahon ng mga Macabeo ay sumisipi sa 1–2 Macabeo, na nasa Biblia
+  ng Sinodal ngunit wala sa kanon ng mga Protestante: bawat ganoong sipi ay minamarkahan ng
+  “deuterocanonical”, at nagbubukas ang link nito ng tekstong may aklat.
+</p>
+
+<h2>Mga pagsusuri sa bawat build</h2>
+<p>Walang nalalathala malibang pumasa ang bawat pagsusuri:</p>
+<ul>
+  <li>
+    bawat sanggunian ay may pinahihintulutang lisensya (walang share-alike, walang datos na hindi
+    pang-komersiyal);
+  </li>
+  <li>bawat reperensiya ay tumuturo sa totoong aklat, kabanata at talata;</li>
+  <li>bawat pangalang Ruso ay matatagpuan sa talatang ibinigay para dito;</li>
+  <li>
+    bawat hintuan ng paglalakbay ay pinangalanan sa sipi nito, o dokumentado ang eksepsiyon kasama
+    ang dahilan;
+  </li>
+  <li>bawat pagtatama sa mga hangganan at bawat petsa ng isang lungsod ay may sanggunian;</li>
+  <li>
+    mahigpit ang mga schema ng nilalaman: pinahihinto ang build ng hindi kilala o mali ang baybay na
+    field.
+  </li>
+</ul>
+
+<h2>Ano ang hindi tiyak</h2>
+<ul>
+  <li>
+    Tinatayang lamang ang mga petsa bago ang unang milenyo BK, at may ilang pinagtatalunan; ang mapa
+    ay minamarkahan ang mga ito ng “mga”.
+  </li>
+  <li>
+    Ang mga bahagi ng OpenBible sa pagitan ng mga kandidatong pook ay pagtaya, hindi pinagkasunduan
+    ng mga iskolar.
+  </li>
+  <li>
+    Iginuguhit ang mga sinaunang hangganan mula sa mga makabagong atlas at pinasisimple nito ang
+    realidad ng nagbabagong kontrol.
+  </li>
+  <li>
+    Maraming maliliit na lugar ang wala pang naitalang taon; iginuguhit ang mga ito na nakatayo sa
+    buong panahon (o, para sa mga lugar na binabanggit lamang sa Bagong Tipan, mula sa panahon ng
+    Bagong Tipan pataas).
+  </li>
+</ul>
+
+<h2 id="report">Mag-ulat ng pagkakamali</h2>
+<p>
+  Bawat card ng lugar ay may link na <i>May nakita kang mali?</i> Nagbubukas ito ng isang issue sa
+  pampublikong repository na napunan na ang lugar; kailangan mo ng GitHub account. Maaari ka ring
+  magbukas ng isa nang direkta:
+  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+    >github.com/ArVaViT/history-globe/issues</a
+  >.
+</p>

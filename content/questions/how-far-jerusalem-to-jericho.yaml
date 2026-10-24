@@ -11,6 +11,11 @@ question:
   it: "Quanto c’è da Gerusalemme a Gerico?"
   nl: "Hoe ver is het van Jeruzalem naar Jericho?"
   cs: "Jak daleko je to z Jeruzaléma do Jericha?"
+  sv: "Hur långt är det från Jerusalem till Jeriko?"
+  nb: "Hvor langt er det fra Jerusalem til Jeriko?"
+  tl: "Gaano kalayo mula sa Jerusalem hanggang sa Jerico?"
+  da: "Hvor langt er der fra Jerusalem til Jeriko?"
+  sr: "Колико је далеко од Јерусалима до Јерихона?"
 answer:
   en:
     - "Jericho is about 20 km east of Jerusalem in a straight line; by the Roman road on the map, which runs through Bethany, the way measures about 26 km, less than a day on foot."
@@ -56,6 +61,26 @@ answer:
     - "Jericho leží asi 20 km východně od Jeruzaléma vzdušnou čarou; po římské silnici na mapě, která vede přes Betanii, měří cesta asi 26 km, méně než den pěšky."
     - "Tato cesta je dějištěm podobenství: „Člověk jeden šel z Jeruzaléma do Jericho, i upadl mezi lotry.“ Skutečně se jde dolů: Jeruzalém stojí na rozvodí v judských horách a Jericho leží v Jordánském údolí asi 250 m pod hladinou moře, v hlubokém příkopu severně od Mrtvého moře, takže celý sestup je příkrý a vede judskou pouští."
     - "Jericho evangelií, kde Ježíš uzdravil slepého Bartimaia a zůstal u Zachea, bylo město, které vyrostlo kolem hasmonejských a herodovských zimních paláců u ústí vádí Qelt, dnešní Tulúl Abú al-Alájik; Herodes Veliký tam zemřel asi roku 4 př. n. l. Starší pahorek Tell es-Sultán, Jericho Jozuovo, leží asi 2 km severně u Elíšova pramene. Roku 333 ukázali bordeauxskému poutníkovi v Jerichu pramen a dům Rachab."
+  sv:
+    - "Jeriko ligger omkring 20 km öster om Jerusalem fågelvägen; via den romerska vägen på kartan, som går genom Betania, mäter vägen omkring 26 km, mindre än en dag till fots."
+    - "Vägen är miljön för liknelsen: ”En man begav sig från Jerusalem ned till Jeriko, men råkade ut för rövare.” Den går verkligen nedåt: Jerusalem ligger på vattendelaren i Judas berg, och Jeriko ligger i Jordandalen omkring 250 m under havsytan, i den djupa gravsänkan norr om Döda havet, så hela nedstigningen är brant och går genom Judeens öken."
+    - "Evangeliernas Jeriko, där Jesus botade den blinde Bartimeus och stannade hos Sackeus, var staden som växte upp kring de hasmoneiska och herodianska vinterpalatsen vid mynningen av Wadi Qelt, nu Tulul Abu el-Alayiq; Herodes den store dog där omkring 4 f.Kr. Den äldre kullen Tell es-Sultan, Josuas Jeriko, ligger omkring 2 km norrut vid Elishas källa. År 333 visades pilgrimen från Bordeaux källan och Rachavs hus i Jeriko."
+  nb:
+    - "Jeriko ligger omtrent 20 km øst for Jerusalem i luftlinje; langs romerveien på kartet, som går gjennom Betania, er veien omtrent 26 km, mindre enn en dag til fots."
+    - "Veien er rammen om lignelsen: «En mann gikk ned fra Jerusalem til Jeriko, og han falt iblandt røvere.» Den går virkelig nedover: Jerusalem ligger på vannskillet i Judas høyland, og Jeriko ligger i Jordandalen omtrent 250 m under havets overflate, i den dype riften nord for Dødehavet, så hele nedstigningen er bratt og går gjennom ødemarken i Judea."
+    - "Jeriko i evangeliene, der Jesus helbredet den blinde Bartimeus og tok inn hos Sakkeus, var byen som vokste opp rundt de hasmoneiske og herodianske vinterpalassene ved utløpet av Wadi Qelt, nå Tulul Abu el-Alayiq; Herodes den store døde der omkring 4 f.Kr. Den eldre haugen Tell es-Sultan, Josvas Jeriko, ligger omtrent 2 km mot nord ved Elisjas kilde. I 333 ble pilegrimen fra Bordeaux vist kilden og Rahabs hus i Jeriko."
+  tl:
+    - "Ang Jerico ay nasa mga 20 km sa silangan ng Jerusalem sa tuwid na guhit; sa daang Romano sa mapa, na dumaraan sa Betania, sumusukat ang daan ng mga 26 km, wala pang isang araw na lakad."
+    - "Ang daan ang tagpuan ng talinghaga: “Isang tao'y bumababa sa Jerico na mula sa Jerusalem; at siya'y nahulog sa kamay ng mga tulisan.” Talagang pababa ito: ang Jerusalem ay nakatayo sa hati ng tubig sa mga burol ng Juda, at ang Jerico ay nasa Libis ng Jordan na mga 250 m sa ibaba ng antas ng dagat, sa malalim na biyak sa hilaga ng Dagat na Patay, kaya matarik ang buong pagbaba at dumaraan sa ilang ng Judea."
+    - "Ang Jerico ng mga Ebanghelyo, kung saan pinagaling ni Jesus ang bulag na si Bartimeo at tumuloy kay Zaqueo, ay ang bayang lumaki sa palibot ng mga palasyong pantaglamig ng mga Hasmoneo at Herodes sa bukana ng Wadi Qelt, ngayon ay Tulul Abu el-Alayiq; doon namatay si Herodes na Dakila noong mga 4 BK. Ang mas lumang burol ng Tell es-Sultan, ang Jerico ni Josue, ay nasa mga 2 km sa hilaga sa tabi ng bukal ni Eliseo. Noong 333, ipinakita sa Peregrino ng Bordeaux ang bukal at ang bahay ni Rahab sa Jerico."
+  da:
+    - "Jeriko ligger omkring 20 km øst for Jerusalem i luftlinje; ad den romerske vej på kortet, som løber gennem Betania, måler vejen omkring 26 km, mindre end en dag til fods."
+    - "Vejen er rammen om lignelsen: »Et Menneske gik ned fra Jerusalem til Jeriko, og han faldt iblandt Røvere«. Den går virkelig nedad: Jerusalem ligger på vandskellet i Judas bjerge, og Jeriko ligger i Jordandalen omkring 250 m under havets overflade, i den dybe kløft nord for Det Døde Hav, så hele nedstigningen er stejl og går gennem Judæas ørken."
+    - "Evangeliernes Jeriko, hvor Jesus helbredte den blinde Bartimæus og tog ind hos Zakæus, var den by, der voksede op omkring de hasmonæiske og herodianske vinterpaladser ved udmundingen af Wadi Qelt, nu Tulul Abu el-Alayiq; Herodes den Store døde der omkring 4 f.Kr. Den ældre høj, Tell es-Sultan, Josvas Jeriko, ligger omkring 2 km mod nord ved Elisas kilde. I 333 blev pilgrimmen fra Bordeaux vist kilden og Rahabs hus i Jeriko."
+  sr:
+    - "Јерихон је око 20 км источно од Јерусалима ваздушном линијом; римским путем на карти, који води кроз Витанију, пут мери око 26 км, мање од једног дана пешке."
+    - "Овај пут је сцена приче: „Један човек силажаше из Јерусалима у Јерихон, па га ухватише хајдуци.“ Он заиста силази: Јерусалим стоји на развођу у брдима Јуде, а Јерихон лежи у Долини јорданској око 250 м испод нивоа мора, у дубокој пукотини северно од Мртвог мора, па је цео силазак стрм и води кроз јудејску пустињу."
+    - "Јерихон из Јеванђеља, где је Исус исцелио слепог Вартимеја и боравио код Закхеја, био је град који је израстао око хасмонејских и иродовских зимских палата на ушћу Вади Келта, данашњи Тулул Абу ел Алајик; ту је око 4. п. н. е. умро Ирод Велики. Старија хумка Тел ес Султан, Јерихон Исуса Навина, лежи око 2 км северније поред Јелисијевог извора. Ходочаснику из Бордоа су 333. показали извор и Равину кућу у Јерихону."
 map:
   year: "AD 30"
   ref: Luke.10.30
