@@ -15,7 +15,7 @@ import {
   formatRefOr,
 } from "@hg/model";
 import { ArrowLeft, MapPin, Ruler, X, ZoomIn } from "./icons";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useTranslation } from "../i18n";
 import { loadArticle, type Article } from "../articles";
 import {
@@ -71,7 +71,10 @@ function writeTab(tab: PlaceTab): void {
   }
 }
 
-/** Other records on the same point shown before "and N more". */
+/**
+ * Other records on the same point shown before "and N more", at most: fewer where one line
+ * does not hold them.
+ */
 const ALSO_SHOWN = 3;
 
 export function PlaceCard({
@@ -163,6 +166,17 @@ export function PlaceCard({
     focusVerse.current = null;
   }, [versesShown]);
   const [allAlso, setAllAlso] = useState(false);
+  // Folded, the names keep to one line: as many of them as it holds, from three down to one,
+  // and the count of the rest beside them («Landet på andra sidan floden» took a second line,
+  // which pushed the tabs under the fold of a phone's card).
+  const [alsoShown, setAlsoShown] = useState(ALSO_SHOWN);
+  const folded = !allAlso && alsoHere.length > alsoShown;
+  const alsoRef = useRef<HTMLSpanElement>(null);
+  useLayoutEffect(() => {
+    const line = alsoRef.current;
+    if (folded && line && alsoShown > 1 && line.scrollWidth > line.clientWidth)
+      setAlsoShown(alsoShown - 1);
+  }, [folded, alsoShown]);
   const titleRef = useRef<HTMLHeadingElement>(null);
   useEffect(() => {
     if (focusTitle) titleRef.current?.focus();
@@ -407,23 +421,25 @@ export function PlaceCard({
       </div>
 
       {alsoHere.length > 0 && (
-        <div className="px-5 pt-2 text-[13px] leading-snug text-ink">
-          <span className="text-ink-soft">{t("place.also_here")}:</span>{" "}
-          {alsoHere.slice(0, allAlso ? undefined : ALSO_SHOWN).map((p, i) => (
-            <span key={p.id}>
-              {i > 0 && ", "}
-              <button
-                onClick={() => {
-                  onSelect(p.id);
-                }}
-                className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
-              >
-                {nameOf(p, locale)}
-              </button>
-            </span>
-          ))}
-          {!allAlso && alsoHere.length > ALSO_SHOWN && (
-            <>
+        <div className={`px-5 pt-2 text-[13px] leading-snug text-ink ${folded ? "flex" : ""}`}>
+          <span ref={alsoRef} className={folded ? "min-w-0 truncate" : ""}>
+            <span className="text-ink-soft">{t("place.also_here")}:</span>{" "}
+            {alsoHere.slice(0, allAlso ? undefined : alsoShown).map((p, i) => (
+              <span key={p.id}>
+                {i > 0 && ", "}
+                <button
+                  onClick={() => {
+                    onSelect(p.id);
+                  }}
+                  className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
+                >
+                  {nameOf(p, locale)}
+                </button>
+              </span>
+            ))}
+          </span>
+          {folded && (
+            <span className="shrink-0 whitespace-pre">
               {" · "}
               <button
                 onClick={() => {
@@ -431,9 +447,9 @@ export function PlaceCard({
                 }}
                 className="text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
               >
-                {t("place.more", { count: alsoHere.length - ALSO_SHOWN })}
+                {t("place.more", { count: alsoHere.length - alsoShown })}
               </button>
-            </>
+            </span>
           )}
         </div>
       )}
