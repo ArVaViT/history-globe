@@ -442,7 +442,7 @@ export function PlaceCard({
       <div
         role="tablist"
         aria-label={title}
-        className="sticky top-0 z-10 mt-3 flex gap-1 overflow-x-auto border-b border-line bg-paper/95 px-4 pt-2 backdrop-blur [scrollbar-width:none]"
+        className="sticky top-0 z-10 mt-3 flex overflow-x-auto border-b border-line bg-paper/95 px-3 pt-2 backdrop-blur [scrollbar-width:none]"
         onKeyDown={(e) => {
           const i = tabs.indexOf(tab);
           const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
@@ -469,7 +469,7 @@ export function PlaceCard({
             onClick={() => {
               pickTab(id);
             }}
-            className={`-mb-px border-b-2 px-2.5 pb-2 text-[13.5px] whitespace-nowrap ${
+            className={`-mb-px border-b-2 px-1.5 pb-2 text-[13px] whitespace-nowrap ${
               tab === id
                 ? "border-accent font-medium text-ink"
                 : "border-transparent text-ink-soft hover:text-ink"
@@ -482,7 +482,7 @@ export function PlaceCard({
                 : id === "people"
                   ? t("place.tab_people")
                   : id === "sites"
-                    ? `${t("place.tab_sites")} · ${String(versions.length)}`
+                    ? t("place.tab_sites")
                     : t("place.tab_verses")}
           </button>
         ))}
