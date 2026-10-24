@@ -142,6 +142,9 @@ describe("repair", () => {
     );
     expect(repair("sv", "Gå, och synda icke härefter.»][1]")).toBe("Gå, och synda icke härefter.»");
     expect(repair("sv", "[1]")).toBe("");
+    expect(repair("sv", "Hans moder hette Sibja, från Beer-Seba. &gt;2 Krön 24,1 f.")).toBe(
+      "Hans moder hette Sibja, från Beer-Seba.",
+    );
   });
 
   it("takes the Danish brackets and the Norwegian note marks off the words", () => {
@@ -155,6 +158,9 @@ describe("repair", () => {
     expect(
       repair("nb", "som har skapt Bjørnen, Orion* og Syvstjernen* og Sydens stjernekammere,"),
     ).toBe("som har skapt Bjørnen, Orion og Syvstjernen og Sydens stjernekammere,");
+    expect(repair("nb", "skal ikke bli lÃ¦gt. likesom Salman Ã¸dela")).toBe(
+      "skal ikke bli lægt. likesom Salman ødela",
+    );
   });
 
   it("mends the Kralice code page and leaves the other editions alone", () => {

@@ -371,6 +371,8 @@ export const isUsfm = (src: BibleSource): boolean => src.file.endsWith("_usfm.zi
  * (Mark 16:9–20, John 7:53–8:11). The Danish edition brackets those passages and the words
  * its translators supplied («[for hine]»); the Danish and Norwegian modules mark a footnoted
  * word with stars («Harmagedon**», «Orion*»): the cards show the words without the marks.
+ * One Swedish verse ends in a cross-reference (2 Kings 12:1, «&gt;2 Krön 24,1 f.»), and two
+ * Norwegian ones have æ and ø in the wrong code page (Hosea 5:13, 10:14: «Ã¦», «Ã¸»).
  */
 export const REPAIRS: Readonly<Partial<Record<Locale, readonly (readonly [RegExp, string])[]>>> = {
   cs: [
@@ -401,10 +403,15 @@ export const REPAIRS: Readonly<Partial<Record<Locale, readonly (readonly [RegExp
     [/\s\[\d+\].*$/, ""],
     [/\[\d+\]/g, ""],
     [/^\[|\]$/g, ""],
+    [/\s&gt;.*$/, ""],
     [/\s+$/, ""],
   ],
   da: [[/[[\]*]/g, ""]],
-  nb: [[/\*/g, ""]],
+  nb: [
+    [/\*/g, ""],
+    [/Ã¦/g, "æ"],
+    [/Ã¸/g, "ø"],
+  ],
 };
 
 /** A verse's text with its edition's garbles mended (REPAIRS). */
