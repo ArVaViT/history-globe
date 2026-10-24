@@ -15,6 +15,7 @@ title:
   it: "Il profeta Eliseo"
   nl: "De profeet Elisa"
   cs: "Prorok Elíša"
+  sv: "Profeten Elisha"
 year: "850 BC"
 people: ["Elisha@1Ki.19.16-Luk"]
 approximate: true
@@ -33,6 +34,7 @@ stops:
       it: "A Gerico i figli dei profeti vedono che lo spirito di Elia riposa su Eliseo; egli getta del sale nella sorgente e ne risana l’acqua."
       nl: "Te Jericho zien de profetenzonen dat de geest van Elia op Elisa rust; hij werpt zout in de bron en maakt het water gezond."
       cs: "V Jerichu vidí synové proroků, že duch Elijášův spočívá na Elíšovi; ten vhazuje sůl do pramene a uzdravuje jeho vodu."
+      sv: "I Jeriko ser profetlärjungarna att Elias ande vilar över Elisha; han kastar salt i källan och gör dess vatten friskt."
   - place: a64f355 # Bethel
     ref: 2Kgs.2.23-2Kgs.2.24
     note:
@@ -47,6 +49,7 @@ stops:
       it: "Sulla strada di Betel dei ragazzini lo scherniscono: «Sali calvo!», e due orse escono dal bosco."
       nl: "Op de weg naar Bethel bespotten kleine kinderen hem: “Kaalkop, ga op”, en twee berinnen komen uit het woud."
       cs: "Na cestě do Bét-elu se mu posmívají malé děti: „Jdi lysý, jdi lysý!“ a z lesa vyběhnou „dvě nedvědice“."
+      sv: "På vägen till Betel gör småbarn narr av honom: ”Upp med dig, du flintskalle!”, och två björninnor kommer ut ur skogen."
   - place: ac86af5 # Shunem
     ref: 2Kgs.4.8-2Kgs.4.17
     note:
@@ -61,6 +64,7 @@ stops:
       it: "A Sunem una donna gli prepara una piccola camera sul muro, ed egli le annuncia che avrà un figlio."
       nl: "Te Sunem maakt een vrouw voor hem een kleine kamer op de muur, en hij zegt haar dat zij een zoon zal krijgen."
       cs: "V Šúnemu pro něho žena udělá malý pokojík na zdi a on jí říká, že bude mít syna."
+      sv: "I Shunem bygger en kvinna ett litet rum åt honom på muren, och han säger henne att hon ska få en son."
   - place: a3e21c6 # Mount Carmel
     ref: 2Kgs.4.18-2Kgs.4.37
     note:
@@ -75,6 +79,7 @@ stops:
       it: "Quando il ragazzo muore, sua madre cavalca fino a Eliseo sul Monte Carmelo e non vuole lasciarlo; egli torna con lei a Sunem e risuscita il ragazzo."
       nl: "Als de jongen sterft, rijdt zijn moeder naar Elisa op de Karmel en wil hem niet verlaten; hij gaat met haar terug naar Sunem en wekt de jongen op."
       cs: "Když chlapec umírá, jede jeho matka k Elíšovi na horu Karmel a nechce ho opustit; vrací se s ní do Šúnemu a chlapce křísí."
+      sv: "När pojken dör rider hans mor till Elisha på Karmel och vill inte lämna honom; han går tillbaka med henne till Shunem och uppväcker pojken."
   - place: a6399b3 # Gilgal
     ref: 2Kgs.4.38-2Kgs.4.41
     note:
@@ -89,6 +94,7 @@ stops:
       it: "A Gàlgala, durante una carestia, i figli dei profeti gridano: «C’è la morte, nella marmitta, o uomo di Dio!»; egli vi getta della farina ed essa non fa più male."
       nl: "Te Gilgal roepen de profetenzonen in een hongersnood: “Man Gods, de dood is in den pot!”; hij werpt er meel in en het is onschadelijk."
       cs: "V Gilgalu za hladu synové proroků křičí: „Smrt v hrnci, muži Boží!“; on do hrnce nasype mouku a nic zlého v něm není."
+      sv: "I Gilgal, under en hungersnöd, ropar profetlärjungarna: ”Döden är i grytan, du gudsman!”; han kastar i mjöl, och det blir ofarligt."
   - place: ae686c9 # Jordan
     ref: 2Kgs.5.1-2Kgs.5.14
     note:
@@ -103,6 +109,7 @@ stops:
       it: "Naaman, capo dell’esercito del re di Siria, si immerge sette volte nel Giordano alla parola di Eliseo ed è purificato dalla lebbra."
       nl: "Naäman, de legeroverste van de koning van Syrië, dompelt zich op het woord van Elisa zevenmaal onder in de Jordaan en wordt van zijn melaatsheid gereinigd."
       cs: "Námán, velitel vojska krále syrského, se na Elíšovo slovo sedmkrát ponoří v Jordánu a je očištěn od svého malomocenství."
+      sv: "Naaman, överste för den syriske kungens här, doppar sig sju gånger i Jordan på Elishas ord och renas från sin spetälska."
   - place: ab635e4 # Dothan
     ref: 2Kgs.6.13-2Kgs.6.18
     note:
@@ -117,6 +124,7 @@ stops:
       it: "A Dotan i Siri circondano la città; il servo di Eliseo vede il monte pieno di cavalli e di carri di fuoco."
       nl: "Te Dotan omsingelen de Syriërs de stad; de dienaar van Elisa ziet de berg vol paarden en wagens van vuur."
       cs: "V Dótanu Syřané obkličují město; Elíšův služebník vidí horu plnou ohnivých koní a vozů."
+      sv: "I Dotan omringar syrierna staden; Elishas tjänare ser berget fullt av hästar och eldvagnar."
   - place: a041bb3 # Samaria
     ref: 2Kgs.6.24-2Kgs.7.1
     note:
@@ -131,6 +139,7 @@ stops:
       it: "Ben-Adad assedia Samaria e la città soffre la fame; Eliseo dice che l’indomani alla sua porta una misura di fior di farina si venderà per un siclo."
       nl: "Ben-Hadad belegert Samaria en de stad lijdt honger; Elisa zegt dat morgen een maat fijn meel voor een sikkel bij haar poort zal worden verkocht."
       cs: "Ben-hadad obléhá Samaří a město hladoví; Elíša říká, že zítra se u jeho brány bude prodávat míra jemné mouky za šekel."
+      sv: "Ben-Hadad belägrar Samaria, och staden svälter; Elisha säger att i morgon ska ett mått fint mjöl säljas för en sikel i stadens port."
   - place: a69c1d4 # Damascus
     ref: 2Kgs.8.7-2Kgs.8.15
     note:
@@ -145,3 +154,4 @@ stops:
       it: "A Damasco, dove Ben-Adad giace malato, Eliseo piange davanti a Cazaèl, che sarà re di Siria."
       nl: "Te Damascus, waar Ben-Hadad ziek ligt, weent Elisa voor Hazaël, die koning van Syrië zal worden."
       cs: "V Damašku, kde Ben-hadad leží nemocen, pláče Elíša před Chazaelem, který bude králem Sýrie."
+      sv: "I Damaskus, där Ben-Hadad ligger sjuk, gråter Elisha inför Hasael, som ska bli kung över Syrien."

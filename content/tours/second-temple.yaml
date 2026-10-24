@@ -18,6 +18,7 @@ title:
   it: "Il primo ritorno e il secondo Tempio"
   nl: "De eerste terugkeer en de tweede tempel"
   cs: "První návrat a druhý chrám"
+  sv: "Den första återkomsten och det andra templet"
 year: "538 BC"
 # Where the work and the letters were, not a journey: no time on foot.
 walked: false
@@ -37,6 +38,7 @@ stops:
       it: "Ciro, re di Persia, proclama: «m’ha comandato di edificargli una casa a Gerusalemme»; restituisce gli utensili del Tempio, e gli esuli salgono da Babilonia."
       nl: "Cyrus, de koning van Perzië, laat uitroepen: “Hij heeft mij bevolen Hem een huis te bouwen te Jeruzalem”; hij geeft de voorwerpen van de tempel terug, en de ballingen trekken op uit Babylon."
       cs: "Kýros, král perský, vyhlašuje: „on mi poručil, abych mu vystavěl dům v Jeruzalémě“; vydává nádoby chrámu a vyhnanci odcházejí z Babylóna."
+      sv: "Kyros, kung av Persien, kungör: ”han har anbefallt mig att bygga honom ett hus i Jerusalem i Juda”; han ger tillbaka templets kärl, och de landsflyktiga drar upp från Babylon."
   - place: ae023a9 # Joppa
     ref: Ezra.3.7
     note:
@@ -51,6 +53,7 @@ stops:
       it: "Con il permesso di Ciro, il cedro è portato dal Libano per mare a Giaffa per la casa di Dio."
       nl: "Ceder wordt met toestemming van Cyrus over zee van de Libanon naar Joppe gebracht voor het huis van God."
       cs: "Z Libanonu je po moři do Joppe dovezeno cedrové dříví pro dům Boží se svolením Kýrovým."
+      sv: "Ceder förs från Libanon sjövägen till Joppe för Guds hus, med Kyros’ tillstånd."
   - place: a15257a # Jerusalem
     ref: Ezra.3.8-Ezra.3.13
     year: "536 BC"
@@ -66,6 +69,7 @@ stops:
       it: "Le fondamenta del Tempio sono gettate con trombe e canti, «perché la sua benignità verso Israele dura in perpetuo»; i vecchi che avevano visto la prima casa piangono ad alta voce."
       nl: "De grondslag van de tempel wordt gelegd onder bazuingeschal en gezang, terwijl men looft en dankt, “dat Zijn weldadigheid tot in eeuwigheid is over Israël”; oude mannen die het eerste huis hadden gezien, wenen luid."
       cs: "Základ chrámu se zakládá za zvuku trub a zpěvu, „na věky trvá milosrdenství jeho nad Izraelem“; staří muži, kteří viděli první dům, hlasitě pláčou."
+      sv: "Templets grund läggs under trumpetstötar och sång, ”hans nåd varar evinnerligen över Israel”; gamla män som hade sett det första huset gråter högt."
   - place: a212ef7 # Ecbatana
     ref: Ezra.4.24-Ezra.6.12
     year: "520 BC"
@@ -81,6 +85,7 @@ stops:
       it: "Nel secondo anno di Dario i costruttori riprendono i lavori, aiutati dai profeti Aggeo e Zaccaria; interrogato dal governatore, Dario fa cercare negli archivi, a Ecbatana, in Media, si trova un rotolo con il decreto di Ciro, ed egli ordina di proseguire l’opera."
       nl: "In het tweede jaar van Darius beginnen de bouwers opnieuw, geholpen door de profeten Haggai en Zacharia; op vraag van de stadhouder laat Darius de archieven doorzoeken, te Ekbatana in Medië wordt een rol met het besluit van Cyrus gevonden, en hij beveelt dat het werk wordt voortgezet."
       cs: "Ve druhém roce Dareiově začínají stavitelé znovu a pomáhají jim proroci Ageus a Zacharjáš; na dotaz správce nechává Dareios prohledat archivy, svitek s Kýrovým výnosem je nalezen v Ekbatanách v Médii a Dareios nařizuje, aby se v díle pokračovalo."
+      sv: "I Dareios’ andra år tar byggarna upp arbetet igen, med profeterna Haggai och Sakarja som hjälp; på ståthållarens fråga låter Dareios söka i arkiven, en bokrulle med Kyros’ påbud återfinns i Ekbatana i Medien, och han befaller att arbetet ska fortsätta."
   - place: a15257a # Jerusalem
     ref: Ezra.6.15-Ezra.6.22
     year: "516 BC"
@@ -96,3 +101,4 @@ stops:
       it: "La casa è terminata nel sesto anno di Dario e dedicata con gioia, e quelli che sono tornati dalla cattività celebrano la Pasqua."
       nl: "Het huis wordt voltooid in het zesde jaar van Darius en met vreugde ingewijd, en wie uit de ballingschap zijn teruggekeerd, vieren het Pascha."
       cs: "Dům je dokončen v šestém roce Dareiově a s radostí posvěcen; ti, kteří se vrátili ze zajetí, slaví pesach."
+      sv: "Huset blir färdigt i Dareios’ sjätte år och invigs med glädje, och de som har kommit tillbaka ur fångenskapen firar påsk."

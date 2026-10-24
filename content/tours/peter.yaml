@@ -14,6 +14,7 @@ title:
   it: "L’apostolo Pietro"
   nl: "De apostel Petrus"
   cs: "Apoštol Petr"
+  sv: "Aposteln Petrus"
 year: "AD 40"
 people: ["Peter@Mat.4.18-2Pe"]
 approximate: true
@@ -33,6 +34,7 @@ stops:
       it: "A Pentecoste Pietro si leva con gli undici e parla; circa tremila sono battezzati."
       nl: "Met Pinksteren staat Petrus op met de elf en spreekt; ongeveer drieduizend worden gedoopt."
       cs: "O Letnicích povstává Petr s jedenácti a mluví; pokřtěno je asi tři tisíce."
+      sv: "Vid pingst står Petrus upp med de elva och talar; omkring tre tusen döps."
   - place: a282dce # Samaria (region)
     ref: Acts.8.14-Acts.8.25
     note:
@@ -47,6 +49,7 @@ stops:
       it: "Mandato con Giovanni in Samaria, rimprovera Simone, che voleva comprare con denaro il dono di Dio."
       nl: "Met Johannes naar Samaria gezonden berispt hij Simon, die de gave van God met geld wilde kopen."
       cs: "Poslán s Janem do Samaří, kárá Šimona, který chtěl dar Boží koupit za peníze."
+      sv: "Sänd med Johannes till Samarien tillrättavisar han Simon, som ville köpa Guds gåva för pengar."
   - place: a2c5cc7 # Lydda
     ref: Acts.9.32-Acts.9.35
     note:
@@ -61,6 +64,7 @@ stops:
       it: "A Lidda (Lod) guarisce Enea, paralitico da otto anni."
       nl: "In Lydda geneest hij Aeneas, die acht jaar bedlegerig was."
       cs: "V Lodu (Lydda) uzdravuje Ainéa, osm let upoutaného na lože."
+      sv: "I Lod (Lydda) botar han Aineas, som legat sängliggande i åtta år."
   - place: ae023a9 # Joppa
     ref: Acts.9.36-Acts.10.23
     note:
@@ -75,6 +79,7 @@ stops:
       it: "A Giaffa risuscita Tabita e, sul tetto, ha la visione del lenzuolo."
       nl: "In Joppe wekt hij Tabita op, en op het dak ziet hij het visioen van het kleed."
       cs: "V Joppe křísí Tabitu a na střeše vidí vidění plátna."
+      sv: "I Joppe uppväcker han Tabita, och på taket ser han synen av duken."
   - place: a58735e # Caesarea
     ref: Acts.10.24-Acts.10.48
     note:
@@ -89,6 +94,7 @@ stops:
       it: "A Cesarea, mentre Pietro parla in casa del centurione Cornelio, lo Spirito Santo scende su tutti quelli che ascoltano la parola."
       nl: "In Caesarea, terwijl Petrus spreekt in het huis van de hoofdman Cornelius, valt de Heilige Geest op allen die het woord horen."
       cs: "V Cesareji, když Petr mluví v domě setníka Kornelia, padá Duch svatý na všechny, kdo slyší slovo."
+      sv: "I Caesarea, medan Petrus talar i hundrahövitsmannen Cornelius’ hus, faller den helige Ande över alla som hör ordet."
   - place: a15257a # Jerusalem
     ref: Acts.11.2-Acts.12.17
     note:
@@ -103,6 +109,7 @@ stops:
       it: "Di nuovo a Gerusalemme racconta alla chiesa quanto è accaduto con Cornelio; imprigionato da Erode, è condotto fuori da un angelo."
       nl: "Terug in Jeruzalem vertelt hij de gemeente over Cornelius; door Herodes gevangengezet wordt hij door een engel naar buiten geleid."
       cs: "Zpět v Jeruzalémě vypráví církvi o Korneliovi; uvězněn Herodem, je andělem vyveden ven."
+      sv: "Åter i Jerusalem berättar han för församlingen om Cornelius; fängslad av Herodes förs han ut av en ängel."
   - place: a58735e # Caesarea
     ref: Acts.12.19-Acts.12.23
     year: "AD 44"
@@ -118,3 +125,4 @@ stops:
       it: "A Cesarea Erode, che non diede gloria a Dio, è colpito dall’angelo del Signore e muore."
       nl: "In Caesarea wordt Herodes, die God de eer niet gaf, door de engel van de Heer geslagen en sterft."
       cs: "V Cesareji je Herodes, který nedal Bohu slávu, udeřen andělem Hospodinovým a umírá."
+      sv: "I Caesarea slås Herodes, som inte gav Gud äran, av Herrens ängel och dör."

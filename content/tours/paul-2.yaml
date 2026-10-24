@@ -15,6 +15,7 @@ title:
   it: "Il secondo viaggio di Paolo"
   nl: "De tweede reis van Paulus"
   cs: "Druhá Pavlova cesta"
+  sv: "Paulus’ andra resa"
 year: "AD 50"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -33,6 +34,7 @@ stops:
       it: "Paolo e Sila partono da Antiochia."
       nl: "Paulus en Silas vertrekken uit Antiochië."
       cs: "Pavel a Silas vyrážejí z Antiochie."
+      sv: "Paulus och Silas bryter upp från Antiochia."
   - place: aa401a9
     ref: Acts.16.1
     note:
@@ -47,6 +49,7 @@ stops:
       it: "Di nuovo Derbe."
       nl: "Weer Derbe."
       cs: "Opět Derbe."
+      sv: "Derbe igen."
   - place: af0719d
     ref: Acts.16.2-Acts.16.3
     note:
@@ -61,6 +64,7 @@ stops:
       it: "Timoteo si unisce a loro."
       nl: "Timoteüs voegt zich bij hen."
       cs: "Připojuje se k nim Timoteus."
+      sv: "Timoteus ansluter sig till dem."
   - place: a91c509
     ref: Acts.16.8-Acts.16.10
     note:
@@ -75,6 +79,7 @@ stops:
       it: "La visione dell’uomo di Macedonia."
       nl: "Het visioen van de man uit Macedonië."
       cs: "Vidění muže z Makedonie."
+      sv: "Synen av mannen från Makedonien."
   - place: a68750d
     ref: Acts.16.11
     by: sea
@@ -90,6 +95,7 @@ stops:
       it: "Rotta diretta verso Samotracia."
       nl: "Een rechte koers naar Samothrake."
       cs: "Přímá plavba na Samothráké."
+      sv: "Rak kurs till Samothrake."
   - place: a6a7150
     ref: Acts.16.11
     by: sea
@@ -106,6 +112,7 @@ stops:
       it: "Sbarco a Neapoli."
       nl: "Landing te Neapolis."
       cs: "Přistání v Neapoli."
+      sv: "Landstigning i Neapolis."
   - place: a49e1d0
     ref: Acts.16.12-Acts.16.40
     note:
@@ -120,6 +127,7 @@ stops:
       it: "Lidia; Paolo e Sila in prigione."
       nl: "Lydia; Paulus en Silas in de gevangenis."
       cs: "Lýdie; Pavel a Silas ve vězení."
+      sv: "Lydia; Paulus och Silas i fängelse."
   - place: a4bdea7
     ref: Acts.17.1
     note:
@@ -134,6 +142,7 @@ stops:
       it: "Attraverso Anfipoli."
       nl: "Door Amfipolis."
       cs: "Přes Amfipolis."
+      sv: "Genom Amfipolis."
   - place: ab20df9
     ref: Acts.17.1
     note:
@@ -148,6 +157,7 @@ stops:
       it: "Attraverso Apollonia."
       nl: "Door Apollonia."
       cs: "Přes Apollonii."
+      sv: "Genom Apollonia."
   - place: afa9d8e
     ref: Acts.17.1-Acts.17.9
     note:
@@ -162,6 +172,7 @@ stops:
       it: "Predicazione nella sinagoga; il tumulto."
       nl: "Prediking in de synagoge; de opschudding."
       cs: "Kázání v synagoze; pobouření."
+      sv: "Förkunnelse i synagogan; upploppet."
   - place: a62fe31
     ref: Acts.17.10-Acts.17.14
     note:
@@ -176,6 +187,7 @@ stops:
       it: "I Berei esaminano ogni giorno le Scritture."
       nl: "De Bereeërs onderzoeken dagelijks de Schriften."
       cs: "Beroijští denně zkoumají Písma."
+      sv: "Beroiaborna rannsakar skrifterna varje dag."
   - place: a1fe6e7
     ref: Acts.17.15-Acts.17.34
     note:
@@ -190,6 +202,7 @@ stops:
       it: "Paolo all’Areòpago."
       nl: "Paulus op de Areopagus."
       cs: "Pavel na Areopagu."
+      sv: "Paulus på Areopagen."
   - place: a6f437a
     ref: Acts.18.1-Acts.18.17
     note:
@@ -204,6 +217,7 @@ stops:
       it: "Aquila e Priscilla; un anno e sei mesi."
       nl: "Aquila en Priscilla; een jaar en zes maanden."
       cs: "Akvila a Priscilla; rok a šest měsíců."
+      sv: "Aquila och Priscilla; ett år och sex månader."
   - place: aa31dd3
     ref: Acts.18.18
     note:
@@ -218,6 +232,7 @@ stops:
       it: "Cencre, il porto di Corinto."
       nl: "Kenchreeën, de haven van Korinthe."
       cs: "Kenchreje, přístav Korintu."
+      sv: "Kenchreai, Korinths hamn."
   - place: a5feb15
     ref: Acts.18.19-Acts.18.21
     by: sea
@@ -233,6 +248,7 @@ stops:
       it: "Una breve sosta a Efeso."
       nl: "Een kort verblijf in Efeze."
       cs: "Krátký pobyt v Efezu."
+      sv: "Ett kort uppehåll i Efesos."
   - place: a58735e
     ref: Acts.18.22
     by: sea
@@ -248,6 +264,7 @@ stops:
       it: "Sbarco a Cesarea."
       nl: "Landing te Caesarea."
       cs: "Přistání v Cesareji."
+      sv: "Landstigning i Caesarea."
   - place: a15257a
     ref: Acts.18.22
     note:
@@ -262,6 +279,7 @@ stops:
       it: "Paolo saluta la chiesa."
       nl: "Paulus groet de gemeente."
       cs: "Pavel zdraví církev."
+      sv: "Paulus hälsar församlingen."
   - place: ae41ab4
     ref: Acts.18.22
     note:
@@ -276,3 +294,4 @@ stops:
       it: "Di nuovo ad Antiochia."
       nl: "Terug naar Antiochië."
       cs: "Zpět do Antiochie."
+      sv: "Tillbaka till Antiochia."

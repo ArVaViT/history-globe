@@ -11,6 +11,7 @@ question:
   it: "Quando avvenne l’Esodo?"
   nl: "Wanneer was de uittocht?"
   cs: "Kdy byl exodus?"
+  sv: "När var uttåget?"
 answer:
   en:
     - "The date is disputed. Two answers are defended: about 1446 BC, in the fifteenth century, which follows the Bible's own arithmetic and is the year the map uses, and the thirteenth century BC, in the reign of Ramesses II, which follows the name of the store city Rameses and the archaeology of Egypt and Canaan. Some scholars hold that the event cannot be dated at all."
@@ -56,6 +57,10 @@ answer:
     - "Datum je sporné. Hájí se dvě odpovědi: asi 1446 př. n. l., v 15. století, které sleduje vlastní aritmetiku Bible a které mapa užívá, a 13. století př. n. l., za vlády Ramesse II., které sleduje jméno skladištního města Ramesse a archeologii Egypta a Kanaánu. Někteří badatelé tvrdí, že událost nelze datovat vůbec."
     - "Rané datum stojí na První knize Královské: Šalomoun začal chrám „léta čtyřstého osmdesátého po vyjití synů Izraelských z země Egyptské … čtvrtého léta kralování svého nad Izraelem“. Jeho čtvrtý rok se obvykle klade na 966 př. n. l., což dává 1446 př. n. l.; Jiftáchových tři sta let Izraele v Zajordání i pobyt „čtyři sta a třidceti let“ v Egyptě se čtou stejně. Pozdní datum vychází z Ex 1,11: „vystavěl lid Izraelský Faraonovi města skladů, Fiton a Ramesses“, a Pi-Ramesse, hlavní město delty v Kantíru, postavil Ramesse II., který vládl v letech 1279 až 1213 př. n. l. Podle tohoto čtení je 480 let dvanáct generací po čtyřiceti, kulaté číslo."
     - "Nejstarší zmínka o Izraeli mimo Bibli je stéla Merneptaha, syna Ramesse II., která uvádí Izrael mezi národy poraženými v Kanaánu kolem roku 1208 př. n. l.; Izrael tedy byl v zemi do té doby při obou datech. Vrstvy zničení kanaánských měst, absence egyptských záznamů o události a pozdní datování mnoha stanic na poušti se hájí na obou stranách. Mapa si ponechává rok 1446 př. n. l. jako smluvní bod a označuje jej za přibližný."
+  sv:
+    - "Dateringen är omstridd. Två svar försvaras: omkring 1446 f.Kr., på 1400-talet, som följer Bibelns egen aritmetik och är det år kartan använder, och 1200-talet f.Kr., under Ramses II:s regering, som följer namnet på förrådsstaden Rameses och arkeologin i Egypten och Kanaan. Vissa forskare menar att händelsen inte alls kan dateras."
+    - "Den tidiga dateringen vilar på 1 Kung: Salomo började templet ”i det fyra hundra åttionde året efter Israels barns uttåg ur Egyptens land, i det fjärde året av Salomos regering”. Hans fjärde år brukar sättas till 966 f.Kr., vilket ger 1446 f.Kr.; Jeftas tre hundra år av Israel i Transjordanien, och vistelsen på ”fyra hundra trettio år” i Egypten, läses på samma sätt. Den sena dateringen utgår från 2 Mos 1:11: israeliterna fick ”bygga åt Farao förrådsstäder, Pitom och Raamses”, och Pi-Ramses, deltats huvudstad vid Qantir, byggdes av Ramses II, som regerade 1279–1213 f.Kr. Enligt denna läsning är de 480 åren tolv generationer om fyrtio, ett runt tal."
+    - "Den äldsta omnämningen av Israel utanför Bibeln är Merneptahs stele, Ramses II:s son, som räknar upp Israel bland de folk som besegrades i Kanaan omkring 1208 f.Kr.; så Israel fanns i landet vid den tiden med endera dateringen. Förstörelselagren i kanaaneiska städer, avsaknaden av egyptiska uppteckningar om händelsen och den sena dateringen av många platser i öknen framförs av båda sidor. Kartan behåller 1446 f.Kr. som en konventionell punkt och markerar den som ungefärlig."
 map:
   place: a079b21
   year: "c. 1446 BC"

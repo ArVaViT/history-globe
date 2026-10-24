@@ -18,6 +18,7 @@ title:
   it: "L’Assiro avanza: Isaia 10"
   nl: "De Assyriër komt: Jesaja 10"
   cs: "Přichází Asyřan: Izajáš 10"
+  sv: "Assyriern kommer: Jesaja 10"
 year: "701 BC"
 walked: false
 approximate: true
@@ -36,6 +37,7 @@ stops:
       it: "«L’Assiro marcia contro Aiath»: l’Assiro entra in Beniamino da nord, presso l’antica Ai."
       nl: "“Hij komt te Ajath”: de Assyriër trekt Benjamin binnen uit het noorden, bij het Ai van weleer."
       cs: "„Přitáhne do Aiat“: Asyřan vstupuje od severu do území Benjamínova, k někdejšímu Aj."
+      sv: "”Han kommer över Ajat”: assyriern tågar in i Benjamin från norr, vid det forna Ai."
   - place: ade6a96 # Migron
     ref: Isa.10.28
     note:
@@ -50,6 +52,7 @@ stops:
       it: "«Attraversa Migron.»"
       nl: "“hij trekt door Migron.”"
       cs: "„přejde přes Migron“."
+      sv: "”Han drager fram genom Migron.”"
   - place: adea06c # Michmash
     ref: Isa.10.28
     note:
@@ -64,6 +67,7 @@ stops:
       it: "«Depone i suoi bagagli a Micmash»: il bagaglio è lasciato davanti al passo."
       nl: "“te Michmas legt hij zijn gereedschap af”: de bagage wordt vóór de pas achtergelaten."
       cs: "„v Michmas složí nádobí svá“: zavazadla zůstávají před průsmykem."
+      sv: "”I Mikmas lämnar han sin tross”: trossen lämnas kvar framför passet."
   - place: a264254 # Geba
     ref: Isa.10.29
     note:
@@ -78,6 +82,7 @@ stops:
       it: "«Valicano il passo»: il passo di Micmas, dove un tempo salì Gionata; a Gheba passano la notte."
       nl: "“Zij trekken door den doorgang”: de pas van Michmas, waar Jonatan eens omhoogklom; te Geba overnachten zij."
       cs: "„Projdou průchod“: michmaský průsmyk, kde kdysi vystoupil Jonatan; v Gebě přenocují."
+      sv: "”De draga fram över passet”: Mikmaspasset, där Jonatan en gång klättrade upp; i Geba tar de nattkvarter."
   - place: a6d57ed # Ramah
     ref: Isa.10.29
     note:
@@ -92,6 +97,7 @@ stops:
       it: "«Rama trema.»"
       nl: "“Rama beeft.”"
       cs: "„ulekne se Ráma“."
+      sv: "”Rama bävar.”"
   - place: ac24f5f # Gibeah
     ref: Isa.10.29
     note:
@@ -106,6 +112,7 @@ stops:
       it: "«Ghibea di Saul è in fuga»: la città del primo re si svuota davanti a loro."
       nl: "“Gibea Sauls vlucht”: de stad van de eerste koning loopt voor hen leeg."
       cs: "„Gabaa Saulovo uteče“: město prvního krále se před nimi vyprazdňuje."
+      sv: "”Sauls Gibea flyr”: den förste kungens stad töms inför dem."
   - place: ac10bcf # Gallim
     ref: Isa.10.30
     note:
@@ -120,6 +127,7 @@ stops:
       it: "«Grida forte a tutta voce, o figlia di Gallim!»"
       nl: "“Roep luide met uw stem, gij dochter van Gallim!”"
       cs: "„Naříkej hlasem svým, město Gallim“."
+      sv: "”Ropa högt, du dotter Gallim.”"
   - place: a7e39d2 # Laishah
     ref: Isa.10.30
     note:
@@ -134,6 +142,7 @@ stops:
       it: "«Tendi l’orecchio, o Laish!»"
       nl: "“laat ze horen tot Lais toe.”"
       cs: "„ať se slyší v Lais“."
+      sv: "”Giv akt, du Laisa.”"
   - place: ab34789 # Anathoth
     ref: Isa.10.30
     note:
@@ -148,6 +157,7 @@ stops:
       it: "«Povera Anathoth!»: la città da cui verrà più tardi Geremia (Ger 1,1)."
       nl: "“o ellendige Anathoth!”: de stad waaruit Jeremia later zal komen (Jer. 1:1)."
       cs: "„Ach, ubohá Anatot“: město, z něhož později pochází Jeremjáš (Jr 1,1)."
+      sv: "”Arma Anatot!”: staden som Jeremia senare ska komma från (Jer 1:1)."
   - place: a67297a # Madmenah
     ref: Isa.10.31
     note:
@@ -162,6 +172,7 @@ stops:
       it: "«Madmenah è in fuga precipitosa.»"
       nl: "“Madmena vliedt weg.”"
       cs: "„Pohne se Madmena“."
+      sv: "”Madmena flyktar.”"
   - place: a58df35 # Gebim
     ref: Isa.10.31
     note:
@@ -176,6 +187,7 @@ stops:
       it: "«Gli abitanti di Ghebim cercano un rifugio.»"
       nl: "“de inwoners van Gebim vluchten met hopen.”"
       cs: "„obyvatelé Gábim schopí se“."
+      sv: "”Gebims invånare bärga sitt gods.”"
   - place: afdda14 # Nob
     ref: Isa.10.32
     note:
@@ -190,6 +202,7 @@ stops:
       it: "«Oggi stesso sosterà a Nob»: alla città dei sacerdoti (1 Sam 22,19), in vista di Gerusalemme."
       nl: "“Nog een dag blijft hij te Nob”: in de priesterstad (1 Sam. 22:19), in het zicht van Jeruzalem."
       cs: "„Ještě téhož dne zastavě se v Nobe“: ve městě kněží (1 S 22,19), na dohled od Jeruzaléma."
+      sv: "”Ännu samma dag står han i Nob”: i prästernas stad (1 Sam 22:19), inom synhåll från Jerusalem."
   - place: a15257a # Jerusalem
     ref: Isa.10.32-Isa.10.34
     note:
@@ -204,3 +217,4 @@ stops:
       it: "Agita il pugno contro «il monte della figlia di Sion, contro la collina di Gerusalemme»: qui il quadro si interrompe. Il Signore degli eserciti stronca i rami con terrore, i più alti sono tagliati, e il Libano cade sotto i colpi del Potente."
       nl: "Hij beweegt zijn hand tegen “den berg der dochter van Sion, den heuvel van Jeruzalem”: hier eindigt het beeld. De HEER der heerscharen kapt de takken af met schrik, de hoog van gestalte worden omgehouwen, en de Libanon valt door een machtige."
       cs: "Hrozí rukou „hoře dcery Sionské, pahrbku Jeruzalémskému“: tady obraz končí. Hospodin zástupů s hrůzou ořezává ratolest, ti, kdo jsou vysokého zrostu, jsou podťati a Libanon padne rukou mocného."
+      sv: "Han lyfter sin hand mot ”dottern Sions berg, mot Jerusalems höjd”: här slutar bilden. Herren Sebaot avhugger den lummiga kronan med förskräckande makt, de resliga stammarna fälls, och Libanon faller för den väldige."

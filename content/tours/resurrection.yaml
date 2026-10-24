@@ -16,6 +16,7 @@ title:
   it: "La risurrezione e le apparizioni"
   nl: "De opstanding en de verschijningen"
   cs: "Vzkříšení a zjevení"
+  sv: "Uppståndelsen och uppenbarelserna"
 year: "AD 30"
 people: ["Jesus@Isa.7.14-Rev"]
 approximate: true
@@ -34,6 +35,7 @@ stops:
       it: "Nel giardino presso il luogo della crocifissione la tomba è vuota, e Maria Maddalena vede il Signore risorto."
       nl: "In de hof bij de plaats van de kruisiging is het graf leeg, en Maria Magdalena ziet de verrezen Heer."
       cs: "V zahradě u místa ukřižování je hrob prázdný a Marie Magdalská vidí vzkříšeného Pána."
+      sv: "I trädgården vid platsen för korsfästelsen är graven tom, och Maria från Magdala ser den uppståndne Herren."
   - place: ae7274b # Emmaus
     ref: Luke.24.13-Luke.24.32
     note:
@@ -48,6 +50,7 @@ stops:
       it: "Sulla via di Emmaus due discepoli camminano con lui senza riconoscerlo; a tavola lo riconoscono nello spezzare il pane."
       nl: "Op de weg naar Emmaüs lopen twee discipelen met Hem op zonder Hem te herkennen; aan tafel herkennen zij Hem bij het breken van het brood."
       cs: "Na cestě do Emauz s ním jdou dva učedníci, aniž ho poznávají; u stolu ho poznávají při lámání chleba."
+      sv: "På vägen till Emmaus går två lärjungar tillsammans med honom utan att känna igen honom; vid bordet känner de igen honom när han bryter brödet."
   - place: a15257a # Jerusalem
     ref: Luke.24.33-Luke.24.43
     note:
@@ -62,6 +65,7 @@ stops:
       it: "A Gerusalemme Gesù compare in mezzo ai discepoli: «Pace a voi!»"
       nl: "In Jeruzalem staat Jezus in het midden van de discipelen: “Vrede zij ulieden!”"
       cs: "V Jeruzalémě se Ježíš staví doprostřed učedníků: „Pokoj vám.“"
+      sv: "I Jerusalem står Jesus mitt ibland lärjungarna: ”Frid vare med eder.”"
   - place: a562fcc # Sea of Galilee
     ref: John.21.1-John.21.17
     note:
@@ -76,6 +80,7 @@ stops:
       it: "Presso il Lago di Tiberiade chiede a Pietro per tre volte: «m’ami tu?»"
       nl: "Aan het Meer van Galilea vraagt Hij Petrus driemaal: “Hebt gij Mij lief?”"
       cs: "U Galilejského jezera se třikrát ptá Petra: „miluješ-li mne?“"
+      sv: "Vid Galileiska sjön frågar han Petrus tre gånger: ”älskar du mig?”"
   - place: a9cf1e8 # Galilee
     ref: Matt.28.16-Matt.28.20
     note:
@@ -90,6 +95,7 @@ stops:
       it: "Su un monte in Galilea manda gli undici: «ammaestrate tutti i popoli»."
       nl: "Op een berg in Galilea zendt Hij de elf: “onderwijst al de volken”."
       cs: "Na hoře v Galileji posílá jedenáct: „učte všecky národy“."
+      sv: "På ett berg i Galileen sänder han de elva: ”gören alla folk till lärjungar.”"
   - place: ac2c4c5 # Mount of Olives
     ref: Acts.1.6-Acts.1.12
     note:
@@ -104,3 +110,4 @@ stops:
       it: "Dal Monte degli Ulivi è elevato in alto: «mi sarete testimoni»."
       nl: "Vanaf de Olijfberg wordt Hij opgenomen: “gij zult Mijn getuigen zijn”."
       cs: "Z Olivové hory je vzat vzhůru: „budete mi svědkové“."
+      sv: "Från Olivberget tas han upp: ”skolen I undfå kraft och bliva mina vittnen”."

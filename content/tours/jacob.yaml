@@ -14,6 +14,7 @@ title:
   it: "Giacobbe"
   nl: "Jakob"
   cs: "Jákob"
+  sv: "Jakob"
 year: "1800 BC"
 people: ["Israel@Gen.25.26-Rev"]
 approximate: true
@@ -32,6 +33,7 @@ stops:
       it: "Giacobbe lascia Bersabea e si mette in cammino verso Carran."
       nl: "Jakob verlaat Berseba en trekt naar Haran."
       cs: "Jákob odchází z Beer-šeby a vydává se do Cháranu."
+      sv: "Jakob lämnar Beer Sheva och beger sig mot Harran."
   - place: a64f355 # Bethel
     ref: Gen.28.11-Gen.28.19
     note:
@@ -46,6 +48,7 @@ stops:
       it: "Sogna una scala che arriva al cielo: «Certo, l’Eterno è in questo luogo ed io non lo sapevo!»"
       nl: "Hij droomt van een ladder die tot de hemel reikt: “Gewisselijk is de HEERE aan deze plaats, en ik heb het niet geweten!”"
       cs: "Zdá se mu o žebříku sahajícím do nebe: „V pravdě Hospodin jest na místě tomto, a já jsem nevěděl.“"
+      sv: "Han drömmer om en stege som når upp till himmelen: ”HERREN är sannerligen på denna plats, och jag visste det icke!”"
   - place: a6d9af3 # Haran
     ref: Gen.29.4-Gen.29.30
     note:
@@ -60,6 +63,7 @@ stops:
       it: "A Carran serve sette anni per Rachele, e gli sembrano pochi giorni."
       nl: "In Haran dient hij zeven jaar voor Rachel, en zij komen hem voor als maar een paar dagen."
       cs: "V Cháranu slouží sedm let za Ráchel a zdá se mu to jen několik dní."
+      sv: "I Harran tjänar han sju år för Rakel, och de tycks honom bara några dagar."
   - place: ae5bfe9 # Mahanaim
     ref: Gen.32.1-Gen.32.2
     note:
@@ -74,6 +78,7 @@ stops:
       it: "Gli angeli di Dio gli vengono incontro: «Questo è il campo di Dio»."
       nl: "De engelen van God ontmoeten hem: “Dit is een heirleger Gods!”"
       cs: "Potkávají se s ním andělé Boží: „Vojsko Boží jest toto.“"
+      sv: "Guds änglar möter honom: ”Detta är Guds skara.”"
   - place: a8a9ff9 # Penuel
     ref: Gen.32.24-Gen.32.31
     note:
@@ -88,6 +93,7 @@ stops:
       it: "Lotta fino all’alba, riceve il nome di Israele e chiama il luogo Penuel: «ho veduto Iddio a faccia a faccia»."
       nl: "Hij worstelt tot het aanbreken van de dag, krijgt de naam Israël en noemt de plaats Peniël: “ik heb God gezien van aangezicht tot aangezicht”."
       cs: "Zápasí až do svítání, dostává jméno Izrael a nazývá místo Penuel: „nebo jsem prý viděl Boha tváří v tvář“."
+      sv: "Han brottas till gryningen, får namnet Israel och kallar platsen Penuel: ”jag har sett Gud ansikte mot ansikte”."
   - place: a0905b5 # Succoth
     ref: Gen.33.17
     note:
@@ -102,6 +108,7 @@ stops:
       it: "A Succot si costruisce una casa e fa delle capanne per il suo bestiame."
       nl: "Te Sukkot bouwt hij een huis en hutten voor zijn vee."
       cs: "V Sukotu si staví dům a stany pro svůj dobytek."
+      sv: "I Suckot bygger han ett hus och hyddor åt sin boskap."
   - place: adf74d4 # Shechem
     ref: Gen.33.18-Gen.33.20
     note:
@@ -116,6 +123,7 @@ stops:
       it: "Giunge sano e salvo a Sichem, nel paese di Canaan, ed erige un altare."
       nl: "Hij komt behouden te Sichem in het land Kanaän en richt een altaar op."
       cs: "Bezpečně přichází do Šekemu v zemi Kanaán a staví oltář."
+      sv: "Han kommer välbehållen till Shekem i Kanaans land och reser ett altare."
   - place: a64f355 # Bethel
     ref: Gen.35.6-Gen.35.15
     note:
@@ -130,6 +138,7 @@ stops:
       it: "Di nuovo a Betel Dio gli appare ancora e conferma il nome di Israele."
       nl: "Weer te Bethel verschijnt God hem opnieuw en bevestigt de naam Israël."
       cs: "Zpět v Bét-elu se mu Bůh znovu zjevuje a potvrzuje jméno Izrael."
+      sv: "Åter i Betel visar sig Gud för honom på nytt och bekräftar namnet Israel."
   - place: a112427 # Bethlehem
     ref: Gen.35.16-Gen.35.20
     note:
@@ -144,6 +153,7 @@ stops:
       it: "Sulla via di Efrata, cioè Betlemme, Rachele muore partorendo, e Giacobbe erige una stele sulla sua tomba."
       nl: "Op weg naar Efrata, dat is Bethlehem, sterft Rachel bij de bevalling, en Jakob zet een gedenkteken op haar graf."
       cs: "Na cestě do Efraty, to jest do Betléma, Ráchel při porodu umírá a Jákob staví na jejím hrobě sloup."
+      sv: "På vägen till Efrata, det vill säga Betlehem, dör Rakel i barnsäng, och Jakob reser en vård på hennes grav."
   - place: a85151a # Hebron
     ref: Gen.35.27-Gen.35.29
     note:
@@ -158,6 +168,7 @@ stops:
       it: "Giunge da suo padre Isacco a Mamre, cioè Ebron; Isacco muore, ed Esaù e Giacobbe lo seppelliscono."
       nl: "Hij komt bij zijn vader Isaak te Mamre, dat is Hebron; Isaak sterft, en Ezau en Jakob begraven hem."
       cs: "Přichází k otci Izákovi do Mamre, to jest do Hebronu; Izák umírá a Ezau s Jákobem ho pohřbívají."
+      sv: "Han kommer till sin fader Isak i Mamre, det vill säga Hebron; Isak dör, och Esau och Jakob begraver honom."
   - place: a075d61 # Beersheba
     ref: Gen.46.1-Gen.46.4
     year: "1700 BC"
@@ -173,6 +184,7 @@ stops:
       it: "A Bersabea Dio gli parla: «non temere di scendere in Egitto»."
       nl: "Te Berseba spreekt God tot hem: “vrees niet van af te trekken naar Egypte.”"
       cs: "V Beer-šebě k němu mluví Bůh: „Neboj se sstoupiti do Egypta.“"
+      sv: "I Beer Sheva talar Gud till honom: ”frukta icke för att draga ned till Egypten”."
   - place: af301ca # Egypt
     ref: Gen.46.5-Gen.46.7
     year: "1700 BC"
@@ -188,3 +200,4 @@ stops:
       it: "Giacobbe e tutta la sua famiglia entrano in Egitto."
       nl: "Jakob en heel zijn gezin komen in Egypte."
       cs: "Jákob a celá jeho rodina přicházejí do Egypta."
+      sv: "Jakob och hela hans familj kommer till Egypten."

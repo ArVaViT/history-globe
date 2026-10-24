@@ -11,6 +11,7 @@ question:
   it: "Quanto dista Damasco da Gerusalemme?"
   nl: "Hoe ver ligt Damascus van Jeruzalem?"
   cs: "Jak daleko je Damašek od Jeruzaléma?"
+  sv: "Hur långt är Damaskus från Jerusalem?"
 answer:
   en:
     - "Damascus lies about 217 km north-north-east of Jerusalem in a straight line, about 7 days on foot at 30 km a day; by the Roman road on the map the way measures about 251 km, roughly eight days."
@@ -56,6 +57,10 @@ answer:
     - "Damašek leží asi 217 km severoseverovýchodně od Jeruzaléma vzdušnou čarou, což je asi 7 dní pěšky při 30 km denně; po římské silnici na mapě měří cesta asi 251 km, zhruba osm dní."
     - "Toto je cesta Saulova obrácení: „A když byl na cestě, stalo se, že již přibližoval se k Damašku. Tedy pojednou rychle obklíčilo jej světlo s nebe.“ Podle jeho vlastního vyprávění přišlo světlo „okolo poledne“. Cesta vedla na sever přes Samaří a Galileu, kolem Galilejského jezera a přes Jordán, pak na severovýchod přes náhorní plošinu k oáze Damašku na okraji syrské pouště. Ve městě, v ulici zvané Přímá, jej pokřtil Ananiáš a později utekl přes hradby v koši."
     - "Damašek je dnes hlavním městem Sýrie a jedním z nejstarších nepřetržitě obydlených měst světa: jeho jméno se objevuje v egyptských seznamech z 15. století př. n. l., byl hlavním městem aramejského království, které za dnů Achaba a Elíši bojovalo s Izraelem, roku 732 př. n. l. padl asyrskému králi Tiglatpilesarovi III. a roku 64 př. n. l. jej Pompeius připojil k Římu. Mapa Saulova putování užívá rok 34 n. l. jako smluvní rok obrácení, obvykle datovaného asi do let 33–36 n. l."
+  sv:
+    - "Damaskus ligger omkring 217 km nord-nordost om Jerusalem fågelvägen, omkring 7 dagar till fots med 30 km om dagen; via den romerska vägen på kartan mäter vägen omkring 251 km, ungefär åtta dagar."
+    - "Detta är vägen för Sauls omvändelse: ”Men när han på sin färd nalkades Damaskus, hände sig att ett sken från himmelen plötsligt kringstrålade honom.” I hans egen berättelse kom skenet ”vid middagstiden”. Vägen gick norrut genom Samaria och Galileen, förbi Galileiska sjön och över Jordan, och sedan nordost över högplatån till oasen Damaskus vid kanten av den syriska öknen. I staden, i ”den gata som kallas Raka gatan”, döpte Ananias honom, och senare räddade han sig över muren i en korg."
+    - "Damaskus är i dag Syriens huvudstad och en av världens äldsta kontinuerligt bebodda städer: dess namn förekommer i egyptiska listor från 1400-talet f.Kr., det var huvudstad i det arameiska kungarike som krigade mot Israel på Achavs och Elishas tid, det föll för Tiglat-Pileser III av Assyrien 732 f.Kr., och Pompejus lade det under Rom 64 f.Kr. Kartans Saulstur använder år 34 e.Kr. som konventionellt år för omvändelsen, vanligen daterad till omkring 33–36 e.Kr."
 map:
   year: "AD 34"
   ref: Acts.9.3

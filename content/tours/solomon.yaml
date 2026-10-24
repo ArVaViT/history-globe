@@ -14,6 +14,7 @@ title:
   it: "Salomone"
   nl: "Salomo"
   cs: "Šalomoun"
+  sv: "Salomo"
 year: "970 BC"
 # Solomon's deeds where they were done, not a journey: no time on foot.
 walked: false
@@ -34,6 +35,7 @@ stops:
       it: "A Ghicon Zadok unge Salomone, e tutto il popolo dice: «Viva il re Salomone!»"
       nl: "Te Gihon zalft Sadok Salomo, en heel het volk zegt: “De koning Salomo leve!”"
       cs: "U Gichónu pomazává Sádok Šalomouna a všechen lid říká: „Živ buď král Šalomoun.“"
+      sv: "Vid Gihon smörjer Sadok Salomo, och allt folket ropar: ”Leve konung Salomo!”"
   - place: aede336 # Gibeon
     ref: 1Kgs.3.4-1Kgs.3.15
     note:
@@ -48,6 +50,7 @@ stops:
       it: "A Gabaon il Signore gli appare in sogno, ed egli chiede un cuore intelligente."
       nl: "Te Gibeon verschijnt de HEER hem in een droom, en hij vraagt om een verstandig hart."
       cs: "V Gibeonu se mu Hospodin zjevuje ve snu a on prosí o srdce rozumné."
+      sv: "I Gibeon visar sig Herren för honom i en dröm, och han ber om ett förståndigt hjärta."
   - place: a160272 # Tyre
     ref: 1Kgs.5.1-1Kgs.5.12
     note:
@@ -62,6 +65,7 @@ stops:
       it: "Chiram, re di Tiro, manda cedro per il Tempio, e i due stringono un trattato."
       nl: "Hiram, de koning van Tyrus, zendt ceder voor de tempel, en de twee sluiten een verdrag."
       cs: "Chíram, král Týru, posílá cedry pro chrám a oba uzavírají smlouvu."
+      sv: "Hiram, kung av Tyros, sänder cederträ till templet, och de två sluter ett fördrag."
   - place: a15257a # Jerusalem
     ref: 1Kgs.6.1-1Kgs.8.11
     year: "966 BC"
@@ -77,6 +81,7 @@ stops:
       it: "Nel suo quarto anno inizia il Tempio; alla sua dedicazione la nuvola riempie la casa del Signore."
       nl: "In zijn vierde jaar begint hij de tempel te bouwen; bij de inwijding vult de wolk het huis van de HEER."
       cs: "Ve čtvrtém roce začíná stavět chrám; při jeho posvěcení naplňuje dům Hospodinův oblak."
+      sv: "I sitt fjärde år påbörjar han templet; vid invigningen fyller molnet Herrens hus."
   - place: a8554e3 # Megiddo
     ref: 1Kgs.9.15
     note:
@@ -91,6 +96,7 @@ stops:
       it: "Con la comandata che arruola costruisce il muro di Gerusalemme, Asor, Meghiddo e Ghezer."
       nl: "Met de heffing die hij opbrengt bouwt hij de muur van Jeruzalem, Hazor, Megiddo en Gezer."
       cs: "Z nucených prací, které vybírá, staví jeruzalémskou hradbu, Chacor, Megido a Gezer."
+      sv: "Med det arbetsfolk han bådar upp bygger han Jerusalems mur, Hasor, Megiddo och Geser."
   - place: a8e53d5 # Ezion-geber
     ref: 1Kgs.9.26-1Kgs.9.28
     note:
@@ -105,6 +111,7 @@ stops:
       it: "A Ezion-Gheber, sul Mar Rosso, costruisce navi, e i suoi servi e i marinai di Chiram portano oro da Ofir."
       nl: "Te Ezeon-Geber aan de Rode Zee bouwt hij schepen, en zijn knechten en de zeelieden van Hiram brengen goud uit Ofir."
       cs: "V Ecjon-geberu při Rudém moři staví lodi a jeho služebníci i Chíramovi námořníci vozí zlato z Ofíru."
+      sv: "Vid Esjon-Geber vid Sävhavet bygger han skepp, och hans tjänare och Hirams sjömän hämtar guld från Ofir."
   - place: a81ab85 # Sheba
     ref: 1Kgs.10.1-1Kgs.10.13
     note:
@@ -119,6 +126,7 @@ stops:
       it: "La regina di Saba sente parlare della sua fama e viene a metterlo alla prova con domande difficili."
       nl: "De koningin van Seba hoort van zijn roem en komt hem met moeilijke vragen op de proef stellen."
       cs: "Královna ze Šeby slyší o jeho slávě a přichází ho zkoušet těžkými otázkami."
+      sv: "Drottningen av Saba får höra om hans rykte och kommer för att sätta honom på prov med svåra frågor."
   - place: a15257a # Jerusalem
     ref: 1Kgs.11.42-1Kgs.11.43
     year: "931 BC"
@@ -134,3 +142,4 @@ stops:
       it: "Dopo quarant’anni di regno a Gerusalemme Salomone muore ed è sepolto nella Città di Davide."
       nl: "Na veertig jaar regeren in Jeruzalem sterft Salomo en wordt begraven in de Stad van David."
       cs: "Po čtyřiceti letech kralování v Jeruzalémě Šalomoun umírá a je pochován ve Městě Davidově."
+      sv: "Efter fyrtio års regering i Jerusalem dör Salomo och begravs i Davids stad."

@@ -22,6 +22,7 @@ events:
       it: "Saul è fatto re a Gàlgala"
       nl: "Saul wordt te Gilgal tot koning gemaakt"
       cs: "Saul je v Gilgalu prohlášen králem"
+      sv: "Saul görs till kung i Gilgal"
     place: ab94aea
     ref: 1Sam.11.14-1Sam.11.15
     sources:
@@ -40,6 +41,7 @@ events:
       it: "Davide è unto re di Giuda a Ebron"
       nl: "David wordt te Hebron tot koning over Juda gezalfd"
       cs: "David je v Hebronu pomazán králem nad Judou"
+      sv: "David smörjs till kung över Juda i Hebron"
     place: a85151a
     ref: 2Sam.2.1-2Sam.2.4
     sources:
@@ -58,6 +60,7 @@ events:
       it: "Salomone inizia a costruire il Tempio"
       nl: "Salomo begint met de bouw van de tempel"
       cs: "Šalomoun začíná stavět chrám"
+      sv: "Salomo påbörjar bygget av templet"
     place: a15257a
     ref: 1Kgs.6.1
     sources:
@@ -76,6 +79,7 @@ events:
       it: "Il regno si divide: Israele e Giuda"
       nl: "Het koninkrijk wordt verdeeld: Israël en Juda"
       cs: "Království se dělí: Izrael a Juda"
+      sv: "Riket delas: Israel och Juda"
     place: adf74d4
     ref: 1Kgs.12.16-1Kgs.12.20
     sources:
@@ -94,6 +98,7 @@ events:
       it: "Samaria cade in mano all’Assiria"
       nl: "Samaria valt in handen van Assyrië"
       cs: "Samaří padá do rukou Asýrie"
+      sv: "Samaria faller för Assyrien"
     place: a041bb3
     ref: 2Kgs.17.5-2Kgs.17.6
     sources:
@@ -113,6 +118,7 @@ events:
       it: "Sennacherib assedia Lachis e Gerusalemme"
       nl: "Sanherib belegert Lachis en Jeruzalem"
       cs: "Senacherib obléhá Lachiš a Jeruzalém"
+      sv: "Sanherib belägrar Lakish och Jerusalem"
     place: a3cc590
     ref: 2Kgs.18.13-2Kgs.18.17
     sources:
@@ -132,6 +138,7 @@ events:
       it: "Ninive cade"
       nl: "Nineve valt"
       cs: "Ninive padá"
+      sv: "Nineve faller"
     place: a70fd5d
     sources:
       - "Babylonian Chronicle, ABC 3"
@@ -149,6 +156,7 @@ events:
       it: "Gerusalemme e il Tempio sono distrutti; esilio a Babilonia"
       nl: "Jeruzalem en de tempel worden verwoest; ballingschap naar Babylon"
       cs: "Jeruzalém a chrám jsou zničeny; vyhnanství do Babylóna"
+      sv: "Jerusalem och templet förstörs; landsflykt till Babylon"
     place: a15257a
     ref: 2Kgs.25.8-2Kgs.25.11
     sources:
@@ -167,6 +175,7 @@ events:
       it: "Ciro permette agli esuli di tornare"
       nl: "Cyrus laat de ballingen terugkeren"
       cs: "Kýros dovoluje vyhnancům návrat"
+      sv: "Kyros låter de landsflyktiga återvända"
     place: a217d18
     ref: Ezra.1.1-Ezra.1.4
     sources:
@@ -186,6 +195,7 @@ events:
       it: "Il secondo Tempio è terminato e dedicato"
       nl: "De tweede tempel wordt voltooid en ingewijd"
       cs: "Druhý chrám je dokončen a vysvěcen"
+      sv: "Det andra templet fullbordas och invigs"
     place: a15257a
     ref: Ezra.6.15-Ezra.6.16
     sources:
@@ -204,6 +214,7 @@ events:
       it: "Neemia ricostruisce le mura di Gerusalemme"
       nl: "Nehemia herbouwt de muren van Jeruzalem"
       cs: "Nehemjáš obnovuje jeruzalémské hradby"
+      sv: "Nehemja bygger upp Jerusalems murar"
     place: a15257a
     ref: Neh.6.15
     sources:
@@ -222,6 +233,7 @@ events:
       it: "Alessandro prende Tiro e Gaza"
       nl: "Alexander neemt Tyrus en Gaza in"
       cs: "Alexandr dobývá Týr a Gazu"
+      sv: "Alexander intar Tyros och Gaza"
     place: a160272
     sources:
       - "Arrian, Anabasis 2.24; 2.27"
@@ -239,6 +251,7 @@ events:
       it: "Giuda Maccabeo riconsacra il Tempio"
       nl: "Judas Makkabeüs wijdt de tempel opnieuw in"
       cs: "Juda Makabejský znovu světí chrám"
+      sv: "Judas Mackabeus återinviger templet"
     place: a15257a
     ref: 1Macc.4.36-1Macc.4.59
     sources:
@@ -258,6 +271,7 @@ events:
       it: "Pompeo prende Gerusalemme: inizia il dominio romano"
       nl: "Pompeius neemt Jeruzalem in: het Romeinse bewind begint"
       cs: "Pompeius dobývá Jeruzalém: začíná římská vláda"
+      sv: "Pompejus intar Jerusalem: det romerska väldet börjar"
     place: a15257a
     sources:
       - "Josephus, Antiquities 14.54-79"
@@ -275,6 +289,7 @@ events:
       it: "Erode il Grande prende Gerusalemme"
       nl: "Herodes de Grote neemt Jeruzalem in"
       cs: "Herodes Veliký dobývá Jeruzalém"
+      sv: "Herodes den store intar Jerusalem"
     place: a15257a
     sources:
       - "Josephus, Antiquities 14.465-491"
@@ -292,6 +307,7 @@ events:
       it: "Nascita di Gesù"
       nl: "De geboorte van Jezus"
       cs: "Narození Ježíšovo"
+      sv: "Jesu födelse"
     place: a112427
     ref: Luke.2.1-Luke.2.7
     sources:
@@ -310,6 +326,7 @@ events:
       it: "Crocifissione e Risurrezione"
       nl: "Kruisiging en opstanding"
       cs: "Ukřižování a vzkříšení"
+      sv: "Korsfästelsen och uppståndelsen"
     place: a631d35
     ref: Luke.23.33
     sources:
@@ -329,6 +346,7 @@ events:
       it: "Il Concilio di Gerusalemme"
       nl: "Het Concilie van Jeruzalem"
       cs: "Jeruzalémský koncil"
+      sv: "Apostlamötet i Jerusalem"
     place: a15257a
     ref: Acts.15.6-Acts.15.11
     sources:
@@ -347,6 +365,7 @@ events:
       it: "Tito distrugge Gerusalemme e il Tempio"
       nl: "Titus verwoest Jeruzalem en de tempel"
       cs: "Titus ničí Jeruzalém a chrám"
+      sv: "Titus förstör Jerusalem och templet"
     place: a15257a
     sources:
       - "Josephus, Jewish War 6.249-266 (the Temple burned); 7.1-3 (Caesar orders the whole city and Temple razed)"
@@ -364,6 +383,7 @@ events:
       it: "Sisak d’Egitto compie una campagna in Giuda e in Israele"
       nl: "Sisak van Egypte voert een veldtocht in Juda en Israël"
       cs: "Šíšak Egyptský vede tažení do Judska a Izraele"
+      sv: "Shishak av Egypten för krig i Juda och Israel"
     ref: 1Kgs.14.25-1Kgs.14.26
     sources:
       - "1 Kgs 14:25-26 (the fifth year of Rehoboam); Thiele's chronology"
@@ -382,6 +402,7 @@ events:
       it: "Battaglia di Qarqar: Acab fra i re che si oppongono all’Assiria"
       nl: "Slag bij Qarqar: Achab onder de koningen tegen Assyrië"
       cs: "Bitva u Karkaru: Achab mezi králi proti Asýrii"
+      sv: "Slaget vid Karkar: Achav bland kungarna mot Assyrien"
     # The field: Tell Qarqur on the west bank of the Orontes, Ghab plain, northwestern Syria (approximate).
     battlefield: { lon: 36.331, lat: 35.742, source: "https://pleiades.stoa.org/places/995604669" }
     sources:
@@ -400,6 +421,7 @@ events:
       it: "Ieu paga tributo a Salmanàssar III"
       nl: "Jehu betaalt schatting aan Salmaneser III"
       cs: "Jehú platí tribut Salmanasarovi III."
+      sv: "Jehu betalar tribut till Salmanassar III"
     sources:
       - "Black Obelisk of Shalmaneser III (the Jehu panel, RIMA 3 A.0.102.88)"
       - "Annals of Shalmaneser III for his eighteenth year (RIMA 3 A.0.102.8, .10)"
@@ -417,6 +439,7 @@ events:
       it: "Giosia è ferito a morte a Meghiddo dal faraone Necao"
       nl: "Josia wordt bij Megiddo dodelijk gewond door Farao Necho"
       cs: "Jošijáš je smrtelně raněn u Megida faraonem Nekem"
+      sv: "Josia dödligt sårad vid Megiddo av farao Neko"
     place: a8554e3
     ref: 2Kgs.23.29-2Kgs.23.30
     sources:
@@ -436,6 +459,7 @@ events:
       it: "Nabucodonosor sconfigge l’Egitto a Carchemis"
       nl: "Nebukadnessar verslaat Egypte bij Karkemis"
       cs: "Nebukadnesar poráží Egypt u Karkemíše"
+      sv: "Nebukadnessar besegrar Egypten vid Karkemish"
     place: af6c730
     ref: Jer.46.2
     sources:
@@ -455,6 +479,7 @@ events:
       it: "Gerusalemme si arrende; Ioiachin è deportato a Babilonia"
       nl: "Jeruzalem geeft zich over; Jojachin wordt naar Babylon gevoerd"
       cs: "Jeruzalém se vzdává; Jójakín je odvlečen do Babylóna"
+      sv: "Jerusalem kapitulerar; Jojakin förs till Babylon"
     place: a15257a
     ref: 2Kgs.24.10-2Kgs.24.15
     sources:
@@ -474,6 +499,7 @@ events:
       it: "Antioco IV profana il Tempio"
       nl: "Antiochus IV ontwijdt de tempel"
       cs: "Antiochos IV. znesvěcuje chrám"
+      sv: "Antiochos IV vanhelgar templet"
     place: a15257a
     ref: 1Macc.1.54
     sources:
@@ -493,6 +519,7 @@ events:
       it: "Erode il Grande muore a Gerico"
       nl: "Herodes de Grote sterft te Jericho"
       cs: "Herodes Veliký umírá v Jerichu"
+      sv: "Herodes den store dör i Jeriko"
     place: aaf03fa
     ref: Matt.2.19-Matt.2.20
     sources:
@@ -511,6 +538,7 @@ events:
       it: "La Giudea diventa provincia romana"
       nl: "Judea wordt een Romeinse provincie"
       cs: "Judsko se stává římskou provincií"
+      sv: "Judeen blir en romersk provins"
     place: a15257a
     sources:
       - "Josephus, Antiquities 17.355; 18.1-2"
@@ -528,6 +556,7 @@ events:
       it: "Ponzio Pilato diventa prefetto della Giudea"
       nl: "Pontius Pilatus wordt prefect van Judea"
       cs: "Pontius Pilát se stává prefektem Judska"
+      sv: "Pontius Pilatus blir prefekt över Judeen"
     place: a58735e
     sources:
       - "Josephus, Antiquities 18.35 (after Gratus's eleven years), 18.89 (ten years in office)"
@@ -546,6 +575,7 @@ events:
       it: "Erode Agrippa I muore a Cesarea"
       nl: "Herodes Agrippa I sterft te Caesarea"
       cs: "Herodes Agrippa I. umírá v Cesareji"
+      sv: "Herodes Agrippa I dör i Caesarea"
     place: a58735e
     ref: Acts.12.21-Acts.12.23
     sources:
@@ -565,6 +595,7 @@ events:
       it: "Claudio espelle i Giudei da Roma"
       nl: "Claudius verdrijft de Joden uit Rome"
       cs: "Klaudius vyhání Židy z Říma"
+      sv: "Claudius utvisar judarna från Rom"
     place: afc8e7a
     ref: Acts.18.2
     sources:
@@ -584,6 +615,7 @@ events:
       it: "Gallione, proconsole d’Acaia, a Corinto"
       nl: "Gallio, proconsul van Achaja, te Korinthe"
       cs: "Gallión, prokonzul Achaje, v Korintu"
+      sv: "Gallio, prokonsul i Achaia, i Korinth"
     place: a6f437a
     ref: Acts.18.12-Acts.18.17
     sources:
@@ -603,6 +635,7 @@ events:
       it: "L’incendio di Roma; Nerone perseguita i cristiani"
       nl: "De brand van Rome; Nero vervolgt de christenen"
       cs: "Požár Říma; Nero pronásleduje křesťany"
+      sv: "Branden i Rom; Nero förföljer de kristna"
     place: afc8e7a
     sources:
       - "Tacitus, Annals 15.38-44"
@@ -620,6 +653,7 @@ events:
       it: "Tiglat-Pilèser III prende Damasco"
       nl: "Tiglat-Pileser III neemt Damascus in"
       cs: "Tiglatpilesar III. dobývá Damašek"
+      sv: "Tiglat-Pileser III intar Damaskus"
     place: a69c1d4
     ref: 2Kgs.16.9
     sources:
@@ -639,6 +673,7 @@ events:
       it: "Ciro prende Babilonia"
       nl: "Cyrus neemt Babylon in"
       cs: "Kýros dobývá Babylón"
+      sv: "Kyros intar Babylon"
     place: a217d18
     ref: Dan.5.30-Dan.5.31
     sources:
@@ -658,6 +693,7 @@ events:
       it: "Battaglia di Panion: la Giudea passa dai Tolomei ai Seleucidi"
       nl: "Slag bij Panium: Judea gaat van de Ptolemaeën over op de Seleuciden"
       cs: "Bitva u Paneia: Judsko přechází od Ptolemaiovců k Seleukovcům"
+      sv: "Slaget vid Panion: Judeen går från ptoleméerna till seleukiderna"
     place: ab7bf48
     sources:
       - "Polybius 16.18-19"
@@ -678,6 +714,7 @@ events:
       it: "L’Alto e il Basso Egitto sono uniti sotto la Prima dinastia"
       nl: "Boven- en Neder-Egypte worden verenigd onder de Eerste Dynastie"
       cs: "Horní a Dolní Egypt jsou sjednoceny za první dynastie"
+      sv: "Övre och Nedre Egypten förenas under första dynastin"
     place: a8ec269
     sources:
       - "The Narmer Palette (Egyptian Museum, Cairo, JE 32169)"
@@ -698,6 +735,7 @@ events:
       it: "Sargon di Accad, unificatore della Mesopotamia, diventa re"
       nl: "Sargon van Akkad, de eenmaker van Mesopotamië, wordt koning"
       cs: "Sargon Akkadský, sjednotitel Mezopotámie, se stává králem"
+      sv: "Sargon av Akkad, som enade Mesopotamien, blir kung"
     sources:
       - "Sumerian King List (ETCSL 2.1.1, ll. 266-296: 'In Agade, Sargon ... became king ... he ruled for 56 years')"
       - "CDLI Wiki, 'Rulers of Mesopotamia' (middle chronology: Sargon 2334-2279 BC)"
@@ -716,6 +754,7 @@ events:
       it: "Ur-Nammu fonda la Terza dinastia di Ur"
       nl: "Ur-Nammu sticht de Derde Dynastie van Ur"
       cs: "Ur-Nammu zakládá Třetí dynastii z Uru"
+      sv: "Ur-Nammu grundar Urs tredje dynasti"
     place: a6cf75c
     sources:
       - "Sumerian King List (ETCSL 2.1.1, ll. 341-354: in Urim Ur-Namma became king; he ruled for 18 years)"
@@ -734,6 +773,7 @@ events:
       it: "Gli Elamiti prendono Ur: fine della Terza dinastia"
       nl: "Elamieten nemen Ur in: het einde van de Derde Dynastie"
       cs: "Élamité dobývají Ur: konec Třetí dynastie"
+      sv: "Elamiterna intar Ur: Urs tredje dynasti upphör"
     place: a6cf75c
     sources:
       - "Lament for Sumer and Ur"
@@ -754,6 +794,7 @@ events:
       it: "La rivolta di Bar Kokhba è soffocata; ai Giudei è vietato l’accesso a Gerusalemme, ora Aelia Capitolina"
       nl: "De opstand van Bar Kochba wordt neergeslagen; Joden mogen Jeruzalem, nu Aelia Capitolina, niet meer betreden"
       cs: "Bar Kochbovo povstání je potlačeno; Židům je zakázán vstup do Jeruzaléma, nyní Aelie Capitoliny"
+      sv: "Bar Kochbas uppror slås ned; judar utestängs från Jerusalem, nu Aelia Capitolina"
     place: a15257a
     sources:
       - "Cassius Dio, Roman History 69.12-14"
@@ -772,6 +813,7 @@ events:
       it: "La Chiesa del Santo Sepolcro è dedicata"
       nl: "De Heilig Grafkerk wordt ingewijd"
       cs: "Je vysvěcen chrám Božího hrobu"
+      sv: "Den heliga gravens kyrka invigs"
     place: a631d35
     sources:
       - "Eusebius, Life of Constantine 3.25-40; 4.40-47"
@@ -789,6 +831,7 @@ events:
       it: "Fallisce il tentativo di Giuliano di ricostruire il Tempio a Gerusalemme"
       nl: "De poging van Julianus om de tempel in Jeruzalem te herbouwen mislukt"
       cs: "Juliánův pokus o obnovu chrámu v Jeruzalémě selhává"
+      sv: "Julianus försök att återuppbygga templet i Jerusalem misslyckas"
     place: a15257a
     sources:
       - "Ammianus Marcellinus 23.1.2-3"
@@ -808,6 +851,7 @@ events:
       it: "Girolamo completa a Betlemme la sua traduzione latina dell’Antico Testamento dall’ebraico"
       nl: "Hiëronymus voltooit in Bethlehem zijn Latijnse vertaling van het Oude Testament uit het Hebreeuws"
       cs: "Jeroným dokončuje v Betlémě svůj latinský překlad Starého zákona z hebrejštiny"
+      sv: "Hieronymus slutför sin latinska översättning av Gamla testamentet från hebreiskan i Betlehem"
     place: a112427
     sources:
       - "Jerome, Preface to Joshua, Judges and Ruth (after Paula's death in 404; NPNF2 6)"
@@ -826,6 +870,7 @@ events:
       it: "I Visigoti di Alarico saccheggiano Roma"
       nl: "De Visigoten van Alarik plunderen Rome"
       cs: "Alarichovi Vizigóti vyplení Řím"
+      sv: "Alariks visigoter plundrar Rom"
     place: afc8e7a
     sources:
       - "Orosius, History against the Pagans 7.39-40"
@@ -847,6 +892,7 @@ events:
       it: "Alessandro fonda Alessandria d’Egitto"
       nl: "Alexander sticht Alexandrië in Egypte"
       cs: "Alexandr zakládá v Egyptě Alexandrii"
+      sv: "Alexander grundar Alexandria i Egypten"
     place: aee7248
     sources:
       - "Arrian, Anabasis 3.1"
@@ -864,6 +910,7 @@ events:
       it: "Alessandro Magno muore a Babilonia"
       nl: "Alexander de Grote sterft te Babylon"
       cs: "Alexandr Veliký umírá v Babylóně"
+      sv: "Alexander den store dör i Babylon"
     place: a217d18
     sources:
       - "Plutarch, Alexander 75-76 (the Royal Diaries: the 28th of Daesius, 76.9; Aristobulus: the 30th, 75.6)"
@@ -885,6 +932,7 @@ events:
       it: "Seleuco I riconquista Babilonia; inizia l’era seleucide"
       nl: "Seleucus I herovert Babylon; het Seleucidische tijdperk begint"
       cs: "Seleukos I. znovu dobývá Babylón; začíná seleukovská éra"
+      sv: "Seleukos I återtar Babylon; den seleukidiska tideräkningen börjar"
     place: a217d18
     sources:
       - "Diodorus Siculus 19.77 (archonship of Polemon), 19.90-92"
@@ -903,6 +951,7 @@ events:
       it: "Seleuco I fonda Antiochia sull’Oronte"
       nl: "Seleucus I sticht Antiochië aan de Orontes"
       cs: "Seleukos I. zakládá Antiochii nad Orontem"
+      sv: "Seleukos I grundar Antiochia vid Orontes"
     place: ae41ab4
     sources:
       - "Strabo, Geography 16.2.4"
@@ -924,6 +973,7 @@ events:
       it: "La Torah è tradotta in greco ad Alessandria (la Settanta)"
       nl: "De Thora wordt te Alexandrië in het Grieks vertaald (de Septuaginta)"
       cs: "Tóra je v Alexandrii přeložena do řečtiny (Septuaginta)"
+      sv: "Toran översätts till grekiska i Alexandria (Septuaginta)"
     place: aee7248
     sources:
       - "Letter of Aristeas 9-11, 46-50 (the tradition)"
@@ -943,6 +993,7 @@ events:
       it: "Mattatia dà inizio alla rivolta a Modin"
       nl: "Mattathias begint de opstand te Modein"
       cs: "Matatiáš zvedá v Modeinu povstání"
+      sv: "Mattatias reser upproret i Modin"
     ref: 1Macc.2.1-1Macc.2.28
     sources:
       - "1 Macc 2:1, 2:15-28, 2:70 (year 146 of the Seleucids)"
@@ -961,6 +1012,7 @@ events:
       it: "Sotto Simone, la Giudea è liberata dal tributo seleucide"
       nl: "Onder Simon wordt Judea bevrijd van Seleucidische schatting"
       cs: "Za Šimona je Judsko osvobozeno od seleukovského tributu"
+      sv: "Under Simon befrias Judeen från seleukidisk tribut"
     place: a15257a
     ref: 1Macc.13.41-1Macc.13.42
     sources:
@@ -982,6 +1034,7 @@ events:
       it: "Erode inizia la ricostruzione del Tempio"
       nl: "Herodes begint met de herbouw van de tempel"
       cs: "Herodes začíná přestavovat chrám"
+      sv: "Herodes börjar bygga om templet"
     place: a15257a
     sources:
       - "Josephus, Antiquities 15.380 (the eighteenth year of his reign); cf. Jewish War 1.401"
@@ -1001,6 +1054,7 @@ events:
       it: "I Romani prendono Masada"
       nl: "De Romeinen nemen Masada in"
       cs: "Římané dobývají Masadu"
+      sv: "Romarna intar Masada"
     site: "687968"
     sources:
       - "Josephus, Jewish War 7.252-406 (15 Xanthicus, 7.401)"
@@ -1021,6 +1075,7 @@ events:
       it: "La rivolta di Bar Kokhba inizia in Giudea"
       nl: "De opstand van Bar Kochba begint in Judea"
       cs: "V Judsku začíná Bar Kochbovo povstání"
+      sv: "Bar Kochbas uppror bryter ut i Judeen"
     sources:
       - "Cassius Dio, Roman History 69.12-13"
       - "Eusebius, Church History 4.6.2 (Barcocheba)"
@@ -1039,6 +1094,7 @@ events:
       it: "Origene lascia Alessandria per Cesarea"
       nl: "Origenes verlaat Alexandrië voor Caesarea"
       cs: "Órigenés opouští Alexandrii a odchází do Cesareje"
+      sv: "Origenes lämnar Alexandria för Caesarea"
     place: a58735e
     sources:
       - "Eusebius, Church History 6.26 (the tenth year of Alexander Severus, 231/232)"
@@ -1056,6 +1112,7 @@ events:
       it: "Decio ordina il sacrificio in tutto l’impero: la prima persecuzione generale"
       nl: "Decius beveelt offers in het hele rijk: de eerste algemene christenvervolging"
       cs: "Decius nařizuje oběti v celé říši: první všeobecné pronásledování"
+      sv: "Decius befaller offer i hela riket: den första allmänna förföljelsen"
     sources:
       - "Eusebius, Church History 6.39-41"
       - "J. B. Rives, 'The Decree of Decius and the Religion of Empire', Journal of Roman Studies 89 (1999), 135-154"
@@ -1074,6 +1131,7 @@ events:
       it: "Editto di Diocleziano contro le chiese: inizia la Grande Persecuzione"
       nl: "Edict van Diocletianus tegen de kerken: de Grote Vervolging begint"
       cs: "Diocletianův edikt proti církvím: začíná Velké pronásledování"
+      sv: "Diocletianus edikt mot kyrkorna: den stora förföljelsen börjar"
     sources:
       - "Lactantius, On the Deaths of the Persecutors 12-13 (the Terminalia, in the eighth consulship of Diocletian)"
       - "Eusebius, Church History 8.2.4 (the nineteenth year of Diocletian, the month Dystrus)"
@@ -1091,6 +1149,7 @@ events:
       it: "Costantino sconfigge Massenzio a Ponte Milvio"
       nl: "Constantijn verslaat Maxentius bij de Milvische Brug"
       cs: "Konstantin poráží Maxentia u Milvijského mostu"
+      sv: "Konstantin besegrar Maxentius vid Mulviska bron"
     place: afc8e7a
     sources:
       - "Lactantius, On the Deaths of the Persecutors 44"
@@ -1110,6 +1169,7 @@ events:
       it: "Costantino e Licinio concedono ai cristiani la libertà di culto (l’Editto di Milano)"
       nl: "Constantijn en Licinius verlenen christenen vrijheid van eredienst (het Edict van Milaan)"
       cs: "Konstantin a Licinius dávají křesťanům svobodu uctívání (Milánský edikt)"
+      sv: "Konstantin och Licinius ger de kristna religionsfrihet (Milanoediktet)"
     sources:
       - "Lactantius, On the Deaths of the Persecutors 48"
       - "Eusebius, Church History 10.5"
@@ -1127,6 +1187,7 @@ events:
       it: "Il primo Concilio di Nicea"
       nl: "Het eerste Concilie van Nicea"
       cs: "První nikajský koncil"
+      sv: "Det första konciliet i Nicaea"
     site: "511268"
     sources:
       - "Eusebius, Life of Constantine 3.6-14"
@@ -1148,6 +1209,7 @@ events:
       it: "Costantino dedica Costantinopoli, la Nuova Roma"
       nl: "Constantijn wijdt Constantinopel, het Nieuwe Rome, in"
       cs: "Konstantin zasvěcuje Konstantinopol, Nový Řím"
+      sv: "Konstantin invigar Konstantinopel, det nya Rom"
     site: "Q16869"
     sources:
       - "Socrates, Church History 1.16"
@@ -1167,6 +1229,7 @@ events:
       it: "Il primo Concilio di Costantinopoli"
       nl: "Het eerste Concilie van Constantinopel"
       cs: "První konstantinopolský koncil"
+      sv: "Det första konciliet i Konstantinopel"
     site: "Q16869"
     sources:
       - "Socrates, Church History 5.8 (May, the consulate of Eucharius and Evagrius)"
@@ -1185,6 +1248,7 @@ events:
       it: "Il Concilio di Efeso depone Nestorio"
       nl: "Het Concilie van Efeze zet Nestorius af"
       cs: "Efezský koncil sesazuje Nestoria"
+      sv: "Konciliet i Efesos avsätter Nestorios"
     place: a5feb15
     sources:
       - "Socrates, Church History 7.34 (28 June, the consulate of Bassus and Antiochus)"
@@ -1202,6 +1266,7 @@ events:
       it: "Il Concilio di Calcedonia"
       nl: "Het Concilie van Chalcedon"
       cs: "Chalkedonský koncil"
+      sv: "Konciliet i Chalkedon"
     site: "520988"
     sources:
       - "Evagrius, Church History 2.2-4"
@@ -1224,6 +1289,7 @@ events:
       it: "La più antica scrittura mesopotamica conosciuta: le tavolette protocuneiformi di Uruk"
       nl: "Het oudst bekende Mesopotamische schrift: proto-spijkerschrifttabletten te Uruk"
       cs: "Nejstarší známé mezopotámské písmo: protoklínopisné tabulky z Uruku"
+      sv: "Mesopotamiens äldsta kända skrift: protokilskriftstavlor i Uruk"
     place: a5db1a6
     sources:
       - "The archaic texts of Uruk IV from the Eanna precinct (H. J. Nissen, P. Damerow, R. K. Englund, Archaic Bookkeeping, 1993)"
@@ -1242,6 +1308,7 @@ events:
       it: "Hammurabi diventa re di Babilonia"
       nl: "Hammurabi wordt koning van Babylon"
       cs: "Chammurapi se stává králem Babylónu"
+      sv: "Hammurabi blir kung av Babylon"
     place: a217d18
     sources:
       - "M. Van De Mieroop, A History of the Ancient Near East (3rd ed., 2016) (middle chronology: 1792-1750 BC)"
@@ -1261,6 +1328,7 @@ events:
       it: "Gli Ittiti saccheggiano Babilonia, ponendo fine alla dinastia di Hammurabi"
       nl: "De Hettieten plunderen Babylon, waarmee de dynastie van Hammurabi eindigt"
       cs: "Chetité plení Babylón a ukončují Chammurapiho dynastii"
+      sv: "Hettiterna plundrar Babylon och gör slut på Hammurabis dynasti"
     place: a217d18
     sources:
       - "Chronicle of Early Kings (ABC 20) B rev. 11' ('At the time of Samsuditana the Hittites marched against Akkad')"
@@ -1279,6 +1347,7 @@ events:
       it: "Tutmosi III sconfigge a Meghiddo il re di Kades e i suoi alleati"
       nl: "Thoetmosis III verslaat bij Megiddo de koning van Kades en zijn bondgenoten"
       cs: "Thutmose III. poráží krále Kádeše a jeho spojence u Megida"
+      sv: "Thutmosis III besegrar kungen av Kadesh och hans bundsförvanter vid Megiddo"
     place: a8554e3
     sources:
       - "Annals of Thutmose III at Karnak, first campaign, year 23 (Breasted, Ancient Records of Egypt II, §§408 ff.; the battle §430)"
@@ -1299,6 +1368,7 @@ events:
       it: "Abdi-Kheba di Gerusalemme scrive al faraone (le lettere di Amarna)"
       nl: "Abdi-Heba van Jeruzalem schrijft aan Farao (de Amarnabrieven)"
       cs: "Abdi-Heba z Jeruzaléma píše faraonovi (amarnské listy)"
+      sv: "Abdi-Heba av Jerusalem skriver till farao (Amarnabreven)"
     place: a15257a
     sources:
       - "Amarna letters EA 285-290 (Knudtzon, Die El-Amarna-Tafeln I (1915), nos. 285-290, headed 'Abdihiba von Jerusalem an den König')"
@@ -1317,6 +1387,7 @@ events:
       it: "Ramses II combatte gli Ittiti a Kades"
       nl: "Ramses II strijdt tegen de Hettieten bij Kades"
       cs: "Ramesse II. bojuje s Chetity u Kádeše"
+      sv: "Ramses II strider mot hettiterna vid Kadesh"
     place: adc9b5a
     sources:
       - "The Poem and the Bulletin of the battle of Kadesh, year 5 of Ramesses II (Breasted, Ancient Records of Egypt III, the Poem from §305, year 5 at §307; the Bulletin from §316, dated year 5 at §317)"
@@ -1336,6 +1407,7 @@ events:
       it: "La stele della vittoria di Merenptah nomina Israele"
       nl: "De overwinningsstèle van Merenptah noemt Israël"
       cs: "Merneptahova vítězná stéla jmenuje Izrael"
+      sv: "Merneptahs segerstele nämner Israel"
     sources:
       - "Merneptah's 'Israel stele', year 5 (Egyptian Museum, Cairo, JE 31408; Breasted, Ancient Records of Egypt III, year 5 at §607; Israel in §617)"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Merneptah from 1213 BC)"
@@ -1353,6 +1425,7 @@ events:
       it: "Ramses III respinge i Popoli del Mare"
       nl: "Ramses III slaat de Zeevolken terug"
       cs: "Ramesse III. odráží Mořské národy"
+      sv: "Ramses III slår tillbaka havsfolken"
     sources:
       - "Medinet Habu, inscription of year 8 of Ramesses III (Breasted, Ancient Records of Egypt IV, §§59-82; the Peleset among the invaders §64)"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Ramesses III from 1184 BC)"
@@ -1370,6 +1443,7 @@ events:
       it: "Mesa, re di Moab, erige la sua stele a Dibon"
       nl: "Mesa, de koning van Moab, richt zijn stèle op te Dibon"
       cs: "Meša, král Moábu, staví svou stélu v Dibonu"
+      sv: "Mesha, kung av Moab, reser sin stele i Dibon"
     place: a0d784a
     sources:
       - "2 Kgs 3:4-5"
@@ -1390,6 +1464,7 @@ events:
       it: "Menachem paga tributo a Pul (Tiglat-Pilèser III)"
       nl: "Menachem betaalt schatting aan Pul (Tiglat-Pileser III)"
       cs: "Menachem platí tribut Pulovi (Tiglatpilesaru III.)"
+      sv: "Menachem betalar tribut till Pul (Tiglat-Pileser III)"
     ref: 2Kgs.15.19-2Kgs.15.20
     sources:
       - "2 Kgs 15:19-20"
@@ -1411,6 +1486,7 @@ events:
       it: "L’Assiria di Sargon II prende Asdod"
       nl: "Assyrië onder Sargon II neemt Asdod in"
       cs: "Asýrie za Sargona II. dobývá Ašdod"
+      sv: "Assyrien under Sargon II intar Ashdod"
     place: a30c937
     ref: Isa.20.1
     sources:
@@ -1431,6 +1507,7 @@ events:
       it: "Assaraddon prende Menfi"
       nl: "Esarhaddon neemt Memfis in"
       cs: "Asarhadón dobývá Memfis"
+      sv: "Esarhaddon intar Memfis"
     place: a8ec269
     sources:
       - "Babylonian Chronicle, ABC 1 iv 23-28 (the tenth year of Esarhaddon: 'Memphis, the royal city, was captured')"
@@ -1448,6 +1525,7 @@ events:
       it: "Assurbanipal saccheggia Tebe (No-Amon)"
       nl: "Assurbanipal plundert Thebe (No-Amon)"
       cs: "Aššurbanipal plení Théby (No-Amon)"
+      sv: "Assurbanipal plundrar Thebe (No-Amon)"
     place: a9674fc
     sources:
       - "Nah 3:8-10"
@@ -1466,6 +1544,7 @@ events:
       it: "Nabopolassar diventa re di Babilonia"
       nl: "Nabopolassar wordt koning van Babylon"
       cs: "Nabopolasar se stává králem Babylónu"
+      sv: "Nabopolassar blir kung av Babylon"
     place: a217d18
     sources:
       - "Babylonian Chronicle, ABC 2 lines 14-15 (26 Arahsamnu: 23 November 626 BC)"
@@ -1483,6 +1562,7 @@ events:
       it: "L’esercito di Nabucodonosor assedia Lachis e Azeka"
       nl: "Het leger van Nebukadnessar belegert Lachis en Azeka"
       cs: "Nebukadnesarovo vojsko obléhá Lachiš a Azeku"
+      sv: "Nebukadnessars här belägrar Lakish och Aseka"
     place: a3cc590
     ref: Jer.34.7
     sources:
@@ -1502,6 +1582,7 @@ events:
       it: "Nabucodonosor inizia un assedio di tredici anni a Tiro"
       nl: "Nebukadnessar begint een belegering van Tyrus die dertien jaar duurt"
       cs: "Nebukadnesar začíná třináctiletě obléhat Týr"
+      sv: "Nebukadnessar inleder en tretton år lång belägring av Tyros"
     place: a160272
     sources:
       - "Ezek 29:18"
@@ -1520,6 +1601,7 @@ events:
       it: "Evil-Merodac libera Ioiachin dalla prigione"
       nl: "Evil-Merodach laat Jojachin uit de gevangenis vrij"
       cs: "Evil-merodak propouští Jójakína z vězení"
+      sv: "Evil-Merodak släpper Jojakin ur fängelset"
     place: a217d18
     ref: 2Kgs.25.27-2Kgs.25.30
     sources:
@@ -1539,6 +1621,7 @@ events:
       it: "Nabonedo si ritira a Tema in Arabia"
       nl: "Nabonidus trekt zich terug naar Tema in Arabië"
       cs: "Nabonid se stahuje do Témy v Arábii"
+      sv: "Nabonid drar sig tillbaka till Tema i Arabien"
     place: acd48d6
     sources:
       - "Nabonidus Chronicle (ABC 7) ii 5, 10, 19, 23 (the king in Tema in his 7th, 9th, 10th and 11th years)"
@@ -1557,6 +1640,7 @@ events:
       it: "Ciro sconfigge Astiage e prende Ecbatana"
       nl: "Cyrus verslaat Astyages en neemt Ekbatana in"
       cs: "Kýros poráží Astyaga a dobývá Ekbatanu"
+      sv: "Kyros besegrar Astyages och intar Ekbatana"
     place: a212ef7
     sources:
       - "Nabonidus Chronicle (ABC 7) ii 1-4 (the sixth year of Nabonidus, 550/549 BC)"
@@ -1577,6 +1661,7 @@ events:
       it: "Cambise sconfigge gli Egiziani a Pelusio e conquista l’Egitto"
       nl: "Cambyses verslaat de Egyptenaren bij Pelusium en verovert Egypte"
       cs: "Kambýsés poráží Egypťany u Pelúsia a dobývá Egypt"
+      sv: "Kambyses besegrar egyptierna vid Pelusium och erövrar Egypten"
     place: aa32a17
     sources:
       - "Herodotus 3.10-13 (Psammenitos encamped at the Pelusian mouth of the Nile; the battle; Memphis besieged and surrendered)"
@@ -1596,6 +1681,7 @@ events:
       it: "Dario I diventa re di Persia"
       nl: "Darius I wordt koning van Perzië"
       cs: "Dareios I. se stává perským králem"
+      sv: "Dareios I blir kung av Persien"
     sources:
       - "Behistun inscription, Old Persian text, DB i 53-61, §13b (Gaumata slain on 10 Bagayadi: 29 September 522 BC)"
       - "Ezra 4:24; Hag 1:1 (the second year of Darius)"
@@ -1616,6 +1702,7 @@ events:
       it: "Serse I diventa re di Persia"
       nl: "Xerxes I wordt koning van Perzië"
       cs: "Xerxés I. se stává perským králem"
+      sv: "Xerxes I blir kung av Persien"
     sources:
       - "Herodotus 7.4-5 (Darius dies after a reign of 36 years; the royal power passes to Xerxes)"
       - "R. A. Parker and W. H. Dubberstein, Babylonian Chronology 626 B.C.-A.D. 75 (1956)"
@@ -1636,6 +1723,7 @@ events:
       it: "Artaserse I diventa re di Persia"
       nl: "Artaxerxes I wordt koning van Perzië"
       cs: "Artaxerxés I. se stává perským králem"
+      sv: "Artaxerxes I blir kung av Persien"
     sources:
       - "Diodorus 11.69.1-6 (under the archon Lysitheus, 465/464 BC: Artabanus kills Xerxes; Artaxerxes takes the throne)"
       - "R. A. Parker and W. H. Dubberstein, Babylonian Chronology 626 B.C.-A.D. 75 (1956)"
@@ -1655,6 +1743,7 @@ events:
       it: "Antioco IV Epifane diventa re del regno seleucide"
       nl: "Antiochus IV Epifanes wordt koning van het Seleucidische rijk"
       cs: "Antiochos IV. Epifanés se stává králem seleukovské říše"
+      sv: "Antiochos IV Epifanes blir kung över seleukidernas rike"
     ref: 1Macc.1.10
     sources:
       - "1 Macc 1:10 (he reigned in the 137th year of the kingdom of the Greeks)"
@@ -1673,6 +1762,7 @@ events:
       it: "Ottaviano prende Alessandria; l’Egitto diventa romano"
       nl: "Octavianus neemt Alexandrië in; Egypte wordt Romeins"
       cs: "Octavianus dobývá Alexandrii; Egypt se stává římským"
+      sv: "Oktavianus intar Alexandria; Egypten blir romerskt"
     place: aee7248
     sources:
       - "Plutarch, Antony 80.1 (Caesar drives into the city), 85-86 (Cleopatra's death)"
@@ -1692,6 +1782,7 @@ events:
       it: "Il Senato conferisce a Ottaviano il titolo di Augusto"
       nl: "De Senaat verleent Octavianus de titel Augustus"
       cs: "Senát uděluje Octavianovi jméno Augustus"
+      sv: "Senaten ger Oktavianus namnet Augustus"
     place: afc8e7a
     sources:
       - "Res Gestae Divi Augusti 34 (in his sixth and seventh consulships; named Augustus by decree of the senate)"
@@ -1713,6 +1804,7 @@ events:
       it: "Tiberio succede ad Augusto"
       nl: "Tiberius volgt Augustus op"
       cs: "Tiberius nastupuje po Augustovi"
+      sv: "Tiberius efterträder Augustus"
     place: afc8e7a
     sources:
       - "Suetonius, Augustus 100.1 (Augustus dies on 19 August AD 14); Tiberius 24.1"
@@ -1732,6 +1824,7 @@ events:
       it: "Claudio è proclamato imperatore"
       nl: "Claudius wordt tot keizer uitgeroepen"
       cs: "Klaudius je prohlášen císařem"
+      sv: "Claudius utropas till kejsare"
     place: afc8e7a
     sources:
       - "Suetonius, Claudius 10.1-4 (after Gaius' murder the soldiers swear allegiance to him)"
@@ -1755,6 +1848,7 @@ events:
       it: "I Giudei d’Egitto, di Cirene e di Cipro si sollevano"
       nl: "De Joden van Egypte, Cyrene en Cyprus komen in opstand"
       cs: "Židé v Egyptě, Kyréně a na Kypru se vzpírají"
+      sv: "Judarna i Egypten, Kyrene och Cypern gör uppror"
     sources:
       - "Eusebius, Church History 4.2.1-2 (in the eighteenth year of Trajan, in Alexandria, the rest of Egypt and Cyrene)"
       - "Cassius Dio 68.32.1-3 (Cyrene under Andreas, Egypt, Cyprus under Artemion)"
@@ -1777,6 +1871,7 @@ events:
       it: "Khufu (Cheope), costruttore della Grande Piramide di Giza, diventa re"
       nl: "Choefoe (Cheops), bouwer van de Grote Piramide van Gizeh, wordt koning"
       cs: "Chufu (Cheops), stavitel Velké pyramidy v Gíze, se stává králem"
+      sv: "Cheops (Khufu), byggare av den stora pyramiden i Giza, blir kung"
     site: "442962448"
     sources:
       - "Herodotus 2.124 (Cheops and the building of the pyramid)"
@@ -1799,6 +1894,7 @@ events:
       it: "Mentuhotep II diventa re a Tebe: inizio del Medio Regno"
       nl: "Mentoehotep II wordt koning te Thebe: het begin van het Middenrijk"
       cs: "Mentuhotep II. se stává králem v Thébách: začátek Střední říše"
+      sv: "Mentuhotep II blir kung i Thebe: Mellersta rikets början"
     place: a9674fc
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), G. Callender, 'The Middle Kingdom Renaissance (c. 2055-1650 BC)' (Mentuhotep II, the reunification later in his reign); chronology (Mentuhotep II 2055-2004 BC)"
@@ -1819,6 +1915,7 @@ events:
       it: "Hammurabi di Babilonia conquista Mari"
       nl: "Hammurabi van Babylon verovert Mari"
       cs: "Chammurapi Babylónský dobývá Mari"
+      sv: "Hammurabi av Babylon erövrar Mari"
     site: "286681704"
     sources:
       - "Year names of Hammurabi 33 ('overthrew in battle the army of Mari and Malgium') and 35a ('destroyed the city walls of Mari and Malgium') (RlA 2, 180)"
@@ -1841,6 +1938,7 @@ events:
       it: "Ahmose I prende Avaris e scaccia gli Hyksos dall’Egitto"
       nl: "Ahmose I neemt Avaris in en verdrijft de Hyksos uit Egypte"
       cs: "Ahmose I. dobývá Avaris a vyhání Hyksósy z Egypta"
+      sv: "Ahmose I intar Avaris och driver hyksos ut ur Egypten"
     sources:
       - "Biography of Ahmose son of Ebana, El-Kab (Breasted, Ancient Records of Egypt II, the capture of Avaris §12, the siege of Sharuhen §13)"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), J. Bourriau, 'The Second Intermediate Period (c. 1650-1550 BC)' (Avaris taken between Ahmose's years 18 and 20); chronology (Ahmose 1550-1525 BC)"
@@ -1861,6 +1959,7 @@ events:
       it: "Akhenaton fonda una nuova capitale, Akhetaton (Amarna)"
       nl: "Achnaton sticht een nieuwe hoofdstad, Achetaton (Amarna)"
       cs: "Achnaton zakládá nové hlavní město Achetaton (Amarna)"
+      sv: "Echnaton grundar en ny huvudstad, Achetaten (Amarna)"
     site: "149576487"
     sources:
       - "The boundary stelae of Akhetaten (Breasted, Ancient Records of Egypt II, §§949-972; the earlier stelae K and X §§952-953; the year-6 date §959)"
@@ -1882,6 +1981,7 @@ events:
       it: "Ramses II e il re ittita Hattusili III fanno pace con un trattato"
       nl: "Ramses II en de Hettitische koning Hattusili III sluiten vrede bij verdrag"
       cs: "Ramesse II. a chetitský král Chattušili III. uzavírají mír smlouvou"
+      sv: "Ramses II och den hettitiske kungen Hattusili III sluter fred genom ett fördrag"
     sources:
       - "The treaty in the Karnak and Ramesseum copy, dated year 21 (Breasted, Ancient Records of Egypt III, §§367-391; the date §370)"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), J. van Dijk, 'The Amarna Period and the Later New Kingdom' (the treaty in year 21); chronology (Ramesses II from 1279 BC)"
@@ -1901,6 +2001,7 @@ events:
       it: "Tukulti-Ninurta I d’Assiria prende Babilonia e porta via la statua di Marduk"
       nl: "Tukulti-Ninurta I van Assyrië neemt Babylon in en voert het beeld van Marduk weg"
       cs: "Tukulti-Ninurta I. Asyrský dobývá Babylón a odvádí Mardukovu sochu"
+      sv: "Tukulti-Ninurta I av Assyrien intar Babylon och för bort Marduks staty"
     place: a217d18
     sources:
       - "Chronicle P (ABC 22) iv 3'-6' (the wall of Babylon destroyed, the statue of Marduk sent to Assyria)"
@@ -1924,6 +2025,7 @@ events:
       it: "Ugarit è distrutta"
       nl: "Ugarit wordt verwoest"
       cs: "Ugarit je zničen"
+      sv: "Ugarit förstörs"
     site: "Q191369"
     sources:
       - "D. Kaniewski et al., 'The Sea Peoples, from Cuneiform Tablets to Carbon Dating', PLoS ONE 6.6 (2011), e20232 (abstract and discussion: the destructions in the northern Levant 1192-1190 BC; the letter of Bay, RS 86.2230, the last record of the living kingdom)"
@@ -1944,6 +2046,7 @@ events:
       it: "Shutruk-Nahhunte d’Elam porta la stele di Naram-Sin da Sippar a Susa"
       nl: "Shutruk-Nahhunte van Elam voert de stèle van Naram-Sin van Sippar naar Susa"
       cs: "Šutruk-Nachunte z Élamu odváží Naram-Sínovu stélu ze Sipparu do Sus"
+      sv: "Shutruk-Nahhunte av Elam för Naram-Sins stele från Sippar till Susa"
     place: a033b84
     sources:
       - "The victory stele of Naram-Sin (Louvre, Sb 4): Shutruk-Nahhunte's Middle Elamite inscription on the mountain says he brought it from Sippar; found on the acropolis of Susa"
@@ -1965,6 +2068,7 @@ events:
       it: "Il Nuovo Regno finisce: Smendes fonda la Ventunesima dinastia tanita"
       nl: "Het Nieuwe Rijk eindigt: Smendes sticht de Tanitische Eenentwintigste Dynastie"
       cs: "Nová říše končí: Smendes zakládá tanisskou Jednadvacátou dynastii"
+      sv: "Nya riket upphör: Smendes grundar den tanitiska tjugoförsta dynastin"
     place: ac31fee
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), J. Taylor, 'The Third Intermediate Period (1069-664 BC)' (Smendes founds the northern dynasty, based at Tanis); chronology (Smendes 1069-1043 BC)"
@@ -1987,6 +2091,7 @@ events:
       it: "Djoser, costruttore della Piramide a gradoni di Saqqara, diventa re"
       nl: "Djoser, bouwer van de Trappenpiramide te Saqqara, wordt koning"
       cs: "Džoser, stavitel Stupňovité pyramidy v Sakkáře, se stává králem"
+      sv: "Djoser, byggare av trappstegspyramiden i Sakkara, blir kung"
     site: "796289136"
     sources:
       - "Manetho, fr. 11 (Africanus, in Syncellus): under Tosorthros lived Imuthes (Imhotep), 'the inventor of the art of building with hewn stone' (Waddell, Loeb 1940, pp. 41-43)"
@@ -2008,6 +2113,7 @@ events:
       it: "Omri costruisce Samaria come capitale d’Israele"
       nl: "Omri bouwt Samaria als hoofdstad van Israël"
       cs: "Omrí buduje Samaří jako hlavní město Izraele"
+      sv: "Omri bygger Samaria som Israels huvudstad"
     place: a041bb3
     ref: 1Kgs.16.24
     sources:
@@ -2030,6 +2136,7 @@ events:
       it: "Assurnasirpal II fa di Calach (Kalhu) la capitale dell’Assiria"
       nl: "Assurnasirpal II maakt Kalach (Kalhu) tot hoofdstad van Assyrië"
       cs: "Aššurnasirpal II. činí z Kalachu (Kalchu) hlavní město Asýrie"
+      sv: "Assurnasirpal II gör Kalach (Kalhu) till Assyriens huvudstad"
     place: ae1f807
     sources:
       - "Annals of Ashurnasirpal II (RIMA 2 A.0.101.1 ii 86b-135: the campaign of 879, then 'I reorganized the city Kalhu'; iii 1: in 878 'I moved from the city Kalhu')"
@@ -2051,6 +2158,7 @@ events:
       it: "Salmanàssar III sconfigge Cazaèl e lo rinchiude a Damasco"
       nl: "Salmaneser III verslaat Hazaël en sluit hem op in Damascus"
       cs: "Salmanasar III. poráží Chazaela a zavírá ho v Damašku"
+      sv: "Salmanassar III besegrar Hasael och spärrar in honom i Damaskus"
     place: a69c1d4
     sources:
       - "Annals of Shalmaneser III for his eighteenth year (RIMA 3 A.0.102.8, lines 1''-17'': 'I imprisoned him in Damascus, his royal city', l. 16'')"
@@ -2073,6 +2181,7 @@ events:
       it: "Adad-nirari III riceve tributo da Damasco e da Ioas di Samaria"
       nl: "Adad-nirari III eist schatting van Damascus en van Joas van Samaria"
       cs: "Adad-nárárí III. vybírá tribut od Damašku a od Joaše Samařského"
+      sv: "Adad-nirari III tar emot tribut från Damaskus och från Joas av Samaria"
     place: a69c1d4
     sources:
       - "The Tell al-Rimah stele of Adad-nirari III (RIMA 3 A.0.104.7, lines 4-8: 'the payment of Joash of the land Samaria')"
@@ -2093,6 +2202,7 @@ events:
       it: "Un’eclissi di sole nell’anno di Bur-Sagale: il fondamento delle datazioni assire"
       nl: "Een zonsverduistering in het jaar van Bur-Saggile: het ankerpunt van de Assyrische dateringen"
       cs: "Zatmění Slunce v roce Bur-Saggile: opora asyrského datování"
+      sv: "En solförmörkelse under Bur-Sagales år: ankaret för de assyriska dateringarna"
     sources:
       - "Eponym Chronicle for 763 BC (Bur-Saggile, governor of Guzana: 'in Simanu eclipse of the sun', 15 June 763)"
       - "NASA Eclipse Web Site (F. Espenak), Besselian elements of the total solar eclipse of -762 June 15 (= 15 June 763 BC)"
@@ -2112,6 +2222,7 @@ events:
       it: "Tiglat-Pilèser III diventa re d’Assiria"
       nl: "Tiglat-Pileser III wordt koning van Assyrië"
       cs: "Tiglatpilesar III. se stává králem Asýrie"
+      sv: "Tiglat-Pileser III blir kung av Assyrien"
     sources:
       - "Eponym Chronicle for 745 BC ('in Ajaru, the thirteenth, Tiglath-pileser ascended the throne')"
       - "Babylonian Chronicle, ABC 1 i 1-2 (the third year of Nabonassar)"
@@ -2133,6 +2244,7 @@ events:
       it: "Un terremoto e un incendio distruggono Antiochia"
       nl: "Een aardbeving en brand verwoesten Antiochië"
       cs: "Zemětřesení a požár ničí Antiochii"
+      sv: "En jordbävning och en brand förstör Antiochia"
     place: ae41ab4
     sources:
       - "John Malalas, Chronicle, book 17 (the reign of Justin I; late May, in the seventh year of Justin)"
@@ -2153,6 +2265,7 @@ events:
       it: "La rivolta samaritana di Giuliano ben Sabar"
       nl: "De Samaritaanse opstand van Julianus ben Sabar"
       cs: "Samaritánské povstání Juliana ben Sabara"
+      sv: "Julian ben Sabars samaritiska uppror"
     sources:
       - "John Malalas, Chronicle, book 18 (the reign of Justinian)"
       - "Cyril of Scythopolis, Life of Sabas"
@@ -2172,6 +2285,7 @@ events:
       it: "Giustiniano vieta l’insegnamento della filosofia ad Atene"
       nl: "Justinianus verbiedt het onderwijs in de filosofie te Athene"
       cs: "Justinianus zakazuje vyučování filozofie v Aténách"
+      sv: "Justinianus förbjuder undervisning i filosofi i Aten"
     place: a1fe6e7
     sources:
       - "John Malalas, Chronicle, book 18 (the consulship of Decius, 529)"
@@ -2190,6 +2304,7 @@ events:
       it: "Giustiniano dedica la nuova Santa Sofia a Costantinopoli"
       nl: "Justinianus wijdt de nieuwe Hagia Sophia in Constantinopel in"
       cs: "Justinianus vysvěcuje novou Hagii Sofii v Konstantinopoli"
+      sv: "Justinianus invigar den nya Hagia Sofia i Konstantinopel"
     site: "Q16869"
     sources:
       - "Procopius, Buildings 1.1.20-78"
@@ -2208,6 +2323,7 @@ events:
       it: "Cosroe I di Persia saccheggia Antiochia"
       nl: "Chosroës I van Perzië plundert Antiochië"
       cs: "Chosrau I. Perský plení Antiochii"
+      sv: "Khosrau I av Persien plundrar Antiochia"
     place: ae41ab4
     sources:
       - "Procopius, Wars 2.8-9"
@@ -2227,6 +2343,7 @@ events:
       it: "La peste scoppia a Pelusio, in Egitto, e si diffonde in tutto l’impero"
       nl: "De pest breekt uit te Pelusium in Egypte en verspreidt zich over het rijk"
       cs: "V egyptském Pelúsiu propuká mor a šíří se po celé říši"
+      sv: "Pesten bryter ut i Pelusium i Egypten och sprider sig över riket"
     place: aa32a17
     sources:
       - "Procopius, Wars 2.22-23 (2.22.6: it started at Pelusium)"
@@ -2246,6 +2363,7 @@ events:
       it: "La Nuova Chiesa della Madre di Dio (la Nea) di Giustiniano è dedicata a Gerusalemme"
       nl: "De Nieuwe Kerk van de Moeder Gods (de Nea) van Justinianus wordt ingewijd te Jeruzalem"
       cs: "V Jeruzalémě je vysvěcen Justinianův Nový kostel Matky Boží (Nea)"
+      sv: "Justinianus Nya kyrka för Guds moder (Nea) invigs i Jerusalem"
     place: a15257a
     sources:
       - "Procopius, Buildings 5.6"
@@ -2265,6 +2383,7 @@ events:
       it: "Il secondo Concilio di Costantinopoli"
       nl: "Het tweede Concilie van Constantinopel"
       cs: "Druhý konstantinopolský koncil"
+      sv: "Det andra konciliet i Konstantinopel"
     site: "Q16869"
     sources:
       - "Evagrius, Church History 4.38"
@@ -2285,6 +2404,7 @@ events:
       it: "La mappa musiva della Terra Santa è realizzata in una chiesa a Madaba"
       nl: "De mozaïekkaart van het Heilige Land wordt gelegd in een kerk te Madaba"
       cs: "V kostele v Madabě je položena mozaiková mapa Svaté země"
+      sv: "Mosaikkartan över det heliga landet läggs i en kyrka i Madaba"
     place: af4f21c
     sources:
       - "H. Donner, The Mosaic Map of Madaba: An Introductory Guide (1992)"
@@ -2305,6 +2425,7 @@ events:
       it: "Il monastero fortificato di Giustiniano è costruito ai piedi del Monte Sinai (Santa Caterina)"
       nl: "Het versterkte klooster van Justinianus wordt gebouwd aan de voet van de Sinaï (het Catharinaklooster)"
       cs: "Při úpatí hory Sinaj je postaven Justinianův opevněný klášter (klášter sv. Kateřiny)"
+      sv: "Justinianus befästa kloster byggs vid foten av Sinaiberget (S:ta Katarina)"
     place: abfba2a
     sources:
       - "Procopius, Buildings 5.8"
@@ -2323,6 +2444,7 @@ events:
       it: "Gregorio Magno diventa vescovo di Roma"
       nl: "Gregorius de Grote wordt bisschop van Rome"
       cs: "Řehoř Veliký se stává římským biskupem"
+      sv: "Gregorius den store blir biskop av Rom"
     place: afc8e7a
     sources:
       - "Gregory of Tours, History of the Franks 10.1"
@@ -2343,6 +2465,7 @@ events:
       it: "I Persiani prendono Gerusalemme e portano via la reliquia della Croce"
       nl: "De Perzen nemen Jeruzalem in en voeren de relikwie van het Kruis weg"
       cs: "Peršané dobývají Jeruzalém a odvážejí relikvii Kříže"
+      sv: "Perserna intar Jerusalem och för bort korsreliken"
     place: a15257a
     sources:
       - "Antiochus Strategos, The Capture of Jerusalem by the Persians in 614"
@@ -2363,6 +2486,7 @@ events:
       it: "Maometto emigra dalla Mecca a Medina (l’Egira), anno primo del calendario islamico"
       nl: "Mohammed emigreert van Mekka naar Medina (de Hidjra), jaar één van de islamitische kalender"
       cs: "Mohamed se z Mekky stěhuje do Mediny (hidžra), první rok islámského kalendáře"
+      sv: "Muhammed flyttar från Mecka till Medina (hijra), år ett i den islamiska tideräkningen"
     site: "814688"
     sources:
       - "Ibn Ishaq, Life of the Messenger of God (tr. A. Guillaume, The Life of Muhammad, 1955)"
@@ -2381,6 +2505,7 @@ events:
       it: "Eraclio sconfigge i Persiani presso Ninive"
       nl: "Heraclius verslaat de Perzen bij Nineve"
       cs: "Herakleios poráží Peršany u Ninive"
+      sv: "Herakleios besegrar perserna nära Nineve"
     place: a70fd5d
     sources:
       - "Theophanes, Chronicle, AM 6118 (12 December)"
@@ -2400,6 +2525,7 @@ events:
       it: "Eraclio riporta a Gerusalemme la reliquia della Croce"
       nl: "Heraclius brengt de relikwie van het Kruis terug naar Jeruzalem"
       cs: "Herakleios přináší relikvii Kříže zpět do Jeruzaléma"
+      sv: "Herakleios för korsreliken tillbaka till Jerusalem"
     place: a15257a
     sources:
       - "Theophanes, Chronicle, AM 6120"
@@ -2421,6 +2547,7 @@ events:
       it: "Gli Arabi sconfiggono l’esercito bizantino sul fiume Yarmuk"
       nl: "De Arabieren verslaan het Byzantijnse leger aan de Yarmuk"
       cs: "Arabové porážejí byzantské vojsko na Jarmúku"
+      sv: "Araberna besegrar den bysantinska hären vid Yarmuk"
     # The field: Plateau north of the Yarmuk river by the Wadi al-Ruqqad, southeast of the Sea of Galilee (approximate).
     battlefield: { lon: 35.955, lat: 32.814, source: "https://www.wikidata.org/wiki/Q194226" }
     sources:
@@ -2442,6 +2569,7 @@ events:
       it: "Gerusalemme si arrende al califfo Omar"
       nl: "Jeruzalem geeft zich over aan kalief Omar"
       cs: "Jeruzalém se vzdává chalífovi Umarovi"
+      sv: "Jerusalem kapitulerar för kalifen Umar"
     place: a15257a
     sources:
       - "Theophanes, Chronicle, AM 6127 (Sophronius and Umar)"
@@ -2463,6 +2591,7 @@ events:
       it: "Dopo un lungo assedio gli Arabi prendono Cesarea, capitale della Palestina bizantina"
       nl: "Na een lange belegering nemen de Arabieren Caesarea in, de hoofdstad van Byzantijns Palestina"
       cs: "Po dlouhém obléhání Arabové dobývají Cesareu, hlavní město byzantské Palestiny"
+      sv: "Efter en lång belägring intar araberna Caesarea, det bysantinska Palestinas huvudstad"
     place: a58735e
     sources:
       - "al-Baladhuri, The Conquest of the Lands (Futuh al-buldan), on Caesarea"
@@ -2482,6 +2611,7 @@ events:
       it: "Le ultime truppe bizantine lasciano Alessandria; l’Egitto passa agli Arabi"
       nl: "De laatste Byzantijnse troepen verlaten Alexandrië; Egypte gaat over op de Arabieren"
       cs: "Poslední byzantští vojáci opouštějí Alexandrii; Egypt přechází na Araby"
+      sv: "De sista bysantinska trupperna lämnar Alexandria; Egypten övergår till araberna"
     place: aee7248
     sources:
       - "John of Nikiu, Chronicle 120.72 (Theodore and his troops sail for Cyprus)"
@@ -2500,6 +2630,7 @@ events:
       it: "Si apre il terzo Concilio di Costantinopoli"
       nl: "Het derde Concilie van Constantinopel opent"
       cs: "Otevírá se Třetí konstantinopolský koncil"
+      sv: "Det tredje konciliet i Konstantinopel öppnas"
     site: "Q16869"
     sources:
       - "Theophanes, Chronicle, AM 6172"
@@ -2522,6 +2653,7 @@ events:
       it: "La Cupola della Roccia è costruita sul Monte del Tempio"
       nl: "De Rotskoepel wordt gebouwd op de Tempelberg"
       cs: "Na Chrámové hoře je postaven Skalní dóm"
+      sv: "Klippdomen byggs på Tempelberget"
     place: a15257a
     sources:
       - "The mosaic inscription of the inner octagon (AH 72), in O. Grabar, The Dome of the Rock (2006)"
@@ -2540,6 +2672,7 @@ events:
       it: "Inizia l’assedio arabo di Costantinopoli; è tolto l’anno seguente"
       nl: "De Arabische belegering van Constantinopel begint; zij wordt het jaar daarop opgeheven"
       cs: "Začíná arabské obléhání Konstantinopole; příští rok je zrušeno"
+      sv: "Arabernas belägring av Konstantinopel börjar; den hävs året därpå"
     site: "Q16869"
     sources:
       - "Theophanes, Chronicle, AM 6209-6210"
@@ -2560,6 +2693,7 @@ events:
       it: "Un terremoto devasta Scitopoli (Beth-Shean), Pella, Gadara e Tiberiade"
       nl: "Een aardbeving verwoest Scythopolis (Beth-Sean), Pella, Gadara en Tiberias"
       cs: "Zemětřesení pustoší Skythopolis (Bét-šan), Pellu, Gadaru a Tiberias"
+      sv: "En jordbävning lägger Skytopolis (Bet-Shean), Pella, Gadara och Tiberias i ruiner"
     place: a2a8df0
     sources:
       - "Theophanes, Chronicle, AM 6238"
@@ -2578,6 +2712,7 @@ events:
       it: "Gli Abbasidi rovesciano il califfato omayyade"
       nl: "De Abbasiden werpen het kalifaat van de Omajjaden omver"
       cs: "Abbásovci svrhávají umajjovský chalífát"
+      sv: "Abbasiderna störtar umayyadkalifatet"
     sources:
       - "al-Tabari, History, years 132-133 AH"
       - "H. Kennedy, The Prophet and the Age of the Caliphates (3rd ed., 2016)"
@@ -2595,6 +2730,7 @@ events:
       it: "Il califfo al-Mansur fonda Baghdad"
       nl: "Kalief al-Mansoer sticht Bagdad"
       cs: "Chalífa al-Mansúr zakládá Bagdád"
+      sv: "Kalifen al-Mansur grundar Bagdad"
     site: "893952"
     sources:
       - "al-Tabari, History, year 145 AH"
@@ -2613,6 +2749,7 @@ events:
       it: "Il secondo Concilio di Nicea ristabilisce la venerazione delle icone"
       nl: "Het tweede Concilie van Nicea herstelt de verering van de iconen"
       cs: "Druhý nikajský koncil obnovuje uctívání ikon"
+      sv: "Det andra konciliet i Nicaea återställer vördnaden för ikoner"
     site: "511268"
     sources:
       - "Theophanes, Chronicle, AM 6280"
@@ -2631,6 +2768,7 @@ events:
       it: "Papa Leone III incorona Carlo Magno imperatore a Roma"
       nl: "Paus Leo III kroont Karel de Grote tot keizer in Rome"
       cs: "Papež Lev III. korunuje v Římě Karla Velikého císařem"
+      sv: "Påve Leo III kröner Karl den store till kejsare i Rom"
     place: afc8e7a
     sources:
       - "Royal Frankish Annals, s.a. 801 (Christmas Day, with which their year begins)"
@@ -2649,6 +2787,7 @@ events:
       it: "Un concilio a Costantinopoli ristabilisce definitivamente le icone (il Trionfo dell’Ortodossia)"
       nl: "Een concilie in Constantinopel herstelt de iconen voorgoed (de Triomf van de Orthodoxie)"
       cs: "Koncil v Konstantinopoli navždy obnovuje ikony (Triumf pravoslaví)"
+      sv: "Ett koncilium i Konstantinopel återinför ikonerna för gott (ortodoxins triumf)"
     site: "Q16869"
     sources:
       - "Theophanes Continuatus, book 4 (the reign of Michael III)"
@@ -2669,6 +2808,7 @@ events:
       it: "Una flotta araba al comando di Leone di Tripoli saccheggia Tessalonica"
       nl: "Een Arabische vloot onder Leo van Tripoli plundert Tessalonica"
       cs: "Arabská flotila pod Lvem z Tripolisu plení Soluň"
+      sv: "En arabisk flotta under Leo av Tripoli plundrar Tessalonike"
     place: afa9d8e
     sources:
       - "John Kaminiates, The Capture of Thessaloniki"
@@ -2689,6 +2829,7 @@ events:
       it: "Il Codice di Aleppo, il modello della Bibbia masoretica, è scritto a Tiberiade"
       nl: "De Codex van Aleppo, de model-masoretische Bijbel, wordt in Tiberias geschreven"
       cs: "V Tiberiadě je napsán Aleppský kodex, vzorová masoretská Bible"
+      sv: "Aleppokodex, förebilden för den masoretiska bibeln, skrivs i Tiberias"
     place: ac9adc9
     sources:
       - "Maimonides, Mishneh Torah, Laws of the Torah Scroll 8.4 (the codex of Ben Asher)"
@@ -2707,6 +2848,7 @@ events:
       it: "Niceforo Foca prende Candia (Chandax) e restituisce Creta a Bisanzio"
       nl: "Nikephoros Phokas neemt Chandax in en geeft Kreta terug aan Byzantium"
       cs: "Nikéforos Fókas dobývá Chandax a vrací Krétu Byzanci"
+      sv: "Nikeforos Fokas intar Chandax och återlämnar Kreta till Bysans"
     place: a26aa94
     sources:
       - "Leo the Deacon, History, books 1-2"
@@ -2725,6 +2867,7 @@ events:
       it: "Tarso si arrende a Niceforo II Foca"
       nl: "Tarsus geeft zich over aan Nikephoros II Phokas"
       cs: "Tarsos se vzdává Nikéforu II. Fókovi"
+      sv: "Tarsos kapitulerar för Nikeforos II Fokas"
     place: a666ea0
     sources:
       - "Leo the Deacon, History (tr. A.-M. Talbot and D. F. Sullivan, 2005)"
@@ -2743,6 +2886,7 @@ events:
       it: "I Fatimidi prendono l’Egitto; il Cairo è fondato presso Fustat"
       nl: "De Fatimiden nemen Egypte in; Caïro wordt gesticht naast Fustat"
       cs: "Fátimovci dobývají Egypt; vedle Fustátu je založena Káhira"
+      sv: "Fatimiderna intar Egypten; Kairo grundas intill Fustat"
     place: af301ca
     sources:
       - "al-Maqrizi, Itti'az al-hunafa', year 358 AH"
@@ -2761,6 +2905,7 @@ events:
       it: "I Bizantini riprendono Antiochia"
       nl: "De Byzantijnen heroveren Antiochië"
       cs: "Byzantinci znovu dobývají Antiochii"
+      sv: "Bysantinerna återtar Antiochia"
     place: ae41ab4
     sources:
       - "Leo the Deacon, History, book 5"
@@ -2783,6 +2928,7 @@ events:
       it: "Il Codice di Leningrado, la più antica Bibbia ebraica completa, è copiato al Cairo"
       nl: "De Codex van Leningrad, de oudste complete Hebreeuwse Bijbel, wordt in Caïro gekopieerd"
       cs: "V Káhiře je opsán Leningradský kodex, nejstarší úplná hebrejská Bible"
+      sv: "Leningradkodex, den äldsta kompletta hebreiska bibeln, avskrivs i Kairo"
     place: af301ca
     sources:
       - "The colophon of the codex (National Library of Russia, St Petersburg, Firkovich B 19 A)"
@@ -2801,6 +2947,7 @@ events:
       it: "Il califfo al-Hakim ordina la distruzione della Chiesa del Santo Sepolcro"
       nl: "Kalief al-Hakim beveelt de verwoesting van de Heilig Grafkerk"
       cs: "Chalífa al-Hákim nařizuje zničit chrám Božího hrobu"
+      sv: "Kalifen al-Hakim befaller att Den heliga gravens kyrka ska förstöras"
     place: a631d35
     sources:
       - "Yahya of Antioch, Chronicle, under 400 AH"
@@ -2819,6 +2966,7 @@ events:
       it: "La Chiesa del Santo Sepolcro è ricostruita con l’aiuto di Costantino IX"
       nl: "De Heilig Grafkerk wordt herbouwd met de hulp van Constantijn IX"
       cs: "Chrám Božího hrobu je přestavěn s pomocí Konstantina IX."
+      sv: "Den heliga gravens kyrka byggs upp igen med Konstantin IX:s hjälp"
     place: a631d35
     sources:
       - "William of Tyre, Chronicle 1.4-6 (1.6: rebuilt in 1048)"
@@ -2837,6 +2985,7 @@ events:
       it: "I legati papali e il patriarca Michele Cerulario si scomunicano a vicenda a Costantinopoli"
       nl: "Pauselijke legaten en patriarch Michaël Kerularios excommuniceren elkaar in Constantinopel"
       cs: "Papežští legáti a patriarcha Michael Kerullarios se v Konstantinopoli navzájem exkomunikují"
+      sv: "Påvliga legater och patriarken Mikael Kerularios bannlyser varandra i Konstantinopel"
     site: "Q16869"
     sources:
       - "Humbert of Silva Candida, Brief and Succinct Account (Commemoratio brevis), with the bull of 16 July"
@@ -2856,6 +3005,7 @@ events:
       it: "Il sultano selgiuchide Alp Arslan sconfigge e cattura Romano IV a Manzicerta"
       nl: "De Seltsjoekse sultan Alp Arslan verslaat Romanos IV bij Manzikert en neemt hem gevangen"
       cs: "Seldžucký sultán Alp Arslan poráží a zajímá Romana IV. u Manzikertu"
+      sv: "Seldjukernas sultan Alp Arslan besegrar och tillfångatar Romanos IV vid Manzikert"
     # The field: Malazgirt plain near Manzikert (Malazgirt), Muş Province, eastern Turkey (approximate).
     battlefield: { lon: 42.59, lat: 39.1, source: "https://www.wikidata.org/wiki/Q200032" }
     sources:
@@ -2876,6 +3026,7 @@ events:
       it: "La Prima Crociata prende Antiochia dopo un lungo assedio"
       nl: "De Eerste Kruistocht neemt Antiochië in na een lange belegering"
       cs: "První křížová výprava dobývá Antiochii po dlouhém obléhání"
+      sv: "Det första korståget intar Antiochia efter en lång belägring"
     place: ae41ab4
     sources:
       - "Gesta Francorum 8.20"
@@ -2894,6 +3045,7 @@ events:
       it: "La Prima Crociata prende Gerusalemme"
       nl: "De Eerste Kruistocht neemt Jeruzalem in"
       cs: "První křížová výprava dobývá Jeruzalém"
+      sv: "Det första korståget intar Jerusalem"
     place: a15257a
     sources:
       - "Gesta Francorum 10.38"
@@ -2913,6 +3065,7 @@ events:
       it: "Baldovino I è incoronato primo re di Gerusalemme a Betlemme"
       nl: "Boudewijn I wordt in Bethlehem gekroond tot eerste koning van Jeruzalem"
       cs: "Balduin I. je v Betlémě korunován prvním jeruzalémským králem"
+      sv: "Balduin I kröns till Jerusalems förste kung i Betlehem"
     place: a112427
     sources:
       - "Fulcher of Chartres, History of the Expedition to Jerusalem, book 2 (Christmas Day)"
@@ -2935,6 +3088,7 @@ events:
       it: "Baldovino I prende Acri con una flotta genovese"
       nl: "Boudewijn I neemt Akko in met een Genuese vloot"
       cs: "Balduin I. dobývá Akko s janovskou flotilou"
+      sv: "Balduin I intar Akko med en genuesisk flotta"
     place: abc2af0
     sources:
       - "Fulcher of Chartres, History of the Expedition to Jerusalem, book 2"
@@ -2953,6 +3107,7 @@ events:
       it: "Tiro si arrende al Regno di Gerusalemme e ai Veneziani"
       nl: "Tyrus geeft zich over aan het Koninkrijk Jeruzalem en de Venetianen"
       cs: "Týr se vzdává Jeruzalémskému království a Benátčanům"
+      sv: "Tyros kapitulerar för Kungariket Jerusalem och venetianerna"
     place: a160272
     sources:
       - "Fulcher of Chartres, History of the Expedition to Jerusalem, book 3"
@@ -2972,6 +3127,7 @@ events:
       it: "Zengi prende Edessa, capitale del primo stato crociato"
       nl: "Zengi neemt Edessa in, de hoofdstad van de eerste kruisvaardersstaat"
       cs: "Zengí dobývá Edessu, hlavní město prvního křižáckého státu"
+      sv: "Zengi intar Edessa, den första korsfararstatens huvudstad"
     site: "658457"
     sources:
       - "William of Tyre, Chronicle 16.4-5"
@@ -2990,6 +3146,7 @@ events:
       it: "La Seconda Crociata fallisce davanti a Damasco"
       nl: "De Tweede Kruistocht mislukt voor Damascus"
       cs: "Druhá křížová výprava selhává před Damaškem"
+      sv: "Det andra korståget misslyckas inför Damaskus"
     place: a69c1d4
     sources:
       - "William of Tyre, Chronicle 17.2-7"
@@ -3008,6 +3165,7 @@ events:
       it: "La Chiesa del Santo Sepolcro ricostruita è consacrata"
       nl: "De herbouwde Heilig Grafkerk wordt ingewijd"
       cs: "Přestavěný chrám Božího hrobu je vysvěcen"
+      sv: "Den heliga gravens kyrka, nu ombyggd, invigs"
     place: a631d35
     sources:
       - "D. Pringle, The Churches of the Crusader Kingdom of Jerusalem, vol. 3 (2007) (15 July 1149)"
@@ -3025,6 +3183,7 @@ events:
       it: "Baldovino III prende Ascalona, l’ultima fortezza fatimide sulla costa della Palestina"
       nl: "Boudewijn III neemt Askelon in, de laatste Fatimidische vesting aan de kust van Palestina"
       cs: "Balduin III. dobývá Aškelon, poslední fátimidskou pevnost na pobřeží Palestiny"
+      sv: "Balduin III intar Askalon, den sista fatimidiska fästningen på Palestinas kust"
     place: ac87d4c
     sources:
       - "William of Tyre, Chronicle 17.21-30"
@@ -3043,6 +3202,7 @@ events:
       it: "Saladino pone fine al califfato fatimide in Egitto"
       nl: "Saladin maakt een einde aan het Fatimidische kalifaat in Egypte"
       cs: "Saladin ukončuje fátimský chalífát v Egyptě"
+      sv: "Saladin gör slut på fatimidkalifatet i Egypten"
     place: af301ca
     sources:
       - "Ibn al-Athir, The Complete History, year 567 AH"
@@ -3062,6 +3222,7 @@ events:
       it: "Maimonide completa la Mishneh Torah in Egitto"
       nl: "Maimonides voltooit de Misjne Thora in Egypte"
       cs: "Maimonides dokončuje v Egyptě Mišne Tora"
+      sv: "Maimonides slutför Mishne Tora i Egypten"
     place: af301ca
     sources:
       - "I. Twersky, Introduction to the Code of Maimonides (Mishneh Torah) (1980)"
@@ -3082,6 +3243,7 @@ events:
       it: "Saladino sconfigge l’esercito del Regno di Gerusalemme a Hattin"
       nl: "Saladin verslaat het leger van het Koninkrijk Jeruzalem bij Hattin"
       cs: "Saladin poráží vojsko Jeruzalémského království u Hattínu"
+      sv: "Saladin besegrar Kungariket Jerusalems här vid Hattin"
     # The field: Horns of Hattin, twin-peaked hill west of Tiberias, Lower Galilee (firm).
     battlefield: { lon: 35.46, lat: 32.798, source: "https://www.wikidata.org/wiki/Q233568" }
     sources:
@@ -3102,6 +3264,7 @@ events:
       it: "Gerusalemme si arrende a Saladino"
       nl: "Jeruzalem geeft zich over aan Saladin"
       cs: "Jeruzalém se vzdává Saladinovi"
+      sv: "Jerusalem kapitulerar för Saladin"
     place: a15257a
     sources:
       - "Imad al-Din al-Isfahani, The Conquest of Jerusalem (al-Fath al-qussi)"
@@ -3120,6 +3283,7 @@ events:
       it: "Riccardo I d’Inghilterra prende Cipro nel suo viaggio verso la Terra Santa"
       nl: "Richard I van Engeland neemt Cyprus in op weg naar het Heilige Land"
       cs: "Richard I. Anglický dobývá Kypr na cestě do Svaté země"
+      sv: "Rikard I av England intar Cypern på väg till det heliga landet"
     place: a2e7601
     sources:
       - "Itinerarium Peregrinorum et Gesta Regis Ricardi, book 2"
@@ -3137,6 +3301,7 @@ events:
       it: "La Terza Crociata riprende Acri dopo un assedio di due anni"
       nl: "De Derde Kruistocht herovert Akko na een belegering van twee jaar"
       cs: "Třetí křížová výprava znovu dobývá Akko po dvouletém obléhání"
+      sv: "Det tredje korståget återtar Akko efter en två år lång belägring"
     place: abc2af0
     sources:
       - "Itinerarium Peregrinorum et Gesta Regis Ricardi, book 3"
@@ -3157,6 +3322,7 @@ events:
       it: "Riccardo I e Saladino stipulano una tregua di tre anni (il Trattato di Giaffa); i pellegrini possono visitare Gerusalemme"
       nl: "Richard I en Saladin sluiten een bestand van drie jaar (het Verdrag van Jaffa); pelgrims mogen Jeruzalem bezoeken"
       cs: "Richard I. a Saladin uzavírají tříleté příměří (Jaffská smlouva); poutníci smějí navštívit Jeruzalém"
+      sv: "Rikard I och Saladin sluter ett treårigt vapenstillestånd (fördraget i Jaffa); pilgrimer får besöka Jerusalem"
     place: ae023a9
     sources:
       - "Baha al-Din Ibn Shaddad, The Rare and Excellent History of Saladin (tr. D. S. Richards, 2001)"
@@ -3177,6 +3343,7 @@ events:
       it: "La Quarta Crociata prende e saccheggia Costantinopoli"
       nl: "De Vierde Kruistocht neemt Constantinopel in en plundert het"
       cs: "Čtvrtá křížová výprava dobývá a plení Konstantinopol"
+      sv: "Det fjärde korståget intar och plundrar Konstantinopel"
     site: "Q16869"
     sources:
       - "Niketas Choniates, History (O City of Byzantium, tr. H. J. Magoulias, 1984)"
@@ -3195,6 +3362,7 @@ events:
       it: "Con un trattato con al-Kamil, Federico II recupera Gerusalemme senza combattere"
       nl: "Bij verdrag met al-Kamil herwint Frederik II Jeruzalem zonder slag of stoot"
       cs: "Smlouvou s al-Kámilem získává Fridrich II. Jeruzalém zpět bez bitvy"
+      sv: "Genom ett fördrag med al-Kamil återvinner Fredrik II Jerusalem utan strid"
     place: a15257a
     sources:
       - "Roger of Wendover, Flowers of History, s.a. 1229 (Frederick's letter)"
@@ -3213,6 +3381,7 @@ events:
       it: "Le truppe corasmie prendono e saccheggiano Gerusalemme"
       nl: "Chorasmische troepen nemen Jeruzalem in en plunderen het"
       cs: "Chórezmské oddíly dobývají a plení Jeruzalém"
+      sv: "Khwarezmiska trupper intar och plundrar Jerusalem"
     place: a15257a
     sources:
       - "Matthew Paris, Chronica Majora, s.a. 1244"
@@ -3230,6 +3399,7 @@ events:
       it: "I Mamelucchi prendono il potere in Egitto"
       nl: "De Mamelukken nemen de macht over in Egypte"
       cs: "Mamlúkové přebírají moc v Egyptě"
+      sv: "Mamlukerna tar makten i Egypten"
     place: af301ca
     sources:
       - "Jean de Joinville, Life of Saint Louis"
@@ -3249,6 +3419,7 @@ events:
       it: "I Mongoli di Hülegü prendono Baghdad; il califfato abbaside finisce"
       nl: "De Mongolen onder Hülegü nemen Bagdad in; het Abbasidische kalifaat eindigt"
       cs: "Mongolové pod Hülegüem dobývají Bagdád; abbásovský chalífát končí"
+      sv: "Mongolerna under Hülegü intar Bagdad; abbasidkalifatet upphör"
     site: "893952"
     sources:
       - "Rashid al-Din, Compendium of Chronicles (Jami' al-tawarikh), the reign of Hülegü"
@@ -3268,6 +3439,7 @@ events:
       it: "I Mamelucchi sconfiggono i Mongoli ad Ain Jalut (la sorgente di Carod)"
       nl: "De Mamelukken verslaan de Mongolen bij Ain Jalut (de bron van Charod)"
       cs: "Mamlúkové porážejí Mongoly u Ajn Džalútu (pramen Charod)"
+      sv: "Mamlukerna besegrar mongolerna vid Ajin Jalut (Harods källa)"
     place: ae3cace
     sources:
       - "al-Maqrizi, Kitab al-suluk, year 658 AH"
@@ -3286,6 +3458,7 @@ events:
       it: "L’esercito di Nicea di Michele VIII Paleologo riprende Costantinopoli"
       nl: "Het leger van Nicea onder Michaël VIII Palaiologos herovert Constantinopel"
       cs: "Nikajské vojsko Michaela VIII. Palaiologa znovu dobývá Konstantinopol"
+      sv: "Den nikeanska hären under Mikael VIII Palaiologos återtar Konstantinopel"
     site: "Q16869"
     sources:
       - "George Akropolites, The History (tr. R. Macrides, 2007), the recovery of 1261"
@@ -3303,6 +3476,7 @@ events:
       it: "Baibars prende Cesarea e la rade al suolo"
       nl: "Baibars neemt Caesarea in en maakt het met de grond gelijk"
       cs: "Bajbars dobývá Cesareu a rozboří ji"
+      sv: "Baybars intar Caesarea och jämnar det med marken"
     place: a58735e
     sources:
       - "Ibn Abd al-Zahir, Life of Baybars (al-Rawd al-zahir)"
@@ -3321,6 +3495,7 @@ events:
       it: "Nahmanide arriva a Gerusalemme e restaura una sinagoga"
       nl: "Nachmanides komt aan in Jeruzalem en herstelt een synagoge"
       cs: "Nachmanides přichází do Jeruzaléma a obnovuje synagogu"
+      sv: "Nachmanides anländer till Jerusalem och återställer en synagoga"
     place: a15257a
     sources:
       - "Nahmanides, Letter to his son Nahman from Jerusalem"
@@ -3338,6 +3513,7 @@ events:
       it: "Baibars prende Antiochia"
       nl: "Baibars neemt Antiochië in"
       cs: "Bajbars dobývá Antiochii"
+      sv: "Baybars intar Antiochia"
     place: ae41ab4
     sources:
       - "Ibn Abd al-Zahir, Life of Baybars (al-Rawd al-zahir), with Baybars' letter to Bohemond VI"
@@ -3356,6 +3532,7 @@ events:
       it: "I Mamelucchi prendono Acri, l’ultima grande roccaforte crociata in Terra Santa"
       nl: "De Mamelukken nemen Akko in, de laatste grote kruisvaardersvesting in het Heilige Land"
       cs: "Mamlúkové dobývají Akko, poslední velkou křižáckou pevnost ve Svaté zemi"
+      sv: "Mamlukerna intar Akko, den sista stora korsfararfästningen i det heliga landet"
     place: abc2af0
     sources:
       - "The Templar of Tyre, Gestes des Chiprois, part 3"
@@ -3379,6 +3556,7 @@ events:
       it: "Il Cimitero reale di Ur: Puabi e altri sovrani sono sepolti con il loro seguito"
       nl: "De koninklijke begraafplaats van Ur: Puabi en andere heersers worden met hun gevolg begraven"
       cs: "Královské hřbitovy v Uru: Puabi a další vládci jsou pohřbeni se svým doprovodem"
+      sv: "Urs kungagravplats: Puabi och andra härskare begravs med sitt följe"
     place: a6cf75c
     sources:
       - "C. L. Woolley, Ur Excavations II: The Royal Cemetery (1934)"
@@ -3397,6 +3575,7 @@ events:
       it: "Eannatum di Lagash sconfigge Umma ed erige la Stele degli Avvoltoi"
       nl: "Eannatum van Lagash verslaat Umma en richt de Gierenstèle op"
       cs: "Eannatum z Lagaše poráží Ummu a staví Supí stélu"
+      sv: "Eannatum av Lagash besegrar Umma och reser Gamstelen"
     site: "959120263"
     sources:
       - "The Stele of the Vultures (Louvre AO 50, AO 16109 and other fragments; RIME 1.9.3.1)"
@@ -3416,6 +3595,7 @@ events:
       it: "Uruinimgina di Lagash proclama le sue riforme"
       nl: "Uruinimgina van Lagash vaardigt zijn hervormingen uit"
       cs: "Urukagina z Lagaše vyhlašuje své reformy"
+      sv: "Uruinimgina av Lagash utropar sina reformer"
     site: "959120263"
     sources:
       - "The reform text of Uruinimgina (RIME 1.9.9.1)"
@@ -3435,6 +3615,7 @@ events:
       it: "Naram-Sin di Accad diventa re; più tardi si fa chiamare dio"
       nl: "Naram-Sin van Akkad wordt koning; later laat hij zich god noemen"
       cs: "Naram-Sín Akkadský se stává králem; později se nechává nazývat bohem"
+      sv: "Naram-Sin av Akkad blir kung; senare låter han kalla sig gud"
     sources:
       - "The Bassetki statue inscription (RIME 2.1.4.10: the people of Akkade asked for him as god of their city)"
       - "CDLI Wiki, 'Rulers of Mesopotamia' (middle chronology: Naram-Sin 2254-2218 BC)"
@@ -3452,6 +3633,7 @@ events:
       it: "La dinastia di Accad finisce"
       nl: "De dynastie van Akkad eindigt"
       cs: "Akkadská dynastie končí"
+      sv: "Akkads dynasti upphör"
     sources:
       - "Sumerian King List (ETCSL 2.1.1: 'Then Agade was defeated and the kingship was taken to Unug')"
       - "CDLI Wiki, 'Rulers of Mesopotamia' (middle chronology)"
@@ -3470,6 +3652,7 @@ events:
       it: "Le Leggi di Ur-Nammu, la più antica raccolta di leggi conosciuta"
       nl: "De wetten van Ur-Nammu, de oudst bekende wetscollectie"
       cs: "Zákony Ur-Nammua, nejstarší známá sbírka zákonů"
+      sv: "Ur-Nammus lagar, den äldsta kända lagsamlingen"
     sources:
       - "Laws of Ur-Namma (RIME 3/2.1.1.20)"
       - "M. T. Roth, Law Collections from Mesopotamia and Asia Minor (2nd ed., 1997)"
@@ -3487,6 +3670,7 @@ events:
       it: "Ur-Nammu costruisce la ziggurat di Ur"
       nl: "Ur-Nammu bouwt de ziggoerat van Ur"
       cs: "Ur-Nammu staví zikkurat v Uru"
+      sv: "Ur-Nammu bygger Urs ziggurat"
     place: a6cf75c
     sources:
       - "C. L. Woolley, Ur Excavations V: The Ziggurat and its Surroundings (1939)"
@@ -3506,6 +3690,7 @@ events:
       it: "Mercanti assiri commerciano a Kanesh in Anatolia"
       nl: "Assyrische kooplieden drijven handel te Kanesh in Anatolië"
       cs: "Asyrští obchodníci obchodují v Kaneši v Anatolii"
+      sv: "Assyriska köpmän bedriver handel i Kanesh i Anatolien"
     site: "58129442"
     sources:
       - "G. Barjamovic, T. Hertel, M. T. Larsen, Ups and Downs at Kanesh (2012)"
@@ -3524,6 +3709,7 @@ events:
       it: "Sumu-abum fonda la Prima dinastia di Babilonia"
       nl: "Sumu-abum sticht de Eerste Dynastie van Babylon"
       cs: "Sumu-abum zakládá První babylónskou dynastii"
+      sv: "Sumu-abum grundar Babylons första dynasti"
     place: a217d18
     sources:
       - "Encyclopaedia Britannica, 'Babylon' (kingdom founded 1894 BC by Sumuabum)"
@@ -3542,6 +3728,7 @@ events:
       it: "Shamshi-Adad I prende Assur e costruisce un regno nell’Alta Mesopotamia"
       nl: "Shamshi-Adad I neemt Assur in en bouwt een koninkrijk in Boven-Mesopotamië"
       cs: "Šamši-Adad I. dobývá Aššur a buduje království v Horní Mezopotámii"
+      sv: "Shamshi-Adad I intar Assur och bygger upp ett rike i Övre Mesopotamien"
     place: a874951
     sources:
       - "Assyrian King List § 39 (takes Ekallatum, three years later Assur; reigns 33 years)"
@@ -3560,6 +3747,7 @@ events:
       it: "Hammurabi conquista Larsa e sconfigge Rim-Sin"
       nl: "Hammurabi verovert Larsa en verslaat Rim-Sin"
       cs: "Chammurapi dobývá Larsu a poráží Rim-Sína"
+      sv: "Hammurabi erövrar Larsa och besegrar Rim-Sin"
     site: "912897"
     sources:
       - "Year name of Hammurabi 31 ('destroyed the troops of Emutbal and subjugated its king Rim-Sin')"
@@ -3578,6 +3766,7 @@ events:
       it: "Hammurabi fa incidere le sue leggi su una stele"
       nl: "Hammurabi laat zijn wetten op een stèle beitelen"
       cs: "Chammurapi nechává své zákony vytesat na stélu"
+      sv: "Hammurabi låter inrista sina lagar på en stele"
     sources:
       - "The Code of Hammurabi (Louvre, Sb 8)"
       - "M. T. Roth, Law Collections from Mesopotamia and Asia Minor (2nd ed., 1997)"
@@ -3596,6 +3785,7 @@ events:
       it: "Hattusili I fa di Hattusa la capitale del regno ittita"
       nl: "Hattusili I maakt Hattusa tot hoofdstad van het Hettitische koninkrijk"
       cs: "Chattušili I. činí z Chattuši hlavní město chetitského království"
+      sv: "Hattusili I gör Hattusa till huvudstad i det hettitiska riket"
     site: "283602441"
     sources:
       - "T. Bryce, The Kingdom of the Hittites (new ed., 2005), ch. 4"
@@ -3613,6 +3803,7 @@ events:
       it: "Tutmosi III attraversa l’Eufrate contro Mitanni"
       nl: "Thoetmosis III steekt de Eufraat over tegen Mitanni"
       cs: "Thutmose III. překračuje Eufrat proti Mitanni"
+      sv: "Thutmosis III går över Eufrat mot Mitanni"
     sources:
       - "Annals of Thutmose III at Karnak, eighth campaign, year 33 (Breasted, Ancient Records of Egypt II, §§476 ff.)"
       - "Encyclopaedia Britannica, 'Thutmose III' (reigned 1479-1425 BC)"
@@ -3630,6 +3821,7 @@ events:
       it: "Assur-uballit I diventa re: l’Assiria sale a grande potenza"
       nl: "Assur-uballit I wordt koning: Assyrië komt op als grote mogendheid"
       cs: "Aššur-uballit I. se stává králem: Asýrie vzrůstá ve velkou mocnost"
+      sv: "Assur-uballit I blir kung: Assyrien stiger fram som stormakt"
     place: a874951
     sources:
       - "Amarna letters EA 15-16 (Ashur-uballit to the king of Egypt)"
@@ -3649,6 +3841,7 @@ events:
       it: "Suppiluliuma I saccheggia Washshukanni, la capitale di Mitanni"
       nl: "Suppiluliuma I plundert Washshukanni, de hoofdstad van Mitanni"
       cs: "Šuppiluliuma I. plení Waššukanni, hlavní město Mitanni"
+      sv: "Suppiluliuma I plundrar Washshukanni, Mitannis huvudstad"
     sources:
       - "Treaty of Suppiluliuma I with Shattiwaza (CTH 51)"
       - "T. Bryce, The Kingdom of the Hittites (new ed., 2005), ch. 7"
@@ -3669,6 +3862,7 @@ events:
       it: "Suppiluliuma I prende Carchemis"
       nl: "Suppiluliuma I neemt Karkemis in"
       cs: "Šuppiluliuma I. dobývá Karkemíš"
+      sv: "Suppiluliuma I intar Karkemish"
     place: af6c730
     sources:
       - "The Deeds of Suppiluliuma (CTH 40)"
@@ -3687,6 +3881,7 @@ events:
       it: "Hattusa è abbandonata e incendiata: fine dell’impero ittita"
       nl: "Hattusa wordt verlaten en verbrand: het einde van het Hettitische rijk"
       cs: "Chattuša je opuštěna a vypálena: konec chetitské říše"
+      sv: "Hattusa överges och bränns: slutet för det hettitiska riket"
     site: "283602441"
     sources:
       - "T. Bryce, The Kingdom of the Hittites (new ed., 2005), ch. 13"
@@ -3705,6 +3900,7 @@ events:
       it: "Nabucodonosor I, che riportò la statua di Marduk dall’Elam, diventa re di Babilonia"
       nl: "Nebukadnessar I, die het beeld van Marduk uit Elam terugbracht, wordt koning van Babylon"
       cs: "Nebukadnesar I., který přivezl Mardukovu sochu zpět z Élamu, se stává králem Babylónu"
+      sv: "Nebukadnessar I, som förde Marduks staty tillbaka från Elam, blir kung av Babylon"
     place: a217d18
     sources:
       - "CDLI Wiki, 'Rulers of Mesopotamia' (Nebuchadnezzar I 1126-1105 BC)"
@@ -3723,6 +3919,7 @@ events:
       it: "Tiglat-Pilèser I, che condusse l’esercito assiro fino al Mediterraneo, diventa re"
       nl: "Tiglat-Pileser I, die het Assyrische leger naar de Middellandse Zee voerde, wordt koning"
       cs: "Tiglatpilesar I., který vedl asyrské vojsko až ke Středozemnímu moři, se stává králem"
+      sv: "Tiglat-Pileser I, som förde Assyriens här till Medelhavet, blir kung"
     sources:
       - "Inscriptions of Tiglath-pileser I (RIMA 2 A.0.87.3, line 16: in boats of the people of Arvad, a nahiru killed at sea)"
       - "CDLI Wiki, 'Rulers of Mesopotamia' (Tiglath-pileser I 1114-1076 BC)"
@@ -3740,6 +3937,7 @@ events:
       it: "Adad-nirari II diventa re d’Assiria: inizia il periodo neoassiro"
       nl: "Adad-nirari II wordt koning van Assyrië: het Neo-Assyrische tijdperk begint"
       cs: "Adad-nárárí II. se stává králem Asýrie: začíná novoasyrské období"
+      sv: "Adad-nirari II blir kung av Assyrien: den nyassyriska perioden börjar"
     sources:
       - "A. K. Grayson, RIMA 2 (1991), Adad-nirari II (911-891 BC)"
       - "Assyrian Eponym List"
@@ -3758,6 +3956,7 @@ events:
       it: "Unas, nella cui piramide furono incisi per la prima volta i Testi delle Piramidi, diventa re"
       nl: "Oenas, in wiens piramide de Piramideteksten voor het eerst werden uitgehouwen, wordt koning"
       cs: "Venis, v jehož pyramidě byly poprvé vytesány Texty pyramid, se stává králem"
+      sv: "Unas, i vars pyramid pyramidtexterna först ristades, blir kung"
     sources:
       - "J. P. Allen, The Ancient Egyptian Pyramid Texts (2005)"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Unas 2375-2345 BC)"
@@ -3775,6 +3974,7 @@ events:
       it: "Il Regno Antico finisce: l’Egitto si divide fra sovrani rivali"
       nl: "Het Oude Rijk eindigt: Egypte valt uiteen onder rivaliserende heersers"
       cs: "Stará říše končí: Egypt se rozpadá mezi soupeřící vládce"
+      sv: "Gamla riket upphör: Egypten splittras mellan rivaliserande härskare"
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), S. Seidlmayer, 'The First Intermediate Period'; chronology (First Intermediate Period 2160-2055 BC)"
   - id: amenemhat-i
@@ -3791,6 +3991,7 @@ events:
       it: "Amenemhat I fonda la Dodicesima dinastia"
       nl: "Amenemhat I sticht de Twaalfde Dynastie"
       cs: "Amenemhat I. zakládá Dvanáctou dynastii"
+      sv: "Amenemhat I grundar tolfte dynastin"
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Amenemhat I 1985-1956 BC)"
   # The scene is dated to year 6 of Senusret II (1877 + 5 in Shaw).
@@ -3808,6 +4009,7 @@ events:
       it: "La tomba di Khnumhotep II a Beni Hasan registra l’arrivo di 37 asiatici guidati da Abisha"
       nl: "Het graf van Chnoemhotep II te Beni Hasan vermeldt de komst van 37 Aziaten onder leiding van Abisja"
       cs: "Hrob Chnumhotepa II. v Beni Hasan zaznamenává příchod 37 Asiatů vedených Abišajem"
+      sv: "Khnumhoteps II grav i Beni Hasan upptecknar ankomsten av 37 asiater under ledning av Abisha"
     site: "112509596"
     sources:
       - "P. E. Newberry, Beni Hasan I (1893), pls. 28, 30-31 (dated year 6 of Senusret II)"
@@ -3828,6 +4030,7 @@ events:
       it: "I testi egizi di esecrazione nominano Gerusalemme (Rushalimum)"
       nl: "Egyptische vervloekingsteksten noemen Jeruzalem (Rushalimum)"
       cs: "Egyptské klatební texty jmenují Jeruzalém (Rušalimum)"
+      sv: "Egyptiska förbannelsetexter nämner Jerusalem (Rushalimum)"
     place: a15257a
     sources:
       - "K. Sethe, Die Ächtung feindlicher Fürsten (1926)"
@@ -3846,6 +4049,7 @@ events:
       it: "Gli Hyksos prendono il potere nel Basso Egitto e governano da Avaris"
       nl: "De Hyksos nemen de macht over in Neder-Egypte en regeren vanuit Avaris"
       cs: "Hyksósové přebírají moc v Dolním Egyptě a vládnou z Avaridy"
+      sv: "Hyksos tar makten i Nedre Egypten och regerar från Avaris"
     sources:
       - "Manetho, in Josephus, Against Apion 1.75-90"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), J. Bourriau, 'The Second Intermediate Period'; chronology (15th Dynasty 1650-1550 BC)"
@@ -3864,6 +4068,7 @@ events:
       it: "Hatshepsut assume i titoli di re"
       nl: "Hatsjepsoet neemt de titels van koning aan"
       cs: "Hatšepsut přijímá královské tituly"
+      sv: "Hatshepsut tar kungatitlar"
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Hatshepsut 1473-1458 BC)"
   - id: amenhotep-iii
@@ -3880,6 +4085,7 @@ events:
       it: "Amenofi III diventa re d’Egitto"
       nl: "Amenhotep III wordt koning van Egypte"
       cs: "Amenhotep III. se stává králem Egypta"
+      sv: "Amenhotep III blir kung av Egypten"
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Amenhotep III 1390-1352 BC)"
   # The Restoration Stela is dated year 1 or 4 (damaged), so the title does not put
@@ -3898,6 +4104,7 @@ events:
       it: "Tutankhamon diventa re; sotto di lui sono restaurati gli antichi dèi"
       nl: "Toetanchamon wordt koning; onder hem worden de oude goden hersteld"
       cs: "Tutanchamon se stává králem; za něho jsou obnoveni staří bohové"
+      sv: "Tutankhamon blir kung; under honom återupprättas de gamla gudarna"
     sources:
       - "The Restoration Stela of Tutankhamun (Egyptian Museum, Cairo, CG 34183)"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Tutankhamun 1336-1327 BC)"
@@ -3915,6 +4122,7 @@ events:
       it: "Seti I compie una campagna in Canaan ed erige una stele della vittoria a Beth-Shean"
       nl: "Seti I voert een veldtocht in Kanaän en richt een overwinningsstèle op te Beth-Sean"
       cs: "Sethos I. vede tažení v Kanaánu a staví vítěznou stélu v Bét-šanu"
+      sv: "Seti I för krig i Kanaan och reser en segerstele i Bet-Shean"
     place: a2a8df0
     sources:
       - "The first Beth-shan stele of Seti I, year 1 (Rockefeller Archaeological Museum, Jerusalem, S.884)"
@@ -3933,6 +4141,7 @@ events:
       it: "Ramses II diventa re d’Egitto"
       nl: "Ramses II wordt koning van Egypte"
       cs: "Ramesse II. se stává králem Egypta"
+      sv: "Ramses II blir kung av Egypten"
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Ramesses II 1279-1213 BC)"
   - id: tomb-workers-strike
@@ -3949,6 +4158,7 @@ events:
       it: "Gli operai delle tombe reali a Tebe scioperano per le razioni non pagate"
       nl: "De arbeiders van de koninklijke graven te Thebe staken om onbetaalde rantsoenen"
       cs: "Dělníci královských hrobek v Thébách stávkují kvůli nevyplaceným dávkám"
+      sv: "Arbetarna i kungagravarna i Thebe strejkar på grund av obetalda ransoner"
     place: a9674fc
     sources:
       - "The Turin Strike Papyrus (Turin, Cat. 1880), year 29 of Ramesses III"
@@ -3968,6 +4178,7 @@ events:
       it: "Sheshonq I (Sisak) fonda la Ventiduesima dinastia"
       nl: "Sjosjenq I (Sisak) sticht de Tweeëntwintigste Dynastie"
       cs: "Šošenk I. (Šíšak) zakládá Dvacátou druhou dynastii"
+      sv: "Shoshenq I (Shishak) grundar tjugoandra dynastin"
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), J. Taylor, 'The Third Intermediate Period'; chronology (Shoshenq I 945-924 BC)"
   - id: piye-conquest
@@ -3984,6 +4195,7 @@ events:
       it: "Piye di Kush conquista l’Egitto e prende Menfi"
       nl: "Piye van Kush verovert Egypte en neemt Memfis in"
       cs: "Pije z Kúše dobývá Egypt a obsazuje Memfis"
+      sv: "Piye av Kush erövrar Egypten och intar Memfis"
     place: a8ec269
     sources:
       - "The victory stela of Piye, dated year 21, recording the campaign of year 20 (Egyptian Museum, Cairo, JE 48862)"
@@ -4004,6 +4216,7 @@ events:
       it: "Taharqa (Tiraka) diventa re d’Egitto e di Kush"
       nl: "Taharqa (Tirhaka) wordt koning van Egypte en Kush"
       cs: "Taharka (Tirhaka) se stává králem Egypta a Kúše"
+      sv: "Taharqa (Tirhaka) blir kung av Egypten och Kush"
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Taharqo 690-664 BC)"
   - id: psamtik-i
@@ -4020,6 +4233,7 @@ events:
       it: "Psammetico I fonda la Ventiseiesima dinastia (saitica)"
       nl: "Psammetichus I sticht de Zesentwintigste (Saïtische) Dynastie"
       cs: "Psammetichos I. zakládá Dvacátou šestou (sajskou) dynastii"
+      sv: "Psamtik I grundar tjugosjätte (saitiska) dynastin"
     sources:
       - "Herodotus 2.151-157"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Psamtek I 664-610 BC)"
@@ -4037,6 +4251,7 @@ events:
       it: "Necao II diventa re d’Egitto"
       nl: "Necho II wordt koning van Egypte"
       cs: "Necho II. se stává králem Egypta"
+      sv: "Neko II blir kung av Egypten"
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Nekau II 610-595 BC)"
   - id: babylon-egypt-clash
@@ -4053,6 +4268,7 @@ events:
       it: "Nabucodonosor e gli Egiziani combattono una sanguinosa battaglia al confine dell’Egitto"
       nl: "Nebukadnessar en de Egyptenaren leveren een bloedige slag aan de grens van Egypte"
       cs: "Nebukadnesar a Egypťané svádějí krvavou bitvu na hranici Egypta"
+      sv: "Nebukadnessar och egyptierna utkämpar ett blodigt slag vid Egyptens gräns"
     sources:
       - "Babylonian Chronicle, ABC 5 rev. 5'-7' (the fourth year of Nebuchadnezzar)"
   - id: apries-overthrown
@@ -4069,6 +4285,7 @@ events:
       it: "Amasi rovescia Apries (Cofra)"
       nl: "Amasis werpt Apries (Hofra) omver"
       cs: "Amasis svrhává Apriese (Chofru)"
+      sv: "Amasis störtar Apries (Hofra)"
     sources:
       - "Herodotus 2.161-169"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Apries 589-570 BC)"
@@ -4090,6 +4307,7 @@ events:
       it: "Ieu s’impadronisce del trono d’Israele a Izreel"
       nl: "Jehu grijpt de troon van Israël te Jizreël"
       cs: "Jehú se zmocňuje izraelského trůnu v Jizreelu"
+      sv: "Jehu griper tronen i Israel vid Jisreel"
     place: ae0bf4a
     ref: 2Kgs.9.21-2Kgs.9.24
     sources:
@@ -4111,6 +4329,7 @@ events:
       it: "La stele di un re aramaico a Dan nomina la casa di Davide"
       nl: "De stèle van een Arameese koning te Dan noemt het huis van David"
       cs: "Stéla aramejského krále v Danu jmenuje dům Davidův"
+      sv: "En arameisk kungs stele i Dan nämner Davids hus"
     place: a513646
     sources:
       - "A. Biran and J. Naveh, 'An Aramaic Stele Fragment from Tel Dan', Israel Exploration Journal 43 (1993); 'The Tel Dan Inscription: A New Fragment', IEJ 45 (1995)"
@@ -4128,6 +4347,7 @@ events:
       it: "Acaz di Giuda paga tributo a Tiglat-Pilèser III"
       nl: "Achaz van Juda betaalt schatting aan Tiglat-Pileser III"
       cs: "Achaz Judský platí tribut Tiglatpilesarovi III."
+      sv: "Achas av Juda betalar tribut till Tiglat-Pileser III"
     ref: 2Kgs.16.7-2Kgs.16.8
     sources:
       - "2 Kgs 16:7-8"
@@ -4146,6 +4366,7 @@ events:
       it: "Tiglat-Pilèser III prende Asor e la Galilea e ne deporta la popolazione in Assiria"
       nl: "Tiglat-Pileser III neemt Hazor en Galilea in en voert hun bevolking weg naar Assyrië"
       cs: "Tiglatpilesar III. dobývá Chacor a Galileu a odvádí jejich lid do Asýrie"
+      sv: "Tiglat-Pileser III intar Hasor och Galileen och för deras folk till Assyrien"
     place: a6f33c5
     ref: 2Kgs.15.29
     sources:
@@ -4165,6 +4386,7 @@ events:
       it: "Il tunnel di Ezechia porta le acque di Ghicon in città (l’iscrizione di Siloe)"
       nl: "De tunnel van Chizkia brengt het water van de Gihon de stad in (het Siloam-opschrift)"
       cs: "Chizkijášův tunel přivádí vody Gichónu do města (nápis ze Siloe)"
+      sv: "Hiskias tunnel leder Gihons vatten in i staden (Siloa-inskriften)"
     place: a2a303c
     ref: 2Chr.32.30
     sources:
@@ -4185,6 +4407,7 @@ events:
       it: "Geremia è chiamato a essere profeta"
       nl: "Jeremia wordt geroepen tot profeet"
       cs: "Jeremjáš je povolán za proroka"
+      sv: "Jeremia kallas till profet"
     ref: Jer.1.4-Jer.1.10
     sources:
       - "Jer 1:2 (the thirteenth year of Josiah); Thiele's chronology (Josiah 640-609 BC)"
@@ -4202,6 +4425,7 @@ events:
       it: "Il libro della legge è trovato nel Tempio; riforma di Giosia"
       nl: "Het wetboek wordt in de tempel gevonden; de hervorming van Josia"
       cs: "V chrámě je nalezena kniha zákona; Jošijášova reforma"
+      sv: "Lagboken återfinns i templet; Josias reform"
     place: a15257a
     ref: 2Kgs.22.8-2Kgs.22.11
     sources:
@@ -4220,6 +4444,7 @@ events:
       it: "Amuleti d’argento di Ketef Hinnom recano la benedizione sacerdotale, il più antico testo biblico conosciuto"
       nl: "Zilveren amuletten van Ketef Hinnom dragen de priesterlijke zegen, de oudst bekende tekst van de Bijbel"
       cs: "Stříbrné amulety z Ketef Hinnom nesou kněžské požehnání, nejstarší známý text Bible"
+      sv: "Silveramuletter från Ketef Hinnom bär den prästerliga välsignelsen, den äldsta kända bibeltexten"
     place: a15257a
     sources:
       - "Num 6:24-26"
@@ -4238,6 +4463,7 @@ events:
       it: "Ezechiele ha la sua prima visione presso il fiume Chebar"
       nl: "Ezechiël ziet zijn eerste visioen aan de rivier de Kebar"
       cs: "Ezechiel vidí své první vidění u řeky Kebar"
+      sv: "Hesekiel ser sin första syn vid floden Kebar"
     place: a3d2f0a
     ref: Ezek.1.1-Ezek.1.3
     sources:
@@ -4256,6 +4482,7 @@ events:
       it: "Nebuzaradan deporta in esilio altri 745 Giudei"
       nl: "Nebuzaradan voert nog 745 Judeeërs in ballingschap"
       cs: "Nebuzaradan odvádí do vyhnanství dalších 745 Judejců"
+      sv: "Nebusaradan för ytterligare 745 judéer i landsflykt"
     ref: Jer.52.30
     sources:
       - "Jer 52:30 (the twenty-third year of Nebuchadnezzar)"
@@ -4274,6 +4501,7 @@ events:
       it: "Sargon II diventa re d’Assiria"
       nl: "Sargon II wordt koning van Assyrië"
       cs: "Sargon II. se stává králem Asýrie"
+      sv: "Sargon II blir kung av Assyrien"
     sources:
       - "Babylonian Chronicle, ABC 1 i 31"
       - "Isa 20:1 (names Sargon)"
@@ -4291,6 +4519,7 @@ events:
       it: "Merodac-Baladan sale sul trono di Babilonia"
       nl: "Merodach-Baladan neemt de troon van Babylon in"
       cs: "Merodach-baladan se zmocňuje babylónského trůnu"
+      sv: "Merodak-Baladan tar Babylons tron"
     place: a217d18
     sources:
       - "Babylonian Chronicle, ABC 1 i 32"
@@ -4309,6 +4538,7 @@ events:
       it: "Sargon II sconfigge Hanunu di Gaza e gli Egiziani a Rafia"
       nl: "Sargon II verslaat Hanunu van Gaza en de Egyptenaren bij Rafia"
       cs: "Sargon II. poráží Hanuna z Gazy a Egypťany u Rafie"
+      sv: "Sargon II besegrar Hanunu av Gaza och egyptierna vid Rafia"
     # The field: Raphia (Tell Rafah), on the coast road at the southern edge of the Gaza Strip (approximate).
     battlefield: { lon: 34.243, lat: 31.291, source: "https://pleiades.stoa.org/places/688015" }
     sources:
@@ -4328,6 +4558,7 @@ events:
       it: "Sargon II annette Carchemis"
       nl: "Sargon II annexeert Karkemis"
       cs: "Sargon II. připojuje Karkemíš"
+      sv: "Sargon II annekterar Karkemish"
     place: af6c730
     sources:
       - "Khorsabad Annals of Sargon II, fifth regnal year (RINAP 2, Sargon II 1, lines 72-76)"
@@ -4346,6 +4577,7 @@ events:
       it: "Sargon II sconfigge Rusa di Urartu (Ararat)"
       nl: "Sargon II verslaat Rusa van Urartu (Ararat)"
       cs: "Sargon II. poráží Rusu z Urartu (Ararat)"
+      sv: "Sargon II besegrar Rusa av Urartu (Ararat)"
     sources:
       - "Sargon's Letter to Ashur, the eighth campaign (RINAP 2, Sargon II 65; TCL 3; line 430: in the eponymy of Ishtar-duri, 714 BC)"
       - "Eponym Chronicle for 714 BC"
@@ -4363,6 +4595,7 @@ events:
       it: "Sargon II cade in battaglia; Sennacherib diventa re"
       nl: "Sargon II sneuvelt in de strijd; Sanherib wordt koning"
       cs: "Sargon II. padá v bitvě; králem se stává Senacherib"
+      sv: "Sargon II stupar i strid; Sanherib blir kung"
     sources:
       - "Eponym Chronicle for 705 BC"
   - id: babylon-destroyed-689
@@ -4379,6 +4612,7 @@ events:
       it: "Sennacherib distrugge Babilonia"
       nl: "Sanherib verwoest Babylon"
       cs: "Senacherib ničí Babylón"
+      sv: "Sanherib förstör Babylon"
     place: a217d18
     sources:
       - "Bavian inscription of Sennacherib (RINAP 3, Sennacherib 223, lines 43-54)"
@@ -4399,6 +4633,7 @@ events:
       it: "Sennacherib è assassinato; Assaraddon diventa re"
       nl: "Sanherib wordt vermoord; Esarhaddon wordt koning"
       cs: "Senacherib je zavražděn; králem se stává Asarhadón"
+      sv: "Sanherib mördas; Esarhaddon blir kung"
     ref: 2Kgs.19.37
     sources:
       - "2 Kgs 19:37"
@@ -4417,6 +4652,7 @@ events:
       it: "Assurbanipal diventa re d’Assiria"
       nl: "Assurbanipal wordt koning van Assyrië"
       cs: "Aššurbanipal se stává králem Asýrie"
+      sv: "Assurbanipal blir kung av Assyrien"
     sources:
       - "Babylonian Chronicle, ABC 1 iv 30-33 (Esarhaddon dies on campaign in Arahsamnu)"
   - id: babylon-648
@@ -4433,6 +4669,7 @@ events:
       it: "Assurbanipal prende Babilonia dopo la rivolta del fratello Shamash-shum-ukin"
       nl: "Assurbanipal neemt Babylon in na de opstand van zijn broer Shamash-shum-ukin"
       cs: "Aššurbanipal dobývá Babylón po vzpouře svého bratra Šamaš-šum-ukína"
+      sv: "Assurbanipal intar Babylon efter sin bror Shamash-shum-ukins uppror"
     place: a217d18
     sources:
       - "Prism A of Ashurbanipal (RINAP 5, Ashurbanipal 11 iii 128-iv 109)"
@@ -4450,6 +4687,7 @@ events:
       it: "Assurbanipal saccheggia Susa"
       nl: "Assurbanipal plundert Susa"
       cs: "Aššurbanipal plení Susy"
+      sv: "Assurbanipal plundrar Susa"
     place: a033b84
     sources:
       - "Prism A of Ashurbanipal (RINAP 5, Ashurbanipal 11 v 126-vi 106)"
@@ -4467,6 +4705,7 @@ events:
       it: "I Medi prendono Assur"
       nl: "De Meden nemen Assur in"
       cs: "Médové dobývají Aššur"
+      sv: "Mederna intar Assur"
     place: a874951
     sources:
       - "Babylonian Chronicle, ABC 3 lines 24-30 (the twelfth year of Nabopolassar; line numbers as in C. J. Gadd, The Fall of Nineveh, 1923)"
@@ -4484,6 +4723,7 @@ events:
       it: "I Babilonesi e i Medi prendono Carran all’ultimo re assiro"
       nl: "De Babyloniërs en de Meden nemen Haran in op de laatste Assyrische koning"
       cs: "Babylóňané a Médové dobývají Cháran od posledního asyrského krále"
+      sv: "Babylonierna och mederna tar Harran från den siste assyriske kungen"
     place: a6d9af3
     sources:
       - "Babylonian Chronicle, ABC 3 lines 58-65 (the sixteenth year of Nabopolassar; line numbers as in C. J. Gadd, The Fall of Nineveh, 1923)"
@@ -4502,6 +4742,7 @@ events:
       it: "Nabucodonosor II diventa re di Babilonia"
       nl: "Nebukadnessar II wordt koning van Babylon"
       cs: "Nebukadnesar II. se stává králem Babylónu"
+      sv: "Nebukadnessar II blir kung av Babylon"
     place: a217d18
     sources:
       - "Babylonian Chronicle, ABC 5 obv. 10-11 (1 Ulul, 605 BC)"
@@ -4519,6 +4760,7 @@ events:
       it: "Nabucodonosor prende e distrugge Ascalona"
       nl: "Nebukadnessar neemt Askelon in en verwoest het"
       cs: "Nebukadnesar dobývá a ničí Aškelon"
+      sv: "Nebukadnessar intar och förstör Askalon"
     place: ac87d4c
     sources:
       - "Babylonian Chronicle, ABC 5 obv. 18-20 (Kislev of his first year)"
@@ -4539,6 +4781,7 @@ events:
       it: "Nabucodonosor costruisce la Porta di Ishtar a Babilonia"
       nl: "Nebukadnessar bouwt de Ishtarpoort van Babylon"
       cs: "Nebukadnesar buduje babylónskou Ištařinu bránu"
+      sv: "Nebukadnessar bygger Babylons Ishtarport"
     place: a217d18
     sources:
       - "R. Koldewey, Das Ischtar-Tor in Babylon (1918)"
@@ -4558,6 +4801,7 @@ events:
       it: "Un’eclissi solare ferma la battaglia fra i Medi e i Lidi"
       nl: "Een zonsverduistering stopt de slag tussen de Meden en de Lydiërs"
       cs: "Zatmění Slunce zastavuje bitvu Médů s Lýdy"
+      sv: "En solförmörkelse avbryter slaget mellan mederna och lydierna"
     sources:
       - "Herodotus 1.74"
       - "NASA Eclipse Web Site (F. Espenak): the total solar eclipse of -584 May 28 (= 28 May 585 BC)"
@@ -4575,6 +4819,7 @@ events:
       it: "Nabonedo diventa re di Babilonia"
       nl: "Nabonidus wordt koning van Babylon"
       cs: "Nabonid se stává králem Babylónu"
+      sv: "Nabonid blir kung av Babylon"
     place: a217d18
     sources:
       - "R. A. Parker and W. H. Dubberstein, Babylonian Chronology 626 B.C.-A.D. 75 (1956)"
@@ -4593,6 +4838,7 @@ events:
       it: "Ciro II diventa re di Anshan"
       nl: "Cyrus II wordt koning van Anshan"
       cs: "Kýros II. se stává králem Anšanu"
+      sv: "Kyros II blir kung av Anshan"
     site: "Q569107"
     sources:
       - "Herodotus 1.214 (Cyrus reigned twenty-nine years)"
@@ -4614,6 +4860,7 @@ events:
       it: "Ciro sconfigge Creso e prende Sardi"
       nl: "Cyrus verslaat Croesus en neemt Sardes in"
       cs: "Kýros poráží Kroisa a dobývá Sardy"
+      sv: "Kyros besegrar Kroisos och intar Sardes"
     place: aab4a5f
     sources:
       - "Herodotus 1.76-84"
@@ -4632,6 +4879,7 @@ events:
       it: "Ciro il Grande muore; Cambise diventa re"
       nl: "Cyrus de Grote sterft; Cambyses wordt koning"
       cs: "Kýros Veliký umírá; králem se stává Kambýsés"
+      sv: "Kyros den store dör; Kambyses blir kung"
     sources:
       - "Herodotus 1.214"
       - "R. A. Parker and W. H. Dubberstein, Babylonian Chronology 626 B.C.-A.D. 75 (1956)"
@@ -4649,6 +4897,7 @@ events:
       it: "Aggeo e Zaccaria esortano a ricostruire il Tempio; i lavori riprendono"
       nl: "Haggai en Zacharia dringen aan op de herbouw van de tempel; het werk wordt hervat"
       cs: "Ageus a Zacharjáš vybízejí k obnově chrámu; práce se obnovují"
+      sv: "Haggai och Sakarja manar till att templet byggs upp; arbetet återupptas"
     place: a15257a
     ref: Ezra.5.1-Ezra.5.2
     sources:
@@ -4667,6 +4916,7 @@ events:
       it: "Dario I fa incidere le sue imprese sulla roccia di Behistun"
       nl: "Darius I laat zijn daden uithouwen in de rotswand bij Behistun"
       cs: "Dareios I. nechává vytesat své činy do skály v Behistunu"
+      sv: "Dareios I låter rista sina gärningar på klippan i Behistun"
     site: "903002"
     sources:
       - "R. Schmitt, 'Bisotun iii. Darius's Inscriptions', Encyclopaedia Iranica"
@@ -4684,6 +4934,7 @@ events:
       it: "Dario I inizia la costruzione di Persepoli"
       nl: "Darius I begint met de bouw van Persepolis"
       cs: "Dareios I. začíná stavět Persepolis"
+      sv: "Dareios I börjar bygga Persepolis"
     site: "922695"
     sources:
       - "A. Sh. Shahbazi, 'Persepolis', Encyclopaedia Iranica"
@@ -4712,6 +4963,7 @@ events:
       it: "Gli Ioni, con l’aiuto di Atene ed Eretria, incendiano Sardi"
       nl: "De Ioniërs steken, met hulp van Athene en Eretria, Sardes in brand"
       cs: "Iónové s athénskou a eretrijskou pomocí vypalují Sardy"
+      sv: "Jonerna bränner Sardes med hjälp av Aten och Eretria"
     place: aab4a5f
     sources:
       - "Herodotus 5.99-102"
@@ -4731,6 +4983,7 @@ events:
       it: "I Persiani prendono Mileto: la rivolta ionica è soffocata"
       nl: "De Perzen nemen Milete in: de Ionische opstand wordt neergeslagen"
       cs: "Peršané dobývají Milét: iónské povstání je potlačeno"
+      sv: "Perserna intar Miletos: det joniska upproret slås ned"
     place: a55027d
     sources:
       - "Herodotus 6.6-21"
@@ -4749,6 +5002,7 @@ events:
       it: "Gli Ateniesi sconfiggono i Persiani a Maratona"
       nl: "De Atheners verslaan de Perzen bij Marathon"
       cs: "Athéňané porážejí Peršany u Marathónu"
+      sv: "Atenarna besegrar perserna vid Marathon"
     # The field: Plain of Marathon, northeastern Attica, by the Athenian burial mound (Soros) (firm).
     battlefield: { lon: 23.978, lat: 38.118, source: "https://www.wikidata.org/wiki/Q31900" }
     sources:
@@ -4768,6 +5022,7 @@ events:
       it: "Leonida, i suoi Spartani e i Tespiesi cadono alle Termopili"
       nl: "Leonidas, zijn Spartanen en de Thespiërs sneuvelen bij Thermopylae"
       cs: "Leonidás, jeho Sparťané a Thespijští padají u Thermopyl"
+      sv: "Leonidas, hans spartaner och thespierna faller vid Thermopyle"
     # The field: Pass of Thermopylae between Mount Kallidromo and the Malian Gulf, central Greece (firm).
     battlefield: { lon: 22.544, lat: 38.796, source: "https://pleiades.stoa.org/places/541140" }
     sources:
@@ -4787,6 +5042,7 @@ events:
       it: "Serse prende Atene e incendia l’Acropoli"
       nl: "Xerxes neemt Athene in en steekt de Akropolis in brand"
       cs: "Xerxés dobývá Atény a pálí Akropoli"
+      sv: "Xerxes intar Aten och bränner Akropolis"
     place: a1fe6e7
     sources:
       - "Herodotus 8.50-55 (the Acropolis taken and burned, 8.52-53)"
@@ -4806,6 +5062,7 @@ events:
       it: "La flotta greca sconfigge Serse a Salamina"
       nl: "De Griekse vloot verslaat Xerxes bij Salamis"
       cs: "Řecká flotila poráží Xerxa u Salamíny"
+      sv: "Den grekiska flottan besegrar Xerxes vid Salamis"
     # The field: Strait between Salamis island and the Attic mainland, west of Piraeus (firm).
     battlefield: { lon: 23.567, lat: 37.951, source: "https://www.wikidata.org/wiki/Q178850" }
     sources:
@@ -4829,6 +5086,7 @@ events:
       it: "I Giudei di Elefantina chiedono a Bagoa, governatore della Giudea, di ricostruire il loro tempio"
       nl: "De Joden van Elefantine dienen een verzoekschrift in bij Bagohi, de stadhouder van Judea, om hun tempel te herbouwen"
       cs: "Židé z Elefantiny prosí Bagoa, správce Judska, o obnovu svého chrámu"
+      sv: "Judarna på Elefantine vädjar till Bagohi, Judeens ståthållare, om att få bygga upp sitt tempel"
     sources:
       - "Elephantine papyri, TAD A4.7 (Cowley 30): 20 Marheshwan, year 17 of Darius II"
       - "Encyclopaedia Judaica, 'Bagohi' (Jewish Virtual Library) (governor of Judah; the Elephantine Jews ask his help to rebuild their temple)"
@@ -4847,6 +5105,7 @@ events:
       it: "L’Egitto si stacca dalla Persia sotto Amirteo"
       nl: "Egypte maakt zich los van Perzië onder Amyrtaeus"
       cs: "Egypt se odpoutává od Persie pod Amyrtaiem"
+      sv: "Egypten bryter sig loss från Persien under Amyrtaios"
     sources:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (28th Dynasty: Amyrtaios 404-399 BC)"
       - "Encyclopaedia Iranica, 'Amyrtaeus' (king of Egypt from 404; Elephantine still dated by Artaxerxes II in 401)"
@@ -4864,6 +5123,7 @@ events:
       it: "Artaserse II sconfigge il fratello Ciro il Giovane a Cunassa"
       nl: "Artaxerxes II verslaat zijn broer Cyrus de Jongere bij Cunaxa"
       cs: "Artaxerxés II. poráží svého bratra Kýra Mladšího u Kunaxy"
+      sv: "Artaxerxes II besegrar sin bror Kyros den yngre vid Kunaxa"
     sources:
       - "Xenophon, Anabasis 1.8-10"
       - "Plutarch, Artaxerxes 7-13"
@@ -4883,6 +5143,7 @@ events:
       it: "Artaserse III riconquista l’Egitto"
       nl: "Artaxerxes III herovert Egypte"
       cs: "Artaxerxés III. znovu dobývá Egypt"
+      sv: "Artaxerxes III återerövrar Egypten"
     sources:
       - "Diodorus 16.40-51"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), chronology (Second Persian Period 343-332 BC)"
@@ -4901,6 +5162,7 @@ events:
       it: "Filippo II di Macedonia sconfigge Atene e Tebe a Cheronea"
       nl: "Filips II van Macedonië verslaat Athene en Thebe bij Chaeronea"
       cs: "Filip II. Makedonský poráží Atény a Théby u Chairóneie"
+      sv: "Filip II av Makedonien besegrar Aten och Thebe vid Chaironeia"
     # The field: Chaeronea in western Boeotia, on the road from Thermopylae to Thebes (firm).
     battlefield: { lon: 22.841, lat: 38.494, source: "https://pleiades.stoa.org/places/540701" }
     sources:
@@ -4921,6 +5183,7 @@ events:
       it: "Filippo II è assassinato; Alessandro diventa re di Macedonia"
       nl: "Filips II wordt vermoord; Alexander wordt koning van Macedonië"
       cs: "Filip II. je zavražděn; makedonským králem se stává Alexandr"
+      sv: "Filip II mördas; Alexander blir kung av Makedonien"
     sources:
       - "Diodorus 16.91-95; 17.2"
       - "Arrian, Anabasis 1.1.1"
@@ -4939,6 +5202,7 @@ events:
       it: "Alessandro sconfigge i Persiani sul fiume Granico"
       nl: "Alexander verslaat de Perzen aan de rivier de Granicus"
       cs: "Alexandr poráží Peršany u řeky Granikos"
+      sv: "Alexander besegrar perserna vid floden Granikos"
     # The field: Lower Granicus (Biga Çayı) near Biga, northwestern Turkey (approximate).
     battlefield: { lon: 27.242, lat: 40.228, source: "https://www.wikidata.org/wiki/Q192938" }
     sources:
@@ -4958,6 +5222,7 @@ events:
       it: "Alessandro sconfigge Dario III a Isso"
       nl: "Alexander verslaat Darius III bij Issus"
       cs: "Alexandr poráží Dareia III. u Issu"
+      sv: "Alexander besegrar Dareios III vid Issos"
     # The field: Lower Payas river (ancient Pinarus), about 15 km south of Issus, Gulf of Iskenderun (approximate).
     battlefield: { lon: 36.192, lat: 36.754, source: "https://www.wikidata.org/wiki/Q6977866" }
     sources:
@@ -4977,6 +5242,7 @@ events:
       it: "Alessandro sconfigge Dario III a Gaugamela"
       nl: "Alexander verslaat Darius III bij Gaugamela"
       cs: "Alexandr poráží Dareia III. u Gaugamél"
+      sv: "Alexander besegrar Dareios III vid Gaugamela"
     # The field: the village of Gaugamela (Pleiades); the field itself is disputed between Tell Gomel and Karamleis, about 30 km apart in the same plain (approximate).
     battlefield: { lon: 43.494, lat: 36.573, source: "https://pleiades.stoa.org/places/874478" }
     sources:
@@ -4998,6 +5264,7 @@ events:
       it: "Alessandro incendia i palazzi di Persepoli"
       nl: "Alexander verbrandt de paleizen van Persepolis"
       cs: "Alexandr pálí paláce v Persepoli"
+      sv: "Alexander bränner palatsen i Persepolis"
     site: "922695"
     sources:
       - "Arrian, Anabasis 3.18.10-12"
@@ -5018,6 +5285,7 @@ events:
       it: "Besso uccide Dario III mentre Alessandro si avvicina"
       nl: "Bessus vermoordt Darius III terwijl Alexander nadert"
       cs: "Béssos zavraždí Dareia III., když se Alexandr blíží"
+      sv: "Bessos mördar Dareios III när Alexander närmar sig"
     sources:
       - "Arrian, Anabasis 3.21-22"
       - "Livius.org, 'Darius III Codomannus' (330, July: death of Darius III; Bessus king)"
@@ -5035,6 +5303,7 @@ events:
       it: "Alessandro sconfigge Poro sul fiume Idaspe"
       nl: "Alexander verslaat Porus aan de rivier de Hydaspes"
       cs: "Alexandr poráží Póra u řeky Hydaspés"
+      sv: "Alexander besegrar Poros vid floden Hydaspes"
     sources:
       - "Arrian, Anabasis 5.8-19"
       - "Livius.org, 'Hydaspes (326 BCE)' (May 326)"
@@ -5053,6 +5322,7 @@ events:
       it: "Tolomeo e Seleuco sconfiggono Demetrio a Gaza"
       nl: "Ptolemaeus en Seleucus verslaan Demetrius bij Gaza"
       cs: "Ptolemaios a Seleukos porážejí Démétria u Gazy"
+      sv: "Ptolemaios och Seleukos besegrar Demetrios vid Gaza"
     place: aa8edd2
     sources:
       - "Diodorus 19.80-85"
@@ -5071,6 +5341,7 @@ events:
       it: "I re alleati sconfiggono Antigono a Ipso; l’impero di Alessandro si frantuma definitivamente"
       nl: "De verbonden koningen verslaan Antigonus bij Ipsus; het rijk van Alexander valt voorgoed uiteen"
       cs: "Spojenečtí králové porážejí Antigona u Ipsu; Alexandrova říše se definitivně rozpadá"
+      sv: "De allierade kungarna besegrar Antigonos vid Ipsos; Alexanders välde splittras för gott"
     # The field: Ipsus in Phrygia, northeast of modern Afyonkarahisar (approximate).
     battlefield: { lon: 30.549, lat: 38.856, source: "https://pleiades.stoa.org/places/609415" }
     sources:
@@ -5092,6 +5363,7 @@ events:
       it: "I Galati (Celti) passano in Asia Minore"
       nl: "De Galaten (Kelten) trekken Klein-Azië binnen"
       cs: "Galaťané (Keltové) přecházejí do Malé Asie"
+      sv: "Galaterna (kelterna) går över till Mindre Asien"
     sources:
       - "Livy 38.16 (Leonnorius and Lutarius)"
       - "Livius.org, 'Ancyra (Ankara)' (the Galatian tribes had crossed into Asia in the years before 275)"
@@ -5110,6 +5382,7 @@ events:
       it: "Tolomeo IV sconfigge Antioco III a Rafia"
       nl: "Ptolemaeus IV verslaat Antiochus III bij Rafia"
       cs: "Ptolemaios IV. poráží Antiocha III. u Rafie"
+      sv: "Ptolemaios IV besegrar Antiochos III vid Rafia"
     # The field: Raphia (Tell Rafah), on the coast road at the southern edge of the Gaza Strip (approximate).
     battlefield: { lon: 34.243, lat: 31.291, source: "https://pleiades.stoa.org/places/688015" }
     sources:
@@ -5130,6 +5403,7 @@ events:
       it: "I sacerdoti di Menfi decretano onori per Tolomeo V (la Stele di Rosetta)"
       nl: "De priesters te Memfis vaardigen een decreet uit ter ere van Ptolemaeus V (de Steen van Rosetta)"
       cs: "Kněží v Memfidě schvalují dekret na počest Ptolemaia V. (Rosettská deska)"
+      sv: "Prästerna i Memfis beslutar om hedersbetygelser åt Ptolemaios V (Rosettastenen)"
     place: a8ec269
     sources:
       - "The Rosetta Stone (British Museum, EA 24; OGIS 90): 4 Xandikos = 18 Mekhir, year 9 of Ptolemy V"
@@ -5150,6 +5424,7 @@ events:
       it: "I Romani sconfiggono Antioco III a Magnesia"
       nl: "De Romeinen verslaan Antiochus III bij Magnesia"
       cs: "Římané porážejí Antiocha III. u Magnésie"
+      sv: "Romarna besegrar Antiochos III vid Magnesia"
     # The field: Magnesia ad Sipylum (Manisa), Hermus valley, western Turkey (approximate).
     battlefield: { lon: 27.433, lat: 38.613, source: "https://pleiades.stoa.org/places/550706" }
     sources:
@@ -5170,6 +5445,7 @@ events:
       it: "I Romani sconfiggono Perseo di Macedonia a Pidna"
       nl: "De Romeinen verslaan Perseus van Macedonië bij Pydna"
       cs: "Římané porážejí Persea Makedonského u Pydny"
+      sv: "Romarna besegrar Perseus av Makedonien vid Pydna"
     # The field: Plain south of Pydna near Katerini, Pieria, northern Greece (approximate).
     battlefield: { lon: 22.474, lat: 40.251, source: "https://www.wikidata.org/wiki/Q504739" }
     sources:
@@ -5191,6 +5467,7 @@ events:
       it: "I Romani distruggono Cartagine"
       nl: "De Romeinen verwoesten Carthago"
       cs: "Římané ničí Kartágo"
+      sv: "Romarna förstör Kartago"
     place: aa56bd1
     sources:
       - "Appian, Punic Wars 127-135"
@@ -5209,6 +5486,7 @@ events:
       it: "I Romani distruggono Corinto"
       nl: "De Romeinen verwoesten Korinthe"
       cs: "Římané ničí Korint"
+      sv: "Romarna förstör Korinth"
     place: a6f437a
     sources:
       - "Pausanias 7.16.7-10"
@@ -5227,6 +5505,7 @@ events:
       it: "Attalo III lascia in eredità il regno di Pergamo a Roma"
       nl: "Attalus III laat het koninkrijk Pergamum na aan Rome"
       cs: "Attalos III. odkazuje království Pergamon Římu"
+      sv: "Attalos III testamenterar riket Pergamon till Rom"
     place: a75d2c1
     sources:
       - "Strabo 13.4.2"
@@ -5247,6 +5526,7 @@ events:
       it: "Il sommo sacerdote Giasone costruisce un ginnasio a Gerusalemme"
       nl: "De hogepriester Jason bouwt een gymnasium in Jeruzalem"
       cs: "Velekněz Jasón staví v Jeruzalémě gymnasion"
+      sv: "Översteprästen Jason bygger ett gymnasion i Jerusalem"
     place: a15257a
     ref: 2Macc.4.7-2Macc.4.15
     sources:
@@ -5266,6 +5546,7 @@ events:
       it: "L’inviato romano Popilio Lenate costringe Antioco IV a ritirarsi dall’Egitto"
       nl: "De Romeinse gezant Popillius Laenas dwingt Antiochus IV zich uit Egypte terug te trekken"
       cs: "Římský vyslanec Popillius Laenas nutí Antiocha IV. odtáhnout z Egypta"
+      sv: "Den romerske sändebudet Popillius Laenas tvingar Antiochos IV att dra sig tillbaka från Egypten"
     sources:
       - "Polybius 29.27"
       - "Livy 45.12"
@@ -5286,6 +5567,7 @@ events:
       it: "Antioco IV Epifane muore in campagna in Oriente"
       nl: "Antiochus IV Epifanes sterft tijdens een veldtocht in het oosten"
       cs: "Antiochos IV. Epifanés umírá na tažení na východě"
+      sv: "Antiochos IV Epifanes dör under ett fälttåg i öster"
     ref: 1Macc.6.1-1Macc.6.16
     sources:
       - "1 Macc 6:1-16"
@@ -5306,6 +5588,7 @@ events:
       it: "Giuda Maccabeo stipula un trattato di amicizia con Roma"
       nl: "Judas Makkabeüs sluit een vriendschapsverdrag met Rome"
       cs: "Juda Makabejský uzavírá s Římem smlouvu o přátelství"
+      sv: "Judas Mackabeus sluter ett vänskapsfördrag med Rom"
     place: afc8e7a
     ref: 1Macc.8.17-1Macc.8.32
     sources:
@@ -5326,6 +5609,7 @@ events:
       it: "Giuda Maccabeo cade in battaglia contro Bacchide"
       nl: "Judas Makkabeüs sneuvelt in de strijd tegen Bacchides"
       cs: "Juda Makabejský padá v bitvě proti Bakchidovi"
+      sv: "Judas Mackabeus stupar i strid mot Bakchides"
     ref: 1Macc.9.3-1Macc.9.18
     sources:
       - "1 Macc 9:3-18 (the first month of year 152 of the Seleucids)"
@@ -5344,6 +5628,7 @@ events:
       it: "Gionata diventa sommo sacerdote"
       nl: "Jonatan wordt hogepriester"
       cs: "Jonatan se stává veleknězem"
+      sv: "Jonatan blir överstepräst"
     place: a15257a
     ref: 1Macc.10.18-1Macc.10.21
     sources:
@@ -5364,6 +5649,7 @@ events:
       it: "Tolomeo figlio di Abubo uccide Simone; gli succede Giovanni Ircano"
       nl: "Ptolemaeus, de zoon van Abubus, vermoordt Simon; Johannes Hyrcanus volgt hem op"
       cs: "Ptolemaios, syn Abubův, zavraždí Šimona; nastupuje po něm Jan Hyrkanos"
+      sv: "Ptolemaios, Abubus son, mördar Simon; Johannes Hyrkanos efterträder honom"
     ref: 1Macc.16.11-1Macc.16.24
     sources:
       - "1 Macc 16:11-24 (Shebat of year 177)"
@@ -5383,6 +5669,7 @@ events:
       it: "Salome Alessandra diventa regina di Giudea"
       nl: "Salome Alexandra wordt koningin van Judea"
       cs: "Salome Alexandra se stává královnou Judska"
+      sv: "Salome Alexandra blir drottning av Judeen"
     sources:
       - "Josephus, Antiquities 13.405-432"
   - id: crassus-temple
@@ -5399,6 +5686,7 @@ events:
       it: "Crasso saccheggia i tesori del Tempio"
       nl: "Crassus plundert de schatten van de tempel"
       cs: "Crassus drancuje chrámové poklady"
+      sv: "Crassus plundrar templets skatter"
     place: a15257a
     sources:
       - "Josephus, Antiquities 14.105-109; Jewish War 1.179"
@@ -5419,6 +5707,7 @@ events:
       it: "I Parti sbaragliano Crasso presso Carre (Carran); egli viene ucciso poco dopo durante un colloquio"
       nl: "De Parthen verslaan Crassus bij Carrhae (Haran); kort daarna wordt hij bij een onderhandeling gedood"
       cs: "Parthové rozdrtí Crassa u Karrh (Cháran); brzy poté je zabit při jednání"
+      sv: "Parterna slår Crassus på flykten nära Karrhai (Harran); han dödas strax därefter vid en förhandling"
     place: a6d9af3
     sources:
       - "Plutarch, Crassus 23-31"
@@ -5437,6 +5726,7 @@ events:
       it: "Cesare attraversa il Rubicone: inizia la guerra civile"
       nl: "Caesar steekt de Rubicon over: de burgeroorlog begint"
       cs: "Caesar překračuje Rubikon: začíná občanská válka"
+      sv: "Caesar går över Rubicon: inbördeskriget börjar"
     sources:
       - "Suetonius, Julius 31-33"
       - "Plutarch, Caesar 32"
@@ -5456,6 +5746,7 @@ events:
       it: "Sconfitto a Farsalo, Pompeo è ucciso a Pelusio"
       nl: "Verslagen bij Pharsalus wordt Pompeius bij Pelusium gedood"
       cs: "Poražen u Farsálu, Pompeius je zabit v Pelúsiu"
+      sv: "Slagen vid Farsalos dödas Pompejus vid Pelusium"
     place: aa32a17
     sources:
       - "Caesar, Civil War 3.88-104"
@@ -5474,6 +5765,7 @@ events:
       it: "Dei congiurati uccidono Giulio Cesare a Roma"
       nl: "Samenzweerders vermoorden Julius Caesar in Rome"
       cs: "Spiklenci zavraždí Julia Caesara v Římě"
+      sv: "Sammansvurna mördar Julius Caesar i Rom"
     place: afc8e7a
     sources:
       - "Suetonius, Julius 80-82"
@@ -5492,6 +5784,7 @@ events:
       it: "Antonio e Ottaviano sconfiggono Bruto e Cassio a Filippi"
       nl: "Antonius en Octavianus verslaan Brutus en Cassius bij Filippi"
       cs: "Antonius a Octavianus porážejí Bruta a Cassia u Filip"
+      sv: "Antonius och Oktavianus besegrar Brutus och Cassius vid Filippi"
     place: a49e1d0
     sources:
       - "Appian, Civil Wars 4.105-131"
@@ -5511,6 +5804,7 @@ events:
       it: "I Parti prendono Gerusalemme e fanno re Antigono"
       nl: "De Parthen nemen Jeruzalem in en maken Antigonus koning"
       cs: "Parthové dobývají Jeruzalém a dosazují Antigona za krále"
+      sv: "Parterna intar Jerusalem och gör Antigonos till kung"
     place: a15257a
     sources:
       - "Josephus, Antiquities 14.330-369; Jewish War 1.248-273"
@@ -5530,6 +5824,7 @@ events:
       it: "Il Senato romano dichiara Erode re di Giudea"
       nl: "De Romeinse Senaat verklaart Herodes tot koning van Judea"
       cs: "Římský senát prohlašuje Heroda za krále Judska"
+      sv: "Romerska senaten utropar Herodes till kung av Judeen"
     place: afc8e7a
     sources:
       - "Josephus, Antiquities 14.381-389 (the consulship of Calvinus and Pollio); Jewish War 1.282-285"
@@ -5549,6 +5844,7 @@ events:
       it: "Ottaviano sconfigge Antonio e Cleopatra ad Azio"
       nl: "Octavianus verslaat Antonius en Cleopatra bij Actium"
       cs: "Octavianus poráží Antonia a Kleopatru u Actia"
+      sv: "Oktavianus besegrar Antonius och Kleopatra vid Aktion"
     # The field: Ionian Sea off the mouth of the Ambracian Gulf at Actium, near Preveza (firm).
     battlefield: { lon: 20.725, lat: 38.925, source: "https://www.wikidata.org/wiki/Q160387" }
     sources:
@@ -5570,6 +5866,7 @@ events:
       it: "Erode ricostruisce Samaria e la chiama Sebaste"
       nl: "Herodes herbouwt Samaria en noemt het Sebaste"
       cs: "Herodes přestavuje Samaří a nazývá je Sebaste"
+      sv: "Herodes bygger upp Samaria och ger det namnet Sebaste"
     place: a041bb3
     sources:
       - "Josephus, Antiquities 15.292-298; Jewish War 1.403"
@@ -5589,6 +5886,7 @@ events:
       it: "Erode inaugura Cesarea e il suo nuovo porto"
       nl: "Herodes wijdt Caesarea en zijn nieuwe haven in"
       cs: "Herodes zasvěcuje Cesareu a její nový přístav"
+      sv: "Herodes invigar Caesarea och dess nya hamn"
     place: a58735e
     sources:
       - "Josephus, Antiquities 16.136-141 (the twenty-eighth year of his reign)"
@@ -5609,6 +5907,7 @@ events:
       it: "Erode Antipa fonda Tiberiade"
       nl: "Herodes Antipas sticht Tiberias"
       cs: "Herodes Antipas zakládá Tiberias"
+      sv: "Herodes Antipas grundar Tiberias"
     place: ac9adc9
     sources:
       - "Josephus, Antiquities 18.36-38"
@@ -5628,6 +5927,7 @@ events:
       it: "Vitellio manda Pilato a Roma a rispondere del suo governo"
       nl: "Vitellius stuurt Pilatus naar Rome om zich te verantwoorden voor zijn bestuur"
       cs: "Vitellius posílá Piláta do Říma, aby se zodpovídal ze své vlády"
+      sv: "Vitellius sänder Pilatus till Rom för att stå till svars för sitt styre"
     sources:
       - "Josephus, Antiquities 18.85-89"
       - "Livius.org, 'Pontius Pilate' (36: Vitellius orders Pilate to Rome)"
@@ -5646,6 +5946,7 @@ events:
       it: "Caligola ordina di collocare la sua statua nel Tempio di Gerusalemme"
       nl: "Caligula beveelt dat zijn standbeeld in de tempel te Jeruzalem wordt geplaatst"
       cs: "Caligula nařizuje postavit svou sochu v jeruzalémském chrámu"
+      sv: "Caligula befaller att hans staty ska sättas upp i templet i Jerusalem"
     sources:
       - "Philo, Embassy to Gaius 188-348"
       - "Josephus, Antiquities 18.261-309"
@@ -5664,6 +5965,7 @@ events:
       it: "Il sommo sacerdote Anano fa lapidare Giacomo, il fratello del Signore"
       nl: "De hogepriester Ananus laat Jakobus, de broer van de Heer, stenigen"
       cs: "Velekněz Ananos nechává ukamenovat Jakuba, bratra Páně"
+      sv: "Översteprästen Ananus låter stena Jakob, Herrens broder"
     place: a15257a
     sources:
       - "Josephus, Antiquities 20.197-203 (between the death of Festus and the arrival of Albinus)"
@@ -5683,6 +5985,7 @@ events:
       it: "Inizia la rivolta contro Roma; Cestio Gallo è sbaragliato a Bet-Oron"
       nl: "De opstand tegen Rome begint; Cestius Gallus wordt bij Beth-Horon verslagen"
       cs: "Začíná povstání proti Římu; Cestius Gallus je rozprášen u Bét-choronu"
+      sv: "Upproret mot Rom börjar; Cestius Gallus slås på flykten vid Bet-Horon"
     place: a75b45e
     sources:
       - "Josephus, Jewish War 2.284 (Artemisius, the twelfth year of Nero); 2.499-555 (Cestius' retreat, 8 Dios)"
@@ -5701,6 +6004,7 @@ events:
       it: "Le legioni d’Egitto e di Giudea proclamano imperatore Vespasiano"
       nl: "De legioenen van Egypte en Judea roepen Vespasianus tot keizer uit"
       cs: "Legie Egypta a Judska prohlašují Vespasiana císařem"
+      sv: "Legionerna i Egypten och Judeen utropar Vespasianus till kejsare"
     sources:
       - "Tacitus, Histories 2.79-81"
       - "Suetonius, Vespasian 6"
@@ -5720,6 +6024,7 @@ events:
       it: "Il Senato erige a Roma l’Arco di Tito, che mostra le spoglie del Tempio"
       nl: "De Senaat richt de Boog van Titus op in Rome, met de buit van de tempel afgebeeld"
       cs: "Senát vztyčuje v Římě Titův oblouk, zobrazující kořist z chrámu"
+      sv: "Senaten reser Titusbågen i Rom, som visar templets krigsbyte"
     place: afc8e7a
     sources:
       - "The inscription of the arch, CIL VI 945 (to the deified Titus)"
@@ -5739,6 +6044,7 @@ events:
       it: "Giuseppe Flavio completa a Roma le Antichità giudaiche"
       nl: "Josephus voltooit de Joodse Oudheden in Rome"
       cs: "Josephus dokončuje v Římě Židovské starožitnosti"
+      sv: "Josefus slutför Judiska fornminnen i Rom"
     place: afc8e7a
     sources:
       - "Josephus, Antiquities 20.267 (the thirteenth year of Domitian, the fifty-sixth of his life)"
@@ -5758,6 +6064,7 @@ events:
       it: "Traiano trasforma il regno nabateo nella provincia d’Arabia"
       nl: "Trajanus maakt van het Nabateese koninkrijk de provincie Arabia"
       cs: "Traianus činí z nabatejského království provincii Arábii"
+      sv: "Trajanus gör det nabatéiska riket till provinsen Arabia"
     sources:
       - "Cassius Dio 68.14.5"
       - "Livius.org, 'Petra' (106: the Nabataean kingdom annexed; Bostra capital of Arabia)"
@@ -5776,6 +6083,7 @@ events:
       it: "Plinio il Giovane chiede a Traiano come comportarsi con i cristiani"
       nl: "Plinius de Jongere vraagt Trajanus hoe hij met de christenen moet omgaan"
       cs: "Plinius Mladší se ptá Traiana, jak naložit s křesťany"
+      sv: "Plinius den yngre frågar Trajanus hur han ska förfara med de kristna"
     sources:
       - "Pliny, Letters 10.96-97"
       - "Livius.org, 'Pliny the Younger' (governor of Bithynia-Pontus)"
@@ -5795,6 +6103,7 @@ events:
       it: "Marcione rompe con la chiesa di Roma"
       nl: "Marcion breekt met de kerk van Rome"
       cs: "Markión se rozchází s církví v Římě"
+      sv: "Marcion bryter med kyrkan i Rom"
     place: afc8e7a
     sources:
       - "Tertullian, Against Marcion 1.19"
@@ -5814,6 +6123,7 @@ events:
       it: "Il prefetto Rustico fa giustiziare Giustino Martire a Roma"
       nl: "Prefect Rusticus laat Justinus Martyr in Rome terechtstellen"
       cs: "Prefekt Rusticus nechává v Římě popravit Justina Mučedníka"
+      sv: "Prefekten Rusticus låter avrätta Justinus martyren i Rom"
     place: afc8e7a
     sources:
       - "The Acts of Justin and his Companions (before Rusticus, prefect of Rome)"
@@ -5833,6 +6143,7 @@ events:
       it: "Giuda ha-Nasi dà alla Mishnà la sua forma definitiva"
       nl: "Juda ha-Nasi geeft de Misjna haar definitieve vorm"
       cs: "Juda ha-Nasi dává Mišně konečnou podobu"
+      sv: "Juda ha-Nasi ger Mishna dess slutliga form"
     sources:
       - "Epistle of Sherira Gaon"
       - "Encyclopaedia Judaica, 'Mishnah' (Jewish Virtual Library) (redacted by Judah ha-Nasi at the beginning of the third century)"
@@ -5851,6 +6162,7 @@ events:
       it: "Ardashir I sconfigge l’ultimo re dei Parti: inizia l’impero sasanide"
       nl: "Ardashir I verslaat de laatste Parthische koning: het Sassanidische rijk begint"
       cs: "Ardašír I. poráží posledního parthského krále: začíná sásánovská říše"
+      sv: "Ardashir I besegrar den siste partiske kungen: det sasanidiska riket börjar"
     sources:
       - "Cassius Dio 80.3.1-2"
       - "World History Encyclopedia, 'Ardashir I' (224: the battle of Hormozgan, Artabanus IV defeated)"
@@ -5870,6 +6182,7 @@ events:
       it: "La sinagoga di Dura Europos è ricostruita; le sue pareti sono dipinte con scene bibliche"
       nl: "De synagoge van Dura-Europos wordt herbouwd; haar muren worden beschilderd met taferelen uit de Schrift"
       cs: "Synagoga v Dura-Europu je přestavěna; její stěny jsou pomalovány výjevy z Písma"
+      sv: "Synagogan i Dura-Europos byggs om; dess väggar målas med scener ur Skriften"
     site: "893990"
     sources:
       - "The Aramaic building inscription of the synagogue (year 556 of the Seleucids)"
@@ -5887,6 +6200,7 @@ events:
       it: "Il proconsole fa giustiziare Cipriano, vescovo di Cartagine"
       nl: "De proconsul laat Cyprianus, bisschop van Carthago, terechtstellen"
       cs: "Prokonzul nechává popravit Cypriána, biskupa kartaginského"
+      sv: "Prokonsuln låter avrätta Cyprianus, biskop av Kartago"
     place: aa56bd1
     sources:
       - "The Proconsular Acts of Cyprian (14 September)"
@@ -5907,6 +6221,7 @@ events:
       it: "Aureliano sconfigge Zenobia e prende Palmira (Tadmor)"
       nl: "Aurelianus verslaat Zenobia en neemt Palmyra (Tadmor) in"
       cs: "Aurelianus poráží Zenobii a dobývá Palmýru (Tadmor)"
+      sv: "Aurelianus besegrar Zenobia och intar Palmyra (Tadmor)"
     place: ad797fe
     sources:
       - "Zosimus 1.50-56"
@@ -5928,6 +6243,7 @@ events:
       it: "Galerio emana un editto di tolleranza per i cristiani"
       nl: "Galerius vaardigt een tolerantie-edict uit voor de christenen"
       cs: "Galerius vydává edikt o toleranci vůči křesťanům"
+      sv: "Galerius utfärdar ett toleransedikt för de kristna"
     sources:
       - "Lactantius, On the Deaths of the Persecutors 34-35"
       - "Eusebius, Church History 8.17"
@@ -5946,6 +6262,7 @@ events:
       it: "Costantino sconfigge Licinio e diventa unico sovrano dell’impero"
       nl: "Constantijn verslaat Licinius en wordt alleenheerser van het rijk"
       cs: "Konstantin poráží Licinia a stává se jediným vládcem říše"
+      sv: "Konstantin besegrar Licinius och blir ensam härskare över riket"
     # The field: Chrysopolis (Üsküdar) on the Asian shore of the Bosporus, opposite Byzantium (approximate).
     battlefield: { lon: 29.013, lat: 41.021, source: "https://pleiades.stoa.org/places/520995" }
     sources:
@@ -5966,6 +6283,7 @@ events:
       it: "Elena, madre di Costantino, fonda chiese a Betlemme e sul Monte degli Ulivi"
       nl: "Helena, de moeder van Constantijn, sticht kerken te Bethlehem en op de Olijfberg"
       cs: "Helena, Konstantinova matka, zakládá kostely v Betlémě a na Olivové hoře"
+      sv: "Helena, Konstantins mor, grundar kyrkor i Betlehem och på Olivberget"
     place: a112427
     sources:
       - "Eusebius, Life of Constantine 3.41-47"
@@ -5984,6 +6302,7 @@ events:
       it: "La lettera pasquale di Atanasio elenca i ventisette libri del Nuovo Testamento"
       nl: "De paasbrief van Athanasius noemt de zevenentwintig boeken van het Nieuwe Testament op"
       cs: "Athanasiův velikonoční list uvádí dvacet sedm knih Nového zákona"
+      sv: "Athanasios’ påskbrev förtecknar Nya testamentets tjugosju böcker"
     place: aee7248
     sources:
       - "Athanasius, Festal Letter 39"
@@ -6003,6 +6322,7 @@ events:
       it: "I Goti sconfiggono i Romani ad Adrianopoli; l’imperatore Valente è ucciso"
       nl: "De Goten verslaan de Romeinen bij Adrianopel; keizer Valens komt om"
       cs: "Gótové porážejí Římany u Hadrianopole; císař Valens je zabit"
+      sv: "Goterna besegrar romarna vid Adrianopel; kejsar Valens dödas"
     # The field: Büyükdöllük, 13 km north of Adrianople (Livius: 'The two armies met thirteen kilometers north of the city') (approximate).
     battlefield: { lon: 26.602, lat: 41.758, source: "https://www.wikidata.org/wiki/Q6823011" }
     sources:
@@ -6023,6 +6343,7 @@ events:
       it: "Teodosio I ordina a tutti i suoi popoli di professare la fede nicena (l’Editto di Tessalonica)"
       nl: "Theodosius I gebiedt al zijn volken het Nicaeense geloof aan te hangen (het Edict van Tessalonica)"
       cs: "Theodosius I. nařizuje všem svým národům držet nikajskou víru (Soluňský edikt)"
+      sv: "Theodosius I befaller alla sina folk att hålla fast vid den nikenska tron (Tessalonike-ediktet)"
     place: afa9d8e
     sources:
       - "Theodosian Code 16.1.2 (27 February 380, at Thessalonica)"
@@ -6042,6 +6363,7 @@ events:
       it: "Teodosio vieta i sacrifici e le visite ai templi a Roma"
       nl: "Theodosius verbiedt offers en het bezoeken van tempels in Rome"
       cs: "Theodosius zakazuje oběti a návštěvy chrámů v Římě"
+      sv: "Theodosius förbjuder offer och besök i tempel i Rom"
     place: afc8e7a
     sources:
       - "Theodosian Code 16.10.10 (24 February 391, at Milan, to Albinus, prefect of the city)"
@@ -6061,6 +6383,7 @@ events:
       it: "Teodosio muore; l’impero è diviso fra Arcadio e Onorio"
       nl: "Theodosius sterft; het rijk wordt verdeeld tussen Arcadius en Honorius"
       cs: "Theodosius umírá; říše je rozdělena mezi Arcadia a Honoria"
+      sv: "Theodosius dör; riket delas mellan Arcadius och Honorius"
     sources:
       - "Socrates, Church History 5.26"
       - "Zosimus 4.59"
@@ -6081,6 +6404,7 @@ events:
       it: "Un concilio a Cartagine conferma l’elenco dei libri della Scrittura"
       nl: "Een concilie te Carthago bevestigt de lijst van de boeken van de Schrift"
       cs: "Koncil v Kartágu potvrzuje seznam knih Písma"
+      sv: "Ett koncilium i Kartago bekräftar förteckningen över Skriftens böcker"
     place: aa56bd1
     sources:
       - "Code of Canons of the African Church, canon 24 (NPNF2 14)"
@@ -6100,6 +6424,7 @@ events:
       it: "I sapienti della Terra d’Israele portano il Talmud di Gerusalemme alla sua forma definitiva"
       nl: "De wijzen van het Land Israël brengen de Jeruzalemse Talmoed in zijn definitieve vorm"
       cs: "Mudrci Izraelské země dávají Jeruzalémskému talmudu konečnou podobu"
+      sv: "De lärde i Israels land ger Jerusalemtalmud dess slutliga form"
     sources:
       - "Encyclopaedia Judaica, 'Talmud, Jerusalem' (Jewish Virtual Library) (redacted about 400)"
   # The consuls give 415 (March); counted from Cyril's consecration the "fourth year"
@@ -6118,6 +6443,7 @@ events:
       it: "Una folla cristiana uccide Ipazia ad Alessandria"
       nl: "Een christelijke menigte doodt Hypatia in Alexandrië"
       cs: "Křesťanský dav zabíjí Hypatii v Alexandrii"
+      sv: "En kristen pöbel dödar Hypatia i Alexandria"
     place: aee7248
     sources:
       - "Socrates, Church History 7.15 (the tenth consulship of Honorius and the sixth of Theodosius)"
@@ -6137,6 +6463,7 @@ events:
       it: "Agostino muore a Ippona, assediata dai Vandali"
       nl: "Augustinus sterft te Hippo, dat door de Vandalen wordt belegerd"
       cs: "Augustin umírá v Hippu, obleženém Vandaly"
+      sv: "Augustinus dör i Hippo, som belägras av vandalerna"
     sources:
       - "Possidius, Life of Augustine 28-31"
       - "Catholic Encyclopedia, 'St. Augustine of Hippo' (New Advent) (died in the third month of the siege)"
@@ -6156,6 +6483,7 @@ events:
       it: "I Vandali di Genserico saccheggiano Roma"
       nl: "De Vandalen van Gaiseric plunderen Rome"
       cs: "Gaisérichovi Vandalové plení Řím"
+      sv: "Geiserik och hans vandaler plundrar Rom"
     place: afc8e7a
     sources:
       - "Procopius, Wars 3.5.1-5"
@@ -6176,6 +6504,7 @@ events:
       it: "Odoacre depone Romolo Augustolo: finisce l’impero romano d’Occidente"
       nl: "Odoaker zet Romulus Augustulus af: het West-Romeinse Rijk eindigt"
       cs: "Odoaker sesazuje Romula Augustula: Západořímská říše zaniká"
+      sv: "Odoaker avsätter Romulus Augustulus: Västromerska riket upphör"
     sources:
       - "Anonymus Valesianus 8.37-38"
       - "Marcellinus Comes, Chronicle, a. 476"

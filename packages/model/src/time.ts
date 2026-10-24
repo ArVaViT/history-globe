@@ -136,6 +136,7 @@ export const LOCALES = [
   "nl",
   "pl",
   "pt",
+  "sv",
   "ru",
   "uk",
 ] as const satisfies readonly Locale[];
@@ -151,6 +152,7 @@ export const LOCALE_NAMES: Readonly<Record<SiteLocale, string>> = {
   nl: "Nederlands",
   pl: "Polski",
   pt: "Português",
+  sv: "Svenska",
   ru: "Русский",
   uk: "Українська",
 };

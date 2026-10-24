@@ -17,6 +17,7 @@ title:
   it: "Le sei città di rifugio"
   nl: "De zes vrijsteden"
   cs: "Šest útočištných měst"
+  sv: "De sex tillflyktsstäderna"
 year: "1406 BC"
 # Where the cities were, not a journey: no time on foot.
 walked: false
@@ -36,6 +37,7 @@ stops:
       it: "Mosè mette da parte tre città a est del Giordano, «perché servissero di rifugio all’omicida che avesse ucciso il suo prossimo involontariamente»: prima Beser, nel deserto, sull’altopiano, per Ruben."
       nl: "Mozes zondert drie steden ten oosten van de Jordaan af, “Opdat daarheen vlood de doodslager, die zijn naaste onwetende doodslaat”: eerst Bezer in de woestijn, in het vlakke land, van Ruben."
       cs: "Mojžíš odděluje tři města na východ od Jordánu, „aby utekl do nich vražedlník, kterýž by zabil bližního svého nechtě“: nejprve Beser na poušti, na rovině, v území Rúbenově."
+      sv: "Mose avskiljer tre städer öster om Jordan, ”till vilka en dråpare skulle kunna fly, om han hade dräpt någon utan vett och vilja”: först Beser i öknen, på slättlandet, för Rubens stam."
   - place: a95147f # Ramoth
     ref: Deut.4.43
     note:
@@ -50,6 +52,7 @@ stops:
       it: "Ramot in Galaad, per i Gaditi: Ramot di Galaad, dove cadrà Acab."
       nl: "Ramot in Gilead, van de Gadieten, waar Achab zou vallen."
       cs: "Rámot v Gileadu, v území Gádově: Rámot v Gileadu, kde padne Achab."
+      sv: "Ramot i Gilead, för gaditerna: Ramot i Gilead, där Achav skulle falla."
   - place: abb5c1e # Golan
     ref: Deut.4.43
     note:
@@ -64,6 +67,7 @@ stops:
       it: "Golan in Basan, per Manasse, la più settentrionale delle tre."
       nl: "Golan in Basan, van Manasse, de noordelijkste van de drie."
       cs: "Golán v Bášanu, v území Manasesově, nejsevernější ze tří."
+      sv: "Golan i Bashan, för Manasse stam, den nordligaste av de tre."
   - place: a662eed # Kedesh
     ref: Josh.20.1-Josh.20.7
     note:
@@ -78,6 +82,7 @@ stops:
       it: "Dopo la conquista il paese a ovest del Giordano riceve le sue tre, «affinché l’omicida che avrà ucciso qualcuno senza averne l’intenzione, possa ricoverarvisi»: prima Kedes in Galilea, sui monti di Neftali."
       nl: "Na de verovering krijgt het land ten westen van de Jordaan zijn drie, “Dat daarhenen vliede de doodslager, die een ziel door dwaling, niet met wetenschap, verslaat”: eerst Kedes in Galilea in het gebergte Naftali."
       cs: "Po dobytí země dostává tři města i země západně od Jordánu, „aby tam utekl vražedlník, kterýž by zabil člověka nechtě a z nevědomí“: nejprve Kedeš v Galileji na pohoří Neftalí."
+      sv: "Efter erövringen får landet väster om Jordan sina tre, ”de städer till vilka en dråpare som ouppsåtligen, utan vett och vilja, har dödat någon må kunna fly”: först Kedesh i Galileen, i Naftalis bergsbygd."
   - place: adf74d4 # Shechem
     ref: Josh.20.7
     note:
@@ -92,6 +97,7 @@ stops:
       it: "Sichem sul monte Efraim, tra l’Ebal e il Gherizim, dove Giosuè rinnoverà l’alleanza."
       nl: "Sichem in het Bergland van Efraïm, tussen Ebal en Gerizim, waar Jozua het verbond zal vernieuwen."
       cs: "Šekem na pohoří Efrajim, mezi Ébalem a Gerizimem, kde Jozue obnoví smlouvu."
+      sv: "Shekem i Efraims bergsbygd, mellan Ebal och Gerizim, där Josua ska förnya förbundet."
   - place: a85151a # Hebron
     ref: Josh.20.7-Josh.20.9
     note:
@@ -106,3 +112,4 @@ stops:
       it: "Kiriat-Arba, cioè Ebron, sui monti di Giuda. Le città sono assegnate «a tutti i figliuoli d’Israele e allo straniero dimorante fra loro», finché l’omicida compaia davanti alla comunità."
       nl: "Kirjat-Arba, dat is Hebron, in het gebergte van Juda. De steden zijn “voor al de kinderen Israëls, en voor den vreemdeling, die in het midden van henlieden verkeert”, totdat de doodslager voor de vergadering staat."
       cs: "Kirjat-arba, to jest Hebron, na pohoří Juda. Města jsou „všechněm synům Izraelským, i příchozímu, kterýž pohostinu jest mezi nimi“, dokud vrah nestane před shromážděním."
+      sv: "Kirjat-Arba, det vill säga Hebron, i Judas bergsbygd. Städerna gäller ”för alla Israels barn, och för de främlingar som bodde ibland dem”, tills dråparen står inför menigheten."

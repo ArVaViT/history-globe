@@ -16,6 +16,7 @@ title:
   it: "La rivolta di Assalonne"
   nl: "De opstand van Absalom"
   cs: "Abšalomovo povstání"
+  sv: "Absaloms uppror"
 year: "980 BC"
 people: ["Absalom@2Sa.3.3-Psa"]
 approximate: true
@@ -34,6 +35,7 @@ stops:
       it: "Assalonne va a Ebron con il pretesto di sciogliere un voto e manda emissari per le tribù: al suono della tromba dovranno dire: «Absalom è proclamato re a Hebron»."
       nl: "Absalom gaat naar Hebron alsof hij een gelofte wil inlossen, en stuurt verspieders door de stammen: bij het geluid van de bazuin moeten zij zeggen: “Absalom is koning te Hebron.”"
       cs: "Abšalom jde do Hebronu, jako by chtěl splnit slib, a rozesílá špehy do kmenů: při zvuku trouby mají říci: „Kralujeť Absolon v Hebronu.“"
+      sv: "Absalom beger sig till Hebron som för att infria ett löfte och sänder spejare genom stammarna: när basunen ljuder ska de säga: ”Nu har Absalom blivit konung i Hebron.”"
   - place: a553110 # Kidron
     ref: 2Sam.15.13-2Sam.15.23
     note:
@@ -48,6 +50,7 @@ stops:
       it: "Davide fugge da Gerusalemme; il re e tutto il popolo attraversano il torrente Cedron verso il deserto, mentre tutto il paese piange."
       nl: "David vlucht uit Jeruzalem, en de koning en heel het volk trekken over de beek Kidron richting de woestijn, terwijl het hele land weent."
       cs: "David prchá z Jeruzaléma a král se vším lidem přechází potok Kidron k poušti, zatímco celá země pláče."
+      sv: "David flyr från Jerusalem, och kungen och allt folket går över bäcken Kidron mot öknen, medan hela landet gråter."
   - place: ac2c4c5 # Mount of Olives
     ref: 2Sam.15.30-2Sam.15.37
     note:
@@ -62,6 +65,7 @@ stops:
       it: "Sale piangendo il Monte degli Ulivi, a piedi scalzi e con il capo coperto, e rimanda Cusai a Gerusalemme."
       nl: "Hij gaat huilend de Olijfberg op, blootsvoets en met bedekt hoofd, en stuurt Chusai terug naar Jeruzalem."
       cs: "Vystupuje na Olivovou horu, pláče, jde bos a s přikrytou hlavou, a posílá Chušaje zpět do Jeruzaléma."
+      sv: "Han går gråtande upp för Olivberget, barfota och med höljt huvud, och sänder Hushaj tillbaka till Jerusalem."
   - place: a9ed5a4 # Bahurim
     ref: 2Sam.16.5-2Sam.16.14
     note:
@@ -76,6 +80,7 @@ stops:
       it: "A Bacurim Simei, della famiglia di Saul, lo maledice e gli getta sassi; Davide non vuole che sia ucciso: «Lasciate ch’ei maledica»."
       nl: "Te Bachurim vervloekt Simeï, uit het huis van Saul, hem en gooit met stenen; David wil hem niet laten doden: “laat hem vloeken.”"
       cs: "V Bachurímu mu Šimei z domu Saulova zlořečí a hází po něm kamení; David nedovolí, aby byl zabit: „Nechte ho, ať zlořečí.“"
+      sv: "I Bahurim förbannar Shimi av Sauls hus honom och kastar stenar; David vill inte låta döda honom: ”Låten honom vara, må han förbanna.”"
   - place: a15257a # Jerusalem
     ref: 2Sam.16.15-2Sam.16.23
     note:
@@ -90,6 +95,7 @@ stops:
       it: "Assalonne entra in Gerusalemme e, per consiglio di Achitofel, si unisce alle concubine del padre davanti a tutto Israele."
       nl: "Absalom trekt Jeruzalem binnen en gaat, op raad van Achitofel, voor het oog van heel Israël bij de bijvrouwen van zijn vader in."
       cs: "Abšalom vstupuje do Jeruzaléma a podle rady Achitofelovy vchází před očima celého Izraele ke konkubínám svého otce."
+      sv: "Absalom tågar in i Jerusalem och går, på Achitofels inrådan, in till sin fars bihustrur inför hela Israel."
   - place: aa24ad4 # Wood of Ephraim
     ref: 2Sam.18.6-2Sam.18.17
     note:
@@ -104,6 +110,7 @@ stops:
       it: "Nella foresta di Efraim l’esercito di Assalonne è sconfitto; la sua testa resta impigliata in una quercia ed egli rimane appeso, e Ioab gli configge tre dardi nel cuore mentre è ancora vivo; i giovani di Ioab lo finiscono."
       nl: "In het woud van Efraïm wordt het leger van Absalom verslagen; met zijn hoofd in een eik blijft hij hangen, en Joab steekt drie pijlen in zijn hart terwijl hij nog leeft; Joabs jonge mannen slaan hem dood."
       cs: "V Efrajimském lese je Abšalomovo vojsko poraženo; on se zachytí hlavou v dubu a visí tam, Joáb mu vrazí tři oštěpy do srdce, dokud je ještě živ, a Joábovi služebníci ho dorazí."
+      sv: "I Efraims skog blir Absaloms här slagen; han fastnar med huvudet i en ek och hänger där, och Joav stöter tre spjut i hans hjärta medan han ännu lever; Joavs unga män dräper honom."
   - place: ae5bfe9 # Mahanaim
     ref: 2Sam.18.19-2Sam.18.33
     note:
@@ -118,6 +125,7 @@ stops:
       it: "A Maanaim, seduto fra le due porte, Davide riceve la notizia e piange: «Absalom figliuolo mio! Figliuolo mio, Absalom figliuol mio!»"
       nl: "Te Machanaïm hoort David, zittend tussen de twee poorten, het bericht en weent: “Mijn zoon Absalom, mijn zoon, mijn zoon Absalom!”"
       cs: "V Machanajimu David sedí mezi dvojími branami, slyší zprávu a pláče: „Synu můj Absolone, synu můj, synu můj Absolone!“"
+      sv: "I Mahanajim, där David sitter mellan de båda portarna, får han beskedet och gråter: ”Min son Absalom, min son, min son Absalom!”"
   - place: ab94aea # Gilgal
     ref: 2Sam.19.15-2Sam.19.40
     note:
@@ -132,3 +140,4 @@ stops:
       it: "Gli uomini di Giuda vengono a Gàlgala per ricondurre il re al di là del Giordano."
       nl: "De mannen van Juda komen naar Gilgal om de koning over de Jordaan terug te brengen."
       cs: "Judští přicházejí do Gilgalu, aby krále přivedli zpět přes Jordán."
+      sv: "Judas män kommer till Gilgal för att föra kungen tillbaka över Jordan."

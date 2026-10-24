@@ -16,6 +16,7 @@ title:
   it: "Il viaggio di Paolo verso Roma"
   nl: "De reis van Paulus naar Rome"
   cs: "Pavlova plavba do Říma"
+  sv: "Paulus’ sjöresa till Rom"
 year: "AD 60"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -36,6 +37,7 @@ stops:
       it: "Trattenuto a Cesarea, Paolo salpa per l’Italia come prigioniero."
       nl: "Vastgehouden te Caesarea vaart Paulus als gevangene naar Italië."
       cs: "Držen v Cesareji, vyplouvá Pavel jako vězeň do Itálie."
+      sv: "Fången i Caesarea seglar Paulus som fånge mot Italien."
   - place: a98e4d7
     ref: Acts.27.3
     by: sea
@@ -51,6 +53,7 @@ stops:
       it: "Giulio permette a Paolo di visitare gli amici."
       nl: "Julius staat Paulus toe vrienden te bezoeken."
       cs: "Julius dovoluje Pavlovi navštívit přátele."
+      sv: "Julius låter Paulus besöka vänner."
   - place: aa4b3e2
     ref: Acts.27.5-Acts.27.6
     by: sea
@@ -66,6 +69,7 @@ stops:
       it: "Trasbordo su una nave di Alessandria."
       nl: "Overstap op een schip van Alexandrië."
       cs: "Přesedání na alexandrijskou loď."
+      sv: "Överflyttning till ett skepp från Alexandria."
   - place: ab793ce
     ref: Acts.27.7
     by: sea
@@ -81,6 +85,7 @@ stops:
       it: "Lentamente davanti a Cnido."
       nl: "Langzaam voorbij Knidus."
       cs: "Pomalu u Knidu."
+      sv: "Långsamt fram utanför Knidos."
   - place: a1c44ea
     ref: Acts.27.7
     by: sea
@@ -96,6 +101,7 @@ stops:
       it: "Al riparo di Creta, a Salmone."
       nl: "Onder de wal van Kreta bij Salmone."
       cs: "V závětří Kréty u Salmóné."
+      sv: "I lä av Kreta vid Salmone."
   - place: aae626a
     ref: Acts.27.8-Acts.27.12
     by: sea
@@ -111,6 +117,7 @@ stops:
       it: "Buoni Porti; Paolo avverte: «io veggo che la navigazione si farà con pericolo e grave danno, non solo del carico e della nave, ma anche delle nostre persone»."
       nl: "Schone Havens; Paulus waarschuwt dat “de vaart zal geschieden met hinder en grote schade, niet alleen van de lading en van het schip, maar ook van ons leven.”"
       cs: "Dobré přístavy; Pavel varuje, že „s velikým ublížením a s mnohou škodou netoliko nákladu a lodí, ale i životů našich toto plavení bude“."
+      sv: "Goda hamnarna; Paulus varnar: ”jag ser att denna sjöresa kommer att medföra vedervärdigheter och stor olycka, icke allenast för last och skepp, utan ock för våra liv.”"
   - place: aca2b0a
     ref: Acts.27.14-Acts.27.17
     by: sea
@@ -126,6 +133,7 @@ stops:
       it: "Il vento tempestoso Euraquilone spinge la nave oltre Cauda."
       nl: "De stormwind Euroklydon drijft het schip voorbij Klauda."
       cs: "Bouřlivý vítr Euroklydon žene loď kolem Kaudy."
+      sv: "Den våldsamma stormvinden, den så kallade nordostorkanen, driver skeppet förbi Kauda."
   - place: a57835d
     ref: Acts.27.39-Acts.28.11
     by: sea
@@ -141,6 +149,7 @@ stops:
       it: "Il naufragio; tre mesi sull’isola."
       nl: "Schipbreuk; drie maanden op het eiland."
       cs: "Ztroskotání; tři měsíce na ostrově."
+      sv: "Skeppsbrott; tre månader på ön."
   - place: a1e3697
     ref: Acts.28.12
     by: sea
@@ -156,6 +165,7 @@ stops:
       it: "Tre giorni a Siracusa."
       nl: "Drie dagen te Syracuse."
       cs: "Tři dny v Syrakusách."
+      sv: "Tre dagar i Syrakusa."
   - place: a63bb26
     ref: Acts.28.13
     by: sea
@@ -171,6 +181,7 @@ stops:
       it: "Reggio."
       nl: "Regium."
       cs: "Regium."
+      sv: "Rhegion."
   - place: a4488e9
     ref: Acts.28.13-Acts.28.14
     by: sea
@@ -186,6 +197,7 @@ stops:
       it: "Sette giorni con i fratelli."
       nl: "Zeven dagen bij de broeders."
       cs: "Sedm dní s bratřími."
+      sv: "Sju dagar hos bröderna."
   - place: a121d5e
     ref: Acts.28.15
     note:
@@ -200,6 +212,7 @@ stops:
       it: "I credenti escono incontro a Paolo."
       nl: "Gelovigen komen Paulus tegemoet."
       cs: "Věřící vycházejí Pavlovi vstříc."
+      sv: "De troende kommer ut för att möta Paulus."
   - place: afc8e7a
     ref: Acts.28.16
     note:
@@ -214,3 +227,4 @@ stops:
       it: "Roma."
       nl: "Rome."
       cs: "Řím."
+      sv: "Rom."

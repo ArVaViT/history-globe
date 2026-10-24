@@ -20,6 +20,7 @@ title:
   it: "La guerra contro Beniamino"
   nl: "De oorlog met Benjamin"
   cs: "Válka s Benjamínem"
+  sv: "Kriget mot Benjamin"
 year: "1150 BC"
 # Where the story happens, told of a Levite and then of all Israel: no time on foot.
 walked: false
@@ -39,6 +40,7 @@ stops:
       it: "Un Levita delle montagne di Efraim va a Betlemme di Giuda per riprendersi la concubina; il padre di lei lo trattiene a banchettare per cinque giorni."
       nl: "Een Leviet uit het Bergland van Efraïm gaat naar Bethlehem in Juda om zijn bijvrouw terug te halen; haar vader houdt hem vijf dagen lang aan tafel."
       cs: "Levita z pohoří Efrajim jde do Betléma Judského, aby přivedl zpět svou ženinu; její otec ho zdržuje při hodování pět dní."
+      sv: "En levit från Efraims bergsbygd drar till Betlehem i Juda för att hämta tillbaka sin bihustru; hennes far håller kvar honom i fem dagar av festande."
   - place: a403c45 # Jebus
     ref: Judg.19.10-Judg.19.12
     note:
@@ -53,6 +55,7 @@ stops:
       it: "A giorno inoltrato raggiungono Gebus, cioè Gerusalemme; il Levita non vuole alloggiare in una città di stranieri e prosegue fino a Gabaa."
       nl: "Als de dag al ver gevorderd is, bereiken zij Jebus, dat is Jeruzalem; de Leviet wil niet overnachten in een stad van vreemden en gaat door naar Gibea."
       cs: "Když se den chýlí, docházejí k Jebúsu, což je Jeruzalém; Levita nechce přenocovat v cizím městě a jde dál do Gibeje."
+      sv: "När dagen är långt framskriden når de Jevus, det vill säga Jerusalem; leviten vill inte övernatta i en främlingarnas stad och fortsätter till Giva."
   - place: ac24f5f # Gibeah
     ref: Judg.19.13-Judg.19.30
     note:
@@ -67,6 +70,7 @@ stops:
       it: "A Gabaa di Beniamino nessuno li accoglie tranne un vecchio; gli uomini della città violentano la concubina per tutta la notte, ed ella muore sulla soglia. Il Levita ne taglia il corpo in dodici pezzi e li manda in tutto il territorio d’Israele."
       nl: "Te Gibea in Benjamin neemt niemand hen op behalve een oude man; de mannen van de stad misbruiken de bijvrouw de hele nacht, en zij sterft aan de deur. De Leviet snijdt haar lichaam in twaalf stukken en stuurt die door alle gebieden van Israël."
       cs: "V Gibeji Benjamínově je nikdo nepřijme než jeden stařec; muži města týrají ženinu celou noc a ona umírá u dveří. Levita rozsekává její tělo na dvanáct kusů a rozesílá je do všech končin Izraele."
+      sv: "I Giva i Benjamin tar ingen emot dem utom en gammal man; stadens män misshandlar bihustrun hela natten, och hon dör vid dörren. Leviten styckar hennes kropp i tolv delar och sänder dem genom hela Israels område."
   - place: a736f6c # Mizpah
     ref: Judg.20.1-Judg.20.17
     note:
@@ -81,6 +85,7 @@ stops:
       it: "Tutto Israele, «da Dan fino a Beer-Sceba», si raduna davanti al Signore a Mizpa; Beniamino rifiuta di consegnare gli uomini di Gabaa."
       nl: "Heel Israël, “van Dan af tot Ber-seba toe”, verzamelt zich bij de HEER te Mizpa; Benjamin weigert de mannen van Gibea uit te leveren."
       cs: "Celý Izrael, „od Dan až do Bersabé“, se shromažďuje k Hospodinu v Micpě; Benjamín odmítá vydat muže z Gibeje."
+      sv: "Hela Israel, ”från Dan ända till Beer-Seba”, samlas inför Herren i Mispa; Benjamin vägrar att lämna ut männen i Giva."
   - place: a64f355 # Bethel
     ref: Judg.20.18-Judg.20.28
     note:
@@ -95,6 +100,7 @@ stops:
       it: "Alla casa di Dio, in ebraico Beth-El e di solito intesa come la città di Betel, Israele chiede chi debba salire per primo; sconfitti due volte, piangono e digiunano davanti all’arca, dove serve Pincas, figlio di Eleazaro, e ricevono l’ordine di salire ancora una volta."
       nl: "Bij het huis van God, in het Hebreeuws Beth-El en gewoonlijk opgevat als de stad Bethel, vraagt Israël wie het eerst zal optrekken; tweemaal verslagen wenen en vasten zij voor de ark, waar Pinechas, de zoon van Eleazar, dienst doet, en krijgen te horen dat zij nog eenmaal moeten optrekken."
       cs: "V domě Božím, hebrejsky Bét-el, což se obvykle považuje za město Bét-el, se Izrael ptá, kdo má vytáhnout první; dvakrát poražení pláčou a postí se před truhlou, u níž slouží Pinchas, syn Eleazarův, a dostávají pokyn vytáhnout ještě jednou."
+      sv: "Vid Guds hus, på hebreiska Betel och vanligen uppfattat som staden Betel, frågar Israel vem som ska gå upp först; två gånger slagna gråter och fastar de inför arken, där Pinechas, Eleasars son, tjänstgör, och får beskedet att gå upp ännu en gång."
   - place: ac24f5f # Gibeah
     ref: Judg.20.29-Judg.20.44
     note:
@@ -109,6 +115,7 @@ stops:
       it: "Si tende un’imboscata intorno a Gabaa; la città è presa e incendiata, e Beniamino è sconfitto: quel giorno cadono 25.100 uomini."
       nl: "Rondom Gibea wordt een hinderlaag gelegd; de stad wordt ingenomen en verbrand, en Benjamin wordt verslagen: die dag vallen 25.100 man."
       cs: "Kolem Gibeje je nastražena léčka; město je dobyto a vypáleno a Benjamín poražen: toho dne padne 25 100 mužů."
+      sv: "Ett bakhåll läggs runt Giva; staden intas och bränns, och Benjamin slås: 25 100 män faller den dagen."
   - place: a45acc3 # Rimmon
     ref: Judg.20.45-Judg.20.48
     note:
@@ -123,6 +130,7 @@ stops:
       it: "Seicento uomini fuggono verso la roccia di Rimmon, nel deserto, e vi restano quattro mesi: è tutto ciò che resta della tribù."
       nl: "Zeshonderd man vluchten naar de rots van Rimmon in de woestijn en blijven daar vier maanden, al wat er van de stam over is."
       cs: "Šest set mužů prchá ke skále Rimmon na poušti a zůstává tam čtyři měsíce, vše, co z kmene zbylo."
+      sv: "Sex hundra man flyr till Rimmons klippa i öknen och stannar där i fyra månader, allt som finns kvar av stammen."
   - place: af92088 # Jabesh-gilead
     ref: Judg.21.1-Judg.21.14
     note:
@@ -137,6 +145,7 @@ stops:
       it: "Israele ha giurato di non dare mogli a Beniamino. Iabes di Galaad non aveva mandato nessuno a Mizpa: dodicimila uomini la colpiscono e portano quattrocento vergini all’accampamento di Silo."
       nl: "Israël heeft gezworen Benjamin geen vrouwen te geven. Jabes in Gilead had niemand naar Mizpa gestuurd: twaalfduizend man slaan het en brengen vierhonderd maagden naar het kamp te Silo."
       cs: "Izrael přísahal, že Benjamínovi nedá ženy. Jabeš gileadský neposlal nikoho do Micpy: dvanáct tisíc mužů jej poráží a přivádí do tábora v Šílu čtyři sta panen."
+      sv: "Israel har svurit att inte ge Benjamin några hustrur. Javesh-Gilead sände ingen till Mispa: tolv tusen man slår staden och för fyra hundra jungfrur till lägret i Shilo."
   - place: aa4680a # Shiloh
     ref: Judg.21.15-Judg.21.25
     note:
@@ -151,3 +160,4 @@ stops:
       it: "Alla festa annuale del Signore a Silo i Beniaminiti, nascosti nelle vigne, rapiscono delle mogli fra le figlie di Silo mentre escono per danzare. «In quel tempo, non v’era re in Israele; ognun facea quel che gli pareva meglio»."
       nl: "Op het jaarlijkse feest van de HEER te Silo vangen de Benjaminieten, verscholen in de wijngaarden, vrouwen uit de dochters van Silo als die naar buiten komen om te dansen. “In die dagen was er geen koning in Israël; een iegelijk deed, wat recht was in zijn ogen.”"
       cs: "Při každoroční slavnosti Hospodinově v Šílu chytají Benjamínovci, ukrytí ve vinicích, manželky z dcer Šílo, když vycházejí tančit. „Těch dnů nebylo krále v Izraeli, ale každý, což se mu vidělo, to činil.“"
+      sv: "Vid Herrens årliga fest i Shilo fångar benjaminiterna, gömda i vingårdarna, sig hustrur bland Shilos döttrar när de kommer ut för att dansa. ”På den tiden fanns ingen konung i Israel; var och en gjorde vad honom behagade.”"

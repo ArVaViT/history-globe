@@ -16,6 +16,7 @@ title:
   it: "Il terzo viaggio di Paolo"
   nl: "De derde reis van Paulus"
   cs: "Třetí Pavlova cesta"
+  sv: "Paulus’ tredje resa"
 year: "AD 54"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -34,6 +35,7 @@ stops:
       it: "Paolo parte di nuovo da Antiochia."
       nl: "Paulus vertrekt opnieuw uit Antiochië."
       cs: "Pavel opět vyráží z Antiochie."
+      sv: "Paulus bryter upp från Antiochia igen."
   - place: a5feb15
     ref: Acts.19.1-Acts.20.1
     note:
@@ -48,6 +50,7 @@ stops:
       it: "Circa tre anni a Efeso; il tumulto di Demetrio."
       nl: "Ongeveer drie jaar in Efeze; het oproer van Demetrius."
       cs: "Asi tři roky v Efezu; vzpoura Démétriova."
+      sv: "Omkring tre år i Efesos; Demetrios’ upplopp."
   - place: a49e1d0
     ref: Acts.20.1-Acts.20.6
     by: untold
@@ -63,6 +66,7 @@ stops:
       it: "Attraverso la Macedonia fino in Grecia per tre mesi, e ritorno; dopo i giorni degli azzimi salpano da Filippi."
       nl: "Door Macedonië naar Griekenland voor drie maanden, en terug; na de dagen van de ongezuurde broden zeilen zij vanuit Filippi."
       cs: "Přes Makedonii do Řecka na tři měsíce a zpět; po dnech nekvašených chlebů vyplouvají z Filip."
+      sv: "Genom Makedonien till Grekland i tre månader, och tillbaka; efter det osyrade brödets dagar seglar de från Filippi."
   - place: a91c509
     ref: Acts.20.6-Acts.20.12
     by: sea
@@ -79,6 +83,7 @@ stops:
       it: "Sette giorni a Troade; Eutico."
       nl: "Zeven dagen in Troas; Eutychus."
       cs: "Sedm dní v Troadě; Eutychos."
+      sv: "Sju dagar i Troas; Eutykos."
   - place: a0a2ca7
     ref: Acts.20.13
     note:
@@ -93,6 +98,7 @@ stops:
       it: "Paolo va a piedi fino ad Asso."
       nl: "Paulus gaat te voet naar Assos."
       cs: "Pavel jde pěšky do Assu."
+      sv: "Paulus går till fots till Assos."
   - place: a33910d
     ref: Acts.20.14
     by: sea
@@ -108,6 +114,7 @@ stops:
       it: "Giungono a Mitilene."
       nl: "Zij komen te Mitylene."
       cs: "Přicházejí do Mitylén."
+      sv: "De kommer till Mytilene."
   - place: a4c2c75
     ref: Acts.20.15
     by: sea
@@ -124,6 +131,7 @@ stops:
       it: "Di fronte a Chio."
       nl: "Tegenover Chios."
       cs: "Naproti Chiu."
+      sv: "Mitt emot Chios."
   - place: acf6ec0
     ref: Acts.20.15
     by: sea
@@ -140,6 +148,7 @@ stops:
       it: "Fanno scalo a Samo."
       nl: "Zij leggen aan bij Samos."
       cs: "Připlouvají k Samu."
+      sv: "De lägger till vid Samos."
   - place: a55027d
     ref: Acts.20.17-Acts.20.38
     by: sea
@@ -156,6 +165,7 @@ stops:
       it: "L’addio agli anziani di Efeso."
       nl: "Afscheid van de oudsten van Efeze."
       cs: "Rozloučení se staršími z Efezu."
+      sv: "Avsked från de äldste i Efesos."
   - place: a398e5d
     ref: Acts.21.1
     by: sea
@@ -171,6 +181,7 @@ stops:
       it: "Rotta diretta verso Coo."
       nl: "Een rechte koers naar Kos."
       cs: "Přímá plavba do Kósu."
+      sv: "Rak kurs till Kos."
   - place: a4218ee
     ref: Acts.21.1
     by: sea
@@ -187,6 +198,7 @@ stops:
       it: "Rodi."
       nl: "Rhodos."
       cs: "Rhodos."
+      sv: "Rhodos."
   - place: ade301b
     ref: Acts.21.1-Acts.21.2
     by: sea
@@ -202,6 +214,7 @@ stops:
       it: "A Patara trovano una nave per la Fenicia."
       nl: "Te Patara vinden zij een schip naar Fenicië."
       cs: "V Patarech nacházejí loď do Fénicie."
+      sv: "I Patara finner de ett skepp till Fenicien."
   - place: a160272
     ref: Acts.21.3-Acts.21.6
     by: sea
@@ -217,6 +230,7 @@ stops:
       it: "Sette giorni con i discepoli a Tiro."
       nl: "Zeven dagen bij de discipelen te Tyrus."
       cs: "Sedm dní s učedníky v Týru."
+      sv: "Sju dagar med lärjungarna i Tyros."
   - place: abc2af0
     ref: Acts.21.7
     by: sea
@@ -232,6 +246,7 @@ stops:
       it: "Un giorno con i fratelli a Tolemaide."
       nl: "Een dag bij de broeders te Ptolemaïs."
       cs: "Jeden den s bratřími v Ptolemaidě."
+      sv: "En dag med bröderna i Ptolemais."
   - place: a58735e
     ref: Acts.21.8-Acts.21.14
     by: sea
@@ -247,6 +262,7 @@ stops:
       it: "In casa di Filippo; la profezia di Agabo."
       nl: "In het huis van Filippus; de profetie van Agabus."
       cs: "V domě Filipově; proroctví Agabovo."
+      sv: "I Filippos’ hus; Agabos’ profetia."
   - place: a15257a
     ref: Acts.21.15-Acts.21.17
     note:
@@ -261,3 +277,4 @@ stops:
       it: "I fratelli di Gerusalemme li accolgono con gioia."
       nl: "De broeders in Jeruzalem ontvangen hen met vreugde."
       cs: "Bratří v Jeruzalémě je přijímají s radostí."
+      sv: "Bröderna i Jerusalem tar emot dem med glädje."

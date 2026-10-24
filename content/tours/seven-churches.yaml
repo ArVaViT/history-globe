@@ -14,6 +14,7 @@ title:
   it: "Le sette chiese dell’Apocalisse"
   nl: "De zeven gemeenten van Openbaring"
   cs: "Sedm církví Zjevení"
+  sv: "Uppenbarelsebokens sju församlingar"
 year: "AD 95"
 approximate: true
 stops:
@@ -31,6 +32,7 @@ stops:
       it: "Nell’isola detta Patmos Giovanni riceve l’ordine di scrivere ciò che vede e di inviarlo alle sette chiese dell’Asia."
       nl: "Op het eiland Patmos krijgt Johannes de opdracht op te schrijven wat hij ziet en het te sturen naar de zeven gemeenten in Asia."
       cs: "Na ostrově zvaném Patmos je Janovi řečeno, aby napsal, co vidí, a poslal to sedmi církvím v Asii."
+      sv: "På ön som heter Patmos får Johannes befallning att skriva upp vad han ser och sända det till de sju församlingarna i Asien."
   - place: a5feb15 # Ephesus
     ref: Rev.2.1-Rev.2.7
     by: sea
@@ -46,6 +48,7 @@ stops:
       it: "Efeso: «hai lasciato il tuo primo amore»."
       nl: "Efeze: “Ik heb tegen u, dat gij uw eerste liefde hebt verlaten.”"
       cs: "Efez: „jsi tu první lásku svou opustil“."
+      sv: "Efesos: ”du har övergivit din första kärlek.”"
   - place: a2e65fb # Smyrna
     ref: Rev.2.8-Rev.2.11
     note:
@@ -60,6 +63,7 @@ stops:
       it: "Smirne: «Sii fedele fino alla morte, e io ti darò la corona della vita»."
       nl: "Smyrna: “Zijt getrouw tot den dood, en Ik zal u geven de kroon des levens.”"
       cs: "Smyrna: „Budiž věrný až do smrti, a dámť korunu života.“"
+      sv: "Smyrna: ”Var trogen intill döden, så skall jag giva dig livets krona.”"
   - place: a75d2c1 # Pergamum
     ref: Rev.2.12-Rev.2.17
     note:
@@ -74,6 +78,7 @@ stops:
       it: "Pergamo, dove ha sede Satana e dove fu ucciso Antipa, il fedele martire."
       nl: "Pergamum, waar de troon van de satan is en waar Antipas, de getrouwe getuige, werd gedood."
       cs: "Pergamon, kde je stolice satanova a kde byl zabit Antipas, věrný svědek."
+      sv: "Pergamon, ”där varest Satan har sin tron” och där Antipas, ”mitt vittne, min trogne tjänare”, blev dräpt."
   - place: a94b661 # Thyatira
     ref: Rev.2.18-Rev.2.29
     note:
@@ -88,6 +93,7 @@ stops:
       it: "Tiatira: le sue ultime opere sono più numerose delle prime, ma tollera la donna Gezabele."
       nl: "Thyatira: zijn laatste werken zijn meer dan de eerste, maar het duldt de vrouw Izebel."
       cs: "Tyatira: její poslední skutky jsou větší než první, ale snáší ženu Jezábel."
+      sv: "Tyatira: dess sista gärningar är flera än de första, men den tolererar kvinnan Isebel."
   - place: aab4a5f # Sardis
     ref: Rev.3.1-Rev.3.6
     note:
@@ -102,6 +108,7 @@ stops:
       it: "Sardi: «tu hai nome di vivere e sei morto»."
       nl: "Sardes: “Ik weet uw werken, dat gij den naam hebt, dat gij leeft, en gij zijt dood.”"
       cs: "Sardy: „máš jméno, že jsi živ, ale jsi mrtvý“."
+      sv: "Sardes: ”Du har det namnet om dig, att du lever, men du är död.”"
   - place: a1c7cc1 # Philadelphia
     ref: Rev.3.7-Rev.3.13
     note:
@@ -116,6 +123,7 @@ stops:
       it: "Filadelfia: «Ecco, io ti ho posta dinanzi una porta aperta, che nessuno può chiudere»."
       nl: "Filadelfia: “Zie, Ik heb een geopende deur voor u gegeven, en niemand kan die sluiten.”"
       cs: "Filadelfie: „postavil jsem před tebou dveře otevřené, a žádnýť jich nemůže zavříti“."
+      sv: "Filadelfia: ”Se, jag har låtit dig finna en öppen dörr, som ingen kan tillsluta.”"
   - place: a83fb1e # Laodicea
     ref: Rev.3.14-Rev.3.22
     note:
@@ -130,3 +138,4 @@ stops:
       it: "Laodicea, né fredda né calda: «Ecco, io sto alla porta e picchio»."
       nl: "Laodicea, noch koud noch heet: “Zie, Ik sta aan de deur, en Ik klop.”"
       cs: "Laodikeia, ani studená, ani horká: „stojímť u dveří, a tluku“."
+      sv: "Laodikeia, varken kall eller varm: ”Se, jag står för dörren och klappar.”"

@@ -15,6 +15,7 @@ title:
   it: "Giona"
   nl: "Jona"
   cs: "Jonáš"
+  sv: "Jona"
 year: "780 BC"
 people: ["Jonah@2Ki.14.25-Luk"]
 approximate: true
@@ -33,6 +34,7 @@ stops:
       it: "Giona, figlio di Amittai, il profeta di Gat-Efer."
       nl: "Jona, de zoon van Amittai, de profeet uit Gat-Chefer."
       cs: "Jonáš, syn Amitajův, prorok z Gat-cheferu."
+      sv: "Jona, Amittajs son, profeten från Gat-Hefer."
   - place: ae023a9 # Joppa
     ref: Jonah.1.3
     note:
@@ -47,6 +49,7 @@ stops:
       it: "Fuggendo dalla presenza del Signore, scende a Giaffa e trova una nave diretta a Tarsis."
       nl: "Op de vlucht voor het aangezicht van de HEER gaat hij af naar Joppe en vindt een schip dat naar Tarsis gaat."
       cs: "Prchá před tváří Hospodinovou, sestupuje do Joppe a nalézá loď plující do Taršíše."
+      sv: "På flykt undan Herrens ansikte går han ner till Joppe och finner ett skepp på väg till Tarshish."
   - place: a70fd5d # Nineveh
     ref: Jonah.3.3-Jonah.4.11
     by: untold
@@ -62,3 +65,4 @@ stops:
       it: "Predica a Ninive, il popolo si converte dalla sua via malvagia, e Dio risparmia la grande città."
       nl: "Hij predikt in Nineve, het volk keert zich af van zijn boze weg, en God spaart de grote stad."
       cs: "Káže v Ninive, lid se odvrací od své zlé cesty a Bůh šetří velké město."
+      sv: "Han predikar i Nineve, folket vänder om från sin onda väg, och Gud skonar den stora staden."

@@ -17,6 +17,7 @@ title:
   it: "Ezechia e Isaia"
   nl: "Chizkia en Jesaja"
   cs: "Chizkijáš a Izajáš"
+  sv: "Hiskia och Jesaja"
 year: "701 BC"
 # Where the story happens, told of several people: no time on foot.
 walked: false
@@ -37,6 +38,7 @@ stops:
       it: "Ezechia elimina gli alti luoghi e fa a pezzi il serpente di rame Nechustan; confida nel Signore."
       nl: "Chizkia ruimt de offerhoogten op en breekt de koperen slang Nechustan; hij vertrouwt op de HEER."
       cs: "Chizkijáš odstraňuje výsosti a láme měděného hada Nechuštana; doufá v Hospodina."
+      sv: "Hiskia avskaffar offerhöjderna och krossar kopparormen Nehustan; han förtröstar på Herren."
   - place: a041bb3 # Samaria
     ref: 2Kgs.18.9-2Kgs.18.12
     year: "722 BC"
@@ -52,6 +54,7 @@ stops:
       it: "Nel sesto anno di Ezechia Samaria è presa dal re d’Assiria e Israele è deportato."
       nl: "In het zesde jaar van Chizkia wordt Samaria ingenomen door de koning van Assyrië en wordt Israël weggevoerd."
       cs: "V šestém roce Chizkijášově dobývá Samaří král asyrský a Izrael je odveden."
+      sv: "I Hiskias sjätte år intas Samaria av Assyriens kung, och Israel förs bort."
   - place: a3cc590 # Lachish
     ref: 2Kgs.18.13-2Kgs.18.16
     note:
@@ -66,6 +69,7 @@ stops:
       it: "Sennacherib prende le città fortificate di Giuda; Ezechia manda a dirgli a Lachis: «Ho mancato», e paga il tributo che gli viene imposto."
       nl: "Sanherib neemt de versterkte steden van Juda in; Chizkia stuurt hem te Lachis de boodschap: “Ik heb gezondigd”, en betaalt de schatting die hem wordt opgelegd."
       cs: "Senacherib dobývá hrazená města Judská; Chizkijáš k němu posílá do Lachiše: „Zhřešilť jsem“, a platí uložený plat."
+      sv: "Sanherib intar Judas befästa städer; Hiskia sänder bud till honom i Lakish: ”Jag har försyndat mig”, och betalar den tribut som läggs på honom."
   - place: a15257a # Jerusalem
     ref: 2Kgs.18.17-2Kgs.19.7
     note:
@@ -80,6 +84,7 @@ stops:
       it: "Presso lo stagno superiore Rabsache schernisce Ezechia e il Signore davanti al popolo sulle mura; Isaia risponde: «Non ti spaventare per le parole che hai udite»."
       nl: "Bij de bovenste vijver bespot de Rabsake Chizkia en de HEER voor het volk op de muur; Jesaja antwoordt: “Vrees niet voor de woorden, die gij gehoord hebt.”"
       cs: "U horního rybníka se Rab-šake posmívá Chizkijášovi i Hospodinu před lidem na hradbě; Izajáš odpovídá: „Nestrachuj se slov těch, kteráž jsi slyšel.“"
+      sv: "Vid övre dammen hånar Rab-Shake Hiskia och Herren inför folket på muren; Jesaja svarar: ”Frukta icke för de ord som du har hört.”"
   - place: a97b595 # Libnah
     ref: 2Kgs.19.8
     note:
@@ -94,6 +99,7 @@ stops:
       it: "Rabsache trova il re d’Assiria in guerra contro Libna."
       nl: "De Rabsake treft de koning van Assyrië aan terwijl hij oorlog voert tegen Libna."
       cs: "Rab-šake nalézá krále asyrského, jak válčí proti Libně."
+      sv: "Rab-Shake finner Assyriens kung i krig mot Livna."
   - place: a15257a # Jerusalem
     ref: 2Kgs.19.14-2Kgs.19.34
     note:
@@ -108,6 +114,7 @@ stops:
       it: "Ezechia spiega la lettera davanti al Signore e prega; Isaia gli manda la risposta: «Io proteggerò questa città affin di salvarla»."
       nl: "Chizkia spreidt de brief voor de HEER uit en bidt; Jesaja stuurt hem het antwoord: “Want Ik zal deze stad beschermen.”"
       cs: "Chizkijáš rozprostírá list před Hospodinem a modlí se; Izajáš mu posílá odpověď: „chrániti budu města tohoto“."
+      sv: "Hiskia breder ut brevet inför Herren och ber; Jesaja sänder honom svaret: ”jag skall beskärma och frälsa denna stad”."
   - place: a70fd5d # Nineveh
     ref: 2Kgs.19.35-2Kgs.19.37
     note:
@@ -122,3 +129,4 @@ stops:
       it: "Dopo che l’angelo del Signore ha colpito l’accampamento assiro, Sennacherib torna a casa e abita a Ninive; più tardi i suoi figli lo uccidono mentre adora nella casa di Nisroc, suo dio."
       nl: "Nadat de engel van de HEER het Assyrische kamp heeft geslagen, gaat Sanherib naar huis en blijft te Nineve; later doden zijn zonen hem terwijl hij zich neerbuigt in het huis van Nisroch, zijn god."
       cs: "Poté, co anděl Hospodinův udeří na asyrský tábor, se Senacherib vrací domů a bydlí v Ninive; později ho synové zabijí, když se klaní v domě svého boha Nisroka."
+      sv: "Sedan Herrens ängel har slagit Assyriens läger drar Sanherib hem och stannar i Nineve; senare dräper hans söner honom när han tillber i sin gud Nisroks tempel."

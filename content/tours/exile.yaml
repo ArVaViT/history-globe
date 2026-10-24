@@ -15,6 +15,7 @@ title:
   it: "La caduta di Gerusalemme e l’esilio"
   nl: "De val van Jeruzalem en de ballingschap"
   cs: "Pád Jeruzaléma a vyhnanství"
+  sv: "Jerusalems fall och landsflykten"
 year: "587 BC"
 approximate: true
 stops:
@@ -32,6 +33,7 @@ stops:
       it: "Nabucodonosor assedia Gerusalemme finché la fame prevale nella città."
       nl: "Nebukadnessar belegert Jeruzalem totdat de honger de overhand krijgt in de stad."
       cs: "Nebukadnesar obléhá Jeruzalém, dokud ve městě nezvítězí hlad."
+      sv: "Nebukadnessar belägrar Jerusalem tills hungern tar överhand i staden."
   - place: a231f80 # Jericho
     ref: 2Kgs.25.4-2Kgs.25.5
     note:
@@ -46,6 +48,7 @@ stops:
       it: "Il re Sedecia fugge e viene preso nelle pianure di Gerico."
       nl: "Koning Zedekia slaat op de vlucht en wordt gegrepen op de vlakten van Jericho."
       cs: "Král Sidkijáš utíká a je dopaden na pláních u Jericha."
+      sv: "Kung Sidkia flyr och grips på Jerikos slätter."
   - place: ab2bde8 # Riblah
     ref: 2Kgs.25.6-2Kgs.25.7
     note:
@@ -60,6 +63,7 @@ stops:
       it: "Il giudizio a Ribla: i figli di Sedecia sono uccisi ed egli è accecato."
       nl: "Oordeel te Ribla: de zonen van Zedekia worden gedood en hij wordt verblind."
       cs: "Soud v Rible: Sidkijášovi synové jsou zabiti a on je oslepen."
+      sv: "Dom i Rivla: Sidkias söner dödas och han förblindas."
   - place: a15257a # Jerusalem
     ref: 2Kgs.25.8-2Kgs.25.10
     note:
@@ -74,6 +78,7 @@ stops:
       it: "Nebuzaradan incendia il Tempio, il palazzo e la città, e l’esercito dei Caldei abbatte le mura."
       nl: "Nebuzaradan verbrandt de tempel, het paleis en de stad, en het leger van de Chaldeeën breekt de muren af."
       cs: "Nebuzaradan pálí chrám, palác i město a vojsko Chaldejců boří hradby."
+      sv: "Nebusaradan bränner templet, palatset och staden, och kaldeernas här river ner murarna."
   - place: a217d18 # Babylon
     ref: 2Kgs.25.11
     note:
@@ -88,6 +93,7 @@ stops:
       it: "Il resto del popolo rimasto nella città è condotto in esilio a Babilonia."
       nl: "De rest van het volk dat in de stad is achtergebleven, wordt in ballingschap naar Babylon weggevoerd."
       cs: "Zbytek lidu, který zůstal ve městě, je odvlečen do vyhnanství do Babylóna."
+      sv: "Den återstående delen av folket i staden förs bort i landsflykt till Babylon."
   - place: a6d57ed # Ramah
     ref: Jer.40.1
     by: untold
@@ -103,6 +109,7 @@ stops:
       it: "A Rama Geremia è messo in libertà di mezzo ai prigionieri."
       nl: "Te Rama wordt Jeremia uit de gevangenen vrijgelaten."
       cs: "V Rámě je Jeremjáš propuštěn z řad zajatců."
+      sv: "I Rama blir Jeremia frigiven bland de fångna."
   - place: a736f6c # Mizpah
     ref: Jer.40.6
     note:
@@ -117,6 +124,7 @@ stops:
       it: "Rimane con Godolia, il governatore, a Mizpa."
       nl: "Hij blijft bij Gedalja, de stadhouder, te Mizpa."
       cs: "Zůstává u správce Gedaljáše v Micpě."
+      sv: "Han stannar hos ståthållaren Gedalja i Mispa."
   - place: adb008c # Tahpanhes
     ref: Jer.43.7
     note:
@@ -131,3 +139,4 @@ stops:
       it: "Dopo l’uccisione di Godolia il resto del popolo fugge in Egitto, a Tafni."
       nl: "Na de moord op Gedalja vlucht het overblijfsel naar Egypte, naar Tachpanhes."
       cs: "Po Gedaljášově vraždě prchá zbytek do Egypta, do Tachpanchés."
+      sv: "Efter Gedaljas mord flyr kvarlevan till Egypten, till Tachpanches."

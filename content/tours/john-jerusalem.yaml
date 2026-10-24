@@ -15,6 +15,7 @@ title:
   it: "Gesù a Gerusalemme, secondo Giovanni"
   nl: "Jezus in Jeruzalem, volgens Johannes"
   cs: "Ježíš v Jeruzalémě podle Jana"
+  sv: "Jesus i Jerusalem, enligt Johannes"
 year: "AD 30"
 people: ["Jesus@Isa.7.14-Rev"]
 approximate: true
@@ -33,6 +34,7 @@ stops:
       it: "A Pasqua scaccia i venditori dal Tempio: «non fate della casa del Padre mio una casa di mercato»."
       nl: "Met het Pascha drijft Hij de handelaars uit de tempel: “maakt niet het huis Mijns Vaders tot een huis van koophandel.”"
       cs: "O velikonocích vyhání z chrámu obchodníky: „nečiňte domu Otce mého domem kupeckým“."
+      sv: "Vid påsken driver han ut köpmännen ur templet: ”Gören icke min Faders hus till ett marknadshus.”"
   - place: a0aa8cf # Bethesda
     ref: John.5.2-John.5.9
     note:
@@ -47,6 +49,7 @@ stops:
       it: "Alla vasca di Betesda, presso la porta delle Pecore, guarisce un uomo infermo da trentotto anni: «Lèvati, prendi il tuo lettuccio, e cammina»."
       nl: "Bij de vijver van Bethesda, bij de Schaapspoort, geneest Hij een man die achtendertig jaar ziek was: “Sta op, neem uw beddeken op, en wandel.”"
       cs: "U rybníka Bethesda u Brány bravné uzdravuje člověka, který byl osm a třicet let nemocen: „Vstaň, vezmi lože své a choď.“"
+      sv: "Vid dammen Betesda vid Fårporten botar han en man som varit sjuk i trettioåtta år: ”Stå upp, tag din säng och gå.”"
   - place: a294859 # Siloam
     ref: John.9.1-John.9.25
     note:
@@ -61,6 +64,7 @@ stops:
       it: "Un uomo nato cieco si lava nella vasca di Siloe e torna vedendo: «ero cieco e ora ci vedo»."
       nl: "Een blindgeborene wast zich in de vijver van Siloam en komt ziende terug: “een ding weet ik, dat ik blind was, en nu zie.”"
       cs: "Slepý od narození se umývá v rybníku Siloe a vrací se vida: „byv slepý, již nyní vidím“."
+      sv: "En man född blind tvättar sig i dammen Siloa och kommer tillbaka seende: ”ett vet jag: att jag, som var blind, nu kan se.”"
   - place: a47c817 # Solomon's Portico
     ref: John.10.22-John.10.30
     note:
@@ -75,6 +79,7 @@ stops:
       it: "Alla festa della Dedicazione, nel portico di Salomone: «Io ed il Padre siamo uno»."
       nl: "Op het feest van de inwijding, in de Zuilengang van Salomo: “Ik en de Vader zijn een.”"
       cs: "Na slavnost posvěcení chrámu, v Šalomounově podloubí: „Já a Otec jedno jsme.“"
+      sv: "Vid tempelinvigningens högtid, i Salomos pelarhall: ”Jag och Fadern äro ett.”"
   - place: a4f35bc # Bethany
     ref: John.11.1-John.11.44
     note:
@@ -89,6 +94,7 @@ stops:
       it: "A Betania, presso Gerusalemme, risuscita Lazzaro: «Io son la resurrezione e la vita»."
       nl: "Te Bethanië, bij Jeruzalem, wekt Hij Lazarus op: “Ik ben de Opstanding en het Leven.”"
       cs: "V Betanii u Jeruzaléma křísí Lazara: „Já jsem vzkříšení i život.“"
+      sv: "I Betania, nära Jerusalem, uppväcker han Lasaros: ”Jag är uppståndelsen och livet.”"
   - place: a553110 # Kidron
     ref: John.18.1-John.18.12
     note:
@@ -103,6 +109,7 @@ stops:
       it: "Al di là del torrente Cedron, nel giardino, viene arrestato."
       nl: "Over de beek Kidron, in de hof, wordt Hij gevangengenomen."
       cs: "Za potokem Kidron, v zahradě, je zatčen."
+      sv: "På andra sidan bäcken Kidron, i trädgården, grips han."
   - place: aec23b1 # Gabbatha
     ref: John.19.13-John.19.16
     note:
@@ -117,6 +124,7 @@ stops:
       it: "Pilato siede in tribunale nel luogo detto Lastrico, in ebraico Gabbata."
       nl: "Pilatus zit op de rechterstoel op de plaats die het Plaveisel heet, in het Hebreeuws Gabbata."
       cs: "Pilát sedí na soudné stolici na místě zvaném Dlažba, hebrejsky Gabata."
+      sv: "Pilatus sitter på domarsätet på platsen som kallas Stenläggningen, på hebreiska Gabbata."
   - place: a631d35 # Golgotha
     ref: John.19.17-John.19.30
     note:
@@ -131,3 +139,4 @@ stops:
       it: "Al Golgota è crocifisso: «È compiuto!»"
       nl: "Op Golgota wordt Hij gekruisigd: “Het is volbracht!”"
       cs: "Na Golgotě je ukřižován: „Dokonánoť jest.“"
+      sv: "På Golgota korsfästs han: ”Det är fullbordat.”"

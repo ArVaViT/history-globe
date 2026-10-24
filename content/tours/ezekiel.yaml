@@ -15,6 +15,7 @@ title:
   it: "Ezechiele fra gli esuli"
   nl: "Ezechiël onder de ballingen"
   cs: "Ezechiel mezi vyhnanci"
+  sv: "Hesekiel bland de landsflyktiga"
 year: "593 BC"
 # He is carried “in the visions of God” (8:3, 11:24) and the news comes to him (33:21): no time on foot.
 walked: false
@@ -35,6 +36,7 @@ stops:
       it: "Fra i prigionieri presso il fiume Chebar i cieli si aprono, ed Ezechiele ha visioni di Dio."
       nl: "Onder de gevangenen aan de rivier de Kebar gaat de hemel open, en Ezechiël ziet visioenen van God."
       cs: "Mezi zajatými u řeky Kebar se otevírají nebesa a Ezechiel vidí vidění Boží."
+      sv: "Bland de bortförda vid floden Kebar öppnas himlarna, och Hesekiel ser Guds syner."
   - place: a10147d # Tel-abib
     ref: Ezek.3.15
     note:
@@ -49,6 +51,7 @@ stops:
       it: "Giunge dagli esuli di Tel-Abib e siede in mezzo a loro sette giorni, stupefatto."
       nl: "Hij komt bij de ballingen te Tel-Abib en zit zeven dagen verbijsterd tussen hen."
       cs: "Přichází k vyhnancům v Tel-abíbu a sedí mezi nimi sedm dní ohromen."
+      sv: "Han kommer till de landsflyktiga i Tel-Abib och sitter bland dem i sju dagar, bestört."
   - place: a15257a # Jerusalem
     ref: Ezek.8.1-Ezek.8.4
     year: "592 BC"
@@ -64,6 +67,7 @@ stops:
       it: "Nel sesto anno lo Spirito lo solleva e lo conduce, in visioni di Dio, a Gerusalemme, all’ingresso della porta interna."
       nl: "In het zesde jaar tilt de Geest hem op en brengt hem in visioenen van God naar Jeruzalem, naar de ingang van de binnenpoort."
       cs: "V šestém roce ho Duch zvedá a přináší ho ve viděních Božích do Jeruzaléma ke dveřím vnitřní brány."
+      sv: "I det sjätte året lyfter Anden upp honom och för honom i Guds syner till Jerusalem, till dörren på den inre porten."
   - place: a32a4f8 # Chaldea
     ref: Ezek.11.24-Ezek.11.25
     year: "592 BC"
@@ -79,6 +83,7 @@ stops:
       it: "Lo Spirito lo riporta fra i prigionieri in Caldea, ed egli riferisce loro tutto ciò che il Signore gli ha mostrato."
       nl: "De Geest brengt hem terug naar de gevangenen in Chaldea, en hij vertelt hun alles wat de HEER hem heeft laten zien."
       cs: "Duch ho přináší zpět k zajatým v Chaldeji a on jim vypráví vše, co mu Hospodin ukázal."
+      sv: "Anden för honom tillbaka till de bortförda i Kaldeen, och han berättar för dem allt som Herren har visat honom."
   - place: a15257a # Jerusalem
     ref: Ezek.33.21-Ezek.33.22
     year: "585 BC"
@@ -94,3 +99,4 @@ stops:
       it: "Fra gli esuli, nel dodicesimo anno della cattività, gli giunge uno scampato da Gerusalemme: «La città è presa!»"
       nl: "Onder de ballingen komt in het twaalfde jaar van de ballingschap iemand die uit Jeruzalem is ontkomen bij hem: “De stad is geslagen.”"
       cs: "Mezi vyhnanci, ve dvanáctém roce zajetí, k němu přichází jeden, kdo utekl z Jeruzaléma: „Dobyto jest město.“"
+      sv: "Bland de landsflyktiga, i det tolfte året av fångenskapen, kommer en man som har räddat sig från Jerusalem till honom: ”Staden är intagen.”"

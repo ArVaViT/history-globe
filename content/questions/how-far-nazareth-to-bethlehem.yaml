@@ -11,6 +11,7 @@ question:
   it: "Quanto dista Nazaret da Betlemme?"
   nl: "Hoe ver ligt Nazareth van Bethlehem?"
   cs: "Jak daleko je Nazaret od Betléma?"
+  sv: "Hur långt är Nasaret från Betlehem?"
 answer:
   en:
     - "Nazareth is about 110 km from Bethlehem in a straight line, about 4 days on foot at 30 km a day; by the Roman roads on the map the way measures about 156 km, roughly five days."
@@ -56,6 +57,10 @@ answer:
     - "Nazaret je od Betléma vzdálen asi 110 km vzdušnou čarou, asi 4 dny pěšky při 30 km denně; po římských silnicích na mapě měří cesta asi 156 km, zhruba pět dní."
     - "Lukáš praví: „Vstoupil pak i Jozef od Galilee z města Nazarétu do Judstva, do města Davidova, kteréž slove Betlém.“ Nazaret leží v kotlině v kopcích Dolní Galileje; Betlém na hřebeni v judských horách, asi 10 km jižně od Jeruzaléma po silnici. Evangelium neříká, kterou cestou rodina šla ani jak dlouho cesta trvala; cestující z Galileje šli buď dolů Jordánským údolím přes Jericho, nebo po hřebeni přes Samaří, a Jeruzalém ležel na obou trasách před posledním krátkým úsekem do Betléma."
     - "Cesta z Galileje do Judska byla známá: Lukáš dodává: „chodívali rodičové jeho každého roku do Jeruzaléma na den slavný velikonoční“, a z Nazareta do Jeruzaléma je to asi 103 km vzdušnou čarou, 146 km po silnicích na mapě."
+  sv:
+    - "Nasaret ligger omkring 110 km från Betlehem fågelvägen, omkring 4 dagar till fots med 30 km om dagen; via de romerska vägarna på kartan mäter vägen omkring 156 km, ungefär fem dagar."
+    - "Lukas säger: ”Så gjorde ock Josef; och eftersom han var av Davids hus och släkt, for han från staden Nasaret i Galileen upp till Davids stad, som heter Betlehem, i Judeen.” Nasaret ligger i en dalsänka i bergen i Nedre Galileen; Betlehem på en ås i Judas berg, omkring 10 km söder om Jerusalem på väg. Evangeliet säger inte vilken väg familjen tog eller hur lång tid resan varade; resenärer från Galileen gick antingen ned genom Jordandalen via Jeriko eller längs åsen genom Samaria, och Jerusalem låg på båda vägarna före den sista korta etappen till Betlehem."
+    - "Resan från Galileen till Judeen var välbekant: Lukas tillägger att Jesu föräldrar ”plägade årligen vid påskhögtiden begiva sig till Jerusalem”, och Nasaret till Jerusalem är omkring 103 km fågelvägen, 146 km via vägarna på kartan."
 map:
   year: "5 BC"
   ref: Luke.2.4

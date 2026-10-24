@@ -15,6 +15,7 @@ title:
   it: "Giuseppe in Egitto"
   nl: "Jozef in Egypte"
   cs: "Josef v Egyptě"
+  sv: "Josef i Egypten"
 year: "1700 BC"
 people: ["Joseph@Gen.30.24-Rev"]
 approximate: true
@@ -33,6 +34,7 @@ stops:
       it: "Israele manda Giuseppe dalla valle di Ebron a vedere come stanno i suoi fratelli."
       nl: "Israël zendt Jozef uit het dal van Hebron om te zien hoe het met zijn broers gaat."
       cs: "Izrael posílá Josefa z údolí Hebronu, aby se podíval, jak se mají jeho bratři."
+      sv: "Israel sänder Josef från Hebrons dal för att se hur det står till med hans bröder."
   - place: adf74d4 # Shechem
     ref: Gen.37.14-Gen.37.16
     note:
@@ -47,6 +49,7 @@ stops:
       it: "Giunge a Sichem e vaga per i campi cercandoli."
       nl: "Hij komt te Sichem en dwaalt in het veld rond op zoek naar hen."
       cs: "Přichází do Šekemu a bloudí po poli a hledá je."
+      sv: "Han kommer till Shekem och irrar omkring på marken och söker efter dem."
   - place: ab635e4 # Dothan
     ref: Gen.37.17-Gen.37.28
     note:
@@ -61,6 +64,7 @@ stops:
       it: "A Dotan i suoi fratelli lo gettano in una cisterna e lo vendono agli Ismaeliti per venti pezzi d’argento."
       nl: "Te Dotan gooien zijn broers hem in een put en verkopen hem voor twintig zilverstukken aan de Ismaëlieten."
       cs: "V Dótanu ho bratři vhazují do jámy a prodávají Jišmaelcům za dvacet stříbrných."
+      sv: "I Dotan kastar hans bröder honom i en grop och säljer honom till ismaeliterna för tjugo silverpenningar."
   - place: af301ca # Egypt
     ref: Gen.39.1-Gen.39.6
     note:
@@ -75,6 +79,7 @@ stops:
       it: "In Egitto Potifar, capo delle guardie del faraone, lo compra, e il Signore è con Giuseppe."
       nl: "In Egypte koopt Potifar, de overste van de lijfwacht van Farao, hem, en de HEER is met Jozef."
       cs: "V Egyptě ho kupuje Potifar, velitel faraonovy stráže, a Hospodin je s Josefem."
+      sv: "I Egypten köper Potifar, befälhavare för faraos livvakt, honom, och Herren är med Josef."
   - place: acd9137 # Heliopolis (On)
     ref: Gen.41.41-Gen.41.45
     note:
@@ -89,6 +94,7 @@ stops:
       it: "Posto a capo di tutto il paese d’Egitto, riceve in moglie Asenat, figlia di Potifera, sacerdote di On, cioè Eliopoli."
       nl: "Aangesteld over heel Egypte krijgt hij Asnat, de dochter van Potifera, priester van On, dat is Heliopolis."
       cs: "Ustanoven nad celou egyptskou zemí, dostává za ženu Asenat, dceru Poti-fery, kněze v On, to jest v Héliopoli."
+      sv: "Satt över hela Egyptens land får han Asenat, dotter till Potifera, präst i On, det vill säga Heliopolis."
   - place: a60f092 # Goshen
     ref: Gen.46.28-Gen.46.30
     note:
@@ -103,6 +109,7 @@ stops:
       it: "A Gosen incontra suo padre Israele, gli si getta al collo e piange a lungo."
       nl: "In Gosen ontmoet hij zijn vader Israël, valt hem om de hals en weent lange tijd."
       cs: "V Gošenu se setkává se svým otcem Izraelem, padá mu kolem krku a dlouho pláče."
+      sv: "I Goshen möter han sin fader Israel, faller honom om halsen och gråter länge."
   - place: a2f186d # Atad
     ref: Gen.50.10-Gen.50.11
     note:
@@ -117,6 +124,7 @@ stops:
       it: "All’aia di Atad, al di là del Giordano, fanno lutto per Giacobbe per sette giorni."
       nl: "Bij de dorsvloer van Atad aan de overzijde van de Jordaan rouwen zij zeven dagen om Jakob."
       cs: "Na humně Atad za Jordánem oplakávají Jákoba sedm dní."
+      sv: "Vid Atads tröskplats på andra sidan Jordan sörjer de Jakob i sju dagar."
   - place: ae00861 # Machpelah
     ref: Gen.50.12-Gen.50.13
     note:
@@ -131,3 +139,4 @@ stops:
       it: "Giacobbe è sepolto nella caverna del campo di Macpela, che Abramo aveva comprato."
       nl: "Jakob wordt begraven in de spelonk van het veld van Machpela, dat Abraham heeft gekocht."
       cs: "Jákob je pohřben v jeskyni na poli Makpela, které koupil Abraham."
+      sv: "Jakob begravs i grottan på Makpelas åker, som Abraham köpte."
