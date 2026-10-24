@@ -332,7 +332,7 @@ function page(o: {
       <div class="bar-end">${langs}<a class="open" href="${up}?locale=${o.l}">${LANDING[o.l].open}${icon("out")}</a></div>
     </header>
 ${o.body}
-    <footer class="foot"><nav aria-label="History Globe"><a href="${up}${o.l}/">History Globe</a><a href="${up}${docsPath(o.l)}">${T[o.l].about}</a><a href="${up}${docsPath(o.l, "privacy")}">${T[o.l].privacy}</a><a href="${up}${docsPath(o.l, "sources")}">${T[o.l].sources}</a></nav><p title="${T[o.l].data}: ${CREDITS}">${T[o.l].data}: ${CREDITS}</p>${o.licence ? `<p class="lic">${o.licence === "article" ? T[o.l].licArticle : T[o.l].licAnswer}, <a rel="license" href="${NC_ND}">CC BY-NC-ND 4.0</a></p>` : ""}</footer>
+    <footer class="foot"><nav aria-label="History Globe"><a href="${up}${o.l}/">History Globe</a><a href="${up}${docsPath(o.l)}">${T[o.l].about}</a><a href="${up}${docsPath(o.l, "privacy")}">${T[o.l].privacy}</a><a href="${up}${docsPath(o.l, "sources")}">${T[o.l].sources}</a></nav><p>${T[o.l].data}: ${CREDITS}</p>${o.licence ? `<p class="lic">${o.licence === "article" ? T[o.l].licArticle : T[o.l].licAnswer}, <a rel="license" href="${NC_ND}">CC BY-NC-ND 4.0</a></p>` : ""}</footer>
 ${bodyEnd(up)}
   </body>
 </html>
