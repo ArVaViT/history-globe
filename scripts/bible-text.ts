@@ -405,8 +405,13 @@ export const REPAIRS: Readonly<Partial<Record<Locale, readonly (readonly [RegExp
     [/^\[|\]$/g, ""],
     [/\s&gt;.*$/, ""],
     [/\s+$/, ""],
+    // 2 Kings 5:12 lost its preposition in the module.
+    [/alla vatten Israel/g, "alla vatten i Israel"],
   ],
-  da: [[/[[\]*]/g, ""]],
+  da: [
+    [/[[\]*]/g, ""],
+    [/\bjsom\b/g, "som"],
+  ],
   nb: [
     [/\*/g, ""],
     [/Ã¦/g, "æ"],
