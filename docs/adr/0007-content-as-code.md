@@ -1,6 +1,6 @@
 # 0007. Content as code
 
-- Status: proposed
+- Status: accepted
 - Date: 2026-09-28
 
 ## Context

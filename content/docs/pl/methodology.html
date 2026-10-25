@@ -17,6 +17,12 @@ description: Skąd pochodzi każde miejsce, granica, data i postać na History G
   >, który ocenia identyfikacje proponowane w literaturze dla każdego miejsca. Zachowujemy jego
   preferowaną identyfikację i jego szacunek prawdopodobieństwa dla każdego kandydującego stanowiska.
 </p>
+<p>
+  Z tych {{places}} miejsc {{named}} jest wymienionych w wersecie ksiąg, które oznacza OpenBible, i
+  każde z nich ma własną stronę; pozostałe {{unnamed}} to wpisy OpenBible, których nie wymienia
+  żaden werset tych ksiąg (na przykład Adasa z 1 Księgi Machabejskiej). Artykuł ma {{articles}}
+  miejsc. Kolejne {{excluded}} pominięto, bo nie mają punktu, który wolno opublikować (zob. niżej).
+</p>
 <ul>
   <li>
     <b>Pewność słowami.</b> Gdy nie proponuje się żadnego poważnego drugiego stanowiska, ocena
@@ -42,14 +48,15 @@ description: Skąd pochodzi każde miejsce, granica, data i postać na History G
 <p>
   Miasto na mapie jest rysowane w pełni tylko w latach, w których istniało. Dla {{life}} miejsc
   biblijnych lata założenia, zburzenia i opuszczenia zapisano ręcznie, każdy z podaniem źródeł
-  (autorzy starożytni, kroniki, inskrypcje, sprawozdania z wykopalisk). Data sporna jest pomijana
-  zamiast zgadywana.
+  (autorzy starożytni, kroniki, inskrypcje, sprawozdania z wykopalisk). Zapisuje się tylko pewne
+  daty: miasto, którego założenie lub koniec są sporne, nie dostaje dla nich roku.
 </p>
 <p>
   {{ancient}} miast świata starożytnego, których Biblia nie wymienia — stolic, portów i sanktuariów
-  takich jak Ugarit, Chattusza, Mari czy Delfy — wybrano i datowano pojedynczo, każde sprawdzone w
-  dwóch źródłach, z identyfikatorem w <a href="https://pleiades.stoa.org">Pleiades</a> lub Wikidata
-  i z punktem na starożytnym stanowisku, a nie na współczesnym mieście.
+  takich jak Ugarit, Chattusza, Mari czy Delfy — wybrano i datowano pojedynczo: każde umieszczono
+  według jego rekordu w <a href="https://pleiades.stoa.org">Pleiades</a> lub Wikidata, na
+  starożytnym stanowisku, a nie na współczesnym mieście, i datowano na podstawie tych rekordów oraz
+  opisów encyklopedycznych, uzgodnionych ręcznie.
 </p>
 
 <h2>Granice</h2>
@@ -68,8 +75,7 @@ description: Skąd pochodzi każde miejsce, granica, data i postać na History G
   Wschód do 1300 n.e. zostały sprawdzone rok po roku, między innymi upadek i odrodzenie Asyrii w
   VIII wieku p.n.e., Babilon za Merodach-Baladana, Pergamon przekazany Rzymowi w 133 p.n.e.,
   Macedonia po Pydnie i Tracja zaanektowana w 46 n.e. Każda partia poprawek jest najpierw testowana
-  na kształtach, a potem ponownie, niezależnie, sprawdzana względem źródeł przez drugiego
-  recenzenta.
+  na kształtach, a potem ponownie sprawdzana względem źródeł w drugim, osobnym przebiegu AI.
 </p>
 <p>
   Królestwo, które płaciło daninę imperium lub rządziło jako jego lenno, jest rysowane jaśniejszym
@@ -106,18 +112,22 @@ description: Skąd pochodzi każde miejsce, granica, data i postać na History G
   </li>
 </ul>
 
-<h2>Wydarzenia, trasy i artykuły</h2>
+<h2 id="review">Wydarzenia, trasy i artykuły</h2>
 <p>
   Wydarzenia ({{events}}), trasy ({{tours}}) i artykuły ({{articles}}) powstają przy pomocy AI pod
   kierunkiem autora, a następnie są sprawdzane w osobnych przeglądach względem źródeł: tekstu
   biblijnego co do tego, co mówi, autorów starożytnych, kronik i inskrypcji co do dat oraz
-  literatury naukowej co do stanowisk. Każde twierdzenie podaje swoje źródło. Cytaty pochodzą
-  wyłącznie z przekładu synodalnego i King James Version. Żadna trasa nie przeszła pierwszego
-  przeglądu bez zmian; każdą poprawiono i sprawdzono ponownie. W ostatnim pełnym przeglądzie,
-  zakończonym 17 października 2026, wszystkie 746 artykułów sprawdzono ponownie względem źródeł,
-  około 210 z nich dwukrotnie; wprowadzono 1088 poprawek, każdą we wszystkich 11 językach, a w 157
-  artykułach znaleziono wyraźne błędy. Te przeglądy wykonuje AI na podstawie źródeł, a nie uczeni;
-  artykuł, który przeczytał historyk, nosi jego nazwisko.
+  literatury naukowej co do stanowisk. Każdy artykuł, odpowiedź i trasa podają swoje źródła, dla
+  tekstu jako całości, a nie zdanie po zdaniu. Cytaty pochodzą wyłącznie z Biblii w domenie
+  publicznej w każdym języku; wydania wymienia strona <a href="sources.html">źródeł</a>. Żadna trasa
+  nie przeszła pierwszego przeglądu bez zmian; każdą poprawiono i sprawdzono ponownie. W ostatnim
+  pełnym przeglądzie, zakończonym 17 października 2026, wszystkie 746 artykułów sprawdzono ponownie
+  względem źródeł, około 210 z nich dwukrotnie; wprowadzono 1088 poprawek, każdą we wszystkich 11
+  językach, które serwis miał wtedy, a w 157 artykułach znaleziono wyraźne błędy. Pięć języków
+  dodanych 24 października 2026 (szwedzki, norweski, duński, tagalski i serbski) przetłumaczono z
+  już poprawionych tekstów; potem osobny recenzent AI porównał każdy ich tekst z angielskim, a każdy
+  cytat z Biblią danego języka. Te przeglądy wykonuje AI na podstawie źródeł, a nie uczeni; artykuł,
+  który przeczytał historyk, nosi jego nazwisko.
 </p>
 <p>
   Odległość do przystanku podajemy w linii prostej. Od 312 p.n.e., gdy zaczynają się drogi rzymskie,
@@ -137,7 +147,7 @@ description: Skąd pochodzi każde miejsce, granica, data i postać na History G
   Bitwy i oblężenia ({{battles}}) to te, które opisuje Biblia, oraz kilka spoza niej, które
   rozstrzygnęły o losie Izraela. Każda jest umieszczona w miejscu, gdzie się toczyła, i pojawia się
   na mapie w swoich latach. Bitwy biblijne są datowane tak jak te same opowieści w trasach;
-  pozostałe nie mają wersetu, lecz źródło starożytne lub naukowe. Drugi, niezależny przegląd
+  pozostałe nie mają wersetu, lecz źródło starożytne lub naukowe. Drugi, osobny przegląd AI
   sprawdził szkic względem tekstu synodalnego i King James Version: z 58 wpisów poprawiono 16, a
   jeden odrzucono, bo mapa nie ma punktu dla jego stanowiska.
 </p>
@@ -147,6 +157,41 @@ description: Skąd pochodzi każde miejsce, granica, data i postać na History G
   Biblia synodalna, a kanon protestancki nie: każde takie odwołanie jest oznaczone jako
   „deuterokanoniczne”, a jego link otwiera tekst, który zawiera tę księgę.
 </p>
+
+<h2 id="chronology">Daty i chronologia</h2>
+<p>
+  Mapa pokazuje każdą opowieść w jakimś roku, więc jej daty idą za jedną konwencją; tam, gdzie
+  badacze się różnią, rok jest punktem dla mapy, a nie werdyktem.
+</p>
+<ul>
+  <li>
+    <b>Królowie Izraela i Judy</b> są datowani według chronologii E. R. Thiele’a (<i
+      >The Mysterious Numbers of the Hebrew Kings</i
+    >): Salomon zaczyna budowę świątyni ok. 966 p.n.e., królestwo dzieli się ok. 931 p.n.e. Inne
+    rekonstrukcje różnią się o kilka lat; W. F. Albright na przykład umieszczał podział w 922 p.n.e.
+  </li>
+  <li>
+    <b>Wcześniejsze daty</b> liczy się od nich wstecz tak, jak liczy tekst: wyjście z Egiptu w 1446
+    p.n.e., 480 lat przed świątynią (1 Królewska 6:1), podbój w 1406 p.n.e. i panowanie Dawida od
+    1010 p.n.e. To konwencje: wielu badaczy umieszcza wyjście w XIII wieku p.n.e. albo wątpi, że
+    wydarzyło się tak, jak opowiedziano, a odpowiedź na pytanie
+    <a href="../../pl/q/when-was-the-exodus/">„Kiedy nastąpiło Wyjście?”</a> przedstawia ten spór.
+    Patriarchowie stoją w umownych latach.
+  </li>
+  <li>
+    <b>Wydarzenia spoza Biblii</b> są datowane według źródeł, które je ustalają (Kronika babilońska,
+    roczniki asyryjskie, Józef Flawiusz, datowana inskrypcja), każde ze swoimi źródłami, zwykle
+    dwoma lub więcej; upadek Jerozolimy pokazano ok. 586 p.n.e. (broni się też 587 p.n.e.).
+  </li>
+  <li>
+    <b>Nowy Testament:</b> narodziny Jezusa ok. 5 p.n.e., ukrzyżowanie ok. 30 n.e. (broni się też 33
+    n.e.) i podróże Pawła w latach zwykle podawanych.
+  </li>
+  <li>
+    <b>„ok.”</b> oznacza rok znany tylko w przybliżeniu, jak wszystkie lata przed I tysiącleciem
+    p.n.e.
+  </li>
+</ul>
 
 <h2>Kontrole przy każdej kompilacji</h2>
 <p>Nic nie jest publikowane, dopóki nie przejdą wszystkie kontrole:</p>
@@ -180,10 +225,33 @@ description: Skąd pochodzi każde miejsce, granica, data i postać na History G
   </li>
 </ul>
 
-<h2 id="report">Zgłoś błąd</h2>
+<h2 id="cite">Jak cytować</h2>
 <p>
-  Każda karta miejsca ma link <i>Widzisz błąd?</i>. Otwiera on zgłoszenie w publicznym repozytorium
-  z już wypełnionym miejscem; potrzebne jest konto GitHub. Można też otworzyć je bezpośrednio:
+  History Globe jest poprawiany na bieżąco, więc cytat podaje datę użytych danych. Każda strona
+  dokumentacji podaje ją u dołu („Dane z”), a <code>index.json</code> w API jako
+  <code>built_at</code>.
+</p>
+<p>Serwis:</p>
+<pre><code class="cite">Arnaut V., History Globe: atlas historii biblijnej, {{site}}/
+(dane z {{built}}; dostęp: …).</code></pre>
+<p>Strona, z tytułem i adresem:</p>
+<pre><code class="cite">Jerozolima, w: V. Arnaut, History Globe, {{site}}/pl/place/jerusalem/
+(dane z {{built}}; dostęp: …).</code></pre>
+<p>Dane, z datą migawki podaną na karcie zbioru:</p>
+<pre><code class="cite">Arnaut, Vadym. History Globe dataset. Hugging Face, snapshot of ….
+https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
+
+<h2 id="report">Poprawki</h2>
+<p>
+  Widzisz błąd, brakujące źródło albo lepsze odczytanie? Napisz na
+  <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>; konto nie jest
+  potrzebne. Podaj stronę i co jest nie tak, jeśli możesz, ze źródłem. Każde zgłoszenie jest
+  czytane, a potwierdzony błąd jest poprawiany.
+</p>
+<p>
+  Z kontem GitHub możesz też użyć linku <i>Widzisz błąd?</i> na karcie każdego miejsca, który
+  otwiera zgłoszenie w publicznym repozytorium z już wpisanym miejscem, albo otworzyć je
+  bezpośrednio:
   <a href="https://github.com/ArVaViT/history-globe/issues/new"
     >github.com/ArVaViT/history-globe/issues</a
   >.

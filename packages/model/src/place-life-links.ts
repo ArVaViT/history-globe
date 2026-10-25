@@ -56,3 +56,12 @@ export function inheritLife(
   }
   return out;
 }
+
+/**
+ * The year a town in ruins stood again. A gap's `until` is its last year in ruins, as the
+ * map draws it; a reader is told the year it was rebuilt, as the notes give it (Corinth
+ * desolate "until Julius Caesar founded a Roman colony there in 44 BC": `until` 45 BC).
+ */
+export function rebuiltIn<Y extends { readonly year: number }>(gap: { readonly until: Y }): Y {
+  return { ...gap.until, year: gap.until.year + 1 };
+}

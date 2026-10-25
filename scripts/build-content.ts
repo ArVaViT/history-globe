@@ -29,6 +29,8 @@ import {
   type PleiadesLink,
   type PlacePhoto,
   SourcesRuFile,
+  SourcesOwnFile,
+  OWN_SOURCE,
   LocaleNamesFile,
   NAME_LOCALES,
 } from "../packages/model/src/content.ts";
@@ -42,6 +44,8 @@ import { inFocus } from "../packages/core/src/style.ts";
 import { canonicalPosition, refCovers } from "../packages/model/src/scripture.ts";
 import { siteLabelIn, type SiteLabelParts } from "../packages/model/src/sites.ts";
 import { loadAllLocaleData } from "../packages/model/src/locale-data.ts";
+import { loadReviews } from "./reviews.ts";
+import { itemHash } from "./content-hash.ts";
 
 // Every language is written here, so every language's words are loaded first.
 await loadAllLocaleData();
@@ -296,8 +300,9 @@ for (const file of existsSync(articlesDir)
   if (props && !props.verses) errors.push(`articles/${file}: place ${a.place} has no verses`);
   if (articles.some((x) => x.place === a.place))
     errors.push(`articles/${file}: place ${a.place} already has an article`);
-  if (a.status === "reviewed" && !a.reviewer)
-    errors.push(`articles/${file}: a reviewed article names its reviewer`);
+  // A scholar's review is a file of its own (content/reviews), with its scope and consent.
+  if (a.status === "reviewed" || a.reviewer)
+    errors.push(`articles/${file}: a review goes into content/reviews, not into the article`);
   for (const lang of ["en", "ru"] as const) {
     const words = a.body[lang].join(" ").split(/\s+/).length;
     if (words > 450)
@@ -756,32 +761,93 @@ const inRussian = (where: string, list: readonly string[]): string[] =>
       errors.push(`${where}: no Russian for the source "${s}" (sources-ru.yaml)`);
     return ru ?? s;
   });
+// The site's own lines among the sources (content/sources-own.yaml), in every language but
+// English and Russian: a page in German reads "History-Globe-Tour „Salomo“", not the English
+// line; the bibliography beside them stays as published. An own line without all of its
+// languages stops the build, like a line without its Russian.
+const sourcesOwn = SourcesOwnFile.parse(load("content/sources-own.yaml"));
+const OWN_IN = LOCALES.filter((l) => l !== "en" && l !== "ru");
+const seenOwn = new Set<string>();
+const ownInEach = (
+  where: string,
+  list: readonly string[],
+): Partial<Record<Locale, string[]>> | undefined => {
+  if (!list.some((s) => OWN_SOURCE.test(s))) return undefined;
+  return Object.fromEntries(
+    OWN_IN.map((l) => [
+      l,
+      list.map((s) => {
+        if (!OWN_SOURCE.test(s)) return s;
+        seenOwn.add(s);
+        const t = sourcesOwn[s]?.[l];
+        if (t === undefined)
+          errors.push(`${where}: no ${l} for the site's own source "${s}" (sources-own.yaml)`);
+        return t ?? s;
+      }),
+    ]),
+  );
+};
 // The marks a copy can be told by (scripts/canary.ts): none without HG_CANARY_SEED.
 const canaries = new Canaries();
 const inEachLanguage = (file: (l: string) => string, id: string, texts: Record<string, string[]>) =>
   Object.fromEntries(
     Object.entries(texts).map(([l, ps]) => [l, canaries.text(file(l), id, l, ps)]),
   );
+// Reviews by scholars (content/reviews): each against the items it covers, and whether
+// their English text has changed since the version read.
+const reviewed = loadReviews(join(root, "content/reviews"), {
+  article: new Map(articles.map((a) => [a.id, itemHash({ kind: "article", ...a })])),
+  question: new Map(questions.map((q) => [q.id, itemHash({ kind: "question", ...q })])),
+  tour: new Map(tours.map((t) => [t.id, itemHash({ kind: "tour", ...t })])),
+});
+errors.push(...reviewed.errors);
+const reviewsOf = (kind: "article" | "question", id: string) => {
+  const list = reviewed.byItem.get(`${kind}:${id}`);
+  return list ? { reviews: list } : {};
+};
+
 const articlesOut = articles.map((a) => ({
   ...a,
   body: inEachLanguage((l) => `data/articles/${l}.json`, a.place, a.body),
   sources_ru: inRussian(`articles/${a.id}`, a.sources),
+  ...((x) => (x ? { sources_in: x } : {}))(ownInEach(`articles/${a.id}`, a.sources)),
+  ...reviewsOf("article", a.id),
 }));
 const questionsOut = questions.map((q) => ({
   ...q,
   answer: inEachLanguage(() => "api/v1/questions.json", q.id, q.answer),
   sources_ru: inRussian(`questions/${q.id}`, q.sources),
+  ...((x) => (x ? { sources_in: x } : {}))(ownInEach(`questions/${q.id}`, q.sources)),
+  ...reviewsOf("question", q.id),
 }));
 for (const [id, l] of Object.entries(life))
-  if (!l.inherited) life[id] = { ...l, sources_ru: inRussian(`place-life: ${id}`, l.sources) };
+  if (!l.inherited) {
+    const own = ownInEach(`place-life: ${id}`, l.sources);
+    life[id] = {
+      ...l,
+      sources_ru: inRussian(`place-life: ${id}`, l.sources),
+      ...(own ? { sources_in: own } : {}),
+    };
+  }
 for (const [id, l] of Object.entries(life))
   if (l.inherited) {
     const ru = l.sources.map((s) => sourcesRu[s] ?? s);
-    life[id] = { ...l, sources_ru: ru };
+    // The site's own lines in each language too, as the entry inherited from has them.
+    const own = l.sources.some((s) => OWN_SOURCE.test(s))
+      ? Object.fromEntries(
+          OWN_IN.map((lang) => [
+            lang,
+            l.sources.map((s) => (OWN_SOURCE.test(s) ? (sourcesOwn[s]?.[lang] ?? s) : s)),
+          ]),
+        )
+      : undefined;
+    life[id] = { ...l, sources_ru: ru, ...(own ? { sources_in: own } : {}) };
   }
 // A translation no line uses any more is stale.
 for (const s of Object.keys(sourcesRu))
   if (!seenRu.has(s)) errors.push(`sources-ru.yaml: "${s}" is no source of anything`);
+for (const s of Object.keys(sourcesOwn))
+  if (!seenOwn.has(s)) errors.push(`sources-own.yaml: "${s}" is no source of anything`);
 
 // What ancient authors say of places (content/ancient-authors.yaml): loaded when a card
 // opens, place id → its mentions in the file's order.
@@ -851,6 +917,10 @@ const release: ContentRelease = {
   }, {}),
 };
 writeFileSync(join(build, "questions.json"), JSON.stringify(questionsOut));
+// The reviews for their pages (build-pages.ts); none written when there are none.
+if (reviewed.reviews.length > 0)
+  writeFileSync(join(build, "reviews.json"), JSON.stringify(reviewed.reviews));
+else rmSync(join(build, "reviews.json"), { force: true });
 writeFileSync(join(out, "ancient-authors.json"), JSON.stringify(ancientByPlace));
 writeFileSync(
   join(build, "articles.json"),
@@ -868,13 +938,14 @@ for (const l of LOCALES)
     join(out, "articles", `${l}.json`),
     JSON.stringify(
       Object.fromEntries(
-        articlesOut.map(({ sources_ru, ...a }) => [
+        articlesOut.map(({ sources_ru, sources_in, ...a }) => [
           a.place,
           {
             ...a,
             title: inLanguage(a.title, l),
             body: inLanguage(a.body, l),
             ...(l === "ru" ? { sources_ru } : {}),
+            ...(sources_in?.[l] ? { sources_in: { [l]: sources_in[l] } } : {}),
           },
         ]),
       ),

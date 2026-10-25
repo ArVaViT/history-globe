@@ -1,0 +1,47 @@
+# A FAKE review for the tests (scripts/reviews.test.ts) only: no such person, institution or
+# review exists. It lives here, never in content/reviews, so the site never shows it.
+# ORCID 0000-0002-1825-0097 is ORCID's own documented example iD (a fictional person).
+id: 2099-01-fake-review
+title:
+  en: "A fake set of articles for the tests"
+  ru: "Вымышленный набор статей для тестов"
+reviewer:
+  name: "Dr Example Reviewer"
+  family: "Reviewer"
+  given: "Example"
+  title: "Test fixture, not a real scholar"
+  institution: "Example University (fictional)"
+  url: "https://example.org/reviewer"
+  orcid: "0000-0002-1825-0097"
+date: "2099-01-14"
+version: { date: "2099-01-02", commit: "abc1234" }
+items:
+  - { article: example-article, hash: "aaaaaaaaaaaa" }
+  - { article: example-corrected, hash: "bbbbbbbbbbbb", accepted: ["cccccccccccc"] }
+  - { question: example-question, hash: "dddddddddddd" }
+scope:
+  checked: [identification, dates]
+  not_checked: [translations, theology]
+  note: "Fixture note: the reviewer's own words."
+statement:
+  lang: en
+  text: "Fixture statement, in the reviewer's own words."
+  translations:
+    ru: "Заявление из теста, в нашем переводе."
+conflicts: "None declared."
+full_review:
+  lang: en
+  paragraphs: ["Fixture review, first paragraph.", "Fixture review, second paragraph."]
+response:
+  - point: "Example article ¶1: a fixture point."
+    action: fixed
+    detail: { en: "Corrected in all 16 languages." }
+    commit: "def5678"
+response_confirmed: true
+licence: CC-BY-4.0
+doi: "10.5281/zenodo.0000000"
+consent:
+  date: "2099-01-20"
+  how: email
+  text_sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+status: published

@@ -1,12 +1,12 @@
 # 0002. Monorepo and toolchain
 
-- Status: proposed
+- Status: accepted
 - Date: 2026-09-28
 
 ## Context
 
-One developer and AI coding agents build a web app that is also the embed for Equip
-(ADR 0006), a Python geo pipeline, and later an API. Agents need one place to look,
+One developer and AI coding agents build a web app that is also the embed for Equip,
+the owner's separate learning platform (ADR 0006), a Python geo pipeline, and later an API. Agents need one place to look,
 one command to verify, and strict, fast feedback. A review of the first draft of this
 ADR showed it carried tools the MVP does not need; this version is the lean one, with
 explicit triggers for adding more. Versions checked against registries on 2026-09-28.

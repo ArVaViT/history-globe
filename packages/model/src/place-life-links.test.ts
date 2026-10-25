@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { PlaceLife } from "./content.ts";
-import { inheritLife, type LinkedPlace } from "./place-life-links.ts";
+import { inheritLife, type LinkedPlace, rebuiltIn } from "./place-life-links.ts";
 
 const y = (year: number) => ({ year, approximate: false });
 const jerusalem: PlaceLife = {
@@ -84,5 +84,19 @@ describe("inheritLife", () => {
   it("gives nothing for a link to a missing place or a chain longer than it follows", () => {
     expect(life.lost).toBeUndefined();
     expect(life.h1).toBeUndefined();
+  });
+});
+
+describe("rebuiltIn", () => {
+  it("is the year after the last year in ruins", () => {
+    // Jerusalem in ruins until 539 BC (astronomical -538): the return in 538 BC.
+    expect(rebuiltIn({ until: { year: -538, approximate: true } })).toEqual({
+      year: -537,
+      approximate: true,
+    });
+  });
+  it("crosses from BC to AD without a year zero in between", () => {
+    // 1 BC is astronomical 0: the year after it is AD 1.
+    expect(rebuiltIn({ until: y(0) }).year).toBe(1);
   });
 });

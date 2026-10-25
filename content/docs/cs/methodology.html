@@ -17,6 +17,12 @@ description: Odkud na History Globe pochází každé místo, hranice, datum a o
   >, který u každého místa posuzuje lokalizace navrhované v odborné literatuře. Ponecháváme jeho
   preferovanou lokalizaci a jeho odhad pravděpodobnosti každé navrhované lokality.
 </p>
+<p>
+  Z těchto {{places}} míst je {{named}} jmenováno ve verši knih, které OpenBible označuje, a každé z
+  nich má vlastní stránku; zbylých {{unnamed}} jsou záznamy OpenBible, které žádný verš těchto knih
+  nejmenuje (například Adasa z 1. knihy Makabejské). Článek má {{articles}} míst. Dalších
+  {{excluded}} bylo vynecháno, protože pro ně není bod, který smíme zveřejnit (viz níže).
+</p>
 <ul>
   <li>
     <b>Jistota slovy.</b> Pokud se nenavrhuje žádná vážná druhá lokalita, ukazuje skóre OpenBible
@@ -41,13 +47,15 @@ description: Odkud na History Globe pochází každé místo, hranice, datum a o
 <p>
   Město se na mapě kreslí celé jen v letech, kdy stálo. U {{life}} míst Bible jsou roky založení,
   zničení a opuštění zaznamenány ručně, každý s prameny (antičtí autoři, kroniky, nápisy, zprávy o
-  vykopávkách). Sporné datum raději vynecháváme, než abychom ho odhadovali.
+  vykopávkách). Zaznamenávají se jen pevná data: město, jehož založení nebo konec jsou sporné, pro
+  ně rok nedostane.
 </p>
 <p>
   Města starověkého světa, která Bible nejmenuje ({{ancient}}) — hlavní města, přístavy a svatyně
-  jako Ugarit, Chattusa, Mari nebo Delfy — byla vybrána a datována jedno po druhém, každé je ověřeno
-  podle dvou pramenů, má identifikátor v <a href="https://pleiades.stoa.org">Pleiades</a> nebo ve
-  Wikidatech a bod leží na starověkém sídlišti, nikoli v dnešním městě.
+  jako Ugarit, Chattusa, Mari nebo Delfy — byla vybrána a datována jedno po druhém: každé je
+  umístěno podle svého záznamu v <a href="https://pleiades.stoa.org">Pleiades</a> nebo ve
+  Wikidatech, na starověkém sídlišti, nikoli v dnešním městě, a datováno podle těchto záznamů a
+  encyklopedických výkladů, ručně sladěných.
 </p>
 
 <h2>Hranice</h2>
@@ -66,7 +74,8 @@ description: Odkud na History Globe pochází každé místo, hranice, datum a o
   řecko-římský svět Nového zákona a Přední východ do roku 1300 n. l., mimo jiné úpadek a obnova
   Asýrie v 8. století př. n. l., Babylon za Merodach-baladana, Pergamon odkázaný Římu roku 133 př.
   n. l., Makedonie po Pydně a Thrákie připojená roku 46 n. l. Každá dávka oprav se nejprve ověří na
-  obrysech a poté ji nezávisle znovu zkontroluje podle pramenů druhý recenzent.
+  obrysech a poté se znovu zkontroluje podle pramenů ve druhém, samostatném průchodu umělé
+  inteligence.
 </p>
 <p>
   Království, které platilo říši tribut nebo jí vládlo jako vazal, je vykresleno světlejším odstínem
@@ -102,16 +111,20 @@ description: Odkud na History Globe pochází každé místo, hranice, datum a o
   </li>
 </ul>
 
-<h2>Události, trasy a články</h2>
+<h2 id="review">Události, trasy a články</h2>
 <p>
   Události ({{events}}), trasy ({{tours}}) a články ({{articles}}) vznikají s pomocí umělé
   inteligence pod vedením autora a poté se v samostatných kontrolních průchodech ověřují podle
   pramenů: biblický text pro to, co říká, antičtí autoři, kroniky a nápisy pro data a odborná
-  literatura pro lokality. Každé tvrzení uvádí svůj pramen. Citace pocházejí jen ze synodního
-  překladu a z King James Version. Žádná trasa neprošla první kontrolou beze změny; každá byla
-  opravena a ověřena znovu. Při poslední úplné kontrole, dokončené 17. října 2026, bylo všech 746
-  článků znovu ověřeno podle pramenů, asi 210 z nich dvakrát; bylo provedeno 1088 oprav, každá ve
-  všech 11 jazycích, a ve 157 článcích se našly zjevné chyby. Tyto kontroly provádí umělá
+  literatura pro lokality. Každý článek, odpověď a trasa uvádějí své prameny, pro text jako celek,
+  nikoli větu po větě. Citace pocházejí jen z Bible, která je v každém jazyce volným dílem; vydání
+  uvádí stránka <a href="sources.html">pramenů</a>. Žádná trasa neprošla první kontrolou beze změny;
+  každá byla opravena a ověřena znovu. Při poslední úplné kontrole, dokončené 17. října 2026, bylo
+  všech 746 článků znovu ověřeno podle pramenů, asi 210 z nich dvakrát; bylo provedeno 1088 oprav,
+  každá ve všech 11 jazycích, které web tehdy měl, a ve 157 článcích se našly zjevné chyby. Pět
+  jazyků přidaných 24. října 2026 (švédština, norština, dánština, tagalština a srbština) bylo
+  přeloženo z již opravených textů; poté samostatný recenzent s umělou inteligencí porovnal každý
+  jejich text s angličtinou a každou citaci s Biblí daného jazyka. Tyto kontroly provádí umělá
   inteligence podle pramenů, nikoli učenci; článek, který přečetl historik, nese jeho jméno.
 </p>
 <p>
@@ -131,9 +144,9 @@ description: Odkud na History Globe pochází každé místo, hranice, datum a o
   Bitvy a obležení ({{battles}}) jsou ty, které vypráví Bible, a několik mimobiblických, jež
   rozhodly o osudu Izraele. Každá stojí na místě, kde se bojovalo, a na mapě se zobrazuje ve svých
   letech. Biblické jsou datovány tak, jak trasy datují tytéž příběhy; ostatní nemají verš, ale
-  antický nebo odborný pramen. Druhý, nezávislý průchod ověřil návrh podle synodního textu a King
-  James Version: z 58 záznamů bylo 16 opraveno a jeden vypuštěn, protože na mapě není bod pro jeho
-  lokalitu.
+  antický nebo odborný pramen. Druhý, samostatný průchod umělé inteligence ověřil návrh podle
+  synodního textu a King James Version: z 58 záznamů bylo 16 opraveno a jeden vypuštěn, protože na
+  mapě není bod pro jeho lokalitu.
 </p>
 
 <p>
@@ -141,6 +154,42 @@ description: Odkud na History Globe pochází každé místo, hranice, datum a o
   protestantský kánon ne: každá taková citace je označena „deuterokanonická“ a její odkaz otevře
   text, který tuto knihu má.
 </p>
+
+<h2 id="chronology">Data a chronologie</h2>
+<p>
+  Mapa ukazuje každý příběh v nějakém roce, a tak se její data řídí jednou konvencí; kde se badatelé
+  rozcházejí, je rok bodem pro mapu, ne verdiktem.
+</p>
+<ul>
+  <li>
+    <b>Králové Izraele a Judy</b> se řídí chronologií E. R. Thiela (<i
+      >The Mysterious Numbers of the Hebrew Kings</i
+    >): Šalomoun začíná stavět chrám asi 966 př. n. l. a království se dělí asi 931 př. n. l. Jiné
+    rekonstrukce se liší o několik let; W. F. Albright například kladl rozdělení do roku 922 př. n.
+    l.
+  </li>
+  <li>
+    <b>Dřívější data</b> se od nich počítají zpět tak, jak počítá text: exodus roku 1446 př. n. l.,
+    480 let před chrámem (1. Královská 6,1), dobytí roku 1406 př. n. l. a vláda Davidova od roku
+    1010 př. n. l. Jsou to konvence: mnoho badatelů klade exodus do 13. století př. n. l. nebo
+    pochybuje, že proběhl tak, jak je vyprávěno, a odpověď na otázku
+    <a href="../../cs/q/when-was-the-exodus/">„Kdy byl exodus?“</a> tento spor vykládá. Praotcové
+    stojí v konvenčních letech.
+  </li>
+  <li>
+    <b>Události mimo Bibli</b> jsou datovány podle dokladů, které je určují (Babylonská kronika,
+    asyrské anály, Josephus, datovaný nápis), každá se svými prameny, většinou dvěma či více; pád
+    Jeruzaléma je ukázán asi 586 př. n. l. (zastává se i rok 587 př. n. l.).
+  </li>
+  <li>
+    <b>Nový zákon:</b> narození Ježíše asi 5 př. n. l., ukřižování asi 30 n. l. (zastává se i rok 33
+    n. l.) a Pavlovy cesty v letech, jež se obvykle uvádějí.
+  </li>
+  <li>
+    <b>„asi“</b> označuje rok známý jen přibližně, jako jsou všechny roky před 1. tisíciletím př. n.
+    l.
+  </li>
+</ul>
 
 <h2>Kontroly při každém sestavení</h2>
 <p>Nic se nezveřejní, dokud neprojdou všechny kontroly:</p>
@@ -173,10 +222,31 @@ description: Odkud na History Globe pochází každé místo, hranice, datum a o
   </li>
 </ul>
 
-<h2 id="report">Nahlásit chybu</h2>
+<h2 id="cite">Jak citovat</h2>
 <p>
-  Na kartě každého místa je odkaz <i>Našli jste chybu?</i> Otevře hlášení ve veřejném repozitáři s
-  již vyplněným místem; potřebujete účet na GitHubu. Hlášení můžete otevřít i přímo:
+  History Globe se průběžně opravuje, a proto citace uvádí datum použitých dat. Každá stránka
+  dokumentace je uvádí dole („Data k“), <code>index.json</code> v API jako <code>built_at</code>.
+</p>
+<p>Web:</p>
+<pre><code class="cite">ARNAUT, Vadym. History Globe: atlas biblických dějin. {{site}}/
+(data k {{built}}; citováno …).</code></pre>
+<p>Stránka, s názvem a adresou:</p>
+<pre><code class="cite">Jeruzalém. In: ARNAUT, Vadym. History Globe. {{site}}/cs/place/jerusalem/
+(data k {{built}}; citováno …).</code></pre>
+<p>Data, s datem snímku, které uvádí karta datové sady:</p>
+<pre><code class="cite">Arnaut, Vadym. History Globe dataset. Hugging Face, snapshot of ….
+https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
+
+<h2 id="report">Opravy</h2>
+<p>
+  Našli jste chybu, chybějící pramen nebo lepší čtení? Napište na
+  <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>; účet není potřeba.
+  Uveďte stránku a co je špatně, pokud můžete, i s pramenem. Každé hlášení se čte a potvrzená chyba
+  se opraví.
+</p>
+<p>
+  S účtem na GitHubu můžete také použít odkaz <i>Našli jste chybu?</i> na kartě každého místa, který
+  otevře issue ve veřejném repozitáři s již vyplněným místem, nebo ho otevřít přímo:
   <a href="https://github.com/ArVaViT/history-globe/issues/new"
     >github.com/ArVaViT/history-globe/issues</a
   >.

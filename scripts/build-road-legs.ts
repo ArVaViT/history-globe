@@ -27,6 +27,15 @@ type Pt = readonly [number, number];
 const km = (a: Pt, b: Pt) => distanceKm(a, b);
 
 const FROM_YEAR = -311; // 312 BC
+/**
+ * Roads of the network built after some tours: a tour older than the year never takes them.
+ * Itiner-e gives no dates for these, so they are named here with the evidence.
+ */
+const BUILT: Record<string, { year: number; why: string }> = {
+  // The Via Domitiana along the coast: paved by Domitian in AD 95 (Cassius Dio 67.14.1;
+  // Statius, Silvae 4.3). Paul in AD 60 went from Puteoli by Capua (Acts 28:13-15).
+  "Sinuessa-Cumae": { year: 95, why: "Via Domitiana, AD 95" },
+};
 const SNAP_KM = 10;
 const DETOUR = 2.5;
 
@@ -41,9 +50,9 @@ if (!files.every(existsSync) || !existsSync(join(data, "content.json"))) {
 // The graph: node id by rounded point, edges with their length.
 const ids = new Map<string, number>();
 const at: Pt[] = [];
-const edges: { to: number; km: number }[][] = [];
+const edges: { to: number; km: number; built: number }[][] = [];
 /** The road's segments, to tie a stop to the nearest point of a road, not of its corners. */
-const segs: { u: number; v: number; a: Pt; b: Pt; km: number }[] = [];
+const segs: { u: number; v: number; a: Pt; b: Pt; km: number; built: number }[] = [];
 const node = (p: Pt) => {
   const key = `${(Math.round(p[0] * 1000) / 1000).toFixed(3)},${(Math.round(p[1] * 1000) / 1000).toFixed(3)}`;
   let id = ids.get(key);
@@ -58,14 +67,20 @@ const node = (p: Pt) => {
 for (const file of files) {
   const lines = (
     JSON.parse(readFileSync(file, "utf8")) as {
-      features: { geometry: { type: string; coordinates: Pt[] | Pt[][] } }[];
+      features: {
+        geometry: { type: string; coordinates: Pt[] | Pt[][] };
+        properties: { name?: string };
+      }[];
     }
-  ).features.flatMap((f) =>
-    f.geometry.type === "MultiLineString"
-      ? (f.geometry.coordinates as Pt[][])
-      : [f.geometry.coordinates as Pt[]],
-  );
-  for (const line of lines)
+  ).features.flatMap((f) => {
+    const built = BUILT[f.properties.name ?? ""]?.year ?? -Infinity;
+    return (
+      f.geometry.type === "MultiLineString"
+        ? (f.geometry.coordinates as Pt[][])
+        : [f.geometry.coordinates as Pt[]]
+    ).map((line) => ({ line, built }));
+  });
+  for (const { line, built } of lines)
     for (let i = 1; i < line.length; i++) {
       const a = line[i - 1];
       const b = line[i];
@@ -74,9 +89,9 @@ for (const file of files) {
       const v = node(b);
       if (u === v) continue;
       const d = km(a, b);
-      edges[u]?.push({ to: v, km: d });
-      edges[v]?.push({ to: u, km: d });
-      segs.push({ u, v, a, b, km: d });
+      edges[u]?.push({ to: v, km: d, built });
+      edges[v]?.push({ to: u, km: d, built });
+      segs.push({ u, v, a, b, km: d, built });
     }
 }
 
@@ -84,11 +99,12 @@ for (const file of files) {
  * The nearest point of a road to a point, within SNAP_KM: its segment, how far along it
  * (0–1) and how far away. A stop in the middle of a long straight road is on it.
  */
-const nearest = (p: Pt) => {
+const nearest = (p: Pt, year: number) => {
   let best: { u: number; v: number; t: number; len: number; km: number } | null = null;
   const k = Math.cos((p[1] * Math.PI) / 180);
   const box = SNAP_KM / 111;
   for (const sg of segs) {
+    if (sg.built > year) continue;
     const [x0, y0] = sg.a;
     const [x1, y1] = sg.b;
     if (
@@ -123,6 +139,7 @@ function shortest(
   from: { u: number; v: number; t: number; len: number },
   to: { u: number; v: number; t: number; len: number },
   limit: number,
+  year: number,
 ): { km: number; nodes: number[] } | null {
   let answer = Infinity;
   /** The node the way reaches the end's segment by; -1 along that one segment. */
@@ -186,6 +203,7 @@ function shortest(
       last = u;
     }
     for (const e of edges[u] ?? []) {
+      if (e.built > year) continue;
       const nd = d + e.km;
       if (nd < (dist.get(e.to) ?? Infinity)) {
         dist.set(e.to, nd);
@@ -252,10 +270,10 @@ for (const tour of content.tours.filter((t) => t.year >= FROM_YEAR && t.walked !
     const straight = km(a, b);
     if (straight < 2) return null;
     total++;
-    const na = nearest(a);
-    const nb = nearest(b);
+    const na = nearest(a, tour.year);
+    const nb = nearest(b, tour.year);
     if (!na || !nb) return null;
-    const way = shortest(na, nb, straight * DETOUR);
+    const way = shortest(na, nb, straight * DETOUR, tour.year);
     if (way === null) return null;
     const road = way.km + na.km + nb.km;
     if (road > straight * DETOUR) return null;

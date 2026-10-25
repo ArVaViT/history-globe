@@ -14,6 +14,7 @@ export type {
   TourFile,
   WithSourcesRu,
 } from "./content.ts";
+export type { ItemReview } from "./reviews.ts";
 export * from "./periods.ts";
 export * from "./period-names.ts";
 export { loadAllLocaleData, loadLocaleData } from "./locale-data.ts";
@@ -23,3 +24,4 @@ export * from "./site.ts";
 export * from "./notice.ts";
 export * from "./chapter-years.ts";
 export * from "./slugs.ts";
+export { rebuiltIn } from "./place-life-links.ts";

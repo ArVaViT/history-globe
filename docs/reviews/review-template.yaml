@@ -1,0 +1,47 @@
+# A review by a scholar (docs/reviews/README.md). Copy to content/reviews/<id>.yaml only after the
+# reviewer has replied "Approved" to this exact text. The reviewer's words (statement, note,
+# conflicts, full review, points) stay as written, in their language.
+id: 2026-11-short-name # the review's month and a short name; also the file name
+title:
+  en: "The set reviewed, in our words" # other languages optional (ru:, de:, …)
+reviewer:
+  name: "As they write it"
+  # name_native: "Only their own form in another script, if they gave it"
+  family: "Family name, for the citation"
+  given: "Given names, for the citation"
+  title: "Their post, as they word it"
+  institution: "The official name, at the time of the review"
+  # url: "https://their university page"
+  # orcid: "0000-0000-0000-0000"
+date: "2026-11-14" # the date of their report
+version: { date: "2026-10-17", commit: "abc1234" } # from the packet's items.yaml
+items: # from the packet's items.yaml
+  - { article: colossae, hash: "000000000000" }
+  # - { article: laodicea, hash: "…", accepted: ["hash after our corrections"] }
+  # - { question: <id>, hash: "…" }
+  # - { tour: <id>, hash: "…" }
+scope:
+  # identification, dates, archaeology, ancient_sources, scholarship, scripture, place_names,
+  # map, translations, theology
+  checked: [identification, dates, ancient_sources, scholarship]
+  not_checked: [translations, theology]
+  # note: "Their own reservation, in their words"
+statement:
+  lang: en
+  text: "Their statement, in their words, as approved."
+  # translations: { ru: "Ours, marked as ours on the page" }
+conflicts: "None declared."
+# full_review: { lang: en, paragraphs: ["…"] } # only if public, and only under CC BY 4.0
+# response:
+#   - point: "Colossae ¶1: … (their point as written)"
+#     action: fixed # fixed | partly | declined | open
+#     detail: { en: "Corrected in all 16 languages." }
+#     commit: "def5678"
+# response_confirmed: true # only if they have confirmed our response
+licence: CC-BY-4.0 # or statement-only
+# doi: "10.5281/zenodo.0000000"
+consent:
+  date: "2026-11-20"
+  how: email # or letter
+  text_sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+status: published # or corrections-in-progress

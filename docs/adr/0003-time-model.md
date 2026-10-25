@@ -1,6 +1,6 @@
 # 0003. Time model
 
-- Status: proposed
+- Status: accepted
 - Date: 2026-09-28
 
 ## Context

@@ -32,7 +32,7 @@ export interface LocaleData {
    * Books' full names as readers of the language type them, for the chapter search: the
    * running heads of the edition the verses come from (eBible.org: RV 1909, the Bíblia
    * Portuguesa Mundial, Louis Segond 1910, Luther 1912, Riveduta 1927, the Statenvertaling,
-   * Kralice 1613), with the common modern forms; Ukrainian in its modern forms (Kulish 1871
+   * Kralice 1613), with the common modern forms; Ukrainian in its modern forms (Kulish and Puluj, 1905,
    * spells the old way), Polish in those of the Biblia Tysiąclecia.
    */
   readonly bookNames?: Readonly<Record<string, readonly string[]>>;

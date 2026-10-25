@@ -92,6 +92,40 @@ class MovePoints(unittest.TestCase):
         with self.assertRaises(SystemExit):
             move_points(self.feats(), {"dimonah": "dibon", "dibon": "dimonah"})
 
+    def test_a_cross_reference_takes_the_target_modern_site(self) -> None:
+        feats = [
+            {
+                "geometry": {"coordinates": [34.91, 30.99]},
+                "properties": {"id": "baalath-beer", "coord": "openbible", "where": "same place as Bealoth",
+                               "where_tpl": "same", "where_ref": "bealoth", "where_ref_text": "Bealoth"},
+            },
+            {
+                "geometry": {"coordinates": [35.01, 31.20]},
+                "properties": {"id": "ramah", "coord": "openbible", "where": "Tel Ira", "where_tpl": "name",
+                               "where_ref": "m_ira"},
+            },
+        ]
+        move_points(feats, {"baalath-beer": "ramah"})
+        own = feats[0]["properties"]
+        self.assertEqual(own["where"], "Tel Ira")
+        self.assertEqual(own["where_tpl"], "name")
+        self.assertEqual(own["where_ref"], "m_ira")
+        self.assertNotIn("where_ref_text", own)
+
+    def test_a_modern_site_of_its_own_is_kept(self) -> None:
+        feats = self.feats()
+        feats[0]["properties"] |= {"where": "Khirbet Dhiban", "where_tpl": "name", "where_ref": "m1"}
+        feats[1]["properties"] |= {"where": "Dhiban", "where_tpl": "name", "where_ref": "m2"}
+        move_points(feats, {"dimonah": "dibon"})
+        self.assertEqual(feats[0]["properties"]["where"], "Khirbet Dhiban")
+
+    def test_a_cross_reference_to_a_cross_reference_is_kept(self) -> None:
+        feats = self.feats()
+        feats[0]["properties"] |= {"where": "same place as Dibon", "where_tpl": "same", "where_ref": "dibon"}
+        feats[1]["properties"] |= {"where": "same place as Dimonah", "where_tpl": "same", "where_ref": "dimonah"}
+        move_points(feats, {"dimonah": "dibon"})
+        self.assertEqual(feats[0]["properties"]["where"], "same place as Dibon")
+
 
 def ident(modern_id: str, lonlat: str, score: float, description: str | None = None) -> dict:
     return {

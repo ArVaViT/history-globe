@@ -142,7 +142,11 @@ in `data-checks.md`; this is what it cannot check.
   (the build stops without one): ancient works by their Russian titles («Флавий,
   «Иудейская война»»), notes in Russian, Bible references in the Synodal books and
   numbering; modern scholarship stays as published, as Russian bibliographies cite it.
-  The same holds for the sources of questions and of `place-life.yaml`.
+  The same holds for the sources of questions and of `place-life.yaml`. A line of the
+  site's own ("History Globe tour …", "Straight-line distance between the places' points …")
+  is read in every language: its fourteen other languages are in `content/sources-own.yaml`,
+  with the tour and question titles and the place names the site uses in each (the build
+  stops without them).
 - The title names the article apart from its namesakes (Вавилон, Вавилония): the list of
   articles shows it.
 - The cycle that converges: a writer, then an independent reviewer who opens the sources

@@ -105,7 +105,7 @@ const CREDIT = [
   "Third-party parts keep their own licences: https://historyglobe.app/docs/sources.html",
   // Added with people.json and the gazetteer ids (2026-10): appended, the earlier lines unmoved.
   "People and the verses that name them: STEPBible TIPNR by Tyndale House Cambridge (www.STEPBible.org), CC BY 4.0, modified",
-  "Pleiades ids: Pleiades (https://pleiades.stoa.org), CC BY 3.0; Wikidata ids: Wikidata (CC0), as OpenBible links them",
+  "Pleiades ids: Pleiades (https://pleiades.stoa.org), CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/us/); Wikidata ids: Wikidata (CC0), from OpenBible's links, checked against Wikidata: wrong ones left out, merged items followed",
   // Added with the places' TIPNR ids (2026-10-19): appended, the earlier lines unmoved.
   "TIPNR ids of the places: STEPBible TIPNR (CC BY 4.0), as OpenBible links them, brought to the current TIPNR names",
   // The one file under another licence (ADR 0016): appended, the earlier lines unmoved.
@@ -466,7 +466,7 @@ write("index.json", {
   },
   fields_added: {
     "places.json":
-      "wikidata (Wikidata item, as OpenBible links it) and pleiades (Pleiades id), 2026-10; tipnr (STEPBible TIPNR unique name, the id people.json uses), 2026-10-19",
+      "wikidata (Wikidata item, from OpenBible's links, checked against Wikidata) and pleiades (Pleiades id), 2026-10; tipnr (STEPBible TIPNR unique name, the id people.json uses), 2026-10-19",
     "index.json": "notice (what may be taken and how), 2026-10",
   },
   books: [...books.keys()],

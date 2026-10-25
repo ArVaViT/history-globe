@@ -17,6 +17,13 @@ description: Da dove viene ogni luogo, confine, data e persona di History Globe,
   >, che pesa le identificazioni proposte in letteratura per ciascun luogo. Teniamo la sua
   identificazione preferita e la sua stima di quanto sia probabile ciascun sito candidato.
 </p>
+<p>
+  Di questi {{places}} luoghi, {{named}} sono nominati in un versetto dei libri che OpenBible
+  etichetta, e ciascuno ha una pagina propria; gli altri {{unnamed}} sono voci che OpenBible
+  conserva e che nessun versetto di quei libri nomina (Adasa, di 1 Maccabei, per esempio).
+  {{articles}} luoghi hanno un articolo. Altri {{excluded}} sono stati esclusi perché privi di un
+  punto pubblicabile (vedi sotto).
+</p>
 <ul>
   <li>
     <b>La certezza a parole.</b> Quando non viene proposto alcun secondo sito serio, il punteggio di
@@ -42,14 +49,15 @@ description: Da dove viene ogni luogo, confine, data e persona di History Globe,
 <p>
   Una città sulla mappa è disegnata per intero solo negli anni in cui esisteva. Per {{life}} luoghi
   della Bibbia gli anni di fondazione, distruzione e abbandono sono registrati a mano, ciascuno con
-  le sue fonti (autori antichi, cronache, iscrizioni, rapporti di scavo). Una data discussa viene
-  omessa anziché indovinata.
+  le sue fonti (autori antichi, cronache, iscrizioni, rapporti di scavo). Si registrano solo date
+  sicure: una città la cui fondazione o fine è discussa non riceve un anno per essa.
 </p>
 <p>
   Le città del mondo antico che la Bibbia non nomina ({{ancient}}) — capitali, porti e santuari come
-  Ugarit, Hattusa, Mari o Delfi — sono state scelte e datate una per una, ciascuna verificata su due
-  fonti, con un identificativo in <a href="https://pleiades.stoa.org">Pleiades</a> o in Wikidata e
-  un punto sul sito antico anziché sulla città moderna.
+  Ugarit, Hattusa, Mari o Delfi — sono state scelte e datate una per una: ciascuna è collocata
+  secondo la sua scheda in <a href="https://pleiades.stoa.org">Pleiades</a> o in Wikidata, sul sito
+  antico anziché sulla città moderna, e datata in base a queste schede e a voci enciclopediche,
+  conciliate a mano.
 </p>
 
 <h2>Confini</h2>
@@ -68,8 +76,8 @@ description: Da dove viene ogni luogo, confine, data e persona di History Globe,
   l’Anatolia e l’Iran, il mondo greco-romano del Nuovo Testamento e il Vicino Oriente fino al 1300
   d.C., tra cui il declino e la ripresa dell’Assiria nell’VIII secolo a.C., Babilonia sotto
   Merodac-Baladan, Pergamo lasciata a Roma nel 133 a.C., la Macedonia dopo Pidna e la Tracia annessa
-  nel 46 d.C. Ogni lotto di correzioni viene prima testato sulle forme, poi ricontrollato, in modo
-  indipendente, da un secondo revisore sulle fonti.
+  nel 46 d.C. Ogni lotto di correzioni viene prima testato sulle forme, poi ricontrollato sulle
+  fonti in un secondo passaggio di IA, separato.
 </p>
 <p>
   Un regno che pagava tributo a un impero, o governava come suo vassallo, è disegnato in una
@@ -106,19 +114,23 @@ description: Da dove viene ogni luogo, confine, data e persona di History Globe,
   </li>
 </ul>
 
-<h2>Eventi, itinerari e articoli</h2>
+<h2 id="review">Eventi, itinerari e articoli</h2>
 <p>
   Gli eventi ({{events}}), gli itinerari ({{tours}}) e gli articoli ({{articles}}) sono redatti con
   l’aiuto dell’IA sotto la direzione dell’autore e poi verificati in revisioni separate sulle fonti:
   il testo biblico per ciò che dice, gli autori antichi, le cronache e le iscrizioni per le date, e
-  la letteratura accademica per i siti. Ogni affermazione cita la sua fonte. Le citazioni provengono
-  solo dalla traduzione sinodale e dalla King James Version. Nessun itinerario ha superato la prima
-  revisione senza modifiche; ciascuno è stato corretto e ricontrollato. Nell’ultima revisione
-  completa, conclusa il 17 ottobre 2026, tutti i 746 articoli sono stati ricontrollati sulle fonti,
-  circa 210 di essi due volte; sono state apportate 1.088 correzioni, ciascuna in tutte le 11
-  lingue, e in 157 articoli sono stati trovati errori veri e propri. Queste revisioni sono fatte da
-  un’IA che lavora sulle fonti, non da studiosi; un articolo che uno storico ha letto porta il nome
-  dello storico.
+  la letteratura accademica per i siti. Ogni articolo, risposta e itinerario elenca le sue fonti,
+  per il testo nel suo insieme e non frase per frase. Le citazioni provengono solo dalla Bibbia di
+  pubblico dominio di ciascuna lingua, elencate nella pagina delle <a href="sources.html">fonti</a>.
+  Nessun itinerario ha superato la prima revisione senza modifiche; ciascuno è stato corretto e
+  ricontrollato. Nell’ultima revisione completa, conclusa il 17 ottobre 2026, tutti i 746 articoli
+  sono stati ricontrollati sulle fonti, circa 210 di essi due volte; sono state apportate 1.088
+  correzioni, ciascuna in tutte le 11 lingue che il sito aveva allora, e in 157 articoli sono stati
+  trovati errori veri e propri. Le cinque lingue aggiunte il 24 ottobre 2026 (svedese, norvegese,
+  danese, tagalog e serbo) sono state tradotte dai testi già corretti; poi un revisore IA separato
+  ha confrontato ciascuno dei loro testi con l’inglese, e ogni citazione con la Bibbia di quella
+  lingua. Queste revisioni sono fatte da un’IA che lavora sulle fonti, non da studiosi; un articolo
+  che uno storico ha letto porta il nome dello storico.
 </p>
 <p>
   La distanza fino a una tappa è data in linea retta. Dal 312 a.C., quando iniziano le strade
@@ -139,7 +151,7 @@ description: Da dove viene ogni luogo, confine, data e persona di History Globe,
   di essa che decisero le sorti d’Israele. Ciascuno è collocato nel luogo in cui fu combattuto e
   compare sulla mappa negli anni in cui avvenne. Quelli biblici sono datati come gli itinerari
   datano le stesse storie; gli altri non portano un versetto ma una fonte antica o accademica. Una
-  seconda verifica indipendente ha controllato la bozza sul testo sinodale e sulla King James
+  seconda verifica di IA, separata, ha controllato la bozza sul testo sinodale e sulla King James
   Version: su 58 voci, 16 sono state corrette e una è stata scartata, perché la mappa non ha un
   punto per il suo sito.
 </p>
@@ -149,6 +161,43 @@ description: Da dove viene ogni luogo, confine, data e persona di History Globe,
   canone protestante no: ogni citazione di questo tipo è segnata «deuterocanonico», e il suo link
   apre un testo che contiene il libro.
 </p>
+
+<h2 id="chronology">Date e cronologia</h2>
+<p>
+  La mappa mostra ogni racconto in un anno, quindi le sue date seguono una sola convenzione; dove
+  gli studiosi divergono, l’anno è un punto per la mappa, non un verdetto.
+</p>
+<ul>
+  <li>
+    <b>I re d’Israele e di Giuda</b> seguono la cronologia di E. R. Thiele (<i
+      >The Mysterious Numbers of the Hebrew Kings</i
+    >): Salomone inizia il Tempio intorno al 966 a.C. e il regno si divide intorno al 931 a.C. Altre
+    ricostruzioni differiscono di qualche anno; W. F. Albright, per esempio, poneva la divisione nel
+    922 a.C.
+  </li>
+  <li>
+    <b>Le date precedenti</b> sono contate a ritroso da queste come le conta il testo: l’Esodo nel
+    1446 a.C., 480 anni prima del Tempio (1 Re 6:1), la conquista nel 1406 a.C. e il regno di Davide
+    dal 1010 a.C. Sono convenzioni: molti studiosi pongono l’Esodo nel XIII secolo a.C. o dubitano
+    che sia avvenuto come è narrato, e la risposta a
+    <a href="../../it/q/when-was-the-exodus/"><i>Quando avvenne l’Esodo?</i></a> espone il
+    dibattito. I patriarchi stanno in anni convenzionali.
+  </li>
+  <li>
+    <b>Gli eventi fuori dalla Bibbia</b> sono datati dai documenti che li fissano (la Cronaca
+    babilonese, gli annali assiri, Giuseppe Flavio, un’iscrizione datata), ciascuno con le sue
+    fonti, per lo più due o più; la caduta di Gerusalemme è mostrata intorno al 586 a.C. (si
+    sostiene anche il 587 a.C.).
+  </li>
+  <li>
+    <b>Il Nuovo Testamento:</b> la nascita di Gesù intorno al 5 a.C., la crocifissione intorno al 30
+    d.C. (si sostiene anche il 33 d.C.) e i viaggi di Paolo negli anni che si danno di solito.
+  </li>
+  <li>
+    <b>«ca.»</b> segna un anno noto solo in modo approssimativo, come lo sono tutti quelli anteriori
+    al primo millennio a.C.
+  </li>
+</ul>
 
 <h2>Controlli a ogni build</h2>
 <p>Nulla viene pubblicato se non passano tutti i controlli:</p>
@@ -186,10 +235,32 @@ description: Da dove viene ogni luogo, confine, data e persona di History Globe,
   </li>
 </ul>
 
-<h2 id="report">Segnalare un errore</h2>
+<h2 id="cite">Come citare</h2>
 <p>
-  Ogni scheda di un luogo ha un link <i>Hai trovato un errore?</i> Apre una segnalazione (issue) nel
-  repository pubblico con il luogo già compilato; serve un account GitHub. Puoi anche aprirne una
+  History Globe viene corretto man mano, quindi una citazione indica la data dei dati che ha usato.
+  Ogni pagina della documentazione la riporta in fondo («Dati al»), e l’<code>index.json</code>
+  dell’API la riporta come <code>built_at</code>.
+</p>
+<p>Il sito:</p>
+<pre><code class="cite">Arnaut, Vadym. History Globe: un atlante della storia biblica. {{site}}/
+(dati al {{built}}; consultato il …).</code></pre>
+<p>Una pagina, con titolo e indirizzo:</p>
+<pre><code class="cite">«Gerusalemme». In Vadym Arnaut, History Globe. {{site}}/it/place/jerusalem/
+(dati al {{built}}; consultato il …).</code></pre>
+<p>I dati, con la data dello snapshot che riporta la scheda del dataset:</p>
+<pre><code class="cite">Arnaut, Vadym. History Globe dataset. Hugging Face, snapshot of ….
+https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
+
+<h2 id="report">Correzioni</h2>
+<p>
+  Hai trovato un errore, una fonte mancante o una lettura migliore? Scrivi a
+  <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>; non serve un
+  account. Indica la pagina e che cosa non va, con una fonte se ne hai una. Ogni segnalazione viene
+  letta, e un errore confermato viene corretto.
+</p>
+<p>
+  Con un account GitHub puoi anche usare il link <i>Hai trovato un errore?</i> di ogni scheda di
+  luogo, che apre una issue nel repository pubblico con il luogo già indicato, oppure aprirne una
   direttamente:
   <a href="https://github.com/ArVaViT/history-globe/issues/new"
     >github.com/ArVaViT/history-globe/issues</a

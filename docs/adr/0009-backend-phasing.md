@@ -1,13 +1,14 @@
 # 0009. Backend, in phases
 
-- Status: proposed
+- Status: accepted
 - Date: 2026-09-28
 
 ## Context
 
 The research recommends Hono on Cloudflare Workers with Supabase Postgres + PostGIS,
 Supabase Auth, domain-bound partner keys and usage metering. That is right for a
-product with partners — and too much for an MVP inside Equip.
+product with partners — and too much for an MVP inside Equip, the owner's separate
+learning platform.
 
 ## Decision
 

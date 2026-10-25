@@ -243,6 +243,10 @@ export interface BibleSource {
   /** Its file in pipeline/.cache: eBible.org's `*_usfm.zip`, or a SWORD module's zip. */
   readonly file: string;
   readonly license: string;
+  /** The edition as its own title names it, for the sources page (docs/sources.html). */
+  readonly title: string;
+  /** The edition's page at eBible.org or CrossWire, the electronic text credited. */
+  readonly page: string;
 }
 
 /**
@@ -257,54 +261,72 @@ export const SOURCES: Readonly<Record<Locale, BibleSource>> = {
     url: "https://ebible.org/Scriptures/russyn_usfm.zip",
     file: "russyn_usfm.zip",
     license: "public domain",
+    title: "Синодальный перевод (1876)",
+    page: "https://ebible.org/russyn/",
   },
   en: {
     name: "King James Version (eBible.org eng-kjv2006)",
     url: "https://ebible.org/Scriptures/eng-kjv2006_usfm.zip",
     file: "eng-kjv2006_usfm.zip",
     license: "public domain (Crown copyright in the UK)",
+    title: "King James Version (Authorized Version), the standard text of 1769",
+    page: "https://ebible.org/eng-kjv2006/",
   },
   uk: {
-    name: "Ukrainian Bible, P. Kulish (eBible.org ukr1871)",
+    name: "Ukrainian Bible, P. Kulish and I. Puluj, 1905 (eBible.org ukr1871)",
     url: "https://ebible.org/Scriptures/ukr1871_usfm.zip",
     file: "ukr1871_usfm.zip",
     license: "public domain",
+    title: "Біблія в перекладі П. Куліша та І. Пулюя (1905)",
+    page: "https://ebible.org/ukr1871/",
   },
   es: {
     name: "Reina-Valera 1909 (eBible.org spaRV1909)",
     url: "https://ebible.org/Scriptures/spaRV1909_usfm.zip",
     file: "spaRV1909_usfm.zip",
     license: "public domain",
+    title: "Santa Biblia, Reina-Valera 1909",
+    page: "https://ebible.org/spaRV1909/",
   },
   pt: {
     name: "World Portuguese Bible (eBible.org porbrbsl)",
     url: "https://ebible.org/Scriptures/porbrbsl_usfm.zip",
     file: "porbrbsl_usfm.zip",
     license: "public domain",
+    title: "Bíblia Portuguesa Mundial",
+    page: "https://ebible.org/porbrbsl/",
   },
   fr: {
     name: "Louis Segond 1910 (eBible.org fraLSG)",
     url: "https://ebible.org/Scriptures/fraLSG_usfm.zip",
     file: "fraLSG_usfm.zip",
     license: "public domain",
+    title: "Louis Segond 1910",
+    page: "https://ebible.org/fraLSG/",
   },
   de: {
     name: "Luther Bible 1912 (eBible.org deu1912)",
     url: "https://ebible.org/Scriptures/deu1912_usfm.zip",
     file: "deu1912_usfm.zip",
     license: "public domain",
+    title: "Lutherbibel 1912",
+    page: "https://ebible.org/deu1912/",
   },
   it: {
     name: "Riveduta 1927 (eBible.org ita1927)",
     url: "https://ebible.org/Scriptures/ita1927_usfm.zip",
     file: "ita1927_usfm.zip",
     license: "public domain",
+    title: "Riveduta 1927",
+    page: "https://ebible.org/ita1927/",
   },
   nl: {
     name: "Statenvertaling, 1917 edition (eBible.org nld)",
     url: "https://ebible.org/Scriptures/nld_usfm.zip",
     file: "nld_usfm.zip",
     license: "public domain",
+    title: "De Heilige Schrift (Statenvertaling), editie 1917",
+    page: "https://ebible.org/nld/",
   },
   // Not on eBible.org: CrossWire's SWORD module of the Gdańsk Bible.
   pl: {
@@ -312,18 +334,24 @@ export const SOURCES: Readonly<Record<Locale, BibleSource>> = {
     url: "https://www.crosswire.org/ftpmirror/pub/sword/packages/rawzip/PolGdanska.zip",
     file: "PolGdanska.zip",
     license: "public domain",
+    title: "Biblia Gdańska, wydanie 1881",
+    page: "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=PolGdanska",
   },
   cs: {
     name: "Bible kralická 1613 (eBible.org ces1613)",
     url: "https://ebible.org/Scriptures/ces1613_usfm.zip",
     file: "ces1613_usfm.zip",
     license: "public domain",
+    title: "Bible kralická (1613)",
+    page: "https://ebible.org/ces1613/",
   },
   zh: {
     name: "Chinese Union Version, simplified (eBible.org cmn-cu89s)",
     url: "https://ebible.org/Scriptures/cmn-cu89s_usfm.zip",
     file: "cmn-cu89s_usfm.zip",
     license: "public domain",
+    title: "和合本 (Chinese Union Version), 简体",
+    page: "https://ebible.org/cmn-cu89s/",
   },
   // The Nordic Bibles and the Tagalog one are SWORD modules too (2026-10-23); the Swedish
   // and Danish ones file their verses in the NRSV's grid (their .conf says so).
@@ -332,30 +360,40 @@ export const SOURCES: Readonly<Record<Locale, BibleSource>> = {
     url: "https://www.crosswire.org/ftpmirror/pub/sword/packages/rawzip/Swe1917.zip",
     file: "Swe1917.zip",
     license: "public domain",
+    title: "Bibeln 1917",
+    page: "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=Swe1917",
   },
   da: {
     name: "Bibelen, OT 1871 and NT 1907 (CrossWire DaOT1871NT1907)",
     url: "https://www.crosswire.org/ftpmirror/pub/sword/packages/rawzip/DaOT1871NT1907.zip",
     file: "DaOT1871NT1907.zip",
     license: "public domain",
+    title: "Bibelen: Det Gamle Testamente 1871, Det Nye Testamente 1907",
+    page: "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=DaOT1871NT1907",
   },
   nb: {
     name: "Bibelen 1930, Det Norske Bibelselskap (CrossWire Norsk)",
     url: "https://www.crosswire.org/ftpmirror/pub/sword/packages/rawzip/Norsk.zip",
     file: "Norsk.zip",
     license: "public domain",
+    title: "Bibelen 1930, Det Norske Bibelselskap",
+    page: "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=Norsk",
   },
   sr: {
     name: "Serbian Bible, Daničić–Karadžić translation, Cyrillic (eBible.org srp1868)",
     url: "https://ebible.org/Scriptures/srp1868_usfm.zip",
     file: "srp1868_usfm.zip",
     license: "public domain",
+    title: "Свето писмо, превод Даничић–Караџић",
+    page: "https://ebible.org/srp1868/",
   },
   tl: {
     name: "Ang Biblia 1905, Philippine Bible Society (CrossWire TagAngBiblia)",
     url: "https://www.crosswire.org/ftpmirror/pub/sword/packages/rawzip/TagAngBiblia.zip",
     file: "TagAngBiblia.zip",
     license: "public domain",
+    title: "Ang Biblia (1905), Philippine Bible Society",
+    page: "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=TagAngBiblia",
   },
 };
 

@@ -1,4 +1,4 @@
-import { pick, commonsPage } from "@hg/model";
+import { pick, commonsPage, licenceUrl } from "@hg/model";
 import type { PlacePhoto } from "@hg/model";
 import { useState } from "react";
 import { useTranslation } from "../i18n";
@@ -29,6 +29,7 @@ export function Photo({
   if (failed) return null;
   const page = commonsPage(photo.file);
   const free = photo.license === "Public domain" || photo.license.startsWith("CC0");
+  const licence = licenceUrl(photo);
   return (
     <figure className={className}>
       {/* The credit sits on the photo's corner: next to the image, as CC BY asks, without a
@@ -43,31 +44,39 @@ export function Photo({
           }}
           className={`${aspect} w-full rounded-xl object-cover`}
         />
-        <a
-          href={page}
-          target="_blank"
-          rel="noopener noreferrer"
-          title={`${t("place.photo")}: ${photo.author ? `${photo.author}, ` : ""}${photo.license === "Public domain" ? t("place.photo_pd") : photo.license}, Wikimedia Commons`}
-          className="absolute right-1.5 bottom-1.5 flex max-w-[85%] rounded-full bg-black/60 px-2 py-0.5 text-[10.5px] text-white/95 hover:bg-black/75"
-        >
+        <span className="absolute right-1.5 bottom-1.5 flex max-w-[85%] rounded-full bg-black/60 px-2 py-0.5 text-[10.5px] text-white/95 hover:bg-black/75">
           {/* The licence stays in sight (CC BY asks for it, and a phone has no tooltip); a
-              long name is cut instead. No copyright to mark on a free photo. */}
-          <span className="truncate">
+              long name is cut instead. No copyright to mark on a free photo. The author's
+              name opens the file's page, the licence its text (CC BY asks for its link). */}
+          <a
+            href={page}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={`${t("place.photo")}: ${photo.author ? `${photo.author}, ` : ""}${photo.license === "Public domain" ? t("place.photo_pd") : photo.license}, Wikimedia Commons`}
+            className="truncate"
+          >
             {free ? "" : "© "}
             {photo.author ?? "Wikimedia Commons"}
-          </span>
+            <span className="sr-only">
+              {" "}
+              ({t("place.photo")}:{" "}
+              {photo.license === "Public domain" ? t("place.photo_pd") : photo.license}, Wikimedia
+              Commons, {t("new_tab")})
+            </span>
+          </a>
           {photo.license !== "Public domain" && (
-            <span className="shrink-0" aria-hidden>
-              &nbsp;· {photo.license}
+            <span className="shrink-0">
+              &nbsp;·{" "}
+              {licence ? (
+                <a href={licence} target="_blank" rel="noopener noreferrer license">
+                  {photo.license}
+                </a>
+              ) : (
+                photo.license
+              )}
             </span>
           )}
-          <span className="sr-only">
-            {" "}
-            ({t("place.photo")}:{" "}
-            {photo.license === "Public domain" ? t("place.photo_pd") : photo.license}, Wikimedia
-            Commons, {t("new_tab")})
-          </span>
-        </a>
+        </span>
       </div>
       {shows && (
         <figcaption className="mt-1 text-[11px] text-ink-soft">

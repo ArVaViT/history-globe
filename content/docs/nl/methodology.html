@@ -18,6 +18,13 @@ description: Waar elke plaats, grens, datum en persoon op History Globe vandaan 
   houden de voorkeursidentificatie aan en de schatting van hoe waarschijnlijk elke kandidaatlocatie
   is.
 </p>
+<p>
+  Van deze {{places}} plaatsen worden er {{named}} genoemd in een vers van de boeken die OpenBible
+  tagt, en elk daarvan heeft een eigen pagina; de overige {{unnamed}} zijn records die OpenBible
+  bijhoudt maar die geen vers van die boeken noemt (Adasa uit 1 Makkabeeën bijvoorbeeld).
+  {{articles}} plaatsen hebben een artikel. Nog {{excluded}} zijn weggelaten omdat er geen punt is
+  dat gepubliceerd mag worden (zie hieronder).
+</p>
 <ul>
   <li>
     <b>Zekerheid in woorden.</b> Wanneer er geen serieuze tweede locatie wordt voorgesteld, geeft de
@@ -44,14 +51,15 @@ description: Waar elke plaats, grens, datum en persoon op History Globe vandaan 
   Een stad op de kaart wordt alleen in de jaren dat ze bestond volledig getekend. Voor {{life}}
   plaatsen uit de Bijbel zijn de jaren van stichting, verwoesting en verlating met de hand
   vastgelegd, elk met zijn bronnen (antieke schrijvers, kronieken, inscripties,
-  opgravingsverslagen). Een datum die omstreden is, wordt weggelaten in plaats van geraden.
+  opgravingsverslagen). Alleen vaste data worden vastgelegd: een stad waarvan de stichting of het
+  einde omstreden is, krijgt daarvoor geen jaar.
 </p>
 <p>
   De {{ancient}} steden van de oude wereld die de Bijbel niet noemt — hoofdsteden, havens en
-  heiligdommen zoals Ugarit, Hattusa, Mari of Delphi — zijn een voor een gekozen en gedateerd, elk
-  getoetst aan twee bronnen, met een identificatiecode in
-  <a href="https://pleiades.stoa.org">Pleiades</a> of Wikidata en een punt op de antieke vindplaats
-  in plaats van op de moderne stad.
+  heiligdommen zoals Ugarit, Hattusa, Mari of Delphi — zijn een voor een gekozen en gedateerd: elk
+  is geplaatst volgens zijn record in <a href="https://pleiades.stoa.org">Pleiades</a> of Wikidata,
+  op de antieke vindplaats in plaats van op de moderne stad, en gedateerd op grond van die records
+  en encyclopedische beschrijvingen, met de hand op elkaar afgestemd.
 </p>
 
 <h2>Grenzen</h2>
@@ -71,7 +79,7 @@ description: Waar elke plaats, grens, datum en persoon op History Globe vandaan 
   nagelopen, onder meer de neergang en het herstel van Assyrië in de achtste eeuw v.Chr., Babylon
   onder Merodach-Baladan, Pergamon dat in 133 v.Chr. aan Rome werd nagelaten, Macedonië na Pydna en
   Thracië dat in 46 n.Chr. werd geannexeerd. Elke reeks correcties wordt eerst aan de vormen
-  getoetst en daarna door een tweede beoordelaar onafhankelijk opnieuw aan de bronnen gecontroleerd.
+  getoetst en daarna in een tweede, aparte AI-ronde opnieuw aan de bronnen gecontroleerd.
 </p>
 <p>
   Een koninkrijk dat een rijk schatting betaalde of als zijn vazal regeerde, wordt getekend in een
@@ -108,19 +116,24 @@ description: Waar elke plaats, grens, datum en persoon op History Globe vandaan 
   </li>
 </ul>
 
-<h2>Gebeurtenissen, routes en artikelen</h2>
+<h2 id="review">Gebeurtenissen, routes en artikelen</h2>
 <p>
   De {{events}} gebeurtenissen, {{tours}} routes en {{articles}} artikelen zijn met behulp van AI
   opgesteld onder leiding van de auteur en daarna in afzonderlijke beoordelingsrondes aan de bronnen
   getoetst: de bijbeltekst voor wat die zegt, antieke schrijvers, kronieken en inscripties voor
-  data, en de wetenschappelijke literatuur voor locaties. Elke bewering noemt haar bron. Citaten
-  komen alleen uit de synodale vertaling en de King James Version. Geen enkele route heeft haar
-  eerste beoordeling ongewijzigd doorstaan; elke is gecorrigeerd en opnieuw gecontroleerd. In de
-  laatste volledige ronde, afgerond op 17 oktober 2026, zijn alle 746 artikelen opnieuw aan de
-  bronnen getoetst, ongeveer 210 ervan twee keer; er zijn 1.088 correcties aangebracht, elk in alle
-  11 talen, en in 157 artikelen zijn duidelijke fouten gevonden. Deze beoordelingen worden gedaan
-  door AI op basis van de bronnen, niet door onderzoekers; een artikel dat een historicus heeft
-  gelezen, draagt de naam van die historicus.
+  data, en de wetenschappelijke literatuur voor locaties. Elk artikel, elk antwoord en elke route
+  noemt de bronnen, voor de tekst als geheel en niet zin voor zin. Citaten komen alleen uit de
+  bijbel in het publiek domein van elke taal; de uitgaven staan op de pagina
+  <a href="sources.html">bronnen</a>. Geen enkele route heeft haar eerste beoordeling ongewijzigd
+  doorstaan; elke is gecorrigeerd en opnieuw gecontroleerd. In de laatste volledige ronde, afgerond
+  op 17 oktober 2026, zijn alle 746 artikelen opnieuw aan de bronnen getoetst, ongeveer 210 ervan
+  twee keer; er zijn 1.088 correcties aangebracht, elk in alle 11 talen die de site toen had, en in
+  157 artikelen zijn duidelijke fouten gevonden. De vijf talen die op 24 oktober 2026 zijn
+  toegevoegd (Zweeds, Noors, Deens, Tagalog en Servisch) zijn vertaald uit de al gecorrigeerde
+  teksten; daarna heeft een aparte AI-beoordelaar elk van hun teksten met het Engels vergeleken, en
+  elk citaat met de bijbel van die taal. Deze beoordelingen worden gedaan door AI op basis van de
+  bronnen, niet door onderzoekers; een artikel dat een historicus heeft gelezen, draagt de naam van
+  die historicus.
 </p>
 <p>
   De afstand tot een halte wordt hemelsbreed gegeven. Vanaf 312 v.Chr., wanneer de Romeinse wegen
@@ -141,9 +154,9 @@ description: Waar elke plaats, grens, datum en persoon op History Globe vandaan 
   die het lot van Israël bepaalden. Elke staat op de plaats waar ze werd uitgevochten en verschijnt
   op de kaart in haar jaren. Die van de Bijbel zijn gedateerd zoals de routes dezelfde verhalen
   dateren; de andere dragen geen vers, maar een antieke of wetenschappelijke bron. Een tweede,
-  onafhankelijke ronde heeft het concept getoetst aan de synodale tekst en de King James Version:
-  van 58 items zijn er 16 gecorrigeerd en is er één geschrapt, omdat de kaart geen punt heeft voor
-  zijn locatie.
+  aparte AI-ronde heeft het concept getoetst aan de synodale tekst en de King James Version: van 58
+  items zijn er 16 gecorrigeerd en is er één geschrapt, omdat de kaart geen punt heeft voor zijn
+  locatie.
 </p>
 
 <p>
@@ -151,6 +164,44 @@ description: Waar elke plaats, grens, datum en persoon op History Globe vandaan 
   bevat en de protestantse canon niet: elke zo’n verwijzing is gemarkeerd als “deuterocanoniek”, en
   haar link opent een tekst die het boek heeft.
 </p>
+
+<h2 id="chronology">Data en chronologie</h2>
+<p>
+  De kaart toont elk verhaal in een jaar, dus haar data volgen één conventie; waar onderzoekers het
+  oneens zijn, is het jaar een punt voor de kaart, geen oordeel.
+</p>
+<ul>
+  <li>
+    <b>De koningen van Israël en Juda</b> volgen de chronologie van E. R. Thiele (<i
+      >The Mysterious Numbers of the Hebrew Kings</i
+    >): Salomo begint de tempel ca. 966 v.Chr. en het rijk valt uiteen ca. 931 v.Chr. Andere
+    reconstructies verschillen enkele jaren; W. F. Albright bijvoorbeeld plaatste de deling in 922
+    v.Chr.
+  </li>
+  <li>
+    <b>Eerdere data</b> zijn van daaruit teruggerekend zoals de tekst rekent: de uittocht in 1446
+    v.Chr., 480 jaar vóór de tempel (1 Koningen 6:1), de verovering in 1406 v.Chr. en Davids
+    regering vanaf 1010 v.Chr. Het zijn conventies: veel onderzoekers plaatsen de uittocht in de
+    dertiende eeuw v.Chr. of betwijfelen dat hij gebeurde zoals verteld, en het antwoord op
+    <a href="../../nl/q/when-was-the-exodus/"><i>Wanneer was de uittocht?</i></a> zet het debat
+    uiteen. De aartsvaders staan in conventionele jaren.
+  </li>
+  <li>
+    <b>Gebeurtenissen buiten de Bijbel</b> zijn gedateerd naar de bronnen die ze vastleggen (de
+    Babylonische Kroniek, de Assyrische annalen, Josephus, een gedateerde inscriptie), elk met zijn
+    bronnen, meestal twee of meer; de val van Jeruzalem staat op ca. 586 v.Chr. (ook 587 v.Chr.
+    wordt verdedigd).
+  </li>
+  <li>
+    <b>Het Nieuwe Testament:</b> de geboorte van Jezus ca. 5 v.Chr., de kruisiging ca. 30 n.Chr.
+    (ook 33 n.Chr. wordt verdedigd) en de reizen van Paulus in de jaren die gewoonlijk worden
+    gegeven.
+  </li>
+  <li>
+    <b>‘ca.’</b> markeert een jaar dat alleen bij benadering bekend is, zoals alle jaren vóór het
+    eerste millennium v.Chr.
+  </li>
+</ul>
 
 <h2>Controles bij elke build</h2>
 <p>Er wordt niets gepubliceerd tenzij elke controle slaagt:</p>
@@ -190,11 +241,32 @@ description: Waar elke plaats, grens, datum en persoon op History Globe vandaan 
   </li>
 </ul>
 
-<h2 id="report">Een fout melden</h2>
+<h2 id="cite">Hoe te citeren</h2>
 <p>
-  Elke plaatskaart heeft een link <i>Een fout gevonden?</i>. Die opent een issue in de openbare
-  repository met de plaats al ingevuld; je hebt een GitHub-account nodig. Je kunt er ook
-  rechtstreeks een openen:
+  History Globe wordt doorlopend gecorrigeerd, dus een citaat noemt de datum van de gebruikte
+  gegevens. Elke pagina van de documentatie geeft die onderaan (‘Gegevens van’), en
+  <code>index.json</code> van de API geeft haar als <code>built_at</code>.
+</p>
+<p>De site:</p>
+<pre><code class="cite">Arnaut, Vadym. History Globe: een atlas van de bijbelse geschiedenis. {{site}}/
+(gegevens van {{built}}; geraadpleegd op …).</code></pre>
+<p>Een pagina, met titel en adres:</p>
+<pre><code class="cite">‘Jeruzalem’. In Vadym Arnaut, History Globe. {{site}}/nl/place/jerusalem/
+(gegevens van {{built}}; geraadpleegd op …).</code></pre>
+<p>De gegevens, met de datum van de snapshot die de kaart van de dataset geeft:</p>
+<pre><code class="cite">Arnaut, Vadym. History Globe dataset. Hugging Face, snapshot of ….
+https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
+
+<h2 id="report">Correcties</h2>
+<p>
+  Een fout gevonden, een ontbrekende bron of een betere lezing? Schrijf naar
+  <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>; een account is
+  niet nodig. Noem de pagina en wat er mis is, met een bron als je die hebt. Elke melding wordt
+  gelezen, en een bevestigde fout wordt gecorrigeerd.
+</p>
+<p>
+  Met een GitHub-account kun je ook de link <i>Een fout gevonden?</i> op elke plaatskaart gebruiken,
+  die een issue opent in de openbare repository met de plaats al ingevuld, of er direct een openen:
   <a href="https://github.com/ArVaViT/history-globe/issues/new"
     >github.com/ArVaViT/history-globe/issues</a
   >.

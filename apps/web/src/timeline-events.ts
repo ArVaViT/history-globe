@@ -1,5 +1,5 @@
 import type { Locale } from "@hg/model";
-import { placeName } from "@hg/model";
+import { placeName, rebuiltIn } from "@hg/model";
 import type { TimelineEvent } from "./components/Timeline";
 import type { LoadedData } from "./data";
 
@@ -37,8 +37,7 @@ export function timelineEventsOf(
     add(life.until, "events.destroyed");
     add(life.gap?.from, "events.destroyed");
     // The gap's `until` is its last year in ruins: rebuilt the year after.
-    const back = life.gap?.until;
-    add(back && { ...back, year: back.year + 1 }, "events.rebuilt");
+    add(life.gap && rebuiltIn(life.gap), "events.rebuilt");
   }
   for (const e of data.events) {
     out.push({

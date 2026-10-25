@@ -11,7 +11,9 @@
  * `{{places}}` and the other counts below are filled in from the built data, so the
  * numbers never go stale, and `{{site}}` is the address the globe is served at (SITE_URL,
  * or a placeholder when it is not set). `<nav class="cards"></nav>` is filled with a card
- * for every other page; `<p class="note">` becomes a callout.
+ * for every other page; `<p class="note">` becomes a callout; `<div class="bibles"></div>`
+ * becomes the table of the Bible of every language (bible-text.ts), and a
+ * `<pre><code class="cite">` is a citation to copy, plain text.
  *
  * Usage: node scripts/build-docs.ts  (after build-content; counts read public/data)
  */
@@ -20,6 +22,8 @@ import { bodyEnd, esc, headMeta } from "./page-shell.ts";
 import { hitHtml } from "./docs-script.ts";
 import { NOTICE_COMMENT } from "../packages/model/src/notice.ts";
 import { DOC_PAGES, type DocPage } from "../packages/model/src/site.ts";
+import { SOURCES } from "./bible-text.ts";
+import { T as PAGE_WORDS } from "./page-words.ts";
 import {
   copyFileSync,
   existsSync,
@@ -112,7 +116,7 @@ const GROUPS: readonly { name: Words<string>; pages: readonly Page[] }[] = [
       sr: "Подаци",
       tl: "Datos",
     },
-    pages: ["methodology", "sources"],
+    pages: ["methodology", "sources", "reviews"],
   },
   {
     name: {
@@ -163,6 +167,9 @@ const T = {
     skip: "Skip to content",
     openMenu: "Menu",
     overview: "Overview",
+    bibleHead: ["Language", "Edition", "Electronic text", "Licence"],
+    crown: "; in the United Kingdom, Crown copyright",
+    notYet: "verse texts only: not yet a language of the site",
   },
   ru: {
     language: "Язык",
@@ -185,6 +192,9 @@ const T = {
     skip: "К содержанию",
     openMenu: "Меню",
     overview: "Обзор",
+    bibleHead: ["Язык", "Издание", "Электронный текст", "Лицензия"],
+    crown: "; в Великобритании — права Короны",
+    notYet: "только тексты стихов: этого языка на сайте ещё нет",
   },
   uk: {
     language: "Мова",
@@ -207,6 +217,9 @@ const T = {
     skip: "До змісту",
     openMenu: "Меню",
     overview: "Огляд",
+    bibleHead: ["Мова", "Видання", "Електронний текст", "Ліцензія"],
+    crown: "; у Великій Британії — права Корони",
+    notYet: "лише тексти віршів: цієї мови на сайті ще немає",
   },
   es: {
     language: "Idioma",
@@ -229,6 +242,9 @@ const T = {
     skip: "Ir al contenido",
     openMenu: "Menú",
     overview: "Resumen",
+    bibleHead: ["Idioma", "Edición", "Texto electrónico", "Licencia"],
+    crown: "; en el Reino Unido, derechos de la Corona",
+    notYet: "solo textos de versículos: el sitio aún no tiene este idioma",
   },
   pt: {
     language: "Idioma",
@@ -251,6 +267,9 @@ const T = {
     skip: "Ir para o conteúdo",
     openMenu: "Menu",
     overview: "Visão geral",
+    bibleHead: ["Idioma", "Edição", "Texto eletrônico", "Licença"],
+    crown: "; no Reino Unido, direitos da Coroa",
+    notYet: "só textos de versículos: o site ainda não tem este idioma",
   },
   de: {
     language: "Sprache",
@@ -273,6 +292,9 @@ const T = {
     skip: "Zum Inhalt",
     openMenu: "Menü",
     overview: "Überblick",
+    bibleHead: ["Sprache", "Ausgabe", "Elektronischer Text", "Lizenz"],
+    crown: "; im Vereinigten Königreich Crown Copyright",
+    notYet: "nur Verstexte: die Website hat diese Sprache noch nicht",
   },
   fr: {
     language: "Langue",
@@ -295,6 +317,9 @@ const T = {
     skip: "Aller au contenu",
     openMenu: "Menu",
     overview: "Vue d’ensemble",
+    bibleHead: ["Langue", "Édition", "Texte électronique", "Licence"],
+    crown: " ; au Royaume-Uni, droits de la Couronne",
+    notYet: "textes des versets seulement : le site n’a pas encore cette langue",
   },
   it: {
     language: "Lingua",
@@ -317,6 +342,9 @@ const T = {
     skip: "Vai al contenuto",
     openMenu: "Menu",
     overview: "Panoramica",
+    bibleHead: ["Lingua", "Edizione", "Testo elettronico", "Licenza"],
+    crown: "; nel Regno Unito, diritti della Corona",
+    notYet: "solo testi dei versetti: il sito non ha ancora questa lingua",
   },
   nl: {
     language: "Taal",
@@ -339,6 +367,9 @@ const T = {
     skip: "Naar de inhoud",
     openMenu: "Menu",
     overview: "Overzicht",
+    bibleHead: ["Taal", "Uitgave", "Elektronische tekst", "Licentie"],
+    crown: "; in het Verenigd Koninkrijk Crown copyright",
+    notYet: "alleen verzen: de site heeft deze taal nog niet",
   },
   pl: {
     language: "Język",
@@ -361,6 +392,9 @@ const T = {
     skip: "Przejdź do treści",
     openMenu: "Menu",
     overview: "Przegląd",
+    bibleHead: ["Język", "Wydanie", "Tekst elektroniczny", "Licencja"],
+    crown: "; w Wielkiej Brytanii prawa Korony",
+    notYet: "tylko teksty wersetów: serwisu w tym języku jeszcze nie ma",
   },
   cs: {
     language: "Jazyk",
@@ -383,6 +417,9 @@ const T = {
     skip: "Přejít na obsah",
     openMenu: "Menu",
     overview: "Přehled",
+    bibleHead: ["Jazyk", "Vydání", "Elektronický text", "Licence"],
+    crown: "; ve Spojeném království práva Koruny",
+    notYet: "jen texty veršů: v tomto jazyce web zatím není",
   },
   sv: {
     language: "Språk",
@@ -405,6 +442,9 @@ const T = {
     skip: "Hoppa till innehållet",
     openMenu: "Meny",
     overview: "Översikt",
+    bibleHead: ["Språk", "Utgåva", "Elektronisk text", "Licens"],
+    crown: "; i Storbritannien Crown copyright",
+    notYet: "bara verstexter: webbplatsen finns ännu inte på detta språk",
   },
   da: {
     language: "Sprog",
@@ -427,6 +467,9 @@ const T = {
     skip: "Gå til indholdet",
     openMenu: "Menu",
     overview: "Oversigt",
+    bibleHead: ["Sprog", "Udgave", "Elektronisk tekst", "Licens"],
+    crown: "; i Storbritannien Crown copyright",
+    notYet: "kun verstekster: sitet findes endnu ikke på dette sprog",
   },
   nb: {
     language: "Språk",
@@ -449,6 +492,9 @@ const T = {
     skip: "Hopp til innholdet",
     openMenu: "Meny",
     overview: "Oversikt",
+    bibleHead: ["Språk", "Utgave", "Elektronisk tekst", "Lisens"],
+    crown: "; i Storbritannia Crown copyright",
+    notYet: "bare verstekster: nettstedet finnes ennå ikke på dette språket",
   },
   sr: {
     language: "Језик",
@@ -471,6 +517,9 @@ const T = {
     skip: "Пређи на садржај",
     openMenu: "Мени",
     overview: "Преглед",
+    bibleHead: ["Језик", "Издање", "Електронски текст", "Лиценца"],
+    crown: "; у Уједињеном Краљевству права Круне",
+    notYet: "само текстови стихова: сајт још нема овај језик",
   },
   tl: {
     language: "Wika",
@@ -493,15 +542,19 @@ const T = {
     skip: "Lumaktaw sa nilalaman",
     openMenu: "Menu",
     overview: "Pangkalahatang-ideya",
+    bibleHead: ["Wika", "Edisyon", "Elektronikong teksto", "Lisensiya"],
+    crown: "; sa United Kingdom, Crown copyright",
+    notYet: "mga teksto lamang ng talata: wala pa ang wikang ito sa site",
   },
-} as const satisfies Words<Record<string, string>>;
+} as const satisfies Words<Record<string, string | readonly string[]>>;
 
 const read = (file: string): unknown =>
   existsSync(join(data, file)) ? JSON.parse(readFileSync(join(data, file), "utf8")) : undefined;
 
 /** The counts a page may cite, from the built data; a missing file leaves its counts out. */
 function counts(): Record<string, string> {
-  const places = read("places.geojson") as { features: unknown[] } | undefined;
+  const places = read("places.geojson") as
+    { features: { properties: { verses: number } }[] } | undefined;
   const ancient = read("ancient.geojson") as { features: unknown[] } | undefined;
   const people = read("people.json") as { people: unknown[] } | undefined;
   const content = read("content.json") as Record<string, unknown> | undefined;
@@ -514,6 +567,10 @@ function counts(): Record<string, string> {
   const overridesText = readFileSync(join(root, "content/polity-overrides.yaml"), "utf8");
   const n: Record<string, number | undefined> = {
     places: places?.features.length,
+    // Of them, the places a verse names: each has a page (build-pages.ts); the others are
+    // records OpenBible keeps without a verse in the books it tags.
+    named: places?.features.filter((f) => f.properties.verses > 0).length,
+    unnamed: places?.features.filter((f) => !(f.properties.verses > 0)).length,
     ancient: ancient?.features.length,
     people: people?.people.length,
     tours: size("tours"),
@@ -541,6 +598,29 @@ function counts(): Record<string, string> {
   out.hgPlacesSrc = `${out.site}/hg-places-${releases.latest}.js`;
   out.hgPlacesIntegrity = releases.versions[releases.latest] ?? "";
   return out;
+}
+
+/**
+ * The Bible of every language, for the sources page (`<div class="bibles"></div>`): each
+ * language by its own name, the edition by its title, the electronic text with its page and
+ * the licence. Read from SOURCES (bible-text.ts), the editions the verses are built from,
+ * so the page cannot leave one out. A language whose verses are built before it joins the
+ * site (Chinese) is listed too, as its texts are in the data.
+ */
+function biblesTable(l: Lang): string {
+  const t = T[l];
+  const onSite = new Set<string>(LOCALES);
+  const order = [...LOCALES, ...Object.keys(SOURCES).filter((k) => !onSite.has(k))] as Locale[];
+  const rows = order.map((code) => {
+    const b = SOURCES[code];
+    const id = b.file.replace(/(_usfm)?\.zip$/, "");
+    const host = b.file.endsWith("_usfm.zip") ? "eBible.org" : "CrossWire SWORD";
+    const own = (LOCALE_NAMES as Partial<Record<string, string>>)[code];
+    const name = own ?? new Intl.DisplayNames([code], { type: "language" }).of(code) ?? code;
+    const lic = `${PAGE_WORDS[l].pd}${b.license.includes("Crown") ? t.crown : ""}${own ? "" : ` (${t.notYet})`}`;
+    return `<tr><td lang="${code}">${esc(name)}</td><td lang="${code}">${esc(b.title)}</td><td><a href="${esc(b.page)}">${host} ${esc(id)}</a></td><td>${esc(lic)}</td></tr>`;
+  });
+  return `<div class="table"><table class="sources"><thead><tr>${t.bibleHead.map((h) => `<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${rows.join("")}</tbody></table></div>`;
 }
 
 interface Source {
@@ -581,6 +661,9 @@ function plural(l: Lang, n: number, one: string, few: string, many: string): str
   return form === "one" ? one : form === "few" ? few : many;
 }
 
+/** The languages whose pages write a number of four digits without a separator. */
+const UNGROUPED_4: ReadonlySet<Lang> = new Set(["ru", "cs", "sr", "es", "pl"]);
+
 /**
  * Fills `{{name}}`; `{{name|город|города|городов}}` with the count and the word in the form
  * the count takes, `{{~name|…}}` with the word alone. An unknown name is an error, so a typo
@@ -592,9 +675,17 @@ function fill(body: string, n: Record<string, string>, file: string, l: Lang): s
     (_, bare: string, k: string, one?: string, few?: string, many?: string) => {
       const v = n[k];
       if (v === undefined) throw new Error(`${file}: unknown or unavailable {{${k}}}`);
-      if (!one || !few || !many) return v;
+      // A count as the pages of the language write their numbers: 1,288 in English, 1.288 in
+      // German and Italian, 1288 in Russian, Czech, Serbian, Spanish and Polish (a number of
+      // four digits ungrouped, as the hand-written ones beside it: «1088 правок»).
+      const shown = /^\d+$/.test(v)
+        ? new Intl.NumberFormat(l === "en" ? "en-GB" : l, {
+            useGrouping: UNGROUPED_4.has(l) ? "min2" : l === "it" ? "always" : "auto",
+          }).format(Number(v))
+        : v;
+      if (!one || !few || !many) return shown;
       const word = plural(l, Number(v), one, few, many);
-      return bare ? word : `${v} ${word}`;
+      return bare ? word : `${shown} ${word}`;
     },
   );
 }
@@ -833,35 +924,41 @@ const langOf = (code: string) =>
  * its language and a copy button (shown by docs.js, which does the copying).
  */
 function highlight(body: string, l: Lang): string {
-  return body.replace(/<pre><code>([\s\S]*?)<\/code><\/pre>/g, (_, code: string) => {
-    // One pass, so that no rule colours inside another's mark-up. An address is left
-    // whole: its // is no comment, and <globe-host> is no tag (filled in on the page).
-    const out = code.replace(
-      /https?:\/\/\S*|(\/\/[^\n]*)|("[^"\n]*")|(&lt;\/?)([a-z]+)|\b([a-z-]+)(?==")|\b(const|function|if|return|GET)\b/g,
-      (
-        m: string,
-        c?: string,
-        str?: string,
-        lt?: string,
-        tag?: string,
-        attr?: string,
-        kw?: string,
-      ) =>
-        c
-          ? `<span class="c">${c}</span>`
-          : str
-            ? `<span class="s">${str}</span>`
-            : lt && tag
-              ? `${lt}<span class="t">${tag}</span>`
-              : attr
-                ? `<span class="a">${attr}</span>`
-                : kw
-                  ? `<span class="k">${kw}</span>`
-                  : m,
-    );
-    // A wide sample scrolls sideways: the keyboard reaches it through the tabindex.
-    return `<div class="code"><div class="code-bar"><span>${langOf(code)}</span><button type="button" class="copy" data-done="${T[l].copied}" hidden>${svg("copy")}<span>${T[l].copy}</span></button></div><pre tabindex="0"><code>${out}</code></pre></div>`;
-  });
+  return body.replace(
+    /<pre><code( class="cite")?>([\s\S]*?)<\/code><\/pre>/g,
+    (_, cite: string | undefined, code: string) => {
+      // A citation to copy (methodology.html#cite) is plain text: no colours, no language.
+      if (cite)
+        return `<div class="code"><div class="code-bar"><span></span><button type="button" class="copy" data-done="${T[l].copied}" hidden>${svg("copy")}<span>${T[l].copy}</span></button></div><pre tabindex="0"><code>${code}</code></pre></div>`;
+      // One pass, so that no rule colours inside another's mark-up. An address is left
+      // whole: its // is no comment, and <globe-host> is no tag (filled in on the page).
+      const out = code.replace(
+        /https?:\/\/\S*|(\/\/[^\n]*)|("[^"\n]*")|(&lt;\/?)([a-z]+)|\b([a-z-]+)(?==")|\b(const|function|if|return|GET)\b/g,
+        (
+          m: string,
+          c?: string,
+          str?: string,
+          lt?: string,
+          tag?: string,
+          attr?: string,
+          kw?: string,
+        ) =>
+          c
+            ? `<span class="c">${c}</span>`
+            : str
+              ? `<span class="s">${str}</span>`
+              : lt && tag
+                ? `${lt}<span class="t">${tag}</span>`
+                : attr
+                  ? `<span class="a">${attr}</span>`
+                  : kw
+                    ? `<span class="k">${kw}</span>`
+                    : m,
+      );
+      // A wide sample scrolls sideways: the keyboard reaches it through the tabindex.
+      return `<div class="code"><div class="code-bar"><span>${langOf(code)}</span><button type="button" class="copy" data-done="${T[l].copied}" hidden>${svg("copy")}<span>${T[l].copy}</span></button></div><pre tabindex="0"><code>${out}</code></pre></div>`;
+    },
+  );
 }
 
 /** What the search finds: a page, a section of it, or a name a reference table defines. */
@@ -1224,7 +1321,9 @@ for (const l of LANGS) {
     PAGES.map((p) => {
       const file = `content/docs/${l}/${p}.html`;
       const source = parse(join(root, file));
-      const filled = fill(source.body, n, file, l);
+      const filled = fill(source.body, n, file, l).replace('<div class="bibles"></div>', () =>
+        biblesTable(l),
+      );
       const { body, toc } = headings(highlight(features(TYPESET[l](filled)), l));
       return [p, { name: p, src: source, body, toc }];
     }),

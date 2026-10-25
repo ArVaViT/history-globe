@@ -1,6 +1,6 @@
 # 0005. Tiles and terrain pipeline
 
-- Status: proposed
+- Status: accepted
 - Date: 2026-09-28
 
 ## Context

@@ -63,7 +63,7 @@ const T_UK = {
   checkedQ: "Відповідь звірено з джерелами; історик її ще не читав.",
   testament: { whole: "Уся Біблія", ot: "Старий Заповіт", nt: "Новий Заповіт" },
   stop: "Зупинка",
-  translation: "Переклад П. Куліша (1871)",
+  translation: "Переклад П. Куліша та І. Пулюя (1905)",
   circa: "бл.",
   title: (n: string) => `${n} — де це було, історія, вірші Біблії`,
   desc: (n: string, k: string, v: number) =>
@@ -142,7 +142,7 @@ const LANDING_UK = {
   method: "Як перевіряються дані",
   sources: "Усі джерела",
   ctaTitle: "Почніть із будь-якого року",
-  ctaText: "Без реєстрації, на телефоні й на комп’ютері, багатьма мовами.",
+  ctaText: "Без реєстрації, на телефоні й на комп’ютері, 16 мовами.",
 } as const;
 
 const LISTS_UK: ListWords = {
@@ -154,6 +154,7 @@ const LISTS_UK: ListWords = {
   all: "Усі",
   withArticle: "Зі статтею",
   alphabet: "За алфавітом",
+  partsNav: "Частини Біблії",
   findPlace: "Знайти місце",
   findQuestion: "Знайти питання",
   nothing: "Нічого не знайшлося",
@@ -307,7 +308,7 @@ const LANDING_ES = {
   method: "Cómo se comprueban los datos",
   sources: "Todas las fuentes",
   ctaTitle: "Empieza por cualquier año",
-  ctaText: "Sin cuenta, en el móvil o en el ordenador, en varios idiomas.",
+  ctaText: "Sin cuenta, en el móvil o en el ordenador, en 16 idiomas.",
 } as const;
 
 const LISTS_ES: ListWords = {
@@ -319,6 +320,7 @@ const LISTS_ES: ListWords = {
   all: "Todos",
   withArticle: "Con artículo",
   alphabet: "Alfabético",
+  partsNav: "Partes de la Biblia",
   findPlace: "Buscar un lugar",
   findQuestion: "Buscar una pregunta",
   nothing: "No se encontró nada",
@@ -472,7 +474,7 @@ const LANDING_PT = {
   method: "Como os dados são conferidos",
   sources: "Todas as fontes",
   ctaTitle: "Comece por qualquer ano",
-  ctaText: "Sem conta, no celular ou no computador, em vários idiomas.",
+  ctaText: "Sem conta, no celular ou no computador, em 16 idiomas.",
 } as const;
 
 const LISTS_PT: ListWords = {
@@ -484,6 +486,7 @@ const LISTS_PT: ListWords = {
   all: "Todos",
   withArticle: "Com artigo",
   alphabet: "Alfabético",
+  partsNav: "Partes da Bíblia",
   findPlace: "Buscar um lugar",
   findQuestion: "Buscar uma pergunta",
   nothing: "Nada encontrado",
@@ -637,7 +640,7 @@ const LANDING_DE = {
   method: "Wie die Daten geprüft werden",
   sources: "Alle Quellen",
   ctaTitle: "Mit einem beliebigen Jahr beginnen",
-  ctaText: "Ohne Konto, auf dem Handy oder am Computer, in mehreren Sprachen.",
+  ctaText: "Ohne Konto, auf dem Handy oder am Computer, in 16 Sprachen.",
 } as const;
 
 const LISTS_DE: ListWords = {
@@ -649,6 +652,7 @@ const LISTS_DE: ListWords = {
   all: "Alle",
   withArticle: "Mit Artikel",
   alphabet: "Alphabetisch",
+  partsNav: "Teile der Bibel",
   findPlace: "Ort suchen",
   findQuestion: "Frage suchen",
   nothing: "Nichts gefunden",
@@ -802,7 +806,7 @@ const LANDING_FR = {
   method: "Comment les données sont vérifiées",
   sources: "Toutes les sources",
   ctaTitle: "Commencez à n’importe quelle année",
-  ctaText: "Sans compte, sur téléphone ou sur ordinateur, en plusieurs langues.",
+  ctaText: "Sans compte, sur téléphone ou sur ordinateur, en 16 langues.",
 } as const;
 
 const LISTS_FR: ListWords = {
@@ -814,6 +818,7 @@ const LISTS_FR: ListWords = {
   all: "Tous",
   withArticle: "Avec article",
   alphabet: "Alphabétique",
+  partsNav: "Parties de la Bible",
   findPlace: "Chercher un lieu",
   findQuestion: "Chercher une question",
   nothing: "Aucun résultat",
@@ -969,7 +974,7 @@ const LANDING_IT = {
   method: "Come si verificano i dati",
   sources: "Tutte le fonti",
   ctaTitle: "Parti da un anno qualsiasi",
-  ctaText: "Senza account, su telefono o computer, in più lingue.",
+  ctaText: "Senza account, su telefono o computer, in 16 lingue.",
 } as const;
 
 const LISTS_IT: ListWords = {
@@ -981,6 +986,7 @@ const LISTS_IT: ListWords = {
   all: "Tutti",
   withArticle: "Con articolo",
   alphabet: "Alfabetico",
+  partsNav: "Parti della Bibbia",
   findPlace: "Cerca un luogo",
   findQuestion: "Cerca una domanda",
   nothing: "Nessun risultato",
@@ -1134,7 +1140,7 @@ const LANDING_NL = {
   method: "Hoe de gegevens worden gecontroleerd",
   sources: "Alle bronnen",
   ctaTitle: "Begin bij elk jaar",
-  ctaText: "Zonder account, op een telefoon of een computer, in meerdere talen.",
+  ctaText: "Zonder account, op een telefoon of een computer, in 16 talen.",
 } as const;
 
 const LISTS_NL: ListWords = {
@@ -1146,6 +1152,7 @@ const LISTS_NL: ListWords = {
   all: "Alle",
   withArticle: "Met artikel",
   alphabet: "Alfabetisch",
+  partsNav: "Delen van de Bijbel",
   findPlace: "Een plaats zoeken",
   findQuestion: "Een vraag zoeken",
   nothing: "Niets gevonden",
@@ -1301,7 +1308,7 @@ const LANDING_PL = {
   method: "Jak sprawdzamy dane",
   sources: "Wszystkie źródła",
   ctaTitle: "Zacznij od dowolnego roku",
-  ctaText: "Bez konta, na telefonie i na komputerze, w wielu językach.",
+  ctaText: "Bez konta, na telefonie i na komputerze, w 16 językach.",
 } as const;
 
 const LISTS_PL: ListWords = {
@@ -1313,6 +1320,7 @@ const LISTS_PL: ListWords = {
   all: "Wszystkie",
   withArticle: "Z artykułem",
   alphabet: "Alfabetycznie",
+  partsNav: "Części Biblii",
   findPlace: "Znajdź miejsce",
   findQuestion: "Znajdź pytanie",
   nothing: "Nic nie znaleziono",
@@ -1470,7 +1478,7 @@ const LANDING_CS = {
   method: "Jak se data ověřují",
   sources: "Všechny prameny",
   ctaTitle: "Začněte kterýmkoli rokem",
-  ctaText: "Bez účtu, v telefonu i v počítači, v několika jazycích.",
+  ctaText: "Bez účtu, v telefonu i v počítači, v 16 jazycích.",
 } as const;
 
 const LISTS_CS: ListWords = {
@@ -1482,6 +1490,7 @@ const LISTS_CS: ListWords = {
   all: "Vše",
   withArticle: "S článkem",
   alphabet: "Abecedně",
+  partsNav: "Části Bible",
   findPlace: "Najít místo",
   findQuestion: "Najít otázku",
   nothing: "Nic nenalezeno",
@@ -1637,7 +1646,7 @@ const LANDING_SV = {
   method: "Hur data kontrolleras",
   sources: "Alla källor",
   ctaTitle: "Börja med vilket år som helst",
-  ctaText: "Utan konto, på telefon och dator, på flera språk.",
+  ctaText: "Utan konto, på telefon och dator, på 16 språk.",
 } as const;
 
 const LISTS_SV: ListWords = {
@@ -1649,6 +1658,7 @@ const LISTS_SV: ListWords = {
   all: "Alla",
   withArticle: "Med artikel",
   alphabet: "Alfabetiskt",
+  partsNav: "Bibelns delar",
   findPlace: "Hitta en plats",
   findQuestion: "Hitta en fråga",
   nothing: "Inget hittades",
@@ -1697,7 +1707,7 @@ const T_DA = {
   english: "På engelsk",
   ancient: "Hos antikke forfattere",
   untold: ", vejen er ikke beskrevet",
-  life: "Levetid",
+  life: "Eksisterede",
   ruins: "I ruiner",
   events: "Begivenheder",
   battles: "Slag og belejringer",
@@ -1804,7 +1814,7 @@ const LANDING_DA = {
   method: "Sådan kontrolleres dataene",
   sources: "Alle kilder",
   ctaTitle: "Begynd med et hvilket som helst år",
-  ctaText: "Uden konto, på telefon og computer, på flere sprog.",
+  ctaText: "Uden konto, på telefon og computer, på 16 sprog.",
 } as const;
 
 const LISTS_DA: ListWords = {
@@ -1816,6 +1826,7 @@ const LISTS_DA: ListWords = {
   all: "Alle",
   withArticle: "Med artikel",
   alphabet: "Alfabetisk",
+  partsNav: "Bibelens dele",
   findPlace: "Find et sted",
   findQuestion: "Find et spørgsmål",
   nothing: "Intet fundet",
@@ -1864,7 +1875,7 @@ const T_NB = {
   english: "På engelsk",
   ancient: "Hos antikke forfattere",
   untold: ", veien er ikke beskrevet i teksten",
-  life: "Levetid",
+  life: "Eksisterte",
   ruins: "I ruiner",
   events: "Hendelser",
   battles: "Slag og beleiringer",
@@ -1971,7 +1982,7 @@ const LANDING_NB = {
   method: "Hvordan dataene kontrolleres",
   sources: "Alle kilder",
   ctaTitle: "Begynn med et hvilket som helst år",
-  ctaText: "Uten konto, på telefon og datamaskin, på flere språk.",
+  ctaText: "Uten konto, på telefon og datamaskin, på 16 språk.",
 } as const;
 
 const LISTS_NB: ListWords = {
@@ -1982,6 +1993,7 @@ const LISTS_NB: ListWords = {
   all: "Alle",
   withArticle: "Med artikkel",
   alphabet: "Alfabetisk",
+  partsNav: "Bibelens deler",
   findPlace: "Finn et sted",
   findQuestion: "Finn et spørsmål",
   nothing: "Ingenting funnet",
@@ -2139,7 +2151,7 @@ const LANDING_SR = {
   method: "Како се подаци проверавају",
   sources: "Сви извори",
   ctaTitle: "Почните од било које године",
-  ctaText: "Без налога, на телефону и на рачунару, на више језика.",
+  ctaText: "Без налога, на телефону и на рачунару, на 16 језика.",
 } as const;
 
 const LISTS_SR: ListWords = {
@@ -2151,6 +2163,7 @@ const LISTS_SR: ListWords = {
   all: "Све",
   withArticle: "Са чланком",
   alphabet: "По азбуци",
+  partsNav: "Делови Библије",
   findPlace: "Нађи место",
   findQuestion: "Нађи питање",
   nothing: "Ништа није пронађено",
@@ -2309,7 +2322,7 @@ const LANDING_TL = {
   method: "Paano sinusuri ang datos",
   sources: "Lahat ng sanggunian",
   ctaTitle: "Magsimula sa alinmang taon",
-  ctaText: "Walang account, sa telepono o sa computer, sa ilang wika.",
+  ctaText: "Walang account, sa telepono o sa computer, sa 16 na wika.",
 } as const;
 
 const LISTS_TL: ListWords = {
@@ -2321,6 +2334,7 @@ const LISTS_TL: ListWords = {
   all: "Lahat",
   withArticle: "May artikulo",
   alphabet: "Alpabetiko",
+  partsNav: "Mga bahagi ng Bibliya",
   findPlace: "Hanapin ang lugar",
   findQuestion: "Hanapin ang tanong",
   nothing: "Walang nahanap",
@@ -2438,7 +2452,7 @@ export const T = {
     english: "In English",
     ancient: "In ancient writers",
     untold: ", the way is not told",
-    life: "Lifetime",
+    life: "Existed",
     ruins: "In ruins",
     events: "Events",
     battles: "Battles and sieges",
@@ -2567,7 +2581,7 @@ export const LANDING = {
     method: "Как проверяются данные",
     sources: "Все источники",
     ctaTitle: "Начните с любого года",
-    ctaText: "Без регистрации, на телефоне и на компьютере, по-русски и по-английски.",
+    ctaText: "Без регистрации, на телефоне и на компьютере, на 16 языках.",
   },
   en: {
     title: "History on a globe — an atlas of biblical history",
@@ -2631,7 +2645,7 @@ export const LANDING = {
     method: "How the data is checked",
     sources: "All sources",
     ctaTitle: "Start from any year",
-    ctaText: "No account, on a phone or a computer, in English and in Russian.",
+    ctaText: "No account, on a phone or a computer, in 16 languages.",
   },
 } as const;
 
@@ -2684,6 +2698,8 @@ interface ListWords {
   all: string;
   withArticle: string;
   alphabet: string;
+  /** The name of the bar that jumps to a part of the Bible (the header nav is "Sections"). */
+  partsNav: string;
   findPlace: string;
   findQuestion: string;
   nothing: string;
@@ -2719,6 +2735,7 @@ export const LISTS: Record<SiteLocale, ListWords> & Partial<Record<Locale, ListW
     all: "Все",
     withArticle: "Со статьёй",
     alphabet: "По алфавиту",
+    partsNav: "Части Библии",
     findPlace: "Найти место",
     findQuestion: "Найти вопрос",
     nothing: "Ничего не нашлось",
@@ -2749,6 +2766,7 @@ export const LISTS: Record<SiteLocale, ListWords> & Partial<Record<Locale, ListW
     all: "All",
     withArticle: "With an article",
     alphabet: "Alphabet",
+    partsNav: "Parts of the Bible",
     findPlace: "Find a place",
     findQuestion: "Find a question",
     nothing: "Nothing found",

@@ -1,0 +1,43 @@
+name: Report an error
+description: Something on a place, article, question or tour page is wrong.
+title: "Error: "
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Thank you. Every report is read. If you would rather not use GitHub, write to
+        historyglobe.vadym@gmail.com instead.
+  - type: input
+    id: page
+    attributes:
+      label: Place or page
+      description: The address of the page, or the name of the place, question or tour.
+      placeholder: https://historyglobe.app/en/place/jerusalem/
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What is wrong
+      description: Quote the sentence, date, point or name, and say what it should be.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source
+      description: >-
+        The work that shows it: author, title, year and page, or a link. A verse reference is
+        enough for what the text says.
+    validations:
+      required: true
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      description: Which language version, if the error is in one translation only.
+  - type: input
+    id: credit
+    attributes:
+      label: Credit
+      description: How you would like to be named if the correction is listed (leave empty for none).
