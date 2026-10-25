@@ -21,6 +21,7 @@
     "people": "python3 pipeline/people/parse_tipnr.py && python3 pipeline/people/build.py > /dev/null && python3 pipeline/people/package.py",
     "test:pipeline": "python3 -m unittest discover -s pipeline -q",
     "content": "node scripts/build-content.ts && node scripts/build-road-legs.ts && node scripts/build-text-places.ts && node scripts/build-pages.ts && node scripts/build-api.ts && node scripts/build-docs.ts && node scripts/build-page-hashes.ts",
+    "dataset": "python3 pipeline/build_dataset.py",
     "e2e": "node e2e/flows.mjs",
     "e2e:a11y": "node e2e/a11y.mjs",
     "e2e:copies": "node e2e/copies.mjs",
