@@ -37,6 +37,18 @@ pins (then `pnpm data` and the data checks, ADR 0007). The credits shipped with 
 | `verses/<lang>/…`                                   | a verse opened                               | the Synodal and KJV text by chapter                                                                                                                                                                                                |
 | `photos/<place id>.jpg`                             | a card with a photo                          | credit and licence in `content.json` → `photos`                                                                                                                                                                                    |
 
+## On Hugging Face
+
+The same data, as nine CSV tables with a dataset card, is at
+[huggingface.co/datasets/ArVaViT/history-globe](https://huggingface.co/datasets/ArVaViT/history-globe):
+places (with how sure each location is), the verses that name them, the proposed sites of
+disputed places, people, events, battles, journeys with their stops, and the ancient writers.
+`pnpm dataset` (after `pnpm data && pnpm content`) writes it to `pipeline/out/dataset/` from
+the API and `places.geojson` / `sites.geojson`; the card is `pipeline/dataset_card.md` with
+its counts filled in, and the build stops on any fact of the card the release no longer
+bears out. The owner uploads it after a deploy that changed it; the articles and the
+answered questions are never part of it (ADR 0016).
+
 ## Licences in one line each
 
 OpenBible places and identifications CC BY 4.0 (points copied from OpenStreetMap or
