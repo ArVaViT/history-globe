@@ -17,6 +17,13 @@ description: De dónde sale cada lugar, frontera, fecha y persona de History Glo
   >, que sopesa las identificaciones propuestas en la bibliografía para cada lugar. Conservamos su
   identificación preferida y su estimación de la probabilidad de cada emplazamiento candidato.
 </p>
+<p>
+  De estos {{places}} lugares, {{named}} se nombran en algún versículo de los libros que etiqueta
+  OpenBible, y cada uno tiene su propia página; los otros {{unnamed}} son registros que OpenBible
+  guarda y que ningún versículo de esos libros nombra (Adasa, de 1 Macabeos, por ejemplo).
+  {{articles}} lugares tienen artículo. Otros {{excluded}} quedaron fuera por no tener un punto que
+  pueda publicarse (véase abajo).
+</p>
 <ul>
   <li>
     <b>La certeza en palabras.</b> Cuando no se propone un segundo emplazamiento serio, la
@@ -43,15 +50,15 @@ description: De dónde sale cada lugar, frontera, fecha y persona de History Glo
 <p>
   Una ciudad del mapa se dibuja entera solo en los años en que existió. Para {{life}} lugares de la
   Biblia, los años de fundación, destrucción y abandono están registrados a mano, cada uno con sus
-  fuentes (autores antiguos, crónicas, inscripciones, informes de excavación). Una fecha discutida
-  se omite en lugar de adivinarse.
+  fuentes (autores antiguos, crónicas, inscripciones, informes de excavación). Solo se registran
+  fechas firmes: una ciudad cuya fundación o final se discute no recibe año para ello.
 </p>
 <p>
   Las {{ancient}} ciudades del mundo antiguo que la Biblia no nombra (capitales, puertos y
-  santuarios como Ugarit, Hattusa, Mari o Delfos) se eligieron y fecharon una por una, cada una
-  contrastada con dos fuentes, con un identificador en
-  <a href="https://pleiades.stoa.org">Pleiades</a>
-  o en Wikidata y un punto sobre el sitio antiguo y no sobre la población moderna.
+  santuarios como Ugarit, Hattusa, Mari o Delfos) se eligieron y fecharon una por una: cada una se
+  sitúa según su registro en <a href="https://pleiades.stoa.org">Pleiades</a> o en Wikidata, sobre
+  el sitio antiguo y no sobre la población moderna, y se fecha a partir de esos registros y de obras
+  enciclopédicas, conciliados a mano.
 </p>
 
 <h2>Fronteras</h2>
@@ -70,8 +77,8 @@ description: De dónde sale cada lugar, frontera, fecha y persona de History Glo
   Irán, el mundo grecorromano del Nuevo Testamento y el Próximo Oriente hasta el 1300 d.C.; entre
   otros casos, la decadencia y la recuperación de Asiria en el siglo VIII a.C., Babilonia bajo
   Merodac-baladán, Pérgamo legada a Roma en el 133 a.C., Macedonia después de Pidna y Tracia
-  anexionada en el 46 d.C. Cada lote de correcciones se prueba primero con las formas y después un
-  segundo revisor lo vuelve a comprobar, de manera independiente, con las fuentes.
+  anexionada en el 46 d.C. Cada lote de correcciones se prueba primero con las formas y después se
+  vuelve a comprobar con las fuentes en una segunda pasada de IA, aparte.
 </p>
 <p>
   Un reino que pagaba tributo a un imperio, o que gobernaba como su cliente, se dibuja con un tono
@@ -109,19 +116,23 @@ description: De dónde sale cada lugar, frontera, fecha y persona de History Glo
   </li>
 </ul>
 
-<h2>Acontecimientos, rutas y artículos</h2>
+<h2 id="review">Acontecimientos, rutas y artículos</h2>
 <p>
   Los {{events}} acontecimientos, las {{tours}} rutas y los {{articles}} artículos se redactan con
   ayuda de la IA bajo la dirección del autor y luego se comprueban en revisiones aparte con las
   fuentes: el texto bíblico para lo que dice, los autores antiguos, las crónicas y las inscripciones
-  para las fechas, y la bibliografía académica para los emplazamientos. Cada afirmación cita su
-  fuente. Las citas proceden únicamente de la traducción sinodal y de la versión King James. Ninguna
-  ruta superó su primera revisión sin cambios; todas se corrigieron y se volvieron a comprobar. En
-  la última revisión completa, terminada el 17 de octubre de 2026, los 746 artículos se volvieron a
-  comprobar con las fuentes, unos 210 de ellos dos veces; se hicieron 1088 correcciones, cada una en
-  los 11 idiomas, y se hallaron errores manifiestos en 157 artículos. Estas revisiones las hace una
-  IA a partir de las fuentes, no especialistas; un artículo que ha leído un historiador lleva el
-  nombre del historiador.
+  para las fechas, y la bibliografía académica para los emplazamientos. Cada artículo, respuesta y
+  ruta enumera sus fuentes, para el texto en su conjunto y no frase por frase. Las citas proceden
+  únicamente de la Biblia de dominio público de cada idioma, enumeradas en la página de
+  <a href="sources.html">fuentes</a>. Ninguna ruta superó su primera revisión sin cambios; todas se
+  corrigieron y se volvieron a comprobar. En la última revisión completa, terminada el 17 de octubre
+  de 2026, los 746 artículos se volvieron a comprobar con las fuentes, unos 210 de ellos dos veces;
+  se hicieron 1088 correcciones, cada una en los 11 idiomas que tenía entonces el sitio, y se
+  hallaron errores manifiestos en 157 artículos. Los cinco idiomas añadidos el 24 de octubre de 2026
+  (sueco, noruego, danés, tagalo y serbio) se tradujeron a partir de los textos ya corregidos;
+  después, un revisor de IA aparte cotejó cada uno de sus textos con el inglés, y cada cita con la
+  Biblia de ese idioma. Estas revisiones las hace una IA a partir de las fuentes, no especialistas;
+  un artículo que ha leído un historiador lleva el nombre del historiador.
 </p>
 <p>
   La distancia hasta una parada se da en línea recta. A partir del 312 a.C., cuando empiezan las
@@ -141,7 +152,7 @@ description: De dónde sale cada lugar, frontera, fecha y persona de History Glo
   Las batallas y los asedios ({{battles}}) son los que cuenta la Biblia y unos pocos ajenos a ella
   que decidieron la suerte de Israel. Cada uno está en el lugar donde se libró y aparece en el mapa
   en sus años. Los de la Biblia se fechan igual que las rutas fechan esos mismos relatos; los demás
-  no llevan versículo, sino una fuente antigua o académica. Una segunda pasada independiente
+  no llevan versículo, sino una fuente antigua o académica. Una segunda pasada de IA, aparte,
   comprobó el borrador con el texto sinodal y la versión King James: de 58 entradas, 16 se
   corrigieron y una se descartó, porque el mapa no tiene punto para su emplazamiento.
 </p>
@@ -151,6 +162,43 @@ description: De dónde sale cada lugar, frontera, fecha y persona de History Glo
   incluye y el canon protestante no: cada una de esas citas se marca como «deuterocanónica», y su
   enlace abre un texto que contiene el libro.
 </p>
+
+<h2 id="chronology">Fechas y cronología</h2>
+<p>
+  El mapa muestra cada relato en un año, así que sus fechas siguen una sola convención; donde los
+  especialistas discrepan, el año es un punto para el mapa, no un veredicto.
+</p>
+<ul>
+  <li>
+    <b>Los reyes de Israel y de Judá</b> siguen la cronología de E. R. Thiele (<i
+      >The Mysterious Numbers of the Hebrew Kings</i
+    >): Salomón empieza el Templo hacia el 966 a.C. y el reino se divide hacia el 931 a.C. Otras
+    reconstrucciones difieren en algunos años; W. F. Albright, por ejemplo, situaba la división en
+    el 922 a.C.
+  </li>
+  <li>
+    <b>Las fechas anteriores</b> se cuentan hacia atrás desde estas como las cuenta el texto: el
+    Éxodo en el 1446 a.C., 480 años antes del Templo (1 Reyes 6:1), la conquista en el 1406 a.C. y
+    el reinado de David desde el 1010 a.C. Son convenciones: muchos especialistas sitúan el Éxodo en
+    el siglo XIII a.C. o dudan de que ocurriera tal como se cuenta, y la respuesta a
+    <a href="../../es/q/when-was-the-exodus/"><i>¿Cuándo fue el Éxodo?</i></a> expone el debate. Los
+    patriarcas están en años convencionales.
+  </li>
+  <li>
+    <b>Los acontecimientos fuera de la Biblia</b> se fechan por los documentos que los fijan (la
+    Crónica babilónica, los anales asirios, Josefo, una inscripción fechada), cada uno con sus
+    fuentes, en la mayoría de los casos dos o más; la caída de Jerusalén se muestra hacia el 586
+    a.C. (también se sostiene el 587 a.C.).
+  </li>
+  <li>
+    <b>El Nuevo Testamento:</b> el nacimiento de Jesús hacia el 5 a.C., la crucifixión hacia el 30
+    d.C. (también se sostiene el 33 d.C.) y los viajes de Pablo en los años que suelen darse.
+  </li>
+  <li>
+    <b>«ca.»</b> marca un año conocido solo de forma aproximada, como lo son todos los anteriores al
+    primer milenio a.C.
+  </li>
+</ul>
 
 <h2>Comprobaciones en cada compilación</h2>
 <p>No se publica nada si no pasan todas las comprobaciones:</p>
@@ -188,10 +236,32 @@ description: De dónde sale cada lugar, frontera, fecha y persona de History Glo
   </li>
 </ul>
 
-<h2 id="report">Comunicar un error</h2>
+<h2 id="cite">Cómo citar</h2>
 <p>
-  Cada ficha de lugar tiene un enlace <i>¿Has encontrado un error?</i> Abre una incidencia en el
-  repositorio público con el lugar ya rellenado; se necesita una cuenta de GitHub. También puedes
+  History Globe se corrige sobre la marcha, así que una cita indica la fecha de los datos que usó.
+  Cada página de la documentación la da al pie («Datos a»), y el <code>index.json</code> de la API
+  la da como <code>built_at</code>.
+</p>
+<p>El sitio:</p>
+<pre><code class="cite">Arnaut, Vadym. History Globe: un atlas de la historia bíblica. {{site}}/
+(datos del {{built}}; consultado el …).</code></pre>
+<p>Una página, por su título y su dirección:</p>
+<pre><code class="cite">«Jerusalén». En Vadym Arnaut, History Globe. {{site}}/es/place/jerusalem/
+(datos del {{built}}; consultado el …).</code></pre>
+<p>Los datos, por la fecha de la instantánea que da la ficha del conjunto de datos:</p>
+<pre><code class="cite">Arnaut, Vadym. History Globe dataset. Hugging Face, snapshot of ….
+https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
+
+<h2 id="report">Correcciones</h2>
+<p>
+  ¿Has encontrado un error, una fuente que falta o una lectura mejor? Escribe a
+  <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>; no hace falta
+  cuenta. Indica la página y qué está mal, con una fuente si la tienes. Se lee cada aviso, y un
+  error confirmado se corrige.
+</p>
+<p>
+  Con una cuenta de GitHub también puedes usar el enlace <i>¿Has encontrado un error?</i> de cada
+  ficha de lugar, que abre una incidencia en el repositorio público con el lugar ya indicado, o
   abrir una directamente:
   <a href="https://github.com/ArVaViT/history-globe/issues/new"
     >github.com/ArVaViT/history-globe/issues</a

@@ -1,6 +1,6 @@
 # 0011. MapLibre ships unbundled; the JS budget counts its worker
 
-- Status: proposed
+- Status: accepted
 - Date: 2026-09-30
 
 ## Context

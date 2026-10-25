@@ -527,9 +527,24 @@ export type QuestionFile = z.output<typeof QuestionFile>;
  */
 export const SourcesRuFile = z.record(z.string().min(1), z.string().min(1));
 
+/**
+ * The site's own lines among the sources ("History Globe tour …", "Straight-line distance
+ * between the places' points …", content/sources-own.yaml), in the languages other than
+ * English and Russian: each line to its translation in every one of them.
+ */
+export const SourcesOwnFile = z.record(z.string().min(1), z.record(z.string(), z.string().min(1)));
+/**
+ * A source line the site wrote itself, or that names its own pages or data (sources-own.yaml):
+ * its own measurements too, straight-line and along the Roman roads of Itiner-e.
+ */
+export const OWN_SOURCE =
+  /History Globe|^Straight-line|^Length along the Roman roads|^Road lengths along|^Land legs summed/;
+
 /** An article or a question as the build writes it: its sources in Russian beside them. */
 export interface WithSourcesRu {
   readonly sources_ru?: readonly string[];
+  /** In the other languages, where the list has a line of the site's own (sources-own.yaml). */
+  readonly sources_in?: Readonly<Partial<Record<Locale, readonly string[]>>>;
 }
 
 /**
@@ -658,6 +673,8 @@ export interface PlaceLife {
   readonly sources: readonly string[];
   /** The sources as a Russian reader reads them (content/sources-ru.yaml). */
   readonly sources_ru?: readonly string[];
+  /** The sources in the other languages, where they have a line of the site's own. */
+  readonly sources_in?: Readonly<Partial<Record<Locale, readonly string[]>>>;
   /** Taken over from the city it lies in: says nothing of when the place itself began. */
   readonly inherited?: true;
   /** An older town of the same name stood nearby before `from` (PlaceLifeFile). */

@@ -1,6 +1,6 @@
 # 0013. The ancient world around the Bible, as its own quieter layer
 
-- Status: proposed
+- Status: accepted
 - Date: 2026-10-02
 
 ## Context

@@ -12,6 +12,7 @@ import { loadPeople, personName, type People } from "../people";
 import { useNarrow } from "../app-hooks";
 import { ArrowLeft, X } from "./icons";
 import { Panel } from "./Panel";
+import { Credit } from "./Credit";
 
 /**
  * Names shown in a family row before "ещё N" opens the rest; fewer on a phone, where the
@@ -328,7 +329,9 @@ export function PersonCard({
           )}
         </>
       )}
-      <div className="px-5 pt-3 text-[11px] text-ink-soft">{t("person.credit")}</div>
+      <div className="px-5 pt-3 text-[11px] text-ink-soft">
+        <Credit text={t("person.credit")} />
+      </div>
     </Panel>
   );
 }

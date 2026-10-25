@@ -860,7 +860,7 @@ ul.cards a:hover {
 }
 .q-ref {
   flex: none;
-  color: var(--ink-faint);
+  color: var(--ink-soft);
   font-size: 13px;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -2144,4 +2144,73 @@ ol.stops p {
     transition: none !important;
     animation: none !important;
   }
+}
+
+/* Reviews by scholars (scripts/review-pages.ts): how far an article has been read, under its
+   title in the text's own weight, and the reviews' pages. No badge, seal or tick: words. */
+main > p.status {
+  margin: 14px 0 0;
+  color: var(--ink-soft);
+  font: 15px/1.55 var(--sans);
+}
+main > p.status.reviewed {
+  padding-left: 12px;
+  border-left: 2px solid var(--accent);
+  color: var(--ink);
+}
+main > p.status + p.status {
+  margin-top: 6px;
+}
+main > p.status-note {
+  margin: 4px 0 0;
+  padding-left: 14px;
+}
+.page p.status + ul.facts,
+.page p.status-note + ul.facts {
+  margin-top: 20px;
+}
+.reviewer {
+  margin: 20px 0 8px;
+}
+.reviewer p {
+  margin: 2px 0;
+}
+.reviewer-name {
+  font: 600 18px/1.4 var(--serif);
+}
+.review-card {
+  margin: 36px 0 0;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+.review-card h2 {
+  margin: 10px 0 6px;
+}
+blockquote.statement {
+  margin: 16px 0;
+  padding: 2px 0 2px 18px;
+  border-left: 2px solid var(--line);
+  font: 17px/1.7 var(--serif);
+}
+blockquote.statement.translated {
+  font-size: 15.5px;
+  color: var(--ink-soft);
+}
+table.response {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+}
+table.response th,
+table.response td {
+  padding: 8px 10px 8px 0;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.page .table {
+  overflow-x: auto;
+}
+p.cite {
+  font: 15px/1.6 var(--serif);
 }

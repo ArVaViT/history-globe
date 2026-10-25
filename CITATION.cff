@@ -1,0 +1,56 @@
+cff-version: 1.2.0
+message: >-
+  If you use History Globe or its data, please cite it as below. Cite the data
+  with the release date given as built_at in api/v1/index.json.
+title: "History Globe: an atlas of biblical history"
+type: dataset
+authors:
+  - family-names: Arnaut
+    given-names: Vadym
+    email: historyglobe.vadym@gmail.com
+url: "https://historyglobe.app"
+repository-code: "https://github.com/ArVaViT/history-globe"
+repository: "https://huggingface.co/datasets/ArVaViT/history-globe"
+contact:
+  - family-names: Arnaut
+    given-names: Vadym
+    email: historyglobe.vadym@gmail.com
+date-released: 2026-10-24
+abstract: >-
+  A free 3D atlas of biblical history in 16 languages: 1,231 places named in
+  the Bible, with their verses and proposed sites (1,288 place records in
+  all), 746 place articles, 200 answered questions, 54 tours, 329 events, 57
+  battles and 2,994 people (STEPBible TIPNR), with state borders by year.
+  Licences differ by part: the data (places, names, tours, events, people and
+  the open API at https://historyglobe.app/api/v1/) is under CC BY 4.0; the
+  place articles and the answered questions are under CC BY-NC-ND 4.0; the
+  code, the site and its design are all rights reserved (source-available,
+  not open source). Third-party data keeps its own licence. See LICENSE.
+keywords:
+  - Bible
+  - historical geography
+  - gazetteer
+  - ancient Near East
+  - digital humanities
+  - open data
+license-url: "https://github.com/ArVaViT/history-globe/blob/main/LICENSE"
+preferred-citation:
+  type: website
+  title: "History Globe: an atlas of biblical history"
+  authors:
+    - family-names: Arnaut
+      given-names: Vadym
+  url: "https://historyglobe.app"
+  year: 2026
+references:
+  - type: data
+    title: "History Globe dataset"
+    authors:
+      - family-names: Arnaut
+        given-names: Vadym
+    url: "https://huggingface.co/datasets/ArVaViT/history-globe"
+    license: CC-BY-4.0
+    notes: >-
+      The data of https://historyglobe.app/api/v1/, rebuilt with each release;
+      the articles and the answered questions are not in it. CC BY 4.0 covers
+      this data only, not the articles, the questions or the code.

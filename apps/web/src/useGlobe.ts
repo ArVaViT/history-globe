@@ -23,9 +23,10 @@ const TERRAIN = {
   // Development source. Production serves its own extract from R2 (ADR 0005).
   tiles: TERRAIN_TILES,
   // The licences ask for this line where the map is shown (Copernicus 6(a)); the rest of
-  // the sources, with the Copernicus disclaimer, are on the About page the link opens.
+  // the sources, with the Copernicus disclaimer, are on the Sources page the link opens. The
+  // Copernicus notice is kept whole, "all rights reserved" included (Mapterhorn's catalogue).
   attribution:
-    'Terrain: <a href="https://mapterhorn.com/attribution">Mapterhorn</a>, Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the EU and ESA · <a href="docs/sources.html">Sources</a>',
+    'Terrain: <a href="https://mapterhorn.com/attribution">Mapterhorn</a>, Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA; all rights reserved · <a href="docs/sources.html">Sources</a>',
 };
 
 // MapLibre is most of the JavaScript. It is a separate chunk, fetched in parallel with the

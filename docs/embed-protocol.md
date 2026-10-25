@@ -11,8 +11,9 @@ carry only the view (or the verse) and go to any parent; incoming ones are taken
 frame. **Not yet:** `theme`, an origin allowlist (needed once a host sends anything sensitive). Code:
 `apps/web/src/embed.ts`.
 
-The contract between the globe (`/embed/v1`) and a host page such as Equip
-(ADR 0006). Draft until the first release; after that, only additive changes within v1.
+The contract between the globe (`/embed/v1`) and a host page such as Equip,
+the owner's separate learning platform (ADR 0006). v1 is published; it changes only by
+additions.
 
 ## URL
 

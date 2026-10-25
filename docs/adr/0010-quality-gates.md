@@ -1,6 +1,6 @@
 # 0010. Quality gates
 
-- Status: proposed
+- Status: accepted
 - Date: 2026-09-28
 
 ## Context
@@ -33,10 +33,8 @@ the gate instead of fixing the code.
   (`op run`), never in the repository.
 - **Guarded paths**: CI configuration, visual baselines, lint and TypeScript presets —
   a PR touching them is flagged for the owner's explicit review.
-- **Known gap**: agents act with the owner's GitHub token, which is an admin token; an
-  admin can switch rules off. Closing this needs a separate token for agents without
-  Administration and Workflows rights — an owner decision, tracked in the first
-  milestone.
+- **Known gap**: the branch ruleset requires no status check, because no CI runs the gate
+  yet; the gate is run locally before every merge, Dependabot PRs included.
 - **Visual tests are flaky by nature** (label placement depends on tile load order):
   local tile fixtures, a fixed device scale, waiting for `idle`, and a retry-once policy
   that still reports the first failure.
@@ -53,3 +51,11 @@ the gate instead of fixing the code.
 
 - The repository is public, so GitHub Actions minutes, CodeQL and secret scanning are free.
 - Visual baselines differ between macOS and Linux; they are only ever updated in CI.
+
+## Where this stands (2026-10-25)
+
+Built: `pnpm gate` (format, lint, types, unit and pipeline tests, content checks, links,
+build, CSP hashes, the JS budget), the e2e and axe runs (`pnpm e2e`, `pnpm e2e:a11y`),
+Dependabot, secret scanning, secrets only through 1Password. Not built yet: CI running the
+gate as a required check, visual tests, CodeQL, RUM and error budgets. Traffic is counted
+by Vercel Web Analytics (no cookies), not Cloudflare.

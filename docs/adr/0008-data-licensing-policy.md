@@ -1,6 +1,6 @@
 # 0008. Data licensing policy
 
-- Status: proposed
+- Status: accepted
 - Date: 2026-09-28
 
 ## Context
