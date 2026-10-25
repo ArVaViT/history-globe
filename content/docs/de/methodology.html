@@ -18,6 +18,13 @@ description: Woher jeder Ort, jede Grenze, jedes Datum und jede Person auf Histo
   seine bevorzugte Identifikation und seine Schätzung, wie wahrscheinlich jeder in Frage kommende
   Ort ist.
 </p>
+<p>
+  Von diesen {{places}} Orten werden {{named}} in einem Vers der Bücher genannt, die OpenBible
+  erschließt, und jeder von ihnen hat eine eigene Seite; die übrigen {{unnamed}} sind Einträge, die
+  OpenBible führt, die aber kein Vers dieser Bücher nennt (etwa Adasa aus 1 Makkabäer). {{articles}}
+  Orte haben einen Artikel. Weitere {{excluded}} wurden weggelassen, weil es für sie keinen Punkt
+  gibt, der veröffentlicht werden darf (siehe unten).
+</p>
 <ul>
   <li>
     <b>Gewissheit in Worten.</b> Wo kein ernstzunehmender zweiter Ort vorgeschlagen wird, zeigt der
@@ -44,13 +51,15 @@ description: Woher jeder Ort, jede Grenze, jedes Datum und jede Person auf Histo
   Eine Stadt auf der Karte wird nur in den Jahren vollständig gezeichnet, in denen sie bestand. Für
   {{life}} Orte der Bibel sind die Jahre der Gründung, der Zerstörung und der Aufgabe von Hand
   verzeichnet, jeweils mit ihren Quellen (antike Autoren, Chroniken, Inschriften, Grabungsberichte).
-  Ein umstrittenes Datum wird weggelassen, statt geraten zu werden.
+  Verzeichnet werden nur feste Daten: Eine Stadt, deren Gründung oder Ende umstritten ist, erhält
+  dafür kein Jahr.
 </p>
 <p>
   Die {{ancient}} Städte der antiken Welt, die die Bibel nicht nennt – Hauptstädte, Häfen und
-  Heiligtümer wie Ugarit, Hattusa, Mari oder Delphi –, wurden einzeln ausgewählt und datiert, jede
-  an zwei Quellen geprüft, mit einer Kennung in <a href="https://pleiades.stoa.org">Pleiades</a>
-  oder Wikidata und einem Punkt auf der antiken Stätte statt auf der modernen Stadt.
+  Heiligtümer wie Ugarit, Hattusa, Mari oder Delphi –, wurden einzeln ausgewählt und datiert: Jede
+  ist nach ihrem Eintrag in <a href="https://pleiades.stoa.org">Pleiades</a> oder Wikidata verortet,
+  auf der antiken Stätte statt auf der modernen Stadt, und nach diesen Einträgen und
+  enzyklopädischen Darstellungen datiert, von Hand abgeglichen.
 </p>
 
 <h2>Grenzen</h2>
@@ -70,7 +79,7 @@ description: Woher jeder Ort, jede Grenze, jedes Datum und jede Person auf Histo
   Jahr für Jahr geprüft, darunter der Niedergang und die Erholung Assyriens im 8. Jahrhundert v.
   Chr., Babylon unter Merodach-Baladan, Pergamon, das 133 v. Chr. an Rom fiel, Makedonien nach Pydna
   und das 46 n. Chr. annektierte Thrakien. Jede Gruppe von Korrekturen wird zuerst an den Formen
-  getestet und dann unabhängig von einem zweiten Prüfer an den Quellen noch einmal geprüft.
+  getestet und dann in einem zweiten, eigenen KI-Durchgang noch einmal an den Quellen geprüft.
 </p>
 <p>
   Ein Königreich, das einem Reich Tribut zahlte oder als dessen Vasall herrschte, wird in einem
@@ -108,17 +117,22 @@ description: Woher jeder Ort, jede Grenze, jedes Datum und jede Person auf Histo
   </li>
 </ul>
 
-<h2>Ereignisse, Touren und Artikel</h2>
+<h2 id="review">Ereignisse, Touren und Artikel</h2>
 <p>
   Die {{events}} Ereignisse, {{tours}} Touren und {{articles}} Artikel werden mit Hilfe von KI unter
   der Leitung des Autors entworfen und dann in eigenen Prüfdurchgängen an den Quellen geprüft: am
   Bibeltext für das, was er sagt, an antiken Autoren, Chroniken und Inschriften für Daten und an der
-  wissenschaftlichen Literatur für Orte. Jede Behauptung nennt ihre Quelle. Zitate stammen nur aus
-  der Synodalübersetzung und der King James Version. Keine Tour hat ihre erste Prüfung unverändert
-  bestanden; jede wurde korrigiert und erneut geprüft. Im letzten vollständigen Durchgang,
-  abgeschlossen am 17. Oktober 2026, wurden alle 746 Artikel erneut an den Quellen geprüft, etwa 210
-  davon zweimal; 1.088 Korrekturen wurden vorgenommen, jede in allen 11 Sprachen, und in 157
-  Artikeln fanden sich eindeutige Fehler. Diese Prüfungen nimmt eine KI anhand der Quellen vor,
+  wissenschaftlichen Literatur für Orte. Jeder Artikel, jede Antwort und jede Tour führt ihre
+  Quellen auf, für den Text als Ganzes und nicht Satz für Satz. Zitate stammen nur aus der
+  gemeinfreien Bibel der jeweiligen Sprache; die Ausgaben stehen auf der Seite
+  <a href="sources.html">Quellen</a>. Keine Tour hat ihre erste Prüfung unverändert bestanden; jede
+  wurde korrigiert und erneut geprüft. Im letzten vollständigen Durchgang, abgeschlossen am 17.
+  Oktober 2026, wurden alle 746 Artikel erneut an den Quellen geprüft, etwa 210 davon zweimal; 1.088
+  Korrekturen wurden vorgenommen, jede in allen 11 Sprachen, die die Website damals hatte, und in
+  157 Artikeln fanden sich eindeutige Fehler. Die fünf am 24. Oktober 2026 hinzugekommenen Sprachen
+  (Schwedisch, Norwegisch, Dänisch, Tagalog und Serbisch) wurden aus den bereits korrigierten Texten
+  übersetzt; danach hat ein eigener KI-Prüfer jeden ihrer Texte mit dem Englischen verglichen und
+  jedes Zitat mit der Bibel dieser Sprache. Diese Prüfungen nimmt eine KI anhand der Quellen vor,
   nicht Wissenschaftler; ein Artikel, den ein Historiker gelesen hat, trägt den Namen des
   Historikers.
 </p>
@@ -141,7 +155,7 @@ description: Woher jeder Ort, jede Grenze, jedes Datum und jede Person auf Histo
   außerhalb von ihr, die über das Schicksal Israels entschieden. Jede steht an dem Ort, an dem
   gekämpft wurde, und erscheint auf der Karte in ihren Jahren. Die biblischen sind so datiert, wie
   die Touren dieselben Geschichten datieren; die anderen tragen keinen Vers, sondern eine antike
-  oder wissenschaftliche Quelle. Ein zweiter, unabhängiger Durchgang prüfte den Entwurf an der
+  oder wissenschaftliche Quelle. Ein zweiter, eigener KI-Durchgang prüfte den Entwurf an der
   Synodalübersetzung und der King James Version: Von 58 Einträgen wurden 16 korrigiert und einer
   gestrichen, weil die Karte für seinen Ort keinen Punkt hat.
 </p>
@@ -151,6 +165,43 @@ description: Woher jeder Ort, jede Grenze, jedes Datum und jede Person auf Histo
   der protestantische Kanon aber nicht: Jedes solche Zitat ist als „deuterokanonisch“
   gekennzeichnet, und sein Link öffnet einen Text, der das Buch enthält.
 </p>
+
+<h2 id="chronology">Daten und Chronologie</h2>
+<p>
+  Die Karte zeigt jede Erzählung in einem Jahr, daher folgen ihre Daten einer einzigen Konvention;
+  wo die Forschung uneins ist, ist das Jahr ein Punkt für die Karte, kein Urteil.
+</p>
+<ul>
+  <li>
+    <b>Die Könige Israels und Judas</b> folgen der Chronologie von E. R. Thiele (<i
+      >The Mysterious Numbers of the Hebrew Kings</i
+    >): Salomo beginnt den Tempel um 966 v. Chr., das Reich teilt sich um 931 v. Chr. Andere
+    Rekonstruktionen weichen um einige Jahre ab; W. F. Albright etwa setzte die Teilung 922 v. Chr.
+    an.
+  </li>
+  <li>
+    <b>Frühere Daten</b> sind von diesen aus zurückgerechnet, wie der Text rechnet: der Exodus 1446
+    v. Chr., 480 Jahre vor dem Tempel (1 Könige 6,1), die Landnahme 1406 v. Chr. und Davids
+    Herrschaft ab 1010 v. Chr. Das sind Konventionen: Viele Forscher setzen den Exodus im 13.
+    Jahrhundert v. Chr. an oder bezweifeln, dass er so geschah, wie erzählt, und die Antwort auf
+    <a href="../../de/q/when-was-the-exodus/"><i>Wann war der Auszug aus Ägypten?</i></a> legt die
+    Debatte dar. Die Erzväter stehen in konventionellen Jahren.
+  </li>
+  <li>
+    <b>Ereignisse außerhalb der Bibel</b> sind nach den Zeugnissen datiert, die sie festlegen (die
+    babylonische Chronik, die assyrischen Annalen, Josephus, eine datierte Inschrift), jedes mit
+    seinen Quellen, meist zwei oder mehr; der Fall Jerusalems ist um 586 v. Chr. gezeigt (auch 587
+    v. Chr. wird vertreten).
+  </li>
+  <li>
+    <b>Das Neue Testament:</b> die Geburt Jesu um 5 v. Chr., die Kreuzigung um 30 n. Chr. (auch 33
+    n. Chr. wird vertreten) und die Reisen des Paulus in den üblicherweise angegebenen Jahren.
+  </li>
+  <li>
+    <b>„ca.“</b> markiert ein nur ungefähr bekanntes Jahr, wie es alle Jahre vor dem ersten
+    Jahrtausend v. Chr. sind.
+  </li>
+</ul>
 
 <h2>Prüfungen bei jedem Build</h2>
 <p>Nichts wird veröffentlicht, wenn nicht jede Prüfung bestanden wird:</p>
@@ -193,11 +244,32 @@ description: Woher jeder Ort, jede Grenze, jedes Datum und jede Person auf Histo
   </li>
 </ul>
 
-<h2 id="report">Einen Fehler melden</h2>
+<h2 id="cite">Zitieren</h2>
 <p>
-  Jede Ortskarte hat einen Link <i>Fehler gefunden?</i>. Er öffnet im öffentlichen Repository ein
-  Issue, in dem der Ort schon eingetragen ist; Sie brauchen ein GitHub-Konto. Sie können auch direkt
-  eines öffnen:
+  History Globe wird laufend korrigiert; ein Zitat nennt daher das Datum der Daten, die es benutzt
+  hat. Jede Seite der Dokumentation gibt es unten an („Daten vom“), die <code>index.json</code> der
+  API als <code>built_at</code>.
+</p>
+<p>Die Website:</p>
+<pre><code class="cite">Arnaut, Vadym: History Globe. Ein Atlas der biblischen Geschichte. {{site}}/
+(Daten vom {{built}}; abgerufen am …).</code></pre>
+<p>Eine Seite, mit Titel und Adresse:</p>
+<pre><code class="cite">„Jerusalem“. In: Vadym Arnaut, History Globe. {{site}}/de/place/jerusalem/
+(Daten vom {{built}}; abgerufen am …).</code></pre>
+<p>Die Daten, mit dem Datum des Snapshots, das die Karte des Datensatzes angibt:</p>
+<pre><code class="cite">Arnaut, Vadym. History Globe dataset. Hugging Face, snapshot of ….
+https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
+
+<h2 id="report">Korrekturen</h2>
+<p>
+  Einen Fehler, eine fehlende Quelle oder eine bessere Lesart gefunden? Schreiben Sie an
+  <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>; ein Konto ist
+  nicht nötig. Nennen Sie die Seite und was falsch ist, wenn möglich mit einer Quelle. Jede Meldung
+  wird gelesen, und ein bestätigter Fehler wird korrigiert.
+</p>
+<p>
+  Mit einem GitHub-Konto können Sie auch den Link <i>Einen Fehler gefunden?</i> in jeder Ortskarte
+  nutzen, der im öffentlichen Repository ein Issue mit dem Ort öffnet, oder direkt eines anlegen:
   <a href="https://github.com/ArVaViT/history-globe/issues/new"
     >github.com/ArVaViT/history-globe/issues</a
   >.

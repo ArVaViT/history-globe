@@ -13,6 +13,8 @@ import {
   placeName as nameOf,
   pick,
   formatRefOr,
+  rebuiltIn,
+  docsPath,
 } from "@hg/model";
 import { ArrowLeft, MapPin, Ruler, X, ZoomIn } from "./icons";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
@@ -39,6 +41,7 @@ import { notifyVerse } from "../embed";
 import { Panel } from "./Panel";
 import { loadPeople, peopleNow, personName, type People } from "../people";
 import { polityText, type PolityName } from "@hg/core";
+import { Credit } from "./Credit";
 
 const VERSES_SHOWN = 24;
 const EVENTS_SHOWN = 8;
@@ -533,7 +536,9 @@ export function PlaceCard({
                 </li>
               );
             })}
-            <li className="px-2 pt-2 text-[11px] text-ink-soft">{t("place.people_credit")}</li>
+            <li className="px-2 pt-2 text-[11px] text-ink-soft">
+              <Credit text={t("place.people_credit")} />
+            </li>
           </ul>
         )}
         {tab === "sites" && (
@@ -587,7 +592,8 @@ export function PlaceCard({
               {life.gap &&
                 t("place.life_gap", {
                   from: lifeYear(life.gap.from, locale, t),
-                  until: lifeYear(life.gap.until, locale, t),
+                  // The year it stood again, as the note gives it (the return in 538 BC).
+                  until: lifeYear(rebuiltIn(life.gap), locale, t),
                 })}
             </div>
             <div className="mt-0.5">{life.note[locale] ?? life.note.en}</div>
@@ -839,7 +845,8 @@ function ArticleSection({ placeId, locale }: { placeId: string; locale: Locale }
   const body = pick(article.body, locale) ?? [];
   return (
     <section className="px-5 pt-3">
-      <div className="space-y-3 font-serif text-[16px] leading-[1.65] text-ink">
+      <ReviewLine article={article} locale={locale} />
+      <div className="mt-3 space-y-3 font-serif text-[16px] leading-[1.65] text-ink">
         {body.map((p) => (
           <p key={p.slice(0, 24)}>{p}</p>
         ))}
@@ -864,11 +871,6 @@ function ArticleSection({ placeId, locale }: { placeId: string; locale: Locale }
         <div className="mt-1">
           {t("place.article_sources")}: {sourcesOf(article, locale).join("; ")}.
         </div>
-        <div className="mt-1 italic">
-          {article.status === "reviewed" && article.reviewer
-            ? t("place.article_reviewed", { name: article.reviewer })
-            : t("place.article_checked")}
-        </div>
         {/* The article is the site's own text, under its own licence (ADR 0016). */}
         <div className="mt-1">
           {t("place.article_licence")},{" "}
@@ -886,12 +888,78 @@ function ArticleSection({ placeId, locale }: { placeId: string; locale: Locale }
   );
 }
 
-/** A new GitHub issue about this place, its name and id filled in. */
+/**
+ * How far the article has been read, at its head and in the text's own weight: the
+ * scholars who reviewed it (content/reviews), each with a link to the review, or that it
+ * has been checked against its sources, with a link to how.
+ */
+function ReviewLine({ article, locale }: { article: Article; locale: Locale }) {
+  const { t } = useTranslation();
+  const base = import.meta.env.BASE_URL;
+  const link = "text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid";
+  const reviews = article.reviews ?? [];
+  if (reviews.length === 0)
+    return (
+      <p className="text-[13.5px] leading-snug text-ink-soft">
+        {t("place.article_checked")} ·{" "}
+        <a
+          href={`${base}${docsPath(locale, "methodology")}#review`}
+          target="_blank"
+          rel="noopener"
+          className={link}
+        >
+          {t("place.article_how")}&nbsp;→
+        </a>
+      </p>
+    );
+  // A date of our own time, as the reader's language writes it ("14 November 2026", as the
+  // static pages and the documentation write it).
+  const day = (iso: string) =>
+    new Intl.DateTimeFormat(locale === "en" ? "en-GB" : locale, {
+      dateStyle: "long",
+      timeZone: "UTC",
+    }).format(new Date(`${iso}T00:00:00Z`));
+  return (
+    <div className="border-l-2 border-accent/60 pl-2.5 text-[13.5px] leading-snug text-ink">
+      {reviews.map((r) => (
+        <p key={r.id}>
+          {t("place.article_reviewed", { name: r.name, institution: r.institution })} ·{" "}
+          {day(r.date)}
+          {r.changed ? ` · ${t("place.article_changed")}` : ""}
+          {r.status === "corrections-in-progress"
+            ? ` · ${t("place.article_corrections")}`
+            : ""} ·{" "}
+          <a
+            href={`${base}${locale}/reviews/${r.id}/`}
+            target="_blank"
+            rel="noopener"
+            className={link}
+          >
+            {t("place.article_review_read")}&nbsp;→
+          </a>
+        </p>
+      ))}
+      {locale !== "en" && (
+        <p className="mt-0.5 text-[12px] text-ink-soft">{t("place.article_english_only")}</p>
+      )}
+    </div>
+  );
+}
+
+/**
+ * The "Report an error" issue form (.github/ISSUE_TEMPLATE/report-an-error.yml) with this
+ * place filled in: blank issues are disabled, so a plain issues/new?body= would send a reader
+ * without write access to the template chooser and lose the place. Form fields are prefilled
+ * by their `id`. The form itself offers the email address for readers without GitHub.
+ */
 function reportUrl(place: PlaceProps): string {
   const name = place.name_ru ? `${place.name_ru} / ${place.name}` : place.name;
-  const title = `Ошибка / Error: ${name} (${place.id})`;
-  const body = `Место / Place: ${name} (${place.id})\nЧто не так / What is wrong:\n\nИсточник / Source:\n`;
-  return `https://github.com/ArVaViT/history-globe/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+  const q = new URLSearchParams({
+    template: "report-an-error.yml",
+    title: `Error: ${name} (${place.id})`,
+    page: `${name} (${place.id})`,
+  });
+  return `https://github.com/ArVaViT/history-globe/issues/new?${q.toString()}`;
 }
 
 /**

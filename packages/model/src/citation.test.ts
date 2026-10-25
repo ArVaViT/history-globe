@@ -46,4 +46,16 @@ describe("sourcesOf", () => {
   it("falls back to the automatic pass where the build wrote no Russian", () => {
     expect(sourcesOf({ sources: ["Livy 44.45"] }, "ru")).toEqual(["Тит Ливий 44.45"]);
   });
+  it("reads the site's own lines in the page's language, the bibliography as written", () => {
+    const q = {
+      sources: ["History Globe tour “Solomon”", "B. Mazar, The Mountain of the Lord (1975)"],
+      sources_in: {
+        de: ["History-Globe-Tour „Salomo“", "B. Mazar, The Mountain of the Lord (1975)"],
+      },
+    };
+    expect(sourcesOf(q, "de")).toEqual(q.sources_in.de);
+    // A language without the translation (none is shipped so) and English read the English.
+    expect(sourcesOf(q, "fr")).toEqual(q.sources);
+    expect(sourcesOf(q, "en")).toEqual(q.sources);
+  });
 });

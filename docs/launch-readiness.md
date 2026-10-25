@@ -1,6 +1,14 @@
 # Launch readiness
 
-What must be true before History Globe goes live on its own domain, so that rights, data,
+**Status (2026-10-25):** History Globe has been live at historyglobe.app since 2026-10-03.
+This page is kept as the record of the launch review. Still open from it: the terrain is
+still served from Mapterhorn's servers (section 2, owner); the questions in
+`docs/legal-questions.md` wait for a lawyer before any commercial use (owner); errors are
+reported through a GitHub issue or by email to historyglobe.vadym@gmail.com (section 5).
+The rest below is as it was written, with the About page since replaced by `/docs/` (the
+sources, privacy and methodology pages).
+
+What had to be true before History Globe went live on its own domain, so that rights, data,
 storage and AI raise as few problems as possible. Written 2026-10-01 from the licence
 review of ADR 0008, `docs/legal-questions.md`, `docs/ATTRIBUTIONS.md` and a check of
 every source against its terms. Status: **done** (in the code), **todo** (before
@@ -25,8 +33,8 @@ launch), **owner** (needs the owner's decision or account).
 - **No share-alike data** ships (ADR 0008): Theographic, OSM-derived points and other
   CC BY-SA or ODbL sources are kept out; the pipeline drops OpenBible points copied from
   OpenStreetMap or Google.
-- `docs/ATTRIBUTIONS.md` lists what the release contains (trimmed 2026-10-01). **todo**
-  with the terrain move: add every Mapterhorn source inside the published extent.
+- `docs/ATTRIBUTIONS.md` lists what the release contains (trimmed 2026-10-01). **done**:
+  it points to Mapterhorn's list of terrain sources, which CC BY 4.0 allows.
 - **owner**: the ten questions in `docs/legal-questions.md` go to a lawyer before any
   commercial use; none blocks a free launch.
 

@@ -16,6 +16,8 @@ Added 2026-10-23: the ninth wrong TIPNR link in O5 (Ramah 6), the first item und
 
 Added 2026-10-24: the five Negeb names of item 16 moved from Horbat Uza to Tel Ira, with the reasons (the Arad ostracon, the fort's date, the excavator's and the epigraphers' identifications, Kinah already on Horbat Uza) and the sources checked that night.
 
+Re-checked 2026-10-24, every item against the sources' current public data: Theographic master `744355c7` (2026-10-23), both `json/places.json` with `json/verses.json` and `geo/bible-places.geojson`, a Linked Places file of 1,030 places they republished on 2026-10-13 (feature ids under `bible.helloao.org/api/c/places/`); OpenBible's GitHub data (unchanged since 2021, so our pinned copy is the current one) and its live pages; live Wikidata `wbgetentities`; STEPBible TIPNR master `be4191f0` (2026-10-24). Each item now has a line "Status 2026-10-24". "json" means `json/places.json` and `verses.json`, which their README calls the preferred source; "geo" means the geojson. Most of the Theographic items are still in json and already fixed in geo; T18 is withdrawn (our error), and T23 and T24 are new.
+
 Distances are haversine (great-circle) distances. Severity: **high** means the record points at the wrong place or the wrong country; **medium** means it misleads a map or a join; **low** is cosmetic or a completeness gap.
 "Confirmed" means I opened the record and the evidence myself. Anything less certain is in "To check".
 
@@ -28,44 +30,53 @@ Distances are haversine (great-circle) distances. Severity: **high** means the r
 - Record: `rec87ltw24GIvuFnT` (`salmone_1020`), `latitude` 37.69636, `longitude` 21.56999, `featureType` "City".
 - Evidence: Acts 27:7 reads "...we sailed under Crete, over against Salmone." Their coordinate is exactly Pleiades 570652 "Salmone" (BAtlas 58 B2), a place in Elis (0.0 km). Their own `openBibleLat/openBibleLong` (35.2123, 26.2745, Cape Sideros on Crete) is 503 km away. OpenBible and we put it on Crete.
 - What went wrong: the homonym was picked up in place of the cape.
+- Status 2026-10-24: still in json. **Fixed in geo** (`salmone.json`, on Crete, 0.0 km from ours).
 
 ### T2. Kidron (the brook at Jerusalem) has the coordinates of Gedros/Kedron near Yavne. Severity: high
 
 - Record: `reccf5Vf48NjEXaxz` (`kidron_687`), lat 31.826142, lon 34.775865. Its verses include 2Sam.15.23, 1Kgs.15.13, 2Kgs.23.4, 2Kgs.23.6, 2Kgs.23.12, 2Chr.29.16 and Jer.31.40.
 - Evidence: 2Sam.15.23 has David leaving Jerusalem: "the king also himself passed over the brook Kidron... toward the way of the wilderness." Their coordinate matches Pleiades 687905 "Gedros" (0.0 km), the coastal-plain Kedron of 1 Maccabees. It lies 44 km west of their own alias record `brook_kidron_688` (31.772134, 35.236596), which sits correctly at Jerusalem, and 44 km from the record's own `openBibleLat/Long`.
+- Status 2026-10-24: still in json. **Fixed in geo** (`kidron.json`, at Jerusalem, 0.0 km from ours).
 
 ### T3. Gilgal (Joshua's camp "in the east border of Jericho") is placed in the Sharon plain. Severity: high
 
 - Record: `recdm9AlLF01lFAfP` (`gilgal_476`), lat 32.1547, lon 34.95372. It carries 35 verses, including Josh.4.19, Josh.4.20, Josh.5.9 and Josh.5.10.
 - Evidence: Josh.4.19 reads "...encamped in Gilgal, in the east border of Jericho." The coordinate is 56 km from their own Jericho (`jericho_634`, 31.870, 35.444). It sits 3 to 4 km from Pleiades 678223 Kapharsaba, near the Jaljulia that some identify with the Gilgal of Josh 12:23. Their `openBibleLat/Long` (31.8638, 35.5185) is correctly by Jericho.
+- Status 2026-10-24: still in json. **Fixed in geo** (the record is `geliloth.json`, by Jericho, 0.0 km from ours).
 
 ### T4. Rimmon of the Negeb (Josh 15:32 and parallels) is placed in northern Lebanon. Severity: high
 
 - Record: `recZuw7dAJ1x1EUfb` (`rimmon_1004`), lat 34.353071, lon 36.385705. Verses: Josh.15.32, Josh.19.7, 1Chr.4.32 and Zech.14.10.
 - Evidence: Josh.15.21 introduces the list as "the uttermost cities of the tribe of the children of Judah toward the coast of Edom southward". Josh.15.32 then ends "...and Ain, and Rimmon." The coordinate is 4.5 km from Pleiades 668264 Hermel in the Lebanese Beqaa, and 375 km from their own Beersheba (`rectrAkGtrZH5LMp8`). The same value appears in their `openBibleLat/Long`, so it was probably inherited from the 2007 OpenBible data. Today's OpenBible puts Rimmon in the Negeb (31.383, 34.866).
+- Status 2026-10-24: still in json. **Still wrong in geo, differently**: `rimmon-of-judah.json` is at 32.7187, 35.6679, north-east of the Sea of Galilee, 167 km from ours.
 
 ### T5. Jezreel of Judah (Josh 15:56) is placed on Beth-shean. Severity: high
 
 - Record: `recdU0shMzVelyTiU` (`jezreel_642`), lat 32.502074, lon 35.50196. Verses include Josh.15.56, 1Sam.25.43 and 2Sam.3.2.
 - Evidence: Josh.15.56 ("And Jezreel, and Jokdeam, and Zanoah") belongs to the hill-country list of Judah (Josh 15:48 and following). The coordinate is 0.2 km from Pleiades 678378 Scythopolis/Nysa (Beth-shean) and 0.26 km from their own `beth-shan_232`. Their own `openBibleLat/Long` for this record (31.5358, 35.0941, south of Hebron) is 114 km away.
+- Status 2026-10-24: still in json. **Fixed in geo** (`jezreel-of-judah-ephraim.json`, south of Hebron, 0.0 km from ours).
 
 ### T6. Jezreel in the north (Naboth's city) is also placed on Beth-shean. Severity: medium
 
 - Record: `reczRCunsz83wZ1Q1` (`jezreel_643`, 22 verses, including 1Kgs.21.1 and 2Kgs.9.30), lat 32.502074, lon 35.50196. This is the same value as T5.
 - Evidence: the record's own `openBibleLat/Long` (32.55596, 35.33079, Tel Jezreel) is 17 km away. The coordinate is 0.26 km from their Beth-shan.
+- Status 2026-10-24: still in json. **Fixed in geo** (`jezreel-of-issachar.json`, Tel Jezreel, 0.0 km from ours).
 
 ### T7. Verses about the northern Jezreel are tagged to the Judahite Jezreel. Severity: medium
 
 - Verses 1Sam.29.1 and 1Sam.29.11 are attached to `jezreel_642` (Judah) in both `places.verses` and `verses.places`.
 - Evidence: 1Sam.29.1 reads "the Israelites pitched by a fountain which is in Jezreel". The setting is the Gilboa campaign: 1Sam.28.4 says "...the Philistines... pitched in Shunem: and Saul... pitched in Gilboa." That is the northern Jezreel, which they keep as `jezreel_643`.
+- Status 2026-10-24: **still present** in `verses.json` (both verses still tagged to `jezreel_642`). The geo file has no verse tags.
 
 ### T8. Duplicate record for the northern Jezreel. Severity: low
 
 - `recbCUdlemxNGIKfQ` (`jezreel_644`) holds only 2Sam.4.4 ("...when the tidings came of Saul and Jonathan out of Jezreel"). It is the same city as `jezreel_643`, with identical OpenBible coordinates to 8 decimals. The two records are not linked through `canonicalPlace`/`otherNames`, unlike their other alias pairs (Olivet/Mount of Olives, Elteke/Eltekeh).
+- Status 2026-10-24: still in json (no `canonicalPlace`). **Worse in geo**: `jezreel_644` is cited by `jezreel.json`, which sits on the point of the Judahite Jezreel (31.4478, 35.09), though its one verse, 2Sam.4.4, is about the northern city.
 
 ### T9. Duplicate record: valley of Shaveh. Severity: low
 
 - `recruGIaExz1GoMbG` (`valley_of_shaveh_692`: Gen.14.17, 2Sam.18.18) and `recZeNEbOWIqV0AmA` (`valley_of_shaveh_1216`: Gen.14.17). The same verse ("the valley of Shaveh, which is the king's dale") and the same coordinates appear in two unlinked records.
+- Status 2026-10-24: still in json. **Changed in geo**: the two records are now `kings-valley.json` (by Jerusalem) and `valley-of-shaveh.json` (31.54, 35.69, east of the Dead Sea), no longer a duplicate. Not an open error.
 
 ### T10. Place names in the KJV text with no place tag. Severity: medium
 
@@ -77,40 +88,51 @@ I checked every KJV verse whose `verseText` contains the name as a whole word. T
 - **Galilee** (`recmL1lWBqWP3mAq3`): Matt.26.69 ("Jesus of Galilee"), Luke.23.6 ("When Pilate heard of Galilee") and Acts.5.37 ("Judas of Galilee").
 - **Nazareth** (`recmRfnw4XzPBH9jc`): Mark.14.67 ("Jesus of Nazareth").
   (Matt.4.18 and similar "sea of Galilee" verses are tagged to the Sea of Galilee, which is correct and not counted. Hebron hits that refer to the person Hebron are not counted either.)
+- Status 2026-10-24: **still present**: all 22 verses are still untagged in `verses.json`. The geo file has no verse tags.
 
 ### T11. Records with a latitude and no longitude. Severity: low
 
 `recAPCFiiSX6hmHhX` (azotus_132), `recU8S3zWJLQkEpwO` (chios_296), `recFrC0435yiaHYOu` (clauda_280), `recb5itcp169E9Vsj` (lasea_717) and `reco41jQa2HDPSWx2` (phrygia_946) have `latitude` set and `longitude` missing. Each still has `openBibleLong`. Anything that reads `latitude/longitude` drops these five places.
 
+- Status 2026-10-24: still in json; fixed in geo. Already reported in their own issue #49 ("Five places have latitude but no longitude"), so not ours to report.
+
 ### T12. The Edom point sits next to Beersheba, west of the Arabah. Severity: medium
 
 - `recLcxRZbz3yIQB7b` (edom_357): lat 31.25, lon 34.75, 8.6 km from their own Beersheba. Edom lies east of the Arabah (Num.20.16: "Kadesh, a city in the uttermost of thy border"). Their own `openBibleLat/Long` (30.7347, 35.6063) and their Bozrah are about 100 km away. A region point may be rough, but this one falls in another territory, Judah's Negeb.
+- Status 2026-10-24: still in json. **Fixed in geo** (`edom.json`, 0.0 km from ours).
 
 ### T13. The Bithynia point is in the Black Sea. Severity: low
 
 - `rec5XS12X23Uadj5G` (bithynia_250): 42.5, 32.5. That is 84 km north of Amasra (41.746, 32.386), the nearest coast, so the point is open sea. Their `openBibleLat/Long` is 40.9055, 30.6858, on land.
+- Status 2026-10-24: still in json. **Fixed in geo** (`bithynia.json`, on land, 0.0 km from ours).
 
 ### T14. The two Janoahs are swapped. Severity: high
 
 - `recB4mpmdhIrF5Vhk` (`janoah_621`, Josh.16.6, Josh.16.7; `comment` "now Yanouh") is at 33.260246, 35.302915, which is Yanouh in Lebanon. `rec6NMdB9Jz6HdV8M` (`janoah_622`, 2Kgs.15.29) is at 32.155895, 35.361606, which is Khirbet Yanun in the hills of Ephraim.
 - Evidence: Josh.16.6 is Ephraim's border: "...the border went about eastward unto Taanath-shiloh, and passed by it on the east to Janohah". 2Kgs.15.29 is Tiglath-pileser's campaign in the north: "...took Ijon, and Abel-beth-maachah, and Janoah, and Kedesh, and Hazor, and Gilead, and Galilee". Each record carries the other's site, 123 km away; the comment "now Yanouh" sits on the Ephraim record.
+- Status 2026-10-24: still in json. **Fixed in geo** (`janohah.json` in Ephraim, `janoah.json` at Yanouh, each 0.0 km from ours).
 
 ### T15. Hezron of Judah's southern border is placed at Hazor in Galilee. Severity: high
 
 - `recfa19LQGbnLBD0G` (`hezron_568`, Josh.15.3): 33.017182, 35.56804857, which is Tel Hazor (Pleiades 779967430 "Tel Hazor", 33.0192, 35.5668, 0.3 km).
 - Evidence: Josh.15.3 runs along the south of Judah: "...and ascended up on the south side unto Kadesh-barnea, and passed along to Hezron, and went up to Adar". OpenBible and we put it 285 km south, by Kadesh-barnea. Josh.15.25 gives the Negeb town as "Hezron, which is Hazor", and that homonym was picked up.
+- Status 2026-10-24: still in json. **Fixed in geo** (`hezron.json`, by Kadesh-barnea, 0.0 km from ours).
 
 ### T16. Zeboim of Nehemiah 11:34 is placed at the Dead Sea. Severity: medium
 
 - `recKbrWvKRrBilVEG` (`zeboim_1245`, Neh.11.34): 31.1018224, 35.47633657, on the south-eastern shore of the Dead Sea, where the Zeboiim of Genesis 14 is sought (Numeira is 6 km away).
 - Evidence: Neh.11.34 and 35 list Benjamin's towns in the coastal plain: "Hadid, Zeboim, Neballat, Lod, and Ono, the valley of craftsmen". OpenBible and we put it by Lod, 114 km away.
+- Status 2026-10-24: still in json. **Fixed in geo** (`zeboim-of-benjamin.json`, by Lod, 0.0 km from ours).
 
 ### T17. Erech is one degree of latitude north of Uruk. Severity: medium
 
 - `recMrWeiaOEOsvqsw` (`erech_407`, Gen.10.10, Ezra.4.9; `comment` "now Uruk"): 32.322222, 45.636111.
 - Evidence: Uruk is Pleiades 912986 "Uruk/Orchoe/Erech", 31.3222, 45.6361 (Wikidata Q168518 agrees). The longitude is the same to six decimals and the latitude is exactly 1.0 higher: a typo, 111 km.
+- Status 2026-10-24: still in json. **Fixed in geo** (`erech.json`, at Uruk, 0.0 km from ours).
 
-### T18. Asshur, the city, is placed at Nineveh. Severity: medium
+### T18. Withdrawn 2026-10-24. Asshur, the city, is placed at Nineveh
+
+- **Withdrawn: the error was ours.** Their record is the nation, not the city: in geo, `asshur_109` is cited by `assyria.json`, and its four verses are about the nation (Num.24.22 "Asshur shall carry thee away captive"; Ezek.32.22 "Asshur is there and all her company"). A point at Nineveh is defensible for Assyria. We matched the record to the city of Ashur and then read the distance as an error. Kept below as it was written, for the record.
 
 - `recAiXXgqL914wNA9` (`asshur_109`, Num.24.22, Num.24.24, Ezek.27.23, Ezek.32.22): 36.35941, 43.152887, which is Kuyunjik: Pleiades puts the Nineveh temples Emašmaš (763257295) and Ezida (287060405) within 0.1 km of it.
 - Evidence: Pleiades 893945 "Ashur" (35.4567, 43.2625; Wikidata Q200200 agrees) is 101 km south. OpenBible and we are on it (0.2 km). Nineveh is their own `nineveh_880`.
@@ -119,23 +141,43 @@ I checked every KJV verse whose `verseText` contains the name as a whole word. T
 
 - `recIwC1OFvfA7JcTC` (`pelusium_929`, Ezek.30.15, Ezek.30.16) and `recJrTYgYd7ZHhwK1` (`sin_1097`, the same place under the KJV name): 28.838778, 33.420573, in the mountains of south-western Sinai (Pleiades 746834 "Wadi Mukkatab", a station, is 2 km away).
 - Evidence: Pleiades 727192 "Pelusium" (31.0425, 32.5461; Wikidata Q1145715 within 5 km) is on the coast at the eastern edge of the Delta, where Ezek.30.15 ("I will pour my fury upon Sin, the strength of Egypt") and OpenBible put it; we agree within 0.1 km.
+- Status 2026-10-24: still in json. In geo, **Pelusium is fixed** (`pelusium.json`, 0.0 km from ours), but `sin_1097`, the same city under its KJV name in Ezek.30.15, is cited by `sin.json` at 29.1478, 33.5367 in Sinai, apparently the Wilderness of Sin: **still wrong** there.
 
 ### T20. Punon is placed at Dhiban. Severity: medium
 
 - `recwuZjxsXkzLUvxH` (`punon_961`, Num.33.42, Num.33.43): 31.49684513710609, 35.78284105296996, the point of Dhiban in Moab. Eleven other records share it to the last decimal: `oboth_906`, `iye-abarim_606`, `zalmonah_1238`, `almon-diblathaim_50`, `beth-diblathaim_199`, `madmen_750`, `dibon-gad_333`, `hamonah_521`, `valley_of_hamongog_1205`, `valley_of_the_passengers_1227` and `iyim_607`.
 - Evidence: Punon is Khirbet Feinan in the Wadi Arabah, Wikidata Q2907858 (30.6278, 35.4936; we are on it to 0.0 km), 100 km south-west. Num.33.42 to 43 ("...pitched in Punon. And they departed from Punon, and pitched in Oboth") sits between Zalmonah and Oboth, south of the Arnon. Dibon-gad and Almon-diblathaim are near Dhiban; the rest are not.
+- Status 2026-10-24: still in json. **Fixed in geo** for Punon, Oboth, Iye-abarim and Zalmonah (`punon.json`, `oboth.json`, `ije-abarim.json`, `zalmonah.json`, each 0.0 km from ours).
 
 ### T21. Eleven towns of the Negeb and Simeon sit on one point in Gilead. Severity: high
 
 - `recNerBj6ADOpYbfh` (`ezem_422`), `recexdp2klTSY2AmR` (`bethel_203`, the Bethel of 1Sam.30.27), `rec8l1lVhso3t7ULj` (`eltolad_380`), `recEqQREaXQbx8Uuf` (`baal_133`), `recGvmVzGXwM0gcuz` (`baalath-beer_138`), `recMycRUPsdlPW8ZK` (`bethuel_240`), `recQTK887MoYPCCId` (`bethul_241`), `recSSa66yHtBR12pu` (`chesil_289`), `recIwErv710ydIveN` (`iim_593`), `recevwD8aPKX3CoC6` (`ramoth_982`) and `recXH0UZI6yZKjxYj` (`tolad_1174`): all at 32.049953, 35.733402, which is beside es-Salt in Gilead (Pleiades 697665 "Gadara", the Gadara of Peraea, 3 km).
 - Evidence: Josh.15.21 introduces their list as "the uttermost cities of the tribe of the children of Judah toward the coast of Edom southward"; Josh.19.8 calls Baalath-beer "Ramath of the south". The point is north of Jerusalem's latitude and east of the Jordan, 108 to 141 km from where OpenBible and we put each town. The `openBibleLat/Long` of every record is the same value, so the 2007 data had the cluster already.
+- Status 2026-10-24: still in json. **Fixed in geo**: each town is on OpenBible's point. Baalath-beer, Ramoth, Bethuel, Bethul and Chesil are 23 to 28 km from ours there; that is OpenBible's choice against our Tel Ira and O6 decisions (items 10 and 16 below), not their error.
 
 ### T22. Four wilderness stations are placed at Libnah in the Shephelah. Severity: medium
 
 - `recFZ697FdVaWTxsm` (`libnah_729`, Num.33.20, Num.33.21), `recGNhuBDPlN7ZojH` (`rimmon-perez_1007`), `rec7mSP1c046zFefT` (`rithmah_1009`) and `recenS6TzJXjD2Nkc` (`laban_710`, Deut.1.1): 31.8099, 34.9365, a point in the Shephelah they share with the Judahite towns `ashan_100`, `ashnah_105`, `ether_418`, `iphtah_598`, `tochen_1173` and `bor-ashan_253`.
 - Evidence: Num.33.18 to 21 are stations between Hazeroth and Kadesh: "...pitched in Rithmah... Rimmon-parez... Libnah... Rissah". Deut.1.1 names Laban "in the wilderness, in the plain over against the Red sea". The same mistake as Wikidata's W4 (the city Libnah's item used for the camp), extended to the neighbouring stations, 200 to 320 km from OpenBible's points. Thirteen more stations (Bene-jaakan, Haradah, Hashmonah, Kehelathah, Makheloth, Mithkah, Moseroth, Mount Shapher, Rissah, Tahath, Terah, Beeroth Bene-jaakan and the mountain `mount_shapher_854`) share one point near Petra (30.317396, 35.407152); their sites are unknown, so that is a placeholder, not an error.
+- Status 2026-10-24: still in json. **Fixed in geo** (`libnah-campsite.json`, `rimmon-parez.json`, `rithmah.json` in Sinai, 0.0 km from ours; `laban.json` is 149 km from ours, but Laban's site is unknown).
+
+### T23. Their two outputs disagree: 383 records of `json/places.json` are more than 20 km from the same place in `geo/bible-places.geojson`. Severity: medium
+
+- Found 2026-10-24 (master `744355c7`). Each json record was paired with the geo feature that cites it (`theographic.netlify.app/place/<lookup>/` in the feature's citations) and the two points compared: 383 of 1,247 records with both coordinates are more than 20 km apart. T1 to T6, T12 to T17 and T19 to T22 are among them: the json keeps the old, wrong point and the geo file the corrected one.
+- Their README calls `json/` the preferred source, so anyone who follows it gets the old points. The fix is theirs to choose (regenerate json from the same data, or say which file is current); the list of the 383 is easy to give them.
+
+### T24. Eight links in the geo file carry errors of OpenBible and Wikidata on to their features. Severity: medium
+
+- Found 2026-10-24 in `geo/bible-places.geojson` (the links to Wikidata and Pleiades each feature carries). Each is an error already listed here, now repeated in their newest output:
+  - `alemeth.json` → Q4716077, `elath.json` → Q3721153, `eshtemoa.json` → Q5397937, `peor.json` → Q61862532: disambiguation items (O3).
+  - `aphek.json` ("Aphek (of Aram)") → Q4779536, the item for the name, placed at the Aphek of the Sharon (O7).
+  - `madmenah.json` → Q6728293, Madmannah (O2).
+  - `habor.json` → Pleiades 874565, the Lesser Khabur of the Tigris (W8).
+  - `cnidus.json` → Pleiades 599576, the earlier site at Burgaz (W6; low).
 
 ## Theographic: to check
+
+Status 2026-10-24: in geo, Jotbah, Hosah, Hadrach and Telassar are fixed or agree with ours; Tamar and Beth-togarmah are unchanged (readings and choices, as below); json is unchanged for all of them.
 
 - **Jotbah** (`recgcRR8lIX8T7Tr7`, 2Kgs.21.19) is at 29.758, 35.031, which is the Jotbathah/Taba area near Eilat. OpenBible and we put it at Yodfat in Galilee, 343 km away. The Galilee identification is the majority view, but older literature did equate Jotbah with Jotbathah. Not an outright error.
 - **Hosah** (`recSPzi0p68v5OEah`, Josh.19.29): 32.178502, 35.22758, in the hills of Samaria (Pleiades 678244 "Khirbet et Tira", 3 km). Josh.19.29 ties it to Tyre: "...the strong city Tyre; and the coast turneth to Hosah". OpenBible and we are 118 km north, south of Tyre. The exact site is not settled, so this stays here, but Samaria cannot be right.
@@ -154,11 +196,13 @@ I checked every KJV verse whose `verseText` contains the name as a whole word. T
 
 - Record: https://www.openbible.info/geo/ancient/ab793ce, `linked_data.s2428ed.id` = `707539`.
 - Evidence: Pleiades 707539 "Knidos" is described as "an ancient city of Cyprus located on the Elaea promontory in northeastern Cyprus" (35.329, 34.055). That is 619 km from OpenBible's own Cnidus coordinate (36.686, 27.375, Tekir in Caria). The Carian city is Pleiades 599575 "Cnidus (Tekir)".
+- Status 2026-10-24: **still present**: live page still lists Pleiades 707539, which is still the Knidos of Cyprus.
 
 ### O2. Madmenah (Isa 10:31) links to the Wikidata item for Madmannah (Josh 15:31). Severity: medium
 
 - Record: https://www.openbible.info/geo/ancient/a67297a, `s7cc8b2` = `Q6728293`. That item's label is "Madmannah", its enwiki page is "Menois", and its P1584 is 687964 "Maon/Menoeis".
 - Evidence: Isa.10.31 ("Madmenah is removed; the inhabitants of Gebim gather themselves to flee") falls in the Assyrian approach list north of Jerusalem, next to Anathoth and Nob. Josh.15.31 ("And Ziklag, and Madmannah, and Sansannah") is in the Negeb. The Pleiades place linked through that QID is 95 km from OpenBible's own Madmenah point (31.820, 35.223).
+- Status 2026-10-24: **still present**: live page still lists Q6728293; the item is still "Madmannah", enwiki "Menois".
 
 ### O3. Wikidata links that point to disambiguation pages. Severity: medium
 
@@ -169,11 +213,14 @@ Each item below has P31 = Q4167410 ("Wikimedia disambiguation page"), checked li
 - `a9ef72b` Peor → Q61862532
 - `ad27541` Ramah (Ramah 5, 2Kgs.8.29) → Q412380
 - `af0ac29` Elath → Q3721153, which now redirects to Q1303899, the "Eilat (disambiguation)" page
+- Status 2026-10-24: **still present**: all five still have P31 = Q4167410 (Q3721153 redirects to Q1303899, also a disambiguation page); the Alemeth page still lists Q4716077.
 
 ### O4. Wikidata links that are now redirects. Severity: low
 
 These QIDs resolve, but only through a redirect, so joins on the raw id miss them. Old → current:
 Achzib `a2270e4` Q54991090→Q1323297; Allammelech `a84cafa` Q28220401→Q6573228; Azal `ad041dd` Q4832126→Q7217851; Beth-anath `ae6cef8` Q60790206→Q25492503; Daberath `a6a5e97` Q5207462→Q20502682; Elath `af0ac29` Q3721153→Q1303899; Ephraim `aa24ad4` Q27627879→Q18500022; Gabbatha `aec23b1` Q1488020→Q591994; Gadara `afed46a` Q96379011→Q56322109; Gibbethon `a6f048c` Q25493256→Q11298139; Kartah `ac0f6e7` Q6373489→Q117704182; Kir `ab92800` Q65086594→Q1742404; Pekod `a4b9865` Q48968605→Q11944059; Sychar `a27b472` Q12971071→Q1651088.
+
+- Status 2026-10-24: **still present**: OpenBible's data is unchanged; all fourteen still redirect to the same items.
 
 ### O5. The TIPNR links name a 2021 TIPNR; 134 of 1172 no longer resolve, 9 point at the wrong record. Severity: medium
 
@@ -188,6 +235,7 @@ Achzib `a2270e4` Q54991090→Q1323297; Allammelech `a84cafa` Q28220401→Q657322
   - `a3a2a75` Dedan, `a2735ff` Edom and `a831506` Teman (places) → `Dedan@Gen.10.7`, `Esau@Gen.36.40` and `Teman@Gen.36.34`, which are person records (the eponyms); TIPNR's `Dedan@Isa.21.13-Ezk`, `Edom@Gen.32.3-Mal` and `Teman@Jer.49.7-Hab` carry the records' verses.
   - `aaa4c6e` Ramah 6 (Josh.19.8, "Baalath-beer, Ramah of the south"; one place with Baalath-beer, item 16 below) → `Ramah@Jos.18.25`, the Ramah of Benjamin (Judg.4.5, 1Kgs.15.17, Jer.31.15...). Found 2026-10-23. Name and verse would follow the link there, since TIPNR itself files Josh.19.8 under `Ramah@Jos.18.25-Mat` (the TIPNR item below); the town's record is `Baalath-beer@Jos.15.24-1Ch`, whose alias forms are its other names, Bealoth (Josh.15.24, 1Kgs.4.16), Baal (1Chr.4.33) and Ramoth (1Sam.30.27), the one OpenBible links for Baalath-beer, Bealoth 1 and 2 and Ramoth 2. Followed by hand (`BY_HAND` in scripts/tipnr-links.ts); api/v1/places.json and places.csv now give Ramah 6 that record.
 - Our `tipnr` ids (api/v1/places.json, docs/crosswalk/places.csv) are the current names; OpenBible's link is kept beside them as `openbible_tipnr`.
+- Status 2026-10-24: **still present**: the Kir 1 page still lists `Kir@1Sa.22.3`; the data is unchanged since 2021.
 
 ### O6. "Another name for" is resolved one hop, so a place and its other name land on different sites. Severity: medium, high for Dimonah
 
@@ -201,11 +249,13 @@ Achzib `a2270e4` Q54991090→Q1323297; Allammelech `a84cafa` Q28220401→Q657322
   - `a702ab6` Sea of Egypt → Red Sea 1 (`a3d18b2`): Bitter Lakes against the Gulf of Suez, 187 km. Both are water bodies with arbitrary points; left as it is.
   - The mutual pairs with two points: Cabbon and Machbenah (23 km), Elon and Elonbeth-hanan (11 km), Enaim and Enam (5 km). Each is "another name for" the other and each sits on the other's second-best candidate; neither record is canonical, so we left both (OpenBible: to check).
 - "Within": `a86d49f` Shaveh-kiriathaim is "within 1 km of Kiriathaim 1" and resolves 24 km from Kiriathaim 1's own point (Kiriathaim's third candidate); `a991067` Mount Perazim is "within 250 m of Baal-perazim" and 5 km from it. Not changed.
+- Status 2026-10-24: **still present**: the Dimonah page still gives "another name for Dibon 2" first; the data is unchanged since 2021.
 
 ### O7. Two Wikidata links name an item that is not the place. Severity: medium
 
 - `a6fc60d` Aphek 3 (1Kgs.20.26, 1Kgs.20.30, 2Kgs.13.17, the Aphek of Aram; OpenBible resolves it to Tel Ein Gev, 32.7837, 35.6373) → `Q4779536`. That item's English article is "Aphek (biblical)", which opens "The name Aphek or Aphec refers to one of several locations", and its P625 (32.0833, 34.8833) is the Aphek of the Sharon, 105 km away, which OpenBible links separately as `a7b2e63` → `Q682612` Antipatris. The other Apheks have items of their own (`ac4f712` → `Q4779601`, `a4cf129` → `Q383537`); this one carries the article for the name.
 - `adb5ae4` Kedesh 3 (1Chr.6.72, the Levitical town of Issachar; OpenBible's top identification is "another name for Kishion", `a20364a`, Josh.21.28 in the parallel list, at Tel Qishyon, 32.6614, 35.3931) → `Q6601333` "Tell Abu Qedeis", described as "mountain in Israel" (P31 tell, mountain; no Wikipedia article), at 32.5595, 35.2160: OpenBible's own second candidate, 20 km away. The link is to a modern tell, the kind OpenBible marks "modern" elsewhere, and to the runner-up identification rather than the one it resolves.
+- Status 2026-10-24: **still present**: both pages still list these QIDs; Q4779536 is still "Aphek (biblical)" with P625 32.0833, 34.8833.
 
 ## OpenBible: to check
 
@@ -216,7 +266,7 @@ Achzib `a2270e4` Q54991090→Q1323297; Allammelech `a84cafa` Q28220401→Q657322
 
 ## STEPBible TIPNR: to check
 
-- `Ramah@Jos.18.25-Mat`, the Ramah of Benjamin (er-Ram), lists Josh.19.8 among its verses, where the KJV reads "Baalath-beer, Ramath of the south": the Negeb town, which TIPNR's own `Baalath-beer@Jos.15.24-1Ch` holds under its other names (Bealoth, Baal, Ramoth of 1Sam.30.27). The Hebrew word in Josh.19.8 is tagged H7414G, the Benjaminite Ramah, so the verse appears in that record. Found 2026-10-23 (TIPNR commit b99716b, `pipeline/.cache/tipnr.txt`); OpenBible's link for Ramah 6 follows it (O5). Not reported to STEPBible yet.
+- `Ramah@Jos.18.25-Mat`, the Ramah of Benjamin (er-Ram), lists Josh.19.8 among its verses, where the KJV reads "Baalath-beer, Ramath of the south": the Negeb town, which TIPNR's own `Baalath-beer@Jos.15.24-1Ch` holds under its other names (Bealoth, Baal, Ramoth of 1Sam.30.27). The Hebrew word in Josh.19.8 is tagged H7414G, the Benjaminite Ramah, so the verse appears in that record. Found 2026-10-23 (TIPNR commit b99716b, `pipeline/.cache/tipnr.txt`); OpenBible's link for Ramah 6 follows it (O5). Not reported to STEPBible yet. Status 2026-10-24: **still present** at TIPNR master `be4191f0`.
 - The map links in TIPNR's place records ("based on geoposition as defined by OpenBible", its header) carry the OpenBible coordinates of the time. Against today's OpenBible points, 212 of our 718 settlements with a TIPNR point are more than 20 km away: the referents OpenBible has since split (`Babylon@Gen.10.10-Rev` for the Babylon of 1 Pet 5:13, which OpenBible puts at Rome), re-identifications (Telassar, Calneh, Sepharvaim, Beth-togarmah) and some odd points (`Ham@Gen.14.5` is at 30.108, 31.338, in the Nile Delta, 502 km from OpenBible's Tel Ham). TIPNR's coordinates are not used by us; its ids are.
 
 ---
@@ -226,39 +276,48 @@ Achzib `a2270e4` Q54991090→Q1323297; Allammelech `a84cafa` Q28220401→Q657322
 ### W1. Antipatris (Q682612) has P1584 = "68799", which does not exist; the correct id is 687996. Severity: medium
 
 - https://pleiades.stoa.org/places/68799/json returns HTTP 404, and 68799 is not in the Pleiades dump. https://pleiades.stoa.org/places/687996 is "Pegai/Antipatris/Arethousa?" at 32.1052, 34.9310, which matches the Wikidata P625 (32.105, 34.9304) to within 0.06 km. The value looks like 687996 with its last digit dropped.
+- Status 2026-10-24: **still present**: P1584 still 68799 (HTTP 404).
 
 ### W2. Zoan (Q8073157) has P625 in Brazil. Severity: high
 
 - P625 = −7.1215981, −34.882028, around João Pessoa, Brazil. The English Wikipedia article for the same item says Zoan "was a city of Egypt in the eastern Nile Delta" and equates it with Tanis. Tanis on Wikipedia is 30.977, 31.88. OpenBible, Pleiades 727236 (Tanis) and we all agree within 0.3 km. The error is 8,253 km.
+- Status 2026-10-24: **still present**: P625 still in Brazil (8,253 km).
 
 ### W3. Tegarama (Q12400954) P625 is 377 km from Gürün. Severity: high
 
 - P625 = 39.801, 41.429, in Erzurum province. The English Wikipedia article for the item says Tegarama "is often identified with Gürün". Pleiades 628982 "Gauraina" (Gürün; alias Til-garimmu) is at 38.723, 37.257, and OpenBible's point is 2 km from it. Wikidata is 379 km from Pleiades.
+- Status 2026-10-24: **still present**: P625 unchanged (379 km from Pleiades' Gürün).
 
 ### W4. Libnah (Q3486583) P625 is in Sinai, while the item's own Wikipedia article puts the city in the Shephelah. Severity: medium
 
 - P625 = 29.9167, 34.6667, in the Sinai desert, which could only be the wilderness camp of Num 33:20. The enwiki article for this item has coordinates 31.63, 34.873, matching OpenBible's Libnah (31.6299, 34.8735). The distance is 192 km. The item is used for the city (Josh.10.29 etc.).
+- Status 2026-10-24: **still present**: P625 still in Sinai (192 km).
 
 ### W5. Aroer on the Arnon (Q4795478) P625 is at the mouth of the Arnon, 24 km from the site. Severity: low
 
 - P625 = 31.4672, 35.5633 (the same value as enwiki), on the Dead Sea shore. Pleiades 697635 "Aroes" (31.4715, 35.8219) and OpenBible (31.4708, 35.8194, Khirbet 'Ara'ir) agree within 0.3 km. Deut 2:36 places Aroer "by the brink of the river of Arnon", and the tell is up on the gorge, not at the mouth.
+- Status 2026-10-24: **still present**: P625 unchanged (24 km); the item was edited on 2026-10-23, but not this value.
 
 ### W6. Knidos (Q690575): P1584 points to the earlier site at Burgaz, while P625 is at Tekir. Severity: low
 
 - P625 = 36.6858, 27.375 (Tekir). P1584 = 599576 "Cnidus (Burgaz)" at 36.7356, 27.6994, 29 km away. Pleiades 599575 "Cnidus (Tekir)" matches the item's coordinates, and Pleiades says the centre moved to Tekir in the later 4th century BCE. The coordinate and the Pleiades link describe two different sites. The item should carry 599575, possibly in addition to 599576.
+- Status 2026-10-24: **still present**: P1584 still 599576; a second P625 has been added (36.6902, 27.3716).
 
 ### W7. Kidron Valley (Q860532) has P1584 = 687905, which is Gedros near Yavne. Severity: high
 
 - The item's own P625 is 31.7770, 35.2390, east of the Old City of Jerusalem. Pleiades 687905 "Gedros" (BAtlas 70 F2) is a settlement in the coastal plain at 31.8261, 34.7759, 44 km west: the Kedron of 1 Maccabees 15:39. The dump has no record for the Kidron at all (titles and descriptions searched for Kidron, Kedron and Cedron: only the Silwan necropolis and Mar Saba mention the valley).
 - The same coordinate is Theographic's Kidron (T2), and it was our Pleiades link too (item 13 below): both look like this P1584 followed blindly.
+- Status 2026-10-24: **still present**: P1584 still 687905.
 
 ### W8. Khabur River (Q685344) has P1584 = 874565, the Lesser Khabur of Kurdistan. Severity: high
 
 - The item's P625 is 35.1425, 40.4308, where the Khabur joins the Euphrates at Circesium, and its description is "river in Syria and Turkey". Pleiades 874565 "Lesser Khabur R." (BAtlas 89 E3) is a tributary of the Tigris in northern Iraq (37.2037, 42.9212, 321 km away), attested by Pleiades only from 1700. The Khabur of Syria is Pleiades 893928 "Aborras/Chaboras (river)" (BAtlas 91 B2, 36.3439, 40.3871).
+- Status 2026-10-24: **still present**: P1584 still 874565; a second P625 has been added (37.53, 39.64).
 
 ### W9. Golan (Q2400848) P625 is 32 km from where its own article puts the town. Severity: medium
 
 - P625 = 32.9479, 35.6612 (two statements with the same value), on the western edge of the Golan above the Jordan. The item's English article says "most researchers localize it at Sahm el-Jaulān in Syria's Daraa Governorate"; Sahm el-Jaulan is 32.7811, 35.9347, where OpenBible and we are (OpenBible's one identification, 29 votes).
+- Status 2026-10-24: **still present**: P625 unchanged (32 km).
 
 ## Wikidata: to check
 
@@ -292,7 +351,7 @@ None. Every Pleiades id I looked up in depth resolved and matched its descriptio
 4. **Rhodes `a4218ee`** (kind settlement, Acts 21:1) and **Rhodes `a8c207b`** (island) both pointed to Pleiades 590031 "Rhodos (island)". **Fixed 2026-10-19: the settlement now carries 590030 "Rhodos (settlement)"** (36.4431, 28.2276, 1.5 km from our point; the island centroid is 36 km off), attested from 1200 BC (`1200-bc-middle-east`) to the present, written as −1199 to 1300 like the other entries of content/pleiades.json (the span stops at 1300 there).
 5. **Ramathaim-zophim `a54ef72`**: our `pleiades` = 688014 "Ramathaim/Arimathaia" (Rentis, via Wikidata Q1019146 P1584), but our coordinate (31.854, 35.232, Ramah/Nebi Samwil area) is 29 km away. The record contradicts itself. Either the coordinate or the link has to go. **2026-10-17: the Pleiades link is removed; which site is right is for the owner.**
 6. **Tartessos `a86d7c7`**: Pleiades 256468 is "unlocated". Our point is 24 km from its representative point. Harmless, but it is a guess.
-7. **Coordinates vs Theographic**: for 126 high-confidence matches, Theographic's point is more than 100 km from ours. Gone through one by one on 2026-10-19: 48 regions, 6 rivers, 6 bodies of water, 2 peoples, 1 canal and 1 mountain range are centroids and were set aside; for 107 of the 126 their point is their own `openBibleLat/Long` to the metre, that is the 2007 OpenBible data. Of the 43 settlements, 13 campsites, 5 mountains and 1 promontory left, every case where an independent source decides (Pleiades, Wikidata, the verse itself) decides for our point: Erech, Asshur, Pelusium, Punon, Hadrach, Jotbah, Tamar, Salmone, Rimmon of the Negeb, the two Janoahs, Hezron, Zeboim, Hosah, the Negeb towns of T21 and the stations of T22 (T14 to T22 and the "to check" items above). The rest are places nobody has located (the stations of Numbers 33, Dizahab, Luz of Judg 1:26, Ahava, Casiphia, Immer, Raamah, Baal-hamon, Gamad, Hazer-hatticon, Harmon, the northern Mount Hor, Zalmon, Nophah, Ain of Num 34:11, Avva, Sepharvaim, Canneh, Rehob, Aphik, Karkor, Dinhabah), where both points are proposals. None of our points was shown wrong; Wikidata's P625 disagrees with ours only for Pi-hahiroth (116 km), whose site is unknown.
+7. **Coordinates vs Theographic**: for 126 high-confidence matches, Theographic's point is more than 100 km from ours. Gone through one by one on 2026-10-19: 48 regions, 6 rivers, 6 bodies of water, 2 peoples, 1 canal and 1 mountain range are centroids and were set aside; for 107 of the 126 their point is their own `openBibleLat/Long` to the metre, that is the 2007 OpenBible data. Of the 43 settlements, 13 campsites, 5 mountains and 1 promontory left, every case where an independent source decides (Pleiades, Wikidata, the verse itself) decides for our point: Erech, Asshur (withdrawn 2026-10-24: their record is the nation, T18), Pelusium, Punon, Hadrach, Jotbah, Tamar, Salmone, Rimmon of the Negeb, the two Janoahs, Hezron, Zeboim, Hosah, the Negeb towns of T21 and the stations of T22 (T14 to T22 and the "to check" items above). The rest are places nobody has located (the stations of Numbers 33, Dizahab, Luz of Judg 1:26, Ahava, Casiphia, Immer, Raamah, Baal-hamon, Gamad, Hazer-hatticon, Harmon, the northern Mount Hor, Zalmon, Nophah, Ain of Num 34:11, Avva, Sepharvaim, Canneh, Rehob, Aphik, Karkor, Dinhabah), where both points are proposals. None of our points was shown wrong; Wikidata's P625 disagrees with ours only for Pi-hahiroth (116 km), whose site is unknown.
 8. **Verse coverage**: we count verses from all translations, so we have places with no KJV verse at all (Aram-naharaim in the Ps 60 heading, Zaphon, Rhodes in Ezek 27:15, etc.). Theographic is KJV/ESV-based. Those differences are **not** Theographic errors and I did not list them.
 9. **OpenBible "same as" chains and TIPNR ids**: checked 2026-10-19 (O5, O6). Still not done: a full audit of Theographic verse tags for places outside the 16 names sampled in T10.
 10. **Our points inherited O6**: nine places that OpenBible calls another name for a record sat 8 to 63 km from that record. **Fixed 2026-10-19 for seven: content/place-points.json puts each on the named record's point** (Dimonah, Bethul, Chesil, Canneh, Sea of Jazer, Ir-moab, Hukok; the reasons are in the file). Zer and Ramoth 2 were moved and taken back the same day on review: the named record's point fits their verses worse (O6). The mutual pairs and the Sea of Egypt are left as OpenBible has them. Ramoth 2 is back on the list since the four Negeb names were put on one point (item 16).

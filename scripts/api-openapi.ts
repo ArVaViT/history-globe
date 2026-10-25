@@ -187,7 +187,8 @@ export function openApi(version: string): object {
             wikidata: {
               type: "string",
               pattern: "^Q\\d+$",
-              description: "Wikidata item, as OpenBible links it",
+              description:
+                "Wikidata item, from OpenBible's links, checked against Wikidata: wrong ones left out, merged items followed",
             },
             pleiades: { type: "string", pattern: "^\\d+$", description: "Pleiades place id" },
             tipnr: {

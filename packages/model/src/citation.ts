@@ -115,12 +115,19 @@ export function localizeCitation(text: string, locale: Locale): string {
   return out;
 }
 
-/** A list of sources as a reader of `locale` reads them: the build's Russian where it has it. */
+/**
+ * A list of sources as a reader of `locale` reads them: the build's Russian where it has it,
+ * and in the other languages the site's own lines translated (content/sources-own.yaml).
+ */
 export function sourcesOf(
-  x: { readonly sources: readonly string[]; readonly sources_ru?: readonly string[] },
+  x: {
+    readonly sources: readonly string[];
+    readonly sources_ru?: readonly string[];
+    readonly sources_in?: Readonly<Partial<Record<Locale, readonly string[]>>>;
+  },
   locale: Locale,
 ): string[] {
-  return locale === "ru" && x.sources_ru
-    ? [...x.sources_ru]
-    : x.sources.map((s) => localizeCitation(s, locale));
+  if (locale === "ru" && x.sources_ru) return [...x.sources_ru];
+  const own = x.sources_in?.[locale];
+  return (own ?? x.sources).map((s) => localizeCitation(s, locale));
 }

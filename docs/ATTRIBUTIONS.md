@@ -1,7 +1,9 @@
 # Attributions
 
-The third-party data and software the product ships with, as of 2026-10-02. Every
-source was checked against its licence text (2026-09-28, rechecked 2026-10-01).
+The third-party data and software the product ships with, as of 2026-10-25. Every
+source was checked against its licence text (2026-09-28, rechecked 2026-10-01; the Bible
+editions and the photo licences again on 2026-10-25). The public credits are on the
+sources page (docs/sources.html, in every language), with each licence linked.
 Sources under share-alike or non-commercial licences are deliberately absent (ADR 0008).
 Sources researched but not used (OpenHistoricalMap, GEBCO, the BSB) are
 listed again only when they are imported. STEPBible TIPNR, Pleiades and Itiner-e were
@@ -38,6 +40,8 @@ Periods in which places are attested
   University, 2006–. https://pleiades.stoa.org. Data downloaded 2 October 2026.
   Licensed CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/us/).
   Modified: matched to our places, periods reduced to a span of years.
+  Pleiades' own form of citation: Roger Bagnall et al. (eds.), Pleiades: A Gazetteer
+  of Past Places (https://pleiades.stoa.org), with the date of access.
 
 Ancient sites outside the Bible (the "Ancient world" layer)
   Points and identifiers from Pleiades (as above, CC BY 3.0), selected and checked
@@ -55,7 +59,9 @@ Polity borders
   (https://creativecommons.org/licenses/by/4.0/). Modified.
 
   Coordinates for places whose OpenBible point came from OpenStreetMap or Google:
-  Wikidata (https://www.wikidata.org), CC0.
+  Wikidata (https://www.wikidata.org), CC0. The places' Wikidata items are OpenBible's
+  links, checked against Wikidata: wrong ones left out, merged items followed
+  (scripts/wikidata-links.ts).
 
 Terrain
   Produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus
@@ -79,19 +85,47 @@ Base cartography
   Made with Natural Earth. Free vector and raster map data @ naturalearthdata.com.
 
 Scripture
-  Russian Synodal Translation (1876), public domain.
-  King James Version (1769), public domain outside the United Kingdom.
-  The verse texts in the place card come from eBible.org's USFM editions of both
-  (russyn, eng-kjv2006); scripts/build-verses.ts records their sha256.
+  The verse texts and quotations in each language come from a public-domain edition,
+  from eBible.org's USFM editions or CrossWire's SWORD modules (the .conf of each says
+  DistributionLicense=Public Domain); scripts/bible-text.ts lists them (SOURCES) with
+  the repairs made to their digital text (REPAIRS), and scripts/build-verses.ts
+  records the sha256 of each file in data/verses/sources.json.
+    en  King James Version, 1769 standard text (eBible.org eng-kjv2006); public
+        domain outside the United Kingdom, Crown copyright (letters patent) in it
+    ru  Synodal Translation, 1876 (eBible.org russyn)
+    uk  Bible translated by P. Kulish and I. Puluj, 1905, with I. Nechui-Levytsky
+        (eBible.org ukr1871)
+    es  Reina-Valera 1909 (eBible.org spaRV1909)
+    pt  Bíblia Portuguesa Mundial, a draft translation still under revision
+        (eBible.org porbrbsl)
+    de  Lutherbibel 1912 (eBible.org deu1912)
+    fr  Louis Segond 1910 (eBible.org fraLSG)
+    it  Riveduta 1927 (eBible.org ita1927)
+    nl  Statenvertaling, 1917 edition (eBible.org nld)
+    cs  Bible kralická, 1613 (eBible.org ces1613)
+    sr  Daničić–Karadžić translation, Cyrillic (eBible.org srp1868)
+    pl  Biblia Gdańska, 1881 edition (CrossWire PolGdanska)
+    sv  Bibeln 1917 (CrossWire Swe1917, from Projekt Runeberg)
+    da  Det Gamle Testamente 1871 and Det Nye Testamente 1907 (CrossWire
+        DaOT1871NT1907)
+    nb  Bibelen 1930, Det Norske Bibelselskap (CrossWire Norsk)
+    tl  Ang Biblia 1905, Philippine Bible Society (CrossWire TagAngBiblia)
+    zh  Chinese Union Version, simplified (eBible.org cmn-cu89s): verse texts only,
+        for a language not yet on the site
+  All public domain. Names are read from the Synodal text for Russian and checked
+  against the KJV for English.
 
 Photos
   Photos of places in the place card come from Wikimedia Commons, each public domain,
-  CC0 or CC BY (no share-alike); its author, licence and file page are given under it
-  (content/photos.yaml). Images are served from the site, not hotlinked.
+  CC0 or CC BY (no share-alike); its author, its licence (linked to the licence text,
+  `license_url` in content/photos.yaml) and its file page are given with it, in the
+  card and on the place page. Images are resized and cropped to the frame, as the
+  sources page says, and served from the site, not hotlinked.
 
-Articles and events
+Articles, answers and events
   Written for the project; the sources each one rests on are listed with it
-  (content/articles, content/events.yaml). Quotations: Synodal and KJV only.
+  (content/articles, content/questions, content/events.yaml). Quotations come only
+  from the public-domain edition of each language listed under Scripture.
 
 Software
   MapLibre GL JS — Copyright (c) 2023, MapLibre contributors, BSD-3-Clause;
@@ -100,7 +134,7 @@ Software
   vendor/maplibre-gl-<version>/LICENSE.txt in the build.
   React, react-dom, scheduler (MIT) and the Golos Text and Literata fonts (OFL 1.1):
   licence texts in apps/web/public/licenses/third-party.txt, written by
-  scripts/third-party-licenses.ts and linked from the About page.
+  scripts/third-party-licenses.ts (pnpm licenses) and linked from the sources page.
   The MapLibre files are shipped as published (only the source-map pointer at the
   end of each is dropped, with the maps), with their LICENSE.txt, under
   vendor/maplibre-gl-<version>/ in the build.

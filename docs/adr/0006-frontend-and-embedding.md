@@ -1,11 +1,11 @@
 # 0006. Frontend and embedding
 
-- Status: proposed
+- Status: accepted
 - Date: 2026-09-28
 
 ## Context
 
-The globe must live inside Equip first (React 18.3, Tailwind 3 with an unlayered reset,
+The globe must live inside Equip, the owner's separate learning platform, first (React 18.3, Tailwind 3 with an unlayered reset,
 strict CSP, deployed on Vercel), later inside other LMSs. The first draft chose an npm
 React package for Equip. A review showed that this single choice drags in a React 18/19
 test matrix, CSS isolation tricks against Tailwind 3, a library build, Changesets,

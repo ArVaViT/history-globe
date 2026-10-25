@@ -1,6 +1,6 @@
 # 0012. Vercel for the site, Supabase for the data
 
-- Status: proposed
+- Status: accepted
 - Date: 2026-10-02
 
 ## Context

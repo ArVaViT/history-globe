@@ -281,6 +281,10 @@ def move_points(feats: list[dict], same_as: dict[str, str]) -> int:
     point: the other record's, which passed the licence filter like any shipped point. A
     target that is itself moved is followed to the end of the chain (Bealoth → Baalath-beer
     → Ramah of the Negeb), so the order of the file does not matter.
+
+    A moved place whose "where it is today" only points at another record ("same place as
+    Bealoth") takes the target's too: one point, one modern site (Baalath-beer: Tel Ira). A
+    place that names its own modern site keeps it.
     """
     by_id = {f["properties"]["id"]: f for f in feats}
     for pid, target in same_as.items():
@@ -294,7 +298,16 @@ def move_points(feats: list[dict], same_as: dict[str, str]) -> int:
             raise SystemExit(f"place-points: {pid} or its same_as {target} is not in the build")
         by_id[pid]["geometry"]["coordinates"] = list(by_id[target]["geometry"]["coordinates"])
         by_id[pid]["properties"]["coord"] = by_id[target]["properties"]["coord"]
+        own, to = by_id[pid]["properties"], by_id[target]["properties"]
+        if own.get("where_tpl") in CROSS_REFERENCES and to.get("where_tpl") not in CROSS_REFERENCES:
+            for k in [k for k in own if k == "where" or k.startswith("where_")]:
+                del own[k]
+            own.update({k: v for k, v in to.items() if k == "where" or k.startswith("where_")})
     return len(same_as)
+
+
+# "Where it is today" templates that name another record of ours, not a modern site.
+CROSS_REFERENCES = ("same", "same_name")
 
 
 def pick_site(record: dict, sites: dict[str, str] | None) -> dict | None:

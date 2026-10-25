@@ -11,10 +11,10 @@
  *
  * Usage: node scripts/build-page-hashes.ts  (after build-pages and build-docs, with SITE_URL)
  */
-import { createHash } from "node:crypto";
 import { existsSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { sitemapLocs } from "./indexnow-core.ts";
+import { shortHash } from "./content-hash.ts";
 
 const pub = join(import.meta.dirname, "../apps/web/public");
 const out = join(pub, "page-hashes.json");
@@ -35,7 +35,7 @@ if (!site || !existsSync(sitemap)) {
       missing++;
       continue;
     }
-    hashes[path] = createHash("sha256").update(readFileSync(file)).digest("hex").slice(0, 12);
+    hashes[path] = shortHash(readFileSync(file));
   }
   if (missing > 0) throw new Error(`page hashes: ${String(missing)} sitemap pages have no file`);
   writeFileSync(out, JSON.stringify(hashes));
