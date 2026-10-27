@@ -1,0 +1,143 @@
+---
+title: History Globe
+description: A bibliai történelem 3D-s földgömbje: a Biblia helyei a hozzájuk tartozó versekkel, és a körülöttük lévő államok évről évre.
+---
+
+<p class="lede">
+  A bibliai történelem 3D-s földgömbje: a Biblia helyei, a körülöttük lévő államok évről évre Kr. e.
+  3500-tól Kr. u. 1300-ig, továbbá az ókori világ városai, útjai és eseményei. A Biblia helyeihez
+  megjelennek a verseik, a térkép minden rétege pedig megnevezi azokat a forrásokat, amelyekből
+  készült.
+</p>
+
+<figure class="hero">
+  <iframe
+    src="../../embed/v1?ref=Acts.16&amp;locale=hu"
+    title="Élőben: az ApCsel 16. fejezete a földgömbön — húzza, nagyítsa, kattintson egy helyre."
+    loading="lazy"
+    allow="fullscreen"
+  ></iframe>
+  <figcaption>
+    Élőben: az ApCsel 16. fejezete a földgömbön — húzza, nagyítsa, kattintson egy helyre.
+  </figcaption>
+</figure>
+
+<ul class="figures">
+  <li><b>{{named}}</b>a Bibliában megnevezett hely</li>
+  <li><b>{{ancient}}</b>további ókori város</li>
+  <li><b>{{people}}</b>bibliai személy</li>
+  <li><b>{{events}}</b>keltezett esemény</li>
+  <li><b>{{tours}}</b>vezetett túra</li>
+  <li><b>{{articles}}</b>cikk a helyekről</li>
+</ul>
+
+<h2>A dokumentáció tartalma</h2>
+<nav class="cards"></nav>
+
+<h2>Mire használható</h2>
+<ul class="features">
+  <li data-icon="chapter">
+    <b>Egy fejezet a térképen.</b> Írja a keresőmezőbe, hogy „ApCsel 16” vagy „1Móz 12”: a térkép a
+    fejezet évére ugrik, és megmutatja a fejezet helyeit. Az oldal hivatkozása megőrzi ezt a
+    nézetet, így megosztható.
+  </li>
+  <li data-icon="time">
+    <b>Utazás az időben.</b> A csúszka az évet állítja; a határok, a városok és az utak követik. Egy
+    város abban az évben jelenik meg, amikor felépült, és abban az évben halványul el, amikor
+    elpusztult. A keresztbe tett kardok a csatákat és ostromokat jelölik a maguk évében. A
+    beállításokban a térkép arra szűkíthető, amit a Biblia elbeszél.
+  </li>
+  <li data-icon="route">
+    <b>Túra követése.</b> A túra megállóról megállóra végigvezeti egy történeten — Ábrahámén, a
+    kivonuláson, Pál útjain —, az igeszakasszal, az évvel, a távolsággal, a gyaloglás idejével és az
+    út domborzatával: római időkben a római utak mentén, előttük légvonalban.
+  </li>
+  <li data-icon="verse">
+    <b>A versek olvasása.</b> Minden hely kártyáján ott vannak azok a versek, amelyek megnevezik a
+    helyet; egyet kiválasztva elolvashatja.
+  </li>
+  <li data-icon="person">
+    <b>Személy keresése.</b> A személy kártyája megmutatja a családját úgy, ahogyan a szöveg
+    feljegyzi, a története szempontjából központi helyeket és az útját követő túrákat (Pál útjai), a
+    térképet pedig az ő korára állítja.
+  </li>
+  <li data-icon="teach">
+    <b>Tanítás a földgömbbel.</b> Az Eszközök (a toll és a vonalzó fent) saját tanórát állítanak
+    össze: a megnyitott helyek bekerülnek az útvonalba, majd az egész megosztható hivatkozásként.
+    Itt található még a két hely közti távolság mérése és bármelyik túrához kvíz („Hol történt?”, a
+    képernyőn a térképen mutatott megoldással vagy A4-es lapon). Az idővonal menüje (⋯) A4-es lapot
+    nyomtat a térképpel és a versekkel, vagy vaktérképet a tanulóknak, képként menti a térképet,
+    vagy kivetítőn jeleníti meg.
+  </li>
+  <li data-icon="offline">
+    <b>Munka internet nélkül.</b> A beállításokban a „Mentés” letölti a térképet, az adatokat, a
+    fényképeket és a Közel-Kelet domborzatát; ezután a földgömb hálózat nélkül is megnyílik, a
+    tanteremben vagy útközben.
+  </li>
+  <li data-icon="embed">
+    <b>Beágyazás.</b> Egyetlen sorral egy fejezet térképe egy másik oldalra kerül:
+    <a href="embedding.html">Beágyazás</a>.
+  </li>
+  <li data-icon="data">
+    <b>Az adatok átvétele.</b> Hogy melyik vers mely helyeket nevezi meg, a helyek a pontjaikkal, az
+    események és a túrák JSON-fájlokban, CC BY 4.0 licenc alatt:
+    <a href="api.html">Nyílt adatok</a>.
+  </li>
+  <li data-icon="link">
+    <b>Saját szövegek összekapcsolása.</b> Egyetlen sor az Ön oldalán a cikkeiben és prédikációiban
+    megnevezett bibliai helyeket hivatkozássá alakítja, kártyával:
+    <a href="embedding.html#places">Helyek bármilyen szövegben</a>.
+  </li>
+</ul>
+
+<h2>A térkép olvasása</h2>
+<ul>
+  <li>
+    <b>Évek.</b> A „kb.” megközelítő évet jelöl. Ahol a keltezés vitatott (a kivonulás, az ősatyák),
+    ott a túra éve csupán támpont a térképhez, és szintén „kb.” jelzést kap.
+  </li>
+  <li>
+    <b>Halvány hely:</b> a kiválasztott évben még nem épült fel, romokban állt, vagy már nem
+    létezett; a kártya megadja az évszámokat és azok forrásait. Azok a helyek, amelyeket csak az
+    Újszövetség nevez meg, az eseményei előtt halványak.
+  </li>
+  <li>
+    <b>Üres jelölő:</b> a helyszín bizonytalan — a kutatók egynél több helyszínt javasolnak, vagy az
+    egyetlen javasolt helyszín is csak feltételes. Vitatott helynél a kártya mutatja az összes
+    javasolt helyszínt az OpenBible arányaival (ezek becslések, nem tudományos konszenzus);
+    feltételes helyszínnél ezt kimondja.
+  </li>
+  <li>
+    <b>Szürke nevek</b> az ókori világ olyan helyeit jelölik, amelyeket a Biblia nem nevez meg
+    (Ugarit, Hattuszasz, Mári), és csak azokban az években láthatók, amikor léteztek.
+  </li>
+  <li>
+    <b>A szöveg és a kutatás külön áll.</b> Az oldal közli, mit mond a szöveg, és mit mondanak a
+    kutatók, és jelzi, melyik melyik; a térkép dátumai és nevei nem a szöveggel kapcsolatos viták
+    eldöntésére szolgálnak, és a kártya jelzi, ha egy kérdés nyitott.
+  </li>
+</ul>
+
+<h2>Alapelvek</h2>
+<ul>
+  <li>
+    <b>A források megnevezve.</b> A térkép minden rétegéhez, minden cikkhez és a határok minden
+    javításához, és ahol egyetlen forrás sem ad évet, ott az alapértelmezés is megmondva:
+    <a href="methodology.html">Adatok és módszertan</a>.
+  </li>
+  <li>
+    <b>Egyetlen kimondott kronológia.</b> Az évek egy konvenciót követnek, amelyet a
+    <a href="methodology.html#chronology">módszertan</a> megnevez; a vitatott évet „kb.” jelöli,
+    vagy csak a térkép támpontjaként szolgál, a bizonytalan helyszíneket pedig bizonytalannak
+    jelöljük.
+  </li>
+  <li><b>Ingyenes, fiók és sütik nélkül</b> (<a href="privacy.html">adatvédelem</a>).</li>
+</ul>
+
+<h2>Hely- és túraoldalak</h2>
+<p>
+  Minden <a href="../../hu/places/">helynek</a> és <a href="../../hu/tours/">túrának</a> van egy
+  egyszerű oldala is a történetével, az eseményeivel, a verseivel és egy gombbal, amely megnyitja a
+  térképen. A gyakori <a href="../../hu/questions/">kérdésekre</a> — hol volt egy hely, milyen
+  messze, mikor — rövid válaszokat adunk a forrásokkal és a térkép nézetével.
+</p>

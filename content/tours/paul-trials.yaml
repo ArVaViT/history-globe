@@ -20,6 +20,11 @@ title:
   tl: "Ang pagkakadakip at mga paglilitis kay Pablo"
   da: "Paulus' anholdelse og retssager"
   sr: "Павлово хапшење и суђења"
+  hu: "Pál letartóztatása és perei"
+  fi: "Paavalin pidätys ja oikeudenkäynnit"
+  vi: "Việc Phao-lô bị bắt và bị xét xử"
+  ro: "Arestarea și procesele lui Pavel"
+  bg: "Арестуването и съденето на Павел"
 year: "AD 57"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -43,6 +48,11 @@ stops:
       tl: "Dinakip sa Templo at ginapos ng dalawang tanikala, nagsalita si Pablo sa bayan at sa harap ng sanedrin; kinagabihan ay lumapit sa kaniya ang Panginoon: “kung paano ang pagkapatotoo mo tungkol sa akin sa Jerusalem, ay kailangang patotohanan mo rin gayon sa Roma.”"
       da: "Grebet i templet og bundet med to lænker taler Paulus til folket og for rådet; om natten står Herren ham bi: »ligesom du har vidnet om mig i Jerusalem, saaledes skal du ogsaa vidne i Rom.«"
       sr: "Ухваћен у храму и свезан двоструким оковима, Павле говори народу и пред већем; те ноћи Господ стаје пред њега: „јер као што си сведочио за мене у Јерусалиму, тако ти ваља и у Риму сведочити.“"
+      hu: "A templomban megragadják, és két lánccal megkötözik; Pál beszél a néphez és a főtanács előtt; éjjel az Úr mellé áll: „miképen bizonyságot tettél az én felőlem való dolgokról Jeruzsálemben, azonképen kell néked Rómában is bizonyságot tenned.”"
+      fi: "Temppelissä kiinni otettuna ja kahteen ketjuun sidottuna Paavali puhuu kansalle ja neuvoston edessä; yöllä Herra seisoo hänen vierellään: ”niinkuin sinä olet todistanut minusta Jerusalemissa, niin sinun pitää todistaman minusta myös Roomassa”."
+      vi: "Bị bắt trong Đền thờ và bị xiềng bằng hai cái xích, Phao-lô nói trước dân chúng và trước hội đồng; ban đêm, Chúa hiện đến cùng người: “ngươi đã làm chứng cho ta tại thành Giê-ru-sa-lem thể nào, thì cũng phải làm chứng cho ta tại thành Rô-ma thể ấy”."
+      ro: "Prins în Templu și legat cu două lanțuri, Pavel vorbește poporului și înaintea sinedriului; noaptea, Domnul stă lângă el: „precum ai mărturisit de mine în Ierusalim, așà ție se cade și în Roma să mărturisești”."
+      bg: "Хванат в храма и вързан с две вериги, Павел говори на народа и пред синедриона; през нощта Господ застава до него и му казва, че както е свидетелствал за Него в Йерусалим, така трябва да свидетелства и в Рим."
   - place: a58735e # Caesarea
     ref: Acts.23.23-Acts.24.27
     note:
@@ -62,6 +72,11 @@ stops:
       tl: "Inilabas nang gabi sa ilalim ng bantay, dumaan sa Antipatris patungong Cesarea, at sumagot siya sa harap ng gobernador na si Felix, na nanginig nang pangatwiranan ni Pablo ang katuwiran at ang paghuhuling darating, at pinanatili siyang gapos nang dalawang taon."
       da: "Ført ud om natten under bevogtning via Antipatris til Cæsarea svarer han for landshøvdingen Felix, som bæver, da Paulus taler om retfærdighed og den kommende dom, og som holder ham bundet i to år."
       sr: "Изведен ноћу под стражом преко Антипатриде у Цезареју, одговара пред намесником Феликсом, који се уплашио кад је Павле говорио о правди и будућем суду, и држи га свезаног две године."
+      hu: "Éjjel őrizettel Antipatriszon át Cézáreába viszik, ahol Félix helytartó előtt felel; Félix megrémül, amikor Pál az igazságról és az eljövendő ítéletről beszél, és két évig fogva tartja."
+      fi: "Yöllä vartioituna Antipatriin kautta Kesareaan vietynä hän vastaa käskynhaltija Felixin edessä, joka vapisee, kun Paavali puhuu vanhurskaudesta ja tulevasta tuomiosta, ja pitää hänet sidottuna kaksi vuotta."
+      vi: "Được dẫn đi ban đêm dưới sự canh giữ qua Ăng-ti-ba-tri đến Sê-sa-rê, người biện bạch trước tổng đốc Phê-lít; khi Phao-lô nói về sự công bình và sự phán xét ngày sau, Phê-lít run sợ, nhưng giữ người trong xiềng xích hai năm."
+      ro: "Dus noaptea sub pază, prin Antipatrida, la Cezareea, se apără înaintea guvernatorului Felix, care se înspăimântă când Pavel vorbește despre dreptate și despre judecata viitoare, și îl ține legat doi ani."
+      bg: "Изведен нощем под стража през Антипатрида до Кесария, той отговаря пред управителя Феликс, който се разтреперва, когато Павел говори за правда и за бъдещия съд, и го държи окован две години."
   - place: a15257a # Jerusalem
     ref: Acts.25.1-Acts.25.5
     year: "AD 59"
@@ -82,6 +97,11 @@ stops:
       tl: "Umahon sa Jerusalem si Festo, ang bagong gobernador, kung saan hiniling ng pinunong saserdote at ng mga pinuno ng mga Judio na dalhin doon si Pablo, na nag-aabang upang patayin siya sa daan."
       da: "Festus, den nye landshøvding, drager op til Jerusalem, hvor ypperstepræsten og jødernes ledende mænd beder om, at Paulus føres derhen, mens de lurer på at dræbe ham undervejs."
       sr: "Фист, нови намесник, иде у Јерусалим, где првосвештеник и главари јудејски траже да Павле буде доведен тамо, а на путу постављају заседу да га убију."
+      hu: "Fesztusz, az új helytartó felmegy Jeruzsálembe, ahol a főpap és a zsidók vezetői kérik, hogy Pált vigyék oda, és az úton leselkednek, hogy megöljék."
+      fi: "Uusi käskynhaltija Festus menee ylös Jerusalemiin, missä ylipappi ja juutalaisten päämiehet pyytävät Paavalin tuomista sinne ja väijyvät hänen henkeään tiellä."
+      vi: "Phê-tu, tổng đốc mới, lên Giê-ru-sa-lem, nơi thầy tế lễ thượng phẩm và những người trọng của dân Giu-đa xin giải Phao-lô đến đó, rình giết người dọc đường."
+      ro: "Festus, noul guvernator, urcă la Ierusalim, unde marele preot și fruntașii iudeilor cer ca Pavel să fie adus acolo, punând la cale să-l ucidă pe drum."
+      bg: "Фест, новият управител, възлиза в Йерусалим, където първосвещеникът и първенците на юдеите искат Павел да бъде доведен там, като му устройват засада, за да го убият по пътя."
   - place: a58735e # Caesarea
     ref: Acts.25.6-Acts.26.32
     year: "AD 59"
@@ -102,3 +122,8 @@ stops:
       tl: "Pagbalik sa Cesarea, umapela si Pablo kay Cesar, at sa harap ni Agripa ay isinaysay ang kaniyang pagbabalik-loob; sumagot si Agripa: “Sa kakaunting paghikayat ay ibig mo akong maging Cristiano.”"
       da: "Tilbage i Cæsarea påkalder Paulus kejseren, og for Agrippa fortæller han om sin omvendelse; Agrippa svarer: »Der fattes lidet i, at du overtaler mig til at blive en Kristen.«"
       sr: "Опет у Цезареји Павле призива Цезара, и пред Агрипом приповеда о свом обраћењу; Агрипа одговара: „Још мало па ћеш ме наговорити да будем хришћанин.“"
+      hu: "Cézáreába visszatérve Pál a császárhoz fellebbez, és Agrippa előtt elbeszéli megtérését; Agrippa így felel: „Majdnem ráveszel engem, hogy keresztyénné legyek.”"
+      fi: "Takaisin Kesareassa Paavali vetoaa keisariin ja kertoo Agrippan edessä kääntymyksestään; Agrippa vastaa: ”Vähälläpä luulet taivuttavasi minut kristityksi”."
+      vi: "Trở lại Sê-sa-rê, Phao-lô chống án lên Sê-sa và, trước mặt Ạc-ríp-ba, thuật lại việc mình trở lại đạo; Ạc-ríp-ba đáp: “Thiếu chút nữa ngươi khuyên ta trở nên tín đồ Đấng Christ!”"
+      ro: "Înapoi la Cezareea, Pavel face apel la Cezar și îi povestește lui Agripa convertirea sa; Agripa răspunde: „cu puțin de nu mă pleci să fiu creștin”."
+      bg: "Обратно в Кесария Павел се отнася до Кесаря и пред Агрипа разказва за обръщането си; Агрипа отговаря: „Без малко ме убеждаваш да стана Християнин.“"

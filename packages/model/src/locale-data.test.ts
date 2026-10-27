@@ -1,13 +1,20 @@
 import { describe, expect, it } from "vitest";
-import { localeData, loadLocaleData } from "./locale-data.ts";
+import { localeData, loadLocaleData, PENDING } from "./locale-data.ts";
 import { ALL_LOCALES, LOCALES } from "./time.ts";
 
 describe("locale data", () => {
   it("has a file for every language but English, which the code itself carries", () => {
     for (const l of ALL_LOCALES) {
       if (l === "en") expect(localeData(l)).toBeUndefined();
+      // A language known before its words are written: its years at least.
+      else if (PENDING.has(l) && !localeData(l)?.periods)
+        expect(localeData(l)?.years, l).toBeDefined();
       else expect(localeData(l)?.periods, l).toBeDefined();
     }
+  });
+
+  it("publishes no language whose words are still pending", () => {
+    for (const l of LOCALES) expect(PENDING.has(l) && !localeData(l)?.periods, l).toBe(false);
   });
 
   it("gives every published language its books, eras, site words and Maccabees mark", () => {

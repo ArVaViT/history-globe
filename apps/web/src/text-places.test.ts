@@ -52,4 +52,32 @@ describe("splitPlaces", () => {
     expect(places("Jordan Peterson spoke")).toEqual([]);
     expect(places("They crossed the Jordan.")).toEqual(["Jordan:a4"]);
   });
+
+  it("stops a Turkish name at its apostrophe, either kind", () => {
+    const tr = textPlacesFrom({ forms: { Mısır: "a6", Galile: "a7" } });
+    const found = (text: string) =>
+      splitPlaces(text, tr)
+        .filter((s) => s.place)
+        .map((s) => s.text);
+    expect(found("Mısır'dan çıktılar ve Galile’ye gittiler.")).toEqual(["Mısır", "Galile"]);
+    expect(found("Mısırlılar geldi.")).toEqual([]);
+  });
+
+  it("matches a Vietnamese name's hyphenated syllables whole", () => {
+    const vi = textPlacesFrom({ forms: { "Giê-ru-sa-lem": "a1", "Bết-lê-hem": "a2", Lem: "a8" } });
+    const found = (text: string) =>
+      splitPlaces(text, vi)
+        .filter((s) => s.place)
+        .map((s) => `${s.text}:${String(s.place)}`);
+    expect(found("Từ Giê-ru-sa-lem, họ đi đến Bết-lê-hem xứ Giu-đê.")).toEqual([
+      "Giê-ru-sa-lem:a1",
+      "Bết-lê-hem:a2",
+    ]);
+  });
+
+  it("leaves a Bulgarian adjective of a name alone", () => {
+    const bg = textPlacesFrom({ forms: { Йерусалим: "a1" } });
+    expect(splitPlaces("Йерусалимският храм", bg).filter((s) => s.place)).toEqual([]);
+    expect(splitPlaces("в Йерусалим.", bg).filter((s) => s.place)).toHaveLength(1);
+  });
 });

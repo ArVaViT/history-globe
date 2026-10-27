@@ -179,6 +179,12 @@ describe("preferredLocale", () => {
     for (const tag of ["sr", "sr-Cyrl", "sr-RS", "sr-Latn-RS"])
       expect(localeOfTag(tag), tag).toBe("sr");
     expect(localeOfTag("pt-BR")).toBe("pt");
+    // Wave 4: each by its base tag, Swahili of Kenya and of Tanzania alike.
+    for (const tag of ["hu-HU", "fi-FI", "vi-VN", "tr-TR", "sw-KE", "sw-TZ"])
+      expect(localeOfTag(tag), tag).toBe(tag.slice(0, 2));
+    // Wave 5: Romanian of Romania and of Moldova, Bulgarian.
+    for (const tag of ["ro-RO", "ro-MD", "bg-BG"])
+      expect(localeOfTag(tag), tag).toBe(tag.slice(0, 2));
     // Nynorsk opens the Bokmål once it is published; until then the browser's next language.
     expect(preferredLocale(["nn-NO", "de"], none)).toBe(isLocale("nb") ? "nb" : "de");
   });

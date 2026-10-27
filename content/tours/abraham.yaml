@@ -21,6 +21,11 @@ title:
   tl: "Ang paglalakbay ni Abraham"
   da: "Abrahams rejse"
   sr: "Аврамов пут"
+  hu: "Ábrahám útja"
+  fi: "Abrahamin vaellus"
+  vi: "Hành trình của Áp-ra-ham"
+  ro: "Călătoria lui Avraam"
+  bg: "Пътят на Авраам"
 year: "1900 BC"
 people: ["Abraham@Gen.11.26-1Pe"]
 approximate: true
@@ -44,6 +49,11 @@ stops:
       tl: "Inilalabas ni Tara si Abram at ang kaniyang pamilya sa Ur ng mga Caldeo."
       da: "Tera fører Abram og hans familie ud af Ur i Kaldæa."
       sr: "Тара изводи Аврама и његову породицу из Ура халдејског."
+      hu: "Terah kivezeti Ábrámot és családját a káldeai Urból."
+      fi: "Terah vie Abramin ja tämän perheen pois Kaldean Urista."
+      vi: "Tha-rê đem Áp-ram và gia đình người ra khỏi U-rơ của người Canh-đê."
+      ro: "Terah îl ia pe Avram împreună cu familia lui și îi scoate din Urul Haldeilor."
+      bg: "Тара извежда Аврам и семейството му от Ур Халдейски."
   - place: a6d9af3 # Haran
     ref: Gen.11.31-Gen.11.32
     note:
@@ -63,6 +73,11 @@ stops:
       tl: "Nanunuluyan sila sa Haran, at doon namamatay si Tara."
       da: "De bosætter sig i Karan, hvor Tera dør."
       sr: "Настањују се у Харану, где Тара умире."
+      hu: "Háránban telepednek le, ahol Terah meghal."
+      fi: "He asettuvat asumaan Harraniin, jossa Terah kuolee."
+      vi: "Họ định cư tại Cha-ran, nơi Tha-rê qua đời."
+      ro: "Se așază în Haran, unde Terah moare."
+      bg: "Те се заселват в Харан, където Тара умира."
   - place: adf74d4 # Shechem
     ref: Gen.12.6-Gen.12.7
     note:
@@ -82,6 +97,11 @@ stops:
       tl: "Sa Canaan, napakikita ang Panginoon kay Abram sa Sichem."
       da: "I Kana'an viser Herren sig for Abram ved Sikem."
       sr: "У Ханану се Господ јавља Авраму код Сихема."
+      hu: "Kánaánban az Úr megjelenik Ábrámnak Sikemnél."
+      fi: "Kanaanissa Herra ilmestyy Abramille Sikemissä."
+      vi: "Tại Ca-na-an, Đức Giê-hô-va hiện ra cùng Áp-ram ở Si-chem."
+      ro: "În Canaan, Domnul i Se arată lui Avram la Sihem."
+      bg: "В Ханаан Господ се явява на Аврам при Сихем."
   - place: a64f355 # Bethel
     ref: Gen.12.8
     note:
@@ -101,6 +121,11 @@ stops:
       tl: "Itinatayo niya ang kaniyang tolda sa pagitan ng Beth-el at Hai at nagtatayo ng isang dambana."
       da: "Han slår sit telt op mellem Betel og Aj og bygger et alter."
       sr: "Раширује шатор између Ветиља и Гаја и подиже жртвеник."
+      hu: "Sátrát Bétel és Aj között veti fel, és oltárt épít."
+      fi: "Hän pystyttää telttansa Betelin ja Ain välille ja rakentaa alttarin."
+      vi: "Người dựng trại giữa Bê-tên và A-hi, và lập một bàn thờ."
+      ro: "Își întinde cortul între Betel și Ai și zidește un altar."
+      bg: "Той разпъва шатъра си между Ветил и Гай и издига олтар."
   - place: af301ca # Egypt
     ref: Gen.12.10
     note:
@@ -120,6 +145,11 @@ stops:
       tl: "Dahil sa taggutom ay napipilitan siyang lumusong sa Egipto."
       da: "Hungersnød driver ham ned til Egypten."
       sr: "Глад га тера доле у Египат."
+      hu: "Az éhínség Egyiptomba kényszeríti."
+      fi: "Nälänhätä ajaa hänet alas Egyptiin."
+      vi: "Nạn đói buộc người phải xuống Ê-díp-tô."
+      ro: "Foametea îl face să coboare în Egipt."
+      bg: "Гладът го отвежда надолу в Египет."
   - place: a85151a # Hebron
     ref: Gen.13.18
     note:
@@ -139,6 +169,11 @@ stops:
       tl: "Nanunuluyan siya sa mga ensina ng Mamre sa Hebron."
       da: "Han bosætter sig ved Mamres egelunde i Hebron."
       sr: "Насељава се код дубраве Мамрије, која је код Хеврона."
+      hu: "Hebronban, a mamrei tölgyesnél telepszik le."
+      fi: "Hän asettuu asumaan Mamren tammistoon Hebronin luo."
+      vi: "Người định cư bên những cây sồi của Mam-rê ở Hếp-rôn."
+      ro: "Se așază lângă stejarii lui Mamre, la Hebron."
+      bg: "Той се заселва при дъбравата Мамре в Хеврон."
   - place: a513646 # Dan
     ref: Gen.14.14
     note:
@@ -158,6 +193,11 @@ stops:
       tl: "Hinahabol niya hanggang sa Dan ang mga haring bumihag kay Lot."
       da: "Han forfølger de konger, der havde ført Lot bort, lige til Dan."
       sr: "Гони цареве који су одвели Лота у ропство, све до Дана."
+      hu: "Üldözőbe veszi a Lótot elhurcoló királyokat, egészen Dánig."
+      fi: "Hän ajaa takaa kuninkaita, jotka veivät Lootin, aina Daniin saakka."
+      vi: "Người đuổi theo các vua đã bắt Lót, cho đến tận Đan."
+      ro: "Îi urmărește până la Dan pe regii care îl luaseră pe Lot."
+      bg: "Той преследва царете, пленили Лот, чак до Дан."
   - place: aad7e4e # Salem
     ref: Gen.14.18
     note:
@@ -177,6 +217,11 @@ stops:
       tl: "Naglalabas ng tinapay at alak si Melquisedec, na hari sa Salem."
       da: "Melkisedek, Salems konge, bringer brød og vin frem."
       sr: "Мелхиседек, цар салимски, износи хлеб и вино."
+      hu: "Melkizedek, Sálem királya kenyeret és bort visz elé."
+      fi: "Melkisedek, Salemin kuningas, tuo esiin leipää ja viiniä."
+      vi: "Mên-chi-xê-đéc, vua Sa-lem, đem bánh và rượu ra."
+      ro: "Melhisedec, regele Salemului, aduce pâine și vin."
+      bg: "Мелхиседек, царят на Салим, изнася хляб и вино."
   - place: a3f5814 # Gerar
     ref: Gen.20.1
     note:
@@ -196,6 +241,11 @@ stops:
       tl: "Nananatili siya nang ilang panahon sa Gerar."
       da: "Han opholder sig en tid i Gerar."
       sr: "Извесно време борави у Герару."
+      hu: "Egy ideig Gerárban tartózkodik."
+      fi: "Hän oleskelee jonkin aikaa Gerarissa."
+      vi: "Người lưu lại một thời gian ở Ghê-ra."
+      ro: "Locuiește o vreme în Gherar."
+      bg: "Той живее известно време в Герар."
   - place: a075d61 # Beersheba
     ref: Gen.21.31
     note:
@@ -215,6 +265,11 @@ stops:
       tl: "Nanunumpa sina Abraham at Abimelech, at ang dako ay tinatawag na Beer-seba."
       da: "Abraham og Abimelek aflægger ed, og stedet kaldes Beersheba."
       sr: "Аврам и Авимелех полажу заклетву, и место се назива Вирсавеја."
+      hu: "Ábrahám és Abimélek esküt tesznek, és a helyet Beérsebának nevezik."
+      fi: "Abraham ja Abimelek vannovat valan, ja paikka saa nimen Beerseba."
+      vi: "Áp-ra-ham và A-bi-mê-léc thề với nhau, và nơi ấy được gọi là Bê-e-Sê-ba."
+      ro: "Avraam și Abimelec fac un jurământ, iar locul este numit Beer-Șeba."
+      bg: "Авраам и Авимелех си дават клетва и мястото е наречено Вирсавия."
   - place: adaf385 # Moriah
     ref: Gen.22.2-Gen.22.13
     note:
@@ -234,6 +289,11 @@ stops:
       tl: "Ang paggapos kay Isaac sa isang bundok sa lupain ng Moria."
       da: "Bindingen af Isak på et bjerg i Morijas land."
       sr: "Приношење Исака на жртву на једном брду у земљи Морији."
+      hu: "Izsák megkötözése egy hegyen, Móriá földjén."
+      fi: "Iisakin sitominen vuorella Morian maassa."
+      vi: "Việc trói Y-sác trên một ngọn núi trong xứ Mô-ri-a."
+      ro: "Legarea lui Isaac pe un munte din țara Moria."
+      bg: "Обвързването на Исаак на една планина в земята Мория."
   - place: ae00861 # Machpelah
     ref: Gen.23.19
     note:
@@ -253,3 +313,8 @@ stops:
       tl: "Inililibing si Sara sa yungib ng Macpela; at kalaunan ay si Abraham din (Gen 25:9)."
       da: "Sara bliver begravet i Makpelas hule; senere også Abraham (1 Mos 25,9)."
       sr: "Сара је сахрањена у пећини Макпели; касније и Аврам (Пост 25,9)."
+      hu: "Sárát a makpélai barlangban temetik el; később Ábrahámot is (1Móz 25,9)."
+      fi: "Saara haudataan Makpelan luolaan; myöhemmin myös Abraham (1. Moos. 25:9)."
+      vi: "Sa-ra được chôn trong hang đá Mặc-bê-la; về sau Áp-ra-ham cũng được chôn tại đó (Sáng 25:9)."
+      ro: "Sara este îngropată în peștera Macpela; mai târziu și Avraam (Geneza 25:9)."
+      bg: "Сара е погребана в пещерата Махпела; по-късно там е погребан и Авраам (Бит. 25:9)."

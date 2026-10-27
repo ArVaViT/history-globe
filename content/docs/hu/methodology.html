@@ -1,0 +1,265 @@
+---
+title: Adatok és módszertan
+description: Honnan származik a History Globe minden helye, határa, dátuma és személye, hogyan ellenőriztük őket, és mi bizonytalan még.
+---
+
+<p class="lede">
+  A földgömb nyílt tudományos adatkészletekből épül, kézzel javítjuk és bővítjük, és minden
+  építésnél automatikusan ellenőrizzük. Ez az oldal elmondja, hogy az egyes rétegek honnan
+  származnak, mit változtattunk rajtuk, és mit nem tudunk.
+</p>
+
+<h2>A Biblia helyei</h2>
+<p>
+  A Biblia {{places}} helye és a hozzájuk tartozó versek az
+  <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
+    >OpenBible.info Bible Geocoding Data</a
+  >
+  adatbázisából származnak, amely az egyes helyekre a szakirodalomban javasolt azonosításokat
+  mérlegeli. Megtartjuk az általa előnyben részesített azonosítást és annak becslését, hogy az egyes
+  jelölt helyszínek mennyire valószínűek.
+</p>
+<p>
+  E {{places}} hely közül {{named}} név szerint szerepel egy versben azokban a könyvekben, amelyeket
+  az OpenBible címkéz, és mindegyiknek saját oldala van; a többi {{unnamed}} olyan rekord, amelyet
+  az OpenBible vezet, de e könyvek egyetlen verse sem nevez meg (például az 1Makk Adasája).
+  {{articles}} helyhez tartozik cikk. További {{excluded}} helyet kihagytunk, mert nem volt hozzá
+  közölhető pont (lásd alább).
+</p>
+<ul>
+  <li>
+    <b>A bizonyosság szavakkal.</b> Ha nem javasolnak komoly második helyszínt, az OpenBible
+    pontszáma (0–1000) mutatja, mennyire biztos az azonosítás: 800-tól felfelé biztosnak tekintjük,
+    és a kártya nem szól róla semmit; ez alatt a kártya azt írja, hogy
+    <i>legvalószínűbb</i> (600-tól) vagy <i>bizonytalan</i>. Egy hely <i>vitatott</i>, ha a második
+    jelölt aránya jelentős; ilyenkor minden jelölt helyszín megjelenik az arányával.
+  </li>
+  <li>
+    <b>Nincsenek koordináták az OpenStreetMapből vagy a Google-ből.</b> Az OpenBible rögzíti, hogy
+    az egyes koordináták honnan származnak. Azokat a pontokat, amelyeket az OpenStreetMapből vagy a
+    Google-ből vett át, a Wikidata koordinátái (CC0) váltják fel, vagy a helyet kihagyjuk
+    ({{excluded}} hely). Külön ellenőrzés megbuktatja az építést, ha ilyen pont megmaradt.
+  </li>
+  <li>
+    <b>A szövegből vett nevek.</b> Az orosz nevek az 1876-os Szinodális fordítást követik: az építés
+    szinte minden névhez megőriz egy verset, amelyben előfordul, és ellenőrzi, hogy a név benne van
+    abban a versben.
+  </li>
+</ul>
+
+<h2>Mikor álltak a helyek</h2>
+<p>
+  A térképen egy város csak azokban az években látszik teljesen, amikor állt. A Biblia {{life}}
+  helyéhez kézzel rögzítettük az alapítás, a pusztulás és az elhagyás éveit, mindegyiket a
+  forrásaival (ókori szerzők, krónikák, feliratok, ásatási jelentések). Csak szilárd dátumokat
+  rögzítünk: az a város, amelynek alapítása vagy vége vitatott, nem kap rá évet.
+</p>
+<p>
+  Az ókori világ {{ancient}} városát, amelyet a Biblia nem nevez meg — fővárosokat, kikötőket és
+  szentélyeket, például Ugaritot, Hattuszaszt, Márit vagy Delphoit —, egyenként választottuk ki és
+  kelteztük: mindegyiket a <a href="https://pleiades.stoa.org">Pleiades</a> vagy a Wikidata rekordja
+  alapján helyeztük el, az ókori lelőhelyen, nem a mai településen, és e rekordokból és
+  enciklopédikus leírásokból kelteztük, kézzel egyeztetve.
+</p>
+
+<h2>Határok</h2>
+<p>
+  Az államok és határaik évről évre a
+  <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatriából</a> (Seshat Global History
+  Databank, v0.2.0) származnak, amely a világ politikai egységeinek nyílt adatkészlete Kr. e.
+  3400-tól. Történelmi atlaszokból készült, és megközelítő, különösen a Kr. e. első évezred előtt.
+</p>
+<p>
+  A Biblia földjeire kijavítjuk, ahol a források eltérnek tőle: jelenleg {{overrides}} javítás van,
+  mindegyik az okával és a forrásaival. Júda Kr. e. 586-ig marad a térképen, Izrael Dávid
+  uralkodásával kezdődik Kr. e. 1010-ben, nem Kr. e. 1000-ben, Filisztea az öt városának tengerparti
+  síkságára korlátozódik, egy dinasztia pedig akkor ér véget, amikor elveszíti utolsó hatalmi
+  központját. A Levantét és Egyiptomot, Mezopotámiát, Anatóliát és Iránt, az Újszövetség görög–római
+  világát és a Közel-Keletet Kr. u. 1300-ig évről évre átvizsgáltuk, többek között Asszíria
+  hanyatlását és fellendülését a Kr. e. 8. században, Babilont Merodak-Baladan alatt, Pergamon
+  Rómára hagyását Kr. e. 133-ban, Makedóniát a püdnai csata után és Thrákia bekebelezését Kr. u.
+  46-ban. A javítások minden tételét először az alakzatokon teszteljük, majd egy második, különálló
+  MI-menetben újra ellenőrizzük a forrásokkal.
+</p>
+<p>
+  Az a királyság, amely adót fizetett egy birodalomnak vagy a védnöksége alatt uralkodott, a
+  birodalom színének világosabb árnyalatával jelenik meg, a neve alatt „Asszíria alatt” vagy „Róma
+  alatt” felirattal: Júda Asszíria, Egyiptom és Babilon alatt; Izrael és Filisztea Asszíria alatt; a
+  hasmóneus és a heródesi Júdea Róma alatt (és három évig Párthia alatt); a nabateusok és Kommagéné
+  Róma alatt. Ezeket az időszakokat ({{vassals}}) az asszír királyi feliratokból, a babiloni
+  krónikákból, a Bibliából, Josephus műveiből és újkori történeti művekből állítottuk össze, és
+  külön ellenőrző menetben újra átnéztük; az az év, amelyet csak egy évtizedes pontossággal
+  ismerünk, az adatokban „kb.” jelzést kap. Szamária Kr. e. 722-es eleste után Izrael földje asszír
+  tartományként jelenik meg, hiszen azzá vált.
+</p>
+
+<h2>Személyek</h2>
+<p>
+  A Biblia {{people}} személye és családi kapcsolataik a STEP Bible TIPNR-jéből (Tyndale House,
+  Cambridge) származnak. A kapcsolatokat nem vettük készpénznek:
+</p>
+<ul>
+  <li>
+    a szöveg által leggyakrabban megnevezett 1200 személy családi kapcsolatait és az 1Krón
+    nemzetségtábláit összevetettük a versekkel; 153 kapcsolatot, amelyet a szöveg nem állít,
+    töröltünk — Jézus testvéreit mint József és Mária fiait, Jezabelt mint Ahazjá anyját —, Jézus
+    nemzetségtáblájának hiányzó kapcsolatait pedig a szöveg alapján pótoltuk;
+  </li>
+  <li>
+    az összes 1136, egy személy és egy hely közti kapcsolatot, ahol a hely központi vagy kiegészítő
+    szerepet játszik, versről versre végigolvastuk; 344-et töröltünk (Mózes „Kánaánban”, Ábrahám
+    „Sodomában”, egy fiú helyei az apjának tulajdonítva), 94-hez pedig jobb verset rendeltünk;
+  </li>
+  <li>
+    az azonos nevűeket úgy különböztetjük meg, ahogyan a szöveg: „Keresztelő János”, „János,
+    Zebedeus fia”, „Ahazjá, Júda királya”.
+  </li>
+</ul>
+
+<h2 id="review">Események, túrák és cikkek</h2>
+<p>
+  Az eseményeket ({{events}}), a túrákat ({{tours}}) és a cikkeket ({{articles}}) MI segítségével, a
+  szerző irányításával írjuk meg, majd külön ellenőrző menetekben vetjük össze a forrásokkal: a
+  bibliai szöveggel abban, amit mond, az ókori szerzőkkel, krónikákkal és feliratokkal a dátumokban,
+  a tudományos irodalommal a helyszínekben. Minden cikk, válasz és túra felsorolja a forrásait, az
+  egész szövegre, nem mondatonként. Idézetek csak az adott nyelv közkincs Bibliájából származnak,
+  amelyeket a <a href="sources.html">források</a> oldal sorol fel. Egyetlen túra sem ment át az első
+  ellenőrzésen változtatás nélkül; mindegyiket kijavítottuk és újra ellenőriztük. Az utolsó teljes
+  menet, amely 2026. október 17-én fejeződött be, mind a 746 cikket újraolvasta a forrásaikkal
+  szemben, közülük mintegy 210-et kétszer, és 1088 javítást tett, mindegyiket átvezetve arra a 11
+  nyelvre, amelyen az oldal akkor elérhető volt; egyértelmű hibát 157 cikkben találtunk. A 2026.
+  október 24-én hozzáadott öt nyelvet (svéd, norvég, dán, tagalog és szerb) a javított szövegekből
+  fordítottuk; mindegyik szövegüket ezután külön MI-lektor olvasta össze az angollal, és minden
+  idézetet ellenőriztünk az adott nyelv Bibliájával. Ezeket az ellenőrzéseket a forrásokból dolgozó
+  MI végzi, nem kutatók; a cikken, amelyet történész olvasott, szerepel a történész neve.
+</p>
+<p>
+  A megállóig tartó távolságot légvonalban adjuk meg. Kr. e. 312-től, amikor a római utak kezdődnek,
+  mellette szerepel az Itiner-e útjai mentén megtett út is: a hálózatukon át vezető legrövidebb,
+  kivéve, ha több mint két és félszerese a légvonalnak; a hajózott szakaszt nem számoljuk
+  szárazföldi útnak. A gyaloglás idejét napi 30 km-rel számítjuk, ami az ókori napi útra szokásos
+  becslés, az időjárás, a pihenők és a teher figyelembevétele nélkül. A tengeren nem feltételezünk
+  sebességet: az utazás napjait csak ott adjuk meg, ahol a szöveg is megadja (ApCsel 20,6, „öt nap
+  alatt”), azzal a verssel, és olyan hozzávetőlegesen, ahogyan a szöveg közli. Ahol a szöveg egész
+  vidékeken vezet át az út leírása nélkül (ApCsel 20,1–3, Efezustól Makedónián és Görögországon át
+  Filippiig), a szakasz ezt mondja ki, és nem ad időt. Egy szakasz domborzatát a Copernicus
+  magassági adataiból (a Mapterhornon át) olvassuk ki ugyanannak az útnak a mentén, vagy út nélkül a
+  légvonal mentén; a profil alatti felirat megmondja, melyikről van szó.
+</p>
+
+<p>
+  A csaták és ostromok ({{battles}}) azok, amelyeket a Biblia elbeszél, és néhány azon kívüli, amely
+  Izrael sorsát eldöntötte. Mindegyik azon a helyen áll, ahol vívták, és a térképen a maga éveiben
+  látszik. A bibliaiakat úgy keltezzük, ahogyan a túrák ugyanazokat a történeteket; a többihez nem
+  vers, hanem ókori vagy tudományos forrás tartozik. Egy második, különálló MI-menet a Szinodális
+  szöveggel és a King James-fordítással vetette össze a vázlatot: az 58 tételből 16-ot
+  kijavítottunk, egyet pedig elhagytunk, mert a térképen nincs pont a helyszínéhez.
+</p>
+
+<p>
+  A makkabeusi események és csaták az 1–2Makk könyveire hivatkoznak, amelyet a Szinodális Biblia
+  tartalmaz, a protestáns kánon viszont nem: minden ilyen hivatkozás „deuterokanonikus” jelölést
+  kap, és a hivatkozása olyan szöveget nyit meg, amelyben megvan a könyv.
+</p>
+
+<h2 id="chronology">Dátumok és kronológia</h2>
+<p>
+  A térkép minden történetet egy évhez köt, ezért a dátumai egyetlen konvenciót követnek; ahol a
+  kutatók nem értenek egyet, az év a térkép támpontja, nem ítélet.
+</p>
+<ul>
+  <li>
+    <b>Izrael és Júda királyai</b> E. R. Thiele kronológiáját követik (<i
+      >The Mysterious Numbers of the Hebrew Kings</i
+    >): Salamon Kr. e. kb. 966-ban kezdi a templom építését, és a királyság Kr. e. kb. 931-ben
+    szakad ketté. Más rekonstrukciók néhány évvel eltérnek; W. F. Albright például a szakadást Kr.
+    e. 922-re tette.
+  </li>
+  <li>
+    <b>A korábbi dátumokat</b> ezektől visszafelé számoljuk, ahogyan a szöveg számolja: a kivonulás
+    Kr. e. 1446-ban, a templom előtt 480 évvel (1Kir 6,1), Kánaán meghódítása Kr. e. 1406-ban, és
+    Dávid uralkodása Kr. e. 1010-től. Ezek konvenciók: sok kutató a kivonulást a Kr. e. 13. századra
+    teszi, vagy kétli, hogy úgy történt, ahogyan elbeszélik, és a
+    <a href="../../hu/q/when-was-the-exodus/"><i>Mikor volt a kivonulás?</i></a> kérdésre adott
+    válasz kifejti a vitát. Az ősatyák konvencionális éveknél állnak.
+  </li>
+  <li>
+    <b>A Biblián kívüli eseményeket</b> az időpontjukat rögzítő források keltezik (a babiloni
+    krónika, az asszír évkönyvek, Josephus, egy keltezett felirat), mindegyiket a forrásaival, a
+    legtöbb esetben kettővel vagy többel; Jeruzsálem elestét Kr. e. kb. 586-nál mutatjuk (a Kr. e.
+    587 is elfogadott).
+  </li>
+  <li>
+    <b>Az Újszövetség:</b> Jézus születése Kr. e. kb. 5, a keresztre feszítés Kr. u. kb. 30 (a Kr.
+    u. 33 is elfogadott), Pál útjai pedig a szokásosan megadott években.
+  </li>
+  <li>
+    <b>A „kb.”</b> a csak megközelítőleg ismert évet jelöli, mint ahogy minden évet a Kr. e. első
+    évezred előtt.
+  </li>
+</ul>
+
+<h2>Ellenőrzések minden építésnél</h2>
+<p>Semmi nem jelenik meg, ha nem megy át minden ellenőrzésen:</p>
+<ul>
+  <li>
+    minden forrás engedélyezett licenccel rendelkezik (nincs share-alike, nincs nem kereskedelmi
+    adat);
+  </li>
+  <li>minden hivatkozás valódi könyvre, fejezetre és versre mutat;</li>
+  <li>minden orosz név megtalálható a hozzá megadott versben;</li>
+  <li>
+    minden túramegálló meg van nevezve az igeszakaszában, vagy a kivétel az okával együtt
+    dokumentált;
+  </li>
+  <li>a határok minden javításának és egy város minden dátumának van forrása;</li>
+  <li>a tartalmi sémák szigorúak: egy ismeretlen vagy elírt mező leállítja az építést.</li>
+</ul>
+
+<h2>Mi bizonytalan</h2>
+<ul>
+  <li>
+    A Kr. e. első évezred előtti dátumok megközelítők, némelyik vitatott; a térkép „kb.” jelzéssel
+    látja el őket.
+  </li>
+  <li>Az OpenBible aránya a jelölt helyszínek között becslés, nem tudományos konszenzus.</li>
+  <li>
+    Az ókori határokat modern atlaszokból rajzoltuk, és leegyszerűsítik a folyton változó uralmi
+    viszonyokat.
+  </li>
+  <li>
+    Sok kisebb helyhez még nincs rögzített év; végig fennállónak rajzoljuk őket (vagy a csak az
+    Újszövetségben megnevezett helyeket az újszövetségi időktől kezdve).
+  </li>
+</ul>
+
+<h2 id="cite">Hogyan kell hivatkozni</h2>
+<p>
+  A History Globe menet közben javul, ezért a hivatkozásnak meg kell neveznie a felhasznált adatok
+  dátumát. Minden dokumentációs oldal alján szerepel ez a dátum („Az adatok állapota”), az API
+  <code>index.json</code> fájlja pedig <code>built_at</code> néven adja meg.
+</p>
+<p>Az oldal:</p>
+<pre><code class="cite">Arnaut, Vadym. History Globe: an atlas of biblical history. {{site}}/
+(data of {{built}}; accessed …).</code></pre>
+<p>Egy oldal a címével és webcímével:</p>
+<pre><code class="cite">“Jerusalem.” In Vadym Arnaut, History Globe. {{site}}/en/place/jerusalem/
+(data of {{built}}; accessed …).</code></pre>
+<p>Az adatok, az adatkészlet kártyáján megadott pillanatkép dátumával:</p>
+<pre><code class="cite">Arnaut, Vadym. History Globe dataset. Hugging Face, snapshot of ….
+https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
+
+<h2 id="report">Javítások</h2>
+<p>
+  Hibát, hiányzó forrást vagy jobb olvasatot talált? Írjon a
+  <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a> címre; fiók nem
+  kell. Nevezze meg az oldalt és azt, mi a hiba, forrással, ha van. Minden jelzést elolvasunk, a
+  megerősített hibát pedig kijavítjuk.
+</p>
+<p>
+  GitHub-fiókkal használhatja a minden helykártyán szereplő <i>Hibát talált?</i> hivatkozást is,
+  amely kitöltött hellyel nyit hibajegyet a nyilvános tárhelyen, vagy közvetlenül is nyithat egyet:
+  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+    >github.com/ArVaViT/history-globe/issues</a
+  >.
+</p>

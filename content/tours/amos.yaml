@@ -23,6 +23,11 @@ title:
   tl: "Amos: ang mga salita laban sa mga bansa"
   da: "Amos: ordene mod folkene"
   sr: "Амос: речи против народа"
+  hu: "Ámós: a népek ellen szóló beszédek"
+  fi: "Aamos: sanat kansoja vastaan"
+  vi: "A-mốt: những lời nghịch cùng các dân"
+  ro: "Amos: cuvintele împotriva neamurilor"
+  bg: "Амос: словата против народите"
 year: "760 BC"
 # Where the words were aimed, not a journey: no time on foot. Only Tekoa and Bethel are
 # the prophet's own places.
@@ -48,6 +53,11 @@ stops:
       tl: "“Ang mga salita ni Amos, na nasa gitna ng mga pastor sa Tecoa”: isang pastor ng Juda na isinugo sa Israel, dalawang taon bago lumindol."
       da: "»De Ord, som Amos, der var iblandt Hyrderne fra Thekoa«: en hyrde fra Juda, sendt til Israel, to år før jordskælvet."
       sr: "„Речи Амоса који беше између пастира из Текује“: пастир из Јуде послан Израиљу, две године пре труса."
+      hu: "„Ámós beszédei, a ki a Tékoabeli pásztorok közt volt”: egy júdai pásztor, akit Izráelhez küldtek, két évvel a földindulás előtt."
+      fi: "”Aamoksen sanat, hänen, jolla oli lammaslaumoja Tekoassa”: Juudan paimen, joka lähetetään Israeliin kaksi vuotta ennen maanjäristystä."
+      vi: "“Lời của A-mốt, người trong bọn chăn ở Thê-cô-a”: một người chăn của Giu-đa được sai đến Y-sơ-ra-ên, hai năm trước cơn động đất."
+      ro: "„Cuvintele lui Amos”, care era dintre păstorii din Tecoa: un păstor din Iuda trimis la Israel, cu doi ani înainte de cutremur."
+      bg: "„Думите на Амоса, който бе от пастусите на Текое“: пастир от Юда, пратен при Израил, две години преди земетресението."
   - place: a69c1d4 # Damascus
     ref: Amos.1.3-Amos.1.5
     note:
@@ -67,6 +77,11 @@ stops:
       tl: "“Dahil sa tatlong pagsalangsang ng Damasco, oo, dahil sa apat”: giniik nila ang Gilead ng panggiik na bakal; ang bayan ng Siria ay papasok sa pagkabihag hanggang sa Cir."
       da: "»For tre Overtrædelser af Damaskus og for fire«: de har tærsket Gilead med jerntærskeslæder; Syriens folk skal føres som fanger til Kir."
       sr: "„За три зла и за четири што учини Дамаск“: врхоше Галад гвозденом браном; народ сирски отићи ће у ропство у Кир."
+      hu: "„Három bűne miatt Damaskusnak, sőt négy miatt”: vas-cséplőkkel cséplették meg Gileádot; Szíria népe fogságba vonul Kirbe."
+      fi: "”Damaskon kolmen rikoksen, neljän rikoksen tähden”: he ovat puineet Gileadin raudalla; Syyrian kansa viedään vankeuteen Kiriin."
+      vi: "“Bởi cớ tội ác của Đa-mách đến gấp ba gấp bốn lần”: chúng đã lấy đồ đập lúa bằng sắt mà đập Ga-la-át; dân Sy-ri sẽ bị đày đến Ki-rơ."
+      ro: "„asupra celor trei păgânătăți ale Damascului, și asupra celor patru”: au treierat Galaadul cu unelte de fier; poporul Siriei va merge în robie la Chir."
+      bg: "„За три престъпления на Дамаск, И за четири“: те вършееха Галаад с желязо; народът на Сирия ще отиде в плен в Кир."
   - place: aa8edd2 # Gaza
     ref: Amos.1.6-Amos.1.8
     note:
@@ -86,6 +101,11 @@ stops:
       tl: "Dinalang bihag ng Gaza ang buong bayan upang ibigay sa Edom: apoy sa kuta nito, at malilipol ang nalabi sa mga Filisteo."
       da: "Gaza førte et helt folk bort som fanger for at udlevere dem til Edom: ild over dets mur, og filistrenes levning skal gå til grunde."
       sr: "Газа је цео један народ одвела у ропство да га преда Едому: огањ на њен зид, и остатак Филистеја изгинуће."
+      hu: "Gáza egész népet hurcolt fogságba, hogy kiszolgáltassa Edomnak: tűz száll a falára, és a filiszteusok maradéka elvész."
+      fi: "Gaza vei kokonaisen kansan vankeuteen luovuttaakseen sen Edomille: tuli sen muuriin, ja filistealaisten jäännös hukkuu."
+      vi: "Ga-xa bắt cả một dân làm phu tù để nộp cho Ê-đôm: lửa sẽ đến trên tường thành nó, và phần còn sót của người Phi-li-tin sẽ bị diệt."
+      ro: "Gaza a dus în robie un popor întreg ca să-l predea Edomului: foc pe zidul ei, iar rămășița filistenilor va pieri."
+      bg: "Газа отведе в плен цял народ, за да го предаде на Едом: огън върху стената ѝ, и остатъкът на филистимците ще загине."
   - place: a160272 # Tyre
     ref: Amos.1.9-Amos.1.10
     note:
@@ -105,6 +125,11 @@ stops:
       tl: "Ibinigay ng Tiro ang mga bihag sa Edom at hindi inalaala ang tipan ng pagkakapatiran."
       da: "Tyrus udleverede fanger til Edom og huskede ikke den broderlige pagt."
       sr: "Тир је предао заробљенике Едому и није се сетио братског савеза."
+      hu: "Tírusz foglyokat szolgáltatott ki Edomnak, és nem emlékezett meg a testvéri szövetségről."
+      fi: "Tyros luovutti vankeja Edomille eikä muistanut veljesliittoa."
+      vi: "Ty-rơ nộp những phu tù cho Ê-đôm và chẳng nhớ đến giao ước anh em."
+      ro: "Tirul a predat robi Edomului și nu și-a adus aminte de legământul frățesc."
+      bg: "Тир предаде пленници на Едом и не си спомни братския завет."
   - place: a871210 # Bozrah
     ref: Amos.1.11-Amos.1.12
     note:
@@ -124,6 +149,11 @@ stops:
       tl: "Hinabol ng Edom ang kaniyang kapatid ng tabak: “magsusugo ako ng isang apoy sa Teman, at susupukin niyaon ang mga palacio sa Bozra.”"
       da: "Edom forfulgte sin bror med sværdet: »derfor vil jeg sende en Ild i Theman, og den skal fortære Bozras Paladser.«"
       sr: "Едом је мачем гонио брата свог: „Него ћу пустити огањ у Теман, и прождреће дворе у Восори.“"
+      hu: "Edom karddal üldözte testvérét: „Tüzet vetek azért Témánra, és az emészti majd meg Boczra palotáit.”"
+      fi: "Edom ajoi veljeään takaa miekalla: ”minä lähetän tulen Teemania vastaan, ja se kuluttaa Bosran palatsit”."
+      vi: "Ê-đôm lấy gươm đuổi theo anh em mình: “Ta sẽ sai lửa đến trên Thê-man, nó sẽ thiêu nuốt những đền đài của Bốt-ra.”"
+      ro: "Edom și-a urmărit fratele cu sabia: „voiu trimite foc asupra Themanului”, care va mistui palatele Boțrei."
+      bg: "Едом преследва брат си с меч: „ще проводя огън върху Теман, Та ще изпояде палатите на Восора.“"
   - place: ae067b5 # Rabbah
     ref: Amos.1.13-Amos.1.15
     note:
@@ -143,6 +173,11 @@ stops:
       tl: "Pinaluwa ng mga Ammonita ang bituka ng mga babae ng Gilead upang mapalapad ang kanilang hangganan: apoy sa kuta ng Rabba, at ang kanilang hari ay papasok sa pagkabihag."
       da: "Ammoniterne oprev kvinderne i Gilead for at udvide deres grænse: ild i Rabbas mur, og deres konge går i fangenskab."
       sr: "Амонци су распорили жене галадске да рашире међе своје: огањ на зид Раве, и њихов цар одлази у ропство."
+      hu: "Az ammoniták felhasogatták Gileád asszonyait, hogy kiterjesszék határukat: tűz száll Rabba falára, királyuk pedig fogságba megy."
+      fi: "Ammonilaiset repivät auki Gileadin naiset laajentaakseen rajaansa: tuli Rabban muurissa, ja heidän kuninkaansa joutuu vankeuteen."
+      vi: "Người Am-môn mổ bụng đàn bà có thai của Ga-la-át để mở rộng bờ cõi: lửa sẽ đến trên tường thành Ráp-ba, và vua chúng đi vào cảnh phu tù."
+      ro: "Amoniții au spintecat femeile din Galaad ca să-și lărgească hotarul: foc în zidul Rabei, iar regele lor merge în robie."
+      bg: "Амонците разпраха жените на Галаад, за да разширят пределите си: огън в стената на Рава, и царят им отива в плен."
   - place: a2d84de # Kerioth
     ref: Amos.2.1-Amos.2.3
     note:
@@ -162,6 +197,11 @@ stops:
       tl: "Sinunog ng Moab ang mga buto ng hari sa Edom na pinapaging apog: susupukin ng apoy ang mga palacio ng Cherioth."
       da: "Moab brændte Edoms konges ben til kalk: ild skal fortære Kerijots paladser."
       sr: "Моав је кости цара едомског спалио у креч: огањ ће прождрети дворе кериотске."
+      hu: "Moáb mészzé égette Edom királyának csontjait: tűz emészti meg Kerijjót palotáit."
+      fi: "Moab poltti Edomin kuninkaan luut kalkiksi: tuli kuluttaa Kerijotin palatsit."
+      vi: "Mô-áp đốt xương vua Ê-đôm thành vôi: lửa sẽ thiêu nuốt những đền đài của Kê-ri-giốt."
+      ro: "Moab a ars oasele regelui Edomului până le-a făcut var: focul va mistui palatele Cheriotului."
+      bg: "Моав изгори костите на едомския цар на вар: огън ще пояде палатите на Кириот."
   - place: a15257a # Jerusalem
     ref: Amos.2.4-Amos.2.5
     note:
@@ -181,6 +221,11 @@ stops:
       tl: "Ang Juda rin: itinakuwil nila ang kautusan ng Panginoon; “magsusugo ako ng isang apoy sa Juda; at susupukin niyaon ang mga palacio ng Jerusalem.”"
       da: "Også Juda: de foragtede Herrens lov; »derfor vil jeg sende en Ild i Juda, og den skal fortære Paladserne i Jerusalem.«"
       sr: "И Јуда: презреше закон Господњи; „Него ћу пустити огањ у Јуду, те ће прождрети дворе јерусалимске.“"
+      hu: "Júda is: megvetették az Úr törvényét; „Tüzet vetek azért Júdára, és az emészti meg Jeruzsálem palotáit.”"
+      fi: "Myös Juuda: he halveksivat Herran lakia; ”minä lähetän tulen Juudaa vastaan, ja se kuluttaa Jerusalemin palatsit”."
+      vi: "Giu-đa cũng vậy: họ khinh bỉ luật pháp của Đức Giê-hô-va; “Ta sẽ sai lửa đến trên Giu-đa, nó sẽ thiêu nuốt những đền đài của Giê-ru-sa-lem.”"
+      ro: "Și Iuda: au disprețuit legea Domnului; „voiu trimite foc asupra Iudei, și va mâncà temeliile Ierusalimului”."
+      bg: "И Юда също: презряха закона Господен; „ще проводя огън върх Юда, Та ще изпояде палатите на Ерусалим.“"
   - place: a041bb3 # Samaria
     ref: Amos.2.6-Amos.4.3
     note:
@@ -200,6 +245,11 @@ stops:
       tl: "Sa huli at pinakamahaba, ang Israel: ipinagbibili nila ang matuwid dahil sa pilak at ang mapagkailangan sa dalawang paang panyapak. Tinatawag ang mga bansa sa mga bundok ng Samaria upang masdan ang mga paniniil doon, at ang “mga baka ng Basan” ay dadalhing palayo sa pamamagitan ng mga bingwit."
       da: "Sidst og længst Israel: de sælger den retfærdige for sølv og den fattige for et par sko. Folkene kaldes til Samarias bjerge for at se dets undertrykkelser, og »Basans Køer« skal slæbes bort med kroge."
       sr: "На крају и најдуже, Израиљ: праведника продају за сребро и убогог за пар ципела. Народи се зову на горе самаријске да виде његова насиља, а „краве васанске“ биће одведене куком."
+      hu: "Végül és a leghosszabban Izráel: pénzért eladják az igazat, a szegényt pedig egy pár saruért. A népeket Szamária hegyeire hívják, hogy lássák az ott folyó elnyomást, „Básánnak ünői” pedig horgokkal vitetnek el."
+      fi: "Viimeisenä ja pisimpänä Israel: he myyvät hurskaan rahasta ja köyhän kenkäparista. Kansat kutsutaan Samarian vuorille näkemään sen sortoa, ja ”Baasanin lehmät” viedään pois koukuilla."
+      vi: "Sau hết và dài nhất là Y-sơ-ra-ên: chúng bán người công bình lấy bạc và kẻ nghèo lấy một đôi giày. Các dân được gọi đến trên những núi của Sa-ma-ri để xem những sự hà hiếp trong nó, và “bò cái của Ba-san” sẽ bị dẫn đi bằng móc."
+      ro: "Ultimul și cel mai pe larg, Israel: îl vând pe cel drept pe argint și pe cel sărac pentru o pereche de încălțări. Neamurile sunt chemate pe munții Samariei să-i vadă asupririle, iar „junincele Vasanului” vor fi duse cu cârlige."
+      bg: "Последен и най-пространно — Израил: продават праведния за сребро и сиромаха за чифт обуща. Народите са призовани на самарийските планини да видят угнетенията в нея, а васанските крави ще бъдат отведени с куки."
   - place: ab94aea # Gilgal
     ref: Amos.4.4-Amos.4.13
     note:
@@ -219,6 +269,11 @@ stops:
       tl: "Ang mga hain sa Beth-el at Gilgal ay nagpaparami lamang ng pagsalangsang; ang taggutom, tagtuyot, amag at salot ay hindi nagbalik sa Israel. Humanda kang salubungin mo ang iyong Dios."
       da: "Ofrene i Betel og Gilgal øger kun overtrædelsen; hungersnød, tørke, kornbrand og pest bragte ikke Israel tilbage. »Bered dig, o Israel! til at møde din Gud.«"
       sr: "Жртве у Ветиљу и Галгалу само умножавају безакоња; глад, суша, жега и помор нису вратили Израиља. Приправи се да дочекаш Бога свог."
+      hu: "A Bételben és Gilgálban bemutatott áldozatok csak szaporítják a vétket; sem az éhínség, sem az aszály, sem a gabonaüszög, sem a döghalál nem térítette vissza Izráelt. Készülj fel, hogy találkozzál Istenseddel."
+      fi: "Uhrit Betelissä ja Gilgalissa vain lisäävät rikkomusta; nälkä, kuivuus, viljantuho ja rutto eivät tuoneet Israelia takaisin. Valmistaudu kohtaamaan Jumalasi."
+      vi: "Các của lễ tại Bê-tên và Ghinh-ganh chỉ làm cho tội lỗi thêm nhiều; đói kém, hạn hán, ruộng cháy và dịch lệ đều không đem được Y-sơ-ra-ên trở lại. Hãy sửa soạn mà gặp Đức Chúa Trời ngươi."
+      ro: "Jertfele de la Betel și Ghilgal nu fac decât să înmulțească fărădelegea; foametea, seceta, rugina grâului și ciuma nu l-au întors pe Israel. Pregătește-te să-L întâlnești pe Dumnezeul tău."
+      bg: "Жертвите във Ветил и Галгал само умножават престъпленията; гладът, сушата, главнята и морът не върнаха Израил. Приготви се да посрещнеш своя Бог."
   - place: ad2f6c2 # Beersheba
     ref: Amos.5.1-Amos.5.27
     note:
@@ -238,6 +293,11 @@ stops:
       tl: "Isang panaghoy para sa dalaga ng Israel: “huwag ninyong hanapin ang Beth-el, ni magsipasok man sa Gilgal, at huwag kayong magsidaan sa Beer-seba”; hanapin ang Panginoon, at bumugso ang katarungan na parang tubig."
       da: "En klagesang over Israels jomfru: »søger ikke Bethel, og kommer ikke til Gilgal, og gaar ikke over til Beersaba«; søg Herren, og lad retten strømme som vand."
       sr: "Тужбалица над девојком Израиљевом: „не тражите Ветиља, и не идите у Галгал, и не пролазите у Вирсавеју“; тражите Господа, и нека суд тече као вода."
+      hu: "Siratóének Izráel szűze fölött: „ne keressétek Béth-Elt; Gilgálba se menjetek; Beér-Sebába se menjetek át”; keressék az Urat, és az ítélet folyjon, mint a víz."
+      fi: "Itkuvirsi Israelin neitsyestä: ”Älkää etsikö Beeteliä, älkää menkö Gilgaliin älkääkä vaeltako Beersebaan”; etsikää Herraa, ja oikeus virratkoon kuin vesi."
+      vi: "Bài ai ca về xử nữ của Y-sơ-ra-ên: “Chớ tìm kiếm Bê-tên, chớ vào trong Ghinh-ganh, đừng đi đến Bê-e-Sê-ba”; hãy tìm kiếm Đức Giê-hô-va, và hãy làm cho sự chánh trực chảy xuống như nước."
+      ro: "O plângere pentru fecioara lui Israel: „nu căutați Vetilul, și în Galgala nu intrați, și pe la fântâna jurământului nu treceți”; căutați-L pe Domnul și judecata să curgă ca apele."
+      bg: "Плач над Израилевата девица: „не търсете Ветил, И не влизайте в Галгал, И не заминвайте във Вирсавее“; търсете Господа и нека правосъдието тече като вода."
   - place: a64f355 # Bethel
     ref: Amos.7.10-Amos.7.17
     note:
@@ -257,3 +317,8 @@ stops:
       tl: "Isinusumbong ni Amasias na saserdote sa Beth-el si Amos kay Jeroboam at pinaaalis siya patungong Juda: “huwag ka nang manghula pa sa Beth-el: sapagka't siyang santuario ng hari”. Sumasagot si Amos na hindi siya propeta, ni anak ng propeta, kundi kinuha siya ng Panginoon mula sa kawan."
       da: "Præsten Amazja i Betel melder Amos til Jeroboam og sender ham bort til Juda: »i Bethel maa du ikke ydermere blive ved at spaa; thi det er Kongens Helligdom«. Amos svarer, at han hverken var profet eller profetsøn, men at Herren tog ham fra hjorden."
       sr: "Амасија, свештеник ветиљски, јавља Амоса Јеровоаму и тера га у Јуду: „у Ветиљу више не пророкуј, јер је светиња царева и дом је царски“. Амос одговара да није био пророк ни син пророчки, него га је Господ узео од стада."
+      hu: "Amácja, Bétel papja följelenti Ámóst Jeroboámnál, és elküldi Júdába: „Béth-Elben pedig ne prófétálj többé; mert a király szenthelye…” Ámós azt feleli, hogy ő nem próféta, sem prófétának fia, de az Úr elhívta a nyáj mellől."
+      fi: "Betelin pappi Amasja ilmiantaa Aamoksen Jerobeamille ja käskee tämän pois Juudaan: ”Beetelissä älä ennusta enää, sillä se on kuninkaan pyhäkkö”. Aamos vastaa, ettei hän ollut profeetta eikä profeetan poika, vaan Herra otti hänet laumansa äärestä."
+      vi: "A-ma-xia, thầy tế lễ của Bê-tên, tố cáo A-mốt với Giê-rô-bô-am và đuổi người về Giu-đa: “chớ cứ nói tiên tri tại Bê-tên nữa; vì ấy là một nơi thánh của vua”. A-mốt đáp rằng mình không phải là đấng tiên tri, cũng không phải con đấng tiên tri, nhưng Đức Giê-hô-va đã bắt lấy người từ sau bầy."
+      ro: "Amația, preotul din Betel, îl pârăște pe Amos lui Ieroboam și îl trimite înapoi în Iuda: „în Vetil nu vei mai adaoge a prorocì, că sfințitorul împăratului este”. Amos răspunde că nu era nici profet, nici fiu de profet, ci Domnul l-a luat de la turmă."
+      bg: "Амасия, свещеникът на Ветил, донася за Амос на Йеровоам и го отпраща в Юда: да не пророкува вече във Ветил, „защото е светилище на царя“. Амос отговаря, че не е бил нито пророк, нито пророчески син, но Господ го взел от стадото."

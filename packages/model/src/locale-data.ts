@@ -64,13 +64,26 @@ export const localeData = (locale: string): LocaleData | undefined => LOADED.get
 export async function loadLocaleData(locale: string): Promise<boolean> {
   if (!(ALL_LOCALES as readonly string[]).includes(locale)) return false;
   if (locale === "en" || LOADED.has(locale)) return true;
-  const mod = (await import(`./locales/${locale as Exclude<Locale, "en">}.ts`)) as {
-    default: LocaleData;
-  };
-  LOADED.set(locale, mod.default);
-  if (mod.default.years) setYearWords(locale as Locale, mod.default.years);
+  const data = (await import(`./locales/${locale as Exclude<Locale, "en">}.ts`).then(
+    (mod: { default: LocaleData }) => mod.default,
+    async (e: unknown) => {
+      // A language known before its words are written has no file yet: its years only.
+      if (!PENDING.has(locale)) throw e;
+      const years = (await import("./pending-years.ts")).PENDING_YEARS[locale as Locale];
+      return (years ? { years } : {}) satisfies LocaleData;
+    },
+  )) as LocaleData;
+  LOADED.set(locale, data);
+  if (data.years) setYearWords(locale as Locale, data.years);
   return true;
 }
+
+/**
+ * The languages the code knows whose file in ./locales the translators have not written yet
+ * (waves 4 and 5): until it comes, only their years are known (pending-years.ts) and the English
+ * stands in for the rest. A language that has its file reads it, listed here or not.
+ */
+export const PENDING: ReadonlySet<string> = new Set(["tr", "sw"]);
 
 /** Every language's data, for the build scripts and the tests, which write them all. */
 export async function loadAllLocaleData(): Promise<void> {

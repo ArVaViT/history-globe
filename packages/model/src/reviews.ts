@@ -83,6 +83,13 @@ const ours = z
     da: opt,
     tl: opt,
     sr: opt,
+    hu: opt,
+    fi: opt,
+    vi: opt,
+    tr: opt,
+    sw: opt,
+    ro: opt,
+    bg: opt,
   })
   .transform(
     (o) =>
@@ -137,6 +144,8 @@ export const ReviewFile = z
       not_checked: z.array(z.enum(REVIEW_SCOPES)),
       /** The reviewer's own reservation, in their words ("I did not check the Byzantine material"). */
       note: z.string().min(1).optional(),
+      /** With `translations` checked: the languages whose texts they read (default: their statement's). */
+      languages: z.array(z.enum(LOCALES)).min(1).optional(),
     }),
     /** The reviewer's statement, in their words and language, as approved. */
     statement: z.strictObject({
@@ -192,10 +201,20 @@ export const ReviewFile = z
   .refine((r) => r.scope.checked.every((s) => !r.scope.not_checked.includes(s)), {
     message: "an aspect cannot be both checked and not checked",
   })
+  .refine((r) => !r.scope.languages || r.scope.checked.includes("translations"), {
+    message: "scope.languages names the translations read, so translations must be checked",
+  })
   .refine((r) => r.licence === "CC-BY-4.0" || !r.full_review, {
     message: "a full review is published only under CC BY 4.0",
   });
 export type ReviewFile = z.output<typeof ReviewFile>;
+
+/** The languages whose translation the reviewer read: none unless `translations` was checked. */
+export function translationsRead(r: ReviewFile): readonly string[] {
+  if (r.scope.checked.includes("translations"))
+    return r.scope.languages ?? [r.statement.lang.split("-")[0] ?? r.statement.lang];
+  return [];
+}
 
 /** The kind and id of a reviewed item, whichever key it was written with. */
 export function itemOf(i: ReviewFile["items"][number]): { kind: ReviewKind; id: string } {
@@ -225,6 +244,8 @@ export interface ItemReview {
   readonly status: "published" | "corrections-in-progress";
   /** The item's text has changed since the version read. */
   readonly changed: boolean;
+  /** The languages whose translation the reviewer read (translationsRead). */
+  readonly translations: readonly string[];
 }
 
 /** A review as the build writes it for the pages (apps/web/build/reviews.json). */

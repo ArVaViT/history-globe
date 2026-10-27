@@ -939,7 +939,7 @@ function ReviewLine({ article, locale }: { article: Article; locale: Locale }) {
           </a>
         </p>
       ))}
-      {locale !== "en" && (
+      {locale !== "en" && !reviews.some((r) => r.translations.includes(locale)) && (
         <p className="mt-0.5 text-[12px] text-ink-soft">{t("place.article_english_only")}</p>
       )}
     </div>

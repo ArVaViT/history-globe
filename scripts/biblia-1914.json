@@ -1,0 +1,335 @@
+{
+  "_": "The 66 books of Biblia 1914 (Ediția Sfântului Sinod, Bucharest 1914) as Romanian Wikisource transcribes them: each page at one revision (oldid), with the SHA-256 of its wikitext (action=raw). build-verses.ts fetches these revisions into pipeline/.cache and refuses a page that does not hash so. Checked 2026-10-25: every page unchanged since 2026-01-01.",
+  "pages": {
+    "Gen": {
+      "title": "Biblia 1914/Facerea",
+      "oldid": 148009,
+      "sha256": "42be4d840a68b702277fad712b87b773185fbf7f39a21ee2c2c1c54d91269d00"
+    },
+    "Exod": {
+      "title": "Biblia 1914/Eșirea",
+      "oldid": 148010,
+      "sha256": "d19ded06db99a594ce5eb136dc26596e41851696ed15fcdd4437d6e9eea76c49"
+    },
+    "Lev": {
+      "title": "Biblia 1914/Leviticul",
+      "oldid": 148011,
+      "sha256": "a743f42b4dd937e360dfa8025e1b036079e27a5534688e27eefa602973fa10eb"
+    },
+    "Num": {
+      "title": "Biblia 1914/Numerii",
+      "oldid": 148012,
+      "sha256": "28dfc24354a66f8d19ac0afeddaf3668246465aca2b5d60d3bdafd0320858164"
+    },
+    "Deut": {
+      "title": "Biblia 1914/A doua lege",
+      "oldid": 148013,
+      "sha256": "680b70b48a394088f18cb8797fd499c976985c7c8c078d20c649fc23fd665911"
+    },
+    "Josh": {
+      "title": "Biblia 1914/Isus Navì",
+      "oldid": 148014,
+      "sha256": "eafd3d895a9bc3a983f9f586a20ee76f673b9e499f92c8cd5ecbd210c6d1be7a"
+    },
+    "Judg": {
+      "title": "Biblia 1914/Judecătorii",
+      "oldid": 148015,
+      "sha256": "5eeb2195eda37bad71aac11af18b0bcfed070b539a251ab66e7cb1887d83e8d2"
+    },
+    "Ruth": {
+      "title": "Biblia 1914/Rut",
+      "oldid": 148016,
+      "sha256": "939934eafc585a3b5d94b6925d19f6efb1ab8b89f17fbabc83ba85fef52a279b"
+    },
+    "1Sam": {
+      "title": "Biblia 1914/1 Împărați",
+      "oldid": 148017,
+      "sha256": "aca78cdca8adee8f397da52ed7d13459f60962ea7367e2dd7d7520914ccdb011"
+    },
+    "2Sam": {
+      "title": "Biblia 1914/2 Împărați",
+      "oldid": 148018,
+      "sha256": "09b792b423c853002810648f5fb6a195f8db7050b6c8900ef1bbd03b3c6b6f82"
+    },
+    "1Kgs": {
+      "title": "Biblia 1914/3 Împărați",
+      "oldid": 148019,
+      "sha256": "55c949ccff86ef0a192cdf67ce34f1baf8e2259105fe1b5c585a04196ecc7dbb"
+    },
+    "2Kgs": {
+      "title": "Biblia 1914/4 Împărați",
+      "oldid": 148020,
+      "sha256": "4bc0de67eb35aefb6cb962d92289faf913bcdeef830ea324b7cddb81565e499c"
+    },
+    "1Chr": {
+      "title": "Biblia 1914/1 Paralipomene",
+      "oldid": 148021,
+      "sha256": "f5fa92f6f1fc5221607a4e25d08363d063607032ee616928ec309327f864438b"
+    },
+    "2Chr": {
+      "title": "Biblia 1914/2 Paralipomene",
+      "oldid": 148022,
+      "sha256": "e41eb8703dceb5d89bccb5bb9447d562f8295b03e3f0482cc5450ef937e18bc4"
+    },
+    "Ezra": {
+      "title": "Biblia 1914/Esdra",
+      "oldid": 148023,
+      "sha256": "90b84957c470ad703bc9f2491006b368d8362756b826f181f0c59a8ebad20941"
+    },
+    "Neh": {
+      "title": "Biblia 1914/Neemia",
+      "oldid": 148024,
+      "sha256": "38ac7ef66241e4d555c45bdc8c199280354f4e76793ef03ec8b6cb1f759cf7c8"
+    },
+    "Esth": {
+      "title": "Biblia 1914/Estir",
+      "oldid": 148025,
+      "sha256": "8ba3f56a57aff96c59c94d3751d2f779f470c56f72841bb4d3d3c6a7e93b8750"
+    },
+    "Job": {
+      "title": "Biblia 1914/Iov",
+      "oldid": 148026,
+      "sha256": "741b7a7e4798406661d03afb0526a9e6fe2260b056eae32ceb0f9117356c59a5"
+    },
+    "Ps": {
+      "title": "Biblia 1914/Psaltirea",
+      "oldid": 148027,
+      "sha256": "fd2aed2f7d7fcb55ffc875ac7e741ac84e95ece97da982b6bfc6a912fea1b5c0"
+    },
+    "Prov": {
+      "title": "Biblia 1914/Pilde",
+      "oldid": 148028,
+      "sha256": "4b457714c7bfe6f478287e8326be0ec71291dc39ba935bf6c0843f94110f4ff8"
+    },
+    "Eccl": {
+      "title": "Biblia 1914/Eclisiastul",
+      "oldid": 148029,
+      "sha256": "c1696d76b3c8d79e6fe777866f484e8887ed949fe382bf0859f521c163195707"
+    },
+    "Song": {
+      "title": "Biblia 1914/Cântarea cântărilor",
+      "oldid": 148030,
+      "sha256": "38ecba0b1526db6038621a7f4e2b0d541907f9cb78e65863e6e8bbf7b12474da"
+    },
+    "Isa": {
+      "title": "Biblia 1914/Isaia",
+      "oldid": 148031,
+      "sha256": "0594b1ac758a9fed994762e04b95a25d011d94db42209f77d545a0a1d397e8fe"
+    },
+    "Jer": {
+      "title": "Biblia 1914/Ieremia",
+      "oldid": 148032,
+      "sha256": "5dab84d49083e74ed603e424692e73e5b8839078e94ba397c4b98905879eec68"
+    },
+    "Lam": {
+      "title": "Biblia 1914/Plângerile Ieremiei",
+      "oldid": 148033,
+      "sha256": "da76d0880d6be2246c16022b1a051d4e89f325a4a1c1d74691234670905d04e5"
+    },
+    "Ezek": {
+      "title": "Biblia 1914/Iezechiil",
+      "oldid": 148034,
+      "sha256": "fe8ec9800603315234282a9d0a3f0339f5f8d208b481c68a77b7991d42a4e89a"
+    },
+    "Dan": {
+      "title": "Biblia 1914/Daniil",
+      "oldid": 148035,
+      "sha256": "a89651c2fe2e2eb242ce59ae8961470ab3f9fe947dbe8d29cddb94695b605a69"
+    },
+    "Hos": {
+      "title": "Biblia 1914/Osie",
+      "oldid": 148036,
+      "sha256": "d78231df1964c9a0f9fb4f39ed76898f7b5042a5096eca5072901a28a3188ab3"
+    },
+    "Joel": {
+      "title": "Biblia 1914/Ioil",
+      "oldid": 148037,
+      "sha256": "ad71b6466686f58f1dd3fc70a3610c648deae3f2c4694fa0af0ad9df8fdb843a"
+    },
+    "Amos": {
+      "title": "Biblia 1914/Amos",
+      "oldid": 148038,
+      "sha256": "b54652ff14b34689d4b2b9bc435cdc6ed37e3c1716e8ac4c93471d2d12986e7e"
+    },
+    "Obad": {
+      "title": "Biblia 1914/Avdie",
+      "oldid": 148039,
+      "sha256": "541ba9248dda2a8922191c8343828f46bfb601a1ec40eb52a934e86228978c39"
+    },
+    "Jonah": {
+      "title": "Biblia 1914/Ionà",
+      "oldid": 148040,
+      "sha256": "a2b71fef14c0cb5fb1ea00427880978791008f217d8eee2b659a85e0cd6ce64d"
+    },
+    "Mic": {
+      "title": "Biblia 1914/Miheea",
+      "oldid": 148041,
+      "sha256": "8ba831d1b1cc0b87b1fb77c586b54b97b1f222af2a943ef8730ad31e3183b26b"
+    },
+    "Nah": {
+      "title": "Biblia 1914/Naum",
+      "oldid": 148042,
+      "sha256": "9649d68c830fddf231549ebdb24cca9590175a3ec4e7fd4e9f206dfdd428cbf6"
+    },
+    "Hab": {
+      "title": "Biblia 1914/Avacum",
+      "oldid": 148043,
+      "sha256": "afcac825710ee2f7f75649d5e1f7792a2c8ddaf0dddca141802ff1f06b0b52ce"
+    },
+    "Zeph": {
+      "title": "Biblia 1914/Sofonie",
+      "oldid": 148044,
+      "sha256": "e586ad78b3a7495063b64bf16cdd0ca4a1e6c8192cc03dc2e3600aacbc4c1d4c"
+    },
+    "Hag": {
+      "title": "Biblia 1914/Agheu",
+      "oldid": 148045,
+      "sha256": "b1b34aff01a05cae74636594c1386a9663c3ff97c0b71ef628ff7e9295cdeab3"
+    },
+    "Zech": {
+      "title": "Biblia 1914/Zaharia",
+      "oldid": 148046,
+      "sha256": "0fc22676d23cca8fc4742150d31ae92fe88d0b348277a0d1e2e3b43f8249efa6"
+    },
+    "Mal": {
+      "title": "Biblia 1914/Malahia",
+      "oldid": 148047,
+      "sha256": "ad81330f95e9f68700aa74c80977aea08d3f7afe2573dc87219e0324641375ea"
+    },
+    "Matt": {
+      "title": "Biblia 1914/Matei",
+      "oldid": 148062,
+      "sha256": "26a56b3d0a6120cd7614d934108016fb7c5e751b984ff66b26a6874c94798f7a"
+    },
+    "Mark": {
+      "title": "Biblia 1914/Marcu",
+      "oldid": 148063,
+      "sha256": "39b16620294485029de9439dc4744cc9a879f2031bed1f87033f7a86231903cd"
+    },
+    "Luke": {
+      "title": "Biblia 1914/Luca",
+      "oldid": 148064,
+      "sha256": "ee205f900ec0984db01f4528726784249d34eb406108caf66d2e4e509282c0f4"
+    },
+    "John": {
+      "title": "Biblia 1914/Ioan",
+      "oldid": 148065,
+      "sha256": "48df93f92caa43f7491100f7d506c4ff2f00a318c3849ac56a4e3b548cd88aa5"
+    },
+    "Acts": {
+      "title": "Biblia 1914/Faptele Apostolilor",
+      "oldid": 148066,
+      "sha256": "7adf1d15fdc9e78df7297eceae98b62843b4977a45db6c684829da9f21af0cc7"
+    },
+    "Rom": {
+      "title": "Biblia 1914/Romani",
+      "oldid": 148067,
+      "sha256": "8d26c9116fc88a67a8cc7f7c76529a8509981f50e597d63a995cee92b4547d1b"
+    },
+    "1Cor": {
+      "title": "Biblia 1914/1 Corinteni",
+      "oldid": 148068,
+      "sha256": "0d65270858dd95693b2126cc0303396dc967a6da28e41c836921d6f3acd7078e"
+    },
+    "2Cor": {
+      "title": "Biblia 1914/2 Corinteni",
+      "oldid": 148070,
+      "sha256": "af08401142e1abb5c9f215ce905fdb1bf647dda90d123ac59634382ed3660614"
+    },
+    "Gal": {
+      "title": "Biblia 1914/Galateni",
+      "oldid": 148071,
+      "sha256": "9ed68c1d6d2b3698ce41947e3f43202bb1d2f10daa7abca546e6231ef34fda7d"
+    },
+    "Eph": {
+      "title": "Biblia 1914/Efeseni",
+      "oldid": 148072,
+      "sha256": "7880d0e4017ae0251b4b40ec1dbeacf259994dd3a9e8dec7834c2ac0f523b8c8"
+    },
+    "Phil": {
+      "title": "Biblia 1914/Filippiseni",
+      "oldid": 148073,
+      "sha256": "177b743fd29e6392cf34b139916e2e99c04bb17a20d94fdcc22d3293fe57d252"
+    },
+    "Col": {
+      "title": "Biblia 1914/Colaseni",
+      "oldid": 148074,
+      "sha256": "eb1e2735d591e9debc4754345b3335df714e2f403d7791b6f0f940b26fbbe522"
+    },
+    "1Thess": {
+      "title": "Biblia 1914/1 Tesalonicheni",
+      "oldid": 148075,
+      "sha256": "6c506efe6229ed4b1eacadc4611d07f0897ced12601b6472ccabe27e3cccf913"
+    },
+    "2Thess": {
+      "title": "Biblia 1914/2 Tesalonicheni",
+      "oldid": 148076,
+      "sha256": "a05bea4b361c7a5d29eff2b22b9c98317e18be18714d525f0e556e7e2d410480"
+    },
+    "1Tim": {
+      "title": "Biblia 1914/1 Timotei",
+      "oldid": 148077,
+      "sha256": "30ca6f9b371cc90c06e27797dcd82c60f72bc817b4b39f7de3ff13caa7dedcdd"
+    },
+    "2Tim": {
+      "title": "Biblia 1914/2 Timotei",
+      "oldid": 148078,
+      "sha256": "15332cf15b93b8be7d51b0192ccb0f1ea1b6a6c6ceeba8123f2e1bd472ff1037"
+    },
+    "Titus": {
+      "title": "Biblia 1914/Tit",
+      "oldid": 148079,
+      "sha256": "c052507f1907ee3215f6a309af8f910f95e8cdd7b6eb6ff6c14338af3e86a6a3"
+    },
+    "Phlm": {
+      "title": "Biblia 1914/Filimon",
+      "oldid": 148080,
+      "sha256": "55e49d4e6388a214fb3b268665528e58d218c0d9e8de602a30633c24421d5a0a"
+    },
+    "Heb": {
+      "title": "Biblia 1914/Evrei",
+      "oldid": 148081,
+      "sha256": "758401cc373ce101ce4fb70b4bd614546fb87c7b5e7cf517e9bd4ca003538683"
+    },
+    "Jas": {
+      "title": "Biblia 1914/Iacov",
+      "oldid": 148082,
+      "sha256": "de6415ea2b5e970536cbf683540a84fb3d3ec1f28bbaea3daaa7c14bff454a05"
+    },
+    "1Pet": {
+      "title": "Biblia 1914/1 Petru",
+      "oldid": 148084,
+      "sha256": "3cff7c24f020898c4953fb1bd4fda203ce6f8c0f33c7356b88612a1d57000455"
+    },
+    "2Pet": {
+      "title": "Biblia 1914/2 Petru",
+      "oldid": 148085,
+      "sha256": "751a774b5ac58a9c1bfb11abc22bc77fa312594873606d1c24107b58e3789a70"
+    },
+    "1John": {
+      "title": "Biblia 1914/1 Ioan",
+      "oldid": 148086,
+      "sha256": "b7ffa26975fe15444bf0876ea9e26c91ea2d838ba3f2aaa02c2e5b2a340db509"
+    },
+    "2John": {
+      "title": "Biblia 1914/2 Ioan",
+      "oldid": 148087,
+      "sha256": "df7d255763d4a2d30f8ebaa4117848b5ac40210045ce0fe8957f7680b7fdaede"
+    },
+    "3John": {
+      "title": "Biblia 1914/3 Ioan",
+      "oldid": 148088,
+      "sha256": "4efa5de7b27f026070d8bfd562fbff0b100f5652f09b89b1025c3b40b420d8f8"
+    },
+    "Jude": {
+      "title": "Biblia 1914/Iuda",
+      "oldid": 148089,
+      "sha256": "c3fdf6d672b41911710967db50300cfb11fe76edbf0ee05e9995d8bf0d22900d"
+    },
+    "Rev": {
+      "title": "Biblia 1914/Apocalipsis",
+      "oldid": 148090,
+      "sha256": "4245b8e9df3c29d4937e5b53815f7ea7c3f2619490ec453d5eefa9a6e09e9f32"
+    }
+  }
+}

@@ -17,6 +17,13 @@ describe("links", () => {
     expect(verseUrl("Acts.16.9", "nb")).toContain("version=DNB1930");
     expect(verseUrl("Acts.16.9", "sr")).toContain("version=NSP");
     expect(verseUrl("Acts.16.9", "tl")).toContain("version=MBBTAG");
+    expect(verseUrl("Acts.16.9", "hu")).toContain("version=KAR");
+    expect(verseUrl("Acts.16.9", "fi")).toContain("version=R1933");
+    expect(verseUrl("Acts.16.9", "vi")).toContain("version=BD2011");
+    expect(verseUrl("Acts.16.9", "sw")).toContain("version=SNT");
+    expect(verseUrl("Acts.16.9", "tr")).toContain("version=ESV");
+    expect(verseUrl("Acts.16.9", "ro")).toContain("version=RMNN");
+    expect(verseUrl("Acts.16.9", "bg")).toContain("version=BG1940");
   });
 
   it("open 1-2 Maccabees where they are: the Synodal at Azbyka, an English Bible with the Apocrypha", () => {

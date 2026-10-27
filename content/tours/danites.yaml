@@ -21,6 +21,11 @@ title:
   tl: "Ang paglipat ng lipi ni Dan sa hilaga"
   da: "Dans stamme drager mod nord"
   sr: "Племе Даново креће на север"
+  hu: "Dán törzse északra vonul"
+  fi: "Daanin sukukunta siirtyy pohjoiseen"
+  vi: "Chi phái Đan dời lên phía bắc"
+  ro: "Seminția lui Dan se mută spre nord"
+  bg: "Племето Дан се преселва на север"
 year: "1150 BC"
 approximate: true
 stops:
@@ -43,6 +48,11 @@ stops:
       tl: "Dahil hindi pa nahuhulog sa kanila ang buo nilang mana, nagsugo ang mga Danita ng limang lalaki mula sa Sora at Estaol upang tiktikan ang lupain."
       da: "Da hele deres arv endnu ikke var faldet dem i lod, sender daniterne fem mænd fra Zora og Esjtaol for at udspejde landet."
       sr: "Пошто им још није припало цело наследство, Данови синови шаљу из Сараје и Естаола пет људи да уходе земљу."
+      hu: "Mivel egész örökségük még nem jutott nekik, Dán fiai öt férfit küldenek Corából és Estaólból, hogy kikémleljék a földet."
+      fi: "Koska koko heidän perintöosansa ei ollut vielä tullut heille, daanilaiset lähettävät Soraasta ja Estaolista viisi miestä vakoilemaan maata."
+      vi: "Vì chưa nhận được trọn phần sản nghiệp của mình, người Đan sai năm người từ Xô-rê-a và Ê-ta-ôn đi do thám xứ."
+      ro: "Cum nu le căzuse încă toată moștenirea, daniții trimit cinci bărbați din Țorea și din Eștaol să iscodească țara."
+      bg: "Тъй като все още не е получило цялото си наследство, Дановото племе изпраща петима мъже от Цора и Ещаол да съгледат земята."
   - place: a513646 # Dan
     ref: Judg.18.7-Judg.18.10
     note:
@@ -62,6 +72,11 @@ stops:
       tl: "Dumating sila sa Lais, na kalaunan ay Dan, at nakita ang isang bayang tahimik at tiwasay, malayo sa mga taga-Sidon at walang kaugnayan sa sinuman."
       da: "De kommer til Laisj, senere Dan, og finder et roligt og trygt folk, langt fra sidonierne og uden samkvem med noget andet menneske."
       sr: "Долазе у Лаис, касније Дан, и налазе народ миран и безбедан, далеко од Сидонаца и без посла с ким било."
+      hu: "Laishoz érkeznek, a későbbi Dánhoz, és nyugodt, biztonságban élő népet találnak, távol a szidóniaktól, akiknek senkivel semmi dolguk sem volt."
+      fi: "He tulevat Laisiin, myöhempään Daniin, ja löytävät rauhallisen ja turvassa elävän kansan, kaukana sidonilaisista ja ilman yhteyksiä kehenkään."
+      vi: "Họ đến La-ít, về sau là Đan, và thấy một dân sống yên ổn và an ninh, ở xa người Si-đôn và không giao thiệp với ai."
+      ro: "Ajung la Laiș, mai târziu Dan, și găsesc un popor liniștit și fără grijă, departe de sidonieni și fără nicio legătură cu cineva."
+      bg: "Те идват в Лаиш, по-късно Дан, и намират народ, който живее спокойно и безгрижно, далеч от сидонците, без да имат вземане-даване с когото и да било."
   - place: a67325d # Mahaneh-dan
     ref: Judg.18.11-Judg.18.12
     note:
@@ -81,6 +96,11 @@ stops:
       tl: "Anim na raang lalaking may sandata ang umalis at nagkampo sa Kiriath-jearim sa Juda; ang dakong nasa likod nito ay tinawag na Mahanedan, ang kampo ng Dan."
       da: "Seks hundrede væbnede mænd bryder op og slår lejr ved Kirjat-Jearim i Juda; stedet bagved kaldes Mahane-Dan, Dans lejr."
       sr: "Шест стотина наоружаних људи креће и логорује код Киријат-Јарима у Јуди; место иза њега зове се Дан-Маханије, то јест логор Данов."
+      hu: "Hatszáz fegyveres férfi indul útnak, és a júdai Kirját-Jeárimnál tábort ver; a mögötte levő helyet Mahane-Dánnak, Dán táborának nevezik."
+      fi: "Kuusisataa asemiestä lähtee matkaan ja leiriytyy Juudan Kirjat-Jearimiin; sen takana olevaa paikkaa kutsutaan Mahane-Daniksi, Daanin leiriksi."
+      vi: "Sáu trăm người có khí giới lên đường và đóng trại tại Ki-ri-át-Giê-a-rim thuộc Giu-đa; nơi phía sau đó được gọi là Trại Đan, tức trại của Đan."
+      ro: "Șase sute de bărbați înarmați pornesc și tăbărăsc la Chiriat-Iearim, în Iuda; locul din spatele ei se numește Mahane-Dan, tabăra lui Dan."
+      bg: "Шестстотин въоръжени мъже тръгват и се разполагат на стан при Кириат-Ярим в Юда; мястото зад него се нарича Стан Данов (Махане-Дан)."
   - place: a513646 # Dan
     ref: Judg.18.13-Judg.18.31
     note:
@@ -100,3 +120,8 @@ stops:
       tl: "Kinuha nila sa daan ang larawang inanyuan ni Mikas at ang saserdote nito, sinalakay ang Lais, sinunog ito, nagtayo roon ng lungsod at tinawag itong Dan, ayon sa pangalan ng kanilang ama."
       da: "De tager på vejen Mikas udskårne billede og hans præst, slår Laisj, brænder den, bygger en by der og kalder den Dan efter deres stamfader."
       sr: "Узевши успут Михин резани лик и његовог свештеника, туку Лаис, спаљују га, подижу тамо град и зову га Дан, по оцу своме."
+      hu: "Útközben magukhoz veszik Mikeás faragott képét és papját, megverik Laist, felégetik, várost építenek ott, és atyjuk után Dánnak nevezik."
+      fi: "Matkalla he ottavat Miikan veistetyn kuvan ja hänen pappinsa, lyövät Laisin, polttavat sen, rakentavat sinne kaupungin ja antavat sille nimeksi Dan isänsä mukaan."
+      vi: "Dọc đường lấy tượng chạm của Mi-chê và thầy tế lễ của người, họ đánh La-ít, đốt nó, xây một thành tại đó và gọi là Đan, theo tên tổ phụ mình."
+      ro: "Luând pe drum chipul cioplit al lui Mica și pe preotul lui, lovesc Laișul, îl ard, zidesc acolo o cetate și o numesc Dan, după numele tatălui lor."
+      bg: "Като вземат по пътя изваяния идол на Миха и неговия свещеник, те поразяват Лаиш, изгарят го, съграждат там град и го наричат Дан, по името на баща си."

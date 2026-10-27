@@ -1,5 +1,5 @@
-// Map label fonts, self-hosted (ADR 0004): Literata covers Latin, Cyrillic and polytonic
-// Greek. OFL-1.1. MapLibre builds SDF glyphs on the client from these files.
+// Map label fonts, self-hosted (ADR 0004): Literata covers Latin, Cyrillic, polytonic
+// Greek and Vietnamese. OFL-1.1. MapLibre builds SDF glyphs on the client from these files.
 import cyrillicItalic from "@fontsource-variable/literata/files/literata-cyrillic-wght-italic.woff2?url";
 import cyrillic from "@fontsource-variable/literata/files/literata-cyrillic-wght-normal.woff2?url";
 import greekExt from "@fontsource-variable/literata/files/literata-greek-ext-wght-normal.woff2?url";
@@ -8,6 +8,8 @@ import latinExtItalic from "@fontsource-variable/literata/files/literata-latin-e
 import latinExt from "@fontsource-variable/literata/files/literata-latin-ext-wght-normal.woff2?url";
 import latinItalic from "@fontsource-variable/literata/files/literata-latin-wght-italic.woff2?url";
 import latin from "@fontsource-variable/literata/files/literata-latin-wght-normal.woff2?url";
+import vietnameseItalic from "@fontsource-variable/literata/files/literata-vietnamese-wght-italic.woff2?url";
+import vietnamese from "@fontsource-variable/literata/files/literata-vietnamese-wght-normal.woff2?url";
 import { MAP_FONT, MAP_FONT_ITALIC } from "@hg/core";
 
 const LATIN =
@@ -17,6 +19,10 @@ const LATIN_EXT =
 const CYRILLIC = "U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116";
 const GREEK = "U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF";
 const GREEK_EXT = "U+1F00-1FFF";
+// Vietnamese: the stacked letters (U+1EA0-1EF9) and the few others the Latin files miss. Last
+// in each list, so every codepoint an earlier file covers is drawn as before.
+export const VIETNAMESE =
+  "U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB";
 
 export const MAP_FONTS = {
   [MAP_FONT]: [
@@ -25,10 +31,12 @@ export const MAP_FONTS = {
     { url: cyrillic, unicodeRange: CYRILLIC },
     { url: greek, unicodeRange: GREEK },
     { url: greekExt, unicodeRange: GREEK_EXT },
+    { url: vietnamese, unicodeRange: VIETNAMESE },
   ],
   [MAP_FONT_ITALIC]: [
     { url: latinItalic, unicodeRange: LATIN },
     { url: latinExtItalic, unicodeRange: LATIN_EXT },
     { url: cyrillicItalic, unicodeRange: CYRILLIC },
+    { url: vietnameseItalic, unicodeRange: VIETNAMESE },
   ],
 };

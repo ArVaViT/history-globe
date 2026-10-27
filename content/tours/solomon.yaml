@@ -19,6 +19,11 @@ title:
   tl: "Salomon"
   da: "Salomo"
   sr: "Соломун"
+  hu: "Salamon"
+  fi: "Salomo"
+  vi: "Sa-lô-môn"
+  ro: "Solomon"
+  bg: "Соломон"
 year: "970 BC"
 # Solomon's deeds where they were done, not a journey: no time on foot.
 walked: false
@@ -44,6 +49,11 @@ stops:
       tl: "Sa Gihon ay pinahiran ni Sadoc si Salomon, at sinabi ng buong bayan: “Mabuhay ang haring si Salomon.”"
       da: "Ved Gihon salver Zadok Salomo, og hele folket siger: »Kong Salomo leve!«"
       sr: "На Гиону Садок помазује Соломуна, и сав народ говори: „Да живи цар Соломун!“"
+      hu: "Gihonnál Cádók felkeni Salamont, és az egész nép ezt kiáltja: „Éljen Salamon király!”"
+      fi: "Gihonilla Sadok voitelee Salomon, ja koko kansa huutaa: ”Eläköön kuningas Salomo!”"
+      vi: "Tại Ghi-hôn, Xa-đốc xức dầu cho Sa-lô-môn, và cả dân sự hô lên: “Vua Sa-lô-môn vạn tuế!”"
+      ro: "La Ghihon, Țadoc îl unge pe Solomon, iar tot poporul zice: „să trăiască împăratul Solomon!”"
+      bg: "При Гион Садок помазва Соломон и целият народ казва: „Да е жив цар Соломон!“"
   - place: aede336 # Gibeon
     ref: 1Kgs.3.4-1Kgs.3.15
     note:
@@ -63,6 +73,11 @@ stops:
       tl: "Sa Gabaon ay napakita sa kaniya ang Panginoon sa isang panaginip, at humingi siya ng pusong marunong umunawa."
       da: "I Gibeon viser Herren sig for ham i en drøm, og han beder om et forstandigt hjerte."
       sr: "У Гаваону му се Господ јавља у сну, и он тражи срце разумно."
+      hu: "Gibeonban az Úr álmában megjelenik neki, és ő értelmes szívet kér."
+      fi: "Gibeonissa Herra ilmestyy hänelle unessa, ja hän pyytää ymmärtäväistä sydäntä."
+      vi: "Tại Ga-ba-ôn, Đức Giê-hô-va hiện đến cùng người trong một giấc chiêm bao, và người xin một tấm lòng khôn sáng."
+      ro: "La Gabaon, Domnul i Se arată în vis, iar el cere o inimă pricepută."
+      bg: "В Гаваон Господ му се явява насън и той иска разумно сърце."
   - place: a160272 # Tyre
     ref: 1Kgs.5.1-1Kgs.5.12
     note:
@@ -82,6 +97,11 @@ stops:
       tl: "Nagpadala si Hiram na hari ng Tiro ng sedro para sa Templo, at nagkasundo ang dalawa."
       da: "Hiram, Tyrus' konge, sender cedertræ til templet, og de to slutter en traktat."
       sr: "Хирам, цар тирски, шаље кедар за храм, и њих двојица склапају савез."
+      hu: "Hírám, Tírusz királya cédrust küld a templomhoz, és ketten szerződést kötnek."
+      fi: "Tyroksen kuningas Hiram lähettää setripuuta temppeliä varten, ja nämä kaksi tekevät liiton."
+      vi: "Hi-ram, vua Ty-rơ, gởi gỗ bá hương cho đền thờ, và hai vua lập một giao ước."
+      ro: "Hiram, regele Tirului, trimite cedri pentru Templu, iar cei doi încheie un legământ."
+      bg: "Хирам, царят на Тир, изпраща кедри за храма и двамата сключват договор."
   - place: a15257a # Jerusalem
     ref: 1Kgs.6.1-1Kgs.8.11
     year: "966 BC"
@@ -102,6 +122,11 @@ stops:
       tl: "Sa ikaapat na taon niya ay sinimulan niya ang Templo; sa pagtatalaga nito ay pinuno ng ulap ang bahay ng Panginoon."
       da: "I sit fjerde år begynder han på templet; ved dets indvielse fylder skyen Herrens hus."
       sr: "Четврте године почиње храм; при његовом посвећењу облак испуњава дом Господњи."
+      hu: "Negyedik évében hozzáfog a templom építéséhez; felavatásakor felhő tölti be az Úr házát."
+      fi: "Neljäntenä vuotenaan hän aloittaa temppelin rakentamisen; sen vihkiäisissä pilvi täyttää Herran huoneen."
+      vi: "Vào năm thứ tư, người khởi công xây đền thờ; khi khánh thành, đám mây đầy nhà Đức Giê-hô-va."
+      ro: "În al patrulea an al domniei sale începe Templul; la sfințirea lui, norul umple casa Domnului."
+      bg: "В четвъртата си година той започва храма; при освещаването му облакът изпълва Господния дом."
   - place: a8554e3 # Megiddo
     ref: 1Kgs.9.15
     note:
@@ -121,6 +146,11 @@ stops:
       tl: "Sa pamamagitan ng sapilitang paggawang kaniyang inipon ay itinayo niya ang pader ng Jerusalem, ang Hasor, Megiddo at Gezer."
       da: "Med det hoveri, han udskriver, bygger han Jerusalems mur, Hazor, Megiddo og Gezer."
       sr: "Данком који узима зида зид Јерусалима, Асор, Мегидо и Гезер."
+      hu: "Az általa kivetett munkaszolgálattal felépíti Jeruzsálem falát, Hácórt, Megiddót és Gézert."
+      fi: "Keräämällään työvelvollisuudella hän rakentaa Jerusalemin muurin, Hasorin, Megiddon ja Geserin."
+      vi: "Với số người bị bắt xâu mà người đã triệu tập, người xây vách thành Giê-ru-sa-lem, Hát-so, Mê-ghi-đô và Ghê-xe."
+      ro: "Cu oamenii luați la corvoadă zidește zidul Ierusalimului, Hațorul, Meghido și Ghezerul."
+      bg: "С наложената от него ангария той съгражда стената на Йерусалим, Хацор, Мегидо и Гезер."
   - place: a8e53d5 # Ezion-geber
     ref: 1Kgs.9.26-1Kgs.9.28
     note:
@@ -140,6 +170,11 @@ stops:
       tl: "Sa Esion-geber sa Dagat na Pula ay gumawa siya ng mga sasakyang-dagat, at ang kaniyang mga lingkod at ang mga mandaragat ni Hiram ay nagdala ng ginto mula sa Ophir."
       da: "I Esjon-Geber ved Det Røde Hav bygger han skibe, og hans tjenere og Hirams sømænd henter guld fra Ofir."
       sr: "У Есион-Гаверу на Црвеном мору гради лађе, и његове слуге и Хирамови морнари доносе злато из Офира."
+      hu: "A Vörös-tenger melletti Ecjón-Gébernél hajókat épít, és szolgái meg Hírám matrózai aranyat hoznak Ofírból."
+      fi: "Esjon-Geberissä Punaisenmeren rannalla hän rakentaa laivoja, ja hänen palvelijansa ja Hiramin merimiehet tuovat kultaa Ofirista."
+      vi: "Tại Ê-xi-ôn-Ghê-be trên mé Biển Đỏ, người đóng tàu, và các tôi tớ người cùng các thủy thủ của Hi-ram chở vàng từ Ô-phia về."
+      ro: "La Ețion-Gheber, la Marea Roșie, construiește corăbii, iar slujitorii lui și corăbierii lui Hiram aduc aur din Ofir."
+      bg: "В Ецион-Гавер на Червено море той строи кораби, а слугите му и моряците на Хирам донасят злато от Офир."
   - place: a81ab85 # Sheba
     ref: 1Kgs.10.1-1Kgs.10.13
     note:
@@ -159,6 +194,11 @@ stops:
       tl: "Narinig ng reyna ng Seba ang kaniyang katanyagan at dumating upang subukin siya ng mahihirap na tanong."
       da: "Dronningen af Sjeba hører om hans berømmelse og kommer for at prøve ham med vanskelige spørgsmål."
       sr: "Царица савска чује за његову славу и долази да га окуша тешким питањима."
+      hu: "Séba királynője hall a híréről, és nehéz kérdésekkel próbára tenni jön."
+      fi: "Saban kuningatar kuulee hänen maineestaan ja tulee koettelemaan häntä vaikeilla kysymyksillä."
+      vi: "Nữ vương Sê-ba nghe nói về danh tiếng của người và đến hỏi thử người nhiều câu đố."
+      ro: "Regina din Seba aude de faima lui și vine să-l pună la încercare cu întrebări grele."
+      bg: "Савската царица чува за славата му и идва да го изпита с мъчни въпроси."
   - place: a15257a # Jerusalem
     ref: 1Kgs.11.42-1Kgs.11.43
     year: "931 BC"
@@ -179,3 +219,8 @@ stops:
       tl: "Pagkaraan ng apatnapung taóng paghahari sa Jerusalem ay namatay si Salomon at inilibing sa bayan ni David."
       da: "Efter fyrre års regering i Jerusalem dør Salomo og begraves i Davidsbyen."
       sr: "После четрдесет година владавине у Јерусалиму Соломун умире и сахрањен је у Давидовом граду."
+      hu: "Jeruzsálemben negyven évi uralkodás után Salamon meghal, és Dávid városában temetik el."
+      fi: "Neljäkymmentä vuotta Jerusalemissa hallittuaan Salomo kuolee ja haudataan Daavidin kaupunkiin."
+      vi: "Sau bốn mươi năm trị vì tại Giê-ru-sa-lem, Sa-lô-môn qua đời và được chôn trong thành Đa-vít."
+      ro: "După patruzeci de ani de domnie în Ierusalim, Solomon moare și este îngropat în Cetatea lui David."
+      bg: "След четиридесет години царуване в Йерусалим Соломон умира и е погребан в Давидовия град."

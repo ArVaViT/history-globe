@@ -14,6 +14,7 @@ import {
   itemOf,
   ReviewFile,
   type ReviewKind,
+  translationsRead,
   type ReviewRecord,
 } from "../packages/model/src/reviews.ts";
 
@@ -77,6 +78,7 @@ export function loadReviews(dir: string, current: CurrentHashes): LoadedReviews 
           date: r.date,
           status: r.status,
           changed: c.changed,
+          translations: translationsRead(r),
         },
       ]);
     }

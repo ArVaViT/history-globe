@@ -22,6 +22,11 @@ title:
   tl: "Ang Exodo"
   da: "Udtoget"
   sr: "Излазак"
+  hu: "A kivonulás"
+  fi: "Exodus"
+  vi: "Cuộc Xuất hành"
+  ro: "Exodul"
+  bg: "Изходът"
 year: "1446 BC"
 people: ["Moses@Exo.2.10-Rev"]
 approximate: true
@@ -45,6 +50,11 @@ stops:
       tl: "Naglalakbay ang mga Israelita mula sa Rameses, humigit-kumulang anim na raang libong lalaking naglalakad."
       da: "Israelitterne bryder op fra Ramses, omkring seks hundrede tusind mand til fods."
       sr: "Израиљци полазе из Рамесе, око шест стотина хиљада пешака."
+      hu: "Izráel fiai Ramszeszből indulnak el, mintegy hatszázezer gyalogos férfi."
+      fi: "Israelilaiset lähtevät liikkeelle Ramseksesta, noin kuusisataatuhatta jalkamiestä."
+      vi: "Dân Y-sơ-ra-ên rời Ram-se-sơ, độ sáu trăm ngàn người đi bộ."
+      ro: "Israeliții pornesc din Ramses, cam șase sute de mii de bărbați pedeștri."
+      bg: "Израилтяните тръгват от Раамсес — около шестстотин хиляди пеши мъже."
   - place: aa28709 # Succoth (in Egypt)
     ref: Num.33.5
     note:
@@ -64,6 +74,11 @@ stops:
       tl: "Ang kanilang unang kampamento ay sa Succoth."
       da: "Deres første lejr er i Sukkot."
       sr: "Први њихов логор је у Сокоту."
+      hu: "Első táboruk Szukkótnál van."
+      fi: "Heidän ensimmäinen leirinsä on Sukkotissa."
+      vi: "Chỗ hạ trại đầu tiên của họ là Su-cốt."
+      ro: "Prima lor tabără este la Sucot."
+      bg: "Първият им стан е в Сокхот."
   - place: a27d0e0 # Etham
     ref: Exod.13.20-Exod.13.22
     note:
@@ -83,6 +98,11 @@ stops:
       tl: "Humahantong sila sa Etham, sa gilid ng ilang; ang Panginoon ay nangunguna sa kanila sa isang haliging ulap at apoy."
       da: "De slår lejr i Etam, ved ørkenens rand; Herren går foran dem i en sky- og ildsøjle."
       sr: "Логоре се у Етаму, на крају пустиње; Господ иде пред њима у стубу облачном и огњеном."
+      hu: "Étámnál táboroznak, a puszta szélén; az Úr felhőoszlopban és tűzoszlopban megy előttük."
+      fi: "He leiriytyvät Etamiin, erämaan laitaan; Herra kulkee heidän edellään pilvenpatsaassa ja tulenpatsaassa."
+      vi: "Họ hạ trại tại Ê-tam, nơi rìa đồng vắng; Đức Giê-hô-va đi trước họ trong một trụ mây và trụ lửa."
+      ro: "Își așază tabăra la Etam, la marginea pustiului; Domnul merge înaintea lor într-un stâlp de nor și de foc."
+      bg: "Те се разполагат на стан в Етам, на края на пустинята; Господ върви пред тях в облачен и огнен стълб."
   - place: ababfd2 # Pi-hahiroth
     ref: Exod.14.2
     note:
@@ -102,6 +122,11 @@ stops:
       tl: "Bumabalik sila at humahantong sa tapat ng Pi-hahiroth, sa pagitan ng Migdol at ng dagat."
       da: "De vender om og slår lejr foran Pi-ha-Hirot, mellem Migdol og havet."
       sr: "Окрећу се натраг и логоре се пред Пи-Аиротом, између Мигдола и мора."
+      hu: "Visszafordulnak, és Pí-Hahirót előtt táboroznak, Migdol és a tenger között."
+      fi: "He kääntyvät takaisin ja leiriytyvät Pi-Hahirotin eteen, Migdolin ja meren väliin."
+      vi: "Họ quay lại và hạ trại trước Phi-ha-hi-rốt, giữa Mít-đôn và biển."
+      ro: "Se întorc și tăbărăsc înaintea Pi-Hahirotului, între Migdol și mare."
+      bg: "Те се връщат и се разполагат пред Пи-Хахирот, между Мигдол и морето."
   - place: a3d18b2 # Red Sea
     ref: Exod.14.21-Exod.15.4
     note:
@@ -121,6 +146,11 @@ stops:
       tl: "Nahahati ang tubig at tumatawid ang Israel sa tuyong lupa; nalulunod sa Dagat na Pula ang hukbo ni Faraon."
       da: "Vandene deler sig, og Israel går over på tør grund; Faraos hær drukner i Det Røde Hav."
       sr: "Воде се раздвајају и Израиљ прелази по сувом; војска фараонова утапа се у Црвеном мору."
+      hu: "A vizek kettéválnak, és Izráel szárazon kel át; a fáraó serege belefullad a Vörös-tengerbe."
+      fi: "Vedet jakautuvat, ja Israel ylittää meren kuivaa maata myöten; faraon sotajoukko hukkuu Punaiseenmereen."
+      vi: "Nước rẽ ra và Y-sơ-ra-ên đi qua trên đất khô; quân của Pha-ra-ôn bị chìm trong Biển Đỏ."
+      ro: "Apele se despart, iar Israel trece pe uscat; oastea lui Faraon se îneacă în Marea Roșie."
+      bg: "Водите се разделят и Израил преминава по сухо; войската на фараона се удавя в Червено море."
   - place: ad3970d # Marah
     ref: Exod.15.23-Exod.15.25
     note:
@@ -140,6 +170,11 @@ stops:
       tl: "Sa Mara, mapait ang tubig, at pinatatamis ito ng isang punong kahoy na inihagis doon."
       da: "I Mara er vandet bittert, og et træ, der kastes i det, gør det sødt."
       sr: "У Мери је вода горка, а дрво бачено у њу чини је слатком."
+      hu: "Márában a víz keserű, és egy beledobott fa megédesíti."
+      fi: "Marassa vesi on karvasta, ja siihen heitetty puu tekee sen makeaksi."
+      vi: "Tại Ma-ra, nước đắng, và một khúc gỗ ném vào làm cho nước ngọt."
+      ro: "La Mara apa este amară, iar un lemn aruncat în ea o face dulce."
+      bg: "В Мера водата е горчива, а хвърленото в нея дърво я прави сладка."
   - place: a2410c1 # Elim
     ref: Exod.15.27
     note:
@@ -159,6 +194,11 @@ stops:
       tl: "Sa Elim ay may labingdalawang bukal ng tubig at pitumpung puno ng palma."
       da: "I Elim er der tolv vandkilder og halvfjerds palmer."
       sr: "У Елиму је дванаест извора водених и седамдесет палми."
+      hu: "Élimben tizenkét vízforrás és hetven pálmafa van."
+      fi: "Elimissä on kaksitoista vesilähdettä ja seitsemänkymmentä palmua."
+      vi: "Tại Ê-lim có mười hai suối nước và bảy mươi cây chà là."
+      ro: "La Elim sunt douăsprezece izvoare de apă și șaptezeci de finici."
+      bg: "В Елим има дванадесет водни извора и седемдесет палми."
   - place: a05ebb7 # Rephidim
     ref: Exod.17.1-Exod.17.13
     note:
@@ -178,6 +218,11 @@ stops:
       tl: "Tubig mula sa bato, at ang labanan kay Amalec habang itinataas ni Moises ang kaniyang mga kamay."
       da: "Vand af klippen, og kampen mod Amalek, mens Moses holder sine hænder løftet."
       sr: "Вода из стене и бој с Амаликом, док Мојсије држи подигнуте руке."
+      hu: "Víz a sziklából, és a csata Amálek ellen, amíg Mózes felemelve tartja a kezét."
+      fi: "Vettä kalliosta, ja taistelu Amalekia vastaan, kun Mooses pitää käsiään ylhäällä."
+      vi: "Nước từ hòn đá chảy ra, và trận đánh với A-ma-léc trong khi Môi-se giơ tay lên."
+      ro: "Apă din stâncă și lupta cu Amalec, în timp ce Moise își ține mâinile ridicate."
+      bg: "Вода от скалата и битката с Амалик, докато Мойсей държи ръцете си издигнати."
   - place: abfba2a # Mount Sinai
     ref: Exod.19.16-Exod.20.17
     note:
@@ -197,6 +242,11 @@ stops:
       tl: "Bumababa ang Panginoon sa Bundok Sinai at tinatawag si Moises sa taluktok: ang pagbibigay ng Kautusan."
       da: "Herren stiger ned på Sinaj-bjerget og kalder Moses op på toppen: givelsen af loven."
       sr: "Господ силази на гору Синај и зове Мојсија на врх: давање Закона."
+      hu: "Az Úr leszáll a Sínai-hegyre, és Mózest a csúcsra hívja: a törvényadás."
+      fi: "Herra astuu alas Siinainvuorelle ja kutsuu Mooseksen huipulle: lain antaminen."
+      vi: "Đức Giê-hô-va ngự xuống trên Núi Si-na-i và gọi Môi-se lên chót núi: việc ban Luật pháp."
+      ro: "Domnul Se coboară pe Muntele Sinai și îl cheamă pe Moise pe vârf: darea Legii."
+      bg: "Господ слиза на планината Синай и призовава Мойсей на върха: даването на Закона."
   - place: ae7836a # Kibroth-hattaavah
     ref: Num.11.31-Num.11.34
     year: "1445 BC"
@@ -217,6 +267,11 @@ stops:
       tl: "Ang mga pugo, at ang mga libingan ng bayang naghangad ng karne: Kibroth-hattaavah."
       da: "Vagtlerne og gravene for det folk, der krævede kød: Kibrot-ha-Ta'ava."
       sr: "Препелице и гробови народа који су жудели за месом: Киврот-Атава."
+      hu: "A fürjek, és a húst kívánó nép sírjai: Kibrót-Hattaava."
+      fi: "Viiriäiset ja lihaa himoinneen kansan haudat: Kibrot-Hattaava."
+      vi: "Chim cút, và những mồ mả của những người thèm thịt: Kíp-rốt Ha-ta-ava."
+      ro: "Prepelițele și mormintele poporului care poftise carne: Chibrot-Hataava."
+      bg: "Пъдпъдъците и гробовете на народа, който пожела месо: Киброт-Хатаава."
   - place: ac2cef0 # Kadesh-barnea
     ref: Num.13.26-Num.14.34
     year: "1445 BC"
@@ -237,6 +292,11 @@ stops:
       tl: "Bumabalik ang mga tiktik sa Cades; ayaw sumampa ng bayan, at hinahatulan ng apatnapung taon sa ilang."
       da: "Spejderne vender tilbage til Kadesj; folket nægter at drage op og dømmes til fyrre år i ørkenen."
       sr: "Уходе се враћају у Кадис; народ неће да иде горе и бива осуђен на четрдесет година у пустињи."
+      hu: "A kémek visszatérnek Kádesbe; a nép nem akar felvonulni, és negyven évi pusztai bolyongásra ítélik."
+      fi: "Vakoojat palaavat Kadekseen; kansa kieltäytyy nousemasta, ja sille langetetaan neljäkymmentä vuotta erämaassa."
+      vi: "Các người do thám trở về Ca-đe; dân sự không chịu đi lên, và bị kết án bốn mươi năm trong đồng vắng."
+      ro: "Iscoadele se întorc la Cades; poporul refuză să urce și este osândit la patruzeci de ani în pustiu."
+      bg: "Съгледвачите се връщат в Кадеш; народът отказва да възлезе и е осъден на четиридесет години в пустинята."
   - place: ad8027f # Mount Hor
     ref: Num.20.22-Num.20.29
     year: "1407 BC"
@@ -257,6 +317,11 @@ stops:
       tl: "Namamatay si Aaron sa taluktok ng Bundok Hor; isinusuot kay Eleazar na kaniyang anak ang kaniyang mga damit."
       da: "Aron dør på toppen af Hor-bjerget; hans klæder lægges på hans søn Eleazar."
       sr: "Арон умире на врху горе Ор; његова одећа облачи се на Елеазара, сина његовог."
+      hu: "Áron meghal a Hór-hegy tetején; ruháit fiára, Eleázárra adják."
+      fi: "Aaron kuolee Horinvuoren huipulla; hänen vaatteensa puetaan hänen pojalleen Eleasarille."
+      vi: "A-rôn qua đời trên chót Núi Hô-rơ; các áo thánh của người được mặc cho Ê-lê-a-sa, con trai người."
+      ro: "Aaron moare pe vârful Muntelui Hor; veșmintele lui sunt puse pe Eleazar, fiul său."
+      bg: "Аарон умира на върха на планината Хор; дрехите му са облечени на сина му Елеазар."
   - place: abf2fc1 # Heshbon
     ref: Num.21.21-Num.21.26
     year: "1407 BC"
@@ -277,6 +342,11 @@ stops:
       tl: "Natatalo si Sehon na hari ng mga Amorrheo, at sinasakop ng Israel ang Hesbon."
       da: "Sihon, amoritternes konge, bliver slået, og Israel indtager Hesjbon."
       sr: "Сион, цар аморејски, бива побеђен, и Израиљ осваја Есевон."
+      hu: "Szihon, az emóriak királya vereséget szenved, és Izráel elfoglalja Hesbont."
+      fi: "Amorilaisten kuningas Sihon voitetaan, ja Israel valtaa Hesbonin."
+      vi: "Si-hôn, vua dân A-mô-rít, bị đánh bại, và Y-sơ-ra-ên chiếm Hết-bôn."
+      ro: "Sihon, regele amoriților, este înfrânt, iar Israel ia Hesbonul."
+      bg: "Сихон, царят на аморейците, е разбит и Израил превзема Есевон."
   - place: aefaa2d # Mount Nebo
     ref: Deut.34.1-Deut.34.5
     year: "1406 BC"
@@ -297,6 +367,11 @@ stops:
       tl: "Mula sa Bundok Nebo, ipinakikita ng Panginoon kay Moises ang buong lupain; doon namamatay si Moises, sa lupain ng Moab."
       da: "Fra Nebo-bjerget lader Herren Moses se hele landet; Moses dør der, i Moabs land."
       sr: "С горе Нево Господ показује Мојсију сву земљу; Мојсије ту умире, у земљи моавској."
+      hu: "A Nébó-hegyről az Úr megmutatja Mózesnek az egész földet; Mózes ott hal meg, Moáb földjén."
+      fi: "Nebovuorelta Herra näyttää Moosekselle koko maan; Mooses kuolee siellä, Moabin maassa."
+      vi: "Từ Núi Nê-bô, Đức Giê-hô-va cho Môi-se thấy cả xứ; Môi-se qua đời tại đó, trong xứ Mô-áp."
+      ro: "De pe Muntele Nebo, Domnul îi arată lui Moise toată țara; Moise moare acolo, în țara Moabului."
+      bg: "От планината Нево Господ показва на Мойсей цялата земя; Мойсей умира там, в земята Моав."
   - place: af64fb3 # Shittim
     ref: Josh.3.1
     year: "1406 BC"
@@ -317,6 +392,11 @@ stops:
       tl: "Umaalis si Josue at ang bayan sa Sittim at dumarating sa Jordan."
       da: "Josva og folket forlader Sjittim og kommer til Jordan."
       sr: "Исус и народ одлазе из Ситима и долазе на Јордан."
+      hu: "Józsué és a nép elhagyják Sittimet, és a Jordánhoz érnek."
+      fi: "Joosua ja kansa lähtevät Sittimistä ja tulevat Jordanille."
+      vi: "Giô-suê và dân sự rời Si-tim và đến sông Giô-đanh."
+      ro: "Iosua și poporul pleacă din Sitim și ajung la Iordan."
+      bg: "Иисус Навин и народът напускат Ситим и идват при Йордан."
   - place: ab94aea # Gilgal
     ref: Josh.4.19
     year: "1406 BC"
@@ -337,6 +417,11 @@ stops:
       tl: "Sa kabila ng Jordan, ang unang kampamento sa lupain ay sa Gilgal, sa silangan ng Jerico."
       da: "På den anden side af Jordan ligger den første lejr i landet i Gilgal, øst for Jeriko."
       sr: "Преко Јордана први логор у земљи је у Галгалу, источно од Јерихона."
+      hu: "A Jordánon túl az első tábor az országban Gilgálnál van, Jerikótól keletre."
+      fi: "Jordanin toisella puolella ensimmäinen leiri maassa on Gilgalissa, Jerikosta itään."
+      vi: "Bên kia sông Giô-đanh, chỗ hạ trại đầu tiên trong xứ là Ghinh-ganh, phía đông Giê-ri-cô."
+      ro: "Dincolo de Iordan, prima tabără în țară este la Ghilgal, la răsărit de Ierihon."
+      bg: "Отвъд Йордан първият стан в земята е в Галгал, на изток от Йерихон."
   - place: a231f80 # Jericho
     ref: Josh.6.1-Josh.6.20
     year: "1406 BC"
@@ -357,3 +442,8 @@ stops:
       tl: "Pitong araw sa palibot ng Jerico, at bumabagsak ang pader nito."
       da: "Syv dage rundt om Jeriko, og dens mur falder."
       sr: "Седам дана око Јерихона, и зид његов пада."
+      hu: "Hét napig járják körül Jerikót, és a fala leomlik."
+      fi: "Seitsemän päivää Jerikon ympäri, ja sen muuri sortuu."
+      vi: "Bảy ngày vòng quanh Giê-ri-cô, và vách thành đổ xuống."
+      ro: "Șapte zile în jurul Ierihonului, iar zidul lui se prăbușește."
+      bg: "Седем дни около Йерихон — и стената му пада."

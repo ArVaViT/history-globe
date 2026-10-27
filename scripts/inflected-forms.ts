@@ -2,11 +2,15 @@
  * The forms of a place name in running text in the languages beyond Russian
  * (scripts/build-text-places.ts; Russian is scripts/russian-forms.ts): the cases of a
  * one-word Ukrainian, Polish, Czech or Serbian name («Єрусалима», "w Jerozolimie",
- * "v Jeruzalémě", «у Јерусалиму») and the German and Nordic genitive ("Jerusalems"). Rules by
+ * "v Jeruzalémě", «у Јерусалиму»), the German and Nordic genitive ("Jerusalems"), the
+ * Hungarian and Finnish case endings ("Jeruzsálemben", "Jerusalemissa") and the Romanian
+ * article ("Ierusalimului"). Rules by
  * ending only, no dictionary: a form never met in a text costs nothing, a missed one leaves a
  * name unlinked, and a form that is also an ordinary word is dropped by the index's checks.
- * Names of several words are matched as written; so are names in a vowel these rules do not
- * know (Мегіддо, Hebrón).
+ * Names of several words are matched as written, but for the last word's case in Hungarian and
+ * Finnish; so are names in a vowel these rules do not know (Мегіддо, Hebrón). Turkish needs no
+ * forms: its suffix follows an apostrophe (Mısır'dan), where a name already ends; Vietnamese,
+ * Swahili and Bulgarian names take no endings.
  */
 import type { Locale } from "../packages/model/src/time.ts";
 
@@ -209,6 +213,154 @@ function serbian(w: string): string[] {
   return [w];
 }
 
+// Hungarian: the case suffixes go straight onto the name, in its vowel harmony: back
+// (Pátmoszon, Hebronba), front (Sikemben, Ninivébe) or front rounded (völgyön, völgyhöz).
+// A final -a or -e lengthens before them (Betánia → Betániában, Ninive → Ninivét); -val/-vel
+// and -vá/-vé take on a final consonant (Jeruzsálemmel, Hebronnal, Ciprussal). The last vowel
+// that is not i, í or é decides: Jeruzsálemben, Názárettől, but Dáviddal.
+type Harmony = "back" | "front" | "round";
+const HU_SUFFIX: Record<Harmony, readonly string[]> = {
+  // inessive, illative, elative, dative, allative, sublative, delative, ablative, adessive
+  back: ["ban", "ba", "ból", "nak", "hoz", "ra", "ról", "tól", "nál"],
+  front: ["ben", "be", "ből", "nek", "hez", "re", "ről", "től", "nél"],
+  round: ["ben", "be", "ből", "nek", "höz", "re", "ről", "től", "nél"],
+};
+// The link vowel of the superessive and the accusative, and the instrumental's and
+// translative's own after an assimilated consonant.
+const HU_LINK: Record<Harmony, { on: string; at: string[]; val: string; va: string }> = {
+  back: { on: "on", at: ["ot"], val: "al", va: "á" },
+  front: { on: "en", at: ["et"], val: "el", va: "é" },
+  // völgyet, but ködöt: both.
+  round: { on: "ön", at: ["et", "öt"], val: "el", va: "é" },
+};
+const huHarmonies = (w: string): Harmony[] => {
+  const vowels = w.toLowerCase().match(/[aáeéiíoóöőuúüű]/g) ?? [];
+  // i, í and é are neutral: the vowel before them decides (Dávid → Dáviddal, Karkemis →
+  // Karkemisnél); a name of these alone is front (Siddim → Siddimben).
+  const decides = [...vowels].reverse().find((v) => !/[iíé]/.test(v)) ?? "e";
+  if (/[öőüű]/.test(decides)) return ["round"];
+  if (!/[aáoóuú]/.test(decides)) return ["front"];
+  // After a back vowel an é goes either way: Athénban, Joppétól, but Penuélnek.
+  return /[aáoóuú][^aáoóuú]*é/.test(vowels.join("")) ? ["back", "front"] : ["back"];
+};
+/** The written consonants, digraphs whole: a doubled sz is ssz, a doubled ny nny. */
+const HU_FINAL = /(dzs|cs|dz|gy|ly|ny|sz|ty|zs|[bcdfghjklmnprstvwxz])$/;
+/** Common words at the end of a name with a stem of their own: «a Genezáreti-tavon», «utat». */
+const HU_STEMS: Record<string, readonly string[]> = {
+  tó: ["tavat", "tavon"],
+  út: ["utat"],
+  kút: ["kutat"],
+  torony: ["tornyot", "tornyon"],
+  fal: ["falat"],
+  tér: ["teret"],
+  kő: ["követ", "kövön"],
+  víz: ["vizet", "vizen"],
+};
+function hungarian(w: string): string[] {
+  const own = HU_STEMS[w] ?? [];
+  if (tooShort(w) && !own.length) return [w];
+  const out = [w, ...own, `${w}ként`];
+  const vowelEnd = /[aáeéiíoóöőuúüű]$/i.test(w);
+  // Betánia → Betániá-, Ninive → Ninivé-; the -i adjective keeps the short vowel (betániai).
+  const stem = w.replace(/a$/, "á").replace(/e$/, "é");
+  for (const h of huHarmonies(w)) {
+    const link = HU_LINK[h];
+    // -ként alone keeps the short vowel: Rómaként, but Rómáig.
+    out.push(...ends(stem, [...HU_SUFFIX[h], "ig", "ért", "é"]));
+    if (vowelEnd) {
+      out.push(`${stem}n`, `${stem}t`, `${stem}v${link.val}`, `${stem}v${link.va}`);
+      // The possessed name: «Fülöp Cézáreája», «Rómájának».
+      out.push(`${stem}j${h === "back" ? "a" : "e"}`, `${stem}j${h === "back" ? "ának" : "ének"}`);
+    } else {
+      const c = HU_FINAL.exec(w)?.[1] ?? "";
+      const double = `${w.slice(0, w.length - c.length)}${c.charAt(0)}${c}`;
+      out.push(`${w}${link.on}`, ...link.at.map((a) => w + a), double + link.val, double + link.va);
+      // A foreign s said as sz doubles as one: Tiberiasszal (but Ciprussal).
+      if (/[^csz]s$/.test(w)) out.push(`${w}sz${link.val}`, `${w}sz${link.va}`);
+      // After a sonorant or a hiss the accusative is a bare -t: Hebront, Ciprust, Damaszkuszt.
+      if (/(ly|ny|zs|[jlnrsz])$/.test(w)) out.push(`${w}t`);
+    }
+  }
+  // The adjective: «a Jeruzsálemi Talmud»; running text writes it small (jeruzsálemi), which
+  // the index leaves to the word checks.
+  if (!/[ií]$/.test(w)) out.push(`${w}i`);
+  return uniq(out);
+}
+
+// Finnish: the cases of a foreign name. A final consonant takes -i- (Jerusalemissa,
+// Kapernaumiin); a final vowel takes the endings itself and repeats in the illative (Betaniaan,
+// Niiniveen); the Greek -os drops its s in the Bible (Efesos → Efesossa, Efesoon) and becomes
+// -okse- today (Efesoksessa, Kyproksella). Endings follow the name's harmony: -ssa after a, o
+// or u anywhere, -ssä otherwise (Niinivessä, Egyptissä).
+// Consonant gradation, a native word's, is left alone but for the doubled stop of a borrowed
+// -tti, -kki, -ppi (Korintti → Korintissa, Korintin; Korinttiin).
+const FI_STEMS: Record<string, string> = {
+  // The common words that end a name, with a stem of their own: Karmelvuorella, Välimeressä.
+  vuori: "vuore",
+  meri: "mere",
+  järvi: "järve",
+};
+function finnish(w: string): string[] {
+  if (tooShort(w)) return [w];
+  const element = Object.keys(FI_STEMS).find((e) => w.endsWith(e));
+  if (element) {
+    const head = w.slice(0, w.length - element.length);
+    const stem = head + (FI_STEMS[element] ?? element);
+    // The last word of a compound sets the harmony: Galileanjärvessä.
+    const a = /[aou]/.test(element) ? "a" : "ä";
+    return uniq([
+      w,
+      ...ends(stem, ["n", `ss${a}`, `st${a}`, "en", `ll${a}`, "lle", `lt${a}`, `n${a}`, "ksi"]),
+      // vuorta, merta, but järveä.
+      element === "järvi" ? `${stem}ä` : `${head}${element.slice(0, -1)}ta`,
+    ]);
+  }
+  const a = /[aou]/i.test(w) ? "a" : "ä";
+  const greek = /[^aeiouyäö]os$/i.test(w);
+  const v = greek ? w.slice(0, -1) : /[aeiouyäö]$/i.test(w) ? w : `${w}i`;
+  const weak = v.replace(/(kk|pp|tt)i$/, (m) => `${m.charAt(0)}i`);
+  const last = v.charAt(v.length - 1);
+  // A long vowel or a diphthong takes -hVn and -tA: Siinaihin, Siinaita.
+  const long = /(aa|ee|ii|oo|uu|yy|ää|öö|[aeiouyäö]i|[aeio]u|[äö]y)$/i.test(v);
+  return uniq([
+    w,
+    ...ends(weak, ["n", `ss${a}`, `st${a}`, `ll${a}`, "lle", `lt${a}`, "ksi"]),
+    long ? `${v}h${last}n` : `${v}${last}n`,
+    long ? `${v}t${a}` : `${v}${a}`,
+    `${v}n${a}`,
+    // Today's way with the Greek -os, as with a Finnish word in -s: Kyproksella, Patmokselle.
+    ...(greek
+      ? [
+          ...ends(`${v}kse`, ["n", `ss${a}`, `st${a}`, "en", `ll${a}`, "lle", `lt${a}`, `n${a}`]),
+          `${w}t${a}`,
+        ]
+      : []),
+  ]);
+}
+
+/**
+ * Romanian: the article is part of the name. A masculine one takes -ul and -ului (Ierusalimul,
+ * Betleemului; Cipru → Ciprul, Ciprului) and the vocative -e (Ierusalime); a feminine one
+ * the genitive and dative -ei or -ii (Roma → Romei, Samaria → Samariei; Galileea → Galileii,
+ * the older Galileei; Africa → Africii). Pages written with the cedilla letters ş and ţ in place
+ * of ș and ț are matched too.
+ */
+function romanian(w: string): string[] {
+  const forms = ((): string[] => {
+    if (tooShort(w)) return [w];
+    const s = (k: number) => w.slice(0, -k);
+    if (w.endsWith("ia")) return [w, `${s(1)}ei`];
+    if (w.endsWith("ea")) return [w, `${s(1)}i`, `${s(2)}ii`];
+    if (/[cg]a$/.test(w)) return [w, `${s(1)}ii`];
+    if (w.endsWith("a")) return [w, `${s(1)}ei`];
+    if (w.endsWith("e")) return [w, `${w}i`];
+    if (w.endsWith("u")) return [w, `${w}l`, `${w}lui`];
+    if (/[bcdfghjklmnprsștțvxz]$/.test(w)) return [w, `${w}ul`, `${w}ului`, `${w}e`];
+    return [w];
+  })();
+  return forms.flatMap((f) => [f, f.replace(/ș/g, "ş").replace(/ț/g, "ţ")]);
+}
+
 const BY_LANGUAGE: Partial<Record<Locale, (w: string) => string[]>> = {
   uk: ukrainian,
   pl: polish,
@@ -219,13 +371,36 @@ const BY_LANGUAGE: Partial<Record<Locale, (w: string) => string[]>> = {
   sv: nordic,
   da: nordic,
   nb: nordic,
+  hu: hungarian,
+  fi: finnish,
+  ro: romanian,
 };
+
+/**
+ * The forms of a name whose last word alone is declined. A Finnish adjective before it would be
+ * declined too (Uusi portti → Uudessa portissa), so there only a genitive may stand before it
+ * (Jordanin laakso, Pisidian Antiokia); a hyphen joins one word (Abel-Mehola → Abel-Meholassa).
+ */
+function lastWordForms(name: string, forms: (w: string) => string[]): string[] {
+  const at = Math.max(name.lastIndexOf(" "), name.lastIndexOf("-"));
+  const head = name.slice(0, at + 1);
+  const words = head.trim().split(/\s+/);
+  const fi = forms === finnish;
+  if (fi && head.includes(" ") && !words.every((x) => /n$/.test(x.split("-").pop() ?? "")))
+    return [name];
+  return uniq(forms(name.slice(at + 1)).map((f) => head + f));
+}
 
 /** The forms of a place name in a language other than Russian and English. */
 export function inflectedForms(name: string, l: Locale): string[] {
   const forms = BY_LANGUAGE[l];
   if (!forms) return [name];
-  // Names of several words: Portuguese spellings only, the words as written.
-  if (/[\s-]/.test(name.trim())) return l === "pt" ? portuguese(name) : [name];
+  // Names of several words: Portuguese spellings only, the words as written; in Hungarian
+  // and Finnish the last word takes the case (a Holt-tengerbe, Pisidian Antiokiassa).
+  if (/[\s-]/.test(name.trim())) {
+    if (l === "pt") return portuguese(name);
+    if (l === "hu" || l === "fi") return lastWordForms(name.trim(), forms);
+    return [name];
+  }
   return uniq(forms(name));
 }

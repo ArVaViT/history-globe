@@ -22,6 +22,11 @@ title:
   tl: "Si Moises bago ang Exodo"
   da: "Moses før udtoget"
   sr: "Мојсије пре Изласка"
+  hu: "Mózes a kivonulás előtt"
+  fi: "Mooses ennen Exodusta"
+  vi: "Môi-se trước cuộc Xuất hành"
+  ro: "Moise înainte de Exod"
+  bg: "Мойсей преди Изхода"
 year: "1526 BC"
 people: ["Moses@Exo.2.10-Rev"]
 approximate: true
@@ -45,6 +50,11 @@ stops:
       tl: "Inatasan ang Israel na magtayo ng mga lungsod na imbakan, ang Phithom at Rameses; ang batang Hebreo na iniahon mula sa tubig ay pinangalanang Moises."
       da: "Israel sættes til at bygge forrådsbyerne Pitom og Ramses; en hebraisk dreng, der drages op af vandet, får navnet Moses."
       sr: "Израиљ је натеран да гради градове за залихе, Питом и Рамесу; хебрејски дечак извучен из воде добија име Мојсије."
+      hu: "Izráelt arra fogják, hogy építse Pitom és Ramszesz raktárvárosait; a vízből kihúzott héber fiút Mózesnek nevezik."
+      fi: "Israel pannaan rakentamaan varastokaupungit Pitom ja Ramses; vedestä nostettu heprealainen poika saa nimen Mooses."
+      vi: "Y-sơ-ra-ên bị bắt xây các thành kho tàng Phi-thom và Ram-se-sơ; một đứa trẻ Hê-bơ-rơ được vớt khỏi nước được đặt tên là Môi-se."
+      ro: "Israel este pus să zidească cetățile de provizii Pitom și Ramses; un băiat evreu scos din apă primește numele Moise."
+      bg: "Израил е заставен да строи градовете за запаси Питом и Раамсес; едно еврейско момче, извадено от водата, е наречено Мойсей."
   - place: acc6d8e # Midian
     ref: Exod.2.11-Exod.2.22
     year: "1486 BC"
@@ -65,6 +75,11 @@ stops:
       tl: "Sa edad na apatnapu ay tumakas siya kay Faraon patungo sa lupain ng Midian at naupo sa tabi ng isang balon."
       da: "Som fyrreårig flygter han fra Farao til Midjans land og sætter sig ved en brønd."
       sr: "Са четрдесет година бежи од фараона у земљу мадијамску и седа крај студенца."
+      hu: "Negyvenéves korában elmenekül a fáraó elől Midián földjére, és leül egy kútnál."
+      fi: "Neljänkymmenen vuoden iässä hän pakenee faraota Midianin maahan ja istahtaa kaivon ääreen."
+      vi: "Lúc bốn mươi tuổi, người trốn khỏi Pha-ra-ôn đến xứ Ma-đi-an và ngồi gần bên một cái giếng."
+      ro: "La patruzeci de ani fuge de Faraon în țara Madian și se așază lângă o fântână."
+      bg: "На четиридесет години той бяга от фараона в земята Мадиам и сяда при един кладенец."
   - place: a9bb03e # Mount Horeb
     ref: Exod.3.1-Exod.4.17
     year: "1446 BC"
@@ -85,6 +100,11 @@ stops:
       tl: "Sa Horeb, ang bundok ng Dios, nagniningas ang mababang punong kahoy at hindi nasusunog: “AKO YAONG AKO NGA.”"
       da: "På Horeb, Guds bjerg, brænder tornebusken og fortæres ikke: »Jeg er den, som jeg er.«"
       sr: "На Хориву, гори Божјој, купина гори и не изгара: „Ја сам Онај што јесте.“"
+      hu: "A Hóreben, az Isten hegyén a csipkebokor ég, és nem ég el: „VAGYOK A KI VAGYOK.”"
+      fi: "Horebilla, Jumalan vuorella, pensas palaa eikä pala poroksi: ”Minä olen se, joka minä olen”."
+      vi: "Tại Hô-rếp, núi của Đức Chúa Trời, bụi gai cháy mà không tàn: “Ta là Đấng Tự Hữu Hằng Hữu.”"
+      ro: "La Horeb, muntele lui Dumnezeu, rugul arde și nu se mistuie: „Eu sunt cel ce sunt”."
+      bg: "При Хорив, Божията планина, къпината гори и не изгаря: „Аз съм СИЙ“."
   - place: af301ca # Egypt
     ref: Exod.4.18-Exod.5.1
     year: "1446 BC"
@@ -105,3 +125,8 @@ stops:
       tl: "Pagbalik sa Egipto, sinabi nina Moises at Aaron kay Faraon: “Bayaan mong ang aking bayan ay yumaon.”"
       da: "Tilbage i Egypten siger Moses og Aron til Farao: »Lad mit Folk fare.«"
       sr: "Опет у Египту Мојсије и Арон говоре фараону: „Пусти народ мој…“"
+      hu: "Egyiptomba visszatérve Mózes és Áron ezt mondják a fáraónak: „Bocsásd el az én népemet”."
+      fi: "Takaisin Egyptissä Mooses ja Aaron sanovat faraolle: ”Päästä minun kansani viettämään minulle juhlaa erämaassa”."
+      vi: "Trở lại Ê-díp-tô, Môi-se và A-rôn tâu cùng Pha-ra-ôn: “Hãy cho dân ta đi.”"
+      ro: "Întors în Egipt, Moise și Aaron îi spun lui Faraon: „lasă pre poporul meu”."
+      bg: "Обратно в Египет Мойсей и Аарон казват на фараона: „Пусни людете ми“."

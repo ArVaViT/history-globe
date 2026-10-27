@@ -22,6 +22,11 @@ title:
   tl: "Pentecostes: saan nanggaling ang mga peregrino"
   da: "Pinse: hvor pilgrimmene kom fra"
   sr: "Педесетница: одакле су дошли ходочасници"
+  hu: "Pünkösd: honnan jöttek a zarándokok"
+  fi: "Helluntai: mistä pyhiinvaeltajat tulivat"
+  vi: "Lễ Ngũ Tuần: các khách hành hương đến từ đâu"
+  ro: "Cincizecimea: de unde veneau pelerinii"
+  bg: "Петдесетница: откъде дойдоха поклонниците"
 year: "AD 30"
 # The lands of a list, not a journey: no time on foot.
 walked: false
@@ -46,6 +51,11 @@ stops:
       tl: "Sa araw ng Pentecostes, bumababa ang Espiritu na may tunog mula sa langit at mga dilang tulad ng apoy; naririnig ng mga relihiosong Judio “buhat sa bawa't bansa sa ilalim ng langit” ang mga taga-Galilea, bawat isa sa sarili niyang wika."
       da: "På pinsedagen kommer Ånden med en lyd fra himlen og tunger som af ild; gudfrygtige jøder »af alle Folkeslag under Himmelen« hører galilæerne, hver på sit eget sprog."
       sr: "На дан Педесетнице Дух силази уз шум с неба и језике као огњене; побожни Јевреји „из сваког народа који је под небом“ чују Галилејце, сваки на свом језику."
+      hu: "Pünkösd napján a Lélek mennyei zúgással és tűzként megjelenő nyelvekkel száll alá; az istenfélő zsidók „minden nép közül, melyek az ég alatt vannak”, mindannyian a maguk nyelvén hallják a galileaiakat."
+      fi: "Helluntaipäivänä Henki tulee äänenä taivaasta ja tulen kaltaisina kielinä; jumalaapelkääväiset juutalaiset ”kaikkinaisista kansoista, mitä taivaan alla on”, kuulevat galilealaisten puhuvan, kukin omalla kielellään."
+      vi: "Đến ngày lễ Ngũ Tuần, Đức Thánh Linh giáng xuống với một tiếng từ trời và những lưỡi như lửa; những người Giu-đa mộ đạo “từ các dân thiên hạ đến” nghe các người Ga-li-lê nói, ai nấy đều nghe bằng tiếng riêng của mình."
+      ro: "În ziua Cincizecimii, Duhul vine cu un vuiet din cer și cu limbi ca de foc; iudei evlavioși „dintru tot neamul ce este supt cer” îi aud pe galileeni, fiecare în limba lui."
+      bg: "В деня на Петдесетница Духът идва с шум от небето и езици като от огън; благочестиви юдеи „от всеки народ що има под небето“ чуват галилейците всеки на своя език."
   - place: a43f60f # Mesopotamia
     ref: Acts.2.9
     note:
@@ -65,6 +75,11 @@ stops:
       tl: "Una ang silangan: mga Parto, mga Medo, mga Elamita at ang mga naninirahan sa Mesopotamia, kung saan nanirahan ang mga Judio mula pa sa pagkabihag."
       da: "Først øst: parthere, medere, elamitter og dem, der bor i Mesopotamien, hvor jøder havde boet siden landflygtigheden."
       sr: "Најпре исток: Парти, Миђани, Еламљани и становници Месопотамије, где су Јевреји живели од прогонства."
+      hu: "Először a kelet: párthusok, médek, elámiták és a Mezopotámiában lakók, ahol a zsidók a számkivetés óta éltek."
+      fi: "Ensin itä: partialaiset, meedialaiset, elamilaiset ja Mesopotamian asukkaat, jossa juutalaisia oli asunut pakkosiirtolaisuudesta asti."
+      vi: "Trước hết là phương đông: người Bạt-thê, Mê-đi, Ê-la-mít và những kẻ ở tại Mê-sô-bô-ta-mi, nơi người Giu-đa đã sống từ thời lưu đày."
+      ro: "Întâi răsăritul: parți, mezi, elamiți și locuitorii Mesopotamiei, unde iudeii trăiau încă din vremea exilului."
+      bg: "Първо изтокът: партяни, мидяни, еламити и живеещите в Месопотамия, където юдеи живееха още от изгнанието."
   - place: a33fbde # Cappadocia
     ref: Acts.2.9
     note:
@@ -84,6 +99,11 @@ stops:
       tl: "Capadocia, sa gitna ng Asia Minor: isusulat ni Pedro ang kaniyang sulat sa mga iglesia nito (1 Ped 1:1)."
       da: "Kappadokien, i hjertet af Lilleasien: Peter skal skrive sit brev til dets menigheder (1 Pet 1,1)."
       sr: "Кападокија, у срцу Мале Азије: Петар ће писати своју посланицу њеним црквама (1. Пет 1,1)."
+      hu: "Kappadókia, Kis-Ázsia szívében: Péter levelét az itteni gyülekezeteknek írja (1Pt 1,1)."
+      fi: "Kappadokia, Vähän-Aasian sydämessä: Pietari kirjoittaa kirjeensä sen seurakunnille (1. Piet. 1:1)."
+      vi: "Cáp-ba-đốc, ở giữa miền Tiểu Á: Phi-e-rơ sẽ viết thư gởi cho các Hội thánh ở đó (1 Phi-e-rơ 1:1)."
+      ro: "Capadocia, în inima Asiei Mici: Petru le va scrie bisericilor de acolo epistola sa (1 Petru 1:1)."
+      bg: "Кападокия, в сърцето на Мала Азия: Петър ще напише посланието си до нейните църкви (1 Петр. 1:1)."
   - place: a83a43e # Pontus
     ref: Acts.2.9
     note:
@@ -103,6 +123,11 @@ stops:
       tl: "Ponto sa Dagat Itim, ang tahanan ni Aquila, na makikilala ni Pablo sa Corinto (Gawa 18:2)."
       da: "Pontus ved Sortehavet, Akvilas hjemland, som Paulus skal møde i Korinth (ApG 18,2)."
       sr: "Понт на Црном мору, домовина Акиле, кога ће Павле срести у Коринту (Дап 18,2)."
+      hu: "Pontus a Fekete-tenger mellett, Akvila hazája, akivel Pál Korinthusban találkozik (ApCsel 18,2)."
+      fi: "Pontos Mustanmeren rannalla, Akylaan kotiseutu; hänet Paavali tapaa Korintissa (Ap. t. 18:2)."
+      vi: "Bông bên Biển Đen, quê hương của A-qui-la, người mà Phao-lô sẽ gặp tại Cô-rinh-tô (Công vụ 18:2)."
+      ro: "Pontul, la Marea Neagră, patria lui Acvila, pe care Pavel îl va întâlni la Corint (Faptele Apostolilor 18:2)."
+      bg: "Понт на Черно море, родината на Акила, когото Павел ще срещне в Коринт (Деян. 18:2)."
   - place: a197f19 # Asia
     ref: Acts.2.9
     note:
@@ -122,6 +147,11 @@ stops:
       tl: "Asia, ang lalawigan ng Efeso, kung saan magtuturo si Pablo nang tatlong taon at kung saan itatayo ang pitong iglesia ng Apocalipsis."
       da: "Asia, Efesos' provins, hvor Paulus skal undervise i tre år, og hvor Johannes' Åbenbarings syv menigheder skal ligge."
       sr: "Азија, провинција Ефеса, где ће Павле поучавати три године и где ће стајати седам цркава из Откривења."
+      hu: "Ázsia, Efezus provinciája, ahol Pál három évig tanít, és ahol a Jelenések könyvének hét gyülekezete áll majd."
+      fi: "Aasia, Efesoksen provinssi, jossa Paavali opettaa kolme vuotta ja jossa Ilmestyskirjan seitsemän seurakuntaa tulevat olemaan."
+      vi: "A-si, tỉnh của Ê-phê-sô, nơi Phao-lô sẽ dạy dỗ trong ba năm và là nơi có bảy Hội thánh trong sách Khải huyền."
+      ro: "Asia, provincia Efesului, unde Pavel va învăța trei ani și unde se vor afla cele șapte biserici din Apocalipsa."
+      bg: "Азия, провинцията на Ефес, където Павел ще поучава три години и където ще стоят седемте църкви от Откровението."
   - place: ab8ae56 # Phrygia
     ref: Acts.2.10
     note:
@@ -141,6 +171,11 @@ stops:
       tl: "Frigia sa kalooban ng lupain, na dalawang beses na daraanan ni Pablo sa kaniyang mga paglalakbay."
       da: "Frygien inde i landet, som Paulus skal krydse to gange på sine rejser."
       sr: "Фригија у унутрашњости, коју ће Павле двапут прећи на својим путовањима."
+      hu: "Frígia a szárazföld belsejében, amelyen Pál útjai során kétszer halad át."
+      fi: "Fryygia sisämaassa, jonka Paavali ylittää kahdesti matkoillaan."
+      vi: "Phi-ri-gi ở trong nội địa, mà Phao-lô sẽ hai lần đi ngang qua trong các chuyến hành trình của mình."
+      ro: "Frigia, în interior, pe care Pavel o va străbate de două ori în călătoriile sale."
+      bg: "Фригия във вътрешността, която Павел ще прекоси два пъти в пътуванията си."
   - place: aa95188 # Pamphylia
     ref: Acts.2.10
     note:
@@ -160,6 +195,11 @@ stops:
       tl: "Pamfilia sa katimugang baybayin, kasama ang Perga, kung saan babalik si Juan Marcos (Gawa 13:13)."
       da: "Pamfylien på sydkysten, med Perge, hvor Johannes Markus vender om (ApG 13,13)."
       sr: "Памфилија на јужној обали, с Перге, где ће се Јован Марко вратити (Дап 13,13)."
+      hu: "Pamfília a déli parton, Pergével, ahol Márk János visszafordul (ApCsel 13,13)."
+      fi: "Pamfylia etelärannikolla, ja Perge, jossa Johannes Markus kääntyy takaisin (Ap. t. 13:13)."
+      vi: "Bam-phi-ly trên bờ biển phía nam, với Bẹt-giê, nơi Giăng Mác sẽ quay về (Công vụ 13:13)."
+      ro: "Pamfilia, pe coasta de sud, cu Perga, unde Ioan Marcu se va întoarce din drum (Faptele Apostolilor 13:13)."
+      bg: "Памфилия на южния бряг, с Перга, откъдето Йоан Марко ще се върне (Деян. 13:13)."
   - place: af301ca # Egypt
     ref: Acts.2.10
     note:
@@ -179,6 +219,11 @@ stops:
       tl: "Egipto, na may dakilang pamayanang Judio ng Alejandria, ang lungsod ni Apolos (Gawa 18:24)."
       da: "Egypten, med det store jødiske samfund i Alexandria, Apollos' by (ApG 18,24)."
       sr: "Египат, с великом јеврејском заједницом Александрије, градом Аполовим (Дап 18,24)."
+      hu: "Egyiptom, Alexandria nagy zsidó közösségével, Apollós városával (ApCsel 18,24)."
+      fi: "Egypti, jossa on Aleksandrian suuri juutalaisyhteisö, Apolloksen kaupunki (Ap. t. 18:24)."
+      vi: "Ê-díp-tô, với cộng đồng Giu-đa lớn tại A-léc-xan-tri, quê hương của A-bô-lô (Công vụ 18:24)."
+      ro: "Egiptul, cu marea comunitate iudaică din Alexandria, cetatea lui Apolo (Faptele Apostolilor 18:24)."
+      bg: "Египет, с голямата юдейска общност на Александрия, града на Аполос (Деян. 18:24)."
   - place: a81cdb5 # Cyrene
     ref: Acts.2.10
     note:
@@ -198,6 +243,11 @@ stops:
       tl: "“Mga sakop ng Libia na karatig ng Cirene”: si Simon na nagpasan ng krus ay taga-Cirene, at ang mga lalaking taga-Chipre at Cirene ay mangangaral ng Panginoong Jesus sa mga Griego sa Antioquia (Gawa 11:20)."
       da: "»Libyens Egne ved Kyrene«: Simon, der bar korset, var fra Kyrene, og mænd fra Cypern og Kyrene skal prædike Herren Jesus for grækerne i Antiokia (ApG 11,20)."
       sr: "„Крајева ливијских код Кирине“: Симон који је носио крст био је из Кирене, а људи с Кипра и из Кирене проповедаће Господа Исуса Грцима у Антиохији (Дап 11,20)."
+      hu: "„Libiának tartományiban, mely Cziréne mellett van”: a keresztet vivő Simon cirenei volt, és ciprusi és cirenei férfiak hirdetik majd az Úr Jézust a görögöknek Antiókhiában (ApCsel 11,20)."
+      fi: "”Kyrenen puoleisen Liibyan alueilla”: ristin kantanut Simon oli kyreneläinen, ja Kyproksen ja Kyrenen miehet saarnaavat Herraa Jeesusta kreikkalaisille Antiokiassa (Ap. t. 11:20)."
+      vi: "“Đất Li-by gần Sy-ren”: Si-môn, người vác thập tự giá, là người Sy-ren, và những người Chíp-rơ và Sy-ren sẽ giảng về Chúa Giê-su cho người Hy Lạp tại An-ti-ốt (Công vụ 11:20)."
+      ro: "„părțile Liviei cele de lângă Chirini”: Simon, care a purtat crucea, era din Cirene, iar oameni din Cipru și din Cirene Îl vor vesti pe Domnul Isus grecilor din Antiohia (Faptele Apostolilor 11:20)."
+      bg: "„Ливийските страни които са около Киринея“: Симон, който носеше кръста, беше от Кириния, а мъже от Кипър и Кириния ще проповядват Господа Исуса на гърците в Антиохия (Деян. 11:20)."
   - place: afc8e7a # Rome
     ref: Acts.2.10
     note:
@@ -217,6 +267,11 @@ stops:
       tl: "“Mga nakikipamayang galing sa Roma, mga Judio, at gayon din ang mga naging Judio”, ang pinakakanluran sa talaan; sinasarhan ito ng mga taga-Creta at mga Arabe."
       da: "»vi her boende Romere, Jøder og Proselyter«, listens vestligste; kretere og arabere afslutter den."
       sr: "„Путници из Рима, и Јудејци и дошљаци“, најзападнији на списку; Крићани и Арапи га затварају."
+      hu: "„A római jövevények, mind zsidók, mind prozelitusok”, a lista legnyugatibbjai; krétaiak és arabok zárják be."
+      fi: "”Täällä oleskelevat roomalaiset, juutalaiset ja käännynnäiset”, luettelon läntisin; kreetalaiset ja arabialaiset päättävät sen."
+      vi: "“Nào kẻ từ Rô-ma đến, cả người Giu-đa hoặc người mới theo đạo Giu-đa”, ở cực tây của danh sách; người Cơ-rết và người A-ráp khép danh sách lại."
+      ro: "„nemernicii Romani, Iudeii și veneticii”, cei mai apuseni din listă; cretanii și arabii o încheie."
+      bg: "„чужденци от Рим, Юдеи и прозелити“, най-западните в списъка; критяни и араби го завършват."
   - place: a15257a # Jerusalem
     ref: Acts.2.14-Acts.2.47
     note:
@@ -236,3 +291,8 @@ stops:
       tl: "Tumatayo si Pedro kasama ang labing-isa: ito ang inihula ni Joel, at si Jesus na ipinako ninyo sa krus ay muling binuhay ng Dios. Mga tatlong libo ang nabautismuhan, at “idinaragdag sa kanila ng Panginoon araw-araw yaong nangaliligtas”."
       da: "Peter står op sammen med de elleve: dette er, hvad Joel forudsagde, og Jesus, som I korsfæstede, har Gud opvakt. Omkring tre tusind lader sig døbe, »Herren føjede daglig til dem nogle, som lode sig frelse«."
       sr: "Петар стаје са једанаесторицом: ово је оно што је прорекао Јоило, а Исуса кога сте распели Бог је подигао. Око три хиљаде се крштава, „а Господ сваки дан умножаваше друштво оних који се спасаваху“."
+      hu: "Péter feláll a tizenegyekkel: ezt jövendölte meg Jóel, és Jézust, akit megfeszítettetek, Isten feltámasztotta. Mintegy háromezren megkeresztelkednek, és „az Úr pedig minden napon szaporítja vala a gyülekezetet az idvezülőkkel”."
+      fi: "Pietari nousee seisomaan yhdentoista kanssa: tämä on se, minkä Joel ennusti, ja Jeesuksen, jonka te ristiinnaulitsitte, Jumala on herättänyt. Noin kolmetuhatta kastetaan, ”ja Herra lisäsi heidän yhteyteensä joka päivä niitä, jotka saivat pelastuksen”."
+      vi: "Phi-e-rơ đứng dậy cùng mười một sứ đồ: đây là điều Giô-ên đã báo trước, và Giê-su mà các ngươi đã đóng đinh, Đức Chúa Trời đã khiến sống lại. Khoảng ba ngàn người chịu báp têm, và “mỗi ngày Chúa lấy những kẻ được cứu thêm vào Hội thánh”."
+      ro: "Petru se ridică împreună cu cei unsprezece: aceasta este ce a vestit Ioel, iar pe Isus, pe care L-ați răstignit, Dumnezeu L-a înviat. Cam trei mii sunt botezați, „Iar Domnul adăogà pre cei ce se mântuiau în toate zilele la biserică”."
+      bg: "Петър става заедно с единадесетте: това е, което Йоил предсказа, и Исус, когото вие разпнахте, Бог е възкресил. Около три хиляди се кръщават, „а Господ всеки ден прибавяше на църквата спасяемите“."

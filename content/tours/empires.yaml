@@ -38,6 +38,11 @@ title:
   tl: "Mga imperyo ng daigdig ng Biblia"
   da: "Den bibelske verdens riger"
   sr: "Царства библијског света"
+  hu: "A bibliai világ birodalmai"
+  fi: "Raamatun maailman suurvallat"
+  vi: "Các đế quốc của thế giới Kinh Thánh"
+  ro: "Imperiile lumii biblice"
+  bg: "Империите на библейския свят"
 year: "2100 BC"
 # Capitals in the order of history, not a way travelled: no time on foot.
 walked: false
@@ -62,6 +67,11 @@ stops:
       tl: "Mga 2100 BK, ang Ur sa ibabang Eufrates ang kabisera ng Ikatlong Dinastiya, na namumuno sa Sumer at Akkad. Dito nagsisimula ang paglalakbay ni Abram ayon sa Genesis, batay sa karaniwang pagkakakilanlan sa Ur ng mga Caldeo: dinadala ni Tara ang kaniyang pamilya “mula sa Ur ng mga Caldeo upang magsipasok sa lupain ng Canaan”."
       da: "Omkring 2100 f.Kr. er Ur ved det nedre Eufrat hovedstad for Ur III-dynastiet, som hersker over Sumer og Akkad. Efter den almindelige identifikation af Ur i Kaldæa begynder Abrams vej i Første Mosebog her: Tera tager sin familie »fra Ur i Kaldæa, at drage til det Land Kanaan«."
       sr: "Око 2100. п. н. е. Ур на доњем Еуфрату је престоница Треће династије, која влада Сумером и Акадом. Постање овде започиње Аврамов пут, по уобичајеном поистовећивању Ура халдејског: Тара води своју породицу „из Ура халдејског да иду у земљу хананску“."
+      hu: "Kr. e. 2100 körül az Eufrátesz alsó folyásánál fekvő Ur az Ur harmadik dinasztiájának fővárosa, amely Sumert és Akkádot uralja. Az 1Móz itt kezdi Ábrám útját, a káldeai Ur szokásos azonosítása szerint: Terah a családjával elindul „Úr-Kaszdimból, hogy Kanaán földére menjenek”."
+      fi: "Noin 2100 eaa. Ur Eufratin alajuoksulla on Kolmannen dynastian pääkaupunki, joka hallitsee Sumeria ja Akkadia. 1. Mooseksen kirja aloittaa Abramin tien tästä kaupungista, kun Kaldean Ur tunnistetaan tavanomaiseen tapaan: Terah vie perheensä ”Kaldean Uurista mennäksensä Kanaanin maahan”."
+      vi: "Khoảng năm 2100 TCN, U-rơ trên hạ lưu sông Ơ-phơ-rát là kinh đô của Vương triều thứ Ba, cai trị Sumer và Akkad. Sáng Thế Ký bắt đầu con đường của Áp-ram từ đây, theo cách đồng nhất thông thường về U-rơ của người Canh-đê: Tha-rê dẫn gia đình mình “đồng ra khỏi U-rơ, thuộc về xứ Canh-đê, đặng qua xứ Ca-na-an”."
+      ro: "Pe la 2100 î.Hr., Ur, pe cursul inferior al Eufratului, este capitala celei de-a Treia Dinastii, care stăpânește Sumerul și Akkadul. Geneza începe aici drumul lui Avram, după identificarea obișnuită a Urului Haldeilor: Terah își scoate familia „din țara Haldeilor, ca să meargă în pământul Hanaan”."
+      bg: "Около 2100 г. пр.н.е. Ур на долния Ефрат е столица на Третата династия, която управлява Шумер и Акад. Според обичайното отъждествяване на Ур Халдейски Битие започва пътя на Аврам оттук: Тара извежда семейството си „из Ур Халдейски да отидат в Ханаанската земя“."
   - place: ab8fdbc # Babel
     ref: Gen.10.10
     year: "1760 BC"
@@ -82,6 +92,11 @@ stops:
       tl: "Sa ilalim ni Hammurabi, ang Babel (Babilonia) ay nagiging kabisera ng isang kahariang nagsasama sa timog Mesopotamia. Ito ang unang binabanggit ng Genesis sa mga lungsod ni Nimrod: “ang pinagsimulan ng kaniyang kaharian ay ang Babel”."
       da: "Under Hammurabi bliver Babel (Babylon) hovedstad i et rige, der forener det sydlige Mesopotamien. Første Mosebog nævner den først blandt Nimrods byer: »Babel var hans Riges Begyndelse«."
       sr: "За Хамурапија Вавилон (Бабел) постаје престоница државе која уједињује јужну Месопотамију. Постање га именује првим међу градовима Неврода: „почетак царству његовом беше Вавилон“."
+      hu: "Hammurapi alatt Bábel (Babilon) a Dél-Mezopotámiát egyesítő királyság fővárosa lesz. Az 1Móz Nimród városai között először említi: „Az ő birodalmának kezdete volt Bábel”."
+      fi: "Hammurabin aikana Babel (Babylon) tulee Etelä-Mesopotamian yhdistävän valtakunnan pääkaupungiksi. 1. Mooseksen kirja mainitsee sen ensimmäisenä Nimrodin kaupungeista: ”hänen valtakuntansa alkuna olivat Baabel…”"
+      vi: "Dưới triều Ham-mu-ra-bi, Ba-bên (Ba-by-lôn) trở thành kinh đô của một vương quốc thống nhất miền nam Mê-sô-bô-ta-mi. Sáng Thế Ký kể nó đầu tiên trong các thành của Nim-rốt: “Nước người sơ-lập là Ba-bên”."
+      ro: "Sub Hammurabi, Babel (Babilonul) devine capitala unui regat care unește sudul Mesopotamiei. Geneza îl numește primul dintre cetățile lui Nimrod: „a fost începutul împărăției lui Vavilonul”."
+      bg: "При Хамурапи Вавилон става столица на царство, обединяващо Южна Месопотамия. Битие го назовава пръв сред градовете на Нимрод: „началото на царството му бе Вавилон“."
   - place: a9674fc # Thebes
     ref: Nah.3.8-Nah.3.10
     year: "1450 BC"
@@ -102,6 +117,11 @@ stops:
       tl: "Sa ilalim ni Thutmose III, ang Thebes, ang lungsod ni Amon, ang puso ng Bagong Kaharian, na ang kapangyarihan ay umaabot hanggang sa Eufrates. Kilala ito ng Biblia bilang Noamon: ginugunita ni Nahum ang pagbagsak nito sa mga Asirio noong mga 663 BK: “Noamon, na natatayo sa gitna ng mga ilog”."
       da: "Under Thutmosis III er Theben, Amons by, Det Nye Riges hjerte, hvis herredømme når til Eufrat. Bibelen kender den som No: Nahum erindrer, at assyrerne plyndrede den omkring 663 f.Kr., »No-Amon, som laa imellem Floderne«."
       sr: "За Тутмеса III Теба, град Амонов, је срце Новог царства, чија власт допире до Еуфрата. Библија је познаје као Но: Наум се сећа њеног пљачкања од Асираца око 663. п. н. е. — Но-Амон, „који лежаше међу рекама“."
+      hu: "III. Thotmesz idején Théba, Ámon városa az Újbirodalom szíve, amelynek uralma az Eufráteszig ér. A Biblia Nó néven ismeri: Náhum az asszírok általi kifosztását idézi fel Kr. e. 663 táján, Nó-Amont, „a mely a folyamoknál fekszik”."
+      fi: "Tuthmosis III:n aikana Teeba, Amonin kaupunki, on Uuden valtakunnan sydän, jonka valta ulottuu Eufratille. Raamattu tuntee sen nimellä No: Nahum muistuttaa sen assyrialaisten suorittamasta ryöstöstä noin 663 eaa.: ”Noo-Ammon, joka istui hallitsijana virtojen ääressä, vetten ympäröimänä”."
+      vi: "Dưới triều Thutmose III, Thebes (Nô), thành của A-môn, là trung tâm của Tân Vương quốc, mà quyền cai trị vươn đến sông Ơ-phơ-rát. Kinh Thánh gọi thành này là Nô: Na-hum nhắc lại việc người A-si-ri cướp phá nó khoảng năm 663 TCN, “Nô-A-môn ở giữa các sông”."
+      ro: "Sub Thutmes al III-lea, Teba, cetatea lui Amon, este inima Regatului Nou, a cărui stăpânire ajunge până la Eufrat. Biblia o cunoaște sub numele de No: Naum amintește jefuirea ei de către asirieni, pe la 663 î.Hr., numind-o populata No, așezată între râuri."
+      bg: "При Тутмос III Тива, градът на Амон, е сърцето на Новото царство, чиято власт стига до Ефрат. Библията я познава като Но: Наум припомня разграбването ѝ от асирийците около 663 г. пр.н.е. — „Но Амон, Който лежеше между реките“."
   - place: a70fd5d # Nineveh
     ref: 2Kgs.19.36
     year: "701 BC"
@@ -122,6 +142,11 @@ stops:
       tl: "Ginawa ni Sennacherib ang Ninive na kabisera ng Asiria, ang kapangyarihang bumihag sa Samaria at ngayon ay nakikipagdigma sa Juda. Pagkatapos ng kaniyang kampanya, “umalis... at yumaon, at bumalik, at tumahan sa Ninive.”"
       da: "Sankerib har gjort Nineve til hovedstad i Assyrien, den magt, der tog Samaria og nu fører krig mod Juda. Efter sit felttog: »rejste Senakerib, Kongen af Assyrien, og drog bort og vendte tilbage og blev i Ninive.«"
       sr: "Сенахирим је начинио Ниневију престоницом Асирије, силе која је узела Самарију и сада ратује против Јуде. После свог похода он „отиде, и вративши се оста у Ниневији“."
+      hu: "Szanhérib Ninivét tette Asszíria fővárosává, annak a hatalomnak, amely elfoglalta Szamáriát, és most Júda ellen hadakozik. Hadjárata után „elindult, és elment, és visszafordult Sénakhérib, Assiria királya, és Ninivében maradt”."
+      fi: "Sanherib on tehnyt Niinivestä Assyrian pääkaupungin, sen vallan, joka valtasi Samarian ja käy nyt sotaa Juudaa vastaan. Sotaretkensä jälkeen hän ”lähti liikkeelle ja meni pois; hän palasi takaisin ja jäi Niiniveen”."
+      vi: "San-chê-ríp đã lập Ni-ni-ve làm kinh đô của A-si-ri, là cường quốc đã chiếm Sa-ma-ri và nay gây chiến với Giu-đa. Sau chiến dịch của mình, “San-chê-ríp, vua A-si-ri, bèn trở về, ở tại Ni-ni-ve”."
+      ro: "Senaherib a făcut din Ninive capitala Asiriei, puterea care a luat Samaria și acum se războiește cu Iuda. După campania sa, el „s’a dus, și s’a întors… și a lăcuit în Ninevi”."
+      bg: "Сенахирим е направил Ниневия столица на Асирия — силата, която превзе Самария и сега воюва срещу Юда. След похода си той „тръгна… та отиде, и върна се, и живееше в Ниневия.“"
   - place: a217d18 # Babylon
     ref: Dan.4.30
     year: "580 BC"
@@ -142,6 +167,11 @@ stops:
       tl: "Ginawa ni Nabucodonosor ang Babilonia na kabisera ng isang imperyo mula sa Golpo ng Persia hanggang sa hangganan ng Egipto, kasama ang mga ipinatapon ng Juda. Sa Daniel, ipinagmamalaki niya: “Hindi baga ito ang dakilang Babilonia na aking itinayo na pinaka tahanang hari, sa pamamagitan ng lakas ng aking kapangyarihan”."
       da: "Nebukadnezar har gjort Babylon til hovedstad i et rige fra Den Persiske Bugt til Egyptens grænse, med Judas landflygtige i det. I Daniels Bog praler han: »Er dette ikke det store Babel, som jeg har bygget til et kongeligt Hus ved min Styrkes Magt«."
       sr: "Навуходоносор је начинио Вавилон престоницом царства од Персијског залива до границе Египта, а у њему су јудејски прогнаници. У Данилу се хвали: „Није ли то Вавилон велики што га ја сазидах јаком силом својом да је столица царска“."
+      hu: "Nabukodonozor Babilont a Perzsa-öböltől Egyiptom határáig terjedő birodalom fővárosává tette, benne Júda számkivetettjeivel. Dánielnél így kérkedik: „Nem ez-é ama nagy Babilon, a melyet én építettem királyság házának, az én hatalmasságom ereje által”."
+      fi: "Nebukadnessar on tehnyt Babylonista Persianlahdelta Egyptin rajalle ulottuvan valtakunnan pääkaupungin, ja Juudan pakkosiirtolaiset ovat siellä. Danielin kirjassa hän kerskuu: ”Eikö tämä ole se suuri Baabel, jonka minä väkevällä voimallani olen rakentanut kuninkaalliseksi linnaksi, valtasuuruuteni kunniaksi!”"
+      vi: "Nê-bu-cát-nết-sa đã lập Ba-by-lôn làm kinh đô của một đế quốc từ Vịnh Ba Tư đến biên giới Ê-díp-tô, với những người bị đày của Giu-đa ở trong đó. Trong sách Đa-ni-ên, vua khoe: “Đây chẳng phải là Ba-by-lôn lớn mà ta đã dựng, bởi quyền cao cả ta, để làm đế đô ta”."
+      ro: "Nebucadnețar a făcut din Babilon capitala unui imperiu care se întinde de la Golful Persic până la hotarul Egiptului, cu exilații din Iuda în el. În Daniel, el se laudă: „au nu este acesta Vavilonul cel mare, care l-am zidit eu casă împărăției întru tăriea puterii mele”."
+      bg: "Навуходоносор е направил Вавилон столица на империя от Персийския залив до границата на Египет, в която живеят и изгнаниците от Юда. В книгата на Даниил той се хвали: „Не е ли този великий Вавилон който аз съградих за столица на царството с крепостта на силата си“."
   - place: a033b84 # Susa
     ref: Esth.1.1-Esth.1.3
     year: "483 BC"
@@ -162,6 +192,11 @@ stops:
       tl: "Ang Susan ay isa sa mga luklukan ng hari ng Persia, na naghahari “mula sa India hanggang sa Etiopia” mula sa kaniyang luklukan sa “Susan na bahay-hari”. Sa ikatlong taon ng kaniyang paghahari, nagdaraos dito ng isang malaking handaan si Assuero, na karaniwang kinikilalang si Jerjes I."
       da: "Susa er sæde for den persiske konge, der hersker »fra Indien og indtil Morland« fra sin trone i »Borgen Susan«. I sit tredje regeringsår holder Ahasverus, sædvanligvis identificeret med Xerxes 1., et stort gæstebud her."
       sr: "Суса је царско седиште персијског цара, који влада „од Индије до Етиопије“ са свог престола у „Сусану царском граду“. Треће године своје владавине Асвир, кога обично поистовећују с Ксерксом I, овде приређује велику гозбу."
+      hu: "Susán a perzsa király székhelye, aki „Indiától fogva Szerecsenországig” uralkodik, trónjáról „Susán várában”. Uralkodásának harmadik évében Ahasvérus, akit rendszerint I. Xerxésszel azonosítanak, nagy lakomát tart itt."
+      fi: "Susa on Persian kuninkaan hallitsijanpaikka; hän hallitsee ”Intiasta Etiopiaan saakka” valtaistuimeltaan ”Suusanin linnassa”. Hallituskautensa kolmantena vuonna Ahasveros, jonka yleensä tunnistetaan Kserkes I:ksi, pitää täällä suuret pidot."
+      vi: "Su-xơ là một nơi ngự của vua Phe-rơ-sơ, người cai trị “từ Ấn-độ cho đến Ê-thi-ô-bi” từ ngôi mình “tại Su-sơ, kinh đô người”. Vào năm thứ ba triều mình, A-suê-ru, thường được đồng nhất với Xerxes I, mở một bữa tiệc lớn tại đây."
+      ro: "Susa este o reședință regală a regelui persan, care domnește de la India până la Etiopia de pe tronul său din cetățuia Susa. În al treilea an al domniei sale, Ahașveroș, identificat de obicei cu Xerxes I, dă aici un mare ospăț."
+      bg: "Суза е царска резиденция на персийския цар, който царува „от Индия дори до Етиопия“ от престола си в „Суса столицата“. В третата година на царуването си Асуир, обикновено отъждествяван с Ксеркс I, устройва тук голям пир."
   - place: aee7248 # Alexandria
     ref: Acts.18.24
     year: "250 BC"
@@ -182,6 +217,11 @@ stops:
       tl: "Ang Alejandria ang kabisera ng Egipto ng mga Ptolomeo, kung saan isinasalin sa Griyego ang Torah (ang Septuaginta). Tatlong siglo pagkaraan lamang binabanggit ng Biblia ang lungsod, sa Mga Gawa: si Apolos ay “isang Alejandrino sa lahi, at taong marikit mangusap... makapangyarihan ukol sa mga kasulatan”."
       da: "Alexandria er hovedstad i ptolemæernes Egypten, hvor Toraen oversættes til græsk (Septuaginta). Bibelen nævner byen først tre århundreder senere, i Apostlenes Gerninger: Apollos er »født i Aleksandria, en veltalende Mand, som var stærk i Skrifterne«."
       sr: "Александрија је престоница птолемејског Египта, где се Тора преводи на грчки (Септуагинта). Библија помиње град тек три века касније, у Делима: Аполо је „родом из Александрије, човек речит и силан у књигама“."
+      hu: "Alexandria a Ptolemaiosok Egyiptomának fővárosa, ahol a Tórát görögre fordítják (Szeptuaginta). A Biblia a várost csak három évszázaddal később, az ApCsel-ben nevezi meg: Apollós „alekszandriai származású, ékesenszóló férfiú, ki az írásokban tudós vala”."
+      fi: "Aleksandria on Ptolemaiosten Egyptin pääkaupunki, jossa Toora käännetään parhaillaan kreikaksi (Septuaginta). Raamattu mainitsee kaupungin vasta kolme vuosisataa myöhemmin Apostolien teoissa: Apollos on ”syntyisin Aleksandriasta, puhetaitoinen mies ja väkevä raamatuissa”."
+      vi: "A-léc-xan-tri là kinh đô của Ê-díp-tô thời Ptolemy, nơi bộ Torah đang được dịch sang tiếng Hy Lạp (bản Bảy Mươi). Kinh Thánh chỉ nhắc đến thành này ba thế kỷ sau, trong sách Công vụ: A-bô-lô “quê tại thành A-léc-xan-tri, là tay khéo nói và hiểu Kinh Thánh”."
+      ro: "Alexandria este capitala Egiptului ptolemaic, unde Tora este tradusă în greacă (Septuaginta). Biblia numește cetatea abia trei secole mai târziu, în Faptele Apostolilor: Apolo este „Alexandrean de neam, bărbat meșter la cuvânt, … puternic fiind întru scripturi”."
+      bg: "Александрия е столица на Птолемеевски Египет, където Тората се превежда на гръцки (Септуагинта). Библията назовава града едва три века по-късно, в Деянията: Аполос е „роден в Александрия, человек учен и силен в писанията“."
   - place: ae41ab4 # Antioch
     ref: Acts.11.26
     year: "AD 43"
@@ -202,6 +242,11 @@ stops:
       tl: "Dating kabisera ng mga Seleucida, ang Antioquia ay ngayon ang luklukan ng gobernador ng Roma sa Siria at isa sa pinakamalalaking lungsod ng imperyo. Dito nagtuturo sina Bernabe at Saul sa loob ng isang buong taon, “at ang mga alagad ay pinasimulang tawaging mga Cristiano, sa Antioquia.”"
       da: "Antiokia, engang seleukidernes hovedstad, er nu sæde for den romerske landshøvding i Syrien og en af rigets største byer. Barnabas og Saul underviser her et helt år, »og at Disciplene først i Antiokia bleve kaldte Kristne.«"
       sr: "Некада селевкидска престоница, Антиохија је сада седиште римског намесника Сирије и један од највећих градова царства. Варнава и Савле овде поучавају читаву годину, „и најпре у Антиохији назваше ученике хришћанима“."
+      hu: "Az egykori szeleukida főváros, Antiókhia most a szíriai római helytartó székhelye és a birodalom egyik legnagyobb városa. Barnabás és Saul egy egész évig tanítanak itt, és „a tanítványokat először Antiókhiában nevezték keresztyéneknek”."
+      fi: "Antiokia, aikoinaan seleukidien pääkaupunki, on nyt Rooman Syyrian käskynhaltijan asuinpaikka ja yksi valtakunnan suurimmista kaupungeista. Barnabas ja Saul opettavat täällä kokonaisen vuoden, ”ja Antiokiassa ruvettiin opetuslapsia ensiksi nimittämään kristityiksi”."
+      vi: "Từng là kinh đô của triều Seleucid, nay An-ti-ốt là nơi đóng của tổng đốc La Mã tại Sy-ri và là một trong những thành lớn nhất của đế quốc. Ba-na-ba và Sau-lơ dạy dỗ tại đây trọn một năm, và “ấy là ở thành An-ti-ốt, người ta bắt đầu xưng môn đồ là Cơ-rê-tiên”."
+      ro: "Odinioară capitala seleucizilor, Antiohia este acum reședința guvernatorului roman al Siriei și unul dintre cele mai mari orașe ale imperiului. Barnaba și Saul învață aici un an întreg, „și s’au numit întâiu în Antiohia ucenicii creștini”."
+      bg: "Някогашна столица на Селевкидите, Антиохия сега е седалище на римския управител на Сирия и един от най-големите градове на империята. Варнава и Савел поучават тук цяла година, „И най-първо в Антиохия учениците се наименуваха Христиани.“"
   - place: afc8e7a # Rome
     ref: Acts.28.16
     year: "AD 60"
@@ -222,3 +267,8 @@ stops:
       tl: "Ang Roma sa ilalim ni Nero ay namumuno sa buong Mediteraneo, kasama ang Judea. Dumarating si Pablo bilang isang bilanggo: “nang mangakapasok kami sa Roma, si Pablo ay pinahintulutang mamahay na magisa na kasama ng kawal na sa kaniya'y nagbabantay.”"
       da: "Rom under Nero behersker hele Middelhavsområdet, Judæa med. Paulus ankommer som fange: »da vi kom til Rom, overgav Høvedsmanden Fangerne til Høvdingen for Livvagten«"
       sr: "Рим под Нероном влада читавим Средоземљем, а с њим и Јудејом. Павле стиже као сужањ: „А кад дођосмо у Рим, капетан предаде сужње војводи“."
+      hu: "A Néró alatti Róma az egész Földközi-tengert uralja, vele Júdeát is. Pál fogolyként érkezik: „Mikor pedig Rómába jutottunk, a százados átadá a foglyokat a testőrsereg fővezérének”."
+      fi: "Neron aikana Rooma hallitsee koko Välimerta, ja Juudea sen mukana. Paavali saapuu vankina: Roomaan tultaessa sadanpäämies luovuttaa vangit henkivartioston päällikölle."
+      vi: "Rô-ma dưới triều Nê-rô cai trị toàn vùng Địa Trung Hải, kể cả Giu-đê. Phao-lô đến đây như một tù nhân: “Khi chúng ta đã đến thành Rô-ma, Phao-lô được phép ở riêng với một người lính canh giữ.”"
+      ro: "Roma lui Nero stăpânește întreaga Mediterană, și Iudeea împreună cu ea. Pavel sosește ca prizonier: „dacă am venit în Roma, sutașul a dat pre cei legați voivodului oastei”."
+      bg: "Рим при Нерон владее цялото Средиземноморие, а с него и Юдея. Павел пристига като затворник: „когато дойдохме в Рим, стотникът предаде окованите на войводата“."

@@ -1,0 +1,163 @@
+---
+title: Nyílt adatok
+description: A helyek, az őket megnevező versek, az események és a túrák JSON-fájlokban, amelyeket bárki felhasználhat CC BY 4.0 licenc alatt — kulcs és regisztráció nélkül.
+---
+
+<p class="lede">
+  Mindaz, amit a földgömb a helyekről és a versekről tud, nyílt: egyszerű JSON-fájlok, amelyeket
+  szabadon felhasználhat másik oldalon vagy alkalmazásban CC BY 4.0 licenc alatt. Nincs kulcs, nincs
+  regisztráció, és a szokásos gyorsítótárazáson túl nincs korlát.
+</p>
+
+<h2>Mely helyeket nevezi meg egy vers</h2>
+<p>
+  Egy fájl a Biblia egy-egy könyvéhez: minden vers, amely megnevez egy helyet, a helyek
+  azonosítóival.
+</p>
+<pre><code>GET {{site}}/api/v1/verses/Acts.json
+
+{ "Acts.16.11": ["a6a7150", "a68750d", "a91c509"], "Acts.16.12": ["a69e1b8", "a49e1d0"], … }</code></pre>
+<p>
+  Maguk a helyek az oldal minden nyelvén megadott nevükkel, fajtájukkal és pontjukkal a
+  <code>places.json</code> fájlban vannak; kapcsolja össze az <code>id</code> alapján. Az első
+  verzió <code>name_ru</code> mezője még megvan, ugyanaz, mint a <code>names.ru</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/places.json
+
+[{ "id": "a49e1d0", "name": "Philippi",
+   "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
+   "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "wikidata": "Q379652", "pleiades": "501482",
+   "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
+
+<h2>Ki és hol egy fejezetben</h2>
+<p>
+  Egy fájl könyvenként: minden fejezet az általa megnevezett helyekkel és személyekkel. A személyek
+  azonosítása megegyezik a STEPBible TIPNR-jével; a nevük és az első versük a
+  <code>people.json</code> fájlban van.
+</p>
+<pre><code>GET {{site}}/api/v1/chapters/Acts.json
+
+{ "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
+               "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
+
+<h2>Az összes fájl</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Fájl</th>
+        <th>Mit tartalmaz</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/v1/index.json</code></td>
+        <td>a fájlok és könyvek listája, a licenc és a forrásmegjelölések, az építés dátuma</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/places.json</code></td>
+        <td>
+          minden hely: azonosító, nevek, fajta, pont, hány vers nevezi meg, az oldala (azoknál a
+          helyeknél, amelyeket valamelyik vers megnevez); a <code>wikidata</code> és a
+          <code>pleiades</code>, ugyanaz a hely az említett helynévtárakban, ahol ismert
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/verses/{Book}.json</code></td>
+        <td>
+          egy vers → a megnevezett helyek, könyvenként egy fájl (<code>Gen</code>,
+          <code>1Kgs</code>, <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/chapters/{Book}.json</code></td>
+        <td>egy fejezet → a megnevezett helyek és személyek, könyvenként egy fájl</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/people.json</code></td>
+        <td>
+          a Biblia által megnevezett személyek: TIPNR-azonosító, név, nevek a többi nyelven, ahol az
+          oldalon megvannak, nem, hány vers nevezi meg őket, az első ilyen vers
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/events.json</code></td>
+        <td>
+          a keltezett események, <code>ref</code> mezővel, ahol a Biblia elbeszéli az eseményt
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/battles.json</code></td>
+        <td>
+          csaták és ostromok: hely, év, felek és kimenetel, <code>ref</code> mezővel, ahol a Biblia
+          elbeszéli a csatát
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/questions.json</code></td>
+        <td>
+          az emberek által feltett kérdések, az oldal minden nyelvén megválaszolva, a térkép
+          nézetével és a forrásokkal
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/tours.json</code></td>
+        <td>
+          a túrák: megállóik sorrendben, mindegyik az igeszakaszával és a jegyzetével;
+          <code>by: "sea"</code> a hajózott szakaszhoz, és <code>sailed</code> (napok és vers), ahol
+          a szöveg megmondja, mennyi ideig tartott
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/ancient.json</code></td>
+        <td>
+          amit a Biblián kívüli szerzők mondanak egy helyről: szerző, mű, szakasz, hivatkozás egy
+          szabadon hozzáférhető szövegre, összefoglaló
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/openapi.json</code></td>
+        <td>mindez OpenAPI 3.1 formátumban leírva, kódgenerátorok és ágensek számára</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Konvenciók</h2>
+<ul>
+  <li>
+    A hivatkozások OSIS-ben vannak, angol könyvrövidítésekkel és King James-számozással:
+    <code>Gen.12.6</code>, <code>Acts.16.12-Acts.16.15</code>.
+  </li>
+  <li>Az évek csillagászati számozásúak: Kr. e. 1 a 0, Kr. e. 586 a −585.</li>
+  <li>
+    Az a hely, amely a forrásadatokban kétszer szerepel ugyanazon a néven,
+    <code>"duplicate": true</code> jelzést kap; az a hely, amelynek helyszíne vitatott,
+    <code>"disputed": true</code> jelzést.
+  </li>
+  <li>
+    A fájlok az adatok minden kiadásával újraépülnek; az <code>index.json</code> megadja a dátumát.
+  </li>
+  <li>
+    Az 1-es verzió csak bővül: mezők és fájlok kerülnek hozzá, soha nem neveződnek át vagy szűnnek
+    meg. Az ismeretlen mezőt hagyja figyelmen kívül.
+  </li>
+</ul>
+
+<h2>Licenc és forrásmegjelölés</h2>
+<p>
+  Az adatok <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> licenc alatt
+  állnak. Használhatja és módosíthatja őket, és eladhatja, amit belőlük épít; nevezze meg a
+  forrásokat, ahol az adatokat mutatja, ahogyan az <code>index.json</code> felsorolja őket: a
+  History Globe (Vadym Arnaut), az OpenBible.info a helyekért, a versek címkéiért és a pontokért, a
+  STEPBible TIPNR-je pedig a személyekért. Az orosz neveket a közkincs Szinodális fordításból
+  olvastuk ki. A többi nyelv nevei a History Globe saját nevei.
+</p>
+<p>
+  A kérdésekre adott válaszok (<code>questions.json</code>) a History Globe saját szövegei, és
+  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a> licenc alatt
+  állnak: idézheti őket és hivatkozhat rájuk a forrás megjelölésével; ne módosítsa, ne fordítsa le,
+  és ne tegye őket másik oldalra vagy adatkészletbe. Ugyanez vonatkozik a helycikkekre, amelyeket az
+  API nem tartalmaz.
+</p>

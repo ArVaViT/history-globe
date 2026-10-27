@@ -1,0 +1,341 @@
+---
+title: Nhúng
+description: Đặt quả địa cầu lên trang web của bạn chỉ bằng một dòng — bản đồ của một chương, một địa điểm, một năm hay một hành trình — và điều khiển nó từ trang của bạn.
+---
+
+<p class="lede">
+  Quả địa cầu chạy bên trong bất kỳ trang nào dưới dạng một <code>iframe</code>. Một dòng là hiện
+  được bản đồ của một chương ngay cạnh đoạn Kinh Thánh trên trang của bạn; vài thông điệp giữ cho
+  hai bên luôn khớp với nhau.
+</p>
+
+<h2>Bắt đầu nhanh</h2>
+<pre><code>&lt;iframe
+  src="{{site}}/embed/v1?ref=Acts.16&amp;locale=vi"
+  title="Bản đồ Công vụ 16"
+  style="width: 100%; height: 480px; border: 0; border-radius: 12px"
+  allow="fullscreen"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</code></pre>
+<ul>
+  <li>
+    Bản đồ lấp đầy khung và mở ra tại các địa điểm của Công vụ 16, vào năm của các sự kiện trong
+    chương ấy.
+  </li>
+  <li>
+    <b>Phía trên:</b> chương. Chọn nó để liệt kê các địa điểm của chương theo thứ tự văn bản nhắc
+    đến; chọn một địa điểm để mở thẻ của nó.
+  </li>
+  <li><b>Phía dưới:</b> năm. Chọn nó để mở thanh trượt thời gian.</li>
+  <li>
+    Một liên kết mở cùng chế độ xem ấy trên quả địa cầu đầy đủ trong một thẻ mới. Nguồn dữ liệu được
+    ghi ngay trên bản đồ, như các giấy phép dữ liệu yêu cầu.
+  </li>
+  <li>Khung hoạt động tốt đến cả chiều rộng của điện thoại; chiều cao 480 px là đủ.</li>
+</ul>
+
+<h2>Một chương hoặc một đoạn</h2>
+<p>
+  <code>ref</code> nhận một tham chiếu OSIS với tên viết tắt tiếng Anh của các sách và cách đánh số
+  câu của các bản tiếng Anh:
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Giá trị</th>
+        <th>Hiển thị</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Acts.16</code></td>
+        <td>một chương</td>
+      </tr>
+      <tr>
+        <td><code>Gen.12-Gen.13</code></td>
+        <td>tối đa ba chương</td>
+      </tr>
+      <tr>
+        <td><code>Acts.16.11-Acts.16.15</code></td>
+        <td>một đoạn</td>
+      </tr>
+      <tr>
+        <td><code>Ruth</code></td>
+        <td>cả một sách</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Bản đồ chuyển đến năm của đoạn: năm được ghi cho các chương của đoạn ấy (các chương của
+  {{chapter_books}} sách đã được định niên đại), hoặc nếu không có thì năm của hành trình bao gồm
+  đoạn ấy; cả một sách thì lấy năm của hành trình có nhiều chặng nhất trong sách đó. Một đoạn không
+  có cả hai thì giữ nguyên năm hiện tại của bản đồ.
+</p>
+
+<h2>Tham số</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Tham số</th>
+        <th>Ví dụ</th>
+        <th>Ý nghĩa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ref</code></td>
+        <td><code>Acts.16</code></td>
+        <td>chương, đoạn hoặc sách (xem ở trên)</td>
+      </tr>
+      <tr>
+        <td><code>year</code></td>
+        <td><code>-999</code></td>
+        <td>
+          năm, theo cách đánh số thiên văn: năm 1 TCN là <code>0</code>, năm 1000 TCN là
+          <code>-999</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>place</code></td>
+        <td><code>af2161c</code></td>
+        <td>mở một địa điểm (ở đây là Ca-bê-na-um); mã định danh là của OpenBible</td>
+      </tr>
+      <tr>
+        <td><code>tour</code></td>
+        <td><code>paul-1</code></td>
+        <td>bắt đầu một hành trình có hướng dẫn</td>
+      </tr>
+      <tr>
+        <td><code>stop</code></td>
+        <td><code>3</code></td>
+        <td>cùng với <code>tour</code>: mở hành trình tại chặng đó</td>
+      </tr>
+      <tr>
+        <td><code>lesson</code></td>
+        <td><code>a15257a~30.a112427~30</code></td>
+        <td>
+          bài học của riêng bạn, cùng với <code>tour=lesson</code>: mã định danh các địa điểm theo
+          thứ tự, mỗi mã kèm năm để hiển thị địa điểm ấy (<code>~-585</code> cho năm 586 TCN: giống
+          như <code>year</code>, năm 1 TCN là 0); mỗi chặng nhận câu Kinh Thánh về địa điểm gần năm
+          ấy nhất, khoảng cách, thời gian đi bộ và địa hình. Nút “Thêm vào bài học” trên thẻ địa
+          điểm tạo ra đúng những liên kết như vậy
+        </td>
+      </tr>
+      <tr>
+        <td><code>title</code></td>
+        <td><code>Phao-lô%20ở%20Ga-la-ti</code></td>
+        <td>
+          cùng với <code>lesson</code>: tên của bài học, tối đa 80 ký tự, ở đầu hành trình của bài
+          học và tờ in của nó
+        </td>
+      </tr>
+      <tr>
+        <td><code>locale</code></td>
+        <td><code>vi</code></td>
+        <td>
+          ngôn ngữ: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
+          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
+          <code>pl</code>, <code>cs</code> hoặc <code>vi</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>camera</code></td>
+        <td><code>35.2,31.8,7,30,0</code></td>
+        <td>kinh độ, vĩ độ, mức phóng to, góc nghiêng, hướng xoay</td>
+      </tr>
+      <tr>
+        <td><code>hide</code></td>
+        <td><code>relief,ancient</code></td>
+        <td>
+          các lớp cần tắt: <code>borders</code>, <code>places</code>, <code>relief</code>,
+          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="note">
+  Cách dễ nhất để tạo một chế độ xem là thiết lập nó trên quả địa cầu đầy đủ rồi sao chép URL: các
+  tham số ấy cũng hoạt động sau <code>/embed/v1</code>.
+</p>
+
+<h2>Thông điệp</h2>
+<p>
+  Quả địa cầu và trang của bạn trao đổi với nhau qua <code>postMessage</code>. Mỗi thông điệp là một
+  đối tượng có <code>type</code> và <code>v: 1</code>. Quả địa cầu chỉ gửi những gì xảy ra trên bản
+  đồ và không bao giờ gửi bất cứ thứ gì giúp nhận diện người đọc; nó chỉ nhận thông điệp từ trang
+  chứa khung.
+</p>
+<h3>Từ quả địa cầu</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Loại</th>
+        <th>Dữ liệu</th>
+        <th>Khi nào</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:ready</code></td>
+        <td><code>{ view }</code></td>
+        <td>bản đồ đã được vẽ xong</td>
+      </tr>
+      <tr>
+        <td><code>hg:view-changed</code></td>
+        <td><code>{ view }</code></td>
+        <td>năm, địa điểm, hành trình hoặc góc nhìn camera đã thay đổi và ổn định</td>
+      </tr>
+      <tr>
+        <td><code>hg:verse-clicked</code></td>
+        <td><code>{ osis }</code></td>
+        <td>người đọc đã nhấp vào một câu Kinh Thánh, ví dụ <code>"Acts.16.12"</code></td>
+      </tr>
+      <tr>
+        <td><code>hg:error</code></td>
+        <td><code>{ code, message }</code></td>
+        <td>không tải được bản đồ hoặc dữ liệu của nó</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <code>view</code> chứa <code>year</code>, <code>locale</code> và <code>layers</code>, và khi được
+  đặt thì có thêm <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> và
+  <code>camera</code>.
+</p>
+<h3>Đến quả địa cầu</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Loại</th>
+        <th>Dữ liệu</th>
+        <th>Tác dụng</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:set-view</code></td>
+        <td><code>{ view }</code></td>
+        <td>
+          đặt năm, chương (<code>ref</code>), địa điểm, các lớp hoặc góc nhìn camera; với
+          <code>tour</code> (và <code>stop</code>), hành trình bắt đầu và các trường khác bị bỏ qua;
+          ngôn ngữ chỉ thay đổi bằng <code>hg:set-locale</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:set-locale</code></td>
+        <td><code>{ locale }</code></td>
+        <td>đổi ngôn ngữ</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Ví dụ: bản đồ đi theo trình đọc của bạn</h2>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+
+// Khi trình đọc của bạn mở một chương, hiện chương ấy trên bản đồ.
+function showChapter(osis) {
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+}
+
+// Khi một câu Kinh Thánh được nhấp trên bản đồ, mở câu ấy trong trình đọc của bạn.
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
+});</code></pre>
+
+<h2 id="places">Địa điểm trong mọi văn bản</h2>
+<p>
+  Thêm một dòng nữa là liên kết được những địa điểm Kinh Thánh mà chính văn bản của bạn nhắc đến
+  (một bài viết, một bài giảng, một kế hoạch đọc Kinh Thánh) với quả địa cầu. Trỏ chuột vào một tên,
+  hoặc chạm vào nó trên điện thoại, một thẻ sẽ cho biết địa điểm ấy là gì, ngày nay ở đâu, bao nhiêu
+  câu Kinh Thánh nhắc đến nó và nó nằm ở đâu trên bản đồ; thẻ dẫn đến quả địa cầu.
+</p>
+<figure class="sample">
+  <div class="hgp-demo">
+    <p>
+      Phao-lô đi thuyền từ Sê-sa-rê đến Chíp-rơ, giảng đạo tại Ê-phê-sô và Cô-rinh-tô, và viết thư
+      cho Rô-ma. Rất lâu trước đó, Áp-ra-ham đã đến Si-chem và Hếp-rôn; Chúa Giê-su sinh ra tại
+      Bết-lê-hem và lớn lên tại Na-xa-rét, còn Giăng thấy các khải tượng của mình trên đảo Bát-mô.
+    </p>
+  </div>
+  <figcaption>Ví dụ trực tiếp: các tên này được tập lệnh trên trang này liên kết.</figcaption>
+</figure>
+<pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<p>
+  Địa chỉ có mang số phiên bản, và mã băm toàn vẹn cố định chính xác nội dung của nó: trình duyệt
+  chỉ chạy tập lệnh nếu đó đúng là tệp ấy. Một phiên bản mới có địa chỉ mới; các phiên bản cũ vẫn
+  giữ nguyên.
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Thuộc tính</th>
+        <th>Tác dụng</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>data-scope</code></td>
+        <td>tìm ở đâu, dưới dạng một bộ chọn CSS; mặc định là toàn bộ trang</td>
+      </tr>
+      <tr>
+        <td><code>data-locale</code></td>
+        <td>
+          ngôn ngữ của văn bản, một trong các ngôn ngữ của trang web: <code>cs</code>,
+          <code>de</code>, <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>,
+          <code>nl</code>, <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>uk</code>,
+          <code>vi</code>; mặc định là <code>lang</code> của trang; mọi ngôn ngữ khác sẽ dùng tiếng
+          Anh
+        </td>
+      </tr>
+      <tr>
+        <td><code>data-every</code></td>
+        <td>liên kết mọi lần nhắc đến, không chỉ lần đầu tiên của mỗi địa điểm</td>
+      </tr>
+      <tr>
+        <td><code>data-theme</code></td>
+        <td>
+          <code>light</code> hoặc <code>dark</code> cho thẻ; mặc định theo hệ thống của người đọc
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Chỉ những tên trỏ đến một địa điểm duy nhất mới được liên kết. Một tên dùng chung cho hai địa điểm
+  (An-ti-ốt, ở Sy-ri và ở Bi-si-đi), cho một địa điểm và một nhân vật (Giu-đa), hoặc cho một địa
+  điểm và một từ thông thường thì vẫn là văn bản thường; một tên mà chính các câu Kinh Thánh phần
+  lớn dùng để chỉ nơi khác cũng vậy (“Ca-đe” ở đó là Ca-đe-Ba-nê-a, không phải Ca-đe trong cơ sở dữ
+  liệu). Một tên địa điểm đồng thời là tên người (như Jordan, Sharon trong tiếng Anh) sẽ không được
+  liên kết khi đứng cạnh một từ viết hoa khác: Jordan Smith là một người, không phải dòng sông.
+  Trong tiếng Nga, tiếng Ukraina, tiếng Ba Lan và tiếng Séc, tên được nhận ra cả ở các dạng biến
+  cách (“в Египте”, “w Jerozolimie”, “v Jeruzalémě”), và tên tiếng Đức cả ở sở hữu cách
+  (“Jerusalems”). Liên kết, mã, trường biểu mẫu, nút và tiêu đề được giữ nguyên.
+</p>
+<p class="note">
+  Tập lệnh không có phụ thuộc nào và không đặt cookie. Nó đọc một tệp tên từ quả địa cầu (khoảng 20
+  đến 35 KB qua mạng tùy ngôn ngữ, cộng thêm 7 KB của tập lệnh), không gửi địa chỉ trang của bạn làm
+  referrer, và chỉ thay đổi những tên mà nó liên kết. Nó hoạt động dưới một Content Security Policy
+  nghiêm ngặt cho phép địa chỉ của quả địa cầu trong <code>script-src</code> và
+  <code>connect-src</code>. Với văn bản mà trang của bạn thêm vào sau, hãy gọi
+  <code>HistoryGlobePlaces.scan(element)</code> khi văn bản đã được hiển thị: tập lệnh tách các nút
+  văn bản, nên trên một trang React hoặc Vue hãy chạy nó trên nội dung mà framework không còn render
+  lại nữa.
+</p>
+<script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
+
+<h2>Tính ổn định</h2>
+<p>
+  <code>/embed/v1</code> là một cam kết: trong v1, tham số và thông điệp chỉ được thêm vào, không
+  bao giờ bị thay đổi hay gỡ bỏ. Một thay đổi phá vỡ tương thích sẽ ra mắt dưới dạng
+  <code>/embed/v2</code>, và v1 vẫn tiếp tục hoạt động.
+</p>

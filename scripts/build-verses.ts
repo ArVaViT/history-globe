@@ -2,9 +2,14 @@
  * Writes apps/web/public/data/verses/<locale>/<Book>.json: the text of every verse the
  * places cite, keyed by its English (OSIS) reference, so the place card can show a
  * verse without sending the reader away. Russian is the Synodal text, English the KJV,
- * both public domain, from eBible.org's USFM editions or CrossWire's SWORD modules (SOURCES
- * and REPAIRS in bible-text.ts; downloaded once into pipeline/.cache, their sha256 written to
- * verses/sources.json).
+ * both public domain (the others too, but the Turkish and Swahili editions, each under its
+ * open licence), from eBible.org's USFM editions, CrossWire's SWORD modules, Romanian
+ * Wikisource (Biblia 1914, each page at a pinned revision and hash) and the Internet Archive
+ * (the Tsarigrad Bible, pinned by its hash) (SOURCES and REPAIRS in bible-text.ts; downloaded
+ * once into pipeline/.cache, their sha256 written to verses/sources.json).
+ *
+ * Biblia 1914 is numbered as the Septuagint: readEdition gives it keyed by the English verse,
+ * for the chapters septuagintView can place, and the rest is left out.
  *
  * Russian verses come through toSynodal (Ps 68:15 → 67:16). Chapters whose Synodal
  * verses are merged or added in ways the mapping does not convert are left out in
@@ -17,34 +22,56 @@ import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { toSynodal } from "../packages/model/src/synodal.ts";
-import { type BibleSource, isUsfm, readBible, readSword, repair, SOURCES } from "./bible-text.ts";
+import {
+  type BibleSource,
+  chapterSizes,
+  isSeptuagint,
+  isUsfm,
+  readEdition,
+  repair,
+  SOURCES,
+  SYNODAL_UNCERTAIN,
+} from "./bible-text.ts";
 
 const root = join(import.meta.dirname, "..");
 const cache = join(root, "pipeline/.cache");
 const out = join(root, "apps/web/public/data/verses");
 
-/** Verses per chapter ("Ps.51" → 19) of an edition, to compare its numbering with the KJV. */
-function chapterSizes(bible: Map<string, string>): Map<string, number> {
-  const sizes = new Map<string, number>();
-  for (const ref of bible.keys()) {
-    const ch = ref.split(".").slice(0, 2).join(".");
-    sizes.set(ch, (sizes.get(ch) ?? 0) + 1);
-  }
-  return sizes;
+const UA = "history-globe-pipeline/1.0 (github.com/ArVaViT/history-globe)";
+
+function sha256(path: string): string {
+  return createHash("sha256").update(readFileSync(path)).digest("hex");
 }
 
-/** Chapters (English numbering) whose Synodal verses toSynodal keeps as they are, though
- * the Synodal text merges or adds verses in them (see synodal.ts). */
-const RU_UNCERTAIN = new Set([
-  "Lev.14",
-  "Josh.24",
-  "Prov.4",
-  "Prov.13",
-  "Rom.14",
-  "Rom.15",
-  "Rom.16",
-  "Rev.12",
-]);
+/** A pinned download that does not hash as pinned: removed, and the build stops. */
+function refuse(path: string, what: string, got: string, want: string): never {
+  rmSync(path, { force: true });
+  throw new Error(
+    `${what} hashes to ${got.slice(0, 12)}…, expected ${want.slice(0, 12)}…; the file is removed. ` +
+      "If the text has changed upstream on purpose, re-pin it (bible-text.ts, scripts/biblia-1914.json).",
+  );
+}
+
+/**
+ * An edition's Wikisource pages, each at its pinned revision and checked against its hash,
+ * bundled into one file (`{ "Gen": wikitext, … }`) in the manifest's order.
+ */
+function fetchPages(src: BibleSource, part: string): void {
+  const manifest = JSON.parse(readFileSync(join(root, "scripts", src.pages ?? ""), "utf8")) as {
+    pages: Record<string, { title: string; oldid: number; sha256: string }>;
+  };
+  const host = new URL(src.url).origin;
+  const bundle: Record<string, string> = {};
+  for (const [book, page] of Object.entries(manifest.pages)) {
+    const url = `${host}/w/index.php?title=${encodeURIComponent(page.title)}&oldid=${String(page.oldid)}&action=raw`;
+    const raw = execFileSync("curl", ["-sSfL", "-A", UA, url], { maxBuffer: 1 << 26 });
+    const got = createHash("sha256").update(raw).digest("hex");
+    if (got !== page.sha256)
+      refuse(part, `${page.title} (oldid ${String(page.oldid)})`, got, page.sha256);
+    bundle[book] = raw.toString("utf8");
+  }
+  writeFileSync(part, JSON.stringify(bundle));
+}
 
 function fetchSource(src: BibleSource): string {
   const path = join(cache, src.file);
@@ -52,15 +79,15 @@ function fetchSource(src: BibleSource): string {
     mkdirSync(cache, { recursive: true });
     // Into a part file, tested, then moved: a broken download never stays in the cache.
     const part = `${path}.part`;
-    execFileSync("curl", ["-sSfL", "-o", part, src.url]);
-    execFileSync("unzip", ["-tq", part]);
+    if (src.pages) fetchPages(src, part);
+    else execFileSync("curl", ["-sSfL", "-A", UA, "-o", part, src.url]);
+    if (src.file.endsWith(".zip")) execFileSync("unzip", ["-tq", part]);
     renameSync(part, path);
   }
+  // A pinned file is checked whether it came from the network just now or sat in the cache.
+  const got = src.sha256 && sha256(path);
+  if (src.sha256 && got !== src.sha256) refuse(path, src.file, got || "", src.sha256);
   return path;
-}
-
-function sha256(path: string): string {
-  return createHash("sha256").update(readFileSync(path)).digest("hex");
 }
 
 const places = JSON.parse(
@@ -78,6 +105,14 @@ const cited = [...new Set(places.features.flatMap((f) => f.properties.osis))].so
  */
 function swordShifted(bible: Map<string, string>, book: string, ch: number): boolean {
   if (book === "Ps" || `${book}.${String(ch)}` === "Rev.12") return true;
+  return shifted(bible, book, ch);
+}
+
+/**
+ * A chapter with a verse missing, or after one: the edition moved a boundary there (the
+ * Tsarigrad text has 1 Sam 23:29 at the head of 24:1), so neither chapter is quoted.
+ */
+function shifted(bible: Map<string, string>, book: string, ch: number): boolean {
   const gap = (c: number) => {
     const n = kjvSizes.get(`${book}.${String(c)}`) ?? 0;
     for (let v = 1; v <= n; v++) if (!bible.has(`${book}.${String(c)}.${String(v)}`)) return true;
@@ -86,14 +121,19 @@ function swordShifted(bible: Map<string, string>, book: string, ch: number): boo
   return gap(ch) || (ch > 1 && gap(ch - 1));
 }
 
+/** A CrossWire SWORD module (a zip that is not eBible.org's USFM). */
+const isSword = (src: BibleSource) => src.file.endsWith(".zip") && !isUsfm(src);
+
 // Built beside the old texts and swapped in at the end: a failed build leaves them be.
 const next = `${out}.next`;
 rmSync(next, { recursive: true, force: true });
 const counts: Record<string, { verses: number; missing: number; uncertain: number }> = {};
-const kjv = readBible(fetchSource(SOURCES.en));
-const kjvSizes = chapterSizes(kjv);
+fetchSource(SOURCES.en);
+fetchSource(SOURCES.ru);
+const kjvSizes = chapterSizes(readEdition(SOURCES.en, cache));
 for (const [locale, src] of Object.entries(SOURCES)) {
-  const bible = isUsfm(src) ? readBible(fetchSource(src)) : readSword(fetchSource(src), kjv);
+  fetchSource(src);
+  const bible = readEdition(src, cache);
   const sizes = chapterSizes(bible);
   const byBook = new Map<string, Record<string, string>>();
   let missing = 0;
@@ -102,16 +142,22 @@ for (const [locale, src] of Object.entries(SOURCES)) {
     const [book = "", ch = "", v = ""] = ref.split(".");
     let text: string | undefined;
     if (locale === "ru") {
-      if (RU_UNCERTAIN.has(`${book}.${ch}`)) {
+      if (SYNODAL_UNCERTAIN.has(`${book}.${ch}`)) {
         uncertain++;
         continue;
       }
       const s = toSynodal(book, Number(ch), Number(v));
       text = bible.get(`${book}.${String(s.chapter)}.${String(s.verse)}`);
+    } else if (isSeptuagint(src) && !bible.has(ref)) {
+      // Not placed in the KJV's numbering with certainty (septuagintView): left out.
+      uncertain++;
+      continue;
     } else if (
       locale !== "en" &&
+      !isSeptuagint(src) &&
       (sizes.get(`${book}.${ch}`) !== kjvSizes.get(`${book}.${ch}`) ||
-        (!isUsfm(src) && swordShifted(bible, book, Number(ch))))
+        (isSword(src) && swordShifted(bible, book, Number(ch))) ||
+        (!isSword(src) && !isUsfm(src) && shifted(bible, book, Number(ch))))
     ) {
       // Numbered otherwise than the KJV (a psalm's title counted as verse 1, Malachi 3-4):
       // left out rather than show a neighbouring verse; the link remains.

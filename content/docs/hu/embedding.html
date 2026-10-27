@@ -1,0 +1,340 @@
+---
+title: Beágyazás
+description: Tegye fel a földgömböt a saját oldalára egyetlen sorral — egy fejezet, egy hely, egy év vagy egy túra térképét —, és vezérelje a saját oldaláról.
+---
+
+<p class="lede">
+  A földgömb bármelyik oldalon fut <code>iframe</code>-ként. Egyetlen sor megjeleníti egy fejezet
+  térképét az Ön oldalán az igeszakasz mellett; néhány üzenet pedig szinkronban tartja a kettőt.
+</p>
+
+<h2>Gyors kezdés</h2>
+<pre><code>&lt;iframe
+  src="{{site}}/embed/v1?ref=Acts.16&amp;locale=hu"
+  title="Az ApCsel 16. fejezetének térképe"
+  style="width: 100%; height: 480px; border: 0; border-radius: 12px"
+  allow="fullscreen"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</code></pre>
+<ul>
+  <li>
+    A térkép kitölti a keretet, és az ApCsel 16. fejezetének helyein nyílik meg, az események
+    évében.
+  </li>
+  <li>
+    <b>Fent:</b> a fejezet. Kattintson rá, és megjelenik a helyek listája abban a sorrendben,
+    ahogyan a szöveg megnevezi őket; egy hely kiválasztásával megnyílik a kártyája.
+  </li>
+  <li><b>Lent:</b> az év. Kattintson rá, és megnyílik az időcsúszka.</li>
+  <li>
+    Egy hivatkozás ugyanezt a nézetet új lapon, a teljes földgömbön nyitja meg. A forrásmegjelölések
+    magán a térképen láthatók, ahogyan az adatok licencei megkövetelik.
+  </li>
+  <li>A keret telefon szélességéig működik; a 480 px magasság elegendő.</li>
+</ul>
+
+<h2>Egy fejezet vagy egy igeszakasz</h2>
+<p>A <code>ref</code> OSIS-hivatkozást fogad angol könyvrövidítésekkel és angol versszámozással:</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Érték</th>
+        <th>Mit mutat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Acts.16</code></td>
+        <td>egy fejezet</td>
+      </tr>
+      <tr>
+        <td><code>Gen.12-Gen.13</code></td>
+        <td>legfeljebb három fejezet</td>
+      </tr>
+      <tr>
+        <td><code>Acts.16.11-Acts.16.15</code></td>
+        <td>egy igeszakasz</td>
+      </tr>
+      <tr>
+        <td><code>Ruth</code></td>
+        <td>egy egész könyv</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  A térkép az igeszakasz évére ugrik: a fejezetei rögzített évére ({{chapter_books}} könyv fejezetei
+  keltezettek), vagy ennek hiányában az azt lefedő túra évére; egy egész könyv a legtöbb megállót
+  tartalmazó túra évét kapja. Az az igeszakasz, amelynek egyik sincs meg, a térkép aktuális évét
+  megtartja.
+</p>
+
+<h2>Paraméterek</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Paraméter</th>
+        <th>Példa</th>
+        <th>Jelentés</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ref</code></td>
+        <td><code>Acts.16</code></td>
+        <td>fejezet, igeszakasz vagy könyv (lásd fent)</td>
+      </tr>
+      <tr>
+        <td><code>year</code></td>
+        <td><code>-999</code></td>
+        <td>
+          az év csillagászati számozással: Kr. e. 1 a <code>0</code>, Kr. e. 1000 a
+          <code>-999</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>place</code></td>
+        <td><code>af2161c</code></td>
+        <td>egy hely megnyitása (itt Kapernaum); az azonosítók az OpenBible-éi</td>
+      </tr>
+      <tr>
+        <td><code>tour</code></td>
+        <td><code>paul-1</code></td>
+        <td>vezetett túra indítása</td>
+      </tr>
+      <tr>
+        <td><code>stop</code></td>
+        <td><code>3</code></td>
+        <td>a <code>tour</code> mellett: megnyitás az adott megállónál</td>
+      </tr>
+      <tr>
+        <td><code>lesson</code></td>
+        <td><code>a15257a~30.a112427~30</code></td>
+        <td>
+          saját tanóra, a <code>tour=lesson</code> mellett: a helyek azonosítói sorrendben,
+          mindegyik azzal az évvel, amelyben meg kell jeleníteni (<code>~-585</code> a Kr. e.
+          586-hoz: mint a <code>year</code>-nél, Kr. e. 1 a 0); minden megálló megkapja az adott
+          évhez legközelebbi verset, a távolságot, a gyaloglás idejét és a domborzatot. A hely
+          kártyáján lévő „Hozzáadás a tanórához” gomb ugyanezeket a hivatkozásokat építi fel
+        </td>
+      </tr>
+      <tr>
+        <td><code>title</code></td>
+        <td><code>Paul%20in%20Galatia</code></td>
+        <td>
+          a <code>lesson</code> mellett: a tanóra neve, legfeljebb 80 karakter, a túra és a
+          nyomtatott lap élén
+        </td>
+      </tr>
+      <tr>
+        <td><code>locale</code></td>
+        <td><code>en</code></td>
+        <td>
+          nyelv: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
+          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
+          <code>pl</code> vagy <code>cs</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>camera</code></td>
+        <td><code>35.2,31.8,7,30,0</code></td>
+        <td>hosszúság, szélesség, nagyítás, dőlés, elfordulás</td>
+      </tr>
+      <tr>
+        <td><code>hide</code></td>
+        <td><code>relief,ancient</code></td>
+        <td>
+          kikapcsolandó rétegek: <code>borders</code>, <code>places</code>, <code>relief</code>,
+          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="note">
+  Egy nézetet a legkönnyebb úgy összeállítani, hogy beállítja a teljes földgömbön, és kimásolja az
+  URL-t: ugyanezek a paraméterek működnek az <code>/embed/v1</code> után is.
+</p>
+
+<h2>Üzenetek</h2>
+<p>
+  A földgömb és az Ön oldala a <code>postMessage</code>-en keresztül kommunikál. Minden üzenet egy
+  <code>type</code> és <code>v: 1</code> mezőt tartalmazó objektum. A földgömb csak azt küldi, ami a
+  térképen történik, és soha semmit, ami azonosítaná az olvasót; üzeneteket csak attól az oldaltól
+  fogad el, amelyik a keretet tartalmazza.
+</p>
+<h3>A földgömbtől</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Típus</th>
+        <th>Tartalom</th>
+        <th>Mikor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:ready</code></td>
+        <td><code>{ view }</code></td>
+        <td>a térkép megrajzolódott</td>
+      </tr>
+      <tr>
+        <td><code>hg:view-changed</code></td>
+        <td><code>{ view }</code></td>
+        <td>az év, a hely, a túra vagy a kamera megváltozott és megállapodott</td>
+      </tr>
+      <tr>
+        <td><code>hg:verse-clicked</code></td>
+        <td><code>{ osis }</code></td>
+        <td>az olvasó egy versre kattintott, például <code>"Acts.16.12"</code></td>
+      </tr>
+      <tr>
+        <td><code>hg:error</code></td>
+        <td><code>{ code, message }</code></td>
+        <td>a térkép vagy az adatai nem tudtak betöltődni</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  A <code>view</code> tartalmazza a <code>year</code>, <code>locale</code> és
+  <code>layers</code> mezőt, és ha be van állítva, a <code>place</code>, <code>tour</code>,
+  <code>stop</code>, <code>ref</code> és <code>camera</code> mezőt.
+</p>
+<h3>A földgömbhöz</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Típus</th>
+        <th>Tartalom</th>
+        <th>Hatás</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:set-view</code></td>
+        <td><code>{ view }</code></td>
+        <td>
+          beállítja az évet, a fejezetet (<code>ref</code>), a helyet, a rétegeket vagy a kamerát; a
+          <code>tour</code> (és <code>stop</code>) megadásakor a túra elindul, a többi mezőt pedig
+          figyelmen kívül hagyja; a nyelv csak a <code>hg:set-locale</code> üzenettel változik
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:set-locale</code></td>
+        <td><code>{ locale }</code></td>
+        <td>nyelvváltás</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Példa: a térkép követi az olvasót</h2>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+
+// When your reader opens a chapter, show it on the map.
+function showChapter(osis) {
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+}
+
+// When a verse is clicked on the map, open it in your reader.
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
+});</code></pre>
+
+<h2 id="places">Helyek bármilyen szövegben</h2>
+<p>
+  Még egy sor a földgömbhöz kapcsolja azokat a bibliai helyeket, amelyeket a saját szövege (egy
+  cikk, egy prédikáció, egy olvasási terv) megnevez. Mutasson egy névre, vagy érintse meg telefonon,
+  és egy kártya megmutatja, mi a hely, hol van ma, hány vers nevezi meg, és hol fekszik a térképen;
+  a kártya a földgömbre vezet.
+</p>
+<figure class="sample">
+  <div class="hgp-demo">
+    <p>
+      Pál Cézáreából Ciprusra hajózott, Efezusban és Korinthusban prédikált, és levelet írt Rómának.
+      Jóval korábban Ábrahám eljutott Sikembe és Hebronba; Jézus Betlehemben született és Názáretben
+      nőtt fel, János pedig Pátmoszon látta a látomásait.
+    </p>
+  </div>
+  <figcaption>
+    Élő példa: ezeket a neveket az ezen az oldalon lévő szkript kapcsolta össze.
+  </figcaption>
+</figure>
+<pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<p>
+  A cím verziót tartalmaz, az integritás-hash pedig rögzíti a pontos tartalmát: a böngésző csak
+  akkor futtatja a szkriptet, ha az pontosan ez a fájl. Az új verzió új címet kap; a régiek
+  változatlanok maradnak.
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Attribútum</th>
+        <th>Mit csinál</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>data-scope</code></td>
+        <td>hol keressen, CSS-szelektorként; alapértelmezés szerint az egész oldalon</td>
+      </tr>
+      <tr>
+        <td><code>data-locale</code></td>
+        <td>
+          a szöveg nyelve, az oldal egyik nyelve: <code>cs</code>, <code>de</code>, <code>en</code>,
+          <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>, <code>pl</code>,
+          <code>pt</code>, <code>ru</code>, <code>uk</code>; alapértelmezés szerint az oldal
+          <code>lang</code> értéke; bármely más nyelv esetén az angolra vált
+        </td>
+      </tr>
+      <tr>
+        <td><code>data-every</code></td>
+        <td>minden említést összekapcsol, nem csak az egyes helyek első előfordulását</td>
+      </tr>
+      <tr>
+        <td><code>data-theme</code></td>
+        <td>
+          <code>light</code> vagy <code>dark</code> a kártyához; alapértelmezés szerint az olvasó
+          rendszerét követi
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Csak azok a nevek kapnak hivatkozást, amelyek egyetlen helyre mutatnak. Az a név, amelyet két hely
+  (Antiókhia, a szíriai és a pizidiai), egy hely és egy személy (Júda), vagy egy hely és egy
+  közönséges szó oszt meg, sima szöveg marad, ahogyan az a név is, amelyet a Biblia saját versei
+  többnyire másra használnak („Kádes” ott Kádes-Barnea, nem az adatbázis Kádese). Egy hely neve,
+  amely egyben keresztnév is (Jordán, Sáron), békén marad egy másik nagybetűs szó mellett: Jordán
+  Smith személy, nem a folyó. Oroszul, ukránul, lengyelül és csehül a neveket ragozott alakjukban is
+  megtalálja („в Египте”, „w Jerozolimie”, „v Jeruzalémě”), a német neveket pedig birtokos esetben
+  is („Jerusalems”). A hivatkozásokat, a kódot, az űrlapmezőket, a gombokat és a címsorokat nem
+  érinti.
+</p>
+<p class="note">
+  A szkriptnek nincsenek függőségei, és nem állít be sütiket. A földgömbtől egy névfájlt olvas be (a
+  hálózaton nyelvtől függően körülbelül 20–35 KB, plusz 7 KB szkript), az Ön oldalának címét
+  hivatkozóként nem adja át, és csak azokat a neveket módosítja, amelyeket összekapcsol. Szigorú
+  tartalombiztonsági szabályzat (Content Security Policy) mellett is működik, amely a
+  <code>script-src</code> és a <code>connect-src</code> irányelvben engedélyezi a földgömb címét. Az
+  Ön oldala által később hozzáadott szöveghez hívja meg egyszer a
+  <code>HistoryGlobePlaces.scan(element)</code> függvényt, miután a szöveg megjelent: a szkript
+  felbontja a szövegcsomópontokat, ezért React- vagy Vue-oldalon olyan tartalmon futtassa, amelyet a
+  keretrendszer már nem rajzol újra.
+</p>
+<script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
+
+<h2>Stabilitás</h2>
+<p>
+  Az <code>/embed/v1</code> szerződés: a v1-en belül a paraméterek és az üzenetek csak bővülnek,
+  soha nem változnak és nem szűnnek meg. A visszafelé nem kompatibilis változás
+  <code>/embed/v2</code> néven jelenik meg, a v1 pedig tovább működik.
+</p>

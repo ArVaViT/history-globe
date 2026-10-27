@@ -25,6 +25,7 @@ scope:
   # map, translations, theology
   checked: [identification, dates, ancient_sources, scholarship]
   not_checked: [translations, theology]
+  # languages: [uk]  # with translations checked: the translations read (default: the statement's language)
   # note: "Their own reservation, in their words"
 statement:
   lang: en

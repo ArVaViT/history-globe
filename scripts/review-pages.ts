@@ -7,7 +7,12 @@
  * Our words come from review-words.ts; the reviewer's are shown as written, in their
  * language (marked with `lang`), and a translation of them only beside the original.
  */
-import type { ItemReview, ReviewKind, ReviewRecord } from "../packages/model/src/reviews.ts";
+import {
+  type ItemReview,
+  type ReviewKind,
+  type ReviewRecord,
+  translationsRead,
+} from "../packages/model/src/reviews.ts";
 import type { SiteLocale } from "../packages/model/src/time.ts";
 import { esc } from "./page-shell.ts";
 import { REVIEW_WORDS } from "./review-words.ts";
@@ -45,8 +50,9 @@ export function statusLine(o: {
     (r) =>
       `<p class="status reviewed">${esc(W.reviewedBy(r.name, r.institution))} · ${esc(reviewDate(r.date, o.l))}${r.changed ? ` · ${esc(W.changedSince)}` : ""}${r.status === "corrections-in-progress" ? ` · ${esc(W.corrections)}` : ""} · <a href="${o.up}${o.l}/reviews/${r.id}/">${esc(W.readReview)}&nbsp;→</a></p>`,
   );
-  // The reviewers read the English: a translation is not reviewed by their reading of it.
-  if (o.l !== "en") lines.push(`<p class="note status-note">${esc(W.englishOnly)}</p>`);
+  // The reviewers read the English unless they say which translations they read too.
+  if (o.l !== "en" && !o.reviews.some((r) => r.translations.includes(o.l)))
+    lines.push(`<p class="note status-note">${esc(W.englishOnly)}</p>`);
   return lines.join("\n      ");
 }
 
@@ -271,7 +277,7 @@ export function reviewPages(o: {
       ${scope(r)}${r.scope.note ? `\n      <p class="note"><b>${esc(W.note)}:</b> ${theirs(r.scope.note, r.statement.lang, l)}</p>` : ""}
       ${items}
       <h2>${esc(W.statement)}</h2>
-      ${statement(r)}${l !== "en" ? `\n      <p class="note">${esc(W.englishOnly)}</p>` : ""}
+      ${statement(r)}${l !== "en" && !translationsRead(r).includes(l) ? `\n      <p class="note">${esc(W.englishOnly)}</p>` : ""}
       <p class="note"><b>${esc(W.conflicts)}:</b> ${theirs(r.conflicts, r.statement.lang, l)}</p>
       ${full}
       <p class="note">${licence}${r.doi ? ` · DOI <a href="https://doi.org/${esc(r.doi)}">${esc(r.doi)}</a>` : ""}</p>

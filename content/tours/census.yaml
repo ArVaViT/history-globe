@@ -24,6 +24,11 @@ title:
   tl: "Ang sensus ni Joab sa Israel"
   da: "Joabs folketælling i Israel"
   sr: "Јоавово пребројавање Израиља"
+  hu: "Joáb népszámlálása Izráelben"
+  fi: "Joabin väenlasku Israelissa"
+  vi: "Cuộc kiểm tra dân số của Giô-áp tại Y-sơ-ra-ên"
+  ro: "Recensământul lui Ioab în Israel"
+  bg: "Преброяването на Израил от Йоав"
 year: "975 BC"
 people: ["Joab@1Sa.26.6-Psa"]
 approximate: true
@@ -47,6 +52,11 @@ stops:
       tl: "Sinabi ni David kay Joab, “Magparoo't parito ka nga sa lahat ng mga lipi ng Israel, mula sa Dan hanggang sa Beer-seba, at bilangin ninyo ang bayan”; tumawid ng Jordan ang mga kapitan at nagkampo sa Aroer."
       da: "David siger til Joab: »Kære, gak omkring i alle Israels Stammer, fra Dan og indtil Beersaba, og tæller Folket«; hærførerne går over Jordan og slår lejr ved Aroer."
       sr: "Давид говори Јоаву: „Прођи по свим племенима Израиљевим од Дана до Вирсавеје, и избројте народ“; војводе прелазе Јордан и логоре се код Ароира."
+      hu: "Dávid ezt mondja Joábnak: „Menj el, járd be Izráelnek minden nemzetségeit, Dántól fogva Beersebáig, és számláljátok meg a népet”; a vezérek átkelnek a Jordánon, és Aróernél tábort vernek."
+      fi: "Daavid sanoo Joabille: ”Kiertele kaikki Israelin sukukunnat Daanista Beersebaan asti, ja pitäkää kansan katselmus”; päälliköt ylittävät Jordanin ja leiriytyvät Aroeriin."
+      vi: "Đa-vít nói với Giô-áp: “Hãy đi khắp các chi phái Y-sơ-ra-ên, từ Đan cho đến Bê-e-Sê-ba, tu bộ dân sự”; các quan tướng qua sông Giô-đanh và hạ trại tại A-rô-e."
+      ro: "David îi spune lui Ioab: „mergi dar prin toate semințiile lui Israil și ale lui Iuda dela Dan până la Virsavee, și numără poporul”; căpeteniile trec Iordanul și își așază tabăra la Aroer."
+      bg: "Давид казва на Йоав: „Премини сега през всичките Израилеви племена, от Дан до Вирсавее, та избройте людете“; военачалниците преминават Йордан и се разполагат при Ароер."
   - place: a095b6e # Jazer
     ref: 2Sam.24.5
     note:
@@ -66,6 +76,11 @@ stops:
       tl: "Mula sa Aroer, ang daan ay patungo sa Jazer, sa lupain ng Gad."
       da: "Fra Aroer går vejen mod Jazer i Gads land."
       sr: "Од Ароира пут води према Јазиру, у земљи Гадовој."
+      hu: "Aróertől az út Jázér felé vezet, Gád földjén."
+      fi: "Aroerista tie johtaa kohti Jaseria, Gadin maassa."
+      vi: "Từ A-rô-e, đường dẫn về hướng Gia-ê-xe, trong xứ Gát."
+      ro: "De la Aroer drumul duce spre Iazer, în țara lui Gad."
+      bg: "От Ароер пътят води към Язер, в земята на Гад."
   - place: ae73b90 # Gilead
     ref: 2Sam.24.6
     note:
@@ -85,6 +100,11 @@ stops:
       tl: "Dumating sila sa Gilead at sa lupain ng Tatimhodsi."
       da: "De kommer til Gilead og til Tahtim-Hodsjis land."
       sr: "Долазе у Галад и у земљу Тахтим-Ходси."
+      hu: "Gileádba és Tahtim-Hodsi földjére érkeznek."
+      fi: "He tulevat Gileadiin ja Tahtim-Hodsin maahan."
+      vi: "Họ vào Ga-la-át và xứ thấp của Hốt-si."
+      ro: "Ajung în Galaad și în țara Tahtim-Hodși."
+      bg: "Те идват в Галаад и в земята Тахтим-Ходши."
   - place: a513646 # Dan
     ref: 2Sam.24.6
     note:
@@ -104,6 +124,11 @@ stops:
       tl: "Dumating sila sa Dan-jaan, na karaniwang itinuturing na Dan, ang hilagang dulo ng lupain."
       da: "De kommer til Dan-Jaan, sædvanligvis opfattet som Dan, landets nordlige ende."
       sr: "Долазе у Дан-Јаан, који се обично схвата као Дан, северни крај земље."
+      hu: "Dán-Jáánba érkeznek, amelyet többnyire Dánnal azonosítanak, az ország északi végével."
+      fi: "He tulevat Dan-Jaaniin, jonka yleensä katsotaan olevan Dan, maan pohjoispää."
+      vi: "Họ đến Đan-Gia-an, thường được hiểu là Đan, đầu phía bắc của xứ."
+      ro: "Ajung la Dan-Iaan, socotit de obicei a fi Dan, capătul de nord al țării."
+      bg: "Те идват в Дан-Яан, обикновено разбиран като Дан, северния край на земята."
   - place: a98e4d7 # Sidon
     ref: 2Sam.24.6
     note:
@@ -123,6 +148,11 @@ stops:
       tl: "Umikot sila hanggang sa Sidon."
       da: "De drager omkring til Sidon."
       sr: "Обилазе до Сидона."
+      hu: "Elmennek Szidónig."
+      fi: "He kiertävät Sidoniin."
+      vi: "Họ đi vòng đến Si-đôn."
+      ro: "Fac ocolul spre Sidon."
+      bg: "Те заобикалят към Сидон."
   - place: a160272 # Tyre
     ref: 2Sam.24.7
     note:
@@ -142,6 +172,11 @@ stops:
       tl: "Dumating sila sa katibayan ng Tiro at sa lahat ng mga bayan ng mga Heveo at ng mga Cananeo."
       da: "De kommer til Tyrus' fæstning og til alle hivvitternes og kana'anæernes byer."
       sr: "Долазе до тврдог града Тира и до свих градова Јевејеваца и Хананеја."
+      hu: "Tírusz erős városához érkeznek, valamint a hivviek és a kánaániak minden városába."
+      fi: "He tulevat Tyroksen linnoitukseen ja kaikkiin hivviläisten ja kanaanilaisten kaupunkeihin."
+      vi: "Họ đến thành lũy xứ Ty-rơ và các thành của dân Hê-vít và dân Ca-na-an."
+      ro: "Ajung la cetatea întărită a Tirului și la toate cetățile heviților și ale canaaniților."
+      bg: "Те идват при крепостта на Тир и във всички градове на евейците и ханаанците."
   - place: ad2f6c2 # Beersheba
     ref: 2Sam.24.7
     note:
@@ -161,6 +196,11 @@ stops:
       tl: "Lumabas sila sa timog ng Juda, sa Beer-seba."
       da: "De drager ud til Judas sydlige del, til Beersheba."
       sr: "Излазе на југ Јудин, у Вирсавеју."
+      hu: "Kimennek Júda déli részére, Beérsebába."
+      fi: "He lähtevät Juudan eteläosaan, Beersebaan."
+      vi: "Họ đi ra miền nam Giu-đa, đến Bê-e-Sê-ba."
+      ro: "Ies spre sudul lui Iuda, la Beer-Șeba."
+      bg: "Те излизат в южната част на Юда, към Вирсавия."
   - place: a15257a # Jerusalem
     ref: 2Sam.24.8-2Sam.24.25
     note:
@@ -180,3 +220,8 @@ stops:
       tl: "Pagkaraan ng siyam na buwan at dalawampung araw ay dumating sila sa Jerusalem: 800,000 lalaki sa Israel, 500,000 sa Juda. Nasaktan ang puso ni David; pinili niya ang salot kaysa sa kamay ng tao, 70,000 ang namatay mula sa Dan hanggang sa Beer-seba, at pinigil ng Panginoon ang kamay ng anghel sa giikan ni Arauna na Jebuseo, na binili ni David at pinagtayuan niya ng dambana."
       da: "Efter ni måneder og tyve dage kommer de til Jerusalem: 800.000 mand i Israel, 500.000 i Juda. Davids hjerte slår ham; han vælger pesten frem for menneskets hånd, 70.000 dør fra Dan til Beersheba, og Herren holder englens hånd tilbage ved jebusitten Aravnas tærskeplads, som David køber og bygger et alter på."
       sr: "После девет месеци и двадесет дана долазе у Јерусалим: осам стотина хиљада људи у Израиљу, пет стотина хиљада у Јуди. Давида боде срце; бира помор радије него руку људску, умире седамдесет хиљада од Дана до Вирсавеје, и Господ задржава руку анђелу код гумна Орне Јевусејина, које Давид купује и на њему подиже жртвеник."
+      hu: "Kilenc hónap és húsz nap múlva Jeruzsálembe érnek: Izráelben 800 000, Júdában 500 000 férfit számlálnak. Dávidot furdalja a lelkiismerete; a döghalált választja az emberi kéz helyett, Dántól Beérsebáig 70 000-en halnak meg, és az Úr az angyal kezét a jebuzeus Arauna szérűjénél tartóztatja meg, amelyet Dávid megvesz, és oltárt épít rajta."
+      fi: "Yhdeksän kuukauden ja kahdenkymmenen päivän kuluttua he tulevat Jerusalemiin: Israelissa on 800 000 miestä, Juudassa 500 000. Daavidin sydän soimaa häntä; hän valitsee ruton mieluummin kuin ihmisen käden, 70 000 kuolee Daanista Beersebaan, ja Herra pidättää enkelin kättä jebusilaisen Araunan puimatantereella, jonka Daavid ostaa ja rakentaa sille alttarin."
+      vi: "Sau chín tháng và hai mươi ngày, họ trở về Giê-ru-sa-lem: trong Y-sơ-ra-ên có tám trăm ngàn người, trong Giu-đa có năm trăm ngàn người. Lòng Đa-vít bị cắn rứt; vua chọn dịch lệ thay vì tay loài người, bảy mươi ngàn người chết từ Đan đến Bê-e-Sê-ba, và Đức Giê-hô-va cầm tay thiên sứ lại nơi sân đạp lúa của A-rau-na, người Giê-bu-sít; Đa-vít mua nơi ấy và lập tại đó một bàn thờ."
+      ro: "După nouă luni și douăzeci de zile ajung la Ierusalim: 800.000 de bărbați în Israel, 500.000 în Iuda. Inima lui David îl mustră; el alege ciuma mai degrabă decât mâna omului, 70.000 mor de la Dan până la Beer-Șeba, iar Domnul oprește mâna îngerului lângă aria lui Aravna iebusitul, pe care David o cumpără și pe care zidește un altar."
+      bg: "След девет месеца и двадесет дни те идват в Йерусалим: 800 000 мъже в Израил, 500 000 в Юда. Сърцето на Давид го изобличава; той избира мора пред ръката на човека, 70 000 умират от Дан до Вирсавия, и Господ спира ръката на ангела при гумното на йевусееца Аравна, което Давид купува, и издига на него олтар."

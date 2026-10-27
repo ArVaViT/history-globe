@@ -1,0 +1,6710 @@
+# Names in vi for History Globe: biblical places (by id), states (by English name),
+# modern names (by OpenBible id), people (by STEP Bible TIPNR id). Drafted by machine
+# translation with a glossary, 2026-10-26; not yet reviewed by a native speaker.
+places:
+  a15257a: Giê-ru-sa-lem
+  a9cf1e8: Ga-li-lê
+  a149f13: Giu-đê
+  af5884f: Na-xa-rét
+  af301ca: Ê-díp-tô
+  a69e1b8: Ma-xê-đoan
+  a197f19: A-si
+  a5feb15: Ê-phê-sô
+  ae41ab4: An-ti-ốt
+  a58735e: Sê-sa-rê
+  af2161c: Ca-bê-na-um
+  a69c1d4: Đa-mách
+  ae686c9: Giô-đanh
+  afc8e7a: Rô-ma
+  a282dce: Sa-ma-ri
+  a4f35bc: Bê-tha-ni
+  ac2c4c5: Núi Ô-li-ve
+  a98e4d7: Si-đôn
+  a160272: Ty-rơ
+  a6f437a: Cô-rinh-tô
+  a0aa664: Sô-đôm
+  aef4242: A-chai
+  a112427: Bết-lê-hem
+  ae023a9: Giốp-bê
+  ab60a74: Nơi thánh
+  afa9d8e: Tê-sa-lô-ni-ca
+  ad63819: Si-li-si
+  a26aa94: Cơ-rết
+  a2e7601: Chíp-rơ
+  a890adf: Sy-ri
+  a81cdb5: Sy-ren
+  a562fcc: Biển Ga-li-lê
+  a1fe6e7: A-thên
+  a3f0756: Ba-by-lôn
+  a62fe31: Bê-rê
+  a0f440a: Ga-la-ti
+  ae425aa: Y-cô-ni
+  a83fb1e: Lao-đi-xê
+  af0719d: Lít-trơ
+  abfba2a: Núi Si-na-i
+  a91c509: Trô-ách
+  aa401a9: Đẹt-bơ
+  aa572e2: Gô-mô-rơ
+  aaf03fa: Giê-ri-cô
+  aa95188: Bam-phi-ly
+  a666ea0: Tạt-sơ
+  af20c46: Si-ôn
+  aee7248: A-léc-xan-tri
+  a6c704a: An-ti-ốt ở Bi-si-đi
+  af3d9fc: A-ri-ma-thê
+  a217d18: Ba-by-lôn
+  a91b732: Bết-sai-đa
+  a031bda: Ca-na
+  ab0b2dd: Phương Đông
+  a631d35: Gô-gô-tha
+  a7184a7: Y-ta-li
+  a9acaaf: Nơi chí thánh
+  a49e1d0: Phi-líp
+  a33d53e: Phê-ni-xi
+  a94b661: Thi-a-ti-rơ
+  a815d89: A-rê-ô-ba-gơ
+  abff59d: Bê-pha-giê
+  a9fc13a: Bết-sai-đa
+  a581f0c: Ca-na-an
+  ae733a2: Đê-ca-bô-lơ
+  ae7274b: Em-ma-út
+  a7de69e: Ghê-nê-xa-rết
+  ada6b64: Giê-ra-sê
+  a4492a0: Hy Lạp
+  a2c5cc7: Ly-đa
+  a55027d: Mi-lê
+  a70fd5d: Ni-ni-ve
+  aff04b8: Bẹt-giê
+  ab8ae56: Phi-ri-gi
+  a83a43e: Bông
+  aab4a5f: Sạt-đe
+  a294859: Si-lô-ê
+  a47c817: Hiên cửa Sa-lô-môn
+  a040ba5: Hác-en-đa-ma
+  a0f4ea8: A-ra-bi
+  aa0b1d6: Mô-áp
+  ae73b90: Ga-la-át
+  aa7a40a: Ba-san
+  a62dec4: Sông Ơ-phơ-rát
+  aa805fb: Biển Lớn
+  ab95484: A-ma-léc
+  ad2f6c2: Bê-e-Sê-ba
+  abed304: Biển Muối
+  a9bba61: Ki-ri-át-Giê-a-rim
+  a9bb03e: Núi Hô-rếp
+  a341fe8: Núi Hẹt-môn
+  a264254: Ghê-ba
+  a095b6e: Gia-ê-xe
+  ac87d4c: Ách-ca-lôn
+  a37c8e6: Trũng Hi-nôm
+  ad2fadf: Mê-đi
+  a0d784a: Đi-bôn
+  a046454: Bê-ê-rốt
+  acd63ee: Núi Tha-bô
+  a871210: Bốt-ra
+  abf8e4e: Ma-kê-đa
+  af2ca0c: A-xê-ca
+  a8e53d5: Ê-xi-ôn-Ghê-be
+  afdda14: Nóp
+  a173c40: Ạt-bát
+  a1b6474: Hát-sê-rốt
+  ac644e9: Gít-rê-ên
+  ae1c9ea: Na-giốt
+  aa10f27: Síp-ma
+  a68aa8f: Cửa Góc
+  af4f21c: Mê-đê-ba
+  abd637f: Óp-ra
+  aaaaead: Tu-banh
+  a9b852f: Xíp
+  a76f7b7: Ba-anh-Mê-ôn
+  addba2a: Bết-Xu-rơ
+  a4e8401: Cửa Đông
+  ab05a42: Núi Ga-ách
+  a321cb8: Kê-đe
+  a8e843f: Núi Ê-sau
+  ab71288: Rê-hốp
+  ad27e17: Sê-nia
+  af58391: Tháp Ha-na-nê-ên
+  a5a1bdd: A-bên-Mê-hô-la
+  a8754c4: A-ri-ên
+  a70e842: Bê-e-La-chai-Roi
+  a529e92: Thành Cây Chà-là
+  af4e985: Ê-phơ-rát
+  a6df20a: Ghi-lô
+  a8819e0: Hô-lôn
+  acc7184: Giu-ta
+  a65db0f: Mê-ri-ba
+  ac69561: Na-ha-la
+  acd48d6: Thê-ma
+  a324c4d: Út-xơ
+  af536fb: A-ru-ma
+  ac744c1: Át-ta-li
+  ab8fdbc: Ba-bên
+  a7abec7: Bết-Ê-kết
+  af66b89: Bết-Nim-ra
+  a5c0cb0: Bi-thi-ni
+  a7be664: Ca-ne
+  ae28fc7: Đin-ha-ba
+  a3c4559: Ên-thê-kê
+  a5db1a6: Ê-rết
+  ad3e63c: Gô-sen
+  a0e8903: Ha-vơ-ran
+  a1ab517: Hết-lôn
+  acf6e00: Giô-bê-ha
+  a4f650b: Kê-nát
+  a38776a: Lút
+  aa6d1bd: Mít-đôn
+  a62fa2d: Núi Hô-rơ
+  accdd09: Nê-bô
+  aa32a17: Sin
+  a9ecc26: Phu-nôn
+  af04ad9: Ri-sa
+  af8ce6a: Sê-la
+  a072bae: Sim-rôn
+  a0e11c1: Tê-la-sa
+  a7cdf52: Ti-bát
+  ac2192b: Trũng Li-ban
+  aab92ca: Xê-đát
+  abf4481: A-đê-a-đa
+  ae16cf5: A-đô-ra-im
+  a2a145b: A-ne
+  ab20df9: A-bô-lô-ni
+  a919ab0: A-ta-rốt
+  af3ccdf: A-ven
+  abc1b7c: Ba-lát
+  a66136c: Ba-anh-Tha-ma
+  a520374: Bê-re
+  a14b9f1: Bê-rốt
+  a367677: Bết-Ga-mun
+  a78580c: Bết-Mê-ôn
+  a92de65: Bê-tu-ên
+  abde10e: Bốt-sết
+  aee80af: Ca-ne
+  acf2fac: Kê-sinh
+  a0ff819: Kít-lít
+  a398e5d: Cốt
+  ae8badb: Đi-bôn
+  ab9580e: Suối Rồng
+  acd9b19: Ê-bết
+  aacbcf0: Ê-la-im
+  a0e33a3: Ên-Ha-cô-rê
+  aa24ad4: Rừng Ép-ra-im
+  aa21f26: Ê-tam
+  ab33b54: Gát-Rim-môn
+  a52e310: Ghê-đê-ra
+  a1c28f1: Ghê-ru-tơ-Kim-ham
+  ae87a54: Ghi-bê-om
+  a858723: Gót
+  a785680: Ha-đa-sa
+  a62236c: Ham-môn
+  a887a2d: Hát-sát-son-Tha-ma
+  a3cb036: Hên-ba
+  ad5c4a1: Hết-rôn
+  a2feddf: Hô-sa
+  ad161d1: Y-dim
+  ad6cc26: Yết-Sê-mết
+  abff89f: Giáp-nê-ên
+  aa0ef78: Giê-hút
+  ab2e402: Giốc-mê-am
+  a804aeb: Ca-môn
+  a6536c9: Cát-tát
+  ae8f9cf: Ki-na
+  a62aa3a: Lách-ma
+  ac3ac4e: Lê-ba-ốt
+  ae60c0c: Ma-a-rát
+  ac041e2: Mác-bi
+  a6e2c95: Ma-na-hát
+  a8bc4e3: Mê-rô
+  a571ca0: Mích-đanh-Gát
+  afc2466: Mích-ba
+  ac2b4ef: Núi Ba-a-la
+  a3587ba: Núi Giê-a-rim
+  a884255: Núi Sanh-môn
+  a179865: Na-a-ra
+  ab571de: Nê-i-ên
+  a8518f1: Nim-rốt
+  a1f2174: Óp-ni
+  a6f94a6: Cửa Dân
+  abc2af0: Bê-tô-lê-mai
+  a204528: Ra-cát
+  ab049cf: Ra-mốt
+  ae259d9: Rê-mết
+  a0009b3: Ru-ma
+  a68750d: Sa-mô-tra-xơ
+  a6d306d: Sê-lơ-xi
+  a488856: Sa-a-ra-im
+  aa4e69f: Sa-rôn
+  a78f72b: Sen
+  ae20466: Sim-rôn-Mê-rôn
+  a077262: Síp-mốt
+  ad797fe: Tát-mốt
+  a559399: Đức Giê-hô-va Di-rê
+  a23a2e6: Tô-ken
+  a57ea5f: U-xên-Sê-ê-ra
+  a375f5a: Trũng Hếp-rôn
+  adec54b: Va-hép
+  a5e1150: Xê-nan
+  a31a510: Xê-rết-Sa-ha
+  a041bb3: Sa-ma-ri
+  a64f355: Bê-tên
+  a84f426: Thành Đa-vít
+  aede336: Ga-ba-ôn
+  ab94aea: Ghinh-ganh
+  a3cc590: La-ki
+  af92088: Gia-be Ga-la-át
+  ab34789: A-na-tốt
+  a5f43dd: Ta-rê-si
+  a553110: Xết-rôn
+  a80d317: Tiệt-sa
+  ad2048e: Đê-bia
+  a8ec7ba: Pha-đan A-ram
+  ada25df: Họt-ma
+  a21f909: Thim-na
+  a244d8f: Éc-lôn
+  a7559e6: Trũng Rê-pha-im
+  a75b45e: Bết-Hô-rôn
+  a403c45: Giê-bu
+  adb008c: Tác-pha-nết
+  a51df0e: Ên-ghê-đi
+  ae00861: Mặc-bê-la
+  a9674fc: Nô
+  a6f048c: Ghi-bê-thôn
+  a5a6458: Ki-sôn
+  aa5cc66: Núi Ê-banh
+  a40647c: Phi-ra-thôn
+  aa516c2: Trũng Gít-rê-ên
+  a3f8916: Bết-A-ra-ba
+  a2e5054: Kê-phi-ra
+  a7b6270: Cửa Ép-ra-im
+  abf176f: Cha-la
+  a878d66: Gíp-lê-am
+  ad05040: Na-phốt-Đô-rơ
+  a8da370: Rim-môn
+  a0f54e4: Sin
+  a81b7b1: Cửa Trũng
+  a6c3859: A-ha-va
+  a8f6a28: Át-môn
+  a696a95: Bết-A-ven
+  a7409b9: Ê-đen
+  a2fc4c4: Cửa Suối
+  a28a7df: Ha-ki-la
+  a2d84de: Kê-ri-giốt
+  a694ea2: Mích-ba
+  a9ba60c: Sê-pham
+  a6e6528: Thim-nát-Hê-re
+  a4a5cce: Trũng Si-đim
+  a72a1ff: Áp-đôn
+  aeb052c: Anh-môn-Đíp-la-tha-im
+  a0a2ca7: A-sốt
+  a99875b: Ba-lát
+  a577c27: Ba-mốt-Ba-anh
+  a30f9a0: Bết-Hác-kê-rem
+  ad44b24: Bết-Rê-hóp
+  a58252b: Bốt-cát
+  ab635e4: Đô-than
+  a8eae19: Ên-Ga-nim
+  aae626a: Hải cảng Tốt
+  a33cfcc: Ghê-ba
+  a2f0f05: Ghi-bê-a
+  aa9c505: Ha-mát
+  aeb09c0: Hê-lam
+  a878481: Ấn Độ
+  a765bd8: Ca-in
+  ac9f98d: Trũng Vua
+  a91d516: Lu-hít
+  a033373: Ma-tha-na
+  af693b8: Núi Pha-ran
+  aa85961: Cửa Mới
+  a75d2c1: Bẹt-găm
+  ae4cd38: Rê-hốp
+  a7d0e71: Rô-ghê-lim
+  a28da66: Sa-a-ra-im
+  a50eea4: Tháp Mê-a
+  a816ed9: Trũng Ghê-ra
+  a6ee047: Nước Mê-rôm
+  ab5161f: Xê-rết
+  a549c0f: A-bi-ê-xe
+  afe1143: A-đa-ma
+  adc77fb: Biển A-đri-a-tích
+  a89511f: A-in
+  ada3369: Anh-môn
+  a4bdea7: Am-phi-bô-lít
+  ac4f712: A-phéc
+  a4cea2a: A-rát
+  a0e21ff: A-tát
+  a6d7a41: A-vim
+  a304bb7: Ba-anh-Ha-môn
+  a8ac29f: Ba-la
+  a293fbf: Bê-ê-sơ-tê-ra
+  aafc721: Bê-ten
+  a5f4608: Bết-Cạt
+  a587ea0: Bết-Ê-méc
+  a3bb26d: Bết-Sê-mết
+  a206291: Bê-xéc
+  ab41e6b: Kê-xíp
+  ac4ff01: Thành Cây Chà-là
+  a65c305: Đa-na
+  a0a6365: Đu-ma
+  a71d65f: Ê-li-sa
+  a774e50: Ê-méc-Kê-xít
+  ab28e2e: Ên-Rim-môn
+  a1230e5: Ép-rôn
+  a16596e: Ê-the
+  ae14b1d: Ghê-ba
+  ac36af4: Ghê-đê-rô-tha-im
+  aed8df9: Ghinh-ganh
+  a80bf37: Gô-me
+  ae1d208: Ha-ê-lép
+  a5e2c12: Hiên ngai
+  a154d7b: Ha-mô-na
+  ad7e819: Ha-vi-la
+  ae5657c: Hát-so
+  a6779cd: Hô-ba
+  a5c4318: Hu-cô
+  a67bd13: Díp-tha
+  ac333a2: Gít-nan
+  a175f4b: Gia-nim
+  a5f5b06: Giê-sa-na
+  a45dd20: Giốc-thê-ên
+  adb5ae4: Kê-đe
+  a8f428d: Ki-ri-a-ta-im
+  abe5dde: Lạc-cum
+  ab6bb68: Lê-bô-na
+  ab3fd96: Trại Đan
+  a0a52ec: Mê-tết-A-ma
+  ade6a96: Mi-gơ-rôn
+  ac702f1: Mích-ba
+  aac759d: Núi Ba-san
+  a597123: Núi Mi-xa
+  af35635: Một-sa
+  aff43ac: Na-cô
+  aafe3bd: Nết-síp
+  a9ee958: Phê-nit
+  a664d03: Ra-ma
+  a54ef72: Ra-ma-tha-im-Xô-phim
+  aaf5fef: Rê-hốp
+  a4218ee: Rô-đơ
+  afa863b: Sa-la-min
+  a3cae2c: Sê-pha
+  a25f8e2: Sa-li-sa
+  a86d49f: Sa-vê-Ki-ri-a-ta-im
+  ac6b338: Si-ho-Líp-nát
+  aa3bc1e: Soa
+  aa454f7: Sít-na
+  a2e9e40: Tháp-bu-ách
+  ac9adc9: Ti-bê-ri-át
+  a85a60a: Tra-cô-nít
+  a0c71dc: Trũng A-ven
+  ae32196: Trũng Mích-ba
+  a207807: Đường Thánh
+  a93ed69: Sanh-môn
+  a061538: Xe-rơ
+  a2735ff: Ê-đôm
+  a231f80: Giê-ri-cô
+  ac24f5f: Ghi-bê-a
+  a18873f: Gát
+  a7e13e1: A-hi
+  a513646: Đan
+  ac71e65: Đất Phi-li-tin
+  a2fe63c: Ra-mốt Ga-la-át
+  a3e21c6: Núi Cạt-mên
+  a7e3a59: Ê-lam
+  a8394b8: Ba-by-lôn
+  a2e3aa0: Thê-cô-a
+  ae50cf1: Đồng vắng Si-na-i
+  a8554e3: Mê-ghi-đô
+  af6c325: Ghê-su-rơ
+  ab2bde8: Ríp-la
+  a104820: Ô-phia
+  ad9b1cd: Gia-hát
+  aacfcda: Xoa
+  a355b6e: Ê-ta-ôn
+  a0b5c50: Xin
+  a3a2a75: Đê-đan
+  a5f9092: Mê-siếc
+  ac31fee: Xô-an
+  af9cfc9: Ên-Rô-ghên
+  a539e01: Giạt-mút
+  aeb9e97: Mam-rê
+  a282c15: Sê-phạt-va-im
+  aa8275b: A-ba-rim
+  a924b16: Gô-xan
+  a094036: Bết-Hô-rôn dưới
+  a30e967: Núi Ga-ri-xim
+  a079b21: Ram-se-sơ
+  af936bd: Trũng Muối
+  a42a5b2: Ạt-gốp
+  a03cb21: Bết-A-ven
+  a2bb265: Ki-nê-rết
+  ad68510: Ê-thê-mô-a
+  a2f3001: Đất Cham
+  a5c92e1: Giốc-nê-am
+  a376eed: Lô-Đê-ba
+  a0ef1e1: Ô-bốt
+  ac3bc41: Sanh-ca
+  a39a6b9: Sô-cô
+  a38ecff: Trũng Ếch-côn
+  afb265c: A-in
+  aabd0ba: Bết-Hốt-la
+  a5709da: Ên-thô-lát
+  a046c70: Gát-Rim-môn
+  a044272: Ha-đít
+  ac12af9: Li-by
+  a6ac675: Mô-rê-sết-Gát
+  a939939: Tháp Si-chem
+  a84c559: Ruộng Thợ Giặt
+  a32397f: A-lúc
+  a2f186d: Gô-ren-A-tát
+  a03cc2d: Ba-lát-Bê-e
+  a5c37fd: Cửa Đẹp
+  a4590cd: Bết-Ha-ran
+  a85cbab: Bết-Sê-mết
+  ab0d85b: Vách Rộng
+  abfdefc: Ê-bên-Ê-xe
+  a34e870: Ên-Sê-mết
+  ac10bcf: Ga-lim
+  a55d681: Ghê-đe
+  a6399b3: Ghinh-ganh
+  ab6a417: Ha-mát-Xô-ba
+  a8687ff: Hê-lép
+  a7adb01: Giáp-nê-ên
+  ac0f6e7: Cạt-ta
+  a20364a: Ki-si-ôn
+  aa5f658: Mít-ca
+  a39fe14: Núi Sê-phe
+  a53b82d: Óp-ra
+  aa9e754: Phê-thô-rơ
+  a17e154: Rê-hô-bốt
+  ab5b542: Sa-rít
+  af6476f: Sa-mia
+  a3f0f69: Y-pha-nho
+  a2b5ee9: Tên-Mê-la
+  a721f7f: Tháp Lò
+  a2109c3: Trũng Ha-môn-Gốc
+  ae11a0d: Đồng vắng Ma-ôn
+  a190097: Xin
+  a112fe3: Ê-nôn
+  adbc931: A-in
+  a2f1fa1: A-mê-át
+  ac07206: A-na-cha-rát
+  a4cf129: A-phéc
+  a3c7b44: A-ram Na-ha-ra-im
+  a1e3eff: Át-na
+  a366989: Ba-anh-Hát-so
+  ae83378: Bê-nê-Bê-rác
+  aa2fea1: Bết-A-nốt
+  a561af4: Bết-Đa-gôn
+  a0aa8cf: Bê-tết-đa
+  a95a37b: Bết-Lê-A-phra
+  ac959b2: Bi-lê-am
+  a7ed00e: Cáp-bôn
+  aca2b0a: Cơ-lô-đa
+  a961693: Kin-mát
+  acc1702: Thành Muối
+  a74ee0d: Cút
+  ad334c4: Đê-bia
+  ac17675: Đi-mô-na
+  ab80fa1: Tháp Ê-đe
+  ad44943: Ên-Ê-la-im
+  a43608b: Ê-sét
+  a2ca712: Ếch-Ca-xin
+  a59b2e2: Ghê-banh
+  ac25f34: Ghi-bê-a
+  a84a509: Ghinh-ganh
+  a81a10a: Gô-sen
+  a7a5f29: Ham
+  abf97ba: Ha-ne
+  a3f301c: Hát-sa-Át-đa
+  a4d3e40: Hát-so
+  ac722b9: Hên-cát Hát-xu-rim
+  a2a444a: Hô-lôn
+  a5a846f: Hum-ta
+  a6c0a5f: Thành Mô-áp
+  aa9e265: Y-tu-rê
+  a4f2291: Gia-nô-ác
+  ab8473d: Giê-sua
+  a0415e8: Cạt-cô
+  a48191b: Kê-đe ở Nép-ta-li
+  aeb19d6: Ki-ri-át-Hu-xốt
+  a56788c: La-sê
+  a1ae20f: Ao Dưới
+  a73a74f: Mát-mên
+  a67325d: Trại Đan
+  aec139c: Mi-đin
+  a772880: Gò Mô-rê
+  a75aff4: Núi Ép-rôn
+  aac1fcf: Núi Mô-ri-a
+  aa9e65f: Cửa Mi-phơ-cát
+  aee679c: Na-in
+  ad96dd4: Níp-san
+  aed6b0e: Nô-phách
+  a28d652: Ráp-ba
+  a010244: Ra-ma
+  a601121: Ra-mát-Lê-chi
+  ab1d954: Rê-hô-bốt
+  a86e0b0: Sa-lim
+  af74b9f: Sê-ca-ca
+  a0a98de: Sê-pha-rát
+  a5d4629: Cửa Sa-lê-kết
+  ae44746: Sê-ba
+  afd2396: Síc-rôn
+  ad16b1e: Su-anh
+  ac9c090: Sô-cô
+  aadfb8f: Su-rơ
+  acfcf28: Tha-rê-a-la
+  ae3f164: Thim-na
+  a71f834: Trũng Bê-ra-ca
+  a402ee4: Trũng Sa-vê
+  afe28fe: Xa-nô-a
+  ac2907d: Si-ô
+  a6046fa: Am-môn
+  a85151a: Hếp-rôn
+  abf2fc1: Hết-bôn
+  a736f6c: Mích-ba
+  abd9596: Núi Si-ôn
+  a30c937: Ách-đốt
+  a033b84: Su-xơ
+  a97b595: Líp-na
+  ad9df93: Kê-i-la
+  a0ed7ff: Xiếc-lác
+  aca767b: Đồng bằng Mô-áp
+  a60f092: Gô-sen
+  a08174b: Xô-rê-a
+  a0905b5: Su-cốt
+  a68d1a9: Kê-đa
+  a1c600b: A-gia-lôn
+  aa54aa4: Đồng bằng Giô-đanh
+  aa6b19b: Pha-ran
+  a38ad07: A-rơ
+  aaa6f7a: Ết-rê-i
+  a43f60f: Mê-sô-bô-ta-mi
+  abffcaa: A-bên Bết-Ma-ca
+  a2a303c: Ghi-hôn
+  ad6eb0b: Giạt-thia
+  a5cda86: Ma-rê-sa
+  a83fd43: Sa-rôn
+  a41a054: Át-ma
+  ad3970d: Ma-ra
+  ae6bfe2: Ô-nô
+  a05ebb7: Rê-phi-đim
+  a0293ff: Cửa Nước
+  ab5175f: A-san
+  a30f37b: Bết-Giê-si-mốt
+  a70c56b: Đô-rơ
+  a27d0e0: Ê-tam
+  a1ce1b7: Hát-sa-Ê-nan
+  a2715db: Cáp-xê-ên
+  a97cb23: Mê-phát
+  ababfd2: Phi-ha-hi-rốt
+  aad7e4e: Sa-lem
+  aa28709: Su-cốt
+  a6fc60d: A-phéc
+  ae12e43: Ba-anh-Gát
+  a53f299: Nhà Mi-lô
+  aca444b: Ên-Đô-rơ
+  a9a2541: Ghê-banh
+  a3088c2: Hát-so
+  ae3d487: Ma-gốc
+  ab682e6: Bết-Hô-rôn trên
+  a50057d: Đồng vắng Xíp
+  a2270e4: Ạc-xíp
+  a234727: A-náp
+  abc9a1d: A-ta-rốt
+  a3d6e81: Ba-anh-Phê-ô
+  ab1a343: Bết-lê-hem
+  a263e60: Bết-Tô-ga-ma
+  ab7bf48: Sê-sa-rê Phi-líp
+  a593a48: Cô-ra-xin
+  ad6b2b7: Ên-Tháp-bu-ách
+  a2fa712: Cửa Cũ
+  a728f1b: Ghê-đê-rốt
+  ab98f8c: Ghi-tha-im
+  a1d1918: Hên-cát
+  a662eed: Kê-đe
+  a8661e2: Mát-ma-na
+  a2f0a70: Mích-mê-tát
+  a38ad9f: Rừng Sồi Mô-rê
+  a2d9bc8: My-si
+  a1c7cc1: Phi-la-đen-phi
+  aefdac1: Rết-sép
+  a1aff30: Sê-i-rát
+  ab58876: Sê-sác
+  a028191: Tha-bê-ra
+  a3e0180: Trũng Díp-tha-ên
+  aea17b7: A-ba-na
+  a8b7a6b: A-cát
+  aaee94d: Át-đa
+  ad4ad26: A-lê-mết
+  a3e2b20: A-mam
+  ae46bcd: A-phê-ca
+  a105543: Ha-ma-ghê-đôn
+  a9a57b7: Át-na
+  a979444: Ba-anh-Hẹt-môn
+  a14325e: Bê-a-lốt
+  a882ef5: Bê-ôn
+  a0cc925: Bết-Đa-gôn
+  a0a178b: Bết-Hê-xen
+  a289a5b: Bết-Lê-ba-ốt
+  adac973: Bết-Tháp-bu-ách
+  a978a24: Ca-bun
+  a2cb16b: Kê-phar A-mô-ni
+  a4c2c75: Chi-ô
+  ab793ce: Cơ-nít
+  ac6416d: Đê-bia
+  a0dc90b: Cây Sồi Thầy Bói
+  a6bb890: Phố Đông
+  a1b30e1: Ê-đe
+  ae180d8: Ê-lôn
+  abe5f95: Ên-Ga-nim
+  a507da9: Ép-ra-im
+  acd9498: Ê-sần
+  a121d5e: Chợ Áp-bi-út
+  a753c3b: Cửa Nền
+  aa9be2b: Ghê-đô
+  a45b692: Gò Đức Chúa Trời
+  a5dd9e3: Ghim-xô
+  a878fea: Gu-rơ
+  afca9ce: Hanh-hun
+  a2d6bfc: Ha-mát
+  a412c43: Ha-na-thôn
+  a7672d8: Hát-sa-Ga-đa
+  ae9b9bc: Hát-so
+  a7df136: Rừng Hê-rết
+  a9cdd53: Hô-rem
+  ae8fac6: Di-đê-a-la
+  ad94cc9: Gít-rê-ên
+  ae5cc46: Kít-rôn
+  a422a1f: Lu-xơ
+  a67297a: Mát-mê-na
+  abee1b4: Cửa Giữa
+  a33910d: Mi-ti-len
+  adaf385: Mô-ri-a
+  a954735: Núi Ga-la-át
+  a991067: Núi Phê-ra-xim
+  aa4b3e2: My-ra
+  a6a7150: Nê-a-bô-li
+  af43cde: Ni-cô-bô-li
+  ade301b: Ba-ta-ra
+  a3870fe: Phi-thom
+  a13ffd4: Ra-bít
+  aaa4c6e: Ra-ma
+  a63c954: Ra-mát-Mít-bê
+  a260ff1: Rê-hô-bốt-Y-rơ
+  a813f22: Rim-môn
+  a1c44ea: Sa-môn
+  a8bb3d8: Hòn Đá Xô-hê-lết
+  a846a2a: Sa-mia
+  ac53696: Sê-ba-rim
+  a8fe47a: Si-lim
+  ab5d319: Síp-ra-im
+  a64ff72: Sô-cô
+  a27b472: Si-kha
+  af614df: Tha-bô
+  a10147d: Tên-A-bíp
+  aab8f2d: Típ-sắc
+  afa792e: U-ma
+  a49037e: Trũng Phán Xét
+  a339971: Trũng Sô-rếch
+  a6dc035: Xê-rê-đa
+  aab3ff0: Xíp
+  a730058: Li-ban
+  adf74d4: Si-chem
+  aa4680a: Si-lô
+  ae0bf4a: Gít-rê-ên
+  ac2cef0: Ca-đe-Ba-nê-a
+  ac62cbc: Ha-mát
+  ac5a1ec: Ê-thi-ô-bi
+  a3b5b53: Bết-Sê-mết
+  ae5bfe9: Ma-ha-na-im
+  a053f15: Cạt-mên
+  ae46f2e: A-rô-e
+  a4cc324: Ạt-nôn
+  a6f33c5: Hát-so
+  a075d61: Bê-e-Sê-ba
+  af82614: A-đu-lam
+  a505743: Mê-ri-ba
+  a2a8df0: Bết-San
+  acae7cb: Ma-a-ca
+  a9ef72b: Phê-ô
+  a6fea11: Ách-ta-rốt
+  ab45bd3: Ê-thi-ô-bi
+  ab5bd29: Nê-bô
+  a59f6f5: A-ra-bi
+  a26c8f2: Ha-vốt Giai-rơ
+  a734b66: Mi-lô
+  acdbce0: Su-rơ
+  ae7836a: Kíp-rốt Ha-ta-ava
+  a296e06: Ma-sa
+  af96edd: Ô-phên
+  af64fb3: Si-tim
+  abfbfb9: Xê-bô-im
+  a874951: A-su-rơ
+  af3ce34: Bết-Phê-o
+  a1611b6: Cửa Phân
+  a6057f5: Cửa Cá
+  a89005a: Hát-sa-Su-anh
+  a416b43: Kê-đê-mốt
+  a03a5d0: Mô-la-đa
+  a95147f: Ra-mốt
+  a5ab519: Khu Thứ Hai
+  aaff3e1: Tóp
+  a6fa2d3: Sa-rép-ta
+  abc358b: A-rát
+  a22663b: Ba-anh-Sê-phôn
+  af6c730: Cạt-kê-mít
+  aafd7c4: Ê-phê-Đa-mim
+  a0c9a06: Ghê-li-lốt
+  a7384d7: Dốt-ba-tha
+  a6845b1: Ma-ôn
+  ac0d1a5: Núi Ép-ra-im
+  a03be2e: Tháp-bu-ách
+  a532b99: Ao Trên
+  a28f432: Xa-nô-a
+  ad0d82f: Ạc-xíp
+  af74969: A-rô-e
+  a2bf0f8: A-tê-rốt-A-đa
+  a6bf059: Ba-anh-Phê-rát-sim
+  ae6cef8: Bết-A-nát
+  a87f8f5: Bết-Ma-ca-bốt
+  ae1f807: Ca-lách
+  af6c09e: Ép-ra-ta
+  a2e1bc0: Gát
+  af054ba: Ghê-đô
+  a2ebe1c: Hê-phe
+  a116c5c: Gia-van
+  aacc081: Suối Dưới
+  a6c2936: Ma-đôn
+  a411283: Mít-đôn
+  a11fadd: Núi Ha-lác
+  a55aded: Bi-si-đi
+  a305f43: Si-ho
+  a5d1690: Thê-bết
+  a324282: Trũng Giô-sa-phát
+  ab49753: Xa-phôn
+  a957c5b: A-bên Kê-ra-mim
+  a5f4dfc: A-cô
+  a845493: A-đi-tha-im
+  ad053dd: A-giát
+  a84cafa: A-lam-mê-léc
+  ad13f27: A-nem
+  a012133: A-phéc
+  a1b9ca6: A-rô-e
+  afe4be0: Ách-tê-rót-Ca-na-im
+  afdb74b: Ạt-rốt Sô-phan
+  a9fd165: Át-nốt-Tha-bô
+  aa3ff18: Bê-re
+  a2da675: Bết-Ạt-bên
+  ac99af3: Bết-Đíp-la-tha-im
+  a308715: Bết-lê-hem
+  a08144e: Ca-bun
+  a42c452: Kê-sa-lôn
+  a898f06: Kít-lốt-Tha-bô
+  a4e5a69: Cô-lô-se
+  a411151: Đáp-bê-sết
+  a3d1c99: Đi-bôn
+  afcb77d: Đi-xa-háp
+  aadaf09: Ê-bên-Ê-xe
+  a85eb38: Ết-rê-i
+  a009e7d: Ên-Ha-đa
+  ad14500: Ép-ra-im
+  a47f86c: Ê-tam
+  aec23b1: Ga-ba-tha
+  a4eb961: Cửa Lính Canh
+  a12012d: Ghê-đê-ra
+  a47678a: Ghê-đô
+  a97126d: Gò Bao Quy Đầu
+  a5627a3: Gô-a
+  a79d6a5: Ha-li
+  a9d4f8e: Ham-môn
+  a6309c7: Ha-pha-ra-im
+  a4d6a38: Hát-sát-son-Tha-ma
+  acce8c8: Hát-so-Ha-đa-tha
+  ad2d29f: Hết-môn
+  a2517a0: Y-đu-mê
+  a21b934: Giệt-bê-ên
+  a1eb300: Giạt-mút
+  a56cad5: Giốc-đê-am
+  a4959d5: Cạt-than
+  a5187a4: Kíp-sa-im
+  afe6972: Coa
+  a57835d: Man-tơ
+  a5f0bc3: Mít-đa-Ên
+  aad0fa0: Mích-ba
+  aeea26d: Núi Hê-re
+  a36c283: Núi Sê-i-rơ
+  ae7bd8b: Na-a-ma
+  a314731: Nim-ra
+  a51e3b0: Ao Cũ
+  a8f60f3: Bát-mô
+  a70e895: Cửa Gốm
+  a75be6f: Ra-ma
+  ada2a0b: Ra-mốt
+  a1b5486: Rê-kem
+  a655b28: Rim-môn
+  acf6ec0: Sa-mốt
+  ab6f1f0: Sa-a-lim
+  a55136c: Sê-ma
+  ae71673: Si-lô-ê
+  a2d4170: Nam Phương
+  a1e3697: Sy-ra-cu-sơ
+  a8530e9: Rừng Sồi Tha-bô
+  a012194: Đức Giê-hô-va Ở Đó
+  abf2443: Típ-sắc
+  a8c579d: Trũng Ga-ba-ôn
+  aaa2177: Trũng Xê-rết
+  a78b87e: Y-rôn
+  a811a10: Xê-ma-ra-im
+  adf05b8: Xíp-rôn
+  a3d1321: A-si-ri
+  ae981db: Núi Sê-i-rơ
+  aa8edd2: Ga-xa
+  a3fc47a: Éc-rôn
+  ae067b5: Ráp-ba
+  a6d57ed: Ra-ma
+  aed6538: Ghê-xe
+  a90f6e1: Ra-ma
+  a6d9af3: Cha-ran
+  adea06c: Mích-ma
+  ad8027f: Núi Hô-rơ
+  a3f5814: Ghê-ra
+  ac86af5: Su-nem
+  a3d2f0a: Sông Kê-ba
+  a8ec269: Mem-phi
+  af725b1: Si-nê-a
+  a9ed5a4: Ba-hu-rim
+  aca7bd9: Gia-bốc
+  a6f05f6: Tha-a-nác
+  af0ac29: Ê-lát
+  a397042: Lu-xơ
+  a8a9ff9: Phê-nu-ên
+  a831506: Thê-man
+  a5ccd34: Ê-lê-a-lê
+  ad54201: Ki-ri-a-ta-im
+  a0f8af9: Mích-ba
+  aab30ec: Pha-trô
+  a31492f: Trũng A-cô
+  a7b2e63: A-phéc
+  ae04aa8: Cửa Bên-gia-min
+  a0cd098: Bết-se
+  a2410c1: Ê-lim
+  abb5c1e: Gô-lan
+  a9dd823: Hô-rô-na-im
+  ab92800: Ki-rơ
+  a45acc3: Rim-môn
+  aa3d425: Cửa Chiên
+  a6cf75c: U-rơ
+  a8ce5c4: Ạc-sáp
+  a3d7871: Ách-ma-vết
+  a57df09: Suối Bê-sô
+  a6a5e97: Đáp-rát
+  a573b95: Ê-xem
+  af19252: Cha-bo
+  af8b51e: Cửa Ngựa
+  ad74690: Kê-đe
+  a93f8b6: Mi-sê-anh
+  ae89331: Sa-an-bim
+  a17c178: Thim-na
+  ab183f8: Trũng Ê-la
+  afa84ca: Xa-rê-than
+  afbf1b5: A-vát
+  aae8a95: A-vít
+  a1db553: Ba-mốt
+  abcc0cf: Bê-tên
+  ac4b767: Bết-Pha-lết
+  a859268: Bô-kim
+  a33fbde: Cáp-ba-đốc
+  a070c7b: Đáp-ca
+  a59fdf2: Ê-na-im
+  ae05348: Ê-tam
+  ac51cec: Gát-Hê-phe
+  a42418f: Ghết-sê-ma-nê
+  ab270f6: Hát-sa-Su-sa
+  ae4d198: Y-mê
+  ab86a69: Giu-đê
+  a057d59: Đường Cái Vua
+  a359997: Lút
+  a57e0a0: Ma-rê-ca
+  a15973c: Mít-đôn
+  aefaa2d: Núi Nê-bô
+  ac1fef1: Nép-thô-ách
+  ae67841: Phê-rết-U-xa
+  ad27541: Ra-ma
+  a2e73ba: Rít-ma
+  a2e65fb: Si-miệc-nơ
+  a6ef6a9: Tê-lem
+  a38ebfd: Sông Hi-đê-ke
+  adfab55: U-xa
+  aa24fbf: Trũng Su-cốt
+  a597dd0: Xê-la
+  adc31c7: A-đam
+  a2e7975: A-gia-lôn
+  a8e4a15: A-ma
+  ac22b90: A-nim
+  adbc03e: A-ráp
+  a30e7ea: A-ru-bốt
+  aaf998e: A-ta-rốt
+  a4b500d: A-va
+  ae5ede9: Ba-by-lôn
+  a280f83: Bê-ê-rốt Bê-nê-Gia-can
+  a942d07: Bê-rô-tôi
+  af623fd: Bết-Bi-ri
+  aeb5f24: Bê-tên
+  aea5552: Bết-Ghinh-ganh
+  ac814fb: Bết-Phát-sết
+  a079478: Bê-tô-nim
+  a8adc43: Bốt-ra
+  ae83efa: Can-nê
+  ac3d92d: Kê-su-lốt
+  adca4b1: Thành Hủy Diệt
+  a44cac9: Cô-xê-ba
+  ae86cd7: Đa-ma-ti
+  aecc492: Đi-lan
+  a75d2ab: Đu-ma
+  a728e07: Ếp-rôn
+  a26cd81: Ên-thê-côn
+  a156070: Ên-Hát-so
+  a82f7b4: Ê-the
+  ac66d7a: Ghi-a
+  a19ec8c: Ga-la-át
+  a3cefc6: Gô-im
+  a3e8d63: Ha-đơ-rắc
+  a493f37: Hiên Cột
+  a7d3e84: Ha-mốt-Đô-rơ
+  ae3cace: Ha-rốt
+  aae18d7: Hát-se Ha-ti-côn
+  a901903: Hục-cốc
+  ac405c0: I-ly-ri
+  abf8060: Dít-la
+  a907232: Gia-gua
+  a8ccbf2: Đồng vắng Giê-ru-ên
+  aaa8b2e: Giốc-mê-am
+  ac3233c: Ca-na
+  a4fa255: Kê-đe
+  a1a57d0: Ki-rơ Mô-áp
+  a7e39d2: La-ít
+  a6b4fb2: Mê-sa
+  a4335ba: Mi-gơ-rôn
+  a67990c: Mích-ba
+  ac8955e: Núi Ba-anh Hẹt-môn
+  ac54760: Núi Li-ban
+  a5a92d1: Núi Xê-ma-ra-im
+  a9f5289: Na-a-ran
+  aa23a3e: Nô-bách
+  a2ec6b7: Pha-ra
+  a8d054a: Bạt-ba
+  aa3e5ae: Ra-côn
+  ad42cdc: Ra-ma
+  a53c3ce: Rê-ca
+  a63bb26: Rê-ghi-um
+  aeedde4: San-sa-na
+  a311f80: Sê-nê
+  a887d36: Sê-a-ru-chen
+  a475518: Si-ho
+  a03f6cf: Si-ôn
+  a63b8c7: Si-ra
+  af23dbb: Phố Thẳng
+  afef438: Ba Quán
+  a7ecf6c: Tô-phên
+  a2e6de9: Trũng A-gia-lôn
+  ac9a77c: Trũng Giê-ri-cô
+  a70e38b: Nước Giê-ri-cô
+  a74c453: Xai-rơ
+  a6163e0: Xê-phát
+  a8248e0: Xi-đim
+  a4d0250: Đất Xu-phơ
+  aa884e2: A-gia
+  a620b14: A-rô-e
+  a15bdfd: Ra-ma
+  a32a4f8: Canh-đê
+  a3e66cd: A-ram
+  ac6b210: Na-a-ma
+  a63c70b: A-hi
+  a4e39f6: Ga-li-lê
+  a2d3ca1: Ghê-ba
+  ad0520f: Phút
+  a81ab85: Sê-ba
+  acd9137: Hê-li-ô-bô-li
+  a7e3823: Sê-bô-im
+  a159fa4: Sy-ri
+  acc6d8e: Ma-đi-an
+  ab9696f: Phe-rơ-sơ
+  a3d18b2: Biển Đỏ
+  ad64d75: Biển Đỏ
+  a3ba698: Biển Đỏ
+  a4aa78a: Xô-ba
+  a5eb047: Cửa vào Ha-mát
+  af4c2cd: Khe Ạc-nôn
+  a7a59b4: Khe Ê-díp-tô
+  ad81b79: Tô-phết
+  acf57c5: Núi Ghinh-bô-a
+  a9ad5ae: Nê-tô-pha
+  afd9259: Phích-ga
+  a966bdf: Nhà Rừng Li-ban
+  ad41f6e: Giê-si-môn
+  a329990: Cáp-tô
+  ab55371: Kiệt-Ha-rê-sết
+  ab89be9: A-ra-rát
+  aeeaca0: Lê-chi
+  a39267b: Ạc-ráp-bim
+  aab9a5e: Hê-na
+  a9ac5f9: Y-va
+  a5e36e6: Hô-ha-ghi-gát
+  a062b95: Y-giôn
+  a0574da: Y-giê A-ba-rim
+  a88331e: Mô-sê-rốt
+  a8a6a5b: Sy-e-nê
+  a7560c2: Áp-rô-na
+  acf8790: A-đu-mim
+  a0fe2be: Bê-ne-Gia-can
+  af48fdd: Bê-xéc
+  aa31dd3: Xen-cơ-rê
+  aa7bee8: Khe Kê-rít
+  a538831: Cu-tha
+  a6f4a6d: Ê-la-sa
+  aea4530: Góp
+  a73af5f: Ha-ra-đa
+  aaa8a88: Hách-mô-na
+  a373106: Khe Ca-na
+  aeb46a8: Kít-tim
+  af133c0: Cô-ê
+  a3e94bd: Líp-na
+  a3668b6: Ly-cao-ni
+  ac1fbba: Mác-hê-lốt
+  a222545: Min-nít
+  a5bf0bd: Mít-rê-phốt-Ma-im
+  a2a77d2: Nê-a
+  ace3edc: Nim-rim
+  a314765: Ba-phô
+  a880de2: Ba-u
+  ac79b33: Rim-môn Phê-rết
+  a98b02e: Sê-la
+  abe40d1: Ta-hát
+  a0c97c0: Tên-Ha-sa
+  a944b90: Tha-rê
+  af55829: U-pha
+  a0c4f5e: Xa-na-nim
+  a1c6a50: Xa-mô-na
+  a51d1fa: A-bên-Si-tim
+  a2c780b: A-đa-mi Nê-kếp
+  a36348c: Ách-láp
+  af9a894: A-lôn-Ba-cút
+  a70ac98: A-bên-Mích-ra-im
+  abf0690: Ghê Ha-ra-sim
+  af7eb92: Éc-lát Sê-li-si-gia
+  ab428de: A-ma-na
+  a79606b: A-na-nia
+  aec9225: Ách-kê-na
+  a2c34ce: A-tha-rim
+  ad041dd: Át-san
+  a66f19c: Ba-a-lê Giu-đa
+  ad3d9fc: Ba-anh Sa-li-sa
+  a800159: Bê-a-lốt
+  a656cb6: Bê-re
+  ac401ea: Bê-e-Ê-lim
+  a6e060d: Bê-tha-ni
+  a0d1977: Bết-Ba-ra
+  a83d789: Bết-Si-ta
+  a55cec0: Bê-tu-ên
+  ab624f3: Bô-ra-san
+  a087a14: Bu-xơ
+  addb84c: Ca-si-phia
+  a70f9d3: Cun
+  ae8d09d: Đa-ma-nu-tha
+  a971a54: Đim-na
+  a3bcd66: Đu-ra
+  a212ef7: Ách-ba-tha-na
+  a30b045: Ên-Bê-tên
+  a738bf1: Ên-Ba-ran
+  ac25afc: Ê-pha
+  ad4607c: Gò Ga-rép
+  a58df35: Ghê-bim
+  a71d79b: Ghi-hôn
+  a763368: Gu-rơ-Ba-anh
+  ac5e5c4: Ha-vi-la
+  a1d9047: Ha-vi-la
+  a8a8e54: Hên-bôn
+  a11bbbe: Hi-ê-ra-bô-li
+  aedf531: Gia-bê
+  ab15bb3: Gia-phia
+  adbbb54: Giốt-ba
+  ad763b1: La-ban
+  adaef13: Lê-sa
+  a19fd03: Ly-si
+  a3b7885: Mác-bê-na
+  ac2bb0c: Ma-kát
+  ad04336: Ma-ra-la
+  a1ba491: Ma-rốt
+  a8c3105: Mê-a-ra
+  aa87ef6: Mê-cô-na
+  a7d1972: Mê-Giạt-côn
+  a8dafd6: Na-ha-li-ên
+  acd682e: Nê-ba-lát
+  a9bf50d: Nô-bách
+  a938779: Phạt-va-im
+  a2cd991: Phi-bê-sết
+  a19b076: Phi-sôn
+  a4488e9: Bu-xô-lơ
+  a57bb2e: Ra-ê-ma
+  a446973: Ra-canh
+  ac95bd8: Ríp-la
+  a897bdb: Hòn Đá Ma-lê-cốt
+  a702ab6: Biển Ê-díp-tô
+  ad259d1: Biển Gia-ê-xe
+  a6343cc: Sê-la
+  a5b01f4: Sa-ha-xi-ma
+  a7b3f5d: Sa-phia
+  ab56451: Si-la
+  af725bb: Su-pha
+  a5d37f9: Tha-a-nát-Si-lô
+  a6f61d3: Trô-gi-li
+  a217cc5: U-xa
+  a7c5927: Trũng Xê-bô-im
+  a6bf8d4: Trũng Xê-pha-ta
+  a07ae2d: Xê-rê-đa
+  a0bccbd: Xê-rê-ra
+  a5bbf9c: Xim-ri
+  a4446f1: Xít
+  a0f88fb: Khe Cây Liễu
+  a3bba31: Ghi-bê-át-Phi-nê-a
+  a26921e: Ê-nam
+  a5947d7: Ta-ma
+  a32d25a: Kê-hê-la-tha
+  a662bda: Mê-rô-nốt
+  a0bcd48: Gia-nô-ác
+  a55c970: Đường Biển Đỏ
+  aaa3eca: Suối Nước
+  a380434: Suối Trên
+  a8c2deb: Hiên Xét Đoán
+  a31913c: Thành Na-hách
+  a4b9865: Phê-cốt
+  a498faa: A-bi-len
+  a5eafe1: Ê-tơ-ru-ri
+  a2d7b73: Ly-đi
+  a8d18cf: Si-thi
+  a249453: Ba-ta-nê
+  a737810: Pun
+  a4b8b4d: Hát-ti
+  a01769f: Trũng Si-tim
+  ad14067: Ma-ga-đan
+  a012705: Sông Ni-lơ
+  a1cb244: Nê-ghép
+  a2bb5ef: A-ra-ba
+  af084cf: Sê-phê-la
+  a88310a: Bên kia sông
+  a78e845: Núi Xa-phôn
+  afd8b40: Ha-rốt
+  afed46a: Ga-đa-ra
+  ae1054e: Min-ni
+  adf5c7b: Cạt-na-im
+  adc9b5a: Ca-đe
+  ad36371: Cạn Xi-rơ-tơ
+  abaa030: Cửa Bát-Ra-bim
+  a8fe6a4: Gia-a
+  a2b389a: Giô-kê-am
+  a221d82: Ên-cốt
+  a184f3a: A-tra-mít
+  af75e9e: Ma-ga-đan
+  adeff6d: Harhar
+  adb1dcf: Kumidi
+  ad1c917: Hilakku
+  acfe0a6: Tegarama
+  acea44c: Mê-rôm
+  abb1e21: Uqnu
+  ab7c40f: Adulis
+  ab66f81: Nuhashe
+  ab56b36: Gat-padalla
+  aac5280: Thích-bê
+  aabf84a: Ghê-ghê-sa
+  aab527c: Tjaru
+  aa56bd1: Carthage
+  aa4fca2: Thapsacus
+  a8778a3: Laash
+  a86d7c7: Tartessos
+  a7aafda: Sparta
+  a72ca28: Cung điện Hê-rốt
+  a72819f: Umman-manda
+  a6e831d: Adasa
+  a6c8205: Bê-thẹt
+  a6bd641: Arsinoe
+  a654e6d: Gutium
+  a63c21e: Pitru
+  a542fc2: Heracleopolis
+  a527d04: Chalcis
+  a4c6f72: Eridu
+  a49cd82: Salona
+  a818a40: Abila
+  a276d01: Abila của Ly-sa-ni-a
+  a95b373: A-đôn
+  a00de1e: A-lôn
+  a8527ba: Ama
+  adc3294: Amatu
+  ac5cab3: Amaw
+  a576db3: Arbela
+  a03afe1: Ạt-rốt Bết-Giô-áp
+  aba3717: A-gia
+  ac2f5ea: Ba-la
+  a2b2564: Bê-la-môn
+  ac0254c: Nhà Ách-bê-a
+  a84c5a4: Bết-Ê-đen
+  aaa2f54: Bết-Ha-gan
+  a5983ec: Khe A-ra-ba
+  a08d4af: Charmande
+  ab3ad14: Kê-rúp
+  a567e0e: Cu-san
+  a8e6824: Ê-lôn Bết-Ha-nan
+  a9a6f72: Ép-rôn
+  a764256: Ga-mát
+  a0ac467: Gát
+  a0a5b78: Ghê-đê-ra
+  a2fc530: Ghê-đô
+  a607415: Kê-phi-rim
+  a1d5a28: Ha-la-ha
+  a553fe6: Hạt-môn
+  ab5f357: Hê-lết
+  acd64ca: Heracleopolis Parva
+  a23db8d: Hô-rết
+  a159029: Hô-rô-na-im
+  a54fdd6: Hu-sa
+  adb6f6b: Janua
+  af66926: Kê-ri-giốt-Hết-rôn
+  a8bbf2b: Sa-rôn
+  a9de8b7: Lép-Ca-mai
+  a5e9c87: Ma-rê Ghê-ba
+  abf5daf: Madiama
+  a0d1a62: Magdalsenna
+  ad876c2: Magdolum
+  a8eaad5: Mê-ra-tha-im
+  abcd5f2: Ma-tết
+  ac6cefa: Nahuru
+  aaa0f54: Nê-ta-im
+  aa4589b: Cửa Bắc
+  ab1d701: Bạt-ba
+  a9664ba: Ragmat
+  a8c207b: Rô-đơ
+  a669096: Sông Ơ-phơ-rát
+  af9e903: Xô-ha
+  acf15b3: Saparda
+  a9042c4: Saparre
+  a4052df: Sê-cu
+  a1303a4: Sa-anh-bôn
+  a092025: Cửa Nam
+  a88bcb2: Su-pha
+  abef753: Sutu
+  a5948b2: Tabbur-erez
+  ab066d7: Ta-ma
+  a2ebfdf: Thelme
+  ade3503: Upu
+  aa01373: U-rơ
+  a78592e: Ura
+  a61d405: Cửa Tây
+  adea7b0: Đá Dê Rừng
+  a4e7fa8: Xa-a-nan
+  ae7f7b5: Xô-phim
+  aac6cda: Góc
+  a244929: Vương quốc phương Bắc
+  a1c0469: Vương quốc phương Nam
+  a422f1c: Phương Nam
+  a3bb384: Sông
+polities:
+  Abbasid Caliphate: Khalip quốc Abbas
+  Abbasid Caliphate/Buyid Dynasty: Khalip quốc Abbas dưới sự cai trị của nhà Buyid
+  Achaean League: Liên minh Achaea
+  Achaemenid Empire: Đế quốc Achaemenes
+  Aetolian League: Liên minh Aetolia
+  Aghlabid Dynasty: Nhà Aghlab
+  Akkadian Empire: Đế quốc Akkad
+  Alans: Người Alan
+  Almohad Caliphate: Khalip quốc Almohad
+  Almoravid Dynasty: Nhà Almoravid
+  Alodia: Alodia
+  Angevin Empire: Đế quốc Angevin
+  Angevins: Nhà Anjou
+  Ankhwennefer: Ankhwennefer
+  Antigonid Dynasty: Nhà Antigonos
+  Antigonid Macedonia: Macedonia dưới nhà Antigonos
+  Aquitaine: Aquitaine
+  Armenian Kingdom of Cilicia: Vương quốc Armenia ở Cilicia
+  Assyria: Assyria
+  Assyrian Egypt: Ai Cập thuộc Assyria
+  Athenian Coalition: Liên minh Athens
+  Atropatene: Atropatene
+  Avar Khaganate: Hãn quốc Avar
+  Ayyubid Sultanate: Vương triều Ayyub
+  Babylonia: Babylonia
+  Bagratid Armenia: Armenia của nhà Bagratuni
+  Bahrani Dynasty: Nhà Bahrani
+  Balasagan: Balasagan
+  Banate of Bosnia: Banat Bosna
+  Barghawata Conference: Liên minh Barghawata
+  Bavarians: Người Bavaria
+  Breton Kingdoms: Các vương quốc Breton
+  Brythons: Người Briton
+  Burgundian Kingdom: Vương quốc Burgundia
+  Burgundians: Người Burgundia
+  Buyid Dynasty: Nhà Buyid
+  Byzantine Empire: Đế quốc Byzantine
+  Caliphate of Córdoba: Khalip quốc Córdoba
+  Cao Wei: Tào Ngụy
+  Capetian House of Anjou: Nhà Capet của Anjou
+  Carantania: Carantania
+  Carolingian Empire: Đế quốc Carolingia
+  Carthage: Carthage
+  Caucasian Albania: Albania Kavkaz
+  Caucasian Iberia: Iberia Kavkaz
+  Chagatai Khanate: Hãn quốc Sát Hợp Đài
+  Chalukya Dynasty: Nhà Chalukya
+  Chauhan Dynasty: Nhà Chauhan
+  Chaulukya Dynasty: Nhà Chaulukya
+  Chola Empire: Đế quốc Chola
+  Cimmerian Bosporus: Vương quốc Bosporos
+  Colchis: Colchis
+  Comtat Venaissin: Comtat Venaissin
+  Cornwall: Cornwall
+  County of Ampuria: Bá quốc Ampurias
+  County of Anjou: Bá quốc Anjou
+  County of Aragon: Bá quốc Aragón
+  County of Armagnac: Bá quốc Armagnac
+  County of Auvergne: Bá quốc Auvergne
+  County of Barcelona: Bá quốc Barcelona
+  County of Berga: Bá quốc Berga
+  County of Besalú: Bá quốc Besalú
+  County of Blôis: Bá quốc Blois
+  County of Champagne: Bá quốc Champagne
+  County of Edessa: Bá quốc Edessa
+  County of Flanders: Bá quốc Flandre
+  County of Foix: Bá quốc Foix
+  County of Maine: Bá quốc Maine
+  County of Nevers: Bá quốc Nevers
+  County of Osona: Bá quốc Osona
+  County of Pallars: Bá quốc Pallars
+  County of Pallars Jussà: Bá quốc Pallars Jussà
+  County of Pallars Sobirà: Bá quốc Pallars Sobirà
+  County of Poitou: Bá quốc Poitou
+  County of Portugal: Bá quốc Bồ Đào Nha
+  County of Périgord: Bá quốc Périgord
+  County of Ribagorza: Bá quốc Ribagorza
+  County of Rosellón: Bá quốc Roussillon
+  County of Rouergue: Bá quốc Rouergue
+  County of Savoy: Bá quốc Savoia
+  County of Toulouse: Bá quốc Toulouse
+  County of Touraine: Bá quốc Touraine
+  County of Tripoli: Bá quốc Tripoli
+  County of Urgell: Bá quốc Urgell
+  County of Vermandois: Bá quốc Vermandois
+  County of Vexin: Bá quốc Vexin
+  Crown of Aragon: Vương quyền Aragón
+  Crown of Castile: Vương quyền Castilla
+  Cuman-Kipchak Confederation: Liên minh Cuman–Kipchak
+  Cyprus Condominium: Đồng quản trị Síp
+  Cyrenaica: Cyrenaica
+  Dabuyid Dynasty: Nhà Dabuyid
+  Danishmendids: Nhà Danishmend
+  Dauphiné: Dauphiné
+  Denmark-England: Đan Mạch–Anh
+  Despotate of Epirus: Chuyên chế quốc Epirus
+  Domain of Rhodes: Lãnh địa Rhodes
+  Duchy of Aquitaine: Công quốc Aquitaine
+  Duchy of Athens: Công quốc Athens
+  Duchy of Bavaria: Công quốc Bavaria
+  Duchy of Benevento: Công quốc Benevento
+  Duchy of Bohemia: Công quốc Bohemia
+  Duchy of Brittany: Công quốc Bretagne
+  Duchy of Burgundy: Công quốc Bourgogne
+  Duchy of Croatia: Công quốc Croatia
+  Duchy of Gascony: Công quốc Gascogne
+  Duchy of Greater Poland: Công quốc Đại Ba Lan
+  Duchy of Masovia: Công quốc Masovia
+  Duchy of Naples: Công quốc Napoli
+  Duchy of Normandy: Công quốc Normandie
+  Duchy of Opole: Công quốc Opole
+  Duchy of Racibórz: Công quốc Racibórz
+  Duchy of Sandomierz: Công quốc Sandomierz
+  Duchy of Silesia: Công quốc Silesia
+  Duchy of Spoleto: Công quốc Spoleto
+  Duchy of Styria: Công quốc Steiermark
+  Duchy of the Archipelago: Công quốc Quần đảo
+  Duchy of Thuringia: Công quốc Thüringen
+  Duchy of Tuscia: Công quốc Tuscia
+  Duchy of Wrocław: Công quốc Wrocław
+  Dumnonia: Dumnonia
+  Early Dynastic Period of Egypt: Thời kỳ Sơ triều đại của Ai Cập
+  East Franks: Đông Frank
+  Eastern Kara-Khanids: Kara-Khanid phía đông
+  Eastern Kushans: Quý Sương phía đông
+  Eastern Roman Empire: Đế quốc Đông La Mã
+  Elam: Elam
+  Emirate of Crete: Tiểu vương quốc Crete
+  Emirate of Córdoba: Tiểu vương quốc Córdoba
+  Emirate of Granada: Tiểu vương quốc Granada
+  Emirate of Nekor: Tiểu vương quốc Nekor
+  Emirate of Sicily: Tiểu vương quốc Sicilia
+  Empire of Kanem: Đế quốc Kanem
+  Empire of Thessalonica: Đế quốc Thessalonica
+  Empire of Trebizond: Đế quốc Trapezous
+  Ethiopian Empire: Đế quốc Ethiopia
+  Etruscans: Người Etruscan
+  Fatimid Caliphate: Khalip quốc Fatima
+  Fifteenth Dynasty of Egypt: Vương triều thứ Mười Lăm của Ai Cập
+  Fihrids: Nhà Fihr
+  First Bulgarian Empire: Đế quốc Bulgaria thứ nhất
+  First Sealand Dynasty: Vương triều Sealand thứ nhất
+  Frisia Kingdom: Vương quốc Frisia
+  Galatia: Galatia
+  Galicia-Volhynia: Galicia–Volhynia
+  Gallic Empire: Đế quốc Gallia
+  Georgia: Gruzia
+  Ghana Empire: Đế quốc Ghana
+  Ghassanids: Nhà Ghassan
+  Ghaznavid Empire: Đế quốc Ghaznavid
+  Ghurid Dynasty: Nhà Ghur
+  Giudicato of Arborea: Giudicato Arborea
+  Giudicato of Cagliari: Giudicato Cagliari
+  Giudicato of Gallura: Giudicato Gallura
+  Giudicato of Logudoro: Giudicato Logudoro
+  Golden Horde: Kim Trướng hãn quốc
+  Gothia: Gothia
+  Goths: Người Goth
+  Grand Duchy of Kraków: Đại công quốc Kraków
+  Grand Principality of Serbia: Đại công quốc Serbia
+  Great Moravia: Đại Moravia
+  Great Principality of Duklja: Đại công quốc Duklja
+  Great Seljuk Empire: Đế quốc Seljuk
+  Great Yuan: Đại Nguyên
+  Greco-Bactrian Kingdom: Vương quốc Hy Lạp–Bactria
+  Greek City-States: Các thành bang Hy Lạp
+  Greek Colonies: Các thuộc địa Hy Lạp
+  Greek Dark Ages: Thời kỳ Hy Lạp tăm tối
+  Gupta Empire: Đế quốc Gupta
+  Gurjara-Pratihara Dynasty: Nhà Gurjara-Pratihara
+  Gutian Dynasty: Nhà Gutium
+  Göktürk Khaganate: Hãn quốc Đột Quyết
+  Hadhramaut: Hadhramaut
+  Hafsid Dynasty: Nhà Hafs
+  Halych-Volhynia occupation: Sự chiếm đóng của Halych–Volhynia
+  Hamdanid Emirates: Các tiểu vương quốc Hamdan
+  Hammadid Dynasty: Nhà Hammad
+  Han Dynasty: Nhà Hán
+  Harsha's Empire: Đế quốc Harsha
+  Himyarite Kingdom: Vương quốc Himyar
+  Hittites: Người Hittite
+  Holy Roman Empire: Đế quốc La Mã Thần thánh
+  Holy Roman Empire Minor States: Các tiểu quốc của Đế quốc La Mã Thần thánh
+  House of Anjou-Sicily: Nhà Anjou–Sicilia
+  House of Habsburg: Nhà Habsburg
+  House of Hohenstaufen: Nhà Hohenstaufen
+  House of Luxembourg: Nhà Luxemburg
+  House of Wittelsbach: Nhà Wittelsbach
+  Hoysala Kingdom: Vương quốc Hoysala
+  Hunnic Empire: Đế quốc Hung
+  Huns: Người Hung
+  Hyksos: Người Hyksos
+  Idrisids: Nhà Idris
+  Ifat Sultanate: Vương quốc Hồi giáo Ifat
+  Ilkhanate: Y Nhi hãn quốc
+  Illyrian Kingdom: Vương quốc Illyria
+  Indo-Greeks: Vương quốc Ấn–Hy Lạp
+  Indo-Parthians: Vương quốc Ấn–Parthia
+  Indo-Sasanian Empire: Đế quốc Ấn–Sasan
+  Indo-Scythians: Người Ấn–Scythia
+  Indus Valley Civilization: Văn minh lưu vực sông Ấn
+  Italian City-States: Các thành bang Ý
+  Janapada of Gandhāra: Janapada Gandhara
+  Janapada of Kamboja: Janapada Kamboja
+  Judea: Judea
+  Kadamba Empire: Đế quốc Kadamba
+  Kannauj-Varman Dynasty: Nhà Varman ở Kannauj
+  Kara-Khanids: Kara-Khanid
+  Kara-Khitans: Tây Liêu
+  Karkota Dynasty: Nhà Karkota
+  Kashmir: Kashmir
+  Khalji Dynasty: Nhà Khalji
+  Kharijites: Người Kharijite
+  Khazaria: Khazar
+  Khwarezmid Dynasty: Nhà Khwarezm-Shah
+  Khwarezmid Empire: Đế quốc Khwarazm
+  Kidarites: Người Kidara
+  Kievan Rus': Rus Kiev
+  Kimek-Kipchak confederation: Liên minh Kimek–Kipchak
+  Kingdom of Adiabene: Vương quốc Adiabene
+  Kingdom of Africa: Vương quốc Africa
+  Kingdom of Alamannia: Vương quốc Alamannia
+  Kingdom of Aragon: Vương quốc Aragón
+  Kingdom of Arles: Vương quốc Arles
+  Kingdom of Armenia: Vương quốc Armenia
+  Kingdom of Asturias: Vương quốc Asturias
+  Kingdom of Axum: Vương quốc Aksum
+  Kingdom of Bithynia: Vương quốc Bithynia
+  Kingdom of Bohemia: Vương quốc Bohemia
+  Kingdom of Brittany: Vương quốc Bretagne
+  Kingdom of Cappadocia: Vương quốc Cappadocia
+  Kingdom of Castile: Vương quốc Castilla
+  Kingdom of Commagene: Vương quốc Commagene
+  Kingdom of Croatia: Vương quốc Croatia
+  Kingdom of Cyprus: Vương quốc Síp
+  Kingdom of Duklja: Vương quốc Duklja
+  Kingdom of England: Vương quốc Anh
+  Kingdom of France: Vương quốc Pháp
+  Kingdom of Galicia: Vương quốc Galicia
+  Kingdom of Georgia: Vương quốc Gruzia
+  Kingdom of Germany: Vương quốc Đức
+  Kingdom of Gordyene: Vương quốc Gordyene
+  Kingdom of Hungary: Vương quốc Hungary
+  Kingdom of Israel: Vương quốc Y-sơ-ra-ên
+  Kingdom of Italy: Vương quốc Ý
+  Kingdom of Jerusalem: Vương quốc Jerusalem
+  Kingdom of Judah: Vương quốc Giu-đa
+  Kingdom of Khotan: Vu Điền
+  Kingdom of Kush: Vương quốc Kush
+  Kingdom of Lazica: Vương quốc Lazica
+  Kingdom of León: Vương quốc León
+  Kingdom of Lower Burgundy: Vương quốc Hạ Burgundia
+  Kingdom of Lysimachus: Vương quốc Lysimachos
+  Kingdom of Majorca: Vương quốc Majorca
+  Kingdom of Naples: Vương quốc Napoli
+  Kingdom of Navarre: Vương quốc Navarra
+  Kingdom of Neustria: Vương quốc Neustria
+  Kingdom of Numidia: Vương quốc Numidia
+  Kingdom of Osroene: Vương quốc Osroene
+  Kingdom of Pamplona: Vương quốc Pamplona
+  Kingdom of Pergamon: Vương quốc Pergamon
+  Kingdom of Poland: Vương quốc Ba Lan
+  Kingdom of Pontus: Vương quốc Pontos
+  Kingdom of Portugal: Vương quốc Bồ Đào Nha
+  Kingdom of Serbia: Vương quốc Serbia
+  Kingdom of Sicily: Vương quốc Sicilia
+  Kingdom of Sobrarbe: Vương quốc Sobrarbe
+  Kingdom of Soissons: Vương quốc Soissons
+  Kingdom of Sophene: Vương quốc Sophene
+  Kingdom of Syrmia: Vương quốc Syrmia
+  Kingdom of the Franks: Vương quốc Frank
+  Kingdom of the Gepids: Vương quốc Gepid
+  Kingdom of the Iberians: Vương quốc Iberia
+  Kingdom of the Suebi: Vương quốc Suebi
+  Kingdom of Thessalonica: Vương quốc Thessalonica
+  Kingdom of Thuringia: Vương quốc Thüringen
+  Kingdom of Urartu: Urartu
+  Kingdom of Vaspurakan: Vương quốc Vaspurakan
+  Kushan Empire: Đế quốc Quý Sương
+  Lakhmid Kingdom: Vương quốc Lakhm
+  Laomedon: Laomedon
+  Latin Empire: Đế quốc Latinh
+  Lazica: Lazica
+  Lohara Dynasty: Nhà Lohara
+  Lombards: Người Lombard
+  Lower Burgundy: Hạ Burgundia
+  Lower Egypt: Hạ Ai Cập
+  Lydia: Lydia
+  Macedonian Empire: Đế quốc Macedonia
+  Magadha - Shaishunaga dynasty: Magadha dưới nhà Shishunaga
+  Magyars: Người Magyar
+  Mahameghavahana Dynasty: Nhà Mahameghavahana
+  Mahdids: Nhà Mahdi
+  Maitraka Dynasty: Nhà Maitraka
+  Makuria: Makuria
+  Mali Empire: Đế quốc Mali
+  Mamertines: Người Mamertini
+  Mamluk Dynasty: Nhà Mamluk
+  Mamluk Sultanate: Vương quốc Hồi giáo Mamluk
+  Marinid Sultanate: Vương quốc Hồi giáo Marin
+  Mauretania: Mauretania
+  Maurya Empire: Đế quốc Maurya
+  Median Kingdom: Vương quốc Media
+  Merovingian Empire: Đế quốc Merovingia
+  Middle Franks: Trung Frank
+  Middle Kingdom of Egypt: Trung Vương quốc Ai Cập
+  Minaeans: Người Minaea
+  Minoan civilization: Văn minh Minos
+  Mitanni: Mitanni
+  Molossians: Người Molossia
+  Mongol Empire: Đế quốc Mông Cổ
+  Mycenaean Greece: Hy Lạp thời Mycenae
+  Nabataeans: Người Nabataea
+  Nabhani Dynasty: Nhà Nabhani
+  Najahid Dynasty: Nhà Najah
+  Nanda Empire: Đế quốc Nanda
+  Negroponte: Negroponte
+  Neo-Assyrian Empire: Đế quốc Tân Assyria
+  Neo-Babylonian Empire: Đế quốc Tân Babylon
+  Neo-Hittite states: Các quốc gia Tân Hittite
+  New Kingdom of Egypt: Tân Vương quốc Ai Cập
+  Egypt of the Third Intermediate Period: Ai Cập thời Chuyển tiếp thứ ba
+  Nicaean Empire: Đế quốc Nicaea
+  Nitra: Nitra
+  Nobatia: Nobatia
+  Norman England: Anh thời Norman
+  Norman Italy: Ý thời Norman
+  North Sea Empire: Đế quốc Bắc Hải
+  Odrysian Kingdom: Vương quốc Odrysia
+  Oghuz Turks: Người Oghuz
+  Old Great Bulgaria: Đại Bulgaria cổ
+  Old Kingdom of Egypt: Cổ Vương quốc Ai Cập
+  Ostrogothic Kingdom: Vương quốc Ostrogoth
+  Ostrogoths: Người Ostrogoth
+  Pala Empire: Đế quốc Pala
+  Palmyrene Empire: Đế quốc Palmyra
+  Pandya Empire: Đế quốc Pandya
+  Papal States: Lãnh địa Giáo hoàng
+  Paphlagonia: Paphlagonia
+  Paramara Dynasty: Nhà Paramara
+  Parthian Empire: Đế quốc Parthia
+  Patriarchate of Aquileia: Tòa Thượng phụ Aquileia
+  Peloponnesian League: Liên minh Peloponnesos
+  Perdiccas: Perdiccas
+  Philistia: Phi-li-tin
+  Phoenicia: Phoenicia
+  Phoenician Colonies: Các thuộc địa Phoenicia
+  Phoenician Empire: Đế quốc Phoenicia
+  Phrygia: Phrygia
+  Polyperchon: Polyperchon
+  Principality of Achaea: Công quốc Akhaia
+  Principality of Antioch: Công quốc Antiochia
+  Principality of Capua: Thân vương quốc Capua
+  Principality of Galicia-Volhynia: Công quốc Galicia–Volhynia
+  Principality of Halych: Công quốc Halych
+  Principality of Hungary: Công quốc Hungary
+  Principality of Iberia: Công quốc Iberia
+  Principality of Kiev: Công quốc Kiev
+  Principality of Nitra: Công quốc Nitra
+  Principality of Orange: Công quốc Orange
+  Principality of Peremyshl: Công quốc Peremyshl
+  Principality of Pereyaslavl: Công quốc Pereyaslavl
+  Principality of Salerno: Thân vương quốc Salerno
+  Principality of Serbia: Công quốc Serbia
+  Principality of Terebovlia: Công quốc Terebovlia
+  Protectorate of the Western Regions: Tây Vực đô hộ phủ
+  Ptolemaic Kingdom: Vương quốc Ptolemaios
+  Qarlugs: Người Karluk
+  Qarmatians: Người Qarmat
+  Qataban: Qataban
+  Rashidun Caliphate: Khalip quốc Rashidun
+  Rashtrakuta Dynasty: Nhà Rashtrakuta
+  Rasulid Dynasty: Nhà Rasul
+  Republic of Amalfi: Cộng hòa Amalfi
+  Republic of Florence: Cộng hòa Florence
+  Republic of Genoa: Cộng hòa Genova
+  Republic of Pisa: Cộng hòa Pisa
+  Republic of Venice: Cộng hòa Venezia
+  Rhodes: Rhodes
+  Ripuarian Franks: Người Frank Ripuaria
+  Roman Empire: Đế quốc La Mã
+  Roman Kingdom: Vương quốc La Mã
+  Roman Republic: Cộng hòa La Mã
+  Rugiland: Rugiland
+  Rustamid dynasty: Nhà Rustam
+  Sabaeans: Người Saba
+  Sacred Band of Thebes: Đội quân Thánh của Thebes
+  Saffarid Dynasty: Nhà Saffar
+  Sajid Dynasty: Nhà Saj
+  Salian Franks: Người Frank Salia
+  Samanid Empire: Đế quốc Samanid
+  Samo's Empire: Đế quốc của Samo
+  Sasanian Empire: Đế quốc Sasan
+  Satavahana Dynasty: Nhà Satavahana
+  Scythia: Scythia
+  Second Athenian League: Liên minh Athens thứ hai
+  Second Bulgarian Empire: Đế quốc Bulgaria thứ hai
+  Seleucid Empire: Đế quốc Seleukos
+  Seljuk Dynasty: Nhà Seljuk
+  Seventeenth Dynasty of Egypt: Vương triều thứ Mười Bảy của Ai Cập
+  Shirvan: Shirvan
+  Sind-Habbari Dynasty: Nhà Habbari ở Sind
+  Sixteenth Dynasty of Egypt: Vương triều thứ Mười Sáu của Ai Cập
+  Sosso Empire: Đế quốc Sosso
+  Sulayhid Dynasty: Nhà Sulayhid
+  Sultanate of Rum: Vương quốc Hồi giáo Rum
+  Sumerian City-States: Các thành bang Sumer
+  Swiss Confederation: Liên bang Thụy Sĩ
+  Tabal Kingdom: Vương quốc Tabal
+  Taifa of Albarracín: Taifa Albarracín
+  Taifa of Algeciras: Taifa Algeciras
+  Taifa of Almería: Taifa Almería
+  Taifa of Alpuente: Taifa Alpuente
+  Taifa of Arcos: Taifa Arcos
+  Taifa of Badajoz: Taifa Badajoz
+  Taifa of Carmona: Taifa Carmona
+  Taifa of Ceuta: Taifa Ceuta
+  Taifa of Córdoba: Taifa Córdoba
+  Taifa of Dénia: Taifa Dénia
+  Taifa of Granada: Taifa Granada
+  Taifa of Morón: Taifa Morón
+  Taifa of Murcia: Taifa Murcia
+  Taifa of Niebla: Taifa Niebla
+  Taifa of Ronda: Taifa Ronda
+  Taifa of Saltés and Huelva: Taifa Saltés và Huelva
+  Taifa of Santa Maria do Algarve: Taifa Santa Maria do Algarve
+  Taifa of Seville: Taifa Sevilla
+  Taifa of Silves: Taifa Silves
+  Taifa of Tejada: Taifa Tejada
+  Taifa of Toledo: Taifa Toledo
+  Taifa of Tortosa: Taifa Tortosa
+  Taifa of Valencia: Taifa Valencia
+  Taifa of Zaragoza: Taifa Zaragoza
+  Takrur: Takrur
+  Tang Dynasty: Nhà Đường
+  Thebans: Người Thebes
+  Thessaly: Thessaly
+  Thirtieth Dynasty of Egypt: Vương triều thứ Ba Mươi của Ai Cập
+  Thracian Kingdom: Vương quốc Thrace
+  Thuringian states: Các quốc gia Thüringen
+  Tibetan Empire: Đế quốc Thổ Phồn
+  Tulunids: Nhà Tulun
+  Turk Shahis: Nhà Turk Shahi
+  Turks: Người Turk
+  Twenty-second Dynasty of Egypt: Vương triều thứ Hai Mươi Hai của Ai Cập
+  Twenty-sixth Dynasty of Egypt: Vương triều thứ Hai Mươi Sáu của Ai Cập
+  Twenty-third Dynasty of Egypt: Vương triều thứ Hai Mươi Ba của Ai Cập
+  Türgesh: Đột Kỵ Thi
+  Umayyad Caliphate: Khalip quốc Omeyyad
+  Upper Burgundy: Thượng Burgundia
+  Upper Burgundy and Italy: Thượng Burgundia và Ý
+  Upper Egypt: Thượng Ai Cập
+  Utpala Dynasty: Nhà Utpala
+  Uyghur Khaganate: Hãn quốc Hồi Cốt
+  Uyunid Emirate: Tiểu vương quốc Uyun
+  Vakataka Kingdom: Vương quốc Vakataka
+  Vandal Kingdom: Vương quốc Vandal
+  Vandals: Người Vandal
+  Viking settlements: Các khu định cư của người Viking
+  Visigothic Kingdom: Vương quốc Visigoth
+  Visigoths: Người Visigoth
+  West Franks: Tây Frank
+  Western Chalukya Empire: Đế quốc Tây Chalukya
+  Western Göktürks: Tây Đột Quyết
+  Western Jin: Nhà Tây Tấn
+  Western Karakhanid Khanate: Hãn quốc Kara-Khanid phía tây
+  Western Kushans: Quý Sương phía tây
+  Western Roman Empire: Đế quốc Tây La Mã
+  Western Satraps: Các phó vương phía tây
+  White Huns: Người Hung Trắng
+  Wusun: Ô Tôn
+  Xin Dynasty: Nhà Tân
+  Xiongnu: Hung Nô
+  Xionites: Người Xionite
+  Yadava Dynasty: Nhà Yadava
+  Yaudheya Republic: Cộng hòa Yaudheya
+  Yuezhi: Nguyệt Chi
+  Zagwe dynasty: Nhà Zagwe
+  Zaydi Alid dynasties: Các triều đại Zaydi Alid
+  Zayyanid dynasty: Nhà Zayyan
+  Zengid dynasty: Nhà Zengid
+  Zirid dynasty: Nhà Zirid
+  Ziyadid dynasty: Nhà Ziyad
+  Ziyarid dynasty: Nhà Ziyar
+  Zurayid dynasty: Nhà Zurayid
+  Third Dynasty of Ur: Vương triều thứ Ba của Ur
+  Principality of Armenia: Công quốc Armenia
+modern:
+  m66c5b8: Jerusalem
+  md561de: Babylon
+  me7edbd: Sông Jordan
+  me64af8: Samaria
+  m39393a: Canaan
+  me58522: Beitin
+  mf8c29c: Galilea
+  m11c602: Tyre
+  m95349d: Tell es-Sultan
+  m86f941: Tel Rumeida
+  m878978: Damascus
+  m88819c: Tel el-Ful
+  m9b8daa: Bethlehem
+  m28d167: Tell es-Safi
+  mebf05c: Thành Đa-vít
+  m12c75e: Tell Hesban
+  m91acfa: Sông Nin
+  m657590: Tell Balatah
+  mc07de7: Sông Euphrates
+  mf55105: El-Jib
+  m681aef: Jebel esh-Shera
+  ma342c0: Khirbet el-Mefjir
+  m902bcf: Et-Tell
+  mfe37a0: Tell en-Nasbeh
+  mb374b4: Jebel Musa
+  m12f296: Khirbet Seilun
+  mfccaed: Khu khảo cổ Sandikli ở Sidon
+  me7cb2d: Địa Trung Hải
+  m392188: Tel Beer Sheva
+  mec75f5: Vịnh Suez
+  mb3f688: Nazareth
+  m489f67: Tell esh-Sharia
+  m52bd87: Nineveh
+  m6da23a: Ain el-Qudeirat
+  mb1da27: Jaba
+  mda3bc1: Tel Yizre’el
+  mba2ff1: Tall er-Rumeith
+  m234519: Tell el-Maqlub
+  mb61c67: Tel Dan
+  mfcf08d: Arabah
+  m67501d: Al-Ram
+  m0252b4: Núi Zion
+  me5a5eb: Macedonia
+  mcd11f7: Tel Masos
+  ma54af7: Tell Bornat
+  m780cf1: Ras el-Kharruba
+  m66efd0: Tell Hum
+  m185801: Tell edh-Dhahab el-Gharbi
+  mb5cfe4: Tell Harube
+  m31bdd9: Tell ed-Duweir
+  maaf3b2: Tel Haror
+  ma2bedf: Tel Miqne
+  mf32c7d: Tel Ashdod
+  m3c5a04: Asia
+  m653490: Hama
+  m7d469b: Biển Chết
+  m84025e: Ephesus
+  m9cb1d4: Shush
+  ma06d55: Khirbet Rabud
+  m37a078: Tall el-Hammam
+  m60ab56: Deir el-Azar
+  m6cfb9a: Shephelah
+  mc73188: Tell Eton
+  mebe332: Al-Bira
+  mbe432b: Antiochia bên sông Orontes
+  m11da12: Caesarea Maritima
+  mf9b7d7: Núi Carmel
+  me461ba: Núi Ô-liu
+  m06de45: Sheba
+  mf176a6: Khirbet Sara
+  mb2b340: Khirbet el-Medeiyineh
+  mdfc4a9: Khirbet al-Mukhayyat
+  m7c5f02: Tel Bet Shemesh
+  m666a45: Ras Abu Hamid
+  m0c1bc5: Amman
+  m79536a: Tel Nagila
+  m227592: Al-Eizariya
+  mc78c4d: Núi Hermon
+  mfa3426: Tel Halif
+  m9c42da: Numeira
+  m713b74: Bab edh-Dhra
+  m2b72a1: Tel Goded
+  mb4a1d5: Labweh
+  m41fa55: Mukhmas
+  m17b4ff: Nabi Samwil
+  m6cb30d: Tell Beit Mirsim
+  mb65966: Khirbet Qila
+  mb083bc: Roma
+  m496ea5: Nippur
+  mb2507f: Tell Defenneh
+  m74a4ea: Khirbet el-Kirmil
+  mcd1a5c: Tel Gezer
+  mcb49f3: Jaffa
+  ma5f44f: Suối Kidron
+  m24a982: Khirbet Teku’a
+  ma056cd: Khirbet Haiyan
+  m4ec2d3: Thung lũng Hinnom
+  mcbd477: Wadi al-Arish
+  m54d9cf: Arair
+  mcfd3eb: Khirbet Asan
+  m8d753d: Khirbet el-Burj
+  m700b87: Har Zin
+  m224548: Tây Nam bán đảo Ả Rập
+  m1123d9: Tell Deir Alla
+  ma594e8: Tell el-Farah
+  mc8e6e1: Tel Erani
+  m222ca7: Tell edh-Dhahab esh-Sherqiyeh
+  mc95e22: Wadi Mujib
+  m0a9529: Tel Ashkelon
+  me751fb: Síp
+  mc9a69d: Harran
+  mf52435: Tel Megiddo
+  m07d05e: Rujm Siyaghah
+  m2d769d: Khirbet esh-Sheikh Madhkur
+  m6d98ed: Ras Tumeim
+  mc7f587: Tel Batash
+  m28cd4b: Al-Safi
+  m1dd2b9: Khirbet Deir Shubeib
+  m3c0a28: Khirbet el-Qom
+  ma80c62: Vịnh Aqaba
+  mfd46de: Nhánh Pelusium của sông Nin
+  m8cb9fa: Jel‘ad
+  ma96621: Tall Jalul
+  m77f703: Ramat Rahel
+  m56a432: Tall Iktanu
+  me0518f: Corinth
+  m6429cf: Tel Hazor
+  me46ed1: Rableh
+  m3c1506: Tel Tzora
+  m574ccc: Yalo
+  m960e84: Rantis
+  m83ef94: Shatt en-Nil
+  m2ed468: Ein Qedeis
+  mf10950: Khirbet el-Qaryatein
+  m6b366e: Khirbet Ayun Musa
+  m22cdaa: Tell el-Herr
+  mbf99a2: Aleiyan
+  m0cfe50: Tell Bir el-Gharbi
+  m99eed8: Tell es-Sa’idiyeh
+  m402935: Achaia
+  m122dcf: Tall Dhiban
+  m0438ff: Biển hồ Galilee
+  me990f8: Khirbet al-Balua
+  mb1c0e5: Jezirat Faraun
+  m09483e: Ras el-Mesharif
+  m92dbfa: Suối Gihon
+  md4d924: Qarn al-Qubish
+  m43eab9: Thung lũng Beqaa
+  m942792: Tell Maryam
+  mf93341: Crete
+  m8e169f: Jebel et-Tur
+  mcff45c: Farata
+  m5f63a8: Sulam
+  mdadcc0: Thessaloniki
+  mc013b6: Tanis
+  mdabd6c: Tel Arad
+  m27a1e0: En Hazeva
+  m9398f2: Ain Muweileh
+  mcbaccd: Kerak
+  m432f6a: Tall al-Umayri
+  md7c132: Tel Regev
+  m40394a: Tell Melat
+  mf20d69: Tell el-Maskhuta
+  m8a3087: Khirbet Attir
+  m48684e: Tel Kedesh
+  m3b3ebc: Khirbet Nisieh
+  med32df: Aqaba
+  m628173: Bir Ayub
+  mcfc88c: Ain el-Khadra
+  ma832c2: Tel Ira
+  m94f792: Ramat el-Khalil
+  m2635fb: Kafr Ana
+  m58175b: Afula
+  m15a08e: Ar-Ruwaysat
+  m325c72: Hadita
+  m2af7af: Tel Bet Shean
+  m6b0cf5: Buseira
+  m8fcc34: Thung lũng Jordan
+  m02ea33: Memphis
+  m1232ec: Núi Gilboa
+  m66ea0c: Khirbet Badd Faluh
+  md3087e: Paran
+  ma24f3f: Thung lũng Rephaim
+  m3ba5c8: Hoang mạc Zin
+  m11a95b: Tall Kafrayn
+  m0d7bb1: Ramallah
+  ma9cf6e: Tel Malhata
+  m639fec: Qalunya
+  m888945: El-’Unuq
+  m7d00ce: Umm ar-Rasas
+  m112962: Khirbet el-Waten
+  m14a95e: Bir es-Seba
+  m1ec77e: At-Tell
+  m518f8e: Banias
+  mdc9182: Ein Weibeh
+  m857981: Ras et-Tahuneh
+  m69a064: Nahal HaBesor
+  m7bf4f1: Tel Maresha
+  m0d6ead: Tall al-Meqbarah
+  mc4242d: Wadi Qelt
+  m3d8db3: Qarn Hattin
+  mdbdac8: Tell Ashtara
+  m933d05: Tel Azekah
+  m7e1954: Umm el-Amad
+  me649fd: Cyrene
+  me6a184: Al-Khuraybah
+  ma09e9a: Daraa
+  m0feee2: Tel Gerisa
+  m8920d8: Sông Zarqa
+  m3eb278: Erweis el-Ebeirig
+  mbcae83: Sông Kishon
+  m286edc: Isawiya
+  m2b1a3a: Lod
+  md8dd4a: Ain Hawarah
+  m942643: Gordion
+  m53b227: Qantir
+  md06df2: Wadi Rufaiyil
+  m8e8c6d: Tell Ta’anakh
+  m099496: Al-Buqay’ah
+  m3f98a9: Es-Sebkha
+  m74c680: Iraq al-Amir
+  m2d73de: Til Barsip
+  mbb4e1d: Dãy núi phía tây nam Biển Chết
+  m51eef7: Sela
+  mcf60ee: Khirbet el-Muhatta
+  m60a34b: Al-Qurayyat
+  m482f98: Tell el-Jurn
+  m2c7da0: Suwwanet eth-Thaniya
+  m956ef3: Khirbet en-Nitleh
+  m590c60: Taybeh
+  maeb1dc: Khirbet el-Maqatir
+  ma3d35b: Khirbet Ibn Baraq
+  m12c649: Tell Abu Qedeis
+  m7d8664: Tel el-Beida
+  m933319: Al-Haditha
+  md254e8: Hồ Đắng
+  m46be7f: Tell Keisan
+  m0431fc: Khirbet Erha
+  m1d43c6: Tel Abel Beth Maacah
+  m9ed9ce: Bán đảo Ả Rập
+  m388fd5: Tell Rifat
+  md70ac9: Athens
+  ma5019d: Veria
+  m0ba7d9: Ein Gedi
+  m7e7545: Galatia
+  mbdb4ea: Husan
+  m5ff141: Konya
+  mb00c2d: Tel Yarmuth
+  m597755: Laodicea bên sông Lycus
+  ma6f6dc: Tel Lystra
+  mb956fb: Hang các Tổ phụ
+  m010fd0: Đồng bằng Sharon
+  mf51729: Thebes
+  mf8cbc7: Alexandria Troas
+  m383ade: Sleikhat
+  m0cc900: Har Karkom
+  m1bfeb1: Jebel Sin Bishar
+  m5e6c65: Ras es-Safsafeh
+  mb78572: Jebel Serbal
+  me89f58: Jebel Katherina
+  m9cc606: Horbat Uza
+  m601c7a: Horbat Sefan
+  mcd60ca: Beit Rima
+  mfd4ced: Tell Abu Sus
+  m08a591: Urartu
+  m053067: Ain el-Gharabeh
+  mcf8dbb: Tell Azeimeh
+  m7c7d60: Horbat Qana
+  ma29c5f: Tel Kinrot
+  ma0ce5d: Horvat Devora
+  md37ab1: Wadi Gharandal
+  mdcf59e: Nhà thờ Mộ Thánh
+  m9f20df: Al-Qaryatayn
+  m38734c: El-Iraq
+  mef1743: Khirbet Hora
+  m5bef14: Der
+  m5c006c: Khirbet es-Siyyagh
+  m26533b: Tel Dover
+  m5ebf84: Shufat
+  mf177df: Hang El-Jai
+  mc53c05: Debbet er-Ramleh
+  m43153c: Et-Tayibeh
+  ma10bc8: Khirbet Qeiyafa
+  ma11565: Khirbet Libb
+  m51f61c: Khirbet Aro’er
+  m52fd08: Tel Alil
+  m9dbf94: Khirbet et-Taiyiba
+  me57a9a: Callirrhoe
+  mef067e: Wadi al-Hasa
+  meea17f: Khirbet Khureise
+  mfe8eb2: Khirbet Belameh
+  m9d59ae: Tel Yeshua
+  m6653cf: Baalbek
+  m3cab9d: Kathrabba
+  m207993: Abarim
+  mc076de: Kerti Hüyük
+  m495fa6: Al-‘Al
+  mb69a90: Ain Shams
+  mdf4652: Tell el-Alayiq
+  m946fef: Khirbet Qedish
+  m1de942: Beit Ur al-Tahta
+  m035ff3: Madaba
+  mc1032c: Núi Ebal
+  m846c1f: Núi Gerizim
+  m17d528: Ophel
+  m734ef6: Pamphylia
+  ma16f57: Thượng Ai Cập
+  m068207: Hồ Siloam
+  mc9df1a: Tarsus
+  m97a528: Tabal
+  m2b7883: Thung lũng Jezreel
+  m2baf82: Tell Zif
+  m39f75d: Tell Jenin
+  m0edba0: Tel Zayit
+  md54909: Tell Rekhesh
+  m5c5bc6: Wadi al-Fara
+  med2628: Tel al-Mazar
+  mf4bdf8: Sông Yarkon
+  mdb97ba: Horbat Rumah
+  mcffb24: Khirbet Anab es-Seghireh
+  mb6076b: Tel Afek
+  mbdd01a: Khirbet Atara
+  m77a636: Tell es-Saqati
+  mf937bb: Deir ed-Domeh
+  m34d981: Jiljilyya
+  m7e420c: Khirbet Yanun
+  m1b71cf: Sông Litani
+  mfe591e: Tel Raqqat
+  mea83bf: Kokab el-Hawa
+  m88e0f9: Tall al-Ajjul
+  m2ce754: Ma’ale Akrabbim
+  me8ca72: Tel Ein Gev
+  mcc3d1b: Hizma
+  mf5b38d: Deir Hajla
+  m6bd6bd: Et-Tur
+  m28e9df: Khirbet es-Safsafa
+  m80e219: Khirbet Damun
+  m220d13: Araq ed-Deir
+  m6fa94d: Anah
+  m6df964: Khirbet Alin
+  m4aa3c1: Wadi Khadakhid
+  m15bc95: Tell Dibbine
+  m37903f: Kafr Aya
+  me95c9a: Medeineh
+  m743a5d: Taba
+  m612cff: Qanawat
+  m5d99f8: Khirbet Tatrit
+  m97b90d: Salbit
+  mf8bf50: Tell Hejaj
+  md6d253: Khirbet Mehna
+  mac1117: Et-Taiyibeh
+  ma4d11e: Dumat al-Jandal
+  m0d73da: Rhodes
+  mf9ae18: Hồ Timsah
+  m857530: Các hồ Ballah
+  m0af4d6: Qatra
+  m363196: Alexandria
+  m93f901: Antiochia xứ Pisidia
+  m97d53f: Tell Ras el-Ain
+  m24a920: Assur
+  mbc7ae2: Ma‘in
+  m1b2999: Khirbet et-Tubeiqa
+  m6703bb: Khirbet el-Kefireh
+  m13789b: Tel Dor
+  m322922: As-Samu
+  ma43757: Kefr Kenna
+  m641784: Saham al-Jawlan
+  m5fdc60: Tel Yokneam
+  mec5201: Philippi
+  m6badf8: Tell er-Retaba
+  me01c5c: Salkhad
+  md2430d: Tel Socho
+  m4e3e3e: Akhisar
+  mf569cb: Pháo đài Antonia
+  m8eda70: Con đường giữa Biển Chết và vịnh Aqaba
+  m5d9754: Sarepta
+  mc7ecc2: Tel Hasi
+  md98d47: Khirbet et-Tell
+  md42a9f: Tell Abu el-Kharaz
+  m1fb191: Ar-Ramtha
+  mae0f0a: As-Salt
+  m3bbe68: Tall al-Husun
+  m092d12: Al-Shaykh Saad
+  macb7a7: Horbat Anim
+  mea9d16: Haluza
+  m2f9843: Dahriya
+  m0052f9: Kom Yajuz
+  me0e0b1: Tel Sharuhen
+  m4ee7bd: Birein
+  mc8b658: Duleilat esh-Sharqiyeh
+  m6d8f34: Aynata
+  m927319: Bani Nai’im
+  m3ddc20: Khirbet Shifat
+  m0a99ab: Khirbet Hamideh
+  m315baa: Transjordan
+  ma76eac: Anata
+  mc33ba8: Khirbet Deir es-Sidd
+  m51f0e2: Khirbet Minyeh
+  mfce9f4: Tell el-Kheleifeh
+  m31d269: Er-Remeil
+  m500952: Tel Adami
+  m394045: Umm el-Umdan
+  m52be1c: Khirbet al-Hadab
+  m1e912f: Khirbet Udena
+  m88b428: Khirbet Urmah
+  ma2bc43: Ez-Zuhur
+  m9f794c: Ras et-Tawil
+  m740e01: Khirbet el-Quweiqiyeh
+  md56681: Brital
+  m914c65: Safad el-Battikh
+  m64c4ca: Beit Qad
+  m7cc2d3: Tall Bleibel
+  m2de4c4: Sheikh esh-Shamsawi
+  me2704a: Tel Rosh
+  mfa2f28: Wadi Kofrein
+  m058079: Tell Tayinat
+  m266be5: Wadi al-Yabis
+  mae4fc5: Khirbet Umm al-Baqar
+  m9c3ada: Qumran
+  m6494e7: Khirbet Zanuta
+  m8774a2: Tel Dotan
+  mf0b0ed: Izbet Sartah
+  md543e2: Tel Shalaf
+  mf81851: Khirbet Umm Jina
+  mecc3c0: Khirbet Beit Jann
+  m6b1e6b: Khirbet Kakul
+  mcf3b52: Tel Gat Hefer
+  m896140: Jedireh
+  m14421f: Burj el-Bardawil
+  mabe7ea: Tel Hanaton
+  m00c3f3: Wadi Lussan
+  ma68969: Khirbet el-Harazan
+  mce9265: Alma
+  m14fc12: Tel Qashish
+  m008aaf: Tell el-Muhaffar
+  m87cf6c: Haitla
+  mfbdf61: Yibna
+  mb4119d: Khirbet Jubeiha
+  m96bbc3: Wadi Qana
+  m629bdb: Nơi hợp lưu thung lũng Kidron và thung lũng Hinnom
+  m81b743: Tell Qisyon
+  mf18b52: Khirbet Qutteina
+  m98a6fe: Wadi el-Beidha
+  mf517cf: Dimnah
+  mf81ba4: Kuntillet Ajrud
+  m45592a: Khirbet en-Nabi
+  m99a8a8: Umm el-Hanafish
+  mcc38e2: Nimrin
+  m6b442d: Nuba
+  m182c86: Wadi en-Numeirah
+  m16aeb0: Wadi Fai
+  m701cd0: Ras Rihab
+  m4b3ec6: Resafa
+  m97c628: Rumana
+  m249c41: Naqb al-Biyar
+  mcc5f77: Sharma
+  ma064a5: Wadi Ratamah
+  mb277f4: Zaharet
+  m01c51b: Vùng đồi Ephraim
+  mf5e945: Khirbet es-Sira
+  m743096: El-Karm
+  m15d67c: Tel Shimron
+  m012b38: Sufeh
+  m23ba30: Bayt Nattif
+  m4ff96d: Tubas
+  m436462: Sanaa
+  mf10467: Wadi el-Melek
+  m1d647a: En Meron
+  m33ae26: Hanot Taggarim
+  m76cfaf: Wadi es-Salmaneh
+  m951680: Sadad
+  m934b82: Khirbet Salah
+  mf717ad: Huwwarin
+  me1eff3: Wadi Hasasah
+  m52f985: Tel Nahal
+  md6ea3b: Khirbet Tarrama
+  m134a42: Et-Taba
+  m2bcf45: Tel Avdon
+  m9ce4af: Khirbet Ataruz
+  m8f74a0: Ed-Dawaimeh
+  mdc8fda: Har Zevi
+  m4f28ee: Khirbet Bani Dar
+  m0ad6d5: Lifta
+  m8dec05: Jebel Nebi Harun
+  m7869a6: Wadi al-Aghaydira
+  mb291ec: Tell er-Reheil
+  m77308e: Rammun
+  m9f8a0e: Sardegna
+  m0c70c9: Cádiz
+  ma9c898: Areopagus
+  mc6835c: Jerabis
+  m59ce29: Decapolis
+  mf937a6: Byblos
+  m6ee789: El-Ghuweir
+  m23c9bd: Jerash
+  m09c5ef: Sông Khabur
+  mf42fe6: Zahrat al-Kula
+  m161c59: Yatta
+  m8bd1e6: Tel Main
+  mcf7752: Miletus
+  me63472: Perga
+  m76ec6b: Phrygia
+  m220f70: Pontus
+  mb0ee42: Sardis
+  m726943: Aswan
+  m94367d: Tell Abu Zarad
+  ma06c71: Tayma
+  me233de: Khirbet Tibnah
+  mdfba66: Beit Ur al-Fauqa
+  ma86896: Thung lũng Elah
+  m3edbe2: Phía nam bán đảo Lisan
+  ma12137: Khirbet Zanu
+  mbfa260: Jebel Aqra
+  mc40778: Tel Kabri
+  m843146: Khanazir
+  maa94ef: Feifa
+  m59af06: Nahal Gerar
+  mc7c3c3: Wadi Sudr
+  m8f0036: Gharandal
+  m64cdb6: Tell el-Kokah
+  mda9727: Eshtaol
+  mfcf75f: Uyun Musa
+  me1373f: Artuf
+  me34143: Tell ed-Damiyeh
+  m6f1b7f: Eilat
+  m0c88eb: Al-Qantarah
+  mefdada: Khirbet Jazzir
+  m5e9487: Khirbet es-Sireh
+  md6cdbf: Yajuz
+  m020ed9: Khirbet a Ra’i
+  me06e95: Khirbet Zuheiliqah
+  mffb2d6: Khirbet el-Medeineh
+  mf8005e: Khirbet Marjame
+  m73c038: Tel Haraqim
+  m73ed74: Khirbet Makhaz
+  m12013f: French Hill
+  mc1d54c: Tell el-Hamme
+  mc1b445: El-Mess’adiyye
+  me2a356: Khirbet Ai
+  mf838ec: Es-Saliyeh
+  m0432ec: Tell el-Khirbeh
+  m4b6ab1: Tall Nimrin
+  m7fba7d: Khirbet el-Qureiye
+  mbfc6a2: Sông Karun
+  m4433dc: Sahab
+  m4ba77e: Gần cửa sông Jordan
+  m15dbe7: Tell Sheshubar
+  m2797e4: Tel el-Butmeh
+  m7624ff: Khirbet Ayun
+  m71a823: Khirbet Almit
+  mdaf25b: Be’er Nevatim
+  m702acc: Jebel Zabadani
+  m6cc8f5: Giữa Aleppo và Carchemish
+  m0e49d8: Khirbet el-Hamam
+  m62a3cc: Islin
+  m64ba44: Idhna
+  m3b580c: Kafr Aqab
+  meb6b16: Con đường giữa Kadesh-barnea và Arad
+  mbf104b: Rujm Ataruz
+  me6ce5d: Nahal Azal
+  m0c03bf: Al-Maghar
+  mcde611: Khirbet Sirisye
+  m8f1639: El-Bira
+  me36d66: Al-Khayriyya
+  mef8a69: Khirbet Ibtin
+  ma7c5ee: Khirbet Beit Anun
+  m6b5d69: Al-Maghtas
+  m2e40b3: Tall Irbid
+  m64de18: Jebel el-Biri
+  md7e418: Khirbet Dajun
+  m7bc13e: Khirbet Jelameh
+  mb63cde: Tel Emek
+  m8b46cd: Tel Salwim
+  mf2c1fd: Khirbet Ibziq
+  me99efe: Giữa Dedan và Kedar
+  m5370b8: Khirbet Kafr Ana
+  m642313: Iksal
+  mede9e6: Ras Baalbek
+  mfa6017: Khan el-Hatrur
+  m17c007: Ad-Duhaybah
+  mda5d88: Tulul Dura
+  m626d73: Ain el-Habus
+  me05cc2: Khirbet es-Siyar el-Ghanam
+  m64a773: Rujm el-Jilimeh
+  m67fb06: El-Kauzeh
+  m553f4d: Khirbet ed-Deir
+  m07bd90: Mutraba
+  m710dd6: Khirbet el-Ater
+  m4c5498: Giữa Biển Chết và Petra
+  m3b782e: Khirbet Judraya
+  m2804fc: Jimzu
+  m0049f9: Khirbet en-Najjar
+  m76fa4c: Tell Afis
+  m5b2a6f: Hamat Tiberias
+  m30e667: Har Hezron
+  mdfba8c: Kharas
+  md2e197: Hoba
+  me84cc9: Tell Rachidiyeh
+  m9c165a: Khirbet el-Jemeijimeh
+  m988bed: Deir al-Ghawi
+  me08090: Tarqumiyeh
+  mab0d53: Dayr Nakhkhas
+  me42258: Rafat
+  md7dd73: Tel Yin’am
+  ma5abe3: Yanouh
+  mdfc63b: Yafa
+  md31523: Yehud
+  mee0e2f: Khirbet er-Raqqa
+  m32c21d: Tell Nebi Mend
+  ma1df2b: Qamm
+  mebc591: Al-Qarqar
+  mcbfe77: Khirbet el-Qureiyeh
+  m5f08dc: Horbat Lehem
+  mb35901: Horbat Kush
+  m2ae686: Khan el-Lubban
+  mde4c72: Luweizeh
+  m50ec84: Khirbet Qufin
+  me2fd7b: Khirbet el-Makhbiyeh
+  m411129: Deir Muheisin
+  m25d7b7: El-Malha
+  me83b88: Tell Thorah
+  mcf48ef: Jezzine
+  m1a9619: Khirbet Marus
+  mb1aeb3: Khirbet Abu Tabaq
+  m637584: Majdel Selem
+  m813647: Khirbet el-Mejdeleh
+  ma56250: Mughar
+  m656d70: Wadi Zerqa Main
+  m056b9b: Khirbet Yanin
+  mf63dc1: Khirbet en-Nuweiti
+  m7c1213: Khirbet el-Maqari
+  mda9249: Jifna
+  m629d7c: Khirbet Ein Fara
+  m8e724c: Farwah
+  m6dfa22: Sông Awaj
+  m297f75: Finikas
+  m81b8c3: Wadi Baysh
+  mf8282c: Tell er-Reqqeit
+  m669e21: Ramyah
+  m92f044: Khirbet Zeitun er-Rameh
+  m925533: Tell el-Balat
+  mcaea80: Arbin
+  m860ae3: Tel Shalem
+  m222887: Khirbet esh-Shamsaniyat
+  m771704: Khirbet es-Samrah
+  m82e254: Khirbet Sumara
+  m876cb0: Tell as-Sawafir
+  m8ad145: Cửa sông Kishon
+  m6129e7: Tell el-Ful
+  m346d1b: Sirin
+  m9a6508: Ain Sarah
+  mb04b16: Askar
+  mb1e1d7: Khirbet Tana el-Fauqa
+  m2558cc: Tafila
+  mdff682: Sông Karkheh
+  m14e1a5: Wadi el-Arrub
+  m87e5dd: Wadi en-Nar
+  mf71f00: Wadi Abu ed-Diba
+  m54d17d: Wadi Safiyeh
+  m3f8658: Ein as-Sultan
+  m1dc3a0: Jebel Druze
+  m633a44: Khirbet Beit Amra
+  mb3789f: Deir Ghassaneh
+  m192131: Hattin
+  m51dd81: Khirbet ez-Zeifeh
+  m6924bf: Tila as-Safa
+  mea51a2: Quần đảo Aegea
+  mfcf16e: Khirbet er-Rasuni
+  mcb28e1: Khirbet el-Hara el-Fawqa
+  m468f4d: Jebel Abu Hasa
+  mbae631: Tell Feddan
+  m9f46c4: Tel Achziv
+  m9a12db: Adummim
+  m0b0e06: Akeldama
+  m6dddbb: Wadi el-Esh
+  m18c2ee: Arabia Petraea
+  maf746a: Arwad
+  mce3faf: Assos
+  m5e72ac: Antalya
+  mf84eaf: Rujum al-Juththa
+  m29b4f7: Bithynia
+  m3da284: Bức tường Rộng
+  maa532c: Nimrud
+  m6e1e42: Cappadocia
+  mf07963: Kechries
+  m4e5f05: Khirbet Karraza
+  m0b7a33: Tell Ibrahim
+  m14916e: Serabit el-Khadim
+  md512fb: Ein Haud
+  me2d27e: Uruk
+  m3f310c: Kaloi Limenes
+  m835caa: Gethsemane
+  m276e13: Tiểu Á
+  m5ebd3e: Hauran
+  mfac68f: Khirbet Irbadeh
+  m8bc671: Ionia
+  mb3f336: Đường Vua
+  m0a8dbd: Adana
+  m4b7659: Lycaonia
+  mf3eae1: Jebel el-Musraq
+  m026471: Jebel Halaq
+  m25a76c: Jabal al-Naba
+  m58cfaf: Mysia
+  m039ea4: Paphos Mới
+  m6da49d: Tell el-Farama
+  m16099a: Pergamon
+  m91dd93: Alaşehir
+  mfed480: Khirbet Faynan
+  m4381c8: Tel Shadud
+  m1876bb: Izmir
+  m6581f3: Hispania
+  mc49ef3: Sông Tigris
+  mc620e5: Thung lũng Jehoshaphat
+  mbbfbf9: Tabgha
+  mfaa53d: Umm ed-Debar
+  m1a0069: Tell el-Meleiha
+  m662b52: Tell el-Ajjul
+  mee9587: Khirbet Umm er-Rammamin
+  m5ed9eb: Khirbet Kuseife
+  m2564c2: Imaret el-Khureisheh
+  ma33762: Jebel es-Sabha
+  mabd3be: Jebel el-Hamrah
+  m1864ac: Poovar
+  m076642: Sofala
+  m2aae23: Sri Lanka
+  m6acc08: Goa
+  md51198: Tell el-Ekhsas
+  m28e80a: Khirbet Id el-Minya
+  m58ed36: Jebel Umm el-Bared
+  mbcd830: Biddu
+  mcd7d18: Tel Zeton
+  m1a53ab: Ain Hajlah
+  mfa9786: Thượng thung lũng Huleh
+  m63c810: Tell Umm Hamad
+  me867d9: Khirbet Salhab
+  mb94c78: Abu Ghosh
+  m538ee9: Tal‘at ed-Damm
+  m010604: Tell Tuweiyil
+  m3f6c55: Tell Jemmeh
+  ma43a68: Jebel Araif en-Nakah
+  mabdf1d: Khirbet Bism
+  m339461: Khirbet Iskander
+  m70b396: Khirbet Umm el-Idham
+  m51d3ee: Tell Simadi
+  m7dace6: Wadi Sirhan
+  m003c09: Thung lũng Beit Netofa
+  md91e52: Wadi Ghuwayr
+  m0e5df3: Horbat Timna
+  mae3962: Khirbet et-Tabbaneh
+  mb397de: Tell al-Sheikh Isa
+  m63b310: Cửa Wadi Mujib
+  mb58c5d: Tawahin el-Sukkar
+  mbd8b3e: Hit
+  mf65c37: Khirbet Beit Maqdum
+  m6d35b1: Khirbet Bessum
+  mcae10f: Duleilat el-Gharbiyeh
+  md1381e: Khirbet Anab al-Kabir
+  m3b4f65: Khirbet Raddana
+  m4afea7: Beer Yeroham
+  mc853b5: Ein Karim
+  mf403c9: Hariss
+  m47cd69: Armenia
+  m93008b: Tell Bezqa
+  m0da21a: Khirbet ed-Dir
+  m28dc0a: Horbat Avimor
+  m65eaec: Mashhad
+  mb7457d: Khirbet Hirsha
+  m62d2f9: Khirbet Ibn Naser
+  m3f1a1b: Al-Burj
+  m9ccfee: Tell Safut
+  m18a77f: Khirbet Umm ed-Demineh
+  m602d3b: Umm el-Bayyara
+  mddda6a: Tall el-Mazar
+  ma3a2f4: Tell ed-Der
+  mde7fdc: Salim
+  m8c21f0: Sahel Geba
+  me7e68b: Khirbet Kan’an
+  m771405: Misna
+  m10d1d8: Rabba
+  m26e38a: Khirbet Wadi Illin
+  m87a302: Ein Umm esh-Sharayit
+  m4f3527: Tell esh-Sheikh Dhiab
+  me8b945: Ein Samia
+  m9a6aa4: Khirbet Buqei Dan
+  m4e728c: Wadi eth-Themed
+  m33c7a1: Tel Far
+  m48c2f6: Tell Umm Betin
+  m31c72e: Sheikh Mazghith
+  ma1b417: Khirbet Beit Lei
+  m349db7: Ctesiphon
+  m034c0f: Khirbet Bir Zeit
+  m05f542: Khirbet er-Ras
+  m67b92b: Ain el-Ghuweir
+  m4813c9: Khirbet al-Simia
+  m52836d: Haraziya
+  mc399ee: Horbat Tayyav
+  m467962: En haYadid
+  m92876b: Ain Feshkah
+  m8f16f8: Khirbet Judeira
+  md0d53c: Hermel
+  m435836: Horbat Beer Shama
+  m4a75c5: Sông Ayalon
+  m949860: Maroun al-Ras
+  mebf30f: Qashr el-Yahud
+  m54e816: Nahal Mikhmash
+  m9b1ea2: Tell el-Askar
+  m9fd5a0: Ras ez-Zemara
+  m36b854: Ras Umm et-Tala
+  mb74ba8: Rameh
+  m3b3c28: Sair
+  m516e72: Majdal
+  m22ee15: Dibseh
+  mc06f57: Khirbet el-Aujah el-Foqa
+  mccae46: Ain el-Madauwerah
+  m0021a3: Ain Sebta
+  mb3b1ec: Khirbet Nimreh
+  mfaa3c4: Công trình đá bậc thang
+  mf1495c: Sippar
+  ma7c343: Wadi as-Sakriyat
+  m329feb: Sumia
+  meb4627: Tawilan
+  m39ac0b: Sông Barada
+  mac4103: Tel Akko
+  m6b0e6d: Dura
+  m904265: Biển Adriatic và biển Ionia
+  m8b49f2: Khirbet al-Mahalib
+  m7aac33: Amphipolis
+  m035790: Afqa
+  md0824c: Apollonia
+  m3542bf: Khirbet er-Rabiyeh
+  m8c6a25: Tel Govel
+  m8136bc: Jebel Asur
+  m48007f: Hồ Bethesda
+  m8d7caa: Deir al-Asal al-Fauqa
+  m108e64: Jumaiyil
+  ma3ac8b: Beit Lahm
+  me36c0a: Taffuh
+  m5b9e13: Khirbet Batneh
+  m651138: Kabul
+  m9e1f27: Gavdos
+  mb905e4: Kesla
+  mf3ab86: Chios
+  m259892: Cnidus
+  m3f820b: Colossae
+  md321d4: Kos
+  m307896: Tel Shem
+  me8c716: Dalmatia
+  m6d408e: Tell Hagmatana
+  mdeec8e: Khirbet el-Khokh
+  m4241cc: Forum Appii
+  m18bec1: Umm Qais
+  meeeda4: Halhul
+  m90b454: Tell Ham
+  m8b5f56: Umm el-Awamid
+  m630b1d: Nahavand
+  m6851a6: Giếng Harod
+  m69a95d: Halbun
+  me32616: Hierapolis
+  meea8c6: Khirbet el-Huwarah
+  mff1fdf: Mesudat Har Hemet
+  mfde99e: Yamun
+  ma7df4b: Burj el-Isaneh
+  mea50a6: Qana
+  mb61e8a: Lasaea
+  m9f6e4f: Lycia
+  mcf2b79: Khirbat al-Beiyudat
+  m2672d3: Malta
+  md8e887: Qalaichi
+  m29fa9d: Nhà hát cổ ở Mitylene
+  m43ae95: Givat HaMoreh
+  m90275b: Al-Qastal
+  m846f8b: Dãy núi Liban
+  m6a8ed6: Núi Moriah
+  m3918d8: Shoresh
+  m189d38: Myra
+  m0b02a7: Nein
+  m156588: Kavala
+  mb0b80f: Beit Nabala
+  me70c0c: Khirbet Beit Nesib esh-Sharqiyyeh
+  ma7fa5c: Nicopolis
+  mcb8622: Patara
+  m5c4548: Patmos
+  m518e57: Tell Basteh
+  mc58154: Acre
+  m45cb10: Pozzuoli
+  m984753: Ruheibeh
+  m366576: Reggio Calabria
+  m322666: Wadi Malaqi
+  m521458: Sahl as-Sahra
+  md31e56: Salamis
+  mf98a4e: Mũi Sideros
+  m509072: Samos
+  md84660: Samothraki
+  ma386d1: Giữa Gibeah và Ramah
+  m094b0c: Seleucia Pieria
+  m9f98b7: Zafar
+  mbd896c: Khirbet Shuweikah
+  m6c43bf: Khirbet Shuweikat er-Ras
+  mb2d6b9: Phố Thẳng
+  m4f5a82: Siracusa
+  m0c0286: Sidra
+  m6d87c0: Palmyra
+  m8996a4: Ba Quán
+  mc8c3f1: Tiberias
+  m555d8f: Lajat
+  mbbc4a4: Mũi Mycale
+  m3f93dc: Thung lũng Ayalon
+  m845f5a: Nahal Sorek
+  mf00bed: Yarun
+  mb7e1e6: Khirbet Sabiyeh
+  mebc554: Karpathos
+  m6efad3: Aqir
+  m80cdfd: Qibya
+  m790bc8: Wadi Sa’l
+  mbcb68c: Nahal Tabor
+  me8880b: Bir Mara
+  mc42132: Suf
+  m71af3b: Kafr Juna
+  me4950b: Khirbet Taiyibeh
+  m664dd9: Silat ad-Dhahr
+  ma868d6: Tell el-Daba
+  m26cac6: Wadi Feiran
+  m229fd6: Wadi el-Sheikh
+  m574018: Jabal Huwayti
+  m4f87fb: Tell Matabi
+  m76d958: Wadi el-Milh
+  ma7c659: Wadi Arabah
+  m88cf7d: Tall Mustah
+  m0382c1: Khirbet Muleh
+  m2c4507: Rujm el-Bahr
+  mdc7c58: Tell Muhalhal
+  mc678e7: Burqa
+  m40c3db: Khirbet Suweimeh
+  m00b3ac: Al-Araj
+  m375464: Ain Qana
+  meb169c: El-Tor
+  me00c08: Wadi ar-Raynah
+  m4c3dce: Ismailia
+  m3f130c: Khirbet esh-Shuna
+  m92a579: Golgotha của Taylor
+  m9282d4: Calvary của Gordon
+  m9277c7: Hader
+  ma17f5d: Ed-Deir
+  meab671: Khirbet Dhubab
+  m7ecccc: Khirbet Meidan
+  mce313b: Qasr ez-Za’feran I
+  mfd0df0: Sông Kura
+  m61f1c0: Thung lũng Amuk
+  mc2b727: Tell Meskene
+  mc4b280: Bayt Itab
+  ma6009a: Ibdar
+  m765dcc: Khirbet Hamid
+  m3a800c: Tell el-Mughanniya
+  m09cf7c: Tell Jawah
+  ma6ae0f: Khirbet Nefaah
+  m854cf3: Jebel el-Na‘ameh
+  me3cdde: Đồng bằng gần Jabal Jinayfah
+  mb02dce: Khirbet Da‘uk
+  ma88b1e: Wadi Rummananeh
+  mac7629: Cao nguyên phía đông Rammun
+  m488d9e: El-Marka
+  m679b51: El-Qaa
+  md89371: Jabal Maryam
+  m240af5: Şanlıurfa
+  m4c90cf: Cổng Jaffa
+  m6b8113: Burj el-Haska
+  mde1ac7: Ain Eshkali
+  m309c4d: Tell el-Hilu
+  m400b59: Ras el-Kharube
+  m67252f: Opis
+  m29c6b3: Tell Ishnayt
+  m1a17f8: Jebel Umm al-Aqarib
+  m22ecef: Fiq
+  ma3b16c: Tell Soreg
+  m5fab39: Ras Zukeir
+  mdc7fbf: Tell Haush
+  m728795: Hasbaya
+  m8e8c01: Ain Jedeideh
+  mbba0a8: Zahr al-Qais
+  m770e08: Al-Mahamdiyah
+  m6e08ca: Jabal Ataqah
+  mf34f22: Jabal al-Murr
+  m9ad5c9: Wadi Umm Rajil
+  m108f0b: Abu Dis
+  mde0649: Khirbet Erqa Saqra
+  m77574e: Emmaus Nicopolis
+  md414e6: El-Qubeibeh
+  m7539ea: Artas
+  mbc6d8b: Khirbet Khamasa
+  m6ccac9: Khirbet Jadurah
+  m23435b: Indur
+  m354756: Khirbet Beit Fasal
+  m11f1d4: Umm el-Azam
+  maffe87: El-Khirbeh
+  mef7914: Khan el-Ahmar
+  m9584c0: Khirbet Kafr Jul
+  m471112: Khirbet Jala
+  m6af844: En Orahot
+  m4f224b: Marjaayoun
+  md1c5ba: Imma
+  m40f9b6: Muhayy
+  m0a0e06: Ein Yotvata
+  md4a2ba: Avdat
+  mc76c1b: Ma’alul
+  m886d32: Mezad Tamar
+  m749812: Bức tường phía bắc Jerusalem
+  mb01d09: Qa’an Naqb
+  mcf7f60: Umm Sweiwineh
+  m32279c: Erjan
+  m436ab5: Abu Tor
+  m1f6a45: Gilo
+  m6beb29: Mar Elias
+  m207212: Sheikh Badr
+  mfaeab5: Jebel Ataruz
+  m14060a: Bi’ina
+  m849e0d: Hinah
+  m66fe59: Kafr Rai
+  ma33a49: Herodium
+  m53b1e2: Tall er-Rama
+  m79b6a2: Hunin
+  meb2c94: Kullan Köy
+  mb93e31: Çatalhöyük
+  mcd525c: Khirbet Fasayil
+  m92cd57: Wadi Rajib
+  m27dba0: Wadi Ajlun
+  m33f0d3: Majdel Yaba
+  m9cad98: Alishar Huyuk
+  mbc4b77: Ilanzura
+  m10da0a: Nahal Yarmut
+  m31fd25: Ein et-Tuta
+  m6ef353: Jilya
+  mf3d94c: Tel Agra
+  m97dd72: Wadi esh-Shellal
+  m324585: Sarafand el-Kharab
+  m841f6c: Jab’a
+  mf5e563: Ramla
+  m9f38df: Jebel Aradeh
+  ma36bc2: Qoseimeh
+  m89ea7f: Cửa Wadi Jirafi
+  m24eba2: Wadi Umm Hashim
+  ma5c80b: Sbalat Abu Susein
+  m4badb5: Aleppo
+  m7ff2c3: Tell Amr
+  m5d4348: Tel Hefer
+  md09b31: Adlun
+  md62f3e: Yavne Yam
+  m7672b5: Yanun
+  ma725ef: Bab en-Naqb
+  m066eb7: Khirbet Marah el-Inab
+  m919c2c: Tell Miska
+  m9c2d3a: Athlit
+  ma66725: Wadi al-Joz
+  m1e3a5b: Tripoli
+  m7e4070: Medinet er-Ras
+  m95f21e: Minieh
+  m7470bc: Khirbet Madin
+  m7a849a: Beitunia
+  mf2e013: Núi Kabir
+  m566c41: Wadi Bedan
+  m30171a: Tell Qedua
+  m08bab0: Tell el-Borg
+  mc9b6df: Tell Ahmar
+  mda62fe: Khirbet Hamzeh
+  m6d0c02: Khirbet el-Yadudeh
+  m082a19: Ain Mesherfi
+  mc3372d: Khirbet el-Musheirifeh
+  ma2f3b8: Srifa
+  m191987: Rosh HaNikra
+  m13e189: Wadi abu Taqiya
+  mec700a: Jebel Akkar
+  m656236: Ras Shaqqa
+  m7aba95: Jebel Osha
+  mda25cf: Tell el-Wawiyat
+  m1d55ca: Wadi Nimrin
+  mdc66d1: Khirbet Musrab
+  m60da9d: Al-Rahba
+  meb41de: Resappa
+  mc92826: Wadi er-Rummun
+  m8a4637: Kuntilet el-Jerafi
+  mc8cf64: Wadi Abu Retemat
+  m977e59: Wadi er-Retame
+  m1359e9: Ain Rathmah
+  m3bbdc4: Bir es-Sawra
+  m4aa2b6: Wadi Rihab
+  me8dae9: Tell Barsina
+  meb51a3: Khirbet Samara
+  m0cf140: Til Assuri
+  mbc637b: Tal Afar
+  m5c4b2e: Tell Bashir
+  md20614: Wadi Abbelin
+  mb68774: Birket Hafour el-Ahmar
+  m9547d7: Nahal Arbel
+  mcfd44e: Nahal Amud
+  m4c17f6: Biar es-Sukker
+  m9c0974: Wadi Meiron
+  m5305fd: Lejjun
+  mc7de3d: Shajarat el-Kalb
+  m707927: Rujm Talat az-Zalma
+  mafdc8d: Wadi Umran
+  m34312e: Bir Madhkur
+  ma3078f: Tell el-Qos
+  m30e76f: Khirbet Buweib
+  mba5378: Khirbet Serada
+  md02dab: Khirbet Shab Salah
+  m1d589c: Naur
+  me5d4ed: Khirbet es-Suq
+  m49c3d8: Dhuluiya
+  m8970e8: Qadisiyah
+  m310ad8: Tell Muhammad
+  m0c93b5: Hajar ed-Damm
+  m39107b: Khirbet esh-Shiba
+  mbd0d86: Khirbet Idma
+  mc04a32: Khirbet el-Hadatha
+  m3a5f36: Khirbet Einun
+  mb1a2b2: Khirbet Khishash ed-Deir
+  ma29530: Khirbet el-Lon
+  m71c96a: Khirbet Dufnah
+  mec7389: Ain ez-Zarqa
+  m4e0815: Umm al-Amad
+  m1824ed: Nahal Yattir 205
+  m81d48b: Bir el-Esani
+  m6fa42d: Núi Amana
+  mc059af: Na’ura
+  m5ba7b5: Beit Hanina
+  m63c688: Khirbet Anim
+  m941775: Olam
+  m3348d5: Khirbet Ghuweina el-Fauqa
+  m738ed2: Khirbet el-Marajim
+  m3a7f35: Tel Esdar
+  mb60db9: Arraba
+  ma338f2: Batn Umm Nari
+  m6b2add: Tel Esur
+  mb6a27e: Pardes Hanna Karkur
+  ma365e4: Khirbet el-Ghashina
+  md1c4b3: Bir ed-Deir
+  m9e6f48: Ein Arik
+  md36a50: Con đường giữa Biển Chết và Arad
+  mdcad79: Turmus Ayya
+  m991597: Kafr Thulth
+  m1e60f2: Sahre al-Gibiyeh
+  ma464b9: Nahal Avnon Fortress
+  ma7cea6: Beirut
+  m790eb4: Ain Bourdai
+  m283cb0: Ghantur
+  mf9827e: Khirbet Ras at-Tawil
+  mb89a0b: Ein esh-Shallala
+  m756fb4: Bayt Dajan
+  mcc3e37: Beit Shearim
+  m8b07e3: Khirbet Buseima
+  m1f0e6a: Khirbet et-Teim
+  m016ac4: Khirbet Abu Mudawwar
+  mdb9dc3: Wadi el-Ghafar
+  m6fd012: El-Abeidiyeh
+  m1d80b6: Shatta
+  m53aaf8: Khirbet ar-Ras
+  m7aee43: Tel Kelekh
+  maccbcf: Barazen
+  m0a1b7f: Azraq
+  mb4d8a2: Al-Ahsa
+  m5b3c96: Khirbet Hebra
+  m1faf41: Hursagkalamma
+  m4e816f: Bir Ali
+  m65e64e: Nisibis
+  m16b26f: El-Muneitrah
+  ma69156: Yabrud
+  m6b3f60: Tell Jindaris
+  m902faf: Horbat Gluma
+  mf863e1: Tell Kilkis
+  m552c9f: Tell el-Yahudiye
+  ma726cc: Ein et-Turaba
+  m384043: Khirbet ed-Dilb
+  ma7acf2: Khirbet Kuweiziba
+  m173aa0: Khirbet Deir esh-Shams
+  m552789: Thoghret ed-Debr
+  m558be2: Wadi ed-Debr
+  mc4b938: Tel Qeshet
+  m53c8b9: Khirbet edh-Dheiba
+  mff2983: Horbat Deragot
+  m27bf86: Hare Dimona 18
+  mc070bb: Dahab
+  m2ac933: Tall al-Lahm
+  m780e56: Horvat Ukkal
+  m2813c9: Khirbet el-Bira
+  m605ffe: Horbat Adar
+  m0b376e: Aitaroun
+  me0517f: Mazra
+  m58f5a3: Khirbet Jaljul
+  mf59ccc: Enkomi
+  me81f9f: Lissos
+  m370d20: Al-Qush
+  m7b9c77: Tel Zelafon
+  m1a2cc7: Khirbet el-Rujm
+  me79fbd: Alein
+  m4f0971: Beit Anan
+  mb2786f: Ayl
+  m99f73c: Nekhel
+  mdeb751: Vùng đông bắc vịnh Aqaba
+  m1b9a63: Khirbet el-Udeise
+  m4a0a5b: Khirbet el-’Id
+  m497b7a: Wadi el-Kaziz
+  ma31a83: Khirbet Beit Ika
+  m165f71: Khirbet en-Nabi Bulus
+  m0acbcf: Khirbet el-Alya
+  m16ec79: Beit Jimal
+  mc16e40: Khirbet Umm edh-Dhiyab
+  m12bf64: Khirbet Judeida
+  m0d7f01: Ayun Qara
+  m4ed9a3: Horbat Hadran
+  me836d9: Khirbet Khallat Sam’a
+  mb0b198: Lubya
+  mb10309: Tu viện các Nữ tu Sion
+  m85c404: Jiljuliyeh
+  m43a154: Rummanah
+  m6b34d9: Bath el-Battash
+  m600bb7: Khirbet ed-Dawwara
+  m10cac8: Khirbet Jedireh
+  m746d56: Jibiya
+  m5575e4: Awarta
+  m9c6cd5: Sông Nin Trắng
+  m4f8928: Sông Diyala
+  mc70a1b: Tel Sheqef
+  m3a88d4: Homs
+  m71585a: Tel Alil West
+  m896c2c: Tel Parur
+  m5f50c8: Zeila
+  md387f1: Ha’il
+  m64cc7d: Mesudat Ein Qedeis
+  ma40e88: Khirbet el-Qudeirat
+  m7ee55a: Mezudat Sheluhat Qadesh Barnea
+  m88807a: Masada
+  me405e1: Horbat HaRoah
+  m3ed4be: Har Avnon
+  mfbfdc1: Tell el-Salihiye
+  m0784ed: Lahun
+  mc23d2c: Khirbet el-Hos
+  m67fe04: Kefr Yasif
+  m3ee2bc: Yaquq
+  mcb809c: Jebel Salih
+  m05288e: Atar Nehusha
+  mf594c1: Khirbet en-Nahas
+  m6234da: Bayt Thul
+  m41f9ee: Shilta
+  mb432b3: Horbat Yamma
+  me0e6bf: Yanuh
+  m6b2506: Khirbet Niha
+  mb066ed: Givat ha Shoqet
+  mb8e6c2: Tel Na’ama
+  me16f87: Yazur
+  m7ef92e: Khirbet Fattuh
+  m303628: Qusin
+  m02b936: Karm er-Ras
+  m51ee32: Umm el-Ghozlan
+  me4d2f1: Hanzir
+  m47272b: Qumeim
+  m71114a: Al-Baqa’a
+  m4124c8: Wadi el-Qeini
+  m484d0f: El-Keryeh
+  m9678eb: Tel Abu Seleimeh
+  mba0fc3: Sheikh ez-Zuweid
+  m1e99db: Rasm el-Kushukliya
+  ma8cf35: Khirbet el-Mansurah
+  m4a7dca: Khirbet Sarona
+  mf7330e: Lubban Sherqujeh
+  m5e4e24: Beit Ummar
+  m7bf7d6: Bờ đông Biển hồ Galilee
+  mda572b: Khirbet Qanan Mugheimis
+  m8224e7: Neve Ilan
+  mcb0fbb: Khirbet el-Mukheizin
+  m40fd5b: Tell el-Ghaltah
+  m9c1486: Wadi Ara
+  m5c32ee: El-Mghairiye
+  m3deaee: En Iron
+  ma5b0a8: Khirbet ‘Ara
+  m31f719: Tell Qasile
+  ma9a0ef: Mocha
+  m09d033: Mesene
+  mf746d4: Hyrcania
+  m8cf678: Tháp Israel
+  m2119be: Khirbet el-Mejdel
+  m6e6e9b: Khirbet el-Qubba
+  m0ef9e3: Makrun
+  m79cc55: Qalat es-Subeibeh
+  meafcb4: Arnah
+  m4897ac: Marjayoun
+  m96f630: Metula
+  m932e27: Khirbet Safiyeh
+  me622ed: Rujm el-Meshrefeh
+  mf620ab: Batn Harasheh
+  meb16ed: Za’ura
+  mae4ba9: Wadi Za’arah
+  m4fc803: Jebel el-Kabir
+  mdea236: Jebel Salman
+  m4905aa: Khirbet Beit Mizza
+  mfdde01: Horbat Bet Elem
+  m9ca372: Al-Na’ani
+  m6a7f72: Khirbet Fered
+  m426f79: Wadi al-Wala
+  me4f7c8: Khirbet Abu Musarrah
+  m463f45: Khirbet Tarafayn
+  meb4f0d: Saq el-Farwein
+  m3a5cfe: Sông Barbar
+  mf29181: Sông Tora
+  m53a930: Loutro
+  m777895: Vịnh Ba Tư
+  m0978af: Wadi Bishah
+  m4dbf93: Wadi al-Rummah
+  mfae3ed: Sông Hằng
+  m20ca99: Regma
+  m395706: Horbat Darban
+  m6f51f7: Raba
+  m136387: Arabbuna
+  mbca505: Khirbet el-Fuliya
+  m6ae651: Er-Rameh
+  m1774fc: Khirbet el-Qar’a
+  mdcac4a: Tell er-Rahb
+  md73762: Horbat Kenesiyya
+  m002fb4: Địa điểm 43 (Feldstein và cộng sự)
+  m204e7f: Địa điểm 34 (Feldstein và cộng sự)
+  mfc8ad3: Acropolis của Rhodes
+  m1aff9e: Wadi Saleim
+  m17c001: Bosporus
+  m051570: Khirbet al-Bira
+  me45184: Khirbet Fuqeiqis
+  m101cb4: Cao nguyên Madaba
+  m6152fc: Tell Abu Hawam
+  m8bb3e9: Đầm lầy Kebara
+  m99e9c8: Nahal Daliyya
+  mfb5941: Nahal Taninim
+  m1b66b9: Aseret
+  m1b0675: Ayun esh-Sha’in
+  m4a302d: Khirbet Mugheir
+  m7454a1: Serit el-Bella
+  m76e9d9: Sutnet er-Ruheibeh
+  m1ee8b0: Khirbet Tana et-Tahta
+  m2adb90: Khirbet Tililiya
+  mf43e77: Beit Irza
+  mc7cf8a: Rujm al-Hamri
+  m81f259: Tell Tuwani
+  m99eb3d: Khirbet Tafsah
+  mfd02fc: Izalla
+  mc750ee: Azalla
+  me12462: Tur Abdin
+  m5e0641: Azal
+  mf3710d: Az-Zu‘alla
+  mcb263d: Beit Sira
+  m8ded6d: Khirbet Bereikut
+  mcbb4ce: Wadi ar-Rashrash
+  mb8f222: Wadi al-Juththa
+  m191379: Wadi Shaqq ad-Dab
+  mf4a85f: Wadi el-Feranj
+  m52acf7: Khirbet es-Samra
+  mfe4d03: Khirbet el-Mazari’a
+  m52bb94: Iraq el-Kharab
+  m68e2d1: Ain Seridah
+  m4b29ef: Khirbet Banat Barr
+  mf3284e: Surdah
+  mf06c0c: Ez-Zarat
+  m63822c: Hồ Urmia
+  m5dd1f8: Mezad Refed
+  mb3d1e9: Zifran
+  m54cf31: Al-Zaafaraniyah
+  me7b1fa: Merj Ekkeh
+  m917b6c: Souq Wadi Barada
+  mbbf7eb: Khirbet Adasa
+  m63c98b: Adulis
+  m974608: Horbat Arbel
+  m0288d5: Khirbet al-Yahud
+  m8f3972: Carthage
+  m2ed2a7: Anjar
+  m108001: Tell Abu Shahrain
+  mda592c: Etruria
+  md11454: Jett
+  m7767c8: Kursi
+  m38cb91: Al-Abbasiyah
+  m2abfe7: Ihnasiyyah al-Madinah
+  m96cadb: Tell Belim
+  mecccdd: Cung điện Herod ở Jerusalem
+  m3b4604: Kamid el-Loz
+  m963bb7: Al-Bad
+  me0b42d: Najran
+  m232ed8: Salona
+  me25924: Sparta
+  mf63b4b: Cửa sông Tigris
+  m910aae: Huelva
+  m81af16: Gürün
+  m2f36e0: Samawah
+  mff5782: Tel Habuwa
+  m297af3: Tell el-Muqayyar
+  m428846: Bayburt
+  m771c29: Kibrit
+  m874804: Tall al-Qulzum
+  mf7135b: Fayid
+  m4b41ea: Sanandaj
+  md377f5: Anin
+  mcaedc7: Bint Jbeil
+  m605d72: Khirbet el-Biar
+  m1de7f8: Tell Aushariye
+people:
+  Aaron@Exo.4.14-Heb: A-rôn
+  Abagtha@Est.1.10: A-bác-tha
+  Abda@1Ki.4.6: Áp-đa
+  Abdeel@Jer.36.26: Áp-đê-ên
+  Abdi@1Ch.6.44: Áp-đi
+  Abdi@2Ch.29.12: Áp-đi
+  Abdi@Ezr.10.26: Áp-đi
+  Abdiel@1Ch.5.15: Áp-đi-ên
+  Abdon@1Ch.8.23: Áp-đôn
+  Abdon@1Ch.8.30-: Áp-đôn
+  Abdon@Jdg.12.13-: Áp-đôn
+  Abel@Gen.4.2-Heb: A-bên
+  Abi-albon@2Sa.23.31-1Ch: A-bi-Anh-bôn
+  Abi@2Ki.18.2-2Ch: A-bi
+  Abiah@1Ch.2.24: A-bi-gia
+  Abiathar@1Sa.22.20-Mrk: A-bia-tha
+  Abida@Gen.25.4-1Ch: A-bi-đa
+  Abidan@Num.1.11-: A-bi-đan
+  Abiel@1Sa.9.1-1Ch: A-bi-ên
+  Abiezer@1Ch.7.18: A-bi-ê-xe
+  Abiezer@2Sa.23.27-1Ch: A-bi-ê-xe
+  Abiezer@Num.26.30-Jdg: A-bi-ê-xe
+  Abigail@1Sa.25.3-1Ch: A-bi-ga-in
+  Abigail@2Sa.17.25-1Ch: A-bi-ga-in
+  Abihail@1Ch.2.29: A-bi-hai
+  Abihail@1Ch.5.14: A-bi-hai
+  Abihail@2Ch.11.18: A-bi-hai
+  Abihail@Est.2.15-: A-bi-hai
+  Abihail@Num.3.35: A-bi-hai
+  Abihu@Exo.6.23-1Ch: A-bi-hu
+  Abihud@1Ch.8.3: A-bi-hút
+  Abijah@1Ch.24.10-Luk: A-bi-gia
+  Abijah@1Ch.7.8: A-bi-gia
+  Abijah@1Ki.14.1: A-bi-gia
+  Abijah@1Ki.14.31-Mat: A-bi-gia
+  Abijah@1Sa.8.2-1Ch: A-bi-gia
+  Abijah@Neh.10.7-: A-bi-gia
+  Abimael@Gen.10.28-1Ch: A-bi-ma-ên
+  Abimelech@Gen.20.2-: A-bi-mê-léc
+  Abimelech@Jdg.8.31-2Sa: A-bi-mê-léc
+  Abinadab@1Ki.4.11: A-bi-na-đáp
+  Abinadab@1Sa.14.49-1Ch: A-bi-na-đáp
+  Abinadab@1Sa.16.8-1Ch: A-bi-na-đáp
+  Abinadab@1Sa.7.1-1Ch: A-bi-na-đáp
+  Abinoam@Jdg.4.6-: A-bi-nô-am
+  Abiram@1Ki.16.34: A-bi-ram
+  Abiram@Num.16.1-Psa: A-bi-ram
+  Abishag@1Ki.1.3-: A-bi-sác
+  Abishai@1Sa.26.6-1Ch: A-bi-sai
+  Abishua@1Ch.6.4-Ezr: A-bi-sua
+  Abishua@1Ch.8.4: A-bi-sua
+  Abishur@1Ch.2.28-: A-bi-su
+  Abital@2Sa.3.4-1Ch: A-bi-tanh
+  Abitub@1Ch.8.11: A-bi-túp
+  Abiud@Mat.1.13: A-bi-út
+  Abner@1Sa.14.50-1Ch: Áp-ne
+  Abraham@Gen.11.26-1Pe: Áp-ra-ham
+  Absalom@2Sa.3.3-Psa: Áp-sa-lôm
+  Achaicus@1Co.16.17-: A-chai-cơ
+  Achan@Jos.7.1-1Ch: A-can
+  Achbor@2Ki.22.12-Jer: Ạc-bồ
+  Achbor@Gen.36.38-1Ch: Ạc-bồ
+  Achim@Mat.1.14: A-chim
+  Achish@1Sa.21.10-Psa: A-kích
+  Achsah@1Ch.2.49: Ạc-sa
+  Achsah@Jos.15.16-Jdg: Ạc-sa
+  Adah@Gen.26.34-: A-đa
+  Adaiah@1Ch.8.21: A-đa-gia
+  Adaiah@1Ch.9.12-Neh: A-đa-gia
+  Adaiah@2Ch.23.1: A-đa-gia
+  Adaiah@2Ki.22.1: A-đa-gia
+  Adaiah@Ezr.10.29: A-đa-gia
+  Adaiah@Ezr.10.39: A-đa-gia
+  Adaiah@Neh.11.5: A-đa-gia
+  Adalia@Est.9.8: A-đa-lia
+  Adam@Gen.2.19-Jud: A-đam
+  Adbeel@Gen.25.13-1Ch: Át-bê-ên
+  Addar@1Ch.8.3: Át-đa
+  Addi@Luk.3.28: A-đi
+  Adiel@1Ch.27.25: A-đi-ên
+  Adiel@1Ch.4.36: A-đi-ên
+  Adiel@1Ch.9.12-Neh: A-đi-ên
+  Adin@Ezr.2.15-Neh: A-đin
+  Adin@Neh.10.16: A-đin
+  Adina@1Ch.11.42: A-đi-na
+  Adino@2Sa.23.8: A-đi-nô
+  Adlai@1Ch.27.29: Át-lai
+  Admatha@Est.1.14: Át-ma-tha
+  Adna@Ezr.10.30: Át-na
+  Adna@Neh.12.15: Át-na
+  Adnah@1Ch.12.20: Át-na
+  Adnah@2Ch.17.14: Át-na
+  Adoni-bezek@Jdg.1.5-: A-đô-ni-Bê-xéc
+  Adoni-zedek@Jos.10.1-: A-đô-ni-Xê-đéc
+  Adonijah@2Ch.17.8: A-đô-ni-gia
+  Adonijah@2Sa.3.4-1Ch: A-đô-ni-gia
+  Adonijah@Neh.10.16: A-đô-ni-gia
+  Adonikam@Ezr.2.13-Neh: A-đô-ni-cam
+  Adoram@2Sa.20.24-2Ch: A-đô-ram
+  Adrammelech@2Ki.17.31: A-tra-mê-léc
+  Adrammelech@2Ki.19.37-Isa: A-tra-mê-léc
+  Adriel@1Sa.18.19-2Sa: Át-ri-ên
+  Aeneas@Act.9.33-: Ê-nê
+  Agabus@Act.11.28-: A-ga-bút
+  Agag@1Sa.15.8-Est: A-ga
+  Agag@Num.24.7: A-ga
+  Agee@2Sa.23.11: A-ghe
+  Agrippa@Act.25.13-: Ạc-ríp-ba
+  Agur@Pro.30.1: A-gu-rơ
+  Ahab@1Ki.16.28-Mic: A-háp
+  Ahab@Jer.29.21-: A-háp
+  Aharhel@1Ch.4.8: A-ha-hên
+  Ahasbai@2Sa.23.34: A-cạt-bai
+  Ahasuerus@Ezr.4.6-Dan: A-suê-ru
+  Ahaz@1Ch.8.35-: A-cha
+  Ahaz@2Ki.15.38-Mat: A-cha
+  Ahaziah@1Ki.22.40-2Ch: A-cha-xia
+  Ahaziah@2Ki.8.24-2Ch: A-cha-xia
+  Ahban@1Ch.2.29: Ạc-ban
+  Aher@1Ch.7.12: A-he
+  Ahi@1Ch.5.15: A-hi
+  Ahi@1Ch.7.34: A-hi
+  Ahiah@Neh.10.26: A-hi-gia
+  Ahiam@2Sa.23.33-1Ch: A-hi-giam
+  Ahian@1Ch.7.19: A-hi-an
+  Ahiezer@1Ch.12.3: A-hi-ê-xe
+  Ahiezer@Num.1.12-: A-hi-ê-xe
+  Ahihud@1Ch.8.7: A-hi-hút
+  Ahihud@Num.34.27: A-hi-hút
+  Ahijah@1Ch.11.36: A-hi-gia
+  Ahijah@1Ch.2.25: A-hi-gia
+  Ahijah@1Ch.8.7: A-hi-gia
+  Ahijah@1Ki.11.29-2Ch: A-hi-gia
+  Ahijah@1Ki.15.27-2Ki: A-hi-gia
+  Ahijah@1Ki.4.3: A-hi-gia
+  Ahikam@2Ki.22.12-Jer: A-hi-cam
+  Ahilud@2Sa.8.16-1Ch: A-hi-lút
+  Ahimaaz@1Ki.4.15: A-hi-mát
+  Ahimaaz@1Sa.14.50: A-hi-mát
+  Ahimaaz@2Sa.15.27-1Ch: A-hi-mát
+  Ahiman@1Ch.9.17: A-hi-man
+  Ahiman@Num.13.22-Jdg: A-hi-man
+  Ahimelech@1Sa.14.3-Psa: A-hi-mê-léc
+  Ahimelech@1Sa.26.6: A-hi-mê-léc
+  Ahimelech@2Sa.8.17-1Ch: A-hi-mê-léc
+  Ahimoth@1Ch.6.25-: A-hi-mốt
+  Ahinadab@1Ki.4.14: A-hi-na-đáp
+  Ahinoam@1Sa.14.50: A-hi-nô-am
+  Ahinoam@1Sa.25.43-1Ch: A-hi-nô-am
+  Ahio@1Ch.8.14: A-hi-ô
+  Ahio@1Ch.8.31-: A-hi-ô
+  Ahio@2Sa.6.3-1Ch: A-hi-ô
+  Ahira@Num.1.15-: A-hi-ra
+  Ahisamach@Exo.31.6-: A-hi-sa-mạc
+  Ahishahar@1Ch.7.10: A-hi-sa-ha
+  Ahishar@1Ki.4.6: A-hi-sa
+  Ahithophel@2Sa.15.12-1Ch: A-hi-tô-phe
+  Ahitub@1Ch.6.11-Ezr: A-hi-túp
+  Ahitub@1Sa.14.3-: A-hi-túp
+  Ahitub@2Sa.8.17-1Ch: A-hi-túp
+  Ahlai@1Ch.11.41: Ạc-lai
+  Ahlai@1Ch.2.31: Ạc-lai
+  Ahoah@2Sa.23.9-1Ch: A-hoa
+  Ahumai@1Ch.4.2: A-hu-mai
+  Ahuzzam@1Ch.4.6: A-hu-xam
+  Ahuzzath@Gen.26.26: A-hu-sát
+  Aiah@2Sa.3.7-: Ai-gia
+  Aiah@Gen.36.24-1Ch: Ai-gia
+  Akan@Gen.36.27-1Ch: A-can
+  Akkub@1Ch.3.24: A-cúp
+  Akkub@1Ch.9.17-Neh: A-cúp
+  Akkub@Ezr.2.45: A-cúp
+  Akkub@Neh.8.7: A-cúp
+  Alemeth@1Ch.7.8: A-lê-mết
+  Alemeth@1Ch.8.36-: A-lê-mết
+  Alexander@1Ti.1.20-2Ti: A-léc-xan-đơ
+  Alexander@Act.19.33: A-léc-xan-đơ
+  Alexander@Act.4.6: A-léc-xan-đơ
+  Alexander@Mrk.15.21: A-léc-xan-đơ
+  Allon@1Ch.4.37: A-lôn
+  Almodad@Gen.10.26-1Ch: A-mô-đát
+  Alphaeus@Mat.10.3-Act: A-phê
+  Alvah@Gen.36.40-1Ch: Anh-va
+  Alvan@Gen.36.23-1Ch: Anh-van
+  Amal@1Ch.7.35: A-manh
+  Amalek@Gen.36.12-: A-ma-léc
+  Amariah@1Ch.23.19-: A-ma-ria
+  Amariah@1Ch.6.11-Ezr: A-ma-ria
+  Amariah@1Ch.6.7-: A-ma-ria
+  Amariah@2Ch.19.11: A-ma-ria
+  Amariah@2Ch.31.15: A-ma-ria
+  Amariah@Ezr.10.42: A-ma-ria
+  Amariah@Neh.10.3-: A-ma-ria
+  Amariah@Neh.11.4: A-ma-ria
+  Amariah@Zep.1.1: A-ma-ria
+  Amasa@2Ch.28.12: A-ma-sa
+  Amasa@2Sa.17.25-1Ch: A-ma-sa
+  Amasai@1Ch.12.18: A-ma-sai
+  Amasai@1Ch.15.24: A-ma-sai
+  Amasai@1Ch.6.25-: A-ma-sai
+  Amasai@2Ch.29.12: A-ma-sai
+  Amasiah@2Ch.17.16: A-ma-sia
+  Amaziah@1Ch.4.34: A-ma-xia
+  Amaziah@1Ch.6.45: A-ma-xia
+  Amaziah@2Ki.12.21-2Ch: A-ma-xia
+  Amaziah@Amo.7.10-: A-ma-xia
+  Ami@Ezr.2.57-Neh: A-mi
+  Amittai@2Ki.14.25-Jon: A-mi-tai
+  Ammiel@1Ch.26.5: A-mi-ên
+  Ammiel@2Sa.9.4-: A-mi-ên
+  Ammiel@Num.13.12: A-mi-ên
+  Ammihud@1Ch.9.4: A-mi-hút
+  Ammihud@2Sa.13.37: A-mi-hút
+  Ammihud@Num.1.10-1Ch: A-mi-hút
+  Ammihud@Num.34.20: A-mi-hút
+  Ammihud@Num.34.28: A-mi-hút
+  Amminadab@1Ch.15.10-: A-mi-na-đáp
+  Amminadab@Exo.6.23-Luk: A-mi-na-đáp
+  Ammishaddai@Num.1.12-: A-mi-sa-đai
+  Ammizabad@1Ch.27.6: Am-mi-xa-đáp
+  Amnon@1Ch.4.20: Am-nôn
+  Amnon@2Sa.3.2-1Ch: Am-nôn
+  Amok@Neh.12.7-: A-móc
+  Amon@1Ki.22.26-2Ch: A-môn
+  Amon@2Ki.21.18-Mat: A-môn
+  Amos@Amo.1.1-: A-mốt
+  Amos@Luk.3.25: A-mốt
+  Amoz@2Ki.19.2-Isa: A-mốt
+  Ampliatus@Rom.16.8: Am-li-a
+  Amram@Exo.6.18-1Ch: Am-ram
+  Amram@Ezr.10.34: Am-ram
+  Amraphel@Gen.14.1-: Am-ra-phên
+  Amzi@1Ch.6.46: Am-si
+  Amzi@Neh.11.12: Am-si
+  Anah@Gen.36.2-1Ch: A-na
+  Anaiah@Neh.10.22: A-na-gia
+  Anaiah@Neh.8.4: A-na-gia
+  Anak@Num.13.22-Jdg: A-nác
+  Anammelech@2Ki.17.31: A-na-mê-léc
+  Anan@Neh.10.26: A-nan
+  Anani@1Ch.3.24: A-na-ni
+  Ananiah@Neh.3.23: A-na-nia
+  Ananias@Act.23.2-: A-na-nia
+  Ananias@Act.5.1-: A-na-nia
+  Ananias@Act.9.10-: A-na-nia
+  Anath@Jdg.3.31-: A-nát
+  Anathoth@1Ch.7.8: A-na-tốt
+  Anathoth@Neh.10.19: A-na-tốt
+  Andrew@Mat.4.18-Act: Anh-rê
+  Andronicus@Rom.16.7: An-trô-ni-cơ
+  Aner@Gen.14.13-: A-ne
+  Aniam@1Ch.7.19: A-ni-am
+  Anna@Luk.2.36: An-ne
+  Annas@Luk.3.2-Act: An-ne
+  Anthothijah@1Ch.8.24: An-tô-ti-gia
+  Antipas@Rev.2.13: An-ti-ba
+  Anub@1Ch.4.8: A-núp
+  Apelles@Rom.16.10: A-be-lơ
+  Aphiah@1Sa.9.1: A-phi-ác
+  Apollos@Act.18.24-Tit: A-bô-lô
+  Apphia@Phm.1.2: Áp-bi
+  Aquila@Act.18.2-2Ti: A-qui-la
+  Ara@1Ch.7.38: A-ra
+  Arad@1Ch.8.15: A-rát
+  Arah@1Ch.7.39: A-ra
+  Arah@Ezr.2.5-Neh: A-ra
+  Arah@Neh.6.18: A-ra
+  Aram@1Ch.7.34: A-ram
+  Aram@Gen.10.22-1Ch: A-ram
+  Aram@Gen.22.21: A-ram
+  Aramitess@1Ch.7.14: Người nữ A-ram
+  Aran@Gen.36.28-1Ch: A-ran
+  Arba@Jos.14.15-: A-ra-ba
+  Archelaus@Mat.2.22: A-chê-la-u
+  Archippus@Col.4.17-Phm: A-chíp
+  Ard@Gen.46.21: A-rết
+  Ard@Num.26.40: A-rết
+  Ardon@1Ch.2.18: Ạt-đôn
+  Areli@Gen.46.16-Num: A-rê-li
+  Aretas@2Co.11.32: A-rê-ta
+  Argob@2Ki.15.25: Ạt-gốp
+  Aridai@Est.9.9: A-ri-đai
+  Aridatha@Est.9.8: A-ri-đa-tha
+  Arieh@2Ki.15.25: A-ri-ê
+  Ariel@Ezr.8.16: A-ri-ên
+  Arioch@Dan.2.14-: A-ri-ốc
+  Arioch@Gen.14.1-: A-ri-ốc
+  Arisai@Est.9.9: A-ri-sai
+  Aristarchus@Act.19.29-Phm: A-ri-tạc
+  Aristobulus@Rom.16.10: A-rích-tô-bu
+  Armoni@2Sa.21.8: Át-mô-ni
+  Arnan@1Ch.3.21: Ạc-nan
+  Arod@Gen.46.16-Num: A-rốt
+  Arpachshad@Gen.10.22-Luk: A-bác-sát
+  Artaxerxes@Ezr.4.7-Neh: Ạt-ta-xét-xe
+  Artemas@Tit.3.12: A-te-ma
+  Arza@1Ki.16.9: Ạt-sa
+  Asa@1Ch.9.16: A-sa
+  Asa@1Ki.15.8-Mat: A-sa
+  Asahel@2Ch.17.8: A-sa-ên
+  Asahel@2Ch.31.13: A-sa-ên
+  Asahel@2Sa.2.18-1Ch: A-sa-ên
+  Asahel@Ezr.10.15: A-sa-ên
+  Asaiah@1Ch.15.6-: A-sa-gia
+  Asaiah@1Ch.4.36: A-sa-gia
+  Asaiah@1Ch.6.30: A-sa-gia
+  Asaiah@1Ch.9.5: A-sa-gia
+  Asaiah@2Ki.22.12-2Ch: A-sa-gia
+  Asaph@1Ch.6.39-Psa: A-sáp
+  Asaph@1Ch.9.15-Neh: A-sáp
+  Asaph@2Ki.18.18-Isa: A-sáp
+  Asaph@Neh.2.8: A-sáp
+  Asarel@1Ch.4.16: A-sa-rên
+  Asenath@Gen.41.45-: Ách-nát
+  Asharelah@1Ch.25.2-: A-sa-rê-la
+  Ashbel@Gen.46.21-1Ch: Ách-bên
+  Asher@Gen.30.13-Rev: A-se
+  Ashhur@1Ch.2.24-: A-su
+  Ashkenaz@Gen.10.3-1Ch: Ách-kê-na
+  Ashpenaz@Dan.1.3: Át-bê-na
+  Ashvath@1Ch.7.33: A-vát
+  Asiel@1Ch.4.35: A-si-ên
+  Asnah@Ezr.2.50: A-sê-na
+  Aspatha@Est.9.7: A-ba-tha
+  Asriel@1Ch.7.14: Ách-ri-ên
+  Asriel@Num.26.31-Jos: Ách-ri-ên
+  Asshur@Gen.10.22-1Ch: A-su-rơ
+  Assir@1Ch.6.23-: Át-si
+  Assir@Exo.6.24-1Ch: Át-si
+  Asyncritus@Rom.16.14: A-sin-cơ-rích
+  Atarah@1Ch.2.26: A-ta-ra
+  Ater@Ezr.2.16-Neh: A-te
+  Ater@Ezr.2.42-Neh: A-te
+  Ater@Neh.10.17: A-te
+  Athaiah@Neh.11.4: A-tha-gia
+  Athaliah@1Ch.8.26: A-tha-li
+  Athaliah@2Ki.8.26-2Ch: A-tha-li
+  Athaliah@Ezr.8.7: A-tha-li
+  Athlai@Ezr.10.28: Át-lai
+  Attai@1Ch.12.11: Ạt-tai
+  Attai@1Ch.2.35-: Ạt-tai
+  Attai@2Ch.11.20: Ạt-tai
+  Augustus@Luk.2.1-Act: Au-gút-tơ
+  Azaliah@2Ki.22.3-2Ch: A-xa-lia
+  Azaniah@Neh.10.9: A-xa-nia
+  Azarel@1Ch.12.6: A-xa-rên
+  Azarel@1Ch.27.22: A-xa-rên
+  Azarel@Ezr.10.41: A-xa-rên
+  Azarel@Neh.12.36: A-xa-rên
+  Azariah@1Ch.2.38-: A-xa-ria
+  Azariah@1Ch.2.8: A-xa-ria
+  Azariah@1Ch.6.10-Ezr: A-xa-ria
+  Azariah@1Ch.6.13-Ezr: A-xa-ria
+  Azariah@1Ki.4.2-1Ch: A-xa-ria
+  Azariah@1Ki.4.5: A-xa-ria
+  Azariah@2Ch.15.1: A-xa-ria
+  Azariah@2Ch.21.2: A-xa-ria
+  Azariah@2Ch.23.1a: A-xa-ria
+  Azariah@2Ch.23.1b: A-xa-ria
+  Azariah@2Ch.26.17-: A-xa-ria
+  Azariah@2Ch.28.12: A-xa-ria
+  Azariah@2Ch.29.12a: A-xa-ria
+  Azariah@2Ch.29.12b: A-xa-ria
+  Azariah@2Ch.31.10-: A-xa-ria
+  Azariah@Dan.1.6-: A-xa-ria
+  Azariah@Neh.3.23-: A-xa-ria
+  Azariah@Neh.7.7-: A-xa-ria
+  Azariah@Neh.8.7: A-xa-ria
+  Azariahu@2Ch.21.2: A-xa-ria
+  Azaz@1Ch.5.8: A-xa
+  Azaziah@1Ch.15.21: A-xa-xia
+  Azaziah@1Ch.27.20: A-xa-xia
+  Azaziah@2Ch.31.13: A-xa-xia
+  Azbuk@Neh.3.16: A-xơ-búc
+  Azel@1Ch.8.37-: A-xên
+  Azgad@Ezr.2.12-Neh: A-gát
+  Azgad@Neh.10.15: A-gát
+  Aziza@Ezr.10.27: A-xi-xa
+  Azmaveth@1Ch.12.3: Ách-ma-vết
+  Azmaveth@1Ch.27.25: Ách-ma-vết
+  Azmaveth@1Ch.8.36-: Ách-ma-vết
+  Azmaveth@2Sa.23.31-1Ch: Ách-ma-vết
+  Azor@Mat.1.13-: A-xô
+  Azriel@1Ch.27.19: Ách-ri-ên
+  Azriel@1Ch.5.24: Ách-ri-ên
+  Azriel@Jer.36.26: Ách-ri-ên
+  Azrikam@1Ch.3.23: A-ri-kham
+  Azrikam@1Ch.8.38-: A-ri-kham
+  Azrikam@1Ch.9.14-Neh: A-ri-kham
+  Azrikam@2Ch.28.7: A-ri-kham
+  Azubah@1Ch.2.18-: A-xu-ba
+  Azubah@1Ki.22.42-2Ch: A-xu-ba
+  Azzan@Num.34.26: A-xan
+  Azzur@Ezk.11.1: A-xua
+  Azzur@Jer.28.1: A-xua
+  Azzur@Neh.10.17: A-xua
+  Baal-hanan@1Ch.27.28: Ba-anh-Ha-nan
+  Baal-hanan@Gen.36.38-1Ch: Ba-anh-Ha-nan
+  Baal-zebub@2Ki.1.2-: Ba-anh-Xê-bụt
+  Baal@1Ch.5.5: Ba-anh
+  Baal@1Ch.8.30-: Ba-anh
+  Baalis@Jer.40.14: Ba-a-lít
+  Baana@1Ki.4.12: Ba-a-na
+  Baana@1Ki.4.16: Ba-a-na
+  Baana@Neh.3.4: Ba-a-na
+  Baanah@2Sa.23.29-1Ch: Ba-a-na
+  Baanah@2Sa.4.2-: Ba-a-na
+  Baanah@Ezr.2.2-Neh: Ba-a-na
+  Baanah@Neh.10.27: Ba-a-na
+  Baara@1Ch.8.8: Ba-ra
+  Baaseiah@1Ch.6.40: Ba-sê-gia
+  Baasha@1Ki.15.16-Jer: Ba-ê-sa
+  Bakbakkar@1Ch.9.15: Bác-ba-cát
+  Bakbuk@Ezr.2.51-Neh: Bác-búc
+  Bakbukiah@Neh.11.17-: Bác-bu-kia
+  Balaam@Num.22.5-Rev: Ba-la-am
+  Baladan@2Ki.20.12-Isa: Ba-la-đan
+  Balak@Num.22.2-Rev: Ba-lác
+  Bani@1Ch.6.46: Ba-ni
+  Bani@1Ch.9.4: Ba-ni
+  Bani@2Sa.23.36: Ba-ni
+  Bani@Ezr.10.34: Ba-ni
+  Bani@Ezr.10.38: Ba-ni
+  Bani@Ezr.2.10-Neh: Ba-ni
+  Bani@Neh.10.14: Ba-ni
+  Bani@Neh.11.22: Ba-ni
+  Bani@Neh.3.17: Ba-ni
+  Bani@Neh.9.4b-: Ba-ni
+  Bar-jesus@Act.13.6-: Ba-Giê-su
+  Barabbas@Mat.27.16-Jhn: Ba-ra-ba
+  Barachel@Job.32.2-: Ba-ra-kê-ên
+  Barak@Jdg.4.6-Heb: Ba-rác
+  Bariah@1Ch.3.22: Ba-ria
+  Barkos@Ezr.2.53-Neh: Bạt-cô
+  Barnabas@Act.4.36-Col: Ba-na-ba
+  Bartholomew@Mat.10.3-Act: Ba-thê-lê-my
+  Bartimaeus@Mrk.10.46: Ba-ti-mê
+  Baruch@Jer.32.12-: Ba-rúc
+  Baruch@Neh.10.6: Ba-rúc
+  Baruch@Neh.11.5: Ba-rúc
+  Baruch@Neh.3.20: Ba-rúc
+  Barzillai@2Sa.17.27-Neh: Bát-xi-lai
+  Barzillai@2Sa.21.8: Bát-xi-lai
+  Barzillai@Ezr.2.61-Neh: Bát-xi-lai
+  Basemath@1Ki.4.15: Bách-mát
+  Bath-shua@Gen.38.2-1Ch: Bát-sua
+  Bathsheba@2Sa.11.3-Psa: Bát-Sê-ba
+  Bavvai@Neh.3.18: Ba-vai
+  Bazluth@Ezr.2.52-Neh: Ba-lút
+  Bealiah@1Ch.12.5: Bê-a-lia
+  Bebai@Ezr.2.11-Neh: Bê-bai
+  Bebai@Ezr.8.11: Bê-bai
+  Bebai@Neh.10.15: Bê-bai
+  Becher@Gen.46.21-1Ch: Bê-ke
+  Becher@Num.26.35: Bê-ke
+  Becorath@1Sa.9.1: Bê-cô-rát
+  Bedad@Gen.36.35-1Ch: Bê-đát
+  Bedan@1Ch.7.17: Bê-đan
+  Bedeiah@Ezr.10.35: Bê-đia
+  Beera@1Ch.7.37: Bê-ê-ra
+  Beerah@1Ch.5.6: Bê-ê-ra
+  Beeri@Gen.26.34: Bê-ê-ri
+  Beeri@Hos.1.1: Bê-ê-ri
+  Bela@1Ch.5.8: Bê-la
+  Bela@Gen.36.32-1Ch: Bê-la
+  Bela@Gen.46.21-1Ch: Bê-la
+  Belshazzar@Dan.5.1-: Bên-xát-sa
+  Ben-Geber@1Ki.4.13: Bên-Ghê-be
+  Ben-abinadab@1Ki.4.11: Bên-A-bi-na-đáp
+  Ben-ammi@Gen.19.38: Bên-Am-mi
+  Ben-deker@1Ki.4.9: Bên-Đê-ke
+  Ben-hadad@1Ki.15.18-Jer: Bên-Ha-đát
+  Ben-hadad@2Ki.13.3-Amo: Bên-Ha-đát
+  Ben-hadad@2Ki.6.24-: Bên-Ha-đát
+  Ben-hail@2Ch.17.7: Bên-Hai
+  Ben-hanan@1Ch.4.20: Bên-Ha-nan
+  Ben-hesed@1Ki.4.10: Bên-Hê-sết
+  Ben-hur@1Ki.4.8: Bên-Hu-rơ
+  Ben-zoheth@1Ch.4.20: Bên-Xô-hết
+  Ben@1Ch.15.18: Bên
+  Benaiah@1Ch.15.18-: Bê-na-gia
+  Benaiah@1Ch.27.34: Bê-na-gia
+  Benaiah@1Ch.4.36: Bê-na-gia
+  Benaiah@2Ch.20.14: Bê-na-gia
+  Benaiah@2Ch.31.13: Bê-na-gia
+  Benaiah@2Sa.23.30-1Ch: Bê-na-gia
+  Benaiah@2Sa.8.18-1Ch: Bê-na-gia
+  Benaiah@Ezk.11.1-: Bê-na-gia
+  Benaiah@Ezr.10.25: Bê-na-gia
+  Benaiah@Ezr.10.30: Bê-na-gia
+  Benaiah@Ezr.10.35: Bê-na-gia
+  Benaiah@Ezr.10.43: Bê-na-gia
+  Beninu@Neh.10.13: Bê-ni-nu
+  Benjamin@1Ch.7.10: Bên-gia-min
+  Benjamin@Ezr.10.32: Bên-gia-min
+  Benjamin@Gen.35.18-Rev: Bên-gia-min
+  Benjamin@Neh.12.34: Bên-gia-min
+  Benjamin@Neh.3.23: Bên-gia-min
+  Beno@1Ch.24.26-: Bê-nô
+  Beor@Gen.36.32-1Ch: Bê-ô
+  Beor@Num.22.5-2Pe: Bê-ô
+  Bera@Gen.14.2: Bê-ra
+  Beracah@1Ch.12.3: Bê-ra-ca
+  Beraiah@1Ch.8.21: Bê-ra-gia
+  Berechiah@1Ch.3.20: Bê-rê-kia
+  Berechiah@1Ch.6.39-: Bê-rê-kia
+  Berechiah@1Ch.9.16: Bê-rê-kia
+  Berechiah@2Ch.28.12: Bê-rê-kia
+  Berechiah@Neh.3.4-: Bê-rê-kia
+  Berechiah@Zec.1.1-: Bê-rê-kia
+  Bered@1Ch.7.20: Bê-re
+  Beriah@1Ch.23.10-: Bê-ri-a
+  Beriah@1Ch.7.23: Bê-ri-a
+  Beriah@1Ch.8.13-: Bê-ri-a
+  Bernice@Act.25.13-: Bê-rê-nít
+  Besai@Ezr.2.49-Neh: Bê-sai
+  Besodeiah@Neh.3.6: Bê-sô-đia
+  Beth-rapha@1Ch.4.12: Bết-Ra-pha
+  Bethuel@Gen.22.22-: Bê-tu-ên
+  Bezai@Ezr.2.17-Neh: Bết-sai
+  Bezai@Neh.10.18: Bết-sai
+  Bezalel@Exo.31.2-2Ch: Bết-sa-lê-ên
+  Bezalel@Ezr.10.30: Bết-sa-lê-ên
+  Bezer@1Ch.7.37: Bết-se
+  Bichri@2Sa.20.1-: Biếc-ri
+  Bidkar@2Ki.9.25: Bích-ca
+  Bigtha@Est.1.10: Bít-tha
+  Bigvai@Ezr.2.14-Neh: Biết-vai
+  Bigvai@Ezr.2.2-Neh: Biết-vai
+  Bigvai@Neh.10.16: Biết-vai
+  Bildad@Job.2.11-: Binh-đát
+  Bilgah@1Ch.24.14: Binh-ga
+  Bilgah@Neh.10.8-: Binh-ga
+  Bilhah@Gen.29.29-1Ch: Bi-la
+  Bilhan@1Ch.7.10: Binh-han
+  Bilhan@Gen.36.27-1Ch: Binh-han
+  Bilshan@Ezr.2.2-Neh: Binh-san
+  Bimhal@1Ch.7.33: Bim-hanh
+  Binea@1Ch.8.37-: Bi-nê-a
+  Binnui@Ezr.10.30: Bin-nui
+  Binnui@Ezr.10.38: Bin-nui
+  Binnui@Ezr.8.33: Bin-nui
+  Binnui@Neh.3.24: Bin-nui
+  Birsha@Gen.14.2: Bi-rê-sa
+  Birzaith@1Ch.7.31: Biếc-xa-vít
+  Bishlam@Ezr.4.7: Bít-lam
+  Bithiah@1Ch.4.18: Bi-thia
+  Biztha@Est.1.10: Bít-tha
+  Blastus@Act.12.20: Ba-la-tút
+  Boaz@Rut.2.1-Luk: Bô-ô
+  Bocheru@1Ch.8.38-: Bốc-ru
+  Bohan@Jos.15.6-: Bô-han
+  Bukki@1Ch.6.5-Ezr: Bu-ki
+  Bukki@Num.34.22: Bu-ki
+  Bukkiah@1Ch.25.4-: Búc-ki-gia
+  Bunah@1Ch.2.25: Bu-na
+  Bunni@Neh.10.15: Bun-ni
+  Bunni@Neh.11.15: Bun-ni
+  Bunni@Neh.9.4: Bun-ni
+  Buz@1Ch.5.14: Bu-xơ
+  Buz@Gen.22.21: Bu-xơ
+  Buzi@Ezk.1.3: Bu-xi
+  Caiaphas@Mat.26.3-Act: Cai-phe
+  Cain@Gen.4.1-Jud: Ca-in
+  Cainan@Luk.3.36: Cai-nam
+  Calcol@1Ch.2.6: Canh-côn
+  Calcol@1Ki.4.31: Canh-côn
+  Caleb@1Ch.2.9-: Ca-lép
+  Caleb@Num.13.6-1Ch: Ca-lép
+  Canaan@Gen.9.18-1Ch: Ca-na-an
+  Canaanite_woman@Gen.46.10-Exo: Người đàn bà Ca-na-an
+  Carkas@Est.1.10: Cạt-cách
+  Carmi@Gen.46.9-1Ch: Cạt-mi
+  Carmi@Jos.7.1-1Ch: Cạt-mi
+  Carpus@2Ti.4.13: Ca-bút
+  Carshena@Est.1.14: Cạt-sê-na
+  Chedorlaomer@Gen.14.1-: Kết-rô-Lao-me
+  Chelal@Ezr.10.30: Kê-lanh
+  Chelub@1Ch.27.26: Kê-lúp
+  Chelub@1Ch.4.11: Kê-lúp
+  Cheluhi@Ezr.10.35: Kê-lu-hi
+  Chenaanah@1Ch.7.10: Kê-na-na
+  Chenaanah@1Ki.22.11-2Ch: Kê-na-na
+  Chenani@Neh.9.4: Kê-na-ni
+  Chenaniah@1Ch.15.22-: Kê-na-nia
+  Cheran@Gen.36.26-1Ch: Kê-ran
+  Chesed@Gen.22.22: Kê-sết
+  Chileab@2Sa.3.3-1Ch: Ki-lê-áp
+  Chilion@Rut.1.2-: Ki-li-ôn
+  Chimham@2Sa.19.37-: Kim-ham
+  Chislon@Num.34.21: Kít-lon
+  Chloe@1Co.1.11: Cơ-lô-ê
+  Chuza@Luk.8.3: Chu-xa
+  Claudia@2Ti.4.21: Cơ-lau-đia
+  Claudius@Act.11.28-: Cơ-lốt
+  Clement@Php.4.3: Cơ-lê-măn
+  Col-hozeh@Neh.11.5: Côn-Hô-xê
+  Col-hozeh@Neh.3.15: Côn-Hô-xê
+  Conaniah@2Ch.31.12-: Cô-na-nia
+  Cornelius@Act.10.1-: Cọt-nây
+  Cosam@Luk.3.28: Cô-sam
+  Cozbi@Num.25.15-: Cốt-bi
+  Crescens@2Ti.4.10: Cơ-rết-xen
+  Crispus@Act.18.8-1Co: Cơ-rít-bu
+  Cush@Gen.10.6-1Ch: Cúc
+  Cushan-rishathaim@Jdg.3.8-: Cu-san-Ri-sa-tha-im
+  Cushi@Jer.36.14: Cu-si
+  Cushi@Zep.1.1: Cu-si
+  Cyrus@2Ch.36.22-Dan: Si-ru
+  Dalphon@Est.9.7: Đanh-phông
+  Damaris@Act.17.34: Đa-ma-ri
+  Dan@Gen.30.6-1Ch: Đan
+  Daniel@Ezk.14.14-Mrk: Đa-ni-ên
+  Daniel@Ezr.8.2-Neh: Đa-ni-ên
+  Dara@1Ch.2.6: Đa-ra
+  Darda@1Ki.4.31: Đạt-đa
+  Darius@Dan.5.31-: Đa-ri-út
+  Darius@Ezr.4.5-Zec: Đa-ri-út
+  Darius@Neh.12.22: Đa-ri-út
+  Darkon@Ezr.2.56-Neh: Đạt-côn
+  Dathan@Num.16.1-Psa: Đa-than
+  David@Rut.4.17-Rev: Đa-vít
+  Debir@Jos.10.3: Đê-bia
+  Deborah@Gen.35.8: Đê-bô-ra
+  Deborah@Jdg.4.4-: Đê-bô-ra
+  Dedan@Gen.10.7-1Ch: Đê-đan
+  Dedan@Gen.25.3-1Ch: Đê-đan
+  Deker@1Ki.4.9: Đê-ke
+  Delaiah@1Ch.24.18: Đê-la-gia
+  Delaiah@1Ch.3.24: Đê-la-gia
+  Delaiah@Ezr.2.60-Neh: Đê-la-gia
+  Delaiah@Jer.36.12-: Đê-la-gia
+  Delaiah@Neh.6.10: Đê-la-gia
+  Delilah@Jdg.16.4-: Đa-li-la
+  Demas@Col.4.14-Phm: Đê-ma
+  Demetrius@Act.19.24-3Jn: Đê-mê-triu
+  Deuel@Num.1.14-: Đê-u-ên
+  Diblaim@Hos.1.3: Đíp-la-im
+  Dibri@Lev.24.11: Đíp-ri
+  Diklah@Gen.10.27-1Ch: Điếc-la
+  Dinah@Gen.30.21-: Đi-na
+  Dinaites@Ezr.4.9: Người Đi-na
+  Dionysius@Act.17.34: Đê-ni
+  Diotrephes@3Jn.1.9: Đi-ô-trép
+  Dishan@Gen.36.21-1Ch: Đi-san
+  Dishon@Gen.36.21-1Ch: Đi-sôn
+  Dishon@Gen.36.25-1Ch: Đi-sôn
+  Dodavahu@2Ch.20.37: Đô-đa-va
+  Dodo@2Sa.23.24-1Ch: Đô-đô
+  Dodo@2Sa.23.9-1Ch: Đô-đô
+  Dodo@Jdg.10.1: Đô-đô
+  Doeg@1Sa.21.7-Psa: Đô-e
+  Drusilla@Act.24.24: Đơ-ru-si
+  Dumah@Gen.25.14-1Ch: Đu-ma
+  Ebal@Gen.36.23-1Ch: Ê-banh
+  Ebed-melech@Jer.38.7-: Ê-bết-Mê-lết
+  Ebed@Ezr.8.6: Ê-bết
+  Ebed@Jdg.9.26-: Ê-bết
+  Eber@1Ch.5.13: Hê-be
+  Eber@1Ch.8.12: Hê-be
+  Eber@1Ch.8.22: Hê-be
+  Eber@Gen.10.21-Luk: Hê-be
+  Eber@Neh.12.20: Hê-be
+  Eden@2Ch.29.12: Ê-đen
+  Eden@2Ch.31.15: Ê-đen
+  Eder@1Ch.23.23-: Ê-đe
+  Eder@1Ch.8.15: Ê-đe
+  Eglah@2Sa.3.5-1Ch: Éc-la
+  Eglon@Jdg.3.12-: Éc-lôn
+  Egypt@Gen.10.6-1Ch: Mích-ra-im
+  Ehud@1Ch.7.10: Ê-hút
+  Ehud@Jdg.3.15-1Ch: Ê-hút
+  Eker@1Ch.2.27: Ê-ke
+  Ela@1Ki.4.18: Ê-la
+  Elah@1Ch.4.15: Ê-la
+  Elah@1Ch.9.8: Ê-la
+  Elah@1Ki.16.6-: Ê-la
+  Elah@2Ki.15.30-: Ê-la
+  Elah@Gen.36.41-1Ch: Ê-la
+  Elam@1Ch.26.3: Ê-lam
+  Elam@1Ch.8.24: Ê-lam
+  Elam@Ezr.2.7-Neh: Ê-lam
+  Elam@Gen.10.22-1Ch: Ê-lam
+  Elam@Neh.10.14: Ê-lam
+  Elam@Neh.12.42: Ê-lam
+  Elasah@Ezr.10.22: Ê-lê-a-sa
+  Elasah@Jer.29.3: Ê-lê-a-sa
+  Eldaah@Gen.25.4-1Ch: Ên-đa
+  Eldad@Num.11.26-: Ên-đát
+  Elead@1Ch.7.21: Ê-lê-át
+  Eleadah@1Ch.7.20: Ê-lê-a-đa
+  Eleasah@1Ch.2.39-: Ê-lê-a-sa
+  Eleasah@1Ch.8.37-: Ê-lê-a-sa
+  Eleazar@1Ch.23.21-: Ê-lê-a-sa
+  Eleazar@1Sa.7.1: Ê-lê-a-sa
+  Eleazar@2Sa.23.9-1Ch: Ê-lê-a-sa
+  Eleazar@Exo.6.23-Ezr: Ê-lê-a-sa
+  Eleazar@Ezr.10.25: Ê-lê-a-sa
+  Eleazar@Ezr.8.33: Ê-lê-a-sa
+  Eleazar@Mat.1.15: Ê-lê-a-sa
+  Eleazar@Neh.12.42: Ê-lê-a-sa
+  Elhanan@2Sa.21.19-1Ch: Ên-ha-nan
+  Elhanan@2Sa.23.24-1Ch: Ên-ha-nan
+  Eli@1Sa.1.3-1Ki: Hê-li
+  Eliab@1Ch.12.9: Ê-li-áp
+  Eliab@1Ch.15.18-: Ê-li-áp
+  Eliab@1Sa.16.6-2Ch: Ê-li-áp
+  Eliab@Num.1.9-: Ê-li-áp
+  Eliab@Num.16.1-Deu: Ê-li-áp
+  Eliada@1Ki.11.23: Ê-li-gia-đa
+  Eliada@2Ch.17.17: Ê-li-gia-đa
+  Eliada@2Sa.5.16-1Ch: Ê-li-gia-đa
+  Eliahba@2Sa.23.32-1Ch: Ê-li-ách-ba
+  Eliakim@2Ki.18.18-Isa: Ê-li-a-kim
+  Eliakim@Luk.3.30: Ê-li-a-kim
+  Eliakim@Mat.1.13: Ê-li-a-kim
+  Eliakim@Neh.12.41: Ê-li-a-kim
+  Eliam@2Sa.11.3-1Ch: Ê-li-am
+  Eliam@2Sa.23.34: Ê-li-am
+  Eliasaph@Num.1.14-: Ê-li-a-sáp
+  Eliasaph@Num.3.24: Ê-li-a-sáp
+  Eliashib@1Ch.24.12: Ê-li-a-síp
+  Eliashib@1Ch.3.24: Ê-li-a-síp
+  Eliashib@Ezr.10.24: Ê-li-a-síp
+  Eliashib@Ezr.10.27: Ê-li-a-síp
+  Eliashib@Ezr.10.36: Ê-li-a-síp
+  Eliashib@Ezr.10.6: Ê-li-a-síp
+  Eliashib@Neh.12.10-: Ê-li-a-síp
+  Eliashib@Neh.13.4-: Ê-li-a-síp
+  Eliashib@Neh.3.1-: Ê-li-a-síp
+  Eliathah@1Ch.25.4-: Ê-li-a-tha
+  Elidad@Num.34.21: Ê-li-đát
+  Eliehoenai@1Ch.26.3: Ê-li-ô-ê-nai
+  Eliehoenai@Ezr.8.4: Ê-li-ô-ê-nai
+  Eliel@1Ch.11.46: Ê-li-ên
+  Eliel@1Ch.11.47: Ê-li-ên
+  Eliel@1Ch.12.11: Ê-li-ên
+  Eliel@1Ch.15.9-: Ê-li-ên
+  Eliel@1Ch.5.24: Ê-li-ên
+  Eliel@1Ch.8.20: Ê-li-ên
+  Eliel@1Ch.8.22: Ê-li-ên
+  Eliel@2Ch.31.13: Ê-li-ên
+  Elienai@1Ch.8.20: Ê-li-ê-nai
+  Eliezer@1Ch.15.24: Ê-li-ê-xe
+  Eliezer@1Ch.27.16: Ê-li-ê-xe
+  Eliezer@1Ch.7.8: Ê-li-ê-xe
+  Eliezer@2Ch.20.37: Ê-li-ê-xe
+  Eliezer@Exo.18.4-1Ch: Ê-li-ê-xe
+  Eliezer@Ezr.10.18: Ê-li-ê-xe
+  Eliezer@Ezr.10.23: Ê-li-ê-xe
+  Eliezer@Ezr.10.31: Ê-li-ê-xe
+  Eliezer@Ezr.8.16: Ê-li-ê-xe
+  Eliezer@Gen.15.2: Ê-li-ê-xe
+  Eliezer@Luk.3.29: Ê-li-ê-xe
+  Elihoreph@1Ki.4.3: Ê-li-ô-rếp
+  Elihu@1Ch.12.20: Ê-li-hu
+  Elihu@1Ch.26.7: Ê-li-hu
+  Elihu@1Ch.27.18: Ê-li-hu
+  Elihu@1Sa.1.1-1Ch: Ê-li-hu
+  Elihu@Job.32.2-: Ê-li-hu
+  Elijah@1Ch.8.27: Ê-li
+  Elijah@1Ki.17.1-Jas: Ê-li
+  Elijah@Ezr.10.21: Ê-li
+  Elijah@Ezr.10.26: Ê-li
+  Elika@2Sa.23.25: Ê-li-ca
+  Elimelech@Rut.1.2-: Ê-li-mê-léc
+  Elioenai@1Ch.3.23-: Ê-li-ô-ê-nai
+  Elioenai@1Ch.4.36: Ê-li-ô-ê-nai
+  Elioenai@1Ch.7.8: Ê-li-ô-ê-nai
+  Elioenai@Ezr.10.22: Ê-li-ô-ê-nai
+  Elioenai@Ezr.10.27: Ê-li-ô-ê-nai
+  Elioenai@Neh.12.41: Ê-li-ô-ê-nai
+  Eliphal@1Ch.11.35: Ê-li-pha
+  Eliphaz@Gen.36.4-1Ch: Ê-li-pha
+  Eliphaz@Job.2.11-: Ê-li-pha
+  Eliphelehu@1Ch.15.18-: Ê-li-phê-lê-hu
+  Eliphelet@1Ch.8.39: Ê-li-phê-lết
+  Eliphelet@2Sa.23.34: Ê-li-phê-lết
+  Eliphelet@2Sa.5.16-1Ch: Ê-li-phê-lết
+  Eliphelet@Ezr.10.33: Ê-li-phê-lết
+  Eliphelet@Ezr.8.13: Ê-li-phê-lết
+  Elisha@1Ki.19.16-Luk: Ê-li-sê
+  Elishah@Gen.10.4-1Ch: Ê-li-sa
+  Elishama@1Ch.2.41: Ê-li-sa-ma
+  Elishama@2Ch.17.8: Ê-li-sa-ma
+  Elishama@2Ki.25.25-Jer: Ê-li-sa-ma
+  Elishama@2Sa.5.16-1Ch: Ê-li-sa-ma
+  Elishama@Jer.36.12-: Ê-li-sa-ma
+  Elishama@Num.1.10-1Ch: Ê-li-sa-ma
+  Elishaphat@2Ch.23.1: Ê-li-sa-phát
+  Elisheba@Exo.6.23: Ê-li-sê-ba
+  Elishua@2Sa.5.15-1Ch: Ê-li-sua
+  Eliud@Mat.1.14-: Ê-li-út
+  Elizabeth@Luk.1.5-: Ê-li-sa-bét
+  Elizaphan@Exo.6.22-2Ch: Ê-li-sa-phan
+  Elizaphan@Num.34.25: Ê-li-sa-phan
+  Elizur@Num.1.5-: Ê-lít-su
+  Elkanah@1Ch.12.6: Ên-ca-na
+  Elkanah@1Ch.15.23: Ên-ca-na
+  Elkanah@1Ch.6.25-: Ên-ca-na
+  Elkanah@1Ch.6.26-: Ên-ca-na
+  Elkanah@1Ch.9.16: Ên-ca-na
+  Elkanah@1Sa.1.1-1Ch: Ên-ca-na
+  Elkanah@2Ch.28.7: Ên-ca-na
+  Elkanah@Exo.6.24-1Ch: Ên-ca-na
+  Elmadam@Luk.3.28: Ên-ma-đan
+  Elnaam@1Ch.11.46: Ên-na-am
+  Elnathan@2Ki.24.8: Ên-na-than
+  Elnathan@Ezr.8.16a: Ên-na-than
+  Elnathan@Ezr.8.16b: Ên-na-than
+  Elnathan@Ezr.8.16c: Ên-na-than
+  Elnathan@Jer.26.22-: Ên-na-than
+  Elon@Gen.26.34-: Ê-lôn
+  Elon@Gen.46.14-Num: Ê-lôn
+  Elon@Jdg.12.11-: Ê-lôn
+  Elpaal@1Ch.8.11-: Ên-ba-anh
+  Elpelet@1Ch.3.6-: Ê-li-phê-lết
+  Eluzai@1Ch.12.5: Ê-lu-xai
+  Elzabad@1Ch.12.12: Ên-xa-bát
+  Elzabad@1Ch.26.7: Ên-xa-bát
+  Enan@Num.1.15-: Ê-nan
+  Enoch@Gen.4.17-: Hê-nóc
+  Enoch@Gen.5.18-Jud: Hê-nóc
+  Enosh@Gen.4.26-Luk: Ê-nót
+  Epaenetus@Rom.16.5: Ê-bai-nết
+  Epaphras@Col.1.7-Phm: Ê-pháp-ra
+  Epaphroditus@Php.2.25-: Ép-ba-phô-đích
+  Ephah@1Ch.2.46: Ê-pha
+  Ephah@1Ch.2.47: Ê-pha
+  Ephah@Gen.25.4-1Ch: Ê-pha
+  Ephai@Jer.40.8: Ê-phai
+  Epher@1Ch.4.17: Ê-phe
+  Epher@1Ch.5.24: Ê-phe
+  Epher@Gen.25.4-1Ch: Ê-phe
+  Ephlal@1Ch.2.37: Ép-la
+  Ephraim@Gen.41.52-Zec: Ép-ra-im
+  Ephrathah@Rut.1.2-1Ch: Ép-ra-ta
+  Ephron@Gen.23.8-: Ép-rôn
+  Er@1Ch.4.21: Ê-rơ
+  Er@Gen.38.3-1Ch: Ê-rơ
+  Er@Luk.3.28: Ê-rơ
+  Eran@Num.26.36: Ê-ran
+  Erastus@Act.19.22-2Ti: Ê-rát
+  Eri@Gen.46.16-Num: Ê-ri
+  Esarhaddon@2Ki.19.37-Isa: Ê-sạt-ha-đôn
+  Esau@Gen.25.25-Heb: Ê-sau
+  Eshban@Gen.36.26-1Ch: Ếch-ban
+  Eshcol@Gen.14.13-: Ếch-côn
+  Eshton@1Ch.4.11-: Ê-tôn
+  Esli@Luk.3.25: Ếch-li
+  Esther@Est.2.7-: Ê-xơ-tê
+  Ethan@1Ch.2.6-: Ê-than
+  Ethan@1Ki.4.31-Psa: Ê-than
+  Ethbaal@1Ki.16.31: Ết-ba-anh
+  Ethnan@1Ch.4.7: Ết-nan
+  Eubulus@2Ti.4.21: Ơ-bu-lu
+  Eunice@2Ti.1.5: Ơ-nít
+  Euodia@Php.4.2: Ê-yô-đi
+  Eutychus@Act.20.9: Ơ-tích
+  Eve@Gen.3.20-1Ti: Ê-va
+  Evi@Num.31.8-Jos: Ê-vi
+  Evil-merodach@2Ki.25.27-Jer: Ê-vinh-Mê-rô-đác
+  Ezbai@1Ch.11.37: E-bai
+  Ezbon@1Ch.7.7: Ét-bôn
+  Ezbon@Gen.46.16-Num: Ét-bôn
+  Ezekiel@Ezk.1.3-: Ê-xê-chi-ên
+  Ezer@1Ch.12.9: Ê-xe
+  Ezer@1Ch.4.4: Ê-xe
+  Ezer@1Ch.7.21: Ê-xe
+  Ezer@Gen.36.21-1Ch: Ê-xe
+  Ezer@Neh.12.42: Ê-xe
+  Ezer@Neh.3.19: Ê-xe
+  Ezra@Ezr.7.1-Neh: E-xơ-ra
+  Ezra@Neh.12.1-: E-xơ-ra
+  Ezrah@1Ch.4.17: Ê-xơ-ra
+  Ezri@1Ch.27.26: Ết-ri
+  Felix@Act.23.24-: Phê-lít
+  Festus@Act.24.27-: Phê-tu
+  Fortunatus@1Co.16.17-: Phốt-tu-na
+  Gaal@Jdg.9.26-: Ga-anh
+  Gabbai@Neh.11.8: Gáp-bai
+  Gad@1Sa.22.5-2Ch: Gát
+  Gad@Gen.30.11-Rev: Gát
+  Gaddi@Num.13.11: Ga-đi
+  Gaddiel@Num.13.10: Gát-đi-ên
+  Gadi@2Ki.15.14-: Ga-đi
+  Gaham@Gen.22.24: Ga-ham
+  Gahar@Ezr.2.47-Neh: Ga-ha
+  Gaius@3Jn.1.1: Gai-út
+  Gaius@Act.19.29: Gai-út
+  Gaius@Act.20.4: Gai-út
+  Gaius@Rom.16.23-1Co: Gai-út
+  Galal@1Ch.9.15: Ga-la
+  Galal@1Ch.9.16-Neh: Ga-la
+  Gallio@Act.18.12-: Ga-li-ôn
+  Gamaliel@Act.5.34-: Ga-ma-li-ên
+  Gamaliel@Num.1.10-: Ga-ma-li-ên
+  Gamul@1Ch.24.17: Ga-mun
+  Gareb@2Sa.23.38-1Ch: Ga-rép
+  Gatam@Gen.36.11-1Ch: Ga-tham
+  Gazez@1Ch.2.46a: Ga-xe
+  Gazez@1Ch.2.46b: Ga-xe
+  Gazzam@Ezr.2.48-Neh: Ga-xam
+  Geber@1Ki.4.19: Ghê-be
+  Gedaliah@1Ch.25.3-: Ghê-đa-lia
+  Gedaliah@2Ki.25.22-Jer: Ghê-đa-lia
+  Gedaliah@Ezr.10.18: Ghê-đa-lia
+  Gedaliah@Jer.38.1: Ghê-đa-lia
+  Gedaliah@Zep.1.1: Ghê-đa-lia
+  Gedor@1Ch.8.31-: Ghê-đô
+  Gehazi@2Ki.4.12-: Ghê-ha-xi
+  Gemalli@Num.13.12: Ghê-ma-li
+  Gemariah@Jer.29.3: Ghê-ma-ria
+  Gemariah@Jer.36.10-: Ghê-ma-ria
+  Genubath@1Ki.11.20: Ghê-nu-bát
+  Gera@1Ch.8.3: Ghê-ra
+  Gera@1Ch.8.7: Ghê-ra
+  Gera@2Sa.16.5-1Ki: Ghê-ra
+  Gera@Gen.46.21-1Ch: Ghê-ra
+  Gershom@Exo.2.22-1Ch: Ghẹt-sôn
+  Gershom@Ezr.8.2: Ghẹt-sôn
+  Gershon@Gen.46.11-2Ch: Ghẹt-sôn
+  Geshan@1Ch.2.47: Ghê-san
+  Geshem@Neh.2.19-: Ghê-sem
+  Gether@Gen.10.23-1Ch: Ghê-te
+  Geuel@Num.13.15: Gu-ên
+  Gibea@1Ch.2.49: Ghi-bê-a
+  Giddalti@1Ch.25.4-: Ghi-đanh-thi
+  Giddel@Ezr.2.47-Neh: Ghi-đên
+  Giddel@Ezr.2.56-Neh: Ghi-đên
+  Gideon@Jdg.6.11-Heb: Ghê-đê-ôn
+  Gideoni@Num.1.11-: Ghi-đeo-ni
+  Gilalai@Neh.12.36: Ghi-la-lai
+  Gilead@1Ch.5.14: Ga-la-át
+  Gilead@Jdg.11.1-: Ga-la-át
+  Gilead@Num.26.29-1Ch: Ga-la-át
+  Ginath@1Ki.16.21-: Ghi-nát
+  Ginnethon@Neh.10.6-: Ghi-nê-thôn
+  Gishpa@Neh.11.21: Ghít-ba
+  Gog@1Ch.5.4: Gót
+  Goliath@1Sa.17.4-1Ch: Gô-li-át
+  Gomer@Gen.10.2-Ezk: Gô-me
+  Gomer@Hos.1.3: Gô-me
+  Guni@1Ch.5.15: Gu-ni
+  Guni@Gen.46.24-1Ch: Gu-ni
+  Haahashtari@1Ch.4.6: A-hách-tha-ri
+  Habaiah@Ezr.2.61-Neh: Ha-ba-gia
+  Habakkuk@Hab.1.1-: Ha-ba-cúc
+  Habazziniah@Jer.35.3: Ha-bát-si-nia
+  Hacaliah@Neh.1.1-: Ha-ca-lia
+  Hachmoni@1Ch.27.32: Hác-mô-ni
+  Hadad@1Ki.11.14-: Ha-đát
+  Hadad@Gen.25.15-1Ch: Ha-đát
+  Hadad@Gen.36.35-1Ch: Ha-đát
+  Hadad@Gen.36.39-1Ch: Ha-đát
+  Hadadezer@2Sa.8.3-1Ch: Ha-đa-đê-xe
+  Hadlai@2Ch.28.12: Hát-lai
+  Hadoram@Gen.10.27-1Ch: Ha-đô-ram
+  Hagab@Ezr.2.46: Ha-gáp
+  Hagabah@Ezr.2.45-Neh: Ha-ga-ba
+  Hagar@Gen.16.1-Gal: A-ga
+  Haggai@Ezr.5.1-Hag: A-ghê
+  Haggedolim@Neh.11.14: Ghê-đô-lim
+  Haggi@Gen.46.16-Num: Ha-ghi
+  Haggiah@1Ch.6.30: Ha-ghi-gia
+  Haggith@2Sa.3.4-1Ch: Ha-ghít
+  Hakkatan@Ezr.8.12: Ha-ca-tan
+  Hakkoz@1Ch.24.10: Ha-cốt
+  Hakkoz@Ezr.2.61-Neh: Ha-cốt
+  Hakkoz@Neh.3.4-: Ha-cốt
+  Hakupha@Ezr.2.51-Neh: Ha-cu-pha
+  Hallohesh@Neh.3.12-: Ha-lô-hết
+  Ham@Gen.5.32-1Ch: Cham
+  Haman@Est.3.1-: Ha-man
+  Hammath@1Ch.2.55: Ha-mát
+  Hammedatha@Est.3.1-: Ham-mê-đa-tha
+  Hammelech@Jer.36.26-: Ham-mê-léc
+  Hammolecheth@1Ch.7.18: Ha-mô-lê-kết
+  Hammuel@1Ch.4.26: Ham-mu-ên
+  Hamor@Gen.33.19-Act: Hê-mô
+  Hamul@Gen.46.12-1Ch: Ha-mun
+  Hamutal@2Ki.23.31-Jer: Ha-mu-ta
+  Hanamel@Jer.32.7-: Ha-na-mê-ên
+  Hanan@1Ch.11.43: Ha-nan
+  Hanan@1Ch.8.23: Ha-nan
+  Hanan@1Ch.8.38-: Ha-nan
+  Hanan@Ezr.2.46-Neh: Ha-nan
+  Hanan@Jer.35.4: Ha-nan
+  Hanan@Neh.10.22: Ha-nan
+  Hanan@Neh.10.26: Ha-nan
+  Hanan@Neh.13.13: Ha-nan
+  Hanan@Neh.8.7-: Ha-nan
+  Hanani@1Ch.25.4-: Ha-na-ni
+  Hanani@1Ki.16.1-2Ch: Ha-na-ni
+  Hanani@Ezr.10.20: Ha-na-ni
+  Hanani@Neh.1.2-: Ha-na-ni
+  Hanani@Neh.12.36: Ha-na-ni
+  Hananiah@1Ch.25.4-: Ha-na-nia
+  Hananiah@1Ch.3.19-: Ha-na-nia
+  Hananiah@1Ch.8.24: Ha-na-nia
+  Hananiah@2Ch.26.11: Ha-na-nia
+  Hananiah@Dan.1.6-: Ha-na-nia
+  Hananiah@Ezr.10.28: Ha-na-nia
+  Hananiah@Jer.28.1-: Ha-na-nia
+  Hananiah@Jer.36.12: Ha-na-nia
+  Hananiah@Jer.37.13: Ha-na-nia
+  Hananiah@Neh.10.23: Ha-na-nia
+  Hananiah@Neh.12.12: Ha-na-nia
+  Hananiah@Neh.12.41: Ha-na-nia
+  Hananiah@Neh.3.30: Ha-na-nia
+  Hananiah@Neh.3.8: Ha-na-nia
+  Hananiah@Neh.7.2: Ha-na-nia
+  Hannah@1Sa.1.2-: An-ne
+  Hanniel@1Ch.7.39: Ha-ni-ên
+  Hanniel@Num.34.23: Ha-ni-ên
+  Hanoch@Gen.25.4-1Ch: Hê-nóc
+  Hanoch@Gen.46.9-1Ch: Hê-nóc
+  Hanun@2Sa.10.1-1Ch: Ha-nun
+  Hanun@Neh.3.13: Ha-nun
+  Hanun@Neh.3.30: Ha-nun
+  Happizzez@1Ch.24.15: Phi-xết
+  Haran@1Ch.2.46: Ha-ran
+  Haran@1Ch.23.9: Ha-ran
+  Haran@Gen.11.26-: Ha-ran
+  Harbona@Est.1.10-: Hạt-bô-na
+  Hareph@1Ch.2.51: Ha-rép
+  Harhaiah@Neh.3.8: Hạt-ha-gia
+  Harhas@2Ki.22.14-2Ch: Hạt-ha
+  Harhur@Ezr.2.51-Neh: Ha-rua
+  Harim@1Ch.24.8-Neh: Ha-rim
+  Harim@Ezr.2.32-Neh: Ha-rim
+  Harim@Neh.10.27: Ha-rim
+  Harim@Neh.3.11: Ha-rim
+  Hariph@Neh.10.19: Ha-ríp
+  Harnepher@1Ch.7.36: Hạt-nê-phê
+  Haroeh@1Ch.2.52-: Ha-rô-ê
+  Harsha@Ezr.2.52-Neh: Hạt-sa
+  Harum@1Ch.4.8: Ha-rum
+  Harumaph@Neh.3.10: Ha-ru-máp
+  Haruz@2Ki.21.19: Ha-rút
+  Hasadiah@1Ch.3.20: Ha-sa-đia
+  Hashabiah@1Ch.25.3-: Ha-sa-bia
+  Hashabiah@1Ch.26.30: Ha-sa-bia
+  Hashabiah@1Ch.27.17: Ha-sa-bia
+  Hashabiah@1Ch.6.45: Ha-sa-bia
+  Hashabiah@1Ch.9.14-Neh: Ha-sa-bia
+  Hashabiah@2Ch.35.9: Ha-sa-bia
+  Hashabiah@Ezr.8.19-Neh: Ha-sa-bia
+  Hashabiah@Neh.11.22: Ha-sa-bia
+  Hashabiah@Neh.12.21: Ha-sa-bia
+  Hashabiah@Neh.3.17: Ha-sa-bia
+  Hashabnah@Neh.10.25: Ha-sáp-na
+  Hashabneiah@Neh.3.10: Ha-sáp-nia
+  Hashabneiah@Neh.9.5: Ha-sáp-nia
+  Hashbaddanah@Neh.8.4: Hách-ba-đa-na
+  Hashubah@1Ch.3.20: Ha-su-ba
+  Hashum@Ezr.2.19-Neh: Ha-sum
+  Hashum@Neh.10.18: Ha-sum
+  Hashum@Neh.8.4: Ha-sum
+  Hasshub@1Ch.9.14-Neh: Ha-súp
+  Hasshub@Neh.10.23: Ha-súp
+  Hasshub@Neh.3.11: Ha-súp
+  Hasshub@Neh.3.23: Ha-súp
+  Hasupha@Ezr.2.43-Neh: Ha-su-pha
+  Hathach@Est.4.5-: Ha-thác
+  Hathath@1Ch.4.13: Ha-thát
+  Hatipha@Ezr.2.54-Neh: Ha-ti-pha
+  Hatita@Ezr.2.42-Neh: Ha-ti-ta
+  Hattil@Ezr.2.57-Neh: Hát-tinh
+  Hattush@1Ch.3.22: Hát-túc
+  Hattush@Ezr.8.2: Hát-túc
+  Hattush@Neh.10.4-: Hát-túc
+  Hattush@Neh.3.10: Hát-túc
+  Havilah@Gen.10.29-1Ch: Ha-vi-la
+  Havilah@Gen.10.7-1Ch: Ha-vi-la
+  Hazael@1Ki.19.15-Amo: Ha-xa-ên
+  Hazaiah@Neh.11.5: Ha-xa-gia
+  Hazarmaveth@Gen.10.26-1Ch: Ha-sa-ma-vết
+  Haziel@1Ch.23.9: Ha-xi-ên
+  Hazo@Gen.22.22: Ha-xô
+  Hazzelelponi@1Ch.4.3: Ha-sê-lê-bô-ni
+  Heber@1Ch.4.18: Hê-be
+  Heber@1Ch.8.17: Hê-be
+  Heber@Gen.46.17-1Ch: Hê-be
+  Heber@Jdg.4.11-: Hê-be
+  Hebron@1Ch.2.42-: Hếp-rôn
+  Hebron@Exo.6.18-1Ch: Hếp-rôn
+  Hegai@Est.2.3-: Hê-gai
+  Helah@1Ch.4.5-: Hê-lê-a
+  Heldai@Zec.6.10-: Hiên-đai
+  Helek@Num.26.30-Jos: Hê-léc
+  Helez@1Ch.2.39: Hê-lết
+  Helez@2Sa.23.26-1Ch: Hê-lết
+  Heli@Luk.3.23: Hê-li
+  Helkai@Neh.12.15: Hên-cai
+  Helon@Num.1.9-: Hê-lôn
+  Hemam@Gen.36.22-1Ch: Hê-man
+  Heman@1Ch.2.6: Hê-man
+  Heman@1Ch.6.33-2Ch: Hê-man
+  Heman@1Ki.4.31-Psa: Hê-man
+  Hemdan@Gen.36.26-1Ch: Hem-đan
+  Henadad@Ezr.3.9-Neh: Hê-na-đát
+  Henadad@Neh.3.18: Hê-na-đát
+  Henadad@Neh.3.24: Hê-na-đát
+  Hepher@1Ch.11.36: Hê-phe
+  Hepher@1Ch.4.6: Hê-phe
+  Hepher@Num.26.32-Jos: Hê-phe
+  Hephzibah@2Ki.21.1: Hép-si-ba
+  Heresh@1Ch.9.15: Hê-re
+  Hermas@Rom.16.14b: Hẹt-ma
+  Hermes@Rom.16.14a: Hẹt-me
+  Hermogenes@2Ti.1.15: Hẹt-mô-ghen
+  Herod@Act.12.1-: Hê-rốt
+  Herod@Mat.14.1-Act: Hê-rốt
+  Herod@Mat.2.1-Act: Hê-rốt
+  Herodias@Mat.14.3-Luk: Hê-rô-đia
+  Herodion@Rom.16.11: Hê-rô-đi-ôn
+  Hesed@1Ki.4.10: Hê-sết
+  Heth@Gen.10.15-Ezk: Hếch
+  Hezekiah@2Ki.16.20-Mat: Ê-xê-chia
+  Hezekiah@Ezr.2.16-Neh: Ê-xê-chia
+  Hezekiah@Neh.10.17: Ê-xê-chia
+  Hezekiah@Zep.1.1: Ê-xê-chia
+  Hezion@1Ki.15.18: Hê-xi-ôn
+  Hezir@1Ch.24.15: Hê-xia
+  Hezir@Neh.10.20: Hê-xia
+  Hezro@2Sa.23.35-1Ch: Hết-rô
+  Hezron@Gen.46.12-Luk: Hết-rôn
+  Hezron@Gen.46.9-1Ch: Hết-rôn
+  Hiddai@2Sa.23.30-1Ch: Hi-đai
+  Hiel@1Ki.16.34: Hi-ên
+  Hilkiah@1Ch.26.11: Hinh-kia
+  Hilkiah@1Ch.6.45: Hinh-kia
+  Hilkiah@2Ki.18.18-Isa: Hinh-kia
+  Hilkiah@2Ki.22.4-Jer: Hinh-kia
+  Hilkiah@Jer.1.1: Hinh-kia
+  Hilkiah@Neh.12.7-: Hinh-kia
+  Hilkiah@Neh.8.4: Hinh-kia
+  Hillel@Jdg.12.13-: Hi-lên
+  Hirah@Gen.38.1-: Hi-ra
+  Hiram@1Ki.7.13-2Ch: Hi-ram
+  Hiram@2Sa.5.11-2Ch: Hi-ram
+  Hizki@1Ch.8.17: Hi-ki
+  Hizkiah@1Ch.3.23: Ê-xê-chia
+  Hobab@Num.10.29-Jdg: Hô-báp
+  Hodaviah@1Ch.3.24: Hô-đa-via
+  Hodaviah@1Ch.5.24: Hô-đa-via
+  Hodaviah@1Ch.9.7: Hô-đa-via
+  Hodesh@1Ch.8.9: Hô-đe
+  Hodiah@1Ch.4.19: Hô-đia
+  Hodiah@Neh.10.13: Hô-đia
+  Hodiah@Neh.10.18: Hô-đia
+  Hodiah@Neh.8.7-: Hô-đia
+  Hoglah@Num.26.33-Jos: Hốt-la
+  Hoham@Jos.10.3: Hô-ham
+  Hophni@1Sa.1.3-: Hóp-ni
+  Hophra@Jer.37.5-Ezk: Hốp-ra
+  Horam@Jos.10.33: Hô-ram
+  Hori@Gen.14.6-1Ch: Hô-ri
+  Hori@Num.13.5: Hô-ri
+  Hosah@1Ch.16.38-: Hô-sa
+  Hosea@Hos.1.1-Rom: Ô-sê
+  Hoshaiah@Jer.42.1-: Hô-sa-gia
+  Hoshaiah@Neh.12.32: Hô-sa-gia
+  Hoshama@1Ch.3.18: Hô-sa-ma
+  Hoshea@1Ch.27.20: Ô-sê
+  Hoshea@2Ki.15.30-: Ô-sê
+  Hoshea@Neh.10.23: Ô-sê
+  Hotham@1Ch.11.44: Hô-tham
+  Hotham@1Ch.7.32-: Hô-tham
+  Hothir@1Ch.25.4-: Hô-thia
+  Hul@Gen.10.23-1Ch: Hu-lơ
+  Huldah@2Ki.22.14-2Ch: Hun-đa
+  Huppah@1Ch.24.13: Húp-ba
+  Huppim@1Ch.7.12-: Hốp-bim
+  Hur@1Ki.4.8: Hu-rơ
+  Hur@Exo.17.10-2Ch: Hu-rơ
+  Hur@Neh.3.9: Hu-rơ
+  Hur@Num.31.8-Jos: Hu-rơ
+  Huri@1Ch.5.14: Hu-ri
+  Hushah@1Ch.4.4: Hu-sa
+  Hushai@2Sa.15.32-1Ch: Hu-sai
+  Husham@Gen.36.34-1Ch: Hu-sam
+  Hushim@1Ch.7.12: Hu-sim
+  Hushim@1Ch.8.8-: Hu-sim
+  Hushim@Gen.46.23-Num: Hu-sim
+  Hymenaeus@1Ti.1.20-2Ti: Hy-mê-nê
+  Ibhar@2Sa.5.15-1Ch: Gi-ba
+  Ibneiah@1Ch.9.8: Gíp-nê-gia
+  Ibnijah@1Ch.9.8: Gíp-nê-gia
+  Ibri@1Ch.24.27: Y-bê-ri
+  Ibsam@1Ch.7.2: Díp-sam
+  Ibzan@Jdg.12.8-: Íp-san
+  Ichabod@1Sa.4.21-: Y-ca-bốt
+  Idbash@1Ch.4.3: Di-ba
+  Iddo@1Ch.27.21: Y-đô
+  Iddo@1Ch.6.21-: Y-đô
+  Iddo@1Ki.4.14: Y-đô
+  Iddo@2Ch.9.29-: Y-đô
+  Iddo@Ezr.5.1-Zec: Y-đô
+  Iddo@Ezr.8.17: Y-đô
+  Iddo@Neh.12.4-: Y-đô
+  Igal@1Ch.3.22: Di-ganh
+  Igal@2Sa.23.36: Di-ganh
+  Igal@Num.13.7: Di-ganh
+  Igdaliah@Jer.35.4: Gi-đa-lia
+  Ikkesh@2Sa.23.26-1Ch: Y-ke
+  Imlah@1Ki.22.8-2Ch: Giêm-la
+  Immer@1Ch.24.14-Jer: Y-mê
+  Immer@1Ch.9.12-Neh: Y-mê
+  Immer@Neh.3.29: Y-mê
+  Imna@1Ch.7.35: Dim-na
+  Imnah@2Ch.31.14: Dim-na
+  Imnah@Gen.46.17-1Ch: Dim-na
+  Imrah@1Ch.7.36: Dim-ra
+  Imri@1Ch.9.4: Im-ri
+  Imri@Neh.3.2: Im-ri
+  Iphdeiah@1Ch.8.25: Gíp-đia
+  Ir@1Ch.7.12: Y-rơ
+  Ira@2Sa.20.26: Y-ra
+  Ira@2Sa.23.26-1Ch: Y-ra
+  Ira@2Sa.23.38-1Ch: Y-ra
+  Irad@Gen.4.18: Y-rát
+  Iram@Gen.36.43-1Ch: Y-ram
+  Iri@1Ch.7.7: Y-ri
+  Irijah@Jer.37.13-: Gi-rê-gia
+  Iru@1Ch.4.15: Y-ru
+  Isaac@Gen.17.19-Jas: Y-sác
+  Isaiah@2Ki.19.2-Rom: Ê-sai
+  Iscah@Gen.11.29: Dích-ca
+  Ish-bosheth@2Sa.2.8-1Ch: Ích-bô-sết
+  Ishbah@1Ch.4.17: Dít-bác
+  Ishbak@Gen.25.2-1Ch: Dích-bác
+  Ishbi-benob@2Sa.21.16: Ít-bi-Bê-nốp
+  Ishhod@1Ch.7.18: Y-sốt
+  Ishi@1Ch.2.31: Di-si
+  Ishi@1Ch.4.20: Di-si
+  Ishi@1Ch.4.42: Di-si
+  Ishi@1Ch.5.24: Di-si
+  Ishma@1Ch.4.3: Dít-ma
+  Ishmael@1Ch.8.38-: Ích-ma-ên
+  Ishmael@2Ch.19.11: Ích-ma-ên
+  Ishmael@2Ch.23.1: Ích-ma-ên
+  Ishmael@2Ki.25.23-Jer: Ích-ma-ên
+  Ishmael@Ezr.10.22: Ích-ma-ên
+  Ishmael@Gen.16.11-Psa: Ích-ma-ên
+  Ishmaiah@1Ch.12.4: Dít-ma-hia
+  Ishmaiah@1Ch.27.19: Dít-ma-hia
+  Ishmerai@1Ch.8.18: Gít-mê-rai
+  Ishpah@1Ch.8.16: Dít-pha
+  Ishpan@1Ch.8.22: Gít-ban
+  Ishvah@Gen.46.17-1Ch: Dích-va
+  Ishvi@Gen.46.17-1Ch: Dích-vi
+  Ismachiah@2Ch.31.13: Gít-ma-kia
+  Israel@Gen.25.26-Rev: Y-sơ-ra-ên
+  Issachar@1Ch.26.5: Y-sa-ca
+  Issachar@Gen.30.18-Rev: Y-sa-ca
+  Isshiah@1Ch.12.6: Di-si-gia
+  Isshiah@1Ch.23.20-: Di-si-gia
+  Isshiah@1Ch.24.21-: Di-si-gia
+  Isshiah@1Ch.7.3: Di-si-gia
+  Isshijah@Ezr.10.31: Di-si-gia
+  Ithamar@Exo.6.23-Ezr: Y-tha-ma
+  Ithiel@Neh.11.7: Y-thi-ên
+  Ithiel@Pro.30.1: Y-thi-ên
+  Ithmah@1Ch.11.46: Gít-ma
+  Ithran@1Ch.7.37-: Dít-ran
+  Ithran@Gen.36.26-1Ch: Dít-ran
+  Ithream@2Sa.3.5-1Ch: Dít-rê-am
+  Ittai@2Sa.15.19-: Y-tai
+  Ittai@2Sa.23.29-1Ch: Y-tai
+  Izhar@1Ch.4.7: Dít-sê-ha
+  Izhar@Exo.6.18-1Ch: Dít-sê-ha
+  Izliah@1Ch.8.18: Gít-lia
+  Izrahiah@1Ch.7.3: Dít-ra-hia
+  Izziah@Ezr.10.25: Y-xia
+  Jaakobah@1Ch.4.36: Gia-cô-ba
+  Jaalah@Ezr.2.56-Neh: Gia-a-la
+  Jaare-oregim@2Sa.21.19-1Ch: Gia-a-rê-Ô-rê-ghim
+  Jaareshiah@1Ch.8.27: Gia-rê-si-a
+  Jaasiel@1Ch.11.47: Gia-a-si-ên
+  Jaasiel@1Ch.27.21: Gia-a-si-ên
+  Jaasu@Ezr.10.37: Gia-a-sai
+  Jaazaniah@Ezk.11.1: Gia-a-xa-nia
+  Jaazaniah@Ezk.8.11: Gia-a-xa-nia
+  Jaazaniah@Jer.35.3: Gia-a-xa-nia
+  Jaaziah@1Ch.24.26-: Gia-a-xi-gia
+  Jabal@Gen.4.20: Gia-banh
+  Jabesh@2Ki.15.10-: Gia-be
+  Jabez@1Ch.4.9-: Gia-bê
+  Jabin@Jdg.4.2-Psa: Gia-bin
+  Jabin@Jos.11.1: Gia-bin
+  Jacan@1Ch.5.13: Gia-can
+  Jachin@1Ch.24.17: Gia-kin
+  Jachin@1Ch.9.10-Neh: Gia-kin
+  Jachin@Gen.46.10-1Ch: Gia-kin
+  Jacob@Mat.1.15-: Gia-cốp
+  Jada@1Ch.2.28-: Gia-đa
+  Jaddai@Ezr.10.43: Giát-đai
+  Jaddua@Neh.10.21: Gia-đua
+  Jaddua@Neh.12.11-: Gia-đua
+  Jadon@Neh.3.7: Gia-đôn
+  Jael@Jdg.4.17-: Gia-ên
+  Jahath@1Ch.23.10-: Gia-hát
+  Jahath@1Ch.24.22: Gia-hát
+  Jahath@1Ch.4.2: Gia-hát
+  Jahath@2Ch.34.12: Gia-hát
+  Jahaziel@1Ch.12.4: Gia-ha-xi-ên
+  Jahaziel@1Ch.16.6: Gia-ha-xi-ên
+  Jahaziel@1Ch.23.19-: Gia-ha-xi-ên
+  Jahaziel@2Ch.20.14: Gia-ha-xi-ên
+  Jahaziel@Ezr.8.5: Gia-ha-xi-ên
+  Jahdai@1Ch.2.47: Gia-đai
+  Jahdiel@1Ch.5.24: Giắc-đi-ên
+  Jahdo@1Ch.5.14: Giác-đô
+  Jahleel@Gen.46.14-Num: Gia-lê-ên
+  Jahmai@1Ch.7.2: Giác-mai
+  Jahzeel@Gen.46.24-1Ch: Giát-sê-ên
+  Jahzeiah@Ezr.10.15: Gia-xia
+  Jahzerah@1Ch.9.12: Gia-xê-ra
+  Jair@Est.2.5: Giai-rơ
+  Jair@Jdg.10.3-: Giai-rơ
+  Jair@Num.32.41-1Ch: Giai-rơ
+  Jairus@Mrk.5.22-Luk: Giai-ru
+  Jakeh@Pro.30.1: Gia-kê
+  Jakim@1Ch.24.12: Gia-kim
+  Jakim@1Ch.8.19: Gia-kim
+  Jalam@Gen.36.5-1Ch: Gia-lam
+  Jalon@1Ch.4.17: Gia-lôn
+  Jambres@2Ti.3.8: Giam-be
+  James@Mat.13.55-Jud: Gia-cơ
+  James@Mat.4.21-Act: Gia-cơ
+  Jamin@1Ch.2.27: Gia-min
+  Jamin@Gen.46.10-1Ch: Gia-min
+  Jamin@Neh.8.7: Gia-min
+  Jamlech@1Ch.4.34: Giam-léc
+  Janai@1Ch.5.12: Gia-nai
+  Jannai@Luk.3.24: Gia-nê
+  Jannes@2Ti.3.8: Gian-nét
+  Japheth@Gen.5.32-1Ch: Gia-phết
+  Japhia@2Sa.5.15-1Ch: Gia-phia
+  Japhia@Jos.10.3: Gia-phia
+  Japhlet@Jos.16.3-1Ch: Giáp-phơ-lết
+  Jared@Gen.5.15-Luk: Giê-rệt
+  Jarha@1Ch.2.34-: Gia-ra
+  Jarib@Ezr.10.18: Gia-ríp
+  Jarib@Ezr.8.16: Gia-ríp
+  Jaroah@1Ch.5.14: Gia-rô-a
+  Jashen@2Sa.23.32-1Ch: Gia-sen
+  Jashobeam@1Ch.12.6: Gia-sô-bê-am
+  Jashub@Ezr.10.29: Gia-súp
+  Jashub@Gen.46.13-1Ch: Gia-súp
+  Jason@Act.17.5-Rom: Gia-sôn
+  Jathniel@1Ch.26.2: Giát-ni-ên
+  Javan@Gen.10.2-Col: Gia-van
+  Jaziz@1Ch.27.31: Gia-xi
+  Jeatherai@1Ch.6.21-: Giê-a-trai
+  Jeberechiah@Isa.8.2: Giê-bê-rê-kia
+  Jecoliah@2Ki.15.2-2Ch: Giê-cô-lia
+  Jedaiah@1Ch.24.7-Neh: Giê-đa-gia
+  Jedaiah@1Ch.4.37: Giê-đa-gia
+  Jedaiah@1Ch.9.10-Neh: Giê-đa-gia
+  Jedaiah@Neh.12.7-: Giê-đa-gia
+  Jedaiah@Neh.3.10: Giê-đa-gia
+  Jedaiah@Zec.6.10-: Giê-đa-gia
+  Jediael@1Ch.11.45: Giê-đi-a-ên
+  Jediael@1Ch.12.20: Giê-đi-a-ên
+  Jediael@1Ch.26.2: Giê-đi-a-ên
+  Jediael@1Ch.7.6-: Giê-đi-a-ên
+  Jedidah@2Ki.22.1: Giê-đi-đa
+  Jeduthun@1Ch.6.44-Psa: Giê-đu-thun
+  Jeduthun@1Ch.9.16-Neh: Giê-đu-thun
+  Jehallelel@1Ch.4.16: Giê-ha-lê-lê-ên
+  Jehallelel@2Ch.29.12: Giê-ha-lê-lê-ên
+  Jehdeiah@1Ch.24.20: Giê-đia
+  Jehdeiah@1Ch.27.30: Giê-đia
+  Jehezkel@1Ch.24.16: Ê-xê-chi-ên
+  Jehiel@1Ch.15.18-: Giê-hi-ên
+  Jehiel@1Ch.27.32: Giê-hi-ên
+  Jehiel@2Ch.21.2: Giê-hi-ên
+  Jehiel@2Ch.31.13: Giê-hi-ên
+  Jehiel@2Ch.35.8: Giê-hi-ên
+  Jehiel@Ezr.10.2: Giê-hi-ên
+  Jehiel@Ezr.10.21: Giê-hi-ên
+  Jehiel@Ezr.10.26: Giê-hi-ên
+  Jehiel@Ezr.8.9: Giê-hi-ên
+  Jehizkiah@2Ch.28.12: Ê-xê-chia
+  Jehoaddah@1Ch.8.36-: Giê-hô-a-đa
+  Jehoaddan@2Ki.14.2-2Ch: Giê-hoa-đan
+  Jehoahaz@2Ki.10.35-2Ch: Giô-a-cha
+  Jehoahaz@2Ki.23.30-2Ch: Giô-a-cha
+  Jehohanan@1Ch.26.3: Giô-ha-nan
+  Jehohanan@2Ch.17.15: Giô-ha-nan
+  Jehohanan@2Ch.23.1: Giô-ha-nan
+  Jehohanan@Ezr.10.28: Giô-ha-nan
+  Jehohanan@Ezr.10.6: Giô-ha-nan
+  Jehohanan@Neh.12.13: Giô-ha-nan
+  Jehohanan@Neh.12.42: Giô-ha-nan
+  Jehohanan@Neh.6.18: Giô-ha-nan
+  Jehoiachin@2Ki.24.6-Mat: Giê-hô-gia-kin
+  Jehoiada@1Ch.27.34: Giê-hô-gia-đa
+  Jehoiada@2Ki.11.4-Mat: Giê-hô-gia-đa
+  Jehoiada@2Sa.8.18-1Ch: Giê-hô-gia-đa
+  Jehoiada@Jer.29.26: Giê-hô-gia-đa
+  Jehoiakim@2Ki.23.34-Dan: Giê-hô-gia-kim
+  Jehoiarib@1Ch.24.7: Giê-hô-gia-ríp
+  Jehonathan@2Ch.17.8: Giô-na-than
+  Jehonathan@Neh.12.18: Giô-na-than
+  Jehoram@1Ki.22.50-Mat: Giô-ram
+  Jehoram@2Ch.17.8: Giô-ram
+  Jehoshaphat@1Ki.15.24-Mat: Giô-sa-phát
+  Jehoshaphat@1Ki.4.17: Giô-sa-phát
+  Jehoshaphat@2Ki.9.2-: Giô-sa-phát
+  Jehoshaphat@2Sa.8.16-1Ch: Giô-sa-phát
+  Jehosheba@2Ki.11.2-2Ch: Giô-sê-ba
+  Jehozabad@1Ch.26.4: Giê-hô-xa-bát
+  Jehozabad@2Ch.17.18: Giê-hô-xa-bát
+  Jehozabad@2Ki.12.21-2Ch: Giê-hô-xa-bát
+  Jehozadak@1Ch.6.14-Zec: Giê-hô-xa-đác
+  Jehu@1Ch.12.3: Giê-hu
+  Jehu@1Ch.2.38: Giê-hu
+  Jehu@1Ch.4.35: Giê-hu
+  Jehu@1Ki.16.1-2Ch: Giê-hu
+  Jehu@1Ki.19.16-Hos: Giê-hu
+  Jehubbah@1Ch.7.34: Hu-ba
+  Jehucal@Jer.37.3-: Giê-hu-can
+  Jehudi@Jer.36.14-: Giê-hu-đi
+  Jehudijah@1Ch.4.18: Giê-hu-đi-gia
+  Jehuel@2Ch.29.14: Giê-hi-ên
+  Jeiel@1Ch.11.44: Giê-i-ên
+  Jeiel@1Ch.15.18-: Giê-i-ên
+  Jeiel@1Ch.5.7: Giê-i-ên
+  Jeiel@2Ch.20.14: Giê-i-ên
+  Jeiel@2Ch.26.11: Giê-i-ên
+  Jeiel@2Ch.35.9: Giê-i-ên
+  Jeiel@Ezr.10.43: Giê-i-ên
+  Jekameam@1Ch.23.19-: Giê-ca-mê-am
+  Jekamiah@1Ch.2.41: Giê-ca-mia
+  Jekuthiel@1Ch.4.18: Giê-cu-ti-ên
+  Jemimah@Job.42.14: Giê-mi-ma
+  Jemuel@Gen.46.10-1Ch: Giê-mu-ên
+  Jephthah@Jdg.11.1-Heb: Giép-thê
+  Jephunneh@1Ch.7.38: Giê-phu-nê
+  Jephunneh@Num.13.6-1Ch: Giê-phu-nê
+  Jerah@Gen.10.26-1Ch: Giê-rách
+  Jerahmeel@1Ch.24.29: Giê-rác-mê-ên
+  Jerahmeel@1Sa.27.10-1Ch: Giê-rác-mê-ên
+  Jerahmeel@Jer.36.26: Giê-rác-mê-ên
+  Jered@1Ch.4.18: Giê-rệt
+  Jeremai@Ezr.10.33: Giê-rê-mai
+  Jeremiah@1Ch.12.10: Giê-rê-mi
+  Jeremiah@1Ch.12.13: Giê-rê-mi
+  Jeremiah@1Ch.12.4: Giê-rê-mi
+  Jeremiah@1Ch.5.24: Giê-rê-mi
+  Jeremiah@2Ch.35.25-Mat: Giê-rê-mi
+  Jeremiah@2Ki.23.31-Jer: Giê-rê-mi
+  Jeremiah@Jer.35.3: Giê-rê-mi
+  Jeremiah@Neh.10.2-: Giê-rê-mi
+  Jeremoth@1Ch.7.8: Giê-rê-mốt
+  Jeremoth@1Ch.8.14: Giê-rê-mốt
+  Jeremoth@Ezr.10.26: Giê-rê-mốt
+  Jeremoth@Ezr.10.27: Giê-rê-mốt
+  Jeremoth@Ezr.10.29: Giê-rê-mốt
+  Jeriah@1Ch.23.19-: Giê-ri-gia
+  Jeribai@1Ch.11.46: Giê-ri-bai
+  Jeriel@1Ch.7.2: Giê-ri-ên
+  Jerijah@1Ch.26.31: Giê-ri-gia
+  Jerimoth@1Ch.12.5: Giê-ri-mốt
+  Jerimoth@1Ch.23.23-: Giê-ri-mốt
+  Jerimoth@1Ch.25.4-: Giê-ri-mốt
+  Jerimoth@1Ch.27.19: Giê-ri-mốt
+  Jerimoth@1Ch.7.7: Giê-ri-mốt
+  Jerimoth@2Ch.11.18: Giê-ri-mốt
+  Jerimoth@2Ch.31.13: Giê-ri-mốt
+  Jerioth@1Ch.2.18: Giê-ri-ốt
+  Jeroboam@1Ki.11.26-2Ch: Giê-rô-bô-am
+  Jeroboam@2Ki.13.13-Amo: Giê-rô-bô-am
+  Jeroham@1Ch.12.7: Giê-rô-ham
+  Jeroham@1Ch.27.22: Giê-rô-ham
+  Jeroham@1Ch.8.27: Giê-rô-ham
+  Jeroham@1Ch.9.12-Neh: Giê-rô-ham
+  Jeroham@1Ch.9.8: Giê-rô-ham
+  Jeroham@1Sa.1.1-1Ch: Giê-rô-ham
+  Jeroham@2Ch.23.1: Giê-rô-ham
+  Jerusalem_wives@2Sa.5.13: Giê-ru-sa-lem
+  Jerusha@2Ki.15.33-2Ch: Giê-ru-sa
+  Jeshaiah@1Ch.25.3-: Ê-sai
+  Jeshaiah@1Ch.3.21: Ê-sai
+  Jeshaiah@Ezr.8.19: Ê-sai
+  Jeshaiah@Ezr.8.7: Ê-sai
+  Jeshaiah@Neh.11.7: Ê-sai
+  Jeshebeab@1Ch.24.13: Giê-sê-báp
+  Jesher@1Ch.2.18: Giê-se
+  Jeshishai@1Ch.5.14: Giê-si-sai
+  Jeshohaiah@1Ch.4.36: Giê-sô-hai-gia
+  Jeshua@1Ch.24.11-Neh: Giê-sua
+  Jeshua@2Ch.31.15: Giê-sua
+  Jeshua@Ezr.2.40-Neh: Giê-sua
+  Jeshua@Ezr.2.6-Neh: Giê-sua
+  Jeshua@Neh.12.24: Giê-sua
+  Jeshua@Neh.3.19: Giê-sua
+  Jesimiel@1Ch.4.36: Giê-si-mi-ên
+  Jesse@Rut.4.17-Rom: Y-sai
+  Jesus@Isa.7.14-Rev: Giê-su
+  Jether@1Ch.2.32: Giê-the
+  Jether@1Ch.4.17: Giê-the
+  Jether@2Sa.17.25-1Ch: Giê-the
+  Jether@Jdg.8.20: Giê-the
+  Jetheth@Gen.36.40-1Ch: Giê-tết
+  Jethro@Exo.2.18-Num: Giê-trô
+  Jetur@Gen.25.15-1Ch: Giê-tua
+  Jeuel@1Ch.9.6: Giê-u-ên
+  Jeuel@2Ch.29.13: Giê-u-ên
+  Jeuel@Ezr.8.13: Giê-u-ên
+  Jeush@1Ch.23.10-: Giê-úc
+  Jeush@1Ch.7.10: Giê-úc
+  Jeush@1Ch.8.39: Giê-úc
+  Jeush@2Ch.11.19: Giê-úc
+  Jeush@Gen.36.5-1Ch: Giê-úc
+  Jeuz@1Ch.8.10: Giê-út
+  Jezaniah@2Ki.25.23-Jer: Giê-xa-nia
+  Jezebel@1Ki.16.31-Rev: Giê-sa-bên
+  Jezer@Gen.46.24-1Ch: Dít-se
+  Jeziel@1Ch.12.3: Giê-xi-ên
+  Jezrahiah@Neh.12.42: Dít-ra-hia
+  Jezreel@1Ch.4.3: Gít-rê-ên
+  Jezreel@Hos.1.4: Gít-rê-ên
+  Jidlaph@Gen.22.22: Díp-láp
+  Joab@1Ch.4.14: Giô-áp
+  Joab@1Sa.26.6-Psa: Giô-áp
+  Joab@Ezr.2.6-Neh: Giô-áp
+  Joab@Ezr.8.9: Giô-áp
+  Joah@1Ch.26.4: Giô-a
+  Joah@1Ch.6.21-: Giô-a
+  Joah@2Ch.29.12a: Giô-a
+  Joah@2Ch.29.12b: Giô-a
+  Joah@2Ch.34.8: Giô-a
+  Joah@2Ki.18.18-Isa: Giô-a
+  Joahaz@2Ch.34.8: Giô-a-cha
+  Joanan@Luk.3.27: Giô-a-nan
+  Joanna@Luk.8.3-: Gian-nơ
+  Joash@1Ch.12.3: Giô-ách
+  Joash@1Ch.27.28: Giô-ách
+  Joash@1Ch.4.22: Giô-ách
+  Joash@1Ch.7.8: Giô-ách
+  Joash@1Ki.22.26-2Ch: Giô-ách
+  Joash@2Ki.11.2-2Ch: Giô-ách
+  Joash@2Ki.13.9-Amo: Giô-ách
+  Joash@Jdg.6.11-: Giô-ách
+  Job@Job.1.1-Jas: Gióp
+  Jobab@1Ch.8.18: Giô-báp
+  Jobab@1Ch.8.9: Giô-báp
+  Jobab@Gen.10.29-1Ch: Giô-báp
+  Jobab@Gen.36.33-1Ch: Giô-báp
+  Jobab@Jos.11.1: Giô-báp
+  Jochebed@Exo.6.20-Num: Giô-kê-bết
+  Joda@Luk.3.26: Giô-đa
+  Joed@Neh.11.7: Giô-ết
+  Joel@1Ch.11.38: Giô-ên
+  Joel@1Ch.15.7-: Giô-ên
+  Joel@1Ch.23.8-: Giô-ên
+  Joel@1Ch.27.20: Giô-ên
+  Joel@1Ch.4.35: Giô-ên
+  Joel@1Ch.5.12: Giô-ên
+  Joel@1Ch.5.4: Giô-ên
+  Joel@1Ch.5.8: Giô-ên
+  Joel@1Ch.7.3: Giô-ên
+  Joel@1Sa.8.2-1Ch: Giô-ên
+  Joel@2Ch.29.12: Giô-ên
+  Joel@Ezr.10.43: Giô-ên
+  Joel@Jol.1.1-Act: Giô-ên
+  Joel@Neh.11.9: Giô-ên
+  Joelah@1Ch.12.7: Giô-ê-la
+  Joezer@1Ch.12.6: Giô-ê-xe
+  Jogli@Num.34.22: Giốc-li
+  Joha@1Ch.11.45: Giô-ha
+  Joha@1Ch.8.16: Giô-ha
+  Johanan@1Ch.12.12: Giô-ha-nan
+  Johanan@1Ch.12.4: Giô-ha-nan
+  Johanan@1Ch.3.24: Giô-ha-nan
+  Johanan@1Ch.6.9-: Giô-ha-nan
+  Johanan@2Ch.28.12: Giô-ha-nan
+  Johanan@2Ki.25.23-Jer: Giô-ha-nan
+  Johanan@Ezr.8.12: Giô-ha-nan
+  Johanan@Neh.12.11-: Giô-ha-nan
+  John@Act.4.6: Giăng
+  John@Mat.16.17-Jhn: Giăng
+  John@Mat.3.1-Act: Giăng
+  John@Mat.4.21-Rev: Giăng
+  Joiada@Neh.12.10-: Giô-gia-đa
+  Joiada@Neh.3.6: Giô-gia-đa
+  Joiakim@Neh.12.10-: Giô-gia-kim
+  Joiarib@1Ch.9.10-Neh: Giô-gia-ríp
+  Joiarib@Ezr.8.16: Giô-gia-ríp
+  Joiarib@Neh.11.5: Giô-gia-ríp
+  Jokim@1Ch.4.22: Giô-kim
+  Jokshan@Gen.25.2-1Ch: Giốc-chan
+  Joktan@Gen.10.25-1Ch: Giốc-tan
+  Jonadab@2Ki.10.15-Jer: Giô-na-đáp
+  Jonadab@2Sa.13.3-1Ch: Giô-na-đáp
+  Jonah@2Ki.14.25-Luk: Giô-na
+  Jonam@Luk.3.30: Giô-nam
+  Jonathan@1Ch.2.32-: Giô-na-than
+  Jonathan@1Ch.27.25: Giô-na-than
+  Jonathan@1Sa.13.2-1Ch: Giô-na-than
+  Jonathan@2Sa.15.27-1Ki: Giô-na-than
+  Jonathan@2Sa.23.32-1Ch: Giô-na-than
+  Jonathan@Ezr.10.15: Giô-na-than
+  Jonathan@Ezr.8.6: Giô-na-than
+  Jonathan@Jdg.18.30: Giô-na-than
+  Jonathan@Jer.37.15-: Giô-na-than
+  Jonathan@Jer.40.8: Giô-na-than
+  Jonathan@Neh.12.14: Giô-na-than
+  Jonathan@Neh.12.35: Giô-na-than
+  Jorah@Ezr.2.18-Neh: Giô-ra
+  Jorai@1Ch.5.13: Giô-rai
+  Joram@1Ch.26.25: Giô-ram
+  Joram@2Ki.1.17-2Ch: Giô-ram
+  Joram@2Sa.8.10-1Ch: Giô-ram
+  Jorim@Luk.3.29: Giô-rim
+  Jorkeam@1Ch.2.44: Giô-kê-am
+  Josech@Luk.3.26: Giô-sê
+  Joseph@1Ch.25.2-: Giô-sép
+  Joseph@Act.1.23: Giô-sép
+  Joseph@Ezr.10.42: Giô-sép
+  Joseph@Gen.30.24-Rev: Giô-sép
+  Joseph@Luk.3.24: Giô-sép
+  Joseph@Luk.3.30: Giô-sép
+  Joseph@Mat.1.16-Jhn: Giô-sép
+  Joseph@Mat.27.57-Jhn: Giô-sép
+  Joseph@Neh.12.14: Giô-sép
+  Joseph@Num.13.7: Giô-sép
+  Joses@Mat.13.55-Mrk: Giô-sê
+  Joses@Mat.27.56-Mrk: Giô-sê
+  Joshah@1Ch.4.34: Giô-sa
+  Joshaphat@1Ch.11.43: Giô-sa-phát
+  Joshaphat@1Ch.15.24: Giô-sa-phát
+  Joshaviah@1Ch.11.46: Giô-sa-via
+  Joshbekashah@1Ch.25.4-: Giốt-bê-ca-sa
+  Joshibiah@1Ch.4.35: Giô-xơ-bia
+  Joshua@1Sa.6.14-: Giô-suê
+  Joshua@2Ki.23.8: Giô-suê
+  Joshua@Exo.17.9-Heb: Giô-suê
+  Joshua@Ezr.2.2-Zec: Giô-suê
+  Joshua@Luk.3.29: Giô-suê
+  Josiah@1Ki.13.2-Mat: Giô-si-a
+  Josiah@Zec.6.10-: Giô-si-a
+  Josiphiah@Ezr.8.10: Giô-si-phia
+  Jotham@1Ch.2.47: Giô-tham
+  Jotham@2Ki.15.5-Mat: Giô-tham
+  Jotham@Jdg.9.5-: Giô-tham
+  Jozabad@1Ch.12.20a: Giô-xa-bát
+  Jozabad@1Ch.12.20b: Giô-xa-bát
+  Jozabad@1Ch.12.4: Giô-xa-bát
+  Jozabad@2Ch.31.13: Giô-xa-bát
+  Jozabad@2Ch.35.9: Giô-xa-bát
+  Jozabad@Ezr.10.22: Giô-xa-bát
+  Jozabad@Ezr.10.23: Giô-xa-bát
+  Jozabad@Ezr.8.33: Giô-xa-bát
+  Jozabad@Neh.11.16: Giô-xa-bát
+  Jozabad@Neh.8.7: Giô-xa-bát
+  Jozacar@2Ki.12.21-2Ch: Giô-xa-ca
+  Jozadak@Ezr.10.18: Giô-xa-đác
+  Jubal@Gen.4.21: Giu-banh
+  Judah@Ezr.10.23: Giu-đa
+  Judah@Gen.29.35-Rev: Giu-đa
+  Judah@Luk.3.30: Giu-đa
+  Judah@Neh.11.9: Giu-đa
+  Judah@Neh.12.36: Giu-đa
+  Judah@Neh.12.8-: Giu-đa
+  Judas@Act.15.22-: Giu-đa
+  Judas@Act.5.37: Giu-đa
+  Judas@Act.9.11: Giu-đa
+  Judas@Mat.10.3-Act: Giu-đa
+  Judas@Mat.10.4-Act: Giu-đa
+  Jude@Mat.13.55-Jud: Giu-đe
+  Judith@Gen.26.34: Giu-đít
+  Julia@Rom.16.15: Giu-li
+  Julius@Act.27.1-: Giu-lơ
+  Junia@Rom.16.7: Giu-ni-a
+  Jushab-hesed@1Ch.3.20: Du-sáp-Hê-rết
+  Justus@Act.18.7: Giúc-tu
+  Justus@Col.4.11: Giúc-tu
+  Kadmiel@Ezr.2.40-Neh: Cát-mi-ên
+  Kallai@Neh.12.20: Ca-lai
+  Kareah@2Ki.25.23-Jer: Ca-rê-át
+  Kedar@Gen.25.13-Ezk: Kê-đa
+  Kedemah@Gen.25.15-1Ch: Kết-ma
+  Kelaiah@Ezr.10.23: Kê-la-gia
+  Kelita@Neh.8.7-: Kê-li-ta
+  Kemuel@1Ch.27.17: Kê-mu-ên
+  Kemuel@Gen.22.21: Kê-mu-ên
+  Kemuel@Num.34.24: Kê-mu-ên
+  Kenan@Gen.5.9-Luk: Kê-nan
+  Kenaz@1Ch.4.15: Kê-na
+  Kenaz@Gen.36.11-1Ch: Kê-na
+  Kenaz@Num.32.12-1Ch: Kê-na
+  Keren-happuch@Job.42.14: Kê-ren-Ha-búc
+  Keros@Ezr.2.44-Neh: Kê-rốt
+  Keturah@Gen.25.1-1Ch: Kê-tu-ra
+  Keziah@Job.42.14: Kê-xia
+  Kish@1Ch.23.21-: Kích
+  Kish@1Sa.9.1-Act: Kích
+  Kish@2Ch.29.12: Kích
+  Kish@Est.2.5: Kích
+  Kishi@1Ch.6.44-: Ki-si
+  Kohath@Gen.46.11-2Ch: Kê-hát
+  Kolaiah@Jer.29.21: Cô-la-gia
+  Kolaiah@Neh.11.7: Cô-la-gia
+  Korah@1Ch.2.43: Cô-rê
+  Korah@Exo.6.21-Jud: Cô-rê
+  Korah@Gen.36.16: Cô-rê
+  Korah@Gen.36.5-1Ch: Cô-rê
+  Kore@1Ch.9.19-: Cô-rê
+  Kore@2Ch.31.14: Cô-rê
+  Koz@1Ch.4.8: Ha-cốt
+  Laadah@1Ch.4.21: La-ê-đa
+  Laban@Gen.24.29-: La-ban
+  Ladan@1Ch.7.26: La-ê-đan
+  Lael@Num.3.24: La-ên
+  Lahad@1Ch.4.2: La-hát
+  Lahmi@2Sa.21.16-1Ch: Lác-mi
+  Laish@1Sa.25.44-2Sa: La-ít
+  Lamech@Gen.4.18-: Lê-méc
+  Lamech@Gen.5.25-Luk: Lê-méc
+  Lappidoth@Jdg.4.4: Láp-bi-đốt
+  Lazarus@Jhn.11.1-: La-xa-rơ
+  Lazarus@Luk.16.20-: La-xa-rơ
+  Leah@Gen.29.16-Rut: Lê-a
+  Lebanah@Ezr.2.45-Neh: Lê-ba-na
+  Lecah@1Ch.4.21: Lê-ca
+  Lemuel@Pro.31.1-: Lê-mu-ên
+  Levi@Gen.29.34-Rev: Lê-vi
+  Levi@Luk.3.24: Lê-vi
+  Levi@Luk.3.29: Lê-vi
+  Libni@1Ch.6.29: Líp-ni
+  Libni@Exo.6.17-1Ch: Líp-ni
+  Likhi@1Ch.7.19: Li-khi
+  Linus@2Ti.4.21: Li-nút
+  Lo-ammi@Hos.1.9: Lô-Am-mi
+  Lo-ruhamah@Hos.1.6-: Lô-Ru-ha-ma
+  Lois@2Ti.1.5: Lô-ít
+  Lot@Gen.11.27-2Pe: Lót
+  Lotan@Gen.36.20-1Ch: Lô-than
+  Lucius@Act.13.1-Rom: Lu-si-út
+  Lud@Gen.10.22-Ezk: Lút
+  Luke@2Co.13.13-Phm: Lu-ca
+  Lydia@Act.16.14-: Ly-đi
+  Lysanias@Luk.3.1: Ly-sa-ni-a
+  Lysias@Act.23.26-: Ly-sia
+  Maacah@1Ch.11.43: Ma-a-ca
+  Maacah@1Ch.2.48: Ma-a-ca
+  Maacah@1Ch.27.16: Ma-a-ca
+  Maacah@1Ch.7.15-: Ma-a-ca
+  Maacah@1Ch.8.29-: Ma-a-ca
+  Maacah@1Ki.15.2-2Ch: Ma-a-ca
+  Maacah@2Sa.3.3-1Ch: Ma-a-ca
+  Maacah@Gen.22.24: Ma-a-ca
+  Maadai@Ezr.10.34: Ma-ê-đai
+  Maai@Neh.12.36: Ma-ai
+  Maasai@1Ch.9.12-Neh: Ma-ê-sai
+  Maaseiah@1Ch.15.18-: Ma-a-xê-gia
+  Maaseiah@2Ch.23.1: Ma-a-xê-gia
+  Maaseiah@2Ch.26.11: Ma-a-xê-gia
+  Maaseiah@2Ch.28.7: Ma-a-xê-gia
+  Maaseiah@2Ch.34.8: Ma-a-xê-gia
+  Maaseiah@Ezr.10.18: Ma-a-xê-gia
+  Maaseiah@Ezr.10.21: Ma-a-xê-gia
+  Maaseiah@Ezr.10.22: Ma-a-xê-gia
+  Maaseiah@Ezr.10.30: Ma-a-xê-gia
+  Maaseiah@Jer.21.1-: Ma-a-xê-gia
+  Maaseiah@Jer.29.21: Ma-a-xê-gia
+  Maaseiah@Jer.35.4: Ma-a-xê-gia
+  Maaseiah@Neh.10.25: Ma-a-xê-gia
+  Maaseiah@Neh.11.5: Ma-a-xê-gia
+  Maaseiah@Neh.11.7: Ma-a-xê-gia
+  Maaseiah@Neh.12.41: Ma-a-xê-gia
+  Maaseiah@Neh.12.42: Ma-a-xê-gia
+  Maaseiah@Neh.3.23: Ma-a-xê-gia
+  Maaseiah@Neh.8.4: Ma-a-xê-gia
+  Maaseiah@Neh.8.7: Ma-a-xê-gia
+  Maath@Luk.3.26: Ma-át
+  Maaz@1Ch.2.27: Ma-ách
+  Maaziah@1Ch.24.18: Ma-a-xia
+  Machbannai@1Ch.12.13: Mác-ba-nai
+  Machbenah@1Ch.2.49: Mác-bê-na
+  Machi@Num.13.15: Ma-ki
+  Machir@2Sa.9.4-: Ma-ki
+  Machir@Gen.50.23-1Ch: Ma-ki
+  Machnadebai@Ezr.10.40: Mác-nát-bai
+  Madai@Gen.10.2-1Ch: Ma-đai
+  Madmannah@1Ch.2.49: Mát-ma-na
+  Magdiel@Gen.36.43-1Ch: Mác-đi-ên
+  Magog@Gen.10.2-1Ch: Ma-gốc
+  Magpiash@Neh.10.20: Mác-bi-ách
+  Mahalalel@Gen.5.12-Luk: Ma-ha-la-le
+  Mahalalel@Neh.11.4: Ma-ha-la-le
+  Mahalath@2Ch.11.18: Ma-ha-lát
+  Mahalath@Gen.28.9-: Ma-ha-lát
+  Maharai@2Sa.23.28-1Ch: Ma-ha-rai
+  Mahath@2Ch.29.12: Ma-hát
+  Mahath@2Ch.31.13: Ma-hát
+  Mahazioth@1Ch.25.4-: Ma-ha-xi-ốt
+  Maher-shalal-hash-baz@Isa.8.1-: Ma-he-Sa-la-Hát-Bát
+  Mahlah@1Ch.7.18: Mách-la
+  Mahlah@Num.26.33-Jos: Mách-la
+  Mahli@1Ch.6.47-: Mác-li
+  Mahli@Exo.6.19-Ezr: Mác-li
+  Mahlon@Rut.1.2-: Mạc-lôn
+  Mahol@1Ki.4.31: Ma-hôn
+  Mahseiah@Jer.32.12-: Ma-a-sê-gia
+  Malachi@Mal.1.1: Ma-la-chi
+  Malcam@1Ch.8.9: Manh-cam
+  Malchi-shua@1Sa.14.49-1Ch: Manh-ki-sua
+  Malchiah@Jer.21.1-: Manh-ki-gia
+  Malchiel@Gen.46.17-1Ch: Manh-ki-ên
+  Malchijah@1Ch.24.9: Manh-ki-gia
+  Malchijah@1Ch.6.40: Manh-ki-gia
+  Malchijah@1Ch.9.12-Neh: Manh-ki-gia
+  Malchijah@Ezr.10.25a: Manh-ki-gia
+  Malchijah@Ezr.10.25b: Manh-ki-gia
+  Malchijah@Ezr.10.31: Manh-ki-gia
+  Malchijah@Neh.10.3: Manh-ki-gia
+  Malchijah@Neh.12.42: Manh-ki-gia
+  Malchijah@Neh.3.11: Manh-ki-gia
+  Malchijah@Neh.3.14: Manh-ki-gia
+  Malchijah@Neh.3.31: Manh-ki-gia
+  Malchijah@Neh.8.4: Manh-ki-gia
+  Malchiram@1Ch.3.18: Manh-ki-ram
+  Malchus@Jhn.18.10: Man-chu
+  Mallothi@1Ch.25.4-: Ma-lô-thi
+  Malluch@1Ch.6.44: Ma-lúc
+  Malluch@Ezr.10.29: Ma-lúc
+  Malluch@Ezr.10.32: Ma-lúc
+  Malluch@Neh.10.27: Ma-lúc
+  Malluch@Neh.10.4-: Ma-lúc
+  Mamre@Gen.14.13: Mam-rê
+  Manaen@Act.13.1: Ma-na-hem
+  Manahath@Gen.36.23-1Ch: Ma-na-hát
+  Manasseh@2Ki.20.21-Mat: Ma-na-se
+  Manasseh@Ezr.10.30: Ma-na-se
+  Manasseh@Ezr.10.33: Ma-na-se
+  Manasseh@Gen.41.51-Rev: Ma-na-se
+  Manoah@Jdg.13.2-: Ma-nô-a
+  Maoch@1Sa.27.2-1Ki: Ma-óc
+  Maon@1Ch.2.45: Ma-ôn
+  Mareshah@1Ch.2.42: Ma-rê-sa
+  Mareshah@1Ch.4.21: Ma-rê-sa
+  Mark@Act.12.12-1Pe: Mác
+  Marsena@Est.1.14: Mạt-sê-na
+  Martha@Luk.10.38-Jhn: Ma-thê
+  Mary@Act.12.12: Ma-ri
+  Mary@Luk.10.39-Jhn: Ma-ri
+  Mary@Mat.1.16-Act: Ma-ri
+  Mary@Mat.27.56-Jhn: Ma-ri
+  Mary@Rom.16.6: Ma-ri
+  Mary_Magdalene@Mat.27.56-Jhn: Ma-ri Ma-đơ-len
+  Mash@Gen.10.23-1Ch: Mách
+  Massa@Gen.25.14-1Ch: Ma-sa
+  Matred@Gen.36.39-1Ch: Mát-rết
+  Matri@1Sa.10.21: Mát-ri
+  Mattan@2Ki.11.18-2Ch: Ma-than
+  Mattan@Jer.38.1: Ma-than
+  Mattaniah@1Ch.25.4-: Mát-ta-nia
+  Mattaniah@1Ch.9.15-Neh: Mát-ta-nia
+  Mattaniah@2Ch.20.14: Mát-ta-nia
+  Mattaniah@2Ch.29.13: Mát-ta-nia
+  Mattaniah@Ezr.10.26: Mát-ta-nia
+  Mattaniah@Ezr.10.27: Mát-ta-nia
+  Mattaniah@Ezr.10.30: Mát-ta-nia
+  Mattaniah@Ezr.10.37: Mát-ta-nia
+  Mattaniah@Neh.11.22-: Mát-ta-nia
+  Mattaniah@Neh.13.13: Mát-ta-nia
+  Mattatha@Luk.3.31: Mát-ta-tha
+  Mattathias@Luk.3.25: Ma-ta-thia
+  Mattathias@Luk.3.26: Ma-ta-thia
+  Mattattah@Ezr.10.33: Mát-ta-ta
+  Mattenai@Ezr.10.33: Mát-tê-nai
+  Mattenai@Ezr.10.37: Mát-tê-nai
+  Mattenai@Neh.12.19: Mát-tê-nai
+  Matthan@Mat.1.15: Ma-than
+  Matthat@Luk.3.24: Mát-tát
+  Matthat@Luk.3.29: Mát-tát
+  Matthew@Mat.9.9-Act: Ma-thi-ơ
+  Matthias@Act.1.23-: Ma-thia
+  Mattithiah@1Ch.15.18-: Ma-ti-thia
+  Mattithiah@1Ch.9.31: Ma-ti-thia
+  Mattithiah@Ezr.10.43: Ma-ti-thia
+  Mattithiah@Neh.8.4: Ma-ti-thia
+  Medad@Num.11.26-: Mê-đát
+  Medan@Gen.25.2-1Ch: Mê-đan
+  Mehetabel@Gen.36.39-1Ch: Mê-hê-ta-bê-ên
+  Mehetabel@Neh.6.10: Mê-hê-ta-bê-ên
+  Mehida@Ezr.2.52-Neh: Mê-hi-đa
+  Mehir@1Ch.4.11: Mê-hia
+  Mehujael@Gen.4.18: Nê-hu-đa-ên
+  Mehuman@Est.1.10: Mê-hu-man
+  Melatiah@Neh.3.7: Mê-la-tia
+  Melchi@Luk.3.24: Mên-chi
+  Melchi@Luk.3.28: Mên-chi
+  Melchizedek@Gen.14.18-Heb: Mên-chi-xê-đéc
+  Melea@Luk.3.31: Mê-lê-a
+  Melech@1Ch.8.35-: Mê-léc
+  Melzar@Dan.1.11-: Ham-mên-xa
+  Memucan@Est.1.14-: Mê-mu-can
+  Menahem@2Ki.15.14-: Mê-na-hem
+  Menna@Luk.3.31: Mên-na
+  Meonothai@1Ch.4.14: Mê-ô-nô-thai
+  Mephibosheth@2Sa.21.8: Mê-phi-bô-sết
+  Mephibosheth@2Sa.4.4-1Ch: Mê-phi-bô-sết
+  Merab@1Sa.14.49-2Sa: Mê-ráp
+  Meraiah@Neh.12.12: Mê-ra-gia
+  Meraioth@1Ch.6.6-Neh: Mê-ra-giốt
+  Merari@Gen.46.11-Ezr: Mê-ra-ri
+  Mered@1Ch.4.17-: Mê-rết
+  Meremoth@Ezr.10.36: Mê-rê-mốt
+  Meremoth@Ezr.8.33-Neh: Mê-rê-mốt
+  Meres@Est.1.14: Mê-re
+  Merodach-baladan@2Ki.20.12-Isa: Mê-rô-đác-Ba-la-đan
+  Mesha@1Ch.2.42: Mê-sa
+  Mesha@1Ch.8.9: Mê-sa
+  Mesha@2Ki.3.4: Mê-sa
+  Meshech@Gen.10.2-1Ch: Mê-siếc
+  Meshelemiah@1Ch.9.21-: Mê-sê-lê-mia
+  Meshezabel@Neh.10.21: Mê-sê-xa-bê-ên
+  Meshezabel@Neh.11.24: Mê-sê-xa-bê-ên
+  Meshezabel@Neh.3.4: Mê-sê-xa-bê-ên
+  Meshillemith@1Ch.9.12-Neh: Mê-si-lê-mít
+  Meshillemoth@2Ch.28.12: Mê-si-lê-mốt
+  Meshobab@1Ch.4.34: Mê-sô-báp
+  Meshullam@1Ch.3.19: Mê-su-lam
+  Meshullam@1Ch.5.13: Mê-su-lam
+  Meshullam@1Ch.8.17: Mê-su-lam
+  Meshullam@1Ch.9.12-Neh: Mê-su-lam
+  Meshullam@1Ch.9.7: Mê-su-lam
+  Meshullam@1Ch.9.8: Mê-su-lam
+  Meshullam@2Ch.34.12: Mê-su-lam
+  Meshullam@2Ki.22.3: Mê-su-lam
+  Meshullam@Ezr.10.15: Mê-su-lam
+  Meshullam@Ezr.10.29: Mê-su-lam
+  Meshullam@Ezr.8.16: Mê-su-lam
+  Meshullam@Neh.10.20: Mê-su-lam
+  Meshullam@Neh.10.7-: Mê-su-lam
+  Meshullam@Neh.11.7: Mê-su-lam
+  Meshullam@Neh.12.13: Mê-su-lam
+  Meshullam@Neh.12.16: Mê-su-lam
+  Meshullam@Neh.12.25: Mê-su-lam
+  Meshullam@Neh.3.4-: Mê-su-lam
+  Meshullam@Neh.3.6: Mê-su-lam
+  Meshullam@Neh.8.4: Mê-su-lam
+  Meshullemeth@2Ki.21.19: Mê-su-lê-mết
+  Methuselah@Gen.5.21-Luk: Mê-tu-sê-la
+  Methushael@Gen.4.18: Mê-tu-sa-ên
+  Mezahab@Gen.36.39-1Ch: Mê-xa-háp
+  Mibhar@1Ch.11.38: Mi-bê-ha
+  Mibsam@1Ch.4.25: Mi-bô-sam
+  Mibsam@Gen.25.13-1Ch: Mi-bô-sam
+  Mibzar@Gen.36.42-1Ch: Mép-xa
+  Mica@1Ch.9.15-Neh: Mi-ca
+  Mica@Neh.10.11: Mi-ca
+  Mica@Neh.11.22-: Mi-ca
+  Micah@1Ch.23.20-: Mi-chê
+  Micah@1Ch.5.5: Mi-chê
+  Micah@2Sa.9.12-1Ch: Mi-chê
+  Micah@Jdg.17.1-: Mi-chê
+  Micah@Jer.26.18-Mic: Mi-chê
+  Micaiah@1Ki.22.8-2Ch: Mi-ca-gia
+  Micaiah@2Ch.17.7: Mi-ca-gia
+  Micaiah@2Ki.22.12-2Ch: Mi-ca-gia
+  Micaiah@Jer.36.11-: Mi-ca-gia
+  Micaiah@Neh.12.41: Mi-ca-gia
+  Michael@1Ch.12.20: Mi-ca-ên
+  Michael@1Ch.27.18: Mi-ca-ên
+  Michael@1Ch.5.13: Mi-ca-ên
+  Michael@1Ch.5.14: Mi-ca-ên
+  Michael@1Ch.6.40: Mi-ca-ên
+  Michael@1Ch.7.3: Mi-ca-ên
+  Michael@1Ch.8.16: Mi-ca-ên
+  Michael@2Ch.21.2: Mi-ca-ên
+  Michael@Dan.10.13-Rev: Mi-ca-ên
+  Michael@Ezr.8.8: Mi-ca-ên
+  Michael@Num.13.13: Mi-ca-ên
+  Michal@1Sa.14.49-1Ch: Mi-canh
+  Michri@1Ch.9.8: Mi-cơ-ri
+  Midian@Gen.25.2-1Ch: Ma-đi-an
+  Mijamin@1Ch.24.9: Mi-gia-min
+  Mijamin@Ezr.10.25: Mi-gia-min
+  Mijamin@Neh.10.7-: Mi-gia-min
+  Mikloth@1Ch.27.4: Mích-lô
+  Mikloth@1Ch.8.32-: Mích-lô
+  Mikneiah@1Ch.15.18-: Mích-nê-gia
+  Milalai@Neh.12.36: Mi-la-lai
+  Milcah@Gen.11.29-: Minh-ca
+  Milcah@Num.26.33-Jos: Minh-ca
+  Miniamin@2Ch.31.15: Min-gia-min
+  Miniamin@Neh.12.41: Min-gia-min
+  Miriam@1Ch.4.17: Mi-ri-am
+  Miriam@Exo.15.20-Mic: Mi-ri-am
+  Mirmah@1Ch.8.10: Mịt-ma
+  Mishael@Dan.1.6-: Mi-sa-ên
+  Mishael@Exo.6.22-Lev: Mi-sa-ên
+  Mishael@Neh.8.4: Mi-sa-ên
+  Misham@1Ch.8.12: Mi-sê-am
+  Mishma@1Ch.4.25-: Mích-ma
+  Mishma@Gen.25.14-1Ch: Mích-ma
+  Mishmannah@1Ch.12.10: Mích-ma-nan
+  Mispar@Ezr.2.2-Neh: Mít-bạt
+  Mithredath@Ezr.1.8: Mít-rê-đát
+  Mithredath@Ezr.4.7: Mít-rê-đát
+  Mizzah@Gen.36.13-1Ch: Mích-xa
+  Mnason@Act.21.16: Ma-na-sôn
+  Moab@Gen.19.37a: Mô-áp
+  Molid@1Ch.2.29: Mô-lít
+  Mordecai@Est.2.5-: Mạc-đô-chê
+  Mordecai@Ezr.2.2-Neh: Mạc-đô-chê
+  Moses@Exo.2.10-Rev: Môi-se
+  Moza@1Ch.2.46: Một-sa
+  Moza@1Ch.8.36-: Một-sa
+  Mushi@Exo.6.19-1Ch: Mu-si
+  Naam@1Ch.4.15: Na-am
+  Naamah@1Ki.14.21-2Ch: Na-a-ma
+  Naamah@Gen.4.22: Na-a-ma
+  Naaman@1Ch.8.7: Na-a-man
+  Naaman@2Ki.5.1-Luk: Na-a-man
+  Naaman@Gen.46.21-1Ch: Na-a-man
+  Naaman@Num.26.40-1Ch: Na-a-man
+  Naarah@1Ch.4.5-: Na-a-ra
+  Naarai@1Ch.11.37: Na-a-rai
+  Nabal@1Sa.25.3-2Sa: Na-banh
+  Naboth@1Ki.21.1-2Ki: Na-bốt
+  Nacon@2Sa.6.6-1Ch: Na-côn
+  Nadab@1Ch.2.28-: Na-đáp
+  Nadab@1Ch.8.30-: Na-đáp
+  Nadab@1Ki.14.20-: Na-đáp
+  Nadab@Exo.6.23-1Ch: Na-đáp
+  Naggai@Luk.3.25: Na-ghê
+  Naham@1Ch.4.19: Na-ham
+  Nahamani@Neh.7.7: Na-ha-ma-ni
+  Naharai@2Sa.23.37-1Ch: Na-ha-rai
+  Nahash@1Sa.11.1-: Na-hách
+  Nahash@2Sa.10.2-1Ch: Na-hách
+  Nahash@2Sa.17.25: Na-hách
+  Nahash@2Sa.17.27: Na-hách
+  Nahath@2Ch.31.13: Na-hát
+  Nahath@Gen.36.13-1Ch: Na-hát
+  Nahbi@Num.13.14: Nách-bi
+  Nahor@Gen.11.22-Luk: Na-cô
+  Nahor@Gen.11.26-: Na-cô
+  Nahshon@Exo.6.23-Luk: Na-ha-sôn
+  Nahum@Luk.3.25: Na-hum
+  Nahum@Nam.1.1: Na-hum
+  Naomi@Rut.1.2-: Na-ô-mi
+  Naphish@Gen.25.15-1Ch: Na-phích
+  Naphtali@Gen.30.8-Rev: Nép-ta-li
+  Narcissus@Rom.16.11: Nạt-xít
+  Nathan-melech@2Ki.23.11: Nê-than-Mê-léc
+  Nathan@1Ch.2.36: Na-than
+  Nathan@2Sa.23.36-1Ch: Na-than
+  Nathan@2Sa.5.14-Luk: Na-than
+  Nathan@2Sa.7.2-Psa: Na-than
+  Nathan@Ezr.10.39: Na-than
+  Nathan@Ezr.8.16: Na-than
+  Nathanael@Jhn.1.45-: Na-tha-na-ên
+  Neariah@1Ch.3.22-: Nê-a-ria
+  Neariah@1Ch.4.42: Nê-a-ria
+  Nebai@Neh.10.19: Ni-bai
+  Nebaioth@Gen.25.13-Isa: Nê-ba-giốt
+  Nebat@1Ki.11.26-2Ch: Nê-bát
+  Nebu-sar-sekim@Jer.39.3: Nê-bu-sa-sê-kim
+  Nebuchadnezzar@2Ki.24.1-Dan: Nê-bu-cát-nết-sa
+  Nebushazban@Jer.39.13: Nê-bu-sa-ban
+  Nebuzaradan@2Ki.25.8-Jer: Nê-bu-xa-ra-đan
+  Neco@2Ki.23.29-Jer: Nê-cô
+  Nehemiah@Ezr.2.2-Neh: Nê-hê-mi
+  Nehemiah@Neh.1.1-: Nê-hê-mi
+  Nehemiah@Neh.3.16: Nê-hê-mi
+  Nehushta@2Ki.24.8: Nê-hu-ta
+  Nekoda@Ezr.2.48-Neh: Nê-cô-đa
+  Nekoda@Ezr.2.60-Neh: Nê-cô-đa
+  Nemuel@Num.26.9: Nê-mu-ên
+  Nepheg@2Sa.5.15-1Ch: Nê-phết
+  Nepheg@Exo.6.21: Nê-phết
+  Ner@1Sa.14.50-1Ch: Nê-rơ
+  Nereus@Rom.16.15: Nê-rê
+  Nergal-sar-ezer@Jer.39.3a: Nẹt-gan-Sa-rết-sê
+  Nergal-sar-ezer@Jer.39.3b-: Nẹt-gan-Sa-rết-sê
+  Neri@Luk.3.27: Nê-ri
+  Neriah@Jer.32.12-: Nê-ri-gia
+  Nethanel@1Ch.15.24: Na-tha-na-ên
+  Nethanel@1Ch.2.14: Na-tha-na-ên
+  Nethanel@1Ch.24.6: Na-tha-na-ên
+  Nethanel@1Ch.26.4: Na-tha-na-ên
+  Nethanel@2Ch.17.7: Na-tha-na-ên
+  Nethanel@2Ch.35.9: Na-tha-na-ên
+  Nethanel@Ezr.10.22: Na-tha-na-ên
+  Nethanel@Neh.12.21: Na-tha-na-ên
+  Nethanel@Neh.12.36: Na-tha-na-ên
+  Nethanel@Num.1.8-: Na-tha-na-ên
+  Nethaniah@1Ch.25.2-: Nê-tha-nia
+  Nethaniah@2Ch.17.8: Nê-tha-nia
+  Nethaniah@2Ki.25.23-Jer: Nê-tha-nia
+  Nethaniah@Jer.36.14: Nê-tha-nia
+  Neziah@Ezr.2.54-Neh: Nê-xia
+  Nicanor@Act.6.5: Ni-ca-no
+  Nicodemus@Jhn.3.1-: Ni-cô-đem
+  Nicolaus@Act.6.5: Ni-cô-la
+  Nimrod@Gen.10.8-Mic: Nim-rốt
+  Nimshi@1Ki.19.16-2Ch: Nim-si
+  Noadiah@Ezr.8.33: Nô-a-đia
+  Noadiah@Neh.6.14: Nô-a-đia
+  Noah@Gen.5.29-2Pe: Nô-ê
+  Noah@Num.26.33-Jos: Nô-ê
+  Nobah@Num.32.42: Nô-bách
+  Nogah@1Ch.3.7-: Nô-ga
+  Nun@Exo.33.11-Neh: Nun
+  Nympha@Col.4.15: Nim-pha
+  Obadiah@1Ch.12.9: Áp-đia
+  Obadiah@1Ch.27.19: Áp-đia
+  Obadiah@1Ch.3.21: Áp-đia
+  Obadiah@1Ch.7.3: Áp-đia
+  Obadiah@1Ch.8.38-: Áp-đia
+  Obadiah@1Ch.9.16-Neh: Áp-đia
+  Obadiah@1Ki.18.3-: Áp-đia
+  Obadiah@2Ch.17.7: Áp-đia
+  Obadiah@2Ch.34.12: Áp-đia
+  Obadiah@Ezr.8.9: Áp-đia
+  Obadiah@Neh.10.5: Áp-đia
+  Obadiah@Oba.1.1: Áp-đia
+  Obal@Gen.10.28-1Ch: Ô-banh
+  Obed-edom@2Sa.6.10-2Ch: Ô-bết-Ê-đôm
+  Obed@1Ch.11.47: Ô-bết
+  Obed@1Ch.2.37-: Ô-bết
+  Obed@1Ch.26.7: Ô-bết
+  Obed@2Ch.23.1: Ô-bết
+  Obed@Rut.4.17-Luk: Ô-bết
+  Obil@1Ch.27.30: Ô-binh
+  Ochran@Num.1.13-: Óc-ran
+  Oded@2Ch.15.1-: Ô-đết
+  Oded@2Ch.28.9: Ô-đết
+  Og@Num.21.33-Psa: Óc
+  Ohad@Gen.46.10-Exo: Ô-hát
+  Ohel@1Ch.3.20: Ô-hên
+  Oholah@Ezk.23.4-: Ô-hô-la
+  Oholiab@Exo.31.6-: Ô-hô-li-áp
+  Oholibah@Ezk.23.4-: Ô-hô-li-ba
+  Oholibamah@Gen.36.2-1Ch: Ô-hô-li-ba-ma
+  Olympas@Rom.16.15: Ô-lim
+  Omar@Gen.36.11-1Ch: Ô-ma
+  Omri@1Ch.27.18: Ôm-ri
+  Omri@1Ch.7.8: Ôm-ri
+  Omri@1Ch.9.4: Ôm-ri
+  Omri@1Ki.16.16-Mic: Ôm-ri
+  Onam@1Ch.2.26-: Ô-nam
+  Onam@Gen.36.23-1Ch: Ô-nam
+  Onan@Gen.38.4-1Ch: Ô-nan
+  Onesimus@Col.4.9-Phm: Ô-nê-sim
+  Onesiphorus@2Ti.1.16-: Ô-nê-si-phô-rơ
+  Ophir@Gen.10.29-1Ch: Ô-phia
+  Ophrah@1Ch.4.14: Óp-ra
+  Oreb@Jdg.7.25-Isa: Ô-rép
+  Oren@1Ch.2.25: Ô-ren
+  Ornan@2Sa.24.16-2Ch: Ọt-nan
+  Orpah@Rut.1.4-: Ọt-ba
+  Osnappar@Ezr.4.10: Ô-náp-ba
+  Othni@1Ch.26.7: Ốt-ni
+  Othniel@Jos.15.17-1Ch: Ốt-ni-ên
+  Ozem@1Ch.2.15: Ô-xem
+  Ozem@1Ch.2.25: Ô-xem
+  Paarai@2Sa.23.35: Pha-rai
+  Padon@Ezr.2.44-Neh: Pha-đôn
+  Pagiel@Num.1.13-: Pha-ghi-ên
+  Pahath-moab@Ezr.2.6-Neh: Pha-hát-Mô-áp
+  Pahath-moab@Neh.10.14: Pha-hát-Mô-áp
+  Pahath-moab@Neh.3.11: Pha-hát-Mô-áp
+  Palal@Neh.3.25: Pha-lanh
+  Pallu@Gen.46.9-1Ch: Pha-lu
+  Palti@1Sa.25.44-2Sa: Phan-thi
+  Palti@Num.13.9: Phan-thi
+  Paltiel@Num.34.26: Pha-ti-ên
+  Parmashta@Est.9.9: Phạt-ma-sa-ta
+  Parmenas@Act.6.5: Ba-mê-na
+  Parnach@Num.34.25: Phác-nát
+  Parosh@Ezr.2.3-Neh: Pha-rốt
+  Parosh@Ezr.8.3: Pha-rốt
+  Parosh@Neh.10.14: Pha-rốt
+  Parosh@Neh.3.25: Pha-rốt
+  Parshandatha@Est.9.7: Phạt-san-đa-tha
+  Paruah@1Ki.4.17: Pha-ru-ác
+  Pasach@1Ch.7.33: Pha-sác
+  Paseah@1Ch.4.12: Pha-sê-a
+  Paseah@Ezr.2.49-Neh: Pha-sê-a
+  Paseah@Neh.3.6: Pha-sê-a
+  Pashhur@1Ch.9.12-Neh: Pha-su-rơ
+  Pashhur@Jer.20.1-: Pha-su-rơ
+  Pashhur@Jer.21.1-: Pha-su-rơ
+  Pashhur@Jer.38.1: Pha-su-rơ
+  Pashhur@Neh.10.3: Pha-su-rơ
+  Patrobas@Rom.16.14: Ba-trô-ba
+  Paul@Act.7.58-2Pe: Phao-lô
+  Pedahel@Num.34.28: Phê-đa-ên
+  Pedahzur@Num.1.10-: Phê-đát-su
+  Pedaiah@1Ch.27.20: Phê-đa-gia
+  Pedaiah@1Ch.3.18-: Phê-đa-gia
+  Pedaiah@2Ki.23.36: Phê-đa-gia
+  Pedaiah@Neh.11.7: Phê-đa-gia
+  Pedaiah@Neh.13.13: Phê-đa-gia
+  Pedaiah@Neh.3.25: Phê-đa-gia
+  Pedaiah@Neh.8.4: Phê-đa-gia
+  Pekah@2Ki.15.25-Isa: Phê-ca
+  Pekahiah@2Ki.15.22-: Phê-ca-hia
+  Pelaiah@1Ch.3.24: Bê-la-gia
+  Pelaiah@Neh.8.7-: Bê-la-gia
+  Pelaliah@Neh.11.12: Phê-la-lia
+  Pelatiah@1Ch.3.21: Phê-la-tia
+  Pelatiah@1Ch.4.42: Phê-la-tia
+  Pelatiah@Ezk.11.1-: Phê-la-tia
+  Pelatiah@Neh.10.22: Phê-la-tia
+  Peleg@Gen.10.25-Luk: Bê-léc
+  Pelet@1Ch.12.3: Phê-lết
+  Pelet@1Ch.2.47: Phê-lết
+  Peleth@1Ch.2.33: Phê-lết
+  Peleth@Num.16.1: Phê-lết
+  Peninnah@1Sa.1.2-: Phê-ni-na
+  Penuel@1Ch.4.4: Phê-nu-ên
+  Penuel@1Ch.8.25: Phê-nu-ên
+  Peresh@1Ch.7.16: Phê-rết
+  Perez@Gen.38.29-Luk: Phê-rết
+  Persis@Rom.16.12: Bẹt-si-đơ
+  Peruda@Ezr.2.55-Neh: Phê-ru-đa
+  Peter@Mat.4.18-2Pe: Phi-e-rơ
+  Pethahiah@1Ch.24.16: Phê-ta-hia
+  Pethahiah@Ezr.10.23: Phê-ta-hia
+  Pethahiah@Neh.11.24: Phê-ta-hia
+  Pethahiah@Neh.9.5: Phê-ta-hia
+  Pethuel@Jol.1.1: Phê-thu-ên
+  Peullethai@1Ch.26.5: Phê-u-lê-tai
+  Phanuel@Luk.2.36: Pha-nu-ên
+  Pharaoh@1Ch.4.18: Pha-ra-ôn
+  Pharaoh@1Ki.3.1-Sng: Pha-ra-ôn
+  Pharaoh@2Ki.18.21-Isa: Pha-ra-ôn
+  Pharaoh@Exo.1.11-Heb: Pha-ra-ôn
+  Pharaoh@Exo.3.10-Rom: Pha-ra-ôn
+  Pharaoh@Gen.12.15-: Pha-ra-ôn
+  Pharaoh@Gen.37.36-Act: Pha-ra-ôn
+  Pharaoh@Jer.25.19: Pha-ra-ôn
+  Phicol@Gen.21.22-: Phi-côn
+  Philemon@Phm.1.1-: Phi-lê-môn
+  Philetus@2Ti.2.17: Phi-lết
+  Philip@Act.6.5-: Phi-líp
+  Philip@Luk.3.1: Phi-líp
+  Philip@Mat.10.3-Act: Phi-líp
+  Philip@Mat.14.3-Luk: Phi-líp
+  Philistine@Gen.10.14-1Ch: Người Phi-li-tin
+  Philologus@Rom.16.15: Phi-lô-lô-gơ
+  Phinehas@1Sa.1.3-: Phi-nê-a
+  Phinehas@Exo.6.25-Psa: Phi-nê-a
+  Phinehas@Ezr.8.33: Phi-nê-a
+  Phlegon@Rom.16.14: Phơ-lê-gôn
+  Phoebe@Rom.16.1-: Phê-bê
+  Phygelus@2Ti.1.15: Phy-ghen
+  Pilate@Mat.27.2-1Ti: Phi-lát
+  Pildash@Gen.22.22: Phin-đát
+  Pilha@Neh.10.24: Bi-la
+  Piltai@Neh.12.17: Phinh-tai
+  Pinon@Gen.36.41-1Ch: Phi-nôn
+  Piram@Jos.10.3: Phi-ram
+  Pispa@1Ch.7.38: Phít-ba
+  Pithon@1Ch.8.35-: Phi-thôn
+  Pochereth-hazzebaim@Ezr.2.57-Neh: Bô-kê-rết-Ha-xê-ba-im
+  Poratha@Est.9.8: Phô-ra-tha
+  Potiphar@Gen.37.36-: Phô-ti-pha
+  Potiphera@Gen.41.45-: Phô-ti-phê-ra
+  Priscilla@Act.18.2-2Ti: Bê-rít-sin
+  Prochorus@Act.6.5: Bô-cô-rơ
+  Puah@Exo.1.15: Phu-a
+  Puah@Gen.46.13-1Ch: Phu-a
+  Puah@Jdg.10.1: Phu-a
+  Publius@Act.28.7-: Búp-li-u
+  Pudens@2Ti.4.21: Bu-đen
+  Purah@Jdg.7.10-: Phu-ra
+  Put@Gen.10.6-1Ch: Phút
+  Putiel@Exo.6.25: Phu-ti-ên
+  Pyrrhus@Act.20.4: Bi-ru
+  Quartus@Rom.16.23: Qua-tu
+  Quirinius@Luk.2.2: Qui-ri-ni-u
+  Raamah@Gen.10.7-1Ch: Ra-ê-ma
+  Rab-saris@2Ki.18.17: Ráp-sa-ri
+  Rab-saris@Jer.39.3-: Ráp-sa-ri
+  Rabshakeh@2Ki.18.17-Isa: Ráp-sa-kê
+  Rachel@Gen.29.6-Mat: Ra-chên
+  Raddai@1Ch.2.14: Ra-đai
+  Rahab@Jos.2.1-Jas: Ra-háp
+  Raham@1Ch.2.44: Ra-cham
+  Rakem@1Ch.7.16: Ra-kem
+  Ram@1Ch.2.25-: Ram
+  Ram@Job.32.2: Ram
+  Ram@Rut.4.19-Luk: Ram
+  Ramiah@Ezr.10.25: Ra-mia
+  Rapha@2Sa.21.16-1Ch: Ra-pha
+  Raphah@1Ch.8.37-: Ra-pha
+  Raphu@Num.13.9: Ra-phu
+  Reaiah@1Ch.5.5: Rê-a-gia
+  Reaiah@Ezr.2.47-Neh: Rê-a-gia
+  Reba@Num.31.8-Jos: Rê-ba
+  Rebekah@Gen.22.23-Rom: Rê-be-ca
+  Rechab@2Ki.10.15-Jer: Rê-cáp
+  Rechab@2Sa.4.2-: Rê-cáp
+  Rechab@Neh.3.14: Rê-cáp
+  Reelaiah@Ezr.2.2-Neh: Rê-ê-la-gia
+  Regem-melech@Zec.7.2: Rê-ghem-Mê-léc
+  Regem@1Ch.2.47: Rê-ghem
+  Rehabiah@1Ch.23.17-: Rê-ha-bia
+  Rehob@2Sa.8.3-: Rê-hốp
+  Rehob@Neh.10.11: Rê-hốp
+  Rehoboam@1Ki.11.43-Mat: Rô-bô-am
+  Rehum@Ezr.4.8-: Rê-hum
+  Rehum@Neh.10.25: Rê-hum
+  Rehum@Neh.3.17: Rê-hum
+  Rei@1Ki.1.8: Rê-i
+  Rekem@1Ch.2.43-: Rê-kem
+  Rekem@Num.31.8-Jos: Rê-kem
+  Remaliah@2Ki.15.25-Isa: Rê-ma-lia
+  Rephael@1Ch.26.7: Rê-pha-ên
+  Rephah@1Ch.7.25: Rê-pha
+  Rephaiah@1Ch.3.21: Rê-pha-gia
+  Rephaiah@1Ch.4.42: Rê-pha-gia
+  Rephaiah@1Ch.7.2: Rê-pha-gia
+  Rephaiah@Neh.3.9: Rê-pha-gia
+  Resheph@1Ch.7.25: Rê-sép
+  Reu@Gen.11.18-Luk: Rê-hu
+  Reuben@Gen.29.32-Rev: Ru-bên
+  Reuel@1Ch.9.8: Rê-u-ên
+  Reuel@Gen.36.4-1Ch: Rê-u-ên
+  Reumah@Gen.22.24: Rê-u-ma
+  Rezin@2Ki.15.37-Isa: Rê-xin
+  Rezin@Ezr.2.48-Neh: Rê-xin
+  Rezon@1Ki.11.23: Rê-xôn
+  Rhesa@Luk.3.27: Rê-sa
+  Ribai@2Sa.23.29-1Ch: Ri-bai
+  Rimmon@2Sa.4.2-: Rim-môn
+  Rinnah@1Ch.4.20: Ri-na
+  Riphath@Gen.10.3-1Ch: Ri-phát
+  Rizia@1Ch.7.39: Ri-xia
+  Rizpah@2Sa.3.7-: Rít-ba
+  Rohgah@1Ch.7.34: Rô-hê-ga
+  Romamti-ezer@1Ch.25.4-: Rô-mam-ti-Ê-xe
+  Rosh@Gen.46.21-1Ch: Rô-sơ
+  Rufus@Mrk.15.21: Ru-phu
+  Rufus@Rom.16.13: Ru-phu
+  Ruth@Rut.1.4-Mat: Ru-tơ
+  Sabtah@Gen.10.7-1Ch: Sáp-ta
+  Sabteca@Gen.10.7-1Ch: Sáp-tê-ca
+  Sachar@1Ch.26.4: Sa-ca
+  Sachia@1Ch.8.10: Sô-kia
+  Sallai@Neh.11.8: Sa-lai
+  Sallu@1Ch.9.7: Sa-lu
+  Sallu@Neh.11.7: Sa-lu
+  Sallu@Neh.12.7-: Sa-lu
+  Salma@1Ch.2.51-: Sanh-ma
+  Salmon@Rut.4.20-Luk: Sanh-môn
+  Salome@Mat.20.20-Mrk: Sa-lô-mê
+  Salu@Num.25.14: Sa-lu
+  Samgar@Jer.39.3: Sam-ga
+  Samlah@Gen.36.36-1Ch: Sam-la
+  Samson@Jdg.13.24-Heb: Sam-sôn
+  Samuel@1Sa.1.20-Heb: Sa-mu-ên
+  Sanballat@Neh.2.10-: San-ba-lát
+  Saph@2Sa.21.18-1Ch: Sáp
+  Sapphira@Act.5.1: Sa-phi-ra
+  Sarah@Gen.11.29-1Pe: Sa-ra
+  Saraph@1Ch.4.22: Sa-ráp
+  Saul@1Sa.9.2-Act: Sau-lơ
+  Sceva@Act.19.14: Sê-va
+  Seba@Gen.10.7-1Ch: Sê-ba
+  Secundus@Act.20.4: Xê-cun-đu
+  Segub@1Ch.2.21-: Sê-gúp
+  Segub@1Ki.16.34: Sê-gúp
+  Seir@Gen.36.20-1Ch: Sê-i-rơ
+  Seled@1Ch.2.30: Sê-le
+  Semachiah@1Ch.26.7: Sê-ma-kia
+  Semein@Luk.3.26: Sê-mê-in
+  Sennacherib@2Ki.18.13-Isa: San-chê-ríp
+  Seorim@1Ch.24.8: Sê-ô-rim
+  Serah@Gen.46.17-1Ch: Sê-rách
+  Seraiah@1Ch.4.13-: Sê-ra-gia
+  Seraiah@1Ch.4.35: Sê-ra-gia
+  Seraiah@2Ki.25.18-Jer: Sê-ra-gia
+  Seraiah@2Ki.25.23-Jer: Sê-ra-gia
+  Seraiah@2Sa.8.17-1Ch: Sê-ra-gia
+  Seraiah@Ezr.2.2-Neh: Sê-ra-gia
+  Seraiah@Jer.36.26: Sê-ra-gia
+  Seraiah@Jer.51.59-: Sê-ra-gia
+  Sered@Gen.46.14-Num: Sê-rết
+  Sergius_Paulus@Act.13.7: Sê-giúp Phau-lút
+  Serug@Gen.11.20-Luk: Sê-rúc
+  Seth@Gen.4.25-Luk: Sết
+  Sethur@Num.13.13: Sê-thu
+  Shaaph@1Ch.2.47: Sa-áp
+  Shaaph@1Ch.2.49: Sa-áp
+  Shaashgaz@Est.2.14: Sa-ách-ga
+  Shabbethai@Ezr.10.15: Sa-bê-thai
+  Shabbethai@Neh.11.16: Sa-bê-thai
+  Shabbethai@Neh.8.7: Sa-bê-thai
+  Shaharaim@1Ch.8.8: Sa-ha-ra-im
+  Shallum@1Ch.2.40-: Sa-lum
+  Shallum@1Ch.3.15: Sa-lum
+  Shallum@1Ch.4.25: Sa-lum
+  Shallum@1Ch.6.12-Neh: Sa-lum
+  Shallum@1Ch.9.17-Neh: Sa-lum
+  Shallum@2Ch.28.12: Sa-lum
+  Shallum@2Ki.15.10-: Sa-lum
+  Shallum@2Ki.22.14-2Ch: Sa-lum
+  Shallum@Ezr.10.24: Sa-lum
+  Shallum@Ezr.10.42: Sa-lum
+  Shallum@Jer.32.7: Sa-lum
+  Shallum@Jer.35.4: Sa-lum
+  Shallum@Neh.3.12: Sa-lum
+  Shallum@Neh.3.15: Sa-lum
+  Shalmai@Ezr.2.46-Neh: Sanh-mai
+  Shalmaneser@2Ki.17.3-Hos: Sanh-ma-na-sa
+  Shama@1Ch.11.44: Sa-ma
+  Shamgar@Jdg.3.31-: Sam-ga
+  Shamhuth@1Ch.27.8: Sa-mê-hút
+  Shamir@1Ch.24.24: Sa-mia
+  Shamma@1Ch.7.37: Sa-ma
+  Shammah@2Sa.23.11: Sam-ma
+  Shammah@2Sa.23.25-1Ch: Sam-ma
+  Shammah@2Sa.23.33-1Ch: Sam-ma
+  Shammah@Gen.36.13-1Ch: Sam-ma
+  Shammai@1Ch.2.28-: Sa-mai
+  Shammai@1Ch.2.44-: Sa-mai
+  Shammai@1Ch.4.17: Sa-mai
+  Shammua@2Sa.5.14-1Ch: Sa-mua
+  Shammua@Neh.12.18: Sa-mua
+  Shammua@Num.13.4: Sa-mua
+  Shamsherai@1Ch.8.26: Sam-sê-rai
+  Shapham@1Ch.5.12: Sa-pham
+  Shaphan@2Ki.22.3-Jer: Sa-phan
+  Shaphan@Ezk.8.11: Sa-phan
+  Shaphat@1Ch.27.29: Sa-phát
+  Shaphat@1Ch.3.22: Sa-phát
+  Shaphat@1Ch.5.12: Sa-phát
+  Shaphat@1Ki.19.16-2Ki: Sa-phát
+  Shaphat@Num.13.5: Sa-phát
+  Sharai@Ezr.10.40: Sa-rai
+  Sharar@2Sa.23.33-1Ch: Sa-ra
+  Sharezer@2Ki.19.37-Isa: Sa-rết-se
+  Sharezer@Zec.7.2: Sa-rết-se
+  Shashai@Ezr.10.40: Sa-sai
+  Shashak@1Ch.8.14-: Sa-sác
+  Shaul@1Ch.6.24-: Sau-lơ
+  Shaul@Gen.36.37-1Ch: Sau-lơ
+  Shaul@Gen.46.10-1Ch: Sau-lơ
+  Sheal@Ezr.10.29: Sê-anh
+  Shealtiel@1Ch.3.17-Mat: Sa-la-thi-ên
+  Shealtiel@Luk.3.27: Sa-la-thi-ên
+  Shear-jashub@Isa.7.3: Sê-a-Gia-súp
+  Sheariah@1Ch.8.38-: Sê-a-ria
+  Sheba@1Ch.5.13: Sê-ba
+  Sheba@2Sa.20.1-: Sê-ba
+  Sheba@Gen.10.28-1Ch: Sê-ba
+  Sheba@Gen.10.7-Jol: Sê-ba
+  Sheba@Gen.25.3-1Ch: Sê-ba
+  Shebaniah@1Ch.15.24: Sê-ba-nia
+  Shebaniah@Neh.10.12: Sê-ba-nia
+  Shebaniah@Neh.10.4-: Sê-ba-nia
+  Shebaniah@Neh.9.4-: Sê-ba-nia
+  Sheber@1Ch.2.48: Sê-be
+  Shebna@2Ki.18.18-Isa: Sép-na
+  Shebuel@1Ch.23.16-: Sê-bu-ên
+  Shebuel@1Ch.25.4-: Sê-bu-ên
+  Shecaniah@1Ch.24.11: Sê-ca-nia
+  Shecaniah@1Ch.3.21-: Sê-ca-nia
+  Shecaniah@2Ch.31.15: Sê-ca-nia
+  Shecaniah@Ezr.10.2-Neh: Sê-ca-nia
+  Shecaniah@Ezr.8.3: Sê-ca-nia
+  Shecaniah@Ezr.8.5: Sê-ca-nia
+  Shecaniah@Neh.6.18: Sê-ca-nia
+  Shechem@1Ch.7.19: Si-chem
+  Shechem@Gen.33.19-: Si-chem
+  Shechem@Num.26.31-Jos: Si-chem
+  Shedeur@Num.1.5-: Sê-đêu
+  Sheerah@1Ch.7.24: Sê-ê-ra
+  Shehariah@1Ch.8.26: Sê-ha-ria
+  Shelah@Gen.10.24-Luk: Sê-la
+  Shelah@Gen.38.5-1Ch: Sê-la
+  Shelemiah@Ezr.10.39: Sê-lê-mia
+  Shelemiah@Ezr.10.41: Sê-lê-mia
+  Shelemiah@Jer.36.14: Sê-lê-mia
+  Shelemiah@Jer.36.26: Sê-lê-mia
+  Shelemiah@Jer.37.13: Sê-lê-mia
+  Shelemiah@Jer.37.3-: Sê-lê-mia
+  Shelemiah@Neh.13.13: Sê-lê-mia
+  Shelemiah@Neh.3.30: Sê-lê-mia
+  Sheleph@Gen.10.26-1Ch: Sê-lép
+  Shelesh@1Ch.7.35: Sê-lết
+  Shelomi@Num.34.27: Se-lu-mi
+  Shelomith@1Ch.23.18-: Sê-lô-mít
+  Shelomith@1Ch.3.19: Sê-lô-mít
+  Shelomith@2Ch.11.20: Sê-lô-mít
+  Shelomith@Ezr.8.10: Sê-lô-mít
+  Shelomith@Lev.24.11: Sê-lô-mít
+  Shelomoth@1Ch.23.9: Sê-lô-mốt
+  Shelomoth@1Ch.26.25-: Sê-lô-mốt
+  Shelumiel@Num.1.6-: Sê-lu-mi-ên
+  Shem@Gen.5.32-Luk: Sem
+  Shema@1Ch.2.43-: Sê-ma
+  Shema@1Ch.5.8: Sê-ma
+  Shema@1Ch.8.13: Sê-ma
+  Shema@Neh.8.4: Sê-ma
+  Shemaah@1Ch.12.3: Sê-ma
+  Shemaiah@1Ch.15.8-: Sê-ma-gia
+  Shemaiah@1Ch.24.6: Sê-ma-gia
+  Shemaiah@1Ch.26.4-: Sê-ma-gia
+  Shemaiah@1Ch.3.22: Sê-ma-gia
+  Shemaiah@1Ch.4.37: Sê-ma-gia
+  Shemaiah@1Ch.5.4: Sê-ma-gia
+  Shemaiah@1Ch.9.14-Neh: Sê-ma-gia
+  Shemaiah@1Ch.9.16-Neh: Sê-ma-gia
+  Shemaiah@1Ki.12.22-2Ch: Sê-ma-gia
+  Shemaiah@2Ch.17.8: Sê-ma-gia
+  Shemaiah@2Ch.29.14: Sê-ma-gia
+  Shemaiah@2Ch.31.15: Sê-ma-gia
+  Shemaiah@2Ch.35.9: Sê-ma-gia
+  Shemaiah@Ezr.10.21: Sê-ma-gia
+  Shemaiah@Ezr.10.31: Sê-ma-gia
+  Shemaiah@Ezr.8.13: Sê-ma-gia
+  Shemaiah@Ezr.8.16: Sê-ma-gia
+  Shemaiah@Jer.26.20: Sê-ma-gia
+  Shemaiah@Jer.29.24-: Sê-ma-gia
+  Shemaiah@Jer.36.12: Sê-ma-gia
+  Shemaiah@Neh.10.8-: Sê-ma-gia
+  Shemaiah@Neh.12.35: Sê-ma-gia
+  Shemaiah@Neh.12.36: Sê-ma-gia
+  Shemaiah@Neh.12.42: Sê-ma-gia
+  Shemaiah@Neh.3.29: Sê-ma-gia
+  Shemaiah@Neh.6.10: Sê-ma-gia
+  Shemariah@1Ch.12.5: Sê-ma-ria
+  Shemariah@2Ch.11.19: Sê-ma-ria
+  Shemariah@Ezr.10.32: Sê-ma-ria
+  Shemariah@Ezr.10.41: Sê-ma-ria
+  Shemeber@Gen.14.2: Sê-mê-bê
+  Shemed@1Ch.8.12: Sê-mết
+  Shemer@1Ch.6.46: Sê-me
+  Shemer@1Ki.16.24: Sê-me
+  Shemida@Num.26.32-1Ch: Sê-mi-đa
+  Shemiramoth@1Ch.15.18-: Sê-mi-ra-mốt
+  Shemiramoth@2Ch.17.8: Sê-mi-ra-mốt
+  Shemuel@1Ch.7.2: Sa-mu-ên
+  Shemuel@Num.34.20: Sa-mu-ên
+  Shenazzar@1Ch.3.18: Sê-na-xa
+  Shephatiah@1Ch.12.5: Sê-pha-tia
+  Shephatiah@1Ch.27.16: Sê-pha-tia
+  Shephatiah@1Ch.9.8: Sê-pha-tia
+  Shephatiah@2Ch.21.2: Sê-pha-tia
+  Shephatiah@2Sa.3.4-1Ch: Sê-pha-tia
+  Shephatiah@Ezr.2.4-Neh: Sê-pha-tia
+  Shephatiah@Ezr.2.57-Neh: Sê-pha-tia
+  Shephatiah@Jer.38.1: Sê-pha-tia
+  Shephatiah@Neh.11.4: Sê-pha-tia
+  Shepho@Gen.36.23-1Ch: Sê-phô
+  Sherebiah@Ezr.8.18-Neh: Sê-rê-bia
+  Sherebiah@Neh.10.12-: Sê-rê-bia
+  Sheresh@1Ch.7.16: Sê-rết
+  Sheshai@Num.13.22-Jdg: Sê-sai
+  Sheshan@1Ch.2.31-: Sê-san
+  Shethar-bozenai@Ezr.5.3-: Sê-ta-Bô-xê-nai
+  Shethar@Est.1.14: Sê-thạt
+  Sheva@1Ch.2.49: Sê-va
+  Shilhi@1Ki.22.42-2Ch: Si-li
+  Shillem@Gen.46.24-1Ch: Si-lem
+  Shilshah@1Ch.7.37: Sinh-sa
+  Shimea@1Ch.6.30: Si-mê-a
+  Shimea@1Ch.6.39: Si-mê-a
+  Shimeah@1Ch.8.32-: Si-mê-a
+  Shimeah@1Sa.16.9-1Ch: Si-mê-a
+  Shimeath@2Ki.12.21-2Ch: Si-mê-át
+  Shimei@1Ch.27.27: Si-mê-i
+  Shimei@1Ch.3.19: Si-mê-i
+  Shimei@1Ch.4.26-: Si-mê-i
+  Shimei@1Ch.5.4: Si-mê-i
+  Shimei@1Ch.6.29: Si-mê-i
+  Shimei@1Ch.6.42-: Si-mê-i
+  Shimei@1Ch.8.21: Si-mê-i
+  Shimei@1Ki.1.8-: Si-mê-i
+  Shimei@2Ch.29.14: Si-mê-i
+  Shimei@2Ch.31.12-: Si-mê-i
+  Shimei@2Sa.16.5-1Ki: Si-mê-i
+  Shimei@Est.2.5: Si-mê-i
+  Shimei@Exo.6.17-Zec: Si-mê-i
+  Shimei@Ezr.10.23: Si-mê-i
+  Shimei@Ezr.10.33: Si-mê-i
+  Shimei@Ezr.10.38: Si-mê-i
+  Shimeon@Ezr.10.31: Si-mê-ôn
+  Shimon@1Ch.4.20: Si-môn
+  Shimrath@1Ch.8.21: Sim-rát
+  Shimri@1Ch.11.45: Sim-ri
+  Shimri@1Ch.26.10: Sim-ri
+  Shimri@1Ch.4.37: Sim-ri
+  Shimri@2Ch.29.13: Sim-ri
+  Shimron@Gen.46.13-1Ch: Sim-rôn
+  Shimshai@Ezr.4.8-: Sim-sai
+  Shinab@Gen.14.2: Si-nê-áp
+  Shiphi@1Ch.4.37: Si-phi
+  Shiphrah@Exo.1.15: Siếp-ra
+  Shiphtan@Num.34.24: Síp-tan
+  Shishak@1Ki.11.40-2Ch: Si-sắc
+  Shitrai@1Ch.27.29: Sít-trai
+  Shiza@1Ch.11.42: Si-xa
+  Shobab@1Ch.2.18: Sô-báp
+  Shobab@2Sa.5.14-1Ch: Sô-báp
+  Shobach@2Sa.10.16-1Ch: Sô-bác
+  Shobai@Ezr.2.42-Neh: Sô-bai
+  Shobal@1Ch.2.50-: Sô-banh
+  Shobal@Gen.36.20-1Ch: Sô-banh
+  Shobek@Neh.10.24: Sô-béc
+  Shobi@2Sa.17.27: Sô-bi
+  Shoham@1Ch.24.27: Sô-ham
+  Shomer@1Ch.7.32-: Sô-mê
+  Shomer@2Ki.12.21-2Ch: Sô-mê
+  Shua@1Ch.7.32: Su-a
+  Shua@Gen.38.2-1Ch: Su-a
+  Shuah@Gen.25.2-1Ch: Su-a
+  Shual@1Ch.7.36-: Su-anh
+  Shuhah@1Ch.4.11: Su-ha
+  Shuni@Gen.46.16-Num: Su-ni
+  Shuppim@1Ch.26.16: Súp-bim
+  Shuppim@1Ch.7.12-: Súp-bim
+  Shuthelah@1Ch.7.21: Su-tê-lách
+  Shuthelah@Num.26.35-1Ch: Su-tê-lách
+  Siaha@Ezr.2.44-Neh: Sia-ha
+  Sibbecai@2Sa.21.18-1Ch: Si-bê-cai
+  Sidon@Gen.10.15-1Ch: Si-đôn
+  Sihon@Num.21.21-Jer: Si-hôn
+  Silas@Act.15.22-1Pe: Si-la
+  Simeon@Act.13.1: Si-mê-ôn
+  Simeon@Gen.29.33-Rev: Si-mê-ôn
+  Simeon@Luk.2.25-: Si-mê-ôn
+  Simeon@Luk.3.30: Si-mê-ôn
+  Simon@Act.8.13-: Si-môn
+  Simon@Act.8.9-: Si-môn
+  Simon@Jhn.6.71-: Si-môn
+  Simon@Mat.10.4-Act: Si-môn
+  Simon@Mat.13.55-Mrk: Si-môn
+  Simon@Mat.26.6-Luk: Si-môn
+  Simon@Mat.27.32-Luk: Si-môn
+  Sisera@Ezr.2.53-Neh: Si-sê-ra
+  Sisera@Jdg.4.2-Psa: Si-sê-ra
+  Sismai@1Ch.2.40: Sít-mai
+  Sithri@Exo.6.22: Sít-ri
+  So@2Ki.17.4: Sô
+  Soco@1Ch.4.18: Sô-cô
+  Sodi@Num.13.10: Sô-đi
+  Solomon@2Sa.5.14-Act: Sa-lô-môn
+  Sopater@Act.20.4-Rom: Sô-ba-tê
+  Sophereth@Ezr.2.55-Neh: Sô-phê-rết
+  Sosthenes@Act.18.17-1Co: Sốt-then
+  Sotai@Ezr.2.55-Neh: Sô-tai
+  Stachys@Rom.16.9: Ếch-ta-chy
+  Stephanas@1Co.1.16-: Sê-pha-na
+  Stephen@Act.6.5-: Ê-tiên
+  Suah@1Ch.7.36: Su-a
+  Susanna@Luk.8.3: Su-xan-nơ
+  Susi@Num.13.11: Su-si
+  Syntyche@Php.4.2: Sin-ty-cơ
+  Tabbaoth@Ezr.2.43-Neh: Ta-ba-ốt
+  Tabeal@Isa.7.6: Ta-bê-ên
+  Tabeel@Ezr.4.7: Ta-bê-ên
+  Tabitha@Act.9.36-: Ta-bi-tha
+  Tabrimmon@1Ki.15.18: Táp-ri-môn
+  Tahan@1Ch.7.25: Ta-han
+  Tahan@Num.26.35: Ta-han
+  Tahash@Gen.22.24: Ta-hách
+  Tahath@1Ch.6.24-: Ta-hát
+  Tahath@1Ch.7.20a: Ta-hát
+  Tahath@1Ch.7.20b: Ta-hát
+  Tahpenes@1Ki.11.19-: Tác-bê-ne
+  Talmai@2Sa.3.3-1Ch: Tanh-mai
+  Talmai@Num.13.22-Jdg: Tanh-mai
+  Talmon@1Ch.9.17-Neh: Tanh-môn
+  Tamar@2Sa.13.1-1Ch: Ta-ma
+  Tamar@2Sa.14.27: Ta-ma
+  Tamar@Gen.38.6-Mat: Ta-ma
+  Tanhumeth@2Ki.25.23-Jer: Tan-hu-mết
+  Taphath@1Ki.4.11: Ta-phát
+  Tappuah@1Ch.2.43: Tháp-bu-ách
+  Tarea@1Ch.8.35-: Ta-rê-a
+  Tarshish@1Ch.7.10: Ta-rê-si
+  Tarshish@Est.1.14: Ta-rê-si
+  Tarshish@Gen.10.4-1Ch: Ta-rê-si
+  Tartan@2Ki.18.17-Isa: Tạt-tan
+  Tattenai@Ezr.5.3-: Tát-tê-nai
+  Tebah@Gen.22.24: Tê-bách
+  Tebaliah@1Ch.26.11: Tê-ba-lia
+  Tehinnah@1Ch.4.12: Tê-hi-na
+  Telah@1Ch.7.25: Tê-la
+  Telem@Ezr.10.24: Tê-lem
+  Tema@Gen.25.15-1Ch: Thê-ma
+  Temah@Ezr.2.53-Neh: Tha-mác
+  Teman@Gen.36.11-Job: Thê-man
+  Temeni@1Ch.4.6: Thê-mê-ni
+  Terah@Gen.11.24-Luk: Tha-rê
+  Teresh@Est.2.21-: Thê-rết
+  Tertius@Rom.16.22: Tẹt-tiu
+  Tertullus@Act.24.1-: Tẹt-tu-lu
+  Theophilus@Luk.1.3-Act: Thê-ô-phi-lơ
+  Theudas@Act.5.36: Thêu-đa
+  Thomas@Mat.10.3-Act: Thô-ma
+  Tiberius@Mat.22.17-Jhn: Ti-be-rơ
+  Tibni@1Ki.16.21-: Típ-ni
+  Tidal@Gen.14.1-: Ti-đanh
+  Tiglath-pileser@2Ki.15.19-Hos: Tiếc-la-Phi-lê-se
+  Tikvah@2Ki.22.14-2Ch: Tiếc-va
+  Tikvah@Ezr.10.15: Tiếc-va
+  Tilon@1Ch.4.20: Ti-lôn
+  Timaeus@Mrk.10.46: Ti-mê
+  Timna@Gen.36.12-1Ch: Thim-na
+  Timon@Act.6.5: Ti-môn
+  Timothy@Act.16.1-Heb: Ti-mô-thê
+  Tiras@Gen.10.2-1Ch: Ti-ra
+  Tirhakah@2Ki.19.9-Isa: Tiệt-ha-ca
+  Tirhanah@1Ch.2.48: Ti-ra-na
+  Tiria@1Ch.4.16: Thi-ria
+  Tirzah@Num.26.33-Jos: Tiệt-sa
+  Titus@2Co.2.13-Tit: Tít
+  Tobadonijah@2Ch.17.8: Tô-ba-đô-ni-gia
+  Tobiah@Ezr.2.60-Neh: Tô-bi-gia
+  Tobiah@Neh.2.10-: Tô-bi-gia
+  Tobijah@2Ch.17.8: Tô-bi-gia
+  Tobijah@Zec.6.10-: Tô-bi-gia
+  Togarmah@Gen.10.3-1Ch: Tô-ga-ma
+  Tohu@1Sa.1.1-1Ch: Tô-hu
+  Toi@2Sa.8.9-1Ch: Thôi
+  Tola@Gen.46.13-1Ch: Thô-la
+  Tola@Jdg.10.1: Thô-la
+  Trophimus@Act.20.4-2Ti: Trô-phim
+  Tryphaena@Rom.16.12: Try-phe-nơ
+  Tryphosa@Rom.16.12: Try-phô-sơ
+  Tubal-cain@Gen.4.22: Tu-banh-Ca-in
+  Tubal@Gen.10.2-1Ch: Tu-banh
+  Tychicus@Act.20.4-Tit: Ti-chi-cơ
+  Tyrannus@Act.19.9: Ti-ra-nu
+  Ucal@Pro.30.1: U-canh
+  Uel@Ezr.10.34: U-ên
+  Ulam@1Ch.7.16-: U-lam
+  Ulam@1Ch.8.39-: U-lam
+  Unni@1Ch.15.18-: U-ni
+  Unni@Neh.12.9: U-ni
+  Ur@1Ch.11.35: U-rơ
+  Urbanus@Rom.16.9: U-rơ-banh
+  Uri@1Ki.4.19: U-ri
+  Uri@Exo.31.2-2Ch: U-ri
+  Uri@Ezr.10.24: U-ri
+  Uriah@2Ki.16.10-Isa: U-ri
+  Uriah@2Sa.11.3-Mat: U-ri
+  Uriah@Ezr.8.33-Neh: U-ri
+  Uriah@Jer.26.20-: U-ri
+  Uriah@Neh.8.4: U-ri
+  Uriel@1Ch.15.5-: U-ri-ên
+  Uriel@1Ch.6.24-: U-ri-ên
+  Uriel@2Ch.13.2: U-ri-ên
+  Uthai@1Ch.9.4: U-thai
+  Uthai@Ezr.8.14: U-thai
+  Uz@Gen.10.23-1Ch: Út-xơ
+  Uz@Gen.22.21: Út-xơ
+  Uz@Gen.36.28-1Ch: Út-xơ
+  Uzai@Neh.3.25: U-xai
+  Uzal@Gen.10.27-1Ch: U-xa
+  Uzza@1Ch.8.7: U-xa
+  Uzza@Ezr.2.49-Neh: U-xa
+  Uzzah@1Ch.6.29: U-xa
+  Uzzah@2Sa.6.3-1Ch: U-xa
+  Uzzi@1Ch.6.5-Ezr: U-xi
+  Uzzi@1Ch.7.2-: U-xi
+  Uzzi@1Ch.7.7: U-xi
+  Uzzi@1Ch.9.8: U-xi
+  Uzzi@Neh.11.22: U-xi
+  Uzzi@Neh.12.19: U-xi
+  Uzzi@Neh.12.42: U-xi
+  Uzzia@1Ch.11.44: U-xia
+  Uzziah@1Ch.27.25: Ô-xia
+  Uzziah@1Ch.6.24-: Ô-xia
+  Uzziah@2Ki.14.21-Mat: Ô-xia
+  Uzziah@Ezr.10.21: Ô-xia
+  Uzziah@Neh.11.4: Ô-xia
+  Uzziel@1Ch.25.4-: U-xi-ên
+  Uzziel@1Ch.4.42: U-xi-ên
+  Uzziel@1Ch.7.7: U-xi-ên
+  Uzziel@2Ch.29.14: U-xi-ên
+  Uzziel@Exo.6.18-1Ch: U-xi-ên
+  Uzziel@Neh.3.8: U-xi-ên
+  Vaizatha@Est.9.9: Va-giê-xa-tha
+  Vaniah@Ezr.10.36: Va-nia
+  Vashti@Est.1.9-: Vả-thi
+  Vophsi@Num.13.14: Vấp-si
+  Zaavan@Gen.36.27-1Ch: Xa-van
+  Zabad@1Ch.11.41: Xa-bát
+  Zabad@1Ch.2.36-: Xa-bát
+  Zabad@1Ch.7.21: Xa-bát
+  Zabad@Ezr.10.27: Xa-bát
+  Zabad@Ezr.10.33: Xa-bát
+  Zabad@Ezr.10.43: Xa-bát
+  Zabbai@Ezr.10.28: Xáp-bai
+  Zabbai@Neh.3.20: Xáp-bai
+  Zabdi@1Ch.27.27: Xáp-đi
+  Zabdi@1Ch.8.19: Xáp-đi
+  Zabdi@Jos.7.1-1Ch: Xáp-đi
+  Zabdiel@1Ch.27.2: Xáp-đi-ên
+  Zabdiel@Neh.11.14: Xáp-đi-ên
+  Zabud@1Ki.4.5: Xa-bút
+  Zaccai@Ezr.2.9-Neh: Xác-cai
+  Zacchaeus@Luk.19.2-: Xa-chê
+  Zaccur@1Ch.24.27: Xác-cua
+  Zaccur@1Ch.25.2-Neh: Xác-cua
+  Zaccur@1Ch.4.26: Xác-cua
+  Zaccur@Ezr.8.14: Xác-cua
+  Zaccur@Neh.10.12: Xác-cua
+  Zaccur@Neh.13.13: Xác-cua
+  Zaccur@Neh.3.2: Xác-cua
+  Zaccur@Num.13.4: Xác-cua
+  Zadok@1Ch.6.12-Neh: Xa-đốc
+  Zadok@2Ki.15.33-2Ch: Xa-đốc
+  Zadok@2Sa.8.17-Ezk: Xa-đốc
+  Zadok@Mat.1.14: Xa-đốc
+  Zadok@Neh.10.21: Xa-đốc
+  Zadok@Neh.13.13: Xa-đốc
+  Zadok@Neh.3.29: Xa-đốc
+  Zadok@Neh.3.4: Xa-đốc
+  Zaham@2Ch.11.19: Xa-ham
+  Zalaph@Neh.3.30: Xa-láp
+  Zalmon@2Sa.23.28-1Ch: Sanh-môn
+  Zalmunna@Jdg.8.5-Psa: Xanh-mu-na
+  Zattu@Ezr.2.8-Neh: Xát-tu
+  Zattu@Neh.10.14: Xát-tu
+  Zaza@1Ch.2.33: Xa-xa
+  Zebadiah@1Ch.12.7: Xê-ba-đia
+  Zebadiah@1Ch.26.2: Xê-ba-đia
+  Zebadiah@1Ch.27.7: Xê-ba-đia
+  Zebadiah@1Ch.8.15: Xê-ba-đia
+  Zebadiah@1Ch.8.17: Xê-ba-đia
+  Zebadiah@2Ch.17.8: Xê-ba-đia
+  Zebadiah@2Ch.19.11: Xê-ba-đia
+  Zebadiah@Ezr.10.20: Xê-ba-đia
+  Zebadiah@Ezr.8.8: Xê-ba-đia
+  Zebah@Jdg.8.5-Psa: Xê-bách
+  Zebedee@Mat.4.21-Jhn: Xê-bê-đê
+  Zebidah@2Ki.23.36: Xê-bụt-đa
+  Zebina@Ezr.10.43: Xê-bi-na
+  Zebul@Jdg.9.28-: Xê-bun
+  Zebulun@Gen.30.20-Rev: Sa-bu-lôn
+  Zechariah@1Ch.24.25: Xa-cha-ri
+  Zechariah@1Ch.26.11: Xa-cha-ri
+  Zechariah@1Ch.27.21: Xa-cha-ri
+  Zechariah@1Ch.5.7: Xa-cha-ri
+  Zechariah@1Ch.9.21-: Xa-cha-ri
+  Zechariah@2Ch.17.7: Xa-cha-ri
+  Zechariah@2Ch.20.14: Xa-cha-ri
+  Zechariah@2Ch.21.2: Xa-cha-ri
+  Zechariah@2Ch.24.20-Luk: Xa-cha-ri
+  Zechariah@2Ch.26.5: Xa-cha-ri
+  Zechariah@2Ch.29.13: Xa-cha-ri
+  Zechariah@2Ch.34.12: Xa-cha-ri
+  Zechariah@2Ch.35.8: Xa-cha-ri
+  Zechariah@2Ki.14.29-: Xa-cha-ri
+  Zechariah@2Ki.18.2-2Ch: Xa-cha-ri
+  Zechariah@Ezr.10.26: Xa-cha-ri
+  Zechariah@Ezr.5.1-Zec: Xa-cha-ri
+  Zechariah@Ezr.8.11: Xa-cha-ri
+  Zechariah@Ezr.8.16: Xa-cha-ri
+  Zechariah@Ezr.8.3: Xa-cha-ri
+  Zechariah@Isa.8.2: Xa-cha-ri
+  Zechariah@Luk.1.5-: Xa-cha-ri
+  Zechariah@Neh.11.12: Xa-cha-ri
+  Zechariah@Neh.11.4: Xa-cha-ri
+  Zechariah@Neh.11.5: Xa-cha-ri
+  Zechariah@Neh.12.16: Xa-cha-ri
+  Zechariah@Neh.12.35: Xa-cha-ri
+  Zechariah@Neh.12.41: Xa-cha-ri
+  Zechariah@Neh.8.4: Xa-cha-ri
+  Zecher@1Ch.8.31-: Xê-ke
+  Zedekiah@1Ch.3.16: Sê-đê-kia
+  Zedekiah@1Ki.22.11-2Ch: Sê-đê-kia
+  Zedekiah@2Ki.24.17-Jer: Sê-đê-kia
+  Zedekiah@Jer.29.21-: Sê-đê-kia
+  Zedekiah@Jer.36.12: Sê-đê-kia
+  Zedekiah@Neh.10.1: Sê-đê-kia
+  Zeeb@Jdg.7.25-Psa: Xê-ép
+  Zelek@2Sa.23.37-1Ch: Xê-léc
+  Zelophehad@Num.26.33-1Ch: Xê-lô-phát
+  Zemirah@1Ch.7.8: Xê-mi-ra
+  Zenas@Tit.3.13: Xê-na
+  Zephaniah@2Ki.25.18-Jer: Sô-phô-ni
+  Zephaniah@Zec.6.10-: Sô-phô-ni
+  Zephaniah@Zep.1.1: Sô-phô-ni
+  Zepho@Gen.36.11-1Ch: Xê-phô
+  Zerah@1Ch.6.21-: Xê-rách
+  Zerah@2Ch.14.9: Xê-rách
+  Zerah@Gen.36.13-1Ch: Xê-rách
+  Zerah@Gen.36.33-1Ch: Xê-rách
+  Zerah@Gen.38.30-Mat: Xê-rách
+  Zerah@Gen.46.10-1Ch: Xê-rách
+  Zerahiah@Ezr.8.4: Xê-ra-hi-gia
+  Zeresh@Est.5.10-: Xê-rết
+  Zereth@1Ch.4.7: Xê-rết
+  Zeri@1Ch.25.3-: Xê-ri
+  Zeror@1Sa.9.1: Xê-rô
+  Zeruah@1Ki.11.26: Xê-ru-ha
+  Zerubbabel@1Ch.3.19-Mat: Xô-rô-ba-bên
+  Zerubbabel@Luk.3.27: Xô-rô-ba-bên
+  Zeruiah@1Sa.26.6-1Ch: Xê-ru-gia
+  Zetham@1Ch.23.8-: Xê-tham
+  Zethan@1Ch.7.10: Xê-than
+  Zethar@Est.1.10: Xê-thạt
+  Zia@1Ch.5.13: Xia
+  Ziba@2Sa.9.2-: Xíp-ba
+  Zibeon@Gen.36.2-1Ch: Xi-bê-ôn
+  Zibia@1Ch.8.9: Xi-bia
+  Zibiah@2Ki.12.1-2Ch: Xi-bia
+  Zichri@1Ch.26.25: Xiếc-ri
+  Zichri@1Ch.27.16: Xiếc-ri
+  Zichri@1Ch.8.19: Xiếc-ri
+  Zichri@1Ch.8.23: Xiếc-ri
+  Zichri@1Ch.8.27: Xiếc-ri
+  Zichri@1Ch.9.15-Neh: Xiếc-ri
+  Zichri@2Ch.17.16: Xiếc-ri
+  Zichri@2Ch.23.1: Xiếc-ri
+  Zichri@2Ch.28.7: Xiếc-ri
+  Zichri@Exo.6.21: Xiếc-ri
+  Zichri@Neh.11.9: Xiếc-ri
+  Zichri@Neh.12.17: Xiếc-ri
+  Ziha@Ezr.2.43-Neh: Xi-ha
+  Ziha@Neh.11.21: Xi-ha
+  Zillah@Gen.4.19-: Si-la
+  Zillethai@1Ch.12.20: Xi-lê-thai
+  Zillethai@1Ch.8.20: Xi-lê-thai
+  Zilpah@Gen.29.24-: Xinh-ba
+  Zimmah@1Ch.6.20-: Xim-ma
+  Zimmah@2Ch.29.12: Xim-ma
+  Zimran@Gen.25.2-1Ch: Xim-ram
+  Zimri@1Ch.8.36-: Xim-ri
+  Zimri@1Ki.16.9-2Ki: Xim-ri
+  Zimri@Num.25.14: Xim-ri
+  Ziph@1Ch.4.16: Xíp
+  Ziphah@1Ch.4.16: Xi-pha
+  Ziphion@Gen.46.16-Num: Xi-phi-ôn
+  Zippor@Num.22.2-Jdg: Xếp-bô
+  Zipporah@Exo.2.21-: Sê-phô-ra
+  Ziza@1Ch.4.37: Xi-xa
+  Ziza@2Ch.11.20: Xi-xa
+  Zizah@1Ch.23.10-: Xi-xa
+  Zobebah@1Ch.4.8: Hát-xô-bê-ba
+  Zohar@Gen.23.8-: Xô-ha
+  Zoheth@1Ch.4.20: Xô-hết
+  Zophah@1Ch.7.35-: Xô-pha
+  Zophar@Job.2.11-: Sô-pha
+  Zuar@Num.1.8-: Xu-a
+  Zuph@1Sa.1.1-1Ch: Xu-phơ
+  Zur@1Ch.8.30-: Xu-rơ
+  Zur@Num.25.15: Xu-rơ
+  Zur@Num.31.8-Jos: Xu-rơ
+  Zuriel@Num.3.35: Xu-ri-ên
+  Zurishaddai@Num.1.6-: Xu-ri-ha-đai
+ancient:
+  "29501": Bam
+  "29540": Dahan-e Gholaman
+  "29762": Siraf
+  "29766": Sohar
+  "29783": Tepe Yahya
+  "39264": Sumhuram
+  "39269": Aden
+  "39300": Baraqish
+  "39303": Axum
+  "39355": Qana
+  "39379": Marib
+  "39430": Timna
+  "59669": Kandahar
+  "59672": Alexandria Eschate
+  "59694": Ghazni
+  "59915": Maracanda
+  "59993": Pushkalavati
+  "60083": Taxila
+  "60476": Bamiyan
+  "108894": Augusta Treverorum
+  "108945": Durocortorum
+  "109126": Lutetia
+  "109169": Mogontiacum
+  "118580": Augusta Vindelicorum
+  "128376": Carnuntum
+  "128537": Vindobona
+  "138248": Burdigala
+  "148127": Massalia
+  "148142": Nemausus
+  "148217": Arelate
+  "167717": Lugdunum
+  "177434": Alesia
+  "177473": Bibracte
+  "187290": Aquileia
+  "187406": Hallstatt
+  "197130": Aquincum
+  "197448": Pola
+  "197524": Cung điện Diocletianus
+  "207303": Naissus
+  "207425": Sarmizegetusa Regia
+  "207439": Serdica
+  "207443": Singidunum
+  "207447": Sirmium
+  "207527": Ulpia Traiana Sarmizegetusa
+  "207549": Viminacium
+  "216706": Apollonia Pontica
+  "216839": Histria
+  "216882": Mesembria
+  "216904": Odessos
+  "216927": Philippopolis
+  "217016": Tomis
+  "226546": Olbia
+  "226564": Chersonesus
+  "226695": Neapolis Scythica
+  "246344": Caesaraugusta
+  "246347": Narbo
+  "246349": Tarraco
+  "246382": Emporion
+  "246523": Numantia
+  "246694": Tolosa
+  "256128": Corduba
+  "256155": Emerita Augusta
+  "256177": Gades
+  "256210": Hispalis
+  "256231": Italica
+  "256338": Olisipo
+  "265849": Carthago Nova
+  "265883": Ebusus
+  "265921": Granada
+  "266021": Saguntum
+  "266066": Toletum
+  "275666": Lixus
+  "275696": Sala
+  "275736": Tingis
+  "275740": Volubilis
+  "295279": Iol Caesarea
+  "295363": Tipasa
+  "305064": Cirta
+  "305068": Cuicul
+  "305090": Hippo Regius
+  "315050": Kerkouane
+  "315223": Thugga
+  "315233": Tunis
+  "315248": Utica
+  "324716": Hadrumetum
+  "324816": Sufetula
+  "324835": Thysdrus
+  "334570": Lambaesis
+  "334636": Thamugadi
+  "344282": Sabratha
+  "344448": Leptis Magna
+  "344456": Oea
+  "354115": Garama
+  "373732": Apollonia ở Cyrenaica
+  "373786": Euesperides
+  "373879": Ptolemais ở Cyrenaica
+  "383706": Mediolanum
+  "383816": Verona
+  "393480": Ravenna
+  "403253": Pisa
+  "413138": Florentia
+  "413332": Tarquinii
+  "422995": Ostia
+  "423116": Veii
+  "432721": Beneventum
+  "432754": Capua
+  "432808": Cumae
+  "432873": Herculaneum
+  "433014": Nê-a-bô-li
+  "433032": Pompeii
+  "442509": Brundisium
+  "442733": Paestum
+  "442810": Tarentum
+  "452317": Croton
+  "452457": Sybaris
+  "462086": Akragas
+  "462214": Gela
+  "462270": Catana
+  "462373": Motya
+  "462410": Panormus
+  "462487": Segesta
+  "462489": Selinunte
+  "462538": Messana
+  "471899": Carales
+  "471979": Nora
+  "472032": Tharros
+  "472048": Aleria
+  "481728": Apollonia ở Illyria
+  "481818": Dyrrachium
+  "481900": Lychnidos
+  "491512": Aigai
+  "491572": Dion
+  "491678": Olynthus
+  "491687": Pella
+  "501323": Abdera
+  "501325": Abydos bên Hellespont
+  "501570": Lampsacus
+  "501634": Thasos
+  "511218": Cyzicus
+  "511268": Nicaea
+  "511337": Nicomedia
+  "511384": Prusa
+  "520988": Chalcedon
+  "520998": Byzantium
+  "530824": Butrint
+  "530834": Corcyra
+  "530843": Dodona
+  "540703": Chalcis
+  "540726": Delphi
+  "540789": Gla
+  "540905": Larissa
+  "540909": Lefkandi
+  "540987": Orchomenus
+  "541138": Thebes ở Boeotia
+  "550506": Cyme
+  "550535": Erythrae
+  "550595": Troia
+  "550650": Clazomenae
+  "550823": Phocaea
+  "550913": Teos
+  "570106": Argos
+  "570124": Asine
+  "570424": Lerna
+  "570468": Megara
+  "570477": Menelaion
+  "570479": Messene
+  "570485": Midea
+  "570491": Mycenae
+  "570504": Nemea
+  "570531": Olympia
+  "570740": Tiryns
+  "579853": Aegina
+  "579920": Eleusis
+  "579925": Eretria
+  "580062": Piraeus
+  "580119": Thorikos
+  "589690": Kommos
+  "589796": Gortyn
+  "589836": Kamiros
+  "589872": Knossos
+  "589886": Kydonia
+  "589913": Lindos
+  "589922": Malia
+  "589987": Phaistos
+  "599478": Akrotiri
+  "599577": Colophon
+  "599587": Delos
+  "599593": Didyma
+  "599636": Halicarnassus
+  "599641": Heraion ở Samos
+  "599719": Claros
+  "599778": Magnesia bên sông Maeander
+  "599905": Priene
+  "599987": Tralles
+  "609302": Amorium
+  "609367": Dorylaeum
+  "609393": Gordion
+  "609500": Pessinus
+  "609570": Midas City
+  "619103": Ancyra
+  "619244": Kerkenes
+  "629035": Caesarea Mazaca
+  "629075": Sebasteia
+  "638753": Aphrodisias
+  "638776": Aspendos
+  "638796": Caunus
+  "638958": Letoon
+  "639051": Phaselis
+  "639087": Sagalassos
+  "639105": Side
+  "639139": Termessos
+  "639166": Xanthos
+  "648771": Seleucia ad Calycadnum
+  "648781": Soli ở Cilicia
+  "648801": Tyana
+  "658369": Ain Dara
+  "658378": Anazarbus
+  "658399": Hadatu
+  "658409": Aleppo
+  "658457": Edessa
+  "658538": Mopsuestia
+  "658544": Nemrut Dağ
+  "658587": Samosata
+  "658636": Zeugma
+  "668198": Arqa
+  "668261": Emesa
+  "668262": Ras Ibn Hani
+  "668290": Laodicea ad Mare
+  "668306": Amrit
+  "668318": Raqqa
+  "668335": Apamea
+  "668394": Tripolis
+  "678060": Berytus
+  "678073": Bostra
+  "678179": Baalbek
+  "678326": Pella thuộc Decapolis
+  "678332": Philippopolis ở Ả Rập
+  "678387": Sepphoris
+  "687887": Avdat
+  "687968": Masada
+  "697700": Machaerus
+  "697725": Petra
+  "707462": Amathus
+  "707519": Idalion
+  "707534": Kition
+  "707549": Kourion
+  "707555": Lapethos
+  "707574": Marion
+  "707596": Palaepaphos
+  "707624": Soli
+  "707628": Tamassos
+  "716520": Siwa
+  "727078": Athribis
+  "727082": Fustat
+  "727094": Buto
+  "727097": Canopus
+  "727130": Behbeit el-Hagar
+  "727146": Leontopolis
+  "727156": Mendes
+  "727169": Naucratis
+  "727217": Sais
+  "727227": Sebennytos
+  "736918": Hawara
+  "736932": Karanis
+  "736948": Crocodilopolis
+  "736953": El Lahun
+  "736958": Meidum
+  "736972": Medinet Madi
+  "736983": Oxyrhynchus
+  "737053": Soknopaiou Nesos
+  "737063": Dahshur
+  "737072": Tebtunis
+  "746825": Thung lũng Timna
+  "756512": Abydos
+  "756518": Antinoopolis
+  "756574": Hermopolis
+  "756593": Asyut
+  "756613": Panopolis
+  "776181": Hibis
+  "776189": Kellis
+  "785974": Edfu
+  "785975": Qus
+  "785986": Berenice Troglodytica
+  "786010": Coptos
+  "786036": Armant
+  "786037": Hierakonpolis
+  "786059": Esna
+  "786069": Myos Hormos
+  "786079": Kom Ombo
+  "786084": Gebelein
+  "786089": Philae
+  "786127": Dendera
+  "786132": Tod
+  "795838": Faras
+  "795856": Semna
+  "795863": Soleb
+  "798093": Qasr Ibrim
+  "805623": El-Kurru
+  "805630": Meroe
+  "805632": Musawwarat es-Sufra
+  "805634": Napata
+  "805635": Naqa
+  "805640": Nuri
+  "805647": Kawa
+  "814675": Hegra
+  "814688": Medina
+  "825397": Tanais
+  "844944": Heraclea Pontica
+  "854687": Tmutarakan
+  "854719": Panticapaeum
+  "854724": Phanagoria
+  "857018": Amaseia
+  "857024": Amisus
+  "857107": Dioscurias
+  "857275": Phasis
+  "857321": Sinope
+  "857359": Trapezus
+  "863739": Ani
+  "863745": Argishtikhinili
+  "863780": Dvin
+  "863785": Erebuni
+  "863815": Vagharshapat
+  "863822": Teishebaini
+  "863840": Mtskheta
+  "863911": Derbent
+  "863918": Vani
+  "874298": Amida
+  "874316": Altıntepe
+  "874341": Arbela
+  "874361": Artaxata
+  "874373": Theodosiopolis
+  "874396": Bastam
+  "874444": Dara
+  "874458": Dur-Sharrukin
+  "874502": Hasanlu
+  "874623": Nisibis
+  "874730": Tell Arbid
+  "874732": Kahat
+  "874735": Tell Brak
+  "874739": Guzana
+  "874741": Tell Hammam et-Turkman
+  "874754": Tell Taban
+  "874771": Tushpa
+  "884109": Takht-e Soleyman
+  "893941": Arrapha
+  "893952": Baghdad
+  "893964": Borsippa
+  "893976": Ctesiphon
+  "893987": Dilbat
+  "893988": Dur-Kurigalzu
+  "893990": Dura-Europos
+  "893991": Dur-Katlimmu
+  "894004": Hatra
+  "894027": Kilizu
+  "894028": Kish
+  "894042": Me-Turan
+  "894054": Nuzi
+  "894082": Samarra
+  "894084": Seleucia trên sông Tigris
+  "894089": Sippar
+  "894158": Terqa
+  "894185": Zenobia
+  "902990": Isfahan
+  "903002": Behistun
+  "903013": Der
+  "903035": Godin Tepe
+  "903054": Kangavar
+  "903104": Rhagae
+  "903131": Nush-i Jan
+  "906027": Shabwa
+  "912800": Al-Hira
+  "912808": Kufa
+  "912821": Basra
+  "912829": Chogha Mish
+  "912851": Failaka
+  "912855": Girsu
+  "912868": Isin
+  "912872": Charax Spasinou
+  "912873": Gundeshapur
+  "912897": Larsa
+  "912901": Marad
+  "912909": Nigin
+  "912941": Shushtar
+  "912950": Abu Salabikh
+  "922617": Gor
+  "922662": Istakhr
+  "922685": Naqsh-e Rostam
+  "922693": Pasargadae
+  "922695": Persepolis
+  "922706": Shiraz
+  "922740": Bishapur
+  "932474": Ed-Dur
+  "932478": Qal'at al-Bahrain
+  "932483": Thaj
+  "942276": Hecatompylos
+  "942329": Tepe Hissar
+  "952092": Nishapur
+  "952093": Nisa
+  "952108": Tus
+  "961873": Merv
+  "961874": Herat
+  "961886": Bactra
+  "971693": Ai-Khanoum
+  "971886": Termez
+  "13818291": Enkomi
+  "25078867": Arslantepe
+  "30774368": Tarbisu
+  "44626252": Umma
+  "45016677": Qaryat al-Faw
+  "54417737": Tuna el-Gebel
+  "56861725": Beycesultan
+  "58129442": Kanesh
+  "62131047": Ggantija
+  "65661952": Montecassino
+  "89966224": Tell al-Rimah
+  "90720956": Eshnunna
+  "93441396": Harappa
+  "112509596": Beni Hasan
+  "117143016": Sarissa
+  "122458792": Konar Sandal
+  "133411593": Maşat Höyük
+  "149576487": Amarna
+  "156116232": Pylos
+  "164651500": Mersa Gawasis
+  "171585551": Tell Agrab
+  "192555966": Sam'al
+  "195443086": Abusir
+  "223856813": Shubat-Enlil
+  "237391811": Shibaniba
+  "243245493": Abu Rawash
+  "260976011": Urkesh
+  "269070833": Yeha
+  "271535243": Norşuntepe
+  "279984092": Emar
+  "280341406": Phylakopi
+  "283602441": Hattusa
+  "286681704": Mari
+  "291059528": Sesebi
+  "326150788": Shuruppak
+  "334217804": Hamoukar
+  "339709658": Tell al-Ubaid
+  "349388313": Tell Tweini
+  "357565832": Ishchali
+  "359215729": Puzrish-Dagan
+  "362094923": Panjakent
+  "377547413": Shahr-e Sukhteh
+  "379202545": Rusahinili
+  "379400932": Haft Tepe
+  "391537222": Gonur Depe
+  "403627899": Matara
+  "403627900": Lalibela
+  "410216618": Madinat al-Zahra
+  "412342122": Qatna
+  "420811320": Wadi al-Jarf
+  "422676686": Poliochni
+  "423885388": Nabada
+  "430344980": Kar-Tukulti-Ninurta
+  "434181559": Tell Sukas
+  "440947682": El Kab
+  "442962448": Giza
+  "447680269": Tilmen Höyük
+  "459393126": Chogha Zanbil
+  "464208937": Tepe Sialk
+  "480215077": Chagar Bazar
+  "484415170": İnandıktepe
+  "490043590": Tutub
+  "494400039": Shusharra
+  "497538154": Eflatun Pınar
+  "517771600": Metsamor
+  "541446935": Qusayr Amra
+  "546227067": Jawa
+  "574198887": Tell Taya
+  "580312478": Lothal
+  "590230980": Dholavira
+  "609518824": Tepe Giyan
+  "641191183": Khinis
+  "650309285": Alişar Höyük
+  "650881089": Zakros
+  "655074659": Umm el-Marra
+  "656082517": Kul-e Farah
+  "668140349": Tell es-Sweyhat
+  "674031361": Gebel el-Silsila
+  "677382294": Tell Chuera
+  "678637578": Tell Uqair
+  "702110865": Tell Hadidi
+  "703315102": Ekalte
+  "715980704": Mashkan-shapir
+  "717880824": Caere
+  "721417202": Abu Simbel
+  "722596019": Ayanis
+  "731893155": Preslav
+  "733910291": Jemdet Nasr
+  "748292753": Medamud
+  "762205391": Bukhara
+  "771100776": Gournia
+  "771224406": Bad-tibira
+  "785959742": Nerik
+  "787747618": Adab
+  "790744210": Hala Sultan Tekke
+  "796289136": Saqqara
+  "797093165": Kisurra
+  "797229144": Itjtawy
+  "804216207": Acemhöyük
+  "818739154": Venezia
+  "819123409": Samuha
+  "825333700": Sardurihinili
+  "865674318": Old Dongola
+  "869702586": Ebla
+  "869993028": Karatepe
+  "902113570": Mohenjo-daro
+  "921099766": Zabalam
+  "923122730": Habuba Kabira
+  "924247288": Imgur-Enlil
+  "932138411": Shahdad
+  "948291971": Su Nuraxi
+  "959120263": Lagash
+  "964671598": Sapinuwa
+  "976360689": Garni
+  "979582397": Titriş Höyük
+  "991964195": Alacahöyük
+  "995644788": Epidaurus
+  Q85: Cairo
+  Q16869: Constantinopolis
+  Q5806: Mecca
+  Q191369: Ugarit
+  Q569107: Anshan
+  Q80985: Fès
+  Q179570: Kairouan
+  Q1107569: Kerma
+  Q101625: Marrakech
+  Q14314: Santiago de Compostela
+  Q454756: Amara West
+  Q25496: Bat
+  Q1002656: Buhen
+  Q220301: Cluny
+  Q16892306: Hili
+  Q1237572: Kaman-Kalehöyük
+  Q48472: Kunya-Urgench
+  Q1579766: Los Millares
+  Q466054: Mahdia
+  Q1001413: Mleiha
+  Q959859: Naqada
+  Q20191087: Nashshan
+  Q956911: Otrar
+  Q842869: Partav
+  Q318889: Pliska
+  Q1068190: Sarkel
+  Q1334331: Sijilmasa
+  Q130254: Sirwah
+  Q1247214: Soba
+  Q173474: Tarnovo
+  Q2538648: Wad ban Naqa
+  Q1462261: Wasit

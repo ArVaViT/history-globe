@@ -1,0 +1,275 @@
+---
+title: Dữ liệu và phương pháp
+description: Mỗi địa điểm, biên giới, niên đại và nhân vật trên History Globe đến từ đâu, đã được kiểm tra thế nào và điều gì vẫn còn chưa chắc chắn.
+---
+
+<p class="lede">
+  Quả địa cầu được xây dựng từ các bộ dữ liệu học thuật mở, được chỉnh sửa và bổ sung thủ công, và
+  được kiểm tra tự động ở mỗi lần build. Trang này giải thích mỗi lớp dữ liệu đến từ đâu, chúng tôi
+  đã thay đổi gì và điều gì chúng tôi chưa biết.
+</p>
+
+<h2>Các địa điểm trong Kinh Thánh</h2>
+<p>
+  {{places}} địa điểm cùng các câu Kinh Thánh của chúng lấy từ
+  <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
+    >Bible Geocoding Data của OpenBible.info</a
+  >, bộ dữ liệu cân nhắc các cách xác định vị trí được đề xuất trong tài liệu học thuật cho từng địa
+  điểm. Chúng tôi giữ cách xác định được bộ dữ liệu này ưu tiên và ước tính của nó về khả năng đúng
+  của từng vị trí ứng viên.
+</p>
+<p>
+  Trong {{places}} địa điểm này, {{named}} địa điểm được nhắc đến trong một câu thuộc các sách mà
+  OpenBible gắn nhãn, và mỗi địa điểm ấy có một trang riêng; {{unnamed}} địa điểm còn lại là những
+  mục mà bộ dữ liệu lưu giữ nhưng không câu nào trong các sách ấy nhắc đến (chẳng hạn Adasa trong 1
+  Ma-ca-bê). {{articles}} địa điểm có bài viết. Thêm {{excluded}} địa điểm nữa bị loại ra vì không
+  có tọa độ được phép công bố (xem bên dưới).
+</p>
+<ul>
+  <li>
+    <b>Mức độ chắc chắn bằng lời.</b> Khi không có vị trí thứ hai nào đáng kể được đề xuất, điểm số
+    của OpenBible (0–1000) cho biết việc xác định vị trí vững chắc đến đâu: từ 800 trở lên, nó được
+    coi là đã xác lập và thẻ không ghi gì thêm; dưới mức đó, thẻ ghi <i>có khả năng nhất</i> (từ 600
+    trở lên) hoặc <i>chưa chắc chắn</i>. Một địa điểm là <i>còn tranh cãi</i> khi ứng viên thứ hai
+    có tỷ lệ đáng kể; khi đó mọi vị trí ứng viên đều được hiển thị cùng tỷ lệ của chúng.
+  </li>
+  <li>
+    <b>Không dùng tọa độ từ OpenStreetMap hay Google.</b> OpenBible ghi lại nguồn của từng tọa độ.
+    Những điểm lấy từ OpenStreetMap hoặc Google được thay bằng tọa độ của Wikidata (CC0), hoặc địa
+    điểm bị loại ra ({{excluded}} địa điểm). Một bước kiểm tra riêng sẽ làm lần build thất bại nếu
+    còn sót lại một điểm như vậy.
+  </li>
+  <li>
+    <b>Tên theo văn bản.</b> Tên tiếng Nga theo bản dịch Synodal năm 1876: với gần như mọi tên, lần
+    build lưu một câu Kinh Thánh có tên ấy và kiểm tra rằng tên ấy thật sự có trong câu đó.
+  </li>
+</ul>
+
+<h2>Khi nào các địa điểm còn tồn tại</h2>
+<p>
+  Một thành phố trên bản đồ chỉ được vẽ đầy đủ trong những năm nó còn tồn tại. Với {{life}} địa điểm
+  trong Kinh Thánh, năm thành lập, năm bị phá hủy và năm bị bỏ hoang được ghi thủ công, mỗi năm kèm
+  nguồn của nó (các tác giả cổ đại, biên niên sử, bia ký, báo cáo khai quật). Chỉ những niên đại
+  chắc chắn mới được ghi: một thị trấn mà việc thành lập hay kết thúc còn tranh cãi thì không được
+  gán năm cho sự kiện ấy.
+</p>
+<p>
+  {{ancient}} thành phố của thế giới cổ đại mà Kinh Thánh không nhắc đến — các kinh đô, hải cảng và
+  thánh địa như Ugarit, Hattusa, Mari hay Delphi — được chọn và xác định niên đại từng nơi một: mỗi
+  nơi được đặt theo mục của nó trong <a href="https://pleiades.stoa.org">Pleiades</a> hoặc Wikidata,
+  tại di chỉ cổ chứ không phải thị trấn hiện đại, và được định niên đại từ các mục ấy cùng các bài
+  viết bách khoa, được đối chiếu và thống nhất thủ công.
+</p>
+
+<h2>Biên giới</h2>
+<p>
+  Các nước và biên giới của chúng qua từng năm lấy từ
+  <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatria</a> (Seshat Global History Databank,
+  v0.2.0), một bộ dữ liệu mở về các chính thể trên thế giới từ năm 3400 TCN trở đi. Bộ dữ liệu này
+  được lập từ các tập bản đồ lịch sử và mang tính gần đúng, nhất là trước thiên niên kỷ 1 TCN.
+</p>
+<p>
+  Với các vùng đất trong Kinh Thánh, chúng tôi chỉnh sửa nó ở những chỗ các nguồn không khớp với nó:
+  hiện có {{overrides}} chỉnh sửa, mỗi chỉnh sửa kèm lý do và nguồn. Giu-đa vẫn ở trên bản đồ cho
+  đến năm 586 TCN, Y-sơ-ra-ên bắt đầu từ triều đại Đa-vít vào năm 1010 TCN thay vì năm 1000 TCN, Đất
+  Phi-li-tin được giới hạn trong đồng bằng ven biển của năm thành của nó, và một triều đại kết thúc
+  khi mất trung tâm quyền lực cuối cùng. Vùng Levant và Ai Cập, Lưỡng Hà, Anatolia và Iran, thế giới
+  Hy Lạp – La Mã của Tân Ước và vùng Cận Đông cho đến năm 1300 đã được kiểm tra từng năm, trong đó
+  có sự suy yếu và phục hồi của A-si-ri vào thế kỷ 8 TCN, Ba-by-lôn dưới thời Mê-rô-đác-Ba-la-đan,
+  Pergamon được để lại cho La Mã năm 133 TCN, Ma-xê-đoan sau trận Pydna và Thrace bị sáp nhập năm
+  46. Mỗi đợt chỉnh sửa trước hết được thử nghiệm với các đường biên, rồi được kiểm tra lại với các
+  nguồn trong một lượt AI thứ hai, riêng biệt.
+</p>
+<p>
+  Một vương quốc triều cống một đế quốc, hoặc cai trị như một chư hầu của đế quốc ấy, được vẽ bằng
+  một sắc nhạt hơn của màu đế quốc, với dòng chữ “dưới quyền A-si-ri” hoặc “dưới quyền La Mã” bên
+  dưới tên của nó: Giu-đa dưới quyền A-si-ri, Ai Cập và Ba-by-lôn; Y-sơ-ra-ên và Đất Phi-li-tin dưới
+  quyền A-si-ri; xứ Giu-đê thời Hasmonea và thời Hê-rốt dưới quyền La Mã (và, trong ba năm, dưới
+  quyền Parthia); người Nabataea và Commagene dưới quyền La Mã. {{vassals}} thời kỳ này được soạn
+  thảo từ các bia ký hoàng gia A-si-ri, Biên niên sử Ba-by-lôn, Kinh Thánh, Josephus và các sách sử
+  hiện đại, rồi được kiểm tra lại trong một lượt duyệt riêng; một năm chỉ biết chính xác đến một
+  thập kỷ được đánh dấu “khoảng” trong dữ liệu. Sau khi Sa-ma-ri sụp đổ năm 722 TCN, đất Y-sơ-ra-ên
+  được vẽ như tỉnh của A-si-ri mà nó đã trở thành.
+</p>
+
+<h2>Nhân vật</h2>
+<p>
+  {{people}} nhân vật Kinh Thánh và quan hệ gia đình của họ lấy từ TIPNR của STEP Bible (Tyndale
+  House, Cambridge). Chúng tôi không mặc nhiên tin các quan hệ ấy:
+</p>
+<ul>
+  <li>
+    quan hệ gia đình của 1.200 nhân vật được văn bản nhắc đến nhiều nhất, cùng các gia phả trong 1
+    Sử ký, đã được đọc đối chiếu với các câu Kinh Thánh; 153 quan hệ mà văn bản không nói đến đã bị
+    xóa — anh em của Chúa Giê-su là con của Giô-sép và Ma-ri, Giê-sa-bên là mẹ của A-cha-xia — và
+    các mắt xích còn thiếu trong gia phả của Chúa Giê-su được bổ sung từ văn bản;
+  </li>
+  <li>
+    toàn bộ 1.136 mối liên kết giữa một nhân vật và một địa điểm nơi người ấy giữ vai trò chính hoặc
+    phụ đã được đọc từng câu một; 344 liên kết bị xóa (Môi-se “ở Ca-na-an”, Áp-ra-ham “ở Sô-đôm”,
+    các địa điểm của người con bị gán cho người cha) và 94 liên kết được gán một câu Kinh Thánh phù
+    hợp hơn;
+  </li>
+  <li>
+    những người trùng tên được phân biệt theo cách văn bản phân biệt họ: “Giăng Báp-tít”, “Giăng con
+    của Xê-bê-đê”, “A-cha-xia, vua Giu-đa”.
+  </li>
+</ul>
+
+<h2 id="review">Sự kiện, hành trình và bài viết</h2>
+<p>
+  {{events}} sự kiện, {{tours}} hành trình và {{articles}} bài viết được soạn thảo với sự hỗ trợ của
+  AI dưới sự chỉ đạo của tác giả, rồi được kiểm tra trong các lượt duyệt riêng biệt với các nguồn:
+  văn bản Kinh Thánh cho điều văn bản nói, các tác giả cổ đại, biên niên sử và bia ký cho niên đại,
+  và tài liệu học thuật cho vị trí. Mỗi bài viết, câu trả lời và hành trình đều liệt kê nguồn của
+  nó, cho toàn bộ văn bản chứ không phải cho từng câu. Trích dẫn chỉ lấy từ bản Kinh Thánh thuộc
+  phạm vi công cộng của mỗi ngôn ngữ, được liệt kê ở trang <a href="sources.html">nguồn</a>. Không
+  hành trình nào qua được lượt duyệt đầu tiên mà không phải sửa; mỗi hành trình đều được chỉnh sửa
+  và kiểm tra lại. Lượt rà soát toàn bộ gần nhất, hoàn tất ngày 17 tháng 10 năm 2026, đã đọc lại
+  toàn bộ 746 bài viết đối chiếu với nguồn của chúng, khoảng 210 bài trong số đó hai lần, và thực
+  hiện 1.088 chỉnh sửa, mỗi chỉnh sửa đều được đưa vào cả 11 ngôn ngữ mà trang web có lúc đó; lỗi rõ
+  ràng được tìm thấy trong 157 bài viết. Năm ngôn ngữ được thêm vào ngày 24 tháng 10 năm 2026 (tiếng
+  Thụy Điển, tiếng Na Uy, tiếng Đan Mạch, tiếng Tagalog và tiếng Serbia) được dịch từ các văn bản đã
+  chỉnh sửa; sau đó mỗi văn bản của các ngôn ngữ ấy được một AI duyệt riêng đọc đối chiếu với bản
+  tiếng Anh, và mọi trích dẫn được kiểm tra với bản Kinh Thánh của ngôn ngữ ấy. Các lượt duyệt này
+  do AI làm việc dựa trên nguồn thực hiện, không phải do các học giả; một bài viết đã được một nhà
+  sử học đọc sẽ mang tên của nhà sử học ấy.
+</p>
+<p>
+  Khoảng cách đến một chặng được tính theo đường thẳng. Từ năm 312 TCN, khi các con đường La Mã bắt
+  đầu xuất hiện, quãng đường theo các con đường của Itiner-e được ghi bên cạnh: quãng ngắn nhất qua
+  mạng lưới đường ấy, trừ khi nó dài hơn hai lần rưỡi đường thẳng; một chặng đi bằng đường biển
+  không được tính theo đường bộ. Thời gian đi bộ được tính theo 30 km một ngày, mức ước tính thông
+  thường cho một ngày đường thời cổ đại, không tính đến thời tiết, lúc nghỉ ngơi hay hành lý. Trên
+  biển không giả định tốc độ nào: một chuyến đi biển chỉ ghi số ngày khi văn bản ghi (Công vụ 20:6,
+  “trong năm ngày”), kèm câu Kinh Thánh đó, và ước chừng đúng như văn bản đưa ra. Ở những chỗ văn
+  bản đi qua cả những vùng rộng lớn mà không nói rõ đường đi (Công vụ 20:1–3, từ Ê-phê-sô qua
+  Ma-xê-đoan và Hy Lạp đến Phi-líp), chặng ấy nói rõ như vậy và không ghi thời gian. Địa hình của
+  một chặng được đọc từ dữ liệu độ cao Copernicus (qua Mapterhorn) dọc theo chính con đường ấy, hoặc
+  nếu không có đường thì dọc theo đường thẳng; chú thích dưới mặt cắt độ cao cho biết là trường hợp
+  nào.
+</p>
+
+<p>
+  Các trận đánh và cuộc vây hãm ({{battles}}) là những trận Kinh Thánh thuật lại, cùng một vài trận
+  ngoài Kinh Thánh đã quyết định số phận của Y-sơ-ra-ên. Mỗi trận được đặt tại nơi nó diễn ra và
+  hiện trên bản đồ vào những năm của nó. Các trận trong Kinh Thánh được định niên đại giống như các
+  hành trình định niên đại cùng những câu chuyện ấy; các trận khác không kèm câu Kinh Thánh nào mà
+  kèm một nguồn cổ đại hoặc học thuật. Một lượt AI thứ hai, riêng biệt, đã kiểm tra bản nháp với văn
+  bản Synodal và bản King James: trong 58 mục, 16 mục được chỉnh sửa, và một mục bị bỏ vì bản đồ
+  không có tọa độ cho địa điểm của nó.
+</p>
+
+<p>
+  Các sự kiện và trận đánh thời Ma-ca-bê trích dẫn 1–2 Ma-ca-bê, là những sách có trong Kinh Thánh
+  Synodal nhưng không có trong quy điển Tin Lành: mọi trích dẫn như vậy đều được đánh dấu “thứ
+  kinh”, và liên kết của nó mở một văn bản có sách ấy.
+</p>
+
+<h2 id="chronology">Niên đại và hệ niên đại</h2>
+<p>
+  Bản đồ đặt mỗi câu chuyện vào một năm, nên các niên đại của nó theo một quy ước duy nhất; ở những
+  chỗ các học giả bất đồng, năm ấy là một mốc cho bản đồ, không phải một phán quyết.
+</p>
+<ul>
+  <li>
+    <b>Các vua Y-sơ-ra-ên và Giu-đa</b> theo hệ niên đại của E. R. Thiele (<i
+      >The Mysterious Numbers of the Hebrew Kings</i
+    >): Sa-lô-môn khởi công xây Đền Thờ khoảng năm 966 TCN và vương quốc chia đôi khoảng năm 931
+    TCN. Các cách tái dựng khác chênh lệch vài năm; chẳng hạn W. F. Albright đặt cuộc chia đôi vào
+    năm 922 TCN.
+  </li>
+  <li>
+    <b>Các niên đại sớm hơn</b> được tính ngược từ những mốc này theo cách văn bản tính: cuộc Xuất
+    hành năm 1446 TCN, 480 năm trước Đền Thờ (1 Các Vua 6:1), cuộc chinh phục năm 1406 TCN và triều
+    đại Đa-vít từ năm 1010 TCN. Đây là những quy ước: nhiều học giả đặt cuộc Xuất hành vào thế kỷ 13
+    TCN hoặc nghi ngờ rằng nó đã diễn ra như được thuật lại, và câu trả lời cho câu hỏi
+    <a href="../../vi/q/when-was-the-exodus/"><i>Cuộc Xuất hành diễn ra khi nào?</i></a> trình bày
+    cuộc tranh luận này. Các tổ phụ được đặt vào những năm quy ước.
+  </li>
+  <li>
+    <b>Các sự kiện ngoài Kinh Thánh</b> được định niên đại theo các tư liệu xác lập chúng (Biên niên
+    sử Ba-by-lôn, biên niên A-si-ri, Josephus, một bia ký có ghi niên đại), mỗi sự kiện kèm nguồn
+    của nó, phần lớn là hai nguồn trở lên; sự sụp đổ của Giê-ru-sa-lem được hiển thị vào khoảng năm
+    586 TCN (cũng có ý kiến cho là năm 587 TCN).
+  </li>
+  <li>
+    <b>Tân Ước:</b> Chúa Giê-su giáng sinh khoảng năm 5 TCN, bị đóng đinh khoảng năm 30 (cũng có ý
+    kiến cho là năm 33), và các chuyến đi của Phao-lô vào những năm thường được nêu.
+  </li>
+  <li>
+    <b>“khoảng”</b> đánh dấu một năm chỉ biết một cách ước chừng, như mọi năm trước thiên niên kỷ 1
+    TCN.
+  </li>
+</ul>
+
+<h2>Các bước kiểm tra ở mỗi lần build</h2>
+<p>Không gì được công bố nếu chưa vượt qua mọi bước kiểm tra:</p>
+<ul>
+  <li>
+    mọi nguồn đều có giấy phép được chấp nhận (không có dữ liệu “chia sẻ tương tự” (share-alike),
+    không có dữ liệu “phi thương mại”);
+  </li>
+  <li>mọi tham chiếu đều trỏ đến một sách, chương và câu có thật;</li>
+  <li>mọi tên tiếng Nga đều có trong câu Kinh Thánh được ghi cho nó;</li>
+  <li>
+    mọi chặng của hành trình đều được nhắc đến trong đoạn Kinh Thánh của nó, hoặc ngoại lệ được ghi
+    lại kèm lý do;
+  </li>
+  <li>mọi chỉnh sửa về biên giới và mọi niên đại của một thành phố đều có nguồn;</li>
+  <li>
+    các lược đồ nội dung là nghiêm ngặt: một trường không xác định hoặc viết sai sẽ dừng lần build.
+  </li>
+</ul>
+
+<h2>Điều gì chưa chắc chắn</h2>
+<ul>
+  <li>
+    Các niên đại trước thiên niên kỷ 1 TCN là gần đúng, và một số còn tranh cãi; bản đồ đánh dấu
+    chúng là “khoảng”.
+  </li>
+  <li>
+    Tỷ lệ của OpenBible giữa các vị trí ứng viên là một ước tính, không phải sự đồng thuận của giới
+    học giả.
+  </li>
+  <li>
+    Biên giới cổ đại được vẽ theo các tập bản đồ hiện đại và đơn giản hóa một thực tế mà quyền kiểm
+    soát luôn thay đổi.
+  </li>
+  <li>
+    Nhiều địa điểm nhỏ vẫn chưa có năm được ghi lại; chúng được vẽ như thể tồn tại suốt mọi thời kỳ
+    (hoặc, với những địa điểm chỉ được nhắc đến trong Tân Ước, từ thời Tân Ước trở đi).
+  </li>
+</ul>
+
+<h2 id="cite">Cách trích dẫn</h2>
+<p>
+  History Globe được chỉnh sửa liên tục, nên một trích dẫn cần ghi ngày của dữ liệu đã dùng. Mỗi
+  trang tài liệu ghi ngày ấy ở cuối trang (“Dữ liệu tính đến”), và tệp <code>index.json</code> của
+  API ghi nó trong trường <code>built_at</code>.
+</p>
+<p>Trang web:</p>
+<pre><code class="cite">Arnaut, Vadym. History Globe: tập bản đồ lịch sử Kinh Thánh. {{site}}/
+(dữ liệu tính đến {{built}}; truy cập …).</code></pre>
+<p>Một trang, theo tiêu đề và địa chỉ của nó:</p>
+<pre><code class="cite">“Giê-ru-sa-lem.” Trong Vadym Arnaut, History Globe. {{site}}/vi/place/jerusalem/
+(dữ liệu tính đến {{built}}; truy cập …).</code></pre>
+<p>Dữ liệu, theo ngày của bản chụp mà thẻ của bộ dữ liệu ghi:</p>
+<pre><code class="cite">Arnaut, Vadym. History Globe dataset. Hugging Face, snapshot of ….
+https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
+
+<h2 id="report">Đính chính</h2>
+<p>
+  Bạn thấy một lỗi, một nguồn còn thiếu hay một cách đọc tốt hơn? Hãy viết thư đến
+  <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>; không cần tài
+  khoản. Hãy nêu tên trang và chỗ sai, kèm nguồn nếu bạn có. Mọi báo cáo đều được đọc, và một lỗi đã
+  được xác nhận sẽ được sửa.
+</p>
+<p>
+  Nếu có tài khoản GitHub, bạn cũng có thể dùng liên kết <i>Bạn thấy có chỗ sai?</i> trên thẻ của
+  mỗi địa điểm, liên kết này mở một issue trong kho mã công khai với tên địa điểm đã được điền sẵn,
+  hoặc tự mở một issue trực tiếp:
+  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+    >github.com/ArVaViT/history-globe/issues</a
+  >.
+</p>

@@ -21,6 +21,11 @@ title:
   tl: "Ang paglalayag ni Pablo patungong Roma"
   da: "Paulus' sejlads til Rom"
   sr: "Павлово путовање у Рим"
+  hu: "Pál útja Rómába"
+  fi: "Paavalin matka Roomaan"
+  vi: "Chuyến tàu của Phao-lô đi Rô-ma"
+  ro: "Călătoria lui Pavel la Roma"
+  bg: "Плаването на Павел до Рим"
 year: "AD 60"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -46,6 +51,11 @@ stops:
       tl: "Hawak sa Cesarea, naglayag si Pablo patungong Italia bilang bilanggo."
       da: "Fastholdt i Cæsarea sejler Paulus som fange til Italien."
       sr: "Задржан у Цезареји, Павле као сужањ плови у Италију."
+      hu: "Cézáreában fogva tartva Pál foglyként hajózik Itáliába."
+      fi: "Kesareassa pidätettynä Paavali purjehtii Italiaan vankina."
+      vi: "Bị giam tại Sê-sa-rê, Phao-lô xuống tàu đi Y-ta-li với tư cách tù nhân."
+      ro: "Ținut la Cezareea, Pavel pornește pe mare spre Italia ca prizonier."
+      bg: "Задържан в Кесария, Павел отплава за Италия като затворник."
   - place: a98e4d7
     ref: Acts.27.3
     by: sea
@@ -66,6 +76,11 @@ stops:
       tl: "Pinahintulutan ni Julio si Pablo na dalawin ang mga kaibigan."
       da: "Julius lader Paulus besøge venner."
       sr: "Јулије допушта Павлу да посети пријатеље."
+      hu: "Július megengedi Pálnak, hogy meglátogassa barátait."
+      fi: "Julius sallii Paavalin käydä ystäviensä luona."
+      vi: "Giu-lơ cho Phao-lô đến thăm các bạn hữu."
+      ro: "Iuliu îi îngăduie lui Pavel să-și viziteze prietenii."
+      bg: "Юлий позволява на Павел да посети приятелите си."
   - place: aa4b3e2
     ref: Acts.27.5-Acts.27.6
     by: sea
@@ -86,6 +101,11 @@ stops:
       tl: "Lumipat sa isang sasakyang taga-Alejandria."
       da: "Overflytning til et skib fra Alexandria."
       sr: "Прелазак на лађу александријску."
+      hu: "Átszállás egy alexandriai hajóra."
+      fi: "Siirto aleksandrialaiseen laivaan."
+      vi: "Đổi sang một chiếc tàu của A-léc-xan-tri."
+      ro: "Mutarea pe o corabie din Alexandria."
+      bg: "Прехвърляне на един александрийски кораб."
   - place: ab793ce
     ref: Acts.27.7
     by: sea
@@ -106,6 +126,11 @@ stops:
       tl: "Marahang paglalakbay sa tapat ng Gnido."
       da: "Langsomt ud for Knidos."
       sr: "Споро код Книда."
+      hu: "Lassan haladva Knidosz előtt."
+      fi: "Hitaasti Knidoksen edustalla."
+      vi: "Đi chậm ngang Cơ-nít."
+      ro: "Cu greu în dreptul Cnidului."
+      bg: "Бавно плаване край Книд."
   - place: a1c44ea
     ref: Acts.27.7
     by: sea
@@ -126,6 +151,11 @@ stops:
       tl: "Sa lukob ng Creta sa tapat ng Salmon."
       da: "I læ af Kreta ved Salmone."
       sr: "Под заветрином Крита код Салмоне."
+      hu: "Kréta szélvédett oldalán, Szalmónénél."
+      fi: "Kreetan suojassa Salmonen kohdalla."
+      vi: "Chạy dưới Cơ-rết, ngang Sa-môn."
+      ro: "La adăpostul Cretei, în dreptul Salmonei."
+      bg: "Под прикритието на Крит при Салмона."
   - place: aae626a
     ref: Acts.27.8-Acts.27.12
     by: sea
@@ -146,6 +176,11 @@ stops:
       tl: "Mabubuting Daongan; nagbabala si Pablo na “ang paglalayag na ito ay makapipinsala at magiging malaking kapahamakan, hindi lamang sa lulan at sa daong, kundi naman sa ating mga buhay.”"
       da: "Gode Havne; Paulus advarer: »I Mænd! jeg ser, at Sejladsen vil medføre Ulykke og megen Skade, ikke alene paa Ladning og Skib, men ogsaa paa vort Liv.«"
       sr: "Добра пристаништа; Павле упозорава: „Људи! Видим да ће пловљење бити с муком и великом штетом не само товара и лађе него и душа наших.“"
+      hu: "Szép Kikötők; Pál óva int: „nemcsak a teréhnek és a hajónak, hanem a mi életünknek is bántódásával és nagy kárával fog történni e hajózás”."
+      fi: "Kauniit satamat; Paavali varoittaa: ”purjehtiminen käy vaivalloiseksi ja vaaralliseksi, ei ainoastaan lastille ja laivalle, vaan myös meidän hengellemme”."
+      vi: "Hải cảng Tốt; Phao-lô cảnh báo: “Tôi thấy sự vượt biển nầy chắc sẽ phải nguy hiểm và hư hại, chẳng những cho hàng hóa và chiếc tàu mà thôi, lại đến thân chúng ta nữa.”"
+      ro: "Bunele Porturi; Pavel îi avertizează că „cu necaz și cu multă pagubă, nu numai a povărei și a corăbiei, ci și a sufletelor noastre, va să fie mergerea corăbiei”."
+      bg: "Добри пристанища; Павел предупреждава, че „плуването ще бъде със злострадание и с голема щета, не току за товара и за кораба но и за душите ни.“"
   - place: aca2b0a
     ref: Acts.27.14-Acts.27.17
     by: sea
@@ -166,6 +201,11 @@ stops:
       tl: "Itinatangay ng mabagsik na hangin na Euroclydon ang daong lampas sa Clauda."
       da: "Den hæftige storm Eurakvilo driver skibet forbi Kauda."
       sr: "Бурни ветар Евроклидон носи лађу мимо Клауде."
+      hu: "Az Euroklüdón nevű viharos szél elhajtja a hajót Kauda mellett."
+      fi: "Myrskyisä Euroklydon-tuuli ajaa laivan Kaudan ohi."
+      vi: "Trận gió dữ tợn Ơ-ra-qui-lôn đẩy chiếc tàu qua Cơ-lô-đa."
+      ro: "Vântul năprasnic Euroclidon mână corabia pe lângă Clauda."
+      bg: "Бурният вятър Евроклидон понася кораба покрай Клавда."
   - place: a57835d
     ref: Acts.27.39-Acts.28.11
     by: sea
@@ -186,6 +226,11 @@ stops:
       tl: "Pagkawasak ng daong; tatlong buwan sa pulo."
       da: "Skibbrud; tre måneder på øen."
       sr: "Бродолом; три месеца на острву."
+      hu: "Hajótörés; három hónap a szigeten."
+      fi: "Haaksirikko; kolme kuukautta saarella."
+      vi: "Đắm tàu; ba tháng trên đảo."
+      ro: "Naufragiul; trei luni pe insulă."
+      bg: "Корабокрушение; три месеца на острова."
   - place: a1e3697
     ref: Acts.28.12
     by: sea
@@ -206,6 +251,11 @@ stops:
       tl: "Tatlong araw sa Siracusa."
       da: "Tre dage i Syrakus."
       sr: "Три дана у Сиракузи."
+      hu: "Három nap Szirakúzában."
+      fi: "Kolme päivää Syrakusassa."
+      vi: "Ba ngày tại Sy-ra-cu-sơ."
+      ro: "Trei zile la Siracuza."
+      bg: "Три дни в Сиракуза."
   - place: a63bb26
     ref: Acts.28.13
     by: sea
@@ -226,6 +276,11 @@ stops:
       tl: "Regio."
       da: "Regium."
       sr: "Ригија."
+      hu: "Régium."
+      fi: "Region."
+      vi: "Rê-ghi-um."
+      ro: "Regium."
+      bg: "Ригия."
   - place: a4488e9
     ref: Acts.28.13-Acts.28.14
     by: sea
@@ -246,6 +301,11 @@ stops:
       tl: "Pitong araw na kasama ang mga kapatid."
       da: "Syv dage hos brødrene."
       sr: "Седам дана с браћом."
+      hu: "Hét nap a testvéreknél."
+      fi: "Seitsemän päivää veljien luona."
+      vi: "Bảy ngày với anh em."
+      ro: "Șapte zile cu frații."
+      bg: "Седем дни с братята."
   - place: a121d5e
     ref: Acts.28.15
     note:
@@ -265,6 +325,11 @@ stops:
       tl: "Lumalabas ang mga mananampalataya upang salubungin si Pablo."
       da: "Troende kommer Paulus i møde."
       sr: "Верници излазе у сусрет Павлу."
+      hu: "A hívők Pál elé jönnek."
+      fi: "Uskovat tulevat Paavalia vastaan."
+      vi: "Các tín hữu ra đón Phao-lô."
+      ro: "Credincioșii ies în întâmpinarea lui Pavel."
+      bg: "Вярващите излизат да посрещнат Павел."
   - place: afc8e7a
     ref: Acts.28.16
     note:
@@ -284,3 +349,8 @@ stops:
       tl: "Roma."
       da: "Rom."
       sr: "Рим."
+      hu: "Róma."
+      fi: "Rooma."
+      vi: "Rô-ma."
+      ro: "Roma."
+      bg: "Рим."

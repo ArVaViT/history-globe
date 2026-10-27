@@ -25,7 +25,7 @@ It writes to `pipeline/out/review-packets/<date>-<scope>/` (outside git):
 
 ## 2. Answer, then the public text
 
-Answer every point within two weeks; correct the texts in all 16 languages. Then send the exact
+Answer every point within two weeks; correct the texts in every language. Then send the exact
 public entry for approval (name, title, institution, scope, statement, conflicts, licence, DOI
 yes/no). Nothing is published before the reviewer replies "Approved". Keep the approved text and
 the reply in the author's private files, never in this repository.
@@ -51,6 +51,9 @@ existing) and builds:
   our response, the versions, "Cite this review" and schema.org `Review` data (no rating).
 
 With no file in `content/reviews/` none of these pages exist and nothing links to them.
+
+llms.txt counts the reviewed articles itself. README.md does not: change its "no article has been
+read by a historian yet" with the first review.
 
 ## 4. Withdrawal
 

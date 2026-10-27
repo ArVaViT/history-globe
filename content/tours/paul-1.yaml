@@ -19,6 +19,11 @@ title:
   tl: "Ang unang paglalakbay ni Pablo"
   da: "Paulus' første rejse"
   sr: "Павлово прво путовање"
+  hu: "Pál első útja"
+  fi: "Paavalin ensimmäinen matka"
+  vi: "Cuộc hành trình thứ nhất của Phao-lô"
+  ro: "Prima călătorie a lui Pavel"
+  bg: "Първото пътуване на Павел"
 year: "AD 47"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -42,6 +47,11 @@ stops:
       tl: "Sa salita ng Espiritu Santo, itinalaga ng iglesia sina Bernabe at Saul para sa gawain."
       da: "På Helligåndens ord udskiller menigheden Barnabas og Saul til værket."
       sr: "По речи Духа Светога црква одваја Варнаву и Савла за дело."
+      hu: "A Szentlélek szavára a gyülekezet külön választja Barnabást és Sault a munkára."
+      fi: "Pyhän Hengen sanan mukaan seurakunta erottaa Barnabaan ja Saulin tehtävään."
+      vi: "Theo lời Đức Thánh Linh, Hội thánh biệt riêng Ba-na-ba và Sau-lơ ra để làm công việc."
+      ro: "La cuvântul Duhului Sfânt, biserica îi pune deoparte pe Barnaba și pe Saul pentru lucrare."
+      bg: "По словото на Светия Дух църквата отделя Варнава и Савел за делото."
   - place: a6d306d # Seleucia Pieria
     ref: Acts.13.4
     note:
@@ -61,6 +71,11 @@ stops:
       tl: "Ang daungan ng Antioquia; naglayag sila patungong Chipre."
       da: "Antiokias havn; de sejler til Cypern."
       sr: "Пристаниште Антиохије; отпловљавају на Кипар."
+      hu: "Antiókhia kikötője; hajóra szállnak Ciprus felé."
+      fi: "Antiokian satama; he purjehtivat Kyprokselle."
+      vi: "Hải cảng của An-ti-ốt; họ xuống tàu đi Chíp-rơ."
+      ro: "Portul Antiohiei; pornesc pe mare spre Cipru."
+      bg: "Пристанището на Антиохия; те отплават за Кипър."
   - place: afa863b # Salamis
     ref: Acts.13.5
     by: sea
@@ -81,6 +96,11 @@ stops:
       tl: "Ipinahahayag nila ang salita sa mga sinagoga ng mga Judio."
       da: "De forkynder ordet i jødernes synagoger."
       sr: "Проповедају реч у синагогама јеврејским."
+      hu: "A zsidók zsinagógáiban hirdetik az igét."
+      fi: "He julistavat sanaa juutalaisten synagogissa."
+      vi: "Họ rao giảng lời Đức Chúa Trời trong các nhà hội của người Giu-đa."
+      ro: "Vestesc cuvântul în sinagogile iudeilor."
+      bg: "Те проповядват словото в юдейските синагоги."
   - place: a314765 # Paphos
     ref: Acts.13.6-Acts.13.12
     note:
@@ -100,6 +120,11 @@ stops:
       tl: "Sumasampalataya ang prokonsul na si Sergio Paulo."
       da: "Prokonsul Sergius Paulus kommer til tro."
       sr: "Намесник Сергије Павле поверује."
+      hu: "Szergiusz Paulusz prokonzul hisz."
+      fi: "Käskynhaltija Sergius Paulus tulee uskoon."
+      vi: "Quan trấn thủ Sê-giúp Phau-lút tin."
+      ro: "Proconsulul Sergiu Paul crede."
+      bg: "Проконсулът Сергий Павел повярва."
   - place: aff04b8 # Perga
     ref: Acts.13.13
     by: sea
@@ -120,6 +145,11 @@ stops:
       tl: "Bumabalik si Juan Marcos sa Jerusalem."
       da: "Johannes Markus vender tilbage til Jerusalem."
       sr: "Јован Марко се враћа у Јерусалим."
+      hu: "Márk János visszatér Jeruzsálembe."
+      fi: "Johannes Markus palaa Jerusalemiin."
+      vi: "Giăng Mác trở về Giê-ru-sa-lem."
+      ro: "Ioan Marcu se întoarce la Ierusalim."
+      bg: "Йоан Марко се връща в Йерусалим."
   - place: a6c704a # Antioch in Pisidia
     ref: Acts.13.14-Acts.13.50
     note:
@@ -139,6 +169,11 @@ stops:
       tl: "Pangangaral sa sinagoga; pagbaling sa mga Gentil."
       da: "Forkyndelse i synagogen; vending mod hedningerne."
       sr: "Проповед у синагоги; окретање незнабошцима."
+      hu: "Igehirdetés a zsinagógában; fordulás a pogányok felé."
+      fi: "Saarna synagogassa; kääntyminen pakanoiden puoleen."
+      vi: "Giảng trong nhà hội; quay sang dân ngoại."
+      ro: "Predica în sinagogă; întoarcerea spre neamuri."
+      bg: "Проповед в синагогата; обръщане към езичниците."
   - place: ae425aa # Iconium
     ref: Acts.14.1-Acts.14.5
     note:
@@ -158,6 +193,11 @@ stops:
       tl: "Maraming sumasampalataya; may banta ng pagbato sa kanila."
       da: "Mange kommer til tro; et anslag om at stene dem."
       sr: "Многи поверују; заседа да их засу камењем."
+      hu: "Sokan hisznek; összeesküvés a megkövezésükre."
+      fi: "Monet uskovat; juoni heidän kivittämisekseen."
+      vi: "Nhiều người tin; có mưu ném đá họ."
+      ro: "Mulți cred; un complot pentru a-i ucide cu pietre."
+      bg: "Мнозина повярваха; заговор да ги убият с камъни."
   - place: af0719d # Lystra
     ref: Acts.14.8-Acts.14.19
     note:
@@ -177,6 +217,11 @@ stops:
       tl: "Gumagaling ang isang pilay; binabato si Pablo."
       da: "En lam mand helbredes; Paulus stenes."
       sr: "Хроми човек бива исцељен; Павле бива засут камењем."
+      hu: "Egy sánta meggyógyul; Pált megkövezik."
+      fi: "Rampa mies parannetaan; Paavali kivitetään."
+      vi: "Một người què được chữa lành; Phao-lô bị ném đá."
+      ro: "Un olog este vindecat; Pavel este bătut cu pietre."
+      bg: "Един куц е изцелен; Павел е пребит с камъни."
   - place: aa401a9 # Derbe
     ref: Acts.14.20-Acts.14.21
     note:
@@ -196,6 +241,11 @@ stops:
       tl: "Gumagawa sila ng maraming alagad."
       da: "De gør mange til disciple."
       sr: "Чине многе ученике."
+      hu: "Sok tanítványt szereznek."
+      fi: "He tekevät monia opetuslapsiksi."
+      vi: "Họ gây nên nhiều môn đồ."
+      ro: "Fac mulți ucenici."
+      bg: "Те спечелват много ученици."
   - place: af0719d # Lystra
     ref: Acts.14.21-Acts.14.22
     note:
@@ -215,6 +265,11 @@ stops:
       tl: "Pabalik na biyahe: pinalalakas ang mga alagad."
       da: "Hjemturen: de styrker disciplene."
       sr: "На повратку: утврђују ученике."
+      hu: "Visszaút: a tanítványok megerősítése."
+      fi: "Paluumatka: opetuslasten vahvistaminen."
+      vi: "Chặng về: làm vững lòng các môn đồ."
+      ro: "Drumul de întoarcere: întărirea ucenicilor."
+      bg: "Обратният път: утвърждаване на учениците."
   - place: ae425aa # Iconium
     ref: Acts.14.21
     note:
@@ -234,6 +289,11 @@ stops:
       tl: "Pabalik na biyahe."
       da: "Hjemturen."
       sr: "На повратку."
+      hu: "Visszaút."
+      fi: "Paluumatka."
+      vi: "Chặng về."
+      ro: "Drumul de întoarcere."
+      bg: "Обратният път."
   - place: a6c704a # Antioch in Pisidia
     ref: Acts.14.21-Acts.14.23
     note:
@@ -253,6 +313,11 @@ stops:
       tl: "Nagtatalaga ng mga matanda sa bawat iglesia."
       da: "Der indsættes ældste i hver menighed."
       sr: "Старешине постављене у свакој цркви."
+      hu: "Minden gyülekezetben véneket rendelnek."
+      fi: "Vanhimmat asetetaan joka seurakuntaan."
+      vi: "Lập các trưởng lão trong mỗi Hội thánh."
+      ro: "Prezbiteri rânduiți în fiecare biserică."
+      bg: "Във всяка църква са ръкоположени презвитери."
   - place: aff04b8 # Perga
     ref: Acts.14.25
     note:
@@ -272,6 +337,11 @@ stops:
       tl: "Sinasalita nila ang salita sa Perga."
       da: "De taler ordet i Perge."
       sr: "Говоре реч у Перге."
+      hu: "Pergében hirdetik az igét."
+      fi: "He puhuvat sanaa Pergessä."
+      vi: "Họ giảng lời Chúa tại Bẹt-giê."
+      ro: "Vestesc cuvântul în Perga."
+      bg: "Те проповядват словото в Перга."
   - place: ac744c1 # Attalia
     ref: Acts.14.26
     note:
@@ -291,6 +361,11 @@ stops:
       tl: "Naglalayag sila pabalik sa Antioquia."
       da: "De sejler tilbage til Antiokia."
       sr: "Отпловљавају натраг у Антиохију."
+      hu: "Hajón visszatérnek Antiókhiába."
+      fi: "He purjehtivat takaisin Antiokiaan."
+      vi: "Họ đi tàu trở về An-ti-ốt."
+      ro: "Se întorc pe mare la Antiohia."
+      bg: "Те отплават обратно за Антиохия."
   - place: ae41ab4 # Antioch in Syria
     ref: Acts.14.27-Acts.14.28
     by: sea
@@ -311,3 +386,8 @@ stops:
       tl: "Ibinabalita nila kung paanong binuksan ng Dios ang pinto ng pananampalataya sa mga Gentil."
       da: "De beretter, hvordan Gud har åbnet hedningerne troens dør."
       sr: "Извештавају како је Бог отворио незнабошцима врата вере."
+      hu: "Beszámolnak arról, hogyan nyitotta meg Isten a pogányoknak a hit ajtaját."
+      fi: "He kertovat, kuinka Jumala on avannut pakanoille uskon oven."
+      vi: "Họ thuật lại việc Đức Chúa Trời đã mở cửa đức tin cho dân ngoại."
+      ro: "Istorisesc cum a deschis Dumnezeu neamurilor ușa credinței."
+      bg: "Те разказват как Бог е отворил на езичниците врата към вярата."

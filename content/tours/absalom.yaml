@@ -21,6 +21,11 @@ title:
   tl: "Ang paghihimagsik ni Absalom"
   da: "Absalons oprør"
   sr: "Авесаломова буна"
+  hu: "Absolon lázadása"
+  fi: "Absalomin kapina"
+  vi: "Cuộc nổi loạn của Áp-sa-lôm"
+  ro: "Răscoala lui Absalom"
+  bg: "Бунтът на Авесалом"
 year: "980 BC"
 people: ["Absalom@2Sa.3.3-Psa"]
 approximate: true
@@ -44,6 +49,11 @@ stops:
       tl: "Pumupunta si Absalom sa Hebron na waring tutupad ng panata, at nagsusugo ng mga tiktik sa mga lipi: pagkarinig ng tunog ng pakakak ay sasabihin nila, “Si Absalom ay hari sa Hebron.”"
       da: "Absalon tager til Hebron, som for at indfri et løfte, og sender spejdere ud til stammerne: Ved trompetens lyd skal de sige: »Absalom er bleven Konge i Hebron.«"
       sr: "Авесалом одлази у Хеврон као да хоће да изврши завет и разашиље уходе по племенима: на глас труба треба да кажу: „Зацари се Авесалом у Хеврону.“"
+      hu: "Absolon Hebronba megy, mintha fogadalmát akarná teljesíteni, és hírnököket küld a törzsekhez: a trombitaszó hallatára ezt kell mondaniuk: „Absolon uralkodik Hebronban.”"
+      fi: "Absalom lähtee Hebroniin muka täyttämään lupauksen ja lähettää vakoojia sukukuntien keskuuteen: pasunan äänen kuullessaan heidän on sanottava: ”Absalom on tullut kuninkaaksi Hebronissa”."
+      vi: "Áp-sa-lôm đến Hếp-rôn như để trả một lời khấn nguyện, và sai thám tử đi khắp các chi phái: khi nghe tiếng kèn, họ phải nói: “Áp-sa-lôm làm vua tại Hếp-rôn!”"
+      ro: "Absalom merge la Hebron, chipurile ca să-și împlinească o juruință, și trimite iscoade prin seminții: la sunetul trâmbiței ei trebuie să spună: „făcutu-s’a împărat Avesalom în Hevron”."
+      bg: "Авесалом отива в Хеврон уж за да изпълни обрек и разпраща съгледатели по племената: щом чуят гласа на тръбата, да кажат: „Авесалом се възцари в Хеврон.“"
   - place: a553110 # Kidron
     ref: 2Sam.15.13-2Sam.15.23
     note:
@@ -63,6 +73,11 @@ stops:
       tl: "Tumatakas si David mula sa Jerusalem, at ang hari at ang buong bayan ay tumatawid sa batis ng Cedron patungo sa ilang, na ang buong lupain ay tumatangis."
       da: "David flygter fra Jerusalem, og kongen og hele folket går over Kedron-bækken mod ørkenen, mens hele landet græder."
       sr: "Давид бежи из Јерусалима, и цар и сав народ прелазе поток Кедрон према пустињи, а сва земља плаче."
+      hu: "Dávid elmenekül Jeruzsálemből, a király és az egész nép átkelnek a Kidron patakon a puszta felé, az egész vidék pedig sír."
+      fi: "Daavid pakenee Jerusalemista, ja kuningas ja koko kansa ylittävät Kidronin puron erämaata kohti, koko maa itkien."
+      vi: "Đa-vít chạy khỏi Giê-ru-sa-lem; vua và cả dân đi qua khe Xết-rôn hướng về đồng vắng, cả xứ đều khóc lóc."
+      ro: "David fuge din Ierusalim; regele și tot poporul trec pârâul Chedron spre pustiu, iar toată țara plânge."
+      bg: "Давид бяга от Йерусалим; царят и целият народ минават потока Кедрон към пустинята, а цялата земя плаче."
   - place: ac2c4c5 # Mount of Olives
     ref: 2Sam.15.30-2Sam.15.37
     note:
@@ -82,6 +97,11 @@ stops:
       tl: "Umaahon siya sa Bundok ng mga Olibo na umiiyak, walang suot ang paa at may takip ang ulo, at ibinabalik si Husai sa Jerusalem."
       da: "Han går grædende op ad Oliebjerget, barfodet og med tildækket hoved, og sender Husjaj tilbage til Jerusalem."
       sr: "Пење се на Маслинску гору плачући, босих ногу и покривене главе, и шаље Хусаја назад у Јерусалим."
+      hu: "Sírva megy fel az Olajfák hegyére, mezítláb és betakart fővel, és visszaküldi Húsait Jeruzsálembe."
+      fi: "Hän nousee Öljymäelle itkien, avojaloin ja pää peitettynä, ja lähettää Husain takaisin Jerusalemiin."
+      vi: "Người lên Núi Ô-li-ve vừa đi vừa khóc, chân không giày và đầu trùm kín, và sai Hu-sai trở về Giê-ru-sa-lem."
+      ro: "Urcă pe Muntele Măslinilor plângând, desculț și cu capul acoperit, și îl trimite pe Hușai înapoi la Ierusalim."
+      bg: "Той се изкачва на Елеонския хълм, плачейки, бос и с покрита глава, и изпраща Хусий обратно в Йерусалим."
   - place: a9ed5a4 # Bahurim
     ref: 2Sam.16.5-2Sam.16.14
     note:
@@ -101,6 +121,11 @@ stops:
       tl: "Sa Bahurim, isinusumpa siya ni Simi na sambahayan ni Saul at binabato siya; hindi pumapayag si David na patayin ito: “bayaan ninyo siya at manumpa siya.”"
       da: "I Bahurim forbander Sjimi af Sauls hus ham og kaster med sten; David vil ikke lade ham dræbe: »lader ham bande«."
       sr: "У Вауриму га Симеј из Сауловог дома куне и баца камење; Давид не да да га убију: „Нека псује.“"
+      hu: "Bahurimnál a Saul nemzetségéből való Sémei szidalmazza és kövekkel hajigálja; Dávid nem engedi megölni: „hadd szidalmazzon”."
+      fi: "Bahurimissa Saulin suvun mies Simei kiroaa hänet ja heittelee kivillä; Daavid ei salli häntä surmattavan: ”Antakaa hänen olla, kiroilkoon vain”."
+      vi: "Tại Ba-hu-rim, Si-mê-i thuộc dòng nhà Sau-lơ rủa sả người và ném đá; Đa-vít không cho giết hắn: “Hãy để Si-mê-i rủa sả.”"
+      ro: "La Bahurim, Șimei, din casa lui Saul, îl blestemă și aruncă cu pietre; David nu îngăduie să fie ucis: „Lăsați-l pre el să blesteme”."
+      bg: "В Бахурим Шимей от Сауловия дом го проклина и хвърля камъни; Давид не позволява да го убият: „нека кълне“."
   - place: a15257a # Jerusalem
     ref: 2Sam.16.15-2Sam.16.23
     note:
@@ -120,6 +145,11 @@ stops:
       tl: "Pumapasok si Absalom sa Jerusalem at, ayon sa payo ni Achitophel, sumisiping sa mga babaing kinakasama ng kaniyang ama sa harap ng buong Israel."
       da: "Absalon drager ind i Jerusalem og går, på Akitofels råd, ind til sin fars medhustruer for øjnene af hele Israel."
       sr: "Авесалом улази у Јерусалим и по Ахитофеловом савету улази пред свим Израиљем к наложницама свог оца."
+      hu: "Absolon bevonul Jeruzsálembe, és Ahitófel tanácsára egész Izráel szeme láttára bemegy apja ágyasaihoz."
+      fi: "Absalom tulee Jerusalemiin ja menee Ahitofelin neuvosta isänsä sivuvaimojen luo koko Israelin nähden."
+      vi: "Áp-sa-lôm vào Giê-ru-sa-lem và, theo mưu của A-hi-tô-phe, đến cùng các cung phi của cha mình trước mặt cả Y-sơ-ra-ên."
+      ro: "Absalom intră în Ierusalim și, la sfatul lui Ahitofel, intră la țiitoarele tatălui său în fața întregului Israel."
+      bg: "Авесалом влиза в Йерусалим и по съвета на Ахитофел влиза при наложниците на баща си пред очите на целия Израил."
   - place: aa24ad4 # Wood of Ephraim
     ref: 2Sam.18.6-2Sam.18.17
     note:
@@ -139,6 +169,11 @@ stops:
       tl: "Sa gubat ng Ephraim ay natatalo ang hukbo ni Absalom; nasasabit ang kaniyang ulo sa isang ensina at siya'y nakabitin doon, at tatlong pana ang pinalalagpas ni Joab sa kaniyang puso samantalang siya'y buhay pa; pinapatay siya ng mga bataan ni Joab."
       da: "I Efraims skov bliver Absalons hær slået; hans hoved filtres fast i en eg, så han hænger der, og Joab støder tre spyd ind i hans hjerte, mens han endnu er i live; Joabs væbnere dræber ham."
       sr: "У јефремској шуми Авесаломова војска је потучена; он се главом заплео у храст и тамо виси, а Јоав му још живом забада три стреле у срце; Јоавови момци га убијају."
+      hu: "Efraim erdejében Absolon seregét megverik; a feje egy tölgyfába akad, ott függ, és Joáb három dárdát szúr a szívébe, amíg még él; Joáb fegyverhordozó ifjai végeznek vele."
+      fi: "Efraimin metsässä Absalomin sotajoukko lyödään; hänen päänsä tarttuu tammeen, ja hän jää riippumaan, ja Joab iskee kolme keihästä hänen sydämeensä hänen vielä elävänä ollessaan; Joabin nuoret miehet surmaavat hänet."
+      vi: "Trong rừng Ép-ra-im, quân của Áp-sa-lôm bị đánh bại; đầu vướng vào một cây sồi, người bị treo lơ lửng ở đó, và Giô-áp đâm ba mũi lao vào lòng người khi người còn sống; các tôi tớ của Giô-áp giết người."
+      ro: "În pădurea lui Efraim, oastea lui Absalom este înfrântă; prins cu capul într-un stejar, el rămâne atârnat acolo, iar Ioab îi înfige trei săgeți în inimă cât este încă viu; tinerii lui Ioab îl omoară."
+      bg: "В Ефремовия лес войската на Авесалом е разбита; главата му се заплита в един дъб и той остава да виси, а Йоав забива три стрели в сърцето му, докато е още жив; момците на Йоав го убиват."
   - place: ae5bfe9 # Mahanaim
     ref: 2Sam.18.19-2Sam.18.33
     note:
@@ -158,6 +193,11 @@ stops:
       tl: "Sa Mahanaim, na nakaupo sa pagitan ng dalawang pintuang-bayan, napakikinggan ni David ang balita at tumatangis: “Oh anak kong Absalom, anak ko, anak kong Absalom!”"
       da: "I Mahanajim, siddende mellem de to porte, hører David nyheden og græder: »Min Søn Absalom! min Søn, min Søn Absalom!«"
       sr: "У Маханајиму, седећи међу двоја врата, Давид чује вест и плаче: „Сине мој Авесаломе, сине мој, сине мој Авесаломе!“"
+      hu: "Mahanajimban, a két kapu között ülve Dávid meghallja a hírt, és sír: „Szerelmes fiam, Absolon! édes fiam, édes fiam, Absolon!”"
+      fi: "Mahanaimissa Daavid istuu molempien porttien välissä, kuulee sanoman ja itkee: ”Poikani Absalom, minun poikani, oma poikani Absalom!”"
+      vi: "Tại Ma-ha-na-im, ngồi giữa hai cái cửa thành, Đa-vít nghe tin và khóc: “Ôi, Áp-sa-lôm, con trai ta! Áp-sa-lôm, con trai ta! con trai ta!”"
+      ro: "La Mahanaim, șezând între cele două porți, David află vestea și plânge: „fiul meu Avesalom fiul mieu! Fiul meu Avesalom!”"
+      bg: "В Маханаим, седнал между двете порти, Давид чува вестта и плаче: „Сине мой Авесаломе, сине мой, сине мой Авесаломе!“"
   - place: ab94aea # Gilgal
     ref: 2Sam.19.15-2Sam.19.40
     note:
@@ -177,3 +217,8 @@ stops:
       tl: "Pumupunta sa Gilgal ang mga lalaki ng Juda upang ihatid pabalik ang hari sa kabila ng Jordan."
       da: "Judas mænd kommer til Gilgal for at føre kongen tilbage over Jordan."
       sr: "Људи из Јуде долазе у Галгал да цара преведу преко Јордана."
+      hu: "Júda férfiai Gilgálba jönnek, hogy a királyt visszakísérjék a Jordánon át."
+      fi: "Juudan miehet tulevat Gilgaliin saattamaan kuninkaan takaisin Jordanin yli."
+      vi: "Người Giu-đa đến Ghinh-ganh để đưa vua trở về qua sông Giô-đanh."
+      ro: "Bărbații lui Iuda vin la Ghilgal ca să-l treacă pe rege înapoi peste Iordan."
+      bg: "Юдовите мъже идват в Галгал, за да върнат царя отвъд Йордан."
