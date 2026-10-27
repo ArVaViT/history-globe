@@ -8,9 +8,8 @@
  * ending only, no dictionary: a form never met in a text costs nothing, a missed one leaves a
  * name unlinked, and a form that is also an ordinary word is dropped by the index's checks.
  * Names of several words are matched as written, but for the last word's case in Hungarian and
- * Finnish; so are names in a vowel these rules do not know (Мегіддо, Hebrón). Turkish needs no
- * forms: its suffix follows an apostrophe (Mısır'dan), where a name already ends; Vietnamese,
- * Swahili and Bulgarian names take no endings.
+ * Finnish; so are names in a vowel these rules do not know (Мегіддо, Hebrón). Vietnamese and
+ * Bulgarian names take no endings.
  */
 import type { Locale } from "../packages/model/src/time.ts";
 

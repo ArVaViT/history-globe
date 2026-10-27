@@ -86,8 +86,6 @@ const ours = z
     hu: opt,
     fi: opt,
     vi: opt,
-    tr: opt,
-    sw: opt,
     ro: opt,
     bg: opt,
   })

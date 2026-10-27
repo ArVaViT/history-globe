@@ -197,7 +197,7 @@ describe("repair", () => {
     );
   });
 
-  it("takes the Finnish and Vietnamese verse numbers and the Turkish joins out", () => {
+  it("takes the Finnish and Vietnamese verse numbers out", () => {
     expect(repair("fi", "{13:1} Sen jälkeen kansa lähti liikkeelle Haserotista")).toBe(
       "Sen jälkeen kansa lähti liikkeelle Haserotista",
     );
@@ -213,50 +213,11 @@ describe("repair", () => {
     expect(repair("vi", "đến đời đời. 20-43 Vậy, Đa-vít chổi dậy")).toBe(
       "đến đời đời. Vậy, Đa-vít chổi dậy",
     );
-    expect(repair("tr", "-18 Tanrı, yeryüzüne ışık vermesi")).toBe("Tanrı, yeryüzüne ışık vermesi");
     expect(repair("vi", "(022:49) Giô-sa-phát")).toBe("Giô-sa-phát");
     expect(repair("vi", "Aáy chính Ngài, Bết-lê-hem Eùp-ra-ta, Aùp-ra-ham")).toBe(
       "Ấy chính Ngài, Bết-lê-hem Ép-ra-ta, Áp-ra-ham",
     );
     expect(repair("vi", "dấu lạ phép k” của ta; “Hãy đi”")).toBe("dấu lạ phép kỳ của ta; “Hãy đi”");
-  });
-
-  it("takes the Swahili ULB's notes and editors' marks out of its verses", () => {
-    expect(
-      repair(
-        "sw",
-        "Iweni macho. (Zingatia: Mstari huu, “Muwe waangalifu” haumo kwenye nakala za kale).",
-      ),
-    ).toBe("Iweni macho.");
-    expect(
-      repair("sw", "(Zingatia: Nakala za kale hazina Marko 16: 9-20) Mapema katika siku"),
-    ).toBe("Mapema katika siku");
-    expect(
-      repair(
-        "sw",
-        "“Naye BWANA atawaondoa maadui wa Daudi.” (KISWAHILI IDIOM? ==== ULB ENGLISH IDIOM)",
-      ),
-    ).toBe("“Naye BWANA atawaondoa maadui wa Daudi.”");
-    expect(
-      repair(
-        "sw",
-        "Zingatia: Msatri huu, “Naya atakapokuja atasema nanyi,” haumo kwenye maandiko ya kale.",
-      ),
-    ).toBe("");
-    expect(repair("sw", "madhabahu ya uvumba+ kutokana na mbao za mshita. + Mkono mmoja")).toBe(
-      "madhabahu ya uvumba kutokana na mbao za mshita. Mkono mmoja",
-    );
-    expect(repair("sw", "umri wa miaka [thelathini] alipoanza")).toBe(
-      "umri wa miaka thelathini alipoanza",
-    );
-    expect(repair("sw", "kuona katika jangwa __tete likitikiswa")).toBe(
-      "kuona katika jangwa—tete likitikiswa",
-    );
-    // Words of the text itself in brackets stay, and so does a plain parenthesis.
-    expect(repair("sw", "Barzilai {ambaye alipata mke}")).toBe("Barzilai ambaye alipata mke");
-    expect(repair("sw", "Goligotha (maana ya tafsiri hii ni, Sehemu ya Fuvu la kichwa).")).toBe(
-      "Goligotha (maana ya tafsiri hii ni, Sehemu ya Fuvu la kichwa).",
-    );
   });
 
   it("mends Biblia 1914's transcription slips and keeps its 1914 spelling", () => {

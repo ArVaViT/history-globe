@@ -53,14 +53,14 @@ describe("splitPlaces", () => {
     expect(places("They crossed the Jordan.")).toEqual(["Jordan:a4"]);
   });
 
-  it("stops a Turkish name at its apostrophe, either kind", () => {
-    const tr = textPlacesFrom({ forms: { Mısır: "a6", Galile: "a7" } });
+  it("stops a name at its apostrophe, either kind", () => {
+    const en = textPlacesFrom({ forms: { Egypt: "a6", Galilee: "a7" } });
     const found = (text: string) =>
-      splitPlaces(text, tr)
+      splitPlaces(text, en)
         .filter((s) => s.place)
         .map((s) => s.text);
-    expect(found("Mısır'dan çıktılar ve Galile’ye gittiler.")).toEqual(["Mısır", "Galile"]);
-    expect(found("Mısırlılar geldi.")).toEqual([]);
+    expect(found("Egypt's river and Galilee’s sea.")).toEqual(["Egypt", "Galilee"]);
+    expect(found("Egyptians came.")).toEqual([]);
   });
 
   it("matches a Vietnamese name's hyphenated syllables whole", () => {

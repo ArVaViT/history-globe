@@ -61,7 +61,7 @@ describe("a quiz", () => {
       "Павле је у ______.",
     );
   });
-  it("takes out Hungarian, Finnish, Turkish and Romanian names with their suffixes", () => {
+  it("takes out Hungarian, Finnish and Romanian names with their suffixes", () => {
     expect(maskPlace("Pál Jeruzsálemben volt.", null, "x", ["Jeruzsálem"], "hu")).toBe(
       "Pál ______ volt.",
     );
@@ -74,7 +74,6 @@ describe("a quiz", () => {
     expect(maskPlace("Joosef meni Egyptiin.", null, "x", ["Egypti"], "fi")).toBe(
       "Joosef meni ______.",
     );
-    expect(maskPlace("Pavlus Kudüs'teydi.", null, "x", ["Kudüs"], "tr")).toBe("Pavlus ______.");
     // Romanian puts its article and case at the end too.
     expect(maskPlace("Lazăr era din satul Betaniei.", null, "x", ["Betania"], "ro")).toBe(
       "Lazăr era din satul ______.",
@@ -82,7 +81,7 @@ describe("a quiz", () => {
     expect(maskPlace("Ierusalimul a căzut.", null, "x", ["Ierusalim"], "ro")).toBe(
       "______ a căzut.",
     );
-    // Vietnamese and Swahili do not decline a name: the whole word only.
+    // Vietnamese does not decline a name: the whole word only.
     expect(maskPlace("Phao-lô ở Giê-ru-sa-lem.", null, "x", ["Giê-ru-sa-lem"], "vi")).toBe(
       "Phao-lô ở ______.",
     );
