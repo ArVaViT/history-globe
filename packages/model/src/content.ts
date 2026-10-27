@@ -70,8 +70,6 @@ function inLanguages<T extends z.ZodType>(t: T) {
       hu: t.optional(),
       fi: t.optional(),
       vi: t.optional(),
-      tr: t.optional(),
-      sw: t.optional(),
       ro: t.optional(),
       bg: t.optional(),
     })
@@ -142,8 +140,6 @@ export const NAME_LOCALES = [
   "hu",
   "fi",
   "vi",
-  "tr",
-  "sw",
   "ro",
   "bg",
 ] as const satisfies readonly Locale[];
@@ -598,8 +594,6 @@ export const AncientAuthorsFile = z.strictObject({
           hu: z.string().min(20).max(360).optional(),
           fi: z.string().min(20).max(360).optional(),
           vi: z.string().min(20).max(360).optional(),
-          tr: z.string().min(20).max(360).optional(),
-          sw: z.string().min(20).max(360).optional(),
           ro: z.string().min(20).max(360).optional(),
           bg: z.string().min(20).max(360).optional(),
         }),

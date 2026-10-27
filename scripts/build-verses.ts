@@ -2,8 +2,7 @@
  * Writes apps/web/public/data/verses/<locale>/<Book>.json: the text of every verse the
  * places cite, keyed by its English (OSIS) reference, so the place card can show a
  * verse without sending the reader away. Russian is the Synodal text, English the KJV,
- * both public domain (the others too, but the Turkish and Swahili editions, each under its
- * open licence), from eBible.org's USFM editions, CrossWire's SWORD modules, Romanian
+ * both public domain (the others too), from eBible.org's USFM editions, CrossWire's SWORD modules, Romanian
  * Wikisource (Biblia 1914, each page at a pinned revision and hash) and the Internet Archive
  * (the Tsarigrad Bible, pinned by its hash) (SOURCES and REPAIRS in bible-text.ts; downloaded
  * once into pipeline/.cache, their sha256 written to verses/sources.json).

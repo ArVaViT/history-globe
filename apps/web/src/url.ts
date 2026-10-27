@@ -39,7 +39,7 @@ const LOCALE_KEY = "hg:locale";
  * Browser language tags whose language the site publishes under another code: any Norwegian
  * (`no`, `nn`, `nb-NO`) opens the Bokmål, Filipino (`fil`, `fil-PH`) the Tagalog. Serbian in
  * any script or country (`sr-Cyrl`, `sr-RS`) is `sr` by its base tag already, as are
- * Hungarian, Finnish, Vietnamese, Turkish, Swahili (`sw-KE`, `sw-TZ`), Romanian (`ro-RO`,
+ * Hungarian, Finnish, Vietnamese, Romanian (`ro-RO`,
  * `ro-MD`) and Bulgarian (`bg-BG`).
  */
 const TAG_ALIASES: Readonly<Record<string, string>> = { no: "nb", nn: "nb", fil: "tl" };

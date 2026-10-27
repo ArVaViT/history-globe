@@ -271,9 +271,9 @@ export function SearchBox({
   // A year typed on its own, inside the map's range: offered first, as a chapter is.
   const year = useMemo(() => {
     if (chapter || !isYearInput(query)) return null;
-    const y = parseYearInput(query, i18n.language);
+    const y = parseYearInput(query);
     return y !== null && y >= YEAR_MIN && y <= YEAR_MAX ? y : null;
-  }, [chapter, query, i18n.language]);
+  }, [chapter, query]);
   // People after the places: those the map can show first, the most travelled first;
   // then those it cannot (Adam, Noah, Job, Mary) when the text names them in ten verses
   // or more, which leaves out the namesakes named once.

@@ -154,11 +154,8 @@ describe("inflectedForms", () => {
     // The cedilla letters of older keyboards: Aşdod for Așdod.
     has("Așdod", "ro", "Aşdod", "Așdodului", "Aşdodului");
   });
-  it("matches Turkish, Vietnamese, Swahili and Bulgarian names as written", () => {
-    // The Turkish suffix follows an apostrophe (Mısır'dan), where the name already ends.
-    expect(inflectedForms("Mısır", "tr")).toEqual(["Mısır"]);
+  it("matches Vietnamese and Bulgarian names as written", () => {
     expect(inflectedForms("Giê-ru-sa-lem", "vi")).toEqual(["Giê-ru-sa-lem"]);
-    expect(inflectedForms("Yerusalemu", "sw")).toEqual(["Yerusalemu"]);
     expect(inflectedForms("Йерусалим", "bg")).toEqual(["Йерусалим"]);
   });
   it("matches names of several words, and other languages, as written", () => {
