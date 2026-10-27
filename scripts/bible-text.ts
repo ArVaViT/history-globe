@@ -656,9 +656,7 @@ export interface BibleSource {
 
 /**
  * The Bible of each language the code knows: classic public-domain editions, from eBible.org
- * where it has one, else CrossWire's SWORD modules; where a language has no free edition old
- * enough, an openly licensed one (Turkish CC BY-ND, Swahili CC BY-SA), its licence in
- * `license`. Russian is the Synodal text, English the
+ * where it has one, else CrossWire's SWORD modules. Russian is the Synodal text, English the
  * KJV. A language that joins the site brings its edition here first: build-verses.ts writes
  * its verses, build-text-places.ts reads it to tell names from ordinary words.
  */
@@ -828,24 +826,6 @@ export const SOURCES: Readonly<Record<Locale, BibleSource>> = {
     title: "Kinh Thánh, bản dịch Cadman (1925)",
     page: "https://ebible.org/vie1934/",
   },
-  // The two editions not in the public domain: quoted word for word, with their licence and
-  // their makers named wherever the edition is (the sources page, the verse card).
-  tr: {
-    name: "Yorumsuz Türkçe Çeviri, İsmail Serinken (eBible.org turytc)",
-    url: "https://ebible.org/Scriptures/turytc_usfm.zip",
-    file: "turytc_usfm.zip",
-    license: "CC BY-ND 4.0, © 2023–2025 İsmail Serinken and eBible.org",
-    title: "Yorumsuz Türkçe Çeviri (YTC)",
-    page: "https://ebible.org/turytc/",
-  },
-  sw: {
-    name: "Swahili Unlocked Literal Bible, 2019 (eBible.org swhulb)",
-    url: "https://ebible.org/Scriptures/swhulb_usfm.zip",
-    file: "swhulb_usfm.zip",
-    license: "CC BY-SA 4.0, © 2019 Door43 World Missions Community",
-    title: "Biblia Takatifu, Unlocked Literal Bible (2019)",
-    page: "https://ebible.org/swhulb/",
-  },
   // Wave 5 (2026-10-25), known to the code before the site publishes them; neither edition is
   // on eBible.org or CrossWire. The Romanian Bible is the Orthodox Synod's of 1914 as Romanian
   // Wikisource transcribes it, each page pinned at its revision (scripts/biblia-1914.json), in
@@ -912,13 +892,8 @@ export function readEdition(src: BibleSource, cache: string): Map<string, string
  * Wave 4: the Finnish and Vietnamese texts sit in the KJV's slots but print their own
  * numbering where it differs («{13:1}», «(030-1)», «20-43»); the Vietnamese one keeps a
  * capital vowel's tone mark in the old VNI code («Aáy», «Eùp-ra-im») and has «ỳ» as «”»
- * («phép k”»); the Finnish one brackets the
- * doxology of Matthew 6:13 in escaped tags («&lt;FO&gt;»). The Turkish edition joins a few
- * verses into one (USFM «\v 17-18»): the first carries the text as «-18 …», the second is
- * missing, so the chapter is left out of the cards. The Swahili ULB is a working text: notes
- * in its verses («(Zingatia: …)» on verses the old manuscripts lack, «(KISWAHILI IDIOM? …)»),
- * its editors' marks (+, [ ], { }, __, *) and two verses that are a note only (Acts 8:37 in
- * part, 10:33): the cards show the verses without them.
+ * («phép k”»); the Finnish one brackets the doxology of Matthew 6:13 in escaped tags
+ * («&lt;FO&gt;»).
  *
  * Wave 5: Biblia 1914 keeps its spelling of 1914 («au făcut Dumnezeu», «erà», «pre», «s’a»);
  * only what Wikisource's transcription garbled is mended: a cross-reference typed into a verse
@@ -1023,7 +998,6 @@ export const REPAIRS: Readonly<Partial<Record<Locale, readonly (readonly [RegExp
     // A name broken at a line end kept the space: «Na-xa- rét», «Ga- li-lê».
     [/(\p{L})- (?=\p{Ll})/gu, "$1-"],
   ],
-  tr: [[/^-\d+\s+/, ""]],
   ro: [
     [/ Fac\. 9, 5\.$/, ""],
     [/doi»$/, "doi."],
@@ -1050,19 +1024,6 @@ export const REPAIRS: Readonly<Partial<Record<Locale, readonly (readonly [RegExp
     [/потока Арион/g, "потока Арнон"],
     [/Аморееец/g, "Амореец"],
     [/Флистимците/g, "Филистимците"],
-  ],
-  sw: [
-    [/^-\d+\s+/, ""],
-    [
-      /\s*[({]\s*(?:Zingatia|Katika tafsiri za kale|Maelezo haya|Mandishi, “baadhi|Badala ya “|Ingawa nakala|KISWAHILI IDIOM)[^)}]*(?:[)}]\.?|$)/g,
-      "",
-    ],
-    [/^maneno haya, “Hivyo Muethiopia[^)]*\)\.\s*/, ""],
-    [/^Zingatia: Msatri huu.*$/, ""],
-    [/[+*[\]{}]/g, ""],
-    [/\s*_+\s*/g, "—"],
-    [/\s{2,}/g, " "],
-    [/^\s+|\s+$/g, ""],
   ],
 };
 

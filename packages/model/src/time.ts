@@ -100,8 +100,6 @@ export type Locale =
   | "hu"
   | "fi"
   | "vi"
-  | "tr"
-  | "sw"
   | "ro"
   | "bg";
 
@@ -127,8 +125,6 @@ export const ALL_LOCALES = [
   "hu",
   "fi",
   "vi",
-  "tr",
-  "sw",
   "ro",
   "bg",
 ] as const satisfies readonly Locale[];
@@ -253,7 +249,7 @@ export function formatYearRange(from: number, to: number, locale: Locale): strin
   const b = toLabel(to);
   if (a.era !== b.era) return `${formatYear(from, locale)} – ${formatYear(to, locale)}`;
   // The first year joins the last where the language writes it, the era where it stands:
-  // after the years (2000–1180 BC), before them (AD 30–70, Kr. e. 2000–1180, MÖ 2000–1180)
+  // after the years (2000–1180 BC), before them (AD 30–70, Kr. e. 2000–1180)
   // or round them (公元前2000–1180年, năm 2000–1180 TCN).
   return formatYear(to, locale).replace(String(b.year), `${String(a.year)}–${String(b.year)}`);
 }
@@ -267,22 +263,19 @@ export const POLITY_SPLIT_YEAR = 500;
 /**
  * "Before" and "after" Christ as readers write them after a year, in every language the code
  * formats: до н. э. / до н. е. / до Р. Х. / п. н. е., BC / BCE / B.C. / BK, v. Chr., f.Kr.,
- * eaa., TCN, KK, î.Hr. / î.e.n., пр.н.е. / пр.Хр.; н. э. / н. е., AD, n. Chr., e.Kr., jaa.,
- * SCN, d.Hr. / e.n., сл.Хр. (Swahili BK, "after", is the Tagalog "before": parseYearInput
- * reads it by the reader's language). Hungarian and Turkish write theirs before the year
- * (ERA_FIRST).
+ * eaa., TCN, î.Hr. / î.e.n., пр.н.е. / пр.Хр.; н. э. / н. е., AD, n. Chr., e.Kr., jaa., SCN,
+ * d.Hr. / e.n., сл.Хр. Hungarian writes its eras before the year (ERA_FIRST).
  */
-const BC_WORDS = String.raw`до\s*н\.?\s*[эе]\.?|до\s*р\.?\s*х\.?|п\.\s*н\.\s*е\.?|b\.?\s*c\.?\s*e?\.?|bk|v\.\s*chr\.?|a\.\s*c\.?|av\.?\s*j\.?-?c\.?|p\.\s*n\.\s*e\.?|př\.\s*n\.\s*l\.?|f\.\s*kr\.?|eaa\.?|tcn|kk|î\.?\s*hr\.?|î\.?\s*e\.?\s*n\.?|i\.\s*hr\.?|i\.\s*e\.\s*n\.?|пр\.?\s*н\.?\s*е\.?|пр\.?\s*хр\.?`;
+const BC_WORDS = String.raw`до\s*н\.?\s*[эе]\.?|до\s*р\.?\s*х\.?|п\.\s*н\.\s*е\.?|b\.?\s*c\.?\s*e?\.?|bk|v\.\s*chr\.?|a\.\s*c\.?|av\.?\s*j\.?-?c\.?|p\.\s*n\.\s*e\.?|př\.\s*n\.\s*l\.?|f\.\s*kr\.?|eaa\.?|tcn|î\.?\s*hr\.?|î\.?\s*e\.?\s*n\.?|i\.\s*hr\.?|i\.\s*e\.\s*n\.?|пр\.?\s*н\.?\s*е\.?|пр\.?\s*хр\.?`;
 const AD_WORDS = String.raw`н\.?\s*[эе]\.?|a\.?\s*d\.?|n\.\s*chr\.?|d\.\s*c\.?|apr\.?\s*j\.?-?c\.?|n\.\s*e\.?|n\.\s*l\.?|e\.\s*kr\.?|jaa\.?|scn|d\.?\s*hr\.?|e\.\s*n\.?|сл\.?\s*хр\.?`;
-/** The eras written before the year: AD, Kr. e. / Kr. u. (Hungarian), MÖ / MS (Turkish), năm. */
-const ERA_FIRST = String.raw`ad|kr\.\s*[eu]\.?|mö|ms|năm|公元前|公元`;
+/** The eras written before the year: AD, Kr. e. / Kr. u. (Hungarian), năm. */
+const ERA_FIRST = String.raw`ad|kr\.\s*[eu]\.?|năm|公元前|公元`;
 
 /**
  * A year as a reader types it, as an astronomical year: "586 до н. э.", "586 BC", "-586"
- * are 1 - 586; "30", "AD 30", "30 н. э." are AD 30. Null if no year. The reader's language
- * tells one word apart: BK is "before" in Tagalog, "after" (Baada ya Kristo) in Swahili.
+ * are 1 - 586; "30", "AD 30", "30 н. э." are AD 30. Null if no year.
  */
-export function parseYearInput(text: string, locale?: string): number | null {
+export function parseYearInput(text: string): number | null {
   const t = text.trim().toLowerCase();
   const m = /(\d{1,4})/.exec(t);
   if (!m?.[1]) return null;
@@ -291,8 +284,7 @@ export function parseYearInput(text: string, locale?: string): number | null {
   // Loose on purpose: «586 до нашей эры», «586 до н» are BC too.
   const bc =
     t.startsWith("-") ||
-    (locale !== "sw" && /\bbk\b/.test(t)) ||
-    /до\s*н|до\s*р|п\.\s*н\.\s*е|b\.?\s*c|v\.\s*chr|a\.\s*c|av\.?\s*j|p\.\s*n\.\s*e|př\.\s*n|f\.\s*kr|公元前|kr\.\s*e\b|\beaa\b|\btcn\b|\bmö|\bkk\b|î\.?\s*hr|î\.?\s*e\.?\s*n|\bi\.\s*hr|\bi\.\s*e\.\s*n|пр\.?\s*н\.?\s*е|пр\.?\s*хр/.test(
+    /до\s*н|до\s*р|п\.\s*н\.\s*е|\bbk\b|b\.?\s*c|v\.\s*chr|a\.\s*c|av\.?\s*j|p\.\s*n\.\s*e|př\.\s*n|f\.\s*kr|公元前|kr\.\s*e\b|\beaa\b|\btcn\b|î\.?\s*hr|î\.?\s*e\.?\s*n|\bi\.\s*hr|\bi\.\s*e\.\s*n|пр\.?\s*н\.?\s*е|пр\.?\s*хр/.test(
       t,
     );
   return bc ? 1 - n : n;

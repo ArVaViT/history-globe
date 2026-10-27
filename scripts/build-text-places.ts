@@ -95,8 +95,6 @@ const FORM_STOP: Partial<Record<Locale, readonly string[]>> = {
   hu: [],
   fi: [],
   vi: [],
-  tr: [],
-  sw: [],
   ro: [],
   bg: [],
 };
@@ -444,8 +442,6 @@ const STOP_IN: Partial<Record<Locale, readonly string[]>> = {
   hu: [],
   fi: [],
   vi: [],
-  tr: [],
-  sw: [],
   ro: [],
   bg: [],
 };
@@ -499,8 +495,6 @@ const FIRST_NAMES_IN: Partial<Record<Locale, readonly string[]>> = {
   hu: [],
   fi: [],
   vi: [],
-  tr: [],
-  sw: [],
   ro: [],
   bg: [],
 };
@@ -1006,22 +1000,6 @@ const LABELS: Record<Lang, Labels> & Partial<Record<Locale, Labels>> = {
     likely: "khả năng cao nhất trong các giả thuyết",
     tentative: "chưa chắc chắn",
     open: "Mở trên quả địa cầu",
-  },
-  tr: {
-    inBible: "Kutsal Kitap’ta",
-    location: "Konum",
-    disputed: "tartışmalı",
-    likely: "önerilerin en olası olanı",
-    tentative: "kesin değil",
-    open: "Kürede aç",
-  },
-  sw: {
-    inBible: "Katika Biblia",
-    location: "Mahali",
-    disputed: "linabishaniwa",
-    likely: "linalowezekana zaidi kati ya mapendekezo",
-    tentative: "halina uhakika",
-    open: "Fungua kwenye globu",
   },
   ro: {
     inBible: "În Biblie",

@@ -373,11 +373,11 @@ export async function printForClass({
 const DECLINED: ReadonlySet<string> = new Set(["ru", "uk", "pl", "cs", "sr"]);
 /**
  * The languages that add their cases to the end of a name, longer than a Slavic ending
- * ("Jeruzsálemben", "Jerusalemissa", "Kudüs'te": Turkish behind an apostrophe), a name's
+ * ("Jeruzsálemben", "Jerusalemissa"), a name's
  * last vowel changing before them ("Betánia" → "Betániában", "Egypti" → "Egyptissä"), and
  * Romanian, whose article and case stand at a name's end ("Ierusalimul", "Betaniei").
  */
-const SUFFIXED: ReadonlySet<string> = new Set(["hu", "fi", "tr", "ro"]);
+const SUFFIXED: ReadonlySet<string> = new Set(["hu", "fi", "ro"]);
 
 /** A stop's text with its place taken out, for a quiz: every mention, in any case. */
 export function maskPlace(
@@ -408,13 +408,13 @@ export function maskPlace(
         ru && word.length > 4
           ? word.slice(0, -2)
           : suffixed && word.length > 4
-            ? word.replace(locale === "ro" ? /e?a$|[eiouăâî]$/u : /[aeiouyáéíóöőúüűäıăâî]$/u, "")
+            ? word.replace(locale === "ro" ? /e?a$|[eiouăâî]$/u : /[aeiouyáéíóöőúüűäăâî]$/u, "")
             : word;
       const esc = escapeRegExp(stem);
       // A short Russian name keeps its whole word and takes a case ending («до Дана»),
       // never a longer name («Даниил»).
       const tail = suffixed
-        ? "['’]?\\p{L}{0,6}"
+        ? "\\p{L}{0,6}"
         : !ru
           ? ""
           : stem === word

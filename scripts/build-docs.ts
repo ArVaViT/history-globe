@@ -748,8 +748,7 @@ function counts(): Record<string, string> {
 /**
  * The Bible of every language, for the sources page (`<div class="bibles"></div>`): each
  * language by its own name, the edition by its title, the electronic text with its page and
- * the licence (the edition's own, where it is not in the public domain). Read from SOURCES
- * (bible-text.ts), the editions the verses are built from,
+ * the licence. Read from SOURCES (bible-text.ts), the editions the verses are built from,
  * so the page cannot leave one out. A language whose verses are built before it joins the
  * site (Chinese) is listed too, as its texts are in the data.
  */
@@ -763,10 +762,7 @@ function biblesTable(l: Lang): string {
     const host = b.file.endsWith("_usfm.zip") ? "eBible.org" : "CrossWire SWORD";
     const own = (LOCALE_NAMES as Partial<Record<string, string>>)[code];
     const name = own ?? new Intl.DisplayNames([code], { type: "language" }).of(code) ?? code;
-    // A public-domain edition in the page's words; an openly licensed one (Turkish, Swahili)
-    // by its licence and makers as they are given, untranslated, as a photo's licence is.
-    const free = b.license.startsWith("public domain");
-    const lic = `${free ? PAGE_WORDS[l].pd : b.license}${b.license.includes("Crown") ? t.crown : ""}${own ? "" : ` (${t.notYet})`}`;
+    const lic = `${PAGE_WORDS[l].pd}${b.license.includes("Crown") ? t.crown : ""}${own ? "" : ` (${t.notYet})`}`;
     // Wikisource and the Internet Archive name their texts otherwise: the edition's own label.
     const link = b.label ?? `${host} ${id}`;
     return `<tr><td lang="${code}">${esc(name)}</td><td lang="${code}">${esc(b.title)}</td><td><a href="${esc(b.page)}">${esc(link)}</a></td><td>${esc(lic)}</td></tr>`;

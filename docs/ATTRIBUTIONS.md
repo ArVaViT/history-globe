@@ -87,8 +87,7 @@ Base cartography
 Scripture
   The verse texts and quotations in each language come from a public-domain edition,
   from eBible.org's USFM editions or CrossWire's SWORD modules (the .conf of each says
-  DistributionLicense=Public Domain), except Turkish and Swahili, whose editions are
-  openly licensed (below); scripts/bible-text.ts lists them (SOURCES) with
+  DistributionLicense=Public Domain); scripts/bible-text.ts lists them (SOURCES) with
   the repairs made to their digital text (REPAIRS), and scripts/build-verses.ts
   records the sha256 of each file in data/verses/sources.json.
     en  King James Version, 1769 standard text (eBible.org eng-kjv2006); public
@@ -113,18 +112,12 @@ Scripture
     tl  Ang Biblia 1905, Philippine Bible Society (CrossWire TagAngBiblia)
     zh  Chinese Union Version, simplified (eBible.org cmn-cu89s): verse texts only,
         for a language not yet on the site
-  The same, verse texts only, for the languages not yet on the site (wave 4):
+  The same for the languages added in October 2026:
     hu  Revised Károli Bible, 1908 (CrossWire HunKar)
     fi  Pyhä Raamattu 1933/1938 (CrossWire FinPR)
     vi  Kinh Thánh, William Cadman's translation, NT 1923, OT 1925 (eBible.org
         vie1934)
-    tr  Yorumsuz Türkçe Çeviri (YTC), © 2023–2025 İsmail Serinken and eBible.org,
-        CC BY-ND 4.0 (eBible.org turytc): quoted word for word, never changed
-    sw  Biblia Takatifu, Unlocked Literal Bible (2019), © 2019 Door43 World
-        Missions Community, CC BY-SA 4.0 (eBible.org swhulb): the verses as the
-        cards show them have the edition's notes and editors' marks taken out
-        (REPAIRS)
-  The same for wave 5, from neither eBible.org nor CrossWire:
+  and, from neither eBible.org nor CrossWire:
     ro  Biblia 1914, Ediția Sfântului Sinod (Bucharest, Tipografia Cărților
         Bisericești), as Romanian Wikisource transcribes it
         (https://ro.wikisource.org/wiki/Biblia_1914), each book's page at a pinned
@@ -135,8 +128,8 @@ Scripture
         from the Internet Archive
         (https://archive.org/details/bibliya-tsarigradska-viensko-izdanie-1885),
         pinned by its SHA-256
-  All public domain but the Turkish and Swahili editions. Names are read from the
-  Synodal text for Russian and checked against the KJV for English.
+  All public domain. Names are read from the Synodal text for Russian and checked
+  against the KJV for English.
 
 Photos
   Photos of places in the place card come from Wikimedia Commons, each public domain,
