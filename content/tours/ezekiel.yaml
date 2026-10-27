@@ -20,6 +20,11 @@ title:
   tl: "Si Ezekiel sa gitna ng mga ipinatapon"
   da: "Ezekiel blandt de landflygtige"
   sr: "Језекиљ међу прогнанима"
+  hu: "Ezékiel a számkivetettek között"
+  fi: "Hesekiel pakkosiirtolaisten keskellä"
+  vi: "Ê-xê-chi-ên giữa những người bị đày"
+  ro: "Ezechiel printre exilați"
+  bg: "Йезекиил сред изгнаниците"
 year: "593 BC"
 # He is carried “in the visions of God” (8:3, 11:24) and the news comes to him (33:21): no time on foot.
 walked: false
@@ -45,6 +50,11 @@ stops:
       tl: "Sa gitna ng mga bihag sa tabi ng ilog Chebar, nabubuksan ang langit, at nakakakita si Ezekiel ng mga pangitain mula sa Dios."
       da: "Blandt de bortførte ved floden Kebar åbner himlene sig, og Ezekiel ser Guds syner."
       sr: "Међу робљем на реци Хевару отварају се небеса, и Језекиљ види виђења Божја."
+      hu: "A Kebár folyó menti foglyok között megnyílnak az egek, és Ezékiel Isten látomásait látja."
+      fi: "Vankien keskellä Kebar-joen varrella taivaat aukeavat, ja Hesekiel näkee Jumalan näkyjä."
+      vi: "Giữa các phu tù bên sông Kê-ba, các từng trời mở ra, và Ê-xê-chi-ên xem những sự hiện thấy của Đức Chúa Trời."
+      ro: "Printre captivii de lângă râul Chebar se deschid cerurile, iar Ezechiel are vedenii dumnezeiești."
+      bg: "Сред пленниците при река Ховар небесата се отварят и Йезекиил вижда Божии видения."
   - place: a10147d # Tel-abib
     ref: Ezek.3.15
     note:
@@ -64,6 +74,11 @@ stops:
       tl: "Pumaparoon siya sa mga ipinatapon sa Tel-abib at umuupo sa gitna nila nang pitong araw, natitigilan."
       da: "Han kommer til de landflygtige i Tel-Abib og sidder syv dage blandt dem, forfærdet."
       sr: "Долази прогнаницима у Телавив и седи међу њима седам дана, запрепашћен."
+      hu: "Tél-Ábibban érkezik a számkivetettekhez, és hét napig ül közöttük megdöbbenve."
+      fi: "Hän tulee pakkosiirtolaisten luo Tel-Abibiin ja istuu heidän keskellään seitsemän päivää hämmästyneenä."
+      vi: "Người đến cùng những kẻ bị đày tại Tên-A-bíp và ngồi giữa họ bảy ngày, sững sờ."
+      ro: "Vine la exilații de la Tel-Abib și șade printre ei șapte zile, încremenit."
+      bg: "Той идва при изгнаниците в Тел-Авив и седи сред тях седем дни, смаян."
   - place: a15257a # Jerusalem
     ref: Ezek.8.1-Ezek.8.4
     year: "592 BC"
@@ -84,6 +99,11 @@ stops:
       tl: "Sa ikaanim na taon, itinataas siya ng Espiritu at dinadala sa mga pangitain mula sa Dios sa Jerusalem, sa pintuan ng pinakaloob na pintuang-daan."
       da: "I det sjette år løfter Ånden ham op og fører ham i Guds syner til Jerusalem, til døren til den indre port."
       sr: "Шесте године Дух га подиже и у виђењима Божјим доноси у Јерусалим, до врата унутрашњих."
+      hu: "A hatodik évben a Lélek felemeli, és Isten látomásaiban Jeruzsálembe viszi, a belső kapu bejáratához."
+      fi: "Kuudentena vuonna Henki nostaa hänet ylös ja tuo hänet Jumalan näyissä Jerusalemiin, sisemmän portin ovelle."
+      vi: "Vào năm thứ sáu, Thần cất người lên và đem người trong những sự hiện thấy của Đức Chúa Trời đến Giê-ru-sa-lem, nơi cửa vào sân trong."
+      ro: "În al șaselea an, Duhul îl ridică și îl duce, în vedenii dumnezeiești, la Ierusalim, la ușa porții dinăuntru."
+      bg: "В шестата година Духът го издига и го отнася в Божии видения в Йерусалим, при входа на вътрешната порта."
   - place: a32a4f8 # Chaldea
     ref: Ezek.11.24-Ezek.11.25
     year: "592 BC"
@@ -104,6 +124,11 @@ stops:
       tl: "Ibinabalik siya ng Espiritu sa mga bihag sa Caldea, at isinasalaysay niya sa kanila ang lahat ng ipinakita ng Panginoon."
       da: "Ånden fører ham tilbage til de bortførte i Kaldæa, og han fortæller dem alt, hvad Herren har vist ham."
       sr: "Дух га враћа робљу у Халдеји, и он им казује све што му је Господ показао."
+      hu: "A Lélek visszaviszi a Káldeában levő foglyokhoz, ő pedig elmondja nekik mindazt, amit az Úr megmutatott neki."
+      fi: "Henki tuo hänet takaisin vankien luo Kaldeaan, ja hän kertoo heille kaiken, minkä Herra on hänelle näyttänyt."
+      vi: "Thần đem người trở lại cùng các phu tù trong Canh-đê, và người thuật lại cho họ mọi điều Đức Giê-hô-va đã cho người thấy."
+      ro: "Duhul îl aduce înapoi la captivii din Haldeea, iar el le spune tot ce i-a arătat Domnul."
+      bg: "Духът го връща при пленниците в Халдея и той им разказва всичко, което Господ му е показал."
   - place: a15257a # Jerusalem
     ref: Ezek.33.21-Ezek.33.22
     year: "585 BC"
@@ -124,3 +149,8 @@ stops:
       tl: "Sa gitna ng mga ipinatapon, sa ikalabindalawang taon ng pagkabihag, may lumalapit sa kaniyang isang nakatakas mula sa Jerusalem: “Ang bayan ay nasaktan.”"
       da: "Blandt de landflygtige, i det tolvte år af bortførelsen, kommer en, der er sluppet bort fra Jerusalem, til ham: »Staden er indtagen.«"
       sr: "Међу прогнанима, дванаесте године робовања, долази му један који је утекао из Јерусалима: „Узе се град.“"
+      hu: "A számkivetettek között, a fogság tizenkettedik évében egy Jeruzsálemből megmenekült ember jön hozzá: „Megvétetett a város!”"
+      fi: "Pakkosiirtolaisten keskellä, vankeuden kahdentenatoista vuonna, hänen luokseen tulee Jerusalemista paennut: ”Kaupunki on valloitettu”."
+      vi: "Giữa những người bị đày, vào năm thứ mười hai của cuộc lưu đày, một người đã trốn khỏi Giê-ru-sa-lem đến cùng người: “Thành hãm rồi!”"
+      ro: "Printre exilați, în al doisprezecelea an al robiei, vine la el unul care a scăpat din Ierusalim: „s’a luat cetatea”."
+      bg: "Сред изгнаниците, в дванадесетата година на плена, при него идва един избягал от Йерусалим: „Превзе се градът.“"

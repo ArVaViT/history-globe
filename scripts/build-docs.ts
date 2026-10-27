@@ -73,6 +73,11 @@ const GROUPS: readonly { name: Words<string>; pages: readonly Page[] }[] = [
       nb: "Kom i gang",
       sr: "Почетак",
       tl: "Pagsisimula",
+      hu: "Első lépések",
+      fi: "Aloitus",
+      vi: "Bắt đầu",
+      ro: "Primii pași",
+      bg: "Начало",
     },
     pages: ["index"],
   },
@@ -94,6 +99,11 @@ const GROUPS: readonly { name: Words<string>; pages: readonly Page[] }[] = [
       nb: "For utviklere",
       sr: "За програмере",
       tl: "Para sa mga developer",
+      hu: "Fejlesztőknek",
+      fi: "Kehittäjille",
+      vi: "Dành cho nhà phát triển",
+      ro: "Pentru dezvoltatori",
+      bg: "За разработчици",
     },
     pages: ["build", "embedding", "api"],
   },
@@ -115,6 +125,11 @@ const GROUPS: readonly { name: Words<string>; pages: readonly Page[] }[] = [
       nb: "Data",
       sr: "Подаци",
       tl: "Datos",
+      hu: "Adatok",
+      fi: "Tiedot",
+      vi: "Dữ liệu",
+      ro: "Date",
+      bg: "Данни",
     },
     pages: ["methodology", "sources", "reviews"],
   },
@@ -136,6 +151,11 @@ const GROUPS: readonly { name: Words<string>; pages: readonly Page[] }[] = [
       nb: "Om prosjektet",
       sr: "О пројекту",
       tl: "Tungkol sa proyekto",
+      hu: "A projektről",
+      fi: "Tietoa projektista",
+      vi: "Về dự án",
+      ro: "Despre proiect",
+      bg: "За проекта",
     },
     pages: ["author", "privacy"],
   },
@@ -546,6 +566,131 @@ const T = {
     crown: "; sa United Kingdom, Crown copyright",
     notYet: "mga teksto lamang ng talata: wala pa ang wikang ito sa site",
   },
+  hu: {
+    language: "Nyelv",
+    docs: "Dokumentáció",
+    menu: "Dokumentáció",
+    onPage: "Ezen az oldalon",
+    pages: "Minden oldal",
+    copy: "Másolás",
+    copied: "Másolva",
+    updated: "Adatok állapota:",
+    open: "A földgömb megnyitása",
+    prev: "Előző",
+    next: "Következő",
+    data: "Adatok CC BY 4.0 licenc alatt",
+    search: "Keresés a dokumentációban",
+    noResults: "Nincs találat",
+    edit: "Az oldal szerkesztése",
+    report: "Hiba bejelentése",
+    source: "Forráskód",
+    skip: "Ugrás a tartalomra",
+    openMenu: "Menü",
+    overview: "Áttekintés",
+    bibleHead: ["Nyelv", "Kiadás", "Elektronikus szöveg", "Licenc"],
+    crown: "; az Egyesült Királyságban a Korona szerzői joga",
+    notYet: "csak a versek szövege: az oldal ezen a nyelven még nem érhető el",
+  },
+  fi: {
+    language: "Kieli",
+    docs: "Dokumentaatio",
+    menu: "Dokumentaatio",
+    onPage: "Tällä sivulla",
+    pages: "Kaikki sivut",
+    copy: "Kopioi",
+    copied: "Kopioitu",
+    updated: "Tiedot päivitetty",
+    open: "Avaa maapallo",
+    prev: "Edellinen",
+    next: "Seuraava",
+    data: "Tiedot CC BY 4.0 -lisenssillä",
+    search: "Hae dokumentaatiosta",
+    noResults: "Mitään ei löytynyt",
+    edit: "Muokkaa tätä sivua",
+    report: "Ilmoita virheestä",
+    source: "Lähdekoodi",
+    skip: "Siirry sisältöön",
+    openMenu: "Valikko",
+    overview: "Yleiskatsaus",
+    bibleHead: ["Kieli", "Laitos", "Sähköinen teksti", "Lisenssi"],
+    crown: "; Yhdistyneessä kuningaskunnassa Crown copyright",
+    notYet: "vain jakeiden tekstit: sivustoa ei vielä ole tällä kielellä",
+  },
+  vi: {
+    language: "Ngôn ngữ",
+    docs: "Tài liệu",
+    menu: "Tài liệu",
+    onPage: "Trên trang này",
+    pages: "Tất cả các trang",
+    copy: "Sao chép",
+    copied: "Đã sao chép",
+    updated: "Dữ liệu tính đến",
+    open: "Mở quả địa cầu",
+    prev: "Trang trước",
+    next: "Trang sau",
+    data: "Dữ liệu theo giấy phép CC BY 4.0",
+    search: "Tìm trong tài liệu",
+    noResults: "Không tìm thấy gì",
+    edit: "Sửa trang này",
+    report: "Báo lỗi",
+    source: "Mã nguồn",
+    skip: "Chuyển đến nội dung",
+    openMenu: "Menu",
+    overview: "Tổng quan",
+    bibleHead: ["Ngôn ngữ", "Ấn bản", "Văn bản điện tử", "Giấy phép"],
+    crown: "; tại Vương quốc Anh, bản quyền của Hoàng gia (Crown copyright)",
+    notYet: "chỉ có văn bản câu Kinh Thánh: trang web chưa có ngôn ngữ này",
+  },
+  ro: {
+    language: "Limba",
+    docs: "Documentație",
+    menu: "Documentație",
+    onPage: "Pe această pagină",
+    pages: "Toate paginile",
+    copy: "Copiază",
+    copied: "Copiat",
+    updated: "Date la",
+    open: "Deschide globul",
+    prev: "Înapoi",
+    next: "Înainte",
+    data: "Date sub licența CC BY 4.0",
+    search: "Caută în documentație",
+    noResults: "Nu s-a găsit nimic",
+    edit: "Editează pagina",
+    report: "Raportează o eroare",
+    source: "Cod sursă",
+    skip: "Salt la conținut",
+    openMenu: "Meniu",
+    overview: "Prezentare",
+    bibleHead: ["Limba", "Ediția", "Text electronic", "Licența"],
+    crown: "; în Regatul Unit, drepturile Coroanei",
+    notYet: "doar textele versetelor: site-ul nu are încă această limbă",
+  },
+  bg: {
+    language: "Език",
+    docs: "Документация",
+    menu: "Документация",
+    onPage: "На тази страница",
+    pages: "Всички страници",
+    copy: "Копиране",
+    copied: "Копирано",
+    updated: "Данни към",
+    open: "Отваряне на глобуса",
+    prev: "Предишна",
+    next: "Следваща",
+    data: "Данни под лиценз CC BY 4.0",
+    search: "Търсене в документацията",
+    noResults: "Не е намерено нищо",
+    edit: "Редактиране на страницата",
+    report: "Съобщаване за грешка",
+    source: "Изходен код",
+    skip: "Към съдържанието",
+    openMenu: "Меню",
+    overview: "Преглед",
+    bibleHead: ["Език", "Издание", "Електронен текст", "Лиценз"],
+    crown: "; в Обединеното кралство – права на Короната",
+    notYet: "само текстове на стиховете: сайтът още няма този език",
+  },
 } as const satisfies Words<Record<string, string | readonly string[]>>;
 
 const read = (file: string): unknown =>
@@ -603,7 +748,8 @@ function counts(): Record<string, string> {
 /**
  * The Bible of every language, for the sources page (`<div class="bibles"></div>`): each
  * language by its own name, the edition by its title, the electronic text with its page and
- * the licence. Read from SOURCES (bible-text.ts), the editions the verses are built from,
+ * the licence (the edition's own, where it is not in the public domain). Read from SOURCES
+ * (bible-text.ts), the editions the verses are built from,
  * so the page cannot leave one out. A language whose verses are built before it joins the
  * site (Chinese) is listed too, as its texts are in the data.
  */
@@ -617,8 +763,13 @@ function biblesTable(l: Lang): string {
     const host = b.file.endsWith("_usfm.zip") ? "eBible.org" : "CrossWire SWORD";
     const own = (LOCALE_NAMES as Partial<Record<string, string>>)[code];
     const name = own ?? new Intl.DisplayNames([code], { type: "language" }).of(code) ?? code;
-    const lic = `${PAGE_WORDS[l].pd}${b.license.includes("Crown") ? t.crown : ""}${own ? "" : ` (${t.notYet})`}`;
-    return `<tr><td lang="${code}">${esc(name)}</td><td lang="${code}">${esc(b.title)}</td><td><a href="${esc(b.page)}">${host} ${esc(id)}</a></td><td>${esc(lic)}</td></tr>`;
+    // A public-domain edition in the page's words; an openly licensed one (Turkish, Swahili)
+    // by its licence and makers as they are given, untranslated, as a photo's licence is.
+    const free = b.license.startsWith("public domain");
+    const lic = `${free ? PAGE_WORDS[l].pd : b.license}${b.license.includes("Crown") ? t.crown : ""}${own ? "" : ` (${t.notYet})`}`;
+    // Wikisource and the Internet Archive name their texts otherwise: the edition's own label.
+    const link = b.label ?? `${host} ${id}`;
+    return `<tr><td lang="${code}">${esc(name)}</td><td lang="${code}">${esc(b.title)}</td><td><a href="${esc(b.page)}">${esc(link)}</a></td><td>${esc(lic)}</td></tr>`;
   });
   return `<div class="table"><table class="sources"><thead><tr>${t.bibleHead.map((h) => `<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${rows.join("")}</tbody></table></div>`;
 }
@@ -662,7 +813,7 @@ function plural(l: Lang, n: number, one: string, few: string, many: string): str
 }
 
 /** The languages whose pages write a number of four digits without a separator. */
-const UNGROUPED_4: ReadonlySet<Lang> = new Set(["ru", "cs", "sr", "es", "pl"]);
+const UNGROUPED_4: ReadonlySet<Lang> = new Set(["ru", "cs", "sr", "es", "pl", "fi", "vi"]);
 
 /**
  * Fills `{{name}}`; `{{name|город|города|городов}}` with the count and the word in the form
@@ -728,6 +879,11 @@ const FONT_FILES = [
   ["golos-text", "golos-text-latin-wght-normal.woff2"],
   ["golos-text", "golos-text-latin-ext-wght-normal.woff2"],
   ["golos-text", "golos-text-cyrillic-wght-normal.woff2"],
+  // Vietnamese (docs.css, pages.css): Literata's own file; Onest, where Golos Text has none.
+  ["literata", "literata-vietnamese-wght-normal.woff2"],
+  ["onest", "onest-latin-wght-normal.woff2"],
+  ["onest", "onest-latin-ext-wght-normal.woff2"],
+  ["onest", "onest-vietnamese-wght-normal.woff2"],
 ] as const;
 
 /**
@@ -861,6 +1017,20 @@ export function typesetSerbian(html: string): string {
 }
 
 /**
+ * Bulgarian, as the Serbian, with the era as the content writes it: «586 г. пр.н.е.», «30 г. н.е.»
+ * and «VI в. пр.н.е.» whole, a dash keeps its word before it.
+ */
+export function typesetBulgarian(html: string): string {
+  const NB = "\u00a0";
+  return inText(html, (t) =>
+    t
+      .replace(/(\d|[IVXLC]) (г\.|в\.|км|м(?![а-яъь])|КБ|МБ)/g, `$1${NB}$2`)
+      .replace(/(г\.|в\.) (?=пр\.н\.е\.|н\.е\.)/g, `$1${NB}`)
+      .replace(/([^\s>]) ([–—]) /g, `$1${NB}$2 `),
+  );
+}
+
+/**
  * The languages in Latin script beyond English: a number keeps its unit and its era (586 a. C.,
  * 586 v. Chr., 586 av. J.-C., 586 f.Kr., 1200 BK); French also keeps « », : ; ! ? on their
  * word with a thin no-break space.
@@ -873,10 +1043,11 @@ function typesetLatin(l: Locale): (html: string) => string {
       let x = t
         .replace(/(\d) (km|KB|MB|kB)\b/g, `$1${NB}$2`)
         .replace(
-          /(\d) (a\. ?C\.|d\. ?C\.|v\. ?Chr\.|n\. ?Chr\.|av\. J\.-C\.|apr\. J\.-C\.|p\.n\.e\.|n\.e\.|př\. n\. l\.|n\. l\.|f\.Kr\.|e\.Kr\.|BK|AD)/g,
+          /(\d) (a\. ?C\.|d\. ?C\.|v\. ?Chr\.|n\. ?Chr\.|av\. J\.-C\.|apr\. J\.-C\.|p\.n\.e\.|n\.e\.|př\. n\. l\.|n\. l\.|f\.Kr\.|e\.Kr\.|BK|AD|eaa\.|jaa\.|TCN|SCN|î\. ?Hr\.|d\. ?Hr\.)/g,
           `$1${NB}$2`,
         )
         .replace(/\b(a|d|v|n|av|apr)\. (C\.|Chr\.|J\.-C\.)/g, `$1.${NB}$2`)
+        .replace(/(^|[^\p{L}])(î|d)\. Hr\./gu, `$1$2.${NB}Hr.`)
         .replace(/př\. n\. l\./g, `př.${NB}n.${NB}l.`)
         .replace(/\bn\. l\./g, `n.${NB}l.`);
       // Polish and Czech keep a one-letter word on the next line's word: "w Egipcie", "v Egyptě".
@@ -909,9 +1080,19 @@ const TYPESET: Words<(html: string) => string> = {
   nb: typesetLatin("nb"),
   sr: typesetSerbian,
   tl: typesetLatin("tl"),
+  hu: typesetLatin("hu"),
+  fi: typesetLatin("fi"),
+  vi: typesetLatin("vi"),
+  ro: typesetLatin("ro"),
+  bg: typesetBulgarian,
 };
 /** The languages that preload the Cyrillic font. */
-const CYRILLIC: ReadonlySet<Locale> = new Set(["ru", "uk", "sr"]);
+const CYRILLIC: ReadonlySet<Locale> = new Set(["ru", "uk", "sr", "bg"]);
+/** The sans file a language preloads: Golos Text's, or Onest's for Vietnamese (docs.css). */
+const sansPreload = (l: Locale) =>
+  l === "vi"
+    ? "onest-latin-wght-normal.woff2"
+    : `golos-text-${CYRILLIC.has(l) ? "cyrillic" : "latin"}-wght-normal.woff2`;
 
 /** A code sample's language, from its first line: markup, an HTTP request or JavaScript. */
 const langOf = (code: string) =>
@@ -1097,7 +1278,7 @@ function page(o: {
     <meta name="theme-color" content="#0c1218" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="${up}../favicon.svg" type="image/svg+xml" />
     <title>${it.name === "index" ? `History Globe ${t.menu}` : `${esc(it.src.title)} | History Globe ${t.docs}`}</title>${meta}
-    <link rel="preload" href="${up}fonts/golos-text-${CYRILLIC.has(l) ? "cyrillic" : "latin"}-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="${up}fonts/${sansPreload(l)}" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="${up}docs.css" />
     <script>document.documentElement.className = "js";</script>
     <script defer src="${up}docs.js"></script>

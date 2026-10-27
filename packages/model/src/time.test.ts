@@ -129,6 +129,22 @@ describe("labels and ids", () => {
     expect(formatYear(30, "sr")).toBe("30. н. е.");
     expect(formatYear(-585, "tl")).toBe("586 BK");
     expect(formatYear(30, "tl")).toBe("30 AD");
+    // Wave 4, before their words are written (pending-years.ts).
+    expect(formatYear(-585, "hu")).toBe("Kr. e. 586");
+    expect(formatYear(30, "hu")).toBe("Kr. u. 30");
+    expect(formatYear(-585, "fi")).toBe("586 eaa.");
+    expect(formatYear(30, "fi")).toBe("30 jaa.");
+    expect(formatYear(-585, "vi")).toBe("năm 586 TCN");
+    expect(formatYear(30, "vi")).toBe("năm 30");
+    expect(formatYear(-585, "tr")).toBe("MÖ 586");
+    expect(formatYear(30, "tr")).toBe("MS 30");
+    expect(formatYear(-585, "sw")).toBe("586 KK");
+    expect(formatYear(30, "sw")).toBe("30 BK");
+    // Wave 5, the same way.
+    expect(formatYear(-1199, "ro")).toBe("1200 î.Hr.");
+    expect(formatYear(30, "ro")).toBe("30 d.Hr.");
+    expect(formatYear(-1199, "bg")).toBe("1200 г. пр.н.е.");
+    expect(formatYear(30, "bg")).toBe("30 г. н.е.");
   });
 });
 
@@ -145,6 +161,17 @@ describe("formatYearRange", () => {
   it("writes the Serbian ordinal once, on the last year", () => {
     expect(formatYearRange(-1999, -1179, "sr")).toBe("2000–1180. п. н. е.");
     expect(formatYearRange(-1999, -1179, "sv")).toBe("2000–1180 f.Kr.");
+  });
+  it("writes the era where the language puts it: before the years, or round them", () => {
+    expect(formatYearRange(-1999, -1179, "hu")).toBe("Kr. e. 2000–1180");
+    expect(formatYearRange(30, 70, "tr")).toBe("MS 30–70");
+    expect(formatYearRange(-1999, -1179, "vi")).toBe("năm 2000–1180 TCN");
+    expect(formatYearRange(-1999, -1179, "zh")).toBe("公元前2000–1180年");
+    expect(formatYearRange(-1999, -1179, "fi")).toBe("2000–1180 eaa.");
+    expect(formatYearRange(-3, 30, "sw")).toBe("4 KK – 30 BK");
+    expect(formatYearRange(-1999, -1179, "ro")).toBe("2000–1180 î.Hr.");
+    expect(formatYearRange(-1999, -1179, "bg")).toBe("2000–1180 г. пр.н.е.");
+    expect(formatYearRange(-3, 30, "bg")).toBe("4 г. пр.н.е. – 30 г. н.е.");
   });
 });
 
@@ -169,6 +196,16 @@ describe("the site's languages", () => {
     expect(isLocale("zh")).toBe(false);
     // Wave 3: known to the code before the site publishes it.
     for (const l of ["sv", "da", "nb", "sr", "tl"]) expect(ALL_LOCALES, l).toContain(l);
+    expect(isLocale("hu")).toBe(true);
+    expect(isLocale("fi")).toBe(true);
+    expect(isLocale("vi")).toBe(true);
+    expect(isLocale("ro")).toBe(true);
+    expect(isLocale("bg")).toBe(true);
+    // Waves 4 and 5: known to the code, not yet published.
+    for (const l of ["tr", "sw"]) {
+      expect(ALL_LOCALES, l).toContain(l);
+      expect(isLocale(l), l).toBe(false);
+    }
     expect(isLocale(null)).toBe(false);
   });
 });
@@ -193,6 +230,20 @@ describe("isYearInput", () => {
       expect(isYearInput(q), q).toBe(true);
     for (const q of ["586 f.Kr.", "30 e.Kr.", "586. п. н. е.", "30. н. е.", "586 BK", "30 AD"])
       expect(isYearInput(q), q).toBe(true);
+    for (const q of ["Kr. e. 586", "Kr. u. 30", "586 eaa.", "30 jaa.", "năm 586 TCN", "năm 30"])
+      expect(isYearInput(q), q).toBe(true);
+    for (const q of ["MÖ 586", "MS 30", "586 KK", "30 BK", "586 TCN", "30 SCN"])
+      expect(isYearInput(q), q).toBe(true);
+    for (const q of ["1200 î.Hr.", "1200 Î.Hr.", "30 d.Hr.", "586 î.e.n.", "30 e.n."])
+      expect(isYearInput(q), q).toBe(true);
+    for (const q of [
+      "1200 г. пр.н.е.",
+      "1200 пр. н. е.",
+      "586 г. пр.Хр.",
+      "30 г. н.е.",
+      "30 сл.Хр.",
+    ])
+      expect(isYearInput(q), q).toBe(true);
     for (const q of ["Деян 16", "Bethel", "586 до н. э. Иерусалим", ""])
       expect(isYearInput(q), q).toBe(false);
   });
@@ -216,6 +267,24 @@ describe("formatCentury in every language the code knows", () => {
     expect(formatCentury(-585, "nb")).toBe("500-tallet f.Kr.");
     expect(formatCentury(30, "nb")).toBe("1. århundre e.Kr.");
   });
+  it("speaks the wave-4 languages before their words are written", () => {
+    expect(formatCentury(-585, "hu")).toBe("Kr. e. 6. század");
+    expect(formatCentury(30, "hu")).toBe("Kr. u. 1. század");
+    expect(formatCentury(-585, "fi")).toBe("500-luvulla eaa.");
+    expect(formatCentury(150, "fi")).toBe("100-luvulla jaa.");
+    expect(formatCentury(30, "fi")).toBe("1. vuosisadalla jaa.");
+    expect(formatCentury(-585, "vi")).toBe("thế kỷ 6 TCN");
+    expect(formatCentury(30, "vi")).toBe("thế kỷ 1");
+    expect(formatCentury(-585, "tr")).toBe("MÖ 6. yüzyıl");
+    expect(formatCentury(30, "tr")).toBe("MS 1. yüzyıl");
+    expect(formatCentury(-585, "sw")).toBe("karne ya 6 KK");
+    expect(formatCentury(30, "sw")).toBe("karne ya 1 BK");
+    expect(formatCentury(-585, "ro")).toBe("secolul al VI-lea î.Hr.");
+    expect(formatCentury(30, "ro")).toBe("secolul I d.Hr.");
+    expect(formatCentury(150, "ro")).toBe("secolul al II-lea d.Hr.");
+    expect(formatCentury(-585, "bg")).toBe("VI в. пр.н.е.");
+    expect(formatCentury(30, "bg")).toBe("I в. н.е.");
+  });
   it("speaks Serbian and Filipino", () => {
     expect(formatCentury(-585, "sr")).toBe("6. век п. н. е.");
     expect(formatCentury(30, "sr")).toBe("1. век н. е.");
@@ -238,6 +307,29 @@ describe("parseYearInput reads BC loosely", () => {
     expect(parseYearInput("30. н. е.")).toBe(30);
     expect(parseYearInput("586 BK")).toBe(-585);
     expect(parseYearInput("30 AD")).toBe(30);
+    expect(parseYearInput("Kr. e. 586")).toBe(-585);
+    expect(parseYearInput("Kr. u. 30")).toBe(30);
+    expect(parseYearInput("586 eaa.")).toBe(-585);
+    expect(parseYearInput("30 jaa.")).toBe(30);
+    expect(parseYearInput("năm 586 TCN")).toBe(-585);
+    expect(parseYearInput("MÖ 586")).toBe(-585);
+    expect(parseYearInput("MS 30")).toBe(30);
+    expect(parseYearInput("586 KK")).toBe(-585);
+    expect(parseYearInput("586 TCN")).toBe(-585);
+    expect(parseYearInput("30 SCN")).toBe(30);
+    expect(parseYearInput("năm 30")).toBe(30);
+    expect(parseYearInput("586 KK", "sw")).toBe(-585);
+    // BK is "before" in Tagalog, "after" (Baada ya Kristo) in Swahili.
+    expect(parseYearInput("30 BK", "sw")).toBe(30);
+    expect(parseYearInput("586 BK", "tl")).toBe(-585);
+    expect(parseYearInput("1200 î.Hr.")).toBe(-1199);
+    expect(parseYearInput("1200 Î.Hr.")).toBe(-1199);
+    expect(parseYearInput("586 î.e.n.")).toBe(-585);
+    expect(parseYearInput("30 d.Hr.")).toBe(30);
+    expect(parseYearInput("1200 г. пр.н.е.")).toBe(-1199);
+    expect(parseYearInput("586 пр. Хр.")).toBe(-585);
+    expect(parseYearInput("30 г. н.е.")).toBe(30);
+    expect(parseYearInput("30 сл.Хр.")).toBe(30);
   });
 });
 

@@ -25,6 +25,11 @@ title:
   tl: "Si Achab at si Josaphat"
   da: "Akab og Josafat"
   sr: "Ахав и Јосафат"
+  hu: "Aháb és Jósafát"
+  fi: "Ahab ja Josafat"
+  vi: "A-háp và Giô-sa-phát"
+  ro: "Ahab și Iosafat"
+  bg: "Ахав и Йосафат"
 year: "853 BC"
 # Where the story happens, told of two kings: no time on foot.
 walked: false
@@ -51,6 +56,11 @@ stops:
       tl: "Pinalalakas ni Josaphat na hari ng Juda ang lupain at, sa ikatlong taon niya, nagsusugo ng mga pinuno at mga Levita na may aklat ng kautusan upang magturo sa lahat ng mga bayan ng Juda."
       da: "Josafat, Judas konge, styrker landet og sender i sit tredje regeringsår fyrster og leviter med lovbogen ud for at undervise i alle Judas byer."
       sr: "Јосафат, цар јудејски, учвршћује земљу и треће године шаље кнезове и левите с књигом закона да поучавају по свим градовима Јудиним."
+      hu: "Jósafát, Júda királya megerősíti az országot, és uralkodásának harmadik évében fejedelmeket és lévitákat küld a törvény könyvével, hogy Júda valamennyi városában tanítsanak."
+      fi: "Juudan kuningas Josafat vahvistaa maata ja lähettää hallintonsa kolmantena vuonna ruhtinaita ja leeviläisiä lain kirja mukanaan opettamaan kaikkiin Juudan kaupunkeihin."
+      vi: "Giô-sa-phát, vua Giu-đa, củng cố xứ sở và, vào năm thứ ba triều mình, sai các quan trưởng và người Lê-vi mang sách luật pháp đi dạy trong mọi thành của Giu-đa."
+      ro: "Iosafat, regele lui Iuda, întărește țara și, în al treilea an al domniei sale, trimite căpetenii și leviți cu cartea legii ca să învețe poporul în toate cetățile lui Iuda."
+      bg: "Йосафат, царят на Юда, укрепва страната и в третата си година изпраща князе и левити с книгата на закона да поучават във всички градове на Юда."
   - place: a041bb3 # Samaria
     ref: 1Kgs.20.1-1Kgs.20.21
     note:
@@ -70,6 +80,11 @@ stops:
       tl: "Kinukubkob ni Ben-adad ng Siria, kasama ang tatlumpu't dalawang hari, ang Samaria; sinasabi ng isang propeta kay Achab, “aking ibibigay sa iyong kamay sa araw na ito”, at pinatatakbo ng mga bataan ng mga prinsipe ng mga lalawigan ang mga taga-Siria."
       da: "Ben-Hadad af Syrien belejrer Samaria med toogtredive konger; en profet siger til Akab: »jeg vil give den i Dag i din Haand«, og provinsfyrsternes unge mænd slår syrerne på flugt."
       sr: "Вен-Адад сирски с тридесет и два цара опколи Самарију; један пророк говори Ахаву: „ја ћу ти га дати у руке данас“, и момци кнезова земаљских разбијају Сиријце."
+      hu: "Ben-Hadad, Szíria királya harminckét királlyal ostrom alá veszi Szamáriát; egy próféta ezt mondja Ahábnak: „e mai napon kezedbe adom azt”, és a tartományok fejedelmeinek ifjai megfutamítják a szíriaiakat."
+      fi: "Syyrian kuningas Benhadad piirittää Samariaa kolmenkymmenenkahden kuninkaan kanssa; profeetta sanoo Ahabille: ”Katso, minä annan sen tänä päivänä sinun käsiisi”, ja maakuntien päämiesten nuoret miehet ajavat syyrialaiset pakoon."
+      vi: "Bên-Ha-đát, vua Sy-ri, cùng ba mươi hai vua vây hãm Sa-ma-ri; một tiên tri nói với A-háp: “Kìa, ngày nay, ta sẽ phó nó vào tay ngươi”, và các trai trẻ của những quan cai các tỉnh đánh tan quân Sy-ri."
+      ro: "Ben-Hadad al Siriei, împreună cu treizeci și doi de regi, asediază Samaria; un profet îi spune lui Ahab: „Iată eu o voiu da pre ea astăzi în mâna ta”, iar tinerii căpeteniilor ținuturilor îi pun pe fugă pe sirieni."
+      bg: "Венадад Сирийски с тридесет и двама царе обсажда Самария; един пророк казва на Ахав: „аз го предавам в ръцете ти днес“, и момците на областните князе разбиват сирийците."
   - place: a6fc60d # Aphek
     ref: 1Kgs.20.26-1Kgs.20.34
     note:
@@ -89,6 +104,11 @@ stops:
       tl: "Pagkaraan ng isang taon ay umaahon si Ben-adad sa Aphec, sapagka't sinasabi ng mga taga-Siria na ang Panginoon ay Dios ng mga burol at hindi ng mga libis; sinasaktan sila ng Israel, isang pader ang bumabagsak sa 27,000 sa Aphec, at pinalalaya ni Achab si Ben-adad kapalit ng isang tipan."
       da: "Et år senere drager Ben-Hadad op til Afek, idet syrerne siger, at Herren er en gud for bjergene og ikke for dalene; Israel slår dem, en mur falder over 27.000 mand i Afek, og Akab lader Ben-Hadad gå mod en pagt."
       sr: "Годину дана касније Вен-Адад долази к Афеку, јер Сиријци кажу да је Господ Бог горски, а не долински; Израиљ их туче, зид пада на двадесет и седам хиљада у Афеку, а Ахав пушта Вен-Адада да склопи савез."
+      hu: "Egy évvel később Ben-Hadad Áfekhez vonul; a szíriaiak azt mondják, hogy az Úr a hegyek istene, nem a völgyeké; Izráel megveri őket, Áfekben egy fal ráomlik 27 000 emberre, Aháb pedig szövetségért szabadon bocsátja Ben-Hadadot."
+      fi: "Vuotta myöhemmin Benhadad nousee Afekiin, ja syyrialaiset sanovat Herran olevan vuorten eikä laaksojen Jumala; Israel lyö heidät, muuri kaatuu 27 000 miehen päälle Afekissa, ja Ahab päästää Benhadadin menemään liiton vastineeksi."
+      vi: "Một năm sau, Bên-Ha-đát kéo lên A-phéc, người Sy-ri nói rằng Đức Giê-hô-va là Đức Chúa Trời của núi chứ không phải của trũng; Y-sơ-ra-ên đánh bại chúng, một bức tường sập đè lên hai mươi bảy ngàn người tại A-phéc, và A-háp tha Bên-Ha-đát để lập giao ước."
+      ro: "Un an mai târziu, Ben-Hadad urcă la Afec, căci sirienii spun că Domnul este un Dumnezeu al munților, nu al văilor; Israel îi bate, un zid cade peste 27.000 de oameni în Afec, iar Ahab îl lasă pe Ben-Hadad să plece în schimbul unui legământ."
+      bg: "Година по-късно Венадад идва при Афек, а сирийците казват, че Господ е Бог на планините, а не на доловете; Израил ги поразява, в Афек една стена пада върху 27 000 души и Ахав пуска Венадад срещу договор."
   - place: a041bb3 # Samaria
     ref: 1Kgs.22.1-1Kgs.22.28
     note:
@@ -108,6 +128,11 @@ stops:
       tl: "Sa ikatlong taong walang digmaan ay bumababa si Josaphat kay Achab at pumapayag na umahon na kasama niya sa Ramoth-galaad. Sa pintuang-bayan ng Samaria, may humigit-kumulang apat na raang propeta ang nangangako ng tagumpay; si Michaia lamang ang nakakakita sa Israel na nangangalat “na gaya ng mga tupa na walang pastor”, at ibinibilanggo siya."
       da: "I det tredje år uden krig kommer Josafat ned til Akab og går med til at drage op med ham til Ramot i Gilead. Ved Samarias port lover omkring fire hundrede profeter sejr; Mikaja alene ser Israel adspredt »ligesom Faarene, der ingen Hyrde have«, og bliver kastet i fængsel."
       sr: "Треће године без рата Јосафат силази к Ахаву и пристаје да с њим иде на Рамот Галадски. На вратима самаријским око четири стотине пророка обећава победу; само Михеја види Израиља разасутог „као овце које немају пастира“ и бацају га у тамницу."
+      hu: "A háború nélküli harmadik évben Jósafát lemegy Ahábhoz, és vállalja, hogy felvonul vele Rámót-Gileád ellen. Szamária kapujánál mintegy négyszáz próféta győzelmet ígér; csak Mikeás látja Izráelt szétszéledve, „mint a juhokat, a melyeknek nincsen pásztoruk”, és börtönbe vetik."
+      fi: "Kun sotaa ei ole ollut kolmeen vuoteen, Josafat tulee alas Ahabin luo ja suostuu lähtemään hänen kanssaan Ramot-Gileadiin. Samarian portilla noin neljäsataa profeettaa lupaa voittoa; vain Mikaja näkee Israelin hajallaan ”niinkuin lampaat, joilla ei ole paimenta”, ja hänet pannaan vankilaan."
+      vi: "Vào năm thứ ba không có chiến tranh, Giô-sa-phát xuống gặp A-háp và đồng ý cùng người đi lên Ra-mốt Ga-la-át. Tại cửa thành Sa-ma-ri, độ bốn trăm tiên tri hứa là sẽ thắng; chỉ một mình Mi-ca-gia thấy Y-sơ-ra-ên bị tản lạc “như bầy chiên không có người chăn”, và bị bỏ tù."
+      ro: "În al treilea an fără război, Iosafat coboară la Ahab și se învoiește să urce cu el la Ramot din Galaad. La poarta Samariei, vreo patru sute de profeți făgăduiesc biruința; numai Micaia vede pe Israel risipit ca niște oi fără păstor și este aruncat în temniță."
+      bg: "В третата година без война Йосафат слиза при Ахав и се съгласява да тръгне с него срещу Рамот Галаадски. При портата на Самария около четиристотин пророци обещават победа; единствен Михей вижда Израил разпръснат „като овци които нямат овчар“ и е хвърлен в тъмница."
   - place: a2fe63c # Ramoth-gilead
     ref: 1Kgs.22.29-1Kgs.22.36
     note:
@@ -127,6 +152,11 @@ stops:
       tl: "Sa Ramoth-galaad ay pumapasok si Achab sa labanan na nagbabalatkayo; isang panang ipinana sa pagbabakasakali ang tumatama sa kaniya sa pagitan ng mga pagkakasugpong ng sakbat, at namamatay siya sa kaniyang karo pagsapit ng hapon."
       da: "Ved Ramot i Gilead går Akab forklædt i kamp; en bue, der spændes på må og få, rammer ham mellem pansrets sammenføjninger, og han dør om aftenen i sin vogn."
       sr: "Код Рамота Галадског Ахав иде у бој прерушен; лук напет на срећу погађа га међу зглобове оклопа, и он увече умире у својим колима."
+      hu: "Rámót-Gileádnál Aháb álruhában megy a csatába; találomra kilőtt nyíl éri a vért illesztéke között, és este meghal a szekerében."
+      fi: "Ramot-Gileadissa Ahab lähtee taisteluun valepuvussa; umpimähkään jännitetystä jousesta lentänyt nuoli osuu häneen haarniskan liitosten väliin, ja hän kuolee illalla vaunuissaan."
+      vi: "Tại Ra-mốt Ga-la-át, A-háp cải trang ra trận; một mũi tên bắn tình cờ trúng người nơi giáp đầu nối của áo giáp, và đến chiều người chết trong xe mình."
+      ro: "La Ramot din Galaad, Ahab intră în luptă deghizat; o săgeată trasă la întâmplare îl lovește între încheieturile platoșei, iar el moare seara în carul său."
+      bg: "При Рамот Галаадски Ахав влиза в боя преоблечен; стрела, пусната наслуки, го улучва между сглобките на бронята и той умира вечерта в колесницата си."
   - place: a041bb3 # Samaria
     ref: 1Kgs.22.37-1Kgs.22.40
     note:
@@ -146,6 +176,11 @@ stops:
       tl: "Dinadala ang hari sa Samaria at inililibing; hinuhugasan ang karo sa tangke ng Samaria, at hinihimuran ng mga aso ang kaniyang dugo, ayon sa salita ng Panginoon (1 Hari 21:19)."
       da: "Kongen bringes til Samaria og begraves; vognen skylles i Samarias dam, og hundene slikker hans blod, efter Herrens ord (1 Kong 21,19)."
       sr: "Цара доносе у Самарију и сахрањују; кола се перу у самаријској бари, а пси лижу његову крв, по речи Господњој (1. Цар 21,19)."
+      hu: "A királyt Szamáriába viszik és eltemetik; a szekeret Szamária tavában mossák, és az ebek felnyalják a vérét, az Úr szava szerint (1Kir 21,19)."
+      fi: "Kuningas tuodaan Samariaan ja haudataan; vaunut pestään Samarian lammikossa, ja koirat nuolevat hänen verensä Herran sanan mukaan (1. Kun. 21:19)."
+      vi: "Vua được đem về Sa-ma-ri và được chôn; xe được rửa tại ao Sa-ma-ri, và chó liếm huyết người, theo lời Đức Giê-hô-va đã phán (1 Các Vua 21:19)."
+      ro: "Regele este adus la Samaria și îngropat; carul este spălat la iazul Samariei, iar câinii îi ling sângele, după cuvântul Domnului (1 Regi 21:19)."
+      bg: "Царят е откаран в Самария и погребан; колесницата е измита при Самарийския водоем и кучетата лочат кръвта му според словото на Господа (3 Царе 21:19)."
   - place: a15257a # Jerusalem
     ref: 2Chr.19.1-2Chr.19.11
     note:
@@ -165,6 +200,11 @@ stops:
       tl: "Bumabalik si Josaphat nang payapa sa Jerusalem; sinasaway siya ni Jehu na anak ni Hanani: “Tutulungan mo ba ang mga masama?” Naglalagay ang hari ng mga hukom sa mga bayang nakukutaan at sa Jerusalem."
       da: "Josafat vender i fred tilbage til Jerusalem; Jehu, Hananis søn, irettesætter ham: »Skal du hjælpe den ugudelige?« Kongen sætter dommere i de befæstede byer og i Jerusalem."
       sr: "Јосафат се у миру враћа у Јерусалим; Јуј син Ананијев кори га: „Безбожнику ли помажеш?“ Цар поставља судије по утврђеним градовима и у Јерусалиму."
+      hu: "Jósafát békességben tér vissza Jeruzsálembe; Jéhu, Hanáni fia megfeddi: „Avagy az istentelennek kellett-é segítségül lenned”? A király bírákat rendel az erődített városokba és Jeruzsálembe."
+      fi: "Josafat palaa rauhassa Jerusalemiin; Jehu, Hananin poika, nuhtelee häntä: ”Oliko sinun autettava jumalatonta…” Kuningas asettaa tuomareita varustettuihin kaupunkeihin ja Jerusalemiin."
+      vi: "Giô-sa-phát bình an trở về Giê-ru-sa-lem; Giê-hu, con trai Ha-na-ni, quở trách người: “Vua há giúp đỡ kẻ hung ác…” Vua đặt các quan xét trong những thành có đồn lũy và tại Giê-ru-sa-lem."
+      ro: "Iosafat se întoarce în pace la Ierusalim; Iehu, fiul lui Hanani, îl mustră: „cum ajuți păcătosului…?” Regele pune judecători în cetățile întărite și în Ierusalim."
+      bg: "Йосафат се връща с мир в Йерусалим; Йеху, синът на Ханани, го изобличава: „На нечестивия ли помагаш?“ Царят поставя съдии в укрепените градове и в Йерусалим."
   - place: a51df0e # Engedi
     ref: 2Chr.20.1-2Chr.20.19
     note:
@@ -184,6 +224,11 @@ stops:
       tl: "Ang Moab, Ammon at bundok ng Seir ay sumasalakay sa Juda at nakahimpil sa Hasason-tamar, na siyang En-gedi. Nagpapahayag si Josaphat ng ayuno at nananalangin, “ni hindi man nalalaman namin kung anong marapat gawin; nguni't ang aming mga mata ay nasa iyo”; sumasagot si Jahaziel, “ang pakikipagbaka ay hindi inyo, kundi sa Dios”."
       da: "Moab, Ammon og Se'irs bjerge drager imod Juda og slår lejr ved Hasason-Tamar, det vil sige En-Gedi. Josafat udråber en faste og beder: »vi vide ikke, hvad vi skulle gøre; men vore Øjne ere vendte til dig«; Jahaziel svarer: »Krigen er ikke eders, men Guds«."
       sr: "Моав, Амон и гора Сир дижу се на Јуду и стају у Асасон-Тамару, а то је Енгад. Јосафат оглашава пост и моли се: „нити знамо шта бисмо чинили, него су очи наше упрте у Те“; Јазило одговара: „није ваш рат него Божји“."
+      hu: "Moáb, Ammon és a Széir-hegy lakói Júda ellen jönnek, és Hacecon-Támárnál, azaz Én-Gedinél állnak. Jósafát bőjtöt hirdet és imádkozik: „Nem tudjuk, mit cselekedjünk, hanem csak te reád néznek a mi szemeink”; Jahaziél így felel: „nem ti harczoltok velök, hanem az Isten”."
+      fi: "Moab, Ammon ja Seirin vuoristo hyökkäävät Juudaa vastaan ja asettuvat Hasason-Tamariin, se on En-Gedi. Josafat kuuluttaa paaston ja rukoilee: ”emmekä itse tiedä mitä tehdä, vaan sinuun meidän silmämme katsovat”; Jahasiel vastaa: ”sota ei ole teidän, vaan Jumalan”."
+      vi: "Mô-áp, Am-môn và núi Sê-i-rơ kéo đến đánh Giu-đa và đóng tại Hát-sát-son-Tha-ma, tức là Ên-ghê-đi. Giô-sa-phát truyền cấm ăn và cầu nguyện: “chúng tôi cũng không biết điều gì mình phải làm; nhưng con mắt chúng tôi ngửa trông Chúa!”; Gia-ha-xi-ên đáp: “trận giặc này chẳng phải của các ngươi đâu, bèn là của Đức Chúa Trời”."
+      ro: "Moab, Amon și muntele Seir vin împotriva lui Iuda și se așază la Hațațon-Tamar, adică En-Ghedi. Iosafat vestește un post și se roagă, mărturisind că nu știu ce să facă, dar ochii lor sunt îndreptați spre Domnul; Iahaziel răspunde că lupta nu este a lor, ci a lui Dumnezeu."
+      bg: "Моав, Амон и планината Сеир настъпват срещу Юда и застават при Хацацон-Тамар, който е Ен-Гади. Йосафат обявява пост и се моли: „не знаем що да правим; но към тебе са очите ни“; Яхазиил отговаря: „боят не е ваш но Божий“."
   - place: a2e3aa0 # Tekoa
     ref: 2Chr.20.20-2Chr.20.25
     note:
@@ -203,6 +248,11 @@ stops:
       tl: "Maaga sa kinaumagahan ay lumalabas ang Juda patungo sa ilang ng Tecoa na may mga mang-aawit sa unahan ng hukbo, “Mangagpasalamat kayo sa Panginoon; sapagka't ang kaniyang kaawaan ay magpakailan man”; nilulipol ng mga kaaway ang isa't isa, at tatlong araw ang inaabot ng pagtitipon ng samsam."
       da: "Tidligt om morgenen drager Juda ud til Tekoa-ørkenen med sangere foran hæren, der siger: »Lover Herren, thi hans Miskundhed er evindelig«; fjenderne ødelægger hinanden, og det tager tre dage at samle byttet."
       sr: "Рано ујутру Јуда излази у пустињу текујску, а певачи иду пред војском: „Хвалите Господа, јер је довека милост Његова“; непријатељи се међусобно истребљују, и плен се купи три дана."
+      hu: "Júda kora reggel kivonul a tekóai pusztára, a sereg előtt énekesekkel, akik ezt mondják: „Tiszteljétek az Urat, mert örökkévaló az ő irgalmassága”; az ellenségek kiirtják egymást, a zsákmány összegyűjtése pedig három napig tart."
+      fi: "Varhain aamulla Juuda lähtee Tekoan erämaahan laulajat sotajoukon edellä: ”Kiittäkää Herraa, sillä hänen armonsa pysyy iankaikkisesti”; viholliset tuhoavat toisensa, ja saaliin kokoamiseen menee kolme päivää."
+      vi: "Sáng sớm, Giu-đa ra đồng vắng Thê-cô-a, có những người ca xướng đi trước đạo binh: “Hãy ngợi khen Đức Giê-hô-va, vì sự thương xót Ngài hằng có đời đời”; quân thù tự giết lẫn nhau, và phải mất ba ngày để thu của cướp."
+      ro: "Dis-de-dimineață, Iuda iese spre pustiul Tecoa, cu cântăreți înaintea oștirii care Îl laudă pe Domnul, căci îndurarea Lui ține în veac; dușmanii se nimicesc unii pe alții, iar prada se strânge în trei zile."
+      bg: "Рано сутринта Юда излиза към пустинята Текоя с певци пред войската: „Славословете Господа, защото милостта му е въ век“; враговете се избиват един друг, а плячката се събира три дни."
   - place: a71f834 # Valley of Beracah
     ref: 2Chr.20.26-2Chr.20.30
     note:
@@ -222,6 +272,11 @@ stops:
       tl: "Sa ikaapat na araw ay pinupuri nila ang Panginoon sa isang libis na mula noon ay tinatawag na Libis ng Baracah, Pagpapala, at bumabalik sa Jerusalem na may mga salterio, mga alpa at mga pakakak."
       da: "På den fjerde dag velsigner de Herren i en dal, der siden kaldes Berakas dal, Velsignelsens dal, og vender tilbage til Jerusalem med psaltere, harper og trompeter."
       sr: "Четвртог дана благосиљају Господа у једној долини, која се од тада зове долина Благослова, и враћају се у Јерусалим са псалтирима, гуслама и трубама."
+      hu: "A negyedik napon egy völgyben áldják az Urat, amelyet attól fogva Beraka-völgynek, azaz Áldás völgyének neveznek, majd lantokkal, hárfákkal és trombitákkal térnek vissza Jeruzsálembe."
+      fi: "Neljäntenä päivänä he kiittävät Herraa laaksossa, jota siitä lähtien kutsutaan Beraka-laaksoksi, Siunauksen laaksoksi, ja palaavat Jerusalemiin harppujen, kanteleiden ja torvien soidessa."
+      vi: "Đến ngày thứ tư, họ ngợi khen Đức Giê-hô-va trong một thung lũng từ đó gọi là trũng Bê-ra-ca, nghĩa là Phước lành, rồi trở về Giê-ru-sa-lem với đàn cầm, đàn sắt và kèn."
+      ro: "În a patra zi Îl binecuvântează pe Domnul într-o vale numită de atunci Valea Beraca, adică a Binecuvântării, și se întorc la Ierusalim cu lăute, harfe și trâmbițe."
+      bg: "На четвъртия ден те благославят Господа в една долина, наречена оттогава долината Бераха, „Благословение“, и се връщат в Йерусалим с псалтири, арфи и тръби."
   - place: a8e53d5 # Ezion-geber
     ref: 2Chr.20.35-2Chr.20.37
     note:
@@ -241,3 +296,8 @@ stops:
       tl: "Sa wakas ay nakikipisan si Josaphat kay Ochozias, anak ni Achab, upang gumawa ng mga sasakyang dagat sa Esion-geber patungong Tharsis; nanghuhula si Eliezer ng Maresa laban sa pakikipagkasundo, at nababasag ang mga sasakyan."
       da: "Til sidst slår Josafat sig sammen med Akazja, Akabs søn, om at bygge skibe i Esjon-Geber til Tarsis; Eliezer fra Maresja profeterer imod forbundet, og skibene går i stykker."
       sr: "На крају Јосафат се удружује с Охозијом, Ахавовим сином, да граде лађе у Есион-Гаверу за Тарсис; Елијезер из Марисе пророкује против тог савеза, и лађе се разбијају."
+      hu: "Végül Jósafát társul Ahazjával, Aháb fiával, hogy hajókat építsenek Ecjón-Gébernél Tarsisba; a maresai Eliézer az összefogás ellen prófétál, és a hajók összetörnek."
+      fi: "Lopuksi Josafat liittyy Ahabin pojan Ahasjan kanssa rakentamaan laivoja Esjon-Geberiin Tarsisiin lähtemään; Maresan Elieser ennustaa liittoa vastaan, ja laivat särkyvät."
+      vi: "Cuối cùng, Giô-sa-phát liên kết với A-cha-xia, con của A-háp, để đóng tàu tại Ê-xi-ôn-Ghê-be đi Ta-rê-si; Ê-li-ê-xe ở Ma-rê-sa nói tiên tri chống lại liên minh ấy, và các tàu bị đắm."
+      ro: "La urmă, Iosafat se unește cu Ahazia, fiul lui Ahab, ca să construiască la Ețion-Gheber corăbii pentru Tarsis; Eliezer din Mareșa prorocește împotriva alianței, iar corăbiile se sfărâmă."
+      bg: "Накрая Йосафат се съюзява с Охозия, сина на Ахав, за да строят кораби в Ецион-Гавер за Тарсис; Елиезер от Мареша пророкува против съюза и корабите се разбиват."

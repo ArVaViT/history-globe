@@ -21,6 +21,11 @@ title:
   tl: "Ang muling pagkabuhay at ang mga pagpapakita"
   da: "Opstandelsen og åbenbaringerne"
   sr: "Васкрсење и јављања"
+  hu: "A feltámadás és a megjelenések"
+  fi: "Ylösnousemus ja ilmestykset"
+  vi: "Sự sống lại và những lần hiện ra"
+  ro: "Învierea și arătările"
+  bg: "Възкресението и явяванията"
 year: "AD 30"
 people: ["Jesus@Isa.7.14-Rev"]
 approximate: true
@@ -44,6 +49,11 @@ stops:
       tl: "Sa halamanan sa tabi ng dako ng pagpapako sa krus, walang laman ang libingan, at nakita ni Maria Magdalena ang nabuhay na Panginoon."
       da: "I haven ved korsfæstelsesstedet er graven tom, og Maria Magdalene ser den opstandne Herre."
       sr: "У врту крај места распећа гроб је празан, и Марија Магдалина види васкрслог Господа."
+      hu: "A kertben, a keresztre feszítés helyénél a sír üres, és Mária Magdolna meglátja a feltámadott Urat."
+      fi: "Ristiinnaulitsemispaikan vieressä olevassa puutarhassa hauta on tyhjä, ja Maria Magdaleena näkee ylösnousseen Herran."
+      vi: "Trong vườn gần nơi bị đóng đinh, ngôi mộ trống không, và Ma-ri Ma-đơ-len thấy Chúa đã sống lại."
+      ro: "În grădina de lângă locul răstignirii mormântul este gol, iar Maria Magdalena Îl vede pe Domnul înviat."
+      bg: "В градината до мястото на разпятието гробът е празен и Мария Магдалина вижда възкръсналия Господ."
   - place: ae7274b # Emmaus
     ref: Luke.24.13-Luke.24.32
     note:
@@ -63,6 +73,11 @@ stops:
       tl: "Sa daan patungong Emaus, dalawang alagad ang lumalakad na kasama Niya nang hindi Siya nakikilala; sa hapag ay nakilala nila Siya sa pagpuputolputol ng tinapay."
       da: "På vejen til Emmaus går to disciple sammen med ham uden at kende ham; ved bordet kender de ham ved brødets brydelse."
       sr: "На путу за Емаус двојица ученика иду с Њим не познајући Га; за трпезом Га познају по ломљењу хлеба."
+      hu: "Az emmausi úton két tanítvány megy vele anélkül, hogy felismerné; az asztalnál a kenyértöréskor ismerik fel."
+      fi: "Emmauksen tiellä kaksi opetuslasta kulkee hänen kanssaan tuntematta häntä; aterialla he tuntevat hänet leivän murtamisesta."
+      vi: "Trên đường đi Em-ma-út, hai môn đồ cùng đi với Ngài mà không nhận ra Ngài; tại bàn ăn, họ nhận ra Ngài khi Ngài bẻ bánh."
+      ro: "Pe drumul spre Emaus, doi ucenici merg cu El fără să-L recunoască; la masă Îl cunosc la frângerea pâinii."
+      bg: "По пътя към Емаус двама ученици вървят с Него, без да Го познаят; на трапезата те Го познават при разчупването на хляба."
   - place: a15257a # Jerusalem
     ref: Luke.24.33-Luke.24.43
     note:
@@ -82,6 +97,11 @@ stops:
       tl: "Sa Jerusalem, tumayo si Jesus sa gitna ng mga alagad: “Kapayapaan ang sumainyo.”"
       da: "I Jerusalem stiller Jesus sig midt iblandt disciplene: »Fred være med eder!«"
       sr: "У Јерусалиму Исус стаје међу ученике: „Мир вам.“"
+      hu: "Jeruzsálemben Jézus megáll a tanítványok között: „Békesség néktek!”"
+      fi: "Jerusalemissa Jeesus seisoo opetuslasten keskellä: ”Rauha teille!”"
+      vi: "Tại Giê-ru-sa-lem, Giê-su hiện ra giữa các môn đồ: “Bình an cho các ngươi!”"
+      ro: "În Ierusalim, Isus stă în mijlocul ucenicilor: „pace vouă”."
+      bg: "В Йерусалим Исус застава сред учениците: „Мир вам.“"
   - place: a562fcc # Sea of Galilee
     ref: John.21.1-John.21.17
     note:
@@ -101,6 +121,11 @@ stops:
       tl: "Sa tabi ng Dagat ng Galilea, tatlong beses Niyang tinanong si Pedro: “Iniibig mo baga ako?”"
       da: "Ved Genesaret Sø spørger han Peter tre gange: »elsker du mig?«"
       sr: "Крај Галилејског мора три пута пита Петра: „Љубиш ли ме?“"
+      hu: "A Galileai-tenger partján háromszor kérdezi Pétert: „szeretsz-é engem?”"
+      fi: "Galileanjärven rannalla hän kysyy Pietarilta kolmesti: ”rakastatko sinä minua?”"
+      vi: "Bên Biển Ga-li-lê, Ngài hỏi Phi-e-rơ ba lần: “ngươi yêu ta chăng?”"
+      ro: "Lângă Marea Galileii, Îl întreabă de trei ori pe Petru: „mă iubești…?”"
+      bg: "Край Галилейското езеро Той три пъти пита Петър: „любиш ли ме?“"
   - place: a9cf1e8 # Galilee
     ref: Matt.28.16-Matt.28.20
     note:
@@ -120,6 +145,11 @@ stops:
       tl: "Sa isang bundok sa Galilea, isinugo Niya ang labing-isa: “gawin ninyong mga alagad ang lahat ng mga bansa.”"
       da: "På et bjerg i Galilæa sender han de elleve ud: »gører alle Folkeslagene til mine Disciple«."
       sr: "На једној гори у Галилеји шаље једанаесторицу: „научите све народе.“"
+      hu: "Galileában egy hegyen elküldi a tizenegyet: „tegyetek tanítványokká minden népeket”."
+      fi: "Galilean vuorella hän lähettää yksitoista: ”tehkää kaikki kansat minun opetuslapsikseni”."
+      vi: "Trên một ngọn núi tại Ga-li-lê, Ngài sai mười một sứ đồ: “hãy đi dạy dỗ muôn dân”."
+      ro: "Pe un munte din Galileea îi trimite pe cei unsprezece: „învățați toate neamurile”."
+      bg: "На една планина в Галилея Той изпраща единадесетте: „научете всичките народи“."
   - place: ac2c4c5 # Mount of Olives
     ref: Acts.1.6-Acts.1.12
     note:
@@ -139,3 +169,8 @@ stops:
       tl: "Mula sa Bundok ng mga Olibo ay inakyat Siya sa langit: “kayo'y magiging mga saksi ko.”"
       da: "Fra Oliebjerget tages han op: »I skulle være mine Vidner«."
       sr: "С Маслинске горе бива узет на небо: „бићете ми сведоци.“"
+      hu: "Az Olajfák hegyéről felviszik: „lesztek nékem tanúim”."
+      fi: "Öljymäeltä hänet otetaan ylös: ”te tulette olemaan minun todistajani”."
+      vi: "Từ Núi Ô-li-ve, Ngài được cất lên: “làm chứng về ta”."
+      ro: "De pe Muntele Măslinilor este înălțat: „veți fi mie marturii”."
+      bg: "От Елеонския хълм Той е възнесен: „ще ми бъдете свидетели“."

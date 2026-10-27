@@ -1,0 +1,269 @@
+---
+title: Data ja menetelmät
+description: Mistä jokainen History Globen paikka, raja, päivämäärä ja henkilö on peräisin, miten ne on tarkistettu ja mikä on yhä epävarmaa.
+---
+
+<p class="lede">
+  Maapallo on rakennettu avoimista tieteellisistä aineistoista, joita on korjattu ja täydennetty
+  käsin ja jotka tarkistetaan automaattisesti jokaisessa koonnissa. Tällä sivulla kerrotaan, mistä
+  kukin kerros on peräisin, mitä muutimme ja mitä emme tiedä.
+</p>
+
+<h2>Raamatun paikat</h2>
+<p>
+  Paikat ({{places}}) ja niiden jakeet ovat peräisin aineistosta
+  <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
+    >OpenBible.info Bible Geocoding Data</a
+  >, joka punnitsee kirjallisuudessa kullekin paikalle ehdotettuja tunnistuksia. Säilytämme sen
+  ensisijaisen tunnistuksen ja sen arvion siitä, kuinka todennäköinen kukin ehdokaspaikka on.
+</p>
+<p>
+  Näistä {{places}} paikasta {{named}} mainitaan jossakin niiden kirjojen jakeessa, jotka OpenBible
+  merkitsee, ja jokaisella niistä on oma sivunsa; loput {{unnamed}} ovat aineiston merkintöjä, joita
+  mikään näiden kirjojen jae ei mainitse (esimerkiksi 1. makkabilaiskirjan Adasa). Artikkeli on
+  {{articles}} paikasta. Lisäksi {{excluded}} paikkaa jätettiin pois, koska niille ei ollut
+  julkaistavissa olevaa sijaintipistettä (ks. alla).
+</p>
+<ul>
+  <li>
+    <b>Varmuus sanoin.</b> Kun vakavasti otettavaa toista sijaintipaikkaa ei ole ehdotettu,
+    OpenBiblen pistemäärä (0–1000) kertoo, kuinka varma tunnistus on: 800:sta ylöspäin sitä pidetään
+    vakiintuneena eikä kortti sano mitään; sen alapuolella kortti sanoo <i>todennäköisin</i> (600
+    tai enemmän) tai <i>epävarma</i>. Paikka on <i>kiistanalainen</i>, kun toisella ehdokkaalla on
+    merkittävä osuus; silloin kaikki ehdokaspaikat näytetään osuuksineen.
+  </li>
+  <li>
+    <b>Ei koordinaatteja OpenStreetMapista eikä Googlesta.</b> OpenBible kirjaa, mistä kukin
+    koordinaatti on peräisin. Pisteet, jotka se otti OpenStreetMapista tai Googlesta, on korvattu
+    Wikidatan koordinaateilla (CC0), tai paikka on jätetty pois ({{excluded}} paikkaa). Erillinen
+    tarkistus pysäyttää koonnin, jos yksikin tällainen piste on jäljellä.
+  </li>
+  <li>
+    <b>Nimet tekstistä.</b> Venäjänkieliset nimet noudattavat vuoden 1876 synodaalikäännöstä: lähes
+    jokaiselle nimelle koonti säilyttää jakeen, jossa nimi esiintyy, ja tarkistaa, että nimi on
+    siinä jakeessa.
+  </li>
+</ul>
+
+<h2>Milloin paikat olivat olemassa</h2>
+<p>
+  Kaupunki piirretään kartalle täysin vain niinä vuosina, jolloin se oli olemassa. Raamatun
+  paikoista {{life}} perustamis-, tuhoutumis- ja hylkäämisvuodet on kirjattu käsin, kukin lähteineen
+  (antiikin kirjoittajat, kronikat, piirtokirjoitukset, kaivausraportit). Vain varmat päivämäärät
+  kirjataan: kaupungille, jonka perustaminen tai loppu on kiistanalainen, ei anneta vuotta.
+</p>
+<p>
+  Antiikin maailman kaupungit ({{ancient}}), joita Raamattu ei mainitse — pääkaupungit, satamat ja
+  pyhäköt, kuten Ugarit, Hattusa, Mari tai Delfoi — valittiin ja ajoitettiin yksitellen: kukin
+  sijoitetaan sen <a href="https://pleiades.stoa.org">Pleiades</a>- tai Wikidata-merkinnän mukaan
+  muinaiselle paikalle eikä nykyiseen kaupunkiin, ja ajoitetaan näiden merkintöjen ja
+  tietosanakirjojen kuvausten perusteella, jotka on sovitettu yhteen käsin.
+</p>
+
+<h2>Rajat</h2>
+<p>
+  Valtiot ja niiden rajat vuosi vuodelta ovat peräisin aineistosta
+  <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatria</a> (Seshat Global History Databank,
+  v0.2.0), joka on avoin aineisto maailman valtioista vuodesta 3400 eaa. alkaen. Se on koottu
+  historiallisista kartastoista ja on likimääräinen, etenkin ennen 1. vuosituhatta eaa.
+</p>
+<p>
+  Raamatun maiden osalta korjaamme sitä, kun lähteet ovat eri mieltä sen kanssa: tällä hetkellä
+  korjauksia on {{overrides}}, kukin perusteluineen ja lähteineen. Juuda pysyy kartalla vuoteen 586
+  eaa., Israel alkaa Daavidin hallituskaudesta vuonna 1010 eaa. eikä vuonna 1000 eaa., Filistea
+  rajataan sen viiden kaupungin rannikkotasangolle, ja dynastia päättyy, kun se menettää viimeisen
+  vallan keskuksensa. Levantti ja Egypti, Mesopotamia, Anatolia ja Iran, Uuden testamentin
+  kreikkalais-roomalainen maailma sekä Lähi-itä vuoteen 1300 jaa. on tarkistettu vuosi vuodelta,
+  muun muassa Assyrian heikkeneminen ja elpyminen 700-luvulla eaa., Babylon Merodak-Baladanin
+  aikana, Rooman perinnöksi vuonna 133 eaa. jätetty Pergamon, Makedonia Pydnan jälkeen ja vuonna 46
+  jaa. liitetty Traakia. Jokainen korjauserä testataan ensin muotoja vasten ja tarkistetaan sitten
+  uudelleen lähteitä vasten toisessa, erillisessä tekoälyvaiheessa.
+</p>
+<p>
+  Kuningaskunta, joka maksoi veroa jollekin suurvallalle tai hallitsi sen vasallina, piirretään
+  suurvallan värin vaaleammalla sävyllä, ja sen nimen alla lukee ”Assyrian alaisuudessa” tai ”Rooman
+  alaisuudessa”: Juuda Assyrian, Egyptin ja Babylonin alaisuudessa; Israel ja Filistea Assyrian
+  alaisuudessa; hasmonealainen ja herodeslainen Juudea Rooman (ja kolmen vuoden ajan Parthian)
+  alaisuudessa; sekä nabatealaiset ja Kommagene Rooman alaisuudessa. Nämä jaksot ({{vassals}})
+  laadittiin Assyrian kuninkaiden piirtokirjoitusten, Babylonian kronikoiden, Raamatun, Josefuksen
+  ja nykyaikaisten historiateosten pohjalta, ja ne tarkistettiin uudelleen erillisessä
+  tarkastusvaiheessa; vuosi, joka tunnetaan vain vuosikymmenen tarkkuudella, merkitään datassa ”n.”.
+  Samarian kukistumisesta vuonna 722 eaa. alkaen Israelin maa piirretään Assyrian maakuntana, joksi
+  se tuli.
+</p>
+
+<h2>Henkilöt</h2>
+<p>
+  Raamatun henkilöt ({{people}}) ja heidän sukulaisuussuhteensa ovat peräisin STEP Biblen
+  TIPNR-aineistosta (Tyndale House, Cambridge). Emme ottaneet suhteita sellaisinaan:
+</p>
+<ul>
+  <li>
+    tekstin useimmin mainitseman 1 200 henkilön sukulaisuussuhteet sekä 1. Aikakirjan sukuluettelot
+    luettiin jakeita vasten; 153 suhdetta, joita teksti ei ilmaise, poistettiin — Jeesuksen veljet
+    Joosefin ja Marian poikina, Isebel Ahasjan äitinä — ja Jeesuksen sukuluettelosta puuttuvat
+    suhteet lisättiin tekstin perusteella;
+  </li>
+  <li>
+    kaikki 1 136 henkilön ja paikan välistä suhdetta, joissa henkilöllä on keskeinen tai sivurooli,
+    luettiin jae jakeelta; 344 poistettiin (Mooses ”Kanaanissa”, Abraham ”Sodomassa”, pojan paikat
+    annettuina hänen isälleen) ja 94 sai paremman jakeen;
+  </li>
+  <li>
+    kaimat erotetaan toisistaan niin kuin teksti ne erottaa: ”Johannes Kastaja”, ”Johannes,
+    Sebedeuksen poika”, ”Ahasja, Juudan kuningas”.
+  </li>
+</ul>
+
+<h2 id="review">Tapahtumat, kierrokset ja artikkelit</h2>
+<p>
+  Tapahtumat ({{events}}), kierrokset ({{tours}}) ja artikkelit ({{articles}}) laaditaan tekoälyn
+  avulla tekijän ohjauksessa, ja ne tarkistetaan sitten erillisissä tarkastusvaiheissa lähteitä
+  vasten: raamatunteksti sen osalta, mitä se sanoo, antiikin kirjoittajat, kronikat ja
+  piirtokirjoitukset päivämäärien osalta ja tieteellinen kirjallisuus paikkojen osalta. Jokainen
+  artikkeli, vastaus ja kierros luettelee lähteensä koko tekstille eikä virke virkkeeltä. Lainaukset
+  otetaan vain kunkin kielen tekijänoikeudettomasta Raamatusta, jotka luetellaan
+  <a href="sources.html">lähteiden</a> sivulla. Yksikään kierros ei ole läpäissyt ensimmäistä
+  tarkastustaan muuttumattomana; jokainen korjattiin ja tarkistettiin uudelleen. Viimeisin
+  kokonainen läpikäynti, joka valmistui 17. lokakuuta 2026, luki kaikki 746 artikkelia uudelleen
+  lähteitä vasten, noin 210 niistä kahdesti, ja teki 1 088 korjausta, joista jokainen vietiin
+  kaikille 11 kielelle, jotka sivustolla silloin oli; suoria virheitä löytyi 157 artikkelista.
+  Lokakuun 24. päivänä 2026 lisätyt kielet (ruotsi, norja, tanska, tagalog ja serbia) käännettiin jo
+  korjatuista teksteistä; sen jälkeen erillinen tekoälytarkastaja luki jokaisen niiden tekstin
+  englanninkielistä vasten, ja jokainen lainaus tarkistettiin kyseisen kielen Raamatusta. Nämä
+  tarkastukset tekee lähteistä työskentelevä tekoäly, eivät tutkijat; artikkelissa, jonka
+  historiantutkija on lukenut, on historiantutkijan nimi.
+</p>
+<p>
+  Etäisyys pysäkille annetaan linnuntietä. Vuodesta 312 eaa. lähtien, jolloin Rooman tiet alkavat,
+  sen rinnalla annetaan matka Itiner-e-aineiston teitä pitkin: lyhin reitti niiden verkoston kautta,
+  ellei se ole yli kaksi ja puoli kertaa linnuntietä pidempi; meritse kuljettua osuutta ei lasketa
+  tietä pitkin. Kävelyaika lasketaan 30 kilometrin päivämatkan mukaan, mikä on tavallinen arvio
+  antiikin päivämatkasta, eikä siinä oteta huomioon säätä, lepoja eikä kuormia. Merellä mitään
+  nopeutta ei oleteta: merimatkalle annetaan päivät vain silloin, kun teksti ne antaa (Apt 20:6,
+  ”viidessä päivässä”), kyseisen jakeen kera ja yhtä likimääräisesti kuin teksti ne antaa. Kun
+  teksti kulkee kokonaisten alueiden halki kertomatta reittiä (Apt 20:1–3, Efesoksesta Makedonian ja
+  Kreikan kautta Filippiin), osuus sanoo sen eikä anna aikaa. Osuuden korkeusprofiili luetaan
+  Copernicus-korkeusaineistosta (Mapterhornin kautta) samaa tietä pitkin tai, jos tietä ei ole,
+  linnuntietä; profiilin alla oleva kuvateksti kertoo, kumpi on kyseessä.
+</p>
+
+<p>
+  Taistelut ja piiritykset ({{battles}}) ovat niitä, joista Raamattu kertoo, sekä muutama sen
+  ulkopuolinen, joka ratkaisi Israelin kohtalon. Kukin sijaitsee paikassa, jossa se käytiin, ja
+  näkyy kartalla omina vuosinaan. Raamatun taistelut ajoitetaan samoin kuin kierrokset ajoittavat
+  samat kertomukset; muilla ei ole jaetta vaan antiikin tai tieteellinen lähde. Toinen, erillinen
+  tekoälyvaihe tarkisti luonnoksen synodaalitekstiä ja King James Versionia vasten: 58 merkinnästä
+  16 korjattiin ja yksi poistettiin, koska kartalla ei ole pistettä sen paikalle.
+</p>
+
+<p>
+  Makkabilaisten tapahtumat ja taistelut viittaavat 1. ja 2. makkabilaiskirjaan, jotka sisältyvät
+  synodaalikäännökseen mutta eivät protestanttiseen kaanoniin: jokainen tällainen viittaus merkitään
+  ”deuterokanoninen”, ja sen linkki avaa tekstin, jossa kirja on mukana.
+</p>
+
+<h2 id="chronology">Päivämäärät ja kronologia</h2>
+<p>
+  Kartta näyttää jokaisen kertomuksen tiettynä vuonna, joten sen päivämäärät noudattavat yhtä
+  käytäntöä; kun tutkijat ovat eri mieltä, vuosi on kartan viitekohta eikä ratkaisu.
+</p>
+<ul>
+  <li>
+    <b>Israelin ja Juudan kuninkaat</b> noudattavat E. R. Thielen kronologiaa (<i
+      >The Mysterious Numbers of the Hebrew Kings</i
+    >): Salomo aloittaa temppelin rakentamisen n. 966 eaa., ja valtakunta jakautuu n. 931 eaa. Muut
+    rekonstruktiot poikkeavat tästä joillakin vuosilla; esimerkiksi W. F. Albright ajoitti
+    jakautumisen vuoteen 922 eaa.
+  </li>
+  <li>
+    <b>Aiemmat päivämäärät</b> lasketaan taaksepäin näistä niin kuin teksti ne laskee: Egyptistä
+    lähtö vuonna 1446 eaa., 480 vuotta ennen temppeliä (1 Kun 6:1), valloitus vuonna 1406 eaa. ja
+    Daavidin hallituskausi vuodesta 1010 eaa. Ne ovat sopimuksenvaraisia: monet tutkijat ajoittavat
+    Egyptistä lähdön 1200-luvulle eaa. tai epäilevät, että se tapahtui niin kuin kerrotaan, ja
+    vastaus kysymykseen
+    <a href="../../fi/q/when-was-the-exodus/"><i>Milloin exodus tapahtui?</i></a> esittelee
+    keskustelun. Patriarkat sijoitetaan sopimuksenvaraisiin vuosiin.
+  </li>
+  <li>
+    <b>Raamatun ulkopuoliset tapahtumat</b> ajoitetaan ne määrittävien asiakirjojen mukaan
+    (Babylonian kronikka, Assyrian vuosikirjat, Josefus, ajoitettu piirtokirjoitus), kukin
+    lähteineen, useimmiten kahden tai useamman; Jerusalemin kukistuminen näytetään vuonna n. 586
+    eaa. (myös vuotta 587 eaa. kannatetaan).
+  </li>
+  <li>
+    <b>Uusi testamentti:</b> Jeesuksen syntymä n. 5 eaa., ristiinnaulitseminen n. 30 jaa. (myös
+    vuotta 33 jaa. kannatetaan) ja Paavalin matkat tavallisesti esitettyinä vuosina.
+  </li>
+  <li>
+    <b>”n.”</b> merkitsee vuotta, joka tunnetaan vain likimäärin, kuten jokainen vuosi ennen 1.
+    vuosituhatta eaa.
+  </li>
+</ul>
+
+<h2>Tarkistukset jokaisessa koonnissa</h2>
+<p>Mitään ei julkaista, ellei jokainen tarkistus mene läpi:</p>
+<ul>
+  <li>
+    jokaisella lähteellä on sallittu lisenssi (ei share-alike-ehtoa, ei ei-kaupallista dataa);
+  </li>
+  <li>jokainen viittaus osoittaa todelliseen kirjaan, lukuun ja jakeeseen;</li>
+  <li>jokainen venäjänkielinen nimi löytyy sille annetusta jakeesta;</li>
+  <li>
+    jokainen kierroksen pysäkki mainitaan sen raamatunkohdassa, tai poikkeus on kirjattu
+    perusteluineen;
+  </li>
+  <li>jokaisella rajojen korjauksella ja jokaisella kaupungin päivämäärällä on lähde;</li>
+  <li>sisällön skeemat ovat tiukat: tuntematon tai väärin kirjoitettu kenttä pysäyttää koonnin.</li>
+</ul>
+
+<h2>Mikä on epävarmaa</h2>
+<ul>
+  <li>
+    Päivämäärät ennen 1. vuosituhatta eaa. ovat likimääräisiä, ja osa niistä on kiistanalaisia;
+    kartta merkitsee ne ”n.”.
+  </li>
+  <li>
+    OpenBiblen osuudet ehdokaspaikkojen välillä ovat arvio, eivät tutkijoiden yhteinen näkemys.
+  </li>
+  <li>
+    Muinaiset rajat on piirretty nykyaikaisten kartastojen pohjalta, ja ne yksinkertaistavat
+    todellisuutta, jossa valta vaihteli.
+  </li>
+  <li>
+    Monille pienille paikoille ei ole vielä kirjattu vuosia; ne piirretään olemassa oleviksi koko
+    ajan (tai, jos paikka mainitaan vain Uudessa testamentissa, Uuden testamentin ajasta alkaen).
+  </li>
+</ul>
+
+<h2 id="cite">Näin viittaat</h2>
+<p>
+  History Globea korjataan jatkuvasti, joten viittaus mainitsee käyttämänsä datan päivämäärän.
+  Dokumentaation jokainen sivu antaa sen alareunassaan (”Tiedot päivitetty”), ja API:n
+  <code>index.json</code> antaa sen kentässä <code>built_at</code>.
+</p>
+<p>Sivusto:</p>
+<pre><code class="cite">Arnaut, Vadym. History Globe: Raamatun historian kartasto. {{site}}/
+(data {{built}}; luettu …).</code></pre>
+<p>Sivu otsikkonsa ja osoitteensa mukaan:</p>
+<pre><code class="cite">”Jerusalem”. Teoksessa Vadym Arnaut, History Globe. {{site}}/fi/place/jerusalem/
+(data {{built}}; luettu …).</code></pre>
+<p>Data sen tilannekuvan päivämäärän mukaan, jonka aineiston kortti ilmoittaa:</p>
+<pre><code class="cite">Arnaut, Vadym. History Globe dataset. Hugging Face, snapshot of ….
+https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
+
+<h2 id="report">Korjaukset</h2>
+<p>
+  Löysitkö virheen, puuttuvan lähteen tai paremman tulkinnan? Kirjoita osoitteeseen
+  <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>; tiliä ei tarvita.
+  Mainitse sivu ja se, mikä on väärin, ja lähde, jos sinulla on sellainen. Jokainen ilmoitus
+  luetaan, ja vahvistettu virhe korjataan.
+</p>
+<p>
+  GitHub-tilillä voit käyttää myös jokaisen paikan kortissa olevaa linkkiä <i>Löysitkö virheen?</i>,
+  joka avaa julkiseen tietovarastoon ilmoituksen, johon paikka on valmiiksi täytetty, tai avata
+  ilmoituksen suoraan:
+  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+    >github.com/ArVaViT/history-globe/issues</a
+  >.
+</p>

@@ -19,6 +19,11 @@ title:
   tl: "Ang apostol na si Pedro"
   da: "Apostlen Peter"
   sr: "Апостол Петар"
+  hu: "Péter apostol"
+  fi: "Apostoli Pietari"
+  vi: "Sứ đồ Phi-e-rơ"
+  ro: "Apostolul Petru"
+  bg: "Апостол Петър"
 year: "AD 40"
 people: ["Peter@Mat.4.18-2Pe"]
 approximate: true
@@ -43,6 +48,11 @@ stops:
       tl: "Sa Pentecostes, tumatayo si Pedro kasama ang labing-isa at nagsasalita; mga tatlong libo ang nabautismuhan."
       da: "Ved pinse står Peter sammen med de elleve og taler; omkring tre tusind lader sig døbe."
       sr: "На Педесетницу Петар стаје са једанаесторицом и говори; око три хиљаде се крштава."
+      hu: "Pünkösdkor Péter a tizenegyekkel feláll és beszél; mintegy háromezren keresztelkednek meg."
+      fi: "Helluntaina Pietari seisoo yhdentoista kanssa ja puhuu; noin kolmetuhatta kastetaan."
+      vi: "Vào lễ Ngũ Tuần, Phi-e-rơ đứng cùng mười một sứ đồ và giảng; khoảng ba ngàn người chịu báp têm."
+      ro: "La Cincizecime, Petru stă în picioare cu cei unsprezece și vorbește; cam trei mii sunt botezați."
+      bg: "На Петдесетница Петър застава с единадесетте и говори; около три хиляди се кръщават."
   - place: a282dce # Samaria (region)
     ref: Acts.8.14-Acts.8.25
     note:
@@ -62,6 +72,11 @@ stops:
       tl: "Isinugo kasama ni Juan sa Samaria, sinasaway niya si Simon, na nais bumili ng kaloob ng Dios sa pamamagitan ng salapi."
       da: "Sendt sammen med Johannes til Samaria irettesætter han Simon, som ville købe Guds gave for penge."
       sr: "Послан с Јованом у Самарију, кори Симона, који је хтео да купи дар Божји новцем."
+      hu: "Jánossal Szamáriába küldik, ahol megdorgálja Simont, aki pénzen akarta megvenni Isten ajándékát."
+      fi: "Johanneksen kanssa Samariaan lähetettynä hän nuhtelee Simonia, joka halusi ostaa Jumalan lahjan rahalla."
+      vi: "Được sai cùng Giăng đến Sa-ma-ri, người quở trách Si-môn, kẻ muốn lấy tiền mua ơn ban của Đức Chúa Trời."
+      ro: "Trimis împreună cu Ioan în Samaria, îl mustră pe Simon, care voia să cumpere cu bani darul lui Dumnezeu."
+      bg: "Изпратен с Йоан в Самария, той изобличава Симон, който искаше да купи Божия дар с пари."
   - place: a2c5cc7 # Lydda
     ref: Acts.9.32-Acts.9.35
     note:
@@ -81,6 +96,11 @@ stops:
       tl: "Sa Lod (Lida) ay pinagagaling niya si Eneas, na walong taon nang nakaratay."
       da: "I Lydda (Lod) helbreder han Æneas, der havde ligget til sengs i otte år."
       sr: "У Лиди (Лоду) исцељује Енеју, који је осам година лежао у постељи."
+      hu: "Lódban (Lüddában) meggyógyítja a nyolc éve ágyban fekvő Éneást."
+      fi: "Lodissa (Lyddassa) hän parantaa Aineaan, joka oli maannut vuoteessa kahdeksan vuotta."
+      vi: "Tại Ly-đa (Lod), người chữa lành Ê-nê, đã nằm liệt tám năm."
+      ro: "În Lida îl vindecă pe Enea, țintuit la pat de opt ani."
+      bg: "В Лида той изцелява Еней, прикован на легло от осем години."
   - place: ae023a9 # Joppa
     ref: Acts.9.36-Acts.10.23
     note:
@@ -100,6 +120,11 @@ stops:
       tl: "Sa Joppa ay binubuhay niya si Tabita, at sa bubungan ay nakikita ang pangitain ng kumot."
       da: "I Joppe opvækker han Tabita, og på taget ser han synet af dugen."
       sr: "У Јопи васкрсава Тавиту, а на крову види виђење о платну."
+      hu: "Joppéban feltámasztja Tabitát, és a háztetőn megpillantja a lepedő látomását."
+      fi: "Joppessa hän herättää Tabitan kuolleista ja näkee katolla näyn lakanasta."
+      vi: "Tại Giốp-bê, người khiến Ta-bi-tha sống lại, và trên nóc nhà thấy dị tượng cái khăn lớn."
+      ro: "În Iafo o învie pe Tabita, iar pe acoperișul casei are vedenia pânzei."
+      bg: "В Яфа той възкресява Тавита и на покрива на къщата вижда видението с платното."
   - place: a58735e # Caesarea
     ref: Acts.10.24-Acts.10.48
     note:
@@ -119,6 +144,11 @@ stops:
       tl: "Sa Cesarea, habang nagsasalita si Pedro sa bahay ng senturyon na si Cornelio, bumababa ang Espiritu Santo sa lahat ng nakikinig ng salita."
       da: "I Cæsarea, mens Peter taler i høvedsmanden Kornelius' hus, falder Helligånden over alle, der hører ordet."
       sr: "У Цезареји, док Петар говори у кући стотника Корнилија, Дух Свети пада на све који слушају реч."
+      hu: "Cézáreában, miközben Péter Kornélius százados házában beszél, a Szentlélek leszáll mindazokra, akik hallják az igét."
+      fi: "Kesareassa, kun Pietari puhuu sadanpäämies Korneliuksen talossa, Pyhä Henki laskeutuu kaikkien päälle, jotka kuulevat sanan."
+      vi: "Tại Sê-sa-rê, khi Phi-e-rơ nói trong nhà viên đội trưởng Cọt-nây, Đức Thánh Linh giáng trên mọi người nghe lời."
+      ro: "În Cezareea, pe când Petru vorbește în casa sutașului Corneliu, Duhul Sfânt Se coboară peste toți cei ce ascultă cuvântul."
+      bg: "В Кесария, докато Петър говори в дома на стотника Корнилий, Светият Дух слиза върху всички, които слушат словото."
   - place: a15257a # Jerusalem
     ref: Acts.11.2-Acts.12.17
     note:
@@ -138,6 +168,11 @@ stops:
       tl: "Pagbalik sa Jerusalem, isinasalaysay niya sa iglesya ang tungkol kay Cornelio; ibinilanggo ni Herodes, inilabas siya ng isang anghel."
       da: "Tilbage i Jerusalem fortæller han menigheden om Kornelius; fængslet af Herodes føres han ud af en engel."
       sr: "Опет у Јерусалиму приповеда цркви о Корнилију; затворен од Ирода, анђео га изводи."
+      hu: "Jeruzsálembe visszatérve elmondja a gyülekezetnek a Kornéliusszal történteket; Heródes börtönbe veti, de egy angyal kivezeti."
+      fi: "Takaisin Jerusalemissa hän kertoo seurakunnalle Korneliuksesta; Herodeksen vangitsemana hänet johdattaa ulos enkeli."
+      vi: "Trở lại Giê-ru-sa-lem, người thuật cho Hội thánh nghe về Cọt-nây; bị Hê-rốt bỏ tù, người được một thiên sứ dẫn ra."
+      ro: "Întors la Ierusalim, îi povestește bisericii despre Corneliu; întemnițat de Irod, este scos afară de un înger."
+      bg: "Обратно в Йерусалим той разказва на църквата за Корнилий; хвърлен в тъмница от Ирод, той е изведен от един ангел."
   - place: a58735e # Caesarea
     ref: Acts.12.19-Acts.12.23
     year: "AD 44"
@@ -158,3 +193,8 @@ stops:
       tl: "Sa Cesarea, si Herodes, na hindi nagbigay ng kaluwalhatian sa Diyos, ay sinaktan ng anghel ng Panginoon at namatay."
       da: "I Cæsarea bliver Herodes, som ikke gav Gud æren, ramt af Herrens engel og dør."
       sr: "У Цезареји Ирода, који није дао славу Богу, удара анђео Господњи и он умире."
+      hu: "Cézáreában Heródest, aki nem Istennek adta a dicsőséget, megüti az Úr angyala, és meghal."
+      fi: "Kesareassa Herodes, joka ei antanut kunniaa Jumalalle, joutuu Herran enkelin lyömäksi ja kuolee."
+      vi: "Tại Sê-sa-rê, Hê-rốt, vì chẳng nhường sự vinh hiển cho Đức Chúa Trời, bị thiên sứ của Chúa đánh và chết."
+      ro: "În Cezareea, Irod, care nu I-a dat slavă lui Dumnezeu, este lovit de îngerul Domnului și moare."
+      bg: "В Кесария Ирод, който не отдаде славата на Бога, е поразен от ангела Господен и умира."

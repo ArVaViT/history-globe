@@ -20,6 +20,11 @@ title:
   tl: "Ang pagbagsak ng Jerusalem at ang pagkatapon"
   da: "Jerusalems fald og landflygtigheden"
   sr: "Пад Јерусалима и прогонство"
+  hu: "Jeruzsálem eleste és a számkivetés"
+  fi: "Jerusalemin kukistuminen ja pakkosiirtolaisuus"
+  vi: "Sự sụp đổ của Giê-ru-sa-lem và cuộc lưu đày"
+  ro: "Căderea Ierusalimului și exilul"
+  bg: "Падането на Йерусалим и изгнанието"
 year: "587 BC"
 approximate: true
 stops:
@@ -42,6 +47,11 @@ stops:
       tl: "Kinukubkob ni Nabucodonosor ang Jerusalem hanggang sa lumala ang taggutom sa bayan."
       da: "Nebukadnezar belejrer Jerusalem, til hungersnøden tager overhånd i byen."
       sr: "Навуходоносор опседа Јерусалим док глад не надјача у граду."
+      hu: "Nabukodonozor ostrom alá veszi Jeruzsálemet, míg az éhínség úrrá nem lesz a városban."
+      fi: "Nebukadnessar piirittää Jerusalemia, kunnes nälkä käy kaupungissa ylivoimaiseksi."
+      vi: "Nê-bu-cát-nết-sa vây Giê-ru-sa-lem cho đến khi nạn đói trở nên nặng nề trong thành."
+      ro: "Nebucadnețar asediază Ierusalimul până când foametea pune stăpânire pe cetate."
+      bg: "Навуходоносор обсажда Йерусалим, докато гладът в града надделява."
   - place: a231f80 # Jericho
     ref: 2Kgs.25.4-2Kgs.25.5
     note:
@@ -61,6 +71,11 @@ stops:
       tl: "Tumatakas si Haring Sedecias at inaabutan sa mga kapatagan ng Jerico."
       da: "Kong Zedekias flygter og indhentes på Jerikos sletter."
       sr: "Цар Седекија бежи и бива ухваћен у пољима јерихонским."
+      hu: "Sedékiás király elmenekül, és Jerikó síkján elfogják."
+      fi: "Kuningas Sidkia pakenee ja jää kiinni Jerikon tasangoilla."
+      vi: "Vua Sê-đê-kia chạy trốn và bị bắt kịp trong đồng bằng Giê-ri-cô."
+      ro: "Regele Zedechia fuge și este prins în câmpiile Ierihonului."
+      bg: "Цар Седекия бяга и е заловен в Йерихонските полета."
   - place: ab2bde8 # Riblah
     ref: 2Kgs.25.6-2Kgs.25.7
     note:
@@ -80,6 +95,11 @@ stops:
       tl: "Ang paghatol sa Ribla: pinapatay ang mga anak ni Sedecias at binubulag siya."
       da: "Dom i Ribla: Zedekias' sønner dræbes, og han selv blindes."
       sr: "Суд у Ривли: Седекијини синови бивају убијени, а њему се вађају очи."
+      hu: "Ítélet Riblában: Sedékiás fiait megölik, őt magát pedig megvakítják."
+      fi: "Tuomio Riblassa: Sidkian pojat tapetaan, ja hänet sokaistaan."
+      vi: "Cuộc xét xử tại Ríp-la: các con trai Sê-đê-kia bị giết và vua bị móc mắt."
+      ro: "Judecata de la Ribla: fiii lui Zedechia sunt uciși, iar lui îi sunt scoși ochii."
+      bg: "Съд в Ривла: синовете на Седекия са убити, а той е ослепен."
   - place: a15257a # Jerusalem
     ref: 2Kgs.25.8-2Kgs.25.10
     note:
@@ -99,6 +119,11 @@ stops:
       tl: "Sinusunog ni Nabuzaradan ang Templo, ang palasyo at ang bayan, at ibinabagsak ng hukbo ng mga Caldeo ang mga kuta."
       da: "Nebuzaradan brænder templet, paladset og byen, og kaldæernes hær river murene ned."
       sr: "Невузардан пали храм, двор и град, а војска халдејска руши зидове."
+      hu: "Nebuzaradán felégeti a templomot, a palotát és a várost, a káldeusok serege pedig lerombolja a falakat."
+      fi: "Nebusaradan polttaa temppelin, palatsin ja kaupungin, ja kaldealaisten sotajoukko repii muurit maahan."
+      vi: "Nê-bu-xa-ra-đan đốt đền thờ, cung vua và cả thành, và đạo quân Canh-đê phá đổ các vách thành."
+      ro: "Nebuzaradan arde Templul, palatul și cetatea, iar oastea haldeilor dărâmă zidurile."
+      bg: "Навузардан изгаря храма, двореца и града, а халдейската войска събаря стените."
   - place: a217d18 # Babylon
     ref: 2Kgs.25.11
     note:
@@ -118,6 +143,11 @@ stops:
       tl: "Ang nalabi sa bayan na naiwan sa lungsod ay dinadalang bihag sa Babilonia."
       da: "Resten af folket, som var blevet tilbage i byen, føres i landflygtighed til Babylon."
       sr: "Остатак народа, остао у граду, одводи се у прогонство у Вавилон."
+      hu: "A városban maradt nép többi részét számkivetésbe viszik Babilonba."
+      fi: "Kaupunkiin jäänyt muu kansa viedään pakkosiirtolaisuuteen Babyloniin."
+      vi: "Phần dân sự còn lại trong thành bị đày qua Ba-by-lôn."
+      ro: "Restul poporului rămas în cetate este dus în exil la Babilon."
+      bg: "Останалият в града народ е отведен в изгнание във Вавилон."
   - place: a6d57ed # Ramah
     ref: Jer.40.1
     by: untold
@@ -138,6 +168,11 @@ stops:
       tl: "Sa Rama, pinalalaya si Jeremias mula sa mga bihag."
       da: "I Rama sættes Jeremias fri blandt de bortførte."
       sr: "У Рами Јеремија бива пуштен на слободу из реда заробљеника."
+      hu: "Rámában Jeremiást kiszabadítják a foglyok közül."
+      fi: "Ramassa Jeremia vapautetaan vankien joukosta."
+      vi: "Tại Ra-ma, Giê-rê-mi được thả khỏi giữa các phu tù."
+      ro: "La Rama, Ieremia este eliberat din mijlocul captivilor."
+      bg: "В Рама Йеремия е освободен измежду пленниците."
   - place: a736f6c # Mizpah
     ref: Jer.40.6
     note:
@@ -157,6 +192,11 @@ stops:
       tl: "Tumitira siyang kasama ni Gedalias, ang tagapamahala, sa Mizpa."
       da: "Han bliver hos landshøvdingen Gedalja i Mispa."
       sr: "Остаје код Годолије, намесника, у Масфи."
+      hu: "Gedaljánál, a helytartónál marad Micpában."
+      fi: "Hän jää maaherra Gedaljan luo Mispaan."
+      vi: "Người ở với Ghê-đa-lia, quan tổng đốc, tại Mích-ba."
+      ro: "Rămâne cu Ghedalia, guvernatorul, la Mițpa."
+      bg: "Той остава при управителя Годолия в Мицпа."
   - place: adb008c # Tahpanhes
     ref: Jer.43.7
     note:
@@ -176,3 +216,8 @@ stops:
       tl: "Pagkatapos paslangin si Gedalias, ang nalabi ay tumatakas patungong Egipto, sa Taphnes."
       da: "Efter mordet på Gedalja flygter levningen til Egypten, til Takpanes."
       sr: "После Годолијиног убиства остатак бежи у Египат, у Тафнес."
+      hu: "Gedalja meggyilkolása után a maradék Egyiptomba menekül, Tahpanhészbe."
+      fi: "Gedaljan murhan jälkeen jäännös pakenee Egyptiin, Tahpanhesiin."
+      vi: "Sau khi Ghê-đa-lia bị giết, phần dân sót chạy qua Ê-díp-tô, đến Tác-pha-nết."
+      ro: "După uciderea lui Ghedalia, rămășița fuge în Egipt, la Tahpanes."
+      bg: "След убийството на Годолия остатъкът бяга в Египет, в Тафнис."

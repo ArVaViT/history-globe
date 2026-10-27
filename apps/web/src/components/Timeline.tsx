@@ -693,7 +693,7 @@ function YearField({
       className="max-xl:min-w-0 max-xl:flex-1"
       onSubmit={(e) => {
         e.preventDefault();
-        const y = parseYearInput(text);
+        const y = parseYearInput(text, locale);
         if (y === null || y < YEAR_MIN || y > YEAR_MAX) {
           setBad(true);
           return;

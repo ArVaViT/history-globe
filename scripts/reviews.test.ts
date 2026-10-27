@@ -227,6 +227,7 @@ describe("a review on the pages", () => {
           date: "2099-01-14",
           status: "published",
           changed: true,
+          translations: [],
         },
       ],
       checked: "",
@@ -237,6 +238,22 @@ describe("a review on the pages", () => {
       "Reviewed by Dr Example Reviewer, Example University (fictional) · 14 January 2099 · changed since",
     );
     expect(line).toContain('href="../../../en/reviews/2099-01-fake-review/"');
+  });
+
+  it("says a translation was not reviewed only where the reviewer did not read it", () => {
+    const review = {
+      id: "2099-01-fake-review",
+      name: "Dr Example Reviewer",
+      institution: "Example University (fictional)",
+      date: "2099-01-14",
+      status: "published" as const,
+      changed: false,
+      translations: ["uk"],
+    };
+    const line = (l: "uk" | "ru") =>
+      statusLine({ l, reviews: [review], checked: "", up: "", methodology: "" });
+    expect(line("uk")).not.toContain(REVIEW_WORDS.uk.englishOnly);
+    expect(line("ru")).toContain(REVIEW_WORDS.ru.englishOnly);
   });
 
   it("shows the reviewer's words in the original on every language's page, ours beside them", () => {

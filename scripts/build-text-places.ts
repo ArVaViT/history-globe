@@ -22,9 +22,11 @@
  * them alone next to another capitalised word.
  *
  * Names are declined by the ending of a one-word name: Russian (Иерусалим → Иерусалима,
- * Иерусалиме…; russian-forms.ts), Ukrainian, Polish, Czech and Serbian, and the German and
- * Nordic genitive (inflected-forms.ts); names of several words are matched as written. Each
- * language is checked against its own Bible, the one its verse cards quote (bible-text.ts).
+ * Иерусалиме…; russian-forms.ts), Ukrainian, Polish, Czech and Serbian, the German and
+ * Nordic genitive, the Hungarian and Finnish cases and the Romanian article (inflected-forms.ts);
+ * names of several words are matched as written (in Hungarian and Finnish with the last word's
+ * case). Each language is checked against its own Bible, the one its verse cards quote
+ * (bible-text.ts).
  *
  * Usage: node scripts/build-text-places.ts  (after build-content; build-verses supplies
  * the text for the lower-case check, and without it only the other checks apply)
@@ -33,7 +35,7 @@ import { type Locale, LOCALES, type SiteLocale } from "../packages/model/src/tim
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { siteCertainty } from "../packages/model/src/sites.ts";
-import { isUsfm, readBible, readSword, repair, SOURCES } from "./bible-text.ts";
+import { readEdition, repair, SOURCES } from "./bible-text.ts";
 import { inflectedForms } from "./inflected-forms.ts";
 import { plain, russianForms, russianHeads } from "./russian-forms.ts";
 import { placeSlugs } from "../packages/model/src/slugs.ts";
@@ -81,7 +83,7 @@ const STOP: Record<Base, readonly string[]> = {
  * Single forms with another meaning: «Иудеи» and «Халдеи» are the peoples (the Synodal
  * text capitalises them), «Тире» a dash, «Колосс» a giant, «Ливны» a Russian town.
  */
-const FORM_STOP: Partial<Record<Lang, readonly string[]>> = {
+const FORM_STOP: Partial<Record<Locale, readonly string[]>> = {
   en: [],
   ru: ["Иудеи", "Халдеи", "Тире", "Колосс", "Ливны"],
   uk: ["Раббі", "Філіпп", "Колоси", "Колосами"],
@@ -89,6 +91,14 @@ const FORM_STOP: Partial<Record<Lang, readonly string[]>> = {
   de: ["Nils", "Zins"],
   pl: ["Mary", "Suzy", "Suzie", "Kolos", "Kusza", "Jordana", "Nila", "Szarona", "Tyra"],
   sr: ["Гат"],
+  // The languages still waiting to join the site, not yet read by eye.
+  hu: [],
+  fi: [],
+  vi: [],
+  tr: [],
+  sw: [],
+  ro: [],
+  bg: [],
 };
 /**
  * The other languages' own names with a modern meaning, read by eye by a reviewer of each
@@ -97,7 +107,7 @@ const FORM_STOP: Partial<Record<Lang, readonly string[]>> = {
  * has too (cs «Stará brána», nl "Westpoort"), modern Ethiopia for Cush. A modern country on
  * the same ground (Italia, Griekenland) stays linked, as in English.
  */
-const STOP_IN: Partial<Record<Lang, readonly string[]>> = {
+const STOP_IN: Partial<Record<Locale, readonly string[]>> = {
   es: ["Etiopía", "Sefarad", "Mara", "Milo", "Salamina", "Tolemaida", "Abilene", "Apolonia"],
   it: [
     "Etiopia",
@@ -430,6 +440,14 @@ const STOP_IN: Partial<Record<Lang, readonly string[]>> = {
     "Царство северног цара",
     "Царство јужног цара",
   ],
+  // The languages still waiting to join the site, not yet read by eye.
+  hu: [],
+  fi: [],
+  vi: [],
+  tr: [],
+  sw: [],
+  ro: [],
+  bg: [],
 };
 /**
  * Names that are also first names (Jordan Peterson, Sharon Stone, «Нил Сорский»): the
@@ -440,7 +458,7 @@ const FIRST_NAMES: Record<Base, readonly string[]> = {
   ru: ["Нил", "Сава"],
 };
 /** The other languages' first names (and surnames) among place names, by their reviewers. */
-const FIRST_NAMES_IN: Partial<Record<Lang, readonly string[]>> = {
+const FIRST_NAMES_IN: Partial<Record<Locale, readonly string[]>> = {
   es: ["Belén", "Nazaret", "Betania", "Jordán", "Nilo", "Maceda"],
   it: ["Giordano", "Nilo", "Betania", "Apollonia", "Filippi"],
   pt: ["Nazaré", "Tarso", "Hadasa", "Nilo", "Jordão", "Betânia"],
@@ -477,6 +495,14 @@ const FIRST_NAMES_IN: Partial<Record<Lang, readonly string[]>> = {
     "Tarso",
   ],
   sr: ["Јордан", "Нил", "Лида", "Мелита", "Хадаса", "Филипи"],
+  // The languages still waiting to join the site, not yet read by eye.
+  hu: [],
+  fi: [],
+  vi: [],
+  tr: [],
+  sw: [],
+  ro: [],
+  bg: [],
 };
 
 interface Props {
@@ -552,16 +578,17 @@ const englishHeads = (name: string): string[] => {
  * hyphenated one: "Karmel" for «Góra Karmel». More than a reader would use, which only makes
  * a namesake give way more often.
  */
-const otherHeads = (name: string): string[] => {
+const otherHeads = (name: string, l: Lang): string[] => {
   const words = name.split(/\s+/);
-  const hyphen = /^(\p{Lu}\p{Ll}+)-\p{L}/u.exec(name);
+  // A Vietnamese hyphen parts syllables, not words: «Giê» is no way of naming Giê-ru-sa-lem.
+  const hyphen = (l as Locale) === "vi" ? null : /^(\p{Lu}\p{Ll}+)-\p{L}/u.exec(name);
   return [
     ...(words.length > 1 ? words.filter((w) => /^\p{Lu}\p{Ll}/u.test(w)) : []),
     ...(words.length === 1 && hyphen?.[1] ? [hyphen[1]] : []),
   ];
 };
 const headsOf = (name: string, l: Lang) =>
-  (l === "ru" ? russianHeads(name) : l === "en" ? englishHeads(name) : otherHeads(name)).flatMap(
+  (l === "ru" ? russianHeads(name) : l === "en" ? englishHeads(name) : otherHeads(name, l)).flatMap(
     (h) => formsOf(h, l),
   );
 
@@ -577,9 +604,8 @@ const whole = perLang(() => "");
 /** The verses the places cite, by OSIS reference: what the names are checked against. */
 const cited = perLang(() => new Map<string, string>());
 // The editions the verse cards quote (bible-text.ts SOURCES), mended as the cards are (REPAIRS).
-const kjvZip = join(root, "pipeline/.cache", SOURCES.en.file);
-const bibleOf = (l: Lang, zip: string) => {
-  const bible = isUsfm(SOURCES[l]) ? readBible(zip) : readSword(zip, readBible(kjvZip));
+const bibleOf = (l: Lang) => {
+  const bible = readEdition(SOURCES[l], join(root, "pipeline/.cache"));
   for (const [k, v] of bible) bible.set(k, repair(l, v));
   return bible;
 };
@@ -593,7 +619,7 @@ for (const l of LANGS) {
       ))
         cited[l].set(k, plain(text));
   const zip = join(root, "pipeline/.cache", SOURCES[l].file);
-  const texts = existsSync(zip) ? [...bibleOf(l, zip).values()] : [...cited[l].values()];
+  const texts = existsSync(zip) ? [...bibleOf(l).values()] : [...cited[l].values()];
   if (!existsSync(zip)) corpus = cited[l].size ? "cited" : "none";
   whole[l] = texts.map(plain).join("\n");
   // Whole words only: "Beth-ammon" is one word, not "ammon".
@@ -956,6 +982,62 @@ const LABELS: Record<Lang, Labels> & Partial<Record<Locale, Labels>> = {
     likely: "ang pinakamalamang sa mga mungkahi",
     tentative: "hindi tiyak",
     open: "Buksan sa globo",
+  },
+  hu: {
+    inBible: "A Bibliában",
+    location: "Elhelyezkedés",
+    disputed: "vitatott",
+    likely: "a legvalószínűbb a javaslatok közül",
+    tentative: "bizonytalan",
+    open: "Megnyitás a földgömbön",
+  },
+  fi: {
+    inBible: "Raamatussa",
+    location: "Sijainti",
+    disputed: "kiistanalainen",
+    likely: "todennäköisin ehdotuksista",
+    tentative: "epävarma",
+    open: "Avaa maapallolla",
+  },
+  vi: {
+    inBible: "Trong Kinh Thánh",
+    location: "Vị trí",
+    disputed: "còn tranh cãi",
+    likely: "khả năng cao nhất trong các giả thuyết",
+    tentative: "chưa chắc chắn",
+    open: "Mở trên quả địa cầu",
+  },
+  tr: {
+    inBible: "Kutsal Kitap’ta",
+    location: "Konum",
+    disputed: "tartışmalı",
+    likely: "önerilerin en olası olanı",
+    tentative: "kesin değil",
+    open: "Kürede aç",
+  },
+  sw: {
+    inBible: "Katika Biblia",
+    location: "Mahali",
+    disputed: "linabishaniwa",
+    likely: "linalowezekana zaidi kati ya mapendekezo",
+    tentative: "halina uhakika",
+    open: "Fungua kwenye globu",
+  },
+  ro: {
+    inBible: "În Biblie",
+    location: "Amplasare",
+    disputed: "disputată",
+    likely: "cea mai probabilă dintre propuneri",
+    tentative: "nesigură",
+    open: "Deschide pe glob",
+  },
+  bg: {
+    inBible: "В Библията",
+    location: "Местоположение",
+    disputed: "спорно",
+    likely: "най-вероятното от предположенията",
+    tentative: "предположително",
+    open: "Отвори на глобуса",
   },
 };
 const wordsIn = (l: Lang) => {

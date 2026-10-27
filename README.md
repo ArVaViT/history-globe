@@ -10,8 +10,9 @@ article with its sources. The site has no accounts, no ads and no fees. It is ma
 
 As of the release of 2026-10-25 (`api/v1/index.json`, `built_at`):
 
-- 16 languages: English, Russian, Ukrainian, Spanish, Portuguese, German, French, Italian,
-  Dutch, Polish, Czech, Swedish, Norwegian Bokmål, Danish, Tagalog and Serbian. No language
+- 21 languages: English, Russian, Ukrainian, Spanish, Portuguese, German, French, Italian,
+  Dutch, Polish, Czech, Swedish, Norwegian Bokmål, Danish, Tagalog, Serbian, Hungarian, Finnish,
+  Vietnamese, Romanian and Bulgarian. No language
   comes first (ADR 0015).
 - 1,231 places named in the Bible, each with its verses and a page of its own (1,288 place
   records in all); 746 place articles and 200 answered questions.

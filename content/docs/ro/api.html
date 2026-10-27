@@ -1,0 +1,164 @@
+---
+title: Date deschise
+description: Locurile, versetele care le numesc, evenimentele și traseele, ca fișiere JSON pe care oricine le poate folosi sub CC BY 4.0 — fără cheie, fără înregistrare.
+---
+
+<p class="lede">
+  Tot ce știe globul despre locuri și versete este deschis: fișiere JSON simple, libere de folosit
+  pe alt site sau în altă aplicație sub CC BY 4.0. Fără cheie, fără înregistrare, fără alte limite
+  decât cache-ul obișnuit.
+</p>
+
+<h2>Ce locuri numește un verset</h2>
+<p>
+  Câte un fișier pentru fiecare carte a Bibliei: fiecare verset care numește un loc, cu ID-urile
+  acelor locuri.
+</p>
+<pre><code>GET {{site}}/api/v1/verses/Acts.json
+
+{ "Acts.16.11": ["a6a7150", "a68750d", "a91c509"], "Acts.16.12": ["a69e1b8", "a49e1d0"], … }</code></pre>
+<p>
+  Locurile însele, cu numele lor în fiecare limbă a site-ului, tipul și punctul, se află în
+  <code>places.json</code>; uniți-le după <code>id</code>. Câmpul <code>name_ru</code> din prima
+  versiune este încă acolo, identic cu <code>names.ru</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/places.json
+
+[{ "id": "a49e1d0", "name": "Philippi",
+   "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
+   "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "wikidata": "Q379652", "pleiades": "501482",
+   "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
+
+<h2>Cine și unde într-un capitol</h2>
+<p>
+  Câte un fișier pentru fiecare carte: fiecare capitol, cu locurile și persoanele pe care le
+  numește. Persoanele sunt identificate ca în TIPNR de la STEPBible; numele lor și primul verset se
+  află în <code>people.json</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/chapters/Acts.json
+
+{ "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
+               "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
+
+<h2>Toate fișierele</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Fișier</th>
+        <th>Ce conține</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/v1/index.json</code></td>
+        <td>lista fișierelor și a cărților, licența și mențiunile surselor, data build-ului</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/places.json</code></td>
+        <td>
+          fiecare loc: ID, nume, tip, punct, câte versete îl numesc, pagina lui (pentru un loc pe
+          care îl numește vreun verset); <code>wikidata</code> și <code>pleiades</code>, același loc
+          în acele repertorii geografice, acolo unde este cunoscut
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/verses/{Book}.json</code></td>
+        <td>
+          un verset → locurile pe care le numește, câte un fișier pentru fiecare carte
+          (<code>Gen</code>, <code>1Kgs</code>, <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/chapters/{Book}.json</code></td>
+        <td>
+          un capitol → locurile și persoanele pe care le numește, câte un fișier pentru fiecare
+          carte
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/people.json</code></td>
+        <td>
+          persoanele pe care le numește Biblia: ID-ul TIPNR, numele, numele în celelalte limbi acolo
+          unde site-ul le are, sexul, câte versete le numesc, primul dintre ele
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/events.json</code></td>
+        <td>evenimentele datate, cu <code>ref</code> acolo unde Biblia relatează evenimentul</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/battles.json</code></td>
+        <td>
+          bătăliile și asediile: locul, anul, taberele și deznodământul, cu <code>ref</code> acolo
+          unde Biblia relatează bătălia
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/questions.json</code></td>
+        <td>
+          întrebări pe care le pun oamenii, cu răspunsuri în fiecare limbă a site-ului, cu vederea
+          hărții și sursele
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/tours.json</code></td>
+        <td>
+          traseele: opririle lor în ordine, fiecare cu pasajul și nota sa;
+          <code>by: "sea"</code> pentru o porțiune parcursă pe mare și <code>sailed</code> (zilele
+          și versetul) acolo unde textul spune cât a durat
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/ancient.json</code></td>
+        <td>
+          ce spun despre un loc autorii din afara Bibliei: autorul, opera, pasajul, un link către un
+          text disponibil gratuit, un rezumat
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/openapi.json</code></td>
+        <td>toate acestea descrise în OpenAPI 3.1, pentru generatoare de cod și agenți</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Convenții</h2>
+<ul>
+  <li>
+    Trimiterile sunt în format OSIS, cu abrevierile englezești ale cărților și numerotarea King
+    James: <code>Gen.12.6</code>, <code>Acts.16.12-Acts.16.15</code>.
+  </li>
+  <li>Anii sunt astronomici: 1 î.Hr. este 0, 586 î.Hr. este −585.</li>
+  <li>
+    Un loc înregistrat de două ori sub același nume în datele-sursă are
+    <code>"duplicate": true</code>; un loc al cărui sit este disputat,
+    <code>"disputed": true</code>.
+  </li>
+  <li>
+    Fișierele sunt reconstruite la fiecare lansare a datelor; <code>index.json</code> îi dă data.
+  </li>
+  <li>
+    Versiunea 1 doar crește: câmpurile și fișierele se adaugă, nu sunt niciodată redenumite sau
+    eliminate. Ignorați un câmp pe care nu îl cunoașteți.
+  </li>
+</ul>
+
+<h2>Licență și mențiunea surselor</h2>
+<p>
+  Datele sunt sub <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Folosiți-le,
+  modificați-le, vindeți ce construiți cu ele; numiți sursele acolo unde le afișați, așa cum le
+  enumeră <code>index.json</code>: History Globe de Vadym Arnaut, OpenBible.info pentru locuri,
+  etichetele versetelor și punctele și TIPNR de la STEPBible pentru persoane. Numele rusești au fost
+  preluate din traducerea sinodală rusă, care se află în domeniul public. Numele în celelalte limbi
+  sunt ale History Globe.
+</p>
+<p>
+  Răspunsurile la întrebări (<code>questions.json</code>) sunt texte proprii ale History Globe și
+  sunt sub <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>:
+  citați-le și puneți linkuri către ele, cu mențiunea sursei; nu le modificați, nu le traduceți și
+  nu le preluați pe alt site sau în alt set de date. Același lucru este valabil pentru articolele
+  despre locuri, pe care API-ul nu le conține.
+</p>

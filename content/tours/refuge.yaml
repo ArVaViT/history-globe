@@ -22,6 +22,11 @@ title:
   tl: "Ang anim na lungsod na kanlungan"
   da: "De seks tilflugtsbyer"
   sr: "Шест градова уточишта"
+  hu: "A hat menedékváros"
+  fi: "Kuusi turvakaupunkia"
+  vi: "Sáu thành ẩn náu"
+  ro: "Cele șase cetăți de scăpare"
+  bg: "Шестте града за убежище"
 year: "1406 BC"
 # Where the cities were, not a journey: no time on foot.
 walked: false
@@ -46,6 +51,11 @@ stops:
       tl: "Ibinukod ni Moises ang tatlong lungsod sa silangan ng Jordan, “upang ang nakamatay ng tao ay tumakas doon, na nakamatay sa kaniyang kapuwa na hindi sinasadya”: una ang Beser sa ilang, sa kapatagan, ng Ruben."
       da: "Moses udskiller tre byer øst for Jordan, »for at en Manddraber, som slaar sin Næste ihjel af Vanvare og uden at han hadede ham tilforn, kunde fly derhen«: først Beser i ørkenen, på sletten, hos Ruben."
       sr: "Мојсије одваја три града с ове стране Јордана према истоку, „да би бежао у њих крвник који убије ближњег свог нехотице“: најпре Восор у пустињи, на равници, у земљи племена Рувимовог."
+      hu: "Mózes három várost különít el a Jordántól keletre, „hogy oda fusson a gyilkos, a ki nem akarva gyilkolta meg az ő felebarátját”: először Bécert a pusztában, a síkságon, Rúben fiainak területén."
+      fi: "Mooses erottaa kolme kaupunkia Jordanin itäpuolelta, ”että niihin voisi paeta tappaja, joka on tappanut toisen tahtomattaan”: ensimmäisenä Beser erämaassa, Ruubenin sukukunnan tasangolla."
+      vi: "Môi-se để riêng ba thành ở phía đông sông Giô-đanh, “để kẻ sát nhân vô ý giết người lân cận mình, mà không có ghét trước, được thế trốn tránh”: trước hết là Bết-se nơi rừng vắng, trong xứ đồng bằng, để cho người Ru-bên."
+      ro: "Moise pune deoparte trei cetăți la răsărit de Iordan, ca „să scape acolo ucigașul, care fără de voie a omorît pre deaproapele său”: întâi Bețer, în pustiu, în câmpie, a rubeniților."
+      bg: "Мойсей отделя три града на изток от Йордан, „за да прибегне там онзи убийца който убие ближнаго си без намерение“: първо Бецер в пустинята, на равнината, на Рувимовото племе."
   - place: a95147f # Ramoth
     ref: Deut.4.43
     note:
@@ -65,6 +75,11 @@ stops:
       tl: "Ang Ramoth sa Gilead, ng mga Gadita: ang Ramoth-galaad, kung saan mabubuwal si Achab."
       da: "Ramot i Gilead, hos gaditterne: Ramot i Gilead, hvor Akab skulle falde."
       sr: "Рамот у Галаду, у племену Гадовом: Рамот Галадски, где ће пасти Ахав."
+      hu: "Rámót Gileádban, Gád fiaié: Rámót-Gileád, ahol Aháb el fog esni."
+      fi: "Ramot Gileadissa, gadilaisten: Ramot-Gilead, jossa Ahab kaatuisi."
+      vi: "Ra-mốt nơi Ga-la-át, để cho người Gát: Ra-mốt Ga-la-át, nơi A-háp sẽ ngã xuống."
+      ro: "Ramot din Galaad, a gadiților: Ramot din Galaad, unde avea să cadă Ahab."
+      bg: "Рамот в Галаад, на гадитите: Рамот Галаадски, където ще падне Ахав."
   - place: abb5c1e # Golan
     ref: Deut.4.43
     note:
@@ -84,6 +99,11 @@ stops:
       tl: "Ang Golan sa Basan, ng Manases, ang pinakahilaga sa tatlo."
       da: "Golan i Basan, hos Manasse, den nordligste af de tre."
       sr: "Голан у Васану, у племену Манасијином, најсевернији од тројице."
+      hu: "Gólán Básánban, Manassé fiaié, a három közül a legészakibb."
+      fi: "Golan Basanissa, Manassen sukukunnan, kolmesta pohjoisin."
+      vi: "Gô-lan nơi Ba-san, để cho người Ma-na-se, là thành ở cực bắc trong ba thành."
+      ro: "Golan din Basan, a lui Manase, cea mai nordică dintre cele trei."
+      bg: "Голан във Васан, на Манасия, най-северният от трите."
   - place: a662eed # Kedesh
     ref: Josh.20.1-Josh.20.7
     note:
@@ -103,6 +123,11 @@ stops:
       tl: "Pagkatapos ng pananakop, ang lupain sa kanluran ng Jordan ay nagkaroon ng tatlo nito, “upang matakasan ng nakamatay, na nakapatay sa sinoman na hindi sinasadya at hindi kusa”: una ang Cedes sa Galilea sa lupaing maburol ng Nephtali."
       da: "Efter erobringen får landet vest for Jordan sine tre, »at en Manddraber, som af Vaade, uforsætlig slaar en Person ihjel, kan fly derhen«: først Kedesj i Galilæa i Naftalis bjerge."
       sr: "После освајања земља западно од Јордана добија своја три, „да онамо утече крвник који убије кога нехотице, не мислећи“: најпре Кедес у Галилеји у гори Нефталимовој."
+      hu: "A hódítás után a Jordántól nyugatra levő föld is megkapja a maga hármat, „hogy oda szaladjon a gyilkos, a ki megöl valakit tévedésből, nem szándékosan”: először Kedest Galileában, Naftáli hegyén."
+      fi: "Valloituksen jälkeen Jordanin länsipuolinen maa saa omat kolmensa, ”että niihin voisi paeta tappaja, joka tapaturmaisesti, tahtomattaan, on jonkun surmannut”: ensimmäisenä Kedes Galileassa Naftalin vuoristossa."
+      vi: "Sau cuộc chinh phục, xứ ở phía tây sông Giô-đanh có ba thành của mình, “hầu cho kẻ sát nhân vì bất ý giết ai có thế trốn đó được”: trước hết là Kê-đe ở Ga-li-lê tại trên núi Nép-ta-li."
+      ro: "După cucerire, țara de la apus de Iordan își primește cele trei cetăți, ca să fugă acolo ucigașul care omoară pe cineva din greșeală și fără voie: întâi Chedeș, în Galileea, în muntele lui Neftali."
+      bg: "След завладяването земята на запад от Йордан получава своите три, „за да прибягва там онзи убийца който убие человека без намерение, по незнаяне“: първо Кедес в Галилея, в Нефталимовата планина."
   - place: adf74d4 # Shechem
     ref: Josh.20.7
     note:
@@ -122,6 +147,11 @@ stops:
       tl: "Ang Sichem sa lupaing maburol ng Ephraim, sa pagitan ng Ebal at Gerizim, kung saan babaguhin ni Josue ang tipan."
       da: "Sikem i Efraims bjergland, mellem Ebal og Gerizim, hvor Josva skal fornye pagten."
       sr: "Сихем у гори Јефремовој, између Гевала и Гаризина, где ће Исус обновити савез."
+      hu: "Sikem Efraim hegyvidékén, Ébál és Garizim között, ahol Józsué megújítja majd a szövetséget."
+      fi: "Sikem Efraimin vuoristossa, Ebalin ja Gerisimin välissä, missä Joosua uudistaa liiton."
+      vi: "Si-chem tại trên núi Ép-ra-im, giữa Ê-banh và Ga-ri-xim, nơi Giô-suê sẽ lập lại giao ước."
+      ro: "Sihem, în muntele lui Efraim, între Ebal și Garizim, unde Iosua va reînnoi legământul."
+      bg: "Сихем в Ефремовата планина, между Евал и Гаризим, където Иисус Навин ще поднови завета."
   - place: a85151a # Hebron
     ref: Josh.20.7-Josh.20.9
     note:
@@ -141,3 +171,8 @@ stops:
       tl: "Ang Chiriath-arba, na siyang Hebron, sa lupaing maburol ng Juda. Ang mga bayan ay “sa lahat ng mga anak ni Israel, at sa taga ibang lupa na tumatahan sa gitna nila”, hanggang sa humarap ang nakamatay sa kapisanan."
       da: "Kirjat-Arba, det er Hebron, på Judas bjerge. Byerne er »for alle Israels Børn og for den fremmede, som var fremmed midt iblandt dem«, indtil manddraberen har stået for menighedens ansigt."
       sr: "Кирјат-Арва, то јест Хеврон, у гори Јудиној. Ти су градови одређени „свим синовима Израиљевим и дошљаку који живи међу њима“, док убица не стане пред збор."
+      hu: "Kirjat-Arba, azaz Hebron, Júda hegyén. A városok „mind az Izráel fiainak, mind a jövevénynek, a ki közöttük tartózkodik vala” szólnak, amíg a gyilkos a gyülekezet elé nem áll."
+      fi: "Kirjat-Arba, se on Hebron, Juudan vuoristossa. Kaupungit asetettiin ”kaikille israelilaisille ja heidän keskuudessaan asuville muukalaisille”, kunnes tappaja on seisonut seurakunnan edessä."
+      vi: "Ki-ri-át-A-ra-ba, tức là Hếp-rôn, ở trên núi Giu-đa. Các thành ấy dành “cho hết thảy dân Y-sơ-ra-ên, và cho khách lạ kiều ngụ trong đó”, cho đến khi kẻ sát nhân ra hầu trước mặt hội chúng."
+      ro: "Chiriat-Arba, adică Hebron, în muntele lui Iuda. Cetățile sunt „tuturor fiilor lui Israil, și nemernicului celui ce șade întru ei”, până ce ucigașul se înfățișează înaintea adunării."
+      bg: "Кириат-Арба, тоест Хеврон, в Юдовата планина. Градовете са „за всичките Израилеви синове, и за чужденците които живеят между тях“, докато убиецът застане пред събранието."

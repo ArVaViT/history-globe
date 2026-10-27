@@ -1,0 +1,265 @@
+---
+title: Date și metodologie
+description: De unde provine fiecare loc, graniță, dată și persoană din History Globe, cum a fost verificat și ce rămâne încă nesigur.
+---
+
+<p class="lede">
+  Globul este construit din seturi de date științifice deschise, corectate și completate manual și
+  verificate automat la fiecare build. Această pagină explică de unde provine fiecare strat, ce am
+  schimbat și ce nu știm.
+</p>
+
+<h2>Locurile Bibliei</h2>
+<p>
+  Cele {{places}} de locuri și versetele lor provin din
+  <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
+    >Bible Geocoding Data de la OpenBible.info</a
+  >, care cântărește identificările propuse în literatura de specialitate pentru fiecare loc.
+  Păstrăm identificarea preferată de acesta și estimarea lui privind cât de probabil este fiecare
+  sit candidat.
+</p>
+<p>
+  Dintre aceste {{places}} de locuri, {{named}} sunt numite într-un verset din cărțile pe care le
+  etichetează OpenBible și fiecare dintre ele are o pagină proprie; celelalte {{unnamed}} sunt
+  înregistrări pe care le păstrează și pe care niciun verset din acele cărți nu le numește (de
+  exemplu, Adasa din 1 Macabei). {{articles}} de locuri au un articol. Alte {{excluded}} au fost
+  omise, în lipsa unui punct care să poată fi publicat (vezi mai jos).
+</p>
+<ul>
+  <li>
+    <b>Certitudinea, în cuvinte.</b> Când nu se propune niciun al doilea sit serios, scorul
+    OpenBible (0–1000) arată cât de sigură este identificarea: de la 800 în sus este considerată
+    stabilită și fișa nu spune nimic; sub acest prag, fișa spune <i>cea mai probabilă</i> (600 sau
+    mai mult) ori <i>nesigură</i>. Un loc este <i>disputat</i> când al doilea candidat are o pondere
+    semnificativă; atunci sunt afișate toate siturile candidate, cu ponderile lor.
+  </li>
+  <li>
+    <b>Nicio coordonată din OpenStreetMap sau Google.</b> OpenBible consemnează de unde provine
+    fiecare coordonată. Punctele pe care le-a preluat din OpenStreetMap sau Google sunt înlocuite cu
+    coordonatele din Wikidata (CC0), altfel locul este omis ({{excluded}} de locuri). O verificare
+    separată oprește build-ul dacă rămâne vreun astfel de punct.
+  </li>
+  <li>
+    <b>Nume luate din text.</b> Numele rusești urmează traducerea sinodală rusă din 1876: pentru
+    aproape fiecare nume, build-ul păstrează un verset în care apare și verifică faptul că numele se
+    află în acel verset.
+  </li>
+</ul>
+
+<h2>Când au existat locurile</h2>
+<p>
+  Un oraș este desenat pe hartă în întregime doar în anii în care a existat. Pentru {{life}} de
+  locuri ale Bibliei, anii întemeierii, distrugerii și părăsirii sunt înregistrați manual, fiecare
+  cu sursele sale (autori antici, cronici, inscripții, rapoarte de săpături). Sunt înregistrate doar
+  datele sigure: unui oraș a cărui întemeiere sau sfârșit este disputat nu i se dă niciun an pentru
+  acestea.
+</p>
+<p>
+  Cele {{ancient}} de orașe ale lumii antice pe care Biblia nu le numește — capitale, porturi și
+  sanctuare precum Ugarit, Hattusa, Mari sau Delfi — au fost alese și datate unul câte unul: fiecare
+  este amplasat după înregistrarea sa din <a href="https://pleiades.stoa.org">Pleiades</a> sau
+  Wikidata, pe situl antic, nu pe orașul modern, și datat pe baza acestor înregistrări și a
+  articolelor enciclopedice, puse de acord manual.
+</p>
+
+<h2>Granițe</h2>
+<p>
+  Statele și granițele lor, an de an, provin din
+  <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatria</a> (Seshat Global History Databank,
+  v0.2.0), un set de date deschis al formațiunilor politice ale lumii începând din 3400 î.Hr. Este
+  întocmit după atlase istorice și este aproximativ, mai ales înainte de mileniul I î.Hr.
+</p>
+<p>
+  Pentru ținuturile Bibliei îl corectăm acolo unde sursele nu concordă cu el: deocamdată
+  {{overrides}} de corecturi, fiecare cu motivul și sursele sale. Regatul Iuda rămâne pe hartă până
+  în 586 î.Hr., Israelul începe cu domnia lui David în 1010 î.Hr., nu în 1000 î.Hr., Filistia este
+  restrânsă la câmpia de coastă a celor cinci orașe ale sale, iar o dinastie se încheie atunci când
+  își pierde ultimul centru de putere. Levantul și Egiptul, Mesopotamia, Anatolia și Iranul, lumea
+  greco-romană a Noului Testament și Orientul Apropiat până în 1300 d.Hr. au fost verificate an de
+  an, printre altele declinul și redresarea Asiriei în secolul al VIII-lea î.Hr., Babilonul sub
+  Merodac-Baladan, Pergamul lăsat Romei în 133 î.Hr., Macedonia după Pidna și Tracia anexată în 46
+  d.Hr. Fiecare set de corecturi este testat mai întâi pe contururi, apoi verificat din nou cu
+  sursele într-o a doua trecere IA, separată.
+</p>
+<p>
+  Un regat care plătea tribut unui imperiu sau domnea ca client al acestuia este desenat într-o
+  nuanță mai deschisă a culorii imperiului, cu „sub Asiria” sau „sub Roma” sub nume: Regatul Iuda
+  sub Asiria, Egipt și Babilon; Israelul și Filistia sub Asiria; Iudeea hasmoneană și irodiană sub
+  Roma (și, timp de trei ani, sub Parția); nabateenii și Commagene sub Roma. Aceste {{vassals}} de
+  perioade au fost schițate după inscripțiile regale asiriene, Cronicile babiloniene, Biblia, Iosif
+  Flavius și istorii moderne și verificate din nou într-o trecere de revizuire separată; un an
+  cunoscut doar cu aproximație de un deceniu este marcat cu „cca” în date. După căderea Samariei în
+  722 î.Hr., țara Israelului este desenată ca provincia asiriană care devenise.
+</p>
+
+<h2>Persoane</h2>
+<p>
+  Cele {{people}} de persoane ale Bibliei și legăturile lor de familie provin din TIPNR de la STEP
+  Bible (Tyndale House, Cambridge). Nu am luat legăturile pe încredere:
+</p>
+<ul>
+  <li>
+    legăturile de familie ale celor 1.200 de persoane pe care textul le numește cel mai des, precum
+    și genealogiile din 1 Cronici au fost citite în paralel cu versetele; au fost eliminate 153 de
+    legături pe care textul nu le afirmă — frații lui Isus ca fii ai lui Iosif și ai Mariei, Izabela
+    ca mamă a lui Ahazia —, iar legăturile lipsă din genealogia lui Isus au fost adăugate din text;
+  </li>
+  <li>
+    toate cele 1.136 de legături dintre o persoană și un loc în care aceasta are un rol central sau
+    secundar au fost citite verset cu verset; 344 au fost eliminate (Moise „în Canaan”, Avraam „în
+    Sodoma”, locurile unui fiu atribuite tatălui său), iar 94 au primit un verset mai potrivit;
+  </li>
+  <li>
+    persoanele cu același nume sunt deosebite așa cum le deosebește textul: „Ioan Botezătorul”,
+    „Ioan, fiul lui Zebedei”, „Ahazia, regele lui Iuda”.
+  </li>
+</ul>
+
+<h2 id="review">Evenimente, trasee și articole</h2>
+<p>
+  Cele {{events}} de evenimente, {{tours}} de trasee și {{articles}} de articole sunt redactate cu
+  ajutorul IA sub îndrumarea autorului și apoi verificate, în treceri de revizuire separate, cu
+  sursele: textul biblic pentru ceea ce spune, autorii antici, cronicile și inscripțiile pentru date
+  și literatura științifică pentru situri. Fiecare articol, răspuns și traseu își enumeră sursele,
+  pentru text în ansamblu, nu propoziție cu propoziție. Citatele provin numai din Bibliile aflate în
+  domeniul public ale fiecărei limbi, enumerate pe pagina <a href="sources.html">surselor</a>.
+  Niciun traseu nu a trecut neschimbat de prima revizuire; fiecare a fost corectat și verificat din
+  nou. Ultima trecere completă, încheiată la 17 octombrie 2026, a recitit toate cele 746 de articole
+  în raport cu sursele lor, aproximativ 210 dintre ele de două ori, și a făcut 1.088 de corecturi,
+  fiecare transpusă în cele 11 limbi pe care le avea atunci site-ul; erori propriu-zise au fost
+  găsite în 157 de articole. Cele cinci limbi adăugate la 24 octombrie 2026 (suedeza, norvegiana,
+  daneza, tagaloga și sârba) au fost traduse din textele corectate; fiecare dintre textele lor a
+  fost apoi citit în paralel cu engleza de un recenzent IA separat, iar fiecare citat a fost
+  verificat cu Biblia limbii respective. Aceste revizuiri sunt făcute de IA pe baza surselor, nu de
+  cercetători; un articol pe care l-a citit un istoric poartă numele istoricului.
+</p>
+<p>
+  Distanța până la o oprire este dată în linie dreaptă. Din 312 î.Hr., când încep drumurile romane,
+  alături este dat și drumul pe căile Itiner-e: cel mai scurt prin rețeaua lor, cu excepția cazului
+  în care depășește de două ori și jumătate linia dreaptă; o porțiune parcursă pe mare nu se
+  socotește pe drum. Timpul de mers pe jos este calculat la 30 km pe zi, estimarea obișnuită a unei
+  zile de drum în Antichitate, fără a ține seama de vreme, popasuri sau poveri. Pe mare nu se
+  presupune nicio viteză: o călătorie își dă zilele doar acolo unde le dă textul (Fapte 20:6, „în
+  cinci zile”), cu acel verset, și la fel de aproximativ cum le dă textul. Acolo unde textul
+  străbate regiuni întregi fără a descrie drumul (Fapte 20:1–3, de la Efes prin Macedonia și Grecia
+  până la Filipi), porțiunea o spune și nu dă niciun timp. Relieful unei porțiuni este citit din
+  datele de altitudine Copernicus (prin Mapterhorn) de-a lungul aceluiași drum sau, fără drum, de-a
+  lungul liniei drepte; legenda de sub profil spune care dintre ele.
+</p>
+
+<p>
+  Bătăliile și asediile ({{battles}}) sunt cele pe care le relatează Biblia, plus câteva din afara
+  ei care au hotărât soarta lui Israel. Fiecare se află în locul în care s-a dat și apare pe hartă
+  în anii ei. Cele biblice sunt datate așa cum traseele datează aceleași istorisiri; celelalte nu au
+  verset, ci o sursă antică sau științifică. O a doua trecere IA, separată, a verificat ciorna cu
+  textul sinodal rus și cu King James Version: din 58 de înregistrări, 16 au fost corectate, iar una
+  a fost eliminată, deoarece harta nu are un punct pentru situl ei.
+</p>
+
+<p>
+  Evenimentele și bătăliile din vremea Macabeilor citează 1–2 Macabei, pe care Biblia sinodală rusă
+  le conține, iar canonul protestant nu: fiecare astfel de citare este marcată „deuterocanonică”,
+  iar linkul ei deschide un text care include cartea.
+</p>
+
+<h2 id="chronology">Date și cronologie</h2>
+<p>
+  Harta arată fiecare istorisire într-un anumit an, așa că datele ei urmează o singură convenție;
+  acolo unde cercetătorii nu sunt de acord, anul este un reper pentru hartă, nu un verdict.
+</p>
+<ul>
+  <li>
+    <b>Regii lui Israel și ai lui Iuda</b> urmează cronologia lui E. R. Thiele (<i
+      >The Mysterious Numbers of the Hebrew Kings</i
+    >): Solomon începe Templul cca 966 î.Hr., iar regatul se împarte cca 931 î.Hr. Alte
+    reconstituiri diferă cu câțiva ani; W. F. Albright, de exemplu, a plasat împărțirea în 922 î.Hr.
+  </li>
+  <li>
+    <b>Datele mai vechi</b> sunt numărate înapoi de la acestea așa cum le numără textul: Exodul în
+    1446 î.Hr., cu 480 de ani înainte de Templu (1 Regi 6:1), cucerirea în 1406 î.Hr. și domnia lui
+    David din 1010 î.Hr. Ele sunt convenții: mulți cercetători plasează Exodul în secolul al
+    XIII-lea î.Hr. sau se îndoiesc că s-a petrecut așa cum este relatat, iar răspunsul la întrebarea
+    <a href="../../ro/q/when-was-the-exodus/"><i>Când a fost Exodul?</i></a> prezintă dezbaterea.
+    Patriarhii sunt plasați în ani convenționali.
+  </li>
+  <li>
+    <b>Evenimentele din afara Bibliei</b> sunt datate după documentele care le fixează (Cronica
+    babiloniană, analele asiriene, Iosif Flavius, o inscripție datată), fiecare cu sursele sale, în
+    cele mai multe cazuri două sau mai multe; căderea Ierusalimului este arătată la cca 586 î.Hr.
+    (se susține și 587 î.Hr.).
+  </li>
+  <li>
+    <b>Noul Testament:</b> nașterea lui Isus cca 5 î.Hr., răstignirea cca 30 d.Hr. (se susține și 33
+    d.Hr.), iar călătoriile lui Pavel în anii dați de obicei.
+  </li>
+  <li>
+    <b>„cca”</b> marchează un an cunoscut doar aproximativ, cum este fiecare an dinainte de mileniul
+    I î.Hr.
+  </li>
+</ul>
+
+<h2>Verificări la fiecare build</h2>
+<p>Nimic nu este publicat dacă nu trec toate verificările:</p>
+<ul>
+  <li>
+    fiecare sursă are o licență permisă (fără date share-alike și fără date cu utilizare
+    necomercială);
+  </li>
+  <li>fiecare trimitere indică o carte, un capitol și un verset reale;</li>
+  <li>fiecare nume rusesc se găsește în versetul indicat pentru el;</li>
+  <li>
+    fiecare oprire a unui traseu este numită în pasajul ei sau excepția este documentată, cu motivul
+    ei;
+  </li>
+  <li>fiecare corectură a granițelor și fiecare dată a unui oraș are o sursă;</li>
+  <li>schemele conținutului sunt stricte: un câmp necunoscut sau scris greșit oprește build-ul.</li>
+</ul>
+
+<h2>Ce este nesigur</h2>
+<ul>
+  <li>
+    Datele dinainte de mileniul I î.Hr. sunt aproximative, iar unele sunt disputate; harta le
+    marchează cu „cca”.
+  </li>
+  <li>Ponderile OpenBible dintre siturile candidate sunt o estimare, nu un consens științific.</li>
+  <li>
+    Granițele antice sunt desenate după atlase moderne și simplifică o realitate în care controlul
+    se schimba mereu.
+  </li>
+  <li>
+    Multe locuri minore nu au încă ani înregistrați; ele sunt desenate ca existând tot timpul (sau,
+    pentru locurile numite doar în Noul Testament, începând din vremea Noului Testament).
+  </li>
+</ul>
+
+<h2 id="cite">Cum se citează</h2>
+<p>
+  History Globe este corectat pe parcurs, așa că o citare indică data versiunii datelor pe care le-a
+  folosit. Fiecare pagină a documentației dă această dată în subsol („Date la”), iar
+  <code>index.json</code> din API o dă ca <code>built_at</code>.
+</p>
+<p>Site-ul:</p>
+<pre><code class="cite">Arnaut, Vadym. History Globe: an atlas of biblical history. {{site}}/
+(data of {{built}}; accessed …).</code></pre>
+<p>O pagină, după titlul și adresa ei:</p>
+<pre><code class="cite">“Jerusalem.” In Vadym Arnaut, History Globe. {{site}}/en/place/jerusalem/
+(data of {{built}}; accessed …).</code></pre>
+<p>Datele, după data instantaneului indicată în fișa setului de date:</p>
+<pre><code class="cite">Arnaut, Vadym. History Globe dataset. Hugging Face, snapshot of ….
+https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
+
+<h2 id="report">Corecturi</h2>
+<p>
+  Ați găsit o greșeală, o sursă lipsă sau o lectură mai bună? Scrieți la
+  <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>; nu este nevoie de
+  cont. Numiți pagina și ce este greșit, cu o sursă dacă aveți una. Fiecare semnalare este citită,
+  iar o eroare confirmată este corectată.
+</p>
+<p>
+  Cu un cont GitHub puteți folosi și linkul <i>Ai găsit o greșeală?</i> de pe fișa fiecărui loc,
+  care deschide un issue în depozitul public cu locul deja completat, sau puteți deschide unul
+  direct:
+  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+    >github.com/ArVaViT/history-globe/issues</a
+  >.
+</p>

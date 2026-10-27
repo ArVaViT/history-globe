@@ -1,0 +1,339 @@
+---
+title: Încorporare
+description: Puneți globul pe propriul site cu un singur rând — harta unui capitol, a unui loc, a unui an sau a unui traseu — și controlați-l din pagina dumneavoastră.
+---
+
+<p class="lede">
+  Globul rulează în orice pagină ca <code>iframe</code>. Un singur rând arată harta unui capitol
+  lângă pasajul din pagina dumneavoastră; câteva mesaje le sincronizează pe cele două.
+</p>
+
+<h2>Pornire rapidă</h2>
+<pre><code>&lt;iframe
+  src="{{site}}/embed/v1?ref=Acts.16&amp;locale=ro"
+  title="Harta: Fapte 16"
+  style="width: 100%; height: 480px; border: 0; border-radius: 12px"
+  allow="fullscreen"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</code></pre>
+<ul>
+  <li>Harta umple cadrul și se deschide pe locurile din Fapte 16, în anul evenimentelor lui.</li>
+  <li>
+    <b>Sus:</b> capitolul. Selectați-l ca să-i vedeți locurile în ordinea în care le numește textul;
+    selectați un loc ca să-i deschideți fișa.
+  </li>
+  <li><b>Jos:</b> anul. Selectați-l ca să deschideți cursorul de timp.</li>
+  <li>
+    Un link deschide aceeași vedere în globul complet, într-o filă nouă. Mențiunile surselor sunt
+    afișate chiar pe hartă, așa cum cer licențele datelor.
+  </li>
+  <li>Cadrul funcționează până la lățimea unui telefon; o înălțime de 480 px este suficientă.</li>
+</ul>
+
+<h2>Un capitol sau un pasaj</h2>
+<p>
+  <code>ref</code> primește o trimitere OSIS, cu abrevierile englezești ale cărților și numerotarea
+  englezească a versetelor:
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Valoare</th>
+        <th>Arată</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Acts.16</code></td>
+        <td>un capitol</td>
+      </tr>
+      <tr>
+        <td><code>Gen.12-Gen.13</code></td>
+        <td>până la trei capitole</td>
+      </tr>
+      <tr>
+        <td><code>Acts.16.11-Acts.16.15</code></td>
+        <td>un pasaj</td>
+      </tr>
+      <tr>
+        <td><code>Ruth</code></td>
+        <td>o carte întreagă</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Harta trece la anul pasajului: anul înregistrat al capitolelor sale (capitolele din
+  {{chapter_books}} de cărți sunt datate) sau, altfel, anul traseului care îl acoperă; o carte
+  întreagă ia anul traseului cu cele mai multe opriri în ea. Un pasaj fără niciuna dintre acestea
+  păstrează anul curent al hărții.
+</p>
+
+<h2>Parametri</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Parametru</th>
+        <th>Exemplu</th>
+        <th>Semnificație</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ref</code></td>
+        <td><code>Acts.16</code></td>
+        <td>capitol, pasaj sau carte (mai sus)</td>
+      </tr>
+      <tr>
+        <td><code>year</code></td>
+        <td><code>-999</code></td>
+        <td>
+          anul, în numerotare astronomică: 1 î.Hr. este <code>0</code>, 1000 î.Hr. este
+          <code>-999</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>place</code></td>
+        <td><code>af2161c</code></td>
+        <td>deschide un loc (aici, Capernaum); ID-urile sunt cele ale OpenBible</td>
+      </tr>
+      <tr>
+        <td><code>tour</code></td>
+        <td><code>paul-1</code></td>
+        <td>pornește un traseu ghidat</td>
+      </tr>
+      <tr>
+        <td><code>stop</code></td>
+        <td><code>3</code></td>
+        <td>cu <code>tour</code>: îl deschide la acea oprire</td>
+      </tr>
+      <tr>
+        <td><code>lesson</code></td>
+        <td><code>a15257a~30.a112427~30</code></td>
+        <td>
+          propria lecție, cu <code>tour=lesson</code>: ID-urile locurilor în ordine, fiecare cu anul
+          în care să fie arătat (<code>~-585</code> pentru 586 î.Hr.: ca la <code>year</code>, 1
+          î.Hr. este 0); fiecare oprire primește versetul locului cel mai apropiat de acel an,
+          distanța, timpul de mers pe jos și relieful. Butonul „Adaugă la o lecție” de pe fișa unui
+          loc construiește aceleași linkuri
+        </td>
+      </tr>
+      <tr>
+        <td><code>title</code></td>
+        <td><code>Paul%20in%20Galatia</code></td>
+        <td>
+          cu <code>lesson</code>: numele lecției, de până la 80 de caractere, în capul traseului ei
+          și al foii ei tipărite
+        </td>
+      </tr>
+      <tr>
+        <td><code>locale</code></td>
+        <td><code>en</code></td>
+        <td>
+          limba: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
+          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
+          <code>pl</code>, <code>cs</code> sau <code>ro</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>camera</code></td>
+        <td><code>35.2,31.8,7,30,0</code></td>
+        <td>longitudine, latitudine, zoom, înclinare, orientare</td>
+      </tr>
+      <tr>
+        <td><code>hide</code></td>
+        <td><code>relief,ancient</code></td>
+        <td>
+          straturile de ascuns: <code>borders</code>, <code>places</code>, <code>relief</code>,
+          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="note">
+  Cel mai simplu mod de a construi o vedere este să o pregătiți în globul complet și să copiați
+  adresa URL: aceiași parametri funcționează după <code>/embed/v1</code>.
+</p>
+
+<h2>Mesaje</h2>
+<p>
+  Globul și pagina dumneavoastră comunică prin <code>postMessage</code>. Fiecare mesaj este un
+  obiect cu <code>type</code> și <code>v: 1</code>. Globul trimite doar ce se întâmplă pe hartă și
+  niciodată ceva care să-l identifice pe cititor; acceptă mesaje doar de la pagina care conține
+  cadrul.
+</p>
+<h3>De la glob</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Tip</th>
+        <th>Conținut</th>
+        <th>Când</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:ready</code></td>
+        <td><code>{ view }</code></td>
+        <td>harta a fost desenată</td>
+      </tr>
+      <tr>
+        <td><code>hg:view-changed</code></td>
+        <td><code>{ view }</code></td>
+        <td>anul, locul, traseul sau camera s-au schimbat și s-au stabilizat</td>
+      </tr>
+      <tr>
+        <td><code>hg:verse-clicked</code></td>
+        <td><code>{ osis }</code></td>
+        <td>cititorul a dat clic pe un verset, de exemplu <code>"Acts.16.12"</code></td>
+      </tr>
+      <tr>
+        <td><code>hg:error</code></td>
+        <td><code>{ code, message }</code></td>
+        <td>harta sau datele ei nu s-au putut încărca</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <code>view</code> conține <code>year</code>, <code>locale</code> și <code>layers</code> și, când
+  sunt setate, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> și
+  <code>camera</code>.
+</p>
+<h3>Către glob</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Tip</th>
+        <th>Conținut</th>
+        <th>Efect</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:set-view</code></td>
+        <td><code>{ view }</code></td>
+        <td>
+          setează anul, capitolul (<code>ref</code>), locul, straturile sau camera; cu
+          <code>tour</code> (și <code>stop</code>), traseul pornește, iar celelalte câmpuri sunt
+          ignorate; limba se schimbă doar cu <code>hg:set-locale</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:set-locale</code></td>
+        <td><code>{ locale }</code></td>
+        <td>schimbă limba</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Exemplu: harta urmează cititorul dumneavoastră</h2>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+
+// Când cititorul dumneavoastră deschide un capitol, arătați-l pe hartă.
+function showChapter(osis) {
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+}
+
+// Când se dă clic pe un verset pe hartă, deschideți-l în cititorul dumneavoastră.
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
+});</code></pre>
+
+<h2 id="places">Locuri în orice text</h2>
+<p>
+  Încă un rând leagă de glob locurile biblice pe care le numește propriul dumneavoastră text (un
+  articol, o predică, un plan de lectură). Indicați un nume cu mouse-ul sau atingeți-l pe telefon și
+  o fișă arată ce este locul, unde se află astăzi, câte versete îl numesc și unde se găsește pe
+  hartă; fișa duce la glob.
+</p>
+<figure class="sample">
+  <div class="hgp-demo">
+    <p>
+      Pavel a navigat din Cezareea în Cipru, a predicat în Efes și în Corint și a scris celor din
+      Roma. Cu mult înainte, Avraam venise la Sihem și la Hebron; Isus s-a născut în Betleem și a
+      crescut în Nazaret, iar Ioan și-a văzut viziunile pe Patmos.
+    </p>
+  </div>
+  <figcaption>
+    Un exemplu în direct: aceste nume au fost legate de scriptul de pe această pagină.
+  </figcaption>
+</figure>
+<pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<p>
+  Adresa conține o versiune, iar hash-ul de integritate îi fixează conținutul exact: browserul
+  rulează scriptul doar dacă este exact acel fișier. O versiune nouă primește o adresă nouă; cele
+  vechi rămân așa cum sunt.
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Atribut</th>
+        <th>Ce face</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>data-scope</code></td>
+        <td>unde să caute, ca selector CSS; implicit, toată pagina</td>
+      </tr>
+      <tr>
+        <td><code>data-locale</code></td>
+        <td>
+          limba textului, una dintre limbile site-ului: <code>cs</code>, <code>de</code>,
+          <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
+          <code>pl</code>, <code>pt</code>, <code>ro</code>, <code>ru</code>, <code>uk</code>;
+          implicit, atributul <code>lang</code> al paginii; orice altă limbă revine la engleză
+        </td>
+      </tr>
+      <tr>
+        <td><code>data-every</code></td>
+        <td>leagă fiecare mențiune, nu doar prima a fiecărui loc</td>
+      </tr>
+      <tr>
+        <td><code>data-theme</code></td>
+        <td>
+          <code>light</code> sau <code>dark</code> pentru fișă; implicit, urmează sistemul
+          cititorului
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Sunt legate doar numele care indică un singur loc. Un nume comun pentru două locuri (Antiohia, cea
+  din Siria și cea din Pisidia), pentru un loc și o persoană (Iuda) sau pentru un loc și un cuvânt
+  obișnuit rămâne text simplu, la fel ca un nume pe care versetele Bibliei înseși îl folosesc mai
+  ales pentru altceva („Cades” acolo este Cades-Barnea, nu Cadesul din baza de date). Numele unui
+  loc care este și prenume (Jordan, Sharon) este lăsat neatins lângă un alt cuvânt cu majusculă:
+  Jordan Smith este o persoană, nu râul. În rusă, ucraineană, poloneză și cehă, numele sunt găsite
+  și în formele lor flexionate („в Египте”, „w Jerozolimie”, „v Jeruzalémě”), iar numele germane și
+  la genitiv („Jerusalems”). Linkurile, codul, câmpurile de formular, butoanele și titlurile sunt
+  lăsate neatinse.
+</p>
+<p class="note">
+  Scriptul nu are dependențe și nu setează cookie-uri. Citește de pe glob un singur fișier de nume
+  (aproximativ 20–35 KB transferați, în funcție de limbă, plus 7 KB de script), fără adresa paginii
+  dumneavoastră ca referrer, și modifică doar numele pe care le leagă. Funcționează sub o politică
+  Content Security Policy strictă care permite adresa globului în <code>script-src</code> și
+  <code>connect-src</code>. Pentru textul pe care pagina îl adaugă mai târziu, apelați
+  <code>HistoryGlobePlaces.scan(element)</code> după ce textul a fost afișat: scriptul împarte
+  nodurile de text, așa că într-o pagină React sau Vue rulați-l pe conținut pe care framework-ul nu
+  îl mai redesenează.
+</p>
+<script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
+
+<h2>Stabilitate</h2>
+<p>
+  <code>/embed/v1</code> este un contract: în cadrul v1, parametrii și mesajele doar se adaugă, nu
+  sunt niciodată schimbate sau eliminate. O schimbare incompatibilă va apărea ca
+  <code>/embed/v2</code>, iar v1 va continua să funcționeze.
+</p>

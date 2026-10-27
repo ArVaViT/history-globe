@@ -19,6 +19,7 @@ const PACKAGES = [
   "scheduler",
   "@fontsource-variable/golos-text",
   "@fontsource-variable/literata",
+  "@fontsource-variable/onest",
 ];
 
 function dirOf(name: string): string {

@@ -22,6 +22,11 @@ title:
   tl: "Si Ezechias at si Isaias"
   da: "Hizkija og Esajas"
   sr: "Језекија и Исаија"
+  hu: "Ezékiás és Ézsaiás"
+  fi: "Hiskia ja Jesaja"
+  vi: "Ê-xê-chia và Ê-sai"
+  ro: "Ezechia și Isaia"
+  bg: "Езекия и Исаия"
 year: "701 BC"
 # Where the story happens, told of several people: no time on foot.
 walked: false
@@ -47,6 +52,11 @@ stops:
       tl: "Inaalis ni Ezechias ang mga mataas na dako at pinagputolputol ang ahas na tanso na tinatawag na Nehustan; nagtitiwala siya sa Panginoon."
       da: "Hizkija fjerner offerhøjene og knuser kobberslangen Nehustan; han stoler på Herren."
       sr: "Језекија уклања висине и ломи бронзану змију Неустан; уздаје се у Господа."
+      hu: "Ezékiás eltávolítja a magaslatokat, és összetöri a rézkígyót, a Nehustánt; az Úrban bízik."
+      fi: "Hiskia poistaa uhrikukkulat ja murskaa vaskikärmeen Nehustanin; hän luottaa Herraan."
+      vi: "Ê-xê-chia phá hủy các nơi cao và đập bể con rắn đồng Nê-hu-tan; người tin cậy Đức Giê-hô-va."
+      ro: "Ezechia îndepărtează înălțimile și sfărâmă șarpele de aramă Nehuștan; el se încrede în Domnul."
+      bg: "Езекия премахва високите места и строшава медната змия Нехущан; той се уповава на Господа."
   - place: a041bb3 # Samaria
     ref: 2Kgs.18.9-2Kgs.18.12
     year: "722 BC"
@@ -67,6 +77,11 @@ stops:
       tl: "Sa ikaanim na taon ni Ezechias, nasasakop ng hari sa Asiria ang Samaria at dinadalang bihag ang Israel."
       da: "I Hizkijas sjette år indtages Samaria af Assyriens konge, og Israel føres bort."
       sr: "Шесте године Језекијине цар асирски осваја Самарију и Израиљ бива одведен."
+      hu: "Ezékiás hatodik évében Asszíria királya elfoglalja Szamáriát, és Izráelt elhurcolják."
+      fi: "Hiskian kuudentena vuonna Assyrian kuningas valtaa Samarian, ja Israel viedään pois."
+      vi: "Vào năm thứ sáu đời Ê-xê-chia, Sa-ma-ri bị vua A-si-ri chiếm lấy và Y-sơ-ra-ên bị đày đi."
+      ro: "În al șaselea an al lui Ezechia, Samaria este cucerită de regele Asiriei, iar Israel este dus în robie."
+      bg: "В шестата година на Езекия Самария е превзета от асирийския цар и Израил е отведен в плен."
   - place: a3cc590 # Lachish
     ref: 2Kgs.18.13-2Kgs.18.16
     note:
@@ -84,8 +99,13 @@ stops:
       sv: "Sanherib intar Judas befästa städer; Hiskia sänder bud till honom i Lakish: ”Jag har försyndat mig”, och betalar den tribut som läggs på honom."
       nb: "Sankerib inntar Judas befestede byer; Hiskia sender bud til ham i Lakisj: «Jeg har syndet», og betaler den skatt som blir lagt på ham."
       tl: "Sinasakop ni Sennacherib ang mga bayang may kuta ng Juda; nagsusugo si Ezechias sa kaniya sa Lachis: “Ako'y nagkasala”, at binabayaran ang buwis na ipinataw sa kaniya."
-      da: "Sankerib indtager Judas befæstede byer; Hizkija sender bud til ham i Lakisj: »Jeg har syndet«, og betaler den told, der pålægges ham."
+      da: "Sankerib indtager Judas befæstede byer; Hizkija sender bud til ham i Lakisj: »Jeg har syndet«, og betaler den tribut, der pålægges ham."
       sr: "Сенахирим осваја утврђене градове Јудине; Језекија шаље к њему у Лахис поруку: „Згрешио сам“, и плаћа наметнути данак."
+      hu: "Szanhérib elfoglalja Júda erődített városait; Ezékiás követet küld hozzá Lákisba ezzel az üzenettel: „Vétkeztem”, és megfizeti a rárótt adót."
+      fi: "Sanherib valtaa Juudan varustetut kaupungit; Hiskia lähettää hänelle Lakisiin sanan: ”Minä olen rikkonut”, ja maksaa hänelle määrätyn veron."
+      vi: "San-chê-ríp chiếm các thành có đồn lũy của Giu-đa; Ê-xê-chia sai sứ đến người tại La-ki, nói: “Tôi phạm lỗi”, và nộp số cống mà người đã bắt phải trả."
+      ro: "Senaherib ia cetățile întărite ale lui Iuda; Ezechia trimite la el la Lachiș: „greșit-am”, și plătește tributul pus asupra lui."
+      bg: "Сенахирим превзема укрепените градове на Юда; Езекия изпраща да му кажат в Лахис: „Съгреших“, и плаща наложения му данък."
   - place: a15257a # Jerusalem
     ref: 2Kgs.18.17-2Kgs.19.7
     note:
@@ -105,6 +125,11 @@ stops:
       tl: "Sa Mataas na Tangke, tinutuya ng Rabsaces si Ezechias at ang Panginoon sa harap ng bayan sa pader; sumasagot si Isaias: “Huwag kang matakot sa mga salita na iyong narinig.”"
       da: "Ved den øvre dam håner Rabsjake Hizkija og Herren for folket på muren; Esajas svarer: »Frygt ikke for de Ord, som du hørte«."
       sr: "Код горње баре Равсак се руга Језекији и Господу пред народом на зиду; Исаија одговара: „Не плаши се од речи које си чуо.“"
+      hu: "A Felső-tónál Rabsaké gyalázza Ezékiást és az Urat a falon álló nép előtt; Ézsaiás így felel: „Ne félj a beszédektől, a melyeket hallottál.”"
+      fi: "Ylälammikolla Rabsake pilkkaa Hiskiaa ja Herraa muurilla olevan kansan kuullen; Jesaja vastaa: ”Älä pelkää niitä sanoja, jotka olet kuullut…”"
+      vi: "Tại ao trên, Ráp-sa-kê nhạo báng Ê-xê-chia và Đức Giê-hô-va trước mặt dân sự trên vách thành; Ê-sai đáp: “Chớ sợ hãi những lời các ngươi đã nghe.”"
+      ro: "La iazul de sus, Rabșache îi batjocorește pe Ezechia și pe Domnul înaintea poporului de pe zid; Isaia răspunde: „să nu te sperii de cuvintele, care le-ai auzit”."
+      bg: "При горния водоем Рабсак се подиграва на Езекия и на Господа пред народа на стената; Исаия отговаря: „Не бой се от думите които си чул“."
   - place: a97b595 # Libnah
     ref: 2Kgs.19.8
     note:
@@ -124,6 +149,11 @@ stops:
       tl: "Natatagpuan ng Rabsaces ang hari sa Asiria na nakikipagdigma laban sa Libna."
       da: "Rabsjake finder Assyriens konge i krig mod Libna."
       sr: "Равсак налази цара асирског где ратује против Ливне."
+      hu: "Rabsaké úgy találja, hogy Asszíria királya Libna ellen hadakozik."
+      fi: "Rabsake tapaa Assyrian kuninkaan sotimassa Libnaa vastaan."
+      vi: "Ráp-sa-kê gặp vua A-si-ri đang đánh Líp-na."
+      ro: "Rabșache îl găsește pe regele Asiriei luptând împotriva Libnei."
+      bg: "Рабсак намира асирийския цар да воюва против Ливна."
   - place: a15257a # Jerusalem
     ref: 2Kgs.19.14-2Kgs.19.34
     note:
@@ -143,6 +173,11 @@ stops:
       tl: "Inilalatag ni Ezechias ang sulat sa harap ng Panginoon at nananalangin; ipinadadala sa kaniya ni Isaias ang sagot: “aking ipagsasanggalang ang bayang ito upang iligtas.”"
       da: "Hizkija breder brevet ud for Herren og beder; Esajas sender ham svaret: »Thi jeg vil beskærme denne Stad«."
       sr: "Језекија развија писмо пред Господом и моли се; Исаија му шаље одговор: „Јер ћу бранити тај град.“"
+      hu: "Ezékiás kiteríti a levelet az Úr előtt, és imádkozik; Ézsaiás elküldi neki a választ: „megoltalmazom e várost”."
+      fi: "Hiskia levittää kirjeen Herran eteen ja rukoilee; Jesaja lähettää hänelle vastauksen: ”minä varjelen tämän kaupungin”."
+      vi: "Ê-xê-chia trải bức thư ra trước mặt Đức Giê-hô-va và cầu nguyện; Ê-sai gởi cho vua lời đáp: “ta sẽ binh vực thành này”."
+      ro: "Ezechia întinde scrisoarea înaintea Domnului și se roagă; Isaia îi trimite răspunsul: „voiu apărà cetatea aceasta”."
+      bg: "Езекия разгръща писмото пред Господа и се моли; Исаия му изпраща отговора: „ще защитя този град“."
   - place: a70fd5d # Nineveh
     ref: 2Kgs.19.35-2Kgs.19.37
     note:
@@ -162,3 +197,8 @@ stops:
       tl: "Pagkatapos na saktan ng anghel ng Panginoon ang kampo ng mga Asirio, umuuwi si Sennacherib at tumatahan sa Ninive; pagkaraan, pinapatay siya ng kaniyang mga anak habang sumasamba sa bahay ni Nisroch na kaniyang dios."
       da: "Efter at Herrens engel har slået den assyriske lejr, vender Sankerib hjem og bor i Nineve; senere dræber hans sønner ham, mens han tilbeder i sin gud Nisroks hus."
       sr: "Пошто анђео Господњи удари у логор асирски, Сенахирим се враћа кући и пребива у Ниневији; касније га синови његови убијају док се клања у дому Нисрока, бога свог."
+      hu: "Miután az Úr angyala megveri az asszír tábort, Szanhérib hazatér, és Ninivében lakik; később fiai megölik, amikor Nisrok, az ő istene templomában imádkozik."
+      fi: "Kun Herran enkeli on lyönyt Assyrian leirin, Sanherib palaa kotiin ja asuu Niinivessä; myöhemmin hänen poikansa surmaavat hänet, kun hän rukoilee jumalansa Nisrokin huoneessa."
+      vi: "Sau khi thiên sứ của Đức Giê-hô-va đánh trại quân A-si-ri, San-chê-ríp trở về và ở tại Ni-ni-ve; về sau các con trai người giết người khi người đang thờ lạy trong chùa Nít-róc, thần của mình."
+      ro: "După ce îngerul Domnului lovește tabăra asiriană, Senaherib se întoarce acasă și locuiește la Ninive; mai târziu, fiii lui îl ucid pe când se închină în casa lui Nisroc, dumnezeul său."
+      bg: "След като ангелът Господен поразява асирийския стан, Сенахирим се връща у дома и живее в Ниневия; по-късно синовете му го убиват, докато се покланя в дома на своя бог Нисрох."

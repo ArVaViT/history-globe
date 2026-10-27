@@ -87,7 +87,8 @@ Base cartography
 Scripture
   The verse texts and quotations in each language come from a public-domain edition,
   from eBible.org's USFM editions or CrossWire's SWORD modules (the .conf of each says
-  DistributionLicense=Public Domain); scripts/bible-text.ts lists them (SOURCES) with
+  DistributionLicense=Public Domain), except Turkish and Swahili, whose editions are
+  openly licensed (below); scripts/bible-text.ts lists them (SOURCES) with
   the repairs made to their digital text (REPAIRS), and scripts/build-verses.ts
   records the sha256 of each file in data/verses/sources.json.
     en  King James Version, 1769 standard text (eBible.org eng-kjv2006); public
@@ -112,8 +113,30 @@ Scripture
     tl  Ang Biblia 1905, Philippine Bible Society (CrossWire TagAngBiblia)
     zh  Chinese Union Version, simplified (eBible.org cmn-cu89s): verse texts only,
         for a language not yet on the site
-  All public domain. Names are read from the Synodal text for Russian and checked
-  against the KJV for English.
+  The same, verse texts only, for the languages not yet on the site (wave 4):
+    hu  Revised Károli Bible, 1908 (CrossWire HunKar)
+    fi  Pyhä Raamattu 1933/1938 (CrossWire FinPR)
+    vi  Kinh Thánh, William Cadman's translation, NT 1923, OT 1925 (eBible.org
+        vie1934)
+    tr  Yorumsuz Türkçe Çeviri (YTC), © 2023–2025 İsmail Serinken and eBible.org,
+        CC BY-ND 4.0 (eBible.org turytc): quoted word for word, never changed
+    sw  Biblia Takatifu, Unlocked Literal Bible (2019), © 2019 Door43 World
+        Missions Community, CC BY-SA 4.0 (eBible.org swhulb): the verses as the
+        cards show them have the edition's notes and editors' marks taken out
+        (REPAIRS)
+  The same for wave 5, from neither eBible.org nor CrossWire:
+    ro  Biblia 1914, Ediția Sfântului Sinod (Bucharest, Tipografia Cărților
+        Bisericești), as Romanian Wikisource transcribes it
+        (https://ro.wikisource.org/wiki/Biblia_1914), each book's page at a pinned
+        revision (scripts/biblia-1914.json); its 1914 spelling kept, its Septuagint
+        numbering placed in the KJV's where certain
+    bg  Tsarigrad Bible (1871 translation by E. Riggs, A. Long, P. Slaveykov,
+        K. Fotinov and H. Kostovich), the 1914 printing typed in modern spelling,
+        from the Internet Archive
+        (https://archive.org/details/bibliya-tsarigradska-viensko-izdanie-1885),
+        pinned by its SHA-256
+  All public domain but the Turkish and Swahili editions. Names are read from the
+  Synodal text for Russian and checked against the KJV for English.
 
 Photos
   Photos of places in the place card come from Wikimedia Commons, each public domain,
@@ -132,7 +155,8 @@ Software
   includes code from mapbox-gl-js v1.13 and earlier (Copyright (c) 2020,
   Mapbox, BSD-3-Clause), glfx.js (MIT) and d3-color. Full license text:
   vendor/maplibre-gl-<version>/LICENSE.txt in the build.
-  React, react-dom, scheduler (MIT) and the Golos Text and Literata fonts (OFL 1.1):
+  React, react-dom, scheduler (MIT) and the Golos Text, Literata and Onest fonts (OFL 1.1;
+  Onest sets Vietnamese, which Golos Text lacks):
   licence texts in apps/web/public/licenses/third-party.txt, written by
   scripts/third-party-licenses.ts (pnpm licenses) and linked from the sources page.
   The MapLibre files are shipped as published (only the source-map pointer at the

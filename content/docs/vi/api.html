@@ -1,0 +1,164 @@
+---
+title: Dữ liệu mở
+description: Các địa điểm, những câu Kinh Thánh nhắc đến chúng, các sự kiện và các hành trình dưới dạng tệp JSON mà ai cũng có thể dùng theo giấy phép CC BY 4.0 — không cần khóa, không cần đăng ký.
+---
+
+<p class="lede">
+  Mọi điều quả địa cầu biết về các địa điểm và các câu Kinh Thánh đều mở: các tệp JSON đơn giản,
+  được tự do dùng trong một trang web hay ứng dụng khác theo giấy phép CC BY 4.0. Không cần khóa,
+  không cần đăng ký, không có giới hạn nào ngoài bộ nhớ đệm thông thường.
+</p>
+
+<h2>Một câu Kinh Thánh nhắc đến những địa điểm nào</h2>
+<p>
+  Mỗi sách của Kinh Thánh một tệp: mỗi câu có nhắc đến một địa điểm, kèm mã định danh của các địa
+  điểm ấy.
+</p>
+<pre><code>GET {{site}}/api/v1/verses/Acts.json
+
+{ "Acts.16.11": ["a6a7150", "a68750d", "a91c509"], "Acts.16.12": ["a69e1b8", "a49e1d0"], … }</code></pre>
+<p>
+  Bản thân các địa điểm, với tên của chúng trong mọi ngôn ngữ của trang web, loại và tọa độ, nằm
+  trong <code>places.json</code>; nối theo <code>id</code>. Trường <code>name_ru</code> của phiên
+  bản đầu tiên vẫn còn đó, giống hệt <code>names.ru</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/places.json
+
+[{ "id": "a49e1d0", "name": "Philippi",
+   "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
+   "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
+   "wikidata": "Q379652", "pleiades": "501482",
+   "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
+
+<h2>Ai và ở đâu trong một chương</h2>
+<p>
+  Mỗi sách một tệp: mỗi chương, kèm các địa điểm và các nhân vật mà chương ấy nhắc đến. Nhân vật
+  được định danh như trong TIPNR của STEPBible; tên của họ và câu Kinh Thánh đầu tiên nhắc đến họ
+  nằm trong <code>people.json</code>.
+</p>
+<pre><code>GET {{site}}/api/v1/chapters/Acts.json
+
+{ "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
+               "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
+
+<h2>Tất cả các tệp</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Tệp</th>
+        <th>Nội dung</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>/api/v1/index.json</code></td>
+        <td>danh sách các tệp và các sách, giấy phép và ghi công nguồn, ngày build</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/places.json</code></td>
+        <td>
+          mọi địa điểm: mã định danh, tên, loại, tọa độ, số câu Kinh Thánh nhắc đến nó, trang của nó
+          (với địa điểm được một câu nào đó nhắc đến); <code>wikidata</code> và
+          <code>pleiades</code>, cùng địa điểm ấy trong các danh mục địa danh đó, nếu đã biết
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/verses/{Book}.json</code></td>
+        <td>
+          một câu → các địa điểm câu ấy nhắc đến, mỗi sách một tệp (<code>Gen</code>,
+          <code>1Kgs</code>, <code>Acts</code>…)
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/chapters/{Book}.json</code></td>
+        <td>một chương → các địa điểm và nhân vật chương ấy nhắc đến, mỗi sách một tệp</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/people.json</code></td>
+        <td>
+          các nhân vật Kinh Thánh nhắc đến: mã TIPNR, tên, tên trong các ngôn ngữ khác nếu trang web
+          có, giới tính, số câu Kinh Thánh nhắc đến họ, câu đầu tiên
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/events.json</code></td>
+        <td>các sự kiện có niên đại, kèm <code>ref</code> khi Kinh Thánh thuật lại sự kiện ấy</td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/battles.json</code></td>
+        <td>
+          các trận đánh và cuộc vây hãm: địa điểm, năm, các bên và kết cục, kèm <code>ref</code> khi
+          Kinh Thánh thuật lại trận đánh ấy
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/questions.json</code></td>
+        <td>
+          những câu hỏi mọi người thường hỏi, được trả lời trong mọi ngôn ngữ của trang web, kèm chế
+          độ xem bản đồ và nguồn
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/tours.json</code></td>
+        <td>
+          các hành trình: các chặng theo thứ tự, mỗi chặng kèm đoạn Kinh Thánh và ghi chú;
+          <code>by: "sea"</code> cho một chặng đi bằng đường biển, và <code>sailed</code> (số ngày
+          và câu Kinh Thánh) khi văn bản cho biết chuyến đi kéo dài bao lâu
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/ancient.json</code></td>
+        <td>
+          điều các tác giả ngoài Kinh Thánh nói về một địa điểm: tác giả, tác phẩm, đoạn văn, liên
+          kết đến một văn bản miễn phí, phần tóm tắt
+        </td>
+      </tr>
+      <tr>
+        <td><code>/api/v1/openapi.json</code></td>
+        <td>
+          tất cả những điều trên được mô tả bằng OpenAPI 3.1, cho các trình sinh mã và tác tử AI
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Quy ước</h2>
+<ul>
+  <li>
+    Tham chiếu theo định dạng OSIS với tên viết tắt tiếng Anh của các sách và cách đánh số của bản
+    King James: <code>Gen.12.6</code>, <code>Acts.16.12-Acts.16.15</code>.
+  </li>
+  <li>Năm theo cách đánh số thiên văn: năm 1 TCN là 0, năm 586 TCN là −585.</li>
+  <li>
+    Một địa điểm được liệt kê hai lần dưới cùng một tên trong dữ liệu nguồn mang
+    <code>"duplicate": true</code>; một địa điểm có vị trí còn tranh cãi mang
+    <code>"disputed": true</code>.
+  </li>
+  <li>
+    Các tệp được build lại với mỗi lần phát hành dữ liệu; <code>index.json</code> ghi ngày của lần
+    phát hành ấy.
+  </li>
+  <li>
+    Phiên bản 1 chỉ mở rộng thêm: các trường và tệp được thêm vào, không bao giờ bị đổi tên hay gỡ
+    bỏ. Hãy bỏ qua một trường mà bạn không biết.
+  </li>
+</ul>
+
+<h2>Giấy phép và ghi công</h2>
+<p>
+  Dữ liệu theo giấy phép <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Hãy
+  dùng nó, thay đổi nó, bán những gì bạn xây dựng từ nó; hãy ghi tên các nguồn ở nơi bạn hiển thị
+  nó, như <code>index.json</code> liệt kê: History Globe của Vadym Arnaut, OpenBible.info cho các
+  địa điểm, nhãn câu Kinh Thánh và tọa độ, và TIPNR của STEPBible cho các nhân vật. Tên tiếng Nga
+  được đọc từ bản dịch Synodal, thuộc phạm vi công cộng. Tên trong các ngôn ngữ khác là của chính
+  History Globe.
+</p>
+<p>
+  Câu trả lời cho các câu hỏi (<code>questions.json</code>) là văn bản riêng của History Globe và
+  theo giấy phép <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>:
+  hãy trích dẫn và liên kết đến chúng, có ghi công; không được thay đổi, dịch hay đưa chúng vào một
+  trang web hoặc bộ dữ liệu khác. Điều này cũng áp dụng cho các bài viết về địa điểm, vốn không có
+  trong API.
+</p>

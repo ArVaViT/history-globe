@@ -23,6 +23,11 @@ title:
   tl: "Ang unang pagbabalik at ang ikalawang Templo"
   da: "Den første hjemkomst og det andet tempel"
   sr: "Први повратак и други храм"
+  hu: "Az első hazatérés és a második templom"
+  fi: "Ensimmäinen paluu ja toinen temppeli"
+  vi: "Cuộc trở về đầu tiên và Đền thờ thứ hai"
+  ro: "Prima întoarcere și al doilea Templu"
+  bg: "Първото завръщане и Вторият храм"
 year: "538 BC"
 # Where the work and the letters were, not a journey: no time on foot.
 walked: false
@@ -47,6 +52,11 @@ stops:
       tl: "Ipinahayag ni Ciro na hari ng Persia: “ibinilin niya sa akin na ipagtayo ko siya ng isang bahay sa Jerusalem”; ibinalik niya ang mga sisidlan ng Templo, at umahon ang mga tapon mula sa Babilonia."
       da: "Kyros, Persiens konge, udråber: »han har befalet mig at bygge sig et Hus i Jerusalem«; han giver templets kar tilbage, og de landflygtige drager op fra Babylon."
       sr: "Кир, цар персијски, оглашава: „Он ми је заповедио да Му сазидам дом у Јерусалиму“; враћа посуђе храма, и прогнаници одлазе из Вавилона."
+      hu: "Círusz, Perzsia királya kiáltványt tesz közzé: „és Ő parancsolta meg nékem, hogy építsek néki házat Jeruzsálemben”; visszaadja a templom edényeit, a számkivetettek pedig felvonulnak Babilonból."
+      fi: "Persian kuningas Kyyros kuuluttaa: ”hän on käskenyt minun rakentaa itsellensä temppelin Jerusalemiin”; hän antaa takaisin temppelin astiat, ja pakkosiirtolaiset nousevat Babylonista."
+      vi: "Si-ru, vua Phe-rơ-sơ, tuyên bố rằng chính Đức Giê-hô-va “có biểu ta xây cất cho Ngài một đền thờ tại Giê-ru-sa-lem”; vua trả lại các khí dụng của đền thờ, và những người bị đày đi lên từ Ba-by-lôn."
+      ro: "Cir, regele Persiei, vestește: „el mi-au poruncit mie, ca să-i zidesc lui casă în Ierusalimul cel din Iudeia”; dă înapoi vasele Templului, iar exilații se suie din Babilon."
+      bg: "Кир, царят на Персия, провъзгласява: „той ми заповеда да му съградя дом в Ерусалим“; той връща съдовете на храма и изгнаниците възлизат от Вавилон."
   - place: ae023a9 # Joppa
     ref: Ezra.3.7
     note:
@@ -66,6 +76,11 @@ stops:
       tl: "Dinala ang sedro mula sa Libano sa dagat patungong Joppa para sa bahay ng Diyos, sa pahintulot ni Ciro."
       da: "Der føres cedertræ fra Libanon til søs til Joppe til Guds hus, med Kyros' tilladelse."
       sr: "Кедар се доноси из Ливана морем у Јопу за дом Божји, уз допуштење Кирово."
+      hu: "Círusz engedélyével cédrust hoznak a Libanonról tengeren Joppéba Isten háza számára."
+      fi: "Setripuuta tuodaan Libanonista meritse Joppeen Jumalan huonetta varten Kyyroksen luvalla."
+      vi: "Gỗ bá hương được chở từ Li-ban bằng đường biển đến Giốp-bê để xây nhà Đức Chúa Trời, với sự cho phép của Si-ru."
+      ro: "Cu îngăduința lui Cir, lemn de cedru este adus din Liban pe mare până la Iafo pentru casa lui Dumnezeu."
+      bg: "С позволението на Кир кедров дървен материал се докарва от Ливан по море до Яфа за Божия дом."
   - place: a15257a # Jerusalem
     ref: Ezra.3.8-Ezra.3.13
     year: "536 BC"
@@ -86,6 +101,11 @@ stops:
       tl: "Inilatag ang pundasyon ng Templo na may mga trumpeta at awit, “ang kaniyang kaawaan ay magpakailan man sa Israel”; ang matatandang nakakita sa unang bahay ay umiyak nang malakas."
       da: "Templets grundvold lægges med trompeter og sang, »at hans Miskundhed er evindelig over Israel«; gamle mænd, som havde set det første hus, græder højt."
       sr: "Темељ храма поставља се уз трубе и песму, „Јер је до века милост Његова над Израиљем“; старци који су видели први дом гласно плачу."
+      hu: "A templom alapját trombitaszóval és énekkel rakják le, „mert jó, mert mindörökké van az ő irgalmassága Izráelen”; a vének, akik látták az első házat, hangosan sírnak."
+      fi: "Temppelin perustus lasketaan torvien ja laulun soidessa, ”sillä hänen armonsa pysyy iankaikkisesti Israelia kohtaan”; vanhat miehet, jotka olivat nähneet ensimmäisen huoneen, itkevät ääneen."
+      vi: "Nền đền thờ được đặt với tiếng kèn và lời ca hát, “lòng thương xót của Ngài đối với Y-sơ-ra-ên còn đến đời đời”; những người già đã thấy đền thờ trước khóc tiếng lớn."
+      ro: "Temelia Templului este pusă cu trâmbițe și cântări, „că în veac este mila lui preste Israil”; bătrânii care văzuseră prima casă plâng cu glas tare."
+      bg: "Основата на храма е положена с тръби и песен, „защото е в век милостта му над Израиля“; старците, които бяха видели първия дом, плачат с висок глас."
   - place: a212ef7 # Ecbatana
     ref: Ezra.4.24-Ezra.6.12
     year: "520 BC"
@@ -106,6 +126,11 @@ stops:
       tl: "Sa ikalawang taon ni Dario, muling nagsimula ang mga tagapagtayo, na tinutulungan ng mga propetang sina Haggeo at Zacharias; nang tanungin ng gobernador, ipinasaliksik ni Dario ang mga talaan, natagpuan sa Achmetta sa Media ang isang balumbon na may kautusan ni Ciro, at ipinag-utos niyang ituloy ang gawain."
       da: "I Darius' andet år begynder bygmestrene påny, med profeterne Haggaj og Zakarias som hjælpere; spurgt af landshøvdingen lader Darius arkiverne gennemsøge, en skriftrulle med Kyros' dekret findes i Ekbatana i Medien, og han befaler, at arbejdet skal fortsætte."
       sr: "Друге године Даријеве градитељи опет почињу, а помажу им пророци Агеј и Захарија; на упит намесника Дарије налаже да се претраже записи, свитак с Кировом наредбом налази се у Екбатани у Мидији, и он наређује да се посао настави."
+      hu: "Dárius második évében az építők újra munkához látnak, Aggeus és Zakariás próféták segítségével; a helytartó kérdésére Dárius átkutattatja a levéltárat, a médiai Ekbatanában megtalálnak egy tekercset Círusz rendeletével, és elrendeli a munka folytatását."
+      fi: "Dareioksen toisena vuonna rakentajat aloittavat uudelleen, ja profeetat Haggai ja Sakarja auttavat heitä; käskynhaltijan kysyttyä Dareios antaa tutkia arkistot, Kyyroksen käskyn sisältävä kääro löytyy Ekbatanasta Meediasta, ja hän määrää työn jatkumaan."
+      vi: "Vào năm thứ hai đời Đa-ri-út, các thợ xây lại bắt đầu công việc, có các tiên tri A-ghê và Xa-cha-ri giúp họ; khi tổng đốc hỏi, Đa-ri-út sai tra xét các văn khố, tìm được tại Ách-ba-tha-na trong xứ Mê-đi một cuốn giấy có chiếu chỉ của Si-ru, và vua truyền cứ tiếp tục công việc."
+      ro: "În al doilea an al lui Darius, ziditorii încep din nou, ajutați de profeții Hagai și Zaharia; întrebat de guvernator, Darius poruncește să se cerceteze arhivele, la Ecbatana, în Media, se găsește un sul cu decretul lui Cir, iar el poruncește ca lucrarea să continue."
+      bg: "Във втората година на Дарий строителите започват отново, подкрепяни от пророците Агей и Захария; по запитване на управителя Дарий заповядва да се претърсят архивите, в Екбатана в Мидия е намерен свитък с указа на Кир и той нарежда работата да продължи."
   - place: a15257a # Jerusalem
     ref: Ezra.6.15-Ezra.6.22
     year: "516 BC"
@@ -126,3 +151,8 @@ stops:
       tl: "Natapos ang bahay sa ikaanim na taon ni Dario at itinalaga nang may kagalakan, at ang mga bumalik mula sa pagkabihag ay nagdiwang ng Paskua."
       da: "Huset færdiggøres i Darius' sjette år og indvies med glæde, og de, der er vendt tilbage fra landflygtigheden, holder påske."
       sr: "Дом је довршен шесте године Даријеве и с радошћу посвећен, а они који су се вратили из ропства држе Пасху."
+      hu: "A házat Dárius hatodik évében fejezik be, és örömmel szentelik fel, a fogságból visszatértek pedig megtartják a páskát."
+      fi: "Huone valmistuu Dareioksen kuudentena vuonna ja vihitään ilolla, ja vankeudesta palanneet viettävät pääsiäistä."
+      vi: "Đền thờ hoàn tất vào năm thứ sáu đời Đa-ri-út và được khánh thành trong sự vui mừng, và những người đã trở về từ cuộc lưu đày giữ lễ Vượt Qua."
+      ro: "Casa este terminată în al șaselea an al lui Darius și sfințită cu bucurie, iar cei întorși din robie țin Paștele."
+      bg: "Домът е завършен в шестата година на Дарий и осветен с радост, а завърналите се от плена празнуват Пасхата."
