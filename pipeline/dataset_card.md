@@ -2,21 +2,26 @@
 license: cc-by-4.0
 language:
   - en
+  - bg
   - cs
   - da
   - de
   - es
+  - fi
   - fr
+  - hu
   - it
   - nb
   - nl
   - pl
   - pt
+  - ro
   - ru
   - sr
   - sv
   - tl
   - uk
+  - vi
 pretty_name: "History Globe: Bible places, people and journeys"
 tags:
   - bible
@@ -112,7 +117,7 @@ Always join on ids, not names: names repeat (two Jerichos are two places). `plac
 | `pleiades`            | the place in Pleiades, as a link                                                                                      |
 | `tipnr`               | STEPBible's TIPNR name for the place, in STEPBible's abbreviations (`Abana@2Ki.5.12`)                                 |
 | `url`                 | the place on historyglobe.app: its own page for the ${pages} places a verse names, the globe for the rest             |
-| `name_cs` … `name_uk` | the name in ${other_languages} more languages                                                                         |
+| `name_bg` … `name_vi` | the name in ${other_languages} more languages                                                                         |
 
 ### `place_verses`
 
@@ -124,7 +129,7 @@ For a place with more than one proposed location, up to six of them: `place_id`,
 
 ### `people`
 
-`id` (STEPBible TIPNR unique name, e.g. `Aaron@Exo.4.14-Heb`), `name`, `sex` (`m`/`f`), `verse_count`, `first_ref` (the first verse TIPNR gives, in STEPBible's abbreviations), `name_cs` … `name_uk`. The names in other languages are empty for ${unnamed_people} people, most of them named in one or two verses.
+`id` (STEPBible TIPNR unique name, e.g. `Aaron@Exo.4.14-Heb`), `name`, `sex` (`m`/`f`), `verse_count`, `first_ref` (the first verse TIPNR gives, in STEPBible's abbreviations), `name_bg` … `name_vi`. The names in other languages are empty for ${unnamed_people} people, most of them named in one or two verses.
 
 ### `events` and `battles`
 
