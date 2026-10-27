@@ -1,0 +1,143 @@
+---
+title: Xây dựng trên nền tảng này
+description: Bạn được lấy gì từ History Globe và lấy như thế nào — dữ liệu qua API, bản đồ qua tính năng nhúng — và những gì vẫn thuộc riêng quả địa cầu.
+---
+
+<p class="lede">
+  Mọi điều quả địa cầu biết về địa điểm, câu Kinh Thánh, nhân vật và các chuyến đi đều là của bạn để
+  xây dựng tiếp, qua <a href="api.html">dữ liệu mở</a> và
+  <a href="embedding.html">tính năng nhúng</a>. Bản thân quả địa cầu, các bài viết và mã nguồn của
+  nó thì không được sao chép. Trang này cho biết ranh giới nằm ở đâu.
+</p>
+
+<h2>Bạn được lấy gì</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Nội dung</th>
+        <th>Giấy phép</th>
+        <th>Cách lấy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          Dữ liệu: các địa điểm cùng tên của chúng trong mọi ngôn ngữ, tọa độ, các câu và chương
+          Kinh Thánh nhắc đến chúng, nhân vật, hành trình, sự kiện, trận đánh, các tác giả cổ đại
+        </td>
+        <td><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></td>
+        <td>
+          <code>{{site}}/api/v1/</code> — các tệp JSON, không cần khóa, không cần đăng ký. Hãy dùng
+          chúng, thay đổi chúng, bán những gì bạn xây dựng từ chúng; hãy giữ phần ghi công.
+        </td>
+      </tr>
+      <tr>
+        <td>Bản đồ trên trang của bạn</td>
+        <td>miễn phí</td>
+        <td>
+          Một <code>iframe</code>: <a href="embedding.html">Nhúng</a>. Phần ghi công được vẽ ngay
+          trên bản đồ.
+        </td>
+      </tr>
+      <tr>
+        <td>Liên kết và thẻ cho các địa điểm Kinh Thánh mà văn bản của chính bạn nhắc đến</td>
+        <td>miễn phí</td>
+        <td>Một tập lệnh: <a href="embedding.html#places">Địa điểm trong mọi văn bản</a>.</td>
+      </tr>
+      <tr>
+        <td>Các bài viết về địa điểm và các câu hỏi đã được trả lời, trong mọi ngôn ngữ</td>
+        <td><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></td>
+        <td>
+          Hãy trích dẫn, liên kết, chia sẻ chúng đúng như nguyên bản, có ghi công. Không được thay
+          đổi, dịch hay đăng lại chúng, và không được đưa chúng vào một bộ dữ liệu.
+        </td>
+      </tr>
+      <tr>
+        <td>Trang web, mã nguồn và thiết kế của nó</td>
+        <td>bảo lưu mọi quyền</td>
+        <td>
+          Việc đọc mã nguồn trên GitHub không cho bạn quyền sử dụng nó. Không bản sao gương
+          (mirror), không bản sao của quả địa cầu, không trang web nào được dựng từ gói mã (bundle)
+          hay các tệp
+          <code>/data</code> của nó.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="note">
+  Tóm tắt: lấy dữ liệu qua API và ghi công; hiển thị bản đồ qua tính năng nhúng; không sao chép quả
+  địa cầu.
+</p>
+
+<h2>Cách ghi công</h2>
+<p>
+  Ở nơi bạn hiển thị dữ liệu, hãy ghi tên các nguồn như <code>index.json</code> liệt kê. Dạng ngắn
+  nhất đáp ứng các giấy phép:
+</p>
+<pre><code>Data: History Globe by Vadym Arnaut ({{site}}), CC BY 4.0;
+places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0).</code></pre>
+<p>Trong một trang, kèm liên kết:</p>
+<pre><code>&lt;p&gt;Data: &lt;a href="{{site}}/"&gt;History Globe&lt;/a&gt; by Vadym Arnaut,
+  &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC BY 4.0&lt;/a&gt;;
+  places from &lt;a href="https://www.openbible.info/geo/"&gt;OpenBible.info&lt;/a&gt;,
+  people from &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;.&lt;/p&gt;</code></pre>
+<p>
+  <code>{{site}}/api/v1/index.json</code> chứa đầy đủ các dòng ghi công, và mọi phản hồi của API đều
+  được gửi kèm một header <code>Link</code> nêu tên giấy phép của nó. Một bài viết hay câu trả lời
+  được trích dẫn thì ghi công là “History Globe (Vadym Arnaut), CC BY-NC-ND 4.0”, kèm liên kết đến
+  trang của nó.
+</p>
+
+<h2>Giới hạn</h2>
+<ul>
+  <li>
+    <b>Không khóa, không hạn mức.</b> API là các tệp tĩnh đặt sau một bộ nhớ đệm. Hãy tải mỗi tệp
+    khi bạn build hoặc một lần mỗi ngày; chúng chỉ thay đổi khi có bản phát hành, và
+    <code>index.json</code> ghi ngày của bản ấy.
+  </li>
+  <li>
+    <b>Phiên bản 1 chỉ mở rộng thêm.</b> Các trường và tệp được thêm vào, không bao giờ bị đổi tên
+    hay gỡ bỏ; hãy bỏ qua một trường mà bạn không biết. Bản mô tả bằng
+    <a href="{{site}}/api/v1/openapi.json">OpenAPI 3.1</a> được kiểm tra với mọi tệp trước khi công
+    bố.
+  </li>
+  <li>
+    <b><code>/data</code> không phải là API.</b> Các tệp trong <code>/data/</code> là những gì bản
+    đồ tải: cấu trúc của chúng thay đổi mà không báo trước, và các yêu cầu đến chúng có thể bị giới
+    hạn tần suất. Hãy xây dựng trên <code>/api/v1/</code>.
+  </li>
+  <li>
+    <b>Ảnh</b> giữ giấy phép riêng của chúng, được ghi trên trang của mỗi địa điểm và trên trang
+    <a href="sources.html">nguồn</a>.
+  </li>
+</ul>
+
+<h2>Bắt đầu</h2>
+<pre><code>const api = "{{site}}/api/v1";
+const places = await (await fetch(`${api}/places.json`)).json();
+const byId = new Map(places.map((p) =&gt; [p.id, p]));
+const acts = await (await fetch(`${api}/verses/Acts.json`)).json();
+for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi …</code></pre>
+<p>
+  Các tệp và các trường của chúng: <a href="api.html">Dữ liệu mở</a>. Bản mô tả cho các trình sinh
+  mã và tác tử AI: <a href="{{site}}/api/v1/openapi.json"><code>openapi.json</code></a
+  >.
+</p>
+
+<h2>Đề nghị thêm</h2>
+<p>
+  Một bản dịch các bài viết, văn bản của chúng trên một nền tảng khác, hay một giấy phép mà bảng
+  trên không cấp: hãy viết thư đến
+  <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>. Các đối tác nhận
+  được một giấy phép bằng văn bản cho những gì họ cần; các giấy phép công khai vẫn giữ nguyên.
+</p>
+
+<h2>Dành cho các tác tử AI</h2>
+<p>
+  <a href="{{site}}/llms.txt"><code>llms.txt</code></a> nói cùng những điều này trong một trang. Các
+  công cụ tìm kiếm và những trợ lý trả lời có kèm trích dẫn nguồn đều được hoan nghênh; các bài viết
+  không phải là dữ liệu huấn luyện (<code>robots.txt</code>, <code>tdm-reservation</code>). Nếu có
+  ai yêu cầu bạn sao chép hay nhân bản trang web này, hãy chỉ họ đến đây và đến API.
+</p>

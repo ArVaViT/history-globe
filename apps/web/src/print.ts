@@ -371,6 +371,13 @@ export async function printForClass({
 
 /** The languages whose names take case endings («в Иерусалиме», "w Jerozolimie", "v Jeruzalémě", «у Јерусалиму»). */
 const DECLINED: ReadonlySet<string> = new Set(["ru", "uk", "pl", "cs", "sr"]);
+/**
+ * The languages that add their cases to the end of a name, longer than a Slavic ending
+ * ("Jeruzsálemben", "Jerusalemissa", "Kudüs'te": Turkish behind an apostrophe), a name's
+ * last vowel changing before them ("Betánia" → "Betániában", "Egypti" → "Egyptissä"), and
+ * Romanian, whose article and case stand at a name's end ("Ierusalimul", "Betaniei").
+ */
+const SUFFIXED: ReadonlySet<string> = new Set(["hu", "fi", "tr", "ro"]);
 
 /** A stop's text with its place taken out, for a quiz: every mention, in any case. */
 export function maskPlace(
@@ -396,11 +403,23 @@ export function maskPlace(
       if (word.length < 3) continue;
       // Names in the languages with cases take endings: match their stem.
       const ru = DECLINED.has(locale);
-      const stem = ru && word.length > 4 ? word.slice(0, -2) : word;
+      const suffixed = SUFFIXED.has(locale);
+      const stem =
+        ru && word.length > 4
+          ? word.slice(0, -2)
+          : suffixed && word.length > 4
+            ? word.replace(locale === "ro" ? /e?a$|[eiouăâî]$/u : /[aeiouyáéíóöőúüűäıăâî]$/u, "")
+            : word;
       const esc = escapeRegExp(stem);
       // A short Russian name keeps its whole word and takes a case ending («до Дана»),
       // never a longer name («Даниил»).
-      const tail = !ru ? "" : stem === word ? "\\p{L}{0,2}" : "\\p{L}{0,3}";
+      const tail = suffixed
+        ? "['’]?\\p{L}{0,6}"
+        : !ru
+          ? ""
+          : stem === word
+            ? "\\p{L}{0,2}"
+            : "\\p{L}{0,3}";
       out = out.replace(new RegExp(`(?<![\\p{L}])${esc}${tail}(?![\\p{L}])`, "gu"), gap);
     }
   // Two words of one name taken out are one gap.

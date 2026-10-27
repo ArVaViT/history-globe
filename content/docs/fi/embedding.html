@@ -1,0 +1,337 @@
+---
+title: Upottaminen
+description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paikan, vuoden tai kierroksen kartta — ja ohjaa sitä omalta sivultasi.
+---
+
+<p class="lede">
+  Maapallo toimii millä tahansa sivulla <code>iframe</code>-kehyksessä. Yksi rivi näyttää luvun
+  kartan sivusi raamatunkohdan vieressä; muutama viesti pitää ne tahdissa keskenään.
+</p>
+
+<h2>Pikaopas</h2>
+<pre><code>&lt;iframe
+  src="{{site}}/embed/v1?ref=Acts.16&amp;locale=fi"
+  title="Kartta: Apt 16"
+  style="width: 100%; height: 480px; border: 0; border-radius: 12px"
+  allow="fullscreen"
+  loading="lazy"
+&gt;&lt;/iframe&gt;</code></pre>
+<ul>
+  <li>
+    Kartta täyttää kehyksen ja avautuu Apostolien tekojen luvun 16 paikkoihin sen tapahtumien
+    vuonna.
+  </li>
+  <li>
+    <b>Ylhäällä:</b> luku. Valitse se, niin sen paikat luetellaan siinä järjestyksessä, jossa teksti
+    ne mainitsee; valitse paikka avataksesi sen kortin.
+  </li>
+  <li><b>Alhaalla:</b> vuosi. Valitse se avataksesi aikasäätimen.</li>
+  <li>
+    Linkki avaa saman näkymän koko maapallolla uudessa välilehdessä. Lähdetiedot näytetään itse
+    kartalla, kuten datan lisenssit edellyttävät.
+  </li>
+  <li>Kehys toimii puhelimen leveyteen asti; 480 px:n korkeus riittää.</li>
+</ul>
+
+<h2>Luku tai raamatunkohta</h2>
+<p>
+  <code>ref</code> ottaa OSIS-viittauksen, jossa käytetään englanninkielisiä kirjojen lyhenteitä ja
+  englanninkielistä jakeiden numerointia:
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Arvo</th>
+        <th>Näyttää</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Acts.16</code></td>
+        <td>luvun</td>
+      </tr>
+      <tr>
+        <td><code>Gen.12-Gen.13</code></td>
+        <td>enintään kolme lukua</td>
+      </tr>
+      <tr>
+        <td><code>Acts.16.11-Acts.16.15</code></td>
+        <td>raamatunkohdan</td>
+      </tr>
+      <tr>
+        <td><code>Ruth</code></td>
+        <td>koko kirjan</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Kartta siirtyy raamatunkohdan vuoteen: sen lukujen kirjattuun vuoteen ({{chapter_books}} kirjan
+  luvut on ajoitettu) tai muuten sen kierroksen vuoteen, joka kattaa kohdan; koko kirja saa sen
+  kierroksen vuoden, jolla on eniten pysäkkejä kirjassa. Jos kohdalla ei ole kumpaakaan, kartta
+  pysyy nykyisessä vuodessaan.
+</p>
+
+<h2>Parametrit</h2>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Parametri</th>
+        <th>Esimerkki</th>
+        <th>Merkitys</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>ref</code></td>
+        <td><code>Acts.16</code></td>
+        <td>luku, raamatunkohta tai kirja (ks. yllä)</td>
+      </tr>
+      <tr>
+        <td><code>year</code></td>
+        <td><code>-999</code></td>
+        <td>
+          vuosi tähtitieteellisenä numerointina: 1 eaa. on <code>0</code>, 1000 eaa. on
+          <code>-999</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>place</code></td>
+        <td><code>af2161c</code></td>
+        <td>avaa paikan (tässä Kapernaum); tunnisteet ovat OpenBiblen</td>
+      </tr>
+      <tr>
+        <td><code>tour</code></td>
+        <td><code>paul-1</code></td>
+        <td>aloittaa opastetun kierroksen</td>
+      </tr>
+      <tr>
+        <td><code>stop</code></td>
+        <td><code>3</code></td>
+        <td>yhdessä <code>tour</code>-parametrin kanssa: avaa kierroksen tällä pysäkillä</td>
+      </tr>
+      <tr>
+        <td><code>lesson</code></td>
+        <td><code>a15257a~30.a112427~30</code></td>
+        <td>
+          oma oppituntisi, yhdessä <code>tour=lesson</code>-parametrin kanssa: paikkojen tunnisteet
+          järjestyksessä, kukin sen vuoden kanssa, jona se näytetään (<code>~-585</code> vuodelle
+          586 eaa.: kuten <code>year</code>-parametrissa, 1 eaa. on 0); jokainen pysäkki saa sitä
+          vuotta lähimmän paikan jakeen, etäisyyden, kävelyajan ja korkeusprofiilin. Paikan kortin
+          painike ”Lisää oppituntiin” tekee samanlaiset linkit
+        </td>
+      </tr>
+      <tr>
+        <td><code>title</code></td>
+        <td><code>Paul%20in%20Galatia</code></td>
+        <td>
+          yhdessä <code>lesson</code>-parametrin kanssa: oppitunnin nimi, enintään 80 merkkiä,
+          kierroksen ja sen tulostettavan arkin alussa
+        </td>
+      </tr>
+      <tr>
+        <td><code>locale</code></td>
+        <td><code>fi</code></td>
+        <td>
+          kieli: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
+          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
+          <code>pl</code>, <code>cs</code> tai <code>fi</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>camera</code></td>
+        <td><code>35.2,31.8,7,30,0</code></td>
+        <td>pituusaste, leveysaste, zoomaus, kallistus, suunta</td>
+      </tr>
+      <tr>
+        <td><code>hide</code></td>
+        <td><code>relief,ancient</code></td>
+        <td>
+          pois kytkettävät kerrokset: <code>borders</code>, <code>places</code>,
+          <code>relief</code>, <code>routes</code>, <code>roads</code>, <code>ancient</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p class="note">
+  Helpoin tapa koota näkymä on asettaa se koko maapallolla ja kopioida URL-osoite: samat parametrit
+  toimivat osoitteen <code>/embed/v1</code> perässä.
+</p>
+
+<h2>Viestit</h2>
+<p>
+  Maapallo ja sivusi viestivät <code>postMessage</code>-rajapinnan kautta. Jokainen viesti on
+  objekti, jossa on <code>type</code> ja <code>v: 1</code>. Maapallo lähettää vain sen, mitä
+  kartalla tapahtuu, eikä koskaan mitään, mikä tunnistaisi lukijan; se hyväksyy viestejä vain
+  sivulta, jolla kehys on.
+</p>
+<h3>Maapallolta</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Tyyppi</th>
+        <th>Sisältö</th>
+        <th>Milloin</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:ready</code></td>
+        <td><code>{ view }</code></td>
+        <td>kartta on piirretty</td>
+      </tr>
+      <tr>
+        <td><code>hg:view-changed</code></td>
+        <td><code>{ view }</code></td>
+        <td>vuosi, paikka, kierros tai kamera on muuttunut ja asettunut</td>
+      </tr>
+      <tr>
+        <td><code>hg:verse-clicked</code></td>
+        <td><code>{ osis }</code></td>
+        <td>lukija napsautti jaetta, esim. <code>"Acts.16.12"</code></td>
+      </tr>
+      <tr>
+        <td><code>hg:error</code></td>
+        <td><code>{ code, message }</code></td>
+        <td>karttaa tai sen dataa ei voitu ladata</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  <code>view</code> sisältää kentät <code>year</code>, <code>locale</code> ja
+  <code>layers</code> ja, kun ne on asetettu, <code>place</code>, <code>tour</code>,
+  <code>stop</code>, <code>ref</code> ja <code>camera</code>.
+</p>
+<h3>Maapallolle</h3>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Tyyppi</th>
+        <th>Sisältö</th>
+        <th>Vaikutus</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>hg:set-view</code></td>
+        <td><code>{ view }</code></td>
+        <td>
+          asettaa vuoden, luvun (<code>ref</code>), paikan, kerrokset tai kameran; kun mukana on
+          <code>tour</code> (ja <code>stop</code>), kierros alkaa ja muut kentät ohitetaan; kieli
+          vaihtuu vain viestillä <code>hg:set-locale</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:set-locale</code></td>
+        <td><code>{ locale }</code></td>
+        <td>vaihtaa kielen</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Esimerkki: kartta seuraa lukijaasi</h2>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+
+// Kun lukijasi avaa luvun, näytä se kartalla.
+function showChapter(osis) {
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+}
+
+// Kun kartalla napsautetaan jaetta, avaa se lukijassasi.
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
+});</code></pre>
+
+<h2 id="places">Paikat missä tahansa tekstissä</h2>
+<p>
+  Vielä yksi rivi linkittää maapalloon ne Raamatun paikat, jotka oma tekstisi mainitsee (artikkeli,
+  saarna, lukusuunnitelma). Osoita nimeä tai napauta sitä puhelimessa, niin kortti näyttää, mikä
+  paikka on, missä se on nykyään, kuinka monessa jakeessa se mainitaan ja missä se sijaitsee
+  kartalla; kortista pääsee maapallolle.
+</p>
+<figure class="sample">
+  <div class="hgp-demo">
+    <p>
+      Paavali purjehti Kesareasta Kyprokselle, saarnasi Efesoksessa ja Korintissa ja kirjoitti
+      Roomaan. Kauan sitä ennen Abraham oli tullut Sikemiin ja Hebroniin; Jeesus syntyi Betlehemissä
+      ja kasvoi Nasaretissa, ja Johannes näki näkynsä Patmoksella.
+    </p>
+  </div>
+  <figcaption>Elävä esimerkki: tämän sivun skripti linkitti nämä nimet.</figcaption>
+</figure>
+<pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
+<p>
+  Osoitteessa on versio, ja eheystiiviste lukitsee sen tarkan sisällön: selain suorittaa skriptin
+  vain, jos se on juuri tuo tiedosto. Uusi versio saa uuden osoitteen; vanhat pysyvät ennallaan.
+</p>
+<div class="table">
+  <table>
+    <thead>
+      <tr>
+        <th>Määrite</th>
+        <th>Mitä se tekee</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>data-scope</code></td>
+        <td>mistä etsitään, CSS-valitsimena; oletuksena koko sivu</td>
+      </tr>
+      <tr>
+        <td><code>data-locale</code></td>
+        <td>
+          tekstin kieli, jokin sivuston kielistä: <code>cs</code>, <code>de</code>, <code>en</code>,
+          <code>es</code>, <code>fi</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
+          <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>uk</code>; oletuksena sivun
+          <code>lang</code>; mikä tahansa muu kieli palaa englantiin
+        </td>
+      </tr>
+      <tr>
+        <td><code>data-every</code></td>
+        <td>linkittää jokaisen maininnan, ei vain kunkin paikan ensimmäistä</td>
+      </tr>
+      <tr>
+        <td><code>data-theme</code></td>
+        <td>
+          kortin <code>light</code> tai <code>dark</code>; oletuksena se seuraa lukijan järjestelmää
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>
+  Vain nimet, jotka viittaavat yhteen paikkaan, linkitetään. Nimi, joka on kahden paikan yhteinen
+  (Syyrian ja Pisidian Antiokia), paikan ja henkilön yhteinen (Juuda) tai paikan ja tavallisen sanan
+  yhteinen, jää tavalliseksi tekstiksi, samoin nimi, jota Raamatun omat jakeet käyttävät enimmäkseen
+  jostakin muusta (”Kades” on niissä Kades-Barnea, ei tietokannan Kades). Paikan nimi, joka on myös
+  etunimi (Jordan, Sharon), jätetään rauhaan toisen isolla alkukirjaimella kirjoitetun sanan
+  vieressä: Jordan Smith on henkilö, ei joki. Venäjässä, ukrainassa, puolassa ja tšekissä nimet
+  löydetään taivutetuissa muodoissaan (”в Египте”, ”w Jerozolimie”, ”v Jeruzalémě”), ja saksan nimet
+  myös genetiivissä (”Jerusalems”). Linkit, koodi, lomakekentät, painikkeet ja otsikot jätetään
+  rauhaan.
+</p>
+<p class="note">
+  Skriptillä ei ole riippuvuuksia, eikä se aseta evästeitä. Se lukee maapallolta yhden nimitiedoston
+  (verkon yli noin 20–35 kt kielestä riippuen sekä 7 kt skriptiä) lähettämättä sivusi osoitetta
+  viittaajana, ja muuttaa vain linkittämänsä nimet. Se toimii tiukan Content Security Policyn alla,
+  joka sallii maapallon osoitteen kohdissa <code>script-src</code> ja <code>connect-src</code>.
+  Tekstille, jonka sivusi lisää myöhemmin, kutsu <code>HistoryGlobePlaces.scan(element)</code>, kun
+  teksti on piirretty: skripti jakaa tekstisolmuja, joten React- tai Vue-sivulla aja se sisältöön,
+  jota sovelluskehys ei enää piirrä uudelleen.
+</p>
+<script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
+
+<h2>Vakaus</h2>
+<p>
+  <code>/embed/v1</code> on sopimus: v1:n sisällä parametreja ja viestejä vain lisätään, niitä ei
+  koskaan muuteta eikä poisteta. Rikkova muutos julkaistaan osoitteessa <code>/embed/v2</code>, ja
+  v1 toimii edelleen.
+</p>

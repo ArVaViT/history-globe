@@ -21,6 +21,11 @@ title:
   tl: "Ang ikatlong paglalakbay ni Pablo"
   da: "Paulus' tredje rejse"
   sr: "Павлово треће путовање"
+  hu: "Pál harmadik útja"
+  fi: "Paavalin kolmas matka"
+  vi: "Cuộc hành trình thứ ba của Phao-lô"
+  ro: "A treia călătorie a lui Pavel"
+  bg: "Третото пътуване на Павел"
 year: "AD 54"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -44,6 +49,11 @@ stops:
       tl: "Muling umalis si Pablo mula sa Antioquia."
       da: "Paulus bryder påny op fra Antiokia."
       sr: "Павле поново полази из Антиохије."
+      hu: "Pál ismét elindul Antiókhiából."
+      fi: "Paavali lähtee jälleen Antiokiasta."
+      vi: "Phao-lô lại lên đường từ An-ti-ốt."
+      ro: "Pavel pornește din nou din Antiohia."
+      bg: "Павел отново тръгва от Антиохия."
   - place: a5feb15
     ref: Acts.19.1-Acts.20.1
     note:
@@ -63,6 +73,11 @@ stops:
       tl: "Mga tatlong taon sa Efeso; ang kaguluhan ni Demetrio."
       da: "Omkring tre år i Efesos; Demetrius' opstand."
       sr: "Око три године у Ефесу; буна Димитријева."
+      hu: "Mintegy három év Efezusban; Démétriusz lázadása."
+      fi: "Noin kolme vuotta Efesoksessa; Demetrioksen mellakka."
+      vi: "Khoảng ba năm tại Ê-phê-sô; cuộc nổi loạn của Đê-mê-triu."
+      ro: "Aproape trei ani în Efes; răscoala lui Dimitrie."
+      bg: "Около три години в Ефес; бунтът на Димитър."
   - place: a49e1d0
     ref: Acts.20.1-Acts.20.6
     by: untold
@@ -83,6 +98,11 @@ stops:
       tl: "Sa Macedonia patungong Grecia nang tatlong buwan, at pabalik; pagkatapos ng mga araw ng tinapay na walang lebadura, naglayag sila mula sa Filipos."
       da: "Gennem Makedonien til Grækenland i tre måneder og tilbage; efter de usyrede brøds dage sejler de fra Filippi."
       sr: "Кроз Македонију у Грчку на три месеца, и натраг; после дана бесквасних хлебова отпловљавају из Филипа."
+      hu: "Macedónián át Görögországba három hónapra, majd vissza; a kovásztalan kenyerek napjai után Filippiből hajóznak el."
+      fi: "Makedonian kautta Kreikkaan kolmeksi kuukaudeksi ja takaisin; happamattoman leivän päivien jälkeen he purjehtivat Filippistä."
+      vi: "Qua Ma-xê-đoan đến Hy Lạp ba tháng, rồi trở lại; sau những ngày lễ Bánh không men, họ xuống tàu từ Phi-líp."
+      ro: "Prin Macedonia până în Grecia, pentru trei luni, și înapoi; după zilele Azimelor pornesc pe mare din Filipi."
+      bg: "През Македония в Гърция за три месеца и обратно; след дните на безквасните хлябове те отплават от Филипи."
   - place: a91c509
     ref: Acts.20.6-Acts.20.12
     by: sea
@@ -104,6 +124,11 @@ stops:
       tl: "Pitong araw sa Troas; si Eutico."
       da: "Syv dage i Troas; Eutykus."
       sr: "Седам дана у Троади; Евтих."
+      hu: "Hét nap Troászban; Eutükhosz."
+      fi: "Seitsemän päivää Troaksessa; Eutykos."
+      vi: "Bảy ngày tại Trô-ách; Ơ-tích."
+      ro: "Șapte zile în Troa; Eutih."
+      bg: "Седем дни в Троада; Евтих."
   - place: a0a2ca7
     ref: Acts.20.13
     note:
@@ -123,6 +148,11 @@ stops:
       tl: "Naglakad si Pablo patungong Ason."
       da: "Paulus går til fods til Assos."
       sr: "Павле иде пешке у Асос."
+      hu: "Pál gyalog megy Asszoszba."
+      fi: "Paavali menee jalkaisin Assokseen."
+      vi: "Phao-lô đi bộ đến A-sốt."
+      ro: "Pavel merge pe jos la Asos."
+      bg: "Павел отива пеша до Асос."
   - place: a33910d
     ref: Acts.20.14
     by: sea
@@ -143,6 +173,11 @@ stops:
       tl: "Dumating sila sa Mitilene."
       da: "De kommer til Mitylene."
       sr: "Долазе у Митилину."
+      hu: "Mitilénébe érkeznek."
+      fi: "He tulevat Mytileneen."
+      vi: "Họ đến Mi-ti-len."
+      ro: "Ajung la Mitilene."
+      bg: "Те идват в Митилини."
   - place: a4c2c75
     ref: Acts.20.15
     by: sea
@@ -164,6 +199,11 @@ stops:
       tl: "Sa tapat ng Chio."
       da: "Ud for Chios."
       sr: "Према Хиосу."
+      hu: "Khiosszal szemben."
+      fi: "Khioksen kohdalla."
+      vi: "Đối ngang Chi-ô."
+      ro: "În dreptul insulei Chios."
+      bg: "Срещу Хиос."
   - place: acf6ec0
     ref: Acts.20.15
     by: sea
@@ -185,6 +225,11 @@ stops:
       tl: "Dumaong sila sa Samos."
       da: "De lægger til ved Samos."
       sr: "Пристају код Самоса."
+      hu: "Számoszt érintik."
+      fi: "He poikkeavat Samokseen."
+      vi: "Họ ghé Sa-mốt."
+      ro: "Ating Samosul."
+      bg: "Те се отбиват в Самос."
   - place: a55027d
     ref: Acts.20.17-Acts.20.38
     by: sea
@@ -206,6 +251,11 @@ stops:
       tl: "Pamamaalam sa mga matanda ng Efeso."
       da: "Afsked med de ældste fra Efesos."
       sr: "Опроштај од старешина ефеских."
+      hu: "Búcsú az efezusi vénektől."
+      fi: "Hyvästit Efesoksen vanhimmille."
+      vi: "Lời từ biệt với các trưởng lão Ê-phê-sô."
+      ro: "Despărțirea de prezbiterii din Efes."
+      bg: "Сбогуване с ефеските презвитери."
   - place: a398e5d
     ref: Acts.21.1
     by: sea
@@ -226,6 +276,11 @@ stops:
       tl: "Tuwirang paglalayag patungong Coos."
       da: "Ret kurs mod Kos."
       sr: "Пловидба право до Коса."
+      hu: "Egyenes úton Kószba."
+      fi: "Suora matka Kosin saarelle."
+      vi: "Đi thẳng đến Cốt."
+      ro: "Drum drept spre Cos."
+      bg: "Направо към Кос."
   - place: a4218ee
     ref: Acts.21.1
     by: sea
@@ -247,6 +302,11 @@ stops:
       tl: "Rodas."
       da: "Rhodos."
       sr: "Родос."
+      hu: "Rodosz."
+      fi: "Rodos."
+      vi: "Rô-đơ."
+      ro: "Rodos."
+      bg: "Родос."
   - place: ade301b
     ref: Acts.21.1-Acts.21.2
     by: sea
@@ -267,6 +327,11 @@ stops:
       tl: "Sa Patara ay nakasumpong sila ng sasakyang patungong Fenicia."
       da: "I Patara finder de et skib til Fønikien."
       sr: "У Патари налазе лађу за Феникију."
+      hu: "Patarában Föníciába induló hajót találnak."
+      fi: "Patarassa he löytävät laivan Foinikiaan."
+      vi: "Tại Ba-ta-ra, họ tìm được một chiếc tàu đi Phê-ni-xi."
+      ro: "La Patara găsesc o corabie spre Fenicia."
+      bg: "В Патара те намират кораб за Финикия."
   - place: a160272
     ref: Acts.21.3-Acts.21.6
     by: sea
@@ -287,6 +352,11 @@ stops:
       tl: "Pitong araw na kasama ang mga alagad sa Tiro."
       da: "Syv dage hos disciplene i Tyrus."
       sr: "Седам дана с ученицима у Тиру."
+      hu: "Hét nap a tanítványokkal Tíruszban."
+      fi: "Seitsemän päivää opetuslasten luona Tyroksessa."
+      vi: "Bảy ngày với các môn đồ tại Ty-rơ."
+      ro: "Șapte zile cu ucenicii din Tir."
+      bg: "Седем дни с учениците в Тир."
   - place: abc2af0
     ref: Acts.21.7
     by: sea
@@ -307,6 +377,11 @@ stops:
       tl: "Isang araw na kasama ang mga kapatid sa Tolemaida."
       da: "En dag hos brødrene i Ptolemais."
       sr: "Један дан с браћом у Птолемаиди."
+      hu: "Egy nap a testvéreknél Ptolemaisban."
+      fi: "Yksi päivä veljien luona Ptolemaissa."
+      vi: "Một ngày với anh em tại Bê-tô-lê-mai."
+      ro: "O zi cu frații din Ptolemaida."
+      bg: "Един ден с братята в Птолемаида."
   - place: a58735e
     ref: Acts.21.8-Acts.21.14
     by: sea
@@ -327,6 +402,11 @@ stops:
       tl: "Sa bahay ni Felipe; ang hula ni Agabo."
       da: "I Filips hus; Agabus' profeti."
       sr: "У кући Филиповој; пророштво Агавово."
+      hu: "Fülöp házában; Agabusz próféciája."
+      fi: "Filippoksen talossa; Agaboksen ennustus."
+      vi: "Trong nhà Phi-líp; lời tiên tri của A-ga-bút."
+      ro: "În casa lui Filip; prorocia lui Agab."
+      bg: "В дома на Филип; пророчеството на Агав."
   - place: a15257a
     ref: Acts.21.15-Acts.21.17
     note:
@@ -346,3 +426,8 @@ stops:
       tl: "Masayang tinanggap sila ng mga kapatid sa Jerusalem."
       da: "Brødrene i Jerusalem tager glade imod dem."
       sr: "Браћа у Јерусалиму радосно их примају."
+      hu: "A jeruzsálemi testvérek örömmel fogadják őket."
+      fi: "Jerusalemin veljet ottavat heidät ilolla vastaan."
+      vi: "Anh em tại Giê-ru-sa-lem vui mừng tiếp rước họ."
+      ro: "Frații din Ierusalim îi primesc cu bucurie."
+      bg: "Братята в Йерусалим ги приемат радушно."

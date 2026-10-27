@@ -21,6 +21,11 @@ title:
   tl: "Ang pagbabagong-loob ni Saul"
   da: "Sauls omvendelse"
   sr: "Обраћење Савла"
+  hu: "Saul megtérése"
+  fi: "Saulin kääntymys"
+  vi: "Sự trở lại đạo của Sau-lơ"
+  ro: "Convertirea lui Saul"
+  bg: "Обръщането на Савел"
 year: "AD 34"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -44,6 +49,11 @@ stops:
       tl: "Si Saul ay ipinanganak sa Tarso ng Cilicia at pinalaki sa Jerusalem sa paanan ni Gamaliel."
       da: "Saul fødes i Tarsus i Kilikien og opdrages i Jerusalem ved Gamaliels fødder."
       sr: "Савле је рођен у Тарсу киликијском и одгајен у Јерусалиму код ногу Гамалилових."
+      hu: "Saul a kilikiai Tarzuszban születik, és Jeruzsálemben nevelkedik Gamáliel lábánál."
+      fi: "Saul syntyy Kilikian Tarsoksessa ja kasvatetaan Jerusalemissa Gamalielin jalkojen juuressa."
+      vi: "Sau-lơ sinh tại Tạt-sơ xứ Si-li-si và được nuôi tại Giê-ru-sa-lem, học nơi chân Ga-ma-li-ên."
+      ro: "Saul se naște în Tarsul Ciliciei și este crescut în Ierusalim, la picioarele lui Gamaliel."
+      bg: "Савел е роден в Тарс Киликийски и възпитан в Йерусалим при нозете на Гамалиил."
   - place: a15257a # Jerusalem
     ref: Acts.7.58-Acts.8.3
     note:
@@ -63,6 +73,11 @@ stops:
       tl: "Inilapag ng mga saksing bumato kay Esteban ang kanilang mga damit sa paanan ni Saul; sang-ayon siya, at inusig ang iglesya."
       da: "Vidnerne, som stener Stefanus, lægger deres klæder for Sauls fødder; han billiger det og forfølger menigheden."
       sr: "Сведоци који засипају Стефана камењем остављају своје хаљине код ногу Савлових; он одобрава и гони цркву."
+      hu: "István megkövezésének tanúi ruháikat Saul lába elé teszik; ő egyetért velük, és üldözi a gyülekezetet."
+      fi: "Stefanosta kivittävät todistajat panevat vaatteensa Saulin jalkojen juureen; hän hyväksyy sen ja vainoaa seurakuntaa."
+      vi: "Những người làm chứng ném đá Ê-tiên để áo xống mình nơi chân Sau-lơ; người tán thành, và bắt bớ Hội thánh."
+      ro: "Martorii care îl ucid cu pietre pe Ștefan își pun hainele la picioarele lui Saul; el încuviințează și prigonește biserica."
+      bg: "Свидетелите, които убиват Стефан с камъни, слагат дрехите си при нозете на Савел; той одобрява и гони църквата."
   - place: a69c1d4 # Damascus
     ref: Acts.9.1-Acts.9.20
     note:
@@ -82,6 +97,11 @@ stops:
       tl: "Malapit sa Damasco, isang liwanag mula sa langit; sa lansangang tinatawag na Tuwid, ipinatong ni Ananias ang kaniyang mga kamay sa kaniya, at siya'y binautismuhan."
       da: "Nær Damaskus et lys fra himlen; i gaden, der kaldes Den Lige, lægger Ananias hænderne på ham, og han bliver døbt."
       sr: "Близу Дамаска светлост с неба; у улици која се зове Права Ананија полаже руке на њега, и он се крштава."
+      hu: "Damaszkusz közelében fény támad az égből; az Egyenesnek nevezett utcában Ananiás kezet vet rá, és megkeresztelkedik."
+      fi: "Damaskoksen lähellä valo taivaasta; Suoraksi kutsutulla kadulla Ananias panee kätensä hänen päälleen, ja hänet kastetaan."
+      vi: "Gần Đa-mách có một ánh sáng từ trời; trên đường Ngay thẳng, A-na-nia đặt tay trên người, và người chịu báp têm."
+      ro: "Lângă Damasc, o lumină din cer; pe ulița numită Dreaptă, Anania își pune mâinile peste el, iar el este botezat."
+      bg: "Близо до Дамаск — светлина от небето; на улицата, наречена Права, Ананий възлага ръце на него и той е кръстен."
   - place: a0f4ea8 # Arabia
     ref: Gal.1.17
     note:
@@ -101,6 +121,11 @@ stops:
       tl: "Pumunta siya sa Arabia, at pagkatapos ay bumalik sa Damasco."
       da: "Han drager bort til Arabien og vender derefter tilbage til Damaskus."
       sr: "Одлази у Арабију, а затим се враћа у Дамаск."
+      hu: "Arábiába megy, majd visszatér Damaszkuszba."
+      fi: "Hän lähtee Arabiaan ja palaa sitten Damaskokseen."
+      vi: "Người đi qua xứ A-ra-bi, rồi trở lại Đa-mách."
+      ro: "Pleacă în Arabia, apoi se întoarce la Damasc."
+      bg: "Той отива в Арабия и после се връща в Дамаск."
   - place: a69c1d4 # Damascus
     ref: Acts.9.22-Acts.9.25
     note:
@@ -120,6 +145,11 @@ stops:
       tl: "Nang magsabwatan ang mga Judio upang patayin siya, ibinaba siya ng mga alagad sa ibabaw ng pader sa isang bakol."
       da: "Da jøderne lægger planer om at dræbe ham, lader disciplene ham ned over muren i en kurv."
       sr: "Кад Јудејци кују заверу да га убију, ученици га спуштају преко зида у котарици."
+      hu: "Amikor a zsidók a megölésére törnek, a tanítványok egy kosárban leeresztik a falon."
+      fi: "Kun juutalaiset punovat juonta hänen tappamisekseen, opetuslapset laskevat hänet muurin yli korissa."
+      vi: "Khi người Giu-đa mưu giết người, các môn đồ dòng người xuống ngoài vách thành trong một cái thúng."
+      ro: "Când iudeii pun la cale să-l ucidă, ucenicii îl coboară peste zid într-un coș."
+      bg: "Когато юдеите кроят да го убият, учениците го спускат през стената в кош."
   - place: a15257a # Jerusalem
     ref: Acts.9.26-Acts.9.29
     note:
@@ -139,6 +169,11 @@ stops:
       tl: "Sa Jerusalem, natakot sa kaniya ang mga alagad hanggang dalhin siya ni Bernabe sa mga apostol."
       da: "I Jerusalem frygter disciplene ham, indtil Barnabas fører ham til apostlene."
       sr: "У Јерусалиму ученици га се боје докле га Варнава не доведе апостолима."
+      hu: "Jeruzsálemben a tanítványok félnek tőle, míg Barnabás az apostolokhoz nem viszi."
+      fi: "Jerusalemissa opetuslapset pelkäävät häntä, kunnes Barnabas tuo hänet apostolien luo."
+      vi: "Tại Giê-ru-sa-lem, các môn đồ sợ người cho đến khi Ba-na-ba đem người đến cùng các sứ đồ."
+      ro: "În Ierusalim, ucenicii se tem de el până când Barnaba îl aduce la apostoli."
+      bg: "В Йерусалим учениците се боят от него, докато Варнава не го завежда при апостолите."
   - place: a58735e # Caesarea
     ref: Acts.9.30
     note:
@@ -158,6 +193,11 @@ stops:
       tl: "Dinala siya ng mga kapatid sa Cesarea at pinalakad patungong Tarso."
       da: "Brødrene fører ham ned til Cæsarea og sender ham af sted til Tarsus."
       sr: "Браћа га доводе у Цезареју и шаљу у Тарс."
+      hu: "A testvérek lekísérik Cézáreába, és Tarzuszba küldik."
+      fi: "Veljet saattavat hänet alas Kesareaan ja lähettävät hänet Tarsokseen."
+      vi: "Các anh em đem người xuống Sê-sa-rê và sai người đi Tạt-sơ."
+      ro: "Frații îl duc la Cezareea și îl trimit la Tars."
+      bg: "Братята го свалят в Кесария и го изпращат в Тарс."
   - place: a666ea0 # Tarsus
     ref: Acts.11.25
     note:
@@ -177,6 +217,11 @@ stops:
       tl: "Pagkaraan ng maraming taon, pumunta si Bernabe sa Tarso upang hanapin si Saul."
       da: "År senere drager Barnabas til Tarsus for at lede efter Saul."
       sr: "Годинама касније Варнава одлази у Тарс да потражи Савла."
+      hu: "Évekkel később Barnabás Tarzuszba megy, hogy megkeresse Sault."
+      fi: "Vuosia myöhemmin Barnabas menee Tarsokseen etsimään Saulia."
+      vi: "Nhiều năm sau, Ba-na-ba đến Tạt-sơ tìm Sau-lơ."
+      ro: "Ani mai târziu, Barnaba merge la Tars să-l caute pe Saul."
+      bg: "Години по-късно Варнава отива в Тарс да търси Савел."
   - place: ae41ab4 # Antioch
     ref: Acts.11.26
     note:
@@ -196,3 +241,8 @@ stops:
       tl: "Sa loob ng isang buong taon ay nagturo sila sa Antioquia, kung saan unang tinawag na mga Kristiyano ang mga alagad."
       da: "Et helt år underviser de i Antiokia, hvor disciplene først kaldes kristne."
       sr: "Читаву годину поучавају у Антиохији, где се ученици најпре називају хришћанима."
+      hu: "Egy egész évig tanítanak Antiókhiában, ahol a tanítványokat először nevezik keresztyéneknek."
+      fi: "Kokonaisen vuoden he opettavat Antiokiassa, jossa opetuslapsia ensimmäisen kerran kutsutaan kristityiksi."
+      vi: "Trọn một năm họ dạy dỗ tại An-ti-ốt, nơi các môn đồ lần đầu tiên được gọi là Cơ-rê-tiên."
+      ro: "Un an întreg învață în Antiohia, unde ucenicii sunt numiți pentru prima dată creștini."
+      bg: "Цяла година те поучават в Антиохия, където учениците за първи път се наричат християни."

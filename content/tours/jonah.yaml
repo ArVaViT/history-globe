@@ -20,6 +20,11 @@ title:
   tl: "Jonas"
   da: "Jonas"
   sr: "Јона"
+  hu: "Jónás"
+  fi: "Joona"
+  vi: "Giô-na"
+  ro: "Iona"
+  bg: "Йона"
 year: "780 BC"
 people: ["Jonah@2Ki.14.25-Luk"]
 approximate: true
@@ -43,6 +48,11 @@ stops:
       tl: "Si Jonas na anak ni Amittai, ang propeta mula sa Gath-hepher."
       da: "Jonas, Amittajs søn, profeten fra Gat-Hefer."
       sr: "Јона син Аматијин, пророк из Гетефера."
+      hu: "Jónás, Amittai fia, a gát-héferi próféta."
+      fi: "Joona, Amittain poika, profeetta Gat-Heferistä."
+      vi: "Giô-na con trai A-mi-tai, đấng tiên tri từ Gát-Hê-phe."
+      ro: "Iona, fiul lui Amitai, profetul din Gat-Hefer."
+      bg: "Йона, синът на Аматий, пророкът от Гет-Хефер."
   - place: ae023a9 # Joppa
     ref: Jonah.1.3
     note:
@@ -62,6 +72,11 @@ stops:
       tl: "Tumatakas mula sa harapan ng Panginoon, lumusong siya sa Joppa at nakasumpong ng sasakyang patungong Tharsis."
       da: "På flugt fra Herrens ansigt går han ned til Joppe og finder et skib på vej til Tarsis."
       sr: "Бежећи од лица Господњег, силази у Јопу и налази лађу која иде у Тарсис."
+      hu: "Az Úr színe elől menekülve Joppéba megy, és Tarsisba induló hajót talál."
+      fi: "Paetessaan Herran kasvojen edestä hän menee alas Joppeen ja löytää laivan, joka on lähdössä Tarsisiin."
+      vi: "Chạy trốn khỏi mặt Đức Giê-hô-va, người xuống Giốp-bê và tìm được một chiếc tàu đi Ta-rê-si."
+      ro: "Fugind de la fața Domnului, coboară la Iafo și găsește o corabie care merge la Tarsis."
+      bg: "Бягайки от лицето на Господа, той слиза в Яфа и намира кораб, който плава за Тарсис."
   - place: a70fd5d # Nineveh
     ref: Jonah.3.3-Jonah.4.11
     by: untold
@@ -82,3 +97,8 @@ stops:
       tl: "Nangaral siya sa Ninive, tumalikod ang bayan sa kanilang masamang lakad, at iniligtas ng Dios ang dakilang lungsod."
       da: "Han prædiker i Nineve, folket vender om fra deres onde vej, og Gud skåner den store by."
       sr: "Проповеда у Ниневији, народ се обраћа са свог злог пута, и Бог поштеди велики град."
+      hu: "Prédikál Ninivében, a nép elfordul gonosz útjáról, és Isten megkíméli a nagy várost."
+      fi: "Hän saarnaa Niinivessä, kansa kääntyy pois pahalta tieltään, ja Jumala säästää suuren kaupungin."
+      vi: "Người giảng tại Ni-ni-ve, dân thành xây bỏ đường ác của mình, và Đức Chúa Trời tha cho thành lớn ấy."
+      ro: "Predică în Ninive, oamenii se întorc de la calea lor cea rea, iar Dumnezeu cruță cetatea cea mare."
+      bg: "Той проповядва в Ниневия, жителите се отвръщат от злия си път и Бог пощадява великия град."

@@ -25,6 +25,11 @@ title:
   tl: "Ang digmaan laban sa Benjamin"
   da: "Krigen mod Benjamin"
   sr: "Рат с Венијамином"
+  hu: "A Benjámin elleni háború"
+  fi: "Sota Benjaminia vastaan"
+  vi: "Cuộc chiến với Bên-gia-min"
+  ro: "Războiul cu Beniamin"
+  bg: "Войната с Вениамин"
 year: "1150 BC"
 # Where the story happens, told of a Levite and then of all Israel: no time on foot.
 walked: false
@@ -49,6 +54,11 @@ stops:
       tl: "Isang Levita sa lupaing maburol ng Ephraim ay pumupunta sa Bethlehem-juda upang bawiin ang kaniyang kinakasama; pinipigil siya ng ama nito na nagpipiging sa loob ng limang araw."
       da: "En levit fra Efraims bjergland rejser til Betlehem i Juda for at hente sin medhustru tilbage; hendes far holder ham fast med festmåltider i fem dage."
       sr: "Левит из горе Јефремове одлази у Витлејем Јудин да доведе натраг своју иночу; њен отац га задржава на гозби пет дана."
+      hu: "Efraim hegyvidékének egy lévitája a júdai Betlehembe megy, hogy visszahozza ágyasát; az asszony apja öt napig vendégeskedéssel tartja vissza."
+      fi: "Efraimin vuoriseudun leeviläinen lähtee Juudan Betlehemiin hakemaan takaisin sivuvaimoaan; tämän isä pitää häntä juhlimassa viisi päivää."
+      vi: "Một người Lê-vi ở núi Ép-ra-im đi đến Bết-lê-hem của Giu-đa để đem vợ bé mình về; cha nàng giữ người lại ăn tiệc trong năm ngày."
+      ro: "Un levit din muntele lui Efraim merge la Betleemul lui Iuda ca să-și aducă înapoi țiitoarea; tatăl ei îl ține la ospăț cinci zile."
+      bg: "Един левит от Ефремовата планина отива във Витлеем Юдейски, за да върне наложницата си; баща ѝ го задържа на гощавка пет дни."
   - place: a403c45 # Jebus
     ref: Judg.19.10-Judg.19.12
     note:
@@ -68,6 +78,11 @@ stops:
       tl: "Nang malapit nang lumubog ang araw ay umaabot sila sa Jebus, na siyang Jerusalem; ayaw tumuloy ng Levita sa bayan ng mga dayuhan at nagpapatuloy sa Gibea."
       da: "Da dagen er fremskreden, når de Jebus, det er Jerusalem; leviten vil ikke overnatte i en fremmeds by og går videre til Gibea."
       sr: "Кад је дан био већ на измаку, стижу до Јевуса, то јест Јерусалима; левит не хтеде да заноћи у туђинском граду и иде даље у Гавају."
+      hu: "A nap már lehanyatlóban, Jebúzhoz érnek, azaz Jeruzsálemhez; a lévita nem akar idegenek városában megszállni, ezért tovább megy Gibeába."
+      fi: "Päivän jo kuluttua pitkälle he saapuvat Jebusiin, se on Jerusalem; leeviläinen ei suostu yöpymään vieraiden kaupungissa ja jatkaa Gibeaan."
+      vi: "Khi ngày đã xế, họ đến Giê-bu, tức là Giê-ru-sa-lem; người Lê-vi không chịu nghỉ đêm trong một thành của người ngoại và đi tiếp đến Ghi-bê-a."
+      ro: "Când ziua e pe sfârșite, ajung la Iebus, adică Ierusalim; levitul nu vrea să rămână peste noapte într-o cetate de străini și merge mai departe, la Ghibea."
+      bg: "Когато денят вече е превалял, те стигат до Йевус, който е Йерусалим; левитът не иска да нощува в град на чужденци и продължава към Гива."
   - place: ac24f5f # Gibeah
     ref: Judg.19.13-Judg.19.30
     note:
@@ -87,6 +102,11 @@ stops:
       tl: "Sa Gibea ng Benjamin ay walang tumatanggap sa kanila kundi isang matanda; inaabuso ng mga lalaki ng bayan ang kinakasama sa buong magdamag, at namamatay siya sa pintuan. Pinuputol ng Levita ang kaniyang bangkay sa labindalawang piraso at ipinadadala sa lahat ng hangganan ng Israel."
       da: "I Benjamins Gibea tager ingen imod dem undtagen en gammel mand; byens mænd mishandler medhustruen natten igennem, og hun dør ved døren. Leviten skærer hendes legeme i tolv stykker og sender dem ud over hele Israels land."
       sr: "У Гаваји венијаминовој нико их не прима осим једног старца; људи из града ружно поступају с иночом целу ноћ, и она умире на вратима. Левит расече њено тело на дванаест комада и разашиље по свим крајевима Израиљевим."
+      hu: "A benjámini Gibeában egy öreg emberen kívül senki sem fogadja be őket; a város férfiai egész éjszaka gyalázzák az ágyast, aki az ajtónál meghal. A lévita tizenkét darabra vágja a testét, és elküldi Izráel minden határába."
+      fi: "Benjaminin Gibeassa ei kukaan ota heitä luokseen paitsi vanha mies; kaupungin miehet pahoinpitelevät sivuvaimoa läpi yön, ja hän kuolee oven ääreen. Leeviläinen paloittelee hänen ruumiinsa kahteentoista osaan ja lähettää ne kaikkiin Israelin alueisiin."
+      vi: "Tại Ghi-bê-a của Bên-gia-min, không ai tiếp rước họ ngoài một ông già; những người trong thành làm nhục người vợ bé suốt đêm, và nàng chết nơi cửa. Người Lê-vi chặt thây nàng ra làm mười hai đoạn và gởi đi khắp địa phận Y-sơ-ra-ên."
+      ro: "La Ghibea lui Beniamin nimeni nu-i primește în afară de un bătrân; bărbații cetății o batjocoresc pe țiitoare toată noaptea, iar ea moare la ușă. Levitul îi taie trupul în douăsprezece bucăți și le trimite prin toate hotarele lui Israel."
+      bg: "В Гива Вениаминова никой не ги приема освен един старец; мъжете на града малтретират наложницата цяла нощ и тя умира на прага. Левитът разсича тялото ѝ на дванадесет части и ги разпраща по всички предели на Израил."
   - place: a736f6c # Mizpah
     ref: Judg.20.1-Judg.20.17
     note:
@@ -106,6 +126,11 @@ stops:
       tl: "Ang buong Israel, “mula sa Dan hanggang sa Beer-seba”, ay nagtipon sa Panginoon sa Mizpa; tumangging ibigay ng Benjamin ang mga lalaki ng Gibea."
       da: "Hele Israel, »fra Dan indtil Beersaba«, samles for Herren i Mispa; Benjamin nægter at udlevere Gibeas mænd."
       sr: "Сав Израиљ, „од Дана до Вирсавеје“, окупља се Господу у Масфи; Венијамин одбија да изда људе из Гаваје."
+      hu: "Egész Izráel, „Dántól fogva Bersebáig”, összegyűlik az Úrhoz Micpában; Benjámin nem hajlandó kiadni Gibea férfiait."
+      fi: "Koko Israel, ”Daanista aina Beersebaan saakka”, kokoontuu Herran eteen Mispaan; Benjamin kieltäytyy luovuttamasta Gibean miehiä."
+      vi: "Cả Y-sơ-ra-ên, “từ Đan cho đến Bê-e-sê-ba”, nhóm hiệp lại trước mặt Đức Giê-hô-va tại Mích-ba; Bên-gia-min không chịu nộp những người ở Ghi-bê-a."
+      ro: "Tot Israelul, „dela Dan până la Virsavee”, se adună la Domnul la Mițpa; Beniamin refuză să-i predea pe oamenii din Ghibea."
+      bg: "Целият Израил, „от Дан до Вирсавее“, се събира пред Господа в Мицпа; Вениамин отказва да предаде мъжете на Гива."
   - place: a64f355 # Bethel
     ref: Judg.20.18-Judg.20.28
     note:
@@ -125,6 +150,11 @@ stops:
       tl: "Sa bahay ng Diyos, na sa Hebreo ay Beth-el at karaniwang itinuturing na bayan ng Beth-el, nagtanong ang Israel kung sino ang unang aahon; dalawang beses na natalo, umiyak at nag-ayuno sila sa harap ng kaban, na pinaglilingkuran ni Phinees na anak ni Eleazar, at sinabihan silang umahon muli."
       da: "Ved Guds hus, på hebraisk Bet-El og sædvanligvis opfattet som byen Betel, spørger Israel, hvem der skal drage op først; to gange slået græder og faster de foran arken, hvor Pinehas, Eleazars søn, gør tjeneste, og får besked om at drage op endnu en gang."
       sr: "У дому Божјем, на хебрејском Ветиљ, који се обично схвата као град Ветиљ, Израиљ пита ко ће први ићи; два пута потучени, плачу и посте пред ковчегом, код кога служи Финес син Елеазаров, и добијају заповест да иду још једном."
+      hu: "Isten házánál, amely héberül Béth-El, és többnyire Bétel városaként értelmezik, Izráel megkérdezi, ki vonuljon fel elsőként; kétszer is vereséget szenvednek, sírnak és bőjtölnek a láda előtt, ahol Fineás, Eleázár fia szolgál, és azt a választ kapják, hogy vonuljanak fel még egyszer."
+      fi: "Jumalan huoneessa, hepreaksi Bet-El ja yleensä Betelin kaupungiksi katsottu, Israel kysyy, kuka nousee ensimmäisenä; kahdesti lyötyinä he itkevät ja paastoavat arkin edessä, jota palvelee Pinehas, Eleasarin poika, ja heitä käsketään nousta vielä kerran."
+      vi: "Tại nhà Đức Chúa Trời, tiếng Hê-bơ-rơ là Bê-tên và thường được hiểu là thành Bê-tên, Y-sơ-ra-ên hỏi ai phải đi lên trước; hai lần bị thua, họ khóc lóc và kiêng ăn trước hòm giao ước, nơi Phi-nê-a, con trai Ê-lê-a-sa, đang phục vụ, và được truyền phải đi lên một lần nữa."
+      ro: "La casa lui Dumnezeu, în ebraică Bet-El, înțeleasă de obicei drept cetatea Betel, Israel întreabă cine să urce primul; bătuți de două ori, plâng și postesc înaintea chivotului, unde slujește Fineas, fiul lui Eleazar, și li se spune să mai urce o dată."
+      bg: "В Божия дом — на еврейски Бет-Ел, обикновено разбиран като град Ветил — Израил пита кой да възлезе пръв; два пъти разбити, те плачат и постят пред ковчега, при който служи Финеес, синът на Елеазар, и им е казано да възлязат още веднъж."
   - place: ac24f5f # Gibeah
     ref: Judg.20.29-Judg.20.44
     note:
@@ -144,6 +174,11 @@ stops:
       tl: "Naglagay ng pananambang sa palibot ng Gibea; nasakop at nasunog ang lungsod, at nasaktan ang Benjamin: 25,100 lalaki ang nabuwal sa araw na iyon."
       da: "Der lægges et baghold rundt om Gibea; byen indtages og brændes, og Benjamin slås: 25.100 mand falder den dag."
       sr: "Око Гаваје се поставља заседа; град је освојен и спаљен, а Венијамин потучен: тога дана пада двадесет и пет хиљада и сто људи."
+      hu: "Gibea körül leshelyet állítanak; a várost elfoglalják és felégetik, Benjámint pedig megverik: azon a napon 25 100 férfi esik el."
+      fi: "Gibean ympärille asetetaan väijytys; kaupunki valloitetaan ja poltetaan, ja Benjamin lyödään: sinä päivänä kaatuu 25 100 miestä."
+      vi: "Họ đặt quân phục binh chung quanh Ghi-bê-a; thành bị chiếm và bị đốt, và Bên-gia-min bị đánh bại: hai mươi lăm ngàn một trăm người ngã xuống trong ngày ấy."
+      ro: "În jurul Ghibei se pune o pândă; cetatea este cucerită și arsă, iar Beniamin este lovit: în ziua aceea cad 25.100 de bărbați."
+      bg: "Около Гива е поставена засада; градът е превзет и изгорен, а Вениамин е поразен: в този ден падат 25 100 мъже."
   - place: a45acc3 # Rimmon
     ref: Judg.20.45-Judg.20.48
     note:
@@ -163,6 +198,11 @@ stops:
       tl: "Anim na raang lalaki ang tumakas patungo sa bato ng Rimmon sa ilang at nanatili roon nang apat na buwan, ang lahat ng natira sa lipi."
       da: "Seks hundrede mand flygter til Rimmons klippe i ørkenen og bliver der i fire måneder, alt hvad der er tilbage af stammen."
       sr: "Шест стотина људи бежи у пустињу к стени Римону и тамо остаје четири месеца, све што је остало од племена."
+      hu: "Hatszáz férfi a pusztába, a Rimmón sziklájához menekül, és négy hónapig ott marad; ennyi maradt a törzsből."
+      fi: "Kuusisataa miestä pakenee Rimmonin kalliolle erämaahan ja pysyy siellä neljä kuukautta; heitä on kaikki, mitä sukukunnasta on jäljellä."
+      vi: "Sáu trăm người chạy trốn đến hòn đá Rim-môn trong đồng vắng và ở đó bốn tháng, là tất cả những gì còn lại của chi phái."
+      ro: "Șase sute de bărbați fug la stânca Rimon, în pustiu, și rămân acolo patru luni: tot ce a mai rămas din seminție."
+      bg: "Шестстотин мъже бягат към скалата Римон в пустинята и остават там четири месеца — всичко, което е останало от племето."
   - place: af92088 # Jabesh-gilead
     ref: Judg.21.1-Judg.21.14
     note:
@@ -182,6 +222,11 @@ stops:
       tl: "Sumumpa ang Israel na hindi magbibigay ng mga asawa sa Benjamin. Walang ipinadala ang Jabes-galaad sa Mizpa: labindalawang libong lalaki ang sumalakay rito at nagdala ng apat na raang dalaga sa kampo sa Shiloh."
       da: "Israel har svoret ikke at give Benjamin hustruer. Jabesj i Gilead sendte ingen til Mispa: tolv tusind mand slår byen og bringer fire hundrede jomfruer til lejren i Silo."
       sr: "Израиљ се заклео да неће давати жене Венијамину. Јавис Галадски није послао никога у Масфу: дванаест хиљада људи туче га и доводи четири стотине девојака у логор у Силу."
+      hu: "Izráel megesküdött, hogy nem ad feleséget Benjáminnak. Jábés-Gileád senkit sem küldött Micpába: tizenkétezer férfi megveri, és négyszáz szüzet visz a silói táborba."
+      fi: "Israel on vannonut, ettei anna Benjaminille vaimoja. Jabes-Gilead ei lähettänyt ketään Mispaan: kaksitoista tuhatta miestä lyö sen ja tuo neljäsataa neitsyttä leiriin Siloon."
+      vi: "Y-sơ-ra-ên đã thề không gả con gái cho Bên-gia-min. Gia-be Ga-la-át không cử ai đến Mích-ba: mười hai ngàn người đánh thành ấy và đem bốn trăm trinh nữ về trại quân tại Si-lô."
+      ro: "Israel a jurat să nu-i dea lui Beniamin femei. Iabeș din Galaad nu trimisese pe nimeni la Mițpa: douăsprezece mii de bărbați o lovesc și aduc patru sute de fecioare în tabăra de la Silo."
+      bg: "Израил се е заклел да не дава жени на Вениамин. Явис Галаадски не е пратил никого в Мицпа: дванадесет хиляди мъже го поразяват и довеждат четиристотин девици в стана в Силом."
   - place: aa4680a # Shiloh
     ref: Judg.21.15-Judg.21.25
     note:
@@ -201,3 +246,8 @@ stops:
       tl: "Sa taunang kapistahan ng Panginoon sa Shiloh, ang mga Benjamita, na nagtago sa mga ubasan, ay humuli ng mga asawa mula sa mga anak na babae ng Shiloh nang lumabas ang mga ito upang sumayaw. “Nang mga araw na yao'y walang hari sa Israel: ginagawa ng bawa't isa ang matuwid sa kaniyang sariling mga mata.”"
       da: "Ved Herrens årlige fest i Silo fanger benjaminitterne, skjult i vingårdene, hustruer blandt Silos døtre, da de kommer ud for at danse. »I disse Dage var ingen Konge i Israel; hver gjorde det, som var ret for hans Øjne.«"
       sr: "На годишњем празнику Господњем у Силу Венијаминовци, скривени по виноградима, хватају себи жене из кћери силонских док излазе да играју коло. „У оно време не беше цара у Израиљу; сваки чињаше шта му беше драго.“"
+      hu: "Az Úr évenkénti silói ünnepén a benjáminiták a szőlőkben elrejtőzve feleséget ragadnak Siló leányai közül, amikor azok táncolni kijönnek. „Ebben az időben nem volt király Izráelben; azért mindenki azt cselekedte, a mi jónak látszott az ő szemei előtt.”"
+      fi: "Herran vuotuisilla juhlilla Silossa benjaminilaiset, viinitarhoihin kätkeytyneinä, siepaavat itselleen vaimot Silon tyttärien joukosta näiden tullessa ulos tanssimaan. ”Siihen aikaan ei ollut kuningasta Israelissa; jokainen teki sitä, mikä hänen omasta mielestään oli oikein.”"
+      vi: "Trong lễ hằng năm của Đức Giê-hô-va tại Si-lô, người Bên-gia-min, nấp trong các vườn nho, bắt lấy vợ trong số các con gái Si-lô khi họ ra nhảy múa. “Đang lúc đó, không có vua trong Y-sơ-ra-ên; ai nấy làm theo ý mình lấy làm phải.”"
+      ro: "La sărbătoarea anuală a Domnului de la Silo, beniamiții, ascunși în vii, își răpesc soții dintre fiicele din Silo când ies să joace. „În zilele acelea nu erà împărat în Israil, pentru aceea tot omul ce se păreà drept înaintea ochilor lui, făceà.”"
+      bg: "На ежегодния Господен празник в Силом вениаминците, скрити в лозята, грабват жени измежду силомските дъщери, когато те излизат да играят. „В онези дни нямаше цар в Израил: всеки правеше що му се виждаше угодно.“"

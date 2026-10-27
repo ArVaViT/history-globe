@@ -63,6 +63,104 @@ describe("inflectedForms", () => {
     has("Galileia", "pt", "Galiléia");
     has("Babilônia", "pt", "Babilónia");
   });
+  it("gives the Hungarian cases", () => {
+    // The Károli Bible and the site's articles: «Jeruzsálemben», «Jeruzsálemmel», «Hebronnal».
+    has(
+      "Jeruzsálem",
+      "hu",
+      ...["Jeruzsálemben", "Jeruzsálembe", "Jeruzsálemből", "Jeruzsálemet", "Jeruzsálemnek"],
+      ...["Jeruzsálemhez", "Jeruzsálemig", "Jeruzsálemen", "Jeruzsálemre", "Jeruzsálemről"],
+      ...["Jeruzsálemtől", "Jeruzsálemmel", "Jeruzsálemért", "Jeruzsálemnél", "Jeruzsálemi"],
+    );
+    expect(inflectedForms("Jeruzsálem", "hu")).not.toContain("Jeruzsálemban");
+    has("Betánia", "hu", "Betániában", "Betániába", "Betániából", "Betániát", "Betániának");
+    has("Betánia", "hu", "Betániához", "Betániától", "Betániáig", "Betániai");
+    has("Ninive", "hu", "Ninivét", "Ninivébe", "Ninivében", "Ninivétől", "Ninivénél", "Ninivével");
+    has("Róma", "hu", "Rómának", "Rómával", "Rómán", "Rómaként", "Rómáé", "Rómája", "Rómájának");
+    has("Pátmosz", "hu", "Pátmoszon", "Pátmoszt", "Pátmoszról", "Pátmoszig");
+    has("Hebron", "hu", "Hebronba", "Hebront", "Hebronnal", "Hebrontól", "Hebronná");
+    has("Ciprus", "hu", "Ciprusra", "Cipruson", "Ciprust", "Ciprussal");
+    has("Tiberias", "hu", "Tiberiasba", "Tiberiasszal");
+    has("Damaszkusz", "hu", "Damaszkuszt", "Damaszkuszon", "Damaszkusszal", "Damaszkusszá");
+    has("Názáret", "hu", "Názáretben", "Názárettől", "Názárettel", "Názáretet");
+    has("Egyiptom", "hu", "Egyiptomot", "Egyiptommal", "Egyiptomhoz");
+    has("Jerikó", "hu", "Jerikóban", "Jerikót", "Jerikóval", "Jerikóvá");
+    // The vowel before i, í and é decides; after a back vowel an é goes either way.
+    has("Karkemis", "hu", "Karkemisnél");
+    has("Athén", "hu", "Athénba", "Athéntól", "Athénben");
+    // Front rounded: «a Hinnom-völgyön», «völgyhöz».
+    has(
+      "Hinnom-völgy",
+      "hu",
+      "Hinnom-völgyben",
+      "Hinnom-völgyön",
+      "Hinnom-völgyhöz",
+      "Hinnom-völggyel",
+    );
+    has("Olajfák hegye", "hu", "Olajfák hegyén", "Olajfák hegyére", "Olajfák hegyéről");
+    has("Galileai-tenger", "hu", "Galileai-tengeren", "Galileai-tengerbe", "Galileai-tengertől");
+    has("Felső-tó", "hu", "Felső-tóhoz", "Felső-tavon");
+    // The live sample of content/docs/hu/embedding.html.
+    has("Cézárea", "hu", "Cézáreából");
+    has("Efezus", "hu", "Efezusban");
+    has("Korinthus", "hu", "Korinthusban");
+    has("Sikem", "hu", "Sikembe");
+    has("Betlehem", "hu", "Betlehemben");
+    expect(inflectedForms("Ai", "hu")).toEqual(["Ai"]);
+  });
+  it("gives the Finnish cases", () => {
+    // Pyhä Raamattu 1933/1938: «Jerusalemiin», «Betaniaan», «Niiniveen», «Efesoon».
+    has(
+      "Jerusalem",
+      "fi",
+      ...["Jerusalemin", "Jerusalemissa", "Jerusalemista", "Jerusalemiin", "Jerusalemilla"],
+      ...["Jerusalemille", "Jerusalemilta", "Jerusalemia", "Jerusalemina"],
+    );
+    has(
+      "Betania",
+      "fi",
+      "Betanian",
+      "Betaniassa",
+      "Betaniasta",
+      "Betaniaan",
+      "Betanialla",
+      "Betaniaa",
+    );
+    has("Niinive", "fi", "Niiniven", "Niinivessä", "Niinivestä", "Niiniveen", "Niiniveä");
+    has("Kapernaum", "fi", "Kapernaumissa", "Kapernaumiin");
+    has("Egypti", "fi", "Egyptin", "Egyptissä", "Egyptistä", "Egyptiin", "Egyptiä", "Egyptille");
+    has("Efesos", "fi", "Efeson", "Efesossa", "Efesoon", "Efesosta", "Efesoksen", "Efesoksessa");
+    has("Kypros", "fi", "Kyproon", "Kyproksella", "Kyprokselle", "Kyprosta");
+    has("Damaskos", "fi", "Damaskon", "Damaskoon", "Damaskossa", "Damaskoa", "Damaskolta");
+    has("Korintti", "fi", "Korintin", "Korintissa", "Korinttiin");
+    has("Siinai", "fi", "Siinain", "Siinailta", "Siinaihin");
+    has("Karmelvuori", "fi", "Karmelvuorella", "Karmelvuorelle", "Karmelvuoren", "Karmelvuorta");
+    has("Galileanjärvi", "fi", "Galileanjärvellä", "Galileanjärveen");
+    has("Pisidian Antiokia", "fi", "Pisidian Antiokiassa", "Pisidian Antiokiaan");
+    has("Abel-Mehola", "fi", "Abel-Meholaan", "Abel-Meholassa");
+    // An adjective before the noun would be declined too: «Uudessa portissa».
+    expect(inflectedForms("Uusi portti", "fi")).toEqual(["Uusi portti"]);
+  });
+  it("gives the Romanian article and cases", () => {
+    // Biblia 1914: «Ierusalimului», «Ierusalimul», «Galileei», «Samariei», «Iordanului».
+    has("Ierusalim", "ro", "Ierusalimul", "Ierusalimului", "Ierusalime");
+    has("Betleem", "ro", "Betleemul", "Betleemului");
+    has("Galileea", "ro", "Galileii", "Galileei");
+    has("Samaria", "ro", "Samariei");
+    has("Roma", "ro", "Romei");
+    has("Cipru", "ro", "Ciprul", "Ciprului");
+    has("Ninive", "ro", "Ninivei");
+    has("Iordan", "ro", "Iordanul", "Iordanului");
+    // The cedilla letters of older keyboards: Aşdod for Așdod.
+    has("Așdod", "ro", "Aşdod", "Așdodului", "Aşdodului");
+  });
+  it("matches Turkish, Vietnamese, Swahili and Bulgarian names as written", () => {
+    // The Turkish suffix follows an apostrophe (Mısır'dan), where the name already ends.
+    expect(inflectedForms("Mısır", "tr")).toEqual(["Mısır"]);
+    expect(inflectedForms("Giê-ru-sa-lem", "vi")).toEqual(["Giê-ru-sa-lem"]);
+    expect(inflectedForms("Yerusalemu", "sw")).toEqual(["Yerusalemu"]);
+    expect(inflectedForms("Йерусалим", "bg")).toEqual(["Йерусалим"]);
+  });
   it("matches names of several words, and other languages, as written", () => {
     expect(inflectedForms("Góra Karmel", "pl")).toEqual(["Góra Karmel"]);
     expect(inflectedForms("Jerusalén", "es")).toEqual(["Jerusalén"]);

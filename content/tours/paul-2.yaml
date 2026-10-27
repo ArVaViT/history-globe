@@ -20,6 +20,11 @@ title:
   tl: "Ang ikalawang paglalakbay ni Pablo"
   da: "Paulus' anden rejse"
   sr: "Павлово друго путовање"
+  hu: "Pál második útja"
+  fi: "Paavalin toinen matka"
+  vi: "Cuộc hành trình thứ hai của Phao-lô"
+  ro: "A doua călătorie a lui Pavel"
+  bg: "Второто пътуване на Павел"
 year: "AD 50"
 people: ["Paul@Act.7.58-2Pe"]
 approximate: true
@@ -43,6 +48,11 @@ stops:
       tl: "Umalis sina Pablo at Silas mula sa Antioquia."
       da: "Paulus og Silas bryder op fra Antiokia."
       sr: "Павле и Сила полазе из Антиохије."
+      hu: "Pál és Szilász elindulnak Antiókhiából."
+      fi: "Paavali ja Silas lähtevät Antiokiasta."
+      vi: "Phao-lô và Si-la lên đường từ An-ti-ốt."
+      ro: "Pavel și Sila pornesc din Antiohia."
+      bg: "Павел и Сила тръгват от Антиохия."
   - place: aa401a9
     ref: Acts.16.1
     note:
@@ -62,6 +72,11 @@ stops:
       tl: "Muli sa Derbe."
       da: "Derbe igen."
       sr: "Опет Дерва."
+      hu: "Ismét Derbe."
+      fi: "Derbe jälleen."
+      vi: "Lại đến Đẹt-bơ."
+      ro: "Din nou la Derba."
+      bg: "Отново Дервия."
   - place: af0719d
     ref: Acts.16.2-Acts.16.3
     note:
@@ -81,6 +96,11 @@ stops:
       tl: "Sumasama sa kanila si Timoteo."
       da: "Timotheus slutter sig til dem."
       sr: "Придружује им се Тимотије."
+      hu: "Timóteus csatlakozik hozzájuk."
+      fi: "Timoteus liittyy heihin."
+      vi: "Ti-mô-thê nhập bọn với họ."
+      ro: "Timotei li se alătură."
+      bg: "Тимотей се присъединява към тях."
   - place: a91c509
     ref: Acts.16.8-Acts.16.10
     note:
@@ -100,6 +120,11 @@ stops:
       tl: "Ang pangitain ng lalaking taga-Macedonia."
       da: "Synet af manden fra Makedonien."
       sr: "Виђење човека македонског."
+      hu: "A macedón férfi látomása."
+      fi: "Makedonialaisen miehen näky."
+      vi: "Dị tượng người Ma-xê-đoan."
+      ro: "Vedenia bărbatului macedonean."
+      bg: "Видението за македонеца."
   - place: a68750d
     ref: Acts.16.11
     by: sea
@@ -120,6 +145,11 @@ stops:
       tl: "Tuwirang paglalayag patungong Samotracia."
       da: "Ret kurs mod Samothrake."
       sr: "Пловидба право до Самотраке."
+      hu: "Egyenes úton Szamothrakéba."
+      fi: "Suora matka Samothrakeen."
+      vi: "Đi thẳng đến Sa-mô-tra-xơ."
+      ro: "Drum drept spre Samotracia."
+      bg: "Направо към Самотраки."
   - place: a6a7150
     ref: Acts.16.11
     by: sea
@@ -141,6 +171,11 @@ stops:
       tl: "Dumaong sa Neapolis."
       da: "Landgang ved Neapolis."
       sr: "Пристајање у Неапољ."
+      hu: "Kikötés Neapoliszban."
+      fi: "Maihinnousu Neapoliissa."
+      vi: "Cập bến tại Nê-a-bô-li."
+      ro: "Debarcarea la Neapolis."
+      bg: "Слизане на брега в Неапол."
   - place: a49e1d0
     ref: Acts.16.12-Acts.16.40
     note:
@@ -160,6 +195,11 @@ stops:
       tl: "Si Lidia; sina Pablo at Silas sa bilangguan."
       da: "Lydia; Paulus og Silas i fængsel."
       sr: "Лидија; Павле и Сила у тамници."
+      hu: "Lüdia; Pál és Szilász a börtönben."
+      fi: "Lyydia; Paavali ja Silas vankilassa."
+      vi: "Ly-đi; Phao-lô và Si-la ở trong tù."
+      ro: "Lidia; Pavel și Sila în temniță."
+      bg: "Лидия; Павел и Сила в тъмницата."
   - place: a4bdea7
     ref: Acts.17.1
     note:
@@ -179,6 +219,11 @@ stops:
       tl: "Dumaan sa Amfipolis."
       da: "Gennem Amfipolis."
       sr: "Кроз Амфипољ."
+      hu: "Amphipoliszon át."
+      fi: "Amfipoliin kautta."
+      vi: "Đi qua Am-phi-bô-lít."
+      ro: "Prin Amfipolis."
+      bg: "През Амфипол."
   - place: ab20df9
     ref: Acts.17.1
     note:
@@ -198,6 +243,11 @@ stops:
       tl: "Dumaan sa Apolonia."
       da: "Gennem Apollonia."
       sr: "Кроз Аполонију."
+      hu: "Apollónián át."
+      fi: "Apollonian kautta."
+      vi: "Đi qua A-bô-lô-ni."
+      ro: "Prin Apolonia."
+      bg: "През Аполония."
   - place: afa9d8e
     ref: Acts.17.1-Acts.17.9
     note:
@@ -217,6 +267,11 @@ stops:
       tl: "Pangangaral sa sinagoga; ang kaguluhan."
       da: "Forkyndelse i synagogen; opstanden."
       sr: "Проповед у синагоги; буна."
+      hu: "Igehirdetés a zsinagógában; a zendülés."
+      fi: "Saarna synagogassa; mellakka."
+      vi: "Giảng trong nhà hội; cuộc náo động."
+      ro: "Predica în sinagogă; tulburarea."
+      bg: "Проповед в синагогата; размириците."
   - place: a62fe31
     ref: Acts.17.10-Acts.17.14
     note:
@@ -236,6 +291,11 @@ stops:
       tl: "Sinasaliksik araw-araw ng mga taga-Berea ang mga Kasulatan."
       da: "Beræerne gransker Skrifterne dagligt."
       sr: "Веријци свакога дана истражују Писма."
+      hu: "A beroiaiak naponta kutatják az Írásokat."
+      fi: "Beroialaiset tutkivat kirjoituksia päivittäin."
+      vi: "Người Bê-rê ngày ngày tra xem Kinh Thánh."
+      ro: "Bereenii cercetează Scripturile în fiecare zi."
+      bg: "Верийците изследват Писанията всеки ден."
   - place: a1fe6e7
     ref: Acts.17.15-Acts.17.34
     note:
@@ -255,6 +315,11 @@ stops:
       tl: "Si Pablo sa Areopago."
       da: "Paulus på Areopagos."
       sr: "Павле на Ареопагу."
+      hu: "Pál az Areopáguszon."
+      fi: "Paavali Areiopagilla."
+      vi: "Phao-lô tại A-rê-ô-ba-gơ."
+      ro: "Pavel în Areopag."
+      bg: "Павел в Ареопага."
   - place: a6f437a
     ref: Acts.18.1-Acts.18.17
     note:
@@ -274,6 +339,11 @@ stops:
       tl: "Sina Aquila at Priscila; isang taon at anim na buwan."
       da: "Akvila og Priskilla; et år og seks måneder."
       sr: "Акила и Прискила; годину и шест месеци."
+      hu: "Akvila és Priszcilla; egy év és hat hónap."
+      fi: "Akylas ja Priskilla; vuosi ja kuusi kuukautta."
+      vi: "A-qui-la và Bê-rít-sin; một năm sáu tháng."
+      ro: "Acvila și Priscila; un an și șase luni."
+      bg: "Акила и Прискила; година и шест месеца."
   - place: aa31dd3
     ref: Acts.18.18
     note:
@@ -293,6 +363,11 @@ stops:
       tl: "Cencrea, ang daungan ng Corinto."
       da: "Kenkreæ, Korinths havn."
       sr: "Кенхреја, пристаниште Коринта."
+      hu: "Kenkhreai, Korinthus kikötője."
+      fi: "Kenkreat, Korintin satama."
+      vi: "Xen-cơ-rê, hải cảng của Cô-rinh-tô."
+      ro: "Chencrea, portul Corintului."
+      bg: "Кенхрея, пристанището на Коринт."
   - place: a5feb15
     ref: Acts.18.19-Acts.18.21
     by: sea
@@ -313,6 +388,11 @@ stops:
       tl: "Maikling pananatili sa Efeso."
       da: "Et kort ophold i Efesos."
       sr: "Кратак боравак у Ефесу."
+      hu: "Rövid tartózkodás Efezusban."
+      fi: "Lyhyt oleskelu Efesoksessa."
+      vi: "Lưu lại ngắn ngày tại Ê-phê-sô."
+      ro: "Un scurt popas în Efes."
+      bg: "Кратък престой в Ефес."
   - place: a58735e
     ref: Acts.18.22
     by: sea
@@ -333,6 +413,11 @@ stops:
       tl: "Dumaong sa Cesarea."
       da: "Landgang ved Cæsarea."
       sr: "Пристајање у Цезареју."
+      hu: "Kikötés Cézáreában."
+      fi: "Maihinnousu Kesareassa."
+      vi: "Cập bến tại Sê-sa-rê."
+      ro: "Debarcarea la Cezareea."
+      bg: "Слизане на брега в Кесария."
   - place: a15257a
     ref: Acts.18.22
     note:
@@ -352,6 +437,11 @@ stops:
       tl: "Binabati ni Pablo ang iglesia."
       da: "Paulus hilser menigheden."
       sr: "Павле поздравља цркву."
+      hu: "Pál köszönti a gyülekezetet."
+      fi: "Paavali tervehtii seurakuntaa."
+      vi: "Phao-lô chào thăm Hội thánh."
+      ro: "Pavel salută biserica."
+      bg: "Павел поздравява църквата."
   - place: ae41ab4
     ref: Acts.18.22
     note:
@@ -371,3 +461,8 @@ stops:
       tl: "Pabalik sa Antioquia."
       da: "Tilbage til Antiokia."
       sr: "Натраг у Антиохију."
+      hu: "Vissza Antiókhiába."
+      fi: "Takaisin Antiokiaan."
+      vi: "Trở về An-ti-ốt."
+      ro: "Înapoi la Antiohia."
+      bg: "Обратно в Антиохия."

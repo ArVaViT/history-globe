@@ -23,6 +23,14 @@ const GATEWAY_VERSION: Readonly<Partial<Record<Locale, string>>> = {
   nb: "DNB1930",
   sr: "NSP",
   tl: "MBBTAG",
+  // Wave 4 (Bible Gateway's list of versions, 2026-10-25). It has no Turkish Bible: the ESV.
+  hu: "KAR",
+  fi: "R1933",
+  vi: "BD2011",
+  sw: "SNT",
+  // Wave 5: Cornilescu 1924 and the Bulgarian Bible of 1940, the classic texts of each.
+  ro: "RMNN",
+  bg: "BG1940",
 };
 
 export function verseUrl(osis: string, locale: Locale): string {

@@ -9,7 +9,7 @@
  *
  * Options, as attributes of the script tag:
  *   data-scope=".post"   where to look (a CSS selector; the whole page by default)
- *   data-locale="pl"     the text's language: cs, da, de, en, es, fr, it, nb, nl, pl, pt, ru, sr, sv, tl or uk
+ *   data-locale="pl"     the text's language: bg, cs, da, de, en, es, fi, fr, hu, it, nb, nl, pl, pt, ro, ru, sr, sv, tl, uk or vi
  *                        (by default the page's lang; English for any other)
  *   data-every           link every mention, not only the first of each place
  *   data-theme="dark"    the card's colours, light or dark (by default the reader's system)
@@ -34,22 +34,27 @@
   const attr = (k) => (me ? me.getAttribute(k) : null);
   // The languages the globe is published in (packages/model/src/time.ts LOCALES).
   const LANGS = [
+    "bg",
     "cs",
     "da",
     "de",
     "en",
     "es",
+    "fi",
     "fr",
+    "hu",
     "it",
     "nb",
     "nl",
     "pl",
     "pt",
+    "ro",
     "ru",
     "sr",
     "sv",
     "tl",
     "uk",
+    "vi",
   ];
   const asked = (attr("data-locale") || document.documentElement.lang || "en")
     .toLowerCase()
