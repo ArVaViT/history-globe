@@ -34,7 +34,7 @@ DATA = ROOT / "apps" / "web" / "public" / "data"
 OUT = ROOT / "pipeline" / "out" / "dataset"
 CARD = ROOT / "pipeline" / "dataset_card.md"
 
-LANGS = ["en", "cs", "da", "de", "es", "fr", "it", "nb", "nl", "pl", "pt", "ru", "sr", "sv", "tl", "uk"]
+LANGS = ["en", "bg", "cs", "da", "de", "es", "fi", "fr", "hu", "it", "nb", "nl", "pl", "pt", "ro", "ru", "sr", "sv", "tl", "uk", "vi"]
 OTHER = LANGS[1:]
 TABLES = ["places", "place_verses", "place_sites", "people", "events", "battles", "tours", "tour_stops", "ancient_writers"]
 # The card names these as places without a verse; the build checks that they still are.
