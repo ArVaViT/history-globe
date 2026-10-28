@@ -153,7 +153,7 @@ const questions = (
   id: string;
   question: Record<Lang, string>;
   answer: Record<Lang, string[]>;
-  map?: { place?: string; year?: { year: number }; ref?: string };
+  map?: { place?: string; year?: { year: number }; ref?: string; measure?: [string, string] };
   scripture: string[];
   sources: string[];
   sources_ru?: string[];
@@ -701,6 +701,8 @@ function questionPages(l: Lang): void {
       ...(q.map?.place ? { place: q.map.place } : {}),
       ...(q.map?.year ? { year: String(q.map.year.year) } : {}),
       ...(q.map?.ref ? { ref: q.map.ref } : {}),
+      // A "how far" question: the map opens with the distance tool between its two places.
+      ...(q.map?.measure ? { measure: q.map.measure.join(",") } : {}),
       locale: l,
     });
     const body = `    <main id="main" class="page">

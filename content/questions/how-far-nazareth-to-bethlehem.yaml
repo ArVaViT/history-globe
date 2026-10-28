@@ -109,6 +109,7 @@ answer:
 map:
   year: "5 BC"
   ref: Luke.2.4
+  measure: [af5884f, a112427] # Nazareth, Bethlehem
 scripture: [Luke.2.4-Luke.2.7, Luke.2.41, Matt.2.1, Mic.5.2]
 sources:
   - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"

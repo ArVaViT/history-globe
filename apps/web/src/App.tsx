@@ -117,6 +117,17 @@ export function App() {
   const [moreOpen, setMoreOpen] = useState(readMore);
   // The tool open (its menu or one of them), or none.
   const [tool, setTool] = useState<Tool | null>(null);
+  // The distance tool: the first place opened is one end, the next the other; a third
+  // opened is a new other end, measured from the same first.
+  const [measure, setMeasure] = useState<{ from: string | null; to: string | null }>({
+    from: null,
+    to: null,
+  });
+  // Both ends set: the link carries them (useUrlSync), so a copied link reopens the distance.
+  const measured = useMemo(
+    () => (measure.from && measure.to ? ([measure.from, measure.to] as const) : null),
+    [measure.from, measure.to],
+  );
   // The search is a magnifier until pressed: one field less on the map.
   const [searchOpen, setSearchOpen] = useState(false);
   // The tour's quiz on screen, kept with the tour it was made for.
@@ -274,7 +285,7 @@ export function App() {
     document.documentElement.lang = state.locale;
   }, [i18n, state.locale, globe]);
 
-  useUrlSync(globe, data);
+  useUrlSync(globe, data, measured);
   const { ready, hover } = useMapFeed(globe);
   useEffect(() => {
     // The map's own controls leave their corners: the zoom and compass go into the player,
@@ -466,16 +477,22 @@ export function App() {
   // Its own years, for the line under the slider; a gate's years are its city's: none.
   const selectedLife = selected ? data?.life[selected.id] : undefined;
   const ownLife = selectedLife && !selectedLife.inherited ? selectedLife : undefined;
-  // The distance tool: the first place opened is one end, the next the other; a third
-  // opened is a new other end, measured from the same first.
-  const [measure, setMeasure] = useState<{ from: string | null; to: string | null }>({
-    from: null,
-    to: null,
-  });
   const openTool = useCallback((next: Tool | null) => {
     setTool(next);
     if (next !== "measure") setMeasure({ from: null, to: null });
   }, []);
+  // A link with two places measured (`measure=`, the "how far" question pages): the tool
+  // opens between them once the data is there, once. An id the data has not is passed over,
+  // as a bad `place=` is: links come from anywhere.
+  const [linkMeasured, setLinkMeasured] = useState(false);
+  if (data && INITIAL.measure && !linkMeasured) {
+    setLinkMeasured(true);
+    const [from, to] = INITIAL.measure;
+    if (data.byId.has(from) && data.byId.has(to)) {
+      setTool("measure");
+      setMeasure({ from, to });
+    }
+  }
   // A place opened while a tool is open is the tool's next step: an end of the distance, or
   // a stop of the lesson (at the year shown). Opening the tool with a place open counts it.
   const pickedFor = tool === "measure" || tool === "lesson" ? tool : null;

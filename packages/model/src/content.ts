@@ -511,7 +511,11 @@ export const QuestionFile = z.strictObject({
   answer: inLanguages(z.array(z.string().min(40).max(900)).min(1).max(4)).refine(sameParagraphs, {
     message: "every language has as many paragraphs as the English",
   }),
-  /** The view the page's button opens: a place, a year, a chapter's places. */
+  /**
+   * The view the page's button opens: a place, a year, a chapter's places, and for a "how
+   * far" question the two places the distance tool opens between (from, to; the place
+   * opened, if any, is one of them: build-content.ts).
+   */
   map: z
     .strictObject({
       place: z
@@ -520,6 +524,10 @@ export const QuestionFile = z.strictObject({
         .optional(),
       year: approxYear.optional(),
       ref: osis.optional(),
+      measure: z
+        .tuple([z.string().regex(/^a[0-9a-f]{6}$/), z.string().regex(/^a[0-9a-f]{6}$/)])
+        .refine(([from, to]) => from !== to, { message: "a distance needs two different places" })
+        .optional(),
     })
     .optional(),
   scripture: z.array(osis).min(1),

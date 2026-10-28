@@ -45,6 +45,9 @@ the data first (`pnpm data`).
   for that very place, and its excerpt must contain the name (the first letters of the
   last word, at the start of a word). Names of places left out for licence reasons are
   parked with a warning.
+- **Questions** (`content/questions`): the id matches the file name; the place the page's
+  button opens and the two places a "how far" question measures between (`map.measure`) are
+  in the data build, and the opened place is one of the two.
 - **Tours**: the id matches the file name; each stop's passage must name its place, except
   stops listed in `NAMED_BY_CONTEXT` with the reason. A stop whose place the map draws
   faded in its year (the stop's own `year` or the tour's: not yet built, in ruins, gone,

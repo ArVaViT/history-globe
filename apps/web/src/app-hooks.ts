@@ -81,8 +81,20 @@ export function useBibleOnly(): [boolean, (on: boolean) => void] {
   return [on, set];
 }
 
-/** Keep the URL shareable: year, place, camera, locale, layers, tour, chapter (ADR 0006). */
-export function useUrlSync(globe: Globe | null, data: LoadedData | null): void {
+/**
+ * Keep the URL shareable: year, place, camera, locale, layers, tour, chapter (ADR 0006), and
+ * the two places measured when the distance tool shows both (`measure`, App.tsx's state, not
+ * the store's: a change of it writes the link too).
+ */
+export function useUrlSync(
+  globe: Globe | null,
+  data: LoadedData | null,
+  measure: readonly [string, string] | null,
+): void {
+  // The distance, read by the writer below when it runs; and the writer, for the distance's
+  // own changes. Neither restarts the effect: a step under way keeps its place in history.
+  const measureRef = useRef(measure);
+  const saveRef = useRef<() => void>(() => undefined);
   useEffect(() => {
     if (!globe) return;
     let timer = 0;
@@ -126,6 +138,7 @@ export function useUrlSync(globe: Globe | null, data: LoadedData | null): void {
             ...(s.tour ? { tour: s.tour.id, stop: s.tour.step + 1 } : {}),
             // A person's places are not a chapter: they stay out of the link.
             ...(s.focus && !s.focus.ref.startsWith("person:") ? { ref: s.focus.ref } : {}),
+            ...(measureRef.current ? { measure: measureRef.current } : {}),
           },
           push,
         );
@@ -156,12 +169,20 @@ export function useUrlSync(globe: Globe | null, data: LoadedData | null): void {
     };
     const offState = globe.engine.store.subscribe(save);
     window.addEventListener("popstate", onPop);
+    saveRef.current = save;
     return () => {
+      saveRef.current = () => undefined;
       offState();
       window.clearTimeout(timer);
       window.removeEventListener("popstate", onPop);
     };
   }, [globe, data]);
+  // The distance is not in the store: set or cleared, it is written from here (before the
+  // first frame there is no camera yet, and nothing is written).
+  useEffect(() => {
+    measureRef.current = measure;
+    saveRef.current();
+  }, [measure]);
 }
 
 export interface MapFeed {

@@ -154,6 +154,30 @@ describe("layers and tour in the link", () => {
     expect(new URLSearchParams(viewSearch(view, "?ref=Gen.12")).has("ref")).toBe(false);
   });
 
+  it("reads two measured places, and nothing less, more or malformed", () => {
+    expect(readUrl("?measure=a15257a,aaf03fa").measure).toEqual(["a15257a", "aaf03fa"]);
+    expect(readUrl("?measure=a15257a%2Caaf03fa").measure).toEqual(["a15257a", "aaf03fa"]);
+    expect(readUrl("?measure=a15257a").measure).toBeUndefined();
+    expect(readUrl("?measure=a15257a,a15257a").measure).toBeUndefined();
+    expect(readUrl("?measure=a15257a,aaf03fa,a112427").measure).toBeUndefined();
+    expect(readUrl("?measure=a15257a,<script>").measure).toBeUndefined();
+    expect(readUrl("?measure=,aaf03fa").measure).toBeUndefined();
+    expect(readUrl("?measure=").measure).toBeUndefined();
+  });
+
+  it("writes the distance shown and takes it out of a link once it is gone", () => {
+    const shown = new URLSearchParams(
+      viewSearch({ ...view, measure: ["a15257a", "aaf03fa"] }, "?measure=a15257a,a112427"),
+    );
+    expect(shown.get("measure")).toBe("a15257a,aaf03fa");
+    expect(new URLSearchParams(viewSearch(view, "?measure=a15257a,aaf03fa")).has("measure")).toBe(
+      false,
+    );
+    expect(readUrl(`?${viewSearch({ ...view, measure: ["a15257a", "aaf03fa"] })}`).measure).toEqual(
+      ["a15257a", "aaf03fa"],
+    );
+  });
+
   it("reads the embed mode only as embed=1", () => {
     expect(readUrl("?embed=1").embed).toBe(true);
     expect(readUrl("?embed=yes").embed).toBeUndefined();
