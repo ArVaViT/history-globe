@@ -17,7 +17,16 @@ export interface UrlView {
   readonly ref?: string;
   /** Inside another site's page (`embed=1`, docs/embed-protocol.md): the map alone. */
   readonly embed?: boolean;
+  /**
+   * Two places with the distance between them shown (`measure=a15257a,aaf03fa`, the "how far"
+   * question pages): the distance tool open, the first as "from". Whether the data has them,
+   * the app checks on loading.
+   */
+  readonly measure?: readonly [string, string];
 }
+
+/** A place id as OpenBible gives them: `a` and six hex digits. */
+const PLACE_ID = /^a[0-9a-f]{6}$/;
 
 const LAYERS = ["borders", "places", "relief", "routes", "roads", "ancient", "battles"] as const;
 /** The layers an older `layers=` link could list: a layer added since stays on in it. */
@@ -111,7 +120,7 @@ export function readUrl(
   const year = Number(yearText);
   if (yearText !== "" && Number.isInteger(year)) view.year = clamp(year, YEAR_MIN, YEAR_MAX);
   const place = p.get("place");
-  if (place && /^a[0-9a-f]{6}$/.test(place)) view.place = place;
+  if (place && PLACE_ID.test(place)) view.place = place;
   const cam = p.get("camera")?.split(",").map(Number);
   if (cam?.length === 5 && cam.every(Number.isFinite)) {
     const [lon = 0, lat = 0, zoom = 0, pitch = 0, bearing = 0] = cam;
@@ -146,11 +155,15 @@ export function readUrl(
   // A chapter, a range, or a whole book (`ref=Acts`).
   if (ref && (new RegExp(`^${part}(?:-${part})?$`).test(ref) || /^[1-4]?[A-Za-z]{2,6}$/.test(ref)))
     view.ref = ref;
+  // Two different place ids, or nothing: a distance needs both ends.
+  const [from, to, ...more] = p.get("measure")?.split(",") ?? [];
+  if (from && to && more.length === 0 && from !== to && PLACE_ID.test(from) && PLACE_ID.test(to))
+    view.measure = [from, to];
   return view;
 }
 
 type WritableView = Required<Pick<UrlView, "year" | "camera" | "locale">> &
-  Pick<UrlView, "place" | "layers" | "tour" | "stop" | "ref">;
+  Pick<UrlView, "place" | "layers" | "tour" | "stop" | "ref" | "measure">;
 
 export function writeUrl(view: WritableView, push = false): void {
   const url = `?${viewSearch(view, window.location.search)}`;
@@ -196,5 +209,9 @@ export function viewSearch(view: WritableView, current = ""): string {
   else p.delete("stop");
   if (view.ref) p.set("ref", view.ref);
   else p.delete("ref");
+  // The distance shown stays in the link while both its ends are set; closing the tool takes
+  // it out, so a copied link never reopens a measurement no longer on the map.
+  if (view.measure) p.set("measure", view.measure.join(","));
+  else p.delete("measure");
   return p.toString();
 }

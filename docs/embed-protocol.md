@@ -30,6 +30,7 @@ https://<globe-host>/embed/v1?year=30&place=af2161c&locale=ru&theme=dark
 | `layers`  | comma list (older links)          | listed layers on, the rest off; a layer added later on |
 | `tour`    | tour id                           | start a guided tour                                    |
 | `stop`    | 2, 3, … (with `tour`)             | open the tour at that stop                             |
+| `measure` | two place ids, comma-separated    | the distance tool open between them (from, to)         |
 | `locale`  | `en` \| `ru` (`uk`, `de` later)   | UI and names                                           |
 | `theme`   | `light` \| `dark`                 | colour scheme                                          |
 

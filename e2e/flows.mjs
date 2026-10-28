@@ -549,6 +549,21 @@ await step("the distance tool measures from one opened place to the next", async
   await page.getByRole("button", { name: "Закрыть инструменты" }).click();
 });
 
+await step("a question's link opens the distance tool between its two places", async () => {
+  // Jerusalem to Jericho (Tell el-Alayiq), as /ru/q/how-far-jerusalem-to-jericho/ links it.
+  await page.goto(BASE + "?locale=ru&year=30&ref=Luke.10.30&measure=a15257a,aaf03fa");
+  await mapReady(page);
+  await page.getByText("21 км по прямой").waitFor({ timeout: 8000 });
+  const panel = page.locator("#tools-panel");
+  expect(await panel.getByText("Иерусалим").count(), "the first end is Jerusalem");
+  expect(await panel.getByText("Иерихон").count(), "the second end is Jericho");
+  await page.waitForTimeout(1500);
+  expect(search().get("measure") === "a15257a,aaf03fa", "the link keeps the distance");
+  await page.getByRole("button", { name: "Закрыть инструменты" }).click();
+  await page.waitForTimeout(600);
+  expect(!search().has("measure"), "closing the tool takes the distance out of the link");
+});
+
 console.log(results.join("\n"));
 console.log(errors.length ? [...new Set(errors)].join("\n") : "no page errors");
 await browser.close();

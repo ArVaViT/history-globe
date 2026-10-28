@@ -30,6 +30,20 @@ describe("the static pages", () => {
     expect(codes(declared).sort()).toEqual([...LOCALES].sort());
   });
 
+  // Google takes the site's name from a WebSite node on the root page, and from nowhere else;
+  // the language front pages carry the same node (scripts/build-pages.ts).
+  it("name the site to search engines on the root page, beside the application", () => {
+    const ld = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/.exec(
+      read("index.html"),
+    )?.[1];
+    const graph = (JSON.parse(ld ?? "{}") as { "@graph"?: Record<string, unknown>[] })["@graph"];
+    const site = graph?.find((n) => n["@type"] === "WebSite");
+    expect(site).toMatchObject({ name: "History Globe", url: "https://historyglobe.app/" });
+    expect(graph?.some((n) => n["@type"] === "WebApplication")).toBe(true);
+    const built = readFileSync(join(web, "../../scripts/build-pages.ts"), "utf8");
+    expect(built).toMatch(/"@type": "WebSite",\s*name: "History Globe",\s*url: `\$\{site\}\/`/);
+  });
+
   it("send an old About link to every language's documentation", () => {
     const docs = /const docs = (\[[^\]]*\])/.exec(read("public/about.html"))?.[1];
     expect(codes(docs)).toEqual(LOCALES.filter((l) => l !== "en"));
