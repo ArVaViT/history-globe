@@ -109,6 +109,7 @@ answer:
 map:
   year: "AD 30"
   ref: Luke.10.30
+  measure: [a15257a, aaf03fa] # Jerusalem, Jericho of the Gospels (Tell el-Alayiq), the one the answer measures to
 scripture: [Luke.10.30-Luke.10.34, Luke.18.35, Luke.19.1-Luke.19.5, Josh.6.1]
 sources:
   - "Straight-line distance between the places' points: OpenBible.info Bible Geocoding Data (CC BY 4.0)"

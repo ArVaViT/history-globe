@@ -275,6 +275,12 @@ for (const file of existsSync(questionsDir)
   if (`${q.id}.yaml` !== file) errors.push(`questions/${file}: id "${q.id}" ≠ file name`);
   if (q.map?.place && !known.has(q.map.place))
     errors.push(`questions/${file}: place ${q.map.place} is not in the data build`);
+  for (const id of q.map?.measure ?? [])
+    if (!known.has(id))
+      errors.push(`questions/${file}: measured place ${id} is not in the data build`);
+  // The place the link opens becomes an end of the distance in the app: it must be one here.
+  if (q.map?.place && q.map.measure && !q.map.measure.includes(q.map.place))
+    errors.push(`questions/${file}: place ${q.map.place} is not an end of the distance measured`);
   questions.push(q);
 }
 
