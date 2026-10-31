@@ -11,6 +11,7 @@ reviewer:
   given: "Given names, for the citation"
   title: "Their post, as they word it"
   institution: "The official name, at the time of the review"
+  # affiliation: "Their whole affiliation as they word it, if title, institution cannot hold it"
   # url: "https://their university page"
   # orcid: "0000-0000-0000-0000"
 date: "2026-11-14" # the date of their report

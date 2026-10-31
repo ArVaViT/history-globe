@@ -32,8 +32,9 @@ are given. The
 articles, tours and events are drafted with AI help under the author's direction and then
 checked against their sources in separate review passes. The last full pass, finished on
 2026-10-17, re-read every article against its sources. These reviews were not made by
-scholars: no article has been read by a historian yet, and each article page says so. An
-article a historian has read will carry the historian's name. How each layer is made and
+scholars. An article a historian has read carries the historian's name and a link to the
+review (the first, by Juan Manuel Tebes, covers five articles on Edom and the Arabah); every
+other article page says it has not been read by a historian yet. How each layer is made and
 what is uncertain: [methodology](https://historyglobe.app/docs/methodology.html).
 
 Errors we found in the datasets we draw on, and our own disagreements with them, are listed

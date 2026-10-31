@@ -168,7 +168,7 @@ export function reviewPages(o: {
         : []),
     ];
     return `<div class="reviewer"><p class="reviewer-name">${esc(r.reviewer.name)}${r.reviewer.name_native ? ` <span class="note">(${esc(r.reviewer.name_native)})</span>` : ""}</p>
-        <p class="note">${esc(r.reviewer.title)}, ${esc(r.reviewer.institution)} <span>(${esc(W.affiliation)})</span>${links.length ? `<br />${links.join(" · ")}` : ""}</p></div>`;
+        <p class="note">${esc(r.reviewer.affiliation ?? `${r.reviewer.title}, ${r.reviewer.institution}`)} <span>(${esc(W.affiliation)})</span>${links.length ? `<br />${links.join(" · ")}` : ""}</p></div>`;
   };
   const statement = (r: ReviewRecord) => {
     const own = r.statement.translations?.[l];
