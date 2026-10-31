@@ -206,7 +206,7 @@ export function App() {
   useEffect(() => {
     setPersonCardOpen(person !== null);
   }, [person]);
-  const periodNow = folded ? periodAt(state.year) : undefined;
+  const periodNow = periodAt(state.year);
   // The way back holds only while the stop's place stays open: another place, or the
   // card closed, and it goes (adjusted during render, as React recommends).
   if (backToTour && state.selectedPlace !== backToTour.place && !state.tour) setBackToTour(null);
@@ -537,6 +537,13 @@ export function App() {
   // On a phone an open card takes the lower half: the column folds to its header.
   // A quiz on the tour stands where the tour's card was: its stop would give answers.
   const cardOpen = Boolean((tour && state.tour) || selected);
+  // A phone on its side: the open player would leave the card a strip above it, so the
+  // player folds to its year while a card is open and opens again when the card closes.
+  // Opened again from its year, it stays open until the card closes.
+  const sideways = useMedia("(min-width: 768px) and (max-height: 560px)") && !compact;
+  const [overCard, setOverCard] = useState(false);
+  if (overCard && !cardOpen) setOverCard(false);
+  const playerFolded = folded || (sideways && cardOpen && !overCard);
   // The quiz is the tour's: it ends with the tour.
   // Ended with its tour: closed and opened again, the tour opens on its card. (A stop moved
   // to is the same tour: the quiz stays.)
@@ -1168,20 +1175,21 @@ export function App() {
               aria-label={t("mapui.sources")}
               // Folded, the player is a pill in the corner: the two sit on its line.
               // With a card open they stand left of it; on a phone the card covers that spot.
-              className={`hg-map-slot hg-map-float pointer-events-auto absolute flex items-center gap-2 max-md:right-4 ${cardOpen ? "right-[456px] max-md:hidden" : "right-5"} ${folded ? "bottom-[27px] max-md:bottom-[23px]" : "bottom-[calc(var(--hg-timeline-h,124px)+24px)]"}`}
+              className={`hg-map-slot hg-map-float pointer-events-auto absolute flex items-center gap-2 max-md:right-4 ${cardOpen ? "right-[456px] max-md:hidden" : "right-5"} ${playerFolded ? "bottom-[27px] max-md:bottom-[23px]" : "bottom-[calc(var(--hg-timeline-h,124px)+24px)]"}`}
             ></section>
           )}
           <section
             aria-label={t("time.timeline")}
             ref={timelineBox}
-            className={`absolute inset-x-4 bottom-4 max-md:inset-x-3 max-md:bottom-3 ${folded ? "pointer-events-none" : ""}`}
+            className={`absolute inset-x-4 bottom-4 max-md:inset-x-3 max-md:bottom-3 ${playerFolded ? "pointer-events-none" : ""}`}
           >
-            {folded && (
-              // Embedded, the player is folded to its year: the frame is for the map.
+            {playerFolded && (
+              // Folded to its year (embedded, or sideways under a card): the screen is for the map.
               <button
                 ref={foldButton}
                 onClick={() => {
                   setTimeOpen(true);
+                  setOverCard(true);
                   // The button goes; the focus moves to the slider it opened.
                   requestAnimationFrame(() => {
                     document.querySelector<HTMLInputElement>("input.timeline-range")?.focus();
@@ -1202,7 +1210,7 @@ export function App() {
                 <ChevronDown className="size-4 rotate-180 text-ink-soft" aria-hidden />
               </button>
             )}
-            <div className={folded ? "hidden" : undefined}>
+            <div className={playerFolded ? "hidden" : undefined}>
               <Timeline
                 year={state.year}
                 locale={state.locale}
