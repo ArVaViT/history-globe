@@ -1140,7 +1140,9 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       rivers: {
         type: "geojson",
         data: `${o.dataUrl}/rivers.geojson`,
-        attribution: "Natural Earth",
+        // The small rivers are our lines from the Copernicus DEM (pipeline/rivers/).
+        attribution:
+          "Natural Earth; small rivers from Copernicus WorldDEM-90 © DLR e.V. 2010–2014 and © Airbus Defence and Space GmbH 2014–2018",
       },
       "river-labels": { type: "geojson", data: `${o.dataUrl}/river-labels.geojson` },
       places: {

@@ -908,6 +908,8 @@ RIVER_PLACES = {
 RIVER_NAMES_EN = {"ae686c9": "Jordan", "a62dec4": "Euphrates", "a38ebfd": "Tigris", "a012705": "Nile"}
 # The Dead Sea's north shore, where the Jordan ends (31.77° N).
 JORDAN_MOUTH_LAT = 31.7
+# The small rivers (pipeline/rivers/) are drawn from zoom 6, as the style's rank filter reads it.
+SMALL_RIVER_RANK = 8
 # Modern canals are not rivers of antiquity.
 MODERN_WATERWAYS = re.compile(r"canal|csatorna|kanal", re.IGNORECASE)
 
@@ -982,6 +984,15 @@ def build_rivers() -> tuple[dict, dict, dict]:
                 "rank": int(p.get("scalerank") or 9),
                 **({"place": RIVER_PLACES[name]} if name in RIVER_PLACES else {}),
             },
+        })
+    # The small biblical rivers, traced by us from the Copernicus DEM (pipeline/rivers/).
+    small = json.loads((ROOT / "pipeline" / "rivers" / "small-rivers.geojson").read_text(encoding="utf-8"))
+    for f in small["features"]:
+        feats.append({
+            "type": "Feature",
+            "geometry": {"type": "MultiLineString", "coordinates": [[[round(x, COORD_DECIMALS), round(y, COORD_DECIMALS)] for x, y in f["geometry"]["coordinates"]]]},
+            # A disputed place keeps its point and label: the line is one proposal, unnamed.
+            "properties": {"name": f["properties"]["name"], "rank": SMALL_RIVER_RANK, **({} if f["properties"].get("unlabelled") else {"place": f["properties"]["place"]})},
         })
     labels = [
         {
