@@ -20170,7 +20170,7 @@ exports[`style > is built as before 1`] = `
       "type": "geojson",
     },
     "rivers": {
-      "attribution": "Natural Earth",
+      "attribution": "Natural Earth; small rivers from Copernicus WorldDEM-90 © DLR e.V. 2010–2014 and © Airbus Defence and Space GmbH 2014–2018",
       "data": "/data/rivers.geojson",
       "type": "geojson",
     },
