@@ -1,0 +1,52 @@
+# Approved by the reviewer by email on 2026-10-30 (docs/reviews/README.md).
+id: 2026-10-edom-arabah
+title:
+  en: "Five articles on Edom and the Arabah"
+  ru: "Пять статей о Едоме и Араве"
+  uk: "П’ять статей про Едом і Араву"
+  es: "Cinco artículos sobre Edom y el Arabá"
+  pt: "Cinco artigos sobre Edom e Arabá"
+  de: "Fünf Artikel über Edom und die Araba"
+  fr: "Cinq articles sur Édom et l’Araba"
+  it: "Cinque articoli su Edom e l’Araba"
+  pl: "Pięć artykułów o Edomie i dolinie Araba"
+  nl: "Vijf artikelen over Edom en de Araba"
+  cs: "Pět článků o Edómu a Arabě"
+  sv: "Fem artiklar om Edom och Arava"
+  nb: "Fem artikler om Edom og Arava"
+  da: "Fem artikler om Edom og Araba"
+  tl: "Limang artikulo tungkol sa Edom at sa Araba"
+  sr: "Пет чланака о Едому и Арави"
+  hu: "Öt cikk Edomról és az Arábáról"
+  fi: "Viisi artikkelia Edomista ja Arabasta"
+  vi: "Năm bài viết về Ê-đôm và A-ra-ba"
+  ro: "Cinci articole despre Edom și Araba"
+  bg: "Пет статии за Едом и Арава"
+reviewer:
+  name: "Juan Manuel Tebes"
+  family: "Tebes"
+  given: "Juan Manuel"
+  title: "Director, Center of Studies of Ancient Near Eastern History"
+  institution: "Catholic University of Argentina"
+  affiliation: "Director, Center of Studies of Ancient Near Eastern History, Catholic University of Argentina & Researcher, National Research Council of Argentina"
+date: "2026-10-28"
+version: { date: "2026-10-28", commit: "5b45ee5" }
+items:
+  - { article: edom, hash: "3cce29428f42" }
+  - { article: bozrah, hash: "beab0b1d1f7e" }
+  - { article: teman, hash: "8cf748ca8f3d" }
+  - { article: punon, hash: "e19da3986241" }
+  - { article: ezion-geber, hash: "cf0af7f89ce0" }
+scope:
+  checked: [identification, dates, archaeology, scholarship]
+  not_checked: []
+statement:
+  lang: en
+  text: "I have read the five articles on Edom and the Arabah: Edom, Bozrah, Teman, Punon and Ezion-geber. I found them correct and publishable."
+conflicts: "None declared."
+licence: CC-BY-4.0
+consent:
+  date: "2026-10-30"
+  how: email
+  text_sha256: "2d5dcd528460d13ac69fd6dbd95d10b4a6527d374b4f4f874ac5853ee93198c9"
+status: published

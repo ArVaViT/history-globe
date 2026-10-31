@@ -129,6 +129,11 @@ export const ReviewFile = z
       title: z.string().min(1),
       /** The official name, at the time of the review. */
       institution: z.string().min(1),
+      /**
+       * Their whole affiliation as they word it, when "title, institution" cannot hold it
+       * (two posts): shown on the review's page instead; the short line keeps `institution`.
+       */
+      affiliation: z.string().min(1).optional(),
       url: z.url({ protocol: /^https$/ }).optional(),
       orcid: z.string().refine(isOrcid, { message: "not a valid ORCID iD" }).optional(),
     }),
