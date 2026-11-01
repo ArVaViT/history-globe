@@ -906,9 +906,8 @@ RIVER_PLACES = {
     "Nile": "a012705",
 }
 RIVER_NAMES_EN = {"ae686c9": "Jordan", "a62dec4": "Euphrates", "a38ebfd": "Tigris", "a012705": "Nile"}
-# The Dead Sea's north shore, where the Jordan ends (31.77° N).
-JORDAN_MOUTH_LAT = 31.7
-# The small rivers (pipeline/rivers/) are drawn from zoom 6, as the style's rank filter reads it.
+# The small rivers (pipeline/rivers/) are drawn from zoom 6, as the style's rank filter reads it;
+# the large ones there carry Natural Earth's rank.
 SMALL_RIVER_RANK = 8
 # Modern canals are not rivers of antiquity.
 MODERN_WATERWAYS = re.compile(r"canal|csatorna|kanal", re.IGNORECASE)
@@ -950,9 +949,14 @@ def simplify_line(points: list[list[float]], tolerance: float) -> list[list[floa
 
 
 def build_rivers() -> tuple[dict, dict, dict]:
-    """River centrelines (Natural Earth, PD) in the region, as lines for labels along
-    the course. Modern courses: the lower Euphrates and Tigris moved since antiquity."""
+    """River centrelines in the region, as lines for labels along the course: the rivers
+    of the Bible from RiverATLAS (pipeline/rivers/), the others from Natural Earth (PD). Modern courses: the lower Euphrates
+    and Tigris moved since antiquity."""
     src = json.loads(fetch("natural_earth_rivers").read_text(encoding="utf-8"))
+    # The biblical rivers from RiverATLAS (pipeline/rivers/, CC BY 4.0): the Jordan, the
+    # Euphrates and the Tigris there replace Natural Earth's coarser lines.
+    atlas = json.loads((ROOT / "pipeline" / "rivers" / "rivers.geojson").read_text(encoding="utf-8"))
+    from_atlas = {f["properties"]["place"] for f in atlas["features"]}
     feats = []
     for f in src["features"]:
         p = f["properties"]
@@ -969,12 +973,8 @@ def build_rivers() -> tuple[dict, dict, dict]:
         if MODERN_WATERWAYS.search(name):
             continue
         place = RIVER_PLACES.get(name)
-        # The Jordan ends at the Dead Sea's north shore: a piece the source draws across the
-        # Lisan, between the sea's two basins, was drawn and named as the river.
-        if place == "ae686c9":
-            lines = [line for line in lines if max(pt[1] for pt in line) > JORDAN_MOUTH_LAT]
-            if not lines:
-                continue
+        if place in from_atlas:
+            continue
         feats.append({
             "type": "Feature",
             "geometry": {"type": "MultiLineString", "coordinates": [[[round(x, COORD_DECIMALS), round(y, COORD_DECIMALS)] for x, y in line] for line in lines]},
@@ -985,14 +985,13 @@ def build_rivers() -> tuple[dict, dict, dict]:
                 **({"place": RIVER_PLACES[name]} if name in RIVER_PLACES else {}),
             },
         })
-    # The small biblical rivers, from RiverATLAS (pipeline/rivers/, CC BY 4.0).
-    small = json.loads((ROOT / "pipeline" / "rivers" / "small-rivers.geojson").read_text(encoding="utf-8"))
-    for f in small["features"]:
+    for f in atlas["features"]:
+        p = f["properties"]
         feats.append({
             "type": "Feature",
-            "geometry": {"type": "MultiLineString", "coordinates": [[[round(x, COORD_DECIMALS), round(y, COORD_DECIMALS)] for x, y in f["geometry"]["coordinates"]]]},
+            "geometry": {"type": "MultiLineString", "coordinates": [[[round(x, COORD_DECIMALS), round(y, COORD_DECIMALS)] for x, y in line] for line in f["geometry"]["coordinates"]]},
             # A disputed place keeps its point and label: the line is one proposal, unnamed.
-            "properties": {"name": f["properties"]["name"], "rank": SMALL_RIVER_RANK, **({} if f["properties"].get("unlabelled") else {"place": f["properties"]["place"]})},
+            "properties": {"name": p["name"], "rank": p.get("rank", SMALL_RIVER_RANK), **({} if p.get("unlabelled") else {"place": p["place"]})},
         })
     labels = [
         {
