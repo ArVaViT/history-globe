@@ -7,7 +7,8 @@ some attribute columns of RiverATLAS are under ODbL, which this project does not
 Each river is named by one point on its course (`via` in targets.json). From the reach there the
 line runs upstream, always up the larger branch, to the source (or from a named `source`: the
 Jabbok rises at Rabbah, Amman, and the Euphrates in Armenia, not in a larger desert wadi), and downstream until it joins a
-river more than three times its size, or reaches the sea or a sink, or its known `mouth`. The part
+river more than three times its size, or reaches the sea or a sink, or its known `mouth` (the Valley of Elah ends at Gath, where
+the Philistines fled, 1 Sam 17:52; the wadi goes on to the sea as Nahal Lachish). The part
 inside a lake (the Dead Sea, the Sea of Galilee) is cut away.
 
 Run once, by hand; the output is kept in git and read by build_data.py:
