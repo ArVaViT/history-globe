@@ -10,6 +10,7 @@ import { join } from "node:path";
 import { parse } from "yaml";
 import {
   AncientSitesFile,
+  AncientWaveFile,
   ChapterYearsFile,
   PlaceNamesFile,
   ModernNamesFile,
@@ -692,9 +693,32 @@ const photos: Record<string, PlacePhoto> = {};
 // within 3 km of one of our places is the same place under another name: an error.
 const ancientWrites: [string, string][] = [];
 if (existsSync("content/ancient-sites.json")) {
-  const { sites } = AncientSitesFile.parse(
-    JSON.parse(readFileSync("content/ancient-sites.json", "utf8")),
-  );
+  const qidOf = (sources: readonly string[]) =>
+    sources.map((u) => /wikidata\.org\/wiki\/(Q\d+)$/.exec(u)?.[1]).find(Boolean);
+  // The sites chosen one by one, with their names from the names files; then the waves a
+  // script chose (ADR 0018), with Wikidata's labels.
+  const sites = [
+    ...AncientSitesFile.parse(
+      JSON.parse(readFileSync("content/ancient-sites.json", "utf8")),
+    ).sites.map((s) => {
+      const names: Record<string, string> = {
+        ru: s.ru,
+        // uk, es, …: the site's name in each language that has a names file.
+        ...Object.fromEntries(
+          Object.entries(namesIn).flatMap(([l, f]) => {
+            const n = f.ancient?.[s.id];
+            return n ? [[l, n]] : [];
+          }),
+        ),
+      };
+      return { ...s, names };
+    }),
+    ...(existsSync("content/ancient-sites-wave1.json")
+      ? AncientWaveFile.parse(
+          JSON.parse(readFileSync("content/ancient-sites-wave1.json", "utf8")),
+        ).sites.map((s) => ({ ...s, names: s.names ?? {} }))
+      : []),
+  ];
   // Towns only: a region's point (Egypt, Assyria) may well lie on an ancient city.
   const ours = places.features
     .filter((f) => (f.properties as { kind?: string }).kind === "settlement")
@@ -729,14 +753,8 @@ if (existsSync("content/ancient-sites.json")) {
         properties: {
           id: s.id,
           en: s.en,
-          ru: s.ru,
-          // uk, es, …: the site's name in each language that has a names file.
-          ...Object.fromEntries(
-            Object.entries(namesIn).flatMap(([l, f]) => {
-              const n = f.ancient?.[s.id];
-              return n ? [[l, n]] : [];
-            }),
-          ),
+          // ru, uk, es, …: its name in each language that has one.
+          ...s.names,
           from: s.from,
           to: s.to,
           rank: s.rank,
@@ -744,9 +762,7 @@ if (existsSync("content/ancient-sites.json")) {
           ...(s.approx ? { approx: true } : {}),
           // Its Wikidata item, for the card's link (the id is Pleiades' where it has one).
           ...(() => {
-            const qid = s.sources
-              .map((u) => /wikidata\.org\/wiki\/(Q\d+)$/.exec(u)?.[1])
-              .find(Boolean);
+            const qid = qidOf(s.sources);
             return qid ? { qid } : {};
           })(),
         },

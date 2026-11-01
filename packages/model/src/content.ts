@@ -727,6 +727,30 @@ export const ChapterYearsFile = z.strictObject({
  * The ancient world around the Bible (content/ancient-sites.json): cities, capitals and
  * sanctuaries it does not name, with the years they stood and where the record comes from.
  */
+/**
+ * More of the ancient world, chosen by a script rather than one by one (content/
+ * ancient-sites-wave1.json, ADR 0018): the same fields, with every name from Wikidata's labels,
+ * so a language may have none (the site keeps its dot there, unnamed).
+ */
+export const AncientWaveFile = z.strictObject({
+  _source: z.string().min(1),
+  sites: z.array(
+    z.strictObject({
+      id: z.string().regex(/^\d+$/),
+      en: z.string().min(1),
+      names: z.record(z.string().regex(/^[a-z]{2}$/), z.string().min(1)).optional(),
+      lon: z.number().min(-180).max(180),
+      lat: z.number().min(-90).max(90),
+      from: z.number().int(),
+      to: z.number().int(),
+      approx: z.literal(true),
+      kind: z.enum(["city", "sanctuary", "site", "port"]),
+      rank: z.union([z.literal(1), z.literal(2)]),
+      sources: z.array(z.string().min(1)).min(3),
+    }),
+  ),
+});
+
 export const AncientSitesFile = z.strictObject({
   sites: z.array(
     z.strictObject({
