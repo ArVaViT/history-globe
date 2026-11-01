@@ -985,7 +985,7 @@ def build_rivers() -> tuple[dict, dict, dict]:
                 **({"place": RIVER_PLACES[name]} if name in RIVER_PLACES else {}),
             },
         })
-    # The small biblical rivers, traced by us from the Copernicus DEM (pipeline/rivers/).
+    # The small biblical rivers, from RiverATLAS (pipeline/rivers/, CC BY 4.0).
     small = json.loads((ROOT / "pipeline" / "rivers" / "small-rivers.geojson").read_text(encoding="utf-8"))
     for f in small["features"]:
         feats.append({

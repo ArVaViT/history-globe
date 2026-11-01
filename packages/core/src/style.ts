@@ -1140,9 +1140,8 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       rivers: {
         type: "geojson",
         data: `${o.dataUrl}/rivers.geojson`,
-        // The small rivers are our lines from the Copernicus DEM (pipeline/rivers/).
-        attribution:
-          "Natural Earth; small rivers from Copernicus WorldDEM-90 © DLR e.V. 2010–2014 and © Airbus Defence and Space GmbH 2014–2018",
+        // The small rivers are RiverATLAS lines (pipeline/rivers/), CC BY 4.0.
+        attribution: "Natural Earth; small rivers: RiverATLAS (Linke et al. 2019), CC BY 4.0",
       },
       "river-labels": { type: "geojson", data: `${o.dataUrl}/river-labels.geojson` },
       places: {

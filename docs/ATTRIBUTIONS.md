@@ -85,10 +85,11 @@ Base cartography
   Made with Natural Earth. Free vector and raster map data @ naturalearthdata.com.
 
 Small rivers
-  The lines of the small rivers and wadis (pipeline/rivers/) are our own, traced from the
-  Copernicus DEM GLO-90: produced using Copernicus WorldDEM-90 © DLR e.V. 2010-2014 and
-  © Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European
-  Union and ESA; all rights reserved.
+  The lines of the small rivers and wadis (pipeline/rivers/) are taken from RiverATLAS
+  v1.0, CC BY 4.0: Linke, S., Lehner, B., Ouellet Dallaire, C., et al. (2019). Global
+  hydro-environmental sub-basin and river reach characteristics at high spatial resolution.
+  Scientific Data 6: 283. https://doi.org/10.1038/s41597-019-0300-6. Geometry and network
+  columns only, simplified; the ODbL attribute columns are not used.
 
 Scripture
   The verse texts and quotations in each language come from a public-domain edition,
