@@ -26,8 +26,9 @@ sys.path.insert(0, str(HERE.parent))
 from build_data import MODERN_LAKES, simplify_line  # noqa: E402
 
 D = Path(sys.argv[1])
-# The Levant, and the Euphrates and the Tigris from their sources to the Gulf.
-BOX = (33.0, 29.0, 49.0, 41.0)
+# The Levant, the Euphrates and the Tigris from their sources to the Gulf, and the Nile from
+# Khartoum.
+BOX = (29.0, 15.0, 49.0, 41.0)
 COLS = ["HYRIV_ID", "NEXT_DOWN", "UPLAND_SKM"]
 # A river ends where it meets one more than three times its size (Kanah into the Yarkon), not
 # where two wadis of a size meet (the Kidron above the Dead Sea); `join` in targets.json overrides
@@ -84,6 +85,10 @@ for t in targets:
     dry = line.difference(water)
     parts = [g for g in getattr(dry, "geoms", [dry]) if g.length > 0.01]
     lines = [simplify_line([[round(x, 5), round(y, 5)] for x, y in g.coords], t.get("simplify", 0.0015)) for g in parts]
+    # The Nile ends at the head of the delta, where Natural Earth's two branches begin: the
+    # network has one outlet per river, so the branches stay theirs and `tie` joins them on.
+    end = lines[-1][-1]
+    lines += [[end, tie] for tie in t.get("tie", [])]
     km = sum(math.dist(a, b) for pts in lines for a, b in zip(pts, pts[1:])) * 100
     props = {"place": t["id"], "name": t["name"], "basin_km2": round(reach[path[-1]][1]), "km": round(km)}
     if t.get("unlabelled"):

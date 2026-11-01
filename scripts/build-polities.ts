@@ -6,6 +6,7 @@
  * Read from the pipeline's files and written back through `writes`, idempotently: a rerun
  * gives the same files. Part of scripts/build-content.ts, which calls it.
  */
+import { rulersOf } from "./rulers.ts";
 import { join } from "node:path";
 import { readFileSync, existsSync } from "node:fs";
 import { PolityNamesFile, PolityOverridesFile } from "../packages/model/src/content.ts";
@@ -917,89 +918,7 @@ export function buildPolities({
   writes.push([join(out, "polities-all.geojson"), fc(polities.features)]);
   writes.push([join(out, "polity-labels-all.geojson"), fc(labels.features)]);
 
-  // Who ruled each place, century by century, for the card's timeline: the states whose
-  // shape holds its point, the smallest where several overlap (Judah inside the Assyrian
-  // world), alliances ("rel") left out. Runs of the same state are joined.
-  type Shape = {
-    box: [number, number, number, number];
-    polys: [number, number][][][];
-    area: number;
-  };
-  const shapeOf = (g: { type: string; coordinates: unknown }): Shape => {
-    const polys = (g.type === "Polygon" ? [g.coordinates] : g.coordinates) as [
-      number,
-      number,
-    ][][][];
-    let x0 = Infinity,
-      y0 = Infinity,
-      x1 = -Infinity,
-      y1 = -Infinity,
-      area = 0;
-    for (const poly of polys) {
-      const ring = poly[0] ?? [];
-      for (let k = 0, m = ring.length - 1; k < ring.length; m = k++) {
-        const [xk, yk] = ring[k] ?? [0, 0];
-        const [xm, ym] = ring[m] ?? [0, 0];
-        x0 = Math.min(x0, xk);
-        y0 = Math.min(y0, yk);
-        x1 = Math.max(x1, xk);
-        y1 = Math.max(y1, yk);
-        area += (xm - xk) * (ym + yk);
-      }
-    }
-    return { box: [x0, y0, x1, y1], polys, area: Math.abs(area / 2) };
-  };
-  const states: { n: string; c: number; names: Record<string, string> }[] = [];
-  const stateIndex = new Map<string, number>();
-  const ruling = polities.features
-    .filter((f) => !f.properties.rel)
-    .map((f) => ({
-      p: f.properties,
-      s: shapeOf(f.geometry as { type: string; coordinates: unknown }),
-    }));
-  const rulers: Record<string, [number, number, number][]> = {};
-  for (const f of places.features) {
-    const [x, y] = f.geometry.coordinates as [number, number];
-    const over = ruling.filter(
-      ({ s }) =>
-        x >= s.box[0] &&
-        x <= s.box[2] &&
-        y >= s.box[1] &&
-        y <= s.box[3] &&
-        s.polys.some(
-          (poly) =>
-            pointIn([x, y], poly[0] ?? []) && !poly.slice(1).some((h) => pointIn([x, y], h)),
-        ),
-    );
-    if (over.length === 0) continue;
-    const cuts = [...new Set(over.flatMap(({ p }) => [p.y0, p.y1]))].sort((a, b) => a - b);
-    const runs: [number, number, number][] = [];
-    for (let k = 0; k + 1 < cuts.length; k++) {
-      const a = cuts[k] ?? 0,
-        b = cuts[k + 1] ?? 0;
-      const here = over
-        .filter(({ p }) => p.y0 <= a && b <= p.y1)
-        .sort((u, v) => u.s.area - v.s.area)[0];
-      if (!here) continue;
-      const name = here.p.name;
-      let i = stateIndex.get(name);
-      if (i === undefined) {
-        const names: Record<string, string> = {};
-        for (const [key, value] of Object.entries(here.p as Record<string, unknown>))
-          if (key.startsWith("name_") && typeof value === "string") names[key.slice(5)] = value;
-        i =
-          states.push({
-            n: name,
-            c: Number((here.p as Record<string, unknown>)["c"] ?? 0),
-            names,
-          }) - 1;
-        stateIndex.set(name, i);
-      }
-      const last = runs.at(-1);
-      if (last && last[2] === i && last[1] === a) last[1] = b;
-      else runs.push([a, b, i]);
-    }
-    rulers[(f.properties as unknown as { id: string }).id] = runs;
-  }
+  // Who ruled each place, century by century, for the card's timeline (scripts/rulers.ts).
+  const { states, rulers } = rulersOf(polities.features, places.features);
   writes.push([join(out, "rulers.json"), JSON.stringify({ states, places: rulers })]);
 }

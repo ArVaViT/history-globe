@@ -1,5 +1,7 @@
 """Licence rules of the pipeline (ADR 0008). Run: python3 -m unittest discover pipeline"""
 
+import json
+import math
 import pathlib
 import unittest
 
@@ -445,3 +447,41 @@ class FetchChecksThePin(unittest.TestCase):
             self.assertRegex(PINS[name]["commit"], r"^[0-9a-f]{40}$")
             self.assertRegex(PINS[name]["sha256"], r"^[0-9a-f]{64}$")
             self.assertIn(PINS[name]["commit"], src["url"])
+
+
+class RiverAtlasLines(unittest.TestCase):
+    """The biblical rivers as pipeline/rivers/riveratlas_rivers.py left them in git."""
+
+    HERE = pathlib.Path(__file__).parent / "rivers"
+    rivers = {
+        f["properties"]["name"]: f
+        for f in json.loads((HERE / "rivers.geojson").read_text(encoding="utf-8"))["features"]
+    }
+
+    @staticmethod
+    def km(a: list[float], b: list[float]) -> float:
+        return math.dist([a[0] * math.cos(math.radians(a[1])), a[1]], [b[0] * math.cos(math.radians(b[1])), b[1]]) * 111
+
+    def test_every_target_has_its_line(self) -> None:
+        targets = json.loads((self.HERE / "targets.json").read_text(encoding="utf-8"))
+        self.assertEqual(sorted(t["name"] for t in targets), sorted(self.rivers))
+
+    def test_the_kidron_starts_at_jerusalem_and_reaches_the_dead_sea(self) -> None:
+        line = self.rivers["Kidron"]["geometry"]["coordinates"][0]
+        self.assertLess(self.km(line[0], [35.236, 31.778]), 3)
+        self.assertGreater(line[-1][0], 35.4)
+
+    def test_the_jordan_leaves_the_sea_of_galilee_out(self) -> None:
+        upper, lower = self.rivers["Jordan"]["geometry"]["coordinates"]
+        self.assertLess(self.km(upper[0], [35.652, 33.249]), 5)  # Dan
+        self.assertGreater(upper[-1][1], 32.85)
+        self.assertLess(lower[0][1], 32.75)
+        self.assertLess(lower[-1][1], 31.8)  # the Dead Sea's north shore
+
+    def test_the_nile_meets_both_delta_branches(self) -> None:
+        ends = [line[-1] for line in self.rivers["Nile"]["geometry"]["coordinates"]]
+        self.assertIn([31.237, 30.124], ends)  # Rosetta
+        self.assertIn([31.145, 30.175], ends)  # Damietta
+
+    def test_a_disputed_place_is_drawn_unnamed(self) -> None:
+        self.assertTrue(self.rivers["Brook of Egypt"]["properties"].get("unlabelled"))
