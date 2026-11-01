@@ -1,5 +1,5 @@
 {
-  "_source": "Ancient sites, wave 1 (2026-11-01): Pleiades (CC BY 3.0) settlements, sanctuaries and ports linked to a Wikidata item (CC0) that is an ancient site, not a modern town; point from Pleiades; years the span of the periods Pleiades attests (modern ones left out), so approximate; names from Wikidata labels, none that another place on the map already has. Rank 1 from 12 Wikipedia articles (sitelinks) up, where the Bible's places of the same zoom stand. Written by a script; see docs/adr/0018.",
+  "_source": "Ancient sites, wave 1 (2026-11-01): Pleiades (CC BY 3.0) settlements, sanctuaries and ports linked to a Wikidata item (CC0) that is an ancient site, not a modern town; point from Pleiades; years the span of the periods Pleiades attests (modern ones left out), so approximate; names from Wikidata labels, none that another place on the map already has. Written by a script; see docs/adr/0018.",
   "sites": [
     {
       "id": "118742",
@@ -103,7 +103,7 @@
       "lon": 4.83287,
       "lat": 43.77347,
       "from": -329,
-      "to": 640,
+      "to": 260,
       "approx": true,
       "kind": "city",
       "rank": 1,
@@ -162,7 +162,7 @@
       },
       "lon": 7.72212,
       "lat": 47.53324,
-      "from": -329,
+      "from": -42,
       "to": 640,
       "approx": true,
       "kind": "city",
@@ -349,7 +349,7 @@
       },
       "lon": 18.21887,
       "lat": 42.58101,
-      "from": -549,
+      "from": -498,
       "to": 300,
       "approx": true,
       "kind": "city",
@@ -811,7 +811,7 @@
       },
       "lon": 34.12825,
       "lat": 44.43073,
-      "from": -329,
+      "from": 200,
       "to": 640,
       "approx": true,
       "kind": "city",
@@ -938,15 +938,15 @@
       },
       "lon": 33.80093,
       "lat": 44.59281,
-      "from": -29,
-      "to": 640,
+      "from": 500,
+      "to": 1300,
       "approx": true,
       "kind": "city",
       "rank": 1,
       "sources": [
         "https://pleiades.stoa.org/places/228868",
         "https://www.wikidata.org/wiki/Q988400",
-        "years: the span of the periods Pleiades attests it in (roman,late-antique,modern)"
+        "years: the span of the periods Pleiades attests it in (roman,late-antique,modern); by hand: the fortress from the 5th-6th centuries AD, Theodoro until 1475"
       ]
     },
     {
@@ -1325,8 +1325,8 @@
       },
       "lon": -3.80883,
       "lat": 37.96834,
-      "from": -329,
-      "to": 640,
+      "from": -177,
+      "to": 711,
       "approx": true,
       "kind": "city",
       "rank": 2,
@@ -1390,7 +1390,7 @@
       },
       "lon": -6.11529,
       "lat": 34.60189,
-      "from": -549,
+      "from": -398,
       "to": 300,
       "approx": true,
       "kind": "city",
@@ -1587,8 +1587,8 @@
       },
       "lon": 5.40418,
       "lat": 36.19214,
-      "from": -29,
-      "to": 640,
+      "from": 97,
+      "to": 680,
       "approx": true,
       "kind": "city",
       "rank": 2,
@@ -1627,7 +1627,7 @@
       },
       "lon": 4.87429,
       "lat": 45.52547,
-      "from": -29,
+      "from": 50,
       "to": 300,
       "approx": true,
       "kind": "sanctuary",
@@ -2210,7 +2210,7 @@
       },
       "lon": 25.14457,
       "lat": 35.25545,
-      "from": -1999,
+      "from": -1699,
       "to": -1000,
       "approx": true,
       "kind": "sanctuary",
@@ -2231,7 +2231,7 @@
       },
       "lon": 13.41118,
       "lat": 42.0799,
-      "from": -329,
+      "from": -301,
       "to": 640,
       "approx": true,
       "kind": "city",
@@ -2343,7 +2343,7 @@
       "lon": 12.68544,
       "lat": 42.18027,
       "from": -749,
-      "to": 640,
+      "to": -599,
       "approx": true,
       "kind": "city",
       "rank": 2,
@@ -2505,7 +2505,7 @@
       "lon": 11.98511,
       "lat": 42.64803,
       "from": -329,
-      "to": 640,
+      "to": -262,
       "approx": true,
       "kind": "city",
       "rank": 1,
@@ -2815,7 +2815,7 @@
       },
       "lon": 12.25632,
       "lat": 41.77705,
-      "from": -29,
+      "from": 46,
       "to": 640,
       "approx": true,
       "kind": "port",
@@ -3089,7 +3089,7 @@
       },
       "lon": 13.84483,
       "lat": 41.15229,
-      "from": -329,
+      "from": -294,
       "to": 640,
       "approx": true,
       "kind": "city",
@@ -3119,14 +3119,14 @@
       "lon": 14.49892,
       "lat": 40.70297,
       "from": -329,
-      "to": 640,
+      "to": 79,
       "approx": true,
       "kind": "city",
       "rank": 1,
       "sources": [
         "https://pleiades.stoa.org/places/433128",
         "https://www.wikidata.org/wiki/Q547910",
-        "years: the span of the periods Pleiades attests it in (hellenistic-republican,first-bce,roman,first-ce,late-antique)"
+        "years: the span of the periods Pleiades attests it in (hellenistic-republican,first-bce,roman,first-ce,late-antique); by hand: buried by Vesuvius in AD 79"
       ]
     },
     {
@@ -3141,7 +3141,7 @@
       },
       "lon": 15.01045,
       "lat": 41.0542,
-      "from": -329,
+      "from": -298,
       "to": 1258,
       "approx": true,
       "kind": "city",
@@ -3363,7 +3363,7 @@
       "en": "Terina",
       "lon": 16.234,
       "lat": 38.93934,
-      "from": -549,
+      "from": -468,
       "to": 300,
       "approx": true,
       "kind": "city",
@@ -3393,7 +3393,7 @@
       },
       "lon": 15.15616,
       "lat": 40.1605,
-      "from": -749,
+      "from": -536,
       "to": 300,
       "approx": true,
       "kind": "city",
@@ -3460,8 +3460,8 @@
       },
       "lon": 14.44832,
       "lat": 36.87188,
-      "from": -749,
-      "to": 640,
+      "from": -597,
+      "to": 853,
       "approx": true,
       "kind": "city",
       "rank": 1,
@@ -3506,14 +3506,14 @@
       "lon": 12.58361,
       "lat": 38.03652,
       "from": -549,
-      "to": 300,
+      "to": 640,
       "approx": true,
       "kind": "city",
       "rank": 1,
       "sources": [
         "https://pleiades.stoa.org/places/462201",
         "https://www.wikidata.org/wiki/Q2275983",
-        "years: the span of the periods Pleiades attests it in (classical,hellenistic-republican,hellenistic-roman-early-empire,roman,modern)"
+        "years: the span of the periods Pleiades attests it in (classical,hellenistic-republican,hellenistic-roman-early-empire,roman,modern); by hand: the Elymian sanctuary town; Wikidata's founding (AD 1) is wrong"
       ]
     },
     {
@@ -3556,8 +3556,8 @@
       },
       "lon": 13.82234,
       "lat": 37.96984,
-      "from": -749,
-      "to": 300,
+      "from": -646,
+      "to": -407,
       "approx": true,
       "kind": "city",
       "rank": 1,
@@ -4034,8 +4034,8 @@
       },
       "lon": 23.26551,
       "lat": 41.45002,
-      "from": -549,
-      "to": 640,
+      "from": -354,
+      "to": 500,
       "approx": true,
       "kind": "city",
       "rank": 1,
@@ -4132,14 +4132,14 @@
       "lon": 23.32781,
       "lat": 40.1937,
       "from": -749,
-      "to": 300,
+      "to": -355,
       "approx": true,
       "kind": "city",
       "rank": 1,
       "sources": [
         "https://pleiades.stoa.org/places/491701",
         "https://www.wikidata.org/wiki/Q999468",
-        "years: the span of the periods Pleiades attests it in (archaic,classical,hellenistic-republican,roman,twentieth-ce,twenty-first-ce)"
+        "years: the span of the periods Pleiades attests it in (archaic,classical,hellenistic-republican,roman,twentieth-ce,twenty-first-ce); by hand: destroyed by Philip II in 356 BC; refounded as Cassandreia"
       ]
     },
     {
@@ -4175,7 +4175,7 @@
       },
       "lon": 22.94402,
       "lat": 40.58155,
-      "from": -749,
+      "from": -649,
       "to": -330,
       "approx": true,
       "kind": "city",
@@ -4366,7 +4366,7 @@
       },
       "lon": 26.16401,
       "lat": 40.87362,
-      "from": -749,
+      "from": -599,
       "to": 300,
       "approx": true,
       "kind": "city",
@@ -4764,7 +4764,7 @@
       "lon": 29.92879,
       "lat": 40.71456,
       "from": -549,
-      "to": 300,
+      "to": -299,
       "approx": true,
       "kind": "city",
       "rank": 2,
@@ -5534,7 +5534,7 @@
       },
       "lon": 22.92403,
       "lat": 39.34348,
-      "from": -749,
+      "from": -292,
       "to": 640,
       "approx": true,
       "kind": "city",
@@ -6443,7 +6443,7 @@
       "lon": 26.18087,
       "lat": 39.98353,
       "from": -749,
-      "to": -330,
+      "to": -166,
       "approx": true,
       "kind": "city",
       "rank": 2,
@@ -6541,7 +6541,7 @@
       },
       "lon": 21.90032,
       "lat": 37.42964,
-      "from": -749,
+      "from": -418,
       "to": 300,
       "approx": true,
       "kind": "sanctuary",
@@ -6616,7 +6616,7 @@
       "lon": 21.37436,
       "lat": 37.89127,
       "from": -749,
-      "to": 640,
+      "to": -144,
       "approx": true,
       "kind": "city",
       "rank": 1,
@@ -6701,14 +6701,14 @@
       "lon": 22.13181,
       "lat": 38.22203,
       "from": -749,
-      "to": 300,
+      "to": -372,
       "approx": true,
       "kind": "city",
       "rank": 1,
       "sources": [
         "https://pleiades.stoa.org/places/570281",
         "https://www.wikidata.org/wiki/Q1432654",
-        "years: the span of the periods Pleiades attests it in (archaic,classical,hellenistic-republican,roman)"
+        "years: the span of the periods Pleiades attests it in (archaic,classical,hellenistic-republican,roman); by hand: sunk by the earthquake of 373 BC"
       ]
     },
     {
@@ -6865,7 +6865,7 @@
       },
       "lon": 24.43139,
       "lat": 38.0348,
-      "from": -1599,
+      "from": -899,
       "to": 300,
       "approx": true,
       "kind": "city",
@@ -7528,7 +7528,7 @@
       },
       "lon": 23.53325,
       "lat": 37.75438,
-      "from": -749,
+      "from": -498,
       "to": 640,
       "approx": true,
       "kind": "sanctuary",
@@ -7730,7 +7730,7 @@
       },
       "lon": 24.02459,
       "lat": 37.65021,
-      "from": -549,
+      "from": -499,
       "to": 300,
       "approx": true,
       "kind": "sanctuary",
@@ -7931,7 +7931,7 @@
       "lon": 25.65567,
       "lat": 35.17854,
       "from": -749,
-      "to": -30,
+      "to": -198,
       "approx": true,
       "kind": "city",
       "rank": 1,
@@ -9558,15 +9558,15 @@
       },
       "lon": 35.73789,
       "lat": 32.9014,
-      "from": -29,
-      "to": 300,
+      "from": -149,
+      "to": 67,
       "approx": true,
       "kind": "city",
       "rank": 1,
       "sources": [
         "https://pleiades.stoa.org/places/678146",
         "https://www.wikidata.org/wiki/Q1493165",
-        "years: the span of the periods Pleiades attests it in (roman,modern)"
+        "years: the span of the periods Pleiades attests it in (roman,modern); by hand: a town from the 2nd century BC, destroyed by Vespasian in AD 67 (Josephus, Jewish War 4.1)"
       ]
     },
     {
@@ -9812,15 +9812,15 @@
       },
       "lon": 32.6393,
       "lat": 25.69963,
-      "from": -1549,
-      "to": -1069,
+      "from": -1398,
+      "to": 400,
       "approx": true,
       "kind": "sanctuary",
       "rank": 1,
       "sources": [
         "https://pleiades.stoa.org/places/71626430",
         "https://www.wikidata.org/wiki/Q319841",
-        "years: the span of the periods Pleiades attests it in (new-kingdom-egypt)"
+        "years: the span of the periods Pleiades attests it in (new-kingdom-egypt); by hand: a temple from Amenhotep III, a Roman camp in the 3rd-4th centuries AD"
       ]
     },
     {
@@ -10037,30 +10037,6 @@
       ]
     },
     {
-      "id": "756659",
-      "en": "Thinis",
-      "names": {
-        "cs": "Cenej",
-        "es": "Tinis",
-        "pl": "Tinis",
-        "ru": "Тинис",
-        "sr": "Тинис",
-        "uk": "Тініс"
-      },
-      "lon": 31.84189,
-      "lat": 26.34149,
-      "from": -329,
-      "to": 640,
-      "approx": true,
-      "kind": "city",
-      "rank": 1,
-      "sources": [
-        "https://pleiades.stoa.org/places/756659",
-        "https://www.wikidata.org/wiki/Q1153959",
-        "years: the span of the periods Pleiades attests it in (hellenistic-republican,roman,late-antique,modern)"
-      ]
-    },
-    {
       "id": "767047425",
       "en": "Cancho Roano",
       "names": {
@@ -10078,30 +10054,6 @@
         "https://pleiades.stoa.org/places/767047425",
         "https://www.wikidata.org/wiki/Q2060316",
         "years: the span of the periods Pleiades attests it in (archaic,classical)"
-      ]
-    },
-    {
-      "id": "786087",
-      "en": "Wadi Hammamat",
-      "names": {
-        "cs": "Vádí Hammámat",
-        "es": "Uadi Hammamat",
-        "fr": "Ouadi Hammamat",
-        "it": "Uadi Hammamat",
-        "ru": "Вади-Хаммамат",
-        "uk": "Ваді-Хаммамат"
-      },
-      "lon": 33.56917,
-      "lat": 25.98967,
-      "from": -329,
-      "to": 300,
-      "approx": true,
-      "kind": "city",
-      "rank": 1,
-      "sources": [
-        "https://pleiades.stoa.org/places/786087",
-        "https://www.wikidata.org/wiki/Q1479250",
-        "years: the span of the periods Pleiades attests it in (hellenistic-republican,roman,modern)"
       ]
     },
     {
@@ -10137,7 +10089,7 @@
       },
       "lon": 32.87809,
       "lat": 23.63481,
-      "from": -1549,
+      "from": -1269,
       "to": 640,
       "approx": true,
       "kind": "sanctuary",
@@ -10145,7 +10097,7 @@
       "sources": [
         "https://pleiades.stoa.org/places/795843",
         "https://www.wikidata.org/wiki/Q267700",
-        "years: the span of the periods Pleiades attests it in (new-kingdom-egypt,hellenistic-republican,roman,late-antique)"
+        "years: the span of the periods Pleiades attests it in (new-kingdom-egypt,hellenistic-republican,roman,late-antique); by hand: the rock temple of Ramesses II, built c. 1270 BC"
       ]
     },
     {
@@ -10161,7 +10113,7 @@
       },
       "lon": 12.89217,
       "lat": 41.83996,
-      "from": -329,
+      "from": -149,
       "to": 300,
       "approx": true,
       "kind": "sanctuary",
@@ -10337,7 +10289,7 @@
       "lon": 36.40715,
       "lat": 45.27731,
       "from": -549,
-      "to": 640,
+      "to": 800,
       "approx": true,
       "kind": "city",
       "rank": 2,
@@ -10543,7 +10495,7 @@
       },
       "lon": 41.38205,
       "lat": 37.97704,
-      "from": -329,
+      "from": -76,
       "to": 640,
       "approx": true,
       "kind": "city",
@@ -10696,7 +10648,7 @@
       },
       "lon": 46.3659,
       "lat": 30.774,
-      "from": -2999,
+      "from": -2498,
       "to": -330,
       "approx": true,
       "kind": "city",

@@ -1,4 +1,4 @@
-import json,csv,gzip,sys,collections
+import json,csv,gzip,sys,collections,re
 csv.field_size_limit(10**9)
 S=sys.argv[1]
 # Pleiades periods, astronomical years (approximate bounds of their vocabulary). Later than
@@ -29,6 +29,7 @@ P={'neolithic-eastern-med':(-9999,-3501),'archaic':(-749,-550),'classical':(-549
 LATE=('modern','twentieth','twenty-first','nineteenth','eighteenth','seventeenth','sixteenth','fifteenth','ottoman','khedivate','mandate','safavid','qajar','pahlavi','fourteenth','1500-ad','thirteenth-ce-ottoman','early-ottoman','late-ottoman')
 YMIN,YMAX=-3500,1300
 ids={s['id']:s for s in json.load(open(f'{S}/wave/wave1.json'))}
+wd=json.load(open(f'{S}/wave/wd.json'))
 unk=collections.Counter(); keep=[]; drop=collections.Counter()
 for r in csv.DictReader(gzip.open(f'{S}/pleiades-dl/places.csv.gz','rt')):
     s=ids.get(r['id'])
@@ -41,6 +42,17 @@ for r in csv.DictReader(gzip.open(f'{S}/pleiades-dl/places.csv.gz','rt')):
     if not spans: drop['no ancient period']+=1; continue
     a=max(min(x for x,_ in spans),YMIN); b=min(max(y for _,y in spans),YMAX)
     if b<YMIN or a>=b: drop['outside the map']+=1; continue
+    # Wikidata's founding or end, where it narrows the span: a site destroyed in the middle
+    # of a period (Glanum, 260) ends then, not at the period's end; an earlier founding is
+    # left out (often the district's, not the town's).
+    d=wd.get(s['qid'],{})
+    def yr(t):
+        m=re.match(r'([+-]?\d+)-',t)
+        return None if not m else (lambda y:y+1 if y<0 else y)(int(m.group(1)))
+    f0=max([y for t in d.get('P571',[]) if (y:=yr(t)) is not None],default=None)
+    e0=min([y for t in d.get('P576',[]) if (y:=yr(t)) is not None],default=None)
+    if f0 is not None and a<f0<b: a=f0
+    if e0 is not None and a<e0<=min(b+250,YMAX): b=e0
     s['from_'],s['to']=a,b
     s['periods']=r['timePeriodsKeys']
     keep.append(s)
