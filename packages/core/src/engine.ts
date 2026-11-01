@@ -81,6 +81,8 @@ export interface Engine {
   ) => void;
   /** Show a point up close, e.g. one candidate site of a disputed place. */
   readonly lookAt: (at: LonLat) => void;
+  /** Mark a point on the map without moving it (a place named in an article, pointed at). */
+  readonly highlight: (at: LonLat | null) => void;
   /** Turn the map so that north is up, keeping the view. */
   readonly northUp: () => void;
   readonly destroy: () => void;
@@ -254,6 +256,9 @@ export function createEngine(options: {
     },
     lookAt: (at) => {
       renderer.flyTo({ center: at, zoom: 11, pitch: 50 });
+    },
+    highlight: (at) => {
+      renderer.highlight?.(at);
     },
     northUp: () => {
       renderer.flyTo({ center: renderer.getCamera().center, bearing: 0 }, 600);

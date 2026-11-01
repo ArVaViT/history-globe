@@ -291,6 +291,32 @@ summary {
     0 0 14px 5px rgb(255 214 150 / 0.55);
   pointer-events: none;
 }
+/* A place named in an article, under the reader's pointer: a ring that breathes out from
+   it, in the map's accent, still for those who asked for less motion. */
+.hg-ring {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 0 0 2px rgb(255 247 232 / 0.7);
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hg-ring {
+    animation: hg-ring 1.4s ease-out infinite;
+  }
+}
+@keyframes hg-ring {
+  from {
+    transform: scale(0.4);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
 .hg-no-routes .hg-pulse {
   display: none;
 }

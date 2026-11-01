@@ -1133,6 +1133,9 @@ export function App() {
                       setPlaying(false);
                       openPerson(i, selected.id);
                     }}
+                    onHighlight={(id) => {
+                      engine.highlight(id ? (data.byId.get(id)?.info.at ?? null) : null);
+                    }}
                     onYear={(y) => {
                       setPlaying(false);
                       engine.setYear(y);
