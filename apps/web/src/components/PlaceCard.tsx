@@ -797,20 +797,31 @@ export function PlaceCard({
         </div>
       )}
 
-      <div className="flex items-baseline justify-between gap-3 px-5 pt-3 pb-4 text-[11px] text-ink-soft">
+      <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 px-5 pt-3 pb-4 text-[11px] text-ink-soft">
         <span>
           OpenBible.info (CC BY 4.0)
           {place.coord === "wikidata" ? ` · ${t("place.coords_wikidata")}` : ""}
         </span>
-        {/* Readers and reviewers report a mistake where they see it, with the place named. */}
-        <a
-          href={reportUrl(place)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="shrink-0 underline decoration-dotted underline-offset-2 hover:text-ink"
-        >
-          {t("place.report")}
-        </a>
+        {/* Readers and reviewers report a mistake where they see it, with the place named:
+            by email for the many without a GitHub account, whom the form would stop at a login. */}
+        <span className="shrink-0">
+          {t("place.report")}{" "}
+          <a
+            href={reportMail(place)}
+            className="underline decoration-dotted underline-offset-2 hover:text-ink"
+          >
+            {t("place.report_email")}
+          </a>
+          {" · "}
+          <a
+            href={reportUrl(place)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-dotted underline-offset-2 hover:text-ink"
+          >
+            GitHub
+          </a>
+        </span>
       </div>
     </Panel>
   );
@@ -944,6 +955,14 @@ function ReviewLine({ article, locale }: { article: Article; locale: Locale }) {
       )}
     </div>
   );
+}
+
+/** The same report as an email to the project's address, the place and its map link filled in. */
+function reportMail(place: PlaceProps): string {
+  const name = place.name_ru ? `${place.name_ru} / ${place.name}` : place.name;
+  const subject = `Error: ${name} (${place.id})`;
+  const body = `${name} (${place.id})\nhttps://historyglobe.app/?place=${place.id}\n\n`;
+  return `mailto:historyglobe.vadym@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 /**
