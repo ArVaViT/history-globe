@@ -77,6 +77,8 @@ export interface Renderer {
   setLocale(locale: Locale): void;
   setLayers(layers: LayerVisibility): void;
   setSelected(placeId: string | null): void;
+  /** A soft ring at a point, or none: a place named in the text under the reader's pointer. */
+  highlight?(at: LonLat | null): void;
   flyTo(target: Partial<Camera> & { readonly center: LonLat }, durationMs?: number): void;
   /** Pan, keeping the zoom, if the point lies under the panels and cards. */
   reveal?(at: LonLat): void;
