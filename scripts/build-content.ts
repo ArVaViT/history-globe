@@ -742,6 +742,13 @@ if (existsSync("content/ancient-sites.json")) {
           rank: s.rank,
           kind: s.kind,
           ...(s.approx ? { approx: true } : {}),
+          // Its Wikidata item, for the card's link (the id is Pleiades' where it has one).
+          ...(() => {
+            const qid = s.sources
+              .map((u) => /wikidata\.org\/wiki\/(Q\d+)$/.exec(u)?.[1])
+              .find(Boolean);
+            return qid ? { qid } : {};
+          })(),
         },
       })),
     }),

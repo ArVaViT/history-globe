@@ -1,6 +1,6 @@
 # 0013. The ancient world around the Bible, as its own quieter layer
 
-- Status: accepted
+- Status: accepted; its own layer superseded by 0018
 - Date: 2026-10-02
 
 ## Context

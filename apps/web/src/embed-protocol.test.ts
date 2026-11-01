@@ -28,7 +28,7 @@ function engine() {
   const state = {
     year: 30,
     locale: "ru",
-    layers: { borders: true, places: true, relief: true, routes: true, roads: true, ancient: true },
+    layers: { borders: true, places: true, relief: true, routes: true, roads: true },
   };
   const record =
     (name: string) =>

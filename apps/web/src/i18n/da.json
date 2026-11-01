@@ -22,10 +22,9 @@
     "title": "Lag",
     "relief": "Relief",
     "borders": "Statsgrænser",
-    "places": "Bibelske steder",
+    "places": "Steder",
     "routes": "Ruter",
     "roads": "Romerske veje",
-    "ancient": "Den antikke verden",
     "battles": "Slag"
   },
   "tours": {
@@ -213,7 +212,6 @@
     "major": "større by",
     "faded": "eksisterede ikke det år",
     "route": "turens rute",
-    "ancient": "by uden for Bibelen",
     "roman_road": "romersk vej"
   },
   "events": {

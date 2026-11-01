@@ -22,10 +22,9 @@
     "title": "Camadas",
     "relief": "Relevo",
     "borders": "Fronteiras dos estados",
-    "places": "Lugares bíblicos",
+    "places": "Lugares",
     "routes": "Rotas",
     "roads": "Estradas romanas",
-    "ancient": "Mundo antigo",
     "battles": "Batalhas"
   },
   "tours": {
@@ -213,7 +212,6 @@
     "major": "cidade importante",
     "faded": "inexistente naquele ano",
     "route": "rota do roteiro",
-    "ancient": "cidade fora da Bíblia",
     "roman_road": "estrada romana"
   },
   "events": {

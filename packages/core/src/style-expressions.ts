@@ -284,7 +284,8 @@ export const NOT_DUP: ExpressionSpecification = [
  */
 export const PLACE_ORDER: ExpressionSpecification = [
   "+",
-  ["-", 0, ["get", "verses"]],
+  // An ancient site weighs its rank in verses (`weight`).
+  ["-", 0, ["coalesce", ["get", "weight"], ["get", "verses"]]],
   [
     "case",
     // The selected place is placed first, whatever its year.
@@ -466,19 +467,5 @@ export const LABEL_PADDING: ExpressionSpecification = [
   3,
 ];
 
-/**
- * The ancient world around the Bible (content/ancient-sites.json): cities, capitals and
- * sanctuaries the Bible does not name, while they stood, quieter than its own places and
- * giving way to them. The greatest from zoom 4, regional ones from 6, the rest from 8.
- */
-export const ANCIENT_NOW: ExpressionSpecification = [
-  "all",
-  ["<=", ["get", "from"], YEAR],
-  [">=", ["get", "to"], YEAR],
-  [">=", ["zoom"], ["match", ["get", "rank"], 0, 4, 1, 6, 8]],
-];
 // Battles: a deep red, apart from the route's accent and the places' browns.
 export const BATTLE_INK = "#8e2a22";
-// A cool grey against the warm browns of the Bible's places, faded ones included: the
-// ancient world reads as another layer, not as a place out of its time.
-export const ANCIENT_INK = "#5d6570";

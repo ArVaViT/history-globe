@@ -39,7 +39,6 @@ const SettingsDialog = lazy(() =>
 const tips = () => import("./components/HoverTip");
 const HoverTip = lazy(() => tips().then((m) => ({ default: m.HoverTip })));
 const PolityTip = lazy(() => tips().then((m) => ({ default: m.PolityTip })));
-const AncientTip = lazy(() => tips().then((m) => ({ default: m.AncientTip })));
 const BattleTip = lazy(() => tips().then((m) => ({ default: m.BattleTip })));
 const Overview = lazy(() => import("./components/Overview").then((m) => ({ default: m.Overview })));
 // The overview's tabs: all four fetched once the overview opens, so a switch of tab shows
@@ -614,7 +613,6 @@ export function App() {
             <HoverTip place={hoverPlace} at={hover.at} locale={state.locale} />
           )}
           {globe && <PolityTip renderer={globe.renderer} locale={state.locale} />}
-          {globe && <AncientTip renderer={globe.renderer} locale={state.locale} />}
           {globe && <BattleTip renderer={globe.renderer} locale={state.locale} />}
         </Suspense>
 
@@ -712,16 +710,7 @@ export function App() {
                           events={eventsAndBattles}
                           onEvent={(ev) => {
                             setPlaying(false);
-                            goToEvent(engine, globe.renderer, state.layers.ancient, ev);
-                          }}
-                          onAncient={(site) => {
-                            setPlaying(false);
-                            engine.stopTour();
-                            engine.selectPlace(null);
-                            // Into a year it stood, if the map is not in one already.
-                            if (state.year < site.from || state.year > site.to)
-                              engine.setYear(Math.round((site.from + site.to) / 2));
-                            flyToSite(engine, globe.renderer, state.layers.ancient, site);
+                            goToEvent(engine, globe.renderer, ev);
                           }}
                           onClose={(focusBack) => {
                             typed.current = "";
@@ -957,7 +946,7 @@ export function App() {
                               locale={state.locale}
                               onPick={(e) => {
                                 setPlaying(false);
-                                goToEvent(engine, globe.renderer, state.layers.ancient, e);
+                                goToEvent(engine, globe.renderer, e);
                               }}
                             />
                           ),
@@ -1083,7 +1072,7 @@ export function App() {
                     // An event told again as a battle here (Samaria, 722 BC) is listed once, as the battle.
                     events={events.filter(
                       (e) =>
-                        e.place === selected.id &&
+                        (e.place ?? e.site?.id) === selected.id &&
                         !data.battles.some(
                           (b) => b.place === e.place && Math.abs(b.year - e.year) <= 1,
                         ),
@@ -1286,7 +1275,7 @@ export function App() {
                 }
                 onEvent={(ev) => {
                   setPlaying(false);
-                  goToEvent(engine, globe.renderer, state.layers.ancient, ev);
+                  goToEvent(engine, globe.renderer, ev);
                 }}
                 onYear={engine.setYear}
                 onPlay={() => {
@@ -1363,44 +1352,28 @@ function HeaderButton({
 }
 
 /**
- * To an ancient site: any open card closes, the layer comes on if it was off (else the
- * flight ends on an empty spot), and the zoom is one at which the site is drawn (the
- * least of them from zoom 8, style.ts).
- */
-/**
  * An event or a battle picked (the list, the slider's marks, the search): the map goes to its
  * year and to where it happened, its place's card open, else its site or its field.
  */
 function goToEvent(
   engine: Engine,
   renderer: Renderer,
-  ancientOn: boolean,
   ev: {
     readonly year: number;
     readonly place?: string;
-    readonly site?: { readonly lon: number; readonly lat: number; readonly rank?: number };
+    /** An ancient site: a place like any other, by its id. */
+    readonly site?: { readonly id: string };
     readonly battlefield?: { readonly lon: number; readonly lat: number };
   },
 ): void {
   engine.stopTour();
   engine.setYear(ev.year);
   if (ev.place) engine.selectPlace(ev.place, { fly: true });
-  else if (ev.site) flyToSite(engine, renderer, ancientOn, ev.site);
+  else if (ev.site) engine.selectPlace(ev.site.id, { fly: true });
   else if (ev.battlefield) {
     engine.selectPlace(null);
     // The battles layer is on by default; its mark stands on the field in this year.
     if (!engine.store.get().layers.battles) engine.setLayer("battles", true);
     renderer.flyTo({ center: [ev.battlefield.lon, ev.battlefield.lat], zoom: 7 }, 1400);
   }
-}
-
-function flyToSite(
-  engine: Engine,
-  renderer: Renderer,
-  layerOn: boolean,
-  site: { readonly lon: number; readonly lat: number; readonly rank?: number },
-): void {
-  engine.selectPlace(null);
-  if (!layerOn) engine.setLayer("ancient", true);
-  renderer.flyTo({ center: [site.lon, site.lat], zoom: (site.rank ?? 0) >= 2 ? 8.4 : 7 }, 1400);
 }

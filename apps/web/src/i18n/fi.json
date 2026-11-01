@@ -22,10 +22,9 @@
     "title": "Kerrokset",
     "relief": "Pinnanmuodot",
     "borders": "Valtioiden rajat",
-    "places": "Raamatun paikat",
+    "places": "Paikat",
     "routes": "Reitit",
     "roads": "Rooman tiet",
-    "ancient": "Muinainen maailma",
     "battles": "Taistelut"
   },
   "tours": {
@@ -213,7 +212,6 @@
     "major": "suuri kaupunki",
     "faded": "ei olemassa valittuna vuonna",
     "route": "kierroksen reitti",
-    "ancient": "Raamatussa mainitsematon kaupunki",
     "roman_road": "Rooman tie"
   },
   "events": {

@@ -89,7 +89,7 @@ export function attachEmbed(
     if (typeof v.place === "string" && v.place !== s.selectedPlace && data.byId.has(v.place))
       engine.selectPlace(v.place);
     if (v.layers)
-      for (const k of ["borders", "places", "relief", "routes", "roads", "ancient"] as const) {
+      for (const k of ["borders", "places", "relief", "routes", "roads"] as const) {
         const on = v.layers[k];
         if (typeof on === "boolean" && on !== s.layers[k]) engine.setLayer(k, on);
       }

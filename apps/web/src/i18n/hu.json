@@ -22,10 +22,9 @@
     "title": "Rétegek",
     "relief": "Domborzat",
     "borders": "Államhatárok",
-    "places": "Bibliai helyek",
+    "places": "Helyek",
     "routes": "Útvonalak",
     "roads": "Római utak",
-    "ancient": "Ókori világ",
     "battles": "Csaták"
   },
   "tours": {
@@ -213,7 +212,6 @@
     "major": "jelentős város",
     "faded": "abban az évben nem állt",
     "route": "a túra útvonala",
-    "ancient": "a Bibliában nem szereplő város",
     "roman_road": "római út"
   },
   "events": {

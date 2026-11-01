@@ -22,10 +22,9 @@
     "title": "Lager",
     "relief": "Relief",
     "borders": "Statsgränser",
-    "places": "Bibliska platser",
+    "places": "Platser",
     "routes": "Rutter",
     "roads": "Romerska vägar",
-    "ancient": "Antikens värld",
     "battles": "Strider"
   },
   "tours": {
@@ -213,7 +212,6 @@
     "major": "större stad",
     "faded": "fanns inte det året",
     "route": "rundturens rutt",
-    "ancient": "stad utanför Bibeln",
     "roman_road": "romersk väg"
   },
   "events": {

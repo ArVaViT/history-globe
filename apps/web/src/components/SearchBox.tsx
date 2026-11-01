@@ -3,7 +3,6 @@ import { YEAR_MAX, YEAR_MIN } from "@hg/core";
 import {
   formatCentury,
   formatYear,
-  formatYearRange,
   medianYear,
   parseChapter,
   type Locale,
@@ -16,9 +15,9 @@ import { useEffect, useMemo, useState, type RefObject } from "react";
 import { useTranslation } from "../i18n";
 import { chapterFocus, type ChapterFocus } from "../chapter";
 import {
-  DATA_URL,
   foldName,
   searchPlaces,
+  standingSpan,
   whereIn,
   type LoadedData,
   type PlaceProps,
@@ -51,7 +50,7 @@ export interface SearchEvent {
   readonly approximate: boolean;
   readonly title: Readonly<Record<string, string>>;
   readonly place?: string;
-  readonly site?: { readonly lon: number; readonly lat: number; readonly rank?: number };
+  readonly site?: { readonly id: string };
   readonly battlefield?: { readonly lon: number; readonly lat: number };
 }
 
@@ -148,57 +147,6 @@ export function eventsMatching(
     .slice(0, 3);
 }
 
-/** A site of the ancient world layer, as the search offers it. */
-export interface AncientSearchSite {
-  readonly id: string;
-  readonly en: string;
-  readonly ru: string;
-  readonly kind: string;
-  readonly rank: number;
-  readonly approx?: boolean;
-  readonly from: number;
-  readonly to: number;
-  readonly lon: number;
-  readonly lat: number;
-  /** The name in the other languages that have one: uk, es, … */
-  readonly [code: string]: string | number | boolean | undefined;
-}
-
-/** An ancient site's name in the reader's language, else English. */
-const siteName = (s: AncientSearchSite, l: string): string => {
-  const own = s[l];
-  return typeof own === "string" ? own : s.en;
-};
-
-let ancientLoad: Promise<AncientSearchSite[]> | null = null;
-/** ancient.geojson, fetched once when the search first opens (the map has it cached). */
-function loadAncientSites(): Promise<AncientSearchSite[]> {
-  ancientLoad ??= fetch(`${DATA_URL}/ancient.geojson`)
-    .then((r) => (r.ok ? (r.json() as Promise<AncientFile>) : { features: [] }))
-    .then((f) =>
-      f.features.map(
-        (x) =>
-          ({
-            ...x.properties,
-            lon: x.geometry.coordinates[0] ?? 0,
-            lat: x.geometry.coordinates[1] ?? 0,
-          }) as AncientSearchSite,
-      ),
-    )
-    .catch(() => {
-      // Tried again the next time the search opens.
-      ancientLoad = null;
-      return [];
-    });
-  return ancientLoad;
-}
-type AncientFile = {
-  features: {
-    geometry: { coordinates: number[] };
-    properties: Readonly<Record<string, string | number | boolean | undefined>>;
-  }[];
-};
-
 /**
  * The search in the header, in the title's place: the field on the header's line and the
  * results dropping below it, over the column. Esc or a choice gives the title back.
@@ -212,7 +160,6 @@ export function SearchBox({
   onChapter,
   onYear,
   onPerson,
-  onAncient,
   onTour,
   events = [],
   onEvent,
@@ -220,7 +167,7 @@ export function SearchBox({
 }: {
   data: LoadedData;
   inputRef: RefObject<HTMLInputElement | null>;
-  /** The Bible alone (a setting): no sites of the ancient world it does not name. */
+  /** The Bible alone (a setting): no places of the ancient world it does not name. */
   bibleOnly?: boolean;
   /** What was typed while the search loaded: taken over when the field takes the focus. */
   takeTyped?: () => string;
@@ -231,8 +178,6 @@ export function SearchBox({
   onYear: (year: number) => void;
   /** A person typed ("Давид"): their card, their places on the map. */
   onPerson: (index: number) => void;
-  /** An ancient site typed ("Хаттуса"): the map flies there, in a year it stood. */
-  onAncient: (site: AncientSearchSite) => void;
   /** A tour found by its title ("путешествие Павла"): it starts. */
   onTour: (id: string) => void;
   /** The events and battles the search may offer ("Гавгамелы"), in order of year. */
@@ -245,15 +190,11 @@ export function SearchBox({
   const { t, i18n } = useTranslation();
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
-  const found = useMemo(() => searchPlaces(data, query), [data, query]);
+  const found = useMemo(() => searchPlaces(data, query, 8, bibleOnly), [data, query, bibleOnly]);
   const [people, setPeople] = useState<People | null>(peopleNow);
   useEffect(() => {
     if (!people) void loadPeople().then(setPeople, () => undefined);
   }, [people]);
-  const [ancient, setAncient] = useState<AncientSearchSite[]>([]);
-  useEffect(() => {
-    void loadAncientSites().then(setAncient);
-  }, []);
   // Any language but English: the English line beside a name of its own says nothing.
   const ru = i18n.language !== "en";
   // "Деян 16": the places whose verses include that chapter, offered above the names.
@@ -300,17 +241,6 @@ export function SearchBox({
     );
     return y === undefined ? undefined : formatCentury(y, locale);
   };
-  // The ancient world last: a few sites the Bible does not name.
-  const sites = useMemo(() => {
-    if (year !== null || bibleOnly) return [];
-    const q = foldName(query);
-    if (q.length < 2) return [];
-    return ancient
-      .filter((a) =>
-        [a.ru, a.en, siteName(a, i18n.language)].some((n) => foldName(n).startsWith(q)),
-      )
-      .slice(0, 3);
-  }, [ancient, year, query, bibleOnly, i18n.language]);
   // Tours by their title, in either language: "путешествие Павла", "Exodus".
   const tours = useMemo(() => {
     if (year !== null) return [];
@@ -346,18 +276,16 @@ export function SearchBox({
         (n) => typeof n === "string" && startsWord(n),
       ),
     );
-    const anyStrong = strong.length > 0 || persons.length > 0 || sites.length > 0;
+    const anyStrong = strong.length > 0 || persons.length > 0;
     return anyStrong && q.length >= 2 ? strong : found;
-  }, [found, persons, sites, query, i18n.language]);
-  // The chapter or the year, when there is one, is the first option; places, people, sites.
+  }, [found, persons, query, i18n.language]);
+  // The chapter or the year, when there is one, is the first option; places, people.
   const offset = chapter || year !== null ? 1 : 0;
-  const total =
-    offset + results.length + persons.length + sites.length + tours.length + eventsFound.length;
+  const total = offset + results.length + persons.length + tours.length + eventsFound.length;
   const personAt = (i: number) => persons[i - offset - results.length];
-  const siteAt = (i: number) => sites[i - offset - results.length - persons.length];
-  const tourAt = (i: number) => tours[i - offset - results.length - persons.length - sites.length];
+  const tourAt = (i: number) => tours[i - offset - results.length - persons.length];
   const eventAt = (i: number) =>
-    eventsFound[i - offset - results.length - persons.length - sites.length - tours.length];
+    eventsFound[i - offset - results.length - persons.length - tours.length];
   const activeId =
     chapter && active === 0
       ? "search-chapter"
@@ -367,13 +295,11 @@ export function SearchBox({
           ? `search-${results[active - offset]?.props.id ?? ""}`
           : personAt(active)
             ? `search-person-${String(personAt(active)?.person.index)}`
-            : siteAt(active)
-              ? `search-site-${siteAt(active)?.id ?? ""}`
-              : tourAt(active)
-                ? `search-tour-${tourAt(active)?.id ?? ""}`
-                : eventAt(active)
-                  ? `search-event-${eventAt(active)?.id ?? ""}`
-                  : undefined;
+            : tourAt(active)
+              ? `search-tour-${tourAt(active)?.id ?? ""}`
+              : eventAt(active)
+                ? `search-event-${eventAt(active)?.id ?? ""}`
+                : undefined;
   const open = query.trim().length >= 2;
   const nameOf = (p: PlaceProps) => placeName(p, i18n.language);
 
@@ -394,11 +320,6 @@ export function SearchBox({
   };
   const chooseEvent = (ev: SearchEvent) => {
     onEvent?.(ev);
-    setQuery("");
-    onClose(true);
-  };
-  const chooseSite = (site: AncientSearchSite) => {
-    onAncient(site);
     setQuery("");
     onClose(true);
   };
@@ -444,10 +365,7 @@ export function SearchBox({
               choose(results[active - offset]?.props.id ?? "");
             else if (e.key === "Enter" && personAt(active))
               choosePerson(personAt(active)?.person.index ?? 0);
-            else if (e.key === "Enter" && siteAt(active)) {
-              const site = siteAt(active);
-              if (site) chooseSite(site);
-            } else if (e.key === "Enter" && tourAt(active)) {
+            else if (e.key === "Enter" && tourAt(active)) {
               chooseTour(tourAt(active)?.id ?? "");
             } else if (e.key === "Enter" && eventAt(active)) {
               const ev = eventAt(active);
@@ -523,7 +441,6 @@ export function SearchBox({
             )}
             {results.length === 0 &&
               persons.length === 0 &&
-              sites.length === 0 &&
               tours.length === 0 &&
               eventsFound.length === 0 &&
               !chapter &&
@@ -541,8 +458,12 @@ export function SearchBox({
               // when that says nothing new ("City of David — City of David").
               const kind = t(`kind.${props.kind}`, { defaultValue: "" });
               const where = whereIn(props, i18n.language);
-              const secondary =
-                where && !sameWords(where, primary) && (namesake || !ru || !/[A-Za-z]/.test(where))
+              // A place of the ancient world: when it stood, as the card heads it.
+              const secondary = props.ancient
+                ? standingSpan(props, t, locale)
+                : where &&
+                    !sameWords(where, primary) &&
+                    (namesake || !ru || !/[A-Za-z]/.test(where))
                   ? where
                   : kind;
               return (
@@ -610,44 +531,8 @@ export function SearchBox({
                 </li>
               );
             })}
-            {sites.map((site, j) => {
-              const i = offset + results.length + persons.length + j;
-              return (
-                <li
-                  key={site.id}
-                  id={`search-site-${site.id}`}
-                  role="option"
-                  aria-selected={i === active}
-                  onMouseEnter={() => {
-                    setActive(i);
-                  }}
-                  onMouseDown={(e) => {
-                    e.preventDefault();
-                    chooseSite(site);
-                  }}
-                  className={`flex cursor-pointer items-baseline justify-between gap-3 px-4 py-1.5 ${j === 0 && results.length + persons.length > 0 ? "border-t border-line" : ""} ${i === active ? "bg-paper-2" : ""}`}
-                >
-                  <span className="font-serif text-[15px] text-ink">
-                    {siteName(site, i18n.language)}
-                  </span>
-                  <span className="truncate text-xs text-ink-soft">
-                    {/* When it stood says more than "capital" (of what?) and sets it
-                        apart from the Bible's places, which have no span here. */}
-                    {/* As the tip on the map writes it. */}
-                    {site.to >= YEAR_MAX
-                      ? t("ancient.since", {
-                          year:
-                            (site.approx ? `${t("place.circa")} ` : "") +
-                            formatYear(site.from, locale),
-                        })
-                      : (site.approx ? `${t("place.circa")} ` : "") +
-                        formatYearRange(site.from, site.to, locale)}
-                  </span>
-                </li>
-              );
-            })}
             {tours.map((tour, j) => {
-              const i = offset + results.length + persons.length + sites.length + j;
+              const i = offset + results.length + persons.length + j;
               return (
                 <li
                   key={tour.id}
@@ -661,7 +546,7 @@ export function SearchBox({
                     e.preventDefault();
                     chooseTour(tour.id);
                   }}
-                  className={`flex cursor-pointer items-baseline justify-between gap-3 px-4 py-1.5 ${j === 0 && results.length + persons.length + sites.length > 0 ? "border-t border-line" : ""} ${i === active ? "bg-paper-2" : ""}`}
+                  className={`flex cursor-pointer items-baseline justify-between gap-3 px-4 py-1.5 ${j === 0 && results.length + persons.length > 0 ? "border-t border-line" : ""} ${i === active ? "bg-paper-2" : ""}`}
                 >
                   <span className="font-serif text-[15px] text-ink">
                     {tour.title[locale] ?? tour.title.en}
@@ -671,8 +556,8 @@ export function SearchBox({
               );
             })}
             {eventsFound.map((ev, j) => {
-              const i = offset + results.length + persons.length + sites.length + tours.length + j;
-              const above = results.length + persons.length + sites.length + tours.length;
+              const i = offset + results.length + persons.length + tours.length + j;
+              const above = results.length + persons.length + tours.length;
               return (
                 <li
                   key={ev.id}

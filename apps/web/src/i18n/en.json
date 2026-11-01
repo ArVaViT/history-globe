@@ -22,10 +22,9 @@
     "title": "Layers",
     "relief": "Relief",
     "borders": "Borders of states",
-    "places": "Biblical places",
+    "places": "Places",
     "routes": "Routes",
     "roads": "Roman roads",
-    "ancient": "Ancient world",
     "battles": "Battles"
   },
   "tours": {
@@ -213,7 +212,6 @@
     "major": "major town",
     "faded": "not standing that year",
     "route": "tour route",
-    "ancient": "city outside the Bible",
     "roman_road": "Roman road"
   },
   "events": {
