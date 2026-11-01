@@ -40,7 +40,7 @@ import { Photo } from "./Photo";
 import { notifyVerse } from "../embed";
 import { Panel } from "./Panel";
 import { loadPeople, peopleNow, personName, type People } from "../people";
-import { NT_FROM, polityText, type PolityName } from "@hg/core";
+import { NT_FROM, POLITY_COLORS, polityText, type PolityName } from "@hg/core";
 import { Credit } from "./Credit";
 
 const VERSES_SHOWN = 24;
@@ -421,6 +421,8 @@ export function PlaceCard({
             .join(" · ")}
         </div>
       )}
+
+      <Rulers placeId={place.id} year={year} locale={locale} onYear={onYear} />
 
       <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 px-5 pt-3 text-[14px] text-ink">
         <MapPin className="size-4 shrink-0 text-accent" aria-hidden />
@@ -1151,6 +1153,123 @@ function byBook(
     else groups.push({ book, refs: [{ osis: o, cv }] });
   }
   return groups;
+}
+
+type RulerData = {
+  readonly states: readonly {
+    readonly n: string;
+    readonly c: number;
+    readonly names: Readonly<Record<string, string>>;
+  }[];
+  readonly places: Readonly<Record<string, readonly (readonly [number, number, number])[]>>;
+};
+let rulerData: Promise<RulerData | null> | null = null;
+/** Who ruled each place, century by century (scripts/build-polities.ts): loaded once, on demand. */
+function loadRulers() {
+  rulerData ??= fetch(`${DATA_URL}/rulers.json`)
+    .then((r) => (r.ok ? (r.json() as Promise<RulerData>) : null))
+    .catch(() => {
+      rulerData = null;
+      return null;
+    });
+  return rulerData;
+}
+
+/**
+ * Who ruled here, as one thin band of the map's state colours from the first state to the
+ * last: a segment named on hover or focus, and a click on it takes the map to that year.
+ */
+function Rulers({
+  placeId,
+  year,
+  locale,
+  onYear,
+}: {
+  placeId: string;
+  year: number;
+  locale: Locale;
+  onYear?: ((year: number) => void) | undefined;
+}) {
+  const { t } = useTranslation();
+  const [data, setData] = useState<RulerData | null>(null);
+  const [shown, setShown] = useState<number | null>(null);
+  useEffect(() => {
+    let live = true;
+    void loadRulers().then((d) => {
+      if (live) setData(d);
+    });
+    return () => {
+      live = false;
+    };
+  }, []);
+  const runs = data?.places[placeId];
+  if (!data || !runs || runs.length < 2) return null;
+  const from = runs[0]?.[0] ?? 0;
+  const to = runs.at(-1)?.[1] ?? 0;
+  const nameOfRun = (k: number) => {
+    const [a, b, i] = runs[k] ?? [0, 0, 0];
+    const st = data.states[i];
+    return `${st?.names[locale] ?? st?.n ?? ""}, ${formatYearRange(a, b - 1, locale)}`;
+  };
+  const now = runs.findIndex(([a, b]) => a <= year && year < b);
+  // The state of the year shown is named on the line above; this one names what the
+  // reader points at, and otherwise the span.
+  const line = shown;
+  // Gaps (no state on the map there) stay empty, so the band keeps its time scale.
+  const cells: { k: number | null; span: number }[] = [];
+  runs.forEach(([a, b], k) => {
+    const prev = k > 0 ? (runs[k - 1]?.[1] ?? a) : a;
+    if (a > prev) cells.push({ k: null, span: a - prev });
+    cells.push({ k, span: b - a });
+  });
+  return (
+    <div className="px-5 pt-2">
+      <div
+        className="flex h-2.5 w-full overflow-hidden rounded-full bg-ink/5"
+        onMouseLeave={() => {
+          setShown(null);
+        }}
+      >
+        {cells.map(({ k, span }, n) =>
+          k === null ? (
+            <span key={n} style={{ flexGrow: span }} />
+          ) : (
+            <button
+              key={n}
+              type="button"
+              aria-label={nameOfRun(k)}
+              title={nameOfRun(k)}
+              style={{
+                flexGrow: span,
+                background:
+                  POLITY_COLORS[(data.states[runs[k]?.[2] ?? 0]?.c ?? 0) % POLITY_COLORS.length],
+              }}
+              className={`min-w-px border-r border-paper/60 last:border-r-0 focus-visible:outline-2 ${
+                k === now ? "opacity-100" : "opacity-55 hover:opacity-100"
+              }`}
+              onMouseEnter={() => {
+                setShown(k);
+              }}
+              onFocus={() => {
+                setShown(k);
+              }}
+              onBlur={() => {
+                setShown(null);
+              }}
+              onClick={() => {
+                onYear?.(runs[k]?.[0] ?? year);
+              }}
+            />
+          ),
+        )}
+      </div>
+      <div className="mt-1 text-[11.5px] leading-snug text-ink-soft">
+        {line !== null
+          ? nameOfRun(line)
+          : t("place.rulers", { span: formatYearRange(from, to - 1, locale) })}
+      </div>
+    </div>
+  );
 }
 
 let ancient: Promise<Readonly<Record<string, readonly AncientMention[]>>> | null = null;
