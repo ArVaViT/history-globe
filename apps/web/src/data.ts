@@ -91,6 +91,24 @@ export function beforeItsTime(
   return place.ot === 0 && year < NT_FROM;
 }
 
+/** The nearest year the place stands in, for a card shown faded in `year`: the end of its
+ *  ruin, its founding, its last year, or the New Testament for a place only it names. */
+export function standingYear(
+  place: Pick<PlaceProps, "ot" | "life_from" | "life_until" | "gap_from" | "gap_until">,
+  year: number,
+): number | undefined {
+  if (
+    place.gap_from !== undefined &&
+    year >= place.gap_from &&
+    year < (place.gap_until ?? Infinity)
+  )
+    return place.gap_until;
+  if (place.life_from !== undefined && year < place.life_from) return place.life_from;
+  if (place.life_until !== undefined && year >= place.life_until) return place.life_until - 1;
+  if (place.ot === 0 && year < NT_FROM) return NT_FROM;
+  return undefined;
+}
+
 export interface LoadedData {
   readonly places: FeatureCollection<Point, PlaceProps>;
   readonly byId: ReadonlyMap<string, { readonly props: PlaceProps; readonly info: PlaceInfo }>;

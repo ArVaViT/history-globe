@@ -954,7 +954,7 @@ def build_rivers() -> tuple[dict, dict, dict]:
     and Tigris moved since antiquity."""
     src = json.loads(fetch("natural_earth_rivers").read_text(encoding="utf-8"))
     # The biblical rivers from RiverATLAS (pipeline/rivers/, CC BY 4.0): the Jordan, the
-    # Euphrates and the Tigris there replace Natural Earth's coarser lines.
+    # Euphrates, the Tigris and the Nile there replace Natural Earth's coarser lines.
     atlas = json.loads((ROOT / "pipeline" / "rivers" / "rivers.geojson").read_text(encoding="utf-8"))
     from_atlas = {f["properties"]["place"] for f in atlas["features"]}
     feats = []

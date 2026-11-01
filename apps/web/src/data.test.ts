@@ -8,6 +8,7 @@ import {
   russianStem,
   searchPlaces,
   siteCertainty,
+  standingYear,
   type LoadedData,
   type PlaceProps,
 } from "./data";
@@ -283,5 +284,24 @@ describe("siteCertainty", () => {
     expect(siteCertainty({ disputed: false, confidence: 600 })).toBe("likely");
     expect(siteCertainty({ disputed: false, confidence: 599 })).toBe("tentative");
     expect(siteCertainty({ disputed: false, confidence: 0 })).toBe("tentative");
+  });
+});
+
+describe("standingYear", () => {
+  const p = (q: Partial<Parameters<typeof standingYear>[0]>) => ({ ot: 1, ...q });
+  it("takes a place gone to its last year", () => {
+    expect(standingYear(p({ life_from: -1200, life_until: -603 }), 30)).toBe(-604);
+  });
+  it("takes a place not yet built to its founding", () => {
+    expect(standingYear(p({ life_from: -20 }), -500)).toBe(-20);
+  });
+  it("takes a place in ruins to its rebuilding", () => {
+    expect(standingYear(p({ life_from: -1000, gap_from: -586, gap_until: -520 }), -550)).toBe(-520);
+  });
+  it("takes a place only the New Testament names to its years", () => {
+    expect(standingYear(p({ ot: 0 }), -1000)).toBeGreaterThan(-10);
+  });
+  it("has nothing to offer a place standing in the year", () => {
+    expect(standingYear(p({ life_from: -1000 }), -500)).toBeUndefined();
   });
 });
