@@ -84,5 +84,41 @@
     "rank": 4,
     "simplify": 0.005,
     "km2": 5000
+  },
+  {
+    "id": "af19252",
+    "name": "Habor",
+    "via": [40.75, 36.45],
+    "km2": 5000,
+    "rank": 6,
+    "simplify": 0.003
+  },
+  {
+    "id": "a339971",
+    "name": "Valley of Sorek",
+    "via": [35.05, 31.756]
+  },
+  {
+    "id": "ab183f8",
+    "name": "Valley of Elah",
+    "via": [34.998, 31.675],
+    "mouth": [34.848, 31.7]
+  },
+  {
+    "id": "a2e6de9",
+    "name": "Valley of Aijalon",
+    "via": [34.96, 31.87],
+    "join": 2
+  },
+  {
+    "id": "a816ed9",
+    "name": "Valley of Gerar",
+    "via": [34.6065, 31.3821]
+  },
+  {
+    "id": "a7559e6",
+    "name": "Valley of Rephaim",
+    "via": [35.205, 31.755],
+    "join": 2
   }
 ]
