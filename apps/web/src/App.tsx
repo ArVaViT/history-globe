@@ -1133,6 +1133,10 @@ export function App() {
                       setPlaying(false);
                       openPerson(i, selected.id);
                     }}
+                    onYear={(y) => {
+                      setPlaying(false);
+                      engine.setYear(y);
+                    }}
                     focusTitle={backToPerson?.place === selected.id}
                     back={
                       backToPerson && backToPerson.place === selected.id && !backToTour

@@ -40,7 +40,7 @@ import { Photo } from "./Photo";
 import { notifyVerse } from "../embed";
 import { Panel } from "./Panel";
 import { loadPeople, peopleNow, personName, type People } from "../people";
-import { polityText, type PolityName } from "@hg/core";
+import { NT_FROM, polityText, type PolityName } from "@hg/core";
 import { Credit } from "./Credit";
 
 const VERSES_SHOWN = 24;
@@ -105,6 +105,7 @@ export function PlaceCard({
   pleiades,
   questions,
   onPerson,
+  onYear,
   focusTitle = false,
 }: {
   place: PlaceProps;
@@ -150,6 +151,8 @@ export function PlaceCard({
   onMeasure?: (() => void) | undefined;
   /** Opens the lesson tool, this place just added to the lesson. */
   onLesson?: (() => void) | undefined;
+  /** Moves the timeline to a year: from a faded place, to one where it stands. */
+  onYear?: ((year: number) => void) | undefined;
 }) {
   // Opened lists stay open for this place; the card is keyed by place, so a new place
   // starts folded again.
@@ -385,6 +388,24 @@ export function PlaceCard({
               : year < (place.life_from ?? -Infinity)
                 ? t(place.life_older ? "place.not_yet_older" : "place.not_yet")
                 : t("place.no_longer")}
+          {(() => {
+            // Where it stands: one click instead of hunting the year on the timeline.
+            const to = standingYear(place, year);
+            return onYear && to !== undefined ? (
+              <>
+                {" "}
+                <button
+                  type="button"
+                  onClick={() => {
+                    onYear(to);
+                  }}
+                  className="not-italic underline decoration-dotted underline-offset-2 hover:text-ink"
+                >
+                  {t("place.go_year", { year: formatYear(to, locale) })}
+                </button>
+              </>
+            ) : null;
+          })()}
         </div>
       )}
 
@@ -955,6 +976,21 @@ function ReviewLine({ article, locale }: { article: Article; locale: Locale }) {
       )}
     </div>
   );
+}
+
+/** The nearest year the place stands in, for a card shown faded in `year`: the end of its
+ *  ruin, its founding, its last year, or the New Testament for a place only it names. */
+function standingYear(place: PlaceProps, year: number): number | undefined {
+  if (
+    place.gap_from !== undefined &&
+    year >= place.gap_from &&
+    year < (place.gap_until ?? Infinity)
+  )
+    return place.gap_until;
+  if (place.life_from !== undefined && year < place.life_from) return place.life_from;
+  if (place.life_until !== undefined && year >= place.life_until) return place.life_until - 1;
+  if (place.ot === 0 && year < NT_FROM) return NT_FROM;
+  return undefined;
 }
 
 /** The same report as an email to the project's address, the place and its map link filled in. */
