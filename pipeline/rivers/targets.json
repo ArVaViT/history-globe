@@ -56,5 +56,33 @@
     "id": "a8d054a",
     "name": "Pharpar",
     "via": [36.09917, 33.33083]
+  },
+  {
+    "id": "ae686c9",
+    "name": "Jordan",
+    "source": [35.652, 33.249],
+    "via": [35.57, 32.4],
+    "join": 1000,
+    "rank": 6,
+    "simplify": 0.002,
+    "km2": 5000
+  },
+  {
+    "id": "a62dec4",
+    "name": "Euphrates",
+    "via": [40.14, 35.33],
+    "join": 1000,
+    "rank": 3,
+    "simplify": 0.005,
+    "km2": 5000,
+    "source": [41.3, 39.95]
+  },
+  {
+    "id": "a38ebfd",
+    "name": "Tigris",
+    "via": [43.15, 35.6],
+    "rank": 4,
+    "simplify": 0.005,
+    "km2": 5000
   }
 ]

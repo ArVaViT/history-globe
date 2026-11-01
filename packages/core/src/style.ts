@@ -1140,8 +1140,9 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       rivers: {
         type: "geojson",
         data: `${o.dataUrl}/rivers.geojson`,
-        // The small rivers are RiverATLAS lines (pipeline/rivers/), CC BY 4.0.
-        attribution: "Natural Earth; small rivers: RiverATLAS (Linke et al. 2019), CC BY 4.0",
+        // The rivers of the Bible are RiverATLAS lines (pipeline/rivers/), CC BY 4.0.
+        attribution:
+          "Natural Earth; rivers of the Bible: RiverATLAS (Linke et al. 2019), CC BY 4.0",
       },
       "river-labels": { type: "geojson", data: `${o.dataUrl}/river-labels.geojson` },
       places: {
