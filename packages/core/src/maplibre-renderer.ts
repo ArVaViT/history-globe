@@ -901,6 +901,28 @@ export class MapLibreRenderer implements Renderer {
     });
   }
 
+  private ring: maplibregl.Marker | null = null;
+  highlight(at: LonLat | null): void {
+    this.whenLoaded(() => {
+      // A marker over the map, not a feature state: the place may have no dot at this zoom
+      // (Jerusalem under a selected Kidron), and the ring is seen all the same.
+      if (!at) {
+        this.ring?.remove();
+        this.ring = null;
+        return;
+      }
+      if (!this.ring) {
+        const el = document.createElement("div");
+        el.setAttribute("aria-hidden", "true");
+        const ring = document.createElement("div");
+        ring.className = "hg-ring";
+        el.append(ring);
+        this.ring = new maplibregl.Marker({ element: el });
+      }
+      this.ring.setLngLat([at[0], at[1]]).addTo(this.map);
+    });
+  }
+
   setSelected(placeId: string | null): void {
     this.whenLoaded(() => {
       if (this.selected !== null) {

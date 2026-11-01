@@ -106,6 +106,7 @@ export function PlaceCard({
   questions,
   onPerson,
   onYear,
+  onHighlight,
   focusTitle = false,
 }: {
   place: PlaceProps;
@@ -153,6 +154,8 @@ export function PlaceCard({
   onLesson?: (() => void) | undefined;
   /** Moves the timeline to a year: from a faded place, to one where it stands. */
   onYear?: ((year: number) => void) | undefined;
+  /** Marks a place on the map, or none: the names in the article, pointed at. */
+  onHighlight?: ((placeId: string | null) => void) | undefined;
 }) {
   // Opened lists stay open for this place; the card is keyed by place, so a new place
   // starts folded again.
@@ -535,7 +538,9 @@ export function PlaceCard({
         aria-labelledby={`place-tab-${tab}`}
         className="pb-1"
       >
-        {tab === "story" && <ArticleSection placeId={place.id} locale={locale} />}
+        {tab === "story" && (
+          <ArticleSection placeId={place.id} locale={locale} onHighlight={onHighlight} />
+        )}
         {tab === "people" && people && onPerson && (
           <ul className="mx-3 mt-2 mb-1">
             {here.map((h) => {
@@ -854,9 +859,33 @@ export function PlaceCard({
  * The place's article, whole (its tab is for reading), then the verses and the sources
  * behind it and how far it has been checked.
  */
-function ArticleSection({ placeId, locale }: { placeId: string; locale: Locale }) {
+function ArticleSection({
+  placeId,
+  locale,
+  onHighlight,
+}: {
+  placeId: string;
+  locale: Locale;
+  onHighlight?: ((placeId: string | null) => void) | undefined;
+}) {
   const { t } = useTranslation();
   const [article, setArticle] = useState<Article | null | undefined>(undefined);
+  // The other places the text names, found as in the verses; plain text until the index is in.
+  const [index, setIndex] = useState<Awaited<ReturnType<typeof loadTextPlaces>> | null>(null);
+  useEffect(() => {
+    if (!onHighlight) return;
+    let live = true;
+    loadTextPlaces(locale).then(
+      (i) => {
+        if (live) setIndex(i);
+      },
+      () => undefined,
+    );
+    return () => {
+      live = false;
+      onHighlight(null);
+    };
+  }, [locale, onHighlight]);
   useEffect(() => {
     let live = true;
     // A failed load leaves the card without the article; the next card tries again.
@@ -882,7 +911,39 @@ function ArticleSection({ placeId, locale }: { placeId: string; locale: Locale }
       <ReviewLine article={article} locale={locale} />
       <div className="mt-3 space-y-3 font-serif text-[16px] leading-[1.65] text-ink">
         {body.map((p) => (
-          <p key={p.slice(0, 24)}>{p}</p>
+          <p key={p.slice(0, 24)}>
+            {index && onHighlight
+              ? // A name only marks its place on the map: the reader stays in the text.
+                splitPlaces(p, index, [placeId]).map((seg, i) =>
+                  seg.place ? (
+                    <span
+                      key={i}
+                      tabIndex={0}
+                      onMouseEnter={() => {
+                        onHighlight(seg.place ?? null);
+                      }}
+                      onMouseLeave={() => {
+                        onHighlight(null);
+                      }}
+                      onFocus={() => {
+                        onHighlight(seg.place ?? null);
+                      }}
+                      onBlur={() => {
+                        onHighlight(null);
+                      }}
+                      onClick={() => {
+                        onHighlight(seg.place ?? null);
+                      }}
+                      className="underline decoration-accent/35 decoration-dotted underline-offset-4 hover:decoration-accent focus-visible:decoration-accent focus-visible:outline-none"
+                    >
+                      {seg.text}
+                    </span>
+                  ) : (
+                    <span key={i}>{seg.text}</span>
+                  ),
+                )
+              : p}
+          </p>
         ))}
       </div>
       <div className="mt-3 border-t border-line pt-2 text-[12px] leading-snug text-ink-soft">
