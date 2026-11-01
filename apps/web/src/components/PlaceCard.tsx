@@ -22,6 +22,7 @@ import { useTranslation } from "../i18n";
 import { loadArticle, type Article } from "../articles";
 import {
   beforeItsTime,
+  standingYear,
   DATA_URL,
   siteCertainty,
   whereIn,
@@ -40,7 +41,7 @@ import { Photo } from "./Photo";
 import { notifyVerse } from "../embed";
 import { Panel } from "./Panel";
 import { loadPeople, peopleNow, personName, type People } from "../people";
-import { NT_FROM, POLITY_COLORS, polityText, type PolityName } from "@hg/core";
+import { POLITY_COLORS, polityText, type PolityName } from "@hg/core";
 import { Credit } from "./Credit";
 
 const VERSES_SHOWN = 24;
@@ -1041,21 +1042,6 @@ function ReviewLine({ article, locale }: { article: Article; locale: Locale }) {
   );
 }
 
-/** The nearest year the place stands in, for a card shown faded in `year`: the end of its
- *  ruin, its founding, its last year, or the New Testament for a place only it names. */
-function standingYear(place: PlaceProps, year: number): number | undefined {
-  if (
-    place.gap_from !== undefined &&
-    year >= place.gap_from &&
-    year < (place.gap_until ?? Infinity)
-  )
-    return place.gap_until;
-  if (place.life_from !== undefined && year < place.life_from) return place.life_from;
-  if (place.life_until !== undefined && year >= place.life_until) return place.life_until - 1;
-  if (place.ot === 0 && year < NT_FROM) return NT_FROM;
-  return undefined;
-}
-
 /** The same report as an email to the project's address, the place and its map link filled in. */
 function reportMail(place: PlaceProps): string {
   const name = place.name_ru ? `${place.name_ru} / ${place.name}` : place.name;
@@ -1254,6 +1240,7 @@ function Rulers({
   const { t } = useTranslation();
   const [data, setData] = useState<RulerData | null>(null);
   const [shown, setShown] = useState<number | null>(null);
+  const band = useRef<HTMLDivElement>(null);
   useEffect(() => {
     let live = true;
     void loadRulers().then((d) => {
@@ -1276,6 +1263,7 @@ function Rulers({
   // The state of the year shown is named on the line above; this one names what the
   // reader points at, and otherwise the span.
   const line = shown;
+  const focusAt = shown ?? (now >= 0 ? now : 0);
   // Gaps (no state on the map there) stay empty, so the band keeps its time scale.
   const cells: { k: number | null; span: number }[] = [];
   runs.forEach(([a, b], k) => {
@@ -1285,10 +1273,23 @@ function Rulers({
   });
   return (
     <div className="px-5 pt-2">
+      {/* One stop for the Tab key, the arrows from state to state (a toolbar's roving focus):
+          a band of thirty states is not thirty stops. */}
       <div
+        ref={band}
+        role="toolbar"
+        aria-label={t("place.rulers", { span: formatYearRange(from, to - 1, locale) })}
         className="flex h-2.5 w-full overflow-hidden rounded-full bg-ink/5"
         onMouseLeave={() => {
           setShown(null);
+        }}
+        onKeyDown={(e) => {
+          const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+          const jump = { Home: 0, End: runs.length - 1 }[e.key];
+          if (step === undefined && jump === undefined) return;
+          e.preventDefault();
+          const next = jump ?? Math.min(runs.length - 1, Math.max(0, focusAt + (step ?? 0)));
+          band.current?.querySelector<HTMLButtonElement>(`[data-run="${String(next)}"]`)?.focus();
         }}
       >
         {cells.map(({ k, span }, n) =>
@@ -1298,6 +1299,8 @@ function Rulers({
             <button
               key={n}
               type="button"
+              data-run={k}
+              tabIndex={k === focusAt ? 0 : -1}
               aria-label={nameOfRun(k)}
               title={nameOfRun(k)}
               style={{
