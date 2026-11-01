@@ -84,8 +84,9 @@ Terrain
 Base cartography
   Made with Natural Earth. Free vector and raster map data @ naturalearthdata.com.
 
-Small rivers
-  The lines of the small rivers and wadis (pipeline/rivers/) are taken from RiverATLAS
+Rivers of the Bible
+  The lines of the biblical rivers and wadis, the Jordan, the Euphrates and the Tigris
+  among them (pipeline/rivers/), are taken from RiverATLAS
   v1.0, CC BY 4.0: Linke, S., Lehner, B., Ouellet Dallaire, C., et al. (2019). Global
   hydro-environmental sub-basin and river reach characteristics at high spatial resolution.
   Scientific Data 6: 283. https://doi.org/10.1038/s41597-019-0300-6. Geometry and network
