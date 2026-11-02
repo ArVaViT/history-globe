@@ -284,7 +284,7 @@ export const NOT_DUP: ExpressionSpecification = [
  */
 export const PLACE_ORDER: ExpressionSpecification = [
   "+",
-  // An ancient site weighs its rank in verses (`weight`).
+  // An ancient site, or a town its fame raised, weighs its rank in verses (`weight`).
   ["-", 0, ["coalesce", ["get", "weight"], ["get", "verses"]]],
   [
     "case",

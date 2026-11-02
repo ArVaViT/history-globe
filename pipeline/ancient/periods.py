@@ -25,10 +25,14 @@ P={'neolithic-eastern-med':(-9999,-3501),'archaic':(-749,-550),'classical':(-549
 'neo-babylonian-achaemenid-southern-levant':(-585,-330),'middle-kingdom-egypt':(-2054,-1650),'second-intermediate-period-egypt':(-1649,-1550),
 'late-byzantine':(1205,1453),'thirteenth-ce':(1201,1300),'achaemenid-central-asia':(-549,-330),'hellenistic-central-asia':(-329,-30),
 'pre-islamic-early-middle-ages-central-asia':(301,750),'neo-hittite-northern-levant':(-1179,-700),'early-1st-millennium-mesopotamia':(-999,-612),
-'achaemenid-roman-republic-middle-east':(-549,-30),'calcolithic-eurasian-cenieh':(-4500,-3301),'bronze-eurasian-cenieh':(-3299,-1200)}
+'achaemenid-roman-republic-middle-east':(-549,-30),'calcolithic-eurasian-cenieh':(-4500,-3301),
+'early-bronze-age-anatolia':(-2999,-2000),'copy_of_middle-bronze-age-anatolia':(-1999,-1600),'middle-hittite-anatolia':(-1499,-1400),'tenth-bce':(-999,-900),'ninth-bce':(-899,-800),
+'eighth-ce':(701,800),'ptolemaic-egypt':(-331,-30),'ptolemaic-roman-egypt':(-331,300),'old-kingdom-egypt':(-2685,-2180),'2nd-millennium-bc-egypt':(-1999,-1000),
+'early-helladic':(-3199,-2000),'middle-helladic':(-1999,-1600),'caliphate-umayyad-middle-east':(661,750),'ummayad':(661,750),'rum-crusader-anatolia':(1077,1300),
+'seljuq-khwarezmian-middle-east':(1037,1231),'khwarezmian-middle-east':(1077,1231),'early-medieval-caucasus':(641,1000),'samanid-ghaznavid-iran':(819,1186),'bronze-eurasian-cenieh':(-3299,-1200)}
 LATE=('modern','twentieth','twenty-first','nineteenth','eighteenth','seventeenth','sixteenth','fifteenth','ottoman','khedivate','mandate','safavid','qajar','pahlavi','fourteenth','1500-ad','thirteenth-ce-ottoman','early-ottoman','late-ottoman')
 YMIN,YMAX=-3500,1300
-ids={s['id']:s for s in json.load(open(f'{S}/wave/wave1.json'))}
+ids={s['id']:s for s in json.load(open(f'{S}/wave/wave.json'))}
 wd=json.load(open(f'{S}/wave/wd.json'))
 unk=collections.Counter(); keep=[]; drop=collections.Counter()
 for r in csv.DictReader(gzip.open(f'{S}/pleiades-dl/places.csv.gz','rt')):
@@ -56,7 +60,7 @@ for r in csv.DictReader(gzip.open(f'{S}/pleiades-dl/places.csv.gz','rt')):
     s['from_'],s['to']=a,b
     s['periods']=r['timePeriodsKeys']
     keep.append(s)
-json.dump(keep,open(f'{S}/wave/wave1.json','w'),ensure_ascii=False)
+json.dump(keep,open(f'{S}/wave/wave.json','w'),ensure_ascii=False)
 print(len(keep),dict(drop),'unknown periods:',unk.most_common(60))
 print(collections.Counter((s['from_'],s['to']) for s in keep).most_common(8))
 print([(s['en'],s['from_'],s['to']) for s in keep if s['en'] in ('Göbekli Tepe','Çatalhöyük','Sicyon','Knidos','Opis','Abu Mena','Mystras','Malgium','Tel Shikmona','Epidaurus')])

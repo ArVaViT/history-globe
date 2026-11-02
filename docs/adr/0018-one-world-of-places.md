@@ -28,6 +28,14 @@ class of place.
 ## Consequences
 
 - One importance scale built from two sources is a stopgap; a measure for every place
-  alike (Wikidata sitelinks, say) would replace it.
+  alike (Wikidata sitelinks, say) would replace it. First step (2026-11-01): fame lifts a
+  town on both sides (`content/fame.json`, `pipeline/ancient/fame.py`): the Wikipedia
+  articles of its Wikidata item, counted only when that item is the ancient place, not the
+  modern town on it (Amman's are not Rabbah's). 60 articles make a place rank 1, 25 rank 2;
+  it never lowers one, never makes a rank 0, and leaves a disputed point alone. Carthage,
+  Sparta, Ur, Palmyra, Uruk, Memphis rose; so did Thugga, Masada, Numantia, Veii.
+- The script's second wave (`content/ancient-sites-wave2.json`, 431 sites): the less known,
+  5 to 7 Wikipedia articles, and those the first wave's classes missed (Gallo-Roman towns,
+  Etruscan temples, Iberian settlements).
 - English first: the docs' sentence about grey names is rewritten in English only until
   the next translation pass.

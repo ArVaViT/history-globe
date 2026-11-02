@@ -693,6 +693,13 @@ const photos: Record<string, PlacePhoto> = {};
 // within 3 km of one of our places is the same place under another name: an error.
 const ancientWrites: [string, string][] = [];
 if (existsSync("content/ancient-sites.json")) {
+  // Wikipedia articles of the sites' own Wikidata items (pipeline/ancient/fame.py), on the
+  // ancient sites' ranks, one step above the places': 0 at 60 articles, 1 at 25.
+  const fame = existsSync("content/fame.json")
+    ? (JSON.parse(readFileSync("content/fame.json", "utf8")) as { items: Record<string, number> })
+        .items
+    : {};
+  const rankByFame = (links: number) => (links >= 60 ? 0 : links >= 25 ? 1 : 2);
   const qidOf = (sources: readonly string[]) =>
     sources.map((u) => /wikidata\.org\/wiki\/(Q\d+)$/.exec(u)?.[1]).find(Boolean);
   // The sites chosen one by one, with their names from the names files; then the waves a
@@ -713,11 +720,15 @@ if (existsSync("content/ancient-sites.json")) {
       };
       return { ...s, names };
     }),
-    ...(existsSync("content/ancient-sites-wave1.json")
-      ? AncientWaveFile.parse(
-          JSON.parse(readFileSync("content/ancient-sites-wave1.json", "utf8")),
-        ).sites.map((s) => ({ ...s, names: s.names ?? {} }))
-      : []),
+    // The waves chosen by script (pipeline/ancient), in their order.
+    ...readdirSync("content")
+      .filter((f) => /^ancient-sites-wave\d+\.json$/.test(f))
+      .sort((a, b) => a.localeCompare(b, "en", { numeric: true }))
+      .flatMap((f) =>
+        AncientWaveFile.parse(JSON.parse(readFileSync(join("content", f), "utf8"))).sites.map(
+          (s) => ({ ...s, names: s.names ?? {} }),
+        ),
+      ),
   ];
   // Towns only: a region's point (Egypt, Assyria) may well lie on an ancient city.
   const ours = places.features
@@ -757,7 +768,8 @@ if (existsSync("content/ancient-sites.json")) {
           ...s.names,
           from: s.from,
           to: s.to,
-          rank: s.rank,
+          // Fame lifts a site as it lifts the Bible's towns (pipeline/build_data.py fame_rank).
+          rank: Math.min(s.rank, rankByFame(fame[qidOf(s.sources) ?? ""] ?? 0)),
           kind: s.kind,
           ...(s.approx ? { approx: true } : {}),
           // Its Wikidata item, for the card's link (the id is Pleiades' where it has one).

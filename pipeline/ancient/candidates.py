@@ -11,7 +11,9 @@ def km(a,b):
     return math.hypot(x,y)*6371
 ours=[f['geometry']['coordinates'] for f in json.load(open(f'{R}/apps/web/public/data/places.geojson'))['features'] if f['properties']['kind']=='settlement']
 anc=json.load(open(f'{R}/content/ancient-sites.json'))['sites']
-have={s['id'] for s in anc}; ours+= [[s['lon'],s['lat']] for s in anc]
+import glob
+for w in sorted(glob.glob(f'{R}/content/ancient-sites-wave*.json')): anc+=json.load(open(w))['sites']
+have={str(s['id']) for s in anc}; ours+= [[s['lon'],s['lat']] for s in anc]
 plinks={v['id'] for v in json.load(open(f'{R}/content/pleiades.json'))['places'].values()}
 grid={}
 for c in ours: grid.setdefault((int(c[0]*10),int(c[1]*10)),[]).append(c)

@@ -1,6 +1,6 @@
 # Ancient sites by script (ADR 0018)
 
-How `content/ancient-sites-wave1.json` was made, to make the next wave the same way. `S` is a
+How `content/ancient-sites-wave<N>.json` were made, to make the next wave the same way. `S` is a
 work directory outside the repo (the downloads stay there); `R` is this repo.
 
 1. Download Pleiades' dumps (CC BY 3.0) into `S/pleiades-dl/`: `pleiades-places-latest.csv.gz`
@@ -13,6 +13,13 @@ work directory outside the repo (the downloads stay there); `R` is this repo.
 5. `python3 -I select.py S`: ancient sites only (no modern town, museum or castle).
 6. `python3 -I periods.py S`: years from the periods Pleiades attests, modern ones left out.
 7. `python3 -I assemble.py S R`: names no other place has; writes the content file.
+
+Wave 1 took the items with at least 8 Wikipedia articles; wave 2 (`FAME=5`, `WAVE=2`) those
+with 5 to 7 and the ones wave 1's classes missed. Steps 3–7 take `FAME` (the least articles)
+and `assemble.py` takes `WAVE` (the file's number); a later wave skips every site already in one.
+
+8. `python3 -I fame.py S R`: the Wikipedia articles of every place's own Wikidata item, where
+   that item is an ancient site (`content/fame.json`); the data build ranks by it.
 
 The class labels for step 5 (`S/wave/classes.json`) come from one more query on the classes
 the candidates have.

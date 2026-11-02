@@ -8,7 +8,7 @@
  */
 import { rulersOf } from "./rulers.ts";
 import { join } from "node:path";
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, readdirSync, existsSync } from "node:fs";
 import {
   AncientSitesFile,
   AncientWaveFile,
@@ -931,7 +931,9 @@ export function buildPolities({
       : { _source: "none", sites: [] };
   const ancient = [
     ...AncientSitesFile.parse(read("content/ancient-sites.json")).sites,
-    ...AncientWaveFile.parse(read("content/ancient-sites-wave1.json")).sites,
+    ...readdirSync("content")
+      .filter((f) => /^ancient-sites-wave\d+\.json$/.test(f))
+      .flatMap((f) => AncientWaveFile.parse(read(join("content", f))).sites),
   ].map((a) => ({ geometry: { coordinates: [a.lon, a.lat] }, properties: { id: a.id } }));
   const { states, rulers } = rulersOf(polities.features, [...places.features, ...ancient]);
   writes.push([join(out, "rulers.json"), JSON.stringify({ states, places: rulers })]);
