@@ -1,0 +1,140 @@
+# The Jewish War, AD 66-73, as Josephus tells it: the first tour told outside the Bible
+# (ADR 0018). Each stop gives his passage (Niese's sections, as the Loeb and Perseus number
+# them) and Whiston's free translation at Perseus. Not one way travelled: no time on foot.
+# Jotapata is the map's Jotbah (2 Kgs 21:19), usually taken for the same hill; Tarichaea is
+# usually identified with Magdala. English and Russian first; the other languages wait for
+# the translation pass (docs/translation-debt.md).
+id: jewish-war
+title:
+  en: "The Jewish War: Josephus"
+  ru: "Иудейская война: Иосиф Флавий"
+year: "AD 66"
+walked: false
+stops:
+  - place: a58735e # Caesarea
+    source:
+      cite:
+        en: "Josephus, Jewish War 2.284"
+        ru: "Иосиф Флавий, Иудейская война 2.284"
+      url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=2:section=284"
+    note:
+      en: "Spring of AD 66: the Greeks of Caesarea profane the Jews' synagogue on a sabbath; the governor Florus, paid eight talents to help the Jews, has left the city. Josephus marks it as the war's beginning."
+      ru: "Весна 66 года: кесарийские греки в субботу оскверняют синагогу иудеев; прокуратор Флор, получивший от них восемь талантов за защиту, уехал из города. Иосиф считает это началом войны."
+  - place: a15257a # Jerusalem
+    source:
+      cite:
+        en: "Josephus, Jewish War 2.409"
+        ru: "Иосиф Флавий, Иудейская война 2.409"
+      url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=2:section=408"
+    note:
+      en: "Eleazar son of Ananias, captain of the Temple, persuades the priests to accept no sacrifice from a foreigner, and so stops the offering for the emperor: «the foundation of the war», Josephus writes."
+      ru: "Начальник храма Елеазар, сын Анании, убеждает священников не принимать жертв от чужеземцев и тем прекращает жертву за императора: это, пишет Иосиф, и положило основание войне."
+  - place: a75b45e # Beth-horon
+    source:
+      cite:
+        en: "Josephus, Jewish War 2.546"
+        ru: "Иосиф Флавий, Иудейская война 2.546"
+      url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=2:section=546"
+    note:
+      en: "November of AD 66: Cestius Gallus, governor of Syria, falls back from Jerusalem, and on the descent of Beth-horon the rebels rout his army and take its engines. Rome now sends Vespasian."
+      ru: "Ноябрь 66 года: наместник Сирии Цестий Галл отходит от Иерусалима, и на спуске у Вефорона повстанцы разбивают его войско и захватывают машины. Тогда Рим посылает Веспасиана."
+  - place: "678387" # Sepphoris
+    year: "AD 67"
+    source:
+      cite:
+        en: "Josephus, Jewish War 3.30"
+        ru: "Иосиф Флавий, Иудейская война 3.30"
+      url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=3:section=29"
+    note:
+      en: "Sepphoris, the largest city of Galilee, keeps faith with Rome and asks Vespasian for a garrison, before his army has even reached Galilee."
+      ru: "Сепфорис, крупнейший город Галилеи, остаётся верен Риму и просит у Веспасиана гарнизон ещё до прихода его войска в Галилею."
+  - place: adbbb54 # Jotbah: Jotapata
+    year: "AD 67"
+    source:
+      cite:
+        en: "Josephus, Jewish War 3.141"
+        ru: "Иосиф Флавий, Иудейская война 3.141"
+      url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=3:section=141"
+    note:
+      en: "Jotapata, probably the Jotbah of 2 Kings 21:19, where Josephus himself commands, holds Vespasian for forty-seven days. When it falls Josephus hides in a cistern, gives himself up, and foretells that Vespasian will be emperor."
+      ru: "Иотапата (вероятно, библейская Ятба, 4 Цар 21:19), где начальствует сам Иосиф, сорок семь дней держится против Веспасиана. Когда город пал, Иосиф скрывается в пещере, сдаётся и предсказывает Веспасиану императорскую власть."
+  - place: af75e9e # Magdala: Tarichaea
+    year: "AD 67"
+    source:
+      cite:
+        en: "Josephus, Jewish War 3.462"
+        ru: "Иосиф Флавий, Иудейская война 3.462"
+      url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=3:section=462"
+    note:
+      en: "Titus rides into Tarichaea from the shore, and the Romans chase those who fled onto the Sea of Galilee on rafts: the lake, Josephus says, was red with blood."
+      ru: "Тит врывается в Тарихею со стороны берега, а бежавших на Галилейское море римляне настигают на плотах: озеро, пишет Иосиф, покраснело от крови."
+  - place: "678146" # Gamla
+    year: "AD 67"
+    source:
+      cite:
+        en: "Josephus, Jewish War 4.1"
+        ru: "Иосиф Флавий, Иудейская война 4.1"
+      url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=4:section=1"
+    note:
+      en: "Gamla on its camel's-hump ridge beats back the first assault; a month later the Romans break in, and the town is destroyed."
+      ru: "Гамала на хребте, похожем на верблюжий горб, отбивает первый приступ; через месяц римляне врываются в город, и он уничтожен."
+  - place: "678165" # Gischala
+    year: "AD 67"
+    source:
+      cite:
+        en: "Josephus, Jewish War 4.84"
+        ru: "Иосиф Флавий, Иудейская война 4.84"
+      url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=4:section=84"
+    note:
+      en: "The last town of Galilee to hold out. Its leader, John of Gischala, asks Titus for a sabbath's truce and escapes by night to Jerusalem; the town then opens its gates."
+      ru: "Последний непокорённый город Галилеи. Его вождь Иоанн Гисхальский просит у Тита перемирия на субботу и ночью бежит в Иерусалим; город сдаётся."
+  - place: a15257a # Jerusalem
+    year: "AD 70"
+    source:
+      cite:
+        en: "Josephus, Jewish War 6.249"
+        ru: "Иосиф Флавий, Иудейская война 6.249"
+      url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=6:section=249"
+    note:
+      en: "Titus besieges the city from Passover of AD 70. In late summer the Temple burns, on the day, Josephus notes, that the first Temple burned under Babylon; within a month the whole city is taken."
+      ru: "Тит осаждает город с Пасхи 70 года. В конце лета горит храм, в тот же день, замечает Иосиф, что и первый храм при Вавилоне; через месяц взят весь город."
+  - place: afc8e7a # Rome
+    year: "AD 71"
+    source:
+      cite:
+        en: "Josephus, Jewish War 7.123"
+        ru: "Иосиф Флавий, Иудейская война 7.123"
+      url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=7:section=123"
+    note:
+      en: "Vespasian and Titus hold one triumph together. The Temple's golden table and lampstand are carried through Rome, as the Arch of Titus still shows them."
+      ru: "Веспасиан и Тит справляют общий триумф. Через Рим несут золотые стол и светильник из храма, как их и сейчас изображает арка Тита."
+  - place: "687916" # Herodium
+    year: "AD 71"
+    source:
+      cite:
+        en: "Josephus, Jewish War 7.163"
+        ru: "Иосиф Флавий, Иудейская война 7.163"
+      url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=7:section=163"
+    note:
+      en: "Three fortresses still hold out. The new legate Lucilius Bassus takes Herod's hill-palace of Herodium first."
+      ru: "Ещё держатся три крепости. Новый легат Луцилий Басс первым берёт Иродион, дворец-крепость Ирода на холме."
+  - place: "697700" # Machaerus
+    year: "AD 72"
+    source:
+      cite:
+        en: "Josephus, Jewish War 7.164"
+        ru: "Иосиф Флавий, Иудейская война 7.164"
+      url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=7:section=163"
+    note:
+      en: "Machaerus, beyond the Dead Sea, where Josephus elsewhere says John the Baptist was put to death, surrenders to Bassus in return for the life of a captured young defender."
+      ru: "Махерон за Мёртвым морем, где, по словам Иосифа в «Древностях», был казнён Иоанн Креститель, сдаётся Бассу в обмен на жизнь пленённого юноши из защитников."
+  - place: "687968" # Masada
+    year: "AD 73"
+    source:
+      cite:
+        en: "Josephus, Jewish War 7.252"
+        ru: "Иосиф Флавий, Иудейская война 7.252"
+      url: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0148:book=7:section=252"
+    note:
+      en: "The last stronghold. Flavius Silva builds a ramp against the rock; when the wall is breached, the defenders under Eleazar son of Jair take their own lives, 960 in all. AD 73 or 74."
+      ru: "Последняя твердыня. Флавий Сильва насыпает вал к скале; когда стена пробита, защитники во главе с Елеазаром, сыном Яира, лишают себя жизни, всего 960 человек. 73 или 74 год."

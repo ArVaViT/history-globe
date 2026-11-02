@@ -420,7 +420,8 @@ export async function loadData(): Promise<LoadedData> {
     stops: t.stops.map((s) => ({
       placeId: s.place,
       at: byId.get(s.place)?.info.at ?? [0, 0],
-      ref: s.ref,
+      ...(s.ref ? { ref: s.ref } : {}),
+      ...(s.source ? { source: s.source } : {}),
       note: s.note,
       ...(s.year !== undefined ? { year: s.year } : {}),
       ...(s.by === "sea" ? { sea: true } : {}),

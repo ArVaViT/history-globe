@@ -929,7 +929,12 @@ export function App() {
                         panels={{
                           tours: (
                             <ToursPanel
-                              tours={data.tours}
+                              // "The Bible alone" leaves out the tours told by other authors.
+                              tours={
+                                bibleOnly
+                                  ? data.tours.filter((tour) => tour.stops.every((st) => st.ref))
+                                  : data.tours
+                              }
                               onStart={(id) => {
                                 setPlaying(false);
                                 // The tour's route wants the map: the overview steps aside

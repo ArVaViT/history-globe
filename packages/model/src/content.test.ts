@@ -52,6 +52,22 @@ describe("TourFile", () => {
     const [first, second] = tour.stops;
     expect(() => TourFile.parse({ ...tour, stops: [{ ...first, nte: "x" }, second] })).toThrow();
   });
+
+  it("takes a stop told outside the Bible, with its source, at an ancient site", () => {
+    const source = {
+      cite: { en: "Josephus, Jewish War 4.1", ru: "Иосиф Флавий" },
+      url: "https://x.org/",
+    };
+    const [first, second] = tour.stops;
+    const told = { place: "678146", source, note: { en: "c", ru: "в" } };
+    expect(TourFile.parse({ ...tour, stops: [first, told] }).stops[1]?.source?.url).toBe(
+      "https://x.org/",
+    );
+    // A verse or a source: never neither, never both.
+    const bare = { place: told.place, note: told.note };
+    expect(() => TourFile.parse({ ...tour, stops: [first, bare] })).toThrow();
+    expect(() => TourFile.parse({ ...tour, stops: [first, { ...second, source }] })).toThrow();
+  });
 });
 
 describe("PolityOverridesFile", () => {

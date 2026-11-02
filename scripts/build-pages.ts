@@ -57,8 +57,11 @@ await loadAllLocaleData();
 const root = join(import.meta.dirname, "..");
 
 /** Whether a tour's stops read from both testaments (as ToursPanel.tsx groups them). */
-const testamentOf = (stops: readonly { readonly ref: string }[]): "whole" | "ot" | "nt" => {
-  const nt = stops.map((s) => NT_BOOKS.has(s.ref.split(".")[0] ?? ""));
+const testamentOf = (
+  stops: readonly { readonly ref?: string | undefined; readonly source?: unknown }[],
+): "whole" | "ot" | "nt" | "beyond" => {
+  if (stops.some((s) => s.source)) return "beyond";
+  const nt = stops.map((s) => NT_BOOKS.has(s.ref?.split(".")[0] ?? ""));
   return nt.includes(true) && nt.includes(false) ? "whole" : nt.includes(true) ? "nt" : "ot";
 };
 const pub = join(root, "apps/web/public");
@@ -805,7 +808,7 @@ function tourPages(l: Lang): void {
               ? `<a href="../../place/${slugOf.get(s.place) ?? s.place}/">${esc(n)}</a>`
               : esc(n);
           const leg = legOf(t, i);
-          return `<li><p class="stop"><b>${link}</b> <span class="ref">${esc(refOf(s.ref, l))}${leg ? ` · ${esc(leg)}` : ""}</span></p><p>${esc(s.note[l] ?? s.note.en)}</p><a class="more" href="../../../?tour=${t.id}&amp;stop=${String(i + 1)}&amp;locale=${l}">${T[l].open} →</a></li>`;
+          return `<li><p class="stop"><b>${link}</b> <span class="ref">${esc(s.ref ? refOf(s.ref, l) : (s.source?.cite[l] ?? s.source?.cite.en ?? ""))}${leg ? ` · ${esc(leg)}` : ""}</span></p><p>${esc(s.note[l] ?? s.note.en)}</p><a class="more" href="../../../?tour=${t.id}&amp;stop=${String(i + 1)}&amp;locale=${l}">${T[l].open} →</a></li>`;
         })
         .join("\n        ")}</ol>
     </main>`;
@@ -927,8 +930,12 @@ function routeSvg(t: Tour): string {
  * "Мф 2 – Деян 1" across books (the Synodal numbers in Russian, as formatRef gives them).
  */
 function tourSpan(t: Tour, l: Lang): string {
+  // Told outside the Bible: the work it follows ("Josephus, Jewish War").
+  const cite = t.stops.find((s) => s.source)?.source?.cite;
+  const told = cite && (cite[l] ?? cite.en);
+  if (told) return told.replace(/\s+[\d.–-]+$/, "");
   const ends = t.stops
-    .flatMap((s) => s.ref.split("-"))
+    .flatMap((s) => (s.ref ? s.ref.split("-") : []))
     .sort((a, b) => canonicalPosition(a) - canonicalPosition(b));
   const [b1 = "", c1 = ""] = (ends[0] ?? "").split(".");
   const [b2 = "", c2 = ""] = (ends.at(-1) ?? "").split(".");
@@ -1035,7 +1042,7 @@ function indexPages(l: Lang): void {
       body: `    <main id="main" class="page list">
       <h1>${T[l].toursTitle}</h1>
       <p class="list-lead">${esc(W.toursLead(n.format(content.tours.length), content.tours.length))}</p>
-      ${(["whole", "ot", "nt"] as const)
+      ${(["whole", "ot", "nt", "beyond"] as const)
         .map((g) => {
           // By testament, as the app's list: a tour reading from both is the whole Bible's.
           const group = [...content.tours]

@@ -28,7 +28,12 @@ export interface PlaceInfo {
 export interface TourStop {
   readonly placeId: string;
   readonly at: LonLat;
-  readonly ref: string;
+  /** The verse that tells it; outside the Bible, the `source` that does. */
+  readonly ref?: string;
+  readonly source?: {
+    readonly cite: Readonly<Record<string, string>>;
+    readonly url: string;
+  };
   readonly note: Readonly<Record<string, string>>;
   /** The map's year at this stop; the tour's year otherwise. */
   readonly year?: number;

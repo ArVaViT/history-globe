@@ -168,7 +168,7 @@ export function TourStopCard({
           </p>
         ) : (
           // A stop without a note (a teacher's lesson): the verse that names the place.
-          <StopVerse key={stop.ref} osis={stop.ref} locale={locale} />
+          stop.ref && <StopVerse key={stop.ref} osis={stop.ref} locale={locale} />
         )}
       </div>
       {/* Outside the live region: the credit is not read out at every stop. */}
@@ -183,13 +183,16 @@ export function TourStopCard({
         />
       )}
       <div className="mt-3 flex items-center gap-2">
+        {/* The verse, or the ancient author who tells it (Josephus): a free translation. */}
         <a
-          href={verseUrl(stop.ref, locale)}
+          href={stop.ref ? verseUrl(stop.ref, locale) : stop.source?.url}
           target="_blank"
           rel="noopener noreferrer"
           className="rounded-full border border-line bg-white/70 px-2.5 py-0.5 font-serif text-[13px] text-ink hover:border-accent hover:text-accent"
         >
-          {formatRef(stop.ref, locale)}
+          {stop.ref
+            ? formatRef(stop.ref, locale)
+            : (stop.source?.cite[locale] ?? stop.source?.cite.en)}
           <span className="sr-only"> ({t("new_tab")})</span>
         </a>
         {compact ? (

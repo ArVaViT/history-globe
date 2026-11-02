@@ -39,3 +39,8 @@ class of place.
   Etruscan temples, Iberian settlements).
 - English first: the docs' sentence about grey names is rewritten in English only until
   the next translation pass.
+- Tours told outside the Bible (2026-11-02): a stop has a verse (`ref`) or a `source`, the
+  ancient author's passage and a free translation of it, and may stop at an ancient site.
+  The tours list gives them their own group, "Beyond the Bible", which the Bible-alone
+  setting hides. First: the Jewish War after Josephus (`content/tours/jewish-war.yaml`),
+  linked to Whiston's translation at Perseus.

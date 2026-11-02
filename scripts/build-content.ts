@@ -219,6 +219,14 @@ if (mostMentioned.length > 0)
   );
 
 const tours: TourFile[] = [];
+// The ancient world's sites (ADR 0018), which a tour told outside the Bible may stop at.
+const ancientIds = new Set(
+  readdirSync(join(root, "content"))
+    .filter((f) => /^ancient-sites(-wave\d+)?\.json$/.test(f))
+    .flatMap((f) =>
+      (load(`content/${f}`) as { sites: { id: string | number }[] }).sites.map((s) => String(s.id)),
+    ),
+);
 for (const file of readdirSync(join(root, "content/tours")).filter((f) => f.endsWith(".yaml"))) {
   const result = TourFile.safeParse(load(`content/tours/${file}`));
   if (!result.success) {
@@ -235,11 +243,17 @@ for (const file of readdirSync(join(root, "content/tours")).filter((f) => f.ends
     const tagged = versesOf.get(s.place);
     if (
       tagged &&
+      s.ref !== undefined &&
       !refCovers(s.ref, tagged) &&
       !NAMED_BY_CONTEXT.has(`${result.data.id} ${s.place}`)
     )
       errors.push(`tours/${file}: stop ${i + 1} (${s.place}) ${s.ref} does not name the place`);
-    if (!known.has(s.place)) errors.push(`tours/${file}: stop ${s.place} is not in the data build`);
+    if (!known.has(s.place) && !ancientIds.has(s.place))
+      errors.push(`tours/${file}: stop ${s.place} is not in the data build`);
+    // The Bible's own tours stay in it: an ancient site is a stop only where the Bible is not
+    // the source.
+    if (ancientIds.has(s.place) && s.ref !== undefined)
+      errors.push(`tours/${file}: stop ${i + 1} (${s.place}) is an ancient site, told by a verse`);
     if (s.sailed && s.by !== "sea")
       errors.push(`tours/${file}: stop ${i + 1} (${s.place}) has days sailed but no "by: sea"`);
     if (i > 0 && result.data.stops[i - 1]?.place === s.place) {
@@ -748,7 +762,9 @@ if (existsSync("content/ancient-sites.json")) {
     seen.add(s.id);
     if (s.from > s.to || s.from > YEAR_MAX || s.to < YEAR_MIN)
       errors.push(`ancient-sites: ${s.id} (${s.en}) years ${String(s.from)}..${String(s.to)}`);
-    const near = ours.find(([, c]) => km(c, [s.lon, s.lat]) < 3);
+    const near = ours.find(
+      ([id, c]) => km(c, [s.lon, s.lat]) < 3 && !("apart_from" in s && s.apart_from === id),
+    );
     if (near) errors.push(`ancient-sites: ${s.id} (${s.en}) is our place ${near[0]}`);
   }
   // Sites beyond the focus mask's outer ring (the Indus, Gaul) stay in the content but
@@ -916,7 +932,8 @@ if (errors.length > 0) {
 
 // Tours in the order of history, not of their file names; tours set at the same
 // conventional year (the judges) in the order of the Bible.
-const firstRef = (t: TourFile) => canonicalPosition(t.stops[0]?.ref ?? "Gen.1.1");
+const firstRef = (t: TourFile) =>
+  canonicalPosition(t.stops.find((s) => s.ref !== undefined)?.ref ?? "Rev.22.21");
 tours.sort((a, b) => a.year - b.year || firstRef(a) - firstRef(b) || a.id.localeCompare(b.id));
 // Pleiades ids and attested periods, matched from the gazetteer (content/pleiades.json).
 const pleiadesFile = JSON.parse(readFileSync("content/pleiades.json", "utf8")) as {

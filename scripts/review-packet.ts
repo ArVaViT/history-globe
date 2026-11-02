@@ -142,7 +142,7 @@ ${numbered(q.answer.en)}
 ${t.stops
   .map(
     (s, i) =>
-      `<p class="para"><span class="n">¶${String(i + 1)}</span><b>${esc(placeName.get(s.place) ?? s.place)}</b> (${esc(formatRef(s.ref, "en"))}). ${esc(s.note.en)}</p>`,
+      `<p class="para"><span class="n">¶${String(i + 1)}</span><b>${esc(placeName.get(s.place) ?? s.place)}</b> (${esc(s.ref ? formatRef(s.ref, "en") : (s.source?.cite.en ?? ""))}). ${esc(s.note.en)}</p>`,
   )
   .join("\n")}
 <p class="meta">File: ${REPO}/blob/${commit}/${path}</p>
