@@ -10,6 +10,9 @@ def run(q):
         try: return json.load(urllib.request.urlopen(req,timeout=120))['results']['bindings']
         except Exception as e: print('retry',e,file=sys.stderr); time.sleep(20*(i+1))
     raise SystemExit('wikidata failed')
+# Items cached before the dates carried their precision ("time|precision") are fetched again.
+stale=lambda d:any('|' not in v for k in ('P571','P576') for v in d.get(k,[]))
+for q in [q for q,d in out.items() if stale(d)]: del out[q]
 qs=sorted({x['qid'] for x in c}-set(out))
 for i in range(0,len(qs),200):
     v=' '.join('wd:'+q for q in qs[i:i+200])
@@ -17,8 +20,9 @@ for i in range(0,len(qs),200):
         out.setdefault(b['i']['value'].rsplit('/',1)[1],{}).setdefault('p31',[]).append(b['c']['value'].rsplit('/',1)[1])
     for b in run(f'SELECT ?i ?l WHERE {{ VALUES ?i {{ {v} }} ?i rdfs:label ?l FILTER(LANG(?l) IN ({",".join(repr(x) for x in L)})) }}'):
         out.setdefault(b['i']['value'].rsplit('/',1)[1],{}).setdefault('labels',{})[b['l']['xml:lang']]=b['l']['value']
-    # Founding and end with their precision (9 a year, 7 a century): "time|precision".
-    for b in run(f'SELECT ?i ?p ?t ?pr WHERE {{ VALUES ?i {{ {v} }} VALUES (?p ?ps) {{ (wd:P571 psv:P571) (wd:P576 psv:P576) }} ?p wikibase:claim ?st . ?i ?st ?s . ?s ?ps ?n . ?n wikibase:timeValue ?t ; wikibase:timePrecision ?pr }}'):
+    # Founding and end with their precision (9 a year, 7 a century): "time|precision"; the
+    # best-ranked statements only, as wdt: gives them.
+    for b in run(f'SELECT ?i ?p ?t ?pr WHERE {{ VALUES ?i {{ {v} }} VALUES (?p ?ps) {{ (wd:P571 psv:P571) (wd:P576 psv:P576) }} ?p wikibase:claim ?st . ?i ?st ?s . ?s a wikibase:BestRank ; ?ps ?n . ?n wikibase:timeValue ?t ; wikibase:timePrecision ?pr }}'):
         out.setdefault(b['i']['value'].rsplit('/',1)[1],{}).setdefault(b['p']['value'].rsplit('/',1)[1],[]).append(f"{b['t']['value']}|{b['pr']['value']}")
     time.sleep(2)
 json.dump(out,open(f'{S}/wave/wd.json','w'),ensure_ascii=False)
