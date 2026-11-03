@@ -1,0 +1,89 @@
+# The councils, from the apostles in Jerusalem (Acts 15) to Chalcedon: the first tour that
+# mixes a verse with sources outside the Bible (ADR 0018). Each source stop links the free
+# translation of the Nicene and Post-Nicene Fathers (public domain) at New Advent; its page
+# holds the whole book, and the cite gives the chapter. Not one way travelled: no time on
+# foot. English and Russian first; the other languages wait for the translation pass
+# (docs/translation-debt.md).
+id: councils
+title:
+  en: "The councils: from Jerusalem to Chalcedon"
+  ru: "Соборы: от Иерусалима до Халкидона"
+year: "AD 49"
+approximate: true
+walked: false
+stops:
+  - place: a15257a # Jerusalem
+    ref: Acts.15.4
+    note:
+      en: "The apostles and elders meet over whether the Gentiles who believe must be circumcised. Peter speaks, and James gives the judgement the letter carries to Antioch: no burden but a few necessary things."
+      ru: "Апостолы и пресвитеры собираются решить, должны ли уверовавшие язычники обрезываться. Говорит Пётр, а Иаков выносит решение, которое письмо несёт в Антиохию: не возлагать бремени, кроме немногого необходимого."
+  - place: "383706" # Mediolanum: Milan
+    year: "AD 313"
+    source:
+      cite:
+        en: "Lactantius, On the Deaths of the Persecutors 48"
+        ru: "Лактанций, О смертях гонителей 48"
+      url: "https://www.newadvent.org/fathers/0705.htm"
+    note:
+      en: "Constantine and Licinius meet at Milan and agree that Christians, and all others, may worship freely, and that the churches' property be given back. Licinius publishes it at Nicomedia in June."
+      ru: "Константин и Лициний встречаются в Милане и договариваются, что христиане, как и все прочие, свободно исповедуют свою веру, а церквам возвращается их имущество. В июне Лициний обнародует это в Никомидии."
+  - place: "148217" # Arelate: Arles
+    year: "AD 314"
+    source:
+      cite:
+        en: "Eusebius, Church History 10.5.21-24"
+        ru: "Евсевий, Церковная история 10.5.21-24"
+      url: "https://www.newadvent.org/fathers/250110.htm"
+    note:
+      en: "The church of Africa is split over bishops who gave up the Scriptures in the persecution. Constantine calls bishops from many provinces to Arles to settle it, after a hearing at Rome had not."
+      ru: "Африканская церковь расколота из-за епископов, выдавших Писания во время гонения. Константин созывает в Арль епископов из многих провинций, чтобы решить спор, который не разрешило разбирательство в Риме."
+  - place: "511268" # Nicaea
+    year: "AD 325"
+    source:
+      cite:
+        en: "Eusebius, Life of Constantine 3.6-14"
+        ru: "Евсевий, Жизнь Константина 3.6-14"
+      url: "https://www.newadvent.org/fathers/25023.htm"
+    note:
+      en: "More than two hundred and fifty bishops, Eusebius among them, meet with the emperor. Against Arius they confess the Son of one substance with the Father, and they agree on one day for Easter."
+      ru: "Более двухсот пятидесяти епископов, среди них сам Евсевий, собираются при императоре. Против Ария они исповедуют Сына единосущным Отцу и договариваются праздновать Пасху в один день."
+  - place: Q16869 # Constantinople
+    year: "AD 381"
+    source:
+      cite:
+        en: "Socrates Scholasticus, Church History 5.8"
+        ru: "Сократ Схоластик, Церковная история 5.8"
+      url: "https://www.newadvent.org/fathers/26015.htm"
+    note:
+      en: "Theodosius gathers a hundred and fifty bishops. They confirm the Creed of Nicaea, ordain Nectarius bishop, and rank Constantinople next in honour after Rome, «because that city was New Rome»."
+      ru: "Феодосий собирает сто пятьдесят епископов. Они подтверждают Никейский символ, рукополагают Нектария и ставят епископа Константинополя по чести следующим после римского, «потому что этот город — новый Рим»."
+  - place: aa56bd1 # Carthage
+    year: "AD 419"
+    source:
+      cite:
+        en: "Code of Canons of the African Church, canon 24"
+        ru: "Кодекс канонов Африканской церкви, правило 24"
+      url: "https://www.newadvent.org/fathers/3816.htm"
+    note:
+      en: "The bishops of Africa, Augustine among them, gather their canons into one code. Canon 24 lists the books to be read in church as Scripture, as the councils of Hippo (393) and Carthage (397) had done."
+      ru: "Епископы Африки, среди них Августин, сводят свои правила в один кодекс. Правило 24 перечисляет книги, которые читаются в церкви как Писание, вслед за соборами в Гиппоне (393) и Карфагене (397)."
+  - place: a5feb15 # Ephesus
+    year: "AD 431"
+    source:
+      cite:
+        en: "Socrates Scholasticus, Church History 7.34"
+        ru: "Сократ Схоластик, Церковная история 7.34"
+      url: "https://www.newadvent.org/fathers/26017.htm"
+    note:
+      en: "Nestorius of Constantinople will not call Mary the Mother of God. Cyril of Alexandria opens the council before John of Antioch arrives, and Nestorius is deposed."
+      ru: "Несторий Константинопольский не соглашается называть Марию Богородицей. Кирилл Александрийский открывает собор, не дождавшись Иоанна Антиохийского, и Нестория низлагают."
+  - place: "520988" # Chalcedon
+    year: "AD 451"
+    source:
+      cite:
+        en: "Council of Chalcedon, Definition of Faith"
+        ru: "Халкидонский собор, вероопределение"
+      url: "https://www.newadvent.org/fathers/3811.htm"
+    note:
+      en: "Across the strait from Constantinople, the bishops confess one Christ in two natures, without confusion, without change, without division, without separation."
+      ru: "Напротив Константинополя, через пролив, епископы исповедуют единого Христа в двух природах, неслитно, неизменно, нераздельно, неразлучно."

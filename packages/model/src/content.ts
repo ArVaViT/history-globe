@@ -333,7 +333,7 @@ export const BattlesFile = z.strictObject({
       year: approxYear,
       title: localized,
       /** A place of the data build, or an ancient site by its Pleiades number (Gamla). */
-      place: z.string().regex(/^(a[0-9a-f]{6}|\d{1,12})$/),
+      place: z.string().regex(/^(a[0-9a-f]{6}|\d{1,12}|Q\d{1,12})$/),
       /** The passage that tells it; none for a battle the Bible does not tell. */
       ref: osis.optional(),
       sides: localized,
@@ -414,7 +414,7 @@ export const TourFile = z.strictObject({
     .array(
       z.strictObject({
         /** One of our places, or an ancient site (its Pleiades number) the Bible does not name. */
-        place: z.string().regex(/^(a[0-9a-f]{6}|\d{1,12})$/),
+        place: z.string().regex(/^(a[0-9a-f]{6}|\d{1,12}|Q\d{1,12})$/),
         /** The verse that tells it; a stop told outside the Bible has a `source` instead. */
         ref: osis.optional(),
         /**
