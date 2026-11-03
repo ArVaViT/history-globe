@@ -278,18 +278,26 @@ await step("Overview → People lists the story's people by century", async () =
   await page.getByRole("button", { name: "Илия", exact: true }).click({ timeout: 8000 });
   await page.getByRole("heading", { name: "Илия" }).waitFor({ timeout: 8000 });
 });
-await step("an ancient site found by name flies the map there in a year it stood", async () => {
-  await page.goto(BASE + "?locale=ru&year=30");
-  await mapReady(page);
-  await page.getByRole("button", { name: /^Поиск/ }).click();
-  await page.locator("input[role=combobox]").fill("Хаттуса");
-  await page.locator('[id^="search-site-"]').first().dispatchEvent("mousedown", { timeout: 8000 });
-  await page.waitForTimeout(2500);
-  const y = Number(search().get("year"));
-  expect(y < -1180 && y > -2100, `year=${y}`);
-  const cam = (search().get("camera") ?? "").split(",").map(Number);
-  expect(Math.abs(cam[0] - 34.6) < 0.5 && Math.abs(cam[1] - 40.0) < 0.5, `camera=${cam}`);
-});
+await step(
+  "an ancient site found by name flies there, and its card goes to a year it stood",
+  async () => {
+    await page.goto(BASE + "?locale=ru&year=30");
+    await mapReady(page);
+    await page.getByRole("button", { name: /^Поиск/ }).click();
+    await page.locator("input[role=combobox]").fill("Хаттуса");
+    // An ancient site is a place like any other (ADR 0018): its option bears its Pleiades number.
+    await page.locator("#search-283602441").dispatchEvent("mousedown", { timeout: 8000 });
+    // Gone by AD 30, it is shown pale; its card offers a year it stood (#60).
+    await page.getByRole("heading", { name: "Хаттуса" }).waitFor({ timeout: 8000 });
+    await page.getByRole("button", { name: /^Перейти в/ }).click({ timeout: 5000 });
+    await page.waitForTimeout(2500);
+    const y = Number(search().get("year"));
+    // Its years in content/ancient-sites.json: -1999 to -1179.
+    expect(y <= -1179 && y >= -1999, `year=${y}`);
+    const cam = (search().get("camera") ?? "").split(",").map(Number);
+    expect(Math.abs(cam[0] - 34.6) < 0.5 && Math.abs(cam[1] - 40.0) < 0.5, `camera=${cam}`);
+  },
+);
 
 await step("a battle found by a word of its title goes to its year and its field", async () => {
   await page.goto(BASE + "?locale=ru&year=30");
@@ -379,10 +387,19 @@ await step(
     await page.getByRole("switch", { name: /Только Библия/ }).click();
     await page.keyboard.press("Escape");
     // Hidden on the map, not in the reader's own switch: a link they share stays theirs.
-    await page.waitForFunction(
-      () => window.__hgMap.getLayoutProperty("ancient-label", "visibility") === "none",
-      null,
-      { timeout: 5000 },
+    await page.waitForFunction(() => window.__hgMap.getGlobalState().bibleOnly === true, null, {
+      timeout: 5000,
+    });
+    // The ancient sites step off the places' source, Hattusa among them.
+    await page.waitForTimeout(800);
+    expect(
+      (await page.evaluate(
+        () =>
+          window.__hgMap.querySourceFeatures("places", {
+            filter: ["==", ["get", "id"], "283602441"],
+          }).length,
+      )) === 0,
+      "Hattusa is still on the map",
     );
     await page.waitForTimeout(500);
     expect(!search().get("hide")?.includes("ancient"), `hide=${search().get("hide")}`);
