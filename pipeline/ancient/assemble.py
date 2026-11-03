@@ -27,8 +27,12 @@ RENAME={'Temple romain de Château-Bas':'Temple of Château-Bas','Archeological 
  'Hosn Niha Site':'Hosn Niha','Ancient Tenea':'Tenea','Ancient Lappa':'Lappa','Gremanu nuraghe sacred place':'Gremanu',
  'Pharsalos ancient city':'Pharsalus','Ancient Tithorea':'Tithorea','Gytheion ancient polis':'Gytheion','Kisamos ancient city':'Kisamos','Mochlos site':'Mochlos','Ciudad romana de Lacipo':'Lacipo','Area archeologica del Castrum Inui':'Castrum Inui',"Santuario italico di Schiavi d'Abruzzo":"Sanctuary of Schiavi d'Abruzzo",'Poblat ibèric de Can Fatjó':'Can Fatjó','Poblat ibèric de la Cadira del Bisbe':'Cadira del Bisbe','Poblat ibèric de les Maleses':'Les Maleses','Poblat Ibèric del Turó de Castellruf':'Turó de Castellruf','Povoado fortificado e Santuário de Endovélico':'Sanctuary of Endovelicus','Camp celtique de la Bure':'La Bure','Necropolis of Manduria':'Manduria','Minoan villa of Achladia':'Achladia','Üçtepe Mound':'Üçtepe','Agios Konstantinos, Methana':'Sanctuary of Agios Konstantinos',
  'Aventicum, Roman city - Avenches, medieval-modern city':'Aventicum','Castro, Lazio':'Castro','Ancient Maroneia':'Maroneia','Sanctuary of Isthmian Poseidon, Isthmia':'Isthmia'}
-# A name in one language where Wikidata's label names something else (Helenopolis as «Дрепан», the village it was).
-NAME={('Helenopolis','ru'):'Еленополь'}
+# A name in one language where Wikidata's label names something else: the village it became
+# (Helenopolis as «Дрепан»), a later town (Histiaia as «Орей»), a battle (Elegeia), or a name
+# too bare to tell it from another (Phthiotic Thebes as «Фивы»).
+NAME={('Helenopolis','ru'):'Еленополь',('Aegae','ru'):'Эги Киликийские',('Histiaia','ru'):'Гистиея',
+ ('Roman temple of Vic','ru'):'Римский храм в Вике',('Serrion Teichos','ru'):'Серрион-Тейхос',
+ ('Phthiotic Thebes','ru'):'Фивы Фтиотийские',('Elegeia','ru'):'Элегея',('Forum Novum','ru'):'Форум Новум'}
 KIND={'Villa of Herodes Atticus':'site','Necropolis of Pranu Muttedu':'site','Achladia':'site'}
 clean=lambda n:re.sub(r'\s*\([^)]*\)','',n).strip()
 # Names already on the map, per language: a new site never takes one (Thebe near Troy as «Фивы»).
