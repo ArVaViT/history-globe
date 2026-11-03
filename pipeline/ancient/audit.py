@@ -17,7 +17,7 @@ for i in range(0,len(qs),250):
     for b in run(f'SELECT ?i ?p ?t WHERE {{ VALUES ?i {{ {v} }} VALUES ?p {{ wdt:P571 wdt:P576 wdt:P582 wdt:P580 }} ?i ?p ?t }}'):
         m=re.match(r'([+-]?\d+)-',b['t']['value'])
         if m:
-            y=int(m.group(1)); y=y+1 if y<0 else y
+            y=int(m.group(1))  # already astronomical (753 BC is -0752), as the map counts
             wd.setdefault(b['i']['value'].rsplit('/',1)[1],{}).setdefault(b['p']['value'].rsplit('/',1)[1],[]).append(y)
     time.sleep(2)
 per={}
