@@ -26,3 +26,5 @@ before the branch goes to production; the list is then emptied.
   Russian only: its title, its 11 notes and the 11 cites.
 - `content/ancient-sites-wave*.json`: about 900 sites of the waves have no Russian name (37 of
   them rank 1), and fewer still in the other languages; the map shows them in English.
+- `content/tours/origen.yaml`: the tour of Origen, Alexandria to Tyre, in English and Russian
+  only: its title, its 6 notes and the 6 cites.

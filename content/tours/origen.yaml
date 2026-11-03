@@ -1,0 +1,77 @@
+# Origen, from Alexandria to Tyre, as Eusebius tells it in the sixth book of his Church
+# History, which is mostly about him, and Jerome in his Lives of Illustrious Men. The years
+# are approximate: his father's death in the tenth year of Severus (202); Rome under bishop
+# Zephyrinus (199-217), usually put about 212; the "war" in Alexandria that drove him to
+# Caesarea, usually Caracalla's massacre of 215; Mammaea at Antioch, about 232; Athens,
+# where he finished his work on Ezekiel, about 240; his death under Gallus, about 253. Each
+# stop links the free translation of the Nicene and Post-Nicene Fathers (public domain) at
+# New Advent; its page holds the whole book, and the cite gives the section. Not one way
+# travelled: no time on foot. English and Russian first; the other languages wait for the
+# translation pass (docs/translation-debt.md).
+id: origen
+title:
+  en: "Origen: from Alexandria to Tyre"
+  ru: "Ориген: от Александрии до Тира"
+year: "AD 202"
+approximate: true
+walked: false
+stops:
+  - place: aee7248 # Alexandria
+    source:
+      cite:
+        en: "Eusebius, Church History 6.1, 6.2.5-6"
+        ru: "Евсевий, Церковная история 6.1, 6.2.5-6"
+      url: "https://www.newadvent.org/fathers/250106.htm"
+    note:
+      en: "His father Leonides is in prison, and the boy Origen is set on martyrdom too. His mother hides all his clothes to keep him at home, so he writes to his father instead: «Take heed not to change your mind on our account.»"
+      ru: "Его отец Леонид в темнице, и мальчик Ориген тоже рвётся к мученичеству. Мать прячет всю его одежду, чтобы удержать дома, и тогда он пишет отцу: «Держись, не передумай ради нас!»."
+  - place: afc8e7a # Rome
+    year: "AD 212"
+    source:
+      cite:
+        en: "Eusebius, Church History 6.14.10-11"
+        ru: "Евсевий, Церковная история 6.14.10-11"
+      url: "https://www.newadvent.org/fathers/250106.htm"
+    note:
+      en: "While Zephyrinus is bishop of Rome, Origen goes there, «desiring to see the most ancient church of Rome». After a short stay he returns to teach in Alexandria."
+      ru: "При епископе Зефирине Ориген приезжает в Рим, «желая увидеть древнейшую Римскую церковь». Пробыв недолго, он возвращается учить в Александрию."
+  - place: a58735e # Caesarea
+    year: "AD 215"
+    source:
+      cite:
+        en: "Eusebius, Church History 6.19.16-18"
+        ru: "Евсевий, Церковная история 6.19.16-18"
+      url: "https://www.newadvent.org/fathers/250106.htm"
+    note:
+      en: "When war breaks out in Alexandria he leaves for Caesarea. Though he is not yet a presbyter, the bishops of Palestine ask him to preach and expound the Scriptures in church, and his own bishop Demetrius protests in a letter."
+      ru: "Когда в Александрии вспыхивает война, он уезжает в Кесарию. Хотя он ещё не пресвитер, епископы Палестины просят его проповедовать и толковать Писание в церкви, и его собственный епископ Димитрий протестует в письме."
+  - place: ae41ab4 # Antioch
+    year: "AD 232"
+    source:
+      cite:
+        en: "Eusebius, Church History 6.21.3-4"
+        ru: "Евсевий, Церковная история 6.21.3-4"
+      url: "https://www.newadvent.org/fathers/250106.htm"
+    note:
+      en: "Mammaea, the emperor's mother, has heard of him and wants to test his understanding of divine things. Staying at Antioch, she sends a military escort to bring him."
+      ru: "Мамея, мать императора, наслышана о нём и хочет испытать его познания в божественном. Находясь в Антиохии, она посылает за ним воинскую стражу."
+  - place: a1fe6e7 # Athens
+    year: "AD 240"
+    source:
+      cite:
+        en: "Eusebius, Church History 6.32.2"
+        ru: "Евсевий, Церковная история 6.32.2"
+      url: "https://www.newadvent.org/fathers/250106.htm"
+    note:
+      en: "In Athens he finishes his commentary on Ezekiel and begins the one on the Song of Songs, which he completes after his return to Caesarea."
+      ru: "В Афинах он заканчивает толкование на Иезекииля и начинает толкование на Песнь песней, которое завершает уже по возвращении в Кесарию."
+  - place: a160272 # Tyre
+    year: "AD 253"
+    source:
+      cite:
+        en: "Eusebius, Church History 6.39.5; Jerome, Lives of Illustrious Men 54"
+        ru: "Евсевий, Церковная история 6.39.5; Иероним, О знаменитых мужах 54"
+      url: "https://www.newadvent.org/fathers/2708.htm"
+    note:
+      en: "Under Decius he is tortured, with the iron collar and his feet stretched in the stocks, but his judge takes care not to kill him. He lives until the time of Gallus, «until his sixty-ninth year, and died at Tyre, in which city he also was buried»."
+      ru: "При Декии его пытают железным ошейником и колодками, растягивая ноги, но судья старается не довести его до смерти. Он доживает до времён Галла, «до шестьдесят девятого года, и умер в Тире, где и погребён»."
