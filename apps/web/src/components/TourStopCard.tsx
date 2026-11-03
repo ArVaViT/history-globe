@@ -225,7 +225,7 @@ export function TourStopCard({
             onClick={() => {
               onOpenPlace(stop.placeId);
             }}
-            className="ml-auto text-[13px] text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
+            className="ml-auto shrink-0 whitespace-nowrap text-[13px] text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
           >
             {t("tours.about_place")}
           </button>
