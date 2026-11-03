@@ -1,0 +1,79 @@
+# Ignatius of Antioch on his way to the beasts at Rome, as his own letters and Polycarp's
+# trace it: Philadelphia, Smyrna, Troas, Neapolis, Philippi. The year is approximate:
+# Eusebius puts him under Trajan, and AD 107 is the date Jerome's version of his Chronicle
+# gives; scholars range from about 105 to 115, some later. Each stop links the free translation of the
+# Ante-Nicene and Nicene Fathers (public domain) at New Advent; its page holds the whole
+# letter or book, and the cite gives the chapter. Not one way travelled on foot: part of it
+# by sea. English and Russian first; the other languages wait for the translation pass
+# (docs/translation-debt.md).
+id: ignatius
+title:
+  en: "Ignatius of Antioch: the road to Rome"
+  ru: "Игнатий Антиохийский: дорога в Рим"
+year: "AD 107"
+approximate: true
+walked: false
+stops:
+  - place: ae41ab4 # Antioch on the Orontes
+    source:
+      cite:
+        en: "Ignatius, To the Romans 2, 5"
+        ru: "Игнатий, Послание к римлянам 2, 5"
+      url: "https://www.newadvent.org/fathers/0107.htm"
+    note:
+      en: "Ignatius, «the bishop of Syria», is sent in bonds from the east to the west. All the way to Rome he is bound to ten soldiers, whom he calls leopards."
+      ru: "Игнатия, «епископа Сирии», в узах отправляют с востока на запад. Всю дорогу до Рима он скован с десятью воинами, которых называет леопардами."
+  - place: a1c7cc1 # Philadelphia
+    source:
+      cite:
+        en: "Ignatius, To the Philadelphians 7"
+        ru: "Игнатий, Послание к филадельфийцам 7"
+      url: "https://www.newadvent.org/fathers/0108.htm"
+    note:
+      en: "On the road through Asia he stops at Philadelphia. He later reminds the church how, when he was among them, he cried out with a loud voice: give heed to the bishop, the presbytery and the deacons."
+      ru: "По дороге через Асию он останавливается в Филадельфии. Позже он напомнит этой церкви, как, будучи у них, взывал громким голосом: держитесь епископа, пресвитерства и диаконов."
+  - place: a2e65fb # Smyrna
+    source:
+      cite:
+        en: "Eusebius, Church History 3.36.5-6"
+        ru: "Евсевий, Церковная история 3.36.5-6"
+      url: "https://www.newadvent.org/fathers/250103.htm"
+    note:
+      en: "At Smyrna, where Polycarp is bishop, he writes to the churches of Ephesus, Magnesia and Tralles, and to Rome, begging the Christians there not to win his release and so rob him of martyrdom."
+      ru: "В Смирне, где епископом был Поликарп, он пишет церквам Ефеса, Магнесии и Тралл, а также в Рим, умоляя тамошних христиан не добиваться его освобождения и не лишать его мученичества."
+  - place: a91c509 # Troas
+    source:
+      cite:
+        en: "Eusebius, Church History 3.36.10; Ignatius, To the Philadelphians 10"
+        ru: "Евсевий, Церковная история 3.36.10; Игнатий, Послание к филадельфийцам 10"
+      url: "https://www.newadvent.org/fathers/250103.htm"
+    note:
+      en: "At Troas news comes that the church of Antioch is at peace. From here he writes to Philadelphia, to Smyrna and to Polycarp, and asks them to send a messenger to Antioch to rejoice with it."
+      ru: "В Троаде приходит весть, что в Антиохийской церкви настал мир. Отсюда он пишет в Филадельфию, в Смирну и Поликарпу и просит послать в Антиохию вестника, чтобы порадоваться вместе с ней."
+  - place: a6a7150 # Neapolis
+    source:
+      cite:
+        en: "Ignatius, To Polycarp 8"
+        ru: "Игнатий, Послание к Поликарпу 8"
+      url: "https://www.newadvent.org/fathers/0110.htm"
+    note:
+      en: "He is ordered to sail suddenly from Troas to Neapolis, the port where Paul had landed. With no time to write to every church, he asks Polycarp to write for him to the churches nearer Smyrna."
+      ru: "Ему велено внезапно отплыть из Троады в Неаполь, порт, куда некогда приплыл и Павел. Не успевая написать всем церквам, он просит Поликарпа написать за него ближним к Смирне церквам."
+  - place: a49e1d0 # Philippi
+    source:
+      cite:
+        en: "Polycarp, To the Philippians 9, 13"
+        ru: "Поликарп, Послание к филиппийцам 9, 13"
+      url: "https://www.newadvent.org/fathers/0136.htm"
+    note:
+      en: "Polycarp later points the Philippians to the patience they saw with their own eyes in Ignatius, Zosimus and Rufus, and at their request sends them the letters of Ignatius."
+      ru: "Поликарп позже напоминает филиппийцам о терпении, которое они видели своими глазами у Игнатия, Зосима и Руфа, и по их просьбе посылает им письма Игнатия."
+  - place: afc8e7a # Rome
+    source:
+      cite:
+        en: "Eusebius, Church History 3.36.3"
+        ru: "Евсевий, Церковная история 3.36.3"
+      url: "https://www.newadvent.org/fathers/250103.htm"
+    note:
+      en: "In Rome, as the report reached Eusebius, Ignatius becomes food for the wild beasts for his witness to Christ."
+      ru: "В Риме, по преданию, которое дошло до Евсевия, Игнатий за свидетельство о Христе отдан на съедение зверям."

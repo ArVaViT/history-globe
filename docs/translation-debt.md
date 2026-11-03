@@ -14,3 +14,5 @@ before the branch goes to production; the list is then emptied.
   and outcome in English and Russian only.
 - `content/tours/councils.yaml`: the tour of the councils, Jerusalem to Chalcedon, in English
   and Russian only: its title, its 8 notes and the 7 cites.
+- `content/tours/ignatius.yaml`: the tour of Ignatius of Antioch, Antioch to Rome, in English
+  and Russian only: its title, its 7 notes and the 7 cites.
