@@ -8389,27 +8389,6 @@
       ]
     },
     {
-      "id": "599576",
-      "en": "Knidos",
-      "names": {
-        "nl": "Cnidus",
-        "bg": "Книдос",
-        "es": "Cnido"
-      },
-      "lon": 27.69938,
-      "lat": 36.7356,
-      "from": -749,
-      "to": 700,
-      "approx": true,
-      "kind": "city",
-      "rank": 1,
-      "sources": [
-        "https://pleiades.stoa.org/places/599576",
-        "https://www.wikidata.org/wiki/Q690575",
-        "years: the span of the periods Pleiades attests it in (archaic,classical,hellenistic-republican,roman,late-antique,seventh-ce,modern)"
-      ]
-    },
-    {
       "id": "599616",
       "en": "Euromus",
       "names": {
@@ -8985,7 +8964,7 @@
       ]
     },
     {
-      "id": "638939",
+      "id": "648612",
       "en": "Corycus",
       "names": {
         "de": "Korykos",
@@ -8998,17 +8977,17 @@
         "uk": "Корікос",
         "sv": "Korikos"
       },
-      "lon": 30.46567,
-      "lat": 36.43572,
-      "from": -29,
+      "lon": 34.154167,
+      "lat": 36.465278,
+      "from": -329,
       "to": 640,
       "approx": true,
       "kind": "city",
       "rank": 1,
       "sources": [
-        "https://pleiades.stoa.org/places/638939",
+        "https://pleiades.stoa.org/places/648612",
         "https://www.wikidata.org/wiki/Q2167586",
-        "years: the span of the periods Pleiades attests it in (roman,late-antique)"
+        "years: the span of the periods Pleiades attests it in (hellenistic-republican,roman,late-antique); checked 2026-11-03: Wikidata's Corycus is the Cilician city, not Lycian Korykos (638939)"
       ]
     },
     {
@@ -10087,8 +10066,8 @@
         "hu": "Gerf Husszein-i templom",
         "pt": "Templo de Gerfe Huceine"
       },
-      "lon": 32.87809,
-      "lat": 23.63481,
+      "lon": 32.9,
+      "lat": 23.283333,
       "from": -1269,
       "to": 640,
       "approx": true,
@@ -10097,7 +10076,8 @@
       "sources": [
         "https://pleiades.stoa.org/places/795843",
         "https://www.wikidata.org/wiki/Q267700",
-        "years: the span of the periods Pleiades attests it in (new-kingdom-egypt,hellenistic-republican,roman,late-antique); by hand: the rock temple of Ramesses II, built c. 1270 BC"
+        "years: the span of the periods Pleiades attests it in (new-kingdom-egypt,hellenistic-republican,roman,late-antique); by hand: the rock temple of Ramesses II, built c. 1270 BC",
+        "checked 2026-11-03: the point from Wikidata, some 90 km south of Aswan as Pleiades itself says; its own point lies 39 km north"
       ]
     },
     {

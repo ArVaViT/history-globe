@@ -20,6 +20,10 @@ and `assemble.py` takes `WAVE` (the file's number); a later wave skips every sit
 
 8. `python3 -I fame.py S R`: the Wikipedia articles of every place's own Wikidata item, where
    that item is an ancient site (`content/fame.json`); the data build ranks by it.
+9. `python3 -I coords.py R`: every site's point against its Wikidata item's; those more than
+   5 km apart are read one by one (2026-11-03: Corycus and Gerf Hussein moved; Kastri dropped, and
+   Knidos, the Bible's Cnidus already). A refused site is listed in `candidates.py`, so no
+   later wave brings it back.
 
 The class labels for step 5 (`S/wave/classes.json`) come from one more query on the classes
 the candidates have.

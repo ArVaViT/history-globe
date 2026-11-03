@@ -1,4 +1,4 @@
-import csv,gzip,json,math,sys
+import csv,gzip,json,math,re,sys
 csv.field_size_limit(10**9)
 S=sys.argv[1]; R=sys.argv[2]
 fame={}
@@ -14,6 +14,13 @@ anc=json.load(open(f'{R}/content/ancient-sites.json'))['sites']
 import glob
 for w in sorted(glob.glob(f'{R}/content/ancient-sites-wave*.json')): anc+=json.load(open(w))['sites']
 have={str(s['id']) for s in anc}; ours+= [[s['lon'],s['lat']] for s in anc]
+# A Wikidata item already drawn never comes back through a second Pleiades place, and these
+# were checked and refused (2026-11-03): Knidos at Burgaz, its first site (the Bible's Cnidus
+# stands at Tekir, Acts 27:7), Kastri
+# on Keos, which Wikidata's links make the Kastri of Syros, and Lycian Korykos, which they
+# make the Cilician city.
+usedq={m.group(1) for s in anc for u in s['sources'] if (m:=re.search(r'wikidata\.org/wiki/(Q\d+)$',u))}
+REFUSED={'570338','638939','599576'}
 plinks={v['id'] for v in json.load(open(f'{R}/content/pleiades.json'))['places'].values()}
 grid={}
 for c in ours: grid.setdefault((int(c[0]*10),int(c[1]*10)),[]).append(c)
@@ -26,11 +33,12 @@ for r in csv.DictReader(gzip.open(f'{S}/pleiades-dl/places.csv.gz','rt')):
     try: lat=float(r['reprLat']);lon=float(r['reprLong'])
     except: continue
     if r['locationPrecision']!='precise' or not inF(lon,lat) or r['id'] not in fame: continue
-    if r['id'] in have or r['id'] in plinks: continue
+    if r['id'] in have or r['id'] in plinks or r['id'] in REFUSED: continue
     types={t.strip() for t in r['featureTypes'].split(',')}
     if not types & KEEP: continue
     if near([lon,lat]): continue
     q,n=fame[r['id']]
+    if q in usedq: continue
     out.append(dict(pid=r['id'],qid=q,fame=n,title=r['title'],types=sorted(types),lon=round(lon,5),lat=round(lat,5),min=r['minDate'],max=r['maxDate'],periods=r['timePeriodsKeys']))
 out.sort(key=lambda x:-x['fame'])
 json.dump(out,open(f'{S}/wave/candidates.json','w'),ensure_ascii=False)
