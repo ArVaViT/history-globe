@@ -22,3 +22,7 @@ before the branch goes to production; the list is then emptied.
   English and Russian only: its title, its 7 notes and the 7 cites.
 - `content/tours/augustine.yaml`: the tour of Augustine, Thagaste to Hippo, in English and
   Russian only: its title, its 6 notes and the 6 cites.
+- `content/tours/paula.yaml`: the tour of Paula's pilgrimage, Rome to Bethlehem, in English and
+  Russian only: its title, its 11 notes and the 11 cites.
+- `content/ancient-sites-wave*.json`: about 900 sites of the waves have no Russian name (37 of
+  them rank 1), and fewer still in the other languages; the map shows them in English.

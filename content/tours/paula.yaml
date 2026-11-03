@@ -1,0 +1,118 @@
+# Paula's pilgrimage, Rome to Bethlehem by way of the holy places and Egypt, as Jerome,
+# who went with her, tells it in his letter on her death (Letter 108, AD 404). She sailed
+# in 385 and settled at Bethlehem in 386: the years are approximate.
+# Jerome names "only such places as are mentioned in the sacred books"; the stops are a
+# few of them, in his order. Each stop links the free translation of the Nicene and
+# Post-Nicene Fathers (public domain) at New Advent; its page holds the whole letter, and
+# the cite gives the section. Nitria, where the monks met her, is not on the map: that stop
+# stands at Alexandria, on the way Jerome describes. English and Russian first; the other
+# languages wait for the translation pass (docs/translation-debt.md).
+id: paula
+title:
+  en: "Paula's pilgrimage: from Rome to Bethlehem"
+  ru: "Паломничество Павлы: из Рима в Вифлеем"
+year: "AD 385"
+approximate: true
+walked: false
+stops:
+  - place: afc8e7a # Rome
+    source:
+      cite:
+        en: "Jerome, Letter 108.6"
+        ru: "Иероним, Письмо 108.6"
+      url: "https://www.newadvent.org/fathers/3001108.htm"
+    note:
+      en: "Paula, a Roman noblewoman, meets Paulinus of Antioch and Epiphanius of Salamis when the bishops come to Rome. Later she leaves her house and children and sails from Portus for the East."
+      ru: "Павла, знатная римлянка, встречает Павлина Антиохийского и Епифания Саламинского, когда епископы приезжают в Рим. Позже она оставляет дом и детей и отплывает из Порта на Восток."
+  - place: afa863b # Salamis
+    source:
+      cite:
+        en: "Jerome, Letter 108.7"
+        ru: "Иероним, Письмо 108.7"
+      url: "https://www.newadvent.org/fathers/3001108.htm"
+    note:
+      en: "In Cyprus Epiphanius keeps her ten days, and she visits every monastery on the island, leaving what relief her means allow."
+      ru: "На Кипре Епифаний задерживает её на десять дней, и она обходит все монастыри острова, оставляя братиям помощь, сколько позволяют средства."
+  - place: a6fa2d3 # Zarephath
+    source:
+      cite:
+        en: "Jerome, Letter 108.8"
+        ru: "Иероним, Письмо 108.8"
+      url: "https://www.newadvent.org/fathers/3001108.htm"
+    note:
+      en: "Past Berytus and Sidon she enters «Elijah's town on the shore at Zarephath», and worships there."
+      ru: "Миновав Берит и Сидон, она входит в «город Илии на берегу, в Сарепте» и молится там."
+  - place: a58735e # Caesarea
+    source:
+      cite:
+        en: "Jerome, Letter 108.8"
+        ru: "Иероним, Письмо 108.8"
+      url: "https://www.newadvent.org/fathers/3001108.htm"
+    note:
+      en: "At Caesarea she sees the house of Cornelius, now a church, and the humble home of Philip with the rooms of his four daughters who prophesied."
+      ru: "В Кесарии она видит дом Корнилия, ставший церковью, и скромное жилище Филиппа с комнатами его четырёх дочерей-пророчиц."
+  - place: a15257a # Jerusalem
+    source:
+      cite:
+        en: "Jerome, Letter 108.9"
+        ru: "Иероним, Письмо 108.9"
+      url: "https://www.newadvent.org/fathers/3001108.htm"
+    note:
+      en: "She turns down the proconsul's residence for a humble cell. Before the Cross she falls down in worship, and in the tomb she kisses the stone the angel rolled away."
+      ru: "От резиденции проконсула она отказывается ради скромной кельи. Перед Крестом она падает ниц, а в гробнице целует камень, отваленный ангелом."
+  - place: a112427 # Bethlehem
+    source:
+      cite:
+        en: "Jerome, Letter 108.10"
+        ru: "Иероним, Письмо 108.10"
+      url: "https://www.newadvent.org/fathers/3001108.htm"
+    note:
+      en: "Stopping on the way at Rachel's tomb, she enters the cave where the Saviour was born, and tells Jerome she can see, with the eyes of faith, the infant Lord in the manger."
+      ru: "По дороге задержавшись у гробницы Рахили, она входит в пещеру, где родился Спаситель, и говорит Иерониму, что очами веры видит Младенца-Господа в яслях."
+  - place: a85151a # Hebron
+    source:
+      cite:
+        en: "Jerome, Letter 108.11"
+        ru: "Иероним, Письмо 108.11"
+      url: "https://www.newadvent.org/fathers/3001108.htm"
+    note:
+      en: "Hebron is Kirjath-arba, the city of the four men: Abraham, Isaac and Jacob, and as the Jews hold, Adam; many think the fourth is Caleb."
+      ru: "Хеврон — это Кириаф-Арба, город четырёх мужей: Авраама, Исаака и Иакова, а по мнению евреев, ещё Адама; многие же считают четвёртым Халева."
+  - place: a231f80 # Jericho
+    source:
+      cite:
+        en: "Jerome, Letter 108.12"
+        ru: "Иероним, Письмо 108.12"
+      url: "https://www.newadvent.org/fathers/3001108.htm"
+    note:
+      en: "From the Mount of Olives, the tomb of Lazarus and Bethphage she goes straight down the hill to Jericho, thinking of the wounded man and the Samaritan who brought him to the inn."
+      ru: "С Елеонской горы, от гробницы Лазаря и из Виффагии она спускается прямо в Иерихон, думая об израненном человеке и о самарянине, который довёз его до гостиницы."
+  - place: aa4680a # Shiloh
+    source:
+      cite:
+        en: "Jerome, Letter 108.13"
+        ru: "Иероним, Письмо 108.13"
+      url: "https://www.newadvent.org/fathers/3001108.htm"
+    note:
+      en: "In the hill country of Ephraim she visits the tombs of Joshua at Timnath-serah and of Eleazar; at Shiloh, Jerome writes, a ruined altar is still shown."
+      ru: "В горах Ефремовых она посещает гробницы Иисуса Навина в Фамнаф-Сараи и Елеазара; а в Силоме, пишет Иероним, до сих пор показывают разрушенный жертвенник."
+  - place: aee7248 # Alexandria
+    year: "AD 386"
+    source:
+      cite:
+        en: "Jerome, Letter 108.14"
+        ru: "Иероним, Письмо 108.14"
+      url: "https://www.newadvent.org/fathers/3001108.htm"
+    note:
+      en: "Jerome's route runs by No, «which has since become Alexandria», to Nitria, where the confessor bishop Isidore and countless monks come out to meet her. She would have stayed among them, but the holy places draw her back."
+      ru: "Путь, как его описывает Иероним, идёт через «город Но, ставший Александрией», в Нитрию, где навстречу ей выходят епископ-исповедник Исидор и бесчисленные монахи. Она осталась бы среди них, но её влекут обратно святые места."
+  - place: a112427 # Bethlehem
+    year: "AD 386"
+    source:
+      cite:
+        en: "Jerome, Letter 108.14"
+        ru: "Иероним, Письмо 108.14"
+      url: "https://www.newadvent.org/fathers/3001108.htm"
+    note:
+      en: "She settles at Bethlehem for good. For three years she lives in a poor hostelry while she builds cells, a monastery and a house for travellers, «where they might find the welcome which Mary and Joseph had missed»."
+      ru: "Она навсегда поселяется в Вифлееме. Три года живёт в убогой гостинице, пока строит кельи, монастырь и дом для странников, «где они нашли бы приют, которого не нашли Мария и Иосиф»."
