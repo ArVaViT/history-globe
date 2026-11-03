@@ -87,7 +87,18 @@ const placeProps = existsSync(placesFile)
       }
     ).features.map((f) => f.properties)
   : [];
-const placeName = new Map(placeProps.map((p) => [p.id, p.name]));
+// …and the ancient world's sites, where a tour told outside the Bible stops (ADR 0018).
+const ancientFile = join(root, "apps/web/public/data/ancient.geojson");
+const placeName = new Map([
+  ...placeProps.map((p): [string, string] => [p.id, p.name]),
+  ...(existsSync(ancientFile)
+    ? (
+        JSON.parse(readFileSync(ancientFile, "utf8")) as {
+          features: { properties: { id: string; en: string } }[];
+        }
+      ).features.map((f): [string, string] => [f.properties.id, f.properties.en])
+    : []),
+]);
 /** An article's page is at its place's slug, as the pages build names it (build-pages.ts). */
 const slugOf = placeSlugs(placeProps);
 
