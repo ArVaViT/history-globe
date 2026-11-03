@@ -50,9 +50,11 @@ for r in csv.DictReader(gzip.open(f'{S}/pleiades-dl/places.csv.gz','rt')):
     # of a period (Glanum, 260) ends then, not at the period's end; an earlier founding is
     # left out (often the district's, not the town's).
     d=wd.get(s['qid'],{})
+    # The query service writes years before Christ as astronomical years already (753 BC is
+    # -0752, XSD 1.1), as the map counts them: taken as they are.
     def yr(t):
         m=re.match(r'([+-]?\d+)-',t)
-        return None if not m else (lambda y:y+1 if y<0 else y)(int(m.group(1)))
+        return None if not m else int(m.group(1))
     f0=max([y for t in d.get('P571',[]) if (y:=yr(t)) is not None],default=None)
     e0=min([y for t in d.get('P576',[]) if (y:=yr(t)) is not None],default=None)
     if f0 is not None and a<f0<b: a=f0
