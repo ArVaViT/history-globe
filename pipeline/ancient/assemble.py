@@ -32,7 +32,11 @@ RENAME={'Temple romain de Château-Bas':'Temple of Château-Bas','Archeological 
 # too bare to tell it from another (Phthiotic Thebes as «Фивы»).
 NAME={('Helenopolis','ru'):'Еленополь',('Aegae','ru'):'Эги Киликийские',('Histiaia','ru'):'Гистиея',
  ('Roman temple of Vic','ru'):'Римский храм в Вике',('Serrion Teichos','ru'):'Серрион-Тейхос',
- ('Phthiotic Thebes','ru'):'Фивы Фтиотийские',('Elegeia','ru'):'Элегея',('Forum Novum','ru'):'Форум Новум'}
+ ('Phthiotic Thebes','ru'):'Фивы Фтиотийские',('Elegeia','ru'):'Элегея',('Forum Novum','ru'):'Форум Новум',
+ ('Temple of Apollo Epicurius in Bassae','sr'):'Храм Аполона Епикурија',('Haluza','it'):'Elusa',
+ # None: no name in that language (the English stands): a modern village, another place, a
+ # description, or a label in the wrong language (found 2026-11-03, sound for sound).
+ ('Acropolis of Arpino','cs'):None,('Acropolis of Arpino','da'):None,('Acropolis of Arpino','es'):None,('Acropolis of Arpino','fi'):None,('Acropolis of Arpino','fr'):None,('Acropolis of Arpino','nb'):None,('Acropolis of Arpino','pl'):None,('Acropolis of Arpino','pt'):None,('Acropolis of Arpino','ro'):None,('Acropolis of Arpino','sr'):None,('Acropolis of Arpino','sv'):None,('Acropolis of Arpino','tl'):None,('Aegae','es'):None,('Aegae','it'):None,('Aegae','nl'):None,('Aegae','uk'):None,('Alba Helviorum','fr'):None,('Alba Helviorum','nl'):None,('Anthemous','sv'):None,('Aventicum','de'):None,('Aventicum','fr'):None,('Bakchias','sv'):None,('Diocletianopolis in Thrace','pl'):None,('Gnatia','es'):None,('Haïdra','es'):None,('Histiaia','es'):None,('Histiaia','nl'):None,('Histiaia','uk'):None,('Iluro','es'):None,('Issus','nl'):None,('Kandyba','vi'):None,("L'Alcúdia",'es'):None,("L'Alcúdia",'sv'):None,('Macistus','fi'):None,('Malgium','nl'):None,('Manduria','fr'):None,('Manduria','it'):None,('Manduria','nl'):None,('Olba','de'):None,('Panionium','nl'):None,('Porto Pisano','de'):None,('Raphana','nb'):None,('Sa Caleta','de'):None,('Scoglietto sanctuary','it'):None,('Scoglietto sanctuary','nl'):None,('Sippar-Amnanum','fr'):None,('Sippar-Amnanum','nl'):None,('Sippar-Amnanum','pl'):None,('Sippar-Amnanum','sv'):None,('Temple of Château-Bas','de'):None,('Temple of Château-Bas','nl'):None,('Tigranocerta','de'):None,('Tintignac','it'):None,('Xyniae','bg'):None,('Xyniae','sr'):None}
 KIND={'Villa of Herodes Atticus':'site','Necropolis of Pranu Muttedu':'site','Achladia':'site'}
 clean=lambda n:re.sub(r'\s*\([^)]*\)','',n).strip()
 # Names already on the map, per language: a new site never takes one (Thebe near Troy as «Фивы»).
@@ -60,7 +64,9 @@ for s in sorted(k,key=lambda s:-s['fame']):
     if en in taken['en']: drop['english name taken']+=1; continue
     names={}
     for l,v in s['names'].items():
-        v=clean(NAME.get((en,l),v))
+        v=NAME.get((en,l),v)
+        if v is None: continue
+        v=clean(v)
         if v and v not in taken[l] and v!=en: names[l]=v
         elif v in taken[l]: drop[f'name taken {l}']+=1
     for l,v in names.items(): taken[l].add(v)

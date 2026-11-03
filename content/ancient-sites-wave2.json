@@ -62,8 +62,7 @@
       "en": "Tintignac",
       "names": {
         "es": "Sitio arqueológico de Tintignac",
-        "fr": "site gallo-romain de Tintignac",
-        "it": "Sito archeologico di Tintignac-Naves"
+        "fr": "site gallo-romain de Tintignac"
       },
       "lon": 1.75769,
       "lat": 45.33324,
@@ -98,11 +97,9 @@
       "id": "148046",
       "en": "Temple of Château-Bas",
       "names": {
-        "de": "Römischer Tempel",
         "es": "Templo romano de Château-Bas",
         "fr": "temple romain de Château-Bas",
-        "it": "Tempio romano di Château-Bas",
-        "nl": "Römischer Tempel"
+        "it": "Tempio romano di Château-Bas"
       },
       "lon": 5.1972,
       "lat": 43.68195,
@@ -139,10 +136,6 @@
     {
       "id": "167629",
       "en": "Alba Helviorum",
-      "names": {
-        "fr": "site archéologique d'Alba-la-Romaine",
-        "nl": "Archeologische site van Alba-la-Romaine"
-      },
       "lon": 4.60019,
       "lat": 44.56096,
       "from": -329,
@@ -482,18 +475,6 @@
       "id": "245569735",
       "en": "Acropolis of Arpino",
       "names": {
-        "cs": "Civitavecchia",
-        "da": "Civitavecchia",
-        "es": "Civitavecchia",
-        "fi": "Civitavecchia",
-        "fr": "Civitavecchia",
-        "nb": "Civitavecchia",
-        "pl": "Civitavecchia",
-        "pt": "Civitavecchia",
-        "ro": "Civitavecchia",
-        "sv": "Civitavecchia",
-        "sr": "Civitavecchia",
-        "tl": "Civitavecchia",
         "it": "Acropoli di Arpino"
       },
       "lon": 13.61704,
@@ -930,10 +911,6 @@
     {
       "id": "265922",
       "en": "L'Alcúdia",
-      "names": {
-        "es": "Yacimiento arqueológico de La Alcudia",
-        "sv": "Arkeologiska fyndplatsen i La Alcudia"
-      },
       "lon": -0.6953,
       "lat": 38.2396,
       "from": -749,
@@ -1222,7 +1199,6 @@
       "en": "Haïdra",
       "names": {
         "de": "Ammaedara",
-        "es": "Yacimiento arqueológico de Haïdra",
         "it": "Ammaedara",
         "ru": "Аммедара"
       },
@@ -1499,12 +1475,6 @@
     {
       "id": "392373882",
       "en": "Sippar-Amnanum",
-      "names": {
-        "nl": "Tulūl ad Dayr",
-        "fr": "Tell ed-Der",
-        "pl": "Tell ed-Der",
-        "sv": "Tulūl ad Dayr"
-      },
       "lon": 44.29924,
       "lat": 33.09924,
       "from": -2002,
@@ -1583,8 +1553,7 @@
       "en": "Porto Pisano",
       "names": {
         "fi": "Portus Pisanus",
-        "pl": "Port Pisano",
-        "de": "Hafen von Pisa im Mittelalter"
+        "pl": "Port Pisano"
       },
       "lon": 10.34784,
       "lat": 43.67968,
@@ -2661,7 +2630,6 @@
       "id": "482947334",
       "en": "Sa Caleta",
       "names": {
-        "de": "Phönizische Siedlung von Sa Caleta",
         "es": "Yacimiento fenicio de Sa Caleta",
         "fr": "site archéologique de Sa Caleta"
       },
@@ -4571,9 +4539,7 @@
       "en": "Xyniae",
       "names": {
         "es": "Sinia",
-        "bg": "Езерос",
-        "ru": "Ксиния",
-        "sr": "Езерос"
+        "ru": "Ксиния"
       },
       "lon": 22.26768,
       "lat": 39.03837,
@@ -5519,7 +5485,6 @@
       "id": "570453",
       "en": "Macistus",
       "names": {
-        "fi": "Sami",
         "de": "Makistos",
         "es": "Macisto",
         "it": "Macisto"

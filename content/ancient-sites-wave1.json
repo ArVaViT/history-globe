@@ -184,9 +184,7 @@
         "it": "Aventicum",
         "nl": "Aventicum",
         "pt": "Aventicum",
-        "uk": "Авентикум",
-        "de": "Aventicum, römische Stadt - Avenches, mittelalterlich-neuzeitliche Stadt",
-        "fr": "Aventicum, ville romaine - Avenches, ville médiévale-époque moderne"
+        "uk": "Авентикум"
       },
       "lon": 7.04071,
       "lat": 46.88008,
@@ -586,8 +584,7 @@
         "ru": "Диоклетианополь",
         "de": "Diocletianopolis",
         "fr": "Diocletianopolis",
-        "it": "Diocletianopolis",
-        "pl": "Augustae"
+        "it": "Diocletianopolis"
       },
       "lon": 24.70458,
       "lat": 42.50155,
@@ -1130,9 +1127,6 @@
     {
       "id": "246436",
       "en": "Iluro",
-      "names": {
-        "es": "Ciudad romana de Iluro"
-      },
       "lon": 2.44788,
       "lat": 41.53952,
       "from": -329,
@@ -3181,7 +3175,6 @@
         "de": "Gnathia",
         "it": "Egnazia",
         "sv": "Egnatia",
-        "es": "Egnazia, ciudad en el tiempo",
         "fr": "Egnazia",
         "nl": "Egnazia",
         "pl": "Egnatia",
@@ -3963,8 +3956,7 @@
         "es": "Antemunte",
         "fr": "Anthémonte",
         "hu": "Anthemousz",
-        "ru": "Анфемунт",
-        "sv": "Galátista"
+        "ru": "Анфемунт"
       },
       "lon": 23.28433,
       "lat": 40.41772,
@@ -5668,11 +5660,8 @@
       "en": "Histiaia",
       "names": {
         "ru": "Гистиея",
-        "uk": "Орей",
         "de": "Hestiaia in Euböa",
-        "es": "Óreo",
         "fr": "Histiée",
-        "nl": "Oreüs",
         "it": "Istiea"
       },
       "lon": 23.09053,
@@ -6533,7 +6522,7 @@
         "pt": "Templo de Apolo Epicuro em Bassas",
         "ro": "Templul lui Apollo din Bassae",
         "ru": "Храм Аполлона в Бассах",
-        "sr": "Храм Аполона Епирског",
+        "sr": "Храм Аполона Епикурија",
         "uk": "Храм Аполлона в Бассах",
         "vi": "Đền thờ Apollo ở Bassae",
         "es": "Templo de Apolo",
@@ -8682,7 +8671,6 @@
         "es": "Panjonio",
         "fi": "Panionion",
         "it": "Panionion",
-        "nl": "Ionische bond",
         "ru": "Панионий",
         "uk": "Паніонії"
       },
@@ -9265,9 +9253,6 @@
     {
       "id": "648725",
       "en": "Olba",
-      "names": {
-        "de": "Olba und Diokaisareia"
-      },
       "lon": 33.96912,
       "lat": 36.58438,
       "from": -329,
@@ -9306,7 +9291,6 @@
       "id": "656796826",
       "en": "Malgium",
       "names": {
-        "nl": "Tell Yassir",
         "pl": "Malgum",
         "ru": "Малгиум",
         "uk": "Малгіум"
@@ -9328,12 +9312,8 @@
       "id": "658368",
       "en": "Aegae",
       "names": {
-        "es": "Ayas",
-        "nl": "Ayaş",
         "de": "Aigeai",
-        "it": "Laiazzo",
-        "ru": "Эги Киликийские",
-        "uk": "Айас"
+        "ru": "Эги Киликийские"
       },
       "lon": 35.78949,
       "lat": 36.76968,
@@ -9403,7 +9383,6 @@
         "fi": "Issos",
         "fr": "Issos",
         "nb": "Issos",
-        "nl": "Kinet Höyük",
         "pl": "Issos",
         "ru": "Исс",
         "sv": "Issos",
@@ -9552,7 +9531,6 @@
       "id": "678360",
       "en": "Raphana",
       "names": {
-        "nb": "Qweilbeh",
         "pt": "Rapana",
         "fi": "Rafana"
       },
@@ -9642,7 +9620,7 @@
       "en": "Haluza",
       "names": {
         "de": "Elusa",
-        "it": "diocesi di Elusa",
+        "it": "Elusa",
         "pl": "Elusa",
         "cs": "Chaluca",
         "ru": "Халуца",
@@ -9938,9 +9916,6 @@
     {
       "id": "736896",
       "en": "Bakchias",
-      "names": {
-        "sv": "Tall Umm al Athl"
-      },
       "lon": 31.00416,
       "lat": 29.53695,
       "from": -329,
@@ -10464,7 +10439,6 @@
       "en": "Tigranocerta",
       "names": {
         "nl": "Tigranakert",
-        "de": "Martyropolis",
         "fr": "Tigranakert",
         "ru": "Тигранакерт",
         "sv": "Tigranakert",
