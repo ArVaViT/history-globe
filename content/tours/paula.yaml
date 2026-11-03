@@ -5,7 +5,9 @@
 # few of them, in his order. Each stop links the free translation of the Nicene and
 # Post-Nicene Fathers (public domain) at New Advent; its page holds the whole letter, and
 # the cite gives the section. Nitria, where the monks met her, is not on the map: that stop
-# stands at Alexandria, on the way Jerome describes. English and Russian first; the other
+# stands at Alexandria, on the way Jerome describes. At Zarephath the Latin has Elijah's
+# "turricula", a little tower (the Russian translation and the Oxford Cult of Saints
+# database, E06476, read it so); the free English translation's "Elijah's town" misreads it. English and Russian first; the other
 # languages wait for the translation pass (docs/translation-debt.md).
 id: paula
 title:
@@ -40,8 +42,8 @@ stops:
         ru: "Иероним, Письмо 108.8"
       url: "https://www.newadvent.org/fathers/3001108.htm"
     note:
-      en: "Past Berytus and Sidon, on the shore at Zarephath, she stops at the place of Elijah and worships there."
-      ru: "Миновав Берит и Сидон, она останавливается на берегу в Сарепте, у места Илии, и молится там."
+      en: "Past Berytus and Sidon, on the shore at Zarephath, she enters the little tower of Elijah and worships there."
+      ru: "Миновав Берит и Сидон, она входит на берегу в Сарепте в башенку Илии и молится там."
   - place: a58735e # Caesarea
     source:
       cite:
