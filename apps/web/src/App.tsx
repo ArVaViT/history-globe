@@ -1074,12 +1074,13 @@ export function App() {
                     sites={data.sites.get(selected.id) ?? []}
                     questions={data.questions[selected.id]}
                     life={data.life[selected.id]}
-                    // An event told again as a battle here (Samaria, 722 BC) is listed once, as the battle.
+                    // An event told again as a battle here (Samaria, 722 BC; Masada) is listed once, as the battle.
                     events={events.filter(
                       (e) =>
                         (e.place ?? e.site?.id) === selected.id &&
                         !data.battles.some(
-                          (b) => b.place === e.place && Math.abs(b.year - e.year) <= 1,
+                          (b) =>
+                            b.place === (e.place ?? e.site?.id) && Math.abs(b.year - e.year) <= 1,
                         ),
                     )}
                     battles={data.battles.filter(

@@ -332,7 +332,8 @@ export const BattlesFile = z.strictObject({
       id: z.string().regex(/^[a-z0-9-]+$/),
       year: approxYear,
       title: localized,
-      place: z.string().regex(/^a[0-9a-f]{6}$/),
+      /** A place of the data build, or an ancient site by its Pleiades number (Gamla). */
+      place: z.string().regex(/^(a[0-9a-f]{6}|\d{1,12})$/),
       /** The passage that tells it; none for a battle the Bible does not tell. */
       ref: osis.optional(),
       sides: localized,

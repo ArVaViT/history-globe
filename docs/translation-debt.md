@@ -10,3 +10,5 @@ before the branch goes to production; the list is then emptied.
   itself."), after the ancient world's paragraph.
 - `content/tours/jewish-war.yaml`: the tour of the Jewish War (Josephus), in English and
   Russian only: its title, its 13 notes and the 13 cites ("Josephus, Jewish War 2.284").
+- `content/battles.yaml`: the Jewish War's battles (jotapata, gamla, masada): title, sides
+  and outcome in English and Russian only.

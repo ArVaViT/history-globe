@@ -220,13 +220,17 @@ if (mostMentioned.length > 0)
 
 const tours: TourFile[] = [];
 // The ancient world's sites (ADR 0018), which a tour told outside the Bible may stop at.
-const ancientIds = new Set(
+// A battle may be fought at one too (Gamla, Masada): their points.
+const ancientPoints = new Map(
   readdirSync(join(root, "content"))
     .filter((f) => /^ancient-sites(-wave\d+)?\.json$/.test(f))
     .flatMap((f) =>
-      (load(`content/${f}`) as { sites: { id: string | number }[] }).sites.map((s) => String(s.id)),
+      (
+        load(`content/${f}`) as { sites: { id: string | number; lon: number; lat: number }[] }
+      ).sites.map((s): [string, [number, number]] => [String(s.id), [s.lon, s.lat]]),
     ),
 );
+const ancientIds = new Set(ancientPoints.keys());
 for (const file of readdirSync(join(root, "content/tours")).filter((f) => f.endsWith(".yaml"))) {
   const result = TourFile.safeParse(load(`content/tours/${file}`));
   if (!result.success) {
@@ -563,12 +567,12 @@ for (const e of EventsFile.parse(load("content/events.yaml")).events) {
 }
 events.sort((a, b) => a.year - b.year);
 
-// Battles (content/battles.yaml): at a place of the data build, drawn on the map in their
-// years from battles.geojson; the list goes into content.json for the cards.
+// Battles (content/battles.yaml): at a place of the data build or an ancient site, drawn on
+// the map in their years from battles.geojson; the list goes into content.json for the cards.
 const battles: HistoryBattle[] = [];
 if (existsSync(join(root, "content/battles.yaml")))
   for (const b of BattlesFile.parse(load("content/battles.yaml")).battles) {
-    if (!known.has(b.place))
+    if (!known.has(b.place) && !ancientIds.has(b.place))
       errors.push(`battles: ${b.id} points at ${b.place}, not in the data build`);
     if (battles.some((x) => x.id === b.id)) errors.push(`battles: ${b.id} is listed twice`);
     battles.push({
@@ -603,7 +607,10 @@ writes.push([
           ...Object.fromEntries(NAME_LOCALES.flatMap((l) => (b.title[l] ? [[l, b.title[l]]] : []))),
           ...(b.ref ? { ref: b.ref } : {}),
         },
-        geometry: { type: "Point", coordinates: pointOf.get(b.place) ?? [0, 0] },
+        geometry: {
+          type: "Point",
+          coordinates: pointOf.get(b.place) ?? ancientPoints.get(b.place) ?? [0, 0],
+        },
       })),
       // The battles of events.yaml fought at no place of the data build (Gaugamela): their
       // mark on the field, in their years, with the same name on hover; no card to open.
