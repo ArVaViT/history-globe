@@ -1,0 +1,76 @@
+# Augustine, from Thagaste to Hippo, as he tells it in the Confessions and in his letter to
+# Valerius after his ordination. The years are the usual ones, from his own count of his
+# age (he was born in 354): Carthage in his seventeenth year, Rome 383, Milan 384, the
+# garden 386, Ostia 387, Hippo 391 (the letter does not name the city; his ordination
+# there is in Possidius, Life of Augustine 4). Each stop links the free translation of the
+# Nicene and Post-Nicene Fathers (public domain) at New Advent; its page holds the whole
+# book, and the cite gives the chapter (Milan's links Book VIII, the garden). Not one way
+# travelled: no time on foot. English and Russian first; the other languages wait for the
+# translation pass (docs/translation-debt.md).
+id: augustine
+title:
+  en: "Augustine: from Thagaste to Hippo"
+  ru: "Августин: от Тагаста до Гиппона"
+year: "AD 370"
+approximate: true
+walked: false
+stops:
+  - place: "315198" # Thagaste
+    source:
+      cite:
+        en: "Augustine, Confessions 2.3"
+        ru: "Августин, Исповедь 2.3"
+      url: "https://www.newadvent.org/fathers/110102.htm"
+    note:
+      en: "In his sixteenth year he is home again from school at Madaura, His father, «but a poor freeman of Thagaste», pays for him to go on to Carthage, more by resolve than by means."
+      ru: "На шестнадцатом году он снова дома после учёбы в Мадавре, Его отец, «всего лишь бедный гражданин Тагаста», скорее упорством, чем достатком, собирает деньги, чтобы послать его дальше, в Карфаген."
+  - place: aa56bd1 # Carthage
+    year: "AD 371"
+    source:
+      cite:
+        en: "Augustine, Confessions 3.1, 3.3, 3.6"
+        ru: "Августин, Исповедь 3.1, 3.3, 3.6"
+      url: "https://www.newadvent.org/fathers/110103.htm"
+    note:
+      en: "«To Carthage I came, where a cauldron of unholy loves bubbled up all around me.» Here he studies rhetoric, and here he falls in with the Manichaeans."
+      ru: "«Я прибыл в Карфаген; кругом меня котлом кипела позорная любовь». Здесь он учится риторике и здесь же попадает к манихеям."
+  - place: afc8e7a # Rome
+    year: "AD 383"
+    source:
+      cite:
+        en: "Augustine, Confessions 5.8"
+        ru: "Августин, Исповедь 5.8"
+      url: "https://www.newadvent.org/fathers/110105.htm"
+    note:
+      en: "He is persuaded to go to Rome and teach there what he had taught at Carthage. His mother laments it in vain."
+      ru: "Его уговаривают ехать в Рим и преподавать там то же, что он преподавал в Карфагене. Мать тщетно оплакивает его отъезд."
+  - place: "383706" # Mediolanum: Milan
+    year: "AD 384"
+    source:
+      cite:
+        en: "Augustine, Confessions 5.13, 8.12"
+        ru: "Августин, Исповедь 5.13, 8.12"
+      url: "https://www.newadvent.org/fathers/110108.htm"
+    note:
+      en: "Milan asks Rome for a teacher of rhetoric, and he is sent: «to Milan I came, unto Ambrose the bishop». Two years later, weeping in a garden, he hears a child's voice from a neighbouring house: «Take up and read.»"
+      ru: "Милан просит у Рима учителя риторики, и посылают его: «и я прибыл в Милан, к епископу Амвросию». Через два года, плача в саду, он слышит из соседнего дома детский голос: «Возьми, читай»."
+  - place: "422995" # Ostia
+    year: "AD 387"
+    source:
+      cite:
+        en: "Augustine, Confessions 9.8, 9.10-11"
+        ru: "Августин, Исповедь 9.8, 9.10-11"
+      url: "https://www.newadvent.org/fathers/110109.htm"
+    note:
+      en: "On their way back to Africa, he and his mother rest at Ostia before the voyage. Leaning at a window over the garden of the house, they talk alone of the life to come; there, at Ostia, Monica dies."
+      ru: "На пути обратно в Африку он и мать отдыхают в Остии перед плаванием. Опершись на окно, выходящее в сад дома, они беседуют наедине о будущей жизни; там, в Остии, Моника умирает."
+  - place: "305090" # Hippo Regius
+    year: "AD 391"
+    source:
+      cite:
+        en: "Augustine, Letter 21"
+        ru: "Августин, Письмо 21"
+      url: "https://www.newadvent.org/fathers/1102021.htm"
+    note:
+      en: "Ordained presbyter to help bishop Valerius, he writes asking for time till Easter to study the Scriptures: he has had to take «the second place at the helm» before he knew how to handle an oar."
+      ru: "Рукоположенный в пресвитеры в помощь епископу Валерию, он просит у него времени до Пасхи, чтобы изучать Писание: ему пришлось занять «второе место у руля», когда он ещё не умел держать весло."
