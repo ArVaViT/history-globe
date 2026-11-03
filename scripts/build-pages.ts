@@ -127,6 +127,17 @@ const places = (
     features: { geometry: { coordinates: [number, number] }; properties: Props }[];
   }
 ).features;
+/** The ancient world's sites (ancient.geojson): a tour's stop may stand at one (ADR 0018). */
+const ancient = new Map(
+  (
+    JSON.parse(readFileSync(join(data, "ancient.geojson"), "utf8")) as {
+      features: {
+        geometry: { coordinates: [number, number] };
+        properties: { id: string; en: string } & Partial<Record<Lang, string>>;
+      }[];
+    }
+  ).features.map((f) => [f.properties.id, f]),
+);
 const content = inEveryLanguage(
   JSON.parse(readFileSync(join(data, "content.json"), "utf8")),
 ) as ContentRelease & {
@@ -466,6 +477,15 @@ const linkedVerse = (text: string, f: (typeof places)[number], l: Lang) => {
     .join("");
 };
 const byId = new Map(places.map((f) => [f.properties.id, f]));
+/** A stop's point and name: a place of the Bible, or a site of the ancient world. */
+const pointOf = (id: string) =>
+  byId.get(id)?.geometry.coordinates ?? ancient.get(id)?.geometry.coordinates;
+const stopName = (id: string, l: Lang) => {
+  const f = byId.get(id);
+  if (f) return nameOf(f.properties, l);
+  const a = ancient.get(id)?.properties;
+  return a ? (a[l] ?? a.en) : id;
+};
 const toursAt = new Map<string, string[]>();
 for (const t of content.tours)
   for (const s of t.stops) {
@@ -759,8 +779,8 @@ function tourPages(l: Lang): void {
       : {}
   ) as Record<string, (number | null)[] | undefined>;
   const legOf = (t: (typeof content.tours)[number], i: number) => {
-    const a = byId.get(t.stops[i - 1]?.place ?? "")?.geometry.coordinates;
-    const b = byId.get(t.stops[i]?.place ?? "")?.geometry.coordinates;
+    const a = pointOf(t.stops[i - 1]?.place ?? "");
+    const b = pointOf(t.stops[i]?.place ?? "");
     if (!a || !b) return "";
     const d = distanceKm(a, b);
     if (d < 2) return "";
@@ -802,7 +822,7 @@ function tourPages(l: Lang): void {
       <ol class="stops">${t.stops
         .map((s, i) => {
           const f = byId.get(s.place);
-          const n = f ? nameOf(f.properties, l) : s.place;
+          const n = stopName(s.place, l);
           const link =
             f && f.properties.verses > 0
               ? `<a href="../../place/${slugOf.get(s.place) ?? s.place}/">${esc(n)}</a>`
@@ -890,7 +910,7 @@ function routeSvg(t: Tour): string {
   const H = 90;
   const PAD = 12;
   const pts = t.stops.flatMap((s) => {
-    const c = byId.get(s.place)?.geometry.coordinates;
+    const c = pointOf(s.place);
     return c ? [{ c, by: s.by }] : [];
   });
   if (pts.length === 0) return "";
@@ -950,8 +970,8 @@ function tourKm(t: Tour): number | null {
   if (t.walked === false) return null;
   let km = 0;
   for (let i = 1; i < t.stops.length; i++) {
-    const a = byId.get(t.stops[i - 1]?.place ?? "")?.geometry.coordinates;
-    const b = byId.get(t.stops[i]?.place ?? "")?.geometry.coordinates;
+    const a = pointOf(t.stops[i - 1]?.place ?? "");
+    const b = pointOf(t.stops[i]?.place ?? "");
     if (a && b) km += distanceKm(a, b);
   }
   return km >= 2 ? km : null;

@@ -220,17 +220,33 @@ if (mostMentioned.length > 0)
 
 const tours: TourFile[] = [];
 // The ancient world's sites (ADR 0018), which a tour told outside the Bible may stop at.
-// A battle may be fought at one too (Gamla, Masada): their points.
-const ancientPoints = new Map(
+// A battle may be fought at one too (Gamla, Masada): their points. Only the sites the map
+// draws (ancient.geojson keeps those in focus): a stop or a battle elsewhere would fly to
+// nothing.
+type AncientSite = {
+  id: string | number;
+  en: string;
+  lon: number;
+  lat: number;
+  from: number;
+  to: number;
+};
+const ancientSites = new Map(
   readdirSync(join(root, "content"))
     .filter((f) => /^ancient-sites(-wave\d+)?\.json$/.test(f))
-    .flatMap((f) =>
-      (
-        load(`content/${f}`) as { sites: { id: string | number; lon: number; lat: number }[] }
-      ).sites.map((s): [string, [number, number]] => [String(s.id), [s.lon, s.lat]]),
-    ),
+    .flatMap((f) => (load(`content/${f}`) as { sites: AncientSite[] }).sites)
+    .filter((s) => inFocus(s.lon, s.lat))
+    .map((s): [string, AncientSite] => [String(s.id), s]),
 );
-const ancientIds = new Set(ancientPoints.keys());
+const ancientPoints = new Map(
+  [...ancientSites].map(([id, s]): [string, [number, number]] => [id, [s.lon, s.lat]]),
+);
+const ancientIds = new Set(ancientSites.keys());
+/** The site stands in the year, or else the map has nothing to show there. */
+const standsIn = (id: string, year: number) => {
+  const s = ancientSites.get(id);
+  return !s || (year >= s.from && year <= s.to);
+};
 for (const file of readdirSync(join(root, "content/tours")).filter((f) => f.endsWith(".yaml"))) {
   const result = TourFile.safeParse(load(`content/tours/${file}`));
   if (!result.success) {
@@ -258,6 +274,8 @@ for (const file of readdirSync(join(root, "content/tours")).filter((f) => f.ends
     // the source.
     if (ancientIds.has(s.place) && s.ref !== undefined)
       errors.push(`tours/${file}: stop ${i + 1} (${s.place}) is an ancient site, told by a verse`);
+    if (!standsIn(s.place, s.year ?? result.data.year))
+      errors.push(`tours/${file}: stop ${i + 1} (${s.place}) is outside the site's years`);
     if (s.sailed && s.by !== "sea")
       errors.push(`tours/${file}: stop ${i + 1} (${s.place}) has days sailed but no "by: sea"`);
     if (i > 0 && result.data.stops[i - 1]?.place === s.place) {
@@ -574,6 +592,8 @@ if (existsSync(join(root, "content/battles.yaml")))
   for (const b of BattlesFile.parse(load("content/battles.yaml")).battles) {
     if (!known.has(b.place) && !ancientIds.has(b.place))
       errors.push(`battles: ${b.id} points at ${b.place}, not in the data build`);
+    if (!standsIn(b.place, b.year.year))
+      errors.push(`battles: ${b.id} (${String(b.year.year)}) is outside its site's years`);
     if (battles.some((x) => x.id === b.id)) errors.push(`battles: ${b.id} is listed twice`);
     battles.push({
       id: b.id,
