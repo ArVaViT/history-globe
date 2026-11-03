@@ -378,8 +378,14 @@ await step("a battle's mark opens its place, whose timeline tells the battle", a
 await step(
   "the Bible alone, in the settings, takes the ancient world off the map and the search",
   async () => {
-    await page.goto(BASE + "?locale=ru");
+    // Over Hattusa in a year it stood: it must be on the map before the switch.
+    await page.goto(BASE + "?locale=ru&year=-1300&camera=34.6,40.0,7,0,0");
     await mapReady(page);
+    const hattusa = () =>
+      window.__hgMap.querySourceFeatures("places", {
+        filter: ["==", ["get", "id"], "283602441"],
+      }).length;
+    await page.waitForFunction(hattusa, null, { timeout: 8000 });
     await page
       .getByRole("button", { name: /Настройки/ })
       .first()
@@ -391,15 +397,13 @@ await step(
       timeout: 5000,
     });
     // The ancient sites step off the places' source, Hattusa among them.
-    await page.waitForTimeout(800);
-    expect(
-      (await page.evaluate(
-        () =>
-          window.__hgMap.querySourceFeatures("places", {
-            filter: ["==", ["get", "id"], "283602441"],
-          }).length,
-      )) === 0,
-      "Hattusa is still on the map",
+    await page.waitForFunction(
+      () =>
+        window.__hgMap.querySourceFeatures("places", {
+          filter: ["==", ["get", "id"], "283602441"],
+        }).length === 0,
+      null,
+      { timeout: 5000 },
     );
     await page.waitForTimeout(500);
     expect(!search().get("hide")?.includes("ancient"), `hide=${search().get("hide")}`);
