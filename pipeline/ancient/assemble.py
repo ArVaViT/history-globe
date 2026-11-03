@@ -27,6 +27,8 @@ RENAME={'Temple romain de Château-Bas':'Temple of Château-Bas','Archeological 
  'Hosn Niha Site':'Hosn Niha','Ancient Tenea':'Tenea','Ancient Lappa':'Lappa','Gremanu nuraghe sacred place':'Gremanu',
  'Pharsalos ancient city':'Pharsalus','Ancient Tithorea':'Tithorea','Gytheion ancient polis':'Gytheion','Kisamos ancient city':'Kisamos','Mochlos site':'Mochlos','Ciudad romana de Lacipo':'Lacipo','Area archeologica del Castrum Inui':'Castrum Inui',"Santuario italico di Schiavi d'Abruzzo":"Sanctuary of Schiavi d'Abruzzo",'Poblat ibèric de Can Fatjó':'Can Fatjó','Poblat ibèric de la Cadira del Bisbe':'Cadira del Bisbe','Poblat ibèric de les Maleses':'Les Maleses','Poblat Ibèric del Turó de Castellruf':'Turó de Castellruf','Povoado fortificado e Santuário de Endovélico':'Sanctuary of Endovelicus','Camp celtique de la Bure':'La Bure','Necropolis of Manduria':'Manduria','Minoan villa of Achladia':'Achladia','Üçtepe Mound':'Üçtepe','Agios Konstantinos, Methana':'Sanctuary of Agios Konstantinos',
  'Aventicum, Roman city - Avenches, medieval-modern city':'Aventicum','Castro, Lazio':'Castro','Ancient Maroneia':'Maroneia','Sanctuary of Isthmian Poseidon, Isthmia':'Isthmia'}
+# A name in one language where Wikidata's label names something else (Helenopolis as «Дрепан», the village it was).
+NAME={('Helenopolis','ru'):'Еленополь'}
 KIND={'Villa of Herodes Atticus':'site','Necropolis of Pranu Muttedu':'site','Achladia':'site'}
 clean=lambda n:re.sub(r'\s*\([^)]*\)','',n).strip()
 # Names already on the map, per language: a new site never takes one (Thebe near Troy as «Фивы»).
@@ -54,7 +56,7 @@ for s in sorted(k,key=lambda s:-s['fame']):
     if en in taken['en']: drop['english name taken']+=1; continue
     names={}
     for l,v in s['names'].items():
-        v=clean(v)
+        v=clean(NAME.get((en,l),v))
         if v and v not in taken[l] and v!=en: names[l]=v
         elif v in taken[l]: drop[f'name taken {l}']+=1
     for l,v in names.items(): taken[l].add(v)

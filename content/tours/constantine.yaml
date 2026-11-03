@@ -1,0 +1,84 @@
+# Constantine, from the Tiber to his baptism, as Eusebius tells it in his Life of
+# Constantine. The years are the usual ones, not his: the Milvian Bridge 312, Nicaea 325,
+# the works at Jerusalem and Bethlehem from about 326 (Helena's journey, 326-327), the city
+# on the Bosporus dedicated in 330, his death at Pentecost 337. Each stop links the free
+# translation of the Nicene and Post-Nicene Fathers (public domain) at New Advent; its
+# page holds the whole book, and the cite gives the chapter. Not one way travelled: no time
+# on foot. English and Russian first; the other languages wait for the translation pass
+# (docs/translation-debt.md).
+id: constantine
+title:
+  en: "Constantine: from the Tiber to his baptism"
+  ru: "Константин: от Тибра до крещения"
+year: "AD 312"
+walked: false
+stops:
+  - place: afc8e7a # Rome
+    source:
+      cite:
+        en: "Eusebius, Life of Constantine 1.38"
+        ru: "Евсевий, Жизнь Константина 1.38"
+      url: "https://www.newadvent.org/fathers/25021.htm"
+    note:
+      en: "Constantine marches on Rome against Maxentius. Fleeing across the Tiber by the bridge of boats he had built, Maxentius goes down «like stone» with his guards; Eusebius likens it to Pharaoh's host in the Red Sea."
+      ru: "Константин идёт на Рим против Максенция. Убегая через Тибр по мосту из лодок, который сам же навёл, Максенций со своей стражей идёт ко дну, «как камень»; Евсевий сравнивает это с войском фараона в Красном море."
+  - place: "511268" # Nicaea
+    year: "AD 325"
+    source:
+      cite:
+        en: "Eusebius, Life of Constantine 3.10"
+        ru: "Евсевий, Жизнь Константина 3.10"
+      url: "https://www.newadvent.org/fathers/25023.htm"
+    note:
+      en: "The bishops sit waiting in the great hall of the palace. Constantine enters, preceded not by soldiers or guards but only by friends in the faith, and takes his seat in the council."
+      ru: "Епископы в молчании ждут в главном зале дворца. Входит Константин, перед ним идут не воины и стража, а лишь друзья по вере, и он занимает своё место в соборе."
+  - place: a15257a # Jerusalem
+    year: "AD 326"
+    source:
+      cite:
+        en: "Eusebius, Life of Constantine 3.26-28"
+        ru: "Евсевий, Жизнь Константина 3.26-28"
+      url: "https://www.newadvent.org/fathers/25023.htm"
+    note:
+      en: "The tomb of Christ lay buried under earth and a shrine to Venus. Constantine has it all cleared away, and, «contrary to all expectation», the cave of the resurrection comes to light."
+      ru: "Гроб Христов был засыпан землёй, а сверху стояло святилище Венеры. Константин велит всё это убрать, и «сверх всякого ожидания» открывается пещера Воскресения."
+  - place: a112427 # Bethlehem
+    year: "AD 326"
+    source:
+      cite:
+        en: "Eusebius, Life of Constantine 3.41-43"
+        ru: "Евсевий, Жизнь Константина 3.41-43"
+      url: "https://www.newadvent.org/fathers/25023.htm"
+    note:
+      en: "His mother Helena dedicates two churches: one at the cave of the Saviour's birth in Bethlehem, the other on the mount of his ascension."
+      ru: "Его мать Елена освящает две церкви: одну у пещеры Рождества Спасителя в Вифлееме, другую на горе Вознесения."
+  - place: Q16869 # Constantinople
+    year: "AD 330"
+    source:
+      cite:
+        en: "Eusebius, Life of Constantine 3.48"
+        ru: "Евсевий, Жизнь Константина 3.48"
+      url: "https://www.newadvent.org/fathers/25023.htm"
+    note:
+      en: "To honour the city that bears his name, he fills it and its outskirts with churches and great memorials of the martyrs, and so consecrates it to the martyrs' God."
+      ru: "Чтобы почтить город, носящий его имя, он наполняет его и окрестности храмами и большими памятниками мученикам и так посвящает город Богу мучеников."
+  - place: "511240" # Helenopolis
+    year: "AD 337"
+    source:
+      cite:
+        en: "Eusebius, Life of Constantine 4.61"
+        ru: "Евсевий, Жизнь Константина 4.61"
+      url: "https://www.newadvent.org/fathers/25024.htm"
+    note:
+      en: "Fallen ill, he goes to the city named after his mother. In its church of the martyrs he prays, and for the first time receives the laying on of hands."
+      ru: "Заболев, он едет в город, названный в честь его матери. В тамошней церкви мучеников он молится и впервые принимает возложение рук."
+  - place: "511337" # Nicomedia
+    year: "AD 337"
+    source:
+      cite:
+        en: "Eusebius, Life of Constantine 4.61-64"
+        ru: "Евсевий, Жизнь Константина 4.61-64"
+      url: "https://www.newadvent.org/fathers/25024.htm"
+    note:
+      en: "In the suburbs of Nicomedia he tells the bishops he had hoped to be baptized in the Jordan. They baptize him there, and he dies about noon on the last day of the fifty days, Pentecost itself."
+      ru: "В предместье Никомидии он говорит епископам, что надеялся креститься в водах Иордана. Они крестят его там же, и около полудня, в последний день пятидесятидневного праздника, в самую Пятидесятницу, он умирает."
