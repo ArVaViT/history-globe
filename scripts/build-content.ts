@@ -230,6 +230,7 @@ type AncientSite = {
   lat: number;
   from: number;
   to: number;
+  rank: number;
 };
 const ancientSites = new Map(
   readdirSync(join(root, "content"))
@@ -550,21 +551,16 @@ for (const file of ["rivers.geojson", "river-labels.geojson"]) {
   writes.push([path, JSON.stringify(rivers)]);
 }
 
-// Dated events on the slider (content/events.yaml), at a place or an ancient site.
-const sitesById = new Map(
-  existsSync("content/ancient-sites.json")
-    ? AncientSitesFile.parse(
-        JSON.parse(readFileSync("content/ancient-sites.json", "utf8")),
-      ).sites.map((s) => [s.id, s])
-    : [],
-);
+// Dated events on the slider (content/events.yaml), at a place or an ancient site: one
+// chosen by hand or one of the waves, as long as the map draws it.
+const sitesById = new Map([...ancientSites].map(([id, s]) => [id, { ...s, id }]));
 const events: HistoryEvent[] = [];
 for (const e of EventsFile.parse(load("content/events.yaml")).events) {
   if (e.place && !known.has(e.place))
     errors.push(`events: ${e.id} points at ${e.place}, not in the data build`);
   const site = e.site === undefined ? undefined : sitesById.get(e.site);
   if (e.site !== undefined && !site)
-    errors.push(`events: ${e.id} points at ancient site ${e.site}, not in ancient-sites.json`);
+    errors.push(`events: ${e.id} points at ancient site ${e.site}, not on the map`);
   if (e.site !== undefined && e.place) errors.push(`events: ${e.id} has both a place and a site`);
   if (e.battlefield && (e.place || e.site !== undefined))
     errors.push(`events: ${e.id} has a battlefield and a place or a site`);
