@@ -1,0 +1,76 @@
+# The martyrs before Constantine, from Polycarp at Smyrna to the Great Persecution, as the
+# churches' own letters and their first historians tell it. The years: Polycarp's death is
+# dated 155 or 156 (under the proconsul Statius Quadratus); Justin's about 165; Lyons in the
+# seventeenth year of Marcus Aurelius (177); Leonides in the tenth year of Severus (202);
+# Cyprian in 258; the church at Nicomedia on the feast of Terminus, 23 February 303. Each
+# stop links the free translation of the Ante-Nicene and Nicene Fathers (public domain) at
+# New Advent; its page holds the whole book, and the cite gives the chapter. Not one way
+# travelled: no time on foot. English and Russian first; the other languages wait for the
+# translation pass (docs/translation-debt.md).
+id: martyrs
+title:
+  en: "The martyrs before Constantine"
+  ru: "Мученики до Константина"
+year: "AD 155"
+approximate: true
+walked: false
+stops:
+  - place: a2e65fb # Smyrna
+    source:
+      cite:
+        en: "Martyrdom of Polycarp 9, 16"
+        ru: "Мученичество Поликарпа 9, 16"
+      url: "https://www.newadvent.org/fathers/0102.htm"
+    note:
+      en: "Polycarp, bishop of Smyrna, is brought into the stadium. Told to revile Christ, he answers: «Eighty and six years have I served Him, and He never did me any injury.» The fire does not consume him, and an executioner kills him with a dagger."
+      ru: "Поликарпа, епископа Смирны, приводят на стадион. Когда от него требуют похулить Христа, он отвечает: «Восемьдесят шесть лет я служу Ему, и Он ничем меня не обидел». Огонь его не берёт, и палач убивает его кинжалом."
+  - place: afc8e7a # Rome
+    year: "AD 165"
+    source:
+      cite:
+        en: "Eusebius, Church History 4.16.1, 7-8"
+        ru: "Евсевий, Церковная история 4.16.1, 7-8"
+      url: "https://www.newadvent.org/fathers/250104.htm"
+    note:
+      en: "Justin the philosopher, who had written in defence of the Christians to the emperors, often bested the Cynic Crescens in public debate. Through Crescens's plot he is put to death in Rome."
+      ru: "Философ Иустин, писавший императорам в защиту христиан, не раз побеждал в публичных спорах киника Крискента. По козням Крискента его казнят в Риме."
+  - place: "167717" # Lugdunum: Lyons
+    year: "AD 177"
+    source:
+      cite:
+        en: "Eusebius, Church History 5.1.1-18"
+        ru: "Евсевий, Церковная история 5.1.1-18"
+      url: "https://www.newadvent.org/fathers/250105.htm"
+    note:
+      en: "The churches of Lyons and Vienne, the chief cities of Gaul on the Rhône, write to Asia and Phrygia of their martyrs. Among them is the slave woman Blandina, whose mistress feared she was too weak to confess; her torturers wore themselves out and owned themselves beaten."
+      ru: "Церкви Лиона и Вьенны, главных городов Галлии на Роне, пишут в Асию и Фригию о своих мучениках. Среди них рабыня Бландина: её госпожа боялась, что та по немощи не устоит, а мучители Бландины изнемогли и признали себя побеждёнными."
+  - place: aee7248 # Alexandria
+    year: "AD 202"
+    source:
+      cite:
+        en: "Eusebius, Church History 6.1, 6.2.2"
+        ru: "Евсевий, Церковная история 6.1, 6.2.2"
+      url: "https://www.newadvent.org/fathers/250106.htm"
+    note:
+      en: "When Severus persecutes the churches, Christians from all Egypt and the Thebaid are brought to Alexandria to die. Among them is Leonides, father of Origen, beheaded while his son is still young."
+      ru: "Когда Север начинает гонение на церкви, христиан со всего Египта и Фиваиды свозят на казнь в Александрию. Среди них Леонид, отец Оригена, обезглавленный, когда сын был ещё юн."
+  - place: aa56bd1 # Carthage
+    year: "AD 258"
+    source:
+      cite:
+        en: "Pontius, Life and Passion of Cyprian 15, 18-19"
+        ru: "Понтий, Житие и страдание Киприана 15, 18-19"
+      url: "https://www.newadvent.org/fathers/0505.htm"
+    note:
+      en: "Word runs through all Carthage that Cyprian is brought to trial. He binds his own eyes before the sword. He is the first bishop of Carthage, his companion Pontius writes, to die a martyr."
+      ru: "По всему Карфагену разносится весть, что Киприана ведут на суд. Перед мечом он сам завязывает себе глаза. Он первым из епископов Карфагена принял мученичество, пишет его спутник Понтий."
+  - place: "511337" # Nicomedia
+    year: "AD 303"
+    source:
+      cite:
+        en: "Lactantius, On the Deaths of the Persecutors 12"
+        ru: "Лактанций, О смертях гонителей 12"
+      url: "https://www.newadvent.org/fathers/0705.htm"
+    note:
+      en: "On the feast of Terminus the Great Persecution begins. The prefect and his officers break into the church at Nicomedia and burn the Scriptures, while Diocletian and Galerius watch from the palace; then the Praetorian Guard levels the building in a few hours."
+      ru: "В праздник бога Термина начинается Великое гонение. Префект с чиновниками врываются в церковь Никомидии и сжигают Писания, а Диоклетиан и Галерий смотрят на это из дворца; затем преторианцы за несколько часов сносят здание."

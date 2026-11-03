@@ -16,3 +16,5 @@ before the branch goes to production; the list is then emptied.
   and Russian only: its title, its 8 notes and the 7 cites.
 - `content/tours/ignatius.yaml`: the tour of Ignatius of Antioch, Antioch to Rome, in English
   and Russian only: its title, its 7 notes and the 7 cites.
+- `content/tours/martyrs.yaml`: the tour of the martyrs before Constantine, Smyrna to
+  Nicomedia, in English and Russian only: its title, its 6 notes and the 6 cites.
