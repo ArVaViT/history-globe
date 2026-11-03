@@ -15,7 +15,7 @@ work directory outside the repo (the downloads stay there); `R` is this repo.
 7. `python3 -I assemble.py S R`: names no other place has; writes the content file.
 
 Wave 1 took the items with at least 8 Wikipedia articles; wave 2 (`FAME=5`, `WAVE=2`) those
-with 5 to 7 and the ones wave 1's classes missed. Steps 3–7 take `FAME` (the least articles)
+with 5 to 7 and the ones wave 1's classes missed; wave 3 (`FAME=3`, `WAVE=3`) those with 3 and 4. Steps 3–7 take `FAME` (the least articles)
 and `assemble.py` takes `WAVE` (the file's number); a later wave skips every site already in one.
 
 8. `python3 -I fame.py S R`: the Wikipedia articles of every place's own Wikidata item, where

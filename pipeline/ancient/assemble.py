@@ -24,8 +24,10 @@ RENAME={'Temple romain de Château-Bas':'Temple of Château-Bas','Archeological 
  'Cala Morell Settlement':'Cala Morell','Portus Magnus, Algeria':'Portus Magnus','Poblat talaiòtic de Montefí':'Montefí',
  'Sa Caleta Phoenician Settlement':'Sa Caleta','Nicaea, Locris':'Nicaea in Locris','Epiphania, Cilicia':'Epiphania in Cilicia',
  'Temple of Janus':'Temple of Janus at Autun',
- 'Hosn Niha Site':'Hosn Niha','Ancient Tenea':'Tenea','Ancient Lappa':'Lappa','Gremanu nuraghe sacred place':'Gremanu'}
-KIND={'Villa of Herodes Atticus':'site','Necropolis of Pranu Muttedu':'site'}
+ 'Hosn Niha Site':'Hosn Niha','Ancient Tenea':'Tenea','Ancient Lappa':'Lappa','Gremanu nuraghe sacred place':'Gremanu',
+ 'Pharsalos ancient city':'Pharsalus','Ancient Tithorea':'Tithorea','Gytheion ancient polis':'Gytheion','Kisamos ancient city':'Kisamos','Mochlos site':'Mochlos','Ciudad romana de Lacipo':'Lacipo','Area archeologica del Castrum Inui':'Castrum Inui',"Santuario italico di Schiavi d'Abruzzo":"Sanctuary of Schiavi d'Abruzzo",'Poblat ibèric de Can Fatjó':'Can Fatjó','Poblat ibèric de la Cadira del Bisbe':'Cadira del Bisbe','Poblat ibèric de les Maleses':'Les Maleses','Poblat Ibèric del Turó de Castellruf':'Turó de Castellruf','Povoado fortificado e Santuário de Endovélico':'Sanctuary of Endovelicus','Camp celtique de la Bure':'La Bure','Necropolis of Manduria':'Manduria','Minoan villa of Achladia':'Achladia','Üçtepe Mound':'Üçtepe','Agios Konstantinos, Methana':'Sanctuary of Agios Konstantinos',
+ 'Aventicum, Roman city - Avenches, medieval-modern city':'Aventicum','Castro, Lazio':'Castro','Ancient Maroneia':'Maroneia','Sanctuary of Isthmian Poseidon, Isthmia':'Isthmia'}
+KIND={'Villa of Herodes Atticus':'site','Necropolis of Pranu Muttedu':'site','Achladia':'site'}
 clean=lambda n:re.sub(r'\s*\([^)]*\)','',n).strip()
 # Names already on the map, per language: a new site never takes one (Thebe near Troy as «Фивы»).
 taken=collections.defaultdict(set)

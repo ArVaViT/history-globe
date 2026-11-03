@@ -37,6 +37,9 @@ class of place.
 - The script's second wave (`content/ancient-sites-wave2.json`, 431 sites): the less known,
   5 to 7 Wikipedia articles, and those the first wave's classes missed (Gallo-Roman towns,
   Etruscan temples, Iberian settlements).
+- The third (`content/ancient-sites-wave3.json`, 548 sites, 2026-11-03): 3 and 4 articles,
+  drawn at the lowest rank (a dot from zoom 9, a name from 10). Before it every site's point was checked against
+  its Wikidata item's (`pipeline/ancient/coords.py`): two moved, two wrong pairings dropped.
 - English first: the docs' sentence about grey names is rewritten in English only until
   the next translation pass.
 - Tours told outside the Bible (2026-11-02): a stop has a verse (`ref`) or a `source`, the
