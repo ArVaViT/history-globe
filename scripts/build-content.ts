@@ -803,8 +803,9 @@ if (existsSync("content/ancient-sites.json")) {
         properties: {
           id: s.id,
           en: s.en,
-          // ru, uk, es, …: its name in each language that has one.
-          ...s.names,
+          // ru, uk, es, …: its name in each language that has one of its own (one the same
+          // as the English is left out: the map and the card fall back to it; 20 kB less).
+          ...Object.fromEntries(Object.entries(s.names ?? {}).filter(([, v]) => v !== s.en)),
           from: s.from,
           to: s.to,
           // Fame lifts a site as it lifts the Bible's towns (pipeline/build_data.py fame_rank).
