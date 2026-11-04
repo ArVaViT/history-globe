@@ -38,6 +38,9 @@ NAME={('Helenopolis','ru'):'Еленополь',('Aegae','ru'):'Эги Кили�
  # None: no name in that language (the English stands): a modern village, another place, a
  # description, or a label in the wrong language (found 2026-11-03, sound for sound).
  ('Acropolis of Arpino','cs'):None,('Acropolis of Arpino','da'):None,('Acropolis of Arpino','es'):None,('Acropolis of Arpino','fi'):None,('Acropolis of Arpino','fr'):None,('Acropolis of Arpino','nb'):None,('Acropolis of Arpino','pl'):None,('Acropolis of Arpino','pt'):None,('Acropolis of Arpino','ro'):None,('Acropolis of Arpino','sr'):None,('Acropolis of Arpino','sv'):None,('Acropolis of Arpino','tl'):None,('Aegae','es'):None,('Aegae','it'):None,('Aegae','nl'):None,('Aegae','uk'):None,('Alba Helviorum','fr'):None,('Alba Helviorum','nl'):None,('Anthemous','sv'):None,('Aventicum','de'):None,('Aventicum','fr'):None,('Bakchias','sv'):None,('Diocletianopolis in Thrace','pl'):None,('Gnatia','es'):None,('Haïdra','es'):None,('Histiaia','es'):None,('Histiaia','nl'):None,('Histiaia','uk'):None,('Iluro','es'):None,('Issus','nl'):None,('Kandyba','vi'):None,("L'Alcúdia",'es'):None,("L'Alcúdia",'sv'):None,('Macistus','fi'):None,('Malgium','nl'):None,('Manduria','fr'):None,('Manduria','it'):None,('Manduria','nl'):None,('Olba','de'):None,('Panionium','nl'):None,('Porto Pisano','de'):None,('Raphana','nb'):None,('Sa Caleta','de'):None,('Scoglietto sanctuary','it'):None,('Scoglietto sanctuary','nl'):None,('Sippar-Amnanum','fr'):None,('Sippar-Amnanum','nl'):None,('Sippar-Amnanum','pl'):None,('Sippar-Amnanum','sv'):None,('Temple of Château-Bas','de'):None,('Temple of Château-Bas','nl'):None,('Tigranocerta','de'):None,('Tintignac','it'):None,('Xyniae','bg'):None,('Xyniae','sr'):None}
+# Cyrillic names where Wikidata has none: ours, as that language's classical scholarship writes
+# the place or sound for sound (names-cyrillic.json, 2026-11-04); a Wikidata label wins.
+CYR=json.load(open(f'{R}/pipeline/ancient/names-cyrillic.json')) if os.path.exists(f'{R}/pipeline/ancient/names-cyrillic.json') else {}
 KIND={'Villa of Herodes Atticus':'site','Necropolis of Pranu Muttedu':'site','Achladia':'site'}
 clean=lambda n:re.sub(r'\s*\([^)]*\)','',n).strip()
 # Names already on the map, per language: a new site never takes one (Thebe near Troy as «Фивы»).
@@ -70,6 +73,8 @@ for s in sorted(k,key=lambda s:-s['fame']):
         v=clean(v)
         if v and v not in taken[l] and v!=en: names[l]=v
         elif v in taken[l]: drop[f'name taken {l}']+=1
+    for l,v in CYR.get(s['id'],{}).items():
+        if l not in names and v not in taken[l]: names[l]=v
     for l,v in names.items(): taken[l].add(v)
     taken['en'].add(en)
     fx=FIX.get(en)
@@ -78,5 +83,5 @@ for s in sorted(k,key=lambda s:-s['fame']):
     out.append({'id':s['id'],'en':en,**({'names':names} if names else {}),'lon':s['lon'],'lat':s['lat'],'from':s['from_'],'to':s['to'],'approx':True,'kind':s['kind'],'rank':1 if s['fame']>=12 else 2,
       'sources':[f"https://pleiades.stoa.org/places/{s['id']}",f"https://www.wikidata.org/wiki/{s['qid']}",f"years: the span of the periods Pleiades attests it in ({s['periods']})"+(f"; by hand: {fx[2]}" if fx else "")]})
 out.sort(key=lambda s:s['id'])
-json.dump({'_source':f'Ancient sites, wave {W} (2026-11-01): Pleiades (CC BY 3.0) settlements, sanctuaries and ports linked to a Wikidata item (CC0) that is an ancient site, not a modern town; point from Pleiades; years the span of the periods Pleiades attests (modern ones left out), so approximate; names from Wikidata labels, none that another place on the map already has. Written by a script; see docs/adr/0018.','sites':out},open(f'{R}/content/ancient-sites-wave{W}.json','w'),ensure_ascii=False,indent=1)
+json.dump({'_source':f'Ancient sites, wave {W} (2026-11-01): Pleiades (CC BY 3.0) settlements, sanctuaries and ports linked to a Wikidata item (CC0) that is an ancient site, not a modern town; point from Pleiades; years the span of the periods Pleiades attests (modern ones left out), so approximate; names from Wikidata labels (in Russian, Ukrainian, Bulgarian and Serbian, where Wikidata has none, ours: pipeline/ancient/names-cyrillic.json), none that another place on the map already has. Written by a script; see docs/adr/0018.','sites':out},open(f'{R}/content/ancient-sites-wave{W}.json','w'),ensure_ascii=False,indent=1)
 print(len(out),dict(drop),collections.Counter(s['rank'] for s in out))
