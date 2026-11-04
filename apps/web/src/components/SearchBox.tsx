@@ -198,9 +198,16 @@ export function SearchBox({
   // Any language but English: the English line beside a name of its own says nothing.
   const ru = i18n.language !== "en";
   // "Деян 16": the places whose verses include that chapter, offered above the names.
-  // A place's own name before the number («Иерусалим 1», "Jericho 6") is not a book.
+  // A place's own name before the number («Иерусалим 1», "Jericho 6") is not a book. The
+  // Bible's places only: an ancient site's label in some language ("Amos", Serbian «Ис» for
+  // Issus) would hide a book of the same name ("Amos 5", «Ис 53»).
   const placeNames = useMemo(
-    () => new Set([...data.byId.values()].flatMap(({ props }) => namesOf(props).map(foldName))),
+    () =>
+      new Set(
+        [...data.byId.values()]
+          .filter(({ props }) => !props.ancient)
+          .flatMap(({ props }) => namesOf(props).map(foldName)),
+      ),
     [data],
   );
   const chapter = useMemo(() => {
@@ -251,11 +258,13 @@ export function SearchBox({
     return data.tours
       .filter(
         (tour) =>
-          Object.values(tour.title).some((n) => foldName(n).includes(q)) ||
-          (tour.people ?? []).some((id) => who.has(id)),
+          // The Bible alone: not the tours told by other authors.
+          (!bibleOnly || tour.stops.every((st) => st.ref)) &&
+          (Object.values(tour.title).some((n) => foldName(n).includes(q)) ||
+            (tour.people ?? []).some((id) => who.has(id))),
       )
       .slice(0, 3);
-  }, [data, year, query, persons]);
+  }, [data, year, query, persons, bibleOnly]);
   // Events and battles by a word of their title: "Гавгамелы" for «Александр разбивает
   // Дария III при Гавгамелах». After everything else: a place or a person is meant first.
   const eventsFound = useMemo(

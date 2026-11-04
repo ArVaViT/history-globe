@@ -930,7 +930,9 @@ export function buildPolities({
       ? (JSON.parse(readFileSync(file, "utf8")) as unknown)
       : { _source: "none", sites: [] };
   const ancient = [
-    ...AncientSitesFile.parse(read("content/ancient-sites.json")).sites,
+    ...(existsSync("content/ancient-sites.json")
+      ? AncientSitesFile.parse(read("content/ancient-sites.json")).sites
+      : []),
     ...readdirSync("content")
       .filter((f) => /^ancient-sites-wave\d+\.json$/.test(f))
       .flatMap((f) => AncientWaveFile.parse(read(join("content", f))).sites),

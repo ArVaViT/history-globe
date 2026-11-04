@@ -489,6 +489,34 @@ await step("a quiz prints for a tour, the place never named in its own question"
   });
 });
 
+await step("a tour told outside the Bible prints a quiz too", async () => {
+  await page.goto(BASE + "?tour=jewish-war&locale=ru");
+  await mapReady(page);
+  await page.evaluate(() => {
+    window.print = () => undefined;
+  });
+  await page.getByRole("button", { name: /^Ещё/ }).click();
+  await page.getByRole("button", { name: /Викторина для учеников/ }).click();
+  await page
+    .locator("#hg-print .hg-quiz li")
+    .first()
+    .waitFor({ state: "attached", timeout: 15000 });
+  const q = await page.locator("#hg-print .hg-quiz li").count();
+  expect(q >= 8, `${String(q)} questions`);
+  await page.evaluate(() => {
+    document.getElementById("hg-print")?.remove();
+  });
+});
+
+await step("a book whose short name an ancient site shares is still a chapter", async () => {
+  // «Ис» is Issus in Serbian; Isaiah's abbreviation in Russian must still find the chapter (Tyre, Sidon).
+  await page.goto(BASE + "?locale=ru");
+  await mapReady(page);
+  await page.getByRole("button", { name: "Поиск места" }).click();
+  await page.getByRole("combobox").fill("Ис 23");
+  await page.getByRole("option", { name: /Ис 23/ }).first().waitFor({ timeout: 5000 });
+});
+
 await step("a person's card offers their tours, and one starts", async () => {
   await page.goto(BASE + "?locale=ru");
   await mapReady(page);

@@ -469,6 +469,15 @@ export function App() {
       ].sort((a, b) => a.year - b.year),
     [events, data, bibleOnly],
   );
+  // "The Bible alone" leaves out the tours told by other authors (Josephus, Jerome): in its
+  // lists, its quiz and a person's card alike.
+  const tours = useMemo(
+    () =>
+      bibleOnly
+        ? (data?.tours ?? []).filter((tour) => tour.stops.every((st) => st.ref))
+        : (data?.tours ?? []),
+    [data, bibleOnly],
+  );
   useEffect(() => {
     globe?.renderer.setBibleOnly(bibleOnly);
   }, [globe, bibleOnly]);
@@ -888,7 +897,7 @@ export function App() {
                           setMeasure({ from: null, to: null });
                         },
                       }}
-                      tours={data.tours.map((x) => ({
+                      tours={tours.map((x) => ({
                         id: x.id,
                         title: x.title[state.locale] ?? x.title.en ?? x.id,
                       }))}
@@ -929,12 +938,7 @@ export function App() {
                         panels={{
                           tours: (
                             <ToursPanel
-                              // "The Bible alone" leaves out the tours told by other authors.
-                              tours={
-                                bibleOnly
-                                  ? data.tours.filter((tour) => tour.stops.every((st) => st.ref))
-                                  : data.tours
-                              }
+                              tours={tours}
                               onStart={(id) => {
                                 setPlaying(false);
                                 // The tour's route wants the map: the overview steps aside
@@ -1047,7 +1051,7 @@ export function App() {
                     engine.selectPlace(id, { fly: true });
                   }}
                   onClose={closePerson}
-                  tours={data.tours}
+                  tours={tours}
                   onTour={(id) => {
                     closePerson();
                     engine.startTour(id);

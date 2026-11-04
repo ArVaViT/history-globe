@@ -98,7 +98,8 @@ export function tourSpan(stops: readonly Stop[], locale: Locale): string {
   // Told outside the Bible: the work it follows ("Josephus, Jewish War").
   const cite = stops.find((s) => s.source)?.source?.cite;
   const told = cite && (cite[locale] ?? cite.en);
-  if (told) return told.replace(/\s+[\d.–-]+$/, "");
+  // The work, without the passages ("Church History 6.1, 6.2.5-6" → "Church History").
+  if (told) return told.replace(/\s+\d[\d.,:\s–-]*$/, "");
   let first = stops[0]?.ref?.split("-")[0];
   const last = stops.at(-1)?.ref?.split("-").at(-1);
   if (!first || !last) return "";

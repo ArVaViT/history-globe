@@ -369,7 +369,13 @@ export async function loadData(): Promise<LoadedData> {
     getJson<LoadedData["places"]>("places.geojson"),
     getJson<ContentRelease>("content.json"),
     getJson<FeatureCollection<Point, SiteProps>>("sites.geojson"),
-    getJson<FeatureCollection<Point, AncientSiteProps>>("ancient.geojson"),
+    // The ancient world is the setting, not the Bible's places: without it the map still opens.
+    getJson<FeatureCollection<Point, AncientSiteProps>>("ancient.geojson").catch(
+      (): FeatureCollection<Point, AncientSiteProps> => ({
+        type: "FeatureCollection",
+        features: [],
+      }),
+    ),
   ]);
   const sites = groupSites(siteFc);
   const byId = new Map<string, { props: PlaceProps; info: PlaceInfo }>();

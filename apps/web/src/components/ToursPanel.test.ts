@@ -21,4 +21,13 @@ describe("tourSpan", () => {
     ];
     expect(tourSpan(saul, "ru")).toBe("Деян 7:58–11:26");
   });
+
+  it("names the work of a tour told outside the Bible, without its passages", () => {
+    const src = (en: string) => ({ source: { cite: { en }, url: "https://www.newadvent.org/" } });
+    expect(tourSpan([src("Eusebius, Church History 6.1, 6.2.5-6")], "en")).toBe(
+      "Eusebius, Church History",
+    );
+    expect(tourSpan([src("Martyrdom of Polycarp 9, 16")], "ru")).toBe("Martyrdom of Polycarp");
+    expect(tourSpan([src("Jerome, Letter 108.6")], "en")).toBe("Jerome, Letter");
+  });
 });

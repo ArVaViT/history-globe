@@ -606,8 +606,11 @@ export async function buildQuiz({
   const overlaps = (i: number) =>
     tour.stops.some((o, k) => {
       if (k === i || o.placeId === tour.stops[i]?.placeId) return false;
-      const x = span(tour.stops[i]?.ref ?? "");
-      const y = span(o.ref ?? "");
+      // A stop told outside the Bible has no passage to share (Josephus, Jerome).
+      const own = tour.stops[i]?.ref;
+      if (!own || !o.ref) return false;
+      const x = span(own);
+      const y = span(o.ref);
       return x.from.book === y.from.book && x.from.n <= y.to.n && y.from.n <= x.to.n;
     });
   const items = tour.stops.flatMap((st, i) => {
