@@ -29,5 +29,9 @@ describe("tourSpan", () => {
     );
     expect(tourSpan([src("Martyrdom of Polycarp 9, 16")], "ru")).toBe("Martyrdom of Polycarp");
     expect(tourSpan([src("Jerome, Letter 108.6")], "en")).toBe("Jerome, Letter");
+    // The translator one stop quotes is not the whole tour's.
+    expect(tourSpan([src("Augustine, Confessions (tr. Sergeenko) 2.3")], "en")).toBe(
+      "Augustine, Confessions",
+    );
   });
 });

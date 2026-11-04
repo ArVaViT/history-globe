@@ -953,8 +953,9 @@ function tourSpan(t: Tour, l: Lang): string {
   // Told outside the Bible: the work it follows ("Josephus, Jewish War").
   const cite = t.stops.find((s) => s.source)?.source?.cite;
   const told = cite && (cite[l] ?? cite.en);
-  // The work, without the passages ("Church History 6.1, 6.2.5-6" → "Church History").
-  if (told) return told.replace(/\s+\d[\d.,:\s–-]*$/, "");
+  // The work, without the passages ("Church History 6.1, 6.2.5-6" → "Church History") or
+  // a note on the translation one stop quotes ("Исповедь (пер. М. Е. Сергеенко) 2.3").
+  if (told) return told.replace(/\s+\d[\d.,:\s–-]*$/, "").replace(/\s*\([^()]*\)$/, "");
   const ends = t.stops
     .flatMap((s) => (s.ref ? s.ref.split("-") : []))
     .sort((a, b) => canonicalPosition(a) - canonicalPosition(b));
