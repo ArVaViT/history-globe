@@ -48,7 +48,9 @@ for r in csv.DictReader(gzip.open(f'{S}/pleiades-dl/places.csv.gz','rt')):
     if b<YMIN or a>=b: drop['outside the map']+=1; continue
     # Wikidata's founding or end, where it narrows the span: a site destroyed in the middle
     # of a period (Glanum, 260) ends then, not at the period's end; an earlier founding is
-    # left out (often the district's, not the town's).
+    # left out (often the district's, not the town's). An end up to 250 years past the last
+    # period is taken too, where Pleiades has not recorded the town's last years (Kamarina,
+    # burned by the Arabs in 853; five sites in the waves, checked 2026-11-04).
     d=wd.get(s['qid'],{})
     # The query service writes a year before Christ held to the year as an astronomical year
     # already (753 BC is -0752, as the map counts), but one held to a century as written
