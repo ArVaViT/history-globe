@@ -5,8 +5,8 @@
 # there is in Possidius, Life of Augustine 4). Each stop links the free translation of the
 # Nicene and Post-Nicene Fathers (public domain) at New Advent; its page holds the whole
 # book, and the cite gives the chapter (Milan's links Book VIII, the garden). Not one way
-# travelled: no time on foot. English and Russian first; the other languages wait for the
-# translation pass (docs/translation-debt.md).
+# travelled: no time on foot. Where a Russian note quotes the Confessions, it quotes
+# M. E. Sergeenko's translation, and the cite names her.
 id: augustine
 title:
   en: "Augustine: from Thagaste to Hippo"
@@ -38,7 +38,7 @@ stops:
     source:
       cite:
         en: "Augustine, Confessions 2.3"
-        ru: "Августин, Исповедь 2.3"
+        ru: "Августин, Исповедь (пер. М. Е. Сергеенко) 2.3"
         uk: "Августин, Сповідь 2.3"
         es: "Agustín, Confesiones 2.3"
         pt: "Agostinho, Confissões 2.3"
@@ -86,7 +86,7 @@ stops:
     source:
       cite:
         en: "Augustine, Confessions 3.1, 3.3, 3.6"
-        ru: "Августин, Исповедь 3.1, 3.3, 3.6"
+        ru: "Августин, Исповедь (пер. М. Е. Сергеенко) 3.1, 3.3, 3.6"
         uk: "Августин, Сповідь 3.1, 3.3, 3.6"
         es: "Agustín, Confesiones 3.1, 3.3, 3.6"
         pt: "Agostinho, Confissões 3.1, 3.3, 3.6"
@@ -182,7 +182,7 @@ stops:
     source:
       cite:
         en: "Augustine, Confessions 5.13, 8.12"
-        ru: "Августин, Исповедь 5.13, 8.12"
+        ru: "Августин, Исповедь (пер. М. Е. Сергеенко) 5.13, 8.12"
         uk: "Августин, Сповідь 5.13, 8.12"
         es: "Agustín, Confesiones 5.13, 8.12"
         pt: "Agostinho, Confissões 5.13, 8.12"
