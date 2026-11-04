@@ -71,6 +71,8 @@ for s in sorted(k,key=lambda s:-s['fame']):
         v=NAME.get((en,l),v)
         if v is None: continue
         v=clean(v)
+        # Wikidata's Serbian is now and then in Latin script; the map's Serbian is Cyrillic.
+        if l in ('ru','uk','bg','sr') and re.search('[A-Za-z]',v): continue
         if v and v not in taken[l] and v!=en: names[l]=v
         elif v in taken[l]: drop[f'name taken {l}']+=1
     for l,v in CYR.get(s['id'],{}).items():
