@@ -3,28 +3,10 @@
 English-only changes on this branch. Every line here is translated into all 21 languages
 before the branch goes to production; the list is then emptied.
 
-- `content/docs/en/index.html`: the sentence on the ancient world ("The ancient world is on
-  the map as the Bible's places are…") replaces "Grey names…" (ADR 0018).
-- `content/docs/en/methodology.html`: the sentences on the fourteen hundred sites chosen by a
-  script ("Some fourteen hundred more were chosen by a script…", through "…about the ancient site
-  itself."), after the ancient world's paragraph.
-- `content/tours/jewish-war.yaml`: the tour of the Jewish War (Josephus), in English and
-  Russian only: its title, its 13 notes and the 13 cites ("Josephus, Jewish War 2.284").
-- `content/battles.yaml`: the Jewish War's battles (jotapata, gamla, masada): title, sides
-  and outcome in English and Russian only.
-- `content/tours/councils.yaml`: the tour of the councils, Jerusalem to Chalcedon, in English
-  and Russian only: its title, its 8 notes and the 7 cites.
-- `content/tours/ignatius.yaml`: the tour of Ignatius of Antioch, Antioch to Rome, in English
-  and Russian only: its title, its 7 notes and the 7 cites.
-- `content/tours/martyrs.yaml`: the tour of the martyrs before Constantine, Smyrna to
-  Nicomedia, in English and Russian only: its title, its 6 notes and the 6 cites.
-- `content/tours/constantine.yaml`: the tour of Constantine, the Tiber to his baptism, in
-  English and Russian only: its title, its 7 notes and the 7 cites.
-- `content/tours/augustine.yaml`: the tour of Augustine, Thagaste to Hippo, in English and
-  Russian only: its title, its 6 notes and the 6 cites.
-- `content/tours/paula.yaml`: the tour of Paula's pilgrimage, Rome to Bethlehem, in English and
-  Russian only: its title, its 11 notes and the 11 cites.
-- `content/ancient-sites-wave*.json`: about 900 sites of the waves have no Russian name (37 of
-  them rank 1), and fewer still in the other languages; the map shows them in English.
-- `content/tours/origen.yaml`: the tour of Origen, Alexandria to Tyre, in English and Russian
-  only: its title, its 6 notes and the 6 cites.
+(Empty: the docs, the eight tours told outside the Bible and the Jewish War's battles are in
+every language as of 2026-11-04.)
+
+Not debt, by decision: the ancient sites chosen by script keep their scholarly (Pleiades or
+English) name in the languages written in Latin script where Wikidata has none of their own —
+for most of these small sites that is the form the literature in those languages uses too. The
+four Cyrillic languages have names for all of them (pipeline/ancient/names-cyrillic.json).
