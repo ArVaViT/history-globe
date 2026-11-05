@@ -22,10 +22,9 @@
     "title": "Lagen",
     "relief": "Reliëf",
     "borders": "Staatsgrenzen",
-    "places": "Bijbelse plaatsen",
+    "places": "Plaatsen",
     "routes": "Routes",
     "roads": "Romeinse wegen",
-    "ancient": "Oude wereld",
     "battles": "Veldslagen"
   },
   "tours": {
@@ -40,6 +39,7 @@
     "whole": "De hele Bijbel",
     "ot": "Oude Testament",
     "nt": "Nieuwe Testament",
+    "beyond": "Buiten de Bijbel",
     "about_place": "Over de plaats",
     "stops_list": "Haltes",
     "back_to": "Terug naar de route ‘{{title}}’",
@@ -213,7 +213,6 @@
     "major": "grote stad",
     "faded": "bestond dat jaar niet",
     "route": "route",
-    "ancient": "stad buiten de Bijbel",
     "roman_road": "Romeinse weg"
   },
   "events": {

@@ -57,8 +57,11 @@ await loadAllLocaleData();
 const root = join(import.meta.dirname, "..");
 
 /** Whether a tour's stops read from both testaments (as ToursPanel.tsx groups them). */
-const testamentOf = (stops: readonly { readonly ref: string }[]): "whole" | "ot" | "nt" => {
-  const nt = stops.map((s) => NT_BOOKS.has(s.ref.split(".")[0] ?? ""));
+const testamentOf = (
+  stops: readonly { readonly ref?: string | undefined; readonly source?: unknown }[],
+): "whole" | "ot" | "nt" | "beyond" => {
+  if (stops.some((s) => s.source)) return "beyond";
+  const nt = stops.map((s) => NT_BOOKS.has(s.ref?.split(".")[0] ?? ""));
   return nt.includes(true) && nt.includes(false) ? "whole" : nt.includes(true) ? "nt" : "ot";
 };
 const pub = join(root, "apps/web/public");
@@ -124,6 +127,17 @@ const places = (
     features: { geometry: { coordinates: [number, number] }; properties: Props }[];
   }
 ).features;
+/** The ancient world's sites (ancient.geojson): a tour's stop may stand at one (ADR 0018). */
+const ancient = new Map(
+  (
+    JSON.parse(readFileSync(join(data, "ancient.geojson"), "utf8")) as {
+      features: {
+        geometry: { coordinates: [number, number] };
+        properties: { id: string; en: string } & Partial<Record<Lang, string>>;
+      }[];
+    }
+  ).features.map((f) => [f.properties.id, f]),
+);
 const content = inEveryLanguage(
   JSON.parse(readFileSync(join(data, "content.json"), "utf8")),
 ) as ContentRelease & {
@@ -463,6 +477,15 @@ const linkedVerse = (text: string, f: (typeof places)[number], l: Lang) => {
     .join("");
 };
 const byId = new Map(places.map((f) => [f.properties.id, f]));
+/** A stop's point and name: a place of the Bible, or a site of the ancient world. */
+const pointOf = (id: string) =>
+  byId.get(id)?.geometry.coordinates ?? ancient.get(id)?.geometry.coordinates;
+const stopName = (id: string, l: Lang) => {
+  const f = byId.get(id);
+  if (f) return nameOf(f.properties, l);
+  const a = ancient.get(id)?.properties;
+  return a ? (a[l] ?? a.en) : id;
+};
 const toursAt = new Map<string, string[]>();
 for (const t of content.tours)
   for (const s of t.stops) {
@@ -756,8 +779,8 @@ function tourPages(l: Lang): void {
       : {}
   ) as Record<string, (number | null)[] | undefined>;
   const legOf = (t: (typeof content.tours)[number], i: number) => {
-    const a = byId.get(t.stops[i - 1]?.place ?? "")?.geometry.coordinates;
-    const b = byId.get(t.stops[i]?.place ?? "")?.geometry.coordinates;
+    const a = pointOf(t.stops[i - 1]?.place ?? "");
+    const b = pointOf(t.stops[i]?.place ?? "");
     if (!a || !b) return "";
     const d = distanceKm(a, b);
     if (d < 2) return "";
@@ -799,13 +822,13 @@ function tourPages(l: Lang): void {
       <ol class="stops">${t.stops
         .map((s, i) => {
           const f = byId.get(s.place);
-          const n = f ? nameOf(f.properties, l) : s.place;
+          const n = stopName(s.place, l);
           const link =
             f && f.properties.verses > 0
               ? `<a href="../../place/${slugOf.get(s.place) ?? s.place}/">${esc(n)}</a>`
               : esc(n);
           const leg = legOf(t, i);
-          return `<li><p class="stop"><b>${link}</b> <span class="ref">${esc(refOf(s.ref, l))}${leg ? ` · ${esc(leg)}` : ""}</span></p><p>${esc(s.note[l] ?? s.note.en)}</p><a class="more" href="../../../?tour=${t.id}&amp;stop=${String(i + 1)}&amp;locale=${l}">${T[l].open} →</a></li>`;
+          return `<li><p class="stop"><b>${link}</b> <span class="ref">${esc(s.ref ? refOf(s.ref, l) : (s.source?.cite[l] ?? s.source?.cite.en ?? ""))}${leg ? ` · ${esc(leg)}` : ""}</span></p><p>${esc(s.note[l] ?? s.note.en)}</p><a class="more" href="../../../?tour=${t.id}&amp;stop=${String(i + 1)}&amp;locale=${l}">${T[l].open} →</a></li>`;
         })
         .join("\n        ")}</ol>
     </main>`;
@@ -887,7 +910,7 @@ function routeSvg(t: Tour): string {
   const H = 90;
   const PAD = 12;
   const pts = t.stops.flatMap((s) => {
-    const c = byId.get(s.place)?.geometry.coordinates;
+    const c = pointOf(s.place);
     return c ? [{ c, by: s.by }] : [];
   });
   if (pts.length === 0) return "";
@@ -927,8 +950,14 @@ function routeSvg(t: Tour): string {
  * "Мф 2 – Деян 1" across books (the Synodal numbers in Russian, as formatRef gives them).
  */
 function tourSpan(t: Tour, l: Lang): string {
+  // Told outside the Bible: the work it follows ("Josephus, Jewish War").
+  const cite = t.stops.find((s) => s.source)?.source?.cite;
+  const told = cite && (cite[l] ?? cite.en);
+  // The work, without the passages ("Church History 6.1, 6.2.5-6" → "Church History") or
+  // a note on the translation one stop quotes ("Исповедь (пер. М. Е. Сергеенко) 2.3").
+  if (told) return told.replace(/\s+\d[\d.,:\s–-]*$/, "").replace(/\s*\([^()]*\)$/, "");
   const ends = t.stops
-    .flatMap((s) => s.ref.split("-"))
+    .flatMap((s) => (s.ref ? s.ref.split("-") : []))
     .sort((a, b) => canonicalPosition(a) - canonicalPosition(b));
   const [b1 = "", c1 = ""] = (ends[0] ?? "").split(".");
   const [b2 = "", c2 = ""] = (ends.at(-1) ?? "").split(".");
@@ -943,8 +972,8 @@ function tourKm(t: Tour): number | null {
   if (t.walked === false) return null;
   let km = 0;
   for (let i = 1; i < t.stops.length; i++) {
-    const a = byId.get(t.stops[i - 1]?.place ?? "")?.geometry.coordinates;
-    const b = byId.get(t.stops[i]?.place ?? "")?.geometry.coordinates;
+    const a = pointOf(t.stops[i - 1]?.place ?? "");
+    const b = pointOf(t.stops[i]?.place ?? "");
     if (a && b) km += distanceKm(a, b);
   }
   return km >= 2 ? km : null;
@@ -1035,7 +1064,7 @@ function indexPages(l: Lang): void {
       body: `    <main id="main" class="page list">
       <h1>${T[l].toursTitle}</h1>
       <p class="list-lead">${esc(W.toursLead(n.format(content.tours.length), content.tours.length))}</p>
-      ${(["whole", "ot", "nt"] as const)
+      ${(["whole", "ot", "nt", "beyond"] as const)
         .map((g) => {
           // By testament, as the app's list: a tour reading from both is the whole Bible's.
           const group = [...content.tours]

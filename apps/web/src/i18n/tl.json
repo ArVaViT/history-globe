@@ -22,10 +22,9 @@
     "title": "Mga patong",
     "relief": "Anyo ng lupa",
     "borders": "Mga hangganan",
-    "places": "Mga lugar sa Biblia",
+    "places": "Mga lugar",
     "routes": "Mga ruta",
     "roads": "Mga daang Romano",
-    "ancient": "Sinaunang daigdig",
     "battles": "Mga labanan"
   },
   "tours": {
@@ -40,6 +39,7 @@
     "whole": "Ang buong Biblia",
     "ot": "Lumang Tipan",
     "nt": "Bagong Tipan",
+    "beyond": "Lampas sa Bibliya",
     "about_place": "Tungkol sa lugar",
     "stops_list": "Mga hintuan",
     "back_to": "Bumalik sa paglalakbay na “{{title}}”",
@@ -213,7 +213,6 @@
     "major": "pangunahing bayan",
     "faded": "hindi nakatayo sa taong iyon",
     "route": "ruta ng paglalakbay",
-    "ancient": "lungsod sa labas ng Biblia",
     "roman_road": "daang Romano"
   },
   "events": {

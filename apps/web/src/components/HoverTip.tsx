@@ -1,8 +1,8 @@
-import { polityText, YEAR_MAX, type AncientSite, type PolityName, type Renderer } from "@hg/core";
+import { polityText, type PolityName, type Renderer } from "@hg/core";
 import { useEffect, useState } from "react";
-import { formatYear, formatYearRange, type Locale, placeName, pick } from "@hg/model";
+import { formatYear, type Locale, placeName, pick } from "@hg/model";
 import { useTranslation } from "../i18n";
-import { hasOwnName, whereIn, type PlaceProps } from "../data";
+import { hasOwnName, standingSpan, whereIn, type PlaceProps } from "../data";
 
 /** Small label that follows the pointer over a place: name, its kind, and the other-language name. */
 export function HoverTip({
@@ -15,15 +15,20 @@ export function HoverTip({
   locale: Locale;
 }) {
   const { t } = useTranslation();
-  const kindKey = `kind.${place.kind}`;
+  // A place of the ancient world says what it was ("capital"; a city, nothing): the state
+  // drawn under it in a later year need not be the one it was the capital of.
+  const kindKey = place.ancient ? `ancient.${place.ancient}` : `kind.${place.kind}`;
   const kind = t(kindKey) === kindKey ? "" : t(kindKey);
   const primary = placeName(place, locale);
-  // Under a name of the reader's language, the English one; else where it is today.
+  // Under a name of the reader's language, the English one; else where it is today, or
+  // when a place of the ancient world stood.
   const secondary = hasOwnName(place, locale)
     ? place.name
-    : place.where !== place.name
-      ? (whereIn(place, locale) ?? place.where)
-      : "";
+    : place.ancient
+      ? standingSpan(place, t, locale)
+      : place.where !== place.name
+        ? (whereIn(place, locale) ?? place.where)
+        : "";
   return (
     <div
       className="pointer-events-none absolute z-10 -translate-y-full rounded-lg bg-ink/90 px-2.5 py-1.5 text-paper shadow-lg"
@@ -75,10 +80,6 @@ export function PolityTip({ renderer, locale }: { renderer: Renderer; locale: Lo
   );
 }
 
-/**
- * Over a site of the ancient world layer: its name, what it was and the years it stood.
- * Listens to the renderer itself, as PolityTip does.
- */
 /** A battle's name and year by its mark (the place's tip would name the place under it). */
 export function BattleTip({ renderer, locale }: { renderer: Renderer; locale: Locale }) {
   const { t } = useTranslation();
@@ -113,50 +114,6 @@ export function BattleTip({ renderer, locale }: { renderer: Renderer; locale: Lo
         {tip.battle.approx ? `${t("place.circa")} ` : ""}
         {formatYear(tip.battle.year, locale)}
       </div>
-    </div>
-  );
-}
-
-export function AncientTip({ renderer, locale }: { renderer: Renderer; locale: Locale }) {
-  const { t } = useTranslation();
-  const [tip, setTip] = useState<{
-    site: AncientSite;
-    at: { readonly x: number; readonly y: number };
-  } | null>(null);
-  useEffect(
-    () =>
-      renderer.on("hoverAncient", (site, at) => {
-        setTip(site && at ? { site, at } : null);
-      }),
-    [renderer],
-  );
-  if (!tip) return null;
-  const { site } = tip;
-  const kindKey = `ancient.${site.kind}`;
-  // "Capital" alone: the state drawn under it in a later year need not be the one it
-  // was the capital of (Bactra under the Ghaznavids).
-  const kind = t(kindKey) === kindKey ? "" : t(kindKey);
-  const circa = site.approx ? `${t("place.circa")} ` : "";
-  // A site still standing at the map's end is "from …", not "… – 1300".
-  const years =
-    site.to >= YEAR_MAX
-      ? t("ancient.since", { year: circa + formatYear(site.from, locale) })
-      : circa + formatYearRange(site.from, site.to, locale);
-  return (
-    <div
-      className="pointer-events-none absolute z-10 max-w-64 -translate-y-full rounded-lg bg-ink/90 px-2.5 py-1.5 text-paper shadow-lg"
-      // Past the middle of the screen the tip opens to the left, so it never runs off it.
-      style={
-        tip.at.x > innerWidth / 2
-          ? { right: innerWidth - tip.at.x + 14, top: tip.at.y - 10 }
-          : { left: tip.at.x + 14, top: tip.at.y - 10 }
-      }
-    >
-      <div className="font-serif text-[14px] leading-tight">
-        {site.names?.[locale] ?? pick({ en: site.en, ru: site.ru }, locale) ?? site.en}
-        {kind && <span className="ml-1.5 font-sans text-[11px] text-paper/60">{kind}</span>}
-      </div>
-      <div className="text-[11px] text-paper/70">{years}</div>
     </div>
   );
 }

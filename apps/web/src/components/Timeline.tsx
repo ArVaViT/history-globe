@@ -138,8 +138,8 @@ export interface TimelineEvent {
   readonly major?: boolean;
   /** The place it happened at, opened when its mark is pressed. */
   readonly place?: string;
-  /** Or the ancient site, flown to. */
-  readonly site?: { readonly lon: number; readonly lat: number; readonly rank?: number };
+  /** Or the ancient site, opened as a place is. */
+  readonly site?: { readonly id: string };
 }
 
 export function Timeline({

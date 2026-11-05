@@ -85,7 +85,7 @@ export function chapterRoute(
   inChapter: (ref: string) => boolean,
 ): { at: (readonly [number, number])[]; places: string[] } | null {
   if (!tour || tour.walked === false) return null;
-  const idx = tour.stops.flatMap((st, i) => (inChapter(st.ref) ? [i] : []));
+  const idx = tour.stops.flatMap((st, i) => (st.ref && inChapter(st.ref) ? [i] : []));
   const first = idx[0];
   const last = idx.at(-1);
   if (first === undefined || last === undefined) return null;
@@ -210,22 +210,26 @@ export function chapterFocus(
   // it (Acts → Paul's journeys, not the survey of empires that ends in Rome).
   const book = span.to - span.from > 200_000;
   const stopsIn = (t: (typeof data.tours)[number]) =>
-    t.stops.filter((st) => inSpan(st.ref, span)).length;
+    t.stops.filter((st) => st.ref !== undefined && inSpan(st.ref, span)).length;
   const tour = book
     ? [...data.tours].sort((a, b) => stopsIn(b) - stopsIn(a))[0]
-    : data.tours.find((t) => t.stops.some((st) => inSpan(st.ref, span)));
+    : data.tours.find((t) => t.stops.some((st) => st.ref !== undefined && inSpan(st.ref, span)));
   // A chapter's own year comes first (content/chapter-years.yaml); then the tour's.
   const own = book || !data.chapterYears ? undefined : yearOfRef(ref, data.chapterYears);
   const year =
     own ??
     (tour && stopsIn(tour) > 0
-      ? (tour.stops.find((st) => inSpan(st.ref, span))?.year ?? tour.year)
+      ? (tour.stops.find((st) => st.ref !== undefined && inSpan(st.ref, span))?.year ?? tour.year)
       : undefined);
   // A whole book's tours are too long to draw as one chapter's way.
   const route = book
     ? null
     : chapterRoute(
-        data.tours.find((t) => t.walked !== false && t.stops.some((st) => inSpan(st.ref, span))),
+        data.tours.find(
+          (t) =>
+            t.walked !== false &&
+            t.stops.some((st) => st.ref !== undefined && inSpan(st.ref, span)),
+        ),
         (r) => inSpan(r, span),
       );
   return {

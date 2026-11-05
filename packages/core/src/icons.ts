@@ -160,7 +160,7 @@ const DRAW: Readonly<Record<string, Draw>> = {
 };
 
 /**
- * The marks of towns and ancient sites, as icons rather than circles: a symbol takes part
+ * The marks of towns, as icons rather than circles: a symbol takes part
  * in MapLibre's collision detection and a circle does not, so with circles a dozen towns
  * around Jerusalem piled up at a globe's view and the names lay under the pile. Each mark
  * is drawn on a canvas just its own size (plus room for the halo), so its collision box is
@@ -208,13 +208,6 @@ const MARKS: Readonly<Record<string, { size: number; draw: Draw }>> = {
     draw: (c) => {
       ring(c, 20, 5.5, 10);
       ring(c, 20, 17, 20);
-    },
-  },
-  // An ancient site (ADR 0013): a small grey ring round a 3.3 px hole.
-  "hg-ancient": {
-    size: 20,
-    draw: (c) => {
-      ring(c, 10, 6.6, 9.6);
     },
   },
 };

@@ -265,7 +265,7 @@ export async function printForClass({
     tour?.id === "lesson" && !blank
       ? await Promise.all(
           tour.stops.map((st) =>
-            loadVerse(st.ref, s.locale).then(
+            loadVerse(st.ref ?? "", s.locale).then(
               (v) => v ?? "",
               () => "",
             ),
@@ -347,7 +347,9 @@ export async function printForClass({
           n: i + 1,
           name: nameOf(st.placeId),
           // The passage, and how far the stop is from the one before, as the card says it.
-          ref: [ref(st.ref), leg(i)].filter(Boolean).join(" · "),
+          ref: [st.ref ? ref(st.ref) : (st.source?.cite[s.locale] ?? st.source?.cite.en), leg(i)]
+            .filter(Boolean)
+            .join(" · "),
           note: st.note[s.locale] || st.note.en || verses[i] || "",
         }))
       : chapter
@@ -539,7 +541,7 @@ export async function buildQuiz({
     tour.stops.map(async (st) => {
       const note = st.note[s.locale] || st.note.en || "";
       // A note too short to ask by («Снова в Листре.» → «Снова ______.»): the verse instead.
-      if (note.length >= 30) return note;
+      if (note.length >= 30 || !st.ref) return note;
       return (await loadVerse(st.ref, s.locale).catch(() => null)) ?? note;
     }),
   );
@@ -562,7 +564,9 @@ export async function buildQuiz({
   // most named first, so that each question still offers four.
   const own = new Set(names);
   const chapters = new Set(
-    tour.stops.flatMap((st) => st.ref.split("-").map((r) => r.split(".").slice(0, 2).join("."))),
+    tour.stops.flatMap((st) =>
+      (st.ref ?? "").split("-").map((r) => r.split(".").slice(0, 2).join(".")),
+    ),
   );
   const borrowed =
     own.size >= 4
@@ -602,7 +606,10 @@ export async function buildQuiz({
   const overlaps = (i: number) =>
     tour.stops.some((o, k) => {
       if (k === i || o.placeId === tour.stops[i]?.placeId) return false;
-      const x = span(tour.stops[i]?.ref ?? "");
+      // A stop told outside the Bible has no passage to share (Josephus, Jerome).
+      const own = tour.stops[i]?.ref;
+      if (!own || !o.ref) return false;
+      const x = span(own);
       const y = span(o.ref);
       return x.from.book === y.from.book && x.from.n <= y.to.n && y.from.n <= x.to.n;
     });
@@ -617,7 +624,9 @@ export async function buildQuiz({
         text: capital(
           maskPlace(text, index, st.placeId, [plain[i] ?? "", p?.name ?? ""], s.locale),
         ),
-        ref: formatRefOr(st.ref, s.locale),
+        ref: st.ref
+          ? formatRefOr(st.ref, s.locale)
+          : (st.source?.cite[s.locale] ?? st.source?.cite.en ?? ""),
         options: shown,
         names: options,
         answer: options.indexOf(names[i] ?? ""),

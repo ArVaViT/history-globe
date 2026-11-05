@@ -22,10 +22,9 @@
     "title": "Calques",
     "relief": "Relief",
     "borders": "Frontières des États",
-    "places": "Lieux bibliques",
+    "places": "Lieux",
     "routes": "Itinéraires",
     "roads": "Voies romaines",
-    "ancient": "Monde antique",
     "battles": "Batailles"
   },
   "tours": {
@@ -40,6 +39,7 @@
     "whole": "Toute la Bible",
     "ot": "Ancien Testament",
     "nt": "Nouveau Testament",
+    "beyond": "Au-delà de la Bible",
     "about_place": "À propos du lieu",
     "stops_list": "Étapes",
     "back_to": "Retour au parcours « {{title}} »",
@@ -213,7 +213,6 @@
     "major": "ville importante",
     "faded": "n’existait pas cette année-là",
     "route": "itinéraire du parcours",
-    "ancient": "ville hors de la Bible",
     "roman_road": "voie romaine"
   },
   "events": {

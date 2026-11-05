@@ -22,10 +22,9 @@
     "title": "Capas",
     "relief": "Relieve",
     "borders": "Fronteras de los estados",
-    "places": "Lugares bíblicos",
+    "places": "Lugares",
     "routes": "Rutas",
     "roads": "Calzadas romanas",
-    "ancient": "Mundo antiguo",
     "battles": "Batallas"
   },
   "tours": {
@@ -40,6 +39,7 @@
     "whole": "Toda la Biblia",
     "ot": "Antiguo Testamento",
     "nt": "Nuevo Testamento",
+    "beyond": "Más allá de la Biblia",
     "about_place": "Sobre el lugar",
     "stops_list": "Paradas",
     "back_to": "Volver a la ruta «{{title}}»",
@@ -213,7 +213,6 @@
     "major": "ciudad importante",
     "faded": "no existía ese año",
     "route": "ruta",
-    "ancient": "ciudad fuera de la Biblia",
     "roman_road": "calzada romana"
   },
   "events": {
