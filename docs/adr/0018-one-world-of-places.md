@@ -15,7 +15,7 @@ class of place.
 - The sites of `content/ancient-sites.json` are loaded with the Bible's places as places
   (`apps/web/src/data.ts`, `ancientPlaces`): the same marks, labels, card, search and link
   (`?place=` takes a Pleiades number or a Wikidata item). Only `ancient` (what the site was)
-  tells them apart. The data build, the static pages, the API and the dataset are unchanged.
+  tells them apart. The data build, the static pages and the API are unchanged. The dataset gains a table, `ancient_places`, because tours and events now stop at these sites (4 November 2026).
 - "The Bible alone" (a setting) is the lens: it leaves the ancient world's places off the
   map and out of the search (`MapLibreRenderer.setBibleOnly`). The "Ancient world" layer
   switch is gone; an older link's `hide=ancient` is passed over.
