@@ -41,6 +41,8 @@ configs:
     data_files: data/place_verses.csv
   - config_name: place_sites
     data_files: data/place_sites.csv
+  - config_name: ancient_places
+    data_files: data/ancient_places.csv
   - config_name: people
     data_files: data/people.csv
   - config_name: events
@@ -57,7 +59,7 @@ configs:
 
 # History Globe: Bible places, people and journeys
 
-The places of the Bible on the map: where each one was, how sure that is, which verses name it, and its name in ${languages} languages. With them come the people of the Bible, dated events and battles, journeys stop by stop, and what ancient writers outside the Bible say about the places.
+The places of the Bible on the map: where each one was, how sure that is, which verses name it, and its name in ${languages} languages. With them come the people of the Bible, dated events and battles, journeys stop by stop, and what ancient writers outside the Bible say about the places. The ancient world's cities, sanctuaries and ports that the Bible does not name come in a table of their own, because some journeys and events stand on them.
 
 This is the open data behind **[History Globe](https://historyglobe.app)**, a free 3D atlas of biblical history. Every place links to the globe.
 
@@ -66,6 +68,7 @@ This is the open data behind **[History Globe](https://historyglobe.app)**, a fr
 | `places`          |          ${places} | a place: point, kind, identification, certainty, gazetteer ids, names in ${languages} languages                   |
 | `place_verses`    |    ${place_verses} | a verse that names a place                                                                                        |
 | `place_sites`     |     ${place_sites} | the proposed locations of the ${multi_site_places} places with more than one                                      |
+| `ancient_places`  |  ${ancient_places} | a place of the ancient world the Bible does not name: point, kind, years, gazetteer ids, names                    |
 | `people`          |          ${people} | a person the Bible names                                                                                          |
 | `events`          |          ${events} | a dated event, from ${events_from} to ${events_to}                                                                |
 | `battles`         |         ${battles} | a battle or siege: place, year, sides, outcome                                                                    |
@@ -93,7 +96,7 @@ acts16 = verses[verses.ref.str.startswith("Acts.16.")].merge(places, left_on="pl
 print(acts16.drop_duplicates("id")[["name", "lat", "lon", "url"]].to_string(index=False))
 ```
 
-Always join on ids, not names: names repeat (two Jerichos are two places). `place_id` and `same_as` point to `places.id`; `tours.people` points to `people.id`.
+Always join on ids, not names: names repeat (two Jerichos are two places). `same_as` and the `place_id` of `place_verses` and `place_sites` point to `places.id`; the `place_id` of `tour_stops`, `ancient_writers`, `events` and `battles` points to `places.id` or, for a place the Bible does not name, to `ancient_places.id`; `tours.people` points to `people.id`.
 
 ## Tables
 
@@ -126,6 +129,10 @@ Always join on ids, not names: names repeat (two Jerichos are two places). `plac
 ### `place_sites`
 
 For a place with more than one proposed location, up to six of them: `place_id`, `rank` (in OpenBible's order, 1 = the highest score), `site`, `lat`, `lon`, `openbible_share` (the site's share, in per cent, of the positive scores of the sites listed; rounded, so a place's shares may add up to 99–101; empty where OpenBible gives no score). Sites whose only point OpenBible took from OpenStreetMap or Google are left out.
+
+### `ancient_places`
+
+The cities, sanctuaries, ports and other sites of the ancient world that History Globe draws beside the Bible's places, chosen from Pleiades and Wikidata: `id` (the Pleiades number, or the Wikidata item for a site Pleiades lacks), `name` (English), `kind` (city, capital, port, sanctuary, site), `lat`, `lon`, `from_year` and `to_year` (astronomical years, as `events.year`: 1 BC is 0), `dates` (readable), `approximate`, `wikidata`, `pleiades` (a link), `url` (the place on the globe) and `name_bg` … `name_vi` (empty where no name in that language was found). The years are those of the Pleiades periods the site is attested in, read with Wikidata's dates.
 
 ### `people`
 
@@ -168,14 +175,14 @@ These scores and shares are OpenBible's assessment, not a scholarly consensus. O
 
 **CC BY 4.0.** Use it, change it, build on it, commercially too; keep the credit:
 
-> Data: History Globe by Vadym Arnaut (https://historyglobe.app), CC BY 4.0; places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0); Pleiades ids from Pleiades (CC BY 3.0).
+> Data: History Globe by Vadym Arnaut (https://historyglobe.app), CC BY 4.0; places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0); Pleiades ids and the ancient places from Pleiades (CC BY 3.0).
 
 | what                                                                                            | source                                                                                                                                                                    | license                                                             |
 | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | places, verse tags, identifications, their scores and proposed sites                            | [OpenBible.info Bible Geocoding Data](https://www.openbible.info/geo/); points OpenBible took from OpenStreetMap or Google replaced with Wikidata coordinates or left out | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), modified |
 | people                                                                                          | [STEPBible TIPNR](https://www.stepbible.org/), Tyndale House, Cambridge; matched to places                                                                                | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), modified |
 | Wikidata items, some coordinates                                                                | [Wikidata](https://www.wikidata.org/)                                                                                                                                     | [CC0](https://creativecommons.org/publicdomain/zero/1.0/)           |
-| Pleiades ids                                                                                    | [Pleiades](https://pleiades.stoa.org/)                                                                                                                                    | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/us/)        |
+| Pleiades ids; the ancient places' points and periods                                            | [Pleiades](https://pleiades.stoa.org/)                                                                                                                                    | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/us/)        |
 | Russian names                                                                                   | the Synodal translation (1876)                                                                                                                                            | public domain                                                       |
 | quotations of the Bible in the notes                                                            | the public-domain editions listed on [the sources page](https://historyglobe.app/docs/sources.html) (KJV, Synodal, Luther 1912, Louis Segond 1910 and others)             | public domain                                                       |
 | events, battles, journeys, summaries of ancient writers, names and texts in the other languages | History Globe                                                                                                                                                             | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)           |

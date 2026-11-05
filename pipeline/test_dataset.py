@@ -86,6 +86,20 @@ class Build(unittest.TestCase):
         self.assertEqual((counts["places"], counts["no_verse"], counts["pages"]), ("2", "1", "1"))
         self.assertEqual(set(TABLES), set(tables))
 
+    def test_a_tour_may_stop_at_an_ancient_place_but_not_at_an_unknown_one(self):
+        (self.data / "ancient.geojson").write_text(
+            json.dumps({"features": [{"geometry": {"coordinates": [8.0, 36.2]}, "properties": {"id": "315198", "en": "Thagaste", "ru": "Тагаст", "from": -29, "to": 640, "kind": "city", "approx": True, "qid": "Q1324444"}}]}),
+            encoding="utf-8",
+        )
+        stop = {"place": "315198", "note": {"en": "Augustine"}}
+        self.files["tours.json"] = [{"id": "augustine", "year": 370, "title": {"en": "Augustine"}, "stops": [stop, {"place": "999", "note": {"en": "?"}}]}]
+        tables, counts, problems = self.run_build()
+        self.assertIn("tour_stops: unknown place 999", problems)
+        self.assertFalse([p for p in problems if "315198" in p])
+        row = tables["ancient_places"][1][0]
+        self.assertEqual((row["name"], row["dates"], row["pleiades"]), ("Thagaste", "c. 30 BC – c. AD 640", "https://pleiades.stoa.org/places/315198"))
+        self.assertEqual(counts["ancient_places"], "1")
+
     def test_a_verse_count_that_does_not_match_stops_the_build(self):
         self.files["verses/Josh.json"] = {"Josh.2.1": ["a1", "a9"]}
         problems = self.run_build()[2]

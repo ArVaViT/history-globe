@@ -36,7 +36,7 @@ CARD = ROOT / "pipeline" / "dataset_card.md"
 
 LANGS = ["en", "bg", "cs", "da", "de", "es", "fi", "fr", "hu", "it", "nb", "nl", "pl", "pt", "ro", "ru", "sr", "sv", "tl", "uk", "vi"]
 OTHER = LANGS[1:]
-TABLES = ["places", "place_verses", "place_sites", "people", "events", "battles", "tours", "tour_stops", "ancient_writers"]
+TABLES = ["places", "place_verses", "place_sites", "ancient_places", "people", "events", "battles", "tours", "tour_stops", "ancient_writers"]
 # The card names these as places without a verse; the build checks that they still are.
 NO_VERSE_EXAMPLES = ["Adasa", "Eridu", "Carthage", "Ur", "Magdala"]
 MAX_SITES = 6
@@ -153,6 +153,38 @@ def build(api: pathlib.Path, data: pathlib.Path) -> tuple[dict[str, tuple[list[s
             }
         )
     tables["places"] = (list(place_rows[0]), place_rows)
+
+    # The ancient world's places the Bible does not name (ADR 0018): tours and ancient writers
+    # may stop at them, so their ids are a second set that a `place_id` can point to.
+    ancient = read(data / "ancient.geojson")["features"] if (data / "ancient.geojson").exists() else []
+    ancient_rows = []
+    for f in sorted(ancient, key=lambda f: (f["properties"]["en"].lower(), f["properties"]["id"])):
+        a = f["properties"]
+        ancient_rows.append(
+            {
+                "id": a["id"],
+                "name": clean(a["en"]),
+                "kind": a["kind"],
+                "lat": f["geometry"]["coordinates"][1],
+                "lon": f["geometry"]["coordinates"][0],
+                "from_year": a["from"],
+                "to_year": a["to"],
+                "dates": f"{year_label(a['from'], bool(a.get('approx')))} – {year_label(a['to'], bool(a.get('approx')))}",
+                "approximate": bool(a.get("approx")),
+                "wikidata": a.get("qid", ""),
+                "pleiades": "" if a["id"].startswith("Q") else f"https://pleiades.stoa.org/places/{a['id']}",
+                "url": f"https://historyglobe.app/?place={a['id']}",
+                **{f"name_{lang}": clean(a.get(lang, "")) for lang in OTHER},
+            }
+        )
+    ancient_ids = {r["id"] for r in ancient_rows}
+    if ancient_ids & ids:
+        problems.append(f"ancient places share ids with the Bible's: {sorted(ancient_ids & ids)[:5]}")
+    tables["ancient_places"] = (
+        ["id", "name", "kind", "lat", "lon", "from_year", "to_year", "dates", "approximate", "wikidata", "pleiades", "url"]
+        + [f"name_{lang}" for lang in OTHER],
+        ancient_rows,
+    )
 
     tables["place_verses"] = (
         ["place_id", "ref"],
@@ -297,11 +329,12 @@ def build(api: pathlib.Path, data: pathlib.Path) -> tuple[dict[str, tuple[list[s
         if r["same_as"] and r["same_as"] not in ids:
             problems.append(f"same_as of {r['id']} is unknown")
     for name in ("tour_stops", "ancient_writers", "place_sites"):
+        known = ids if name == "place_sites" else ids | ancient_ids
         for r in tables[name][1]:
-            if r["place_id"] not in ids:
+            if r["place_id"] not in known:
                 problems.append(f"{name}: unknown place {r['place_id']}")
     for e in events + battles:
-        if e.get("place") and e["place"] not in ids:
+        if e.get("place") and e["place"] not in ids | ancient_ids:
             problems.append(f"{e['id']}: unknown place {e['place']}")
     for name in NO_VERSE_EXAMPLES:
         if not any(r["name"] == name and r["verse_count"] == 0 for r in place_rows):
