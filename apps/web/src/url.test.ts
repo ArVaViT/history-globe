@@ -14,6 +14,9 @@ describe("readUrl", () => {
 
   it("ignores malformed or unsafe values instead of failing", () => {
     expect(readUrl("?year=abc&place=<script>&camera=1,2,3&locale=xx")).toEqual({});
+    // A place of the ancient world, by its Pleiades number or its Wikidata item.
+    expect(readUrl("?place=721417202").place).toBe("721417202");
+    expect(readUrl("?place=Q134140").place).toBe("Q134140");
   });
 
   it("keeps year zero (1 BC) — it is a real astronomical year", () => {
@@ -77,10 +80,11 @@ describe("layers and tour in the link", () => {
       relief: false,
       routes: true,
       roads: true,
-      ancient: false,
       battles: true,
     });
     expect(readUrl("?hide=nonsense").layers).toBeUndefined();
+    // The ancient world was a layer of its own: its places are places now.
+    expect(readUrl("?hide=ancient").layers).toBeUndefined();
   });
 
   it("reads an older link's listed layers as on, keeping a layer added since on", () => {
@@ -90,7 +94,6 @@ describe("layers and tour in the link", () => {
       relief: false,
       routes: false,
       roads: false,
-      ancient: true,
       battles: true,
     });
     expect(readUrl("?layers=nonsense").layers).toBeUndefined();
@@ -108,7 +111,6 @@ describe("layers and tour in the link", () => {
       relief: true,
       routes: true,
       roads: true,
-      ancient: true,
       battles: true,
     };
     expect(new URLSearchParams(viewSearch({ ...view, layers: all })).has("hide")).toBe(false);

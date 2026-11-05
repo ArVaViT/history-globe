@@ -272,6 +272,18 @@ def rank_of(weighted_mentions: int) -> int:
     return 0 if weighted_mentions >= 40 else 1 if weighted_mentions >= 10 else 2 if weighted_mentions >= 3 else 3
 
 
+FAME_FILE = ROOT / "content" / "fame.json"
+
+
+def fame_rank(links: int) -> int:
+    """The rank a town's fame alone earns it: the Wikipedia articles of its Wikidata item, if
+    that item is the ancient place (content/fame.json, pipeline/ancient/fame.py). Carthage,
+    Sparta and Ur are barely named in the Bible, yet a map of their world without them at a
+    region's view is wrong. Calibrated on the Bible's own places: a rank-1 place has a median
+    of 24 articles, a rank-2 one 11; the bars are higher, so only the clearly famous rise."""
+    return 1 if links >= 60 else 2 if links >= 25 else 3
+
+
 def move_points(feats: list[dict], same_as: dict[str, str]) -> int:
     """Put a place on another record's point (content/place-points.json, `same_as`).
 
@@ -359,6 +371,7 @@ def build_places(
     banned = banned_lonlats(modern)
     banned_qids = [q for r in records if (res := top_point(r)) and coord_banned(res, modern, banned) and (q := qid(r))]
     replacements = wikidata_coords(banned_qids)
+    fame = json.loads(FAME_FILE.read_text(encoding="utf-8"))["items"] if FAME_FILE.exists() else {}
     feats, excluded, replaced, no_point = [], [], 0, 0
     for r in records:
         res = top_point(r)
@@ -386,6 +399,14 @@ def build_places(
         name = r["friendly_id"]
         base = name.rsplit(" ", 1)[0] if name.rsplit(" ", 1)[-1].isdigit() else name
         base = ENGLISH_NAMES.get(r["id"], base)
+        mentions = len(verses) - nt + 3 * nt
+        rank = rank_of(mentions)
+        kind = place_kind(r.get("types"))
+        disputed = sites_per_place.get(r["id"], (0, False))[1]
+        # Fame lifts a town, never lowers one; a disputed point is not made louder.
+        by_fame = fame_rank(fame.get(qid(r) or "", 0)) if kind == "settlement" and not disputed else 3
+        weight = max(mentions, 10 if by_fame == 1 else 3) if by_fame < rank else None
+        rank = min(rank, by_fame)
         feats.append({
             "type": "Feature",
             "id": len(feats),
@@ -393,10 +414,10 @@ def build_places(
             "properties": {
                 "id": r["id"],
                 "name": base,
-                "kind": place_kind(r.get("types")),
+                "kind": kind,
                 # Candidate sites shipped in sites.geojson: 0 when fewer than two.
                 "sites": sites_per_place.get(r["id"], (0, False))[0],
-                "disputed": sites_per_place.get(r["id"], (0, False))[1],
+                "disputed": disputed,
                 # OpenBible's score of the identification shown, 0–1000: how sure the card
                 # may sound about a place that is not disputed.
                 **({"confidence": c} if (c := identification_confidence(ident)) is not None else {}),
@@ -406,7 +427,10 @@ def build_places(
                 # 0 = most important. Used for label priority and zoom thresholds. The New
                 # Testament is about a third of the Old: its mentions weigh three times, so
                 # Athens or Philippi are not ranked below a village named in two lists.
-                "rank": rank_of(len(verses) - nt + 3 * nt),
+                "rank": rank,
+                # The order among marks where fame raised the rank (style PLACE_ORDER reads
+                # it before the verses): Carthage with no verse would give way to any village.
+                **({"weight": weight} if weight is not None else {}),
                 # Where it is today, as the best identification words it. "Same place as X"
                 # says nothing a reader can use there: the card lists the candidates.
                 **where_props(site_label(ident.get("description", ""), base)),
@@ -429,6 +453,13 @@ def build_places(
         for f in sorted(group, key=lambda f: -f["properties"]["verses"])[1:]:
             f["properties"]["dup"] = True
             duplicates += 1
+        # The label stands for all of them: it takes the rank fame gave one of them (Ur the land,
+        # in four verses, carries the fame of Ur the city on its point).
+        best = min(group, key=lambda f: f["properties"]["rank"])["properties"]
+        head = max(group, key=lambda f: f["properties"]["verses"])["properties"]
+        if best is not head and "weight" in best and best["rank"] < head["rank"]:
+            head["rank"] = best["rank"]
+            head["weight"] = max(head["verses"], best.get("weight", 0))
     stats = {
         "places": len(feats),
         "same_name_same_point_unlabelled": duplicates,

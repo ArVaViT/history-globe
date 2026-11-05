@@ -25,6 +25,7 @@ from build_data import (
     lead_anchor,
     move_points,
     place_kind,
+    fame_rank,
     qid,
     rank_of,
     site_label,
@@ -223,6 +224,9 @@ class LoadPlacePoints(unittest.TestCase):
 class Rank(unittest.TestCase):
     def test_thresholds(self) -> None:
         self.assertEqual([rank_of(n) for n in (40, 39, 10, 9, 3, 2)], [0, 1, 1, 2, 2, 3])
+
+    def test_fame_never_makes_a_capital(self) -> None:
+        self.assertEqual([fame_rank(n) for n in (500, 60, 59, 25, 24, 0)], [1, 1, 2, 2, 3, 3])
 
 
 class SiteLabel(unittest.TestCase):

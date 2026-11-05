@@ -1,4 +1,4 @@
-import { NT_FROM, type PlaceInfo, type Tour } from "@hg/core";
+import { NT_FROM, YEAR_MAX, type PlaceInfo, type Tour } from "@hg/core";
 import type {
   ChapterYears,
   ContentRelease,
@@ -9,9 +9,17 @@ import type {
   PlacePhoto,
   PleiadesLink,
 } from "@hg/model";
-import { placeName, hasNameIn, namesOf, LOCALES, ALL_LOCALES } from "@hg/model";
+import {
+  placeName,
+  hasNameIn,
+  namesOf,
+  formatYear,
+  formatYearRange,
+  LOCALES,
+  ALL_LOCALES,
+} from "@hg/model";
 export { siteCertainty } from "@hg/model";
-import type { FeatureCollection, Point } from "geojson";
+import type { Feature, FeatureCollection, Point } from "geojson";
 
 export interface PlaceProps {
   readonly id: string;
@@ -54,7 +62,16 @@ export interface PlaceProps {
   /** The source's own short name of the site ("Antioch in Pisidia"), before any rewording. */
   readonly where_ref_text?: string;
   readonly osis: readonly string[];
-  readonly coord: "openbible" | "wikidata";
+  readonly coord: "openbible" | "wikidata" | "pleiades";
+  /** A place of the ancient world the Bible does not name (content/ancient-sites.json):
+   *  what it was (city, capital, sanctuary, port, site). The Bible alone hides it. */
+  readonly ancient?: string;
+  /** Its years are approximate (ancient sites). */
+  readonly approx?: boolean;
+  /** How much it weighs against other places, in verses (ancient sites, by their rank). */
+  readonly weight?: number;
+  /** Its Wikidata item (ancient sites). */
+  readonly qid?: string;
 }
 
 /** A candidate location of a disputed place, with OpenBible's assessment in percent. */
@@ -259,6 +276,87 @@ export function markDuplicates(
   return marked;
 }
 
+/** A site of the ancient world as the content build writes it (ancient.geojson). */
+export type AncientSiteProps = {
+  readonly id: string;
+  readonly en: string;
+  readonly from: number;
+  /** Its last year (inclusive). */
+  readonly to: number;
+  readonly rank: number;
+  readonly kind: string;
+  readonly approx?: boolean;
+  readonly qid?: string;
+} & Readonly<Record<string, unknown>>;
+
+/**
+ * An ancient site's rank (0-2) on the places' scale (0-3): one step down, as the ancient
+ * layer was drawn before, from zoom 4, 6 and 8 where the Bible's places of the same rank
+ * came at 3, 5 and 6. The great rings (rank 0) stay with the most-named: Mycenae in 500 BC
+ * crowded Corinth off the map. Its weight, in verses, is the least a biblical place of that
+ * rank has, so a town the Bible names keeps the room by its side.
+ */
+const ANCIENT_RANK = [1, 2, 3];
+const RANK_WEIGHT = [15, 4, 1, 1];
+
+/**
+ * The ancient world's sites as places like any other: one map, one card, one search. Only
+ * `ancient` tells them apart, for the Bible alone (a setting) to leave them out.
+ */
+export function ancientPlaces(
+  fc: FeatureCollection<Point, AncientSiteProps>,
+  firstId: number,
+): Feature<Point, PlaceProps>[] {
+  return fc.features.map((f, i) => {
+    const { id, en, from, to, rank, kind, approx, qid, ...names } = f.properties;
+    const local: Record<string, string> = {};
+    for (const [l, v] of Object.entries(names)) if (typeof v === "string") local[`name_${l}`] = v;
+    return {
+      type: "Feature",
+      id: firstId + i,
+      geometry: f.geometry,
+      properties: {
+        id,
+        name: en,
+        ...local,
+        kind: "settlement",
+        ancient: kind,
+        sites: 0,
+        disputed: false,
+        verses: 0,
+        nt: 0,
+        ot: 0,
+        rank: ANCIENT_RANK[rank] ?? 3,
+        weight: RANK_WEIGHT[ANCIENT_RANK[rank] ?? 3] ?? 1,
+        where: "",
+        osis: [],
+        coord: "pleiades",
+        life_from: from,
+        life_until: to + 1,
+        ...(approx ? { approx: true } : {}),
+        ...(qid ? { qid } : {}),
+      },
+    };
+  });
+}
+
+/**
+ * When a place of the ancient world stood, as its card and the search write it: "c. 1263
+ * BC – AD 1300", or "from c. 1263 BC" for one standing to the map's last year.
+ */
+export function standingSpan(
+  p: Pick<PlaceProps, "life_from" | "life_until" | "approx">,
+  t: (key: string, o?: Readonly<Record<string, string | number>>) => string,
+  locale: Locale,
+): string {
+  const from = p.life_from ?? 0;
+  const to = (p.life_until ?? YEAR_MAX + 1) - 1;
+  const circa = p.approx ? `${t("place.circa")} ` : "";
+  return to >= YEAR_MAX
+    ? t("ancient.since", { year: circa + formatYear(from, locale) })
+    : circa + formatYearRange(from, to, locale);
+}
+
 /** A data file as JSON; a missing file (404, a host's HTML page) fails by its name. */
 async function getJson<T>(file: string): Promise<T> {
   const r = await fetch(`${DATA_URL}/${file}`);
@@ -267,10 +365,17 @@ async function getJson<T>(file: string): Promise<T> {
 }
 
 export async function loadData(): Promise<LoadedData> {
-  const [places, content, siteFc] = await Promise.all([
+  const [places, content, siteFc, ancientFc] = await Promise.all([
     getJson<LoadedData["places"]>("places.geojson"),
     getJson<ContentRelease>("content.json"),
     getJson<FeatureCollection<Point, SiteProps>>("sites.geojson"),
+    // The ancient world is the setting, not the Bible's places: without it the map still opens.
+    getJson<FeatureCollection<Point, AncientSiteProps>>("ancient.geojson").catch(
+      (): FeatureCollection<Point, AncientSiteProps> => ({
+        type: "FeatureCollection",
+        features: [],
+      }),
+    ),
   ]);
   const sites = groupSites(siteFc);
   const byId = new Map<string, { props: PlaceProps; info: PlaceInfo }>();
@@ -302,6 +407,15 @@ export async function loadData(): Promise<LoadedData> {
     const [lon = 0, lat = 0] = f.geometry.coordinates;
     byId.set(props.id, { props, info: { id: props.id, at: [lon, lat], kind: props.kind } });
   }
+  const lastId = Math.max(-1, ...places.features.map((f) => Number(f.id ?? -1)));
+  for (const f of ancientPlaces(ancientFc, lastId + 1)) {
+    places.features.push(f);
+    const [lon = 0, lat = 0] = f.geometry.coordinates;
+    byId.set(f.properties.id, {
+      props: f.properties,
+      info: { id: f.properties.id, at: [lon, lat], kind: f.properties.kind },
+    });
+  }
   const tours = content.tours.map((t) => ({
     id: t.id,
     year: t.year,
@@ -312,7 +426,8 @@ export async function loadData(): Promise<LoadedData> {
     stops: t.stops.map((s) => ({
       placeId: s.place,
       at: byId.get(s.place)?.info.at ?? [0, 0],
-      ref: s.ref,
+      ...(s.ref ? { ref: s.ref } : {}),
+      ...(s.source ? { source: s.source } : {}),
       note: s.note,
       ...(s.year !== undefined ? { year: s.year } : {}),
       ...(s.by === "sea" ? { sea: true } : {}),
@@ -429,11 +544,15 @@ export function russianStem(query: string): string | null {
   return ending ? q.slice(0, -ending.length) : null;
 }
 
+/** A place's weight against others: its verses, or an ancient site's rank in verses. */
+export const weightOf = (p: Pick<PlaceProps, "verses" | "weight">): number => p.weight ?? p.verses;
+
 /** Search by English or Russian name; exact prefix first, then by importance. */
 export function searchPlaces(
   data: LoadedData,
   query: string,
   limit = 8,
+  bibleOnly = false,
 ): { readonly props: PlaceProps }[] {
   if (query.trim().length < 2) return [];
   const q = foldName(query);
@@ -451,6 +570,7 @@ export function searchPlaces(
   for (const { props, info } of data.byId.values())
     if (!props.dup) first.add(`${info.at.join()}|${props.name_ru ?? props.name}`);
   for (const { props, info } of data.byId.values()) {
+    if (bibleOnly && props.ancient) continue;
     if (props.dup && first.has(`${info.at.join()}|${props.name_ru ?? props.name}`)) continue;
     const names = namesOf(props).map(foldName);
     const prefix =
@@ -467,6 +587,6 @@ export function searchPlaces(
       scored.push({ props, score: (prefix ? 0 : inside ? 10 : 20) + props.rank });
   }
   return scored
-    .sort((a, b) => a.score - b.score || b.props.verses - a.props.verses)
+    .sort((a, b) => a.score - b.score || weightOf(b.props) - weightOf(a.props))
     .slice(0, limit);
 }

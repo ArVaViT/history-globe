@@ -233,8 +233,18 @@ export function openApi(version: string): object {
         Stop: {
           type: "object",
           properties: {
-            place: { type: "string" },
+            place: {
+              type: "string",
+              description: "A place id, or a Pleiades number for an ancient site",
+            },
             ref: ref("Osis"),
+            source: {
+              type: "object",
+              description:
+                "Where the Bible does not tell the stop: the ancient author's passage and a free translation of it (Josephus, Jewish War 3.7)",
+              properties: { cite: ref("Localized"), url: { type: "string", format: "uri" } },
+              required: ["cite", "url"],
+            },
             note: ref("Localized"),
             by: {
               type: "string",
@@ -250,7 +260,8 @@ export function openApi(version: string): object {
               required: ["days", "ref"],
             },
           },
-          required: ["place", "ref", "note"],
+          // A verse (ref) or, outside the Bible, a source: one of the two.
+          required: ["place", "note"],
         },
         Tour: {
           type: "object",

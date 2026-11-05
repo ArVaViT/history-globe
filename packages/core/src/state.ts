@@ -8,8 +8,6 @@ export interface LayerVisibility {
   readonly routes: boolean;
   /** Roman roads (Itiner-e), from 312 BC and zoom 5. */
   readonly roads: boolean;
-  /** The ancient world around the Bible: cities and sanctuaries it does not name. */
-  readonly ancient: boolean;
   /** Battles and sieges, each in its years (content/battles.yaml). */
   readonly battles: boolean;
 }
@@ -56,7 +54,6 @@ export const DEFAULT_STATE: GlobeState = {
     relief: true,
     routes: true,
     roads: true,
-    ancient: true,
     battles: true,
   },
   tour: null,

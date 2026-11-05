@@ -24,7 +24,7 @@ export function SettingsDialog({
   onLocale: (l: Locale) => void;
   layers: LayerVisibility;
   onLayer: (layer: keyof LayerVisibility, visible: boolean) => void;
-  /** The Bible alone: its events and places, the ancient world around them hidden. */
+  /** The Bible alone: its events and places, the ancient world's hidden. */
   bibleOnly: boolean;
   onBibleOnly: (on: boolean) => void;
 }) {
@@ -76,7 +76,7 @@ export function SettingsDialog({
               </span>
             </label>
           </div>
-          <LayerToggles layers={layers} onToggle={onLayer} locked={bibleOnly ? ["ancient"] : []} />
+          <LayerToggles layers={layers} onToggle={onLayer} />
           <div className={card}>
             <label className={`${row} cursor-pointer`} title={t("settings.bible_only_hint")}>
               {label(BookOpen, t("settings.bible_only"))}

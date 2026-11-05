@@ -21,10 +21,9 @@
     "title": "Lớp bản đồ",
     "relief": "Địa hình",
     "borders": "Biên giới các nước",
-    "places": "Địa điểm Kinh Thánh",
+    "places": "Địa điểm",
     "routes": "Lộ trình",
     "roads": "Đường La Mã",
-    "ancient": "Thế giới cổ đại",
     "battles": "Các trận đánh"
   },
   "tours": {
@@ -38,6 +37,7 @@
     "whole": "Toàn bộ Kinh Thánh",
     "ot": "Cựu Ước",
     "nt": "Tân Ước",
+    "beyond": "Ngoài Kinh Thánh",
     "about_place": "Về địa điểm này",
     "stops_list": "Các chặng",
     "back_to": "Quay lại hành trình “{{title}}”",
@@ -207,7 +207,6 @@
     "major": "thành phố lớn",
     "faded": "chưa có hoặc không còn trong năm này",
     "route": "lộ trình hành trình",
-    "ancient": "thành phố ngoài Kinh Thánh",
     "roman_road": "đường La Mã"
   },
   "events": {

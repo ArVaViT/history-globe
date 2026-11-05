@@ -35,6 +35,11 @@ export function outOfTime(p: Life, year: number): boolean {
   return p.ot === 0 && year < NT_FROM;
 }
 
+/** A place's weight against others: its verses, or an ancient site's rank in verses. */
+export function weight(f: { properties: Record<string, unknown> | null }): number {
+  return Number(f.properties?.["weight"] ?? f.properties?.["verses"] ?? 0);
+}
+
 /** A great town drawn by place-label-major: a settlement of rank 0, not a second name. */
 export function isMajor(p: Record<string, unknown> | null): boolean {
   return p?.["kind"] === "settlement" && p["rank"] === 0 && p["where_tpl"] !== "same";
@@ -74,7 +79,7 @@ export function thinMajors(
     .filter((f) => f.properties["id"] !== selected)
     .sort(
       (a, b) =>
-        Number(b.properties["verses"] ?? 0) - Number(a.properties["verses"] ?? 0) ||
+        weight(b) - weight(a) ||
         String(a.properties["id"]).localeCompare(String(b.properties["id"])),
     );
   const picked = all.find((f) => selected !== null && f.properties["id"] === selected);

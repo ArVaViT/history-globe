@@ -22,10 +22,9 @@
     "title": "Kartlag",
     "relief": "Relieff",
     "borders": "Statsgrenser",
-    "places": "Bibelske steder",
+    "places": "Steder",
     "routes": "Ruter",
     "roads": "Romerske veier",
-    "ancient": "Den antikke verden",
     "battles": "Slag"
   },
   "tours": {
@@ -40,6 +39,7 @@
     "whole": "Hele Bibelen",
     "ot": "Det gamle testamentet",
     "nt": "Det nye testamentet",
+    "beyond": "Utenfor Bibelen",
     "about_place": "Om stedet",
     "stops_list": "Stopp",
     "back_to": "Tilbake til ruten «{{title}}»",
@@ -213,7 +213,6 @@
     "major": "større by",
     "faded": "fantes ikke det året",
     "route": "rute",
-    "ancient": "by utenfor Bibelen",
     "roman_road": "romersk vei"
   },
   "events": {

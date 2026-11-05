@@ -36,7 +36,8 @@ export function itemHash(
         readonly year: number;
         readonly stops: readonly {
           readonly place: string;
-          readonly ref: string;
+          readonly ref?: string | undefined;
+          readonly source?: { readonly cite: { readonly en: string } } | undefined;
           readonly note: { readonly en: string };
           readonly year?: number | undefined;
         }[];
@@ -51,7 +52,8 @@ export function itemHash(
         : [
             item.title.en,
             item.year,
-            item.stops.map((s) => [s.place, s.ref, s.note.en, s.year ?? null]),
+            // A stop told outside the Bible hashes its passage where a verse would be.
+            item.stops.map((s) => [s.place, s.ref ?? s.source?.cite.en, s.note.en, s.year ?? null]),
           ];
   return shortHash(JSON.stringify([item.kind, ...text]));
 }

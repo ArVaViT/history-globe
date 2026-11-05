@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
+  ancientPlaces,
+  standingSpan,
+  weightOf,
   alsoHere,
   markDuplicates,
   beforeItsTime,
@@ -303,5 +306,74 @@ describe("standingYear", () => {
   });
   it("has nothing to offer a place standing in the year", () => {
     expect(standingYear(p({ life_from: -1000 }), -500)).toBeUndefined();
+  });
+});
+
+describe("ancientPlaces", () => {
+  const fc = {
+    type: "FeatureCollection" as const,
+    features: [
+      {
+        type: "Feature" as const,
+        geometry: { type: "Point" as const, coordinates: [22.5, 38.48] },
+        properties: {
+          id: "540726",
+          en: "Delphi",
+          ru: "Дельфы",
+          from: -800,
+          to: 390,
+          rank: 0,
+          kind: "sanctuary",
+          approx: true,
+          qid: "Q75459",
+        },
+      },
+    ],
+  };
+  const [delphi] = ancientPlaces(fc, 100);
+
+  it("makes a site a place like any other, told apart only by what it was", () => {
+    expect(delphi?.id).toBe(100);
+    expect(delphi?.properties).toMatchObject({
+      id: "540726",
+      name: "Delphi",
+      name_ru: "Дельфы",
+      kind: "settlement",
+      ancient: "sanctuary",
+      verses: 0,
+      life_from: -800,
+      // Its last year stood: the end is half-open.
+      life_until: 391,
+      coord: "pleiades",
+      qid: "Q75459",
+    });
+  });
+
+  it("puts its rank a step down, weighed as the least of that rank", () => {
+    expect(delphi?.properties.rank).toBe(1);
+    expect(delphi && weightOf(delphi.properties)).toBe(4);
+    expect(weightOf(place("a1", "Jerusalem", undefined, 0, 800))).toBe(800);
+  });
+
+  it("is left out of the search under the Bible alone", () => {
+    const props = delphi?.properties;
+    if (!props) throw new Error("no site");
+    const both = {
+      byId: new Map([
+        ...data.byId,
+        [props.id, { props, info: { id: props.id, at: [22.5, 38.48] as const, kind: props.kind } }],
+      ]),
+    } as unknown as LoadedData;
+    expect(searchPlaces(both, "delph").map((r) => r.props.id)).toEqual(["540726"]);
+    expect(searchPlaces(both, "delph", 8, true)).toEqual([]);
+  });
+
+  it("writes when it stood, and 'from' for a site standing to the map's end", () => {
+    const t = (key: string, o?: Readonly<Record<string, string | number>>) =>
+      key === "place.circa" ? "c." : key === "ancient.since" ? `from ${String(o?.year)}` : key;
+    const props = delphi?.properties;
+    if (!props) throw new Error("no site");
+    expect(standingSpan(props, t, "en")).toBe("c. 801 BC – AD 390");
+    expect(standingSpan({ life_from: -1263, life_until: 1301 }, t, "en")).toMatch(/^from /);
   });
 });

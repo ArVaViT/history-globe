@@ -6,6 +6,11 @@ import { lessonSearch } from "../lesson";
 import { readPicked, readTitle } from "./LessonRow";
 import { useState } from "react";
 
+type Stop = {
+  readonly ref?: string;
+  readonly source?: { readonly cite: Readonly<Record<string, string>> };
+};
+
 export function ToursPanel({
   tours,
   onStart,
@@ -15,7 +20,7 @@ export function ToursPanel({
     year: number;
     approximate?: boolean | undefined;
     title: Readonly<Record<string, string>>;
-    stops: readonly { readonly ref: string }[];
+    stops: readonly Stop[];
   }[];
   onStart: (id: string) => void;
 }) {
@@ -29,7 +34,7 @@ export function ToursPanel({
           testament's heading stays in view over its own tours, and a focused tour is kept
           clear of it. */}
       <div className="hg-fade max-h-[min(460px,52vh)] max-md:max-h-[calc(100dvh-var(--hg-timeline-h,124px)-200px)] scroll-pt-7 overflow-y-auto [scrollbar-width:thin]">
-        {(["whole", "ot", "nt"] as const).map((testament) => {
+        {(["whole", "ot", "nt", "beyond"] as const).map((testament) => {
           // Tours come sorted by year: the Old Testament ones are before the era. One that
           // runs through both (the empires, Genesis to Acts) stands above them.
           // By the books the stops are read in, not the year: the childhood of Jesus is
@@ -89,9 +94,15 @@ export function ToursPanel({
  * When a tour opens with a later verse of the same book (Saul: born in Tarsus, Acts
  * 22:3, then Acts 7-11), it starts from that book's earliest verse instead.
  */
-export function tourSpan(stops: readonly { readonly ref: string }[], locale: Locale): string {
-  let first = stops[0]?.ref.split("-")[0];
-  const last = stops.at(-1)?.ref.split("-").at(-1);
+export function tourSpan(stops: readonly Stop[], locale: Locale): string {
+  // Told outside the Bible: the work it follows ("Josephus, Jewish War").
+  const cite = stops.find((s) => s.source)?.source?.cite;
+  const told = cite && (cite[locale] ?? cite.en);
+  // The work, without the passages ("Church History 6.1, 6.2.5-6" → "Church History") or
+  // a note on the translation one stop quotes ("Исповедь (пер. М. Е. Сергеенко) 2.3").
+  if (told) return told.replace(/\s+\d[\d.,:\s–-]*$/, "").replace(/\s*\([^()]*\)$/, "");
+  let first = stops[0]?.ref?.split("-")[0];
+  const last = stops.at(-1)?.ref?.split("-").at(-1);
   if (!first || !last) return "";
   const book = (osis: string) => osis.split(".")[0];
   const at = (osis: string) => {
@@ -104,7 +115,7 @@ export function tourSpan(stops: readonly { readonly ref: string }[], locale: Loc
       return `${formatRef(first, locale)} – ${formatRef(last, locale)}`;
     if (at(last) < at(first)) {
       const ends = stops
-        .flatMap((s) => s.ref.split("-"))
+        .flatMap((s) => (s.ref ?? "").split("-"))
         .filter((r) => book(r) === book(first ?? ""));
       first = ends.reduce((a, b) => (at(b) < at(a) ? b : a));
     }
@@ -114,8 +125,9 @@ export function tourSpan(stops: readonly { readonly ref: string }[], locale: Loc
   }
 }
 
-/** Whether a tour's stops read from both testaments. */
-function testamentOf(stops: readonly { readonly ref: string }[]): "whole" | "ot" | "nt" {
-  const nt = stops.map((s) => NT_BOOKS.has(s.ref.split(".")[0] ?? ""));
+/** Whether a tour's stops read from both testaments, or from an author outside the Bible. */
+function testamentOf(stops: readonly Stop[]): "whole" | "ot" | "nt" | "beyond" {
+  if (stops.some((s) => s.source)) return "beyond";
+  const nt = stops.map((s) => NT_BOOKS.has(s.ref?.split(".")[0] ?? ""));
   return nt.includes(true) && nt.includes(false) ? "whole" : nt.includes(true) ? "nt" : "ot";
 }

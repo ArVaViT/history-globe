@@ -7,7 +7,7 @@ export interface UrlView {
   readonly place?: string;
   readonly camera?: Camera;
   readonly locale?: Locale;
-  /** `hide=relief,ancient`: the listed layers off (older links: `layers=`, the listed on). */
+  /** `hide=relief,roads`: the listed layers off (older links: `layers=`, the listed on). */
   readonly layers?: LayerVisibility;
   /** A tour to start (its id is checked against the loaded tours). */
   readonly tour?: string;
@@ -25,10 +25,14 @@ export interface UrlView {
   readonly measure?: readonly [string, string];
 }
 
-/** A place id as OpenBible gives them: `a` and six hex digits. */
-const PLACE_ID = /^a[0-9a-f]{6}$/;
+/**
+ * A place id: OpenBible's (`a` and six hex digits), or an ancient site's, by its Pleiades
+ * number or, without one, its Wikidata item.
+ */
+const PLACE_ID = /^(a[0-9a-f]{6}|\d{1,12}|Q\d{1,12})$/;
 
-const LAYERS = ["borders", "places", "relief", "routes", "roads", "ancient", "battles"] as const;
+// `ancient` in an older link is passed over: the ancient world's places are places now.
+const LAYERS = ["borders", "places", "relief", "routes", "roads", "battles"] as const;
 /** The layers an older `layers=` link could list: a layer added since stays on in it. */
 const LISTED_LAYERS: readonly string[] = ["borders", "places", "relief", "routes", "roads"];
 
@@ -38,7 +42,6 @@ const layersWhere = (on: (layer: (typeof LAYERS)[number]) => boolean): LayerVisi
   relief: on("relief"),
   routes: on("routes"),
   roads: on("roads"),
-  ancient: on("ancient"),
   battles: on("battles"),
 });
 

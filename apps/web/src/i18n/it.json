@@ -23,10 +23,9 @@
     "title": "Livelli",
     "relief": "Rilievo",
     "borders": "Confini degli stati",
-    "places": "Luoghi biblici",
+    "places": "Luoghi",
     "routes": "Percorsi",
     "roads": "Strade romane",
-    "ancient": "Mondo antico",
     "battles": "Battaglie"
   },
   "tours": {
@@ -42,6 +41,7 @@
     "whole": "Tutta la Bibbia",
     "ot": "Antico Testamento",
     "nt": "Nuovo Testamento",
+    "beyond": "Oltre la Bibbia",
     "about_place": "Sul luogo",
     "stops_list": "Tappe",
     "back_to": "Torna all’itinerario «{{title}}»",
@@ -219,7 +219,6 @@
     "major": "città importante",
     "faded": "non esisteva in quell’anno",
     "route": "percorso dell’itinerario",
-    "ancient": "città non biblica",
     "roman_road": "strada romana"
   },
   "events": {

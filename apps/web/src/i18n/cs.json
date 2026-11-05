@@ -24,10 +24,9 @@
     "title": "Vrstvy",
     "relief": "Reliéf",
     "borders": "Hranice států",
-    "places": "Biblická místa",
+    "places": "Místa",
     "routes": "Trasy",
     "roads": "Římské silnice",
-    "ancient": "Starověký svět",
     "battles": "Bitvy"
   },
   "tours": {
@@ -44,6 +43,7 @@
     "whole": "Celá Bible",
     "ot": "Starý zákon",
     "nt": "Nový zákon",
+    "beyond": "Mimo Bibli",
     "about_place": "O tomto místě",
     "stops_list": "Zastávky",
     "back_to": "Zpět na trasu „{{title}}“",
@@ -225,7 +225,6 @@
     "major": "významné město",
     "faded": "v tom roce nestálo",
     "route": "trasa",
-    "ancient": "město mimo Bibli",
     "roman_road": "římská silnice"
   },
   "events": {

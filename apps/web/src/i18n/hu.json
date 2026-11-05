@@ -22,10 +22,9 @@
     "title": "Rétegek",
     "relief": "Domborzat",
     "borders": "Államhatárok",
-    "places": "Bibliai helyek",
+    "places": "Helyek",
     "routes": "Útvonalak",
     "roads": "Római utak",
-    "ancient": "Ókori világ",
     "battles": "Csaták"
   },
   "tours": {
@@ -40,6 +39,7 @@
     "whole": "Az egész Biblia",
     "ot": "Ószövetség",
     "nt": "Újszövetség",
+    "beyond": "A Biblián túl",
     "about_place": "A helyről",
     "stops_list": "Megállók",
     "back_to": "Vissza a túrához: „{{title}}”",
@@ -213,7 +213,6 @@
     "major": "jelentős város",
     "faded": "abban az évben nem állt",
     "route": "a túra útvonala",
-    "ancient": "a Bibliában nem szereplő város",
     "roman_road": "római út"
   },
   "events": {

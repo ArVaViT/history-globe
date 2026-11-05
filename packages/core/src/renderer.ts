@@ -25,18 +25,6 @@ export function polityText(p: PolityName, locale: string): { name: string; vassa
   return { name: p.names?.[locale] ?? p.name, ...(vassal ? { vassal } : {}) };
 }
 
-/** A site of the ancient world layer (content/ancient-sites.json) under the pointer. */
-export interface AncientSite {
-  readonly en: string;
-  readonly ru: string;
-  /** Its name in the other languages that have one (uk, es, …). */
-  readonly names?: Readonly<Record<string, string>>;
-  readonly from: number;
-  readonly to: number;
-  readonly approx: boolean;
-  readonly kind: string;
-}
-
 export interface RendererEvents {
   /** A place was clicked on the map. */
   pick: (placeId: string) => void;
@@ -45,11 +33,6 @@ export interface RendererEvents {
   /** The states under the pointer when it is over no place (topmost first), or null. */
   hoverPolity: (
     polities: readonly PolityName[] | null,
-    at: { readonly x: number; readonly y: number } | null,
-  ) => void;
-  /** An ancient site under the pointer, over no biblical place; null when it leaves. */
-  hoverAncient: (
-    site: AncientSite | null,
     at: { readonly x: number; readonly y: number } | null,
   ) => void;
   /** A battle's mark under the pointer (its name and year); null when it leaves. */

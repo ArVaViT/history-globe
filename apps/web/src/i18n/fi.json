@@ -22,10 +22,9 @@
     "title": "Kerrokset",
     "relief": "Pinnanmuodot",
     "borders": "Valtioiden rajat",
-    "places": "Raamatun paikat",
+    "places": "Paikat",
     "routes": "Reitit",
     "roads": "Rooman tiet",
-    "ancient": "Muinainen maailma",
     "battles": "Taistelut"
   },
   "tours": {
@@ -40,6 +39,7 @@
     "whole": "Koko Raamattu",
     "ot": "Vanha testamentti",
     "nt": "Uusi testamentti",
+    "beyond": "Raamatun ulkopuolelta",
     "about_place": "Tietoa paikasta",
     "stops_list": "Pysäkit",
     "back_to": "Takaisin kierrokselle ”{{title}}”",
@@ -213,7 +213,6 @@
     "major": "suuri kaupunki",
     "faded": "ei olemassa valittuna vuonna",
     "route": "kierroksen reitti",
-    "ancient": "Raamatussa mainitsematon kaupunki",
     "roman_road": "Rooman tie"
   },
   "events": {

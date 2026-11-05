@@ -85,7 +85,8 @@ const content = JSON.parse(readFileSync(join(data, "content.json"), "utf8")) as 
     people?: string[];
     stops: {
       place: string;
-      ref: string;
+      ref?: string;
+      source?: { cite: Record<string, string>; url: string };
       note: Record<string, string>;
       by?: string;
       sailed?: { days: number; about?: true; ref: string };
@@ -258,7 +259,8 @@ write(
     ...(t.people ? { people: t.people } : {}),
     stops: t.stops.map((s) => ({
       place: s.place,
-      ref: s.ref,
+      ...(s.ref ? { ref: s.ref } : {}),
+      ...(s.source ? { source: s.source } : {}),
       note: s.note,
       ...(s.by ? { by: s.by } : {}),
       // Days at sea, only where the text gives them.

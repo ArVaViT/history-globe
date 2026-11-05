@@ -21,7 +21,6 @@ export class FakeRenderer implements Renderer {
     pick: new Set(),
     hover: new Set(),
     hoverPolity: new Set(),
-    hoverAncient: new Set(),
     hoverBattle: new Set(),
     cameraChanged: new Set(),
     ready: new Set(),

@@ -14,11 +14,12 @@ const W = 1200;
 const H = 630;
 const read = (path) => JSON.parse(readFileSync(path, "utf8"));
 const content = read("apps/web/public/data/content.json");
+// The Bible's places and the ancient world's sites: a stop may stand at either (ADR 0018).
 const places = new Map(
-  read("apps/web/public/data/places.geojson").features.map((f) => [
-    f.properties.id,
-    f.geometry.coordinates,
-  ]),
+  [
+    ...read("apps/web/public/data/places.geojson").features,
+    ...read("apps/web/public/data/ancient.geojson").features,
+  ].map((f) => [f.properties.id, f.geometry.coordinates]),
 );
 const land = read("pipeline/.cache/ne_50m_land.geojson").features;
 const lakes = read("pipeline/.cache/ne_50m_lakes.geojson").features;

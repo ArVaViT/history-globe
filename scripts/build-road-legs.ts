@@ -226,12 +226,18 @@ const content = JSON.parse(readFileSync(join(data, "content.json"), "utf8")) as 
     stops: { place: string; by?: string }[];
   }[];
 };
+// The Bible's places and the ancient world's sites: a stop may stand at either (ADR 0018).
 const places = new Map(
-  (
-    JSON.parse(readFileSync(join(data, "places.geojson"), "utf8")) as {
-      features: { geometry: { coordinates: Pt }; properties: { id: string; kind: string } }[];
-    }
-  ).features.map((f) => [f.properties.id, { at: f.geometry.coordinates, kind: f.properties.kind }]),
+  ["places.geojson", "ancient.geojson"]
+    .flatMap(
+      (file) =>
+        (
+          JSON.parse(readFileSync(join(data, file), "utf8")) as {
+            features: { geometry: { coordinates: Pt }; properties: { id: string; kind: string } }[];
+          }
+        ).features,
+    )
+    .map((f) => [f.properties.id, { at: f.geometry.coordinates, kind: f.properties.kind }]),
 );
 /** A region, a sea or a river has no one point to walk to: no way by road to it. */
 const NOT_A_POINT = new Set([

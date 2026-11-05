@@ -23,6 +23,7 @@ import { loadArticle, type Article } from "../articles";
 import {
   beforeItsTime,
   standingYear,
+  standingSpan,
   DATA_URL,
   siteCertainty,
   whereIn,
@@ -253,17 +254,20 @@ export function PlaceCard({
     ...(life || events.length > 0 || battles.length > 0 ? (["time"] as const) : []),
     ...(here.length > 0 && onPerson ? (["people"] as const) : []),
     ...(versions.length > 1 ? (["sites"] as const) : []),
-    "verses",
+    // A place of the ancient world has no verses to list.
+    ...(place.ancient ? [] : (["verses"] as const)),
   ];
   const [chosen, setChosen] = useState<PlaceTab>(readTab);
-  const tab = tabs.includes(chosen) ? chosen : (tabs[0] ?? "verses");
+  const tab = tabs.includes(chosen) ? chosen : tabs[0];
   const tabRefs = useRef<Partial<Record<PlaceTab, HTMLButtonElement | null>>>({});
   const pickTab = (next: PlaceTab) => {
     setChosen(next);
     writeTab(next);
   };
-  const kindKey = `kind.${place.kind}`;
-  const kind = t(kindKey) === kindKey ? place.kind : t(kindKey);
+  // A place of the ancient world says what it was (a capital; a city, nothing).
+  const kindKey = place.ancient ? `ancient.${place.ancient}` : `kind.${place.kind}`;
+  const kind = t(kindKey) === kindKey ? (place.ancient ? "" : place.kind) : t(kindKey);
+  const chip = place.kind !== "settlement" || (place.ancient !== undefined && kind !== "");
 
   return (
     <Panel
@@ -352,9 +356,9 @@ export function PlaceCard({
 
       {/* Chips only where they tell something: a town is the expected case, and so is an
           agreed location. */}
-      {(place.kind !== "settlement" || (certainty !== "unknown" && certainty !== "agreed")) && (
+      {(chip || (certainty !== "unknown" && certainty !== "agreed")) && (
         <div className="flex flex-wrap items-center gap-1.5 px-5 pt-3">
-          {place.kind !== "settlement" && (
+          {chip && (
             <span className="rounded-full border border-line bg-paper-2 px-2.5 py-0.5 text-xs text-ink-soft">
               {kind}
             </span>
@@ -383,7 +387,7 @@ export function PlaceCard({
 
       {beforeItsTime(place, year) && (
         <div className="mx-5 mt-3 text-[12.5px] leading-snug text-ink-soft italic">
-          {!life
+          {!life && !place.ancient
             ? t("place.nt_only")
             : place.gap_from !== undefined &&
                 year >= place.gap_from &&
@@ -427,6 +431,41 @@ export function PlaceCard({
       )}
 
       <Rulers placeId={place.id} year={year} locale={locale} onYear={onYear} />
+
+      {place.ancient !== undefined && (
+        // When it stood and where its record is: the gazetteers it comes from.
+        <div className="px-5 pt-3 text-[13.5px] leading-snug text-ink">
+          <span className="tabular-nums">{standingSpan(place, t, locale)}</span>
+          {/^\d+$/.test(place.id) && (
+            <>
+              {" · "}
+              <a
+                href={`https://pleiades.stoa.org/places/${place.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
+              >
+                Pleiades
+                <span className="sr-only"> ({t("new_tab")})</span>
+              </a>
+            </>
+          )}
+          {place.qid && (
+            <>
+              {" · "}
+              <a
+                href={`https://www.wikidata.org/wiki/${place.qid}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
+              >
+                Wikidata
+                <span className="sr-only"> ({t("new_tab")})</span>
+              </a>
+            </>
+          )}
+        </div>
+      )}
 
       <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 px-5 pt-3 text-[14px] text-ink">
         <MapPin className="size-4 shrink-0 text-accent" aria-hidden />
@@ -484,324 +523,329 @@ export function PlaceCard({
         </div>
       )}
 
-      {/* What there is to read about the place, one part at a time. */}
-      <div
-        role="tablist"
-        aria-label={title}
-        className="sticky top-0 z-10 mt-3 flex overflow-x-auto border-b border-line bg-paper/95 px-3 pt-2 backdrop-blur [scrollbar-width:none]"
-        onKeyDown={(e) => {
-          const i = tabs.indexOf(tab);
-          const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
-          if (!d) return;
-          e.preventDefault();
-          const next = tabs[(i + d + tabs.length) % tabs.length];
-          if (next) {
-            pickTab(next);
-            tabRefs.current[next]?.focus();
-          }
-        }}
-      >
-        {tabs.map((id) => (
-          <button
-            key={id}
-            ref={(el) => {
-              tabRefs.current[id] = el;
+      {/* What there is to read about the place, one part at a time (a place of the ancient
+          world may have nothing yet). */}
+      {tab !== undefined && (
+        <>
+          <div
+            role="tablist"
+            aria-label={title}
+            className="sticky top-0 z-10 mt-3 flex overflow-x-auto border-b border-line bg-paper/95 px-3 pt-2 backdrop-blur [scrollbar-width:none]"
+            onKeyDown={(e) => {
+              const i = tabs.indexOf(tab);
+              const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+              if (!d) return;
+              e.preventDefault();
+              const next = tabs[(i + d + tabs.length) % tabs.length];
+              if (next) {
+                pickTab(next);
+                tabRefs.current[next]?.focus();
+              }
             }}
-            role="tab"
-            id={`place-tab-${id}`}
-            aria-selected={tab === id}
-            aria-controls="place-tabpanel"
-            tabIndex={tab === id ? 0 : -1}
-            onClick={() => {
-              pickTab(id);
-            }}
-            className={`-mb-px border-b-2 px-1.5 pb-2 text-[13px] whitespace-nowrap ${
-              tab === id
-                ? "border-accent font-medium text-ink"
-                : "border-transparent text-ink-soft hover:text-ink"
-            }`}
           >
-            {id === "story"
-              ? t("place.tab_story")
-              : id === "time"
-                ? t("place.tab_time")
-                : id === "people"
-                  ? t("place.tab_people")
-                  : id === "sites"
-                    ? t("place.tab_sites")
-                    : t("place.tab_verses")}
-          </button>
-        ))}
-      </div>
-      <div
-        id="place-tabpanel"
-        role="tabpanel"
-        aria-labelledby={`place-tab-${tab}`}
-        className="pb-1"
-      >
-        {tab === "story" && (
-          <ArticleSection placeId={place.id} locale={locale} onHighlight={onHighlight} />
-        )}
-        {tab === "people" && people && onPerson && (
-          <ul className="mx-3 mt-2 mb-1">
-            {here.map((h) => {
-              const p = people.people[h.person];
-              if (!p) return null;
-              return (
-                <li key={p.id}>
-                  <button
-                    onClick={() => {
-                      onPerson(p.index);
-                    }}
-                    className="flex w-full items-baseline justify-between gap-3 rounded-lg px-2 py-1.5 text-left hover:bg-paper-2"
-                  >
-                    <span className="font-serif text-[15.5px] text-ink">
-                      {personName(p, locale)}
-                    </span>
-                    <span className="shrink-0 text-[12px] text-ink-soft tabular-nums">
-                      {formatRefOr(h.verse, locale)}
-                    </span>
-                  </button>
-                </li>
-              );
-            })}
-            <li className="px-2 pt-2 text-[11px] text-ink-soft">
-              <Credit text={t("place.people_credit")} />
-            </li>
-          </ul>
-        )}
-        {tab === "sites" && (
-          <div className="mx-5 mt-3 rounded-xl border border-[#e0b98f] bg-[#fbf1e4] px-3 py-2.5">
-            <ul className="mt-1.5 space-y-1">
-              {versions.map((s) => (
-                <li key={`${s.label}-${s.at.join(",")}`}>
-                  <button
-                    onClick={() => {
-                      onFlyTo(s.at);
-                    }}
-                    className="flex w-full items-center gap-2 rounded-md px-1 py-0.5 text-left hover:bg-paper-2"
-                  >
-                    <span className="min-w-0 flex-1 truncate text-[13.5px] text-ink">
-                      {ru ? (s.labelRu ?? s.label) : (s.labels?.[locale] ?? s.label)}
-                    </span>
-                    {s.share !== null && (
-                      <>
-                        <span className="h-1.5 w-16 shrink-0 overflow-hidden rounded-full bg-paper-2">
-                          <span
-                            className="block h-full bg-accent"
-                            style={{ width: `${s.share}%` }}
-                          />
-                        </span>
-                        <span className="w-9 shrink-0 text-right text-[12px] text-ink-soft tabular-nums">
-                          {s.share}%
-                        </span>
-                      </>
-                    )}
-                  </button>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-1.5 text-[10.5px] leading-snug text-ink-soft">
-              {t("place.sites_note")}
-            </div>
-          </div>
-        )}
-
-        {tab === "time" && life && (
-          <div className="mx-5 mt-3 rounded-xl border border-line bg-paper-2/60 px-3 py-2 text-[14px] leading-snug text-ink">
-            {/* When it stood first, then the years in ruins between its two lives. */}
-            <div className="font-medium">
-              {life.from && t("place.life_from", { year: lifeYear(life.from, locale, t) })}
-              {life.from && life.until && " · "}
-              {life.until &&
-                t(life.from ? "place.life_until" : "place.life_until_only", {
-                  year: lifeYear(life.until, locale, t),
-                })}
-              {life.gap && (life.from ?? life.until) && " · "}
-              {life.gap &&
-                t("place.life_gap", {
-                  from: lifeYear(life.gap.from, locale, t),
-                  // The year it stood again, as the note gives it (the return in 538 BC).
-                  until: lifeYear(rebuiltIn(life.gap), locale, t),
-                })}
-            </div>
-            <div className="mt-0.5">{life.note[locale] ?? life.note.en}</div>
-            <div className="mt-1 text-[11px] text-ink-soft">
-              {sourcesOf(life, locale).join("; ")}
-            </div>
-          </div>
-        )}
-
-        {/* Pleiades: the periods the gazetteer attests it in, a span and not a founding. */}
-        {tab === pleiadesTab && pleiades?.from !== undefined && pleiades.to !== undefined && (
-          <div className="mx-5 mt-3 text-[13px] leading-snug text-ink-soft">
-            {/* The span of the periods Pleiades attests the place in (Bethel from 30 BC is its
-                first there, not its founding), so the line names Pleiades as its source. */}
-            {t("place.attested", { span: formatYearRange(pleiades.from, pleiades.to, locale) })}{" "}
-            <a
-              href={`https://pleiades.stoa.org/places/${pleiades.id}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline decoration-dotted underline-offset-2 hover:text-ink"
-            >
-              Pleiades
-              <span className="sr-only"> ({t("new_tab")})</span>
-            </a>
-          </div>
-        )}
-
-        {/* The gold marks of the slider that belong to this place. */}
-        {tab === "time" && events.length > 0 && (
-          <div className="mx-5 mt-3 border-l-2 border-gold pl-3 text-[14px] leading-snug text-ink">
-            <ul className="space-y-1">
-              {(allEvents ? events : events.slice(0, EVENTS_SHOWN)).map((e) => (
-                <li key={e.id} className="flex gap-2">
-                  <span
-                    className={`${locale === "en" ? "w-[72px]" : "w-[104px]"} shrink-0 text-right text-[12px] whitespace-nowrap text-ink-soft tabular-nums`}
-                  >
-                    {e.approximate ? `${t("place.circa")} ` : ""}
-                    {formatYear(e.year, locale)}
-                  </span>
-                  <span>
-                    {e.title[locale] ?? e.title.en}
-                    {/* Told in the Bible: its passage, to read. */}
-                    {e.ref && (
-                      <>
-                        {" · "}
-                        <a
-                          href={verseUrl(e.ref, locale)}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[12.5px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
-                        >
-                          {formatRefOr(e.ref, locale)}
-                        </a>
-                      </>
-                    )}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            {!allEvents && events.length > EVENTS_SHOWN && (
+            {tabs.map((id) => (
               <button
-                onClick={() => {
-                  setAllEvents(true);
+                key={id}
+                ref={(el) => {
+                  tabRefs.current[id] = el;
                 }}
-                className="mt-0.5 text-[12.5px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
+                role="tab"
+                id={`place-tab-${id}`}
+                aria-selected={tab === id}
+                aria-controls="place-tabpanel"
+                tabIndex={tab === id ? 0 : -1}
+                onClick={() => {
+                  pickTab(id);
+                }}
+                className={`-mb-px border-b-2 px-1.5 pb-2 text-[13px] whitespace-nowrap ${
+                  tab === id
+                    ? "border-accent font-medium text-ink"
+                    : "border-transparent text-ink-soft hover:text-ink"
+                }`}
               >
-                {t("place.more", { count: events.length - EVENTS_SHOWN })}
+                {id === "story"
+                  ? t("place.tab_story")
+                  : id === "time"
+                    ? t("place.tab_time")
+                    : id === "people"
+                      ? t("place.tab_people")
+                      : id === "sites"
+                        ? t("place.tab_sites")
+                        : t("place.tab_verses")}
               </button>
+            ))}
+          </div>
+          <div
+            id="place-tabpanel"
+            role="tabpanel"
+            aria-labelledby={`place-tab-${tab}`}
+            className="pb-1"
+          >
+            {tab === "story" && (
+              <ArticleSection placeId={place.id} locale={locale} onHighlight={onHighlight} />
             )}
-          </div>
-        )}
-
-        {/* Battles and sieges fought here: who against whom, and how it ended. */}
-        {tab === "time" && battles.length > 0 && (
-          <div className="mx-5 mt-3">
-            <h3 className="text-[12px] font-semibold tracking-wide text-ink-soft uppercase">
-              {t("place.battles")}
-            </h3>
-            <ul className="mt-1 space-y-2 border-l-2 border-[#8e2a22]/60 pl-3 text-[14px] leading-snug text-ink">
-              {battles.map((b) => (
-                <li key={b.id} className="flex gap-2">
-                  <span
-                    className={`${locale === "en" ? "w-[72px]" : "w-[104px]"} shrink-0 text-right text-[12px] whitespace-nowrap text-ink-soft tabular-nums`}
-                  >
-                    {b.approximate ? `${t("place.circa")} ` : ""}
-                    {formatYear(b.year, locale)}
-                  </span>
-                  <span>
-                    {b.title[locale] ?? b.title.en}
-                    {b.ref && (
-                      <>
-                        {" · "}
-                        <a
-                          href={verseUrl(b.ref, locale)}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[12.5px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
-                        >
-                          {formatRefOr(b.ref, locale)}
-                        </a>
-                      </>
-                    )}
-                    <span className="mt-0.5 block text-[12.5px] text-ink-soft">
-                      {b.sides[locale] ?? b.sides.en}. {b.outcome[locale] ?? b.outcome.en}.
-                    </span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {tab === "verses" && (
-          <>
-            <div className="px-5 pt-3 text-[12.5px] text-ink-soft tabular-nums">
-              {/* The count once, here, not on the tab: four tabs no longer fit with it. */}
-              {[
-                t("place.verse_count", { count: place.verses }),
-                place.ot > 0 ? `${t("place.ot")} ${String(place.ot)}` : "",
-                place.nt > 0 ? `${t("place.nt")} ${String(place.nt)}` : "",
-              ]
-                .filter(Boolean)
-                .join(" · ")}
-            </div>
-            {/* By book: the book once, then its chapters and verses, so the list says
-                where the place is named and not only how often. */}
-            <div ref={versesRef} className="px-5 pt-2">
-              {byBook(place.osis.slice(0, versesShown), locale).map(({ book, refs }) => (
-                <div key={book} className="flex gap-3 py-0.5">
-                  <span className="w-12 shrink-0 pt-0.5 text-[12px] text-ink-soft">{book}</span>
-                  <div className="flex min-w-0 flex-1 flex-wrap gap-1">
-                    {refs.map(({ osis: o, cv }) => (
+            {tab === "people" && people && onPerson && (
+              <ul className="mx-3 mt-2 mb-1">
+                {here.map((h) => {
+                  const p = people.people[h.person];
+                  if (!p) return null;
+                  return (
+                    <li key={p.id}>
                       <button
-                        key={o}
-                        data-verse
-                        aria-label={formatRefOr(o, locale)}
-                        aria-expanded={openVerse === o}
-                        aria-controls={openVerse === o ? "verse-text" : undefined}
                         onClick={() => {
-                          setOpenVerse(openVerse === o ? null : o);
-                          if (openVerse !== o) notifyVerse(o);
+                          onPerson(p.index);
                         }}
-                        className={`rounded-full border px-2 py-0.5 font-serif text-[13px] tabular-nums hover:border-accent hover:text-accent ${
-                          openVerse === o
-                            ? "border-accent bg-accent/10 text-accent"
-                            : "border-line bg-white/70 text-ink"
-                        }`}
+                        className="flex w-full items-baseline justify-between gap-3 rounded-lg px-2 py-1.5 text-left hover:bg-paper-2"
                       >
-                        {cv}
+                        <span className="font-serif text-[15.5px] text-ink">
+                          {personName(p, locale)}
+                        </span>
+                        <span className="shrink-0 text-[12px] text-ink-soft tabular-nums">
+                          {formatRefOr(h.verse, locale)}
+                        </span>
                       </button>
-                    ))}
-                  </div>
-                </div>
-              ))}
-              {place.osis.length > versesShown && (
-                <button
-                  onClick={() => {
-                    focusVerse.current = versesShown;
-                    setVersesShown(versesShown + 50);
-                  }}
-                  className="mt-1 ml-15 rounded-full px-2 py-0.5 text-[13px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
-                >
-                  {t("place.more", { count: place.osis.length - versesShown })}
-                </button>
-              )}
-            </div>
-            {openVerse && (
-              <VerseText
-                key={openVerse}
-                osis={openVerse}
-                locale={locale}
-                self={[place.id, ...alsoHere.map((p) => p.id)]}
-                placeName={placeName}
-                onGoTo={onGoTo}
-              />
+                    </li>
+                  );
+                })}
+                <li className="px-2 pt-2 text-[11px] text-ink-soft">
+                  <Credit text={t("place.people_credit")} />
+                </li>
+              </ul>
             )}
-          </>
-        )}
-      </div>
+            {tab === "sites" && (
+              <div className="mx-5 mt-3 rounded-xl border border-[#e0b98f] bg-[#fbf1e4] px-3 py-2.5">
+                <ul className="mt-1.5 space-y-1">
+                  {versions.map((s) => (
+                    <li key={`${s.label}-${s.at.join(",")}`}>
+                      <button
+                        onClick={() => {
+                          onFlyTo(s.at);
+                        }}
+                        className="flex w-full items-center gap-2 rounded-md px-1 py-0.5 text-left hover:bg-paper-2"
+                      >
+                        <span className="min-w-0 flex-1 truncate text-[13.5px] text-ink">
+                          {ru ? (s.labelRu ?? s.label) : (s.labels?.[locale] ?? s.label)}
+                        </span>
+                        {s.share !== null && (
+                          <>
+                            <span className="h-1.5 w-16 shrink-0 overflow-hidden rounded-full bg-paper-2">
+                              <span
+                                className="block h-full bg-accent"
+                                style={{ width: `${s.share}%` }}
+                              />
+                            </span>
+                            <span className="w-9 shrink-0 text-right text-[12px] text-ink-soft tabular-nums">
+                              {s.share}%
+                            </span>
+                          </>
+                        )}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-1.5 text-[10.5px] leading-snug text-ink-soft">
+                  {t("place.sites_note")}
+                </div>
+              </div>
+            )}
+
+            {tab === "time" && life && (
+              <div className="mx-5 mt-3 rounded-xl border border-line bg-paper-2/60 px-3 py-2 text-[14px] leading-snug text-ink">
+                {/* When it stood first, then the years in ruins between its two lives. */}
+                <div className="font-medium">
+                  {life.from && t("place.life_from", { year: lifeYear(life.from, locale, t) })}
+                  {life.from && life.until && " · "}
+                  {life.until &&
+                    t(life.from ? "place.life_until" : "place.life_until_only", {
+                      year: lifeYear(life.until, locale, t),
+                    })}
+                  {life.gap && (life.from ?? life.until) && " · "}
+                  {life.gap &&
+                    t("place.life_gap", {
+                      from: lifeYear(life.gap.from, locale, t),
+                      // The year it stood again, as the note gives it (the return in 538 BC).
+                      until: lifeYear(rebuiltIn(life.gap), locale, t),
+                    })}
+                </div>
+                <div className="mt-0.5">{life.note[locale] ?? life.note.en}</div>
+                <div className="mt-1 text-[11px] text-ink-soft">
+                  {sourcesOf(life, locale).join("; ")}
+                </div>
+              </div>
+            )}
+
+            {/* Pleiades: the periods the gazetteer attests it in, a span and not a founding. */}
+            {tab === pleiadesTab && pleiades?.from !== undefined && pleiades.to !== undefined && (
+              <div className="mx-5 mt-3 text-[13px] leading-snug text-ink-soft">
+                {/* The span of the periods Pleiades attests the place in (Bethel from 30 BC is its
+                first there, not its founding), so the line names Pleiades as its source. */}
+                {t("place.attested", { span: formatYearRange(pleiades.from, pleiades.to, locale) })}{" "}
+                <a
+                  href={`https://pleiades.stoa.org/places/${pleiades.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-dotted underline-offset-2 hover:text-ink"
+                >
+                  Pleiades
+                  <span className="sr-only"> ({t("new_tab")})</span>
+                </a>
+              </div>
+            )}
+
+            {/* The gold marks of the slider that belong to this place. */}
+            {tab === "time" && events.length > 0 && (
+              <div className="mx-5 mt-3 border-l-2 border-gold pl-3 text-[14px] leading-snug text-ink">
+                <ul className="space-y-1">
+                  {(allEvents ? events : events.slice(0, EVENTS_SHOWN)).map((e) => (
+                    <li key={e.id} className="flex gap-2">
+                      <span
+                        className={`${locale === "en" ? "w-[72px]" : "w-[104px]"} shrink-0 text-right text-[12px] whitespace-nowrap text-ink-soft tabular-nums`}
+                      >
+                        {e.approximate ? `${t("place.circa")} ` : ""}
+                        {formatYear(e.year, locale)}
+                      </span>
+                      <span>
+                        {e.title[locale] ?? e.title.en}
+                        {/* Told in the Bible: its passage, to read. */}
+                        {e.ref && (
+                          <>
+                            {" · "}
+                            <a
+                              href={verseUrl(e.ref, locale)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[12.5px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
+                            >
+                              {formatRefOr(e.ref, locale)}
+                            </a>
+                          </>
+                        )}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                {!allEvents && events.length > EVENTS_SHOWN && (
+                  <button
+                    onClick={() => {
+                      setAllEvents(true);
+                    }}
+                    className="mt-0.5 text-[12.5px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
+                  >
+                    {t("place.more", { count: events.length - EVENTS_SHOWN })}
+                  </button>
+                )}
+              </div>
+            )}
+
+            {/* Battles and sieges fought here: who against whom, and how it ended. */}
+            {tab === "time" && battles.length > 0 && (
+              <div className="mx-5 mt-3">
+                <h3 className="text-[12px] font-semibold tracking-wide text-ink-soft uppercase">
+                  {t("place.battles")}
+                </h3>
+                <ul className="mt-1 space-y-2 border-l-2 border-[#8e2a22]/60 pl-3 text-[14px] leading-snug text-ink">
+                  {battles.map((b) => (
+                    <li key={b.id} className="flex gap-2">
+                      <span
+                        className={`${locale === "en" ? "w-[72px]" : "w-[104px]"} shrink-0 text-right text-[12px] whitespace-nowrap text-ink-soft tabular-nums`}
+                      >
+                        {b.approximate ? `${t("place.circa")} ` : ""}
+                        {formatYear(b.year, locale)}
+                      </span>
+                      <span>
+                        {b.title[locale] ?? b.title.en}
+                        {b.ref && (
+                          <>
+                            {" · "}
+                            <a
+                              href={verseUrl(b.ref, locale)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[12.5px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
+                            >
+                              {formatRefOr(b.ref, locale)}
+                            </a>
+                          </>
+                        )}
+                        <span className="mt-0.5 block text-[12.5px] text-ink-soft">
+                          {b.sides[locale] ?? b.sides.en}. {b.outcome[locale] ?? b.outcome.en}.
+                        </span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {tab === "verses" && (
+              <>
+                <div className="px-5 pt-3 text-[12.5px] text-ink-soft tabular-nums">
+                  {/* The count once, here, not on the tab: four tabs no longer fit with it. */}
+                  {[
+                    t("place.verse_count", { count: place.verses }),
+                    place.ot > 0 ? `${t("place.ot")} ${String(place.ot)}` : "",
+                    place.nt > 0 ? `${t("place.nt")} ${String(place.nt)}` : "",
+                  ]
+                    .filter(Boolean)
+                    .join(" · ")}
+                </div>
+                {/* By book: the book once, then its chapters and verses, so the list says
+                where the place is named and not only how often. */}
+                <div ref={versesRef} className="px-5 pt-2">
+                  {byBook(place.osis.slice(0, versesShown), locale).map(({ book, refs }) => (
+                    <div key={book} className="flex gap-3 py-0.5">
+                      <span className="w-12 shrink-0 pt-0.5 text-[12px] text-ink-soft">{book}</span>
+                      <div className="flex min-w-0 flex-1 flex-wrap gap-1">
+                        {refs.map(({ osis: o, cv }) => (
+                          <button
+                            key={o}
+                            data-verse
+                            aria-label={formatRefOr(o, locale)}
+                            aria-expanded={openVerse === o}
+                            aria-controls={openVerse === o ? "verse-text" : undefined}
+                            onClick={() => {
+                              setOpenVerse(openVerse === o ? null : o);
+                              if (openVerse !== o) notifyVerse(o);
+                            }}
+                            className={`rounded-full border px-2 py-0.5 font-serif text-[13px] tabular-nums hover:border-accent hover:text-accent ${
+                              openVerse === o
+                                ? "border-accent bg-accent/10 text-accent"
+                                : "border-line bg-white/70 text-ink"
+                            }`}
+                          >
+                            {cv}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                  {place.osis.length > versesShown && (
+                    <button
+                      onClick={() => {
+                        focusVerse.current = versesShown;
+                        setVersesShown(versesShown + 50);
+                      }}
+                      className="mt-1 ml-15 rounded-full px-2 py-0.5 text-[13px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
+                    >
+                      {t("place.more", { count: place.osis.length - versesShown })}
+                    </button>
+                  )}
+                </div>
+                {openVerse && (
+                  <VerseText
+                    key={openVerse}
+                    osis={openVerse}
+                    locale={locale}
+                    self={[place.id, ...alsoHere.map((p) => p.id)]}
+                    placeName={placeName}
+                    onGoTo={onGoTo}
+                  />
+                )}
+              </>
+            )}
+          </div>
+        </>
+      )}
 
       <AncientAuthors placeId={place.id} locale={locale} />
 
@@ -828,7 +872,9 @@ export function PlaceCard({
 
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 px-5 pt-3 pb-4 text-[11px] text-ink-soft">
         <span>
-          OpenBible.info (CC BY 4.0)
+          {place.ancient !== undefined
+            ? "Pleiades (CC BY 3.0) · Wikidata (CC0)"
+            : "OpenBible.info (CC BY 4.0)"}
           {place.coord === "wikidata" ? ` · ${t("place.coords_wikidata")}` : ""}
         </span>
         {/* Readers and reviewers report a mistake where they see it, with the place named:
