@@ -10,6 +10,7 @@ import { join } from "node:path";
 import { parse } from "yaml";
 import {
   AncientSitesFile,
+  AncientWaveFile,
   ChapterYearsFile,
   PlaceNamesFile,
   ModernNamesFile,
@@ -218,6 +219,35 @@ if (mostMentioned.length > 0)
   );
 
 const tours: TourFile[] = [];
+// The ancient world's sites (ADR 0018), which a tour told outside the Bible may stop at.
+// A battle may be fought at one too (Gamla, Masada): their points. Only the sites the map
+// draws (ancient.geojson keeps those in focus): a stop or a battle elsewhere would fly to
+// nothing.
+type AncientSite = {
+  id: string | number;
+  en: string;
+  lon: number;
+  lat: number;
+  from: number;
+  to: number;
+  rank: number;
+};
+const ancientSites = new Map(
+  readdirSync(join(root, "content"))
+    .filter((f) => /^ancient-sites(-wave\d+)?\.json$/.test(f))
+    .flatMap((f) => (load(`content/${f}`) as { sites: AncientSite[] }).sites)
+    .filter((s) => inFocus(s.lon, s.lat))
+    .map((s): [string, AncientSite] => [String(s.id), s]),
+);
+const ancientPoints = new Map(
+  [...ancientSites].map(([id, s]): [string, [number, number]] => [id, [s.lon, s.lat]]),
+);
+const ancientIds = new Set(ancientSites.keys());
+/** The site stands in the year, or else the map has nothing to show there. */
+const standsIn = (id: string, year: number) => {
+  const s = ancientSites.get(id);
+  return !s || (year >= s.from && year <= s.to);
+};
 for (const file of readdirSync(join(root, "content/tours")).filter((f) => f.endsWith(".yaml"))) {
   const result = TourFile.safeParse(load(`content/tours/${file}`));
   if (!result.success) {
@@ -234,11 +264,19 @@ for (const file of readdirSync(join(root, "content/tours")).filter((f) => f.ends
     const tagged = versesOf.get(s.place);
     if (
       tagged &&
+      s.ref !== undefined &&
       !refCovers(s.ref, tagged) &&
       !NAMED_BY_CONTEXT.has(`${result.data.id} ${s.place}`)
     )
       errors.push(`tours/${file}: stop ${i + 1} (${s.place}) ${s.ref} does not name the place`);
-    if (!known.has(s.place)) errors.push(`tours/${file}: stop ${s.place} is not in the data build`);
+    if (!known.has(s.place) && !ancientIds.has(s.place))
+      errors.push(`tours/${file}: stop ${s.place} is not in the data build`);
+    // The Bible's own tours stay in it: an ancient site is a stop only where the Bible is not
+    // the source.
+    if (ancientIds.has(s.place) && s.ref !== undefined)
+      errors.push(`tours/${file}: stop ${i + 1} (${s.place}) is an ancient site, told by a verse`);
+    if (!standsIn(s.place, s.year ?? result.data.year))
+      errors.push(`tours/${file}: stop ${i + 1} (${s.place}) is outside the site's years`);
     if (s.sailed && s.by !== "sea")
       errors.push(`tours/${file}: stop ${i + 1} (${s.place}) has days sailed but no "by: sea"`);
     if (i > 0 && result.data.stops[i - 1]?.place === s.place) {
@@ -513,21 +551,16 @@ for (const file of ["rivers.geojson", "river-labels.geojson"]) {
   writes.push([path, JSON.stringify(rivers)]);
 }
 
-// Dated events on the slider (content/events.yaml), at a place or an ancient site.
-const sitesById = new Map(
-  existsSync("content/ancient-sites.json")
-    ? AncientSitesFile.parse(
-        JSON.parse(readFileSync("content/ancient-sites.json", "utf8")),
-      ).sites.map((s) => [s.id, s])
-    : [],
-);
+// Dated events on the slider (content/events.yaml), at a place or an ancient site: one
+// chosen by hand or one of the waves, as long as the map draws it.
+const sitesById = new Map([...ancientSites].map(([id, s]) => [id, { ...s, id }]));
 const events: HistoryEvent[] = [];
 for (const e of EventsFile.parse(load("content/events.yaml")).events) {
   if (e.place && !known.has(e.place))
     errors.push(`events: ${e.id} points at ${e.place}, not in the data build`);
   const site = e.site === undefined ? undefined : sitesById.get(e.site);
   if (e.site !== undefined && !site)
-    errors.push(`events: ${e.id} points at ancient site ${e.site}, not in ancient-sites.json`);
+    errors.push(`events: ${e.id} points at ancient site ${e.site}, not on the map`);
   if (e.site !== undefined && e.place) errors.push(`events: ${e.id} has both a place and a site`);
   if (e.battlefield && (e.place || e.site !== undefined))
     errors.push(`events: ${e.id} has a battlefield and a place or a site`);
@@ -548,13 +581,15 @@ for (const e of EventsFile.parse(load("content/events.yaml")).events) {
 }
 events.sort((a, b) => a.year - b.year);
 
-// Battles (content/battles.yaml): at a place of the data build, drawn on the map in their
-// years from battles.geojson; the list goes into content.json for the cards.
+// Battles (content/battles.yaml): at a place of the data build or an ancient site, drawn on
+// the map in their years from battles.geojson; the list goes into content.json for the cards.
 const battles: HistoryBattle[] = [];
 if (existsSync(join(root, "content/battles.yaml")))
   for (const b of BattlesFile.parse(load("content/battles.yaml")).battles) {
-    if (!known.has(b.place))
+    if (!known.has(b.place) && !ancientIds.has(b.place))
       errors.push(`battles: ${b.id} points at ${b.place}, not in the data build`);
+    if (!standsIn(b.place, b.year.year))
+      errors.push(`battles: ${b.id} (${String(b.year.year)}) is outside its site's years`);
     if (battles.some((x) => x.id === b.id)) errors.push(`battles: ${b.id} is listed twice`);
     battles.push({
       id: b.id,
@@ -588,7 +623,10 @@ writes.push([
           ...Object.fromEntries(NAME_LOCALES.flatMap((l) => (b.title[l] ? [[l, b.title[l]]] : []))),
           ...(b.ref ? { ref: b.ref } : {}),
         },
-        geometry: { type: "Point", coordinates: pointOf.get(b.place) ?? [0, 0] },
+        geometry: {
+          type: "Point",
+          coordinates: pointOf.get(b.place) ?? ancientPoints.get(b.place) ?? [0, 0],
+        },
       })),
       // The battles of events.yaml fought at no place of the data build (Gaugamela): their
       // mark on the field, in their years, with the same name on hover; no card to open.
@@ -692,9 +730,43 @@ const photos: Record<string, PlacePhoto> = {};
 // within 3 km of one of our places is the same place under another name: an error.
 const ancientWrites: [string, string][] = [];
 if (existsSync("content/ancient-sites.json")) {
-  const { sites } = AncientSitesFile.parse(
-    JSON.parse(readFileSync("content/ancient-sites.json", "utf8")),
-  );
+  // Wikipedia articles of the sites' own Wikidata items (pipeline/ancient/fame.py), on the
+  // ancient sites' ranks, one step above the places': 0 at 60 articles, 1 at 25.
+  const fame = existsSync("content/fame.json")
+    ? (JSON.parse(readFileSync("content/fame.json", "utf8")) as { items: Record<string, number> })
+        .items
+    : {};
+  const rankByFame = (links: number) => (links >= 60 ? 0 : links >= 25 ? 1 : 2);
+  const qidOf = (sources: readonly string[]) =>
+    sources.map((u) => /wikidata\.org\/wiki\/(Q\d+)$/.exec(u)?.[1]).find(Boolean);
+  // The sites chosen one by one, with their names from the names files; then the waves a
+  // script chose (ADR 0018), with Wikidata's labels.
+  const sites = [
+    ...AncientSitesFile.parse(
+      JSON.parse(readFileSync("content/ancient-sites.json", "utf8")),
+    ).sites.map((s) => {
+      const names: Record<string, string> = {
+        ru: s.ru,
+        // uk, es, …: the site's name in each language that has a names file.
+        ...Object.fromEntries(
+          Object.entries(namesIn).flatMap(([l, f]) => {
+            const n = f.ancient?.[s.id];
+            return n ? [[l, n]] : [];
+          }),
+        ),
+      };
+      return { ...s, names };
+    }),
+    // The waves chosen by script (pipeline/ancient), in their order.
+    ...readdirSync("content")
+      .filter((f) => /^ancient-sites-wave\d+\.json$/.test(f))
+      .sort((a, b) => a.localeCompare(b, "en", { numeric: true }))
+      .flatMap((f) =>
+        AncientWaveFile.parse(JSON.parse(readFileSync(join("content", f), "utf8"))).sites.map(
+          (s) => ({ ...s, names: s.names ?? {} }),
+        ),
+      ),
+  ];
   // Towns only: a region's point (Egypt, Assyria) may well lie on an ancient city.
   const ours = places.features
     .filter((f) => (f.properties as { kind?: string }).kind === "settlement")
@@ -713,7 +785,9 @@ if (existsSync("content/ancient-sites.json")) {
     seen.add(s.id);
     if (s.from > s.to || s.from > YEAR_MAX || s.to < YEAR_MIN)
       errors.push(`ancient-sites: ${s.id} (${s.en}) years ${String(s.from)}..${String(s.to)}`);
-    const near = ours.find(([, c]) => km(c, [s.lon, s.lat]) < 3);
+    const near = ours.find(
+      ([id, c]) => km(c, [s.lon, s.lat]) < 3 && !("apart_from" in s && s.apart_from === id),
+    );
     if (near) errors.push(`ancient-sites: ${s.id} (${s.en}) is our place ${near[0]}`);
   }
   // Sites beyond the focus mask's outer ring (the Indus, Gaul) stay in the content but
@@ -729,19 +803,19 @@ if (existsSync("content/ancient-sites.json")) {
         properties: {
           id: s.id,
           en: s.en,
-          ru: s.ru,
-          // uk, es, …: the site's name in each language that has a names file.
-          ...Object.fromEntries(
-            Object.entries(namesIn).flatMap(([l, f]) => {
-              const n = f.ancient?.[s.id];
-              return n ? [[l, n]] : [];
-            }),
-          ),
+          // ru, uk, es, …: its name in each language that has one.
+          ...s.names,
           from: s.from,
           to: s.to,
-          rank: s.rank,
+          // Fame lifts a site as it lifts the Bible's towns (pipeline/build_data.py fame_rank).
+          rank: Math.min(s.rank, rankByFame(fame[qidOf(s.sources) ?? ""] ?? 0)),
           kind: s.kind,
           ...(s.approx ? { approx: true } : {}),
+          // Its Wikidata item, for the card's link (the id is Pleiades' where it has one).
+          ...(() => {
+            const qid = qidOf(s.sources);
+            return qid ? { qid } : {};
+          })(),
         },
       })),
     }),
@@ -881,7 +955,8 @@ if (errors.length > 0) {
 
 // Tours in the order of history, not of their file names; tours set at the same
 // conventional year (the judges) in the order of the Bible.
-const firstRef = (t: TourFile) => canonicalPosition(t.stops[0]?.ref ?? "Gen.1.1");
+const firstRef = (t: TourFile) =>
+  canonicalPosition(t.stops.find((s) => s.ref !== undefined)?.ref ?? "Rev.22.21");
 tours.sort((a, b) => a.year - b.year || firstRef(a) - firstRef(b) || a.id.localeCompare(b.id));
 // Pleiades ids and attested periods, matched from the gazetteer (content/pleiades.json).
 const pleiadesFile = JSON.parse(readFileSync("content/pleiades.json", "utf8")) as {

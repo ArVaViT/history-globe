@@ -87,7 +87,18 @@ const placeProps = existsSync(placesFile)
       }
     ).features.map((f) => f.properties)
   : [];
-const placeName = new Map(placeProps.map((p) => [p.id, p.name]));
+// …and the ancient world's sites, where a tour told outside the Bible stops (ADR 0018).
+const ancientFile = join(root, "apps/web/public/data/ancient.geojson");
+const placeName = new Map([
+  ...placeProps.map((p): [string, string] => [p.id, p.name]),
+  ...(existsSync(ancientFile)
+    ? (
+        JSON.parse(readFileSync(ancientFile, "utf8")) as {
+          features: { properties: { id: string; en: string } }[];
+        }
+      ).features.map((f): [string, string] => [f.properties.id, f.properties.en])
+    : []),
+]);
 /** An article's page is at its place's slug, as the pages build names it (build-pages.ts). */
 const slugOf = placeSlugs(placeProps);
 
@@ -142,7 +153,7 @@ ${numbered(q.answer.en)}
 ${t.stops
   .map(
     (s, i) =>
-      `<p class="para"><span class="n">¶${String(i + 1)}</span><b>${esc(placeName.get(s.place) ?? s.place)}</b> (${esc(formatRef(s.ref, "en"))}). ${esc(s.note.en)}</p>`,
+      `<p class="para"><span class="n">¶${String(i + 1)}</span><b>${esc(placeName.get(s.place) ?? s.place)}</b> (${esc(s.ref ? formatRef(s.ref, "en") : (s.source?.cite.en ?? ""))}). ${esc(s.note.en)}</p>`,
   )
   .join("\n")}
 <p class="meta">File: ${REPO}/blob/${commit}/${path}</p>

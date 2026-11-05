@@ -332,7 +332,8 @@ export const BattlesFile = z.strictObject({
       id: z.string().regex(/^[a-z0-9-]+$/),
       year: approxYear,
       title: localized,
-      place: z.string().regex(/^a[0-9a-f]{6}$/),
+      /** A place of the data build, or an ancient site by its Pleiades number (Gamla). */
+      place: z.string().regex(/^(a[0-9a-f]{6}|\d{1,12}|Q\d{1,12})$/),
       /** The passage that tells it; none for a battle the Bible does not tell. */
       ref: osis.optional(),
       sides: localized,
@@ -412,8 +413,20 @@ export const TourFile = z.strictObject({
   stops: z
     .array(
       z.strictObject({
-        place: z.string().regex(/^a[0-9a-f]{6}$/),
-        ref: osis,
+        /** One of our places, or an ancient site (its Pleiades number) the Bible does not name. */
+        place: z.string().regex(/^(a[0-9a-f]{6}|\d{1,12}|Q\d{1,12})$/),
+        /** The verse that tells it; a stop told outside the Bible has a `source` instead. */
+        ref: osis.optional(),
+        /**
+         * The ancient author who tells it, where the Bible does not (Josephus, Jewish War
+         * 3.7): the passage and a free translation of it to read.
+         */
+        source: z
+          .strictObject({
+            cite: localized,
+            url: z.url(),
+          })
+          .optional(),
         note: localized,
         /** The map's year at this stop, where the text dates it apart from the tour's. */
         year: yearLabel.optional(),
@@ -437,7 +450,10 @@ export const TourFile = z.strictObject({
           .optional(),
       }),
     )
-    .min(2),
+    .min(2)
+    .refine((stops) => stops.every((s) => (s.ref === undefined) !== (s.source === undefined)), {
+      message: "every stop has a verse (ref) or a source, not both",
+    }),
 });
 
 export type TourFile = z.output<typeof TourFile>;
@@ -727,6 +743,30 @@ export const ChapterYearsFile = z.strictObject({
  * The ancient world around the Bible (content/ancient-sites.json): cities, capitals and
  * sanctuaries it does not name, with the years they stood and where the record comes from.
  */
+/**
+ * More of the ancient world, chosen by a script rather than one by one (content/
+ * ancient-sites-wave1.json, ADR 0018): the same fields, with every name from Wikidata's labels,
+ * so a language may have none (the site keeps its dot there, unnamed).
+ */
+export const AncientWaveFile = z.strictObject({
+  _source: z.string().min(1),
+  sites: z.array(
+    z.strictObject({
+      id: z.string().regex(/^\d+$/),
+      en: z.string().min(1),
+      names: z.record(z.string().regex(/^[a-z]{2}$/), z.string().min(1)).optional(),
+      lon: z.number().min(-180).max(180),
+      lat: z.number().min(-90).max(90),
+      from: z.number().int(),
+      to: z.number().int(),
+      approx: z.literal(true),
+      kind: z.enum(["city", "sanctuary", "site", "port"]),
+      rank: z.union([z.literal(1), z.literal(2)]),
+      sources: z.array(z.string().min(1)).min(3),
+    }),
+  ),
+});
+
 export const AncientSitesFile = z.strictObject({
   sites: z.array(
     z.strictObject({
@@ -740,6 +780,14 @@ export const AncientSitesFile = z.strictObject({
       approx: z.boolean().optional(),
       kind: z.enum(["city", "capital", "sanctuary", "site", "port"]),
       rank: z.union([z.literal(0), z.literal(1), z.literal(2)]),
+      /**
+       * The place of ours within 3 km that is nevertheless another site (Herodium, 2 km
+       * from a candidate of Netophah): the build otherwise takes the two for one place.
+       */
+      apart_from: z
+        .string()
+        .regex(/^a[0-9a-f]{6}$/)
+        .optional(),
       sources: z.array(z.string().min(1)).min(1),
     }),
   ),

@@ -318,7 +318,7 @@ export default defineConfig({
     target: "es2023",
     // Written for check-budget.ts, never published (sourceMapsAside).
     sourcemap: "hidden",
-    rollupOptions: {
+    rolldownOptions: {
       external: ["maplibre-gl"],
       // Relative to the chunk in assets/, so the app works under any base path.
       output: { paths: { "maplibre-gl": `../${VENDOR}/maplibre-gl.mjs` } },

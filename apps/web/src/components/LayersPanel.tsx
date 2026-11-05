@@ -1,13 +1,12 @@
 import { iconDataUrl, type LayerVisibility } from "@hg/core";
 import { useMemo, type ReactNode } from "react";
 import { useTranslation } from "../i18n";
-import { Check, Landmark, MapIcon, MapPin, Milestone, Mountain, Route, Swords } from "./icons";
+import { Check, MapIcon, MapPin, Milestone, Mountain, Route, Swords } from "./icons";
 
 const ORDER: (keyof LayerVisibility)[] = [
   "relief",
   "borders",
   "roads",
-  "ancient",
   "battles",
   "places",
   "routes",
@@ -32,7 +31,6 @@ const LAYER_ICONS: Record<keyof LayerVisibility, (p: { className?: string }) => 
   relief: Mountain,
   borders: MapIcon,
   roads: Milestone,
-  ancient: Landmark,
   battles: Swords,
   places: MapPin,
   routes: Route,
@@ -46,7 +44,7 @@ export function LayerToggles({
 }: {
   layers: LayerVisibility;
   onToggle: (layer: keyof LayerVisibility, visible: boolean) => void;
-  /** Layers a setting keeps off (the Bible alone keeps the ancient world off). */
+  /** Layers a setting keeps off. */
   locked?: readonly (keyof LayerVisibility)[];
 }) {
   const { t } = useTranslation();
@@ -124,12 +122,6 @@ export function Legend() {
           <span className="size-2.5 rounded-full bg-accent opacity-35" />
         </span>
         {t("legend.faded")}
-      </li>
-      <li className="flex items-center gap-2">
-        <span className="grid size-4 place-items-center" aria-hidden>
-          <span className="size-2.5 rounded-full border-[1.5px] border-[#5d6570]" />
-        </span>
-        {t("legend.ancient")}
       </li>
       {icons.map(([name, url]) => (
         <li key={name} className="flex items-center gap-2">

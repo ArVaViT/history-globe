@@ -414,9 +414,9 @@ describe("during a tour", () => {
 
 describe("a town not standing in the year", () => {
   const ids = style.layers.map((l) => l.id);
-  it("is named in a layer under the ancient world's sites, the standing towns above them", () => {
-    expect(ids.indexOf("place-label-past")).toBeLessThan(ids.indexOf("ancient-label"));
-    expect(ids.indexOf("ancient-label")).toBeLessThan(ids.indexOf("place-label"));
+  it("is named in a layer under the landmarks, the standing towns above them", () => {
+    expect(ids.indexOf("place-label-past")).toBeLessThan(ids.indexOf("place-label-landmark"));
+    expect(ids.indexOf("place-label-landmark")).toBeLessThan(ids.indexOf("place-label"));
   });
   it("goes to the faded layer before its founding, to the main one after", () => {
     const named = (layer: string, year: number, zoom = 7) => {
@@ -465,9 +465,9 @@ describe("marks and names never pile up (8.10.2026)", () => {
   const filterLayer = (filter: unknown) =>
     ({ id: "x", type: "symbol", source: "places", filter }) as Layer;
 
-  it("draws every mark of a place, a battle or an ancient site as a symbol, never as a circle", () => {
+  it("draws every mark of a place or a battle as a symbol, never as a circle", () => {
     for (const l of style.layers)
-      if (l.type === "circle") expect(["places", "ancient", "battles"]).not.toContain(l.source);
+      if (l.type === "circle") expect(["places", "battles"]).not.toContain(l.source);
   });
 
   it("lets a mark give way, except the reader's picks and the great towns", () => {
@@ -475,8 +475,7 @@ describe("marks and names never pile up (8.10.2026)", () => {
     const allowed = new Set(["place-label-picked", "place-label-selected", "place-label-major"]);
     const marks: string[] = [];
     for (const l of style.layers) {
-      if (l.type !== "symbol" || !["places", "majors", "ancient", "battles"].includes(l.source))
-        continue;
+      if (l.type !== "symbol" || !["places", "majors", "battles"].includes(l.source)) continue;
       const layout = (l.layout ?? {}) as Record<string, unknown>;
       // Regions and waters have no mark, their name is all there is.
       if (layout["icon-image"] === undefined) continue;
@@ -488,7 +487,6 @@ describe("marks and names never pile up (8.10.2026)", () => {
       if (layout["text-field"] !== undefined) expect(layout["text-optional"], l.id).toBe(true);
     }
     expect(marks.sort()).toEqual([
-      "ancient-label",
       "battle-icon",
       "landmark-icon",
       "place-dot",
@@ -549,8 +547,7 @@ describe("marks and names never pile up (8.10.2026)", () => {
     expect(at("polity-label-pin")).toBeGreaterThan(at("place-label-sea"));
     expect(at("place-label-sea")).toBeGreaterThan(at("place-dot"));
     expect(at("place-dot")).toBeGreaterThan(at("polity-label"));
-    expect(at("place-label-landmark")).toBeGreaterThan(at("ancient-label"));
-    expect(at("ancient-label")).toBeGreaterThan(at("place-label-past"));
+    expect(at("place-label-landmark")).toBeGreaterThan(at("place-label-past"));
     expect(at("place-label-past")).toBeGreaterThan(at("place-dot-past"));
     expect(at("place-dot-past")).toBeGreaterThan(at("landmark-icon"));
   });

@@ -8,8 +8,13 @@
  */
 import { rulersOf } from "./rulers.ts";
 import { join } from "node:path";
-import { readFileSync, existsSync } from "node:fs";
-import { PolityNamesFile, PolityOverridesFile } from "../packages/model/src/content.ts";
+import { readFileSync, readdirSync, existsSync } from "node:fs";
+import {
+  AncientSitesFile,
+  AncientWaveFile,
+  PolityNamesFile,
+  PolityOverridesFile,
+} from "../packages/model/src/content.ts";
 import { POLITY_SPLIT_YEAR } from "../packages/model/src/time.ts";
 
 export interface PolityBuild {
@@ -918,7 +923,20 @@ export function buildPolities({
   writes.push([join(out, "polities-all.geojson"), fc(polities.features)]);
   writes.push([join(out, "polity-labels-all.geojson"), fc(labels.features)]);
 
-  // Who ruled each place, century by century, for the card's timeline (scripts/rulers.ts).
-  const { states, rulers } = rulersOf(polities.features, places.features);
+  // Who ruled each place, century by century, for the card's timeline (scripts/rulers.ts):
+  // the ancient world's places too, which the card opens as any other.
+  const read = (file: string) =>
+    existsSync(file)
+      ? (JSON.parse(readFileSync(file, "utf8")) as unknown)
+      : { _source: "none", sites: [] };
+  const ancient = [
+    ...(existsSync("content/ancient-sites.json")
+      ? AncientSitesFile.parse(read("content/ancient-sites.json")).sites
+      : []),
+    ...readdirSync("content")
+      .filter((f) => /^ancient-sites-wave\d+\.json$/.test(f))
+      .flatMap((f) => AncientWaveFile.parse(read(join("content", f))).sites),
+  ].map((a) => ({ geometry: { coordinates: [a.lon, a.lat] }, properties: { id: a.id } }));
+  const { states, rulers } = rulersOf(polities.features, [...places.features, ...ancient]);
   writes.push([join(out, "rulers.json"), JSON.stringify({ states, places: rulers })]);
 }

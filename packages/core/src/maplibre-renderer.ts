@@ -8,7 +8,7 @@ import type { Camera, LonLat, PolityName, Renderer, RendererEvents } from "./ren
 import type { LayerVisibility } from "./state.ts";
 import { buildStyle, layersInGroup, MAP_FONT, seaLabels, type StyleOptions } from "./style.ts";
 import { drawIcon } from "./icons.ts";
-import { thinMajors } from "./majors.ts";
+import { thinMajors, weight } from "./majors.ts";
 import { WheelClassifier } from "./wheel.ts";
 
 /**
@@ -123,7 +123,10 @@ function covers(g: GeoJSON.Geometry, lon: number, lat: number): boolean {
 export class MapLibreRenderer implements Renderer {
   readonly map: MLMap;
   private readonly featureIdByPlace = new Map<string, number>();
-  private readonly places: FeatureCollection;
+  /** Every place, the ancient world's with the Bible's. */
+  private readonly allPlaces: FeatureCollection;
+  /** The places drawn: all, or under the Bible alone only those it names. */
+  private places: FeatureCollection;
   /** The great towns as last drawn (majors.ts): written again only when they change. */
   private majorsNow = "";
   private selectedPlace: string | null = null;
@@ -132,13 +135,11 @@ export class MapLibreRenderer implements Renderer {
   private hovered: number | null = null;
   private hoveredPlace: string | null = null;
   private polityShown = false;
-  private ancientShown: string | null = null;
   private battleShown = false;
   private readonly handlers: { [E in keyof RendererEvents]: Set<RendererEvents[E]> } = {
     pick: new Set(),
     hover: new Set(),
     hoverPolity: new Set(),
-    hoverAncient: new Set(),
     hoverBattle: new Set(),
     cameraChanged: new Set(),
     ready: new Set(),
@@ -167,10 +168,8 @@ export class MapLibreRenderer implements Renderer {
   };
   private year = 0;
   private roadsOn = true;
-  private ancient: "no" | "loading" | "yes" = "no";
-  private ancientOn = true;
   private battles: "no" | "loading" | "yes" = "no";
-  /** The Bible alone (a setting): the ancient world off, whatever its switch says. */
+  /** The Bible alone (a setting): the places, events and battles it does not name off. */
   private bibleOnly = false;
   private layersNow: LayerVisibility | null = null;
   private battlesOn = true;
@@ -203,9 +202,9 @@ export class MapLibreRenderer implements Renderer {
       relief: layersInGroup(style, "relief"),
       routes: layersInGroup(style, "routes"),
       roads: layersInGroup(style, "roads"),
-      ancient: layersInGroup(style, "ancient"),
       battles: layersInGroup(style, "battles"),
     };
+    this.allPlaces = o.places;
     this.places = o.places;
     this.year = o.initialYear;
     for (const f of o.places.features) {
@@ -298,7 +297,7 @@ export class MapLibreRenderer implements Renderer {
     // The style is enough to set data and run queued work. "load" also waits for the
     // tiles in view, and in some views (zoom 22 over a pole) it never comes.
     this.map.once("style.load", () => {
-      void (this.map.getSource("places") as GeoJSONSource).setData(o.places);
+      void (this.map.getSource("places") as GeoJSONSource).setData(this.places);
       void this.map.getSource<GeoJSONSource>("sea-labels")?.setData(seaLabels(o.places));
       this.fillMajors();
       this.map.setTerrain({ source: "dem-terrain", exaggeration: 1.5 });
@@ -307,7 +306,6 @@ export class MapLibreRenderer implements Renderer {
       this.pending = [];
       // A link may open close in, on a Roman year, without moving the map afterwards.
       this.loadRoads();
-      this.loadAncient();
       this.loadBattles();
     });
     // Ready at the first frame that shows the places, or at the first idle frame if that
@@ -340,7 +338,7 @@ export class MapLibreRenderer implements Renderer {
       return (
         fs.find((f) => f.layer.id.startsWith("place-label")) ??
         fs.reduce<(typeof fs)[number] | undefined>(
-          (a, f) => (a && Number(a.properties.verses) >= Number(f.properties.verses) ? a : f),
+          (a, f) => (a && weight(a) >= weight(f) ? a : f),
           undefined,
         )
       );
@@ -379,7 +377,6 @@ export class MapLibreRenderer implements Renderer {
       }
       const id = battle?.place ?? (placeAt(e)?.properties as { id?: string } | undefined)?.id;
       if (id) {
-        this.hideAncient();
         // A tap on a phone also "hovers": its tip would stay over the card it opens.
         if (e.originalEvent instanceof PointerEvent && e.originalEvent.pointerType === "touch") {
           this.hoveredPlace = null;
@@ -389,13 +386,10 @@ export class MapLibreRenderer implements Renderer {
         }
         for (const h of this.handlers.pick) h(id);
       }
-      // A tap names an ancient site as hovering does: a phone has no hover.
-      else this.showAncient(e);
     });
     // A tip would otherwise stay over a map that moved away: a tap on a phone, or a click
     // that flies to the place picked while the pointer rests where it was.
     this.map.on("movestart", () => {
-      this.hideAncient();
       if (this.hoveredPlace !== null) {
         this.hoveredPlace = null;
         for (const h of this.handlers.hover) h(null, null);
@@ -427,10 +421,9 @@ export class MapLibreRenderer implements Renderer {
       if (fid !== this.hovered) this.setHoverState(fid);
       const pid = (f?.properties as { id?: string } | undefined)?.id ?? null;
       const at = { x: e.point.x, y: e.point.y };
-      // Over no biblical place, an ancient site is named; over neither, the states under
-      // the pointer: their labels often give way to town names.
-      const site = pid ? undefined : this.showAncient(e);
-      const states = pid || site ? null : this.politiesAt(e);
+      // Over no place, the states under the pointer: their labels often give way to town
+      // names.
+      const states = pid ? null : this.politiesAt(e);
       // Nothing to say twice: "no state here" is sent once, not on every mouse move.
       if (states || this.polityShown) {
         this.polityShown = states !== null;
@@ -447,8 +440,6 @@ export class MapLibreRenderer implements Renderer {
       for (const h of this.handlers.hover) h(null, null);
       this.polityShown = false;
       for (const h of this.handlers.hoverPolity) h(null, null);
-      this.ancientShown = null;
-      for (const h of this.handlers.hoverAncient) h(null, null);
       this.battleShown = false;
       for (const h of this.handlers.hoverBattle) h(null, null);
     });
@@ -703,55 +694,12 @@ export class MapLibreRenderer implements Renderer {
         this.map.setGlobalStateProperty("year", y);
       });
       if (y > POLITY_SPLIT_YEAR) void this.loadLateStates();
-      // The site named may not stand in the new year.
-      if (y !== this.year) this.hideAncient();
       this.year = y;
       this.whenLoaded(() => {
         this.fillMajors();
       });
       this.loadRoads();
     });
-  }
-
-  private hideAncient(): void {
-    if (this.ancientShown === null) return;
-    this.ancientShown = null;
-    for (const h of this.handlers.hoverAncient) h(null, null);
-  }
-
-  /** Names the ancient site under the pointer (or stops naming one); returns it. */
-  private showAncient(e: MapMouseEvent) {
-    const site = this.ancientAt(e);
-    const siteId = (site?.properties as { id?: string } | undefined)?.id ?? null;
-    if (siteId === this.ancientShown) return site;
-    this.ancientShown = siteId;
-    const p = site?.properties as
-      | { en: string; ru: string; from: number; to: number; approx?: boolean; kind?: string }
-      | undefined;
-    const value =
-      p && siteId
-        ? {
-            en: p.en,
-            ru: p.ru,
-            names: Object.fromEntries(
-              Object.entries(p).filter(
-                (e): e is [string, string] => /^[a-z]{2}$/.test(e[0]) && typeof e[1] === "string",
-              ),
-            ),
-            from: p.from,
-            to: p.to,
-            approx: p.approx === true,
-            kind: p.kind ?? "",
-          }
-        : null;
-    const at = { x: e.point.x, y: e.point.y };
-    for (const h of this.handlers.hoverAncient) h(value, value ? at : null);
-    return site;
-  }
-
-  private ancientAt(e: MapMouseEvent) {
-    if (!this.loaded || this.ancient !== "yes" || !this.ancientOn) return undefined;
-    return this.map.queryRenderedFeatures(e.point, { layers: ["ancient-label"] })[0];
   }
 
   /** The battles (a few kB) load once the map is up, while their layer is on. */
@@ -763,11 +711,27 @@ export class MapLibreRenderer implements Renderer {
     });
   }
 
-  /** The Bible alone (a setting): the battles it does not tell step off the map. */
+  /**
+   * The Bible alone (a setting): the places of the ancient world it does not name, and the
+   * battles it does not tell, step off the map.
+   */
   setBibleOnly(on: boolean): void {
+    const changed = on !== this.bibleOnly;
     this.bibleOnly = on;
+    this.places = on
+      ? {
+          ...this.allPlaces,
+          features: this.allPlaces.features.filter(
+            (f) => !(f.properties as { ancient?: string } | null)?.ancient,
+          ),
+        }
+      : this.allPlaces;
     this.whenLoaded(() => {
       this.map.setGlobalStateProperty("bibleOnly", on);
+      if (!changed) return;
+      void this.map.getSource<GeoJSONSource>("places")?.setData(this.places);
+      this.majorsNow = "";
+      this.fillMajors();
     });
     if (this.layersNow) this.setLayers(this.layersNow);
   }
@@ -776,15 +740,6 @@ export class MapLibreRenderer implements Renderer {
   setHiddenNames(ids: readonly string[]): void {
     this.whenLoaded(() => {
       this.map.setGlobalStateProperty("hiddenNames", [...ids]);
-    });
-  }
-
-  /** The ancient sites (some 50 kB) load once the map is up, while their layer is on. */
-  private loadAncient(): void {
-    if (!this.loaded || !this.ancientOn || this.ancient !== "no") return;
-    this.ancient = "loading";
-    void this.fill("ancient", "ancient.geojson").then((ok) => {
-      this.ancient = ok ? "yes" : "no";
     });
   }
 
@@ -877,10 +832,7 @@ export class MapLibreRenderer implements Renderer {
     this.layersNow = layers;
     this.whenLoaded(() => {
       for (const [group, ids] of Object.entries(this.groups)) {
-        // The Bible alone (a setting) keeps the ancient world off without touching the
-        // reader's own switch: a link they share still says what they chose.
-        const visible =
-          layers[group as keyof LayerVisibility] && !(group === "ancient" && this.bibleOnly);
+        const visible = layers[group as keyof LayerVisibility];
         for (const id of ids)
           this.map.setLayoutProperty(id, "visibility", visible ? "visible" : "none");
       }
@@ -892,12 +844,8 @@ export class MapLibreRenderer implements Renderer {
       else this.map.setTerrain(null);
       this.roadsOn = layers.roads;
       this.loadRoads();
-      this.ancientOn = layers.ancient && !this.bibleOnly;
-      this.loadAncient();
       this.battlesOn = layers.battles;
       this.loadBattles();
-      // A tip over a site goes with its layer.
-      if (!this.ancientOn) this.hideAncient();
     });
   }
 

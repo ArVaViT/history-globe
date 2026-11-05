@@ -45,9 +45,7 @@ import {
   visibleAtZoom,
   labelledAtZoom,
   LABEL_PADDING,
-  ANCIENT_NOW,
   BATTLE_INK,
-  ANCIENT_INK,
   PICKED,
   TOWN_MARK,
   TOWN_MARK_SIZE,
@@ -526,8 +524,8 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
     // name, is left off until the map is closer (the owner's view of 8.10.2026: a dozen
     // towns, battles and names piled round Jerusalem at a globe's view). Symbol layers are
     // placed from the top of the stack down: the reader's picks first, then the towns with
-    // their names, battles, the unnamed towns, states, landmarks, the ancient world, and
-    // last the landmarks too small to be named at the zoom.
+    // their names, battles, the unnamed towns, states, landmarks, the towns not standing in
+    // the year, and last the landmarks too small to be named at the zoom.
     {
       // Mountains, springs, gates…, without their name at this zoom: an icon that says what
       // the place is, or a small dark dot.
@@ -545,40 +543,6 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       ],
       layout: LANDMARK_MARK_LAYOUT,
       paint: LANDMARK_MARK_PAINT,
-    },
-    {
-      id: "ancient-label",
-      type: "symbol",
-      source: "ancient",
-      metadata: { group: "ancient" },
-      filter: ANCIENT_NOW,
-      layout: {
-        // A hollow ring, as in the key; with its name or alone, never under another's.
-        "icon-image": "hg-ancient",
-        "icon-size": ["match", ["get", "rank"], 0, 3.8 / 3.3, 1, 1, 2.8 / 3.3],
-        "icon-padding": 0,
-        "text-optional": true,
-        "text-field": ["coalesce", ["get", LOCALE], ["get", "en"]],
-        "text-font": [MAP_FONT],
-        "text-size": ["match", ["get", "rank"], 0, 12.5, 1, 11.5, 11],
-        "text-variable-anchor": ["top", "bottom", "right", "left"],
-        "text-radial-offset": 0.7,
-        "text-justify": "auto",
-        "symbol-sort-key": ["get", "rank"],
-        "text-padding": LABEL_PADDING,
-      },
-      paint: {
-        "icon-color": ANCIENT_INK,
-        // A tour, a person or a chapter in focus: the ancient world steps back with the
-        // places off it.
-        "icon-opacity": ["case", NOT_TOURING, 0.9, 0.35],
-        "text-color": ANCIENT_INK,
-        "text-halo-color": T.halo,
-        // Faded during a tour or a chapter, a light halo on the dark sea read as a smudge
-        // (Knossos in Acts 16): no halo then.
-        "text-halo-width": ["case", NOT_TOURING, 1.4, 0],
-        "text-opacity": ["case", NOT_TOURING, 1, 0.4],
-      },
     },
     {
       id: "place-label-area",
@@ -1045,17 +1009,17 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
   ];
 
   // A town not standing in the year (Antioch in 1300 BC) is named faded, and below the
-  // ancient world's sites that do stand then: Ugarit's name wins the room over it.
-  // Its dot alone, the same way: below the ancient world's marks.
+  // states and landmarks: a town that does stand then wins the room over it (Ugarit).
+  // Its dot alone, the same way.
   for (const id of ["place-dot", "place-label"]) {
     const layer = layers.find((l) => l.id === id);
-    const ancient = layers.findIndex((l) => l.id === "ancient-label");
-    if (layer?.type !== "symbol" || !layer.filter || ancient < 0) continue;
+    const below = layers.findIndex((l) => l.id === "place-label-area");
+    if (layer?.type !== "symbol" || !layer.filter || below < 0) continue;
     const shown: ExpressionSpecification = ["any", ["!", OUT_OF_TIME], IS_SELECTED, IN_TOUR];
     const base = layer.filter as ExpressionSpecification;
     const past: ExpressionSpecification = ["all", base, ["!", shown]];
     const now: ExpressionSpecification = ["all", base, shown];
-    layers.splice(ancient, 0, { ...layer, id: `${id}-past`, filter: past });
+    layers.splice(below, 0, { ...layer, id: `${id}-past`, filter: past });
     layer.filter = now;
   }
 
@@ -1148,7 +1112,8 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       places: {
         type: "geojson",
         data: { type: "FeatureCollection", features: [] },
-        attribution: "OpenBible.info (CC BY 4.0, modified)",
+        attribution:
+          'OpenBible.info (CC BY 4.0, modified); Ancient sites: <a href="https://pleiades.stoa.org">Pleiades</a> (CC BY 3.0), <a href="https://www.wikidata.org">Wikidata</a> (CC0)',
       },
       // The seas' and lakes' names at their own points (seaLabels): filled with the places.
       "sea-labels": { type: "geojson", data: { type: "FeatureCollection", features: [] } },
@@ -1169,13 +1134,6 @@ export function buildStyle(o: StyleOptions): StyleSpecification {
       "roads-minor": { type: "geojson", data: { type: "FeatureCollection", features: [] } },
       // Filled once the map has loaded (MapLibreRenderer.loadBattles).
       battles: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
-      // Filled once the map has loaded (MapLibreRenderer.loadAncient).
-      ancient: {
-        type: "geojson",
-        data: { type: "FeatureCollection", features: [] },
-        attribution:
-          'Ancient sites: <a href="https://pleiades.stoa.org">Pleiades</a> (CC BY 3.0), <a href="https://www.wikidata.org">Wikidata</a> (CC0)',
-      },
     },
     layers,
   };

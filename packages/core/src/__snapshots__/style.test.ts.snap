@@ -1919,8 +1919,15 @@ exports[`style > is built as before 1`] = `
             "-",
             0,
             [
-              "get",
-              "verses",
+              "coalesce",
+              [
+                "get",
+                "weight",
+              ],
+              [
+                "get",
+                "verses",
+              ],
             ],
           ],
           [
@@ -3596,8 +3603,15 @@ exports[`style > is built as before 1`] = `
             "-",
             0,
             [
-              "get",
-              "verses",
+              "coalesce",
+              [
+                "get",
+                "weight",
+              ],
+              [
+                "get",
+                "verses",
+              ],
             ],
           ],
           [
@@ -5131,8 +5145,15 @@ exports[`style > is built as before 1`] = `
             "-",
             0,
             [
-              "get",
-              "verses",
+              "coalesce",
+              [
+                "get",
+                "weight",
+              ],
+              [
+                "get",
+                "verses",
+              ],
             ],
           ],
           [
@@ -5979,202 +6000,6 @@ exports[`style > is built as before 1`] = `
       "filter": [
         "all",
         [
-          "<=",
-          [
-            "get",
-            "from",
-          ],
-          [
-            "global-state",
-            "year",
-          ],
-        ],
-        [
-          ">=",
-          [
-            "get",
-            "to",
-          ],
-          [
-            "global-state",
-            "year",
-          ],
-        ],
-        [
-          ">=",
-          [
-            "zoom",
-          ],
-          [
-            "match",
-            [
-              "get",
-              "rank",
-            ],
-            0,
-            4,
-            1,
-            6,
-            8,
-          ],
-        ],
-      ],
-      "id": "ancient-label",
-      "layout": {
-        "icon-image": "hg-ancient",
-        "icon-padding": 0,
-        "icon-size": [
-          "match",
-          [
-            "get",
-            "rank",
-          ],
-          0,
-          1.1515151515151516,
-          1,
-          1,
-          0.8484848484848485,
-        ],
-        "symbol-sort-key": [
-          "get",
-          "rank",
-        ],
-        "text-field": [
-          "coalesce",
-          [
-            "get",
-            [
-              "global-state",
-              "locale",
-            ],
-          ],
-          [
-            "get",
-            "en",
-          ],
-        ],
-        "text-font": [
-          "Map Serif",
-        ],
-        "text-justify": "auto",
-        "text-optional": true,
-        "text-padding": [
-          "interpolate",
-          [
-            "linear",
-          ],
-          [
-            "zoom",
-          ],
-          6,
-          8,
-          11,
-          3,
-        ],
-        "text-radial-offset": 0.7,
-        "text-size": [
-          "match",
-          [
-            "get",
-            "rank",
-          ],
-          0,
-          12.5,
-          1,
-          11.5,
-          11,
-        ],
-        "text-variable-anchor": [
-          "top",
-          "bottom",
-          "right",
-          "left",
-        ],
-      },
-      "metadata": {
-        "group": "ancient",
-      },
-      "paint": {
-        "icon-color": "#5d6570",
-        "icon-opacity": [
-          "case",
-          [
-            "==",
-            [
-              "length",
-              [
-                "coalesce",
-                [
-                  "global-state",
-                  "tourPlaces",
-                ],
-                [
-                  "literal",
-                  [],
-                ],
-              ],
-            ],
-            0,
-          ],
-          0.9,
-          0.35,
-        ],
-        "text-color": "#5d6570",
-        "text-halo-color": "#f6efe1",
-        "text-halo-width": [
-          "case",
-          [
-            "==",
-            [
-              "length",
-              [
-                "coalesce",
-                [
-                  "global-state",
-                  "tourPlaces",
-                ],
-                [
-                  "literal",
-                  [],
-                ],
-              ],
-            ],
-            0,
-          ],
-          1.4,
-          0,
-        ],
-        "text-opacity": [
-          "case",
-          [
-            "==",
-            [
-              "length",
-              [
-                "coalesce",
-                [
-                  "global-state",
-                  "tourPlaces",
-                ],
-                [
-                  "literal",
-                  [],
-                ],
-              ],
-            ],
-            0,
-          ],
-          1,
-          0.4,
-        ],
-      },
-      "source": "ancient",
-      "type": "symbol",
-    },
-    {
-      "filter": [
-        "all",
-        [
           "match",
           [
             "get",
@@ -6538,8 +6363,15 @@ exports[`style > is built as before 1`] = `
             "-",
             0,
             [
-              "get",
-              "verses",
+              "coalesce",
+              [
+                "get",
+                "weight",
+              ],
+              [
+                "get",
+                "verses",
+              ],
             ],
           ],
           [
@@ -7415,8 +7247,15 @@ exports[`style > is built as before 1`] = `
             "-",
             0,
             [
-              "get",
-              "verses",
+              "coalesce",
+              [
+                "get",
+                "weight",
+              ],
+              [
+                "get",
+                "verses",
+              ],
             ],
           ],
           [
@@ -8573,8 +8412,15 @@ exports[`style > is built as before 1`] = `
             "-",
             0,
             [
-              "get",
-              "verses",
+              "coalesce",
+              [
+                "get",
+                "weight",
+              ],
+              [
+                "get",
+                "verses",
+              ],
             ],
           ],
           [
@@ -11125,8 +10971,15 @@ exports[`style > is built as before 1`] = `
             "-",
             0,
             [
-              "get",
-              "verses",
+              "coalesce",
+              [
+                "get",
+                "weight",
+              ],
+              [
+                "get",
+                "verses",
+              ],
             ],
           ],
           [
@@ -11769,8 +11622,15 @@ exports[`style > is built as before 1`] = `
             "-",
             0,
             [
-              "get",
-              "verses",
+              "coalesce",
+              [
+                "get",
+                "weight",
+              ],
+              [
+                "get",
+                "verses",
+              ],
             ],
           ],
           [
@@ -13316,8 +13176,15 @@ exports[`style > is built as before 1`] = `
             "-",
             0,
             [
-              "get",
-              "verses",
+              "coalesce",
+              [
+                "get",
+                "weight",
+              ],
+              [
+                "get",
+                "verses",
+              ],
             ],
           ],
           [
@@ -15190,8 +15057,15 @@ exports[`style > is built as before 1`] = `
             "-",
             0,
             [
-              "get",
-              "verses",
+              "coalesce",
+              [
+                "get",
+                "weight",
+              ],
+              [
+                "get",
+                "verses",
+              ],
             ],
           ],
           [
@@ -16505,8 +16379,15 @@ exports[`style > is built as before 1`] = `
             "-",
             0,
             [
-              "get",
-              "verses",
+              "coalesce",
+              [
+                "get",
+                "weight",
+              ],
+              [
+                "get",
+                "verses",
+              ],
             ],
           ],
           [
@@ -17875,8 +17756,15 @@ exports[`style > is built as before 1`] = `
             "-",
             0,
             [
-              "get",
-              "verses",
+              "coalesce",
+              [
+                "get",
+                "weight",
+              ],
+              [
+                "get",
+                "verses",
+              ],
             ],
           ],
           [
@@ -18483,14 +18371,6 @@ exports[`style > is built as before 1`] = `
     "sky-color": "#0c1520",
   },
   "sources": {
-    "ancient": {
-      "attribution": "Ancient sites: <a href="https://pleiades.stoa.org">Pleiades</a> (CC BY 3.0), <a href="https://www.wikidata.org">Wikidata</a> (CC0)",
-      "data": {
-        "features": [],
-        "type": "FeatureCollection",
-      },
-      "type": "geojson",
-    },
     "battles": {
       "data": {
         "features": [],
@@ -20142,7 +20022,7 @@ exports[`style > is built as before 1`] = `
       "type": "geojson",
     },
     "places": {
-      "attribution": "OpenBible.info (CC BY 4.0, modified)",
+      "attribution": "OpenBible.info (CC BY 4.0, modified); Ancient sites: <a href="https://pleiades.stoa.org">Pleiades</a> (CC BY 3.0), <a href="https://www.wikidata.org">Wikidata</a> (CC0)",
       "data": {
         "features": [],
         "type": "FeatureCollection",

@@ -23,10 +23,9 @@
     "title": "Straturi",
     "relief": "Relief",
     "borders": "Granițele statelor",
-    "places": "Locuri biblice",
+    "places": "Locuri",
     "routes": "Trasee",
     "roads": "Drumuri romane",
-    "ancient": "Lumea antică",
     "battles": "Bătălii"
   },
   "tours": {
@@ -42,6 +41,7 @@
     "whole": "Toată Biblia",
     "ot": "Vechiul Testament",
     "nt": "Noul Testament",
+    "beyond": "Dincolo de Biblie",
     "about_place": "Despre loc",
     "stops_list": "Opriri",
     "back_to": "Înapoi la traseul „{{title}}”",
@@ -219,7 +219,6 @@
     "major": "oraș important",
     "faded": "nu exista în acel an",
     "route": "traseu",
-    "ancient": "oraș din afara Bibliei",
     "roman_road": "drum roman"
   },
   "events": {
