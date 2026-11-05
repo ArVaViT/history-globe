@@ -18,7 +18,8 @@ FIX={'Gamla':(-149,67,'a town from the 2nd century BC, destroyed by Vespasian in
  'Phintias':(-281,300,'founded by Phintias of Akragas c. 282 BC'),
  'Ptolemais Theron':(-269,300,'founded by Ptolemy II c. 270 BC'),
  'Jebel Khalid':(-299,-69,'the Seleucid fortress, left c. 70 BC'),
- 'Segeda':(None,-71,'the Celtiberian town, taken by Rome in 153 BC, its successor left c. 72 BC')}
+ 'Segeda':(None,-71,'the Celtiberian town, taken by Rome in 153 BC, its successor left c. 72 BC'),
+ 'Tyritake':(None,640,'most accounts end the town c. 370, after the Huns; kept to the last Pleiades period, not Wikidata\'s 800')}
 # English labels Wikidata gives in another language or with a note; kinds it gets wrong.
 RENAME={'Temple romain de Château-Bas':'Temple of Château-Bas','Archeological site of Alba-la-Romaine':'Alba Helviorum',
  'Cala Morell Settlement':'Cala Morell','Portus Magnus, Algeria':'Portus Magnus','Poblat talaiòtic de Montefí':'Montefí',
