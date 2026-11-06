@@ -29,12 +29,13 @@ As of the release of 2026-10-25 (`api/v1/index.json`, `built_at`):
 The places, verses and points come from open scholarly datasets (OpenBible.info, STEPBible
 TIPNR, Pleiades, Wikidata, Cliopatria); where we depart from them, the reason and the source
 are given. The
-articles, tours and events are drafted with AI help under the author's direction and then
-checked against their sources in separate review passes. The last full pass, finished on
-2026-10-17, re-read every article against its sources. These reviews were not made by
-scholars. An article a historian has read carries the historian's name and a link to the
-review (the first, by Juan Manuel Tebes, covers five articles on Edom and the Arabah); every
-other article page says it has not been read by a historian yet. How each layer is made and
+articles, tours and events are drafted by the author with the assistance of large language
+models and then checked against their sources in separate review passes. The last full pass,
+finished on 2026-10-17, re-read every article against its sources. These passes are the
+project's own checks, not peer review. Reviews by specialists are published under their names:
+an article a specialist has reviewed names the reviewer and links to the review (Juan Manuel
+Tebes has reviewed five articles on Edom and the Arabah); every other article page says it has
+not been read by a historian yet. How each layer is made and
 what is uncertain: [methodology](https://historyglobe.app/docs/methodology.html).
 
 Errors we found in the datasets we draw on, and our own disagreements with them, are listed
@@ -127,7 +128,7 @@ Keys in the app: `[` `]` move the year by 10 (with Shift by 100), Space plays, `
 
 ### Docs
 
-- `AGENTS.md` — rules for AI coding agents (and humans).
+- `AGENTS.md` — rules for coding agents (and humans).
 - `docs/adr/` — architecture decisions:
   - [0001. Record architecture decisions](docs/adr/0001-record-architecture-decisions.md)
   - [0002. Monorepo and toolchain](docs/adr/0002-monorepo-and-toolchain.md)
