@@ -143,7 +143,7 @@ const LANDING_UK = {
   ],
   trust: "На відкритих даних",
   trustText:
-    "Статті написано за допомогою ШІ та перевірено за джерелами окремим проходом; учені їх поки не рецензували, і ми так і пишемо.",
+    "Статті готуються за допомогою мовних моделей і звіряються з джерелами в незалежних проходах перевірки; рецензії фахівців публікуються під їхніми іменами.",
   method: "Як перевіряються дані",
   sources: "Усі джерела",
   ctaTitle: "Почніть із будь-якого року",
@@ -314,7 +314,7 @@ const LANDING_ES = {
   ],
   trust: "Basado en datos abiertos",
   trustText:
-    "Los artículos se redactan con ayuda de IA y se contrastan con las fuentes en una pasada aparte; los especialistas aún no los han revisado, y el sitio lo dice.",
+    "Los artículos se redactan con la asistencia de modelos de lenguaje y se contrastan con sus fuentes en revisiones independientes; las reseñas de especialistas se publican con su nombre.",
   method: "Cómo se comprueban los datos",
   sources: "Todas las fuentes",
   ctaTitle: "Empieza por cualquier año",
@@ -485,7 +485,7 @@ const LANDING_PT = {
   ],
   trust: "Baseado em dados abertos",
   trustText:
-    "Os artigos são redigidos com ajuda de IA e conferidos com as fontes em uma etapa à parte; especialistas ainda não os revisaram, e o site diz isso.",
+    "Os artigos são redigidos com a assistência de modelos de linguagem e conferidos com as suas fontes em revisões independentes; as revisões de especialistas são publicadas com o seu nome.",
   method: "Como os dados são conferidos",
   sources: "Todas as fontes",
   ctaTitle: "Comece por qualquer ano",
@@ -656,7 +656,7 @@ const LANDING_DE = {
   ],
   trust: "Auf offenen Daten gebaut",
   trustText:
-    "Die Artikel entstehen mit Hilfe von KI und werden in einem eigenen Durchgang mit den Quellen abgeglichen; Fachleute haben sie noch nicht geprüft, und die Seite sagt das offen.",
+    "Die Artikel entstehen unter Mitwirkung von Sprachmodellen und werden in unabhängigen Prüfdurchgängen mit ihren Quellen abgeglichen; Gutachten von Fachleuten erscheinen unter ihrem Namen.",
   method: "Wie die Daten geprüft werden",
   sources: "Alle Quellen",
   ctaTitle: "Mit einem beliebigen Jahr beginnen",
@@ -827,7 +827,7 @@ const LANDING_FR = {
   ],
   trust: "Fondé sur des données ouvertes",
   trustText:
-    "Les articles sont rédigés avec l’aide de l’IA et vérifiés d’après les sources lors d’une passe distincte\u202f; les spécialistes ne les ont pas encore relus, et le site le dit.",
+    "Les articles sont rédigés avec l’assistance de modèles de langage et vérifiés d’après leurs sources lors de relectures indépendantes\u202f; les évaluations de spécialistes sont publiées sous leur nom.",
   method: "Comment les données sont vérifiées",
   sources: "Toutes les sources",
   ctaTitle: "Commencez à n’importe quelle année",
@@ -1000,7 +1000,7 @@ const LANDING_IT = {
   ],
   trust: "Costruito su dati aperti",
   trustText:
-    "Gli articoli sono redatti con l’aiuto dell’IA e verificati sulle fonti in un passaggio a parte; gli studiosi non li hanno ancora rivisti, e il sito lo dichiara.",
+    "Gli articoli sono redatti con l’assistenza di modelli linguistici e verificati sulle loro fonti in revisioni indipendenti; le revisioni degli specialisti sono pubblicate con il loro nome.",
   method: "Come si verificano i dati",
   sources: "Tutte le fonti",
   ctaTitle: "Parti da un anno qualsiasi",
@@ -1171,7 +1171,7 @@ const LANDING_NL = {
   ],
   trust: "Gebouwd op open gegevens",
   trustText:
-    "De artikelen worden met hulp van AI opgesteld en in een aparte ronde aan de bronnen getoetst; wetenschappers hebben ze nog niet beoordeeld, en de site zegt dat.",
+    "De artikelen worden opgesteld met ondersteuning van taalmodellen en in onafhankelijke controlerondes aan hun bronnen getoetst; beoordelingen door specialisten verschijnen onder hun naam.",
   method: "Hoe de gegevens worden gecontroleerd",
   sources: "Alle bronnen",
   ctaTitle: "Begin bij elk jaar",
@@ -1344,7 +1344,7 @@ const LANDING_PL = {
   ],
   trust: "Oparte na otwartych danych",
   trustText:
-    "Artykuły powstają z pomocą AI i są sprawdzane ze źródłami w osobnym przebiegu; uczeni jeszcze ich nie zrecenzowali i strona mówi o tym otwarcie.",
+    "Artykuły powstają przy wsparciu modeli językowych i są sprawdzane ze źródłami w niezależnych przebiegach kontroli; recenzje specjalistów publikujemy pod ich nazwiskami.",
   method: "Jak sprawdzamy dane",
   sources: "Wszystkie źródła",
   ctaTitle: "Zacznij od dowolnego roku",
@@ -1514,7 +1514,7 @@ const LANDING_CS = {
   ],
   trust: "Postaveno na otevřených datech",
   trustText:
-    "Články vznikají s pomocí umělé inteligence a v samostatném průchodu se ověřují podle pramenů; odborníci je zatím nerecenzovali a stránka to říká otevřeně.",
+    "Články vznikají s pomocí jazykových modelů a v nezávislých kontrolních průchodech se ověřují podle pramenů; recenze odborníků se zveřejňují pod jejich jmény.",
   method: "Jak se data ověřují",
   sources: "Všechny prameny",
   ctaTitle: "Začněte kterýmkoli rokem",
@@ -1687,7 +1687,7 @@ const LANDING_SV = {
   ],
   trust: "Byggd på öppna data",
   trustText:
-    "Artiklarna skrivs med hjälp av AI och kontrolleras mot källorna i ett separat steg; forskare har inte granskat dem ännu, och sidan säger det öppet.",
+    "Artiklarna skrivs med stöd av språkmodeller och kontrolleras mot sina källor i oberoende granskningsomgångar; granskningar av specialister publiceras under deras namn.",
   method: "Hur data kontrolleras",
   sources: "Alla källor",
   ctaTitle: "Börja med vilket år som helst",
@@ -1860,7 +1860,7 @@ const LANDING_DA = {
   ],
   trust: "Bygget på åbne data",
   trustText:
-    "Artiklerne skrives med hjælp fra kunstig intelligens og kontrolleres mod kilderne i en særskilt gennemgang; forskere har endnu ikke gennemgået dem, og det siger siden åbent.",
+    "Artiklerne skrives med støtte fra sprogmodeller og kontrolleres mod deres kilder i uafhængige kontrolrunder; bedømmelser fra fagfolk offentliggøres under deres navn.",
   method: "Sådan kontrolleres dataene",
   sources: "Alle kilder",
   ctaTitle: "Begynd med et hvilket som helst år",
@@ -2033,7 +2033,7 @@ const LANDING_NB = {
   ],
   trust: "Bygd på åpne data",
   trustText:
-    "Artiklene skrives ved hjelp av kunstig intelligens og kontrolleres mot kildene i en egen gjennomgang; fagfolk har ennå ikke vurdert dem, og nettstedet sier det åpent.",
+    "Artiklene skrives med støtte fra språkmodeller og kontrolleres mot kildene sine i uavhengige kontrollrunder; vurderinger fra fagfolk publiseres under deres navn.",
   method: "Hvordan dataene kontrolleres",
   sources: "Alle kilder",
   ctaTitle: "Begynn med et hvilket som helst år",
@@ -2202,7 +2202,7 @@ const LANDING_SR = {
   ],
   trust: "Засновано на отвореним подацима",
   trustText:
-    "Чланци настају уз помоћ вештачке интелигенције и у засебном пролазу проверавају се према изворима; стручњаци их још нису рецензирали и сајт то отворено каже.",
+    "Чланци настају уз помоћ језичких модела и у независним пролазима провере проверавају се према изворима; рецензије стручњака објављују се под њиховим именима.",
   method: "Како се подаци проверавају",
   sources: "Сви извори",
   ctaTitle: "Почните од било које године",
@@ -2378,7 +2378,7 @@ const LANDING_TL = {
   ],
   trust: "Nakabatay sa bukas na datos",
   trustText:
-    "Isinusulat ang mga artikulo sa tulong ng AI at sinusuri ayon sa mga sanggunian sa hiwalay na hakbang; hindi pa nasusuri ng mga iskolar, at hayagang sinasabi iyon ng site.",
+    "Isinusulat ang mga artikulo sa tulong ng mga modelo ng wika at sinusuri ayon sa kanilang mga sanggunian sa mga hiwalay na pagsusuri; inilalathala ang mga pagsusuri ng mga iskolar sa kanilang pangalan.",
   method: "Paano sinusuri ang datos",
   sources: "Lahat ng sanggunian",
   ctaTitle: "Magsimula sa alinmang taon",
@@ -2550,7 +2550,7 @@ const LANDING_HU = {
   ],
   trust: "Nyílt adatokra építve",
   trustText:
-    "A cikkek MI segítségével készülnek, és külön lépésben ellenőrizzük őket a források alapján; kutatók még nem lektorálták őket, és az oldal ezt nyíltan kimondja.",
+    "A cikkek nyelvi modellek segítségével készülnek, és független ellenőrző menetekben vetjük össze őket a forrásaikkal; a szakemberek lektorálásai az ő nevükkel jelennek meg.",
   method: "Hogyan ellenőrizzük az adatokat",
   sources: "Minden forrás",
   ctaTitle: "Kezdje bármelyik évvel",
@@ -2728,7 +2728,7 @@ const LANDING_FI = {
   ],
   trust: "Rakennettu avoimen datan varaan",
   trustText:
-    "Artikkelit kirjoitetaan tekoälyn avulla ja tarkistetaan lähteistä erillisessä vaiheessa; tutkijat eivät ole vielä tarkastaneet niitä, ja sivusto sanoo sen avoimesti.",
+    "Artikkelit laaditaan kielimallien avustuksella ja tarkistetaan lähteitään vasten riippumattomissa tarkastusvaiheissa; asiantuntijoiden arviot julkaistaan heidän nimellään.",
   method: "Miten data tarkistetaan",
   sources: "Kaikki lähteet",
   ctaTitle: "Aloita mistä vuodesta tahansa",
@@ -2898,7 +2898,7 @@ const LANDING_VI = {
   ],
   trust: "Xây dựng trên dữ liệu mở",
   trustText:
-    "Các bài viết được soạn với sự hỗ trợ của AI và đối chiếu với nguồn ở một bước riêng; các nhà nghiên cứu chưa duyệt chúng, và trang web nói rõ điều này.",
+    "Các bài viết được soạn với sự hỗ trợ của các mô hình ngôn ngữ và đối chiếu với nguồn trong các lượt duyệt độc lập; nhận xét của các chuyên gia được công bố dưới tên của họ.",
   method: "Dữ liệu được kiểm tra thế nào",
   sources: "Tất cả nguồn",
   ctaTitle: "Hãy bắt đầu từ bất kỳ năm nào",
@@ -3071,7 +3071,7 @@ const LANDING_RO = {
   ],
   trust: "Construit pe date deschise",
   trustText:
-    "Articolele sunt scrise cu ajutorul IA și verificate cu sursele într-un pas separat; cercetătorii nu le-au recenzat încă, iar pagina spune acest lucru deschis.",
+    "Articolele sunt redactate cu asistența unor modele lingvistice și verificate cu sursele lor în treceri independente; recenziile specialiștilor sunt publicate sub numele lor.",
   method: "Cum se verifică datele",
   sources: "Toate sursele",
   ctaTitle: "Începe cu orice an",
@@ -3245,7 +3245,7 @@ const LANDING_BG = {
   ],
   trust: "Изградено върху отворени данни",
   trustText:
-    "Статиите се пишат с помощта на изкуствен интелект и се сверяват с източниците на отделна стъпка; учени още не са ги рецензирали и сайтът го казва открито.",
+    "Статиите се изготвят с помощта на езикови модели и се сверяват с източниците си при независими проверки; рецензиите на специалисти се публикуват под техните имена.",
   method: "Как се проверяват данните",
   sources: "Всички източници",
   ctaTitle: "Започнете с коя да е година",
@@ -3524,7 +3524,7 @@ export const LANDING = {
     ],
     trust: "На открытых данных",
     trustText:
-      "Статьи написаны с помощью ИИ и проверены по источникам отдельным проходом; учёные их пока не рецензировали, и мы так и пишем.",
+      "Статьи готовятся при помощи языковых моделей и сверяются с источниками в независимых проходах проверки; рецензии специалистов публикуются под их именами.",
     method: "Как проверяются данные",
     sources: "Все источники",
     ctaTitle: "Начните с любого года",
@@ -3588,7 +3588,7 @@ export const LANDING = {
     ],
     trust: "Built on open data",
     trustText:
-      "Articles are drafted with AI help and checked against their sources in a separate pass; scholars have not reviewed them yet, and the site says so.",
+      "Articles are drafted with the assistance of language models and checked against their sources in independent review passes; reviews by specialists are published under their names.",
     method: "How the data is checked",
     sources: "All sources",
     ctaTitle: "Start from any year",
