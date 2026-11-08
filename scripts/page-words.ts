@@ -132,7 +132,7 @@ const LANDING_UK = {
     ],
     [
       "Відкриті дані",
-      "CC BY 4.0, API «вірш → місця» без ключа і глобус для вбудовування.",
+      "Дані під CC BY 4.0 (статті під CC BY‑NC‑ND), API «вірш → місця» без ключа і глобус для вбудовування.",
       "API і вбудовування",
     ],
     [
@@ -303,7 +303,7 @@ const LANDING_ES = {
     ],
     [
       "Datos abiertos",
-      "CC BY 4.0, una API de versículo a lugares sin clave y un globo para incrustar.",
+      "Datos bajo CC BY 4.0 (los artículos, bajo CC BY‑NC‑ND), una API de versículo a lugares sin clave y un globo para incrustar.",
       "API e incrustación",
     ],
     [
@@ -474,7 +474,7 @@ const LANDING_PT = {
     ],
     [
       "Dados abertos",
-      "CC BY 4.0, uma API que leva do versículo aos lugares, sem chave, e um globo para incorporar.",
+      "Dados sob CC BY 4.0 (os artigos, sob CC BY‑NC‑ND), uma API que leva do versículo aos lugares, sem chave, e um globo para incorporar.",
       "API e incorporação",
     ],
     [
@@ -645,7 +645,7 @@ const LANDING_DE = {
     ],
     [
       "Offene Daten",
-      "CC BY 4.0, eine API von Vers zu Orten ohne Schlüssel und ein Globus zum Einbetten.",
+      "Daten unter CC BY 4.0 (die Artikel unter CC BY‑NC‑ND), eine API von Vers zu Orten ohne Schlüssel und ein Globus zum Einbetten.",
       "API und Einbettung",
     ],
     [
@@ -816,7 +816,7 @@ const LANDING_FR = {
     ],
     [
       "Données ouvertes",
-      "CC BY 4.0, une API des versets vers les lieux sans clé et un globe à intégrer.",
+      "Données sous CC BY 4.0 (les articles sous CC BY‑NC‑ND), une API des versets vers les lieux sans clé et un globe à intégrer.",
       "API et intégration",
     ],
     [
@@ -989,7 +989,7 @@ const LANDING_IT = {
     ],
     [
       "Dati aperti",
-      "CC BY 4.0, un’API da versetto a luoghi senza chiave e un globo da incorporare.",
+      "Dati sotto CC BY 4.0 (gli articoli sotto CC BY‑NC‑ND), un’API da versetto a luoghi senza chiave e un globo da incorporare.",
       "API e incorporamento",
     ],
     [
@@ -1160,7 +1160,7 @@ const LANDING_NL = {
     ],
     [
       "Open gegevens",
-      "CC BY 4.0, een API van vers naar plaatsen zonder sleutel en een wereldbol om in te sluiten.",
+      "Gegevens onder CC BY 4.0 (de artikelen onder CC BY‑NC‑ND), een API van vers naar plaatsen zonder sleutel en een wereldbol om in te sluiten.",
       "API en insluiten",
     ],
     [
@@ -1333,7 +1333,7 @@ const LANDING_PL = {
     ],
     [
       "Otwarte dane",
-      "CC BY 4.0, API „werset → miejsca” bez klucza i globus do osadzenia.",
+      "Dane na licencji CC BY 4.0 (artykuły na CC BY‑NC‑ND), API „werset → miejsca” bez klucza i globus do osadzenia.",
       "API i osadzanie",
     ],
     [
@@ -1503,7 +1503,7 @@ const LANDING_CS = {
     ],
     [
       "Otevřená data",
-      "CC BY 4.0, API „verš → místa“ bez klíče a glóbus k vložení do stránky.",
+      "Data pod CC BY 4.0 (články pod CC BY‑NC‑ND), API „verš → místa“ bez klíče a glóbus k vložení do stránky.",
       "API a vložení",
     ],
     [
@@ -1676,7 +1676,7 @@ const LANDING_SV = {
     ],
     [
       "Öppna data",
-      "CC BY 4.0, ett API ”vers → platser” utan nyckel och en glob att bädda in på en sida.",
+      "Data under CC BY 4.0 (artiklarna under CC BY‑NC‑ND), ett API ”vers → platser” utan nyckel och en glob att bädda in på en sida.",
       "API och inbäddning",
     ],
     [
@@ -1849,7 +1849,7 @@ const LANDING_DA = {
     ],
     [
       "Åbne data",
-      "CC BY 4.0, et API »vers → steder« uden nøgle og en globus til indlejring.",
+      "Data under CC BY 4.0 (artiklerne under CC BY‑NC‑ND), et API »vers → steder« uden nøgle og en globus til indlejring.",
       "API og indlejring",
     ],
     [
@@ -2022,7 +2022,7 @@ const LANDING_NB = {
     ],
     [
       "Åpne data",
-      "CC BY 4.0, et API «vers → steder» uten nøkkel og en globus til å bygge inn.",
+      "Data under CC BY 4.0 (artiklene under CC BY‑NC‑ND), et API «vers → steder» uten nøkkel og en globus til å bygge inn.",
       "API og innbygging",
     ],
     [
@@ -2191,7 +2191,7 @@ const LANDING_SR = {
     ],
     [
       "Отворени подаци",
-      "CC BY 4.0, API „стих → места“ без кључа и глобус за уградњу у страницу.",
+      "Подаци под CC BY 4.0 (чланци под CC BY‑NC‑ND), API „стих → места“ без кључа и глобус за уградњу у страницу.",
       "API и уградња",
     ],
     [
@@ -2367,7 +2367,7 @@ const LANDING_TL = {
     ],
     [
       "Bukas na datos",
-      "CC BY 4.0, API na “talata → mga lugar” nang walang key, at globong maaaring ilagay sa pahina.",
+      "Datos sa ilalim ng CC BY 4.0 (ang mga artikulo, CC BY‑NC‑ND), API na “talata → mga lugar” nang walang key, at globong maaaring ilagay sa pahina.",
       "API at pag-embed",
     ],
     [
@@ -2539,7 +2539,7 @@ const LANDING_HU = {
     ],
     [
       "Nyílt adatok",
-      "CC BY 4.0, kulcs nélküli „vers → helyek” API és beágyazható földgömb.",
+      "Adatok CC BY 4.0 alatt (a cikkek CC BY‑NC‑ND alatt), kulcs nélküli „vers → helyek” API és beágyazható földgömb.",
       "API és beágyazás",
     ],
     [
@@ -2717,7 +2717,7 @@ const LANDING_FI = {
     ],
     [
       "Avoin data",
-      "CC BY 4.0, avaimeton ”jae → paikat” -rajapinta ja maapallo, jonka voi upottaa sivulle.",
+      "Data CC BY 4.0 -lisenssillä (artikkelit CC BY‑NC‑ND -lisenssillä), avaimeton ”jae → paikat” -rajapinta ja maapallo, jonka voi upottaa sivulle.",
       "Rajapinta ja upotus",
     ],
     [
@@ -2887,7 +2887,7 @@ const LANDING_VI = {
     ],
     [
       "Dữ liệu mở",
-      "CC BY 4.0, API “câu Kinh Thánh → địa điểm” không cần khóa và quả địa cầu để nhúng vào trang web.",
+      "Dữ liệu theo CC BY 4.0 (bài viết theo CC BY‑NC‑ND), API “câu Kinh Thánh → địa điểm” không cần khóa và quả địa cầu để nhúng vào trang web.",
       "API và nhúng",
     ],
     [
@@ -3060,7 +3060,7 @@ const LANDING_RO = {
     ],
     [
       "Date deschise",
-      "CC BY 4.0, un API „verset → locuri” fără cheie și un glob de inclus într-o pagină.",
+      "Date sub CC BY 4.0 (articolele sub CC BY‑NC‑ND), un API „verset → locuri” fără cheie și un glob de inclus într-o pagină.",
       "API și încorporare",
     ],
     [
@@ -3234,7 +3234,7 @@ const LANDING_BG = {
     ],
     [
       "Отворени данни",
-      "CC BY 4.0, API „стих → места“ без ключ и глобус за вграждане в страница.",
+      "Данни под CC BY 4.0 (статиите под CC BY‑NC‑ND), API „стих → места“ без ключ и глобус за вграждане в страница.",
       "API и вграждане",
     ],
     [
@@ -3513,7 +3513,7 @@ export const LANDING = {
       ],
       [
         "Открытые данные",
-        "CC BY 4.0, API «стих → места» без ключа и глобус для встраивания.",
+        "Данные под CC BY 4.0 (статьи под CC BY‑NC‑ND), API «стих → места» без ключа и глобус для встраивания.",
         "API и встраивание",
       ],
       [
@@ -3577,7 +3577,7 @@ export const LANDING = {
       ],
       [
         "Open data",
-        "CC BY 4.0, a verse-to-places API with no key, and a globe to embed.",
+        "Data under CC BY 4.0 (the articles under CC BY‑NC‑ND), a verse-to-places API with no key, and a globe to embed.",
         "API and embedding",
       ],
       [

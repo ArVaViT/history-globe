@@ -984,7 +984,9 @@ function indexPages(l: Lang): void {
   const W = LISTS[l];
   const n = new Intl.NumberFormat(l);
   const coll = new Intl.Collator(l);
-  // Duplicate records keep their pages (old links) but are not listed twice.
+  // Duplicate records keep their pages (old links) but are not listed twice. The count above
+  // the list is still every place named in a verse, the figure the landing, the docs and
+  // the API give: the count of the list's own lines had read as a third number beside them.
   const listed = shown.filter((f) => !f.properties.dup);
   // A place with an article is listed by the article's title: the land of Babylonia is
   // not the city, though the Synodal text calls both Вавилон.
@@ -1028,7 +1030,7 @@ function indexPages(l: Lang): void {
       depth: 2,
       body: `    <main id="main" class="page list" data-list>
       <h1>${T[l].placesTitle}</h1>
-      <p class="list-lead">${esc(W.placesLead(n.format(listed.length), listed.length, n.format(withArticle)))}</p>
+      <p class="list-lead">${esc(W.placesLead(n.format(shown.length), shown.length, n.format(withArticle)))}</p>
       ${listTools(W.findPlace, `<button type="button" class="list-chip" aria-pressed="false"><span class="art-dot" aria-hidden="true"></span>${esc(W.withArticle)}</button>`)}
       <nav class="jump" aria-label="${esc(W.alphabet)}">${[...letters.keys()]
         .map((k) => `<a href="#${anchor(k)}">${esc(k)}</a>`)

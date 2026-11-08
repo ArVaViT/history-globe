@@ -268,6 +268,8 @@ export function Timeline({
         : trackWidth < 1300
           ? [-2999, -999, 1000]
           : ticksFor(view);
+  // A phone's slider: the same width that keeps only the two ends as ticks.
+  const narrow = trackWidth > 0 && trackWidth < 600;
   const inView = events.filter((e) => e.year >= view.from && e.year <= view.to);
   const majors = inView.filter((e) => e.major);
 
@@ -282,11 +284,15 @@ export function Timeline({
     >
       {hovered && hover && (
         // Above the whole panel: inside it the tip covered the year and the era name.
-        // Positioned on the panel, so it holds however tall the header grows.
+        // Positioned on the panel, so it holds however tall the header grows. On a phone's
+        // narrow slider it spans the panel and wraps: following the finger, its one-line
+        // event names ran off the screen's edge.
         <div
           role="tooltip"
-          style={{ left: `calc(1.5rem + (100% - 3rem) * ${String(hover.x / 100)})` }}
-          className={`pointer-events-none absolute bottom-full mb-2 rounded-lg bg-ink px-2.5 py-1.5 text-[12px] leading-tight whitespace-nowrap text-paper shadow-lg ${hover.x < 15 ? "" : hover.x > 85 ? "-translate-x-full" : "-translate-x-1/2"}`}
+          style={
+            narrow ? undefined : { left: `calc(1.5rem + (100% - 3rem) * ${String(hover.x / 100)})` }
+          }
+          className={`pointer-events-none absolute bottom-full mb-2 rounded-lg bg-ink px-2.5 py-1.5 text-[12px] leading-tight text-paper shadow-lg ${narrow ? "right-3 left-3" : `whitespace-nowrap ${hover.x < 15 ? "" : hover.x > 85 ? "-translate-x-full" : "-translate-x-1/2"}`}`}
         >
           <div className="font-medium">{periodName(hovered, locale)}</div>
           <div className="text-paper/75 tabular-nums">
@@ -392,6 +398,14 @@ export function Timeline({
             setHover({ x: frac * 100, year: Math.round(view.from + frac * span) });
           }}
           onPointerLeave={() => {
+            setHover(null);
+          }}
+          // A finger lifted leaves no pointer over the slider: the tip goes with it, or it
+          // stayed over the map until the next touch.
+          onPointerUp={(e) => {
+            if (e.pointerType !== "mouse") setHover(null);
+          }}
+          onPointerCancel={() => {
             setHover(null);
           }}
           // A double click zooms to the era under the pointer; on a zoomed slider, back out.
