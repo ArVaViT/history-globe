@@ -99,7 +99,10 @@ description: Placez le globe sur votre propre site en une ligne — la carte d�
       <tr>
         <td><code>place</code></td>
         <td><code>af2161c</code></td>
-        <td>ouvre un lieu (ici, Capernaüm) ; les identifiants sont ceux d’OpenBible</td>
+        <td>
+          ouvre un lieu (ici, Capernaüm) ; les identifiants sont décrits sous
+          <a href="#place-ids">Identifiants de lieux</a>
+        </td>
       </tr>
       <tr>
         <td><code>tour</code></td>
@@ -133,23 +136,40 @@ description: Placez le globe sur votre propre site en une ligne — la carte d�
       <tr>
         <td><code>locale</code></td>
         <td><code>fr</code></td>
-        <td>
-          langue : <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
-          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code> ou <code>cs</code>
-        </td>
+        <td>langue, parmi {{locale_codes}}</td>
       </tr>
       <tr>
         <td><code>camera</code></td>
         <td><code>35.2,31.8,7,30,0</code></td>
-        <td>longitude, latitude, zoom, inclinaison, orientation</td>
+        <td>
+          longitude, latitude, zoom, inclinaison, orientation ; avec <code>place</code>, la carte
+          s’ouvre avec cette caméra et le lieu sélectionné, plutôt que de voler jusqu’à lui
+        </td>
+      </tr>
+      <tr>
+        <td><code>measure</code></td>
+        <td><code>a15257a,aaf03fa</code></td>
+        <td>
+          deux identifiants de lieux : l’outil de distance ouvert entre eux ; un petit cadre et
+          <code>ui=map</code> n’affichent que la ligne
+        </td>
+      </tr>
+      <tr>
+        <td><code>ui</code></td>
+        <td><code>map</code></td>
+        <td>
+          la carte seule, pour une page dotée de sa propre recherche et de son propre encart de lieu
+          : ni fiche de lieu, ni barre de chapitre, l’année repliée ; le lien vers le globe reste.
+          Le lieu sélectionné est marqué d’un anneau, et un clic sur la carte hors de tout lieu
+          efface la sélection (voir <a href="#map-only">l’exemple</a>)
+        </td>
       </tr>
       <tr>
         <td><code>hide</code></td>
-        <td><code>relief,ancient</code></td>
+        <td><code>relief,battles</code></td>
         <td>
           couches à désactiver : <code>borders</code>, <code>places</code>, <code>relief</code>,
-          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+          <code>routes</code>, <code>roads</code>, <code>battles</code>
         </td>
       </tr>
     </tbody>
@@ -164,7 +184,8 @@ description: Placez le globe sur votre propre site en une ligne — la carte d�
 <p>
   Le globe et votre page communiquent par <code>postMessage</code>. Chaque message est un objet avec
   <code>type</code> et <code>v: 1</code>. Le globe n’envoie que ce qui se passe sur la carte, jamais
-  rien qui identifie le lecteur ; il n’accepte de messages que de la page qui contient le cadre.
+  rien qui identifie le lecteur, si bien qu’il écrit à la page parente quelle que soit son origine
+  (cible <code>"*"</code>) ; il n’accepte de messages que de la page qui contient le cadre.
 </p>
 <h3>Du globe</h3>
 <div class="table">
@@ -185,12 +206,29 @@ description: Placez le globe sur votre propre site en une ligne — la carte d�
       <tr>
         <td><code>hg:view-changed</code></td>
         <td><code>{ view }</code></td>
-        <td>l’année, le lieu, le parcours ou la caméra a changé et s’est stabilisé</td>
+        <td>
+          l’année, le lieu, le parcours ou la caméra a changé et s’est stabilisé (environ 400 ms
+          après le dernier changement), que ce soit le lecteur ou votre <code>hg:set-view</code> qui
+          l’ait modifié. Quand la carte vole vers un lieu nouvellement sélectionné, le message
+          arrive une fois avec le nouveau lieu et la caméra que la carte a quittée, puis de nouveau
+          à la fin du vol
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:place-clicked</code></td>
+        <td><code>{ place }</code></td>
+        <td>
+          le lecteur a cliqué sur un lieu de la carte, y compris celui déjà sélectionné ; le message
+          précède le <code>hg:view-changed</code> que ce clic provoque
+        </td>
       </tr>
       <tr>
         <td><code>hg:verse-clicked</code></td>
         <td><code>{ osis }</code></td>
-        <td>le lecteur a cliqué sur un verset, par exemple <code>"Acts.16.12"</code></td>
+        <td>
+          le lecteur a cliqué sur un verset dans une fiche de lieu, par exemple
+          <code>"Acts.16.12"</code>
+        </td>
       </tr>
       <tr>
         <td><code>hg:error</code></td>
@@ -203,7 +241,8 @@ description: Placez le globe sur votre propre site en une ligne — la carte d�
 <p>
   <code>view</code> contient <code>year</code>, <code>locale</code> et <code>layers</code> et, s’ils
   sont définis, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> et
-  <code>camera</code>.
+  <code>camera</code>. Une <code>view</code> sans <code>place</code> signifie qu’aucun lieu n’est
+  sélectionné.
 </p>
 <h3>Vers le globe</h3>
 <div class="table">
@@ -222,7 +261,10 @@ description: Placez le globe sur votre propre site en une ligne — la carte d�
         <td>
           règle l’année, le chapitre (<code>ref</code>), le lieu, les couches ou la caméra ; avec
           <code>tour</code> (et <code>stop</code>), le parcours démarre et les autres champs sont
-          ignorés ; la langue ne change qu’avec <code>hg:set-locale</code>
+          ignorés ; la langue ne change qu’avec <code>hg:set-locale</code>.
+          <code>place: null</code> efface la sélection et met fin à un parcours en cours. Le globe
+          vole de nouveau vers le lieu déjà sélectionné, sauf si la vue contient aussi
+          <code>camera</code>. Un identifiant de lieu que la carte ne connaît pas est ignoré
         </td>
       </tr>
       <tr>
@@ -233,6 +275,34 @@ description: Placez le globe sur votre propre site en une ligne — la carte d�
     </tbody>
   </table>
 </div>
+
+<ul>
+  <li>
+    Attendez <code>hg:ready</code> avant d’envoyer quoi que ce soit : un message envoyé pendant que
+    la carte charge encore est perdu.
+  </li>
+  <li>
+    Traitez <code>hg:view-changed</code> comme l’état actuel, non comme une action du lecteur : il
+    suit votre propre <code>hg:set-view</code> et chaque déplacement de la caméra. Une page qui
+    renvoie la vue entière telle qu’on la lui a transmise, caméra comprise, ne déclenche ni boucle
+    ni vol. Ne répondez pas à <code>hg:view-changed</code> par <code>hg:set-view</code> avec un
+    <code>place</code> seul : sans <code>camera</code>, la carte s’envole de nouveau vers ce lieu,
+    loin de l’endroit où le lecteur l’a déplacée.
+  </li>
+</ul>
+
+<h3 id="place-ids">Identifiants de lieux</h3>
+<p>
+  Un lieu de la Bible a l’identifiant d’OpenBible : <code>a</code> suivi de six chiffres
+  hexadécimaux, par exemple <code>af2161c</code> (Capernaüm). Les lieux du monde antique que la
+  Bible ne nomme pas (Gamla, Sepphoris, Pompéi) ont à la place leur numéro Pleiades (celui de Gamla
+  est <code>678146</code>) ou, à défaut, leur élément Wikidata (celui de Constantinople est
+  <code>Q16869</code>). Les deux sortes peuvent figurer dans <code>view.place</code> et
+  <code>hg:place-clicked</code>, et <code>hg:set-view</code> accepte les deux ; si vos données ne
+  contiennent que des lieux d’OpenBible, testez la forme de l’identifiant avant de chercher le lieu.
+  Sur les {{openbible}} lieux d’OpenBible, {{absent}} ne figurent pas sur la carte (ils n’ont aucun
+  point que l’on puisse publier) ; leurs identifiants sont ignorés.
+</p>
 
 <h2>Exemple : la carte suit votre lecteur</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
@@ -247,6 +317,57 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
+
+<h2 id="map-only">Exemple : la carte à côté de votre propre encart de lieu</h2>
+<pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+let ready = false;
+
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  const m = e.data;
+  if (m?.type === "hg:ready") ready = true;
+  // La vue telle qu’elle est maintenant : un lieu sélectionné, ou aucun. Arrive souvent :
+  // showPlace ne doit rien faire si ce lieu est déjà affiché.
+  if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
+    if (m.view.place) showPlace(m.view.place);
+    else hidePlace();
+  }
+  // Chaque clic sur un lieu, même sur celui déjà sélectionné : rouvrir votre encart de lieu.
+  if (m?.type === "hg:place-clicked") showPlace(m.place);
+});
+
+// Votre recherche a choisi un lieu : le sélectionner et y voler (de nouveau, s’il est déjà
+// sélectionné).
+function pickPlace(id) {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+}
+
+// Votre encart de lieu a été fermé : effacer la sélection sur la carte.
+function closeBox() {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+}</code></pre>
+<ul>
+  <li>
+    Le lieu sélectionné est marqué d’un anneau qui grandit et s’estompe, de sorte que l’œil le
+    trouve sans que rien ne couvre la carte ; pour un lecteur qui a demandé moins de mouvement,
+    l’anneau reste immobile.
+  </li>
+  <li>
+    Un clic sur la carte hors de tout lieu efface la sélection du lieu ; un parcours en cours
+    continue. Un double-clic (qui zoome) et un clic qui arrête la carte en mouvement n’effacent
+    rien. <code>place: null</code> depuis votre page désélectionne le lieu et met fin au parcours.
+  </li>
+  <li>
+    Un parcours se déroule sur la carte (son tracé, ses étapes et l’année) sans sa fiche : votre
+    page le pilote avec <code>hg:set-view</code> et <code>{ tour, stop }</code>.
+    <code>measure</code> trace sa ligne, comme dans tout cadre.
+  </li>
+  <li>
+    <code>hg:verse-clicked</code> n’est pas envoyé : les versets se trouvent dans la fiche de lieu,
+    que ce mode omet.
+  </li>
+</ul>
 
 <h2 id="places">Les lieux dans n’importe quel texte</h2>
 <p>
@@ -264,8 +385,7 @@ window.addEventListener("message", (e) =&gt; {
     </p>
   </div>
   <figcaption>
-    Un exemple en direct, en anglais : ces noms ont été reliés par le script de cette page (le
-    script lit les textes en anglais et en russe).
+    Un exemple en direct, en anglais : ces noms ont été reliés par le script de cette page.
   </figcaption>
 </figure>
 <pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
@@ -290,9 +410,7 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          la langue du texte, l’une des langues du site : <code>cs</code>, <code>de</code>,
-          <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>uk</code> ; par défaut, le
+          la langue du texte, l’une des langues du site : {{locale_codes}} ; par défaut, le
           <code>lang</code> de la page ; l’anglais pour toute autre langue
         </td>
       </tr>

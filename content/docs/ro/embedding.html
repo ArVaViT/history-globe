@@ -97,7 +97,10 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
       <tr>
         <td><code>place</code></td>
         <td><code>af2161c</code></td>
-        <td>deschide un loc (aici, Capernaum); ID-urile sunt cele ale OpenBible</td>
+        <td>
+          deschide un loc (aici, Capernaum); ID-urile sunt descrise la
+          <a href="#place-ids">ID-urile locurilor</a>
+        </td>
       </tr>
       <tr>
         <td><code>tour</code></td>
@@ -131,23 +134,40 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
       <tr>
         <td><code>locale</code></td>
         <td><code>en</code></td>
-        <td>
-          limba: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
-          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code>, <code>cs</code> sau <code>ro</code>
-        </td>
+        <td>limba, una dintre {{locale_codes}}</td>
       </tr>
       <tr>
         <td><code>camera</code></td>
         <td><code>35.2,31.8,7,30,0</code></td>
-        <td>longitudine, latitudine, zoom, înclinare, orientare</td>
+        <td>
+          longitudine, latitudine, zoom, înclinare, orientare; cu <code>place</code>, harta se
+          deschide cu această poziție a camerei și cu locul selectat, în loc să zboare spre el
+        </td>
+      </tr>
+      <tr>
+        <td><code>measure</code></td>
+        <td><code>a15257a,aaf03fa</code></td>
+        <td>
+          două ID-uri de loc: instrumentul de distanță deschis între ele; un cadru mic și
+          <code>ui=map</code> arată doar linia
+        </td>
+      </tr>
+      <tr>
+        <td><code>ui</code></td>
+        <td><code>map</code></td>
+        <td>
+          doar harta, pentru o pagină cu propria căutare și propria casetă de loc: fără fișa
+          locului, fără bara capitolului, anul restrâns; linkul spre glob rămâne. Locul selectat
+          este marcat cu un inel, iar un clic pe hartă departe de orice loc șterge selecția (vezi
+          <a href="#map-only">exemplul</a>)
+        </td>
       </tr>
       <tr>
         <td><code>hide</code></td>
-        <td><code>relief,ancient</code></td>
+        <td><code>relief,battles</code></td>
         <td>
           straturile de ascuns: <code>borders</code>, <code>places</code>, <code>relief</code>,
-          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+          <code>routes</code>, <code>roads</code>, <code>battles</code>
         </td>
       </tr>
     </tbody>
@@ -162,7 +182,8 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
 <p>
   Globul și pagina dumneavoastră comunică prin <code>postMessage</code>. Fiecare mesaj este un
   obiect cu <code>type</code> și <code>v: 1</code>. Globul trimite doar ce se întâmplă pe hartă și
-  niciodată ceva care să-l identifice pe cititor; acceptă mesaje doar de la pagina care conține
+  niciodată ceva care să-l identifice pe cititor, deci își postează mesajele către pagina părinte,
+  indiferent de originea ei (țintă <code>"*"</code>); acceptă mesaje doar de la pagina care conține
   cadrul.
 </p>
 <h3>De la glob</h3>
@@ -184,12 +205,28 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
       <tr>
         <td><code>hg:view-changed</code></td>
         <td><code>{ view }</code></td>
-        <td>anul, locul, traseul sau camera s-au schimbat și s-au stabilizat</td>
+        <td>
+          anul, locul, traseul sau camera s-au schimbat și s-au stabilizat (la aproximativ 400 ms
+          după ultima schimbare), fie că le-a schimbat cititorul, fie mesajul dumneavoastră
+          <code>hg:set-view</code>. Când harta zboară spre un loc nou selectat, mesajul vine o dată
+          cu locul nou și cu camera pe care harta a părăsit-o, apoi încă o dată când zborul se
+          termină
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:place-clicked</code></td>
+        <td><code>{ place }</code></td>
+        <td>
+          cititorul a dat clic pe un loc de pe hartă, inclusiv pe cel deja selectat; mesajul vine
+          înaintea lui <code>hg:view-changed</code> pe care îl provoacă clicul
+        </td>
       </tr>
       <tr>
         <td><code>hg:verse-clicked</code></td>
         <td><code>{ osis }</code></td>
-        <td>cititorul a dat clic pe un verset, de exemplu <code>"Acts.16.12"</code></td>
+        <td>
+          cititorul a dat clic pe un verset din fișa unui loc, de exemplu <code>"Acts.16.12"</code>
+        </td>
       </tr>
       <tr>
         <td><code>hg:error</code></td>
@@ -202,7 +239,8 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
 <p>
   <code>view</code> conține <code>year</code>, <code>locale</code> și <code>layers</code> și, când
   sunt setate, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> și
-  <code>camera</code>.
+  <code>camera</code>. Un <code>view</code> fără <code>place</code> înseamnă că niciun loc nu este
+  selectat.
 </p>
 <h3>Către glob</h3>
 <div class="table">
@@ -221,7 +259,10 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
         <td>
           setează anul, capitolul (<code>ref</code>), locul, straturile sau camera; cu
           <code>tour</code> (și <code>stop</code>), traseul pornește, iar celelalte câmpuri sunt
-          ignorate; limba se schimbă doar cu <code>hg:set-locale</code>
+          ignorate; limba se schimbă doar cu <code>hg:set-locale</code>.
+          <code>place: null</code> șterge selecția și încheie un traseu care rulează. Spre locul
+          deja selectat se zboară din nou, cu excepția cazului în care vederea are și
+          <code>camera</code>. Un ID de loc pe care harta nu îl are este ignorat
         </td>
       </tr>
       <tr>
@@ -232,6 +273,32 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
     </tbody>
   </table>
 </div>
+<ul>
+  <li>
+    Așteptați <code>hg:ready</code> înainte de a trimite ceva: un mesaj trimis cât timp harta se
+    încarcă încă se pierde.
+  </li>
+  <li>
+    Tratați <code>hg:view-changed</code> ca starea curentă, nu ca ceva ce a făcut cititorul: urmează
+    propriului dumneavoastră <code>hg:set-view</code> și fiecărei mișcări a camerei. O pagină care
+    trimite înapoi întreaga vedere așa cum a primit-o, cu tot cu cameră, nu pornește nici o buclă,
+    nici un zbor. Nu răspundeți la <code>hg:view-changed</code> cu <code>hg:set-view</code> și doar
+    un <code>place</code>: fără <code>camera</code>, harta zboară înapoi la acel loc, departe de
+    locul unde a mutat-o cititorul.
+  </li>
+</ul>
+
+<h3 id="place-ids">ID-urile locurilor</h3>
+<p>
+  Un loc din Biblie are ID-ul OpenBible: <code>a</code> urmat de șase cifre hexazecimale, cum ar fi
+  <code>af2161c</code> (Capernaum). Locurile lumii antice pe care Biblia nu le numește (Gamla,
+  Sepphoris, Pompei) au în schimb numărul lor Pleiades (Gamla are <code>678146</code>) sau, în lipsa
+  lui, elementul lor Wikidata (Constantinopol are <code>Q16869</code>). Ambele feluri pot veni în
+  <code>view.place</code> și în <code>hg:place-clicked</code>, iar <code>hg:set-view</code> le
+  acceptă pe amândouă; dacă datele dumneavoastră au doar locurile OpenBible, verificați forma
+  ID-ului înainte de a căuta unul. Din cele {{openbible}} de locuri OpenBible, {{absent}} nu sunt pe
+  hartă (nu au un punct care să poată fi publicat); ID-urile lor sunt ignorate.
+</p>
 
 <h2>Exemplu: harta urmează cititorul dumneavoastră</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
@@ -246,6 +313,56 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
+
+<h2 id="map-only">Exemplu: harta lângă propria dumneavoastră casetă de loc</h2>
+<pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+let ready = false;
+
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  const m = e.data;
+  if (m?.type === "hg:ready") ready = true;
+  // Vederea așa cum este acum: un loc selectat sau niciunul. Vine des: showPlace nu trebuie să
+  // facă nimic dacă locul este deja afișat.
+  if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
+    if (m.view.place) showPlace(m.view.place);
+    else hidePlace();
+  }
+  // Fiecare clic pe un loc, și pe cel deja selectat: deschideți din nou caseta dumneavoastră.
+  if (m?.type === "hg:place-clicked") showPlace(m.place);
+});
+
+// Căutarea dumneavoastră a ales un loc: selectați-l și zburați la el (din nou, dacă este deja selectat).
+function pickPlace(id) {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+}
+
+// Caseta dumneavoastră a fost închisă: ștergeți selecția de pe hartă.
+function closeBox() {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+}</code></pre>
+<ul>
+  <li>
+    Locul selectat este marcat cu un inel care crește și se estompează, astfel încât ochiul îl
+    găsește fără ca ceva să acopere harta; pentru un cititor care a cerut mai puțină mișcare, inelul
+    rămâne nemișcat.
+  </li>
+  <li>
+    Un clic pe hartă departe de orice loc șterge selecția locului; un traseu care rulează continuă.
+    Un dublu clic (care mărește) și un clic care oprește harta în mișcare nu șterg nimic.
+    <code>place: null</code> din pagina dumneavoastră șterge locul și încheie traseul.
+  </li>
+  <li>
+    Un traseu rulează pe hartă (linia lui, opririle lui și anul) fără fișa lui: pagina dumneavoastră
+    îl mișcă cu <code>hg:set-view</code> și <code>{ tour, stop }</code>. <code>measure</code> își
+    desenează linia, ca în orice cadru.
+  </li>
+  <li>
+    <code>hg:verse-clicked</code> nu se trimite: versetele sunt în fișa locului, pe care acest mod o
+    omite.
+  </li>
+</ul>
 
 <h2 id="places">Locuri în orice text</h2>
 <p>
@@ -288,10 +405,8 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          limba textului, una dintre limbile site-ului: <code>cs</code>, <code>de</code>,
-          <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code>, <code>pt</code>, <code>ro</code>, <code>ru</code>, <code>uk</code>;
-          implicit, atributul <code>lang</code> al paginii; orice altă limbă revine la engleză
+          limba textului, una dintre limbile site-ului: {{locale_codes}}; implicit, atributul
+          <code>lang</code> al paginii; orice altă limbă revine la engleză
         </td>
       </tr>
       <tr>

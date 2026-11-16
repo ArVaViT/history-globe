@@ -97,7 +97,10 @@ description: Tegye fel a földgömböt a saját oldalára egyetlen sorral — eg
       <tr>
         <td><code>place</code></td>
         <td><code>af2161c</code></td>
-        <td>egy hely megnyitása (itt Kapernaum); az azonosítók az OpenBible-éi</td>
+        <td>
+          egy hely megnyitása (itt Kapernaum); az azonosítókat a
+          <a href="#place-ids">Helyazonosítók</a> rész írja le
+        </td>
       </tr>
       <tr>
         <td><code>tour</code></td>
@@ -131,23 +134,40 @@ description: Tegye fel a földgömböt a saját oldalára egyetlen sorral — eg
       <tr>
         <td><code>locale</code></td>
         <td><code>en</code></td>
-        <td>
-          nyelv: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
-          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code> vagy <code>cs</code>
-        </td>
+        <td>nyelv, a következők egyike: {{locale_codes}}</td>
       </tr>
       <tr>
         <td><code>camera</code></td>
         <td><code>35.2,31.8,7,30,0</code></td>
-        <td>hosszúság, szélesség, nagyítás, dőlés, elfordulás</td>
+        <td>
+          hosszúság, szélesség, nagyítás, dőlés, elfordulás; a <code>place</code> mellett a térkép
+          ezzel a kameraállással nyílik meg, kijelölt hellyel, ahelyett hogy odarepülne
+        </td>
+      </tr>
+      <tr>
+        <td><code>measure</code></td>
+        <td><code>a15257a,aaf03fa</code></td>
+        <td>
+          két helyazonosító: a távolságmérő eszköz nyitva a kettő között; kis keret és
+          <code>ui=map</code> mellett csak a vonal látszik
+        </td>
+      </tr>
+      <tr>
+        <td><code>ui</code></td>
+        <td><code>map</code></td>
+        <td>
+          csak a térkép, olyan oldalnak, amelynek saját keresője és saját helymezője van: nincs
+          helykártya, nincs fejezetsáv, az év összecsukva; a földgömbre vezető hivatkozás marad. A
+          kijelölt helyet gyűrű jelöli, a térképen bármely helytől távol kattintva pedig törlődik a
+          kijelölés (lásd <a href="#map-only">a példát</a>)
+        </td>
       </tr>
       <tr>
         <td><code>hide</code></td>
-        <td><code>relief,ancient</code></td>
+        <td><code>relief,battles</code></td>
         <td>
           kikapcsolandó rétegek: <code>borders</code>, <code>places</code>, <code>relief</code>,
-          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+          <code>routes</code>, <code>roads</code>, <code>battles</code>
         </td>
       </tr>
     </tbody>
@@ -162,7 +182,8 @@ description: Tegye fel a földgömböt a saját oldalára egyetlen sorral — eg
 <p>
   A földgömb és az Ön oldala a <code>postMessage</code>-en keresztül kommunikál. Minden üzenet egy
   <code>type</code> és <code>v: 1</code> mezőt tartalmazó objektum. A földgömb csak azt küldi, ami a
-  térképen történik, és soha semmit, ami azonosítaná az olvasót; üzeneteket csak attól az oldaltól
+  térképen történik, és soha semmit, ami azonosítaná az olvasót, ezért üzeneteit a szülőoldalnak
+  küldi, bármi legyen is annak származása (cél: <code>"*"</code>); üzeneteket csak attól az oldaltól
   fogad el, amelyik a keretet tartalmazza.
 </p>
 <h3>A földgömbtől</h3>
@@ -184,12 +205,26 @@ description: Tegye fel a földgömböt a saját oldalára egyetlen sorral — eg
       <tr>
         <td><code>hg:view-changed</code></td>
         <td><code>{ view }</code></td>
-        <td>az év, a hely, a túra vagy a kamera megváltozott és megállapodott</td>
+        <td>
+          az év, a hely, a túra vagy a kamera megváltozott és megállapodott (az utolsó változás után
+          nagyjából 400 ms-mal), akár az olvasó, akár az Ön <code>hg:set-view</code> üzenete
+          változtatta meg. Amikor a térkép egy újonnan kijelölt helyhez repül, az üzenet egyszer jön
+          az új hellyel és azzal a kamerával, amelyet a térkép elhagyott, majd még egyszer, amikor a
+          repülés véget ér
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:place-clicked</code></td>
+        <td><code>{ place }</code></td>
+        <td>
+          az olvasó egy helyre kattintott a térképen, a már kijelölt helyre is; a kattintás okozta
+          <code>hg:view-changed</code> előtt érkezik
+        </td>
       </tr>
       <tr>
         <td><code>hg:verse-clicked</code></td>
         <td><code>{ osis }</code></td>
-        <td>az olvasó egy versre kattintott, például <code>"Acts.16.12"</code></td>
+        <td>az olvasó egy helykártyán lévő versre kattintott, például <code>"Acts.16.12"</code></td>
       </tr>
       <tr>
         <td><code>hg:error</code></td>
@@ -202,7 +237,8 @@ description: Tegye fel a földgömböt a saját oldalára egyetlen sorral — eg
 <p>
   A <code>view</code> tartalmazza a <code>year</code>, <code>locale</code> és
   <code>layers</code> mezőt, és ha be van állítva, a <code>place</code>, <code>tour</code>,
-  <code>stop</code>, <code>ref</code> és <code>camera</code> mezőt.
+  <code>stop</code>, <code>ref</code> és <code>camera</code> mezőt. A <code>place</code> nélküli
+  <code>view</code> azt jelenti, hogy nincs hely kijelölve.
 </p>
 <h3>A földgömbhöz</h3>
 <div class="table">
@@ -221,7 +257,10 @@ description: Tegye fel a földgömböt a saját oldalára egyetlen sorral — eg
         <td>
           beállítja az évet, a fejezetet (<code>ref</code>), a helyet, a rétegeket vagy a kamerát; a
           <code>tour</code> (és <code>stop</code>) megadásakor a túra elindul, a többi mezőt pedig
-          figyelmen kívül hagyja; a nyelv csak a <code>hg:set-locale</code> üzenettel változik
+          figyelmen kívül hagyja; a nyelv csak a <code>hg:set-locale</code> üzenettel változik. A
+          <code>place: null</code> törli a kijelölést, és véget vet a futó túrának. A már kijelölt
+          helyre újra odarepül, hacsak a nézet nem tartalmaz <code>camera</code> mezőt is. A
+          térképen nem szereplő helyazonosítót figyelmen kívül hagyja
         </td>
       </tr>
       <tr>
@@ -232,6 +271,33 @@ description: Tegye fel a földgömböt a saját oldalára egyetlen sorral — eg
     </tbody>
   </table>
 </div>
+<ul>
+  <li>
+    Várjon a <code>hg:ready</code> üzenetre, mielőtt bármit küld: a még töltődő térképnek küldött
+    üzenet elvész.
+  </li>
+  <li>
+    Kezelje a <code>hg:view-changed</code> üzenetet aktuális állapotként, ne az olvasó tetteként:
+    követi az Ön saját <code>hg:set-view</code> üzenetét és a kamera minden mozgását. Az az oldal,
+    amely a teljes nézetet úgy küldi vissza, ahogy kapta, a kamerával együtt, sem hurkot, sem
+    repülést nem indít. Ne válaszoljon a <code>hg:view-changed</code> üzenetre olyan
+    <code>hg:set-view</code> üzenettel, amelyben csak <code>place</code> van: <code>camera</code>
+    nélkül a térkép visszarepül ahhoz a helyhez, el attól, ahová az olvasó mozgatta.
+  </li>
+</ul>
+
+<h3 id="place-ids">Helyazonosítók</h3>
+<p>
+  A Biblia helyeinek OpenBible-azonosítójuk van: egy <code>a</code> betű és hat hexadecimális
+  számjegy, például <code>af2161c</code> (Kapernaum). Az ókori világ azon helyeinek, amelyeket a
+  Biblia nem nevez meg (Gamla, Sepphórisz, Pompeji), ehelyett Pleiades-számuk van (Gamla száma
+  <code>678146</code>), ennek híján pedig Wikidata-elemük (Konstantinápoly eleme
+  <code>Q16869</code>). Mindkét fajta megjelenhet a <code>view.place</code> mezőben és a
+  <code>hg:place-clicked</code> üzenetben, és a <code>hg:set-view</code> mindkettőt elfogadja; ha az
+  Ön adataiban csak OpenBible-helyek vannak, ellenőrizze az azonosító alakját, mielőtt kikeresné. Az
+  OpenBible {{openbible}} helye közül {{absent}} nincs a térképen (nincs olyan pontjuk, amely
+  közzétehető); az azonosítóikat figyelmen kívül hagyja.
+</p>
 
 <h2>Példa: a térkép követi az olvasót</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
@@ -246,6 +312,55 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
+
+<h2 id="map-only">Példa: a térkép az Ön saját helymezője mellett</h2>
+<pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+let ready = false;
+
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  const m = e.data;
+  if (m?.type === "hg:ready") ready = true;
+  // A nézet, ahogy most van: egy hely kijelölve, vagy egy sem. Gyakran jön: a showPlace ne
+  // csináljon semmit, ha az a hely már látszik.
+  if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
+    if (m.view.place) showPlace(m.view.place);
+    else hidePlace();
+  }
+  // Minden kattintás egy helyre, a már kijelöltre is: nyissa meg újra a helymezőjét.
+  if (m?.type === "hg:place-clicked") showPlace(m.place);
+});
+
+// A keresése kiválasztott egy helyet: jelölje ki, és repüljön hozzá (újra, ha már ki van jelölve).
+function pickPlace(id) {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+}
+
+// A helymezője bezárult: törölje a kijelölést a térképen.
+function closeBox() {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+}</code></pre>
+<ul>
+  <li>
+    A kijelölt helyet növekvő és halványuló gyűrű jelöli, így a szem megtalálja, miközben semmi sem
+    takarja a térképet; annak az olvasónak, aki kevesebb mozgást kért, a gyűrű mozdulatlan marad.
+  </li>
+  <li>
+    A térképen bármely helytől távol kattintva törlődik a hely kijelölése; a futó túra megy tovább.
+    A dupla kattintás (amely nagyít) és a mozgó térképet megállító kattintás nem töröl semmit. A
+    <code>place: null</code> az Ön oldaláról törli a helyet és véget vet a túrának.
+  </li>
+  <li>
+    A túra a térképen fut (az útvonala, a megállói és az év) a saját kártyája nélkül: az Ön oldala a
+    <code>hg:set-view</code> üzenettel és a <code>{ tour, stop }</code> mezőkkel vezérli. A
+    <code>measure</code> megrajzolja a vonalát, mint minden keretben.
+  </li>
+  <li>
+    A <code>hg:verse-clicked</code> nem érkezik: a versek a helykártyán vannak, amelyet ez a mód
+    elhagy.
+  </li>
+</ul>
 
 <h2 id="places">Helyek bármilyen szövegben</h2>
 <p>
@@ -288,9 +403,7 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          a szöveg nyelve, az oldal egyik nyelve: <code>cs</code>, <code>de</code>, <code>en</code>,
-          <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>, <code>pl</code>,
-          <code>pt</code>, <code>ru</code>, <code>uk</code>; alapértelmezés szerint az oldal
+          a szöveg nyelve, az oldal egyik nyelve: {{locale_codes}}; alapértelmezés szerint az oldal
           <code>lang</code> értéke; bármely más nyelv esetén az angolra vált
         </td>
       </tr>

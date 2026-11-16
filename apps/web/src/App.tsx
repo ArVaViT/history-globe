@@ -82,6 +82,7 @@ import {
 } from "./app-hooks";
 import { chapterFocus, chapterLabel, withoutYear } from "./chapter";
 import { useEmbed, useEmbedError } from "./embed";
+import { frameParts } from "./frame";
 import { readUrl, rememberLocale, startLocale } from "./url";
 import { loadPeople, personName, type People } from "./people";
 import {
@@ -97,6 +98,12 @@ const FROM_URL = readUrl();
 const INITIAL = { ...FROM_URL, locale: startLocale(FROM_URL) };
 /** Inside another site's page: the map, the card and the slider, no column. */
 const EMBED = INITIAL.embed === true;
+/**
+ * A host with its own search and place box (`ui=map`, docs/embed-protocol.md): the map, the
+ * folded year and the link to the globe only; no chapter bar, no card. A place picked on the
+ * map is still selected and told to the host (`hg:view-changed`), which shows its own box.
+ */
+const MAP_ONLY = INITIAL.mapOnly === true;
 // Inside another site, the map's controls are trimmed (styles.css: no scale bar; no zoom
 // buttons in a narrow column, where gestures zoom).
 
@@ -190,10 +197,12 @@ export function App() {
     if (shellDone) document.getElementById("hg-shell")?.remove();
   }, [shellDone]);
   const bigFrame = useMedia("(min-width: 900px) and (min-height: 600px)");
-  const compact = EMBED && !bigFrame;
+  // A map-only frame is compact at any size and has no card or chapter bar (frame.ts).
+  const parts = frameParts(EMBED, MAP_ONLY, bigFrame);
+  const compact = parts.compact;
   useEffect(() => {
     document.documentElement.classList.toggle("hg-embed", compact);
-    setCompactFrame(compact);
+    setCompactFrame(compact, MAP_ONLY);
   }, [compact]);
   // The player folds to its year (a button in it); in a compact frame it starts folded.
   const [timeOpen, setTimeOpen] = useState(!compact);
@@ -310,10 +319,11 @@ export function App() {
       for (const { el, corner } of moved) corner.append(el);
     };
   }, [globe, scaleSlot, mapSlot]);
-  useEmbed(globe?.renderer, engine, data, ready, EMBED);
+  useEmbed(globe?.renderer, engine, data, ready, EMBED, MAP_ONLY);
   // Once the map is up, fetch the cards in the background: the first click opens at once.
   useEffect(() => {
-    if (!ready) return;
+    // Map-only, no card or search ever opens in the frame: nothing to fetch ahead.
+    if (!ready || MAP_ONLY) return;
     const warm = () => {
       void import("./components/PlaceCard");
       void import("./components/TourStopCard");
@@ -482,6 +492,17 @@ export function App() {
     globe?.renderer.setBibleOnly(bibleOnly);
   }, [globe, bibleOnly]);
   const selected = state.selectedPlace ? data?.byId.get(state.selectedPlace)?.props : undefined;
+  // Map-only, the place picked wears the ring that breathes out from it (still for a reader
+  // who asked for less motion): the host's box stands apart on its page, and the eye finds
+  // the place without a mark that covers its neighbours.
+  // With the places layer off, no ring stands where no place is drawn.
+  const ringAt =
+    MAP_ONLY && state.layers.places && state.selectedPlace
+      ? data?.byId.get(state.selectedPlace)?.info.at
+      : undefined;
+  useEffect(() => {
+    if (MAP_ONLY) engine?.highlight(ringAt ?? null);
+  }, [engine, ringAt]);
   // Its own years, for the line under the slider; a gate's years are its city's: none.
   const selectedLife = selected ? data?.life[selected.id] : undefined;
   const ownLife = selectedLife && !selectedLife.inherited ? selectedLife : undefined;
@@ -544,7 +565,7 @@ export function App() {
   const tourStop = tour && state.tour ? tour.stops[state.tour.step] : undefined;
   // On a phone an open card takes the lower half: the column folds to its header.
   // A quiz on the tour stands where the tour's card was: its stop would give answers.
-  const cardOpen = Boolean((tour && state.tour) || selected);
+  const cardOpen = parts.card && Boolean((tour && state.tour) || selected);
   // A phone on its side: the open player would leave the card a strip above it, so the
   // player folds to its year while a card is open and opens again when the card closes.
   // Opened again from its year, it stays open until the card closes.
@@ -637,7 +658,9 @@ export function App() {
           {compact ? (
             <Suspense fallback={null}>
               <EmbedBar
-                focus={state.focus}
+                // Map-only, the host lists the chapter's places itself: only the link stays.
+                focus={parts.chapter ? state.focus : null}
+                linkOnly={!parts.chapter}
                 data={data}
                 locale={state.locale}
                 selected={state.selectedPlace}
@@ -993,187 +1016,192 @@ export function App() {
             </aside>
           )}
 
-          <section
-            aria-label={t("details_label")}
-            className={`hg-card absolute top-4 right-4 max-md:top-auto max-md:right-3 max-md:bottom-[calc(var(--hg-timeline-h,124px)+20px)] max-md:left-3 ${compact ? `z-[3] md:top-14 md:right-[60px] ${shortFrame ? `max-h-[52%] overflow-y-auto rounded-[20px] ${state.selectedPlace !== null || state.tour !== null ? "hg-fade" : ""}` : ""}` : ""}`}
-          >
-            <Suspense fallback={null}>
-              {quiz ? (
-                <QuizPanel
-                  quiz={quiz}
-                  data={data}
-                  locale={state.locale}
-                  renderer={globe.renderer}
-                  onClose={() => {
-                    setQuiz(null);
-                  }}
-                />
-              ) : tour && state.tour ? (
-                <TourStopCard
-                  tour={tour}
-                  step={state.tour.step}
-                  place={tourStop ? data.byId.get(tourStop.placeId)?.props : undefined}
-                  photo={tourStop && !shortFrame ? data.photos[tourStop.placeId] : undefined}
-                  compact={shortFrame}
-                  heights={tourHeights?.tour === tour.id ? tourHeights.values : undefined}
-                  profileAlong={globe.renderer.profileAlong}
-                  locale={state.locale}
-                  onStep={engine.goToStop}
-                  onClose={() => {
-                    // "Закончить" closes the tour as Esc does, not onto its last stop's card.
-                    engine.stopTour();
-                    engine.selectPlace(null);
-                  }}
-                  onOpenPlace={(id) => {
-                    if (state.tour) setBackToTour({ ...state.tour, place: id });
-                    engine.stopTour();
-                    engine.selectPlace(id);
-                  }}
-                  stopName={(id) => {
-                    const p = data.byId.get(id)?.props;
-                    return p ? nameOf(p, state.locale) : id;
-                  }}
-                />
-              ) : person && !selected ? (
-                <PersonCard
-                  key={person.index}
-                  index={person.index}
-                  locale={state.locale}
-                  placeName={placeLabel}
-                  placeRank={placeRank}
-                  chapterYears={data.chapterYears}
-                  onPerson={(i) => {
-                    setPlaying(false);
-                    openPerson(i, person.from);
-                  }}
-                  onPlace={(id) => {
-                    setBackToPerson({ index: person.index, from: person.from, place: id });
-                    engine.selectPlace(id, { fly: true });
-                  }}
-                  onClose={closePerson}
-                  tours={tours}
-                  onTour={(id) => {
-                    closePerson();
-                    engine.startTour(id);
-                  }}
-                  back={
-                    person.from
-                      ? {
-                          label: placeLabel(person.from) ?? "",
-                          onBack: () => {
-                            const from = person.from;
-                            closePerson();
-                            if (from) engine.selectPlace(from);
-                          },
-                        }
-                      : undefined
-                  }
-                />
-              ) : (
-                selected && (
-                  <PlaceCard
-                    key={selected.id}
-                    place={selected}
-                    at={data.byId.get(selected.id)?.info.at ?? [0, 0]}
-                    sites={data.sites.get(selected.id) ?? []}
-                    questions={data.questions[selected.id]}
-                    life={data.life[selected.id]}
-                    // An event told again as a battle here (Samaria, 722 BC; Masada) is listed once, as the battle.
-                    events={events.filter(
-                      (e) =>
-                        (e.place ?? e.site?.id) === selected.id &&
-                        !data.battles.some(
-                          (b) =>
-                            b.place === (e.place ?? e.site?.id) && Math.abs(b.year - e.year) <= 1,
-                        ),
-                    )}
-                    battles={data.battles.filter(
-                      (b) => b.place === selected.id && (!bibleOnly || b.ref !== undefined),
-                    )}
-                    alsoHere={(data.alsoHere[state.locale].get(selected.id) ?? []).flatMap((id) => {
-                      const p = data.byId.get(id)?.props;
-                      return p ? [p] : [];
-                    })}
-                    onSelect={(id) => {
-                      engine.selectPlace(id);
-                    }}
-                    onGoTo={(id) => {
-                      engine.selectPlace(id, { fly: true });
-                    }}
-                    placeName={placeLabel}
+          {/* Map-only, the host shows its own box for the place selected. */}
+          {parts.card && (
+            <section
+              aria-label={t("details_label")}
+              className={`hg-card absolute top-4 right-4 max-md:top-auto max-md:right-3 max-md:bottom-[calc(var(--hg-timeline-h,124px)+20px)] max-md:left-3 ${compact ? `z-[3] md:top-14 md:right-[60px] ${shortFrame ? `max-h-[52%] overflow-y-auto rounded-[20px] ${state.selectedPlace !== null || state.tour !== null ? "hg-fade" : ""}` : ""}` : ""}`}
+            >
+              <Suspense fallback={null}>
+                {quiz ? (
+                  <QuizPanel
+                    quiz={quiz}
+                    data={data}
                     locale={state.locale}
-                    year={state.year}
+                    renderer={globe.renderer}
                     onClose={() => {
+                      setQuiz(null);
+                    }}
+                  />
+                ) : tour && state.tour ? (
+                  <TourStopCard
+                    tour={tour}
+                    step={state.tour.step}
+                    place={tourStop ? data.byId.get(tourStop.placeId)?.props : undefined}
+                    photo={tourStop && !shortFrame ? data.photos[tourStop.placeId] : undefined}
+                    compact={shortFrame}
+                    heights={tourHeights?.tour === tour.id ? tourHeights.values : undefined}
+                    profileAlong={globe.renderer.profileAlong}
+                    locale={state.locale}
+                    onStep={engine.goToStop}
+                    onClose={() => {
+                      // "Закончить" closes the tour as Esc does, not onto its last stop's card.
+                      engine.stopTour();
                       engine.selectPlace(null);
                     }}
-                    onZoom={() => {
-                      engine.selectPlace(selected.id, { fly: true });
+                    onOpenPlace={(id) => {
+                      if (state.tour) setBackToTour({ ...state.tour, place: id });
+                      engine.stopTour();
+                      engine.selectPlace(id);
                     }}
-                    onFlyTo={(at) => {
-                      engine.lookAt(at);
+                    stopName={(id) => {
+                      const p = data.byId.get(id)?.props;
+                      return p ? nameOf(p, state.locale) : id;
                     }}
-                    hasArticle={selected.id in data.articles}
-                    polities={polities}
-                    pleiades={data.pleiades[selected.id]}
-                    // The card's ruler and list open their tools, this place the first step.
-                    onMeasure={
-                      compact
-                        ? undefined
-                        : () => {
-                            openTool("measure");
-                            setMeasure({ from: selected.id, to: null });
-                          }
-                    }
-                    onLesson={() => {
-                      openTool("lesson");
-                    }}
-                    photo={shortFrame ? undefined : data.photos[selected.id]}
+                  />
+                ) : person && !selected ? (
+                  <PersonCard
+                    key={person.index}
+                    index={person.index}
+                    locale={state.locale}
+                    placeName={placeLabel}
+                    placeRank={placeRank}
+                    chapterYears={data.chapterYears}
                     onPerson={(i) => {
                       setPlaying(false);
-                      openPerson(i, selected.id);
+                      openPerson(i, person.from);
                     }}
-                    onHighlight={(id) => {
-                      engine.highlight(id ? (data.byId.get(id)?.info.at ?? null) : null);
+                    onPlace={(id) => {
+                      setBackToPerson({ index: person.index, from: person.from, place: id });
+                      engine.selectPlace(id, { fly: true });
                     }}
-                    onYear={(y) => {
-                      setPlaying(false);
-                      engine.setYear(y);
+                    onClose={closePerson}
+                    tours={tours}
+                    onTour={(id) => {
+                      closePerson();
+                      engine.startTour(id);
                     }}
-                    focusTitle={backToPerson?.place === selected.id}
                     back={
-                      backToPerson && backToPerson.place === selected.id && !backToTour
+                      person.from
                         ? {
-                            label: (() => {
-                              const p = people?.people[backToPerson.index];
-                              return p ? personName(p, state.locale) : "";
-                            })(),
+                            label: placeLabel(person.from) ?? "",
                             onBack: () => {
-                              setPlaying(false);
-                              openPerson(backToPerson.index, backToPerson.from);
-                              setBackToPerson(null);
+                              const from = person.from;
+                              closePerson();
+                              if (from) engine.selectPlace(from);
                             },
                           }
-                        : backToTour && backToTour.place === selected.id
-                          ? {
-                              label: t("tours.back_to", {
-                                title:
-                                  data.tours.find((x) => x.id === backToTour.id)?.title[
-                                    state.locale
-                                  ] ?? "",
-                              }),
-                              onBack: () => {
-                                setPlaying(false);
-                                engine.startTour(backToTour.id, backToTour.step);
-                                setBackToTour(null);
-                              },
-                            }
-                          : undefined
+                        : undefined
                     }
                   />
-                )
-              )}
-            </Suspense>
-          </section>
+                ) : (
+                  selected && (
+                    <PlaceCard
+                      key={selected.id}
+                      place={selected}
+                      at={data.byId.get(selected.id)?.info.at ?? [0, 0]}
+                      sites={data.sites.get(selected.id) ?? []}
+                      questions={data.questions[selected.id]}
+                      life={data.life[selected.id]}
+                      // An event told again as a battle here (Samaria, 722 BC; Masada) is listed once, as the battle.
+                      events={events.filter(
+                        (e) =>
+                          (e.place ?? e.site?.id) === selected.id &&
+                          !data.battles.some(
+                            (b) =>
+                              b.place === (e.place ?? e.site?.id) && Math.abs(b.year - e.year) <= 1,
+                          ),
+                      )}
+                      battles={data.battles.filter(
+                        (b) => b.place === selected.id && (!bibleOnly || b.ref !== undefined),
+                      )}
+                      alsoHere={(data.alsoHere[state.locale].get(selected.id) ?? []).flatMap(
+                        (id) => {
+                          const p = data.byId.get(id)?.props;
+                          return p ? [p] : [];
+                        },
+                      )}
+                      onSelect={(id) => {
+                        engine.selectPlace(id);
+                      }}
+                      onGoTo={(id) => {
+                        engine.selectPlace(id, { fly: true });
+                      }}
+                      placeName={placeLabel}
+                      locale={state.locale}
+                      year={state.year}
+                      onClose={() => {
+                        engine.selectPlace(null);
+                      }}
+                      onZoom={() => {
+                        engine.selectPlace(selected.id, { fly: true });
+                      }}
+                      onFlyTo={(at) => {
+                        engine.lookAt(at);
+                      }}
+                      hasArticle={selected.id in data.articles}
+                      polities={polities}
+                      pleiades={data.pleiades[selected.id]}
+                      // The card's ruler and list open their tools, this place the first step.
+                      onMeasure={
+                        compact
+                          ? undefined
+                          : () => {
+                              openTool("measure");
+                              setMeasure({ from: selected.id, to: null });
+                            }
+                      }
+                      onLesson={() => {
+                        openTool("lesson");
+                      }}
+                      photo={shortFrame ? undefined : data.photos[selected.id]}
+                      onPerson={(i) => {
+                        setPlaying(false);
+                        openPerson(i, selected.id);
+                      }}
+                      onHighlight={(id) => {
+                        engine.highlight(id ? (data.byId.get(id)?.info.at ?? null) : null);
+                      }}
+                      onYear={(y) => {
+                        setPlaying(false);
+                        engine.setYear(y);
+                      }}
+                      focusTitle={backToPerson?.place === selected.id}
+                      back={
+                        backToPerson && backToPerson.place === selected.id && !backToTour
+                          ? {
+                              label: (() => {
+                                const p = people?.people[backToPerson.index];
+                                return p ? personName(p, state.locale) : "";
+                              })(),
+                              onBack: () => {
+                                setPlaying(false);
+                                openPerson(backToPerson.index, backToPerson.from);
+                                setBackToPerson(null);
+                              },
+                            }
+                          : backToTour && backToTour.place === selected.id
+                            ? {
+                                label: t("tours.back_to", {
+                                  title:
+                                    data.tours.find((x) => x.id === backToTour.id)?.title[
+                                      state.locale
+                                    ] ?? "",
+                                }),
+                                onBack: () => {
+                                  setPlaying(false);
+                                  engine.startTour(backToTour.id, backToTour.step);
+                                  setBackToTour(null);
+                                },
+                              }
+                            : undefined
+                      }
+                    />
+                  )
+                )}
+              </Suspense>
+            </section>
+          )}
 
           {!compact && (
             <section

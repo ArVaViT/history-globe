@@ -18,6 +18,11 @@ export interface UrlView {
   /** Inside another site's page (`embed=1`, docs/embed-protocol.md): the map alone. */
   readonly embed?: boolean;
   /**
+   * Embedded with `ui=map`: the map alone, for a host with its own search and place box (no
+   * card, no chapter bar, the year folded, the link to the globe kept). Only in an embed.
+   */
+  readonly mapOnly?: boolean;
+  /**
    * Two places with the distance between them shown (`measure=a15257a,aaf03fa`, the "how far"
    * question pages): the distance tool open, the first as "from". Whether the data has them,
    * the app checks on loading.
@@ -153,6 +158,8 @@ export function readUrl(
   }
   // The embed address itself, served as the app by hosts that skip the redirect page.
   if (p.get("embed") === "1" || /\/embed\/v1\/?$/.test(path)) view.embed = true;
+  // The globe's own page keeps its whole interface whatever a link says.
+  if (view.embed && p.get("ui") === "map") view.mapOnly = true;
   const ref = p.get("ref");
   const part = "[1-4]?[A-Za-z]{2,6}\\.\\d{1,3}(?:\\.\\d{1,3})?";
   // A chapter, a range, or a whole book (`ref=Acts`).
@@ -216,5 +223,17 @@ export function viewSearch(view: WritableView, current = ""): string {
   // it out, so a copied link never reopens a measurement no longer on the map.
   if (view.measure) p.set("measure", view.measure.join(","));
   else p.delete("measure");
+  return p.toString();
+}
+
+/**
+ * The query string of the embed's link to the whole globe (EmbedBar): the frame's view
+ * without the frame's own marks, `embed` and its map-only look (`ui`), so the globe opens
+ * whole at the same place, year and camera.
+ */
+export function globeLinkSearch(search: string): string {
+  const p = new URLSearchParams(search);
+  p.delete("embed");
+  p.delete("ui");
   return p.toString();
 }

@@ -3,7 +3,9 @@
 English-only changes on this branch. Every line here is translated into all 21 languages
 before the branch goes to production; the list is then emptied.
 
-(Empty: the docs, the eight tours told outside the Bible and the Jewish War's battles are in
+(Empty: the embedding page's map-only changes of 2026-11-16 are in every language.)
+
+(Before that, empty: the docs, the eight tours told outside the Bible and the Jewish War's battles are in
 every language as of 2026-11-04.)
 
 Not debt, by decision: the ancient sites chosen by script keep their scholarly (Pleiades or

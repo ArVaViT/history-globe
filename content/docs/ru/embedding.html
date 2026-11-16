@@ -97,7 +97,10 @@ description: Как встроить глобус в свой сайт одно�
       <tr>
         <td><code>place</code></td>
         <td><code>af2161c</code></td>
-        <td>открыть место (Капернаум); идентификаторы — из OpenBible</td>
+        <td>
+          открыть место (здесь Капернаум); идентификаторы описаны в разделе
+          <a href="#place-ids">Идентификаторы мест</a>
+        </td>
       </tr>
       <tr>
         <td><code>tour</code></td>
@@ -131,23 +134,40 @@ description: Как встроить глобус в свой сайт одно�
       <tr>
         <td><code>locale</code></td>
         <td><code>ru</code></td>
-        <td>
-          язык: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>, <code>pt</code>,
-          <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>, <code>pl</code> или
-          <code>cs</code>
-        </td>
+        <td>язык, один из {{locale_codes}}</td>
       </tr>
       <tr>
         <td><code>camera</code></td>
         <td><code>35.2,31.8,7,30,0</code></td>
-        <td>долгота, широта, масштаб, наклон, поворот</td>
+        <td>
+          долгота, широта, масштаб, наклон, поворот; вместе с <code>place</code> карта открывается с
+          этой камерой и выбранным местом, а не летит к нему
+        </td>
+      </tr>
+      <tr>
+        <td><code>measure</code></td>
+        <td><code>a15257a,aaf03fa</code></td>
+        <td>
+          два идентификатора места: между ними открыт инструмент измерения расстояния; маленькая
+          рамка и
+          <code>ui=map</code> показывают только линию
+        </td>
+      </tr>
+      <tr>
+        <td><code>ui</code></td>
+        <td><code>map</code></td>
+        <td>
+          только карта, для страницы со своим поиском и своим окном места: без карточки места, без
+          панели главы, год свёрнут; ссылка на глобус остаётся. Выбранное место отмечено кольцом, а
+          нажатие на карту в стороне от мест снимает выбор (см. <a href="#map-only">пример</a>)
+        </td>
       </tr>
       <tr>
         <td><code>hide</code></td>
-        <td><code>relief,ancient</code></td>
+        <td><code>relief,battles</code></td>
         <td>
           выключить слои: <code>borders</code>, <code>places</code>, <code>relief</code>,
-          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+          <code>routes</code>, <code>roads</code>, <code>battles</code>
         </td>
       </tr>
     </tbody>
@@ -162,7 +182,8 @@ description: Как встроить глобус в свой сайт одно�
 <p>
   Глобус и ваша страница обмениваются сообщениями через <code>postMessage</code>. Каждое сообщение —
   объект с <code>type</code> и <code>v: 1</code>. Глобус передаёт только вид карты и никаких
-  сведений о читателе; сообщения он принимает только от страницы, в которую встроена рамка.
+  сведений о читателе, поэтому отправляет сообщения родительской странице независимо от её origin
+  (цель <code>"*"</code>); сообщения он принимает только от страницы, в которую встроена рамка.
 </p>
 <h3>От глобуса</h3>
 <div class="table">
@@ -183,12 +204,25 @@ description: Как встроить глобус в свой сайт одно�
       <tr>
         <td><code>hg:view-changed</code></td>
         <td><code>{ view }</code></td>
-        <td>вид карты изменился и устоялся: год, место, экскурсия или положение камеры</td>
+        <td>
+          год, место, экскурсия или положение камеры изменились и устоялись (примерно через 400 мс
+          после последнего изменения), будь то читатель или ваше <code>hg:set-view</code>. Когда
+          карта летит к вновь выбранному месту, сообщение приходит один раз с новым местом и
+          положением камеры, которое карта покинула, а затем ещё раз, когда перелёт закончится
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:place-clicked</code></td>
+        <td><code>{ place }</code></td>
+        <td>
+          читатель нажал на место на карте, в том числе на уже выбранное; сообщение приходит раньше
+          <code>hg:view-changed</code>, вызванного этим нажатием
+        </td>
       </tr>
       <tr>
         <td><code>hg:verse-clicked</code></td>
         <td><code>{ osis }</code></td>
-        <td>читатель нажал на стих, например <code>"Acts.16.12"</code></td>
+        <td>читатель нажал на стих в карточке места, например <code>"Acts.16.12"</code></td>
       </tr>
       <tr>
         <td><code>hg:error</code></td>
@@ -201,7 +235,8 @@ description: Как встроить глобус в свой сайт одно�
 <p>
   В <code>view</code> всегда есть <code>year</code>, <code>locale</code> и <code>layers</code>, а
   если заданы, то <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> и
-  <code>camera</code>.
+  <code>camera</code>. <code>view</code> без <code>place</code> означает, что ни одно место не
+  выбрано.
 </p>
 <h3>Глобусу</h3>
 <div class="table">
@@ -220,7 +255,10 @@ description: Как встроить глобус в свой сайт одно�
         <td>
           переходит к году, главе (<code>ref</code>), месту, слоям или положению камеры; с
           <code>tour</code> (и <code>stop</code>) начинается экскурсия, а остальные поля не
-          учитываются; язык меняется только через <code>hg:set-locale</code>
+          учитываются; язык меняется только через <code>hg:set-locale</code>.
+          <code>place: null</code> снимает выбор и завершает идущую экскурсию. К уже выбранному
+          месту карта летит снова, кроме случая, когда в виде есть и <code>camera</code>.
+          Идентификатор места, которого нет на карте, игнорируется
         </td>
       </tr>
       <tr>
@@ -231,6 +269,32 @@ description: Как встроить глобус в свой сайт одно�
     </tbody>
   </table>
 </div>
+<ul>
+  <li>
+    Дождитесь <code>hg:ready</code>, прежде чем что-либо отправлять: сообщение, отправленное, пока
+    карта ещё загружается, теряется.
+  </li>
+  <li>
+    Считайте <code>hg:view-changed</code> текущим состоянием, а не действием читателя: оно следует
+    за вашим <code>hg:set-view</code> и за каждым движением камеры. Страница, которая отправляет
+    обратно весь вид таким, каким его ей сообщили, вместе с камерой, не запускает ни цикл, ни
+    перелёт. Не отвечайте на <code>hg:view-changed</code> сообщением <code>hg:set-view</code> с
+    одним только <code>place</code>: без <code>camera</code> карта летит обратно к этому месту,
+    уводя её оттуда, куда её передвинул читатель.
+  </li>
+</ul>
+
+<h3 id="place-ids">Идентификаторы мест</h3>
+<p>
+  Место из Библии имеет идентификатор OpenBible: <code>a</code> и шесть шестнадцатеричных цифр,
+  например <code>af2161c</code> (Капернаум). У мест древнего мира, которых Библия не называет
+  (Гамла, Сепфорис, Помпеи), вместо этого номер Pleiades (у Гамлы это <code>678146</code>), а если
+  его нет, то элемент Wikidata (у Константинополя это <code>Q16869</code>). Оба вида могут приходить
+  в <code>view.place</code> и <code>hg:place-clicked</code>, и оба принимает
+  <code>hg:set-view</code>; если в ваших данных есть только места OpenBible, проверяйте вид
+  идентификатора, прежде чем искать его. Из {{openbible}} мест OpenBible {{absent}} нет на карте (у
+  них нет точки, которую можно публиковать); их идентификаторы игнорируются.
+</p>
 
 <h2>Пример: карта следует за читателем</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
@@ -245,6 +309,56 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
+
+<h2 id="map-only">Пример: карта рядом с вашим окном места</h2>
+<pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+let ready = false;
+
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  const m = e.data;
+  if (m?.type === "hg:ready") ready = true;
+  // Вид, какой он сейчас: выбрано место или ни одного. Приходит часто: showPlace не должна ничего
+  // делать, если это место уже показано.
+  if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
+    if (m.view.place) showPlace(m.view.place);
+    else hidePlace();
+  }
+  // Каждое нажатие на место, в том числе на уже выбранное: снова откройте своё окно.
+  if (m?.type === "hg:place-clicked") showPlace(m.place);
+});
+
+// Ваш поиск выбрал место: выберите его на карте и перелетите к нему (снова, если оно уже выбрано).
+function pickPlace(id) {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+}
+
+// Ваше окно закрыли: снимите выбор на карте.
+function closeBox() {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+}</code></pre>
+<ul>
+  <li>
+    Выбранное место отмечено кольцом, которое растёт и тает, так что глаз находит его, а карту ничто
+    не закрывает; у читателя, который просил меньше движения, кольцо неподвижно.
+  </li>
+  <li>
+    Нажатие на карту в стороне от мест снимает выбор места; идущая экскурсия продолжается. Двойное
+    нажатие (оно меняет масштаб) и нажатие, которое останавливает движущуюся карту, ничего не
+    снимают.
+    <code>place: null</code> с вашей страницы снимает выбор места и завершает экскурсию.
+  </li>
+  <li>
+    Экскурсия идёт на карте (её маршрут, остановки и год) без своей карточки: ваша страница двигает
+    её через <code>hg:set-view</code> и <code>{ tour, stop }</code>. <code>measure</code> рисует
+    свою линию, как в любой рамке.
+  </li>
+  <li>
+    <code>hg:verse-clicked</code> не отправляется: стихи находятся в карточке места, которую этот
+    режим не показывает.
+  </li>
+</ul>
 
 <h2 id="places">Места в любом тексте</h2>
 <p>
@@ -284,10 +398,8 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          язык текста, один из языков сайта: <code>cs</code>, <code>de</code>, <code>en</code>,
-          <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>, <code>pl</code>,
-          <code>pt</code>, <code>ru</code>, <code>uk</code>; по умолчанию
-          <code>lang</code> страницы; для любого другого — английский
+          язык текста, один из языков сайта: {{locale_codes}}; по умолчанию
+          <code>lang</code> страницы; любой другой язык заменяется английским
         </td>
       </tr>
       <tr>

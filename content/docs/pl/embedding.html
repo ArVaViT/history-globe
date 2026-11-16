@@ -97,7 +97,10 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
       <tr>
         <td><code>place</code></td>
         <td><code>af2161c</code></td>
-        <td>otwiera miejsce (tutaj Kafarnaum); identyfikatory pochodzą z OpenBible</td>
+        <td>
+          otwiera miejsce (tutaj Kafarnaum); identyfikatory opisano w części
+          <a href="#place-ids">Identyfikatory miejsc</a>
+        </td>
       </tr>
       <tr>
         <td><code>tour</code></td>
@@ -131,23 +134,41 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
       <tr>
         <td><code>locale</code></td>
         <td><code>pl</code></td>
-        <td>
-          język: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
-          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code> lub <code>cs</code>
-        </td>
+        <td>język, jeden z: {{locale_codes}}</td>
       </tr>
       <tr>
         <td><code>camera</code></td>
         <td><code>35.2,31.8,7,30,0</code></td>
-        <td>długość geograficzna, szerokość geograficzna, przybliżenie, pochylenie, azymut</td>
+        <td>
+          długość geograficzna, szerokość geograficzna, przybliżenie, pochylenie, azymut; z
+          <code>place</code> mapa otwiera się z tym ustawieniem kamery i zaznaczonym miejscem,
+          zamiast do niego lecieć
+        </td>
+      </tr>
+      <tr>
+        <td><code>measure</code></td>
+        <td><code>a15257a,aaf03fa</code></td>
+        <td>
+          dwa identyfikatory miejsc: narzędzie odległości otwarte między nimi; mała ramka i
+          <code>ui=map</code> pokazują tylko linię
+        </td>
+      </tr>
+      <tr>
+        <td><code>ui</code></td>
+        <td><code>map</code></td>
+        <td>
+          sama mapa, dla strony z własną wyszukiwarką i własnym polem miejsca: bez karty miejsca,
+          bez paska rozdziału, rok zwinięty; link do globusa zostaje. Wybrane miejsce jest oznaczone
+          pierścieniem, a kliknięcie mapy z dala od jakiegokolwiek miejsca usuwa zaznaczenie (zob.
+          <a href="#map-only">przykład</a>)
+        </td>
       </tr>
       <tr>
         <td><code>hide</code></td>
-        <td><code>relief,ancient</code></td>
+        <td><code>relief,battles</code></td>
         <td>
           warstwy do wyłączenia: <code>borders</code>, <code>places</code>, <code>relief</code>,
-          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+          <code>routes</code>, <code>roads</code>, <code>battles</code>
         </td>
       </tr>
     </tbody>
@@ -162,7 +183,8 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
 <p>
   Globus i Twoja strona komunikują się przez <code>postMessage</code>. Każdy komunikat jest obiektem
   z polami <code>type</code> i <code>v: 1</code>. Globus wysyła tylko to, co dzieje się na mapie, i
-  nigdy nic, co identyfikuje czytelnika; przyjmuje komunikaty wyłącznie ze strony, która zawiera
+  nigdy nic, co identyfikuje czytelnika, więc wysyła komunikaty do strony nadrzędnej bez względu na
+  jej pochodzenie (cel <code>"*"</code>); przyjmuje komunikaty wyłącznie ze strony, która zawiera
   ramkę.
 </p>
 <h3>Z globusa</h3>
@@ -184,12 +206,26 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
       <tr>
         <td><code>hg:view-changed</code></td>
         <td><code>{ view }</code></td>
-        <td>rok, miejsce, trasa lub kamera zmieniły się i ustabilizowały</td>
+        <td>
+          rok, miejsce, trasa lub kamera zmieniły się i ustabilizowały (około 400 ms po ostatniej
+          zmianie), niezależnie od tego, czy zmienił je czytelnik, czy Twoje
+          <code>hg:set-view</code>. Gdy mapa leci do nowo wybranego miejsca, komunikat przychodzi
+          raz z nowym miejscem i kamerą, którą mapa opuściła, a potem jeszcze raz, gdy przelot się
+          kończy
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:place-clicked</code></td>
+        <td><code>{ place }</code></td>
+        <td>
+          czytelnik kliknął miejsce na mapie, także to już zaznaczone; komunikat przychodzi przed
+          <code>hg:view-changed</code>, który wywołuje to kliknięcie
+        </td>
       </tr>
       <tr>
         <td><code>hg:verse-clicked</code></td>
         <td><code>{ osis }</code></td>
-        <td>czytelnik kliknął werset, np. <code>"Acts.16.12"</code></td>
+        <td>czytelnik kliknął werset na karcie miejsca, np. <code>"Acts.16.12"</code></td>
       </tr>
       <tr>
         <td><code>hg:error</code></td>
@@ -202,7 +238,8 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
 <p>
   <code>view</code> zawiera <code>year</code>, <code>locale</code> i <code>layers</code> oraz, gdy
   są ustawione, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> i
-  <code>camera</code>.
+  <code>camera</code>. <code>view</code> bez <code>place</code> oznacza, że żadne miejsce nie jest
+  zaznaczone.
 </p>
 <h3>Do globusa</h3>
 <div class="table">
@@ -221,7 +258,10 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
         <td>
           ustawia rok, rozdział (<code>ref</code>), miejsce, warstwy lub kamerę; z
           <code>tour</code> (i <code>stop</code>) uruchamia się trasa, a pozostałe pola są
-          ignorowane; język zmienia się tylko przez <code>hg:set-locale</code>
+          ignorowane; język zmienia się tylko przez <code>hg:set-locale</code>.
+          <code>place: null</code> usuwa zaznaczenie i kończy trwającą trasę. Do już zaznaczonego
+          miejsca leci się ponownie, chyba że widok zawiera też <code>camera</code>. Identyfikator
+          miejsca, którego mapa nie ma, jest ignorowany
         </td>
       </tr>
       <tr>
@@ -232,6 +272,33 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
     </tbody>
   </table>
 </div>
+<ul>
+  <li>
+    Zaczekaj na <code>hg:ready</code>, zanim cokolwiek wyślesz: komunikat wysłany, gdy mapa jeszcze
+    się wczytuje, ginie.
+  </li>
+  <li>
+    Traktuj <code>hg:view-changed</code> jako stan bieżący, a nie coś, co zrobił czytelnik:
+    następuje po Twoim <code>hg:set-view</code> i po każdym ruchu kamery. Strona, która odsyła cały
+    widok taki, jaki dostała, razem z kamerą, nie zaczyna ani pętli, ani przelotu. Nie odpowiadaj na
+    <code>hg:view-changed</code> przez <code>hg:set-view</code> z samym <code>place</code>: bez
+    <code>camera</code> mapa leci z powrotem do tego miejsca, z dala od tego, gdzie przesunął ją
+    czytelnik.
+  </li>
+</ul>
+
+<h3 id="place-ids">Identyfikatory miejsc</h3>
+<p>
+  Miejsce biblijne ma identyfikator OpenBible: <code>a</code> i sześć cyfr szesnastkowych, na
+  przykład <code>af2161c</code> (Kafarnaum). Miejsca świata starożytnego, których Biblia nie
+  wymienia (Gamla, Sefforis, Pompeje), mają zamiast tego numer Pleiades (Gamla ma
+  <code>678146</code>), a bez niego element Wikidata (Konstantynopol ma <code>Q16869</code>). Oba
+  rodzaje mogą pojawić się w <code>view.place</code> i <code>hg:place-clicked</code>, a
+  <code>hg:set-view</code> przyjmuje oba; jeśli Twoje dane zawierają tylko miejsca OpenBible,
+  sprawdź postać identyfikatora, zanim zaczniesz go wyszukiwać. Spośród {{openbible}} miejsc
+  OpenBible {{absent}} nie ma na mapie (nie mają punktu, który wolno publikować); ich identyfikatory
+  są ignorowane.
+</p>
 
 <h2>Przykład: mapa podąża za czytelnikiem</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
@@ -246,6 +313,56 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
+
+<h2 id="map-only">Przykład: mapa obok Twojego własnego pola miejsca</h2>
+<pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+let ready = false;
+
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  const m = e.data;
+  if (m?.type === "hg:ready") ready = true;
+  // Widok taki, jaki jest teraz: miejsce wybrane albo żadne. Przychodzi często: showPlace nie
+  // powinno nic robić, gdy to miejsce jest już pokazane.
+  if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
+    if (m.view.place) showPlace(m.view.place);
+    else hidePlace();
+  }
+  // Każde kliknięcie miejsca, także już wybranego: otwórz ponownie swoje pole.
+  if (m?.type === "hg:place-clicked") showPlace(m.place);
+});
+
+// Twoja wyszukiwarka wybrała miejsce: wybierz je i leć do niego (ponownie, jeśli jest już wybrane).
+function pickPlace(id) {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+}
+
+// Twoje pole zostało zamknięte: usuń zaznaczenie na mapie.
+function closeBox() {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+}</code></pre>
+<ul>
+  <li>
+    Wybrane miejsce jest oznaczone pierścieniem, który rośnie i blednie, dzięki czemu oko go
+    znajduje, a nic nie zasłania mapy; dla czytelnika, który prosił o mniej ruchu, pierścień stoi
+    nieruchomo.
+  </li>
+  <li>
+    Kliknięcie mapy z dala od jakiegokolwiek miejsca usuwa zaznaczenie miejsca; trwająca trasa toczy
+    się dalej. Dwukliknięcie (które przybliża) i kliknięcie zatrzymujące poruszającą się mapę nie
+    usuwają niczego. <code>place: null</code> z Twojej strony usuwa miejsce i kończy trasę.
+  </li>
+  <li>
+    Trasa działa na mapie (jej linia, jej przystanki i rok) bez swojej karty: Twoja strona steruje
+    nią przez <code>hg:set-view</code> i <code>{ tour, stop }</code>. <code>measure</code> rysuje
+    swoją linię, jak w każdej ramce.
+  </li>
+  <li>
+    <code>hg:verse-clicked</code> nie jest wysyłany: wersety są na karcie miejsca, której ten tryb
+    nie ma.
+  </li>
+</ul>
 
 <h2 id="places">Miejsca w dowolnym tekście</h2>
 <p>
@@ -263,8 +380,7 @@ window.addEventListener("message", (e) =&gt; {
     </p>
   </div>
   <figcaption>
-    Przykład na żywo, po angielsku: te nazwy zostały powiązane skryptem z tej strony (skrypt czyta
-    teksty po angielsku i rosyjsku).
+    Przykład na żywo, po angielsku: te nazwy zostały powiązane skryptem z tej strony.
   </figcaption>
 </figure>
 <pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
@@ -289,10 +405,8 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          język tekstu, jeden z języków serwisu: <code>cs</code>, <code>de</code>, <code>en</code>,
-          <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>, <code>pl</code>,
-          <code>pt</code>, <code>ru</code>, <code>uk</code>; domyślnie <code>lang</code> strony; dla
-          innych języków angielski
+          język tekstu, jeden z języków serwisu: {{locale_codes}}; domyślnie
+          <code>lang</code> strony; dla innych języków angielski
         </td>
       </tr>
       <tr>
