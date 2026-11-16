@@ -26,8 +26,10 @@ export function polityText(p: PolityName, locale: string): { name: string; vassa
 }
 
 export interface RendererEvents {
-  /** A place was clicked on the map. */
+  /** A place was clicked on the map (again, too, when it is already selected). */
   pick: (placeId: string) => void;
+  /** A click on the map that hit no place and no battle's mark: the map itself. */
+  pickNone: () => void;
   /** Hover changed; null when the pointer leaves all places. `at` is in screen pixels. */
   hover: (placeId: string | null, at: { readonly x: number; readonly y: number } | null) => void;
   /** The states under the pointer when it is over no place (topmost first), or null. */

@@ -97,7 +97,10 @@ description: Поставете глобуса в собствения си са
       <tr>
         <td><code>place</code></td>
         <td><code>af2161c</code></td>
-        <td>отваря място (тук Капернаум); идентификаторите са на OpenBible</td>
+        <td>
+          отваря място (тук Капернаум); идентификаторите са описани в раздела
+          <a href="#place-ids">Идентификатори на места</a>
+        </td>
       </tr>
       <tr>
         <td><code>tour</code></td>
@@ -131,23 +134,42 @@ description: Поставете глобуса в собствения си са
       <tr>
         <td><code>locale</code></td>
         <td><code>en</code></td>
-        <td>
-          език: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>, <code>pt</code>,
-          <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>, <code>pl</code> или
-          <code>cs</code>
-        </td>
+        <td>език, един от {{locale_codes}}</td>
       </tr>
       <tr>
         <td><code>camera</code></td>
         <td><code>35.2,31.8,7,30,0</code></td>
-        <td>географска дължина, географска ширина, мащаб, наклон, посока</td>
+        <td>
+          географска дължина, географска ширина, мащаб, наклон, посока; заедно с
+          <code>place</code> картата се отваря с тази камера и избраното място, вместо да лети към
+          него
+        </td>
+      </tr>
+      <tr>
+        <td><code>measure</code></td>
+        <td><code>a15257a,aaf03fa</code></td>
+        <td>
+          два идентификатора на места: между тях е отворен инструментът за измерване на разстояние;
+          малка рамка и
+          <code>ui=map</code> показват само линията
+        </td>
+      </tr>
+      <tr>
+        <td><code>ui</code></td>
+        <td><code>map</code></td>
+        <td>
+          само картата, за страница със собствено търсене и собствена кутия за мястото: без картичка
+          на мястото, без лента на главата, годината е сгъната; връзката към глобуса остава.
+          Избраното място е отбелязано с пръстен, а щракване върху картата извън местата изчиства
+          избора (вж. <a href="#map-only">примера</a>)
+        </td>
       </tr>
       <tr>
         <td><code>hide</code></td>
-        <td><code>relief,ancient</code></td>
+        <td><code>relief,battles</code></td>
         <td>
           слоеве за изключване: <code>borders</code>, <code>places</code>, <code>relief</code>,
-          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+          <code>routes</code>, <code>roads</code>, <code>battles</code>
         </td>
       </tr>
     </tbody>
@@ -162,8 +184,9 @@ description: Поставете глобуса в собствения си са
 <p>
   Глобусът и вашата страница общуват чрез <code>postMessage</code>. Всяко съобщение е обект с
   <code>type</code> и <code>v: 1</code>. Глобусът изпраща само онова, което се случва на картата, и
-  никога нищо, което идентифицира читателя; той приема съобщения само от страницата, която съдържа
-  рамката.
+  никога нищо, което идентифицира читателя, затова изпраща съобщения към родителската страница
+  независимо от нейния origin (цел <code>"*"</code>); той приема съобщения само от страницата, която
+  съдържа рамката.
 </p>
 <h3>От глобуса</h3>
 <div class="table">
@@ -184,12 +207,26 @@ description: Поставете глобуса в собствения си са
       <tr>
         <td><code>hg:view-changed</code></td>
         <td><code>{ view }</code></td>
-        <td>годината, мястото, маршрутът или камерата са се променили и са се установили</td>
+        <td>
+          годината, мястото, маршрутът или камерата са се променили и са се установили (около 400 ms
+          след последната промяна), независимо дали ги е променил читателят, или вашето
+          <code>hg:set-view</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:place-clicked</code></td>
+        <td><code>{ place }</code></td>
+        <td>
+          читателят е щракнал върху място на картата, включително върху вече избраното; съобщението
+          идва преди <code>hg:view-changed</code>, предизвикано от щракването
+        </td>
       </tr>
       <tr>
         <td><code>hg:verse-clicked</code></td>
         <td><code>{ osis }</code></td>
-        <td>читателят е щракнал върху стих, напр. <code>"Acts.16.12"</code></td>
+        <td>
+          читателят е щракнал върху стих в картичката на мястото, напр. <code>"Acts.16.12"</code>
+        </td>
       </tr>
       <tr>
         <td><code>hg:error</code></td>
@@ -202,7 +239,7 @@ description: Поставете глобуса в собствения си са
 <p>
   <code>view</code> съдържа <code>year</code>, <code>locale</code> и <code>layers</code>, а когато
   са зададени, и <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> и
-  <code>camera</code>.
+  <code>camera</code>. <code>view</code> без <code>place</code> означава, че няма избрано място.
 </p>
 <h3>Към глобуса</h3>
 <div class="table">
@@ -221,7 +258,10 @@ description: Поставете глобуса в собствения си са
         <td>
           задава годината, главата (<code>ref</code>), мястото, слоевете или камерата; с
           <code>tour</code> (и <code>stop</code>) маршрутът започва, а останалите полета се
-          пренебрегват; езикът се сменя само с <code>hg:set-locale</code>
+          пренебрегват; езикът се сменя само с <code>hg:set-locale</code>.
+          <code>place: null</code> изчиства избора и прекратява маршрут, който върви. Картата лети
+          отново към вече избраното място, освен ако изгледът съдържа и <code>camera</code>.
+          Идентификатор на място, което картата няма, се пренебрегва
         </td>
       </tr>
       <tr>
@@ -232,6 +272,30 @@ description: Поставете глобуса в собствения си са
     </tbody>
   </table>
 </div>
+<ul>
+  <li>
+    Изчакайте <code>hg:ready</code>, преди да изпратите каквото и да е: съобщение, изпратено, докато
+    картата още се зарежда, се губи.
+  </li>
+  <li>
+    Приемайте <code>hg:view-changed</code> за текущото състояние, а не за нещо, което е направил
+    читателят: то следва вашето <code>hg:set-view</code> и всяко движение на камерата. Страница,
+    която връща изгледа такъв, какъвто са ѝ го съобщили, не започва нито цикъл, нито полет.
+  </li>
+</ul>
+
+<h3 id="place-ids">Идентификатори на места</h3>
+<p>
+  Библейското място има идентификатор на OpenBible: <code>a</code> и шест шестнадесетични цифри,
+  например <code>af2161c</code> (Капернаум). Местата от древния свят, които Библията не назовава
+  (Гамла, Сефорис, Помпей), имат вместо това номер от Pleiades, например
+  <code>678146</code> (Гамла), а ако нямат и такъв, своя обект в Wikidata, например
+  <code>Q16869</code> (Константинопол). И двата вида могат да дойдат във <code>view.place</code> и
+  <code>hg:place-clicked</code>, и двата се приемат от <code>hg:set-view</code>; ако във вашите
+  данни има само места от OpenBible, проверявайте вида на идентификатора, преди да търсите. От
+  {{openbible}} места на OpenBible {{absent}} не са на картата (нямат точка, която може да се
+  публикува); техните идентификатори се пренебрегват.
+</p>
 
 <h2>Пример: картата следва вашия читател</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
@@ -246,6 +310,51 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
+
+<h2 id="map-only">Пример: картата до вашата собствена кутия за място</h2>
+<pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+let ready = false;
+
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  const m = e.data;
+  if (m?.type === "hg:ready") ready = true;
+  // The view as it is now: a place selected, or none. Comes often: showPlace should do
+  // nothing when that place is already shown.
+  if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
+    if (m.view.place) showPlace(m.view.place);
+    else hidePlace();
+  }
+  // Every click on a place, the one already selected too: open your box again.
+  if (m?.type === "hg:place-clicked") showPlace(m.place);
+});
+
+// Your search picked a place: select it and fly to it (again, if it is selected already).
+function pickPlace(id) {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+}
+
+// Your box was closed: clear the selection on the map.
+function closeBox() {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+}</code></pre>
+<ul>
+  <li>
+    Избраното място е отбелязано с пръстен, който расте и избледнява, така че окото го намира, без
+    нищо да закрива картата; за читател, поискал по-малко движение, пръстенът стои неподвижен.
+    Щракване върху картата извън местата изчиства избора.
+  </li>
+  <li>
+    Маршрутът върви по картата (трасето му, спирките му и годината) без своята картичка: вашата
+    страница го движи с <code>hg:set-view</code> и <code>{ tour, stop }</code>.
+    <code>measure</code> чертае своята линия, както във всяка рамка.
+  </li>
+  <li>
+    <code>hg:verse-clicked</code> не се изпраща: стиховете са в картичката на мястото, която този
+    режим пропуска.
+  </li>
+</ul>
 
 <h2 id="places">Места във всеки текст</h2>
 <p>
@@ -286,10 +395,8 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          езикът на текста, един от езиците на сайта: <code>cs</code>, <code>de</code>,
-          <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>uk</code>; по подразбиране
-          <code>lang</code> на страницата; за всеки друг език се използва английски
+          езикът на текста, един от езиците на сайта: {{locale_codes}}; по подразбиране
+          <code>lang</code> на страницата; всеки друг език се заменя с английски
         </td>
       </tr>
       <tr>

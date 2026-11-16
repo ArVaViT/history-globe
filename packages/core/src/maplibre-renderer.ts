@@ -138,6 +138,7 @@ export class MapLibreRenderer implements Renderer {
   private battleShown = false;
   private readonly handlers: { [E in keyof RendererEvents]: Set<RendererEvents[E]> } = {
     pick: new Set(),
+    pickNone: new Set(),
     hover: new Set(),
     hoverPolity: new Set(),
     hoverBattle: new Set(),
@@ -385,7 +386,7 @@ export class MapLibreRenderer implements Renderer {
           for (const h of this.handlers.hoverBattle) h(null, null);
         }
         for (const h of this.handlers.pick) h(id);
-      }
+      } else if (!battle) for (const h of this.handlers.pickNone) h();
     });
     // A tip would otherwise stay over a map that moved away: a tap on a phone, or a click
     // that flies to the place picked while the pointer rests where it was.

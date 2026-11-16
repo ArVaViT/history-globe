@@ -613,6 +613,114 @@ await step("a question's link opens the distance tool between its two places", a
   expect(!search().has("measure"), "closing the tool takes the distance out of the link");
 });
 
+await step(
+  "a map-only frame: no card, no chapter bar; the host selects, clears and hears clicks",
+  async () => {
+    // A host page holding the frame (the docs page, emptied): messages both ways.
+    await page.goto(BASE + "docs/");
+    await page.evaluate((src) => {
+      document.body.innerHTML = "";
+      window.__msgs = [];
+      window.addEventListener("message", (e) => window.__msgs.push(e.data));
+      const f = document.createElement("iframe");
+      f.src = src;
+      f.style.cssText = "width:1000px;height:640px;border:0";
+      document.body.append(f);
+    }, BASE + "?embed=1&ui=map&ref=Acts.16&locale=ru&year=30");
+    await page.waitForFunction(() => window.__msgs.some((m) => m?.type === "hg:ready"), null, {
+      timeout: 45000,
+    });
+    const frame = page.frames().find((f) => f !== page.mainFrame());
+    const views = () =>
+      page.evaluate(() =>
+        window.__msgs.filter((m) => m?.type === "hg:view-changed").map((m) => m.view),
+      );
+    const send = (view) =>
+      page.evaluate((view) => {
+        document
+          .querySelector("iframe")
+          .contentWindow.postMessage({ type: "hg:set-view", v: 1, view }, "*");
+      }, view);
+    // Neither the card nor the chapter's chip, only the link, named for what it is.
+    expect((await frame.locator("section.hg-card").count()) === 0, "a card section is there");
+    expect((await frame.getByRole("button", { name: /Деян/ }).count()) === 0, "the chapter chip");
+    const nav = await frame.locator("nav").first().getAttribute("aria-label");
+    expect(nav === "Переход к полному глобусу", `nav label ${nav}`);
+    // The host selects Capernaum: the place goes out in the view and wears the ring.
+    await send({ place: "af2161c" });
+    await page.waitForFunction(
+      () => window.__msgs.some((m) => m?.type === "hg:view-changed" && m.view.place === "af2161c"),
+      null,
+      { timeout: 10000 },
+    );
+    expect((await frame.locator(".hg-ring").count()) === 1, "no ring on the selected place");
+    expect((await frame.locator("section.hg-card").count()) === 0, "a card opened");
+    // A click on the place itself, twice: hg:place-clicked each time.
+    const at = await frame.evaluate(() => {
+      const m = window.__hgMap;
+      const f = m.queryRenderedFeatures().find((x) => x.properties?.id === "af2161c");
+      return f && m.project(f.geometry.coordinates);
+    });
+    expect(at, "Capernaum is not drawn");
+    const box = await page.locator("iframe").boundingBox();
+    for (let i = 0; i < 2; i++) {
+      await page.mouse.click(box.x + at.x, box.y + at.y);
+      await page.waitForTimeout(700);
+    }
+    const clicks = await page.evaluate(
+      () =>
+        window.__msgs.filter((m) => m?.type === "hg:place-clicked" && m.place === "af2161c").length,
+    );
+    expect(clicks === 2, `${clicks} hg:place-clicked`);
+    // `place: null` clears it: the view goes out without a place, and the ring goes.
+    await send({ place: null });
+    await page.waitForFunction(
+      () => {
+        const v = window.__msgs.filter((m) => m?.type === "hg:view-changed").at(-1)?.view;
+        return v && !("place" in v);
+      },
+      null,
+      { timeout: 10000 },
+    );
+    expect((await frame.locator(".hg-ring").count()) === 0, "the ring stayed");
+    // Selected again, then a click on the map away from any place clears it too.
+    await send({ place: "af2161c" });
+    await page.waitForFunction(
+      () =>
+        window.__msgs.filter((m) => m?.type === "hg:view-changed").at(-1)?.view.place === "af2161c",
+      null,
+      { timeout: 10000 },
+    );
+    await page.waitForTimeout(1500);
+    const empty = await frame.evaluate(() => {
+      const m = window.__hgMap;
+      for (let y = 120; y < 520; y += 20)
+        for (let x = 80; x < 900; x += 20)
+          if (
+            m
+              .queryRenderedFeatures([
+                [x - 14, y - 14],
+                [x + 14, y + 14],
+              ])
+              .every((f) => !f.properties?.id && !f.layer.id.includes("battle"))
+          )
+            return { x, y };
+      return null;
+    });
+    expect(empty, "no empty spot on the map");
+    await page.mouse.click(box.x + empty.x, box.y + empty.y);
+    await page.waitForFunction(
+      () => {
+        const v = window.__msgs.filter((m) => m?.type === "hg:view-changed").at(-1)?.view;
+        return v && !("place" in v);
+      },
+      null,
+      { timeout: 10000 },
+    );
+    expect((await views()).length > 0, "no hg:view-changed at all");
+  },
+);
+
 console.log(results.join("\n"));
 console.log(errors.length ? [...new Set(errors)].join("\n") : "no page errors");
 await browser.close();

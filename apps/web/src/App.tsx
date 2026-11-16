@@ -82,6 +82,7 @@ import {
 } from "./app-hooks";
 import { chapterFocus, chapterLabel, withoutYear } from "./chapter";
 import { useEmbed, useEmbedError } from "./embed";
+import { frameParts } from "./frame";
 import { readUrl, rememberLocale, startLocale } from "./url";
 import { loadPeople, personName, type People } from "./people";
 import {
@@ -196,8 +197,9 @@ export function App() {
     if (shellDone) document.getElementById("hg-shell")?.remove();
   }, [shellDone]);
   const bigFrame = useMedia("(min-width: 900px) and (min-height: 600px)");
-  // A map-only frame is compact at any size: the whole interface is what its host left out.
-  const compact = EMBED && (MAP_ONLY || !bigFrame);
+  // A map-only frame is compact at any size and has no card or chapter bar (frame.ts).
+  const parts = frameParts(EMBED, MAP_ONLY, bigFrame);
+  const compact = parts.compact;
   useEffect(() => {
     document.documentElement.classList.toggle("hg-embed", compact);
     setCompactFrame(compact, MAP_ONLY);
@@ -317,10 +319,11 @@ export function App() {
       for (const { el, corner } of moved) corner.append(el);
     };
   }, [globe, scaleSlot, mapSlot]);
-  useEmbed(globe?.renderer, engine, data, ready, EMBED);
+  useEmbed(globe?.renderer, engine, data, ready, EMBED, MAP_ONLY);
   // Once the map is up, fetch the cards in the background: the first click opens at once.
   useEffect(() => {
-    if (!ready) return;
+    // Map-only, no card or search ever opens in the frame: nothing to fetch ahead.
+    if (!ready || MAP_ONLY) return;
     const warm = () => {
       void import("./components/PlaceCard");
       void import("./components/TourStopCard");
@@ -489,6 +492,14 @@ export function App() {
     globe?.renderer.setBibleOnly(bibleOnly);
   }, [globe, bibleOnly]);
   const selected = state.selectedPlace ? data?.byId.get(state.selectedPlace)?.props : undefined;
+  // Map-only, the place picked wears the ring that breathes out from it (still for a reader
+  // who asked for less motion): the host's box stands apart on its page, and the eye finds
+  // the place without a mark that covers its neighbours.
+  const ringAt =
+    MAP_ONLY && state.selectedPlace ? data?.byId.get(state.selectedPlace)?.info.at : undefined;
+  useEffect(() => {
+    if (MAP_ONLY) engine?.highlight(ringAt ?? null);
+  }, [engine, ringAt]);
   // Its own years, for the line under the slider; a gate's years are its city's: none.
   const selectedLife = selected ? data?.life[selected.id] : undefined;
   const ownLife = selectedLife && !selectedLife.inherited ? selectedLife : undefined;
@@ -551,7 +562,7 @@ export function App() {
   const tourStop = tour && state.tour ? tour.stops[state.tour.step] : undefined;
   // On a phone an open card takes the lower half: the column folds to its header.
   // A quiz on the tour stands where the tour's card was: its stop would give answers.
-  const cardOpen = !MAP_ONLY && Boolean((tour && state.tour) || selected);
+  const cardOpen = parts.card && Boolean((tour && state.tour) || selected);
   // A phone on its side: the open player would leave the card a strip above it, so the
   // player folds to its year while a card is open and opens again when the card closes.
   // Opened again from its year, it stays open until the card closes.
@@ -645,7 +656,8 @@ export function App() {
             <Suspense fallback={null}>
               <EmbedBar
                 // Map-only, the host lists the chapter's places itself: only the link stays.
-                focus={MAP_ONLY ? null : state.focus}
+                focus={parts.chapter ? state.focus : null}
+                linkOnly={!parts.chapter}
                 data={data}
                 locale={state.locale}
                 selected={state.selectedPlace}
@@ -1002,7 +1014,7 @@ export function App() {
           )}
 
           {/* Map-only, the host shows its own box for the place selected. */}
-          {!MAP_ONLY && (
+          {parts.card && (
             <section
               aria-label={t("details_label")}
               className={`hg-card absolute top-4 right-4 max-md:top-auto max-md:right-3 max-md:bottom-[calc(var(--hg-timeline-h,124px)+20px)] max-md:left-3 ${compact ? `z-[3] md:top-14 md:right-[60px] ${shortFrame ? `max-h-[52%] overflow-y-auto rounded-[20px] ${state.selectedPlace !== null || state.tour !== null ? "hg-fade" : ""}` : ""}` : ""}`}

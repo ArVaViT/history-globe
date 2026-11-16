@@ -225,3 +225,15 @@ export function viewSearch(view: WritableView, current = ""): string {
   else p.delete("measure");
   return p.toString();
 }
+
+/**
+ * The query string of the embed's link to the whole globe (EmbedBar): the frame's view
+ * without the frame's own marks, `embed` and its map-only look (`ui`), so the globe opens
+ * whole at the same place, year and camera.
+ */
+export function globeLinkSearch(search: string): string {
+  const p = new URLSearchParams(search);
+  p.delete("embed");
+  p.delete("ui");
+  return p.toString();
+}

@@ -1,6 +1,13 @@
 import { describe, expect, it } from "vitest";
 import { isLocale } from "@hg/model";
-import { localeOfTag, preferredLocale, readUrl, startLocale, viewSearch } from "./url";
+import {
+  globeLinkSearch,
+  localeOfTag,
+  preferredLocale,
+  readUrl,
+  startLocale,
+  viewSearch,
+} from "./url";
 
 describe("readUrl", () => {
   it("reads a full view", () => {
@@ -254,5 +261,28 @@ describe("startLocale", () => {
   it("opens a map without one in a published language", () => {
     expect(isLocale(startLocale({}))).toBe(true);
     expect(isLocale(startLocale({ embed: true }))).toBe(true);
+  });
+});
+
+describe("globeLinkSearch", () => {
+  it("opens the whole globe at the frame's view: no embed mark, no map-only look", () => {
+    const next = globeLinkSearch(
+      "?embed=1&ui=map&year=30&place=af2161c&camera=35.5,32.8,8.00,45,0&locale=de",
+    );
+    const p = new URLSearchParams(next);
+    expect(p.has("embed")).toBe(false);
+    expect(p.has("ui")).toBe(false);
+    expect(Object.fromEntries(p)).toEqual({
+      year: "30",
+      place: "af2161c",
+      camera: "35.5,32.8,8.00,45,0",
+      locale: "de",
+    });
+    expect(readUrl(`?${next}`)).toMatchObject({ place: "af2161c", year: 30, locale: "de" });
+    expect(readUrl(`?${next}`).embed).toBeUndefined();
+  });
+
+  it("keeps parameters it does not own", () => {
+    expect(globeLinkSearch("?embed=1&ref=Acts.16&hide=relief")).toBe("ref=Acts.16&hide=relief");
   });
 });

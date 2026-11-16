@@ -97,7 +97,10 @@ description: Поставите глобус на свој сајт једном
       <tr>
         <td><code>place</code></td>
         <td><code>af2161c</code></td>
-        <td>отвара место (овде Капернаум); ИД-ови су из OpenBible-а</td>
+        <td>
+          отвара место (овде Капернаум); ИД-ови су описани у одељку
+          <a href="#place-ids">ИД-ови места</a>
+        </td>
       </tr>
       <tr>
         <td><code>tour</code></td>
@@ -130,23 +133,40 @@ description: Поставите глобус на свој сајт једном
       <tr>
         <td><code>locale</code></td>
         <td><code>en</code></td>
-        <td>
-          језик: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
-          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code> или <code>cs</code>
-        </td>
+        <td>језик, један од {{locale_codes}}</td>
       </tr>
       <tr>
         <td><code>camera</code></td>
         <td><code>35.2,31.8,7,30,0</code></td>
-        <td>географска дужина, географска ширина, увећање, нагиб, азимут</td>
+        <td>
+          географска дужина, географска ширина, увећање, нагиб, азимут; уз <code>place</code> мапа
+          се отвара са овом камером и изабраним местом, уместо да лети до њега
+        </td>
+      </tr>
+      <tr>
+        <td><code>measure</code></td>
+        <td><code>a15257a,aaf03fa</code></td>
+        <td>
+          два ИД-а места: између њих је отворена алатка за мерење растојања; мали оквир и
+          <code>ui=map</code> приказују само линију
+        </td>
+      </tr>
+      <tr>
+        <td><code>ui</code></td>
+        <td><code>map</code></td>
+        <td>
+          само мапа, за страницу са сопственом претрагом и сопственом кутијом за место: без картице
+          места, без траке главе, година је склопљена; веза ка глобусу остаје. Изабрано место је
+          означено прстеном, а клик на мапу ван свих места поништава избор (в.
+          <a href="#map-only">пример</a>)
+        </td>
       </tr>
       <tr>
         <td><code>hide</code></td>
-        <td><code>relief,ancient</code></td>
+        <td><code>relief,battles</code></td>
         <td>
           слојеви који се искључују: <code>borders</code>, <code>places</code>, <code>relief</code>,
-          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+          <code>routes</code>, <code>roads</code>, <code>battles</code>
         </td>
       </tr>
     </tbody>
@@ -161,7 +181,8 @@ description: Поставите глобус на свој сајт једном
 <p>
   Глобус и ваша страница комуницирају преко <code>postMessage</code>. Свака порука је објекат са
   <code>type</code> и <code>v: 1</code>. Глобус шаље само оно што се догађа на мапи и никада ништа
-  што идентификује читаоца; поруке прима само од странице која држи оквир.
+  што идентификује читаоца, зато поруке шаље родитељској страници без обзира на њен origin (циљ
+  <code>"*"</code>); поруке прима само од странице која држи оквир.
 </p>
 <h3>Од глобуса</h3>
 <div class="table">
@@ -182,12 +203,23 @@ description: Поставите глобус на свој сајт једном
       <tr>
         <td><code>hg:view-changed</code></td>
         <td><code>{ view }</code></td>
-        <td>година, место, тура или камера су се променили и умирили</td>
+        <td>
+          година, место, тура или камера су се променили и умирили (око 400 ms након последње
+          промене), без обзира на то да ли их је променио читалац или ваш <code>hg:set-view</code>
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:place-clicked</code></td>
+        <td><code>{ place }</code></td>
+        <td>
+          читалац је кликнуо на место на мапи, укључујући и већ изабрано; порука стиже пре поруке
+          <code>hg:view-changed</code> коју тај клик изазива
+        </td>
       </tr>
       <tr>
         <td><code>hg:verse-clicked</code></td>
         <td><code>{ osis }</code></td>
-        <td>читалац је кликнуо на стих, нпр. <code>"Acts.16.12"</code></td>
+        <td>читалац је кликнуо на стих у картици места, нпр. <code>"Acts.16.12"</code></td>
       </tr>
       <tr>
         <td><code>hg:error</code></td>
@@ -200,7 +232,8 @@ description: Поставите глобус на свој сајт једном
 <p>
   <code>view</code> садржи <code>year</code>, <code>locale</code> и <code>layers</code> и, када су
   постављени, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> и
-  <code>camera</code>.
+  <code>camera</code>. <code>view</code> без <code>place</code> значи да ниједно место није
+  изабрано.
 </p>
 <h3>Ка глобусу</h3>
 <div class="table">
@@ -219,7 +252,9 @@ description: Поставите глобус на свој сајт једном
         <td>
           поставља годину, главу (<code>ref</code>), место, слојеве или камеру; уз
           <code>tour</code> (и <code>stop</code>) тура почиње, а остала поља се занемарују; језик се
-          мења само поруком <code>hg:set-locale</code>
+          мења само поруком <code>hg:set-locale</code>. <code>place: null</code> поништава избор и
+          прекида туру која је у току. Мапа поново лети до већ изабраног места, осим ако приказ
+          садржи и <code>camera</code>. ИД места који мапа нема се занемарује
         </td>
       </tr>
       <tr>
@@ -230,6 +265,29 @@ description: Поставите глобус на свој сајт једном
     </tbody>
   </table>
 </div>
+<ul>
+  <li>
+    Сачекајте <code>hg:ready</code> пре него што било шта пошаљете: порука послата док се мапа још
+    учитава губи се.
+  </li>
+  <li>
+    Посматрајте <code>hg:view-changed</code> као тренутно стање, а не као нешто што је читалац
+    урадио: она следи ваш <code>hg:set-view</code> и свако померање камере. Страница која враћа
+    приказ какав су јој саопштили не покреће ни петљу ни лет.
+  </li>
+</ul>
+
+<h3 id="place-ids">ИД-ови места</h3>
+<p>
+  Библијско место има ИД из OpenBible-а: <code>a</code> и шест хексадецималних цифара, на пример
+  <code>af2161c</code> (Капернаум). Места старог света која Библија не помиње (Гамла, Сефорис,
+  Помпеја) уместо тога имају Pleiades број, на пример <code>678146</code> (Гамла), а ако га немају,
+  своју ставку у Wikidata, на пример <code>Q16869</code> (Константинопољ). Обе врсте могу стићи у
+  <code>view.place</code> и <code>hg:place-clicked</code>, и обе прихвата <code>hg:set-view</code>;
+  ако ваши подаци имају само места из OpenBible-а, проверите облик ИД-а пре него што га потражите.
+  Од {{openbible}} места из OpenBible-а {{absent}} нису на мапи (немају тачку која сме да се
+  објави); њихови ИД-ови се занемарују.
+</p>
 
 <h2>Пример: мапа прати вашег читаоца</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
@@ -244,6 +302,50 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
+
+<h2 id="map-only">Пример: мапа поред ваше сопствене кутије за место</h2>
+<pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+let ready = false;
+
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  const m = e.data;
+  if (m?.type === "hg:ready") ready = true;
+  // The view as it is now: a place selected, or none. Comes often: showPlace should do
+  // nothing when that place is already shown.
+  if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
+    if (m.view.place) showPlace(m.view.place);
+    else hidePlace();
+  }
+  // Every click on a place, the one already selected too: open your box again.
+  if (m?.type === "hg:place-clicked") showPlace(m.place);
+});
+
+// Your search picked a place: select it and fly to it (again, if it is selected already).
+function pickPlace(id) {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+}
+
+// Your box was closed: clear the selection on the map.
+function closeBox() {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+}</code></pre>
+<ul>
+  <li>
+    Изабрано место је означено прстеном који расте и бледи, па га око налази а да ништа не прекрива
+    мапу; за читаоца који је тражио мање покрета прстен мирује. Клик на мапу ван свих места
+    поништава избор.
+  </li>
+  <li>
+    Тура се одвија на мапи (њена рута, станице и година) без своје картице: ваша страница је помера
+    преко <code>hg:set-view</code> и <code>{ tour, stop }</code>. <code>measure</code> црта своју
+    линију, као у сваком оквиру.
+  </li>
+  <li>
+    <code>hg:verse-clicked</code> се не шаље: стихови су у картици места, коју овај режим изоставља.
+  </li>
+</ul>
 
 <h2 id="places">Места у било ком тексту</h2>
 <p>
@@ -282,9 +384,7 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          језик текста, један од језика сајта: <code>cs</code>, <code>de</code>, <code>en</code>,
-          <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>, <code>pl</code>,
-          <code>pt</code>, <code>ru</code>, <code>uk</code>; подразумевано
+          језик текста, један од језика сајта: {{locale_codes}}; подразумевано
           <code>lang</code> странице; сваки други језик се замењује енглеским
         </td>
       </tr>

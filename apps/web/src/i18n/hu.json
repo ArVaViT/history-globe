@@ -285,7 +285,8 @@
   "embed": {
     "places_one": "{{count}} hely",
     "places_other": "{{count}} hely",
-    "label": "A fejezet és hivatkozás a teljes földgömbre"
+    "label": "A fejezet és hivatkozás a teljes földgömbre",
+    "link_label": "Hivatkozás a teljes földgömbre"
   },
   "lesson": {
     "add": "Hozzáadás a tanórához",

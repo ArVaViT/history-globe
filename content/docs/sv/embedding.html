@@ -97,7 +97,9 @@ description: Lägg globen på din egen webbplats med en enda rad – kartan öve
       <tr>
         <td><code>place</code></td>
         <td><code>af2161c</code></td>
-        <td>öppna en plats (här Kafarnaum); id:n är OpenBibles</td>
+        <td>
+          öppna en plats (här Kafarnaum); id:n beskrivs under <a href="#place-ids">Plats-id:n</a>
+        </td>
       </tr>
       <tr>
         <td><code>tour</code></td>
@@ -131,23 +133,40 @@ description: Lägg globen på din egen webbplats med en enda rad – kartan öve
       <tr>
         <td><code>locale</code></td>
         <td><code>sv</code></td>
-        <td>
-          språk: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
-          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code>, <code>cs</code> eller <code>sv</code>
-        </td>
+        <td>språk, ett av {{locale_codes}}</td>
       </tr>
       <tr>
         <td><code>camera</code></td>
         <td><code>35.2,31.8,7,30,0</code></td>
-        <td>longitud, latitud, zoom, lutning, riktning</td>
+        <td>
+          longitud, latitud, zoom, lutning, riktning; tillsammans med <code>place</code> öppnas
+          kartan vid den här kameran med platsen vald, i stället för att flyga dit
+        </td>
+      </tr>
+      <tr>
+        <td><code>measure</code></td>
+        <td><code>a15257a,aaf03fa</code></td>
+        <td>
+          två plats-id:n: avståndsverktyget öppet mellan dem; en liten ram och
+          <code>ui=map</code> visar bara linjen
+        </td>
+      </tr>
+      <tr>
+        <td><code>ui</code></td>
+        <td><code>map</code></td>
+        <td>
+          enbart kartan, för en sida med egen sökning och egen platsruta: inget platskort, ingen
+          kapitelrad, året hopfällt; länken till globen finns kvar. Den valda platsen markeras med
+          en ring, och ett klick på kartan som inte träffar någon plats tar bort valet (se
+          <a href="#map-only">exemplet</a>)
+        </td>
       </tr>
       <tr>
         <td><code>hide</code></td>
-        <td><code>relief,ancient</code></td>
+        <td><code>relief,battles</code></td>
         <td>
           lager som ska stängas av: <code>borders</code>, <code>places</code>, <code>relief</code>,
-          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+          <code>routes</code>, <code>roads</code>, <code>battles</code>
         </td>
       </tr>
     </tbody>
@@ -162,8 +181,8 @@ description: Lägg globen på din egen webbplats med en enda rad – kartan öve
 <p>
   Globen och din sida kommunicerar genom <code>postMessage</code>. Varje meddelande är ett objekt
   med <code>type</code> och <code>v: 1</code>. Globen skickar bara det som händer på kartan och
-  aldrig något som identifierar läsaren; den tar bara emot meddelanden från den sida som håller
-  ramen.
+  aldrig något som identifierar läsaren, så den skickar till den överordnade sidan oavsett dess
+  ursprung (mål <code>"*"</code>); den tar bara emot meddelanden från den sida som håller ramen.
 </p>
 <h3>Från globen</h3>
 <div class="table">
@@ -184,12 +203,24 @@ description: Lägg globen på din egen webbplats med en enda rad – kartan öve
       <tr>
         <td><code>hg:view-changed</code></td>
         <td><code>{ view }</code></td>
-        <td>året, platsen, rundturen eller kameran har ändrats och har lugnat sig</td>
+        <td>
+          året, platsen, rundturen eller kameran har ändrats och har lugnat sig (omkring 400 ms
+          efter den senaste ändringen), oavsett om läsaren eller din
+          <code>hg:set-view</code> ändrade det
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:place-clicked</code></td>
+        <td><code>{ place }</code></td>
+        <td>
+          läsaren klickade på en plats på kartan, även den som redan är vald; den kommer före den
+          <code>hg:view-changed</code> som klicket orsakar
+        </td>
       </tr>
       <tr>
         <td><code>hg:verse-clicked</code></td>
         <td><code>{ osis }</code></td>
-        <td>läsaren klickade på en vers, t.ex. <code>"Acts.16.12"</code></td>
+        <td>läsaren klickade på en vers i ett platskort, t.ex. <code>"Acts.16.12"</code></td>
       </tr>
       <tr>
         <td><code>hg:error</code></td>
@@ -202,7 +233,7 @@ description: Lägg globen på din egen webbplats med en enda rad – kartan öve
 <p>
   <code>view</code> innehåller <code>year</code>, <code>locale</code> och <code>layers</code> och,
   när de är satta, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> och
-  <code>camera</code>.
+  <code>camera</code>. En <code>view</code> utan <code>place</code> betyder att ingen plats är vald.
 </p>
 <h3>Till globen</h3>
 <div class="table">
@@ -221,7 +252,10 @@ description: Lägg globen på din egen webbplats med en enda rad – kartan öve
         <td>
           ställer in året, kapitlet (<code>ref</code>), platsen, lagren eller kameran; med
           <code>tour</code> (och <code>stop</code>) startar rundturen och de övriga fälten
-          ignoreras; språket ändras bara med <code>hg:set-locale</code>
+          ignoreras; språket ändras bara med <code>hg:set-locale</code>.
+          <code>place: null</code> tar bort valet och avslutar en rundtur som pågår. Kartan flyger
+          igen till den plats som redan är vald, om inte vyn också har <code>camera</code>. Ett
+          plats-id som kartan inte har ignoreras
         </td>
       </tr>
       <tr>
@@ -232,6 +266,30 @@ description: Lägg globen på din egen webbplats med en enda rad – kartan öve
     </tbody>
   </table>
 </div>
+
+<ul>
+  <li>
+    Vänta på <code>hg:ready</code> innan du skickar något: ett meddelande som skickas medan kartan
+    fortfarande läses in går förlorat.
+  </li>
+  <li>
+    Behandla <code>hg:view-changed</code> som det aktuella tillståndet, inte som något läsaren har
+    gjort: det följer din egen <code>hg:set-view</code> och varje förflyttning av kameran. En sida
+    som skickar tillbaka vyn precis som den fick den startar varken en slinga eller en flygning.
+  </li>
+</ul>
+
+<h3 id="place-ids">Plats-id:n</h3>
+<p>
+  En plats i Bibeln har OpenBibles id: <code>a</code> följt av sex hexadecimala siffror, till
+  exempel <code>af2161c</code> (Kafarnaum). Antikens platser som Bibeln inte nämner (Gamla,
+  Sepforis, Pompeji) har i stället sitt Pleiades-nummer, till exempel <code>678146</code> (Gamla),
+  eller, om de saknar ett, sitt Wikidata-objekt, till exempel <code>Q16869</code> (Konstantinopel).
+  Båda slagen kan förekomma i <code>view.place</code> och <code>hg:place-clicked</code>, och båda
+  godtas av <code>hg:set-view</code>; om dina data bara har OpenBibles platser, testa formen innan
+  du slår upp någon. Av OpenBibles {{openbible}} platser finns {{absent}} inte på kartan (de har
+  ingen punkt som får publiceras); deras id:n ignoreras.
+</p>
 
 <h2>Exempel: kartan följer din läsare</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
@@ -246,6 +304,51 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
+
+<h2 id="map-only">Exempel: kartan bredvid din egen platsruta</h2>
+<pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+let ready = false;
+
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  const m = e.data;
+  if (m?.type === "hg:ready") ready = true;
+  // The view as it is now: a place selected, or none. Comes often: showPlace should do
+  // nothing when that place is already shown.
+  if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
+    if (m.view.place) showPlace(m.view.place);
+    else hidePlace();
+  }
+  // Every click on a place, the one already selected too: open your box again.
+  if (m?.type === "hg:place-clicked") showPlace(m.place);
+});
+
+// Your search picked a place: select it and fly to it (again, if it is selected already).
+function pickPlace(id) {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+}
+
+// Your box was closed: clear the selection on the map.
+function closeBox() {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+}</code></pre>
+<ul>
+  <li>
+    Den valda platsen markeras med en ring som växer och tonar ut, så att ögat hittar den utan att
+    något täcker kartan; för en läsare som har bett om mindre rörelse står ringen stilla. Ett klick
+    på kartan som inte träffar någon plats tar bort valet.
+  </li>
+  <li>
+    En rundtur går på kartan (dess färdväg, dess stopp och året) utan sitt kort: din sida styr den
+    med <code>hg:set-view</code> och <code>{ tour, stop }</code>. <code>measure</code> ritar sin
+    linje, som i varje ram.
+  </li>
+  <li>
+    <code>hg:verse-clicked</code> skickas inte: verserna finns i platskortet, som det här läget
+    utelämnar.
+  </li>
+</ul>
 
 <h2 id="places">Platser i vilken text som helst</h2>
 <p>
@@ -286,10 +389,8 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          textens språk, ett av webbplatsens språk: <code>cs</code>, <code>de</code>,
-          <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>sv</code>, <code>uk</code>; som
-          standard sidans <code>lang</code>; varje annat språk faller tillbaka på engelska
+          textens språk, ett av webbplatsens språk: {{locale_codes}}; som standard sidans
+          <code>lang</code>; varje annat språk faller tillbaka på engelska
         </td>
       </tr>
       <tr>

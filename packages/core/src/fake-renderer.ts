@@ -19,6 +19,7 @@ export class FakeRenderer implements Renderer {
   private camera: Camera = { center: [35, 31.5], zoom: 2, pitch: 0, bearing: 0 };
   private readonly handlers: { [E in keyof RendererEvents]: Set<RendererEvents[E]> } = {
     pick: new Set(),
+    pickNone: new Set(),
     hover: new Set(),
     hoverPolity: new Set(),
     hoverBattle: new Set(),
@@ -87,6 +88,11 @@ export class FakeRenderer implements Renderer {
   /** Test helper: simulate a click on a place. */
   emitPick(placeId: string): void {
     for (const h of this.handlers.pick) h(placeId);
+  }
+
+  /** Test helper: simulate a click on the map where there is no place. */
+  emitPickNone(): void {
+    for (const h of this.handlers.pickNone) h();
   }
 
   last<O extends Call["op"]>(op: O): Extract<Call, { op: O }> | undefined {

@@ -100,7 +100,10 @@ description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng
       <tr>
         <td><code>place</code></td>
         <td><code>af2161c</code></td>
-        <td>magbukas ng lugar (dito, ang Capernaum); mula sa OpenBible ang mga ID</td>
+        <td>
+          magbukas ng lugar (dito, ang Capernaum); inilalarawan ang mga ID sa
+          <a href="#place-ids">Mga ID ng lugar</a>
+        </td>
       </tr>
       <tr>
         <td><code>tour</code></td>
@@ -134,23 +137,40 @@ description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng
       <tr>
         <td><code>locale</code></td>
         <td><code>en</code></td>
-        <td>
-          wika: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>, <code>pt</code>,
-          <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>, <code>pl</code> o
-          <code>cs</code>
-        </td>
+        <td>wika, isa sa {{locale_codes}}</td>
       </tr>
       <tr>
         <td><code>camera</code></td>
         <td><code>35.2,31.8,7,30,0</code></td>
-        <td>longhitud, latitud, zoom, pitch, bearing</td>
+        <td>
+          longhitud, latitud, zoom, pitch, bearing; kasama ng <code>place</code>, bubukas ang mapa
+          sa camera na ito na napili ang lugar, sa halip na lumipad dito
+        </td>
+      </tr>
+      <tr>
+        <td><code>measure</code></td>
+        <td><code>a15257a,aaf03fa</code></td>
+        <td>
+          dalawang ID ng lugar: bukas ang panukat ng distansya sa pagitan ng mga ito; ang maliit na
+          frame at <code>ui=map</code> ay linya lamang ang ipinapakita
+        </td>
+      </tr>
+      <tr>
+        <td><code>ui</code></td>
+        <td><code>map</code></td>
+        <td>
+          ang mapa lamang, para sa pahinang may sariling paghahanap at kahon ng lugar: walang card
+          ng lugar, walang bar ng kabanata, nakatiklop ang taon; nananatili ang link sa globo.
+          Minamarkahan ng singsing ang napiling lugar, at ang pag-click sa bahagi ng mapa na walang
+          lugar ay nag-aalis ng pagpili (tingnan ang <a href="#map-only">halimbawa</a>)
+        </td>
       </tr>
       <tr>
         <td><code>hide</code></td>
-        <td><code>relief,ancient</code></td>
+        <td><code>relief,battles</code></td>
         <td>
           mga patong na papatayin: <code>borders</code>, <code>places</code>, <code>relief</code>,
-          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+          <code>routes</code>, <code>roads</code>, <code>battles</code>
         </td>
       </tr>
     </tbody>
@@ -165,8 +185,9 @@ description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng
 <p>
   Nag-uusap ang globo at ang iyong pahina sa pamamagitan ng <code>postMessage</code>. Bawat mensahe
   ay isang object na may <code>type</code> at <code>v: 1</code>. Ang ipinapadala lamang ng globo ay
-  ang nangyayari sa mapa, at hindi kailanman anumang makakakilala sa mambabasa; tumatanggap lamang
-  ito ng mga mensahe mula sa pahinang may hawak ng frame.
+  ang nangyayari sa mapa, at hindi kailanman anumang makakakilala sa mambabasa, kaya nagpapadala ito
+  sa magulang na pahina anuman ang pinagmulan nito (target <code>"*"</code>); tumatanggap lamang ito
+  ng mga mensahe mula sa pahinang may hawak ng frame.
 </p>
 <h3>Mula sa globo</h3>
 <div class="table">
@@ -187,12 +208,25 @@ description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng
       <tr>
         <td><code>hg:view-changed</code></td>
         <td><code>{ view }</code></td>
-        <td>nagbago at tumigil na ang taon, lugar, paglalakbay o camera</td>
+        <td>
+          nagbago at tumigil na ang taon, lugar, paglalakbay o camera (mga 400 ms pagkatapos ng
+          huling pagbabago), mambabasa man o ang iyong <code>hg:set-view</code> ang nagbago nito
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:place-clicked</code></td>
+        <td><code>{ place }</code></td>
+        <td>
+          nag-click ang mambabasa ng lugar sa mapa, pati ang napili na; nauuna ito sa
+          <code>hg:view-changed</code> na dulot ng click
+        </td>
       </tr>
       <tr>
         <td><code>hg:verse-clicked</code></td>
         <td><code>{ osis }</code></td>
-        <td>nag-click ang mambabasa ng isang talata, hal. <code>"Acts.16.12"</code></td>
+        <td>
+          nag-click ang mambabasa ng isang talata sa card ng lugar, hal. <code>"Acts.16.12"</code>
+        </td>
       </tr>
       <tr>
         <td><code>hg:error</code></td>
@@ -205,7 +239,8 @@ description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng
 <p>
   Naglalaman ang <code>view</code> ng <code>year</code>, <code>locale</code> at
   <code>layers</code> at, kung itinakda, ng <code>place</code>, <code>tour</code>,
-  <code>stop</code>, <code>ref</code> at <code>camera</code>.
+  <code>stop</code>, <code>ref</code> at <code>camera</code>. Ang <code>view</code> na walang
+  <code>place</code> ay nangangahulugang walang napiling lugar.
 </p>
 <h3>Papunta sa globo</h3>
 <div class="table">
@@ -225,7 +260,9 @@ description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng
           itakda ang taon, kabanata (<code>ref</code>), lugar, mga patong o camera; kapag may
           <code>tour</code> (at <code>stop</code>), magsisimula ang paglalakbay at hindi papansinin
           ang iba pang field; nagbabago lamang ang wika sa pamamagitan ng
-          <code>hg:set-locale</code>
+          <code>hg:set-locale</code>. Inaalis ng <code>place: null</code> ang pagpili at tinatapos
+          ang paglalakbay na tumatakbo. Muling lilipad ang mapa sa lugar na napili na, maliban kung
+          may <code>camera</code> din ang tanawin. Binabalewala ang ID ng lugar na wala sa mapa
         </td>
       </tr>
       <tr>
@@ -236,6 +273,32 @@ description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng
     </tbody>
   </table>
 </div>
+
+<ul>
+  <li>
+    Hintayin ang <code>hg:ready</code> bago ka magpadala ng anuman: nawawala ang mensaheng ipinadala
+    habang naglo-load pa ang mapa.
+  </li>
+  <li>
+    Ituring ang <code>hg:view-changed</code> na kasalukuyang kalagayan, hindi bilang ginawa ng
+    mambabasa: sumusunod ito sa sarili mong <code>hg:set-view</code> at sa bawat galaw ng camera.
+    Ang pahinang nagpapadala pabalik ng tanawin gaya ng pagkakasabi rito ay hindi nagsisimula ng
+    loop o ng paglipad.
+  </li>
+</ul>
+
+<h3 id="place-ids">Mga ID ng lugar</h3>
+<p>
+  Ang lugar sa Bibliya ay may ID ng OpenBible: <code>a</code> na sinusundan ng anim na heksadesimal
+  na digit, gaya ng <code>af2161c</code> (Capernaum). Ang mga lugar ng sinaunang mundo na hindi
+  binabanggit ng Bibliya (Gamla, Sepphoris, Pompeya) ay may numero ng Pleiades sa halip, gaya ng
+  <code>678146</code> (Gamla), o, kung wala nito, ang kanilang item sa Wikidata, gaya ng
+  <code>Q16869</code> (Constantinopla). Parehong uri ay maaaring dumating sa
+  <code>view.place</code> at <code>hg:place-clicked</code>, at parehong tinatanggap ng
+  <code>hg:set-view</code>; kung OpenBible lamang ang mga lugar sa iyong datos, subukan ang anyo
+  bago ka maghanap ng isa. Sa {{openbible}} lugar ng OpenBible, {{absent}} ang wala sa mapa (wala
+  silang puntong maaaring i-publish); binabalewala ang kanilang mga ID.
+</p>
 
 <h2>Halimbawa: sinusundan ng mapa ang iyong mambabasa</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
@@ -250,6 +313,53 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
+
+<h2 id="map-only">Halimbawa: ang mapa sa tabi ng sarili mong kahon ng lugar</h2>
+<pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+let ready = false;
+
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  const m = e.data;
+  if (m?.type === "hg:ready") ready = true;
+  // The view as it is now: a place selected, or none. Comes often: showPlace should do
+  // nothing when that place is already shown.
+  if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
+    if (m.view.place) showPlace(m.view.place);
+    else hidePlace();
+  }
+  // Every click on a place, the one already selected too: open your box again.
+  if (m?.type === "hg:place-clicked") showPlace(m.place);
+});
+
+// Your search picked a place: select it and fly to it (again, if it is selected already).
+function pickPlace(id) {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+}
+
+// Your box was closed: clear the selection on the map.
+function closeBox() {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+}</code></pre>
+<ul>
+  <li>
+    Minamarkahan ng singsing na lumalaki at kumukupas ang napiling lugar, kaya nahahanap ito ng mata
+    nang walang tumatakip sa mapa; para sa mambabasang humingi ng mas kaunting galaw, nananatiling
+    hindi gumagalaw ang singsing. Ang pag-click sa bahagi ng mapa na walang lugar ay nag-aalis ng
+    pagpili.
+  </li>
+  <li>
+    Tumatakbo ang isang paglalakbay sa mapa (ang ruta, mga hintuan at taon nito) nang walang card
+    nito: ang pahina mo ang gumagalaw rito gamit ang <code>hg:set-view</code> at
+    <code>{ tour, stop }</code>. Iginuguhit ng <code>measure</code> ang linya nito, gaya sa bawat
+    frame.
+  </li>
+  <li>
+    Hindi ipinapadala ang <code>hg:verse-clicked</code>: nasa card ng lugar ang mga talata, na hindi
+    isinasama ng mode na ito.
+  </li>
+</ul>
 
 <h2 id="places">Mga lugar sa anumang teksto</h2>
 <p>
@@ -293,9 +403,7 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          ang wika ng teksto, isa sa mga wika ng site: <code>cs</code>, <code>de</code>,
-          <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>uk</code>; bilang default, ang
+          ang wika ng teksto, isa sa mga wika ng site: {{locale_codes}}; bilang default, ang
           <code>lang</code> ng pahina; anumang ibang wika ay babalik sa Ingles
         </td>
       </tr>

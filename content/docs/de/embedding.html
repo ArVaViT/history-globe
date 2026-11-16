@@ -100,7 +100,10 @@ description: Setzen Sie den Globus mit einer Zeile auf Ihre eigene Website – d
       <tr>
         <td><code>place</code></td>
         <td><code>af2161c</code></td>
-        <td>einen Ort öffnen (hier Kapernaum); die IDs stammen von OpenBible</td>
+        <td>
+          einen Ort öffnen (hier Kapernaum); die IDs sind unter
+          <a href="#place-ids">Orts-IDs</a> beschrieben
+        </td>
       </tr>
       <tr>
         <td><code>tour</code></td>
@@ -134,23 +137,41 @@ description: Setzen Sie den Globus mit einer Zeile auf Ihre eigene Website – d
       <tr>
         <td><code>locale</code></td>
         <td><code>de</code></td>
-        <td>
-          Sprache: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
-          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code> oder <code>cs</code>
-        </td>
+        <td>Sprache, eine von {{locale_codes}}</td>
       </tr>
       <tr>
         <td><code>camera</code></td>
         <td><code>35.2,31.8,7,30,0</code></td>
-        <td>Längengrad, Breitengrad, Zoom, Neigung, Ausrichtung</td>
+        <td>
+          Längengrad, Breitengrad, Zoom, Neigung, Ausrichtung; zusammen mit
+          <code>place</code> öffnet sich die Karte mit dieser Kamera und dem ausgewählten Ort, statt
+          zu ihm zu fliegen
+        </td>
+      </tr>
+      <tr>
+        <td><code>measure</code></td>
+        <td><code>a15257a,aaf03fa</code></td>
+        <td>
+          zwei Orts-IDs: das Entfernungswerkzeug ist zwischen ihnen geöffnet; ein kleiner Rahmen und
+          <code>ui=map</code> zeigen nur die Linie
+        </td>
+      </tr>
+      <tr>
+        <td><code>ui</code></td>
+        <td><code>map</code></td>
+        <td>
+          die Karte allein, für eine Seite mit eigener Suche und eigenem Ortsfeld: keine Ortskarte,
+          keine Kapitelleiste, das Jahr eingeklappt; der Link zum Globus bleibt. Der ausgewählte Ort
+          ist mit einem Ring markiert, und ein Klick auf die Karte abseits jedes Ortes hebt die
+          Auswahl auf (siehe <a href="#map-only">das Beispiel</a>)
+        </td>
       </tr>
       <tr>
         <td><code>hide</code></td>
-        <td><code>relief,ancient</code></td>
+        <td><code>relief,battles</code></td>
         <td>
           auszublendende Ebenen: <code>borders</code>, <code>places</code>, <code>relief</code>,
-          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+          <code>routes</code>, <code>roads</code>, <code>battles</code>
         </td>
       </tr>
     </tbody>
@@ -165,7 +186,8 @@ description: Setzen Sie den Globus mit einer Zeile auf Ihre eigene Website – d
 <p>
   Der Globus und Ihre Seite kommunizieren über <code>postMessage</code>. Jede Nachricht ist ein
   Objekt mit <code>type</code> und <code>v: 1</code>. Der Globus sendet nur, was auf der Karte
-  geschieht, und nie etwas, das den Leser identifiziert; er nimmt Nachrichten nur von der Seite an,
+  geschieht, und nie etwas, das den Leser identifiziert, daher sendet er an die übergeordnete Seite,
+  gleich welche Herkunft sie hat (Ziel <code>"*"</code>); er nimmt Nachrichten nur von der Seite an,
   die den Rahmen enthält.
 </p>
 <h3>Vom Globus</h3>
@@ -189,12 +211,24 @@ description: Setzen Sie den Globus mit einer Zeile auf Ihre eigene Website – d
         <td><code>{ view }</code></td>
         <td>
           das Jahr, der Ort, die Tour oder die Kamera hat sich geändert und ist zur Ruhe gekommen
+          (etwa 400 ms nach der letzten Änderung), gleichgültig, ob der Leser oder Ihr
+          <code>hg:set-view</code> sie geändert hat
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:place-clicked</code></td>
+        <td><code>{ place }</code></td>
+        <td>
+          der Leser hat einen Ort auf der Karte angeklickt, auch den schon ausgewählten; die
+          Nachricht kommt vor dem <code>hg:view-changed</code>, das der Klick auslöst
         </td>
       </tr>
       <tr>
         <td><code>hg:verse-clicked</code></td>
         <td><code>{ osis }</code></td>
-        <td>der Leser hat einen Vers angeklickt, z. B. <code>"Acts.16.12"</code></td>
+        <td>
+          der Leser hat einen Vers in einer Ortskarte angeklickt, z. B. <code>"Acts.16.12"</code>
+        </td>
       </tr>
       <tr>
         <td><code>hg:error</code></td>
@@ -207,7 +241,8 @@ description: Setzen Sie den Globus mit einer Zeile auf Ihre eigene Website – d
 <p>
   <code>view</code> enthält <code>year</code>, <code>locale</code> und <code>layers</code> und, wenn
   gesetzt, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> und
-  <code>camera</code>.
+  <code>camera</code>. Eine <code>view</code> ohne <code>place</code> bedeutet, dass kein Ort
+  ausgewählt ist.
 </p>
 <h3>An den Globus</h3>
 <div class="table">
@@ -226,7 +261,10 @@ description: Setzen Sie den Globus mit einer Zeile auf Ihre eigene Website – d
         <td>
           das Jahr, das Kapitel (<code>ref</code>), den Ort, die Ebenen oder die Kamera setzen; mit
           <code>tour</code> (und <code>stop</code>) startet die Tour, und die übrigen Felder werden
-          ignoriert; die Sprache ändert sich nur mit <code>hg:set-locale</code>
+          ignoriert; die Sprache ändert sich nur mit <code>hg:set-locale</code>.
+          <code>place: null</code> hebt die Auswahl auf und beendet eine laufende Tour. Zum bereits
+          ausgewählten Ort fliegt die Karte erneut, es sei denn, die Ansicht enthält auch
+          <code>camera</code>. Eine Orts-ID, die die Karte nicht kennt, wird ignoriert
         </td>
       </tr>
       <tr>
@@ -237,6 +275,32 @@ description: Setzen Sie den Globus mit einer Zeile auf Ihre eigene Website – d
     </tbody>
   </table>
 </div>
+
+<ul>
+  <li>
+    Warten Sie auf <code>hg:ready</code>, bevor Sie etwas senden: Eine Nachricht, die gesendet wird,
+    solange die Karte noch lädt, geht verloren.
+  </li>
+  <li>
+    Behandeln Sie <code>hg:view-changed</code> als den aktuellen Zustand, nicht als etwas, das der
+    Leser getan hat: Es folgt auf Ihr eigenes <code>hg:set-view</code> und auf jede Bewegung der
+    Kamera. Eine Seite, die die Ansicht so zurückschickt, wie sie sie erhalten hat, löst weder eine
+    Schleife noch einen Flug aus.
+  </li>
+</ul>
+
+<h3 id="place-ids">Orts-IDs</h3>
+<p>
+  Ein Ort der Bibel hat die ID von OpenBible: <code>a</code> gefolgt von sechs hexadezimalen
+  Ziffern, etwa <code>af2161c</code> (Kapernaum). Die Orte der antiken Welt, die die Bibel nicht
+  nennt (Gamla, Sepphoris, Pompeji), haben stattdessen ihre Pleiades-Nummer, etwa
+  <code>678146</code> (Gamla), oder, wenn sie keine haben, ihren Wikidata-Eintrag, etwa
+  <code>Q16869</code> (Konstantinopel). Beide Arten können in <code>view.place</code> und
+  <code>hg:place-clicked</code> vorkommen, und beide werden von <code>hg:set-view</code> akzeptiert;
+  wenn Ihre Daten nur Orte von OpenBible enthalten, prüfen Sie die Form der ID, bevor Sie einen Ort
+  nachschlagen. Von den {{openbible}} Orten von OpenBible sind {{absent}} nicht auf der Karte (sie
+  haben keinen Punkt, der veröffentlicht werden darf); ihre IDs werden ignoriert.
+</p>
 
 <h2>Beispiel: Die Karte folgt Ihrem Leser</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
@@ -251,6 +315,51 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
+
+<h2 id="map-only">Beispiel: Die Karte neben Ihrem eigenen Ortsfeld</h2>
+<pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+let ready = false;
+
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  const m = e.data;
+  if (m?.type === "hg:ready") ready = true;
+  // The view as it is now: a place selected, or none. Comes often: showPlace should do
+  // nothing when that place is already shown.
+  if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
+    if (m.view.place) showPlace(m.view.place);
+    else hidePlace();
+  }
+  // Every click on a place, the one already selected too: open your box again.
+  if (m?.type === "hg:place-clicked") showPlace(m.place);
+});
+
+// Your search picked a place: select it and fly to it (again, if it is selected already).
+function pickPlace(id) {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+}
+
+// Your box was closed: clear the selection on the map.
+function closeBox() {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+}</code></pre>
+<ul>
+  <li>
+    Der ausgewählte Ort ist mit einem Ring markiert, der wächst und verblasst, sodass das Auge ihn
+    findet, ohne dass etwas die Karte verdeckt; bei einem Leser, der um weniger Bewegung gebeten
+    hat, bleibt der Ring still. Ein Klick auf die Karte abseits jedes Ortes hebt die Auswahl auf.
+  </li>
+  <li>
+    Eine Tour läuft auf der Karte (ihre Route, ihre Stationen und das Jahr) ohne ihre Tourkarte:
+    Ihre Seite steuert sie mit <code>hg:set-view</code> und <code>{ tour, stop }</code>.
+    <code>measure</code> zeichnet seine Linie, wie in jedem Rahmen.
+  </li>
+  <li>
+    <code>hg:verse-clicked</code> wird nicht gesendet: Die Verse stehen in der Ortskarte, die dieser
+    Modus weglässt.
+  </li>
+</ul>
 
 <h2 id="places">Orte in jedem Text</h2>
 <p>
@@ -268,8 +377,7 @@ window.addEventListener("message", (e) =&gt; {
     </p>
   </div>
   <figcaption>
-    Ein Live-Beispiel auf Englisch: Diese Namen hat das Skript auf dieser Seite verlinkt (das Skript
-    liest Texte auf Englisch und Russisch).
+    Ein Live-Beispiel auf Englisch: Diese Namen hat das Skript auf dieser Seite verlinkt.
   </figcaption>
 </figure>
 <pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
@@ -294,9 +402,7 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          die Sprache des Textes, eine der Sprachen der Website: <code>cs</code>, <code>de</code>,
-          <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>uk</code>; standardmäßig das
+          die Sprache des Textes, eine der Sprachen der Website: {{locale_codes}}; standardmäßig das
           <code>lang</code> der Seite; bei jeder anderen Englisch
         </td>
       </tr>

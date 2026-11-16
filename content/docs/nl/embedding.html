@@ -99,7 +99,10 @@ description: Zet de wereldbol met één regel op je eigen site — de kaart van 
       <tr>
         <td><code>place</code></td>
         <td><code>af2161c</code></td>
-        <td>een plaats openen (hier Kafarnaüm); de id’s zijn die van OpenBible</td>
+        <td>
+          een plaats openen (hier Kafarnaüm); de id’s worden beschreven onder
+          <a href="#place-ids">Plaats-id’s</a>
+        </td>
       </tr>
       <tr>
         <td><code>tour</code></td>
@@ -133,23 +136,40 @@ description: Zet de wereldbol met één regel op je eigen site — de kaart van 
       <tr>
         <td><code>locale</code></td>
         <td><code>nl</code></td>
-        <td>
-          taal: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>, <code>pt</code>,
-          <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>, <code>pl</code> of
-          <code>cs</code>
-        </td>
+        <td>taal, een van {{locale_codes}}</td>
       </tr>
       <tr>
         <td><code>camera</code></td>
         <td><code>35.2,31.8,7,30,0</code></td>
-        <td>lengtegraad, breedtegraad, zoom, kantelhoek, richting</td>
+        <td>
+          lengtegraad, breedtegraad, zoom, kantelhoek, richting; met <code>place</code> opent de
+          kaart op deze camera met de plaats geselecteerd, in plaats van er naartoe te vliegen
+        </td>
+      </tr>
+      <tr>
+        <td><code>measure</code></td>
+        <td><code>a15257a,aaf03fa</code></td>
+        <td>
+          twee plaats-id’s: het afstandsgereedschap staat open tussen die twee; een klein kader en
+          <code>ui=map</code> tonen alleen de lijn
+        </td>
+      </tr>
+      <tr>
+        <td><code>ui</code></td>
+        <td><code>map</code></td>
+        <td>
+          alleen de kaart, voor een pagina met een eigen zoekveld en plaatsvak: geen plaatskaart,
+          geen hoofdstukbalk, het jaar ingeklapt; de link naar de wereldbol blijft. De geselecteerde
+          plaats is met een ring gemarkeerd, en een klik op de kaart buiten elke plaats heft de
+          selectie op (zie <a href="#map-only">het voorbeeld</a>)
+        </td>
       </tr>
       <tr>
         <td><code>hide</code></td>
-        <td><code>relief,ancient</code></td>
+        <td><code>relief,battles</code></td>
         <td>
           lagen om uit te zetten: <code>borders</code>, <code>places</code>, <code>relief</code>,
-          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+          <code>routes</code>, <code>roads</code>, <code>battles</code>
         </td>
       </tr>
     </tbody>
@@ -164,7 +184,8 @@ description: Zet de wereldbol met één regel op je eigen site — de kaart van 
 <p>
   De wereldbol en je pagina communiceren via <code>postMessage</code>. Elk bericht is een object met
   <code>type</code> en <code>v: 1</code>. De wereldbol stuurt alleen wat er op de kaart gebeurt en
-  nooit iets wat de lezer identificeert; hij accepteert alleen berichten van de pagina die het kader
+  nooit iets wat de lezer identificeert, dus hij post naar de bovenliggende pagina ongeacht de
+  herkomst (doel <code>"*"</code>); hij accepteert alleen berichten van de pagina die het kader
   bevat.
 </p>
 <h3>Van de wereldbol</h3>
@@ -186,12 +207,26 @@ description: Zet de wereldbol met één regel op je eigen site — de kaart van 
       <tr>
         <td><code>hg:view-changed</code></td>
         <td><code>{ view }</code></td>
-        <td>het jaar, de plaats, de route of de camera is veranderd en tot rust gekomen</td>
+        <td>
+          het jaar, de plaats, de route of de camera is veranderd en tot rust gekomen (ongeveer 400
+          ms na de laatste wijziging), ongeacht of de lezer of jouw <code>hg:set-view</code> het
+          veranderde
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:place-clicked</code></td>
+        <td><code>{ place }</code></td>
+        <td>
+          de lezer heeft op een plaats op de kaart geklikt, ook op de al geselecteerde; het komt
+          vóór de <code>hg:view-changed</code> die de klik veroorzaakt
+        </td>
       </tr>
       <tr>
         <td><code>hg:verse-clicked</code></td>
         <td><code>{ osis }</code></td>
-        <td>de lezer heeft op een vers geklikt, bijv. <code>"Acts.16.12"</code></td>
+        <td>
+          de lezer heeft op een vers in een plaatskaart geklikt, bijv. <code>"Acts.16.12"</code>
+        </td>
       </tr>
       <tr>
         <td><code>hg:error</code></td>
@@ -204,7 +239,8 @@ description: Zet de wereldbol met één regel op je eigen site — de kaart van 
 <p>
   <code>view</code> bevat <code>year</code>, <code>locale</code> en <code>layers</code> en, indien
   ingesteld, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> en
-  <code>camera</code>.
+  <code>camera</code>. Een <code>view</code> zonder <code>place</code> betekent dat er geen plaats
+  is geselecteerd.
 </p>
 <h3>Naar de wereldbol</h3>
 <div class="table">
@@ -223,7 +259,10 @@ description: Zet de wereldbol met één regel op je eigen site — de kaart van 
         <td>
           het jaar, het hoofdstuk (<code>ref</code>), de plaats, de lagen of de camera instellen;
           met <code>tour</code> (en <code>stop</code>) start de route en worden de andere velden
-          genegeerd; de taal verandert alleen met <code>hg:set-locale</code>
+          genegeerd; de taal verandert alleen met <code>hg:set-locale</code>.
+          <code>place: null</code> wist de selectie en beëindigt een route die loopt. Naar de al
+          geselecteerde plaats wordt opnieuw gevlogen, tenzij de view ook <code>camera</code> heeft.
+          Een plaats-id die de kaart niet heeft, wordt genegeerd
         </td>
       </tr>
       <tr>
@@ -234,6 +273,30 @@ description: Zet de wereldbol met één regel op je eigen site — de kaart van 
     </tbody>
   </table>
 </div>
+<ul>
+  <li>
+    Wacht op <code>hg:ready</code> voordat je iets verstuurt: een bericht dat wordt verstuurd
+    terwijl de kaart nog laadt, gaat verloren.
+  </li>
+  <li>
+    Behandel <code>hg:view-changed</code> als de huidige toestand, niet als iets wat de lezer deed:
+    het volgt ook op je eigen <code>hg:set-view</code> en op elke beweging van de camera. Een pagina
+    die de view terugstuurt zoals ze die kreeg, start geen lus en geen vlucht.
+  </li>
+</ul>
+
+<h3 id="place-ids">Plaats-id’s</h3>
+<p>
+  Een plaats uit de Bijbel heeft de id van OpenBible: <code>a</code> gevolgd door zes hexadecimale
+  cijfers, zoals <code>af2161c</code> (Kafarnaüm). De plaatsen uit de oude wereld die de Bijbel niet
+  noemt (Gamla, Sepphoris, Pompeii) hebben in plaats daarvan hun Pleiades-nummer, zoals
+  <code>678146</code> (Gamla), of, als dat ontbreekt, hun Wikidata-item, zoals
+  <code>Q16869</code> (Constantinopel). Beide soorten kunnen voorkomen in <code>view.place</code> en
+  <code>hg:place-clicked</code>, en beide worden door <code>hg:set-view</code> geaccepteerd; als
+  jouw gegevens alleen de plaatsen van OpenBible hebben, test dan de vorm voordat je er een opzoekt.
+  Van de {{openbible}} plaatsen van OpenBible staan er {{absent}} niet op de kaart (ze hebben geen
+  punt dat gepubliceerd mag worden); hun id’s worden genegeerd.
+</p>
 
 <h2>Voorbeeld: de kaart volgt je lezer</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
@@ -248,6 +311,51 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
+
+<h2 id="map-only">Voorbeeld: de kaart naast je eigen plaatsvak</h2>
+<pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+let ready = false;
+
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  const m = e.data;
+  if (m?.type === "hg:ready") ready = true;
+  // The view as it is now: a place selected, or none. Comes often: showPlace should do
+  // nothing when that place is already shown.
+  if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
+    if (m.view.place) showPlace(m.view.place);
+    else hidePlace();
+  }
+  // Every click on a place, the one already selected too: open your box again.
+  if (m?.type === "hg:place-clicked") showPlace(m.place);
+});
+
+// Your search picked a place: select it and fly to it (again, if it is selected already).
+function pickPlace(id) {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+}
+
+// Your box was closed: clear the selection on the map.
+function closeBox() {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+}</code></pre>
+<ul>
+  <li>
+    De geselecteerde plaats is gemarkeerd met een ring die groeit en vervaagt, zodat het oog haar
+    vindt zonder dat iets de kaart bedekt; voor een lezer die om minder beweging heeft gevraagd,
+    blijft de ring stil. Een klik op de kaart buiten elke plaats heft de selectie op.
+  </li>
+  <li>
+    Een route loopt op de kaart (haar lijn, haar haltes en het jaar) zonder haar routekaart: je
+    pagina verplaatst haar met <code>hg:set-view</code> en <code>{ tour, stop }</code>.
+    <code>measure</code> tekent de lijn, zoals in elk kader.
+  </li>
+  <li>
+    <code>hg:verse-clicked</code> wordt niet verstuurd: de verzen staan in de plaatskaart, die deze
+    modus weglaat.
+  </li>
+</ul>
 
 <h2 id="places">Plaatsen in elke tekst</h2>
 <p>
@@ -265,8 +373,7 @@ window.addEventListener("message", (e) =&gt; {
     </p>
   </div>
   <figcaption>
-    Een live voorbeeld in het Engels: deze namen zijn gekoppeld door het script op deze pagina (het
-    script leest teksten in het Engels en het Russisch).
+    Een live voorbeeld in het Engels: deze namen zijn gekoppeld door het script op deze pagina.
   </figcaption>
 </figure>
 <pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
@@ -291,9 +398,7 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          de taal van de tekst, een van de talen van de site: <code>cs</code>, <code>de</code>,
-          <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>uk</code>; standaard de
+          de taal van de tekst, een van de talen van de site: {{locale_codes}}; standaard de
           <code>lang</code> van de pagina; voor elke andere taal Engels
         </td>
       </tr>

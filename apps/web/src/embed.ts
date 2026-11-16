@@ -1,7 +1,8 @@
-import type { Camera, Engine, LayerVisibility } from "@hg/core";
+import type { Engine, LayerVisibility } from "@hg/core";
 import type { Locale } from "@hg/model";
 import { useEffect } from "react";
 import type { LoadedData } from "./data";
+import type { EmbedRenderer } from "./embed-protocol";
 
 /** The view a host page sees and can set (docs/embed-protocol.md, v1). */
 export interface EmbedView {
@@ -23,18 +24,12 @@ export interface EmbedView {
  * are taken only from the page that holds the frame.
  */
 export function useEmbed(
-  renderer:
-    | {
-        flyTo: (
-          target: Partial<Camera> & { center: readonly [number, number] },
-          ms?: number,
-        ) => void;
-      }
-    | undefined,
+  renderer: EmbedRenderer | undefined,
   engine: Engine | undefined,
   data: LoadedData | null,
   ready: boolean,
   on: boolean,
+  mapOnly = false,
 ): void {
   useEffect(() => {
     if (!on || !engine || !data || !ready || window.parent === window) return;
@@ -43,7 +38,7 @@ export function useEmbed(
     let undo: (() => void) | undefined;
     import("./embed-protocol").then(
       ({ attachEmbed }) => {
-        if (live) undo = attachEmbed(renderer, engine, data);
+        if (live) undo = attachEmbed(renderer, engine, data, mapOnly);
       },
       // The host is told, rather than left waiting for hg:ready.
       (e: unknown) => {
@@ -62,7 +57,7 @@ export function useEmbed(
       live = false;
       undo?.();
     };
-  }, [renderer, engine, data, ready, on]);
+  }, [renderer, engine, data, ready, on, mapOnly]);
 }
 
 /**

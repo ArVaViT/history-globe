@@ -285,7 +285,8 @@
   "embed": {
     "places_one": "{{count}} lieu",
     "places_other": "{{count}} lieux",
-    "label": "Le chapitre et le chemin vers le globe entier"
+    "label": "Le chapitre et le chemin vers le globe entier",
+    "link_label": "Le chemin vers le globe entier"
   },
   "lesson": {
     "add": "Ajouter à une leçon",

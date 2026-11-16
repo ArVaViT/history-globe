@@ -95,7 +95,9 @@ description: Sæt globussen ind på dit eget websted med én linje – kortet ov
       <tr>
         <td><code>place</code></td>
         <td><code>af2161c</code></td>
-        <td>åbn et sted (her Kapernaum); id’erne er OpenBibles</td>
+        <td>
+          åbn et sted (her Kapernaum); id’erne beskrives under <a href="#place-ids">Steds-id’er</a>
+        </td>
       </tr>
       <tr>
         <td><code>tour</code></td>
@@ -129,23 +131,40 @@ description: Sæt globussen ind på dit eget websted med én linje – kortet ov
       <tr>
         <td><code>locale</code></td>
         <td><code>da</code></td>
-        <td>
-          sprog: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
-          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code> eller <code>cs</code>
-        </td>
+        <td>sprog, et af {{locale_codes}}</td>
       </tr>
       <tr>
         <td><code>camera</code></td>
         <td><code>35.2,31.8,7,30,0</code></td>
-        <td>længdegrad, breddegrad, zoom, hældning, retning</td>
+        <td>
+          længdegrad, breddegrad, zoom, hældning, retning; sammen med <code>place</code> åbner
+          kortet ved dette kamera med stedet valgt i stedet for at flyve hen til det
+        </td>
+      </tr>
+      <tr>
+        <td><code>measure</code></td>
+        <td><code>a15257a,aaf03fa</code></td>
+        <td>
+          to steds-id’er: afstandsværktøjet åbent mellem dem; en lille ramme og
+          <code>ui=map</code> viser kun linjen
+        </td>
+      </tr>
+      <tr>
+        <td><code>ui</code></td>
+        <td><code>map</code></td>
+        <td>
+          kun kortet, til en side med sin egen søgning og stedboks: intet stedskort, ingen
+          kapitellinje, året foldet sammen; linket til globussen bliver. Det valgte sted markeres
+          med en ring, og et klik på kortet væk fra ethvert sted fjerner valget (se
+          <a href="#map-only">eksemplet</a>)
+        </td>
       </tr>
       <tr>
         <td><code>hide</code></td>
-        <td><code>relief,ancient</code></td>
+        <td><code>relief,battles</code></td>
         <td>
           lag, der slås fra: <code>borders</code>, <code>places</code>, <code>relief</code>,
-          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+          <code>routes</code>, <code>roads</code>, <code>battles</code>
         </td>
       </tr>
     </tbody>
@@ -160,7 +179,8 @@ description: Sæt globussen ind på dit eget websted med én linje – kortet ov
 <p>
   Globussen og din side kommunikerer gennem <code>postMessage</code>. Hver besked er et objekt med
   <code>type</code> og <code>v: 1</code>. Globussen sender kun det, der sker på kortet, og aldrig
-  noget, der identificerer læseren; den modtager kun beskeder fra den side, der rummer rammen.
+  noget, der identificerer læseren, så den sender til den overordnede side uanset dens oprindelse
+  (mål <code>"*"</code>); den modtager kun beskeder fra den side, der rummer rammen.
 </p>
 <h3>Fra globussen</h3>
 <div class="table">
@@ -181,12 +201,23 @@ description: Sæt globussen ind på dit eget websted med én linje – kortet ov
       <tr>
         <td><code>hg:view-changed</code></td>
         <td><code>{ view }</code></td>
-        <td>året, stedet, turen eller kameraet er ændret og har sat sig</td>
+        <td>
+          året, stedet, turen eller kameraet er ændret og har sat sig (omkring 400 ms efter den
+          sidste ændring), uanset om læseren eller din <code>hg:set-view</code> har ændret det
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:place-clicked</code></td>
+        <td><code>{ place }</code></td>
+        <td>
+          læseren klikkede på et sted på kortet, også på det allerede valgte; den kommer før den
+          <code>hg:view-changed</code>, som klikket forårsager
+        </td>
       </tr>
       <tr>
         <td><code>hg:verse-clicked</code></td>
         <td><code>{ osis }</code></td>
-        <td>læseren klikkede på et vers, f.eks. <code>"Acts.16.12"</code></td>
+        <td>læseren klikkede på et vers i et stedskort, f.eks. <code>"Acts.16.12"</code></td>
       </tr>
       <tr>
         <td><code>hg:error</code></td>
@@ -199,7 +230,7 @@ description: Sæt globussen ind på dit eget websted med én linje – kortet ov
 <p>
   <code>view</code> indeholder <code>year</code>, <code>locale</code> og <code>layers</code> og, når
   de er sat, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> og
-  <code>camera</code>.
+  <code>camera</code>. En <code>view</code> uden <code>place</code> betyder, at intet sted er valgt.
 </p>
 <h3>Til globussen</h3>
 <div class="table">
@@ -218,7 +249,9 @@ description: Sæt globussen ind på dit eget websted med én linje – kortet ov
         <td>
           sætter året, kapitlet (<code>ref</code>), stedet, lagene eller kameraet; med
           <code>tour</code> (og <code>stop</code>) starter turen, og de øvrige felter ignoreres;
-          sproget ændres kun med <code>hg:set-locale</code>
+          sproget ændres kun med <code>hg:set-locale</code>. <code>place: null</code> fjerner valget
+          og afslutter en tur, der kører. Det allerede valgte sted flyves til igen, medmindre
+          visningen også har <code>camera</code>. Et steds-id, som kortet ikke har, ignoreres
         </td>
       </tr>
       <tr>
@@ -229,6 +262,30 @@ description: Sæt globussen ind på dit eget websted med én linje – kortet ov
     </tbody>
   </table>
 </div>
+
+<ul>
+  <li>
+    Vent på <code>hg:ready</code>, før du sender noget: en besked, der sendes, mens kortet stadig
+    indlæses, går tabt.
+  </li>
+  <li>
+    Behandl <code>hg:view-changed</code> som den aktuelle tilstand, ikke som noget, læseren har
+    gjort: den følger din egen <code>hg:set-view</code> og hver flytning af kameraet. En side, der
+    sender visningen tilbage, som den fik den, starter hverken en løkke eller en flyvning.
+  </li>
+</ul>
+
+<h3 id="place-ids">Steds-id’er</h3>
+<p>
+  Et sted i Bibelen har OpenBibles id: <code>a</code> efterfulgt af seks hexadecimale cifre, f.eks.
+  <code>af2161c</code> (Kapernaum). Oldtidens steder, som Bibelen ikke nævner (Gamla, Sepforis,
+  Pompeji), har i stedet deres Pleiades-nummer, f.eks. <code>678146</code> (Gamla), eller, hvis de
+  ikke har et, deres Wikidata-element, f.eks. <code>Q16869</code> (Konstantinopel). Begge slags kan
+  optræde i <code>view.place</code> og <code>hg:place-clicked</code>, og begge accepteres af
+  <code>hg:set-view</code>; hvis dine data kun har OpenBibles steder, så test formen, før du slår et
+  op. Af OpenBibles {{openbible}} steder er {{absent}} ikke på kortet (de har intet punkt, der må
+  offentliggøres); deres id’er ignoreres.
+</p>
 
 <h2>Eksempel: kortet følger din læser</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
@@ -243,6 +300,51 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
+
+<h2 id="map-only">Eksempel: kortet ved siden af din egen stedboks</h2>
+<pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+let ready = false;
+
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  const m = e.data;
+  if (m?.type === "hg:ready") ready = true;
+  // The view as it is now: a place selected, or none. Comes often: showPlace should do
+  // nothing when that place is already shown.
+  if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
+    if (m.view.place) showPlace(m.view.place);
+    else hidePlace();
+  }
+  // Every click on a place, the one already selected too: open your box again.
+  if (m?.type === "hg:place-clicked") showPlace(m.place);
+});
+
+// Your search picked a place: select it and fly to it (again, if it is selected already).
+function pickPlace(id) {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+}
+
+// Your box was closed: clear the selection on the map.
+function closeBox() {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+}</code></pre>
+<ul>
+  <li>
+    Det valgte sted markeres med en ring, der vokser og toner ud, så øjet finder det, uden at noget
+    dækker kortet; for en læser, der har bedt om mindre bevægelse, står ringen stille. Et klik på
+    kortet væk fra ethvert sted fjerner valget.
+  </li>
+  <li>
+    En tur kører på kortet (dens rute, dens stop og året) uden sit turkort: din side styrer den med
+    <code>hg:set-view</code> og <code>{ tour, stop }</code>. <code>measure</code> tegner sin linje,
+    som i enhver ramme.
+  </li>
+  <li>
+    <code>hg:verse-clicked</code> sendes ikke: versene findes i stedskortet, som denne tilstand
+    udelader.
+  </li>
+</ul>
 
 <h2 id="places">Steder i enhver tekst</h2>
 <p>
@@ -283,10 +385,8 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          tekstens sprog, et af webstedets sprog: <code>cs</code>, <code>de</code>, <code>en</code>,
-          <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>, <code>pl</code>,
-          <code>pt</code>, <code>ru</code>, <code>uk</code>; som standard sidens <code>lang</code>;
-          ethvert andet sprog falder tilbage til engelsk
+          tekstens sprog, et af webstedets sprog: {{locale_codes}}; som standard sidens
+          <code>lang</code>; ethvert andet sprog falder tilbage til engelsk
         </td>
       </tr>
       <tr>

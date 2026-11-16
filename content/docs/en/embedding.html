@@ -96,7 +96,9 @@ description: Put the globe on your own site with one line — the map of a chapt
       <tr>
         <td><code>place</code></td>
         <td><code>af2161c</code></td>
-        <td>open a place (here, Capernaum); IDs are OpenBible’s</td>
+        <td>
+          open a place (here, Capernaum); IDs are described under <a href="#place-ids">Place IDs</a>
+        </td>
       </tr>
       <tr>
         <td><code>tour</code></td>
@@ -129,32 +131,40 @@ description: Put the globe on your own site with one line — the map of a chapt
       <tr>
         <td><code>locale</code></td>
         <td><code>en</code></td>
-        <td>
-          language: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
-          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code> or <code>cs</code>
-        </td>
+        <td>language, one of {{locale_codes}}</td>
       </tr>
       <tr>
         <td><code>camera</code></td>
         <td><code>35.2,31.8,7,30,0</code></td>
-        <td>longitude, latitude, zoom, pitch, bearing</td>
+        <td>
+          longitude, latitude, zoom, pitch, bearing; with <code>place</code>, the map opens at this
+          camera with the place selected, instead of flying to it
+        </td>
+      </tr>
+      <tr>
+        <td><code>measure</code></td>
+        <td><code>a15257a,aaf03fa</code></td>
+        <td>
+          two place IDs: the distance tool open between them; a small frame and
+          <code>ui=map</code> show only the line
+        </td>
       </tr>
       <tr>
         <td><code>ui</code></td>
         <td><code>map</code></td>
         <td>
           the map alone, for a page with its own search and place box: no place card, no chapter
-          bar, the year folded; the link to the globe stays. A place selected on the map still
-          reaches your page in <code>hg:view-changed</code>
+          bar, the year folded; the link to the globe stays. The selected place is marked with a
+          ring, and a click on the map away from any place clears the selection (see
+          <a href="#map-only">the example</a>)
         </td>
       </tr>
       <tr>
         <td><code>hide</code></td>
-        <td><code>relief,ancient</code></td>
+        <td><code>relief,battles</code></td>
         <td>
           layers to turn off: <code>borders</code>, <code>places</code>, <code>relief</code>,
-          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+          <code>routes</code>, <code>roads</code>, <code>battles</code>
         </td>
       </tr>
     </tbody>
@@ -169,8 +179,8 @@ description: Put the globe on your own site with one line — the map of a chapt
 <p>
   The globe and your page communicate through <code>postMessage</code>. Every message is an object
   with <code>type</code> and <code>v: 1</code>. The globe sends only what happens on the map and
-  never anything that identifies the reader; it accepts messages only from the page that holds the
-  frame.
+  never anything that identifies the reader, so it posts to the parent page whatever its origin
+  (target <code>"*"</code>); it accepts messages only from the page that holds the frame.
 </p>
 <h3>From the globe</h3>
 <div class="table">
@@ -191,12 +201,23 @@ description: Put the globe on your own site with one line — the map of a chapt
       <tr>
         <td><code>hg:view-changed</code></td>
         <td><code>{ view }</code></td>
-        <td>the year, place, tour or camera has changed and settled</td>
+        <td>
+          the year, place, tour or camera has changed and settled (about 400 ms after the last
+          change), whether the reader or your <code>hg:set-view</code> changed it
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:place-clicked</code></td>
+        <td><code>{ place }</code></td>
+        <td>
+          the reader clicked a place on the map, the place already selected too; it comes before the
+          <code>hg:view-changed</code> that the click causes
+        </td>
       </tr>
       <tr>
         <td><code>hg:verse-clicked</code></td>
         <td><code>{ osis }</code></td>
-        <td>the reader clicked a verse, e.g. <code>"Acts.16.12"</code></td>
+        <td>the reader clicked a verse in a place card, e.g. <code>"Acts.16.12"</code></td>
       </tr>
       <tr>
         <td><code>hg:error</code></td>
@@ -209,7 +230,8 @@ description: Put the globe on your own site with one line — the map of a chapt
 <p>
   <code>view</code> holds <code>year</code>, <code>locale</code> and <code>layers</code> and, when
   set, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> and
-  <code>camera</code>.
+  <code>camera</code>. A <code>view</code> without <code>place</code> means that no place is
+  selected.
 </p>
 <h3>To the globe</h3>
 <div class="table">
@@ -228,7 +250,10 @@ description: Put the globe on your own site with one line — the map of a chapt
         <td>
           set the year, chapter (<code>ref</code>), place, layers or camera; with
           <code>tour</code> (and <code>stop</code>), the tour starts and the other fields are
-          ignored; the language changes only with <code>hg:set-locale</code>
+          ignored; the language changes only with <code>hg:set-locale</code>.
+          <code>place: null</code> clears the selection and ends a tour that is running. The place
+          already selected is flown to again, unless the view also has <code>camera</code>. A place
+          ID that the map does not have is ignored
         </td>
       </tr>
       <tr>
@@ -239,6 +264,30 @@ description: Put the globe on your own site with one line — the map of a chapt
     </tbody>
   </table>
 </div>
+<ul>
+  <li>
+    Wait for <code>hg:ready</code> before you send anything: a message sent while the map is still
+    loading is lost.
+  </li>
+  <li>
+    Treat <code>hg:view-changed</code> as the current state, not as something the reader did: it
+    follows your own <code>hg:set-view</code> and every move of the camera. A page that sends the
+    view back as it was told it does not start a loop or a flight.
+  </li>
+</ul>
+
+<h3 id="place-ids">Place IDs</h3>
+<p>
+  A place of the Bible has OpenBible’s ID: <code>a</code> followed by six hexadecimal digits, such
+  as <code>af2161c</code> (Capernaum). The places of the ancient world that the Bible does not name
+  (Gamla, Sepphoris, Pompeii) have their Pleiades number instead, such as
+  <code>678146</code> (Gamla), or, without one, their Wikidata item, such as
+  <code>Q16869</code> (Constantinople). Both kinds can come in <code>view.place</code> and
+  <code>hg:place-clicked</code>, and both are accepted by <code>hg:set-view</code>; if your data has
+  only OpenBible’s places, test the form before you look one up. Of OpenBible’s {{openbible}}
+  places, {{absent}} are not on the map (they have no point that may be published); their IDs are
+  ignored.
+</p>
 
 <h2>Example: the map follows your reader</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
@@ -254,21 +303,50 @@ window.addEventListener("message", (e) =&gt; {
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
 
-<h2>Example: the map beside your own place box</h2>
+<h2 id="map-only">Example: the map beside your own place box</h2>
 <pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
+let ready = false;
 
-// Your search picked a place: show it on the map.
-globe.postMessage({ type: "hg:set-view", v: 1, view: { place: "af2161c" } }, "*");
-
-// A place picked on the map (or the map ready): show it in your own box.
 window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
-  const t = e.data?.type;
-  if ((t === "hg:ready" || t === "hg:view-changed") &amp;&amp; e.data.view.place) {
-    showPlace(e.data.view.place);
+  const m = e.data;
+  if (m?.type === "hg:ready") ready = true;
+  // The view as it is now: a place selected, or none. Comes often: showPlace should do
+  // nothing when that place is already shown.
+  if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
+    if (m.view.place) showPlace(m.view.place);
+    else hidePlace();
   }
-});</code></pre>
+  // Every click on a place, the one already selected too: open your box again.
+  if (m?.type === "hg:place-clicked") showPlace(m.place);
+});
+
+// Your search picked a place: select it and fly to it (again, if it is selected already).
+function pickPlace(id) {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+}
+
+// Your box was closed: clear the selection on the map.
+function closeBox() {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+}</code></pre>
+<ul>
+  <li>
+    The selected place is marked with a ring that grows and fades, so the eye finds it without
+    anything covering the map; for a reader who has asked for less motion the ring stays still. A
+    click on the map away from any place clears the selection.
+  </li>
+  <li>
+    A tour runs on the map (its route, its stops and the year) without its card: your page moves it
+    with <code>hg:set-view</code> and <code>{ tour, stop }</code>. <code>measure</code> draws its
+    line, as in every frame.
+  </li>
+  <li>
+    <code>hg:verse-clicked</code> is not sent: the verses are in the place card, which this mode
+    leaves out.
+  </li>
+</ul>
 
 <h2 id="places">Places in any text</h2>
 <p>
@@ -309,10 +387,8 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          the language of the text, one of the site's languages: <code>cs</code>, <code>de</code>,
-          <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>uk</code>; by default the page's
-          <code>lang</code>; any other language falls back to English
+          the language of the text, one of the site's languages: {{locale_codes}}; by default the
+          page's <code>lang</code>; any other language falls back to English
         </td>
       </tr>
       <tr>

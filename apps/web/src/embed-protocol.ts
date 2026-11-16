@@ -1,14 +1,9 @@
 import { isLocale } from "@hg/model";
-import type { Camera, Engine } from "@hg/core";
+import type { Camera, Engine, Renderer } from "@hg/core";
 import { chapterFocus, withoutYear } from "./chapter";
 import type { LoadedData } from "./data";
 import type { EmbedView } from "./embed";
 
-/**
- * The embed protocol's work (docs/embed-protocol.md, v1), loaded only inside a frame: tell
- * the host when the map is ready and when the view settles, take its views and language.
- * Returns what undoes it.
- */
 const viewOf = (engine: Engine): EmbedView => {
   const s = engine.store.get();
   return {
@@ -31,17 +26,21 @@ const rounded = (c: Camera) => ({
   bearing: Math.round(c.bearing),
 });
 
+/** What the protocol needs of the map: flights, and (optionally) its clicks. */
+export type EmbedRenderer = Pick<Renderer, "flyTo"> & Partial<Pick<Renderer, "on">>;
+
+/**
+ * The embed protocol's work (docs/embed-protocol.md, v1), loaded only inside a frame: tell
+ * the host when the map is ready, when the view settles and which place was clicked, take
+ * its views and language. Map-only (`ui=map`), a click on the map itself clears the
+ * selection: the host's own box is the card, and it has no close button of ours.
+ * Returns what undoes it.
+ */
 export function attachEmbed(
-  renderer:
-    | {
-        flyTo: (
-          target: Partial<Camera> & { center: readonly [number, number] },
-          ms?: number,
-        ) => void;
-      }
-    | undefined,
+  renderer: EmbedRenderer | undefined,
   engine: Engine,
   data: LoadedData,
+  mapOnly = false,
 ): () => void {
   // Only a view that differs from the last one sent goes out: the store also changes
   // with every camera move, and a host that answers each message must not loop.
@@ -54,6 +53,18 @@ export function attachEmbed(
     window.parent.postMessage({ type, v: 1, view }, "*");
   };
   post("hg:ready");
+  // Every click on a place, the selected one too: the store does not change then, so
+  // hg:view-changed stays silent, and a host that closed its box would not hear it.
+  const offPick = renderer?.on?.("pick", (place) => {
+    window.parent.postMessage({ type: "hg:place-clicked", v: 1, place }, "*");
+  });
+  // Nothing selected and no tour, as Escape leaves the map: what `place: null` asks for.
+  const clear = () => {
+    const s = engine.store.get();
+    if (s.selectedPlace !== null) engine.selectPlace(null);
+    if (s.tour) engine.stopTour();
+  };
+  const offNone = mapOnly ? renderer?.on?.("pickNone", clear) : undefined;
   let timer = 0;
   const off = engine.store.subscribe(() => {
     window.clearTimeout(timer);
@@ -66,7 +77,7 @@ export function attachEmbed(
     const m = e.data as {
       type?: unknown;
       v?: unknown;
-      view?: Partial<EmbedView> | null;
+      view?: (Omit<Partial<EmbedView>, "place"> & { place?: string | null }) | null;
       locale?: unknown;
     };
     if (m.v !== 1) return;
@@ -86,10 +97,18 @@ export function attachEmbed(
       const focus = chapterFocus(data, v.ref);
       if (focus) engine.focusPlaces(year !== undefined ? withoutYear(focus) : focus);
     }
-    if (typeof v.place === "string" && v.place !== s.selectedPlace && data.byId.has(v.place))
+    // `null` clears the selection (and a tour under way). The place already selected is flown to again (the reader
+    // may have moved away) unless the view names a camera too: a host that sends back the
+    // view it was told keeps the camera the reader left, not a flight back.
+    if (v.place === null) clear();
+    if (
+      typeof v.place === "string" &&
+      data.byId.has(v.place) &&
+      (v.place !== s.selectedPlace || v.camera === undefined)
+    )
       engine.selectPlace(v.place);
     if (v.layers)
-      for (const k of ["borders", "places", "relief", "routes", "roads"] as const) {
+      for (const k of ["borders", "places", "relief", "routes", "roads", "battles"] as const) {
         const on = v.layers[k];
         if (typeof on === "boolean" && on !== s.layers[k]) engine.setLayer(k, on);
       }
@@ -113,6 +132,8 @@ export function attachEmbed(
   window.addEventListener("message", onMessage);
   return () => {
     off();
+    offPick?.();
+    offNone?.();
     window.clearTimeout(timer);
     window.removeEventListener("message", onMessage);
   };

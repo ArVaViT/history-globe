@@ -100,7 +100,10 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
       <tr>
         <td><code>place</code></td>
         <td><code>af2161c</code></td>
-        <td>avaa paikan (tässä Kapernaum); tunnisteet ovat OpenBiblen</td>
+        <td>
+          avaa paikan (tässä Kapernaum); tunnisteet on kuvattu kohdassa
+          <a href="#place-ids">Paikkatunnisteet</a>
+        </td>
       </tr>
       <tr>
         <td><code>tour</code></td>
@@ -134,23 +137,40 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
       <tr>
         <td><code>locale</code></td>
         <td><code>fi</code></td>
-        <td>
-          kieli: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
-          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code>, <code>cs</code> tai <code>fi</code>
-        </td>
+        <td>kieli, yksi näistä: {{locale_codes}}</td>
       </tr>
       <tr>
         <td><code>camera</code></td>
         <td><code>35.2,31.8,7,30,0</code></td>
-        <td>pituusaste, leveysaste, zoomaus, kallistus, suunta</td>
+        <td>
+          pituusaste, leveysaste, zoomaus, kallistus, suunta; yhdessä <code>place</code>-parametrin
+          kanssa kartta avautuu tällä kameralla paikka valittuna sen sijaan, että lentäisi paikkaan
+        </td>
+      </tr>
+      <tr>
+        <td><code>measure</code></td>
+        <td><code>a15257a,aaf03fa</code></td>
+        <td>
+          kaksi paikan tunnistetta: etäisyystyökalu avattuna niiden välille; pieni kehys ja
+          <code>ui=map</code> näyttävät vain viivan
+        </td>
+      </tr>
+      <tr>
+        <td><code>ui</code></td>
+        <td><code>map</code></td>
+        <td>
+          pelkkä kartta sivulle, jolla on oma haku ja oma paikkaruutu: ei paikan korttia, ei
+          lukupalkkia, vuosi tiivistettynä; linkki maapalloon säilyy. Valittu paikka merkitään
+          renkaalla, ja napsautus kartalla kohtaan, jossa ei ole paikkaa, poistaa valinnan (ks.
+          <a href="#map-only">esimerkki</a>)
+        </td>
       </tr>
       <tr>
         <td><code>hide</code></td>
-        <td><code>relief,ancient</code></td>
+        <td><code>relief,battles</code></td>
         <td>
           pois kytkettävät kerrokset: <code>borders</code>, <code>places</code>,
-          <code>relief</code>, <code>routes</code>, <code>roads</code>, <code>ancient</code>
+          <code>relief</code>, <code>routes</code>, <code>roads</code>, <code>battles</code>
         </td>
       </tr>
     </tbody>
@@ -165,7 +185,8 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
 <p>
   Maapallo ja sivusi viestivät <code>postMessage</code>-rajapinnan kautta. Jokainen viesti on
   objekti, jossa on <code>type</code> ja <code>v: 1</code>. Maapallo lähettää vain sen, mitä
-  kartalla tapahtuu, eikä koskaan mitään, mikä tunnistaisi lukijan; se hyväksyy viestejä vain
+  kartalla tapahtuu, eikä koskaan mitään, mikä tunnistaisi lukijan, joten se lähettää viestit
+  emosivulle riippumatta sen alkuperästä (kohde <code>"*"</code>); se hyväksyy viestejä vain
   sivulta, jolla kehys on.
 </p>
 <h3>Maapallolta</h3>
@@ -187,12 +208,23 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
       <tr>
         <td><code>hg:view-changed</code></td>
         <td><code>{ view }</code></td>
-        <td>vuosi, paikka, kierros tai kamera on muuttunut ja asettunut</td>
+        <td>
+          vuosi, paikka, kierros tai kamera on muuttunut ja asettunut (noin 400 ms viimeisen
+          muutoksen jälkeen), oli muuttaja lukija tai oma <code>hg:set-view</code>-viestisi
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:place-clicked</code></td>
+        <td><code>{ place }</code></td>
+        <td>
+          lukija napsautti paikkaa kartalla, myös jo valittua paikkaa; se tulee ennen sitä
+          <code>hg:view-changed</code>-viestiä, jonka napsautus aiheuttaa
+        </td>
       </tr>
       <tr>
         <td><code>hg:verse-clicked</code></td>
         <td><code>{ osis }</code></td>
-        <td>lukija napsautti jaetta, esim. <code>"Acts.16.12"</code></td>
+        <td>lukija napsautti jaetta paikan kortissa, esim. <code>"Acts.16.12"</code></td>
       </tr>
       <tr>
         <td><code>hg:error</code></td>
@@ -205,7 +237,8 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
 <p>
   <code>view</code> sisältää kentät <code>year</code>, <code>locale</code> ja
   <code>layers</code> ja, kun ne on asetettu, <code>place</code>, <code>tour</code>,
-  <code>stop</code>, <code>ref</code> ja <code>camera</code>.
+  <code>stop</code>, <code>ref</code> ja <code>camera</code>. <code>view</code>, jossa ei ole
+  kenttää <code>place</code>, tarkoittaa, että mitään paikkaa ei ole valittu.
 </p>
 <h3>Maapallolle</h3>
 <div class="table">
@@ -224,7 +257,10 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
         <td>
           asettaa vuoden, luvun (<code>ref</code>), paikan, kerrokset tai kameran; kun mukana on
           <code>tour</code> (ja <code>stop</code>), kierros alkaa ja muut kentät ohitetaan; kieli
-          vaihtuu vain viestillä <code>hg:set-locale</code>
+          vaihtuu vain viestillä <code>hg:set-locale</code>. <code>place: null</code> poistaa
+          valinnan ja päättää käynnissä olevan kierroksen. Jo valittuun paikkaan lennetään
+          uudelleen, ellei näkymässä ole myös <code>camera</code>. Paikan tunniste, jota kartalla ei
+          ole, ohitetaan
         </td>
       </tr>
       <tr>
@@ -235,6 +271,31 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
     </tbody>
   </table>
 </div>
+
+<ul>
+  <li>
+    Odota viestiä <code>hg:ready</code>, ennen kuin lähetät mitään: viesti, joka lähetetään kartan
+    vielä latautuessa, katoaa.
+  </li>
+  <li>
+    Käsittele viestiä <code>hg:view-changed</code> nykytilana, ei lukijan tekemänä asiana: se seuraa
+    omaa <code>hg:set-view</code>-viestiäsi ja jokaista kameran liikettä. Sivu, joka lähettää
+    näkymän takaisin sellaisena kuin sai sen, ei aloita silmukkaa eikä lentoa.
+  </li>
+</ul>
+
+<h3 id="place-ids">Paikkatunnisteet</h3>
+<p>
+  Raamatun paikalla on OpenBiblen tunniste: <code>a</code> ja kuusi heksadesimaalinumeroa,
+  esimerkiksi <code>af2161c</code> (Kapernaum). Muinaisen maailman paikoilla, joita Raamattu ei
+  mainitse (Gamla, Sepphoris, Pompeji), on sen sijaan Pleiades-numero, esimerkiksi
+  <code>678146</code> (Gamla), tai, jos sitä ei ole, Wikidata-kohde, esimerkiksi
+  <code>Q16869</code> (Konstantinopoli). Molempia lajeja voi tulla kenttään
+  <code>view.place</code> ja viestiin <code>hg:place-clicked</code>, ja molemmat hyväksytään
+  viestissä <code>hg:set-view</code>; jos datassasi on vain OpenBiblen paikkoja, testaa muoto, ennen
+  kuin haet paikkaa. OpenBiblen {{openbible}} paikasta {{absent}} ei ole kartalla (niillä ei ole
+  pistettä, jonka saa julkaista); niiden tunnisteet ohitetaan.
+</p>
 
 <h2>Esimerkki: kartta seuraa lukijaasi</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
@@ -249,6 +310,51 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
+
+<h2 id="map-only">Esimerkki: kartta oman paikkaruutusi vieressä</h2>
+<pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+let ready = false;
+
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  const m = e.data;
+  if (m?.type === "hg:ready") ready = true;
+  // The view as it is now: a place selected, or none. Comes often: showPlace should do
+  // nothing when that place is already shown.
+  if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
+    if (m.view.place) showPlace(m.view.place);
+    else hidePlace();
+  }
+  // Every click on a place, the one already selected too: open your box again.
+  if (m?.type === "hg:place-clicked") showPlace(m.place);
+});
+
+// Your search picked a place: select it and fly to it (again, if it is selected already).
+function pickPlace(id) {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+}
+
+// Your box was closed: clear the selection on the map.
+function closeBox() {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+}</code></pre>
+<ul>
+  <li>
+    Valittu paikka merkitään renkaalla, joka kasvaa ja häipyy, jotta silmä löytää sen ilman että
+    mikään peittää karttaa; lukijalle, joka on pyytänyt vähemmän liikettä, rengas pysyy paikallaan.
+    Napsautus kartalla kohtaan, jossa ei ole paikkaa, poistaa valinnan.
+  </li>
+  <li>
+    Kierros kulkee kartalla (reitti, pysäkit ja vuosi) ilman korttiaan: sivusi ohjaa sitä viestillä
+    <code>hg:set-view</code> ja kentillä <code>{ tour, stop }</code>. <code>measure</code> piirtää
+    viivansa, kuten jokaisessa kehyksessä.
+  </li>
+  <li>
+    Viestiä <code>hg:verse-clicked</code> ei lähetetä: jakeet ovat paikan kortissa, jonka tämä tila
+    jättää pois.
+  </li>
+</ul>
 
 <h2 id="places">Paikat missä tahansa tekstissä</h2>
 <p>
@@ -288,9 +394,7 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          tekstin kieli, jokin sivuston kielistä: <code>cs</code>, <code>de</code>, <code>en</code>,
-          <code>es</code>, <code>fi</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>uk</code>; oletuksena sivun
+          tekstin kieli, jokin sivuston kielistä: {{locale_codes}}; oletuksena sivun
           <code>lang</code>; mikä tahansa muu kieli palaa englantiin
         </td>
       </tr>
