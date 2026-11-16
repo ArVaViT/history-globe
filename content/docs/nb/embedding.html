@@ -202,7 +202,9 @@ description: Sett globusen inn på ditt eget nettsted med én linje — kartet o
         <td><code>{ view }</code></td>
         <td>
           året, stedet, ruten eller kameraet er endret og har falt til ro (omtrent 400 ms etter den
-          siste endringen), enten det var leseren eller din <code>hg:set-view</code> som endret det
+          siste endringen), enten det var leseren eller din <code>hg:set-view</code> som endret det.
+          Når kartet flyr til et nyvalgt sted, kommer den én gang med det nye stedet og kameraet
+          kartet forlot, og igjen når flyvningen er slutt
         </td>
       </tr>
       <tr>
@@ -271,7 +273,10 @@ description: Sett globusen inn på ditt eget nettsted med én linje — kartet o
   <li>
     Behandle <code>hg:view-changed</code> som den gjeldende tilstanden, ikke som noe leseren har
     gjort: den følger din egen <code>hg:set-view</code> og hver flytting av kameraet. En side som
-    sender visningen tilbake slik den fikk den, starter verken en løkke eller en flyvning.
+    sender hele visningen tilbake slik den fikk den, kameraet medregnet, starter verken en løkke
+    eller en flyvning. Svar ikke på <code>hg:view-changed</code> med <code>hg:set-view</code> og
+    bare <code>place</code>: uten <code>camera</code> flyr kartet tilbake til det stedet, bort fra
+    dit leseren hadde flyttet det.
   </li>
 </ul>
 
@@ -279,12 +284,12 @@ description: Sett globusen inn på ditt eget nettsted med én linje — kartet o
 <p>
   Et sted i Bibelen har OpenBibles id: <code>a</code> etterfulgt av seks heksadesimale sifre, for
   eksempel <code>af2161c</code> (Kapernaum). Stedene fra oldtiden som Bibelen ikke nevner (Gamla,
-  Sepforis, Pompeii) har i stedet Pleiades-nummeret sitt, for eksempel <code>678146</code> (Gamla),
-  eller, hvis de ikke har noe, Wikidata-elementet sitt, for eksempel
-  <code>Q16869</code> (Konstantinopel). Begge slag kan komme i <code>view.place</code> og
-  <code>hg:place-clicked</code>, og begge godtas av <code>hg:set-view</code>; hvis dataene dine bare
-  har OpenBibles steder, test formen før du slår opp ett. Av OpenBibles {{openbible}} steder er
-  {{absent}} ikke på kartet (de har ikke noe punkt som kan publiseres); id-ene deres ignoreres.
+  Sepforis, Pompeii) har i stedet Pleiades-nummeret sitt (Gamla er <code>678146</code>) eller, hvis
+  de ikke har noe, Wikidata-elementet sitt (Konstantinopel er <code>Q16869</code>). Begge slag kan
+  komme i <code>view.place</code> og <code>hg:place-clicked</code>, og begge godtas av
+  <code>hg:set-view</code>; hvis dataene dine bare har OpenBibles steder, test formen før du slår
+  opp ett. Av OpenBibles {{openbible}} steder er {{absent}} ikke på kartet (de har ikke noe punkt
+  som kan publiseres); id-ene deres ignoreres.
 </p>
 
 <h2>Eksempel: kartet følger leseren</h2>
@@ -310,30 +315,35 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
-  // The view as it is now: a place selected, or none. Comes often: showPlace should do
-  // nothing when that place is already shown.
+  // Visningen slik den er nå: et sted valgt, eller ingen. Kommer ofte: showPlace skal ikke
+  // gjøre noe når stedet allerede vises.
   if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
     if (m.view.place) showPlace(m.view.place);
     else hidePlace();
   }
-  // Every click on a place, the one already selected too: open your box again.
+  // Hvert klikk på et sted, også på det som allerede er valgt: åpne boksen din igjen.
   if (m?.type === "hg:place-clicked") showPlace(m.place);
 });
 
-// Your search picked a place: select it and fly to it (again, if it is selected already).
+// Søket ditt valgte et sted: velg det og fly til det (igjen, hvis det allerede er valgt).
 function pickPlace(id) {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
 }
 
-// Your box was closed: clear the selection on the map.
+// Boksen din ble lukket: fjern valget på kartet.
 function closeBox() {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
 }</code></pre>
 <ul>
   <li>
     Det valgte stedet er markert med en ring som vokser og toner ut, slik at øyet finner det uten at
-    noe dekker kartet; for en leser som har bedt om mindre bevegelse, står ringen stille. Et klikk
-    på kartet som ikke treffer noe sted, fjerner valget.
+    noe dekker kartet; for en leser som har bedt om mindre bevegelse, står ringen stille.
+  </li>
+  <li>
+    Et klikk på kartet som ikke treffer noe sted, fjerner stedsvalget; en rute som kjører,
+    fortsetter. Et dobbeltklikk (som zoomer) og et klikk som stopper kartet i bevegelse, fjerner
+    ingenting.
+    <code>place: null</code> fra siden din fjerner stedet og avslutter ruten.
   </li>
   <li>
     En rute kjører på kartet (veien, stoppene og året) uten sitt kort: siden din styrer den med

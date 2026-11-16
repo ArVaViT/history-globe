@@ -207,7 +207,9 @@ description: Metti il globo sul tuo sito con una sola riga — la mappa di un ca
         <td>
           l’anno, il luogo, l’itinerario o la visuale sono cambiati e si sono assestati (circa 400
           ms dopo l’ultima modifica), sia che li abbia cambiati il lettore sia che li abbia cambiati
-          il tuo <code>hg:set-view</code>
+          il tuo <code>hg:set-view</code>. Quando la mappa vola verso un luogo appena selezionato,
+          il messaggio arriva una volta con il nuovo luogo e la visuale che la mappa ha lasciato,
+          poi di nuovo quando il volo finisce
         </td>
       </tr>
       <tr>
@@ -280,7 +282,10 @@ description: Metti il globo sul tuo sito con una sola riga — la mappa di un ca
   <li>
     Considera <code>hg:view-changed</code> come lo stato attuale, non come qualcosa che ha fatto il
     lettore: segue il tuo <code>hg:set-view</code> e ogni movimento della visuale. Una pagina che
-    rimanda la vista così come le è stata comunicata non avvia né un ciclo né un volo.
+    rimanda l’intera vista così come le è stata comunicata, visuale compresa, non avvia né un ciclo
+    né un volo. Non rispondere a <code>hg:view-changed</code> con <code>hg:set-view</code> e un solo
+    <code>place</code>: senza <code>camera</code>, la mappa torna in volo su quel luogo, lontano da
+    dove il lettore l’aveva spostata.
   </li>
 </ul>
 
@@ -288,12 +293,13 @@ description: Metti il globo sul tuo sito con una sola riga — la mappa di un ca
 <p>
   Un luogo della Bibbia ha l’ID di OpenBible: <code>a</code> seguita da sei cifre esadecimali, come
   <code>af2161c</code> (Cafarnao). I luoghi del mondo antico che la Bibbia non nomina (Gamla,
-  Sefforis, Pompei) hanno invece il loro numero Pleiades, come <code>678146</code> (Gamla), oppure,
-  in mancanza, la loro voce Wikidata, come <code>Q16869</code> (Costantinopoli). Entrambi i tipi
-  possono comparire in <code>view.place</code> e <code>hg:place-clicked</code>, ed entrambi sono
-  accettati da <code>hg:set-view</code>; se i tuoi dati hanno solo luoghi di OpenBible, verifica la
-  forma dell’ID prima di cercare il luogo. Dei {{openbible}} luoghi di OpenBible, {{absent}} non
-  sono sulla mappa (non hanno un punto che si possa pubblicare); i loro ID vengono ignorati.
+  Sefforis, Pompei) hanno invece il loro numero Pleiades (quello di Gamla è <code>678146</code>)
+  oppure, in mancanza, la loro voce Wikidata (quella di Costantinopoli è <code>Q16869</code>).
+  Entrambi i tipi possono comparire in <code>view.place</code> e <code>hg:place-clicked</code>, ed
+  entrambi sono accettati da <code>hg:set-view</code>; se i tuoi dati hanno solo luoghi di
+  OpenBible, verifica la forma dell’ID prima di cercare il luogo. Dei {{openbible}} luoghi di
+  OpenBible, {{absent}} non sono sulla mappa (non hanno un punto che si possa pubblicare); i loro ID
+  vengono ignorati.
 </p>
 
 <h2>Esempio: la mappa segue il tuo lettore</h2>
@@ -319,30 +325,36 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
-  // The view as it is now: a place selected, or none. Comes often: showPlace should do
-  // nothing when that place is already shown.
+  // La vista così com’è ora: un luogo selezionato, o nessuno. Arriva spesso: showPlace non deve
+  // fare nulla se quel luogo è già mostrato.
   if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
     if (m.view.place) showPlace(m.view.place);
     else hidePlace();
   }
-  // Every click on a place, the one already selected too: open your box again.
+  // Ogni clic su un luogo, anche su quello già selezionato: riapri il tuo pannello del luogo.
   if (m?.type === "hg:place-clicked") showPlace(m.place);
 });
 
-// Your search picked a place: select it and fly to it (again, if it is selected already).
+// La tua ricerca ha scelto un luogo: selezionalo e vola lì (di nuovo, se è già
+// selezionato).
 function pickPlace(id) {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
 }
 
-// Your box was closed: clear the selection on the map.
+// Il tuo pannello del luogo è stato chiuso: cancella la selezione sulla mappa.
 function closeBox() {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
 }</code></pre>
 <ul>
   <li>
     Il luogo selezionato è segnato da un anello che cresce e svanisce, così l’occhio lo trova senza
-    che nulla copra la mappa; per un lettore che ha chiesto meno movimento l’anello resta fermo. Un
-    clic sulla mappa lontano da ogni luogo cancella la selezione.
+    che nulla copra la mappa; per un lettore che ha chiesto meno movimento l’anello resta fermo.
+  </li>
+  <li>
+    Un clic sulla mappa lontano da ogni luogo cancella la selezione del luogo; un itinerario in
+    corso prosegue. Un doppio clic (che ingrandisce) e un clic che ferma la mappa in movimento non
+    cancellano nulla. <code>place: null</code> dalla tua pagina deseleziona il luogo e termina
+    l’itinerario.
   </li>
   <li>
     Un itinerario scorre sulla mappa (il suo percorso, le sue tappe e l’anno) senza la sua scheda:

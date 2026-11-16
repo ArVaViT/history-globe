@@ -209,7 +209,9 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
         <td>
           rok, miejsce, trasa lub kamera zmieniły się i ustabilizowały (około 400 ms po ostatniej
           zmianie), niezależnie od tego, czy zmienił je czytelnik, czy Twoje
-          <code>hg:set-view</code>
+          <code>hg:set-view</code>. Gdy mapa leci do nowo wybranego miejsca, komunikat przychodzi
+          raz z nowym miejscem i kamerą, którą mapa opuściła, a potem jeszcze raz, gdy przelot się
+          kończy
         </td>
       </tr>
       <tr>
@@ -277,8 +279,11 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
   </li>
   <li>
     Traktuj <code>hg:view-changed</code> jako stan bieżący, a nie coś, co zrobił czytelnik:
-    następuje po Twoim <code>hg:set-view</code> i po każdym ruchu kamery. Strona, która odsyła widok
-    taki, jaki dostała, nie zaczyna pętli ani przelotu.
+    następuje po Twoim <code>hg:set-view</code> i po każdym ruchu kamery. Strona, która odsyła cały
+    widok taki, jaki dostała, razem z kamerą, nie zaczyna ani pętli, ani przelotu. Nie odpowiadaj na
+    <code>hg:view-changed</code> przez <code>hg:set-view</code> z samym <code>place</code>: bez
+    <code>camera</code> mapa leci z powrotem do tego miejsca, z dala od tego, gdzie przesunął ją
+    czytelnik.
   </li>
 </ul>
 
@@ -286,13 +291,13 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
 <p>
   Miejsce biblijne ma identyfikator OpenBible: <code>a</code> i sześć cyfr szesnastkowych, na
   przykład <code>af2161c</code> (Kafarnaum). Miejsca świata starożytnego, których Biblia nie
-  wymienia (Gamla, Sefforis, Pompeje), mają zamiast tego numer Pleiades, na przykład
-  <code>678146</code> (Gamla), a bez niego element Wikidata, na przykład
-  <code>Q16869</code> (Konstantynopol). Oba rodzaje mogą pojawić się w <code>view.place</code> i
-  <code>hg:place-clicked</code>, a <code>hg:set-view</code> przyjmuje oba; jeśli Twoje dane
-  zawierają tylko miejsca OpenBible, sprawdź postać identyfikatora, zanim zaczniesz go wyszukiwać.
-  Spośród {{openbible}} miejsc OpenBible {{absent}} nie ma na mapie (nie mają punktu, który wolno
-  publikować); ich identyfikatory są ignorowane.
+  wymienia (Gamla, Sefforis, Pompeje), mają zamiast tego numer Pleiades (Gamla ma
+  <code>678146</code>), a bez niego element Wikidata (Konstantynopol ma <code>Q16869</code>). Oba
+  rodzaje mogą pojawić się w <code>view.place</code> i <code>hg:place-clicked</code>, a
+  <code>hg:set-view</code> przyjmuje oba; jeśli Twoje dane zawierają tylko miejsca OpenBible,
+  sprawdź postać identyfikatora, zanim zaczniesz go wyszukiwać. Spośród {{openbible}} miejsc
+  OpenBible {{absent}} nie ma na mapie (nie mają punktu, który wolno publikować); ich identyfikatory
+  są ignorowane.
 </p>
 
 <h2>Przykład: mapa podąża za czytelnikiem</h2>
@@ -318,22 +323,22 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
-  // The view as it is now: a place selected, or none. Comes often: showPlace should do
-  // nothing when that place is already shown.
+  // Widok taki, jaki jest teraz: miejsce wybrane albo żadne. Przychodzi często: showPlace nie
+  // powinno nic robić, gdy to miejsce jest już pokazane.
   if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
     if (m.view.place) showPlace(m.view.place);
     else hidePlace();
   }
-  // Every click on a place, the one already selected too: open your box again.
+  // Każde kliknięcie miejsca, także już wybranego: otwórz ponownie swoje pole.
   if (m?.type === "hg:place-clicked") showPlace(m.place);
 });
 
-// Your search picked a place: select it and fly to it (again, if it is selected already).
+// Twoja wyszukiwarka wybrała miejsce: wybierz je i leć do niego (ponownie, jeśli jest już wybrane).
 function pickPlace(id) {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
 }
 
-// Your box was closed: clear the selection on the map.
+// Twoje pole zostało zamknięte: usuń zaznaczenie na mapie.
 function closeBox() {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
 }</code></pre>
@@ -341,7 +346,12 @@ function closeBox() {
   <li>
     Wybrane miejsce jest oznaczone pierścieniem, który rośnie i blednie, dzięki czemu oko go
     znajduje, a nic nie zasłania mapy; dla czytelnika, który prosił o mniej ruchu, pierścień stoi
-    nieruchomo. Kliknięcie mapy z dala od jakiegokolwiek miejsca usuwa zaznaczenie.
+    nieruchomo.
+  </li>
+  <li>
+    Kliknięcie mapy z dala od jakiegokolwiek miejsca usuwa zaznaczenie miejsca; trwająca trasa toczy
+    się dalej. Dwukliknięcie (które przybliża) i kliknięcie zatrzymujące poruszającą się mapę nie
+    usuwają niczego. <code>place: null</code> z Twojej strony usuwa miejsce i kończy trasę.
   </li>
   <li>
     Trasa działa na mapie (jej linia, jej przystanki i rok) bez swojej karty: Twoja strona steruje

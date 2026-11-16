@@ -212,7 +212,9 @@ description: Setzen Sie den Globus mit einer Zeile auf Ihre eigene Website – d
         <td>
           das Jahr, der Ort, die Tour oder die Kamera hat sich geändert und ist zur Ruhe gekommen
           (etwa 400 ms nach der letzten Änderung), gleichgültig, ob der Leser oder Ihr
-          <code>hg:set-view</code> sie geändert hat
+          <code>hg:set-view</code> sie geändert hat. Fliegt die Karte zu einem neu ausgewählten Ort,
+          kommt die Nachricht einmal mit dem neuen Ort und der Kamera, die die Karte verlassen hat,
+          und dann noch einmal, wenn der Flug endet
         </td>
       </tr>
       <tr>
@@ -284,8 +286,11 @@ description: Setzen Sie den Globus mit einer Zeile auf Ihre eigene Website – d
   <li>
     Behandeln Sie <code>hg:view-changed</code> als den aktuellen Zustand, nicht als etwas, das der
     Leser getan hat: Es folgt auf Ihr eigenes <code>hg:set-view</code> und auf jede Bewegung der
-    Kamera. Eine Seite, die die Ansicht so zurückschickt, wie sie sie erhalten hat, löst weder eine
-    Schleife noch einen Flug aus.
+    Kamera. Eine Seite, die die ganze Ansicht samt Kamera so zurückschickt, wie sie sie erhalten
+    hat, löst weder eine Schleife noch einen Flug aus. Beantworten Sie
+    <code>hg:view-changed</code> nicht mit <code>hg:set-view</code> und nur einem
+    <code>place</code>: Ohne <code>camera</code> fliegt die Karte zu diesem Ort zurück, weg von der
+    Stelle, an die der Leser sie bewegt hat.
   </li>
 </ul>
 
@@ -293,9 +298,9 @@ description: Setzen Sie den Globus mit einer Zeile auf Ihre eigene Website – d
 <p>
   Ein Ort der Bibel hat die ID von OpenBible: <code>a</code> gefolgt von sechs hexadezimalen
   Ziffern, etwa <code>af2161c</code> (Kapernaum). Die Orte der antiken Welt, die die Bibel nicht
-  nennt (Gamla, Sepphoris, Pompeji), haben stattdessen ihre Pleiades-Nummer, etwa
-  <code>678146</code> (Gamla), oder, wenn sie keine haben, ihren Wikidata-Eintrag, etwa
-  <code>Q16869</code> (Konstantinopel). Beide Arten können in <code>view.place</code> und
+  nennt (Gamla, Sepphoris, Pompeji), haben stattdessen ihre Pleiades-Nummer (die von Gamla ist
+  <code>678146</code>) oder, wenn sie keine haben, ihren Wikidata-Eintrag (der von Konstantinopel
+  ist <code>Q16869</code>). Beide Arten können in <code>view.place</code> und
   <code>hg:place-clicked</code> vorkommen, und beide werden von <code>hg:set-view</code> akzeptiert;
   wenn Ihre Daten nur Orte von OpenBible enthalten, prüfen Sie die Form der ID, bevor Sie einen Ort
   nachschlagen. Von den {{openbible}} Orten von OpenBible sind {{absent}} nicht auf der Karte (sie
@@ -325,22 +330,23 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
-  // The view as it is now: a place selected, or none. Comes often: showPlace should do
-  // nothing when that place is already shown.
+  // Die Ansicht, wie sie jetzt ist: ein Ort ausgewählt oder keiner. Kommt oft: showPlace sollte
+  // nichts tun, wenn dieser Ort schon angezeigt wird.
   if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
     if (m.view.place) showPlace(m.view.place);
     else hidePlace();
   }
-  // Every click on a place, the one already selected too: open your box again.
+  // Jeder Klick auf einen Ort, auch auf den schon ausgewählten: Ihr Ortsfeld wieder öffnen.
   if (m?.type === "hg:place-clicked") showPlace(m.place);
 });
 
-// Your search picked a place: select it and fly to it (again, if it is selected already).
+// Ihre Suche hat einen Ort gewählt: auswählen und hinfliegen (erneut, wenn er schon
+// ausgewählt ist).
 function pickPlace(id) {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
 }
 
-// Your box was closed: clear the selection on the map.
+// Ihr Ortsfeld wurde geschlossen: die Auswahl auf der Karte aufheben.
 function closeBox() {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
 }</code></pre>
@@ -348,7 +354,13 @@ function closeBox() {
   <li>
     Der ausgewählte Ort ist mit einem Ring markiert, der wächst und verblasst, sodass das Auge ihn
     findet, ohne dass etwas die Karte verdeckt; bei einem Leser, der um weniger Bewegung gebeten
-    hat, bleibt der Ring still. Ein Klick auf die Karte abseits jedes Ortes hebt die Auswahl auf.
+    hat, bleibt der Ring still.
+  </li>
+  <li>
+    Ein Klick auf die Karte abseits jedes Ortes hebt die Auswahl des Ortes auf; eine laufende Tour
+    geht weiter. Ein Doppelklick (der zoomt) und ein Klick, der die sich bewegende Karte anhält,
+    heben nichts auf. <code>place: null</code> von Ihrer Seite hebt die Auswahl des Ortes auf und
+    beendet die Tour.
   </li>
   <li>
     Eine Tour läuft auf der Karte (ihre Route, ihre Stationen und das Jahr) ohne ihre Tourkarte:

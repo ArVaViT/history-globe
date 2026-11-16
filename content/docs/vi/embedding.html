@@ -212,7 +212,9 @@ description: Đặt quả địa cầu lên trang web của bạn chỉ bằng m
         <td><code>{ view }</code></td>
         <td>
           năm, địa điểm, hành trình hoặc góc nhìn camera đã thay đổi và ổn định (khoảng 400 ms sau
-          lần thay đổi cuối), dù do người đọc hay do <code>hg:set-view</code> của bạn thay đổi
+          lần thay đổi cuối), dù do người đọc hay do <code>hg:set-view</code> của bạn thay đổi. Khi
+          bản đồ bay tới một địa điểm vừa được chọn, thông báo đến một lần với địa điểm mới và
+          camera mà bản đồ vừa rời khỏi, rồi đến lần nữa khi chuyến bay kết thúc
         </td>
       </tr>
       <tr>
@@ -284,7 +286,10 @@ description: Đặt quả địa cầu lên trang web của bạn chỉ bằng m
   <li>
     Hãy coi <code>hg:view-changed</code> là trạng thái hiện tại, không phải việc người đọc vừa làm:
     nó đi theo <code>hg:set-view</code> của chính bạn và theo mọi chuyển động của camera. Một trang
-    gửi lại khung nhìn đúng như đã được báo sẽ không gây ra vòng lặp hay chuyến bay nào.
+    gửi lại toàn bộ khung nhìn đúng như đã được báo, kể cả camera, sẽ không gây ra vòng lặp hay
+    chuyến bay nào. Đừng trả lời <code>hg:view-changed</code> bằng <code>hg:set-view</code> chỉ có
+    <code>place</code>: không có <code>camera</code>, bản đồ sẽ bay ngược lại địa điểm đó, rời xa
+    chỗ người đọc đã kéo nó tới.
   </li>
 </ul>
 
@@ -292,13 +297,13 @@ description: Đặt quả địa cầu lên trang web của bạn chỉ bằng m
 <p>
   Một địa điểm trong Kinh Thánh có mã định danh của OpenBible: chữ <code>a</code> theo sau là sáu
   chữ số thập lục phân, chẳng hạn <code>af2161c</code> (Ca-bê-na-um). Các địa điểm của thế giới cổ
-  đại mà Kinh Thánh không nhắc tên (Gamla, Sepphoris, Pompeii) thì có số Pleiades thay thế, chẳng
-  hạn <code>678146</code> (Gamla), hoặc nếu không có, thì có mục Wikidata, chẳng hạn
-  <code>Q16869</code> (Constantinople). Cả hai loại đều có thể xuất hiện trong
-  <code>view.place</code> và <code>hg:place-clicked</code>, và <code>hg:set-view</code> chấp nhận cả
-  hai; nếu dữ liệu của bạn chỉ có các địa điểm của OpenBible, hãy kiểm tra dạng mã định danh trước
-  khi tra cứu. Trong {{openbible}} địa điểm của OpenBible, có {{absent}} địa điểm không có trên bản
-  đồ (chúng không có điểm nào được phép công bố); mã định danh của chúng bị bỏ qua.
+  đại mà Kinh Thánh không nhắc tên (Gamla, Sepphoris, Pompeii) thì có số Pleiades thay thế (Gamla là
+  <code>678146</code>), hoặc nếu không có, thì có mục Wikidata (Constantinople là
+  <code>Q16869</code>). Cả hai loại đều có thể xuất hiện trong <code>view.place</code> và
+  <code>hg:place-clicked</code>, và <code>hg:set-view</code> chấp nhận cả hai; nếu dữ liệu của bạn
+  chỉ có các địa điểm của OpenBible, hãy kiểm tra dạng mã định danh trước khi tra cứu. Trong
+  {{openbible}} địa điểm của OpenBible, có {{absent}} địa điểm không có trên bản đồ (chúng không có
+  điểm nào được phép công bố); mã định danh của chúng bị bỏ qua.
 </p>
 
 <h2>Ví dụ: bản đồ đi theo trình đọc của bạn</h2>
@@ -324,30 +329,34 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
-  // The view as it is now: a place selected, or none. Comes often: showPlace should do
-  // nothing when that place is already shown.
+  // Khung nhìn hiện tại: có địa điểm được chọn hoặc không. Thông báo đến thường xuyên: showPlace
+  // không nên làm gì khi địa điểm đó đã được hiển thị.
   if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
     if (m.view.place) showPlace(m.view.place);
     else hidePlace();
   }
-  // Every click on a place, the one already selected too: open your box again.
+  // Mỗi cú nhấp vào một địa điểm, kể cả địa điểm đã chọn: mở lại ô của bạn.
   if (m?.type === "hg:place-clicked") showPlace(m.place);
 });
 
-// Your search picked a place: select it and fly to it (again, if it is selected already).
+// Tìm kiếm của bạn đã chọn một địa điểm: chọn nó và bay tới đó (một lần nữa, nếu nó đã được chọn).
 function pickPlace(id) {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
 }
 
-// Your box was closed: clear the selection on the map.
+// Ô của bạn đã đóng: bỏ chọn trên bản đồ.
 function closeBox() {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
 }</code></pre>
 <ul>
   <li>
     Địa điểm được chọn được đánh dấu bằng một vòng tròn lớn dần rồi mờ đi, để mắt tìm thấy nó mà
-    không có gì che bản đồ; với người đọc đã yêu cầu bớt chuyển động, vòng tròn đứng yên. Nhấp vào
-    bản đồ ở nơi không có địa điểm nào sẽ bỏ chọn.
+    không có gì che bản đồ; với người đọc đã yêu cầu bớt chuyển động, vòng tròn đứng yên.
+  </li>
+  <li>
+    Nhấp vào bản đồ ở nơi không có địa điểm nào sẽ bỏ chọn địa điểm; hành trình đang chạy vẫn tiếp
+    tục. Nhấp đúp (để phóng to) và cú nhấp làm bản đồ đang chuyển động dừng lại không bỏ chọn gì cả.
+    <code>place: null</code> từ trang của bạn bỏ chọn địa điểm và kết thúc hành trình.
   </li>
   <li>
     Một hành trình chạy trên bản đồ (tuyến đường, các chặng và năm) mà không có thẻ của nó: trang

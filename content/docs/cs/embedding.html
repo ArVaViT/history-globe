@@ -204,7 +204,9 @@ description: Vložte glóbus na vlastní web jedním řádkem — mapu kapitoly,
         <td><code>{ view }</code></td>
         <td>
           rok, místo, trasa nebo kamera se změnily a ustálily (zhruba 400 ms po poslední změně), ať
-          je změnil čtenář, nebo váš <code>hg:set-view</code>
+          je změnil čtenář, nebo váš <code>hg:set-view</code>. Když mapa letí k nově vybranému
+          místu, zpráva přijde jednou s novým místem a s kamerou, kterou mapa opustila, a znovu,
+          když přelet skončí
         </td>
       </tr>
       <tr>
@@ -271,8 +273,10 @@ description: Vložte glóbus na vlastní web jedním řádkem — mapu kapitoly,
   </li>
   <li>
     Berte <code>hg:view-changed</code> jako aktuální stav, ne jako něco, co udělal čtenář: následuje
-    po vašem vlastním <code>hg:set-view</code> a po každém pohybu kamery. Stránka, která pohled
-    pošle zpět tak, jak ho dostala, nespustí smyčku ani přelet.
+    po vašem vlastním <code>hg:set-view</code> a po každém pohybu kamery. Stránka, která pošle zpět
+    celý pohled tak, jak ho dostala, včetně kamery, nespustí ani smyčku, ani přelet. Neodpovídejte
+    na <code>hg:view-changed</code> zprávou <code>hg:set-view</code> jen s <code>place</code>: bez
+    <code>camera</code> mapa přeletí zpět k tomu místu, pryč od toho, kam ji čtenář posunul.
   </li>
 </ul>
 
@@ -280,12 +284,12 @@ description: Vložte glóbus na vlastní web jedním řádkem — mapu kapitoly,
 <p>
   Místo z Bible má ID z OpenBible: <code>a</code> a šest šestnáctkových číslic, například
   <code>af2161c</code> (Kafarnaum). Místa starověkého světa, která Bible nejmenuje (Gamla, Sepforis,
-  Pompeje), mají místo toho číslo z Pleiades, například <code>678146</code> (Gamla), nebo, když je
-  nemají, položku z Wikidata, například <code>Q16869</code> (Konstantinopol). Oba druhy se mohou
-  objevit ve <code>view.place</code> a v <code>hg:place-clicked</code> a
-  <code>hg:set-view</code> přijímá oba; pokud vaše data mají jen místa z OpenBible, ověřte tvar ID,
-  než nějaké vyhledáte. Z {{openbible}} míst z OpenBible jich {{absent}} na mapě není (nemají bod,
-  který smí být zveřejněn); jejich ID se ignorují.
+  Pompeje), mají místo toho číslo z Pleiades (Gamla má <code>678146</code>), nebo, když je nemají,
+  položku z Wikidata (Konstantinopol má <code>Q16869</code>). Oba druhy se mohou objevit ve
+  <code>view.place</code> a v <code>hg:place-clicked</code> a <code>hg:set-view</code> přijímá oba;
+  pokud vaše data mají jen místa z OpenBible, ověřte tvar ID, než nějaké vyhledáte. Z {{openbible}}
+  míst z OpenBible jich {{absent}} na mapě není (nemají bod, který smí být zveřejněn); jejich ID se
+  ignorují.
 </p>
 
 <h2>Příklad: mapa sleduje vašeho čtenáře</h2>
@@ -311,30 +315,34 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
-  // The view as it is now: a place selected, or none. Comes often: showPlace should do
-  // nothing when that place is already shown.
+  // Pohled, jaký je právě teď: vybrané místo, nebo žádné. Přichází často: showPlace nemá nic
+  // dělat, když je to místo už zobrazeno.
   if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
     if (m.view.place) showPlace(m.view.place);
     else hidePlace();
   }
-  // Every click on a place, the one already selected too: open your box again.
+  // Každé kliknutí na místo, i na již vybrané: otevřete své pole znovu.
   if (m?.type === "hg:place-clicked") showPlace(m.place);
 });
 
-// Your search picked a place: select it and fly to it (again, if it is selected already).
+// Vaše hledání vybralo místo: vyberte ho a přeletěte k němu (znovu, pokud je už vybrané).
 function pickPlace(id) {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
 }
 
-// Your box was closed: clear the selection on the map.
+// Vaše pole bylo zavřeno: zrušte výběr na mapě.
 function closeBox() {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
 }</code></pre>
 <ul>
   <li>
     Vybrané místo je označeno kruhem, který roste a bledne, takže ho oko najde, aniž by cokoli
-    zakrývalo mapu; čtenáři, který si vyžádal méně pohybu, kruh zůstává nehybný. Kliknutí na mapu
-    mimo jakékoli místo výběr zruší.
+    zakrývalo mapu; čtenáři, který si vyžádal méně pohybu, kruh zůstává nehybný.
+  </li>
+  <li>
+    Kliknutí na mapu mimo jakékoli místo zruší výběr místa; běžící trasa pokračuje dál. Dvojklik
+    (který přibližuje) a kliknutí, které zastaví pohybující se mapu, nezruší nic.
+    <code>place: null</code> z vaší stránky zruší místo a ukončí trasu.
   </li>
   <li>
     Trasa běží na mapě (její čára, její zastávky a rok) bez své karty: vaše stránka s ní pohybuje

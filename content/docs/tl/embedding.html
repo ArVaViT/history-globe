@@ -210,7 +210,9 @@ description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng
         <td><code>{ view }</code></td>
         <td>
           nagbago at tumigil na ang taon, lugar, paglalakbay o camera (mga 400 ms pagkatapos ng
-          huling pagbabago), mambabasa man o ang iyong <code>hg:set-view</code> ang nagbago nito
+          huling pagbabago), mambabasa man o ang iyong <code>hg:set-view</code> ang nagbago nito.
+          Kapag lumilipad ang mapa sa bagong napiling lugar, dumarating ito nang isang beses, dala
+          ang bagong lugar at ang camera na iniwan ng mapa, at muli kapag natapos ang paglipad
         </td>
       </tr>
       <tr>
@@ -282,8 +284,11 @@ description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng
   <li>
     Ituring ang <code>hg:view-changed</code> na kasalukuyang kalagayan, hindi bilang ginawa ng
     mambabasa: sumusunod ito sa sarili mong <code>hg:set-view</code> at sa bawat galaw ng camera.
-    Ang pahinang nagpapadala pabalik ng tanawin gaya ng pagkakasabi rito ay hindi nagsisimula ng
-    loop o ng paglipad.
+    Ang pahinang nagpapadala pabalik ng buong tanawin gaya ng pagkakasabi rito, kasama ang camera,
+    ay hindi nagsisimula ng loop o ng paglipad. Huwag sagutin ang <code>hg:view-changed</code> ng
+    <code>hg:set-view</code> na <code>place</code> lamang ang laman: kapag walang
+    <code>camera</code>, lilipad pabalik ang mapa sa lugar na iyon, palayo sa kung saan ito inilipat
+    ng mambabasa.
   </li>
 </ul>
 
@@ -291,13 +296,13 @@ description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng
 <p>
   Ang lugar sa Bibliya ay may ID ng OpenBible: <code>a</code> na sinusundan ng anim na heksadesimal
   na digit, gaya ng <code>af2161c</code> (Capernaum). Ang mga lugar ng sinaunang mundo na hindi
-  binabanggit ng Bibliya (Gamla, Sepphoris, Pompeya) ay may numero ng Pleiades sa halip, gaya ng
-  <code>678146</code> (Gamla), o, kung wala nito, ang kanilang item sa Wikidata, gaya ng
-  <code>Q16869</code> (Constantinopla). Parehong uri ay maaaring dumating sa
-  <code>view.place</code> at <code>hg:place-clicked</code>, at parehong tinatanggap ng
-  <code>hg:set-view</code>; kung OpenBible lamang ang mga lugar sa iyong datos, subukan ang anyo
-  bago ka maghanap ng isa. Sa {{openbible}} lugar ng OpenBible, {{absent}} ang wala sa mapa (wala
-  silang puntong maaaring i-publish); binabalewala ang kanilang mga ID.
+  binabanggit ng Bibliya (Gamla, Sepphoris, Pompeya) ay may numero ng Pleiades sa halip (ang Gamla
+  ay <code>678146</code>) o, kung wala nito, ang kanilang item sa Wikidata (ang Constantinopla ay
+  <code>Q16869</code>). Parehong uri ay maaaring dumating sa <code>view.place</code> at
+  <code>hg:place-clicked</code>, at parehong tinatanggap ng <code>hg:set-view</code>; kung OpenBible
+  lamang ang mga lugar sa iyong datos, subukan ang anyo bago ka maghanap ng isa. Sa {{openbible}}
+  lugar ng OpenBible, {{absent}} ang wala sa mapa (wala silang puntong maaaring i-publish);
+  binabalewala ang kanilang mga ID.
 </p>
 
 <h2>Halimbawa: sinusundan ng mapa ang iyong mambabasa</h2>
@@ -323,22 +328,22 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
-  // The view as it is now: a place selected, or none. Comes often: showPlace should do
-  // nothing when that place is already shown.
+  // Ang tanawin ngayon: may napiling lugar, o wala. Madalas itong dumating: dapat walang gawin ang
+  // showPlace kapag ipinapakita na ang lugar.
   if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
     if (m.view.place) showPlace(m.view.place);
     else hidePlace();
   }
-  // Every click on a place, the one already selected too: open your box again.
+  // Bawat click sa isang lugar, pati ang napili na: buksan muli ang iyong kahon.
   if (m?.type === "hg:place-clicked") showPlace(m.place);
 });
 
-// Your search picked a place: select it and fly to it (again, if it is selected already).
+// Pumili ng lugar ang iyong paghahanap: piliin ito at lumipad doon (muli, kung napili na).
 function pickPlace(id) {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
 }
 
-// Your box was closed: clear the selection on the map.
+// Isinara ang iyong kahon: alisin ang pagpili sa mapa.
 function closeBox() {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
 }</code></pre>
@@ -346,8 +351,13 @@ function closeBox() {
   <li>
     Minamarkahan ng singsing na lumalaki at kumukupas ang napiling lugar, kaya nahahanap ito ng mata
     nang walang tumatakip sa mapa; para sa mambabasang humingi ng mas kaunting galaw, nananatiling
-    hindi gumagalaw ang singsing. Ang pag-click sa bahagi ng mapa na walang lugar ay nag-aalis ng
-    pagpili.
+    hindi gumagalaw ang singsing.
+  </li>
+  <li>
+    Ang pag-click sa bahagi ng mapa na walang lugar ay nag-aalis ng pagpili ng lugar; magpapatuloy
+    ang paglalakbay na tumatakbo. Ang double-click (na nag-zoom) at ang pag-click na nagpapahinto sa
+    gumagalaw na mapa ay walang inaalis. Ang <code>place: null</code> mula sa iyong pahina ay
+    nag-aalis ng lugar at tinatapos ang paglalakbay.
   </li>
   <li>
     Tumatakbo ang isang paglalakbay sa mapa (ang ruta, mga hintuan at taon nito) nang walang card

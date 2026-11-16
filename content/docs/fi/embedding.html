@@ -210,7 +210,9 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
         <td><code>{ view }</code></td>
         <td>
           vuosi, paikka, kierros tai kamera on muuttunut ja asettunut (noin 400 ms viimeisen
-          muutoksen jälkeen), oli muuttaja lukija tai oma <code>hg:set-view</code>-viestisi
+          muutoksen jälkeen), oli muuttaja lukija tai oma <code>hg:set-view</code>-viestisi. Kun
+          kartta lentää vasta valittuun paikkaan, viesti tulee kerran, ja siinä on uusi paikka ja
+          kamera, jonka kartta jätti, ja sitten uudelleen lennon päätyttyä
         </td>
       </tr>
       <tr>
@@ -279,8 +281,11 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
   </li>
   <li>
     Käsittele viestiä <code>hg:view-changed</code> nykytilana, ei lukijan tekemänä asiana: se seuraa
-    omaa <code>hg:set-view</code>-viestiäsi ja jokaista kameran liikettä. Sivu, joka lähettää
-    näkymän takaisin sellaisena kuin sai sen, ei aloita silmukkaa eikä lentoa.
+    omaa <code>hg:set-view</code>-viestiäsi ja jokaista kameran liikettä. Sivu, joka lähettää koko
+    näkymän takaisin sellaisena kuin sai sen, kamera mukaan lukien, ei aloita silmukkaa eikä lentoa.
+    Älä vastaa viestiin <code>hg:view-changed</code> viestillä <code>hg:set-view</code>, jossa on
+    pelkkä <code>place</code>: ilman kenttää <code>camera</code> kartta lentää takaisin siihen
+    paikkaan, pois sieltä, minne lukija sen siirsi.
   </li>
 </ul>
 
@@ -288,13 +293,12 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
 <p>
   Raamatun paikalla on OpenBiblen tunniste: <code>a</code> ja kuusi heksadesimaalinumeroa,
   esimerkiksi <code>af2161c</code> (Kapernaum). Muinaisen maailman paikoilla, joita Raamattu ei
-  mainitse (Gamla, Sepphoris, Pompeji), on sen sijaan Pleiades-numero, esimerkiksi
-  <code>678146</code> (Gamla), tai, jos sitä ei ole, Wikidata-kohde, esimerkiksi
-  <code>Q16869</code> (Konstantinopoli). Molempia lajeja voi tulla kenttään
-  <code>view.place</code> ja viestiin <code>hg:place-clicked</code>, ja molemmat hyväksytään
-  viestissä <code>hg:set-view</code>; jos datassasi on vain OpenBiblen paikkoja, testaa muoto, ennen
-  kuin haet paikkaa. OpenBiblen {{openbible}} paikasta {{absent}} ei ole kartalla (niillä ei ole
-  pistettä, jonka saa julkaista); niiden tunnisteet ohitetaan.
+  mainitse (Gamla, Sepphoris, Pompeji), on sen sijaan Pleiades-numero (Gamla on <code>678146</code>)
+  tai, jos sitä ei ole, Wikidata-kohde (Konstantinopoli on <code>Q16869</code>). Molempia lajeja voi
+  tulla kenttään <code>view.place</code> ja viestiin <code>hg:place-clicked</code>, ja molemmat
+  hyväksytään viestissä <code>hg:set-view</code>; jos datassasi on vain OpenBiblen paikkoja, testaa
+  muoto, ennen kuin haet paikkaa. OpenBiblen {{openbible}} paikasta {{absent}} ei ole kartalla
+  (niillä ei ole pistettä, jonka saa julkaista); niiden tunnisteet ohitetaan.
 </p>
 
 <h2>Esimerkki: kartta seuraa lukijaasi</h2>
@@ -320,22 +324,22 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
-  // The view as it is now: a place selected, or none. Comes often: showPlace should do
-  // nothing when that place is already shown.
+  // Näkymä sellaisena kuin se on nyt: paikka valittuna tai ei. Tulee usein: showPlace ei saa
+  // tehdä mitään, jos paikka on jo näkyvissä.
   if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
     if (m.view.place) showPlace(m.view.place);
     else hidePlace();
   }
-  // Every click on a place, the one already selected too: open your box again.
+  // Jokainen paikan napsautus, myös jo valitun: avaa laatikkosi uudelleen.
   if (m?.type === "hg:place-clicked") showPlace(m.place);
 });
 
-// Your search picked a place: select it and fly to it (again, if it is selected already).
+// Hakusi valitsi paikan: valitse se ja lennä sinne (uudelleen, jos se on jo valittu).
 function pickPlace(id) {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
 }
 
-// Your box was closed: clear the selection on the map.
+// Laatikkosi suljettiin: poista valinta kartalta.
 function closeBox() {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
 }</code></pre>
@@ -343,7 +347,11 @@ function closeBox() {
   <li>
     Valittu paikka merkitään renkaalla, joka kasvaa ja häipyy, jotta silmä löytää sen ilman että
     mikään peittää karttaa; lukijalle, joka on pyytänyt vähemmän liikettä, rengas pysyy paikallaan.
-    Napsautus kartalla kohtaan, jossa ei ole paikkaa, poistaa valinnan.
+  </li>
+  <li>
+    Napsautus kartalla kohtaan, jossa ei ole paikkaa, poistaa paikan valinnan; käynnissä oleva
+    kierros jatkuu. Kaksoisnapsautus (joka zoomaa) ja napsautus, joka pysäyttää liikkuvan kartan,
+    eivät poista mitään. <code>place: null</code> sivultasi poistaa paikan ja päättää kierroksen.
   </li>
   <li>
     Kierros kulkee kartalla (reitti, pysäkit ja vuosi) ilman korttiaan: sivusi ohjaa sitä viestillä

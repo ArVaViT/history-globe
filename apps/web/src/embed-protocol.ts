@@ -64,7 +64,14 @@ export function attachEmbed(
     if (s.selectedPlace !== null) engine.selectPlace(null);
     if (s.tour) engine.stopTour();
   };
-  const offNone = mapOnly ? renderer?.on?.("pickNone", clear) : undefined;
+  // Map-only, a click on the map itself (not a drag, a double-click or a press that stopped
+  // the camera: empty-click.ts) puts the place away, as closing the card would; a tour under
+  // way goes on, the host ends it.
+  const offNone = mapOnly
+    ? renderer?.on?.("pickNone", () => {
+        if (engine.store.get().selectedPlace !== null) engine.selectPlace(null);
+      })
+    : undefined;
   let timer = 0;
   const off = engine.store.subscribe(() => {
     window.clearTimeout(timer);

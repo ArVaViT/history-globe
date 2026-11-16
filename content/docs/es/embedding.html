@@ -210,7 +210,10 @@ description: Pon el globo en tu propio sitio con una sola línea (el mapa de un 
         <td><code>{ view }</code></td>
         <td>
           el año, el lugar, la ruta o la cámara han cambiado y se han estabilizado (unos 400 ms
-          después del último cambio), tanto si los cambió el lector como tu <code>hg:set-view</code>
+          después del último cambio), tanto si los cambió el lector como tu
+          <code>hg:set-view</code>. Cuando el mapa vuela a un lugar recién seleccionado, el mensaje
+          llega una vez con el lugar nuevo y la cámara que el mapa dejó, y otra vez cuando termina
+          el vuelo
         </td>
       </tr>
       <tr>
@@ -283,7 +286,10 @@ description: Pon el globo en tu propio sitio con una sola línea (el mapa de un 
   <li>
     Trata <code>hg:view-changed</code> como el estado actual, no como algo que hizo el lector: sigue
     a tu propio <code>hg:set-view</code> y a cada movimiento de la cámara. Una página que devuelve
-    la vista tal como se la comunicaron no inicia ni un bucle ni un vuelo.
+    la vista entera tal como se la comunicaron, cámara incluida, no inicia ni un bucle ni un vuelo.
+    No respondas a <code>hg:view-changed</code> con <code>hg:set-view</code> y solo un
+    <code>place</code>: sin <code>camera</code>, el mapa vuelve a volar a ese lugar, lejos de donde
+    el lector lo había movido.
   </li>
 </ul>
 
@@ -291,9 +297,9 @@ description: Pon el globo en tu propio sitio con una sola línea (el mapa de un 
 <p>
   Un lugar de la Biblia tiene el ID de OpenBible: <code>a</code> seguida de seis dígitos
   hexadecimales, como <code>af2161c</code> (Cafarnaúm). Los lugares del mundo antiguo que la Biblia
-  no nombra (Gamla, Séforis, Pompeya) tienen en su lugar su número de Pleiades, como
-  <code>678146</code> (Gamla), o, si no lo tienen, su elemento de Wikidata, como
-  <code>Q16869</code> (Constantinopla). Ambas clases pueden venir en <code>view.place</code> y en
+  no nombra (Gamla, Séforis, Pompeya) tienen en su lugar su número de Pleiades (el de Gamla es
+  <code>678146</code>) o, si no lo tienen, su elemento de Wikidata (el de Constantinopla es
+  <code>Q16869</code>). Ambas clases pueden venir en <code>view.place</code> y en
   <code>hg:place-clicked</code>, y <code>hg:set-view</code> acepta las dos; si tus datos solo tienen
   lugares de OpenBible, comprueba la forma del ID antes de buscar el lugar. De los {{openbible}}
   lugares de OpenBible, {{absent}} no están en el mapa (no tienen un punto que pueda publicarse);
@@ -323,22 +329,23 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
-  // The view as it is now: a place selected, or none. Comes often: showPlace should do
-  // nothing when that place is already shown.
+  // La vista tal como está ahora: un lugar seleccionado, o ninguno. Llega a menudo: showPlace no
+  // debe hacer nada si ese lugar ya se muestra.
   if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
     if (m.view.place) showPlace(m.view.place);
     else hidePlace();
   }
-  // Every click on a place, the one already selected too: open your box again.
+  // Cada clic en un lugar, también en el ya seleccionado: abre de nuevo tu cuadro de lugar.
   if (m?.type === "hg:place-clicked") showPlace(m.place);
 });
 
-// Your search picked a place: select it and fly to it (again, if it is selected already).
+// Tu búsqueda eligió un lugar: selecciónalo y vuela a él (de nuevo, si ya está
+// seleccionado).
 function pickPlace(id) {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
 }
 
-// Your box was closed: clear the selection on the map.
+// Se cerró tu cuadro de lugar: borra la selección en el mapa.
 function closeBox() {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
 }</code></pre>
@@ -346,7 +353,12 @@ function closeBox() {
   <li>
     El lugar seleccionado se marca con un anillo que crece y se desvanece, de modo que el ojo lo
     encuentra sin que nada tape el mapa; para un lector que ha pedido menos movimiento, el anillo se
-    queda quieto. Un clic en el mapa lejos de cualquier lugar borra la selección.
+    queda quieto.
+  </li>
+  <li>
+    Un clic en el mapa lejos de cualquier lugar borra la selección del lugar; una ruta en curso
+    continúa. Un doble clic (que hace zoom) y un clic que detiene el mapa en movimiento no borran
+    nada. <code>place: null</code> desde tu página deselecciona el lugar y termina la ruta.
   </li>
   <li>
     Una ruta se desarrolla en el mapa (su trazado, sus paradas y el año) sin su ficha: tu página la

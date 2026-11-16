@@ -495,8 +495,11 @@ export function App() {
   // Map-only, the place picked wears the ring that breathes out from it (still for a reader
   // who asked for less motion): the host's box stands apart on its page, and the eye finds
   // the place without a mark that covers its neighbours.
+  // With the places layer off, no ring stands where no place is drawn.
   const ringAt =
-    MAP_ONLY && state.selectedPlace ? data?.byId.get(state.selectedPlace)?.info.at : undefined;
+    MAP_ONLY && state.layers.places && state.selectedPlace
+      ? data?.byId.get(state.selectedPlace)?.info.at
+      : undefined;
   useEffect(() => {
     if (MAP_ONLY) engine?.highlight(ringAt ?? null);
   }, [engine, ringAt]);

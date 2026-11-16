@@ -9,9 +9,13 @@ the year, folded, which opens the slider (2026-10-02)); the parameters below; me
 host with its own search and place box: no place card, no chapter bar and list at the top,
 the year folded to its pill at any frame size, the "History Globe ↗" link kept (credit is
 required); the selected place wears the pulsing ring (still under
-`prefers-reduced-motion`), and a click on the map away from any place clears the selection.
+`prefers-reduced-motion`; none with the places layer off), and a click on the map away from
+any place clears the place selection (not a running tour; not a double-click, a drag's
+release or a press that stopped the camera: `packages/core/src/empty-click.ts`).
 Also (all embeds): `hg:place-clicked`, `place: null` in `hg:set-view`, and the place
-already selected flown to again. **Not yet:** `theme`, an origin allowlist (needed once a
+already selected flown to again. That last one changes what an existing message does: before,
+`hg:set-view {place}` for the place already selected did nothing; now, without `camera`, it
+flies back to the place. A host must not answer `hg:view-changed` with `{place}` alone. **Not yet:** `theme`, an origin allowlist (needed once a
 host sends anything sensitive). Code: `apps/web/src/embed.ts`,
 `apps/web/src/embed-protocol.ts`.
 
@@ -44,7 +48,7 @@ link is passed over: the ancient world's places are places, ADR 0018).
 
 **Place ids.** A place of the Bible: OpenBible's id, `a` + 6 hex digits (`af2161c`). A place
 of the ancient world the Bible does not name (ADR 0018): its Pleiades number (`678146`,
-Gamla; `678387`, Sepphoris) or, without one, its Wikidata item (`Q16869`). Both go out in
+Gamla; `678387`, Sepphoris) or, without one, its Wikidata item (Constantinople is `Q16869`). Both go out in
 `view.place` and `hg:place-clicked`, and both are taken by `hg:set-view`; a host keyed on
 OpenBible tests the form. 54 of OpenBible's 1342 records are not on the map (21 left out for
 want of a point that may be published, 33 with no point; `manifest.json` stats); their ids
@@ -59,13 +63,13 @@ All messages are plain objects with `type` and `v: 1`. Outgoing messages carry o
 
 Globe → host:
 
-| `type`             | Payload                       | When                                                                                                                                                          |
-| ------------------ | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `hg:ready`         | `{ view }`                    | the map and its data are loaded                                                                                                                               |
-| `hg:view-changed`  | `{ view }`                    | the view changed and settled (400 ms debounce), by the reader, a camera move or the host's own `hg:set-view`; only a view that differs from the last one sent |
-| `hg:place-clicked` | `{ place }`                   | a place clicked on the map, the selected one again too (sent at once, before the `hg:view-changed` it causes)                                                 |
-| `hg:verse-clicked` | `{ osis }` e.g. `"Acts.13.4"` | a verse opened in the place card (never with `ui=map`)                                                                                                        |
-| `hg:error`         | `{ code, message }`           | `code`: `data` or `map` (WebGL or the protocol's own code)                                                                                                    |
+| `type`             | Payload                       | When                                                                                                                                                                                                                                                                        |
+| ------------------ | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hg:ready`         | `{ view }`                    | the map and its data are loaded                                                                                                                                                                                                                                             |
+| `hg:view-changed`  | `{ view }`                    | the view changed and settled (400 ms debounce), by the reader, a camera move or the host's own `hg:set-view`; only a view that differs from the last one sent. A flight to a newly selected place gives two: the new place with the camera left, then the camera at the end |
+| `hg:place-clicked` | `{ place }`                   | a place clicked on the map, the selected one again too (sent at once, before the `hg:view-changed` it causes)                                                                                                                                                               |
+| `hg:verse-clicked` | `{ osis }` e.g. `"Acts.13.4"` | a verse opened in the place card (never with `ui=map`)                                                                                                                                                                                                                      |
+| `hg:error`         | `{ code, message }`           | `code`: `data` or `map` (WebGL or the protocol's own code)                                                                                                                                                                                                                  |
 
 Host → globe (send after `hg:ready`: earlier messages are not heard):
 
@@ -76,7 +80,8 @@ Host → globe (send after `hg:ready`: earlier messages are not heard):
 
 `hg:set-view` details: `place: null` clears the selection and ends a running tour (as Escape
 does); a `place` already selected is flown to again unless `camera` is given too (a host that
-echoes `hg:view-changed` back keeps the reader's camera); unknown place ids, tours and layers
+echoes `hg:view-changed` back, camera included, keeps the reader's camera; one that answers
+with `{place}` alone flies the map back to the place); unknown place ids, tours and layers
 are ignored; a camera already shown is not flown to again.
 
 `view` is `EmbedView` (`apps/web/src/embed.ts`): `year`, `locale`, `layers` and, when set,
@@ -86,5 +91,6 @@ selected.
 
 With `ui=map`: a tour runs on the map (route, stops, year) without its card, driven by the
 host's `hg:set-view`; `measure` draws its line without the figure; `hg:verse-clicked` is not
-sent (no card); a click on the map away from any place clears the selection (only in this
-mode: elsewhere the card has its own close button).
+sent (no card); a click on the map away from any place clears the place selection and leaves a
+running tour going (only in this mode: elsewhere the card has its own close button); a
+double-click, a drag's release and a press that stopped the camera clear nothing.

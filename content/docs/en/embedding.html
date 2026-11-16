@@ -203,7 +203,9 @@ description: Put the globe on your own site with one line — the map of a chapt
         <td><code>{ view }</code></td>
         <td>
           the year, place, tour or camera has changed and settled (about 400 ms after the last
-          change), whether the reader or your <code>hg:set-view</code> changed it
+          change), whether the reader or your <code>hg:set-view</code> changed it. When the map
+          flies to a newly selected place, it comes once with the new place and the camera the map
+          left, then again when the flight ends
         </td>
       </tr>
       <tr>
@@ -272,7 +274,10 @@ description: Put the globe on your own site with one line — the map of a chapt
   <li>
     Treat <code>hg:view-changed</code> as the current state, not as something the reader did: it
     follows your own <code>hg:set-view</code> and every move of the camera. A page that sends the
-    view back as it was told it does not start a loop or a flight.
+    whole view back as it was told it, camera included, starts neither a loop nor a flight. Do not
+    answer <code>hg:view-changed</code> with <code>hg:set-view</code> and a
+    <code>place</code> alone: without <code>camera</code>, the map flies back to that place, away
+    from where the reader moved it.
   </li>
 </ul>
 
@@ -280,13 +285,12 @@ description: Put the globe on your own site with one line — the map of a chapt
 <p>
   A place of the Bible has OpenBible’s ID: <code>a</code> followed by six hexadecimal digits, such
   as <code>af2161c</code> (Capernaum). The places of the ancient world that the Bible does not name
-  (Gamla, Sepphoris, Pompeii) have their Pleiades number instead, such as
-  <code>678146</code> (Gamla), or, without one, their Wikidata item, such as
-  <code>Q16869</code> (Constantinople). Both kinds can come in <code>view.place</code> and
-  <code>hg:place-clicked</code>, and both are accepted by <code>hg:set-view</code>; if your data has
-  only OpenBible’s places, test the form before you look one up. Of OpenBible’s {{openbible}}
-  places, {{absent}} are not on the map (they have no point that may be published); their IDs are
-  ignored.
+  (Gamla, Sepphoris, Pompeii) have their Pleiades number instead (Gamla is <code>678146</code>) or,
+  without one, their Wikidata item (Constantinople is <code>Q16869</code>). Both kinds can come in
+  <code>view.place</code> and <code>hg:place-clicked</code>, and both are accepted by
+  <code>hg:set-view</code>; if your data has only OpenBible’s places, test the form before you look
+  one up. Of OpenBible’s {{openbible}} places, {{absent}} are not on the map (they have no point
+  that may be published); their IDs are ignored.
 </p>
 
 <h2>Example: the map follows your reader</h2>
@@ -334,8 +338,12 @@ function closeBox() {
 <ul>
   <li>
     The selected place is marked with a ring that grows and fades, so the eye finds it without
-    anything covering the map; for a reader who has asked for less motion the ring stays still. A
-    click on the map away from any place clears the selection.
+    anything covering the map; for a reader who has asked for less motion the ring stays still.
+  </li>
+  <li>
+    A click on the map away from any place clears the place selection; a tour that is running goes
+    on. A double-click (which zooms) and a click that stops the moving map clear nothing.
+    <code>place: null</code> from your page clears the place and ends the tour.
   </li>
   <li>
     A tour runs on the map (its route, its stops and the year) without its card: your page moves it

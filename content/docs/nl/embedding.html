@@ -210,7 +210,9 @@ description: Zet de wereldbol met één regel op je eigen site — de kaart van 
         <td>
           het jaar, de plaats, de route of de camera is veranderd en tot rust gekomen (ongeveer 400
           ms na de laatste wijziging), ongeacht of de lezer of jouw <code>hg:set-view</code> het
-          veranderde
+          veranderde. Als de kaart naar een nieuw geselecteerde plaats vliegt, komt het bericht één
+          keer met de nieuwe plaats en de camera die de kaart verliet, en nog een keer als de vlucht
+          eindigt
         </td>
       </tr>
       <tr>
@@ -281,7 +283,10 @@ description: Zet de wereldbol met één regel op je eigen site — de kaart van 
   <li>
     Behandel <code>hg:view-changed</code> als de huidige toestand, niet als iets wat de lezer deed:
     het volgt ook op je eigen <code>hg:set-view</code> en op elke beweging van de camera. Een pagina
-    die de view terugstuurt zoals ze die kreeg, start geen lus en geen vlucht.
+    die de hele view terugstuurt zoals ze die kreeg, camera inbegrepen, start geen lus en geen
+    vlucht. Beantwoord <code>hg:view-changed</code> niet met <code>hg:set-view</code> en alleen een
+    <code>place</code>: zonder <code>camera</code> vliegt de kaart terug naar die plaats, weg van
+    waar de lezer haar heeft gebracht.
   </li>
 </ul>
 
@@ -289,9 +294,9 @@ description: Zet de wereldbol met één regel op je eigen site — de kaart van 
 <p>
   Een plaats uit de Bijbel heeft de id van OpenBible: <code>a</code> gevolgd door zes hexadecimale
   cijfers, zoals <code>af2161c</code> (Kafarnaüm). De plaatsen uit de oude wereld die de Bijbel niet
-  noemt (Gamla, Sepphoris, Pompeii) hebben in plaats daarvan hun Pleiades-nummer, zoals
-  <code>678146</code> (Gamla), of, als dat ontbreekt, hun Wikidata-item, zoals
-  <code>Q16869</code> (Constantinopel). Beide soorten kunnen voorkomen in <code>view.place</code> en
+  noemt (Gamla, Sepphoris, Pompeii) hebben in plaats daarvan hun Pleiades-nummer (Gamla is
+  <code>678146</code>) of, als dat ontbreekt, hun Wikidata-item (Constantinopel is
+  <code>Q16869</code>). Beide soorten kunnen voorkomen in <code>view.place</code> en
   <code>hg:place-clicked</code>, en beide worden door <code>hg:set-view</code> geaccepteerd; als
   jouw gegevens alleen de plaatsen van OpenBible hebben, test dan de vorm voordat je er een opzoekt.
   Van de {{openbible}} plaatsen van OpenBible staan er {{absent}} niet op de kaart (ze hebben geen
@@ -321,22 +326,22 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
-  // The view as it is now: a place selected, or none. Comes often: showPlace should do
-  // nothing when that place is already shown.
+  // De view zoals hij nu is: een plaats geselecteerd, of geen. Komt vaak: showPlace moet niets
+  // doen als die plaats al getoond wordt.
   if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
     if (m.view.place) showPlace(m.view.place);
     else hidePlace();
   }
-  // Every click on a place, the one already selected too: open your box again.
+  // Elke klik op een plaats, ook op de al geselecteerde: open je vak opnieuw.
   if (m?.type === "hg:place-clicked") showPlace(m.place);
 });
 
-// Your search picked a place: select it and fly to it (again, if it is selected already).
+// Je zoekopdracht koos een plaats: selecteer haar en vlieg ernaartoe (opnieuw, als ze al geselecteerd is).
 function pickPlace(id) {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
 }
 
-// Your box was closed: clear the selection on the map.
+// Je vak is gesloten: wis de selectie op de kaart.
 function closeBox() {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
 }</code></pre>
@@ -344,7 +349,12 @@ function closeBox() {
   <li>
     De geselecteerde plaats is gemarkeerd met een ring die groeit en vervaagt, zodat het oog haar
     vindt zonder dat iets de kaart bedekt; voor een lezer die om minder beweging heeft gevraagd,
-    blijft de ring stil. Een klik op de kaart buiten elke plaats heft de selectie op.
+    blijft de ring stil.
+  </li>
+  <li>
+    Een klik op de kaart buiten elke plaats heft de plaatsselectie op; een route die loopt, gaat
+    door. Een dubbelklik (die zoomt) en een klik die de bewegende kaart stopt, heffen niets op.
+    <code>place: null</code> vanaf jouw pagina heft de plaats op en beëindigt de route.
   </li>
   <li>
     Een route loopt op de kaart (haar lijn, haar haltes en het jaar) zonder haar routekaart: je

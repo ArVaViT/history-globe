@@ -645,7 +645,7 @@ await step(
     expect((await frame.locator("section.hg-card").count()) === 0, "a card section is there");
     expect((await frame.getByRole("button", { name: /Деян/ }).count()) === 0, "the chapter chip");
     const nav = await frame.locator("nav").first().getAttribute("aria-label");
-    expect(nav === "Переход к полному глобусу", `nav label ${nav}`);
+    expect(nav === "Ссылка на полный глобус", `nav label ${nav}`);
     // The host selects Capernaum: the place goes out in the view and wears the ring.
     await send({ place: "af2161c" });
     await page.waitForFunction(
@@ -655,15 +655,24 @@ await step(
     );
     expect((await frame.locator(".hg-ring").count()) === 1, "no ring on the selected place");
     expect((await frame.locator("section.hg-card").count()) === 0, "a card opened");
+    // The map's flight ends before a point on it is read: during it the place moves away.
+    const still = () =>
+      frame.waitForFunction(() => !window.__hgMap.isMoving() && window.__hgMap.loaded(), null, {
+        timeout: 15000,
+      });
+    const capernaum = async () => {
+      await still();
+      return frame.evaluate(() => {
+        const m = window.__hgMap;
+        const f = m.queryRenderedFeatures().find((x) => x.properties?.id === "af2161c");
+        return f && m.project(f.geometry.coordinates);
+      });
+    };
     // A click on the place itself, twice: hg:place-clicked each time.
-    const at = await frame.evaluate(() => {
-      const m = window.__hgMap;
-      const f = m.queryRenderedFeatures().find((x) => x.properties?.id === "af2161c");
-      return f && m.project(f.geometry.coordinates);
-    });
-    expect(at, "Capernaum is not drawn");
     const box = await page.locator("iframe").boundingBox();
     for (let i = 0; i < 2; i++) {
+      const at = await capernaum();
+      expect(at, "Capernaum is not drawn");
       await page.mouse.click(box.x + at.x, box.y + at.y);
       await page.waitForTimeout(700);
     }
@@ -691,24 +700,36 @@ await step(
       null,
       { timeout: 10000 },
     );
-    await page.waitForTimeout(1500);
-    const empty = await frame.evaluate(() => {
-      const m = window.__hgMap;
-      for (let y = 120; y < 520; y += 20)
-        for (let x = 80; x < 900; x += 20)
-          if (
-            m
-              .queryRenderedFeatures([
-                [x - 14, y - 14],
-                [x + 14, y + 14],
-              ])
-              .every((f) => !f.properties?.id && !f.layer.id.includes("battle"))
-          )
-            return { x, y };
-      return null;
-    });
+    await still();
+    const emptySpot = () =>
+      frame.evaluate(() => {
+        const m = window.__hgMap;
+        for (let y = 120; y < 520; y += 20)
+          for (let x = 80; x < 900; x += 20)
+            if (
+              m
+                .queryRenderedFeatures([
+                  [x - 14, y - 14],
+                  [x + 14, y + 14],
+                ])
+                .every((f) => !f.properties?.id && !f.layer.id.includes("battle"))
+            )
+              return { x, y };
+        return null;
+      });
+    const empty = await emptySpot();
     expect(empty, "no empty spot on the map");
-    await page.mouse.click(box.x + empty.x, box.y + empty.y);
+    // A double-click there zooms and keeps the place.
+    await page.mouse.dblclick(box.x + empty.x, box.y + empty.y);
+    await page.waitForTimeout(1200);
+    await still();
+    expect(
+      await frame.evaluate(() => document.querySelector(".hg-ring") !== null),
+      "a double-click cleared the place",
+    );
+    const spot = await emptySpot();
+    expect(spot, "no empty spot on the map after the zoom");
+    await page.mouse.click(box.x + spot.x, box.y + spot.y);
     await page.waitForFunction(
       () => {
         const v = window.__msgs.filter((m) => m?.type === "hg:view-changed").at(-1)?.view;

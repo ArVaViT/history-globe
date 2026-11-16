@@ -208,7 +208,9 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
         <td>
           anul, locul, traseul sau camera s-au schimbat și s-au stabilizat (la aproximativ 400 ms
           după ultima schimbare), fie că le-a schimbat cititorul, fie mesajul dumneavoastră
-          <code>hg:set-view</code>
+          <code>hg:set-view</code>. Când harta zboară spre un loc nou selectat, mesajul vine o dată
+          cu locul nou și cu camera pe care harta a părăsit-o, apoi încă o dată când zborul se
+          termină
         </td>
       </tr>
       <tr>
@@ -279,7 +281,10 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
   <li>
     Tratați <code>hg:view-changed</code> ca starea curentă, nu ca ceva ce a făcut cititorul: urmează
     propriului dumneavoastră <code>hg:set-view</code> și fiecărei mișcări a camerei. O pagină care
-    trimite înapoi vederea așa cum a primit-o nu pornește nici o buclă, nici un zbor.
+    trimite înapoi întreaga vedere așa cum a primit-o, cu tot cu cameră, nu pornește nici o buclă,
+    nici un zbor. Nu răspundeți la <code>hg:view-changed</code> cu <code>hg:set-view</code> și doar
+    un <code>place</code>: fără <code>camera</code>, harta zboară înapoi la acel loc, departe de
+    locul unde a mutat-o cititorul.
   </li>
 </ul>
 
@@ -287,13 +292,12 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
 <p>
   Un loc din Biblie are ID-ul OpenBible: <code>a</code> urmat de șase cifre hexazecimale, cum ar fi
   <code>af2161c</code> (Capernaum). Locurile lumii antice pe care Biblia nu le numește (Gamla,
-  Sepphoris, Pompei) au în schimb numărul lor Pleiades, cum ar fi <code>678146</code> (Gamla), sau,
-  în lipsa lui, elementul lor Wikidata, cum ar fi <code>Q16869</code> (Constantinopol). Ambele
-  feluri pot veni în <code>view.place</code> și în <code>hg:place-clicked</code>, iar
-  <code>hg:set-view</code> le acceptă pe amândouă; dacă datele dumneavoastră au doar locurile
-  OpenBible, verificați forma ID-ului înainte de a căuta unul. Din cele {{openbible}} de locuri
-  OpenBible, {{absent}} nu sunt pe hartă (nu au un punct care să poată fi publicat); ID-urile lor
-  sunt ignorate.
+  Sepphoris, Pompei) au în schimb numărul lor Pleiades (Gamla are <code>678146</code>) sau, în lipsa
+  lui, elementul lor Wikidata (Constantinopol are <code>Q16869</code>). Ambele feluri pot veni în
+  <code>view.place</code> și în <code>hg:place-clicked</code>, iar <code>hg:set-view</code> le
+  acceptă pe amândouă; dacă datele dumneavoastră au doar locurile OpenBible, verificați forma
+  ID-ului înainte de a căuta unul. Din cele {{openbible}} de locuri OpenBible, {{absent}} nu sunt pe
+  hartă (nu au un punct care să poată fi publicat); ID-urile lor sunt ignorate.
 </p>
 
 <h2>Exemplu: harta urmează cititorul dumneavoastră</h2>
@@ -319,22 +323,22 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
-  // The view as it is now: a place selected, or none. Comes often: showPlace should do
-  // nothing when that place is already shown.
+  // Vederea așa cum este acum: un loc selectat sau niciunul. Vine des: showPlace nu trebuie să
+  // facă nimic dacă locul este deja afișat.
   if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
     if (m.view.place) showPlace(m.view.place);
     else hidePlace();
   }
-  // Every click on a place, the one already selected too: open your box again.
+  // Fiecare clic pe un loc, și pe cel deja selectat: deschideți din nou caseta dumneavoastră.
   if (m?.type === "hg:place-clicked") showPlace(m.place);
 });
 
-// Your search picked a place: select it and fly to it (again, if it is selected already).
+// Căutarea dumneavoastră a ales un loc: selectați-l și zburați la el (din nou, dacă este deja selectat).
 function pickPlace(id) {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
 }
 
-// Your box was closed: clear the selection on the map.
+// Caseta dumneavoastră a fost închisă: ștergeți selecția de pe hartă.
 function closeBox() {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
 }</code></pre>
@@ -342,7 +346,12 @@ function closeBox() {
   <li>
     Locul selectat este marcat cu un inel care crește și se estompează, astfel încât ochiul îl
     găsește fără ca ceva să acopere harta; pentru un cititor care a cerut mai puțină mișcare, inelul
-    rămâne nemișcat. Un clic pe hartă departe de orice loc șterge selecția.
+    rămâne nemișcat.
+  </li>
+  <li>
+    Un clic pe hartă departe de orice loc șterge selecția locului; un traseu care rulează continuă.
+    Un dublu clic (care mărește) și un clic care oprește harta în mișcare nu șterg nimic.
+    <code>place: null</code> din pagina dumneavoastră șterge locul și încheie traseul.
   </li>
   <li>
     Un traseu rulează pe hartă (linia lui, opririle lui și anul) fără fișa lui: pagina dumneavoastră

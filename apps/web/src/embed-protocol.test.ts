@@ -207,6 +207,12 @@ describe("the embed protocol, as a host's untrusted messages reach it", () => {
     const undo = attachEmbed(r2, bare.e, data, true);
     r2.emitPickNone();
     expect(bare.calls).toEqual([["selectPlace", null]]);
+    // A tour under way goes on: only the place is put away.
+    const touring = engine({ selectedPlace: "a15257a", tour: { id: "paul-1", step: 1 } });
+    const r3 = new FakeRenderer();
+    attachEmbed(r3, touring.e, data, true);
+    r3.emitPickNone();
+    expect(touring.calls).toEqual([["selectPlace", null]]);
     // Undone with the protocol: the frame's listeners go.
     undo();
     r2.emitPickNone();

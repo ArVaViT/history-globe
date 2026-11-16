@@ -209,7 +209,9 @@ description: Placez le globe sur votre propre site en une ligne — la carte d�
         <td>
           l’année, le lieu, le parcours ou la caméra a changé et s’est stabilisé (environ 400 ms
           après le dernier changement), que ce soit le lecteur ou votre <code>hg:set-view</code> qui
-          l’ait modifié
+          l’ait modifié. Quand la carte vole vers un lieu nouvellement sélectionné, le message
+          arrive une fois avec le nouveau lieu et la caméra que la carte a quittée, puis de nouveau
+          à la fin du vol
         </td>
       </tr>
       <tr>
@@ -282,7 +284,10 @@ description: Placez le globe sur votre propre site en une ligne — la carte d�
   <li>
     Traitez <code>hg:view-changed</code> comme l’état actuel, non comme une action du lecteur : il
     suit votre propre <code>hg:set-view</code> et chaque déplacement de la caméra. Une page qui
-    renvoie la vue telle qu’on la lui a transmise ne déclenche ni boucle ni vol.
+    renvoie la vue entière telle qu’on la lui a transmise, caméra comprise, ne déclenche ni boucle
+    ni vol. Ne répondez pas à <code>hg:view-changed</code> par <code>hg:set-view</code> avec un
+    <code>place</code> seul : sans <code>camera</code>, la carte s’envole de nouveau vers ce lieu,
+    loin de l’endroit où le lecteur l’a déplacée.
   </li>
 </ul>
 
@@ -290,13 +295,13 @@ description: Placez le globe sur votre propre site en une ligne — la carte d�
 <p>
   Un lieu de la Bible a l’identifiant d’OpenBible : <code>a</code> suivi de six chiffres
   hexadécimaux, par exemple <code>af2161c</code> (Capernaüm). Les lieux du monde antique que la
-  Bible ne nomme pas (Gamla, Sepphoris, Pompéi) ont à la place leur numéro Pleiades, par exemple
-  <code>678146</code> (Gamla), ou, à défaut, leur élément Wikidata, par exemple
-  <code>Q16869</code> (Constantinople). Les deux sortes peuvent figurer dans
-  <code>view.place</code> et <code>hg:place-clicked</code>, et <code>hg:set-view</code> accepte les
-  deux ; si vos données ne contiennent que des lieux d’OpenBible, testez la forme de l’identifiant
-  avant de chercher le lieu. Sur les {{openbible}} lieux d’OpenBible, {{absent}} ne figurent pas sur
-  la carte (ils n’ont aucun point que l’on puisse publier) ; leurs identifiants sont ignorés.
+  Bible ne nomme pas (Gamla, Sepphoris, Pompéi) ont à la place leur numéro Pleiades (celui de Gamla
+  est <code>678146</code>) ou, à défaut, leur élément Wikidata (celui de Constantinople est
+  <code>Q16869</code>). Les deux sortes peuvent figurer dans <code>view.place</code> et
+  <code>hg:place-clicked</code>, et <code>hg:set-view</code> accepte les deux ; si vos données ne
+  contiennent que des lieux d’OpenBible, testez la forme de l’identifiant avant de chercher le lieu.
+  Sur les {{openbible}} lieux d’OpenBible, {{absent}} ne figurent pas sur la carte (ils n’ont aucun
+  point que l’on puisse publier) ; leurs identifiants sont ignorés.
 </p>
 
 <h2>Exemple : la carte suit votre lecteur</h2>
@@ -322,22 +327,23 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
-  // The view as it is now: a place selected, or none. Comes often: showPlace should do
-  // nothing when that place is already shown.
+  // La vue telle qu’elle est maintenant : un lieu sélectionné, ou aucun. Arrive souvent :
+  // showPlace ne doit rien faire si ce lieu est déjà affiché.
   if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
     if (m.view.place) showPlace(m.view.place);
     else hidePlace();
   }
-  // Every click on a place, the one already selected too: open your box again.
+  // Chaque clic sur un lieu, même sur celui déjà sélectionné : rouvrir votre encart de lieu.
   if (m?.type === "hg:place-clicked") showPlace(m.place);
 });
 
-// Your search picked a place: select it and fly to it (again, if it is selected already).
+// Votre recherche a choisi un lieu : le sélectionner et y voler (de nouveau, s’il est déjà
+// sélectionné).
 function pickPlace(id) {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
 }
 
-// Your box was closed: clear the selection on the map.
+// Votre encart de lieu a été fermé : effacer la sélection sur la carte.
 function closeBox() {
   if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
 }</code></pre>
@@ -345,7 +351,12 @@ function closeBox() {
   <li>
     Le lieu sélectionné est marqué d’un anneau qui grandit et s’estompe, de sorte que l’œil le
     trouve sans que rien ne couvre la carte ; pour un lecteur qui a demandé moins de mouvement,
-    l’anneau reste immobile. Un clic sur la carte hors de tout lieu efface la sélection.
+    l’anneau reste immobile.
+  </li>
+  <li>
+    Un clic sur la carte hors de tout lieu efface la sélection du lieu ; un parcours en cours
+    continue. Un double-clic (qui zoome) et un clic qui arrête la carte en mouvement n’effacent
+    rien. <code>place: null</code> depuis votre page désélectionne le lieu et met fin au parcours.
   </li>
   <li>
     Un parcours se déroule sur la carte (son tracé, ses étapes et l’année) sans sa fiche : votre
