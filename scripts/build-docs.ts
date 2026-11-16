@@ -704,7 +704,8 @@ function counts(): Record<string, string> {
   const people = read("people.json") as { people: unknown[] } | undefined;
   const content = read("content.json") as Record<string, unknown> | undefined;
   const manifest = read("manifest.json") as
-    { excluded_places?: unknown[]; built_at?: string } | undefined;
+    | { excluded_places?: unknown[]; built_at?: string; stats?: { without_point?: number } }
+    | undefined;
   const size = (k: string) => {
     const v = content?.[k];
     return v && typeof v === "object" ? Object.keys(v).length : undefined;
@@ -727,6 +728,12 @@ function counts(): Record<string, string> {
     names: size("names"),
     chapter_books: size("chapter_years"),
     excluded: manifest?.excluded_places?.length,
+    // OpenBible's places the globe does not have: left out (above) or with no point at all.
+    // A host that sends one of their ids gets nothing (the embedding page).
+    absent:
+      manifest?.excluded_places && manifest.stats?.without_point !== undefined
+        ? manifest.excluded_places.length + manifest.stats.without_point
+        : undefined,
     // Corrections to the borders, and apart from them the periods drawn as vassals.
     overrides: (overridesText.split(/^vassals:/m)[0]?.match(/^ {2}- polity:/gm) ?? []).length,
     vassals: (overridesText.split(/^vassals:/m)[1]?.match(/^ {2}- polity:/gm) ?? []).length,
@@ -734,6 +741,13 @@ function counts(): Record<string, string> {
   const out: Record<string, string> = {};
   for (const [k, v] of Object.entries(n)) if (v !== undefined) out[k] = String(v);
   out.built = manifest?.built_at?.slice(0, 10) ?? "";
+  // OpenBible's records in all: those on the map and those that are not.
+  if (out.places && out.absent) out.openbible = String(Number(out.places) + Number(out.absent));
+  // The language codes a link may name, in the order of the alphabet.
+  out.locale_codes = [...LOCALES]
+    .sort()
+    .map((c) => `<code>${c}</code>`)
+    .join(", ");
   out.site = site || "https://&lt;globe-host&gt;";
   // The places-in-any-text script as other sites load it: its newest version's own address
   // and the hash that pins its content (scripts/hg-places-releases.json).

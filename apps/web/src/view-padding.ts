@@ -14,7 +14,11 @@ export function viewPadding(
   card = true,
   chip = false,
   panel = true,
+  mapOnly = false,
 ) {
+  // Map-only (`ui=map`): no card, whatever is selected, and above only the small link to
+  // the globe at the right, not the chapter's chip.
+  const open = card && !(embed && mapOnly);
   // Embedded, there is no column on the left, the chapter's chip sits at the top and the
   // timeline is folded to a line until opened (its height is measured); with no card
   // open, the frame is the map's.
@@ -22,15 +26,15 @@ export function viewPadding(
   // the full-width timeline about 175 px tall.
   // No panel open on the left (the overview, a tool, the search), the map has that room too.
   const column = embed || !panel ? 0 : 376;
-  const top = embed ? 56 : 0;
+  const top = embed ? (mapOnly ? 44 : 56) : 0;
   const bottom = embed ? timeline + 24 : 190;
   // Embedded, the card keeps 60 px of the right edge for the map's zoom buttons.
   const cardEdge = embed ? 492 : 452;
   const beside = w - column - cardEdge;
   const p =
-    embed && !card
+    embed && !open
       ? { top, bottom, left: 0, right: 0 }
-      : w < 768 && !card
+      : w < 768 && !open
         ? // A phone with no card open (a chapter; a person's places come with their card): the screen between
           // the header, with the chapter's chip under it, and the timeline.
           { top: 64 + (chip ? 56 : 0), bottom: timeline + 24, left: 0, right: 0 }
@@ -42,7 +46,7 @@ export function viewPadding(
               left: 0,
               right: 0,
             }
-          : !card
+          : !open
             ? // No card open (a chapter, the map alone): only the column and the timeline;
               // on a short screen with no panel (a phone on its side), the header and the
               // chapter's chip over the map's top-left too: Acts 16 went under them.

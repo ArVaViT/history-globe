@@ -1,6 +1,13 @@
 import { describe, expect, it } from "vitest";
 import { isLocale } from "@hg/model";
-import { localeOfTag, preferredLocale, readUrl, startLocale, viewSearch } from "./url";
+import {
+  globeLinkSearch,
+  localeOfTag,
+  preferredLocale,
+  readUrl,
+  startLocale,
+  viewSearch,
+} from "./url";
 
 describe("readUrl", () => {
   it("reads a full view", () => {
@@ -186,6 +193,28 @@ describe("layers and tour in the link", () => {
     expect(readUrl("?year=30", "/").embed).toBeUndefined();
     expect(readUrl("?ref=Acts.16", "/embed/v1").embed).toBe(true);
   });
+
+  it("reads the map-only look (ui=map) only inside an embed", () => {
+    expect(readUrl("?embed=1&ui=map").mapOnly).toBe(true);
+    expect(readUrl("?place=af2161c&ui=map", "/embed/v1").mapOnly).toBe(true);
+    // The globe's own page keeps its whole interface.
+    expect(readUrl("?ui=map", "/").mapOnly).toBeUndefined();
+    // Any other value is the full embed.
+    expect(readUrl("?embed=1&ui=full").mapOnly).toBeUndefined();
+    expect(readUrl("?embed=1&ui=MAP").mapOnly).toBeUndefined();
+    expect(readUrl("?embed=1").mapOnly).toBeUndefined();
+  });
+
+  it("keeps ui=map in the link as the view moves (a reload stays map-only)", () => {
+    const view = {
+      year: 30,
+      camera: { center: [35.2, 31.8] as [number, number], zoom: 7, pitch: 0, bearing: 0 },
+      locale: "en" as const,
+      place: "af2161c",
+    };
+    const next = viewSearch(view, "?embed=1&ui=map&place=a15257a");
+    expect(readUrl(`?${next}`)).toMatchObject({ embed: true, mapOnly: true, place: "af2161c" });
+  });
 });
 
 describe("preferredLocale", () => {
@@ -232,5 +261,28 @@ describe("startLocale", () => {
   it("opens a map without one in a published language", () => {
     expect(isLocale(startLocale({}))).toBe(true);
     expect(isLocale(startLocale({ embed: true }))).toBe(true);
+  });
+});
+
+describe("globeLinkSearch", () => {
+  it("opens the whole globe at the frame's view: no embed mark, no map-only look", () => {
+    const next = globeLinkSearch(
+      "?embed=1&ui=map&year=30&place=af2161c&camera=35.5,32.8,8.00,45,0&locale=de",
+    );
+    const p = new URLSearchParams(next);
+    expect(p.has("embed")).toBe(false);
+    expect(p.has("ui")).toBe(false);
+    expect(Object.fromEntries(p)).toEqual({
+      year: "30",
+      place: "af2161c",
+      camera: "35.5,32.8,8.00,45,0",
+      locale: "de",
+    });
+    expect(readUrl(`?${next}`)).toMatchObject({ place: "af2161c", year: 30, locale: "de" });
+    expect(readUrl(`?${next}`).embed).toBeUndefined();
+  });
+
+  it("keeps parameters it does not own", () => {
+    expect(globeLinkSearch("?embed=1&ref=Acts.16&hide=relief")).toBe("ref=Acts.16&hide=relief");
   });
 });

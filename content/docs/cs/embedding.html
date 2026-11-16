@@ -96,7 +96,10 @@ description: Vložte glóbus na vlastní web jedním řádkem — mapu kapitoly,
       <tr>
         <td><code>place</code></td>
         <td><code>af2161c</code></td>
-        <td>otevře místo (zde Kafarnaum); identifikátory jsou z OpenBible</td>
+        <td>
+          otevře místo (zde Kafarnaum); identifikátory jsou popsány v části
+          <a href="#place-ids">ID míst</a>
+        </td>
       </tr>
       <tr>
         <td><code>tour</code></td>
@@ -130,23 +133,39 @@ description: Vložte glóbus na vlastní web jedním řádkem — mapu kapitoly,
       <tr>
         <td><code>locale</code></td>
         <td><code>en</code></td>
-        <td>
-          jazyk: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
-          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code> nebo <code>cs</code>
-        </td>
+        <td>jazyk, jeden z {{locale_codes}}</td>
       </tr>
       <tr>
         <td><code>camera</code></td>
         <td><code>35.2,31.8,7,30,0</code></td>
-        <td>zeměpisná délka, zeměpisná šířka, přiblížení, náklon, azimut</td>
+        <td>
+          zeměpisná délka, zeměpisná šířka, přiblížení, náklon, azimut; s <code>place</code> se mapa
+          otevře s tímto nastavením kamery a vybraným místem, místo aby k němu přeletěla
+        </td>
+      </tr>
+      <tr>
+        <td><code>measure</code></td>
+        <td><code>a15257a,aaf03fa</code></td>
+        <td>
+          dvě ID míst: nástroj pro měření vzdálenosti otevřený mezi nimi; malý rámec a
+          <code>ui=map</code> ukážou jen čáru
+        </td>
+      </tr>
+      <tr>
+        <td><code>ui</code></td>
+        <td><code>map</code></td>
+        <td>
+          jen mapa, pro stránku s vlastním vyhledáváním a vlastním polem místa: bez karty místa, bez
+          lišty kapitoly, rok sbalený; odkaz na glóbus zůstává. Vybrané místo je označeno kruhem a
+          kliknutí na mapu mimo jakékoli místo výběr zruší (viz <a href="#map-only">příklad</a>)
+        </td>
       </tr>
       <tr>
         <td><code>hide</code></td>
-        <td><code>relief,ancient</code></td>
+        <td><code>relief,battles</code></td>
         <td>
           vrstvy, které se vypnou: <code>borders</code>, <code>places</code>, <code>relief</code>,
-          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+          <code>routes</code>, <code>roads</code>, <code>battles</code>
         </td>
       </tr>
     </tbody>
@@ -161,7 +180,8 @@ description: Vložte glóbus na vlastní web jedním řádkem — mapu kapitoly,
 <p>
   Glóbus a vaše stránka komunikují přes <code>postMessage</code>. Každá zpráva je objekt s
   <code>type</code> a <code>v: 1</code>. Glóbus posílá jen to, co se děje na mapě, a nikdy nic, co
-  by čtenáře identifikovalo; přijímá zprávy jen od stránky, která drží rámec.
+  by čtenáře identifikovalo, proto zprávy posílá nadřazené stránce bez ohledu na její původ (cíl
+  <code>"*"</code>); přijímá zprávy jen od stránky, která drží rámec.
 </p>
 <h3>Z glóbu</h3>
 <div class="table">
@@ -182,12 +202,25 @@ description: Vložte glóbus na vlastní web jedním řádkem — mapu kapitoly,
       <tr>
         <td><code>hg:view-changed</code></td>
         <td><code>{ view }</code></td>
-        <td>rok, místo, trasa nebo kamera se změnily a ustálily</td>
+        <td>
+          rok, místo, trasa nebo kamera se změnily a ustálily (zhruba 400 ms po poslední změně), ať
+          je změnil čtenář, nebo váš <code>hg:set-view</code>. Když mapa letí k nově vybranému
+          místu, zpráva přijde jednou s novým místem a s kamerou, kterou mapa opustila, a znovu,
+          když přelet skončí
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:place-clicked</code></td>
+        <td><code>{ place }</code></td>
+        <td>
+          čtenář klikl na místo na mapě, i na již vybrané; zpráva přijde před
+          <code>hg:view-changed</code>, který klik vyvolá
+        </td>
       </tr>
       <tr>
         <td><code>hg:verse-clicked</code></td>
         <td><code>{ osis }</code></td>
-        <td>čtenář klikl na verš, např. <code>"Acts.16.12"</code></td>
+        <td>čtenář klikl na verš na kartě místa, např. <code>"Acts.16.12"</code></td>
       </tr>
       <tr>
         <td><code>hg:error</code></td>
@@ -200,7 +233,8 @@ description: Vložte glóbus na vlastní web jedním řádkem — mapu kapitoly,
 <p>
   <code>view</code> obsahuje <code>year</code>, <code>locale</code> a <code>layers</code> a, je-li
   nastaveno, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> a
-  <code>camera</code>.
+  <code>camera</code>. <code>view</code> bez <code>place</code> znamená, že není vybráno žádné
+  místo.
 </p>
 <h3>Do glóbu</h3>
 <div class="table">
@@ -219,7 +253,9 @@ description: Vložte glóbus na vlastní web jedním řádkem — mapu kapitoly,
         <td>
           nastaví rok, kapitolu (<code>ref</code>), místo, vrstvy nebo kameru; s
           <code>tour</code> (a <code>stop</code>) se spustí trasa a ostatní pole se ignorují; jazyk
-          se mění jen pomocí <code>hg:set-locale</code>
+          se mění jen pomocí <code>hg:set-locale</code>. <code>place: null</code> zruší výběr a
+          ukončí běžící trasu. K již vybranému místu se přeletí znovu, ledaže má pohled také
+          <code>camera</code>. ID místa, které mapa nemá, se ignoruje
         </td>
       </tr>
       <tr>
@@ -230,6 +266,31 @@ description: Vložte glóbus na vlastní web jedním řádkem — mapu kapitoly,
     </tbody>
   </table>
 </div>
+<ul>
+  <li>
+    Než cokoli odešlete, počkejte na <code>hg:ready</code>: zpráva odeslaná, zatímco se mapa ještě
+    načítá, se ztratí.
+  </li>
+  <li>
+    Berte <code>hg:view-changed</code> jako aktuální stav, ne jako něco, co udělal čtenář: následuje
+    po vašem vlastním <code>hg:set-view</code> a po každém pohybu kamery. Stránka, která pošle zpět
+    celý pohled tak, jak ho dostala, včetně kamery, nespustí ani smyčku, ani přelet. Neodpovídejte
+    na <code>hg:view-changed</code> zprávou <code>hg:set-view</code> jen s <code>place</code>: bez
+    <code>camera</code> mapa přeletí zpět k tomu místu, pryč od toho, kam ji čtenář posunul.
+  </li>
+</ul>
+
+<h3 id="place-ids">ID míst</h3>
+<p>
+  Místo z Bible má ID z OpenBible: <code>a</code> a šest šestnáctkových číslic, například
+  <code>af2161c</code> (Kafarnaum). Místa starověkého světa, která Bible nejmenuje (Gamla, Sepforis,
+  Pompeje), mají místo toho číslo z Pleiades (Gamla má <code>678146</code>), nebo, když je nemají,
+  položku z Wikidata (Konstantinopol má <code>Q16869</code>). Oba druhy se mohou objevit ve
+  <code>view.place</code> a v <code>hg:place-clicked</code> a <code>hg:set-view</code> přijímá oba;
+  pokud vaše data mají jen místa z OpenBible, ověřte tvar ID, než nějaké vyhledáte. Z {{openbible}}
+  míst z OpenBible jich {{absent}} na mapě není (nemají bod, který smí být zveřejněn); jejich ID se
+  ignorují.
+</p>
 
 <h2>Příklad: mapa sleduje vašeho čtenáře</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
@@ -245,6 +306,55 @@ window.addEventListener("message", (e) =&gt; {
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
 
+<h2 id="map-only">Příklad: mapa vedle vašeho vlastního pole místa</h2>
+<pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+let ready = false;
+
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  const m = e.data;
+  if (m?.type === "hg:ready") ready = true;
+  // Pohled, jaký je právě teď: vybrané místo, nebo žádné. Přichází často: showPlace nemá nic
+  // dělat, když je to místo už zobrazeno.
+  if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
+    if (m.view.place) showPlace(m.view.place);
+    else hidePlace();
+  }
+  // Každé kliknutí na místo, i na již vybrané: otevřete své pole znovu.
+  if (m?.type === "hg:place-clicked") showPlace(m.place);
+});
+
+// Vaše hledání vybralo místo: vyberte ho a přeletěte k němu (znovu, pokud je už vybrané).
+function pickPlace(id) {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+}
+
+// Vaše pole bylo zavřeno: zrušte výběr na mapě.
+function closeBox() {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+}</code></pre>
+<ul>
+  <li>
+    Vybrané místo je označeno kruhem, který roste a bledne, takže ho oko najde, aniž by cokoli
+    zakrývalo mapu; čtenáři, který si vyžádal méně pohybu, kruh zůstává nehybný.
+  </li>
+  <li>
+    Kliknutí na mapu mimo jakékoli místo zruší výběr místa; běžící trasa pokračuje dál. Dvojklik
+    (který přibližuje) a kliknutí, které zastaví pohybující se mapu, nezruší nic.
+    <code>place: null</code> z vaší stránky zruší místo a ukončí trasu.
+  </li>
+  <li>
+    Trasa běží na mapě (její čára, její zastávky a rok) bez své karty: vaše stránka s ní pohybuje
+    pomocí <code>hg:set-view</code> a <code>{ tour, stop }</code>. <code>measure</code> kreslí svou
+    čáru jako v každém rámci.
+  </li>
+  <li>
+    <code>hg:verse-clicked</code> se neodesílá: verše jsou na kartě místa, kterou tento režim
+    vynechává.
+  </li>
+</ul>
+
 <h2 id="places">Místa v libovolném textu</h2>
 <p>
   Ještě jeden řádek propojí s glóbem biblická místa, která jmenuje váš vlastní text (článek, kázání,
@@ -259,10 +369,7 @@ window.addEventListener("message", (e) =&gt; {
       Nazareth, and John saw his visions on Patmos.
     </p>
   </div>
-  <figcaption>
-    Živá ukázka v angličtině: tyto názvy propojil skript na této stránce (skript čte texty v
-    angličtině a ruštině).
-  </figcaption>
+  <figcaption>Živá ukázka v angličtině: tyto názvy propojil skript na této stránce.</figcaption>
 </figure>
 <pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
 <p>
@@ -285,9 +392,7 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          jazyk textu, jeden z jazyků webu: <code>cs</code>, <code>de</code>, <code>en</code>,
-          <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>, <code>pl</code>,
-          <code>pt</code>, <code>ru</code>, <code>uk</code>; ve výchozím stavu
+          jazyk textu, jeden z jazyků webu: {{locale_codes}}; ve výchozím stavu
           <code>lang</code> stránky; pro jakýkoli jiný angličtina
         </td>
       </tr>

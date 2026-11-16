@@ -101,7 +101,10 @@ description: Đặt quả địa cầu lên trang web của bạn chỉ bằng m
       <tr>
         <td><code>place</code></td>
         <td><code>af2161c</code></td>
-        <td>mở một địa điểm (ở đây là Ca-bê-na-um); mã định danh là của OpenBible</td>
+        <td>
+          mở một địa điểm (ở đây là Ca-bê-na-um); mã định danh được mô tả ở mục
+          <a href="#place-ids">Mã định danh địa điểm</a>
+        </td>
       </tr>
       <tr>
         <td><code>tour</code></td>
@@ -135,23 +138,41 @@ description: Đặt quả địa cầu lên trang web của bạn chỉ bằng m
       <tr>
         <td><code>locale</code></td>
         <td><code>vi</code></td>
-        <td>
-          ngôn ngữ: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
-          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code>, <code>cs</code> hoặc <code>vi</code>
-        </td>
+        <td>ngôn ngữ, một trong {{locale_codes}}</td>
       </tr>
       <tr>
         <td><code>camera</code></td>
         <td><code>35.2,31.8,7,30,0</code></td>
-        <td>kinh độ, vĩ độ, mức phóng to, góc nghiêng, hướng xoay</td>
+        <td>
+          kinh độ, vĩ độ, mức phóng to, góc nghiêng, hướng xoay; khi đi cùng <code>place</code>, bản
+          đồ mở ra tại camera này với địa điểm đã được chọn, thay vì bay đến đó
+        </td>
+      </tr>
+      <tr>
+        <td><code>measure</code></td>
+        <td><code>a15257a,aaf03fa</code></td>
+        <td>
+          hai mã định danh địa điểm: công cụ đo khoảng cách được mở giữa hai nơi đó; một khung nhỏ
+          và
+          <code>ui=map</code> chỉ hiện đường nối
+        </td>
+      </tr>
+      <tr>
+        <td><code>ui</code></td>
+        <td><code>map</code></td>
+        <td>
+          chỉ riêng bản đồ, dành cho trang có ô tìm kiếm và ô địa điểm riêng: không có thẻ địa điểm,
+          không có thanh chương, năm được thu gọn; liên kết đến quả địa cầu vẫn còn. Địa điểm được
+          chọn được đánh dấu bằng một vòng tròn, và nhấp vào bản đồ ở nơi không có địa điểm nào sẽ
+          bỏ chọn (xem <a href="#map-only">ví dụ</a>)
+        </td>
       </tr>
       <tr>
         <td><code>hide</code></td>
-        <td><code>relief,ancient</code></td>
+        <td><code>relief,battles</code></td>
         <td>
           các lớp cần tắt: <code>borders</code>, <code>places</code>, <code>relief</code>,
-          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+          <code>routes</code>, <code>roads</code>, <code>battles</code>
         </td>
       </tr>
     </tbody>
@@ -166,8 +187,9 @@ description: Đặt quả địa cầu lên trang web của bạn chỉ bằng m
 <p>
   Quả địa cầu và trang của bạn trao đổi với nhau qua <code>postMessage</code>. Mỗi thông điệp là một
   đối tượng có <code>type</code> và <code>v: 1</code>. Quả địa cầu chỉ gửi những gì xảy ra trên bản
-  đồ và không bao giờ gửi bất cứ thứ gì giúp nhận diện người đọc; nó chỉ nhận thông điệp từ trang
-  chứa khung.
+  đồ và không bao giờ gửi bất cứ thứ gì giúp nhận diện người đọc, nên nó gửi thông điệp đến trang mẹ
+  bất kể origin của trang đó là gì (đích <code>"*"</code>); nó chỉ nhận thông điệp từ trang chứa
+  khung.
 </p>
 <h3>Từ quả địa cầu</h3>
 <div class="table">
@@ -188,12 +210,28 @@ description: Đặt quả địa cầu lên trang web của bạn chỉ bằng m
       <tr>
         <td><code>hg:view-changed</code></td>
         <td><code>{ view }</code></td>
-        <td>năm, địa điểm, hành trình hoặc góc nhìn camera đã thay đổi và ổn định</td>
+        <td>
+          năm, địa điểm, hành trình hoặc góc nhìn camera đã thay đổi và ổn định (khoảng 400 ms sau
+          lần thay đổi cuối), dù do người đọc hay do <code>hg:set-view</code> của bạn thay đổi. Khi
+          bản đồ bay tới một địa điểm vừa được chọn, thông báo đến một lần với địa điểm mới và
+          camera mà bản đồ vừa rời khỏi, rồi đến lần nữa khi chuyến bay kết thúc
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:place-clicked</code></td>
+        <td><code>{ place }</code></td>
+        <td>
+          người đọc đã nhấp vào một địa điểm trên bản đồ, kể cả địa điểm đã được chọn; thông điệp
+          này đến trước <code>hg:view-changed</code> mà cú nhấp ấy gây ra
+        </td>
       </tr>
       <tr>
         <td><code>hg:verse-clicked</code></td>
         <td><code>{ osis }</code></td>
-        <td>người đọc đã nhấp vào một câu Kinh Thánh, ví dụ <code>"Acts.16.12"</code></td>
+        <td>
+          người đọc đã nhấp vào một câu Kinh Thánh trong thẻ địa điểm, ví dụ
+          <code>"Acts.16.12"</code>
+        </td>
       </tr>
       <tr>
         <td><code>hg:error</code></td>
@@ -206,7 +244,8 @@ description: Đặt quả địa cầu lên trang web của bạn chỉ bằng m
 <p>
   <code>view</code> chứa <code>year</code>, <code>locale</code> và <code>layers</code>, và khi được
   đặt thì có thêm <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> và
-  <code>camera</code>.
+  <code>camera</code>. Một <code>view</code> không có <code>place</code> nghĩa là chưa chọn địa điểm
+  nào.
 </p>
 <h3>Đến quả địa cầu</h3>
 <div class="table">
@@ -225,7 +264,10 @@ description: Đặt quả địa cầu lên trang web của bạn chỉ bằng m
         <td>
           đặt năm, chương (<code>ref</code>), địa điểm, các lớp hoặc góc nhìn camera; với
           <code>tour</code> (và <code>stop</code>), hành trình bắt đầu và các trường khác bị bỏ qua;
-          ngôn ngữ chỉ thay đổi bằng <code>hg:set-locale</code>
+          ngôn ngữ chỉ thay đổi bằng <code>hg:set-locale</code>. <code>place: null</code> bỏ chọn và
+          kết thúc hành trình đang chạy. Bản đồ sẽ bay lại đến địa điểm đã được chọn, trừ khi khung
+          nhìn được gửi cũng có <code>camera</code>. Mã định danh địa điểm mà bản đồ không có sẽ bị
+          bỏ qua
         </td>
       </tr>
       <tr>
@@ -236,6 +278,33 @@ description: Đặt quả địa cầu lên trang web của bạn chỉ bằng m
     </tbody>
   </table>
 </div>
+<ul>
+  <li>
+    Hãy chờ <code>hg:ready</code> rồi mới gửi bất cứ thứ gì: thông điệp gửi khi bản đồ còn đang tải
+    sẽ bị mất.
+  </li>
+  <li>
+    Hãy coi <code>hg:view-changed</code> là trạng thái hiện tại, không phải việc người đọc vừa làm:
+    nó đi theo <code>hg:set-view</code> của chính bạn và theo mọi chuyển động của camera. Một trang
+    gửi lại toàn bộ khung nhìn đúng như đã được báo, kể cả camera, sẽ không gây ra vòng lặp hay
+    chuyến bay nào. Đừng trả lời <code>hg:view-changed</code> bằng <code>hg:set-view</code> chỉ có
+    <code>place</code>: không có <code>camera</code>, bản đồ sẽ bay ngược lại địa điểm đó, rời xa
+    chỗ người đọc đã kéo nó tới.
+  </li>
+</ul>
+
+<h3 id="place-ids">Mã định danh địa điểm</h3>
+<p>
+  Một địa điểm trong Kinh Thánh có mã định danh của OpenBible: chữ <code>a</code> theo sau là sáu
+  chữ số thập lục phân, chẳng hạn <code>af2161c</code> (Ca-bê-na-um). Các địa điểm của thế giới cổ
+  đại mà Kinh Thánh không nhắc tên (Gamla, Sepphoris, Pompeii) thì có số Pleiades thay thế (Gamla là
+  <code>678146</code>), hoặc nếu không có, thì có mục Wikidata (Constantinople là
+  <code>Q16869</code>). Cả hai loại đều có thể xuất hiện trong <code>view.place</code> và
+  <code>hg:place-clicked</code>, và <code>hg:set-view</code> chấp nhận cả hai; nếu dữ liệu của bạn
+  chỉ có các địa điểm của OpenBible, hãy kiểm tra dạng mã định danh trước khi tra cứu. Trong
+  {{openbible}} địa điểm của OpenBible, có {{absent}} địa điểm không có trên bản đồ (chúng không có
+  điểm nào được phép công bố); mã định danh của chúng bị bỏ qua.
+</p>
 
 <h2>Ví dụ: bản đồ đi theo trình đọc của bạn</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
@@ -250,6 +319,55 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
+
+<h2 id="map-only">Ví dụ: bản đồ cạnh ô địa điểm của riêng bạn</h2>
+<pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+let ready = false;
+
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  const m = e.data;
+  if (m?.type === "hg:ready") ready = true;
+  // Khung nhìn hiện tại: có địa điểm được chọn hoặc không. Thông báo đến thường xuyên: showPlace
+  // không nên làm gì khi địa điểm đó đã được hiển thị.
+  if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
+    if (m.view.place) showPlace(m.view.place);
+    else hidePlace();
+  }
+  // Mỗi cú nhấp vào một địa điểm, kể cả địa điểm đã chọn: mở lại ô của bạn.
+  if (m?.type === "hg:place-clicked") showPlace(m.place);
+});
+
+// Tìm kiếm của bạn đã chọn một địa điểm: chọn nó và bay tới đó (một lần nữa, nếu nó đã được chọn).
+function pickPlace(id) {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+}
+
+// Ô của bạn đã đóng: bỏ chọn trên bản đồ.
+function closeBox() {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+}</code></pre>
+<ul>
+  <li>
+    Địa điểm được chọn được đánh dấu bằng một vòng tròn lớn dần rồi mờ đi, để mắt tìm thấy nó mà
+    không có gì che bản đồ; với người đọc đã yêu cầu bớt chuyển động, vòng tròn đứng yên.
+  </li>
+  <li>
+    Nhấp vào bản đồ ở nơi không có địa điểm nào sẽ bỏ chọn địa điểm; hành trình đang chạy vẫn tiếp
+    tục. Nhấp đúp (để phóng to) và cú nhấp làm bản đồ đang chuyển động dừng lại không bỏ chọn gì cả.
+    <code>place: null</code> từ trang của bạn bỏ chọn địa điểm và kết thúc hành trình.
+  </li>
+  <li>
+    Một hành trình chạy trên bản đồ (tuyến đường, các chặng và năm) mà không có thẻ của nó: trang
+    của bạn điều khiển nó bằng <code>hg:set-view</code> và <code>{ tour, stop }</code>.
+    <code>measure</code> vẽ đường nối của nó, như trong mọi khung.
+  </li>
+  <li>
+    <code>hg:verse-clicked</code> không được gửi: các câu Kinh Thánh nằm trong thẻ địa điểm, mà chế
+    độ này lược bỏ.
+  </li>
+</ul>
 
 <h2 id="places">Địa điểm trong mọi văn bản</h2>
 <p>
@@ -290,11 +408,8 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          ngôn ngữ của văn bản, một trong các ngôn ngữ của trang web: <code>cs</code>,
-          <code>de</code>, <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>,
-          <code>nl</code>, <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>uk</code>,
-          <code>vi</code>; mặc định là <code>lang</code> của trang; mọi ngôn ngữ khác sẽ dùng tiếng
-          Anh
+          ngôn ngữ của văn bản, một trong các ngôn ngữ của trang web: {{locale_codes}}; mặc định là
+          <code>lang</code> của trang; mọi ngôn ngữ khác sẽ dùng tiếng Anh
         </td>
       </tr>
       <tr>

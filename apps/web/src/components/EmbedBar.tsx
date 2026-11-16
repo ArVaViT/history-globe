@@ -3,6 +3,7 @@ import { formatRef, type Locale, placeName } from "@hg/model";
 import { chapterLabel, firstVerseIn, readingOrder } from "../chapter";
 import type { LoadedData } from "../data";
 import { useTranslation } from "../i18n";
+import { globeLinkSearch } from "../url";
 import { ChevronDown } from "./icons";
 
 /**
@@ -135,6 +136,7 @@ export function EmbedBar({
   locale,
   selected,
   onPlace,
+  linkOnly = false,
 }: {
   /** The chapter picked out (`ref=`), or none; a person's places are not a chapter. */
   focus: { readonly ref: string; readonly places: readonly string[] } | null;
@@ -142,6 +144,8 @@ export function EmbedBar({
   locale: Locale;
   selected: string | null;
   onPlace: (id: string) => void;
+  /** Map-only (`ui=map`): the link alone, and the nav named for it. */
+  linkOnly?: boolean;
 }) {
   const { t } = useTranslation();
   const chapter = focus && !focus.ref.startsWith("person:") ? focus : null;
@@ -150,7 +154,8 @@ export function EmbedBar({
 
   return (
     <nav
-      aria-label={t("embed.label")}
+      // Map-only, the nav holds the link alone: no chapter to name.
+      aria-label={t(linkOnly ? "embed.link_label" : "embed.label")}
       className="pointer-events-none absolute inset-x-3 top-3 z-10 flex flex-wrap items-start gap-2"
     >
       {chapter && (
@@ -167,9 +172,7 @@ export function EmbedBar({
         href={import.meta.env.BASE_URL}
         // The view of the moment the link is used: the URL follows the map 300 ms late.
         onClick={(e) => {
-          e.currentTarget.href = `${import.meta.env.BASE_URL}?${new URLSearchParams(
-            [...new URLSearchParams(window.location.search)].filter(([k]) => k !== "embed"),
-          ).toString()}`;
+          e.currentTarget.href = `${import.meta.env.BASE_URL}?${globeLinkSearch(window.location.search)}`;
         }}
         target="_blank"
         rel="noopener"

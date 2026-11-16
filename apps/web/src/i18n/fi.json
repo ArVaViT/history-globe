@@ -285,7 +285,8 @@
   "embed": {
     "places_one": "{{count}} paikka",
     "places_other": "{{count}} paikkaa",
-    "label": "Luku ja linkki koko maapalloon"
+    "label": "Luku ja linkki koko maapalloon",
+    "link_label": "Linkki koko maapalloon"
   },
   "lesson": {
     "add": "Lisää oppituntiin",

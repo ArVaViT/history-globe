@@ -1,4 +1,5 @@
 import { elevationReader, pointsAlongPath } from "./elevation.ts";
+import { emptyClicks } from "./empty-click.ts";
 import { routeWalker } from "./route-walker.ts";
 import { POLITY_SPLIT_YEAR, type Locale } from "@hg/model";
 import type { Feature, FeatureCollection } from "geojson";
@@ -138,6 +139,7 @@ export class MapLibreRenderer implements Renderer {
   private battleShown = false;
   private readonly handlers: { [E in keyof RendererEvents]: Set<RendererEvents[E]> } = {
     pick: new Set(),
+    pickNone: new Set(),
     hover: new Set(),
     hoverPolity: new Set(),
     hoverBattle: new Set(),
@@ -357,7 +359,29 @@ export class MapLibreRenderer implements Renderer {
             | { place?: string; en?: string; ru?: string; year?: number; approx?: boolean }
             | undefined)
         : undefined;
+    // A click on the map itself, told apart from a drag's release, a press that stopped the
+    // camera and a double-click (empty-click.ts).
+    const empty = emptyClicks(() => {
+      for (const h of this.handlers.pickNone) h();
+    });
+    this.map.on("mousedown", () => {
+      empty.down(this.map.isMoving());
+    });
+    this.map.on("touchstart", () => {
+      empty.down(this.map.isMoving());
+    });
+    this.map.on("move", () => {
+      empty.moved();
+    });
+    this.map.on("dblclick", () => {
+      empty.dblclick();
+    });
+    this.map.on("dragstart", () => {
+      empty.dragged();
+    });
     this.map.on("click", (e: MapMouseEvent) => {
+      // The release of a drag a flight cut short picks nothing and clears nothing.
+      if (!empty.isClick()) return;
       const battle = battleAt(e);
       // A battle fought at no place (Gaugamela, events.yaml): no card to open, so a click or
       // a tap names it, as hovering does (a phone has no hover).
@@ -373,6 +397,7 @@ export class MapLibreRenderer implements Renderer {
             },
             { x: e.point.x, y: e.point.y },
           );
+        empty.click(true);
         return;
       }
       const id = battle?.place ?? (placeAt(e)?.properties as { id?: string } | undefined)?.id;
@@ -386,6 +411,7 @@ export class MapLibreRenderer implements Renderer {
         }
         for (const h of this.handlers.pick) h(id);
       }
+      empty.click(Boolean(id || battle));
     });
     // A tip would otherwise stay over a map that moved away: a tap on a phone, or a click
     // that flies to the place picked while the pointer rests where it was.

@@ -97,7 +97,10 @@ description: Metti il globo sul tuo sito con una sola riga — la mappa di un ca
       <tr>
         <td><code>place</code></td>
         <td><code>af2161c</code></td>
-        <td>apre un luogo (qui Cafarnao); gli ID sono quelli di OpenBible</td>
+        <td>
+          apre un luogo (qui Cafarnao); gli ID sono descritti in
+          <a href="#place-ids">ID dei luoghi</a>
+        </td>
       </tr>
       <tr>
         <td><code>tour</code></td>
@@ -131,23 +134,40 @@ description: Metti il globo sul tuo sito con una sola riga — la mappa di un ca
       <tr>
         <td><code>locale</code></td>
         <td><code>it</code></td>
-        <td>
-          lingua: <code>en</code>, <code>ru</code>, <code>uk</code>, <code>es</code>,
-          <code>pt</code>, <code>de</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code> o <code>cs</code>
-        </td>
+        <td>lingua, una tra {{locale_codes}}</td>
       </tr>
       <tr>
         <td><code>camera</code></td>
         <td><code>35.2,31.8,7,30,0</code></td>
-        <td>longitudine, latitudine, zoom, inclinazione, orientamento</td>
+        <td>
+          longitudine, latitudine, zoom, inclinazione, orientamento; con <code>place</code>, la
+          mappa si apre con questa visuale e il luogo selezionato, invece di volare verso di esso
+        </td>
+      </tr>
+      <tr>
+        <td><code>measure</code></td>
+        <td><code>a15257a,aaf03fa</code></td>
+        <td>
+          due ID di luoghi: lo strumento di distanza aperto tra di essi; un riquadro piccolo e
+          <code>ui=map</code> mostrano solo la linea
+        </td>
+      </tr>
+      <tr>
+        <td><code>ui</code></td>
+        <td><code>map</code></td>
+        <td>
+          solo la mappa, per una pagina con una propria ricerca e un proprio pannello del luogo:
+          niente scheda del luogo, niente barra del capitolo, l’anno ripiegato; il link al globo
+          resta. Il luogo selezionato è segnato da un anello, e un clic sulla mappa lontano da ogni
+          luogo cancella la selezione (vedi <a href="#map-only">l’esempio</a>)
+        </td>
       </tr>
       <tr>
         <td><code>hide</code></td>
-        <td><code>relief,ancient</code></td>
+        <td><code>relief,battles</code></td>
         <td>
           livelli da disattivare: <code>borders</code>, <code>places</code>, <code>relief</code>,
-          <code>routes</code>, <code>roads</code>, <code>ancient</code>
+          <code>routes</code>, <code>roads</code>, <code>battles</code>
         </td>
       </tr>
     </tbody>
@@ -162,7 +182,8 @@ description: Metti il globo sul tuo sito con una sola riga — la mappa di un ca
 <p>
   Il globo e la tua pagina comunicano tramite <code>postMessage</code>. Ogni messaggio è un oggetto
   con <code>type</code> e <code>v: 1</code>. Il globo invia solo ciò che accade sulla mappa e mai
-  nulla che identifichi il lettore; accetta messaggi solo dalla pagina che contiene il riquadro.
+  nulla che identifichi il lettore, perciò scrive alla pagina madre qualunque sia la sua origine
+  (destinazione <code>"*"</code>); accetta messaggi solo dalla pagina che contiene il riquadro.
 </p>
 <h3>Dal globo</h3>
 <div class="table">
@@ -183,12 +204,29 @@ description: Metti il globo sul tuo sito con una sola riga — la mappa di un ca
       <tr>
         <td><code>hg:view-changed</code></td>
         <td><code>{ view }</code></td>
-        <td>l’anno, il luogo, l’itinerario o la visuale sono cambiati e si sono assestati</td>
+        <td>
+          l’anno, il luogo, l’itinerario o la visuale sono cambiati e si sono assestati (circa 400
+          ms dopo l’ultima modifica), sia che li abbia cambiati il lettore sia che li abbia cambiati
+          il tuo <code>hg:set-view</code>. Quando la mappa vola verso un luogo appena selezionato,
+          il messaggio arriva una volta con il nuovo luogo e la visuale che la mappa ha lasciato,
+          poi di nuovo quando il volo finisce
+        </td>
+      </tr>
+      <tr>
+        <td><code>hg:place-clicked</code></td>
+        <td><code>{ place }</code></td>
+        <td>
+          il lettore ha cliccato un luogo sulla mappa, anche quello già selezionato; il messaggio
+          arriva prima del <code>hg:view-changed</code> che il clic provoca
+        </td>
       </tr>
       <tr>
         <td><code>hg:verse-clicked</code></td>
         <td><code>{ osis }</code></td>
-        <td>il lettore ha cliccato un versetto, per esempio <code>"Acts.16.12"</code></td>
+        <td>
+          il lettore ha cliccato un versetto in una scheda di luogo, per esempio
+          <code>"Acts.16.12"</code>
+        </td>
       </tr>
       <tr>
         <td><code>hg:error</code></td>
@@ -201,7 +239,8 @@ description: Metti il globo sul tuo sito con una sola riga — la mappa di un ca
 <p>
   <code>view</code> contiene <code>year</code>, <code>locale</code> e <code>layers</code> e, se
   impostati, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> e
-  <code>camera</code>.
+  <code>camera</code>. Una <code>view</code> senza <code>place</code> significa che nessun luogo è
+  selezionato.
 </p>
 <h3>Verso il globo</h3>
 <div class="table">
@@ -220,7 +259,10 @@ description: Metti il globo sul tuo sito con una sola riga — la mappa di un ca
         <td>
           imposta l’anno, il capitolo (<code>ref</code>), il luogo, i livelli o la visuale; con
           <code>tour</code> (e <code>stop</code>) parte l’itinerario e gli altri campi vengono
-          ignorati; la lingua cambia solo con <code>hg:set-locale</code>
+          ignorati; la lingua cambia solo con <code>hg:set-locale</code>.
+          <code>place: null</code> cancella la selezione e termina un itinerario in corso. Verso il
+          luogo già selezionato si vola di nuovo, a meno che la vista non contenga anche
+          <code>camera</code>. Un ID di luogo che la mappa non ha viene ignorato
         </td>
       </tr>
       <tr>
@@ -231,6 +273,34 @@ description: Metti il globo sul tuo sito con una sola riga — la mappa di un ca
     </tbody>
   </table>
 </div>
+
+<ul>
+  <li>
+    Aspetta <code>hg:ready</code> prima di inviare qualsiasi cosa: un messaggio inviato mentre la
+    mappa si sta ancora caricando va perso.
+  </li>
+  <li>
+    Considera <code>hg:view-changed</code> come lo stato attuale, non come qualcosa che ha fatto il
+    lettore: segue il tuo <code>hg:set-view</code> e ogni movimento della visuale. Una pagina che
+    rimanda l’intera vista così come le è stata comunicata, visuale compresa, non avvia né un ciclo
+    né un volo. Non rispondere a <code>hg:view-changed</code> con <code>hg:set-view</code> e un solo
+    <code>place</code>: senza <code>camera</code>, la mappa torna in volo su quel luogo, lontano da
+    dove il lettore l’aveva spostata.
+  </li>
+</ul>
+
+<h3 id="place-ids">ID dei luoghi</h3>
+<p>
+  Un luogo della Bibbia ha l’ID di OpenBible: <code>a</code> seguita da sei cifre esadecimali, come
+  <code>af2161c</code> (Cafarnao). I luoghi del mondo antico che la Bibbia non nomina (Gamla,
+  Sefforis, Pompei) hanno invece il loro numero Pleiades (quello di Gamla è <code>678146</code>)
+  oppure, in mancanza, la loro voce Wikidata (quella di Costantinopoli è <code>Q16869</code>).
+  Entrambi i tipi possono comparire in <code>view.place</code> e <code>hg:place-clicked</code>, ed
+  entrambi sono accettati da <code>hg:set-view</code>; se i tuoi dati hanno solo luoghi di
+  OpenBible, verifica la forma dell’ID prima di cercare il luogo. Dei {{openbible}} luoghi di
+  OpenBible, {{absent}} non sono sulla mappa (non hanno un punto che si possa pubblicare); i loro ID
+  vengono ignorati.
+</p>
 
 <h2>Esempio: la mappa segue il tuo lettore</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
@@ -245,6 +315,57 @@ window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
+
+<h2 id="map-only">Esempio: la mappa accanto al tuo pannello del luogo</h2>
+<pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+let ready = false;
+
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  const m = e.data;
+  if (m?.type === "hg:ready") ready = true;
+  // La vista così com’è ora: un luogo selezionato, o nessuno. Arriva spesso: showPlace non deve
+  // fare nulla se quel luogo è già mostrato.
+  if (m?.type === "hg:ready" || m?.type === "hg:view-changed") {
+    if (m.view.place) showPlace(m.view.place);
+    else hidePlace();
+  }
+  // Ogni clic su un luogo, anche su quello già selezionato: riapri il tuo pannello del luogo.
+  if (m?.type === "hg:place-clicked") showPlace(m.place);
+});
+
+// La tua ricerca ha scelto un luogo: selezionalo e vola lì (di nuovo, se è già
+// selezionato).
+function pickPlace(id) {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+}
+
+// Il tuo pannello del luogo è stato chiuso: cancella la selezione sulla mappa.
+function closeBox() {
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+}</code></pre>
+<ul>
+  <li>
+    Il luogo selezionato è segnato da un anello che cresce e svanisce, così l’occhio lo trova senza
+    che nulla copra la mappa; per un lettore che ha chiesto meno movimento l’anello resta fermo.
+  </li>
+  <li>
+    Un clic sulla mappa lontano da ogni luogo cancella la selezione del luogo; un itinerario in
+    corso prosegue. Un doppio clic (che ingrandisce) e un clic che ferma la mappa in movimento non
+    cancellano nulla. <code>place: null</code> dalla tua pagina deseleziona il luogo e termina
+    l’itinerario.
+  </li>
+  <li>
+    Un itinerario scorre sulla mappa (il suo percorso, le sue tappe e l’anno) senza la sua scheda:
+    la tua pagina lo muove con <code>hg:set-view</code> e <code>{ tour, stop }</code>.
+    <code>measure</code> traccia la sua linea, come in ogni riquadro.
+  </li>
+  <li>
+    <code>hg:verse-clicked</code> non viene inviato: i versetti sono nella scheda del luogo, che
+    questa modalità omette.
+  </li>
+</ul>
 
 <h2 id="places">Luoghi in qualsiasi testo</h2>
 <p>
@@ -262,8 +383,7 @@ window.addEventListener("message", (e) =&gt; {
     </p>
   </div>
   <figcaption>
-    Un esempio dal vivo, in inglese: questi nomi sono stati collegati dallo script di questa pagina
-    (lo script legge testi in inglese e in russo).
+    Un esempio dal vivo, in inglese: questi nomi sono stati collegati dallo script di questa pagina.
   </figcaption>
 </figure>
 <pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
@@ -288,9 +408,7 @@ window.addEventListener("message", (e) =&gt; {
       <tr>
         <td><code>data-locale</code></td>
         <td>
-          la lingua del testo, una delle lingue del sito: <code>cs</code>, <code>de</code>,
-          <code>en</code>, <code>es</code>, <code>fr</code>, <code>it</code>, <code>nl</code>,
-          <code>pl</code>, <code>pt</code>, <code>ru</code>, <code>uk</code>; per impostazione
+          la lingua del testo, una delle lingue del sito: {{locale_codes}}; per impostazione
           predefinita il <code>lang</code> della pagina; l’inglese per qualsiasi altra
         </td>
       </tr>

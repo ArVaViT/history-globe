@@ -285,7 +285,8 @@
   "embed": {
     "places_one": "{{count}} sted",
     "places_other": "{{count}} steder",
-    "label": "Kapittelet og veien til hele globusen"
+    "label": "Kapittelet og veien til hele globusen",
+    "link_label": "Lenke til hele globusen"
   },
   "lesson": {
     "add": "Legg til i en leksjon",
