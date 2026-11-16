@@ -83,8 +83,11 @@ export function useGlobe(
 let personCard = false;
 /** A compact frame on another site (App.tsx): no column, the chip above, the year below. */
 let compactFrame = false;
-export function setCompactFrame(on: boolean): void {
+/** A map-only frame (`ui=map`): no card and no chapter bar, whatever is selected. */
+let mapOnlyFrame = false;
+export function setCompactFrame(on: boolean, mapOnly = false): void {
   compactFrame = on;
+  mapOnlyFrame = on && mapOnly;
 }
 /** A panel open in the left column (App.tsx): the overview, a tool or the search. */
 let leftPanel = false;
@@ -143,6 +146,7 @@ function createGlobe(
         cardOpen(),
         chipShown(),
         leftPanel,
+        mapOnlyFrame,
       ),
   });
   const engine = createEngine({

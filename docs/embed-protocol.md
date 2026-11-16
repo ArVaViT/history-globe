@@ -8,7 +8,11 @@ the year, folded, which opens the slider (2026-10-02)); `year`, `place`, `tour`,
 tour, stop, ref, camera, layers), `hg:verse-clicked` (`osis`, when a verse is opened in the place
 card), `hg:error` (`code`: data or map, `message`), `hg:set-view` (the same fields) and `hg:set-locale`. Outgoing messages
 carry only the view (or the verse) and go to any parent; incoming ones are taken only from the parent
-frame. **Not yet:** `theme`, an origin allowlist (needed once a host sends anything sensitive). Code:
+frame. **Implemented (2026-11-16):** `ui=map` (embed only), the map alone for a host with
+its own search and place box: no place card, no chapter bar and list at the top, the year
+folded to its pill at any frame size, the "History Globe ↗" link kept (credit is required); a
+place clicked on the map or set by `hg:set-view` is still selected and goes out in
+`hg:view-changed` as `place`, and the map's padding gives the card's room back. **Not yet:** `theme`, an origin allowlist (needed once a host sends anything sensitive). Code:
 `apps/web/src/embed.ts`.
 
 The contract between the globe (`/embed/v1`) and a host page such as Equip,
@@ -33,6 +37,7 @@ https://<globe-host>/embed/v1?year=30&place=af2161c&locale=ru&theme=dark
 | `measure` | two place ids, comma-separated    | the distance tool open between them (from, to)         |
 | `locale`  | `en` \| `ru` (`uk`, `de` later)   | UI and names                                           |
 | `theme`   | `light` \| `dark`                 | colour scheme                                          |
+| `ui`      | `map`                             | map only: no card, no chapter bar, the year folded     |
 
 ## Messages
 

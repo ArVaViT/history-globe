@@ -114,4 +114,29 @@ describe("the embed protocol, as a host's untrusted messages reach it", () => {
       ["startTour", "paul-1", 2],
     ]);
   });
+
+  it("tells the host the place picked on the map, for a map-only host's own box", async () => {
+    const { e } = engine();
+    // The store as the engine leaves it when a place is clicked or set by the host.
+    const state: Record<string, unknown> = { ...e.store.get(), selectedPlace: null };
+    let changed: () => void = () => undefined;
+    const store = {
+      get: () => state,
+      subscribe: (f: () => void) => {
+        changed = f;
+        return () => undefined;
+      },
+    };
+    attachEmbed(undefined, { ...e, store } as unknown as Engine, data);
+    state.selectedPlace = "a15257a";
+    changed();
+    await new Promise((r) => setTimeout(r, 5));
+    const [message, target] = f.parent.postMessage.mock.lastCall as [
+      { type: string; v: number; view: { place?: string } },
+      string,
+    ];
+    expect(message).toMatchObject({ type: "hg:view-changed", v: 1 });
+    expect(message.view.place).toBe("a15257a");
+    expect(target).toBe("*");
+  });
 });

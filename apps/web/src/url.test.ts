@@ -186,6 +186,28 @@ describe("layers and tour in the link", () => {
     expect(readUrl("?year=30", "/").embed).toBeUndefined();
     expect(readUrl("?ref=Acts.16", "/embed/v1").embed).toBe(true);
   });
+
+  it("reads the map-only look (ui=map) only inside an embed", () => {
+    expect(readUrl("?embed=1&ui=map").mapOnly).toBe(true);
+    expect(readUrl("?place=af2161c&ui=map", "/embed/v1").mapOnly).toBe(true);
+    // The globe's own page keeps its whole interface.
+    expect(readUrl("?ui=map", "/").mapOnly).toBeUndefined();
+    // Any other value is the full embed.
+    expect(readUrl("?embed=1&ui=full").mapOnly).toBeUndefined();
+    expect(readUrl("?embed=1&ui=MAP").mapOnly).toBeUndefined();
+    expect(readUrl("?embed=1").mapOnly).toBeUndefined();
+  });
+
+  it("keeps ui=map in the link as the view moves (a reload stays map-only)", () => {
+    const view = {
+      year: 30,
+      camera: { center: [35.2, 31.8] as [number, number], zoom: 7, pitch: 0, bearing: 0 },
+      locale: "en" as const,
+      place: "af2161c",
+    };
+    const next = viewSearch(view, "?embed=1&ui=map&place=a15257a");
+    expect(readUrl(`?${next}`)).toMatchObject({ embed: true, mapOnly: true, place: "af2161c" });
+  });
 });
 
 describe("preferredLocale", () => {

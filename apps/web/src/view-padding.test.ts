@@ -92,4 +92,32 @@ describe("viewPadding", () => {
       right: 492,
     });
   });
+
+  it("gives a map-only frame the card's room and the chip's, whatever is selected", () => {
+    // A selected place in a large frame: no card on the right, only the link above.
+    expect(viewPadding(1440, 900, true, 40, true, false, true, true)).toEqual({
+      top: 44,
+      bottom: 64,
+      left: 0,
+      right: 0,
+    });
+    // The same frame with the card: its edge kept on the right, the chip's height above.
+    expect(viewPadding(1440, 900, true, 40, true, false, true, false)).toEqual({
+      top: 56,
+      bottom: 64,
+      left: 0,
+      right: 492,
+    });
+    // A phone-wide frame: the place in the middle of the map, not above a card.
+    expect(viewPadding(390, 844, true, 40, true, false, true, true)).toEqual({
+      top: 44,
+      bottom: 64,
+      left: 0,
+      right: 0,
+    });
+    // Outside a frame the flag means nothing: the globe's own card keeps its room.
+    expect(viewPadding(1440, 900, false, 124, true, false, true, true)).toEqual(
+      viewPadding(1440, 900),
+    );
+  });
 });

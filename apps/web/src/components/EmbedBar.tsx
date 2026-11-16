@@ -168,7 +168,10 @@ export function EmbedBar({
         // The view of the moment the link is used: the URL follows the map 300 ms late.
         onClick={(e) => {
           e.currentTarget.href = `${import.meta.env.BASE_URL}?${new URLSearchParams(
-            [...new URLSearchParams(window.location.search)].filter(([k]) => k !== "embed"),
+            // The globe opens whole: neither the frame's mark nor its map-only look.
+            [...new URLSearchParams(window.location.search)].filter(
+              ([k]) => k !== "embed" && k !== "ui",
+            ),
           ).toString()}`;
         }}
         target="_blank"

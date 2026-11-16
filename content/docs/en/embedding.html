@@ -141,6 +141,15 @@ description: Put the globe on your own site with one line — the map of a chapt
         <td>longitude, latitude, zoom, pitch, bearing</td>
       </tr>
       <tr>
+        <td><code>ui</code></td>
+        <td><code>map</code></td>
+        <td>
+          the map alone, for a page with its own search and place box: no place card, no chapter
+          bar, the year folded; the link to the globe stays. A place selected on the map still
+          reaches your page in <code>hg:view-changed</code>
+        </td>
+      </tr>
+      <tr>
         <td><code>hide</code></td>
         <td><code>relief,ancient</code></td>
         <td>
@@ -243,6 +252,22 @@ function showChapter(osis) {
 window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
+});</code></pre>
+
+<h2>Example: the map beside your own place box</h2>
+<pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
+<pre><code>const globe = document.querySelector("iframe").contentWindow;
+
+// Your search picked a place: show it on the map.
+globe.postMessage({ type: "hg:set-view", v: 1, view: { place: "af2161c" } }, "*");
+
+// A place picked on the map (or the map ready): show it in your own box.
+window.addEventListener("message", (e) =&gt; {
+  if (e.source !== globe) return;
+  const t = e.data?.type;
+  if ((t === "hg:ready" || t === "hg:view-changed") &amp;&amp; e.data.view.place) {
+    showPlace(e.data.view.place);
+  }
 });</code></pre>
 
 <h2 id="places">Places in any text</h2>
