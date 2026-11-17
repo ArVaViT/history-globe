@@ -69,6 +69,7 @@ import { firstPaint } from "./first-paint";
 import { offerAgentTools } from "./webmcp";
 import {
   useHeightVar,
+  useScrollsMark,
   useKeys,
   useMapFeed,
   useMedia,
@@ -159,6 +160,7 @@ export function App() {
   const [people, setPeople] = useState<People | null>(null);
   const narrow = useNarrow();
   const timelineBox = useHeightVar("--hg-timeline-h");
+  const columnBox = useScrollsMark();
   // The map's controls, moved from its corners into the player.
   const [scaleSlot, setScaleSlot] = useState<HTMLDivElement | null>(null);
   // The scale and the sources' (i) stand on the map, just above the player.
@@ -678,9 +680,13 @@ export function App() {
               />
             </Suspense>
           ) : (
+            // The column is as tall as the map beside the timeline and mostly empty: it lets
+            // the pointer through to the map (a place the host selects in a large frame lands
+            // right under it), and only its panels take it, unless it scrolls (its scrollbar).
             <aside
+              ref={columnBox}
               aria-label={t("panels.label")}
-              className={`absolute top-4 bottom-[calc(var(--hg-timeline-h,124px)+24px)] left-4 -m-4 flex flex-col gap-3 overflow-y-auto p-4 pr-5 [scrollbar-width:thin] *:shrink-0 max-md:inset-x-3 max-md:top-3 max-md:bottom-auto max-md:z-10 max-md:max-h-[calc(100dvh-var(--hg-timeline-h,124px)-32px)] max-md:pr-4 ${searchOpen ? "max-md:overflow-visible" : ""}`}
+              className={`pointer-events-none absolute top-4 bottom-[calc(var(--hg-timeline-h,124px)+24px)] left-4 -m-4 flex flex-col gap-3 overflow-y-auto p-4 pr-5 [scrollbar-width:thin] *:pointer-events-auto *:shrink-0 data-scrolls:pointer-events-auto max-md:inset-x-3 max-md:top-3 max-md:bottom-auto max-md:z-10 max-md:max-h-[calc(100dvh-var(--hg-timeline-h,124px)-32px)] max-md:pr-4 ${searchOpen ? "max-md:overflow-visible" : ""}`}
             >
               {/* On a panel, not on the map: state labels run under the corner. The magnifier,
                   the title, the overview (it opens just below) and the settings; searching,

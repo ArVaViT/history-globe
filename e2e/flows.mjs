@@ -742,6 +742,118 @@ await step(
   },
 );
 
+// A large frame without ui=map has the site's column on the left: as tall as the map and
+// empty but for its panels. The place the host selects lands under it.
+// A first visit, in a context of its own: what the steps above remembered (the overview
+// open, say) would make room for it and take the place out from under the column.
+const host = await newPage(browser);
+host.on("pageerror", (e) => errors.push(`pageerror: ${e.message}`));
+let bigFrame = null;
+await step(
+  "a large frame without ui=map: a click on the selected place under the column reaches it",
+  async () => {
+    await host.goto(BASE + "docs/");
+    await host.evaluate((src) => {
+      document.body.innerHTML = "";
+      document.body.style.margin = "0";
+      window.__msgs = [];
+      window.addEventListener("message", (e) => window.__msgs.push(e.data));
+      const f = document.createElement("iframe");
+      f.src = src;
+      f.style.cssText = "width:1200px;height:800px;border:0;display:block";
+      document.body.append(f);
+    }, BASE + "embed/v1?place=af2161c&locale=ru");
+    await host.waitForFunction(() => window.__msgs.some((m) => m?.type === "hg:ready"), null, {
+      timeout: 45000,
+    });
+    bigFrame = host.frames().find((f) => f !== host.mainFrame());
+    const frame = bigFrame;
+    expect((await frame.locator("aside").count()) === 1, "no column in a large frame");
+    // Not map-only: the place opens our card, and the map stands still on it.
+    await frame.getByRole("heading", { name: "Капернаум" }).waitFor({ timeout: 10000 });
+    await frame.waitForFunction(() => window.__hgMap.loaded() && !window.__hgMap.isMoving(), null, {
+      timeout: 20000,
+    });
+    const at = await frame.evaluate(() => {
+      const m = window.__hgMap;
+      const f = m.queryRenderedFeatures().find((x) => x.properties?.id === "af2161c");
+      const p = f && m.project(f.geometry.coordinates);
+      if (!p) return null;
+      const col = document.querySelector("aside").getBoundingClientRect();
+      const under = p.x >= col.left && p.x <= col.right && p.y >= col.top && p.y <= col.bottom;
+      return { x: p.x, y: p.y, under, top: document.elementFromPoint(p.x, p.y)?.tagName };
+    });
+    expect(at, "Capernaum is not drawn");
+    // The case the step is for: the place within the column's box, the map on top there.
+    expect(
+      at.under,
+      `the place at ${Math.round(at.x)},${Math.round(at.y)} is not under the column`,
+    );
+    expect(at.top === "CANVAS", `${at.top} over the place, not the map`);
+    const box = await host.locator("iframe").boundingBox();
+    await host.mouse.click(box.x + at.x, box.y + at.y);
+    await host.waitForFunction(
+      () => window.__msgs.some((m) => m?.type === "hg:place-clicked" && m.place === "af2161c"),
+      null,
+      { timeout: 5000 },
+    );
+  },
+);
+await step("a large frame without ui=map: the column's panels still take clicks", async () => {
+  expect(bigFrame, "no frame from the step before");
+  const frame = bigFrame;
+  const book = frame.getByRole("button", { name: /^Обзор/ });
+  if ((await book.getAttribute("aria-expanded")) !== "true") await book.click();
+  await frame.waitForTimeout(400);
+  expect((await book.getAttribute("aria-expanded")) === "true", "the overview did not open");
+  const tab = frame.getByRole("tab", { name: "События" });
+  await tab.click();
+  await frame.waitForTimeout(300);
+  expect((await tab.getAttribute("aria-selected")) === "true", "the events tab is not selected");
+  await frame.getByRole("tab", { name: "Экскурсии" }).click();
+  await frame.getByText("Земная жизнь Иисуса").click({ timeout: 3000 });
+  await host.waitForFunction(
+    () => window.__msgs.some((m) => m?.type === "hg:view-changed" && m.view.tour),
+    null,
+    { timeout: 5000 },
+  );
+});
+await host.context().close();
+await step(
+  "the column lets the map have its empty part, and takes it back when it scrolls",
+  async () => {
+    // A short window: the overview makes the column taller than it is.
+    const low = await newPage(browser, { width: 1440, height: 620 });
+    try {
+      await low.goto(BASE + "?locale=ru&ref=Acts.16");
+      await mapReady(low);
+      const column = low.locator("aside");
+      const top = () =>
+        low.evaluate(() => {
+          const r = document.querySelector("aside").getBoundingClientRect();
+          // The column's right edge, where its scrollbar runs, below the header.
+          return document.elementFromPoint(r.right - 4, r.top + 120)?.tagName;
+        });
+      const book = low.getByRole("button", { name: /^Обзор/ });
+      if ((await book.getAttribute("aria-expanded")) === "true") await book.click();
+      await low.waitForTimeout(400);
+      expect((await column.getAttribute("data-scrolls")) === null, "an empty column scrolls");
+      expect((await top()) === "CANVAS", `${await top()} over the map beside the column`);
+      await book.click();
+      await low.getByRole("tab", { name: "Экскурсии" }).click();
+      await low.waitForFunction(() => document.querySelector("aside").hasAttribute("data-scrolls"));
+      expect((await top()) === "ASIDE", `${await top()} where the column's scrollbar runs`);
+      await low.mouse.move(200, 38);
+      await low.mouse.wheel(0, 300);
+      await low.waitForTimeout(400);
+      const scrolled = await column.evaluate((el) => el.scrollTop);
+      expect(scrolled > 0, "the wheel over a panel does not scroll the column");
+    } finally {
+      await low.context().close();
+    }
+  },
+);
+
 console.log(results.join("\n"));
 console.log(errors.length ? [...new Set(errors)].join("\n") : "no page errors");
 await browser.close();
