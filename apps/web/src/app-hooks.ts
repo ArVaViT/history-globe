@@ -329,6 +329,35 @@ export function useHeightVar(name: string): (el: HTMLElement | null) => (() => v
 }
 
 /**
+ * Marks a scrolling box with `data-scrolls` while its content is taller than it, following
+ * the box and its children as they resize or come and go. The left column lets the pointer
+ * through to the map while it has room to spare, and takes it again (its scrollbar too)
+ * when it scrolls. Returns a callback ref.
+ */
+export function useScrollsMark(): (el: HTMLElement | null) => (() => void) | undefined {
+  return useCallback((el: HTMLElement | null) => {
+    if (!el) return undefined;
+    const mark = () => {
+      el.toggleAttribute("data-scrolls", el.scrollHeight > el.clientHeight);
+    };
+    const sizes = new ResizeObserver(mark);
+    const watch = () => {
+      sizes.disconnect();
+      sizes.observe(el);
+      for (const child of el.children) sizes.observe(child);
+      mark();
+    };
+    const children = new MutationObserver(watch);
+    children.observe(el, { childList: true });
+    watch();
+    return () => {
+      sizes.disconnect();
+      children.disconnect();
+    };
+  }, []);
+}
+
+/**
  * The dated events shown (all, or under "the Bible alone" only those it tells) and the
  * marks on the slider: the places' founding, destruction and ruin, the turning points of
  * the history and, under the Bible alone, the battles it tells.
