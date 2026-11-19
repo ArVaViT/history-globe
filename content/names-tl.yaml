@@ -299,7 +299,7 @@ places:
   a99875b: Baalat
   a577c27: Bamoth-baal
   a30f9a0: Beth-haccerem
-  ad44b24: Bethrehob
+  ad44b24: Beth-rehob
   a58252b: Boscat
   ab635e4: Dotan
   a8eae19: En-gannim
@@ -616,7 +616,7 @@ places:
   ab7bf48: Cesarea ni Filipo
   a593a48: Corazin
   ad6b2b7: En-tappua
-  a2fa712: Lumang Pintuang-bayan
+  a2fa712: Pintuang-bayan ng Jesana
   a728f1b: Gederoth
   ab98f8c: Githaim
   a1d1918: Helchat
@@ -1317,12 +1317,14 @@ polities:
   Almohad Caliphate: Kalipatong Almohade
   Almoravid Dynasty: Dinastiyang Almoravida
   Alodia: Alodia
+  Ammon: Ammon
   Angevin Empire: Imperyong Angevino
   Angevins: Mga Angevino
   Ankhwennefer: Sakop ni Ankhwennefer
   Antigonid Dynasty: Dinastiyang Antigonida
   Antigonid Macedonia: Macedonia ng mga Antigonida
   Aquitaine: Aquitania
+  Aram-Damascus: Aram-Damasco
   Armenian Kingdom of Cilicia: Kahariang Armenio ng Cilicia
   Assyria: Asiria
   Assyrian Egypt: Egipto sa ilalim ng Asiria
@@ -1347,6 +1349,7 @@ polities:
   Cao Wei: Cao Wei
   Capetian House of Anjou: Kapetong Sambahayan ng Anjou
   Carantania: Carantania
+  Carchemish: Carchemis
   Carolingian Empire: Imperyong Carolingio
   Carthage: Cartago
   Caucasian Albania: Albania ng Caucaso
@@ -1432,6 +1435,7 @@ polities:
   Eastern Kara-Khanids: Silangang Kara-Khanida
   Eastern Kushans: Silangang Kushan
   Eastern Roman Empire: Imperyong Romano sa Silangan
+  Edom: Edom
   Elam: Elam
   Emirate of Crete: Emirato ng Creta
   Emirate of Córdoba: Emirato ng Cordoba
@@ -1481,6 +1485,7 @@ polities:
   Hadhramaut: Hadramaut
   Hafsid Dynasty: Dinastiyang Hafsida
   Halych-Volhynia occupation: Pananakop ng Halych-Volinia
+  Hamath: Hamath
   Hamdanid Emirates: Mga Emiratong Hamdanida
   Hammadid Dynasty: Dinastiyang Hammadida
   Han Dynasty: Dinastiyang Han
@@ -1615,6 +1620,7 @@ polities:
   Minaeans: Mga Mineo
   Minoan civilization: Kabihasnang Minoano
   Mitanni: Mitanni
+  Moab: Moab
   Molossians: Mga Molosio
   Mongol Empire: Imperyong Monggol
   Mycenaean Greece: Kabihasnang Micenico
@@ -1794,6 +1800,11 @@ polities:
   Third Dynasty of Ur: Ikatlong Dinastiya ng Ur
   Principality of Armenia: Prinsipalidad ng Armenia
 modern:
+  md88865: "Argob"
+  m0df275: "Boses"
+  m9b1996: "Jeruel"
+  me0645b: "Ören"
+  m23ce84: "Massa"
   m66c5b8: Jerusalem
   md561de: Babilonia
   me7edbd: Ilog Jordan
@@ -1986,7 +1997,7 @@ modern:
   m7d00ce: Umm ar Rasas
   m112962: Khirbet el Waten
   m14a95e: Bir es Seba
-  m1ec77e: At Tell
+  m1ec77e: Et-Tell
   m518f8e: Banias
   mdc9182: Ein Weibeh
   m857981: Ras et Tahuneh
@@ -6708,3 +6719,21 @@ ancient:
   Q173474: Tarnovo
   Q2538648: Wad ban Naqa
   Q1462261: Wasit
+# The today line where OpenBible describes the place in free English text, translated whole
+# (as content/modern-names.yaml does for Russian), with this file's names of the places.
+labels:
+  "in the region east of Gibeon": "Sa silangan ng Gabaon"
+  "in the region between Mizpah and Shen": "Sa pagitan ng Mizpa at Sen"
+  "in the region between Gerar and Beersheba": "Sa pagitan ng Gerar at Beer-seba"
+  "in the region south of Hebron": "Sa timog ng Hebron"
+  "in the region between Lachish and Gath": "Sa pagitan ng Lachis at Gath"
+  "in the region between Eshtaol and Zorah": "Sa pagitan ng Estaol at Sora"
+  "in the region between Damascus and Hamath": "Sa pagitan ng Damasco at Hamath"
+  "in the region between Baalbek and Kadesh": "Sa pagitan ng Baalbek at Cades"
+  "in the region between Aiath and Michmash": "Sa pagitan ng Ajad at Michmas"
+  "in the region between Ibleam and Megiddo": "Sa pagitan ng Ibleam at Megiddo"
+  "in the region between Punon and Zered": "Sa pagitan ng Phunon at ng batis ng Zered"
+  "in the region between Maghfar and Lake Timsah": "Sa pagitan ng Maghfar at ng Lawa ng Timsah"
+  "in the region north of the Dead Sea": "Sa hilaga ng Dagat na Patay"
+  "in the region south of the Lisan": "Sa timog ng tangway ng Lisan"
+  "in the region between Kedesh-naphtali and Hazor": "Sa pagitan ng Cedes-nephtali at Hasor"

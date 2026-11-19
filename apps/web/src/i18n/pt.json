@@ -280,7 +280,8 @@
     "places": "Onde viveu e atuou",
     "credit": "Família e lugares segundo os versículos da Bíblia (STEP Bible, CC BY 4.0)",
     "wives": "Esposas",
-    "husbands": "Maridos"
+    "husbands": "Maridos",
+    "list_failed": "A lista de pessoas não carregou. Tente abrir a aba novamente."
   },
   "embed": {
     "places_one": "{{count}} lugar",
@@ -313,6 +314,7 @@
     "zoom_out": "Afastar",
     "north": "Reorientar para o norte",
     "sources": "Fontes do mapa",
+    "sources_page": "Fontes",
     "title": "Mapa"
   },
   "sheet": {

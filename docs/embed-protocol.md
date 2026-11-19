@@ -1,27 +1,18 @@
 # Embed protocol v1
 
-**Implemented (2026-10-01):** `/embed/v1?…` (a redirect to `/?embed=1&…`; the app with
-the map and the card, no column; at the top the chapter of `ref` with the list of its places
-in reading order, and a "History Globe ↗" link to the same view in a new tab; at the bottom
-the year, folded, which opens the slider (2026-10-02)); the parameters below; messages
-`hg:ready`, `hg:view-changed`, `hg:verse-clicked`, `hg:error`, `hg:set-view` and
-`hg:set-locale`. **Implemented (2026-11-16):** `ui=map` (embed only), the map alone for a
-host with its own search and place box: no place card, no chapter bar and list at the top,
-the year folded to its pill at any frame size, the "History Globe ↗" link kept (credit is
-required); the selected place wears the pulsing ring (still under
-`prefers-reduced-motion`; none with the places layer off), and a click on the map away from
-any place clears the place selection (not a running tour; not a double-click, a drag's
-release or a press that stopped the camera: `packages/core/src/empty-click.ts`).
-Also (all embeds): `hg:place-clicked`, `place: null` in `hg:set-view`, and the place
-already selected flown to again. That last one changes what an existing message does: before,
-`hg:set-view {place}` for the place already selected did nothing; now, without `camera`, it
-flies back to the place. A host must not answer `hg:view-changed` with `{place}` alone. **Not yet:** `theme`, an origin allowlist (needed once a
-host sends anything sensitive). Code: `apps/web/src/embed.ts`,
-`apps/web/src/embed-protocol.ts`.
+The contract between the globe (`/embed/v1`) and a host page, such as a learning platform or
+an LMS (ADR 0006). v1 is published and changes only by additions; a breaking change is
+`/embed/v2`. Code: `apps/web/src/embed.ts`, `apps/web/src/embed-protocol.ts`.
 
-The contract between the globe (`/embed/v1`) and a host page such as Equip,
-the owner's separate learning platform (ADR 0006). v1 is published; it changes only by
-additions.
+`/embed/v1?…` redirects to `/?embed=1&…`: the app with the map and the place card, without
+the left column. At the top, the chapter of `ref` with its places in reading order and a
+"History Globe ↗" link to the same view in a new tab; at the bottom, the year, folded, which
+opens the slider. With `ui=map` the map is alone, for a host with its own search and place
+box: no place card, no chapter bar, the year folded to its pill at any frame size, the link
+kept (credit is required). The selected place wears a pulsing ring (a still one for a reader
+who asks for less motion; none with the places layer off).
+
+Not yet: `theme`, and an origin allowlist (needed once a host sends anything sensitive).
 
 ## URL
 
@@ -29,19 +20,21 @@ additions.
 https://<globe-host>/embed/v1?year=30&place=af2161c&locale=ru
 ```
 
-| Parameter | Type                             | Meaning                                                                  |
-| --------- | -------------------------------- | ------------------------------------------------------------------------ |
-| `year`    | integer, astronomical (ADR 0003) | initial year                                                             |
-| `place`   | place id (below)                 | place to select and fly to (Capernaum: `af2161c`)                        |
-| `camera`  | `lon,lat,zoom,pitch,bearing`     | the map opens here; with `place`, the place is selected without a flight |
-| `hide`    | comma list                       | listed layers off, the rest on (`relief,battles`)                        |
-| `layers`  | comma list (older links)         | listed layers on, the rest off; a layer added later on                   |
-| `ref`     | OSIS chapter, range or book      | the chapter's places (`Acts.16`)                                         |
-| `tour`    | tour id                          | start a guided tour                                                      |
-| `stop`    | 2, 3, … (with `tour`)            | open the tour at that stop                                               |
-| `measure` | two place ids, comma-separated   | the distance line between them (the figure is in the tools)              |
-| `locale`  | one of the 21 site languages     | UI and names (`LOCALES`, `packages/model/src/time.ts`)                   |
-| `ui`      | `map`                            | map only: no card, no chapter bar, the year folded, the ring             |
+| Parameter | Type                                                              | Meaning                                                                                     |
+| --------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `year`    | integer, astronomical (ADR 0003)                                  | initial year                                                                                |
+| `place`   | place id (below)                                                  | place to select and fly to (Capernaum: `af2161c`)                                           |
+| `camera`  | `lon,lat,zoom,pitch,bearing`                                      | the map opens here; with `place`, the place is selected without a flight                    |
+| `hide`    | comma list                                                        | listed layers off, the rest on (`relief,battles`)                                           |
+| `layers`  | comma list (older links)                                          | listed layers on, the rest off; a layer added later on                                      |
+| `ref`     | OSIS chapter, range or book                                       | the chapter's places (`Acts.16`)                                                            |
+| `tour`    | tour id                                                           | start a guided tour                                                                         |
+| `stop`    | 2, 3, … (with `tour`)                                             | open the tour at that stop                                                                  |
+| `measure` | two place ids, comma-separated                                    | the distance line between them (the figure is in the tools)                                 |
+| `lesson`  | place ids with years, `~`- and `.`-separated (with `tour=lesson`) | a lesson built in the tools: `a15257a~30.a112427~30`, each place at its year, run as a tour |
+| `title`   | text, up to 80 characters (with `lesson`)                         | the lesson's name, at the head of its tour and its printed sheet                            |
+| `locale`  | one of the 21 site languages                                      | UI and names (`LOCALES`, `packages/model/src/locales.ts`)                                   |
+| `ui`      | `map`                                                             | map only: no card, no chapter bar, the year folded, the ring                                |
 
 Layers: `borders`, `places`, `relief`, `routes`, `roads`, `battles` (`ancient` in an older
 link is passed over: the ancient world's places are places, ADR 0018).
@@ -50,9 +43,10 @@ link is passed over: the ancient world's places are places, ADR 0018).
 of the ancient world the Bible does not name (ADR 0018): its Pleiades number (`678146`,
 Gamla; `678387`, Sepphoris) or, without one, its Wikidata item (Constantinople is `Q16869`). Both go out in
 `view.place` and `hg:place-clicked`, and both are taken by `hg:set-view`; a host keyed on
-OpenBible tests the form. 54 of OpenBible's 1342 records are not on the map (21 left out for
-want of a point that may be published, 33 with no point; `manifest.json` stats); their ids
-are ignored.
+OpenBible tests the form. Some of OpenBible's records are not on the map, left out for want of
+a point that may be published or with no point at all (`manifest.json`: `excluded_places`
+and `stats.without_point`; the embedding page gives the counts of the current data); their
+ids are ignored.
 
 ## Messages
 
@@ -94,3 +88,15 @@ host's `hg:set-view`; `measure` draws its line without the figure; `hg:verse-cli
 sent (no card); a click on the map away from any place clears the place selection and leaves a
 running tour going (only in this mode: elsewhere the card has its own close button); a
 double-click, a drag's release and a press that stopped the camera clear nothing.
+
+## Changelog
+
+- 2026-10-01: v1 published, with the parameters above and the messages `hg:ready`,
+  `hg:view-changed`, `hg:verse-clicked`, `hg:error`, `hg:set-view` and `hg:set-locale`.
+- 2026-10-02: the folded year at the bottom of the frame.
+- 2026-11-16: `ui=map`; `hg:place-clicked`; `place: null` in `hg:set-view`. A place already
+  selected is now flown to again: before, `hg:set-view {place}` for the selected place did
+  nothing; now, without `camera`, it flies back to the place, so a host must not answer
+  `hg:view-changed` with `{place}` alone.
+- 2026-11-19: `lesson` and `title` written into the table above; the app has taken them since
+  the lessons came (`apps/web/src/lesson.ts`), and the embedding page has listed them.

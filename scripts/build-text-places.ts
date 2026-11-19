@@ -22,22 +22,22 @@
  * them alone next to another capitalised word.
  *
  * Names are declined by the ending of a one-word name: Russian (Иерусалим → Иерусалима,
- * Иерусалиме…; russian-forms.ts), Ukrainian, Polish, Czech and Serbian, the German and
- * Nordic genitive, the Hungarian and Finnish cases and the Romanian article (inflected-forms.ts);
- * names of several words are matched as written (in Hungarian and Finnish with the last word's
- * case). Each language is checked against its own Bible, the one its verse cards quote
+ * Иерусалиме…; packages/model/src/russian-forms.ts), Ukrainian, Polish, Czech and Serbian,
+ * the German and Nordic genitive, the Hungarian and Finnish cases and the Romanian article
+ * (inflected-forms.ts); names of several words are matched as written (in Hungarian and
+ * Finnish with the last word's case). Each language is checked against its own Bible, the one its verse cards quote
  * (bible-text.ts).
  *
  * Usage: node scripts/build-text-places.ts  (after build-content; build-verses supplies
  * the text for the lower-case check, and without it only the other checks apply)
  */
-import { type Locale, LOCALES, type SiteLocale } from "../packages/model/src/time.ts";
+import { type Locale, LOCALES, type SiteLocale } from "../packages/model/src/locales.ts";
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { siteCertainty } from "../packages/model/src/sites.ts";
 import { readEdition, repair, SOURCES } from "./bible-text.ts";
 import { inflectedForms } from "./inflected-forms.ts";
-import { plain, russianForms, russianHeads } from "./russian-forms.ts";
+import { russianForms, russianHeads, withoutYo } from "../packages/model/src/russian-forms.ts";
 import { placeSlugs } from "../packages/model/src/slugs.ts";
 
 const root = join(import.meta.dirname, "..");
@@ -84,23 +84,16 @@ const STOP: Record<Base, readonly string[]> = {
  * text capitalises them), «Тире» a dash, «Колосс» a giant, «Ливны» a Russian town.
  */
 const FORM_STOP: Partial<Record<Locale, readonly string[]>> = {
-  en: [],
   ru: ["Иудеи", "Халдеи", "Тире", "Колосс", "Ливны"],
   uk: ["Раббі", "Філіпп", "Колоси", "Колосами"],
   cs: ["Lodě", "Libně", "Kolos"],
   de: ["Nils", "Zins"],
   pl: ["Mary", "Suzy", "Suzie", "Kolos", "Kusza", "Jordana", "Nila", "Szarona", "Tyra"],
   sr: ["Гат"],
-  // The languages still waiting to join the site, not yet read by eye.
-  hu: [],
-  fi: [],
-  vi: [],
-  ro: [],
-  bg: [],
 };
 /**
  * The other languages' own names with a modern meaning, read by eye by a reviewer of each
- * language (11.10.2026), as STOP: a common word (pl «Syn», de "Winkel"), another place
+ * language, as STOP: a common word (pl «Syn», de "Winkel"), another place
  * (fr «Sion» stays: Zion; it «Alessandria» goes: Piedmont), a generic gate or hall a town
  * has too (cs «Stará brána», nl "Westpoort"), modern Ethiopia for Cush. A modern country on
  * the same ground (Italia, Griekenland) stays linked, as in English.
@@ -438,12 +431,6 @@ const STOP_IN: Partial<Record<Locale, readonly string[]>> = {
     "Царство северног цара",
     "Царство јужног цара",
   ],
-  // The languages still waiting to join the site, not yet read by eye.
-  hu: [],
-  fi: [],
-  vi: [],
-  ro: [],
-  bg: [],
 };
 /**
  * Names that are also first names (Jordan Peterson, Sharon Stone, «Нил Сорский»): the
@@ -491,12 +478,6 @@ const FIRST_NAMES_IN: Partial<Record<Locale, readonly string[]>> = {
     "Tarso",
   ],
   sr: ["Јордан", "Нил", "Лида", "Мелита", "Хадаса", "Филипи"],
-  // The languages still waiting to join the site, not yet read by eye.
-  hu: [],
-  fi: [],
-  vi: [],
-  ro: [],
-  bg: [],
 };
 
 interface Props {
@@ -611,11 +592,11 @@ for (const l of LANGS) {
       for (const [k, text] of Object.entries(
         JSON.parse(readFileSync(join(dir, f), "utf8")) as Record<string, string>,
       ))
-        cited[l].set(k, plain(text));
+        cited[l].set(k, withoutYo(text));
   const zip = join(root, "pipeline/.cache", SOURCES[l].file);
   const texts = existsSync(zip) ? [...bibleOf(l).values()] : [...cited[l].values()];
   if (!existsSync(zip)) corpus = cited[l].size ? "cited" : "none";
-  whole[l] = texts.map(plain).join("\n");
+  whole[l] = texts.map(withoutYo).join("\n");
   // Whole words only: "Beth-ammon" is one word, not "ammon".
   for (const w of whole[l].match(/\p{L}[\p{L}'-]*/gu) ?? [])
     seen[l].set(w, (seen[l].get(w) ?? 0) + 1);
@@ -645,7 +626,7 @@ const stoppedIds = new Set(
   shown
     .filter(
       ({ properties: p }) =>
-        STOP.en.includes(p.name) || STOP.ru.includes(plain(content.names[p.id]?.ru ?? "")),
+        STOP.en.includes(p.name) || STOP.ru.includes(withoutYo(content.names[p.id]?.ru ?? "")),
     )
     .map((f) => f.properties.id),
 );
@@ -832,8 +813,7 @@ for (const line of coast.features.flatMap((f) => f.geometry.coordinates)) {
  * The card's words. "{{count}} verses" by the language's plural rules, from its dictionary
  * (place.verse_count_*): `plural` by Intl.PluralRules category, and `verses` as the first
  * script read it (one, few, many). The labels the dictionary has (place.today,
- * tours.about_place) come from it; the rest are here, a language's still waiting to join the
- * site among them.
+ * tours.about_place) come from it; the rest are here.
  */
 interface Labels {
   inBible: string;

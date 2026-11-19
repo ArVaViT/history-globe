@@ -9,7 +9,7 @@ description: Hvor hvert sted, hver grense, dato og person på History Globe komm
   hva vi ikke vet.
 </p>
 
-<h2>Bibelens steder</h2>
+<h2 id="places-of-the-bible">Bibelens steder</h2>
 <p>
   De {{places}} stedene og versene deres kommer fra
   <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
@@ -22,6 +22,7 @@ description: Hvor hvert sted, hver grense, dato og person på History Globe komm
   dem har sin egen side; de øvrige {{unnamed}} er oppføringer OpenBible har, men som ikke noe vers i
   de bøkene nevner (Adasa i 1 Makkabeerbok, for eksempel). {{articles}} steder har en artikkel.
   Ytterligere {{excluded}} er utelatt fordi de mangler et punkt som kan publiseres (se nedenfor).
+  Ytterligere {{without_point}} har ikke noe punkt i OpenBible i det hele tatt.
 </p>
 <ul>
   <li>
@@ -44,7 +45,7 @@ description: Hvor hvert sted, hver grense, dato og person på History Globe komm
   </li>
 </ul>
 
-<h2>Når stedene fantes</h2>
+<h2 id="when-places-stood">Når stedene fantes</h2>
 <p>
   En by på kartet tegnes fullt ut bare i årene den fantes. For {{life}} steder i Bibelen er årene
   for grunnleggelse, ødeleggelse og forlatelse registrert for hånd, hver med sine kilder (antikke
@@ -52,22 +53,23 @@ description: Hvor hvert sted, hver grense, dato og person på History Globe komm
   omstridt grunnleggelse eller slutt får ikke noe år for det.
 </p>
 <p>
-  De {{ancient}} byene i den antikke verden som Bibelen ikke nevner — hovedsteder, havner og
-  helligdommer som Ugarit, Hattusa, Mari eller Delfi — er valgt ut og datert én for én: hver er
-  plassert etter sin oppføring i <a href="https://pleiades.stoa.org">Pleiades</a> eller Wikidata, på
-  det antikke stedet i stedet for på dagens by, og datert etter disse oppføringene og
-  leksikonframstillinger, avstemt for hånd. Omkring fjortenhundre til er valgt ut av et skript:
+  Av de {{ancient}} byene i den antikke verden som Bibelen ikke nevner — hovedsteder, havner og
+  helligdommer som Ugarit, Hattusa, Mari eller Delfi — er {{ancient_hand}} valgt ut og datert én for
+  én: hver er plassert etter sin oppføring i <a href="https://pleiades.stoa.org">Pleiades</a> eller
+  Wikidata, på det antikke stedet i stedet for på dagens by, og datert etter disse oppføringene og
+  leksikonframstillinger, avstemt for hånd. De øvrige {{ancient_script}} er valgt ut av et skript:
   bosetninger, helligdommer og havner i Pleiades der Wikidata-elementet er et antikt sted og ikke en
   nåtidig by; punktene deres kommer fra Pleiades, navnene fra Wikidata (der Wikidata mangler et på
   russisk, ukrainsk, bulgarsk eller serbisk, våre egne, i den formen antikkforskningen på det
-  språket bruker), og årene er spennet av periodene Pleiades belegger dem i, så alle er merket
-  «ca.». Der en by ble ødelagt midt i en periode, er slutten satt for hånd ut fra historien. Et sted
-  vises ved et zoomnivå som bestemmes av hvor ofte Bibelen nevner det; en by som Bibelen knapt
-  nevner, men som verden kjenner godt — Kartago, Sparta, Ur — vises tidligere, etter antall
-  Wikipedia-artikler om selve det antikke stedet.
+  språket bruker; på de øvrige språkene, der Wikidata mangler et, det engelske), og årene er spennet
+  av periodene Pleiades belegger dem i, så alle er merket «ca.». Der en by ble ødelagt midt i en
+  periode, er slutten satt for hånd ut fra historien. Et sted vises ved et zoomnivå som bestemmes av
+  hvor ofte Bibelen nevner det; en by som Bibelen knapt nevner, men som verden kjenner godt —
+  Kartago, Sparta, Ur — vises tidligere, etter antall Wikipedia-artikler om selve det antikke
+  stedet.
 </p>
 
-<h2>Grenser</h2>
+<h2 id="borders">Grenser</h2>
 <p>
   Statene og grensene deres år for år kommer fra
   <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatria</a> (Seshat Global History Databank,
@@ -96,20 +98,20 @@ description: Hvor hvert sted, hver grense, dato og person på History Globe komm
   land som den assyriske provinsen det ble.
 </p>
 
-<h2>Personer</h2>
+<h2 id="people">Personer</h2>
 <p>
   De {{people}} personene i Bibelen og slektsbåndene deres kommer fra TIPNR i STEP Bible (Tyndale
   House, Cambridge). Vi tok ikke båndene for gitt:
 </p>
 <ul>
   <li>
-    slektsbåndene til de 1 200 personene teksten nevner oftest, og slektsregistrene i 1. Krønikebok,
-    ble lest mot versene; 153 bånd som teksten ikke oppgir, ble fjernet — Jesu brødre som sønner av
-    Josef og Maria, Jesabel som mor til Ahasja — og de manglende leddene i Jesu slektsregister ble
-    føyd til etter teksten;
+    slektsbåndene til de {{n:1200}} personene teksten nevner oftest, og slektsregistrene i 1.
+    Krønikebok, ble lest mot versene; 153 bånd som teksten ikke oppgir, ble fjernet — Jesu brødre
+    som sønner av Josef og Maria, Jesabel som mor til Ahasja — og de manglende leddene i Jesu
+    slektsregister ble føyd til etter teksten;
   </li>
   <li>
-    alle 1 136 koblinger mellom en person og et sted der vedkommende har en sentral eller
+    alle {{n:1136}} koblinger mellom en person og et sted der vedkommende har en sentral eller
     understøttende rolle, ble lest vers for vers; 344 ble fjernet (Moses «i Kanaan», Abraham «i
     Sodoma», en sønns steder gitt til faren) og 94 fikk et bedre vers;
   </li>
@@ -129,14 +131,15 @@ description: Hvor hvert sted, hver grense, dato og person på History Globe komm
   språk; utgavene står på siden <a href="sources.html">kilder</a>. Ingen rute har kommet gjennom
   første gjennomgang uendret; hver ble rettet og kontrollert på nytt. Den siste fullstendige
   gjennomgangen, avsluttet 17. oktober 2026, leste alle 746 artikler på nytt mot kildene, omtrent
-  210 av dem to ganger, og gjorde 1 088 rettelser, hver ført inn i de 11 språkene nettstedet hadde
-  da; rene feil ble funnet i 157 artikler. De fem språkene som ble lagt til 24. oktober 2026
-  (svensk, norsk, dansk, tagalog og serbisk), ble oversatt fra de allerede rettede tekstene;
-  deretter ble hver av tekstene deres sammenlignet med engelsken i en uavhengig kontrollrunde, og
-  hvert sitat med bibelen på det språket. Disse rundene er prosjektets egne kontroller, ikke
-  fagfellevurdering. Vurderinger fra fagfolk publiseres under deres navn på siden
+  210 av dem to ganger, og gjorde {{n:1088}} rettelser, hver ført inn i de 11 språkene nettstedet
+  hadde da; rene feil ble funnet i 157 artikler. De fem språkene som ble lagt til 24. oktober 2026
+  (svensk, norsk, dansk, tagalog og serbisk), og de fem som ble lagt til 26. oktober 2026 (ungarsk,
+  finsk, vietnamesisk, rumensk og bulgarsk), ble oversatt fra de allerede rettede tekstene; deretter
+  ble hver av tekstene deres sammenlignet med engelsken i en uavhengig kontrollrunde, og hvert sitat
+  med bibelen på det språket. Disse rundene er prosjektets egne kontroller, ikke fagfellevurdering.
+  Vurderinger fra fagfolk publiseres under deres navn på siden
   <a href="reviews.html">vurderinger</a>, og hver artikkel som en fagperson har vurdert, nevner
-  vurdereren og lenker til vurderingen.
+  vurdereren og lenker til vurderingen. Publisert så langt: <span class="reviews"></span>.
 </p>
 <p>
   Avstanden til et stopp oppgis i luftlinje. Fra 312 f.Kr., da de romerske veiene begynner, oppgis
@@ -156,8 +159,8 @@ description: Hvor hvert sted, hver grense, dato og person på History Globe komm
   avgjorde Israels skjebne. Hvert ligger på stedet der det ble utkjempet og vises på kartet i sine
   år. Bibelens er datert slik rutene daterer de samme fortellingene; de andre har ikke noe vers, men
   en antikk eller faglig kilde. En ny, uavhengig kontrollrunde kontrollerte utkastet mot
-  synodalteksten og King James Version: av 58 oppføringer ble 16 rettet, og én ble fjernet, fordi
-  kartet ikke har noe punkt for stedet.
+  synodalteksten og King James Version: av 58 oppføringer (oktober 2026) ble 16 rettet, og én ble
+  fjernet, fordi kartet ikke har noe punkt for stedet.
 </p>
 
 <p>
@@ -202,7 +205,7 @@ description: Hvor hvert sted, hver grense, dato og person på History Globe komm
   </li>
 </ul>
 
-<h2>Kontroller ved hver bygging</h2>
+<h2 id="checks-on-every-build">Kontroller ved hver bygging</h2>
 <p>Ingenting publiseres med mindre alle kontrollene består:</p>
 <ul>
   <li>
@@ -217,7 +220,7 @@ description: Hvor hvert sted, hver grense, dato og person på History Globe komm
   <li>innholdsskjemaene er strenge: et ukjent eller feilstavet felt stopper byggingen.</li>
 </ul>
 
-<h2>Hva som er usikkert</h2>
+<h2 id="what-is-uncertain">Hva som er usikkert</h2>
 <ul>
   <li>
     Datoer før det første årtusen f.Kr. er omtrentlige, og noen er omstridt; kartet merker dem
@@ -261,7 +264,7 @@ https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
 <p>
   Med en GitHub-konto kan du også bruke lenken <i>Funnet en feil?</i> på hvert stedskort, som åpner
   en sak i det offentlige depotet med stedet fylt inn, eller åpne en direkte:
-  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+  <a href="https://github.com/ArVaViT/history-globe/issues/new?template=report-an-error.yml"
     >github.com/ArVaViT/history-globe/issues</a
   >.
 </p>

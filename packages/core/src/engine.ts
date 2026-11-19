@@ -4,6 +4,7 @@ import type { LonLat, Renderer } from "./renderer.ts";
 import {
   createStore,
   DEFAULT_STATE,
+  type Focus,
   type GlobeState,
   type LayerVisibility,
   type Store,
@@ -12,11 +13,13 @@ import {
 /**
  * 3500 BC to AD 1300 in astronomical years (ADR 0003): from the Early Bronze Age, the first
  * towns of Canaan and Mesopotamia, through the Byzantine and early Islamic centuries to the
- * end of the Crusader states (Acre, 1291). Widened on 1.10.2026 from 2000 BC – AD 100 and
- * on 2.10.2026 from AD 500; it stops before modern borders.
+ * end of the Crusader states (Acre, 1291); it stops before modern borders.
  */
 export const YEAR_MIN = -3499;
 export const YEAR_MAX = 1300;
+
+/** A tour's zoom when its stops lie 150 km apart or more (Paul's journeys). */
+export const TOUR_ZOOM = 7.6;
 
 export interface PlaceInfo {
   readonly id: string;
@@ -70,17 +73,7 @@ export interface Engine {
   readonly stopTour: () => void;
   /** Show these places alone (a chapter's), at the year given if any; null shows all. */
   readonly focusPlaces: (
-    focus: {
-      ref: string;
-      places: readonly string[];
-      year?: number;
-      /** The places to frame, when not all of them (a region or a sea named in passing). */
-      frame?: readonly string[];
-      /** The way travelled in the chapter, drawn as a tour's route is. */
-      route?: readonly LonLat[];
-      /** The places of the way's stops, in its order (their marks lie under the discs). */
-      routePlaces?: readonly string[];
-    } | null,
+    focus: FocusRequest | null,
     /** Fly to frame them; false keeps the camera (a shared link brings its own). */
     frame?: boolean,
   ) => void;
@@ -91,6 +84,12 @@ export interface Engine {
   /** Turn the map so that north is up, keeping the view. */
   readonly northUp: () => void;
   readonly destroy: () => void;
+}
+
+export interface FocusRequest extends Focus {
+  readonly year?: number;
+  /** The places to frame, when not all of them (a region or a sea named in passing). */
+  readonly frame?: readonly string[];
 }
 
 export function clampYear(year: number): number {
@@ -106,8 +105,8 @@ export function createEngine(options: {
 }): Engine {
   const { renderer, places } = options;
   const tours = new Map((options.tours ?? []).map((t) => [t.id, t]));
-  // A tour flies as close as its spread allows: Paul's journeys at 7.6, a walk through
-  // Jerusalem much closer, so its stops do not pile into one point.
+  // A walk through Jerusalem flies much closer than a journey, so its stops do not pile
+  // into one point.
   const tourZoom = new Map(
     [...tours].map(([id, t]) => [id, zoomForSpread(t.stops.map((st) => st.at))]),
   );
@@ -191,7 +190,7 @@ export function createEngine(options: {
     }
     renderer.flyTo({
       center: stop.at,
-      zoom: tourZoom.get(tour.id) ?? 7.6,
+      zoom: tourZoom.get(tour.id) ?? TOUR_ZOOM,
       pitch: 55,
       bearing: -20 + step * 3,
     });
@@ -205,7 +204,7 @@ export function createEngine(options: {
     selectPlace(id, { fly: false });
     // A place tapped where its card then opens (a phone's lower half) is brought out.
     const at = places.get(id)?.at;
-    if (at) renderer.reveal?.(at);
+    if (at) renderer.reveal(at);
   });
 
   return {
@@ -225,7 +224,7 @@ export function createEngine(options: {
     },
     startTour: (tourId, step = 0) => {
       const tour = tours.get(tourId);
-      if (!tour) return;
+      if (!tour || tour.stops.length === 0) return;
       const at = Math.min(Math.max(Math.trunc(step), 0), tour.stops.length - 1);
       store.set({ tour: { id: tourId, step: at }, year: clampYear(tour.year), focus: null });
       goToStop(at, at === 0);
@@ -251,9 +250,10 @@ export function createEngine(options: {
       // The places that make the chapter's map, and its way: a region or a sea named in
       // passing (Italy, the Adriatic) would pull the frame out to half a continent.
       const framed = (focus?.frame ?? known).filter((id) => places.has(id));
-      const points = (framed.length > 0 ? framed : known).map(
-        (id): LonLat => places.get(id)?.at ?? [0, 0],
-      );
+      const points = (framed.length > 0 ? framed : known).flatMap((id) => {
+        const at = places.get(id)?.at;
+        return at ? [at] : [];
+      });
       renderer.fitTo([...points, ...(route ?? [])]);
     },
     stopTour: () => {
@@ -263,7 +263,7 @@ export function createEngine(options: {
       renderer.flyTo({ center: at, zoom: 11, pitch: 50 });
     },
     highlight: (at) => {
-      renderer.highlight?.(at);
+      renderer.highlight(at);
     },
     northUp: () => {
       renderer.flyTo({ center: renderer.getCamera().center, bearing: 0 }, 600);
@@ -278,16 +278,16 @@ export function createEngine(options: {
 }
 
 /**
- * The zoom for a tour from how far its stops spread: 7.6 for 150 km and more, one step
+ * The zoom for a tour from how far its stops spread: TOUR_ZOOM for 150 km and more, one step
  * closer for each halving, at most 13 (a city's streets).
  */
-export function zoomForSpread(points: readonly (readonly [number, number])[]): number {
-  if (points.length === 0) return 7.6;
+export function zoomForSpread(points: readonly LonLat[]): number {
+  if (points.length === 0) return TOUR_ZOOM;
   const lons = points.map((p) => p[0]);
   const lats = points.map((p) => p[1]);
   const midLat = ((Math.min(...lats) + Math.max(...lats)) / 2) * (Math.PI / 180);
   const dx = (Math.max(...lons) - Math.min(...lons)) * 111 * Math.cos(midLat);
   const dy = (Math.max(...lats) - Math.min(...lats)) * 111;
   const km = Math.hypot(dx, dy);
-  return Math.min(13, Math.max(7.6, 7.6 + Math.log2(150 / Math.max(km, 1))));
+  return Math.min(13, Math.max(TOUR_ZOOM, TOUR_ZOOM + Math.log2(150 / Math.max(km, 1))));
 }

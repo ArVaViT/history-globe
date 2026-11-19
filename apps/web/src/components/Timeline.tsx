@@ -1,7 +1,7 @@
 import { YEAR_MAX, YEAR_MIN } from "@hg/core";
 import {
   formatYear,
-  formatYearRange,
+  formatRange,
   PERIODS,
   periodAt,
   type Locale,
@@ -12,10 +12,13 @@ import {
   ageName,
 } from "@hg/model";
 import { ChevronDown, ChevronLeft, ChevronRight, Ellipsis, Pause, Play } from "./icons";
-import { lazy, Suspense, useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState, type RefObject } from "react";
 import { useTranslation } from "../i18n";
 import { ErrorBoundary } from "./ErrorBoundary";
 import { Panel } from "./Panel";
+import { useDismiss } from "../app-hooks";
+import type { TimelineEvent } from "../timeline-events";
+import { readPref, writePref } from "../storage";
 
 // The "…" menu's contents come with its first press (MoreMenuPanel.tsx).
 const MoreMenuPanel = lazy(() =>
@@ -28,7 +31,7 @@ const SPAN = YEAR_MAX - YEAR_MIN;
  * language («Железный век IIB» did not, nor most Russian names); the era itself is in the
  * line above the track. In English; the other languages' are in their data (ageName).
  */
-const AGES: readonly { first: string; last: string; en: string }[] = [
+export const AGES: readonly { first: string; last: string; en: string }[] = [
   { first: "eb1", last: "eb4", en: "Early Bronze" },
   { first: "mb2", last: "mb2", en: "Middle Bronze" },
   { first: "lb", last: "lb", en: "Late Bronze" },
@@ -40,7 +43,7 @@ const AGES: readonly { first: string; last: string; en: string }[] = [
   { first: "byzantine", last: "byzantine", en: "Byzantine" },
   { first: "early-islamic", last: "mamluk", en: "Middle Ages" },
 ];
-const AGE_SPANS = AGES.flatMap((a) => {
+export const AGE_SPANS = AGES.flatMap((a) => {
   const from = PERIODS.find((p) => p.id === a.first)?.range.from;
   const to = PERIODS.find((p) => p.id === a.last)?.range.to;
   return from === undefined || to === undefined ? [] : [{ ...a, from, to }];
@@ -123,25 +126,6 @@ export function ticksFor(v: TimeView): number[] {
   return out;
 }
 
-/** "1000–831 BC": the first and the last year of a half-open range. */
-export function formatPeriodRange(range: { from: number; to: number }, locale: Locale): string {
-  return formatYearRange(range.from, range.to - 1, locale);
-}
-
-/** A dated event on the slider: a town founded, destroyed, rebuilt. */
-export interface TimelineEvent {
-  readonly year: number;
-  readonly label: string;
-  /** "c." in the source: shown as such. */
-  readonly approximate?: boolean;
-  /** A turning point of the history (events.yaml), drawn taller and in gold. */
-  readonly major?: boolean;
-  /** The place it happened at, opened when its mark is pressed. */
-  readonly place?: string;
-  /** Or the ancient site, opened as a place is. */
-  readonly site?: { readonly id: string };
-}
-
 export function Timeline({
   year,
   locale,
@@ -160,6 +144,7 @@ export function Timeline({
   life,
   scaleSlot,
   onCollapse,
+  rangeRef,
 }: {
   year: number;
   locale: Locale;
@@ -185,6 +170,8 @@ export function Timeline({
   scaleSlot?: ((el: HTMLDivElement | null) => void) | undefined;
   /** Embedded: fold the player back to a line, leaving the frame to the map. */
   onCollapse?: (() => void) | undefined;
+  /** The slider itself, for the button that unfolds the player to focus it. */
+  rangeRef?: RefObject<HTMLInputElement | null>;
 }) {
   // How opaque the player is, set from its "⋯" and remembered: the map shows through.
   const [alpha, setAlpha] = useState(readAlpha);
@@ -204,7 +191,8 @@ export function Timeline({
   const periodLabel = period ? periodName(period, locale) : "";
   const track = useRef<HTMLDivElement>(null);
   const group = useRef<HTMLDivElement>(null);
-  const range = useRef<HTMLInputElement>(null);
+  const ownRange = useRef<HTMLInputElement>(null);
+  const range = rangeRef ?? ownRange;
   const dragging = useRef(false);
   // The track's width in pixels: which era names fit inside their bands.
   const [trackWidth, setTrackWidth] = useState(0);
@@ -295,9 +283,7 @@ export function Timeline({
           className={`pointer-events-none absolute bottom-full mb-2 rounded-lg bg-ink px-2.5 py-1.5 text-[12px] leading-tight text-paper shadow-lg ${narrow ? "right-3 left-3" : `whitespace-nowrap ${hover.x < 15 ? "" : hover.x > 85 ? "-translate-x-full" : "-translate-x-1/2"}`}`}
         >
           <div className="font-medium">{periodName(hovered, locale)}</div>
-          <div className="text-paper/75 tabular-nums">
-            {formatPeriodRange(hovered.range, locale)}
-          </div>
+          <div className="text-paper/75 tabular-nums">{formatRange(hovered.range, locale)}</div>
           {hovered.disputed && (
             <div className="mt-0.5 text-gold">{periodDisputed(hovered, locale)}</div>
           )}
@@ -324,10 +310,7 @@ export function Timeline({
           title={t("time.collapse")}
           className="group absolute -top-2 left-1/2 z-10 grid h-6 w-12 -translate-x-1/2 place-items-center rounded-b-lg pt-2 text-ink-soft/50 transition hover:text-ink focus-visible:text-ink"
         >
-          <ChevronDown
-            className="size-3.5 transition-transform duration-150 group-hover:scale-[1.35]"
-            aria-hidden
-          />
+          <ChevronDown className="size-3.5 transition-transform duration-150 group-hover:scale-[1.35]" />
         </button>
       )}
       <div ref={group} role="group" aria-label={t("time.timeline")}>
@@ -359,11 +342,7 @@ export function Timeline({
               title={playing ? t("time.pause") : t("time.play")}
               className="grid size-10 place-items-center rounded-full bg-accent text-paper transition hover:brightness-110 active:scale-95 max-md:size-9"
             >
-              {playing ? (
-                <Pause className="size-4" aria-hidden />
-              ) : (
-                <Play className="size-4 translate-x-px" aria-hidden />
-              )}
+              {playing ? <Pause className="size-4" /> : <Play className="size-4 translate-x-px" />}
             </button>
             <YearStep
               label={t("time.forward", { n: 100 })}
@@ -383,7 +362,7 @@ export function Timeline({
               alpha={alpha}
               onAlpha={(a) => {
                 setAlpha(a);
-                writeAlpha(a);
+                writePref(ALPHA_KEY, String(a));
               }}
             />
           </div>
@@ -582,40 +561,27 @@ export function Timeline({
           )}
         </div>
         {/* Always there, zoomed or not: the bar coming and going moved everything below. */}
-        {
-          <Overview
-            view={view}
-            locale={locale}
-            year={year}
-            onView={setView}
-            label={t("time.window")}
-            zoomed={zoomed}
-          />
-        }
+        <RangeMinimap
+          view={view}
+          locale={locale}
+          year={year}
+          onView={setView}
+          label={t("time.window")}
+          zoomed={zoomed}
+        />
       </div>
     </Panel>
   );
 }
 
-function speedLabel(speed: number): string {
+export function speedLabel(speed: number): string {
   return speed < 1 ? "½×" : `${String(speed)}×`;
 }
 
+const ALPHA_KEY = "hg:player-alpha";
 function readAlpha(): number {
-  try {
-    const v = Number(localStorage.getItem("hg:player-alpha"));
-    return v >= 0.3 && v <= 1 ? v : 0.9;
-  } catch {
-    return 0.9;
-  }
-}
-
-function writeAlpha(a: number): void {
-  try {
-    localStorage.setItem("hg:player-alpha", String(a));
-  } catch {
-    // Storage refused: the player keeps the look for this visit only.
-  }
+  const v = Number(readPref(ALPHA_KEY));
+  return v >= 0.3 && v <= 1 ? v : 0.9;
 }
 
 /**
@@ -741,12 +707,9 @@ function YearField({
         aria-label={t("time.go_to")}
         aria-invalid={bad}
         aria-describedby="year-hint"
-        className={`w-[230px] rounded-lg bg-white/80 px-2 py-1 font-serif text-[22px] font-semibold text-ink ring-1 outline-none max-md:w-full max-md:text-[17px] ${bad ? "ring-[#b4442f]" : "ring-line focus:ring-accent"}`}
+        className={`w-[230px] rounded-lg bg-white/80 px-2 py-1 font-serif text-[22px] font-semibold text-ink ring-1 outline-none max-md:w-full max-md:text-[17px] ${bad ? "ring-error" : "ring-line focus:ring-accent"}`}
       />
-      <div
-        id="year-hint"
-        className={`mt-1 text-[11px] ${bad ? "text-[#b4442f]" : "text-ink-soft"}`}
-      >
+      <div id="year-hint" className={`mt-1 text-[11px] ${bad ? "text-error" : "text-ink-soft"}`}>
         {bad ? t("time.go_to_bad") : t("time.go_to_hint")}
       </div>
     </form>
@@ -783,26 +746,7 @@ function MoreMenu({
   const [open, setOpen] = useState(false);
   const box = useRef<HTMLDivElement>(null);
   const button = useRef<HTMLButtonElement>(null);
-  useEffect(() => {
-    if (!open) return;
-    const onDown = (e: PointerEvent) => {
-      if (!box.current?.contains(e.target as Node)) setOpen(false);
-    };
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key !== "Escape") return;
-      // Esc closes the menu only: not the open card or tour behind it too.
-      e.preventDefault();
-      e.stopPropagation();
-      setOpen(false);
-      button.current?.focus();
-    };
-    document.addEventListener("pointerdown", onDown);
-    document.addEventListener("keydown", onKey, true);
-    return () => {
-      document.removeEventListener("pointerdown", onDown);
-      document.removeEventListener("keydown", onKey, true);
-    };
-  }, [open]);
+  useDismiss(open, setOpen, box, button);
   return (
     <div
       ref={box}
@@ -823,7 +767,7 @@ function MoreMenu({
         aria-controls={open ? "player-more" : undefined}
         className={`grid size-8 place-items-center rounded-full hover:bg-paper-2 hover:text-ink ${open ? "bg-paper-2 text-ink" : "text-ink-soft"}`}
       >
-        <Ellipsis className="size-5" aria-hidden />
+        <Ellipsis className="size-5" />
         {speed !== 1 && (
           // A speed other than 1× shows on the closed button: playback is not as usual.
           <span className="absolute -top-1 -right-1 rounded-full bg-accent px-1 text-[10px] leading-4 font-semibold text-paper tabular-nums">
@@ -860,7 +804,7 @@ function MoreMenu({
  * The whole range under a zoomed slider, with the shown window on it: drag the window,
  * or press elsewhere to move it there.
  */
-function Overview({
+function RangeMinimap({
   view,
   locale,
   year,

@@ -287,7 +287,8 @@
     "places": "Dove visse e operò",
     "credit": "Famiglia e luoghi dai versetti della Bibbia (STEP Bible, CC BY 4.0)",
     "wives": "Mogli",
-    "husbands": "Mariti"
+    "husbands": "Mariti",
+    "list_failed": "L’elenco delle persone non si è caricato. Prova ad aprire di nuovo la scheda."
   },
   "embed": {
     "places_one": "{{count}} luogo",
@@ -323,6 +324,7 @@
     "zoom_out": "Riduci",
     "north": "Riporta l’orientamento a nord",
     "sources": "Fonti della mappa",
+    "sources_page": "Fonti",
     "title": "Mappa"
   },
   "sheet": {

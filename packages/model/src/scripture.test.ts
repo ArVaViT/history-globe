@@ -106,6 +106,7 @@ describe("parseChapter", () => {
     expect(parseChapter("3 Цар. 18", "ru")?.ref).toBe("1Kgs.18");
     expect(parseChapter("Иоанн 4", "ru")?.ref).toBe("John.4");
     expect(parseChapter("от Иоанна 3", "ru")?.ref).toBe("John.3");
+    expect(parseChapter("Евангелие от Иоанна 3", "ru")?.ref).toBe("John.3");
     expect(parseChapter("Матфея 5", "ru")?.ref).toBe("Matt.5");
     expect(parseChapter("Луки 2", "ru")?.ref).toBe("Luke.2");
     // Synodal Josh 6 starts at English 6:2 (Josh 6:1 is Synodal 5:16).
@@ -140,7 +141,6 @@ describe("parseChapter in the other languages", () => {
     expect(parseChapter("Skutky 16", "cs")).toEqual({ ref: "Acts.16", label: "Sk 16" });
     expect(parseChapter("Księga Rodzaju 12", "pl")?.ref).toBe("Gen.12");
     expect(parseChapter("1 Mojžíšova 12", "cs")?.ref).toBe("Gen.12");
-    // Wave 3, known to the code before the site publishes it.
     expect(parseChapter("Apostlagärningarna 16", "sv")).toEqual({
       ref: "Acts.16",
       label: "Apg 16",

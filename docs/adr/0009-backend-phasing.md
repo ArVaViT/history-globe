@@ -1,6 +1,6 @@
 # 0009. Backend, in phases
 
-- Status: accepted
+- Status: accepted; Phase 1 hosting superseded by 0012
 - Date: 2026-09-28
 
 ## Context

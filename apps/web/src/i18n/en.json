@@ -280,7 +280,8 @@
     "places": "Where they lived and acted",
     "credit": "Family and places from the verses of the Bible (STEP Bible, CC BY 4.0)",
     "wives": "Wives",
-    "husbands": "Husbands"
+    "husbands": "Husbands",
+    "list_failed": "The list of people did not load. Try opening the tab again."
   },
   "embed": {
     "places_one": "{{count}} place",
@@ -313,6 +314,7 @@
     "zoom_out": "Zoom out",
     "north": "Reset bearing to north",
     "sources": "Map sources",
+    "sources_page": "Sources",
     "title": "Map"
   },
   "sheet": {

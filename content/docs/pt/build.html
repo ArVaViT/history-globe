@@ -10,7 +10,7 @@ description: O que você pode tirar do History Globe e como — os dados pela AP
   copiar. Esta página diz onde fica a linha.
 </p>
 
-<h2>O que você pode tirar</h2>
+<h2 id="what-you-may-take">O que você pode tirar</h2>
 <div class="table">
   <table>
     <thead>
@@ -70,18 +70,19 @@ description: O que você pode tirar do History Globe e como — os dados pela AP
   globo.
 </p>
 
-<h2>Como dar o crédito</h2>
+<h2 id="how-to-credit">Como dar o crédito</h2>
 <p>
   Onde mostrar os dados, nomeie as fontes como o <code>index.json</code> as lista. A forma mais
   curta que satisfaz as licenças:
 </p>
 <pre><code>Dados: History Globe, de Vadym Arnaut ({{site}}), CC BY 4.0;
-lugares e marcações de versículos do OpenBible.info (CC BY 4.0); pessoas do STEPBible TIPNR (CC BY 4.0).</code></pre>
+lugares e marcações de versículos do OpenBible.info (CC BY 4.0); pessoas do STEPBible TIPNR (CC BY 4.0); ids de lugares do Pleiades (CC BY 3.0).</code></pre>
 <p>Em uma página, com links:</p>
 <pre><code>&lt;p&gt;Dados: &lt;a href="{{site}}/"&gt;History Globe&lt;/a&gt;, de Vadym Arnaut,
   &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC BY 4.0&lt;/a&gt;;
   lugares do &lt;a href="https://www.openbible.info/geo/"&gt;OpenBible.info&lt;/a&gt;,
-  pessoas do &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;.&lt;/p&gt;</code></pre>
+  pessoas do &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;,
+  ids de lugares do &lt;a href="https://pleiades.stoa.org/"&gt;Pleiades&lt;/a&gt;.&lt;/p&gt;</code></pre>
 <p>
   <code>{{site}}/api/v1/index.json</code> traz as linhas de crédito completas, e toda resposta da
   API é enviada com um cabeçalho <code>Link</code> que nomeia a sua licença. Um artigo ou uma
@@ -89,7 +90,7 @@ lugares e marcações de versículos do OpenBible.info (CC BY 4.0); pessoas do S
   link para a sua página.
 </p>
 
-<h2>Limites</h2>
+<h2 id="limits">Limites</h2>
 <ul>
   <li>
     <b>Sem chave, sem cota.</b> A API são arquivos estáticos atrás de um cache. Busque cada arquivo
@@ -113,7 +114,7 @@ lugares e marcações de versículos do OpenBible.info (CC BY 4.0); pessoas do S
   </li>
 </ul>
 
-<h2>Início</h2>
+<h2 id="start">Início</h2>
 <pre><code>const api = "{{site}}/api/v1";
 const places = await (await fetch(`${api}/places.json`)).json();
 const byId = new Map(places.map((p) =&gt; [p.id, p]));
@@ -125,7 +126,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   >.
 </p>
 
-<h2>Pedir mais</h2>
+<h2 id="asking-for-more">Pedir mais</h2>
 <p>
   Uma tradução dos artigos, o texto deles em outra plataforma ou uma licença que a tabela acima não
   dá: escreva para <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>.
@@ -133,7 +134,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   estão.
 </p>
 
-<h2>Para agentes de IA</h2>
+<h2 id="for-ai-agents">Para agentes de IA</h2>
 <p>
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> diz o mesmo em uma só página. Mecanismos de
   busca e os assistentes que respondem com uma citação são bem-vindos; os artigos não são dados de

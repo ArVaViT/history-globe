@@ -1,5 +1,6 @@
 # Philip the evangelist, one of the seven: Acts 6, 8 and 21, in the order of the text.
-# The tour's year (AD 34) is a conventional point, as for the conversion of Saul.
+# The tour's year (AD 34) is a conventional point, as for the conversion of Saul. The last
+# stop, Caesarea (Acts 21:8-9), shows AD 57, when Paul came there on his way to Jerusalem.
 id: philip
 title:
   en: "Philip the evangelist"
@@ -124,6 +125,7 @@ stops:
       bg: "Филип се озовава в Азот и проповядва във всички градове по пътя към Кесария."
   - place: a58735e # Caesarea
     ref: Acts.21.8-Acts.21.9
+    year: "AD 57"
     note:
       en: "Years later Paul stays in Caesarea at the house of Philip, whose four daughters prophesy."
       ru: "Спустя годы Павел останавливается в Кесарии в доме Филиппа, чьи четыре дочери пророчествуют."

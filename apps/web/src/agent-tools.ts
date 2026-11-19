@@ -15,6 +15,7 @@ import {
   loadLocaleData,
   LOCALES,
   placeName,
+  pick,
   placeSlugs,
   type SiteLocale,
 } from "@hg/model";
@@ -139,7 +140,7 @@ export async function placeResult(ctx: AgentContext, input: Record<string, unkno
   // The book names of the language asked for (fetched once, as for a reader of it).
   await loadLocaleData(l);
   const art = await ctx.article(p.id, l).catch(() => undefined);
-  const body = art ? (art.body[l] ?? art.body.en) : undefined;
+  const body = pick(art?.body, l);
   return {
     id: p.id,
     name: placeName(p, l),
@@ -154,7 +155,7 @@ export async function placeResult(ctx: AgentContext, input: Record<string, unkno
     ...(art && body
       ? {
           article: {
-            title: art.title[l] ?? art.title.en,
+            title: pick(art.title, l),
             paragraphs: body,
             status: art.status,
             license: ARTICLE_LICENSE,

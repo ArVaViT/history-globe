@@ -772,7 +772,7 @@ places:
   af054ba: Gedor
   a2ebe1c: Chefer
   a116c5c: Jawan
-  aacc081: Dolne Źródła
+  aacc081: Dolne Gullot
   a6c2936: Madon
   a411283: Migdol
   a11fadd: Góra Chalak
@@ -1317,12 +1317,14 @@ polities:
   Almohad Caliphate: Kalifat Almohadów
   Almoravid Dynasty: Almorawidzi
   Alodia: Alodia
+  Ammon: Ammon
   Angevin Empire: Imperium Andegaweńskie
   Angevins: Andegawenowie
   Ankhwennefer: Anchwennefer
   Antigonid Dynasty: Antygonidzi
   Antigonid Macedonia: Macedonia Antygonidów
   Aquitaine: Akwitania
+  Aram-Damascus: Aram-Damaszek
   Armenian Kingdom of Cilicia: Armenia Cylicyjska
   Assyria: Asyria
   Assyrian Egypt: Asyryjski Egipt
@@ -1347,6 +1349,7 @@ polities:
   Cao Wei: Cao Wei
   Capetian House of Anjou: Kapetyngowie andegaweńscy
   Carantania: Karantania
+  Carchemish: Karkemisz
   Carolingian Empire: Państwo Karolingów
   Carthage: Kartagina
   Caucasian Albania: Albania Kaukaska
@@ -1432,6 +1435,7 @@ polities:
   Eastern Kara-Khanids: Wschodni Karachanidzi
   Eastern Kushans: Wschodni Kuszanowie
   Eastern Roman Empire: Cesarstwo Wschodniorzymskie
+  Edom: Edom
   Elam: Elam
   Emirate of Crete: Emirat Krety
   Emirate of Córdoba: Emirat Kordoby
@@ -1481,6 +1485,7 @@ polities:
   Hadhramaut: Hadramaut
   Hafsid Dynasty: Hafsydzi
   Halych-Volhynia occupation: Step połowiecki
+  Hamath: Chamat
   Hamdanid Emirates: Emiraty Hamdanidów
   Hammadid Dynasty: Hammadydzi
   Han Dynasty: Dynastia Han
@@ -1615,6 +1620,7 @@ polities:
   Minaeans: Minejczycy
   Minoan civilization: Cywilizacja minojska
   Mitanni: Mitanni
+  Moab: Moab
   Molossians: Molossowie
   Mongol Empire: Imperium Mongolskie
   Mycenaean Greece: Grecja mykeńska
@@ -1794,6 +1800,11 @@ polities:
   Third Dynasty of Ur: III dynastia z Ur
   Principality of Armenia: Księstwo Armenii
 modern:
+  md88865: "Argob"
+  m0df275: "Boses"
+  m9b1996: "Pustynia Jeruel"
+  me0645b: "Ören"
+  m23ce84: "Massa"
   m66c5b8: Jerozolima
   md561de: Babilon
   me7edbd: Jordan
@@ -6708,3 +6719,21 @@ ancient:
   Q173474: Wielkie Tyrnowo
   Q2538648: Wad Ban Naga
   Q1462261: Wasit
+# The today line where OpenBible describes the place in free English text, translated whole
+# (as content/modern-names.yaml does for Russian), with this file's names of the places.
+labels:
+  "in the region east of Gibeon": "Na wschód od Gibeonu"
+  "in the region between Mizpah and Shen": "Między Mispą a Szenem"
+  "in the region between Gerar and Beersheba": "Między Gerarem a Beer-Szebą"
+  "in the region south of Hebron": "Na południe od Hebronu"
+  "in the region between Lachish and Gath": "Między Lakiszem a Gatem"
+  "in the region between Eshtaol and Zorah": "Między Esztaolem a Sorą"
+  "in the region between Damascus and Hamath": "Między Damaszkiem a Chamatem"
+  "in the region between Baalbek and Kadesh": "Między Baalbekiem a Kadeszem"
+  "in the region between Aiath and Michmash": "Między Ajatem a Mikmasem"
+  "in the region between Ibleam and Megiddo": "Między Jibleamem a Megiddo"
+  "in the region between Punon and Zered": "Między Punonem a potokiem Zared"
+  "in the region between Maghfar and Lake Timsah": "Między Maghfarem a jeziorem Timsah"
+  "in the region north of the Dead Sea": "Na północ od Morza Martwego"
+  "in the region south of the Lisan": "Na południe od półwyspu Lisan"
+  "in the region between Kedesh-naphtali and Hazor": "Między Kedeszem Neftalego a Chasorem"

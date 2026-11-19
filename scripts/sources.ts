@@ -11,7 +11,9 @@
  *   node scripts/sources.ts restore <copy>  verify, then copy it back into pipeline/.cache
  *
  * The licences stay with the copy: docs/ATTRIBUTIONS.md is copied beside the files, and
- * apps/web/public/data/manifest.json (where each source came from) when it is built.
+ * apps/web/public/data/manifest.json (where each source came from) when it is built. Only
+ * the files the build reads are copied: a file in the cache that is no source of it (an
+ * edition left out for its licence, a download tried once) stops the copy, to be removed.
  */
 import { createHash } from "node:crypto";
 import {
@@ -24,9 +26,27 @@ import {
   writeFileSync,
 } from "node:fs";
 import { dirname, isAbsolute, join, normalize, relative, resolve, sep } from "node:path";
+import { SOURCES as BIBLES } from "./bible-text.ts";
 
 const root = join(import.meta.dirname, "..");
 const cache = join(root, "pipeline/.cache");
+
+/**
+ * What the build reads from the cache: the pinned upstream files (pipeline/sources.json),
+ * the Bibles (scripts/bible-text.ts), Wikidata's coordinates, Itiner-e's roads
+ * (pipeline/roads/fetch.py), and the people and photos folders the build writes there.
+ */
+const pins = JSON.parse(readFileSync(join(root, "pipeline/sources.json"), "utf8")) as Record<
+  string,
+  { file?: string }
+>;
+const KNOWN = new Set([
+  ...Object.values(pins).flatMap((p) => (p.file ? [p.file] : [])),
+  ...Object.values(BIBLES).map((b) => b.file),
+  "wikidata-coords.json",
+  "itinere_roads.geojson",
+]);
+const isSource = (path: string) => KNOWN.has(path) || /^(people|photos)\//.test(path);
 
 interface Entry {
   path: string;
@@ -82,6 +102,13 @@ if (command === "save") {
   let copy = join(at, `sources-${stamp.slice(0, 10)}`);
   if (existsSync(copy)) copy = `${copy}-${stamp.slice(11, 16).replace(":", "")}`;
   if (existsSync(copy)) throw new Error(`${copy} exists: not written over`);
+  const strays = files(cache)
+    .map((f) => relative(cache, f).split(sep).join("/"))
+    .filter((path) => !isSource(path));
+  if (strays.length)
+    throw new Error(
+      `pipeline/.cache holds files the build does not read: ${strays.join(", ")}; remove them (ADR 0008: nothing outside the allowlist is kept)`,
+    );
   const list: Entry[] = [];
   for (const file of files(cache).sort()) {
     const path = relative(cache, file);

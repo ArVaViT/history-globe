@@ -9,7 +9,7 @@ description: Kung saan nagmula ang bawat lugar, hangganan, petsa at tao sa Histo
   nagmula ang bawat patong, ano ang binago namin at ano ang hindi namin alam.
 </p>
 
-<h2>Mga lugar sa Biblia</h2>
+<h2 id="places-of-the-bible">Mga lugar sa Biblia</h2>
 <p>
   Ang {{places}} lugar at ang kanilang mga talata ay galing sa
   <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
@@ -23,7 +23,8 @@ description: Kung saan nagmula ang bawat lugar, hangganan, petsa at tao sa Histo
   ng OpenBible, at may sariling pahina ang bawat isa; ang iba pang {{unnamed}} ay mga talaang
   iniingatan ng OpenBible na hindi binabanggit ng alinmang talata ng mga aklat na iyon (halimbawa,
   ang Adasa ng 1 Macabeo). May artikulo ang {{articles}} lugar. May {{excluded}} pang hindi isinama
-  dahil wala silang puntong maaaring ilathala (tingnan sa ibaba).
+  dahil wala silang puntong maaaring ilathala (tingnan sa ibaba). May {{without_point}} pang walang
+  anumang punto sa OpenBible.
 </p>
 <ul>
   <li>
@@ -47,7 +48,7 @@ description: Kung saan nagmula ang bawat lugar, hangganan, petsa at tao sa Histo
   </li>
 </ul>
 
-<h2>Kailan nakatayo ang mga lugar</h2>
+<h2 id="when-places-stood">Kailan nakatayo ang mga lugar</h2>
 <p>
   Ang isang lungsod sa mapa ay iginuguhit nang buo lamang sa mga taong nakatayo ito. Para sa
   {{life}} lugar sa Biblia, mano-manong itinatala ang mga taon ng pagkakatatag, pagkawasak at
@@ -56,25 +57,26 @@ description: Kung saan nagmula ang bawat lugar, hangganan, petsa at tao sa Histo
   pagkakatatag o wakas ay hindi binibigyan ng taon para doon.
 </p>
 <p>
-  Ang {{ancient}} lungsod ng sinaunang daigdig na hindi binabanggit ng Biblia — mga kabisera,
-  daungan at santuwaryo gaya ng Ugarit, Hattusa, Mari o Delfos — ay pinili at pinetsahan nang
-  isa-isa: bawat isa ay inilagay ayon sa tala nito sa
+  Sa {{ancient}} lungsod ng sinaunang daigdig na hindi binabanggit ng Biblia — mga kabisera, daungan
+  at santuwaryo gaya ng Ugarit, Hattusa, Mari o Delfos — {{ancient_hand}} ang pinili at pinetsahan
+  nang isa-isa: bawat isa ay inilagay ayon sa tala nito sa
   <a href="https://pleiades.stoa.org">Pleiades</a> o Wikidata, sa sinaunang pook sa halip na sa
   makabagong bayan, at pinetsahan mula sa mga talang iyon at sa mga ensiklopedikong salaysay, na
-  pinagtugma nang mano-mano. Mga sanlibo’t apatnaraan pa ang pinili ng isang script: mga pamayanan,
-  santuwaryo at daungan sa Pleiades na ang item sa Wikidata ay isang sinaunang pook, hindi
-  makabagong bayan; ang kanilang mga punto ay mula sa Pleiades, ang mga pangalan ay mula sa Wikidata
-  (kung wala itong pangalan sa Ruso, Ukranyano, Bulgaro o Serbyo, mula sa amin, sa anyong ginagamit
-  ng klasikal na pag-aaral sa wikang iyon), at ang kanilang mga taon ay ang saklaw ng mga panahong
-  pinatutunayan ng Pleiades na umiral sila, kaya lahat sila ay may markang “mga”. Kapag nawasak ang
-  isang bayan sa gitna ng isang panahon, ang wakas nito ay itinakda nang mano-mano batay sa
-  kasaysayan. Lumilitaw ang isang lugar sa zoom na itinatakda ng kung gaano kadalas itong
-  binabanggit ng Biblia; ang bayang bahagya lamang binabanggit ng Biblia ngunit kilalang-kilala ng
-  daigdig — Cartago, Sparta, Ur — ay mas maagang lumilitaw, ayon sa bilang ng mga artikulo sa
-  Wikipedia tungkol sa mismong sinaunang pook.
+  pinagtugma nang mano-mano. Ang iba pang {{ancient_script}} ay pinili ng isang script: mga
+  pamayanan, santuwaryo at daungan sa Pleiades na ang item sa Wikidata ay isang sinaunang pook,
+  hindi makabagong bayan; ang kanilang mga punto ay mula sa Pleiades, ang mga pangalan ay mula sa
+  Wikidata (kung wala itong pangalan sa Ruso, Ukranyano, Bulgaro o Serbyo, mula sa amin, sa anyong
+  ginagamit ng klasikal na pag-aaral sa wikang iyon; sa ibang mga wika, kung wala itong pangalan,
+  ang pangalang Ingles), at ang kanilang mga taon ay ang saklaw ng mga panahong pinatutunayan ng
+  Pleiades na umiral sila, kaya lahat sila ay may markang “mga”. Kapag nawasak ang isang bayan sa
+  gitna ng isang panahon, ang wakas nito ay itinakda nang mano-mano batay sa kasaysayan. Lumilitaw
+  ang isang lugar sa zoom na itinatakda ng kung gaano kadalas itong binabanggit ng Biblia; ang
+  bayang bahagya lamang binabanggit ng Biblia ngunit kilalang-kilala ng daigdig — Cartago, Sparta,
+  Ur — ay mas maagang lumilitaw, ayon sa bilang ng mga artikulo sa Wikipedia tungkol sa mismong
+  sinaunang pook.
 </p>
 
-<h2>Mga hangganan</h2>
+<h2 id="borders">Mga hangganan</h2>
 <p>
   Ang mga estado at ang kanilang mga hangganan taon-taon ay galing sa
   <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatria</a> (Seshat Global History Databank,
@@ -107,23 +109,23 @@ description: Kung saan nagmula ang bawat lugar, hangganan, petsa at tao sa Histo
   ng Asiria na naging ito.
 </p>
 
-<h2>Mga tao</h2>
+<h2 id="people">Mga tao</h2>
 <p>
   Ang {{people}} tao sa Biblia at ang kanilang mga ugnayang pampamilya ay galing sa TIPNR ng STEP
   Bible (Tyndale House, Cambridge). Hindi namin basta pinagkatiwalaan ang mga ugnayan:
 </p>
 <ul>
   <li>
-    ang mga ugnayang pampamilya ng 1,200 taong pinakamadalas pangalanan ng teksto, at ang mga
+    ang mga ugnayang pampamilya ng {{n:1200}} taong pinakamadalas pangalanan ng teksto, at ang mga
     talaangkanan sa 1 Cronica, ay binasa laban sa mga talata; 153 ugnayang hindi sinasabi ng teksto
     ang inalis — ang mga kapatid ni Jesus bilang mga anak nina Jose at Maria, si Jezabel bilang ina
     ni Ochozias — at idinagdag mula sa teksto ang mga nawawalang ugnayan sa talaangkanan ni Jesus;
   </li>
   <li>
-    lahat ng 1,136 ugnayan sa pagitan ng isang tao at isang lugar kung saan may sentral o pantulong
-    siyang papel ay binasa talata sa talata; 344 ang inalis (si Moises “sa Canaan”, si Abraham “sa
-    Sodoma”, ang mga lugar ng anak na iniugnay sa kanyang ama) at 94 ang binigyan ng mas mabuting
-    talata;
+    lahat ng {{n:1136}} ugnayan sa pagitan ng isang tao at isang lugar kung saan may sentral o
+    pantulong siyang papel ay binasa talata sa talata; 344 ang inalis (si Moises “sa Canaan”, si
+    Abraham “sa Sodoma”, ang mga lugar ng anak na iniugnay sa kanyang ama) at 94 ang binigyan ng mas
+    mabuting talata;
   </li>
   <li>
     pinag-iiba ang mga magkakapangalan kung paano sila pinag-iiba ng teksto: “Juan Bautista”, “Juan
@@ -143,15 +145,17 @@ description: Kung saan nagmula ang bawat lugar, hangganan, petsa at tao sa Histo
   <a href="sources.html">mga sanggunian</a>. Walang paglalakbay na nakapasa sa unang pagsusuri nito
   nang hindi nagbabago; bawat isa ay itinama at sinuring muli. Ang huling buong pagsusuri, natapos
   noong 17 Oktubre 2026, ay muling bumasa sa lahat ng 746 artikulo laban sa mga sanggunian, mga 210
-  sa mga ito ay dalawang beses, at gumawa ng 1,088 pagwawasto, bawat isa ay dinala sa 11 wikang
+  sa mga ito ay dalawang beses, at gumawa ng {{n:1088}} pagwawasto, bawat isa ay dinala sa 11 wikang
   mayroon noon ang site; may mga tahasang pagkakamali sa 157 artikulo. Ang limang wikang idinagdag
-  noong 24 Oktubre 2026 (Swedish, Norwegian, Danish, Tagalog at Serbian) ay isinalin mula sa mga
-  tekstong naitama na; pagkatapos, inihambing sa isang hiwalay na pagsusuri ang bawat isa sa
+  noong 24 Oktubre 2026 (Swedish, Norwegian, Danish, Tagalog at Serbian) at ang limang idinagdag
+  noong 26 Oktubre 2026 (Hungarian, Finnish, Vietnamese, Romanian at Bulgarian) ay isinalin mula sa
+  mga tekstong naitama na; pagkatapos, inihambing sa isang hiwalay na pagsusuri ang bawat isa sa
   kanilang mga teksto sa Ingles, at ang bawat sipi sa Biblia ng wikang iyon. Ang mga pagsusuring ito
   ay sariling pagsusuri ng proyekto, hindi peer review. Ang mga pagsusuri ng mga iskolar ay
   inilalathala sa kanilang pangalan sa pahina ng
   <a href="reviews.html">mga pagsusuri ng mga iskolar</a>, at bawat artikulong sinuri ng isang
-  iskolar ay nagsasaad ng pangalan ng tagasuri at may link sa kanyang pagsusuri.
+  iskolar ay nagsasaad ng pangalan ng tagasuri at may link sa kanyang pagsusuri. Nailathala na:
+  <span class="reviews"></span>.
 </p>
 <p>
   Ang layo sa isang hintuan ay ibinibigay sa tuwid na linya. Mula 312 BK, kung kailan nagsisimula
@@ -175,8 +179,8 @@ description: Kung saan nagmula ang bawat lugar, hangganan, petsa at tao sa Histo
   lumilitaw sa mapa sa kani-kanilang taon. Ang mga nasa Biblia ay pinepetsahan kung paano
   pinepetsahan ng mga paglalakbay ang parehong kuwento; ang iba ay walang talata kundi sinaunang o
   pang-iskolar na sanggunian. Sinuri ng ikalawa at hiwalay na pagsusuri ang burador laban sa
-  tekstong Sinodal at sa King James Version: sa 58 entrada, 16 ang itinama, at isa ang inalis dahil
-  walang punto ang mapa para sa pook nito.
+  tekstong Sinodal at sa King James Version: sa 58 entrada (Oktubre 2026), 16 ang itinama, at isa
+  ang inalis dahil walang punto ang mapa para sa pook nito.
 </p>
 
 <p>
@@ -228,7 +232,7 @@ description: Kung saan nagmula ang bawat lugar, hangganan, petsa at tao sa Histo
   </li>
 </ul>
 
-<h2>Mga pagsusuri sa bawat build</h2>
+<h2 id="checks-on-every-build">Mga pagsusuri sa bawat build</h2>
 <p>Walang nalalathala malibang pumasa ang bawat pagsusuri:</p>
 <ul>
   <li>
@@ -248,7 +252,7 @@ description: Kung saan nagmula ang bawat lugar, hangganan, petsa at tao sa Histo
   </li>
 </ul>
 
-<h2>Ano ang hindi tiyak</h2>
+<h2 id="what-is-uncertain">Ano ang hindi tiyak</h2>
 <ul>
   <li>
     Tinatayang lamang ang mga petsa bago ang unang milenyo BK, at may ilang pinagtatalunan; ang mapa
@@ -296,7 +300,7 @@ https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
   Kung may GitHub account ka, maaari mo ring gamitin ang link na <i>May nakita kang mali?</i> sa
   bawat card ng lugar, na nagbubukas ng issue sa pampublikong repository na nakalagay na ang lugar,
   o magbukas nang direkta:
-  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+  <a href="https://github.com/ArVaViT/history-globe/issues/new?template=report-an-error.yml"
     >github.com/ArVaViT/history-globe/issues</a
   >.
 </p>

@@ -8,8 +8,8 @@
  * this version, which the build compares to tell "changed since".
  *
  * Read from content/ as committed at HEAD (the texts, not the built pages: no canary marks).
- * The PDF needs Playwright (as e2e/browser.mjs finds it: PLAYWRIGHT=<folder>); without it
- * the HTML is still written, to print from a browser.
+ * The PDF needs Playwright's Chromium (e2e/browser.mjs); without it the HTML is still
+ * written, to print from a browser.
  *
  *   node scripts/review-packet.ts --scope "Lycus valley" colossae laodicea q:some-question tour:paul-2
  *   [--out <folder>]  (default pipeline/out/review-packets/, outside git)
@@ -22,6 +22,7 @@ import { parse } from "yaml";
 import { ArticleFile, QuestionFile, TourFile } from "../packages/model/src/content.ts";
 import { formatRef } from "../packages/model/src/scripture.ts";
 import { loadAllLocaleData } from "../packages/model/src/locale-data.ts";
+import { REPOSITORY, SITE_ORIGIN } from "../packages/model/src/site.ts";
 import { placeSlugs } from "../packages/model/src/slugs.ts";
 import { itemHash } from "./content-hash.ts";
 import { esc } from "./page-shell.ts";
@@ -30,8 +31,6 @@ import { reviewDate } from "./review-pages.ts";
 await loadAllLocaleData();
 
 const root = join(import.meta.dirname, "..");
-const REPO = "https://github.com/ArVaViT/history-globe";
-const SITE = "https://historyglobe.app";
 
 // The arguments: the scope's name, the items (an article by its id, q:<id>, tour:<id>).
 const args = process.argv.slice(2);
@@ -123,10 +122,10 @@ for (const w of wanted) {
 ${numbered(a.body.en)}
 <p class="meta"><b>Scripture:</b> ${refs(a.scripture)}</p>
 <div class="meta"><b>Sources:</b><ol>${a.sources.map((s) => `<li>${esc(s)}</li>`).join("")}</ol></div>
-<p class="meta">File: ${REPO}/blob/${commit}/${path}</p>
+<p class="meta">File: ${REPOSITORY}/blob/${commit}/${path}</p>
 </section>`);
     links.push(
-      `- ${a.title.en}: ${SITE}/en/place/${slugOf.get(a.place) ?? a.place}/ · ${REPO}/blob/${commit}/${path}`,
+      `- ${a.title.en}: ${SITE_ORIGIN}/en/place/${slugOf.get(a.place) ?? a.place}/ · ${REPOSITORY}/blob/${commit}/${path}`,
     );
     items.push(`  - { article: ${a.id}, hash: "${itemHash({ kind: "article", ...a })}" }`);
   } else if (w.kind === "question") {
@@ -139,9 +138,11 @@ ${numbered(a.body.en)}
 ${numbered(q.answer.en)}
 <p class="meta"><b>Scripture:</b> ${refs(q.scripture)}</p>
 <div class="meta"><b>Sources:</b><ol>${q.sources.map((s) => `<li>${esc(s)}</li>`).join("")}</ol></div>
-<p class="meta">File: ${REPO}/blob/${commit}/${path}</p>
+<p class="meta">File: ${REPOSITORY}/blob/${commit}/${path}</p>
 </section>`);
-    links.push(`- ${q.question.en}: ${SITE}/en/q/${q.id}/ · ${REPO}/blob/${commit}/${path}`);
+    links.push(
+      `- ${q.question.en}: ${SITE_ORIGIN}/en/q/${q.id}/ · ${REPOSITORY}/blob/${commit}/${path}`,
+    );
     items.push(`  - { question: ${q.id}, hash: "${itemHash({ kind: "question", ...q })}" }`);
   } else {
     const path = `content/tours/${w.id}.yaml`;
@@ -156,9 +157,11 @@ ${t.stops
       `<p class="para"><span class="n">¶${String(i + 1)}</span><b>${esc(placeName.get(s.place) ?? s.place)}</b> (${esc(s.ref ? formatRef(s.ref, "en") : (s.source?.cite.en ?? ""))}). ${esc(s.note.en)}</p>`,
   )
   .join("\n")}
-<p class="meta">File: ${REPO}/blob/${commit}/${path}</p>
+<p class="meta">File: ${REPOSITORY}/blob/${commit}/${path}</p>
 </section>`);
-    links.push(`- ${t.title.en}: ${SITE}/en/tour/${t.id}/ · ${REPO}/blob/${commit}/${path}`);
+    links.push(
+      `- ${t.title.en}: ${SITE_ORIGIN}/en/tour/${t.id}/ · ${REPOSITORY}/blob/${commit}/${path}`,
+    );
     items.push(`  - { tour: ${t.id}, hash: "${itemHash({ kind: "tour", ...t })}" }`);
   }
 }
@@ -186,7 +189,7 @@ const html = `<!doctype html>
 </head>
 <body>
 <h1>${esc(title)}</h1>
-<p class="lead">${String(wanted.length)} item${wanted.length === 1 ? "" : "s"}, the English text as it stood in commit ${commit} of ${REPO} (${date}). Paragraphs are numbered for reference ("Colossae ¶3"); the right margin is left for notes. Brief, checklist and review policy: ${SITE}/docs/reviews.html.</p>
+<p class="lead">${String(wanted.length)} item${wanted.length === 1 ? "" : "s"}, the English text as it stood in commit ${commit} of ${REPOSITORY} (${date}). Paragraphs are numbered for reference ("Colossae ¶3"); the right margin is left for notes. Brief, checklist and review policy: ${SITE_ORIGIN}/docs/reviews.html.</p>
 ${sections.join("\n")}
 </body>
 </html>
@@ -210,7 +213,7 @@ ${items.join("\n")}
 );
 console.log(`review packet: ${dir}/packet.html, links.md, items.yaml`);
 
-// The PDF, with page numbers, from the HTML (Playwright as the browser checks find it).
+// The PDF, with page numbers, from the HTML.
 interface Browser {
   newPage(): Promise<{
     goto(url: string): Promise<unknown>;

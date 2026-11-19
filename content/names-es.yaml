@@ -319,7 +319,7 @@ places:
   ae4cd38: Rehob
   a7d0e71: Rogelim
   a28da66: Saaraim
-  a50eea4: Torre de Hamea
+  a50eea4: Torre de los Cien
   a816ed9: Valle de Gerar
   a6ee047: Aguas de Merom
   ab5161f: Zered
@@ -452,7 +452,7 @@ places:
   ac12af9: Libia
   a6ac675: Moreset-gat
   a939939: Torre de Siquem
-  a84c559: Campo del Lavador
+  a84c559: Campo del Batanero
   a32397f: Alús
   a2f186d: Atad
   a03cc2d: Baalat-beer
@@ -602,7 +602,7 @@ places:
   ae12e43: Baal-gad
   a53f299: Bet-milo
   aca444b: Endor
-  a9a2541: Biblos
+  a9a2541: Gebal
   a3088c2: Hazor
   ae3d487: Magog
   ab682e6: Bet-horón de Arriba
@@ -772,7 +772,7 @@ places:
   af054ba: Gedor
   a2ebe1c: Hefer
   a116c5c: Javán
-  aacc081: Fuentes de Abajo
+  aacc081: Gulot de Abajo
   a6c2936: Madón
   a411283: Migdol
   a11fadd: Monte Halac
@@ -1317,12 +1317,14 @@ polities:
   Almohad Caliphate: Califato almohade
   Almoravid Dynasty: Imperio almorávide
   Alodia: Aloa
+  Ammon: Amón
   Angevin Empire: Imperio angevino
   Angevins: Angevinos
   Ankhwennefer: Anjunnefer
   Antigonid Dynasty: Dinastía antigónida
   Antigonid Macedonia: Macedonia antigónida
   Aquitaine: Aquitania
+  Aram-Damascus: Aram-Damasco
   Armenian Kingdom of Cilicia: Reino armenio de Cilicia
   Assyria: Asiria
   Assyrian Egypt: Egipto asirio
@@ -1347,6 +1349,7 @@ polities:
   Cao Wei: Wei de Cao
   Capetian House of Anjou: Casa capeta de Anjou
   Carantania: Carantania
+  Carchemish: Carquemis
   Carolingian Empire: Imperio carolingio
   Carthage: Cartago
   Caucasian Albania: Albania caucásica
@@ -1432,6 +1435,7 @@ polities:
   Eastern Kara-Khanids: Karajánidas orientales
   Eastern Kushans: Kushanas orientales
   Eastern Roman Empire: Imperio romano de Oriente
+  Edom: Edom
   Elam: Elam
   Emirate of Crete: Emirato de Creta
   Emirate of Córdoba: Emirato de Córdoba
@@ -1481,6 +1485,7 @@ polities:
   Hadhramaut: Hadramaut
   Hafsid Dynasty: Dinastía hafsí
   Halych-Volhynia occupation: Estepa cumana
+  Hamath: Hamat
   Hamdanid Emirates: Emiratos hamdaníes
   Hammadid Dynasty: Dinastía hammadí
   Han Dynasty: Dinastía Han
@@ -1615,6 +1620,7 @@ polities:
   Minaeans: Mineos
   Minoan civilization: Civilización minoica
   Mitanni: Mitani
+  Moab: Moab
   Molossians: Molosos
   Mongol Empire: Imperio mongol
   Mycenaean Greece: Grecia micénica
@@ -1794,6 +1800,11 @@ polities:
   Third Dynasty of Ur: Tercera dinastía de Ur
   Principality of Armenia: Principado de Armenia
 modern:
+  md88865: "Argob"
+  m0df275: "Boces"
+  m9b1996: "Desierto de Jeruel"
+  me0645b: "Ören"
+  m23ce84: "Massa"
   m66c5b8: Jerusalén
   md561de: Babilonia
   me7edbd: Jordán
@@ -6708,3 +6719,21 @@ ancient:
   "Q173474": "Tarnovo"
   "Q2538648": "Wad ban Naqa"
   "Q1462261": "Wasit"
+# The today line where OpenBible describes the place in free English text, translated whole
+# (as content/modern-names.yaml does for Russian), with this file's names of the places.
+labels:
+  "in the region east of Gibeon": "Al este de Gabaón"
+  "in the region between Mizpah and Shen": "Entre Mizpa y Sen"
+  "in the region between Gerar and Beersheba": "Entre Gerar y Beerseba"
+  "in the region south of Hebron": "Al sur de Hebrón"
+  "in the region between Lachish and Gath": "Entre Laquis y Gat"
+  "in the region between Eshtaol and Zorah": "Entre Estaol y Zora"
+  "in the region between Damascus and Hamath": "Entre Damasco y Hamat"
+  "in the region between Baalbek and Kadesh": "Entre Baalbek y Cades"
+  "in the region between Aiath and Michmash": "Entre Ayat y Micmas"
+  "in the region between Ibleam and Megiddo": "Entre Ibleam y Meguido"
+  "in the region between Punon and Zered": "Entre Funón y el arroyo Zered"
+  "in the region between Maghfar and Lake Timsah": "Entre Maghfar y el lago Timsah"
+  "in the region north of the Dead Sea": "Al norte del Mar Muerto"
+  "in the region south of the Lisan": "Al sur de la península de Lisán"
+  "in the region between Kedesh-naphtali and Hazor": "Entre Cedes de Neftalí y Hazor"

@@ -9,7 +9,7 @@ description: Các địa điểm, những câu Kinh Thánh nhắc đến chúng,
   không cần đăng ký, không có giới hạn nào ngoài bộ nhớ đệm thông thường.
 </p>
 
-<h2>Một câu Kinh Thánh nhắc đến những địa điểm nào</h2>
+<h2 id="which-places-does-a-verse-name">Một câu Kinh Thánh nhắc đến những địa điểm nào</h2>
 <p>
   Mỗi sách của Kinh Thánh một tệp: mỗi câu có nhắc đến một địa điểm, kèm mã định danh của các địa
   điểm ấy.
@@ -27,10 +27,10 @@ description: Các địa điểm, những câu Kinh Thánh nhắc đến chúng,
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
-   "wikidata": "Q379652", "pleiades": "501482",
+   "wikidata": "Q379652", "pleiades": "501482", "tipnr": "Philippi@Act.16.12-1Th",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
 
-<h2>Ai và ở đâu trong một chương</h2>
+<h2 id="who-and-where-in-a-chapter">Ai và ở đâu trong một chương</h2>
 <p>
   Mỗi sách một tệp: mỗi chương, kèm các địa điểm và các nhân vật mà chương ấy nhắc đến. Nhân vật
   được định danh như trong TIPNR của STEPBible; tên của họ và câu Kinh Thánh đầu tiên nhắc đến họ
@@ -41,7 +41,7 @@ description: Các địa điểm, những câu Kinh Thánh nhắc đến chúng,
 { "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
                "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
-<h2>Tất cả các tệp</h2>
+<h2 id="all-the-files">Tất cả các tệp</h2>
 <div class="table">
   <table>
     <thead>
@@ -60,7 +60,9 @@ description: Các địa điểm, những câu Kinh Thánh nhắc đến chúng,
         <td>
           mọi địa điểm: mã định danh, tên, loại, tọa độ, số câu Kinh Thánh nhắc đến nó, trang của nó
           (với địa điểm được một câu nào đó nhắc đến); <code>wikidata</code> và
-          <code>pleiades</code>, cùng địa điểm ấy trong các danh mục địa danh đó, nếu đã biết
+          <code>pleiades</code>, cùng địa điểm ấy trong các danh mục địa danh đó, nếu đã biết;
+          <code>tipnr</code>, tên của nó trong TIPNR của STEPBible, theo cùng lược đồ mã như
+          <code>people.json</code>, nếu OpenBible có liên kết
         </td>
       </tr>
       <tr>
@@ -77,26 +79,33 @@ description: Các địa điểm, những câu Kinh Thánh nhắc đến chúng,
       <tr>
         <td><code>/api/v1/people.json</code></td>
         <td>
-          các nhân vật Kinh Thánh nhắc đến: mã TIPNR, tên, tên trong các ngôn ngữ khác nếu trang web
-          có, giới tính, số câu Kinh Thánh nhắc đến họ, câu đầu tiên
+          {{people_api}} nhân vật Kinh Thánh nhắc đến (bản đồ hiển thị {{people}} người trong số đó
+          cùng gia đình): mã TIPNR, tên, tên trong các ngôn ngữ khác nếu trang web có, giới tính, số
+          câu Kinh Thánh nhắc đến họ, câu đầu tiên
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/events.json</code></td>
-        <td>các sự kiện có niên đại, kèm <code>ref</code> khi Kinh Thánh thuật lại sự kiện ấy</td>
+        <td>
+          các sự kiện có niên đại, kèm <code>ref</code> khi Kinh Thánh thuật lại sự kiện ấy;
+          <code>site</code> thay cho <code>place</code> với một thành phố của thế giới cổ đại mà
+          Kinh Thánh không nhắc đến
+        </td>
       </tr>
       <tr>
         <td><code>/api/v1/battles.json</code></td>
         <td>
           các trận đánh và cuộc vây hãm: địa điểm, năm, các bên và kết cục, kèm <code>ref</code> khi
-          Kinh Thánh thuật lại trận đánh ấy
+          Kinh Thánh thuật lại trận đánh ấy; <code>event</code>, sự kiện trong
+          <code>events.json</code> kể cùng câu chuyện
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/questions.json</code></td>
         <td>
           những câu hỏi mọi người thường hỏi, được trả lời trong mọi ngôn ngữ của trang web, kèm chế
-          độ xem bản đồ và nguồn
+          độ xem bản đồ và nguồn; <code>scripture</code>, các câu Kinh Thánh mà câu trả lời dẫn;
+          <code>license</code> và <code>license_url</code>, giấy phép của các câu trả lời
         </td>
       </tr>
       <tr>
@@ -104,7 +113,8 @@ description: Các địa điểm, những câu Kinh Thánh nhắc đến chúng,
         <td>
           các hành trình: các chặng theo thứ tự, mỗi chặng kèm đoạn Kinh Thánh và ghi chú;
           <code>by: "sea"</code> cho một chặng đi bằng đường biển, và <code>sailed</code> (số ngày
-          và câu Kinh Thánh) khi văn bản cho biết chuyến đi kéo dài bao lâu
+          và câu Kinh Thánh) khi văn bản cho biết chuyến đi kéo dài bao lâu; <code>source</code> khi
+          một điểm dừng được kể ngoài Kinh Thánh
         </td>
       </tr>
       <tr>
@@ -124,7 +134,7 @@ description: Các địa điểm, những câu Kinh Thánh nhắc đến chúng,
   </table>
 </div>
 
-<h2>Quy ước</h2>
+<h2 id="conventions">Quy ước</h2>
 <ul>
   <li>
     Tham chiếu theo định dạng OSIS với tên viết tắt tiếng Anh của các sách và cách đánh số của bản
@@ -134,7 +144,8 @@ description: Các địa điểm, những câu Kinh Thánh nhắc đến chúng,
   <li>
     Một địa điểm được liệt kê hai lần dưới cùng một tên trong dữ liệu nguồn mang
     <code>"duplicate": true</code>; một địa điểm có vị trí còn tranh cãi mang
-    <code>"disputed": true</code>.
+    <code>"disputed": true</code>; một sự kiện, trận đánh hay hành trình có năm ước chừng mang
+    <code>"approximate": true</code>.
   </li>
   <li>
     Các tệp được build lại với mỗi lần phát hành dữ liệu; <code>index.json</code> ghi ngày của lần
@@ -146,7 +157,7 @@ description: Các địa điểm, những câu Kinh Thánh nhắc đến chúng,
   </li>
 </ul>
 
-<h2>Giấy phép và ghi công</h2>
+<h2 id="licence-and-credit">Giấy phép và ghi công</h2>
 <p>
   Dữ liệu theo giấy phép <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Hãy
   dùng nó, thay đổi nó, bán những gì bạn xây dựng từ nó; hãy ghi tên các nguồn ở nơi bạn hiển thị

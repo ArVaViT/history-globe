@@ -9,7 +9,7 @@ description: Ang mga lugar, ang mga talatang bumabanggit sa mga ito, ang mga pan
   limitasyon maliban sa karaniwang caching.
 </p>
 
-<h2>Aling mga lugar ang binabanggit ng isang talata</h2>
+<h2 id="which-places-does-a-verse-name">Aling mga lugar ang binabanggit ng isang talata</h2>
 <p>
   Isang file bawat aklat ng Biblia: bawat talatang bumabanggit ng lugar, kasama ang mga id ng mga
   lugar na iyon.
@@ -27,10 +27,10 @@ description: Ang mga lugar, ang mga talatang bumabanggit sa mga ito, ang mga pan
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
-   "wikidata": "Q379652", "pleiades": "501482",
+   "wikidata": "Q379652", "pleiades": "501482", "tipnr": "Philippi@Act.16.12-1Th",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
 
-<h2>Sino at saan sa isang kabanata</h2>
+<h2 id="who-and-where-in-a-chapter">Sino at saan sa isang kabanata</h2>
 <p>
   Isang file bawat aklat: bawat kabanata, kasama ang mga lugar at mga taong binabanggit nito.
   Kinikilala ang mga tao gaya sa TIPNR ng STEPBible; nasa <code>people.json</code> ang kanilang mga
@@ -41,7 +41,7 @@ description: Ang mga lugar, ang mga talatang bumabanggit sa mga ito, ang mga pan
 { "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
                "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
-<h2>Lahat ng mga file</h2>
+<h2 id="all-the-files">Lahat ng mga file</h2>
 <div class="table">
   <table>
     <thead>
@@ -62,7 +62,9 @@ description: Ang mga lugar, ang mga talatang bumabanggit sa mga ito, ang mga pan
         <td>
           bawat lugar: id, mga pangalan, uri, punto, ilang talata ang bumabanggit dito, ang pahina
           nito (para sa lugar na binabanggit ng ilang talata); <code>wikidata</code> at
-          <code>pleiades</code>, ang parehong lugar sa mga gazetteer na iyon, kung kilala
+          <code>pleiades</code>, ang parehong lugar sa mga gazetteer na iyon, kung kilala;
+          <code>tipnr</code>, ang pangalan nito sa TIPNR ng STEPBible, sa parehong anyo ng mga id sa
+          <code>people.json</code>, kung iniuugnay ito ng OpenBible
         </td>
       </tr>
       <tr>
@@ -82,29 +84,33 @@ description: Ang mga lugar, ang mga talatang bumabanggit sa mga ito, ang mga pan
       <tr>
         <td><code>/api/v1/people.json</code></td>
         <td>
-          ang mga taong binabanggit ng Biblia: TIPNR id, pangalan, mga pangalan sa ibang wika kung
-          mayroon ang site, kasarian, ilang talata ang bumabanggit sa kanila, ang una
+          ang {{people_api}} taong binabanggit ng Biblia ({{people}} sa kanila ang nasa mapa kasama
+          ang kanilang pamilya): TIPNR id, pangalan, mga pangalan sa ibang wika kung mayroon ang
+          site, kasarian, ilang talata ang bumabanggit sa kanila, ang una
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/events.json</code></td>
         <td>
           ang mga pangyayaring may petsa, kasama ang <code>ref</code> kung isinasalaysay ng Biblia
-          ang pangyayari
+          ang pangyayari; <code>site</code> sa halip na <code>place</code> para sa lungsod ng
+          sinaunang daigdig na hindi binabanggit ng Biblia
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/battles.json</code></td>
         <td>
           mga labanan at pagkubkob: lugar, taon, mga panig at kinalabasan, kasama ang
-          <code>ref</code> kung isinasalaysay ng Biblia ang labanan
+          <code>ref</code> kung isinasalaysay ng Biblia ang labanan; <code>event</code>, ang
+          pangyayari sa <code>events.json</code> na nagsasalaysay ng parehong kuwento
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/questions.json</code></td>
         <td>
           mga tanong na itinatanong ng mga tao, sinagot sa lahat ng wika ng site, kasama ang tanawin
-          ng mapa at ang mga sanggunian
+          ng mapa at ang mga sanggunian; <code>scripture</code>, ang mga talatang binabanggit ng
+          sagot; <code>license</code> at <code>license_url</code>, ang lisensiya ng mga sagot
         </td>
       </tr>
       <tr>
@@ -112,7 +118,8 @@ description: Ang mga lugar, ang mga talatang bumabanggit sa mga ito, ang mga pan
         <td>
           ang mga paglalakbay: ang kanilang mga hintuan ayon sa pagkakasunod, bawat isa ay may sipi
           at tala; <code>by: "sea"</code> para sa bahaging sinakyan sa dagat, at
-          <code>sailed</code> (mga araw at talata) kung sinasabi ng teksto kung gaano katagal
+          <code>sailed</code> (mga araw at talata) kung sinasabi ng teksto kung gaano katagal;
+          <code>source</code> kung ang hintuan ay isinasalaysay sa labas ng Biblia
         </td>
       </tr>
       <tr>
@@ -130,7 +137,7 @@ description: Ang mga lugar, ang mga talatang bumabanggit sa mga ito, ang mga pan
   </table>
 </div>
 
-<h2>Mga kumbensiyon</h2>
+<h2 id="conventions">Mga kumbensiyon</h2>
 <ul>
   <li>
     Ang mga reperensiya ay OSIS na may mga pinaikling pangalan ng aklat sa Ingles at pagnunumero ng
@@ -140,7 +147,8 @@ description: Ang mga lugar, ang mga talatang bumabanggit sa mga ito, ang mga pan
   <li>
     Ang lugar na dalawang beses nakalista sa ilalim ng iisang pangalan sa pinagmulang datos ay may
     <code>"duplicate": true</code>; ang lugar na pinagtatalunan ang pook,
-    <code>"disputed": true</code>.
+    <code>"disputed": true</code>; ang pangyayari, labanan o paglalakbay na tinatayang lamang ang
+    taon, <code>"approximate": true</code>.
   </li>
   <li>
     Muling binubuo ang mga file sa bawat release ng datos; ibinibigay ng <code>index.json</code> ang
@@ -152,7 +160,7 @@ description: Ang mga lugar, ang mga talatang bumabanggit sa mga ito, ang mga pan
   </li>
 </ul>
 
-<h2>Lisensya at kredito</h2>
+<h2 id="licence-and-credit">Lisensya at kredito</h2>
 <p>
   Nasa ilalim ng <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> ang datos.
   Gamitin ito, baguhin ito, ibenta ang binuo mo gamit ito; pangalanan ang mga sanggunian kung saan

@@ -1,72 +1,32 @@
 import { describe, expect, it } from "vitest";
-import { pointsAlongPath } from "./elevation";
+import { decodeTerrarium, tilePixel } from "./elevation.ts";
 
-describe("points along a way", () => {
-  it("spaces a straight line evenly, both ends included", () => {
-    expect(
-      pointsAlongPath(
-        [
-          [0, 0],
-          [4, 0],
-        ],
-        5,
-      ),
-    ).toEqual([
-      [0, 0],
-      [1, 0],
-      [2, 0],
-      [3, 0],
-      [4, 0],
-    ]);
+describe("tilePixel", () => {
+  it("finds the tile and the pixel a point falls in", () => {
+    expect(tilePixel(0, 0, 0)).toEqual({ x: 0, y: 0, px: 256, py: 256 });
+    expect(tilePixel(0, 0, 1)).toEqual({ x: 1, y: 1, px: 0, py: 0 });
+    expect(tilePixel(-180, 0, 2)).toEqual({ x: 0, y: 2, px: 0, py: 0 });
   });
 
-  it("follows a road round its corner, spaced by length, not by corner", () => {
-    // Three units east, then one north: the fourth of five points is the corner itself.
-    const pts = pointsAlongPath(
-      [
-        [0, 0],
-        [3, 0],
-        [3, 1],
-      ],
-      5,
-    );
-    expect(pts.map(([x, y]) => [Math.round(x * 100) / 100, Math.round(y * 100) / 100])).toEqual([
-      [0, 0],
-      [1, 0],
-      [2, 0],
-      [3, 0],
-      [3, 1],
-    ]);
+  it("puts a point north of the equator above it", () => {
+    const north = tilePixel(35.2, 31.8, 11);
+    const equator = tilePixel(35.2, 0, 11);
+    expect(north.x).toBe(equator.x);
+    expect(north.y).toBeLessThan(equator.y);
+  });
+});
+
+describe("decodeTerrarium", () => {
+  it("reads a height in metres, rounded", () => {
+    expect(decodeTerrarium(131, 232, 128)).toBe(1001);
   });
 
-  it("reads a way back as the same points, turned", () => {
-    const way: [number, number][] = [
-      [33.0, 37.1],
-      [33.4, 37.3],
-      [33.6, 37.5],
-    ];
-    const there = pointsAlongPath(way, 7);
-    const back = pointsAlongPath([...way].reverse(), 7).reverse();
-    back.forEach(([x, y], i) => {
-      expect(x).toBeCloseTo(there[i]?.[0] ?? 0, 9);
-      expect(y).toBeCloseTo(there[i]?.[1] ?? 0, 9);
-    });
+  it("keeps the Dead Sea shore as land", () => {
+    expect(decodeTerrarium(126, 82, 0)).toBe(-430);
   });
 
-  it("gives one point, or the same point, without failing", () => {
-    expect(pointsAlongPath([[5, 5]], 3)).toEqual([
-      [5, 5],
-      [5, 5],
-      [5, 5],
-    ]);
-    expect(
-      pointsAlongPath(
-        [
-          [1, 2],
-          [3, 4],
-        ],
-        1,
-      ),
-    ).toEqual([[1, 2]]);
+  it("gives null for the open sea and the sea floor", () => {
+    expect(decodeTerrarium(128, 0, 0)).toBeNull();
+    expect(decodeTerrarium(126, 62, 0)).toBeNull();
   });
 });

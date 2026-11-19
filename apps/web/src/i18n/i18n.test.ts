@@ -81,6 +81,13 @@ describe("i18n dictionaries", () => {
     expect(translate("de", "place.zoom")).toBe(translate("en", "place.zoom"));
     expect(translate("ru", "kind.no such kind")).toBe("kind.no such kind");
   });
+
+  it("reads a key no dictionary has as its defaultValue, when given", () => {
+    expect(translate("ru", "kind.no such kind", { defaultValue: "" })).toBe("");
+    expect(translate("ru", "kind.no such kind", { defaultValue: "oasis" })).toBe("oasis");
+    // A key that exists ignores it.
+    expect(translate("en", "place.zoom", { defaultValue: "" })).toBe(translate("en", "place.zoom"));
+  });
 });
 
 describe("loading a language", () => {

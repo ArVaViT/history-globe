@@ -1,7 +1,7 @@
-import { formatCentury, isLocale, medianYear, type ChapterYears, type Locale } from "@hg/model";
+import { formatCentury, isLocale, type ChapterYears, type Locale } from "@hg/model";
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "../i18n";
-import { loadPeople, peopleNow, personName, type People } from "../people";
+import { loadPeople, peopleNow, personName, personYear, type People } from "../people";
 import { Section } from "./Panel";
 
 /**
@@ -48,10 +48,7 @@ export function PeoplePanel({
       const synodal = p.ru ?? p.name;
       if (synodal.charAt(0) !== synodal.charAt(0).toLocaleUpperCase("ru")) return [];
       const name = personName(p, locale);
-      const year = medianYear(
-        tied.map((x) => x.verse),
-        chapterYears,
-      );
+      const year = personYear(people, p.index, chapterYears);
       if (year === undefined) return [];
       // The place most tied to them, shown only to tell namesakes apart (two Johns).
       const top = [...tied].sort(
@@ -77,10 +74,9 @@ export function PeoplePanel({
 
   return (
     <Section>
-      <div className="hg-fade max-h-[min(460px,52vh)] scroll-pt-7 overflow-y-auto [scrollbar-width:thin] max-md:max-h-[calc(100dvh-var(--hg-timeline-h,124px)-200px)]">
-        {/* "Loading the map" was the only loading word: the list is quick, it shows nothing
-            until it is in, and says so if it cannot load. */}
-        {failed && <div className="px-4 py-2 text-sm text-ink-soft">{t("search.empty")}</div>}
+      <div className="hg-fade max-h-[min(460px,52vh)] scroll-pt-7 overflow-y-auto [scrollbar-width:thin] max-md:max-h-[calc(100dvh-var(--hg-timeline-h)-200px)]">
+        {/* The list shows nothing until it is in; a failed load says so. */}
+        {failed && <div className="px-4 py-2 text-sm text-ink-soft">{t("person.list_failed")}</div>}
         {groups.map(({ century, rows }) => (
           <section key={century} aria-label={century}>
             <div className="sticky top-0 z-[1] bg-paper px-4 pt-2 pb-0.5 text-[11.5px] font-medium text-ink-soft">

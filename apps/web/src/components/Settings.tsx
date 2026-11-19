@@ -6,6 +6,7 @@ import { canSave, saveOffline, saveSize, type SaveProgress } from "../offline";
 import { LayerToggles, Legend } from "./LayersPanel";
 import { ArrowUpRight, BookOpen, ChevronDown, ChevronRight, Download, Globe } from "./icons";
 import { Modal } from "./Modal";
+import { readPref, writePref } from "../storage";
 
 /** Language, layers, the map key and the help page: one window behind the gear. */
 export function SettingsDialog({
@@ -127,13 +128,7 @@ function OfflineSave({ locale, className }: { locale: Locale; className: string 
   const { t } = useTranslation();
   const [size, setSize] = useState<number | null>(null);
   const [progress, setProgress] = useState<SaveProgress | null>(null);
-  const [savedAt, setSavedAt] = useState<string | null>(() => {
-    try {
-      return localStorage.getItem(SAVED_KEY);
-    } catch {
-      return null;
-    }
-  });
+  const [savedAt, setSavedAt] = useState<string | null>(() => readPref(SAVED_KEY));
   useEffect(() => {
     let live = true;
     void saveSize().then((b) => {
@@ -178,11 +173,7 @@ function OfflineSave({ locale, className }: { locale: Locale; className: string 
             if (p.state === "saved" && p.failed === 0) {
               const now = new Date().toISOString();
               setSavedAt(now);
-              try {
-                localStorage.setItem(SAVED_KEY, now);
-              } catch {
-                // Storage blocked: the files are saved all the same.
-              }
+              writePref(SAVED_KEY, now);
             }
           });
         }}

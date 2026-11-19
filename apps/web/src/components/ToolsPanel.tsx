@@ -1,8 +1,8 @@
-import type { Locale } from "@hg/model";
+import { distanceKm, roundKm, walkTime, type Locale } from "@hg/model";
 import type { ReactNode } from "react";
 import { useTranslation } from "../i18n";
-import { distanceKm, roundKm, walkTime } from "../distance";
-import { LessonBar, removeFromLesson, useLesson, useLessonStore } from "./LessonRow";
+import { removeFromLesson, useLesson, useLessonStore } from "../lesson-store";
+import { LessonBar } from "./LessonControls";
 import { Panel } from "./Panel";
 import { ArrowLeft, CircleHelp, ListPlus, Printer, Ruler, X } from "./icons";
 
@@ -196,10 +196,7 @@ function Measure({ from, to, onReset }: { from: End | null; to: End | null; onRe
       )}
       {to && <p className="text-[13px] leading-snug text-ink-soft">{t("tools.measure_next")}</p>}
       {from && (
-        <button
-          onClick={onReset}
-          className="self-start text-[13.5px] text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
-        >
+        <button onClick={onReset} className="self-start text-[13.5px] link-accent">
           {t("tools.measure_reset")}
         </button>
       )}

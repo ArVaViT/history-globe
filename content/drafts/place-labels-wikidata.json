@@ -1,5 +1,5 @@
 {
-  "_source": "DRAFT, not used by the app. Labels and aliases of the ancient places' Wikidata items (CC0) in 40 languages, fetched 2026-10-02 via OpenBible's links (linked_data). About 25 of OpenBible's links point to a modern city, a country, a people or a battle instead of the ancient place (Attalia -> Antalya, Rabbah -> Amman, Chaldea -> Chaldeans); see the session notes. Use for languages without a reviewed name only, after excluding those.",
+  "_source": "Not used by the app. Labels and aliases of the ancient places' Wikidata items (CC0) in 40 languages, fetched 2026-10-02 via OpenBible's links (linked_data). About 25 of OpenBible's links point to a modern city, a country, a people or a battle instead of the ancient place (Attalia -> Antalya, Rabbah -> Amman, Chaldea -> Chaldeans). Use for languages without a reviewed name only, after excluding those.",
   "places": {
     "a012705": {
       "aliases": {

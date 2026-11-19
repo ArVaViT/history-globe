@@ -1,15 +1,14 @@
 /**
- * Every link and image of the documentation and the static place and tour pages
- * (apps/web/public/docs, apps/web/public/<lang>) leads to a file that is there, spelt with
- * the same case. Links out
- * of the site and to the app itself (`../../../?place=…`, served by the app's own
- * index.html) are not checked.
+ * Every link and image of the site's own pages (apps/web/public: the documentation, the
+ * static pages in each language, and the pages at the root, the embed and the licences)
+ * leads to a file that is there, spelt with the same case, and a link to a part of a page
+ * (`#review`) to an element of that page with the id. Links out of the site and to the app
+ * itself (`../../../?place=…`, served by the app's own index.html) are not checked.
  *
  * Usage: node scripts/check-links.ts  (after `pnpm content`)
  */
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join, normalize, relative } from "node:path";
-import { LOCALES } from "../packages/model/src/time.ts";
 
 const pub = join(import.meta.dirname, "..", "apps/web/public");
 const pages = (dir: string): string[] =>
@@ -23,7 +22,29 @@ const pages = (dir: string): string[] =>
       )
     : [];
 
-const files = ["docs", ...LOCALES].flatMap((d) => pages(join(pub, d)));
+// Everything but the data release, which has no pages.
+const files = readdirSync(pub)
+  .filter((d) => d !== "data")
+  .flatMap((d) =>
+    statSync(join(pub, d)).isDirectory()
+      ? pages(join(pub, d))
+      : d.endsWith(".html")
+        ? [join(pub, d)]
+        : [],
+  );
+/** The ids a page carries, read once. */
+const ids = new Map<string, Set<string>>();
+const idsOf = (path: string) => {
+  let found = ids.get(path);
+  if (!found)
+    ids.set(
+      path,
+      (found = new Set(
+        [...readFileSync(path, "utf8").matchAll(/\sid="([^"]+)"/g)].map((m) => m[1] ?? ""),
+      )),
+    );
+  return found;
+};
 /** The file is there with this very spelling: the host is case-sensitive, a Mac is not. */
 const listings = new Map<string, Set<string>>();
 const exact = (path: string) => {
@@ -40,9 +61,21 @@ const exact = (path: string) => {
 let checked = 0;
 const broken: string[] = [];
 for (const file of files) {
-  const html = readFileSync(file, "utf8");
-  for (const [, link = ""] of html.matchAll(/(?:href|src)="([^"#?]+)/g)) {
+  // A script builds its links from data (the index pages' search): not links of the page.
+  const html = readFileSync(file, "utf8").replace(/(<script\b[^>]*>)[\s\S]*?(<\/script>)/g, "$1$2");
+  for (const [, link = "", fragment] of html.matchAll(
+    /(?:href|src)="([^"#?]*)(?:\?[^"#]*)?(?:#([^"]*))?"/g,
+  )) {
     if (/^(?:[a-z]+:|\/\/)/.test(link) || link.includes("{{")) continue;
+    if (link === "") {
+      // A link within the page.
+      if (fragment) {
+        checked++;
+        if (!idsOf(file).has(decodeURIComponent(fragment)))
+          broken.push(`${relative(pub, file)} → #${fragment}`);
+      }
+      continue;
+    }
     const target = normalize(join(dirname(file), decodeURIComponent(link)));
     const rel = relative(pub, target);
     // The app's root and anything above it: served by the app, not a file here.
@@ -51,6 +84,8 @@ for (const file of files) {
     const path =
       existsSync(target) && statSync(target).isDirectory() ? join(target, "index.html") : target;
     if (!existsSync(path) || !exact(path)) broken.push(`${relative(pub, file)} → ${link}`);
+    else if (fragment && path.endsWith(".html") && !idsOf(path).has(decodeURIComponent(fragment)))
+      broken.push(`${relative(pub, file)} → ${link}#${fragment}`);
   }
 }
 if (broken.length) {

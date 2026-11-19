@@ -1,18 +1,20 @@
 import { isLocale } from "@hg/model";
 import type { Camera, Engine, Renderer } from "@hg/core";
-import { chapterFocus, withoutYear } from "./chapter";
+import { chapterFocus, chapterOf, withoutYear } from "./chapter";
 import type { LoadedData } from "./data";
 import type { EmbedView } from "./embed";
+import { cameraInRange, LAYERS } from "./url";
 
 const viewOf = (engine: Engine): EmbedView => {
   const s = engine.store.get();
+  const chapter = chapterOf(s.focus);
   return {
     year: s.year,
     locale: s.locale,
     ...(s.selectedPlace ? { place: s.selectedPlace } : {}),
     ...(s.tour ? { tour: s.tour.id, stop: s.tour.step + 1 } : {}),
     // A person's places are not a chapter: the host gets no ref for them (nor does the URL).
-    ...(s.focus && !s.focus.ref.startsWith("person:") ? { ref: s.focus.ref } : {}),
+    ...(chapter ? { ref: chapter.ref } : {}),
     ...(s.camera ? { camera: rounded(s.camera) } : {}),
     layers: s.layers,
   };
@@ -104,9 +106,9 @@ export function attachEmbed(
       const focus = chapterFocus(data, v.ref);
       if (focus) engine.focusPlaces(year !== undefined ? withoutYear(focus) : focus);
     }
-    // `null` clears the selection (and a tour under way). The place already selected is flown to again (the reader
-    // may have moved away) unless the view names a camera too: a host that sends back the
-    // view it was told keeps the camera the reader left, not a flight back.
+    // `null` clears the selection (and a tour under way). The place already selected is
+    // flown to again (the reader may have moved away) unless the view names a camera too: a
+    // host that sends back the view it was told keeps the camera the reader left.
     if (v.place === null) clear();
     if (
       typeof v.place === "string" &&
@@ -115,19 +117,19 @@ export function attachEmbed(
     )
       engine.selectPlace(v.place);
     if (v.layers)
-      for (const k of ["borders", "places", "relief", "routes", "roads", "battles"] as const) {
+      for (const k of LAYERS) {
         const on = v.layers[k];
         if (typeof on === "boolean" && on !== s.layers[k]) engine.setLayer(k, on);
       }
     const c = v.camera;
     const [lon, lat] = Array.isArray(c?.center) ? c.center : [NaN, NaN];
     if (renderer && c && Number.isFinite(lon) && Number.isFinite(lat)) {
-      const target = {
-        center: [((lon + 540) % 360) - 180, Math.max(-85, Math.min(85, lat))] as const,
-        ...(Number.isFinite(c.zoom) ? { zoom: Math.max(0, Math.min(22, c.zoom)) } : {}),
-        ...(Number.isFinite(c.pitch) ? { pitch: Math.max(0, Math.min(80, c.pitch)) } : {}),
+      const target = cameraInRange({
+        center: [lon, lat] as const,
+        ...(Number.isFinite(c.zoom) ? { zoom: c.zoom } : {}),
+        ...(Number.isFinite(c.pitch) ? { pitch: c.pitch } : {}),
         ...(Number.isFinite(c.bearing) ? { bearing: c.bearing } : {}),
-      };
+      });
       // A camera already there is not flown to again.
       if (
         JSON.stringify(rounded({ ...s.camera, ...target } as Camera)) !==

@@ -8,7 +8,7 @@ description: Metti il globo sul tuo sito con una sola riga — la mappa di un ca
   capitolo accanto al brano sulla tua pagina; pochi messaggi tengono allineate le due cose.
 </p>
 
-<h2>Avvio rapido</h2>
+<h2 id="quick-start">Avvio rapido</h2>
 <pre><code>&lt;iframe
   src="{{site}}/embed/v1?ref=Acts.16&amp;locale=it"
   title="Mappa di Atti 16"
@@ -30,7 +30,7 @@ description: Metti il globo sul tuo sito con una sola riga — la mappa di un ca
   <li>Il riquadro funziona fino alla larghezza di un telefono; basta un’altezza di 480 px.</li>
 </ul>
 
-<h2>Un capitolo o un brano</h2>
+<h2 id="a-chapter-or-a-passage">Un capitolo o un brano</h2>
 <p>
   <code>ref</code> accetta un riferimento OSIS con le abbreviazioni inglesi dei libri e la
   numerazione inglese dei versetti:
@@ -70,7 +70,7 @@ description: Metti il globo sul tuo sito con una sola riga — la mappa di un ca
   mantiene l’anno corrente della mappa.
 </p>
 
-<h2>Parametri</h2>
+<h2 id="parameters">Parametri</h2>
 <div class="table">
   <table>
     <thead>
@@ -178,14 +178,14 @@ description: Metti il globo sul tuo sito con una sola riga — la mappa di un ca
   stessi parametri funzionano dopo <code>/embed/v1</code>.
 </p>
 
-<h2>Messaggi</h2>
+<h2 id="messages">Messaggi</h2>
 <p>
   Il globo e la tua pagina comunicano tramite <code>postMessage</code>. Ogni messaggio è un oggetto
   con <code>type</code> e <code>v: 1</code>. Il globo invia solo ciò che accade sulla mappa e mai
   nulla che identifichi il lettore, perciò scrive alla pagina madre qualunque sia la sua origine
   (destinazione <code>"*"</code>); accetta messaggi solo dalla pagina che contiene il riquadro.
 </p>
-<h3>Dal globo</h3>
+<h3 id="from-the-globe">Dal globo</h3>
 <div class="table">
   <table>
     <thead>
@@ -231,7 +231,10 @@ description: Metti il globo sul tuo sito con una sola riga — la mappa di un ca
       <tr>
         <td><code>hg:error</code></td>
         <td><code>{ code, message }</code></td>
-        <td>la mappa o i suoi dati non si sono potuti caricare</td>
+        <td>
+          la mappa o i suoi dati non si sono potuti caricare: <code>code</code> è
+          <code>"map"</code> o <code>"data"</code>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -240,9 +243,12 @@ description: Metti il globo sul tuo sito con una sola riga — la mappa di un ca
   <code>view</code> contiene <code>year</code>, <code>locale</code> e <code>layers</code> e, se
   impostati, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> e
   <code>camera</code>. Una <code>view</code> senza <code>place</code> significa che nessun luogo è
-  selezionato.
+  selezionato. <code>camera</code> è un oggetto,
+  <code>{ center: [35.2, 31.8], zoom: 7, pitch: 30, bearing: 0 }</code>, non la stringa
+  dell’indirizzo; <code>layers</code> dà a ogni livello <code>true</code> o <code>false</code>:
+  <code>{ relief: false, battles: false }</code>.
 </p>
-<h3>Verso il globo</h3>
+<h3 id="to-the-globe">Verso il globo</h3>
 <div class="table">
   <table>
     <thead>
@@ -298,11 +304,11 @@ description: Metti il globo sul tuo sito con una sola riga — la mappa di un ca
   Entrambi i tipi possono comparire in <code>view.place</code> e <code>hg:place-clicked</code>, ed
   entrambi sono accettati da <code>hg:set-view</code>; se i tuoi dati hanno solo luoghi di
   OpenBible, verifica la forma dell’ID prima di cercare il luogo. Dei {{openbible}} luoghi di
-  OpenBible, {{absent}} non sono sulla mappa (non hanno un punto che si possa pubblicare); i loro ID
+  OpenBible, {{absent}} non sono sulla mappa (esclusi, o privi di qualsiasi punto); i loro ID
   vengono ignorati.
 </p>
 
-<h2>Esempio: la mappa segue il tuo lettore</h2>
+<h2 id="example-the-map-follows-your-reader">Esempio: la mappa segue il tuo lettore</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
 // Quando il lettore apre un capitolo, mostralo sulla mappa.
@@ -432,24 +438,24 @@ function closeBox() {
   comune resta testo semplice, e lo stesso vale per un nome che i versetti stessi della Bibbia usano
   per lo più per un’altra cosa («Cades» lì è Cades-Barnea, non la Cades del database). Il nome di un
   luogo che è anche un nome di persona (Giordano, Saron) viene lasciato stare accanto a un’altra
-  parola maiuscola: Giordano Bruno è una persona, non il fiume. In russo, ucraino, polacco e ceco i
-  nomi vengono trovati nelle loro forme declinate («в Египте», «w Jerozolimie», «v Jeruzalémě»), e
-  in tedesco anche al genitivo («Jerusalems»). Link, codice, campi di moduli, pulsanti e titoli
-  vengono lasciati stare.
+  parola maiuscola: Giordano Bruno è una persona, non il fiume. In russo, ucraino, polacco, ceco,
+  serbo, ungherese, finlandese e rumeno i nomi vengono trovati nelle loro forme declinate («в
+  Египте», «w Jerozolimie», «v Jeruzalémě»), e in tedesco, svedese, danese e norvegese anche al
+  genitivo («Jerusalems»). Link, codice, campi di moduli, pulsanti e titoli vengono lasciati stare.
 </p>
 <p class="note">
   Lo script non ha dipendenze e non imposta cookie. Legge dal globo un solo file di nomi (circa da
-  20 a 35 KB in rete a seconda della lingua, più 7 KB di script), senza l’indirizzo della tua pagina
-  come referrer, e modifica solo i nomi che collega. Funziona con una Content Security Policy
-  rigorosa che consenta l’indirizzo del globo in <code>script-src</code> e <code>connect-src</code>.
-  Per il testo che la tua pagina aggiunge in seguito, chiama
-  <code>HistoryGlobePlaces.scan(element)</code> quando il testo è stato visualizzato: lo script
-  divide i nodi di testo, quindi in una pagina React o Vue eseguilo su contenuti che il framework
-  non ridisegna più.
+  {{names_kb_min}} a {{names_kb_max}} KB in rete a seconda della lingua, più {{script_kb}} KB di
+  script), senza l’indirizzo della tua pagina come referrer, e modifica solo i nomi che collega.
+  Funziona con una Content Security Policy rigorosa che consenta l’indirizzo del globo in
+  <code>script-src</code> e <code>connect-src</code>. Per il testo che la tua pagina aggiunge in
+  seguito, chiama <code>HistoryGlobePlaces.scan(element)</code> quando il testo è stato
+  visualizzato: lo script divide i nodi di testo, quindi in una pagina React o Vue eseguilo su
+  contenuti che il framework non ridisegna più.
 </p>
 <script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
 
-<h2>Stabilità</h2>
+<h2 id="stability">Stabilità</h2>
 <p>
   <code>/embed/v1</code> è un contratto: all’interno della v1 parametri e messaggi vengono solo
   aggiunti, mai modificati o rimossi. Una modifica incompatibile uscirà come <code>/embed/v2</code>,

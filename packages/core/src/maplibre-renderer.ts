@@ -1,26 +1,51 @@
-import { elevationReader, pointsAlongPath } from "./elevation.ts";
-import { emptyClicks } from "./empty-click.ts";
-import { routeWalker } from "./route-walker.ts";
 import { POLITY_SPLIT_YEAR, type Locale } from "@hg/model";
 import type { Feature, FeatureCollection } from "geojson";
 import * as maplibregl from "maplibre-gl";
 import type { GeoJSONSource, Map as MLMap, MapMouseEvent } from "maplibre-gl";
-import type { Camera, LonLat, PolityName, Renderer, RendererEvents } from "./renderer.ts";
-import type { LayerVisibility } from "./state.ts";
-import { buildStyle, layersInGroup, MAP_FONT, seaLabels, type StyleOptions } from "./style.ts";
+import { edgeStateLabels } from "./edge-labels.ts";
+import { elevationReader } from "./elevation.ts";
+import { Emitter } from "./emitter.ts";
+import { emptyClicks } from "./empty-click.ts";
+import {
+  attributionBox,
+  attributionText,
+  type MapControls,
+  refreshAttribution,
+  relabelControls,
+} from "./maplibre-internals.ts";
 import { drawIcon } from "./icons.ts";
 import { thinMajors, weight } from "./majors.ts";
+import { alongPath, pointsAlongPath } from "./polyline.ts";
+import { addPrintMarks, removePrintMarks } from "./print-marks.ts";
+import {
+  battleInfo,
+  type Camera,
+  type LonLat,
+  type PolityName,
+  type Renderer,
+  type RendererEvents,
+} from "./renderer.ts";
+import { stopDiscs } from "./route-stops.ts";
+import { DEFAULT_STATE, type LayerVisibility } from "./state.ts";
+import { ROAD_MINZOOM, ROADS_FROM } from "./style-expressions.ts";
+import { buildStyle, layersInGroup, seaLabels, type StyleOptions } from "./style.ts";
 import { WheelClassifier } from "./wheel.ts";
 
 /**
  * The loading pill goes at the latest this long after the map is made. The sea, the states
- * and the relief are drawn by about 4 s on a desktop; the pill waited for the places' tiles,
- * which queue behind the relief's in the worker, and stayed up until 8 s over a finished map.
+ * and the relief are drawn by about 4 s on a desktop; the places' tiles queue behind the
+ * relief's in the worker, and waiting for them kept the pill up over a finished map.
  */
 const READY_FALLBACK_MS = 4500;
-
-/** The Via Appia, 312 BC: Roman roads are drawn from then on (style.ts). */
-const ROADS_FROM = -311;
+/** A trackpad sends dozens of small moves a second: the camera is reported once it rests. */
+const SETTLE_MS = 150;
+/** The longest wait for the map to draw everything it is loading: some views never go idle. */
+const IDLE_TIMEOUT_MS = 6000;
+/** How long a print waits for MapLibre's own resize before it resizes the map itself. */
+const RESIZE_TIMEOUT_MS = 250;
+const TERRAIN = { source: "dem-terrain", exaggeration: 1.5 } as const;
+/** A leg's profile is read at zoom 9 (about 160 m a pixel): a dozen tiles for a long leg. */
+const PROFILE_ZOOM = 9;
 
 /** MapLibre's own interface words: the app gives them in the reader's language (`mapUi`). */
 export interface MapUiWords {
@@ -31,6 +56,8 @@ export interface MapUiWords {
   readonly north: string;
   readonly sources: string;
   readonly title: string;
+  /** The link the credits end with, to the page of every source (the terrain's is long). */
+  readonly sourcesPage: { readonly href: string; readonly label: string };
 }
 const ENGLISH_UI: MapUiWords = {
   km: "km",
@@ -40,6 +67,7 @@ const ENGLISH_UI: MapUiWords = {
   north: "Reset bearing to north",
   sources: "Map sources",
   title: "Map",
+  sourcesPage: { href: "docs/sources.html", label: "Sources" },
 };
 /** The words as MapLibre keys them. */
 const toMapLibre = (w: MapUiWords) =>
@@ -53,13 +81,12 @@ const toMapLibre = (w: MapUiWords) =>
     "Map.Title": w.title,
   }) as const;
 
-/** The buttons MapLibre labelled when it made them, to relabel on a language change. */
-const MAP_UI_TITLES = [
-  [".maplibregl-ctrl-zoom-in", "NavigationControl.ZoomIn"],
-  [".maplibregl-ctrl-zoom-out", "NavigationControl.ZoomOut"],
-  [".maplibregl-ctrl-compass", "NavigationControl.ResetBearing"],
-  [".maplibregl-ctrl-attrib-button", "AttributionControl.ToggleAttribution"],
-] as const;
+const withoutSuffix = (text: string, suffix: string) =>
+  text.endsWith(suffix) ? text.slice(0, -suffix.length) : text;
+
+/** The link to the sources' page, after the relief's credit, in the reader's language. */
+const sourcesLink = (w: MapUiWords) =>
+  ` · <a href="${w.sourcesPage.href}">${w.sourcesPage.label}</a>`;
 
 const PLACE_LAYERS = [
   "place-label-major",
@@ -76,53 +103,28 @@ const PLACE_LAYERS = [
   "place-label-selected",
 ];
 
+interface Padding {
+  top: number;
+  bottom: number;
+  left: number;
+  right: number;
+}
+
 export interface MapLibreRendererOptions extends StyleOptions {
   readonly container: HTMLElement;
   readonly camera: Camera;
   /** Place features with a numeric top-level `id` (feature-state) and `properties.id`. */
   readonly places: FeatureCollection;
   /** Screen edges covered by the interface, so a flight puts its target where it shows. */
-  readonly viewPadding?: () => { top: number; bottom: number; left: number; right: number };
+  readonly viewPadding?: () => Padding;
   /** MapLibre's words in a language; English when not given. */
   readonly mapUi?: (locale: string) => MapUiWords;
 }
 
-type Box = readonly [number, number, number, number];
-/** A shape's bounding box, west, south, east, north. */
-function bboxOf(g: GeoJSON.Geometry): Box {
-  const polys =
-    g.type === "Polygon" ? [g.coordinates] : g.type === "MultiPolygon" ? g.coordinates : [];
-  let [w, s, e, n] = [Infinity, Infinity, -Infinity, -Infinity];
-  for (const rings of polys)
-    for (const [x = 0, y = 0] of rings[0] ?? []) {
-      w = Math.min(w, x);
-      s = Math.min(s, y);
-      e = Math.max(e, x);
-      n = Math.max(n, y);
-    }
-  return [w, s, e, n];
-}
-const inBox = (b: Box, x: number, y: number) => x >= b[0] && x <= b[2] && y >= b[1] && y <= b[3];
-
-/** Whether a polygon (a tile's piece of a shape) covers a point: even-odd over its rings. */
-function covers(g: GeoJSON.Geometry, lon: number, lat: number): boolean {
-  const polys =
-    g.type === "Polygon" ? [g.coordinates] : g.type === "MultiPolygon" ? g.coordinates : [];
-  return polys.some((rings) => {
-    let inside = false;
-    for (const ring of rings)
-      for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-        const [xi = 0, yi = 0] = ring[i] ?? [];
-        const [xj = 0, yj = 0] = ring[j] ?? [];
-        if (yi > lat !== yj > lat && lon < ((xj - xi) * (lat - yi)) / (yj - yi) + xi)
-          inside = !inside;
-      }
-    return inside;
-  });
-}
-
 export class MapLibreRenderer implements Renderer {
   readonly map: MLMap;
+  private readonly controls: MapControls;
+  private readonly events = new Emitter<RendererEvents>();
   private readonly featureIdByPlace = new Map<string, number>();
   /** Every place, the ancient world's with the Bible's. */
   private readonly allPlaces: FeatureCollection;
@@ -130,74 +132,68 @@ export class MapLibreRenderer implements Renderer {
   private places: FeatureCollection;
   /** The great towns as last drawn (majors.ts): written again only when they change. */
   private majorsNow = "";
-  private selectedPlace: string | null = null;
-  private readonly groups: Record<string, string[]>;
-  private selected: number | null = null;
-  private hovered: number | null = null;
-  private hoveredPlace: string | null = null;
+  private readonly groups: Record<keyof LayerVisibility, string[]>;
+  private layers: LayerVisibility = DEFAULT_STATE.layers;
+  private selectedPlaceId: string | null = null;
+  private selectedFeatureId: number | null = null;
+  private hoveredFeatureId: number | null = null;
+  private hoveredPlaceId: string | null = null;
   private polityShown = false;
   private battleShown = false;
-  private readonly handlers: { [E in keyof RendererEvents]: Set<RendererEvents[E]> } = {
-    pick: new Set(),
-    pickNone: new Set(),
-    hover: new Set(),
-    hoverPolity: new Set(),
-    hoverBattle: new Set(),
-    cameraChanged: new Set(),
-    ready: new Set(),
-  };
   private pendingYear: number | null = null;
-  private pending: (() => void)[] = [];
+  /** Work waiting for the style, and what to do instead if the map goes first. */
+  private pending: { run: () => void; cancel: (() => void) | undefined }[] = [];
   private loaded = false;
   private destroyed = false;
   /** Which framing is current: a correction after a fit runs only if no move began since. */
   private fitId = 0;
   /** While a sheet is being drawn: the resize handler must not put the screen's padding back. */
   private printing = false;
+  private paddingQueued = false;
   private readyTimer: ReturnType<typeof setTimeout> | undefined;
   private settleTimer: ReturnType<typeof setTimeout> | undefined;
-  /** The edge labels last written (nameEdgeStates): unchanged, nothing is set. */
+  /** The edge labels last written: unchanged, nothing is set. */
   private edgeLabels = "[]";
   /** Whether the view changed since the edge labels were worked out. */
   private edgeDirty = true;
-  private readonly viewPadding: MapLibreRendererOptions["viewPadding"];
+  private readonly viewPadding: (() => Padding) | undefined;
   private pulse: { frame: number; markers: maplibregl.Marker[] } | null = null;
+  private ring: maplibregl.Marker | null = null;
   private readonly dataUrl: string;
   private lateStates: Promise<boolean> | null = null;
   private readonly roads: Record<"major" | "minor", "no" | "loading" | "yes"> = {
     major: "no",
     minor: "no",
   };
-  private year = 0;
-  private roadsOn = true;
+  private year: number;
   private battles: "no" | "loading" | "yes" = "no";
   /** The Bible alone (a setting): the places, events and battles it does not name off. */
   private bibleOnly = false;
-  private layersNow: LayerVisibility | null = null;
-  private battlesOn = true;
-  /** A tour's numbered stops are drawn: the route has stops and the routes layer is on. */
-  private stops = { route: false, layer: true, shown: false };
+  /** Whether the route has stops, and whether their discs are drawn (the routes layer on). */
+  private readonly stops = { route: false, shown: false };
+  private readonly mapUi: (locale: string) => MapUiWords;
+  /** The words of the language shown, and the relief's credit the sources' link follows. */
+  private ui: MapUiWords;
+  private readonly terrainCredit: string;
 
   /** Heights above sea level from the relief's tiles (elevation.ts), for the tours. */
   readonly heightsAt: (points: readonly LonLat[]) => Promise<(number | null)[]>;
-  /**
-   * The relief along the straight line between two stops, `n` heights from `a` to `b`, for
-   * a leg's profile: zoom 9 (about 160 m a pixel), so a long leg takes a dozen tiles, not
-   * a hundred.
-   */
-  /** Heights at `n` points along a way: two points for a straight line, or a road's. */
+  /** Heights at `n` points along a way: two points for a straight leg, or a road's. */
   readonly profileAlong: (path: readonly LonLat[], n: number) => Promise<(number | null)[]>;
-
-  private readonly mapUi: (locale: string) => MapUiWords;
 
   constructor(o: MapLibreRendererOptions) {
     this.mapUi = o.mapUi ?? (() => ENGLISH_UI);
+    this.ui = this.mapUi(o.initialLocale);
+    this.terrainCredit = o.terrainAttribution;
     this.heightsAt = elevationReader(o.terrainTiles);
-    const coarse = elevationReader(o.terrainTiles, 9);
+    const coarse = elevationReader(o.terrainTiles, PROFILE_ZOOM);
     this.profileAlong = (path, n) => coarse(pointsAlongPath(path, n));
     this.viewPadding = o.viewPadding;
     this.dataUrl = o.dataUrl;
-    const style = buildStyle(o);
+    const style = buildStyle({
+      ...o,
+      terrainAttribution: o.terrainAttribution + sourcesLink(this.ui),
+    });
     this.groups = {
       borders: layersInGroup(style, "borders"),
       places: layersInGroup(style, "places"),
@@ -221,56 +217,98 @@ export class MapLibreRenderer implements Renderer {
       pitch: o.camera.pitch,
       bearing: o.camera.bearing,
       maxPitch: 80,
-      attributionControl: { compact: true },
+      // Added below and kept, to relabel and to read.
+      attributionControl: false,
       // MapLibre's words in the page's language from the first frame: the scale draws
       // before setLocale runs and would stay "km" until the map moved.
-      locale: toMapLibre(this.mapUi(o.initialLocale)),
+      locale: toMapLibre(this.ui),
       canvasContextAttributes: { antialias: true },
       // Wheel handled below: two fingers pan, a pinch or a mouse wheel zooms.
       scrollZoom: false,
     });
-    // The padding a flight uses stays with the map (the centre is the open part of the
-    // screen): set it from the start, so a link opens as a flight would, and on resize.
-    const pad = o.viewPadding;
-    if (pad) {
-      this.map.setPadding(pad());
-      // setPadding stops a flight: during one, wait for it to end.
-      const apply = () => {
-        this.map.setPadding(pad());
-      };
-      let waiting = false;
-      this.map.on("resize", () => {
-        if (this.printing) return;
-        if (!this.map.isMoving()) {
-          apply();
-        } else if (!waiting) {
-          waiting = true;
-          this.map.once("moveend", () => {
-            waiting = false;
-            apply();
-          });
-        }
-      });
-    }
-    // MapLibre unfolds the compact attribution once by itself, when it first fills: fold
-    // it back, so the (i) only opens when someone presses it.
-    const attrib = this.map.getContainer().querySelector(".maplibregl-ctrl-attrib");
-    if (attrib) {
-      const fold = new MutationObserver(() => {
-        if (!attrib.classList.contains("maplibregl-compact-show")) return;
-        attrib.classList.remove("maplibregl-compact-show");
-        fold.disconnect();
-      });
-      fold.observe(attrib, { attributes: true, attributeFilter: ["class"] });
-    }
+    this.controls = {
+      attribution: new maplibregl.AttributionControl({ compact: true }),
+      nav: new maplibregl.NavigationControl({ visualizePitch: true }),
+      scale: new maplibregl.ScaleControl({ unit: "metric" }),
+    };
+    this.map.addControl(this.controls.attribution);
+    if (o.viewPadding) this.installPadding(o.viewPadding);
+    this.foldAttribution();
     // Place icons are drawn when the style first asks for them.
     this.map.setMissingStyleImageResolver((id) => {
       if (this.map.hasImage(id)) return;
       const img = drawIcon(id);
       if (img) this.map.addImage(id, img, { sdf: true, pixelRatio: 2 });
     });
+    this.installWheel();
+    this.map.addControl(this.controls.nav, "bottom-right");
+    this.map.addControl(this.controls.scale, "bottom-left");
+    // The style is enough to set data and run queued work. "load" also waits for the
+    // tiles in view, and in some views (zoom 22 over a pole) it never comes.
+    this.map.once("style.load", () => {
+      void this.map.getSource<GeoJSONSource>("places")?.setData(this.places);
+      void this.map.getSource<GeoJSONSource>("sea-labels")?.setData(seaLabels(o.places));
+      this.fillMajors();
+      this.map.setTerrain(TERRAIN);
+      this.loaded = true;
+      for (const { run } of this.pending) run();
+      this.pending = [];
+      // A link may open close in, on a Roman year, without moving the map afterwards.
+      this.loadRoads();
+      this.loadBattles();
+    });
+    this.installReady();
+    this.installPointer();
+    this.installEdgeLabels();
+    this.map.on("moveend", () => {
+      this.loadRoads();
+      clearTimeout(this.settleTimer);
+      this.settleTimer = setTimeout(() => {
+        if (!this.destroyed) this.events.emit("cameraChanged", this.getCamera());
+      }, SETTLE_MS);
+    });
+  }
+
+  /**
+   * The padding a flight uses stays with the map (the centre is the open part of the screen):
+   * set from the start, so a link opens as a flight would, and again on resize.
+   */
+  private installPadding(pad: () => Padding): void {
+    this.map.setPadding(pad());
+    let waiting = false;
+    this.map.on("resize", () => {
+      if (this.printing) return;
+      // setPadding stops a flight: during one, wait for it to end.
+      if (!this.map.isMoving()) {
+        this.map.setPadding(pad());
+      } else if (!waiting) {
+        waiting = true;
+        this.map.once("moveend", () => {
+          waiting = false;
+          this.map.setPadding(pad());
+        });
+      }
+    });
+  }
+
+  /**
+   * MapLibre unfolds the compact attribution once by itself, when it first fills: it is folded
+   * back, so the (i) only opens when someone presses it.
+   */
+  private foldAttribution(): void {
+    const attrib = attributionBox(this.controls.attribution);
+    const fold = new MutationObserver(() => {
+      if (!attrib.classList.contains("maplibregl-compact-show")) return;
+      attrib.classList.remove("maplibregl-compact-show");
+      fold.disconnect();
+    });
+    fold.observe(attrib, { attributes: true, attributeFilter: ["class"] });
+  }
+
+  private installWheel(): void {
     const wheel = new WheelClassifier();
-    this.map.getCanvasContainer().addEventListener(
+    const canvas = this.map.getCanvasContainer();
+    canvas.addEventListener(
       "wheel",
       (e) => {
         e.preventDefault();
@@ -281,7 +319,7 @@ export class MapLibreRenderer implements Renderer {
         }
         // Zoom around the pointer. On the globe MapLibre ignores `around`, so keep the
         // point under the pointer by hand: zoom, then move it back under the pointer.
-        const rect = this.map.getCanvasContainer().getBoundingClientRect();
+        const rect = canvas.getBoundingClientRect();
         const point: [number, number] = [e.clientX - rect.left, e.clientY - rect.top];
         const anchor = this.map.unproject(point);
         this.map.jumpTo({ zoom: this.map.getZoom() + intent.dz });
@@ -293,47 +331,36 @@ export class MapLibreRenderer implements Renderer {
       },
       { passive: false },
     );
-    this.map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-right");
-    this.map.addControl(new maplibregl.ScaleControl({ unit: "metric" }), "bottom-left");
+  }
 
-    // The style is enough to set data and run queued work. "load" also waits for the
-    // tiles in view, and in some views (zoom 22 over a pole) it never comes.
-    this.map.once("style.load", () => {
-      void (this.map.getSource("places") as GeoJSONSource).setData(this.places);
-      void this.map.getSource<GeoJSONSource>("sea-labels")?.setData(seaLabels(o.places));
-      this.fillMajors();
-      this.map.setTerrain({ source: "dem-terrain", exaggeration: 1.5 });
-      this.loaded = true;
-      for (const run of this.pending) run();
-      this.pending = [];
-      // A link may open close in, on a Roman year, without moving the map afterwards.
-      this.loadRoads();
-      this.loadBattles();
-    });
-    // Ready at the first frame that shows the places, or at the first idle frame if that
-    // comes sooner. Waiting for idle alone kept the loading state up until every relief
-    // tile had arrived: some 7 s on a 4G line, with the map long in view. Some views
-    // never go idle (a camera over the pole keeps re-rendering), so the loading state
-    // also ends a few seconds after creation.
-    let readyFired = false;
-    const fireReady = () => {
-      if (readyFired) return;
-      readyFired = true;
+  /**
+   * Ready at the first frame that shows the places, or at the first idle frame if that comes
+   * sooner: waiting for idle alone keeps the loading state up until every relief tile has
+   * arrived, some 7 s on a 4G line. Some views never go idle (a camera over the pole keeps
+   * re-rendering), so the loading state also ends READY_FALLBACK_MS after creation.
+   */
+  private installReady(): void {
+    let fired = false;
+    const fire = () => {
+      if (fired) return;
+      fired = true;
       this.map.off("sourcedata", onPlaces);
-      for (const h of this.handlers.ready) h();
+      this.events.emit("ready");
     };
     const onPlaces = (e: maplibregl.MapSourceDataEvent) => {
       if (e.sourceId === "places" && this.map.isSourceLoaded("places"))
-        this.map.once("render", fireReady);
+        this.map.once("render", fire);
     };
     this.map.on("sourcedata", onPlaces);
-    this.map.once("idle", fireReady);
-    this.readyTimer = setTimeout(fireReady, READY_FALLBACK_MS);
+    this.map.once("idle", fire);
+    this.readyTimer = setTimeout(fire, READY_FALLBACK_MS);
+  }
 
-    // One handler over all place layers: per-layer mouseleave fired after the next
-    // layer's mousemove, so moving from a label to its own dot dropped the hover.
-    // A name pressed is its place; dots on one point (Jerusalem, Zion, the City of David)
-    // give the most named, not whichever was drawn last.
+  private installPointer(): void {
+    // One handler over all place layers: per-layer mouseleave fires after the next layer's
+    // mousemove, so moving from a label to its own dot would drop the hover. A name pressed
+    // is its place; dots on one point (Jerusalem, Zion, the City of David) give the most
+    // named, not whichever was drawn last.
     const placeAt = (e: MapMouseEvent) => {
       if (!this.loaded) return undefined;
       const fs = this.map.queryRenderedFeatures(e.point, { layers: PLACE_LAYERS });
@@ -345,24 +372,22 @@ export class MapLibreRenderer implements Renderer {
         )
       );
     };
-    // A battle's mark opens the place it was fought at (its card tells the battle).
-    // A little room round the point: a finger on a phone lands near the mark, not on it.
+    // A battle's mark opens the place it was fought at (its card tells the battle). A little
+    // room round the point: a finger on a phone lands near the mark, not on it.
     const battleAt = (e: MapMouseEvent) =>
-      this.loaded && this.battles === "yes" && this.battlesOn
+      this.loaded && this.battles === "yes" && this.layers.battles
         ? (this.map.queryRenderedFeatures(
             [
               [e.point.x - 8, e.point.y - 8],
               [e.point.x + 8, e.point.y + 8],
             ],
             { layers: ["battle-icon"] },
-          )[0]?.properties as
-            | { place?: string; en?: string; ru?: string; year?: number; approx?: boolean }
-            | undefined)
+          )[0]?.properties as Record<string, unknown> | undefined)
         : undefined;
     // A click on the map itself, told apart from a drag's release, a press that stopped the
     // camera and a double-click (empty-click.ts).
     const empty = emptyClicks(() => {
-      for (const h of this.handlers.pickNone) h();
+      this.events.emit("pickNone");
     });
     this.map.on("mousedown", () => {
       empty.down(this.map.isMoving());
@@ -383,98 +408,101 @@ export class MapLibreRenderer implements Renderer {
       // The release of a drag a flight cut short picks nothing and clears nothing.
       if (!empty.isClick()) return;
       const battle = battleAt(e);
+      const place = battle?.["place"];
+      const info = battleInfo(battle);
       // A battle fought at no place (Gaugamela, events.yaml): no card to open, so a click or
       // a tap names it, as hovering does (a phone has no hover).
-      if (battle && !battle.place && battle.en) {
+      if (info && typeof place !== "string") {
         this.battleShown = true;
-        for (const h of this.handlers.hoverBattle)
-          h(
-            {
-              en: battle.en,
-              ru: battle.ru ?? battle.en,
-              year: battle.year ?? 0,
-              approx: battle.approx === true,
-            },
-            { x: e.point.x, y: e.point.y },
-          );
+        this.events.emit("hoverBattle", info, { x: e.point.x, y: e.point.y });
         empty.click(true);
         return;
       }
-      const id = battle?.place ?? (placeAt(e)?.properties as { id?: string } | undefined)?.id;
+      const id =
+        typeof place === "string"
+          ? place
+          : (placeAt(e)?.properties as { id?: string } | undefined)?.id;
       if (id) {
         // A tap on a phone also "hovers": its tip would stay over the card it opens.
         if (e.originalEvent instanceof PointerEvent && e.originalEvent.pointerType === "touch") {
-          this.hoveredPlace = null;
-          for (const h of this.handlers.hover) h(null, null);
-          this.battleShown = false;
-          for (const h of this.handlers.hoverBattle) h(null, null);
+          this.hidePlaceTip();
+          this.hideBattleTip();
         }
-        for (const h of this.handlers.pick) h(id);
+        this.events.emit("pick", id);
       }
       empty.click(Boolean(id || battle));
     });
     // A tip would otherwise stay over a map that moved away: a tap on a phone, or a click
     // that flies to the place picked while the pointer rests where it was.
     this.map.on("movestart", () => {
-      if (this.hoveredPlace !== null) {
-        this.hoveredPlace = null;
-        for (const h of this.handlers.hover) h(null, null);
-      }
-      if (this.battleShown) {
-        this.battleShown = false;
-        for (const h of this.handlers.hoverBattle) h(null, null);
-      }
+      this.hidePlaceTip();
+      this.hideBattleTip();
     });
     this.map.on("mousemove", (e: MapMouseEvent) => {
       const f = placeAt(e);
       const fid = typeof f?.id === "number" ? f.id : null;
       const battle = battleAt(e);
       this.map.getCanvas().style.cursor = f || battle ? "pointer" : "";
+      const at = { x: e.point.x, y: e.point.y };
       // Over a battle's mark its name is told, not the place's under it.
-      const named = battle?.en
-        ? {
-            en: battle.en,
-            ru: battle.ru ?? battle.en,
-            year: battle.year ?? 0,
-            approx: battle.approx === true,
-          }
-        : null;
+      const named = battleInfo(battle);
       if (named || this.battleShown) {
         this.battleShown = named !== null;
-        for (const h of this.handlers.hoverBattle)
-          h(named, named ? { x: e.point.x, y: e.point.y } : null);
+        this.events.emit("hoverBattle", named, named ? at : null);
       }
-      if (fid !== this.hovered) this.setHoverState(fid);
+      if (fid !== this.hoveredFeatureId) this.setHoverState(fid);
       const pid = (f?.properties as { id?: string } | undefined)?.id ?? null;
-      const at = { x: e.point.x, y: e.point.y };
       // Over no place, the states under the pointer: their labels often give way to town
-      // names.
-      const states = pid ? null : this.politiesAt(e);
-      // Nothing to say twice: "no state here" is sent once, not on every mouse move.
+      // names. "No state here" is sent once, not on every mouse move.
+      const states = pid ? null : this.politiesAtPixel(e.point);
       if (states || this.polityShown) {
         this.polityShown = states !== null;
-        for (const h of this.handlers.hoverPolity) h(states, states ? at : null);
+        this.events.emit("hoverPolity", states, states ? at : null);
       }
-      if (pid === this.hoveredPlace && pid === null) return;
-      this.hoveredPlace = pid;
-      for (const h of this.handlers.hover) h(pid, pid ? at : null);
+      if (pid === null && this.hoveredPlaceId === null) return;
+      this.hoveredPlaceId = pid;
+      this.events.emit("hover", pid, pid ? at : null);
     });
     this.map.getCanvasContainer().addEventListener("mouseleave", () => {
       this.map.getCanvas().style.cursor = "";
       this.setHoverState(null);
-      this.hoveredPlace = null;
-      for (const h of this.handlers.hover) h(null, null);
-      this.polityShown = false;
-      for (const h of this.handlers.hoverPolity) h(null, null);
-      this.battleShown = false;
-      for (const h of this.handlers.hoverBattle) h(null, null);
+      this.hidePlaceTip();
+      this.hideBattleTip();
+      if (this.polityShown) {
+        this.polityShown = false;
+        this.events.emit("hoverPolity", null, null);
+      }
     });
-    // Edge labels are worked out again only when the view or what it shows has changed:
-    // "idle" also follows a hover or the edge labels' own new data.
+  }
+
+  private hidePlaceTip(): void {
+    if (this.hoveredPlaceId === null) return;
+    this.hoveredPlaceId = null;
+    this.events.emit("hover", null, null);
+  }
+
+  private hideBattleTip(): void {
+    if (!this.battleShown) return;
+    this.battleShown = false;
+    this.events.emit("hoverBattle", null, null);
+  }
+
+  /**
+   * The large states the view shows unnamed get a label (edge-labels.ts), worked out again only
+   * when the view or what it shows has changed: "idle" also follows a hover or the edge
+   * labels' own new data.
+   */
+  private installEdgeLabels(): void {
     this.map.on("idle", () => {
-      if (!this.edgeDirty || this.printing) return;
+      if (!this.edgeDirty || this.printing || this.destroyed) return;
       this.edgeDirty = false;
-      this.nameEdgeStates();
+      const source = this.map.getSource<GeoJSONSource>("polity-edge-labels");
+      if (!source) return;
+      const features = edgeStateLabels(this.map);
+      const data = JSON.stringify(features);
+      if (data === this.edgeLabels) return;
+      this.edgeLabels = data;
+      void source.setData({ type: "FeatureCollection", features });
     });
     for (const event of ["moveend", "resize"] as const)
       this.map.on(event, () => {
@@ -483,20 +511,11 @@ export class MapLibreRenderer implements Renderer {
     this.map.on("sourcedata", (e) => {
       if (e.sourceId === "polities" && e.isSourceLoaded) this.edgeDirty = true;
     });
-    // A trackpad sends dozens of small moves a second: report the camera once it rests.
-    this.map.on("moveend", () => {
-      this.loadRoads();
-      clearTimeout(this.settleTimer);
-      this.settleTimer = setTimeout(() => {
-        if (this.destroyed) return;
-        const cam = this.getCamera();
-        for (const h of this.handlers.cameraChanged) h(cam);
-      }, 150);
-    });
   }
 
-  private politiesAt(e: MapMouseEvent): PolityName[] | null {
-    return this.politiesAtPixel(e.point);
+  /** The document the map lives in: the page's own, or a frame's. */
+  private get doc(): Document {
+    return this.map.getContainer().ownerDocument;
   }
 
   /**
@@ -505,25 +524,28 @@ export class MapLibreRenderer implements Renderer {
    */
   politiesAtPoint(at: LonLat): Promise<PolityName[] | null> {
     return new Promise((resolve) => {
-      this.whenLoaded(() => {
-        const read = () => {
-          if (this.destroyed) {
-            resolve(null);
-            return;
-          }
-          const pt = this.map.project([at[0], at[1]]);
-          const box = this.map.getCanvas();
-          const inside =
-            pt.x >= 0 && pt.y >= 0 && pt.x <= box.clientWidth && pt.y <= box.clientHeight;
-          resolve(inside ? this.politiesAtPixel(pt) : null);
-        };
-        // After AD 500 the later states must be in before the borders are read.
-        const ready = this.year > POLITY_SPLIT_YEAR ? this.loadLateStates() : Promise.resolve(true);
-        void ready.then(() => {
-          this.map.once("idle", read);
-          this.map.triggerRepaint();
-        });
-      });
+      const read = () => {
+        if (this.destroyed) {
+          resolve(null);
+          return;
+        }
+        const pt = this.map.project([at[0], at[1]]);
+        const box = this.map.getCanvas();
+        const inside =
+          pt.x >= 0 && pt.y >= 0 && pt.x <= box.clientWidth && pt.y <= box.clientHeight;
+        resolve(inside ? this.politiesAtPixel(pt) : null);
+      };
+      this.whenLoaded(
+        () => {
+          // After AD 500 the later states must be in before the borders are read.
+          const ready =
+            this.year > POLITY_SPLIT_YEAR ? this.loadLateStates() : Promise.resolve(true);
+          void ready.then(() => this.idle()).then(read);
+        },
+        () => {
+          resolve(null);
+        },
+      );
     });
   }
 
@@ -555,127 +577,22 @@ export class MapLibreRenderer implements Renderer {
     return out.length > 0 ? out : null;
   }
 
-  /**
-   * Names a large state that the view shows unnamed: its own label points off screen
-   * (Parthia east of the first view, the Sasanians at AD 400) or crowded out. A point
-   * inside the part in view, in the open (not under a panel, not at sea), written once
-   * the map rests. Over 28 years at the first view, 12 large states went unnamed before.
-   */
-  private nameEdgeStates(): void {
-    const source = this.map.getSource<GeoJSONSource>("polity-edge-labels");
-    if (!source || this.destroyed) return;
-    const canvas = this.map.getCanvas();
-    const box = canvas.getBoundingClientRect();
-    // One query for the view, then the samples tested in memory: a query per sample took
-    // half a second.
-    const shapes = (layer: string) =>
-      this.map.getLayer(layer) && this.map.getLayoutProperty(layer, "visibility") !== "none"
-        ? this.map.queryRenderedFeatures({ layers: [layer] })
-        : [];
-    const states = shapes("polity-fill");
-    const water = shapes("water").map((f) => ({ f, box: bboxOf(f.geometry) }));
-    const seen = new Map<string, { p: Record<string, unknown>; at: [number, number][] }>();
-    let cells = 0;
-    const step = 80;
-    if (states.length > 0)
-      for (let x = step / 2; x < box.width; x += step)
-        for (let y = step / 2; y < box.height; y += step) {
-          if (document.elementFromPoint(box.left + x, box.top + y) !== canvas) continue;
-          const { lng, lat } = this.map.unproject([x, y]);
-          // Off the globe (in space, or the sky when tilted) a pixel unprojects to the
-          // horizon: such a sample is not map.
-          const back = this.map.project([lng, lat]);
-          if (Math.hypot(back.x - x, back.y - y) > 2) continue;
-          cells += 1;
-          if (water.some(({ f, box }) => inBox(box, lng, lat) && covers(f.geometry, lng, lat)))
-            continue;
-          // A state comes in a piece per tile: counted once a sample.
-          const here = new Set<string>();
-          for (const f of states) {
-            const name = (f.properties as { name?: string }).name;
-            if (!name || here.has(name) || !covers(f.geometry, lng, lat)) continue;
-            here.add(name);
-            const s = seen.get(name) ?? { p: f.properties, at: [] as [number, number][] };
-            s.at.push([x, y]);
-            seen.set(name, s);
-          }
-        }
-    const named = new Set(
-      this.map
-        .queryRenderedFeatures({ layers: ["polity-label", "polity-label-pin"] })
-        .map((f) => (f.properties as { name?: string }).name),
-    );
-    // The names already written: the label goes where it is farthest from them, near the
-    // middle of the state's part in view. At its middle alone Rome lost to the towns of
-    // Judea on a phone.
-    // Only the names placed before it (the layers above): it cannot push those away, so the
-    // choice does not swing between two points as it pushes a town's name in and out.
-    const order = this.map.getLayersOrder();
-    const symbols = order
-      .slice(order.indexOf("polity-label-edge") + 1)
-      .filter((id) => this.map.getLayer(id)?.type === "symbol");
-    const written = this.map
-      .queryRenderedFeatures({ layers: symbols })
-      .flatMap((f) => (f.geometry.type === "Point" ? [f.geometry.coordinates] : []))
-      .map(([lon = 0, lat = 0]) => this.map.project([lon, lat]));
-    // Room to the names around and to the edges of the screen: a name at the edge is cut.
-    const room = ([x, y]: [number, number]) =>
-      Math.min(
-        160,
-        x,
-        box.width - x,
-        y * 2,
-        (box.height - y) * 2,
-        ...written.map((q) => Math.hypot(q.x - x, (q.y - y) * 2)),
-      );
-    const features: GeoJSON.Feature[] = [];
-    for (const [name, { p, at }] of seen) {
-      // A state over a twentieth of the open map at least: a sliver at the edge goes unnamed.
-      if (named.has(name) || at.length < Math.max(3, cells / 20)) continue;
-      const mx = at.reduce((a, [x]) => a + x, 0) / at.length;
-      const my = at.reduce((a, [, y]) => a + y, 0) / at.length;
-      const score = (q: [number, number]) => room(q) - 0.25 * Math.hypot(q[0] - mx, q[1] - my);
-      const [x, y] = at.reduce((a, b) => (score(b) > score(a) ? b : a));
-      const { lng, lat } = this.map.unproject([x, y]);
-      features.push({
-        type: "Feature",
-        geometry: { type: "Point", coordinates: [+lng.toFixed(3), +lat.toFixed(3)] },
-        properties: {
-          // The names and vassal lines in every language the state has them in.
-          ...Object.fromEntries(
-            Object.entries(p).filter(([k]) => k.startsWith("name_") || k.startsWith("v_")),
-          ),
-          name,
-          y0: p.y0,
-          y1: p.y1,
-          size: 3.4,
-          ...(p.v ? { v: p.v } : {}),
-        },
-      });
-    }
-    const data = JSON.stringify(features);
-    if (data === this.edgeLabels) return;
-    this.edgeLabels = data;
-    void source.setData({ type: "FeatureCollection", features });
-  }
-
-  private whenLoaded(run: () => void): void {
-    if (this.destroyed) return;
-    if (this.loaded) run();
-    else this.pending.push(run);
+  /** Runs once the style is in; if the map is destroyed first, `cancel` runs instead. */
+  private whenLoaded(run: () => void, cancel?: () => void): void {
+    if (this.destroyed) cancel?.();
+    else if (this.loaded) run();
+    else this.pending.push({ run, cancel });
   }
 
   private setHoverState(fid: number | null): void {
     // The great towns are drawn from their own source, with the places' ids.
     for (const source of ["places", "majors"]) {
-      if (this.hovered !== null)
-        this.map.setFeatureState({ source, id: this.hovered }, { hover: false });
+      if (this.hoveredFeatureId !== null)
+        this.map.setFeatureState({ source, id: this.hoveredFeatureId }, { hover: false });
       if (fid !== null) this.map.setFeatureState({ source, id: fid }, { hover: true });
     }
-    this.hovered = fid;
+    this.hoveredFeatureId = fid;
   }
-
-  private paddingQueued = false;
 
   /**
    * The open part of the screen changed (a card or a panel opened or closed): the centre
@@ -730,7 +647,7 @@ export class MapLibreRenderer implements Renderer {
 
   /** The battles (a few kB) load once the map is up, while their layer is on. */
   private loadBattles(): void {
-    if (!this.loaded || !this.battlesOn || this.battles !== "no") return;
+    if (!this.loaded || !this.layers.battles || this.battles !== "no") return;
     this.battles = "loading";
     void this.fill("battles", "battles.geojson").then((ok) => {
       this.battles = ok ? "yes" : "no";
@@ -758,11 +675,10 @@ export class MapLibreRenderer implements Renderer {
       void this.map.getSource<GeoJSONSource>("places")?.setData(this.places);
       this.majorsNow = "";
       this.fillMajors();
+      this.edgeDirty = true;
     });
-    if (this.layersNow) this.setLayers(this.layersNow);
   }
 
-  /** Names kept off the map (a quiz's answers until given): place ids, or none. */
   setHiddenNames(ids: readonly string[]): void {
     this.whenLoaded(() => {
       this.map.setGlobalStateProperty("hiddenNames", [...ids]);
@@ -770,17 +686,15 @@ export class MapLibreRenderer implements Renderer {
   }
 
   /**
-   * The Roman roads load the first time they could show: the layer on, the year after
-   * 312 BC and the map close enough, the main roads from zoom 4.5, the others from 6.5.
+   * The Roman roads load the first time they could show: the layer on, the year from
+   * ROADS_FROM and the map close enough. Each kind is fetched half a zoom level before it is
+   * drawn, so its data is there at the first zoom it shows.
    */
   private loadRoads(): void {
-    if (!this.loaded || !this.roadsOn || this.year < ROADS_FROM) return;
+    if (!this.loaded || !this.layers.roads || this.year < ROADS_FROM) return;
     const zoom = this.map.getZoom();
-    for (const [kind, from] of [
-      ["major", 4.5],
-      ["minor", 6.5],
-    ] as const) {
-      if (this.roads[kind] !== "no" || zoom < from) continue;
+    for (const kind of ["major", "minor"] as const) {
+      if (this.roads[kind] !== "no" || zoom < ROAD_MINZOOM[kind] - 0.5) continue;
       this.roads[kind] = "loading";
       void this.fill(`roads-${kind}`, `roads-${kind}.geojson`).then((ok) => {
         this.roads[kind] = ok ? "yes" : "no";
@@ -789,22 +703,25 @@ export class MapLibreRenderer implements Renderer {
   }
 
   /**
-   * Point a source at a data file, parsed in MapLibre's worker, once the file answers:
-   * false when it does not, so the caller can try again (setData(url) itself reports a
-   * failed fetch only as an error event).
+   * Point a source at a data file, fetched and parsed in MapLibre's worker: false when the
+   * file did not come, so the caller can try again. setData(url) reports a failed fetch only
+   * as the source's error event, and keeps the data it had.
    */
   private async fill(source: string, file: string): Promise<boolean> {
-    const url = `${this.dataUrl}/${file}`;
-    try {
-      const res = await fetch(url, { method: "HEAD" });
-      if (!res.ok) return false;
-    } catch {
-      return false;
-    }
     const src = this.map.getSource<GeoJSONSource>(source);
     if (!src || this.destroyed) return false;
-    await src.setData(url);
-    return true;
+    let failed = false;
+    // The style adds the source's id to the events its sources send.
+    const onError = (e: maplibregl.ErrorEvent) => {
+      if ((e as { sourceId?: string }).sourceId === source) failed = true;
+    };
+    this.map.on("error", onError);
+    try {
+      await src.setData(`${this.dataUrl}/${file}`);
+    } finally {
+      this.map.off("error", onError);
+    }
+    return !failed;
   }
 
   /**
@@ -815,14 +732,19 @@ export class MapLibreRenderer implements Renderer {
   private loadLateStates(): Promise<boolean> {
     if (!this.lateStates) {
       const loading: Promise<boolean> = new Promise<boolean>((resolve) => {
-        this.whenLoaded(() => {
-          void Promise.all([
-            this.fill("polities", "polities-all.geojson"),
-            this.fill("polity-labels", "polity-labels-all.geojson"),
-          ]).then(([a, b]) => {
-            resolve(a && b);
-          });
-        });
+        this.whenLoaded(
+          () => {
+            void Promise.all([
+              this.fill("polities", "polities-all.geojson"),
+              this.fill("polity-labels", "polity-labels-all.geojson"),
+            ]).then(([a, b]) => {
+              resolve(a && b);
+            });
+          },
+          () => {
+            resolve(false);
+          },
+        );
       }).then((ok) => {
         if (!ok) this.lateStates = null;
         return ok;
@@ -834,28 +756,22 @@ export class MapLibreRenderer implements Renderer {
 
   setLocale(locale: Locale): void {
     this.edgeDirty = true;
-    // MapLibre's own words (the scale's "km", the buttons' tooltips) in the same language.
-    const ui = toMapLibre(this.mapUi(locale));
-    Object.assign(this.map._locale, ui);
-    // The canvas is named for screen readers by MapLibre at start: renamed with the language.
-    this.map.getCanvas().setAttribute("aria-label", ui["Map.Title"]);
-    // The app moves the controls out of the map's container (into its own bar): looked
-    // for in the whole page, or a switch of language never relabelled them.
-    for (const [selector, key] of MAP_UI_TITLES)
-      for (const button of this.map.getContainer().ownerDocument.querySelectorAll(selector)) {
-        button.setAttribute("title", ui[key]);
-        button.setAttribute("aria-label", ui[key]);
-      }
-    // The scale writes its unit when the map moves: once now, in the new words.
-    this.map.fire("move");
+    this.ui = this.mapUi(locale);
+    relabelControls(this.map, this.controls, toMapLibre(this.ui));
+    const credit = this.terrainCredit + sourcesLink(this.ui);
     this.whenLoaded(() => {
       this.map.setGlobalStateProperty("locale", locale);
+      const dem = this.map.getSource("dem");
+      if (dem && dem.attribution !== credit) {
+        dem.attribution = credit;
+        refreshAttribution(this.controls.attribution);
+      }
     });
   }
 
   setLayers(layers: LayerVisibility): void {
     this.edgeDirty = true;
-    this.layersNow = layers;
+    this.layers = layers;
     this.whenLoaded(() => {
       for (const [group, ids] of Object.entries(this.groups)) {
         const visible = layers[group as keyof LayerVisibility];
@@ -864,18 +780,13 @@ export class MapLibreRenderer implements Renderer {
       }
       // The lights along a route go with the routes layer.
       this.map.getContainer().classList.toggle("hg-no-routes", !layers.routes);
-      this.stops.layer = layers.routes;
       this.showStops();
-      if (layers.relief) this.map.setTerrain({ source: "dem-terrain", exaggeration: 1.5 });
-      else this.map.setTerrain(null);
-      this.roadsOn = layers.roads;
+      this.map.setTerrain(layers.relief ? TERRAIN : null);
       this.loadRoads();
-      this.battlesOn = layers.battles;
       this.loadBattles();
     });
   }
 
-  private ring: maplibregl.Marker | null = null;
   highlight(at: LonLat | null): void {
     this.whenLoaded(() => {
       // A marker over the map, not a feature state: the place may have no dot at this zoom
@@ -886,9 +797,9 @@ export class MapLibreRenderer implements Renderer {
         return;
       }
       if (!this.ring) {
-        const el = document.createElement("div");
+        const el = this.doc.createElement("div");
         el.setAttribute("aria-hidden", "true");
-        const ring = document.createElement("div");
+        const ring = this.doc.createElement("div");
         ring.className = "hg-ring";
         el.append(ring);
         this.ring = new maplibregl.Marker({ element: el });
@@ -899,16 +810,20 @@ export class MapLibreRenderer implements Renderer {
 
   setSelected(placeId: string | null): void {
     this.whenLoaded(() => {
-      if (this.selected !== null) {
-        this.map.setFeatureState({ source: "places", id: this.selected }, { selected: false });
-      }
-      this.selected = placeId ? (this.featureIdByPlace.get(placeId) ?? null) : null;
-      if (this.selected !== null) {
-        this.map.setFeatureState({ source: "places", id: this.selected }, { selected: true });
-      }
-      // Drives the "sites of the selected place" layers (disputed locations).
+      if (this.selectedFeatureId !== null)
+        this.map.setFeatureState(
+          { source: "places", id: this.selectedFeatureId },
+          { selected: false },
+        );
+      this.selectedFeatureId = placeId ? (this.featureIdByPlace.get(placeId) ?? null) : null;
+      if (this.selectedFeatureId !== null)
+        this.map.setFeatureState(
+          { source: "places", id: this.selectedFeatureId },
+          { selected: true },
+        );
+      // Filters cannot read feature-state: they read the selected place's id.
       this.map.setGlobalStateProperty("selected", placeId ?? "");
-      this.selectedPlace = placeId;
+      this.selectedPlaceId = placeId;
       this.fillMajors();
     });
   }
@@ -919,7 +834,7 @@ export class MapLibreRenderer implements Renderer {
    * of the slider, not on every step.
    */
   private fillMajors(): void {
-    const majors = thinMajors(this.places, this.year, this.selectedPlace);
+    const majors = thinMajors(this.places, this.year, this.selectedPlaceId);
     const key = majors.features
       .map((f) => `${String(f.id)}:${String(f.properties?.["keep"])}`)
       .join();
@@ -993,10 +908,10 @@ export class MapLibreRenderer implements Renderer {
         essential: true,
       },
     );
-    // On the globe and tilted, fitBounds frames the box only roughly: in a small frame
-    // the nearest place ended under the timeline. Once there, measure where the places
-    // landed and move once more to bring them all inside; not if another move (a flight,
-    // a print) began meanwhile, nor long after, when fitBounds could not move at all.
+    // On the globe and tilted, fitBounds frames the box only roughly: in a small frame the
+    // nearest place can end under the timeline. Once there, measure where the places landed
+    // and move once more to bring them all inside; not if another move (a flight, a print)
+    // began meanwhile, nor long after, when fitBounds could not move at all.
     if (!this.map.isMoving()) {
       this.correctFit(points, margin);
       return;
@@ -1038,84 +953,22 @@ export class MapLibreRenderer implements Renderer {
       bearing: this.map.getBearing(),
       padding: this.map.getPadding(),
     };
-    // A smaller canvas for the sheet: on A4 the names come out half as large again as
-    // they would from a full screen (1000 px across ≈ 186 mm).
     const box = this.map.getContainer();
     const size = { width: box.style.width, height: box.style.height };
-    box.style.width = "1000px";
-    box.style.height = "625px";
-    this.map.resize();
-    // MapLibre's own watcher notices the new size a little later (throttled to 50 ms):
-    // the framing waits for it, or a late resize would reframe the sheet.
-    await new Promise((resolve) => setTimeout(resolve, 120));
-    const MARKS = "print-marks";
-    const KEEP = new Set(["route-num", "route-also", MARKS, `${MARKS}-also`]);
-    const hidden = blank
-      ? this.map
-          .getStyle()
-          .layers.filter(
-            (l) =>
-              l.type === "symbol" &&
-              !KEEP.has(l.id) &&
-              this.map.getLayoutProperty(l.id, "visibility") !== "none",
-          )
-          // Each with the visibility it had, given back as it was (not forced on).
-          .map((l) => ({
-            id: l.id,
-            was: this.map.getLayoutProperty(l.id, "visibility") as "visible" | undefined,
-          }))
-      : [];
-    // An outline map is a line drawing to write on: no relief, no tint of states, no
-    // dots of other places (symbols, hidden above with the names); pale land and sea, the
-    // coast and the rivers, the route.
-    const PLAIN = ["relief", "hillshade", "polity-fill"];
-    if (blank)
-      for (const id of PLAIN)
-        if (this.map.getLayer(id) && this.map.getLayoutProperty(id, "visibility") !== "none")
-          hidden.push({
-            id,
-            was: this.map.getLayoutProperty(id, "visibility") as "visible" | undefined,
-          });
     type Paint = Parameters<MLMap["setPaintProperty"]>;
-    const plain: { id: string; key: Paint[1]; to: Paint[2] }[] = [
-      { id: "land", key: "background-color", to: "#ffffff" },
-      { id: "water", key: "fill-color", to: "#e8eff2" },
-      { id: "coast", key: "line-opacity", to: 1 },
-    ];
-    const paints = blank
-      ? plain
-          .filter((x) => this.map.getLayer(x.id))
-          .map((x) => ({ ...x, was: this.map.getPaintProperty(x.id, x.key) }))
-      : [];
-    for (const x of paints) {
-      // At once: the sheet is taken in the next frame, not after a fade.
-      this.map.setPaintProperty(x.id, `${x.key}-transition` as Paint[1], { duration: 0, delay: 0 });
-      this.map.setPaintProperty(x.id, x.key, x.to);
-    }
-    for (const l of hidden) this.map.setLayoutProperty(l.id, "visibility", "none");
-    // No battles on the sheet: their swords crowded round the stops and covered the
-    // numbers of a lesson sheet; the sheet is the tour's.
-    const battles =
-      this.map.getLayer("battle-icon") &&
-      this.map.getLayoutProperty("battle-icon", "visibility") !== "none";
-    if (battles) this.map.setLayoutProperty("battle-icon", "visibility", "none");
-    // The edge labels were worked out for the screen's view, not the sheet's.
-    void this.map
-      .getSource<GeoJSONSource>("polity-edge-labels")
-      ?.setData({ type: "FeatureCollection", features: [] });
-    this.edgeLabels = "[]";
+    // What the sheet changed, each with what it was: given back as it was, not forced on.
+    const hidden: { id: string; was: "visible" | undefined }[] = [];
+    const paints: { id: string; key: Paint[1]; was: Paint[2] }[] = [];
+    let restored = false;
     const restore = () => {
-      if (battles && this.map.getLayer("battle-icon"))
-        this.map.setLayoutProperty("battle-icon", "visibility", "visible");
+      if (restored) return;
+      restored = true;
       this.edgeDirty = true;
       for (const x of paints)
         if (this.map.getLayer(x.id)) this.map.setPaintProperty(x.id, x.key, x.was);
       for (const l of hidden)
         if (this.map.getLayer(l.id)) this.map.setLayoutProperty(l.id, "visibility", l.was);
-      if (this.map.getLayer(`${MARKS}-also`)) this.map.removeLayer(`${MARKS}-also`);
-      if (this.map.getLayer(MARKS)) this.map.removeLayer(MARKS);
-      if (this.map.getLayer(`${MARKS}-dot`)) this.map.removeLayer(`${MARKS}-dot`);
-      if (this.map.getSource(MARKS)) this.map.removeSource(MARKS);
+      removePrintMarks(this.map);
       box.style.width = size.width;
       box.style.height = size.height;
       this.map.resize();
@@ -1128,79 +981,54 @@ export class MapLibreRenderer implements Renderer {
         bearing: before.bearing,
       });
     };
-    // Whatever fails from here, the map gets its size and padding back.
+    const hide = (id: string) => {
+      if (!this.map.getLayer(id) || this.map.getLayoutProperty(id, "visibility") === "none") return;
+      hidden.push({
+        id,
+        was: this.map.getLayoutProperty(id, "visibility") as "visible" | undefined,
+      });
+      this.map.setLayoutProperty(id, "visibility", "none");
+    };
+    // Whatever fails from here, the map gets its size, its layers and its view back.
     try {
-      if (marks.length > 0) {
-        this.map.addSource(MARKS, {
-          type: "geojson",
-          // Places on one point (Ezra 2 names five there) are one disc, the first number
-          // in it and the others beside it, as a tour's revisited stops.
-          data: {
-            type: "FeatureCollection",
-            features: [
-              ...marks
-                .reduce((g, m) => {
-                  const key = `${m.at[0].toFixed(4)},${m.at[1].toFixed(4)}`;
-                  g.set(key, [...(g.get(key) ?? []), m]);
-                  return g;
-                }, new Map<string, { at: LonLat; n: number }[]>())
-                .values(),
-            ].map((ms) => {
-              const [first, ...rest] = ms;
-              const at = first?.at ?? [0, 0];
-              return {
-                type: "Feature" as const,
-                properties: {
-                  n: first?.n ?? 0,
-                  ...(rest.length > 0 ? { also: rest.map((m) => String(m.n)).join(" · ") } : {}),
-                },
-                geometry: { type: "Point" as const, coordinates: [at[0], at[1]] },
-              };
-            }),
-          },
-        });
-        // On top of everything: a numbered disc on each place, as the tours' stops are.
-        this.map.addLayer({
-          id: `${MARKS}-dot`,
-          type: "circle",
-          source: MARKS,
-          paint: {
-            "circle-radius": 7.5,
-            "circle-color": "#9a3b1f",
-            "circle-stroke-color": "#f6efe1",
-            "circle-stroke-width": 1.5,
-          },
-        });
-        this.map.addLayer({
-          id: MARKS,
-          type: "symbol",
-          source: MARKS,
-          layout: {
-            "text-field": ["to-string", ["get", "n"]],
-            "text-font": [MAP_FONT],
-            "text-size": 10,
-            "text-allow-overlap": true,
-            "text-ignore-placement": true,
-          },
-          paint: { "text-color": "#ffffff" },
-        });
-        this.map.addLayer({
-          id: `${MARKS}-also`,
-          type: "symbol",
-          source: MARKS,
-          filter: ["has", "also"],
-          layout: {
-            "text-field": ["get", "also"],
-            "text-font": [MAP_FONT],
-            "text-size": 10,
-            "text-anchor": "left",
-            "text-offset": [1.2, 0],
-            "text-allow-overlap": true,
-            "text-ignore-placement": true,
-          },
-          paint: { "text-color": "#9a3b1f", "text-halo-color": "#f6efe1", "text-halo-width": 1.5 },
-        });
+      // A smaller canvas for the sheet: on A4 the names come out half as large again as
+      // they would from a full screen (1000 px across ≈ 186 mm).
+      box.style.width = "1000px";
+      box.style.height = "625px";
+      await this.resized();
+      if (blank) {
+        // An outline map is a line drawing to write on: no names and no marks of places but
+        // the stops' numbers, no relief, no tint of states; pale land and sea, the coast and
+        // the rivers, the route.
+        const keep = new Set(["route-num", "route-also"]);
+        for (const l of this.map.getStyle().layers)
+          if (l.type === "symbol" && !keep.has(l.id)) hide(l.id);
+        for (const id of ["relief", "hillshade", "polity-fill"]) hide(id);
+        const plain: { id: string; key: Paint[1]; to: Paint[2] }[] = [
+          { id: "land", key: "background-color", to: "#ffffff" },
+          { id: "water", key: "fill-color", to: "#e8eff2" },
+          { id: "coast", key: "line-opacity", to: 1 },
+        ];
+        for (const x of plain) {
+          if (!this.map.getLayer(x.id)) continue;
+          paints.push({ id: x.id, key: x.key, was: this.map.getPaintProperty(x.id, x.key) });
+          // At once: the sheet is taken in the next frame, not after a fade.
+          this.map.setPaintProperty(x.id, `${x.key}-transition` as Paint[1], {
+            duration: 0,
+            delay: 0,
+          });
+          this.map.setPaintProperty(x.id, x.key, x.to);
+        }
       }
+      // No battles on the sheet: their swords crowd round the stops and cover the numbers of
+      // a lesson sheet; the sheet is the tour's.
+      hide("battle-icon");
+      // The edge labels were worked out for the screen's view, not the sheet's.
+      void this.map
+        .getSource<GeoJSONSource>("polity-edge-labels")
+        ?.setData({ type: "FeatureCollection", features: [] });
+      this.edgeLabels = "[]";
+      if (marks.length > 0) addPrintMarks(this.map, marks);
       this.map.setPadding({ top: 0, bottom: 0, left: 0, right: 0 });
       if (points.length <= 1) {
         // One place: in the middle of the sheet, at the zoom it is seen at.
@@ -1237,12 +1065,33 @@ export class MapLibreRenderer implements Renderer {
     return restore;
   }
 
-  /** Once the map has drawn everything it is loading (at most 6 s). */
+  /**
+   * Once MapLibre has taken the container's new size. Its own watcher notices a new size a
+   * little later (throttled): a sheet framed before it would be reframed by the late resize.
+   */
+  private resized(): Promise<void> {
+    return new Promise<void>((resolve) => {
+      const done = () => {
+        clearTimeout(timer);
+        resolve();
+      };
+      // No resize in time: the map is resized here, so the sheet is never framed on the
+      // screen's canvas.
+      const timer = setTimeout(() => {
+        this.map.off("resize", done);
+        this.map.resize();
+        resolve();
+      }, RESIZE_TIMEOUT_MS);
+      this.map.once("resize", done);
+    });
+  }
+
+  /** Once the map has drawn everything it is loading, or after IDLE_TIMEOUT_MS. */
   private idle(): Promise<void> {
     return new Promise<void>((resolve) => {
-      const timer = window.setTimeout(resolve, 6000);
+      const timer = setTimeout(resolve, IDLE_TIMEOUT_MS);
       this.map.once("idle", () => {
-        window.clearTimeout(timer);
+        clearTimeout(timer);
         resolve();
       });
       this.map.triggerRepaint();
@@ -1250,11 +1099,7 @@ export class MapLibreRenderer implements Renderer {
   }
 
   /** Pans and zooms out so that every point falls inside the padded view with its margin. */
-  private correctFit(
-    points: readonly LonLat[],
-    margin: { top: number; bottom: number; left: number; right: number },
-    duration = 500,
-  ): void {
+  private correctFit(points: readonly LonLat[], margin: Padding, duration = 500): void {
     const el = this.map.getContainer();
     const pad = this.map.getPadding();
     const edge = (v: number | undefined) => v ?? 0;
@@ -1318,7 +1163,8 @@ export class MapLibreRenderer implements Renderer {
 
   /**
    * A tour's route: the way walked so far (to the current stop) drawn solid, the rest of
-   * it faint, every stop with its number; the lights run along the last leg walked.
+   * it faint, every stop with its number (route-stops.ts); the lights run along the last leg
+   * walked.
    */
   setRoute(
     coordinates: readonly LonLat[],
@@ -1339,34 +1185,17 @@ export class MapLibreRenderer implements Renderer {
       const walked = coordinates.slice(0, currentIndex + 1);
       line(walked, false);
       line(coordinates.slice(Math.max(currentIndex, 0)), true);
-      // A place the tour comes back to (Antioch: stops 1, 6, 12, 15) is one disc, not four
-      // stacked with only the top number seen: it holds the number that matters now (this
-      // stop, else the next one there, else the last), the others beside it, small.
-      const at = new Map<string, number[]>();
-      coordinates.forEach((c, i) => {
-        const key = `${c[0].toFixed(4)},${c[1].toFixed(4)}`;
-        at.set(key, [...(at.get(key) ?? []), i]);
-      });
-      for (const stops of at.values()) {
-        const first = stops[0] ?? 0;
-        const shown =
-          stops.find((i) => i === currentIndex) ??
-          stops.find((i) => i > currentIndex) ??
-          stops.at(-1) ??
-          first;
-        const others = stops.filter((i) => i !== shown).map((i) => String(i + 1));
-        const c = coordinates[first] ?? [0, 0];
+      for (const { at, shown, also } of stopDiscs(coordinates, currentIndex))
         features.push({
           type: "Feature",
           properties: {
             current: !still && shown === currentIndex,
             ahead: shown > currentIndex,
             n: shown + 1,
-            ...(others.length > 0 ? { also: others.join(" · ") } : {}),
+            ...(also.length > 0 ? { also: also.map((i) => String(i + 1)).join(" · ") } : {}),
           },
-          geometry: { type: "Point", coordinates: [...c] },
+          geometry: { type: "Point", coordinates: [...at] },
         });
-      }
       void this.map.getSource<GeoJSONSource>("route")?.setData({
         type: "FeatureCollection",
         features,
@@ -1381,20 +1210,20 @@ export class MapLibreRenderer implements Renderer {
   }
 
   /**
-   * Tells the style whether a tour's stop discs are drawn: a stop's own mark then lies
-   * hidden under its disc (style-expressions.ts markOpacity), as the circles lay under it.
+   * Tells the style whether a tour's stop discs are drawn: a stop's own mark then lies hidden
+   * under its disc (style-expressions.ts markOpacity).
    */
   private showStops(): void {
-    const shown = this.stops.route && this.stops.layer;
+    const shown = this.stops.route && this.layers.routes;
     if (shown === this.stops.shown) return;
     this.stops.shown = shown;
     this.map.setGlobalStateProperty("stops", shown);
   }
 
   /**
-   * Small lights run along the last leg of the route, from the previous stop to the
-   * current one, so the reader sees which way the tour went. DOM markers, not style changes: the map stays idle.
-   * Off with no route, and for readers who ask the system for less motion.
+   * Small lights run along the last leg of the route, from the previous stop to the current
+   * one, so the reader sees which way the tour went. DOM markers, not style changes: the map
+   * stays idle. Off with no route, and for readers who ask the system for less motion.
    */
   private runPulses(coordinates: readonly LonLat[]): void {
     if (this.pulse) {
@@ -1403,13 +1232,13 @@ export class MapLibreRenderer implements Renderer {
       this.pulse = null;
     }
     if (coordinates.length < 2 || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const along = routeWalker(coordinates.slice(-2));
+    const along = alongPath(coordinates.slice(-2));
     const markers = [0, 1, 2].map(() => {
       // MapLibre sets the marker's own opacity (behind the globe, under terrain): the
       // light fades on an inner element, so the two never fight.
-      const el = document.createElement("div");
+      const el = this.doc.createElement("div");
       el.setAttribute("aria-hidden", "true");
-      const light = document.createElement("div");
+      const light = this.doc.createElement("div");
       light.className = "hg-pulse";
       el.append(light);
       return new maplibregl.Marker({ element: el }).setLngLat(along(0)).addTo(this.map);
@@ -1446,42 +1275,23 @@ export class MapLibreRenderer implements Renderer {
     return new Promise((resolve) => {
       this.map.once("render", () => {
         const canvas = this.map.getCanvas();
-        // The app may move the map's controls out of its container (into the player):
-        // the credits are looked up in the whole page, not only inside the map.
-        const attribution =
-          (
-            this.map.getContainer().querySelector(".maplibregl-ctrl-attrib-inner") ??
-            document.querySelector(".maplibregl-ctrl-attrib-inner")
-          )?.textContent ?? "";
         resolve({
           image: canvas.toDataURL("image/png"),
           width: canvas.width,
           height: canvas.height,
-          // The "Sources" link points at the About page: no use on a picture.
-          attribution: attribution
-            .replace(/\s+/g, " ")
-            .replace(/\s*·\s*Sources$/, "")
-            .trim(),
+          // The link to the sources' page is no use on a picture.
+          attribution: withoutSuffix(
+            attributionText(this.controls.attribution).replace(/\s+/g, " ").trim(),
+            ` · ${this.ui.sourcesPage.label}`,
+          ),
         });
       });
       this.map.triggerRepaint();
     });
   }
 
-  visiblePlaces(): string[] {
-    if (!this.loaded) return [];
-    const ids = new Set<string>();
-    for (const f of this.map.queryRenderedFeatures({ layers: PLACE_LAYERS })) {
-      const id = (f.properties as { id?: string } | null)?.id;
-      if (id) ids.add(id);
-    }
-    return [...ids];
-  }
-
   on<E extends keyof RendererEvents>(event: E, handler: RendererEvents[E]): () => void {
-    const set = this.handlers[event] as Set<RendererEvents[E]>;
-    set.add(handler);
-    return () => set.delete(handler);
+    return this.events.on(event, handler);
   }
 
   destroy(): void {
@@ -1489,8 +1299,10 @@ export class MapLibreRenderer implements Renderer {
     if (this.pulse) cancelAnimationFrame(this.pulse.frame);
     clearTimeout(this.readyTimer);
     clearTimeout(this.settleTimer);
+    const pending = this.pending;
     this.pending = [];
-    for (const set of Object.values(this.handlers)) set.clear();
+    for (const { cancel } of pending) cancel?.();
+    this.events.clear();
     this.map.remove();
   }
 }

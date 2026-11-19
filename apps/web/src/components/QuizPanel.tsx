@@ -1,10 +1,9 @@
 import type { LonLat } from "@hg/core";
-import type { Locale } from "@hg/model";
+import { distanceKm, roundKm, type Locale } from "@hg/model";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { LoadedData } from "../data";
-import { distanceKm, roundKm } from "../distance";
 import { useTranslation } from "../i18n";
-import type { QuizItem } from "../print";
+import type { QuizItem } from "../quiz";
 import { X } from "./icons";
 import { Panel } from "./Panel";
 
@@ -85,7 +84,7 @@ export function QuizPanel({
     setStep(step + 1);
   };
   return (
-    <Panel className="w-[min(420px,calc(100vw-376px-32px))] max-md:w-full px-5 py-4">
+    <Panel className="w-card px-5 py-4">
       <div className="flex items-start justify-between gap-2">
         <div>
           <h2 className="font-serif text-[17px] font-semibold text-ink">{t("quiz.title")}</h2>
@@ -133,9 +132,9 @@ export function QuizPanel({
                 chosen === null
                   ? "border-line bg-white/60 text-ink hover:border-accent"
                   : k === item.answer
-                    ? "border-[#2f6b3a] bg-[#2f6b3a]/15 font-medium text-[#2f6b3a]"
+                    ? "border-success bg-success/15 font-medium text-success"
                     : k === chosen
-                      ? "border-[#8e2a22] bg-[#8e2a22]/10 text-[#8e2a22]"
+                      ? "border-danger bg-danger/10 text-danger"
                       : "border-line bg-white/60 text-ink opacity-50";
               return (
                 <button

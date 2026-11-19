@@ -8,10 +8,10 @@ description: Vložte glóbus na vlastní web jedním řádkem — mapu kapitoly,
   vedle pasáže na vaší stránce; několik zpráv udržuje obojí v souladu.
 </p>
 
-<h2>Rychlý start</h2>
+<h2 id="quick-start">Rychlý start</h2>
 <pre><code>&lt;iframe
-  src="{{site}}/embed/v1?ref=Acts.16&amp;locale=en"
-  title="Map of Acts 16"
+  src="{{site}}/embed/v1?ref=Acts.16&amp;locale=cs"
+  title="Mapa: Sk 16"
   style="width: 100%; height: 480px; border: 0; border-radius: 12px"
   allow="fullscreen"
   loading="lazy"
@@ -30,7 +30,7 @@ description: Vložte glóbus na vlastní web jedním řádkem — mapu kapitoly,
   <li>Rámec funguje až do šířky telefonu; stačí výška 480 px.</li>
 </ul>
 
-<h2>Kapitola nebo pasáž</h2>
+<h2 id="a-chapter-or-a-passage">Kapitola nebo pasáž</h2>
 <p>
   <code>ref</code> přijímá odkaz ve formátu OSIS s anglickými zkratkami knih a anglickým číslováním
   veršů:
@@ -69,7 +69,7 @@ description: Vložte glóbus na vlastní web jedním řádkem — mapu kapitoly,
   v ní. Pasáž, která nemá ani jedno, ponechá aktuální rok mapy.
 </p>
 
-<h2>Parametry</h2>
+<h2 id="parameters">Parametry</h2>
 <div class="table">
   <table>
     <thead>
@@ -176,14 +176,14 @@ description: Vložte glóbus na vlastní web jedním řádkem — mapu kapitoly,
   stejné parametry fungují za <code>/embed/v1</code>.
 </p>
 
-<h2>Zprávy</h2>
+<h2 id="messages">Zprávy</h2>
 <p>
   Glóbus a vaše stránka komunikují přes <code>postMessage</code>. Každá zpráva je objekt s
   <code>type</code> a <code>v: 1</code>. Glóbus posílá jen to, co se děje na mapě, a nikdy nic, co
   by čtenáře identifikovalo, proto zprávy posílá nadřazené stránce bez ohledu na její původ (cíl
   <code>"*"</code>); přijímá zprávy jen od stránky, která drží rámec.
 </p>
-<h3>Z glóbu</h3>
+<h3 id="from-the-globe">Z glóbu</h3>
 <div class="table">
   <table>
     <thead>
@@ -225,7 +225,10 @@ description: Vložte glóbus na vlastní web jedním řádkem — mapu kapitoly,
       <tr>
         <td><code>hg:error</code></td>
         <td><code>{ code, message }</code></td>
-        <td>mapu nebo její data se nepodařilo načíst</td>
+        <td>
+          mapu nebo její data se nepodařilo načíst: <code>code</code> je <code>"map"</code> nebo
+          <code>"data"</code>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -234,9 +237,12 @@ description: Vložte glóbus na vlastní web jedním řádkem — mapu kapitoly,
   <code>view</code> obsahuje <code>year</code>, <code>locale</code> a <code>layers</code> a, je-li
   nastaveno, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> a
   <code>camera</code>. <code>view</code> bez <code>place</code> znamená, že není vybráno žádné
-  místo.
+  místo. <code>camera</code> je objekt,
+  <code>{ center: [35.2, 31.8], zoom: 7, pitch: 30, bearing: 0 }</code>, nikoli řetězec z adresy;
+  <code>layers</code> dává každé vrstvě <code>true</code> nebo <code>false</code>:
+  <code>{ relief: false, battles: false }</code>.
 </p>
-<h3>Do glóbu</h3>
+<h3 id="to-the-globe">Do glóbu</h3>
 <div class="table">
   <table>
     <thead>
@@ -288,11 +294,11 @@ description: Vložte glóbus na vlastní web jedním řádkem — mapu kapitoly,
   položku z Wikidata (Konstantinopol má <code>Q16869</code>). Oba druhy se mohou objevit ve
   <code>view.place</code> a v <code>hg:place-clicked</code> a <code>hg:set-view</code> přijímá oba;
   pokud vaše data mají jen místa z OpenBible, ověřte tvar ID, než nějaké vyhledáte. Z {{openbible}}
-  míst z OpenBible jich {{absent}} na mapě není (nemají bod, který smí být zveřejněn); jejich ID se
+  míst z OpenBible jich {{absent}} na mapě není (vynechaná, nebo zcela bez bodu); jejich ID se
   ignorují.
 </p>
 
-<h2>Příklad: mapa sleduje vašeho čtenáře</h2>
+<h2 id="example-the-map-follows-your-reader">Příklad: mapa sleduje vašeho čtenáře</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
 // When your reader opens a chapter, show it on the map.
@@ -416,22 +422,24 @@ function closeBox() {
   jako název, který verše samotné Bible používají většinou pro něco jiného („Kádeš“ tam je
   Kádeš-barnea, nikoli Kádeš z databáze). Název místa, který je zároveň křestním jménem (Jordán,
   Šaron), se vedle jiného slova s velkým písmenem nechává být: Jordan Smith je osoba, nikoli řeka. V
-  ruštině, ukrajinštině, polštině a češtině se názvy nacházejí v různých pádech („в Египте“, „w
-  Jerozolimie“, „v Jeruzalémě“), v němčině také v genitivu („Jerusalems“). Odkazy, kód, pole
-  formulářů, tlačítka a nadpisy se nechávají beze změny.
+  ruštině, ukrajinštině, polštině, češtině, srbštině, maďarštině, finštině a rumunštině se názvy
+  nacházejí v různých pádech („в Египте“, „w Jerozolimie“, „v Jeruzalémě“), v němčině, švédštině,
+  dánštině a norštině také v genitivu („Jerusalems“). Odkazy, kód, pole formulářů, tlačítka a
+  nadpisy se nechávají beze změny.
 </p>
 <p class="note">
-  Skript nemá žádné závislosti a nenastavuje cookies. Čte z glóbu jeden soubor názvů (po síti asi 20
-  až 35 KB podle jazyka, plus 7 KB skriptu), bez adresy vaší stránky jako referreru, a mění jen
-  názvy, které propojuje. Funguje i při přísné Content Security Policy, která povoluje adresu glóbu
-  v <code>script-src</code> a <code>connect-src</code>. Pro text, který vaše stránka přidá později,
-  zavolejte <code>HistoryGlobePlaces.scan(element)</code>, jakmile je text vykreslen: skript dělí
-  textové uzly, takže na stránce v Reactu nebo Vue ho spouštějte na obsahu, který framework už znovu
+  Skript nemá žádné závislosti a nenastavuje cookies. Čte z glóbu jeden soubor názvů (po síti asi
+  {{names_kb_min}} až {{names_kb_max}} KB podle jazyka, plus {{script_kb}} KB skriptu), bez adresy
+  vaší stránky jako referreru, a mění jen názvy, které propojuje. Funguje i při přísné Content
+  Security Policy, která povoluje adresu glóbu v <code>script-src</code> a <code>connect-src</code>.
+  Pro text, který vaše stránka přidá později, zavolejte
+  <code>HistoryGlobePlaces.scan(element)</code>, jakmile je text vykreslen: skript dělí textové
+  uzly, takže na stránce v Reactu nebo Vue ho spouštějte na obsahu, který framework už znovu
   nevykresluje.
 </p>
 <script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
 
-<h2>Stabilita</h2>
+<h2 id="stability">Stabilita</h2>
 <p>
   <code>/embed/v1</code> je závazek: v rámci v1 se parametry a zprávy jen přidávají, nikdy se nemění
   ani neodebírají. Zásadní změna vyjde jako <code>/embed/v2</code> a v1 bude dál fungovat.

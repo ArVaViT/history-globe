@@ -8,7 +8,7 @@ places:
   af5884f: Nazareth
   af301ca: Egypte
   a69e1b8: Macedonië
-  a197f19: Asia
+  a197f19: Azië
   a5feb15: Efeze
   ae41ab4: Antiochië
   a58735e: Caesarea
@@ -616,7 +616,7 @@ places:
   ab7bf48: Caesarea Filippi
   a593a48: Chorazin
   ad6b2b7: En-Tappuach
-  a2fa712: Oude Poort
+  a2fa712: Jesjanapoort
   a728f1b: Gederot
   ab98f8c: Gittaïm
   a1d1918: Chelkat
@@ -1317,12 +1317,14 @@ polities:
   Almohad Caliphate: Almohaden
   Almoravid Dynasty: Almoraviden
   Alodia: Alodia
+  Ammon: Ammon
   Angevin Empire: Angevijnse Rijk
   Angevins: Anjou
   Ankhwennefer: Anchwennefer
   Antigonid Dynasty: Antigoniden
   Antigonid Macedonia: Antigonidisch Macedonië
   Aquitaine: Aquitanië
+  Aram-Damascus: Aram-Damascus
   Armenian Kingdom of Cilicia: Armeens Koninkrijk Cilicië
   Assyria: Assyrië
   Assyrian Egypt: Assyrisch Egypte
@@ -1347,6 +1349,7 @@ polities:
   Cao Wei: Cao Wei
   Capetian House of Anjou: Capetingisch Huis Anjou
   Carantania: Karantanië
+  Carchemish: Karkemis
   Carolingian Empire: Karolingische Rijk
   Carthage: Carthago
   Caucasian Albania: Kaukasisch Albanië
@@ -1432,6 +1435,7 @@ polities:
   Eastern Kara-Khanids: Oostelijke Karachaniden
   Eastern Kushans: Oostelijke Kushana
   Eastern Roman Empire: Oost-Romeinse Rijk
+  Edom: Edom
   Elam: Elam
   Emirate of Crete: Emiraat Kreta
   Emirate of Córdoba: Emiraat Córdoba
@@ -1481,6 +1485,7 @@ polities:
   Hadhramaut: Hadramaut
   Hafsid Dynasty: Hafsiden
   Halych-Volhynia occupation: Koemaanse steppe
+  Hamath: Hamat
   Hamdanid Emirates: Hamdanidenemiraten
   Hammadid Dynasty: Hammadiden
   Han Dynasty: Han-dynastie
@@ -1615,6 +1620,7 @@ polities:
   Minaeans: Minaeërs
   Minoan civilization: Minoïsche beschaving
   Mitanni: Mitanni
+  Moab: Moab
   Molossians: Molossen
   Mongol Empire: Mongoolse Rijk
   Mycenaean Greece: Myceens Griekenland
@@ -1794,6 +1800,11 @@ polities:
   Third Dynasty of Ur: Derde dynastie van Ur
   Principality of Armenia: Vorstendom Armenië
 modern:
+  md88865: "Argob"
+  m0df275: "Bozez"
+  m9b1996: "Jeruël"
+  me0645b: "Ören"
+  m23ce84: "Massa"
   m66c5b8: Jeruzalem
   md561de: Babylon
   me7edbd: Jordaan
@@ -6708,3 +6719,21 @@ ancient:
   Q173474: Veliko Tarnovo
   Q2538648: Wad ban Naqa
   Q1462261: Wasit
+# The today line where OpenBible describes the place in free English text, translated whole
+# (as content/modern-names.yaml does for Russian), with this file's names of the places.
+labels:
+  "in the region east of Gibeon": "Ten oosten van Gibeon"
+  "in the region between Mizpah and Shen": "Tussen Mizpa en Sen"
+  "in the region between Gerar and Beersheba": "Tussen Gerar en Berseba"
+  "in the region south of Hebron": "Ten zuiden van Hebron"
+  "in the region between Lachish and Gath": "Tussen Lachis en Gat"
+  "in the region between Eshtaol and Zorah": "Tussen Estaol en Zora"
+  "in the region between Damascus and Hamath": "Tussen Damascus en Hamat"
+  "in the region between Baalbek and Kadesh": "Tussen Baalbek en Kades"
+  "in the region between Aiath and Michmash": "Tussen Ajat en Michmas"
+  "in the region between Ibleam and Megiddo": "Tussen Jibleam en Megiddo"
+  "in the region between Punon and Zered": "Tussen Punon en de beek Zered"
+  "in the region between Maghfar and Lake Timsah": "Tussen Maghfar en het Timsahmeer"
+  "in the region north of the Dead Sea": "Ten noorden van de Dode Zee"
+  "in the region south of the Lisan": "Ten zuiden van het schiereiland Lisan"
+  "in the region between Kedesh-naphtali and Hazor": "Tussen Kedes in Naftali en Hazor"

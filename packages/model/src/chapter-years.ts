@@ -1,12 +1,9 @@
-import { BOOKS } from "./scripture.ts";
 import { VERSES } from "./versification.ts";
 
 /** A run of chapters and its year, as content/chapter-years.yaml gives it. */
 export interface ChapterYearRow {
   readonly chapters: string;
   readonly year: number;
-  readonly approx?: boolean;
-  readonly note?: string;
 }
 
 /** In the release: book → [first chapter, last chapter, year], in order. */
@@ -24,7 +21,7 @@ export function packChapterYears(
   const table: Record<string, [number, number, number][]> = {};
   for (const [book, rows] of Object.entries(file.books)) {
     const chapters = VERSES[book]?.length;
-    if (!BOOKS[book] || chapters === undefined) {
+    if (chapters === undefined) {
       errors.push(`chapter-years: unknown book ${book}`);
       continue;
     }

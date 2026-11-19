@@ -6,7 +6,7 @@ const y = (year: number) => ({ year, approximate: false });
 const jerusalem: PlaceLife = {
   until: y(70),
   gap: { from: y(-585), until: y(-538) },
-  note: { en: "Burnt.", ru: "Сожжён." },
+  note: { en: "Burnt.", ru: "Сожжён.", de: "Verbrannt." },
   sources: ["2 Kgs 25"],
 };
 const samaria: PlaceLife = {
@@ -35,6 +35,9 @@ const places: LinkedPlace[] = [
   { id: "near", name: "Near", where_tpl: "within", where_ref: "jer" },
   { id: "jerAt", name: "Jerusalem", where_tpl: "at", where_ref: "jer" },
   { id: "lost", name: "Lost", where_tpl: "same", where_ref: "nowhere" },
+  { id: "ur", name: "Ur", point: [46.1, 30.96] },
+  { id: "urLand", name: "Ur", where_tpl: "same_name", where_ref: "ur", point: [46.1, 30.96] },
+  { id: "urFar", name: "Ur", where_tpl: "same_name", where_ref: "ur", point: [44, 36] },
   // Six links to Jerusalem: one more than is followed.
   { id: "h1", name: "H1", where_tpl: "at", where_ref: "h2" },
   { id: "h2", name: "H2", where_tpl: "at", where_ref: "h3" },
@@ -55,7 +58,15 @@ const ru: Record<string, string> = {
   rome: "Рим",
   babylon: "Вавилон",
 };
-const life = inheritLife(places, { jer: jerusalem, sam: samaria, rome }, (id) => ru[id]);
+const de: Record<string, string> = { jer: "Jerusalem", zion: "Zion" };
+const nameIn = (id: string, locale: string) =>
+  locale === "ru" ? ru[id] : locale === "de" ? de[id] : undefined;
+const ur: PlaceLife = {
+  until: y(-499),
+  note: { en: "Deserted.", ru: "Опустел." },
+  sources: ["Woolley"],
+};
+const life = inheritLife(places, { jer: jerusalem, sam: samaria, rome, ur }, nameIn);
 
 describe("inheritLife", () => {
   it("prefixes another name's note with the town, once, through a chain", () => {
@@ -65,6 +76,15 @@ describe("inheritLife", () => {
     expect(life.jer2?.note.ru).toBe("Сожжён.");
     expect(life.jerAt?.note.ru).toBe("Сожжён.");
     expect(life.h2?.note.ru).toBe("Иерусалим: Сожжён.");
+  });
+
+  it("keeps the note in every language it is written in", () => {
+    expect(life.zion?.note).toEqual({
+      en: "Jerusalem: Burnt.",
+      ru: "Иерусалим: Сожжён.",
+      de: "Jerusalem: Verbrannt.",
+    });
+    expect(life.jer2?.note.de).toBe("Verbrannt.");
   });
 
   it("carries over the ruin and the end, never the founding", () => {
@@ -79,6 +99,12 @@ describe("inheritLife", () => {
     expect(life.a).toBeUndefined();
     expect(life.near).toBeUndefined();
     expect(life.jer).toBeUndefined();
+  });
+
+  it("follows the same place in other verses only on the very same point", () => {
+    expect(life.urLand?.until?.year).toBe(-499);
+    expect(life.urLand?.note.ru).toBe("Опустел.");
+    expect(life.urFar).toBeUndefined();
   });
 
   it("gives nothing for a link to a missing place or a chain longer than it follows", () => {

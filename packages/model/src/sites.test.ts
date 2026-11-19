@@ -3,7 +3,7 @@ import { siteLabelIn } from "./sites.ts";
 
 const ru = (id: string) => ({ a818a40: "Авила", a217d18: "Вавилон" })[id];
 
-describe("siteLabelRu", () => {
+describe("siteLabelIn", () => {
   it("names the place first, in the nominative", () => {
     expect(
       siteLabelIn(
@@ -28,7 +28,7 @@ describe("siteLabelRu", () => {
     ).toBe("там же, где Авила");
   });
 
-  it("keeps the English label without a Synodal name or a template", () => {
+  it("keeps the English label without a name in the language or a template", () => {
     expect(
       siteLabelIn(
         "ru",

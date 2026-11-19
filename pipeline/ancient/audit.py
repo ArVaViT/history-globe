@@ -1,42 +1,71 @@
-import json,re,sys,csv,gzip,time,urllib.request,urllib.parse
-csv.field_size_limit(10**9)
-S,R=sys.argv[1],sys.argv[2]
-exec(open(f'{S}/wave/periods.py').read().split('YMIN,YMAX')[0])  # P, LATE
-cur=json.load(open(f'{R}/content/ancient-sites.json'))['sites']
-qid=lambda s:next((m.group(1) for u in s['sources'] if (m:=re.search(r'wikidata\.org/wiki/(Q\d+)$',u))),None)
-qs=sorted({q for s in cur if (q:=qid(s))})
-def run(q):
-    req=urllib.request.Request('https://query.wikidata.org/sparql',data=urllib.parse.urlencode({'query':q}).encode(),headers={'Accept':'application/sparql-results+json','User-Agent':'HistoryGlobeBot/1.0 (https://historyglobe.app; historyglobe.vadym@gmail.com)'})
-    for i in range(5):
-        try: return json.load(urllib.request.urlopen(req,timeout=120))['results']['bindings']
-        except Exception as e: time.sleep(20*(i+1))
-    raise SystemExit('wikidata failed')
-wd={}
-for i in range(0,len(qs),250):
-    v=' '.join('wd:'+q for q in qs[i:i+250])
-    for b in run(f'SELECT ?i ?p ?t WHERE {{ VALUES ?i {{ {v} }} VALUES ?p {{ wdt:P571 wdt:P576 wdt:P582 wdt:P580 }} ?i ?p ?t }}'):
-        m=re.match(r'([+-]?\d+)-',b['t']['value'])
-        if m:
-            y=int(m.group(1))  # astronomical when held to the year; see periods.py for a century
-            wd.setdefault(b['i']['value'].rsplit('/',1)[1],{}).setdefault(b['p']['value'].rsplit('/',1)[1],[]).append(y)
-    time.sleep(2)
-per={}
-ids={s['id'] for s in cur}
-for r in csv.DictReader(gzip.open(f'{S}/pleiades-dl/places.csv.gz','rt')):
-    if r['id'] in ids:
-        sp=[P[p.strip()] for p in r['timePeriodsKeys'].split(',') if p.strip() in P and not p.strip().startswith(LATE)]
-        if sp: per[r['id']]=(min(a for a,_ in sp),max(b for _,b in sp))
-flags=[]
-for s in cur:
-    w=wd.get(qid(s) or '',{}); p=per.get(s['id'])
-    end=min(w.get('P576',[])+w.get('P582',[]),default=None); beg=min(w.get('P571',[])+w.get('P580',[]),default=None)
-    why=[]
-    if end is not None and s['to']>end+150 and s['to']<1300: why.append(f'wd end {end}')
-    if end is not None and s['to']>=1300 and end<1150: why.append(f'wd end {end}')
-    if beg is not None and abs(s['from']-beg)>400: why.append(f'wd start {beg}')
-    if p and s['to']>p[1]+400: why.append(f'pleiades last {p[1]}')
-    if p and s['from']<p[0]-800: why.append(f'pleiades first {p[0]}')
-    if why: flags.append((s['id'],s['en'],s['from'],s['to'],'; '.join(why)))
-json.dump(flags,open(f'{S}/wave/audit.json','w'),ensure_ascii=False)
-print(len(cur),len(flags))
-for f in flags: print(*f,sep=' | ')
+"""The years of content/ancient-sites.json, the sites chosen by hand before the waves, against
+Wikidata's and Pleiades' (wave/audit.json): a site that ends long after Wikidata's end or
+Pleiades' last period, or starts far from either, is listed to be read one by one.
+
+    python3 -E -s -m pipeline.ancient.audit <work>
+"""
+
+from __future__ import annotations
+
+import pathlib
+import re
+import sys
+
+from pipeline.ancient.common import content_sites, pleiades_places, qid_of, values, write
+from pipeline.ancient.periods_table import LATE, PERIODS
+from pipeline.build_data import YEAR_MAX
+from pipeline.net import entity, sparql
+
+
+def wikidata_years(qids: list[str]) -> dict[str, dict[str, list[int]]]:
+    """Inception, dissolution, start and end time (P571, P576, P580, P582) of each item, as the
+    query service writes them: astronomical when held to the year (periods.py moves a
+    century's), which is close enough for a flag."""
+    years: dict[str, dict[str, list[int]]] = {}
+    for v in values(qids):
+        for b in sparql(f"SELECT ?i ?p ?t WHERE {{ VALUES ?i {{ {v} }} VALUES ?p {{ wdt:P571 wdt:P576 wdt:P582 wdt:P580 }} ?i ?p ?t }}"):
+            if m := re.match(r"([+-]?\d+)-", b["t"]["value"]):
+                years.setdefault(entity(b, "i"), {}).setdefault(entity(b, "p"), []).append(int(m.group(1)))
+    return years
+
+
+def flags(site: dict, wd: dict[str, list[int]], periods: tuple[int, int] | None) -> list[str]:
+    end = min(wd.get("P576", []) + wd.get("P582", []), default=None)
+    start = min(wd.get("P571", []) + wd.get("P580", []), default=None)
+    why = []
+    if end is not None and site["to"] > end + 150 and site["to"] < YEAR_MAX:
+        why.append(f"wd end {end}")
+    if end is not None and site["to"] >= YEAR_MAX and end < 1150:
+        why.append(f"wd end {end}")
+    if start is not None and abs(site["from"] - start) > 400:
+        why.append(f"wd start {start}")
+    if periods and site["to"] > periods[1] + 400:
+        why.append(f"pleiades last {periods[1]}")
+    if periods and site["from"] < periods[0] - 800:
+        why.append(f"pleiades first {periods[0]}")
+    return why
+
+
+def main(work: pathlib.Path) -> None:
+    sites = content_sites(first_only=True)
+    wd = wikidata_years(sorted({q for s in sites if (q := qid_of(s))}))
+    ids = {s["id"] for s in sites}
+    periods = {}
+    for r in pleiades_places(work):
+        if r["id"] in ids:
+            keys = [p.strip() for p in r["timePeriodsKeys"].split(",")]
+            spans = [PERIODS[p] for p in keys if p in PERIODS and not p.startswith(LATE)]
+            if spans:
+                periods[r["id"]] = (min(a for a, _ in spans), max(b for _, b in spans))
+    out = []
+    for s in sites:
+        if why := flags(s, wd.get(qid_of(s) or "", {}), periods.get(s["id"])):
+            out.append((s["id"], s["en"], s["from"], s["to"], "; ".join(why)))
+    write(work, "audit.json", out)
+    print(len(sites), "sites,", len(out), "to read")
+    for row in out:
+        print(*row, sep=" | ")
+
+
+if __name__ == "__main__":
+    main(pathlib.Path(sys.argv[1]))

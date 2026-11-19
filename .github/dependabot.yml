@@ -1,6 +1,6 @@
-# Dependency updates (security audit, 15.10.2026). A weekly look, grouped so a week is one PR
-# per ecosystem; security fixes come as soon as they are published, whatever the schedule.
-# Every PR still passes `pnpm gate` before it is merged (AGENTS.md).
+# Dependency updates. A weekly look, grouped so a week is one PR per ecosystem; security fixes
+# come as soon as they are published, whatever the schedule.
+# Every PR passes `pnpm gate` before it is merged (AGENTS.md).
 version: 2
 updates:
   - package-ecosystem: npm
@@ -14,10 +14,9 @@ updates:
       app:
         dependency-type: production
     ignore:
-      # Pinned on purpose (ADR 0004): an upgrade is a PR of its own that passes the visual suite.
+      # Pinned on purpose (ADR 0004): an upgrade is a PR of its own.
       - dependency-name: maplibre-gl
-      # typescript-eslint does not support TypeScript 7 yet (PR #24 failed the gate on it).
-      # Lift this once it does.
+      # typescript-eslint does not support TypeScript 7 yet; lift this once it does.
       - dependency-name: typescript
         update-types: ["version-update:semver-major"]
   - package-ecosystem: github-actions

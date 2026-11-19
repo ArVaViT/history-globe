@@ -10,7 +10,7 @@ description: Wat je van History Globe mag overnemen en hoe — de gegevens via d
   grens ligt.
 </p>
 
-<h2>Wat je mag overnemen</h2>
+<h2 id="what-you-may-take">Wat je mag overnemen</h2>
 <div class="table">
   <table>
     <thead>
@@ -70,18 +70,19 @@ description: Wat je van History Globe mag overnemen en hoe — de gegevens via d
   wereldbol niet.
 </p>
 
-<h2>Hoe je de bron vermeldt</h2>
+<h2 id="how-to-credit">Hoe je de bron vermeldt</h2>
 <p>
   Waar je de gegevens toont, noem je hun bronnen zoals <code>index.json</code> ze opsomt. De kortste
   vorm die aan de licenties voldoet:
 </p>
 <pre><code>Gegevens: History Globe door Vadym Arnaut ({{site}}), CC BY 4.0;
-plaatsen en koppelingen aan verzen van OpenBible.info (CC BY 4.0); mensen van STEPBible TIPNR (CC BY 4.0).</code></pre>
+plaatsen en koppelingen aan verzen van OpenBible.info (CC BY 4.0); mensen van STEPBible TIPNR (CC BY 4.0); plaats-id’s van Pleiades (CC BY 3.0).</code></pre>
 <p>Op een pagina, met links:</p>
 <pre><code>&lt;p&gt;Gegevens: &lt;a href="{{site}}/"&gt;History Globe&lt;/a&gt; door Vadym Arnaut,
   &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC BY 4.0&lt;/a&gt;;
   plaatsen van &lt;a href="https://www.openbible.info/geo/"&gt;OpenBible.info&lt;/a&gt;,
-  mensen van &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;.&lt;/p&gt;</code></pre>
+  mensen van &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;,
+  plaats-id’s van &lt;a href="https://pleiades.stoa.org/"&gt;Pleiades&lt;/a&gt;.&lt;/p&gt;</code></pre>
 <p>
   <code>{{site}}/api/v1/index.json</code> bevat de volledige bronvermeldingen, en elk API-antwoord
   wordt verstuurd met een <code>Link</code>-header die zijn licentie noemt. Een geciteerd artikel of
@@ -89,7 +90,7 @@ plaatsen en koppelingen aan verzen van OpenBible.info (CC BY 4.0); mensen van ST
   pagina.
 </p>
 
-<h2>Beperkingen</h2>
+<h2 id="limits">Beperkingen</h2>
 <ul>
   <li>
     <b>Geen sleutel, geen quotum.</b> De API bestaat uit statische bestanden achter een cache. Haal
@@ -113,7 +114,7 @@ plaatsen en koppelingen aan verzen van OpenBible.info (CC BY 4.0); mensen van ST
   </li>
 </ul>
 
-<h2>Aan de slag</h2>
+<h2 id="start">Aan de slag</h2>
 <pre><code>const api = "{{site}}/api/v1";
 const places = await (await fetch(`${api}/places.json`)).json();
 const byId = new Map(places.map((p) =&gt; [p.id, p]));
@@ -125,7 +126,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   >.
 </p>
 
-<h2>Meer aanvragen</h2>
+<h2 id="asking-for-more">Meer aanvragen</h2>
 <p>
   Een vertaling van de artikelen, hun tekst op een ander platform, of een licentie die de tabel
   hierboven niet geeft: schrijf naar
@@ -133,7 +134,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   een schriftelijke licentie voor wat ze nodig hebben; de publieke licenties blijven zoals ze zijn.
 </p>
 
-<h2>Voor AI-agents</h2>
+<h2 id="for-ai-agents">Voor AI-agents</h2>
 <p>
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> zegt hetzelfde op één pagina. Zoekmachines
   en de assistenten die antwoorden met een bronvermelding zijn welkom; de artikelen zijn geen

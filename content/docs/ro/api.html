@@ -9,7 +9,7 @@ description: Locurile, versetele care le numesc, evenimentele și traseele, ca f
   decât cache-ul obișnuit.
 </p>
 
-<h2>Ce locuri numește un verset</h2>
+<h2 id="which-places-does-a-verse-name">Ce locuri numește un verset</h2>
 <p>
   Câte un fișier pentru fiecare carte a Bibliei: fiecare verset care numește un loc, cu ID-urile
   acelor locuri.
@@ -27,10 +27,10 @@ description: Locurile, versetele care le numesc, evenimentele și traseele, ca f
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
-   "wikidata": "Q379652", "pleiades": "501482",
+   "wikidata": "Q379652", "pleiades": "501482", "tipnr": "Philippi@Act.16.12-1Th",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
 
-<h2>Cine și unde într-un capitol</h2>
+<h2 id="who-and-where-in-a-chapter">Cine și unde într-un capitol</h2>
 <p>
   Câte un fișier pentru fiecare carte: fiecare capitol, cu locurile și persoanele pe care le
   numește. Persoanele sunt identificate ca în TIPNR de la STEPBible; numele lor și primul verset se
@@ -41,7 +41,7 @@ description: Locurile, versetele care le numesc, evenimentele și traseele, ca f
 { "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
                "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
-<h2>Toate fișierele</h2>
+<h2 id="all-the-files">Toate fișierele</h2>
 <div class="table">
   <table>
     <thead>
@@ -60,7 +60,9 @@ description: Locurile, versetele care le numesc, evenimentele și traseele, ca f
         <td>
           fiecare loc: ID, nume, tip, punct, câte versete îl numesc, pagina lui (pentru un loc pe
           care îl numește vreun verset); <code>wikidata</code> și <code>pleiades</code>, același loc
-          în acele repertorii geografice, acolo unde este cunoscut
+          în acele repertorii geografice, acolo unde este cunoscut; <code>tipnr</code>, numele lui
+          în TIPNR de la STEPBible, după aceeași schemă ca ID-urile din <code>people.json</code>,
+          acolo unde OpenBible îl leagă
         </td>
       </tr>
       <tr>
@@ -80,26 +82,34 @@ description: Locurile, versetele care le numesc, evenimentele și traseele, ca f
       <tr>
         <td><code>/api/v1/people.json</code></td>
         <td>
-          persoanele pe care le numește Biblia: ID-ul TIPNR, numele, numele în celelalte limbi acolo
-          unde site-ul le are, sexul, câte versete le numesc, primul dintre ele
+          cele {{people_api}} {{~people_api|persoană|persoane|de persoane}} pe care le numește
+          Biblia (harta arată {{people}} dintre ele, cu familiile lor): ID-ul TIPNR, numele, numele
+          în celelalte limbi acolo unde site-ul le are, sexul, câte versete le numesc, primul dintre
+          ele
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/events.json</code></td>
-        <td>evenimentele datate, cu <code>ref</code> acolo unde Biblia relatează evenimentul</td>
+        <td>
+          evenimentele datate, cu <code>ref</code> acolo unde Biblia relatează evenimentul;
+          <code>site</code> în loc de <code>place</code> pentru un oraș al lumii antice pe care
+          Biblia nu îl numește
+        </td>
       </tr>
       <tr>
         <td><code>/api/v1/battles.json</code></td>
         <td>
           bătăliile și asediile: locul, anul, taberele și deznodământul, cu <code>ref</code> acolo
-          unde Biblia relatează bătălia
+          unde Biblia relatează bătălia; <code>event</code>, evenimentul din
+          <code>events.json</code> care spune aceeași poveste
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/questions.json</code></td>
         <td>
           întrebări pe care le pun oamenii, cu răspunsuri în fiecare limbă a site-ului, cu vederea
-          hărții și sursele
+          hărții și sursele; <code>scripture</code>, versetele pe care le citează răspunsul;
+          <code>license</code> și <code>license_url</code>, licența răspunsurilor
         </td>
       </tr>
       <tr>
@@ -107,7 +117,8 @@ description: Locurile, versetele care le numesc, evenimentele și traseele, ca f
         <td>
           traseele: opririle lor în ordine, fiecare cu pasajul și nota sa;
           <code>by: "sea"</code> pentru o porțiune parcursă pe mare și <code>sailed</code> (zilele
-          și versetul) acolo unde textul spune cât a durat
+          și versetul) acolo unde textul spune cât a durat; <code>source</code> acolo unde o oprire
+          e povestită în afara Bibliei
         </td>
       </tr>
       <tr>
@@ -125,7 +136,7 @@ description: Locurile, versetele care le numesc, evenimentele și traseele, ca f
   </table>
 </div>
 
-<h2>Convenții</h2>
+<h2 id="conventions">Convenții</h2>
 <ul>
   <li>
     Trimiterile sunt în format OSIS, cu abrevierile englezești ale cărților și numerotarea King
@@ -135,7 +146,8 @@ description: Locurile, versetele care le numesc, evenimentele și traseele, ca f
   <li>
     Un loc înregistrat de două ori sub același nume în datele-sursă are
     <code>"duplicate": true</code>; un loc al cărui sit este disputat,
-    <code>"disputed": true</code>.
+    <code>"disputed": true</code>; un eveniment, o bătălie sau un traseu cu an aproximativ,
+    <code>"approximate": true</code>.
   </li>
   <li>
     Fișierele sunt reconstruite la fiecare lansare a datelor; <code>index.json</code> îi dă data.
@@ -146,7 +158,7 @@ description: Locurile, versetele care le numesc, evenimentele și traseele, ca f
   </li>
 </ul>
 
-<h2>Licență și mențiunea surselor</h2>
+<h2 id="licence-and-credit">Licență și mențiunea surselor</h2>
 <p>
   Datele sunt sub <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Folosiți-le,
   modificați-le, vindeți ce construiți cu ele; numiți sursele acolo unde le afișați, așa cum le

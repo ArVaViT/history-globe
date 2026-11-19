@@ -10,7 +10,7 @@ description: Какво можете да вземете от History Globe и �
   Тази страница казва къде минава границата.
 </p>
 
-<h2>Какво можете да вземете</h2>
+<h2 id="what-you-may-take">Какво можете да вземете</h2>
 <div class="table">
   <table>
     <thead>
@@ -71,18 +71,19 @@ description: Какво можете да вземете от History Globe и �
   клонирайте глобуса.
 </p>
 
-<h2>Как да посочите източника</h2>
+<h2 id="how-to-credit">Как да посочите източника</h2>
 <p>
   Там, където показвате данните, назовете източниците им така, както ги изброява
   <code>index.json</code>. Най-кратката форма, която удовлетворява лицензите:
 </p>
 <pre><code>Data: History Globe by Vadym Arnaut ({{site}}), CC BY 4.0;
-places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0).</code></pre>
+places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0); place ids from Pleiades (CC BY 3.0).</code></pre>
 <p>В страница, с връзки:</p>
 <pre><code>&lt;p&gt;Data: &lt;a href="{{site}}/"&gt;History Globe&lt;/a&gt; by Vadym Arnaut,
   &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC BY 4.0&lt;/a&gt;;
   places from &lt;a href="https://www.openbible.info/geo/"&gt;OpenBible.info&lt;/a&gt;,
-  people from &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;.&lt;/p&gt;</code></pre>
+  people from &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;,
+  place ids from &lt;a href="https://pleiades.stoa.org/"&gt;Pleiades&lt;/a&gt;.&lt;/p&gt;</code></pre>
 <p>
   <code>{{site}}/api/v1/index.json</code> съдържа пълните редове за посочване на източниците, а
   всеки отговор на API се изпраща със заглавка <code>Link</code>, която назовава лиценза му.
@@ -90,7 +91,7 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
   връзка към страницата му.
 </p>
 
-<h2>Ограничения</h2>
+<h2 id="limits">Ограничения</h2>
 <ul>
   <li>
     <b>Без ключ, без квота.</b> API е статични файлове зад кеш. Изтегляйте всеки файл, когато
@@ -114,7 +115,7 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
   </li>
 </ul>
 
-<h2>Начало</h2>
+<h2 id="start">Начало</h2>
 <pre><code>const api = "{{site}}/api/v1";
 const places = await (await fetch(`${api}/places.json`)).json();
 const byId = new Map(places.map((p) =&gt; [p.id, p]));
@@ -126,7 +127,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   >.
 </p>
 
-<h2>Ако ви трябва повече</h2>
+<h2 id="asking-for-more">Ако ви трябва повече</h2>
 <p>
   Превод на статиите, текстът им на друга платформа или лиценз, който таблицата по-горе не дава:
   пишете на <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>.
@@ -134,7 +135,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   каквито са.
 </p>
 
-<h2>За агенти с изкуствен интелект</h2>
+<h2 id="for-ai-agents">За агенти с изкуствен интелект</h2>
 <p>
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> казва същото на една страница. Търсачките и
   асистентите, които отговарят с цитиране на източника, са добре дошли; статиите не са данни за

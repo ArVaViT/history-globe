@@ -280,7 +280,8 @@
     "places": "Hol éltek és tevékenykedtek",
     "credit": "A család és a helyek a Biblia verseiből (STEP Bible, CC BY 4.0)",
     "wives": "Feleségek",
-    "husbands": "Férjek"
+    "husbands": "Férjek",
+    "list_failed": "A személyek listája nem töltődött be. Próbálja újra megnyitni a lapot."
   },
   "embed": {
     "places_one": "{{count}} hely",
@@ -313,6 +314,7 @@
     "zoom_out": "Kicsinyítés",
     "north": "A térkép visszaforgatása északra",
     "sources": "Térképforrások",
+    "sources_page": "Források",
     "title": "Térkép"
   },
   "sheet": {

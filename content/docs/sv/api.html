@@ -9,7 +9,7 @@ description: Platserna, de verser som nämner dem, händelserna och rundturerna 
   gränser utöver vanlig cachning.
 </p>
 
-<h2>Vilka platser en vers nämner</h2>
+<h2 id="which-places-does-a-verse-name">Vilka platser en vers nämner</h2>
 <p>En fil per bok i Bibeln: varje vers som nämner en plats, med id:n för de platserna.</p>
 <pre><code>GET {{site}}/api/v1/verses/Acts.json
 
@@ -24,10 +24,10 @@ description: Platserna, de verser som nämner dem, händelserna och rundturerna 
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
-   "wikidata": "Q379652", "pleiades": "501482",
+   "wikidata": "Q379652", "pleiades": "501482", "tipnr": "Philippi@Act.16.12-1Th",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
 
-<h2>Vem och var i ett kapitel</h2>
+<h2 id="who-and-where-in-a-chapter">Vem och var i ett kapitel</h2>
 <p>
   En fil per bok: varje kapitel, med de platser och de personer det nämner. Personerna identifieras
   som i STEPBibles TIPNR; deras namn och första vers finns i <code>people.json</code>.
@@ -37,7 +37,7 @@ description: Platserna, de verser som nämner dem, händelserna och rundturerna 
 { "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
                "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
-<h2>Alla filer</h2>
+<h2 id="all-the-files">Alla filer</h2>
 <div class="table">
   <table>
     <thead>
@@ -56,7 +56,8 @@ description: Platserna, de verser som nämner dem, händelserna och rundturerna 
         <td>
           varje plats: id, namn, typ, punkt, hur många verser som nämner den, dess sida (för en
           plats som någon vers nämner); <code>wikidata</code> och <code>pleiades</code>, samma plats
-          i de ortnamnsregistren, där den är känd
+          i de ortnamnsregistren, där den är känd; <code>tipnr</code>, dess namn i STEPBibles TIPNR,
+          enligt samma schema som id:na i <code>people.json</code>, där OpenBible länkar den
         </td>
       </tr>
       <tr>
@@ -73,26 +74,33 @@ description: Platserna, de verser som nämner dem, händelserna och rundturerna 
       <tr>
         <td><code>/api/v1/people.json</code></td>
         <td>
-          personerna som Bibeln nämner: TIPNR-id, namn, namn på de andra språken där webbplatsen har
-          dem, kön, hur många verser som nämner dem, den första
+          de {{people_api}} personer som Bibeln nämner (kartan visar {{people}} av dem med sina
+          familjer): TIPNR-id, namn, namn på de andra språken där webbplatsen har dem, kön, hur
+          många verser som nämner dem, den första
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/events.json</code></td>
-        <td>de daterade händelserna, med <code>ref</code> där Bibeln berättar händelsen</td>
+        <td>
+          de daterade händelserna, med <code>ref</code> där Bibeln berättar händelsen;
+          <code>site</code> i stället för <code>place</code> för en stad i antikens värld som Bibeln
+          inte nämner
+        </td>
       </tr>
       <tr>
         <td><code>/api/v1/battles.json</code></td>
         <td>
           strider och belägringar: plats, år, parter och utgång, med <code>ref</code> där Bibeln
-          berättar striden
+          berättar striden; <code>event</code>, händelsen i <code>events.json</code> som berättar
+          samma historia
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/questions.json</code></td>
         <td>
           frågor som människor ställer, besvarade på alla webbplatsens språk, med kartans vy och
-          källorna
+          källorna; <code>scripture</code>, verserna som ett svar hänvisar till;
+          <code>license</code> och <code>license_url</code>, svarens licens
         </td>
       </tr>
       <tr>
@@ -100,7 +108,8 @@ description: Platserna, de verser som nämner dem, händelserna och rundturerna 
         <td>
           rundturerna: deras stopp i ordning, vart och ett med sitt bibelställe och sin anteckning;
           <code>by: "sea"</code> för en sträcka som seglats, och <code>sailed</code> (dagar och
-          vers) där texten anger hur lång tid det tog
+          vers) där texten anger hur lång tid det tog; <code>source</code> där ett stopp berättas
+          utanför Bibeln
         </td>
       </tr>
       <tr>
@@ -118,7 +127,7 @@ description: Platserna, de verser som nämner dem, händelserna och rundturerna 
   </table>
 </div>
 
-<h2>Konventioner</h2>
+<h2 id="conventions">Konventioner</h2>
 <ul>
   <li>
     Referenser är OSIS med engelska bokförkortningar och King James-numrering:
@@ -127,7 +136,8 @@ description: Platserna, de verser som nämner dem, händelserna och rundturerna 
   <li>Årtal är astronomiska: 1 f.Kr. är 0, 586 f.Kr. är −585.</li>
   <li>
     En plats som i källdatan står två gånger under samma namn har <code>"duplicate": true</code>; en
-    plats vars läge är omstritt har <code>"disputed": true</code>.
+    plats vars läge är omstritt har <code>"disputed": true</code>; en händelse, ett slag eller en
+    rundtur med ungefärligt år har <code>"approximate": true</code>.
   </li>
   <li>Filerna byggs om med varje utgåva av datan; <code>index.json</code> anger dess datum.</li>
   <li>
@@ -136,7 +146,7 @@ description: Platserna, de verser som nämner dem, händelserna och rundturerna 
   </li>
 </ul>
 
-<h2>Licens och källhänvisning</h2>
+<h2 id="licence-and-credit">Licens och källhänvisning</h2>
 <p>
   Datan ligger under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Använd
   den, ändra den, sälj det du bygger med den; ange källorna där du visar den, så som

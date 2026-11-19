@@ -248,12 +248,13 @@ overrides:
       - "Wikipedia, Siege of Acre (1291)"
 starts:
   - polity: Kingdom of Israel
-    first_year: "1010 BC"
+    first_year: "1050 BC"
     reason: >-
-      Cliopatria begins the kingdom of Israel in 1000 BC, so the years of David's reign before it showed the hills of Judah and Israel without a state. David reigned forty years, seven in Hebron and thirty-three in Jerusalem, and Solomon's reign begins about 970 BC: David's begins about 1010 BC.
+      Cliopatria begins the kingdom of Israel in 1000 BC, so Saul's reign and the years of David's before it showed the hills of Judah and Israel without a state. David reigned forty years, seven in Hebron and thirty-three in Jerusalem, and Solomon's reign begins about 970 BC: David's begins about 1010 BC. Saul was made king about 1050 BC (the length of his reign is lost from 1 Sam 13:1; the map's events and tours date him so). Until 1011 BC the shape is cut to Saul's kingdom (clips).
     sources:
-      - "2 Sam 5:4-5; 1 Kgs 2:11"
+      - "1 Sam 10:17-11:15; 13:1; 2 Sam 5:4-5; 1 Kgs 2:11"
       - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings (1983), ch. 2"
+      - "Y. Aharoni, The Land of the Bible: A Historical Geography, rev. ed. (1979)"
   - polity: Hyksos
     first_year: "1650 BC"
     reason: >-
@@ -285,18 +286,21 @@ starts:
 clips:
   - polity: Philistia
     # The coastal plain from Nahal Besor to the Yarkon, east to the edge of the Shephelah:
-    # Gaza, Ashkelon, Ashdod, Ekron and Gath, the five cities of Josh 13:3.
+    # Gaza, Ashkelon, Ashdod, Ekron and Gath, the five cities of Josh 13:3. The eastern
+    # line runs between Gath (Tell es-Safi) and Lachish, 1 km west of Lachish.
     within:
       - [34.2, 31.2]
       - [34.6, 31.15]
-      - [34.95, 31.45]
       - [35.0, 31.85]
       - [34.85, 32.15]
       - [34.7, 32.15]
     reason: >-
-      Cliopatria draws Philistia to the Jordan and into Galilee until 1000 BC, and over Samaria after it, so the map put David's Bethlehem and Saul's Gibeah in Philistia. The Philistines held the coastal plain and pressed into the hills (1 Sam 13); the land of their five cities is the plain.
+      Cliopatria draws Philistia to the Jordan and into Galilee until 1000 BC, and over Samaria after it, so the map put David's Bethlehem and Saul's Gibeah in Philistia. The Philistines held the coastal plain and pressed into the hills (1 Sam 13); the land of their five cities is the plain. Lachish, 15 km south of Gath, was a town of Judah, fortified by Rehoboam, and is not Philistine in any period; the line passes between the two.
     sources:
       - "Josh 13:2-3; 1 Sam 6:17"
+      - "2 Chr 11:5-9"
+      - "D. Ussishkin, The Renewed Archaeological Excavations at Lachish (1973-1994) (2004)"
+      - "A. M. Maeir (ed.), Tell es-Safi/Gath I: The 1996-2005 Seasons (2012)"
       - "T. Dothan, The Philistines and Their Material Culture (1982)"
   - polity: Neo-Assyrian Empire
     # East of a line from the sea off western Cyprus to Raphia and down the Arabah:
@@ -310,9 +314,9 @@ clips:
       - [70.0, 50.0]
       - [31.0, 50.0]
     first_year: "656 BC"
-    last_year: "616 BC"
+    last_year: "630 BC"
     reason: >-
-      Assyrian rule in Egypt had ended by 656 BC, when Psamtik I held all Egypt; Cliopatria draws the Neo-Assyrian Empire over Egypt until 616 BC.
+      Assyrian rule in Egypt had ended by 656 BC, when Psamtik I held all Egypt; Cliopatria draws the Neo-Assyrian Empire over Egypt until 616 BC. From 629 BC the clips below cut the empire further, which also keeps Egypt out.
     sources:
       - "Wikipedia, Psamtik I"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 13"
@@ -394,8 +398,9 @@ clips:
       - [38.0, 35.0]
     first_year: "1401 BC"
     last_year: "1301 BC"
+    to: Assyria
     reason: >-
-      Cliopatria draws Kassite Babylonia over Ashur from 1401 to 1301 BC. Ashur was the capital of Assyria, under Mitanni influence until Eriba-Adad I and Ashur-uballit I (about 1363-1328 BC); Ashur-uballit put Kurigalzu II on the throne of Babylon and stopped a Babylonian army at Sugagu, south of Ashur.
+      Cliopatria draws Kassite Babylonia over Ashur from 1401 to 1301 BC. Ashur was the capital of Assyria, under Mitanni influence until Eriba-Adad I and Ashur-uballit I (about 1363-1328 BC); Ashur-uballit put Kurigalzu II on the throne of Babylon and stopped a Babylonian army at Sugagu, south of Ashur. The land cut away is drawn as Assyria's.
     sources:
       - "Wikipedia, Ashur-uballit I"
   - polity: Assyria
@@ -434,8 +439,9 @@ clips:
       - [55.0, 45.0]
       - [38.8, 45.0]
     first_year: "742 BC"
+    leaves_blank: true
     reason: >-
-      Sarduri II took Melid and Kummuh about 750 BC, but Tiglath-pileser III beat him in 743 and forced the Urartians back across the Euphrates; Melid became tributary to Assyria and Sargon II sacked it in 712 BC. From 742 BC Urartu is drawn east of the river, which also keeps it off Assyrian Melid in the years bridged below.
+      Sarduri II took Melid and Kummuh about 750 BC, but Tiglath-pileser III beat him in 743 and forced the Urartians back across the Euphrates; Melid became tributary to Assyria and Sargon II sacked it in 712 BC. From 742 BC Urartu is drawn east of the river, which also keeps it off Assyrian Melid in the years bridged below. Melid and the land west of the river are left without a state: tributaries of Assyria, which the data does not draw.
     sources:
       - "Wikipedia, Sarduri II (Melid and Kummuh conquered; defeat of 743 BC, forced back across the Euphrates)"
       - "Wikipedia, Arslantepe (Melid sacked by Sargon II in 712 BC)"
@@ -448,8 +454,9 @@ clips:
       - [40.0, 38.0]
     first_year: "2701 BC"
     last_year: "2302 BC"
+    leaves_blank: true
     reason: >-
-      Cliopatria draws the Sumerian city-states over Susa in 2701-2302 BC. Susa belonged to Elam: the Old Elamite period begins about 2700 BC, the kings of Awan fought Kish and Lagash, and Sargon of Akkad and Rimush defeated Elam (which the map shows as Akkadian from 2301 BC). Elam is drawn there in those years (bridges).
+      Cliopatria draws the Sumerian city-states over Susa in 2701-2302 BC. Susa belonged to Elam: the Old Elamite period begins about 2700 BC, the kings of Awan fought Kish and Lagash, and Sargon of Akkad and Rimush defeated Elam (which the map shows as Akkadian from 2301 BC). Elam is drawn there in those years (bridges); the part of the lowland its bridged shape does not reach is left blank.
     sources:
       - "Wikipedia, Elam (Old Elamite period from c. 2700 BC)"
       - "Wikipedia, Awan dynasty (incursions against Kish and Lagash; defeated by Sargon and Rimush)"
@@ -462,24 +469,28 @@ clips:
       - [20.0, 45.0]
     first_year: "141 BC"
     last_year: "131 BC"
+    to: Parthian Empire
     reason: >-
-      Cliopatria draws the Seleucids over Assyria and Media until 128 BC (and the Parthians over Babylonia from 145 BC). Mithridates I of Parthia took Media in 148 or 147 BC and Babylonia in 141 BC; Antiochus VII won Mesopotamia, Babylonia and Media back only in 130 BC and was killed near Ecbatana in 129.
+      Cliopatria draws the Seleucids over Assyria and Media until 128 BC (and the Parthians over Babylonia from 145 BC). Mithridates I of Parthia took Media in 148 or 147 BC and Babylonia in 141 BC; Antiochus VII won Mesopotamia, Babylonia and Media back only in 130 BC and was killed near Ecbatana in 129. The land cut away is drawn as Parthian in these years.
     sources:
       - "Wikipedia, Mithridates I of Parthia (Media and Atropatene 148/7 BC; Babylonia 141 BC)"
       - "Wikipedia, Antiochus VII Sidetes; Seleucid Empire (campaign of 130-129 BC)"
   - polity: Seleucid Empire
-    # West of 46.5 degrees E: Media out.
-    within:
-      - [20.0, 20.0]
-      - [46.5, 20.0]
+    # Media out: east of 46.5 degrees E and north of 33 degrees N. Susiana and the head of
+    # the Gulf, south of it, stay Seleucid.
+    without:
+      - [46.5, 33.0]
+      - [70.0, 33.0]
+      - [70.0, 45.0]
       - [46.5, 45.0]
-      - [20.0, 45.0]
     first_year: "147 BC"
     last_year: "142 BC"
+    to: Parthian Empire
     reason: >-
-      Mithridates I of Parthia occupied Ecbatana and Media in 148 or 147 BC; Cliopatria keeps them Seleucid.
+      Mithridates I of Parthia occupied Ecbatana and Media in 148 or 147 BC; Cliopatria keeps them Seleucid. Media is drawn as Parthian in these years. Susa and Mesene at the head of the Gulf were not Parthian yet: Elymais broke away about 147 BC and Hyspaosines of Charax about 141, and Mithridates took Susa only after Babylonia; they are left to Cliopatria's Seleucid shape, not given to Parthia.
     sources:
       - "Wikipedia, Mithridates I of Parthia"
+      - "M. Brosius, The Persians: An Introduction (2006)"
   - polity: Ptolemaic Kingdom
     # West of a line from the Palmyrene desert to the Gulf of Issus: Coele-Syria, Cilicia,
     # the Aegean and Thrace kept; northern Syria, Commagene and Edessa out.
@@ -490,23 +501,26 @@ clips:
       - [0.0, 50.0]
     first_year: "308 BC"
     last_year: "248 BC"
+    leaves_blank: true
     reason: >-
-      Cliopatria draws the Ptolemies over Commagene with Samosata in 308-258 BC and over northern Syria and Edessa in 308-303 BC. Antigonus held Syria until 301 BC; after it the Ptolemies held Coele-Syria in the south, while Commagene was Seleucid (perhaps Orontid Armenian at first) until its satrap broke away about 163 BC.
+      Cliopatria draws the Ptolemies over Commagene with Samosata in 308-258 BC and over northern Syria and Edessa in 308-303 BC. Antigonus held Syria until 301 BC; after it the Ptolemies held Coele-Syria in the south, while Commagene was Seleucid (perhaps Orontid Armenian at first) until its satrap broke away about 163 BC. No other shape of these years reaches northern Syria and Commagene, so they are left blank.
     sources:
       - "Wikipedia, Commagene (part of the Seleucid Empire, perhaps of Orontid Armenia earlier; independent c. 163 BC)"
       - "Wikipedia, Ptolemaic Kingdom; Syrian Wars"
   - polity: Roman Empire
-    # West of a line from the Hijaz past Dura to the upper Euphrates: Armenia, Mesopotamia
-    # and Assyria out.
+    # West of a line from the Hijaz past Dura to the upper Euphrates and the coast east of
+    # Apsaros: Armenia, Mesopotamia and Assyria out. The corner at 41.85 E, 41.5 N keeps
+    # the line inland of the Black Sea shore, which it crossed and folded the shape on.
     within:
       - [-20.0, 10.0]
       - [33.0, 10.0]
       - [39.0, 30.0]
-      - [41.9, 42.6]
-      - [41.9, 60.0]
+      - [41.85, 41.5]
+      - [41.85, 60.0]
       - [-20.0, 60.0]
     first_year: "AD 118"
     last_year: "AD 126"
+    leaves_blank: true
     reason: >-
       Cliopatria keeps Trajan's conquests (Armenia, Mesopotamia, Assyria, down to the Gulf and over Susa) Roman until AD 126. Hadrian, on his accession in 117, relinquished all the conquests east of the Euphrates and the Tigris and recognised Vologases as client king of Armenia. Cliopatria's Parthian shape of these years does not cover the land, so Mesopotamia is left blank.
     sources:
@@ -583,6 +597,7 @@ clips:
       - [15.0, 33.0]
     first_year: "57 BC"
     last_year: "48 BC"
+    leaves_blank: true
     reason: >-
       Cliopatria keeps Cyprus Ptolemaic until 52 BC and Roman as well from 51. Rome annexed Cyprus in 58 BC under a law of Clodius; its king Ptolemy took poison and Cato governed the island. Caesar granted it back to Arsinoe and the younger Ptolemy at Alexandria only at the end of 48 BC. In 57-52 BC the island is left blank: Rome's shape of those years does not reach it.
     sources:
@@ -601,6 +616,7 @@ clips:
       - [31.0, 50.0]
     first_year: "167 BC"
     last_year: "166 BC"
+    leaves_blank: true
     reason: >-
       Cliopatria draws Antiochus IV's Egypt, Alexandria included, until 166 BC. He besieged Alexandria but never took it, and in 168 BC the Roman envoy Popillius Laenas met him at Eleusis, four miles from the city, and made him end the war and lead his army back to Syria. The Ptolemaic shape of these years does not reach Egypt, so it is left blank in 167-166 BC.
     sources:
@@ -675,6 +691,7 @@ clips:
       - [30.0, 45.0]
     first_year: "AD 1145"
     last_year: "AD 1146"
+    leaves_blank: true
     reason: >-
       Cliopatria draws Edessa itself as the county's until 1146. Zengi took the city on 24 December 1144 and Saruj after it; Joscelin II kept his lands west of the Euphrates, and his return to Edessa after Zengi's death in 1146 lasted only weeks, from October to early November. The land east of the river is left without a state in 1145-1146; Cliopatria gives it to the Zengids from 1147.
     sources:
@@ -694,6 +711,396 @@ clips:
     sources:
       - "C. E. Bosworth, Iran and the Arabs before Islam, in The Cambridge History of Iran, vol. 3(1) (1983)"
       - "Wikipedia, Aksumite-Persian wars (Yemen retaken by 578, ending Aksumite rule outside Africa)"
+  # Neo-Assyrian Empire, 629-609 BC: the end of the empire, in four stages (the earlier
+  # years are cut above). The land cut away is left without a state where no other is drawn:
+  # the Philistine coast under Egyptian sway, the province of Samaria, the desert.
+  - polity: Neo-Assyrian Empire
+    # South of 32.5 degrees N and west of 40 degrees E: Judah, Philistia, Samaria,
+    # Transjordan and Egypt out. Babylonia, east of it, stays Assyrian.
+    without:
+      - [20.0, 15.0]
+      - [40.0, 15.0]
+      - [40.0, 32.5]
+      - [20.0, 32.5]
+    first_year: "629 BC"
+    last_year: "627 BC"
+    leaves_blank: true
+    reason: >-
+      Cliopatria draws Assyria over the southern Levant until its end. After the last Assyrian campaigns to the west in the 640s, nothing shows Assyrian rule there: Josiah of Judah, independent from about 628 BC, took Bethel and the hills of Samaria, Egypt under Psamtik I held the Philistine coast, and Ammon, Moab and Edom stopped paying tribute. Scholars differ on how far Egypt's hold reached, so the land south of the Jezreel Valley that no kingdom is drawn over is left blank, not given to Egypt. Babylonia stays Assyrian: Kandalanu reigned there under Assyria until 627 BC, and Nabopolassar's revolt begins in 626 (the clip below).
+    sources:
+      - "2 Kgs 23:15-20; 2 Chr 34:3-7"
+      - "Babylonian Chronicle ABC 2 (Chronicle of the Early Years of Nabopolassar), 1-15 (A. K. Grayson, Assyrian and Babylonian Chronicles, 1975)"
+      - "N. Na'aman, The Kingdom of Judah under Josiah, Tel Aviv 18 (1991) 3-71"
+      - "J. Oates, The Fall of Assyria (635-609 B.C.), in The Cambridge Ancient History, 2nd ed., vol. III/2 (1991), ch. 25"
+  - polity: Neo-Assyrian Empire
+    # North of 32.5 degrees N and north of a line from the Syrian desert to the Zagros at
+    # Der: the southern Levant and Babylonia out.
+    within:
+      - [30.0, 32.5]
+      - [42.07, 32.5]
+      - [46.0, 35.0]
+      - [52.0, 42.0]
+      - [30.0, 42.0]
+    first_year: "626 BC"
+    last_year: "617 BC"
+    leaves_blank: true
+    reason: >-
+      Cliopatria draws Babylon as Assyrian until 616 BC. Nabopolassar drove the Assyrian army from Babylon and took the throne there in Arahsamnu (November) 626 BC; the war for Babylonia went on for years, with Assyrian garrisons in some cities, but from then Babylon itself was his. Babylonia is drawn on its own in these years (bridges); the southern Levant stays out of Assyria, as in the clip above.
+    sources:
+      - "Babylonian Chronicle ABC 2 (Chronicle of the Early Years of Nabopolassar), 1-15 (A. K. Grayson, Assyrian and Babylonian Chronicles, 1975)"
+      - "J. Oates, The Fall of Assyria (635-609 B.C.), in The Cambridge Ancient History, 2nd ed., vol. III/2 (1991), ch. 25"
+      - "K. Radner, Ancient Assyria: A Very Short Introduction (2015)"
+  - polity: Neo-Assyrian Empire
+    # North of 32.5 degrees N: the southern Levant out (Babylonia is out of Cliopatria's own
+    # shape of these years).
+    within:
+      - [20.0, 32.5]
+      - [70.0, 32.5]
+      - [70.0, 50.0]
+      - [20.0, 50.0]
+    first_year: "616 BC"
+    last_year: "615 BC"
+    leaves_blank: true
+    reason: >-
+      As in 629-617 BC: no Assyrian rule in the southern Levant in the empire's last decade; the land no kingdom is drawn over is left blank.
+    sources:
+      - "N. Na'aman, The Kingdom of Judah under Josiah, Tel Aviv 18 (1991) 3-71"
+      - "J. Oates, The Fall of Assyria (635-609 B.C.), in The Cambridge Ancient History, 2nd ed., vol. III/2 (1991), ch. 25"
+  - polity: Neo-Assyrian Empire
+    # Nineveh, Kalhu, Arbela and the land west to Harran; Assur, Syria and the Levant out.
+    within:
+      - [37.0, 35.9]
+      - [44.6, 35.9]
+      - [44.6, 37.9]
+      - [37.0, 37.9]
+    first_year: "614 BC"
+    last_year: "612 BC"
+    leaves_blank: true
+    reason: >-
+      The Medes took Assur in 614 BC; in 612 BC the Medes and the Babylonians took Nineveh. What Assyria still held in these years was the land between Nineveh and Harran; Assur, Syria and the Levant are left without a state, which neither the Medes' nor Babylon's shape of these years reaches.
+    sources:
+      - "Babylonian Chronicle ABC 3 (Fall of Nineveh Chronicle), 24-47 (A. K. Grayson, Assyrian and Babylonian Chronicles, 1975)"
+      - "J. Oates, The Fall of Assyria (635-609 B.C.), in The Cambridge Ancient History, 2nd ed., vol. III/2 (1991), ch. 25"
+  - polity: Neo-Assyrian Empire
+    # Harran and the Balikh: what Ashur-uballit II held after Nineveh fell.
+    within:
+      - [38.3, 36.0]
+      - [40.6, 36.0]
+      - [40.6, 37.7]
+      - [38.3, 37.7]
+    first_year: "611 BC"
+    last_year: "609 BC"
+    leaves_blank: true
+    reason: >-
+      Cliopatria draws the whole empire until 601 BC. After the fall of Nineveh in 612 BC, Ashur-uballit II took the throne at Harran and held out there, with Egyptian help, until the Babylonians and the Medes took Harran in 610 and his attempt to retake it failed in 609 BC. Only the land of Harran is drawn as Assyria; the heartland around Nineveh and Assur is left without a state, which the Medes and Babylon are not drawn over until 600 BC.
+    sources:
+      - "Babylonian Chronicle ABC 3 (Fall of Nineveh Chronicle), 49-75 (A. K. Grayson, Assyrian and Babylonian Chronicles, 1975)"
+      - "K. Radner, Ancient Assyria: A Very Short Introduction (2015)"
+  - polity: Kingdom of Israel
+    # The hill country from Hebron to the Jezreel Valley and Gilead: Saul's kingdom.
+    within:
+      - [35.05, 31.45]
+      - [35.35, 31.45]
+      - [35.95, 32.1]
+      - [35.95, 32.45]
+      - [35.65, 32.62]
+      - [35.2, 32.58]
+      - [35.03, 32.2]
+    first_year: "1050 BC"
+    last_year: "1011 BC"
+    leaves_blank: true
+    reason: >-
+      Israel is drawn from Saul's reign (above, starts), with Cliopatria's shape of David and Solomon. Saul's kingdom was the hill country of Benjamin, Ephraim and Manasseh, with Gilead across the Jordan and the hills of Judah, where he pursued David; the coastal plain was Philistine, and Galilee, the Negev and the lands east of Gilead were not his. Drawn approximately; Jebus (Jerusalem), not yet Israelite, cannot be cut out at this scale.
+    sources:
+      - "1 Sam 11:1-11; 13-14; 23:14-28; 31:1-13; 2 Sam 2:8-9"
+      - "Y. Aharoni, The Land of the Bible: A Historical Geography, rev. ed. (1979)"
+      - "A. Curtis (ed.), Oxford Bible Atlas, 4th ed. (2007)"
+  - polity: Phoenicia
+    # The upper Jordan valley: Dan, Abel-beth-maacah and Ijon.
+    without:
+      - [35.45, 33.08]
+      - [35.5, 33.25]
+      - [35.56, 33.4]
+      - [35.7, 33.42]
+      - [35.82, 33.34]
+      - [35.77, 33.26]
+    first_year: "801 BC"
+    last_year: "733 BC"
+    to: Kingdom of Israel
+    reason: >-
+      Cliopatria draws Dan and the upper Jordan as Phoenician from 801 BC. Dan was a royal sanctuary of Israel from Jeroboam I; Jeroboam II restored Israel's border to Lebo-hamath, and Ijon, Abel-beth-maacah and the land of Naphtali were Israel's until Tiglath-pileser III took them in 732 BC. The valley is drawn as Israel's in these years.
+    sources:
+      - "1 Kgs 12:28-30; 2 Kgs 10:29; 14:25; 15:29"
+      - "Y. Aharoni, The Land of the Bible: A Historical Geography, rev. ed. (1979)"
+      - "A. Biran, Biblical Dan (1994)"
+  - polity: Neo-Babylonian Empire
+    # Lake Van and its shores: Tushpa, Urartu's capital.
+    without:
+      - [42.3, 38.7]
+      - [42.35, 38.3]
+      - [42.9, 38.2]
+      - [43.55, 38.25]
+      - [43.95, 38.5]
+      - [43.8, 38.95]
+      - [43.1, 39.05]
+      - [42.5, 38.95]
+    first_year: "601 BC"
+    last_year: "551 BC"
+    to: Kingdom of Urartu
+    reason: >-
+      Cliopatria draws the Neo-Babylonian Empire over the south and east shores of Lake Van, with Urartu's capital Tushpa, while it draws Urartu itself until 551 BC. Babylon never ruled the Van basin: it is drawn as Urartu's in these years, as in Urartu's earlier ones (extends). When and to whom Urartu fell is disputed (the Medes about 590 BC, or later); the map keeps Cliopatria's years.
+    sources:
+      - "P. E. Zimansky, Ecology and Empire: The Structure of the Urartian State (1985)"
+      - "Wikipedia, Urartu (capital Tushpa; the end of the kingdom)"
+
+# Land a polity held that Cliopatria's shape of it leaves out: the outline is joined to its
+# shapes of those years. Approximate, to the precision of the sources.
+extends:
+  - polity: Kingdom of Israel
+    first_year: "1010 BC"
+    last_year: "902 BC"
+    # The Shephelah west to Philistia's line (clips) and the Negev to the Beersheba-Arad
+    # valley.
+    outline:
+      - [34.8857, 31.65]
+      - [34.98, 31.62]
+      - [35.05, 31.4]
+      - [35.4, 31.4]
+      - [35.42, 31.2]
+      - [35.15, 31.13]
+      - [34.9, 31.11]
+      - [34.72, 31.17]
+      - [34.6857, 31.3]
+    reason: >-
+      Cliopatria's shape of the kingdom of David and Solomon stops at Hebron, leaving out Lachish and the Shephelah and the Negev of Beersheba and Arad. "From Dan even to Beersheba" is the Bible's own measure of the kingdom, and the Negev forts of the 10th century belong to it. Drawn to the Beersheba-Arad valley, the conservative line; the Negev highlands south of it are left out.
+    sources:
+      - "1 Kgs 4:25; 2 Sam 24:2-7"
+      - "Y. Aharoni, The Land of the Bible: A Historical Geography, rev. ed. (1979)"
+      - "A. Curtis (ed.), Oxford Bible Atlas, 4th ed. (2007)"
+  - polity: Kingdom of Judah
+    first_year: "901 BC"
+    last_year: "586 BC"
+    outline:
+      - [34.8857, 31.65]
+      - [34.98, 31.62]
+      - [35.05, 31.4]
+      - [35.4, 31.4]
+      - [35.42, 31.2]
+      - [35.15, 31.13]
+      - [34.9, 31.11]
+      - [34.72, 31.17]
+      - [34.6857, 31.3]
+    reason: >-
+      Cliopatria's shapes of Judah leave out Lachish, 0.5 km outside them, and the Negev with Beersheba and Arad. Rehoboam fortified Lachish; Beersheba and Arad were royal Judahite fortresses through the monarchy (the Arad ostraca are letters of Judah's army). Drawn to the Beersheba-Arad valley, the conservative line; the Negev highlands south of it are left out.
+    sources:
+      - "2 Chr 11:5-12; 2 Kgs 18:14; 23:8"
+      - "Y. Aharoni, The Land of the Bible: A Historical Geography, rev. ed. (1979)"
+      - "Y. Aharoni, Arad Inscriptions (1981)"
+      - "D. Ussishkin, The Renewed Archaeological Excavations at Lachish (1973-1994) (2004)"
+  - polity: Kingdom of Urartu
+    first_year: "860 BC"
+    last_year: "551 BC"
+    # Lake Van and its shores: Tushpa (Van Kalesi) and Rusahinili (Toprakkale).
+    outline:
+      - [42.3, 38.7]
+      - [42.35, 38.3]
+      - [42.9, 38.2]
+      - [43.55, 38.25]
+      - [43.95, 38.5]
+      - [43.8, 38.95]
+      - [43.1, 39.05]
+      - [42.5, 38.95]
+    reason: >-
+      Cliopatria's shapes of Urartu stop north of Lake Van and leave out Tushpa, its capital from Sarduri I (about 830 BC), 35 km away, and Rusahinili, the new capital of Rusa II. The basin of Lake Van was the heart of the kingdom; it is joined to every shape of Urartu.
+    sources:
+      - "P. E. Zimansky, Ecology and Empire: The Structure of the Urartian State (1985)"
+      - "M. Salvini, Geschichte und Kultur der Urartäer (1995)"
+# States Cliopatria does not draw: our approximate outline, less the land of the polities
+# in `minus` standing in the same years. Moab, Ammon and Edom are drawn from 901 BC, when
+# the data's divided kingdoms begin; under David and Solomon the data's Israel covers them.
+drawn:
+  - polity: Aram-Damascus
+    first_year: "950 BC"
+    last_year: "733 BC"
+    # The Damascus basin and the Hauran, to the Anti-Lebanon and the desert edge.
+    outline:
+      - [35.8, 33.35]
+      - [36.05, 33.05]
+      - [36.1, 32.75]
+      - [36.45, 32.45]
+      - [36.85, 32.45]
+      - [37.15, 32.75]
+      - [37.2, 33.3]
+      - [36.95, 33.85]
+      - [36.6, 34.15]
+      - [36.25, 34.15]
+      - [36.0, 33.75]
+    label: [36.45, 33.25]
+    minus: [Kingdom of Israel, Phoenicia, Neo-Assyrian Empire]
+    reason: >-
+      The Aramaean kingdom of Damascus, Israel's neighbour and rival, rose under Rezon in Solomon's days and was the leading state of southern Syria under Hadadezer, Hazael and Rezin, until Tiglath-pileser III took Damascus in 732 BC. Cliopatria does not draw it. The outline is the land it held throughout, the Damascus basin and the Hauran; Bashan and Gilead, which Hazael took from Israel for a time, and its hold over Israel and Philistia are not drawn.
+    sources:
+      - "1 Kgs 11:23-25; 15:18-20; 20:1-34; 2 Kgs 8:7-15; 10:32-33; 16:9"
+      - "E. Lipiński, The Aramaeans: Their Ancient History, Culture, Religion (2000)"
+      - "W. T. Pitard, Ancient Damascus (1987)"
+  - polity: Hamath
+    first_year: "1000 BC"
+    last_year: "739 BC"
+    # The middle Orontes from Lebo-hamath to the plain north of Hamath.
+    outline:
+      - [36.2, 34.2]
+      - [36.95, 34.2]
+      - [37.45, 34.7]
+      - [37.45, 35.42]
+      - [36.95, 35.62]
+      - [36.45, 35.55]
+      - [36.3, 35.05]
+      - [36.15, 34.6]
+    label: [36.85, 35.0]
+    minus: [Phoenicia, Neo-Hittite states, Aram-Damascus, Neo-Assyrian Empire, Assyria]
+    reason: >-
+      The kingdom of Hamath on the Orontes, whose king Toi sent gifts to David, under Luwian and then Aramaean kings, fought Shalmaneser III at Qarqar in 853 BC; Zakkur of Hamath and Lu'ash ruled from Hazrach about 800 BC. Tiglath-pileser III took nineteen of its districts in 738 BC and Sargon II annexed it in 720 BC. Cliopatria does not draw it. The outline is the middle Orontes around Hamath, the conservative extent; Lu'ash to the north is left to the data.
+    sources:
+      - "2 Sam 8:9-10; 2 Kgs 14:28; 18:34"
+      - "J. D. Hawkins, Corpus of Hieroglyphic Luwian Inscriptions, vol. 1 (2000), Hamath"
+      - "E. Lipiński, The Aramaeans: Their Ancient History, Culture, Religion (2000)"
+      - "Zakkur stele (KAI 202)"
+  - polity: Hamath
+    first_year: "738 BC"
+    last_year: "720 BC"
+    outline:
+      - [36.2, 34.2]
+      - [36.95, 34.2]
+      - [37.45, 34.7]
+      - [37.45, 35.42]
+      - [36.95, 35.62]
+      - [36.45, 35.55]
+      - [36.3, 35.05]
+      - [36.15, 34.6]
+    label: [36.85, 35.0]
+    minus: [Phoenicia, Neo-Hittite states, Aram-Damascus]
+    reason: >-
+      Hamath kept its own king, a tributary of Assyria (vassals), until Sargon II put down the revolt of Yau-bi'di in 720 BC; the Assyrian shape covers it in these years.
+    sources:
+      - "2 Kgs 18:34; Isa 10:9"
+      - "A. Fuchs, Die Inschriften Sargons II. aus Khorsabad (1994), Great Display Inscription (Yau-bi'di of Hamath)"
+      - "E. Lipiński, The Aramaeans: Their Ancient History, Culture, Religion (2000)"
+  - polity: Carchemish
+    first_year: "1000 BC"
+    last_year: "741 BC"
+    # The Euphrates around Carchemish, west to the Sajur.
+    outline:
+      - [37.55, 36.45]
+      - [38.05, 36.4]
+      - [38.2, 36.75]
+      - [38.1, 37.15]
+      - [37.75, 37.25]
+      - [37.45, 36.95]
+    label: [37.82, 36.85]
+    minus: [Neo-Hittite states, Neo-Assyrian Empire, Assyria]
+    reason: >-
+      Carchemish on the Euphrates was the greatest of the Neo-Hittite kingdoms, ruled by the house of Suhi and then of Astiruwa, a tributary of Assyria at times from the 9th century, until Sargon II took it in 717 BC. Cliopatria's Neo-Hittite shape leaves it out. The outline is the city's land along the river, the conservative extent; its sway over its neighbours is not drawn.
+    sources:
+      - "Isa 10:9; Jer 46:2"
+      - "J. D. Hawkins, Corpus of Hieroglyphic Luwian Inscriptions, vol. 1 (2000), Carchemish"
+      - "J. D. Hawkins, Karkamiš, in Reallexikon der Assyriologie, vol. 5 (1976-80)"
+  - polity: Carchemish
+    first_year: "740 BC"
+    last_year: "717 BC"
+    outline:
+      - [37.55, 36.45]
+      - [38.05, 36.4]
+      - [38.2, 36.75]
+      - [38.1, 37.15]
+      - [37.75, 37.25]
+      - [37.45, 36.95]
+    label: [37.82, 36.85]
+    minus: [Neo-Hittite states]
+    reason: >-
+      Carchemish stood as a tributary of Assyria (vassals) until Sargon II took it and deported Pisiri, its last king, in 717 BC; the Assyrian shape covers it in these years.
+    sources:
+      - "A. Fuchs, Die Inschriften Sargons II. aus Khorsabad (1994), Annals (Pisiri of Carchemish, 717 BC)"
+      - "J. D. Hawkins, Corpus of Hieroglyphic Luwian Inscriptions, vol. 1 (2000), Carchemish"
+  - polity: Ammon
+    first_year: "901 BC"
+    last_year: "582 BC"
+    # The upper Jabbok around Rabbah.
+    outline:
+      - [35.8, 31.85]
+      - [36.15, 31.76]
+      - [36.35, 31.95]
+      - [36.25, 32.25]
+      - [35.95, 32.25]
+      - [35.82, 32.05]
+    label: [36.08, 31.98]
+    minus: [Kingdom of Israel, Aram-Damascus]
+    reason: >-
+      The kingdom of the Ammonites around Rabbah (Amman): independent of Israel after Solomon, probably among the allies of Damascus, Hamath and Israel at Qarqar in 853 BC (the Kurkh Monolith's Ba'asa of "Amana", read by most as Ammon, by some as the Anti-Lebanon), tributary to Assyria and Babylon, until Nebuchadnezzar's campaign of 582 BC. Cliopatria does not draw it. The outline is the upper Jabbok around Rabbah, the conservative extent; the plateau south to Heshbon was disputed with Israel and Moab and is left to them.
+    sources:
+      - "1 Sam 11:1-11; 2 Sam 12:26-31; 1 Kgs 14:21; Jer 49:1-6"
+      - "Kurkh Monolith of Shalmaneser III, col. ii (A. K. Grayson, Assyrian Rulers of the Early First Millennium BC II (858-745 BC), RIMA 3 (1996), A.0.102.2)"
+      - "Josephus, Jewish Antiquities 10.181-182"
+      - "B. MacDonald and R. W. Younker (eds.), Ancient Ammon (1999)"
+  - polity: Moab
+    first_year: "901 BC"
+    last_year: "853 BC"
+    # The plateau from the Zered to just north of the Arnon, with Dibon.
+    outline:
+      - [35.56, 31.06]
+      - [35.95, 31.02]
+      - [36.1, 31.3]
+      - [36.02, 31.58]
+      - [35.58, 31.58]
+    label: [35.8, 31.3]
+    minus: [Kingdom of Israel, Kingdom of Judah, Ammon]
+    reason: >-
+      The kingdom of Moab on the plateau east of the Dead Sea. Cliopatria does not draw it. Before Mesha's revolt, Omri and Ahab held the plain north of Dibon ("Omri took possession of the land of Medeba") and Moab paid Israel tribute (vassals); the outline runs from the Zered (Wadi al-Hasa) to just north of the Arnon, with Dibon, Mesha's own town. The plain to the north is left blank: the data's Israel does not reach it.
+    sources:
+      - "Mesha Stele (KAI 181), 4-9"
+      - "2 Kgs 3:4-5"
+      - "B. Routledge, Moab in the Iron Age: Hegemony, Polity, Archaeology (2004)"
+  - polity: Moab
+    first_year: "852 BC"
+    last_year: "582 BC"
+    # Mesha's kingdom: north to Medeba (Nebo and Heshbon stay with the data's Israel).
+    outline:
+      - [35.56, 31.06]
+      - [35.95, 31.02]
+      - [36.1, 31.3]
+      - [36.0, 31.72]
+      - [35.6, 31.76]
+      - [35.57, 31.47]
+    label: [35.8, 31.35]
+    minus: [Kingdom of Israel, Kingdom of Judah, Ammon]
+    reason: >-
+      After Ahab's death Mesha threw off Israel's rule and took the plain north to Medeba and Nebo; Isaiah and Jeremiah name its towns as Moab's. Tributary to Assyria and Babylon, Moab fell to Nebuchadnezzar's campaign of 582 BC. The outline is the plateau from the Zered to Medeba, the conservative extent; Nebo, which Mesha says he took, and Heshbon, disputed with Israel and Ammon, lie inside Cliopatria's Israel, and after 722 BC inside its Assyria, and are left to them.
+    sources:
+      - "Mesha Stele (KAI 181), 7-21"
+      - "2 Kgs 1:1; 3:4-27; Isa 15-16; Jer 48"
+      - "Josephus, Jewish Antiquities 10.181-182"
+      - "B. Routledge, Moab in the Iron Age: Hegemony, Polity, Archaeology (2004)"
+  - polity: Edom
+    first_year: "845 BC"
+    last_year: "553 BC"
+    # The plateau east of the Arabah from the Zered to Ras en-Naqb, with the Arabah's copper
+    # district of Faynan.
+    outline:
+      - [35.42, 31.0]
+      - [35.95, 30.98]
+      - [35.95, 30.45]
+      - [35.62, 29.95]
+      - [35.2, 29.8]
+      - [35.12, 30.2]
+      - [35.3, 30.65]
+    label: [35.62, 30.5]
+    minus: [Moab, Kingdom of Judah]
+    reason: >-
+      Edom, south of Moab, "revolted from under the hand of Judah" in the reign of Jehoram, about 845 BC, and made a king of its own; it paid tribute to Assyria from Adad-nirari III and Tiglath-pileser III on, and Nabonidus ended it about 553 BC. Cliopatria does not draw it. When Edom became a state is disputed: P. Bienkowski dates the kingdom at Bozrah to the 8th century, T. E. Levy argues for a 10th-9th-century polity at the copper mines of the Arabah. The map draws it from the revolt the Bible records, within the plateau and the Arabah that all agree were Edom's; its later reach into the Negev is not drawn.
+    sources:
+      - "1 Kgs 22:47; 2 Kgs 8:20-22; 14:7"
+      - "P. Bienkowski (ed.), Early Edom and Moab: The Beginning of the Iron Age in Southern Jordan (1992)"
+      - "T. E. Levy, M. Najjar and E. Ben-Yosef (eds.), New Insights into the Iron Age Archaeology of Edom, Southern Jordan (2014)"
+      - "Wikipedia, Edom (Nabonidus's campaign about 553-552 BC)"
 # A polity the data names by one era for longer than it lasted (build-content.ts): a new
 # name from the year given.
 renamed:
@@ -844,6 +1251,14 @@ absent:
 # Years the data leaves a polity off the map although it existed (build-content.ts): its
 # shape from just before is drawn on through them.
 bridges:
+  - polity: Babylonia
+    first_year: "626 BC"
+    last_year: "617 BC"
+    reason: >-
+      Nabopolassar took the throne of Babylon in November 626 BC and fought the Assyrians in Babylonia for the next decade; Cliopatria draws Babylon as Assyrian until 616 BC (clips). Babylonia is drawn with its shape of 650-631 BC.
+    sources:
+      - "Babylonian Chronicle ABC 2 (Chronicle of the Early Years of Nabopolassar) (A. K. Grayson, Assyrian and Babylonian Chronicles, 1975)"
+      - "J. Oates, The Fall of Assyria (635-609 B.C.), in The Cambridge Ancient History, 2nd ed., vol. III/2 (1991), ch. 25"
   - polity: Nabataeans
     first_year: "26 BC"
     last_year: "21 BC"
@@ -2265,3 +2680,387 @@ vassals:
     sources:
       - "C. E. Bosworth, Iran and the Arabs before Islam, in The Cambridge History of Iran, vol. 3(1) (1983)"
       - "Wikipedia, Aksumite-Persian wars (two Persian invasions between 570 and 580; Yemen retaken by 578); Sasanian Yemen (Ma'di Karib installed as king, Wahriz as governor)"
+
+  - polity: Moab
+    of: Kingdom of Israel
+    first_year: "c. 885 BC"
+    last_year: "853 BC"
+    label:
+      en: "under Israel"
+      ru: "под Израилем"
+      uk: "під Ізраїлем"
+      es: "bajo Israel"
+      pt: "sob Israel"
+      de: "unter Israel"
+      fr: "sous Israël"
+      pl: "pod władzą Izraela"
+      it: "sotto Israele"
+      nl: "onder Israël"
+      cs: "pod Izraelem"
+      sv: "under Israel"
+      nb: "under Israel"
+      tl: "sa ilalim ng Israel"
+      da: "under Israel"
+      sr: "под Израиљем"
+      hu: "Izrael alatt"
+      fi: "Israelin alaisuudessa"
+      vi: "thuộc Y-sơ-ra-ên"
+      ro: "sub Israel"
+      bg: "под властта на Израил"
+    reason: >-
+      "Omri was king of Israel, and he oppressed Moab many days", says Mesha; Mesha "rendered unto the king of Israel" a tribute of lambs and wool until Ahab's death, when he rebelled.
+    sources:
+      - "Mesha Stele (KAI 181), 4-8"
+      - "2 Kgs 3:4-5"
+
+  - polity: Ammon
+    of: Neo-Assyrian Empire
+    first_year: "c. 734 BC"
+    last_year: "c. 630 BC"
+    label:
+      en: "under Assyria"
+      ru: "под Ассирией"
+      uk: "під Ассирією"
+      es: "bajo Asiria"
+      pt: "sob a Assíria"
+      de: "unter Assyrien"
+      fr: "sous l’Assyrie"
+      pl: "pod władzą Asyrii"
+      it: "sotto l’Assiria"
+      nl: "onder Assyrië"
+      cs: "pod Asýrií"
+      sv: "under Assyrien"
+      nb: "under Assyria"
+      tl: "sa ilalim ng Asiria"
+      da: "under Assyrien"
+      sr: "под Асиријом"
+      hu: "Asszíria alatt"
+      fi: "Assyrian alaisuudessa"
+      vi: "thuộc A-si-ri"
+      ro: "sub Asiria"
+      bg: "под властта на Асирия"
+    reason: >-
+      Sanipu of Ammon, Salamanu of Moab and Qaus-malaku of Edom are among the western kings who paid tribute to Tiglath-pileser III, a list the RINAP editors date to 734 BC; their successors paid Sennacherib, Esarhaddon and Ashurbanipal. Tribute ends with Assyria's hold on the west, about 630 BC, as for Judah.
+    sources:
+      - "RINAP 1, Tiglath-pileser III 47 (Nimrud tablet K 3751), rev. 10'-12' (oracc.museum.upenn.edu/rinap/rinap1/Q003460)"
+      - "A. K. Grayson and J. Novotny, The Royal Inscriptions of Sennacherib (RINAP 3/1, 2012), the campaign of 701 BC (the kings of Ammon, Moab and Edom)"
+      - "B. MacDonald and R. W. Younker (eds.), Ancient Ammon (1999); B. Routledge, Moab in the Iron Age (2004); P. Bienkowski (ed.), Early Edom and Moab (1992)"
+
+  - polity: Moab
+    of: Neo-Assyrian Empire
+    first_year: "c. 734 BC"
+    last_year: "c. 630 BC"
+    label:
+      en: "under Assyria"
+      ru: "под Ассирией"
+      uk: "під Ассирією"
+      es: "bajo Asiria"
+      pt: "sob a Assíria"
+      de: "unter Assyrien"
+      fr: "sous l’Assyrie"
+      pl: "pod władzą Asyrii"
+      it: "sotto l’Assiria"
+      nl: "onder Assyrië"
+      cs: "pod Asýrií"
+      sv: "under Assyrien"
+      nb: "under Assyria"
+      tl: "sa ilalim ng Asiria"
+      da: "under Assyrien"
+      sr: "под Асиријом"
+      hu: "Asszíria alatt"
+      fi: "Assyrian alaisuudessa"
+      vi: "thuộc A-si-ri"
+      ro: "sub Asiria"
+      bg: "под властта на Асирия"
+    reason: >-
+      Sanipu of Ammon, Salamanu of Moab and Qaus-malaku of Edom are among the western kings who paid tribute to Tiglath-pileser III, a list the RINAP editors date to 734 BC; their successors paid Sennacherib, Esarhaddon and Ashurbanipal. Tribute ends with Assyria's hold on the west, about 630 BC, as for Judah.
+    sources:
+      - "RINAP 1, Tiglath-pileser III 47 (Nimrud tablet K 3751), rev. 10'-12' (oracc.museum.upenn.edu/rinap/rinap1/Q003460)"
+      - "A. K. Grayson and J. Novotny, The Royal Inscriptions of Sennacherib (RINAP 3/1, 2012), the campaign of 701 BC (the kings of Ammon, Moab and Edom)"
+      - "B. MacDonald and R. W. Younker (eds.), Ancient Ammon (1999); B. Routledge, Moab in the Iron Age (2004); P. Bienkowski (ed.), Early Edom and Moab (1992)"
+
+  - polity: Edom
+    of: Neo-Assyrian Empire
+    first_year: "c. 734 BC"
+    last_year: "c. 630 BC"
+    label:
+      en: "under Assyria"
+      ru: "под Ассирией"
+      uk: "під Ассирією"
+      es: "bajo Asiria"
+      pt: "sob a Assíria"
+      de: "unter Assyrien"
+      fr: "sous l’Assyrie"
+      pl: "pod władzą Asyrii"
+      it: "sotto l’Assiria"
+      nl: "onder Assyrië"
+      cs: "pod Asýrií"
+      sv: "under Assyrien"
+      nb: "under Assyria"
+      tl: "sa ilalim ng Asiria"
+      da: "under Assyrien"
+      sr: "под Асиријом"
+      hu: "Asszíria alatt"
+      fi: "Assyrian alaisuudessa"
+      vi: "thuộc A-si-ri"
+      ro: "sub Asiria"
+      bg: "под властта на Асирия"
+    reason: >-
+      Sanipu of Ammon, Salamanu of Moab and Qaus-malaku of Edom are among the western kings who paid tribute to Tiglath-pileser III, a list the RINAP editors date to 734 BC; their successors paid Sennacherib, Esarhaddon and Ashurbanipal. Tribute ends with Assyria's hold on the west, about 630 BC, as for Judah.
+    sources:
+      - "RINAP 1, Tiglath-pileser III 47 (Nimrud tablet K 3751), rev. 10'-12' (oracc.museum.upenn.edu/rinap/rinap1/Q003460)"
+      - "A. K. Grayson and J. Novotny, The Royal Inscriptions of Sennacherib (RINAP 3/1, 2012), the campaign of 701 BC (the kings of Ammon, Moab and Edom)"
+      - "B. MacDonald and R. W. Younker (eds.), Ancient Ammon (1999); B. Routledge, Moab in the Iron Age (2004); P. Bienkowski (ed.), Early Edom and Moab (1992)"
+
+  - polity: Ammon
+    of: Babylonia
+    first_year: "604 BC"
+    last_year: "602 BC"
+    label:
+      en: "under Babylon"
+      ru: "под Вавилоном"
+      uk: "під Вавилоном"
+      es: "bajo Babilonia"
+      pt: "sob a Babilônia"
+      de: "unter Babylon"
+      fr: "sous Babylone"
+      pl: "pod władzą Babilonu"
+      it: "sotto Babilonia"
+      nl: "onder Babylon"
+      cs: "pod Babylónem"
+      sv: "under Babylon"
+      nb: "under Babylon"
+      tl: "sa ilalim ng Babilonia"
+      da: "under Babylon"
+      sr: "под Вавилоном"
+      hu: "Babilon alatt"
+      fi: "Babylonin alaisuudessa"
+      vi: "thuộc Ba-by-lôn"
+      ro: "sub Babilon"
+      bg: "под властта на Вавилон"
+    reason: >-
+      In 604 BC "all the kings of the Hatti-land" brought Nebuchadnezzar their tribute, as Judah did. The data names Babylon "Babylonia" until 602 BC.
+    sources:
+      - "Babylonian Chronicle ABC 5 (Jerusalem Chronicle), obv. 15-17 (livius.org)"
+
+  - polity: Ammon
+    of: Neo-Babylonian Empire
+    first_year: "601 BC"
+    last_year: "582 BC"
+    label:
+      en: "under Babylon"
+      ru: "под Вавилоном"
+      uk: "під Вавилоном"
+      es: "bajo Babilonia"
+      pt: "sob a Babilônia"
+      de: "unter Babylon"
+      fr: "sous Babylone"
+      pl: "pod władzą Babilonu"
+      it: "sotto Babilonia"
+      nl: "onder Babylon"
+      cs: "pod Babylónem"
+      sv: "under Babylon"
+      nb: "under Babylon"
+      tl: "sa ilalim ng Babilonia"
+      da: "under Babylon"
+      sr: "под Вавилоном"
+      hu: "Babilon alatt"
+      fi: "Babylonin alaisuudessa"
+      vi: "thuộc Ba-by-lôn"
+      ro: "sub Babilon"
+      bg: "под властта на Вавилон"
+    reason: >-
+      Tributary to Babylon until Nebuchadnezzar's campaign against Ammon and Moab in his twenty-third year, 582 BC, which ended both kingdoms.
+    sources:
+      - "Jer 27:3; 40:11-14"
+      - "Josephus, Jewish Antiquities 10.181-182"
+
+  - polity: Moab
+    of: Babylonia
+    first_year: "604 BC"
+    last_year: "602 BC"
+    label:
+      en: "under Babylon"
+      ru: "под Вавилоном"
+      uk: "під Вавилоном"
+      es: "bajo Babilonia"
+      pt: "sob a Babilônia"
+      de: "unter Babylon"
+      fr: "sous Babylone"
+      pl: "pod władzą Babilonu"
+      it: "sotto Babilonia"
+      nl: "onder Babylon"
+      cs: "pod Babylónem"
+      sv: "under Babylon"
+      nb: "under Babylon"
+      tl: "sa ilalim ng Babilonia"
+      da: "under Babylon"
+      sr: "под Вавилоном"
+      hu: "Babilon alatt"
+      fi: "Babylonin alaisuudessa"
+      vi: "thuộc Ba-by-lôn"
+      ro: "sub Babilon"
+      bg: "под властта на Вавилон"
+    reason: >-
+      In 604 BC "all the kings of the Hatti-land" brought Nebuchadnezzar their tribute, as Judah did. The data names Babylon "Babylonia" until 602 BC.
+    sources:
+      - "Babylonian Chronicle ABC 5 (Jerusalem Chronicle), obv. 15-17 (livius.org)"
+
+  - polity: Moab
+    of: Neo-Babylonian Empire
+    first_year: "601 BC"
+    last_year: "582 BC"
+    label:
+      en: "under Babylon"
+      ru: "под Вавилоном"
+      uk: "під Вавилоном"
+      es: "bajo Babilonia"
+      pt: "sob a Babilônia"
+      de: "unter Babylon"
+      fr: "sous Babylone"
+      pl: "pod władzą Babilonu"
+      it: "sotto Babilonia"
+      nl: "onder Babylon"
+      cs: "pod Babylónem"
+      sv: "under Babylon"
+      nb: "under Babylon"
+      tl: "sa ilalim ng Babilonia"
+      da: "under Babylon"
+      sr: "под Вавилоном"
+      hu: "Babilon alatt"
+      fi: "Babylonin alaisuudessa"
+      vi: "thuộc Ba-by-lôn"
+      ro: "sub Babilon"
+      bg: "под властта на Вавилон"
+    reason: >-
+      Tributary to Babylon until Nebuchadnezzar's campaign against Ammon and Moab in his twenty-third year, 582 BC, which ended both kingdoms.
+    sources:
+      - "Jer 27:3; 40:11-14"
+      - "Josephus, Jewish Antiquities 10.181-182"
+
+  - polity: Edom
+    of: Babylonia
+    first_year: "604 BC"
+    last_year: "602 BC"
+    label:
+      en: "under Babylon"
+      ru: "под Вавилоном"
+      uk: "під Вавилоном"
+      es: "bajo Babilonia"
+      pt: "sob a Babilônia"
+      de: "unter Babylon"
+      fr: "sous Babylone"
+      pl: "pod władzą Babilonu"
+      it: "sotto Babilonia"
+      nl: "onder Babylon"
+      cs: "pod Babylónem"
+      sv: "under Babylon"
+      nb: "under Babylon"
+      tl: "sa ilalim ng Babilonia"
+      da: "under Babylon"
+      sr: "под Вавилоном"
+      hu: "Babilon alatt"
+      fi: "Babylonin alaisuudessa"
+      vi: "thuộc Ba-by-lôn"
+      ro: "sub Babilon"
+      bg: "под властта на Вавилон"
+    reason: >-
+      In 604 BC "all the kings of the Hatti-land" brought Nebuchadnezzar their tribute, as Judah did. The data names Babylon "Babylonia" until 602 BC.
+    sources:
+      - "Babylonian Chronicle ABC 5 (Jerusalem Chronicle), obv. 15-17 (livius.org)"
+
+  - polity: Edom
+    of: Neo-Babylonian Empire
+    first_year: "601 BC"
+    last_year: "553 BC"
+    label:
+      en: "under Babylon"
+      ru: "под Вавилоном"
+      uk: "під Вавилоном"
+      es: "bajo Babilonia"
+      pt: "sob a Babilônia"
+      de: "unter Babylon"
+      fr: "sous Babylone"
+      pl: "pod władzą Babilonu"
+      it: "sotto Babilonia"
+      nl: "onder Babylon"
+      cs: "pod Babylónem"
+      sv: "under Babylon"
+      nb: "under Babylon"
+      tl: "sa ilalim ng Babilonia"
+      da: "under Babylon"
+      sr: "под Вавилоном"
+      hu: "Babilon alatt"
+      fi: "Babylonin alaisuudessa"
+      vi: "thuộc Ba-by-lôn"
+      ro: "sub Babilon"
+      bg: "под властта на Вавилон"
+    reason: >-
+      Tributary to Babylon until Nabonidus's campaign against Edom about 553-552 BC, recorded in his relief at Sela.
+    sources:
+      - "Jer 27:3; Obad 1-14"
+      - "Wikipedia, Edom (Nabonidus's campaign about 553-552 BC)"
+
+  - polity: Hamath
+    of: Neo-Assyrian Empire
+    first_year: "738 BC"
+    last_year: "720 BC"
+    label:
+      en: "under Assyria"
+      ru: "под Ассирией"
+      uk: "під Ассирією"
+      es: "bajo Asiria"
+      pt: "sob a Assíria"
+      de: "unter Assyrien"
+      fr: "sous l’Assyrie"
+      pl: "pod władzą Asyrii"
+      it: "sotto l’Assiria"
+      nl: "onder Assyrië"
+      cs: "pod Asýrií"
+      sv: "under Assyrien"
+      nb: "under Assyria"
+      tl: "sa ilalim ng Asiria"
+      da: "under Assyrien"
+      sr: "под Асиријом"
+      hu: "Asszíria alatt"
+      fi: "Assyrian alaisuudessa"
+      vi: "thuộc A-si-ri"
+      ro: "sub Asiria"
+      bg: "под властта на Асирия"
+    reason: >-
+      Eni-ilu of Hamath paid tribute to Tiglath-pileser III in 738 BC, when Assyria annexed nineteen of Hamath's districts; his successor Yau-bi'di rebelled and Sargon II annexed the kingdom in 720 BC.
+    sources:
+      - "H. Tadmor and S. Yamada, The Royal Inscriptions of Tiglath-pileser III and Shalmaneser V (RINAP 1, 2011), the tribute lists of 738 BC"
+      - "A. Fuchs, Die Inschriften Sargons II. aus Khorsabad (1994), Great Display Inscription"
+
+  - polity: Carchemish
+    of: Neo-Assyrian Empire
+    first_year: "740 BC"
+    last_year: "717 BC"
+    label:
+      en: "under Assyria"
+      ru: "под Ассирией"
+      uk: "під Ассирією"
+      es: "bajo Asiria"
+      pt: "sob a Assíria"
+      de: "unter Assyrien"
+      fr: "sous l’Assyrie"
+      pl: "pod władzą Asyrii"
+      it: "sotto l’Assiria"
+      nl: "onder Assyrië"
+      cs: "pod Asýrií"
+      sv: "under Assyrien"
+      nb: "under Assyria"
+      tl: "sa ilalim ng Asiria"
+      da: "under Assyrien"
+      sr: "под Асиријом"
+      hu: "Asszíria alatt"
+      fi: "Assyrian alaisuudessa"
+      vi: "thuộc A-si-ri"
+      ro: "sub Asiria"
+      bg: "под властта на Асирия"
+    reason: >-
+      Pisiri of Carchemish paid tribute to Tiglath-pileser III from 740 BC; Sargon II took the city in 717 BC.
+    sources:
+      - "H. Tadmor and S. Yamada, The Royal Inscriptions of Tiglath-pileser III and Shalmaneser V (RINAP 1, 2011), the tribute lists of 740-738 BC"
+      - "A. Fuchs, Die Inschriften Sargons II. aus Khorsabad (1994), Annals"

@@ -1,6 +1,6 @@
 import type { Period } from "./periods.ts";
 import { localeData } from "./locale-data.ts";
-import type { Locale } from "./time.ts";
+import type { Locale } from "./locales.ts";
 
 /** A period's name in the reader's language. */
 export function periodName(p: Period, locale: Locale): string {

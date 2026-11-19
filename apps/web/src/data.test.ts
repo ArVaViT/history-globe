@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   ancientPlaces,
   standingSpan,
@@ -6,6 +6,7 @@ import {
   alsoHere,
   markDuplicates,
   beforeItsTime,
+  cachedJson,
   groupSites,
   foldName,
   russianStem,
@@ -375,5 +376,33 @@ describe("ancientPlaces", () => {
     if (!props) throw new Error("no site");
     expect(standingSpan(props, t, "en")).toBe("c. 801 BC – AD 390");
     expect(standingSpan({ life_from: -1263, life_until: 1301 }, t, "en")).toMatch(/^from /);
+  });
+});
+
+describe("cachedJson", () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+  const respond = (status: number, body: unknown = {}) =>
+    Promise.resolve({ ok: status < 400, status, json: () => Promise.resolve(body) });
+
+  it("fetches a file once for every caller", async () => {
+    const fetch = vi.fn(() => respond(200, { a: 1 }));
+    vi.stubGlobal("fetch", fetch);
+    const [x, y] = await Promise.all([cachedJson("once.json"), cachedJson("once.json")]);
+    expect(x).toEqual({ a: 1 });
+    expect(y).toBe(x);
+    expect(fetch).toHaveBeenCalledTimes(1);
+  });
+
+  it("forgets a failure, and keeps a missing file as `missing` when given", async () => {
+    const fetch = vi.fn(() => respond(500));
+    vi.stubGlobal("fetch", fetch);
+    await expect(cachedJson("flaky.json")).rejects.toThrow("flaky.json: 500");
+    fetch.mockImplementation(() => respond(200, { b: 2 }));
+    await expect(cachedJson("flaky.json")).resolves.toEqual({ b: 2 });
+    fetch.mockImplementation(() => respond(404));
+    await expect(cachedJson("gone.json", { missing: {} })).resolves.toEqual({});
+    await expect(cachedJson("gone-too.json")).rejects.toThrow("gone-too.json: 404");
   });
 });

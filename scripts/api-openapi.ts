@@ -6,7 +6,8 @@
  * writes the files it describes and checks each against it (`violations`) before writing.
  */
 
-import { LOCALES } from "../packages/model/src/time.ts";
+import { LOCALES } from "../packages/model/src/locales.ts";
+import { SITE_ORIGIN } from "../packages/model/src/site.ts";
 
 /** The site's languages, as the texts' keys: a language joins the description with the site. */
 const LANGS = LOCALES;
@@ -38,7 +39,7 @@ export function openApi(version: string): object {
   return {
     openapi: "3.1.0",
     info: {
-      title: "History Globe open data",
+      title: "History Globe dataset",
       version,
       summary: "Bible places, the verses and chapters that name them, people, tours, events",
       description:
@@ -46,8 +47,8 @@ export function openApi(version: string): object {
       license: { name: "CC BY 4.0", url: "https://creativecommons.org/licenses/by/4.0/" },
       contact: { name: "Vadym Arnaut", email: "historyglobe.vadym@gmail.com" },
     },
-    servers: [{ url: "https://historyglobe.app/api/v1" }],
-    externalDocs: { url: "https://historyglobe.app/docs/api.html" },
+    servers: [{ url: `${SITE_ORIGIN}/api/v1` }],
+    externalDocs: { url: `${SITE_ORIGIN}/docs/api.html` },
     paths: {
       "/index.json": get(
         "What is here",
@@ -196,7 +197,7 @@ export function openApi(version: string): object {
               pattern: "^[^@]+@[^@]+$",
               description:
                 "STEPBible TIPNR unique name of the place (name@first verse, -last book), as OpenBible links it, brought to the current TIPNR: always a TIPNR place record (a place named after a person, Dedan, Edom, Teman, carries the place record, not the person's); the same id scheme as people.json",
-              example: "Philippi@Act.16.12-Php",
+              example: "Philippi@Act.16.12-1Th",
             },
             page: ref("Pages"),
           },
@@ -230,6 +231,18 @@ export function openApi(version: string): object {
           },
           required: ["id", "name", "sex", "verses", "first"],
         },
+        Site: {
+          type: "object",
+          description:
+            "A site of the ancient world the Bible does not name (its Pleiades number, or a Wikidata id): in no other file, so its name and point go with it",
+          properties: {
+            id: { type: "string" },
+            name: ref("Localized"),
+            lon: { type: "number" },
+            lat: { type: "number" },
+          },
+          required: ["id", "name", "lon", "lat"],
+        },
         Stop: {
           type: "object",
           properties: {
@@ -237,6 +250,7 @@ export function openApi(version: string): object {
               type: "string",
               description: "A place id, or a Pleiades number for an ancient site",
             },
+            site: ref("Site"),
             ref: ref("Osis"),
             source: {
               type: "object",
@@ -268,6 +282,7 @@ export function openApi(version: string): object {
           properties: {
             id: { type: "string" },
             year: ref("Year"),
+            approximate: { type: "boolean", const: true },
             title: ref("Localized"),
             people: { type: "array", items: { type: "string" }, description: "TIPNR ids" },
             stops: { type: "array", items: ref("Stop") },
@@ -282,16 +297,7 @@ export function openApi(version: string): object {
             approximate: { type: "boolean", const: true },
             title: ref("Localized"),
             place: { type: "string" },
-            site: {
-              type: "object",
-              description: "A site of the ancient world the Bible does not name",
-              properties: {
-                id: { type: "string" },
-                lon: { type: "number" },
-                lat: { type: "number" },
-              },
-              required: ["id", "lon", "lat"],
-            },
+            site: ref("Site"),
             ref: ref("Osis"),
             sources: { type: "array", items: { type: "string" } },
           },
@@ -304,7 +310,15 @@ export function openApi(version: string): object {
             year: ref("Year"),
             approximate: { type: "boolean", const: true },
             title: ref("Localized"),
-            place: { type: "string" },
+            place: {
+              type: "string",
+              description: "A place id, or a Pleiades number for an ancient site",
+            },
+            site: ref("Site"),
+            event: {
+              type: "string",
+              description: "The event in events.json that tells the same story",
+            },
             ref: ref("Osis"),
             sides: ref("Localized"),
             outcome: ref("Localized"),
@@ -329,6 +343,8 @@ export function openApi(version: string): object {
             scripture: { type: "array", items: ref("Osis") },
             sources: { type: "array", items: { type: "string" } },
             page: ref("Pages"),
+            license: { type: "string", description: "CC BY-NC-ND 4.0: the answers' licence" },
+            license_url: { type: "string", format: "uri" },
           },
           required: ["id", "question", "answer", "scripture", "sources", "page"],
         },

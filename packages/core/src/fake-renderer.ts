@@ -1,4 +1,5 @@
 import type { Locale } from "@hg/model";
+import { Emitter } from "./emitter.ts";
 import type { Camera, LonLat, Renderer, RendererEvents } from "./renderer.ts";
 import type { LayerVisibility } from "./state.ts";
 
@@ -7,8 +8,17 @@ type Call =
   | { readonly op: "locale"; readonly locale: Locale }
   | { readonly op: "layers"; readonly layers: LayerVisibility }
   | { readonly op: "selected"; readonly placeId: string | null }
+  | { readonly op: "highlight"; readonly at: LonLat | null }
   | { readonly op: "flyTo"; readonly center: LonLat; readonly zoom: number | undefined }
-  | { readonly op: "route"; readonly points: number; readonly current: number }
+  | { readonly op: "bibleOnly"; readonly on: boolean }
+  | { readonly op: "hiddenNames"; readonly ids: readonly string[] }
+  | {
+      readonly op: "route";
+      readonly points: number;
+      readonly current: number;
+      readonly stops?: number;
+      readonly still?: true;
+    }
   | { readonly op: "tourPlaces"; readonly count: number }
   | { readonly op: "fitTo"; readonly count: number }
   | { readonly op: "reveal"; readonly at: LonLat };
@@ -17,15 +27,7 @@ type Call =
 export class FakeRenderer implements Renderer {
   readonly calls: Call[] = [];
   private camera: Camera = { center: [35, 31.5], zoom: 2, pitch: 0, bearing: 0 };
-  private readonly handlers: { [E in keyof RendererEvents]: Set<RendererEvents[E]> } = {
-    pick: new Set(),
-    pickNone: new Set(),
-    hover: new Set(),
-    hoverPolity: new Set(),
-    hoverBattle: new Set(),
-    cameraChanged: new Set(),
-    ready: new Set(),
-  };
+  private readonly events = new Emitter<RendererEvents>();
 
   setYear(year: number): void {
     this.calls.push({ op: "year", year });
@@ -39,15 +41,24 @@ export class FakeRenderer implements Renderer {
   setSelected(placeId: string | null): void {
     this.calls.push({ op: "selected", placeId });
   }
+  highlight(at: LonLat | null): void {
+    this.calls.push({ op: "highlight", at });
+  }
   reveal(at: LonLat): void {
     this.calls.push({ op: "reveal", at });
+  }
+  setBibleOnly(on: boolean): void {
+    this.calls.push({ op: "bibleOnly", on });
+  }
+  setHiddenNames(ids: readonly string[]): void {
+    this.calls.push({ op: "hiddenNames", ids });
   }
 
   flyTo(target: Partial<Camera> & { readonly center: LonLat }): void {
     this.camera = { ...this.camera, ...target };
     this.calls.push({ op: "flyTo", center: target.center, zoom: target.zoom });
     // A real flight ends with a settled camera; the fake settles at once.
-    for (const h of this.handlers.cameraChanged) h(this.camera);
+    this.events.emit("cameraChanged", this.camera);
   }
   setRoute(
     coordinates: readonly LonLat[],
@@ -71,28 +82,21 @@ export class FakeRenderer implements Renderer {
   getCamera(): Camera {
     return this.camera;
   }
-  /** Tests set this to simulate what is on screen. */
-  onScreen: string[] = [];
-  visiblePlaces(): string[] {
-    return this.onScreen;
-  }
   on<E extends keyof RendererEvents>(event: E, handler: RendererEvents[E]): () => void {
-    const set = this.handlers[event] as Set<RendererEvents[E]>;
-    set.add(handler);
-    return () => set.delete(handler);
+    return this.events.on(event, handler);
   }
   destroy(): void {
-    for (const set of Object.values(this.handlers)) set.clear();
+    this.events.clear();
   }
 
   /** Test helper: simulate a click on a place. */
   emitPick(placeId: string): void {
-    for (const h of this.handlers.pick) h(placeId);
+    this.events.emit("pick", placeId);
   }
 
   /** Test helper: simulate a click on the map where there is no place. */
   emitPickNone(): void {
-    for (const h of this.handlers.pickNone) h();
+    this.events.emit("pickNone");
   }
 
   last<O extends Call["op"]>(op: O): Extract<Call, { op: O }> | undefined {

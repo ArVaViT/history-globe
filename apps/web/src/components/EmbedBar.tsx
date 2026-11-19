@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { useDismiss } from "../app-hooks";
 import { formatRef, type Locale, placeName } from "@hg/model";
-import { chapterLabel, firstVerseIn, readingOrder } from "../chapter";
+import { chapterLabel, chapterOf, firstVerseIn, readingOrder } from "../chapter";
 import type { LoadedData } from "../data";
 import { useTranslation } from "../i18n";
 import { globeLinkSearch } from "../url";
@@ -33,26 +34,7 @@ export function ChapterPicker({
   const [open, setOpen] = useState(false);
   const box = useRef<HTMLDivElement>(null);
   const button = useRef<HTMLButtonElement>(null);
-  useEffect(() => {
-    if (!open) return;
-    const onDown = (e: PointerEvent) => {
-      if (!box.current?.contains(e.target as Node)) setOpen(false);
-    };
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key !== "Escape") return;
-      // Esc closes the list only, not the card behind it.
-      e.preventDefault();
-      e.stopPropagation();
-      setOpen(false);
-      button.current?.focus();
-    };
-    document.addEventListener("pointerdown", onDown);
-    document.addEventListener("keydown", onKey, true);
-    return () => {
-      document.removeEventListener("pointerdown", onDown);
-      document.removeEventListener("keydown", onKey, true);
-    };
-  }, [open]);
+  useDismiss(open, setOpen, box, button);
 
   const name = (id: string) => {
     const p = data.byId.get(id)?.props;
@@ -93,7 +75,6 @@ export function ChapterPicker({
         </span>
         <ChevronDown
           className={`size-4 text-ink-soft transition-transform ${open ? "rotate-180" : ""}`}
-          aria-hidden
         />
       </button>
       {open && (
@@ -148,9 +129,8 @@ export function EmbedBar({
   linkOnly?: boolean;
 }) {
   const { t } = useTranslation();
-  const chapter = focus && !focus.ref.startsWith("person:") ? focus : null;
-  const chip =
-    "rounded-full border border-white/45 bg-paper/90 shadow-[0_8px_24px_-12px_rgba(20,14,8,0.55)] backdrop-blur-xl";
+  const chapter = chapterOf(focus);
+  const chip = "rounded-full border border-white/45 bg-paper/90 shadow-chip backdrop-blur-xl";
 
   return (
     <nav

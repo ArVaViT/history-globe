@@ -1,9 +1,10 @@
-import type { Tour } from "@hg/core";
-
 /**
  * A tour's leg as its card draws it: the relief along the way from the stop before, and
  * whether the leg is a walk at all.
  */
+import type { Tour } from "@hg/core";
+import { cachedJson } from "./data";
+import { LESSON } from "./lesson";
 
 /** The Via Appia, 312 BC: the road network (and so a way by road) begins then. */
 const ROADS_FROM = -311;
@@ -13,7 +14,43 @@ const ROADS_FROM = -311;
  * Abraham's day had no road.
  */
 export const romanLeg = (tour: Tour, step: number): boolean =>
-  (tour.id === "lesson" ? (tour.stops[step]?.year ?? tour.year) : tour.year) >= ROADS_FROM;
+  (tour.id === LESSON ? (tour.stops[step]?.year ?? tour.year) : tour.year) >= ROADS_FROM;
+
+/** The legs' lengths along the Roman roads, in km (road-legs.json, build-road-legs.ts). */
+export interface RoadLegs {
+  /** Each tour's legs by the stop they lead to; null where no road runs. */
+  readonly tours: Readonly<Record<string, readonly (number | null)[]>>;
+  /** Two places' way by road, "a>b", for a lesson's legs walked in no tour of their own. */
+  readonly pairs: Readonly<Record<string, number>>;
+}
+
+const NO_ROADS: RoadLegs = { tours: {}, pairs: {} };
+
+/** The roads' legs, loaded once; without them every leg is a straight line. */
+export function loadRoadLegs(): Promise<RoadLegs> {
+  return cachedJson<Record<string, unknown>>("road-legs.json").then(
+    ({ "@pairs": pairs = {}, ...tours }) => ({
+      tours: tours as RoadLegs["tours"],
+      pairs: pairs as RoadLegs["pairs"],
+    }),
+    () => NO_ROADS,
+  );
+}
+
+/**
+ * The way by road to a tour's stop, in km, or null: none for a voyage or for stops that are
+ * not a way travelled. The tour's own leg, else the same two places' way by road when the
+ * leg is of the roads' time.
+ */
+export function roadKm(legs: RoadLegs, tour: Tour, step: number): number | null {
+  const stop = tour.stops[step];
+  const prev = tour.stops[step - 1];
+  if (!stop || !prev || stop.sea || tour.walked === false) return null;
+  return (
+    legs.tours[tour.id]?.[step] ??
+    (romanLeg(tour, step) ? (legs.pairs[`${prev.placeId}>${stop.placeId}`] ?? null) : null)
+  );
+}
 
 /**
  * A leg mostly over the sea is a voyage (Paul's to Cyprus and Rome): no walking time, no
@@ -25,6 +62,15 @@ export function isVoyage(profile: readonly (number | null)[]): boolean {
   const sea = profile.filter((h) => h === null).length;
   return sea < profile.length && sea / profile.length > 0.25;
 }
+
+/** A leg's relief is drawn in a box of these units, stretched to the card's width. */
+export const PROFILE_W = 320;
+export const PROFILE_H = 44;
+
+/** A height or a climb as the card says it: to 10 m, the relief's precision, a true minus. */
+export const formatMetres = (n: number, locale: string): string =>
+  // `|| 0`: a height of −1 to −5 m rounds to −0.
+  new Intl.NumberFormat(locale).format(Math.round(n / 10) * 10 || 0).replace("-", "−");
 
 export interface ProfileShape {
   /** The relief as a filled area, in a `w`×`h` box. */

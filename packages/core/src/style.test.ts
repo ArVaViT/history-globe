@@ -1,14 +1,13 @@
 import { expression, featureFilter, validateStyleMin } from "@maplibre/maplibre-gl-style-spec";
 import { describe, expect, it } from "vitest";
+import { buildStyle, layersInGroup, TOWN_NAMED } from "./style.ts";
 import {
-  buildStyle,
   ERA_FILTER,
-  layersInGroup,
+  isSettlement,
   NT_FROM,
   SITES_OF_SELECTED,
-  TOWN_NAMED,
-} from "./style.ts";
-import { isSettlement, visibleAtZoom } from "./style-expressions.ts";
+  visibleAtZoom,
+} from "./style-expressions.ts";
 
 /** Where a town's dot was drawn before its mark took part in the collision. */
 const VISIBLE_TOWN = ["all", isSettlement, visibleAtZoom];
@@ -38,6 +37,9 @@ const DEFAULT_STATE = {
 
 /** Whether a layer's filter lets a point feature through, as MapLibre tests it at a tile's zoom. */
 function passes(layer: Layer, state: Props, zoom: number, props: Props): boolean {
+  // The seas' own source holds nothing else (seaLabels).
+  if ("source" in layer && layer.source === "sea-labels" && props["kind"] !== "body of water")
+    return false;
   if (!("filter" in layer) || !layer.filter) return true;
   return featureFilter(layer.filter, "filter", { ...DEFAULT_STATE, ...state }).filter({ zoom }, {
     type: 1,
@@ -98,9 +100,15 @@ function visibleIn(year: number, y0: number, y1: number): boolean {
 
 describe("style", () => {
   // The whole style as built: a move or a refactor of its expressions changes nothing here.
-  // An intended change updates it with `vitest -u` and shows in review as a diff.
+  // An intended change updates it with `vitest -u` and shows in review as a diff. Fractions
+  // are compared to 12 significant digits: Node versions differ in the last bit of Math.sin.
   it("is built as before", () => {
-    expect(style).toMatchSnapshot();
+    const stable = JSON.parse(
+      JSON.stringify(style, (_, v: unknown) =>
+        typeof v === "number" && !Number.isInteger(v) ? Number(v.toPrecision(12)) : v,
+      ),
+    ) as unknown;
+    expect(stable).toMatchSnapshot();
   });
 
   it("is a valid MapLibre style", () => {
@@ -155,12 +163,14 @@ describe("river labels", () => {
     return f.filter({ zoom: 6 }, { type: 2, properties: props, geometry: [] } as never);
   }
 
-  it("labels a biblical river with a verified Russian name in Russian", () => {
+  it("labels a biblical river with its name in the map's language", () => {
     expect(labelled("ru", { place: "ae686c9", name: "Jordan", name_ru: "Иордан" })).toBe(true);
+    expect(labelled("de", { place: "ae686c9", name: "Jordan", name_de: "Jordan" })).toBe(true);
   });
 
-  it("does not show a Latin name on the Russian map", () => {
+  it("does not fall back to the English name outside English", () => {
     expect(labelled("ru", { place: "a012705", name: "Nile" })).toBe(false);
+    expect(labelled("de", { place: "a012705", name: "Nile", name_ru: "Нил" })).toBe(false);
     expect(labelled("en", { place: "a012705", name: "Nile" })).toBe(true);
   });
 
@@ -254,7 +264,7 @@ describe("places named only in the New Testament", () => {
   });
 });
 
-describe("place labels on the Russian map", () => {
+describe("place labels outside English", () => {
   function labelled(locale: string, props: Record<string, unknown>): boolean {
     // A great town's name is decided by its layer's text, not its filter (place-label-major).
     return named({ year: 30, locale }, 10, {
@@ -265,9 +275,11 @@ describe("place labels on the Russian map", () => {
     }).some((l) => l.startsWith("place-label"));
   }
 
-  it("need a Russian name for a town, any name in English", () => {
+  it("need a town's name in the map's language, any name in English", () => {
     expect(labelled("ru", { kind: "settlement", name: "Gob" })).toBe(false);
     expect(labelled("ru", { kind: "settlement", name: "Gob", name_ru: "Гоб" })).toBe(true);
+    expect(labelled("de", { kind: "settlement", name: "Gob", name_ru: "Гоб" })).toBe(false);
+    expect(labelled("de", { kind: "settlement", name: "Gob", name_de: "Gob" })).toBe(true);
     expect(labelled("en", { kind: "settlement", name: "Gob" })).toBe(true);
   });
 
@@ -286,13 +298,7 @@ describe("place labels on the Russian map", () => {
     const labelling = (selected: string) =>
       style.layers
         .filter((l) => l.id.startsWith("place-label") && "filter" in l)
-        .filter((l) =>
-          featureFilter("filter" in l ? l.filter : undefined, "filter", {
-            year: 30,
-            locale: "en",
-            selected,
-          }).filter({ zoom: 10 }, { type: 1, properties: mountain, geometry: [] } as never),
-        )
+        .filter((l) => passes(l, { selected }, 10, mountain))
         .map((l) => l.id);
     expect(labelling("a3e21c6")).toEqual(["place-label-selected"]);
     expect(labelling("")).toEqual(["place-label-landmark"]);
@@ -304,17 +310,7 @@ describe("place labels on the Russian map", () => {
     const layersFor = (props: Record<string, unknown>) =>
       style.layers
         .filter((l) => l.id.startsWith("place-label") && "filter" in l)
-        .filter((l) =>
-          featureFilter("filter" in l ? l.filter : undefined, "filter", {
-            year: 30,
-            locale: "en",
-            selected: "a0",
-          }).filter({ zoom: 10 }, {
-            type: 1,
-            properties: { id: "a0", rank: 0, ...props },
-            geometry: [],
-          } as never),
-        )
+        .filter((l) => passes(l, { selected: "a0" }, 10, { id: "a0", rank: 0, ...props }))
         .map((l) => l.id);
     expect(layersFor({ kind: "region", name: "Egypt" })).toEqual(["place-label-selected"]);
     expect(layersFor({ kind: "body of water", name: "Great Sea" })).toEqual([
@@ -327,6 +323,7 @@ describe("place labels on the Russian map", () => {
   it("keep the English name for a region, which has no dot to fall back on", () => {
     expect(labelled("ru", { kind: "region", name: "Negeb" })).toBe(true);
     expect(labelled("ru", { kind: "body of water", name: "Great Sea" })).toBe(true);
+    expect(labelled("de", { kind: "region", name: "Negeb" })).toBe(true);
   });
 });
 
@@ -450,7 +447,7 @@ describe("a town not standing in the year", () => {
   });
 });
 
-describe("marks and names never pile up (8.10.2026)", () => {
+describe("marks and names never pile up", () => {
   const ids = style.layers.map((l) => l.id);
   const at = (id: string) => {
     const i = ids.indexOf(id);
@@ -501,8 +498,8 @@ describe("marks and names never pile up (8.10.2026)", () => {
     ]);
   });
 
-  // Damascus went off the map at zoom 4 in 1000 BC: Tyre's name and the room kept round it,
-  // placed first, left no room for its ring (8.10.2026).
+  // Placed first, Tyre's name and the room kept round it would leave Damascus no room for its
+  // ring at zoom 4 in 1000 BC.
   it("places the great towns right after the reader's picks: no name, state, battle or past year takes their room", () => {
     const major = at("place-label-major");
     const before = new Set(["place-label-picked", "place-label-selected"]);

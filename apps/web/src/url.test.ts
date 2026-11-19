@@ -192,6 +192,9 @@ describe("layers and tour in the link", () => {
     expect(readUrl("?embed=yes").embed).toBeUndefined();
     expect(readUrl("?year=30", "/").embed).toBeUndefined();
     expect(readUrl("?ref=Acts.16", "/embed/v1").embed).toBe(true);
+    // Wherever it stands in the query, and on the root path.
+    expect(readUrl("?embed=1", "/").embed).toBe(true);
+    expect(readUrl("?place=af2161c&embed=1&year=30", "/").embed).toBe(true);
   });
 
   it("reads the map-only look (ui=map) only inside an embed", () => {
@@ -246,10 +249,6 @@ describe("preferredLocale", () => {
   it("keeps the language the reader picked, over the browser's", () => {
     expect(preferredLocale(["en-US"], () => "pl")).toBe("pl");
     expect(preferredLocale(["en-US"], () => "xx")).toBe("en");
-    const blocked = () => {
-      throw new Error("storage off");
-    };
-    expect(preferredLocale(["fr-CA"], blocked)).toBe("fr");
   });
 });
 

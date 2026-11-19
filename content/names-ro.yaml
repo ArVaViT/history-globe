@@ -136,7 +136,7 @@ places:
   a65db0f: Meriba
   ac69561: Nahalal
   acd48d6: Tema
-  a324c4d: Uț
+  a324c4d: Uz
   af536fb: Aruma
   ac744c1: Atalia
   ab8fdbc: Babel
@@ -452,7 +452,7 @@ places:
   ac12af9: Libia
   a6ac675: Moreșet-Gat
   a939939: Turnul Sihemului
-  a84c559: Câmpul Spălătorului
+  a84c559: Țarina nălbitorului
   a32397f: Aluș
   a2f186d: Atad
   a03cc2d: Baalat-Beer
@@ -957,7 +957,7 @@ places:
   ac3d92d: Chesulot
   adca4b1: Cetatea Nimicirii
   a44cac9: Cozeba
-  ae86cd7: Dalmatia
+  ae86cd7: Dalmația
   aecc492: Dilean
   a75d2ab: Duma
   a728e07: Ebron
@@ -1317,12 +1317,14 @@ polities:
   Almohad Caliphate: Califatul Almohad
   Almoravid Dynasty: Dinastia almoravidă
   Alodia: Alodia
+  Ammon: Amon
   Angevin Empire: Imperiul Angevin
   Angevins: Angevinii
   Ankhwennefer: Ankhwennefer
   Antigonid Dynasty: Dinastia antigonidă
   Antigonid Macedonia: Macedonia antigonidă
   Aquitaine: Aquitania
+  Aram-Damascus: Aram-Damasc
   Armenian Kingdom of Cilicia: Regatul Armean al Ciliciei
   Assyria: Asiria
   Assyrian Egypt: Egiptul asirian
@@ -1347,6 +1349,7 @@ polities:
   Cao Wei: Cao Wei
   Capetian House of Anjou: Casa capețiană de Anjou
   Carantania: Carantania
+  Carchemish: Carchemiș
   Carolingian Empire: Imperiul Carolingian
   Carthage: Cartagina
   Caucasian Albania: Albania Caucaziană
@@ -1432,6 +1435,7 @@ polities:
   Eastern Kara-Khanids: Karahanizii răsăriteni
   Eastern Kushans: Imperiul Kushan răsăritean
   Eastern Roman Empire: Imperiul Roman de Răsărit
+  Edom: Edom
   Elam: Elam
   Emirate of Crete: Emiratul Cretei
   Emirate of Córdoba: Emiratul de Córdoba
@@ -1481,6 +1485,7 @@ polities:
   Hadhramaut: Hadramaut
   Hafsid Dynasty: Dinastia hafsidă
   Halych-Volhynia occupation: Ocupația Galiția-Volînia
+  Hamath: Hamat
   Hamdanid Emirates: Emiratele hamdanide
   Hammadid Dynasty: Dinastia hammadidă
   Han Dynasty: Dinastia Han
@@ -1615,6 +1620,7 @@ polities:
   Minaeans: Minaeenii
   Minoan civilization: Civilizația minoică
   Mitanni: Mitanni
+  Moab: Moab
   Molossians: Molosii
   Mongol Empire: Imperiul Mongol
   Mycenaean Greece: Grecia miceniană
@@ -1794,6 +1800,11 @@ polities:
   Third Dynasty of Ur: A Treia Dinastie din Ur
   Principality of Armenia: Principatul Armeniei
 modern:
+  md88865: "Argob"
+  m0df275: "Boțeț"
+  m9b1996: "Pustiul Ieruel"
+  me0645b: "Ören"
+  m23ce84: "Massa"
   m66c5b8: Ierusalim
   md561de: Babilon
   me7edbd: Râul Iordan
@@ -1986,7 +1997,7 @@ modern:
   m7d00ce: Umm ar Rasas
   m112962: Khirbet el Waten
   m14a95e: Bir es Seba
-  m1ec77e: At Tell
+  m1ec77e: Et-Tell
   m518f8e: Banias
   mdc9182: Ein Weibeh
   m857981: Ras et Tahuneh
@@ -6708,3 +6719,21 @@ ancient:
   Q173474: Târnovo
   Q2538648: Wad ban Naqa
   Q1462261: Wasit
+# The today line where OpenBible describes the place in free English text, translated whole
+# (as content/modern-names.yaml does for Russian), with this file's names of the places.
+labels:
+  "in the region east of Gibeon": "La est de Gabaon"
+  "in the region between Mizpah and Shen": "Între Mițpa și Șen"
+  "in the region between Gerar and Beersheba": "Între Gherar și Beer-Șeba"
+  "in the region south of Hebron": "La sud de Hebron"
+  "in the region between Lachish and Gath": "Între Lachiș și Gat"
+  "in the region between Eshtaol and Zorah": "Între Eștaol și Țorea"
+  "in the region between Damascus and Hamath": "Între Damasc și Hamat"
+  "in the region between Baalbek and Kadesh": "Între Baalbek și Cades"
+  "in the region between Aiath and Michmash": "Între Aiat și Micmaș"
+  "in the region between Ibleam and Megiddo": "Între Ibleam și Meghido"
+  "in the region between Punon and Zered": "Între Punon și pârâul Zered"
+  "in the region between Maghfar and Lake Timsah": "Între Maghfar și lacul Timsah"
+  "in the region north of the Dead Sea": "La nord de Marea Moartă"
+  "in the region south of the Lisan": "La sud de peninsula Lisan"
+  "in the region between Kedesh-naphtali and Hazor": "Între Chedeș din Neftali și Hațor"

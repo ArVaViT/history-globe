@@ -1,9 +1,7 @@
 import {
-  formatRef,
   formatYear,
   formatYearRange,
   sourcesOf,
-  type AncientMention,
   type HistoryBattle,
   type HistoryEvent,
   type Locale,
@@ -14,41 +12,44 @@ import {
   pick,
   formatRefOr,
   rebuiltIn,
-  docsPath,
 } from "@hg/model";
 import { ArrowLeft, MapPin, Ruler, X, ZoomIn } from "./icons";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useTranslation } from "../i18n";
-import { loadArticle, type Article } from "../articles";
 import {
   beforeItsTime,
+  inRuins,
   standingYear,
   standingSpan,
-  DATA_URL,
   siteCertainty,
   whereIn,
   type PlaceProps,
   type Site,
 } from "../data";
 import { mapsUrl, verseUrl } from "../links";
-import { loadVerse } from "../verses";
-import { LessonToggle, useLesson } from "./LessonRow";
-import { readUrl } from "../url";
-
-// The app's own reading of the address (`embed=1` or /embed/v1), as App's EMBED.
-const EMBEDDED = readUrl().embed === true;
-import { loadTextPlaces, splitPlaces, type Segment } from "../text-places";
+import { useLesson } from "../lesson-store";
+import { LessonToggle } from "./LessonControls";
+import { useFrame } from "../frame";
 import { Photo } from "./Photo";
 import { notifyVerse } from "../embed";
 import { Panel } from "./Panel";
 import { loadPeople, peopleNow, personName, type People } from "../people";
-import { POLITY_COLORS, polityText, type PolityName } from "@hg/core";
+import { polityText, type PolityName } from "@hg/core";
 import { Credit } from "./Credit";
+import { AncientAuthors } from "./place/AncientAuthors";
+import { PlaceQuestions } from "./place/PlaceQuestions";
+import { ArticleSection } from "./place/ArticleSection";
+import { Rulers } from "./place/Rulers";
+import { VerseText } from "./place/VerseText";
+import { reportMail, reportUrl } from "../report";
+import { readPref, writePref } from "../storage";
 
-const VERSES_SHOWN = 24;
+/** Verses listed at first, and more per press: Jerusalem has 955. */
+const VERSES_FIRST = 24;
+const VERSES_STEP = 50;
 const EVENTS_SHOWN = 8;
 
-/** "ок. 20 г. н. э." for an approximate year. */
+/** "c. AD 20" for an approximate year. */
 function lifeYear(
   y: { year: number; approximate: boolean },
   locale: Locale,
@@ -58,22 +59,11 @@ function lifeYear(
 }
 
 type PlaceTab = "story" | "time" | "people" | "sites" | "verses";
-/** The tab picked last: the next place opens on it, when it has one. */
+const TAB_KEY = "hg:place-tab";
+/** The tab picked last in this visit: the next place opens on it, when it has one. */
 function readTab(): PlaceTab {
-  try {
-    const v = sessionStorage.getItem("hg:place-tab");
-    return v === "time" || v === "people" || v === "sites" || v === "verses" ? v : "story";
-  } catch {
-    return "story";
-  }
-}
-
-function writeTab(tab: PlaceTab): void {
-  try {
-    sessionStorage.setItem("hg:place-tab", tab);
-  } catch {
-    // Storage refused: the tab still switches, the next card just opens on its first.
-  }
+  const v = readPref(TAB_KEY, "session");
+  return v === "time" || v === "people" || v === "sites" || v === "verses" ? v : "story";
 }
 
 /**
@@ -105,7 +95,6 @@ export function PlaceCard({
   onMeasure,
   onLesson,
   pleiades,
-  questions,
   onPerson,
   onYear,
   onHighlight,
@@ -147,9 +136,6 @@ export function PlaceCard({
   onPerson?: ((person: number) => void) | undefined;
   /** The place in Pleiades, with the span of the periods it is attested in. */
   pleiades?: PleiadesLink | undefined;
-  /** Questions answered with this place on the map (their pages are /{locale}/q/{id}/). */
-  questions?:
-    readonly { readonly id: string; readonly en: string; readonly ru: string }[] | undefined;
   /** Opens the distance tool with this place as its first end. */
   onMeasure?: (() => void) | undefined;
   /** Opens the lesson tool, this place just added to the lesson. */
@@ -161,10 +147,9 @@ export function PlaceCard({
 }) {
   // Opened lists stay open for this place; the card is keyed by place, so a new place
   // starts folded again.
-  // Verses open fifty at a time: Jerusalem has 955.
   const [tall, setTall] = useState(false);
-  const [versesShown, setVersesShown] = useState(VERSES_SHOWN);
-  // After "ещё N", keyboard focus moves to the first verse that appeared.
+  const [versesShown, setVersesShown] = useState(VERSES_FIRST);
+  // After "N more" (place.more), keyboard focus moves to the first verse that appeared.
   const versesRef = useRef<HTMLDivElement>(null);
   const focusVerse = useRef<number | null>(null);
   // The verse whose text is open under the list.
@@ -213,6 +198,7 @@ export function PlaceCard({
   const [allEvents, setAllEvents] = useState(false);
   const { t } = useTranslation();
   const lesson = useLesson(place.id, year);
+  const { embed } = useFrame();
   const ru = locale === "ru";
   const title = nameOf(place, locale);
   // Where it is today, in the reader's language, unless that only repeats the title
@@ -262,16 +248,16 @@ export function PlaceCard({
   const tabRefs = useRef<Partial<Record<PlaceTab, HTMLButtonElement | null>>>({});
   const pickTab = (next: PlaceTab) => {
     setChosen(next);
-    writeTab(next);
+    writePref(TAB_KEY, next, "session");
   };
   // A place of the ancient world says what it was (a capital; a city, nothing).
   const kindKey = place.ancient ? `ancient.${place.ancient}` : `kind.${place.kind}`;
-  const kind = t(kindKey) === kindKey ? (place.ancient ? "" : place.kind) : t(kindKey);
+  const kind = t(kindKey, { defaultValue: place.ancient ? "" : place.kind });
   const chip = place.kind !== "settlement" || (place.ancient !== undefined && kind !== "");
 
   return (
     <Panel
-      className={`w-[min(420px,calc(100vw-376px-32px))] max-md:w-full max-h-[calc(100dvh-var(--hg-timeline-h,124px)-48px)] overflow-auto ${tall ? "max-md:max-h-[calc(100dvh-var(--hg-timeline-h,124px)-96px)]" : "max-md:max-h-[48dvh]"}`}
+      className={`w-card max-h-[calc(100dvh-var(--hg-timeline-h)-48px)] overflow-auto ${tall ? "max-md:max-h-[calc(100dvh-var(--hg-timeline-h)-96px)]" : "max-md:max-h-[48dvh]"}`}
     >
       {/* On a phone the card takes half the screen; its handle opens it up to the header. */}
       <button
@@ -289,7 +275,7 @@ export function PlaceCard({
           onClick={back.onBack}
           className="mx-3 mt-3 flex items-center gap-1.5 rounded-full px-2 py-1 text-[13px] text-accent hover:bg-paper-2"
         >
-          <ArrowLeft className="size-4" aria-hidden />
+          <ArrowLeft className="size-4" />
           {back.label}
         </button>
       )}
@@ -302,8 +288,8 @@ export function PlaceCard({
           >
             {title}
           </h2>
-          {/* One quiet line under the name: where the Russian form is read. The English form
-              is not shown in Russian: it told the reader nothing (design review, 02.10). */}
+          {/* One quiet line under the name: where the Synodal text reads the Russian form. The
+              English form is not shown beside it: it tells a Russian reader nothing. */}
           {ru && place.name_ru_osis && (
             <div className="mt-0.5 text-[12px] text-ink-soft">
               {place.name_ru_osis && (
@@ -322,7 +308,7 @@ export function PlaceCard({
         </div>
         <div className="-mr-1 flex shrink-0 items-center gap-0.5">
           {/* Not in a frame on another site: a lesson is the globe's own. */}
-          {!EMBEDDED && place.osis.length > 0 && <LessonToggle lesson={lesson} onAdd={onLesson} />}
+          {!embed && place.osis.length > 0 && <LessonToggle lesson={lesson} onAdd={onLesson} />}
           {onMeasure && (
             <button
               onClick={onMeasure}
@@ -330,7 +316,7 @@ export function PlaceCard({
               title={t("place.measure")}
               className="rounded-full p-1.5 text-ink-soft hover:bg-paper-2 hover:text-ink"
             >
-              <Ruler className="size-[18px]" aria-hidden />
+              <Ruler className="size-[18px]" />
             </button>
           )}
           <button
@@ -339,7 +325,7 @@ export function PlaceCard({
             title={t("place.zoom")}
             className="rounded-full p-1.5 text-accent hover:bg-paper-2"
           >
-            <ZoomIn className="size-5" aria-hidden />
+            <ZoomIn className="size-5" />
           </button>
           <button
             onClick={onClose}
@@ -347,7 +333,7 @@ export function PlaceCard({
             title={t("place.close")}
             className="rounded-full p-1.5 text-ink-soft hover:bg-paper-2 hover:text-ink"
           >
-            <X className="size-5" aria-hidden />
+            <X className="size-5" />
           </button>
         </div>
       </div>
@@ -365,7 +351,7 @@ export function PlaceCard({
           )}
           {certainty !== "unknown" && certainty !== "agreed" && (
             <span
-              className={`rounded-full border px-2.5 py-0.5 text-xs ${place.disputed ? "border-[#e0b98f] bg-[#f4dfc9] text-[#7a4a1d]" : "border-line bg-paper-2 text-ink-soft"}`}
+              className={`rounded-full border px-2.5 py-0.5 text-xs ${place.disputed ? "border-dispute-line bg-dispute-fill text-dispute-ink" : "border-line bg-paper-2 text-ink-soft"}`}
             >
               {certainty === "disputed"
                 ? t("place.sites", { count: versions.length })
@@ -389,9 +375,7 @@ export function PlaceCard({
         <div className="mx-5 mt-3 text-[12.5px] leading-snug text-ink-soft italic">
           {!life && !place.ancient
             ? t("place.nt_only")
-            : place.gap_from !== undefined &&
-                year >= place.gap_from &&
-                year < (place.gap_until ?? Infinity)
+            : inRuins(place, year)
               ? t("place.in_ruins")
               : year < (place.life_from ?? -Infinity)
                 ? t(place.life_older ? "place.not_yet_older" : "place.not_yet")
@@ -407,7 +391,7 @@ export function PlaceCard({
                   onClick={() => {
                     onYear(to);
                   }}
-                  className="not-italic underline decoration-dotted underline-offset-2 hover:text-ink"
+                  className="not-italic link-soft"
                 >
                   {t("place.go_year", { year: formatYear(to, locale) })}
                 </button>
@@ -443,7 +427,7 @@ export function PlaceCard({
                 href={`https://pleiades.stoa.org/places/${place.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
+                className="link-accent"
               >
                 Pleiades
                 <span className="sr-only"> ({t("new_tab")})</span>
@@ -457,7 +441,7 @@ export function PlaceCard({
                 href={`https://www.wikidata.org/wiki/${place.qid}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
+                className="link-accent"
               >
                 Wikidata
                 <span className="sr-only"> ({t("new_tab")})</span>
@@ -468,7 +452,7 @@ export function PlaceCard({
       )}
 
       <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 px-5 pt-3 text-[14px] text-ink">
-        <MapPin className="size-4 shrink-0 text-accent" aria-hidden />
+        <MapPin className="size-4 shrink-0 text-accent" />
         {/* The name of the place today opens it on Google Maps: no separate link to read. */}
         {today && <span className="text-ink-soft">{t("place.today")}:</span>}
         <a
@@ -476,7 +460,7 @@ export function PlaceCard({
           target="_blank"
           rel="noopener noreferrer"
           title={t("place.google_maps")}
-          className="inline-flex items-center gap-1 text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
+          className="inline-flex items-center gap-1 link-accent"
         >
           {today ??
             // No other name today: the title again would only repeat it.
@@ -500,7 +484,7 @@ export function PlaceCard({
                   onClick={() => {
                     onSelect(p.id);
                   }}
-                  className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
+                  className="link-accent"
                 >
                   {nameOf(p, locale)}
                 </button>
@@ -514,7 +498,7 @@ export function PlaceCard({
                 onClick={() => {
                   setAllAlso(true);
                 }}
-                className="text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
+                className="text-ink-soft link-soft"
               >
                 {t("place.more", { count: alsoHere.length - alsoShown })}
               </button>
@@ -613,7 +597,7 @@ export function PlaceCard({
               </ul>
             )}
             {tab === "sites" && (
-              <div className="mx-5 mt-3 rounded-xl border border-[#e0b98f] bg-[#fbf1e4] px-3 py-2.5">
+              <div className="mx-5 mt-3 rounded-xl border border-dispute-line bg-dispute-note px-3 py-2.5">
                 <ul className="mt-1.5 space-y-1">
                   {versions.map((s) => (
                     <li key={`${s.label}-${s.at.join(",")}`}>
@@ -667,7 +651,7 @@ export function PlaceCard({
                       until: lifeYear(rebuiltIn(life.gap), locale, t),
                     })}
                 </div>
-                <div className="mt-0.5">{life.note[locale] ?? life.note.en}</div>
+                <div className="mt-0.5">{pick(life.note, locale)}</div>
                 <div className="mt-1 text-[11px] text-ink-soft">
                   {sourcesOf(life, locale).join("; ")}
                 </div>
@@ -684,7 +668,7 @@ export function PlaceCard({
                   href={`https://pleiades.stoa.org/places/${pleiades.id}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline decoration-dotted underline-offset-2 hover:text-ink"
+                  className="link-soft"
                 >
                   Pleiades
                   <span className="sr-only"> ({t("new_tab")})</span>
@@ -705,7 +689,7 @@ export function PlaceCard({
                         {formatYear(e.year, locale)}
                       </span>
                       <span>
-                        {e.title[locale] ?? e.title.en}
+                        {pick(e.title, locale)}
                         {/* Told in the Bible: its passage, to read. */}
                         {e.ref && (
                           <>
@@ -714,7 +698,7 @@ export function PlaceCard({
                               href={verseUrl(e.ref, locale)}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-[12.5px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
+                              className="text-[12.5px] text-ink-soft link-soft"
                             >
                               {formatRefOr(e.ref, locale)}
                             </a>
@@ -729,7 +713,7 @@ export function PlaceCard({
                     onClick={() => {
                       setAllEvents(true);
                     }}
-                    className="mt-0.5 text-[12.5px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
+                    className="mt-0.5 text-[12.5px] text-ink-soft link-soft"
                   >
                     {t("place.more", { count: events.length - EVENTS_SHOWN })}
                   </button>
@@ -743,7 +727,7 @@ export function PlaceCard({
                 <h3 className="text-[12px] font-semibold tracking-wide text-ink-soft uppercase">
                   {t("place.battles")}
                 </h3>
-                <ul className="mt-1 space-y-2 border-l-2 border-[#8e2a22]/60 pl-3 text-[14px] leading-snug text-ink">
+                <ul className="mt-1 space-y-2 border-l-2 border-danger/60 pl-3 text-[14px] leading-snug text-ink">
                   {battles.map((b) => (
                     <li key={b.id} className="flex gap-2">
                       <span
@@ -753,7 +737,7 @@ export function PlaceCard({
                         {formatYear(b.year, locale)}
                       </span>
                       <span>
-                        {b.title[locale] ?? b.title.en}
+                        {pick(b.title, locale)}
                         {b.ref && (
                           <>
                             {" · "}
@@ -761,14 +745,14 @@ export function PlaceCard({
                               href={verseUrl(b.ref, locale)}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-[12.5px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
+                              className="text-[12.5px] text-ink-soft link-soft"
                             >
                               {formatRefOr(b.ref, locale)}
                             </a>
                           </>
                         )}
                         <span className="mt-0.5 block text-[12.5px] text-ink-soft">
-                          {b.sides[locale] ?? b.sides.en}. {b.outcome[locale] ?? b.outcome.en}.
+                          {pick(b.sides, locale)}. {pick(b.outcome, locale)}.
                         </span>
                       </span>
                     </li>
@@ -780,7 +764,7 @@ export function PlaceCard({
             {tab === "verses" && (
               <>
                 <div className="px-5 pt-3 text-[12.5px] text-ink-soft tabular-nums">
-                  {/* The count once, here, not on the tab: four tabs no longer fit with it. */}
+                  {/* The count once, here, not on the tab: the tabs do not fit with it. */}
                   {[
                     t("place.verse_count", { count: place.verses }),
                     place.ot > 0 ? `${t("place.ot")} ${String(place.ot)}` : "",
@@ -805,7 +789,7 @@ export function PlaceCard({
                             aria-controls={openVerse === o ? "verse-text" : undefined}
                             onClick={() => {
                               setOpenVerse(openVerse === o ? null : o);
-                              if (openVerse !== o) notifyVerse(o);
+                              if (openVerse !== o) notifyVerse(o, embed);
                             }}
                             className={`rounded-full border px-2 py-0.5 font-serif text-[13px] tabular-nums hover:border-accent hover:text-accent ${
                               openVerse === o
@@ -823,9 +807,9 @@ export function PlaceCard({
                     <button
                       onClick={() => {
                         focusVerse.current = versesShown;
-                        setVersesShown(versesShown + 50);
+                        setVersesShown(versesShown + VERSES_STEP);
                       }}
-                      className="mt-1 ml-15 rounded-full px-2 py-0.5 text-[13px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
+                      className="mt-1 ml-15 rounded-full px-2 py-0.5 text-[13px] text-ink-soft link-soft"
                     >
                       {t("place.more", { count: place.osis.length - versesShown })}
                     </button>
@@ -849,26 +833,7 @@ export function PlaceCard({
 
       <AncientAuthors placeId={place.id} locale={locale} />
 
-      {questions && questions.length > 0 && (
-        <div className="px-5 pt-3 text-[13px] leading-snug">
-          <h3 className="text-[12px] text-ink-soft">{t("place.questions")}</h3>
-          <ul className="mt-0.5">
-            {questions.map((q) => (
-              <li key={q.id}>
-                <a
-                  href={`${import.meta.env.BASE_URL}${locale}/q/${q.id}/`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
-                >
-                  {pick(q, locale) ?? ""}
-                  <span className="sr-only"> ({t("new_tab")})</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <PlaceQuestions placeId={place.id} locale={locale} />
 
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 px-5 pt-3 pb-4 text-[11px] text-ink-soft">
         <span>
@@ -881,352 +846,21 @@ export function PlaceCard({
             by email for the many without a GitHub account, whom the form would stop at a login. */}
         <span className="shrink-0">
           {t("place.report")}{" "}
-          <a
-            href={reportMail(place)}
-            className="underline decoration-dotted underline-offset-2 hover:text-ink"
-          >
+          <a href={reportMail(place, locale)} className="link-soft">
             {t("place.report_email")}
           </a>
           {" · "}
           <a
-            href={reportUrl(place)}
+            href={reportUrl(place, locale)}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline decoration-dotted underline-offset-2 hover:text-ink"
+            className="link-soft"
           >
             GitHub
           </a>
         </span>
       </div>
     </Panel>
-  );
-}
-
-/**
- * The place's article, whole (its tab is for reading), then the verses and the sources
- * behind it and how far it has been checked.
- */
-function ArticleSection({
-  placeId,
-  locale,
-  onHighlight,
-}: {
-  placeId: string;
-  locale: Locale;
-  onHighlight?: ((placeId: string | null) => void) | undefined;
-}) {
-  const { t } = useTranslation();
-  const [article, setArticle] = useState<Article | null | undefined>(undefined);
-  // The other places the text names, found as in the verses; plain text until the index is in.
-  const [index, setIndex] = useState<Awaited<ReturnType<typeof loadTextPlaces>> | null>(null);
-  useEffect(() => {
-    if (!onHighlight) return;
-    let live = true;
-    loadTextPlaces(locale).then(
-      (i) => {
-        if (live) setIndex(i);
-      },
-      () => undefined,
-    );
-    return () => {
-      live = false;
-      onHighlight(null);
-    };
-  }, [locale, onHighlight]);
-  useEffect(() => {
-    let live = true;
-    // A failed load leaves the card without the article; the next card tries again.
-    loadArticle(placeId, locale).then(
-      (a) => {
-        if (live) setArticle(a ?? null);
-      },
-      () => {
-        if (live) setArticle(null);
-      },
-    );
-    return () => {
-      live = false;
-    };
-  }, [placeId, locale]);
-  // The tab is open while the article loads, or if it failed: say so rather than show nothing.
-  if (article === undefined) return <p className="px-5 pt-3 text-[13px] text-ink-soft">…</p>;
-  if (article === null)
-    return <p className="px-5 pt-3 text-[13px] text-ink-soft">{t("place.article_failed")}</p>;
-  const body = pick(article.body, locale) ?? [];
-  return (
-    <section className="px-5 pt-3">
-      <ReviewLine article={article} locale={locale} />
-      <div className="mt-3 space-y-3 font-serif text-[16px] leading-[1.65] text-ink">
-        {body.map((p) => (
-          <p key={p.slice(0, 24)}>
-            {index && onHighlight
-              ? // A name only marks its place on the map: the reader stays in the text.
-                splitPlaces(p, index, [placeId]).map((seg, i) =>
-                  seg.place ? (
-                    <span
-                      key={i}
-                      tabIndex={0}
-                      onMouseEnter={() => {
-                        onHighlight(seg.place ?? null);
-                      }}
-                      onMouseLeave={() => {
-                        onHighlight(null);
-                      }}
-                      onFocus={() => {
-                        onHighlight(seg.place ?? null);
-                      }}
-                      onBlur={() => {
-                        onHighlight(null);
-                      }}
-                      onClick={() => {
-                        onHighlight(seg.place ?? null);
-                      }}
-                      className="underline decoration-accent/35 decoration-dotted underline-offset-4 hover:decoration-accent focus-visible:decoration-accent focus-visible:outline-none"
-                    >
-                      {seg.text}
-                    </span>
-                  ) : (
-                    <span key={i}>{seg.text}</span>
-                  ),
-                )
-              : p}
-          </p>
-        ))}
-      </div>
-      <div className="mt-3 border-t border-line pt-2 text-[12px] leading-snug text-ink-soft">
-        <div>
-          {t("place.article_scripture")}:{" "}
-          {article.scripture.map((o, i) => (
-            <span key={o}>
-              {i > 0 && ", "}
-              <a
-                href={verseUrl(o, locale)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline decoration-dotted underline-offset-2 hover:text-ink"
-              >
-                {formatRef(o, locale)}
-              </a>
-            </span>
-          ))}
-        </div>
-        <div className="mt-1">
-          {t("place.article_sources")}: {sourcesOf(article, locale).join("; ")}.
-        </div>
-        {/* The article is the site's own text, under its own licence (ADR 0016). */}
-        <div className="mt-1">
-          {t("place.article_licence")},{" "}
-          <a
-            href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
-            target="_blank"
-            rel="license noopener noreferrer"
-            className="underline decoration-dotted underline-offset-2 hover:text-ink"
-          >
-            CC BY-NC-ND 4.0
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/**
- * How far the article has been read, at its head and in the text's own weight: the
- * scholars who reviewed it (content/reviews), each with a link to the review, or that it
- * has been checked against its sources, with a link to how.
- */
-function ReviewLine({ article, locale }: { article: Article; locale: Locale }) {
-  const { t } = useTranslation();
-  const base = import.meta.env.BASE_URL;
-  const link = "text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid";
-  const reviews = article.reviews ?? [];
-  if (reviews.length === 0)
-    return (
-      <p className="text-[13.5px] leading-snug text-ink-soft">
-        {t("place.article_checked")} ·{" "}
-        <a
-          href={`${base}${docsPath(locale, "methodology")}#review`}
-          target="_blank"
-          rel="noopener"
-          className={link}
-        >
-          {t("place.article_how")}&nbsp;→
-        </a>
-      </p>
-    );
-  // A date of our own time, as the reader's language writes it ("14 November 2026", as the
-  // static pages and the documentation write it).
-  const day = (iso: string) =>
-    new Intl.DateTimeFormat(locale === "en" ? "en-GB" : locale, {
-      dateStyle: "long",
-      timeZone: "UTC",
-    }).format(new Date(`${iso}T00:00:00Z`));
-  return (
-    <div className="border-l-2 border-accent/60 pl-2.5 text-[13.5px] leading-snug text-ink">
-      {reviews.map((r) => (
-        <p key={r.id}>
-          {t("place.article_reviewed", { name: r.name, institution: r.institution })} ·{" "}
-          {day(r.date)}
-          {r.changed ? ` · ${t("place.article_changed")}` : ""}
-          {r.status === "corrections-in-progress"
-            ? ` · ${t("place.article_corrections")}`
-            : ""} ·{" "}
-          <a
-            href={`${base}${locale}/reviews/${r.id}/`}
-            target="_blank"
-            rel="noopener"
-            className={link}
-          >
-            {t("place.article_review_read")}&nbsp;→
-          </a>
-        </p>
-      ))}
-      {locale !== "en" && !reviews.some((r) => r.translations.includes(locale)) && (
-        <p className="mt-0.5 text-[12px] text-ink-soft">{t("place.article_english_only")}</p>
-      )}
-    </div>
-  );
-}
-
-/** The same report as an email to the project's address, the place and its map link filled in. */
-function reportMail(place: PlaceProps): string {
-  const name = place.name_ru ? `${place.name_ru} / ${place.name}` : place.name;
-  const subject = `Error: ${name} (${place.id})`;
-  const body = `${name} (${place.id})\nhttps://historyglobe.app/?place=${place.id}\n\n`;
-  return `mailto:historyglobe.vadym@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-}
-
-/**
- * The "Report an error" issue form (.github/ISSUE_TEMPLATE/report-an-error.yml) with this
- * place filled in: blank issues are disabled, so a plain issues/new?body= would send a reader
- * without write access to the template chooser and lose the place. Form fields are prefilled
- * by their `id`. The form itself offers the email address for readers without GitHub.
- */
-function reportUrl(place: PlaceProps): string {
-  const name = place.name_ru ? `${place.name_ru} / ${place.name}` : place.name;
-  const q = new URLSearchParams({
-    template: "report-an-error.yml",
-    title: `Error: ${name} (${place.id})`,
-    page: `${name} (${place.id})`,
-  });
-  return `https://github.com/ArVaViT/history-globe/issues/new?${q.toString()}`;
-}
-
-/**
- * The text of the verse picked in the list, in the reader's language, with the chapter
- * on BibleGateway a click away.
- */
-function VerseText({
-  osis,
-  locale,
-  self,
-  placeName,
-  onGoTo,
-}: {
-  osis: string;
-  locale: Locale;
-  /** The card's own place and its other names on the same point: not linked. */
-  self: readonly string[];
-  placeName: (id: string) => string | undefined;
-  onGoTo: (placeId: string) => void;
-}) {
-  const { t } = useTranslation();
-  const [text, setText] = useState<string | null | undefined>(undefined);
-  // The verse with the other places it names as links; plain until the index is in, and
-  // for good if it does not load.
-  // Kept with the verse and language they were made for: after a switch of language the
-  // last one's links are not shown over the new text.
-  const [linked, setLinked] = useState<{ key: string; parts: readonly Segment[] } | null>(null);
-  const parts = linked?.key === `${osis}|${locale}` ? linked.parts : null;
-  // A new array each render: the effect follows the ids, not the array.
-  const selfKey = self.join(",");
-  useEffect(() => {
-    let live = true;
-    loadVerse(osis, locale).then(
-      (v) => {
-        if (!live) return;
-        setText(v ?? null);
-        if (v)
-          loadTextPlaces(locale).then(
-            (index) => {
-              if (live)
-                setLinked({
-                  key: `${osis}|${locale}`,
-                  parts: splitPlaces(v, index, selfKey.split(",")),
-                });
-            },
-            () => undefined,
-          );
-      },
-      () => {
-        if (live) setText(null);
-      },
-    );
-    return () => {
-      live = false;
-    };
-  }, [osis, locale, selfKey]);
-  // Under a long list of verses the text may open below the card's fold: bring it in.
-  const box = useRef<HTMLElement>(null);
-  useEffect(() => {
-    if (text !== undefined) box.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
-  }, [text]);
-  return (
-    <figure
-      ref={box}
-      id="verse-text"
-      aria-live="polite"
-      className="mx-5 mt-3 border-l-2 border-accent/60 pl-3"
-    >
-      {text === undefined ? (
-        <p className="text-[13px] text-ink-soft">…</p>
-      ) : (
-        text && (
-          <blockquote className="font-serif text-[15px] leading-snug text-ink">
-            {parts && parts.some((p) => p.place)
-              ? parts.map((p, i) =>
-                  // A namesake of the card's place (Babylon meaning Rome) is not linked.
-                  p.place && placeName(p.place) !== placeName(self[0] ?? "") ? (
-                    <button
-                      key={i}
-                      onClick={() => {
-                        if (p.place) onGoTo(p.place);
-                      }}
-                      title={t("place.go_to", { name: placeName(p.place) ?? p.text })}
-                      className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
-                    >
-                      {p.text}
-                    </button>
-                  ) : (
-                    <span key={i}>{p.text}</span>
-                  ),
-                )
-              : text}
-          </blockquote>
-        )
-      )}
-      <figcaption className="mt-1 flex flex-wrap items-baseline gap-x-2 text-[12px] text-ink-soft">
-        <span>
-          {formatRefOr(osis, locale)} ·{" "}
-          {t(
-            locale === "ru"
-              ? "place.verse_synodal"
-              : locale === "en"
-                ? "place.verse_kjv"
-                : "place.verse_own",
-          )}
-        </span>
-        <a
-          href={verseUrl(osis, locale)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline decoration-dotted underline-offset-2 hover:text-ink"
-        >
-          {t("place.verse_open")}
-          <span className="sr-only"> ({t("new_tab")})</span>
-        </a>
-      </figcaption>
-    </figure>
   );
 }
 
@@ -1246,191 +880,4 @@ function byBook(
     else groups.push({ book, refs: [{ osis: o, cv }] });
   }
   return groups;
-}
-
-type RulerData = {
-  readonly states: readonly {
-    readonly n: string;
-    readonly c: number;
-    readonly names: Readonly<Record<string, string>>;
-  }[];
-  readonly places: Readonly<Record<string, readonly (readonly [number, number, number])[]>>;
-};
-let rulerData: Promise<RulerData | null> | null = null;
-/** Who ruled each place, century by century (scripts/build-polities.ts): loaded once, on demand. */
-function loadRulers() {
-  rulerData ??= fetch(`${DATA_URL}/rulers.json`)
-    .then((r) => (r.ok ? (r.json() as Promise<RulerData>) : null))
-    .catch(() => {
-      rulerData = null;
-      return null;
-    });
-  return rulerData;
-}
-
-/**
- * Who ruled here, as one thin band of the map's state colours from the first state to the
- * last: a segment named on hover or focus, and a click on it takes the map to that year.
- */
-function Rulers({
-  placeId,
-  year,
-  locale,
-  onYear,
-}: {
-  placeId: string;
-  year: number;
-  locale: Locale;
-  onYear?: ((year: number) => void) | undefined;
-}) {
-  const { t } = useTranslation();
-  const [data, setData] = useState<RulerData | null>(null);
-  const [shown, setShown] = useState<number | null>(null);
-  const band = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    let live = true;
-    void loadRulers().then((d) => {
-      if (live) setData(d);
-    });
-    return () => {
-      live = false;
-    };
-  }, []);
-  const runs = data?.places[placeId];
-  if (!data || !runs || runs.length < 2) return null;
-  const from = runs[0]?.[0] ?? 0;
-  const to = runs.at(-1)?.[1] ?? 0;
-  const nameOfRun = (k: number) => {
-    const [a, b, i] = runs[k] ?? [0, 0, 0];
-    const st = data.states[i];
-    return `${st?.names[locale] ?? st?.n ?? ""}, ${formatYearRange(a, b - 1, locale)}`;
-  };
-  const now = runs.findIndex(([a, b]) => a <= year && year < b);
-  // The state of the year shown is named on the line above; this one names what the
-  // reader points at, and otherwise the span.
-  const line = shown;
-  const focusAt = shown ?? (now >= 0 ? now : 0);
-  // Gaps (no state on the map there) stay empty, so the band keeps its time scale.
-  const cells: { k: number | null; span: number }[] = [];
-  runs.forEach(([a, b], k) => {
-    const prev = k > 0 ? (runs[k - 1]?.[1] ?? a) : a;
-    if (a > prev) cells.push({ k: null, span: a - prev });
-    cells.push({ k, span: b - a });
-  });
-  return (
-    <div className="px-5 pt-2">
-      {/* One stop for the Tab key, the arrows from state to state (a toolbar's roving focus):
-          a band of thirty states is not thirty stops. */}
-      <div
-        ref={band}
-        role="toolbar"
-        aria-label={t("place.rulers", { span: formatYearRange(from, to - 1, locale) })}
-        className="flex h-2.5 w-full overflow-hidden rounded-full bg-ink/5"
-        onMouseLeave={() => {
-          setShown(null);
-        }}
-        onKeyDown={(e) => {
-          const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
-          const jump = { Home: 0, End: runs.length - 1 }[e.key];
-          if (step === undefined && jump === undefined) return;
-          e.preventDefault();
-          const next = jump ?? Math.min(runs.length - 1, Math.max(0, focusAt + (step ?? 0)));
-          band.current?.querySelector<HTMLButtonElement>(`[data-run="${String(next)}"]`)?.focus();
-        }}
-      >
-        {cells.map(({ k, span }, n) =>
-          k === null ? (
-            <span key={n} style={{ flexGrow: span }} />
-          ) : (
-            <button
-              key={n}
-              type="button"
-              data-run={k}
-              tabIndex={k === focusAt ? 0 : -1}
-              aria-label={nameOfRun(k)}
-              title={nameOfRun(k)}
-              style={{
-                flexGrow: span,
-                background:
-                  POLITY_COLORS[(data.states[runs[k]?.[2] ?? 0]?.c ?? 0) % POLITY_COLORS.length],
-              }}
-              className={`min-w-px border-r border-paper/60 last:border-r-0 focus-visible:outline-2 ${
-                k === now ? "opacity-100" : "opacity-55 hover:opacity-100"
-              }`}
-              onMouseEnter={() => {
-                setShown(k);
-              }}
-              onFocus={() => {
-                setShown(k);
-              }}
-              onBlur={() => {
-                setShown(null);
-              }}
-              onClick={() => {
-                onYear?.(runs[k]?.[0] ?? year);
-              }}
-            />
-          ),
-        )}
-      </div>
-      <div className="mt-1 text-[11.5px] leading-snug text-ink-soft">
-        {line !== null
-          ? nameOfRun(line)
-          : t("place.rulers", { span: formatYearRange(from, to - 1, locale) })}
-      </div>
-    </div>
-  );
-}
-
-let ancient: Promise<Readonly<Record<string, readonly AncientMention[]>>> | null = null;
-/** What ancient authors say of places (content/ancient-authors.yaml): loaded once, on demand. */
-function loadAncient() {
-  ancient ??= fetch(`${DATA_URL}/ancient-authors.json`)
-    .then((r) => (r.ok ? (r.json() as Promise<Record<string, AncientMention[]>>) : {}))
-    .catch(() => {
-      ancient = null;
-      return {};
-    });
-  return ancient;
-}
-
-/**
- * The place in ancient writers outside the Bible, in the manner of ToposText: who, where in
- * the work, a free text of the passage, and what it says in our words.
- */
-function AncientAuthors({ placeId, locale }: { placeId: string; locale: Locale }) {
-  const { t } = useTranslation();
-  const [mentions, setMentions] = useState<readonly AncientMention[]>([]);
-  useEffect(() => {
-    let live = true;
-    void loadAncient().then((all) => {
-      if (live) setMentions(all[placeId] ?? []);
-    });
-    return () => {
-      live = false;
-    };
-  }, [placeId]);
-  if (mentions.length === 0) return null;
-  return (
-    <div className="px-5 pt-3 text-[13px] leading-snug">
-      <h3 className="text-[12px] text-ink-soft">{t("place.ancient_authors")}</h3>
-      <ul className="mt-1 flex flex-col gap-1.5">
-        {mentions.map((m) => (
-          <li key={`${m.author.en} ${m.work.en} ${m.passage}`}>
-            <a
-              href={m.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
-            >
-              {pick(m.author, locale) ?? ""}, <i>{pick(m.work, locale) ?? ""}</i>{" "}
-              {m.passage.replace(/-/g, "–")}
-              <span className="sr-only"> ({t("new_tab")})</span>
-            </a>
-            <span className="text-ink"> — {pick(m.note, locale) ?? ""}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
 }

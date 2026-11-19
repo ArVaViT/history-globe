@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { LOCALES, type SiteLocale } from "./time.ts";
+import { LOCALES, type SiteLocale } from "./locales.ts";
 
 /**
  * Reviews by scholars (content/reviews/*.yaml, docs/reviews/README.md): one file a review,
@@ -35,18 +35,9 @@ export type ReviewKind = (typeof REVIEW_KINDS)[number];
  * A calendar date of our own time, YYYY-MM-DD, that exists (not 2026-02-30). Compared as
  * text: the form sorts as the dates do. Not a historical year (ADR 0003 is about those).
  */
-const day = z
-  .string()
-  .regex(/^20\d{2}-\d{2}-\d{2}$/, { message: "a date as YYYY-MM-DD" })
-  .refine(
-    (s) => {
-      const [y = 0, m = 0, d = 0] = s.split("-").map(Number);
-      const leap = y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0);
-      const days = [31, leap ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][m - 1] ?? 0;
-      return d >= 1 && d <= days;
-    },
-    { message: "not a calendar date" },
-  );
+const day = z.iso.date().regex(/^20/, { message: "a date of our own time" });
+/** A git commit by its hash, short or full. */
+const commitSha = z.string().regex(/^[0-9a-f]{7,40}$/, { message: "a commit hash" });
 
 /** The short hash of an item's English text (scripts/content-hash.ts): 12 hex digits. */
 const itemHash = z.string().regex(/^[0-9a-f]{12}$/, { message: "a 12-digit hex hash" });
@@ -64,31 +55,12 @@ export function isOrcid(s: string): boolean {
 }
 
 /** Our own words: English always, the other languages as they are translated. */
-const opt = z.string().min(1).optional();
 const ours = z
-  .strictObject({
-    en: z.string().min(1),
-    ru: opt,
-    uk: opt,
-    es: opt,
-    pt: opt,
-    de: opt,
-    fr: opt,
-    it: opt,
-    nl: opt,
-    pl: opt,
-    cs: opt,
-    sv: opt,
-    nb: opt,
-    da: opt,
-    tl: opt,
-    sr: opt,
-    hu: opt,
-    fi: opt,
-    vi: opt,
-    ro: opt,
-    bg: opt,
-  })
+  .strictObject(
+    Object.fromEntries(
+      LOCALES.map((l) => [l, l === "en" ? z.string().min(1) : z.string().min(1).optional()]),
+    ),
+  )
   .transform(
     (o) =>
       Object.fromEntries(Object.entries(o).filter(([, v]) => v !== undefined)) as {
@@ -140,7 +112,7 @@ export const ReviewFile = z
     /** The date of the reviewer's report. */
     date: day,
     /** The version they read: its date and the commit of the repository. */
-    version: z.strictObject({ date: day, commit: z.string().regex(/^[0-9a-f]{7,40}$/) }),
+    version: z.strictObject({ date: day, commit: commitSha }),
     items: z.array(item).min(1),
     scope: z.strictObject({
       checked: z.array(z.enum(REVIEW_SCOPES)).min(1),
@@ -169,10 +141,7 @@ export const ReviewFile = z
           action: z.enum(["fixed", "partly", "declined", "open"]),
           detail: ours,
           /** The commit that made the correction. */
-          commit: z
-            .string()
-            .regex(/^[0-9a-f]{7,40}$/)
-            .optional(),
+          commit: commitSha.optional(),
         }),
       )
       .optional(),

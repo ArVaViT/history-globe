@@ -15,8 +15,8 @@ of the places table is refreshed from the build (2026-10-24, see below).
   (`content/tipnr.json`; [`their-errors.md`](crosswalk/their-errors.md), O5).
 - [`crosswalk/people.csv`](crosswalk/people.csv): the people of `api/v1/people.json` (TIPNR
   ids) with the matching Theographic person, by name and first verse.
-- [`crosswalk/their-errors.md`](crosswalk/their-errors.md): errors found in Theographic,
-  OpenBible, Pleiades and Wikidata while matching, each with its record and evidence, and the
+- [`crosswalk/their-errors.md`](crosswalk/their-errors.md): where we differ from Theographic,
+  OpenBible, Pleiades and Wikidata, found while matching, each with its record and evidence, and the
   places where we were wrong (fixed here) or may be.
 
 Refresh: `node scripts/crosswalk-places.ts` after `pnpm content` rewrites our columns of

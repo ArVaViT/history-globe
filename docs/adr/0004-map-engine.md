@@ -1,6 +1,6 @@
 # 0004. Map engine
 
-- Status: accepted
+- Status: accepted; upgrades, degraded modes and style validation superseded by 0020
 - Date: 2026-09-28
 
 ## Context

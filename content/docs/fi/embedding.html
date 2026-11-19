@@ -8,7 +8,7 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
   kartan sivusi raamatunkohdan vieressä; muutama viesti pitää ne tahdissa keskenään.
 </p>
 
-<h2>Pikaopas</h2>
+<h2 id="quick-start">Pikaopas</h2>
 <pre><code>&lt;iframe
   src="{{site}}/embed/v1?ref=Acts.16&amp;locale=fi"
   title="Kartta: Apt 16"
@@ -33,7 +33,7 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
   <li>Kehys toimii puhelimen leveyteen asti; 480 px:n korkeus riittää.</li>
 </ul>
 
-<h2>Luku tai raamatunkohta</h2>
+<h2 id="a-chapter-or-a-passage">Luku tai raamatunkohta</h2>
 <p>
   <code>ref</code> ottaa OSIS-viittauksen, jossa käytetään englanninkielisiä kirjojen lyhenteitä ja
   englanninkielistä jakeiden numerointia:
@@ -73,7 +73,7 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
   pysyy nykyisessä vuodessaan.
 </p>
 
-<h2>Parametrit</h2>
+<h2 id="parameters">Parametrit</h2>
 <div class="table">
   <table>
     <thead>
@@ -181,7 +181,7 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
   toimivat osoitteen <code>/embed/v1</code> perässä.
 </p>
 
-<h2>Viestit</h2>
+<h2 id="messages">Viestit</h2>
 <p>
   Maapallo ja sivusi viestivät <code>postMessage</code>-rajapinnan kautta. Jokainen viesti on
   objekti, jossa on <code>type</code> ja <code>v: 1</code>. Maapallo lähettää vain sen, mitä
@@ -189,7 +189,7 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
   emosivulle riippumatta sen alkuperästä (kohde <code>"*"</code>); se hyväksyy viestejä vain
   sivulta, jolla kehys on.
 </p>
-<h3>Maapallolta</h3>
+<h3 id="from-the-globe">Maapallolta</h3>
 <div class="table">
   <table>
     <thead>
@@ -231,7 +231,10 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
       <tr>
         <td><code>hg:error</code></td>
         <td><code>{ code, message }</code></td>
-        <td>karttaa tai sen dataa ei voitu ladata</td>
+        <td>
+          karttaa tai sen dataa ei voitu ladata: <code>code</code> on <code>"map"</code> tai
+          <code>"data"</code>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -240,9 +243,12 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
   <code>view</code> sisältää kentät <code>year</code>, <code>locale</code> ja
   <code>layers</code> ja, kun ne on asetettu, <code>place</code>, <code>tour</code>,
   <code>stop</code>, <code>ref</code> ja <code>camera</code>. <code>view</code>, jossa ei ole
-  kenttää <code>place</code>, tarkoittaa, että mitään paikkaa ei ole valittu.
+  kenttää <code>place</code>, tarkoittaa, että mitään paikkaa ei ole valittu. <code>camera</code> on
+  objekti, <code>{ center: [35.2, 31.8], zoom: 7, pitch: 30, bearing: 0 }</code>, ei osoitteen
+  merkkijono; <code>layers</code> antaa jokaiselle tasolle arvon <code>true</code> tai
+  <code>false</code>: <code>{ relief: false, battles: false }</code>.
 </p>
-<h3>Maapallolle</h3>
+<h3 id="to-the-globe">Maapallolle</h3>
 <div class="table">
   <table>
     <thead>
@@ -297,11 +303,11 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
   tai, jos sitä ei ole, Wikidata-kohde (Konstantinopoli on <code>Q16869</code>). Molempia lajeja voi
   tulla kenttään <code>view.place</code> ja viestiin <code>hg:place-clicked</code>, ja molemmat
   hyväksytään viestissä <code>hg:set-view</code>; jos datassasi on vain OpenBiblen paikkoja, testaa
-  muoto, ennen kuin haet paikkaa. OpenBiblen {{openbible}} paikasta {{absent}} ei ole kartalla
-  (niillä ei ole pistettä, jonka saa julkaista); niiden tunnisteet ohitetaan.
+  muoto, ennen kuin haet paikkaa. OpenBiblen {{openbible}} paikasta {{absent}} ei ole kartalla (ne
+  on jätetty pois, tai niillä ei ole pistettä lainkaan); niiden tunnisteet ohitetaan.
 </p>
 
-<h2>Esimerkki: kartta seuraa lukijaasi</h2>
+<h2 id="example-the-map-follows-your-reader">Esimerkki: kartta seuraa lukijaasi</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
 // Kun lukijasi avaa luvun, näytä se kartalla.
@@ -425,23 +431,24 @@ function closeBox() {
   yhteinen, jää tavalliseksi tekstiksi, samoin nimi, jota Raamatun omat jakeet käyttävät enimmäkseen
   jostakin muusta (”Kades” on niissä Kades-Barnea, ei tietokannan Kades). Paikan nimi, joka on myös
   etunimi (Jordan, Sharon), jätetään rauhaan toisen isolla alkukirjaimella kirjoitetun sanan
-  vieressä: Jordan Smith on henkilö, ei joki. Venäjässä, ukrainassa, puolassa ja tšekissä nimet
-  löydetään taivutetuissa muodoissaan (”в Египте”, ”w Jerozolimie”, ”v Jeruzalémě”), ja saksan nimet
-  myös genetiivissä (”Jerusalems”). Linkit, koodi, lomakekentät, painikkeet ja otsikot jätetään
-  rauhaan.
+  vieressä: Jordan Smith on henkilö, ei joki. Venäjässä, ukrainassa, puolassa, tšekissä, serbiassa,
+  unkarissa, suomessa ja romaniassa nimet löydetään taivutetuissa muodoissaan (”в Египте”, ”w
+  Jerozolimie”, ”v Jeruzalémě”), ja saksan, ruotsin, tanskan ja norjan nimet myös genetiivissä
+  (”Jerusalems”). Linkit, koodi, lomakekentät, painikkeet ja otsikot jätetään rauhaan.
 </p>
 <p class="note">
   Skriptillä ei ole riippuvuuksia, eikä se aseta evästeitä. Se lukee maapallolta yhden nimitiedoston
-  (verkon yli noin 20–35 kt kielestä riippuen sekä 7 kt skriptiä) lähettämättä sivusi osoitetta
-  viittaajana, ja muuttaa vain linkittämänsä nimet. Se toimii tiukan Content Security Policyn alla,
-  joka sallii maapallon osoitteen kohdissa <code>script-src</code> ja <code>connect-src</code>.
-  Tekstille, jonka sivusi lisää myöhemmin, kutsu <code>HistoryGlobePlaces.scan(element)</code>, kun
-  teksti on piirretty: skripti jakaa tekstisolmuja, joten React- tai Vue-sivulla aja se sisältöön,
-  jota sovelluskehys ei enää piirrä uudelleen.
+  (verkon yli noin {{names_kb_min}}–{{names_kb_max}} kt kielestä riippuen sekä {{script_kb}} kt
+  skriptiä) lähettämättä sivusi osoitetta viittaajana, ja muuttaa vain linkittämänsä nimet. Se
+  toimii tiukan Content Security Policyn alla, joka sallii maapallon osoitteen kohdissa
+  <code>script-src</code> ja <code>connect-src</code>. Tekstille, jonka sivusi lisää myöhemmin,
+  kutsu <code>HistoryGlobePlaces.scan(element)</code>, kun teksti on piirretty: skripti jakaa
+  tekstisolmuja, joten React- tai Vue-sivulla aja se sisältöön, jota sovelluskehys ei enää piirrä
+  uudelleen.
 </p>
 <script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
 
-<h2>Vakaus</h2>
+<h2 id="stability">Vakaus</h2>
 <p>
   <code>/embed/v1</code> on sopimus: v1:n sisällä parametreja ja viestejä vain lisätään, niitä ei
   koskaan muuteta eikä poisteta. Rikkova muutos julkaistaan osoitteessa <code>/embed/v2</code>, ja

@@ -8,7 +8,7 @@ description: Lägg globen på din egen webbplats med en enda rad – kartan öve
   ett kapitel bredvid bibelstället på din sida; några få meddelanden håller de två i takt.
 </p>
 
-<h2>Snabbstart</h2>
+<h2 id="quick-start">Snabbstart</h2>
 <pre><code>&lt;iframe
   src="{{site}}/embed/v1?ref=Acts.16&amp;locale=sv"
   title="Karta över Apg 16"
@@ -32,7 +32,7 @@ description: Lägg globen på din egen webbplats med en enda rad – kartan öve
   <li>Ramen fungerar ner till en telefons bredd; en höjd på 480 px räcker.</li>
 </ul>
 
-<h2>Ett kapitel eller ett avsnitt</h2>
+<h2 id="a-chapter-or-a-passage">Ett kapitel eller ett avsnitt</h2>
 <p>
   <code>ref</code> tar en OSIS-referens med engelska bokförkortningar och engelsk versnumrering:
 </p>
@@ -71,7 +71,7 @@ description: Lägg globen på din egen webbplats med en enda rad – kartan öve
   kartans nuvarande år.
 </p>
 
-<h2>Parametrar</h2>
+<h2 id="parameters">Parametrar</h2>
 <div class="table">
   <table>
     <thead>
@@ -177,14 +177,14 @@ description: Lägg globen på din egen webbplats med en enda rad – kartan öve
   adressen: samma parametrar fungerar efter <code>/embed/v1</code>.
 </p>
 
-<h2>Meddelanden</h2>
+<h2 id="messages">Meddelanden</h2>
 <p>
   Globen och din sida kommunicerar genom <code>postMessage</code>. Varje meddelande är ett objekt
   med <code>type</code> och <code>v: 1</code>. Globen skickar bara det som händer på kartan och
   aldrig något som identifierar läsaren, så den skickar till den överordnade sidan oavsett dess
   ursprung (mål <code>"*"</code>); den tar bara emot meddelanden från den sida som håller ramen.
 </p>
-<h3>Från globen</h3>
+<h3 id="from-the-globe">Från globen</h3>
 <div class="table">
   <table>
     <thead>
@@ -227,7 +227,10 @@ description: Lägg globen på din egen webbplats med en enda rad – kartan öve
       <tr>
         <td><code>hg:error</code></td>
         <td><code>{ code, message }</code></td>
-        <td>kartan eller dess data kunde inte läsas in</td>
+        <td>
+          kartan eller dess data kunde inte läsas in: <code>code</code> är <code>"map"</code> eller
+          <code>"data"</code>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -236,8 +239,12 @@ description: Lägg globen på din egen webbplats med en enda rad – kartan öve
   <code>view</code> innehåller <code>year</code>, <code>locale</code> och <code>layers</code> och,
   när de är satta, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> och
   <code>camera</code>. En <code>view</code> utan <code>place</code> betyder att ingen plats är vald.
+  <code>camera</code> är ett objekt,
+  <code>{ center: [35.2, 31.8], zoom: 7, pitch: 30, bearing: 0 }</code>, inte strängen i adressen;
+  <code>layers</code> ger varje lager <code>true</code> eller <code>false</code>:
+  <code>{ relief: false, battles: false }</code>.
 </p>
-<h3>Till globen</h3>
+<h3 id="to-the-globe">Till globen</h3>
 <div class="table">
   <table>
     <thead>
@@ -292,11 +299,11 @@ description: Lägg globen på din egen webbplats med en enda rad – kartan öve
   saknar ett, sitt Wikidata-objekt (Konstantinopel är <code>Q16869</code>). Båda slagen kan
   förekomma i <code>view.place</code> och <code>hg:place-clicked</code>, och båda godtas av
   <code>hg:set-view</code>; om dina data bara har OpenBibles platser, testa formen innan du slår upp
-  någon. Av OpenBibles {{openbible}} platser finns {{absent}} inte på kartan (de har ingen punkt som
-  får publiceras); deras id:n ignoreras.
+  någon. Av OpenBibles {{openbible}} platser finns {{absent}} inte på kartan (utelämnade, eller helt
+  utan punkt); deras id:n ignoreras.
 </p>
 
-<h2>Exempel: kartan följer din läsare</h2>
+<h2 id="example-the-map-follows-your-reader">Exempel: kartan följer din läsare</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
 // Läsaren öppnar ett kapitel – visa det på kartan.
@@ -423,22 +430,24 @@ function closeBox() {
   vanlig text, och det gäller också ett namn som Bibelns egna verser mestadels använder för något
   annat (”Kadesh” där är Kadesh-Barnea, inte det Kadesh som finns i databasen). Ett platsnamn som
   också är ett förnamn (Jordan, Sharon) lämnas ifred bredvid ett annat ord med stor bokstav: Jordan
-  Smith är en person, inte floden. På ryska, ukrainska, polska och tjeckiska hittas namnen i sina
-  böjda former (”в Египте”, ”w Jerozolimie”, ”v Jeruzalémě”), och tyska namn också i genitiv
-  (”Jerusalems”). Länkar, kod, formulärfält, knappar och rubriker lämnas ifred.
+  Smith är en person, inte floden. På ryska, ukrainska, polska, tjeckiska, serbiska, ungerska,
+  finska och rumänska hittas namnen i sina böjda former (”в Египте”, ”w Jerozolimie”, ”v
+  Jeruzalémě”), och tyska, svenska, danska och norska namn också i genitiv (”Jerusalems”). Länkar,
+  kod, formulärfält, knappar och rubriker lämnas ifred.
 </p>
 <p class="note">
   Skriptet har inga beroenden och sätter inga kakor. Det läser en enda fil med namn från globen
-  (ungefär 20 till 35 KB över nätverket beroende på språk, plus 7 KB skript), utan din sidas adress
-  som referent, och ändrar bara de namn det länkar. Det fungerar under en strikt Content Security
-  Policy som tillåter globens adress i <code>script-src</code> och <code>connect-src</code>. För
-  text som din sida lägger till senare, anropa <code>HistoryGlobePlaces.scan(element)</code> när
-  texten har renderats: skriptet delar upp textnoder, så på en React- eller Vue-sida ska du köra det
-  på innehåll som ramverket inte längre renderar om.
+  (ungefär {{names_kb_min}} till {{names_kb_max}} KB över nätverket beroende på språk, plus
+  {{script_kb}} KB skript), utan din sidas adress som referent, och ändrar bara de namn det länkar.
+  Det fungerar under en strikt Content Security Policy som tillåter globens adress i
+  <code>script-src</code> och <code>connect-src</code>. För text som din sida lägger till senare,
+  anropa <code>HistoryGlobePlaces.scan(element)</code> när texten har renderats: skriptet delar upp
+  textnoder, så på en React- eller Vue-sida ska du köra det på innehåll som ramverket inte längre
+  renderar om.
 </p>
 <script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
 
-<h2>Stabilitet</h2>
+<h2 id="stability">Stabilitet</h2>
 <p>
   <code>/embed/v1</code> är ett kontrakt: inom v1 läggs parametrar och meddelanden bara till, aldrig
   ändras eller tas bort. En brytande ändring levereras som <code>/embed/v2</code>, och v1 fortsätter

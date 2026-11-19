@@ -1,5 +1,11 @@
-import { type ArticleFile, isLocale, type ItemReview, type WithSourcesRu } from "@hg/model";
-import { DATA_URL } from "./data";
+import {
+  type ArticleFile,
+  isLocale,
+  type ItemReview,
+  type QuestionTitles,
+  type WithSourcesRu,
+} from "@hg/model";
+import { cachedJson } from "./data";
 
 /**
  * An article as data/articles/<language>.json holds it (content/articles, ADR 0007): its
@@ -11,8 +17,6 @@ export type Article = ArticleFile &
     readonly reviews?: readonly ItemReview[];
   };
 
-const loaded = new Map<string, Promise<Readonly<Record<string, Article>>>>();
-
 /**
  * The article about a place in the reader's language (English for a language the site is
  * not published in). The texts of a language load once, on the first card that has one:
@@ -20,17 +24,23 @@ const loaded = new Map<string, Promise<Readonly<Record<string, Article>>>>();
  */
 export function loadArticle(placeId: string, locale: string): Promise<Article | undefined> {
   const l = isLocale(locale) ? locale : "en";
-  let all = loaded.get(l);
-  if (!all) {
-    all = fetch(`${DATA_URL}/articles/${l}.json`).then((r) => {
-      if (!r.ok) throw new Error(`articles/${l}.json: ${String(r.status)}`);
-      return r.json() as Promise<Readonly<Record<string, Article>>>;
-    });
-    loaded.set(l, all);
-    // A failed load is tried again on the next card, not remembered.
-    all.catch(() => {
-      loaded.delete(l);
-    });
-  }
-  return all.then((a) => a[placeId]);
+  return cachedJson<Readonly<Record<string, Article>>>(`articles/${l}.json`).then(
+    (all) => all[placeId],
+  );
+}
+
+/** A question answered with a place on the map, in the reader's language or in English. */
+export type PlaceQuestion = QuestionTitles["questions"][string][number];
+
+/**
+ * The questions answered with a place on the map, from data/articles/questions/<language>.json
+ * (under the articles' licence, ADR 0016); none when the file cannot be read: the card
+ * stands without them.
+ */
+export function loadQuestions(placeId: string, locale: string): Promise<readonly PlaceQuestion[]> {
+  const l = isLocale(locale) ? locale : "en";
+  return cachedJson<QuestionTitles>(`articles/questions/${l}.json`).then(
+    (all) => all.questions[placeId] ?? [],
+    (): readonly PlaceQuestion[] => [],
+  );
 }

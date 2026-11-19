@@ -8,7 +8,7 @@ description: Tegye fel a földgömböt a saját oldalára egyetlen sorral — eg
   térképét az Ön oldalán az igeszakasz mellett; néhány üzenet pedig szinkronban tartja a kettőt.
 </p>
 
-<h2>Gyors kezdés</h2>
+<h2 id="quick-start">Gyors kezdés</h2>
 <pre><code>&lt;iframe
   src="{{site}}/embed/v1?ref=Acts.16&amp;locale=hu"
   title="Az ApCsel 16. fejezetének térképe"
@@ -33,7 +33,7 @@ description: Tegye fel a földgömböt a saját oldalára egyetlen sorral — eg
   <li>A keret telefon szélességéig működik; a 480 px magasság elegendő.</li>
 </ul>
 
-<h2>Egy fejezet vagy egy igeszakasz</h2>
+<h2 id="a-chapter-or-a-passage">Egy fejezet vagy egy igeszakasz</h2>
 <p>A <code>ref</code> OSIS-hivatkozást fogad angol könyvrövidítésekkel és angol versszámozással:</p>
 <div class="table">
   <table>
@@ -70,7 +70,7 @@ description: Tegye fel a földgömböt a saját oldalára egyetlen sorral — eg
   megtartja.
 </p>
 
-<h2>Paraméterek</h2>
+<h2 id="parameters">Paraméterek</h2>
 <div class="table">
   <table>
     <thead>
@@ -178,7 +178,7 @@ description: Tegye fel a földgömböt a saját oldalára egyetlen sorral — eg
   URL-t: ugyanezek a paraméterek működnek az <code>/embed/v1</code> után is.
 </p>
 
-<h2>Üzenetek</h2>
+<h2 id="messages">Üzenetek</h2>
 <p>
   A földgömb és az Ön oldala a <code>postMessage</code>-en keresztül kommunikál. Minden üzenet egy
   <code>type</code> és <code>v: 1</code> mezőt tartalmazó objektum. A földgömb csak azt küldi, ami a
@@ -186,7 +186,7 @@ description: Tegye fel a földgömböt a saját oldalára egyetlen sorral — eg
   küldi, bármi legyen is annak származása (cél: <code>"*"</code>); üzeneteket csak attól az oldaltól
   fogad el, amelyik a keretet tartalmazza.
 </p>
-<h3>A földgömbtől</h3>
+<h3 id="from-the-globe">A földgömbtől</h3>
 <div class="table">
   <table>
     <thead>
@@ -229,7 +229,10 @@ description: Tegye fel a földgömböt a saját oldalára egyetlen sorral — eg
       <tr>
         <td><code>hg:error</code></td>
         <td><code>{ code, message }</code></td>
-        <td>a térkép vagy az adatai nem tudtak betöltődni</td>
+        <td>
+          a térkép vagy az adatai nem tudtak betöltődni: a <code>code</code> értéke
+          <code>"map"</code> vagy <code>"data"</code>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -238,9 +241,12 @@ description: Tegye fel a földgömböt a saját oldalára egyetlen sorral — eg
   A <code>view</code> tartalmazza a <code>year</code>, <code>locale</code> és
   <code>layers</code> mezőt, és ha be van állítva, a <code>place</code>, <code>tour</code>,
   <code>stop</code>, <code>ref</code> és <code>camera</code> mezőt. A <code>place</code> nélküli
-  <code>view</code> azt jelenti, hogy nincs hely kijelölve.
+  <code>view</code> azt jelenti, hogy nincs hely kijelölve. A <code>camera</code> objektum,
+  <code>{ center: [35.2, 31.8], zoom: 7, pitch: 30, bearing: 0 }</code>, nem a cím karakterlánca; a
+  <code>layers</code> minden réteghez <code>true</code> vagy <code>false</code> értéket ad:
+  <code>{ relief: false, battles: false }</code>.
 </p>
-<h3>A földgömbhöz</h3>
+<h3 id="to-the-globe">A földgömbhöz</h3>
 <div class="table">
   <table>
     <thead>
@@ -295,11 +301,11 @@ description: Tegye fel a földgömböt a saját oldalára egyetlen sorral — eg
   <code>Q16869</code>). Mindkét fajta megjelenhet a <code>view.place</code> mezőben és a
   <code>hg:place-clicked</code> üzenetben, és a <code>hg:set-view</code> mindkettőt elfogadja; ha az
   Ön adataiban csak OpenBible-helyek vannak, ellenőrizze az azonosító alakját, mielőtt kikeresné. Az
-  OpenBible {{openbible}} helye közül {{absent}} nincs a térképen (nincs olyan pontjuk, amely
-  közzétehető); az azonosítóikat figyelmen kívül hagyja.
+  OpenBible {{openbible}} helye közül {{absent}} nincs a térképen (kihagytuk őket, vagy egyáltalán
+  nincs pontjuk); az azonosítóikat figyelmen kívül hagyja.
 </p>
 
-<h2>Példa: a térkép követi az olvasót</h2>
+<h2 id="example-the-map-follows-your-reader">Példa: a térkép követi az olvasót</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
 // When your reader opens a chapter, show it on the map.
@@ -427,16 +433,17 @@ function closeBox() {
   közönséges szó oszt meg, sima szöveg marad, ahogyan az a név is, amelyet a Biblia saját versei
   többnyire másra használnak („Kádes” ott Kádes-Barnea, nem az adatbázis Kádese). Egy hely neve,
   amely egyben keresztnév is (Jordán, Sáron), békén marad egy másik nagybetűs szó mellett: Jordán
-  Smith személy, nem a folyó. Oroszul, ukránul, lengyelül és csehül a neveket ragozott alakjukban is
-  megtalálja („в Египте”, „w Jerozolimie”, „v Jeruzalémě”), a német neveket pedig birtokos esetben
-  is („Jerusalems”). A hivatkozásokat, a kódot, az űrlapmezőket, a gombokat és a címsorokat nem
-  érinti.
+  Smith személy, nem a folyó. Oroszul, ukránul, lengyelül, csehül, szerbül, magyarul, finnül és
+  románul a neveket ragozott alakjukban is megtalálja („в Египте”, „w Jerozolimie”, „v Jeruzalémě”),
+  a német, svéd, dán és norvég neveket pedig birtokos esetben is („Jerusalems”). A hivatkozásokat, a
+  kódot, az űrlapmezőket, a gombokat és a címsorokat nem érinti.
 </p>
 <p class="note">
   A szkriptnek nincsenek függőségei, és nem állít be sütiket. A földgömbtől egy névfájlt olvas be (a
-  hálózaton nyelvtől függően körülbelül 20–35 KB, plusz 7 KB szkript), az Ön oldalának címét
-  hivatkozóként nem adja át, és csak azokat a neveket módosítja, amelyeket összekapcsol. Szigorú
-  tartalombiztonsági szabályzat (Content Security Policy) mellett is működik, amely a
+  hálózaton nyelvtől függően körülbelül {{names_kb_min}}–{{names_kb_max}} KB, plusz {{script_kb}} KB
+  szkript), az Ön oldalának címét hivatkozóként nem adja át, és csak azokat a neveket módosítja,
+  amelyeket összekapcsol. Szigorú tartalombiztonsági szabályzat (Content Security Policy) mellett is
+  működik, amely a
   <code>script-src</code> és a <code>connect-src</code> irányelvben engedélyezi a földgömb címét. Az
   Ön oldala által később hozzáadott szöveghez hívja meg egyszer a
   <code>HistoryGlobePlaces.scan(element)</code> függvényt, miután a szöveg megjelent: a szkript
@@ -445,7 +452,7 @@ function closeBox() {
 </p>
 <script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
 
-<h2>Stabilitás</h2>
+<h2 id="stability">Stabilitás</h2>
 <p>
   Az <code>/embed/v1</code> szerződés: a v1-en belül a paraméterek és az üzenetek csak bővülnek,
   soha nem változnak és nem szűnnek meg. A visszafelé nem kompatibilis változás

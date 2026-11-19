@@ -1,10 +1,12 @@
+import { SITE_HOST } from "./site";
+
 /**
  * Whether this page counts as a visit: the site itself in a production build, opened in a
  * tab of its own. Not development, a preview or another host, and not inside a frame: a
  * page that embeds the globe (a host's reader) counts its own visitors, not ours.
  */
 export function countsAsVisit(prod: boolean, hostname: string, framed: boolean): boolean {
-  return prod && hostname === "historyglobe.app" && !framed;
+  return prod && hostname === SITE_HOST && !framed;
 }
 
 /**

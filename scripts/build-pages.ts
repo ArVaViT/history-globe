@@ -1,6 +1,6 @@
 /**
- * Writes a plain HTML page for every place with verses and for every tour, in Russian and
- * English (apps/web/public/{ru,en}/…), with an index of each, so search engines and link
+ * Writes a plain HTML page for every place with verses and for every tour, in every language
+ * of the site (apps/web/public/<lang>/…), with an index of each, so search engines and link
  * previews find what the map holds: «где находился Вифсаида» lands on Bethsaida's page,
  * and its "Open on the map" button opens the globe there. The pages carry the place's
  * names, where it is today, its dates and events, its article, its verses (with their
@@ -26,23 +26,23 @@ import {
   NT_BOOKS,
 } from "../packages/model/src/scripture.ts";
 import { sourcesOf } from "../packages/model/src/citation.ts";
+import { verseUrl } from "../packages/model/src/bible-gateway.ts";
 import { rebuiltIn } from "../packages/model/src/place-life-links.ts";
-import {
-  formatYear,
-  type Locale,
-  LOCALE_NAMES,
-  LOCALES,
-  type SiteLocale,
-} from "../packages/model/src/time.ts";
-import { bodyEnd, esc, headMeta } from "./page-shell.ts";
+import { formatYear } from "../packages/model/src/time.ts";
+import { isLocale, LOCALE_NAMES, LOCALES, type SiteLocale } from "../packages/model/src/locales.ts";
+import { bodyEnd, esc, headMeta, sansPreload } from "./page-shell.ts";
 import { NOTICE_COMMENT } from "../packages/model/src/notice.ts";
-import { commonsPage, DOC_PAGES, docsPath, licenceUrl } from "../packages/model/src/site.ts";
+import { TYPESET } from "./typeset.ts";
+import { clientScript } from "./client-script.ts";
+import { SITE_ORIGIN } from "../packages/model/src/site.ts";
+import { DOC_PAGES, docsPath } from "../packages/model/src/docs.ts";
+import { commonsPage, licenceUrl } from "../packages/model/src/photos.ts";
 import { LANDING, LISTS, T } from "./page-words.ts";
 import { siteCertainty } from "../packages/model/src/sites.ts";
 import { loadAllLocaleData } from "../packages/model/src/locale-data.ts";
 import { placeSlugs } from "../packages/model/src/slugs.ts";
-import { distanceKm, roundKm } from "../apps/web/src/distance.ts";
-import { splitPlaces, textPlacesFrom, type TextPlaces } from "../apps/web/src/text-places-core.ts";
+import { distanceKm, roundKm } from "../packages/model/src/distance.ts";
+import { splitPlaces, textPlacesFrom, type TextPlaces } from "../packages/model/src/text-places.ts";
 import {
   type ItemReview,
   type ReviewKind,
@@ -50,6 +50,7 @@ import {
   translationsRead,
 } from "../packages/model/src/reviews.ts";
 import { itemReviewLd, reviewPages, statusLine } from "./review-pages.ts";
+import { REVIEW_WORDS } from "./review-words.ts";
 
 // Every language is written here, so every language's words are loaded first.
 await loadAllLocaleData();
@@ -72,13 +73,6 @@ const site = process.env.SITE_URL?.replace(/\/+$/, "") ?? "";
 
 type Lang = SiteLocale;
 const LANGS: readonly Lang[] = LOCALES;
-/** The languages written in Cyrillic, which preload that font (build-docs.ts the same). */
-const CYRILLIC: ReadonlySet<Locale> = new Set(["ru", "uk", "sr", "bg"]);
-/** The sans file a language preloads: Golos Text's, or Onest's for Vietnamese (docs.css). */
-const sansPreload = (l: Locale) =>
-  l === "vi"
-    ? "onest-latin-wght-normal.woff2"
-    : `golos-text-${CYRILLIC.has(l) ? "cyrillic" : "latin"}-wght-normal.woff2`;
 
 interface Props {
   id: string;
@@ -103,8 +97,6 @@ interface Article {
   sources: string[];
   sources_ru?: string[];
   sources_in?: Partial<Record<Lang, string[]>>;
-  status: string;
-  reviewer?: string;
 }
 
 /**
@@ -172,8 +164,6 @@ const questions = (
   sources: string[];
   sources_ru?: string[];
   sources_in?: Partial<Record<Lang, string[]>>;
-  status: "checked" | "reviewed";
-  reviewer?: string;
 }[];
 const articles = existsSync(join(build, "articles.json"))
   ? (inEveryLanguage(JSON.parse(readFileSync(join(build, "articles.json"), "utf8"))) as Record<
@@ -265,13 +255,19 @@ const sameAs = (id: string): string[] => [
     : []),
 ];
 const nameOf = (p: Props, l: Lang) => (l === "en" ? p.name : (content.names[p.id]?.[l] ?? p.name));
-/** "Where it is today" in the page's language, the English where it has none. */
-const whereOf = (id: string, english: string, l: Lang) =>
-  l === "en"
-    ? english
-    : l === "ru"
-      ? content.where_ru?.[id]
-      : (content.where_in?.[l]?.[id] ?? english);
+/**
+ * Places whose today line has no words in a page's language ("ru a8e4a15"): the build stops
+ * on them below, since the English line on a German page read "Heute in the region east of
+ * Gibeon". The words come from build-content.ts (modern-names.yaml, names-<lang>.yaml).
+ */
+const untranslated = new Set<string>();
+/** "Where it is today" in the page's language; nothing (and the build stops) where it has none. */
+const whereOf = (id: string, english: string, l: Lang) => {
+  if (l === "en") return english;
+  const own = l === "ru" ? content.where_ru?.[id] : content.where_in?.[l]?.[id];
+  if (english && !own) untranslated.add(`${l} ${id} "${english}"`);
+  return own;
+};
 const refOf = (osis: string, l: Lang) => formatRefOr(osis, l);
 
 const verseTexts = new Map<string, Record<string, string>>();
@@ -323,11 +319,13 @@ function icon(name: keyof typeof ICONS): string {
 }
 
 /**
- * The open sets every page credits, with their licences linked (CC BY asks for the link;
- * STEP Bible for its name linked to www.STEPBible.org); the rest: the sources page.
+ * The open sets every page credits, each with its licence linked (CC BY asks for the link;
+ * STEP Bible for its name linked to www.STEPBible.org); the rest: the sources page. The
+ * links name the sets' licences, not the page's: no rel="license" here, which would declare
+ * the page itself CC BY (only the articles and the answers declare theirs, ADR 0016).
  */
-const CREDITS =
-  '<a href="https://www.openbible.info/geo/">OpenBible.info</a>, <a href="https://www.STEPBible.org">STEP Bible</a>, Cliopatria, Itiner-e (<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>), Pleiades (<a rel="license" href="https://creativecommons.org/licenses/by/3.0/us/">CC BY 3.0</a>), Wikidata (CC0)';
+const BY4 = '<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>';
+const CREDITS = `<a href="https://www.openbible.info/geo/">OpenBible.info</a> (${BY4}), <a href="https://www.STEPBible.org">STEP Bible</a> (${BY4}), <a href="https://github.com/Seshat-Global-History-Databank/cliopatria">Cliopatria</a> (${BY4}), Itiner-e (${BY4}), Pleiades (<a href="https://creativecommons.org/licenses/by/3.0/us/">CC BY 3.0 US</a>), Wikidata (CC0)`;
 /** The licence of the site's own texts, the articles and the answers (ADR 0016). */
 const NC_ND = "https://creativecommons.org/licenses/by-nc-nd/4.0/";
 
@@ -343,7 +341,7 @@ function page(o: {
   ld?: object;
   /** The preview image, relative to the site root (the place's photo). */
   image?: string;
-  /** The front page: the documentation's palette and one sans face, the way into the map in the bar. */
+  /** The front page: one sans face, the docs in the bar, the entrance's script. */
   home?: boolean;
   /** A thin page (a place with no article yet): open to readers, kept out of search. */
   noindex?: boolean;
@@ -375,9 +373,10 @@ function page(o: {
     ${NOTICE_COMMENT}
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="${o.home ? "#fcfbf8" : "#fbf8f2"}" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="${o.home ? "#0c1218" : "#0f141b"}" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#fcfbf8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c1218" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="${up}favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="${up}apple-touch-icon.png" />
     <title>${esc(o.title)} | History Globe</title>${o.noindex ? '\n    <meta name="robots" content="noindex, follow" />' : ""}${meta}${o.licence ? `\n    <link rel="license" href="${NC_ND}" />` : ""}${
       o.home
         ? `\n    <link rel="preload" href="${up}docs/fonts/${sansPreload(o.l)}" as="font" type="font/woff2" crossorigin />
@@ -425,10 +424,11 @@ function photoHtml(id: string, name: string, l: Lang): string {
   if (!ph || !hasPhoto(id)) return "";
   const page = commonsPage(ph.file);
   const lic = ph.license === "Public domain" ? T[l].pd : ph.license;
-  // The author's name opens the file's page, the licence its text (CC BY asks for both).
+  // The author's name opens the file's page, the licence its text (CC BY asks for both);
+  // the photo's licence, not the page's, so no rel="license".
   const licence = licenceUrl(ph);
   const shows = ph.shows && ((ph.shows as Partial<Record<Lang, string>>)[l] ?? ph.shows.en);
-  return `<figure class="photo"><img src="../../../data/photos/${id}.jpg" alt="${esc(name)}" loading="lazy" /><figcaption class="note">${shows ? `${esc(T[l].photoShows(shows))}<br />` : ""}${T[l].photo}: ${ph.author ? `<a href="${esc(page)}">${esc(ph.author)}</a>, ` : ""}${licence ? `<a href="${esc(licence)}" rel="license">${esc(lic)}</a>` : esc(lic)}, ${ph.author ? "Wikimedia Commons" : `<a href="${esc(page)}">Wikimedia Commons</a>`}</figcaption></figure>`;
+  return `<figure class="photo"><img src="../../../data/photos/${id}.jpg" alt="${esc(name)}" loading="lazy" /><figcaption class="note">${shows ? `${esc(T[l].photoShows(shows))}<br />` : ""}${T[l].photo}: ${ph.author ? `<a href="${esc(page)}">${esc(ph.author)}</a>, ` : ""}${licence ? `<a href="${esc(licence)}">${esc(lic)}</a>` : esc(lic)}, ${ph.author ? "Wikimedia Commons" : `<a href="${esc(page)}">Wikimedia Commons</a>`}</figcaption></figure>`;
 }
 
 const slugOf = placeSlugs(places.map((f) => f.properties));
@@ -535,7 +535,22 @@ try {
 }
 /** Sitemap path ("de/tour/exodus/") → the date its source last changed. */
 const lastmod = new Map<string, string>();
-const write = (path: string, html: string, listed = true, src?: string) => {
+const write = (
+  path: string,
+  text: string,
+  listed = true,
+  src?: string,
+  licence: string = NC_ND,
+) => {
+  // Every page sits under its language: its typography, as the documentation's.
+  const l = path.split("/")[0] ?? "";
+  const html = isLocale(l) ? TYPESET[l](text) : text;
+  // A page declares only its own licence: the articles' and the answers' (ADR 0016), or a
+  // review's, which its reviewer gives. A data set's or a photo's licence linked as
+  // rel="license" would declare the whole page under it.
+  for (const tag of html.match(/<(?:a|link)\b[^>]*\brel="[^"]*\blicense\b[^"]*"[^>]*>/g) ?? [])
+    if (!tag.includes(`href="${licence}"`))
+      throw new Error(`pages: ${path} declares a licence not its own: ${tag}`);
   const file = join(pub, path, "index.html");
   mkdirSync(join(pub, path), { recursive: true });
   if (!existsSync(file) || readFileSync(file, "utf8") !== html) writeFileSync(file, html);
@@ -570,11 +585,10 @@ function placePages(l: Lang): void {
     // its main record's page does.
     const note = p.dup ? "" : certaintyNote(p, l);
     const art = articles[p.id];
-    // An event told again as a battle here (Samaria, 722 BC) is listed once, as the battle.
+    // An event told again as a battle here (Samaria, 722 BC; `event` in battles.yaml) is
+    // listed once, as the battle.
     const events = (content.events ?? []).filter(
-      (e) =>
-        e.place === p.id &&
-        !(content.battles ?? []).some((b) => b.place === p.id && Math.abs(b.year - e.year) <= 1),
+      (e) => e.place === p.id && !(content.battles ?? []).some((b) => b.event === e.id),
     );
     const battles = (content.battles ?? []).filter((b) => b.place === p.id);
     const asked = questions.filter((q) => q.map?.place === p.id);
@@ -638,7 +652,9 @@ function placePages(l: Lang): void {
       <dl class="verses">${verses
         .map((v) => {
           const text = verseText(v, l);
-          return `<dt>${esc(refOf(v, l))}</dt><dd>${text ? linkedVerse(text, f, l) : ""}</dd>`;
+          // A verse this translation numbers otherwise is left out (build-verses.ts): the row
+          // says so and links the verse, as the card does, instead of standing empty.
+          return `<dt>${esc(refOf(v, l))}</dt><dd>${text ? linkedVerse(text, f, l) : `<span class="note">${T[l].numbered} <a href="${esc(verseUrl(v, l))}" rel="noopener">${esc(ui[l].place.verse_open ?? "")}</a></span>`}</dd>`;
         })
         .join("")}</dl>
       ${p.osis.length > VERSES_ON_PAGE ? `<p><a href="../../../?place=${p.id}&amp;locale=${l}">${T[l].more(p.osis.length - VERSES_ON_PAGE)}</a></p>` : ""}
@@ -654,8 +670,10 @@ function placePages(l: Lang): void {
       path,
       page({
         l,
+        // A place with no article yet promises no history in its title.
         title: T[l].title(
           (sameName.get(name) ?? 0) > 1 && where && where !== name ? `${name} (${where})` : name,
+          !!art,
         ),
         desc,
         path: `${path}/`,
@@ -828,18 +846,26 @@ function tourPages(l: Lang): void {
               ? `<a href="../../place/${slugOf.get(s.place) ?? s.place}/">${esc(n)}</a>`
               : esc(n);
           const leg = legOf(t, i);
-          return `<li><p class="stop"><b>${link}</b> <span class="ref">${esc(s.ref ? refOf(s.ref, l) : (s.source?.cite[l] ?? s.source?.cite.en ?? ""))}${leg ? ` · ${esc(leg)}` : ""}</span></p><p>${esc(s.note[l] ?? s.note.en)}</p><a class="more" href="../../../?tour=${t.id}&amp;stop=${String(i + 1)}&amp;locale=${l}">${T[l].open} →</a></li>`;
+          return `<li><p class="stop"><b>${link}</b> <span class="ref">${esc(s.ref ? refOf(s.ref, l) : (s.source?.cite[l] ?? s.source?.cite.en ?? ""))}${leg ? ` · ${esc(leg)}` : ""}</span></p><p>${esc(s.note[l] ?? s.note.en)}</p><a class="more" href="../../../?tour=${t.id}&amp;stop=${String(i + 1)}&amp;locale=${l}" aria-label="${esc(`${T[l].open}: ${n}`)}">${T[l].open} →</a></li>`;
         })
         .join("\n        ")}</ol>
     </main>`;
-    const first = t.stops[0]?.note[l] ?? "";
+    const first = t.stops[0]?.note[l] ?? t.stops[0]?.note.en ?? "";
+    // What the tour covers, as its card in the list says it, then where it starts: the title
+    // is already the page's, and "Jacob: Jacob leaves…" had said the name twice.
+    const km = tourKm(t);
+    const span = [
+      tourSpan(t, l),
+      LISTS[l].stops(t.stops.length),
+      ...(km === null ? [] : [LISTS[l].km(new Intl.NumberFormat(l).format(roundKm(km)))]),
+    ].join(" · ");
     write(
       path,
       page({
         l,
         // "Paul's first journey — map": what people search for, and what the page is.
         title: `${title} — ${T[l].tour_map}`,
-        desc: clip(`${title}: ${first}`),
+        desc: clip(`${span}. ${first}`),
         path: `${path}/`,
         body,
         depth: 3,
@@ -851,48 +877,8 @@ function tourPages(l: Lang): void {
   }
 }
 
-/**
- * The search on the index pages, a progressive enhancement: without it every name is a link
- * on the page, and the search box and the filter stay hidden. A name matches whatever the
- * case, the accents or ё; a section with nothing left is hidden, and so is its jump link.
- */
-const LIST_SCRIPT = `<script>
-(() => {
-  const m = document.querySelector("[data-list]");
-  const tools = m && m.querySelector("[data-tools]");
-  if (!tools) return;
-  tools.hidden = false;
-  const q = tools.querySelector("input");
-  const only = tools.querySelector("[aria-pressed]");
-  const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").replace(/\\s+/g, " ");
-  const items = [...m.querySelectorAll("[data-group] li")].map((e) => [e, norm(e.textContent)]);
-  const groups = [...m.querySelectorAll("[data-group]")];
-  const empty = m.querySelector("[data-empty]");
-  const run = () => {
-    const s = norm(q.value.trim());
-    const a = only && only.getAttribute("aria-pressed") === "true";
-    for (const [e, text] of items) e.hidden = !(text.includes(s) && (!a || e.classList.contains("art")));
-    let shown = 0;
-    for (const g of groups) {
-      const left = g.querySelectorAll("li:not([hidden])").length;
-      g.hidden = left === 0;
-      shown += left ? 1 : 0;
-      const j = m.querySelector('[href="#' + g.id + '"]');
-      if (j) j.classList.toggle("off", !left);
-      for (const c of [g.querySelector(".count"), j && j.querySelector("span")])
-        if (c) c.textContent = left.toLocaleString(document.documentElement.lang);
-    }
-    empty.hidden = shown > 0;
-  };
-  q.addEventListener("input", run);
-  if (only)
-    only.addEventListener("click", () => {
-      only.setAttribute("aria-pressed", String(only.getAttribute("aria-pressed") !== "true"));
-      run();
-    });
-  if (q.value) run();
-})();
-</script>`;
+/** The search on the index pages (scripts/client/list.ts), inline: one script for 42 pages. */
+const LIST_SCRIPT = `<script>${clientScript("packages/model/src/fold.ts", "scripts/client/list.ts")}</script>`;
 
 /** The search box (and a filter, when given) above a list; shown by LIST_SCRIPT. */
 const listTools = (find: string, filter = "") =>
@@ -954,7 +940,7 @@ function tourSpan(t: Tour, l: Lang): string {
   const cite = t.stops.find((s) => s.source)?.source?.cite;
   const told = cite && (cite[l] ?? cite.en);
   // The work, without the passages ("Church History 6.1, 6.2.5-6" → "Church History") or
-  // a note on the translation one stop quotes ("Исповедь (пер. М. Е. Сергеенко) 2.3").
+  // a note on the translation it names in brackets ("Исповедь (пер. …) 2.3").
   if (told) return told.replace(/\s+\d[\d.,:\s–-]*$/, "").replace(/\s*\([^()]*\)$/, "");
   const ends = t.stops
     .flatMap((s) => (s.ref ? s.ref.split("-") : []))
@@ -1025,7 +1011,8 @@ function indexPages(l: Lang): void {
     page({
       l,
       title: T[l].placesTitle,
-      desc: T[l].placesTitle,
+      // The line under the title, with its numbers: the title alone said nothing more.
+      desc: W.placesLead(n.format(shown.length), shown.length, n.format(withArticle)),
       path: `${l}/places/`,
       depth: 2,
       body: `    <main id="main" class="page list" data-list>
@@ -1060,7 +1047,8 @@ function indexPages(l: Lang): void {
     page({
       l,
       title: T[l].toursTitle,
-      desc: T[l].toursTitle,
+      // The line under the title, with its numbers: the title alone said nothing more.
+      desc: W.toursLead(n.format(content.tours.length), content.tours.length),
       path: `${l}/tours/`,
       depth: 2,
       body: `    <main id="main" class="page list">
@@ -1120,7 +1108,8 @@ function questionsIndex(l: Lang): void {
     page({
       l,
       title: T[l].questionsTitle,
-      desc: T[l].questionsTitle,
+      // The line under the title, with its numbers: the title alone said nothing more.
+      desc: W.questionsLead(n.format(questions.length), questions.length),
       path: `${l}/questions/`,
       depth: 2,
       body: `    <main id="main" class="page list narrow" data-list>
@@ -1196,6 +1185,7 @@ function reviewsIn(l: Lang): void {
       r.path.split("/").length > 2
         ? `content/reviews/${r.path.split("/")[2] ?? ""}.yaml`
         : undefined,
+      "https://creativecommons.org/licenses/by/4.0/",
     );
 }
 
@@ -1206,6 +1196,10 @@ for (const l of LANGS) {
   tourPages(l);
   indexPages(l);
   reviewsIn(l);
+}
+if (untranslated.size > 0) {
+  for (const x of untranslated) console.error(`error: no today line in ${x}`);
+  process.exit(1);
 }
 
 // The front page's pictures (public/shots/<lang>-<name>.jpg, taken from the app) and where
@@ -1243,8 +1237,11 @@ for (const l of LANGS) {
     [content.battles?.length ?? 0, ""],
   ];
   const tile = (i: number) => {
-    const [eyebrow, h, text, link, alt] = L.rows[i] ?? L.rows[0];
+    const [eyebrow, h, text, alt, words] = L.rows[i] ?? L.rows[0];
     const row = ROWS[i] ?? ROWS[0];
+    // A tile that opens a tour is linked by the tour's own title, as its page is headed.
+    const tour = content.tours.find((t) => t.id === new URLSearchParams(row.q).get("tour"));
+    const link = tour ? (tour.title[l] ?? tour.title.en) : (words ?? "");
     return `<a class="tile tile-${row.shot}" href="${app(row.q)}" data-rv>
           <div class="tile-copy">
             <p class="eyebrow">${esc(eyebrow)}</p>
@@ -1291,7 +1288,7 @@ for (const l of LANGS) {
       </figure>
       <ul class="numbers" data-rv>${numbers
         .map(([x, href], i) => {
-          const inner = `<b data-n="${String(x)}">${n.format(x)}</b><span>${esc(L.stats[i] ?? "")}</span>`;
+          const inner = `<b data-n="${String(x)}">${n.format(x)}</b><span>${esc(L.stats[i]?.(x) ?? "")}</span>`;
           return `<li>${href ? `<a href="${href}">${inner}</a>` : inner}</li>`;
         })
         .join("")}</ul>
@@ -1312,13 +1309,18 @@ for (const l of LANGS) {
         <h2>${esc(L.trust)}</h2>
         <ul>${SOURCE_NAMES.map((x) => `<li>${x}</li>`).join("")}<li><a href="../${docsPath(l, "sources")}">${esc(L.sources)}${icon("right")}</a></li></ul>
         <p>${esc(L.trustText)}</p>
-        <p class="method"><a href="../${docsPath(l, "methodology")}">${esc(L.method)}${icon("right")}</a></p>
+        <p class="method"><a href="../${docsPath(l, "methodology")}">${esc(L.method)}${icon("right")}</a>${
+          // The reviews the line above speaks of, once there is one (reviewsIn writes the list).
+          reviews.length > 0
+            ? `<a href="reviews/">${esc(REVIEW_WORDS[l].title)}${icon("right")}</a>`
+            : ""
+        }</p>
       </section>
       <section class="closing" data-rv>
         <img src="../shots/${l}-time.jpg" alt="" width="1440" height="900" loading="lazy" />
         <div>
           <h2>${esc(L.ctaTitle)}</h2>
-          <p>${esc(L.ctaText.replace("{n}", String(LOCALES.length)))}</p>
+          <p>${esc(L.ctaText(LOCALES.length))}</p>
           <p><a class="cta cta-light" href="${app("")}">${esc(L.open)}${icon("right")}</a></p>
         </div>
       </section>
@@ -1331,7 +1333,7 @@ for (const l of LANGS) {
 // someone's behalf — what it is, where the data and its licence are, how to cite it. Every
 // list runs through the languages in their order (ADR 0015): none comes first.
 {
-  const base = site || "https://historyglobe.app";
+  const base = site || SITE_ORIGIN;
   /** A count as English writes it: 1,231. */
   const enNum = (n: number) => new Intl.NumberFormat("en-GB").format(n);
   /** The same page in each language, by the language's own name. */

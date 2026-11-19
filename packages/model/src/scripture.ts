@@ -1,89 +1,52 @@
 import { localeData } from "./locale-data.ts";
-import type { Locale } from "./time.ts";
-import { toSynodal } from "./synodal.ts";
+import type { Locale } from "./locales.ts";
+import { fromSynodalChapter, synodalChapterEnd, toSynodal } from "./synodal.ts";
 import { VERSES } from "./versification.ts";
 
-/** OSIS book id → its English abbreviation; the canon's order. Other languages' own
- * abbreviations are in their data (locale-data.ts). */
-export const BOOKS: Readonly<Record<string, string>> = {
-  Gen: "Gen",
-  Exod: "Exod",
-  Lev: "Lev",
-  Num: "Num",
-  Deut: "Deut",
-  Josh: "Josh",
-  Judg: "Judg",
-  Ruth: "Ruth",
-  "1Sam": "1 Sam",
-  "2Sam": "2 Sam",
-  "1Kgs": "1 Kgs",
-  "2Kgs": "2 Kgs",
-  "1Chr": "1 Chr",
-  "2Chr": "2 Chr",
-  Ezra: "Ezra",
-  Neh: "Neh",
-  Esth: "Esth",
-  Job: "Job",
-  Ps: "Ps",
-  Prov: "Prov",
-  Eccl: "Eccl",
-  Song: "Song",
-  Isa: "Isa",
-  Jer: "Jer",
-  Lam: "Lam",
-  Ezek: "Ezek",
-  Dan: "Dan",
-  Hos: "Hos",
-  Joel: "Joel",
-  Amos: "Amos",
-  Obad: "Obad",
-  Jonah: "Jonah",
-  Mic: "Mic",
-  Nah: "Nah",
-  Hab: "Hab",
-  Zeph: "Zeph",
-  Hag: "Hag",
-  Zech: "Zech",
-  Mal: "Mal",
+/** The OSIS books, in the canon's order. */
+const BOOK_IDS = [
+  "Gen",
+  "Exod",
+  "Lev",
+  "Num",
+  "Deut",
+  "Josh",
+  "Judg",
+  "Ruth",
+  "1Sam",
+  "2Sam",
+  "1Kgs",
+  "2Kgs",
+  "1Chr",
+  "2Chr",
+  "Ezra",
+  "Neh",
+  "Esth",
+  "Job",
+  "Ps",
+  "Prov",
+  "Eccl",
+  "Song",
+  "Isa",
+  "Jer",
+  "Lam",
+  "Ezek",
+  "Dan",
+  "Hos",
+  "Joel",
+  "Amos",
+  "Obad",
+  "Jonah",
+  "Mic",
+  "Nah",
+  "Hab",
+  "Zeph",
+  "Hag",
+  "Zech",
+  "Mal",
   // In the Synodal Bible, not in the Protestant canon: marked wherever cited (DEUTEROCANON).
-  "1Macc": "1 Macc",
-  "2Macc": "2 Macc",
-  Matt: "Matt",
-  Mark: "Mark",
-  Luke: "Luke",
-  John: "John",
-  Acts: "Acts",
-  Rom: "Rom",
-  "1Cor": "1 Cor",
-  "2Cor": "2 Cor",
-  Gal: "Gal",
-  Eph: "Eph",
-  Phil: "Phil",
-  Col: "Col",
-  "1Thess": "1 Thess",
-  "2Thess": "2 Thess",
-  "1Tim": "1 Tim",
-  "2Tim": "2 Tim",
-  Titus: "Titus",
-  Phlm: "Phlm",
-  Heb: "Heb",
-  Jas: "Jas",
-  "1Pet": "1 Pet",
-  "2Pet": "2 Pet",
-  "1John": "1 John",
-  "2John": "2 John",
-  "3John": "3 John",
-  Jude: "Jude",
-  Rev: "Rev",
-};
-
-/** Books the Synodal Bible carries outside the Hebrew canon: a citation says so. */
-export const DEUTEROCANON: ReadonlySet<string> = new Set(["1Macc", "2Macc"]);
-
-/** Whether a reference is to a book outside the Hebrew canon (1 Macc 4:36). */
-export const isDeuterocanon = (osis: string): boolean => DEUTEROCANON.has(osis.split(".")[0] ?? "");
-
-export const NT_BOOKS: ReadonlySet<string> = new Set([
+  "1Macc",
+  "2Macc",
   "Matt",
   "Mark",
   "Luke",
@@ -111,7 +74,24 @@ export const NT_BOOKS: ReadonlySet<string> = new Set([
   "3John",
   "Jude",
   "Rev",
-]);
+] as const;
+
+/**
+ * OSIS book id → its English abbreviation ("1Sam" → "1 Sam"). Other languages' own
+ * abbreviations are in their data (locale-data.ts).
+ */
+export const BOOKS: Readonly<Record<string, string>> = Object.fromEntries(
+  BOOK_IDS.map((b) => [b, b.replace(/^(\d)/, "$1 ")]),
+);
+const BOOK_INDEX: ReadonlyMap<string, number> = new Map(BOOK_IDS.map((b, i) => [b, i]));
+
+/** Books the Synodal Bible carries outside the Hebrew canon: a citation says so. */
+export const DEUTEROCANON: ReadonlySet<string> = new Set(["1Macc", "2Macc"]);
+
+/** Whether a reference is to a book outside the Hebrew canon (1 Macc 4:36). */
+export const isDeuterocanon = (osis: string): boolean => DEUTEROCANON.has(osis.split(".")[0] ?? "");
+
+export const NT_BOOKS: ReadonlySet<string> = new Set(BOOK_IDS.slice(BOOK_IDS.indexOf("Matt")));
 
 export interface Ref {
   readonly book: string;
@@ -122,9 +102,8 @@ export interface Ref {
 const OSIS_ONE = /^([1-3]?[A-Z][A-Za-z]+)\.([1-9]\d*)(?:\.([1-9]\d*))?$/;
 
 /**
- * One OSIS verse or chapter ("Acts.13.4", "Ps.23"). Only the form is checked here;
- * whether the verse exists is checkRef's job (verses.ts), at build time, so the verse
- * table stays out of the browser (ADR 0010).
+ * One OSIS verse or chapter ("Acts.13.4", "Ps.23"). Only the form is checked here; whether
+ * the verse exists is checkRef's job (verses.ts).
  */
 export function parseOne(osis: string): Ref {
   const m = OSIS_ONE.exec(osis);
@@ -133,16 +112,13 @@ export function parseOne(osis: string): Ref {
   return { book, chapter: Number(chapter), verse: verse === undefined ? null : Number(verse) };
 }
 
-/** Chapter.verse as one comparable number (no chapter has 1000 verses). */
+/** Chapter.verse as one comparable number (no chapter has 1000 verses); a chapter is its verse 0. */
 const position = (r: Ref) => r.chapter * 1000 + (r.verse ?? 0);
 
-/**
- * Where a reference starts in the order of the Bible, as one comparable number. For the
- * build only; the book order is taken inside, so nothing is left in the browser bundle.
- */
+/** Where a reference starts in the order of the Bible, as one comparable number. */
 export function canonicalPosition(osis: string): number {
   const r = parseOne(osis.split("-")[0] ?? "");
-  return Object.keys(BOOKS).indexOf(r.book) * 1_000_000 + position(r);
+  return (BOOK_INDEX.get(r.book) ?? -1) * 1_000_000 + position(r);
 }
 
 /** A reference as formatRef writes it, or the OSIS text itself when it cannot be read. */
@@ -177,7 +153,8 @@ export function formatRef(osis: string, locale: Locale): string {
   const start = parseOne(startText ?? "");
   const name = bookName(start.book, locale);
   if (name === undefined) throw new SyntaxError(`unknown book in "${osis}"`);
-  const shown = (r: Ref) => (locale === "ru" ? toSynodal(r.book, r.chapter, r.verse) : r);
+  const synodal = locale === "ru";
+  const shown = (r: Ref) => (synodal ? toSynodal(r.book, r.chapter, r.verse) : r);
   const from = shown(start);
   const head = `${name} ${from.chapter}${from.verse === null ? "" : `:${from.verse}`}`;
   // A book outside the Hebrew canon (1-2 Maccabees) says so wherever it is cited.
@@ -185,14 +162,20 @@ export function formatRef(osis: string, locale: Locale): string {
     DEUTEROCANON.has(start.book)
       ? `${s} (${localeData(locale)?.deutero ?? "deuterocanonical"})`
       : s;
-  if (endText === undefined) return mark(head);
-  const end = parseOne(endText);
-  if (end.book !== start.book) throw new SyntaxError(`cross-book range: "${osis}"`);
-  // Both ends name verses, or both name whole chapters; the range runs forwards.
-  if ((start.verse === null) !== (end.verse === null) || position(end) <= position(start))
-    throw new SyntaxError(`not a forward range: "${osis}"`);
-  const to = shown(end);
-  // Two English psalms that are one Synodal psalm (9-10, 114-115).
+  const end = endText === undefined ? undefined : parseOne(endText);
+  if (end) {
+    if (end.book !== start.book) throw new SyntaxError(`cross-book range: "${osis}"`);
+    // Both ends name verses, or both name whole chapters; the range runs forwards.
+    if ((start.verse === null) !== (end.verse === null) || position(end) <= position(start))
+      throw new SyntaxError(`not a forward range: "${osis}"`);
+  }
+  const last = end ?? start;
+  // A whole English psalm can be two Synodal ones (116 is 114–115): it ends with its last verse.
+  const to =
+    synodal && last.verse === null
+      ? { chapter: synodalChapterEnd(last.book, last.chapter), verse: null }
+      : shown(last);
+  // One verse or chapter, or two English psalms that are one Synodal psalm (9-10, 114-115).
   if (to.chapter === from.chapter && to.verse === from.verse) return mark(head);
   const tail =
     to.chapter === from.chapter
@@ -203,18 +186,15 @@ export function formatRef(osis: string, locale: Locale): string {
 
 /** Whether an OSIS verse or range ("Acts.13.1-Acts.13.3") contains one of `verses`. */
 export function refCovers(ref: string, verses: ReadonlySet<string>): boolean {
-  const at = (osis: string) => {
-    const [book = "", c = "0", v] = osis.split(".");
-    return { book, n: Number(c) * 1000 + (v === undefined ? 0 : Number(v)) };
-  };
   const [first = "", last = first] = ref.split("-");
-  const lo = at(first);
-  const hiRef = at(last);
+  const start = parseOne(first);
+  const end = parseOne(last);
+  const lo = position(start);
   // A whole-chapter end ("Acts.13") runs to the end of that chapter.
-  const hi = last.split(".").length === 2 ? hiRef.n + 999 : hiRef.n;
+  const hi = position(end) + (end.verse === null ? 999 : 0);
   return [...verses].some((v) => {
-    const p = at(v);
-    return p.book === lo.book && p.n >= lo.n && p.n <= hi;
+    const r = parseOne(v);
+    return r.book === start.book && position(r) >= lo && position(r) <= hi;
   });
 }
 
@@ -297,7 +277,9 @@ function parseBook(typed: string, locale: Locale): { ref: string; label: string 
  * Ps.9-Ps.10). Null when the text is not a chapter.
  */
 export function parseChapter(text: string, locale: Locale): { ref: string; label: string } | null {
-  const typed = plain(norm(text)).replace(/^(евангелие )?от /, "");
+  const query = plain(norm(text));
+  const prefix = localeData(locale)?.bookPrefixes?.find((p) => query.startsWith(`${p} `));
+  const typed = prefix === undefined ? query : query.slice(prefix.length + 1);
   const book0 = parseBook(typed, locale);
   if (book0) return book0;
   // A verse after the chapter ("Acts 16:12", «Деян 16:12-15») opens the chapter.
@@ -323,9 +305,8 @@ export function parseChapter(text: string, locale: Locale): { ref: string; label
       }
     }
   }
-  const books = book === undefined ? undefined : BOOKS[book];
   const lengths = book === undefined ? undefined : VERSES[book];
-  if (!book || !books || !lengths) return null;
+  if (!book || !lengths) return null;
   const label = `${bookName(book, locale) ?? book} ${String(n)}`;
   // Outside Russian, and a book named in English in Russian ("Psalm 23"), the chapter is
   // counted the English way; in Russian the label then gives the Synodal number («Пс 22»).
@@ -335,21 +316,6 @@ export function parseChapter(text: string, locale: Locale): { ref: string; label
     return { ref: `${book}.${String(n)}`, label: locale === "ru" ? ru : label };
   }
   // In Russian the number is the Synodal chapter: the English verses shown in it.
-  const verses: [number, number][] = [];
-  lengths.forEach((count, i) => {
-    for (let v = 1; v <= count; v++)
-      if (toSynodal(book, i + 1, v).chapter === n) verses.push([i + 1, v]);
-  });
-  const first = verses[0];
-  const last = verses.at(-1);
-  if (!first || !last) return null;
-  const whole = first[1] === 1 && last[1] === lengths[last[0] - 1];
-  const at = (c: number, v?: number) =>
-    `${book}.${String(c)}${v === undefined ? "" : `.${String(v)}`}`;
-  const ref = whole
-    ? first[0] === last[0]
-      ? at(first[0])
-      : `${at(first[0])}-${at(last[0])}`
-    : `${at(first[0], first[1])}-${at(last[0], last[1])}`;
-  return { ref, label };
+  const ref = fromSynodalChapter(book, n);
+  return ref === null ? null : { ref, label };
 }

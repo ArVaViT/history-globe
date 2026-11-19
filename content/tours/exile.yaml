@@ -1,7 +1,8 @@
 # The fall of Jerusalem and the exile, 2 Kings 25 and Jeremiah 39-43, in the order of
 # the text. Year: 587 or 586 BC (disputed), marked approximate. The map shows 587 BC,
 # the year before the ruins begin in place-life.yaml, so Jerusalem still stands at the
-# siege.
+# siege. The burning (2 Kgs 25:8-10, the nineteenth year of Nebuchadnezzar) shows 586 BC,
+# the first year of the ruins.
 id: exile
 title:
   en: "The fall of Jerusalem and the exile"
@@ -102,6 +103,7 @@ stops:
       bg: "Съд в Ривла: синовете на Седекия са убити, а той е ослепен."
   - place: a15257a # Jerusalem
     ref: 2Kgs.25.8-2Kgs.25.10
+    year: "586 BC"
     note:
       en: "Nebuzar-adan burns the Temple, the palace and the city, and the army of the Chaldees pulls down the walls."
       ru: "Навузардан сжигает Храм, царский дом и город, а войско Халдейское разрушает стены."

@@ -4,7 +4,7 @@
  * public/licenses/lucide-icons.txt.
  *
  * Plain SVG rather than lucide-react, whose runtime cost more than the icons before the
- * first frame (ADR 0010). Decorative by default: the control around an icon carries
+ * first frame (ADR 0021). Decorative by default: the control around an icon carries
  * its name.
  */
 import type { ReactNode, SVGProps } from "react";

@@ -9,7 +9,7 @@ description: Stederne, de vers der nævner dem, begivenhederne og turene som JSO
   grænser ud over almindelig caching.
 </p>
 
-<h2>Hvilke steder nævner et vers</h2>
+<h2 id="which-places-does-a-verse-name">Hvilke steder nævner et vers</h2>
 <p>Én fil pr. bog i Bibelen: hvert vers, der nævner et sted, med id’erne på de steder.</p>
 <pre><code>GET {{site}}/api/v1/verses/Acts.json
 
@@ -24,10 +24,10 @@ description: Stederne, de vers der nævner dem, begivenhederne og turene som JSO
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
-   "wikidata": "Q379652", "pleiades": "501482",
+   "wikidata": "Q379652", "pleiades": "501482", "tipnr": "Philippi@Act.16.12-1Th",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
 
-<h2>Hvem og hvor i et kapitel</h2>
+<h2 id="who-and-where-in-a-chapter">Hvem og hvor i et kapitel</h2>
 <p>
   Én fil pr. bog: hvert kapitel med de steder og personer, det nævner. Personer identificeres som i
   STEPBibles TIPNR; deres navne og første vers findes i <code>people.json</code>.
@@ -37,7 +37,7 @@ description: Stederne, de vers der nævner dem, begivenhederne og turene som JSO
 { "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
                "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
-<h2>Alle filerne</h2>
+<h2 id="all-the-files">Alle filerne</h2>
 <div class="table">
   <table>
     <thead>
@@ -56,7 +56,8 @@ description: Stederne, de vers der nævner dem, begivenhederne og turene som JSO
         <td>
           hvert sted: id, navne, art, punkt, hvor mange vers der nævner det, dets side (for et sted,
           som et vers nævner); <code>wikidata</code> og <code>pleiades</code>, det samme sted i de
-          stedsregistre, hvor det er kendt
+          stedsregistre, hvor det er kendt; <code>tipnr</code>, dets navn i STEPBibles TIPNR, efter
+          samme skema som id’erne i <code>people.json</code>, hvor OpenBible forbinder det
         </td>
       </tr>
       <tr>
@@ -73,25 +74,33 @@ description: Stederne, de vers der nævner dem, begivenhederne og turene som JSO
       <tr>
         <td><code>/api/v1/people.json</code></td>
         <td>
-          de personer, Bibelen nævner: TIPNR-id, navn, navne på de andre sprog, hvor webstedet har
-          dem, køn, hvor mange vers der nævner dem, det første
+          de {{people_api}} personer, Bibelen nævner (kortet viser {{people}} af dem med deres
+          familier): TIPNR-id, navn, navne på de andre sprog, hvor webstedet har dem, køn, hvor
+          mange vers der nævner dem, det første
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/events.json</code></td>
-        <td>de daterede begivenheder, med <code>ref</code> hvor Bibelen fortæller begivenheden</td>
+        <td>
+          de daterede begivenheder, med <code>ref</code> hvor Bibelen fortæller begivenheden;
+          <code>site</code> i stedet for <code>place</code> for en by i oldtiden, som Bibelen ikke
+          nævner
+        </td>
       </tr>
       <tr>
         <td><code>/api/v1/battles.json</code></td>
         <td>
           slag og belejringer: sted, år, parter og udfald, med <code>ref</code> hvor Bibelen
-          fortæller om slaget
+          fortæller om slaget; <code>event</code>, begivenheden i <code>events.json</code>, der
+          fortæller den samme historie
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/questions.json</code></td>
         <td>
-          spørgsmål, folk stiller, besvaret på alle sitets sprog, med kortets visning og kilderne
+          spørgsmål, folk stiller, besvaret på alle sitets sprog, med kortets visning og kilderne;
+          <code>scripture</code>, de vers, et svar henviser til; <code>license</code> og
+          <code>license_url</code>, svarenes licens
         </td>
       </tr>
       <tr>
@@ -99,7 +108,8 @@ description: Stederne, de vers der nævner dem, begivenhederne og turene som JSO
         <td>
           turene: deres stop i rækkefølge, hvert med sit skriftsted og sin note;
           <code>by: "sea"</code> for en strækning, der sejles, og <code>sailed</code> (dage og
-          vers), hvor teksten angiver, hvor længe
+          vers), hvor teksten angiver, hvor længe; <code>source</code>, hvor et stop fortælles uden
+          for Bibelen
         </td>
       </tr>
       <tr>
@@ -117,7 +127,7 @@ description: Stederne, de vers der nævner dem, begivenhederne og turene som JSO
   </table>
 </div>
 
-<h2>Konventioner</h2>
+<h2 id="conventions">Konventioner</h2>
 <ul>
   <li>
     Henvisninger er OSIS med engelske bogforkortelser og King James-nummerering:
@@ -126,7 +136,8 @@ description: Stederne, de vers der nævner dem, begivenhederne og turene som JSO
   <li>År er astronomiske: 1 f.Kr. er 0, 586 f.Kr. er −585.</li>
   <li>
     Et sted, der i kildedataene står to gange under ét navn, har <code>"duplicate": true</code>; et
-    sted, hvis lokalitet er omstridt, har <code>"disputed": true</code>.
+    sted, hvis lokalitet er omstridt, har <code>"disputed": true</code>; en begivenhed, et slag
+    eller en tur med et omtrentligt år har <code>"approximate": true</code>.
   </li>
   <li>
     Filerne bygges forfra ved hver udgivelse af dataene; <code>index.json</code> angiver dens dato.
@@ -137,7 +148,7 @@ description: Stederne, de vers der nævner dem, begivenhederne og turene som JSO
   </li>
 </ul>
 
-<h2>Licens og kildeangivelse</h2>
+<h2 id="licence-and-credit">Licens og kildeangivelse</h2>
 <p>
   Dataene er under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Brug dem,
   ændr dem, sælg det, du bygger med dem; angiv kilderne, hvor du viser dem, som

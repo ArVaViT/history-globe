@@ -4,7 +4,7 @@
  * page, in every language. Only our words: the reviewer's own (statement, note, conflicts,
  * the review itself) are shown as written and never translated in place.
  */
-import type { SiteLocale } from "../packages/model/src/time.ts";
+import type { SiteLocale } from "../packages/model/src/locales.ts";
 import type { ReviewScope } from "../packages/model/src/reviews.ts";
 
 export interface ReviewWords {

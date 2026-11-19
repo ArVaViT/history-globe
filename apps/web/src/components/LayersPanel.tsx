@@ -3,14 +3,14 @@ import { useMemo, type ReactNode } from "react";
 import { useTranslation } from "../i18n";
 import { Check, MapIcon, MapPin, Milestone, Mountain, Route, Swords } from "./icons";
 
-const ORDER: (keyof LayerVisibility)[] = [
+const ORDER = [
   "relief",
   "borders",
   "roads",
   "battles",
   "places",
   "routes",
-];
+] as const satisfies readonly (keyof LayerVisibility)[];
 
 /** Map legend: the icons of places (packages/core/src/icons.ts) and what they mean. */
 const LEGEND = [
@@ -130,7 +130,7 @@ export function Legend() {
         </li>
       ))}
       <li className="flex items-center gap-2">
-        <span className="w-4 border-t-2 border-dashed border-[#7a5228]" aria-hidden />
+        <span className="w-4 border-t-2 border-dashed border-road" aria-hidden />
         {t("legend.roman_road")}
       </li>
       <li className="flex items-center gap-2">

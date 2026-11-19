@@ -9,7 +9,7 @@ description: Mistä jokainen History Globen paikka, raja, päivämäärä ja hen
   kukin kerros on peräisin, mitä muutimme ja mitä emme tiedä.
 </p>
 
-<h2>Raamatun paikat</h2>
+<h2 id="places-of-the-bible">Raamatun paikat</h2>
 <p>
   Paikat ({{places}}) ja niiden jakeet ovat peräisin aineistosta
   <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
@@ -22,7 +22,8 @@ description: Mistä jokainen History Globen paikka, raja, päivämäärä ja hen
   merkitsee, ja jokaisella niistä on oma sivunsa; loput {{unnamed}} ovat aineiston merkintöjä, joita
   mikään näiden kirjojen jae ei mainitse (esimerkiksi 1. makkabilaiskirjan Adasa). Artikkeli on
   {{articles}} paikasta. Lisäksi {{excluded}} paikkaa jätettiin pois, koska niille ei ollut
-  julkaistavissa olevaa sijaintipistettä (ks. alla).
+  julkaistavissa olevaa sijaintipistettä (ks. alla). Lisäksi {{without_point}} paikalla ei ole
+  OpenBiblessä lainkaan sijaintipistettä.
 </p>
 <ul>
   <li>
@@ -45,7 +46,7 @@ description: Mistä jokainen History Globen paikka, raja, päivämäärä ja hen
   </li>
 </ul>
 
-<h2>Milloin paikat olivat olemassa</h2>
+<h2 id="when-places-stood">Milloin paikat olivat olemassa</h2>
 <p>
   Kaupunki piirretään kartalle täysin vain niinä vuosina, jolloin se oli olemassa. Raamatun
   paikoista {{life}} perustamis-, tuhoutumis- ja hylkäämisvuodet on kirjattu käsin, kukin lähteineen
@@ -53,23 +54,24 @@ description: Mistä jokainen History Globen paikka, raja, päivämäärä ja hen
   kirjataan: kaupungille, jonka perustaminen tai loppu on kiistanalainen, ei anneta vuotta.
 </p>
 <p>
-  Antiikin maailman kaupungit ({{ancient}}), joita Raamattu ei mainitse — pääkaupungit, satamat ja
-  pyhäköt, kuten Ugarit, Hattusa, Mari tai Delfoi — valittiin ja ajoitettiin yksitellen: kukin
-  sijoitetaan sen <a href="https://pleiades.stoa.org">Pleiades</a>- tai Wikidata-merkinnän mukaan
-  muinaiselle paikalle eikä nykyiseen kaupunkiin, ja ajoitetaan näiden merkintöjen ja
-  tietosanakirjojen kuvausten perusteella, jotka on sovitettu yhteen käsin. Noin tuhat neljäsataa
-  muuta valitsi skripti: Pleiadesin asutuksia, pyhäkköjä ja satamia, joiden Wikidata-kohde on
-  muinainen paikka eikä nykyinen kaupunki; niiden pisteet tulevat Pleiadesista, nimet Wikidatasta
-  (silloin kun siellä ei ole venäjän-, ukrainan-, bulgarian- tai serbiankielistä nimeä, omamme,
-  siinä muodossa, jota kyseisen kielen antiikintutkimus käyttää), ja vuodet ovat niiden kausien
-  kattama jakso, joilta Pleiades ne todistaa, joten kaikki on merkitty ”n.”. Kun kaupunki tuhoutui
-  kesken kauden, sen loppu on asetettu käsin historian perusteella. Paikka tulee näkyviin
-  zoomaustasolla, jonka määrää se, kuinka usein Raamattu sen mainitsee; kaupunki, jonka Raamattu
-  tuskin mainitsee mutta jonka maailma tuntee hyvin — Karthago, Sparta, Ur — tulee näkyviin aiemmin
-  sen mukaan, kuinka monta Wikipedia-artikkelia itse muinaisesta paikasta on.
+  Antiikin maailman kaupungeista ({{ancient}}), joita Raamattu ei mainitse — pääkaupungeista,
+  satamista ja pyhäköistä, kuten Ugarit, Hattusa, Mari tai Delfoi — {{ancient_hand}} valittiin ja
+  ajoitettiin yksitellen: kukin sijoitetaan sen <a href="https://pleiades.stoa.org">Pleiades</a>-
+  tai Wikidata-merkinnän mukaan muinaiselle paikalle eikä nykyiseen kaupunkiin, ja ajoitetaan näiden
+  merkintöjen ja tietosanakirjojen kuvausten perusteella, jotka on sovitettu yhteen käsin. Loput
+  {{ancient_script}} valitsi skripti: Pleiadesin asutuksia, pyhäkköjä ja satamia, joiden
+  Wikidata-kohde on muinainen paikka eikä nykyinen kaupunki; niiden pisteet tulevat Pleiadesista,
+  nimet Wikidatasta (silloin kun siellä ei ole venäjän-, ukrainan-, bulgarian- tai serbiankielistä
+  nimeä, omamme, siinä muodossa, jota kyseisen kielen antiikintutkimus käyttää; muilla kielillä,
+  joilla nimeä ei ole, englanninkielinen), ja vuodet ovat niiden kausien kattama jakso, joilta
+  Pleiades ne todistaa, joten kaikki on merkitty ”n.”. Kun kaupunki tuhoutui kesken kauden, sen
+  loppu on asetettu käsin historian perusteella. Paikka tulee näkyviin zoomaustasolla, jonka määrää
+  se, kuinka usein Raamattu sen mainitsee; kaupunki, jonka Raamattu tuskin mainitsee mutta jonka
+  maailma tuntee hyvin — Karthago, Sparta, Ur — tulee näkyviin aiemmin sen mukaan, kuinka monta
+  Wikipedia-artikkelia itse muinaisesta paikasta on.
 </p>
 
-<h2>Rajat</h2>
+<h2 id="borders">Rajat</h2>
 <p>
   Valtiot ja niiden rajat vuosi vuodelta ovat peräisin aineistosta
   <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatria</a> (Seshat Global History Databank,
@@ -101,22 +103,22 @@ description: Mistä jokainen History Globen paikka, raja, päivämäärä ja hen
   se tuli.
 </p>
 
-<h2>Henkilöt</h2>
+<h2 id="people">Henkilöt</h2>
 <p>
   Raamatun henkilöt ({{people}}) ja heidän sukulaisuussuhteensa ovat peräisin STEP Biblen
   TIPNR-aineistosta (Tyndale House, Cambridge). Emme ottaneet suhteita sellaisinaan:
 </p>
 <ul>
   <li>
-    tekstin useimmin mainitseman 1 200 henkilön sukulaisuussuhteet sekä 1. Aikakirjan sukuluettelot
-    luettiin jakeita vasten; 153 suhdetta, joita teksti ei ilmaise, poistettiin — Jeesuksen veljet
-    Joosefin ja Marian poikina, Isebel Ahasjan äitinä — ja Jeesuksen sukuluettelosta puuttuvat
-    suhteet lisättiin tekstin perusteella;
+    tekstin useimmin mainitseman {{n:1200}} henkilön sukulaisuussuhteet sekä 1. Aikakirjan
+    sukuluettelot luettiin jakeita vasten; 153 suhdetta, joita teksti ei ilmaise, poistettiin —
+    Jeesuksen veljet Joosefin ja Marian poikina, Isebel Ahasjan äitinä — ja Jeesuksen
+    sukuluettelosta puuttuvat suhteet lisättiin tekstin perusteella;
   </li>
   <li>
-    kaikki 1 136 henkilön ja paikan välistä suhdetta, joissa henkilöllä on keskeinen tai sivurooli,
-    luettiin jae jakeelta; 344 poistettiin (Mooses ”Kanaanissa”, Abraham ”Sodomassa”, pojan paikat
-    annettuina hänen isälleen) ja 94 sai paremman jakeen;
+    kaikki {{n:1136}} henkilön ja paikan välistä suhdetta, joissa henkilöllä on keskeinen tai
+    sivurooli, luettiin jae jakeelta; 344 poistettiin (Mooses ”Kanaanissa”, Abraham ”Sodomassa”,
+    pojan paikat annettuina hänen isälleen) ja 94 sai paremman jakeen;
   </li>
   <li>
     kaimat erotetaan toisistaan niin kuin teksti ne erottaa: ”Johannes Kastaja”, ”Johannes,
@@ -135,14 +137,16 @@ description: Mistä jokainen History Globen paikka, raja, päivämäärä ja hen
   <a href="sources.html">lähteiden</a> sivulla. Yksikään kierros ei ole läpäissyt ensimmäistä
   tarkastustaan muuttumattomana; jokainen korjattiin ja tarkistettiin uudelleen. Viimeisin
   kokonainen läpikäynti, joka valmistui 17. lokakuuta 2026, luki kaikki 746 artikkelia uudelleen
-  lähteitä vasten, noin 210 niistä kahdesti, ja teki 1 088 korjausta, joista jokainen vietiin
+  lähteitä vasten, noin 210 niistä kahdesti, ja teki {{n:1088}} korjausta, joista jokainen vietiin
   kaikille 11 kielelle, jotka sivustolla silloin oli; suoria virheitä löytyi 157 artikkelista.
-  Lokakuun 24. päivänä 2026 lisätyt kielet (ruotsi, norja, tanska, tagalog ja serbia) käännettiin jo
-  korjatuista teksteistä; sen jälkeen jokainen niiden teksti luettiin englanninkielistä vasten
-  riippumattomassa tarkastusvaiheessa, ja jokainen lainaus tarkistettiin kyseisen kielen Raamatusta.
-  Nämä vaiheet ovat hankkeen omia tarkastuksia, eivät vertaisarviointia. Asiantuntijoiden arviot
-  julkaistaan heidän nimellään <a href="reviews.html">arvioiden</a> sivulla, ja jokainen artikkeli,
-  jonka asiantuntija on arvioinut, mainitsee arvioijan ja linkittää arvioon.
+  Lokakuun 24. päivänä 2026 lisätyt kielet (ruotsi, norja, tanska, tagalog ja serbia) ja lokakuun
+  26. päivänä 2026 lisätyt (unkari, suomi, vietnam, romania ja bulgaria) käännettiin jo korjatuista
+  teksteistä; sen jälkeen jokainen niiden teksti luettiin englanninkielistä vasten riippumattomassa
+  tarkastusvaiheessa, ja jokainen lainaus tarkistettiin kyseisen kielen Raamatusta. Nämä vaiheet
+  ovat hankkeen omia tarkastuksia, eivät vertaisarviointia. Asiantuntijoiden arviot julkaistaan
+  heidän nimellään <a href="reviews.html">arvioiden</a> sivulla, ja jokainen artikkeli, jonka
+  asiantuntija on arvioinut, mainitsee arvioijan ja linkittää arvioon. Tähän mennessä julkaistut:
+  <span class="reviews"></span>.
 </p>
 <p>
   Etäisyys pysäkille annetaan linnuntietä. Vuodesta 312 eaa. lähtien, jolloin Rooman tiet alkavat,
@@ -164,7 +168,7 @@ description: Mistä jokainen History Globen paikka, raja, päivämäärä ja hen
   näkyy kartalla omina vuosinaan. Raamatun taistelut ajoitetaan samoin kuin kierrokset ajoittavat
   samat kertomukset; muilla ei ole jaetta vaan antiikin tai tieteellinen lähde. Toinen, riippumaton
   tarkastusvaihe tarkisti luonnoksen synodaalitekstiä ja King James Versionia vasten: 58 merkinnästä
-  16 korjattiin ja yksi poistettiin, koska kartalla ei ole pistettä sen paikalle.
+  (lokakuu 2026) 16 korjattiin ja yksi poistettiin, koska kartalla ei ole pistettä sen paikalle.
 </p>
 
 <p>
@@ -214,7 +218,7 @@ description: Mistä jokainen History Globen paikka, raja, päivämäärä ja hen
   </li>
 </ul>
 
-<h2>Tarkistukset jokaisessa koonnissa</h2>
+<h2 id="checks-on-every-build">Tarkistukset jokaisessa koonnissa</h2>
 <p>Mitään ei julkaista, ellei jokainen tarkistus mene läpi:</p>
 <ul>
   <li>
@@ -230,7 +234,7 @@ description: Mistä jokainen History Globen paikka, raja, päivämäärä ja hen
   <li>sisällön skeemat ovat tiukat: tuntematon tai väärin kirjoitettu kenttä pysäyttää koonnin.</li>
 </ul>
 
-<h2>Mikä on epävarmaa</h2>
+<h2 id="what-is-uncertain">Mikä on epävarmaa</h2>
 <ul>
   <li>
     Päivämäärät ennen 1. vuosituhatta eaa. ovat likimääräisiä, ja osa niistä on kiistanalaisia;
@@ -276,7 +280,7 @@ https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
   GitHub-tilillä voit käyttää myös jokaisen paikan kortissa olevaa linkkiä <i>Löysitkö virheen?</i>,
   joka avaa julkiseen tietovarastoon ilmoituksen, johon paikka on valmiiksi täytetty, tai avata
   ilmoituksen suoraan:
-  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+  <a href="https://github.com/ArVaViT/history-globe/issues/new?template=report-an-error.yml"
     >github.com/ArVaViT/history-globe/issues</a
   >.
 </p>

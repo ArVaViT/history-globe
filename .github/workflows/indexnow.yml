@@ -6,7 +6,8 @@
 # Deploys are made with `vercel deploy --prebuilt` (ADR 0012), which does not report a
 # GitHub deployment; so besides `deployment_status` (for a Vercel Git integration, if one is
 # ever connected) it runs by hand (`gh workflow run indexnow.yml`) and once a day, when it
-# sends nothing unless a deploy changed something.
+# sends nothing unless a deploy changed something. Only the official repository sends: a fork's
+# daily run would otherwise ping the search engines about historyglobe.app.
 name: IndexNow
 
 on:
@@ -30,9 +31,10 @@ concurrency:
 jobs:
   submit:
     if: >-
-      github.event_name != 'deployment_status' ||
+      github.repository == 'ArVaViT/history-globe' &&
+      (github.event_name != 'deployment_status' ||
       (github.event.deployment_status.state == 'success' &&
-      github.event.deployment.environment == 'Production')
+      github.event.deployment.environment == 'Production'))
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:

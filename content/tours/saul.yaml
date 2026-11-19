@@ -2,7 +2,8 @@
 # birth in Tarsus and Gal 1:17 for Arabia, in the order of the story. The tour's year
 # (AD 34) is a conventional point for the conversion, usually dated c. AD 33-36.
 # Arabia, which Acts does not mention, is placed between the first preaching in
-# Damascus and the escape from it.
+# Damascus and the escape from it. The last two stops (Acts 11:25-26) show AD 43, the year
+# at Antioch before the famine under Claudius (11:28) and Herod's death in AD 44 (12:23).
 id: saul
 title:
   en: "The conversion of Saul"
@@ -200,6 +201,7 @@ stops:
       bg: "Братята го свалят в Кесария и го изпращат в Тарс."
   - place: a666ea0 # Tarsus
     ref: Acts.11.25
+    year: "AD 43"
     note:
       en: "Years later Barnabas goes to Tarsus to look for Saul."
       ru: "Спустя годы Варнава идёт в Тарс искать Савла."
@@ -224,6 +226,7 @@ stops:
       bg: "Години по-късно Варнава отива в Тарс да търси Савел."
   - place: ae41ab4 # Antioch
     ref: Acts.11.26
+    year: "AD 43"
     note:
       en: "A whole year they teach in Antioch, where the disciples are first called Christians."
       ru: "Целый год они учат в Антиохии, где учеников впервые начинают называть христианами."

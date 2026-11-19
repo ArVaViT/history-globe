@@ -9,7 +9,7 @@ description: What you may take from History Globe and how — the data through t
   itself, its articles and its code are not for copying. This page says where the line is.
 </p>
 
-<h2>What you may take</h2>
+<h2 id="what-you-may-take">What you may take</h2>
 <div class="table">
   <table>
     <thead>
@@ -68,25 +68,26 @@ description: What you may take from History Globe and how — the data through t
   not clone the globe.
 </p>
 
-<h2>How to credit</h2>
+<h2 id="how-to-credit">How to credit</h2>
 <p>
   Where you show the data, name its sources as <code>index.json</code> lists them. The shortest form
   that satisfies the licences:
 </p>
 <pre><code>Data: History Globe by Vadym Arnaut ({{site}}), CC BY 4.0;
-places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0).</code></pre>
+places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0); place ids from Pleiades (CC BY 3.0).</code></pre>
 <p>In a page, with links:</p>
 <pre><code>&lt;p&gt;Data: &lt;a href="{{site}}/"&gt;History Globe&lt;/a&gt; by Vadym Arnaut,
   &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC BY 4.0&lt;/a&gt;;
   places from &lt;a href="https://www.openbible.info/geo/"&gt;OpenBible.info&lt;/a&gt;,
-  people from &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;.&lt;/p&gt;</code></pre>
+  people from &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;,
+  place ids from &lt;a href="https://pleiades.stoa.org/"&gt;Pleiades&lt;/a&gt;.&lt;/p&gt;</code></pre>
 <p>
   <code>{{site}}/api/v1/index.json</code> carries the full credit lines, and every API response is
   sent with a <code>Link</code> header that names its licence. A quoted article or answer is
   credited as “History Globe (Vadym Arnaut), CC BY-NC-ND 4.0”, with a link to its page.
 </p>
 
-<h2>Limits</h2>
+<h2 id="limits">Limits</h2>
 <ul>
   <li>
     <b>No key, no quota.</b> The API is static files behind a cache. Fetch each file when you build
@@ -109,7 +110,7 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
   </li>
 </ul>
 
-<h2>Start</h2>
+<h2 id="start">Start</h2>
 <pre><code>const api = "{{site}}/api/v1";
 const places = await (await fetch(`${api}/places.json`)).json();
 const byId = new Map(places.map((p) =&gt; [p.id, p]));
@@ -121,14 +122,14 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   >.
 </p>
 
-<h2>Asking for more</h2>
+<h2 id="asking-for-more">Asking for more</h2>
 <p>
   A translation of the articles, their text on another platform, or a licence the table above does
   not give: write to <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>.
   Partners get a written licence for what they need; the public licences stay as they are.
 </p>
 
-<h2>For AI agents</h2>
+<h2 id="for-ai-agents">For AI agents</h2>
 <p>
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> says the same in one page. Search engines
   and the assistants that answer with a citation are welcome; the articles are not training data

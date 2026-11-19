@@ -9,7 +9,7 @@ description: Hva du kan ta fra History Globe og hvordan — dataene gjennom API-
   globusen, artiklene og koden skal ikke kopieres. Denne siden sier hvor grensen går.
 </p>
 
-<h2>Hva du kan ta</h2>
+<h2 id="what-you-may-take">Hva du kan ta</h2>
 <div class="table">
   <table>
     <thead>
@@ -70,25 +70,26 @@ description: Hva du kan ta fra History Globe og hvordan — dataene gjennom API-
   globusen.
 </p>
 
-<h2>Slik oppgir du kilden</h2>
+<h2 id="how-to-credit">Slik oppgir du kilden</h2>
 <p>
   Der du viser dataene, oppgi kildene slik <code>index.json</code> lister dem. Den korteste formen
   som oppfyller lisensene:
 </p>
 <pre><code>Data: History Globe by Vadym Arnaut ({{site}}), CC BY 4.0;
-places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0).</code></pre>
+places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0); place ids from Pleiades (CC BY 3.0).</code></pre>
 <p>På en side, med lenker:</p>
 <pre><code>&lt;p&gt;Data: &lt;a href="{{site}}/"&gt;History Globe&lt;/a&gt; by Vadym Arnaut,
   &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC BY 4.0&lt;/a&gt;;
   places from &lt;a href="https://www.openbible.info/geo/"&gt;OpenBible.info&lt;/a&gt;,
-  people from &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;.&lt;/p&gt;</code></pre>
+  people from &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;,
+  place ids from &lt;a href="https://pleiades.stoa.org/"&gt;Pleiades&lt;/a&gt;.&lt;/p&gt;</code></pre>
 <p>
   <code>{{site}}/api/v1/index.json</code> inneholder de fullstendige kildelinjene, og hvert API-svar
   sendes med en <code>Link</code>-header som navngir lisensen. En sitert artikkel eller et sitert
   svar krediteres som «History Globe (Vadym Arnaut), CC BY-NC-ND 4.0», med en lenke til siden.
 </p>
 
-<h2>Begrensninger</h2>
+<h2 id="limits">Begrensninger</h2>
 <ul>
   <li>
     <b>Ingen nøkkel, ingen kvote.</b> API-et er statiske filer bak en hurtigbuffer. Hent hver fil
@@ -112,7 +113,7 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
   </li>
 </ul>
 
-<h2>Kom i gang</h2>
+<h2 id="start">Kom i gang</h2>
 <pre><code>const api = "{{site}}/api/v1";
 const places = await (await fetch(`${api}/places.json`)).json();
 const byId = new Map(places.map((p) =&gt; [p.id, p]));
@@ -124,7 +125,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   >.
 </p>
 
-<h2>Be om mer</h2>
+<h2 id="asking-for-more">Be om mer</h2>
 <p>
   En oversettelse av artiklene, teksten deres på en annen plattform eller en lisens som tabellen
   over ikke gir: skriv til
@@ -132,7 +133,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   skriftlig lisens for det de trenger; de offentlige lisensene forblir som de er.
 </p>
 
-<h2>For KI-agenter</h2>
+<h2 id="for-ai-agents">For KI-agenter</h2>
 <p>
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> sier det samme på én side. Søkemotorer og
   assistenter som svarer med kildehenvisning, er velkomne; artiklene er ikke treningsdata

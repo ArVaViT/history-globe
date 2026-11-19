@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { parseYearInput } from "@hg/model";
-import { clampView, FULL_VIEW, ticksFor, zoomView } from "./Timeline";
+import { parseYearInput, PERIODS } from "@hg/model";
+import { AGE_SPANS, AGES, clampView, FULL_VIEW, ticksFor, zoomView } from "./Timeline";
 
 describe("the timeline window", () => {
   it("zooms around the pointer and keeps inside the range", () => {
@@ -41,5 +41,16 @@ describe("parseYearInput", () => {
     expect(parseYearInput("586 BCE")).toBe(-585);
     expect(parseYearInput("586 v. Chr.")).toBe(-585);
     expect(parseYearInput("586 р. до н. е.")).toBe(-585);
+  });
+});
+
+describe("the ages on the track", () => {
+  it("cover every era, one after another, with no era lost", () => {
+    // An age whose first or last era is not in PERIODS would drop off the track silently.
+    expect(AGE_SPANS).toHaveLength(AGES.length);
+    expect(AGE_SPANS[0]?.from).toBe(PERIODS[0]?.range.from);
+    expect(AGE_SPANS.at(-1)?.to).toBe(PERIODS.at(-1)?.range.to);
+    for (let i = 1; i < AGE_SPANS.length; i++)
+      expect(AGE_SPANS[i]?.from, AGE_SPANS[i]?.en).toBe(AGE_SPANS[i - 1]?.to);
   });
 });

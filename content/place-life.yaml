@@ -126,7 +126,7 @@ places:
     from: "c. 880 BC"
     gap:
       from: "c. 108 BC"
-      until: "c. 65 BC"
+      until: "c. 64 BC"
     note:
       en: "Built by King Omri on the hill he bought from Shemer; destroyed by John Hyrcanus, given back to its people by Pompey in 63 BC, rebuilt by Gabinius, and later became Herod's Sebaste."
       ru: "Построена царём Амврием на горе, купленной у Семира; разрушена Иоанном Гирканом, возвращена жителям Помпеем в 63 г. до н. э. и отстроена Габинием, а позже стала Севастой Ирода."
@@ -814,17 +814,15 @@ places:
     # overthrew" it (Ant. 13.364; checked on CCEL, Whiston), and that under Gabinius
     # Gaza and the other cities "which had been desolate for a long time" were rebuilt
     # (Ant. 14.88; checked on Wikisource). The fall is usually put in 96 BC (Schürer;
-    # Glucker 1987). This is the same Hasmonean-destruction / Pompey / Gabinius pattern
-    # as Samaria, and the gap end follows the Samaria entry ("c. 64 BC", the year before
-    # Pompey's settlement of 63 BC) so the two read alike. If you prefer the actual
-    # rebuilding by Gabinius, use until "c. 58 BC" instead (Gabinius governed Syria
-    # 57-55 BC). Caveat for the reviewer: Strabo 16.2.30 calls Gaza "deserted", and some
-    # scholars place the Roman city on a new site; Glucker holds that it rose on the old
-    # one, so the point is fine. Alexander's capture in 332 BC is NOT a gap: he settled
-    # the city again at once (Arrian 2.27.7).
+    # Glucker 1987). The same Hasmonean destruction and Roman restoration as Samaria, and
+    # the gap ends as Samaria's does, in 64 BC, the year before Pompey's settlement of 63 BC;
+    # Gabinius's rebuilding (he governed Syria 57-55 BC) follows it. Strabo 16.2.30 calls
+    # Gaza "deserted", and some place the Roman city on a new site; Glucker holds that it
+    # rose on the old one, so the point stands. Alexander's capture in 332 BC is no gap: he
+    # settled the city again at once (Arrian 2.27.7).
     gap:
       from: "c. 96 BC"
-      until: "c. 65 BC"
+      until: "c. 64 BC"
     note:
       en: "Alexander Jannaeus took Gaza after a year's siege and overthrew it; Pompey freed it from Jewish rule in 63 BC, and Gabinius, governor of Syria, had the long desolate city rebuilt about 57 BC."
       ru: "Александр Яннай после годичной осады взял Газу и разрушил её; в 63 г. до н. э. Помпей освободил её от иудейской власти, а наместник Сирии Габиний около 57 г. до н. э. велел отстроить долго лежавший в запустении город."

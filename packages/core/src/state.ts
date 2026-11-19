@@ -17,6 +17,17 @@ export interface TourState {
   readonly step: number;
 }
 
+/** A chapter's places, picked out without a tour. */
+export interface Focus {
+  /** The chapter (OSIS, `Acts.16`). */
+  readonly ref: string;
+  readonly places: readonly string[];
+  /** The way the chapter's stops were travelled (a tour's legs that read it), if any. */
+  readonly route?: readonly LonLat[];
+  /** The places of the way's stops, in its order (their marks lie under the discs). */
+  readonly routePlaces?: readonly string[];
+}
+
 /** The single store of globe state (ADR 0004). */
 export interface GlobeState {
   readonly year: number;
@@ -26,17 +37,10 @@ export interface GlobeState {
   readonly tour: TourState | null;
   /**
    * Places picked out without a tour (a chapter typed in the search): the rest of the map
-   * steps back as during a tour. A tour, once started, takes over. `ref` names the chapter
-   * (OSIS, `Acts.16`): the link keeps it and the interface shows it in its language.
+   * steps back as during a tour. A tour, once started, takes over. The link keeps its `ref`
+   * and the interface shows it in its language.
    */
-  readonly focus: {
-    readonly ref: string;
-    readonly places: readonly string[];
-    /** The way the chapter's stops were travelled (a tour's legs that read it), if any. */
-    readonly route?: readonly LonLat[];
-    /** The places of the way's stops. */
-    readonly routePlaces?: readonly string[];
-  } | null;
+  readonly focus: Focus | null;
   /**
    * The settled view, as the renderer reports it after each move. It flows one way,
    * renderer → store: the camera is moved by commands (selectPlace, lookAt, tours).

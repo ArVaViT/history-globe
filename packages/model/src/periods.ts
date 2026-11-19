@@ -1,9 +1,8 @@
-import { inclusiveRange, type YearRange } from "./time.ts";
+// Eras for the time slider, Southern Levant, mainstream Israeli scheme (Mazar, NEAEHL).
+// All boundaries are approximate; where chronology is disputed the era says so.
 
-/**
- * Eras for the time slider, Southern Levant, mainstream Israeli scheme (Mazar, NEAEHL).
- * All boundaries are approximate; where chronology is disputed the era says so.
- */
+import { contains, inclusiveRange, type YearRange } from "./time.ts";
+
 export interface Period {
   readonly id: string;
   readonly range: YearRange;
@@ -127,5 +126,5 @@ export const PERIODS: readonly Period[] = [
 ];
 
 export function periodAt(year: number): Period | undefined {
-  return PERIODS.find((p) => year >= p.range.from && year < p.range.to);
+  return PERIODS.find((p) => contains(p.range, year));
 }
