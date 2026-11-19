@@ -100,9 +100,15 @@ function visibleIn(year: number, y0: number, y1: number): boolean {
 
 describe("style", () => {
   // The whole style as built: a move or a refactor of its expressions changes nothing here.
-  // An intended change updates it with `vitest -u` and shows in review as a diff.
+  // An intended change updates it with `vitest -u` and shows in review as a diff. Fractions
+  // are compared to 12 significant digits: Node versions differ in the last bit of Math.sin.
   it("is built as before", () => {
-    expect(style).toMatchSnapshot();
+    const stable = JSON.parse(
+      JSON.stringify(style, (_, v: unknown) =>
+        typeof v === "number" && !Number.isInteger(v) ? Number(v.toPrecision(12)) : v,
+      ),
+    ) as unknown;
+    expect(stable).toMatchSnapshot();
   });
 
   it("is a valid MapLibre style", () => {
