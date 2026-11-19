@@ -26,7 +26,7 @@ export function siteLabelIn(
   own?: string,
 ): string | undefined {
   const w = localeData(locale)?.site;
-  if (!w || !p.tpl || !p.ref || p.ref_text === undefined) return undefined;
+  if (!w || !p.tpl || !p.ref) return undefined;
   const x = name(p.ref);
   if (!x) return undefined;
   const unit = p.unit === "m" ? w.m : w.km;

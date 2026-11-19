@@ -15,6 +15,7 @@
  * relief sent by the page (src/offline.ts). The build writes its id below too, so each
  * deploy installs this worker anew and drops the built files of the one before.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- read by no code: its bytes change the worker.
 const BUILD = "dev";
 // The build's files under assets/ and vendor/, with their size, as the build wrote them.
 const BUILT = [];

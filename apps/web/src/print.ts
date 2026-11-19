@@ -1,12 +1,21 @@
-import { formatYear, periodAt, periodName, placeName, formatRefOr, escapeRegExp } from "@hg/model";
-import { chapterLabel, firstVerseIn, readingOrder } from "./chapter";
-import { DATA_URL, whereIn, type LoadedData } from "./data";
+import {
+  distanceKm,
+  formatRefOr,
+  formatYear,
+  periodAt,
+  periodName,
+  placeName,
+  roundKm,
+  pick,
+} from "@hg/model";
+import { chapterLabel, chapterOf, firstVerseIn, isPersonRef, readingOrder } from "./chapter";
+import type { LoadedData } from "./data";
 import type { Globe } from "./useGlobe";
 import { loadVerse } from "./verses";
 import { translate } from "./i18n";
-import { distanceKm, roundKm } from "./distance";
-import { romanLeg } from "./leg";
-import { russianCases } from "../../../scripts/russian-forms.ts";
+import { loadRoadLegs, roadKm } from "./leg";
+import { buildQuiz } from "./quiz";
+import { LESSON } from "./lesson";
 
 /**
  * A sheet for a class: the map as drawn, under a title and the year, with the stops of the
@@ -32,9 +41,9 @@ export interface PrintSheet {
   readonly blank?: boolean;
   /** Over the lines left for the pupils' notes on an outline map. */
   readonly notes?: string;
-  /** A scale bar: its length and its label ("50 км"), as a share of the map's width. */
+  /** A scale bar: its length and its label ("50 km"), as a share of the map's width. */
   readonly scale?: { readonly share: number; readonly label: string };
-  /** "↑ С": the sheet's map has north up. */
+  /** "↑ N": the sheet's map has north up. */
   readonly north?: string;
 }
 
@@ -69,8 +78,7 @@ const PAGE_PX = ((297 - 24 - 4) * 96) / 25.4;
 /**
  * The layout that keeps the sheet one page, measured off screen at the page's width: as
  * built, the stops in two columns, then the map a little smaller. A sheet longer than all
- * of them keeps two columns and takes the pages it needs. Balaam's eighth stop went over
- * to a second page alone.
+ * of them keeps two columns and takes the pages it needs.
  */
 function fitOnePage(sheet: HTMLElement, list: HTMLElement | null): void {
   sheet.classList.add("hg-measure");
@@ -89,23 +97,70 @@ function fitOnePage(sheet: HTMLElement, list: HTMLElement | null): void {
   sheet.classList.remove("hg-measure");
 }
 
-export async function printSheet(s: PrintSheet): Promise<void> {
+/**
+ * A new sheet in place of any earlier one, headed by its title and the line under it. It
+ * is for the printer only: hidden from screen readers.
+ */
+function newSheet(className: string, locale: string, title: string, sub: string): HTMLElement {
   document.getElementById("hg-print")?.remove();
-  const sheet = make("section", `hg-sheet${s.blank ? " blank" : ""}`);
+  const sheet = make("section", className);
   sheet.id = "hg-print";
-  sheet.lang = s.locale;
+  sheet.lang = locale;
   sheet.setAttribute("aria-hidden", "true");
-
   const head = make("header", "hg-sheet-head");
   const titles = make("div", "");
-  titles.append(make("h1", "", s.title || "History Globe"), make("p", "hg-sheet-when", s.when));
+  titles.append(make("h1", "", title), make("p", "hg-sheet-when", sub));
   head.append(titles, make("p", "hg-sheet-brand", "History Globe"));
+  sheet.append(head);
+  return sheet;
+}
 
+/** Prints the sheet, and takes it away once the browser's print is done. */
+function printAndRemove(sheet: HTMLElement): void {
+  const done = () => {
+    sheet.remove();
+    window.removeEventListener("afterprint", done);
+  };
+  window.addEventListener("afterprint", done);
+  window.print();
+}
+
+/**
+ * The English words of the map's credits (@hg/core style.ts, useGlobe.ts) and the keys
+ * that put them in the sheet's language; the Copernicus notice stays as worded.
+ */
+export const CREDIT_WORDS: readonly (readonly [
+  RegExp | string,
+  string,
+  (word: string) => string,
+])[] = [
+  [/, modified/g, "sheet.credit_modified", (w) => `, ${w}`],
+  ["Ancient sites:", "sheet.credit_ancient", (w) => `${w}:`],
+  ["Roman roads:", "sheet.credit_roads", (w) => `${w}:`],
+  ["Terrain:", "sheet.credit_terrain", (w) => `${w}:`],
+  [" et al.", "sheet.credit_et_al", (w) => ` ${w}`],
+];
+
+/** The map's credits in the sheet's language. */
+export function sheetCredits(attribution: string, locale: string): string {
+  return CREDIT_WORDS.reduce(
+    (text, [english, key, put]) => text.replace(english, put(translate(locale, key))),
+    attribution,
+  );
+}
+
+export async function printSheet(s: PrintSheet): Promise<void> {
+  const sheet = newSheet(
+    `hg-sheet${s.blank ? " blank" : ""}`,
+    s.locale,
+    s.title || "History Globe",
+    s.when,
+  );
   const img = make("img", "hg-sheet-map");
   img.alt = "";
   img.src = s.image;
 
-  sheet.append(head, img);
+  sheet.append(img);
   if (s.scale) {
     const bar = make("div", "hg-sheet-scale");
     const line = make("span", "");
@@ -152,12 +207,7 @@ export async function printSheet(s: PrintSheet): Promise<void> {
 
   await img.decode().catch(() => undefined);
   fitOnePage(sheet, sheet.querySelector("ol"));
-  const done = () => {
-    sheet.remove();
-    window.removeEventListener("afterprint", done);
-  };
-  window.addEventListener("afterprint", done);
-  window.print();
+  printAndRemove(sheet);
 }
 
 /**
@@ -186,7 +236,7 @@ export async function printForClass({
   };
   const ref = (osis: string) => formatRefOr(osis, s.locale);
   const tour = s.tour ? data.tours.find((x) => x.id === s.tour?.id) : undefined;
-  const chapter = s.focus && !s.focus.ref.startsWith("person:") ? s.focus : null;
+  const chapter = chapterOf(s.focus);
   const chapterOrder = chapter
     ? readingOrder(chapter.places, (id) => data.byId.get(id)?.props.osis ?? [], chapter.ref)
     : [];
@@ -251,9 +301,9 @@ export async function printForClass({
     );
     // A lesson's places travel with it (lesson.ts).
     const lesson = new URLSearchParams(window.location.search).get("lesson");
-    if (tour?.id === "lesson" && lesson) q.set("lesson", lesson);
+    if (tour?.id === LESSON && lesson) q.set("lesson", lesson);
     const title = new URLSearchParams(window.location.search).get("title");
-    if (tour?.id === "lesson" && lesson && title) q.set("title", title);
+    if (tour?.id === LESSON && lesson && title) q.set("title", title);
     // Layers turned off stay off.
     const hide = new URLSearchParams(window.location.search).get("hide");
     if (hide) q.set("hide", hide);
@@ -262,7 +312,7 @@ export async function printForClass({
   const period = periodAt(s.year);
   // A lesson's stops have no notes: the sheet gives each one its verse, as the screen does.
   const verses =
-    tour?.id === "lesson" && !blank
+    tour?.id === LESSON && !blank
       ? await Promise.all(
           tour.stops.map((st) =>
             loadVerse(st.ref ?? "", s.locale).then(
@@ -272,29 +322,9 @@ export async function printForClass({
           ),
         )
       : [];
-  // The legs along the Roman roads, as the stop's card gives them (build-road-legs.ts):
-  // the tour's own, or for a lesson's stop picked in their time, the same two places'.
-  const roads = (
-    tour && !blank
-      ? await fetch(`${DATA_URL}/road-legs.json`)
-          .then((r) => (r.ok ? (r.json() as Promise<Record<string, unknown>>) : {}))
-          // Without the roads the sheet still prints, in straight lines.
-          .catch(() => ({}))
-      : {}
-  ) as Record<string, unknown>;
-  const byRoad = (i: number) => {
-    const own = (roads[tour?.id ?? ""] as (number | null)[] | undefined)?.[i];
-    const st = tour?.stops[i];
-    const prev = tour?.stops[i - 1];
-    // As the card: no road for a voyage or for stops that are not a way travelled.
-    if (!tour || !st || !prev || st.sea || tour.walked === false) return null;
-    if (own != null) return own;
-    return tour.id === "lesson" && romanLeg(tour, i)
-      ? ((roads["@pairs"] as Record<string, number> | undefined)?.[
-          `${prev.placeId}>${st.placeId}`
-        ] ?? null)
-      : null;
-  };
+  // The legs along the Roman roads, as the stop's card gives them.
+  const roads = tour && !blank ? await loadRoadLegs() : null;
+  const byRoad = (i: number) => (tour && roads ? roadKm(roads, tour, i) : null);
   const leg = (i: number) => {
     const a = tour?.stops[i - 1]?.at;
     const b = tour?.stops[i]?.at;
@@ -314,7 +344,7 @@ export async function printForClass({
   await printSheet({
     locale: s.locale,
     title: tour
-      ? (tour.title[s.locale] ?? tour.title.en ?? "")
+      ? (pick(tour.title, s.locale) ?? "")
       : chapter
         ? chapterLabel(chapter.ref, s.locale)
         : s.focus
@@ -347,7 +377,7 @@ export async function printForClass({
           n: i + 1,
           name: nameOf(st.placeId),
           // The passage, and how far the stop is from the one before, as the card says it.
-          ref: [st.ref ? ref(st.ref) : (st.source?.cite[s.locale] ?? st.source?.cite.en), leg(i)]
+          ref: [st.ref ? ref(st.ref) : pick(st.source?.cite, s.locale), leg(i)]
             .filter(Boolean)
             .join(" · "),
           note: st.note[s.locale] || st.note.en || verses[i] || "",
@@ -358,283 +388,11 @@ export async function printForClass({
             return { n: i + 1, name: nameOf(id), ref: v ? ref(v) : "" };
           })
         : [],
-    // The credits in the sheet's language (the Copernicus notice stays as worded).
-    attribution: shot.attribution
-      .replace(/, modified/g, `, ${translate(s.locale, "sheet.credit_modified")}`)
-      .replace("Ancient sites:", `${translate(s.locale, "sheet.credit_ancient")}:`)
-      .replace("Roman roads:", `${translate(s.locale, "sheet.credit_roads")}:`)
-      .replace("Terrain:", `${translate(s.locale, "sheet.credit_terrain")}:`)
-      .replace(" et al.", ` ${translate(s.locale, "sheet.credit_et_al")}`),
+    attribution: sheetCredits(shot.attribution, s.locale),
     // A short address a class can type: what is shown, not the camera's decimals.
     // A person's view is not in the address: that one keeps the camera as it is.
-    url: s.focus?.ref.startsWith("person:") ? window.location.href : shortUrl(),
+    url: isPersonRef(s.focus?.ref) ? window.location.href : shortUrl(),
   });
-}
-
-/** The languages whose names take case endings («в Иерусалиме», "w Jerozolimie", "v Jeruzalémě", «у Јерусалиму»). */
-const DECLINED: ReadonlySet<string> = new Set(["ru", "uk", "pl", "cs", "sr"]);
-/**
- * The languages that add their cases to the end of a name, longer than a Slavic ending
- * ("Jeruzsálemben", "Jerusalemissa"), a name's
- * last vowel changing before them ("Betánia" → "Betániában", "Egypti" → "Egyptissä"), and
- * Romanian, whose article and case stand at a name's end ("Ierusalimul", "Betaniei").
- */
-const SUFFIXED: ReadonlySet<string> = new Set(["hu", "fi", "ro"]);
-
-/** A stop's text with its place taken out, for a quiz: every mention, in any case. */
-export function maskPlace(
-  text: string,
-  index: { readonly pattern: RegExp; readonly forms: Readonly<Record<string, string>> } | null,
-  placeId: string,
-  names: readonly string[],
-  locale: string,
-): string {
-  const gap = "______";
-  let out = text;
-  if (index)
-    out = out.replace(index.pattern, (m) => {
-      const k = m.replace(/\s+/g, " ").replace(/ё/g, "е").replace(/Ё/g, "Е");
-      return index.forms[k] === placeId ? gap : m;
-    });
-  // Names the index leaves alone (one of two Antiochs). English names do not decline: the
-  // whole word only, so "Caesarea" leaves "Caesar". Russian ones by their stem with a
-  // capital and at most three letters more («Антиохии» as «Антиохия»), never a lower-case
-  // word («кесарю» stays). A short word is taken whole.
-  for (const name of names)
-    for (const word of name.split(/\s+/)) {
-      if (word.length < 3) continue;
-      // Names in the languages with cases take endings: match their stem.
-      const ru = DECLINED.has(locale);
-      const suffixed = SUFFIXED.has(locale);
-      const stem =
-        ru && word.length > 4
-          ? word.slice(0, -2)
-          : suffixed && word.length > 4
-            ? word.replace(locale === "ro" ? /e?a$|[eiouăâî]$/u : /[aeiouyáéíóöőúüűäăâî]$/u, "")
-            : word;
-      const esc = escapeRegExp(stem);
-      // A short Russian name keeps its whole word and takes a case ending («до Дана»),
-      // never a longer name («Даниил»).
-      const tail = suffixed
-        ? "\\p{L}{0,6}"
-        : !ru
-          ? ""
-          : stem === word
-            ? "\\p{L}{0,2}"
-            : "\\p{L}{0,3}";
-      out = out.replace(new RegExp(`(?<![\\p{L}])${esc}${tail}(?![\\p{L}])`, "gu"), gap);
-    }
-  // Two words of one name taken out are one gap.
-  return out.replace(/______(?:[\s-]*______)+/g, gap).trim();
-}
-
-/** The case a preposition before a Russian name asks for (index into russianCases). */
-const CASE_AFTER: Readonly<Record<string, number>> = {
-  в: 5,
-  во: 5,
-  на: 5,
-  о: 5,
-  об: 5,
-  при: 5,
-  из: 1,
-  от: 1,
-  до: 1,
-  у: 1,
-  около: 1,
-  близ: 1,
-  к: 2,
-  ко: 2,
-  по: 2,
-};
-
-/**
- * The quiz's choices in the case the gap stands in: «вышел из ______» offers «Ефеса» and
- * «Вифлеема», not «Ефес». The case is the one the answer's name takes in the text; where a
- * form could be several cases («Самарии»), the preposition before it decides. Unknown, or
- * one choice that does not decline: the choices stay as they are.
- */
-export function inCaseOf(text: string, answer: string, options: readonly string[]): string[] {
-  const own = russianCases(answer);
-  if (!own) return [...options];
-  const plain = (x: string) => x.replace(/ё/g, "е");
-  const t = plain(text);
-  // Every mention of the answer, whole form against whole form, with the cases it can be.
-  const found = new Map<number, Set<number>>();
-  own.forEach((form, i) => {
-    const esc = escapeRegExp(plain(form));
-    for (const m of t.matchAll(new RegExp(`(?<![\\p{L}-])${esc}(?![\\p{L}-])`, "gu")))
-      found.set(m.index, (found.get(m.index) ?? new Set()).add(i));
-  });
-  if (found.size === 0) return [...options];
-  const cases = new Set<number>();
-  for (const [at, can] of found) {
-    if (can.has(0)) return [...options];
-    const before = (/(\p{L}+)\s+$/u.exec(t.slice(0, at))?.[1] ?? "").toLowerCase();
-    const after = CASE_AFTER[before];
-    const index =
-      can.size === 1 ? [...can][0] : after !== undefined && can.has(after) ? after : undefined;
-    if (index === undefined) return [...options];
-    cases.add(index === 6 ? 4 : index);
-  }
-  // Two gaps in two cases («в ______ … из ______»): one set of choices cannot fit both.
-  if (cases.size !== 1) return [...options];
-  const index = [...cases][0] ?? 0;
-  const out = options.map((o) => {
-    const [base = "", rest] = o.split(/(?= \()/);
-    const c = russianCases(base);
-    return c?.[index] === undefined ? null : `${c[index]}${rest ?? ""}`;
-  });
-  return out.every((x) => x !== null) ? out : [...options];
-}
-
-/** A verse quoted from mid-sentence («они, узнав…») starts the question with a capital. */
-const capital = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
-
-/** Four options a question offers: the answer and up to three other stops, in name order. */
-export function quizOptions(answer: string, others: readonly string[], seed: number): string[] {
-  const pool = [...new Set(others)].filter((n) => n !== answer);
-  const picked: string[] = [];
-  for (let k = 0; picked.length < 3 && pool.length > 0; k++) {
-    const i = (seed * 7 + k * 13) % pool.length;
-    picked.push(...pool.splice(i, 1));
-  }
-  return [answer, ...picked].sort((a, b) => a.localeCompare(b));
-}
-
-/** One question of a quiz: the text with its place taken out, four names, the right one. */
-export interface QuizItem {
-  readonly text: string;
-  /** The passage, as the reader writes it (Деян 16:12). */
-  readonly ref: string;
-  readonly options: readonly string[];
-  /** Index of the right option. */
-  readonly answer: number;
-  /** The options in the nominative, to name the right one after a wrong choice. */
-  readonly names: readonly string[];
-  /** The place each option names, to fly to it and measure how far off a wrong one is. */
-  readonly ids: readonly string[];
-}
-
-/**
- * The questions of a quiz on the tour (or lesson) on the map: for each stop, what happened
- * there (its note, or for a lesson its verse) with the place taken out, and four places to
- * choose from. Printed (printQuiz) or played on screen (QuizPanel).
- */
-export async function buildQuiz({
-  globe,
-  data,
-}: {
-  globe: Globe;
-  data: LoadedData;
-}): Promise<{ readonly title: string; readonly items: readonly QuizItem[] } | null> {
-  const s = globe.engine.store.get();
-  const tour = s.tour ? data.tours.find((x) => x.id === s.tour?.id) : undefined;
-  if (!tour) return null;
-  const ru = s.locale === "ru";
-  const nameOf = (id: string) => {
-    const p = data.byId.get(id)?.props;
-    return p ? placeName(p, s.locale) : id;
-  };
-  const { loadTextPlaces } = await import("./text-places");
-  const index = await loadTextPlaces(s.locale).catch(() => null);
-  const texts = await Promise.all(
-    tour.stops.map(async (st) => {
-      const note = st.note[s.locale] || st.note.en || "";
-      // A note too short to ask by («Снова в Листре.» → «Снова ______.»): the verse instead.
-      if (note.length >= 30 || !st.ref) return note;
-      return (await loadVerse(st.ref, s.locale).catch(() => null)) ?? note;
-    }),
-  );
-  // Two places of one name (the Antiochs, the Bethanys) are told apart by where they are.
-  const plain = tour.stops.map((st) => nameOf(st.placeId));
-  const names = tour.stops.map((st, i) => {
-    const n = plain[i] ?? "";
-    const twin = tour.stops.some((o, k) => plain[k] === n && o.placeId !== st.placeId);
-    const p = data.byId.get(st.placeId)?.props;
-    // In English the source's short name ("Antioch in Pisidia"), not the long today line;
-    // in the other languages their own line where it has one.
-    const where = !p
-      ? undefined
-      : s.locale === "en"
-        ? (p.where_ref_text ?? p.where)
-        : (whereIn(p, s.locale) ?? p.where);
-    return twin && where && where !== n ? `${n} (${where})` : n;
-  });
-  // A tour of two or three places (Ruth) borrows choices from places its chapters name, the
-  // most named first, so that each question still offers four.
-  const own = new Set(names);
-  const chapters = new Set(
-    tour.stops.flatMap((st) =>
-      (st.ref ?? "").split("-").map((r) => r.split(".").slice(0, 2).join(".")),
-    ),
-  );
-  const borrowed =
-    own.size >= 4
-      ? []
-      : [...data.byId.values()]
-          .filter(
-            ({ props }) =>
-              // Another name of a place already offered (Ephrathah, Bethlehem) is no choice.
-              props.where_tpl !== "same" &&
-              props.where_tpl !== "same_name" &&
-              !props.dup &&
-              props.osis.some((o) => chapters.has(o.split(".").slice(0, 2).join("."))),
-          )
-          .sort((a, b) => b.props.verses - a.props.verses)
-          .map(({ props }) => ({
-            id: props.id,
-            n: placeName(props, s.locale),
-          }))
-          .filter((x, k, all) => !own.has(x.n) && all.findIndex((y) => y.n === x.n) === k)
-          .slice(0, 4 - own.size + 2);
-  const pool = [...names, ...borrowed.map((b) => b.n)];
-  // Each name offered, back to its place.
-  const idOf = new Map<string, string>([
-    ...borrowed.map((b) => [b.n, b.id] as const),
-    ...tour.stops.map((st, i) => [names[i] ?? "", st.placeId] as const),
-  ]);
-  // A stop whose passage overlaps another place's (Acts 14:21 names Lystra, Iconium and
-  // Antioch at once) would have two right answers: it is left out of the quiz.
-  const span = (ref: string) => {
-    const [a = "", b = a] = ref.split("-");
-    const at = (r: string) => {
-      const [book = "", c = "0", v = "0"] = r.split(".");
-      return { book, n: Number(c) * 1000 + Number(v) };
-    };
-    return { from: at(a), to: at(b) };
-  };
-  const overlaps = (i: number) =>
-    tour.stops.some((o, k) => {
-      if (k === i || o.placeId === tour.stops[i]?.placeId) return false;
-      // A stop told outside the Bible has no passage to share (Josephus, Jerome).
-      const own = tour.stops[i]?.ref;
-      if (!own || !o.ref) return false;
-      const x = span(own);
-      const y = span(o.ref);
-      return x.from.book === y.from.book && x.from.n <= y.to.n && y.from.n <= x.to.n;
-    });
-  const items = tour.stops.flatMap((st, i) => {
-    const text = texts[i] ?? "";
-    if (!text || overlaps(i)) return [];
-    const p = data.byId.get(st.placeId)?.props;
-    const options = quizOptions(names[i] ?? "", pool, i + 1);
-    const shown = ru ? inCaseOf(text, plain[i] ?? "", options) : options;
-    return [
-      {
-        text: capital(
-          maskPlace(text, index, st.placeId, [plain[i] ?? "", p?.name ?? ""], s.locale),
-        ),
-        ref: st.ref
-          ? formatRefOr(st.ref, s.locale)
-          : (st.source?.cite[s.locale] ?? st.source?.cite.en ?? ""),
-        options: shown,
-        names: options,
-        answer: options.indexOf(names[i] ?? ""),
-        ids: options.map((o) => idOf.get(o) ?? ""),
-      },
-    ];
-  });
-  return { title: tour.title[s.locale] ?? tour.title.en ?? "", items };
 }
 
 /**
@@ -653,20 +411,12 @@ export async function printQuiz({
   const s = globe.engine.store.get();
   const letters = translate(s.locale, "sheet.letters").split(" ");
   const items = quiz.items.map((it) => ({ ...it, answer: letters[it.answer] ?? "" }));
-
-  document.getElementById("hg-print")?.remove();
-  const sheet = make("section", "hg-sheet quiz");
-  sheet.id = "hg-print";
-  sheet.lang = s.locale;
-  sheet.setAttribute("aria-hidden", "true");
-  const head = make("header", "hg-sheet-head");
-  const titles = make("div", "");
-  titles.append(
-    make("h1", "", quiz.title),
-    make("p", "hg-sheet-when", translate(s.locale, "sheet.quiz_intro")),
+  const sheet = newSheet(
+    "hg-sheet quiz",
+    s.locale,
+    quiz.title,
+    translate(s.locale, "sheet.quiz_intro"),
   );
-  head.append(titles, make("p", "hg-sheet-brand", "History Globe"));
-  sheet.append(head);
   const list = make("ol", "hg-quiz");
   items.forEach((it, i) => {
     const li = make("li", "");
@@ -694,10 +444,5 @@ export async function printQuiz({
   );
   sheet.append(foot);
   document.body.append(sheet);
-  const done = () => {
-    sheet.remove();
-    window.removeEventListener("afterprint", done);
-  };
-  window.addEventListener("afterprint", done);
-  window.print();
+  printAndRemove(sheet);
 }

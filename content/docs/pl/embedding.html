@@ -8,7 +8,7 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
   obok fragmentu tekstu na Twojej stronie, a kilka komunikatów utrzymuje oba w zgodzie.
 </p>
 
-<h2>Szybki start</h2>
+<h2 id="quick-start">Szybki start</h2>
 <pre><code>&lt;iframe
   src="{{site}}/embed/v1?ref=Acts.16&amp;locale=pl"
   title="Mapa Dz 16"
@@ -30,7 +30,7 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
   <li>Ramka działa nawet przy szerokości telefonu; wystarczy wysokość 480 px.</li>
 </ul>
 
-<h2>Rozdział lub fragment</h2>
+<h2 id="a-chapter-or-a-passage">Rozdział lub fragment</h2>
 <p>
   <code>ref</code> przyjmuje odwołanie OSIS z angielskimi skrótami ksiąg i angielską numeracją
   wersetów:
@@ -70,7 +70,7 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
   drugiego, zachowuje bieżący rok mapy.
 </p>
 
-<h2>Parametry</h2>
+<h2 id="parameters">Parametry</h2>
 <div class="table">
   <table>
     <thead>
@@ -179,7 +179,7 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
   działają po <code>/embed/v1</code>.
 </p>
 
-<h2>Komunikaty</h2>
+<h2 id="messages">Komunikaty</h2>
 <p>
   Globus i Twoja strona komunikują się przez <code>postMessage</code>. Każdy komunikat jest obiektem
   z polami <code>type</code> i <code>v: 1</code>. Globus wysyła tylko to, co dzieje się na mapie, i
@@ -187,7 +187,7 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
   jej pochodzenie (cel <code>"*"</code>); przyjmuje komunikaty wyłącznie ze strony, która zawiera
   ramkę.
 </p>
-<h3>Z globusa</h3>
+<h3 id="from-the-globe">Z globusa</h3>
 <div class="table">
   <table>
     <thead>
@@ -230,7 +230,10 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
       <tr>
         <td><code>hg:error</code></td>
         <td><code>{ code, message }</code></td>
-        <td>nie udało się wczytać mapy lub jej danych</td>
+        <td>
+          nie udało się wczytać mapy lub jej danych: <code>code</code> to <code>"map"</code> albo
+          <code>"data"</code>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -239,9 +242,12 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
   <code>view</code> zawiera <code>year</code>, <code>locale</code> i <code>layers</code> oraz, gdy
   są ustawione, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> i
   <code>camera</code>. <code>view</code> bez <code>place</code> oznacza, że żadne miejsce nie jest
-  zaznaczone.
+  zaznaczone. <code>camera</code> to obiekt,
+  <code>{ center: [35.2, 31.8], zoom: 7, pitch: 30, bearing: 0 }</code>, a nie ciąg znaków z adresu;
+  <code>layers</code> nadaje każdej warstwie <code>true</code> albo <code>false</code>:
+  <code>{ relief: false, battles: false }</code>.
 </p>
-<h3>Do globusa</h3>
+<h3 id="to-the-globe">Do globusa</h3>
 <div class="table">
   <table>
     <thead>
@@ -296,11 +302,11 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
   rodzaje mogą pojawić się w <code>view.place</code> i <code>hg:place-clicked</code>, a
   <code>hg:set-view</code> przyjmuje oba; jeśli Twoje dane zawierają tylko miejsca OpenBible,
   sprawdź postać identyfikatora, zanim zaczniesz go wyszukiwać. Spośród {{openbible}} miejsc
-  OpenBible {{absent}} nie ma na mapie (nie mają punktu, który wolno publikować); ich identyfikatory
-  są ignorowane.
+  OpenBible {{absent}} nie ma na mapie (pominięte albo w ogóle bez punktu); ich identyfikatory są
+  ignorowane.
 </p>
 
-<h2>Przykład: mapa podąża za czytelnikiem</h2>
+<h2 id="example-the-map-follows-your-reader">Przykład: mapa podąża za czytelnikiem</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
 // When your reader opens a chapter, show it on the map.
@@ -429,15 +435,17 @@ function closeBox() {
   zwykłym tekstem, podobnie jak nazwa, której same wersety Biblii używają przeważnie w innym
   znaczeniu („Kadesz” oznacza tam Kadesz-Barnea, a nie Kadesz z bazy danych). Nazwa miejsca, która
   jest też imieniem (Jordan, Szaron), nie jest wiązana obok innego słowa pisanego wielką literą:
-  Jordan Smith to osoba, a nie rzeka. W języku rosyjskim, ukraińskim, polskim i czeskim nazwy są
-  znajdowane w różnych przypadkach („в Египте”, „w Jerozolimie”, „v Jeruzalémě”), a w niemieckim
-  także w dopełniaczu („Jerusalems”). Linki, kod, pola formularzy, przyciski i nagłówki są pomijane.
+  Jordan Smith to osoba, a nie rzeka. W języku rosyjskim, ukraińskim, polskim, czeskim, serbskim,
+  węgierskim, fińskim i rumuńskim nazwy są znajdowane w różnych przypadkach („в Египте”, „w
+  Jerozolimie”, „v Jeruzalémě”), a w niemieckim, szwedzkim, duńskim i norweskim także w dopełniaczu
+  („Jerusalems”). Linki, kod, pola formularzy, przyciski i nagłówki są pomijane.
 </p>
 <p class="note">
-  Skrypt nie ma zależności i nie ustawia plików cookie. Czyta z globusa jeden plik nazw (od 20 do 35
-  KB przez sieć, zależnie od języka, plus 7 KB samego skryptu), bez przekazywania adresu Twojej
-  strony jako referera, i zmienia tylko te nazwy, które wiąże. Działa przy ścisłej polityce
-  bezpieczeństwa treści (Content Security Policy), która zezwala na adres globusa w
+  Skrypt nie ma zależności i nie ustawia plików cookie. Czyta z globusa jeden plik nazw (od
+  {{names_kb_min}} do {{names_kb_max}} KB przez sieć, zależnie od języka, plus {{script_kb}} KB
+  samego skryptu), bez przekazywania adresu Twojej strony jako referera, i zmienia tylko te nazwy,
+  które wiąże. Działa przy ścisłej polityce bezpieczeństwa treści (Content Security Policy), która
+  zezwala na adres globusa w
   <code>script-src</code> i <code>connect-src</code>. Dla tekstu, który Twoja strona doda później,
   wywołaj <code>HistoryGlobePlaces.scan(element)</code>, gdy tekst zostanie wyrenderowany: skrypt
   dzieli węzły tekstowe, więc na stronie React lub Vue uruchamiaj go na treści, której framework już
@@ -445,7 +453,7 @@ function closeBox() {
 </p>
 <script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
 
-<h2>Stabilność</h2>
+<h2 id="stability">Stabilność</h2>
 <p>
   <code>/embed/v1</code> jest kontraktem: w ramach v1 parametry i komunikaty są tylko dodawane,
   nigdy zmieniane ani usuwane. Zmiana łamiąca zgodność ukaże się jako <code>/embed/v2</code>, a v1

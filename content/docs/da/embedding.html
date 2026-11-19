@@ -8,7 +8,7 @@ description: Sæt globussen ind på dit eget websted med én linje – kortet ov
   kapitel ved siden af skriftstedet på din side; nogle få beskeder holder de to synkroniseret.
 </p>
 
-<h2>Kom hurtigt i gang</h2>
+<h2 id="quick-start">Kom hurtigt i gang</h2>
 <pre><code>&lt;iframe
   src="{{site}}/embed/v1?ref=Acts.16&amp;locale=da"
   title="Kort: ApG 16"
@@ -30,7 +30,7 @@ description: Sæt globussen ind på dit eget websted med én linje – kortet ov
   <li>Rammen fungerer helt ned til en telefons bredde; en højde på 480 px er nok.</li>
 </ul>
 
-<h2>Et kapitel eller et skriftsted</h2>
+<h2 id="a-chapter-or-a-passage">Et kapitel eller et skriftsted</h2>
 <p>
   <code>ref</code> tager en OSIS-henvisning med engelske bogforkortelser og engelsk versnummerering:
 </p>
@@ -69,7 +69,7 @@ description: Sæt globussen ind på dit eget websted med én linje – kortet ov
   nuværende år.
 </p>
 
-<h2>Parametre</h2>
+<h2 id="parameters">Parametre</h2>
 <div class="table">
   <table>
     <thead>
@@ -175,14 +175,14 @@ description: Sæt globussen ind på dit eget websted med én linje – kortet ov
   parametre virker efter <code>/embed/v1</code>.
 </p>
 
-<h2>Beskeder</h2>
+<h2 id="messages">Beskeder</h2>
 <p>
   Globussen og din side kommunikerer gennem <code>postMessage</code>. Hver besked er et objekt med
   <code>type</code> og <code>v: 1</code>. Globussen sender kun det, der sker på kortet, og aldrig
   noget, der identificerer læseren, så den sender til den overordnede side uanset dens oprindelse
   (mål <code>"*"</code>); den modtager kun beskeder fra den side, der rummer rammen.
 </p>
-<h3>Fra globussen</h3>
+<h3 id="from-the-globe">Fra globussen</h3>
 <div class="table">
   <table>
     <thead>
@@ -224,7 +224,10 @@ description: Sæt globussen ind på dit eget websted med én linje – kortet ov
       <tr>
         <td><code>hg:error</code></td>
         <td><code>{ code, message }</code></td>
-        <td>kortet eller dets data kunne ikke indlæses</td>
+        <td>
+          kortet eller dets data kunne ikke indlæses: <code>code</code> er <code>"map"</code> eller
+          <code>"data"</code>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -233,8 +236,12 @@ description: Sæt globussen ind på dit eget websted med én linje – kortet ov
   <code>view</code> indeholder <code>year</code>, <code>locale</code> og <code>layers</code> og, når
   de er sat, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> og
   <code>camera</code>. En <code>view</code> uden <code>place</code> betyder, at intet sted er valgt.
+  <code>camera</code> er et objekt,
+  <code>{ center: [35.2, 31.8], zoom: 7, pitch: 30, bearing: 0 }</code>, ikke strengen fra adressen;
+  <code>layers</code> giver hvert lag <code>true</code> eller <code>false</code>:
+  <code>{ relief: false, battles: false }</code>.
 </p>
-<h3>Til globussen</h3>
+<h3 id="to-the-globe">Til globussen</h3>
 <div class="table">
   <table>
     <thead>
@@ -288,11 +295,11 @@ description: Sæt globussen ind på dit eget websted med én linje – kortet ov
   har et, deres Wikidata-element (Konstantinopel er <code>Q16869</code>). Begge slags kan optræde i
   <code>view.place</code> og <code>hg:place-clicked</code>, og begge accepteres af
   <code>hg:set-view</code>; hvis dine data kun har OpenBibles steder, så test formen, før du slår et
-  op. Af OpenBibles {{openbible}} steder er {{absent}} ikke på kortet (de har intet punkt, der må
-  offentliggøres); deres id’er ignoreres.
+  op. Af OpenBibles {{openbible}} steder er {{absent}} ikke på kortet (udeladt eller helt uden
+  punkt); deres id’er ignoreres.
 </p>
 
-<h2>Eksempel: kortet følger din læser</h2>
+<h2 id="example-the-map-follows-your-reader">Eksempel: kortet følger din læser</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
 // Når din læser åbner et kapitel, vises det på kortet.
@@ -418,24 +425,24 @@ function closeBox() {
   forbliver almindelig tekst, og det samme gælder et navn, som Bibelens egne vers for det meste
   bruger om noget andet (»Kadesh« er der Kadesh-Barnea, ikke databasens Kadesh). Et stedsnavn, der
   også er et fornavn (Jordan, Saron), lades urørt ved siden af et andet ord med stort
-  begyndelsesbogstav: Jordan Smith er en person, ikke floden. På russisk, ukrainsk, polsk og
-  tjekkisk findes navnene også i deres bøjede former (»в Египте«, »w Jerozolimie«, »v Jeruzalémě«),
-  og tyske navne også i genitiv (»Jerusalems«). Links, kode, formularfelter, knapper og overskrifter
-  lades urørt.
+  begyndelsesbogstav: Jordan Smith er en person, ikke floden. På russisk, ukrainsk, polsk, tjekkisk,
+  serbisk, ungarsk, finsk og rumænsk findes navnene også i deres bøjede former (»в Египте«, »w
+  Jerozolimie«, »v Jeruzalémě«), og tyske, svenske, danske og norske navne også i genitiv
+  (»Jerusalems«). Links, kode, formularfelter, knapper og overskrifter lades urørt.
 </p>
 <p class="note">
   Scriptet har ingen afhængigheder og sætter ingen cookies. Det henter én fil med navne fra
-  globussen (omkring 20 til 35 KB over nettet afhængigt af sproget, plus 7 KB script) uden din sides
-  adresse som referrer og ændrer kun de navne, det linker. Det virker under en streng Content
-  Security Policy, der tillader globussens adresse i <code>script-src</code> og
-  <code>connect-src</code>. For tekst, som din side tilføjer senere, kald
+  globussen (omkring {{names_kb_min}} til {{names_kb_max}} KB over nettet afhængigt af sproget, plus
+  {{script_kb}} KB script) uden din sides adresse som referrer og ændrer kun de navne, det linker.
+  Det virker under en streng Content Security Policy, der tillader globussens adresse i
+  <code>script-src</code> og <code>connect-src</code>. For tekst, som din side tilføjer senere, kald
   <code>HistoryGlobePlaces.scan(element)</code>, når teksten er gengivet: scriptet deler
   tekstnoderne, så på en React- eller Vue-side skal det køres på indhold, som frameworket ikke
   længere gengiver igen.
 </p>
 <script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
 
-<h2>Stabilitet</h2>
+<h2 id="stability">Stabilitet</h2>
 <p>
   <code>/embed/v1</code> er en kontrakt: inden for v1 tilføjes parametre og beskeder kun, men ændres
   eller fjernes aldrig. En brydende ændring udkommer som <code>/embed/v2</code>, og v1 bliver ved

@@ -31,7 +31,7 @@ reaches readers through the site and through the assistants that cite it.
   1 and 3. Its machine-readable form: `robots.txt` disallows the crawlers that gather
   training text and carries `Content-Signal: search=yes, ai-input=yes, ai-train=no`; every
   page is sent with `tdm-reservation: 1` (`vercel.json`). Search engines and the
-  assistants that answer with a citation stay allowed (`docs/launch-readiness.md`, section 4).
+  assistants that answer with a citation stay allowed.
   Every crawler is kept out of `/data/`, the files the map loads, but for `/data/photos/`
   (the only files of it the indexed pages read) and `/data/text-places.*` (what
   `hg-places.js` reads on the sites that use it); the open data is `/api/v1/`.

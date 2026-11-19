@@ -236,6 +236,8 @@ transition:opacity .16s ease,transform .16s ease,visibility 0s .16s;pointer-even
 .go:hover{filter:brightness(1.08)}
 .more{white-space:nowrap;color:var(--ink);font-size:12.5px;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:.2em}
 .more:hover{text-decoration-color:currentColor}
+.src{display:block;margin-top:8px;color:var(--soft);font-size:11px;text-decoration:none}
+.src:hover{text-decoration:underline}
 .brand{position:absolute;top:8px;right:10px;padding:2px 7px;border-radius:999px;background:color-mix(in srgb,var(--paper) 80%,transparent);color:var(--soft);font:italic 11.5px/1.3 "Iowan Old Style",Georgia,serif;text-decoration:none}`;
 
   let host = null;
@@ -366,13 +368,17 @@ transition:opacity .16s ease,transform .16s ease,visibility 0s .16s;pointer-even
     more.href = pageUrl(slug);
     const brand = el("a", "brand", "History Globe");
     brand.href = base.href;
-    for (const a of [go, more, brand]) {
+    // The places, their verses and where they are today come from OpenBible.info, which
+    // CC BY asks to credit wherever the data is shown; the sources page says the rest.
+    const src = el("a", "src", "OpenBible.info, CC BY 4.0");
+    src.href = new URL("docs/sources.html", base).href;
+    for (const a of [go, more, brand, src]) {
       a.target = "_blank";
       a.rel = "noopener";
       a.tabIndex = -1;
     }
     foot.append(go, more);
-    body.append(foot);
+    body.append(foot, src);
     card.append(body, brand);
   };
 

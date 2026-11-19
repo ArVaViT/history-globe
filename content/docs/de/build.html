@@ -10,7 +10,7 @@ description: Was Sie von History Globe übernehmen dürfen und wie – die Daten
   Grenze verläuft.
 </p>
 
-<h2>Was Sie übernehmen dürfen</h2>
+<h2 id="what-you-may-take">Was Sie übernehmen dürfen</h2>
 <div class="table">
   <table>
     <thead>
@@ -71,18 +71,19 @@ description: Was Sie von History Globe übernehmen dürfen und wie – die Daten
   über das Einbetten; klonen Sie den Globus nicht.
 </p>
 
-<h2>Wie Sie die Quellen nennen</h2>
+<h2 id="how-to-credit">Wie Sie die Quellen nennen</h2>
 <p>
   Wo Sie die Daten zeigen, nennen Sie ihre Quellen, so wie <code>index.json</code> sie aufführt. Die
   kürzeste Form, die den Lizenzen genügt:
 </p>
 <pre><code>Daten: History Globe von Vadym Arnaut ({{site}}), CC BY 4.0;
-Orte und Verszuordnungen von OpenBible.info (CC BY 4.0); Personen von STEPBible TIPNR (CC BY 4.0).</code></pre>
+Orte und Verszuordnungen von OpenBible.info (CC BY 4.0); Personen von STEPBible TIPNR (CC BY 4.0); Orts-IDs von Pleiades (CC BY 3.0).</code></pre>
 <p>Auf einer Seite, mit Links:</p>
 <pre><code>&lt;p&gt;Daten: &lt;a href="{{site}}/"&gt;History Globe&lt;/a&gt; von Vadym Arnaut,
   &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC BY 4.0&lt;/a&gt;;
   Orte von &lt;a href="https://www.openbible.info/geo/"&gt;OpenBible.info&lt;/a&gt;,
-  Personen von &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;.&lt;/p&gt;</code></pre>
+  Personen von &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;,
+  Orts-IDs von &lt;a href="https://pleiades.stoa.org/"&gt;Pleiades&lt;/a&gt;.&lt;/p&gt;</code></pre>
 <p>
   <code>{{site}}/api/v1/index.json</code> enthält die vollständigen Quellenangaben, und jede Antwort
   der API wird mit einem <code>Link</code>-Header gesendet, der ihre Lizenz nennt. Ein zitierter
@@ -90,7 +91,7 @@ Orte und Verszuordnungen von OpenBible.info (CC BY 4.0); Personen von STEPBible 
   angegeben, mit einem Link zur jeweiligen Seite.
 </p>
 
-<h2>Grenzen</h2>
+<h2 id="limits">Grenzen</h2>
 <ul>
   <li>
     <b>Kein Schlüssel, kein Kontingent.</b> Die API besteht aus statischen Dateien hinter einem
@@ -114,7 +115,7 @@ Orte und Verszuordnungen von OpenBible.info (CC BY 4.0); Personen von STEPBible 
   </li>
 </ul>
 
-<h2>Einstieg</h2>
+<h2 id="start">Einstieg</h2>
 <pre><code>const api = "{{site}}/api/v1";
 const places = await (await fetch(`${api}/places.json`)).json();
 const byId = new Map(places.map((p) =&gt; [p.id, p]));
@@ -126,7 +127,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   >.
 </p>
 
-<h2>Wenn Sie mehr brauchen</h2>
+<h2 id="asking-for-more">Wenn Sie mehr brauchen</h2>
 <p>
   Eine Übersetzung der Artikel, ihr Text auf einer anderen Plattform oder eine Lizenz, die die
   Tabelle oben nicht vorsieht: Schreiben Sie an
@@ -135,7 +136,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   sind.
 </p>
 
-<h2>Für KI-Agenten</h2>
+<h2 id="for-ai-agents">Für KI-Agenten</h2>
 <p>
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> sagt dasselbe auf einer Seite. Suchmaschinen
   und Assistenten, die mit einem Quellenverweis antworten, sind willkommen; die Artikel sind keine

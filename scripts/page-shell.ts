@@ -6,7 +6,7 @@
  */
 import { BEACON_TAG } from "../packages/model/src/beacon.ts";
 import { honeypotLink } from "../packages/model/src/honeypot.ts";
-import { LOCALES, type SiteLocale } from "../packages/model/src/time.ts";
+import { LOCALES, type SiteLocale } from "../packages/model/src/locales.ts";
 
 export const esc = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -57,3 +57,11 @@ export function headMeta(o: {
 export const bodyEnd = (root: string): string =>
   `    ${honeypotLink(root)}
     ${BEACON_TAG}`;
+
+/** The languages written in Cyrillic, which preload that font. */
+const CYRILLIC: ReadonlySet<string> = new Set(["ru", "uk", "sr", "bg"]);
+/** The sans file a language preloads: Golos Text's, or Onest's for Vietnamese (docs.css). */
+export const sansPreload = (lang: string) =>
+  lang === "vi"
+    ? "onest-latin-wght-normal.woff2"
+    : `golos-text-${CYRILLIC.has(lang) ? "cyrillic" : "latin"}-wght-normal.woff2`;

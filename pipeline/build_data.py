@@ -1,25 +1,26 @@
 """Build the map data for apps/web from dated snapshots of allowlisted datasets.
 
-Stdlib only for now (ADR 0005 moves this to uv + DuckDB/GeoPandas once tiles need it).
+Standard library only (ADR 0020).
 Every dataset is checked against the licence allowlist (ADR 0008) and recorded with its
 snapshot date and hash in the output manifest.
 
-Usage: python3 pipeline/build_data.py
+Usage: python3 -m pipeline.build_data
 """
 
 from __future__ import annotations
 
 import datetime as dt
 import hashlib
+import io
 import json
 import math
-import sys
 import pathlib
 import re
-import time
-import urllib.error
-import urllib.request
+import urllib.parse
 import zipfile
+
+from pipeline.geo import BBOX, simplify
+from pipeline.net import get, wikidata_get
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CACHE = ROOT / "pipeline" / ".cache"
@@ -29,38 +30,32 @@ ALLOWED_LICENSES = {"CC0-1.0", "PD", "CC-BY-3.0", "CC-BY-4.0", "ODC-BY-1.0"}
 
 # The upstream files are read at one commit each, with the hash of what is read
 # (pipeline/sources.json): a change upstream, or on the way, never reaches a release
-# unnoticed. `python3 pipeline/pin_sources.py` moves a pin to the latest commit.
+# unnoticed. `python3 -m pipeline.pin_sources` moves a pin to the latest commit.
 PINS_FILE = ROOT / "pipeline" / "sources.json"
 PINS: dict[str, dict] = {k: v for k, v in json.loads(PINS_FILE.read_text(encoding="utf-8")).items() if k != "_"}
 
 
 def pinned_url(name: str) -> str:
     p = PINS[name]
-    return f"https://raw.githubusercontent.com/{p['repo']}/{p['commit']}/{p['path']}"
+    return f"https://raw.githubusercontent.com/{p['repo']}/{p['commit']}/{urllib.parse.quote(p['path'])}"
 
 
+def pinned(name: str, license: str, credit: str, **extra: object) -> dict:
+    return {"file": PINS[name]["file"], "url": pinned_url(name), "license": license, "credit": credit, **extra}
+
+
+NATURAL_EARTH = "Made with Natural Earth"
 SOURCES = {
-    "openbible": {
-        "file": "openbible-ancient.jsonl",
-        "url": pinned_url("openbible"),
-        "license": "CC-BY-4.0",
-        "credit": "OpenBible.info Bible Geocoding Data, CC BY 4.0",
-    },
+    "openbible": pinned("openbible", "CC-BY-4.0", "OpenBible.info Bible Geocoding Data, CC BY 4.0"),
     # Modern locations behind each ancient point: read only to learn where a coordinate
     # came from, so that points copied from OSM or Google can be dropped (ADR 0008).
-    "openbible_modern": {
-        "file": "openbible-modern.jsonl",
-        "url": pinned_url("openbible_modern"),
-        "license": "CC-BY-4.0",
-        "credit": "OpenBible.info Bible Geocoding Data, CC BY 4.0",
-    },
-    "cliopatria": {
-        "file": "cliopatria_polities_only.geojson",
-        "url": pinned_url("cliopatria"),
-        "zip_member": PINS["cliopatria"]["zip_member"],
-        "license": "CC-BY-4.0",
-        "credit": "Cliopatria, Seshat Global History Databank, CC BY 4.0",
-    },
+    "openbible_modern": pinned("openbible_modern", "CC-BY-4.0", "OpenBible.info Bible Geocoding Data, CC BY 4.0"),
+    "cliopatria": pinned(
+        "cliopatria",
+        "CC-BY-4.0",
+        "Cliopatria, Seshat Global History Databank, CC BY 4.0",
+        zip_member=PINS["cliopatria"]["zip_member"],
+    ),
     "wikidata_coords": {
         "file": "wikidata-coords.json",
         "url": "https://www.wikidata.org/w/api.php (wbgetentities, P625)",
@@ -68,39 +63,80 @@ SOURCES = {
         "credit": "Wikidata, CC0",
         "generated": True,
     },
-    "natural_earth_ocean": {
-        "file": "ne_50m_ocean.geojson",
-        "url": pinned_url("natural_earth_ocean"),
-        "license": "PD",
-        "credit": "Made with Natural Earth",
+    "natural_earth_ocean": pinned("natural_earth_ocean", "PD", NATURAL_EARTH),
+    "natural_earth_ocean_10m": pinned("natural_earth_ocean_10m", "PD", NATURAL_EARTH),
+    "natural_earth_lakes": pinned("natural_earth_lakes", "PD", NATURAL_EARTH),
+    "natural_earth_lakes_10m": pinned("natural_earth_lakes_10m", "PD", NATURAL_EARTH),
+    "natural_earth_rivers": pinned("natural_earth_rivers", "PD", NATURAL_EARTH),
+    # The land behind the tours' pictures (scripts/tour-images.mjs).
+    "natural_earth_land": pinned("natural_earth_land", "PD", NATURAL_EARTH),
+    # People and their places (pipeline/people), never redistributed raw: its header asks
+    # not to.
+    "stepbible_tipnr": pinned(
+        "stepbible_tipnr",
+        "CC-BY-4.0",
+        "People and family links: STEP Bible (www.STEPBible.org), CC BY 4.0, modified",
+    ),
+}
+
+# Sources the other steps of the build read, each pinned where it is read. They are held to
+# the same allowlist as SOURCES and listed beside them in the manifest, so that one registry
+# names every source the data comes from (ADR 0008). The Bibles are public domain, checked in
+# scripts/bible-text.test.ts; the photos by their schema (content/photos.yaml).
+OTHER_SOURCES = {
+    "itinere": {
+        "license": "CC-BY-4.0",
+        "credit": "Roman roads: Itiner-e (de Soto, Pažout, Brughmans et al. 2025), v1.3, CC BY 4.0, modified",
+        "url": "https://doi.org/10.5281/zenodo.17122148",
+        "read_by": "pipeline/roads/fetch.py (MD5 pinned)",
     },
-    "natural_earth_ocean_10m": {
-        "file": "ne_10m_ocean.geojson",
-        "url": pinned_url("natural_earth_ocean_10m"),
-        "license": "PD",
-        "credit": "Made with Natural Earth",
+    "riveratlas": {
+        "license": "CC-BY-4.0",
+        "credit": "Rivers of the Bible: RiverATLAS v1.0 (Linke et al. 2019), CC BY 4.0, geometry only",
+        "url": "https://doi.org/10.6084/m9.figshare.9890531",
+        "read_by": "pipeline/rivers/riveratlas_rivers.py (run by hand, output in git)",
     },
-    "natural_earth_lakes": {
-        "file": "ne_50m_lakes.geojson",
-        "url": pinned_url("natural_earth_lakes"),
-        "license": "PD",
-        "credit": "Made with Natural Earth",
-    },
-    "natural_earth_rivers": {
-        "file": "ne_10m_rivers.geojson",
-        "url": pinned_url("natural_earth_rivers"),
-        "license": "PD",
-        "credit": "Made with Natural Earth",
+    "pleiades": {
+        "license": "CC-BY-3.0",
+        "credit": "Pleiades: A Gazetteer of Past Places (ISAW, NYU), CC BY 3.0, modified",
+        "url": "https://pleiades.stoa.org",
+        "read_by": "content/pleiades.json, content/ancient-sites.json",
     },
 }
 
-# Region and period of the MVP (ADR 0005). West, south, east, north.
-# Widened on 2.10.2026 to take in Tarshish and Spain (Rom 15:24) and Punt.
-BBOX = (-12.0, 8.0, 75.0, 50.0)
-YEAR_MIN, YEAR_MAX = -3500, 1300
 
-# Tagged as lakes by Natural Earth, but created in the 20th century.
-MODERN_LAKES = {"Lake Tharthar", "Razzaza Lake"}
+def check_licences(*registries: dict) -> None:
+    """Stop before anything is built when a source's licence is not on the allowlist: the
+    check in fetch() sees only what is fetched, and only when it is."""
+    for registry in registries:
+        for name, src in registry.items():
+            if src["license"] not in ALLOWED_LICENSES:
+                raise SystemExit(f"{name}: licence {src['license']} is not on the allowlist (ADR 0008)")
+
+
+# The period of the map, 3500 BC to AD 1300 in astronomical years (ADR 0003), as the engine
+# has it (packages/core/src/engine.ts).
+YEAR_MIN, YEAR_MAX = -3499, 1300
+
+# Tagged as lakes by Natural Earth, but created in the 20th century (the 1:50m and the 1:10m
+# names: "Razzaza Lake" is "Lake Razazah" at 1:10m).
+MODERN_LAKES = {"Lake Tharthar", "Razzaza Lake", "Lake Razazah", "Koka Reservoir"}
+# Reservoirs the 1:10m lakes tag as unnamed lakes (ne_id): Kaniv on the Dnieper, Valdecañas on
+# the Tagus, Goczałkowice on the Vistula, Mangla on the Jhelum, and one in Podolia (27.5°E
+# 49.4°N, where no natural lake of its size lies).
+UNNAMED_RESERVOIRS = {1159116539, 1159115993, 1159115973, 1159117449, 1159117327}
+
+
+def natural_lakes(lakes: dict) -> list:
+    """The lakes of a Natural Earth file that stood in antiquity: no reservoirs."""
+    return [
+        f
+        for f in lakes["features"]
+        if f["properties"].get("featurecla") != "Reservoir"
+        and f["properties"].get("name") not in MODERN_LAKES
+        and f["properties"].get("ne_id") not in UNNAMED_RESERVOIRS
+    ]
+
 
 TAG_RE = re.compile(r"<[^>]+>")
 
@@ -111,28 +147,13 @@ NT_BOOKS = {
 }
 
 
-def wikidata_get(url: str) -> dict:
-    """GET from the Wikidata API politely: identify ourselves, pause, back off on 429."""
-    req = urllib.request.Request(url, headers={"User-Agent": "history-globe-pipeline/0.1 (github.com/ArVaViT)"})
-    for attempt in range(6):
-        try:
-            with urllib.request.urlopen(req) as resp:
-                time.sleep(1.0)
-                return json.load(resp)
-        except urllib.error.HTTPError as e:
-            if e.code != 429 or attempt == 5:
-                raise
-            wait = float(e.headers.get("Retry-After") or 5 * (attempt + 1))
-            print(f"wikidata: 429, waiting {wait:.0f} s")
-            time.sleep(wait)
-    raise RuntimeError("unreachable")
-
-
 def wikidata_coords(qids: list[str]) -> dict[str, list[float]]:
     """Coordinates (P625) for Wikidata items, cached. Wikidata is CC0 (ADR 0008)."""
     path = CACHE / SOURCES["wikidata_coords"]["file"]
     cache: dict[str, list[float] | None] = json.loads(path.read_text()) if path.exists() else {}
     missing = [q for q in qids if q not in cache]
+    if not missing:
+        return {q: c for q, c in cache.items() if c}
     for i in range(0, len(missing), 50):
         batch = missing[i : i + 50]
         url = (
@@ -149,16 +170,6 @@ def wikidata_coords(qids: list[str]) -> dict[str, list[float]]:
     return {q: c for q, c in cache.items() if c}
 
 
-def qid(record: dict) -> str | None:
-    """The record's Wikidata item. OpenBible marks some links "not" (the item is another
-    place: Adamah, New Gate) or "modern" (today's town on the site: Konya for Iconium); their
-    coordinates are not the ancient place's, so only a plain link counts."""
-    for v in (record.get("linked_data") or {}).values():
-        if isinstance(v, dict) and str(v.get("id", "")).startswith("Q") and not v.get("modifier"):
-            return str(v["id"])
-    return None
-
-
 def fetch(name: str, sources: dict | None = None, pins: dict | None = None) -> pathlib.Path:
     """The cached file of a source, downloaded at its pinned commit when absent, and checked
     against its pinned hash either way: a file that does not hash so is removed and stops
@@ -173,20 +184,17 @@ def fetch(name: str, sources: dict | None = None, pins: dict | None = None) -> p
     if not path.exists():
         CACHE.mkdir(parents=True, exist_ok=True)
         print(f"downloading {name} …")
-        tmp = path.with_suffix(".download")
-        urllib.request.urlretrieve(src["url"], tmp)
+        body = get(src["url"])
         if "zip_member" in src:
-            with zipfile.ZipFile(tmp) as z:
-                path.write_bytes(z.read(src["zip_member"]))
-            tmp.unlink()
-        else:
-            tmp.rename(path)
+            with zipfile.ZipFile(io.BytesIO(body)) as z:
+                body = z.read(src["zip_member"])
+        path.write_bytes(body)
     if pin and (got := sha256(path)) != pin["sha256"]:
         path.unlink()
         raise SystemExit(
             f"{name}: {path.name} hashes to {got[:12]}…, pipeline/sources.json expects "
             f"{pin['sha256'][:12]}…; the file is removed. If upstream has changed on purpose, "
-            f"run `python3 pipeline/pin_sources.py {name}` and review the data checks."
+            f"run `python3 -m pipeline.pin_sources {name}` and review the data checks."
         )
     return path
 
@@ -214,8 +222,14 @@ def load_modern() -> dict[str, dict]:
     return {m["id"]: m for m in map(json.loads, fetch("openbible_modern").open(encoding="utf-8"))}
 
 
+def parse_lonlat(lonlat: str) -> tuple[float, float]:
+    """OpenBible's "lon,lat"."""
+    lon, lat = lonlat.split(",")
+    return float(lon), float(lat)
+
+
 def lonlat_key(lonlat: str) -> tuple[float, ...]:
-    return tuple(round(float(v), 5) for v in lonlat.split(","))
+    return tuple(round(v, 5) for v in parse_lonlat(lonlat))
 
 
 def source_banned(m: dict) -> bool:
@@ -342,14 +356,18 @@ def pick_site(record: dict, sites: dict[str, str] | None) -> dict | None:
     raise SystemExit(f"place-points: {record['id']} has no identification with the modern location {want}")
 
 
-def load_place_points(path: pathlib.Path) -> tuple[dict[str, str], dict[str, str]]:
-    """`same_as` and `site` of content/place-points.json: one of the two per place."""
-    same_as, sites = {}, {}
+POINT_KEYS = ("same_as", "site", "wikidata")
+
+
+def load_place_points(path: pathlib.Path) -> tuple[dict[str, str], dict[str, str], dict[str, str]]:
+    """`same_as`, `site` and `wikidata` of content/place-points.json: one of them per place."""
+    chosen: tuple[dict[str, str], dict[str, str], dict[str, str]] = ({}, {}, {})
     for pid, o in json.loads(path.read_text(encoding="utf-8"))["places"].items():
-        if ("same_as" in o) == ("site" in o):
-            raise SystemExit(f"place-points: {pid} needs exactly one of same_as and site")
-        (same_as if "same_as" in o else sites)[pid] = o.get("same_as", o.get("site"))
-    return same_as, sites
+        keys = [k for k in POINT_KEYS if k in o]
+        if len(keys) != 1:
+            raise SystemExit(f"place-points: {pid} needs exactly one of {', '.join(POINT_KEYS)}")
+        chosen[POINT_KEYS.index(keys[0])][pid] = o[keys[0]]
+    return chosen
 
 
 def build_places(
@@ -359,7 +377,17 @@ def build_places(
     river_places: set[str],
     same_as: dict[str, str] | None = None,
     sites: dict[str, str] | None = None,
+    items: dict[str, str] | None = None,
+    fame: dict[str, int] | None = None,
+    region_points: dict[str, list[float]] | None = None,
 ) -> tuple[dict, dict, list[str]]:
+    """`items` is each place's Wikidata item as content/wikidata.json has it: OpenBible's
+    links checked against Wikidata, so a point or a rank never comes from another place's
+    item. `fame` is the Wikipedia articles of an item (content/fame.json, fame_rank).
+    `region_points` is the Wikidata point of a land OpenBible puts on a city's point
+    (content/place-points.json, `wikidata`: Judea on Jerusalem), already fetched."""
+    items, fame, region_points = items or {}, fame or {}, region_points or {}
+
     def shown(r: dict) -> dict | None:
         ids = r.get("identifications") or []
         return pick_site(r, sites) or (ids[0] if ids else None)
@@ -369,9 +397,8 @@ def build_places(
         return first_point(ident) if ident else None
 
     banned = banned_lonlats(modern)
-    banned_qids = [q for r in records if (res := top_point(r)) and coord_banned(res, modern, banned) and (q := qid(r))]
+    banned_qids = [q for r in records if (res := top_point(r)) and coord_banned(res, modern, banned) and (q := items.get(r["id"]))]
     replacements = wikidata_coords(banned_qids)
-    fame = json.loads(FAME_FILE.read_text(encoding="utf-8"))["items"] if FAME_FILE.exists() else {}
     feats, excluded, replaced, no_point = [], [], 0, 0
     for r in records:
         res = top_point(r)
@@ -380,10 +407,15 @@ def build_places(
             continue
         ident = shown(r)
         coord_source = "openbible"
-        if coord_banned(res, modern, banned):
+        if r["id"] in region_points:
+            lon, lat = region_points[r["id"]]
+            if (round(lon, 5), round(lat, 5)) in banned:
+                raise SystemExit(f"place-points: the Wikidata point of {r['id']} is one we may not ship (ADR 0008)")
+            coord_source = "wikidata"
+        elif coord_banned(res, modern, banned):
             if r["id"] in (sites or {}):
                 raise SystemExit(f"place-points: the site chosen for {r['id']} is a point we may not ship (ADR 0008)")
-            q = qid(r)
+            q = items.get(r["id"])
             # A Wikidata coordinate identical to the banned one was copied from it: drop too.
             if q and q in replacements and tuple(replacements[q]) not in banned:
                 lon, lat = replacements[q]
@@ -393,18 +425,16 @@ def build_places(
                 excluded.append(r["id"])
                 continue
         else:
-            lon, lat = (float(v) for v in res["lonlat"].split(","))
+            lon, lat = parse_lonlat(res["lonlat"])
         verses = r.get("verses", [])
         nt = sum(1 for v in verses if v["osis"].split(".")[0] in NT_BOOKS)
-        name = r["friendly_id"]
-        base = name.rsplit(" ", 1)[0] if name.rsplit(" ", 1)[-1].isdigit() else name
-        base = ENGLISH_NAMES.get(r["id"], base)
+        base = ENGLISH_NAMES.get(r["id"], NUMBER_SUFFIX.sub("", r["friendly_id"]))
         mentions = len(verses) - nt + 3 * nt
         rank = rank_of(mentions)
         kind = place_kind(r.get("types"))
         disputed = sites_per_place.get(r["id"], (0, False))[1]
         # Fame lifts a town, never lowers one; a disputed point is not made louder.
-        by_fame = fame_rank(fame.get(qid(r) or "", 0)) if kind == "settlement" and not disputed else 3
+        by_fame = fame_rank(fame.get(items.get(r["id"], ""), 0)) if kind == "settlement" and not disputed else 3
         weight = max(mentions, 10 if by_fame == 1 else 3) if by_fame < rank else None
         rank = min(rank, by_fame)
         feats.append({
@@ -668,8 +698,7 @@ def build_polities() -> tuple[dict, dict, dict]:
         if p.get("Type") == "POLITY" and parts_on_map(p):
             composites += 1
             continue
-        g = f["geometry"]
-        parts = g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]
+        parts = polygons_of(f)
         kept = [[r for r in (thin(ring) for ring in poly) if r] for poly in parts]
         kept = [k for k in kept if k]
         if not kept:
@@ -762,8 +791,7 @@ def clip_polygons(fc: dict, box: tuple[float, float, float, float]) -> list:
     """The polygons of a collection cut to a rectangle, holes cut with them."""
     out = []
     for f in fc["features"]:
-        g = f["geometry"]
-        for poly in g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]:
+        for poly in polygons_of(f):
             outer = clip_ring(poly[0], box)
             if outer:
                 out.append([outer, *(r for r in (clip_ring(h, box) for h in poly[1:]) if r)])
@@ -771,6 +799,7 @@ def clip_polygons(fc: dict, box: tuple[float, float, float, float]) -> list:
 
 
 def polygons_of(feature: dict) -> list:
+    """A Polygon's or a MultiPolygon's polygons, as a MultiPolygon lists them."""
     g = feature["geometry"]
     return g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]
 
@@ -838,31 +867,32 @@ OUTSIDE_REGION = (
 
 def build_water() -> tuple[dict, dict]:
     """Water from Natural Earth, drawn over a land-coloured globe (no land polygon needed):
-    the 1:10m ocean inside the map's region, where tours zoom in on the Aegean islands, and
-    the 1:50m ocean around it, cut along the region's edge, plus natural lakes. Modern
-    reservoirs (Kakhovka, Tharthar, Nasser…) do not belong on a map of antiquity. Also
-    returns the shores to draw, from the uncut rings, so the cut draws no line."""
+    the 1:10m ocean and lakes inside the map's region, where tours zoom in on the Aegean
+    islands and the towns on the Sea of Galilee (at 1:50m Tiberias stood in the lake), and
+    the 1:50m ones around it, cut along the region's edge. Modern reservoirs (Kakhovka,
+    Tharthar, Nasser…) do not belong on a map of antiquity. Also returns the shores to draw,
+    from the uncut rings, so the cut draws no line."""
     ocean = json.loads(fetch("natural_earth_ocean").read_text(encoding="utf-8"))
     ocean10 = json.loads(fetch("natural_earth_ocean_10m").read_text(encoding="utf-8"))
-    lakes = json.loads(fetch("natural_earth_lakes").read_text(encoding="utf-8"))
-    natural = [
-        f
-        for f in lakes["features"]
-        if f["properties"].get("featurecla") != "Reservoir" and f["properties"].get("name") not in MODERN_LAKES
-    ]
+    lakes = {"type": "FeatureCollection", "features": natural_lakes(json.loads(fetch("natural_earth_lakes").read_text(encoding="utf-8")))}
+    lakes10 = {"type": "FeatureCollection", "features": natural_lakes(json.loads(fetch("natural_earth_lakes_10m").read_text(encoding="utf-8")))}
     sea = clip_polygons(ocean10, BBOX) + [p for box in OUTSIDE_REGION for p in clip_polygons(ocean, box)]
-    # No holes in what MapLibre triangulates: see join_holes.
+    inland = clip_polygons(lakes10, BBOX) + [p for box in OUTSIDE_REGION for p in clip_polygons(lakes, box)]
+    # No holes in what MapLibre triangulates: see join_holes. Each lake is a feature of its
+    # own: in one feature, a small lake whose ring turns over in a tile is read as a hole of
+    # the lake before it, and earcut joins the two across the land.
     water = {
         "type": "FeatureCollection",
         "features": [
             {"type": "Feature", "properties": {}, "geometry": {"type": "MultiPolygon", "coordinates": [[join_holes(p)] for p in polys]}}
-            for polys in [sea, *(polygons_of(f) for f in natural)]
+            for polys in [sea, *([lake] for lake in inland)]
         ],
     }
     shore_lines = [
         *build_coast(ocean10, keep=in_region)["features"][0]["geometry"]["coordinates"],
         *build_coast(ocean, keep=lambda p: not in_region(p))["features"][0]["geometry"]["coordinates"],
-        *build_coast({"features": natural})["features"][0]["geometry"]["coordinates"],
+        *build_coast(lakes10, keep=in_region)["features"][0]["geometry"]["coordinates"],
+        *build_coast(lakes, keep=lambda p: not in_region(p))["features"][0]["geometry"]["coordinates"],
     ]
     # A shore is a hairline: drawn simplified to ~300 m it looks the same at a third of the size.
     shore_lines = [simplify_shore(line, SHORE_TOLERANCE) for line in shore_lines]
@@ -881,9 +911,7 @@ def build_coast(water: dict, keep=None) -> dict:
     inside = lambda p: x0 <= p[0] <= x1 and y0 <= p[1] <= y1 and (keep is None or keep(p))  # noqa: E731
     lines = []
     for f in water["features"]:
-        g = f["geometry"]
-        polys = g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]
-        for poly in polys:
+        for poly in polygons_of(f):
             for ring in poly:
                 run: list = []
                 for pt in ring:
@@ -949,34 +977,12 @@ def simplify_shore(points: list[list[float]], tolerance: float) -> list[list[flo
     two ends are the same point, which would collapse it, so it is cut at the vertex
     farthest from its start and the two halves are simplified apart."""
     if len(points) < 4 or points[0] != points[-1]:
-        return simplify_line(points, tolerance)
+        return simplify(points, tolerance)
     x0, y0 = points[0]
     far = max(range(len(points)), key=lambda i: (points[i][0] - x0) ** 2 + (points[i][1] - y0) ** 2)
-    first = simplify_line(points[: far + 1], tolerance)
-    second = simplify_line(points[far:], tolerance)
+    first = simplify(points[: far + 1], tolerance)
+    second = simplify(points[far:], tolerance)
     return first[:-1] + second
-
-
-sys.setrecursionlimit(100000)  # Douglas–Peucker recurses along long shores
-
-
-def simplify_line(points: list[list[float]], tolerance: float) -> list[list[float]]:
-    """Douglas–Peucker. Used for label paths: MapLibre rejects line labels on sharp
-    bends, and real river courses meander, so labels follow a smoothed copy."""
-    if len(points) < 3:
-        return points
-    (x0, y0), (x1, y1) = points[0], points[-1]
-    dx, dy = x1 - x0, y1 - y0
-    norm = math.hypot(dx, dy) or 1e-12
-    far, idx = 0.0, 0
-    for i, (x, y) in enumerate(points[1:-1], start=1):
-        d = abs(dy * x - dx * y + x1 * y0 - y1 * x0) / norm
-        if d > far:
-            far, idx = d, i
-    if far <= tolerance:
-        return [points[0], points[-1]]
-    left = simplify_line(points[: idx + 1], tolerance)
-    return left[:-1] + simplify_line(points[idx:], tolerance)
 
 
 def build_rivers() -> tuple[dict, dict, dict]:
@@ -1010,10 +1016,11 @@ def build_rivers() -> tuple[dict, dict, dict]:
             "type": "Feature",
             "geometry": {"type": "MultiLineString", "coordinates": [[[round(x, COORD_DECIMALS), round(y, COORD_DECIMALS)] for x, y in line] for line in lines]},
             "properties": {
-                # One English name per biblical river, whatever the local spelling in the source.
-                "name": RIVER_NAMES_EN[place] if place else name,
                 "rank": int(p.get("scalerank") or 9),
-                **({"place": RIVER_PLACES[name]} if name in RIVER_PLACES else {}),
+                # Only a biblical river is named on the map, with one English name whatever the
+                # local spelling in the source; the others' modern names ("Amu  Darya",
+                # "Godävari") are never shown and are not shipped.
+                **({"name": RIVER_NAMES_EN[place], "place": place} if place else {}),
             },
         })
     for f in atlas["features"]:
@@ -1024,10 +1031,12 @@ def build_rivers() -> tuple[dict, dict, dict]:
             # A disputed place keeps its point and label: the line is one proposal, unnamed.
             "properties": {"name": p["name"], "rank": p.get("rank", SMALL_RIVER_RANK), **({} if p.get("unlabelled") else {"place": p["place"]})},
         })
+    # MapLibre refuses a line label on a sharp bend and rivers meander: labels follow a
+    # smoothed copy of the course.
     labels = [
         {
             "type": "Feature",
-            "geometry": {"type": "LineString", "coordinates": simplify_line(line, 0.15)},
+            "geometry": {"type": "LineString", "coordinates": simplify(line, 0.15)},
             "properties": f["properties"],
         }
         for f in feats
@@ -1121,7 +1130,7 @@ def build_sites(records: list[dict], modern: dict[str, dict]) -> tuple[dict, dic
             res = first_point(ident)
             if res is None or coord_banned(res, modern, banned):
                 continue
-            lon, lat = (float(v) for v in res["lonlat"].split(","))
+            lon, lat = parse_lonlat(res["lonlat"])
             score = float((ident.get("score") or {}).get("time_total") or 0)
             base = NUMBER_SUFFIX.sub("", r["friendly_id"])
             cands.append({"i": i, "lon": lon, "lat": lat, "score": score, **site_label(ident.get("description", ""), base)})
@@ -1149,15 +1158,23 @@ def build_sites(records: list[dict], modern: dict[str, dict]) -> tuple[dict, dic
 
 
 def main() -> None:
+    check_licences(SOURCES, OTHER_SOURCES)
     OUT.mkdir(parents=True, exist_ok=True)
     records = [json.loads(line) for line in fetch("openbible").open(encoding="utf-8")]
     modern = load_modern()
     sites, sites_per_place, site_stats = build_sites(records, modern)
     rivers, river_labels, river_stats = build_rivers()
     river_places = {f["properties"]["place"] for f in rivers["features"] if "place" in f["properties"]}
-    same_as, chosen_sites = load_place_points(ROOT / "content" / "place-points.json")
+    same_as, chosen_sites, region_items = load_place_points(ROOT / "content" / "place-points.json")
+    items = json.loads((ROOT / "content" / "wikidata.json").read_text(encoding="utf-8"))["places"]
+    fame = json.loads(FAME_FILE.read_text(encoding="utf-8"))["items"]
+    coords = wikidata_coords(sorted(set(region_items.values())))
+    missing = sorted(pid for pid, q in region_items.items() if not coords.get(q))
+    if missing:
+        raise SystemExit(f"place-points: no Wikidata point for {', '.join(missing)}")
+    region_points = {pid: coords[q] for pid, q in region_items.items()}
     places, place_stats, excluded_places = build_places(
-        records, modern, sites_per_place, river_places, same_as, chosen_sites
+        records, modern, sites_per_place, river_places, same_as, chosen_sites, items, fame, region_points
     )
     # Candidates of a place left out (licence) would be sites of nothing.
     shipped = {f["properties"]["id"] for f in places["features"]}
@@ -1171,17 +1188,15 @@ def main() -> None:
         "sites.geojson": sites,
         "rivers.geojson": rivers,
         "river-labels.geojson": river_labels,
-        "polities.geojson": polities,
-        "polity-labels.geojson": polity_labels,
         "water.geojson": water,
         "coast.geojson": coast,
     }
     for name, data in outputs.items():
         (OUT / name).write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    # The content build splits the polities at AD 500 (scripts/build-content.ts): the later
-    # half from an earlier run would be counted twice.
-    for late in ("polities-late.geojson", "polity-labels-late.geojson"):
-        (OUT / late).unlink(missing_ok=True)
+    # The states as Cliopatria draws them, for the content build to correct and publish
+    # (scripts/build-polities.ts): it reads them from here on every run, never its own output.
+    for name, data in (("polities.geojson", polities), ("polity-labels.geojson", polity_labels)):
+        (CACHE / name).write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     manifest = {
         "schema_version": 1,
         "built_at": dt.datetime.now(dt.UTC).isoformat(timespec="seconds"),
@@ -1190,12 +1205,12 @@ def main() -> None:
                 "license": v["license"],
                 "credit": v["credit"],
                 "url": v["url"],
-                **({"commit": PINS[k]["commit"]} if k in PINS else {}),
-                "sha256": sha256(CACHE / v["file"]),
-                "snapshot": dt.date.fromtimestamp((CACHE / v["file"]).stat().st_mtime).isoformat(),
+                **({"commit": PINS[k]["commit"], "snapshot": PINS[k]["committed"]} if k in PINS else {}),
+                "sha256": sha256(fetch(k)),
             }
             for k, v in SOURCES.items()
         },
+        "other_sources": OTHER_SOURCES,
         # Places left out because their only point may not be redistributed (ADR 0008).
         # Content may keep verified names for them; they return with a licensed point.
         "excluded_places": sorted(excluded_places),

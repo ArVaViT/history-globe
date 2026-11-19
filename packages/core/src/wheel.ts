@@ -60,8 +60,3 @@ export class WheelClassifier {
     return { kind: "pan", dx, dy };
   }
 }
-
-/** One event on its own, as the first of a gesture. */
-export function wheelIntent(e: WheelLike): WheelIntent {
-  return new WheelClassifier().classify(e, 0);
-}

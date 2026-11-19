@@ -3,7 +3,7 @@
 -- The static release (apps/web/public/data) stays what the app reads today; this schema
 -- holds the same records so that a release can be built from the database later, an API
 -- can answer from it, and corrections from readers have somewhere to land (ADR 0012).
--- Loaded by scripts/export-db.ts, which writes db/seed/*.csv from a built release.
+-- Written as CSV by scripts/export-db.ts from a built release, loaded by db/load.sh.
 --
 -- Conventions
 --   * Ids are the release's own: OpenBible place ids ("a15257a"), tour, event and article
@@ -22,7 +22,7 @@ create extension if not exists unaccent with schema extensions;  -- for name sea
 
 -- Where a release came from: one row per data release, and the sources it credits.
 create table release (
-  id text primary key,                 -- e.g. "2026-10-02.1"
+  id text primary key,                 -- the release's built_at: "2026-10-02T09:15:00+00:00"
   built_at timestamptz not null,
   schema_version int not null,
   notes text
@@ -133,7 +133,7 @@ create table place_photo (
 create table article (
   id text primary key,
   place_id text not null references place(id) on delete cascade,
-  status text not null,                -- draft | reviewed | published
+  status text not null,                -- checked | reviewed
   sources text[] not null default '{}'
 );
 create table article_i18n (

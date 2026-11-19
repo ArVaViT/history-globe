@@ -64,12 +64,8 @@ export function useEmbed(
  * A verse the reader opened, told to the host page when the globe is embedded
  * (`hg:verse-clicked`), so a reading platform can open it in its own reader.
  */
-export function notifyVerse(osis: string): void {
-  if (
-    window.parent === window ||
-    !/(^|[?&])embed=1(&|$)|\/embed\/v1\/?$/.test(window.location.search + window.location.pathname)
-  )
-    return;
+export function notifyVerse(osis: string, embedded: boolean): void {
+  if (!embedded || window.parent === window) return;
   window.parent.postMessage({ type: "hg:verse-clicked", v: 1, osis }, "*");
 }
 

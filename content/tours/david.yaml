@@ -1,6 +1,7 @@
 # The life of David, 1 Samuel 16 - 1 Kings 2, in the order of the text. The tour's
 # year (1010 BC) is the conventional start of his reign (c. 1010-970 BC), a point for the
-# map rather than a date.
+# map rather than a date. Jerusalem taken (2 Sam 5:6-9) shows 1003 BC, after seven years and
+# six months at Hebron (5:5), and Mahanaim (2 Sam 17) 980 BC, as the Absalom tour.
 id: david
 title:
   en: "The life of David"
@@ -270,6 +271,7 @@ stops:
       bg: "В Хеврон Юдовите мъже помазват Давид за цар над Юдовия дом."
   - place: a15257a # Jerusalem
     ref: 2Sam.5.6-2Sam.5.9
+    year: "1003 BC"
     note:
       en: "He takes the stronghold of Zion and names it the City of David."
       ru: "Он берёт крепость Сион и называет её городом Давидовым."
@@ -294,6 +296,7 @@ stops:
       bg: "Той превзема крепостта Сион и я нарича Давидовия град."
   - place: ae5bfe9 # Mahanaim
     ref: 2Sam.17.24-2Sam.17.29
+    year: "980 BC"
     note:
       en: "Fleeing Absalom, he crosses the Jordan to Mahanaim."
       ru: "Спасаясь от Авессалома, он уходит за Иордан, в Маханаим."

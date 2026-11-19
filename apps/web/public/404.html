@@ -4,14 +4,30 @@
     <!-- History Globe, https://historyglobe.app, by Vadym Arnaut. The data is CC BY 4.0: take it through the API, https://historyglobe.app/api/v1/, and credit it. The place articles and the answers are CC BY-NC-ND 4.0: quote them with a link; no commercial use, no changed or translated copies, no training. The site, its code and its design are all rights reserved: do not clone them. Details: https://historyglobe.app/docs/build.html and https://historyglobe.app/llms.txt. -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0c1520" />
+    <meta name="theme-color" content="#fcfbf8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0c1218" media="(prefers-color-scheme: dark)" />
     <meta name="robots" content="noindex" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="stylesheet" href="/pages.css" />
     <title>Page not found | History Globe</title>
   </head>
   <body>
-    <main>
+    <!-- The shell of the built pages (scripts/build-pages.ts, page()), in English and with
+         every language listed (ADR 0015); links from the root, as it is served at any depth. -->
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="bar">
+      <a class="brand" href="/en/"
+        ><img src="/favicon.svg" alt="" width="22" height="22" />History Globe</a
+      >
+      <nav aria-label="Sections">
+        <a href="/en/places/">All places</a><a href="/en/tours/">All tours</a
+        ><a href="/en/questions/">Questions</a>
+      </nav>
+      <div class="bar-end"><a class="open" href="/">Open the globe</a></div>
+    </header>
+    <main id="main" class="page">
+      <p class="kicker">404</p>
       <h1>Page not found</h1>
       <p>
         The link may be old or mistyped. Open the <a href="/">map</a>, the list of
@@ -31,5 +47,11 @@
         <a href="/uk/" lang="uk">Українська</a>
       </p>
     </main>
+    <footer class="foot">
+      <nav aria-label="History Globe">
+        <a href="/en/">History Globe</a><a href="/docs/">About</a
+        ><a href="/docs/privacy.html">Privacy</a><a href="/docs/sources.html">Sources</a>
+      </nav>
+    </footer>
   </body>
 </html>

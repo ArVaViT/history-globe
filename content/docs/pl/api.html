@@ -9,7 +9,7 @@ description: Miejsca, wymieniające je wersety, wydarzenia i trasy jako pliki JS
   rejestracji, bez limitów poza zwykłym buforowaniem.
 </p>
 
-<h2>Jakie miejsca wymienia werset</h2>
+<h2 id="which-places-does-a-verse-name">Jakie miejsca wymienia werset</h2>
 <p>
   Jeden plik na księgę Biblii: każdy werset, który wymienia miejsce, z identyfikatorami tych miejsc.
 </p>
@@ -26,10 +26,10 @@ description: Miejsca, wymieniające je wersety, wydarzenia i trasy jako pliki JS
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
-   "wikidata": "Q379652", "pleiades": "501482",
+   "wikidata": "Q379652", "pleiades": "501482", "tipnr": "Philippi@Act.16.12-1Th",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
 
-<h2>Kto i gdzie w rozdziale</h2>
+<h2 id="who-and-where-in-a-chapter">Kto i gdzie w rozdziale</h2>
 <p>
   Jeden plik na księgę: każdy rozdział, z miejscami i osobami, które wymienia. Osoby są oznaczone
   tak jak w TIPNR od STEPBible; ich imiona i pierwszy werset są w <code>people.json</code>.
@@ -39,7 +39,7 @@ description: Miejsca, wymieniające je wersety, wydarzenia i trasy jako pliki JS
 { "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
                "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
-<h2>Wszystkie pliki</h2>
+<h2 id="all-the-files">Wszystkie pliki</h2>
 <div class="table">
   <table>
     <thead>
@@ -58,7 +58,9 @@ description: Miejsca, wymieniające je wersety, wydarzenia i trasy jako pliki JS
         <td>
           każde miejsce: identyfikator, nazwy, rodzaj, punkt, liczbę wersetów, które je wymieniają,
           jego stronę (dla miejsca, które wymienia jakiś werset); <code>wikidata</code> i
-          <code>pleiades</code>, to samo miejsce w tych rejestrach, tam gdzie jest znane
+          <code>pleiades</code>, to samo miejsce w tych rejestrach, tam gdzie jest znane;
+          <code>tipnr</code>, jego nazwę w TIPNR ze STEPBible, według tego samego schematu co
+          identyfikatory w <code>people.json</code>, tam gdzie OpenBible je łączy
         </td>
       </tr>
       <tr>
@@ -75,34 +77,43 @@ description: Miejsca, wymieniające je wersety, wydarzenia i trasy jako pliki JS
       <tr>
         <td><code>/api/v1/people.json</code></td>
         <td>
-          osoby wymienione w Biblii: identyfikator TIPNR, imię, imiona w pozostałych językach tam,
-          gdzie serwis je ma, płeć, liczbę wersetów, które je wymieniają, pierwszy z nich
+          {{people_api}} {{~people_api|osoba wymieniona|osoby wymienione|osób wymienionych}} w
+          Biblii (mapa pokazuje {{people}} z nich z rodzinami): identyfikator TIPNR, imię, imiona w
+          pozostałych językach tam, gdzie serwis je ma, płeć, liczbę wersetów, które je wymieniają,
+          pierwszy z nich
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/events.json</code></td>
-        <td>wydarzenia z datami, z <code>ref</code> tam, gdzie Biblia opowiada o wydarzeniu</td>
+        <td>
+          wydarzenia z datami, z <code>ref</code> tam, gdzie Biblia opowiada o wydarzeniu;
+          <code>site</code> zamiast <code>place</code> dla miasta świata starożytnego, którego
+          Biblia nie wymienia
+        </td>
       </tr>
       <tr>
         <td><code>/api/v1/battles.json</code></td>
         <td>
           bitwy i oblężenia: miejsce, rok, strony i wynik, z <code>ref</code> tam, gdzie Biblia
-          opowiada o bitwie
+          opowiada o bitwie; <code>event</code>, wydarzenie z <code>events.json</code>, które
+          opowiada tę samą historię
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/questions.json</code></td>
         <td>
           pytania, które zadają ludzie, z odpowiedziami we wszystkich językach serwisu, widokiem
-          mapy i źródłami
+          mapy i źródłami; <code>scripture</code> — wersety, które przytacza odpowiedź;
+          <code>license</code> i <code>license_url</code>, licencja odpowiedzi
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/tours.json</code></td>
         <td>
-          trasy: ich przystanki po kolei, każdy z fragmentem i notatką;
-          <code>by: "sea"</code> dla odcinka pokonanego statkiem oraz <code>sailed</code> (dni i
-          werset) tam, gdzie tekst podaje, jak długo to trwało
+          trasy: ich przystanki po kolei, każdy z fragmentem i notatką; <code>by: "sea"</code> dla
+          odcinka pokonanego statkiem oraz <code>sailed</code> (dni i werset) tam, gdzie tekst
+          podaje, jak długo to trwało; <code>source</code> tam, gdzie przystanek opisuje źródło
+          spoza Biblii
         </td>
       </tr>
       <tr>
@@ -120,7 +131,7 @@ description: Miejsca, wymieniające je wersety, wydarzenia i trasy jako pliki JS
   </table>
 </div>
 
-<h2>Konwencje</h2>
+<h2 id="conventions">Konwencje</h2>
 <ul>
   <li>
     Odwołania są w formacie OSIS z angielskimi skrótami ksiąg i numeracją King James:
@@ -129,7 +140,8 @@ description: Miejsca, wymieniające je wersety, wydarzenia i trasy jako pliki JS
   <li>Lata są astronomiczne: 1 p.n.e. to 0, 586 p.n.e. to −585.</li>
   <li>
     Miejsce wymienione w danych źródłowych dwa razy pod jedną nazwą ma
-    <code>"duplicate": true</code>; miejsce o spornym stanowisku ma <code>"disputed": true</code>.
+    <code>"duplicate": true</code>; miejsce o spornym stanowisku ma <code>"disputed": true</code>;
+    wydarzenie, bitwa lub trasa o przybliżonym roku ma <code>"approximate": true</code>.
   </li>
   <li>
     Pliki są odbudowywane przy każdym wydaniu danych; <code>index.json</code> podaje jego datę.
@@ -140,7 +152,7 @@ description: Miejsca, wymieniające je wersety, wydarzenia i trasy jako pliki JS
   </li>
 </ul>
 
-<h2>Licencja i uznanie autorstwa</h2>
+<h2 id="licence-and-credit">Licencja i uznanie autorstwa</h2>
 <p>
   Dane są objęte licencją <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
   Używaj ich, zmieniaj je, sprzedawaj to, co z nich zbudujesz; wskaż źródła tam, gdzie je
@@ -151,7 +163,7 @@ description: Miejsca, wymieniające je wersety, wydarzenia i trasy jako pliki JS
 </p>
 <p>
   Odpowiedzi na pytania (<code>questions.json</code>) to własne teksty History Globe i są objęte
-  licencją <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pl">CC BY-NC-ND 4.0</a>:
-  cytuj je i linkuj do nich, podając źródło; nie zmieniaj ich, nie tłumacz ani nie przenoś do innej
-  strony lub zbioru danych. To samo dotyczy artykułów o miejscach, których API nie zawiera.
+  licencją <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>: cytuj
+  je i linkuj do nich, podając źródło; nie zmieniaj ich, nie tłumacz ani nie przenoś do innej strony
+  lub zbioru danych. To samo dotyczy artykułów o miejscach, których API nie zawiera.
 </p>

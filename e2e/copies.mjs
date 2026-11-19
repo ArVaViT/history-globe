@@ -8,7 +8,7 @@
  * machine.
  *
  * Usage: HG_URL=http://localhost:4173/ pnpm e2e:copies (with `vite preview` of a build
- * running; see e2e/browser.mjs for PLAYWRIGHT)
+ * running; see e2e/browser.mjs)
  */
 import { readFileSync } from "node:fs";
 import { BASE, launch } from "./browser.mjs";

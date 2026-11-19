@@ -10,7 +10,7 @@ description: Ano ang maaari mong kunin sa History Globe at paano — ang datos s
   hindi para kopyahin. Sinasabi ng pahinang ito kung nasaan ang hangganan.
 </p>
 
-<h2>Ano ang maaari mong kunin</h2>
+<h2 id="what-you-may-take">Ano ang maaari mong kunin</h2>
 <div class="table">
   <table>
     <thead>
@@ -74,18 +74,19 @@ description: Ano ang maaari mong kunin sa History Globe at paano — ang datos s
   mapa sa pamamagitan ng pag-embed; huwag i-clone ang globo.
 </p>
 
-<h2>Paano magbigay ng kredito</h2>
+<h2 id="how-to-credit">Paano magbigay ng kredito</h2>
 <p>
   Kung saan mo ipinapakita ang datos, pangalanan ang mga sanggunian nito ayon sa paglilista ng
   <code>index.json</code>. Ang pinakamaikling anyong sumasapat sa mga lisensya:
 </p>
 <pre><code>Data: History Globe by Vadym Arnaut ({{site}}), CC BY 4.0;
-places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0).</code></pre>
+places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0); place ids from Pleiades (CC BY 3.0).</code></pre>
 <p>Sa isang pahina, kasama ang mga link:</p>
 <pre><code>&lt;p&gt;Data: &lt;a href="{{site}}/"&gt;History Globe&lt;/a&gt; by Vadym Arnaut,
   &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC BY 4.0&lt;/a&gt;;
   places from &lt;a href="https://www.openbible.info/geo/"&gt;OpenBible.info&lt;/a&gt;,
-  people from &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;.&lt;/p&gt;</code></pre>
+  people from &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;,
+  place ids from &lt;a href="https://pleiades.stoa.org/"&gt;Pleiades&lt;/a&gt;.&lt;/p&gt;</code></pre>
 <p>
   Dala ng <code>{{site}}/api/v1/index.json</code> ang buong mga linya ng kredito, at ang bawat tugon
   ng API ay ipinapadala kasama ang header na <code>Link</code> na pumapangalan sa lisensya nito. Ang
@@ -93,7 +94,7 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
   BY-NC-ND 4.0”, kasama ang link sa pahina nito.
 </p>
 
-<h2>Mga limitasyon</h2>
+<h2 id="limits">Mga limitasyon</h2>
 <ul>
   <li>
     <b>Walang key, walang quota.</b> Ang API ay mga static na file sa likod ng isang cache. Kunin
@@ -117,7 +118,7 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
   </li>
 </ul>
 
-<h2>Simula</h2>
+<h2 id="start">Simula</h2>
 <pre><code>const api = "{{site}}/api/v1";
 const places = await (await fetch(`${api}/places.json`)).json();
 const byId = new Map(places.map((p) =&gt; [p.id, p]));
@@ -130,7 +131,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   >.
 </p>
 
-<h2>Paghingi ng higit pa</h2>
+<h2 id="asking-for-more">Paghingi ng higit pa</h2>
 <p>
   Isang salin ng mga artikulo, ang teksto ng mga ito sa ibang platform, o isang lisensyang hindi
   ibinibigay ng talahanayan sa itaas: sumulat sa
@@ -139,7 +140,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   lisensya kung ano ang mga ito.
 </p>
 
-<h2>Para sa mga AI agent</h2>
+<h2 id="for-ai-agents">Para sa mga AI agent</h2>
 <p>
   Sinasabi ng <a href="{{site}}/llms.txt"><code>llms.txt</code></a> ang parehong bagay sa isang
   pahina. Malugod na tinatanggap ang mga search engine at ang mga assistant na sumasagot nang may

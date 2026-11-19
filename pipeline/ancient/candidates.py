@@ -1,46 +1,110 @@
-import csv,gzip,json,math,re,sys
-csv.field_size_limit(10**9)
-S=sys.argv[1]; R=sys.argv[2]
-fame={}
-for r in csv.DictReader(open(f'{S}/wd/pleiades-sitelinks.csv')):
-    pid=r['pid'];q=r['item'].rsplit('/',1)[1];n=int(r['links'])
-    if n>fame.get(pid,(None,-1))[1]: fame[pid]=(q,n)
-inF=lambda lo,la:((lo-28)/40.5)**2+((la-32)/19.5)**2<=1
-def km(a,b):
-    x=(b[0]-a[0])*math.pi/180*math.cos((a[1]+b[1])/2*math.pi/180); y=(b[1]-a[1])*math.pi/180
-    return math.hypot(x,y)*6371
-ours=[f['geometry']['coordinates'] for f in json.load(open(f'{R}/apps/web/public/data/places.geojson'))['features'] if f['properties']['kind']=='settlement']
-anc=json.load(open(f'{R}/content/ancient-sites.json'))['sites']
-import glob
-for w in sorted(glob.glob(f'{R}/content/ancient-sites-wave*.json')): anc+=json.load(open(w))['sites']
-have={str(s['id']) for s in anc}; ours+= [[s['lon'],s['lat']] for s in anc]
-# A Wikidata item already drawn never comes back through a second Pleiades place, and these
-# were checked and refused (2026-11-03): Knidos at Burgaz, its first site (the Bible's Cnidus
-# stands at Tekir, Acts 27:7), Kastri
-# on Keos, which Wikidata's links make the Kastri of Syros, and Lycian Korykos, which they
-# make the Cilician city.
-usedq={m.group(1) for s in anc for u in s['sources'] if (m:=re.search(r'wikidata\.org/wiki/(Q\d+)$',u))}
-REFUSED={'570338','638939','599576'}
-plinks={v['id'] for v in json.load(open(f'{R}/content/pleiades.json'))['places'].values()}
-grid={}
-for c in ours: grid.setdefault((int(c[0]*10),int(c[1]*10)),[]).append(c)
-def near(c):
-    gx,gy=int(c[0]*10),int(c[1]*10)
-    return any(km(c,o)<3 for dx in (-1,0,1) for dy in (-1,0,1) for o in grid.get((gx+dx,gy+dy),[]))
-KEEP={'settlement','sanctuary','temple-2','port','temple'}
-out=[]
-for r in csv.DictReader(gzip.open(f'{S}/pleiades-dl/places.csv.gz','rt')):
-    try: lat=float(r['reprLat']);lon=float(r['reprLong'])
-    except: continue
-    if r['locationPrecision']!='precise' or not inF(lon,lat) or r['id'] not in fame: continue
-    if r['id'] in have or r['id'] in plinks or r['id'] in REFUSED: continue
-    types={t.strip() for t in r['featureTypes'].split(',')}
-    if not types & KEEP: continue
-    if near([lon,lat]): continue
-    q,n=fame[r['id']]
-    if q in usedq: continue
-    out.append(dict(pid=r['id'],qid=q,fame=n,title=r['title'],types=sorted(types),lon=round(lon,5),lat=round(lat,5),min=r['minDate'],max=r['maxDate'],periods=r['timePeriodsKeys']))
-out.sort(key=lambda x:-x['fame'])
-json.dump(out,open(f'{S}/wave/candidates.json','w'),ensure_ascii=False)
-for th in (8,10,12,15,20): print(th,sum(1 for x in out if x['fame']>=th))
-print([ (x['title'],x['fame']) for x in out[:25]])
+"""Step 3: the wave's candidates (wave/candidates.json). Pleiades' places with a precise point
+inside the focus ellipse, settlements, sanctuaries and ports, linked to a Wikidata item, none
+within 3 km of a place on the map, nor already a site or refused.
+
+    python3 -E -s -m pipeline.ancient.candidates <work>
+"""
+
+from __future__ import annotations
+
+import csv
+import json
+import pathlib
+import sys
+
+from pipeline.ancient.common import ROOT, content_sites, pleiades_places, qid_of, write
+from pipeline.geo import km
+
+KEEP = {"settlement", "sanctuary", "temple-2", "port", "temple"}
+NEAR_KM = 3
+# Checked and refused: Knidos at Burgaz, its first site (the Bible's Cnidus stands at Tekir,
+# Acts 27:7); Kastri on Keos, which Wikidata's links make the Kastri of Syros; and Lycian
+# Korykos, which they make the Cilician city.
+REFUSED = {"570338", "638939", "599576"}
+
+
+def in_focus(lon: float, lat: float) -> bool:
+    """The focus of the map: an ellipse from Portugal to the Indus and from the Danube to Nubia."""
+    return ((lon - 28) / 40.5) ** 2 + ((lat - 32) / 19.5) ** 2 <= 1
+
+
+def best_items(work: pathlib.Path) -> dict[str, tuple[str, int]]:
+    """Pleiades id → its Wikidata item with the most Wikipedia articles, and their number."""
+    best: dict[str, tuple[str, int]] = {}
+    with (work / "wd" / "pleiades-sitelinks.csv").open(encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            item, links = r["item"].rsplit("/", 1)[1], int(r["links"])
+            if links > best.get(r["pid"], ("", -1))[1]:
+                best[r["pid"]] = (item, links)
+    return best
+
+
+class Grid:
+    """Points in 0.1° cells, to ask cheaply whether any lies within NEAR_KM of a point."""
+
+    def __init__(self, points: list[list[float]]) -> None:
+        self.cells: dict[tuple[int, int], list[list[float]]] = {}
+        for p in points:
+            self.cells.setdefault(self.cell(p), []).append(p)
+
+    @staticmethod
+    def cell(p: list[float]) -> tuple[int, int]:
+        return int(p[0] * 10), int(p[1] * 10)
+
+    def near(self, p: list[float]) -> bool:
+        gx, gy = self.cell(p)
+        return any(
+            km(p, o) < NEAR_KM for dx in (-1, 0, 1) for dy in (-1, 0, 1) for o in self.cells.get((gx + dx, gy + dy), [])
+        )
+
+
+def main(work: pathlib.Path) -> None:
+    fame = best_items(work)
+    places = json.loads((ROOT / "apps/web/public/data/places.geojson").read_text(encoding="utf-8"))["features"]
+    sites = content_sites()
+    taken = {str(s["id"]) for s in sites}
+    # An item already drawn never comes back through a second Pleiades place.
+    used = {q for s in sites if (q := qid_of(s))}
+    linked = {v["id"] for v in json.loads((ROOT / "content/pleiades.json").read_text(encoding="utf-8"))["places"].values()}
+    grid = Grid(
+        [f["geometry"]["coordinates"] for f in places if f["properties"]["kind"] == "settlement"]
+        + [[s["lon"], s["lat"]] for s in sites]
+    )
+    out = []
+    for r in pleiades_places(work):
+        try:
+            lat, lon = float(r["reprLat"]), float(r["reprLong"])
+        except (ValueError, TypeError):  # no point given
+            continue
+        if r["locationPrecision"] != "precise" or not in_focus(lon, lat) or r["id"] not in fame:
+            continue
+        if r["id"] in taken or r["id"] in linked or r["id"] in REFUSED:
+            continue
+        types = {t.strip() for t in r["featureTypes"].split(",")}
+        if not types & KEEP or grid.near([lon, lat]):
+            continue
+        item, links = fame[r["id"]]
+        if item in used:
+            continue
+        out.append(
+            {
+                "pid": r["id"],
+                "qid": item,
+                "fame": links,
+                "title": r["title"],
+                "types": sorted(types),
+                "lon": round(lon, 5),
+                "lat": round(lat, 5),
+                "min": r["minDate"],
+                "max": r["maxDate"],
+                "periods": r["timePeriodsKeys"],
+            }
+        )
+    out.sort(key=lambda x: -x["fame"])
+    write(work, "candidates.json", out)
+    print({floor: sum(1 for x in out if x["fame"] >= floor) for floor in (3, 5, 8, 12, 20)})
+    print(", ".join(f"{x['title']} ({x['fame']})" for x in out[:25]))
+
+
+if __name__ == "__main__":
+    main(pathlib.Path(sys.argv[1]))

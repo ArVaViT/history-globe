@@ -1,0 +1,37 @@
+name: The site does not work
+description: A page, the map or the places script on another site fails, or looks wrong.
+title: "Site: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        For a mistake in a fact, a date, a name or a point, use "Report an error" instead. If you
+        would rather not use GitHub, write to historyglobe.vadym@gmail.com.
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: The address where it happens.
+      placeholder: https://historyglobe.app/?place=a15257a&year=-1000
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happens
+      description: What you did, what you saw, and what you expected instead.
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and device
+      description: For example "Safari 18, iPhone 15" or "Firefox 140, Windows 11".
+    validations:
+      required: true
+  - type: textarea
+    id: more
+    attributes:
+      label: Anything else
+      description: A screenshot, or a message from the browser's console, if you have one.

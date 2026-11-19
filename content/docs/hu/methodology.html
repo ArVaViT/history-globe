@@ -9,7 +9,7 @@ description: Honnan származik a History Globe minden helye, határa, dátuma é
   származnak, mit változtattunk rajtuk, és mit nem tudunk.
 </p>
 
-<h2>A Biblia helyei</h2>
+<h2 id="places-of-the-bible">A Biblia helyei</h2>
 <p>
   A Biblia {{places}} helye és a hozzájuk tartozó versek az
   <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
@@ -24,7 +24,8 @@ description: Honnan származik a History Globe minden helye, határa, dátuma é
   az OpenBible címkéz, és mindegyiknek saját oldala van; a többi {{unnamed}} olyan rekord, amelyet
   az OpenBible vezet, de e könyvek egyetlen verse sem nevez meg (például az 1Makk Adasája).
   {{articles}} helyhez tartozik cikk. További {{excluded}} helyet kihagytunk, mert nem volt hozzá
-  közölhető pont (lásd alább).
+  közölhető pont (lásd alább). További {{without_point}} helynek egyáltalán nincs pontja az
+  OpenBible-ben.
 </p>
 <ul>
   <li>
@@ -47,7 +48,7 @@ description: Honnan származik a History Globe minden helye, határa, dátuma é
   </li>
 </ul>
 
-<h2>Mikor álltak a helyek</h2>
+<h2 id="when-places-stood">Mikor álltak a helyek</h2>
 <p>
   A térképen egy város csak azokban az években látszik teljesen, amikor állt. A Biblia {{life}}
   helyéhez kézzel rögzítettük az alapítás, a pusztulás és az elhagyás éveit, mindegyiket a
@@ -55,15 +56,16 @@ description: Honnan származik a History Globe minden helye, határa, dátuma é
   rögzítünk: az a város, amelynek alapítása vagy vége vitatott, nem kap rá évet.
 </p>
 <p>
-  Az ókori világ {{ancient}} városát, amelyet a Biblia nem nevez meg — fővárosokat, kikötőket és
-  szentélyeket, például Ugaritot, Hattuszaszt, Márit vagy Delphoit —, egyenként választottuk ki és
-  kelteztük: mindegyiket a <a href="https://pleiades.stoa.org">Pleiades</a> vagy a Wikidata rekordja
-  alapján helyeztük el, az ókori lelőhelyen, nem a mai településen, és e rekordokból és
-  enciklopédikus leírásokból kelteztük, kézzel egyeztetve. További mintegy ezernégyszázat egy
-  szkript választott ki: a Pleiades olyan településeit, szentélyeit és kikötőit, amelyeknek
-  Wikidata-eleme ókori lelőhely, nem mai település; pontjukat a Pleiades adja, nevüket a Wikidata
-  (ahol az nem ad orosz, ukrán, bolgár vagy szerb nevet, mi, az adott nyelv ókortudományában
-  használt alakban), éveik pedig azoknak a korszakoknak a tartományát fedik, amelyekben a Pleiades
+  Az ókori világ {{ancient}} városa közül, amelyet a Biblia nem nevez meg — fővárosok, kikötők és
+  szentélyek, például Ugarit, Hattuszasz, Mári vagy Delphoi —, {{ancient_hand}} várost egyenként
+  választottunk ki és kelteztünk: mindegyiket a
+  <a href="https://pleiades.stoa.org">Pleiades</a> vagy a Wikidata rekordja alapján helyeztük el, az
+  ókori lelőhelyen, nem a mai településen, és e rekordokból és enciklopédikus leírásokból kelteztük,
+  kézzel egyeztetve. A többi {{ancient_script}} várost egy szkript választotta ki: a Pleiades olyan
+  településeit, szentélyeit és kikötőit, amelyeknek Wikidata-eleme ókori lelőhely, nem mai
+  település; pontjukat a Pleiades adja, nevüket a Wikidata (ahol az nem ad orosz, ukrán, bolgár vagy
+  szerb nevet, mi, az adott nyelv ókortudományában használt alakban; a többi nyelven, ahol nincs
+  neve, az angol), éveik pedig azoknak a korszakoknak a tartományát fedik, amelyekben a Pleiades
   tanúsítja őket, ezért mindegyik „kb.” jelölést kap. Ahol egy várost egy korszak közepén
   pusztítottak el, a végét kézzel állítottuk be a történelem alapján. Egy hely olyan nagyításnál
   jelenik meg, amelyet az határoz meg, milyen gyakran nevezi meg a Biblia; az a város, amelyet a
@@ -71,7 +73,7 @@ description: Honnan származik a History Globe minden helye, határa, dátuma é
   magáról az ókori lelőhelyről szóló Wikipedia-cikkek száma szerint.
 </p>
 
-<h2>Határok</h2>
+<h2 id="borders">Határok</h2>
 <p>
   Az államok és határaik évről évre a
   <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatriából</a> (Seshat Global History
@@ -102,22 +104,23 @@ description: Honnan származik a History Globe minden helye, határa, dátuma é
   tartományként jelenik meg, hiszen azzá vált.
 </p>
 
-<h2>Személyek</h2>
+<h2 id="people">Személyek</h2>
 <p>
   A Biblia {{people}} személye és családi kapcsolataik a STEP Bible TIPNR-jéből (Tyndale House,
   Cambridge) származnak. A kapcsolatokat nem vettük készpénznek:
 </p>
 <ul>
   <li>
-    a szöveg által leggyakrabban megnevezett 1200 személy családi kapcsolatait és az 1Krón
+    a szöveg által leggyakrabban megnevezett {{n:1200}} személy családi kapcsolatait és az 1Krón
     nemzetségtábláit összevetettük a versekkel; 153 kapcsolatot, amelyet a szöveg nem állít,
     töröltünk — Jézus testvéreit mint József és Mária fiait, Jezabelt mint Ahazjá anyját —, Jézus
     nemzetségtáblájának hiányzó kapcsolatait pedig a szöveg alapján pótoltuk;
   </li>
   <li>
-    az összes 1136, egy személy és egy hely közti kapcsolatot, ahol a hely központi vagy kiegészítő
-    szerepet játszik, versről versre végigolvastuk; 344-et töröltünk (Mózes „Kánaánban”, Ábrahám
-    „Sodomában”, egy fiú helyei az apjának tulajdonítva), 94-hez pedig jobb verset rendeltünk;
+    az összes {{n:1136}}, egy személy és egy hely közti kapcsolatot, ahol a hely központi vagy
+    kiegészítő szerepet játszik, versről versre végigolvastuk; 344-et töröltünk (Mózes „Kánaánban”,
+    Ábrahám „Sodomában”, egy fiú helyei az apjának tulajdonítva), 94-hez pedig jobb verset
+    rendeltünk;
   </li>
   <li>
     az azonos nevűeket úgy különböztetjük meg, ahogyan a szöveg: „Keresztelő János”, „János,
@@ -135,14 +138,15 @@ description: Honnan származik a History Globe minden helye, határa, dátuma é
   származnak, amelyeket a <a href="sources.html">források</a> oldal sorol fel. Egyetlen túra sem
   ment át az első ellenőrzésen változtatás nélkül; mindegyiket kijavítottuk és újra ellenőriztük. Az
   utolsó teljes menet, amely 2026. október 17-én fejeződött be, mind a 746 cikket újraolvasta a
-  forrásaikkal szemben, közülük mintegy 210-et kétszer, és 1088 javítást tett, mindegyiket átvezetve
-  arra a 11 nyelvre, amelyen az oldal akkor elérhető volt; egyértelmű hibát 157 cikkben találtunk. A
-  2026. október 24-én hozzáadott öt nyelvet (svéd, norvég, dán, tagalog és szerb) a javított
+  forrásaikkal szemben, közülük mintegy 210-et kétszer, és {{n:1088}} javítást tett, mindegyiket
+  átvezetve arra a 11 nyelvre, amelyen az oldal akkor elérhető volt; egyértelmű hibát 157 cikkben
+  találtunk. A 2026. október 24-én hozzáadott öt nyelvet (svéd, norvég, dán, tagalog és szerb) és a
+  2026. október 26-án hozzáadott ötöt (magyar, finn, vietnámi, román és bolgár) a javított
   szövegekből fordítottuk; mindegyik szövegüket ezután egy független ellenőrző menet vetette össze
   az angollal, és minden idézetet ellenőriztünk az adott nyelv Bibliájával. Ezek a menetek a projekt
   saját ellenőrzései, nem szakmai lektorálás. A szakemberek lektorálásai az ő nevükkel jelennek meg
   a <a href="reviews.html">lektorálások</a> oldalán, és minden cikk, amelyet szakember lektorált,
-  megnevezi a lektort, és a lektorálására mutat.
+  megnevezi a lektort, és a lektorálására mutat. Eddig megjelent: <span class="reviews"></span>.
 </p>
 <p>
   A megállóig tartó távolságot légvonalban adjuk meg. Kr. e. 312-től, amikor a római utak kezdődnek,
@@ -163,8 +167,8 @@ description: Honnan származik a History Globe minden helye, határa, dátuma é
   Izrael sorsát eldöntötte. Mindegyik azon a helyen áll, ahol vívták, és a térképen a maga éveiben
   látszik. A bibliaiakat úgy keltezzük, ahogyan a túrák ugyanazokat a történeteket; a többihez nem
   vers, hanem ókori vagy tudományos forrás tartozik. Egy második, független ellenőrző menet a
-  Szinodális szöveggel és a King James-fordítással vetette össze a vázlatot: az 58 tételből 16-ot
-  kijavítottunk, egyet pedig elhagytunk, mert a térképen nincs pont a helyszínéhez.
+  Szinodális szöveggel és a King James-fordítással vetette össze a vázlatot: az 58 tételből (2026.
+  október) 16-ot kijavítottunk, egyet pedig elhagytunk, mert a térképen nincs pont a helyszínéhez.
 </p>
 
 <p>
@@ -214,7 +218,7 @@ description: Honnan származik a History Globe minden helye, határa, dátuma é
   </li>
 </ul>
 
-<h2>Ellenőrzések minden építésnél</h2>
+<h2 id="checks-on-every-build">Ellenőrzések minden építésnél</h2>
 <p>Semmi nem jelenik meg, ha nem megy át minden ellenőrzésen:</p>
 <ul>
   <li>
@@ -231,7 +235,7 @@ description: Honnan származik a History Globe minden helye, határa, dátuma é
   <li>a tartalmi sémák szigorúak: egy ismeretlen vagy elírt mező leállítja az építést.</li>
 </ul>
 
-<h2>Mi bizonytalan</h2>
+<h2 id="what-is-uncertain">Mi bizonytalan</h2>
 <ul>
   <li>
     A Kr. e. első évezred előtti dátumok megközelítők, némelyik vitatott; a térkép „kb.” jelzéssel
@@ -274,7 +278,7 @@ https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
 <p>
   GitHub-fiókkal használhatja a minden helykártyán szereplő <i>Hibát talált?</i> hivatkozást is,
   amely kitöltött hellyel nyit hibajegyet a nyilvános tárhelyen, vagy közvetlenül is nyithat egyet:
-  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+  <a href="https://github.com/ArVaViT/history-globe/issues/new?template=report-an-error.yml"
     >github.com/ArVaViT/history-globe/issues</a
   >.
 </p>

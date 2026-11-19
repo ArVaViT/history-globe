@@ -1,11 +1,11 @@
-"""Licence rules of the pipeline (ADR 0008). Run: python3 -m unittest discover pipeline"""
+"""Licence rules of the pipeline (ADR 0008). Run: python3 -m unittest discover -s pipeline"""
 
 import json
 import math
 import pathlib
 import unittest
 
-from build_data import (
+from pipeline.build_data import (
     identification_confidence,
     COAST_BBOX,
     banned_lonlats,
@@ -26,7 +26,6 @@ from build_data import (
     move_points,
     place_kind,
     fame_rank,
-    qid,
     rank_of,
     site_label,
 )
@@ -168,6 +167,19 @@ class PickSite(unittest.TestCase):
 
 
 class BuildPlacesWithChosenSite(unittest.TestCase):
+    def setUp(self) -> None:
+        import tempfile
+        from unittest import mock
+
+        # build_places reads the Wikidata coordinates' cache: an empty one, not the real one.
+        self.tmp = tempfile.TemporaryDirectory()
+        self.patch = mock.patch("pipeline.build_data.CACHE", pathlib.Path(self.tmp.name))
+        self.patch.start()
+
+    def tearDown(self) -> None:
+        self.patch.stop()
+        self.tmp.cleanup()
+
     def test_point_confidence_and_today_line_follow_the_chosen_site(self) -> None:
         places, _, _ = build_places([HUKKOK], MODERN, {}, set(), None, {"hukkok": "m_yaquq"})
         p = places["features"][0]
@@ -181,6 +193,26 @@ class BuildPlacesWithChosenSite(unittest.TestCase):
         self.assertEqual(p["geometry"]["coordinates"], [35.26, 32.86])
         self.assertEqual(p["properties"]["confidence"], 283)
 
+    def test_fame_is_read_from_the_checked_item_not_from_openbibles_link(self) -> None:
+        # OpenBible links Aphek of Aram to the article for all the Apheks; content/wikidata.json
+        # leaves it out, and the place must not take that item's fame.
+        record = dict(HUKKOK, linked_data={"s7cc8b2": {"id": "Q4779536"}})
+        fame = {"Q4779536": 80, "Q1": 30}
+        unranked, _, _ = build_places([record], MODERN, {}, set(), items={}, fame=fame)
+        self.assertEqual(unranked["features"][0]["properties"]["rank"], 3)
+        ranked, _, _ = build_places([record], MODERN, {}, set(), items={"hukkok": "Q1"}, fame=fame)
+        self.assertEqual(ranked["features"][0]["properties"]["rank"], 2)
+
+    def test_a_region_takes_its_wikidata_point(self) -> None:
+        places, _, _ = build_places([HUKKOK], MODERN, {}, set(), region_points={"hukkok": [35.3, 31.7]})
+        p = places["features"][0]
+        self.assertEqual(p["geometry"]["coordinates"], [35.3, 31.7])
+        self.assertEqual(p["properties"]["coord"], "wikidata")
+
+    def test_a_banned_wikidata_point_for_a_region_is_refused(self) -> None:
+        with self.assertRaises(SystemExit):
+            build_places([HUKKOK], MODERN, {}, set(), region_points={"hukkok": [35.1, 31.1]})
+
     def test_a_banned_point_is_refused_rather_than_dropped(self) -> None:
         record = dict(HUKKOK, identifications=[ident("m_jem", "35.26,32.86", 283), ident("m_osm", "35.1,31.1", 1)])
         with self.assertRaises(SystemExit):
@@ -188,14 +220,16 @@ class BuildPlacesWithChosenSite(unittest.TestCase):
 
 
 class LoadPlacePoints(unittest.TestCase):
-    def test_splits_same_as_from_site_and_refuses_both_or_neither(self) -> None:
+    def test_splits_same_as_site_and_wikidata_and_refuses_two_or_none(self) -> None:
         import json
         import tempfile
 
         with tempfile.TemporaryDirectory() as d:
             path = pathlib.Path(d) / "place-points.json"
-            path.write_text(json.dumps({"places": {"a": {"same_as": "b"}, "c": {"site": "m1", "why": "…"}}}))
-            self.assertEqual(load_place_points(path), ({"a": "b"}, {"c": "m1"}))
+            path.write_text(
+                json.dumps({"places": {"a": {"same_as": "b"}, "c": {"site": "m1", "why": "…"}, "d": {"wikidata": "Q1", "why": "…"}}})
+            )
+            self.assertEqual(load_place_points(path), ({"a": "b"}, {"c": "m1"}, {"d": "Q1"}))
             path.write_text(json.dumps({"places": {"a": {"same_as": "b", "site": "m1"}}}))
             with self.assertRaises(SystemExit):
                 load_place_points(path)
@@ -207,9 +241,9 @@ class LoadPlacePoints(unittest.TestCase):
         import json
 
         path = pathlib.Path(__file__).resolve().parent.parent / "content" / "place-points.json"
-        same_as, sites = load_place_points(path)
+        same_as, sites, regions = load_place_points(path)
         places = json.loads(path.read_text(encoding="utf-8"))["places"]
-        self.assertEqual(len(same_as) + len(sites), len(places))
+        self.assertEqual(len(same_as) + len(sites) + len(regions), len(places))
         for pid, o in places.items():
             self.assertTrue(o.get("why", "").strip(), f"{pid} has no why")
         # A same_as chain ends at a record that stands on its own point (move_points follows it).
@@ -377,21 +411,6 @@ class PlaceKindTest(unittest.TestCase):
         self.assertEqual(place_kind(["special"]), "place")
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
-
-class Qid(unittest.TestCase):
-    def test_plain_link(self) -> None:
-        self.assertEqual(qid({"linked_data": {"s7cc8b2": {"id": "Q379652"}}}), "Q379652")
-
-    def test_link_marked_not_or_modern_is_no_link(self) -> None:
-        # OpenBible, Adamah: {"id": "Q2605670", "modifier": "not"}; Iconium: "modern" (Konya).
-        self.assertIsNone(qid({"linked_data": {"s7cc8b2": {"id": "Q2605670", "modifier": "not"}}}))
-        self.assertIsNone(qid({"linked_data": {"s7cc8b2": {"id": "Q79857", "modifier": "modern"}}}))
-
-
 class FetchChecksThePin(unittest.TestCase):
     """A source is read at a pinned commit and must hash as pipeline/sources.json says."""
 
@@ -405,7 +424,7 @@ class FetchChecksThePin(unittest.TestCase):
         self.upstream = self.tmp / "upstream.txt"
         self.upstream.write_text("the file at the pinned commit\n", encoding="utf-8")
         self.cache = self.tmp / "cache"
-        self.patch = mock.patch("build_data.CACHE", self.cache)
+        self.patch = mock.patch("pipeline.build_data.CACHE", self.cache)
         self.patch.start()
         self.sources = {"x": {"file": "x.txt", "url": self.upstream.as_uri(), "license": "PD", "credit": ""}}
         self.good = hashlib.sha256(self.upstream.read_bytes()).hexdigest()
@@ -417,7 +436,7 @@ class FetchChecksThePin(unittest.TestCase):
         shutil.rmtree(self.tmp)
 
     def test_downloads_and_keeps_a_file_that_hashes_as_pinned(self) -> None:
-        from build_data import fetch
+        from pipeline.build_data import fetch
 
         path = fetch("x", self.sources, {"x": {"sha256": self.good}})
         self.assertEqual(path.read_bytes(), self.upstream.read_bytes())
@@ -425,7 +444,7 @@ class FetchChecksThePin(unittest.TestCase):
         self.assertEqual(fetch("x", self.sources, {"x": {"sha256": self.good}}), path)
 
     def test_removes_a_download_that_does_not_hash_so_and_stops(self) -> None:
-        from build_data import fetch
+        from pipeline.build_data import fetch
 
         with self.assertRaises(SystemExit) as stop:
             fetch("x", self.sources, {"x": {"sha256": "0" * 64}})
@@ -433,7 +452,7 @@ class FetchChecksThePin(unittest.TestCase):
         self.assertFalse((self.cache / "x.txt").exists())
 
     def test_removes_a_cached_file_that_was_changed(self) -> None:
-        from build_data import fetch
+        from pipeline.build_data import fetch
 
         fetch("x", self.sources, {"x": {"sha256": self.good}})
         (self.cache / "x.txt").write_text("changed on disk\n", encoding="utf-8")
@@ -441,8 +460,17 @@ class FetchChecksThePin(unittest.TestCase):
             fetch("x", self.sources, {"x": {"sha256": self.good}})
         self.assertFalse((self.cache / "x.txt").exists())
 
+    def test_every_source_is_on_the_licence_allowlist(self) -> None:
+        from build_data import ALLOWED_LICENSES, OTHER_SOURCES, SOURCES, check_licences
+
+        for name, src in {**SOURCES, **OTHER_SOURCES}.items():
+            self.assertIn(src["license"], ALLOWED_LICENSES, name)
+        check_licences(SOURCES, OTHER_SOURCES)
+        with self.assertRaises(SystemExit):
+            check_licences({"x": {"license": "CC-BY-SA-4.0"}})
+
     def test_every_source_of_the_build_is_pinned_with_a_hash(self) -> None:
-        from build_data import PINS, SOURCES
+        from pipeline.build_data import PINS, SOURCES
 
         for name, src in SOURCES.items():
             if src.get("generated"):
@@ -489,3 +517,7 @@ class RiverAtlasLines(unittest.TestCase):
 
     def test_a_disputed_place_is_drawn_unnamed(self) -> None:
         self.assertTrue(self.rivers["Brook of Egypt"]["properties"].get("unlabelled"))
+
+
+if __name__ == "__main__":
+    unittest.main()

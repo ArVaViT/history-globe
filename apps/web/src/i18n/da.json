@@ -280,7 +280,8 @@
     "places": "Hvor de boede og virkede",
     "credit": "Familie og steder ud fra Bibelens vers (STEP Bible, CC BY 4.0)",
     "wives": "Hustruer",
-    "husbands": "Mænd"
+    "husbands": "Mænd",
+    "list_failed": "Listen over personer blev ikke indlæst. Prøv at åbne fanen igen."
   },
   "embed": {
     "places_one": "{{count}} sted",
@@ -313,6 +314,7 @@
     "zoom_out": "Zoom ud",
     "north": "Drej kortet mod nord",
     "sources": "Kortets kilder",
+    "sources_page": "Kilder",
     "title": "Kort"
   },
   "sheet": {

@@ -16,6 +16,8 @@ import json
 import re
 import pathlib
 
+from pipeline.bible_books import OSIS_ORDER, STEP_TO_OSIS
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 CACHE = ROOT / "pipeline" / ".cache" / "people"
 OUT = ROOT / "apps" / "web" / "public" / "data" / "people.json"
@@ -40,13 +42,6 @@ def unnamed(pid: str) -> bool:
 
 PER_PLACE = 12
 
-# TIPNR's book abbreviations in canonical order, for "where the text first names them".
-BOOK_ORDER = (
-    "Gen Exo Lev Num Deu Jos Jdg Rut 1Sa 2Sa 1Ki 2Ki 1Ch 2Ch Ezr Neh Est Job Psa Pro Ecc Sng "
-    "Isa Jer Lam Ezk Dan Hos Jol Amo Oba Jon Mic Nam Hab Zep Hag Zec Mal Mat Mrk Luk Jhn Act "
-    "Rom 1Co 2Co Gal Eph Php Col 1Th 2Th 1Ti 2Ti Tit Phm Heb Jas 1Pe 2Pe 1Jn 2Jn 3Jn Jud Rev"
-).split()
-
 
 def first_named(pid: str) -> tuple[int, int, int, str]:
     """The verse in a TIPNR id ("Shem@Gen.5.32") as a sortable key; unknown ones last."""
@@ -55,18 +50,18 @@ def first_named(pid: str) -> tuple[int, int, int, str]:
     try:
         # Some verses carry a letter ("2Ch.23.1a"): the number orders them.
         verse = int(re.match(r"\d+", parts[2]).group())  # type: ignore[union-attr]
-        return (BOOK_ORDER.index(parts[0]), int(parts[1]), verse, pid)
-    except (ValueError, IndexError, AttributeError):
-        return (len(BOOK_ORDER), 0, 0, pid)
+        return (OSIS_ORDER.index(STEP_TO_OSIS[parts[0]]), int(parts[1]), verse, pid)
+    except (KeyError, ValueError, IndexError, AttributeError):
+        return (len(OSIS_ORDER), 0, 0, pid)
 
 
 def main() -> None:
     people = json.loads((CACHE / "tipnr-people.json").read_text())["people"]
     by_place = json.loads((CACHE / "place-people.json").read_text())["places"]
-    ru_names = json.loads(RU.read_text())["names"] if RU.exists() else {}
+    ru_names = json.loads(RU.read_text())["names"]
     by_id = {p["id"]: p for p in people}
 
-    def ids(field: list[dict] | None, owner: str = "", role: str = "") -> list[str]:
+    def ids(field: list[dict] | None) -> list[str]:
         # Links TIPNR marks uncertain ("?") stay out, as do the unnamed.
         return [
             r["id"]
@@ -80,7 +75,7 @@ def main() -> None:
     # Ties of a person to a place their key verse does not bear out (John the Baptist in
     # Galilee by Matt 4:12, which is about Jesus): content/people-places-not-in-text.json.
     off_file = ROOT / "content" / "people-places-not-in-text.json"
-    off_data = json.loads(off_file.read_text()) if off_file.exists() else {}
+    off_data = json.loads(off_file.read_text())
     off = {(x["person"], x["place"]) for x in off_data.get("ties", [])}
     # And where they were, the verse that shows it, when TIPNR's does not.
     better = {(x["person"], x["place"]): x["verse"] for x in off_data.get("verses", [])}
@@ -108,23 +103,23 @@ def main() -> None:
     spouses: dict[str, set[str]] = {pid: set() for pid in order}
     for pid in order:
         p = by_id[pid]
-        for f in ids(p.get("father"), pid, "father"):
+        for f in ids(p.get("father")):
             if f in index:
                 fathers[pid].add(f)
-        for m in ids(p.get("mother"), pid, "mother"):
+        for m in ids(p.get("mother")):
             if m in index:
                 mothers[pid].add(m)
-        for s in ids(p.get("partners"), pid, "partners"):
+        for s in ids(p.get("partners")):
             if s in index:
                 spouses[pid].add(s)
                 spouses[s].add(pid)
         role = "mother" if p.get("gender") == "female" else "father"
-        for c in ids(p.get("offspring"), pid, "offspring"):
+        for c in ids(p.get("offspring")):
             if c in index:
                 (mothers if role == "mother" else fathers)[c].add(pid)
     # Links the text does not make (content/people-not-in-text.json), dropped after both
     # sides have been read, so neither side brings them back.
-    drops = json.loads(NOT_IN_TEXT_FILE.read_text())["links"] if NOT_IN_TEXT_FILE.exists() else []
+    drops = json.loads(NOT_IN_TEXT_FILE.read_text())["links"]
     for d in drops:
         who, other = d["person"], d["other"]
         if who not in index or other not in index:
@@ -138,7 +133,7 @@ def main() -> None:
             spouses[other].discard(who)
     # And links the text makes that TIPNR leaves out (content/people-links-in-text.json).
     adds_file = ROOT / "content" / "people-links-in-text.json"
-    adds = json.loads(adds_file.read_text())["links"] if adds_file.exists() else []
+    adds = json.loads(adds_file.read_text())["links"]
     for a in adds:
         who, other = a["person"], a["other"]
         if who not in index or other not in index:
@@ -172,7 +167,7 @@ def main() -> None:
         return [index[x] for x in sorted(pids, key=key)]
 
     epithets_file = ROOT / "content" / "people-epithets.json"
-    epithets = json.loads(epithets_file.read_text())["names"] if epithets_file.exists() else {}
+    epithets = json.loads(epithets_file.read_text())["names"]
     rows = []
     for pid in order:
         p = by_id[pid]
@@ -203,6 +198,8 @@ def main() -> None:
                 t for t in entry["top"] if t["person"] in index and (t["person"], place_id) not in off
             ][:PER_PLACE]
         ]
+        if any(not r[2] for r in row):
+            raise SystemExit(f"people: a tie to {place_id} has no verse (pipeline/people/build.py key_verses)")
         if row:
             places[place_id] = row
     OUT.write_text(

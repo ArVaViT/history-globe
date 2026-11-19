@@ -8,10 +8,10 @@ description: Sett globusen inn på ditt eget nettsted med én linje — kartet o
   over et kapittel ved siden av teksten på siden din; noen få meldinger holder de to i takt.
 </p>
 
-<h2>Kom raskt i gang</h2>
+<h2 id="quick-start">Kom raskt i gang</h2>
 <pre><code>&lt;iframe
   src="{{site}}/embed/v1?ref=Acts.16&amp;locale=nb"
-  title="Map of Acts 16"
+  title="Kart over Apg 16"
   style="width: 100%; height: 480px; border: 0; border-radius: 12px"
   allow="fullscreen"
   loading="lazy"
@@ -30,7 +30,7 @@ description: Sett globusen inn på ditt eget nettsted med én linje — kartet o
   <li>Rammen fungerer helt ned til bredden på en telefon; en høyde på 480 px er nok.</li>
 </ul>
 
-<h2>Et kapittel eller en tekst</h2>
+<h2 id="a-chapter-or-a-passage">Et kapittel eller en tekst</h2>
 <p>
   <code>ref</code> tar en OSIS-henvisning med engelske bokforkortelser og engelsk versnummerering:
 </p>
@@ -68,7 +68,7 @@ description: Sett globusen inn på ditt eget nettsted med én linje — kartet o
   ruten med flest stopp i den. En tekst uten noen av delene beholder kartets nåværende år.
 </p>
 
-<h2>Parametere</h2>
+<h2 id="parameters">Parametere</h2>
 <div class="table">
   <table>
     <thead>
@@ -174,14 +174,14 @@ description: Sett globusen inn på ditt eget nettsted med én linje — kartet o
   adressen: de samme parameterne virker etter <code>/embed/v1</code>.
 </p>
 
-<h2>Meldinger</h2>
+<h2 id="messages">Meldinger</h2>
 <p>
   Globusen og siden din kommuniserer gjennom <code>postMessage</code>. Hver melding er et objekt med
   <code>type</code> og <code>v: 1</code>. Globusen sender bare det som skjer på kartet, og aldri noe
   som identifiserer leseren, så den sender til den overordnede siden uansett opprinnelse (mål
   <code>"*"</code>); den tar bare imot meldinger fra siden som har rammen.
 </p>
-<h3>Fra globusen</h3>
+<h3 id="from-the-globe">Fra globusen</h3>
 <div class="table">
   <table>
     <thead>
@@ -223,7 +223,10 @@ description: Sett globusen inn på ditt eget nettsted med én linje — kartet o
       <tr>
         <td><code>hg:error</code></td>
         <td><code>{ code, message }</code></td>
-        <td>kartet eller dataene kunne ikke lastes</td>
+        <td>
+          kartet eller dataene kunne ikke lastes: <code>code</code> er <code>"map"</code> eller
+          <code>"data"</code>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -232,8 +235,12 @@ description: Sett globusen inn på ditt eget nettsted med én linje — kartet o
   <code>view</code> inneholder <code>year</code>, <code>locale</code> og <code>layers</code> og, når
   de er satt, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> og
   <code>camera</code>. En <code>view</code> uten <code>place</code> betyr at ikke noe sted er valgt.
+  <code>camera</code> er et objekt,
+  <code>{ center: [35.2, 31.8], zoom: 7, pitch: 30, bearing: 0 }</code>, ikke strengen fra adressen;
+  <code>layers</code> gir hvert lag <code>true</code> eller <code>false</code>:
+  <code>{ relief: false, battles: false }</code>.
 </p>
-<h3>Til globusen</h3>
+<h3 id="to-the-globe">Til globusen</h3>
 <div class="table">
   <table>
     <thead>
@@ -288,11 +295,11 @@ description: Sett globusen inn på ditt eget nettsted med én linje — kartet o
   de ikke har noe, Wikidata-elementet sitt (Konstantinopel er <code>Q16869</code>). Begge slag kan
   komme i <code>view.place</code> og <code>hg:place-clicked</code>, og begge godtas av
   <code>hg:set-view</code>; hvis dataene dine bare har OpenBibles steder, test formen før du slår
-  opp ett. Av OpenBibles {{openbible}} steder er {{absent}} ikke på kartet (de har ikke noe punkt
-  som kan publiseres); id-ene deres ignoreres.
+  opp ett. Av OpenBibles {{openbible}} steder er {{absent}} ikke på kartet (utelatt, eller helt uten
+  punkt); id-ene deres ignoreres.
 </p>
 
-<h2>Eksempel: kartet følger leseren</h2>
+<h2 id="example-the-map-follows-your-reader">Eksempel: kartet følger leseren</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
 // Når leseren åpner et kapittel, vis det på kartet.
@@ -419,22 +426,24 @@ function closeBox() {
   tekst, det samme gjelder et navn som Bibelens egne vers for det meste bruker om noe annet
   («Kadesj» der er Kadesj-Barnea, ikke Kadesj i databasen). Et stedsnavn som også er et fornavn
   (Jordan, Sharon), blir latt i fred ved siden av et annet ord med stor forbokstav: Jordan Smith er
-  en person, ikke elven. På russisk, ukrainsk, polsk og tsjekkisk finnes navn i bøyde former («в
-  Египте», «w Jerozolimie», «v Jeruzalémě»), og tyske navn også i genitiv («Jerusalems»). Lenker,
-  kode, skjemafelt, knapper og overskrifter blir latt i fred.
+  en person, ikke elven. På russisk, ukrainsk, polsk, tsjekkisk, serbisk, ungarsk, finsk og rumensk
+  finnes navn i bøyde former («в Египте», «w Jerozolimie», «v Jeruzalémě»), og tyske, svenske,
+  danske og norske navn også i genitiv («Jerusalems»). Lenker, kode, skjemafelt, knapper og
+  overskrifter blir latt i fred.
 </p>
 <p class="note">
   Skriptet har ingen avhengigheter og setter ingen informasjonskapsler. Det leser én fil med navn
-  fra globusen (omtrent 20 til 35 KB over nettverket avhengig av språk, pluss 7 KB skript), uten
-  adressen til siden din som referent, og endrer bare navnene det lenker. Det fungerer under en
-  streng Content Security Policy som tillater globusens adresse i <code>script-src</code> og
-  <code>connect-src</code>. For tekst som siden din legger til senere, kall
-  <code>HistoryGlobePlaces.scan(element)</code> når teksten er tegnet: skriptet deler tekstnoder, så
-  på en React- eller Vue-side kjører du det på innhold som rammeverket ikke lenger tegner på nytt.
+  fra globusen (omtrent {{names_kb_min}} til {{names_kb_max}} KB over nettverket avhengig av språk,
+  pluss {{script_kb}} KB skript), uten adressen til siden din som referent, og endrer bare navnene
+  det lenker. Det fungerer under en streng Content Security Policy som tillater globusens adresse i
+  <code>script-src</code> og <code>connect-src</code>. For tekst som siden din legger til senere,
+  kall <code>HistoryGlobePlaces.scan(element)</code> når teksten er tegnet: skriptet deler
+  tekstnoder, så på en React- eller Vue-side kjører du det på innhold som rammeverket ikke lenger
+  tegner på nytt.
 </p>
 <script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
 
-<h2>Stabilitet</h2>
+<h2 id="stability">Stabilitet</h2>
 <p>
   <code>/embed/v1</code> er en kontrakt: innenfor v1 legges det bare til parametere og meldinger,
   aldri endres eller fjernes noe. En brytende endring kommer som <code>/embed/v2</code>, og v1

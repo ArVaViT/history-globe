@@ -1,15 +1,15 @@
 # Reviewing History Globe — brief
 
 Thank you for agreeing to look at History Globe (https://historyglobe.app), a free 3D atlas of
-biblical history in 16 languages. It has no ads, accounts or income, and will stay free.
+biblical history in 21 languages. It has no ads, accounts or income, and will stay free.
 
 **What you are reading.** <N> articles on <scope>, in the version of <date> (commit <abc1234>).
 Links and a PDF with numbered paragraphs are attached.
 
 **How the texts were made.** Each article was drafted with AI help under my direction from the
 sources it cites, then checked claim by claim against those sources in AI-assisted passes (the
-last completed on 17 October 2026: 9,775 claims, 1,088 corrections). No scholar has read them
-yet. Methodology:
+last completed on 17 October 2026: 9,775 claims, 1,088 corrections). The reviews scholars have
+published so far are at https://historyglobe.app/en/reviews/. Methodology:
 https://historyglobe.app/docs/methodology.html
 
 **What helps most.**
@@ -28,7 +28,7 @@ form or software is needed.
 
 **What happens next.**
 
-1. Within two weeks I answer every point and correct the text in all 16 languages.
+1. Within two weeks I answer every point and correct the text in every language.
 2. You may check the response and tell me what is not addressed.
 3. I send you the exact public text: your name, title, institution, what you reviewed and what you
    did not, your statement in your own words, and a conflict-of-interest line.

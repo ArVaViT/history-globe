@@ -34,6 +34,27 @@ describe("ancient works in Russian", () => {
   });
 });
 
+describe("ancient works in the other languages", () => {
+  it("leave no English half in a line", () => {
+    // A work cited again after a semicolon, and a longer title over its shorter one: these
+    // had read "Jüdische Altertümer 14.364; Jewish War 1.269", "Babylonische Chronik of the
+    // Diadochi".
+    for (const l of ["de", "fr", "pl", "vi"] as const) {
+      const line = localizeCitation("Josephus, Antiquities 14.364; Jewish War 1.269", l);
+      expect(line, l).not.toMatch(/Antiquities|Jewish War/);
+      expect(localizeCitation("Babylonian Chronicle of the Diadochi (BCHP 3)", l), l).not.toMatch(
+        /Chronicle|of the Diadochi/,
+      );
+      expect(localizeCitation("Josephus, Jewish Antiquities 14.235", l), l).toBe(
+        localizeCitation("Josephus, Antiquities 14.235", l),
+      );
+    }
+    expect(localizeCitation("Josephus, Antiquities 14.364; Jewish War 1.269", "de")).toBe(
+      "Josephus, Jüdische Altertümer 14.364; Der Jüdische Krieg 1.269",
+    );
+  });
+});
+
 describe("sourcesOf", () => {
   const x = {
     sources: ["Egeria, Itinerarium 10-12 (the ascent of Mount Nebo)"],

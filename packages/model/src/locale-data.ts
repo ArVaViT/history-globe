@@ -1,13 +1,20 @@
-import { ALL_LOCALES, type Locale, setYearWords, type YearWords } from "./time.ts";
+import { ALL_LOCALES, type Locale } from "./locales.ts";
+
+/** How a language writes a year and a century (time.ts formatYear, formatCentury). */
+export interface YearWords {
+  readonly year: (y: number, bc: boolean) => string;
+  /** `roman`: the century in Roman numerals, as several languages write it ("XI в."). */
+  readonly century: (n: number, bc: boolean, roman: string) => string;
+}
 
 /** The words siteLabelIn builds a label from: the name always in its plain form. */
 export interface SiteWords {
-  readonly same: (x: string) => string;
-  readonly sameName: (x: string) => string;
-  readonly within: (x: string, n: string, u: string) => string;
-  readonly around: (x: string, n: string, u: string) => string;
-  readonly region: (x: string) => string;
-  readonly along: (x: string) => string;
+  readonly same: (place: string) => string;
+  readonly sameName: (place: string) => string;
+  readonly within: (place: string, distance: string, unit: string) => string;
+  readonly around: (place: string, distance: string, unit: string) => string;
+  readonly region: (place: string) => string;
+  readonly along: (place: string) => string;
   readonly km: string;
   readonly m: string;
 }
@@ -26,6 +33,8 @@ export interface LocaleData {
    * the genitive, «от Иоанна»): a key matches the word or the word with up to two more letters.
    */
   readonly aliases?: Readonly<Record<string, string>>;
+  /** Words typed before a book's name that the chapter search drops («евангелие от»), longest first. */
+  readonly bookPrefixes?: readonly string[];
   /** How a book outside the Hebrew canon (1–2 Maccabees) is marked after its reference. */
   readonly deutero?: string;
   /**
@@ -38,17 +47,20 @@ export interface LocaleData {
   readonly bookNames?: Readonly<Record<string, readonly string[]>>;
   /**
    * The eras' names: the period by id, its "disputed" note by id, and the slider's age bands
-   * by their first period. Beyond Russian, drafted by machine translation (2026-10-10 and
-   * 2026-10-11) and not yet read by native speakers.
+   * by their first period.
    */
   readonly periods?: {
     readonly periods: Readonly<Record<string, string>>;
     readonly disputed: Readonly<Record<string, string>>;
     readonly ages: Readonly<Record<string, string>>;
   };
+  /**
+   * Ancient authors and works by the language's own names, for source lines (citation.ts):
+   * the English as the sources write it, then the language's; the longer names first.
+   */
+  readonly works?: readonly (readonly [english: string, own: string])[];
   /** The templates of siteLabelIn in the language. */
   readonly site?: SiteWords;
-  /** How it writes a year and a century (time.ts formatYear, formatCentury). */
   readonly years?: YearWords;
 }
 
@@ -68,7 +80,6 @@ export async function loadLocaleData(locale: string): Promise<boolean> {
     default: LocaleData;
   };
   LOADED.set(locale, mod.default);
-  if (mod.default.years) setYearWords(locale as Locale, mod.default.years);
   return true;
 }
 

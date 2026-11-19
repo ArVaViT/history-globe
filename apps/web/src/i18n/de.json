@@ -280,7 +280,8 @@
     "places": "Wo sie lebten und wirkten",
     "credit": "Familie und Orte nach den Versen der Bibel (STEP Bible, CC BY 4.0)",
     "wives": "Ehefrauen",
-    "husbands": "Ehemänner"
+    "husbands": "Ehemänner",
+    "list_failed": "Die Personenliste konnte nicht geladen werden. Den Reiter erneut öffnen."
   },
   "embed": {
     "places_one": "{{count}} Ort",
@@ -313,6 +314,7 @@
     "zoom_out": "Herauszoomen",
     "north": "Karte nach Norden ausrichten",
     "sources": "Kartenquellen",
+    "sources_page": "Quellen",
     "title": "Karte"
   },
   "sheet": {

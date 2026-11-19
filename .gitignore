@@ -21,10 +21,9 @@ pipeline/out/
 *.tif
 *.zip
 
-# Secrets and local env (secrets live in 1Password, see AGENTS.md)
+# Secrets and local env (nothing reads them; see AGENTS.md)
 .env
 .env.*
-!.env.example
 
 # OS / editors
 .DS_Store
@@ -34,10 +33,10 @@ pipeline/out/
 # Generated map data (rebuilt by `pnpm data`)
 apps/web/public/data/
 
-# Generated pages (scripts/build-pages.ts)
-# Generated pages, one folder per language (two letters): a new language is ignored too.
+# Generated pages (scripts/build-pages.ts), one folder per language (two letters), so a new
+# language is ignored too…
 apps/web/public/[a-z][a-z]/
-# …but the link previews, one picture a language (hg-tools og-shots), are kept.
+# …but not the link previews, one committed picture a language (docs/adding-a-language.md).
 !apps/web/public/og/
 apps/web/public/sitemap.xml
 apps/web/public/llms.txt

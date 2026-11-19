@@ -1,11 +1,10 @@
 # History Globe: a free educational site. Search engines and the AI assistants that answer
 # with a citation are welcome; the crawlers that gather text to train models are not
-# (owner's decision of 2026-10-17, docs/launch-readiness.md, section 4): readers may reach
-# the content through an assistant that cites the site, but the articles and their
-# translations (CC BY-NC-ND 4.0, LICENSE) are not training data. The Content-Signal line
-# is Cloudflare's content signals (contentsignals.org): search and answer engines yes,
-# training no. It is the machine-readable form of the text-and-data-mining reservation
-# in LICENSE (Article 4(3) of EU Directive 2019/790).
+# (ADR 0016): readers may reach the content through an assistant that cites the site, but
+# the articles and their translations (CC BY-NC-ND 4.0, LICENSE) are not training data.
+# The Content-Signal line is Cloudflare's content signals (contentsignals.org): search and
+# answer engines yes, training no. It is the machine-readable form of the
+# text-and-data-mining reservation in LICENSE (Article 4(3) of EU Directive 2019/790).
 #
 # /data/ is what the map loads (the articles one language a file among it); the pages that
 # search engines index read none of it but the photos, which stay open, as do the place

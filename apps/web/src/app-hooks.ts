@@ -7,54 +7,22 @@ import {
   useState,
   useSyncExternalStore,
   type Dispatch,
+  type RefObject,
   type SetStateAction,
 } from "react";
 import type { Locale } from "@hg/model";
-import { chapterFocus } from "./chapter";
+import { chapterFocus, chapterOf } from "./chapter";
 import type { LoadedData } from "./data";
 import { focusOf, keyAction } from "./keys";
 import type { TFunction } from "./i18n";
 import { timelineEventsOf } from "./timeline-events";
-import { readUrl, writeUrl } from "./url";
+import { readUrl, writeUrl, type UrlView } from "./url";
 import type { Globe } from "./useGlobe";
+import { NARROW } from "./view-padding";
+import { readPref, writePref } from "./storage";
 
 const PLAY_STEP = 5;
 const PLAY_INTERVAL_MS = 80;
-const PANELS_KEY = "hg:panels-hidden";
-const NARROW = "(max-width: 767px)";
-
-/**
- * Whether the left column is shown (the burger hides it all at once), remembered in
- * this browser: "0" shown, "1" hidden. Without a choice yet it shows, except on a
- * phone, where it would cover the map.
- */
-export function usePanelsOpen(): [boolean, (open: boolean) => void] {
-  const [open, setOpen] = useState(() => {
-    const narrow = window.matchMedia(NARROW).matches;
-    try {
-      const saved = localStorage.getItem(PANELS_KEY);
-      return saved === null ? !narrow : saved === "0";
-    } catch {
-      return !narrow;
-    }
-  });
-  const toggle = useCallback((next: boolean) => {
-    setOpen(next);
-    try {
-      localStorage.setItem(PANELS_KEY, next ? "0" : "1");
-    } catch {
-      // Storage refused: the column still toggles, it just forgets.
-    }
-  }, []);
-  return [open, toggle];
-}
-
-/**
- * The tour or chapter a link opens on (started once the map is up) is that link's entry,
- * not a step after it: that first change replaces. A link's place is there from the start,
- * and on any other link the first choice is a step.
- */
-let opened = ((v) => Boolean(v.tour ?? v.ref))(readUrl());
 
 const BIBLE_ONLY_KEY = "hg:bible-only";
 /**
@@ -62,21 +30,10 @@ const BIBLE_ONLY_KEY = "hg:bible-only";
  * Bible tells and its places, without the ancient world around them.
  */
 export function useBibleOnly(): [boolean, (on: boolean) => void] {
-  const [on, setOn] = useState(() => {
-    try {
-      return localStorage.getItem(BIBLE_ONLY_KEY) === "1";
-    } catch {
-      return false;
-    }
-  });
+  const [on, setOn] = useState(() => readPref(BIBLE_ONLY_KEY) === "1");
   const set = useCallback((next: boolean) => {
     setOn(next);
-    try {
-      if (next) localStorage.setItem(BIBLE_ONLY_KEY, "1");
-      else localStorage.removeItem(BIBLE_ONLY_KEY);
-    } catch {
-      // Storage refused: the setting holds for this visit.
-    }
+    writePref(BIBLE_ONLY_KEY, next ? "1" : null);
   }, []);
   return [on, set];
 }
@@ -90,7 +47,12 @@ export function useUrlSync(
   globe: Globe | null,
   data: LoadedData | null,
   measure: readonly [string, string] | null,
+  link: UrlView,
 ): void {
+  // The tour or chapter the link opens on (started once the map is up) is the link's own
+  // entry, not a step after it: that first change replaces. On any other link the first
+  // choice is a step.
+  const opened = useRef(Boolean(link.tour ?? link.ref));
   // The distance, read by the writer below when it runs; and the writer, for the distance's
   // own changes. Neither restarts the effect: a step under way keeps its place in history.
   const measureRef = useRef(measure);
@@ -104,12 +66,9 @@ export function useUrlSync(
       !(v.tour && data?.tours.some((t) => t.id === v.tour)) &&
       !(v.ref && data && chapterFocus(data, v.ref))
     )
-      opened = false;
+      opened.current = false;
     // A chapter on the map, as the link has it: a person's places are not one.
-    const chapterRef = () => {
-      const ref = globe.engine.store.get().focus?.ref;
-      return ref && !ref.startsWith("person:") ? ref : "";
-    };
+    const chapterRef = () => chapterOf(globe.engine.store.get().focus)?.ref ?? "";
     // What the reader is looking at: a change of it is a step in the browser's history.
     const subject = () => {
       const s = globe.engine.store.get();
@@ -123,10 +82,12 @@ export function useUrlSync(
       timer = window.setTimeout(() => {
         const s = globe.engine.store.get();
         if (!s.camera) return;
+        // A person's places are not a chapter: they stay out of the link.
+        const chapter = chapterOf(s.focus);
         const now = subject();
-        const push = now !== last && !opened && !framed;
+        const push = now !== last && !opened.current && !framed;
         // Spent on the link's own view, not on the camera settling before it opens.
-        if (now !== last) opened = false;
+        if (now !== last) opened.current = false;
         last = now;
         writeUrl(
           {
@@ -136,8 +97,7 @@ export function useUrlSync(
             ...(s.selectedPlace ? { place: s.selectedPlace } : {}),
             layers: s.layers,
             ...(s.tour ? { tour: s.tour.id, stop: s.tour.step + 1 } : {}),
-            // A person's places are not a chapter: they stay out of the link.
-            ...(s.focus && !s.focus.ref.startsWith("person:") ? { ref: s.focus.ref } : {}),
+            ...(chapter ? { ref: chapter.ref } : {}),
             ...(measureRef.current ? { measure: measureRef.current } : {}),
           },
           push,
@@ -379,9 +339,9 @@ export function useTimelineMarks(
     if (!data) return [];
     const battles = bibleOnly
       ? data.battles.flatMap((b) =>
-          // Told as an event too (Lachish, 588 BC): marked once, as the card lists it once.
-          b.ref === undefined ||
-          events.some((e) => e.place === b.place && Math.abs(e.year - b.year) <= 1)
+          // Told as an event too (Lachish, 588 BC; `event` in battles.yaml): marked once, as
+          // the card lists it once.
+          b.ref === undefined || events.some((e) => e.id === b.event)
             ? []
             : [
                 {
@@ -437,4 +397,70 @@ export function usePrintSheet(globe: Globe | null, data: LoadedData | null, pers
     }
   };
   return { preparing, printForClass };
+}
+
+/**
+ * A popup that closes on a press outside `box` and on Escape. Escape is taken before the
+ * page's own keys, so it closes the popup and not the card behind it, and gives the focus
+ * back to `button`.
+ */
+export function useDismiss(
+  open: boolean,
+  setOpen: (open: boolean) => void,
+  box: RefObject<HTMLElement | null>,
+  button: RefObject<HTMLElement | null>,
+): void {
+  useEffect(() => {
+    if (!open) return;
+    const onDown = (e: PointerEvent) => {
+      if (!box.current?.contains(e.target as Node)) setOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      e.preventDefault();
+      e.stopPropagation();
+      setOpen(false);
+      button.current?.focus();
+    };
+    document.addEventListener("pointerdown", onDown);
+    document.addEventListener("keydown", onKey, true);
+    return () => {
+      document.removeEventListener("pointerdown", onDown);
+      document.removeEventListener("keydown", onKey, true);
+    };
+  }, [open, setOpen, box, button]);
+}
+
+/**
+ * The map's own controls leave their corners: the zoom and compass go into the player
+ * (`scaleSlot`), the scale and the sources' (i) onto the map just above it (`mapSlot`; in the
+ * player they crowded its buttons). Folded, the player is shorter and they follow it down.
+ */
+export function useMapControlSlots(
+  container: RefObject<HTMLElement | null>,
+  globe: Globe | null,
+  scaleSlot: HTMLElement | null,
+  mapSlot: HTMLElement | null,
+): void {
+  useEffect(() => {
+    const root = container.current;
+    const parts = [
+      [".maplibregl-ctrl-attrib", ".maplibregl-ctrl-bottom-right", mapSlot],
+      [".maplibregl-ctrl-scale", ".maplibregl-ctrl-bottom-left", mapSlot],
+      [
+        ".maplibregl-ctrl-bottom-right .maplibregl-ctrl-group",
+        ".maplibregl-ctrl-bottom-right",
+        scaleSlot,
+      ],
+    ] as const;
+    const moved = parts.flatMap(([what, home, slot]) => {
+      const el = root?.querySelector(what);
+      const corner = root?.querySelector(home);
+      return el && corner && slot ? [{ el, corner, slot }] : [];
+    });
+    for (const { el, slot } of moved) slot.append(el);
+    return () => {
+      for (const { el, corner } of moved) corner.append(el);
+    };
+  }, [container, globe, scaleSlot, mapSlot]);
 }

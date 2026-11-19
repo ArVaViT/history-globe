@@ -1,16 +1,17 @@
-/**
- * English (OSIS) chapter and verse → the Synodal numbering, for references shown in
- * Russian. Data and links keep the English numbering (BibleGateway's RUSV reads it and
- * shows the Synodal verse); a Russian reader with a printed Bible looks for Ps 67:16,
- * not Ps 68:15.
- *
- * Derived from the chapter lengths of the Synodal text (eBible.org "russyn", public
- * domain) against versification.ts, and checked verse by verse at every seam
- * (synodal.test.ts). Only differences that are certain are converted: the Psalms,
- * chapter boundaries that moved, and two verses joined into one. Chapters where the
- * Synodal text merges or adds verses elsewhere (Lev 14, Josh 24, Prov 4 and 13, Rom
- * 14-16, Rev 12) keep the English numbers.
- */
+// English (OSIS) chapter and verse → the Synodal numbering, for references shown in
+// Russian. Data and links keep the English numbering (BibleGateway's RUSV reads it and
+// shows the Synodal verse); a Russian reader with a printed Bible looks for Ps 67:16,
+// not Ps 68:15.
+//
+// Derived from the chapter lengths of the Synodal text (eBible.org "russyn", public
+// domain) against versification.ts, and checked verse by verse at every seam
+// (synodal.test.ts). Only differences that are certain are converted: the Psalms,
+// chapter boundaries that moved, and two verses joined into one. Chapters where the
+// Synodal text merges or adds verses elsewhere (Lev 14, Josh 24, Prov 4 and 13, Rom
+// 14-16, Rev 12) keep the English numbers.
+
+import { VERSES } from "./versification.ts";
+
 export interface ChapterVerse {
   readonly chapter: number;
   readonly verse: number | null;
@@ -24,23 +25,23 @@ const PSALM_TITLE_VERSES =
   "001111111001000001111100000001100101011111011111102212111112111110111100001110011011100110010000000001000001000000000000000000000000000000010000000000";
 
 /**
- * Chapters whose boundary moved: the same verses, cut elsewhere. For each run, its
- * first chapter, then the English and the Synodal lengths of its chapters.
+ * Chapters whose boundary moved: the same verses, cut elsewhere. For each run, its first
+ * chapter and the Synodal lengths of its chapters; the English ones are in VERSES.
  */
-type Run = readonly [first: number, english: readonly number[], synodal: readonly number[]];
+type Run = readonly [first: number, synodal: readonly number[]];
 const SHIFTED: Readonly<Record<string, readonly Run[]>> = {
-  "1Sam": [[23, [29, 22], [28, 23]]], // 1 Sam 23:29 (Engedi) is Synodal 24:1
+  "1Sam": [[23, [28, 23]]], // 1 Sam 23:29 (Engedi) is Synodal 24:1
   Num: [
-    [12, [16, 33], [15, 34]], // Num 12:16 is Synodal 13:1
-    [29, [40, 16], [39, 17]], // Num 29:40 is Synodal 30:1
+    [12, [15, 34]], // Num 12:16 is Synodal 13:1
+    [29, [39, 17]], // Num 29:40 is Synodal 30:1
   ],
-  Josh: [[5, [15, 27], [16, 26]]], // Josh 6:1 is Synodal 5:16
-  Job: [[39, [30, 24, 34], [35, 27, 26]]], // Job 41:1 (leviathan) is Synodal 40:20
-  Eccl: [[4, [16, 20], [17, 19]]], // Eccl 5:1 is Synodal 4:17
-  Song: [[6, [13, 13], [12, 14]]], // Song 6:13 is Synodal 7:1
-  Dan: [[3, [30, 37], [33, 34]]], // Dan 4:1 is Synodal 3:31
-  Hos: [[13, [16, 9], [15, 10]]], // Hos 13:16 is Synodal 14:1
-  Jonah: [[1, [17, 10], [16, 11]]], // Jonah 1:17 is Synodal 2:1
+  Josh: [[5, [16, 26]]], // Josh 6:1 is Synodal 5:16
+  Job: [[39, [35, 27, 26]]], // Job 41:1 (leviathan) is Synodal 40:20
+  Eccl: [[4, [17, 19]]], // Eccl 5:1 is Synodal 4:17
+  Song: [[6, [12, 14]]], // Song 6:13 is Synodal 7:1
+  Dan: [[3, [33, 34]]], // Dan 4:1 is Synodal 3:31
+  Hos: [[13, [15, 10]]], // Hos 13:16 is Synodal 14:1
+  Jonah: [[1, [16, 11]]], // Jonah 1:17 is Synodal 2:1
 };
 
 /** From this English verse on, the chapter counts one less: two verses are one. */
@@ -83,11 +84,11 @@ function psalm(chapter: number, verse: number | null): ChapterVerse {
 export function toSynodal(book: string, chapter: number, verse: number | null): ChapterVerse {
   if (book === "Ps") return psalm(chapter, verse);
   if (verse === null) return { chapter, verse };
-  for (const [first, english, synodal] of SHIFTED[book] ?? []) {
+  for (const [first, synodal] of SHIFTED[book] ?? []) {
     if (chapter < first || chapter >= first + synodal.length) continue;
     // The verse's place in the run, then the Synodal chapter it falls in.
     let index = verse;
-    for (let c = first; c < chapter; c++) index += english[c - first] ?? 0;
+    for (let c = first; c < chapter; c++) index += VERSES[book]?.[c - 1] ?? 0;
     for (const [i, length] of synodal.entries()) {
       if (index <= length) return { chapter: first + i, verse: index };
       index -= length;
@@ -96,4 +97,36 @@ export function toSynodal(book: string, chapter: number, verse: number | null): 
   const joined = JOINED[book]?.[chapter];
   if (joined !== undefined && verse >= joined) return { chapter, verse: verse - 1 };
   return { chapter, verse };
+}
+
+/**
+ * The Synodal chapter an English whole chapter ends in. Only a psalm differs from where it
+ * starts: English 116 is Synodal 114–115, and 147 is 146–147. Other whole chapters keep
+ * their English number, as toSynodal gives it.
+ */
+export function synodalChapterEnd(book: string, chapter: number): number {
+  const last = VERSES[book]?.[chapter - 1];
+  return book === "Ps" && last !== undefined ? psalm(chapter, last).chapter : chapter;
+}
+
+/**
+ * A Synodal chapter as the English OSIS reference of the verses it holds: a chapter
+ * (Пс 22 → Ps.23), a chapter range (Пс 9 → Ps.9-Ps.10) or a verse range (Пс 115 →
+ * Ps.116.10-Ps.116.19). Null when the book has no such chapter.
+ */
+export function fromSynodalChapter(book: string, n: number): string | null {
+  const lengths = VERSES[book] ?? [];
+  const verses: [number, number][] = [];
+  lengths.forEach((count, i) => {
+    for (let v = 1; v <= count; v++)
+      if (toSynodal(book, i + 1, v).chapter === n) verses.push([i + 1, v]);
+  });
+  const first = verses[0];
+  const last = verses.at(-1);
+  if (!first || !last) return null;
+  const whole = first[1] === 1 && last[1] === lengths[last[0] - 1];
+  const at = (c: number, v?: number) =>
+    `${book}.${String(c)}${v === undefined ? "" : `.${String(v)}`}`;
+  if (!whole) return `${at(first[0], first[1])}-${at(last[0], last[1])}`;
+  return first[0] === last[0] ? at(first[0]) : `${at(first[0])}-${at(last[0])}`;
 }

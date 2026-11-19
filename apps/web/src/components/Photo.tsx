@@ -68,7 +68,7 @@ export function Photo({
             <span className="shrink-0">
               &nbsp;·{" "}
               {licence ? (
-                <a href={licence} target="_blank" rel="noopener noreferrer license">
+                <a href={licence} target="_blank" rel="noopener noreferrer">
                   {photo.license}
                 </a>
               ) : (

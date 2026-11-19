@@ -9,7 +9,7 @@ description: Skąd pochodzi każde miejsce, granica, data i postać na History G
   warstwa, co zmieniliśmy i czego nie wiemy.
 </p>
 
-<h2>Miejsca biblijne</h2>
+<h2 id="places-of-the-bible">Miejsca biblijne</h2>
 <p>
   {{places}} miejsc i ich wersety pochodzi z
   <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
@@ -22,6 +22,7 @@ description: Skąd pochodzi każde miejsce, granica, data i postać na History G
   każde z nich ma własną stronę; pozostałe {{unnamed}} to wpisy OpenBible, których nie wymienia
   żaden werset tych ksiąg (na przykład Adasa z 1 Księgi Machabejskiej). Artykuł ma {{articles}}
   miejsc. Kolejne {{excluded}} pominięto, bo nie mają punktu, który wolno opublikować (zob. niżej).
+  W OpenBible {{without_point|miejsce nie ma|miejsca nie mają|miejsc nie ma}} żadnego punktu.
 </p>
 <ul>
   <li>
@@ -44,7 +45,7 @@ description: Skąd pochodzi każde miejsce, granica, data i postać na History G
   </li>
 </ul>
 
-<h2>Kiedy miejsca istniały</h2>
+<h2 id="when-places-stood">Kiedy miejsca istniały</h2>
 <p>
   Miasto na mapie jest rysowane w pełni tylko w latach, w których istniało. Dla {{life}} miejsc
   biblijnych lata założenia, zburzenia i opuszczenia zapisano ręcznie, każdy z podaniem źródeł
@@ -52,23 +53,24 @@ description: Skąd pochodzi każde miejsce, granica, data i postać na History G
   daty: miasto, którego założenie lub koniec są sporne, nie dostaje dla nich roku.
 </p>
 <p>
-  {{ancient}} miast świata starożytnego, których Biblia nie wymienia — stolic, portów i sanktuariów
-  takich jak Ugarit, Chattusza, Mari czy Delfy — wybrano i datowano pojedynczo: każde umieszczono
-  według jego rekordu w <a href="https://pleiades.stoa.org">Pleiades</a> lub Wikidata, na
-  starożytnym stanowisku, a nie na współczesnym mieście, i datowano na podstawie tych rekordów oraz
-  opisów encyklopedycznych, uzgodnionych ręcznie. Około tysiąca czterystu kolejnych wybrał skrypt:
-  osady, sanktuaria i porty z Pleiades, których element w Wikidata jest starożytnym stanowiskiem, a
-  nie współczesnym miastem; ich punkty pochodzą z Pleiades, nazwy z Wikidata (a tam, gdzie Wikidata
-  nie ma nazwy rosyjskiej, ukraińskiej, bułgarskiej ani serbskiej — nasze, w formie, jakiej używa
-  nauka o starożytności w danym języku), a lata to rozpiętość okresów, w których Pleiades je
-  poświadcza, dlatego wszystkie są oznaczone „ok.”. Gdy miasto zostało zniszczone w środku okresu,
-  jego koniec ustalono ręcznie na podstawie historii. Miejsce pojawia się przy przybliżeniu zależnym
-  od tego, jak często wymienia je Biblia; miasto, które Biblia ledwie wymienia, ale które świat
-  dobrze zna — Kartagina, Sparta, Ur — pojawia się wcześniej, według liczby artykułów w Wikipedia o
-  samym starożytnym stanowisku.
+  Spośród {{ancient}} miast świata starożytnego, których Biblia nie wymienia — stolic, portów i
+  sanktuariów takich jak Ugarit, Chattusza, Mari czy Delfy — {{ancient_hand}} wybrano i datowano
+  pojedynczo: każde umieszczono według jego rekordu w
+  <a href="https://pleiades.stoa.org">Pleiades</a> lub Wikidata, na starożytnym stanowisku, a nie na
+  współczesnym mieście, i datowano na podstawie tych rekordów oraz opisów encyklopedycznych,
+  uzgodnionych ręcznie. {{~ancient_script|Pozostałe|Pozostałe|Pozostałych}} {{ancient_script}}
+  wybrał skrypt: osady, sanktuaria i porty z Pleiades, których element w Wikidata jest starożytnym
+  stanowiskiem, a nie współczesnym miastem; ich punkty pochodzą z Pleiades, nazwy z Wikidata (a tam,
+  gdzie Wikidata nie ma nazwy rosyjskiej, ukraińskiej, bułgarskiej ani serbskiej — nasze, w formie,
+  jakiej używa nauka o starożytności w danym języku; w pozostałych językach, gdzie nazwy nie ma,
+  angielska), a lata to rozpiętość okresów, w których Pleiades je poświadcza, dlatego wszystkie są
+  oznaczone „ok.”. Gdy miasto zostało zniszczone w środku okresu, jego koniec ustalono ręcznie na
+  podstawie historii. Miejsce pojawia się przy przybliżeniu zależnym od tego, jak często wymienia je
+  Biblia; miasto, które Biblia ledwie wymienia, ale które świat dobrze zna — Kartagina, Sparta, Ur —
+  pojawia się wcześniej, według liczby artykułów w Wikipedia o samym starożytnym stanowisku.
 </p>
 
-<h2>Granice</h2>
+<h2 id="borders">Granice</h2>
 <p>
   Państwa i ich granice rok po roku pochodzą z
   <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatrii</a> (Seshat Global History Databank,
@@ -99,20 +101,20 @@ description: Skąd pochodzi każde miejsce, granica, data i postać na History G
   stała.
 </p>
 
-<h2>Postaci</h2>
+<h2 id="people">Postaci</h2>
 <p>
   {{people}} postaci biblijnych i ich powiązania rodzinne pochodzi z TIPNR ze STEP Bible (Tyndale
   House, Cambridge). Nie przyjęliśmy tych powiązań na wiarę:
 </p>
 <ul>
   <li>
-    powiązania rodzinne 1200 postaci, które tekst wymienia najczęściej, oraz rodowody z 1 Księgi
-    Kronik zostały odczytane na tle wersetów; usunięto 153 powiązania, których tekst nie podaje —
-    braci Jezusa jako synów Józefa i Maryi, Izebel jako matkę Ochozjasza — a brakujące ogniwa
-    rodowodu Jezusa dodano na podstawie tekstu;
+    powiązania rodzinne {{n:1200}} postaci, które tekst wymienia najczęściej, oraz rodowody z 1
+    Księgi Kronik zostały odczytane na tle wersetów; usunięto 153 powiązania, których tekst nie
+    podaje — braci Jezusa jako synów Józefa i Maryi, Izebel jako matkę Ochozjasza — a brakujące
+    ogniwa rodowodu Jezusa dodano na podstawie tekstu;
   </li>
   <li>
-    wszystkie 1136 powiązań między postacią a miejscem, w którym odgrywa ona rolę główną lub
+    wszystkie {{n:1136}} powiązań między postacią a miejscem, w którym odgrywa ona rolę główną lub
     drugoplanową, odczytano werset po wersecie; 344 usunięto (Mojżesz „w Kanaanie”, Abraham „w
     Sodomie”, miejsca syna przypisane ojcu), a 94 otrzymały lepszy werset;
   </li>
@@ -132,14 +134,15 @@ description: Skąd pochodzi każde miejsce, granica, data i postać na History G
   publicznej w każdym języku; wydania wymienia strona <a href="sources.html">źródeł</a>. Żadna trasa
   nie przeszła pierwszego przeglądu bez zmian; każdą poprawiono i sprawdzono ponownie. W ostatnim
   pełnym przeglądzie, zakończonym 17 października 2026, wszystkie 746 artykułów sprawdzono ponownie
-  względem źródeł, około 210 z nich dwukrotnie; wprowadzono 1088 poprawek, każdą we wszystkich 11
-  językach, które serwis miał wtedy, a w 157 artykułach znaleziono wyraźne błędy. Pięć języków
-  dodanych 24 października 2026 (szwedzki, norweski, duński, tagalski i serbski) przetłumaczono z
-  już poprawionych tekstów; potem każdy ich tekst porównano z angielskim w niezależnym przebiegu
+  względem źródeł, około 210 z nich dwukrotnie; wprowadzono {{n:1088}} poprawek, każdą we wszystkich
+  11 językach, które serwis miał wtedy, a w 157 artykułach znaleziono wyraźne błędy. Pięć języków
+  dodanych 24 października 2026 (szwedzki, norweski, duński, tagalski i serbski) oraz pięć dodanych
+  26 października 2026 (węgierski, fiński, wietnamski, rumuński i bułgarski) przetłumaczono z już
+  poprawionych tekstów; potem każdy ich tekst porównano z angielskim w niezależnym przebiegu
   kontroli, a każdy cytat z Biblią danego języka. Te przebiegi to własne kontrole projektu, a nie
   recenzja naukowa. Recenzje specjalistów publikujemy pod ich nazwiskami na stronie
   <a href="reviews.html">recenzji</a>, a każdy artykuł, który zrecenzował specjalista, podaje
-  recenzenta i prowadzi do jego recenzji.
+  recenzenta i prowadzi do jego recenzji. Dotąd opublikowane: <span class="reviews"></span>.
 </p>
 <p>
   Odległość do przystanku podajemy w linii prostej. Od 312 p.n.e., gdy zaczynają się drogi rzymskie,
@@ -160,8 +163,8 @@ description: Skąd pochodzi każde miejsce, granica, data i postać na History G
   rozstrzygnęły o losie Izraela. Każda jest umieszczona w miejscu, gdzie się toczyła, i pojawia się
   na mapie w swoich latach. Bitwy biblijne są datowane tak jak te same opowieści w trasach;
   pozostałe nie mają wersetu, lecz źródło starożytne lub naukowe. Drugi, niezależny przebieg
-  kontroli sprawdził szkic względem tekstu synodalnego i King James Version: z 58 wpisów poprawiono
-  16, a jeden odrzucono, bo mapa nie ma punktu dla jego stanowiska.
+  kontroli sprawdził szkic względem tekstu synodalnego i King James Version: z 58 wpisów
+  (październik 2026) poprawiono 16, a jeden odrzucono, bo mapa nie ma punktu dla jego stanowiska.
 </p>
 
 <p>
@@ -207,7 +210,7 @@ description: Skąd pochodzi każde miejsce, granica, data i postać na History G
   </li>
 </ul>
 
-<h2>Kontrole przy każdej kompilacji</h2>
+<h2 id="checks-on-every-build">Kontrole przy każdej kompilacji</h2>
 <p>Nic nie jest publikowane, dopóki nie przejdą wszystkie kontrole:</p>
 <ul>
   <li>każde źródło ma dozwoloną licencję (bez share-alike, bez danych niekomercyjnych);</li>
@@ -221,7 +224,7 @@ description: Skąd pochodzi każde miejsce, granica, data i postać na History G
   <li>schematy treści są ścisłe: nieznane lub błędnie zapisane pole zatrzymuje kompilację.</li>
 </ul>
 
-<h2>Co jest niepewne</h2>
+<h2 id="what-is-uncertain">Co jest niepewne</h2>
 <ul>
   <li>
     Daty sprzed I tysiąclecia p.n.e. są przybliżone, a niektóre sporne; mapa oznacza je „ok.”.
@@ -266,7 +269,7 @@ https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
   Z kontem GitHub możesz też użyć linku <i>Widzisz błąd?</i> na karcie każdego miejsca, który
   otwiera zgłoszenie w publicznym repozytorium z już wpisanym miejscem, albo otworzyć je
   bezpośrednio:
-  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+  <a href="https://github.com/ArVaViT/history-globe/issues/new?template=report-an-error.yml"
     >github.com/ArVaViT/history-globe/issues</a
   >.
 </p>

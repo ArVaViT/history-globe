@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { inCaseOf, maskPlace, quizOptions, readableLink } from "./print";
+import { buildStyle } from "@hg/core";
+import { loadDictionary } from "./i18n";
+import { CREDIT_WORDS, readableLink, sheetCredits } from "./print";
+import { TERRAIN_ATTRIBUTION } from "./terrain";
 
 describe("readableLink", () => {
   it("prints a lesson's name in its own letters, and types back to the same link", () => {
@@ -16,122 +19,33 @@ describe("readableLink", () => {
   });
 });
 
-describe("a quiz", () => {
-  const index = {
-    pattern: /(?<![\p{L}])(?:Иерусалим|Иерусалима|Иерусалиме)(?![\p{L}])/gu,
-    forms: { Иерусалим: "a1", Иерусалима: "a1", Иерусалиме: "a1" },
-  };
-  it("takes the place out of the text, every mention and case, the others kept", () => {
-    expect(
-      maskPlace("Из Иерусалима в Вифлеем, и снова в Иерусалиме.", index, "a1", ["Иерусалим"], "ru"),
-    ).toBe("Из ______ в Вифлеем, и снова в ______.");
-  });
-  it("takes a short Russian name in any case, but not a longer name it begins", () => {
-    expect(maskPlace("Колено идёт до Дана; в Дане живёт Даниил.", null, "x", ["Дан"], "ru")).toBe(
-      "Колено идёт до ______; в ______ живёт Даниил.",
-    );
-  });
-  it("leaves a word that only begins like the name", () => {
-    expect(maskPlace("Paul appeals to Caesar at Caesarea.", null, "x", ["Caesarea"], "en")).toBe(
-      "Paul appeals to Caesar at ______.",
-    );
-    expect(maskPlace("Daniel goes to Dan.", null, "x", ["Dan"], "en")).toBe(
-      "Daniel goes to ______.",
-    );
-    expect(maskPlace("требую суда кесарева в Кесарии", null, "x", ["Кесария"], "ru")).toBe(
-      "требую суда кесарева в ______",
-    );
-  });
-  it("takes out a name the index does not know, by its stem", () => {
-    expect(maskPlace("Отплывают из Антиохии.", null, "x", ["Антиохия"], "ru")).toBe(
-      "Отплывают из ______.",
-    );
-    expect(maskPlace("В Антиохии Писидийской.", null, "x", ["Антиохия Писидийская"], "ru")).toBe(
-      "В ______.",
-    );
-  });
-  it("takes out Polish and Czech names with their case endings", () => {
-    expect(maskPlace("Paweł płynie z Antiochii.", null, "x", ["Antiochia"], "pl")).toBe(
-      "Paweł płynie z ______.",
-    );
-    expect(maskPlace("Pavel byl v Jeruzalémě.", null, "x", ["Jeruzalém"], "cs")).toBe(
-      "Pavel byl v ______.",
-    );
-    expect(maskPlace("Павле је у Јерусалиму.", null, "x", ["Јерусалим"], "sr")).toBe(
-      "Павле је у ______.",
-    );
-  });
-  it("takes out Hungarian, Finnish and Romanian names with their suffixes", () => {
-    expect(maskPlace("Pál Jeruzsálemben volt.", null, "x", ["Jeruzsálem"], "hu")).toBe(
-      "Pál ______ volt.",
-    );
-    expect(maskPlace("Jézus Betániában volt.", null, "x", ["Betánia"], "hu")).toBe(
-      "Jézus ______ volt.",
-    );
-    expect(maskPlace("Paavali oli Jerusalemissa.", null, "x", ["Jerusalem"], "fi")).toBe(
-      "Paavali oli ______.",
-    );
-    expect(maskPlace("Joosef meni Egyptiin.", null, "x", ["Egypti"], "fi")).toBe(
-      "Joosef meni ______.",
-    );
-    // Romanian puts its article and case at the end too.
-    expect(maskPlace("Lazăr era din satul Betaniei.", null, "x", ["Betania"], "ro")).toBe(
-      "Lazăr era din satul ______.",
-    );
-    expect(maskPlace("Ierusalimul a căzut.", null, "x", ["Ierusalim"], "ro")).toBe(
-      "______ a căzut.",
-    );
-    // Vietnamese does not decline a name: the whole word only.
-    expect(maskPlace("Phao-lô ở Giê-ru-sa-lem.", null, "x", ["Giê-ru-sa-lem"], "vi")).toBe(
-      "Phao-lô ở ______.",
-    );
-  });
-  it("offers the answer and three others, once each, in name order", () => {
-    const o = quizOptions("Листра", ["Дервия", "Листра", "Икония", "Дервия", "Пергия", "Паф"], 3);
-    expect(o).toHaveLength(4);
-    expect(o).toContain("Листра");
-    expect(new Set(o).size).toBe(4);
-    expect([...o].sort((a, b) => a.localeCompare(b))).toEqual(o);
-    expect(quizOptions("Листра", ["Листра", "Икония"], 1)).toEqual(["Икония", "Листра"]);
-  });
-});
-
-describe("the quiz's choices in Russian", () => {
-  it("take the case of the gap", () => {
-    expect(inCaseOf("Павел вышел из Ефеса и пришёл", "Ефес", ["Вифлеем", "Ефес"])).toEqual([
-      "Вифлеема",
-      "Ефеса",
-    ]);
-    // «Самарии» is genitive, dative or prepositional: «в» decides.
-    expect(inCaseOf("Филипп проповедовал в Самарии", "Самария", ["Ефес", "Самария"])).toEqual([
-      "Ефесе",
-      "Самарии",
-    ]);
+describe("the sheet's credits", () => {
+  it("find every English word they translate in the map's own credits", () => {
+    const style = buildStyle({
+      dataUrl: "/data",
+      terrainTiles: "https://example.org/{z}/{x}/{y}.webp",
+      terrainAttribution: TERRAIN_ATTRIBUTION,
+      fonts: {},
+      initialYear: 30,
+      initialLocale: "en",
+    });
+    const credits = [
+      TERRAIN_ATTRIBUTION,
+      ...Object.values(style.sources).map((s) => ("attribution" in s ? (s.attribution ?? "") : "")),
+    ].join(" · ");
+    for (const [english] of CREDIT_WORDS)
+      expect(typeof english === "string" ? credits.includes(english) : english.test(credits)).toBe(
+        true,
+      );
   });
 
-  it("stay as they are when the name stands in the nominative or a choice does not decline", () => {
-    expect(inCaseOf("Ефес — главный город Асии", "Ефес", ["Ефес", "Вифлеем"])).toEqual([
-      "Ефес",
-      "Вифлеем",
-    ]);
-    expect(inCaseOf("пришёл из Ефеса", "Ефес", ["Ефес", "Мегиддо"])).toEqual(["Ефес", "Мегиддо"]);
-  });
-});
-
-describe("the quiz's choices in Russian, more than one gap", () => {
-  it("stay as they are when the gaps stand in different cases", () => {
-    expect(inCaseOf("пришёл в Ефес, а потом вышел из Ефеса", "Ефес", ["Ефес", "Вифлеем"])).toEqual([
-      "Ефес",
-      "Вифлеем",
-    ]);
-  });
-
-  it("read the whole name, not another place's first word", () => {
-    expect(
-      inCaseOf("из Антиохии Сирийской в Антиохию Писидийскую", "Антиохия Писидийская", [
-        "Антиохия Писидийская",
-        "Самария",
-      ]),
-    ).toEqual(["Антиохию Писидийскую", "Самарию"]);
+  it("put them in the sheet's language", async () => {
+    await loadDictionary("de");
+    const de = sheetCredits(
+      "Ancient sites: Pleiades · Roman roads: Itiner-e (Brughmans et al. 2025)",
+      "de",
+    );
+    expect(de).not.toContain("Ancient sites:");
+    expect(de).not.toContain("Roman roads:");
   });
 });

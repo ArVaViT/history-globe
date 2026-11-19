@@ -3,6 +3,15 @@
  * under it naming what is shown and the year, the site, and the map's attribution (the
  * data's licences ask for it on every copy).
  */
+
+/** The band's colours and type, the interface's own (styles.css @theme), spelled out for a canvas. */
+const PAPER = "#f6efe1";
+const INK = "#2b2418";
+const INK_SOFT = "#6b5d48";
+const ACCENT = "#9a3b1f";
+const SANS = '"Golos Text Variable", system-ui, sans-serif';
+const SERIF = '"Literata Variable", Georgia, serif';
+
 export async function mapPicture(o: {
   shot: { image: string; width: number; height: number; attribution: string };
   title: string;
@@ -19,23 +28,23 @@ export async function mapPicture(o: {
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
   if (!ctx) return null;
-  const small = `${String(px(11.5))}px "Golos Text", system-ui, sans-serif`;
+  const small = `${String(px(11.5))}px ${SANS}`;
   ctx.font = small;
   const lines = wrap(ctx, o.shot.attribution, o.shot.width - pad * 2);
   const band = px(58) + lines.length * px(15);
   canvas.width = o.shot.width;
   canvas.height = o.shot.height + band;
   ctx.drawImage(img, 0, 0);
-  ctx.fillStyle = "#f6efe1";
+  ctx.fillStyle = PAPER;
   ctx.fillRect(0, o.shot.height, canvas.width, band);
 
   const top = o.shot.height + px(32);
-  ctx.font = `${String(px(14))}px "Golos Text", system-ui, sans-serif`;
+  ctx.font = `${String(px(14))}px ${SANS}`;
   const siteWidth = ctx.measureText(o.site).width;
-  ctx.fillStyle = "#9a3b1f";
+  ctx.fillStyle = ACCENT;
   ctx.fillText(o.site, canvas.width - pad - siteWidth, top);
-  ctx.font = `600 ${String(px(21))}px Literata, Georgia, serif`;
-  ctx.fillStyle = "#2b2418";
+  ctx.font = `600 ${String(px(21))}px ${SERIF}`;
+  ctx.fillStyle = INK;
   ctx.fillText(
     o.title ? `${o.title} · ${o.year}` : o.year,
     pad,
@@ -43,7 +52,7 @@ export async function mapPicture(o: {
     canvas.width - pad * 3 - siteWidth,
   );
   ctx.font = small;
-  ctx.fillStyle = "#6b5d48";
+  ctx.fillStyle = INK_SOFT;
   lines.forEach((line, i) => {
     ctx.fillText(line, pad, top + px(22) + i * px(15));
   });

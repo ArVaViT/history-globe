@@ -11,6 +11,21 @@
   /* The keyboard focus ring: gold dark enough for 3:1 on paper and on the map (WCAG 1.4.11). */
   --color-focus: #946e20;
   --color-night: #0c1520;
+  /* A wrong answer, a battle's mark; a value that will not do; a right answer. */
+  --color-danger: #8e2a22;
+  --color-error: #b4442f;
+  --color-success: #2f6b3a;
+  /* A disputed location: its chip and its note. */
+  --color-dispute-line: #e0b98f;
+  --color-dispute-fill: #f4dfc9;
+  --color-dispute-note: #fbf1e4;
+  --color-dispute-ink: #7a4a1d;
+  /* The Roman roads, as the map draws them. */
+  --color-road: #7a5228;
+  /* A chip floating on the map; a panel; a dialog. */
+  --shadow-chip: 0 8px 24px -12px rgb(20 14 8 / 0.55);
+  --shadow-panel: 0 12px 32px -16px rgb(20 14 8 / 0.45), 0 2px 6px -2px rgb(20 14 8 / 0.12);
+  --shadow-dialog: 0 24px 60px rgb(0 0 0 / 0.35);
   --font-sans: "Golos Text Variable", system-ui, sans-serif;
   --font-serif: "Literata Variable", Georgia, serif;
 }
@@ -67,6 +82,20 @@
   unicode-range:
     U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0309, U+0323, U+1EA0-1EF1, U+1EF4-1EF9;
 }
+/* A link in running text: the accent, dotted until hovered. */
+@utility link-accent {
+  @apply text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid;
+}
+/* A quieter link or text button: dotted, darkening on hover. */
+@utility link-soft {
+  @apply underline decoration-dotted underline-offset-2 hover:text-ink;
+}
+/* A card beside the column: 420 px, less where the column and the gutters need the room;
+   the whole width on a phone. */
+@utility w-card {
+  @apply w-[min(420px,calc(100vw-376px-32px))] max-md:w-full;
+}
+
 :root:lang(vi) {
   --font-sans: "Onest Variable", "Golos Text Variable", system-ui, sans-serif;
 }
@@ -76,6 +105,11 @@ body {
   margin: 0;
   height: 100%;
   background: var(--color-night);
+}
+
+/* The timeline's height, measured by the app (useHeightVar); this until it is measured. */
+:root {
+  --hg-timeline-h: 124px;
 }
 
 /* The slider sits on the era bands: transparent track, clear thumb. */
@@ -116,11 +150,10 @@ body {
   outline-offset: 2px;
 }
 
-/* The map's corners sit above the full-width time slider; the overview and settings
-   buttons are a group of their own in the bottom-right corner, above the zoom buttons. */
+/* The map's corners sit above the full-width time slider. */
 .maplibregl-ctrl-bottom-right,
 .maplibregl-ctrl-bottom-left {
-  bottom: calc(var(--hg-timeline-h, 124px) + 16px);
+  bottom: calc(var(--hg-timeline-h) + 16px);
 }
 
 /* The map's controls in the player, dressed as its own buttons: no frames, the same round
@@ -128,18 +161,6 @@ body {
 .hg-map-slot .maplibregl-ctrl {
   margin: 0 !important;
   float: none;
-}
-.hg-map-slot .maplibregl-ctrl-scale {
-  /* The player's own paper: unseen at the usual opacity, still readable when the player
-     is set see-through. */
-  background: rgb(246 239 225 / 0.9);
-  border: 1.5px solid var(--color-ink-soft);
-  border-top: 0;
-  padding: 0 4px 1px;
-  color: var(--color-ink-soft);
-  font-size: 11px;
-  line-height: 1.2;
-  text-align: center;
 }
 .hg-map-slot .maplibregl-ctrl-group {
   display: flex;
@@ -258,7 +279,7 @@ summary {
    run under the timeline, so it keeps above it and scrolls. */
 @media (min-width: 768px) and (max-height: 560px) {
   .hg-card {
-    max-height: calc(100dvh - var(--hg-timeline-h, 124px) - 44px);
+    max-height: calc(100dvh - var(--hg-timeline-h) - 44px);
     overflow-y: auto;
     border-radius: 16px;
   }
@@ -411,7 +432,13 @@ summary {
 /* The sheet's own look, in print and while print.ts measures it off screen at the width
    of an A4 page inside its margins (186 mm), to choose the layout that keeps it one page. */
 .hg-sheet {
-  color: #1f1a12;
+  /* Ink on white paper: darker than the screen's, which sits on cream. */
+  --print-ink: #1f1a12;
+  --print-ink-body: #3a3226;
+  --print-ink-soft: #5b4f3c;
+  --print-rule: #cfc4ad;
+  --print-rule-soft: #d8ccb2;
+  color: var(--print-ink);
   font: 10pt/1.4 var(--font-sans);
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
@@ -437,12 +464,12 @@ summary {
 }
 .hg-sheet-when {
   margin: 1mm 0 0;
-  color: #5b4f3c;
+  color: var(--print-ink-soft);
   font-size: 11pt;
 }
 .hg-sheet-brand {
   margin: 0;
-  color: #9a3b1f;
+  color: var(--color-accent);
   font: 11pt var(--font-serif);
   white-space: nowrap;
 }
@@ -478,7 +505,7 @@ summary {
   align-items: center;
   gap: 2mm;
   margin-top: 1.5mm;
-  color: #5b4f3c;
+  color: var(--print-ink-soft);
   font-size: 8pt;
 }
 .hg-sheet-north {
@@ -486,7 +513,7 @@ summary {
 }
 .hg-sheet-scale span:first-child {
   height: 1.6mm;
-  border: 0.3mm solid #5b4f3c;
+  border: 0.3mm solid var(--print-ink-soft);
   border-top: 0;
 }
 .hg-sheet-list {
@@ -515,7 +542,7 @@ summary {
   width: 5mm;
   height: 5mm;
   border-radius: 50%;
-  background: #9a3b1f;
+  background: var(--color-accent);
   color: #fff;
   font-size: 7.5pt;
   font-weight: 600;
@@ -528,20 +555,20 @@ summary {
 }
 .hg-sheet-ref {
   margin-left: 2mm;
-  color: #5b4f3c;
+  color: var(--print-ink-soft);
 }
 /* An outline map: a line to write the name on. */
 .hg-sheet-blank {
   display: inline-block;
   width: 48mm;
   height: 5mm;
-  border-bottom: 0.3mm solid #5b4f3c;
+  border-bottom: 0.3mm solid var(--print-ink-soft);
   vertical-align: bottom;
 }
 /* An outline map: a frame round the white map, the passage kept on its line, and
    lines for notes below. */
 .hg-sheet.blank .hg-sheet-map {
-  border: 0.3mm solid #cfc4ad;
+  border: 0.3mm solid var(--print-rule);
 }
 .hg-sheet.blank .hg-sheet-ref {
   white-space: nowrap;
@@ -585,24 +612,24 @@ summary {
 }
 .hg-sheet-lines p {
   margin: 0 0 1mm;
-  color: #5b4f3c;
+  color: var(--print-ink-soft);
   font-weight: 600;
 }
 .hg-sheet-lines span {
   display: block;
   height: 8mm;
-  border-bottom: 0.3mm solid #cfc4ad;
+  border-bottom: 0.3mm solid var(--print-rule);
 }
 .hg-sheet-note {
   margin: 0.4mm 0 0;
-  color: #3a3226;
+  color: var(--print-ink-body);
   font: 9.5pt/1.4 var(--font-serif);
 }
 .hg-sheet-foot {
   margin-top: 5mm;
   padding-top: 2mm;
-  border-top: 0.3mm solid #d8ccb2;
-  color: #5b4f3c;
+  border-top: 0.3mm solid var(--print-rule-soft);
+  color: var(--print-ink-soft);
   font-size: 7.5pt;
 }
 .hg-sheet-foot p {
@@ -611,26 +638,18 @@ summary {
 /* A lesson's link is long (its places, its name): it breaks anywhere rather than
    widening the page, which the browser would then shrink to fit. */
 .hg-sheet-url {
-  color: #9a3b1f;
+  color: var(--color-accent);
   overflow-wrap: anywhere;
 }
 
 /* Inside another site (App.tsx): no scale bar; in a narrow column no zoom buttons either,
-   where they covered the names and gestures zoom (the compass stays). The (i) stays: the licences need it. */
+   where they covered the names and gestures zoom (the compass stays). The (i) stays: the
+   licences need it. */
 .hg-embed .maplibregl-ctrl-scale {
   display: none;
 }
-@media (max-width: 639px) {
-  .hg-embed .maplibregl-ctrl-zoom-in,
-  .hg-embed .maplibregl-ctrl-zoom-out {
-    display: none;
-  }
-  .hg-embed .maplibregl-ctrl-compass {
-    border-top: 0;
-  }
-}
-/* A short frame: its compact card would cover the zoom buttons; gestures zoom. */
-@media (max-height: 519px) {
+/* A short frame too: its compact card would cover the zoom buttons. */
+@media (max-width: 639px), (max-height: 519px) {
   .hg-embed .maplibregl-ctrl-zoom-in,
   .hg-embed .maplibregl-ctrl-zoom-out {
     display: none;
@@ -689,8 +708,11 @@ summary {
   border-bottom: 1.5px solid var(--color-ink-soft);
   position: relative;
   padding: 0 2px 2px;
+  color: var(--color-ink-soft);
   font-size: 11.5px;
   font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+  text-align: center;
 }
 .hg-map-slot .maplibregl-ctrl-scale::before,
 .hg-map-slot .maplibregl-ctrl-scale::after {
@@ -708,7 +730,7 @@ summary {
   right: 0;
 }
 
-/* A switch for the layers: a track and a knob, not the browser's check box. */
+/* A switch (the Bible-only setting): a track and a knob, not the browser's check box. */
 .hg-switch {
   appearance: none;
   position: relative;

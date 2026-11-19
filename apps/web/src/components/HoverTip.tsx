@@ -1,4 +1,4 @@
-import { polityText, type PolityName, type Renderer } from "@hg/core";
+import { polityText, type BattleInfo, type PolityName, type Renderer } from "@hg/core";
 import { useEffect, useState } from "react";
 import { formatYear, type Locale, placeName, pick } from "@hg/model";
 import { useTranslation } from "../i18n";
@@ -18,7 +18,7 @@ export function HoverTip({
   // A place of the ancient world says what it was ("capital"; a city, nothing): the state
   // drawn under it in a later year need not be the one it was the capital of.
   const kindKey = place.ancient ? `ancient.${place.ancient}` : `kind.${place.kind}`;
-  const kind = t(kindKey) === kindKey ? "" : t(kindKey);
+  const kind = t(kindKey, { defaultValue: "" });
   const primary = placeName(place, locale);
   // Under a name of the reader's language, the English one; else where it is today, or
   // when a place of the ancient world stood.
@@ -84,12 +84,7 @@ export function PolityTip({ renderer, locale }: { renderer: Renderer; locale: Lo
 export function BattleTip({ renderer, locale }: { renderer: Renderer; locale: Locale }) {
   const { t } = useTranslation();
   const [tip, setTip] = useState<{
-    battle: {
-      readonly en: string;
-      readonly ru: string;
-      readonly year: number;
-      readonly approx: boolean;
-    };
+    battle: BattleInfo;
     at: { readonly x: number; readonly y: number };
   } | null>(null);
   useEffect(
@@ -109,7 +104,7 @@ export function BattleTip({ renderer, locale }: { renderer: Renderer; locale: Lo
           : { left: tip.at.x + 14, top: tip.at.y - 10 }
       }
     >
-      <div className="font-serif text-[14px] leading-tight">{pick(tip.battle, locale) ?? ""}</div>
+      <div className="font-serif text-[14px] leading-tight">{pick(tip.battle.names, locale)}</div>
       <div className="text-[11px] text-paper/70">
         {tip.battle.approx ? `${t("place.circa")} ` : ""}
         {formatYear(tip.battle.year, locale)}

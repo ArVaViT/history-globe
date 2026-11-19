@@ -1,12 +1,14 @@
 /**
- * The words of the static pages (build-pages.ts), one block per site language. A language
+ * The words of the static pages (build-pages.ts), one block per site language; the
+ * documentation (build-docs.ts) takes the ones it shares with them, the skip link and the
+ * language switch, from here, so the two never word them apart. A language
  * joins the site with its block here: the types make the compiler ask for every word, and
  * the counted ones (days at sea, verses) choose their plural form by the language's rules.
  */
-import type { Locale, SiteLocale } from "../packages/model/src/time.ts";
+import type { Locale, SiteLocale } from "../packages/model/src/locales.ts";
 const RU_DAYS: Partial<Record<Intl.LDMLPluralRule, string>> = { one: "день", few: "дня" };
 
-// Ukrainian (drafted 2026-10-10 by machine translation; not yet read by a native speaker).
+// Українська (drafted by machine translation; not yet read by a native speaker).
 /** Ukrainian words for scripts/page-words.ts: the blocks mirror T.ru, LANDING.ru and LISTS.ru. */
 
 const UK_DAYS: Partial<Record<Intl.LDMLPluralRule, string>> = { one: "день", few: "дні" };
@@ -69,8 +71,10 @@ const T_UK = {
   },
   stop: "Зупинка",
   translation: "Переклад П. Куліша та І. Пулюя (1905)",
+  numbered: "Не наводиться: у цьому перекладі розділ пронумеровано інакше.",
   circa: "бл.",
-  title: (n: string) => `${n} — де це було, історія, вірші Біблії`,
+  title: (n: string, history = true) =>
+    `${n} — де це було${history ? ", історія" : ""}, вірші Біблії`,
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) на мапі біблійної історії: де це місце сьогодні, його історія та згадки в Біблії (${String(v)}).`,
   about: "Про проєкт",
@@ -100,27 +104,31 @@ const LANDING_UK = {
   live: "Покрутити глобус",
   full: "На весь екран",
   liveClose: "Готово",
-  stats: ["місць", "екскурсій", "статей", "відповідей на питання", "битв і облог"],
+  stats: [
+    (n: number) => uk(n, "місце", "місця", "місць"),
+    (n: number) => uk(n, "екскурсія", "екскурсії", "екскурсій"),
+    (n: number) => uk(n, "стаття", "статті", "статей"),
+    (n: number) => uk(n, "відповідь на питання", "відповіді на питання", "відповідей на питання"),
+    (n: number) => uk(n, "битва й облога", "битви й облоги", "битв і облог"),
+  ],
   rows: [
     [
       "Екскурсії",
       "Маршрути дорогами й рельєфом",
       "Авраам, Вихід, подорожі Павла — зупинка за зупинкою: вірш, фото місця, відстань і дні дороги.",
-      "Друга подорож Павла",
       "Зупинка «Троада» другої подорожі Павла: мапа Егейського моря, маршрут, профіль дороги, фото руїн",
     ],
     [
       "Місця",
       "Кожне місце — з віршами та джерелами",
       "Де воно сьогодні, чиїм було у вибраний рік і всі вірші, де його названо. Спірне названо спірним.",
+      "Картка Єрусалима: фото, держава, якій він належав у 30 р. н. е., стаття; довкола — гори Юдеї з десятками біблійних місць",
       "Відкрити Єрусалим",
-      "Картка Єрусалима: фото, держава в 30 р. н. е., стаття; довкола — гори Юдеї з десятками біблійних місць",
     ],
     [
       "Для уроку",
       "Вікторина, свій урок і аркуш A4",
       "Вікторина «Де це було?» за будь-якою екскурсією, свій урок одним посиланням, мапи для друку на A4.",
-      "Відкрити Вихід з Єгипту",
       "Вікторина про Вихід: питання з віршем і чотири варіанти відповіді, маршрут на мапі",
     ],
   ],
@@ -147,7 +155,8 @@ const LANDING_UK = {
   method: "Як перевіряються дані",
   sources: "Усі джерела",
   ctaTitle: "Почніть із будь-якого року",
-  ctaText: "Без реєстрації, на телефоні й на комп’ютері. Мов: {n}.",
+  ctaText: (n: number) =>
+    `Без реєстрації, на телефоні й на комп’ютері, ${String(n)} ${uk(n, "мовою", "мовами", "мовами")}.`,
 } as const;
 
 const LISTS_UK: ListWords = {
@@ -240,8 +249,10 @@ const T_ES = {
   },
   stop: "Parada",
   translation: "Reina-Valera 1909",
+  numbered: "No se cita aquí: esta traducción numera el capítulo de otro modo.",
   circa: "ca.",
-  title: (n: string) => `${n} — dónde estaba, historia, versículos de la Biblia`,
+  title: (n: string, history = true) =>
+    `${n} — dónde estaba${history ? ", historia" : ""}, versículos de la Biblia`,
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) en el mapa de la historia bíblica: dónde está hoy este lugar, su historia y las menciones en la Biblia (${String(v)}).`,
   about: "Acerca del proyecto",
@@ -271,27 +282,31 @@ const LANDING_ES = {
   live: "Explorar el globo",
   full: "Pantalla completa",
   liveClose: "Listo",
-  stats: ["lugares", "rutas", "artículos", "preguntas respondidas", "batallas y asedios"],
+  stats: [
+    (n: number) => es(n, "lugar", "lugares"),
+    (n: number) => es(n, "ruta", "rutas"),
+    (n: number) => es(n, "artículo", "artículos"),
+    (n: number) => es(n, "pregunta respondida", "preguntas respondidas"),
+    (n: number) => es(n, "batalla y asedio", "batallas y asedios"),
+  ],
   rows: [
     [
       "Rutas",
       "Itinerarios por los caminos y el relieve",
       "Abraham, el Éxodo, los viajes de Pablo: parada a parada, con el versículo, una foto del lugar, la distancia y los días de camino.",
-      "El segundo viaje de Pablo",
       "La parada de Troas en el segundo viaje de Pablo: el Egeo en el mapa, la ruta, el perfil del camino, una foto de las ruinas",
     ],
     [
       "Lugares",
       "Cada lugar con sus versículos y fuentes",
       "Dónde está hoy, de quién era en el año elegido y todos los versículos que lo nombran. Lo dudoso se presenta como dudoso.",
+      "La ficha de Jerusalén: una foto, el Estado al que pertenecía en el 30 d. C., el artículo; a su alrededor los montes de Judea con decenas de lugares bíblicos",
       "Abrir Jerusalén",
-      "La ficha de Jerusalén: una foto, su estado en 30 d. C., el artículo; a su alrededor los montes de Judea con decenas de lugares bíblicos",
     ],
     [
       "Para la lección",
       "Un cuestionario, tu propia lección, una hoja A4",
       "Un cuestionario «¿Dónde ocurrió?» sobre cualquier ruta, tu propia lección en un solo enlace, mapas para imprimir en A4.",
-      "Abrir el Éxodo",
       "Un cuestionario sobre el Éxodo: una pregunta con un versículo y cuatro respuestas, la ruta en el mapa",
     ],
   ],
@@ -318,7 +333,7 @@ const LANDING_ES = {
   method: "Cómo se comprueban los datos",
   sources: "Todas las fuentes",
   ctaTitle: "Empieza por cualquier año",
-  ctaText: "Sin cuenta, en el móvil o en el ordenador, en {n} idiomas.",
+  ctaText: (n: number) => `Sin cuenta, en el móvil o en el ordenador, en ${String(n)} idiomas.`,
 } as const;
 
 const LISTS_ES: ListWords = {
@@ -411,8 +426,10 @@ const T_PT = {
   },
   stop: "Parada",
   translation: "Bíblia Portuguesa Mundial",
+  numbered: "Não citado aqui: esta tradução numera o capítulo de outra forma.",
   circa: "c.",
-  title: (n: string) => `${n} — onde fica, história, versículos da Bíblia`,
+  title: (n: string, history = true) =>
+    `${n} — onde fica${history ? ", história" : ""}, versículos da Bíblia`,
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) no mapa da história bíblica: onde fica hoje este lugar, sua história e as menções na Bíblia (${String(v)}).`,
   about: "Sobre o projeto",
@@ -442,27 +459,31 @@ const LANDING_PT = {
   live: "Explorar o globo",
   full: "Tela cheia",
   liveClose: "Pronto",
-  stats: ["lugares", "roteiros", "artigos", "perguntas respondidas", "batalhas e cercos"],
+  stats: [
+    (n: number) => pt(n, "lugar", "lugares"),
+    (n: number) => pt(n, "roteiro", "roteiros"),
+    (n: number) => pt(n, "artigo", "artigos"),
+    (n: number) => pt(n, "pergunta respondida", "perguntas respondidas"),
+    (n: number) => pt(n, "batalha e cerco", "batalhas e cercos"),
+  ],
   rows: [
     [
       "Roteiros",
       "Percursos pelas estradas e pelo relevo",
       "Abraão, o Êxodo, as viagens de Paulo: parada a parada, com o versículo, uma foto do lugar, a distância e os dias de caminho.",
-      "A segunda viagem de Paulo",
       "A parada de Trôade na segunda viagem de Paulo: o mar Egeu no mapa, a rota, o perfil do caminho, uma foto das ruínas",
     ],
     [
       "Lugares",
       "Cada lugar com seus versículos e fontes",
       "Onde fica hoje, a quem pertencia no ano escolhido e todos os versículos que o citam. O que é duvidoso é chamado de duvidoso.",
+      "A ficha de Jerusalém: uma foto, o Estado a que pertencia em 30 d.C., o artigo; ao redor, os montes da Judeia com dezenas de lugares bíblicos",
       "Abrir Jerusalém",
-      "A ficha de Jerusalém: uma foto, seu estado em 30 d.C., o artigo; ao redor, os montes da Judeia com dezenas de lugares bíblicos",
     ],
     [
       "Para a aula",
       "Um quiz, sua própria aula, uma folha A4",
       "Um quiz «Onde aconteceu?» sobre qualquer roteiro, sua própria aula em um único link, mapas para imprimir em A4.",
-      "Abrir o Êxodo",
       "Um quiz sobre o Êxodo: uma pergunta com um versículo e quatro respostas, a rota no mapa",
     ],
   ],
@@ -489,7 +510,7 @@ const LANDING_PT = {
   method: "Como os dados são conferidos",
   sources: "Todas as fontes",
   ctaTitle: "Comece por qualquer ano",
-  ctaText: "Sem conta, no celular ou no computador, em {n} idiomas.",
+  ctaText: (n: number) => `Sem conta, no celular ou no computador, em ${String(n)} idiomas.`,
 } as const;
 
 const LISTS_PT: ListWords = {
@@ -582,8 +603,10 @@ const T_DE = {
   },
   stop: "Halt",
   translation: "Lutherbibel 1912",
+  numbered: "Hier nicht zitiert: Diese Übersetzung zählt das Kapitel anders.",
   circa: "ca.",
-  title: (n: string) => `${n} — wo es liegt, Geschichte, Bibelverse`,
+  title: (n: string, history = true) =>
+    `${n} — wo es liegt${history ? ", Geschichte" : ""}, Bibelverse`,
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) auf der Karte der biblischen Geschichte: wo dieser Ort heute liegt, seine Geschichte und die Erwähnungen in der Bibel (${String(v)}).`,
   about: "Über das Projekt",
@@ -613,27 +636,31 @@ const LANDING_DE = {
   live: "Globus erkunden",
   full: "Vollbild",
   liveClose: "Fertig",
-  stats: ["Orte", "Touren", "Artikel", "beantwortete Fragen", "Schlachten und Belagerungen"],
+  stats: [
+    (n: number) => de(n, "Ort", "Orte"),
+    (n: number) => de(n, "Tour", "Touren"),
+    (n: number) => de(n, "Artikel", "Artikel"),
+    (n: number) => de(n, "beantwortete Frage", "beantwortete Fragen"),
+    (n: number) => de(n, "Schlacht und Belagerung", "Schlachten und Belagerungen"),
+  ],
   rows: [
     [
       "Touren",
       "Routen entlang der Straßen und des Reliefs",
       "Abraham, der Auszug, die Reisen des Paulus — Halt für Halt, mit Vers, Foto des Ortes, Entfernung und Reisetagen.",
-      "Die zweite Reise des Paulus",
       "Der Halt Troas auf der zweiten Reise des Paulus: die Ägäis auf der Karte, die Route, das Höhenprofil des Weges, ein Foto der Ruinen",
     ],
     [
       "Orte",
       "Jeder Ort mit seinen Versen und Quellen",
       "Wo er heute liegt, wem er im gewählten Jahr gehörte und alle Verse, die ihn nennen. Was umstritten ist, heißt umstritten.",
+      "Die Infokarte von Jerusalem: ein Foto, das Reich, zu dem es im Jahr 30 n. Chr. gehörte, der Artikel; ringsum das Bergland Judäas mit Dutzenden biblischer Orte",
       "Jerusalem öffnen",
-      "Die Infokarte von Jerusalem: ein Foto, sein Zustand im Jahr 30 n. Chr., der Artikel; ringsum das Bergland Judäas mit Dutzenden biblischer Orte",
     ],
     [
       "Für den Unterricht",
       "Ein Quiz, eine eigene Lektion, ein A4-Blatt",
       "Ein Quiz „Wo geschah es?“ zu jeder Tour, eine eigene Lektion als ein Link, Karten zum Ausdrucken auf A4.",
-      "Den Auszug öffnen",
       "Ein Quiz zum Auszug: eine Frage mit einem Vers und vier Antworten, die Route auf der Karte",
     ],
   ],
@@ -660,7 +687,7 @@ const LANDING_DE = {
   method: "Wie die Daten geprüft werden",
   sources: "Alle Quellen",
   ctaTitle: "Mit einem beliebigen Jahr beginnen",
-  ctaText: "Ohne Konto, auf dem Handy oder am Computer, in {n} Sprachen.",
+  ctaText: (n: number) => `Ohne Konto, auf dem Handy oder am Computer, in ${String(n)} Sprachen.`,
 } as const;
 
 const LISTS_DE: ListWords = {
@@ -753,8 +780,10 @@ const T_FR = {
   },
   stop: "Étape",
   translation: "Louis Segond 1910",
+  numbered: "Non cité ici\u202f: cette traduction numérote le chapitre autrement.",
   circa: "v.",
-  title: (n: string) => `${n} — emplacement, histoire, versets de la Bible`,
+  title: (n: string, history = true) =>
+    `${n} — emplacement${history ? ", histoire" : ""}, versets de la Bible`,
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) sur la carte de l’histoire biblique\u202f: où se trouve aujourd’hui ce lieu, son histoire et les versets de la Bible qui le nomment (${String(v)}).`,
   about: "À propos du projet",
@@ -784,27 +813,31 @@ const LANDING_FR = {
   live: "Explorer le globe",
   full: "Plein écran",
   liveClose: "Terminé",
-  stats: ["lieux", "parcours", "articles", "questions avec réponse", "batailles et sièges"],
+  stats: [
+    (n: number) => fr(n, "lieu", "lieux"),
+    (n: number) => fr(n, "parcours", "parcours"),
+    (n: number) => fr(n, "article", "articles"),
+    (n: number) => fr(n, "question avec réponse", "questions avec réponse"),
+    (n: number) => fr(n, "bataille et siège", "batailles et sièges"),
+  ],
   rows: [
     [
       "Parcours",
       "Itinéraires le long des routes et du relief",
       "Abraham, l’Exode, les voyages de Paul\u202f: étape par étape, avec le verset, une photo du lieu, la distance et les jours de route.",
-      "Le deuxième voyage de Paul",
       "L’étape de Troas au deuxième voyage de Paul\u202f: la mer Égée sur la carte, l’itinéraire, le profil de la route, une photo des ruines",
     ],
     [
       "Lieux",
       "Chaque lieu avec ses versets et ses sources",
       "Où il se trouve aujourd’hui, à qui il appartenait l’année choisie et tous les versets qui le nomment. Ce qui est contesté est dit contesté.",
+      "La fiche de Jérusalem\u202f: une photo, l’État dont elle relevait en 30 apr. J.-C., l’article\u202f; autour, les monts de Judée avec des dizaines de lieux bibliques",
       "Ouvrir Jérusalem",
-      "La fiche de Jérusalem\u202f: une photo, son état en 30 apr. J.-C., l’article\u202f; autour, les monts de Judée avec des dizaines de lieux bibliques",
     ],
     [
       "Pour la leçon",
       "Un quiz, votre propre leçon, une feuille A4",
       "Un quiz «\u202fOù cela s’est-il passé\u202f?\u202f» sur n’importe quel parcours, votre propre leçon en un seul lien, des cartes à imprimer en A4.",
-      "Ouvrir l’Exode",
       "Un quiz sur l’Exode\u202f: une question avec un verset et quatre réponses, l’itinéraire sur la carte",
     ],
   ],
@@ -831,7 +864,7 @@ const LANDING_FR = {
   method: "Comment les données sont vérifiées",
   sources: "Toutes les sources",
   ctaTitle: "Commencez à n’importe quelle année",
-  ctaText: "Sans compte, sur téléphone ou sur ordinateur, en {n} langues.",
+  ctaText: (n: number) => `Sans compte, sur téléphone ou sur ordinateur, en ${String(n)} langues.`,
 } as const;
 
 const LISTS_FR: ListWords = {
@@ -926,8 +959,10 @@ const T_IT = {
   },
   stop: "Tappa",
   translation: "Riveduta 1927",
+  numbered: "Non citato qui: questa traduzione numera il capitolo in modo diverso.",
   circa: "ca.",
-  title: (n: string) => `${n} — dov’è, storia, versetti della Bibbia`,
+  title: (n: string, history = true) =>
+    `${n} — dov’è${history ? ", storia" : ""}, versetti della Bibbia`,
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) sulla mappa della storia biblica: dov’è oggi questo luogo, la sua storia e i versetti della Bibbia che lo nominano (${String(v)}).`,
   about: "Il progetto",
@@ -957,27 +992,31 @@ const LANDING_IT = {
   live: "Esplora il globo",
   full: "Schermo intero",
   liveClose: "Fatto",
-  stats: ["luoghi", "itinerari", "articoli", "domande con risposta", "battaglie e assedi"],
+  stats: [
+    (n: number) => it(n, "luogo", "luoghi", "di luoghi"),
+    (n: number) => it(n, "itinerario", "itinerari", "di itinerari"),
+    (n: number) => it(n, "articolo", "articoli", "di articoli"),
+    (n: number) => it(n, "domanda con risposta", "domande con risposta", "di domande con risposta"),
+    (n: number) => it(n, "battaglia e assedio", "battaglie e assedi", "di battaglie e assedi"),
+  ],
   rows: [
     [
       "Itinerari",
       "Percorsi lungo le strade e il rilievo",
       "Abramo, l’Esodo, i viaggi di Paolo: tappa per tappa, con il versetto, una foto, la distanza e i giorni di cammino.",
-      "Il secondo viaggio di Paolo",
       "La tappa di Troade nel secondo viaggio di Paolo: l’Egeo sulla mappa, il percorso, il profilo della strada, una foto delle rovine",
     ],
     [
       "Luoghi",
       "Ogni luogo con i suoi versetti e le sue fonti",
       "Dov’è oggi, a chi apparteneva nell’anno scelto e tutti i versetti che lo nominano. Ciò che è discusso viene detto discusso.",
+      "La scheda di Gerusalemme: una foto, lo Stato a cui apparteneva nel 30 d.C., l’articolo; intorno i monti della Giudea con decine di luoghi biblici",
       "Apri Gerusalemme",
-      "La scheda di Gerusalemme: una foto, il suo stato nel 30 d.C., l’articolo; intorno i monti della Giudea con decine di luoghi biblici",
     ],
     [
       "Per la lezione",
       "Un quiz, la tua lezione, un foglio A4",
       "Un quiz «Dove è successo?» su qualsiasi itinerario, la tua lezione in un solo link, mappe da stampare su A4.",
-      "Apri l’Esodo",
       "Un quiz sull’Esodo: una domanda con un versetto e quattro risposte, il percorso sulla mappa",
     ],
   ],
@@ -1004,7 +1043,7 @@ const LANDING_IT = {
   method: "Come si verificano i dati",
   sources: "Tutte le fonti",
   ctaTitle: "Parti da un anno qualsiasi",
-  ctaText: "Senza account, su telefono o computer, in {n} lingue.",
+  ctaText: (n: number) => `Senza account, su telefono o computer, in ${String(n)} lingue.`,
 } as const;
 
 const LISTS_IT: ListWords = {
@@ -1097,8 +1136,10 @@ const T_NL = {
   },
   stop: "Halte",
   translation: "Statenvertaling, editie 1917",
+  numbered: "Hier niet geciteerd: deze vertaling nummert het hoofdstuk anders.",
   circa: "ca.",
-  title: (n: string) => `${n} — waar het lag, geschiedenis, Bijbelverzen`,
+  title: (n: string, history = true) =>
+    `${n} — waar het lag${history ? ", geschiedenis" : ""}, Bijbelverzen`,
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) op de kaart van de bijbelse geschiedenis: waar deze plaats nu ligt, haar geschiedenis en de Bijbelverzen die haar noemen (${String(v)}).`,
   about: "Over het project",
@@ -1128,27 +1169,31 @@ const LANDING_NL = {
   live: "De wereldbol verkennen",
   full: "Volledig scherm",
   liveClose: "Klaar",
-  stats: ["plaatsen", "routes", "artikelen", "beantwoorde vragen", "veldslagen en belegeringen"],
+  stats: [
+    (n: number) => nl(n, "plaats", "plaatsen"),
+    (n: number) => nl(n, "route", "routes"),
+    (n: number) => nl(n, "artikel", "artikelen"),
+    (n: number) => nl(n, "beantwoorde vraag", "beantwoorde vragen"),
+    (n: number) => nl(n, "veldslag en belegering", "veldslagen en belegeringen"),
+  ],
   rows: [
     [
       "Routes",
       "Reizen langs de wegen en het reliëf",
       "Abraham, de uittocht, de reizen van Paulus: halte voor halte, met het vers, een foto van de plek, de afstand en het aantal dagen onderweg.",
-      "De tweede reis van Paulus",
       "De halte Troas op de tweede reis van Paulus: de Egeïsche Zee op de kaart, de route, het profiel van de weg, een foto van de ruïnes",
     ],
     [
       "Plaatsen",
       "Elke plaats met haar verzen en bronnen",
       "Waar ze nu ligt, van wie ze was in het gekozen jaar en alle verzen die haar noemen. Wat omstreden is, heet omstreden.",
+      "De kaart van Jeruzalem: een foto, het rijk waartoe het in 30 n.Chr. behoorde, het artikel; eromheen het Judese bergland met tientallen bijbelse plaatsen",
       "Jeruzalem openen",
-      "De kaart van Jeruzalem: een foto, de toestand in 30 n.Chr., het artikel; eromheen het Judese bergland met tientallen bijbelse plaatsen",
     ],
     [
       "Voor de les",
       "Een quiz, je eigen les, een A4-blad",
       "Een quiz ‘Waar gebeurde het?’ bij elke route, je eigen les als één link, kaarten om op A4 af te drukken.",
-      "De uittocht openen",
       "Een quiz over de uittocht: een vraag met een vers en vier antwoorden, de route op de kaart",
     ],
   ],
@@ -1175,7 +1220,7 @@ const LANDING_NL = {
   method: "Hoe de gegevens worden gecontroleerd",
   sources: "Alle bronnen",
   ctaTitle: "Begin bij elk jaar",
-  ctaText: "Zonder account, op een telefoon of een computer, in {n} talen.",
+  ctaText: (n: number) => `Zonder account, op een telefoon of een computer, in ${String(n)} talen.`,
 } as const;
 
 const LISTS_NL: ListWords = {
@@ -1270,8 +1315,10 @@ const T_PL = {
   },
   stop: "Przystanek",
   translation: "Biblia Gdańska 1881",
+  numbered: "Nie cytujemy go tutaj: ten przekład numeruje rozdział inaczej.",
   circa: "ok.",
-  title: (n: string) => `${n} — gdzie to było, historia, wersety Biblii`,
+  title: (n: string, history = true) =>
+    `${n} — gdzie to było${history ? ", historia" : ""}, wersety Biblii`,
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) na mapie historii biblijnej: gdzie to miejsce leży dziś, jego historia i wzmianki w Biblii (${String(v)}).`,
   about: "O projekcie",
@@ -1301,27 +1348,31 @@ const LANDING_PL = {
   live: "Obracaj globus",
   full: "Pełny ekran",
   liveClose: "Gotowe",
-  stats: ["miejsc", "tras", "artykułów", "odpowiedzi na pytania", "bitew i oblężeń"],
+  stats: [
+    (n: number) => pl(n, "miejsce", "miejsca", "miejsc"),
+    (n: number) => pl(n, "trasa", "trasy", "tras"),
+    (n: number) => pl(n, "artykuł", "artykuły", "artykułów"),
+    (n: number) => pl(n, "odpowiedź na pytanie", "odpowiedzi na pytania", "odpowiedzi na pytania"),
+    (n: number) => pl(n, "bitwa i oblężenie", "bitwy i oblężenia", "bitew i oblężeń"),
+  ],
   rows: [
     [
       "Trasy",
       "Szlaki po drogach i rzeźbie terenu",
       "Abraham, Wyjście, podróże Pawła: przystanek po przystanku, z wersetem, zdjęciem miejsca, odległością i dniami drogi.",
-      "Druga podróż Pawła",
       "Przystanek w Troadzie podczas drugiej podróży Pawła: Morze Egejskie na mapie, trasa, profil drogi, zdjęcie ruin",
     ],
     [
       "Miejsca",
       "Każde miejsce z wersetami i źródłami",
       "Gdzie leży dziś, do kogo należało w wybranym roku i wszystkie wersety, które je wymieniają. To, co sporne, zostaje nazwane spornym.",
-      "Otwórz Jerozolimę",
       "Karta Jerozolimy: zdjęcie, państwo w roku 30 n.e., artykuł; wokół góry Judei z dziesiątkami miejsc biblijnych",
+      "Otwórz Jerozolimę",
     ],
     [
       "Na lekcję",
       "Quiz, własna lekcja, arkusz A4",
       "Quiz „Gdzie to się stało?” do każdej trasy, własna lekcja w jednym linku, mapy do wydruku w A4.",
-      "Otwórz Wyjście z Egiptu",
       "Quiz o Wyjściu: pytanie z wersetem i cztery odpowiedzi, trasa na mapie",
     ],
   ],
@@ -1348,7 +1399,8 @@ const LANDING_PL = {
   method: "Jak sprawdzamy dane",
   sources: "Wszystkie źródła",
   ctaTitle: "Zacznij od dowolnego roku",
-  ctaText: "Bez konta, na telefonie i na komputerze, w {n} językach.",
+  ctaText: (n: number) =>
+    `Bez konta, na telefonie i na komputerze, w ${String(n)} ${pl(n, "języku", "językach", "językach")}.`,
 } as const;
 
 const LISTS_PL: ListWords = {
@@ -1440,8 +1492,10 @@ const T_CS = {
   testament: { whole: "Celá Bible", ot: "Starý zákon", nt: "Nový zákon", beyond: "Mimo Bibli" },
   stop: "Zastávka",
   translation: "Bible kralická 1613",
+  numbered: "Zde necitováno: tento překlad čísluje kapitolu jinak.",
   circa: "asi",
-  title: (n: string) => `${n} — kde to bylo, dějiny, biblické verše`,
+  title: (n: string, history = true) =>
+    `${n} — kde to bylo${history ? ", dějiny" : ""}, biblické verše`,
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) na mapě biblických dějin: kde toto místo leží dnes, jeho dějiny a zmínky v Bibli (${String(v)}).`,
   about: "O projektu",
@@ -1471,27 +1525,31 @@ const LANDING_CS = {
   live: "Prozkoumat glóbus",
   full: "Celá obrazovka",
   liveClose: "Hotovo",
-  stats: ["míst", "tras", "článků", "zodpovězených otázek", "bitev a obléhání"],
+  stats: [
+    (n: number) => cs(n, "místo", "místa", "míst"),
+    (n: number) => cs(n, "trasa", "trasy", "tras"),
+    (n: number) => cs(n, "článek", "články", "článků"),
+    (n: number) => cs(n, "zodpovězená otázka", "zodpovězené otázky", "zodpovězených otázek"),
+    (n: number) => cs(n, "bitva a obléhání", "bitvy a obléhání", "bitev a obléhání"),
+  ],
   rows: [
     [
       "Trasy",
       "Cesty po silnicích a krajině",
       "Abraham, exodus, Pavlovy cesty: zastávku po zastávce, s veršem, fotografií místa, vzdáleností a počtem dní cesty.",
-      "Pavlova druhá cesta",
       "Zastávka v Troadě na Pavlově druhé cestě: Egejské moře na mapě, trasa, profil cesty, fotografie zřícenin",
     ],
     [
       "Místa",
       "Každé místo s verši a prameny",
       "Kde leží dnes, komu patřilo ve zvoleném roce a všechny verše, které je jmenují. Co je sporné, je jako sporné označeno.",
+      "Karta Jeruzaléma: fotografie, stát, k němuž patřil v roce 30 n. l., článek; kolem něj Judské hory s desítkami biblických míst",
       "Otevřít Jeruzalém",
-      "Karta Jeruzaléma: fotografie, jeho stav v roce 30 n. l., článek; kolem Judských hor s desítkami biblických míst",
     ],
     [
       "Pro výuku",
       "Kvíz, vlastní lekce, list A4",
       "Kvíz „Kde se to stalo?“ k libovolné trase, vlastní lekce na jediném odkazu, mapy k vytištění na A4.",
-      "Otevřít exodus",
       "Kvíz o exodu: otázka s veršem a čtyři odpovědi, trasa na mapě",
     ],
   ],
@@ -1518,7 +1576,8 @@ const LANDING_CS = {
   method: "Jak se data ověřují",
   sources: "Všechny prameny",
   ctaTitle: "Začněte kterýmkoli rokem",
-  ctaText: "Bez účtu, v telefonu i v počítači, v {n} jazycích.",
+  ctaText: (n: number) =>
+    `Bez účtu, v telefonu i v počítači, v ${String(n)} ${cs(n, "jazyce", "jazycích", "jazycích")}.`,
 } as const;
 
 const LISTS_CS: ListWords = {
@@ -1554,8 +1613,6 @@ const LISTS_CS: ListWords = {
   },
 };
 
-// Wave 3, ready before the site publishes these languages: their pages are built once
-// they join LOCALES (packages/model/src/time.ts).
 // Svenska (drafted by machine translation; not yet read by a native speaker).
 /** A Swedish noun for a count: one or other («1 plats», «5 platser»). */
 const sv = (n: number, one: string, other: string) =>
@@ -1613,8 +1670,10 @@ const T_SV = {
   },
   stop: "Stopp",
   translation: "Bibeln 1917",
+  numbered: "Citeras inte här: den här översättningen numrerar kapitlet annorlunda.",
   circa: "ca",
-  title: (n: string) => `${n} — var platsen låg, historia, bibelverser`,
+  title: (n: string, history = true) =>
+    `${n} — var platsen låg${history ? ", historia" : ""}, bibelverser`,
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) på kartan över Bibelns historia: var platsen ligger i dag, dess historia och omnämnanden i Bibeln (${String(v)}).`,
   about: "Om projektet",
@@ -1644,27 +1703,31 @@ const LANDING_SV = {
   live: "Utforska globen",
   full: "Helskärm",
   liveClose: "Klar",
-  stats: ["platser", "rundturer", "artiklar", "besvarade frågor", "strider och belägringar"],
+  stats: [
+    (n: number) => sv(n, "plats", "platser"),
+    (n: number) => sv(n, "rundtur", "rundturer"),
+    (n: number) => sv(n, "artikel", "artiklar"),
+    (n: number) => sv(n, "besvarad fråga", "besvarade frågor"),
+    (n: number) => sv(n, "strid och belägring", "strider och belägringar"),
+  ],
   rows: [
     [
       "Rundturer",
       "Rutter längs vägarna och terrängen",
       "Abraham, uttåget, Paulus resor: stopp för stopp, med versen, ett foto av platsen, avståndet och dagarna på vägen.",
-      "Paulus andra resa",
       "Stoppet Troas på Paulus andra resa: Egeiska havet på kartan, rutten, vägens höjdprofil, ett foto av ruinerna",
     ],
     [
       "Platser",
       "Varje plats med sina verser och källor",
       "Var den ligger i dag, vem den tillhörde det valda året och alla verser som nämner den. Det omtvistade kallas omtvistat.",
+      "Jerusalems kort: foto, staten som staden hörde till år 30 e.Kr., artikeln; runt omkring Judeens berg med tiotals bibliska platser",
       "Öppna Jerusalem",
-      "Jerusalems kort: foto, dess tillstånd år 30 e.Kr., artikeln; runt omkring Judeens berg med tiotals bibliska platser",
     ],
     [
       "För lektionen",
       "Frågesport, egen lektion, A4-ark",
       "Frågesporten ”Var hände det?” på valfri rundtur, en egen lektion som en enda länk, kartor att skriva ut på A4.",
-      "Öppna uttåget",
       "Frågesport om uttåget: en fråga med en vers och fyra svar, rutten på kartan",
     ],
   ],
@@ -1691,7 +1754,7 @@ const LANDING_SV = {
   method: "Hur data kontrolleras",
   sources: "Alla källor",
   ctaTitle: "Börja med vilket år som helst",
-  ctaText: "Utan konto, på telefon och dator, på {n} språk.",
+  ctaText: (n: number) => `Utan konto, på telefon och dator, på ${String(n)} språk.`,
 } as const;
 
 const LISTS_SV: ListWords = {
@@ -1786,8 +1849,10 @@ const T_DA = {
   },
   stop: "Stop",
   translation: "Bibelen 1871/1907",
+  numbered: "Citeres ikke her: denne oversættelse nummererer kapitlet anderledes.",
   circa: "ca.",
-  title: (n: string) => `${n} — hvor det lå, historie, bibelvers`,
+  title: (n: string, history = true) =>
+    `${n} — hvor det lå${history ? ", historie" : ""}, bibelvers`,
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) på kortet over bibelsk historie: hvor stedet ligger i dag, dets historie og omtaler i Bibelen (${String(v)}).`,
   about: "Om projektet",
@@ -1817,27 +1882,31 @@ const LANDING_DA = {
   live: "Udforsk globussen",
   full: "Fuld skærm",
   liveClose: "Færdig",
-  stats: ["steder", "ture", "artikler", "besvarede spørgsmål", "slag og belejringer"],
+  stats: [
+    (n: number) => da(n, "sted", "steder"),
+    (n: number) => da(n, "tur", "ture"),
+    (n: number) => da(n, "artikel", "artikler"),
+    (n: number) => da(n, "besvaret spørgsmål", "besvarede spørgsmål"),
+    (n: number) => da(n, "slag og belejring", "slag og belejringer"),
+  ],
   rows: [
     [
       "Ture",
       "Ruter langs vejene og over terrænet",
       "Abraham, udvandringen, Paulus' rejser: stop for stop, med vers, foto, afstand og dage undervejs.",
-      "Paulus' anden rejse",
       "Stoppet i Troas på Paulus' anden rejse: Det Ægæiske Hav på kortet, ruten, vejens højdeprofil, foto af ruinerne",
     ],
     [
       "Steder",
       "Hvert sted med sine vers og kilder",
       "Hvor det ligger i dag, hvem det tilhørte i det valgte år, og alle de vers, der nævner det. Det omstridte kaldes omstridt.",
+      "Panelet for Jerusalem: foto, staten, byen hørte under i 30 e.Kr., artiklen; rundt om det Judæas bjerge med snesevis af bibelske steder",
       "Åbn Jerusalem",
-      "Panelet for Jerusalem: foto, byens tilstand i 30 e.Kr., artiklen; rundt om det Judæas bjerge med snesevis af bibelske steder",
     ],
     [
       "Til undervisningen",
       "Quiz, egen lektion, A4-ark",
       "Quizzen »Hvor skete det?« til enhver tur, din egen lektion som ét link, kort til udskrift på A4.",
-      "Åbn udvandringen",
       "Quiz om udvandringen: et spørgsmål med vers og fire svar, ruten på kortet",
     ],
   ],
@@ -1864,7 +1933,7 @@ const LANDING_DA = {
   method: "Sådan kontrolleres dataene",
   sources: "Alle kilder",
   ctaTitle: "Begynd med et hvilket som helst år",
-  ctaText: "Uden konto, på telefon og computer, på {n} sprog.",
+  ctaText: (n: number) => `Uden konto, på telefon og computer, på ${String(n)} sprog.`,
 } as const;
 
 const LISTS_DA: ListWords = {
@@ -1959,8 +2028,10 @@ const T_NB = {
   },
   stop: "Stopp",
   translation: "Bibelen 1930",
+  numbered: "Siteres ikke her: denne oversettelsen nummererer kapitlet annerledes.",
   circa: "ca.",
-  title: (n: string) => `${n} — hvor det ligger, historien, bibelvers`,
+  title: (n: string, history = true) =>
+    `${n} — hvor det ligger${history ? ", historien" : ""}, bibelvers`,
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) på kartet over bibelhistorien: hvor stedet ligger i dag, dets historie og omtalene i Bibelen (${String(v)}).`,
   about: "Om prosjektet",
@@ -1990,27 +2061,31 @@ const LANDING_NB = {
   live: "Utforsk globusen",
   full: "Fullskjerm",
   liveClose: "Ferdig",
-  stats: ["steder", "ruter", "artikler", "besvarte spørsmål", "slag og beleiringer"],
+  stats: [
+    (n: number) => nb(n, "sted", "steder"),
+    (n: number) => nb(n, "rute", "ruter"),
+    (n: number) => nb(n, "artikkel", "artikler"),
+    (n: number) => nb(n, "besvart spørsmål", "besvarte spørsmål"),
+    (n: number) => nb(n, "slag og beleiring", "slag og beleiringer"),
+  ],
   rows: [
     [
       "Ruter",
       "Reiser langs veiene og terrenget",
       "Abraham, utgangen fra Egypt, Paulus' reiser: stopp for stopp, med verset, et bilde av stedet, avstanden og dagene underveis.",
-      "Paulus' andre reise",
       "Stoppet i Troas på Paulus' andre reise: Egeerhavet på kartet, ruten, veiens høydeprofil, et bilde av ruinene",
     ],
     [
       "Steder",
       "Hvert sted med sine vers og kilder",
       "Hvor det ligger i dag, hvem det tilhørte i det valgte året, og alle versene som nevner det. Det som er omstridt, kalles omstridt.",
-      "Åpne Jerusalem",
       "Kortet for Jerusalem: et bilde, hvem byen tilhørte i år 30 e.Kr., artikkelen; rundt byen ligger fjellene i Judea med titalls bibelske steder",
+      "Åpne Jerusalem",
     ],
     [
       "For undervisning",
       "Quiz, egen leksjon, et A4-ark",
       "Quizen «Hvor skjedde det?» til en hvilken som helst rute, din egen leksjon som én lenke, kart som skrives ut på A4.",
-      "Åpne utgangen fra Egypt",
       "Quiz om utgangen fra Egypt: et spørsmål med vers og fire svar, ruten på kartet",
     ],
   ],
@@ -2037,7 +2112,7 @@ const LANDING_NB = {
   method: "Hvordan dataene kontrolleres",
   sources: "Alle kilder",
   ctaTitle: "Begynn med et hvilket som helst år",
-  ctaText: "Uten konto, på telefon og datamaskin, på {n} språk.",
+  ctaText: (n: number) => `Uten konto, på telefon og datamaskin, på ${String(n)} språk.`,
 } as const;
 
 const LISTS_NB: ListWords = {
@@ -2128,8 +2203,10 @@ const T_SR = {
   testament: { whole: "Цела Библија", ot: "Стари завет", nt: "Нови завет", beyond: "Ван Библије" },
   stop: "Станица",
   translation: "Превод Даничић–Караџић (1865/1868)",
+  numbered: "Није наведен: овај превод другачије нумерише поглавље.",
   circa: "око",
-  title: (n: string) => `${n} — где се налази, историја, стихови Библије`,
+  title: (n: string, history = true) =>
+    `${n} — где се налази${history ? ", историја" : ""}, стихови Библије`,
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) на мапи библијске историје: где је то место данас, његова историја и стихови Библије који га помињу (${String(v)}).`,
   about: "О пројекту",
@@ -2159,27 +2236,31 @@ const LANDING_SR = {
   live: "Истражи глобус",
   full: "Цео екран",
   liveClose: "Готово",
-  stats: ["места", "тура", "чланака", "одговорених питања", "битака и опсада"],
+  stats: [
+    (n: number) => sr(n, "место", "места", "места"),
+    (n: number) => sr(n, "тура", "туре", "тура"),
+    (n: number) => sr(n, "чланак", "чланка", "чланака"),
+    (n: number) => sr(n, "одговорено питање", "одговорена питања", "одговорених питања"),
+    (n: number) => sr(n, "битка и опсада", "битке и опсаде", "битака и опсада"),
+  ],
   rows: [
     [
       "Туре",
       "Путовања путевима и рељефом",
       "Авраам, Излазак, Павлова путовања: станицу по станици, са стихом, фотографијом места, растојањем и бројем дана пута.",
-      "Друго Павлово путовање",
       "Станица Троада на другом Павловом путовању: Егејско море на мапи, маршрута, профил пута, фотографија рушевина",
     ],
     [
       "Места",
       "Свако место са стиховима и изворима",
       "Где је данас, чије је било у изабраној години и сви стихови који га помињу. Што је спорно, означено је као спорно.",
+      "Картица Јерусалима: фотографија, држава којој је припадао 30. године н. е., чланак; око њега Јудејске горе са десетинама библијских места",
       "Отвори Јерусалим",
-      "Картица Јерусалима: фотографија, стање 30. године н. е., чланак; око њега Јудејске горе са десетинама библијских места",
     ],
     [
       "За наставу",
       "Квиз, сопствени час, лист А4",
       "Квиз „Где се то догодило?“ за било коју туру, сопствени час у једној вези, мапе за штампу на А4.",
-      "Отвори Излазак",
       "Квиз о Изласку: питање са стихом и четири одговора, маршрута на мапи",
     ],
   ],
@@ -2206,7 +2287,8 @@ const LANDING_SR = {
   method: "Како се подаци проверавају",
   sources: "Сви извори",
   ctaTitle: "Почните од било које године",
-  ctaText: "Без налога, на телефону и на рачунару. Језика: {n}.",
+  ctaText: (n: number) =>
+    `Без налога, на телефону и на рачунару, на ${String(n)} ${sr(n, "језику", "језика", "језика")}.`,
 } as const;
 
 const LISTS_SR: ListWords = {
@@ -2304,8 +2386,10 @@ const T_TL = {
   },
   stop: "Hintuan",
   translation: "Ang Biblia 1905",
+  numbered: "Hindi sinipi rito: iba ang pagbilang ng kabanata sa saling ito.",
   circa: "mga",
-  title: (n: string) => `${n} — saan ito matatagpuan, kasaysayan, mga talata ng Biblia`,
+  title: (n: string, history = true) =>
+    `${n} — saan ito matatagpuan${history ? ", kasaysayan" : ""}, mga talata ng Biblia`,
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) sa mapa ng kasaysayan ng Biblia: saan ito ngayon, ang kasaysayan nito at ang mga talata ng Biblia na bumabanggit dito (${String(v)}).`,
   about: "Tungkol sa proyekto",
@@ -2335,27 +2419,31 @@ const LANDING_TL = {
   live: "Galugarin ang globo",
   full: "Buong screen",
   liveClose: "Tapos",
-  stats: ["lugar", "paglalakbay", "artikulo", "nasagot na tanong", "labanan at pagkubkob"],
+  stats: [
+    (n: number) => tl(n, "lugar", "lugar"),
+    (n: number) => tl(n, "paglalakbay", "paglalakbay"),
+    (n: number) => tl(n, "artikulo", "artikulo"),
+    (n: number) => tl(n, "nasagot na tanong", "nasagot na tanong"),
+    (n: number) => tl(n, "labanan at pagkubkob", "labanan at pagkubkob"),
+  ],
   rows: [
     [
       "Mga paglalakbay",
       "Mga ruta sa mga daan at anyo ng lupa",
       "Abraham, ang Exodo, ang mga paglalakbay ni Pablo: hintuan sa hintuan, may talata, larawan ng lugar, layo at bilang ng araw sa daan.",
-      "Ikalawang paglalakbay ni Pablo",
       "Ang hintuan sa Troas sa ikalawang paglalakbay ni Pablo: ang Dagat Aegeo sa mapa, ang ruta, ang taas ng daan, larawan ng mga guho",
     ],
     [
       "Mga lugar",
       "Bawat lugar na may mga talata at sanggunian",
       "Saan ito ngayon, kaninong lupain ito sa piniling taon, at lahat ng talatang bumabanggit dito. Ang pinagtatalunan ay tinatawag na pinagtatalunan.",
+      "Ang card ng Jerusalem: larawan, ang estadong kinabibilangan nito noong 30 AD, ang artikulo; sa paligid ang mga burol ng Judea na may dose-dosenang lugar sa Biblia",
       "Buksan ang Jerusalem",
-      "Ang card ng Jerusalem: larawan, ang estado nito noong 30 AD, ang artikulo; sa paligid ang mga burol ng Judea na may dose-dosenang lugar sa Biblia",
     ],
     [
       "Para sa aralin",
       "Pagsusulit, sariling aralin, pahinang A4",
       "Pagsusulit na “Saan ito nangyari?” sa alinmang paglalakbay, sariling aralin sa iisang link, mga mapang maaaring i-print sa A4.",
-      "Buksan ang Exodo",
       "Pagsusulit tungkol sa Exodo: tanong na may talata at apat na sagot, ang ruta sa mapa",
     ],
   ],
@@ -2382,7 +2470,7 @@ const LANDING_TL = {
   method: "Paano sinusuri ang datos",
   sources: "Lahat ng sanggunian",
   ctaTitle: "Magsimula sa alinmang taon",
-  ctaText: "Walang account, sa telepono o sa computer, sa {n} na wika.",
+  ctaText: (n: number) => `Walang account, sa telepono o sa computer, sa ${String(n)} na wika.`,
 } as const;
 
 const LISTS_TL: ListWords = {
@@ -2418,7 +2506,6 @@ const LISTS_TL: ListWords = {
   },
 };
 
-// Magyar (drafted by machine translation; not yet read by a native speaker).
 // Magyar (drafted by machine translation; not yet read by a native speaker).
 /** A Hungarian noun for a count: one or other; after a numeral the noun stays singular («1 hely», «5 hely»). */
 const hu = (n: number, one: string, other: string) =>
@@ -2476,8 +2563,10 @@ const T_HU = {
   },
   stop: "Megálló",
   translation: "Károli Biblia (revideált, 1908)",
+  numbered: "Itt nem idézzük: ez a fordítás másként számozza a fejezetet.",
   circa: "kb.",
-  title: (n: string) => `${n} — hol található, története, bibliai versek`,
+  title: (n: string, history = true) =>
+    `${n} — hol található${history ? ", története" : ""}, bibliai versek`,
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) a bibliai történelem térképén: hol található ma, története és bibliai említései (${String(v)}).`,
   about: "A projektről",
@@ -2507,27 +2596,31 @@ const LANDING_HU = {
   live: "A földgömb felfedezése",
   full: "Teljes képernyő",
   liveClose: "Kész",
-  stats: ["hely", "túra", "cikk", "megválaszolt kérdés", "csata és ostrom"],
+  stats: [
+    (n: number) => hu(n, "hely", "hely"),
+    (n: number) => hu(n, "túra", "túra"),
+    (n: number) => hu(n, "cikk", "cikk"),
+    (n: number) => hu(n, "megválaszolt kérdés", "megválaszolt kérdés"),
+    (n: number) => hu(n, "csata és ostrom", "csata és ostrom"),
+  ],
   rows: [
     [
       "Túrák",
       "Útvonalak az utak és a domborzat mentén",
       "Ábrahám, a kivonulás, Pál útjai: megállóról megállóra, verssel, a hely fényképével, a távolsággal és az út napjaival.",
-      "Pál második útja",
       "A troászi megálló Pál második útján: az Égei-tenger a térképen, az útvonal, az út magassági profilja, fénykép a romokról",
     ],
     [
       "Helyek",
       "Minden hely a maga verseivel és forrásaival",
       "Hol van ma, kié volt a kiválasztott évben, és mely versek említik. Ami vitatott, azt vitatottnak nevezzük.",
+      "Jeruzsálem kártyája: fénykép, az állam, amelyhez Kr. u. 30-ban tartozott, a cikk; körülötte a júdeai hegyek több tucat bibliai hellyel",
       "Jeruzsálem megnyitása",
-      "Jeruzsálem kártyája: fénykép, állapota Kr. u. 30-ban, a cikk; körülötte a júdeai hegyek több tucat bibliai hellyel",
     ],
     [
       "Tanórához",
       "Kvíz, saját tanóra, A4-es lap",
       "„Hol történt?” kvíz bármelyik túrához, saját tanóra egyetlen hivatkozásként, A4-re nyomtatható térképek.",
-      "A kivonulás megnyitása",
       "Kvíz a kivonulásról: egy kérdés verssel és négy válasszal, az útvonal a térképen",
     ],
   ],
@@ -2554,7 +2647,7 @@ const LANDING_HU = {
   method: "Hogyan ellenőrizzük az adatokat",
   sources: "Minden forrás",
   ctaTitle: "Kezdje bármelyik évvel",
-  ctaText: "Fiók nélkül, telefonon és számítógépen, {n} nyelven.",
+  ctaText: (n: number) => `Fiók nélkül, telefonon és számítógépen, ${String(n)} nyelven.`,
 } as const;
 
 const LISTS_HU: ListWords = {
@@ -2590,7 +2683,6 @@ const LISTS_HU: ListWords = {
   },
 };
 
-// Suomi (drafted by machine translation; not yet read by a native speaker).
 // Suomi (drafted by machine translation; not yet read by a native speaker).
 /** A Finnish noun for a count: one or other («1 paikka», «5 paikkaa»; the other form is the partitive). */
 const fi = (n: number, one: string, other: string) =>
@@ -2648,8 +2740,10 @@ const T_FI = {
   },
   stop: "Pysäkki",
   translation: "Raamattu 1933/1938",
+  numbered: "Ei lainattu: tämä käännös numeroi luvun toisin.",
   circa: "n.",
-  title: (n: string) => `${n} — missä paikka sijaitsi, historia, Raamatun jakeet`,
+  title: (n: string, history = true) =>
+    `${n} — missä paikka sijaitsi${history ? ", historia" : ""}, Raamatun jakeet`,
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) Raamatun historian kartalla: missä paikka sijaitsee nykyään, sen historia ja maininnat Raamatussa (${String(v)}).`,
   about: "Hankkeesta",
@@ -2680,32 +2774,30 @@ const LANDING_FI = {
   full: "Koko näyttö",
   liveClose: "Valmis",
   stats: [
-    "paikkaa",
-    "kierrosta",
-    "artikkelia",
-    "kysymystä vastauksineen",
-    "taistelua ja piiritystä",
+    (n: number) => fi(n, "paikka", "paikkaa"),
+    (n: number) => fi(n, "kierros", "kierrosta"),
+    (n: number) => fi(n, "artikkeli", "artikkelia"),
+    (n: number) => fi(n, "kysymys vastauksineen", "kysymystä vastauksineen"),
+    (n: number) => fi(n, "taistelu ja piiritys", "taistelua ja piiritystä"),
   ],
   rows: [
     [
       "Kierrokset",
       "Reittejä teitä ja maastoa pitkin",
       "Abraham, Egyptistä lähtö, Paavalin matkat: pysäkki pysäkiltä jae, valokuva paikasta, etäisyys ja matkaan kuluneet päivät.",
-      "Paavalin toinen matka",
       "Troaksen pysäkki Paavalin toisella matkalla: Egeanmeri kartalla, reitti, tien korkeusprofiili, valokuva raunioista",
     ],
     [
       "Paikat",
       "Jokainen paikka jakeineen ja lähteineen",
       "Missä se sijaitsee nykyään, kenelle se kuului valittuna vuonna ja kaikki sen mainitsevat jakeet. Kiistanalainen merkitään kiistanalaiseksi.",
-      "Avaa Jerusalem",
       "Jerusalemin kortti: valokuva, valtio, johon se kuului vuonna 30 jaa., artikkeli; ympärillä Juudean vuoristo ja kymmeniä Raamatun paikkoja",
+      "Avaa Jerusalem",
     ],
     [
       "Oppituntia varten",
       "Tietovisa, oma oppitunti, A4-arkit",
       "Tietovisa ”Missä se tapahtui?” miltä tahansa kierrokselta, oma oppitunti yhtenä linkkinä, tulostettavia karttoja A4-arkille.",
-      "Avaa Egyptistä lähtö",
       "Tietovisa Egyptistä lähdöstä: kysymys jakeineen ja neljä vastausvaihtoehtoa, reitti kartalla",
     ],
   ],
@@ -2732,7 +2824,7 @@ const LANDING_FI = {
   method: "Miten data tarkistetaan",
   sources: "Kaikki lähteet",
   ctaTitle: "Aloita mistä vuodesta tahansa",
-  ctaText: "Ilman tiliä, puhelimella ja tietokoneella, {n} kielellä.",
+  ctaText: (n: number) => `Ilman tiliä, puhelimella ja tietokoneella, ${String(n)} kielellä.`,
 } as const;
 
 const LISTS_FI: ListWords = {
@@ -2768,7 +2860,6 @@ const LISTS_FI: ListWords = {
   },
 };
 
-// Tiếng Việt (drafted by machine translation; not yet read by a native speaker).
 // Tiếng Việt (drafted by machine translation; not yet read by a native speaker).
 // Vietnamese has one plural category ("other"), so no count helper is needed.
 
@@ -2824,8 +2915,10 @@ const T_VI = {
   },
   stop: "Chặng",
   translation: "Kinh Thánh, bản dịch Cadman (1925)",
+  numbered: "Không trích ở đây: bản dịch này đánh số chương khác.",
   circa: "khoảng",
-  title: (n: string) => `${n} — vị trí, lịch sử, các câu Kinh Thánh`,
+  title: (n: string, history = true) =>
+    `${n} — vị trí${history ? ", lịch sử" : ""}, các câu Kinh Thánh`,
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) trên bản đồ lịch sử Kinh Thánh: vị trí ngày nay, lịch sử và những lần được nhắc đến trong Kinh Thánh (${String(v)}).`,
   about: "Về dự án",
@@ -2855,27 +2948,31 @@ const LANDING_VI = {
   live: "Khám phá quả địa cầu",
   full: "Toàn màn hình",
   liveClose: "Xong",
-  stats: ["địa điểm", "hành trình", "bài viết", "câu hỏi có đáp án", "trận đánh và cuộc vây hãm"],
+  stats: [
+    () => "địa điểm",
+    () => "hành trình",
+    () => "bài viết",
+    () => "câu hỏi có đáp án",
+    () => "trận đánh và cuộc vây hãm",
+  ],
   rows: [
     [
       "Hành trình",
       "Lộ trình theo đường sá và địa hình",
       "Áp-ra-ham, cuộc Xuất hành, các chuyến đi của Phao-lô: từng chặng, kèm câu Kinh Thánh, ảnh địa điểm, khoảng cách và số ngày đi đường.",
-      "Chuyến đi thứ hai của Phao-lô",
       "Chặng Trô-ách trong chuyến đi thứ hai của Phao-lô: biển Aegea trên bản đồ, lộ trình, mặt cắt độ cao của đường, ảnh tàn tích",
     ],
     [
       "Địa điểm",
       "Mỗi địa điểm với các câu Kinh Thánh và nguồn",
       "Nơi đó nằm ở đâu ngày nay, thuộc về ai vào năm đã chọn và mọi câu Kinh Thánh nhắc đến. Điều còn tranh cãi được ghi rõ là còn tranh cãi.",
+      "Thẻ Giê-ru-sa-lem: ảnh, quốc gia mà thành thuộc về năm 30, bài viết; xung quanh là vùng núi Giu-đê với hàng chục địa điểm Kinh Thánh",
       "Mở Giê-ru-sa-lem",
-      "Thẻ Giê-ru-sa-lem: ảnh, tình trạng năm 30, bài viết; xung quanh là vùng núi Giu-đê với hàng chục địa điểm Kinh Thánh",
     ],
     [
       "Cho tiết học",
       "Trắc nghiệm, bài học riêng, tờ A4",
       "Trắc nghiệm “Việc này xảy ra ở đâu?” trên mọi hành trình, bài học riêng chỉ bằng một liên kết, bản đồ để in trên giấy A4.",
-      "Mở cuộc Xuất hành",
       "Trắc nghiệm về cuộc Xuất hành: một câu hỏi với một câu Kinh Thánh và bốn đáp án, lộ trình trên bản đồ",
     ],
   ],
@@ -2902,7 +2999,8 @@ const LANDING_VI = {
   method: "Dữ liệu được kiểm tra thế nào",
   sources: "Tất cả nguồn",
   ctaTitle: "Hãy bắt đầu từ bất kỳ năm nào",
-  ctaText: "Không cần tài khoản, trên điện thoại và máy tính, bằng {n} ngôn ngữ.",
+  ctaText: (n: number) =>
+    `Không cần tài khoản, trên điện thoại và máy tính, bằng ${String(n)} ngôn ngữ.`,
 } as const;
 
 const LISTS_VI: ListWords = {
@@ -2937,7 +3035,6 @@ const LISTS_VI: ListWords = {
   },
 };
 
-// Română (drafted by machine translation; not yet read by a native speaker).
 // Română (drafted by machine translation; not yet read by a native speaker).
 /** A Romanian noun for a count: one, few, other («1 loc», «5 locuri», «20 de locuri»). */
 const ro = (n: number, one: string, few: string, other: string) => {
@@ -2997,8 +3094,10 @@ const T_RO = {
   },
   stop: "Oprire",
   translation: "Biblia 1914 (ediția Sfântului Sinod)",
+  numbered: "Nu este citat aici: această traducere numerotează altfel capitolul.",
   circa: "cca",
-  title: (n: string) => `${n} — unde se afla, istorie, versete biblice`,
+  title: (n: string, history = true) =>
+    `${n} — unde se afla${history ? ", istorie" : ""}, versete biblice`,
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) pe harta istoriei biblice: unde se află astăzi, istoria sa și mențiunile din Biblie (${String(v)}).`,
   about: "Despre proiect",
@@ -3028,27 +3127,31 @@ const LANDING_RO = {
   live: "Explorează globul",
   full: "Ecran complet",
   liveClose: "Gata",
-  stats: ["locuri", "trasee", "articole", "întrebări cu răspuns", "bătălii și asedii"],
+  stats: [
+    (n: number) => ro(n, "loc", "locuri", "de locuri"),
+    (n: number) => ro(n, "traseu", "trasee", "de trasee"),
+    (n: number) => ro(n, "articol", "articole", "de articole"),
+    (n: number) => ro(n, "întrebare cu răspuns", "întrebări cu răspuns", "de întrebări cu răspuns"),
+    (n: number) => ro(n, "bătălie și asediu", "bătălii și asedii", "de bătălii și asedii"),
+  ],
   rows: [
     [
       "Trasee",
       "Itinerare pe drumuri și pe relief",
       "Avraam, Exodul, călătoriile lui Pavel: oprire cu oprire, cu versetul, o fotografie a locului, distanța și zilele de drum.",
-      "A doua călătorie a lui Pavel",
       "Oprirea Troa din a doua călătorie a lui Pavel: Marea Egee pe hartă, traseul, profilul altitudinii drumului, o fotografie a ruinelor",
     ],
     [
       "Locuri",
       "Fiecare loc cu versetele și sursele sale",
       "Unde se află astăzi, cui aparținea în anul ales și toate versetele care îl pomenesc. Ce este disputat se numește disputat.",
+      "Fișa Ierusalimului: fotografie, statul căruia îi aparținea în anul 30 d.Hr., articolul; împrejur, munții Iudeii cu zeci de locuri biblice",
       "Deschide Ierusalimul",
-      "Fișa Ierusalimului: fotografie, starea lui în anul 30 d.Hr., articolul; împrejur, munții Iudeii cu zeci de locuri biblice",
     ],
     [
       "Pentru lecție",
       "Test, lecție proprie, fișe A4",
       "Testul „Unde s-a întâmplat?” pe orice traseu, o lecție proprie sub forma unui singur link, hărți de tipărit pe A4.",
-      "Deschide Exodul",
       "Test despre Exod: o întrebare cu un verset și patru răspunsuri, traseul pe hartă",
     ],
   ],
@@ -3075,7 +3178,8 @@ const LANDING_RO = {
   method: "Cum se verifică datele",
   sources: "Toate sursele",
   ctaTitle: "Începe cu orice an",
-  ctaText: "Fără cont, pe telefon și pe computer, în {n} de limbi.",
+  ctaText: (n: number) =>
+    `Fără cont, pe telefon și pe computer, în ${String(n)} ${ro(n, "limbă", "limbi", "de limbi")}.`,
 } as const;
 
 const LISTS_RO: ListWords = {
@@ -3171,8 +3275,10 @@ const T_BG = {
   },
   stop: "Спирка",
   translation: "Цариградска Библия (1871)",
+  numbered: "Не е цитиран тук: този превод номерира главата по друг начин.",
   circa: "ок.",
-  title: (n: string) => `${n} — къде се е намирало, история, библейски стихове`,
+  title: (n: string, history = true) =>
+    `${n} — къде се е намирало${history ? ", история" : ""}, библейски стихове`,
   desc: (n: string, k: string, v: number) =>
     `${n} (${k}) на картата на библейската история: къде се намира мястото днес, неговата история и споменаванията му в Библията (${String(v)}).`,
   about: "За проекта",
@@ -3202,27 +3308,31 @@ const LANDING_BG = {
   live: "Разгледайте глобуса",
   full: "Цял екран",
   liveClose: "Готово",
-  stats: ["места", "маршрута", "статии", "отговорени въпроса", "битки и обсади"],
+  stats: [
+    (n: number) => bg(n, "място", "места"),
+    (n: number) => bg(n, "маршрут", "маршрута"),
+    (n: number) => bg(n, "статия", "статии"),
+    (n: number) => bg(n, "отговорен въпрос", "отговорени въпроса"),
+    (n: number) => bg(n, "битка и обсада", "битки и обсади"),
+  ],
   rows: [
     [
       "Маршрути",
       "Маршрути по пътищата и терена",
       "Авраам, Изходът, пътуванията на Павел: спирка по спирка, със стиха, снимка на мястото, разстоянието и дните в пътя.",
-      "Второто пътуване на Павел",
       "Спирката Троада от второто пътуване на Павел: Егейско море на картата, маршрутът, височинният профил на пътя, снимка на развалините",
     ],
     [
       "Места",
       "Всяко място със своите стихове и източници",
       "Къде се намира днес, на кого е принадлежало през избраната година и всички стихове, които го споменават. Спорното е наречено спорно.",
+      "Картата на Йерусалим: снимка, държавата, към която е принадлежал през 30 г. н.е., статията; наоколо Юдейските планини с десетки библейски места",
       "Отваряне на Йерусалим",
-      "Картата на Йерусалим: снимка, състоянието му през 30 г. н.е., статията; наоколо Юдейските планини с десетки библейски места",
     ],
     [
       "За урока",
       "Викторина, собствен урок, листове A4",
       "Викторината „Къде се е случило?“ към всеки маршрут, собствен урок като една връзка, карти за печат на A4.",
-      "Отваряне на Изхода",
       "Викторина за Изхода: въпрос със стих и четири отговора, маршрутът на картата",
     ],
   ],
@@ -3249,7 +3359,7 @@ const LANDING_BG = {
   method: "Как се проверяват данните",
   sources: "Всички източници",
   ctaTitle: "Започнете с коя да е година",
-  ctaText: "Без профил, на телефон и компютър, на {n} езика.",
+  ctaText: (n: number) => `Без профил, на телефон и компютър, на ${String(n)} езика.`,
 } as const;
 
 const LISTS_BG: ListWords = {
@@ -3357,8 +3467,10 @@ export const T = {
     },
     stop: "Остановка",
     translation: "Синодальный перевод",
+    numbered: "Не приводится: в этом переводе глава пронумерована иначе.",
     circa: "ок.",
-    title: (n: string) => `${n} — где это было, история, стихи Библии`,
+    title: (n: string, history = true) =>
+      `${n} — где это было${history ? ", история" : ""}, стихи Библии`,
     desc: (n: string, k: string, v: number) =>
       `${n} (${k}) на карте библейской истории: где это место сегодня, его история и упоминания в Библии (${String(v)}).`,
     about: "О проекте",
@@ -3423,8 +3535,11 @@ export const T = {
     },
     stop: "Stop",
     translation: "King James Version",
+    /** Under a verse not quoted (build-verses.ts leaves out chapters numbered otherwise). */
+    numbered: "Not quoted here: this translation numbers the chapter differently.",
     circa: "c.",
-    title: (n: string) => `${n} — where it is, its history, Bible verses`,
+    title: (n: string, history = true) =>
+      `${n} — where it is${history ? ", its history" : ""}, Bible verses`,
     desc: (n: string, k: string, v: number) =>
       `${n} (${k}) on the map of biblical history: where it is today, its history and the Bible verses that name it (${String(v)}).`,
     about: "About",
@@ -3481,27 +3596,31 @@ export const LANDING = {
     live: "Покрутить глобус",
     full: "Во весь экран",
     liveClose: "Готово",
-    stats: ["мест", "экскурсий", "статей", "ответов на вопросы", "битв и осад"],
+    stats: [
+      (n: number) => ru(n, "место", "места", "мест"),
+      (n: number) => ru(n, "экскурсия", "экскурсии", "экскурсий"),
+      (n: number) => ru(n, "статья", "статьи", "статей"),
+      (n: number) => ru(n, "ответ на вопрос", "ответа на вопросы", "ответов на вопросы"),
+      (n: number) => ru(n, "битва и осада", "битвы и осады", "битв и осад"),
+    ],
     rows: [
       [
         "Экскурсии",
         "Маршруты по дорогам и рельефу",
         "Авраам, Исход, путешествия Павла — остановка за остановкой: стих, фото места, расстояние и дни пути.",
-        "Второе путешествие Павла",
         "Остановка «Троада» второго путешествия Павла: карта Эгейского моря, маршрут, профиль дороги, фото руин",
       ],
       [
         "Места",
         "У каждого места — стихи и источники",
         "Где оно сегодня, чьим было в выбранный год и все стихи, где оно названо. Спорное названо спорным.",
+        "Карточка Иерусалима: фото, государство, которому он принадлежал в 30 г. н. э., статья; вокруг — горы Иудеи с десятками библейских мест",
         "Открыть Иерусалим",
-        "Карточка Иерусалима: фото, государство в 30 г. н. э., статья; вокруг — горы Иудеи с десятками библейских мест",
       ],
       [
         "Для урока",
         "Викторина, свой урок и лист A4",
         "Викторина «Где это было?» по любой экскурсии, свой урок одной ссылкой, карты для печати на A4.",
-        "Открыть Исход из Египта",
         "Викторина по Исходу: вопрос со стихом и четыре варианта ответа, маршрут на карте",
       ],
     ],
@@ -3528,7 +3647,8 @@ export const LANDING = {
     method: "Как проверяются данные",
     sources: "Все источники",
     ctaTitle: "Начните с любого года",
-    ctaText: "Без регистрации, на телефоне и на компьютере. Языков: {n}.",
+    ctaText: (n: number) =>
+      `Без регистрации, на телефоне и на компьютере, на ${String(n)} ${ru(n, "языке", "языках", "языках")}.`,
   },
   en: {
     title: "History on a globe — an atlas of biblical history",
@@ -3545,27 +3665,33 @@ export const LANDING = {
     live: "Explore the globe",
     full: "Full screen",
     liveClose: "Done",
-    stats: ["places", "tours", "articles", "questions answered", "battles and sieges"],
+    stats: [
+      (n: number) => en(n, "place"),
+      (n: number) => en(n, "tour"),
+      (n: number) => en(n, "article"),
+      (n: number) => (n === 1 ? "question answered" : "questions answered"),
+      (n: number) => (n === 1 ? "battle or siege" : "battles and sieges"),
+    ],
+    // Each tile: its eyebrow, heading, text and picture's alt; the place's tile also the words
+    // of its link (a tour's tile is linked by the tour's own title, build-pages.ts).
     rows: [
       [
         "Tours",
         "Routes along the roads and the relief",
         "Abraham, the Exodus, Paul's journeys — stop by stop, with the verse, a photo, the distance and the days on the way.",
-        "Paul's second journey",
         "The Troas stop of Paul's second journey: the Aegean on the map, the route, the road's profile, a photo of the ruins",
       ],
       [
         "Places",
         "Every place with its verses and sources",
         "Where it is today, whose it was in the year shown, and every verse that names it. What is disputed is called disputed.",
+        "Jerusalem's card on the map: a photo, the state it belonged to in AD 30, the article; around it the hills of Judea with dozens of biblical places",
         "Open Jerusalem",
-        "The card of Jerusalem: a photo, its state in AD 30, the article; around it the hills of Judea with dozens of biblical places",
       ],
       [
         "For a lesson",
         "A quiz, your own lesson, an A4 sheet",
         "A “Where did it happen?” quiz on any tour, your own lesson as one link, maps that print on A4.",
-        "Open the Exodus",
         "A quiz on the Exodus: a question with a verse and four answers, the route on the map",
       ],
     ],
@@ -3592,7 +3718,7 @@ export const LANDING = {
     method: "How the data is checked",
     sources: "All sources",
     ctaTitle: "Start from any year",
-    ctaText: "No account, on a phone or a computer, in {n} languages.",
+    ctaText: (n: number) => `No account, on a phone or a computer, in ${String(n)} languages.`,
   },
 } as const;
 

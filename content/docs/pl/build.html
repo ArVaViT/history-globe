@@ -10,7 +10,7 @@ description: Co możesz wziąć z History Globe i jak — dane przez API, mapę 
   granica.
 </p>
 
-<h2>Co możesz wziąć</h2>
+<h2 id="what-you-may-take">Co możesz wziąć</h2>
 <div class="table">
   <table>
     <thead>
@@ -69,18 +69,19 @@ description: Co możesz wziąć z History Globe i jak — dane przez API, mapę 
   Krótko: bierz dane przez API i podawaj źródło; pokazuj mapę przez osadzanie; nie klonuj globusa.
 </p>
 
-<h2>Jak podać źródło</h2>
+<h2 id="how-to-credit">Jak podać źródło</h2>
 <p>
   Tam, gdzie pokazujesz dane, wymień ich źródła tak, jak wymienia je <code>index.json</code>.
   Najkrótsza forma, która spełnia wymagania licencji:
 </p>
 <pre><code>Dane: History Globe, autor Vadym Arnaut ({{site}}), CC BY 4.0;
-miejsca i znaczniki wersetów z OpenBible.info (CC BY 4.0); osoby ze STEPBible TIPNR (CC BY 4.0).</code></pre>
+miejsca i znaczniki wersetów z OpenBible.info (CC BY 4.0); osoby ze STEPBible TIPNR (CC BY 4.0); identyfikatory miejsc z Pleiades (CC BY 3.0).</code></pre>
 <p>Na stronie, z linkami:</p>
 <pre><code>&lt;p&gt;Dane: &lt;a href="{{site}}/"&gt;History Globe&lt;/a&gt;, autor Vadym Arnaut,
   &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC BY 4.0&lt;/a&gt;;
   miejsca z &lt;a href="https://www.openbible.info/geo/"&gt;OpenBible.info&lt;/a&gt;,
-  osoby ze &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;.&lt;/p&gt;</code></pre>
+  osoby ze &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;,
+  identyfikatory miejsc z &lt;a href="https://pleiades.stoa.org/"&gt;Pleiades&lt;/a&gt;.&lt;/p&gt;</code></pre>
 <p>
   <code>{{site}}/api/v1/index.json</code> zawiera pełne informacje o źródłach, a każda odpowiedź API
   jest wysyłana z nagłówkiem <code>Link</code>, który podaje jej licencję. Cytowany artykuł lub
@@ -88,7 +89,7 @@ miejsca i znaczniki wersetów z OpenBible.info (CC BY 4.0); osoby ze STEPBible T
   strony.
 </p>
 
-<h2>Ograniczenia</h2>
+<h2 id="limits">Ograniczenia</h2>
 <ul>
   <li>
     <b>Bez klucza, bez limitu.</b> API to statyczne pliki za pamięcią podręczną. Pobieraj każdy plik
@@ -112,7 +113,7 @@ miejsca i znaczniki wersetów z OpenBible.info (CC BY 4.0); osoby ze STEPBible T
   </li>
 </ul>
 
-<h2>Start</h2>
+<h2 id="start">Start</h2>
 <pre><code>const api = "{{site}}/api/v1";
 const places = await (await fetch(`${api}/places.json`)).json();
 const byId = new Map(places.map((p) =&gt; [p.id, p]));
@@ -124,7 +125,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   >.
 </p>
 
-<h2>Prośba o więcej</h2>
+<h2 id="asking-for-more">Prośba o więcej</h2>
 <p>
   Tłumaczenie artykułów, ich tekst na innej platformie albo licencja, której nie daje powyższa
   tabela: napisz na <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>.
@@ -132,7 +133,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   zmian.
 </p>
 
-<h2>Dla agentów AI</h2>
+<h2 id="for-ai-agents">Dla agentów AI</h2>
 <p>
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> mówi to samo na jednej stronie. Wyszukiwarki
   i asystenci, którzy odpowiadają z podaniem źródła, są mile widziani; artykuły nie są danymi

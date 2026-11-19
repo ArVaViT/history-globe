@@ -1,6 +1,6 @@
 /**
  * The forms of a place name in running text in the languages beyond Russian
- * (scripts/build-text-places.ts; Russian is scripts/russian-forms.ts): the cases of a
+ * (scripts/build-text-places.ts; Russian is packages/model/src/russian-forms.ts): the cases of a
  * one-word Ukrainian, Polish, Czech or Serbian name («Єрусалима», "w Jerozolimie",
  * "v Jeruzalémě", «у Јерусалиму»), the German and Nordic genitive ("Jerusalems"), the
  * Hungarian and Finnish case endings ("Jeruzsálemben", "Jerusalemissa") and the Romanian
@@ -11,7 +11,7 @@
  * Finnish; so are names in a vowel these rules do not know (Мегіддо, Hebrón). Vietnamese and
  * Bulgarian names take no endings.
  */
-import type { Locale } from "../packages/model/src/time.ts";
+import type { Locale } from "../packages/model/src/locales.ts";
 
 const ends = (stem: string, e: readonly string[]): string[] => e.map((x) => stem + x);
 const uniq = (xs: readonly string[]) => [...new Set(xs)];

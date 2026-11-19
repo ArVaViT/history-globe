@@ -11,7 +11,7 @@ description: Ce que vous pouvez prendre de History Globe et comment — les donn
   ligne.
 </p>
 
-<h2>Ce que vous pouvez prendre</h2>
+<h2 id="what-you-may-take">Ce que vous pouvez prendre</h2>
 <div class="table">
   <table>
     <thead>
@@ -76,18 +76,19 @@ description: Ce que vous pouvez prendre de History Globe et comment — les donn
   clonez pas le globe.
 </p>
 
-<h2>Comment créditer</h2>
+<h2 id="how-to-credit">Comment créditer</h2>
 <p>
   Là où vous montrez les données, citez leurs sources telles que les énumère
   <code>index.json</code>. La forme la plus courte qui satisfait aux licences :
 </p>
 <pre><code>Données : History Globe par Vadym Arnaut ({{site}}), CC BY 4.0 ;
-lieux et étiquettes de versets d’OpenBible.info (CC BY 4.0) ; personnes de STEPBible TIPNR (CC BY 4.0).</code></pre>
+lieux et étiquettes de versets d’OpenBible.info (CC BY 4.0) ; personnes de STEPBible TIPNR (CC BY 4.0) ; identifiants de lieux de Pleiades (CC BY 3.0).</code></pre>
 <p>Dans une page, avec des liens :</p>
 <pre><code>&lt;p&gt;Données : &lt;a href="{{site}}/"&gt;History Globe&lt;/a&gt; par Vadym Arnaut,
   &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC BY 4.0&lt;/a&gt; ;
   lieux d’&lt;a href="https://www.openbible.info/geo/"&gt;OpenBible.info&lt;/a&gt;,
-  personnes de &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;.&lt;/p&gt;</code></pre>
+  personnes de &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;,
+  identifiants de lieux de &lt;a href="https://pleiades.stoa.org/"&gt;Pleiades&lt;/a&gt;.&lt;/p&gt;</code></pre>
 <p>
   <code>{{site}}/api/v1/index.json</code> porte les lignes de crédit complètes, et chaque réponse de
   l’API est envoyée avec un en-tête <code>Link</code> qui nomme sa licence. Un article ou une
@@ -95,7 +96,7 @@ lieux et étiquettes de versets d’OpenBible.info (CC BY 4.0) ; personnes de S
   leur page.
 </p>
 
-<h2>Limites</h2>
+<h2 id="limits">Limites</h2>
 <ul>
   <li>
     <b>Pas de clé, pas de quota.</b> L’API est faite de fichiers statiques derrière un cache.
@@ -119,7 +120,7 @@ lieux et étiquettes de versets d’OpenBible.info (CC BY 4.0) ; personnes de S
   </li>
 </ul>
 
-<h2>Pour commencer</h2>
+<h2 id="start">Pour commencer</h2>
 <pre><code>const api = "{{site}}/api/v1";
 const places = await (await fetch(`${api}/places.json`)).json();
 const byId = new Map(places.map((p) =&gt; [p.id, p]));
@@ -132,7 +133,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   >.
 </p>
 
-<h2>Demander davantage</h2>
+<h2 id="asking-for-more">Demander davantage</h2>
 <p>
   Une traduction des articles, leur texte sur une autre plateforme, ou une licence que le tableau
   ci-dessus ne donne pas : écrivez à
@@ -141,7 +142,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   quelles.
 </p>
 
-<h2>Pour les agents d’IA</h2>
+<h2 id="for-ai-agents">Pour les agents d’IA</h2>
 <p>
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> dit la même chose en une page. Les moteurs
   de recherche et les assistants qui répondent avec une citation de la source sont les bienvenus ;

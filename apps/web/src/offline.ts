@@ -4,8 +4,7 @@
  * Bible walks, so a class with no Wi-Fi still has its map.
  */
 
-/** The relief's tiles. Development source; production serves its own extract (ADR 0005). */
-export const TERRAIN_TILES = "https://tiles.mapterhorn.com/{z}/{x}/{y}.webp";
+import { TERRAIN_TILES } from "./terrain";
 
 /** The service worker, in a production build only: the dev server's files change too often. */
 export function registerOffline(): void {

@@ -1,9 +1,7 @@
 /**
- * JS budget (ADR 0010): everything needed before the first map frame, the entry chunk,
- * the renderer chunk it loads at once and MapLibre's own files under vendor/ (library,
- * worker and the module they share), at most 440 kB gzip (1 kB = 1000 bytes); raised from
- * 400 for the settings window and the timeline zoom, then from 420 to finish the feature
- * list before launch (ADR 0011).
+ * JS budget (ADR 0011, ADR 0021): everything needed before the first map frame, the entry
+ * chunk, the renderer chunk it loads at once and MapLibre's own files under vendor/ (library,
+ * worker and the module they share), at most 440 kB gzip (1 kB = 1000 bytes).
  *
  * Usage: node scripts/check-budget.ts  (after `pnpm build`)
  */
@@ -27,7 +25,7 @@ if (!js.some((f) => f.endsWith("maplibre-gl-worker.mjs")))
 // renderer chunk the app imports at once (useGlobe.ts) with its own static imports, and
 // MapLibre's files. A chunk loaded later by `import()` (a panel opened on demand) is not
 // on that path: it counts toward the total for everything, which has its own ceiling, and
-// counts there once per reader, not once per language (ADR 0011, update of 11.10.2026).
+// counts there once per reader, not once per language (ADR 0021).
 const TOTAL_KB = 560;
 const html = readFileSync(join(dist, "index.html"), "utf8");
 const entry = [...html.matchAll(/<script[^>]+src="\/(assets\/[^"]+\.js)"/g)].map((m) => m[1] ?? "");
@@ -96,10 +94,10 @@ console.log(
   `all JS ${all.toFixed(1)} kB gzip (one language: ${heaviest}, ${heaviestKb.toFixed(1)} kB; ${String(perLanguage.size)} languages), ceiling ${String(TOTAL_KB)} kB`,
 );
 if (total > BUDGET_KB) {
-  console.error(`over the JS budget by ${(total - BUDGET_KB).toFixed(1)} kB (ADR 0010)`);
+  console.error(`over the JS budget by ${(total - BUDGET_KB).toFixed(1)} kB (ADR 0021)`);
   process.exit(1);
 }
 if (all > TOTAL_KB) {
-  console.error(`all JS over its ceiling by ${(all - TOTAL_KB).toFixed(1)} kB (ADR 0011)`);
+  console.error(`all JS over its ceiling by ${(all - TOTAL_KB).toFixed(1)} kB (ADR 0021)`);
   process.exit(1);
 }

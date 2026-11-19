@@ -18,6 +18,16 @@ export interface ChapterFocus {
   readonly routePlaces?: string[];
 }
 
+/** A person's places on the map (their card) share the focus with chapters, under this ref. */
+export const personRef = (id: string): string => `person:${id}`;
+export const isPersonRef = (ref: string | undefined): boolean =>
+  ref?.startsWith("person:") ?? false;
+
+/** The chapter on the map: the focus unless it is a person's places, which are no chapter. */
+export const chapterOf = <F extends { readonly ref: string }>(
+  focus: F | null | undefined,
+): F | null => (focus && !isPersonRef(focus.ref) ? focus : null);
+
 /**
  * Kinds that stand for a wide area on one point: Italy is a point at Rome, the Adriatic one
  * in the middle of its sea. Framed with the towns, they pulled Acts 27 out to half the globe
@@ -47,9 +57,9 @@ function spreadKm(points: readonly (readonly [number, number])[]): number {
 /**
  * The chapter's places that make its map. Wide areas step out when there are towns, and so
  * does a place named once far from the rest (Jerusalem in Acts 16, where Paul only carries
- * its decrees): each such outlier that shrinks the frame by 30% or more leaves it, at most a quarter
- * of the places. The rest stay on the map, outside the first view; a chapter's way is
- * framed whole all the same (Engine.focusPlaces).
+ * its decrees): each such outlier that shrinks the frame by 30% or more leaves it, at most a
+ * quarter of the places. The rest stay on the map, outside the first view; a chapter's way
+ * is framed whole all the same (Engine.focusPlaces).
  */
 export function framePlaces(
   places: readonly { id: string; at: readonly [number, number]; kind: string; mentions: number }[],
@@ -154,11 +164,23 @@ export function firstVerseIn(osis: readonly string[], ref: string): string | und
   return best;
 }
 
-/** Chapter × 1000 + verse of a reference; none sorts last. */
-function verseKey(osis: string | undefined): number {
+/** The book of an OSIS reference: "Acts" of "Acts.16.12". */
+export const bookOf = (osis: string): string => osis.split(".")[0] ?? "";
+
+/**
+ * Chapter × 1000 + verse where a reference starts (a whole chapter at its verse 0); none
+ * sorts last.
+ */
+export function verseKey(osis: string | undefined): number {
   if (!osis) return Infinity;
-  const [, c, v] = (osis.split("-")[0] ?? "").split(".");
+  const [, c = "0", v = "0"] = (osis.split("-")[0] ?? "").split(".");
   return Number(c) * 1000 + Number(v);
+}
+
+/** A passage's book and the keys of its first and last verse: "Acts.14.21-Acts.14.23". */
+export function passageSpan(ref: string): Span {
+  const [a = "", b = a] = ref.split("-");
+  return { book: bookOf(a), from: verseKey(a), to: verseKey(b) };
 }
 
 /** The chapter as people say it in this language: «Пс 115», "Acts 16", "Ps 9–10". */
@@ -171,7 +193,7 @@ export function chapterLabel(ref: string, locale: Locale): string {
       return ref;
     }
   }
-  const chapterOf = (part: string) => {
+  const chapterPart = (part: string) => {
     try {
       return formatRef(part, locale).replace(/:.*$/, "");
     } catch {
@@ -179,8 +201,8 @@ export function chapterLabel(ref: string, locale: Locale): string {
     }
   };
   const [a = ref, b] = ref.split("-");
-  const first = chapterOf(a);
-  const last = b === undefined ? first : chapterOf(b);
+  const first = chapterPart(a);
+  const last = b === undefined ? first : chapterPart(b);
   return last === first ? first : `${first}–${last.replace(/^.* /, "")}`;
 }
 

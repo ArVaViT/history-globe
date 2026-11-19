@@ -1,7 +1,8 @@
 # Isaac, Genesis 24:62-26:33, in the order of the text, between the Abraham tour and the
 # Jacob tour (his death at Mamre, 35:27-29, is a stop of the Jacob tour). The tour's year
 # (1850 BC) is a conventional point for the map between those two tours, not a date: the
-# age of the patriarchs is disputed.
+# age of the patriarchs is disputed. Sitnah is placed only "within 15 km of Rehoboth", on
+# its point: the leg between the two wells is untold.
 id: isaac
 title:
   en: "Isaac and the wells"
@@ -175,6 +176,7 @@ stops:
       bg: "Карат се и за следващия кладенец и той го нарича Ситна, „вражда“."
   - place: ab1d954 # Rehoboth
     ref: Gen.26.22
+    by: untold
     note:
       en: 'Over a third well no one strives, and he names it Rehoboth: "For now the LORD hath made room for us".'
       ru: "О третьем колодце уже не спорят, и он называет его Реховоф: «теперь Господь дал нам пространное место»."

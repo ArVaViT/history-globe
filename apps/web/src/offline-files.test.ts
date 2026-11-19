@@ -4,11 +4,10 @@ import { join } from "node:path";
 import { afterAll, describe, expect, it } from "vitest";
 import { offlineFiles, savedFiles } from "../vite.config";
 
-// A public/ folder as the build sees it: the data, a file kept only to rebuild it, a map.
+// A public/ folder as the build sees it: the data, a map.
 const pub = mkdtempSync(join(tmpdir(), "hg-offline-"));
 mkdirSync(join(pub, "data/photos"), { recursive: true });
 writeFileSync(join(pub, "data/content.json"), "{}");
-writeFileSync(join(pub, "data/polities-late.geojson"), "{}");
 writeFileSync(join(pub, "data/photos/a000001.jpg"), "jpg");
 writeFileSync(join(pub, "data/x.js.map"), "{}");
 writeFileSync(join(pub, "manifest.webmanifest"), "{}");
@@ -18,7 +17,7 @@ afterAll(() => {
 });
 
 describe("the files a save for use offline fetches", () => {
-  it("lists the data and the manifest, not the later states, maps or pages", () => {
+  it("lists the data and the manifest, not maps or pages", () => {
     const { files, bytes } = savedFiles(pub);
     expect(files).toEqual(["data/content.json", "data/photos/a000001.jpg", "manifest.webmanifest"]);
     expect(bytes).toBe(2 + 3 + 2);
@@ -37,7 +36,6 @@ describe("the files a save for use offline fetches", () => {
     expect(id).not.toBe("");
     const code = plugin.load(id) ?? "";
     expect(code).toContain('"data/content.json"');
-    expect(code).not.toContain("polities-late");
     expect(code).toMatch(/export const bytes = 7;/);
   });
 });

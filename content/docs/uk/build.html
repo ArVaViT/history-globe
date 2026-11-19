@@ -9,7 +9,7 @@ description: Що можна брати в History Globe і як — дані ч
   глобус, його статті та код копіювати не можна. Ця сторінка — про те, де проходить межа.
 </p>
 
-<h2>Що можна брати</h2>
+<h2 id="what-you-may-take">Що можна брати</h2>
 <div class="table">
   <table>
     <thead>
@@ -68,25 +68,26 @@ description: Що можна брати в History Globe і як — дані ч
   клонуйте.
 </p>
 
-<h2>Як зазначити джерело</h2>
+<h2 id="how-to-credit">Як зазначити джерело</h2>
 <p>
   Там, де ви показуєте дані, назвіть їхні джерела так, як перелічує <code>index.json</code>.
   Найкоротша форма, достатня для ліцензій:
 </p>
 <pre><code>Дані: History Globe, Vadym Arnaut ({{site}}), CC BY 4.0;
-місця і прив'язки віршів — OpenBible.info (CC BY 4.0); люди — STEPBible TIPNR (CC BY 4.0).</code></pre>
+місця і прив'язки віршів — OpenBible.info (CC BY 4.0); люди — STEPBible TIPNR (CC BY 4.0); ідентифікатори місць — Pleiades (CC BY 3.0).</code></pre>
 <p>На сторінці, з посиланнями:</p>
 <pre><code>&lt;p&gt;Дані: &lt;a href="{{site}}/"&gt;History Globe&lt;/a&gt;, Vadym Arnaut,
   &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC BY 4.0&lt;/a&gt;;
   місця — &lt;a href="https://www.openbible.info/geo/"&gt;OpenBible.info&lt;/a&gt;,
-  люди — &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;.&lt;/p&gt;</code></pre>
+  люди — &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;,
+  ідентифікатори місць — &lt;a href="https://pleiades.stoa.org/"&gt;Pleiades&lt;/a&gt;.&lt;/p&gt;</code></pre>
 <p>
   Повні рядки зазначення джерел — у <code>{{site}}/api/v1/index.json</code>, і кожна відповідь API
   надходить із заголовком <code>Link</code>, що називає її ліцензію. Процитовану статтю чи відповідь
   підписують «History Globe (Vadym Arnaut), CC BY-NC-ND 4.0» із посиланням на її сторінку.
 </p>
 
-<h2>Обмеження</h2>
+<h2 id="limits">Обмеження</h2>
 <ul>
   <li>
     <b>Без ключа і без квоти.</b> API — це статичні файли за кешем. Забирайте кожен файл під час
@@ -110,7 +111,7 @@ description: Що можна брати в History Globe і як — дані ч
   </li>
 </ul>
 
-<h2>З чого почати</h2>
+<h2 id="start">З чого почати</h2>
 <pre><code>const api = "{{site}}/api/v1";
 const places = await (await fetch(`${api}/places.json`)).json();
 const byId = new Map(places.map((p) =&gt; [p.id, p]));
@@ -122,14 +123,14 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   >.
 </p>
 
-<h2>Якщо потрібно більше</h2>
+<h2 id="asking-for-more">Якщо потрібно більше</h2>
 <p>
   Переклад статей, їхній текст на іншій платформі або ліцензія, якої немає в таблиці вище, — пишіть
   на <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>. Партнери
   отримують письмову ліцензію на те, що їм потрібно; публічні ліцензії залишаються як є.
 </p>
 
-<h2>ШІ-агентам</h2>
+<h2 id="for-ai-agents">ШІ-агентам</h2>
 <p>
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> каже те саме на одній сторінці. Пошуковики й
   асистенти, що відповідають із посиланням на джерело, — бажані гості; статті — не навчальні дані

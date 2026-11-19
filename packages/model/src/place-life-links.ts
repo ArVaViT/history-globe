@@ -4,33 +4,47 @@ import type { PlaceLife } from "./content.ts";
 export interface LinkedPlace {
   readonly id: string;
   readonly name: string;
-  /** "same": another name of the place it refers to; "at": inside it (a gate, a pool). */
+  /**
+   * "same": another name of the place it refers to; "at": inside it (a gate, a pool);
+   * "same_name": the same place in other verses, followed only on the very same point.
+   */
   readonly where_tpl?: string | undefined;
   readonly where_ref?: string | undefined;
+  /** Where it is drawn, [lon, lat]: to tell a "same_name" record on the town's point. */
+  readonly point?: readonly number[] | undefined;
 }
+
+const samePoint = (a?: readonly number[], b?: readonly number[]) =>
+  a !== undefined && b !== undefined && a[0] === b[0] && a[1] === b[1];
 
 const MAX_HOPS = 5;
 
 /**
- * The years of places that have none of their own but are another name of a town, or lie
- * in it, with an entry in place-life.yaml. Links are followed through chains (a gate of
+ * The years of places that have none of their own but are another name of a town, lie in
+ * it, or are the town itself in other verses on its point (Ur of Gen 11:28, a record apart
+ * from Ur the city), with an entry in place-life.yaml. Links are followed through chains (a gate of
  * Millo of Jerusalem) to the town with its own years; loops and other links give nothing.
  * Only the ruin and the end carry over, never the founding (Shamir of Judg 10:1, which
- * OpenBible places at Samaria, stood before Omri built Samaria), and the note is prefixed
- * with the town's name once, unless the place bears that very name.
+ * OpenBible places at Samaria, stood before Omri built Samaria), and the note in each language
+ * is prefixed with the town's name in it once, unless the place bears that very name.
  */
 export function inheritLife(
   places: readonly LinkedPlace[],
   own: Readonly<Record<string, PlaceLife>>,
-  ruName: (id: string) => string | undefined,
+  nameIn: (id: string, locale: string) => string | undefined,
 ): Record<string, PlaceLife> {
   const byId = new Map(places.map((p) => [p.id, p]));
   const townOf = (id: string): string | undefined => {
     let at = byId.get(id);
     for (let hops = 0; at?.where_ref && hops < MAX_HOPS; hops++) {
-      if (at.where_tpl !== "same" && at.where_tpl !== "at") return undefined;
+      const next = byId.get(at.where_ref);
+      const linked =
+        at.where_tpl === "same" ||
+        at.where_tpl === "at" ||
+        (at.where_tpl === "same_name" && samePoint(at.point, next?.point));
+      if (!linked) return undefined;
       if (own[at.where_ref]) return at.where_ref;
-      at = byId.get(at.where_ref);
+      at = next;
     }
     return undefined;
   };
@@ -40,15 +54,19 @@ export function inheritLife(
     const town = townOf(p.id);
     const of = town ? own[town] : undefined;
     if (!town || !of || (!of.gap && !of.until)) continue;
-    const townRu = ruName(town) ?? byId.get(town)?.name ?? "";
     const townEn = byId.get(town)?.name ?? "";
-    const sameName = (ruName(p.id) ?? p.name) === townRu;
     out[p.id] = {
       ...(of.until ? { until: of.until } : {}),
       ...(of.gap ? { gap: of.gap } : {}),
-      note: sameName
-        ? of.note
-        : { en: `${townEn}: ${of.note.en ?? ""}`, ru: `${townRu}: ${of.note.ru ?? ""}` },
+      note:
+        p.name === townEn
+          ? of.note
+          : Object.fromEntries(
+              Object.entries(of.note).map(([l, text]) => [
+                l,
+                `${nameIn(town, l) ?? townEn}: ${text}`,
+              ]),
+            ),
       sources: of.sources,
       ...(of.sources_ru ? { sources_ru: of.sources_ru } : {}),
       inherited: true,

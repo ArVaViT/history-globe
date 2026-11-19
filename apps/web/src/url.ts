@@ -1,5 +1,7 @@
 import { YEAR_MAX, YEAR_MIN, type Camera, type LayerVisibility } from "@hg/core";
 import { isLocale, type Locale, type SiteLocale } from "@hg/model";
+import { LESSON } from "./lesson";
+import { readPref, writePref } from "./storage";
 
 /** The shareable view (ADR 0006): everything needed to reopen the same scene. */
 export interface UrlView {
@@ -36,8 +38,15 @@ export interface UrlView {
  */
 const PLACE_ID = /^(a[0-9a-f]{6}|\d{1,12}|Q\d{1,12})$/;
 
-// `ancient` in an older link is passed over: the ancient world's places are places now.
-const LAYERS = ["borders", "places", "relief", "routes", "roads", "battles"] as const;
+/** Every layer, as links and the embed protocol name them. */
+export const LAYERS = [
+  "borders",
+  "places",
+  "relief",
+  "routes",
+  "roads",
+  "battles",
+] as const satisfies readonly (keyof LayerVisibility)[];
 /** The layers an older `layers=` link could list: a layer added since stays on in it. */
 const LISTED_LAYERS: readonly string[] = ["borders", "places", "relief", "routes", "roads"];
 
@@ -54,10 +63,8 @@ const LOCALE_KEY = "hg:locale";
 
 /**
  * Browser language tags whose language the site publishes under another code: any Norwegian
- * (`no`, `nn`, `nb-NO`) opens the Bokmål, Filipino (`fil`, `fil-PH`) the Tagalog. Serbian in
- * any script or country (`sr-Cyrl`, `sr-RS`) is `sr` by its base tag already, as are
- * Hungarian, Finnish, Vietnamese, Romanian (`ro-RO`,
- * `ro-MD`) and Bulgarian (`bg-BG`).
+ * (`no`, `nn`, `nb-NO`) opens the Bokmål, Filipino (`fil`, `fil-PH`) the Tagalog. Every other
+ * language is its base tag already (`sr-Cyrl` and `sr-RS` are `sr`, `ro-MD` is `ro`).
  */
 const TAG_ALIASES: Readonly<Record<string, string>> = { no: "nb", nn: "nb", fil: "tl" };
 
@@ -69,18 +76,13 @@ export function localeOfTag(tag: string): string {
 
 /** Keeps the language a reader picked in the settings, for links that name none. */
 export function rememberLocale(locale: string): void {
-  if (!isLocale(locale)) return;
-  try {
-    localStorage.setItem(LOCALE_KEY, locale);
-  } catch {
-    // Storage off (a private window): the browser's language will choose next time.
-  }
+  if (isLocale(locale)) writePref(LOCALE_KEY, locale);
 }
 
 /**
  * The language to open in when the link names none: the one the reader picked before, else
  * the first of the browser's languages the site is published in ("pt-BR" → pt, localeOfTag),
- * else English. No language is the site's own: Russian is one of many.
+ * else English.
  */
 export function preferredLocale(
   // Old web views have no navigator.languages, only navigator.language.
@@ -89,14 +91,10 @@ export function preferredLocale(
     : "languages" in navigator && navigator.languages.length > 0
       ? navigator.languages
       : [navigator.language],
-  saved: () => string | null = () => localStorage.getItem(LOCALE_KEY),
+  saved: () => string | null = () => readPref(LOCALE_KEY),
 ): SiteLocale {
-  try {
-    const picked = saved();
-    if (isLocale(picked)) return picked;
-  } catch {
-    // Storage off: the browser's languages decide.
-  }
+  const picked = saved();
+  if (isLocale(picked)) return picked;
   for (const tag of languages) {
     const code = localeOfTag(tag);
     if (isLocale(code)) return code;
@@ -118,6 +116,20 @@ const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v
 /** Into [-180, 180): the same meridian however many turns the link adds. */
 const wrap180 = (v: number) => (v >= -180 && v < 180 ? v : ((((v + 180) % 360) + 360) % 360) - 180);
 
+/**
+ * A camera from outside (a link, a host page) brought into range: out-of-range values make
+ * MapLibre throw before the first frame. The parts it lacks stay out.
+ */
+export function cameraInRange<C extends Partial<Camera>>(c: C): C {
+  return {
+    ...c,
+    ...(c.center ? { center: [wrap180(c.center[0]), clamp(c.center[1], -85, 85)] } : {}),
+    ...(c.zoom === undefined ? {} : { zoom: clamp(c.zoom, 0, 22) }),
+    ...(c.pitch === undefined ? {} : { pitch: clamp(c.pitch, 0, 80) }),
+    ...(c.bearing === undefined ? {} : { bearing: wrap180(c.bearing) }),
+  };
+}
+
 export function readUrl(
   search = window.location.search,
   path = typeof window === "undefined" ? "/" : window.location.pathname,
@@ -132,18 +144,12 @@ export function readUrl(
   const cam = p.get("camera")?.split(",").map(Number);
   if (cam?.length === 5 && cam.every(Number.isFinite)) {
     const [lon = 0, lat = 0, zoom = 0, pitch = 0, bearing = 0] = cam;
-    // Links can come from anywhere, embeds included: out-of-range values would make
-    // MapLibre throw before the first frame, so they are brought into range here.
-    view.camera = {
-      center: [wrap180(lon), clamp(lat, -85, 85)],
-      zoom: clamp(zoom, 0, 22),
-      pitch: clamp(pitch, 0, 80),
-      bearing: wrap180(bearing),
-    };
+    view.camera = cameraInRange({ center: [lon, lat], zoom, pitch, bearing });
   }
   const locale = p.get("locale");
   if (isLocale(locale)) view.locale = locale;
   const hidden = p.get("hide")?.split(",");
+  // `ancient` in an older link is passed over: the ancient world's places are places now.
   const listed = p.get("layers")?.split(",");
   if (hidden?.some((l) => (LAYERS as readonly string[]).includes(l))) {
     view.layers = layersWhere((l) => !hidden.includes(l));
@@ -210,7 +216,7 @@ export function viewSearch(view: WritableView, current = ""): string {
   else p.delete("tour");
   // A lesson's places and name stay in the link while one of its places is open (a
   // reload or a copied link keeps the lesson); another tour takes them out.
-  if (view.tour && view.tour !== "lesson") {
+  if (view.tour && view.tour !== LESSON) {
     p.delete("lesson");
     p.delete("title");
   }

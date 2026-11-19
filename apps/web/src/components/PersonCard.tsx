@@ -1,28 +1,29 @@
 import {
   canonicalPosition,
   formatCentury,
-  medianYear,
   type ChapterYears,
   type Locale,
   formatRefOr,
+  pick,
 } from "@hg/model";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "../i18n";
-import { loadPeople, personName, type People } from "../people";
+import { loadPeople, personName, personYear, type People } from "../people";
 import { useNarrow } from "../app-hooks";
 import { ArrowLeft, X } from "./icons";
 import { Panel } from "./Panel";
 import { Credit } from "./Credit";
 
 /**
- * Names shown in a family row before "ещё N" opens the rest; fewer on a phone, where the
- * card has half the screen and David's eight wives and nineteen children took all of it.
+ * Names shown in a family row before "N more" (place.more) opens the rest; fewer on a phone,
+ * where the card has half the screen and David's eight wives and nineteen children took all
+ * of it.
  */
 const SHOWN = {
   wide: { spouses: 99, children: 8, line: 5 },
   phone: { spouses: 3, children: 4, line: 3 },
 };
-/** Places shown before "ещё N": David has eighty. */
+/** Places shown before "N more": David has eighty. */
 const PLACES_SHOWN = 8;
 
 /**
@@ -70,7 +71,7 @@ export function PersonCard({
   const [allChildren, setAllChildren] = useState(false);
   const [wholeLine, setWholeLine] = useState(false);
   const [allPlaces, setAllPlaces] = useState(false);
-  // "ещё N" goes away when pressed: the focus moves to the oldest ancestor it showed.
+  // "N more" goes away when pressed: the focus moves to the oldest ancestor it showed.
   const lineStart = useRef<HTMLSpanElement>(null);
   useEffect(() => {
     if (wholeLine) lineStart.current?.nextElementSibling?.querySelector("button")?.focus();
@@ -93,10 +94,7 @@ export function PersonCard({
   }, [person]);
   if (!people || !person) return null;
   const name = personName(person, locale);
-  const year = medianYear(
-    (people.placesOf.get(index) ?? []).map((p) => p.verse),
-    chapterYears,
-  );
+  const year = personYear(people, index, chapterYears);
   const century = year === undefined ? undefined : formatCentury(year, locale);
   // The places most tied to them first (Jerusalem for David, not a well named once), then
   // shown in the order of the text: the story of their life as the Bible tells it.
@@ -123,7 +121,7 @@ export function PersonCard({
       </button>
     );
   };
-  // A row of names, folded after `limit` with "ещё N" to open it.
+  // A row of names, folded after `limit` with "N more" to open it.
   const row = (label: string, all: readonly number[], limit = all.length, more?: () => void) => {
     const ids = more && all.length > limit ? all.slice(0, limit) : all;
     return (
@@ -138,10 +136,7 @@ export function PersonCard({
               </span>
             ))}
             {ids.length < all.length && (
-              <button
-                onClick={more}
-                className="text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
-              >
+              <button onClick={more} className="text-ink-soft link-soft">
                 {t("place.more", { count: all.length - ids.length })}
               </button>
             )}
@@ -168,13 +163,13 @@ export function PersonCard({
   const lineRoot = folded ? line[0] : undefined;
 
   return (
-    <Panel className="w-[min(420px,calc(100vw-376px-32px))] max-md:w-full max-h-[calc(100dvh-var(--hg-timeline-h,124px)-48px)] max-md:max-h-[48dvh] overflow-auto pb-3">
+    <Panel className="w-card max-h-[calc(100dvh-var(--hg-timeline-h)-48px)] max-md:max-h-[48dvh] overflow-auto pb-3">
       {back && (
         <button
           onClick={back.onBack}
           className="mx-3 mt-3 flex items-center gap-1.5 rounded-full px-2 py-1 text-[13px] text-accent hover:bg-paper-2"
         >
-          <ArrowLeft className="size-4" aria-hidden />
+          <ArrowLeft className="size-4" />
           {back.label}
         </button>
       )}
@@ -187,8 +182,8 @@ export function PersonCard({
           >
             {name}
           </h2>
-          {/* The century only: the English name beside the Russian one said nothing a
-              reader of Russian needs, and the search no longer shows it either. */}
+          {/* The century only: the English name beside the reader's own tells them nothing,
+              and the search does not show it either. */}
           {century && <div className="text-[13px] text-ink-soft">{century}</div>}
         </div>
         <button
@@ -197,7 +192,7 @@ export function PersonCard({
           title={t("close")}
           className="-mr-1 rounded-full p-1.5 text-ink-soft hover:bg-paper-2 hover:text-ink"
         >
-          <X className="size-5" aria-hidden />
+          <X className="size-5" />
         </button>
       </div>
 
@@ -283,7 +278,7 @@ export function PersonCard({
                     className="flex w-full items-baseline justify-between gap-3 rounded-lg px-2 py-1.5 text-left hover:bg-paper-2"
                   >
                     <span className="font-serif text-[15.5px] text-ink">
-                      {x.title[locale] ?? x.title.en}
+                      {pick(x.title, locale)}
                     </span>
                     <span className="shrink-0 text-[12px] text-ink-soft tabular-nums">
                       {t("tours.stops", { count: x.stops.length })}
@@ -322,7 +317,7 @@ export function PersonCard({
               onClick={() => {
                 setAllPlaces(true);
               }}
-              className="mx-5 mt-1 text-[13px] text-ink-soft underline decoration-dotted underline-offset-2 hover:text-ink"
+              className="mx-5 mt-1 text-[13px] text-ink-soft link-soft"
             >
               {t("place.more", { count: places.length - placesShown.length })}
             </button>

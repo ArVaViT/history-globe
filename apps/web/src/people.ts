@@ -1,6 +1,5 @@
-import { pick } from "@hg/model";
-import type { Locale } from "@hg/model";
-import { DATA_URL } from "./data";
+import { medianYear, pick, type ChapterYears, type Locale } from "@hg/model";
+import { cachedJson } from "./data";
 
 /** A person of the Bible (pipeline/people/package.py, from STEP Bible's TIPNR). */
 export interface Person {
@@ -65,51 +64,46 @@ export function peopleNow(): People | null {
 /** people.json, fetched once, the first time a card asks for it (42 kB gzip). */
 export function loadPeople(): Promise<People> {
   if (!loaded) {
-    loaded = fetch(`${DATA_URL}/people.json`)
-      .then((r) => {
-        if (!r.ok) throw new Error(`people: ${String(r.status)}`);
-        return r.json() as Promise<{
-          people: Row[];
-          places: Record<string, [number, number, string][]>;
-          credit: string;
-          names?: Record<string, Record<string, string>>;
-        }>;
-      })
-      .then((raw) => {
-        const people = raw.people.map(
-          ([id, name, ru, g, fathers, mothers, spouses, children, verses], index): Person => ({
-            id,
-            index,
-            name,
-            ru,
-            names: Object.fromEntries(
-              Object.entries(raw.names ?? {}).flatMap(([l, by]) => (by[id] ? [[l, by[id]]] : [])),
-            ),
-            female: g === "f",
-            fathers,
-            mothers,
-            spouses,
-            children,
-            verses: verses ?? 0,
-          }),
+    loaded = cachedJson<{
+      people: Row[];
+      places: Record<string, [number, number, string][]>;
+      credit: string;
+      names?: Record<string, Record<string, string>>;
+    }>("people.json").then((raw) => {
+      const people = raw.people.map(
+        ([id, name, ru, g, fathers, mothers, spouses, children, verses], index): Person => ({
+          id,
+          index,
+          name,
+          ru,
+          names: Object.fromEntries(
+            Object.entries(raw.names ?? {}).flatMap(([l, by]) => (by[id] ? [[l, by[id]]] : [])),
+          ),
+          female: g === "f",
+          fathers,
+          mothers,
+          spouses,
+          children,
+          verses: verses ?? 0,
+        }),
+      );
+      const byPlace = new Map<string, PlacePerson[]>();
+      const placesOf = new Map<number, { place: string; verse: string; tier: number }[]>();
+      for (const [place, rows] of Object.entries(raw.places)) {
+        byPlace.set(
+          place,
+          rows.map(([person, tier, verse]) => ({ person, tier, verse })),
         );
-        const byPlace = new Map<string, PlacePerson[]>();
-        const placesOf = new Map<number, { place: string; verse: string; tier: number }[]>();
-        for (const [place, rows] of Object.entries(raw.places)) {
-          byPlace.set(
-            place,
-            rows.map(([person, tier, verse]) => ({ person, tier, verse })),
-          );
-          for (const [person, tier, verse] of rows) {
-            const list = placesOf.get(person) ?? [];
-            list.push({ place, verse, tier });
-            placesOf.set(person, list);
-          }
+        for (const [person, tier, verse] of rows) {
+          const list = placesOf.get(person) ?? [];
+          list.push({ place, verse, tier });
+          placesOf.set(person, list);
         }
-        for (const list of placesOf.values()) list.sort((a, b) => a.tier - b.tier);
-        ready = { people, byPlace, placesOf, credit: raw.credit };
-        return ready;
-      });
+      }
+      for (const list of placesOf.values()) list.sort((a, b) => a.tier - b.tier);
+      ready = { people, byPlace, placesOf, credit: raw.credit };
+      return ready;
+    });
     // A failed load is tried again next time.
     loaded.catch(() => {
       loaded = null;
@@ -121,4 +115,16 @@ export function loadPeople(): Promise<People> {
 /** A person's name in the reader's language: the Synodal form in Russian when known. */
 export function personName(p: Person, locale: Locale): string {
   return p.names?.[locale] ?? pick({ en: p.name, ru: p.ru }, locale) ?? p.name;
+}
+
+/** A person's time: the middle year of the chapters that tie them to places. */
+export function personYear(
+  people: People,
+  index: number,
+  chapterYears: ChapterYears,
+): number | undefined {
+  return medianYear(
+    (people.placesOf.get(index) ?? []).map((x) => x.verse),
+    chapterYears,
+  );
 }

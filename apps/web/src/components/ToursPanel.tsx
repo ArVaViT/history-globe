@@ -1,10 +1,10 @@
-import { formatRef, formatYear, isLocale, NT_BOOKS, type Locale } from "@hg/model";
+import { formatRef, formatYear, isLocale, NT_BOOKS, pick, type Locale } from "@hg/model";
 import { useTranslation } from "../i18n";
 import { Section } from "./Panel";
-import { readUrl } from "../url";
+import { useFrame } from "../frame";
+import { bookOf, verseKey } from "../chapter";
 import { lessonSearch } from "../lesson";
-import { readPicked, readTitle } from "./LessonRow";
-import { useState } from "react";
+import { useLessonStore } from "../lesson-store";
 
 type Stop = {
   readonly ref?: string;
@@ -26,14 +26,15 @@ export function ToursPanel({
 }) {
   const { t, i18n } = useTranslation();
   const locale: Locale = isLocale(i18n.language) ? i18n.language : "en";
-  const [lesson] = useState(readPicked);
+  const { picked: lesson, title } = useLessonStore();
+  const { embed } = useFrame();
   return (
     <Section>
       {/* Forty-six tours would fill the column: the list scrolls on its own, on a phone too
           (the panel then fits above the timeline and fades out instead of being cut), each
           testament's heading stays in view over its own tours, and a focused tour is kept
           clear of it. */}
-      <div className="hg-fade max-h-[min(460px,52vh)] max-md:max-h-[calc(100dvh-var(--hg-timeline-h,124px)-200px)] scroll-pt-7 overflow-y-auto [scrollbar-width:thin]">
+      <div className="hg-fade max-h-[min(460px,52vh)] max-md:max-h-[calc(100dvh-var(--hg-timeline-h)-200px)] scroll-pt-7 overflow-y-auto [scrollbar-width:thin]">
         {(["whole", "ot", "nt", "beyond"] as const).map((testament) => {
           // Tours come sorted by year: the Old Testament ones are before the era. One that
           // runs through both (the empires, Genesis to Acts) stands above them.
@@ -57,7 +58,7 @@ export function ToursPanel({
                 >
                   <span className="min-w-0 flex-1">
                     <span className="block truncate font-serif text-[14.5px] leading-snug text-ink">
-                      {tour.title[i18n.language] ?? tour.title.en}
+                      {pick(tour.title, i18n.language)}
                     </span>
                     <span className="block truncate text-[11.5px] text-ink-soft">
                       {tour.approximate ? `${t("place.circa")} ` : ""}
@@ -72,15 +73,12 @@ export function ToursPanel({
       </div>
       {/* A lesson being built (lesson.ts), here too: where the tours are, it starts like one.
           Not in a frame on another site, where the cards have no lesson button. */}
-      {!readUrl().embed && lesson.length >= 2 && (
+      {!embed && lesson.length >= 2 && (
         <p className="mx-4 mt-2 flex flex-wrap items-baseline gap-x-3 border-t border-line pt-2 text-[13px]">
           <span className="font-medium text-ink">
             {t("lesson.count", { count: lesson.length })}
           </span>
-          <a
-            href={lessonSearch(lesson, locale, readTitle())}
-            className="text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
-          >
+          <a href={lessonSearch(lesson, locale, title)} className="link-accent">
             {t("lesson.start")}
           </a>
         </p>
@@ -97,27 +95,22 @@ export function ToursPanel({
 export function tourSpan(stops: readonly Stop[], locale: Locale): string {
   // Told outside the Bible: the work it follows ("Josephus, Jewish War").
   const cite = stops.find((s) => s.source)?.source?.cite;
-  const told = cite && (cite[locale] ?? cite.en);
+  const told = pick(cite, locale);
   // The work, without the passages ("Church History 6.1, 6.2.5-6" → "Church History") or
-  // a note on the translation one stop quotes ("Исповедь (пер. М. Е. Сергеенко) 2.3").
+  // a note on the translation it names in brackets ("Исповедь (пер. …) 2.3").
   if (told) return told.replace(/\s+\d[\d.,:\s–-]*$/, "").replace(/\s*\([^()]*\)$/, "");
   let first = stops[0]?.ref?.split("-")[0];
   const last = stops.at(-1)?.ref?.split("-").at(-1);
   if (!first || !last) return "";
-  const book = (osis: string) => osis.split(".")[0];
-  const at = (osis: string) => {
-    const [, c = "0", v = "0"] = osis.split(".");
-    return Number(c) * 1000 + Number(v);
-  };
   try {
     // Across books ("Мф 2:1 – Лк 24:53") the two ends are written in full.
-    if (book(first) !== book(last))
+    if (bookOf(first) !== bookOf(last))
       return `${formatRef(first, locale)} – ${formatRef(last, locale)}`;
-    if (at(last) < at(first)) {
+    if (verseKey(last) < verseKey(first)) {
       const ends = stops
         .flatMap((s) => (s.ref ?? "").split("-"))
-        .filter((r) => book(r) === book(first ?? ""));
-      first = ends.reduce((a, b) => (at(b) < at(a) ? b : a));
+        .filter((r) => bookOf(r) === bookOf(first ?? ""));
+      first = ends.reduce((a, b) => (verseKey(b) < verseKey(a) ? b : a));
     }
     return formatRef(first === last ? first : `${first}-${last}`, locale);
   } catch {
@@ -128,6 +121,6 @@ export function tourSpan(stops: readonly Stop[], locale: Locale): string {
 /** Whether a tour's stops read from both testaments, or from an author outside the Bible. */
 function testamentOf(stops: readonly Stop[]): "whole" | "ot" | "nt" | "beyond" {
   if (stops.some((s) => s.source)) return "beyond";
-  const nt = stops.map((s) => NT_BOOKS.has(s.ref?.split(".")[0] ?? ""));
+  const nt = stops.map((s) => NT_BOOKS.has(bookOf(s.ref ?? "")));
   return nt.includes(true) && nt.includes(false) ? "whole" : nt.includes(true) ? "nt" : "ot";
 }

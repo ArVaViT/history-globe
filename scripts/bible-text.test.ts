@@ -13,6 +13,7 @@ import {
   readTsarigrad,
   repair,
   septuagintView,
+  SOURCES,
   swordVersification,
 } from "./bible-text.ts";
 
@@ -97,6 +98,14 @@ function writeModule(
   execFileSync("zip", ["-qr", zip, "mods.d", "modules"], { cwd: root });
   return zip;
 }
+
+// ADR 0008: the Bibles quoted are public domain, every one (the allowlist's PD); an edition
+// under any other licence (BY-ND, BY-SA, a publisher's) never joins SOURCES.
+describe("the Bible editions", () => {
+  it.each(Object.entries(SOURCES))("%s is public domain", (_, src) => {
+    expect(src.license).toMatch(/^public domain\b/);
+  });
+});
 
 describe("readSword", () => {
   it("reads a module in the KJV's grid, which a .conf without Versification means", () => {
@@ -194,6 +203,12 @@ describe("repair", () => {
     ).toBe("som har skapt Bjørnen, Orion og Syvstjernen og Sydens stjernekammere,");
     expect(repair("nb", "skal ikke bli lÃ¦gt. likesom Salman Ã¸dela")).toBe(
       "skal ikke bli lægt. likesom Salman ødela",
+    );
+  });
+
+  it("mends the letter the Luther text lost in Num 27:12", () => {
+    expect(repair("de", "besiehe das Land, das ich den Kindern Israel gebe werde.")).toBe(
+      "besiehe das Land, das ich den Kindern Israel geben werde.",
     );
   });
 

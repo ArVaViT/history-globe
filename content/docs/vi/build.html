@@ -10,7 +10,7 @@ description: Bạn được lấy gì từ History Globe và lấy như thế n�
   nó thì không được sao chép. Trang này cho biết ranh giới nằm ở đâu.
 </p>
 
-<h2>Bạn được lấy gì</h2>
+<h2 id="what-you-may-take">Bạn được lấy gì</h2>
 <div class="table">
   <table>
     <thead>
@@ -71,18 +71,19 @@ description: Bạn được lấy gì từ History Globe và lấy như thế n�
   địa cầu.
 </p>
 
-<h2>Cách ghi công</h2>
+<h2 id="how-to-credit">Cách ghi công</h2>
 <p>
   Ở nơi bạn hiển thị dữ liệu, hãy ghi tên các nguồn như <code>index.json</code> liệt kê. Dạng ngắn
   nhất đáp ứng các giấy phép:
 </p>
 <pre><code>Data: History Globe by Vadym Arnaut ({{site}}), CC BY 4.0;
-places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0).</code></pre>
+places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0); place ids from Pleiades (CC BY 3.0).</code></pre>
 <p>Trong một trang, kèm liên kết:</p>
 <pre><code>&lt;p&gt;Data: &lt;a href="{{site}}/"&gt;History Globe&lt;/a&gt; by Vadym Arnaut,
   &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC BY 4.0&lt;/a&gt;;
   places from &lt;a href="https://www.openbible.info/geo/"&gt;OpenBible.info&lt;/a&gt;,
-  people from &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;.&lt;/p&gt;</code></pre>
+  people from &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;,
+  place ids from &lt;a href="https://pleiades.stoa.org/"&gt;Pleiades&lt;/a&gt;.&lt;/p&gt;</code></pre>
 <p>
   <code>{{site}}/api/v1/index.json</code> chứa đầy đủ các dòng ghi công, và mọi phản hồi của API đều
   được gửi kèm một header <code>Link</code> nêu tên giấy phép của nó. Một bài viết hay câu trả lời
@@ -90,7 +91,7 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
   trang của nó.
 </p>
 
-<h2>Giới hạn</h2>
+<h2 id="limits">Giới hạn</h2>
 <ul>
   <li>
     <b>Không khóa, không hạn mức.</b> API là các tệp tĩnh đặt sau một bộ nhớ đệm. Hãy tải mỗi tệp
@@ -114,7 +115,7 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
   </li>
 </ul>
 
-<h2>Bắt đầu</h2>
+<h2 id="start">Bắt đầu</h2>
 <pre><code>const api = "{{site}}/api/v1";
 const places = await (await fetch(`${api}/places.json`)).json();
 const byId = new Map(places.map((p) =&gt; [p.id, p]));
@@ -126,7 +127,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   >.
 </p>
 
-<h2>Đề nghị thêm</h2>
+<h2 id="asking-for-more">Đề nghị thêm</h2>
 <p>
   Một bản dịch các bài viết, văn bản của chúng trên một nền tảng khác, hay một giấy phép mà bảng
   trên không cấp: hãy viết thư đến
@@ -134,7 +135,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   được một giấy phép bằng văn bản cho những gì họ cần; các giấy phép công khai vẫn giữ nguyên.
 </p>
 
-<h2>Dành cho các tác tử AI</h2>
+<h2 id="for-ai-agents">Dành cho các tác tử AI</h2>
 <p>
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> nói cùng những điều này trong một trang. Các
   công cụ tìm kiếm và những trợ lý trả lời có kèm trích dẫn nguồn đều được hoan nghênh; các bài viết

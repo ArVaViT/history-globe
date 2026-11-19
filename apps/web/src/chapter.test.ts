@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 import {
   chapterFocus,
+  chapterOf,
+  isPersonRef,
+  personRef,
   chapterLabel,
   chapterRoute,
   firstVerseIn,
@@ -151,5 +154,16 @@ describe("a chapter's frame and way", () => {
     const way = { route: [at(1, 2), at(3, 4)], routePlaces: ["a", "b"] };
     const focus = { ref: "Acts.27", places: ["a"], year: 60, ...way };
     expect(withoutYear(focus)).toEqual({ ref: "Acts.27", places: ["a"], ...way });
+  });
+});
+
+describe("a person's places on the map", () => {
+  it("share the focus under their own ref and are never a chapter", () => {
+    const person = { ref: personRef("paul"), places: ["a1"] };
+    expect(isPersonRef(person.ref)).toBe(true);
+    expect(chapterOf(person)).toBeNull();
+    expect(chapterOf({ ref: "Acts.16", places: [] })?.ref).toBe("Acts.16");
+    expect(chapterOf(null)).toBeNull();
+    expect(isPersonRef(undefined)).toBe(false);
   });
 });

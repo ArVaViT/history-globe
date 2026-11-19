@@ -1,7 +1,9 @@
 # Saul, the first king, 1 Samuel 9-31, in the order of the text. The tour's year (1050 BC)
 # is the conventional start of his reign (c. 1050-1010 BC), a point for the map rather than
 # a date. The Samuel tour holds the assembly at Gilgal (11:14-15); the David tour holds
-# the battle on Mount Gilboa (31:1-6), so this one takes up the story after it.
+# the battle on Mount Gilboa (31:1-6), so this one takes up the story after it. The last
+# three stops, Saul's last night at En-dor, his death and his burial, show 1010 BC, the end
+# of his reign, as the David tour shows Gilboa.
 id: saul-king
 title:
   en: "Saul, the first king"
@@ -175,6 +177,7 @@ stops:
       bg: "Върнал се в Галгал от войната с Амалик, Саул е пощадил онова, което му е било заповядано да изтреби: „послушването е по-добро от жъртвата“, и царството му е отнето."
   - place: aca444b # En-dor
     ref: 1Sam.28.7-1Sam.28.25
+    year: "1010 BC"
     note:
       en: "Before the last battle, disguised, he goes by night to a woman with a familiar spirit at En-dor and hears that tomorrow he and his sons will be with Samuel."
       ru: "Перед последней битвой он, переодевшись, идёт ночью к волшебнице в Аэндор и слышит, что завтра он и сыновья его будут с Самуилом."
@@ -199,6 +202,7 @@ stops:
       bg: "Преди последната битка той отива преоблечен нощем при една жена, която гадае чрез дух, в Ен-Дор и чува, че утре той и синовете му ще бъдат при Самуил."
   - place: a2a8df0 # Beth-shan
     ref: 1Sam.31.8-1Sam.31.10
+    year: "1010 BC"
     note:
       en: "The day after the battle the Philistines find Saul and his three sons fallen on Mount Gilboa and fasten his body to the wall of Beth-shan."
       ru: "На другой день после битвы Филистимляне находят Саула и трёх его сыновей, павших на горе Гелвуе, и вешают его тело на стене Беф-Сана."
@@ -223,6 +227,7 @@ stops:
       bg: "На другия ден след битката филистимците намират Саул и тримата му синове паднали на планината Гелвуя и приковават тялото му на стената на Бет-Сан."
   - place: af92088 # Jabesh-gilead
     ref: 1Sam.31.11-1Sam.31.13
+    year: "1010 BC"
     note:
       en: "The valiant men of Jabesh-gilead, whom he once saved, go all night, take the bodies from the wall, and bury their bones under a tree at Jabesh."
       ru: "Сильные люди из Иависа Галаадского, которых он некогда спас, идут всю ночь, снимают тела со стены и погребают кости под дубом в Иависе."

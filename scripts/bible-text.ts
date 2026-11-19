@@ -10,77 +10,11 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { inflateSync } from "node:zlib";
 import { toSynodal } from "../packages/model/src/synodal.ts";
-import type { Locale } from "../packages/model/src/time.ts";
+import { USFM_TO_OSIS } from "./bible-books.ts";
+import type { Locale } from "../packages/model/src/locales.ts";
 
 /** USFM book codes → OSIS. */
-export const OSIS: Record<string, string> = {
-  GEN: "Gen",
-  EXO: "Exod",
-  LEV: "Lev",
-  NUM: "Num",
-  DEU: "Deut",
-  JOS: "Josh",
-  JDG: "Judg",
-  RUT: "Ruth",
-  "1SA": "1Sam",
-  "2SA": "2Sam",
-  "1KI": "1Kgs",
-  "2KI": "2Kgs",
-  "1CH": "1Chr",
-  "2CH": "2Chr",
-  EZR: "Ezra",
-  NEH: "Neh",
-  EST: "Esth",
-  JOB: "Job",
-  PSA: "Ps",
-  PRO: "Prov",
-  ECC: "Eccl",
-  SNG: "Song",
-  ISA: "Isa",
-  JER: "Jer",
-  LAM: "Lam",
-  EZK: "Ezek",
-  DAN: "Dan",
-  HOS: "Hos",
-  JOL: "Joel",
-  AMO: "Amos",
-  OBA: "Obad",
-  JON: "Jonah",
-  MIC: "Mic",
-  NAM: "Nah",
-  HAB: "Hab",
-  ZEP: "Zeph",
-  HAG: "Hag",
-  ZEC: "Zech",
-  MAL: "Mal",
-  MAT: "Matt",
-  MRK: "Mark",
-  LUK: "Luke",
-  JHN: "John",
-  ACT: "Acts",
-  ROM: "Rom",
-  "1CO": "1Cor",
-  "2CO": "2Cor",
-  GAL: "Gal",
-  EPH: "Eph",
-  PHP: "Phil",
-  COL: "Col",
-  "1TH": "1Thess",
-  "2TH": "2Thess",
-  "1TI": "1Tim",
-  "2TI": "2Tim",
-  TIT: "Titus",
-  PHM: "Phlm",
-  HEB: "Heb",
-  JAS: "Jas",
-  "1PE": "1Pet",
-  "2PE": "2Pet",
-  "1JN": "1John",
-  "2JN": "2John",
-  "3JN": "3John",
-  JUD: "Jude",
-  REV: "Rev",
-};
+export const OSIS = USFM_TO_OSIS;
 
 /** Plain verse text from a line of USFM: words kept, notes and markers dropped. */
 function plain(text: string): string {
@@ -758,8 +692,8 @@ export const SOURCES: Readonly<Record<Locale, BibleSource>> = {
     title: "和合本 (Chinese Union Version), 简体",
     page: "https://ebible.org/cmn-cu89s/",
   },
-  // The Nordic Bibles and the Tagalog one are SWORD modules too (2026-10-23); the Swedish
-  // and Danish ones file their verses in the NRSV's grid (their .conf says so).
+  // The Nordic Bibles and the Tagalog one are SWORD modules too; the Swedish and Danish
+  // ones file their verses in the NRSV's grid (their .conf says so).
   sv: {
     name: "Bibeln 1917 (CrossWire Swe1917)",
     url: "https://www.crosswire.org/ftpmirror/pub/sword/packages/rawzip/Swe1917.zip",
@@ -800,8 +734,8 @@ export const SOURCES: Readonly<Record<Locale, BibleSource>> = {
     title: "Ang Biblia (1905), Philippine Bible Society",
     page: "https://www.crosswire.org/sword/modules/ModInfo.jsp?modName=TagAngBiblia",
   },
-  // Wave 4 (2026-10-25), known to the code before the site publishes them. The Hungarian
-  // module files its verses in the Calvin grid (CALVIN), the Finnish one in the NRSVA's.
+  // The Hungarian module files its verses in the Calvin grid (CALVIN), the Finnish one in the
+  // NRSVA's.
   hu: {
     name: "Károli Bible, revised 1908 (CrossWire HunKar)",
     url: "https://www.crosswire.org/ftpmirror/pub/sword/packages/rawzip/HunKar.zip",
@@ -826,10 +760,10 @@ export const SOURCES: Readonly<Record<Locale, BibleSource>> = {
     title: "Kinh Thánh, bản dịch Cadman (1925)",
     page: "https://ebible.org/vie1934/",
   },
-  // Wave 5 (2026-10-25), known to the code before the site publishes them; neither edition is
-  // on eBible.org or CrossWire. The Romanian Bible is the Orthodox Synod's of 1914 as Romanian
-  // Wikisource transcribes it, each page pinned at its revision (scripts/biblia-1914.json), in
-  // the Septuagint's numbering (septuagintView places it in the KJV's), its 1914 spelling kept.
+  // Neither of the next two is on eBible.org or CrossWire. The Romanian Bible is the Orthodox
+  // Synod's of 1914 as Romanian Wikisource transcribes it, each page pinned at its revision
+  // (scripts/biblia-1914.json), in the Septuagint's numbering (septuagintView places it in the
+  // KJV's), its 1914 spelling kept.
   // The Bulgarian one is the Tsarigrad translation (1871), the 1914 printing typed in modern
   // spelling, from the Internet Archive, pinned by its SHA-256.
   ro: {
@@ -889,13 +823,13 @@ export function readEdition(src: BibleSource, cache: string): Map<string, string
  * One Swedish verse ends in a cross-reference (2 Kings 12:1, «&gt;2 Krön 24,1 f.»), and two
  * Norwegian ones have æ and ø in the wrong code page (Hosea 5:13, 10:14: «Ã¦», «Ã¸»).
  *
- * Wave 4: the Finnish and Vietnamese texts sit in the KJV's slots but print their own
+ * The Finnish and Vietnamese texts sit in the KJV's slots but print their own
  * numbering where it differs («{13:1}», «(030-1)», «20-43»); the Vietnamese one keeps a
  * capital vowel's tone mark in the old VNI code («Aáy», «Eùp-ra-im») and has «ỳ» as «”»
  * («phép k”»); the Finnish one brackets the doxology of Matthew 6:13 in escaped tags
  * («&lt;FO&gt;»).
  *
- * Wave 5: Biblia 1914 keeps its spelling of 1914 («au făcut Dumnezeu», «erà», «pre», «s’a»);
+ * Biblia 1914 keeps its spelling of 1914 («au făcut Dumnezeu», «erà», «pre», «s’a»);
  * only what Wikisource's transcription garbled is mended: a cross-reference typed into a verse
  * (Exod 21:29 «Fac. 9, 5.»), a «»» for the full stop (Num 31:38) and «Saducheiior» (Matt
  * 16:6). The Tsarigrad text sets in brackets the words its translators supplied («[ Проводи
@@ -998,6 +932,8 @@ export const REPAIRS: Readonly<Partial<Record<Locale, readonly (readonly [RegExp
     // A name broken at a line end kept the space: «Na-xa- rét», «Ga- li-lê».
     [/(\p{L})- (?=\p{Ll})/gu, "$1-"],
   ],
+  // The eBible.org text of Luther 1912 dropped a letter in Num 27:12 («gebe werde»).
+  de: [[/Israel gebe werde/g, "Israel geben werde"]],
   ro: [
     [/ Fac\. 9, 5\.$/, ""],
     [/doi»$/, "doi."],

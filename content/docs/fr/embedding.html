@@ -8,7 +8,7 @@ description: Placez le globe sur votre propre site en une ligne — la carte d�
   la carte d’un chapitre à côté du passage de votre page ; quelques messages les tiennent en phase.
 </p>
 
-<h2>Démarrage rapide</h2>
+<h2 id="quick-start">Démarrage rapide</h2>
 <pre><code>&lt;iframe
   src="{{site}}/embed/v1?ref=Acts.16&amp;locale=fr"
   title="Carte d’Actes 16"
@@ -32,7 +32,7 @@ description: Placez le globe sur votre propre site en une ligne — la carte d�
   <li>Le cadre fonctionne jusqu’à la largeur d’un téléphone ; une hauteur de 480 px suffit.</li>
 </ul>
 
-<h2>Un chapitre ou un passage</h2>
+<h2 id="a-chapter-or-a-passage">Un chapitre ou un passage</h2>
 <p>
   <code>ref</code> accepte une référence OSIS, avec les abréviations anglaises des livres et la
   numérotation anglaise des versets :
@@ -72,7 +72,7 @@ description: Placez le globe sur votre propre site en une ligne — la carte d�
   garde l’année en cours de la carte.
 </p>
 
-<h2>Paramètres</h2>
+<h2 id="parameters">Paramètres</h2>
 <div class="table">
   <table>
     <thead>
@@ -180,14 +180,14 @@ description: Placez le globe sur votre propre site en une ligne — la carte d�
   les mêmes paramètres fonctionnent après <code>/embed/v1</code>.
 </p>
 
-<h2>Messages</h2>
+<h2 id="messages">Messages</h2>
 <p>
   Le globe et votre page communiquent par <code>postMessage</code>. Chaque message est un objet avec
   <code>type</code> et <code>v: 1</code>. Le globe n’envoie que ce qui se passe sur la carte, jamais
   rien qui identifie le lecteur, si bien qu’il écrit à la page parente quelle que soit son origine
   (cible <code>"*"</code>) ; il n’accepte de messages que de la page qui contient le cadre.
 </p>
-<h3>Du globe</h3>
+<h3 id="from-the-globe">Du globe</h3>
 <div class="table">
   <table>
     <thead>
@@ -233,7 +233,10 @@ description: Placez le globe sur votre propre site en une ligne — la carte d�
       <tr>
         <td><code>hg:error</code></td>
         <td><code>{ code, message }</code></td>
-        <td>la carte ou ses données n’ont pas pu se charger</td>
+        <td>
+          la carte ou ses données n’ont pas pu se charger : <code>code</code> vaut
+          <code>"map"</code> ou <code>"data"</code>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -242,9 +245,12 @@ description: Placez le globe sur votre propre site en une ligne — la carte d�
   <code>view</code> contient <code>year</code>, <code>locale</code> et <code>layers</code> et, s’ils
   sont définis, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> et
   <code>camera</code>. Une <code>view</code> sans <code>place</code> signifie qu’aucun lieu n’est
-  sélectionné.
+  sélectionné. <code>camera</code> est un objet,
+  <code>{ center: [35.2, 31.8], zoom: 7, pitch: 30, bearing: 0 }</code>, et non la chaîne de
+  l’adresse ; <code>layers</code> donne à chaque couche <code>true</code> ou <code>false</code> :
+  <code>{ relief: false, battles: false }</code>.
 </p>
-<h3>Vers le globe</h3>
+<h3 id="to-the-globe">Vers le globe</h3>
 <div class="table">
   <table>
     <thead>
@@ -300,11 +306,11 @@ description: Placez le globe sur votre propre site en une ligne — la carte d�
   <code>Q16869</code>). Les deux sortes peuvent figurer dans <code>view.place</code> et
   <code>hg:place-clicked</code>, et <code>hg:set-view</code> accepte les deux ; si vos données ne
   contiennent que des lieux d’OpenBible, testez la forme de l’identifiant avant de chercher le lieu.
-  Sur les {{openbible}} lieux d’OpenBible, {{absent}} ne figurent pas sur la carte (ils n’ont aucun
-  point que l’on puisse publier) ; leurs identifiants sont ignorés.
+  Sur les {{openbible}} lieux d’OpenBible, {{absent}} ne figurent pas sur la carte (écartés, ou sans
+  aucun point) ; leurs identifiants sont ignorés.
 </p>
 
-<h2>Exemple : la carte suit votre lecteur</h2>
+<h2 id="example-the-map-follows-your-reader">Exemple : la carte suit votre lecteur</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
 // Quand votre lecteur ouvre un chapitre, l’afficher sur la carte.
@@ -434,16 +440,18 @@ function closeBox() {
   du texte simple ; il en va de même d’un nom que les versets de la Bible emploient surtout pour
   autre chose (« Kadesh » y désigne Kadesh-Barnéa, non le Kadesh de la base de données). Le nom d’un
   lieu qui est aussi un prénom (Jordan, Sharon) est laissé de côté à côté d’un autre mot à
-  majuscule : Jordan Smith est une personne, non le fleuve. En russe, en ukrainien, en polonais et
-  en tchèque, les noms sont repérés dans leurs formes déclinées (« в Египте », « w Jerozolimie »,
-  « v Jeruzalémě »), et en allemand, également au génitif (« Jerusalems »). Les liens, le code, les
-  champs de formulaire, les boutons et les titres sont laissés tels quels.
+  majuscule : Jordan Smith est une personne, non le fleuve. En russe, en ukrainien, en polonais, en
+  tchèque, en serbe, en hongrois, en finnois et en roumain, les noms sont repérés dans leurs formes
+  déclinées (« в Египте », « w Jerozolimie », « v Jeruzalémě »), et en allemand, en suédois, en
+  danois et en norvégien, également au génitif (« Jerusalems »). Les liens, le code, les champs de
+  formulaire, les boutons et les titres sont laissés tels quels.
 </p>
 <p class="note">
   Le script n’a aucune dépendance et ne dépose aucun cookie. Il lit sur le globe un fichier de noms
-  (de 20 à 35 Ko environ sur le réseau selon la langue, plus 7 Ko de script), sans transmettre
-  l’adresse de votre page comme référent, et ne modifie que les noms qu’il relie. Il fonctionne sous
-  une Content Security Policy stricte qui autorise l’adresse du globe dans
+  (de {{names_kb_min}} à {{names_kb_max}} Ko environ sur le réseau selon la langue, plus
+  {{script_kb}} Ko de script), sans transmettre l’adresse de votre page comme référent, et ne
+  modifie que les noms qu’il relie. Il fonctionne sous une Content Security Policy stricte qui
+  autorise l’adresse du globe dans
   <code>script-src</code> et <code>connect-src</code>. Pour le texte que votre page ajoute plus
   tard, appelez <code>HistoryGlobePlaces.scan(element)</code> une fois le texte affiché : le script
   découpe les nœuds de texte ; dans une page React ou Vue, lancez-le donc sur un contenu que le
@@ -451,7 +459,7 @@ function closeBox() {
 </p>
 <script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
 
-<h2>Stabilité</h2>
+<h2 id="stability">Stabilité</h2>
 <p>
   <code>/embed/v1</code> est un contrat : dans la v1, les paramètres et les messages ne font que
   s’ajouter, jamais être modifiés ni supprimés. Un changement incompatible sortira sous

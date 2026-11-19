@@ -9,7 +9,7 @@ description: De unde provine fiecare loc, graniță, dată și persoană din His
   schimbat și ce nu știm.
 </p>
 
-<h2>Locurile Bibliei</h2>
+<h2 id="places-of-the-bible">Locurile Bibliei</h2>
 <p>
   Cele {{places}} de locuri și versetele lor provin din
   <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
@@ -23,7 +23,8 @@ description: De unde provine fiecare loc, graniță, dată și persoană din His
   etichetează OpenBible și fiecare dintre ele are o pagină proprie; celelalte {{unnamed}} sunt
   înregistrări pe care le păstrează și pe care niciun verset din acele cărți nu le numește (de
   exemplu, Adasa din 1 Macabei). {{articles}} de locuri au un articol. Alte {{excluded}} au fost
-  omise, în lipsa unui punct care să poată fi publicat (vezi mai jos).
+  omise, în lipsa unui punct care să poată fi publicat (vezi mai jos). Alte {{without_point}} nu au
+  niciun punct în OpenBible.
 </p>
 <ul>
   <li>
@@ -46,7 +47,7 @@ description: De unde provine fiecare loc, graniță, dată și persoană din His
   </li>
 </ul>
 
-<h2>Când au existat locurile</h2>
+<h2 id="when-places-stood">Când au existat locurile</h2>
 <p>
   Un oraș este desenat pe hartă în întregime doar în anii în care a existat. Pentru {{life}} de
   locuri ale Bibliei, anii întemeierii, distrugerii și părăsirii sunt înregistrați manual, fiecare
@@ -55,23 +56,24 @@ description: De unde provine fiecare loc, graniță, dată și persoană din His
   acestea.
 </p>
 <p>
-  Cele {{ancient}} de orașe ale lumii antice pe care Biblia nu le numește — capitale, porturi și
-  sanctuare precum Ugarit, Hattusa, Mari sau Delfi — au fost alese și datate unul câte unul: fiecare
-  este amplasat după înregistrarea sa din <a href="https://pleiades.stoa.org">Pleiades</a> sau
-  Wikidata, pe situl antic, nu pe orașul modern, și datat pe baza acestor înregistrări și a
-  articolelor enciclopedice, puse de acord manual. Încă aproximativ o mie patru sute au fost alese
-  de un script: așezări, sanctuare și porturi din Pleiades al căror element Wikidata este un sit
-  antic, nu un oraș modern; punctele lor sunt cele din Pleiades, numele cele din Wikidata (acolo
-  unde Wikidata nu are unul în rusă, ucraineană, bulgară sau sârbă, ale noastre, în forma folosită
-  de studiile clasice din limba respectivă), iar anii lor sunt intervalul perioadelor în care
-  Pleiades le atestă, așa că toate sunt marcate cu „cca”. Acolo unde un oraș a fost distrus la
+  Dintre cele {{ancient}} de orașe ale lumii antice pe care Biblia nu le numește — capitale, porturi
+  și sanctuare precum Ugarit, Hattusa, Mari sau Delfi —, {{ancient_hand}} au fost alese și datate
+  unul câte unul: fiecare este amplasat după înregistrarea sa din
+  <a href="https://pleiades.stoa.org">Pleiades</a> sau Wikidata, pe situl antic, nu pe orașul
+  modern, și datat pe baza acestor înregistrări și a articolelor enciclopedice, puse de acord
+  manual. Celelalte {{ancient_script}} au fost alese de un script: așezări, sanctuare și porturi din
+  Pleiades al căror element Wikidata este un sit antic, nu un oraș modern; punctele lor sunt cele
+  din Pleiades, numele cele din Wikidata (acolo unde Wikidata nu are unul în rusă, ucraineană,
+  bulgară sau sârbă, ale noastre, în forma folosită de studiile clasice din limba respectivă; în
+  celelalte limbi, unde nu are unul, cel englezesc), iar anii lor sunt intervalul perioadelor în
+  care Pleiades le atestă, așa că toate sunt marcate cu „cca”. Acolo unde un oraș a fost distrus la
   mijlocul unei perioade, sfârșitul lui este stabilit manual după istorie. Un loc apare la un nivel
   de zoom stabilit după cât de des îl numește Biblia; un oraș pe care Biblia abia îl numește, dar pe
   care lumea îl cunoaște bine — Cartagina, Sparta, Ur — apare mai devreme, după numărul de articole
   din Wikipedia despre situl antic însuși.
 </p>
 
-<h2>Granițe</h2>
+<h2 id="borders">Granițe</h2>
 <p>
   Statele și granițele lor, an de an, provin din
   <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatria</a> (Seshat Global History Databank,
@@ -101,22 +103,23 @@ description: De unde provine fiecare loc, graniță, dată și persoană din His
   722 î.Hr., țara Israelului este desenată ca provincia asiriană care devenise.
 </p>
 
-<h2>Persoane</h2>
+<h2 id="people">Persoane</h2>
 <p>
   Cele {{people}} de persoane ale Bibliei și legăturile lor de familie provin din TIPNR de la STEP
   Bible (Tyndale House, Cambridge). Nu am luat legăturile pe încredere:
 </p>
 <ul>
   <li>
-    legăturile de familie ale celor 1.200 de persoane pe care textul le numește cel mai des, precum
-    și genealogiile din 1 Cronici au fost citite în paralel cu versetele; au fost eliminate 153 de
-    legături pe care textul nu le afirmă — frații lui Isus ca fii ai lui Iosif și ai Mariei, Izabela
-    ca mamă a lui Ahazia —, iar legăturile lipsă din genealogia lui Isus au fost adăugate din text;
+    legăturile de familie ale celor {{n:1200}} de persoane pe care textul le numește cel mai des,
+    precum și genealogiile din 1 Cronici au fost citite în paralel cu versetele; au fost eliminate
+    153 de legături pe care textul nu le afirmă — frații lui Isus ca fii ai lui Iosif și ai Mariei,
+    Izabela ca mamă a lui Ahazia —, iar legăturile lipsă din genealogia lui Isus au fost adăugate
+    din text;
   </li>
   <li>
-    toate cele 1.136 de legături dintre o persoană și un loc în care aceasta are un rol central sau
-    secundar au fost citite verset cu verset; 344 au fost eliminate (Moise „în Canaan”, Avraam „în
-    Sodoma”, locurile unui fiu atribuite tatălui său), iar 94 au primit un verset mai potrivit;
+    toate cele {{n:1136}} de legături dintre o persoană și un loc în care aceasta are un rol central
+    sau secundar au fost citite verset cu verset; 344 au fost eliminate (Moise „în Canaan”, Avraam
+    „în Sodoma”, locurile unui fiu atribuite tatălui său), iar 94 au primit un verset mai potrivit;
   </li>
   <li>
     persoanele cu același nume sunt deosebite așa cum le deosebește textul: „Ioan Botezătorul”,
@@ -135,15 +138,16 @@ description: De unde provine fiecare loc, graniță, dată și persoană din His
   <a href="sources.html">surselor</a>. Niciun traseu nu a trecut neschimbat de prima revizuire;
   fiecare a fost corectat și verificat din nou. Ultima trecere completă, încheiată la 17 octombrie
   2026, a recitit toate cele 746 de articole în raport cu sursele lor, aproximativ 210 dintre ele de
-  două ori, și a făcut 1.088 de corecturi, fiecare transpusă în cele 11 limbi pe care le avea atunci
-  site-ul; erori propriu-zise au fost găsite în 157 de articole. Cele cinci limbi adăugate la 24
-  octombrie 2026 (suedeza, norvegiana, daneza, tagaloga și sârba) au fost traduse din textele
+  două ori, și a făcut {{n:1088}} de corecturi, fiecare transpusă în cele 11 limbi pe care le avea
+  atunci site-ul; erori propriu-zise au fost găsite în 157 de articole. Cele cinci limbi adăugate la
+  24 octombrie 2026 (suedeza, norvegiana, daneza, tagaloga și sârba) și cele cinci adăugate la 26
+  octombrie 2026 (maghiara, finlandeza, vietnameza, româna și bulgara) au fost traduse din textele
   corectate; fiecare dintre textele lor a fost apoi citit în paralel cu engleza într-o trecere de
   verificare independentă, iar fiecare citat a fost verificat cu Biblia limbii respective. Aceste
   treceri sunt verificările proprii ale proiectului, nu o evaluare colegială. Recenziile
   specialiștilor sunt publicate sub numele lor pe pagina <a href="reviews.html">recenziilor</a>, iar
   fiecare articol pe care l-a recenzat un specialist îl numește pe recenzent și trimite la recenzia
-  sa.
+  sa. Publicate până acum: <span class="reviews"></span>.
 </p>
 <p>
   Distanța până la o oprire este dată în linie dreaptă. Din 312 î.Hr., când încep drumurile romane,
@@ -164,8 +168,9 @@ description: De unde provine fiecare loc, graniță, dată și persoană din His
   ei care au hotărât soarta lui Israel. Fiecare se află în locul în care s-a dat și apare pe hartă
   în anii ei. Cele biblice sunt datate așa cum traseele datează aceleași istorisiri; celelalte nu au
   verset, ci o sursă antică sau științifică. O a doua trecere de verificare, independentă, a
-  verificat ciorna cu textul sinodal rus și cu King James Version: din 58 de înregistrări, 16 au
-  fost corectate, iar una a fost eliminată, deoarece harta nu are un punct pentru situl ei.
+  verificat ciorna cu textul sinodal rus și cu King James Version: din 58 de înregistrări (octombrie
+  2026), 16 au fost corectate, iar una a fost eliminată, deoarece harta nu are un punct pentru situl
+  ei.
 </p>
 
 <p>
@@ -214,7 +219,7 @@ description: De unde provine fiecare loc, graniță, dată și persoană din His
   </li>
 </ul>
 
-<h2>Verificări la fiecare build</h2>
+<h2 id="checks-on-every-build">Verificări la fiecare build</h2>
 <p>Nimic nu este publicat dacă nu trec toate verificările:</p>
 <ul>
   <li>
@@ -231,7 +236,7 @@ description: De unde provine fiecare loc, graniță, dată și persoană din His
   <li>schemele conținutului sunt stricte: un câmp necunoscut sau scris greșit oprește build-ul.</li>
 </ul>
 
-<h2>Ce este nesigur</h2>
+<h2 id="what-is-uncertain">Ce este nesigur</h2>
 <ul>
   <li>
     Datele dinainte de mileniul I î.Hr. sunt aproximative, iar unele sunt disputate; harta le
@@ -275,7 +280,7 @@ https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
   Cu un cont GitHub puteți folosi și linkul <i>Ai găsit o greșeală?</i> de pe fișa fiecărui loc,
   care deschide un issue în depozitul public cu locul deja completat, sau puteți deschide unul
   direct:
-  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+  <a href="https://github.com/ArVaViT/history-globe/issues/new?template=report-an-error.yml"
     >github.com/ArVaViT/history-globe/issues</a
   >.
 </p>

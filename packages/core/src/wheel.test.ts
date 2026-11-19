@@ -1,7 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { WheelClassifier, wheelIntent } from "./wheel.ts";
+import { WheelClassifier, type WheelLike } from "./wheel.ts";
 
-describe("wheelIntent", () => {
+/** One event on its own, as the first of a gesture. */
+const wheelIntent = (e: WheelLike) => new WheelClassifier().classify(e, 0);
+
+describe("the first event of a gesture", () => {
   it("pans with two fingers on a trackpad", () => {
     expect(wheelIntent({ deltaX: 3, deltaY: 12, deltaMode: 0, ctrlKey: false })).toEqual({
       kind: "pan",

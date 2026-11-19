@@ -24,6 +24,7 @@ export const POLITY_COLORS = [
   "#6d5a9c",
 ] as const;
 
+/** The map's colours. */
 export const T = {
   ocean: "#1f4257",
   oceanShallow: "#2b5872",
@@ -33,9 +34,19 @@ export const T = {
   inkSoft: "#5c4f3c",
   halo: "#f6efe1",
   water: "#1f5d86",
+  /** A sea's name, written on the dark sea. */
+  seaLabel: "#d7e7f2",
+  seaHalo: "#1d4a66",
   accent: "#9a3b1f",
   gold: "#b88a2e",
   mask: "#8f969b",
+  landmark: "#5b4630",
+  region: "#7a5a33",
+  polityLabel: "#4a3b28",
+  /** Warm brown, so a road is not read as a river or a border. */
+  road: "#7a5228",
+  /** A deep red, apart from the route's accent and the places' browns. */
+  battle: "#8e2a22",
 } as const;
 
 export const YEAR: ExpressionSpecification = ["global-state", "year"];
@@ -105,9 +116,9 @@ export const POLITY_LABEL_OFFSETS: ["center", [number, number], ...(string | [nu
 export const NAME: ExpressionSpecification = inLocale("name");
 
 /**
- * Towns and landmarks on the Russian map are labelled only with a verified Russian name:
- * without one they keep their dot, which can still be clicked. Regions and waters have no
- * dot, their label is all there is, so they keep the English name as a fallback.
+ * A town or landmark is named only where the data has its name in the map's language: without
+ * one it keeps its dot, which can still be clicked. Regions and waters have no dot, so they
+ * fall back to English.
  */
 export const HAS_LOCAL_NAME: ExpressionSpecification = hasInLocale("name");
 
@@ -121,14 +132,35 @@ export const UNCERTAIN_SITE: ExpressionSpecification = [
 /** The two browns (0, 8) are near the desert's own colour: their fill is laid on thicker. */
 export const WARM: ExpressionSpecification = ["match", ["get", "c"], [0, 8], 1.6, 1];
 
-export const polityColor: ExpressionSpecification = [
-  "match",
-  ["get", "c"],
-  ...POLITY_COLORS.flatMap((color, i) => [i, color]),
-  POLITY_COLORS[0],
-] as unknown as ExpressionSpecification;
+/**
+ * A `match` on a feature's property from a table of its values. The style spec types `match`
+ * as a fixed tuple, which a table spread into it cannot satisfy: the one cast lives here.
+ */
+function matchOf<O extends string | number>(
+  property: string,
+  table: readonly (readonly [string | number, O])[],
+  otherwise: O,
+): ExpressionSpecification {
+  return [
+    "match",
+    ["get", property],
+    ...table.flat(),
+    otherwise,
+  ] as unknown as ExpressionSpecification;
+}
 
-/** The outer ring of the focus mask, in degrees: what lies beyond is greyed out. */
+export const polityColor: ExpressionSpecification = matchOf(
+  "c",
+  POLITY_COLORS.map((color, i) => [i, color] as const),
+  POLITY_COLORS[0],
+);
+
+/**
+ * The world of the Bible and Acts, from Spain (Tarshish, Rom 15:24) to Persia, from the Black
+ * Sea to the Red Sea and Arabia: the focus mask's rings, in degrees. Beyond the inner ring the
+ * map is greyed lightly, beyond the outer one more.
+ */
+const FOCUS_INNER = { cx: 28, cy: 32, rx: 36, ry: 17 } as const;
 export const FOCUS = { cx: 28, cy: 32, rx: 40.5, ry: 19.5 } as const;
 
 /** Whether a point is inside the focus mask's outer ring (scripts/build-content.ts). */
@@ -136,20 +168,15 @@ export function inFocus(lon: number, lat: number): boolean {
   return ((lon - FOCUS.cx) / FOCUS.rx) ** 2 + ((lat - FOCUS.cy) / FOCUS.ry) ** 2 <= 1;
 }
 
-/** Soft "coming soon" mask: two rings around the Levant, stronger outside. */
-export function ellipse(
-  cx: number,
-  cy: number,
-  rx: number,
-  ry: number,
+/** A closed ring of n + 1 points round an ellipse. */
+function ellipse(
+  { cx, cy, rx, ry }: { cx: number; cy: number; rx: number; ry: number },
   n = 128,
 ): [number, number][] {
-  const pts: [number, number][] = [];
-  for (let i = 0; i <= n; i++) {
+  return Array.from({ length: n + 1 }, (_, i): [number, number] => {
     const a = (i / n) * 2 * Math.PI;
-    pts.push([cx + rx * Math.cos(a), cy + ry * Math.sin(a)]);
-  }
-  return pts;
+    return [cx + rx * Math.cos(a), cy + ry * Math.sin(a)];
+  });
 }
 
 export function focusMask(): FeatureCollection {
@@ -160,10 +187,8 @@ export function focusMask(): FeatureCollection {
     [-180, 85],
     [-180, -85],
   ];
-  // The world of the Bible and Acts: from Spain (Tarshish, Rom 15:24) to Persia, from the
-  // Black Sea to the Red Sea and Arabia. Widened on 2.10.2026.
-  const inner = ellipse(28, 32, 36, 17);
-  const outer = ellipse(FOCUS.cx, FOCUS.cy, FOCUS.rx, FOCUS.ry);
+  const inner = ellipse(FOCUS_INNER);
+  const outer = ellipse(FOCUS);
   return {
     type: "FeatureCollection",
     features: [
@@ -181,8 +206,6 @@ export function focusMask(): FeatureCollection {
   };
 }
 
-export const LANDMARK_INK = "#5b4630";
-
 /** Kinds drawn with an icon (icons.ts), and which one. */
 export const hasIcon: ExpressionSpecification = [
   "match",
@@ -191,15 +214,13 @@ export const hasIcon: ExpressionSpecification = [
   true,
   false,
 ];
-export const ICON_OF_KIND: ExpressionSpecification = [
-  "match",
-  ["get", "kind"],
-  ...Object.entries(KIND_ICON).flat(),
-  "",
-] as unknown as ExpressionSpecification;
+export const ICON_OF_KIND: ExpressionSpecification = matchOf("kind", Object.entries(KIND_ICON), "");
 
 /** First year of the New Testament narrative (6 BC, astronomical -5). */
 export const NT_FROM = -5;
+
+/** A year past every other: a missing end year (`life_until`, `gap_until`) never comes. */
+export const NO_YEAR = 100000;
 
 /**
  * The place did not stand in the chosen year. (coalesce, not to-number: to-number turns
@@ -213,21 +234,32 @@ export const OUT_OF_TIME: ExpressionSpecification = [
   [
     "all",
     ["has", "gap_from"],
-    [">=", YEAR, ["number", ["coalesce", ["get", "gap_from"], 100000]]],
-    ["<", YEAR, ["number", ["coalesce", ["get", "gap_until"], 100000]]],
+    [">=", YEAR, ["number", ["coalesce", ["get", "gap_from"], NO_YEAR]]],
+    ["<", YEAR, ["number", ["coalesce", ["get", "gap_until"], NO_YEAR]]],
   ],
   // No longer standing.
-  [">=", YEAR, ["number", ["coalesce", ["get", "life_until"], 100000]]],
+  [">=", YEAR, ["number", ["coalesce", ["get", "life_until"], NO_YEAR]]],
   // Not yet standing: its founding year, or, without one, the New Testament rule.
   [
     "case",
     ["has", "life_from"],
-    ["<", YEAR, ["number", ["coalesce", ["get", "life_from"], -100000]]],
+    ["<", YEAR, ["number", ["coalesce", ["get", "life_from"], -NO_YEAR]]],
     ["has", "life_own"],
     false,
     ["all", ["==", ["get", "ot"], 0], ["<", YEAR, NT_FROM]],
   ],
 ];
+
+/**
+ * The selected place. Paint reads feature-state, which is cheap (ADR 0004); a filter cannot,
+ * so filters read the global state `selected` (IS_SELECTED).
+ */
+export const SELECTED_STATE: ExpressionSpecification = [
+  "boolean",
+  ["feature-state", "selected"],
+  false,
+];
+export const HOVER_STATE: ExpressionSpecification = ["boolean", ["feature-state", "hover"], false];
 
 export const IS_SELECTED: ExpressionSpecification = [
   "==",
@@ -257,9 +289,9 @@ export const NOT_HIDDEN: ExpressionSpecification = [
 /**
  * A place's name out of its time (a town not yet built, or in ruins) only from a region's
  * view in: far out the pale names of Iconium and Lystra crowded 1800 BC, with no halo to read
- * them by. Up close they still say the town is not there yet (place-label-past).
+ * them by. Up close they still say the town is not there yet (place-label-past). A tour's stop
+ * or the picked place keeps its name whenever it stood: it is the one asked for.
  */
-// A tour's stop or the picked place keeps its name, whenever it stood (it is the one asked for).
 export const LABEL_IN_TIME: ExpressionSpecification = [
   "any",
   ["!", OUT_OF_TIME],
@@ -297,24 +329,25 @@ export const PLACE_ORDER: ExpressionSpecification = [
   ],
 ];
 
+/** A place off a running tour's route, faded so the stops stand out of a crowd. */
+const OFF_TOUR_OPACITY = 0.22;
+
 /**
- * Places named only in the New Testament fade before its events: Caesarea or
- * Capernaum must not read as towns of the Exodus. Seas and rivers do not fade;
- * the selected place never does.
+ * A place's opacity: 1 when selected; OFF_TOUR_OPACITY off a running tour; `outOfTime`
+ * outside its years (Caesarea or Capernaum must not read as towns of the Exodus); else 1.
  */
-export const fadeBeforeNT = (faded: number): ExpressionSpecification => [
+export const placeOpacity = (outOfTime: number): ExpressionSpecification => [
   "case",
-  ["boolean", ["feature-state", "selected"], false],
+  SELECTED_STATE,
   1,
-  // During a tour the places off its route fade, so the stops stand out of a crowd.
   OFF_TOUR,
-  0.22,
+  OFF_TOUR_OPACITY,
   OUT_OF_TIME,
-  faded,
+  outOfTime,
   1,
 ];
 
-export const kindIn = (kinds: readonly string[]): ExpressionSpecification => [
+const kindIn = (kinds: readonly string[]): ExpressionSpecification => [
   "match",
   ["get", "kind"],
   [...kinds],
@@ -353,15 +386,13 @@ export const minZoomByRank: ExpressionSpecification = [
 ];
 
 /**
- * A small place is drawn once a search flies to it, whatever its rank; the places of a
- * tour or a chapter from zoom 3, so a chapter framed whole (Acts 16, from Derbe to
- * Philippi) shows its places even on a phone. Their labels still give way to each other.
+ * Rank sets the zoom a place appears from; a tour's or a chapter's places show from zoom 2
+ * (Acts 27 framed on a phone is below zoom 3), the selected place from zoom 5. Their labels
+ * still give way to each other.
  */
 export const visibleAtZoom: ExpressionSpecification = [
   "any",
   [">=", ["zoom"], minZoomByRank],
-  // A tour's or a chapter's places from a continent's view: Acts 27 on a phone frames
-  // Italy to Sidon below zoom 3, and its places were not drawn at all.
   ["all", IN_TOUR, [">=", ["zoom"], 2]],
   ["all", IS_SELECTED, [">=", ["zoom"], 5]],
 ];
@@ -385,11 +416,8 @@ export const labelledAtZoom: ExpressionSpecification = [
  */
 export const PICKED: ExpressionSpecification = ["any", IS_SELECTED, IN_TOUR];
 
-/**
- * A tour's numbered stops are drawn (MapLibreRenderer.setRoute, with the routes layer on):
- * a stop's own mark lies hidden under its disc, as the circles once lay under it.
- */
-export const STOPS_SHOWN: ExpressionSpecification = ["boolean", ["global-state", "stops"], false];
+/** A tour's numbered stops are drawn (MapLibreRenderer.setRoute, with the routes layer on). */
+const STOPS_SHOWN: ExpressionSpecification = ["boolean", ["global-state", "stops"], false];
 
 /** The places the drawn stops stand at (a tour's, or a chapter's way). */
 const AT_A_STOP: ExpressionSpecification = [
@@ -399,11 +427,11 @@ const AT_A_STOP: ExpressionSpecification = [
 ];
 
 /** A mark's opacity: none under a stop's disc, else faded as its place's name is. */
-export const markOpacity = (faded: number): ExpressionSpecification => [
+export const markOpacity = (outOfTime: number): ExpressionSpecification => [
   "case",
   ["all", AT_A_STOP, STOPS_SHOWN],
   0,
-  fadeBeforeNT(faded),
+  placeOpacity(outOfTime),
 ];
 
 /**
@@ -424,9 +452,9 @@ export const TOWN_MARK: ExpressionSpecification = [
 ];
 
 /**
- * A town mark's size, as the dots' radii were (in px, over icons.ts DOT_RADIUS): the
- * picked places one size, the lesser towns smaller at a region's view, where three hundred
- * of them made a carpet over the Levant. A ringed mark is drawn at its own size.
+ * A town mark's size, a radius in px over icons.ts DOT_RADIUS: the picked places one size,
+ * the lesser towns smaller at a region's view, where three hundred of them would carpet the
+ * Levant. A ringed mark is drawn at its own size.
  */
 const townSize = (rank2: number): ExpressionSpecification => [
   "case",
@@ -467,5 +495,10 @@ export const LABEL_PADDING: ExpressionSpecification = [
   3,
 ];
 
-// Battles: a deep red, apart from the route's accent and the places' browns.
-export const BATTLE_INK = "#8e2a22";
+/** Roman roads are drawn from the Via Appia, 312 BC, on. */
+export const ROADS_FROM = -311;
+/** The zoom each kind of road is drawn from. */
+export const ROAD_MINZOOM = { major: 5, minor: 7 } as const;
+
+/** A battle shows this many years either side of its own: one step of the slider. */
+export const BATTLE_YEAR_WINDOW = 5;

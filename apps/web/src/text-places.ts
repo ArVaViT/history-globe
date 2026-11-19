@@ -1,25 +1,22 @@
-import { isLocale, type Locale } from "@hg/model";
-import { DATA_URL } from "./data";
-import { textPlacesFrom, type TextPlaces } from "./text-places-core";
+import { isLocale, textPlacesFrom, type Locale, type TextPlaces } from "@hg/model";
+import { cachedJson } from "./data";
 
-export { splitPlaces, textPlacesFrom, type Segment, type TextPlaces } from "./text-places-core";
+const indexes = new Map<string, Promise<TextPlaces>>();
 
-/** The places a verse names, for a card's verse: the index loaded once per language. */
-const loaded = new Map<Locale, Promise<TextPlaces>>();
-
-/** The index for a language, fetched once; a failed load is tried again next time. */
+/**
+ * The places a verse names, for a card's verse: the language's index (scripts/
+ * build-text-places.ts), fetched and compiled once. Every published language has its
+ * index; any other reads the English one.
+ */
 export function loadTextPlaces(locale: Locale): Promise<TextPlaces> {
-  let got = loaded.get(locale);
+  const l = isLocale(locale) ? locale : "en";
+  let got = indexes.get(l);
   if (!got) {
-    // Every published language has its index; any other reads the English one.
-    got = fetch(`${DATA_URL}/text-places.${isLocale(locale) ? locale : "en"}.json`)
-      .then((r) => {
-        if (!r.ok) throw new Error(`text-places: ${String(r.status)}`);
-        return r.json() as Promise<{ forms: Record<string, string>; names?: string[] }>;
-      })
-      .then(textPlacesFrom);
-    got.catch(() => loaded.delete(locale));
-    loaded.set(locale, got);
+    got = cachedJson<{ forms: Record<string, string>; names?: string[] }>(
+      `text-places.${l}.json`,
+    ).then(textPlacesFrom);
+    indexes.set(l, got);
+    got.catch(() => indexes.delete(l));
   }
   return got;
 }

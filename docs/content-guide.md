@@ -9,7 +9,8 @@ in `data-checks.md`; this is what it cannot check.
   (`Acts.13.4`); ancient authors with book and section (Josephus, Antiquities 17.191);
   modern works by author, title and year.
 - **Disputed things are left out or said to be disputed.** A wrong date is worse than a
-  missing one. "c." marks an approximate year and is shown as "ок." / "c.".
+  missing one. "c." marks an approximate year and is shown in each language's own form
+  (`place.circa` in `apps/web/src/i18n/<lang>.json`: "c.", "ок.", "ca.", …).
 - **Scripture is not pulled into scholarly disputes.** No title or note ties a verse to a
   contested date or reading (Luke 2:2 is not named with AD 6; Josiah's death is not
   called a battle, as 2 Kings and 2 Chronicles tell it differently).
@@ -102,7 +103,7 @@ in `data-checks.md`; this is what it cannot check.
   under `verses` with the verse that shows it if they were (one of the place's own).
 - Check each against the KJV and the Synodal text, both read, not recalled.
 
-## The ancient world (`content/ancient-sites.json`, ADR 0013)
+## The ancient world (`content/ancient-sites.json`, ADR 0013 and 0018)
 
 - Capitals, cities, ports and sanctuaries the Bible does not name, inside the map's
   area. The point is on the site itself, not on the modern town over it; the years are
@@ -110,6 +111,11 @@ in `data-checks.md`; this is what it cannot check.
   an encyclopaedia; Wikidata only where its item is the site and not its modern
   successor). Rank 0 for some forty of world importance, 1 for regional centres.
 - A site within 3 km of one of our towns is the same place: the build refuses it.
+- A site chosen by script (`content/ancient-sites-wave*.json`) keeps its English name (Wikidata's
+  English label, else Pleiades' title) in the languages written in Latin script where Wikidata
+  has none of their own: for most of these small sites that is the form the literature in those
+  languages uses too. The four Cyrillic languages
+  have names for all of them (`pipeline/ancient/names-cyrillic.json`).
 
 ## States (`content/polity-overrides.yaml`)
 
@@ -124,9 +130,9 @@ in `data-checks.md`; this is what it cannot check.
 ## Articles (`content/articles/*.yaml`, ADR 0007)
 
 - One overview article per place: `id` = file name, `place` = the OpenBible record that
-  carries the verses (not a `dup`). 3–4 paragraphs, the same number in both languages,
-  60–900 characters each, at most 450 words per language. English is the master; the
-  Russian says the same.
+  carries the verses (not a `dup`). 3–4 paragraphs, the same number in every language (the
+  build checks it), 60–900 characters each, at most 450 words per language. English is the
+  master; every translation says the same.
 - The arc: where it is → earliest history and archaeology → its biblical role → later
   history to about AD 500. Mainstream facts only; disputed datings and identifications are
   named as disputed, with the candidates ("Tell el-Qudeirat is the usual identification").
@@ -134,24 +140,28 @@ in `data-checks.md`; this is what it cannot check.
   Eusebius' Onomasticon, a chronicle, an inscription) and one to three standard modern
   works. Open the source and check the locator; what cannot be opened is softened or cut.
   Never a locator from memory.
-- Quotations only from the KJV (en) and the Synodal text (ru), word for word; Russian
-  biblical names in their Synodal form, as in `place-names.yaml`.
-- Russian typography (the build checks): «» quotes, an em dash between words (the
-  digital Synodal text sets hyphens: quote it with dashes), no double spaces.
-- Sources are written in English. Each line has its Russian in `content/sources-ru.yaml`
-  (the build stops without one): ancient works by their Russian titles («Флавий,
-  «Иудейская война»»), notes in Russian, Bible references in the Synodal books and
-  numbering; modern scholarship stays as published, as Russian bibliographies cite it.
-  The same holds for the sources of questions and of `place-life.yaml`. A line of the
-  site's own ("History Globe tour …", "Straight-line distance between the places' points …")
-  is read in every language: its fourteen other languages are in `content/sources-own.yaml`,
-  with the tour and question titles and the place names the site uses in each (the build
-  stops without them).
+- Quotations in English only from the KJV, word for word.
+- Sources are written in English. A line of the site's own ("History Globe tour …",
+  "Straight-line distance between the places' points …") is read in every language: its
+  other languages are in `content/sources-own.yaml`, with the tour and question titles and
+  the place names the site uses in each (the build stops without them).
 - The title names the article apart from its namesakes (Вавилон, Вавилония): the list of
   articles shows it.
 - The cycle that converges: a writer, then an independent reviewer who opens the sources
   and fixes the file, then the lead reads the report and commits. No article has passed
   without changes; reviewers find 4–8 points per batch of five.
+
+### Russian
+
+- Quotations from the Synodal text, word for word; biblical names in their Synodal form, as
+  in `place-names.yaml`.
+- Typography (the build checks): «» quotes, an em dash between words (the digital Synodal
+  text sets hyphens: quote it with dashes), no double spaces.
+- Each source line has its Russian in `content/sources-ru.yaml` (the build stops without
+  one): ancient works by their Russian titles («Флавий, «Иудейская война»»), notes in
+  Russian, Bible references in the Synodal books and numbering; modern scholarship stays as
+  published, as Russian bibliographies cite it. The same holds for the sources of questions
+  and of `place-life.yaml`.
 
 ## Photos (`content/photos.yaml`)
 

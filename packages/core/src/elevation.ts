@@ -1,20 +1,45 @@
 import type { LonLat } from "./renderer.ts";
 
+/** The relief's tiles are 512 px across. */
+const SIZE = 512;
 /**
- * Heights above sea level read from the relief's own tiles (terrarium encoding, 512 px),
- * the map's source of the terrain: one tile per point, at zoom 11 by default (about 40 m
- * a pixel in the Levant), fetched once and kept. A point at sea, or a tile that cannot be
- * read, gives null.
+ * How many tiles are kept, the ones read last: a megabyte each, and a tour's legs cross a few
+ * dozen, which kept all held a hundred megabytes for the session.
+ */
+const KEEP = 32;
+
+/** The tile a point falls in at a zoom (web Mercator, 512 px tiles), and its pixel in that tile. */
+export function tilePixel(
+  lon: number,
+  lat: number,
+  zoom: number,
+): { x: number; y: number; px: number; py: number } {
+  const world = SIZE * 2 ** zoom;
+  const s = Math.sin((lat * Math.PI) / 180);
+  const wx = Math.floor(((lon + 180) / 360) * world);
+  const wy = Math.floor((0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI)) * world);
+  return { x: Math.floor(wx / SIZE), y: Math.floor(wy / SIZE), px: wx % SIZE, py: wy % SIZE };
+}
+
+/**
+ * A terrarium pixel's height in metres, or null at sea. The Dead Sea shore, about −430 m, is
+ * the lowest land; lower is the sea floor. The open sea is a blank tile, exactly 0 before
+ * rounding (land carries fractions).
+ */
+export function decodeTerrarium(r: number, g: number, b: number): number | null {
+  const h = r * 256 + g + b / 256 - 32768;
+  return h < -440 || h === 0 ? null : Math.round(h);
+}
+
+/**
+ * Heights above sea level read from the relief's own tiles (terrarium encoding), the map's
+ * source of the terrain: one tile per point, at zoom 11 by default (about 40 m a pixel in the
+ * Levant), fetched once and kept. A point at sea, or a tile that cannot be read, gives null.
  */
 export function elevationReader(
   template: string,
   zoom = 11,
 ): (points: readonly LonLat[]) => Promise<(number | null)[]> {
-  const ZOOM = zoom;
-  const SIZE = 512;
-  // The tiles read last, a megabyte each: a tour's legs cross a few dozen, and kept all
-  // they held a hundred megabytes for the session.
-  const KEEP = 32;
   const tiles = new Map<string, Promise<ImageData | null>>();
 
   const tile = (x: number, y: number): Promise<ImageData | null> => {
@@ -26,7 +51,7 @@ export function elevationReader(
       tiles.set(key, got);
     } else {
       const url = template
-        .replace("{z}", String(ZOOM))
+        .replace("{z}", String(zoom))
         .replace("{x}", String(x))
         .replace("{y}", String(y));
       got = fetch(url)
@@ -53,50 +78,15 @@ export function elevationReader(
     return got;
   };
 
-  return async (points) =>
+  return (points) =>
     Promise.all(
       points.map(async ([lon, lat]) => {
-        const world = SIZE * 2 ** ZOOM;
-        const x = ((lon + 180) / 360) * world;
-        const s = Math.sin((lat * Math.PI) / 180);
-        const y = (0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI)) * world;
-        const img = await tile(Math.floor(x / SIZE), Math.floor(y / SIZE));
+        const { x, y, px, py } = tilePixel(lon, lat, zoom);
+        const img = await tile(x, y);
         if (!img) return null;
-        const px = Math.floor(x) % SIZE;
-        const py = Math.floor(y) % SIZE;
         const i = (py * SIZE + px) * 4;
-        const [r = 0, g = 0, b = 0] = [img.data[i], img.data[i + 1], img.data[i + 2]];
-        const h = r * 256 + g + b / 256 - 32768;
-        // The Dead Sea shore, about −430 m, is the lowest land; lower is the sea floor. The
-        // open sea is a blank tile, exactly 0 before rounding (land carries fractions).
-        return h < -440 || h === 0 ? null : Math.round(h);
+        const [r = 0, g = 0, b = 0] = img.data.subarray(i, i + 3);
+        return decodeTerrarium(r, g, b);
       }),
     );
-}
-
-/**
- * `n` points evenly along a line of several parts (a way by road), both ends included:
- * spaced by length, a degree of longitude counted shorter away from the equator.
- */
-export function pointsAlongPath(path: readonly LonLat[], n: number): LonLat[] {
-  // The middle latitude of the two ends: the same spacing either way round.
-  const mid = ((path[0]?.[1] ?? 0) + (path[path.length - 1]?.[1] ?? 0)) / 2;
-  const k = Math.cos((mid * Math.PI) / 180);
-  const at = [0];
-  for (let i = 1; i < path.length; i++) {
-    const a = path[i - 1] ?? [0, 0];
-    const b = path[i] ?? [0, 0];
-    at.push((at[i - 1] ?? 0) + Math.hypot((b[0] - a[0]) * k, b[1] - a[1]));
-  }
-  const total = at[at.length - 1] ?? 0;
-  let j = 1;
-  return Array.from({ length: n }, (_, i) => {
-    const d = n > 1 ? (total * i) / (n - 1) : 0;
-    while (j < path.length - 1 && (at[j] ?? 0) < d) j++;
-    const a = path[j - 1] ?? path[0] ?? [0, 0];
-    const b = path[j] ?? a;
-    const span = (at[j] ?? 0) - (at[j - 1] ?? 0);
-    const f = span > 0 ? Math.min(1, Math.max(0, (d - (at[j - 1] ?? 0)) / span)) : 0;
-    return [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f] as const;
-  });
 }

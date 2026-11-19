@@ -9,10 +9,10 @@ description: Setzen Sie den Globus mit einer Zeile auf Ihre eigene Website – d
   Gleichschritt.
 </p>
 
-<h2>Schnellstart</h2>
+<h2 id="quick-start">Schnellstart</h2>
 <pre><code>&lt;iframe
   src="{{site}}/embed/v1?ref=Acts.16&amp;locale=de"
-  title="Map of Acts 16"
+  title="Karte zu Apg 16"
   style="width: 100%; height: 480px; border: 0; border-radius: 12px"
   allow="fullscreen"
   loading="lazy"
@@ -33,7 +33,7 @@ description: Setzen Sie den Globus mit einer Zeile auf Ihre eigene Website – d
   <li>Der Rahmen funktioniert bis hinunter zur Breite eines Smartphones; 480 px Höhe genügen.</li>
 </ul>
 
-<h2>Ein Kapitel oder eine Textstelle</h2>
+<h2 id="a-chapter-or-a-passage">Ein Kapitel oder eine Textstelle</h2>
 <p>
   <code>ref</code> nimmt einen OSIS-Verweis mit englischen Buchabkürzungen und englischer
   Verszählung:
@@ -73,7 +73,7 @@ description: Setzen Sie den Globus mit einer Zeile auf Ihre eigene Website – d
   behält das aktuelle Jahr der Karte.
 </p>
 
-<h2>Parameter</h2>
+<h2 id="parameters">Parameter</h2>
 <div class="table">
   <table>
     <thead>
@@ -182,7 +182,7 @@ description: Setzen Sie den Globus mit einer Zeile auf Ihre eigene Website – d
   kopiert: Dieselben Parameter funktionieren nach <code>/embed/v1</code>.
 </p>
 
-<h2>Nachrichten</h2>
+<h2 id="messages">Nachrichten</h2>
 <p>
   Der Globus und Ihre Seite kommunizieren über <code>postMessage</code>. Jede Nachricht ist ein
   Objekt mit <code>type</code> und <code>v: 1</code>. Der Globus sendet nur, was auf der Karte
@@ -190,7 +190,7 @@ description: Setzen Sie den Globus mit einer Zeile auf Ihre eigene Website – d
   gleich welche Herkunft sie hat (Ziel <code>"*"</code>); er nimmt Nachrichten nur von der Seite an,
   die den Rahmen enthält.
 </p>
-<h3>Vom Globus</h3>
+<h3 id="from-the-globe">Vom Globus</h3>
 <div class="table">
   <table>
     <thead>
@@ -235,7 +235,10 @@ description: Setzen Sie den Globus mit einer Zeile auf Ihre eigene Website – d
       <tr>
         <td><code>hg:error</code></td>
         <td><code>{ code, message }</code></td>
-        <td>die Karte oder ihre Daten konnten nicht geladen werden</td>
+        <td>
+          die Karte oder ihre Daten konnten nicht geladen werden: <code>code</code> ist
+          <code>"map"</code> oder <code>"data"</code>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -244,9 +247,12 @@ description: Setzen Sie den Globus mit einer Zeile auf Ihre eigene Website – d
   <code>view</code> enthält <code>year</code>, <code>locale</code> und <code>layers</code> und, wenn
   gesetzt, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> und
   <code>camera</code>. Eine <code>view</code> ohne <code>place</code> bedeutet, dass kein Ort
-  ausgewählt ist.
+  ausgewählt ist. <code>camera</code> ist ein Objekt,
+  <code>{ center: [35.2, 31.8], zoom: 7, pitch: 30, bearing: 0 }</code>, nicht die Zeichenkette der
+  Adresse; <code>layers</code> gibt jeder Ebene <code>true</code> oder <code>false</code>:
+  <code>{ relief: false, battles: false }</code>.
 </p>
-<h3>An den Globus</h3>
+<h3 id="to-the-globe">An den Globus</h3>
 <div class="table">
   <table>
     <thead>
@@ -303,11 +309,11 @@ description: Setzen Sie den Globus mit einer Zeile auf Ihre eigene Website – d
   ist <code>Q16869</code>). Beide Arten können in <code>view.place</code> und
   <code>hg:place-clicked</code> vorkommen, und beide werden von <code>hg:set-view</code> akzeptiert;
   wenn Ihre Daten nur Orte von OpenBible enthalten, prüfen Sie die Form der ID, bevor Sie einen Ort
-  nachschlagen. Von den {{openbible}} Orten von OpenBible sind {{absent}} nicht auf der Karte (sie
-  haben keinen Punkt, der veröffentlicht werden darf); ihre IDs werden ignoriert.
+  nachschlagen. Von den {{openbible}} Orten von OpenBible sind {{absent}} nicht auf der Karte
+  (weggelassen oder ganz ohne Punkt); ihre IDs werden ignoriert.
 </p>
 
-<h2>Beispiel: Die Karte folgt Ihrem Leser</h2>
+<h2 id="example-the-map-follows-your-reader">Beispiel: Die Karte folgt Ihrem Leser</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
 // When your reader opens a chapter, show it on the map.
@@ -439,23 +445,24 @@ function closeBox() {
   anderes verwenden („Kadesch“ ist dort Kadesch-Barnea, nicht das Kadesch der Datenbank). Der Name
   eines Ortes, der zugleich ein Vorname ist (Jordan, Saron), bleibt neben einem anderen
   großgeschriebenen Wort unberührt: Jordan Smith ist eine Person, nicht der Fluss. Im Russischen,
-  Ukrainischen, Polnischen und Tschechischen werden Namen in ihren gebeugten Formen gefunden („в
-  Египте“, „w Jerozolimie“, „v Jeruzalémě“), deutsche Namen auch im Genitiv („Jerusalems“). Links,
-  Code, Formularfelder, Schaltflächen und Überschriften bleiben unberührt.
+  Ukrainischen, Polnischen, Tschechischen, Serbischen, Ungarischen, Finnischen und Rumänischen
+  werden Namen in ihren gebeugten Formen gefunden („в Египте“, „w Jerozolimie“, „v Jeruzalémě“),
+  deutsche, schwedische, dänische und norwegische Namen auch im Genitiv („Jerusalems“). Links, Code,
+  Formularfelder, Schaltflächen und Überschriften bleiben unberührt.
 </p>
 <p class="note">
   Das Skript hat keine Abhängigkeiten und setzt keine Cookies. Es liest eine Namensdatei vom Globus
-  (je nach Sprache etwa 20 bis 35 KB über das Netz, dazu 7 KB Skript), ohne die Adresse Ihrer Seite
-  als Referrer, und ändert nur die Namen, die es verlinkt. Es funktioniert mit einer strengen
-  Content Security Policy, die die Adresse des Globus in <code>script-src</code> und
-  <code>connect-src</code> erlaubt. Für Text, den Ihre Seite später hinzufügt, rufen Sie
-  <code>HistoryGlobePlaces.scan(element)</code> auf, sobald der Text gerendert ist: Das Skript teilt
-  Textknoten, daher führen Sie es auf einer React- oder Vue-Seite für Inhalte aus, die das Framework
-  nicht mehr neu rendert.
+  (je nach Sprache etwa {{names_kb_min}} bis {{names_kb_max}} KB über das Netz, dazu {{script_kb}}
+  KB Skript), ohne die Adresse Ihrer Seite als Referrer, und ändert nur die Namen, die es verlinkt.
+  Es funktioniert mit einer strengen Content Security Policy, die die Adresse des Globus in
+  <code>script-src</code> und <code>connect-src</code> erlaubt. Für Text, den Ihre Seite später
+  hinzufügt, rufen Sie <code>HistoryGlobePlaces.scan(element)</code> auf, sobald der Text gerendert
+  ist: Das Skript teilt Textknoten, daher führen Sie es auf einer React- oder Vue-Seite für Inhalte
+  aus, die das Framework nicht mehr neu rendert.
 </p>
 <script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
 
-<h2>Stabilität</h2>
+<h2 id="stability">Stabilität</h2>
 <p>
   <code>/embed/v1</code> ist ein Vertrag: Innerhalb von v1 werden Parameter und Nachrichten nur
   hinzugefügt, nie geändert oder entfernt. Eine inkompatible Änderung erscheint als

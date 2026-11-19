@@ -9,7 +9,7 @@ description: Pon el globo en tu propio sitio con una sola línea (el mapa de un 
   sincronizados.
 </p>
 
-<h2>Inicio rápido</h2>
+<h2 id="quick-start">Inicio rápido</h2>
 <pre><code>&lt;iframe
   src="{{site}}/embed/v1?ref=Acts.16&amp;locale=es"
   title="Mapa de Hechos 16"
@@ -34,7 +34,7 @@ description: Pon el globo en tu propio sitio con una sola línea (el mapa de un 
   <li>El marco funciona hasta el ancho de un teléfono; basta una altura de 480 px.</li>
 </ul>
 
-<h2>Un capítulo o un pasaje</h2>
+<h2 id="a-chapter-or-a-passage">Un capítulo o un pasaje</h2>
 <p>
   <code>ref</code> admite una referencia OSIS con abreviaturas inglesas de los libros y numeración
   inglesa de los versículos:
@@ -74,7 +74,7 @@ description: Pon el globo en tu propio sitio con una sola línea (el mapa de un 
   año actual del mapa.
 </p>
 
-<h2>Parámetros</h2>
+<h2 id="parameters">Parámetros</h2>
 <div class="table">
   <table>
     <thead>
@@ -182,14 +182,14 @@ description: Pon el globo en tu propio sitio con una sola línea (el mapa de un 
   mismos parámetros funcionan después de <code>/embed/v1</code>.
 </p>
 
-<h2>Mensajes</h2>
+<h2 id="messages">Mensajes</h2>
 <p>
   El globo y tu página se comunican mediante <code>postMessage</code>. Cada mensaje es un objeto con
   <code>type</code> y <code>v: 1</code>. El globo envía solo lo que ocurre en el mapa y nunca nada
   que identifique al lector, por lo que escribe a la página superior sea cual sea su origen (destino
   <code>"*"</code>); solo acepta mensajes de la página que contiene el marco.
 </p>
-<h3>Del globo</h3>
+<h3 id="from-the-globe">Del globo</h3>
 <div class="table">
   <table>
     <thead>
@@ -235,7 +235,10 @@ description: Pon el globo en tu propio sitio con una sola línea (el mapa de un 
       <tr>
         <td><code>hg:error</code></td>
         <td><code>{ code, message }</code></td>
-        <td>no se pudo cargar el mapa o sus datos</td>
+        <td>
+          no se pudo cargar el mapa o sus datos: <code>code</code> es <code>"map"</code> o
+          <code>"data"</code>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -244,9 +247,12 @@ description: Pon el globo en tu propio sitio con una sola línea (el mapa de un 
   <code>view</code> contiene <code>year</code>, <code>locale</code> y <code>layers</code> y, cuando
   están definidos, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> y
   <code>camera</code>. Una <code>view</code> sin <code>place</code> significa que no hay ningún
-  lugar seleccionado.
+  lugar seleccionado. <code>camera</code> es un objeto,
+  <code>{ center: [35.2, 31.8], zoom: 7, pitch: 30, bearing: 0 }</code>, no la cadena de la
+  dirección; <code>layers</code> da a cada capa <code>true</code> o <code>false</code>:
+  <code>{ relief: false, battles: false }</code>.
 </p>
-<h3>Al globo</h3>
+<h3 id="to-the-globe">Al globo</h3>
 <div class="table">
   <table>
     <thead>
@@ -302,11 +308,11 @@ description: Pon el globo en tu propio sitio con una sola línea (el mapa de un 
   <code>Q16869</code>). Ambas clases pueden venir en <code>view.place</code> y en
   <code>hg:place-clicked</code>, y <code>hg:set-view</code> acepta las dos; si tus datos solo tienen
   lugares de OpenBible, comprueba la forma del ID antes de buscar el lugar. De los {{openbible}}
-  lugares de OpenBible, {{absent}} no están en el mapa (no tienen un punto que pueda publicarse);
+  lugares de OpenBible, {{absent}} no están en el mapa (quedaron fuera o no tienen ningún punto);
   sus ID se ignoran.
 </p>
 
-<h2>Ejemplo: el mapa sigue a tu lector</h2>
+<h2 id="example-the-map-follows-your-reader">Ejemplo: el mapa sigue a tu lector</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
 // When your reader opens a chapter, show it on the map.
@@ -437,15 +443,17 @@ function closeBox() {
   versículos de la Biblia usan sobre todo para otra cosa («Cades» allí es Cades-barnea, no la Cades
   de la base de datos). El nombre de un lugar que también es nombre de pila (Jordan, Sharon) se deja
   tal cual junto a otra palabra con mayúscula: Jordan Smith es una persona, no el río. En ruso,
-  ucraniano, polaco y checo, los nombres se encuentran en sus distintos casos («в Египте», «w
-  Jerozolimie», «v Jeruzalémě»), y en alemán, también en genitivo («Jerusalems»). Los enlaces, el
-  código, los campos de formulario, los botones y los encabezados se dejan intactos.
+  ucraniano, polaco, checo, serbio, húngaro, finés y rumano, los nombres se encuentran en sus
+  distintos casos («в Египте», «w Jerozolimie», «v Jeruzalémě»), y en alemán, sueco, danés y
+  noruego, también en genitivo («Jerusalems»). Los enlaces, el código, los campos de formulario, los
+  botones y los encabezados se dejan intactos.
 </p>
 <p class="note">
   El script no tiene dependencias y no instala cookies. Lee del globo un archivo de nombres (entre
-  20 y 35 KB por la red según el idioma, más 7 KB del script), sin enviar la dirección de tu página
-  como referente, y solo cambia los nombres que enlaza. Funciona bajo una política de seguridad de
-  contenido (CSP) estricta que permita la dirección del globo en
+  {{names_kb_min}} y {{names_kb_max}} KB por la red según el idioma, más {{script_kb}} KB del
+  script), sin enviar la dirección de tu página como referente, y solo cambia los nombres que
+  enlaza. Funciona bajo una política de seguridad de contenido (CSP) estricta que permita la
+  dirección del globo en
   <code>script-src</code> y <code>connect-src</code>. Para el texto que tu página añada más tarde,
   llama a <code>HistoryGlobePlaces.scan(element)</code> una vez que el texto esté renderizado: el
   script divide los nodos de texto, así que en una página React o Vue ejecútalo sobre contenido que
@@ -453,7 +461,7 @@ function closeBox() {
 </p>
 <script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
 
-<h2>Estabilidad</h2>
+<h2 id="stability">Estabilidad</h2>
 <p>
   <code>/embed/v1</code> es un contrato: dentro de v1, los parámetros y los mensajes solo se añaden,
   nunca se cambian ni se eliminan. Un cambio incompatible se publicará como <code>/embed/v2</code>,

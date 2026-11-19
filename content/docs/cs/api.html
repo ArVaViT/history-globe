@@ -9,7 +9,7 @@ description: Místa, verše, které je jmenují, události a trasy jako soubory 
   než běžného cachování.
 </p>
 
-<h2>Která místa verš jmenuje</h2>
+<h2 id="which-places-does-a-verse-name">Která místa verš jmenuje</h2>
 <p>Jeden soubor na knihu Bible: každý verš, který jmenuje místo, s identifikátory těchto míst.</p>
 <pre><code>GET {{site}}/api/v1/verses/Acts.json
 
@@ -24,10 +24,10 @@ description: Místa, verše, které je jmenují, události a trasy jako soubory 
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
-   "wikidata": "Q379652", "pleiades": "501482",
+   "wikidata": "Q379652", "pleiades": "501482", "tipnr": "Philippi@Act.16.12-1Th",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
 
-<h2>Kdo a kde v kapitole</h2>
+<h2 id="who-and-where-in-a-chapter">Kdo a kde v kapitole</h2>
 <p>
   Jeden soubor na knihu: každá kapitola s místy a lidmi, které jmenuje. Lidé jsou určeni jako v
   TIPNR od STEPBible; jejich jména a první verš jsou v <code>people.json</code>.
@@ -37,7 +37,7 @@ description: Místa, verše, které je jmenují, události a trasy jako soubory 
 { "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
                "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
-<h2>Všechny soubory</h2>
+<h2 id="all-the-files">Všechny soubory</h2>
 <div class="table">
   <table>
     <thead>
@@ -56,7 +56,8 @@ description: Místa, verše, které je jmenují, události a trasy jako soubory 
         <td>
           každé místo: id, názvy, druh, bod, kolik veršů je jmenuje, jeho stránku (u místa, které
           nějaký verš jmenuje); <code>wikidata</code> a <code>pleiades</code>, totéž místo v těchto
-          rejstřících, kde je známo
+          rejstřících, kde je známo; <code>tipnr</code>, jeho jméno v TIPNR ze STEPBible, podle
+          stejného schématu jako ID v <code>people.json</code>, kde ho OpenBible propojuje
         </td>
       </tr>
       <tr>
@@ -73,34 +74,40 @@ description: Místa, verše, které je jmenují, události a trasy jako soubory 
       <tr>
         <td><code>/api/v1/people.json</code></td>
         <td>
-          lidé, které jmenuje Bible: id podle TIPNR, jméno, jména v dalších jazycích tam, kde je web
-          má, pohlaví, kolik veršů je jmenuje, první z nich
+          {{people_api}} {{~people_api|člověk, kterého|lidé, které|lidí, které}} jmenuje Bible (mapa
+          jich s rodinami ukazuje {{people}}): id podle TIPNR, jméno, jména v dalších jazycích tam,
+          kde je web má, pohlaví, kolik veršů je jmenuje, první z nich
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/events.json</code></td>
-        <td>datované události, s <code>ref</code> tam, kde událost vypráví Bible</td>
+        <td>
+          datované události, s <code>ref</code> tam, kde událost vypráví Bible;
+          <code>site</code> místo <code>place</code> u města starověkého světa, které Bible
+          nejmenuje
+        </td>
       </tr>
       <tr>
         <td><code>/api/v1/battles.json</code></td>
         <td>
           bitvy a obležení: místo, rok, strany a výsledek, s <code>ref</code> tam, kde bitvu vypráví
-          Bible
+          Bible; <code>event</code>, událost z <code>events.json</code>, která vypráví týž příběh
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/questions.json</code></td>
         <td>
           otázky, které lidé kladou, zodpovězené ve všech jazycích webu, s pohledem na mapu a
-          prameny
+          prameny; <code>scripture</code>, verše, které odpověď cituje; <code>license</code> a
+          <code>license_url</code>, licence odpovědí
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/tours.json</code></td>
         <td>
-          trasy: jejich zastávky v pořadí, každá s pasáží a poznámkou;
-          <code>by: "sea"</code> pro úsek plavby po moři a <code>sailed</code> (dny a verš), kde
-          text říká, jak dlouho plavba trvala
+          trasy: jejich zastávky v pořadí, každá s pasáží a poznámkou; <code>by: "sea"</code> pro
+          úsek plavby po moři a <code>sailed</code> (dny a verš), kde text říká, jak dlouho plavba
+          trvala; <code>source</code> tam, kde zastávku popisuje pramen mimo Bibli
         </td>
       </tr>
       <tr>
@@ -117,7 +124,7 @@ description: Místa, verše, které je jmenují, události a trasy jako soubory 
   </table>
 </div>
 
-<h2>Konvence</h2>
+<h2 id="conventions">Konvence</h2>
 <ul>
   <li>
     Odkazy jsou ve formátu OSIS s anglickými zkratkami knih a číslováním podle King James:
@@ -126,7 +133,8 @@ description: Místa, verše, které je jmenují, události a trasy jako soubory 
   <li>Roky jsou astronomické: 1 př. n. l. je 0, 586 př. n. l. je −585.</li>
   <li>
     Místo uvedené ve zdrojových datech dvakrát pod jedním názvem nese
-    <code>"duplicate": true</code>; místo se sporným umístěním <code>"disputed": true</code>.
+    <code>"duplicate": true</code>; místo se sporným umístěním <code>"disputed": true</code>;
+    událost, bitva nebo trasa s přibližným rokem <code>"approximate": true</code>.
   </li>
   <li>
     Soubory se znovu sestavují s každým vydáním dat; <code>index.json</code> uvádí jeho datum.
@@ -137,7 +145,7 @@ description: Místa, verše, které je jmenují, události a trasy jako soubory 
   </li>
 </ul>
 
-<h2>Licence a uvedení autorů</h2>
+<h2 id="licence-and-credit">Licence a uvedení autorů</h2>
 <p>
   Data jsou pod licencí <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
   Používejte je, upravujte je, prodávejte, co z nich vytvoříte; uveďte prameny tam, kde je
@@ -148,7 +156,7 @@ description: Místa, verše, které je jmenují, události a trasy jako soubory 
 </p>
 <p>
   Odpovědi na otázky (<code>questions.json</code>) jsou vlastní texty History Globe a jsou pod
-  licencí <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.cs">CC BY-NC-ND 4.0</a>:
-  citujte je a odkazujte na ně s uvedením zdroje; neměňte je, nepřekládejte je ani je nepřenášejte
-  na jiný web nebo do jiné datové sady. Totéž platí pro články o místech, které API neobsahuje.
+  licencí <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>: citujte
+  je a odkazujte na ně s uvedením zdroje; neměňte je, nepřekládejte je ani je nepřenášejte na jiný
+  web nebo do jiné datové sady. Totéž platí pro články o místech, které API neobsahuje.
 </p>

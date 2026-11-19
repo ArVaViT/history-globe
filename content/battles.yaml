@@ -15,7 +15,9 @@
 # comment says so; a checker may prefer a different one.
 #
 # Place ids are from apps/web/public/data/places.geojson; the Russian names follow
-# content/place-names.yaml (Synodal). Left-out battles are listed at the end.
+# content/place-names.yaml (Synodal). Left-out battles are listed at the end. A battle that
+# events.yaml marks too (Samaria, 722 BC) names that event (`event`), so the story is listed
+# once; the build refuses such a pair unlinked, and a battle id that is an event's.
 battles:
   # ---- Patriarchs (conventional point of the Abraham tour: 1900 BC) ----
   - id: siddim
@@ -2126,7 +2128,7 @@ battles:
     title:
       en: "Joab and David take Rabbah of the Ammonites"
       ru: "Иоав и Давид берут Равву Аммонитскую"
-      uk: "Йоав і Давид здобувають Равву аммонітян"
+      uk: "Йоав і Давид здобувають Раббу аммонітян"
       es: "Joab y David toman Rabá de los amonitas"
       pt: "Joabe e Davi tomam Rabá dos amonitas"
       de: "Joab und David erobern Rabba der Ammoniter"
@@ -2150,7 +2152,7 @@ battles:
     sides:
       en: "Joab's army, then David with all the people, against Rabbah"
       ru: "Войско Иоава, затем Давид со всем народом, против Раввы"
-      uk: "Військо Йоава, потім Давид з усім народом проти Равви"
+      uk: "Військо Йоава, потім Давид з усім народом проти Рабби"
       es: "El ejército de Joab, y luego David con todo el pueblo, contra Rabá"
       pt: "O exército de Joabe, depois Davi com todo o povo, contra Rabá"
       de: "Joabs Heer, dann David mit dem ganzen Volk gegen Rabba"
@@ -3172,6 +3174,7 @@ battles:
       ro: "Samaria cade după un asediu de trei ani"
       bg: "Самария пада след тригодишна обсада"
     place: a041bb3 # Samaria
+    event: samaria-falls
     ref: 2Kgs.17.5-2Kgs.17.6
     sides:
       en: "Shalmaneser V of Assyria against Hoshea in Samaria"
@@ -3245,6 +3248,7 @@ battles:
       ro: "Senaherib cucerește Lachișul"
       bg: "Сенахирим превзема Лахис"
     place: a3cc590 # Lachish
+    event: sennacherib
     ref: 2Kgs.18.13-2Kgs.18.14
     sides:
       en: "Sennacherib of Assyria, with his camp before Lachish, against the fortified cities of Judah"
@@ -3392,6 +3396,7 @@ battles:
       ro: "Iosia ucis la Meghido de faraonul Neco"
       bg: "Йосия е убит при Мегидо от фараон Нехао"
     place: a8554e3 # Megiddo
+    event: josiah-dies
     ref: 2Kgs.23.29-2Kgs.23.30
     sides:
       en: "Josiah of Judah against Pharaoh Necho marching to the Euphrates"
@@ -3440,7 +3445,7 @@ battles:
     sources:
       - "2 Kgs 23:29-30; 2 Chr 35:20-24"
       - "Babylonian Chronicle, ABC 3 (the seventeenth year of Nabopolassar, 609 BC)"
-  - id: carchemish
+  - id: carchemish-605
     year: "605 BC"
     title:
       en: "Nebuchadnezzar defeats Egypt at Carchemish"
@@ -3465,6 +3470,7 @@ battles:
       ro: "Nebucadnețar învinge Egiptul la Carchemiș"
       bg: "Навуходоносор разбива Египет при Кархемис"
     place: af6c730 # Carchemish
+    event: carchemish
     ref: Jer.46.2
     sides:
       en: "Nebuchadnezzar, crown prince of Babylon, against the army of Pharaoh Necho"
@@ -3538,6 +3544,7 @@ battles:
       ro: "Ierusalimul se predă lui Nebucadnețar; Ioiachin exilat"
       bg: "Йерусалим се предава на Навуходоносор; Йехония е отведен в изгнание"
     place: a15257a # Jerusalem
+    event: jehoiachin-exiled
     ref: 2Kgs.24.10-2Kgs.24.17
     sides:
       en: "Nebuchadnezzar's servants, then the king himself, against Jehoiachin in Jerusalem"
@@ -3611,6 +3618,7 @@ battles:
       ro: "Oastea lui Nebucadnețar asediază Lachișul și Azeca"
       bg: "Войската на Навуходоносор обсажда Лахис и Азека"
     place: a3cc590 # Lachish
+    event: lachish-besieged
     ref: Jer.34.7
     sides:
       en: "The army of the king of Babylon against the last fortified cities of Judah"
@@ -3685,6 +3693,7 @@ battles:
       ro: "Nebucadnețar cucerește și arde Ierusalimul"
       bg: "Навуходоносор превзема и изгаря Йерусалим"
     place: a15257a # Jerusalem
+    event: jerusalem-falls
     ref: 2Kgs.25.1-2Kgs.25.10
     sides:
       en: "Nebuchadnezzar and all his host against Zedekiah in Jerusalem"
@@ -3759,6 +3768,7 @@ battles:
       ro: "Asediul Tirului de către Alexandru"
       bg: "Обсадата на Тир от Александър"
     place: a160272 # Tyre
+    event: alexander
     sides:
       en: "Alexander the Great, building a mole from the mainland, against the island city of Tyre"
       ru: "Александр Македонский, насыпающий дамбу с материка, против островного Тира"
@@ -3806,7 +3816,7 @@ battles:
     sources:
       - "Arrian, Anabasis 2.16-24"
       - "Diodorus Siculus 17.40-46"
-  - id: panium
+  - id: panium-200
     year: "200 BC"
     title:
       en: "Battle of Panium: Judea passes to the Seleucids"
@@ -3831,6 +3841,7 @@ battles:
       ro: "Bătălia de la Panion: Iudeea trece la Seleucizi"
       bg: "Битката при Панион: Юдея преминава към Селевкидите"
     place: ab7bf48 # Caesarea Philippi (Panias)
+    event: panium
     sides:
       en: "Antiochus III against the Ptolemaic army under Scopas"
       ru: "Антиох III против войска Птолемеев под началом Скопаса"
@@ -4049,6 +4060,7 @@ battles:
       ro: "Pompei cucerește muntele Templului"
       bg: "Помпей превзема Храмовия хълм"
     place: a15257a # Jerusalem
+    event: pompey
     sides:
       en: "Pompey's legions, admitted to the city by Hyrcanus's party, against Aristobulus's men holding the Temple"
       ru: "Легионы Помпея, впущенные в город сторонниками Гиркана, против людей Аристовула, засевших в Храме"
@@ -4096,8 +4108,7 @@ battles:
     sources:
       - "Josephus, Antiquities 14.58-73; Jewish War 1.141-154"
       - "Cassius Dio, Roman History 37.15-17"
-  # ---- The Jewish War (Josephus; the jewish-war tour). English and Russian first: the other
-  # languages wait for the translation pass (docs/translation-debt.md). ----
+  # ---- The Jewish War (Josephus; the jewish-war tour). ----
   - id: jotapata
     year: "AD 67"
     title:
@@ -4265,6 +4276,7 @@ battles:
       ro: "Tit cucerește Ierusalimul; Templul arde"
       bg: "Тит превзема Йерусалим; храмът изгаря"
     place: a15257a # Jerusalem
+    event: temple-destroyed
     sides:
       en: "Four Roman legions under Titus against the Jewish factions of John of Gischala and Simon bar Giora"
       ru: "Четыре римских легиона под началом Тита против иудейских отрядов Иоанна Гисхальского и Симона бар Гиоры"
@@ -4312,7 +4324,7 @@ battles:
     sources:
       - "Josephus, Jewish War 5.39-6.434 (the siege), 6.249-266 (the Temple burned), 6.392-434 (the Upper City)"
       - "Cassius Dio, Roman History 66.4-7"
-  - id: masada
+  - id: masada-73
     year: "c. AD 73"
     title:
       en: "Flavius Silva besieges Masada"
@@ -4337,6 +4349,7 @@ battles:
       ro: "Flavius Silva asediază Masada"
       bg: "Флавий Силва обсажда Масада"
     place: "687968" # Masada
+    event: masada
     sides:
       en: "The Tenth Legion under Flavius Silva against the Sicarii under Eleazar son of Jair"
       ru: "Десятый легион под началом Флавия Сильвы против сикариев во главе с Елеазаром, сыном Яира"

@@ -273,7 +273,8 @@
     "places": "Nơi người này đã sống và hoạt động",
     "credit": "Gia đình và địa điểm theo các câu Kinh Thánh (STEP Bible, CC BY 4.0)",
     "wives": "Những người vợ",
-    "husbands": "Những người chồng"
+    "husbands": "Những người chồng",
+    "list_failed": "Không tải được danh sách nhân vật. Hãy thử mở lại thẻ này."
   },
   "embed": {
     "places_other": "{{count}} địa điểm",
@@ -303,6 +304,7 @@
     "zoom_out": "Thu nhỏ",
     "north": "Đặt lại hướng về phía bắc",
     "sources": "Nguồn bản đồ",
+    "sources_page": "Nguồn",
     "title": "Bản đồ"
   },
   "sheet": {

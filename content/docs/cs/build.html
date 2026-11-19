@@ -9,7 +9,7 @@ description: Co si z History Globe smíte vzít a jak — data přes API, mapu p
   články a jeho kód ke kopírování nejsou. Tato stránka říká, kde vede hranice.
 </p>
 
-<h2>Co si smíte vzít</h2>
+<h2 id="what-you-may-take">Co si smíte vzít</h2>
 <div class="table">
   <table>
     <thead>
@@ -67,25 +67,26 @@ description: Co si z History Globe smíte vzít a jak — data přes API, mapu p
   Krátce: berte data přes API a uvádějte zdroj; mapu zobrazujte přes vkládání; glóbus neklonujte.
 </p>
 
-<h2>Jak uvést autory</h2>
+<h2 id="how-to-credit">Jak uvést autory</h2>
 <p>
   Tam, kde data zobrazujete, uveďte jejich prameny tak, jak je uvádí <code>index.json</code>.
   Nejkratší podoba, která licencím vyhoví:
 </p>
 <pre><code>Data: History Globe, autor Vadym Arnaut ({{site}}), CC BY 4.0;
-místa a značky veršů z OpenBible.info (CC BY 4.0); lidé ze STEPBible TIPNR (CC BY 4.0).</code></pre>
+místa a značky veršů z OpenBible.info (CC BY 4.0); lidé ze STEPBible TIPNR (CC BY 4.0); ID míst z Pleiades (CC BY 3.0).</code></pre>
 <p>Na stránce, s odkazy:</p>
 <pre><code>&lt;p&gt;Data: &lt;a href="{{site}}/"&gt;History Globe&lt;/a&gt;, autor Vadym Arnaut,
   &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC BY 4.0&lt;/a&gt;;
   místa z &lt;a href="https://www.openbible.info/geo/"&gt;OpenBible.info&lt;/a&gt;,
-  lidé ze &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;.&lt;/p&gt;</code></pre>
+  lidé ze &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;,
+  ID míst z &lt;a href="https://pleiades.stoa.org/"&gt;Pleiades&lt;/a&gt;.&lt;/p&gt;</code></pre>
 <p>
   <code>{{site}}/api/v1/index.json</code> nese úplné řádky s uvedením autorů a každá odpověď API se
   posílá s hlavičkou <code>Link</code>, která jmenuje její licenci. Citovaný článek nebo odpověď se
   uvádí jako „History Globe (Vadym Arnaut), CC BY-NC-ND 4.0“ s odkazem na jeho stránku.
 </p>
 
-<h2>Omezení</h2>
+<h2 id="limits">Omezení</h2>
 <ul>
   <li>
     <b>Bez klíče, bez kvóty.</b> API jsou statické soubory za cache. Každý soubor stahujte při
@@ -108,7 +109,7 @@ místa a značky veršů z OpenBible.info (CC BY 4.0); lidé ze STEPBible TIPNR 
   </li>
 </ul>
 
-<h2>Začněte</h2>
+<h2 id="start">Začněte</h2>
 <pre><code>const api = "{{site}}/api/v1";
 const places = await (await fetch(`${api}/places.json`)).json();
 const byId = new Map(places.map((p) =&gt; [p.id, p]));
@@ -120,14 +121,14 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   >.
 </p>
 
-<h2>Žádost o víc</h2>
+<h2 id="asking-for-more">Žádost o víc</h2>
 <p>
   Překlad článků, jejich text na jiné platformě nebo licence, kterou tabulka výše nedává: napište na
   <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>. Partneři dostanou
   písemnou licenci na to, co potřebují; veřejné licence zůstávají, jak jsou.
 </p>
 
-<h2>Pro agenty AI</h2>
+<h2 id="for-ai-agents">Pro agenty AI</h2>
 <p>
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> říká totéž na jedné stránce. Vyhledávače a
   asistenti, kteří odpovídají s citací, jsou vítáni; články nejsou trénovací data

@@ -15,8 +15,8 @@ export interface EmptyClicks {
   dragged(): void;
   /**
    * Whether a click is a click at all: not the release of a drag. MapLibre still fires one when
-   * a flight (the host's `hg:set-view`) cut the drag short; it must neither pick the place
-   * under the pointer nor clear the selection.
+   * a flight cuts the drag short; it must neither pick the place under the pointer nor clear
+   * the selection.
    */
   isClick(): boolean;
   /** A click; `hit`: it picked a place or a battle's mark. */

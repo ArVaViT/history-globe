@@ -8,7 +8,7 @@ import { itemHash } from "./content-hash.ts";
 import { loadReviews, type CurrentHashes } from "./reviews.ts";
 import { citation, itemReviewLd, reviewPages, statusLine } from "./review-pages.ts";
 import { REVIEW_WORDS } from "./review-words.ts";
-import { LOCALES } from "../packages/model/src/time.ts";
+import { LOCALES } from "../packages/model/src/locales.ts";
 
 /** The one fixture: a fake review, never in content/reviews. */
 const FIXTURES = join(import.meta.dirname, "fixtures/reviews");

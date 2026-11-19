@@ -2,23 +2,16 @@
  * What the browser checks share: the address of the running app, a Chromium, a page whose
  * relief does not come from the network, and the wait for the map's first frame.
  *
- * Playwright is not a dependency of the repo (ADR 0010: the browser tests come later, and
- * its browsers are a large download). The checks take it from wherever it is installed:
- * PLAYWRIGHT=<a folder whose node_modules has it, or a package.json beside one>, else the
- * repo's own resolution (a global install on NODE_PATH). CHROMIUM=<path> picks the
- * browser; by default Playwright's own.
- *
- *   HG_URL=http://localhost:5173/ PLAYWRIGHT=~/some/project pnpm e2e
+ * Playwright's browser is a separate download: `pnpm exec playwright install chromium` once.
+ * CHROMIUM=<path> picks another Chromium instead.
  *
  * The relief comes from tiles.mapterhorn.com, and `map.loaded()` waits for every tile: on a
  * slow or closed network the map never counts as drawn and every check times out. So a
  * page from `newPage` answers those requests itself with one flat tile at sea level, unless
  * HG_TILES=live asks for the real relief.
  */
-import { existsSync, statSync } from "node:fs";
-import { createRequire } from "node:module";
-import { join, resolve } from "node:path";
 import { crc32, deflateSync } from "node:zlib";
+import { chromium } from "playwright";
 
 /** The running app (pnpm dev, or vite preview of a build). */
 export const BASE = (process.env.HG_URL ?? "http://localhost:5173/").replace(/\/?$/, "/");
@@ -27,34 +20,8 @@ export const BASE = (process.env.HG_URL ?? "http://localhost:5173/").replace(/\/
 const TILES = /^https:\/\/tiles\.mapterhorn\.com\//;
 const LIVE_TILES = process.env.HG_TILES === "live";
 
-/** Where Playwright is taken from: PLAYWRIGHT, else this file's own resolution. */
-const anchor = (() => {
-  const from = process.env.PLAYWRIGHT
-    ? resolve(process.env.PLAYWRIGHT.replace(/^~(?=\/)/, process.env.HOME ?? "~"))
-    : import.meta.filename;
-  return existsSync(from) && statSync(from).isDirectory() ? join(from, "package.json") : from;
-})();
-
-/** A module from the same place as Playwright, or null: axe-core when it is installed there. */
-export function resolveBeside(id) {
-  try {
-    return createRequire(anchor).resolve(id);
-  } catch {
-    return null;
-  }
-}
-
-export async function launch() {
-  let playwright;
-  try {
-    playwright = createRequire(anchor)("playwright");
-  } catch {
-    console.error(
-      "Playwright not found: set PLAYWRIGHT to a folder where it is installed (e2e/browser.mjs).",
-    );
-    process.exit(2);
-  }
-  return playwright.chromium.launch({
+export function launch() {
+  return chromium.launch({
     executablePath: process.env.CHROMIUM || undefined,
     // Metal draws MapLibre on a Mac without a GPU warning; elsewhere it is ignored.
     args: process.platform === "darwin" ? ["--use-angle=metal"] : [],
@@ -74,6 +41,24 @@ export async function newPage(browser, viewport = { width: 1440, height: 900 }) 
     );
   }
   return ctx.newPage();
+}
+
+/**
+ * The page at rest, instead of a guessed pause: the map drawn and not moving (when there is
+ * one), and no CSS animation or transition under way (a panel fading in, a card sliding).
+ */
+export async function settled(page, timeout = 15_000) {
+  await page.waitForFunction(
+    () => {
+      const m = window.__hgMap;
+      return (
+        (!m || (m.loaded() && !m.isMoving())) &&
+        document.getAnimations().every((a) => a.playState !== "running")
+      );
+    },
+    null,
+    { timeout, polling: 100 },
+  );
 }
 
 /**

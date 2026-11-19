@@ -1,6 +1,6 @@
 # 0005. Tiles and terrain pipeline
 
-- Status: accepted
+- Status: superseded by 0020
 - Date: 2026-09-28
 
 ## Context

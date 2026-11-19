@@ -1,5 +1,5 @@
-import { formatRef, formatYear, type HistoryEvent, type Locale } from "@hg/model";
-import { useEffect, useRef } from "react";
+import { formatRef, formatYear, type HistoryEvent, type Locale, pick } from "@hg/model";
+import { useEffect, useEffectEvent, useRef } from "react";
 import { useTranslation } from "../i18n";
 import { Section } from "./Panel";
 
@@ -23,7 +23,7 @@ export function EventsPanel({
   const { t } = useTranslation();
   // Opened, the list starts at the map's year: the last event before it at the top.
   const list = useRef<HTMLOListElement>(null);
-  useEffect(() => {
+  const scrollToYear = useEffectEvent(() => {
     const ol = list.current;
     if (!ol) return;
     const next = events.findIndex((e) => e.year >= year);
@@ -31,15 +31,17 @@ export function EventsPanel({
     const i = next === -1 ? events.length - 1 : Math.max(0, next - 1);
     const li = ol.children[i];
     if (li instanceof HTMLElement) ol.scrollTop = li.offsetTop - ol.offsetTop;
-    // Only on opening: following every year of playback would pull the list from the reader.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  });
+  // Only on opening: following every year of playback would pull the list from the reader.
+  useEffect(() => {
+    scrollToYear();
   }, []);
   if (events.length === 0) return null;
   return (
     <Section>
       <ol
         ref={list}
-        className="hg-fade max-h-[min(460px,52vh)] max-md:max-h-[calc(100dvh-var(--hg-timeline-h,124px)-200px)] overflow-y-auto [scrollbar-width:thin]"
+        className="hg-fade max-h-[min(460px,52vh)] max-md:max-h-[calc(100dvh-var(--hg-timeline-h)-200px)] overflow-y-auto [scrollbar-width:thin]"
       >
         {events.map((e) => (
           <li key={e.id}>
@@ -58,11 +60,11 @@ export function EventsPanel({
               </span>
               <span className="min-w-0 flex-1 text-[13.5px] leading-snug text-ink">
                 {e.battle && (
-                  <span role="img" aria-label={t("legend.battle")} className="mr-1 text-[#8e2a22]">
+                  <span role="img" aria-label={t("legend.battle")} className="mr-1 text-danger">
                     ⚔
                   </span>
                 )}
-                {e.title[locale] ?? e.title.en}
+                {pick(e.title, locale)}
                 {/* Told in the Bible: where (the place's card links it). */}
                 {e.ref && (
                   <span className="text-[12px] text-ink-soft">

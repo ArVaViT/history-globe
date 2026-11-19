@@ -8,7 +8,7 @@ places:
   af5884f: Nazareth
   af301ca: Ägypten
   a69e1b8: Mazedonien
-  a197f19: Asia
+  a197f19: Asien
   a5feb15: Ephesus
   ae41ab4: Antiochia
   a58735e: Caesarea
@@ -406,7 +406,7 @@ places:
   a7e13e1: Ai
   a513646: Dan
   ac71e65: Philistäa
-  a2fe63c: Ramot in Gilead
+  a2fe63c: Ramot-Gilead
   a3e21c6: Karmel
   a7e3a59: Elam
   a8394b8: Babylonien
@@ -452,7 +452,7 @@ places:
   ac12af9: Libyen
   a6ac675: Moreschet-Gat
   a939939: Turm von Sichem
-  a84c559: Walkerfeld
+  a84c559: Acker des Walkmüllers
   a32397f: Alusch
   a2f186d: Atad
   a03cc2d: Baalat-Beer
@@ -698,7 +698,7 @@ places:
   a8fe47a: Schilhim
   ab5d319: Sibraim
   a64ff72: Socho
-  a27b472: Sychar
+  a27b472: Sichar
   af614df: Tabor
   a10147d: Tel-Abib
   aab8f2d: Tifsach
@@ -767,7 +767,7 @@ places:
   ae6cef8: Bet-Anat
   a87f8f5: Bet-Markabot
   ae1f807: Kalach
-  af6c09e: Efrata
+  af6c09e: Ephratha
   a2e1bc0: Gat
   af054ba: Gedor
   a2ebe1c: Hefer
@@ -1317,12 +1317,14 @@ polities:
   Almohad Caliphate: Almohadenkalifat
   Almoravid Dynasty: Almoraviden
   Alodia: Alwa
+  Ammon: Ammon
   Angevin Empire: Angevinisches Reich
   Angevins: Herrschaft der Grafen von Anjou
   Ankhwennefer: Herrschaft des Anchwennefer
   Antigonid Dynasty: Antigoniden
   Antigonid Macedonia: Makedonien unter den Antigoniden
   Aquitaine: Aquitanien
+  Aram-Damascus: Aram-Damaskus
   Armenian Kingdom of Cilicia: Kilikisches Armenien
   Assyria: Assyrien
   Assyrian Egypt: Ägypten unter assyrischer Herrschaft
@@ -1347,6 +1349,7 @@ polities:
   Cao Wei: Cao Wei
   Capetian House of Anjou: Haus Anjou
   Carantania: Karantanien
+  Carchemish: Karkemisch
   Carolingian Empire: Karolingerreich
   Carthage: Karthago
   Caucasian Albania: Kaukasisch-Albanien
@@ -1432,6 +1435,7 @@ polities:
   Eastern Kara-Khanids: Östliche Karachaniden
   Eastern Kushans: Östliche Kuschana
   Eastern Roman Empire: Oströmisches Reich
+  Edom: Edom
   Elam: Elam
   Emirate of Crete: Emirat von Kreta
   Emirate of Córdoba: Emirat von Córdoba
@@ -1481,6 +1485,7 @@ polities:
   Hadhramaut: Hadramaut
   Hafsid Dynasty: Hafsiden
   Halych-Volhynia occupation: Kumanensteppe
+  Hamath: Hamat
   Hamdanid Emirates: Hamdanidenemirate
   Hammadid Dynasty: Hammadiden
   Han Dynasty: Han-Reich
@@ -1615,6 +1620,7 @@ polities:
   Minaeans: Minäer
   Minoan civilization: Minoische Kultur
   Mitanni: Mitanni
+  Moab: Moab
   Molossians: Molosser
   Mongol Empire: Mongolisches Reich
   Mycenaean Greece: Mykenisches Griechenland
@@ -1794,6 +1800,11 @@ polities:
   Third Dynasty of Ur: Dritte Dynastie von Ur
   Principality of Armenia: Fürstentum Armenien
 modern:
+  md88865: "Argob"
+  m0df275: "Bozez"
+  m9b1996: "Wüste Jeruël"
+  me0645b: "Ören"
+  m23ce84: "Massa"
   m66c5b8: Jerusalem
   md561de: Babylon
   me7edbd: Jordan
@@ -6708,3 +6719,21 @@ ancient:
   Q173474: Tarnowo
   Q2538648: Wad ban Naqa
   Q1462261: Wasit
+# The today line where OpenBible describes the place in free English text, translated whole
+# (as content/modern-names.yaml does for Russian), with this file's names of the places.
+labels:
+  "in the region east of Gibeon": "Östlich von Gibeon"
+  "in the region between Mizpah and Shen": "Zwischen Mizpa und Schen"
+  "in the region between Gerar and Beersheba": "Zwischen Gerar und Beerscheba"
+  "in the region south of Hebron": "Südlich von Hebron"
+  "in the region between Lachish and Gath": "Zwischen Lachisch und Gat"
+  "in the region between Eshtaol and Zorah": "Zwischen Eschtaol und Zora"
+  "in the region between Damascus and Hamath": "Zwischen Damaskus und Hamat"
+  "in the region between Baalbek and Kadesh": "Zwischen Baalbek und Kadesch"
+  "in the region between Aiath and Michmash": "Zwischen Ajat und Michmas"
+  "in the region between Ibleam and Megiddo": "Zwischen Jibleam und Megiddo"
+  "in the region between Punon and Zered": "Zwischen Punon und dem Bach Sered"
+  "in the region between Maghfar and Lake Timsah": "Zwischen Maghfar und dem Timsahsee"
+  "in the region north of the Dead Sea": "Nördlich des Toten Meeres"
+  "in the region south of the Lisan": "Südlich der Halbinsel Lisan"
+  "in the region between Kedesh-naphtali and Hazor": "Zwischen Kedesch in Naftali und Hazor"
