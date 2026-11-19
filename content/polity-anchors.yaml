@@ -1,0 +1,243 @@
+# Places whose state the map must show (checked by scripts/build-polities.ts): for each
+# period the place lies inside the polity named ("any": inside some polity), every year
+# between the first and the last listed lies inside some polity, and a year with no state
+# on purpose is listed under `blank` with the reason. A capital or a town that a correction
+# was made for goes here, so that a later change to the data or the corrections cannot
+# undo it unseen.
+anchors:
+  - name: Gibeah
+    place: ac24f5f
+    periods:
+      - { first_year: "1050 BC", last_year: "1011 BC", polity: Kingdom of Israel }
+    sources:
+      - "1 Sam 10:26; 15:34"
+
+  - name: Jerusalem
+    place: a15257a
+    periods:
+      - { first_year: "1010 BC", last_year: "902 BC", polity: Kingdom of Israel }
+      - { first_year: "901 BC", last_year: "586 BC", polity: Kingdom of Judah }
+    sources:
+      - "2 Sam 5:6-9; 1 Kgs 12:21; 2 Kgs 25:1-10"
+
+  - name: Samaria
+    place: a041bb3
+    periods:
+      - { first_year: "880 BC", last_year: "722 BC", polity: Kingdom of Israel }
+    sources:
+      - "1 Kgs 16:24; 2 Kgs 17:5-6"
+
+  - name: Dan
+    place: a513646
+    periods:
+      - { first_year: "1010 BC", last_year: "902 BC", polity: Kingdom of Israel }
+      - { first_year: "901 BC", last_year: "733 BC", polity: Kingdom of Israel }
+    sources:
+      - "1 Kgs 4:25; 12:29; 2 Kgs 10:29; 15:29"
+
+  - name: Lachish
+    place: a3cc590
+    periods:
+      - { first_year: "1010 BC", last_year: "902 BC", polity: Kingdom of Israel }
+      - { first_year: "901 BC", last_year: "587 BC", polity: Kingdom of Judah }
+    sources:
+      - "2 Chr 11:5-9; Jer 34:7"
+
+  - name: Beersheba
+    place: ad2f6c2
+    periods:
+      - { first_year: "1010 BC", last_year: "902 BC", polity: Kingdom of Israel }
+      - { first_year: "901 BC", last_year: "586 BC", polity: Kingdom of Judah }
+    sources:
+      - "1 Kgs 4:25; 2 Kgs 23:8"
+
+  - name: Arad
+    place: abc358b
+    periods:
+      - { first_year: "1010 BC", last_year: "902 BC", polity: Kingdom of Israel }
+      - { first_year: "901 BC", last_year: "586 BC", polity: Kingdom of Judah }
+    sources:
+      - "Y. Aharoni, Arad Inscriptions (1981)"
+
+  - name: Damascus
+    place: a69c1d4
+    periods:
+      - { first_year: "950 BC", last_year: "733 BC", polity: Aram-Damascus }
+      - { first_year: "732 BC", last_year: "615 BC", polity: Neo-Assyrian Empire }
+      - { first_year: "600 BC", last_year: "540 BC", polity: Neo-Babylonian Empire }
+    blank:
+      - first_year: "614 BC"
+        last_year: "601 BC"
+        reason: >-
+          Assyria's last years and Egypt's advance to the Euphrates: neither the Medes, nor
+          Babylon, nor Egypt is drawn over Syria before the Babylonian shape of 600 BC.
+    sources:
+      - "1 Kgs 11:24; 2 Kgs 16:9"
+      - "E. Lipiński, The Aramaeans (2000)"
+
+  - name: Hamath
+    place: ac62cbc
+    periods:
+      - { first_year: "1000 BC", last_year: "720 BC", polity: Hamath }
+    sources:
+      - "2 Sam 8:9; 2 Kgs 18:34"
+
+  - name: Carchemish
+    place: af6c730
+    periods:
+      - { first_year: "1000 BC", last_year: "717 BC", polity: Carchemish }
+    sources:
+      - "J. D. Hawkins, Corpus of Hieroglyphic Luwian Inscriptions, vol. 1 (2000)"
+
+  - name: Rabbah
+    place: ae067b5
+    periods:
+      - { first_year: "1010 BC", last_year: "902 BC", polity: Kingdom of Israel }
+      - { first_year: "901 BC", last_year: "582 BC", polity: Ammon }
+    sources:
+      - "2 Sam 12:26-31; Jer 49:2"
+
+  - name: Dibon
+    place: a0d784a
+    periods:
+      - { first_year: "1010 BC", last_year: "902 BC", polity: Kingdom of Israel }
+      - { first_year: "901 BC", last_year: "582 BC", polity: Moab }
+    sources:
+      - "Mesha Stele (KAI 181), 1-2"
+
+  - name: Kir-hareseth
+    place: ab55371
+    periods:
+      - { first_year: "901 BC", last_year: "582 BC", polity: Moab }
+    sources:
+      - "2 Kgs 3:25; Isa 16:7"
+
+  - name: Bozrah
+    place: a871210
+    periods:
+      - { first_year: "845 BC", last_year: "553 BC", polity: Edom }
+    sources:
+      - "Isa 34:6; Amos 1:12"
+
+  - name: Babylon
+    place: a217d18
+    periods:
+      - { first_year: "626 BC", last_year: "602 BC", polity: Babylonia }
+      - { first_year: "601 BC", last_year: "539 BC", polity: Neo-Babylonian Empire }
+    sources:
+      - "Babylonian Chronicle ABC 2"
+
+  - name: Nineveh
+    place: a70fd5d
+    periods:
+      - { first_year: "900 BC", last_year: "613 BC", polity: Neo-Assyrian Empire }
+    blank:
+      - first_year: "612 BC"
+        last_year: "601 BC"
+        reason: >-
+          After the fall of Nineveh the Medes and Babylon divided the Assyrian heartland;
+          neither is drawn over it before 600 BC (content/polity-overrides.yaml).
+    sources:
+      - "Babylonian Chronicle ABC 3"
+
+  - name: Nippur
+    at: [45.23, 32.127]
+    periods:
+      - { first_year: "700 BC", last_year: "627 BC", polity: Neo-Assyrian Empire }
+      - { first_year: "626 BC", last_year: "602 BC", polity: Babylonia }
+      - { first_year: "601 BC", last_year: "539 BC", polity: Neo-Babylonian Empire }
+    sources:
+      - "Babylonian Chronicle ABC 2 (Kandalanu's reign under Assyria to 627 BC)"
+      - "J. Oates, The Fall of Assyria (635-609 B.C.), in The Cambridge Ancient History, 2nd ed., vol. III/2 (1991), ch. 25"
+
+  - name: Ur
+    place: a6cf75c
+    periods:
+      - { first_year: "700 BC", last_year: "627 BC", polity: Neo-Assyrian Empire }
+      - { first_year: "626 BC", last_year: "602 BC", polity: Babylonia }
+      - { first_year: "601 BC", last_year: "539 BC", polity: Neo-Babylonian Empire }
+    sources:
+      - "Babylonian Chronicle ABC 2"
+      - "J. Oates, The Fall of Assyria (635-609 B.C.), in The Cambridge Ancient History, 2nd ed., vol. III/2 (1991), ch. 25"
+
+  - name: Assur
+    at: [43.262, 35.457]
+    periods:
+      - { first_year: "900 BC", last_year: "615 BC", polity: Neo-Assyrian Empire }
+    blank:
+      - first_year: "614 BC"
+        last_year: "601 BC"
+        reason: >-
+          The Medes took Assur in 614 BC; no state is drawn over it before 600 BC.
+    sources:
+      - "Babylonian Chronicle ABC 3"
+
+  - name: Harran
+    at: [39.03, 36.86]
+    periods:
+      - { first_year: "611 BC", last_year: "609 BC", polity: Neo-Assyrian Empire }
+    sources:
+      - "Babylonian Chronicle ABC 3"
+
+  - name: Tushpa
+    place: "874771"
+    periods:
+      - { first_year: "830 BC", last_year: "552 BC", polity: Kingdom of Urartu }
+    sources:
+      - "P. E. Zimansky, Ecology and Empire (1985)"
+
+  - name: Rusahinili
+    place: "379202545"
+    periods:
+      - { first_year: "690 BC", last_year: "590 BC", polity: Kingdom of Urartu }
+    sources:
+      - "P. E. Zimansky, Ecology and Empire (1985)"
+
+  - name: Ecbatana
+    place: a212ef7
+    periods:
+      - { first_year: "147 BC", last_year: "131 BC", polity: Parthian Empire }
+    sources:
+      - "Wikipedia, Mithridates I of Parthia"
+
+  - name: Susa
+    place: a033b84
+    periods:
+      - { first_year: "147 BC", last_year: "146 BC", polity: Seleucid Empire }
+    sources:
+      - "M. Brosius, The Persians: An Introduction (2006)"
+
+  - name: Arbela
+    place: "874341"
+    periods:
+      - { first_year: "141 BC", last_year: "131 BC", polity: Parthian Empire }
+    sources:
+      - "Wikipedia, Mithridates I of Parthia"
+
+  - name: Gaza
+    place: aa8edd2
+    periods:
+      - { first_year: "600 BC", last_year: "539 BC", polity: Neo-Babylonian Empire }
+      - { first_year: "538 BC", last_year: "333 BC", polity: Achaemenid Empire }
+    sources:
+      - "Herodotus 3.5"
+
+  - name: Tyre
+    place: a160272
+    periods:
+      - { first_year: "1150 BC", last_year: "AD 600", polity: any }
+    sources:
+      - "Ezek 26-28"
+
+  - name: Constantinople
+    place: Q16869
+    periods:
+      - { first_year: "AD 330", last_year: "AD 1300", polity: any }
+    blank:
+      - first_year: "AD 1262"
+        last_year: "AD 1278"
+        reason: >-
+          The Latin Empire ends with the Byzantine recovery of 1261 (overrides), and
+          Cliopatria has no shape of the restored empire before 1279.
+    sources:
+      - "Wikidata Q16869"

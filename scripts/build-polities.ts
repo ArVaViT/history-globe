@@ -8,16 +8,19 @@
  */
 import { rulersOf } from "./rulers.ts";
 import { pointInRing, type Ring, ringArea } from "./geo.ts";
+import { areaOf, booleanOp, insideRings, repairPolygons, selfCrossings } from "./polygon-ops.ts";
 import { join } from "node:path";
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import {
   AncientSitesFile,
   AncientWaveFile,
+  PolityAnchorsFile,
   PolityNamesFile,
   PolityOverridesFile,
 } from "../packages/model/src/content.ts";
 import { POLITY_SPLIT_YEAR } from "../packages/model/src/time.ts";
 import { undocumented } from "./release-doc.ts";
+import { REACH, reachCoast, WaterGrid } from "./polity-coast.ts";
 
 const root = join(import.meta.dirname, "..");
 
@@ -38,6 +41,131 @@ export interface PolityBuild {
   readonly namesIn?: Readonly<
     Record<string, { readonly polities: Readonly<Record<string, string>> }>
   >;
+}
+
+type Geometry = { type: string; coordinates: unknown };
+
+/** The polygons of a Polygon or MultiPolygon, each its outer ring and holes. */
+const polysOf = (g: Geometry): Ring[][] =>
+  g.type === "MultiPolygon"
+    ? (g.coordinates as Ring[][])
+    : g.type === "Polygon"
+      ? [g.coordinates as Ring[]]
+      : [];
+
+/** The rings of a shape, repaired first if one crosses another (polygon-ops needs that). */
+const valid = (g: Geometry): Ring[] => {
+  const polys = polysOf(g);
+  return selfCrossings(polys.flat()).length > 0 ? repairPolygons(polys).flat() : polys.flat();
+};
+
+const clone = <T>(v: T): T => JSON.parse(JSON.stringify(v)) as T;
+
+const closeRing = (r: Ring): Ring => {
+  const first = r[0];
+  const last = r[r.length - 1];
+  return first && last && (first[0] !== last[0] || first[1] !== last[1]) ? [...r, first] : r;
+};
+
+/** A point inside the largest part: the mean of its points, or the nearest inside of a grid. */
+function middleOf(shape: Ring[][]): [number, number] {
+  const ring = shape
+    .map((poly) => poly[0] ?? [])
+    .reduce((a, r) => (ringArea(r) > ringArea(a) ? r : a));
+  const pts = ring.slice(0, -1);
+  const mid: [number, number] = [
+    Math.round((pts.reduce((a, [x]) => a + x, 0) / pts.length) * 1000) / 1000,
+    Math.round((pts.reduce((a, [, y]) => a + y, 0) / pts.length) * 1000) / 1000,
+  ];
+  if (insideRings(mid, shape.flat())) return mid;
+  let best: [number, number] = ring[0] ?? mid;
+  let dist = Infinity;
+  const xs = ring.map(([x]) => x);
+  const ys = ring.map(([, y]) => y);
+  for (let x = Math.min(...xs); x <= Math.max(...xs); x += 0.02)
+    for (let y = Math.min(...ys); y <= Math.max(...ys); y += 0.02) {
+      const c: [number, number] = [Math.round(x * 1000) / 1000, Math.round(y * 1000) / 1000];
+      const d = Math.hypot(c[0] - mid[0], c[1] - mid[1]);
+      if (d < dist && insideRings(c, shape.flat())) {
+        dist = d;
+        best = c;
+      }
+    }
+  return best;
+}
+
+/** About 0.5 km² and 5 km² near 32 degrees N, in square degrees. */
+const SPECK = 0.00005;
+const SLIVER = 0.0005;
+/** 4πA/P²: 1 for a circle, near 0 for a thin strip. */
+const roundness = (r: Ring): number => {
+  let per = 0;
+  for (let i = 0; i + 1 < r.length; i++) {
+    const [x0, y0] = r[i] ?? [0, 0];
+    const [x1, y1] = r[i + 1] ?? [0, 0];
+    per += Math.hypot(x1 - x0, y1 - y0);
+  }
+  return per === 0 ? 0 : (4 * Math.PI * areaOf(r)) / (per * per);
+};
+/** A piece no one would see as land: a speck, or a thin strip a clip left along its edge. */
+export const isSliver = (r: Ring): boolean => {
+  const a = areaOf(r);
+  return a < SPECK || (a < SLIVER && roundness(r) < 0.1);
+};
+
+/**
+ * A shape as it ships: points at three decimals, none repeated, no ring crossing another
+ * (repaired, polygon-ops.ts), no specks or slivers. Running it again changes nothing.
+ */
+export function tidy(polys: Ring[][]): Ring[][] {
+  const r3 = (v: number) => Math.round(v * 1000) / 1000;
+  const clean = (ps: Ring[][]): Ring[][] =>
+    ps
+      .map((poly) =>
+        poly
+          .map((ring) => {
+            const out: Ring = [];
+            // A spike (the ring running out and straight back, as a clip leaves along its
+            // edge) is no land: its tip is dropped, here and across the ring's closing point.
+            const spike = (a: [number, number], b: [number, number], c: [number, number]) =>
+              Math.abs((b[0] - a[0]) * (c[1] - b[1]) - (b[1] - a[1]) * (c[0] - b[0])) < 1e-12 &&
+              (b[0] - a[0]) * (c[0] - b[0]) + (b[1] - a[1]) * (c[1] - b[1]) <= 0;
+            const push = (p: [number, number]) => {
+              const last = out[out.length - 1];
+              if (last && last[0] === p[0] && last[1] === p[1]) return;
+              while (out.length >= 2) {
+                const a = out[out.length - 2] ?? p;
+                const b = out[out.length - 1] ?? p;
+                if (!spike(a, b, p)) break;
+                out.pop();
+              }
+              const top = out[out.length - 1];
+              if (!top || top[0] !== p[0] || top[1] !== p[1]) out.push(p);
+            };
+            for (const [x, y] of ring) push([r3(x), r3(y)]);
+            // Open, then trim spikes at the seam.
+            const first = out[0];
+            const end = out[out.length - 1];
+            if (first && end && first[0] === end[0] && first[1] === end[1]) out.pop();
+            for (let guard = 0; out.length >= 3 && guard < out.length; guard++) {
+              const n = out.length;
+              if (spike(out[n - 1] ?? [0, 0], out[0] ?? [0, 0], out[1] ?? [0, 0])) out.shift();
+              else if (spike(out[n - 2] ?? [0, 0], out[n - 1] ?? [0, 0], out[0] ?? [0, 0]))
+                out.pop();
+              else break;
+            }
+            return closeRing(out);
+          })
+          .filter((ring) => ring.length >= 4),
+      )
+      .filter((poly) => poly.length > 0);
+  let out = clean(polys);
+  // Rounding a repaired shape can make it cross again where two edges ran a hair apart.
+  for (let i = 0; i < 3 && selfCrossings(out.flat()).length > 0; i++)
+    out = clean(repairPolygons(out, SPECK));
+  return out
+    .filter((poly) => !isSliver(poly[0] ?? []))
+    .map((poly) => [poly[0] ?? [], ...poly.slice(1).filter((h) => !isSliver(h))]);
 }
 
 export function buildPolities({
@@ -76,6 +204,58 @@ export function buildPolities({
   };
   const polities = { features: readFeatures(join(from, "polities.geojson")) };
   const polityLabels = { features: readFeatures(join(from, "polity-labels.geojson")) };
+  // The ancient world's sites (content/ancient-sites*.json), read once.
+  let sites: { id: string; lon: number; lat: number }[] | undefined;
+  const ancientSites = () =>
+    (sites ??= [
+      ...AncientSitesFile.parse(load("content/ancient-sites.json")).sites,
+      ...readdirSync(join(root, "content"))
+        .filter((f) => /^ancient-sites-wave\d+\.json$/.test(f))
+        .flatMap((f) => AncientWaveFile.parse(load(`content/${f}`)).sites),
+    ]);
+  // Cliopatria's coasts run up to 15 km inland: each shape is carried out to the shore
+  // (scripts/polity-coast.ts), where no other state of those years holds the land between.
+  {
+    const water = new WaterGrid(
+      readWater(join(out, "water.geojson")).map((w) => w.ring),
+      [-30, -5, 90, 65],
+      0.02,
+    );
+    const shown = polities.features
+      .filter((f) => !f.properties.rel && f.properties.y0 < f.properties.y1)
+      .map((f) => {
+        const polys = polysOf(f.geometry as Geometry);
+        const rings = polys.flat();
+        const xs = rings.flatMap((r) => r.map(([x]) => x));
+        const ys = rings.flatMap((r) => r.map(([, y]) => y));
+        return {
+          f,
+          shape: { polys, y0: f.properties.y0, y1: f.properties.y1, name: f.properties.name },
+          box: [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)] as const,
+        };
+      });
+    for (const me of shown) {
+      const others = shown
+        .filter(
+          (o) =>
+            o.shape.name !== me.shape.name &&
+            o.shape.y0 < me.shape.y1 &&
+            me.shape.y0 < o.shape.y1 &&
+            o.box[0] <= me.box[2] + REACH &&
+            me.box[0] <= o.box[2] + REACH &&
+            o.box[1] <= me.box[3] + REACH &&
+            me.box[1] <= o.box[3] + REACH,
+        )
+        .map((o) => o.shape);
+      const reached = reachCoast(me.shape, others, water);
+      if (reached) me.f.geometry = { type: "MultiPolygon", coordinates: reached };
+    }
+  }
+  // Every shape made valid before any correction, as it is written (below).
+  for (const f of polities.features) {
+    if (f.properties.rel) continue;
+    f.geometry = { type: "MultiPolygon", coordinates: tidy(polysOf(f.geometry as Geometry)) };
+  }
   const overridesFile = PolityOverridesFile.parse(load("content/polity-overrides.yaml"));
   for (const o of overridesFile.overrides) {
     const own = polities.features.filter(
@@ -198,8 +378,15 @@ export function buildPolities({
       Number(x.first_year !== undefined || x.last_year !== undefined) -
       Number(y.first_year !== undefined || y.last_year !== undefined),
   );
+  // The land each clip with years cut away, for the polity it went to (`to`) and for the
+  // check that a clip leaves no land without a state unless it says so (below).
+  const cutAways: {
+    k: number;
+    y0: number;
+    y1: number;
+    rings: Ring[];
+  }[] = [];
   for (const [k, c] of clipsInOrder) {
-    const clip = c.within;
     // A clip for some years only: the shapes and labels standing in them are copied for
     // those years (overrides) and only the copies are clipped; the originals keep their
     // geometry and give up those years.
@@ -247,16 +434,33 @@ export function buildPolities({
       errors.push(`polity-overrides: clip "${c.polity}" is not in the data build`);
     for (const f of shapes) {
       const g = f.geometry as { type: string; coordinates: Ring[] | Ring[][] };
-      const polys = (g.type === "MultiPolygon" ? g.coordinates : [g.coordinates]) as Ring[][];
-      const kept = polys
-        .map((poly) => {
-          // Open the ring, clip it, close it again.
-          const outer = (poly[0] ?? []).slice(0, -1);
-          const cut = clipRing(outer, clip);
-          return cut.length >= 3 ? [[...cut, cut[0] ?? [0, 0]]] : null;
-        })
-        .filter((p): p is Ring[] => p !== null);
-      f.geometry = { type: "MultiPolygon", coordinates: kept };
+      const before = valid(g);
+      if (c.within) {
+        const clip = c.within;
+        const polys = (g.type === "MultiPolygon" ? g.coordinates : [g.coordinates]) as Ring[][];
+        const kept = polys
+          .map((poly) => {
+            // Open the ring, clip it, close it again.
+            const outer = (poly[0] ?? []).slice(0, -1);
+            const cut = clipRing(outer, clip);
+            return cut.length >= 3 ? [[...cut, cut[0] ?? [0, 0]]] : null;
+          })
+          .filter((p): p is Ring[] => p !== null);
+        f.geometry = { type: "MultiPolygon", coordinates: kept };
+      } else if (c.without) {
+        f.geometry = {
+          type: "MultiPolygon",
+          coordinates: booleanOp(before, [c.without], "difference"),
+        };
+      }
+      // A clip for all years cuts Cliopatria's own shape in place, so a rerun no longer sees
+      // what it took: only the clips with years are followed.
+      if (limited) {
+        const away = c.within
+          ? booleanOp(before, [c.within], "difference")
+          : booleanOp(before, [c.without ?? []], "intersection");
+        cutAways.push({ k, y0: f.properties.y0, y1: f.properties.y1, rings: away.flat() });
+      }
     }
     // Label size follows the area left, as pipeline/build_data.py sets it from the whole:
     // log10 of the shoelace area in square degrees, plus 2.
@@ -321,6 +525,149 @@ export function buildPolities({
       }
       if (best) at.coordinates = [Math.round(((best[0] + best[1]) / 2) * 1000) / 1000, mid[1]];
     }
+  }
+
+  // Land a polity held that its shape leaves out (overrides `extends`), and land a clip cut
+  // away and gave to another (`to`): the outline is joined to every shape of the polity
+  // standing in those years, as copies for those years (made again on every build).
+  const clipsByIndex = overridesFile.clips ?? [];
+  const extensions = [
+    ...(overridesFile.extends ?? []).map((x) => ({
+      polity: x.polity,
+      a: x.first_year,
+      b: x.last_year + 1, // half-open, ADR 0003
+      add: [x.outline],
+      what: `extends "${x.polity}"`,
+    })),
+    ...cutAways.flatMap((w) => {
+      const c = clipsByIndex[w.k];
+      return c?.to && w.rings.length > 0
+        ? [
+            {
+              polity: c.to,
+              a: w.y0,
+              b: w.y1,
+              add: w.rings,
+              what: `clip "${c.polity}" to "${c.to}"`,
+            },
+          ]
+        : [];
+    }),
+  ];
+  for (const x of extensions) {
+    if (x.b <= x.a) continue;
+    const own = polities.features.filter(
+      (g) =>
+        g.properties.name === x.polity &&
+        !g.properties.rel &&
+        g.properties.y0 < g.properties.y1 &&
+        g.properties.y0 < x.b &&
+        x.a < g.properties.y1,
+    );
+    if (own.length === 0) {
+      errors.push(`polity-overrides: ${x.what}: not on the map in those years`);
+      continue;
+    }
+    for (const f of own) {
+      const p = f.properties;
+      const { y0, y1 } = p;
+      const copy = (from: number, to: number, geometry: unknown): PolityFeature => ({
+        ...f,
+        geometry,
+        properties: { ...p, y0: from, y1: to, src: "override" },
+      });
+      const grown = booleanOp(valid(f.geometry as Geometry), x.add, "union");
+      polities.features.push(
+        copy(Math.max(y0, x.a), Math.min(y1, x.b), { type: "MultiPolygon", coordinates: grown }),
+      );
+      if (x.b < y1) polities.features.push(copy(x.b, y1, clone(f.geometry)));
+      // The shape keeps its years before.
+      p.y1 = Math.max(y0, Math.min(y1, x.a));
+    }
+  }
+
+  // States Cliopatria does not draw (overrides `drawn`): our outline, less the land of the
+  // polities in `minus`, one shape for each stretch of years in which those stand still.
+  for (const d of overridesFile.drawn ?? []) {
+    const a = d.first_year;
+    const b = d.last_year + 1; // half-open, ADR 0003
+    if (b <= a) {
+      errors.push(`polity-overrides: drawn "${d.polity}" ends before it starts`);
+      continue;
+    }
+    if (
+      polities.features.some(
+        (f) => f.properties.name === d.polity && f.properties.src !== "override",
+      )
+    )
+      errors.push(
+        `polity-overrides: drawn "${d.polity}" is a polity of the data: extend it instead`,
+      );
+    const minus = new Set(d.minus ?? []);
+    const others = polities.features.filter(
+      (f) =>
+        minus.has(f.properties.name) &&
+        !f.properties.rel &&
+        f.properties.y0 < f.properties.y1 &&
+        f.properties.y0 < b &&
+        a < f.properties.y1,
+    );
+    const cuts = [...new Set([a, b, ...others.flatMap((f) => [f.properties.y0, f.properties.y1])])]
+      .filter((y) => y >= a && y <= b)
+      .sort((p, q) => p - q);
+    let last: { y1: number; json: string; shape: PolityFeature; label: PolityFeature } | null =
+      null;
+    for (let i = 0; i + 1 < cuts.length; i++) {
+      const s = cuts[i] ?? a;
+      const t = cuts[i + 1] ?? b;
+      let shape: Ring[][] = [[closeRing(d.outline)]];
+      for (const o of others)
+        if (o.properties.y0 < t && s < o.properties.y1)
+          shape = booleanOp(shape.flat(), valid(o.geometry as Geometry), "difference");
+      if (shape.length === 0) {
+        errors.push(
+          `polity-overrides: drawn "${d.polity}" is covered by its neighbours in ${String(s)}`,
+        );
+        continue;
+      }
+      const json = JSON.stringify(shape);
+      if (last && last.y1 === s && last.json === json) {
+        last.y1 = t;
+        last.shape.properties.y1 = t;
+        last.label.properties.y1 = t;
+        continue;
+      }
+      const props = { name: d.polity, y0: s, y1: t, rel: false, c: 0, src: "override" };
+      const feature: PolityFeature = {
+        geometry: { type: "MultiPolygon", coordinates: shape },
+        properties: { ...props },
+      };
+      const total = shape.reduce((sum, poly) => sum + ringArea(poly[0] ?? []), 0);
+      // Named at the point given, if this stretch's shape still holds it; else at the middle
+      // of its largest part (the pins below move the small states' names into the open).
+      const at = insideRings(d.label, shape.flat()) ? d.label : middleOf(shape);
+      const label = {
+        geometry: { type: "Point", coordinates: at },
+        properties: {
+          ...props,
+          size: Math.round((Math.log10(Math.max(total, 0.01)) + 2) * 100) / 100,
+          tier: 0,
+          lead: 1,
+        },
+      } as PolityFeature;
+      polities.features.push(feature);
+      polityLabels.features.push(label);
+      last = { y1: t, json, shape: feature, label };
+    }
+  }
+
+  // Every shape drawn made valid, so that what ships is what the checks below pass: points
+  // at three decimals as written (about 100 m), no point repeated, a ring that crosses
+  // itself or another part (Cliopatria's own, or the bridges a clip leaves along its edge)
+  // split at the crossings and joined again, specks and slivers dropped.
+  for (const f of polities.features) {
+    if (f.properties.rel || f.properties.y1 <= f.properties.y0) continue;
+    f.geometry = { type: "MultiPolygon", coordinates: tidy(polysOf(f.geometry as Geometry)) };
   }
 
   // Colours: the pipeline gives each polity the next of ten in turn, so neighbours that
@@ -791,6 +1138,29 @@ export function buildPolities({
   polities.features = polities.features.filter((f) => f.properties.y1 > f.properties.y0);
   polityLabels.features = polityLabels.features.filter((f) => f.properties.y1 > f.properties.y0);
 
+  checkPolities({
+    shapes: polities.features as ShipFeature[],
+    clips: (overridesFile.clips ?? []).map((c) => ({
+      name: c.polity,
+      to: c.to,
+      blank: c.leaves_blank === true,
+    })),
+    cutAways,
+    water: readWater(join(out, "water.geojson")),
+    // Required: a missing file would pass every anchor unseen.
+    anchors: PolityAnchorsFile.parse(load("content/polity-anchors.yaml")).anchors,
+    pointOf: (id) => {
+      const place = (
+        places.features as { geometry: { coordinates: number[] }; properties: { id?: string } }[]
+      ).find((f) => f.properties.id === id);
+      if (place) return place.geometry.coordinates as [number, number];
+      const site = ancientSites().find((a) => a.id === id);
+      return site ? [site.lon, site.lat] : undefined;
+    },
+    drawn: new Set((overridesFile.drawn ?? []).map((d) => d.polity)),
+    errors,
+  });
+
   // Polity labels get their Russian name; every label on the map must have one.
   const polityNames = PolityNamesFile.parse(load("content/polity-names.yaml")).polities;
   const labels = polityLabels as { features: { properties: { name: string; name_ru?: string } }[] };
@@ -862,15 +1232,240 @@ export function buildPolities({
 
   // Who ruled each place, century by century, for the card's timeline (scripts/rulers.ts):
   // the ancient world's places too, which the card opens as any other.
-  const ancient = [
-    ...AncientSitesFile.parse(load("content/ancient-sites.json")).sites,
-    ...readdirSync(join(root, "content"))
-      .filter((f) => /^ancient-sites-wave\d+\.json$/.test(f))
-      .flatMap((f) => AncientWaveFile.parse(load(`content/${f}`)).sites),
-  ].map((a) => ({ geometry: { coordinates: [a.lon, a.lat] }, properties: { id: a.id } }));
+  const ancient = ancientSites().map((a) => ({
+    geometry: { coordinates: [a.lon, a.lat] },
+    properties: { id: a.id },
+  }));
   // Read from the shapes as written, at three decimals: a place a few metres from a border
   // falls on the side the map draws it.
   const written = (JSON.parse(all) as { features: typeof polities.features }).features;
   const { states, rulers } = rulersOf(written, [...places.features, ...ancient]);
   writes.push([join(out, "rulers.json"), JSON.stringify({ states, places: rulers })]);
+}
+
+type ShipFeature = {
+  geometry: Geometry;
+  properties: { name: string; y0: number; y1: number; rel?: boolean; v?: string };
+};
+
+/** The outer rings of water.geojson with their boxes: the sea and the lakes. */
+function readWater(path: string): { ring: Ring; box: [number, number, number, number] }[] {
+  if (!existsSync(path)) return [];
+  const features = (
+    JSON.parse(readFileSync(path, "utf8")) as { features: { geometry: Geometry }[] }
+  ).features;
+  return features
+    .flatMap(({ geometry }) => polysOf(geometry).map((poly) => poly[0] ?? []))
+    .map((ring) => {
+      const xs = ring.map(([x]) => x);
+      const ys = ring.map(([, y]) => y);
+      return {
+        ring,
+        box: [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)] as [
+          number,
+          number,
+          number,
+          number,
+        ],
+      };
+    });
+}
+
+const yearText = (y: number) => (y <= 0 ? `${String(1 - y)} BC` : `AD ${String(y)}`);
+const spanText = (a: number, b: number) =>
+  a === b ? yearText(a) : `${yearText(a)}-${yearText(b)}`;
+
+/** Runs of consecutive years, as "900-851 BC, 800 BC". */
+function runs(years: number[]): string {
+  const out: string[] = [];
+  let start: number | undefined;
+  let prev: number | undefined;
+  for (const y of [...years, Infinity]) {
+    if (start !== undefined && prev !== undefined && y !== prev + 1) {
+      out.push(spanText(start, prev));
+      start = undefined;
+    }
+    start ??= y;
+    prev = y;
+  }
+  return out.join(", ");
+}
+
+/**
+ * The checks on the states as they ship (docs/data-checks.md):
+ * - every shape is valid: no ring crosses itself or another, no point repeated, no specks
+ *   or slivers (`tidy` makes them so; this catches a step that undoes it);
+ * - a clip with years that cuts away land no other state covers says so (`leaves_blank`)
+ *   or gives the land to the state that took it (`to`): more than half of the land it took
+ *   left blank fails;
+ * - a state drawn by us covers no state it does not cut itself out of (`minus`), save as a
+ *   vassal over its overlord;
+ * - the anchors (content/polity-anchors.yaml): each place lies inside the state named for
+ *   each of its periods, inside some state in the years between, or the years are listed
+ *   as a gap with the reason.
+ */
+export function checkPolities({
+  shapes,
+  clips,
+  cutAways,
+  water,
+  anchors,
+  pointOf,
+  drawn,
+  errors,
+}: {
+  shapes: ShipFeature[];
+  clips: { name: string; to?: string | undefined; blank: boolean }[];
+  cutAways: { k: number; y0: number; y1: number; rings: Ring[] }[];
+  water: { ring: Ring; box: [number, number, number, number] }[];
+  anchors: {
+    name: string;
+    place?: string | undefined;
+    at?: [number, number] | undefined;
+    periods: { first_year: number; last_year: number; polity: string }[];
+    blank?: { first_year: number; last_year: number; reason: string }[] | undefined;
+  }[];
+  pointOf: (id: string) => [number, number] | undefined;
+  drawn: ReadonlySet<string>;
+  errors: string[];
+}): void {
+  const shown = shapes
+    .filter((f) => !f.properties.rel && f.properties.y0 < f.properties.y1)
+    .map((f) => {
+      const rings = polysOf(f.geometry).flat();
+      const xs = rings.flatMap((r) => r.map(([x]) => x));
+      const ys = rings.flatMap((r) => r.map(([, y]) => y));
+      return {
+        f,
+        rings,
+        box: [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)] as const,
+      };
+    });
+  const holding = (p: [number, number]) =>
+    shown.filter(
+      ({ rings, box }) =>
+        p[0] >= box[0] &&
+        p[0] <= box[2] &&
+        p[1] >= box[1] &&
+        p[1] <= box[3] &&
+        insideRings(p, rings),
+    );
+  const onLand = (p: [number, number]) =>
+    !water.some(
+      ({ ring, box }) =>
+        p[0] >= box[0] &&
+        p[0] <= box[2] &&
+        p[1] >= box[1] &&
+        p[1] <= box[3] &&
+        pointInRing(p, ring),
+    );
+
+  // Valid shapes.
+  const bad = new Map<string, string[]>();
+  for (const { f } of shown) {
+    const polys = polysOf(f.geometry);
+    const what: string[] = [];
+    if (
+      polys.some((poly) =>
+        poly.some((r) =>
+          r.some((p, i) => i > 0 && p[0] === r[i - 1]?.[0] && p[1] === r[i - 1]?.[1]),
+        ),
+      )
+    )
+      what.push("a repeated point");
+    if (polys.some((poly) => poly.some((r) => isSliver(r)))) what.push("a sliver");
+    const x = selfCrossings(polys.flat())[0];
+    if (x) what.push(`a crossing at ${x[0].toFixed(3)},${x[1].toFixed(3)}`);
+    if (what.length === 0) continue;
+    const key = `${f.properties.name}: ${what.join(", ")}`;
+    bad.set(key, [...(bad.get(key) ?? []), spanText(f.properties.y0, f.properties.y1 - 1)]);
+  }
+  for (const [key, years] of bad) errors.push(`polities: ${key} (${years.join("; ")})`);
+
+  // Clips that leave land blank.
+  const sample = (rings: Ring[]): [number, number][] => {
+    const xs = rings.flatMap((r) => r.map(([x]) => x));
+    const ys = rings.flatMap((r) => r.map(([, y]) => y));
+    if (xs.length === 0) return [];
+    const [w, s, e, n] = [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)];
+    const step = Math.max((e - w) / 24, (n - s) / 24, 0.02);
+    const out: [number, number][] = [];
+    for (let x = w + step / 2; x < e; x += step)
+      for (let y = s + step / 2; y < n; y += step) {
+        const p: [number, number] = [x, y];
+        if (insideRings(p, rings) && onLand(p)) out.push(p);
+      }
+    return out;
+  };
+  const tally = new Map<number, { blank: number; all: number; years: number[] }>();
+  for (const w of cutAways) {
+    const c = clips[w.k];
+    if (!c || c.to || c.blank) continue;
+    const year = w.y0;
+    const t = tally.get(w.k) ?? { blank: 0, all: 0, years: [] };
+    for (const p of sample(w.rings)) {
+      t.all++;
+      if (!holding(p).some(({ f }) => f.properties.y0 <= year && year < f.properties.y1)) t.blank++;
+    }
+    t.years.push(year);
+    tally.set(w.k, t);
+  }
+  for (const [k, t] of tally)
+    if (t.all > 0 && t.blank / t.all > 0.5)
+      errors.push(
+        `polity-overrides: clip ${String(k + 1)} of "${clips[k]?.name ?? ""}" leaves ${String(Math.round((100 * t.blank) / t.all))}% of the land it cuts away without a state (${runs([...new Set(t.years)].sort((a, b) => a - b))}): give it \`to\` the state that took it or say \`leaves_blank\``,
+      );
+
+  // States we draw cover no other, save as a vassal over its overlord.
+  for (const { f, rings } of shown) {
+    if (!drawn.has(f.properties.name) || f.properties.v !== undefined) continue;
+    const year = f.properties.y0;
+    const pts = sample(rings);
+    const over = new Map<string, number>();
+    for (const p of pts)
+      for (const { f: g } of holding(p))
+        if (
+          g.properties.name !== f.properties.name &&
+          g.properties.y0 <= year &&
+          year < g.properties.y1
+        )
+          over.set(g.properties.name, (over.get(g.properties.name) ?? 0) + 1);
+    for (const [name, n] of over)
+      if (n / pts.length > 0.05)
+        errors.push(
+          `polity-overrides: drawn "${f.properties.name}" covers ${String(Math.round((100 * n) / pts.length))}% of its land under "${name}" in ${yearText(year)}: add it to \`minus\` or make it a vassal`,
+        );
+  }
+
+  // Anchors.
+  for (const a of anchors) {
+    const p = a.at ?? (a.place ? pointOf(a.place) : undefined);
+    if (!p) {
+      errors.push(`polity-anchors: ${a.name}: no point (place "${a.place ?? ""}" not found)`);
+      continue;
+    }
+    const mine = holding(p);
+    const all = [...a.periods, ...(a.blank ?? [])];
+    const from = Math.min(...all.map((x) => x.first_year));
+    const to = Math.max(...all.map((x) => x.last_year));
+    const wrong = new Map<string, number[]>();
+    for (let y = from; y <= to; y++) {
+      if ((a.blank ?? []).some((g) => g.first_year <= y && y <= g.last_year)) continue;
+      const want = a.periods
+        .filter((x) => x.first_year <= y && y <= x.last_year)
+        .map((x) => x.polity);
+      const have = mine
+        .filter(({ f }) => f.properties.y0 <= y && y < f.properties.y1)
+        .map(({ f }) => f.properties.name);
+      const ok =
+        want.length === 0 || want.includes("any")
+          ? have.length > 0
+          : want.some((w) => have.includes(w));
+      if (ok) continue;
+      const key = `in ${have.length > 0 ? [...new Set(have)].join(" and ") : "no state"}, not ${want.length > 0 ? want.join(" or ") : "any state"}`;
+      wrong.set(key, [...(wrong.get(key) ?? []), y]);
+    }
+    for (const [key, years] of wrong)
+      errors.push(`polity-anchors: ${a.name} ${runs(years)}: ${key}`);
+  }
 }

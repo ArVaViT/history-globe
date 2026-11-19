@@ -45,6 +45,8 @@ const placeId = z.string().regex(/^a[0-9a-f]{6}$/);
 const placeOrSite = z.string().regex(/^(a[0-9a-f]{6}|\d{1,12}|Q\d{1,12})$/);
 /** The sources a correction or an entry rests on: at least one. */
 const sources = z.array(z.string().min(1)).min(1);
+/** A polygon of [lon, lat] points, open or closed. */
+const ring = z.array(z.tuple([z.number().min(-180).max(180), z.number().min(-90).max(90)])).min(3);
 
 /**
  * A text in the languages the code knows: English and Russian always, others as they are
@@ -125,6 +127,45 @@ export const PolityNamesFile = z.strictObject({
   polities: z.record(z.string().min(1), z.string().min(1)),
 });
 
+/**
+ * Places whose state the map must show (content/polity-anchors.yaml): a capital or a key
+ * town lies inside the polity named for each period, inside some polity in the years
+ * between, or the years are a gap left blank on purpose, with the reason.
+ */
+export const PolityAnchorsFile = z.strictObject({
+  anchors: z.array(
+    z.strictObject({
+      name: z.string().min(1),
+      /** A place (places.geojson) or an ancient site (content/ancient-sites*.json) by id. */
+      place: z.string().min(1).optional(),
+      /** Or a point, for a site in neither list. */
+      at: z.tuple([z.number().min(-180).max(180), z.number().min(-90).max(90)]).optional(),
+      periods: z
+        .array(
+          z.strictObject({
+            first_year: yearLabel,
+            /** Inclusive. */
+            last_year: yearLabel,
+            /** The polity as named on the map, or "any". */
+            polity: z.string().min(1),
+          }),
+        )
+        .min(1),
+      blank: z
+        .array(
+          z.strictObject({
+            first_year: yearLabel,
+            /** Inclusive. */
+            last_year: yearLabel,
+            reason: z.string().min(1),
+          }),
+        )
+        .optional(),
+      sources,
+    }),
+  ),
+});
+
 /** Our corrections on top of Cliopatria: keep a polity on the map for more years. */
 export const PolityOverridesFile = z.strictObject({
   overrides: z.array(
@@ -153,16 +194,76 @@ export const PolityOverridesFile = z.strictObject({
     .optional(),
   /**
    * Shapes Cliopatria draws too far: every shape of the polity is cut to the area given,
-   * a convex polygon of [lon, lat] points (Philistia on the coastal plain, not the hills).
+   * a convex polygon of [lon, lat] points (Philistia on the coastal plain, not the hills),
+   * or the area given is cut out of it (`without`, any simple polygon, years required).
+   * The land cut away goes to the polity named in `to` in the same years; land it leaves
+   * without any state must be declared with `leaves_blank` (the build checks).
    */
   clips: z
     .array(
+      z
+        .strictObject({
+          polity: z.string().min(1),
+          within: ring.optional(),
+          without: ring.optional(),
+          /** Only in these years (inclusive), the shapes split around them; all years if not given. */
+          first_year: yearLabel.optional(),
+          last_year: yearLabel.optional(),
+          /** The polity that took the land cut away: it is added to its shapes of these years. */
+          to: z.string().min(1).optional(),
+          /** The land cut away is left without a state on purpose; the reason says why. */
+          leaves_blank: z.literal(true).optional(),
+          reason: z.string().min(1),
+          sources,
+        })
+        .refine((c) => (c.within === undefined) !== (c.without === undefined), {
+          message: "a clip has either `within` or `without`",
+        })
+        .refine(
+          (c) =>
+            (c.without === undefined && c.to === undefined) ||
+            (c.first_year !== undefined && c.last_year !== undefined),
+          { message: "`without` and `to` need first_year and last_year" },
+        )
+        .refine((c) => c.to === undefined || c.leaves_blank === undefined, {
+          message: "land given `to` a polity is not left blank",
+        }),
+    )
+    .optional(),
+  /**
+   * Land a polity held that its shape leaves out (Judah's Negev, Urartu's capital on Lake
+   * Van): the outline, a simple polygon, is added to every shape of it standing in these
+   * years. Approximate: an outline is drawn to the precision of the sources, no finer.
+   */
+  extends: z
+    .array(
       z.strictObject({
         polity: z.string().min(1),
-        within: z.array(z.tuple([z.number(), z.number()])).min(3),
-        /** Only in these years (inclusive), the shapes split around them; all years if not given. */
-        first_year: yearLabel.optional(),
-        last_year: yearLabel.optional(),
+        first_year: yearLabel,
+        /** Inclusive. */
+        last_year: yearLabel,
+        outline: ring,
+        reason: z.string().min(1),
+        sources,
+      }),
+    )
+    .optional(),
+  /**
+   * States Cliopatria does not draw at all (Aram-Damascus, Moab, Edom, Ammon): our own
+   * approximate outline for these years, less the land of the polities in `minus` standing
+   * in the same years, so that it never covers a neighbour. Named at `label`; its names in
+   * every language come from the polity-name files like any other.
+   */
+  drawn: z
+    .array(
+      z.strictObject({
+        polity: z.string().min(1),
+        first_year: yearLabel,
+        /** Inclusive. */
+        last_year: yearLabel,
+        outline: ring,
+        label: z.tuple([z.number(), z.number()]),
+        minus: z.array(z.string().min(1)).optional(),
         reason: z.string().min(1),
         sources,
       }),

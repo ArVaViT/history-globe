@@ -110,11 +110,31 @@ the data first (`pnpm data`).
   `absent` (years it did not exist), `renamed` (a new name from a year, for a polity the
   data names by one era too long), `bridges` (years the data leaves it off), `annexed` (its
   last shape drawn as the empire that took it), `vassals` (overlord's colour and a second
-  label line; `vc` keeps the own colour). A name missing from the data, an overlord absent
-  in those years, or
-  overlapping vassal years stop the build. Then the colours are assigned as a map
-  (neighbours shape by shape) and the labels of small Levant states pinned (`pin`), both
-  deterministic. A shape or label left with no years is not written.
+  label line), `extends` (an outline joined to its shapes of
+  those years: Judah's Negev, Urartu's Lake Van) and `drawn` (a state Cliopatria lacks, our
+  approximate outline less the land of the polities in `minus`: Aram-Damascus, Hamath,
+  Carchemish, Ammon, Moab, Edom; its names in every language like any other). A clip is
+  `within` a convex polygon or, with years, `without` any polygon; the land a clip with
+  years cuts away goes `to` the state that took it, or the clip says `leaves_blank`: more
+  than half of that land left without any state otherwise stops the build. A name missing
+  from the data, an overlord absent in those years, overlapping vassal years, or a drawn
+  state covering more than 5% of a state it does not subtract (save as a vassal) stop the
+  build. Then the colours are assigned as a map (neighbours shape by shape) and the labels
+  of small Levant states pinned (`pin`), both deterministic. A shape or label left with no
+  years is not written.
+- **Shapes reach the coast** (`scripts/polity-coast.ts`): Cliopatria's coasts run up to
+  15 km inland of the real one, which put Tyre, Gaza and Constantinople outside every
+  state. Before the corrections, an edge that faces the sea across land no other state of
+  those years holds is carried out past the shore; the water is drawn over it.
+- **Valid shapes**: every shape ships at three decimals with no repeated point, no spike,
+  no ring crossing itself or another part (split at the crossings and joined again,
+  `scripts/polygon-ops.ts`), and no speck or sliver; a shape that still fails stops the
+  build.
+- **Anchors** (`content/polity-anchors.yaml`): a capital or key town lies inside the state
+  named for each period, inside some state in the years between, or the years are listed
+  as a gap with the reason (Nineveh after 612 BC). Damascus, Rabbah, Dibon, Bozrah, Hamath,
+  Carchemish, Babylon, Nineveh, Tushpa, Dan, Lachish, Beersheba, Arad, Gaza, Tyre and
+  Constantinople among them.
 - **The release is described** (`scripts/release-doc.ts`): every field of the states, of
   `content.json` and of the articles is named in `docs/data-release.md`, or the build stops.
 - **Each language in its own script**: no Cyrillic in the articles, answers, tours and
