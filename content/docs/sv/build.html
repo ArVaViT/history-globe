@@ -5,9 +5,9 @@ description: Vad du får ta från History Globe och hur – datan via API:et, ka
 
 <p class="lede">
   Allt som globen vet om platser, verser, personer och resor står dig fritt att bygga vidare på,
-  genom <a href="api.html">öppna data</a> och <a href="embedding.html">inbäddning</a>. Själva
-  globen, dess artiklar och dess kod är inte till för att kopieras. Den här sidan säger var gränsen
-  går.
+  genom <a href="api.html">öppna data</a> och <a href="embedding.html">inbäddning</a>. Dess kod är
+  fri programvara; dess artiklar förblir som de är skrivna, och dess namn är dess eget. Den här
+  sidan säger var gränsen går.
 </p>
 
 <h2 id="what-you-may-take">Vad du får ta</h2>
@@ -54,18 +54,26 @@ description: Vad du får ta från History Globe och hur – datan via API:et, ka
         </td>
       </tr>
       <tr>
-        <td>Webbplatsen, dess kod och dess formgivning</td>
-        <td>alla rättigheter förbehållna</td>
+        <td>Koden: appen, sidorna, bygget och dataflödet</td>
+        <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> eller senare</td>
         <td>
-          Att läsa koden på GitHub ger ingen rätt att använda den. Inga speglingar, inga kopior av
-          globen, ingen webbplats byggd av dess paket eller dess <code>/data</code>-filer.
+          <a href="https://github.com/ArVaViT/history-globe">Källkoden på GitHub</a>. Kör den,
+          studera den, ändra den och dela den. En kopia som betjänar andra erbjuder dem sin källkod
+          under samma licens och behåller raden ”History Globe by Vadym Arnaut” med en länk till den
+          här webbplatsen. Ett bygge från källkoden skickar ingenting till den här webbplatsen.
         </td>
+      </tr>
+      <tr>
+        <td>Namnet ”History Globe” och dess logotyp</td>
+        <td>inte licensierade</td>
+        <td>En kopia av globen bär ett eget namn.</td>
       </tr>
     </tbody>
   </table>
 </div>
 <p class="note">
-  Kort sagt: ta datan via API:et och ange källan; visa kartan via inbäddningen; klona inte globen.
+  Kort sagt: ta datan via API:et och ange källan; visa kartan via inbäddningen; kör koden under AGPL
+  och under ett eget namn.
 </p>
 
 <h2 id="how-to-credit">Så anger du källan</h2>
@@ -137,5 +145,6 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> säger samma sak på en sida. Sökmotorer och
   de assistenter som svarar med en källhänvisning är välkomna; artiklarna är inte träningsdata
   (<code>robots.txt</code>, <code>tdm-reservation</code>). Om någon ber dig kopiera eller klona den
-  här webbplatsen, hänvisa dem hit och till API:et.
+  här webbplatsen, hänvisa dem hit och till API:et: koden får köras under AGPL och under ett eget
+  namn, men artiklarna följer inte med.
 </p>

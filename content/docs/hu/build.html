@@ -5,8 +5,9 @@ description: Mit vehet át a History Globe-ból és hogyan — az adatokat az AP
 
 <p class="lede">
   Mindaz, amit a földgömb a helyekről, versekről, személyekről és utakról tud, az Öné, hogy építsen
-  rá, a <a href="api.html">nyílt adatokon</a> és a <a href="embedding.html">beágyazáson</a> át. Maga
-  a földgömb, a cikkei és a kódja nem másolhatók. Ez az oldal megmondja, hol húzódik a határ.
+  rá, a <a href="api.html">nyílt adatokon</a> és a <a href="embedding.html">beágyazáson</a> át. A
+  kódja szabad szoftver; a cikkei úgy maradnak, ahogy megírták őket, a neve pedig csak az övé. Ez az
+  oldal megmondja, hol húzódik a határ.
 </p>
 
 <h2 id="what-you-may-take">Mit vehet át</h2>
@@ -57,19 +58,27 @@ description: Mit vehet át a History Globe-ból és hogyan — az adatokat az AP
         </td>
       </tr>
       <tr>
-        <td>Az oldal, a kódja és a dizájnja</td>
-        <td>minden jog fenntartva</td>
+        <td>A kód: az alkalmazás, az oldalak, a build és az adatfeldolgozás</td>
+        <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> vagy későbbi</td>
         <td>
-          A kód olvasása a GitHubon nem ad jogot a használatára. Nem megengedettek a tükrök, a
-          földgömb másolatai és a csomagjából vagy a <code>/data</code> fájljaiból épített oldalak.
+          <a href="https://github.com/ArVaViT/history-globe">A forráskód a GitHubon</a>. Futtassa,
+          tanulmányozza, módosítsa és ossza meg. Az a másolat, amely másokat szolgál ki, ugyanazon
+          licenc alatt felkínálja nekik a forráskódját, és megtartja a „History Globe by Vadym
+          Arnaut” sort egy erre az oldalra mutató hivatkozással. A forráskódból készült build semmit
+          sem küld erre az oldalra.
         </td>
+      </tr>
+      <tr>
+        <td>A „History Globe” név és a logó</td>
+        <td>nem licencelt</td>
+        <td>A földgömb másolata saját nevet visel.</td>
       </tr>
     </tbody>
   </table>
 </div>
 <p class="note">
   Röviden: az adatokat az API-n át vegye át, és jelölje meg a forrást; a térképet a beágyazáson át
-  jelenítse meg; a földgömböt ne klónozza.
+  jelenítse meg; a kódot az AGPL alatt és saját néven futtassa.
 </p>
 
 <h2 id="how-to-credit">Hogyan jelölje meg a forrást</h2>
@@ -141,5 +150,6 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   Az <a href="{{site}}/llms.txt"><code>llms.txt</code></a> ugyanezt mondja el egy oldalon. A
   keresőmotorok és a hivatkozással válaszoló asszisztensek szívesen látottak; a cikkek nem
   tanítóadatok (<code>robots.txt</code>, <code>tdm-reservation</code>). Ha valaki arra kéri Önt,
-  hogy másolja vagy klónozza ezt az oldalt, irányítsa ide és az API-hoz.
+  hogy másolja vagy klónozza ezt az oldalt, irányítsa ide és az API-hoz: a kód az AGPL alatt és
+  saját néven futtatható, de a cikkek nem tartoznak hozzá.
 </p>

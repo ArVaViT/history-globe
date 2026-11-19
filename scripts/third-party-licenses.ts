@@ -1,11 +1,12 @@
 /**
  * Writes apps/web/public/licenses/third-party.txt: the licence of every package whose
- * code or files reach the browser (MIT for React keeps its notice in every copy; OFL for
- * the fonts travels with them). MapLibre ships its own LICENSE under vendor/ (vite config).
+ * code or files reach the browser (MIT for React and for Tailwind's preflight, which the
+ * built CSS carries without its banner, keeps its notice in every copy; OFL for the fonts
+ * travels with them). MapLibre ships its own LICENSE under vendor/ (vite config).
  *
  * Usage: node scripts/third-party-licenses.ts — rerun after a dependency changes.
  */
-import { readFileSync, writeFileSync } from "node:fs";
+import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { dirname, join } from "node:path";
 
@@ -17,6 +18,7 @@ const PACKAGES = [
   "react",
   "react-dom",
   "scheduler",
+  "tailwindcss",
   "@fontsource-variable/golos-text",
   "@fontsource-variable/literata",
   "@fontsource-variable/onest",
@@ -37,7 +39,9 @@ const parts = PACKAGES.map((name) => {
   const { version } = JSON.parse(readFileSync(join(dir, "package.json"), "utf8")) as {
     version: string;
   };
-  const licence = readFileSync(join(dir, "LICENSE"), "utf8").trim();
+  const file = readdirSync(dir).find((f) => /^(licen[cs]e|copying)(\.(md|txt))?$/i.test(f));
+  if (!file) throw new Error(`${name}: no licence file in ${dir}`);
+  const licence = readFileSync(join(dir, file), "utf8").trim();
   return `${"=".repeat(78)}\n${name} ${version}\n${"=".repeat(78)}\n\n${licence}\n`;
 });
 

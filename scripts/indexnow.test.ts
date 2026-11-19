@@ -9,15 +9,15 @@ import {
   sitemapLocs,
 } from "./indexnow-core.ts";
 
-const SITE = "https://historyglobe.app";
+const SITE_ORIGIN = "https://historyglobe.app";
 
 describe("indexnow", () => {
   it("reads the addresses of a sitemap and tells an index from a list", () => {
     const list = `<?xml version="1.0"?><urlset xmlns="x">
-  <url><loc>${SITE}/</loc></url>
-  <url><loc> ${SITE}/docs/?a=1&amp;b=2 </loc></url>
+  <url><loc>${SITE_ORIGIN}/</loc></url>
+  <url><loc> ${SITE_ORIGIN}/docs/?a=1&amp;b=2 </loc></url>
 </urlset>`;
-    expect(sitemapLocs(list)).toEqual([`${SITE}/`, `${SITE}/docs/?a=1&b=2`]);
+    expect(sitemapLocs(list)).toEqual([`${SITE_ORIGIN}/`, `${SITE_ORIGIN}/docs/?a=1&b=2`]);
     expect(isSitemapIndex(list)).toBe(false);
     expect(isSitemapIndex(`<sitemapindex xmlns="x"><sitemap><loc>a</loc></sitemap>`)).toBe(true);
   });
@@ -43,12 +43,14 @@ describe("indexnow", () => {
   });
 
   it("writes the request the protocol asks for", () => {
-    expect(JSON.parse(requestBody(`${SITE}/`, [`${SITE}/en/`]))).toEqual({
+    expect(JSON.parse(requestBody(`${SITE_ORIGIN}/`, [`${SITE_ORIGIN}/en/`]))).toEqual({
       host: "historyglobe.app",
       key: INDEXNOW_KEY,
-      keyLocation: `${SITE}/${INDEXNOW_KEY}.txt`,
-      urlList: [`${SITE}/en/`],
+      keyLocation: `${SITE_ORIGIN}/${INDEXNOW_KEY}.txt`,
+      urlList: [`${SITE_ORIGIN}/en/`],
     });
-    expect(hashesByUrl(`${SITE}/`, { "en/": "ab" })).toEqual({ [`${SITE}/en/`]: "ab" });
+    expect(hashesByUrl(`${SITE_ORIGIN}/`, { "en/": "ab" })).toEqual({
+      [`${SITE_ORIGIN}/en/`]: "ab",
+    });
   });
 });

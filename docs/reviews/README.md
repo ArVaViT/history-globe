@@ -27,7 +27,8 @@ It writes to `pipeline/out/review-packets/<date>-<scope>/` (outside git):
 Answer every point within two weeks; correct the texts in every language. Then send the exact
 public entry for approval (name, title, institution, scope, statement, conflicts, licence, DOI
 yes/no). Nothing is published before the reviewer replies "Approved". Keep the approved text and
-the reply in the author's private files, never in this repository.
+the reply in the author's private files, never in this repository. Commit messages cite the
+publication (the review's id and page), never the correspondence.
 
 ## 3. Publishing: one file
 

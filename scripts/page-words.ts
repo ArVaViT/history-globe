@@ -79,6 +79,7 @@ const T_UK = {
     `${n} (${k}) на мапі біблійної історії: де це місце сьогодні, його історія та згадки в Біблії (${String(v)}).`,
   about: "Про проєкт",
   privacy: "Конфіденційність",
+  code: "Вихідний код",
   allSources: "усі джерела",
   data: "Дані",
   // The language switch is an icon: «Мова: English» names it for a pointer and a screen reader.
@@ -257,6 +258,7 @@ const T_ES = {
     `${n} (${k}) en el mapa de la historia bíblica: dónde está hoy este lugar, su historia y las menciones en la Biblia (${String(v)}).`,
   about: "Acerca del proyecto",
   privacy: "Privacidad",
+  code: "Código fuente",
   allSources: "todas las fuentes",
   data: "Datos",
   // The language switch is an icon: «Idioma: English» names it for a pointer and a screen reader.
@@ -434,6 +436,7 @@ const T_PT = {
     `${n} (${k}) no mapa da história bíblica: onde fica hoje este lugar, sua história e as menções na Bíblia (${String(v)}).`,
   about: "Sobre o projeto",
   privacy: "Privacidade",
+  code: "Código-fonte",
   allSources: "todas as fontes",
   data: "Dados",
   // The language switch is an icon: «Idioma: English» names it for a pointer and a screen reader.
@@ -611,6 +614,7 @@ const T_DE = {
     `${n} (${k}) auf der Karte der biblischen Geschichte: wo dieser Ort heute liegt, seine Geschichte und die Erwähnungen in der Bibel (${String(v)}).`,
   about: "Über das Projekt",
   privacy: "Datenschutz",
+  code: "Quellcode",
   allSources: "alle Quellen",
   data: "Daten",
   // The language switch is an icon: «Sprache: English» names it for a pointer and a screen reader.
@@ -788,6 +792,7 @@ const T_FR = {
     `${n} (${k}) sur la carte de l’histoire biblique\u202f: où se trouve aujourd’hui ce lieu, son histoire et les versets de la Bible qui le nomment (${String(v)}).`,
   about: "À propos du projet",
   privacy: "Confidentialité",
+  code: "Code source",
   allSources: "toutes les sources",
   data: "Données",
   // The language switch is an icon: «Langue\u202f: English» names it for a pointer and a screen reader.
@@ -967,6 +972,7 @@ const T_IT = {
     `${n} (${k}) sulla mappa della storia biblica: dov’è oggi questo luogo, la sua storia e i versetti della Bibbia che lo nominano (${String(v)}).`,
   about: "Il progetto",
   privacy: "Privacy",
+  code: "Codice sorgente",
   allSources: "tutte le fonti",
   data: "Dati",
   // The language switch is an icon: «Lingua: English» names it for a pointer and a screen reader.
@@ -1144,6 +1150,7 @@ const T_NL = {
     `${n} (${k}) op de kaart van de bijbelse geschiedenis: waar deze plaats nu ligt, haar geschiedenis en de Bijbelverzen die haar noemen (${String(v)}).`,
   about: "Over het project",
   privacy: "Privacy",
+  code: "Broncode",
   allSources: "alle bronnen",
   data: "Gegevens",
   // The language switch is an icon: «Taal: English» names it for a pointer and a screen reader.
@@ -1323,6 +1330,7 @@ const T_PL = {
     `${n} (${k}) na mapie historii biblijnej: gdzie to miejsce leży dziś, jego historia i wzmianki w Biblii (${String(v)}).`,
   about: "O projekcie",
   privacy: "Prywatność",
+  code: "Kod źródłowy",
   allSources: "wszystkie źródła",
   data: "Dane",
   // The language switch is an icon: «Język: English» names it for a pointer and a screen reader.
@@ -1500,6 +1508,7 @@ const T_CS = {
     `${n} (${k}) na mapě biblických dějin: kde toto místo leží dnes, jeho dějiny a zmínky v Bibli (${String(v)}).`,
   about: "O projektu",
   privacy: "Soukromí",
+  code: "Zdrojový kód",
   allSources: "všechny prameny",
   data: "Data",
   // The language switch is an icon: «Jazyk: English» names it for a pointer and a screen reader.
@@ -1678,6 +1687,7 @@ const T_SV = {
     `${n} (${k}) på kartan över Bibelns historia: var platsen ligger i dag, dess historia och omnämnanden i Bibeln (${String(v)}).`,
   about: "Om projektet",
   privacy: "Integritet",
+  code: "Källkod",
   allSources: "alla källor",
   data: "Data",
   // The language switch is an icon: «Språk: English» names it for a pointer and a screen reader.
@@ -1857,6 +1867,7 @@ const T_DA = {
     `${n} (${k}) på kortet over bibelsk historie: hvor stedet ligger i dag, dets historie og omtaler i Bibelen (${String(v)}).`,
   about: "Om projektet",
   privacy: "Privatliv",
+  code: "Kildekode",
   allSources: "alle kilder",
   data: "Data",
   // The language switch is an icon: «Sprog: English» names it for a pointer and a screen reader.
@@ -2036,6 +2047,7 @@ const T_NB = {
     `${n} (${k}) på kartet over bibelhistorien: hvor stedet ligger i dag, dets historie og omtalene i Bibelen (${String(v)}).`,
   about: "Om prosjektet",
   privacy: "Personvern",
+  code: "Kildekode",
   allSources: "alle kilder",
   data: "Data",
   // The language switch is an icon: «Språk: English» names it for a pointer and a screen reader.
@@ -2211,6 +2223,7 @@ const T_SR = {
     `${n} (${k}) на мапи библијске историје: где је то место данас, његова историја и стихови Библије који га помињу (${String(v)}).`,
   about: "О пројекту",
   privacy: "Приватност",
+  code: "Изворни код",
   allSources: "сви извори",
   data: "Подаци",
   // The language switch is an icon: «Језик: English» names it for a pointer and a screen reader.
@@ -2394,6 +2407,7 @@ const T_TL = {
     `${n} (${k}) sa mapa ng kasaysayan ng Biblia: saan ito ngayon, ang kasaysayan nito at ang mga talata ng Biblia na bumabanggit dito (${String(v)}).`,
   about: "Tungkol sa proyekto",
   privacy: "Pagkapribado",
+  code: "Source code",
   allSources: "lahat ng sanggunian",
   data: "Datos",
   // The language switch is an icon: «Wika: English» names it for a pointer and a screen reader.
@@ -2571,6 +2585,7 @@ const T_HU = {
     `${n} (${k}) a bibliai történelem térképén: hol található ma, története és bibliai említései (${String(v)}).`,
   about: "A projektről",
   privacy: "Adatvédelem",
+  code: "Forráskód",
   allSources: "minden forrás",
   data: "Adatok",
   // The language switch is an icon: «Nyelv: English» names it for a pointer and a screen reader.
@@ -2748,6 +2763,7 @@ const T_FI = {
     `${n} (${k}) Raamatun historian kartalla: missä paikka sijaitsee nykyään, sen historia ja maininnat Raamatussa (${String(v)}).`,
   about: "Hankkeesta",
   privacy: "Tietosuoja",
+  code: "Lähdekoodi",
   allSources: "kaikki lähteet",
   data: "Data",
   // The language switch is an icon: «Kieli: English» names it for a pointer and a screen reader.
@@ -2923,6 +2939,7 @@ const T_VI = {
     `${n} (${k}) trên bản đồ lịch sử Kinh Thánh: vị trí ngày nay, lịch sử và những lần được nhắc đến trong Kinh Thánh (${String(v)}).`,
   about: "Về dự án",
   privacy: "Quyền riêng tư",
+  code: "Mã nguồn",
   allSources: "tất cả nguồn",
   data: "Dữ liệu",
   // The language switch is an icon: «Ngôn ngữ: English» names it for a pointer and a screen reader.
@@ -3102,6 +3119,7 @@ const T_RO = {
     `${n} (${k}) pe harta istoriei biblice: unde se află astăzi, istoria sa și mențiunile din Biblie (${String(v)}).`,
   about: "Despre proiect",
   privacy: "Confidențialitate",
+  code: "Cod sursă",
   allSources: "toate sursele",
   data: "Date",
   // The language switch is an icon: «Limba: English» names it for a pointer and a screen reader.
@@ -3283,6 +3301,7 @@ const T_BG = {
     `${n} (${k}) на картата на библейската история: къде се намира мястото днес, неговата история и споменаванията му в Библията (${String(v)}).`,
   about: "За проекта",
   privacy: "Поверителност",
+  code: "Изходен код",
   allSources: "всички източници",
   data: "Данни",
   // The language switch is an icon: «Език: English» names it for a pointer and a screen reader.
@@ -3475,6 +3494,7 @@ export const T = {
       `${n} (${k}) на карте библейской истории: где это место сегодня, его история и упоминания в Библии (${String(v)}).`,
     about: "О проекте",
     privacy: "Конфиденциальность",
+    code: "Исходный код",
     allSources: "все источники",
     data: "Данные",
     // The other language's switch is an icon: «Язык: English» names it.
@@ -3544,6 +3564,7 @@ export const T = {
       `${n} (${k}) on the map of biblical history: where it is today, its history and the Bible verses that name it (${String(v)}).`,
     about: "About",
     privacy: "Privacy",
+    code: "Source code",
     allSources: "all sources",
     data: "Data",
     // The other language's switch is an icon; this names it for a pointer and a screen reader.

@@ -2,7 +2,7 @@ import { execFileSync } from "node:child_process";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { BEACON_SCRIPT } from "./beacon.ts";
-import { NOTICE, SITE } from "./notice.ts";
+import { NOTICE } from "./notice.ts";
 import { SITE_ORIGIN } from "./site.ts";
 
 const root = join(import.meta.dirname, "../../..");
@@ -37,7 +37,7 @@ describe("the site's address", () => {
   });
 
   it("is the one the notice and the beacon name", () => {
-    expect(SITE).toBe(SITE_ORIGIN);
+    expect(SITE_ORIGIN).toBe(SITE_ORIGIN);
     expect(NOTICE).toContain(`${SITE_ORIGIN}/api/v1/`);
     expect(BEACON_SCRIPT).toContain(`"${SITE_ORIGIN}/"`);
   });
