@@ -9,7 +9,7 @@
  */
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join, normalize, relative } from "node:path";
-import { LOCALES } from "../packages/model/src/time.ts";
+import { LOCALES } from "../packages/model/src/locales.ts";
 
 const pub = join(import.meta.dirname, "..", "apps/web/public");
 const pages = (dir: string): string[] =>

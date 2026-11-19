@@ -1,6 +1,6 @@
 # 0010. Quality gates
 
-- Status: accepted
+- Status: accepted; CI, tests, budgets and observability superseded by 0020
 - Date: 2026-09-28
 
 ## Context
@@ -17,8 +17,6 @@ the gate instead of fixing the code.
 - **Two local commands.** `pnpm gate` — format, lint, typecheck, unit and content checks
   for what changed; fast enough for every push.
   `pnpm gate:full` — the data rebuilt from the pipeline, then the gate.
-  _As built (2026-10-04):_ no pre-push hook and no CI yet; end-to-end and accessibility
-  checks run apart (`pnpm e2e`, `pnpm e2e:a11y`, e2e/README.md); no visual tests.
 - **Tests**: Vitest for the model, engine (with `FakeRenderer`) and style expressions
   (which features are visible in which year — no WebGL needed); property tests for the
   time model; Playwright end-to-end; **visual regression** in the official Playwright
@@ -51,11 +49,3 @@ the gate instead of fixing the code.
 
 - The repository is public, so GitHub Actions minutes, CodeQL and secret scanning are free.
 - Visual baselines differ between macOS and Linux; they are only ever updated in CI.
-
-## Where this stands (2026-10-25)
-
-Built: `pnpm gate` (format, lint, types, unit and pipeline tests, content checks, links,
-build, CSP hashes, the JS budget), the e2e and axe runs (`pnpm e2e`, `pnpm e2e:a11y`),
-Dependabot, secret scanning, secrets only through 1Password. Not built yet: CI running the
-gate as a required check, visual tests, CodeQL, RUM and error budgets. Traffic is counted
-by Vercel Web Analytics (no cookies), not Cloudflare.

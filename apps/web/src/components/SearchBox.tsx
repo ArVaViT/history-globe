@@ -3,13 +3,13 @@ import { YEAR_MAX, YEAR_MIN } from "@hg/core";
 import {
   formatCentury,
   formatYear,
-  medianYear,
   parseChapter,
   type Locale,
   placeName,
   isYearInput,
   parseYearInput,
   namesOf,
+  pick,
 } from "@hg/model";
 import { useEffect, useMemo, useState, type RefObject } from "react";
 import { useTranslation } from "../i18n";
@@ -22,7 +22,7 @@ import {
   type LoadedData,
   type PlaceProps,
 } from "../data";
-import { loadPeople, peopleNow, personName, type People } from "../people";
+import { loadPeople, peopleNow, personName, personYear, type People } from "../people";
 import { Panel } from "./Panel";
 
 /**
@@ -55,16 +55,11 @@ export interface SearchEvent {
 }
 
 /**
- * The events whose title, in the reader's language or in English, holds every word typed
- * (three letters at least in all): each word starts a word of the title, a long one also
- * in another case («Гавгамелы» finds «при Гавгамелах», «Фермопилы» «при Фермопилах»).
- * The first three, in order of year.
- */
-/**
  * Words a search for a battle carries that its title need not ("battle of Marathon",
- * «битва при Гавгамелах»): left out of the match, in the site's languages.
+ * «битва при Гавгамелах»): left out of the match in the languages listed here; in the
+ * others they are matched against the title as typed.
  */
-const BY_THE_WAY = new Set(
+const BATTLE_STOP_WORDS = new Set(
   [
     "the",
     "of",
@@ -78,7 +73,6 @@ const BY_THE_WAY = new Set(
     "при",
     "под",
     "у",
-    "битва",
     "облога",
     "під",
     "біля",
@@ -117,6 +111,12 @@ const BY_THE_WAY = new Set(
   ].map(foldName),
 );
 
+/**
+ * The events whose title, in the reader's language or in English, holds every word typed
+ * (three letters at least in all): each word starts a word of the title, a long one also
+ * in another case («Гавгамелы» finds «при Гавгамелах», «Фермопилы» «при Фермопилах»).
+ * The first three, in order of year.
+ */
 export function eventsMatching(
   events: readonly SearchEvent[],
   query: string,
@@ -125,7 +125,7 @@ export function eventsMatching(
   const words = query
     .split(/\s+/)
     .map(foldName)
-    .filter((w) => w && !BY_THE_WAY.has(w));
+    .filter((w) => w && !BATTLE_STOP_WORDS.has(w));
   if (words.join("").length < 3) return [];
   // A word of five letters or more loses its ending: one letter, two from seven on.
   const stems = words.map((w) =>
@@ -141,7 +141,7 @@ export function eventsMatching(
       [ev.title[language], ev.title.en].some((title) => {
         if (title === undefined) return false;
         const own = split(title);
-        return stems.every((s) => own.some((w) => w.startsWith(s)));
+        return stems.every((stem) => own.some((w) => w.startsWith(stem)));
       }),
     )
     .slice(0, 3);
@@ -196,7 +196,7 @@ export function SearchBox({
     if (!people) void loadPeople().then(setPeople, () => undefined);
   }, [people]);
   // Any language but English: the English line beside a name of its own says nothing.
-  const ru = i18n.language !== "en";
+  const nonEnglish = i18n.language !== "en";
   // "Деян 16": the places whose verses include that chapter, offered above the names.
   // A place's own name before the number («Иерусалим 1», "Jericho 6") is not a book. The
   // Bible's places only: an ancient site's label in some language ("Amos", Serbian «Ис» for
@@ -242,10 +242,7 @@ export function SearchBox({
   }, [people, year, query, i18n.language]);
   const locale = i18n.language as Locale;
   const centuryOfPerson = (index: number) => {
-    const y = medianYear(
-      (people?.placesOf.get(index) ?? []).map((x) => x.verse),
-      data.chapterYears,
-    );
+    const y = people ? personYear(people, index, data.chapterYears) : undefined;
     return y === undefined ? undefined : formatCentury(y, locale);
   };
   // Tours by their title, in either language: "путешествие Павла", "Exodus".
@@ -288,50 +285,77 @@ export function SearchBox({
     const anyStrong = strong.length > 0 || persons.length > 0;
     return anyStrong && q.length >= 2 ? strong : found;
   }, [found, persons, query, i18n.language]);
-  // The chapter or the year, when there is one, is the first option; places, people.
-  const offset = chapter || year !== null ? 1 : 0;
-  const total = offset + results.length + persons.length + tours.length + eventsFound.length;
-  const personAt = (i: number) => persons[i - offset - results.length];
-  const tourAt = (i: number) => tours[i - offset - results.length - persons.length];
-  const eventAt = (i: number) =>
-    eventsFound[i - offset - results.length - persons.length - tours.length];
-  const activeId =
-    chapter && active === 0
-      ? "search-chapter"
-      : year !== null && active === 0
-        ? "search-year"
-        : results[active - offset]
-          ? `search-${results[active - offset]?.props.id ?? ""}`
-          : personAt(active)
-            ? `search-person-${String(personAt(active)?.person.index)}`
-            : tourAt(active)
-              ? `search-tour-${tourAt(active)?.id ?? ""}`
-              : eventAt(active)
-                ? `search-event-${eventAt(active)?.id ?? ""}`
-                : undefined;
+  // A choice closes the search and hands the focus back to the magnifier.
+  const finish = (choose: () => void) => () => {
+    choose();
+    setQuery("");
+    onClose(true);
+  };
+  // Every option in the order shown: the chapter or the year, places, people, tours, events.
+  const options = [
+    ...(chapter
+      ? [
+          {
+            id: "search-chapter",
+            choose: finish(() => {
+              onChapter(chapter);
+            }),
+          },
+        ]
+      : []),
+    ...(year !== null
+      ? [
+          {
+            id: "search-year",
+            choose: finish(() => {
+              onYear(year);
+            }),
+          },
+        ]
+      : []),
+    ...results.map(({ props }) => ({
+      id: `search-${props.id}`,
+      choose: finish(() => {
+        onSelect(props.id);
+      }),
+    })),
+    ...persons.map(({ person }) => ({
+      id: `search-person-${String(person.index)}`,
+      choose: finish(() => {
+        onPerson(person.index);
+      }),
+    })),
+    ...tours.map((tour) => ({
+      id: `search-tour-${tour.id}`,
+      choose: finish(() => {
+        onTour(tour.id);
+      }),
+    })),
+    ...eventsFound.map((ev) => ({
+      id: `search-event-${ev.id}`,
+      choose: finish(() => onEvent?.(ev)),
+    })),
+  ];
+  const at = (id: string) => options.findIndex((o) => o.id === id);
+  // An option's handlers and look: hovering makes it the active one, a press chooses it
+  // (keeping the focus in the field).
+  const option = (id: string) => {
+    const i = at(id);
+    return {
+      id,
+      role: "option",
+      "aria-selected": i === active,
+      onMouseEnter: () => {
+        setActive(i);
+      },
+      onMouseDown: (e: { preventDefault: () => void }) => {
+        e.preventDefault();
+        options[i]?.choose();
+      },
+    } as const;
+  };
   const open = query.trim().length >= 2;
   const nameOf = (p: PlaceProps) => placeName(p, i18n.language);
-
-  const choose = (id: string) => {
-    onSelect(id);
-    setQuery("");
-    onClose(true);
-  };
-  const choosePerson = (index: number) => {
-    onPerson(index);
-    setQuery("");
-    onClose(true);
-  };
-  const chooseTour = (id: string) => {
-    onTour(id);
-    setQuery("");
-    onClose(true);
-  };
-  const chooseEvent = (ev: SearchEvent) => {
-    onEvent?.(ev);
-    setQuery("");
-    onClose(true);
-  };
 
   return (
     <div
@@ -344,7 +368,7 @@ export function SearchBox({
       }}
     >
       <label className="hg-grow flex items-center gap-2 rounded-full bg-paper-2/70 px-3 py-1.5 ring-1 ring-transparent transition focus-within:bg-paper focus-within:ring-2 focus-within:ring-accent/30">
-        <Search className="size-4 shrink-0 text-ink-soft" aria-hidden />
+        <Search className="size-4 shrink-0 text-ink-soft" />
         <input
           ref={inputRef}
           // Loaded on the press that opens it: the field takes the focus itself.
@@ -360,26 +384,10 @@ export function SearchBox({
             setActive(0);
           }}
           onKeyDown={(e) => {
-            if (e.key === "ArrowDown") setActive((a) => Math.min(a + 1, total - 1));
+            if (e.key === "ArrowDown") setActive((a) => Math.min(a + 1, options.length - 1));
             else if (e.key === "ArrowUp") setActive((a) => Math.max(a - 1, 0));
-            else if (e.key === "Enter" && chapter && active === 0) {
-              onChapter(chapter);
-              setQuery("");
-              onClose(true);
-            } else if (e.key === "Enter" && year !== null && active === 0) {
-              onYear(year);
-              setQuery("");
-              onClose(true);
-            } else if (e.key === "Enter" && results[active - offset])
-              choose(results[active - offset]?.props.id ?? "");
-            else if (e.key === "Enter" && personAt(active))
-              choosePerson(personAt(active)?.person.index ?? 0);
-            else if (e.key === "Enter" && tourAt(active)) {
-              chooseTour(tourAt(active)?.id ?? "");
-            } else if (e.key === "Enter" && eventAt(active)) {
-              const ev = eventAt(active);
-              if (ev) chooseEvent(ev);
-            } else if (e.key === "Escape") {
+            else if (e.key === "Enter") options[active]?.choose();
+            else if (e.key === "Escape") {
               setQuery("");
               onClose(true);
             }
@@ -390,7 +398,7 @@ export function SearchBox({
           aria-autocomplete="list"
           aria-expanded={open}
           aria-controls={open ? "search-results" : undefined}
-          aria-activedescendant={open ? activeId : undefined}
+          aria-activedescendant={open ? options[active]?.id : undefined}
           className="w-full min-w-0 bg-transparent text-[15px] text-ink outline-hidden placeholder:text-[14px] placeholder:text-ink-soft/70"
         />
       </label>
@@ -406,18 +414,7 @@ export function SearchBox({
           >
             {chapter && (
               <li
-                id="search-chapter"
-                role="option"
-                aria-selected={active === 0}
-                onMouseEnter={() => {
-                  setActive(0);
-                }}
-                onMouseDown={(e) => {
-                  e.preventDefault();
-                  onChapter(chapter);
-                  setQuery("");
-                  onClose(true);
-                }}
+                {...option("search-chapter")}
                 className={`flex cursor-pointer items-baseline justify-between gap-3 border-b border-line px-4 py-2 ${active === 0 ? "bg-paper-2" : ""}`}
               >
                 <span className="font-serif text-[15px] text-accent">{chapter.label}</span>
@@ -428,18 +425,7 @@ export function SearchBox({
             )}
             {year !== null && (
               <li
-                id="search-year"
-                role="option"
-                aria-selected={active === 0}
-                onMouseEnter={() => {
-                  setActive(0);
-                }}
-                onMouseDown={(e) => {
-                  e.preventDefault();
-                  onYear(year);
-                  setQuery("");
-                  onClose(true);
-                }}
+                {...option("search-year")}
                 className={`flex cursor-pointer items-baseline gap-2 border-b border-line px-4 py-2 ${active === 0 ? "bg-paper-2" : ""}`}
               >
                 <span className="text-xs text-ink-soft">{t("search.go_to_year")}</span>
@@ -448,23 +434,19 @@ export function SearchBox({
                 </span>
               </li>
             )}
-            {results.length === 0 &&
-              persons.length === 0 &&
-              tours.length === 0 &&
-              eventsFound.length === 0 &&
-              !chapter &&
-              year === null && (
-                <li className="px-4 py-2 text-sm text-ink-soft">{t("search.empty")}</li>
-              )}
-            {results.map(({ props }, i) => {
+            {options.length === 0 && (
+              <li className="px-4 py-2 text-sm text-ink-soft">{t("search.empty")}</li>
+            )}
+            {results.map(({ props }) => {
+              const i = at(`search-${props.id}`);
               const primary = nameOf(props);
               // Namesakes (three Beth-shemeshes) are told apart by where they are.
               const namesake = results.some(
                 (r) => r.props.id !== props.id && nameOf(r.props) === primary,
               );
-              // On the right, where the place is today, in the reader's language (never the
-              // English name beside the Russian, design review 3); what kind of place it is
-              // when that says nothing new ("City of David — City of David").
+              // On the right, where the place is today, in the reader's language (not the
+              // English name, which tells a reader of another language nothing); what kind of
+              // place it is when that says nothing new ("City of David — City of David").
               const kind = t(`kind.${props.kind}`, { defaultValue: "" });
               const where = whereIn(props, i18n.language);
               // A place of the ancient world: when it stood, as the card heads it.
@@ -472,23 +454,14 @@ export function SearchBox({
                 ? standingSpan(props, t, locale)
                 : where &&
                     !sameWords(where, primary) &&
-                    (namesake || !ru || !/[A-Za-z]/.test(where))
+                    (namesake || !nonEnglish || !/[A-Za-z]/.test(where))
                   ? where
                   : kind;
               return (
                 <li
                   key={props.id}
-                  id={`search-${props.id}`}
-                  role="option"
-                  aria-selected={i + offset === active}
-                  onMouseEnter={() => {
-                    setActive(i + offset);
-                  }}
-                  onMouseDown={(e) => {
-                    e.preventDefault();
-                    choose(props.id);
-                  }}
-                  className={`flex cursor-pointer items-baseline justify-between gap-3 px-4 py-1.5 ${i + offset === active ? "bg-paper-2" : ""}`}
+                  {...option(`search-${props.id}`)}
+                  className={`flex cursor-pointer items-baseline justify-between gap-3 px-4 py-1.5 ${i === active ? "bg-paper-2" : ""}`}
                 >
                   <span className="font-serif text-[15px] text-ink">{primary}</span>
                   <span className="truncate text-xs text-ink-soft">{secondary}</span>
@@ -496,16 +469,13 @@ export function SearchBox({
               );
             })}
             {persons.map(({ person, places }, j) => {
-              const i = offset + results.length + j;
-              const name = personName(person, i18n.language as Locale);
+              const id = `search-person-${String(person.index)}`;
+              const i = at(id);
+              const name = personName(person, locale);
               // Their century says who they are at a glance ("Давид — XI в. до н. э."); namesakes
               // of one century are told apart by the place most tied to them.
               const tied = people?.placesOf.get(person.index) ?? [];
-              const year = medianYear(
-                tied.map((x) => x.verse),
-                data.chapterYears,
-              );
-              const century = year === undefined ? undefined : formatCentury(year, locale);
+              const century = centuryOfPerson(person.index);
               const twin = persons.some(
                 (o) =>
                   o.person.id !== person.id &&
@@ -521,16 +491,7 @@ export function SearchBox({
               return (
                 <li
                   key={person.id}
-                  id={`search-person-${String(person.index)}`}
-                  role="option"
-                  aria-selected={i === active}
-                  onMouseEnter={() => {
-                    setActive(i);
-                  }}
-                  onMouseDown={(e) => {
-                    e.preventDefault();
-                    choosePerson(person.index);
-                  }}
+                  {...option(id)}
                   className={`flex cursor-pointer items-baseline justify-between gap-3 px-4 py-1.5 ${j === 0 && results.length > 0 ? "border-t border-line" : ""} ${i === active ? "bg-paper-2" : ""}`}
                 >
                   <span className="font-serif text-[15px] text-ink">{name}</span>
@@ -541,49 +502,33 @@ export function SearchBox({
               );
             })}
             {tours.map((tour, j) => {
-              const i = offset + results.length + persons.length + j;
+              const id = `search-tour-${tour.id}`;
+              const i = at(id);
               return (
                 <li
                   key={tour.id}
-                  id={`search-tour-${tour.id}`}
-                  role="option"
-                  aria-selected={i === active}
-                  onMouseEnter={() => {
-                    setActive(i);
-                  }}
-                  onMouseDown={(e) => {
-                    e.preventDefault();
-                    chooseTour(tour.id);
-                  }}
+                  {...option(id)}
                   className={`flex cursor-pointer items-baseline justify-between gap-3 px-4 py-1.5 ${j === 0 && results.length + persons.length > 0 ? "border-t border-line" : ""} ${i === active ? "bg-paper-2" : ""}`}
                 >
                   <span className="font-serif text-[15px] text-ink">
-                    {tour.title[locale] ?? tour.title.en}
+                    {pick(tour.title, locale)}
                   </span>
                   <span className="shrink-0 text-xs text-ink-soft">{t("search.tour")}</span>
                 </li>
               );
             })}
             {eventsFound.map((ev, j) => {
-              const i = offset + results.length + persons.length + tours.length + j;
+              const id = `search-event-${ev.id}`;
+              const i = at(id);
               const above = results.length + persons.length + tours.length;
               return (
                 <li
                   key={ev.id}
-                  id={`search-event-${ev.id}`}
-                  role="option"
-                  aria-selected={i === active}
-                  onMouseEnter={() => {
-                    setActive(i);
-                  }}
-                  onMouseDown={(e) => {
-                    e.preventDefault();
-                    chooseEvent(ev);
-                  }}
+                  {...option(id)}
                   className={`flex cursor-pointer items-baseline justify-between gap-3 px-4 py-1.5 ${j === 0 && above > 0 ? "border-t border-line" : ""} ${i === active ? "bg-paper-2" : ""}`}
                 >
                   <span className="min-w-0 font-serif text-[15px] text-ink">
-                    {ev.title[locale] ?? ev.title.en}
+                    {pick(ev.title, locale)}
                   </span>
                   <span className="shrink-0 text-xs text-ink-soft tabular-nums">
                     {(ev.approximate ? `${t("place.circa")} ` : "") + formatYear(ev.year, locale)}

@@ -12,10 +12,11 @@
  * and tours that are not a way travelled (`walked: false`). Only tours from 312 BC, when
  * the roads begin on the map.
  *
- * Usage: node scripts/build-road-legs.ts  (after the data build: it reads roads-*.geojson
- * and content.json)
+ * Usage: node scripts/build-road-legs.ts [--no-roads]  (after the data build: it reads
+ * roads-*.geojson and content.json). Without the roads it stops, as a release without the
+ * tours' distances would pass unnoticed; --no-roads writes empty files instead.
  */
-import { distanceKm } from "../apps/web/src/distance.ts";
+import { distanceKm } from "../packages/model/src/distance.ts";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -41,9 +42,13 @@ const DETOUR = 2.5;
 
 const files = ["roads-major.geojson", "roads-minor.geojson"].map((f) => join(data, f));
 if (!files.every(existsSync) || !existsSync(join(data, "content.json"))) {
+  if (!process.argv.includes("--no-roads")) {
+    console.error("road legs: no roads in this build; run `pnpm roads`, or pass --no-roads");
+    process.exit(1);
+  }
   writeFileSync(out, "{}");
   writeFileSync(join(data, "road-paths.json"), "{}");
-  console.log("road legs: no roads in this build (pnpm roads), none written");
+  console.log("road legs: no roads in this build, none written (--no-roads)");
   process.exit(0);
 }
 

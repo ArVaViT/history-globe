@@ -1,10 +1,11 @@
-import { escapeRegExp } from "@hg/model";
 /**
  * Finding the places a text names with the index of scripts/build-text-places.ts (the one
- * public/hg-places.js uses on other sites): only names that point to one place, in all
- * their Russian cases. No imports: the place cards use it, and so do the static pages
- * (scripts/build-pages.ts).
+ * public/hg-places.js uses on other sites): only names that point to one place, in every
+ * form the index lists. Pure (no DOM, no fetch): the place cards use it, and so do the
+ * static pages (scripts/build-pages.ts).
  */
+import { escapeRegExp } from "./text.ts";
+
 export interface TextPlaces {
   readonly pattern: RegExp;
   readonly forms: Readonly<Record<string, string>>;
@@ -19,11 +20,12 @@ export function textPlacesFrom(data: {
   forms: Readonly<Record<string, string>>;
   names?: readonly string[];
 }): TextPlaces {
-  const esc = escapeRegExp;
   // Longest first, so «Антиохию Писидийскую» wins over «Антиохию»; «е» matches «ё» too.
   const alts = Object.keys(data.forms)
     .sort((a, b) => b.length - a.length)
-    .map((f) => esc(f).replace(/ /g, "\\s+").replace(/е/g, "[её]").replace(/['’]/g, "['’]"));
+    .map((f) =>
+      escapeRegExp(f).replace(/ /g, "\\s+").replace(/е/g, "[её]").replace(/['’]/g, "['’]"),
+    );
   return {
     // Whole words only, and not a part of a hyphenated name.
     pattern: new RegExp(

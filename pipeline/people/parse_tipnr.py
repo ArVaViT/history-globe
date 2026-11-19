@@ -8,20 +8,16 @@ then sub-lines "– <Significance>\t<UniqueName>\t<dStrong>\t<Translated>\t<Refs
 import json
 import pathlib
 import re
+import sys
+from collections import Counter
 
-HERE = pathlib.Path(__file__).resolve().parent
-ROOT = HERE.parent.parent
-# STEPBible TIPNR at a fixed commit (CC BY 4.0); fetched once into the pipeline cache and
-# never redistributed raw (its header asks not to; docs/legal-questions.md, question 1).
-COMMIT = "b99716b0cddb648ddb95cc786a197180f2f97d48"
-URL = (
-    f"https://raw.githubusercontent.com/STEPBible/STEPBible-Data/{COMMIT}/Proper%20Nouns/"
-    "TIPNR%20-%20Translators%20Individualised%20Proper%20Names%20with%20all%20References%20-%20STEPBible.org%20CC%20BY.txt"
-)
-SRC = ROOT / "pipeline" / ".cache" / "tipnr.txt"
+ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(ROOT / "pipeline"))
+from build_data import fetch  # noqa: E402
+
 OUT = ROOT / "pipeline" / ".cache" / "people" / "tipnr-parsed.json"
 
-# STEPBible -> OSIS abbreviations (same as the project's pipeline/build_versification.py)
+# STEPBible book abbreviations → OSIS.
 STEP_TO_OSIS = {
     "Gen": "Gen", "Exo": "Exod", "Lev": "Lev", "Num": "Num", "Deu": "Deut", "Jos": "Josh",
     "Jdg": "Judg", "Rut": "Ruth", "1Sa": "1Sam", "2Sa": "2Sam", "1Ki": "1Kgs", "2Ki": "2Kgs",
@@ -37,7 +33,6 @@ STEP_TO_OSIS = {
     "Jud": "Jude", "Rev": "Rev",
 }
 REF = re.compile(r"(LXX ?)?\b([1-3]?[A-Z][a-z]{1,2})\.(\d+)\.(\d+)([a-z]?)")
-LINK = re.compile(r"\s*([^,+]+?@[^,+\s]*?)(\((?:a|d|f|\?)\))*\s*(?=,|$|\+)")
 
 
 def refs_of(text: str) -> tuple[list[str], list[str], list[str]]:
@@ -66,21 +61,8 @@ def links(field: str) -> list[dict]:
     return out
 
 
-def fetch() -> None:
-    if SRC.exists():
-        return
-    import urllib.request
-
-    SRC.parent.mkdir(parents=True, exist_ok=True)
-    req = urllib.request.Request(URL, headers={"User-Agent": "history-globe-pipeline/1.0"})
-    with urllib.request.urlopen(req, timeout=120) as r:
-        SRC.write_bytes(r.read())
-
-
 def main() -> None:
-    fetch()
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    lines = SRC.read_text(encoding="utf-8").splitlines()
+    lines = fetch("stepbible_tipnr").read_text(encoding="utf-8").splitlines()
     # Skip the documentation header: the data starts after the "ME - an Emendation" line.
     start = next(i for i, l in enumerate(lines) if l.startswith("ME - an Emendation"))
     records, cur, bad_books = [], None, []
@@ -143,7 +125,6 @@ def main() -> None:
             m = re.search(r"@(-?[\d.]+),(-?[\d.]+)", h[4])
             if m and not (float(m.group(1)) == 0):
                 coords = [float(m.group(2)), float(m.group(1))]  # lon, lat
-            fa, _, _ = h[2].partition("+") if r["kind"] == "PLACE+PERSON" else (h[2], "", "")
             rec.update({
                 "openbible_name": h[1].strip(),
                 "founders": links(h[2].replace("+", ",")),
@@ -156,9 +137,8 @@ def main() -> None:
         rec["refs"] = refs
         rec["lxx_refs"] = sorted({x for f in r["forms"] for x in f["lxx_refs"]})
         out.append(rec)
-    OUT.parent.mkdir(exist_ok=True)
+    OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(out, ensure_ascii=False))
-    from collections import Counter
     print(len(out), Counter((r["kind"], r["type"]) for r in out).most_common())
     print("unknown books:", Counter(b.split(".")[0] for b in bad_books))
 

@@ -80,7 +80,7 @@ phrase not all in small letters. At least half of the cited verses that use it m
 place's own (or another record's on the same point). A short hand-checked list drops
 modern meanings. A dropped name of several words still blocks its first word, so «Антиохию
 Писидийскую» never becomes Antioch of Syria. Russian names are declined by
-`scripts/russian-forms.ts` (tested).
+`packages/model/src/russian-forms.ts` (tested).
 
 ## Links
 
@@ -90,5 +90,5 @@ tour pages leads to a file that is there (links to the app itself and out of the
 ## Budget
 
 `scripts/check-budget.ts`: the JavaScript needed before the first map frame stays within
-420 kB gzip (ADR 0010; raised from 400 by ADR 0011). All the JavaScript, loaded
-later too, stays under 560 kB.
+`BUDGET_KB`, and all of it a reader can fetch, the shared code and one language, within
+`TOTAL_KB` (gzip; ADR 0011 and ADR 0021).

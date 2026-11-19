@@ -6,11 +6,11 @@
  * within MIN_PX of a ring already kept waits for a closer view. The selected place counts
  * as kept first (its gold dot is drawn whatever lies near).
  *
- * Placed by MapLibre with their names, Tyre's name and the room kept round it took
- * Damascus off the map at zoom 4 (8.10.2026).
+ * Left to MapLibre's collision with their names, Tyre's name and the room kept round it would
+ * take Damascus off the map at zoom 4.
  */
 import type { Feature, FeatureCollection, Point } from "geojson";
-import { NT_FROM } from "./style-expressions.ts";
+import { NO_YEAR, NT_FROM } from "./style-expressions.ts";
 
 /** Closest two rings may stand, in px: a ring is 20 px across with its halo's room. */
 export const MIN_PX = 24;
@@ -28,8 +28,9 @@ interface Life {
 
 /** The place did not stand in the year: style-expressions.ts OUT_OF_TIME, in code. */
 export function outOfTime(p: Life, year: number): boolean {
-  if (p.gap_from !== undefined && year >= p.gap_from && year < (p.gap_until ?? 100000)) return true;
-  if (year >= (p.life_until ?? 100000)) return true;
+  if (p.gap_from !== undefined && year >= p.gap_from && year < (p.gap_until ?? NO_YEAR))
+    return true;
+  if (year >= (p.life_until ?? NO_YEAR)) return true;
   if (p.life_from !== undefined) return year < p.life_from;
   if (p.life_own !== undefined) return false;
   return p.ot === 0 && year < NT_FROM;
@@ -41,7 +42,7 @@ export function weight(f: { properties: Record<string, unknown> | null }): numbe
 }
 
 /** A great town drawn by place-label-major: a settlement of rank 0, not a second name. */
-export function isMajor(p: Record<string, unknown> | null): boolean {
+function isMajor(p: Record<string, unknown> | null): boolean {
   return p?.["kind"] === "settlement" && p["rank"] === 0 && p["where_tpl"] !== "same";
 }
 

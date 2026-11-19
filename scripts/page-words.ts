@@ -3,10 +3,10 @@
  * joins the site with its block here: the types make the compiler ask for every word, and
  * the counted ones (days at sea, verses) choose their plural form by the language's rules.
  */
-import type { Locale, SiteLocale } from "../packages/model/src/time.ts";
+import type { Locale, SiteLocale } from "../packages/model/src/locales.ts";
 const RU_DAYS: Partial<Record<Intl.LDMLPluralRule, string>> = { one: "день", few: "дня" };
 
-// Ukrainian (drafted 2026-10-10 by machine translation; not yet read by a native speaker).
+// Українська (drafted by machine translation; not yet read by a native speaker).
 /** Ukrainian words for scripts/page-words.ts: the blocks mirror T.ru, LANDING.ru and LISTS.ru. */
 
 const UK_DAYS: Partial<Record<Intl.LDMLPluralRule, string>> = { one: "день", few: "дні" };
@@ -1554,8 +1554,6 @@ const LISTS_CS: ListWords = {
   },
 };
 
-// Wave 3, ready before the site publishes these languages: their pages are built once
-// they join LOCALES (packages/model/src/time.ts).
 // Svenska (drafted by machine translation; not yet read by a native speaker).
 /** A Swedish noun for a count: one or other («1 plats», «5 platser»). */
 const sv = (n: number, one: string, other: string) =>
@@ -2419,7 +2417,6 @@ const LISTS_TL: ListWords = {
 };
 
 // Magyar (drafted by machine translation; not yet read by a native speaker).
-// Magyar (drafted by machine translation; not yet read by a native speaker).
 /** A Hungarian noun for a count: one or other; after a numeral the noun stays singular («1 hely», «5 hely»). */
 const hu = (n: number, one: string, other: string) =>
   new Intl.PluralRules("hu").select(n) === "one" ? one : other;
@@ -2590,7 +2587,6 @@ const LISTS_HU: ListWords = {
   },
 };
 
-// Suomi (drafted by machine translation; not yet read by a native speaker).
 // Suomi (drafted by machine translation; not yet read by a native speaker).
 /** A Finnish noun for a count: one or other («1 paikka», «5 paikkaa»; the other form is the partitive). */
 const fi = (n: number, one: string, other: string) =>
@@ -2769,7 +2765,6 @@ const LISTS_FI: ListWords = {
 };
 
 // Tiếng Việt (drafted by machine translation; not yet read by a native speaker).
-// Tiếng Việt (drafted by machine translation; not yet read by a native speaker).
 // Vietnamese has one plural category ("other"), so no count helper is needed.
 
 const T_VI = {
@@ -2937,7 +2932,6 @@ const LISTS_VI: ListWords = {
   },
 };
 
-// Română (drafted by machine translation; not yet read by a native speaker).
 // Română (drafted by machine translation; not yet read by a native speaker).
 /** A Romanian noun for a count: one, few, other («1 loc», «5 locuri», «20 de locuri»). */
 const ro = (n: number, one: string, few: string, other: string) => {

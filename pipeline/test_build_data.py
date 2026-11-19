@@ -26,7 +26,6 @@ from build_data import (
     move_points,
     place_kind,
     fame_rank,
-    qid,
     rank_of,
     site_label,
 )
@@ -180,6 +179,16 @@ class BuildPlacesWithChosenSite(unittest.TestCase):
         p = places["features"][0]
         self.assertEqual(p["geometry"]["coordinates"], [35.26, 32.86])
         self.assertEqual(p["properties"]["confidence"], 283)
+
+    def test_fame_is_read_from_the_checked_item_not_from_openbibles_link(self) -> None:
+        # OpenBible links Aphek of Aram to the article for all the Apheks; content/wikidata.json
+        # leaves it out, and the place must not take that item's fame.
+        record = dict(HUKKOK, linked_data={"s7cc8b2": {"id": "Q4779536"}})
+        fame = {"Q4779536": 80, "Q1": 30}
+        unranked, _, _ = build_places([record], MODERN, {}, set(), items={}, fame=fame)
+        self.assertEqual(unranked["features"][0]["properties"]["rank"], 3)
+        ranked, _, _ = build_places([record], MODERN, {}, set(), items={"hukkok": "Q1"}, fame=fame)
+        self.assertEqual(ranked["features"][0]["properties"]["rank"], 2)
 
     def test_a_banned_point_is_refused_rather_than_dropped(self) -> None:
         record = dict(HUKKOK, identifications=[ident("m_jem", "35.26,32.86", 283), ident("m_osm", "35.1,31.1", 1)])
@@ -377,21 +386,6 @@ class PlaceKindTest(unittest.TestCase):
         self.assertEqual(place_kind(["special"]), "place")
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
-
-class Qid(unittest.TestCase):
-    def test_plain_link(self) -> None:
-        self.assertEqual(qid({"linked_data": {"s7cc8b2": {"id": "Q379652"}}}), "Q379652")
-
-    def test_link_marked_not_or_modern_is_no_link(self) -> None:
-        # OpenBible, Adamah: {"id": "Q2605670", "modifier": "not"}; Iconium: "modern" (Konya).
-        self.assertIsNone(qid({"linked_data": {"s7cc8b2": {"id": "Q2605670", "modifier": "not"}}}))
-        self.assertIsNone(qid({"linked_data": {"s7cc8b2": {"id": "Q79857", "modifier": "modern"}}}))
-
-
 class FetchChecksThePin(unittest.TestCase):
     """A source is read at a pinned commit and must hash as pipeline/sources.json says."""
 
@@ -489,3 +483,7 @@ class RiverAtlasLines(unittest.TestCase):
 
     def test_a_disputed_place_is_drawn_unnamed(self) -> None:
         self.assertTrue(self.rivers["Brook of Egypt"]["properties"].get("unlabelled"))
+
+
+if __name__ == "__main__":
+    unittest.main()

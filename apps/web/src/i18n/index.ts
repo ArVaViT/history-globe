@@ -1,17 +1,20 @@
 /**
  * The UI dictionaries and a `t` for them: nested keys, {{name}} placeholders, and plural
  * forms chosen by Intl.PluralRules (ru: _one/_few/_many, en: _one/_other). A missing key
- * falls back to English, then to the key itself, which callers may test for.
+ * falls back to English, then to `defaultValue` when given, else to the key itself.
  *
- * It replaces i18next and react-i18next, which cost 16 kB gzip before the first frame
- * for these three features (ADR 0010).
+ * Not i18next and react-i18next: they cost 16 kB gzip before the first frame for these
+ * three features (ADR 0010).
  */
 import { loadLocaleData } from "@hg/model";
 import { useCallback, useSyncExternalStore } from "react";
 import en from "./en.json";
 
 type Dict = { readonly [key: string]: string | Dict };
-type Vars = Readonly<Record<string, string | number>>;
+type Vars = Readonly<Record<string, string | number>> & {
+  /** What a key no dictionary has reads as. */
+  readonly defaultValue?: string;
+};
 export type TFunction = (key: string, vars?: Vars) => string;
 
 // English ships with the page: it is the fallback for any missing key. Every other
@@ -92,7 +95,7 @@ export function translate(lng: string, key: string, vars?: Vars): string {
         );
     }
   }
-  return key;
+  return vars?.defaultValue ?? key;
 }
 
 function subscribe(onChange: () => void): () => void {

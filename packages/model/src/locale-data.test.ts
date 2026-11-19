@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { localeData, loadLocaleData } from "./locale-data.ts";
-import { ALL_LOCALES, LOCALES } from "./time.ts";
+import { ALL_LOCALES, LOCALES } from "./locales.ts";
 
 describe("locale data", () => {
   it("has a file for every language but English, which the code itself carries", () => {

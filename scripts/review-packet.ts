@@ -8,8 +8,8 @@
  * this version, which the build compares to tell "changed since".
  *
  * Read from content/ as committed at HEAD (the texts, not the built pages: no canary marks).
- * The PDF needs Playwright (as e2e/browser.mjs finds it: PLAYWRIGHT=<folder>); without it
- * the HTML is still written, to print from a browser.
+ * The PDF needs Playwright's Chromium (e2e/browser.mjs); without it the HTML is still
+ * written, to print from a browser.
  *
  *   node scripts/review-packet.ts --scope "Lycus valley" colossae laodicea q:some-question tour:paul-2
  *   [--out <folder>]  (default pipeline/out/review-packets/, outside git)
@@ -210,7 +210,7 @@ ${items.join("\n")}
 );
 console.log(`review packet: ${dir}/packet.html, links.md, items.yaml`);
 
-// The PDF, with page numbers, from the HTML (Playwright as the browser checks find it).
+// The PDF, with page numbers, from the HTML.
 interface Browser {
   newPage(): Promise<{
     goto(url: string): Promise<unknown>;

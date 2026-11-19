@@ -12,7 +12,7 @@ export function Panel({
   return (
     <div
       style={style}
-      className={`rounded-[20px] border border-line bg-paper/92 shadow-[0_12px_32px_-16px_rgba(20,14,8,0.45),0_2px_6px_-2px_rgba(20,14,8,0.12)] backdrop-blur-xl backdrop-saturate-150 ${className}`}
+      className={`rounded-[20px] border border-line bg-paper/92 shadow-panel backdrop-blur-xl backdrop-saturate-150 ${className}`}
     >
       {children}
     </div>

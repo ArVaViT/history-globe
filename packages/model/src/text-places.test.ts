@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { splitPlaces, textPlacesFrom } from "./text-places";
+import { splitPlaces, textPlacesFrom } from "./text-places.ts";
 
 const index = textPlacesFrom({
   forms: {

@@ -1,3 +1,41 @@
+/** The widest screen laid out as a phone's: one below Tailwind's `md` (768 px). */
+export const NARROW_MAX_PX = 767;
+/** The same as a media query, for `useMedia`. */
+export const NARROW = `(max-width: ${String(NARROW_MAX_PX)}px)`;
+export const isNarrow = (w = innerWidth): boolean => w <= NARROW_MAX_PX;
+
+/** The timeline's height before it is measured (`--hg-timeline-h`). */
+export const TIMELINE_FALLBACK_PX = 124;
+
+/** The left column: 360 px wide at 16 px from the edge. */
+const COLUMN = 360 + 16;
+/** The card: 420 px wide at 16 px from the right edge, and 16 px between it and the map. */
+const CARD = 420 + 2 * 16;
+/** An embed keeps 40 px more of the right edge for the map's zoom buttons. */
+const EMBED_CARD = CARD + 40;
+/** The header bar, and the chapter's chip under it. */
+const HEADER = 64;
+const CHIP = 56;
+/** The full-width timeline and the gap above it. */
+const TIMELINE_ROOM = 190;
+
+export interface PaddingLayout {
+  readonly w?: number;
+  readonly h?: number;
+  /** A compact frame on another site: no column, the chip at the top, the year folded. */
+  readonly embed?: boolean;
+  /** The timeline's measured height. */
+  readonly timeline?: number;
+  /** A card open (a place, a tour's stop, a person). */
+  readonly card?: boolean;
+  /** The chapter's chip under the header. */
+  readonly chip?: boolean;
+  /** A panel open in the left column (the overview, a tool, the search). */
+  readonly panel?: boolean;
+  /** A map-only frame (`ui=map`): no card, whatever is selected. */
+  readonly mapOnly?: boolean;
+}
+
 /**
  * Where the interface leaves the map open, for a flight to put its place there. On a phone
  * the header covers the top and the card and the timeline the lower half; wider, the
@@ -6,53 +44,51 @@
  * below it otherwise. Each axis is shrunk to fit on its own, which MapLibre would otherwise
  * clamp.
  */
-export function viewPadding(
+export function viewPadding({
   w = innerWidth,
   h = innerHeight,
   embed = false,
-  timeline = 124,
+  timeline = TIMELINE_FALLBACK_PX,
   card = true,
   chip = false,
   panel = true,
   mapOnly = false,
-) {
-  // Map-only (`ui=map`): no card, whatever is selected, and above only the small link to
-  // the globe at the right, not the chapter's chip.
+}: PaddingLayout = {}) {
   const open = card && !(embed && mapOnly);
-  // Embedded, there is no column on the left, the chapter's chip sits at the top and the
-  // timeline is folded to a line until opened (its height is measured); with no card
-  // open, the frame is the map's.
-  // The column is 360 px at 16 px; the card 420 px at the right edge;
-  // the full-width timeline about 175 px tall.
-  // No panel open on the left (the overview, a tool, the search), the map has that room too.
-  const column = embed || !panel ? 0 : 376;
-  const top = embed ? (mapOnly ? 44 : 56) : 0;
-  const bottom = embed ? timeline + 24 : 190;
-  // Embedded, the card keeps 60 px of the right edge for the map's zoom buttons.
-  const cardEdge = embed ? 492 : 452;
+  // Embedded, the chip (or map-only, the smaller link to the globe) sits at the top and the
+  // timeline is folded to a line until opened; with no card open, the frame is the map's.
+  const column = embed || !panel ? 0 : COLUMN;
+  const top = embed ? (mapOnly ? 44 : CHIP) : 0;
+  const bottom = embed ? timeline + 24 : TIMELINE_ROOM;
+  const cardEdge = embed ? EMBED_CARD : CARD;
   const beside = w - column - cardEdge;
+  // Between the header (and the chip under it) and the timeline.
+  const underHeader = {
+    top: HEADER + (chip ? CHIP : 0),
+    bottom: timeline + 24,
+    left: 0,
+    right: 0,
+  };
   const p =
     embed && !open
       ? { top, bottom, left: 0, right: 0 }
-      : w < 768 && !open
-        ? // A phone with no card open (a chapter; a person's places come with their card): the screen between
-          // the header, with the chapter's chip under it, and the timeline.
-          { top: 64 + (chip ? 56 : 0), bottom: timeline + 24, left: 0, right: 0 }
-        : w < 768
+      : isNarrow(w) && !open
+        ? // A phone with no card open (a chapter; a person's places come with their card).
+          underHeader
+        : isNarrow(w)
           ? // The card stands on the timeline (20 px above it), up to 48% of the screen tall.
             {
-              top: Math.max(64, top),
+              top: Math.max(HEADER, top),
               bottom: Math.max(h * 0.55, timeline + 20 + h * 0.48),
               left: 0,
               right: 0,
             }
           : !open
-            ? // No card open (a chapter, the map alone): only the column and the timeline;
-              // on a short screen with no panel (a phone on its side), the header and the
-              // chapter's chip over the map's top-left too: Acts 16 went under them.
+            ? // No card open: only the column and the timeline; on a short screen with no
+              // panel (a phone on its side), the header and the chip cover the map's top-left
+              // too, and the timeline is its own folded height.
               !embed && column === 0 && h < 600
-              ? // Its timeline's own height below (folded on a short screen), not a desktop's.
-                { top: 64 + (chip ? 56 : 0), bottom: timeline + 24, left: 0, right: 0 }
+              ? underHeader
               : { top, bottom, left: column, right: 0 }
             : beside >= 400 || h < 600
               ? { top, bottom, left: column, right: cardEdge }

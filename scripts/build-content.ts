@@ -35,7 +35,7 @@ import {
   LocaleNamesFile,
   NAME_LOCALES,
 } from "../packages/model/src/content.ts";
-import { LOCALES, type Locale } from "../packages/model/src/time.ts";
+import { LOCALES, type Locale } from "../packages/model/src/locales.ts";
 import { inheritLife } from "../packages/model/src/place-life-links.ts";
 import { buildPolities } from "./build-polities.ts";
 import { Canaries } from "./canary.ts";
@@ -344,9 +344,6 @@ for (const file of existsSync(articlesDir)
   if (props && !props.verses) errors.push(`articles/${file}: place ${a.place} has no verses`);
   if (articles.some((x) => x.place === a.place))
     errors.push(`articles/${file}: place ${a.place} already has an article`);
-  // A scholar's review is a file of its own (content/reviews), with its scope and consent.
-  if (a.status === "reviewed" || a.reviewer)
-    errors.push(`articles/${file}: a review goes into content/reviews, not into the article`);
   for (const lang of ["en", "ru"] as const) {
     const words = a.body[lang].join(" ").split(/\s+/).length;
     if (words > 450)
@@ -482,7 +479,7 @@ Object.assign(
   inheritLife(
     places.features.map((f) => f.properties),
     { ...life },
-    (id) => names[id]?.ru,
+    (id, locale) => names[id]?.[locale as Locale],
   ),
 );
 

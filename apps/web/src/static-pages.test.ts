@@ -25,6 +25,11 @@ describe("the static pages", () => {
       expect(read(file), file).toContain(`<head>\n    ${NOTICE_COMMENT}\n`);
   });
 
+  it("count the languages as many as there are", () => {
+    const counted = /in (\d+) languages/.exec(read("index.html"))?.[1];
+    expect(Number(counted)).toBe(LOCALES.length);
+  });
+
   it("declare every language to search engines", () => {
     const declared = /"inLanguage": (\[[^\]]*\])/.exec(read("index.html"))?.[1];
     expect(codes(declared).sort()).toEqual([...LOCALES].sort());

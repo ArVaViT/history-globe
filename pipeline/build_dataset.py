@@ -22,24 +22,27 @@ import csv
 import datetime as dt
 import filecmp
 import json
+import os
 import pathlib
 import re
 import string
 import sys
 from collections import Counter
 
+from build_data import MAX_SITES
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 API = ROOT / "apps" / "web" / "public" / "api" / "v1"
 DATA = ROOT / "apps" / "web" / "public" / "data"
 OUT = ROOT / "pipeline" / "out" / "dataset"
 CARD = ROOT / "pipeline" / "dataset_card.md"
+SITE = os.environ.get("SITE_URL", "https://historyglobe.app").rstrip("/")
 
 LANGS = ["en", "bg", "cs", "da", "de", "es", "fi", "fr", "hu", "it", "nb", "nl", "pl", "pt", "ro", "ru", "sr", "sv", "tl", "uk", "vi"]
 OTHER = LANGS[1:]
 TABLES = ["places", "place_verses", "place_sites", "ancient_places", "people", "events", "battles", "tours", "tour_stops", "ancient_writers"]
 # The card names these as places without a verse; the build checks that they still are.
 NO_VERSE_EXAMPLES = ["Adasa", "Eridu", "Carthage", "Ur", "Magdala"]
-MAX_SITES = 6
 ORDER = (
     "Gen Exod Lev Num Deut Josh Judg Ruth 1Sam 2Sam 1Kgs 2Kgs 1Chr 2Chr Ezra Neh Esth Job Ps Prov Eccl Song "
     "Isa Jer Lam Ezek Dan Hos Joel Amos Obad Jonah Mic Nah Hab Zeph Hag Zech Mal Matt Mark Luke John Acts Rom "
@@ -148,7 +151,7 @@ def build(api: pathlib.Path, data: pathlib.Path) -> tuple[dict[str, tuple[list[s
                 "wikidata": p.get("wikidata", ""),
                 "pleiades": f"https://pleiades.stoa.org/places/{p['pleiades']}" if p.get("pleiades") else "",
                 "tipnr": p.get("tipnr", ""),
-                "url": f"https://historyglobe.app{page}" if page else f"https://historyglobe.app/?place={p['id']}",
+                "url": f"{SITE}{page}" if page else f"{SITE}/?place={p['id']}",
                 **{f"name_{lang}": clean((p.get("names") or {}).get(lang, "")) for lang in OTHER},
             }
         )
@@ -173,7 +176,7 @@ def build(api: pathlib.Path, data: pathlib.Path) -> tuple[dict[str, tuple[list[s
                 "approximate": bool(a.get("approx")),
                 "wikidata": a.get("qid", ""),
                 "pleiades": "" if a["id"].startswith("Q") else f"https://pleiades.stoa.org/places/{a['id']}",
-                "url": f"https://historyglobe.app/?place={a['id']}",
+                "url": f"{SITE}/?place={a['id']}",
                 **{f"name_{lang}": clean(a.get(lang, "")) for lang in OTHER},
             }
         )
@@ -278,7 +281,8 @@ def build(api: pathlib.Path, data: pathlib.Path) -> tuple[dict[str, tuple[list[s
             {
                 "id": t["id"],
                 "year": t["year"],
-                "date": year_label(t["year"], t["year"] < -999),
+                "date": year_label(t["year"], bool(t.get("approximate"))),
+                "approximate": bool(t.get("approximate")),
                 "stops": len(t["stops"]),
                 "people": " ".join(t.get("people", [])),
                 **langs("title", t["title"]),
@@ -302,7 +306,7 @@ def build(api: pathlib.Path, data: pathlib.Path) -> tuple[dict[str, tuple[list[s
                     **langs("note", s["note"]),
                 }
             )
-    tables["tours"] = (["id", "year", "date", "stops", "people"] + [f"title_{lang}" for lang in LANGS], tour_rows)
+    tables["tours"] = (["id", "year", "date", "approximate", "stops", "people"] + [f"title_{lang}" for lang in LANGS], tour_rows)
     tables["tour_stops"] = (
         ["tour_id", "stop", "place_id", "ref", "by", "days_sailed", "days_sailed_about", "days_sailed_ref"]
         + [f"note_{lang}" for lang in LANGS],
@@ -370,7 +374,8 @@ def write_table(path: pathlib.Path, cols: list[str], rows: list[dict]) -> None:
 
 def snapshot_date(out: pathlib.Path, published: pathlib.Path | None) -> str:
     """Today, unless the published tables are the same as the new ones: then the published date."""
-    today = f"{dt.date.today():%-d %B %Y}"
+    d = dt.date.today()
+    today = f"{d.day} {d:%B %Y}"
     if not published or not (published / "README.md").exists():
         return today
     same = all(

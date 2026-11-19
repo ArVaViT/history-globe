@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { licenceUrl } from "./site.ts";
+import { licenceUrl } from "./photos.ts";
 
 describe("licenceUrl", () => {
   it("links a CC licence over https", () => {

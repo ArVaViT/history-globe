@@ -6,7 +6,7 @@
  * writes the files it describes and checks each against it (`violations`) before writing.
  */
 
-import { LOCALES } from "../packages/model/src/time.ts";
+import { LOCALES } from "../packages/model/src/locales.ts";
 
 /** The site's languages, as the texts' keys: a language joins the description with the site. */
 const LANGS = LOCALES;
@@ -268,6 +268,7 @@ export function openApi(version: string): object {
           properties: {
             id: { type: "string" },
             year: ref("Year"),
+            approximate: { type: "boolean", const: true },
             title: ref("Localized"),
             people: { type: "array", items: { type: "string" }, description: "TIPNR ids" },
             stops: { type: "array", items: ref("Stop") },

@@ -110,6 +110,21 @@ describe("the embed protocol, as a host's untrusted messages reach it", () => {
     expect(flyTo).toHaveBeenCalledWith({ center: [expect.closeTo(35.2, 6), 85], zoom: 22 }, 1200);
   });
 
+  it("wraps a host's longitude and bearing as a link's are, however many turns", () => {
+    const { e } = engine();
+    const flyTo = vi.fn();
+    attachEmbed({ flyTo }, e, data);
+    f.send({
+      type: "hg:set-view",
+      v: 1,
+      view: { camera: { center: [-684.8, 31.7], bearing: 370 } },
+    });
+    expect(flyTo).toHaveBeenCalledWith(
+      { center: [expect.closeTo(35.2, 6), 31.7], bearing: 10 },
+      1200,
+    );
+  });
+
   it("starts a known tour at its stop", () => {
     const { e, calls } = engine();
     attachEmbed(undefined, e, data);

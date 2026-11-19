@@ -4,7 +4,8 @@
  * Assyrian world), alliances ("rel") left out. Runs of the same state are joined.
  */
 
-type Ring = [number, number][];
+import { pointInRing, type Ring } from "./geo.ts";
+
 type Geometry = { type: string; coordinates: unknown };
 export type RulerPolity = {
   geometry: unknown;
@@ -14,17 +15,6 @@ export type RulerPlace = { geometry: { coordinates: unknown }; properties: unkno
 export type RulerState = { n: string; c: number; names: Record<string, string> };
 /** [from, to) years and the index of the state in `states`. */
 export type Run = [number, number, number];
-
-/** Ray casting: the point inside the ring. */
-function pointIn([x, y]: [number, number], ring: Ring): boolean {
-  let isIn = false;
-  for (let k = 0, m = ring.length - 1; k < ring.length; m = k++) {
-    const [xk, yk] = ring[k] ?? [0, 0];
-    const [xm, ym] = ring[m] ?? [0, 0];
-    if (yk > y !== ym > y && x < ((xm - xk) * (y - yk)) / (ym - yk) + xk) isIn = !isIn;
-  }
-  return isIn;
-}
 
 type Shape = { box: [number, number, number, number]; polys: Ring[][]; area: number };
 
@@ -73,7 +63,8 @@ export function rulersOf(
         y <= s.box[3] &&
         s.polys.some(
           (poly) =>
-            pointIn([x, y], poly[0] ?? []) && !poly.slice(1).some((h) => pointIn([x, y], h)),
+            pointInRing([x, y], poly[0] ?? []) &&
+            !poly.slice(1).some((h) => pointInRing([x, y], h)),
         ),
     );
     if (over.length === 0) continue;

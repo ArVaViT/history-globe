@@ -26,7 +26,7 @@ export function Credit({ text }: { text: string }): ReactNode {
         href={href}
         target="_blank"
         rel={name.startsWith("CC ") ? "noopener noreferrer license" : "noopener noreferrer"}
-        className="underline decoration-dotted underline-offset-2 hover:text-ink"
+        className="link-soft"
       >
         {name}
       </a>,

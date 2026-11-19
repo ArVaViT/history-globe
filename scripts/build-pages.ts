@@ -1,6 +1,6 @@
 /**
- * Writes a plain HTML page for every place with verses and for every tour, in Russian and
- * English (apps/web/public/{ru,en}/…), with an index of each, so search engines and link
+ * Writes a plain HTML page for every place with verses and for every tour, in every language
+ * of the site (apps/web/public/<lang>/…), with an index of each, so search engines and link
  * previews find what the map holds: «где находился Вифсаида» lands on Bethsaida's page,
  * and its "Open on the map" button opens the globe there. The pages carry the place's
  * names, where it is today, its dates and events, its article, its verses (with their
@@ -27,22 +27,18 @@ import {
 } from "../packages/model/src/scripture.ts";
 import { sourcesOf } from "../packages/model/src/citation.ts";
 import { rebuiltIn } from "../packages/model/src/place-life-links.ts";
-import {
-  formatYear,
-  type Locale,
-  LOCALE_NAMES,
-  LOCALES,
-  type SiteLocale,
-} from "../packages/model/src/time.ts";
-import { bodyEnd, esc, headMeta } from "./page-shell.ts";
+import { formatYear } from "../packages/model/src/time.ts";
+import { LOCALE_NAMES, LOCALES, type SiteLocale } from "../packages/model/src/locales.ts";
+import { bodyEnd, esc, headMeta, sansPreload } from "./page-shell.ts";
 import { NOTICE_COMMENT } from "../packages/model/src/notice.ts";
-import { commonsPage, DOC_PAGES, docsPath, licenceUrl } from "../packages/model/src/site.ts";
+import { DOC_PAGES, docsPath } from "../packages/model/src/docs.ts";
+import { commonsPage, licenceUrl } from "../packages/model/src/photos.ts";
 import { LANDING, LISTS, T } from "./page-words.ts";
 import { siteCertainty } from "../packages/model/src/sites.ts";
 import { loadAllLocaleData } from "../packages/model/src/locale-data.ts";
 import { placeSlugs } from "../packages/model/src/slugs.ts";
-import { distanceKm, roundKm } from "../apps/web/src/distance.ts";
-import { splitPlaces, textPlacesFrom, type TextPlaces } from "../apps/web/src/text-places-core.ts";
+import { distanceKm, roundKm } from "../packages/model/src/distance.ts";
+import { splitPlaces, textPlacesFrom, type TextPlaces } from "../packages/model/src/text-places.ts";
 import {
   type ItemReview,
   type ReviewKind,
@@ -72,13 +68,6 @@ const site = process.env.SITE_URL?.replace(/\/+$/, "") ?? "";
 
 type Lang = SiteLocale;
 const LANGS: readonly Lang[] = LOCALES;
-/** The languages written in Cyrillic, which preload that font (build-docs.ts the same). */
-const CYRILLIC: ReadonlySet<Locale> = new Set(["ru", "uk", "sr", "bg"]);
-/** The sans file a language preloads: Golos Text's, or Onest's for Vietnamese (docs.css). */
-const sansPreload = (l: Locale) =>
-  l === "vi"
-    ? "onest-latin-wght-normal.woff2"
-    : `golos-text-${CYRILLIC.has(l) ? "cyrillic" : "latin"}-wght-normal.woff2`;
 
 interface Props {
   id: string;

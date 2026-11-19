@@ -1,30 +1,17 @@
 import { Suspense, useRef, useState, type ReactNode } from "react";
 import { useTranslation } from "../i18n";
 import { Panel } from "./Panel";
+import { readPref, writePref } from "../storage";
 
 export type OverviewTab = "tours" | "events" | "people" | "articles";
 const TABS: readonly OverviewTab[] = ["tours", "events", "people", "articles"];
 
-function readTab(): OverviewTab {
-  try {
-    const v = localStorage.getItem("hg:overview-tab");
-    return TABS.find((t) => t === v) ?? "tours";
-  } catch {
-    return "tours";
-  }
-}
-
-function writeTab(tab: OverviewTab): void {
-  try {
-    localStorage.setItem("hg:overview-tab", tab);
-  } catch {
-    // Private windows may refuse storage: the tab still switches, it just forgets.
-  }
-}
+const TAB_KEY = "hg:overview-tab";
+const readTab = (): OverviewTab => TABS.find((t) => t === readPref(TAB_KEY)) ?? "tours";
 
 /**
- * Tours, events, people, articles and the places in view, one at a time behind tabs: the five
- * stacked in one column read as a wall. The tab picked last is remembered.
+ * Tours, events, people and articles, one tab at a time: stacked in one column they read as
+ * a wall. The tab picked last is remembered.
  */
 export function Overview({
   panels,
@@ -38,7 +25,7 @@ export function Overview({
   const tabRefs = useRef<Partial<Record<OverviewTab, HTMLButtonElement | null>>>({});
   const pick = (next: OverviewTab, focus = false) => {
     setTab(next);
-    writeTab(next);
+    writePref(TAB_KEY, next);
     if (focus) tabRefs.current[next]?.focus();
   };
   return (

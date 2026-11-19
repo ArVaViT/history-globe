@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { russianForms } from "./russian-forms.ts";
+import { inCaseOf, russianForms } from "./russian-forms.ts";
 
 describe("russianForms", () => {
   it("declines one word by its ending", () => {
@@ -64,5 +64,45 @@ describe("russianForms", () => {
 
   it("reads ё as е", () => {
     expect(russianForms("Мёртвое море")).toContain("Мертвого моря");
+  });
+});
+
+describe("the quiz's choices in Russian", () => {
+  it("take the case of the gap", () => {
+    expect(inCaseOf("Павел вышел из Ефеса и пришёл", "Ефес", ["Вифлеем", "Ефес"])).toEqual([
+      "Вифлеема",
+      "Ефеса",
+    ]);
+    // «Самарии» is genitive, dative or prepositional: «в» decides.
+    expect(inCaseOf("Филипп проповедовал в Самарии", "Самария", ["Ефес", "Самария"])).toEqual([
+      "Ефесе",
+      "Самарии",
+    ]);
+  });
+
+  it("stay as they are when the name stands in the nominative or a choice does not decline", () => {
+    expect(inCaseOf("Ефес — главный город Асии", "Ефес", ["Ефес", "Вифлеем"])).toEqual([
+      "Ефес",
+      "Вифлеем",
+    ]);
+    expect(inCaseOf("пришёл из Ефеса", "Ефес", ["Ефес", "Мегиддо"])).toEqual(["Ефес", "Мегиддо"]);
+  });
+});
+
+describe("the quiz's choices in Russian, more than one gap", () => {
+  it("stay as they are when the gaps stand in different cases", () => {
+    expect(inCaseOf("пришёл в Ефес, а потом вышел из Ефеса", "Ефес", ["Ефес", "Вифлеем"])).toEqual([
+      "Ефес",
+      "Вифлеем",
+    ]);
+  });
+
+  it("read the whole name, not another place's first word", () => {
+    expect(
+      inCaseOf("из Антиохии Сирийской в Антиохию Писидийскую", "Антиохия Писидийская", [
+        "Антиохия Писидийская",
+        "Самария",
+      ]),
+    ).toEqual(["Антиохию Писидийскую", "Самарию"]);
   });
 });

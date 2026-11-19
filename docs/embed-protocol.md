@@ -1,27 +1,18 @@
 # Embed protocol v1
 
-**Implemented (2026-10-01):** `/embed/v1?…` (a redirect to `/?embed=1&…`; the app with
-the map and the card, no column; at the top the chapter of `ref` with the list of its places
-in reading order, and a "History Globe ↗" link to the same view in a new tab; at the bottom
-the year, folded, which opens the slider (2026-10-02)); the parameters below; messages
-`hg:ready`, `hg:view-changed`, `hg:verse-clicked`, `hg:error`, `hg:set-view` and
-`hg:set-locale`. **Implemented (2026-11-16):** `ui=map` (embed only), the map alone for a
-host with its own search and place box: no place card, no chapter bar and list at the top,
-the year folded to its pill at any frame size, the "History Globe ↗" link kept (credit is
-required); the selected place wears the pulsing ring (still under
-`prefers-reduced-motion`; none with the places layer off), and a click on the map away from
-any place clears the place selection (not a running tour; not a double-click, a drag's
-release or a press that stopped the camera: `packages/core/src/empty-click.ts`).
-Also (all embeds): `hg:place-clicked`, `place: null` in `hg:set-view`, and the place
-already selected flown to again. That last one changes what an existing message does: before,
-`hg:set-view {place}` for the place already selected did nothing; now, without `camera`, it
-flies back to the place. A host must not answer `hg:view-changed` with `{place}` alone. **Not yet:** `theme`, an origin allowlist (needed once a
-host sends anything sensitive). Code: `apps/web/src/embed.ts`,
-`apps/web/src/embed-protocol.ts`.
+The contract between the globe (`/embed/v1`) and a host page, such as a learning platform or
+an LMS (ADR 0006). v1 is published and changes only by additions; a breaking change is
+`/embed/v2`. Code: `apps/web/src/embed.ts`, `apps/web/src/embed-protocol.ts`.
 
-The contract between the globe (`/embed/v1`) and a host page such as Equip,
-the owner's separate learning platform (ADR 0006). v1 is published; it changes only by
-additions.
+`/embed/v1?…` redirects to `/?embed=1&…`: the app with the map and the place card, without
+the left column. At the top, the chapter of `ref` with its places in reading order and a
+"History Globe ↗" link to the same view in a new tab; at the bottom, the year, folded, which
+opens the slider. With `ui=map` the map is alone, for a host with its own search and place
+box: no place card, no chapter bar, the year folded to its pill at any frame size, the link
+kept (credit is required). The selected place wears a pulsing ring (a still one for a reader
+who asks for less motion; none with the places layer off).
+
+Not yet: `theme`, and an origin allowlist (needed once a host sends anything sensitive).
 
 ## URL
 
@@ -40,7 +31,7 @@ https://<globe-host>/embed/v1?year=30&place=af2161c&locale=ru
 | `tour`    | tour id                          | start a guided tour                                                      |
 | `stop`    | 2, 3, … (with `tour`)            | open the tour at that stop                                               |
 | `measure` | two place ids, comma-separated   | the distance line between them (the figure is in the tools)              |
-| `locale`  | one of the 21 site languages     | UI and names (`LOCALES`, `packages/model/src/time.ts`)                   |
+| `locale`  | one of the 21 site languages     | UI and names (`LOCALES`, `packages/model/src/locales.ts`)                |
 | `ui`      | `map`                            | map only: no card, no chapter bar, the year folded, the ring             |
 
 Layers: `borders`, `places`, `relief`, `routes`, `roads`, `battles` (`ancient` in an older
@@ -94,3 +85,13 @@ host's `hg:set-view`; `measure` draws its line without the figure; `hg:verse-cli
 sent (no card); a click on the map away from any place clears the place selection and leaves a
 running tour going (only in this mode: elsewhere the card has its own close button); a
 double-click, a drag's release and a press that stopped the camera clear nothing.
+
+## Changelog
+
+- 2026-10-01: v1 published, with the parameters above and the messages `hg:ready`,
+  `hg:view-changed`, `hg:verse-clicked`, `hg:error`, `hg:set-view` and `hg:set-locale`.
+- 2026-10-02: the folded year at the bottom of the frame.
+- 2026-11-16: `ui=map`; `hg:place-clicked`; `place: null` in `hg:set-view`. A place already
+  selected is now flown to again: before, `hg:set-view {place}` for the selected place did
+  nothing; now, without `camera`, it flies back to the place, so a host must not answer
+  `hg:view-changed` with `{place}` alone.

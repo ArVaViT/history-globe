@@ -1,59 +1,53 @@
 # Adding a language
 
-What a third language needs, in the order to do it. The code reads every language through
-one list and a few helpers (cleanup of 2026-10-04); what is left is the words themselves and
-the build steps that still write Russian fields by name.
+What a new language needs, in the order to do it. Every language is equal (ADR 0015): the
+code reads each one through the same lists, and the tests and the typecheck name most of
+what is missing.
 
-## 1. Switch it on
+## 1. The code
 
-- `packages/model/src/time.ts`: add the code to `LOCALES` and its own name to
-  `LOCALE_NAMES`; if the code is not yet in `Locale`, add it there and give `formatYear`
-  and `formatCentury` its forms.
-- `apps/web/vercel.json` redirects that name languages (`/:lang(en|ru)/…`): add it.
+- `packages/model/src/locales.ts`: the code in `Locale` and `ALL_LOCALES` (the languages the
+  code can format), unless it is there already (`zh` is); then in `LOCALES` (the languages
+  the site is published in, in the order of their own names) and its own name in
+  `LOCALE_NAMES`.
+- `packages/model/src/locales/<code>.ts`: book names and abbreviations, era names, the
+  site-label templates, year and century formats, the deuterocanonical mark. It loads with the
+  language (ADR 0021).
+- `packages/model/src/content.ts`: the code in `inLanguages`, and in `NAME_LOCALES` when its
+  place names come from a `names-<code>.yaml`.
+- `apps/web/vercel.json`: the code in each `:lang(…)` pattern of the redirects.
 
 ## 2. The interface
 
-- `apps/web/src/i18n/<code>.json`: every key of `en.json`. The i18n test fails on a missing
-  key and on a counted string without each plural form the language uses
-  (`Intl.PluralRules`).
-- `scripts/page-words.ts`: a block for the static pages and one for the front page. The
-  typecheck fails on a missing or extra word.
-- `packages/model/src/scripture.ts`: the language's book names (`bookName`; Ukrainian
-  reads the Synodal forms until it has its own) and its deuterocanonical mark.
+- `apps/web/src/i18n/<code>.json`: every key of `en.json`. The i18n test fails on a missing key
+  and on a counted string without each plural form the language uses (`Intl.PluralRules`).
+- `scripts/page-words.ts`: the words of the static pages and the front page. The typecheck
+  fails on a missing or extra word.
+- The hand-written pages name every language: `apps/web/index.html`, `public/404.html`,
+  `public/about.html`, and `LANGS` in `public/hg-places.js`. `apps/web/src/static-pages.test.ts`
+  fails until each has it.
+- `apps/web/public/og/<code>.jpg` (the link preview) and `apps/web/public/shots/<code>-*.jpg`
+  (the screenshots in the documentation): the app in the language, at the size of the files
+  already there.
 
 ## 3. The content
 
-Every text in the content is `{ en, ru, <code>? }` (`inLanguages` in
-`packages/model/src/content.ts`): the schema already takes `uk` and `de`; add the code
-there for another. A translated text must have as many paragraphs as the English.
+- Every text in `content/` with a key per language (articles, questions, tours, events, battles,
+  periods, ancient authors): the language's key beside `en`. A translation has as many
+  paragraphs as the English; the build checks it.
+- `content/names-<code>.yaml`: the names of places, states, modern places and people
+  (`scripts/build-content.ts` writes them as `name_<code>`).
+- `content/sources-own.yaml`: the site's own source lines in the language; the build stops
+  without them.
+- `content/docs/<code>/`: the documentation pages, one per page of `content/docs/en/`.
 
-- Articles, questions, tours, events, battles, periods, ancient authors: add the language's
-  key beside `en` and `ru`.
-- Source lines: a `content/sources-<code>.yaml` like `sources-ru.yaml`, and its reading in
-  `scripts/build-content.ts` (today `sources_ru` only).
+## 4. Grammar
 
-## 4. Names on the map (still Russian by name in the build)
+Where a language declines names, the places-in-any-text index needs their forms
+(`scripts/inflected-forms.ts`, read by `scripts/build-text-places.ts`), checked against that
+language's Bible. Russian keeps its own case forms for the print quiz (`scripts/russian-forms.ts`).
 
-The map and the app read a feature's text as `<field>_<code>` (`inLocale` in
-`packages/core/src/style.ts`, `placeName` and `namesOf` in the model), so a language
-needs only these fields written by `scripts/build-content.ts`:
+## 5. Check
 
-- `name_<code>` for places (from `content/place-names.yaml`, today a `ru` field per place),
-  states (`content/polity-names.yaml`) and modern places (`content/modern-names.yaml`);
-- `label_<code>` for candidate sites (`siteLabelRu` in `packages/model/src/sites.ts`, a
-  Russian template today) and `v_<code>` for a vassal's second line;
-- `dup_<code>`: namesakes sharing a point and a name in that language
-  (`markRussianDuplicates` in `apps/web/src/data.ts`);
-- the people's names (`content/people-ru.json`, a Russian slot in `people.json`).
-
-## 5. Where Russian grammar is built in
-
-Kept on purpose, extended per language only if wanted: the print quiz's case forms
-(`scripts/russian-forms.ts`, `inCaseOf` in `apps/web/src/print.ts`), the search's Russian
-stems (`apps/web/src/data.ts`) and the places-in-any-text index
-(`scripts/build-text-places.ts`, `public/hg-places.js`), built for English and Russian.
-
-## 6. Check
-
-`pnpm gate:full`, `pnpm e2e` (its steps find buttons by their Russian names: run it in
-Russian) and a look at a place card, a tour and a printed sheet in the new language.
+`pnpm gate:full`, `pnpm e2e` (its steps find buttons by their Russian names, so it runs in
+Russian), and a look at a place card, a tour and a printed sheet in the new language.

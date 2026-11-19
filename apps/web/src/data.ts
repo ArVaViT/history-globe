@@ -18,8 +18,9 @@ import {
   LOCALES,
   ALL_LOCALES,
 } from "@hg/model";
-export { siteCertainty } from "@hg/model";
 import type { Feature, FeatureCollection, Point } from "geojson";
+
+export { siteCertainty } from "@hg/model";
 
 export interface PlaceProps {
   readonly id: string;
@@ -86,7 +87,17 @@ export interface Site {
   readonly at: readonly [number, number];
 }
 
-/** Named only in the New Testament, and the year is before its events: shown faded. */
+/** In ruins in `year`: between its destruction and its rebuilding. */
+export function inRuins(place: Pick<PlaceProps, "gap_from" | "gap_until">, year: number): boolean {
+  return (
+    place.gap_from !== undefined && year >= place.gap_from && year < (place.gap_until ?? Infinity)
+  );
+}
+
+/**
+ * Not standing in `year` (in ruins, not yet founded, gone, or named only in the New
+ * Testament and the year before its events): shown faded.
+ */
 export function beforeItsTime(
   place: Pick<
     PlaceProps,
@@ -94,12 +105,7 @@ export function beforeItsTime(
   >,
   year: number,
 ): boolean {
-  if (
-    place.gap_from !== undefined &&
-    year >= place.gap_from &&
-    year < (place.gap_until ?? Infinity)
-  )
-    return true;
+  if (inRuins(place, year)) return true;
   if (year >= (place.life_until ?? Infinity)) return true;
   // A known founding year wins; a curated record without one means it stood before our
   // range; otherwise, named only in the New Testament → before 6 BC.
@@ -114,12 +120,7 @@ export function standingYear(
   place: Pick<PlaceProps, "ot" | "life_from" | "life_until" | "gap_from" | "gap_until">,
   year: number,
 ): number | undefined {
-  if (
-    place.gap_from !== undefined &&
-    year >= place.gap_from &&
-    year < (place.gap_until ?? Infinity)
-  )
-    return place.gap_until;
+  if (inRuins(place, year)) return place.gap_until;
   if (place.life_from !== undefined && year < place.life_from) return place.life_from;
   if (place.life_until !== undefined && year >= place.life_until) return place.life_until - 1;
   if (place.ot === 0 && year < NT_FROM) return NT_FROM;
@@ -254,11 +255,11 @@ export function markDuplicates(
   const marked = new Set<string>();
   const best = new Map<string, PlaceProps>();
   for (const f of features) {
-    const ru = f.properties[`name_${locale}`];
-    if (typeof ru !== "string") continue;
-    // A record already hidden as an English duplicate never keeps the Russian label.
+    const own = f.properties[`name_${locale}`];
+    if (typeof own !== "string") continue;
+    // A record already hidden as an English duplicate never keeps the label.
     if (f.properties.dup) continue;
-    const key = `${f.geometry.coordinates.join(",")}|${ru}`;
+    const key = `${f.geometry.coordinates.join(",")}|${own}`;
     const kept = best.get(key);
     if (!kept) {
       best.set(key, f.properties);
@@ -290,11 +291,11 @@ export type AncientSiteProps = {
 } & Readonly<Record<string, unknown>>;
 
 /**
- * An ancient site's rank (0-2) on the places' scale (0-3): one step down, as the ancient
- * layer was drawn before, from zoom 4, 6 and 8 where the Bible's places of the same rank
- * came at 3, 5 and 6. The great rings (rank 0) stay with the most-named: Mycenae in 500 BC
- * crowded Corinth off the map. Its weight, in verses, is the least a biblical place of that
- * rank has, so a town the Bible names keeps the room by its side.
+ * An ancient site's rank (0-2) on the places' scale (0-3): one step down, so that a site
+ * shows a zoom later than a biblical place of the same rank. The great rings (rank 0) stay
+ * with the most-named: Mycenae in 500 BC crowded Corinth off the map. Its weight, in verses,
+ * is the least a biblical place of that rank has, so a town the Bible names keeps the room
+ * by its side.
  */
 const ANCIENT_RANK = [1, 2, 3];
 const RANK_WEIGHT = [15, 4, 1, 1];
@@ -364,6 +365,27 @@ async function getJson<T>(file: string): Promise<T> {
   return (await r.json()) as T;
 }
 
+const fetched = new Map<string, Promise<unknown>>();
+
+/**
+ * A data file fetched once, when first asked for, and shared by every caller. A failure is
+ * forgotten, so the next ask tries again. With `missing`, a 404 reads as that value and is
+ * kept: the file is not shipped (a few Synodal chapters have no verses file).
+ */
+export function cachedJson<T>(file: string, options: { readonly missing?: T } = {}): Promise<T> {
+  let got = fetched.get(file) as Promise<T> | undefined;
+  if (!got) {
+    got = fetch(`${DATA_URL}/${file}`).then((r) => {
+      if (r.status === 404 && options.missing !== undefined) return options.missing;
+      if (!r.ok) throw new Error(`${file}: ${String(r.status)}`);
+      return r.json() as Promise<T>;
+    });
+    fetched.set(file, got);
+    got.catch(() => fetched.delete(file));
+  }
+  return got;
+}
+
 export async function loadData(): Promise<LoadedData> {
   const [places, content, siteFc, ancientFc] = await Promise.all([
     getJson<LoadedData["places"]>("places.geojson"),
@@ -416,7 +438,7 @@ export async function loadData(): Promise<LoadedData> {
       info: { id: f.properties.id, at: [lon, lat], kind: f.properties.kind },
     });
   }
-  const tours = content.tours.map((t) => ({
+  const tours: LoadedData["tours"][number][] = content.tours.map((t) => ({
     id: t.id,
     year: t.year,
     ...(t.approximate ? { approximate: true } : {}),

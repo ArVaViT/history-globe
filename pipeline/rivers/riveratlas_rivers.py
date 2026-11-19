@@ -18,12 +18,13 @@ Run once, by hand; the output is kept in git and read by build_data.py:
 import json, math, sys
 from pathlib import Path
 import pyogrio, shapely
-from shapely.geometry import LineString, shape
+from shapely.geometry import shape
 from shapely.ops import linemerge, unary_union
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE.parent))
-from build_data import MODERN_LAKES, simplify_line  # noqa: E402
+from build_data import MODERN_LAKES  # noqa: E402
+from geo import simplify  # noqa: E402
 
 D = Path(sys.argv[1])
 # The Levant, the Euphrates and the Tigris from their sources to the Gulf, and the Nile from
@@ -84,7 +85,7 @@ for t in targets:
     # hundred metres at a shore dropped.
     dry = line.difference(water)
     parts = [g for g in getattr(dry, "geoms", [dry]) if g.length > 0.01]
-    lines = [simplify_line([[round(x, 5), round(y, 5)] for x, y in g.coords], t.get("simplify", 0.0015)) for g in parts]
+    lines = [simplify([[round(x, 5), round(y, 5)] for x, y in g.coords], t.get("simplify", 0.0015)) for g in parts]
     # The Nile ends at the head of the delta, where Natural Earth's two branches begin: the
     # network has one outlet per river, so the branches stay theirs and `tie` joins them on.
     end = lines[-1][-1]

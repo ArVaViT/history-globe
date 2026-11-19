@@ -1,18 +1,16 @@
 /**
  * Accessibility: axe-core over the states of the app listed below, from the first frame to
  * an open person, the overview and settings, and over the documentation in two languages.
- * The map canvas is left out: it is an image to axe. axe-core is taken from beside
- * Playwright when it is installed there, else loaded from cdnjs (the network, then).
+ * The map canvas is left out: it is an image to axe.
  *
  * Usage: pnpm e2e:a11y (with the app running; see e2e/browser.mjs)
  */
-import { BASE, launch, mapReady, newPage, resolveBeside } from "./browser.mjs";
+import { createRequire } from "node:module";
+import { BASE, launch, mapReady, newPage } from "./browser.mjs";
 
 const b = await launch();
 const p = await newPage(b);
-const axe = resolveBeside("axe-core/axe.min.js");
-const AXE_CDN = "https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.10.2/axe.min.js";
-console.log(`axe-core: ${axe ?? AXE_CDN}`);
+const axe = createRequire(import.meta.url).resolve("axe-core/axe.min.js");
 const acts = {
   verse: async () => {
     await p.getByRole("tab", { name: /^Стихи/ }).click();
@@ -91,7 +89,7 @@ for (const [url, act] of [
     await p.waitForTimeout(1500);
   }
   if (act) await acts[act]();
-  await p.addScriptTag(axe ? { path: axe } : { url: AXE_CDN });
+  await p.addScriptTag({ path: axe });
   const res = await p.evaluate(async () => {
     const r = await window.axe.run(document, { exclude: [[".maplibregl-canvas-container"]] });
     return r.violations.map((v) => ({

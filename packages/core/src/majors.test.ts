@@ -39,7 +39,7 @@ const keptAt = (fc: FeatureCollection<Point>, name: string) => {
 };
 
 describe("the great towns kept at each zoom", () => {
-  it("keeps Damascus beside Tyre and Jerusalem from zoom 4, as the owner saw it go (8.10.2026)", () => {
+  it("keeps Damascus beside Tyre and Jerusalem from zoom 4", () => {
     const majors = thinMajors(levant, -1000, null);
     // Kept at every zoom a great town is drawn at (from 3): at 3 Tyre, 13 px from it, gives
     // way to Jerusalem's ring, 20 px from Tyre, and leaves Damascus its room.

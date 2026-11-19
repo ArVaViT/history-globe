@@ -1,19 +1,15 @@
 import fc from "fast-check";
 import { describe, expect, it } from "vitest";
+import { ALL_LOCALES, isLocale, LOCALE_NAMES, LOCALES } from "./locales.ts";
+import { pick, placeName } from "./names.ts";
 import {
-  ALL_LOCALES,
   centuryOf,
   centuryRange,
   contains,
   formatYear,
   formatCentury,
-  isLocale,
-  LOCALE_NAMES,
-  LOCALES,
   isYearInput,
   parseYearInput,
-  pick,
-  placeName,
   formatYearRange,
   inclusiveRange,
   parseLabel,
@@ -129,14 +125,12 @@ describe("labels and ids", () => {
     expect(formatYear(30, "sr")).toBe("30. н. е.");
     expect(formatYear(-585, "tl")).toBe("586 BK");
     expect(formatYear(30, "tl")).toBe("30 AD");
-    // Wave 4.
     expect(formatYear(-585, "hu")).toBe("Kr. e. 586");
     expect(formatYear(30, "hu")).toBe("Kr. u. 30");
     expect(formatYear(-585, "fi")).toBe("586 eaa.");
     expect(formatYear(30, "fi")).toBe("30 jaa.");
     expect(formatYear(-585, "vi")).toBe("năm 586 TCN");
     expect(formatYear(30, "vi")).toBe("năm 30");
-    // Wave 5.
     expect(formatYear(-1199, "ro")).toBe("1200 î.Hr.");
     expect(formatYear(30, "ro")).toBe("30 d.Hr.");
     expect(formatYear(-1199, "bg")).toBe("1200 г. пр.н.е.");
@@ -187,14 +181,11 @@ describe("the site's languages", () => {
     expect(isLocale("de")).toBe(true);
     expect(isLocale("fr")).toBe(true);
     expect(isLocale("cs")).toBe(true);
+    for (const l of ["sv", "da", "nb", "sr", "tl", "hu", "fi", "vi", "ro", "bg"])
+      expect(isLocale(l), l).toBe(true);
+    // Chinese is formatted but not published.
+    expect(ALL_LOCALES).toContain("zh");
     expect(isLocale("zh")).toBe(false);
-    // Wave 3: known to the code before the site publishes it.
-    for (const l of ["sv", "da", "nb", "sr", "tl"]) expect(ALL_LOCALES, l).toContain(l);
-    expect(isLocale("hu")).toBe(true);
-    expect(isLocale("fi")).toBe(true);
-    expect(isLocale("vi")).toBe(true);
-    expect(isLocale("ro")).toBe(true);
-    expect(isLocale("bg")).toBe(true);
     expect(isLocale(null)).toBe(false);
   });
 });
@@ -255,7 +246,7 @@ describe("formatCentury in every language the code knows", () => {
     expect(formatCentury(-585, "nb")).toBe("500-tallet f.Kr.");
     expect(formatCentury(30, "nb")).toBe("1. århundre e.Kr.");
   });
-  it("speaks the wave-4 languages before their words are written", () => {
+  it("speaks Hungarian, Finnish, Vietnamese, Romanian and Bulgarian", () => {
     expect(formatCentury(-585, "hu")).toBe("Kr. e. 6. század");
     expect(formatCentury(30, "hu")).toBe("Kr. u. 1. század");
     expect(formatCentury(-585, "fi")).toBe("500-luvulla eaa.");
@@ -307,6 +298,21 @@ describe("parseYearInput reads BC loosely", () => {
     expect(parseYearInput("586 пр. Хр.")).toBe(-585);
     expect(parseYearInput("30 г. н.е.")).toBe(30);
     expect(parseYearInput("30 сл.Хр.")).toBe(30);
+  });
+
+  it("reads back every year it writes, in every language", () => {
+    for (const l of ALL_LOCALES) {
+      for (const year of [-585, 30]) {
+        const written = formatYear(year, l);
+        expect(isYearInput(written), written).toBe(true);
+        expect(parseYearInput(written), written).toBe(year);
+      }
+    }
+  });
+
+  it("takes the other ways of writing BC", () => {
+    for (const q of ["586 BCE", "586 B.C.", "586 до Р. Х.", "586 av. J.-C.", "586 a. C."])
+      expect(parseYearInput(q), q).toBe(-585);
   });
 });
 

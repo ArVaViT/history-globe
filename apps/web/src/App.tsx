@@ -1,5 +1,5 @@
 import { YEAR_MAX, YEAR_MIN, type Engine, type Renderer } from "@hg/core";
-import { formatYear, medianYear, periodAt, placeName as nameOf, periodName } from "@hg/model";
+import { formatYear, periodAt, periodName, pick, placeName as nameOf } from "@hg/model";
 import { BookOpen, ChevronDown, PencilRuler, Search, Settings, X } from "./components/icons";
 import type { Tool } from "./components/ToolsPanel";
 import {
@@ -10,6 +10,7 @@ import {
   useLayoutEffect,
   useMemo,
   useRef,
+  useEffectEvent,
   useState,
   type ReactNode,
 } from "react";
@@ -17,6 +18,39 @@ import { useTranslation } from "./i18n";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import { Panel } from "./components/Panel";
 import { Timeline } from "./components/Timeline";
+
+import { loadData, type LoadedData } from "./data";
+import { firstPaint } from "./first-paint";
+import { offerAgentTools } from "./webmcp";
+import {
+  useHeightVar,
+  useScrollsMark,
+  useKeys,
+  useMapControlSlots,
+  useMapFeed,
+  useMedia,
+  useNarrow,
+  usePlayback,
+  useBibleOnly,
+  useUrlSync,
+  useTimelineMarks,
+  usePrintSheet,
+} from "./app-hooks";
+import {
+  chapterFocus,
+  chapterLabel,
+  chapterOf,
+  isPersonRef,
+  personRef,
+  withoutYear,
+} from "./chapter";
+import { useEmbed, useEmbedError } from "./embed";
+import { FrameContext, frameParts } from "./frame";
+import { rememberLocale, startLocale, type UrlView } from "./url";
+import { loadPeople, personName, personYear, type People } from "./people";
+import { useGlobe, useGlobeState } from "./useGlobe";
+import { isNarrow } from "./view-padding";
+import { readPref, writePref } from "./storage";
 
 // Opened on demand, not needed for the first frame: loaded when first shown (ADR 0011).
 const PersonCard = lazy(() =>
@@ -64,59 +98,36 @@ const PeoplePanel = lazy(() => loadPeoplePanel().then((m) => ({ default: m.Peopl
 const QuizPanel = lazy(() =>
   import("./components/QuizPanel").then((m) => ({ default: m.QuizPanel })),
 );
-import { loadData, type LoadedData } from "./data";
-import { firstPaint } from "./first-paint";
-import { offerAgentTools } from "./webmcp";
-import {
-  useHeightVar,
-  useScrollsMark,
-  useKeys,
-  useMapFeed,
-  useMedia,
-  useNarrow,
-  usePanelsOpen,
-  usePlayback,
-  useBibleOnly,
-  useUrlSync,
-  useTimelineMarks,
-  usePrintSheet,
-} from "./app-hooks";
-import { chapterFocus, chapterLabel, withoutYear } from "./chapter";
-import { useEmbed, useEmbedError } from "./embed";
-import { frameParts } from "./frame";
-import { readUrl, rememberLocale, startLocale } from "./url";
-import { loadPeople, personName, type People } from "./people";
-import {
-  setCompactFrame,
-  setLeftPanelOpen,
-  setPersonCardOpen,
-  useGlobe,
-  useGlobeState,
-} from "./useGlobe";
 
-const FROM_URL = readUrl();
-/** The view to open, its language settled (startLocale). */
-const INITIAL = { ...FROM_URL, locale: startLocale(FROM_URL) };
-/** Inside another site's page: the map, the card and the slider, no column. */
-const EMBED = INITIAL.embed === true;
+/** Once the map is up, the cards' code is fetched ahead, after the data has settled in. */
+const WARM_DELAY_MS = 1500;
 /**
- * A host with its own search and place box (`ui=map`, docs/embed-protocol.md): the map, the
- * folded year and the link to the globe only; no chapter bar, no card. A place picked on the
- * map is still selected and told to the host (`hg:view-changed`), which shows its own box.
+ * The distance's second end opened: its place's flight sets off, and this much later the
+ * frame widens to both ends (fitTo takes over from the flight where it is).
  */
-const MAP_ONLY = INITIAL.mapOnly === true;
-// Inside another site, the map's controls are trimmed (styles.css: no scale bar; no zoom
-// buttons in a narrow column, where gestures zoom).
+const MEASURE_FIT_DELAY_MS = 900;
 
-export function App() {
+/**
+ * The globe. `link` is the address it opened at (main.tsx): the view to open, and the frame.
+ * Embedded, the map, the card and the slider show, no column; map-only (`ui=map`), the host
+ * has its own search and place box: the map, the folded year and the link to the globe, no
+ * chapter bar and no card. A place picked on the map is still selected and told to the host
+ * (`hg:view-changed`).
+ */
+export function App({ link }: { link: UrlView }) {
   const { i18n, t } = useTranslation();
+  const [initial] = useState(() => ({ ...link, locale: startLocale(link) }));
+  const [frame] = useState(() => ({
+    embed: initial.embed === true,
+    mapOnly: initial.mapOnly === true,
+  }));
+  const { embed, mapOnly } = frame;
   const container = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
   /** What was typed into the search before it loaded: it carries on from there. */
   const typed = useRef("");
   const [data, setData] = useState<LoadedData | null>(null);
   const [dataError, setDataError] = useState<string | null>(null);
-  const [, togglePanels] = usePanelsOpen();
   const [settingsOpen, setSettingsOpen] = useState(false);
   // Once opened, the settings window stays mounted, so it can close as a dialog does.
   const [settingsLoaded, setSettingsLoaded] = useState(false);
@@ -140,7 +151,7 @@ export function App() {
   // The tour's quiz on screen, kept with the tour it was made for.
   const [quizOf, setQuiz] = useState<{
     readonly tour: string;
-    readonly quiz: NonNullable<Awaited<ReturnType<typeof import("./print").buildQuiz>>>;
+    readonly quiz: NonNullable<Awaited<ReturnType<typeof import("./quiz").buildQuiz>>>;
   } | null>(null);
   // "About the place" leaves a tour for the stop's card; this is the way back to the stop.
   const [backToTour, setBackToTour] = useState<{
@@ -165,7 +176,7 @@ export function App() {
   const [scaleSlot, setScaleSlot] = useState<HTMLDivElement | null>(null);
   // The scale and the sources' (i) stand on the map, just above the player.
   const [mapSlot, setMapSlot] = useState<HTMLElement | null>(null);
-  const { globe, error: mapError } = useGlobe(container, data, INITIAL);
+  const { globe, error: mapError, setLayout } = useGlobe(container, data, initial);
   // A place's name in the reader's language.
   // Stable between renders: the people list memoises on them.
   const placeLabel = useCallback(
@@ -194,28 +205,29 @@ export function App() {
   // 900 x 600) the compact one: the chapter's chip, the card, the year folded.
   // The first screen of index.html holds the title bar until the column is drawn in its
   // place (in the same frame, so it never blinks), or until an error takes the screen.
-  const shellDone = EMBED || error !== null || (data !== null && engine !== undefined);
+  const shellDone = embed || error !== null || (data !== null && engine !== undefined);
   useLayoutEffect(() => {
     if (shellDone) document.getElementById("hg-shell")?.remove();
   }, [shellDone]);
   const bigFrame = useMedia("(min-width: 900px) and (min-height: 600px)");
   // A map-only frame is compact at any size and has no card or chapter bar (frame.ts).
-  const parts = frameParts(EMBED, MAP_ONLY, bigFrame);
+  const parts = frameParts(embed, mapOnly, bigFrame);
   const compact = parts.compact;
   useEffect(() => {
     document.documentElement.classList.toggle("hg-embed", compact);
-    setCompactFrame(compact, MAP_ONLY);
-  }, [compact]);
+    setLayout({ compact, mapOnly });
+  }, [compact, mapOnly, setLayout]);
   // The player folds to its year (a button in it); in a compact frame it starts folded.
   const [timeOpen, setTimeOpen] = useState(!compact);
   const foldButton = useRef<HTMLButtonElement>(null);
+  const timeRange = useRef<HTMLInputElement>(null);
   const folded = !timeOpen;
   // A frame in a reader's column is short: the card drops its photo and keeps to half of it.
   const short = useMedia("(max-height: 519px)");
   const shortFrame = compact && short;
   useEffect(() => {
-    setPersonCardOpen(person !== null);
-  }, [person]);
+    setLayout({ personCard: person !== null });
+  }, [person, setLayout]);
   const periodNow = periodAt(state.year);
   // The way back holds only while the stop's place stays open: another place, or the
   // card closed, and it goes (adjusted during render, as React recommends).
@@ -226,7 +238,7 @@ export function App() {
   // card: closing that place then shows the map, not the person again.
   if (person && state.selectedPlace !== null) setPerson(null);
   const personOf = (ref: string | undefined) =>
-    ref?.startsWith("person:") ? people?.people.find((p) => `person:${p.id}` === ref) : undefined;
+    isPersonRef(ref) ? people?.people.find((p) => personRef(p.id) === ref) : undefined;
   const focusPerson = personOf(state.focus?.ref);
   const personLabel = focusPerson ? personName(focusPerson, state.locale) : "";
   // A person's card: their places stand out on the map while it is open.
@@ -240,20 +252,22 @@ export function App() {
         const places = tied.map((x) => x.place);
         setPeople(pp);
         // At once, before the map frames their places: the card's room is kept.
-        setPersonCardOpen(true);
+        setLayout({ personCard: true });
         engine.stopTour();
         engine.selectPlace(null);
-        // The map goes to their time: the middle year of the chapters that tie them to places.
-        const year = data
-          ? medianYear(
-              tied.map((x) => x.verse),
-              data.chapterYears,
-            )
-          : undefined;
+        // The map goes to their time.
+        const year = data ? personYear(pp, index, data.chapterYears) : undefined;
         if (year !== undefined) engine.setYear(year);
         setPerson({ index, from });
-        engine.focusPlaces(places.length > 0 ? { ref: `person:${p.id}`, places } : null);
+        engine.focusPlaces(places.length > 0 ? { ref: personRef(p.id), places } : null);
       });
+    },
+    [engine, data, setLayout],
+  );
+  // Stable: the card's article re-runs its effect when this changes, and clears the mark.
+  const highlightPlace = useCallback(
+    (id: string | null) => {
+      engine?.highlight(id ? (data?.byId.get(id)?.info.at ?? null) : null);
     },
     [engine, data],
   );
@@ -295,56 +309,33 @@ export function App() {
     document.documentElement.lang = state.locale;
   }, [i18n, state.locale, globe]);
 
-  useUrlSync(globe, data, measured);
+  useUrlSync(globe, data, measured, link);
   const { ready, hover } = useMapFeed(globe);
-  useEffect(() => {
-    // The map's own controls leave their corners: the zoom and compass go into the player,
-    // the scale and the sources' (i) onto the map just above it (in the player they crowded
-    // its buttons). Folded, the player is shorter and they follow it down.
-    const root = container.current;
-    const parts = [
-      [".maplibregl-ctrl-attrib", ".maplibregl-ctrl-bottom-right", mapSlot],
-      [".maplibregl-ctrl-scale", ".maplibregl-ctrl-bottom-left", mapSlot],
-      [
-        ".maplibregl-ctrl-bottom-right .maplibregl-ctrl-group",
-        ".maplibregl-ctrl-bottom-right",
-        scaleSlot,
-      ],
-    ] as const;
-    const moved = parts.flatMap(([what, home, slot]) => {
-      const el = root?.querySelector(what);
-      const corner = root?.querySelector(home);
-      return el && corner && slot ? [{ el, corner, slot }] : [];
-    });
-    for (const { el, slot } of moved) slot.append(el);
-    return () => {
-      for (const { el, corner } of moved) corner.append(el);
-    };
-  }, [globe, scaleSlot, mapSlot]);
-  useEmbed(globe?.renderer, engine, data, ready, EMBED, MAP_ONLY);
+  useMapControlSlots(container, globe, scaleSlot, mapSlot);
+  useEmbed(globe?.renderer, engine, data, ready, embed, mapOnly);
   // Once the map is up, fetch the cards in the background: the first click opens at once.
   useEffect(() => {
     // Map-only, no card or search ever opens in the frame: nothing to fetch ahead.
-    if (!ready || MAP_ONLY) return;
+    if (!ready || mapOnly) return;
     const warm = () => {
       void import("./components/PlaceCard");
       void import("./components/TourStopCard");
       void import("./components/SearchBox");
       void import("./components/MoreMenuPanel");
-      if (!EMBED) {
+      if (!embed) {
         void import("./components/PersonCard");
         void loadPeople().catch(() => undefined);
       }
     };
-    const id = setTimeout(warm, 1500);
+    const id = setTimeout(warm, WARM_DELAY_MS);
     return () => {
       clearTimeout(id);
     };
-  }, [ready]);
+  }, [ready, embed, mapOnly]);
   useEmbedError(
     dataError !== null ? "data" : mapError !== null ? "map" : null,
     dataError ?? mapError ?? "",
-    EMBED,
+    embed,
   );
   // Playback speed, cycled by the button in the player: 1×, 2×, 4×, ½×.
   const [speed, setSpeed] = useState(1);
@@ -352,24 +343,24 @@ export function App() {
   const togglePlay = useCallback(() => {
     setPlaying((p) => !p);
   }, [setPlaying]);
-  // The search may be hidden with the panels: show them, then focus it.
   const searchButton = useRef<HTMLButtonElement>(null);
   const overviewButton = useRef<HTMLButtonElement>(null);
-  const focusSearch = useCallback(() => {
-    // On a phone an open card hides the column: close it first, as the burger does.
-    if (engine && innerWidth < 768) {
-      const s = engine.store.get();
-      if (s.selectedPlace || s.tour) {
-        engine.selectPlace(null);
-        engine.stopTour();
-      }
+  // On a phone an open card covers the column: it closes before the column opens something.
+  const closeCardOnPhone = useCallback(() => {
+    if (!engine || !isNarrow()) return;
+    const s = engine.store.get();
+    if (s.selectedPlace || s.tour) {
+      engine.selectPlace(null);
+      engine.stopTour();
     }
-    togglePanels(true);
+  }, [engine]);
+  const focusSearch = useCallback(() => {
+    closeCardOnPhone();
     setSearchOpen(true);
     requestAnimationFrame(() => {
       searchRef.current?.focus();
     });
-  }, [togglePanels, engine]);
+  }, [closeCardOnPhone]);
   const closeOwn = useCallback(() => {
     // Escape in a quiz closes the quiz, not the tour under it.
     if (quizOf) {
@@ -397,21 +388,32 @@ export function App() {
   // Fly to the place from the URL once the globe exists, or start its tour or chapter.
   useEffect(() => {
     if (!engine) return;
-    if (INITIAL.tour && data?.tours.some((t) => t.id === INITIAL.tour)) {
-      engine.startTour(INITIAL.tour, (INITIAL.stop ?? 1) - 1);
+    if (initial.tour && data?.tours.some((t) => t.id === initial.tour)) {
+      engine.startTour(initial.tour, (initial.stop ?? 1) - 1);
       return;
     }
     // A chapter link (`ref=Acts.16`) picks out its places; the link's own year wins.
-    const focus = INITIAL.ref && data ? chapterFocus(data, INITIAL.ref) : null;
+    const focus = initial.ref && data ? chapterFocus(data, initial.ref) : null;
     if (focus) {
       // A shared view keeps its own camera and open place; a bare chapter link is framed.
       engine.focusPlaces(
-        INITIAL.year === undefined ? focus : withoutYear(focus),
-        !INITIAL.camera && !INITIAL.place,
+        initial.year === undefined ? focus : withoutYear(focus),
+        !initial.camera && !initial.place,
       );
     }
-    if (INITIAL.place && !INITIAL.camera) engine.selectPlace(INITIAL.place);
-  }, [engine, data]);
+    if (initial.place && !initial.camera) engine.selectPlace(initial.place);
+  }, [engine, data, initial]);
+
+  // The quiz of a tour on screen, made from its stops (quiz.ts).
+  const openQuiz = (tourId: string) => {
+    if (!globe || !data) return;
+    void import("./quiz")
+      .then((m) => m.buildQuiz({ globe, data }))
+      .then((q) => {
+        // A tour with no question to ask (every passage shared) opens none.
+        setQuiz(q && q.items.length > 0 ? { tour: tourId, quiz: q } : null);
+      });
+  };
 
   // The map as it is now, named by what it shows: the tour, the chapter or the place.
   const savePicture = async () => {
@@ -420,9 +422,9 @@ export function App() {
     const tour = s.tour ? data.tours.find((x) => x.id === s.tour?.id) : undefined;
     const place = s.selectedPlace ? data.byId.get(s.selectedPlace)?.props : undefined;
     const title = tour
-      ? (tour.title[s.locale] ?? tour.title.en ?? "")
+      ? (pick(tour.title, s.locale) ?? "")
       : s.focus
-        ? s.focus.ref.startsWith("person:")
+        ? isPersonRef(s.focus.ref)
           ? personLabel
           : chapterLabel(s.focus.ref, s.locale)
         : place
@@ -439,8 +441,6 @@ export function App() {
     if (blob) download(blob, `history-globe-${String(s.year)}.png`);
   };
 
-  // An A4 sheet for a class: a tour is framed whole first, its stops listed with their
-  // passages and notes; a chapter lists its places in reading order with the first verse.
   // The heights of the open tour's stops, read from the relief once per tour.
   const [tourHeights, setTourHeights] = useState<{
     tour: string;
@@ -458,10 +458,8 @@ export function App() {
       live = false;
     };
   }, [globe, data, tourId]);
-  // The relief along the leg to the open stop and the next one, read as the reader gets
-  // there: the next stop's card is ready when Next is pressed, and a long tour does not
-  // read every tile it crosses at once.
-
+  // An A4 sheet for a class: a tour is framed whole first, its stops listed with their
+  // passages and notes; a chapter lists its places in reading order with the first verse.
   const { preparing, printForClass } = usePrintSheet(globe, data, personLabel);
 
   const hoverPlace = hover ? data?.byId.get(hover.id)?.props : undefined;
@@ -499,12 +497,12 @@ export function App() {
   // the place without a mark that covers its neighbours.
   // With the places layer off, no ring stands where no place is drawn.
   const ringAt =
-    MAP_ONLY && state.layers.places && state.selectedPlace
+    mapOnly && state.layers.places && state.selectedPlace
       ? data?.byId.get(state.selectedPlace)?.info.at
       : undefined;
   useEffect(() => {
-    if (MAP_ONLY) engine?.highlight(ringAt ?? null);
-  }, [engine, ringAt]);
+    if (mapOnly) engine?.highlight(ringAt ?? null);
+  }, [engine, ringAt, mapOnly]);
   // Its own years, for the line under the slider; a gate's years are its city's: none.
   const selectedLife = selected ? data?.life[selected.id] : undefined;
   const ownLife = selectedLife && !selectedLife.inherited ? selectedLife : undefined;
@@ -516,9 +514,9 @@ export function App() {
   // opens between them once the data is there, once. An id the data has not is passed over,
   // as a bad `place=` is: links come from anywhere.
   const [linkMeasured, setLinkMeasured] = useState(false);
-  if (data && INITIAL.measure && !linkMeasured) {
+  if (data && initial.measure && !linkMeasured) {
     setLinkMeasured(true);
-    const [from, to] = INITIAL.measure;
+    const [from, to] = initial.measure;
     if (data.byId.has(from) && data.byId.has(to)) {
       setTool("measure");
       setMeasure({ from, to });
@@ -537,28 +535,26 @@ export function App() {
       else if (opened !== measure.from) setMeasure({ from: measure.from, to: opened });
     }
   }
-  const yearNow = state.year;
+  // At the year the place was opened at, not a later one: read when it opens.
+  const addStop = useEffectEvent((id: string) => {
+    void import("./lesson-store").then((m) => m.addToLesson({ id, year: state.year }));
+  });
   useEffect(() => {
     if (pickedFor !== "lesson" || !opened) return;
     // Only a place with verses makes a stop.
-    if (data?.byId.get(opened)?.props.osis.length)
-      void import("./components/LessonRow").then((m) =>
-        m.addToLesson({ id: opened, year: yearNow }),
-      );
-    // The year is the one the place was opened at, not a later one.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    if (data?.byId.get(opened)?.props.osis.length) addStop(opened);
   }, [pickedFor, opened, data]);
   const fromEntry = measure.from ? data?.byId.get(measure.from) : undefined;
   const toEntry = measure.to ? data?.byId.get(measure.to) : undefined;
   const toAt = toEntry?.info.at;
   useEffect(() => {
     globe?.renderer.setMeasure(fromEntry?.info.at ?? null, toAt ?? null);
-    // Both ends in view: the place's own flight lands first, then the frame widens.
+    // Both ends in view: the place's own flight sets off first, then the frame widens.
     const from = fromEntry?.info.at;
     if (!globe || !from || !toAt) return;
     const id = setTimeout(() => {
       globe.renderer.fitTo([from, toAt]);
-    }, 900);
+    }, MEASURE_FIT_DELAY_MS);
     return () => {
       clearTimeout(id);
     };
@@ -593,8 +589,8 @@ export function App() {
   // Something open in the left column takes its room from the map: the centre moves over.
   const leftPanel = columnShown && (moreShown || searchOpen || tool !== null);
   useEffect(() => {
-    setLeftPanelOpen(leftPanel);
-  }, [leftPanel]);
+    setLayout({ leftPanel });
+  }, [leftPanel, setLayout]);
   useEffect(() => {
     if (!moreShown) return;
     void loadTours();
@@ -605,352 +601,340 @@ export function App() {
 
   // The tab names what is open: a shared link or a history entry says where it leads.
   const placeName = selected ? nameOf(selected, state.locale) : undefined;
-  const tourName = tour && state.tour ? (tour.title[state.locale] ?? tour.title.en) : undefined;
+  const tourName = tour && state.tour ? pick(tour.title, state.locale) : undefined;
   const openName = tourName && placeName ? `${tourName} · ${placeName}` : (placeName ?? tourName);
   useEffect(() => {
     document.title = openName ? `${openName} — History Globe` : "History Globe";
   }, [openName]);
 
   return (
-    <div
-      className="fixed inset-0 overflow-hidden bg-night font-sans"
-      data-panels={columnShown ? "open" : "closed"}
-      data-card={cardOpen ? "open" : "closed"}
-    >
-      {/* Landmarks (WCAG 1.3.1): the map, the column, the card and the slider.
+    <FrameContext value={frame}>
+      <div
+        className="fixed inset-0 overflow-hidden bg-night font-sans"
+        data-panels={columnShown ? "open" : "closed"}
+        data-card={cardOpen ? "open" : "closed"}
+      >
+        {/* Landmarks (WCAG 1.3.1): the map, the column, the card and the slider.
           MapLibre sets position: relative on its container, so it needs a sized parent. */}
-      <main className="absolute inset-0" aria-label={t("map_label")}>
-        <div ref={container} className="h-full w-full" />
+        <main className="absolute inset-0" aria-label={t("map_label")}>
+          <div ref={container} className="h-full w-full" />
 
-        {!ready && !error && (
-          <div className="pointer-events-none absolute inset-0 grid place-items-center">
-            <div className="flex items-center gap-3 rounded-full bg-paper/90 px-5 py-2.5 text-[14px] text-ink shadow-lg">
-              <span className="size-3 animate-ping rounded-full bg-accent" aria-hidden />
-              {t("loading")}
+          {!ready && !error && (
+            <div className="pointer-events-none absolute inset-0 grid place-items-center">
+              <div className="flex items-center gap-3 rounded-full bg-paper/90 px-5 py-2.5 text-[14px] text-ink shadow-lg">
+                <span className="size-3 animate-ping rounded-full bg-accent" aria-hidden />
+                {t("loading")}
+              </div>
             </div>
-          </div>
-        )}
-
-        {preparing && (
-          <div className="absolute inset-0 z-50 grid place-items-center bg-paper" role="status">
-            <div className="flex items-center gap-3 text-[15px] text-ink">
-              <span className="size-3 animate-ping rounded-full bg-accent" aria-hidden />
-              {t("time.preparing")}
-            </div>
-          </div>
-        )}
-
-        <Suspense fallback={null}>
-          {hoverPlace && hover && (
-            <HoverTip place={hoverPlace} at={hover.at} locale={state.locale} />
           )}
-          {globe && <PolityTip renderer={globe.renderer} locale={state.locale} />}
-          {globe && <BattleTip renderer={globe.renderer} locale={state.locale} />}
-        </Suspense>
 
-        {error && (
-          <Panel className="absolute top-1/2 left-1/2 -translate-1/2 px-6 py-4 text-ink">
-            {error}
-          </Panel>
-        )}
-      </main>
+          {preparing && (
+            <div className="absolute inset-0 z-50 grid place-items-center bg-paper" role="status">
+              <div className="flex items-center gap-3 text-[15px] text-ink">
+                <span className="size-3 animate-ping rounded-full bg-accent" aria-hidden />
+                {t("time.preparing")}
+              </div>
+            </div>
+          )}
 
-      {data && engine && (
-        <>
-          {compact ? (
-            <Suspense fallback={null}>
-              <EmbedBar
-                // Map-only, the host lists the chapter's places itself: only the link stays.
-                focus={parts.chapter ? state.focus : null}
-                linkOnly={!parts.chapter}
-                data={data}
-                locale={state.locale}
-                selected={state.selectedPlace}
-                onPlace={(id) => {
-                  setPlaying(false);
-                  // In a reader's frame the place stays among the chapter's: closer, but
-                  // not down to its streets (a town's own zoom showed 5 km and no sea).
-                  engine.selectPlace(id, { fly: false });
-                  const at = data.byId.get(id)?.info.at;
-                  if (at) {
-                    const { zoom } = globe.renderer.getCamera();
-                    globe.renderer.flyTo({ center: at, zoom: Math.min(8, Math.max(zoom + 1, 6)) });
-                  }
-                }}
-              />
-            </Suspense>
-          ) : (
-            // The column is as tall as the map beside the timeline and mostly empty: it lets
-            // the pointer through to the map (a place the host selects in a large frame lands
-            // right under it), and only its panels take it, unless it scrolls (its scrollbar).
-            <aside
-              ref={columnBox}
-              aria-label={t("panels.label")}
-              className={`pointer-events-none absolute top-4 bottom-[calc(var(--hg-timeline-h,124px)+24px)] left-4 -m-4 flex flex-col gap-3 overflow-y-auto p-4 pr-5 [scrollbar-width:thin] *:pointer-events-auto *:shrink-0 data-scrolls:pointer-events-auto max-md:inset-x-3 max-md:top-3 max-md:bottom-auto max-md:z-10 max-md:max-h-[calc(100dvh-var(--hg-timeline-h,124px)-32px)] max-md:pr-4 ${searchOpen ? "max-md:overflow-visible" : ""}`}
-            >
-              {/* On a panel, not on the map: state labels run under the corner. The magnifier,
+          <Suspense fallback={null}>
+            {hoverPlace && hover && (
+              <HoverTip place={hoverPlace} at={hover.at} locale={state.locale} />
+            )}
+            {globe && <PolityTip renderer={globe.renderer} locale={state.locale} />}
+            {globe && <BattleTip renderer={globe.renderer} locale={state.locale} />}
+          </Suspense>
+
+          {error && (
+            <Panel className="absolute top-1/2 left-1/2 -translate-1/2 px-6 py-4 text-ink">
+              {error}
+            </Panel>
+          )}
+        </main>
+
+        {data && engine && (
+          <>
+            {compact ? (
+              <Suspense fallback={null}>
+                <EmbedBar
+                  // Map-only, the host lists the chapter's places itself: only the link stays.
+                  focus={parts.chapter ? state.focus : null}
+                  linkOnly={!parts.chapter}
+                  data={data}
+                  locale={state.locale}
+                  selected={state.selectedPlace}
+                  onPlace={(id) => {
+                    setPlaying(false);
+                    // In a reader's frame the place stays among the chapter's: closer, but
+                    // not down to its streets (a town's own zoom showed 5 km and no sea).
+                    engine.selectPlace(id, { fly: false });
+                    const at = data.byId.get(id)?.info.at;
+                    if (at) {
+                      const { zoom } = globe.renderer.getCamera();
+                      globe.renderer.flyTo({
+                        center: at,
+                        zoom: Math.min(8, Math.max(zoom + 1, 6)),
+                      });
+                    }
+                  }}
+                />
+              </Suspense>
+            ) : (
+              // The column is as tall as the map beside the timeline and mostly empty: it lets
+              // the pointer through to the map (a place the host selects in a large frame lands
+              // right under it), and only its panels take it, unless it scrolls (its scrollbar).
+              <aside
+                ref={columnBox}
+                aria-label={t("panels.label")}
+                className={`pointer-events-none absolute top-4 bottom-[calc(var(--hg-timeline-h)+24px)] left-4 -m-4 flex flex-col gap-3 overflow-y-auto p-4 pr-5 [scrollbar-width:thin] *:pointer-events-auto *:shrink-0 data-scrolls:pointer-events-auto max-md:inset-x-3 max-md:top-3 max-md:bottom-auto max-md:z-10 max-md:max-h-[calc(100dvh-var(--hg-timeline-h)-32px)] max-md:pr-4 ${searchOpen ? "max-md:overflow-visible" : ""}`}
+              >
+                {/* On a panel, not on the map: state labels run under the corner. The magnifier,
                   the title, the overview (it opens just below) and the settings; searching,
                   the field takes the whole bar. */}
-              <Panel className="relative z-10 flex w-[360px] items-center gap-0.5 px-1.5 py-1.5 max-md:w-full">
-                <h1
-                  className={`order-2 flex-1 pl-1 font-serif text-[19px] font-semibold tracking-tight text-ink ${searchOpen ? "sr-only" : ""}`}
-                >
-                  History Globe
-                </h1>
-                {searchOpen ? (
-                  <>
-                    <ErrorBoundary fallback={null}>
-                      <Suspense
-                        fallback={
-                          // While the search loads: a field that keeps what is typed into it.
-                          <input
-                            autoFocus
-                            aria-label={t("search.placeholder")}
-                            placeholder={t("search.placeholder")}
-                            onChange={(e) => {
-                              typed.current = e.target.value;
+                <Panel className="relative z-10 flex w-[360px] items-center gap-0.5 px-1.5 py-1.5 max-md:w-full">
+                  <h1
+                    className={`order-2 flex-1 pl-1 font-serif text-[19px] font-semibold tracking-tight text-ink ${searchOpen ? "sr-only" : ""}`}
+                  >
+                    History Globe
+                  </h1>
+                  {searchOpen ? (
+                    <>
+                      <ErrorBoundary fallback={null}>
+                        <Suspense
+                          fallback={
+                            // While the search loads: a field that keeps what is typed into it.
+                            <input
+                              autoFocus
+                              aria-label={t("search.placeholder")}
+                              placeholder={t("search.placeholder")}
+                              onChange={(e) => {
+                                typed.current = e.target.value;
+                              }}
+                              className="hg-grow w-full min-w-0 rounded-full bg-paper px-3 py-1.5 pl-9 text-[15px] text-ink outline-hidden ring-2 ring-accent/30 placeholder:text-[14px] placeholder:text-ink-soft/70"
+                            />
+                          }
+                        >
+                          <SearchBox
+                            data={data}
+                            inputRef={searchRef}
+                            bibleOnly={bibleOnly}
+                            takeTyped={() => {
+                              const early = typed.current;
+                              typed.current = "";
+                              return early;
                             }}
-                            className="hg-grow w-full min-w-0 rounded-full bg-paper px-3 py-1.5 pl-9 text-[15px] text-ink outline-hidden ring-2 ring-accent/30 placeholder:text-[14px] placeholder:text-ink-soft/70"
+                            onSelect={(id) => {
+                              engine.selectPlace(id);
+                            }}
+                            onChapter={(focus) => {
+                              setPlaying(false);
+                              engine.stopTour();
+                              engine.selectPlace(null);
+                              engine.focusPlaces(focus);
+                            }}
+                            onYear={(y) => {
+                              setPlaying(false);
+                              engine.stopTour();
+                              engine.setYear(y);
+                            }}
+                            onPerson={(i) => {
+                              setPlaying(false);
+                              openPerson(i, null);
+                            }}
+                            onTour={(id) => {
+                              setPlaying(false);
+                              engine.startTour(id);
+                            }}
+                            events={eventsAndBattles}
+                            onEvent={(ev) => {
+                              setPlaying(false);
+                              goToEvent(engine, globe.renderer, ev);
+                            }}
+                            onClose={(focusBack) => {
+                              typed.current = "";
+                              setSearchOpen(false);
+                              if (focusBack)
+                                requestAnimationFrame(() => searchButton.current?.focus());
+                            }}
                           />
-                        }
-                      >
-                        <SearchBox
-                          data={data}
-                          inputRef={searchRef}
-                          bibleOnly={bibleOnly}
-                          takeTyped={() => {
-                            const early = typed.current;
-                            typed.current = "";
-                            return early;
-                          }}
-                          onSelect={(id) => {
-                            engine.selectPlace(id);
-                          }}
-                          onChapter={(focus) => {
-                            setPlaying(false);
-                            engine.stopTour();
-                            engine.selectPlace(null);
-                            engine.focusPlaces(focus);
-                          }}
-                          onYear={(y) => {
-                            setPlaying(false);
-                            engine.stopTour();
-                            engine.setYear(y);
-                          }}
-                          onPerson={(i) => {
-                            setPlaying(false);
-                            openPerson(i, null);
-                          }}
-                          onTour={(id) => {
-                            setPlaying(false);
-                            engine.startTour(id);
-                          }}
-                          events={eventsAndBattles}
-                          onEvent={(ev) => {
-                            setPlaying(false);
-                            goToEvent(engine, globe.renderer, ev);
-                          }}
-                          onClose={(focusBack) => {
-                            typed.current = "";
-                            setSearchOpen(false);
-                            if (focusBack)
-                              requestAnimationFrame(() => searchButton.current?.focus());
-                          }}
-                        />
-                      </Suspense>
-                    </ErrorBoundary>
-                    <span className="order-3">
-                      <HeaderButton
-                        label={t("search.close")}
-                        onClick={() => {
-                          setSearchOpen(false);
-                          requestAnimationFrame(() => searchButton.current?.focus());
-                        }}
-                      >
-                        <X className="size-[18px]" aria-hidden />
-                      </HeaderButton>
-                    </span>
-                  </>
-                ) : (
-                  <>
-                    <span className="order-1">
-                      <HeaderButton
-                        buttonRef={searchButton}
-                        label={t("search.open")}
-                        onClick={() => {
-                          // On a phone an open card covers the column: close it first.
-                          if (narrow && cardOpen) {
-                            engine.selectPlace(null);
-                            engine.stopTour();
-                          }
-                          setSearchOpen(true);
-                          requestAnimationFrame(() => searchRef.current?.focus());
-                        }}
-                      >
-                        <Search className="size-[18px]" aria-hidden />
-                      </HeaderButton>
-                    </span>
-                    <span className="order-3 flex">
-                      {/* The overview opens right below: tours, events, articles, in view. */}
-                      <HeaderButton
-                        buttonRef={overviewButton}
-                        label={t("more")}
-                        active={moreShown}
-                        expanded={moreShown}
-                        controls="more-panels"
-                        onClick={() => {
-                          const next = !moreShown;
-                          if (next && narrow && cardOpen) {
-                            engine.selectPlace(null);
-                            engine.stopTour();
-                          }
-                          setMoreOpen(next);
-                          writeMore(next);
-                        }}
-                      >
-                        <BookOpen className="size-[18px]" aria-hidden />
-                      </HeaderButton>
-                      {!EMBED && (
+                        </Suspense>
+                      </ErrorBoundary>
+                      <span className="order-3">
                         <HeaderButton
-                          label={t("tools.title")}
-                          active={tool !== null}
-                          expanded={tool !== null}
-                          controls="tools-panel"
+                          label={t("search.close")}
                           onClick={() => {
-                            const next = tool === null;
-                            // On a phone the tools and the overview share the column.
-                            if (next && narrow) {
-                              setMoreOpen(false);
-                              writeMore(false);
-                            }
-                            openTool(next ? "menu" : null);
+                            setSearchOpen(false);
+                            requestAnimationFrame(() => searchButton.current?.focus());
                           }}
                         >
-                          <PencilRuler className="size-[18px]" aria-hidden />
+                          <X className="size-[18px]" />
                         </HeaderButton>
-                      )}
-                      <HeaderButton
-                        label={t("settings.title")}
-                        dialog
-                        onClick={() => {
-                          setSettingsOpen(true);
-                        }}
-                      >
-                        <Settings className="size-[18px]" aria-hidden />
-                      </HeaderButton>
-                    </span>
-                  </>
-                )}
-              </Panel>
-              {/* A chapter picked out from the search: what is shown, and the way back. */}
-              {/* Not while a person's card is open: its title already says whose places these are. */}
-              {state.focus && !(person && !state.selectedPlace) && (
-                <Panel className="flex w-fit max-w-[360px] items-start gap-2 py-1.5 pr-1.5 pl-4 max-md:max-w-full">
-                  {state.focus.ref.startsWith("person:") ? (
-                    <span className="font-serif text-[15px] text-accent">{personLabel}</span>
+                      </span>
+                    </>
                   ) : (
-                    // A chapter opens its places in reading order (a phone has no other list).
-                    <Suspense
-                      fallback={
-                        <span className="font-serif text-[15px] text-accent">
-                          {chapterLabel(state.focus.ref, state.locale)}
-                        </span>
-                      }
-                    >
-                      <ChapterPicker
-                        chapter={state.focus}
-                        data={data}
-                        locale={state.locale}
-                        selected={state.selectedPlace}
-                        onPlace={(id) => {
-                          setPlaying(false);
-                          engine.selectPlace(id, { fly: true });
-                        }}
-                        className="flex items-center gap-2 rounded-full py-0.5 hover:text-ink"
-                        inline
-                      />
-                    </Suspense>
+                    <>
+                      <span className="order-1">
+                        <HeaderButton
+                          buttonRef={searchButton}
+                          label={t("search.open")}
+                          onClick={focusSearch}
+                        >
+                          <Search className="size-[18px]" />
+                        </HeaderButton>
+                      </span>
+                      <span className="order-3 flex">
+                        {/* The overview opens right below: tours, events, people and articles. */}
+                        <HeaderButton
+                          buttonRef={overviewButton}
+                          label={t("more")}
+                          active={moreShown}
+                          expanded={moreShown}
+                          controls="more-panels"
+                          onClick={() => {
+                            const next = !moreShown;
+                            if (next) closeCardOnPhone();
+                            setMoreOpen(next);
+                            writeMore(next);
+                          }}
+                        >
+                          <BookOpen className="size-[18px]" />
+                        </HeaderButton>
+                        {!embed && (
+                          <HeaderButton
+                            label={t("tools.title")}
+                            active={tool !== null}
+                            expanded={tool !== null}
+                            controls="tools-panel"
+                            onClick={() => {
+                              const next = tool === null;
+                              // On a phone the tools and the overview share the column.
+                              if (next && narrow) {
+                                setMoreOpen(false);
+                                writeMore(false);
+                              }
+                              openTool(next ? "menu" : null);
+                            }}
+                          >
+                            <PencilRuler className="size-[18px]" />
+                          </HeaderButton>
+                        )}
+                        <HeaderButton
+                          label={t("settings.title")}
+                          dialog
+                          onClick={() => {
+                            setSettingsOpen(true);
+                          }}
+                        >
+                          <Settings className="size-[18px]" />
+                        </HeaderButton>
+                      </span>
+                    </>
                   )}
-                  <HeaderButton
-                    label={t("focus.clear")}
-                    onClick={() => {
-                      engine.focusPlaces(null);
-                      // The chip goes away: the focus goes to the search it came from.
-                      requestAnimationFrame(() => searchButton.current?.focus());
-                    }}
-                  >
-                    <X className="size-4" aria-hidden />
-                  </HeaderButton>
                 </Panel>
-              )}
-              {settingsLoaded && (
-                <Suspense fallback={null}>
-                  <SettingsDialog
-                    open={settingsOpen}
-                    onClose={() => {
-                      setSettingsOpen(false);
-                    }}
-                    locale={state.locale}
-                    onLocale={(l) => {
-                      rememberLocale(l);
-                      engine.setLocale(l);
-                    }}
-                    layers={state.layers}
-                    onLayer={engine.setLayer}
-                    bibleOnly={bibleOnly}
-                    onBibleOnly={setBibleOnly}
-                  />
-                </Suspense>
-              )}
-              {tool && (
-                <div id="tools-panel">
+                {/* A chapter picked out from the search: what is shown, and the way back. */}
+                {/* Not while a person's card is open: its title already says whose places these are. */}
+                {state.focus && !(person && !state.selectedPlace) && (
+                  <Panel className="flex w-fit max-w-[360px] items-start gap-2 py-1.5 pr-1.5 pl-4 max-md:max-w-full">
+                    {isPersonRef(state.focus.ref) ? (
+                      <span className="font-serif text-[15px] text-accent">{personLabel}</span>
+                    ) : (
+                      // A chapter opens its places in reading order (a phone has no other list).
+                      <Suspense
+                        fallback={
+                          <span className="font-serif text-[15px] text-accent">
+                            {chapterLabel(state.focus.ref, state.locale)}
+                          </span>
+                        }
+                      >
+                        <ChapterPicker
+                          chapter={state.focus}
+                          data={data}
+                          locale={state.locale}
+                          selected={state.selectedPlace}
+                          onPlace={(id) => {
+                            setPlaying(false);
+                            engine.selectPlace(id, { fly: true });
+                          }}
+                          className="flex items-center gap-2 rounded-full py-0.5 hover:text-ink"
+                          inline
+                        />
+                      </Suspense>
+                    )}
+                    <HeaderButton
+                      label={t("focus.clear")}
+                      onClick={() => {
+                        engine.focusPlaces(null);
+                        // The chip goes away: the focus goes to the search it came from.
+                        requestAnimationFrame(() => searchButton.current?.focus());
+                      }}
+                    >
+                      <X className="size-4" />
+                    </HeaderButton>
+                  </Panel>
+                )}
+                {settingsLoaded && (
                   <Suspense fallback={null}>
-                    <ToolsPanel
-                      tool={tool}
-                      compact={narrow && cardOpen}
-                      onTool={openTool}
+                    <SettingsDialog
+                      open={settingsOpen}
                       onClose={() => {
-                        openTool(null);
+                        setSettingsOpen(false);
                       }}
                       locale={state.locale}
-                      year={state.year}
-                      placeName={(id) => placeLabel(id) ?? id}
-                      measure={{
-                        from: fromEntry
-                          ? { name: nameOf(fromEntry.props, state.locale), at: fromEntry.info.at }
-                          : null,
-                        to: toEntry
-                          ? { name: nameOf(toEntry.props, state.locale), at: toEntry.info.at }
-                          : null,
-                        onReset: () => {
-                          setMeasure({ from: null, to: null });
-                        },
+                      onLocale={(l) => {
+                        rememberLocale(l);
+                        engine.setLocale(l);
                       }}
-                      tours={tours.map((x) => ({
-                        id: x.id,
-                        title: x.title[state.locale] ?? x.title.en ?? x.id,
-                      }))}
-                      onQuiz={(id, print) => {
-                        setPlaying(false);
-                        if (narrow) setMoreOpen(false);
-                        engine.startTour(id);
-                        if (print) {
-                          void import("./print").then((m) => m.printQuiz({ globe, data }));
-                          return;
-                        }
-                        // The quiz stands where the tour's card is: the tool has done its part.
-                        openTool(null);
-                        void import("./print")
-                          .then((m) => m.buildQuiz({ globe, data }))
-                          .then((q) => {
-                            setQuiz(q && q.items.length > 0 ? { tour: id, quiz: q } : null);
-                          });
-                      }}
+                      layers={state.layers}
+                      onLayer={engine.setLayer}
+                      bibleOnly={bibleOnly}
+                      onBibleOnly={setBibleOnly}
                     />
                   </Suspense>
-                </div>
-              )}
-              {
+                )}
+                {tool && (
+                  <div id="tools-panel">
+                    <Suspense fallback={null}>
+                      <ToolsPanel
+                        tool={tool}
+                        compact={narrow && cardOpen}
+                        onTool={openTool}
+                        onClose={() => {
+                          openTool(null);
+                        }}
+                        locale={state.locale}
+                        year={state.year}
+                        placeName={(id) => placeLabel(id) ?? id}
+                        measure={{
+                          from: fromEntry
+                            ? { name: nameOf(fromEntry.props, state.locale), at: fromEntry.info.at }
+                            : null,
+                          to: toEntry
+                            ? { name: nameOf(toEntry.props, state.locale), at: toEntry.info.at }
+                            : null,
+                          onReset: () => {
+                            setMeasure({ from: null, to: null });
+                          },
+                        }}
+                        tours={tours.map((x) => ({
+                          id: x.id,
+                          title: pick(x.title, state.locale) ?? x.id,
+                        }))}
+                        onQuiz={(id, print) => {
+                          setPlaying(false);
+                          if (narrow) setMoreOpen(false);
+                          engine.startTour(id);
+                          if (print) {
+                            void import("./print").then((m) => m.printQuiz({ globe, data }));
+                            return;
+                          }
+                          // The quiz stands where the tour's card is: the tool has done its part.
+                          openTool(null);
+                          openQuiz(id);
+                        }}
+                      />
+                    </Suspense>
+                  </div>
+                )}
                 <div
                   id="side-panels"
                   className={`flex flex-col gap-3 *:shrink-0 ${cardOpen ? "max-md:hidden" : ""}`}
@@ -1018,344 +1002,324 @@ export function App() {
                     </Suspense>
                   )}
                 </div>
-              }
-            </aside>
-          )}
+              </aside>
+            )}
 
-          {/* Map-only, the host shows its own box for the place selected. */}
-          {parts.card && (
-            <section
-              aria-label={t("details_label")}
-              className={`hg-card absolute top-4 right-4 max-md:top-auto max-md:right-3 max-md:bottom-[calc(var(--hg-timeline-h,124px)+20px)] max-md:left-3 ${compact ? `z-[3] md:top-14 md:right-[60px] ${shortFrame ? `max-h-[52%] overflow-y-auto rounded-[20px] ${state.selectedPlace !== null || state.tour !== null ? "hg-fade" : ""}` : ""}` : ""}`}
-            >
-              <Suspense fallback={null}>
-                {quiz ? (
-                  <QuizPanel
-                    quiz={quiz}
-                    data={data}
-                    locale={state.locale}
-                    renderer={globe.renderer}
-                    onClose={() => {
-                      setQuiz(null);
-                    }}
-                  />
-                ) : tour && state.tour ? (
-                  <TourStopCard
-                    tour={tour}
-                    step={state.tour.step}
-                    place={tourStop ? data.byId.get(tourStop.placeId)?.props : undefined}
-                    photo={tourStop && !shortFrame ? data.photos[tourStop.placeId] : undefined}
-                    compact={shortFrame}
-                    heights={tourHeights?.tour === tour.id ? tourHeights.values : undefined}
-                    profileAlong={globe.renderer.profileAlong}
-                    locale={state.locale}
-                    onStep={engine.goToStop}
-                    onClose={() => {
-                      // "Закончить" closes the tour as Esc does, not onto its last stop's card.
-                      engine.stopTour();
-                      engine.selectPlace(null);
-                    }}
-                    onOpenPlace={(id) => {
-                      if (state.tour) setBackToTour({ ...state.tour, place: id });
-                      engine.stopTour();
-                      engine.selectPlace(id);
-                    }}
-                    stopName={(id) => {
-                      const p = data.byId.get(id)?.props;
-                      return p ? nameOf(p, state.locale) : id;
-                    }}
-                  />
-                ) : person && !selected ? (
-                  <PersonCard
-                    key={person.index}
-                    index={person.index}
-                    locale={state.locale}
-                    placeName={placeLabel}
-                    placeRank={placeRank}
-                    chapterYears={data.chapterYears}
-                    onPerson={(i) => {
-                      setPlaying(false);
-                      openPerson(i, person.from);
-                    }}
-                    onPlace={(id) => {
-                      setBackToPerson({ index: person.index, from: person.from, place: id });
-                      engine.selectPlace(id, { fly: true });
-                    }}
-                    onClose={closePerson}
-                    tours={tours}
-                    onTour={(id) => {
-                      closePerson();
-                      engine.startTour(id);
-                    }}
-                    back={
-                      person.from
-                        ? {
-                            label: placeLabel(person.from) ?? "",
-                            onBack: () => {
-                              const from = person.from;
-                              closePerson();
-                              if (from) engine.selectPlace(from);
-                            },
-                          }
-                        : undefined
-                    }
-                  />
-                ) : (
-                  selected && (
-                    <PlaceCard
-                      key={selected.id}
-                      place={selected}
-                      at={data.byId.get(selected.id)?.info.at ?? [0, 0]}
-                      sites={data.sites.get(selected.id) ?? []}
-                      questions={data.questions[selected.id]}
-                      life={data.life[selected.id]}
-                      // An event told again as a battle here (Samaria, 722 BC; Masada) is listed once, as the battle.
-                      events={events.filter(
-                        (e) =>
-                          (e.place ?? e.site?.id) === selected.id &&
-                          !data.battles.some(
-                            (b) =>
-                              b.place === (e.place ?? e.site?.id) && Math.abs(b.year - e.year) <= 1,
-                          ),
-                      )}
-                      battles={data.battles.filter(
-                        (b) => b.place === selected.id && (!bibleOnly || b.ref !== undefined),
-                      )}
-                      alsoHere={(data.alsoHere[state.locale].get(selected.id) ?? []).flatMap(
-                        (id) => {
-                          const p = data.byId.get(id)?.props;
-                          return p ? [p] : [];
-                        },
-                      )}
-                      onSelect={(id) => {
-                        engine.selectPlace(id);
-                      }}
-                      onGoTo={(id) => {
-                        engine.selectPlace(id, { fly: true });
-                      }}
-                      placeName={placeLabel}
+            {/* Map-only, the host shows its own box for the place selected. */}
+            {parts.card && (
+              <section
+                aria-label={t("details_label")}
+                className={`hg-card absolute top-4 right-4 max-md:top-auto max-md:right-3 max-md:bottom-[calc(var(--hg-timeline-h)+20px)] max-md:left-3 ${compact ? `z-[3] md:top-14 md:right-[60px] ${shortFrame ? `max-h-[52%] overflow-y-auto rounded-[20px] ${state.selectedPlace !== null || state.tour !== null ? "hg-fade" : ""}` : ""}` : ""}`}
+              >
+                <Suspense fallback={null}>
+                  {quiz ? (
+                    <QuizPanel
+                      quiz={quiz}
+                      data={data}
                       locale={state.locale}
-                      year={state.year}
+                      renderer={globe.renderer}
                       onClose={() => {
+                        setQuiz(null);
+                      }}
+                    />
+                  ) : tour && state.tour ? (
+                    <TourStopCard
+                      tour={tour}
+                      step={state.tour.step}
+                      place={tourStop ? data.byId.get(tourStop.placeId)?.props : undefined}
+                      photo={tourStop && !shortFrame ? data.photos[tourStop.placeId] : undefined}
+                      compact={shortFrame}
+                      heights={tourHeights?.tour === tour.id ? tourHeights.values : undefined}
+                      profileAlong={globe.renderer.profileAlong}
+                      locale={state.locale}
+                      onStep={engine.goToStop}
+                      onClose={() => {
+                        // The last stop's close (tours.close) ends the tour as Esc does, not onto its card.
+                        engine.stopTour();
                         engine.selectPlace(null);
                       }}
-                      onZoom={() => {
-                        engine.selectPlace(selected.id, { fly: true });
+                      onOpenPlace={(id) => {
+                        if (state.tour) setBackToTour({ ...state.tour, place: id });
+                        engine.stopTour();
+                        engine.selectPlace(id);
                       }}
-                      onFlyTo={(at) => {
-                        engine.lookAt(at);
+                      stopName={(id) => {
+                        const p = data.byId.get(id)?.props;
+                        return p ? nameOf(p, state.locale) : id;
                       }}
-                      hasArticle={selected.id in data.articles}
-                      polities={polities}
-                      pleiades={data.pleiades[selected.id]}
-                      // The card's ruler and list open their tools, this place the first step.
-                      onMeasure={
-                        compact
-                          ? undefined
-                          : () => {
-                              openTool("measure");
-                              setMeasure({ from: selected.id, to: null });
-                            }
-                      }
-                      onLesson={() => {
-                        openTool("lesson");
-                      }}
-                      photo={shortFrame ? undefined : data.photos[selected.id]}
+                    />
+                  ) : person && !selected ? (
+                    <PersonCard
+                      key={person.index}
+                      index={person.index}
+                      locale={state.locale}
+                      placeName={placeLabel}
+                      placeRank={placeRank}
+                      chapterYears={data.chapterYears}
                       onPerson={(i) => {
                         setPlaying(false);
-                        openPerson(i, selected.id);
+                        openPerson(i, person.from);
                       }}
-                      onHighlight={(id) => {
-                        engine.highlight(id ? (data.byId.get(id)?.info.at ?? null) : null);
+                      onPlace={(id) => {
+                        setBackToPerson({ index: person.index, from: person.from, place: id });
+                        engine.selectPlace(id, { fly: true });
                       }}
-                      onYear={(y) => {
-                        setPlaying(false);
-                        engine.setYear(y);
+                      onClose={closePerson}
+                      tours={tours}
+                      onTour={(id) => {
+                        closePerson();
+                        engine.startTour(id);
                       }}
-                      focusTitle={backToPerson?.place === selected.id}
                       back={
-                        backToPerson && backToPerson.place === selected.id && !backToTour
+                        person.from
                           ? {
-                              label: (() => {
-                                const p = people?.people[backToPerson.index];
-                                return p ? personName(p, state.locale) : "";
-                              })(),
+                              label: placeLabel(person.from) ?? "",
                               onBack: () => {
-                                setPlaying(false);
-                                openPerson(backToPerson.index, backToPerson.from);
-                                setBackToPerson(null);
+                                const from = person.from;
+                                closePerson();
+                                if (from) engine.selectPlace(from);
                               },
                             }
-                          : backToTour && backToTour.place === selected.id
-                            ? {
-                                label: t("tours.back_to", {
-                                  title:
-                                    data.tours.find((x) => x.id === backToTour.id)?.title[
-                                      state.locale
-                                    ] ?? "",
-                                }),
-                                onBack: () => {
-                                  setPlaying(false);
-                                  engine.startTour(backToTour.id, backToTour.step);
-                                  setBackToTour(null);
-                                },
-                              }
-                            : undefined
+                          : undefined
                       }
                     />
-                  )
-                )}
-              </Suspense>
-            </section>
-          )}
-
-          {!compact && (
-            <section
-              ref={setMapSlot}
-              aria-label={t("mapui.sources")}
-              // Folded, the player is a pill in the corner: the two sit on its line.
-              // With a card open they stand left of it; on a phone the card covers that spot.
-              className={`hg-map-slot hg-map-float pointer-events-auto absolute flex items-center gap-2 max-md:right-4 ${cardOpen ? "right-[456px] max-md:hidden" : "right-5"} ${playerFolded ? "bottom-[27px] max-md:bottom-[23px]" : "bottom-[calc(var(--hg-timeline-h,124px)+24px)]"}`}
-            ></section>
-          )}
-          <section
-            aria-label={t("time.timeline")}
-            ref={timelineBox}
-            className={`absolute inset-x-4 bottom-4 max-md:inset-x-3 max-md:bottom-3 ${playerFolded ? "pointer-events-none" : ""}`}
-          >
-            {playerFolded && (
-              // Folded to its year (embedded, or sideways under a card): the screen is for the map.
-              <button
-                ref={foldButton}
-                onClick={() => {
-                  setTimeOpen(true);
-                  setOverCard(true);
-                  // The button goes; the focus moves to the slider it opened.
-                  requestAnimationFrame(() => {
-                    document.querySelector<HTMLInputElement>("input.timeline-range")?.focus();
-                  });
-                }}
-                aria-label={`${formatYear(state.year, state.locale).replace(/\.$/, "")}. ${t("time.expand")}`}
-                aria-expanded={false}
-                className="pointer-events-auto flex items-center gap-2.5 rounded-full border border-white/45 bg-paper/90 py-1.5 pr-3 pl-4 shadow-[0_8px_24px_-12px_rgba(20,14,8,0.55)] backdrop-blur-xl hover:bg-paper"
-              >
-                <span className="font-serif text-[17px] font-semibold text-ink tabular-nums">
-                  {formatYear(state.year, state.locale)}
-                </span>
-                {periodNow && (
-                  <span className="text-[12.5px] text-ink-soft max-[360px]:hidden">
-                    {periodName(periodNow, state.locale)}
-                  </span>
-                )}
-                <ChevronDown className="size-4 rotate-180 text-ink-soft" aria-hidden />
-              </button>
+                  ) : (
+                    selected && (
+                      <PlaceCard
+                        key={selected.id}
+                        place={selected}
+                        at={data.byId.get(selected.id)?.info.at ?? [0, 0]}
+                        sites={data.sites.get(selected.id) ?? []}
+                        questions={data.questions[selected.id]}
+                        life={data.life[selected.id]}
+                        // An event told again as a battle here (Samaria, 722 BC; Masada) is listed once, as the battle.
+                        events={events.filter(
+                          (e) =>
+                            (e.place ?? e.site?.id) === selected.id &&
+                            !data.battles.some(
+                              (b) =>
+                                b.place === (e.place ?? e.site?.id) &&
+                                Math.abs(b.year - e.year) <= 1,
+                            ),
+                        )}
+                        battles={data.battles.filter(
+                          (b) => b.place === selected.id && (!bibleOnly || b.ref !== undefined),
+                        )}
+                        alsoHere={(data.alsoHere[state.locale].get(selected.id) ?? []).flatMap(
+                          (id) => {
+                            const p = data.byId.get(id)?.props;
+                            return p ? [p] : [];
+                          },
+                        )}
+                        onSelect={(id) => {
+                          engine.selectPlace(id);
+                        }}
+                        onGoTo={(id) => {
+                          engine.selectPlace(id, { fly: true });
+                        }}
+                        placeName={placeLabel}
+                        locale={state.locale}
+                        year={state.year}
+                        onClose={() => {
+                          engine.selectPlace(null);
+                        }}
+                        onZoom={() => {
+                          engine.selectPlace(selected.id, { fly: true });
+                        }}
+                        onFlyTo={(at) => {
+                          engine.lookAt(at);
+                        }}
+                        hasArticle={selected.id in data.articles}
+                        polities={polities}
+                        pleiades={data.pleiades[selected.id]}
+                        // The card's ruler and list open their tools, this place the first step.
+                        onMeasure={
+                          compact
+                            ? undefined
+                            : () => {
+                                openTool("measure");
+                                setMeasure({ from: selected.id, to: null });
+                              }
+                        }
+                        onLesson={() => {
+                          openTool("lesson");
+                        }}
+                        photo={shortFrame ? undefined : data.photos[selected.id]}
+                        onPerson={(i) => {
+                          setPlaying(false);
+                          openPerson(i, selected.id);
+                        }}
+                        onHighlight={highlightPlace}
+                        onYear={(y) => {
+                          setPlaying(false);
+                          engine.setYear(y);
+                        }}
+                        focusTitle={backToPerson?.place === selected.id}
+                        back={
+                          backToPerson && backToPerson.place === selected.id && !backToTour
+                            ? {
+                                label: (() => {
+                                  const p = people?.people[backToPerson.index];
+                                  return p ? personName(p, state.locale) : "";
+                                })(),
+                                onBack: () => {
+                                  setPlaying(false);
+                                  openPerson(backToPerson.index, backToPerson.from);
+                                  setBackToPerson(null);
+                                },
+                              }
+                            : backToTour && backToTour.place === selected.id
+                              ? {
+                                  label: t("tours.back_to", {
+                                    title:
+                                      pick(
+                                        data.tours.find((x) => x.id === backToTour.id)?.title,
+                                        state.locale,
+                                      ) ?? "",
+                                  }),
+                                  onBack: () => {
+                                    setPlaying(false);
+                                    engine.startTour(backToTour.id, backToTour.step);
+                                    setBackToTour(null);
+                                  },
+                                }
+                              : undefined
+                        }
+                      />
+                    )
+                  )}
+                </Suspense>
+              </section>
             )}
-            <div className={playerFolded ? "hidden" : undefined}>
-              <Timeline
-                year={state.year}
-                locale={state.locale}
-                playing={playing}
-                speed={speed}
-                onSpeed={setSpeed}
-                onPicture={
-                  // Inside another site's frame a download may be blocked: no picture there.
-                  EMBED
-                    ? undefined
-                    : () => {
-                        void savePicture();
-                      }
-                }
-                onPrint={
-                  EMBED
-                    ? undefined
-                    : () => {
-                        setPlaying(false);
-                        void printForClass();
-                      }
-                }
-                // An outline map, for a tour or a chapter: numbered places to name.
-                onPrintBlank={
-                  EMBED || !(state.tour || (state.focus && !state.focus.ref.startsWith("person:")))
-                    ? undefined
-                    : () => {
-                        setPlaying(false);
-                        void printForClass(true);
-                      }
-                }
-                // The same quiz on screen: a choice shows the place on the map.
-                onQuiz={
-                  EMBED || !state.tour
-                    ? undefined
-                    : () => {
-                        setPlaying(false);
-                        const tourNow = state.tour?.id;
-                        void import("./print")
-                          .then((m) => m.buildQuiz({ globe, data }))
-                          .then((q) => {
-                            // A tour with no question to ask (every passage shared) opens none.
-                            setQuiz(
-                              q && tourNow && q.items.length > 0
-                                ? { tour: tourNow, quiz: q }
-                                : null,
-                            );
-                          });
-                      }
-                }
-                // A quiz, for a tour or a lesson: where each thing happened.
-                onPrintQuiz={
-                  EMBED || !state.tour
-                    ? undefined
-                    : () => {
-                        setPlaying(false);
-                        void import("./print").then((m) => m.printQuiz({ globe, data }));
-                      }
-                }
-                events={timelineEvents}
-                scaleSlot={compact ? undefined : setScaleSlot}
-                life={
-                  ownLife && selected
-                    ? { name: placeName ?? selected.name, life: ownLife }
-                    : undefined
-                }
-                onEvent={(ev) => {
-                  setPlaying(false);
-                  goToEvent(engine, globe.renderer, ev);
-                }}
-                onYear={engine.setYear}
-                onPlay={() => {
-                  if (!playing && state.year >= YEAR_MAX) engine.setYear(YEAR_MIN);
-                  setPlaying((p) => !p);
-                }}
-                onCollapse={() => {
-                  setTimeOpen(false);
-                  requestAnimationFrame(() => foldButton.current?.focus());
-                }}
-              />
-            </div>
-          </section>
-        </>
-      )}
-    </div>
+
+            {!compact && (
+              <section
+                ref={setMapSlot}
+                aria-label={t("mapui.sources")}
+                // Folded, the player is a pill in the corner: the two sit on its line.
+                // With a card open they stand left of it; on a phone the card covers that spot.
+                className={`hg-map-slot hg-map-float pointer-events-auto absolute flex items-center gap-2 max-md:right-4 ${cardOpen ? "right-[456px] max-md:hidden" : "right-5"} ${playerFolded ? "bottom-[27px] max-md:bottom-[23px]" : "bottom-[calc(var(--hg-timeline-h)+24px)]"}`}
+              ></section>
+            )}
+            <section
+              aria-label={t("time.timeline")}
+              ref={timelineBox}
+              className={`absolute inset-x-4 bottom-4 max-md:inset-x-3 max-md:bottom-3 ${playerFolded ? "pointer-events-none" : ""}`}
+            >
+              {playerFolded && (
+                // Folded to its year (embedded, or sideways under a card): the screen is for the map.
+                <button
+                  ref={foldButton}
+                  onClick={() => {
+                    setTimeOpen(true);
+                    setOverCard(true);
+                    // The button goes; the focus moves to the slider it opened.
+                    requestAnimationFrame(() => timeRange.current?.focus());
+                  }}
+                  aria-label={`${formatYear(state.year, state.locale).replace(/\.$/, "")}. ${t("time.expand")}`}
+                  aria-expanded={false}
+                  className="pointer-events-auto flex items-center gap-2.5 rounded-full border border-white/45 bg-paper/90 py-1.5 pr-3 pl-4 shadow-chip backdrop-blur-xl hover:bg-paper"
+                >
+                  <span className="font-serif text-[17px] font-semibold text-ink tabular-nums">
+                    {formatYear(state.year, state.locale)}
+                  </span>
+                  {periodNow && (
+                    <span className="text-[12.5px] text-ink-soft max-[360px]:hidden">
+                      {periodName(periodNow, state.locale)}
+                    </span>
+                  )}
+                  <ChevronDown className="size-4 rotate-180 text-ink-soft" />
+                </button>
+              )}
+              <div className={playerFolded ? "hidden" : undefined}>
+                <Timeline
+                  year={state.year}
+                  locale={state.locale}
+                  playing={playing}
+                  speed={speed}
+                  onSpeed={setSpeed}
+                  onPicture={
+                    // Inside another site's frame a download may be blocked: no picture there.
+                    embed
+                      ? undefined
+                      : () => {
+                          void savePicture();
+                        }
+                  }
+                  onPrint={
+                    embed
+                      ? undefined
+                      : () => {
+                          setPlaying(false);
+                          void printForClass();
+                        }
+                  }
+                  // An outline map, for a tour or a chapter: numbered places to name.
+                  onPrintBlank={
+                    embed || !(state.tour || chapterOf(state.focus))
+                      ? undefined
+                      : () => {
+                          setPlaying(false);
+                          void printForClass(true);
+                        }
+                  }
+                  // The same quiz on screen: a choice shows the place on the map.
+                  onQuiz={
+                    embed || !state.tour
+                      ? undefined
+                      : () => {
+                          setPlaying(false);
+                          if (state.tour) openQuiz(state.tour.id);
+                        }
+                  }
+                  // A quiz, for a tour or a lesson: where each thing happened.
+                  onPrintQuiz={
+                    embed || !state.tour
+                      ? undefined
+                      : () => {
+                          setPlaying(false);
+                          void import("./print").then((m) => m.printQuiz({ globe, data }));
+                        }
+                  }
+                  events={timelineEvents}
+                  scaleSlot={compact ? undefined : setScaleSlot}
+                  life={
+                    ownLife && selected
+                      ? { name: placeName ?? selected.name, life: ownLife }
+                      : undefined
+                  }
+                  onEvent={(ev) => {
+                    setPlaying(false);
+                    goToEvent(engine, globe.renderer, ev);
+                  }}
+                  onYear={engine.setYear}
+                  onPlay={() => {
+                    if (!playing && state.year >= YEAR_MAX) engine.setYear(YEAR_MIN);
+                    setPlaying((p) => !p);
+                  }}
+                  rangeRef={timeRange}
+                  onCollapse={() => {
+                    setTimeOpen(false);
+                    requestAnimationFrame(() => foldButton.current?.focus());
+                  }}
+                />
+              </div>
+            </section>
+          </>
+        )}
+      </div>
+    </FrameContext>
   );
 }
 
-/** Tours, events and the in-view list fold behind one button; the choice is remembered. */
+/** The overview folds behind one button; the choice is remembered. */
 function readMore(): boolean {
   // On a phone the overview covers half the screen: it is not reopened on arrival.
-  if (innerWidth < 768) return false;
-  try {
-    return localStorage.getItem("hg:more") === "1";
-  } catch {
-    return false;
-  }
+  return !isNarrow() && readPref("hg:more") === "1";
 }
 
 function writeMore(open: boolean): void {
-  try {
-    localStorage.setItem("hg:more", open ? "1" : "0");
-  } catch {
-    // Private windows may refuse storage: the button still works, it just forgets.
-  }
+  writePref("hg:more", open ? "1" : "0");
 }
 
 /** A round icon button in the header; `active` marks what it has opened. */

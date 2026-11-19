@@ -46,7 +46,7 @@ disputed places, people, events, battles, journeys with their stops, and the anc
 `pnpm dataset` (after `pnpm data && pnpm content`) writes it to `pipeline/out/dataset/` from
 the API and `places.geojson` / `sites.geojson`; the card is `pipeline/dataset_card.md` with
 its counts filled in, and the build stops on any fact of the card the release no longer
-bears out. The owner uploads it after a deploy that changed it; the articles and the
+bears out. The maintainer uploads it after a deploy that changed it; the articles and the
 answered questions are never part of it (ADR 0016).
 
 ## Licences in one line each

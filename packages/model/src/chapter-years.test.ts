@@ -4,10 +4,10 @@ import { medianYear, packChapterYears, yearOfRef } from "./chapter-years.ts";
 const file = {
   books: {
     Acts: [
-      { chapters: "13-14", year: 47, approx: true, note: "first journey" },
-      { chapters: "16-17", year: 50, approx: true, note: "Philippi" },
+      { chapters: "13-14", year: 47 },
+      { chapters: "16-17", year: 50 },
     ],
-    "1Sam": [{ chapters: "16-31", year: -1024, approx: true, note: "David and Saul" }],
+    "1Sam": [{ chapters: "16-31", year: -1024 }],
   },
 };
 const { table, errors } = packChapterYears(file, [-3499, 1300]);
@@ -36,14 +36,19 @@ describe("chapter years", () => {
       {
         books: {
           Acts: [
-            { chapters: "1-5", year: 30, approx: true, note: "a" },
-            { chapters: "5-29", year: 9000, approx: true, note: "b" },
+            { chapters: "1-5", year: 30 },
+            { chapters: "5-29", year: 9000 },
           ],
           Xyz: [],
         },
       },
       [-3499, 1300],
     );
-    expect(bad.errors).toHaveLength(4);
+    expect(bad.errors).toEqual([
+      "chapter-years: Acts 5-29 is not in the book",
+      "chapter-years: Acts 5 year 9000 is off the map",
+      "chapter-years: Acts 5 overlaps the run before it",
+      "chapter-years: unknown book Xyz",
+    ]);
   });
 });

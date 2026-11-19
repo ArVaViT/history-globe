@@ -4096,8 +4096,7 @@ battles:
     sources:
       - "Josephus, Antiquities 14.58-73; Jewish War 1.141-154"
       - "Cassius Dio, Roman History 37.15-17"
-  # ---- The Jewish War (Josephus; the jewish-war tour). English and Russian first: the other
-  # languages wait for the translation pass (docs/translation-debt.md). ----
+  # ---- The Jewish War (Josephus; the jewish-war tour). ----
   - id: jotapata
     year: "AD 67"
     title:

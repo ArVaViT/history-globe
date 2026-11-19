@@ -17,11 +17,16 @@
  *
  * Usage: node scripts/build-docs.ts  (after build-content; counts read public/data)
  */
-import { type Locale, LOCALE_NAMES, LOCALES, type SiteLocale } from "../packages/model/src/time.ts";
-import { bodyEnd, esc, headMeta } from "./page-shell.ts";
+import {
+  type Locale,
+  LOCALE_NAMES,
+  LOCALES,
+  type SiteLocale,
+} from "../packages/model/src/locales.ts";
+import { bodyEnd, esc, headMeta, sansPreload } from "./page-shell.ts";
 import { hitHtml } from "./docs-script.ts";
 import { NOTICE_COMMENT } from "../packages/model/src/notice.ts";
-import { DOC_PAGES, type DocPage } from "../packages/model/src/site.ts";
+import { DOC_PAGES, type DocPage } from "../packages/model/src/docs.ts";
 import { SOURCES } from "./bible-text.ts";
 import { T as PAGE_WORDS } from "./page-words.ts";
 import {
@@ -1096,13 +1101,6 @@ const TYPESET: Words<(html: string) => string> = {
   ro: typesetLatin("ro"),
   bg: typesetBulgarian,
 };
-/** The languages that preload the Cyrillic font. */
-const CYRILLIC: ReadonlySet<Locale> = new Set(["ru", "uk", "sr", "bg"]);
-/** The sans file a language preloads: Golos Text's, or Onest's for Vietnamese (docs.css). */
-const sansPreload = (l: Locale) =>
-  l === "vi"
-    ? "onest-latin-wght-normal.woff2"
-    : `golos-text-${CYRILLIC.has(l) ? "cyrillic" : "latin"}-wght-normal.woff2`;
 
 /** A code sample's language, from its first line: markup, an HTTP request or JavaScript. */
 const langOf = (code: string) =>

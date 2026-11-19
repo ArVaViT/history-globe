@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   createEngine,
+  TOUR_ZOOM,
   YEAR_MAX,
   YEAR_MIN,
   zoomForSpread,
@@ -204,6 +205,30 @@ describe("engine", () => {
     expect(engine.store.get().tour).toBeNull();
     expect(engine.store.get().selectedPlace).toBe("capernaum");
   });
+
+  it("does not start a tour without stops", () => {
+    const renderer = new FakeRenderer();
+    const engine = createEngine({
+      renderer,
+      places,
+      tours: [{ id: "empty", year: 47, stops: [] }],
+    });
+    const calls = renderer.calls.length;
+    engine.startTour("empty");
+    expect(engine.store.get().tour).toBeNull();
+    expect(renderer.calls).toHaveLength(calls);
+  });
+});
+
+describe("marks without moving the map", () => {
+  it("rings a point and takes the ring away", () => {
+    const { engine, renderer } = setup();
+    engine.highlight([35.2, 31.7]);
+    expect(renderer.last("highlight")).toEqual({ op: "highlight", at: [35.2, 31.7] });
+    engine.highlight(null);
+    expect(renderer.last("highlight")).toEqual({ op: "highlight", at: null });
+    expect(renderer.last("flyTo")).toBeUndefined();
+  });
 });
 
 describe("camera commands", () => {
@@ -225,13 +250,13 @@ describe("camera in the store", () => {
 });
 
 describe("zoomForSpread", () => {
-  it("keeps 7.6 for a long journey and comes closer for a walk through a city", () => {
+  it("keeps TOUR_ZOOM for a long journey and comes closer for a walk through a city", () => {
     expect(
       zoomForSpread([
         [35.2, 31.8],
         [12.5, 41.9],
       ]),
-    ).toBe(7.6);
+    ).toBe(TOUR_ZOOM);
     expect(
       zoomForSpread([
         [35.23, 31.78],
@@ -239,6 +264,6 @@ describe("zoomForSpread", () => {
         [35.235, 31.775],
       ]),
     ).toBeGreaterThan(12);
-    expect(zoomForSpread([])).toBe(7.6);
+    expect(zoomForSpread([])).toBe(TOUR_ZOOM);
   });
 });

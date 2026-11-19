@@ -30,6 +30,15 @@ const { version } = JSON.parse(readFileSync(maplibrePackage, "utf8")) as { versi
 const VENDOR = `vendor/maplibre-gl-${version}`;
 const FILES = ["maplibre-gl.mjs", "maplibre-gl-shared.mjs", "maplibre-gl-worker.mjs"];
 
+/** Every file under a folder, in name order, as paths. */
+function* filesUnder(dir: string): Generator<string> {
+  for (const name of readdirSync(dir).sort()) {
+    const path = join(dir, name);
+    if (statSync(path).isDirectory()) yield* filesUnder(path);
+    else yield path;
+  }
+}
+
 function maplibreVendor(): Plugin {
   let outDir = "dist";
   return {
@@ -58,10 +67,11 @@ function maplibreVendor(): Plugin {
 }
 
 /**
- * The source maps are not published: the code is all rights reserved (ADR 0014), and a map
- * is the source with its comments. `build.sourcemap: "hidden"` writes them without a
- * sourceMappingURL in the chunks; this moves them out of dist/ to apps/web/maps/ (not in
- * git), where scripts/check-budget.ts reads which language a chunk belongs to.
+ * The source maps are written for scripts/check-budget.ts, which reads from them which
+ * language a chunk belongs to, and kept out of the deploy: a map is the source with its
+ * comments, and makes a copy cheap (ADR 0016). `build.sourcemap: "hidden"` writes them
+ * without a sourceMappingURL in the chunks; this moves them out of dist/ to apps/web/maps/
+ * (not in git).
  */
 function sourceMapsAside(): Plugin {
   let outDir = "dist";
@@ -77,18 +87,12 @@ function sourceMapsAside(): Plugin {
       order: "pre",
       handler() {
         rmSync(mapsDir, { recursive: true, force: true });
-        const walk = (dir: string) => {
-          for (const name of readdirSync(dir)) {
-            const path = join(dir, name);
-            if (statSync(path).isDirectory()) walk(path);
-            else if (name.endsWith(".map")) {
-              const to = join(mapsDir, relative(outDir, path));
-              mkdirSync(dirname(to), { recursive: true });
-              renameSync(path, to);
-            }
-          }
-        };
-        walk(outDir);
+        const maps = [...filesUnder(outDir)].filter((path) => path.endsWith(".map"));
+        for (const path of maps) {
+          const to = join(mapsDir, relative(outDir, path));
+          mkdirSync(dirname(to), { recursive: true });
+          renameSync(path, to);
+        }
       },
     },
   };
@@ -131,19 +135,15 @@ function publicFolderIndex(): Plugin {
 export function savedFiles(publicDir: string): { files: string[]; bytes: number } {
   const files: string[] = [];
   let bytes = 0;
-  const walk = (dir: string) => {
-    for (const name of readdirSync(dir).sort()) {
-      const path = join(dir, name);
-      if (statSync(path).isDirectory()) walk(path);
+  const data = join(publicDir, "data");
+  if (existsSync(data))
+    for (const path of filesUnder(data)) {
       // The states' later half (*-late) is kept only to rebuild the data: the app reads
       // polities-all instead (docs/data-release.md).
-      else if (!name.endsWith(".map") && !name.includes("-late.")) {
-        files.push(relative(publicDir, path).split("\\").join("/"));
-        bytes += statSync(path).size;
-      }
+      if (path.endsWith(".map") || path.includes("-late.")) continue;
+      files.push(relative(publicDir, path).split("\\").join("/"));
+      bytes += statSync(path).size;
     }
-  };
-  if (existsSync(join(publicDir, "data"))) walk(join(publicDir, "data"));
   for (const name of ["manifest.webmanifest", "favicon.svg", "icon-192.png"])
     if (existsSync(join(publicDir, name))) {
       files.push(name);
@@ -197,18 +197,13 @@ function offlineList(): Plugin {
     closeBundle() {
       const built: string[] = [];
       let bytes = 0;
-      const walk = (dir: string) => {
-        for (const name of readdirSync(dir).sort()) {
-          const path = join(dir, name);
-          if (statSync(path).isDirectory()) walk(path);
-          else if (!name.endsWith(".map")) {
+      for (const dir of ["assets", "vendor"])
+        if (existsSync(join(outDir, dir)))
+          for (const path of filesUnder(join(outDir, dir))) {
+            if (path.endsWith(".map")) continue;
             built.push(relative(outDir, path).split("\\").join("/"));
             bytes += statSync(path).size;
           }
-        }
-      };
-      for (const dir of ["assets", "vendor"])
-        if (existsSync(join(outDir, dir))) walk(join(outDir, dir));
       const sw = join(outDir, "sw.js");
       if (!existsSync(sw)) return;
       const saved = savedFiles(publicDir);

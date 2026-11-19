@@ -1,9 +1,7 @@
 /**
- * How each OpenBible place type (`kind`) is drawn. Every kind lands in some class: a kind
- * the table does not know is drawn as a landmark, never dropped from the map.
+ * OpenBible place kinds by class. A kind in none of the classes is drawn as a landmark, never
+ * dropped from the map (style-expressions.ts isLandmark).
  */
-export type PlaceClass = "settlement" | "area" | "water" | "landmark";
-
 export const AREA_KINDS = ["region", "people group", "island", "mountain range", "natural area"];
 export const WATER_KINDS = ["body of water", "river", "canal", "wadi"];
 /** Towns and villages. The camps of the Exodus are landmarks with a tent icon. */
@@ -21,13 +19,6 @@ const STRUCTURE_KINDS = [
   "fortification",
   "well",
 ];
-
-export function placeClass(kind: string): PlaceClass {
-  if (SETTLEMENT_KINDS.includes(kind)) return "settlement";
-  if (AREA_KINDS.includes(kind)) return "area";
-  if (WATER_KINDS.includes(kind)) return "water";
-  return "landmark";
-}
 
 /** Zoom that frames a place of this kind: regions need more room than towns. */
 export function zoomForKind(kind: string): number {

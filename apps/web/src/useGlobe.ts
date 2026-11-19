@@ -1,33 +1,29 @@
 import { createEngine, DEFAULT_STATE, type Camera, type Engine, type GlobeState } from "@hg/core";
 import type { MapLibreRenderer } from "@hg/core/maplibre";
-import { useEffect, useRef, useState, useSyncExternalStore, type RefObject } from "react";
-import type { LoadedData } from "./data";
-import { DATA_URL } from "./data";
+import { docsPath } from "@hg/model";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+  type RefObject,
+} from "react";
+import { DATA_URL, type LoadedData } from "./data";
+import { firstPaint } from "./first-paint";
 import { MAP_FONTS } from "./fonts";
+import { translate } from "./i18n";
+import { TERRAIN_ATTRIBUTION, TERRAIN_TILES } from "./terrain";
 import type { UrlView } from "./url";
+import { isNarrow, TIMELINE_FALLBACK_PX, viewPadding } from "./view-padding";
 
 /** The view the map opens on: the link's, its language always settled (App.tsx). */
 export type StartView = UrlView & { readonly locale: NonNullable<UrlView["locale"]> };
-import { viewPadding } from "./view-padding.ts";
-import { firstPaint } from "./first-paint";
-import { TERRAIN_TILES } from "./offline";
-import { translate } from "./i18n";
-import { docsPath } from "@hg/model";
 
 const DEFAULT_CAMERA: Camera = { center: [35.3, 32.0], zoom: 5.4, pitch: 40, bearing: -10 };
 // On a phone, a little closer and a little north: the Holy Land in the middle of the open
 // screen, Paul's Asia Minor above it.
 const PHONE_CAMERA: Camera = { center: [35.6, 32.6], zoom: 5.0, pitch: 40, bearing: -10 };
-
-const TERRAIN = {
-  // Development source. Production serves its own extract from R2 (ADR 0005).
-  tiles: TERRAIN_TILES,
-  // The licences ask for this line where the map is shown (Copernicus 6(a)); the rest of
-  // the sources, with the Copernicus disclaimer, are on the Sources page the link opens. The
-  // Copernicus notice is kept whole, "all rights reserved" included (Mapterhorn's catalogue).
-  attribution:
-    'Terrain: <a href="https://mapterhorn.com/attribution">Mapterhorn</a>, Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018, provided under COPERNICUS by the European Union and ESA; all rights reserved · <a href="docs/sources.html">Sources</a>',
-};
 
 // MapLibre is most of the JavaScript. It is a separate chunk, fetched in parallel with the
 // data while the panels render without waiting for it, once the first screen (index.html)
@@ -39,14 +35,48 @@ export interface Globe {
   readonly renderer: MapLibreRenderer;
 }
 
+/**
+ * What of the interface covers the map, beyond what the engine's state tells (App.tsx): the
+ * camera's padding keeps room for it.
+ */
+export interface Layout {
+  /** A compact frame on another site: no column, the chip above, the year below. */
+  readonly compact: boolean;
+  /** A map-only frame (`ui=map`): no card and no chapter bar, whatever is selected. */
+  readonly mapOnly: boolean;
+  /** A person's card: their places come with it, and the engine knows the places only. */
+  readonly personCard: boolean;
+  /** A panel open in the left column: the overview, a tool or the search. */
+  readonly leftPanel: boolean;
+}
+
 export function useGlobe(
   container: RefObject<HTMLDivElement | null>,
   data: LoadedData | null,
   initial: StartView,
-): { globe: Globe | null; error: string | null } {
+): {
+  globe: Globe | null;
+  error: string | null;
+  /** Changes the layout; the camera's padding follows at once. */
+  setLayout: (change: Partial<Layout>) => void;
+} {
   const [globe, setGlobe] = useState<Globe | null>(null);
   const [error, setError] = useState<string | null>(null);
   const initialRef = useRef(initial);
+  const layout = useRef<Layout>({
+    compact: false,
+    mapOnly: false,
+    personCard: false,
+    leftPanel: false,
+  });
+  const renderer = useRef<MapLibreRenderer | null>(null);
+  const setLayout = useCallback((change: Partial<Layout>) => {
+    const was = layout.current;
+    const now = { ...was, ...change };
+    if ((Object.keys(now) as (keyof Layout)[]).every((k) => now[k] === was[k])) return;
+    layout.current = now;
+    renderer.current?.syncPadding();
+  }, []);
 
   useEffect(() => {
     const el = container.current;
@@ -59,7 +89,8 @@ export function useGlobe(
     rendererModule
       .then(({ MapLibreRenderer }) => {
         if (cancelled) return;
-        created = createGlobe(MapLibreRenderer, el, data, init);
+        created = createGlobe(MapLibreRenderer, el, data, init, () => layout.current);
+        renderer.current = created.renderer;
         setGlobe(created);
       })
       .catch((e: unknown) => {
@@ -67,41 +98,13 @@ export function useGlobe(
       });
     return () => {
       cancelled = true;
-      if (current === created?.renderer) current = null;
+      if (renderer.current === created?.renderer) renderer.current = null;
       created?.engine.destroy();
       setGlobe(null);
     };
   }, [container, data]);
 
-  return { globe, error };
-}
-
-/**
- * Whether a person's card is open (App.tsx): their places come with it, and the camera's
- * padding keeps its room. The engine's state knows the places, not the card.
- */
-let personCard = false;
-/** A compact frame on another site (App.tsx): no column, the chip above, the year below. */
-let compactFrame = false;
-/** A map-only frame (`ui=map`): no card and no chapter bar, whatever is selected. */
-let mapOnlyFrame = false;
-export function setCompactFrame(on: boolean, mapOnly = false): void {
-  compactFrame = on;
-  mapOnlyFrame = on && mapOnly;
-}
-/** A panel open in the left column (App.tsx): the overview, a tool or the search. */
-let leftPanel = false;
-/** The renderer whose padding follows those two (one globe at a time). */
-let current: MapLibreRenderer | null = null;
-export function setPersonCardOpen(open: boolean): void {
-  if (personCard === open) return;
-  personCard = open;
-  current?.syncPadding();
-}
-export function setLeftPanelOpen(open: boolean): void {
-  if (leftPanel === open) return;
-  leftPanel = open;
-  current?.syncPadding();
+  return { globe, error, setLayout };
 }
 
 function createGlobe(
@@ -109,6 +112,7 @@ function createGlobe(
   el: HTMLDivElement,
   data: LoadedData,
   init: StartView,
+  layout: () => Layout,
 ): Globe {
   // The padding asks whether a card is open; the engine comes after the renderer.
   let cardOpen = () => true;
@@ -116,12 +120,12 @@ function createGlobe(
   let chipShown = () => false;
   const renderer = new Renderer({
     container: el,
-    camera: init.camera ?? (innerWidth < 768 ? PHONE_CAMERA : DEFAULT_CAMERA),
+    camera: init.camera ?? (isNarrow() ? PHONE_CAMERA : DEFAULT_CAMERA),
     places: forMap(data.places),
     dataUrl: DATA_URL,
-    terrainTiles: TERRAIN.tiles,
+    terrainTiles: TERRAIN_TILES,
     // The credits' "Sources" link opens the docs in the language the map opened in.
-    terrainAttribution: TERRAIN.attribution.replace(
+    terrainAttribution: TERRAIN_ATTRIBUTION.replace(
       'href="docs/sources.html"',
       `href="${docsPath(init.locale, "sources")}"`,
     ),
@@ -137,17 +141,17 @@ function createGlobe(
       sources: translate(l, "mapui.sources"),
       title: translate(l, "mapui.title"),
     }),
-    viewPadding: () =>
-      viewPadding(
-        innerWidth,
-        innerHeight,
-        compactFrame,
-        timelineHeight(),
-        cardOpen(),
-        chipShown(),
-        leftPanel,
-        mapOnlyFrame,
-      ),
+    viewPadding: () => {
+      const l = layout();
+      return viewPadding({
+        embed: l.compact,
+        timeline: timelineHeight(),
+        card: cardOpen(),
+        chip: chipShown(),
+        panel: l.leftPanel,
+        mapOnly: l.compact && l.mapOnly,
+      });
+    },
   });
   const engine = createEngine({
     renderer,
@@ -160,10 +164,10 @@ function createGlobe(
       ...(init.layers === undefined ? {} : { layers: init.layers }),
     },
   });
-  chipShown = () => !compactFrame && engine.store.get().focus !== null;
+  chipShown = () => !layout().compact && engine.store.get().focus !== null;
   cardOpen = () => {
     const s = engine.store.get();
-    return s.selectedPlace !== null || s.tour !== null || personCard;
+    return s.selectedPlace !== null || s.tour !== null || layout().personCard;
   };
   // Until now the padding guessed a card was open: set the real one before the first frame,
   // then let the centre follow a card or a chapter's chip opening and closing.
@@ -175,7 +179,6 @@ function createGlobe(
     framed = now;
     renderer.syncPadding();
   });
-  current = renderer;
   if (import.meta.env.DEV) {
     // Handle for local debugging and screenshot scripts; never in production builds.
     (window as unknown as { __hgMap?: unknown }).__hgMap = renderer.map;
@@ -210,5 +213,5 @@ function timelineHeight(): number {
   const v = parseFloat(
     getComputedStyle(document.documentElement).getPropertyValue("--hg-timeline-h"),
   );
-  return Number.isFinite(v) ? v : 124;
+  return Number.isFinite(v) ? v : TIMELINE_FALLBACK_PX;
 }

@@ -1,10 +1,5 @@
 import { isDeuterocanon, type Locale } from "@hg/model";
 
-/**
- * A verse or passage on BibleGateway. It reads OSIS references as they are and keeps
- * the English numbering, showing the Synodal verse under it (RUSV: Ps 68:15 is shown
- * as "(67-16) Гора Божия…"), so no conversion is needed.
- */
 /** Bible Gateway's edition for each language's readers (its own codes). */
 const GATEWAY_VERSION: Readonly<Partial<Record<Locale, string>>> = {
   ru: "RUSV",
@@ -23,15 +18,19 @@ const GATEWAY_VERSION: Readonly<Partial<Record<Locale, string>>> = {
   nb: "DNB1930",
   sr: "NSP",
   tl: "MBBTAG",
-  // Wave 4 (Bible Gateway's list of versions, 2026-10-25).
   hu: "KAR",
   fi: "R1933",
   vi: "BD2011",
-  // Wave 5: Cornilescu 1924 and the Bulgarian Bible of 1940, the classic texts of each.
+  // Cornilescu 1924 and the Bulgarian Bible of 1940, the classic text of each.
   ro: "RMNN",
   bg: "BG1940",
 };
 
+/**
+ * A verse or passage on Bible Gateway. It reads OSIS references as they are and keeps the
+ * English numbering, showing the Synodal verse under it (RUSV: Ps 68:15 is shown as
+ * "(67-16) Гора Божия…"), so no conversion is needed.
+ */
 export function verseUrl(osis: string, locale: Locale): string {
   // 1-2 Maccabees are in neither of those: the Synodal text at Azbyka (its own address form,
   // 1Mac.4:36-59), in English a version with the Apocrypha.

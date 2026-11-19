@@ -7,6 +7,7 @@
  * gives the same files. Part of scripts/build-content.ts, which calls it.
  */
 import { rulersOf } from "./rulers.ts";
+import { pointInRing, type Ring, ringArea } from "./geo.ts";
 import { join } from "node:path";
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import {
@@ -16,6 +17,8 @@ import {
   PolityOverridesFile,
 } from "../packages/model/src/content.ts";
 import { POLITY_SPLIT_YEAR } from "../packages/model/src/time.ts";
+
+const root = join(import.meta.dirname, "..");
 
 export interface PolityBuild {
   readonly out: string;
@@ -58,22 +61,11 @@ export function buildPolities({
       clipped?: number;
     };
   };
-  /** Ray casting: the point inside the ring. */
-  const pointIn = ([x, y]: [number, number], ring: [number, number][]) => {
-    let isIn = false;
-    for (let k = 0, m = ring.length - 1; k < ring.length; m = k++) {
-      const [xk, yk] = ring[k] ?? [0, 0];
-      const [xm, ym] = ring[m] ?? [0, 0];
-      if (yk > y !== ym > y && x < ((xm - xk) * (y - yk)) / (ym - yk) + xk) isIn = !isIn;
-    }
-    return isIn;
-  };
   /** A vassal's marks: the overlord's colour in `c`, its own kept in `vc`, the second line. */
   type VassalProps = { c?: number; vc?: number; v?: string; v_ru?: string };
   // The polities ship twice (below): what the first frame needs, to AD 500, and all of them,
   // which the map switches to when the slider first passes AD 500. The later half is also
   // kept apart, so that a rerun reads the whole set back from the two halves.
-  const POLITY_SPLIT = POLITY_SPLIT_YEAR;
   const polityPath = join(out, "polities.geojson");
   const polityLatePath = join(out, "polities-late.geojson");
   const labelsLatePath = join(out, "polity-labels-late.geojson");
@@ -101,9 +93,8 @@ export function buildPolities({
       for (const k of Object.keys(p)) if (k.startsWith("v_")) Reflect.deleteProperty(p, k);
       delete (p as { vin?: boolean }).vin;
     }
-    // The pipeline's tier of a label, kept apart: the tiers are given again below, and a
-    // clip that read the given ones decided differently on a rerun than on a first build.
-    // Labels only (a shape has no tier); and the tier given back, as it is given again below.
+    // A label keeps the pipeline's tier in tier0, so a rerun starts from it, not from the
+    // tier this build assigns: a clip that read the assigned one decided differently.
     const lp = f.properties as { tier?: number; tier0?: number };
     if (labelSet.has(f)) {
       if (lp.tier0 === undefined) lp.tier0 = lp.tier ?? 0;
@@ -192,7 +183,6 @@ export function buildPolities({
   // Shapes cut to where the polity was (overrides `clips`): each ring is clipped to a convex
   // polygon (Sutherland-Hodgman), a label outside it moves to the middle of what is left.
   // Clipping a clipped shape changes nothing, so a rebuild gives the same files.
-  type Ring = [number, number][];
   const clipRing = (ring: Ring, clip: Ring): Ring => {
     // Inside = left of each clip edge for a counter-clockwise clip polygon.
     const ccw =
@@ -304,13 +294,6 @@ export function buildPolities({
     }
     // Label size follows the area left, as pipeline/build_data.py sets it from the whole:
     // log10 of the shoelace area in square degrees, plus 2.
-    const area = (ring: Ring) =>
-      Math.abs(
-        ring.reduce((a, [x0, y0], k) => {
-          const [x1, y1] = ring[(k + 1) % ring.length] ?? [x0, y0];
-          return a + x0 * y1 - x1 * y0;
-        }, 0),
-      ) / 2;
     // A label's own shape: of its years, and of its copy (another clip's years are another
     // copy, with another cut); the first that stands in its years otherwise.
     const ownShape = (f: (typeof polityLabels.features)[number]) => {
@@ -323,21 +306,12 @@ export function buildPolities({
       if (f.properties.name !== c.polity || (limited && f.properties.clipped !== k)) continue;
       const own = ownShape(f);
       const polys = (own?.geometry as { coordinates: Ring[][] } | undefined)?.coordinates ?? [];
-      const total = polys.reduce((a, p) => a + area(p[0] ?? []), 0);
+      const total = polys.reduce((a, p) => a + ringArea(p[0] ?? []), 0);
       (f.properties as { size?: number }).size =
         Math.round((Math.log10(Math.max(total, 0.01)) + 2) * 100) / 100;
     }
     // A label off the cut shape of its years moves to the middle of it (the mean of its
     // outer ring's points), if that lands inside: ray casting, as the shape may be concave.
-    const inRing = ([x, y]: [number, number], ring: Ring) => {
-      let inside = false;
-      for (let k = 0, m = ring.length - 1; k < ring.length; m = k++) {
-        const [xk, yk] = ring[k] ?? [0, 0];
-        const [xm, ym] = ring[m] ?? [0, 0];
-        if (yk > y !== ym > y && x < ((xm - xk) * (y - yk)) / (ym - yk) + xk) inside = !inside;
-      }
-      return inside;
-    };
     for (const f of polityLabels.features) {
       if (f.properties.name !== c.polity || (limited && f.properties.clipped !== k)) continue;
       const at = f.geometry as { coordinates: [number, number] };
@@ -347,7 +321,7 @@ export function buildPolities({
         .map((p) => p[0] ?? [])
         .filter((r) => r.length >= 4);
       // Inside any of its pieces, it stays.
-      if (rings.length === 0 || rings.some((r) => inRing(at.coordinates, r))) continue;
+      if (rings.length === 0 || rings.some((r) => pointInRing(at.coordinates, r))) continue;
       // One of the grid of points an empire is named at up close (tier 1, 2): off the cut
       // shape it is not needed, and moved it would sit on the main one.
       const p = f.properties as { tier0?: number; cut?: [number, number] };
@@ -357,13 +331,13 @@ export function buildPolities({
         continue;
       }
       // The main one goes to the middle of the largest piece.
-      const ring = rings.reduce((a, r) => (area(r) > area(a) ? r : a));
+      const ring = rings.reduce((a, r) => (ringArea(r) > ringArea(a) ? r : a));
       const pts = ring.slice(0, -1);
       const mid: [number, number] = [
         Math.round((pts.reduce((a, [x]) => a + x, 0) / pts.length) * 1000) / 1000,
         Math.round((pts.reduce((a, [, y]) => a + y, 0) / pts.length) * 1000) / 1000,
       ];
-      if (inRing(mid, ring)) {
+      if (pointInRing(mid, ring)) {
         at.coordinates = mid;
         continue;
       }
@@ -447,9 +421,8 @@ export function buildPolities({
             }
       }
     });
-    const info = size;
-    const order = [...info.keys()].sort(
-      (a, b) => (info.get(b) ?? 0) - (info.get(a) ?? 0) || a.localeCompare(b),
+    const order = [...size.keys()].sort(
+      (a, b) => (size.get(b) ?? 0) - (size.get(a) ?? 0) || a.localeCompare(b),
     );
     const colour = new Map<string, number>();
     for (const name of order) {
@@ -689,7 +662,7 @@ export function buildPolities({
           l.properties.y0 < f.properties.y1 &&
           f.properties.y0 < l.properties.y1 &&
           (l.geometry as { coordinates: Ring[][] }).coordinates.some((poly) =>
-            pointIn(mid, poly[0] ?? []),
+            pointInRing(mid, poly[0] ?? []),
           ),
       );
       if (covered) (f.properties as VassalProps & { vin?: boolean }).vin = true;
@@ -760,15 +733,6 @@ export function buildPolities({
       }
       return best;
     };
-    const inside = ([x, y]: [number, number], ring: Ring) => {
-      let isIn = false;
-      for (let k = 0, m = ring.length - 1; k < ring.length; m = k++) {
-        const [xk, yk] = ring[k] ?? [0, 0];
-        const [xm, ym] = ring[m] ?? [0, 0];
-        if (yk > y !== ym > y && x < ((xm - xk) * (y - yk)) / (ym - yk) + xk) isIn = !isIn;
-      }
-      return isIn;
-    };
     // Never on water: the shapes run over the Dead Sea and the coast, and a label there
     // reads as the sea's name. The outer rings of water.geojson, cut to the Levant.
     const waterPath = join(out, "water.geojson");
@@ -795,7 +759,7 @@ export function buildPolities({
     const onWater = (c: [number, number]) =>
       water.some((r, k) => {
         const [w, s, e, n] = boxes[k] ?? [0, 0, 0, 0];
-        return c[0] >= w && c[0] <= e && c[1] >= s && c[1] <= n && inside(c, r);
+        return c[0] >= w && c[0] <= e && c[1] >= s && c[1] <= n && pointInRing(c, r);
       });
     for (const f of polityLabels.features as {
       geometry: { coordinates: [number, number] };
@@ -850,7 +814,7 @@ export function buildPolities({
         for (let y = Math.min(...ys); y <= Math.max(...ys); y += 0.04) {
           const c: [number, number] = [Math.round(x * 1000) / 1000, Math.round(y * 1000) / 1000];
           if (Math.hypot((c[0] - mid[0]) * cos, c[1] - mid[1]) > RADIUS) continue;
-          if (!inside(c, ring) || toEdge(c, ring) < 0.12) continue;
+          if (!pointInRing(c, ring) || toEdge(c, ring) < 0.12) continue;
           const d = near(c);
           // The water test is the costly one: only for a point that would win.
           if (d > score + 1e-9 && !onWater(c)) {
@@ -907,9 +871,9 @@ export function buildPolities({
     if (ru) f.properties.name_ru = ru;
   }
   const early = <T extends { properties: { y0?: number } }>(fs: T[]) =>
-    fs.filter((f) => (f.properties.y0 ?? 0) <= POLITY_SPLIT);
+    fs.filter((f) => (f.properties.y0 ?? 0) <= POLITY_SPLIT_YEAR);
   const late = <T extends { properties: { y0?: number } }>(fs: T[]) =>
-    fs.filter((f) => (f.properties.y0 ?? 0) > POLITY_SPLIT);
+    fs.filter((f) => (f.properties.y0 ?? 0) > POLITY_SPLIT_YEAR);
   // Three decimals (about 100 m) for borders drawn at a region's zoom: the float noise some
   // points carried ("31.593257904052734") was 16% of the first frame's states.
   const fc = (features: unknown[]) =>
@@ -925,17 +889,11 @@ export function buildPolities({
 
   // Who ruled each place, century by century, for the card's timeline (scripts/rulers.ts):
   // the ancient world's places too, which the card opens as any other.
-  const read = (file: string) =>
-    existsSync(file)
-      ? (JSON.parse(readFileSync(file, "utf8")) as unknown)
-      : { _source: "none", sites: [] };
   const ancient = [
-    ...(existsSync("content/ancient-sites.json")
-      ? AncientSitesFile.parse(read("content/ancient-sites.json")).sites
-      : []),
-    ...readdirSync("content")
+    ...AncientSitesFile.parse(load("content/ancient-sites.json")).sites,
+    ...readdirSync(join(root, "content"))
       .filter((f) => /^ancient-sites-wave\d+\.json$/.test(f))
-      .flatMap((f) => AncientWaveFile.parse(read(join("content", f))).sites),
+      .flatMap((f) => AncientWaveFile.parse(load(`content/${f}`)).sites),
   ].map((a) => ({ geometry: { coordinates: [a.lon, a.lat] }, properties: { id: a.id } }));
   const { states, rulers } = rulersOf(polities.features, [...places.features, ...ancient]);
   writes.push([join(out, "rulers.json"), JSON.stringify({ states, places: rulers })]);

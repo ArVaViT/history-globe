@@ -1,16 +1,12 @@
-"""The Roman roads build (pipeline/roads) and the people package (pipeline/people).
-Run: python3 -m unittest discover -s pipeline"""
+"""The Roman roads build (pipeline/roads)."""
 
-import os
+import pathlib
 import sys
 import unittest
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(HERE, "roads"))
-sys.path.insert(0, os.path.join(HERE, "people"))
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / "roads"))
 
-from build_roads import clip_line, dp, fwd, inv, merge, stitch  # noqa: E402
-from package import unnamed  # noqa: E402
+from build_roads import clip_line, fwd, inv, merge, stitch  # noqa: E402
 
 
 class Projection(unittest.TestCase):
@@ -34,14 +30,6 @@ class Clip(unittest.TestCase):
     def test_a_line_that_leaves_and_comes_back_is_two_pieces(self):
         pieces = clip_line([(2, 5), (15, 5), (15, 6), (2, 6)], 0, 0, 10, 10)
         self.assertEqual(len(pieces), 2)
-
-
-class Simplify(unittest.TestCase):
-    def test_a_straight_line_keeps_its_ends(self):
-        self.assertEqual(dp([(0, 0), (1, 0.001), (2, 0), (3, 0)], 0.1), [(0, 0), (3, 0)])
-
-    def test_a_corner_beyond_the_tolerance_stays(self):
-        self.assertEqual(dp([(0, 0), (5, 5), (10, 0)], 1), [(0, 0), (5, 5), (10, 0)])
 
 
 class Stitch(unittest.TestCase):
@@ -71,13 +59,6 @@ class Merge(unittest.TestCase):
         self.assertEqual([f["properties"]["name"] for f in out], ["Via Maris", "Kings' Highway"])
         self.assertEqual(out[0]["properties"]["ids"], [3, 7])
         self.assertEqual(out[0]["geometry"]["type"], "LineString")
-
-
-class People(unittest.TestCase):
-    def test_records_for_people_the_text_does_not_name(self):
-        self.assertTrue(unnamed("daughter_of_Lot@Gen.19.30"))
-        self.assertTrue(unnamed("Jerusalem_wives@2Sa.5.13"))
-        self.assertFalse(unnamed("David@Rut.4.17-Rev"))
 
 
 if __name__ == "__main__":

@@ -23,7 +23,7 @@
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { placeSlugs } from "../packages/model/src/slugs.ts";
-import { LOCALES } from "../packages/model/src/time.ts";
+import { LOCALES } from "../packages/model/src/locales.ts";
 import { openApi, violations } from "./api-openapi.ts";
 import { NOTICE } from "../packages/model/src/notice.ts";
 import { Canaries } from "./canary.ts";
@@ -80,7 +80,8 @@ const content = JSON.parse(readFileSync(join(data, "content.json"), "utf8")) as 
   }[];
   tours: {
     id: string;
-    year: { year: number; approximate: boolean } | number;
+    year: number;
+    approximate?: boolean;
     title: Record<string, string>;
     people?: string[];
     stops: {
@@ -98,18 +99,16 @@ const manifest = existsSync(join(data, "manifest.json"))
   : {};
 
 const LICENSE = "CC BY 4.0";
+// Append only: readers may refer to a line by its position.
 const CREDIT = [
   "History Globe by Vadym Arnaut (https://historyglobe.app), CC BY 4.0",
   "Places, verse tags and points: OpenBible.info Bible Geocoding Data (CC BY 4.0, modified); some points from Wikidata (CC0)",
   "Russian names: read from the Russian Synodal translation (public domain)",
   "Names in the other languages: History Globe (CC BY 4.0)",
   "Third-party parts keep their own licences: https://historyglobe.app/docs/sources.html",
-  // Added with people.json and the gazetteer ids (2026-10): appended, the earlier lines unmoved.
   "People and the verses that name them: STEPBible TIPNR by Tyndale House Cambridge (www.STEPBible.org), CC BY 4.0, modified",
   "Pleiades ids: Pleiades (https://pleiades.stoa.org), CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/us/); Wikidata ids: Wikidata (CC0), from OpenBible's links, checked against Wikidata: wrong ones left out, merged items followed",
-  // Added with the places' TIPNR ids (2026-10-19): appended, the earlier lines unmoved.
   "TIPNR ids of the places: STEPBible TIPNR (CC BY 4.0), as OpenBible links them, brought to the current TIPNR names",
-  // The one file under another licence (ADR 0016): appended, the earlier lines unmoved.
   "Except questions.json: the answers are History Globe's own texts, CC BY-NC-ND 4.0 (https://creativecommons.org/licenses/by-nc-nd/4.0/): quote and link them with credit, do not change, translate or republish them",
 ];
 
@@ -254,7 +253,8 @@ write(
   "tours.json",
   content.tours.map((t) => ({
     id: t.id,
-    year: typeof t.year === "number" ? t.year : t.year.year,
+    year: t.year,
+    ...(t.approximate ? { approximate: true } : {}),
     title: t.title,
     ...(t.people ? { people: t.people } : {}),
     stops: t.stops.map((s) => ({
@@ -444,7 +444,7 @@ write("index.json", {
   license: LICENSE,
   license_url: "https://creativecommons.org/licenses/by/4.0/",
   credit: CREDIT,
-  // Added 2026-10: the same words a page's head and llms.txt carry.
+  // The same words a page's head and llms.txt carry.
   notice: NOTICE,
   years: "astronomical: 1 BC is 0, 586 BC is -585",
   refs: "OSIS with English book abbreviations and KJV numbering: Gen.12.6, Acts.16.12-Acts.16.15",

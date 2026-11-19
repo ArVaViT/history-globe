@@ -1,0 +1,37 @@
+# The part of `pnpm gate` that needs neither the data release nor a secret: format, lint,
+# types, unit and pipeline tests. The rest (content checks, links, build, CSP, JS budget)
+# needs `pnpm data`, a download of some 260 MB, and runs locally before a merge (AGENTS.md).
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci-pass:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - name: pnpm, as pinned in packageManager
+        run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm format:check
+      - run: pnpm lint
+      - run: pnpm typecheck
+      # water-tiles.test.ts reads apps/web/public/data/water.geojson, which `pnpm data` builds.
+      - run: pnpm exec vitest run --exclude scripts/water-tiles.test.ts
+      - run: python3 --version && pnpm test:pipeline

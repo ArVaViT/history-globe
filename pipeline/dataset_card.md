@@ -144,7 +144,7 @@ The cities, sanctuaries, ports and other sites of the ancient world that History
 
 ### `tours` and `tour_stops`
 
-A tour: `id`, `year`, `date`, `stops`, `people` (TIPNR ids, space-separated), `title_*`.
+A tour: `id`, `year`, `date`, `approximate`, `stops`, `people` (TIPNR ids, space-separated), `title_*`.
 
 Its stops, in the order travelled: `tour_id`, `stop`, `place_id`, `ref`, `note_*`, and how the stop was reached:
 
@@ -157,7 +157,7 @@ Its stops, in the order travelled: `tour_id`, `stop`, `place_id`, `ref`, `note_*
 
 ## Conventions
 
-- **Years** are astronomical: 1 BC is `0`, 586 BC is `-585`. The `date` column says it in words; dates before 1000 BC are approximate and marked "c.".
+- **Years** are astronomical: 1 BC is `0`, 586 BC is `-585`. The `date` column says it in words, marked "c." where the year is approximate (`approximate`).
 - **References** are OSIS with English book abbreviations and KJV verse numbers: `Gen.12.6`, `Judg.3.15-Judg.3.25`. A few events and battles cite 1–2 Maccabees (`1Macc.7.39`). The ids of people, `people.first_ref` and `places.tipnr` follow STEPBible's abbreviations instead (`2Sa`, `Act`).
 - **A point is the most likely location, not a certainty.** A region (${regions} of them) is one point near its middle, not a boundary.
 - **${no_verse} places have no verse.** OpenBible.info tags no verse to them: some are named only outside the 66 books (Adasa, 1 Maccabees 7:40), some are sites of the biblical world (Eridu, Carthage), and some are a second record of a place whose verses are under another record (Ur, Magdala).

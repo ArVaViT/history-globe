@@ -1,29 +1,32 @@
-import { translate } from "./i18n";
-import { medianYear, yearOfRef, type ChapterYears, LOCALES } from "@hg/model";
 import type { LonLat, PlaceInfo } from "@hg/core";
+import { medianYear, yearOfRef, type ChapterYears, LOCALES } from "@hg/model";
+import { translate } from "./i18n";
+import { LESSON, lessonStops, lessonTitle } from "./lesson";
 
-type Words = { en: string; ru: string };
-/** As the content's tours are: a title and notes in both languages. */
+type Words = Readonly<Record<string, string>>;
+
+/** As the content's tours are: a title and notes by language. */
 export interface LessonTour {
   id: string;
   year: number;
   title: Words;
   stops: { placeId: string; at: LonLat; ref: string; note: Words; year?: number }[];
 }
-import { LESSON, lessonStops, lessonTitle } from "./lesson";
 
 /**
  * "Lesson" in each language, read when shown: by then the language's dictionary is in, so
  * no dictionary is fetched for the languages the reader never opens.
  */
 function defaultTitle(): Words {
-  const title = {} as Words;
-  for (const l of LOCALES)
-    Object.defineProperty(title, l, {
-      enumerable: true,
-      get: () => translate(l, "lesson.default_title"),
-    });
-  return title;
+  return Object.defineProperties(
+    {},
+    Object.fromEntries(
+      LOCALES.map((l) => [
+        l,
+        { enumerable: true, get: () => translate(l, "lesson.default_title") },
+      ]),
+    ),
+  );
 }
 
 /**
@@ -51,7 +54,7 @@ export function lessonTour(
       placeId: id,
       at: byId.get(id)?.info.at ?? ([0, 0] as const),
       ref,
-      note: { en: "", ru: "" },
+      note: {},
       ...(at !== undefined ? { year: at } : {}),
     };
   });
@@ -64,9 +67,7 @@ export function lessonTour(
         table,
       ) ??
       30,
-    title: lessonTitle(search)
-      ? { en: lessonTitle(search), ru: lessonTitle(search) }
-      : defaultTitle(),
+    title: lessonTitle(search) ? { en: lessonTitle(search) } : defaultTitle(),
     stops,
   };
 }

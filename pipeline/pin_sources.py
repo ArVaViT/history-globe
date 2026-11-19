@@ -17,30 +17,27 @@ import io
 import json
 import pathlib
 import sys
-import urllib.request
+import urllib.parse
 import zipfile
+
+from net import get
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PINS_FILE = ROOT / "pipeline" / "sources.json"
 CACHE = ROOT / "pipeline" / ".cache"
-UA = {"User-Agent": "history-globe-pipeline/1.0 (github.com/ArVaViT/history-globe)"}
-
-
-def get(url: str) -> bytes:
-    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=600) as r:
-        return r.read()
 
 
 def latest(repo: str, path: str) -> tuple[str, str]:
     """The newest commit touching the path on the default branch: (sha, date)."""
-    commits = json.loads(get(f"https://api.github.com/repos/{repo}/commits?path={path}&per_page=1"))
+    query = urllib.parse.urlencode({"path": path, "per_page": 1})
+    commits = json.loads(get(f"https://api.github.com/repos/{repo}/commits?{query}"))
     if not commits:
         raise SystemExit(f"{repo}: no commit touches {path}")
     return commits[0]["sha"], commits[0]["commit"]["committer"]["date"][:10]
 
 
 def fetch_hash(repo: str, path: str, commit: str, member: str | None) -> str:
-    data = get(f"https://raw.githubusercontent.com/{repo}/{commit}/{path}")
+    data = get(f"https://raw.githubusercontent.com/{repo}/{commit}/{urllib.parse.quote(path)}")
     if member:
         with zipfile.ZipFile(io.BytesIO(data)) as z:
             names = z.namelist()
@@ -58,7 +55,7 @@ def main(argv: list[str]) -> None:
     for name in names:
         if name not in pins:
             raise SystemExit(f"{name}: not in pipeline/sources.json ({', '.join(pins)})")
-    moved = 0
+    moved: list[str] = []
     failed = 0
     for name, pin in pins.items():
         if names and name not in names:
@@ -78,19 +75,15 @@ def main(argv: list[str]) -> None:
             f"{name}: upstream moved {pin['commit'][:12]} ({pin['committed']}) → {sha[:12]} ({date}), "
             f"file {'unchanged' if same else 'CHANGED'}"
         )
-        moved += 1
+        moved.append(name)
         if write:
             pin.update({"commit": sha, "committed": date, "sha256": digest})
     if write and moved:
         PINS_FILE.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-        # The build's cache holds the old files: out they go, so the next build fetches the pins.
-        from build_data import SOURCES  # noqa: PLC0415  (imports the file just rewritten)
-
-        for name in pins:
-            if names and name not in names:
-                continue
-            (CACHE / SOURCES[name]["file"]).unlink(missing_ok=True)
-        print(f"pipeline/sources.json rewritten ({moved} moved); run `pnpm data` and the data checks")
+        # The cache holds the files of the old pins: out they go, so the next build fetches the new.
+        for name in moved:
+            (CACHE / pins[name]["file"]).unlink(missing_ok=True)
+        print(f"pipeline/sources.json rewritten ({len(moved)} moved); run `pnpm data` and the data checks")
     elif moved and not write:
         print("nothing written; add --write to move the pins")
     if failed:

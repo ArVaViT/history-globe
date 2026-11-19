@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { distanceKm, roundKm, routeKm, walkTime } from "./distance";
+import { distanceKm, roundKm, routeKm, walkTime } from "./distance.ts";
 
 const jerusalem = [35.2345, 31.7767] as const;
 const damascus = [36.3064, 33.5131] as const;

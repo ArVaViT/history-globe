@@ -10,7 +10,9 @@ export default tseslint.config(
       "**/dist/**",
       "**/node_modules/**",
       "**/.vercel/**",
-      "apps/web/public/**",
+      // Generated folders, and the released copies of hg-places.js that stay as published.
+      "apps/web/public/*/**",
+      "apps/web/public/hg-places-*.js",
       "pipeline/**",
     ],
   },
@@ -37,6 +39,20 @@ export default tseslint.config(
       globals: { ...globals.node, ...globals.browser },
       parserOptions: { projectService: false, project: null },
     },
+  },
+  // The hand-written scripts the site serves as they are: no build, no types.
+  {
+    files: ["apps/web/public/*.js"],
+    ...tseslint.configs.disableTypeChecked,
+    languageOptions: {
+      sourceType: "script",
+      globals: { ...globals.browser },
+      parserOptions: { projectService: false, project: null },
+    },
+  },
+  {
+    files: ["apps/web/public/sw.js"],
+    languageOptions: { globals: { ...globals.serviceworker } },
   },
   prettier,
 );

@@ -1,5 +1,14 @@
 import { describe, expect, it } from "vitest";
-import { PlaceLifeFile, PlaceNamesFile, PolityOverridesFile, TourFile } from "./content.ts";
+import {
+  AncientAuthorsFile,
+  ArticleFile,
+  PhotosFile,
+  PlaceLifeFile,
+  PlaceNamesFile,
+  PolityOverridesFile,
+  QuestionFile,
+  TourFile,
+} from "./content.ts";
 
 describe("PlaceNamesFile", () => {
   const entry = {
@@ -19,12 +28,17 @@ describe("PlaceNamesFile", () => {
     expect(() => PlaceNamesFile.parse({ places: [{ ...entry, source: "x" }] })).toThrow();
   });
 
-  it("rejects an invalid verse reference in the evidence", () => {
+  it("rejects an invalid verse reference in the evidence, saying what is wrong", () => {
     expect(() =>
       PlaceNamesFile.parse({
         places: [{ ...entry, evidence: { ...entry.evidence, osis: "Enoch.1.1" } }],
       }),
     ).toThrow();
+    expect(() =>
+      PlaceNamesFile.parse({
+        places: [{ ...entry, evidence: { ...entry.evidence, osis: "Acts.28.32" } }],
+      }),
+    ).toThrow("no such verse");
   });
 });
 
@@ -44,7 +58,8 @@ describe("TourFile", () => {
   });
 
   it("refuses an approximate year instead of rounding it silently", () => {
-    expect(() => TourFile.parse({ ...tour, year: "c. 47 AD" })).toThrow();
+    expect(() => TourFile.parse({ ...tour, year: "c. 47 AD" })).toThrow("give the exact year");
+    expect(() => TourFile.parse({ ...tour, year: "47" })).toThrow("not a year label");
   });
 
   it("rejects misspelt fields in the tour and in its stops", () => {
@@ -118,5 +133,77 @@ describe("PlaceLifeFile", () => {
     expect(() =>
       PlaceLifeFile.parse({ places: [{ ...entry, from: "c. 290 BC", older: false }] }),
     ).toThrow();
+  });
+});
+
+describe("PhotosFile", () => {
+  const photo = (license: string) => ({ photos: [{ place: "ac9adc9", file: "x.jpg", license }] });
+
+  it.each(["CC0", "CC0 1.0", "CC BY 2.5", "CC BY 4.0", "Public domain"])("takes %s", (license) => {
+    expect(PhotosFile.parse(photo(license)).photos[0]?.license).toBe(license);
+  });
+
+  // ADR 0008: nothing share-alike or non-commercial.
+  it.each(["CC BY-SA 4.0", "CC BY-NC 2.0", "CC BY 4.0 ", "GFDL"])("refuses %s", (license) => {
+    expect(() => PhotosFile.parse(photo(license))).toThrow();
+  });
+});
+
+describe("texts in every language", () => {
+  const paragraph = (c: string) => c.repeat(60);
+  const article = {
+    id: "x",
+    place: "ac9adc9",
+    title: { en: "X", ru: "Х" },
+    body: { en: [paragraph("a"), paragraph("b")], ru: [paragraph("а"), paragraph("б")] },
+    scripture: ["Acts.13.4"],
+    sources: ["Josephus"],
+    status: "checked",
+  };
+
+  it("has as many paragraphs in every language as in the English", () => {
+    expect(ArticleFile.parse(article).body.ru).toHaveLength(2);
+    const de = [paragraph("c"), paragraph("d"), paragraph("e")];
+    expect(() => ArticleFile.parse({ ...article, body: { ...article.body, de } })).toThrow(
+      "as many paragraphs",
+    );
+  });
+
+  it("refuses a language the code does not know and a review inside the article", () => {
+    expect(() => ArticleFile.parse({ ...article, title: { ...article.title, ua: "Х" } })).toThrow();
+    expect(() => ArticleFile.parse({ ...article, status: "reviewed" })).toThrow("content/reviews");
+    expect(() => ArticleFile.parse({ ...article, reviewer: "Dr X" })).toThrow();
+  });
+
+  it("measures a distance between two different places", () => {
+    const question = {
+      id: "how-far",
+      question: { en: "How far?", ru: "Как далеко?" },
+      answer: { en: ["e".repeat(40)], ru: ["р".repeat(40)] },
+      map: { measure: ["ac9adc9", "ac9adc9"] },
+      scripture: ["Acts.13.4"],
+      sources: ["Josephus"],
+      status: "checked",
+    };
+    expect(() => QuestionFile.parse(question)).toThrow("two different places");
+    expect(
+      QuestionFile.parse({ ...question, map: { measure: ["ac9adc9", "ae41ab4"] } }).map?.measure,
+    ).toEqual(["ac9adc9", "ae41ab4"]);
+  });
+
+  it("allows a summary its own length in each language", () => {
+    const mention = {
+      place: "ac9adc9",
+      author: { en: "Josephus", ru: "Флавий" },
+      work: { en: "Jewish War", ru: "Иудейская война" },
+      passage: "3.7",
+      url: "https://x.org/",
+      note: { en: "e".repeat(20), ru: "р".repeat(360), zh: "中".repeat(6) },
+    };
+    expect(AncientAuthorsFile.parse({ mentions: [mention] }).mentions[0]?.note.zh).toBe(
+      "中".repeat(6),
+    );
+    const long = { ...mention, note: { ...mention.note, en: "e".repeat(321) } };
+    expect(() => AncientAuthorsFile.parse({ mentions: [long] })).toThrow();
   });
 });

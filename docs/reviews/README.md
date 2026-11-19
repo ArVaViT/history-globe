@@ -10,15 +10,14 @@ When the scope is agreed (5–15 articles of one region or period), commit any p
 those texts, then:
 
 ```sh
-PLAYWRIGHT=<a folder with playwright installed> \
-  node scripts/review-packet.ts --scope "Lycus valley" colossae laodicea q:<question id> tour:<tour id>
+node scripts/review-packet.ts --scope "Lycus valley" colossae laodicea q:<question id> tour:<tour id>
 ```
 
 It writes to `pipeline/out/review-packets/<date>-<scope>/` (outside git):
 
 - `packet.pdf` — "History Globe — Articles for review — <scope> — version of <date> (<commit>)":
   numbered paragraphs, the sources under each article, a wide right margin for notes;
-- `packet.html` — the same, to print from a browser if Playwright is not at hand;
+- `packet.html` — the same, to print from a browser if Playwright's Chromium is not installed;
 - `links.md` — each item's live page and its file at that commit, for the letter;
 - `items.yaml` — the `version` and `items` (with the hash of each item's English text in this
   version) for the review's file, step 3. Keep it with the letter.
@@ -51,9 +50,6 @@ existing) and builds:
   our response, the versions, "Cite this review" and schema.org `Review` data (no rating).
 
 With no file in `content/reviews/` none of these pages exist and nothing links to them.
-
-llms.txt counts the reviewed articles itself. README.md does not: change its "no article has been
-read by a historian yet" with the first review.
 
 ## 4. Withdrawal
 

@@ -37,7 +37,7 @@ conflicts: "None declared."
 # response:
 #   - point: "Colossae ¶1: … (their point as written)"
 #     action: fixed # fixed | partly | declined | open
-#     detail: { en: "Corrected in all 16 languages." }
+#     detail: { en: "Corrected in every language." }
 #     commit: "def5678"
 # response_confirmed: true # only if they have confirmed our response
 licence: CC-BY-4.0 # or statement-only

@@ -13,7 +13,7 @@ import {
   type ReviewRecord,
   translationsRead,
 } from "../packages/model/src/reviews.ts";
-import type { SiteLocale } from "../packages/model/src/time.ts";
+import type { SiteLocale } from "../packages/model/src/locales.ts";
 import { esc } from "./page-shell.ts";
 import { REVIEW_WORDS } from "./review-words.ts";
 

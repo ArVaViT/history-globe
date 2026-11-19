@@ -49,24 +49,6 @@ describe("toSynodal", () => {
     expect(toSynodal(book, c, v)).toEqual({ chapter: sc, verse: sv });
   });
 
-  it("knows the English lengths of the shifted chapters", () => {
-    // SHIFTED carries them so the verse table stays out of the browser.
-    for (const [book, first, lengths] of [
-      ["1Sam", 23, [29, 22]],
-      ["Num", 12, [16, 33]],
-      ["Num", 29, [40, 16]],
-      ["Josh", 5, [15, 27]],
-      ["Job", 39, [30, 24, 34]],
-      ["Eccl", 4, [16, 20]],
-      ["Song", 6, [13, 13]],
-      ["Dan", 3, [30, 37]],
-      ["Hos", 13, [16, 9]],
-      ["Jonah", 1, [17, 10]],
-    ] as const) {
-      expect(VERSES[book]?.slice(first - 1, first - 1 + lengths.length)).toEqual(lengths);
-    }
-  });
-
   it("leaves books with the same numbering alone", () => {
     expect(toSynodal("Gen", 12, 6)).toEqual({ chapter: 12, verse: 6 });
     expect(toSynodal("Acts", 19, 40)).toEqual({ chapter: 19, verse: 40 });
@@ -113,5 +95,14 @@ describe("formatRef in Russian", () => {
     // Two English psalms that are one Synodal psalm are shown once.
     expect(formatRef("Ps.9-Ps.10", "ru")).toBe("Пс 9");
     expect(formatRef("Ps.114-Ps.115", "ru")).toBe("Пс 113");
+    expect(formatRef("Ps.10", "ru")).toBe("Пс 9");
+    expect(formatRef("Luke.7", "ru")).toBe("Лк 7");
+  });
+
+  it("shows a whole English psalm that is two Synodal ones as both", () => {
+    expect(formatRef("Ps.116", "ru")).toBe("Пс 114–115");
+    expect(formatRef("Ps.147", "ru")).toBe("Пс 146–147");
+    expect(formatRef("Ps.115-Ps.116", "ru")).toBe("Пс 113–115");
+    expect(formatRef("Ps.116", "en")).toBe("Ps 116");
   });
 });

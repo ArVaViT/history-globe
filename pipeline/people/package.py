@@ -63,10 +63,10 @@ def first_named(pid: str) -> tuple[int, int, int, str]:
 def main() -> None:
     people = json.loads((CACHE / "tipnr-people.json").read_text())["people"]
     by_place = json.loads((CACHE / "place-people.json").read_text())["places"]
-    ru_names = json.loads(RU.read_text())["names"] if RU.exists() else {}
+    ru_names = json.loads(RU.read_text())["names"]
     by_id = {p["id"]: p for p in people}
 
-    def ids(field: list[dict] | None, owner: str = "", role: str = "") -> list[str]:
+    def ids(field: list[dict] | None) -> list[str]:
         # Links TIPNR marks uncertain ("?") stay out, as do the unnamed.
         return [
             r["id"]
@@ -80,7 +80,7 @@ def main() -> None:
     # Ties of a person to a place their key verse does not bear out (John the Baptist in
     # Galilee by Matt 4:12, which is about Jesus): content/people-places-not-in-text.json.
     off_file = ROOT / "content" / "people-places-not-in-text.json"
-    off_data = json.loads(off_file.read_text()) if off_file.exists() else {}
+    off_data = json.loads(off_file.read_text())
     off = {(x["person"], x["place"]) for x in off_data.get("ties", [])}
     # And where they were, the verse that shows it, when TIPNR's does not.
     better = {(x["person"], x["place"]): x["verse"] for x in off_data.get("verses", [])}
@@ -108,23 +108,23 @@ def main() -> None:
     spouses: dict[str, set[str]] = {pid: set() for pid in order}
     for pid in order:
         p = by_id[pid]
-        for f in ids(p.get("father"), pid, "father"):
+        for f in ids(p.get("father")):
             if f in index:
                 fathers[pid].add(f)
-        for m in ids(p.get("mother"), pid, "mother"):
+        for m in ids(p.get("mother")):
             if m in index:
                 mothers[pid].add(m)
-        for s in ids(p.get("partners"), pid, "partners"):
+        for s in ids(p.get("partners")):
             if s in index:
                 spouses[pid].add(s)
                 spouses[s].add(pid)
         role = "mother" if p.get("gender") == "female" else "father"
-        for c in ids(p.get("offspring"), pid, "offspring"):
+        for c in ids(p.get("offspring")):
             if c in index:
                 (mothers if role == "mother" else fathers)[c].add(pid)
     # Links the text does not make (content/people-not-in-text.json), dropped after both
     # sides have been read, so neither side brings them back.
-    drops = json.loads(NOT_IN_TEXT_FILE.read_text())["links"] if NOT_IN_TEXT_FILE.exists() else []
+    drops = json.loads(NOT_IN_TEXT_FILE.read_text())["links"]
     for d in drops:
         who, other = d["person"], d["other"]
         if who not in index or other not in index:
@@ -138,7 +138,7 @@ def main() -> None:
             spouses[other].discard(who)
     # And links the text makes that TIPNR leaves out (content/people-links-in-text.json).
     adds_file = ROOT / "content" / "people-links-in-text.json"
-    adds = json.loads(adds_file.read_text())["links"] if adds_file.exists() else []
+    adds = json.loads(adds_file.read_text())["links"]
     for a in adds:
         who, other = a["person"], a["other"]
         if who not in index or other not in index:
@@ -172,7 +172,7 @@ def main() -> None:
         return [index[x] for x in sorted(pids, key=key)]
 
     epithets_file = ROOT / "content" / "people-epithets.json"
-    epithets = json.loads(epithets_file.read_text())["names"] if epithets_file.exists() else {}
+    epithets = json.loads(epithets_file.read_text())["names"]
     rows = []
     for pid in order:
         p = by_id[pid]

@@ -576,8 +576,8 @@ await step("a lesson is built from place cards, named, and runs as a tour", asyn
   await page.getByRole("heading", { name: "Вифлеем" }).waitFor({ timeout: 8000 });
   // Cleared for the next run of the checks.
   await page.evaluate(() => {
-    localStorage.removeItem("hg-lesson");
-    localStorage.removeItem("hg-lesson-title");
+    localStorage.removeItem("hg:lesson");
+    localStorage.removeItem("hg:lesson-title");
   });
 });
 

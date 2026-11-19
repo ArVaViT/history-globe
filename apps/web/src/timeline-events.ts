@@ -1,7 +1,20 @@
 import type { Locale } from "@hg/model";
-import { placeName, rebuiltIn } from "@hg/model";
-import type { TimelineEvent } from "./components/Timeline";
+import { placeName, rebuiltIn, pick } from "@hg/model";
 import type { LoadedData } from "./data";
+
+/** A dated event on the slider: a town founded, destroyed, rebuilt. */
+export interface TimelineEvent {
+  readonly year: number;
+  readonly label: string;
+  /** "c." in the source: shown as such. */
+  readonly approximate?: boolean;
+  /** A turning point of the history (events.yaml), drawn taller and in gold. */
+  readonly major?: boolean;
+  /** The place it happened at, opened when its mark is pressed. */
+  readonly place?: string;
+  /** Or the ancient site, opened as a place is. */
+  readonly site?: { readonly id: string };
+}
 
 /** The UI `t` (i18n/index.ts), reduced to what is used here. */
 type T = (key: string, options: { name: string }) => string;
@@ -42,7 +55,7 @@ export function timelineEventsOf(
   for (const e of data.events) {
     out.push({
       year: e.year,
-      label: e.title[locale] ?? e.title.en ?? "",
+      label: pick(e.title, locale) ?? "",
       approximate: e.approximate,
       major: true,
       ...(e.place ? { place: e.place } : {}),

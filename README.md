@@ -8,7 +8,7 @@ article with its sources. The site has no accounts, no ads and no fees. It is ma
 
 ## What it holds
 
-As of the release of 2026-10-25 (`api/v1/index.json`, `built_at`):
+As of the release of 2026-11-17 (`api/v1/index.json`, `built_at`):
 
 - 21 languages: English, Russian, Ukrainian, Spanish, Portuguese, German, French, Italian,
   Dutch, Polish, Czech, Swedish, Norwegian Bokmål, Danish, Tagalog, Serbian, Hungarian, Finnish,
@@ -16,11 +16,11 @@ As of the release of 2026-10-25 (`api/v1/index.json`, `built_at`):
   comes first (ADR 0015).
 - 1,231 places named in the Bible, each with its verses and a page of its own (1,288 place
   records in all); 746 place articles and 200 answered questions.
-- 54 tours, 329 dated events and 57 battles.
+- 62 tours, 329 dated events and 60 battles.
 - 2,994 people (STEPBible TIPNR) in the open data; 2,153 of them with their families on the
   map.
-- 773 notes on what ancient authors wrote about 439 of the places; 531 sites of the ancient
-  world the Bible does not name on the map; 320 photographs.
+- 773 notes on what ancient authors wrote about 439 of the places; 1,987 places of the
+  ancient world the Bible does not name; 320 photographs.
 - State borders by year from 3500 BC to AD 1300 (Cliopatria, corrected for the lands of the
   Bible); Roman roads (Itiner-e).
 
@@ -102,20 +102,45 @@ email needs no account.
 
 ## For developers
 
+Requirements: Node 24.11+, pnpm through corepack (the version is pinned in `package.json`),
+Python 3.11+ with its standard library only. No account or key is needed to build, run or
+test the site.
+
 ```sh
+corepack enable  # pnpm as pinned in package.json
 pnpm install
-pnpm data        # download the open data sets and build apps/web/public/data (Python 3.11+)
+pnpm data        # downloads the open datasets (some 260 MB, minutes) and builds apps/web/public/data
+pnpm content     # the static pages, the open API and the documentation pages
 pnpm dev         # http://localhost:5173
 pnpm gate        # everything that must pass before a merge
 ```
 
 `pnpm gate` runs format, lint, types, unit and pipeline tests, the content checks, links, the
-build, the CSP hashes and the JS budget. It runs locally; releases are built on the owner's
-machine and deployed prebuilt (ADR 0012). What the data and content checks refuse, and why:
-`docs/data-checks.md`.
+build, the CSP hashes and the JS budget. CI runs the part of it that needs no data on every
+pull request; the whole gate runs locally before a merge, and releases are deployed prebuilt
+(ADR 0012). What the data and content checks refuse, and why: `docs/data-checks.md`. The
+browser checks: `e2e/README.md`. How to contribute: `CONTRIBUTING.md`.
 
 Keys in the app: `[` `]` move the year by 10 (with Shift by 100), Space plays, `/` searches,
 `←` `→` step through a tour, `N` turns north up, Esc closes.
+
+### Environment
+
+Nothing is read from a `.env` file; every variable is optional.
+
+| Variable                               | Read by                                                           | Without it                                        |
+| -------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------- |
+| `SITE_URL`                             | `scripts/build-pages.ts`, `build-docs.ts`, `build-page-hashes.ts` | no canonical links and no sitemap                 |
+| `HG_URL`                               | `e2e/`                                                            | the browser checks open `http://localhost:5173/`  |
+| `HG_TILES=live`                        | `e2e/browser.mjs`                                                 | the relief is one flat tile served locally        |
+| `CHROMIUM`                             | `e2e/browser.mjs`                                                 | Playwright's own Chromium                         |
+| `TEXT_PLACES_DEBUG`                    | `scripts/build-text-places.ts`                                    | the dropped name matches are not written out      |
+| `HG_CANARY_SEED`, `HG_CANARY_REGISTRY` | `scripts/canary.ts` (ADR 0017)                                    | no canary marks; for the official site only       |
+| `WEBMCP_ORIGIN_TRIAL`                  | `apps/web/vite.config.ts`                                         | no origin-trial token; for the official site only |
+| `DATABASE_URL`                         | `db/load.sh`                                                      | the optional database load cannot run             |
+
+Deploying the official site, loading its database and publishing the dataset need the
+maintainers' credentials; none of it is needed to work on the code or the content.
 
 ### Principles
 
@@ -124,34 +149,17 @@ Keys in the app: `[` `]` move the year by 10 (with Shift by 100), Space plays, `
   scholarly disputes.
 - **Clean data provenance.** The data we take in is public domain, CC0 or CC BY only;
   nothing share-alike or non-commercial (ADR 0008).
-- **Decisions are written down** in `docs/adr/` before they are coded.
+- **Decisions that are expensive to reverse are recorded** in `docs/adr/`; a change of mind
+  is a new record.
 
 ### Docs
 
 - `AGENTS.md` — rules for coding agents (and humans).
-- `docs/adr/` — architecture decisions:
-  - [0001. Record architecture decisions](docs/adr/0001-record-architecture-decisions.md)
-  - [0002. Monorepo and toolchain](docs/adr/0002-monorepo-and-toolchain.md)
-  - [0003. Time model](docs/adr/0003-time-model.md)
-  - [0004. Map engine](docs/adr/0004-map-engine.md)
-  - [0005. Tiles and terrain pipeline](docs/adr/0005-tiles-and-terrain.md)
-  - [0006. Frontend and embedding](docs/adr/0006-frontend-and-embedding.md)
-  - [0007. Content as code](docs/adr/0007-content-as-code.md)
-  - [0008. Data licensing policy](docs/adr/0008-data-licensing-policy.md)
-  - [0009. Backend, in phases](docs/adr/0009-backend-phasing.md)
-  - [0010. Quality gates](docs/adr/0010-quality-gates.md)
-  - [0011. MapLibre unbundled; the JS budget counts its worker](docs/adr/0011-maplibre-unbundled-and-the-js-budget.md)
-  - [0012. Vercel for the site, Supabase for the data](docs/adr/0012-vercel-and-supabase.md)
-  - [0013. The ancient world around the Bible, as its own quieter layer](docs/adr/0013-the-ancient-world-layer.md)
-  - [0014. Open data, closed code](docs/adr/0014-open-data-closed-code.md)
-  - [0015. Every language equal](docs/adr/0015-every-language-equal.md)
-  - [0016. The articles and the questions under CC BY-NC-ND; no training](docs/adr/0016-articles-and-questions-under-by-nc-nd.md)
-  - [0017. Canary marks in what is published, and one notice to the programs that read it](docs/adr/0017-canary-marks-and-the-notice.md)
+- [`docs/adr/`](docs/adr/README.md) — architecture decisions, with their index and status.
 - `docs/content-guide.md` — how articles, tours, events and the years of towns are written.
 - `docs/data-checks.md` — what the build refuses, and why.
 - `docs/data-release.md` — the data release, file by file; `db/` — the same as a database.
 - `docs/adding-a-language.md` — what a new language needs.
 - `docs/embed-protocol.md` — the iframe contract with host pages.
 - `docs/crosswalk.md` — the crosswalk to other gazetteers.
-- `docs/launch-readiness.md` — rights, hosting, privacy and AI, as checked at launch.
 - `docs/ATTRIBUTIONS.md` — third-party data and credits.

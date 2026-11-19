@@ -3,16 +3,18 @@
  * lakes from Natural Earth (public domain, pipeline/.cache from `pnpm data`), the way and
  * the stops' numbers; legs sailed are dashed. Written to apps/web/public/og/tour/<id>.jpg:
  * each tour page shows its picture and gives it to link previews (build-pages.ts).
- * Run after a tour's stops change, with Playwright found as the browser checks find it:
+ * Run after a tour's stops change (Playwright's Chromium, as for e2e/browser.mjs):
  *
- *   PLAYWRIGHT=~/some/project pnpm tour-images [id,id…]
+ *   pnpm tour-images [id,id…]
  */
 import { mkdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import { launch } from "../e2e/browser.mjs";
 
 const W = 1200;
 const H = 630;
-const read = (path) => JSON.parse(readFileSync(path, "utf8"));
+const root = join(import.meta.dirname, "..");
+const read = (path) => JSON.parse(readFileSync(join(root, path), "utf8"));
 const content = read("apps/web/public/data/content.json");
 // The Bible's places and the ancient world's sites: a stop may stand at either (ADR 0018).
 const places = new Map(
@@ -23,7 +25,7 @@ const places = new Map(
 );
 const land = read("pipeline/.cache/ne_50m_land.geojson").features;
 const lakes = read("pipeline/.cache/ne_50m_lakes.geojson").features;
-const out = "apps/web/public/og/tour";
+const out = join(root, "apps/web/public/og/tour");
 mkdirSync(out, { recursive: true });
 const only = process.argv[2]?.split(",");
 

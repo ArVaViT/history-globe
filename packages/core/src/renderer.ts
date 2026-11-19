@@ -1,4 +1,4 @@
-import type { Locale } from "@hg/model";
+import { ALL_LOCALES, type Locale } from "@hg/model";
 import type { LayerVisibility } from "./state.ts";
 
 export type LonLat = readonly [number, number];
@@ -25,6 +25,26 @@ export function polityText(p: PolityName, locale: string): { name: string; vassa
   return { name: p.names?.[locale] ?? p.name, ...(vassal ? { vassal } : {}) };
 }
 
+export interface BattleInfo {
+  /** The battle's name in each language the data has it in; English always. */
+  readonly names: Readonly<Partial<Record<Locale, string>>> & { readonly en: string };
+  readonly year: number;
+  readonly approx: boolean;
+}
+
+/** A battle's mark (its battles.geojson properties) for the hover tip; null without a name or a year. */
+export function battleInfo(
+  p: Readonly<Record<string, unknown>> | null | undefined,
+): BattleInfo | null {
+  if (typeof p?.["en"] !== "string" || typeof p["year"] !== "number") return null;
+  const names: Partial<Record<Locale, string>> = {};
+  for (const locale of ALL_LOCALES) {
+    const name = p[locale];
+    if (typeof name === "string") names[locale] = name;
+  }
+  return { names: { ...names, en: p["en"] }, year: p["year"], approx: p["approx"] === true };
+}
+
 export interface RendererEvents {
   /** A place was clicked on the map (again, too, when it is already selected). */
   pick: (placeId: string) => void;
@@ -39,12 +59,7 @@ export interface RendererEvents {
   ) => void;
   /** A battle's mark under the pointer (its name and year); null when it leaves. */
   hoverBattle: (
-    battle: {
-      readonly en: string;
-      readonly ru: string;
-      readonly year: number;
-      readonly approx: boolean;
-    } | null,
+    battle: BattleInfo | null,
     at: { readonly x: number; readonly y: number } | null,
   ) => void;
   /** The map finished its first full load and is interactive. */
@@ -63,12 +78,14 @@ export interface Renderer {
   setLayers(layers: LayerVisibility): void;
   setSelected(placeId: string | null): void;
   /** A soft ring at a point, or none: a place named in the text under the reader's pointer. */
-  highlight?(at: LonLat | null): void;
+  highlight(at: LonLat | null): void;
   flyTo(target: Partial<Camera> & { readonly center: LonLat }, durationMs?: number): void;
   /** Pan, keeping the zoom, if the point lies under the panels and cards. */
-  reveal?(at: LonLat): void;
+  reveal(at: LonLat): void;
   /** The Bible alone (a setting): what it does not tell steps off the map. */
-  setBibleOnly?(on: boolean): void;
+  setBibleOnly(on: boolean): void;
+  /** Names kept off the map (a quiz's answers until given): place ids, or none. */
+  setHiddenNames(ids: readonly string[]): void;
   setRoute(
     coordinates: readonly LonLat[],
     currentIndex: number,
@@ -84,8 +101,6 @@ export interface Renderer {
   /** Frame these points (a chapter's places), clear of the interface. */
   fitTo(points: readonly LonLat[]): void;
   getCamera(): Camera;
-  /** Ids of places currently drawn on screen (for the accessible "in view" list). */
-  visiblePlaces(): string[];
   on<E extends keyof RendererEvents>(event: E, handler: RendererEvents[E]): () => void;
   destroy(): void;
 }

@@ -16,13 +16,13 @@ const MAX_HOPS = 5;
  * in it, with an entry in place-life.yaml. Links are followed through chains (a gate of
  * Millo of Jerusalem) to the town with its own years; loops and other links give nothing.
  * Only the ruin and the end carry over, never the founding (Shamir of Judg 10:1, which
- * OpenBible places at Samaria, stood before Omri built Samaria), and the note is prefixed
- * with the town's name once, unless the place bears that very name.
+ * OpenBible places at Samaria, stood before Omri built Samaria), and the note in each language
+ * is prefixed with the town's name in it once, unless the place bears that very name.
  */
 export function inheritLife(
   places: readonly LinkedPlace[],
   own: Readonly<Record<string, PlaceLife>>,
-  ruName: (id: string) => string | undefined,
+  nameIn: (id: string, locale: string) => string | undefined,
 ): Record<string, PlaceLife> {
   const byId = new Map(places.map((p) => [p.id, p]));
   const townOf = (id: string): string | undefined => {
@@ -40,15 +40,19 @@ export function inheritLife(
     const town = townOf(p.id);
     const of = town ? own[town] : undefined;
     if (!town || !of || (!of.gap && !of.until)) continue;
-    const townRu = ruName(town) ?? byId.get(town)?.name ?? "";
     const townEn = byId.get(town)?.name ?? "";
-    const sameName = (ruName(p.id) ?? p.name) === townRu;
     out[p.id] = {
       ...(of.until ? { until: of.until } : {}),
       ...(of.gap ? { gap: of.gap } : {}),
-      note: sameName
-        ? of.note
-        : { en: `${townEn}: ${of.note.en ?? ""}`, ru: `${townRu}: ${of.note.ru ?? ""}` },
+      note:
+        p.name === townEn
+          ? of.note
+          : Object.fromEntries(
+              Object.entries(of.note).map(([l, text]) => [
+                l,
+                `${nameIn(town, l) ?? townEn}: ${text}`,
+              ]),
+            ),
       sources: of.sources,
       ...(of.sources_ru ? { sources_ru: of.sources_ru } : {}),
       inherited: true,

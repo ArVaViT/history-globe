@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isVoyage, profileShape, romanLeg } from "./leg";
+import { isVoyage, profileShape, roadKm, romanLeg } from "./leg";
 
 describe("isVoyage", () => {
   it("takes a leg mostly at sea for a voyage", () => {
@@ -62,5 +62,35 @@ describe("romanLeg", () => {
     const lesson = { id: "lesson", year: 47, stops: [stop(47), stop(-1000), stop()] };
     expect(romanLeg(lesson, 1)).toBe(false);
     expect(romanLeg(lesson, 2)).toBe(true);
+  });
+});
+
+describe("roadKm", () => {
+  const stop = (placeId: string, more: { sea?: boolean; year?: number } = {}) => ({
+    placeId,
+    at: [35, 31] as const,
+    ref: "Acts.1.1",
+    note: {},
+    ...more,
+  });
+  const legs = { tours: { "paul-1": [null, 120, null] }, pairs: { "a>b": 40, "b>c": 70 } };
+
+  it("takes the tour's own leg, else the two places' way in the roads' time", () => {
+    const tour = { id: "paul-1", year: 47, stops: [stop("x"), stop("y"), stop("b"), stop("c")] };
+    expect(roadKm(legs, tour, 1)).toBe(120);
+    expect(roadKm(legs, tour, 3)).toBe(70);
+    expect(roadKm(legs, tour, 0)).toBeNull();
+    // The same for the card and the sheet, a lesson or not.
+    const lesson = { id: "lesson", year: 47, stops: [stop("a"), stop("b")] };
+    expect(roadKm(legs, lesson, 1)).toBe(40);
+  });
+
+  it("gives no road at sea, on a tour not walked, or before the roads", () => {
+    const sea = { id: "t", year: 47, stops: [stop("a"), stop("b", { sea: true })] };
+    expect(roadKm(legs, sea, 1)).toBeNull();
+    const told = { id: "t", year: 47, walked: false, stops: [stop("a"), stop("b")] };
+    expect(roadKm(legs, told, 1)).toBeNull();
+    const early = { id: "t", year: -1000, stops: [stop("a"), stop("b")] };
+    expect(roadKm(legs, early, 1)).toBeNull();
   });
 });

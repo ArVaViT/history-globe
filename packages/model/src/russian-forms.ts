@@ -1,15 +1,27 @@
 /**
  * The forms of a Russian place name in running text, for places in any text
- * (scripts/build-text-places.ts): «Иерусалим» is also «Иерусалима», «Иерусалиме»…, and
- * «Антиохия Писидийская» «Антиохию Писидийскую». Rules by ending only, no dictionary: a
- * form never met in a text costs nothing, a missed one leaves a name unlinked.
+ * (scripts/build-text-places.ts) and a quiz's choices (apps/web/src/quiz.ts): «Иерусалим» is
+ * also «Иерусалима», «Иерусалиме»…, and «Антиохия Писидийская» «Антиохию Писидийскую». Rules
+ * by ending only, no dictionary: a form never met in a text costs nothing, a missed one
+ * leaves a name unlinked.
  */
+import { escapeRegExp } from "./text.ts";
+
 /** «ё» is written as «е» in most texts: forms are kept with «е» and matched with either. */
-export const plain = (s: string) => s.replaceAll("ё", "е").replaceAll("Ё", "Е");
+export const withoutYo = (s: string) => s.replaceAll("ё", "е").replaceAll("Ё", "Е");
 
 const HUSH = /[гкхжшчщ]$/;
-/** Cases in order: nominative, genitive, dative, accusative, instrumental, prepositional,
- * and the old instrumental in «-ою» the Synodal text uses. */
+/** The cases, as indexes into a name's forms (russianCases), in this order. */
+export const CASE = {
+  nominative: 0,
+  genitive: 1,
+  dative: 2,
+  accusative: 3,
+  instrumental: 4,
+  prepositional: 5,
+  /** The old instrumental in «-ою» the Synodal text uses. */
+  oldInstrumental: 6,
+} as const;
 type Cases = readonly string[];
 const ends = (stem: string, e: readonly string[]): Cases => e.map((x) => stem + x);
 const SPECIAL: Record<string, readonly string[]> = {
@@ -96,7 +108,7 @@ export function russianCases(name: string): readonly string[] | null {
 
 /** The forms of a Russian name in running text: its cases, by the endings of its words. */
 export function russianForms(name: string): string[] {
-  const n = plain(name);
+  const n = withoutYo(name);
   const words = n.split(" ");
   const uniq = (xs: readonly string[]) => [...new Set(xs)];
   if (words.length === 1) {
@@ -133,7 +145,7 @@ export function russianForms(name: string): string[] {
  * but a claim on the shorter one, which a namesake must not take unchallenged.
  */
 export function russianHeads(name: string): string[] {
-  const n = plain(name);
+  const n = withoutYo(name);
   const words = n.split(" ");
   const heads: string[] = [];
   const [w0 = "", w1 = ""] = words;
@@ -142,4 +154,63 @@ export function russianHeads(name: string): string[] {
   const hyphen = /^(\p{Lu}\p{Ll}+)-\p{Lu}/u.exec(n);
   if (words.length === 1 && hyphen?.[1]) heads.push(hyphen[1]);
   return heads;
+}
+
+/** The case a preposition before a name asks for. */
+const CASE_AFTER: Readonly<Record<string, number>> = {
+  в: CASE.prepositional,
+  во: CASE.prepositional,
+  на: CASE.prepositional,
+  о: CASE.prepositional,
+  об: CASE.prepositional,
+  при: CASE.prepositional,
+  из: CASE.genitive,
+  от: CASE.genitive,
+  до: CASE.genitive,
+  у: CASE.genitive,
+  около: CASE.genitive,
+  близ: CASE.genitive,
+  к: CASE.dative,
+  ко: CASE.dative,
+  по: CASE.dative,
+};
+
+/**
+ * A quiz's choices in the case its gap stands in: «вышел из ______» offers «Ефеса» and
+ * «Вифлеема», not «Ефес». The case is the one the answer's name takes in the text; where a
+ * form could be several cases («Самарии»), the preposition before it decides. Unknown, or
+ * one choice that does not decline: the choices stay as they are.
+ */
+export function inCaseOf(text: string, answer: string, options: readonly string[]): string[] {
+  const own = russianCases(answer);
+  if (!own) return [...options];
+  const t = withoutYo(text);
+  // Every mention of the answer, whole form against whole form, with the cases it can be.
+  const found = new Map<number, Set<number>>();
+  own.forEach((form, i) => {
+    const esc = escapeRegExp(withoutYo(form));
+    for (const m of t.matchAll(new RegExp(`(?<![\\p{L}-])${esc}(?![\\p{L}-])`, "gu")))
+      found.set(m.index, (found.get(m.index) ?? new Set()).add(i));
+  });
+  if (found.size === 0) return [...options];
+  const cases = new Set<number>();
+  for (const [at, can] of found) {
+    if (can.has(CASE.nominative)) return [...options];
+    const before = (/(\p{L}+)\s+$/u.exec(t.slice(0, at))?.[1] ?? "").toLowerCase();
+    const after = CASE_AFTER[before];
+    const index =
+      can.size === 1 ? [...can][0] : after !== undefined && can.has(after) ? after : undefined;
+    if (index === undefined) return [...options];
+    // The choices take today's instrumental, whichever form the text uses.
+    cases.add(index === CASE.oldInstrumental ? CASE.instrumental : index);
+  }
+  // Two gaps in two cases («в ______ … из ______»): one set of choices cannot fit both.
+  if (cases.size !== 1) return [...options];
+  const index = [...cases][0] ?? CASE.nominative;
+  const out = options.map((o) => {
+    const [base = "", rest] = o.split(/(?= \()/);
+    const c = russianCases(base);
+    return c?.[index] === undefined ? null : `${c[index]}${rest ?? ""}`;
+  });
+  return out.every((x) => x !== null) ? out : [...options];
 }

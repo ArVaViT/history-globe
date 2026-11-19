@@ -1,8 +1,9 @@
-/**
- * Time model (ADR 0003). All years are astronomical integers: 1 BC = 0, 2 BC = -1,
- * AD 1 = 1. Intervals are half-open [from, to). Conversion to "BC/AD" labels happens
- * only here. JavaScript Date is never used for historical years.
- */
+// Time model (ADR 0003). All years are astronomical integers: 1 BC = 0, 2 BC = -1,
+// AD 1 = 1. Intervals are half-open [from, to). Conversion to "BC/AD" labels happens
+// only here. JavaScript Date is never used for historical years.
+
+import { localeData } from "./locale-data.ts";
+import type { Locale } from "./locales.ts";
 
 export type Era = "BC" | "AD";
 
@@ -78,133 +79,9 @@ export function parseLabel(text: string): YearLabel {
   return { year: Number(m[2]), era, ...approx };
 }
 
-/** The languages the code can format years and references in. */
-export type Locale =
-  | "en"
-  | "ru"
-  | "uk"
-  | "de"
-  | "es"
-  | "pt"
-  | "fr"
-  | "it"
-  | "nl"
-  | "pl"
-  | "cs"
-  | "zh"
-  | "sv"
-  | "da"
-  | "nb"
-  | "sr"
-  | "tl"
-  | "hu"
-  | "fi"
-  | "vi"
-  | "ro"
-  | "bg";
-
-/** Every language the code can format, published or not. */
-export const ALL_LOCALES = [
-  "en",
-  "ru",
-  "uk",
-  "de",
-  "es",
-  "pt",
-  "fr",
-  "it",
-  "nl",
-  "pl",
-  "cs",
-  "zh",
-  "sv",
-  "da",
-  "nb",
-  "sr",
-  "tl",
-  "hu",
-  "fi",
-  "vi",
-  "ro",
-  "bg",
-] as const satisfies readonly Locale[];
-
-/**
- * The languages the site is published in: the app's language switch, the static pages, the
- * documentation and the text-places script follow this list. In the order of their own names
- * (Čeština, Deutsch, English … Русский, Українська): no language comes first for being the
- * site's own. A language joins it with its
- * interface file (apps/web/src/i18n) and its names and texts in the content.
- */
-export const LOCALES = [
-  "cs",
-  "da",
-  "de",
-  "en",
-  "es",
-  "fr",
-  "it",
-  "hu",
-  "nl",
-  "nb",
-  "pl",
-  "pt",
-  "ro",
-  "fi",
-  "sv",
-  "tl",
-  "vi",
-  "bg",
-  "ru",
-  "sr",
-  "uk",
-] as const satisfies readonly Locale[];
-export type SiteLocale = (typeof LOCALES)[number];
-/** Each language by its own name, for the language switch. */
-export const LOCALE_NAMES: Readonly<Record<SiteLocale, string>> = {
-  cs: "Čeština",
-  da: "Dansk",
-  de: "Deutsch",
-  en: "English",
-  es: "Español",
-  fr: "Français",
-  it: "Italiano",
-  hu: "Magyar",
-  nl: "Nederlands",
-  nb: "Norsk bokmål",
-  pl: "Polski",
-  pt: "Português",
-  ro: "Română",
-  fi: "Suomi",
-  sv: "Svenska",
-  tl: "Tagalog",
-  vi: "Tiếng Việt",
-  bg: "Български",
-  ru: "Русский",
-  sr: "Српски",
-  uk: "Українська",
-};
-export const isLocale = (s: unknown): s is SiteLocale =>
-  typeof s === "string" && (LOCALES as readonly string[]).includes(s);
-
-/**
- * How a language writes a year and a century: every language but English brings its own in
- * its file in ./locales, set here when the language is fetched (locale-data.ts), so a
- * language added costs the readers of the others nothing. Until then the English stands in.
- */
-export interface YearWords {
-  readonly year: (y: number, bc: boolean) => string;
-  /** `roman`: the century in Roman numerals, as several languages write it ("XI в."). */
-  readonly century: (n: number, bc: boolean, roman: string) => string;
-}
-const YEAR_WORDS = new Map<string, YearWords>();
-export const setYearWords = (locale: Locale, words: YearWords): void => {
-  YEAR_WORDS.set(locale, words);
-};
-
 export function formatYear(year: number, locale: Locale): string {
   const { year: y, era } = toLabel(year);
-  const own = YEAR_WORDS.get(locale);
+  const own = localeData(locale)?.years;
   if (own) return own.year(y, era === "BC");
   return era === "AD" ? `AD ${String(y)}` : `${String(y)} BC`;
 }
@@ -235,14 +112,14 @@ const ordinal = (n: number): string => {
 /** The century a year falls in: "XI в. до н. э.", "11th century BC", "I в. н. э.". */
 export function formatCentury(year: number, locale: Locale): string {
   const { n, era } = centuryOf(year);
-  const own = YEAR_WORDS.get(locale);
+  const own = localeData(locale)?.years;
   if (own) return own.century(n, era === "BC", roman(n));
   return `${ordinal(n)} century${era === "BC" ? " BC" : " AD"}`;
 }
 
 /**
- * A span of years, the era said once when both ends share it: "2000–1180 г. до н. э.",
- * "2000–1180 BC", "AD 30–70"; across the eras each end keeps its own.
+ * A span of years, both inclusive, the era said once when both ends share it:
+ * "2000–1180 г. до н. э.", "2000–1180 BC", "AD 30–70"; across the eras each end keeps its own.
  */
 export function formatYearRange(from: number, to: number, locale: Locale): string {
   const a = toLabel(from);
@@ -271,6 +148,18 @@ const AD_WORDS = String.raw`н\.?\s*[эе]\.?|a\.?\s*d\.?|n\.\s*chr\.?|d\.\s*c\.
 /** The eras written before the year: AD, Kr. e. / Kr. u. (Hungarian), năm. */
 const ERA_FIRST = String.raw`ad|kr\.\s*[eu]\.?|năm|公元前|公元`;
 
+const YEAR_INPUT = new RegExp(
+  String.raw`^\s*((${ERA_FIRST})\s*)?-?\d{1,4}\.?\s*(г\.?|год[а-я]*|р\.?|рік|年)?\s*(${BC_WORDS}|${AD_WORDS})?\s*$`,
+  "i",
+);
+
+/**
+ * BC_WORDS cut short, and the eras written before the year (公元前, Kr. e.): a reader still
+ * typing «586 до н», or writing «586 до нашей эры», means BC.
+ */
+const LOOSE_BC =
+  /до\s*н|до\s*р|п\.\s*н\.\s*е|\bbk\b|b\.?\s*c|v\.\s*chr|a\.\s*c|av\.?\s*j|p\.\s*n\.\s*e|př\.\s*n|f\.\s*kr|公元前|kr\.\s*e\b|\beaa\b|\btcn\b|î\.?\s*hr|î\.?\s*e\.?\s*n|\bi\.\s*hr|\bi\.\s*e\.\s*n|пр\.?\s*н\.?\s*е|пр\.?\s*хр/;
+
 /**
  * A year as a reader types it, as an astronomical year: "586 до н. э.", "586 BC", "-586"
  * are 1 - 586; "30", "AD 30", "30 н. э." are AD 30. Null if no year.
@@ -281,13 +170,7 @@ export function parseYearInput(text: string): number | null {
   if (!m?.[1]) return null;
   const n = Number(m[1]);
   if (n === 0) return null;
-  // Loose on purpose: «586 до нашей эры», «586 до н» are BC too.
-  const bc =
-    t.startsWith("-") ||
-    /до\s*н|до\s*р|п\.\s*н\.\s*е|\bbk\b|b\.?\s*c|v\.\s*chr|a\.\s*c|av\.?\s*j|p\.\s*n\.\s*e|př\.\s*n|f\.\s*kr|公元前|kr\.\s*e\b|\beaa\b|\btcn\b|î\.?\s*hr|î\.?\s*e\.?\s*n|\bi\.\s*hr|\bi\.\s*e\.\s*n|пр\.?\s*н\.?\s*е|пр\.?\s*хр/.test(
-      t,
-    );
-  return bc ? 1 - n : n;
+  return t.startsWith("-") || LOOSE_BC.test(t) ? 1 - n : n;
 }
 
 /**
@@ -295,42 +178,5 @@ export function parseYearInput(text: string): number | null {
  * ordinal «586. п. н. е.»).
  */
 export function isYearInput(text: string): boolean {
-  return new RegExp(
-    String.raw`^\s*((${ERA_FIRST})\s*)?-?\d{1,4}\.?\s*(г\.?|год[а-я]*|р\.?|рік|年)?\s*(${BC_WORDS}|${AD_WORDS})?\s*$`,
-    "i",
-  ).test(text);
-}
-
-/** A text in the reader's language, or the English one. */
-export function pick<T>(
-  texts: Readonly<Partial<Record<string, T>>> | undefined,
-  locale: string,
-): T | undefined {
-  return texts?.[locale] ?? texts?.en;
-}
-
-/**
- * A place's (or a state's) name in the reader's language: its `name_<language>` where the
- * data has one, else the English `name`.
- */
-export function placeName(p: { readonly name: string }, locale: string): string {
-  const own = (p as Readonly<Record<string, unknown>>)[`name_${locale}`];
-  return typeof own === "string" ? own : p.name;
-}
-
-/** All of a place's names, in English and in every site language the data has one in. */
-export function namesOf(p: { readonly name: string }): string[] {
-  const own = p as Readonly<Record<string, unknown>>;
-  return [
-    p.name,
-    ...LOCALES.map((l) => own[`name_${l}`]).filter((n): n is string => typeof n === "string"),
-  ];
-}
-
-/** Whether a place has its own name in a language (English always). */
-export function hasNameIn(p: { readonly name: string }, locale: string): boolean {
-  return (
-    locale === "en" ||
-    typeof (p as Readonly<Record<string, unknown>>)[`name_${locale}`] === "string"
-  );
+  return YEAR_INPUT.test(text);
 }

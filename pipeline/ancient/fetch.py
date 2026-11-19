@@ -1,29 +1,49 @@
-import json,os,sys,time,urllib.request,urllib.parse
-S=sys.argv[1]
-c=[x for x in json.load(open(f'{S}/wave/candidates.json')) if x['fame']>=int(os.environ.get('FAME',8))]
-L=['en','ru','uk','es','pt','fr','de','it','nl','pl','cs','sv','nb','da','tl','sr','hu','fi','vi','ro','bg']
-try: out=json.load(open(f'{S}/wave/wd.json'))
-except FileNotFoundError: out={}
-def run(q):
-    req=urllib.request.Request('https://query.wikidata.org/sparql',data=urllib.parse.urlencode({'query':q}).encode(),headers={'Accept':'application/sparql-results+json','User-Agent':'HistoryGlobeBot/1.0 (https://historyglobe.app; historyglobe.vadym@gmail.com)'})
-    for i in range(4):
-        try: return json.load(urllib.request.urlopen(req,timeout=120))['results']['bindings']
-        except Exception as e: print('retry',e,file=sys.stderr); time.sleep(20*(i+1))
-    raise SystemExit('wikidata failed')
-# Items cached before the dates carried their precision ("time|precision") are fetched again.
-stale=lambda d:any('|' not in v for k in ('P571','P576') for v in d.get(k,[]))
-for q in [q for q,d in out.items() if stale(d)]: del out[q]
-qs=sorted({x['qid'] for x in c}-set(out))
-for i in range(0,len(qs),200):
-    v=' '.join('wd:'+q for q in qs[i:i+200])
-    for b in run(f'SELECT ?i ?c WHERE {{ VALUES ?i {{ {v} }} ?i wdt:P31 ?c }}'):
-        out.setdefault(b['i']['value'].rsplit('/',1)[1],{}).setdefault('p31',[]).append(b['c']['value'].rsplit('/',1)[1])
-    for b in run(f'SELECT ?i ?l WHERE {{ VALUES ?i {{ {v} }} ?i rdfs:label ?l FILTER(LANG(?l) IN ({",".join(repr(x) for x in L)})) }}'):
-        out.setdefault(b['i']['value'].rsplit('/',1)[1],{}).setdefault('labels',{})[b['l']['xml:lang']]=b['l']['value']
-    # Founding and end with their precision (9 a year, 7 a century): "time|precision"; the
-    # best-ranked statements only, as wdt: gives them.
-    for b in run(f'SELECT ?i ?p ?t ?pr WHERE {{ VALUES ?i {{ {v} }} VALUES (?p ?ps) {{ (wd:P571 psv:P571) (wd:P576 psv:P576) }} ?p wikibase:claim ?st . ?i ?st ?s . ?s a wikibase:BestRank ; ?ps ?n . ?n wikibase:timeValue ?t ; wikibase:timePrecision ?pr }}'):
-        out.setdefault(b['i']['value'].rsplit('/',1)[1],{}).setdefault(b['p']['value'].rsplit('/',1)[1],[]).append(f"{b['t']['value']}|{b['pr']['value']}")
-    time.sleep(2)
-json.dump(out,open(f'{S}/wave/wd.json','w'),ensure_ascii=False)
-print(len(qs),len(out))
+"""Step 4: Wikidata's classes, labels in the site's languages, and founding and end dates of the
+wave's candidates (wave/wd.json, kept between runs), and the English labels of those classes
+(wave/classes.json).
+
+    python3 -I pipeline/ancient/fetch.py <work>
+"""
+
+from __future__ import annotations
+
+import pathlib
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
+from ancient.common import class_labels, fame_floor, read, values, write  # noqa: E402
+from build_dataset import LANGS  # noqa: E402
+from net import entity, sparql  # noqa: E402
+
+
+def stale(item: dict) -> bool:
+    """Dates cached before they carried their precision ("time|precision") are asked again."""
+    return any("|" not in v for k in ("P571", "P576") for v in item.get(k, []))
+
+
+def main(work: pathlib.Path) -> None:
+    candidates = [c for c in read(work, "candidates.json") if c["fame"] >= fame_floor()]
+    path = work / "wave" / "wd.json"
+    items: dict[str, dict] = {q: d for q, d in (read(work, "wd.json") if path.exists() else {}).items() if not stale(d)}
+    asked = sorted({c["qid"] for c in candidates} - set(items))
+    langs = ",".join(f'"{lang}"' for lang in LANGS)
+    for v in values(asked):
+        for b in sparql(f"SELECT ?i ?c WHERE {{ VALUES ?i {{ {v} }} ?i wdt:P31 ?c }}"):
+            items.setdefault(entity(b, "i"), {}).setdefault("p31", []).append(entity(b, "c"))
+        for b in sparql(f"SELECT ?i ?l WHERE {{ VALUES ?i {{ {v} }} ?i rdfs:label ?l FILTER(LANG(?l) IN ({langs})) }}"):
+            items.setdefault(entity(b, "i"), {}).setdefault("labels", {})[b["l"]["xml:lang"]] = b["l"]["value"]
+        # Founding and end with their precision (9 a year, 7 a century), the best-ranked
+        # statements only, as wdt: gives them.
+        for b in sparql(
+            f"SELECT ?i ?p ?t ?pr WHERE {{ VALUES ?i {{ {v} }} "
+            "VALUES (?p ?ps) { (wd:P571 psv:P571) (wd:P576 psv:P576) } ?p wikibase:claim ?st . "
+            "?i ?st ?s . ?s a wikibase:BestRank ; ?ps ?n . ?n wikibase:timeValue ?t ; wikibase:timePrecision ?pr }"
+        ):
+            items.setdefault(entity(b, "i"), {}).setdefault(entity(b, "p"), []).append(f"{b['t']['value']}|{b['pr']['value']}")
+    write(work, "wd.json", items)
+    labels = class_labels(work, {c for d in items.values() for c in d.get("p31", [])})
+    print(f"{len(asked)} items asked, {len(items)} known, {len(labels)} class labels")
+
+
+if __name__ == "__main__":
+    main(pathlib.Path(sys.argv[1]))

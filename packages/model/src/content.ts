@@ -1,34 +1,19 @@
+// The single content schema (ADR 0007). Validation here is shape + meaning.
+
 import { z } from "zod";
 import { checkRef } from "./verses.ts";
 import type { ChapterYears } from "./chapter-years.ts";
-import { parseLabel, toAstronomical, type Locale } from "./time.ts";
+import { ALL_LOCALES, type Locale } from "./locales.ts";
+import { parseLabel, toAstronomical } from "./time.ts";
 
-/** The single content schema (ADR 0007). Validation here is shape + meaning. */
+const messageOf = (e: unknown): string => (e instanceof Error ? e.message : String(e));
 
-const osis = z.string().refine(
-  (s) => {
-    try {
-      checkRef(s);
-      return true;
-    } catch {
-      return false;
-    }
-  },
-  { message: "not a valid OSIS reference" },
-);
-
-/** An exact year: where the slider goes. "c. 47 AD" is refused, not rounded silently. */
-const yearLabel = z.string().transform((s, ctx) => {
+/** A verse, chapter or range that exists; checkRef's own message says what is wrong. */
+const osis = z.string().superRefine((s, ctx) => {
   try {
-    const label = parseLabel(s);
-    if (label.approximate) {
-      ctx.addIssue({ code: "custom", message: `"${s}": give the exact year the map should show` });
-      return z.NEVER;
-    }
-    return toAstronomical(label);
+    checkRef(s);
   } catch (e) {
-    ctx.addIssue({ code: "custom", message: (e as Error).message });
-    return z.NEVER;
+    ctx.addIssue({ code: "custom", message: messageOf(e) });
   }
 });
 
@@ -38,48 +23,46 @@ const approxYear = z.string().transform((s, ctx) => {
     const label = parseLabel(s);
     return { year: toAstronomical(label), approximate: label.approximate === true };
   } catch (e) {
-    ctx.addIssue({ code: "custom", message: (e as Error).message });
+    ctx.addIssue({ code: "custom", message: messageOf(e) });
     return z.NEVER;
   }
 });
+export type ApproxYear = z.output<typeof approxYear>;
+
+/** An exact year: where the slider goes. "c. 47 AD" is refused, not rounded silently. */
+const yearLabel = approxYear.transform(({ year, approximate }, ctx) => {
+  if (!approximate) return year;
+  ctx.addIssue({
+    code: "custom",
+    message: "an approximate year: give the exact year the map should show",
+  });
+  return z.NEVER;
+});
+
+/** One of our places (OpenBible's ancient ids). */
+const placeId = z.string().regex(/^a[0-9a-f]{6}$/);
+/** One of our places, or an ancient site by its Pleiades number or Wikidata id. */
+const placeOrSite = z.string().regex(/^(a[0-9a-f]{6}|\d{1,12}|Q\d{1,12})$/);
+/** The sources a correction or an entry rests on: at least one. */
+const sources = z.array(z.string().min(1)).min(1);
 
 /**
  * A text in the languages the code knows: English and Russian always, others as they are
- * translated. Any other key (a typo like `ua:`) is refused rather than dropped.
+ * translated. Any other key (a typo like `ua:`) is refused rather than dropped. `t` may
+ * give each language its own schema.
  */
-function inLanguages<T extends z.ZodType>(t: T) {
-  return z
-    .strictObject({
-      en: t,
-      ru: t,
-      uk: t.optional(),
-      de: t.optional(),
-      es: t.optional(),
-      pt: t.optional(),
-      fr: t.optional(),
-      it: t.optional(),
-      nl: t.optional(),
-      pl: t.optional(),
-      cs: t.optional(),
-      zh: t.optional(),
-      sv: t.optional(),
-      da: t.optional(),
-      nb: t.optional(),
-      sr: t.optional(),
-      tl: t.optional(),
-      hu: t.optional(),
-      fi: t.optional(),
-      vi: t.optional(),
-      ro: t.optional(),
-      bg: t.optional(),
-    })
-    .transform(
-      (o) =>
-        Object.fromEntries(Object.entries(o).filter(([, v]) => v !== undefined)) as {
-          en: z.output<T>;
-          ru: z.output<T>;
-        } & Record<string, z.output<T>>,
-    );
+function inLanguages<T extends z.ZodType>(t: T | ((locale: Locale) => T)) {
+  const of = (l: Locale) => (typeof t === "function" ? t(l) : t);
+  const shape = Object.fromEntries(
+    ALL_LOCALES.map((l) => [l, l === "en" || l === "ru" ? of(l) : of(l).optional()]),
+  );
+  return z.strictObject(shape).transform(
+    (o) =>
+      Object.fromEntries(Object.entries(o).filter(([, v]) => v !== undefined)) as {
+        en: z.output<T>;
+        ru: z.output<T>;
+      } & Record<string, z.output<T>>,
+  );
 }
 /** Every language of a text has as many paragraphs as the English. */
 const sameParagraphs = (b: Readonly<Record<string, readonly unknown[] | undefined>>) =>
@@ -90,7 +73,7 @@ const localized = inLanguages(z.string().min(1));
 export const PlaceNamesFile = z.strictObject({
   places: z.array(
     z.strictObject({
-      id: z.string().regex(/^a[0-9a-f]{6}$/),
+      id: placeId,
       en: z.string(),
       ru: z.string().min(1),
       /** Where the Synodal form was read: a verse and a verbatim excerpt (≤ 10 words). */
@@ -106,7 +89,6 @@ const RussianLabel = z
     message: "Cyrillic only, no straight quotes or double spaces",
   });
 
-/** Russian forms of modern place names (OpenBible's m… ids): «Телль-эс-Султан». */
 /**
  * The names in one more language (content/names-<code>.yaml): biblical places by id, the
  * states by their English name, modern names by OpenBible id, people by TIPNR id.
@@ -121,29 +103,11 @@ export const LocaleNamesFile = z.strictObject({
 });
 export type LocaleNamesFile = z.output<typeof LocaleNamesFile>;
 /** The languages whose names come from content/names-<code>.yaml (Russian has its own files). */
-export const NAME_LOCALES = [
-  "uk",
-  "de",
-  "es",
-  "pt",
-  "fr",
-  "it",
-  "nl",
-  "pl",
-  "cs",
-  "zh",
-  "sv",
-  "da",
-  "nb",
-  "sr",
-  "tl",
-  "hu",
-  "fi",
-  "vi",
-  "ro",
-  "bg",
-] as const satisfies readonly Locale[];
+export const NAME_LOCALES = ALL_LOCALES.filter(
+  (l): l is Exclude<Locale, "en" | "ru"> => l !== "en" && l !== "ru",
+);
 
+/** Russian forms of modern place names (OpenBible's m… ids): «Телль-эс-Султан». */
 export const ModernNamesFile = z.strictObject({
   names: z.record(z.string().regex(/^m[0-9a-f]{6}$/), RussianLabel),
   /** Candidate-site labels OpenBible writes as free text, by their English wording. */
@@ -167,7 +131,7 @@ export const PolityOverridesFile = z.strictObject({
       /** Last year the polity is drawn, inclusive: later than Cliopatria's, or sooner. */
       last_year: yearLabel,
       reason: z.string().min(1),
-      sources: z.array(z.string().min(1)).min(1),
+      sources,
     }),
   ),
   /**
@@ -181,7 +145,7 @@ export const PolityOverridesFile = z.strictObject({
         polity: z.string().min(1),
         first_year: yearLabel,
         reason: z.string().min(1),
-        sources: z.array(z.string().min(1)).min(1),
+        sources,
       }),
     )
     .optional(),
@@ -198,7 +162,7 @@ export const PolityOverridesFile = z.strictObject({
         first_year: yearLabel.optional(),
         last_year: yearLabel.optional(),
         reason: z.string().min(1),
-        sources: z.array(z.string().min(1)).min(1),
+        sources,
       }),
     )
     .optional(),
@@ -213,7 +177,7 @@ export const PolityOverridesFile = z.strictObject({
         first_year: approxYear,
         name: z.string().min(1),
         reason: z.string().min(1),
-        sources: z.array(z.string().min(1)).min(1),
+        sources,
       }),
     )
     .optional(),
@@ -229,7 +193,7 @@ export const PolityOverridesFile = z.strictObject({
         /** Inclusive. */
         last_year: yearLabel,
         reason: z.string().min(1),
-        sources: z.array(z.string().min(1)).min(1),
+        sources,
       }),
     )
     .optional(),
@@ -245,7 +209,7 @@ export const PolityOverridesFile = z.strictObject({
         /** Inclusive. */
         last_year: yearLabel,
         reason: z.string().min(1),
-        sources: z.array(z.string().min(1)).min(1),
+        sources,
       }),
     )
     .optional(),
@@ -263,7 +227,7 @@ export const PolityOverridesFile = z.strictObject({
         /** Inclusive. */
         last_year: yearLabel,
         reason: z.string().min(1),
-        sources: z.array(z.string().min(1)).min(1),
+        sources,
       }),
     )
     .optional(),
@@ -283,7 +247,7 @@ export const PolityOverridesFile = z.strictObject({
         last_year: approxYear,
         label: localized,
         reason: z.string().min(1),
-        sources: z.array(z.string().min(1)).min(1),
+        sources,
       }),
     )
     .optional(),
@@ -297,10 +261,7 @@ export const EventsFile = z.strictObject({
       year: approxYear,
       title: localized,
       /** Where it happened, when the event belongs to one place. */
-      place: z
-        .string()
-        .regex(/^a[0-9a-f]{6}$/)
-        .optional(),
+      place: placeId.optional(),
       /** Or a site of the ancient world (content/ancient-sites.json) the Bible does not name. */
       site: z.string().min(1).optional(),
       /**
@@ -316,7 +277,7 @@ export const EventsFile = z.strictObject({
         .optional(),
       /** The passage that tells it, when Scripture itself narrates the event. */
       ref: osis.optional(),
-      sources: z.array(z.string().min(1)).min(1),
+      sources,
     }),
   ),
 });
@@ -333,12 +294,12 @@ export const BattlesFile = z.strictObject({
       year: approxYear,
       title: localized,
       /** A place of the data build, or an ancient site by its Pleiades number (Gamla). */
-      place: z.string().regex(/^(a[0-9a-f]{6}|\d{1,12}|Q\d{1,12})$/),
+      place: placeOrSite,
       /** The passage that tells it; none for a battle the Bible does not tell. */
       ref: osis.optional(),
       sides: localized,
       outcome: localized,
-      sources: z.array(z.string().min(1)).min(1),
+      sources,
     }),
   ),
 });
@@ -364,7 +325,7 @@ export const PlaceLifeFile = z.strictObject({
   places: z.array(
     z
       .strictObject({
-        id: z.string().regex(/^a[0-9a-f]{6}$/),
+        id: placeId,
         en: z.string().min(1),
         /** First year it stood (founded, built, first settled). */
         from: approxYear.optional(),
@@ -379,7 +340,7 @@ export const PlaceLifeFile = z.strictObject({
          */
         older: z.literal(true).optional(),
         note: localized,
-        sources: z.array(z.string().min(1)).min(1),
+        sources,
       })
       .refine((p) => p.from !== undefined || p.until !== undefined || p.gap !== undefined, {
         message: "give from, until, gap or a combination",
@@ -414,7 +375,7 @@ export const TourFile = z.strictObject({
     .array(
       z.strictObject({
         /** One of our places, or an ancient site (its Pleiades number) the Bible does not name. */
-        place: z.string().regex(/^(a[0-9a-f]{6}|\d{1,12}|Q\d{1,12})$/),
+        place: placeOrSite,
         /** The verse that tells it; a stop told outside the Bible has a `source` instead. */
         ref: osis.optional(),
         /**
@@ -461,16 +422,16 @@ export type TourFile = z.output<typeof TourFile>;
 /** Paragraphs of an article in one language: two to six, each a real paragraph. */
 const paragraphs = z.array(z.string().min(60).max(900)).min(2).max(6);
 
-/**
- * A short article about a place (ADR 0007): an overview across the period, English first,
- * Russian beside it, every claim backed by the Scripture or the sources listed. Status
- * "checked": written and fact-checked in our pipeline; "reviewed": also by a scholar.
- */
+/** Fact-checked in our pipeline; a scholar's review is a file of its own (content/reviews). */
+const checked = z.literal("checked", {
+  message: '"checked": a review goes into content/reviews, not into the text',
+});
+
 /** A photo of a place from Wikimedia Commons: only licences that need no share-alike. */
 export const PhotosFile = z.strictObject({
   photos: z.array(
     z.strictObject({
-      place: z.string().regex(/^a[0-9a-f]{6}$/),
+      place: placeId,
       /** The Commons file name, without "File:". */
       file: z.string().min(1),
       author: z.string().optional(),
@@ -500,18 +461,20 @@ export interface PlacePhoto {
     ({ readonly en: string } & Readonly<Partial<Record<string, string | undefined>>>) | undefined;
 }
 
+/**
+ * A short article about a place (ADR 0007): an overview across the period, English first,
+ * Russian beside it, every claim backed by the Scripture or the sources listed.
+ */
 export const ArticleFile = z.strictObject({
   id: z.string().regex(/^[a-z0-9-]+$/),
-  place: z.string().regex(/^a[0-9a-f]{6}$/),
+  place: placeId,
   title: localized,
   body: inLanguages(paragraphs).refine(sameParagraphs, {
     message: "every language has as many paragraphs as the English",
   }),
   scripture: z.array(osis).min(1),
   sources: z.array(z.string().min(3)).min(1),
-  status: z.enum(["checked", "reviewed"]),
-  /** Who reviewed it, when status is "reviewed". */
-  reviewer: z.string().optional(),
+  status: checked,
 });
 
 export type ArticleFile = z.output<typeof ArticleFile>;
@@ -534,22 +497,18 @@ export const QuestionFile = z.strictObject({
    */
   map: z
     .strictObject({
-      place: z
-        .string()
-        .regex(/^a[0-9a-f]{6}$/)
-        .optional(),
+      place: placeId.optional(),
       year: approxYear.optional(),
       ref: osis.optional(),
       measure: z
-        .tuple([z.string().regex(/^a[0-9a-f]{6}$/), z.string().regex(/^a[0-9a-f]{6}$/)])
+        .tuple([placeId, placeId])
         .refine(([from, to]) => from !== to, { message: "a distance needs two different places" })
         .optional(),
     })
     .optional(),
   scripture: z.array(osis).min(1),
   sources: z.array(z.string().min(3)).min(1),
-  status: z.enum(["checked", "reviewed"]),
-  reviewer: z.string().optional(),
+  status: checked,
 });
 
 export type QuestionFile = z.output<typeof QuestionFile>;
@@ -581,6 +540,16 @@ export interface WithSourcesRu {
   readonly sources_in?: Readonly<Partial<Record<Locale, readonly string[]>>>;
 }
 
+// The other languages run longer than English for the same summary; Chinese far shorter.
+const NOTE_LENGTH: Readonly<Partial<Record<Locale, readonly [min: number, max: number]>>> = {
+  en: [20, 320],
+  zh: [6, 320],
+};
+const summaryNote = inLanguages((l) => {
+  const [min, max] = NOTE_LENGTH[l] ?? [20, 360];
+  return z.string().min(min).max(max);
+});
+
 /**
  * What ancient authors outside the Bible say of a place (content/ancient-authors.yaml), in
  * the manner of ToposText: the passage, a free text of it, and our own summary in both
@@ -590,37 +559,13 @@ export const AncientAuthorsFile = z.strictObject({
   mentions: z
     .array(
       z.strictObject({
-        place: z.string().regex(/^a[0-9a-f]{6}$/),
+        place: placeId,
         author: localized,
         work: localized,
         /** As the standard edition numbers it: book.section (Josephus by Niese: "5.136-247"). */
         passage: z.string().regex(/^[0-9][0-9a-z.,:;–\- ]*$/),
         url: z.url({ protocol: /^https$/ }),
-        // The other languages run longer than English for the same summary; Chinese far shorter.
-        note: z.strictObject({
-          en: z.string().min(20).max(320),
-          ru: z.string().min(20).max(360),
-          uk: z.string().min(20).max(360).optional(),
-          de: z.string().min(20).max(360).optional(),
-          es: z.string().min(20).max(360).optional(),
-          pt: z.string().min(20).max(360).optional(),
-          fr: z.string().min(20).max(360).optional(),
-          it: z.string().min(20).max(360).optional(),
-          nl: z.string().min(20).max(360).optional(),
-          pl: z.string().min(20).max(360).optional(),
-          cs: z.string().min(20).max(360).optional(),
-          zh: z.string().min(6).max(320).optional(),
-          sv: z.string().min(20).max(360).optional(),
-          da: z.string().min(20).max(360).optional(),
-          nb: z.string().min(20).max(360).optional(),
-          sr: z.string().min(20).max(360).optional(),
-          tl: z.string().min(20).max(360).optional(),
-          hu: z.string().min(20).max(360).optional(),
-          fi: z.string().min(20).max(360).optional(),
-          vi: z.string().min(20).max(360).optional(),
-          ro: z.string().min(20).max(360).optional(),
-          bg: z.string().min(20).max(360).optional(),
-        }),
+        note: summaryNote,
       }),
     )
     .min(1),
@@ -702,12 +647,9 @@ export interface HistoryEvent {
 }
 
 export interface PlaceLife {
-  readonly from?: { readonly year: number; readonly approximate: boolean };
-  readonly until?: { readonly year: number; readonly approximate: boolean };
-  readonly gap?: {
-    readonly from: { readonly year: number; readonly approximate: boolean };
-    readonly until: { readonly year: number; readonly approximate: boolean };
-  };
+  readonly from?: Readonly<ApproxYear>;
+  readonly until?: Readonly<ApproxYear>;
+  readonly gap?: { readonly from: Readonly<ApproxYear>; readonly until: Readonly<ApproxYear> };
   readonly note: Readonly<Record<string, string>>;
   readonly sources: readonly string[];
   /** The sources as a Russian reader reads them (content/sources-ru.yaml). */
@@ -740,10 +682,6 @@ export const ChapterYearsFile = z.strictObject({
 });
 
 /**
- * The ancient world around the Bible (content/ancient-sites.json): cities, capitals and
- * sanctuaries it does not name, with the years they stood and where the record comes from.
- */
-/**
  * More of the ancient world, chosen by a script rather than one by one (content/
  * ancient-sites-wave1.json, ADR 0018): the same fields, with every name from Wikidata's labels,
  * so a language may have none (the site keeps its dot there, unnamed).
@@ -767,6 +705,10 @@ export const AncientWaveFile = z.strictObject({
   ),
 });
 
+/**
+ * The ancient world around the Bible (content/ancient-sites.json): cities, capitals and
+ * sanctuaries it does not name, with the years they stood and where the record comes from.
+ */
 export const AncientSitesFile = z.strictObject({
   sites: z.array(
     z.strictObject({
@@ -784,11 +726,8 @@ export const AncientSitesFile = z.strictObject({
        * The place of ours within 3 km that is nevertheless another site (Herodium, 2 km
        * from a candidate of Netophah): the build otherwise takes the two for one place.
        */
-      apart_from: z
-        .string()
-        .regex(/^a[0-9a-f]{6}$/)
-        .optional(),
-      sources: z.array(z.string().min(1)).min(1),
+      apart_from: placeId.optional(),
+      sources,
     }),
   ),
 });

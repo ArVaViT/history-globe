@@ -1,8 +1,8 @@
 import { useTranslation } from "../i18n";
+import { speedLabel } from "./Timeline";
 import { Camera, Maximize, Printer, Route } from "./icons";
 
 const SPEEDS = [0.5, 1, 2, 4];
-const speedLabel = (speed: number) => (speed < 1 ? "½×" : `${String(speed)}×`);
 
 /**
  * The player's menu, opened from its "…" button (Timeline's MoreMenu): the speed, the
@@ -92,7 +92,7 @@ export function MoreMenuPanel({
             else void document.documentElement.requestFullscreen();
           }}
         >
-          <Maximize className="size-4 shrink-0 text-ink-soft" aria-hidden />
+          <Maximize className="size-4 shrink-0 text-ink-soft" />
           {t("time.fullscreen")}
         </button>
       )}
@@ -104,7 +104,7 @@ export function MoreMenuPanel({
             onPicture();
           }}
         >
-          <Camera className="size-4 shrink-0 text-ink-soft" aria-hidden />
+          <Camera className="size-4 shrink-0 text-ink-soft" />
           {t("time.picture")}
         </button>
       )}
@@ -116,7 +116,7 @@ export function MoreMenuPanel({
             onPrint();
           }}
         >
-          <Printer className="size-4 shrink-0 text-ink-soft" aria-hidden />
+          <Printer className="size-4 shrink-0 text-ink-soft" />
           {t("time.print")}
         </button>
       )}
@@ -128,7 +128,7 @@ export function MoreMenuPanel({
             onPrintBlank();
           }}
         >
-          <Printer className="size-4 shrink-0 text-ink-soft" aria-hidden />
+          <Printer className="size-4 shrink-0 text-ink-soft" />
           {t("time.print_blank")}
         </button>
       )}
@@ -140,7 +140,7 @@ export function MoreMenuPanel({
             onPrintQuiz();
           }}
         >
-          <Printer className="size-4 shrink-0 text-ink-soft" aria-hidden />
+          <Printer className="size-4 shrink-0 text-ink-soft" />
           {t("time.print_quiz")}
         </button>
       )}
@@ -152,7 +152,7 @@ export function MoreMenuPanel({
             onQuiz();
           }}
         >
-          <Route className="size-4 shrink-0 text-ink-soft" aria-hidden />
+          <Route className="size-4 shrink-0 text-ink-soft" />
           {t("time.quiz")}
         </button>
       )}

@@ -1,6 +1,6 @@
 # 0002. Monorepo and toolchain
 
-- Status: accepted
+- Status: superseded by 0020
 - Date: 2026-09-28
 
 ## Context

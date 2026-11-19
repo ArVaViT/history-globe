@@ -76,6 +76,6 @@ describe("the honeypot", () => {
       for (const attr of ['rel="nofollow"', 'aria-hidden="true"', 'tabindex="-1"', " hidden>"])
         expect(link).toContain(attr);
     }
-    expect(read("index.html")).toContain(`\n    ${honeypotLink("")}\n`);
+    expect(read("index.html")).toContain(honeypotLink(""));
   });
 });

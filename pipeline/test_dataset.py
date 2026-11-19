@@ -100,6 +100,15 @@ class Build(unittest.TestCase):
         self.assertEqual((row["name"], row["dates"], row["pleiades"]), ("Thagaste", "c. 30 BC – c. AD 640", "https://pleiades.stoa.org/places/315198"))
         self.assertEqual(counts["ancient_places"], "1")
 
+    def test_a_tour_is_approximate_when_it_says_so_not_by_its_year(self):
+        self.files["tours.json"] = [
+            {"id": "exodus", "year": -1445, "title": {"en": "Exodus"}, "stops": []},
+            {"id": "augustine", "year": 370, "approximate": True, "title": {"en": "Augustine"}, "stops": []},
+        ]
+        tours = {r["id"]: r for r in self.run_build()[0]["tours"][1]}
+        self.assertEqual((tours["exodus"]["date"], tours["exodus"]["approximate"]), ("1446 BC", False))
+        self.assertEqual((tours["augustine"]["date"], tours["augustine"]["approximate"]), ("c. AD 370", True))
+
     def test_a_verse_count_that_does_not_match_stops_the_build(self):
         self.files["verses/Josh.json"] = {"Josh.2.1": ["a1", "a9"]}
         problems = self.run_build()[2]

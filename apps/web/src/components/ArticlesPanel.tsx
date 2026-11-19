@@ -29,7 +29,7 @@ export function ArticlesPanel({
   if (places.length === 0) return null;
   return (
     <Section>
-      <ul className="hg-fade grid max-h-[min(460px,52vh)] grid-cols-2 overflow-y-auto px-2 [scrollbar-width:thin] max-md:max-h-[calc(100dvh-var(--hg-timeline-h,124px)-200px)]">
+      <ul className="hg-fade grid max-h-[min(460px,52vh)] grid-cols-2 overflow-y-auto px-2 [scrollbar-width:thin] max-md:max-h-[calc(100dvh-var(--hg-timeline-h)-200px)]">
         {places.map((p) => (
           <li key={p.id}>
             <button

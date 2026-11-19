@@ -1,17 +1,35 @@
 import type { LonLat, Tour } from "@hg/core";
-import { formatRef, type Locale, placeName } from "@hg/model";
+import {
+  distanceKm,
+  formatRef,
+  type Locale,
+  placeName,
+  roundKm,
+  routeKm,
+  walkTime,
+  pick,
+} from "@hg/model";
 import { ArrowLeft, ArrowRight, X } from "./icons";
 import { useTranslation } from "../i18n";
 import type { PlaceProps } from "../data";
 import { Panel } from "./Panel";
 import { verseUrl } from "../links";
-import { distanceKm, roundKm, routeKm, walkTime } from "../distance";
-import { isVoyage, profileShape, romanLeg } from "../leg";
+import {
+  formatMetres,
+  isVoyage,
+  loadRoadLegs,
+  PROFILE_H,
+  PROFILE_W,
+  profileShape,
+  roadKm,
+  romanLeg,
+  type RoadLegs,
+} from "../leg";
 import type { PlacePhoto } from "@hg/model";
 import { Photo } from "./Photo";
 import { useEffect, useState } from "react";
 import { loadVerse } from "../verses";
-import { DATA_URL } from "../data";
+import { cachedJson } from "../data";
 
 export function TourStopCard({
   tour,
@@ -69,39 +87,24 @@ export function TourStopCard({
   // Up or down from the last stop, from the relief at the two places (not the road between):
   // "going up to Jerusalem" in numbers. Only differences a walker would feel; heights to
   // 10 m, the relief's own precision.
-  const m = (n: number) =>
-    // `|| 0`: a height of −1 to −5 m rounds to −0.
-    new Intl.NumberFormat(locale).format(Math.round(n / 10) * 10 || 0).replace("-", "−");
+  const m = (n: number) => formatMetres(n, locale);
   const here = heights?.[step];
   const before = step > 0 ? heights?.[step - 1] : undefined;
+  // A way walked: not at sea, not untold, on a tour of ways, and not a voyage by its relief.
+  const onFoot =
+    !stop.sea && !stop.untold && tour.walked !== false && !(profile && isVoyage(profile));
   // A voyage climbs nothing: an island's point (Samos) stands on its hill, not its harbour.
   const climb =
-    !stop.sea &&
-    !stop.untold &&
-    tour.walked !== false &&
-    !(profile && isVoyage(profile)) &&
-    here != null &&
-    before != null &&
-    Math.abs(here - before) >= 100
+    onFoot && here != null && before != null && Math.abs(here - before) >= 100
       ? t(here > before ? "tours.higher" : "tours.lower", { m: m(Math.abs(here - before)) })
       : null;
   // On foot, if the leg is a walk: known once the relief along it is read (at sea it is
   // blank), so a voyage never shows days of walking for a moment. Along the Roman roads
   // when the leg has a way by them (road-legs.json), else in a straight line.
   // The tour's own leg, or the same two places walked in another tour (a lesson's legs).
-  const pairs = roads?.["@pairs"] as Readonly<Record<string, number>> | undefined;
-  const road =
-    (roads?.[tour.id] as readonly (number | null)[] | undefined)?.[step] ??
-    (prev && romanLeg(tour, step) ? pairs?.[`${prev.placeId}>${stop.placeId}`] : undefined) ??
-    null;
+  const road = roads ? roadKm(roads, tour, step) : null;
   const walk =
-    prev &&
-    fromPrev >= 2 &&
-    !stop.sea &&
-    !stop.untold &&
-    tour.walked !== false &&
-    profile &&
-    !isVoyage(profile)
+    prev && fromPrev >= 2 && onFoot && profile
       ? (() => {
           const w = walkTime(road ?? fromPrev);
           const time =
@@ -126,17 +129,14 @@ export function TourStopCard({
     .filter(Boolean)
     .join("\u00a0· ");
   // Capitals of different ages (the empires) are no way walked: no relief between them.
-  const shape =
-    profile && !stop.sea && !stop.untold && tour.walked !== false && !isVoyage(profile)
-      ? profileShape(profile, 320, 44)
-      : null;
+  const shape = profile && onFoot ? profileShape(profile, PROFILE_W, PROFILE_H) : null;
 
   return (
-    <Panel className="w-[min(420px,calc(100vw-376px-32px))] max-md:w-full px-5 pt-4 pb-4">
+    <Panel className="w-card px-5 pt-4 pb-4">
       <div className="flex items-center justify-between">
         <div className="text-[12px] text-ink-soft">
           {/* Where we are is the dots below; screen readers hear it in the live region. */}
-          {tour.title[locale] ?? tour.title.en}
+          {pick(tour.title, locale)}
         </div>
         <button
           onClick={onClose}
@@ -190,9 +190,7 @@ export function TourStopCard({
           rel="noopener noreferrer"
           className="rounded-full border border-line bg-white/70 px-2.5 py-0.5 font-serif text-[13px] text-ink hover:border-accent hover:text-accent"
         >
-          {stop.ref
-            ? formatRef(stop.ref, locale)
-            : (stop.source?.cite[locale] ?? stop.source?.cite.en)}
+          {stop.ref ? formatRef(stop.ref, locale) : pick(stop.source?.cite, locale)}
           <span className="sr-only"> ({t("new_tab")})</span>
         </a>
         {compact ? (
@@ -225,7 +223,7 @@ export function TourStopCard({
             onClick={() => {
               onOpenPlace(stop.placeId);
             }}
-            className="ml-auto shrink-0 whitespace-nowrap text-[13px] text-accent underline decoration-dotted underline-offset-2 hover:decoration-solid"
+            className="ml-auto shrink-0 whitespace-nowrap text-[13px] link-accent"
           >
             {t("tours.about_place")}
           </button>
@@ -294,8 +292,7 @@ function LegProfile({
   road: boolean;
 }) {
   const { t } = useTranslation();
-  const m = (n: number) =>
-    new Intl.NumberFormat(locale).format(Math.round(n / 10) * 10 || 0).replace("-", "−");
+  const m = (n: number) => formatMetres(n, locale);
   const peak = shape.peak;
   const note = peak
     ? t(`tours.profile_${peak.kind}${road ? "_road" : ""}`, { m: m(peak.m) })
@@ -306,11 +303,14 @@ function LegProfile({
         <span
           aria-hidden
           className="absolute size-[7px] -translate-x-1/2 -translate-y-1/2 rounded-full border-[1.5px] border-paper bg-accent"
-          style={{ left: `${String(peak.at * 100)}%`, top: `${String((peak.y / 44) * 2.75)}rem` }}
+          style={{
+            left: `${String(peak.at * 100)}%`,
+            top: `${String((peak.y / PROFILE_H) * 2.75)}rem`,
+          }}
         />
       )}
       <svg
-        viewBox="0 0 320 44"
+        viewBox={`0 0 ${String(PROFILE_W)} ${String(PROFILE_H)}`}
         preserveAspectRatio="none"
         role="img"
         aria-label={[t(road ? "tours.profile_road" : "tours.profile", { from, to }), note]
@@ -322,7 +322,7 @@ function LegProfile({
         {shape.sea !== null && (
           <line
             x1="0"
-            x2="320"
+            x2={PROFILE_W}
             y1={shape.sea}
             y2={shape.sea}
             className="stroke-ink-soft/40"
@@ -380,7 +380,6 @@ type Heights = readonly (number | null)[];
 type ProfileAlong = (path: readonly LonLat[], n: number) => Promise<Heights>;
 /** Heights read along a leg for its profile (leg.ts draws them). */
 const LEG_SAMPLES = 48;
-let roadPaths: Promise<Readonly<Record<string, LonLat[]>>> | null = null;
 const legs = new Map<string, Promise<{ values: Heights; road: boolean }>>();
 /**
  * The relief of a leg, read once: along the Roman road when the leg is walked by one
@@ -395,15 +394,7 @@ function legProfile(
   const key = `${a.placeId}>${b.placeId}${byRoad ? "" : "~"}`;
   let got = legs.get(key);
   if (!got) {
-    roadPaths ??= fetch(`${DATA_URL}/road-paths.json`)
-      .then((r) => {
-        if (!r.ok) throw new Error(`road-paths: ${String(r.status)}`);
-        return r.json() as Promise<Record<string, LonLat[]>>;
-      })
-      .catch((e: unknown) => {
-        roadPaths = null;
-        throw e;
-      });
+    const roadPaths = cachedJson<Readonly<Record<string, LonLat[]>>>("road-paths.json");
     const read = (way: LonLat[] | null) =>
       along(way ?? [a.at, b.at], LEG_SAMPLES).then((values) => ({ values, road: way !== null }));
     got = byRoad
@@ -456,20 +447,12 @@ function useLegProfile(tour: Tour, step: number, along: ProfileAlong | undefined
   return leg?.key === legKey(tour, step) ? leg : null;
 }
 
-type RoadLegs = Readonly<Record<string, unknown>>;
-let roadLegs: Promise<RoadLegs> | null = null;
-/** The legs' lengths along the Roman roads (scripts/build-road-legs.ts), loaded once. */
+/** The legs' lengths along the Roman roads, once loaded. */
 function useRoadLegs(): RoadLegs | null {
   const [legs, setLegs] = useState<RoadLegs | null>(null);
   useEffect(() => {
     let live = true;
-    roadLegs ??= fetch(`${DATA_URL}/road-legs.json`)
-      .then((r) => (r.ok ? (r.json() as Promise<RoadLegs>) : {}))
-      .catch(() => {
-        roadLegs = null;
-        return {};
-      });
-    void roadLegs.then((v) => {
+    void loadRoadLegs().then((v) => {
       if (live) setLegs(v);
     });
     return () => {

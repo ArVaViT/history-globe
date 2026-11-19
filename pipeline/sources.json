@@ -1,8 +1,9 @@
 {
-  "_": "Upstream snapshots the data build reads (pipeline/build_data.py): each file at one commit of its repository, with the SHA-256 of what is read (the extracted member for an archive). The build fetches that commit and refuses what does not hash so; `python3 pipeline/pin_sources.py` moves a pin to the latest commit.",
+  "_": "Upstream snapshots the data build reads (pipeline/build_data.py): each file at one commit of its repository, cached under `file`, with the SHA-256 of what is read (the extracted member for an archive). The build fetches that commit and refuses what does not hash so; `python3 pipeline/pin_sources.py` moves a pin to the latest commit.",
   "openbible": {
     "repo": "openbibleinfo/Bible-Geocoding-Data",
     "path": "data/ancient.jsonl",
+    "file": "openbible-ancient.jsonl",
     "commit": "2e0e9d0669da998c5e2cb4e10d48f42116587fb4",
     "committed": "2021-10-31",
     "sha256": "b8187aa4737e8517ccc090f765d2be11da4c548cd2a59d3cdcb62e952cb8c0f2"
@@ -10,6 +11,7 @@
   "openbible_modern": {
     "repo": "openbibleinfo/Bible-Geocoding-Data",
     "path": "data/modern.jsonl",
+    "file": "openbible-modern.jsonl",
     "commit": "2e0e9d0669da998c5e2cb4e10d48f42116587fb4",
     "committed": "2021-10-31",
     "sha256": "da731f6e110bac4ea66a9f037a0a31cfb11c4f1efc1206aa9e109092b2c60087"
@@ -17,6 +19,7 @@
   "cliopatria": {
     "repo": "Seshat-Global-History-Databank/cliopatria",
     "path": "cliopatria.geojson.zip",
+    "file": "cliopatria_polities_only.geojson",
     "commit": "ad28a691b7c07c1fca89d0e0636d324667d2a258",
     "committed": "2026-05-16",
     "sha256": "5df3b5868cfab8f76030853fa2346ed3cd71171ad807b6f72d783ee2dce6839e",
@@ -25,6 +28,7 @@
   "natural_earth_ocean": {
     "repo": "nvkelso/natural-earth-vector",
     "path": "geojson/ne_50m_ocean.geojson",
+    "file": "ne_50m_ocean.geojson",
     "commit": "693f11422f4e08d2da4566b854dda53eb7c39fb3",
     "committed": "2020-12-13",
     "sha256": "5b810162af4b20805838cfd766ef1a445c350cf6aafc8b589515daef30033adf"
@@ -32,6 +36,7 @@
   "natural_earth_ocean_10m": {
     "repo": "nvkelso/natural-earth-vector",
     "path": "geojson/ne_10m_ocean.geojson",
+    "file": "ne_10m_ocean.geojson",
     "commit": "ace5fed0eaf3c6c03c951e75b439ba8fffbc218e",
     "committed": "2021-12-08",
     "sha256": "f9696a1337c746a0f6c8c13bc60d0f230d2ef8d105198d5657726c8f8e763fc2"
@@ -39,6 +44,7 @@
   "natural_earth_lakes": {
     "repo": "nvkelso/natural-earth-vector",
     "path": "geojson/ne_50m_lakes.geojson",
+    "file": "ne_50m_lakes.geojson",
     "commit": "ace5fed0eaf3c6c03c951e75b439ba8fffbc218e",
     "committed": "2021-12-08",
     "sha256": "d350b75978b26fe839b797c2c529b2fb8f47fb3983c03f4964e36d5df9378a52"
@@ -46,8 +52,25 @@
   "natural_earth_rivers": {
     "repo": "nvkelso/natural-earth-vector",
     "path": "geojson/ne_10m_rivers_lake_centerlines.geojson",
+    "file": "ne_10m_rivers.geojson",
     "commit": "0e1681ff63fbc58c19dafed9e5b06733512b370d",
     "committed": "2017-10-23",
     "sha256": "bb854a900ecbd3b408df46d5e16e3e0f974ba55993f9d8b5c26e855273c0905a"
+  },
+  "stepbible_tipnr": {
+    "repo": "STEPBible/STEPBible-Data",
+    "path": "Proper Nouns/TIPNR - Translators Individualised Proper Names with all References - STEPBible.org CC BY.txt",
+    "file": "tipnr.txt",
+    "commit": "b99716b0cddb648ddb95cc786a197180f2f97d48",
+    "committed": "2026-09-18",
+    "sha256": "63a129dac8c341772bdc5b6604b97542ad36a8821d61334d824f8efc2cd88fa8"
+  },
+  "natural_earth_land": {
+    "repo": "nvkelso/natural-earth-vector",
+    "path": "geojson/ne_50m_land.geojson",
+    "file": "ne_50m_land.geojson",
+    "commit": "ace5fed0eaf3c6c03c951e75b439ba8fffbc218e",
+    "committed": "2021-12-08",
+    "sha256": "e874b27a51d146452be360cafb3cc50c86001074a67d534113e6534682f9826b"
   }
 }
