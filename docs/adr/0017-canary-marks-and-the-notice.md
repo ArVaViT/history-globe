@@ -1,6 +1,7 @@
 # 0017. Canary marks in what is published, and one notice to the programs that read it
 
-- Status: accepted (follows ADR 0016)
+- Status: accepted (follows ADR 0016); amended by ADR 0019 (the beacon only in the
+  production build)
 - Date: 2026-10-19
 
 ## Context
@@ -10,9 +11,9 @@ mining; its consequences said that a crawler that ignores robots.txt is stopped 
 in the code, and that a static site cannot stop a copy technically. What it can do is make a
 copy provable: a site or a dataset built from this one, rather than from the same sources
 (OpenBible, STEPBible), should be tellable with evidence. The data is CC BY: a copy of it is
-allowed with credit, and the evidence then shows which copy owes the credit. The owner also
-wants every program that reads the site, crawler, agent or copier, to meet the same short
-statement of what may be taken and how, before it decides.
+allowed with credit, and the evidence then shows which copy owes the credit. Every program
+that reads the site, crawler, agent or copier, should also meet the same short statement of
+what may be taken and how, before it decides.
 
 ## Decision
 
@@ -51,13 +52,16 @@ statement of what may be taken and how, before it decides.
 
 ## Consequences
 
-- A deploy that wants marks runs the content build with the seed (the owner's deploy steps);
+- A deploy that wants marks runs the content build with the seed (the deploy steps);
   a deploy without it publishes none and loses nothing else. The registry of each deploy is
   kept; the seed stays the same, so every registry fits every later deploy.
 - The outputs of the content and API builds are deterministic for a given seed, as before
   for none: the three-run determinism check of the content build still holds.
 - A reader of `places.json` that relied on its order, against the description, now reads
   the ids. None is known.
+- The marks catch careless copies only. Anyone who builds the public repository without the
+  seed and compares it with the live `/data` and `/api` sees every mark, and normalising
+  whitespace, key order and list order removes them.
 
 ## Addendum (2026-10-19): the beacon and the honeypot
 
@@ -101,8 +105,20 @@ host's firewall (Vercel WAF, custom rules in log mode) is the only place the sig
   with their IP, network and user agent; the host's request logs list the same requests by
   path. After a week of logs the honeypot's rule may deny or challenge; the beacon's rule
   stays in log mode, since its requests come from readers of a copy, not from the copier.
-  No rule is applied by the code: that is the owner's step, and reversible.
+  No rule is applied by the code: that is the maintainer's step, and reversible.
 - **What is not done.** No server, no function and no analytics event receives the beacon:
   a static file host and its firewall are enough, and nothing new keeps data. The privacy
   page says, in every language, what a copy sends. The seed and the registry of the marks,
   and the firewall's logs, stay outside the repository as before.
+
+## Addendum (2026-11-18): the beacon in the production build only
+
+Since ADR 0019 the code is AGPL-3.0, and a site built from it on another address is a lawful
+copy, not a stolen one. The beacon is therefore written only into a build whose `SITE_URL`
+is `https://historyglobe.app` (`beaconTag` in `packages/model/src/beacon.ts`, used by
+`apps/web/vite.config.ts` and `scripts/page-shell.ts`); a build without it, or for another
+address, carries no script that reports to historyglobe.app. The deploy steps build with
+that address already (ADR 0012), so the published pages are unchanged and keep the hash in
+the Content-Security-Policy. The beacon still finds what it was made for: a copy of the
+published HTML. A known gap: `OWN_HOSTS` keeps silent on any `history-globe*.vercel.app`,
+whichever Vercel team serves it.

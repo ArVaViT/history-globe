@@ -1276,7 +1276,7 @@ ${body.trim()}
         </aside>
       </div>
     </div>
-${bodyEnd(`${up}../`)}
+${bodyEnd(`${up}../`, site)}
   </body>
 </html>
 `;

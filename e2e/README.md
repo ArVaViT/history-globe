@@ -4,7 +4,7 @@ Three scripts drive the running app in Chromium:
 
 - `pnpm e2e` (`flows.mjs`): the main ways through the app. That covers search, a place card and its verses, keys, layers, tours, events, the overview, people, the language switch and bad links. It prints one line per step and fails on any step or page error.
 - `pnpm e2e:a11y` (`a11y.mjs`): axe-core over every state listed in `a11y.mjs`, the documentation pages among them. It fails on any violation.
-- `pnpm e2e:copies` (`copies.mjs`): the beacon and the honeypot (ADR 0017, addendum) against a build served by `vite preview`: silent on the site, its embed and a preview; a copy on another host, played by a route, sends `/origin/<host>` and shows the original's address. Needs no network.
+- `pnpm e2e:copies` (`copies.mjs`): the beacon and the honeypot (ADR 0017, addendum) against a production build (`SITE_URL=https://historyglobe.app`; any other build carries no beacon) served by `vite preview`: silent on the site, its embed and a preview; a copy on another host, played by a route, sends `/origin/<host>` and shows the original's address. Needs no network.
 
 They are not part of `pnpm gate`. Playwright and axe-core are dev dependencies; Playwright's Chromium is a separate download, made once:
 

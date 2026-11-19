@@ -80,6 +80,7 @@ const T_UK = {
   about: "Про проєкт",
   privacy: "Конфіденційність",
   report: "Знайшли помилку?",
+  code: "Вихідний код",
   allSources: "усі джерела",
   data: "Дані",
   // The language switch is an icon: «Мова: English» names it for a pointer and a screen reader.
@@ -259,6 +260,7 @@ const T_ES = {
   about: "Acerca del proyecto",
   privacy: "Privacidad",
   report: "¿Has encontrado un error?",
+  code: "Código fuente",
   allSources: "todas las fuentes",
   data: "Datos",
   // The language switch is an icon: «Idioma: English» names it for a pointer and a screen reader.
@@ -437,6 +439,7 @@ const T_PT = {
   about: "Sobre o projeto",
   privacy: "Privacidade",
   report: "Encontrou um erro?",
+  code: "Código-fonte",
   allSources: "todas as fontes",
   data: "Dados",
   // The language switch is an icon: «Idioma: English» names it for a pointer and a screen reader.
@@ -615,6 +618,7 @@ const T_DE = {
   about: "Über das Projekt",
   privacy: "Datenschutz",
   report: "Fehler gefunden?",
+  code: "Quellcode",
   allSources: "alle Quellen",
   data: "Daten",
   // The language switch is an icon: «Sprache: English» names it for a pointer and a screen reader.
@@ -793,6 +797,7 @@ const T_FR = {
   about: "À propos du projet",
   privacy: "Confidentialité",
   report: "Une erreur ?",
+  code: "Code source",
   allSources: "toutes les sources",
   data: "Données",
   // The language switch is an icon: «Langue\u202f: English» names it for a pointer and a screen reader.
@@ -973,6 +978,7 @@ const T_IT = {
   about: "Il progetto",
   privacy: "Privacy",
   report: "Hai trovato un errore?",
+  code: "Codice sorgente",
   allSources: "tutte le fonti",
   data: "Dati",
   // The language switch is an icon: «Lingua: English» names it for a pointer and a screen reader.
@@ -1151,6 +1157,7 @@ const T_NL = {
   about: "Over het project",
   privacy: "Privacy",
   report: "Een fout gevonden?",
+  code: "Broncode",
   allSources: "alle bronnen",
   data: "Gegevens",
   // The language switch is an icon: «Taal: English» names it for a pointer and a screen reader.
@@ -1331,6 +1338,7 @@ const T_PL = {
   about: "O projekcie",
   privacy: "Prywatność",
   report: "Widzisz błąd?",
+  code: "Kod źródłowy",
   allSources: "wszystkie źródła",
   data: "Dane",
   // The language switch is an icon: «Język: English» names it for a pointer and a screen reader.
@@ -1509,6 +1517,7 @@ const T_CS = {
   about: "O projektu",
   privacy: "Soukromí",
   report: "Našli jste chybu?",
+  code: "Zdrojový kód",
   allSources: "všechny prameny",
   data: "Data",
   // The language switch is an icon: «Jazyk: English» names it for a pointer and a screen reader.
@@ -1688,6 +1697,7 @@ const T_SV = {
   about: "Om projektet",
   privacy: "Integritet",
   report: "Hittat ett fel?",
+  code: "Källkod",
   allSources: "alla källor",
   data: "Data",
   // The language switch is an icon: «Språk: English» names it for a pointer and a screen reader.
@@ -1868,6 +1878,7 @@ const T_DA = {
   about: "Om projektet",
   privacy: "Privatliv",
   report: "Fundet en fejl?",
+  code: "Kildekode",
   allSources: "alle kilder",
   data: "Data",
   // The language switch is an icon: «Sprog: English» names it for a pointer and a screen reader.
@@ -2048,6 +2059,7 @@ const T_NB = {
   about: "Om prosjektet",
   privacy: "Personvern",
   report: "Funnet en feil?",
+  code: "Kildekode",
   allSources: "alle kilder",
   data: "Data",
   // The language switch is an icon: «Språk: English» names it for a pointer and a screen reader.
@@ -2225,6 +2237,7 @@ const T_SR = {
   about: "О пројекту",
   privacy: "Приватност",
   report: "Нашли сте грешку?",
+  code: "Изворни код",
   allSources: "сви извори",
   data: "Подаци",
   // The language switch is an icon: «Језик: English» names it for a pointer and a screen reader.
@@ -2409,6 +2422,7 @@ const T_TL = {
   about: "Tungkol sa proyekto",
   privacy: "Pagkapribado",
   report: "May nakita kang mali?",
+  code: "Source code",
   allSources: "lahat ng sanggunian",
   data: "Datos",
   // The language switch is an icon: «Wika: English» names it for a pointer and a screen reader.
@@ -2587,6 +2601,7 @@ const T_HU = {
   about: "A projektről",
   privacy: "Adatvédelem",
   report: "Hibát talált?",
+  code: "Forráskód",
   allSources: "minden forrás",
   data: "Adatok",
   // The language switch is an icon: «Nyelv: English» names it for a pointer and a screen reader.
@@ -2765,6 +2780,7 @@ const T_FI = {
   about: "Hankkeesta",
   privacy: "Tietosuoja",
   report: "Löysitkö virheen?",
+  code: "Lähdekoodi",
   allSources: "kaikki lähteet",
   data: "Data",
   // The language switch is an icon: «Kieli: English» names it for a pointer and a screen reader.
@@ -2941,6 +2957,7 @@ const T_VI = {
   about: "Về dự án",
   privacy: "Quyền riêng tư",
   report: "Bạn thấy có chỗ sai?",
+  code: "Mã nguồn",
   allSources: "tất cả nguồn",
   data: "Dữ liệu",
   // The language switch is an icon: «Ngôn ngữ: English» names it for a pointer and a screen reader.
@@ -3122,6 +3139,7 @@ const T_RO = {
   about: "Despre proiect",
   privacy: "Confidențialitate",
   report: "Ai găsit o greșeală?",
+  code: "Cod sursă",
   allSources: "toate sursele",
   data: "Date",
   // The language switch is an icon: «Limba: English» names it for a pointer and a screen reader.
@@ -3304,6 +3322,7 @@ const T_BG = {
   about: "За проекта",
   privacy: "Поверителност",
   report: "Намерихте грешка?",
+  code: "Изходен код",
   allSources: "всички източници",
   data: "Данни",
   // The language switch is an icon: «Език: English» names it for a pointer and a screen reader.
@@ -3497,6 +3516,7 @@ export const T = {
     about: "О проекте",
     privacy: "Конфиденциальность",
     report: "Нашли ошибку?",
+    code: "Исходный код",
     allSources: "все источники",
     data: "Данные",
     // The other language's switch is an icon: «Язык: English» names it.
@@ -3567,6 +3587,7 @@ export const T = {
     about: "About",
     privacy: "Privacy",
     report: "Found a mistake?",
+    code: "Source code",
     allSources: "all sources",
     data: "Data",
     // The other language's switch is an icon; this names it for a pointer and a screen reader.

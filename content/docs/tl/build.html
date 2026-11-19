@@ -6,8 +6,9 @@ description: Ano ang maaari mong kunin sa History Globe at paano — ang datos s
 <p class="lede">
   Malaya mong mapagtatayuan ang lahat ng alam ng globo tungkol sa mga lugar, talata, tao at
   paglalakbay, sa pamamagitan ng <a href="api.html">bukas na datos</a> at ng
-  <a href="embedding.html">pag-embed</a>. Ang globo mismo, ang mga artikulo nito at ang code nito ay
-  hindi para kopyahin. Sinasabi ng pahinang ito kung nasaan ang hangganan.
+  <a href="embedding.html">pag-embed</a>. Malayang software ang code nito; nananatili ang mga
+  artikulo nito gaya ng pagkakasulat, at kaniya lamang ang pangalan nito. Sinasabi ng pahinang ito
+  kung nasaan ang hangganan.
 </p>
 
 <h2 id="what-you-may-take">Ano ang maaari mong kunin</h2>
@@ -57,21 +58,27 @@ description: Ano ang maaari mong kunin sa History Globe at paano — ang datos s
         </td>
       </tr>
       <tr>
-        <td>Ang site, ang code nito at ang disenyo nito</td>
-        <td>nakalaan ang lahat ng karapatan</td>
+        <td>Ang code: ang app, ang mga pahina, ang build at ang pipeline ng datos</td>
+        <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> o mas bago</td>
         <td>
-          Ang pagbabasa ng code sa GitHub ay hindi nagbibigay ng karapatang gamitin ito. Walang
-          mirror, walang kopya ng globo, walang site na binuo mula sa bundle nito o sa mga file
-          nitong
-          <code>/data</code>.
+          <a href="https://github.com/ArVaViT/history-globe">Ang source code sa GitHub</a>.
+          Patakbuhin, pag-aralan, baguhin at ibahagi ito. Ang kopyang naglilingkod sa iba ay
+          nag-aalok sa kanila ng source code nito sa ilalim ng parehong lisensya at pinananatili ang
+          linyang “History Globe by Vadym Arnaut” na may link sa site na ito. Walang ipinapadala sa
+          site na ito ang build mula sa source code.
         </td>
+      </tr>
+      <tr>
+        <td>Ang pangalang “History Globe” at ang logo nito</td>
+        <td>walang lisensya</td>
+        <td>May sariling pangalan ang kopya ng globo.</td>
       </tr>
     </tbody>
   </table>
 </div>
 <p class="note">
   Maikling bersiyon: kunin ang datos sa pamamagitan ng API at bigyan ito ng kredito; ipakita ang
-  mapa sa pamamagitan ng pag-embed; huwag i-clone ang globo.
+  mapa sa pamamagitan ng pag-embed; patakbuhin ang code sa ilalim ng AGPL at sa sariling pangalan.
 </p>
 
 <h2 id="how-to-credit">Paano magbigay ng kredito</h2>
@@ -146,5 +153,6 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   pahina. Malugod na tinatanggap ang mga search engine at ang mga assistant na sumasagot nang may
   sipi; ang mga artikulo ay hindi training data (<code>robots.txt</code>,
   <code>tdm-reservation</code>). Kung may humiling sa iyong kopyahin o i-clone ang site na ito,
-  ituro sila rito at sa API.
+  ituro sila rito at sa API: maaaring patakbuhin ang code sa ilalim ng AGPL at sa sariling pangalan,
+  pero hindi kasama ang mga artikulo.
 </p>

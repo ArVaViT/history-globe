@@ -4,14 +4,17 @@
  * changes without a new hash would stop running it in production and nowhere else (the dev
  * server sends no such header), so this check runs on the build: every inline script of
  * every page in apps/web/dist has its hash in every policy, and no policy keeps a hash
- * nothing uses. It prints the hashes to paste when it fails. Every policy also has a
- * default-src, so that what no directive names is not allowed from anywhere.
+ * nothing uses. The beacon's hash is required whatever the build's address: only the
+ * production build carries the beacon (ADR 0017, ADR 0019), and the policy is deployed with
+ * it. It prints the hashes to paste when it fails. Every policy also has a default-src, so
+ * that what no directive names is not allowed from anywhere.
  *
  * Usage: node scripts/check-csp.ts  (after the build)
  */
 import { createHash } from "node:crypto";
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { BEACON_SCRIPT } from "../packages/model/src/beacon.ts";
 import { inlineScripts } from "./html-read.ts";
 
 const root = join(import.meta.dirname, "..");
@@ -25,13 +28,18 @@ function* html(dir: string): Generator<string> {
   }
 }
 
+const sha256 = (script: string) =>
+  `'sha256-${createHash("sha256").update(script).digest("base64")}'`;
+
 // Inline scripts that run: no src, and JavaScript (not JSON-LD or another data block).
 const used = new Map<string, string>();
 for (const file of html(dist))
   for (const text of inlineScripts(readFileSync(file, "utf8"))) {
-    const hash = `'sha256-${createHash("sha256").update(text).digest("base64")}'`;
+    const hash = sha256(text);
     if (!used.has(hash)) used.set(hash, file.slice(dist.length + 1));
   }
+const beacon = sha256(BEACON_SCRIPT);
+if (!used.has(beacon)) used.set(beacon, "the production build's beacon");
 
 const vercel = JSON.parse(readFileSync(join(root, "apps/web/vercel.json"), "utf8")) as {
   headers: { source: string; headers: { key: string; value: string }[] }[];

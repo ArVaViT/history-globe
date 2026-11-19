@@ -1,6 +1,6 @@
 # 0016. The articles and the questions under CC BY-NC-ND; no training
 
-- Status: accepted (amends ADR 0014)
+- Status: accepted (amends ADR 0014); amended by ADR 0019 (the code is AGPL-3.0-or-later)
 - Date: 2026-10-17
 
 ## Context
@@ -25,11 +25,12 @@ reaches readers through the site and through the assistants that cite it.
   events, battles, the years of towns, the notes of ancient authors, the photo records and
   the open API but for `questions.json`. The API keeps its licence and its credit lines;
   its index names the exception.
-- **The code, the documentation and the design stay all rights reserved** (part 3, as in
-  ADR 0014).
-- **Text and data mining is reserved** (Article 4(3) of Directive (EU) 2019/790) for parts
-  1 and 3. Its machine-readable form: `robots.txt` disallows the crawlers that gather
-  training text and carries `Content-Signal: search=yes, ai-input=yes, ai-train=no`; every
+- **The code, the documentation and the design stay all rights reserved** (as in ADR 0014;
+  superseded by ADR 0019: the code is AGPL-3.0-or-later).
+- **Text and data mining is reserved** (Article 4(3) of Directive (EU) 2019/790) for the
+  articles and the questions (since ADR 0019 for them alone; the AGPL allows no such
+  restriction on the code). Its machine-readable form: `robots.txt` disallows the crawlers
+  that gather training text and carries `Content-Signal: search=yes, ai-input=yes, ai-train=no`; every
   page is sent with `tdm-reservation: 1` (`vercel.json`). Search engines and the
   assistants that answer with a citation stay allowed.
   Every crawler is kept out of `/data/`, the files the map loads, but for `/data/photos/`

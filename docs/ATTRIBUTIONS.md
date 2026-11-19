@@ -150,20 +150,27 @@ Articles, answers and events
   (content/articles, content/questions, content/events.yaml). Quotations come only
   from the public-domain edition of each language listed under Scripture.
 
+Crosswalk (docs/crosswalk/places.csv, not shipped with the site)
+  The theographic_* columns cite Theographic Bible Metadata
+  (https://github.com/robertrouse/theographic-bible-metadata, CC BY-SA 4.0) by its
+  record ids, with a few values quoted as evidence. None of its data, coordinates
+  included, is imported (ADR 0008).
+
 Software
   MapLibre GL JS — Copyright (c) 2023, MapLibre contributors, BSD-3-Clause;
   includes code from mapbox-gl-js v1.13 and earlier (Copyright (c) 2020,
   Mapbox, BSD-3-Clause), glfx.js (MIT) and d3-color. Full license text:
   vendor/maplibre-gl-<version>/LICENSE.txt in the build.
-  React, react-dom, scheduler (MIT) and the Golos Text, Literata and Onest fonts (OFL 1.1;
-  Onest sets Vietnamese, which Golos Text lacks):
-  licence texts in apps/web/public/licenses/third-party.txt, written by
-  scripts/third-party-licenses.ts (pnpm licenses) and linked from the sources page.
+  React, react-dom, scheduler, Tailwind CSS (its preflight is in the built CSS; all
+  MIT) and the Golos Text, Literata and Onest fonts (OFL 1.1; Onest sets Vietnamese,
+  which Golos Text lacks): licence texts in apps/web/public/licenses/third-party.txt,
+  written by scripts/third-party-licenses.ts and linked from the sources page.
   The MapLibre files are shipped as published (only the source-map pointer at the
   end of each is dropped, with the maps), with their LICENSE.txt, under
   vendor/maplibre-gl-<version>/ in the build.
-  Lucide icons — Copyright (c) 2026 Lucide Icons and Contributors, ISC; nine of
-  the fifteen icons derive from Feather, Copyright (c) 2013-present Cole Bemis, MIT.
+  Lucide icons — Copyright (c) 2026 Lucide Icons and Contributors, ISC; some of
+  them derive from Feather, Copyright (c) 2013-present Cole Bemis, MIT (the list is
+  in lucide-icons.txt).
   Copied as SVG (apps/web/src/components/icons.tsx); both licences ship in
   licenses/lucide-icons.txt.
 

@@ -16,7 +16,7 @@ import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig, type Plugin } from "vite";
 import { ANALYTICS_TAG } from "../../packages/model/src/analytics.ts";
-import { BEACON_TAG } from "../../packages/model/src/beacon.ts";
+import { beaconTag } from "../../packages/model/src/beacon.ts";
 
 // MapLibre 6 ships three ES modules: the library, its worker, and a module both share.
 // It finds the worker next to its own file through a URL computed at run time, which a
@@ -69,10 +69,9 @@ function maplibreVendor(): Plugin {
 
 /**
  * The source maps are written for scripts/check-budget.ts, which reads from them which
- * language a chunk belongs to, and kept out of the deploy: a map is the source with its
- * comments, and makes a copy cheap (ADR 0016). `build.sourcemap: "hidden"` writes them
- * without a sourceMappingURL in the chunks; this moves them out of dist/ to apps/web/maps/
- * (not in git).
+ * language a chunk belongs to, and kept out of the deploy (the source is on GitHub).
+ * `build.sourcemap: "hidden"` writes them without a sourceMappingURL in the chunks; this
+ * moves them out of dist/ to apps/web/maps/ (not in git).
  */
 function sourceMapsAside(): Plugin {
   let outDir = "dist";
@@ -282,15 +281,19 @@ function originTrial(): Plugin {
   };
 }
 
-// The beacon (packages/model/src/beacon.ts) at the end of the app's page, the very bytes the
-// built pages carry (scripts/page-shell.ts), so that one hash in the Content-Security-Policy
-// allows it everywhere. Written here, not in index.html, where a formatter would reflow it.
+// The beacon (packages/model/src/beacon.ts) at the end of the app's page in the production
+// build, the very bytes the built pages carry (scripts/page-shell.ts), so that one hash in the
+// Content-Security-Policy allows it everywhere. Written here, not in index.html, where a
+// formatter would reflow it.
 function beacon(): Plugin {
   return {
     name: "beacon",
     transformIndexHtml: {
       order: "post",
-      handler: (html) => html.replace("\n  </body>", `\n    ${BEACON_TAG}\n  </body>`),
+      handler: (html) => {
+        const tag = beaconTag(process.env.SITE_URL);
+        return tag ? html.replace("\n  </body>", `\n    ${tag}\n  </body>`) : html;
+      },
     },
   };
 }
